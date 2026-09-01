@@ -4,7 +4,8 @@
  * Tests for the local-first WiFi transport resolver and bridge.
  * No network: TuyaLocalClient is mocked, TuyaUDPDiscovery is never started.
  */
-const assert = require('assert');
+const { describe, it } = require('node:test');
+const assert = require('node:assert/strict');
 
 const {
   TRANSPORT_LAN,

@@ -1,0 +1,73 @@
+{
+  "generatedAt": "2026-09-01T06:16:24.631Z",
+  "mode": "APPLY",
+  "compose": [],
+  "sacredKeep": [],
+  "phases": [
+    {
+      "name": "case-variants",
+      "ok": true,
+      "tail": "═══════════════════════════════════════════════\n  Ensure Homey case variants (P99)\n  root: C:\\Users\\Dell\\Documents\\homey\\master\n  mode: APPLY\n═══════════════════════════════════════════════\nDrivers needing variants: 0\nVariants to add: 0\n═══════════════════════════════════════════════"
+    },
+    {
+      "name": "sync-appjson-zigbee",
+      "ok": true,
+      "tail": "[sync-appjson-zigbee] synced: 379 | changed: 1 | no compose: 0"
+    },
+    {
+      "name": "p2138-gate",
+      "ok": true,
+      "tail": "limate_sensor\n  ✅ anti-bot mentions soil_sensor\n  ✅ anti-bot mentions zigbee_universal\n  ✅ anti-bot mentions wall_dimmer\n  ✅ mfs_db has no m1cvyneb|TS0201 invent\n\nPASS: P2138 sacred-couple matrix gate"
+    }
+  ],
+  "verify": [
+    {
+      "couple": "_TZ3000_zgyzgdua+TS0044",
+      "driver": "scene_switch_4",
+      "mfrOk": true,
+      "pidOk": true
+    },
+    {
+      "couple": "_TZ3000_v5498kdm+TS0001",
+      "driver": "switch_1gang",
+      "mfrOk": true,
+      "pidOk": true
+    },
+    {
+      "couple": "_TZE284_fhvpaltk+TS0601",
+      "driver": "valve_dual_irrigation",
+      "mfrOk": true,
+      "pidOk": true
+    },
+    {
+      "couple": "_TZ3000_lvhy15ix+TS0003",
+      "driver": "switch_3gang",
+      "mfrOk": true,
+      "pidOk": true
+    },
+    {
+      "couple": "_TZ3000_decxrtwa+TS0203",
+      "driver": "contact_sensor",
+      "mfrOk": true,
+      "pidOk": true
+    },
+    {
+      "couple": "_TZE204_clrdrnya+TS0601",
+      "driver": "presence_sensor_radar",
+      "mfrOk": true,
+      "pidOk": true
+    },
+    {
+      "couple": "_TZE204_ogkdpgy2+TS0601",
+      "driver": "air_quality_co2",
+      "mfrOk": true,
+      "pidOk": true
+    },
+    {
+      "couple": "_TZE204_5slehgeo+TS0601",
+      "driver": "curtain_motor",
+      "mfrOk": true,
+      "pidOk": true
+    }
+  ]
+}

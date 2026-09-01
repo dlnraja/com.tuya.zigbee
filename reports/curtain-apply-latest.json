@@ -1,5 +1,7 @@
 {
-  "generatedAt": "2026-09-01T04:00:56.283Z",
+  "generatedAt": "2026-09-01T06:16:58.008Z",
+  "verdict": "curtain-z2m-missing-2026-09-01",
+  "verified36_present": true,
   "added": [
     {
       "mfr": "_TYST11_WMCDJ3AQ",
@@ -28,13 +30,6 @@
       "desc": "Rechargeable Tubular Motor 36/37mm"
     },
     {
-      "mfr": "_TZE200_BV1JCQQU",
-      "pid": "TS0601",
-      "source": "live-z2m-crawl",
-      "model": "ZM25RZ01",
-      "desc": "Roller Shade Motor"
-    },
-    {
       "mfr": "_TZE200_cxu0jkjk",
       "pid": "TS0601",
       "source": "live-z2m-crawl",
@@ -45,6 +40,12 @@
       "mfr": "_TZE200_dng9fn0k",
       "pid": "TS0601",
       "source": "live-z2m-crawl"
+    },
+    {
+      "mfr": "_TZE200_eqpaxqdv",
+      "pid": "TS0601",
+      "source": "verdict-36",
+      "model": "TS0601_cover"
     },
     {
       "mfr": "_TZE200_hyhl5y36",
@@ -160,13 +161,6 @@
       "desc": "Cover plug-in receiver multi STAK 3/STAS 3"
     },
     {
-      "mfr": "_TZE284_iwyqtclw",
-      "pid": "TS0601",
-      "source": "live-z2m-crawl",
-      "model": "RM28-LE",
-      "desc": "Zigbee roller shade motor"
-    },
-    {
       "mfr": "_TZE284_ozf4e02o",
       "pid": "TS0601",
       "source": "live-z2m-crawl",
@@ -174,27 +168,25 @@
       "desc": "Cover plug-in receiver multi STAK 3/STAS 3"
     },
     {
+      "mfr": "_TZE284_r3szw0xr",
+      "pid": "TS0601",
+      "source": "z2m_herdsman",
+      "model": "TS0601_cover_11",
+      "desc": "Cover motor"
+    },
+    {
       "mfr": "_TZE284_rlytpmij",
       "pid": "TS0601",
       "source": "live-z2m-crawl",
       "model": "FWJZCEH18A001",
       "desc": "Roller blind motor 17mm/25mm/28mm"
-    },
-    {
-      "mfr": "_TZE28C1000000_alh14edn",
-      "pid": "TS0601",
-      "source": "z2m_herdsman",
-      "model": "TS0601_cover_8",
-      "desc": "Cover motor"
-    },
-    {
-      "mfr": "_TZE600_ogyg1y6b",
-      "pid": "TS0601",
-      "source": "z2m_herdsman",
-      "model": "TS0601_cover_2",
-      "desc": "Curtain motor or roller blind motor with fixed speed"
     }
   ],
-  "curtainMfrCount": 625,
-  "climateStripped": 8
+  "stripped_from_curtain_motor": 4,
+  "module2_gang_added": [
+    "_TZ3000_j1xl73iw",
+    "_TZ3000_l6iqph4f"
+  ],
+  "curtainMfrCount": 572,
+  "climateStripped": 0
 }

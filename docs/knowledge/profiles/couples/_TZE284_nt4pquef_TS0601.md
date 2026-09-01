@@ -9,9 +9,11 @@
 
 | DP | Name | Type | Direction | Capability |
 |---:|---|---|---|
+| 1 | measure_temperature | — | rx | measure_temperature |
 | 2 | light_level | 4 | rx | — |
 | 3 | moisture | 2 | rx | measure_soil_moisture |
 | 5 | temperature | 2 | rx | measure_temperature |
+| 9 | temperature_unit | — | rx | — |
 | 15 | battery | 2 | rx | measure_battery |
 
 ---

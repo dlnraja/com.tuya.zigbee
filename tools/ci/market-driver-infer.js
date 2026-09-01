@@ -198,6 +198,70 @@ function lookupZ2m(mfr, pid) {
   return loadZ2mIndex().get(key) || null;
 }
 
+/** P2365: blakadder + z2m agree + strong pid OR Z2M text — never TS0601 pid-only */
+const MULTI_CATALOG_STRONG_PID = {
+  TS0041: 'button_wireless_1',
+  TS0042: 'button_wireless_2',
+  TS0043: 'button_wireless_3',
+  TS0044: 'button_wireless_4',
+  TS0001: 'switch_1gang',
+  TS0002: 'switch_2gang',
+  TS0003: 'switch_3gang',
+  TS0004: 'switch_4gang',
+  TS0011: 'switch_1gang',
+  TS0012: 'switch_1gang',
+  TS0013: 'switch_3gang',
+  TS0014: 'switch_1gang',
+  TS0201: 'climate_sensor',
+  TS0202: 'motion_sensor',
+  TS0222: 'illuminance_sensor',
+  TS0501B: 'wall_dimmer_tuya',
+  TS0503B: 'bulb_rgb',
+  TS0504B: 'bulb_rgbw',
+  TS0211: 'doorbell',
+  TS0049: 'water_valve_garden',
+  TS1201: 'ir_blaster',
+  TS0225: 'presence_sensor_radar',
+};
+
+function resolveMultiCatalogSafe(mfr, pid, sources = []) {
+  const { isForbiddenDriver } = require('../../lib/pairing/UserMisattributionRegistry');
+  const src = sources || [];
+  const hasBlakadder = src.includes('blakadder');
+  const hasZ2m = src.includes('z2m');
+  if (!hasBlakadder || !hasZ2m) return null;
+  const p = String(pid || '').toUpperCase();
+  if (p === 'TS0601') return null; // never pid-only on TS0601
+
+  const z2m = lookupZ2m(mfr, pid);
+  if (z2m) {
+    const hay = `${z2m.description || ''} ${z2m.model || ''}`.toLowerCase();
+    const inferred = inferFromZ2mText(z2m.description, z2m.model, pid);
+    if (inferred && driverExists(inferred) && !isForbiddenDriver(mfr, pid, inferred)
+      && familyAllows(pid, inferred, hay)) {
+      return {
+        driver: inferred,
+        tier: 'multi_catalog_z2m',
+        reason: z2m.description || z2m.model || 'z2m+blakadder',
+        z2m,
+        applySafe: true,
+      };
+    }
+  }
+
+  const driver = MULTI_CATALOG_STRONG_PID[p];
+  if (driver && driverExists(driver) && !isForbiddenDriver(mfr, pid, driver)) {
+    return {
+      driver,
+      tier: 'multi_catalog_pid',
+      reason: 'blakadder+z2m+strong-pid',
+      z2m,
+      applySafe: true,
+    };
+  }
+  return null;
+}
+
 function driverExists(id) {
   return id && fs.existsSync(path.join(ROOT, 'drivers', id, 'driver.compose.json'));
 }
@@ -389,6 +453,7 @@ module.exports = {
   lookupZ2m,
   inferFromZ2mText,
   resolveMarketDriver,
+  resolveMultiCatalogSafe,
   driverExists,
   pidFamily,
   familyAllows,

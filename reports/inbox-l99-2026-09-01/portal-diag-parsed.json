@@ -1,0 +1,496 @@
+{
+  "generatedAt": "2026-09-01T01:05:51.862Z",
+  "totalParsed": 27,
+  "last7d": 22,
+  "recent": [
+    {
+      "file": ".github/state/homey-app-diag/05867379-dabd-4299-bb1a-cad53fa57189.sanitized.json",
+      "uuid": "05867379-dabd-4299-bb1a-cad53fa57189",
+      "version": "9.0.750",
+      "buildId": 3065,
+      "createdAt": "2026-08-31T13:16:50.949Z",
+      "homey": "13.4.1",
+      "via": "AthomAppsAPI.getCrashes",
+      "logId": null,
+      "userMessage": "Time out after 10000ms. Data device not updated",
+      "drivers": [
+        "curtain_motor"
+      ],
+      "mfrs": [],
+      "pids": [],
+      "couples": [],
+      "invalidDriver": null,
+      "errHead": ""
+    },
+    {
+      "file": ".github/state/portal-crash-harvest.json",
+      "uuid": "[REDACTED_UUID:[REDACTED_SECRET]",
+      "version": "9.0.750",
+      "buildId": 3065,
+      "createdAt": "2026-08-31T13:16:50.949Z",
+      "homey": "13.4.1",
+      "via": "portal-crash-harvest",
+      "logId": null,
+      "userMessage": "",
+      "drivers": [
+        "curtain_motor"
+      ],
+      "mfrs": [],
+      "pids": [],
+      "couples": [],
+      "invalidDriver": null,
+      "errHead": "",
+      "stackHead": "Note: this log has been manually submitted by a user. Log ID: [REDACTED_UUID:[REDACTED_SECRET] User Message: Time out after 10000ms. Data device not updated stdout: 2026-08-31T13:08:40.013Z [log] [ManagerDrivers] [Driver:curtain_motor] [Device:e3dadb7c-e6e5-48eb-9032-12a05a68"
+    },
+    {
+      "file": ".github/state/homey-app-diag/2b0b4e4f-971e-4e1f-8d32-09d255e232d0.sanitized.json",
+      "uuid": "2b0b4e4f-971e-4e1f-8d32-09d255e232d0",
+      "version": "9.0.743",
+      "buildId": 3059,
+      "createdAt": "2026-08-31T10:03:26.588Z",
+      "homey": "13.4.1",
+      "via": "AthomAppsAPI.getCrashes",
+      "logId": null,
+      "userMessage": "",
+      "drivers": [
+        "water_valve_smart",
+        "wifi_air_purifier",
+        "wifi_air_quality",
+        "wifi_dehumidifier",
+        "wifi_camera",
+        "wifi_cover",
+        "wifi_dimmer",
+        "wifi_doorbell",
+        "wifi_door_lock",
+        "wifi_ewelink_dimmer",
+        "wifi_ewelink_bulb",
+        "wifi_ewelink_led"
+      ],
+      "mfrs": [
+        "_TZ3000_zgyzgdua"
+      ],
+      "pids": [
+        "TS0044"
+      ],
+      "couples": [],
+      "invalidDriver": null,
+      "errHead": ""
+    },
+    {
+      "file": ".github/state/portal-crash-harvest.json",
+      "uuid": "[REDACTED_UUID:[REDACTED_SECRET]",
+      "version": "9.0.743",
+      "buildId": 3059,
+      "createdAt": "2026-08-31T10:03:26.588Z",
+      "homey": "13.4.1",
+      "via": "portal-crash-harvest",
+      "logId": null,
+      "userMessage": "",
+      "drivers": [
+        "water_valve_smart"
+      ],
+      "mfrs": [
+        "_TZ3000_zgyzgdua"
+      ],
+      "pids": [
+        "TS0044"
+      ],
+      "couples": [],
+      "invalidDriver": null,
+      "errHead": "",
+      "stackHead": "Note: this log has been manually submitted by a user. Log ID: [REDACTED_UUID:[REDACTED_SECRET] User Message: TS0044 + _TZ3000_zgyzgdua driver unknown ---- stdout ---- 2026-08-31T08:24:13.744Z [log] [ManagerDrivers] [Driver:water_valve_smart] [FLOW] WaterValveSmart flow cards "
+    },
+    {
+      "file": ".github/state/portal-crash-harvest.json",
+      "uuid": null,
+      "version": "9.0.743",
+      "buildId": 3059,
+      "createdAt": "2026-08-31T09:22:56.488Z",
+      "homey": "13.4.1",
+      "via": "portal-crash-harvest",
+      "logId": null,
+      "userMessage": "",
+      "drivers": [],
+      "mfrs": [],
+      "pids": [],
+      "couples": [],
+      "invalidDriver": "ZG9101SAC_HP",
+      "errHead": "Error: Invalid Driver ID: ZG9101SAC_HP at ManagerDrivers._getDriverManifest (/app/packages/homey-local/lib/AppProcess/node_modules/@athombv/homey-apps-sdk-v3/manager/",
+      "stackHead": "Error: Invalid Driver ID: ZG9101SAC_HP at ManagerDrivers._getDriverManifest (/app/packages/homey-local/lib/AppProcess/node_modules/@athombv/homey-apps-sdk-v3/manager/drivers.js:210:13) at ManagerDrivers.getDriver (/app/packages/homey-local/lib/AppProcess/node_modules/@athombv/hom"
+    },
+    {
+      "file": ".github/state/portal-crash-harvest.json",
+      "uuid": null,
+      "version": "9.0.730",
+      "buildId": 3046,
+      "createdAt": "2026-08-31T09:18:16.851Z",
+      "homey": "13.4.1",
+      "via": "portal-crash-harvest",
+      "logId": null,
+      "userMessage": "",
+      "drivers": [],
+      "mfrs": [],
+      "pids": [],
+      "couples": [],
+      "invalidDriver": "ZG9101SAC_HP",
+      "errHead": "Error: Invalid Driver ID: ZG9101SAC_HP at ManagerDrivers._getDriverManifest (/app/packages/homey-local/lib/AppProcess/node_modules/@athombv/homey-apps-sdk-v3/manager/",
+      "stackHead": "Error: Invalid Driver ID: ZG9101SAC_HP at ManagerDrivers._getDriverManifest (/app/packages/homey-local/lib/AppProcess/node_modules/@athombv/homey-apps-sdk-v3/manager/drivers.js:210:13) at ManagerDrivers.getDriver (/app/packages/homey-local/lib/AppProcess/node_modules/@athombv/hom"
+    },
+    {
+      "file": ".github/state/homey-app-diag/e3bf7ffc-61dd-4529-be19-9e23e6823b1e.sanitized.json",
+      "uuid": "e3bf7ffc-61dd-4529-be19-9e23e6823b1e",
+      "version": "9.0.743",
+      "buildId": 3059,
+      "createdAt": "2026-08-31T08:58:50.587Z",
+      "homey": "13.4.1",
+      "via": "AthomAppsAPI.getCrashes",
+      "logId": null,
+      "userMessage": "Smart Thermostat working",
+      "drivers": [
+        "wall_thermostat"
+      ],
+      "mfrs": [],
+      "pids": [],
+      "couples": [],
+      "invalidDriver": null,
+      "errHead": ""
+    },
+    {
+      "file": ".github/state/portal-crash-harvest.json",
+      "uuid": "[REDACTED_UUID:[REDACTED_SECRET]",
+      "version": "9.0.743",
+      "buildId": 3059,
+      "createdAt": "2026-08-31T08:58:50.587Z",
+      "homey": "13.4.1",
+      "via": "portal-crash-harvest",
+      "logId": null,
+      "userMessage": "",
+      "drivers": [
+        "wall_thermostat"
+      ],
+      "mfrs": [],
+      "pids": [],
+      "couples": [],
+      "invalidDriver": null,
+      "errHead": "",
+      "stackHead": "Note: this log has been manually submitted by a user. Log ID: [REDACTED_UUID:[REDACTED_SECRET] User Message: Smart Thermostat working stdout: 2026-08-31T08:51:59.215Z [log] [ManagerDrivers] [Driver:wall_thermostat] [Device:[REDACTED_UUID:[REDACTED_SECRET] [TUYA-DIRECT] \ud83d"
+    },
+    {
+      "file": ".github/state/homey-app-diag/724d4bc9-229b-46ba-bad7-fc61af93865d.sanitized.json",
+      "uuid": "724d4bc9-229b-46ba-bad7-fc61af93865d",
+      "version": "9.0.741",
+      "buildId": 3057,
+      "createdAt": "2026-08-31T07:11:37.688Z",
+      "homey": "13.4.1",
+      "via": "AthomAppsAPI.getCrashes",
+      "logId": null,
+      "userMessage": "Still Unknown Device",
+      "drivers": [
+        "wifi_sonoff_tx_3ch",
+        "wifi_switch",
+        "wifi_switch_2gang",
+        "wifi_switch_3gang",
+        "wifi_switch_4gang",
+        "wifi_thermostat",
+        "wifi_water_tank_monitor",
+        "wifi_water_valve",
+        "zigbee_repeater"
+      ],
+      "mfrs": [],
+      "pids": [],
+      "couples": [],
+      "invalidDriver": null,
+      "errHead": ""
+    },
+    {
+      "file": ".github/state/portal-crash-harvest.json",
+      "uuid": "[REDACTED_UUID:[REDACTED_SECRET]",
+      "version": "9.0.741",
+      "buildId": 3057,
+      "createdAt": "2026-08-31T07:11:37.688Z",
+      "homey": "13.4.1",
+      "via": "portal-crash-harvest",
+      "logId": null,
+      "userMessage": "",
+      "drivers": [],
+      "mfrs": [],
+      "pids": [],
+      "couples": [],
+      "invalidDriver": null,
+      "errHead": "",
+      "stackHead": "Note: this log has been manually submitted by a user. Log ID: [REDACTED_UUID:[REDACTED_SECRET] User Message: Still Unknown Device stdout: 2026-08-31T07:04:47.552Z [log] [ManagerFlow] [FlowCardAction][wifi_sonoff_tx_3ch_toggle_gang1] Warning: Run listener was already registere"
+    },
+    {
+      "file": ".github/state/homey-app-diag/a000e0a5-5287-4612-b1a9-f77ed8c0d5d9.sanitized.json",
+      "uuid": "a000e0a5-5287-4612-b1a9-f77ed8c0d5d9",
+      "version": "9.0.730",
+      "buildId": 3046,
+      "createdAt": "2026-08-31T06:53:15.293Z",
+      "homey": "13.4.1",
+      "via": "AthomAppsAPI.getCrashes",
+      "logId": null,
+      "userMessage": "Still detecting as Unknow Device.",
+      "drivers": [
+        "wifi_sonoff_tx_3ch",
+        "wifi_switch",
+        "wifi_switch_2gang",
+        "wifi_switch_3gang",
+        "wifi_switch_4gang",
+        "wifi_thermostat",
+        "wifi_water_tank_monitor",
+        "wifi_water_valve",
+        "zigbee_repeater"
+      ],
+      "mfrs": [],
+      "pids": [],
+      "couples": [],
+      "invalidDriver": null,
+      "errHead": ""
+    },
+    {
+      "file": ".github/state/portal-crash-harvest.json",
+      "uuid": "[REDACTED_UUID:[REDACTED_SECRET]",
+      "version": "9.0.730",
+      "buildId": 3046,
+      "createdAt": "2026-08-31T06:53:15.293Z",
+      "homey": "13.4.1",
+      "via": "portal-crash-harvest",
+      "logId": null,
+      "userMessage": "",
+      "drivers": [],
+      "mfrs": [],
+      "pids": [],
+      "couples": [],
+      "invalidDriver": null,
+      "errHead": "",
+      "stackHead": "Note: this log has been manually submitted by a user. Log ID: [REDACTED_UUID:[REDACTED_SECRET] User Message: Still detecting as Unknow Device. stdout: 2026-08-31T06:38:56.606Z [log] [ManagerFlow] [FlowCardAction][wifi_sonoff_tx_3ch_toggle_gang1] Warning: Run listener was alre"
+    },
+    {
+      "file": ".github/state/homey-app-diag/4217d5e3-c845-4f0b-a351-5e5a59295cbb.sanitized.json",
+      "uuid": "4217d5e3-c845-4f0b-a351-5e5a59295cbb",
+      "version": "9.0.719",
+      "buildId": 3035,
+      "createdAt": "2026-08-30T22:04:53.019Z",
+      "homey": "13.4.1",
+      "via": "AthomAppsAPI.getCrashes",
+      "logId": null,
+      "userMessage": "Estoy tratando de configurar el sensor de presencia zigbee 24G con referencia_TZE204_clrdrnya pero siempre lo reconoce como desconocido y no me deja usar sus funciones de presencia y luminosidad",
+      "drivers": [
+        "wifi_sonoff_tx_3ch",
+        "wifi_switch_2gang",
+        "wifi_switch_3gang",
+        "wifi_switch_4gang",
+        "wifi_thermostat",
+        "wifi_water_tank_monitor",
+        "wifi_water_valve",
+        "zigbee_repeater"
+      ],
+      "mfrs": [
+        "_TZE204_clrdrnya"
+      ],
+      "pids": [],
+      "couples": [],
+      "invalidDriver": null,
+      "errHead": ""
+    },
+    {
+      "file": ".github/state/homey-app-diag/e5d19878-d2fc-4bc6-ab0f-cf3d760c5c23.sanitized.json",
+      "uuid": "e5d19878-d2fc-4bc6-ab0f-cf3d760c5c23",
+      "version": "9.0.719",
+      "buildId": 3035,
+      "createdAt": "2026-08-30T18:47:34.015Z",
+      "homey": "13.4.1",
+      "via": "AthomAppsAPI.getCrashes",
+      "logId": null,
+      "userMessage": "Detected as Zigbee device.",
+      "drivers": [
+        "wifi_sonoff_thr316d",
+        "wifi_sonoff_tx_2ch",
+        "wifi_sonoff_tx_3ch",
+        "wifi_switch",
+        "wifi_switch_2gang",
+        "wifi_switch_3gang",
+        "wifi_switch_4gang",
+        "wifi_thermostat",
+        "wifi_water_valve",
+        "wifi_water_tank_monitor",
+        "zigbee_repeater"
+      ],
+      "mfrs": [],
+      "pids": [],
+      "couples": [],
+      "invalidDriver": null,
+      "errHead": ""
+    },
+    {
+      "file": ".github/state/homey-app-diag/b3bd114a-4861-43a0-8201-6a9f4bc547e8.sanitized.json",
+      "uuid": "b3bd114a-4861-43a0-8201-6a9f4bc547e8",
+      "version": "9.0.719",
+      "buildId": 3035,
+      "createdAt": "2026-08-30T11:45:58.275Z",
+      "homey": "13.4.1",
+      "via": "AthomAppsAPI.getCrashes",
+      "logId": null,
+      "userMessage": "Still detected as Zigbee Device.",
+      "drivers": [
+        "device_radiator_valve"
+      ],
+      "mfrs": [],
+      "pids": [
+        "TS0601"
+      ],
+      "couples": [],
+      "invalidDriver": null,
+      "errHead": ""
+    },
+    {
+      "file": ".github/state/homey-app-diag/c137a5d7-30b5-425d-8744-2bf304e6c63d.sanitized.json",
+      "uuid": "c137a5d7-30b5-425d-8744-2bf304e6c63d",
+      "version": "9.0.719",
+      "buildId": 3035,
+      "createdAt": "2026-08-30T11:45:58.275Z",
+      "homey": "13.4.1",
+      "via": "AthomAppsAPI.getCrashes",
+      "logId": null,
+      "userMessage": "Still detected as Zigbee Device.",
+      "drivers": [
+        "device_radiator_valve"
+      ],
+      "mfrs": [],
+      "pids": [
+        "TS0601"
+      ],
+      "couples": [],
+      "invalidDriver": null,
+      "errHead": ""
+    },
+    {
+      "file": ".github/state/homey-app-diag/7a6f2ca1-28dc-4ddb-9748-805a79aa39b6.sanitized.json",
+      "uuid": "7a6f2ca1-28dc-4ddb-9748-805a79aa39b6",
+      "version": "9.0.714",
+      "buildId": 3029,
+      "createdAt": "2026-08-30T09:46:45.373Z",
+      "homey": "13.4.1",
+      "via": "AthomAppsAPI.getCrashes",
+      "logId": null,
+      "userMessage": "Tuya Zigbee Cover detected as “zigbee device” https://github.com/dlnraja/com.tuya.zigbee/issues/533",
+      "drivers": [
+        "device_radiator_valve"
+      ],
+      "mfrs": [],
+      "pids": [],
+      "couples": [],
+      "invalidDriver": null,
+      "errHead": ""
+    },
+    {
+      "file": ".github/state/homey-app-diag/c40705a1-9b08-444b-868f-c5a14ca4d2b2.sanitized.json",
+      "uuid": "c40705a1-9b08-444b-868f-c5a14ca4d2b2",
+      "version": "9.0.714",
+      "buildId": 3029,
+      "createdAt": "2026-08-30T08:36:47.489Z",
+      "homey": "13.4.1",
+      "via": "AthomAppsAPI.getCrashes",
+      "logId": null,
+      "userMessage": "",
+      "drivers": [
+        "water_valve_garden",
+        "water_valve_smart",
+        "weather_station_outdoor",
+        "wifi_air_purifier",
+        "wifi_air_quality",
+        "wifi_camera",
+        "wifi_cover",
+        "wifi_dehumidifier",
+        "wifi_doorbell",
+        "wifi_door_lock",
+        "wifi_dimmer",
+        "wifi_ewelink_bulb"
+      ],
+      "mfrs": [
+        "_TZ3000_zgyzgdua"
+      ],
+      "pids": [],
+      "couples": [],
+      "invalidDriver": null,
+      "errHead": ""
+    },
+    {
+      "file": ".github/state/homey-app-diag/a095345e-08a4-4d5e-b3b1-adbc30ff12a2.sanitized.json",
+      "uuid": "a095345e-08a4-4d5e-b3b1-adbc30ff12a2",
+      "version": "9.0.699",
+      "buildId": 3022,
+      "createdAt": "2026-08-30T04:05:09.088Z",
+      "homey": "13.4.1",
+      "via": "AthomAppsAPI.getCrashes",
+      "logId": null,
+      "userMessage": "Only ON Mode working #532",
+      "drivers": [
+        "wall_thermostat"
+      ],
+      "mfrs": [],
+      "pids": [],
+      "couples": [],
+      "invalidDriver": null,
+      "errHead": ""
+    },
+    {
+      "file": ".github/state/homey-app-diag/60959c24-a0e6-4159-8cf1-12f9ba5df612.sanitized.json",
+      "uuid": "60959c24-a0e6-4159-8cf1-12f9ba5df612",
+      "version": "9.0.688",
+      "buildId": 3015,
+      "createdAt": "2026-08-29T16:12:11.526Z",
+      "homey": "13.4.1",
+      "via": "AthomAppsAPI.getCrashes",
+      "logId": null,
+      "userMessage": "_TZE284_m1cvyneb is now correctly recognized as wall dimmer, but bone of the controls in the app work.",
+      "drivers": [
+        "wall_dimmer_tuya",
+        "climate_sensor"
+      ],
+      "mfrs": [
+        "_TZE284_m1cvyneb"
+      ],
+      "pids": [],
+      "couples": [],
+      "invalidDriver": null,
+      "errHead": "Error: Could not reach device. Is it powered on?"
+    },
+    {
+      "file": ".github/state/homey-app-diag/8c49c683-294c-4965-ade1-e165c56a06e9.sanitized.json",
+      "uuid": "8c49c683-294c-4965-ade1-e165c56a06e9",
+      "version": "9.0.678",
+      "buildId": 3008,
+      "createdAt": "2026-08-29T04:18:31.411Z",
+      "homey": "13.4.1",
+      "via": "AthomAppsAPI.getCrashes",
+      "logId": null,
+      "userMessage": "App Crashing and AC not functioning",
+      "drivers": [
+        "wall_thermostat"
+      ],
+      "mfrs": [],
+      "pids": [],
+      "couples": [],
+      "invalidDriver": null,
+      "errHead": "RangeError: Maximum call stack size exceeded"
+    },
+    {
+      "file": ".github/state/homey-app-diag/8cc4aef0-a486-4cb1-badd-087ed84f43da.sanitized.json",
+      "uuid": "8cc4aef0-a486-4cb1-badd-087ed84f43da",
+      "version": "9.0.677",
+      "buildId": 3007,
+      "createdAt": "2026-08-29T03:36:32.689Z",
+      "homey": "13.4.1",
+      "via": "AthomAppsAPI.getCrashes",
+      "logId": null,
+      "userMessage": "[Device] Zigbee Smart AC Thermostat #532",
+      "drivers": [],
+      "mfrs": [],
+      "pids": [],
+      "couples": [],
+      "invalidDriver": null,
+      "errHead": ""
+    }
+  ]
+}

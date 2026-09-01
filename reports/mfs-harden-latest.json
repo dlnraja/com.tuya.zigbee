@@ -1,0 +1,49 @@
+{
+  "generatedAt": "2026-09-01T06:32:47.796Z",
+  "mode": "APPLY",
+  "phases": [
+    {
+      "name": "mfs-db-dedupe",
+      "ok": true,
+      "exit": 0,
+      "tail": "[mfs-db-dedupe] OK — aucun doublon de casse (4396 clés)\n"
+    },
+    {
+      "name": "sync-compose-to-mfs-db",
+      "ok": true,
+      "exit": 0,
+      "tail": "sync-compose-to-mfs-db: 8 change(s) (APPLY)\nbyAction: {\n  merge_wrong_prefix: 2,\n  known_correction: 3,\n  add_from_compose: 1,\n  fix_driverId: 1,\n  prune_modelIds: 1\n}\nWritten: C:\\Users\\Dell\\Documents\\homey\\master\\data\\mfs_db.json\n"
+    },
+    {
+      "name": "enrich-mfs-p2295",
+      "ok": false,
+      "exit": 1,
+      "tail": "mfs-p2295-multi-identity.js:596:1)\r\n    at Module._compile (node:internal/modules/cjs/loader:1871:14)\r\n    at Object..js (node:internal/modules/cjs/loader:2002:10)\r\n    at Module.load (node:internal/modules/cjs/loader:1594:32)\r\n    at Module._load (node:internal/modules/cjs/loader:1396:12)\r\n    at wrapModuleLoad (node:internal/modules/cjs/loader:255:19)\r\n    at Module.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:154:5) {\r\n  errno: -4094,\r\n  code: 'UNKNOWN',\r\n  syscall: 'open',\r\n  path: 'C:\\\\Users\\\\Dell\\\\Documents\\\\homey\\\\master\\\\data\\\\mfs_db.json'\r\n}\r\n\r\nNode.js v24.18.0\r\n"
+    },
+    {
+      "name": "align-mfs-db-intelligent",
+      "ok": false,
+      "exit": 1,
+      "tail": "._compile (node:internal/modules/cjs/loader:1871:14)\r\n    at Object..js (node:internal/modules/cjs/loader:2002:10)\r\n    at Module.load (node:internal/modules/cjs/loader:1594:32)\r\n    at Module._load (node:internal/modules/cjs/loader:1396:12)\r\n    at wrapModuleLoad (node:internal/modules/cjs/loader:255:19)\r\n    at Module.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:154:5)\r\n    at node:internal/main/run_main_module:33:47 {\r\n  errno: -4094,\r\n  code: 'UNKNOWN',\r\n  syscall: 'open',\r\n  path: 'C:\\\\Users\\\\Dell\\\\Documents\\\\homey\\\\master\\\\data\\\\mfs_db.json'\r\n}\r\n\r\nNode.js v24.18.0\r\n"
+    },
+    {
+      "name": "compose-mfsdb-class-guard",
+      "ok": true,
+      "exit": 0,
+      "tail": "0_iystcadi (TS0504): curé=led_controller_cct mais la PAIRE est claimée par led_controller_rgb\n    _TZ3000_iystcadi (TS0601_led): curé=led_controller_cct mais la PAIRE est claimée par led_controller_dimmable\n    _tz3000_dd8wwzcy (?): curé=plug_energy_monitor mais la PAIRE est claimée par climate_sensor, device_plug_energy\n  UNCLAIMED (driver curé ne claim pas le mfr): 5\n    _tze20x_xxxxxxxx: curé=air_purifier\n    _TZE200_J1XL73IW: curé=curtain_motor\n    _TZE200_r0jdjrvi: curé=curtain_motor_tilt\n    _tz3210_402vrq2i: curé=smart_knob\n    _tz3400_402vrq2i: curé=smart_knob\n[compose-mfsdb-guard] OK\n"
+    },
+    {
+      "name": "p2138-sacred-couple-gate",
+      "ok": true,
+      "exit": 0,
+      "tail": " button_wireless_4\n  ✅ compound _TZ3000_4upl1fcj+TS0041 → button_wireless_1\n  ✅ compound _TZ3000_qeuvnohg+TS011F → din_rail_switch\n  ✅ compound HOBEIAN+3315-S → water_leak_sensor\n  ✅ wall_dimmer_tuya compose lists m1cvyneb\n  ✅ wall_dimmer_tuya productId includes TS0601\n  ✅ TuyaBrightnessScale 0.5 ↔ 500\n  ✅ TuyaBrightnessScale clamps to 0–1000\n  ✅ anti-bot mentions m1cvyneb\n  ✅ anti-bot mentions climate_sensor\n  ✅ anti-bot mentions soil_sensor\n  ✅ anti-bot mentions zigbee_universal\n  ✅ anti-bot mentions wall_dimmer\n  ✅ mfs_db has no m1cvyneb|TS0201 invent\n\nPASS: P2138 sacred-couple matrix gate\n"
+    },
+    {
+      "name": "p2368-mfs-test",
+      "ok": true,
+      "exit": 0,
+      "tail": "▶ P2368 mfs_db hardening\n  ✔ mfs_db loads and has _meta (344.1847ms)\n  ✔ known corrections are reflected in mfs_db (1999.2248ms)\n  ✔ 402vrq2i routes to smart_knob not switch_4_gang_metering (287.9504ms)\n  ✔ HLX9TNZB TZE284 routes to dimmer_1_gang_tuya (260.6563ms)\n  ✔ no case-duplicate mfr keys (241.9092ms)\n  ✔ UdpDiscoveryKeys SSOT exists (wifi unrelated sanity) (0.8566ms)\n✔ P2368 mfs_db hardening (3137.9384ms)\nℹ tests 6\nℹ suites 1\nℹ pass 6\nℹ fail 0\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 4019.7673\n"
+    }
+  ],
+  "pass": false
+}

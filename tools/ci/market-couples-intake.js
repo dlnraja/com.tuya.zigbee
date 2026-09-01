@@ -22,7 +22,7 @@
 const fs = require('fs');
 const path = require('path');
 const { spawnSync } = require('child_process');
-const { resolveMarketDriver } = require('./market-driver-infer');
+const { resolveMarketDriver, resolveMultiCatalogSafe } = require('./market-driver-infer');
 
 const ROOT = path.resolve(__dirname, '..', '..');
 const STATE_DIR = path.join(ROOT, '.github', 'state', 'market-couples');
@@ -70,6 +70,21 @@ function loadSsot() {
 function enrichCouple(c) {
   const resolved = resolveMarketDriver(c.mfr, c.pid);
   const src = c.sources || [];
+  let routeHint = resolved.driver;
+  let tier = resolved.tier;
+  let applySafe = !!resolved.applySafe && !!resolved.driver;
+  let reason = resolved.reason;
+
+  if (!applySafe) {
+    const multi = resolveMultiCatalogSafe(c.mfr, c.pid, src);
+    if (multi?.applySafe && multi.driver) {
+      routeHint = multi.driver;
+      tier = multi.tier;
+      applySafe = true;
+      reason = multi.reason;
+    }
+  }
+
   const catalogHit = src.some((s) => ['blakadder', 'z2m', 'zha', 'deconz'].includes(s));
   const blakadderHit = src.includes('blakadder');
   const z2mHit = src.includes('z2m');
@@ -77,12 +92,12 @@ function enrichCouple(c) {
   const agreement = src.length;
   return {
     ...c,
-    routeHint: resolved.driver,
-    tier: resolved.tier,
-    applySafe: !!resolved.applySafe && !!resolved.driver,
-    reason: resolved.reason,
+    routeHint,
+    tier,
+    applySafe,
+    reason,
     z2mDesc: resolved.z2m?.description || null,
-    needsReview: !resolved.applySafe,
+    needsReview: !applySafe,
     catalogHit,
     blakadderHit,
     z2mHit,

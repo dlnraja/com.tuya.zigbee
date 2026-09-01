@@ -33,6 +33,7 @@ function main() {
     run('flow-coherence', 'node', ['tools/ci/flow-coherence-audit.js']),
     run('voice-safety', 'node', ['scripts/validation/check-google-assistant-voice-safety.js']),
     run('dp-cluster-flow-coverage', 'node', ['tools/ci/coverage-dp-cluster-flow.js', '--strict']),
+    run('button-flow-harvest', 'node', ['tools/ci/button-flow-harvest.js']),
   ];
 
   const fail = steps.filter((s) => !s.ok);

@@ -1,0 +1,89 @@
+{
+  "generatedAt": "2026-09-01T06:16:44.260Z",
+  "mode": "apply",
+  "phases": [
+    {
+      "name": "cross-ref-all-sources",
+      "label": "cross-ref",
+      "ok": true,
+      "exitCode": 0,
+      "durationMs": 2419,
+      "tail": "S0601 (driverHint: generic_diy)\n  _TZ3000_303avxxt + TS0601 (driverHint: switch_1gang)\n  _TZ3000_3zofvcaa + TS0601 (driverHint: device_plug_energy)\n  _TZ3000_402vrq2i + TS0601 (driverHint: switch_4_gang_metering)\n\nMarket-new (external sources, not in driver.compose): 98\n  _TYST11_wmcdj3aq + TS0601 (canonical,blakadder)\n  _TYZB01_4lwqwyqn + TS0013 (johan-issue,mfs_db)\n  _TZ1800_akzvkzqq + TS0211 (mfs_db,z2m)\n  _TZ1800_ladpngdx + TS0211 (mfs_db,z2m)\n  _TZ3000_5af5r192 + TS0049 (mfs_db,z2m)\n  _TZ3000_6dwfra5l + SMD9300 (mfs_db,z2m)\n  _TZ3000_85czd6fy + TS0207 (mfs_db,blakadder)\n  _TZ3000_aaifmpuq + TS0002 (z2m)\n  _TZ3000_an5rjiwd + TS0041 (gmail)\n  _TZ3000_bumeauzp + SMD9300 (mfs_db,z2m)\n  _TZ3000_c8bqthpo + TS0207 (mfs_db,z2m)\n  _TZ3000_fa9mlvja + TS0041 (mfs_db,blakadder,z2m)\n  _TZ3000_hgm6k8ku + TS0207 (mfs_db,z2m)\n  _TZ3000_huvxrx4i + TS0002 (z2m)\n  _TZ3000_irrmjcgi + TS0002 (z2m)\n  _TZ3000_iwtv2jwo + TS0002 (z2m)\n  _TZ3000_j6adk9id + TS0222 (z2m)\n  _TZ3000_ja5osu5g + ZG-101ZE (johan-issue)\n  _TZ3000_ja5osu5g + ZG-103ZL (interview)\n  _TZ3000_jcqs2mrv + SM0001 (mfs_db,z2m)\n\nSaved summary to .github/state/mfr-pid-cross-ref.json\nSaved all pairs to .github/state/all-mfr-pid-pairs.json"
+    },
+    {
+      "name": "market-couples-intake",
+      "label": "market-intake",
+      "ok": true,
+      "exitCode": 0,
+      "durationMs": 10458,
+      "tail": "rue\n    }\n  ],\n  \"crawlResults\": [],\n  \"crossRef\": {\n    \"ok\": true,\n    \"tail\": \" + TS0002 (z2m)\\n  _TZ3000_an5rjiwd + TS0041 (gmail)\\n  _TZ3000_bumeauzp + SMD9300 (mfs_db,z2m)\\n  _TZ3000_c8bqthpo + TS0207 (mfs_db,z2m)\\n  _TZ3000_fa9mlvja + TS0041 (mfs_db,blakadder,z2m)\\n  _TZ3000_hgm6k8ku + TS0207 (mfs_db,z2m)\\n  _TZ3000_huvxrx4i + TS0002 (z2m)\\n  _TZ3000_irrmjcgi + TS0002 (z2m)\\n  _TZ3000_iwtv2jwo + TS0002 (z2m)\\n  _TZ3000_j6adk9id + TS0222 (z2m)\\n  _TZ3000_ja5osu5g + ZG-101ZE (johan-issue)\\n  _TZ3000_ja5osu5g + ZG-103ZL (interview)\\n  _TZ3000_jcqs2mrv + SM0001 (mfs_db,z2m)\\n\\nSaved summary to .github/state/mfr-pid-cross-ref.json\\nSaved all pairs to .github/state/all-mfr-pid-pairs.json\"\n  },\n  \"apply\": {\n    \"ok\": true,\n    \"tail\": \"=== apply-market-couples ===\\nMode: APPLY\\nWould/did apply: 4\\nSkipped: 94\\n  _TZ3000_fa9mlvja+TS0041 → button_wireless_1 [multi_catalog_pid] WROTE\\n  _TZ3000_sj7jbgks+TS0043 → button_wireless_3 [multi_catalog_pid] WROTE\\n  _TZ3210_ttkgurpb+TS0504B → bulb_rgbw [multi_catalog_pid] WROTE\\n  _TZ3000_iwtv2jwo+TS0002 → switch_2gang [z2m_desc] WROTE\\nReport: C:\\\\Users\\\\Dell\\\\Documents\\\\homey\\\\master\\\\.github\\\\state\\\\market-couples\\\\apply-report.json\"\n  }\n}"
+    },
+    {
+      "name": "curtain-couples",
+      "label": "curtain",
+      "ok": true,
+      "exitCode": 0,
+      "durationMs": 962,
+      "tail": "ive-z2m-crawl]\n  + _TZE200_jfw0a4aa (EPJ-ZB) [live-z2m-crawl]\n  + _TZE200_npj9bug3 (M515EGBZTN) [live-z2m-crawl]\n  + _TZE200_shkxsgis (ZM25TQ) [live-z2m-crawl]\n  + _TZE200_sq6affpe (cover) [live-z2m-crawl]\n  + _TZE200_wrmhp6b3 (M515EGBZTN) [live-z2m-crawl]\n  + _TZE200_wzk0x7fq (EPJ-ZB) [live-z2m-crawl]\n  + _TZE200_yenbr4om (cover) [live-z2m-crawl]\n  + _TZE204_gm8h14wy (ZG-301Z-MOTO) [live-z2m-crawl]\n  + _TZE204_shkxsgis (ZM25TQ) [live-z2m-crawl]\n  + _TZE204_x9usygq1 (GM25TEQ-TYZ-2/25) [live-z2m-crawl]\n  + _TZE204_ycke4deo (TS0601_cover_10) [z2m_herdsman]\n  + _TZE204_zxkwaztm (ADCBZI01) [live-z2m-crawl]\n  + _TZE284_3mzb0sdz (cover) [live-z2m-crawl]\n  + _TZE284_6hrnp30w (ZM16B) [live-z2m-crawl]\n  + _TZE284_8whfphjv (ZC-LP01) [live-z2m-crawl]\n  + _TZE284_ajuasrmx (PIMS3028) [live-z2m-crawl]\n  + _TZE284_ozf4e02o (PIMS3028) [live-z2m-crawl]\n  + _TZE284_r3szw0xr (TS0601_cover_11) [z2m_herdsman]\n  + _TZE284_rlytpmij (FWJZCEH18A001) [live-z2m-crawl]\n[apply-curtain-couples] strip curtain_motor: 4 rows (tilt/module/shutter/forbidden)\n  → curtain_module_2_gang: _TZ3000_j1xl73iw\n  → curtain_module_2_gang: _TZ3000_l6iqph4f\n[apply-curtain-couples] APPLIED +27 mfrs, -4 stripped, curtain total=572"
+    },
+    {
+      "name": "button-flow-harvest",
+      "label": "button-harvest",
+      "ok": true,
+      "exitCode": 0,
+      "durationMs": 11625,
+      "tail": "LevelButtonTriggersMissing\": [],\n  \"topByTriggers\": [\n    {\n      \"driverId\": \"button_wireless_8\",\n      \"triggers\": 45\n    },\n    {\n      \"driverId\": \"scene_switch_4\",\n      \"triggers\": 45\n    },\n    {\n      \"driverId\": \"scene_switch_6ch\",\n      \"triggers\": 40\n    },\n    {\n      \"driverId\": \"button_wireless_6\",\n      \"triggers\": 35\n    },\n    {\n      \"driverId\": \"scene_switch_6\",\n      \"triggers\": 34\n    },\n    {\n      \"driverId\": \"wall_remote_6_gang\",\n      \"triggers\": 30\n    },\n    {\n      \"driverId\": \"button_wireless_smart\",\n      \"triggers\": 29\n    },\n    {\n      \"driverId\": \"button_wireless_4\",\n      \"triggers\": 28\n    },\n    {\n      \"driverId\": \"button_wireless_4_ts0041\",\n      \"triggers\": 25\n    },\n    {\n      \"driverId\": \"remote_button_wireless_handheld\",\n      \"triggers\": 25\n    },\n    {\n      \"driverId\": \"button_wireless_3\",\n      \"triggers\": 21\n    },\n    {\n      \"driverId\": \"handheld_remote_4_buttons\",\n      \"triggers\": 20\n    },\n    {\n      \"driverId\": \"remote_button_emergency_sos\",\n      \"triggers\": 20\n    },\n    {\n      \"driverId\": \"remote_button_wireless\",\n      \"triggers\": 20\n    },\n    {\n      \"driverId\": \"smart_remote_4_buttons\",\n      \"triggers\": 20\n    }\n  ]\n}"
+    },
+    {
+      "name": "multi-source-enrich",
+      "label": "multi-source",
+      "ok": true,
+      "exitCode": 0,
+      "durationMs": 88138,
+      "tail": "multi-source] ▶ 5-sacred-lot3\n[multi-source] ✓ 5-sacred-lot3 (14.6s)\n[multi-source] ▶ 6-blakadder-new\n[multi-source] ✓ 6-blakadder-new (0.1s)\n[multi-source] ▶ 6b-market-couples-intake\n[multi-source] ✓ 6b-market-couples-intake (5.2s)\n[multi-source] ▶ 6c-market-couples-apply\n[multi-source] ✓ 6c-market-couples-apply (1.1s)\n[multi-source] ▶ 7-infer-enrich-dry\n[multi-source] ✓ 7-infer-enrich-dry (10.8s)\n[multi-source] ▶ 8-sacred-couple-dry-gate\n[multi-source] ✓ 8-sacred-couple-dry-gate (18.5s)\n[multi-source] ▶ 9-collision-resolve-dry\n[multi-source] ✓ 9-collision-resolve-dry (3.5s)\n[multi-source] ▶ 10-case-variants\n[multi-source] ✓ 10-case-variants (1.2s)\n[multi-source] ▶ 10b-cross-project-reimpl-gate\n[multi-source] ✓ 10b-cross-project-reimpl-gate (0.2s)\n[multi-source] ▶ 10c-dual-claim-compose-gate\n[multi-source] ✓ 10c-dual-claim-compose-gate (0.7s)\n[multi-source] ▶ 10d-align-mfs-db-intelligent-check\n[multi-source] ✓ 10d-align-mfs-db-intelligent-check (6.2s)\n[multi-source] ▶ 11-coverage-snapshot\n[multi-source] ✓ 11-coverage-snapshot (0.2s)\n[multi-source] Report → C:\\Users\\Dell\\Documents\\homey\\master\\.github\\state\\multi-source\\enrich-report.json\n[multi-source] Mode=apply phases=18 ok=true"
+    },
+    {
+      "name": "case-variants",
+      "label": "case-variants",
+      "ok": true,
+      "exitCode": 0,
+      "durationMs": 344,
+      "tail": "═══════════════════════════════════════════════\n  Ensure Homey case variants (P99)\n  root: C:\\Users\\Dell\\Documents\\homey\\master\n  mode: APPLY\n═══════════════════════════════════════════════\nDrivers needing variants: 0\nVariants to add: 0\n═══════════════════════════════════════════════"
+    },
+    {
+      "name": "sacred-couple-gate",
+      "label": "p2138-gate",
+      "ok": true,
+      "exitCode": 0,
+      "durationMs": 328,
+      "tail": "0207.driver === null (water vs repeater vs rain)\n  ✅ PRODUCT_ID_DEFAULTS.TS011F.driver === null (plug vs DIN vs strip)\n  ✅ compound _TZ3000_k4ej3ww2+TS0207 → water_leak_sensor\n  ✅ compound _TZ3000_5k5vh43t+TS0207 → zigbee_repeater\n  ✅ compound _TZ3000_okaz9tjs+TS011F → plug_energy_monitor\n  ✅ compound _TZE284_nt4pquef+TS0601 → soil_sensor\n  ✅ compound _TZE284_6ocnqlhn+TS0601 → din_rail_meter\n  ✅ compound _TZ3000_mrpevh8p+TS0041 → button_wireless_1\n  ✅ compound _TZ3000_zgyzgdua+TS0044 → scene_switch_4\n  ✅ compound _TZ3000_kfu8zapd+TS0044 → button_wireless_4\n  ✅ compound _TZ3000_xabckq1v+TS004F → button_wireless_4\n  ✅ compound _TZ3000_4upl1fcj+TS0041 → button_wireless_1\n  ✅ compound _TZ3000_qeuvnohg+TS011F → din_rail_switch\n  ✅ compound HOBEIAN+3315-S → water_leak_sensor\n  ✅ wall_dimmer_tuya compose lists m1cvyneb\n  ✅ wall_dimmer_tuya productId includes TS0601\n  ✅ TuyaBrightnessScale 0.5 ↔ 500\n  ✅ TuyaBrightnessScale clamps to 0–1000\n  ✅ anti-bot mentions m1cvyneb\n  ✅ anti-bot mentions climate_sensor\n  ✅ anti-bot mentions soil_sensor\n  ✅ anti-bot mentions zigbee_universal\n  ✅ anti-bot mentions wall_dimmer\n  ✅ mfs_db has no m1cvyneb|TS0201 invent\n\nPASS: P2138 sacred-couple matrix gate"
+    },
+    {
+      "name": "align-mfs-check",
+      "label": "align-mfs",
+      "ok": false,
+      "exitCode": 1,
+      "durationMs": 5011,
+      "tail": "_sensor_zigbee\",\"modelIds\":[\"TS0601\",\"ZG-102Z\",\"ZG-102ZL\"]}\n  [high] registry_force _TZE204_pay2byax {\"driverId\":\"contact_sensor_zigbee\",\"modelIds\":[\"TS0601\"]}→{\"driverId\":\"contact_sensor_zigbee\",\"modelIds\":[\"TS0601\",\"ZG-102Z\",\"ZG-102ZL\"]}\n  [medium] compose_exclusive _TYST11_wmcdj3aq switch_1gang→curtain_motor\nskipped (ambiguous/report-only): 39\n  registry_enrich_only p2317-cvis4qmw-ts0006-6gang  \n  registry_enrich_only p2317-g9chy2ib-ts0003-3gang  \n  registry_enrich_only p2317-etufnltx-ts1002-foria  \n  registry_enrich_only p2347-gabriel-zemismart-cartesian-doc-only  \n  registry_bare_brand_multi_canon hobeian  \n  registry_bare_brand_multi_canon hobeian  \n  registry_bare_brand_multi_canon hobeian  \n  registry_bare_brand_multi_canon hobeian  \n  registry_bare_brand_multi_canon hobeian  \n  registry_bare_brand_multi_canon hobeian  \n  unclaimed_no_compose _tze20x_xxxxxxxx air_purifier \n  unclaimed_no_compose _TZ3210_JLF1NEPW bulb_rgb \n  unclaimed_no_compose _TZ3210_RWMITWJ4 bulb_rgb \n  pair_conflict_ambiguous _TZ3000_dpo1ysak button_wireless_2 plug,smartplug\n  unclaimed_multi _TZ3000_dpo1ysak button_wireless_2 plug,smartplug\nCHECK FAIL: 4 high-severity mfs_db drift(s) — run with --apply"
+    }
+  ],
+  "ok": true,
+  "market": {
+    "marketNew": 93,
+    "applySafe": 0,
+    "needsReview": 93,
+    "blakadderNew": 38
+  },
+  "curtain": {
+    "stripped": 4,
+    "total": 572
+  },
+  "buttons": {
+    "drivers": 54,
+    "triggers": 812
+  },
+  "fleet": {
+    "driverCount": 431,
+    "manufacturerNameEntries": 16268
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "generatedAt": "2026-09-01T06:14:42.955Z",
+  "phases": [
+    {
+      "label": "wifi-local-first-gate",
+      "ok": true,
+      "status": 0,
+      "tail": "═══════════════════════════════════════════════\n  WiFi local-first gate (P194)\n═══════════════════════════════════════════════\n  ~ wifi_camera: device.js does not extend TuyaLocalDevice\n  ✅ 29 Tuya wifi_* drivers expose local-first settings\n"
+    },
+    {
+      "label": "wifi-local-first-resolver",
+      "ok": true,
+      "status": 0,
+      "tail": " a cloud status snapshot when fallback opted in and credentials present (0.371ms)\n  ✔ skips cloud status snapshot when cloud is rate-limited (0.2488ms)\n✔ LocalFirstResolver - resolveLanFailureAction (31.2758ms)\n▶ LocalWiFiTuyaBridge - local-first sessions\n  ✔ registers a LAN session when local credentials are present and logs the decision (21.7741ms)\n  ✔ registers NO session without local_key and explains why (0.5209ms)\n  ✔ rejects commands for devices without a local session (3.2483ms)\n  ✔ forwards dp-update events as data events (unless destroyed) (2.8412ms)\n  ✔ refreshes session IP when UDP discovery reports a new address (11.9955ms)\n✔ LocalWiFiTuyaBridge - local-first sessions (49.1035ms)\nℹ tests 17\nℹ suites 3\nℹ pass 17\nℹ fail 0\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 942.362\n"
+    },
+    {
+      "label": "p2367-wifi-local-harden",
+      "ok": true,
+      "status": 0,
+      "tail": "▶ P2367 WiFi local hardening\n  ✔ UdpDiscoveryKeys has 3 ECB fallbacks (TinyTuya/tuyapi parity) (2.4953ms)\n  ✔ decryptUdpEcb round-trips with raw key (1.9362ms)\n  ✔ buildActiveProbePayload matches TinyTuya scan format (0.5554ms)\n  ✔ WiFiDPRegistry enriches category-based DPs without overwriting explicit mappings (1.0076ms)\n  ✔ QuirkRegistry matches WiFi product_id settings (1.6982ms)\n  ✔ TuyaUDPDiscovery exports active probe interval option (5.8449ms)\n  ✔ CATEGORY_DP_HINTS covers common Tuya categories (0.3736ms)\n✔ P2367 WiFi local hardening (18.0474ms)\nℹ tests 7\nℹ suites 1\nℹ pass 7\nℹ fail 0\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 311.5387\n"
+    }
+  ],
+  "pass": true
+}

@@ -1,6 +1,13 @@
 {
   "add_to_curtain_motor": [],
-  "add_to_other_driver": [],
+  "add_to_other_driver": [
+    {
+      "mfr": "_TZE200_r0jdjrvi",
+      "pid": "TS0601",
+      "driver": "curtain_motor_tilt",
+      "source": "z2m_herdsman:TS0601_cover_1"
+    }
+  ],
   "forbidden_do_not_add": [
     {
       "mfr": "_TZ3000_1dd0d5yi",
@@ -468,11 +475,6 @@
       "reason": "p2295-zemismart-cover-siblings: canonical curtain_motor, never climate_sensor"
     },
     {
-      "mfr": "_TZE200_r0jdjrvi",
-      "pid": "TS0601",
-      "reason": "curtain-r0jdjrvi-tilt: _TZE200_r0jdjrvi is tilt motor — remove from curtain_motor, keep curtain_motor_tilt only"
-    },
-    {
       "mfr": "_tze200_sfqyhvpv",
       "pid": "TS0601",
       "reason": "p2295-zemismart-cover-siblings: canonical curtain_motor, never device_radiator_valve"
@@ -870,7 +872,7 @@
   ],
   "still_missing_count": {
     "curtain_motor": 0,
-    "curtain_motor_tilt": 0,
+    "curtain_motor_tilt": 1,
     "curtain_motor_shutter": 0,
     "wall_curtain_switch": 0,
     "curtain_module": 0,
@@ -878,7 +880,7 @@
   },
   "meta": {
     "verified_couples_total": 147,
-    "already_in_target_drivers": 146,
+    "already_in_target_drivers": 145,
     "z2m_cover_mfrs_in_report": 129,
     "sources_scanned": [
       "data/z2m_herdsman_cache.json",
@@ -892,6 +894,6 @@
       "scripts/data/zha-full-data.json"
     ],
     "github_state_note": "No blakadder/zha cover cache under .github/state/ (only diagnostics-report.json)",
-    "generatedAt": "2026-09-01T04:02:46.980Z"
+    "generatedAt": "2026-09-01T04:19:20.797Z"
   }
 }

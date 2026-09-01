@@ -1,9 +1,9 @@
 {
   "_meta": {
     "version": "1.0.0",
-    "updated": "2026-08-31",
+    "updated": "2026-09-01",
     "policy": "Never invent mfr+pid from tile names. Diag UUID + driver + forum text only.",
-    "lastSync": "2026-08-23T06:07:56.138Z",
+    "lastSync": "2026-09-01T06:17:25.155Z",
     "lastInvestigation": "2026-08-31T07:10:18.269Z",
     "p2347": "Gabriel verified-only + A_Tas/Cam/Peter batch"
   },
@@ -16,7 +16,10 @@
         2167,
         2183,
         2184,
-        2190
+        2190,
+        2193,
+        2202,
+        2203
       ],
       "diags": [
         {
@@ -148,7 +151,8 @@
       "forumTopic": 140352,
       "posts": [
         2189,
-        2207
+        2207,
+        2213
       ],
       "diags": [
         "c40705a1-9b08-444b-868f-c5a14ca4d2b2"
@@ -169,13 +173,27 @@
             "PhysicalButtonMixin 0xFD skip 0x8004"
           ],
           "userAction": "Update Test ≥9.0.738 + remove + re-pair Scene Switch 4-Gang"
+        },
+        {
+          "tile": "Forum T140352 #2213",
+          "driver": "scene_switch_4",
+          "couple": "_TZ3000_ZGYZGDUA+TS0044",
+          "symptoms": [
+            "unknown"
+          ],
+          "fixes": [],
+          "userAction": "Update Universal Tuya Test to latest soak build; re-pair only if driver/EP changed",
+          "_autoStub": true
         }
       ],
       "dualApp": "BOTH"
     },
     "VicHY": {
       "forumTopic": 140352,
-      "posts": [],
+      "posts": [
+        2208,
+        2211
+      ],
       "diags": [
         "4217d5e3-c845-4f0b-a351-5e5a59295cbb"
       ],
@@ -198,6 +216,7 @@
     "A_Tas": {
       "forumTopic": 140352,
       "posts": [
+        1,
         2199
       ],
       "diags": [],
@@ -229,6 +248,9 @@
     "Gabriel_Pedrosa_Mach": {
       "forumTopic": 140352,
       "posts": [
+        1,
+        2,
+        10,
         2168,
         2172,
         2173,
@@ -492,6 +514,17 @@
           ],
           "userAction": "Update Test; re-pair only if wrong driver class",
           "verified": true
+        },
+        {
+          "tile": "Forum T158757 #2",
+          "driver": "motion_sensor_radar_mmwave",
+          "couple": "_TZ3218_T9YNFZ4X+TS0225",
+          "symptoms": [
+            "flow"
+          ],
+          "fixes": [],
+          "userAction": "Update Universal Tuya Test to latest soak build; re-pair only if driver/EP changed",
+          "_autoStub": true
         }
       ],
       "forbiddenInvent": [
@@ -530,6 +563,7 @@
       "posts": [
         8,
         9,
+        10,
         12,
         14,
         15,
@@ -550,6 +584,7 @@
         2191,
         2197,
         2202,
+        5451,
         5476
       ],
       "diags": [],
@@ -655,12 +690,14 @@
         37,
         48,
         52,
+        57,
         271,
         273,
         278,
         280,
         281,
-        286
+        286,
+        299
       ],
       "diags": [],
       "devices": [
@@ -671,6 +708,15 @@
           "symptoms": [],
           "fixes": [],
           "userAction": "Verify compose fingerprint; update Test",
+          "_autoStub": true
+        },
+        {
+          "tile": "Forum T99614 #286",
+          "driver": "switch_1gang",
+          "couple": "_TZ3000_V5498KDM+TS0001",
+          "symptoms": [],
+          "fixes": [],
+          "userAction": "Update Universal Tuya Test to latest soak build; re-pair only if driver/EP changed",
           "_autoStub": true
         }
       ],
@@ -698,7 +744,9 @@
         14,
         477,
         485,
-        490
+        490,
+        497,
+        1119
       ],
       "diags": [],
       "devices": [],
@@ -769,7 +817,19 @@
         30
       ],
       "diags": [],
-      "devices": [],
+      "devices": [
+        {
+          "tile": "Forum T154092 #30",
+          "driver": "curtain_motor",
+          "couple": "_TZE200_CF1SL3TJ+TS0601",
+          "symptoms": [
+            "curtain"
+          ],
+          "fixes": [],
+          "userAction": "Update Universal Tuya Test to latest soak build; re-pair only if driver/EP changed",
+          "_autoStub": true
+        }
+      ],
       "_autoStub": true,
       "dualApp": "REVIEW"
     },
@@ -779,7 +839,19 @@
         29
       ],
       "diags": [],
-      "devices": [],
+      "devices": [
+        {
+          "tile": "Forum T154092 #29",
+          "driver": "curtain_motor",
+          "couple": "_TZE200_68NVBIO9+TS0601",
+          "symptoms": [
+            "curtain"
+          ],
+          "fixes": [],
+          "userAction": "Update Universal Tuya Test to latest soak build; re-pair only if driver/EP changed",
+          "_autoStub": true
+        }
+      ],
       "_autoStub": true,
       "dualApp": "REVIEW"
     },
@@ -1202,6 +1274,8 @@
     "kaylan": {
       "forumTopic": 140352,
       "posts": [
+        451,
+        455,
         459
       ],
       "diags": [],
@@ -1212,7 +1286,8 @@
     "Roger_Gorissen": {
       "forumTopic": 140352,
       "posts": [
-        457
+        457,
+        5443
       ],
       "diags": [],
       "devices": [],
@@ -1232,8 +1307,12 @@
     "Peter_Kawa": {
       "forumTopic": 146667,
       "posts": [
+        15,
         23,
-        25
+        25,
+        2162,
+        2769,
+        2776
       ],
       "diags": [],
       "devices": [],
@@ -1245,7 +1324,8 @@
     "Cam": {
       "forumTopic": 146735,
       "posts": [
-        8
+        8,
+        2209
       ],
       "diags": [
         {
@@ -1316,12 +1396,16 @@
       "forumTopic": 140352,
       "posts": [
         1,
+        12,
+        14,
+        15,
         2165,
         2166,
         2170,
         2171,
         2174,
-        2176
+        2176,
+        2210
       ],
       "diags": [],
       "devices": [
@@ -1353,6 +1437,8 @@
       "forumTopic": 140352,
       "posts": [
         1156,
+        5445,
+        5448,
         5473
       ],
       "diags": [],
@@ -1396,7 +1482,19 @@
         285
       ],
       "diags": [],
-      "devices": [],
+      "devices": [
+        {
+          "tile": "Forum T99614 #285",
+          "driver": "switch_1gang",
+          "couple": "_TZ3000_V5498KDM+TS0001",
+          "symptoms": [
+            "unknown"
+          ],
+          "fixes": [],
+          "userAction": "Update Universal Tuya Test to latest soak build; re-pair only if driver/EP changed",
+          "_autoStub": true
+        }
+      ],
       "_autoStub": true,
       "dualApp": "BOTH"
     },
@@ -1511,6 +1609,18 @@
             "processor ROUTED_OK"
           ],
           "userAction": "Update Test; re-pair as soil_sensor if wrong class"
+        },
+        {
+          "tile": "Forum T89271 #668",
+          "driver": "soil_sensor",
+          "couple": "_TZE200_MYD45WEU+TS0601",
+          "symptoms": [
+            "soil",
+            "battery"
+          ],
+          "fixes": [],
+          "userAction": "Update Test + re-pair if still wrong driver",
+          "_autoStub": true
         }
       ],
       "_autoStub": true,
@@ -1526,7 +1636,17 @@
         5481
       ],
       "diags": [],
-      "devices": [],
+      "devices": [
+        {
+          "tile": "Forum T89271 #667",
+          "driver": "bulb_rgb",
+          "couple": "_TZ3210_3LBTUXGP+TS0505B",
+          "symptoms": [],
+          "fixes": [],
+          "userAction": "Update Universal Tuya Test to latest soak build; re-pair only if driver/EP changed",
+          "_autoStub": true
+        }
+      ],
       "_autoStub": true,
       "dualApp": "REVIEW"
     },
@@ -1627,7 +1747,17 @@
         661
       ],
       "diags": [],
-      "devices": [],
+      "devices": [
+        {
+          "tile": "Forum T89271 #661",
+          "driver": "dimmer_1_gang_tuya",
+          "couple": "_TZE204_HLX9TNZB+TS0601",
+          "symptoms": [],
+          "fixes": [],
+          "userAction": "Update Universal Tuya Test to latest soak build; re-pair only if driver/EP changed",
+          "_autoStub": true
+        }
+      ],
       "_autoStub": true,
       "dualApp": "REVIEW"
     },
@@ -1900,6 +2030,15 @@
           "fixes": [],
           "userAction": "Verify compose fingerprint; update Test",
           "_autoStub": true
+        },
+        {
+          "tile": "Forum T89271 #651",
+          "driver": "water_leak_sensor",
+          "couple": "_TZ3000_UPGCBODY+TS0207",
+          "symptoms": [],
+          "fixes": [],
+          "userAction": "Update Universal Tuya Test to latest soak build; re-pair only if driver/EP changed",
+          "_autoStub": true
         }
       ],
       "_autoStub": true,
@@ -2035,6 +2174,7 @@
     "FKey": {
       "forumTopic": 140352,
       "posts": [
+        1,
         2169
       ],
       "diags": [],
@@ -2666,6 +2806,196 @@
       "devices": [],
       "_autoStub": true,
       "dualApp": "MASTER_ONLY"
+    },
+    "Manfred_Vodermeier": {
+      "forumTopic": 140352,
+      "posts": [
+        56,
+        58
+      ],
+      "diags": [],
+      "devices": [],
+      "_autoStub": true,
+      "dualApp": "REVIEW"
+    },
+    "Alex_R": {
+      "forumTopic": 140352,
+      "posts": [
+        24
+      ],
+      "diags": [],
+      "devices": [],
+      "_autoStub": true,
+      "dualApp": "REVIEW"
+    },
+    "Twan_Veugelers": {
+      "forumTopic": 140352,
+      "posts": [
+        21
+      ],
+      "diags": [],
+      "devices": [],
+      "_autoStub": true,
+      "dualApp": "REVIEW"
+    },
+    "Michael_Edholm": {
+      "forumTopic": 140352,
+      "posts": [
+        1,
+        3,
+        10,
+        11,
+        16
+      ],
+      "diags": [],
+      "devices": [],
+      "_autoStub": true,
+      "dualApp": "BOTH"
+    },
+    "Joep_Vullings": {
+      "forumTopic": 140352,
+      "posts": [
+        2218
+      ],
+      "diags": [],
+      "devices": [],
+      "_autoStub": true,
+      "dualApp": "BOTH"
+    },
+    "PresentSky": {
+      "forumTopic": 140352,
+      "posts": [
+        2206
+      ],
+      "diags": [],
+      "devices": [
+        {
+          "tile": "Forum T140352 #2206",
+          "driver": "wall_dimmer_tuya",
+          "couple": "_TZE284_M1CVYNEB+TS0601",
+          "symptoms": [
+            "dimmer"
+          ],
+          "fixes": [],
+          "userAction": "Update Universal Tuya Test to latest soak build; re-pair only if driver/EP changed",
+          "_autoStub": true
+        }
+      ],
+      "_autoStub": true,
+      "dualApp": "BOTH"
+    },
+    "Elliot_Hallais": {
+      "forumTopic": 140352,
+      "posts": [
+        2204
+      ],
+      "diags": [],
+      "devices": [],
+      "_autoStub": true,
+      "dualApp": "REVIEW"
+    },
+    "Alejandro_Palladino": {
+      "forumTopic": 140352,
+      "posts": [
+        5493
+      ],
+      "diags": [],
+      "devices": [
+        {
+          "tile": "Forum T26439 #5493",
+          "driver": "presence_sensor_radar",
+          "couple": "_TZE284_DEBCZECI+TS0601",
+          "symptoms": [
+            "presence"
+          ],
+          "fixes": [],
+          "userAction": "Update Universal Tuya Test to latest soak build; re-pair only if driver/EP changed",
+          "_autoStub": true
+        }
+      ],
+      "_autoStub": true,
+      "dualApp": "MASTER_ONLY"
+    },
+    "Reidar_Skuland": {
+      "forumTopic": 140352,
+      "posts": [
+        450,
+        453
+      ],
+      "diags": [],
+      "devices": [],
+      "_autoStub": true,
+      "dualApp": "REVIEW"
+    },
+    "MikeT87": {
+      "forumTopic": 140352,
+      "posts": [
+        452
+      ],
+      "diags": [],
+      "devices": [],
+      "_autoStub": true,
+      "dualApp": "REVIEW"
+    },
+    "Antohagg": {
+      "forumTopic": 140352,
+      "posts": [
+        1116
+      ],
+      "diags": [],
+      "devices": [],
+      "_autoStub": true,
+      "dualApp": "REVIEW"
+    },
+    "Riccardo_Ancona": {
+      "forumTopic": 140352,
+      "posts": [
+        2159
+      ],
+      "diags": [],
+      "devices": [],
+      "_autoStub": true,
+      "dualApp": "REVIEW"
+    },
+    "peter7": {
+      "forumTopic": 140352,
+      "posts": [
+        2149
+      ],
+      "diags": [],
+      "devices": [],
+      "_autoStub": true,
+      "dualApp": "BOTH"
+    },
+    "punkportaldan": {
+      "forumTopic": 140352,
+      "posts": [
+        5439
+      ],
+      "diags": [],
+      "devices": [],
+      "_autoStub": true,
+      "dualApp": "BOTH"
+    },
+    "Roelof_Nuberg": {
+      "forumTopic": 140352,
+      "posts": [
+        2763
+      ],
+      "diags": [],
+      "devices": [],
+      "_autoStub": true,
+      "dualApp": "REVIEW"
+    },
+    "einarso": {
+      "forumTopic": 140352,
+      "posts": [
+        2751
+      ],
+      "diags": [],
+      "devices": [],
+      "_autoStub": true,
+      "dualApp": "REVIEW"
     }
   },
   "fixCatalog": {

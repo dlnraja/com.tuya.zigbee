@@ -1,0 +1,131 @@
+{
+  "generatedAt": "2026-09-01T06:32:12.786Z",
+  "mode": "APPLY",
+  "changeCount": 8,
+  "changes": [
+    {
+      "action": "merge_wrong_prefix",
+      "from": "_tz3210_402vrq2i",
+      "to": "_TZ3000_402vrq2i",
+      "driverId": "smart_knob"
+    },
+    {
+      "action": "known_correction",
+      "mfr": "_tz3210_402vrq2i",
+      "before": {
+        "driverId": null,
+        "modelIds": []
+      },
+      "after": {
+        "driverId": "smart_knob",
+        "modelIds": [
+          "TS004F"
+        ]
+      }
+    },
+    {
+      "action": "merge_wrong_prefix",
+      "from": "_tz3400_402vrq2i",
+      "to": "_TZ3000_402vrq2i",
+      "driverId": "smart_knob"
+    },
+    {
+      "action": "known_correction",
+      "mfr": "_tz3400_402vrq2i",
+      "before": {
+        "driverId": null,
+        "modelIds": []
+      },
+      "after": {
+        "driverId": "smart_knob",
+        "modelIds": [
+          "TS004F"
+        ]
+      }
+    },
+    {
+      "action": "known_correction",
+      "mfr": "_TZE200_r0jdjrvi",
+      "before": {
+        "driverId": "curtain_motor",
+        "modelIds": [
+          "TS0601"
+        ]
+      },
+      "after": {
+        "driverId": "curtain_motor_tilt",
+        "modelIds": [
+          "TS0601"
+        ]
+      }
+    },
+    {
+      "action": "add_from_compose",
+      "mfr": "_tze284_8whfphjv",
+      "driverId": "curtain_motor",
+      "modelIds": [
+        "01MINIZB",
+        "AM02",
+        "AM43-0.45/40-ES-EB",
+        "AM43-0.45/40-ES-EZ",
+        "BASICZBR3",
+        "DS421",
+        "DS82",
+        "E1757",
+        "FYRTUR",
+        "KADRILJ",
+        "LUMI.CURTAIN",
+        "LUMI.CURTAIN.ACN002",
+        "LUMI.CURTAIN.HAGL04",
+        "S26R2ZB",
+        "S31ZB",
+        "TS0001",
+        "TS0001_POWER",
+        "TS0001_SWITCH",
+        "TS0001_SWITCH_MODULE",
+        "TS000F",
+        "TS0011",
+        "TS0012",
+        "TS0014",
+        "TS0101",
+        "TS0111",
+        "TS011F",
+        "TS0301",
+        "TS0302",
+        "TS030F",
+        "TS0601",
+        "TS0601_GENERIC",
+        "TS0603",
+        "TS0726",
+        "TS110E",
+        "TS130F",
+        "TS4100",
+        "ZBCURTAIN",
+        "ZBM5-1C-120",
+        "ZBM5-2C-120",
+        "ZBM5-3C-120",
+        "ZBMINI",
+        "ZBMINIL2",
+        "ZBMINIL2-R2",
+        "ZBMINIR",
+        "ZBMINIR2",
+        "ZBMINIR2-R2",
+        "ZG-301Z",
+        "ZG-302Z1"
+      ]
+    },
+    {
+      "action": "fix_driverId",
+      "mfr": "_TYST11_wmcdj3aq",
+      "from": "switch_1gang",
+      "to": "curtain_motor"
+    },
+    {
+      "action": "prune_modelIds",
+      "mfr": "_TYST11_wmcdj3aq",
+      "driverId": "curtain_motor",
+      "before": 37,
+      "after": 48
+    }
+  ]
+}

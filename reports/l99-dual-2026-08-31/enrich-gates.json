@@ -1,0 +1,130 @@
+{
+  "at": "2026-08-31T23:16:32.969Z",
+  "track": "master",
+  "appId": "com.dlnraja.tuya.zigbee",
+  "hard": false,
+  "results": [
+    {
+      "tag": "BOTH",
+      "ok": true,
+      "skipped": false,
+      "name": "tools/ci/energy-compose-gate.js",
+      "detail": "energy-compose-gate: scanned 431 driver.compose.json files | OK: no Homey Energy v3 approximation + power-cap conflicts | NOTE: 4 driver(s) have energy.batteries + measure_power/meter_power without approximation (informational)",
+      "status": 0
+    },
+    {
+      "tag": "BOTH",
+      "ok": true,
+      "skipped": false,
+      "name": "tools/ci/adaptive-double-division-gate.js",
+      "detail": "[adaptive-double-division-gate] hits=2 hardHits=0 mode=soft |   (soft) lib/devices/BaseUnifiedDevice.js: AdaptiveDataParser + local divisor/smartDivisor in same file |   (soft) lib/tuya/TuyaEF00Manager.js: AdaptiveDataParser + local divisor",
+      "status": 0
+    },
+    {
+      "tag": "BOTH",
+      "ok": true,
+      "skipped": false,
+      "name": "scripts/validation/check-energy-divisor.js",
+      "detail": "   Drivers without divisor: 0 |  | ✅ All energy drivers have proper divisor settings",
+      "status": 0
+    },
+    {
+      "tag": "BOTH",
+      "ok": true,
+      "skipped": false,
+      "name": "tools/ci/smart-features-brand-scrub-gate.js",
+      "detail": "smart-features-brand-scrub-gate: OK (no commercial UI tokens in .homeycompose/flow)",
+      "status": 0
+    },
+    {
+      "tag": "BOTH",
+      "ok": true,
+      "skipped": false,
+      "name": "test/critical/l99-energy-jump-divisor.test.js",
+      "detail": "ℹ skipped 0 | ℹ todo 0 | ℹ duration_ms 458.0915",
+      "status": 0
+    },
+    {
+      "tag": "MASTER_ONLY",
+      "ok": true,
+      "skipped": false,
+      "name": "test/critical/l99-daylight-atmosphere.test.js",
+      "detail": "ℹ skipped 0 | ℹ todo 0 | ℹ duration_ms 302.7122",
+      "status": 0
+    },
+    {
+      "tag": "MASTER_ONLY",
+      "ok": true,
+      "skipped": false,
+      "name": "test/hue-smart-features.test.js",
+      "detail": "ℹ skipped 0 | ℹ todo 0 | ℹ duration_ms 509.2613",
+      "status": 0
+    },
+    {
+      "tag": "MASTER_ONLY",
+      "ok": true,
+      "skipped": false,
+      "name": "tools/ci/flow-l99-orchestrator.js",
+      "detail": "  ], |   \"failCount\": 0 | }",
+      "status": 0
+    }
+  ],
+  "classification": {
+    "energy_compensation_ssot": {
+      "tag": "BOTH",
+      "note": "SmartDivisor + EnergyJumpGuard + rememberLearnedDivisor — reliability/data correctness"
+    },
+    "energy_compose_gate": {
+      "tag": "BOTH",
+      "note": "Athom schema — approximation vs meter caps"
+    },
+    "daylight_atmosphere_solar_sync": {
+      "tag": "MASTER_ONLY",
+      "note": "Circadian / AdaptiveLighting / Path Light / Room Balance — feature engines"
+    },
+    "smart_features_brand_scrub": {
+      "tag": "BOTH",
+      "note": "UI titles/hints only — no commercial names; safe to mirror on stable compose flow titles"
+    },
+    "homey_gap_compensator_soft": {
+      "tag": "BOTH",
+      "note": "Soft notes only — no phantom caps"
+    },
+    "intelligent_lazy_load_boot_budget": {
+      "tag": "BOTH",
+      "note": "64MB heap — BootBudget / IntelligentLazyLoad"
+    },
+    "intelligent_infra_ci_caches": {
+      "tag": "MASTER_ONLY",
+      "note": "CI .cache/ + workflows — not Homey bundle"
+    },
+    "forum_shadow_github_respond": {
+      "tag": "MASTER_ONLY",
+      "note": "Silent forum + GH comments — never Discourse POST"
+    },
+    "p227x_sacred_couple_unsteals": {
+      "tag": "BOTH",
+      "note": "P2274–P2279 compose+registry+TX/RX (strip/curtain/smoke/meter/TRV cal/cover/USB) — reliability pairing"
+    },
+    "p2269_anti_spaghetti_ssot": {
+      "tag": "MASTER_ONLY",
+      "note": "SSOT docs + PathFinder + harvest gates — CI/docs; soft-port reliability TX/RX only to stable"
+    },
+    "p2286_publish_soft_expect": {
+      "tag": "BOTH",
+      "note": "prepare-publish temp only; soft-expect Athom race; refuse repo-root publish"
+    },
+    "p2287_ias_leftover_ef00": {
+      "tag": "BOTH",
+      "note": "shouldSkipIasOnlyEf00Tx pure helper + unit gate — sleepy IAS never leftover EF00 TX"
+    },
+    "p2288_sacred_keep_compaction": {
+      "tag": "BOTH",
+      "note": "publish-sacred-keep-couples.json pin list survives Athom matrix budget cuts"
+    },
+    "p2284_handleframe_chain": {
+      "tag": "BOTH",
+      "note": "wrapHandleFrame SSOT — L0/IO/P0 always next; stable backport TuyaUnifiedDevice"
+    }
+  }
+}

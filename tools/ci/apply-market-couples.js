@@ -17,7 +17,7 @@ const fs = require('fs');
 const path = require('path');
 const { isForbiddenPlacement } = require('../../lib/pairing/UserMisattributionRegistry');
 const { normalizeSacredCouple, oemCaseVariants } = require('./sacred-couple-pair');
-const { resolveMarketDriver, driverExists } = require('./market-driver-infer');
+const { resolveMarketDriver, resolveMultiCatalogSafe, driverExists } = require('./market-driver-infer');
 
 const ROOT = path.resolve(__dirname, '..', '..');
 const INTAKE = path.join(ROOT, '.github', 'state', 'market-couples', 'intake.json');
@@ -85,7 +85,7 @@ function main() {
   const report = {
     generatedAt: new Date().toISOString(),
     mode: APPLY ? 'APPLY' : 'DRY-RUN',
-    policy: 'apply-safe only (registry|exact|z2m_desc) — never productId_default alone',
+    policy: 'apply-safe only (registry|exact|z2m_desc|multi_catalog) — never productId_default alone',
     applied: [],
     skipped: [],
     wouldApply: 0,
@@ -104,7 +104,18 @@ function main() {
       continue;
     }
     const resolved = resolveMarketDriver(pair.mfr, pair.pid);
-    if (!resolved.applySafe || !resolved.driver) {
+    let driver = resolved.driver;
+    let tier = resolved.tier;
+    let applySafe = resolved.applySafe;
+    if (!applySafe || !driver) {
+      const multi = resolveMultiCatalogSafe(pair.mfr, pair.pid, c.sources || []);
+      if (multi?.applySafe && multi.driver) {
+        driver = multi.driver;
+        tier = multi.tier;
+        applySafe = true;
+      }
+    }
+    if (!applySafe || !driver) {
       report.skipped.push({
         mfr: pair.mfr,
         pid: pair.pid,
@@ -114,13 +125,7 @@ function main() {
       });
       continue;
     }
-    // Prefer multi-catalog or exact/registry
-    const src = c.sources || [];
-    const catalog = src.some((s) => ['blakadder', 'z2m', 'zha'].includes(s));
-    if (!catalog && resolved.tier === 'z2m_desc') {
-      // still ok if z2m index hit
-    }
-    const r = ensureCouple(resolved.driver, pair.mfr, pair.pid);
+    const r = ensureCouple(driver, pair.mfr, pair.pid);
     if (!r.ok) {
       report.skipped.push({ mfr: pair.mfr, pid: pair.pid, reason: r.reason, driver: resolved.driver });
       continue;
@@ -131,8 +136,8 @@ function main() {
       report.applied.push({
         mfr: pair.mfr,
         pid: pair.pid,
-        driver: resolved.driver,
-        tier: resolved.tier,
+        driver,
+        tier,
         reason: resolved.reason,
         changes: r.changes,
         written: r.applied,

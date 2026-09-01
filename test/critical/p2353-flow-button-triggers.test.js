@@ -17,6 +17,17 @@ const {
 } = require(path.join(ROOT, 'lib/flow/FlowCardHeuristics.js'));
 
 describe('P2353 flow button trigger candidates', () => {
+  it('button_wireless_1 resolves 1gang Ngang declared cards', () => {
+    const flow = JSON.parse(fs.readFileSync(path.join(ROOT, 'drivers/button_wireless_1/driver.flow.compose.json'), 'utf8'));
+    const declared = new Set(flow.triggers.map((t) => t.id));
+    const c = buildPhysicalFlowCandidates('button_wireless_1', 1, 'single', {
+      gangCount: 1,
+      isButtonDevice: true,
+    });
+    assert.ok(c.some((id) => id === 'button_wireless_1_button_1gang_button_pressed'));
+    assert.ok(resolveFlowCardId(c, declared));
+  });
+
   it('scene_switch_4 emits both button_N and 4gang declared shapes', () => {
     const c = buildPhysicalFlowCandidates('scene_switch_4', 1, 'single', {
       gangCount: 4,

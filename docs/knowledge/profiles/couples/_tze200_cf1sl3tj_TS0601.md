@@ -1,0 +1,34 @@
+# Couple profile — `_tze200_cf1sl3tj+TS0601`
+
+
+- Driver: **curtain_motor**
+- Case: p2293-zemismart-cf1sl3tj-curtain-not-trv
+- Sources: registry; auto-seed-p2247
+
+## DPs
+
+| DP | Name | Type | Direction | Capability |
+|---:|---|---|---|
+| 1 | windowcoverings_state | — | rx | windowcoverings_state |
+| 2 | windowcoverings_set | — | rx | windowcoverings_set |
+| 3 | dim | — | rx | dim |
+| 4 | mode | — | rx | mode |
+| 5 | reverse | — | rx | reverse |
+| 6 | border | — | rx | border |
+| 7 | position_reached | — | rx | position_reached |
+| 8 | moving | — | rx | moving |
+| 9 | windowcoverings_tilt_set | — | rx | windowcoverings_tilt_set |
+| 10 | speed | — | rx | speed |
+| 12 | backlight | — | rx | backlight |
+| 13 | measure_battery | — | rx | measure_battery |
+| 14 | measure_luminance | — | rx | measure_luminance |
+| 15 | button_press | — | rx | button_press |
+| 16 | border_limits | — | rx | border_limits |
+| 101 | open_time | — | rx | open_time |
+| 102 | close_time | — | rx | close_time |
+| 104 | measure_luminance | — | rx | measure_luminance |
+| 105 | button_press | — | rx | button_press |
+
+---
+See `docs/guides/DP_INTERPRETATION.md`
+
