@@ -29,8 +29,56 @@
       "titleFormatted": {
         "en": "Dehumidifier turned off"
       }
+    },
+    {
+      "id": "wifi_dehumidifier_temperature_changed",
+      "title": {
+        "en": "Temperature changed",
+        "fr": "Température changée"
+      },
+      "tokens": [
+        {
+          "name": "temperature",
+          "type": "number",
+          "title": {
+            "en": "Temperature (°C)",
+            "fr": "Température (°C)"
+          },
+          "example": 22.5
+        }
+      ],
+      "args": [],
+      "titleFormatted": {
+        "en": "Temperature changed to {temperature}°C",
+        "fr": "Température {temperature}°C"
+      }
     }
   ],
   "conditions": [],
-  "actions": []
+  "actions": [
+    {
+      "id": "wifi_dehumidifier_enable_child_lock",
+      "title": {
+        "en": "Enable child lock",
+        "fr": "Activer verrou enfant"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Enable child lock",
+        "fr": "Activer verrou enfant"
+      }
+    },
+    {
+      "id": "wifi_dehumidifier_disable_child_lock",
+      "title": {
+        "en": "Disable child lock",
+        "fr": "Désactiver verrou enfant"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Disable child lock",
+        "fr": "Désactiver verrou enfant"
+      }
+    }
+  ]
 }

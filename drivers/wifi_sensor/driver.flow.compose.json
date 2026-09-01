@@ -16,7 +16,7 @@
       ],
       "args": [],
       "titleFormatted": {
-        "en": "Temperature changed"
+        "en": "Temperature changed ({temperature})"
       }
     },
     {
@@ -35,7 +35,30 @@
       ],
       "args": [],
       "titleFormatted": {
-        "en": "Humidity changed"
+        "en": "Humidity changed ({humidity})"
+      }
+    },
+    {
+      "id": "wifi_sensor_humidity_changed",
+      "title": {
+        "en": "Humidity changed",
+        "fr": "Humidité changée"
+      },
+      "tokens": [
+        {
+          "name": "humidity",
+          "type": "number",
+          "title": {
+            "en": "Humidity (%)",
+            "fr": "Humidité (%)"
+          },
+          "example": 55
+        }
+      ],
+      "args": [],
+      "titleFormatted": {
+        "en": "Humidity changed to {humidity}%",
+        "fr": "Humidité {humidity}%"
       }
     }
   ],

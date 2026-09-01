@@ -1,0 +1,134 @@
+{
+  "_meta": {
+    "id": "P2376",
+    "updated": "2026-09-01",
+    "policy": "Cache-first intelligent diff. Optional sources never block pipeline. Only fetch stale/missing/changed."
+  },
+  "manifestPath": ".github/state/intelligent-source-manifest.json",
+  "projectFingerprint": {
+    "paths": ["drivers/*/driver.compose.json"],
+    "note": "SHA of sorted mfr+pid couples — local change triggers cross-ref only (no full re-crawl)"
+  },
+  "sources": [
+    {
+      "id": "z2m",
+      "tier": 1,
+      "optional": true,
+      "blockPipeline": false,
+      "ttlHours": 168,
+      "crawlScript": "scripts/sync/crawl-z2m.js",
+      "stateFiles": ["data/z2m_cache.json", "scripts/sync/data/z2m-fingerprints.json"],
+      "cacheDirs": [".cache/scanners/z2m", ".cache/scraper-cache"],
+      "secrets": []
+    },
+    {
+      "id": "zha",
+      "tier": 1,
+      "optional": true,
+      "blockPipeline": false,
+      "ttlHours": 168,
+      "crawlScript": "scripts/sync/crawl-zha.js",
+      "stateFiles": [".github/state/zha-crawl.json"],
+      "cacheDirs": [".cache/scanners/zha"],
+      "secrets": []
+    },
+    {
+      "id": "blakadder",
+      "tier": 1,
+      "optional": true,
+      "blockPipeline": false,
+      "ttlHours": 72,
+      "crawlScript": "scripts/sync/crawl-blakadder.js",
+      "stateFiles": [".github/state/blakadder-crawl.json", "data/blakadder_cache.json"],
+      "cacheDirs": [".cache/scraper-cache"],
+      "secrets": []
+    },
+    {
+      "id": "deconz",
+      "tier": 2,
+      "optional": true,
+      "blockPipeline": false,
+      "ttlHours": 168,
+      "crawlScript": "scripts/sync/crawl-deconz.js",
+      "stateFiles": [".github/state/deconz-crawl.json"],
+      "cacheDirs": [".cache/scanners/deconz"],
+      "secrets": []
+    },
+    {
+      "id": "johan",
+      "tier": 1,
+      "optional": true,
+      "blockPipeline": false,
+      "ttlHours": 24,
+      "crawlScript": "tools/ci/johan-dump.js",
+      "crawlArgs": ["--no-auth"],
+      "stateFiles": [".github/state/johan-dump/issues.json"],
+      "cacheDirs": [".cache/scraper-cache"],
+      "secrets": ["GH_PAT"]
+    },
+    {
+      "id": "forum",
+      "tier": 1,
+      "optional": true,
+      "blockPipeline": false,
+      "ttlHours": 12,
+      "crawlScript": "tools/ci/forum-silent-multi-scan.js",
+      "crawlArgs": ["--max=40"],
+      "stateFiles": [".github/state/forum-silent-scan.json"],
+      "cacheDirs": [".cache/scraper-cache"],
+      "secrets": ["DISCOURSE_API_KEY"]
+    },
+    {
+      "id": "gmail",
+      "tier": 1,
+      "optional": true,
+      "blockPipeline": false,
+      "ttlHours": 6,
+      "crawlScript": "tools/ci/gmail-diagnostics.js",
+      "stateFiles": [".github/state/diagnostics-report.json", ".github/state/gmail-diagnostics/diagnostics-report.json"],
+      "cacheDirs": [],
+      "secrets": ["GMAIL_EMAIL", "GMAIL_APP_PASSWORD"]
+    },
+    {
+      "id": "cross-ref",
+      "tier": 0,
+      "optional": false,
+      "blockPipeline": false,
+      "ttlHours": 1,
+      "crawlScript": "tools/ci/cross-ref-all-sources.js",
+      "stateFiles": [".github/state/mfr-pid-cross-ref.json"],
+      "cacheDirs": [],
+      "secrets": [],
+      "localOnly": true,
+      "note": "Always safe — reads local state only, never HTTP"
+    },
+    {
+      "id": "flow-fleet",
+      "tier": 0,
+      "optional": false,
+      "blockPipeline": false,
+      "ttlHours": 4,
+      "crawlScript": "tools/ci/flow-fleet-enrich.js",
+      "crawlArgs": ["--apply", "--skip-subtools"],
+      "stateFiles": ["reports/flow-fleet-enrich-latest/summary.json"],
+      "cacheDirs": [],
+      "secrets": [],
+      "localOnly": true
+    }
+  ],
+  "ghaCache": {
+    "paths": [
+      ".cache/scraper-cache/",
+      ".cache/scanner-blobs/",
+      ".cache/scanners/",
+      ".github/state/intelligent-source-manifest.json"
+    ],
+    "keyPrefix": "intel-source-diff",
+    "restoreKeys": [
+      "intel-source-diff-",
+      "intel-cache-",
+      "auto-enrich-cache-",
+      "scraper-cache-"
+    ]
+  }
+}

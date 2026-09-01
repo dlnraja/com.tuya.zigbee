@@ -44,6 +44,29 @@
         "nl": "Bed vrij",
         "de": "Bett frei"
       }
+    },
+    {
+      "id": "bed_sensor_illuminance_changed",
+      "title": {
+        "en": "Illuminance changed",
+        "fr": "Luminosité ambiante changée"
+      },
+      "tokens": [
+        {
+          "name": "lux",
+          "type": "number",
+          "title": {
+            "en": "Lux",
+            "fr": "Lux"
+          },
+          "example": 300
+        }
+      ],
+      "args": [],
+      "titleFormatted": {
+        "en": "Illuminance changed to {lux} lux",
+        "fr": "Luminosité {lux} lux"
+      }
     }
   ],
   "conditions": [
@@ -69,5 +92,6 @@
         "de": "Bett ist besetzt"
       }
     }
-  ]
+  ],
+  "actions": []
 }

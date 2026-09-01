@@ -43,8 +43,8 @@
       ],
       "args": [],
       "titleFormatted": {
-        "en": "Rain intensity changed",
-        "fr": "Intensité pluie changée"
+        "en": "Rain intensity changed ({intensity})",
+        "fr": "Intensité pluie changée ({intensity})"
       }
     },
     {
@@ -113,10 +113,10 @@
       ],
       "args": [],
       "titleFormatted": {
-        "en": "Illuminance changed",
-        "fr": "Illuminance modifiee",
-        "nl": "Lichtsterkte gewijzigd",
-        "de": "Beleuchtungsstaerke geaendert"
+        "en": "Illuminance changed ({lux})",
+        "fr": "Illuminance modifiee ({lux})",
+        "nl": "Lichtsterkte gewijzigd ({lux})",
+        "de": "Beleuchtungsstaerke geaendert ({lux})"
       }
     }
   ],
@@ -169,5 +169,6 @@
         "de": "Wasser !{{ist|ist nicht}} erkannt"
       }
     }
-  ]
+  ],
+  "actions": []
 }

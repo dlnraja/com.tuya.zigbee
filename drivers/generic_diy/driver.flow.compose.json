@@ -23,8 +23,8 @@
       ],
       "args": [],
       "titleFormatted": {
-        "en": "Temperature changed",
-        "fr": "Température changée"
+        "en": "Temperature changed ({temperature})",
+        "fr": "Température changée ({temperature})"
       }
     },
     {
@@ -50,8 +50,8 @@
       ],
       "args": [],
       "titleFormatted": {
-        "en": "Humidity changed",
-        "fr": "Humidité changée"
+        "en": "Humidity changed ({humidity})",
+        "fr": "Humidité changée ({humidity})"
       }
     },
     {
@@ -109,8 +109,8 @@
       ],
       "args": [],
       "titleFormatted": {
-        "en": "Button pressed",
-        "fr": "Bouton pressé"
+        "en": "Button pressed ({button})",
+        "fr": "Bouton pressé ({button})"
       }
     },
     {
@@ -136,8 +136,8 @@
       ],
       "args": [],
       "titleFormatted": {
-        "en": "Button double pressed",
-        "fr": "Bouton double-pressé"
+        "en": "Button double pressed ({button})",
+        "fr": "Bouton double-pressé ({button})"
       }
     },
     {
@@ -163,8 +163,8 @@
       ],
       "args": [],
       "titleFormatted": {
-        "en": "Button long pressed",
-        "fr": "Bouton appui long"
+        "en": "Button long pressed ({button})",
+        "fr": "Bouton appui long ({button})"
       }
     },
     {
@@ -190,8 +190,8 @@
       ],
       "args": [],
       "titleFormatted": {
-        "en": "Switch turned on",
-        "fr": "Interrupteur activé"
+        "en": "Switch turned on ({endpoint})",
+        "fr": "Interrupteur activé ({endpoint})"
       }
     },
     {
@@ -217,8 +217,8 @@
       ],
       "args": [],
       "titleFormatted": {
-        "en": "Switch turned off",
-        "fr": "Interrupteur désactivé"
+        "en": "Switch turned off ({endpoint})",
+        "fr": "Interrupteur désactivé ({endpoint})"
       }
     },
     {
@@ -276,8 +276,8 @@
       ],
       "args": [],
       "titleFormatted": {
-        "en": "Illuminance changed",
-        "fr": "Luminosité changée"
+        "en": "Illuminance changed ({lux})",
+        "fr": "Luminosité changée ({lux})"
       }
     },
     {
@@ -303,8 +303,8 @@
       ],
       "args": [],
       "titleFormatted": {
-        "en": "Battery low",
-        "fr": "Batterie faible"
+        "en": "Battery low ({battery})",
+        "fr": "Batterie faible ({battery})"
       }
     },
     {
@@ -330,8 +330,8 @@
       ],
       "args": [],
       "titleFormatted": {
-        "en": "Pressure changed",
-        "fr": "Pression changée"
+        "en": "Pressure changed ({pressure})",
+        "fr": "Pression changée ({pressure})"
       }
     },
     {
@@ -366,8 +366,8 @@
       ],
       "args": [],
       "titleFormatted": {
-        "en": "Analog value changed",
-        "fr": "Valeur analogique changée"
+        "en": "Analog value changed ({value}) ({endpoint})",
+        "fr": "Valeur analogique changée ({value}) ({endpoint})"
       }
     }
   ],

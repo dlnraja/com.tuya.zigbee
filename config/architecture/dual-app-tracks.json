@@ -110,6 +110,14 @@
       "tag": "MASTER_ONLY",
       "note": "Fleet enrich cron + free-scrape budget + driver-class coverage — CI infra; soft-port FlowCardHeuristics + sacred strips to stable as BOTH"
     },
+    "p2375_flow_fleet_enrich": {
+      "tag": "MASTER_ONLY",
+      "note": "flow-fleet-enrich CI — orphan tokens, capability triggers, Z2M cross-ref, app.json sync; FlowCardHeuristics buildCapabilityFlowCandidates is BOTH"
+    },
+    "p2376_intelligent_source_diff": {
+      "tag": "MASTER_ONLY",
+      "note": "Cache-first source diff orchestrator — optional sources soft-fail, GHA intel cache, never block pipeline"
+    },
     "p2372_flow_heuristics_knob_rotary": {
       "tag": "BOTH",
       "note": "FlowCardHeuristics knob/rotary + SOS patterns — runtime flow resolve reliability"

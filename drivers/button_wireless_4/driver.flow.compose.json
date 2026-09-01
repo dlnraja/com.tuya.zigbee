@@ -23,8 +23,8 @@
       ],
       "args": [],
       "titleFormatted": {
-        "en": "A button was pressed",
-        "fr": "Un bouton a été appuyé"
+        "en": "A button was pressed ({button})",
+        "fr": "Un bouton a été appuyé ({button})"
       }
     },
     {
@@ -50,8 +50,8 @@
       ],
       "args": [],
       "titleFormatted": {
-        "en": "A button was double-pressed",
-        "fr": "Un bouton a été double-cliqué"
+        "en": "A button was double-pressed ({button})",
+        "fr": "Un bouton a été double-cliqué ({button})"
       }
     },
     {
@@ -77,8 +77,8 @@
       ],
       "args": [],
       "titleFormatted": {
-        "en": "A button was long-pressed",
-        "fr": "Un bouton a été appuyé longtemps"
+        "en": "A button was long-pressed ({button})",
+        "fr": "Un bouton a été appuyé longtemps ({button})"
       }
     },
     {
@@ -113,8 +113,8 @@
       ],
       "args": [],
       "titleFormatted": {
-        "en": "A button was multi-pressed",
-        "fr": "Un bouton a été multi-cliqué"
+        "en": "A button was multi-pressed ({button}) ({count})",
+        "fr": "Un bouton a été multi-cliqué ({button}) ({count})"
       }
     },
     {
@@ -402,10 +402,10 @@
       ],
       "args": [],
       "titleFormatted": {
-        "en": "Button 4 scene [[scene_id]] recalled",
-        "fr": "Bouton 4 scène [[scene_id]] rappelée",
-        "nl": "Knop 4 scène [[scène_id]] opgeroepen",
-        "de": "Taste 4 Szene [[Szene_id]] aufgerufen"
+        "en": "Button 4 scene [[scene_id]] recalled ({scene_id})",
+        "fr": "Bouton 4 scène [[scene_id]] rappelée ({scene_id})",
+        "nl": "Knop 4 scène [[scène_id]] opgeroepen ({scene_id})",
+        "de": "Taste 4 Szene [[Szene_id]] aufgerufen ({scene_id})"
       }
     },
     {
@@ -424,5 +424,7 @@
       },
       "args": []
     }
-  ]
+  ],
+  "conditions": [],
+  "actions": []
 }

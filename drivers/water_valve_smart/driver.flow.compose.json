@@ -58,7 +58,7 @@
       ],
       "args": [],
       "titleFormatted": {
-        "en": "Temperature changed"
+        "en": "Temperature changed ({temperature})"
       }
     },
     {
@@ -98,7 +98,7 @@
       ],
       "args": [],
       "titleFormatted": {
-        "en": "Water consumption updated"
+        "en": "Water consumption updated ({liters})"
       }
     },
     {

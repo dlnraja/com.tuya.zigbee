@@ -17,7 +17,7 @@
       ],
       "args": [],
       "titleFormatted": {
-        "en": "Temperature changed"
+        "en": "Temperature changed ({temperature})"
       }
     },
     {
@@ -37,7 +37,7 @@
       ],
       "args": [],
       "titleFormatted": {
-        "en": "Humidity changed"
+        "en": "Humidity changed ({humidity})"
       }
     }
   ],

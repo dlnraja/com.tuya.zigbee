@@ -611,7 +611,7 @@
         }
       ],
       "titleFormatted": {
-        "en": "Gang 1 scene triggered"
+        "en": "Gang 1 scene triggered ({action})"
       }
     },
     {
@@ -633,7 +633,7 @@
         }
       ],
       "titleFormatted": {
-        "en": "Gang 2 scene triggered"
+        "en": "Gang 2 scene triggered ({action})"
       }
     },
     {
@@ -655,7 +655,7 @@
         }
       ],
       "titleFormatted": {
-        "en": "Gang 3 scene triggered"
+        "en": "Gang 3 scene triggered ({action})"
       }
     },
     {
@@ -677,7 +677,7 @@
         }
       ],
       "titleFormatted": {
-        "en": "Gang 4 scene triggered"
+        "en": "Gang 4 scene triggered ({action})"
       }
     },
     {
@@ -699,7 +699,7 @@
         }
       ],
       "titleFormatted": {
-        "en": "Gang 5 scene triggered"
+        "en": "Gang 5 scene triggered ({action})"
       }
     }
   ],

@@ -16,7 +16,7 @@
 const fs = require('fs');
 const path = require('path');
 const { CLUSTERS, lookupCluster } = require('../../lib/zigbee/ZclClusterLexicon');
-const { resolveFlowCardId, buildPhysicalFlowCandidates } = require('../../lib/flow/FlowCardHeuristics');
+const { resolveFlowCardId, buildPhysicalFlowCandidates, buildCapabilityFlowCandidates } = require('../../lib/flow/FlowCardHeuristics');
 
 const ROOT = path.join(__dirname, '..', '..');
 const DATE = new Date().toISOString().slice(0, 10);
@@ -138,10 +138,14 @@ function flowHeuristicSmoke() {
   );
   const goodRemote = resolveFlowCardId(remotes, declared);
   const goodScene = resolveFlowCardId(scene, declared);
+  const meterDeclared = new Set(['plug_energy_monitor_measure_power_changed']);
+  const meterCandidates = buildCapabilityFlowCandidates('plug_energy_monitor', 'measure_power');
+  const goodMeter = resolveFlowCardId(meterCandidates, meterDeclared);
   return {
     undeclaredReturnsNull: bad === null,
     remoteResolves: goodRemote === 'button_wireless_4_button_4gang_button_1_pressed',
     sceneResolves: goodScene === 'scene_switch_4_button_1_pressed',
+    capabilityResolves: goodMeter === 'plug_energy_monitor_measure_power_changed',
   };
 }
 
@@ -159,7 +163,7 @@ function main() {
   if (drivers.withoutFlow.length) {
     critical.push(`drivers without flow compose: ${drivers.withoutFlow.join(', ')}`);
   }
-  if (!flowSmoke.undeclaredReturnsNull || !flowSmoke.remoteResolves || !flowSmoke.sceneResolves) {
+  if (!flowSmoke.undeclaredReturnsNull || !flowSmoke.remoteResolves || !flowSmoke.sceneResolves || !flowSmoke.capabilityResolves) {
     critical.push('flow heuristic smoke failed');
   }
 

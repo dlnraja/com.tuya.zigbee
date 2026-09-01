@@ -22,10 +22,10 @@
       ],
       "args": [],
       "titleFormatted": {
-        "en": "Liquid state changed",
-        "nl": "Vloeistofstatus veranderd",
-        "fr": "Etat liquide change",
-        "de": "Flussigkeitsstatus geandert"
+        "en": "Liquid state changed ({state})",
+        "nl": "Vloeistofstatus veranderd ({state})",
+        "fr": "Etat liquide change ({state})",
+        "de": "Flussigkeitsstatus geandert ({state})"
       }
     },
     {
@@ -56,10 +56,10 @@
       ],
       "args": [],
       "titleFormatted": {
-        "en": "Liquid level changed",
-        "nl": "Vloeistofniveau veranderd",
-        "fr": "Niveau liquide change",
-        "de": "Flussigkeitsstand geandert"
+        "en": "Liquid level changed ({depth}) ({percentage})",
+        "nl": "Vloeistofniveau veranderd ({depth}) ({percentage})",
+        "fr": "Niveau liquide change ({depth}) ({percentage})",
+        "de": "Flussigkeitsstand geandert ({depth}) ({percentage})"
       }
     },
     {
@@ -165,5 +165,6 @@
         "de": "Flussigkeitsstatus !{{ist|ist nicht}} [[state]]"
       }
     }
-  ]
+  ],
+  "actions": []
 }

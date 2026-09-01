@@ -28,8 +28,8 @@
       ],
       "args": [],
       "titleFormatted": {
-        "en": "Button pressed",
-        "fr": "Bouton pressé"
+        "en": "Button pressed ({button}) ({scene})",
+        "fr": "Bouton pressé ({button}) ({scene})"
       }
     },
     {
@@ -51,8 +51,8 @@
       ],
       "args": [],
       "titleFormatted": {
-        "en": "Position changed",
-        "fr": "Position changée"
+        "en": "Position changed ({position})",
+        "fr": "Position changée ({position})"
       }
     },
     {
@@ -74,8 +74,8 @@
       ],
       "args": [],
       "titleFormatted": {
-        "en": "Brightness changed",
-        "fr": "Luminosité changée"
+        "en": "Brightness changed ({dim})",
+        "fr": "Luminosité changée ({dim})"
       }
     },
     {
@@ -112,8 +112,8 @@
       ],
       "args": [],
       "titleFormatted": {
-        "en": "Physically opened",
-        "fr": "Ouvert physiquement"
+        "en": "Physically opened ({gang})",
+        "fr": "Ouvert physiquement ({gang})"
       }
     },
     {
@@ -134,8 +134,8 @@
       ],
       "args": [],
       "titleFormatted": {
-        "en": "Physically closed",
-        "fr": "Fermé physiquement"
+        "en": "Physically closed ({gang})",
+        "fr": "Fermé physiquement ({gang})"
       }
     },
     {
@@ -156,8 +156,8 @@
       ],
       "args": [],
       "titleFormatted": {
-        "en": "Physically pressed",
-        "fr": "Pressé physiquement"
+        "en": "Physically pressed ({gang})",
+        "fr": "Pressé physiquement ({gang})"
       }
     },
     {
@@ -390,5 +390,6 @@
         "de": "Schließen"
       }
     }
-  ]
+  ],
+  "conditions": []
 }

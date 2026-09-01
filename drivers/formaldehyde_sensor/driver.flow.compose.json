@@ -19,8 +19,8 @@
       ],
       "args": [],
       "titleFormatted": {
-        "en": "Formaldehyde level changed",
-        "fr": "Niveau formaldéhyde changé"
+        "en": "Formaldehyde level changed ({formaldehyde})",
+        "fr": "Niveau formaldéhyde changé ({formaldehyde})"
       }
     },
     {
@@ -42,8 +42,8 @@
       ],
       "args": [],
       "titleFormatted": {
-        "en": "VOC level changed",
-        "fr": "Niveau COV changé"
+        "en": "VOC level changed ({voc})",
+        "fr": "Niveau COV changé ({voc})"
       }
     },
     {
@@ -101,6 +101,52 @@
         "nl": "Vochtigheid gewijzigd",
         "de": "Feuchtigkeit geändert"
       }
+    },
+    {
+      "id": "formaldehyde_sensor_co2_changed",
+      "title": {
+        "en": "CO₂ changed",
+        "fr": "CO₂ changé"
+      },
+      "tokens": [
+        {
+          "name": "co2",
+          "type": "number",
+          "title": {
+            "en": "CO₂ (ppm)",
+            "fr": "CO₂ (ppm)"
+          },
+          "example": 800
+        }
+      ],
+      "args": [],
+      "titleFormatted": {
+        "en": "CO₂ changed to {co2} ppm",
+        "fr": "CO₂ {co2} ppm"
+      }
+    },
+    {
+      "id": "formaldehyde_sensor_pm25_changed",
+      "title": {
+        "en": "PM2.5 changed",
+        "fr": "PM2.5 changé"
+      },
+      "tokens": [
+        {
+          "name": "pm25",
+          "type": "number",
+          "title": {
+            "en": "PM2.5",
+            "fr": "PM2.5"
+          },
+          "example": 12
+        }
+      ],
+      "args": [],
+      "titleFormatted": {
+        "en": "PM2.5 changed to {pm25}",
+        "fr": "PM2.5 {pm25}"
+      }
     }
   ],
   "conditions": [
@@ -136,5 +182,6 @@
         "fr": "Qualité air !{{bonne|mauvaise}}"
       }
     }
-  ]
+  ],
+  "actions": []
 }

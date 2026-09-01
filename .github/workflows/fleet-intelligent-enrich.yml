@@ -80,13 +80,19 @@ jobs:
       - name: npm ci
         run: npm ci --ignore-scripts
 
-      - name: Restore scraper cache (budgets + metrics)
+      - name: Restore intel source cache (ETag + scanner TTL + manifest)
         uses: actions/cache@v4
         with:
-          path: .cache/scraper-cache
-          key: free-scrape-budget-${{ github.run_id }}
+          path: |
+            .cache/scraper-cache
+            .cache/scanner-blobs
+            .cache/scanners
+            .github/state/intelligent-source-manifest.json
+          key: intel-source-diff-${{ hashFiles('package-lock.json', 'config/enrichment/source-registry.json') }}-${{ github.workflow }}
           restore-keys: |
-            free-scrape-budget-
+            intel-source-diff-
+            intel-cache-
+            auto-enrich-cache-
             scraper-cache-
 
       - name: AI forfait preflight
@@ -94,6 +100,9 @@ jobs:
 
       - name: Free-scrape budget preflight
         run: node tools/ci/free-scrape-budget.js --preflight || true
+
+      - name: Intelligent source diff (cache-first plan)
+        run: node tools/ci/intelligent-source-diff.js || true
 
       - name: Driver-class coverage (all types)
         run: node tools/ci/driver-class-fleet-enrich.js
@@ -156,4 +165,5 @@ jobs:
             reports/driver-class-enrich-*/
             fleet-enrich.log
             .cache/scraper-cache/_free-scrape-budget.json
+            .github/state/intelligent-source-manifest.json
           retention-days: 14

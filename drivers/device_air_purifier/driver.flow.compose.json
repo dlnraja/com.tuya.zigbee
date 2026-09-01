@@ -19,8 +19,8 @@
       ],
       "args": [],
       "titleFormatted": {
-        "en": "Target temperature changed",
-        "fr": "Température cible changée"
+        "en": "Target temperature changed ({temperature})",
+        "fr": "Température cible changée ({temperature})"
       }
     },
     {
@@ -42,8 +42,8 @@
       ],
       "args": [],
       "titleFormatted": {
-        "en": "Temperature changed",
-        "fr": "Température changée"
+        "en": "Temperature changed ({temperature})",
+        "fr": "Température changée ({temperature})"
       }
     },
     {
@@ -65,8 +65,8 @@
       ],
       "args": [],
       "titleFormatted": {
-        "en": "Mode changed",
-        "fr": "Mode changé"
+        "en": "Mode changed ({mode})",
+        "fr": "Mode changé ({mode})"
       }
     },
     {
@@ -171,6 +171,98 @@
         "fr": "Humidité changée",
         "nl": "Vochtigheid gewijzigd",
         "de": "Feuchtigkeit geändert"
+      }
+    },
+    {
+      "id": "device_air_purifier_target_temperature_changed",
+      "title": {
+        "en": "Target temperature changed",
+        "fr": "Consigne changée"
+      },
+      "tokens": [
+        {
+          "name": "temperature",
+          "type": "number",
+          "title": {
+            "en": "Target (°C)",
+            "fr": "Consigne (°C)"
+          },
+          "example": 21
+        }
+      ],
+      "args": [],
+      "titleFormatted": {
+        "en": "Target temperature changed to {temperature}°C",
+        "fr": "Consigne {temperature}°C"
+      }
+    },
+    {
+      "id": "device_air_purifier_humidity_changed",
+      "title": {
+        "en": "Humidity changed",
+        "fr": "Humidité changée"
+      },
+      "tokens": [
+        {
+          "name": "humidity",
+          "type": "number",
+          "title": {
+            "en": "Humidity (%)",
+            "fr": "Humidité (%)"
+          },
+          "example": 55
+        }
+      ],
+      "args": [],
+      "titleFormatted": {
+        "en": "Humidity changed to {humidity}%",
+        "fr": "Humidité {humidity}%"
+      }
+    },
+    {
+      "id": "device_air_purifier_brightness_changed",
+      "title": {
+        "en": "Brightness changed",
+        "fr": "Luminosité changée"
+      },
+      "tokens": [
+        {
+          "name": "brightness",
+          "type": "number",
+          "title": {
+            "en": "Brightness (%)",
+            "fr": "Luminosité (%)"
+          },
+          "example": 80
+        }
+      ],
+      "args": [],
+      "titleFormatted": {
+        "en": "Brightness changed to {brightness}%",
+        "fr": "Luminosité {brightness}%"
+      }
+    },
+    {
+      "id": "device_air_purifier_pm25_changed",
+      "title": {
+        "en": "PM2.5 changed",
+        "fr": "PM2.5 changé"
+      },
+      "tokens": [
+        {
+          "name": "pm25",
+          "type": "number",
+          "title": {
+            "en": "PM2.5",
+            "fr": "PM2.5"
+          },
+          "example": 12
+        }
+      ],
+      "args": [],
+      "titleFormatted": {
+        "en": "PM2.5 changed to {pm25}",
+        "fr": "PM2.5 {pm25}"
       }
     }
   ],
@@ -596,6 +688,30 @@
         "fr": "Régler température [[temperature]]",
         "nl": "Temperatuur instellen [[temperature]]",
         "de": "Temperatur einstellen [[temperature]]"
+      }
+    },
+    {
+      "id": "device_air_purifier_enable_child_lock",
+      "title": {
+        "en": "Enable child lock",
+        "fr": "Activer verrou enfant"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Enable child lock",
+        "fr": "Activer verrou enfant"
+      }
+    },
+    {
+      "id": "device_air_purifier_disable_child_lock",
+      "title": {
+        "en": "Disable child lock",
+        "fr": "Désactiver verrou enfant"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Disable child lock",
+        "fr": "Désactiver verrou enfant"
       }
     }
   ]

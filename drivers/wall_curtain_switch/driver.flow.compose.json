@@ -15,6 +15,29 @@
         "fr": "Physical button off"
       },
       "args": []
+    },
+    {
+      "id": "wall_curtain_switch_position_changed",
+      "title": {
+        "en": "Position changed",
+        "fr": "Position changée"
+      },
+      "tokens": [
+        {
+          "name": "position",
+          "type": "number",
+          "title": {
+            "en": "Position (%)",
+            "fr": "Position (%)"
+          },
+          "example": 50
+        }
+      ],
+      "args": [],
+      "titleFormatted": {
+        "en": "Cover position changed to {position}%",
+        "fr": "Position {position}%"
+      }
     }
   ],
   "conditions": [],

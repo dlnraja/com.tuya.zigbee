@@ -278,6 +278,10 @@
     "enrich:fleet:crawl:apply": "node tools/ci/fleet-intelligent-enrich.js --apply --crawl",
     "enrich:classes": "node tools/ci/driver-class-fleet-enrich.js",
     "enrich:classes:apply": "node tools/ci/driver-class-fleet-enrich.js --apply",
+    "enrich:flow-fleet": "node tools/ci/flow-fleet-enrich.js",
+    "enrich:flow-fleet:apply": "node tools/ci/flow-fleet-enrich.js --apply",
+    "source:diff": "node tools/ci/intelligent-source-diff.js",
+    "source:diff:apply": "node tools/ci/intelligent-source-diff.js --apply",
     "scrape:budget": "node tools/ci/free-scrape-budget.js --report",
     "scrape:budget:preflight": "node tools/ci/free-scrape-budget.js --preflight"
   },

@@ -111,6 +111,29 @@
         "nl": "Temperatuur gewijzigd",
         "de": "Temperatur geändert"
       }
+    },
+    {
+      "id": "thermostat_4ch_target_temperature_changed",
+      "title": {
+        "en": "Target temperature changed",
+        "fr": "Consigne changée"
+      },
+      "tokens": [
+        {
+          "name": "temperature",
+          "type": "number",
+          "title": {
+            "en": "Target (°C)",
+            "fr": "Consigne (°C)"
+          },
+          "example": 21
+        }
+      ],
+      "args": [],
+      "titleFormatted": {
+        "en": "Target temperature changed to {temperature}°C",
+        "fr": "Consigne {temperature}°C"
+      }
     }
   ],
   "conditions": [

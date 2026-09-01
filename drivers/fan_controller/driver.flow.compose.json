@@ -21,10 +21,10 @@
       ],
       "args": [],
       "titleFormatted": {
-        "en": "Fan speed changed",
-        "fr": "Vitesse ventilateur modifiée",
-        "nl": "Ventilatorsnelheid gewijzigd",
-        "de": "Lüftergeschwindigkeit geändert"
+        "en": "Fan speed changed ({speed})",
+        "fr": "Vitesse ventilateur modifiée ({speed})",
+        "nl": "Ventilatorsnelheid gewijzigd ({speed})",
+        "de": "Lüftergeschwindigkeit geändert ({speed})"
       }
     },
     {
@@ -57,6 +57,29 @@
         "fr": "Ventilateur éteint",
         "nl": "Ventilator uitgeschakeld",
         "de": "Lüfter ausgeschaltet"
+      }
+    },
+    {
+      "id": "fan_controller_brightness_changed",
+      "title": {
+        "en": "Brightness changed",
+        "fr": "Luminosité changée"
+      },
+      "tokens": [
+        {
+          "name": "brightness",
+          "type": "number",
+          "title": {
+            "en": "Brightness (%)",
+            "fr": "Luminosité (%)"
+          },
+          "example": 80
+        }
+      ],
+      "args": [],
+      "titleFormatted": {
+        "en": "Brightness changed to {brightness}%",
+        "fr": "Luminosité {brightness}%"
       }
     }
   ],

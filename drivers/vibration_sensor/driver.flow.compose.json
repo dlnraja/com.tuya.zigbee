@@ -112,10 +112,10 @@
       ],
       "args": [],
       "titleFormatted": {
-        "en": "Battery level changed",
-        "nl": "Batterijniveau veranderd",
-        "fr": "Niveau batterie changé",
-        "de": "Batteriestand geändert"
+        "en": "Battery level changed ({battery})",
+        "nl": "Batterijniveau veranderd ({battery})",
+        "fr": "Niveau batterie changé ({battery})",
+        "de": "Batteriestand geändert ({battery})"
       }
     },
     {
@@ -164,6 +164,29 @@
         "fr": "Alarme sabotage",
         "nl": "Sabotagealarm",
         "de": "Manipulationsalarm"
+      }
+    },
+    {
+      "id": "vibration_sensor_temperature_changed",
+      "title": {
+        "en": "Temperature changed",
+        "fr": "Température changée"
+      },
+      "tokens": [
+        {
+          "name": "temperature",
+          "type": "number",
+          "title": {
+            "en": "Temperature (°C)",
+            "fr": "Température (°C)"
+          },
+          "example": 22.5
+        }
+      ],
+      "args": [],
+      "titleFormatted": {
+        "en": "Temperature changed to {temperature}°C",
+        "fr": "Température {temperature}°C"
       }
     }
   ],
@@ -243,5 +266,6 @@
         "de": "Manipulation !{{ist|ist nicht}} aktiv"
       }
     }
-  ]
+  ],
+  "actions": []
 }

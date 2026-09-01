@@ -14,7 +14,7 @@
       ],
       "args": [],
       "titleFormatted": {
-        "en": "Turned on"
+        "en": "Turned on ({timestamp})"
       }
     },
     {
@@ -51,8 +51,8 @@
       ],
       "args": [],
       "titleFormatted": {
-        "en": "Button pressed",
-        "fr": "Bouton appuyé"
+        "en": "Button pressed ({press_type})",
+        "fr": "Bouton appuyé ({press_type})"
       }
     },
     {

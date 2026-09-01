@@ -115,9 +115,17 @@ jobs:
           path: |
             .cache/scanner-blobs/
             .cache/scraper-cache/
-          key: auto-enrich-cache-${{ github.run_id }}
+            .cache/scanners/
+            .github/state/intelligent-source-manifest.json
+          key: intel-source-diff-${{ hashFiles('package-lock.json', 'config/enrichment/source-registry.json') }}-${{ github.workflow }}
           restore-keys: |
+            intel-source-diff-
+            intel-cache-
             auto-enrich-cache-
+            scraper-cache-
+
+      - name: Intelligent source diff (plan — optional sources soft-fail)
+        run: node tools/ci/intelligent-source-diff.js || true
 
       - name: 🔄 Run Closed Loop
         id: loop

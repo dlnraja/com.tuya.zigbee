@@ -140,10 +140,10 @@
       ],
       "args": [],
       "titleFormatted": {
-        "en": "Long press",
-        "fr": "Pression longue",
-        "nl": "Lange druk",
-        "de": "Langer Druck"
+        "en": "Long press ({duration})",
+        "fr": "Pression longue ({duration})",
+        "nl": "Lange druk ({duration})",
+        "de": "Langer Druck ({duration})"
       }
     },
     {
@@ -172,10 +172,10 @@
       ],
       "args": [],
       "titleFormatted": {
-        "en": "Triple press",
-        "fr": "Triple pression",
-        "nl": "Drievoudige druk",
-        "de": "Dreifacher Druck"
+        "en": "Triple press ({clicks})",
+        "fr": "Triple pression ({clicks})",
+        "nl": "Drievoudige druk ({clicks})",
+        "de": "Dreifacher Druck ({clicks})"
       }
     },
     {
@@ -229,7 +229,7 @@
         }
       ],
       "titleFormatted": {
-        "en": "Gang 1 scene triggered"
+        "en": "Gang 1 scene triggered ({action})"
       }
     },
     {
@@ -247,6 +247,121 @@
         "fr": "Physical button off"
       },
       "args": []
+    },
+    {
+      "id": "climate_sensor_switch_meter_power_changed",
+      "title": {
+        "en": "Energy changed",
+        "fr": "Énergie changée"
+      },
+      "tokens": [
+        {
+          "name": "energy",
+          "type": "number",
+          "title": {
+            "en": "Energy (kWh)",
+            "fr": "Énergie (kWh)"
+          },
+          "example": 1.2
+        }
+      ],
+      "args": [],
+      "titleFormatted": {
+        "en": "Energy changed to {energy} kWh",
+        "fr": "Énergie {energy} kWh"
+      }
+    },
+    {
+      "id": "climate_sensor_switch_voltage_changed",
+      "title": {
+        "en": "Voltage changed",
+        "fr": "Tension changée"
+      },
+      "tokens": [
+        {
+          "name": "voltage",
+          "type": "number",
+          "title": {
+            "en": "Voltage (V)",
+            "fr": "Tension (V)"
+          },
+          "example": 230
+        }
+      ],
+      "args": [],
+      "titleFormatted": {
+        "en": "Voltage changed to {voltage} V",
+        "fr": "Tension {voltage} V"
+      }
+    },
+    {
+      "id": "climate_sensor_switch_current_changed",
+      "title": {
+        "en": "Current changed",
+        "fr": "Courant changé"
+      },
+      "tokens": [
+        {
+          "name": "current",
+          "type": "number",
+          "title": {
+            "en": "Current (A)",
+            "fr": "Courant (A)"
+          },
+          "example": 0.5
+        }
+      ],
+      "args": [],
+      "titleFormatted": {
+        "en": "Current changed to {current} A",
+        "fr": "Courant {current} A"
+      }
+    },
+    {
+      "id": "climate_sensor_switch_temperature_changed",
+      "title": {
+        "en": "Temperature changed",
+        "fr": "Température changée"
+      },
+      "tokens": [
+        {
+          "name": "temperature",
+          "type": "number",
+          "title": {
+            "en": "Temperature (°C)",
+            "fr": "Température (°C)"
+          },
+          "example": 22.5
+        }
+      ],
+      "args": [],
+      "titleFormatted": {
+        "en": "Temperature changed to {temperature}°C",
+        "fr": "Température {temperature}°C"
+      }
+    },
+    {
+      "id": "climate_sensor_switch_humidity_changed",
+      "title": {
+        "en": "Humidity changed",
+        "fr": "Humidité changée"
+      },
+      "tokens": [
+        {
+          "name": "humidity",
+          "type": "number",
+          "title": {
+            "en": "Humidity (%)",
+            "fr": "Humidité (%)"
+          },
+          "example": 55
+        }
+      ],
+      "args": [],
+      "titleFormatted": {
+        "en": "Humidity changed to {humidity}%",
+        "fr": "Humidité {humidity}%"
+      }
     }
   ],
   "conditions": [

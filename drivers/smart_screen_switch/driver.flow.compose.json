@@ -26,6 +26,75 @@
         "fr": "Physical button off"
       },
       "args": []
+    },
+    {
+      "id": "smart_screen_switch_position_changed",
+      "title": {
+        "en": "Position changed",
+        "fr": "Position changée"
+      },
+      "tokens": [
+        {
+          "name": "position",
+          "type": "number",
+          "title": {
+            "en": "Position (%)",
+            "fr": "Position (%)"
+          },
+          "example": 50
+        }
+      ],
+      "args": [],
+      "titleFormatted": {
+        "en": "Cover position changed to {position}%",
+        "fr": "Position {position}%"
+      }
+    },
+    {
+      "id": "smart_screen_switch_illuminance_changed",
+      "title": {
+        "en": "Illuminance changed",
+        "fr": "Luminosité ambiante changée"
+      },
+      "tokens": [
+        {
+          "name": "lux",
+          "type": "number",
+          "title": {
+            "en": "Lux",
+            "fr": "Lux"
+          },
+          "example": 300
+        }
+      ],
+      "args": [],
+      "titleFormatted": {
+        "en": "Illuminance changed to {lux} lux",
+        "fr": "Luminosité {lux} lux"
+      }
+    },
+    {
+      "id": "smart_screen_switch_temperature_changed",
+      "title": {
+        "en": "Temperature changed",
+        "fr": "Température changée"
+      },
+      "tokens": [
+        {
+          "name": "temperature",
+          "type": "number",
+          "title": {
+            "en": "Temperature (°C)",
+            "fr": "Température (°C)"
+          },
+          "example": 22.5
+        }
+      ],
+      "args": [],
+      "titleFormatted": {
+        "en": "Temperature changed to {temperature}°C",
+        "fr": "Température {temperature}°C"
+      }
     }
   ],
   "conditions": [
@@ -40,5 +109,6 @@
         "fr": "Mouvement !{{détecté|non détecté}}"
       }
     }
-  ]
+  ],
+  "actions": []
 }

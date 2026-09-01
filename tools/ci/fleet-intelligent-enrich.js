@@ -96,13 +96,9 @@ phase('ai-plan-guard', () => run('ai-guard', 'tools/ci/ai-plan-guard.js', ['--pr
 phase('free-scrape-budget', () => run('scrape-budget', 'tools/ci/free-scrape-budget.js', ['--preflight'], 30000, true));
 
 if (!SKIP_CRAWL) {
-  phase('crawl-z2m', () => run('crawl-z2m', 'scripts/sync/crawl-z2m.js', [], 360000, true));
-  phase('crawl-zha', () => run('crawl-zha', 'scripts/sync/crawl-zha.js', [], 360000, true));
-  phase('crawl-blakadder', () => run('crawl-blakadder', 'scripts/sync/crawl-blakadder.js', [], 360000, true));
-  phase('crawl-deconz', () => run('crawl-deconz', 'scripts/sync/crawl-deconz.js', [], 240000, true));
-  phase('blakadder-cross-ref', () => run('blakadder-xref', 'tools/ci/blakadder-cross-ref.js', [], 180000, true));
-  phase('johan-dump', () => run('johan', 'tools/ci/johan-dump.js', ['--no-auth'], 180000, true));
-  phase('forum-silent-scan', () => run('forum', 'tools/ci/forum-silent-multi-scan.js', ['--max=40'], 180000, true));
+  phase('source-diff-crawl', () => run('source-diff', 'tools/ci/intelligent-source-diff.js', ['--apply'], 720000, true));
+} else {
+  phase('source-diff-plan', () => run('source-diff', 'tools/ci/intelligent-source-diff.js', [], 120000, true));
 }
 
 phase('cross-ref-all-sources', () => run('cross-ref', 'tools/ci/cross-ref-all-sources.js', [], 300000, false));
@@ -123,6 +119,8 @@ if (APPLY) {
   phase('harden-unknown-zigbee', () => run('harden-unknown', 'tools/ci/harden-unknown-zigbee.js', ['--apply'], 180000, true));
   phase('enrich-driver-settings', () => run('settings', 'tools/ci/enrich-driver-settings-intelligent.js', ['--apply'], 180000, true));
   phase('driver-class-fleet', () => run('driver-class', 'tools/ci/driver-class-fleet-enrich.js', ['--apply'], 600000, true));
+  phase('flow-fleet-enrich-apply', () => run('flow-fleet', 'tools/ci/flow-fleet-enrich.js', ['--apply'], 600000, true));
+  phase('source-diff-manifest', () => run('source-manifest', 'tools/ci/intelligent-source-diff.js', [], 120000, true));
   phase('button-flow-harvest-apply', () => run('button-harvest', 'tools/ci/button-flow-harvest.js', ['--apply-fixes'], 120000, true));
   phase('case-variants', () => run('case-variants', 'tools/ci/ensure-case-variants.js', ['--apply'], 120000, true));
   phase('prune-fp-collision', () => run('prune-fp', 'tools/ci/prune-fp-collision-bleed.js', ['--apply'], 180000, true));

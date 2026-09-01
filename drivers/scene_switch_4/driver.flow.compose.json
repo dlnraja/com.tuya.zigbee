@@ -413,10 +413,10 @@
       ],
       "args": [],
       "titleFormatted": {
-        "en": "Battery level changed",
-        "fr": "Niveau batterie changé",
-        "nl": "Batterijniveau gewijzigd",
-        "de": "Batteriestand geändert"
+        "en": "Battery level changed ({battery})",
+        "fr": "Niveau batterie changé ({battery})",
+        "nl": "Batterijniveau gewijzigd ({battery})",
+        "de": "Batteriestand geändert ({battery})"
       }
     },
     {
@@ -770,6 +770,24 @@
         "en": "Button 4 long-pressed",
         "fr": "Bouton 4 appui long"
       }
+    },
+    {
+      "id": "scene_switch_4_physical_on",
+      "title": {
+        "en": "Physical button on",
+        "fr": "Physical button on"
+      },
+      "args": []
+    },
+    {
+      "id": "scene_switch_4_physical_off",
+      "title": {
+        "en": "Physical button off",
+        "fr": "Physical button off"
+      },
+      "args": []
     }
-  ]
+  ],
+  "conditions": [],
+  "actions": []
 }

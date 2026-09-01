@@ -37,7 +37,7 @@
         }
       ],
       "titleFormatted": {
-        "en": "Brightness increased - physical"
+        "en": "Brightness increased - physical ({brightness})"
       }
     },
     {
@@ -57,7 +57,7 @@
         }
       ],
       "titleFormatted": {
-        "en": "Brightness decreased - physical"
+        "en": "Brightness decreased - physical ({brightness})"
       }
     },
     {
@@ -103,8 +103,8 @@
       ],
       "args": [],
       "titleFormatted": {
-        "en": "Brightness changed",
-        "fr": "Luminosité changée"
+        "en": "Brightness changed ({dim})",
+        "fr": "Luminosité changée ({dim})"
       }
     },
     {
@@ -173,6 +173,29 @@
       },
       "titleFormatted": {
         "en": "Turned off physically - gang 1"
+      }
+    },
+    {
+      "id": "dimmer_wall_1gang_voltage_changed",
+      "title": {
+        "en": "Voltage changed",
+        "fr": "Tension changée"
+      },
+      "tokens": [
+        {
+          "name": "voltage",
+          "type": "number",
+          "title": {
+            "en": "Voltage (V)",
+            "fr": "Tension (V)"
+          },
+          "example": 230
+        }
+      ],
+      "args": [],
+      "titleFormatted": {
+        "en": "Voltage changed to {voltage} V",
+        "fr": "Tension {voltage} V"
       }
     }
   ],

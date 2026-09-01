@@ -52,7 +52,14 @@
   },
   "ghaCache": {
     "action": "actions/cache@v5",
-    "paths": [".cache/scraper-cache/", ".cache/scanner-blobs/", ".cache/scanners/"],
-    "keyTemplate": "${{ runner.os }}-intel-cache-${{ hashFiles('package-lock.json') }}-${{ github.workflow }}"
+    "paths": [".cache/scraper-cache/", ".cache/scanner-blobs/", ".cache/scanners/", ".github/state/intelligent-source-manifest.json"],
+    "keyTemplate": "intel-source-diff-${{ hashFiles('package-lock.json', 'config/enrichment/source-registry.json') }}-${{ github.workflow }}",
+    "restoreKeys": ["intel-source-diff-", "intel-cache-", "auto-enrich-cache-", "scraper-cache-"]
+  },
+  "sourceDiff": {
+    "registry": "config/enrichment/source-registry.json",
+    "orchestrator": "tools/ci/intelligent-source-diff.js",
+    "manifest": ".github/state/intelligent-source-manifest.json",
+    "doctrine": "docs/architecture/INTELLIGENT_SOURCE_DIFF.md"
   }
 }
