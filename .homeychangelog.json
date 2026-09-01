@@ -2819,5 +2819,8 @@
   },
   "9.0.760": {
     "en": "Improved MCU time sync and battery cover init; safer dimmer brightness scaling for Tuya devices."
+  },
+  "9.0.761": {
+    "en": "Fixed smart plug fingerprint routing so TS011F plugs are not matched as wireless buttons."
   }
 }
