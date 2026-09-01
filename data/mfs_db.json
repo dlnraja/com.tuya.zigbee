@@ -32,7 +32,7 @@
       "realMfrsAdded": 5,
       "details": "tmp/synthetic-resolution.json + tmp/pruned21-resolution.json"
     },
-    "lastAlignedAt": "2026-09-01T01:47:00.505Z",
+    "lastAlignedAt": "2026-09-01T03:01:33.991Z",
     "alignTool": "align-mfs-db-intelligent@P169"
   },
   "sources": {
@@ -151322,40 +151322,13 @@
     "modelIdsCount": 28
   },
   "_TZE204_A2JCOYUK": {
-    "driverId": "climate_sensor",
-    "source": "auto-sync",
+    "driverId": "curtain_motor",
+    "source": "registry:p2363-curtain-ef00-hybrid-timeout",
     "modelIds": [
-      "CK-TLSR8656-SS5-01(7014)",
-      "Excellux",
-      "RH3052",
-      "SM0201",
-      "SNZB-02",
-      "SNZB-02B",
-      "SNZB-02D",
-      "SNZB-02DR2",
-      "SNZB-02LD",
-      "SNZB-02M",
-      "SNZB-02P",
-      "SNZB-02WD",
-      "TH01",
-      "THS317-ET",
-      "TS0201",
-      "TS0202",
-      "TS0222",
-      "TS0601",
-      "TS1201",
-      "TY0201",
-      "WSDCGQ01LM",
-      "WSDCGQ11LM",
-      "WSDCGQ12LM",
-      "ZG-227Z",
-      "ZG-227ZL",
-      "lumi.sensor_ht",
-      "lumi.sensor_ht.agl02",
-      "lumi.weather"
+      "TS0601"
     ],
-    "pid": "CK-TLSR8656-SS5-01(7014)",
-    "modelIdsCount": 28
+    "pid": "TS0601",
+    "modelIdsCount": 1
   },
   "_TZE204_A8Z0G46U": {
     "driverId": "climate_sensor",
@@ -164472,26 +164445,22 @@
     "modelIdsCount": 3
   },
   "_TZE200_libht6ua": {
-    "driverId": "curtain_motor_shutter",
-    "source": "auto-sync",
+    "driverId": "curtain_motor",
+    "source": "registry:p2363-curtain-ef00-hybrid-timeout",
     "modelIds": [
-      "TS0301",
-      "TS0601",
-      "TS0726"
+      "TS0601"
     ],
-    "pid": "TS0301",
-    "modelIdsCount": 3
+    "pid": "TS0601",
+    "modelIdsCount": 1
   },
   "_TZE284_libht6ua": {
-    "driverId": "curtain_motor_shutter",
-    "source": "auto-sync",
+    "driverId": "curtain_motor",
+    "source": "registry:p2363-curtain-ef00-hybrid-timeout",
     "modelIds": [
-      "TS0301",
-      "TS0601",
-      "TS0726"
+      "TS0601"
     ],
-    "pid": "TS0301",
-    "modelIdsCount": 3
+    "pid": "TS0601",
+    "modelIdsCount": 1
   },
   "_TZE200_9vpe3fl1": {
     "driverId": "curtain_motor_shutter",
@@ -188154,20 +188123,13 @@
     "source": "auto-sync"
   },
   "_TZE284_zofmmt9s": {
-    "driverId": "sensor_illuminance_presence",
-    "source": "auto-sync",
+    "driverId": "curtain_motor",
+    "source": "registry:p2363-curtain-ef00-hybrid-timeout",
     "modelIds": [
-      "CK-BL702-MWS-01(7016)",
-      "TS0004",
-      "TS0222",
-      "TS0225",
-      "TS0601",
-      "TS110E",
-      "ZG-106Z",
-      "ZP-301Z"
+      "TS0601"
     ],
-    "pid": "CK-BL702-MWS-01(7016)",
-    "modelIdsCount": 8
+    "pid": "TS0601",
+    "modelIdsCount": 1
   },
   "_TZE204_hewlydpz": {
     "driverId": "sensor_illuminance_presence",
@@ -204029,46 +203991,13 @@
     "modelIdsCount": 34
   },
   "_TZE200_2jwrgrro": {
-    "driverId": "switch_1gang",
-    "source": "auto-sync",
+    "driverId": "curtain_motor",
+    "source": "registry:p2363-curtain-ef00-hybrid-timeout",
     "modelIds": [
-      "01MINIZB",
-      "BASICZBR3",
-      "S26R2ZB",
-      "S31ZB",
-      "TS0001",
-      "TS0001_power",
-      "TS0001_switch",
-      "TS0001_switch_module",
-      "TS0002",
-      "TS0003",
-      "TS000F",
-      "TS0011",
-      "TS0012",
-      "TS0014",
-      "TS0041",
-      "TS0101",
-      "TS0111",
-      "TS011F",
-      "TS0601",
-      "TS0726",
-      "TS110E",
-      "TS130F",
-      "TS4100",
-      "ZBM5-1C-120",
-      "ZBM5-2C-120",
-      "ZBM5-3C-120",
-      "ZBMINI",
-      "ZBMINIL2",
-      "ZBMINIL2-R2",
-      "ZBMINIR",
-      "ZBMINIR2",
-      "ZBMINIR2-R2",
-      "ZG-301Z",
-      "ZG-302Z1"
+      "TS0601"
     ],
-    "pid": "01MINIZB",
-    "modelIdsCount": 34
+    "pid": "TS0601",
+    "modelIdsCount": 1
   },
   "_TZ3002_uu4uircb": {
     "driverId": "switch_1gang",
