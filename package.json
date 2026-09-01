@@ -17,6 +17,7 @@
     "diag-build": "node .github/scripts/athom-build-error-diag.js",
     "find-size": "node scripts/find-size.js",
     "fix:generated-flow-args": "node scripts/maintenance/sanitize-manifest.cjs app.json .homeybuild/app.json",
+    "fix:appjson-flow-dedupe": "node tools/ci/sync-appjson-flow-dedupe.js --apply",
     "validate": "homey app validate",
     "validate:debug": "homey app validate --level debug",
     "validate:publish": "homey app validate --level publish",
