@@ -4877,7 +4877,7 @@
       "forbidMode": "couple",
       "enrichOnly": true,
       "protocol": "zcl",
-      "notes": "P2351: DOC ONLY — never multi-mfr/multi-pid registry_force. Real locks per-couple.",
+      "notes": "P2351: DOC ONLY — forum #2173 Cartesian OEM dump must NEVER become a multi-mfr/multi-pid registry_force (was collapsing YWUBFUVT/KGXEJ1DV/JJDKHUEQ/YERVJNLJ onto wall_switch_1gang_1way with TS0001+2+3). Real locks stay per-couple: zemismart-ts0001-tb25-1, novadigital-ts0002-*, novadigital-ts0003-yervjnlj + publish-sacred-keep.",
       "sources": [
         "forum-140352-2173",
         "P2347",
@@ -4915,6 +4915,43 @@
         "forum-146735-8",
         "INT-010",
         "P2347"
+      ],
+      "tracks": {
+        "master": {
+          "static": true,
+          "dynamic": true
+        },
+        "stable": {
+          "static": true,
+          "dynamic": false
+        }
+      }
+    },
+    {
+      "id": "p2361-w0qqde0g-ts011f-plug-not-button",
+      "mfr": [
+        "_TZ3210_w0qqde0g",
+        "_tz3210_w0qqde0g",
+        "_TZ3000_w0qqde0g",
+        "_tz3000_w0qqde0g"
+      ],
+      "productId": [
+        "TS011F"
+      ],
+      "canonicalDriver": "plug_energy_monitor",
+      "forbiddenDrivers": [
+        "button_wireless_2",
+        "button_wireless_1",
+        "button_wireless_4",
+        "smart_knob_rotary"
+      ],
+      "forbidMode": "couple",
+      "protocol": "zcl",
+      "notes": "WHY(P2361): Gmail L3 harvest couple _TZ3210_w0qqde0g+TS011F. Z2M TS011F_plug_3 family (_TZ3000_w0qqde0g sibling) is mains plug with energy poll — never button_wireless_2. Cartesian TS011F on button drivers steals pairing.",
+      "sources": [
+        "gmail-l3-2026-09-01",
+        "z2m-TS011F_plug_3",
+        "P2361"
       ],
       "tracks": {
         "master": {
