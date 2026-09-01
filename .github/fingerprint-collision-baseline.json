@@ -4803,13 +4803,13 @@
         "illuminance_sensor",
         "presence_sensor_radar",
         "rain_sensor",
-        "scene_switch_4",
         "sensor_contact_zigbee",
         "soil_sensor",
+        "switch_2gang",
         "vibration_sensor",
         "water_leak_sensor"
       ],
-      "reason": "HOBEIAN brand EF00/IAS matrix; water_leak TS0601 P2312"
+      "reason": "HOBEIAN brand EF00/IAS matrix; ZG-305Z switch_2gang + sensor siblings P2312/P217"
     },
     {
       "key": "hobeian|TS0601_wirelesssw",
