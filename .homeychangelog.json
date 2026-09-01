@@ -2831,5 +2831,8 @@
   },
   "9.0.765": {
     "en": "Locked TS011F plug fingerprints in mfs_db so bots cannot re-route them to wireless buttons."
+  },
+  "9.0.766": {
+    "en": "Exclusive plug routing for TS011F w0qqde0g fingerprints (energy monitor only)."
   }
 }
