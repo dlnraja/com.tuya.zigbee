@@ -2822,5 +2822,8 @@
   },
   "9.0.761": {
     "en": "Fixed smart plug fingerprint routing so TS011F plugs are not matched as wireless buttons."
+  },
+  "9.0.762": {
+    "en": "Stripped leftover plug fingerprint case-variants from wireless buttons; keep TS011F plugs on energy monitor."
   }
 }
