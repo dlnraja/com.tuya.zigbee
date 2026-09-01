@@ -43,8 +43,8 @@
       ],
       "args": [],
       "titleFormatted": {
-        "en": "Brightness changed",
-        "fr": "Luminosité changée"
+        "en": "Brightness changed ({dim})",
+        "fr": "Luminosité changée ({dim})"
       }
     },
     {
@@ -110,6 +110,29 @@
         "fr": "Physical button off"
       },
       "args": []
+    },
+    {
+      "id": "dimmer_bulb_dimmable_measure_power_changed",
+      "title": {
+        "en": "Power changed",
+        "fr": "Puissance changée"
+      },
+      "tokens": [
+        {
+          "name": "power",
+          "type": "number",
+          "title": {
+            "en": "Power (W)",
+            "fr": "Puissance (W)"
+          },
+          "example": 42
+        }
+      ],
+      "args": [],
+      "titleFormatted": {
+        "en": "Power changed to {power} W",
+        "fr": "Puissance {power} W"
+      }
     }
   ],
   "conditions": [

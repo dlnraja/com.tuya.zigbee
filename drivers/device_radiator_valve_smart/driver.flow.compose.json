@@ -19,8 +19,8 @@
       ],
       "args": [],
       "titleFormatted": {
-        "en": "Target temperature changed",
-        "fr": "Température cible changée"
+        "en": "Target temperature changed ({temperature})",
+        "fr": "Température cible changée ({temperature})"
       }
     },
     {
@@ -42,8 +42,8 @@
       ],
       "args": [],
       "titleFormatted": {
-        "en": "Temperature changed",
-        "fr": "Température changée"
+        "en": "Temperature changed ({temperature})",
+        "fr": "Température changée ({temperature})"
       }
     },
     {
@@ -93,6 +93,52 @@
         "fr": "Physical button off"
       },
       "args": []
+    },
+    {
+      "id": "device_radiator_valve_smart_target_temperature_changed",
+      "title": {
+        "en": "Target temperature changed",
+        "fr": "Consigne changée"
+      },
+      "tokens": [
+        {
+          "name": "temperature",
+          "type": "number",
+          "title": {
+            "en": "Target (°C)",
+            "fr": "Consigne (°C)"
+          },
+          "example": 21
+        }
+      ],
+      "args": [],
+      "titleFormatted": {
+        "en": "Target temperature changed to {temperature}°C",
+        "fr": "Consigne {temperature}°C"
+      }
+    },
+    {
+      "id": "device_radiator_valve_smart_humidity_changed",
+      "title": {
+        "en": "Humidity changed",
+        "fr": "Humidité changée"
+      },
+      "tokens": [
+        {
+          "name": "humidity",
+          "type": "number",
+          "title": {
+            "en": "Humidity (%)",
+            "fr": "Humidité (%)"
+          },
+          "example": 55
+        }
+      ],
+      "args": [],
+      "titleFormatted": {
+        "en": "Humidity changed to {humidity}%",
+        "fr": "Humidité {humidity}%"
+      }
     }
   ],
   "actions": [
@@ -144,6 +190,30 @@
         "fr": "Régler température [[temperature]]",
         "nl": "Temperatuur instellen [[temperature]]",
         "de": "Temperatur einstellen [[temperature]]"
+      }
+    },
+    {
+      "id": "device_radiator_valve_smart_enable_child_lock",
+      "title": {
+        "en": "Enable child lock",
+        "fr": "Activer verrou enfant"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Enable child lock",
+        "fr": "Activer verrou enfant"
+      }
+    },
+    {
+      "id": "device_radiator_valve_smart_disable_child_lock",
+      "title": {
+        "en": "Disable child lock",
+        "fr": "Désactiver verrou enfant"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Disable child lock",
+        "fr": "Désactiver verrou enfant"
       }
     }
   ],

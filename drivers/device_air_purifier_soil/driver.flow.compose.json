@@ -23,10 +23,10 @@
       ],
       "args": [],
       "titleFormatted": {
-        "en": "Soil moisture changed",
-        "nl": "Bodemvochtigheid veranderd",
-        "fr": "Humidité sol changée",
-        "de": "Bodenfeuchtigkeit geändert"
+        "en": "Soil moisture changed ({moisture})",
+        "nl": "Bodemvochtigheid veranderd ({moisture})",
+        "fr": "Humidité sol changée ({moisture})",
+        "de": "Bodenfeuchtigkeit geändert ({moisture})"
       }
     },
     {
@@ -52,10 +52,10 @@
       ],
       "args": [],
       "titleFormatted": {
-        "en": "Soil temperature changed",
-        "nl": "Bodemtemperatuur veranderd",
-        "fr": "Température sol changée",
-        "de": "Bodentemperatur geändert"
+        "en": "Soil temperature changed ({temperature})",
+        "nl": "Bodemtemperatuur veranderd ({temperature})",
+        "fr": "Température sol changée ({temperature})",
+        "de": "Bodentemperatur geändert ({temperature})"
       }
     },
     {
@@ -170,10 +170,10 @@
       ],
       "args": [],
       "titleFormatted": {
-        "en": "Battery level changed",
-        "nl": "Batterijniveau veranderd",
-        "fr": "Niveau batterie changé",
-        "de": "Batteriestand geändert"
+        "en": "Battery level changed ({battery})",
+        "nl": "Batterijniveau veranderd ({battery})",
+        "fr": "Niveau batterie changé ({battery})",
+        "de": "Batteriestand geändert ({battery})"
       }
     },
     {
@@ -238,6 +238,121 @@
         "fr": "Alarme eau",
         "nl": "Wateralarm",
         "de": "Wasseralarm"
+      }
+    },
+    {
+      "id": "device_air_purifier_soil_temperature_changed",
+      "title": {
+        "en": "Temperature changed",
+        "fr": "Température changée"
+      },
+      "tokens": [
+        {
+          "name": "temperature",
+          "type": "number",
+          "title": {
+            "en": "Temperature (°C)",
+            "fr": "Température (°C)"
+          },
+          "example": 22.5
+        }
+      ],
+      "args": [],
+      "titleFormatted": {
+        "en": "Temperature changed to {temperature}°C",
+        "fr": "Température {temperature}°C"
+      }
+    },
+    {
+      "id": "device_air_purifier_soil_humidity_changed",
+      "title": {
+        "en": "Humidity changed",
+        "fr": "Humidité changée"
+      },
+      "tokens": [
+        {
+          "name": "humidity",
+          "type": "number",
+          "title": {
+            "en": "Humidity (%)",
+            "fr": "Humidité (%)"
+          },
+          "example": 55
+        }
+      ],
+      "args": [],
+      "titleFormatted": {
+        "en": "Humidity changed to {humidity}%",
+        "fr": "Humidité {humidity}%"
+      }
+    },
+    {
+      "id": "device_air_purifier_soil_illuminance_changed",
+      "title": {
+        "en": "Illuminance changed",
+        "fr": "Luminosité ambiante changée"
+      },
+      "tokens": [
+        {
+          "name": "lux",
+          "type": "number",
+          "title": {
+            "en": "Lux",
+            "fr": "Lux"
+          },
+          "example": 300
+        }
+      ],
+      "args": [],
+      "titleFormatted": {
+        "en": "Illuminance changed to {lux} lux",
+        "fr": "Luminosité {lux} lux"
+      }
+    },
+    {
+      "id": "device_air_purifier_soil_brightness_changed",
+      "title": {
+        "en": "Brightness changed",
+        "fr": "Luminosité changée"
+      },
+      "tokens": [
+        {
+          "name": "brightness",
+          "type": "number",
+          "title": {
+            "en": "Brightness (%)",
+            "fr": "Luminosité (%)"
+          },
+          "example": 80
+        }
+      ],
+      "args": [],
+      "titleFormatted": {
+        "en": "Brightness changed to {brightness}%",
+        "fr": "Luminosité {brightness}%"
+      }
+    },
+    {
+      "id": "device_air_purifier_soil_pm25_changed",
+      "title": {
+        "en": "PM2.5 changed",
+        "fr": "PM2.5 changé"
+      },
+      "tokens": [
+        {
+          "name": "pm25",
+          "type": "number",
+          "title": {
+            "en": "PM2.5",
+            "fr": "PM2.5"
+          },
+          "example": 12
+        }
+      ],
+      "args": [],
+      "titleFormatted": {
+        "en": "PM2.5 changed to {pm25}",
+        "fr": "PM2.5 {pm25}"
       }
     }
   ],

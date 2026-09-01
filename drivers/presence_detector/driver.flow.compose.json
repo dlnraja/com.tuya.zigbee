@@ -10,10 +10,10 @@
         "de": "Anwesenheit im Raum erkannt"
       },
       "titleFormatted": {
-        "en": "Presence detected in room",
-        "nl": "Aanwezigheid gedetecteerd in kamer",
-        "fr": "Présence détectée dans la pièce",
-        "de": "Anwesenheit im Raum erkannt"
+        "en": "Presence detected in room ({confidence}) ({timestamp})",
+        "nl": "Aanwezigheid gedetecteerd in kamer ({confidence}) ({timestamp})",
+        "fr": "Présence détectée dans la pièce ({confidence}) ({timestamp})",
+        "de": "Anwesenheit im Raum erkannt ({confidence}) ({timestamp})"
       },
       "hint": {
         "en": "Triggers when the virtual presence detector determines the room is occupied",
@@ -56,10 +56,10 @@
         "de": "Anwesenheit im Raum beendet"
       },
       "titleFormatted": {
-        "en": "Presence cleared in room",
-        "nl": "Aanwezigheid opgeheven in kamer",
-        "fr": "Présence terminée dans la pièce",
-        "de": "Anwesenheit im Raum beendet"
+        "en": "Presence cleared in room ({duration_minutes}) ({timestamp})",
+        "nl": "Aanwezigheid opgeheven in kamer ({duration_minutes}) ({timestamp})",
+        "fr": "Présence terminée dans la pièce ({duration_minutes}) ({timestamp})",
+        "de": "Anwesenheit im Raum beendet ({duration_minutes}) ({timestamp})"
       },
       "hint": {
         "en": "Triggers when the room is determined to be empty after timeout",
@@ -102,10 +102,10 @@
         "de": "Vertrauen geändert"
       },
       "titleFormatted": {
-        "en": "Confidence changed",
-        "nl": "Vertrouwen gewijzigd",
-        "fr": "Confiance changée",
-        "de": "Vertrauen geändert"
+        "en": "Confidence changed ({confidence})",
+        "nl": "Vertrouwen gewijzigd ({confidence})",
+        "fr": "Confiance changée ({confidence})",
+        "de": "Vertrauen geändert ({confidence})"
       },
       "hint": {
         "en": "Triggers when the presence confidence score changes",
@@ -127,6 +127,18 @@
         }
       ],
       "args": []
+    },
+    {
+      "id": "presence_detector_motion_alarm",
+      "title": {
+        "en": "Motion alarm",
+        "fr": "Alarme mouvement"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Motion detected",
+        "fr": "Mouvement détecté"
+      }
     }
   ],
   "conditions": [

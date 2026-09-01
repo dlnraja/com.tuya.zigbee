@@ -52,10 +52,33 @@
       ],
       "args": [],
       "titleFormatted": {
-        "en": "PM2.5 changed",
-        "fr": "PM2.5 changé",
-        "nl": "PM2.5 gewijzigd",
-        "de": "PM2.5 geändert"
+        "en": "PM2.5 changed ({pm25})",
+        "fr": "PM2.5 changé ({pm25})",
+        "nl": "PM2.5 gewijzigd ({pm25})",
+        "de": "PM2.5 geändert ({pm25})"
+      }
+    },
+    {
+      "id": "air_purifier_motion_illuminance_changed",
+      "title": {
+        "en": "Illuminance changed",
+        "fr": "Luminosité ambiante changée"
+      },
+      "tokens": [
+        {
+          "name": "lux",
+          "type": "number",
+          "title": {
+            "en": "Lux",
+            "fr": "Lux"
+          },
+          "example": 300
+        }
+      ],
+      "args": [],
+      "titleFormatted": {
+        "en": "Illuminance changed to {lux} lux",
+        "fr": "Luminosité {lux} lux"
       }
     }
   ],

@@ -19,8 +19,8 @@
       ],
       "args": [],
       "titleFormatted": {
-        "en": "Luminance changed",
-        "fr": "Luminosité changée"
+        "en": "Luminance changed ({luminance})",
+        "fr": "Luminosité changée ({luminance})"
       }
     }
   ],
@@ -41,5 +41,6 @@
         "de": "Batterie !{{ist|ist nicht}} schwach"
       }
     }
-  ]
+  ],
+  "actions": []
 }

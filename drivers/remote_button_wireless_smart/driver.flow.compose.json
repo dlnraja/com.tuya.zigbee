@@ -19,8 +19,8 @@
       ],
       "args": [],
       "titleFormatted": {
-        "en": "Button pressed",
-        "fr": "Bouton appuyé"
+        "en": "Button pressed ({button})",
+        "fr": "Bouton appuyé ({button})"
       }
     },
     {
@@ -42,8 +42,8 @@
       ],
       "args": [],
       "titleFormatted": {
-        "en": "Button double-pressed",
-        "fr": "Bouton double-cliqué"
+        "en": "Button double-pressed ({button})",
+        "fr": "Bouton double-cliqué ({button})"
       }
     },
     {
@@ -65,8 +65,8 @@
       ],
       "args": [],
       "titleFormatted": {
-        "en": "Button long-pressed",
-        "fr": "Bouton pressé longtemps"
+        "en": "Button long-pressed ({button})",
+        "fr": "Bouton pressé longtemps ({button})"
       }
     },
     {
@@ -97,8 +97,8 @@
       ],
       "args": [],
       "titleFormatted": {
-        "en": "Button multi-pressed",
-        "fr": "Bouton multi-cliqué"
+        "en": "Button multi-pressed ({button}) ({count})",
+        "fr": "Bouton multi-cliqué ({button}) ({count})"
       }
     },
     {

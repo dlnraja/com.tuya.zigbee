@@ -240,7 +240,11 @@
           },
           "example": "confort"
         }
-      ]
+      ],
+      "titleFormatted": {
+        "en": "Heating mode changed ({mode})",
+        "fr": "Mode chauffage changé ({mode})"
+      }
     },
     {
       "id": "pilot_signal_sent",
@@ -257,7 +261,34 @@
           },
           "example": "confort"
         }
-      ]
+      ],
+      "titleFormatted": {
+        "en": "Pilot wire signal sent ({signal_type})",
+        "fr": "Signal fil pilote envoyé ({signal_type})"
+      }
+    },
+    {
+      "id": "radiator_controller_target_temperature_changed",
+      "title": {
+        "en": "Target temperature changed",
+        "fr": "Consigne changée"
+      },
+      "tokens": [
+        {
+          "name": "temperature",
+          "type": "number",
+          "title": {
+            "en": "Target (°C)",
+            "fr": "Consigne (°C)"
+          },
+          "example": 21
+        }
+      ],
+      "args": [],
+      "titleFormatted": {
+        "en": "Target temperature changed to {temperature}°C",
+        "fr": "Consigne {temperature}°C"
+      }
     }
   ],
   "conditions": [

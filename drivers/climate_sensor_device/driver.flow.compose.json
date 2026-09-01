@@ -20,8 +20,8 @@
       ],
       "args": [],
       "titleFormatted": {
-        "en": "Temperature changed",
-        "fr": "Température changée"
+        "en": "Temperature changed ({temperature})",
+        "fr": "Température changée ({temperature})"
       }
     },
     {
@@ -43,8 +43,8 @@
       ],
       "args": [],
       "titleFormatted": {
-        "en": "Humidity changed",
-        "fr": "Humidité changée"
+        "en": "Humidity changed ({humidity})",
+        "fr": "Humidité changée ({humidity})"
       }
     },
     {
@@ -62,6 +62,56 @@
         "fr": "Physical button off"
       },
       "args": []
+    },
+    {
+      "id": "climate_sensor_device_target_temperature_changed",
+      "title": {
+        "en": "Target temperature changed",
+        "fr": "Consigne changée"
+      },
+      "tokens": [
+        {
+          "name": "temperature",
+          "type": "number",
+          "title": {
+            "en": "Target (°C)",
+            "fr": "Consigne (°C)"
+          },
+          "example": 21
+        }
+      ],
+      "args": [],
+      "titleFormatted": {
+        "en": "Target temperature changed to {temperature}°C",
+        "fr": "Consigne {temperature}°C"
+      }
+    }
+  ],
+  "conditions": [],
+  "actions": [
+    {
+      "id": "climate_sensor_device_enable_child_lock",
+      "title": {
+        "en": "Enable child lock",
+        "fr": "Activer verrou enfant"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Enable child lock",
+        "fr": "Activer verrou enfant"
+      }
+    },
+    {
+      "id": "climate_sensor_device_disable_child_lock",
+      "title": {
+        "en": "Disable child lock",
+        "fr": "Désactiver verrou enfant"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Disable child lock",
+        "fr": "Désactiver verrou enfant"
+      }
     }
   ]
 }

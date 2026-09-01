@@ -43,8 +43,8 @@
       ],
       "args": [],
       "titleFormatted": {
-        "en": "Power changed",
-        "fr": "Puissance changée"
+        "en": "Power changed ({power})",
+        "fr": "Puissance changée ({power})"
       }
     },
     {
@@ -66,8 +66,8 @@
       ],
       "args": [],
       "titleFormatted": {
-        "en": "Voltage changed",
-        "fr": "Tension changée"
+        "en": "Voltage changed ({voltage})",
+        "fr": "Tension changée ({voltage})"
       }
     },
     {
@@ -89,8 +89,8 @@
       ],
       "args": [],
       "titleFormatted": {
-        "en": "Current changed",
-        "fr": "Courant changé"
+        "en": "Current changed ({current})",
+        "fr": "Courant changé ({current})"
       }
     },
     {
@@ -112,8 +112,8 @@
       ],
       "args": [],
       "titleFormatted": {
-        "en": "Energy consumption changed",
-        "fr": "Consommation énergétique changée"
+        "en": "Energy consumption changed ({meter_power})",
+        "fr": "Consommation énergétique changée ({meter_power})"
       }
     },
     {
@@ -163,6 +163,121 @@
         "fr": "Physical button off"
       },
       "args": []
+    },
+    {
+      "id": "device_air_purifier_plug_measure_power_changed",
+      "title": {
+        "en": "Power changed",
+        "fr": "Puissance changée"
+      },
+      "tokens": [
+        {
+          "name": "power",
+          "type": "number",
+          "title": {
+            "en": "Power (W)",
+            "fr": "Puissance (W)"
+          },
+          "example": 42
+        }
+      ],
+      "args": [],
+      "titleFormatted": {
+        "en": "Power changed to {power} W",
+        "fr": "Puissance {power} W"
+      }
+    },
+    {
+      "id": "device_air_purifier_plug_voltage_changed",
+      "title": {
+        "en": "Voltage changed",
+        "fr": "Tension changée"
+      },
+      "tokens": [
+        {
+          "name": "voltage",
+          "type": "number",
+          "title": {
+            "en": "Voltage (V)",
+            "fr": "Tension (V)"
+          },
+          "example": 230
+        }
+      ],
+      "args": [],
+      "titleFormatted": {
+        "en": "Voltage changed to {voltage} V",
+        "fr": "Tension {voltage} V"
+      }
+    },
+    {
+      "id": "device_air_purifier_plug_current_changed",
+      "title": {
+        "en": "Current changed",
+        "fr": "Courant changé"
+      },
+      "tokens": [
+        {
+          "name": "current",
+          "type": "number",
+          "title": {
+            "en": "Current (A)",
+            "fr": "Courant (A)"
+          },
+          "example": 0.5
+        }
+      ],
+      "args": [],
+      "titleFormatted": {
+        "en": "Current changed to {current} A",
+        "fr": "Courant {current} A"
+      }
+    },
+    {
+      "id": "device_air_purifier_plug_brightness_changed",
+      "title": {
+        "en": "Brightness changed",
+        "fr": "Luminosité changée"
+      },
+      "tokens": [
+        {
+          "name": "brightness",
+          "type": "number",
+          "title": {
+            "en": "Brightness (%)",
+            "fr": "Luminosité (%)"
+          },
+          "example": 80
+        }
+      ],
+      "args": [],
+      "titleFormatted": {
+        "en": "Brightness changed to {brightness}%",
+        "fr": "Luminosité {brightness}%"
+      }
+    },
+    {
+      "id": "device_air_purifier_plug_pm25_changed",
+      "title": {
+        "en": "PM2.5 changed",
+        "fr": "PM2.5 changé"
+      },
+      "tokens": [
+        {
+          "name": "pm25",
+          "type": "number",
+          "title": {
+            "en": "PM2.5",
+            "fr": "PM2.5"
+          },
+          "example": 12
+        }
+      ],
+      "args": [],
+      "titleFormatted": {
+        "en": "PM2.5 changed to {pm25}",
+        "fr": "PM2.5 {pm25}"
+      }
     }
   ],
   "conditions": [

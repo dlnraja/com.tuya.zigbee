@@ -212,6 +212,21 @@ env:
   - Env: `FIRECRAWL_DAILY_MAX=3`, `FREE_SCRAPE_BROWSER=0`, restore `.cache/scraper-cache` across runs
   - Never invent productId; Firecrawl last resort only; prefer Jina keyless + direct HTTP + 6h cache
 
+- **P2376 — Intelligent source diff (cache-first, never block on missing source):**
+  - SSOT: `config/enrichment/source-registry.json` + `tools/ci/intelligent-source-diff.js`
+  - Manifest: `.github/state/intelligent-source-manifest.json` (project fingerprint + per-source hashes)
+  - Policy: optional sources (`gmail`, `forum`, `johan`) **soft-fail** when secrets missing; stale cache OK
+  - Crawl only **stale/missing/forced** — not full re-download every cron (ETag + scanner TTL + manifest)
+  - GHA cache key: `intel-source-diff-${{ hashFiles('package-lock.json', 'config/enrichment/source-registry.json') }}` + restore-keys chain
+  - Doctrine: `docs/architecture/INTELLIGENT_SOURCE_DIFF.md`
+  - Commands: `npm run source:diff` · `source:diff:apply`
+  - Wired: `fleet-intelligent-enrich.yml`, `auto-enrich-closed-loop.yml`, `fleet-intelligent-enrich.js --crawl`
+
+- **P2375 — Flow fleet enrich (all driver classes, CI-only):**
+  - Script: `tools/ci/flow-fleet-enrich.js` — orphan tokens, capability triggers, Z2M cross-ref, app.json sync
+  - Commands: `npm run enrich:flow-fleet:apply` · `npm run flow:l99`
+  - Runtime BOTH: `FlowCardHeuristics.buildCapabilityFlowCandidates` + `DynamicFlowCardManager` soft resolve
+
 - **P2228 — CI vs Homey app packaging:**
   - Doctrine: `docs/architecture/CI_VS_HOMEY_RUNTIME.md`
   - Homey ships: `HomeyGapCompensator`, `ButtonCaptureCascade` + `lib/resilience/data/*`, `UnknownCaseRealigner` + `lib/helpers/data/heuristic-model.json`

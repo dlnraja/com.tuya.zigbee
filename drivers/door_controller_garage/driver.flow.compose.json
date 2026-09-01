@@ -140,6 +140,18 @@
         "nl": "Slot gewijzigd",
         "de": "Schloss geändert"
       }
+    },
+    {
+      "id": "door_controller_garage_motion_alarm",
+      "title": {
+        "en": "Motion alarm",
+        "fr": "Alarme mouvement"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Motion detected",
+        "fr": "Mouvement détecté"
+      }
     }
   ],
   "conditions": [

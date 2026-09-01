@@ -68,6 +68,52 @@
         "fr": "Physical button off"
       },
       "args": []
+    },
+    {
+      "id": "switch_usb_dongle_measure_power_changed",
+      "title": {
+        "en": "Power changed",
+        "fr": "Puissance changée"
+      },
+      "tokens": [
+        {
+          "name": "power",
+          "type": "number",
+          "title": {
+            "en": "Power (W)",
+            "fr": "Puissance (W)"
+          },
+          "example": 42
+        }
+      ],
+      "args": [],
+      "titleFormatted": {
+        "en": "Power changed to {power} W",
+        "fr": "Puissance {power} W"
+      }
+    },
+    {
+      "id": "switch_usb_dongle_meter_power_changed",
+      "title": {
+        "en": "Energy changed",
+        "fr": "Énergie changée"
+      },
+      "tokens": [
+        {
+          "name": "energy",
+          "type": "number",
+          "title": {
+            "en": "Energy (kWh)",
+            "fr": "Énergie (kWh)"
+          },
+          "example": 1.2
+        }
+      ],
+      "args": [],
+      "titleFormatted": {
+        "en": "Energy changed to {energy} kWh",
+        "fr": "Énergie {energy} kWh"
+      }
     }
   ],
   "conditions": [

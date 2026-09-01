@@ -23,10 +23,10 @@
       ],
       "args": [],
       "titleFormatted": {
-        "en": "Temperature changed",
-        "fr": "Température changée",
-        "nl": "Temperatuur gewijzigd",
-        "de": "Temperatur geändert"
+        "en": "Temperature changed ({temperature})",
+        "fr": "Température changée ({temperature})",
+        "nl": "Temperatuur gewijzigd ({temperature})",
+        "de": "Temperatur geändert ({temperature})"
       }
     },
     {
@@ -52,10 +52,10 @@
       ],
       "args": [],
       "titleFormatted": {
-        "en": "Target temperature changed",
-        "fr": "Température cible changée",
-        "nl": "Doeltemperatuur gewijzigd",
-        "de": "Zieltemperatur geändert"
+        "en": "Target temperature changed ({temperature})",
+        "fr": "Température cible changée ({temperature})",
+        "nl": "Doeltemperatuur gewijzigd ({temperature})",
+        "de": "Zieltemperatur geändert ({temperature})"
       }
     },
     {
@@ -81,10 +81,10 @@
       ],
       "args": [],
       "titleFormatted": {
-        "en": "Mode changed",
-        "fr": "Mode changé",
-        "nl": "Modus gewijzigd",
-        "de": "Modus geändert"
+        "en": "Mode changed ({mode})",
+        "fr": "Mode changé ({mode})",
+        "nl": "Modus gewijzigd ({mode})",
+        "de": "Modus geändert ({mode})"
       }
     },
     {
@@ -110,10 +110,10 @@
       ],
       "args": [],
       "titleFormatted": {
-        "en": "Humidity changed",
-        "fr": "Humidité changée",
-        "nl": "Luchtvochtigheid gewijzigd",
-        "de": "Luftfeuchtigkeit geändert"
+        "en": "Humidity changed ({humidity})",
+        "fr": "Humidité changée ({humidity})",
+        "nl": "Luchtvochtigheid gewijzigd ({humidity})",
+        "de": "Luftfeuchtigkeit geändert ({humidity})"
       }
     },
     {

@@ -53,8 +53,8 @@
       ],
       "args": [],
       "titleFormatted": {
-        "en": "Brightness up pressed",
-        "fr": "Luminosité + appuyé"
+        "en": "Brightness up pressed ({step_size})",
+        "fr": "Luminosité + appuyé ({step_size})"
       }
     },
     {
@@ -74,8 +74,8 @@
       ],
       "args": [],
       "titleFormatted": {
-        "en": "Brightness down pressed",
-        "fr": "Luminosité - appuyé"
+        "en": "Brightness down pressed ({step_size})",
+        "fr": "Luminosité - appuyé ({step_size})"
       }
     },
     {
@@ -107,8 +107,8 @@
       ],
       "args": [],
       "titleFormatted": {
-        "en": "Brightness level set",
-        "fr": "Niveau de luminosité défini"
+        "en": "Brightness level set ({level})",
+        "fr": "Niveau de luminosité défini ({level})"
       }
     },
     {
@@ -128,8 +128,8 @@
       ],
       "args": [],
       "titleFormatted": {
-        "en": "Scene button pressed",
-        "fr": "Bouton scène appuyé"
+        "en": "Scene button pressed ({scene_id})",
+        "fr": "Bouton scène appuyé ({scene_id})"
       }
     },
     {

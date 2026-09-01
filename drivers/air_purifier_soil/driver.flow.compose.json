@@ -23,10 +23,10 @@
       ],
       "args": [],
       "titleFormatted": {
-        "en": "Soil moisture changed",
-        "nl": "Bodemvochtigheid veranderd",
-        "fr": "Humidité sol changée",
-        "de": "Bodenfeuchtigkeit geändert"
+        "en": "Soil moisture changed ({moisture})",
+        "nl": "Bodemvochtigheid veranderd ({moisture})",
+        "fr": "Humidité sol changée ({moisture})",
+        "de": "Bodenfeuchtigkeit geändert ({moisture})"
       }
     },
     {
@@ -52,10 +52,10 @@
       ],
       "args": [],
       "titleFormatted": {
-        "en": "Soil temperature changed",
-        "nl": "Bodemtemperatuur veranderd",
-        "fr": "Température sol changée",
-        "de": "Bodentemperatur geändert"
+        "en": "Soil temperature changed ({temperature})",
+        "nl": "Bodemtemperatuur veranderd ({temperature})",
+        "fr": "Température sol changée ({temperature})",
+        "de": "Bodentemperatur geändert ({temperature})"
       }
     },
     {
@@ -170,10 +170,10 @@
       ],
       "args": [],
       "titleFormatted": {
-        "en": "Battery level changed",
-        "nl": "Batterijniveau veranderd",
-        "fr": "Niveau batterie changé",
-        "de": "Batteriestand geändert"
+        "en": "Battery level changed ({battery})",
+        "nl": "Batterijniveau veranderd ({battery})",
+        "fr": "Niveau batterie changé ({battery})",
+        "de": "Batteriestand geändert ({battery})"
       }
     },
     {
@@ -238,6 +238,29 @@
         "fr": "Alarme eau",
         "nl": "Wateralarm",
         "de": "Wasseralarm"
+      }
+    },
+    {
+      "id": "air_purifier_soil_illuminance_changed",
+      "title": {
+        "en": "Illuminance changed",
+        "fr": "Luminosité ambiante changée"
+      },
+      "tokens": [
+        {
+          "name": "lux",
+          "type": "number",
+          "title": {
+            "en": "Lux",
+            "fr": "Lux"
+          },
+          "example": 300
+        }
+      ],
+      "args": [],
+      "titleFormatted": {
+        "en": "Illuminance changed to {lux} lux",
+        "fr": "Luminosité {lux} lux"
       }
     }
   ],

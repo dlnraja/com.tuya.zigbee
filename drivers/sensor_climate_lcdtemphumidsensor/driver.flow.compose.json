@@ -20,8 +20,8 @@
       ],
       "args": [],
       "titleFormatted": {
-        "en": "Temperature changed",
-        "fr": "Température changée"
+        "en": "Temperature changed ({temperature})",
+        "fr": "Température changée ({temperature})"
       }
     },
     {
@@ -43,8 +43,8 @@
       ],
       "args": [],
       "titleFormatted": {
-        "en": "Humidity changed",
-        "fr": "Humidité changée"
+        "en": "Humidity changed ({humidity})",
+        "fr": "Humidité changée ({humidity})"
       }
     },
     {
@@ -221,5 +221,6 @@
         "fr": "Humidité inférieure à[[humidity]]"
       }
     }
-  ]
+  ],
+  "actions": []
 }

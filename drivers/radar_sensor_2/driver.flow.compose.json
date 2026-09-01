@@ -19,8 +19,8 @@
         }
       ],
       "titleFormatted": {
-        "en": "Luminance changed",
-        "fr": "Luminance changee"
+        "en": "Luminance changed ({luminance})",
+        "fr": "Luminance changee ({luminance})"
       }
     },
     {
@@ -66,8 +66,8 @@
         }
       ],
       "titleFormatted": {
-        "en": "Target distance changed",
-        "fr": "Distance cible changee"
+        "en": "Target distance changed ({target_distance})",
+        "fr": "Distance cible changee ({target_distance})"
       }
     }
   ],

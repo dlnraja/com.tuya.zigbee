@@ -24,14 +24,14 @@ dirs.forEach(d => {
     if (hasArgs) withArgs++;
     if (hasTokens) withTokens++;
     if (hasTokens) {
-      // Real orphan: token name is not in args AND not in title (any locale)
+      // Real orphan: token name is not in args AND not in title/titleFormatted (any locale)
       const argsStr = JSON.stringify(card.args || []);
       const titleStr = JSON.stringify(card.title || {});
+      const titleFormattedStr = JSON.stringify(card.titleFormatted || {});
       const missing = card.tokens.filter(t => {
         const inArgs = argsStr.includes('"' + t.name + '"') || argsStr.includes("'" + t.name + "'");
-        // Check for {name} placeholder in any locale
         const placeholderPatterns = ['{' + t.name + '}', '${' + t.name + '}'];
-        const inTitle = placeholderPatterns.some(p => titleStr.includes(p));
+        const inTitle = placeholderPatterns.some(p => titleStr.includes(p) || titleFormattedStr.includes(p));
         return !inArgs && !inTitle;
       });
       if (missing.length > 0) {

@@ -19,8 +19,8 @@
       ],
       "args": [],
       "titleFormatted": {
-        "en": "Outdoor temperature changed",
-        "fr": "Température extérieure changée"
+        "en": "Outdoor temperature changed ({temperature})",
+        "fr": "Température extérieure changée ({temperature})"
       }
     },
     {
@@ -42,8 +42,8 @@
       ],
       "args": [],
       "titleFormatted": {
-        "en": "Outdoor humidity changed",
-        "fr": "Humidité extérieure changée"
+        "en": "Outdoor humidity changed ({humidity})",
+        "fr": "Humidité extérieure changée ({humidity})"
       }
     },
     {
@@ -65,8 +65,8 @@
       ],
       "args": [],
       "titleFormatted": {
-        "en": "Barometric pressure changed",
-        "fr": "Pression atmosphérique changée"
+        "en": "Barometric pressure changed ({pressure})",
+        "fr": "Pression atmosphérique changée ({pressure})"
       }
     },
     {

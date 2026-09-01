@@ -216,7 +216,7 @@
         }
       ],
       "titleFormatted": {
-        "en": "Gang 1 scene triggered"
+        "en": "Gang 1 scene triggered ({action})"
       }
     },
     {
@@ -237,7 +237,7 @@
         }
       ],
       "titleFormatted": {
-        "en": "Gang 2 scene triggered"
+        "en": "Gang 2 scene triggered ({action})"
       }
     },
     {
@@ -258,7 +258,53 @@
         }
       ],
       "titleFormatted": {
-        "en": "Gang 3 scene triggered"
+        "en": "Gang 3 scene triggered ({action})"
+      }
+    },
+    {
+      "id": "switch_3gang_measure_power_changed",
+      "title": {
+        "en": "Power changed",
+        "fr": "Puissance changée"
+      },
+      "tokens": [
+        {
+          "name": "power",
+          "type": "number",
+          "title": {
+            "en": "Power (W)",
+            "fr": "Puissance (W)"
+          },
+          "example": 42
+        }
+      ],
+      "args": [],
+      "titleFormatted": {
+        "en": "Power changed to {power} W",
+        "fr": "Puissance {power} W"
+      }
+    },
+    {
+      "id": "switch_3gang_meter_power_changed",
+      "title": {
+        "en": "Energy changed",
+        "fr": "Énergie changée"
+      },
+      "tokens": [
+        {
+          "name": "energy",
+          "type": "number",
+          "title": {
+            "en": "Energy (kWh)",
+            "fr": "Énergie (kWh)"
+          },
+          "example": 1.2
+        }
+      ],
+      "args": [],
+      "titleFormatted": {
+        "en": "Energy changed to {energy} kWh",
+        "fr": "Énergie {energy} kWh"
       }
     }
   ],
@@ -470,9 +516,27 @@
           "name": "mode",
           "type": "dropdown",
           "values": [
-            { "id": "off", "title": { "en": "Off", "fr": "Éteint" } },
-            { "id": "normal", "title": { "en": "Normal", "fr": "Normal" } },
-            { "id": "inverted", "title": { "en": "Inverted", "fr": "Inversé" } }
+            {
+              "id": "off",
+              "title": {
+                "en": "Off",
+                "fr": "Éteint"
+              }
+            },
+            {
+              "id": "normal",
+              "title": {
+                "en": "Normal",
+                "fr": "Normal"
+              }
+            },
+            {
+              "id": "inverted",
+              "title": {
+                "en": "Inverted",
+                "fr": "Inversé"
+              }
+            }
           ]
         }
       ],
@@ -493,9 +557,24 @@
           "name": "mode",
           "type": "dropdown",
           "values": [
-            { "id": "auto", "title": { "en": "Auto (Normal + flows)" } },
-            { "id": "magic", "title": { "en": "Magic (Scene only)" } },
-            { "id": "both", "title": { "en": "Both (Load + scene)" } }
+            {
+              "id": "auto",
+              "title": {
+                "en": "Auto (Normal + flows)"
+              }
+            },
+            {
+              "id": "magic",
+              "title": {
+                "en": "Magic (Scene only)"
+              }
+            },
+            {
+              "id": "both",
+              "title": {
+                "en": "Both (Load + scene)"
+              }
+            }
           ]
         }
       ],
@@ -517,9 +596,27 @@
           "name": "mode",
           "type": "dropdown",
           "values": [
-            { "id": "off", "title": { "en": "Always Off", "nl": "Altijd Uit" } },
-            { "id": "on", "title": { "en": "Always On", "nl": "Altijd Aan" } },
-            { "id": "memory", "title": { "en": "Last State", "nl": "Laatste status" } }
+            {
+              "id": "off",
+              "title": {
+                "en": "Always Off",
+                "nl": "Altijd Uit"
+              }
+            },
+            {
+              "id": "on",
+              "title": {
+                "en": "Always On",
+                "nl": "Altijd Aan"
+              }
+            },
+            {
+              "id": "memory",
+              "title": {
+                "en": "Last State",
+                "nl": "Laatste status"
+              }
+            }
           ]
         }
       ],

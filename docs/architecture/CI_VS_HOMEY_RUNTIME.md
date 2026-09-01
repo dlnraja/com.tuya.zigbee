@@ -8,6 +8,7 @@
 |-------|------------|----------|
 | **Homey app** | Homey Pro (SDK3) | `lib/tuya/*`, mixins, `HomeyGapCompensator`, `ButtonCaptureCascade`, `UnknownCaseRealigner` |
 | **GitHub Actions** | ubuntu runners | `tools/ci/*`, `.github/workflows/*`, `config/enrichment/*`, `config/resilience/*` catalogs, `config/security/*` |
+| **Source diff cache** | GHA + `.cache/*` | `intelligent-source-diff.js` — ETag + TTL + manifest; optional sources never block |
 | **IDE / Cursor** | Maintainer machine | Gmail plugin L0, agent edits — never required on Homey |
 
 ## Homey package (`.homeyignore`)
@@ -43,6 +44,10 @@ Same split on **master** and **stable**. Never change App ID when porting. `dyna
 ```bash
 # CI only
 npm run enrich:silent
+npm run enrich:flow-fleet
+npm run enrich:flow-fleet:apply
+npm run source:diff
+npm run source:diff:apply
 npm run resilience:all
 npm run ai:plan-guard
 npm run workflow:smoke
@@ -64,6 +69,7 @@ SSOT: [`config/architecture/intelligent-infra.json`](../config/architecture/inte
 | Concern | Canonical |
 |---------|-----------|
 | CI HTTP | `lib/scraper/smart-fetch.js` (not NetworkCache) |
+| CI flow enrich | `tools/ci/flow-fleet-enrich.js` — orphan tokens, capability triggers, Z2M cross-ref |
 | CI logs | `tools/ci/intelligent-logger.js` |
 | Knowledge writes | `config/enrichment/manifest.json` → `knowledgeWriteTargets` |
 | Homey memory | `BootBudget` + `lib/performance/IntelligentLazyLoad.js` — Buffer JSON, deferred heavy features |

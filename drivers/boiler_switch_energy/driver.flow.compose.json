@@ -39,6 +39,98 @@
         "fr": "Physical button off"
       },
       "args": []
+    },
+    {
+      "id": "boiler_switch_energy_measure_power_changed",
+      "title": {
+        "en": "Power changed",
+        "fr": "Puissance changée"
+      },
+      "tokens": [
+        {
+          "name": "power",
+          "type": "number",
+          "title": {
+            "en": "Power (W)",
+            "fr": "Puissance (W)"
+          },
+          "example": 42
+        }
+      ],
+      "args": [],
+      "titleFormatted": {
+        "en": "Power changed to {power} W",
+        "fr": "Puissance {power} W"
+      }
+    },
+    {
+      "id": "boiler_switch_energy_voltage_changed",
+      "title": {
+        "en": "Voltage changed",
+        "fr": "Tension changée"
+      },
+      "tokens": [
+        {
+          "name": "voltage",
+          "type": "number",
+          "title": {
+            "en": "Voltage (V)",
+            "fr": "Tension (V)"
+          },
+          "example": 230
+        }
+      ],
+      "args": [],
+      "titleFormatted": {
+        "en": "Voltage changed to {voltage} V",
+        "fr": "Tension {voltage} V"
+      }
+    },
+    {
+      "id": "boiler_switch_energy_current_changed",
+      "title": {
+        "en": "Current changed",
+        "fr": "Courant changé"
+      },
+      "tokens": [
+        {
+          "name": "current",
+          "type": "number",
+          "title": {
+            "en": "Current (A)",
+            "fr": "Courant (A)"
+          },
+          "example": 0.5
+        }
+      ],
+      "args": [],
+      "titleFormatted": {
+        "en": "Current changed to {current} A",
+        "fr": "Courant {current} A"
+      }
+    },
+    {
+      "id": "boiler_switch_energy_temperature_changed",
+      "title": {
+        "en": "Temperature changed",
+        "fr": "Température changée"
+      },
+      "tokens": [
+        {
+          "name": "temperature",
+          "type": "number",
+          "title": {
+            "en": "Temperature (°C)",
+            "fr": "Température (°C)"
+          },
+          "example": 22.5
+        }
+      ],
+      "args": [],
+      "titleFormatted": {
+        "en": "Temperature changed to {temperature}°C",
+        "fr": "Température {temperature}°C"
+      }
     }
   ],
   "conditions": [

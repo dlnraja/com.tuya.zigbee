@@ -19,8 +19,8 @@
       ],
       "args": [],
       "titleFormatted": {
-        "en": "Button pressed",
-        "fr": "Bouton appuyé"
+        "en": "Button pressed ({button})",
+        "fr": "Bouton appuyé ({button})"
       }
     },
     {
@@ -42,8 +42,8 @@
       ],
       "args": [],
       "titleFormatted": {
-        "en": "Button double pressed",
-        "fr": "Double appui bouton"
+        "en": "Button double pressed ({button})",
+        "fr": "Double appui bouton ({button})"
       }
     },
     {
@@ -65,8 +65,8 @@
       ],
       "args": [],
       "titleFormatted": {
-        "en": "Button long pressed",
-        "fr": "Appui long bouton"
+        "en": "Button long pressed ({button})",
+        "fr": "Appui long bouton ({button})"
       }
     },
     {
@@ -88,8 +88,8 @@
       ],
       "args": [],
       "titleFormatted": {
-        "en": "Button released",
-        "fr": "Bouton relâché"
+        "en": "Button released ({button})",
+        "fr": "Bouton relâché ({button})"
       }
     },
     {
@@ -126,5 +126,6 @@
         "fr": "Niveau batterie supérieur à [[level]]"
       }
     }
-  ]
+  ],
+  "actions": []
 }
