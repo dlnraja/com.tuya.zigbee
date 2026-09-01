@@ -1,4 +1,7 @@
 {
+  "9.0.773": {
+    "en": "Fixed app crash from foreign/flow Invalid Driver ID (Homey class light and third-party Zigbee tokens)."
+  },
   "9.0.736": {
     "en": "Fixed Moes TS0044 scene remote and soil sensor pairing clusters; hardened wall dimmer TX failure detection."
   },
