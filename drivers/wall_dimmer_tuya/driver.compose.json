@@ -566,43 +566,5 @@
   "version": "1.0.0",
   "ui": {
     "quickAction": "onoff"
-  },
-  "firmwareUpdates": {
-    "updates": [
-      {
-        "changelog": {
-          "en": "OEM Zigbee firmware v70 (Koenkk zigbee-OTA, SHA512-verified). Install via Homey Device Updates (Settings → Device Updates) on Homey ≥13.2 / Mobile ≥9.10.",
-          "fr": "Firmware Zigbee OEM v70 (Koenkk zigbee-OTA, SHA512 vérifié). Installez via Homey Device Updates — Homey ≥13.2 / Mobile ≥9.10."
-        },
-        "device": {
-          "manufacturerName": [
-            "_TZ3210_ngqk6jia"
-          ],
-          "productId": [
-            "TS0011",
-            "TS0052",
-            "TS0601",
-            "TS0601_dim1",
-            "TS1101",
-            "TS110E",
-            "TS110F",
-            "ZBMINI-DIM",
-            "ZBMINID"
-          ]
-        },
-        "files": [
-          {
-            "fileVersion": 70,
-            "imageType": 54179,
-            "manufacturerCode": 4417,
-            "minHardwareVersion": 27502,
-            "maxHardwareVersion": 20256,
-            "size": 256770,
-            "name": "1663234985-oem_ztu_dimmer1_klt_OTA_1.0.6.bin",
-            "integrity": "sha256:deb0f02700848b7e858286c3b4a4e4926b54194806cf0a3be996822daabbc116"
-          }
-        ]
-      }
-    ]
   }
 }
