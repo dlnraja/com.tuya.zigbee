@@ -906,7 +906,11 @@ the Universal Tuya App ID.
    (do not greenwash a failed upload). `wait-athom-draft-ready.js` must not
    exit 1 on the first `processing_failed` poll — a sibling draft/test of
    the same version wins; fail-closed only after the wait window
-   (`HOMEY_DRAFT_WAIT_MS` default **360s** after P2252).
+   (`HOMEY_DRAFT_WAIT_MS` default **600s** after P2384/P2385).
+7. **P2385 amplifiers**: `force_publish` defaults **false**; Auto-Fix publishes
+   only when `trigger_publish=true` (never bare dispatch); Publish Self-Heal
+   uses `cancel-in-progress: false` and re-triggers Auto-Publish with
+   `force_publish=false`.
 5. Auto-Publish / Auto Publish workflows use `cancel-in-progress: false` on the
    publish concurrency group — cancelling mid-draft/promote causes orphan Athom
    builds and socket hang up races on the next upload.

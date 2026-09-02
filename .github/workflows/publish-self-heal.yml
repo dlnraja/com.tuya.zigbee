@@ -27,8 +27,9 @@ defaults:
 
 
 concurrency:
+  # WHY(P2385): never cancel heal mid-flight; never cancel Auto-Publish mid Athom upload
   group: publish-self-heal
-  cancel-in-progress: true
+  cancel-in-progress: false
 
 jobs:
   heal:
@@ -58,11 +59,13 @@ jobs:
           echo "stuck_runs=$STUCK_RUNS" >> $GITHUB_OUTPUT
 
       - name: 🛑 Cancel stuck runs
+        # WHY(P2385/P139): only cancel Auto-Publish if stuck >90 min (find-stuck-runs).
+        # Never cancel healthy in-flight Athom drafts — orphans amplify processing_failed.
         if: steps.find.outputs.stuck_runs != 'OK'
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          echo "## 🛑 Cancelling stuck Auto-Publish runs" >> $GITHUB_STEP_SUMMARY
+          echo "## 🛑 Cancelling stuck Auto-Publish runs (>90 min)" >> $GITHUB_STEP_SUMMARY
           for run_id in $(echo "${{ steps.find.outputs.stuck_runs }}" | awk '{print $1}'); do
             echo "- Cancelling $run_id" >> $GITHUB_STEP_SUMMARY
             gh run cancel "$run_id" 2>&1 || true
@@ -74,8 +77,8 @@ jobs:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           echo "## 🔁 Re-triggering Auto-Publish on Push (master)" >> $GITHUB_STEP_SUMMARY
-          echo "P139: never workflow-run Publish Stable→Test from self-heal." >> $GITHUB_STEP_SUMMARY
-          gh workflow run "Auto-Publish on Push" --ref master 2>&1 | tee -a $GITHUB_STEP_SUMMARY
+          echo "P139/P2385: never force_publish from self-heal; never Publish Stable→Test." >> $GITHUB_STEP_SUMMARY
+          gh workflow run "Auto-Publish on Push" --ref master -f force_publish=false 2>&1 | tee -a $GITHUB_STEP_SUMMARY
 
       - name: ✅ All good
         if: steps.find.outputs.stuck_runs == 'OK'

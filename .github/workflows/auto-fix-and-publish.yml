@@ -178,8 +178,8 @@ jobs:
         env:
           HOMEY_PAT: ${{ secrets.HOMEY_PAT }}
           # P2323: Athom client needs ≥60s; 30s wall clock was cutting soft-alert short
-          HOMEY_API_TIMEOUT_MS: "60000"
-        run: timeout 90 node scripts/automation/dashboard-monitor.js --latest || true
+          HOMEY_API_TIMEOUT_MS: "120000"
+        run: timeout 150 node scripts/automation/dashboard-monitor.js --latest || true
 
       - name: "📧 Re-scan crash patterns after dashboard carto"
         continue-on-error: true
@@ -191,8 +191,8 @@ jobs:
         id: processing_check
         env:
           HOMEY_PAT: ${{ secrets.HOMEY_PAT }}
-          # P2325: refuse bump-loop when hang + healthy Test (see WORKFLOW_GUIDELINES §M.10)
-          HOMEY_API_TIMEOUT_MS: "60000"
+          # P2325/P2385: refuse bump-loop when hang + healthy Test
+          HOMEY_API_TIMEOUT_MS: "120000"
         run: |
           node .github/scripts/processing-failure-republish-check.js
           echo "### P139/P2325 republish gate" >> "$GITHUB_STEP_SUMMARY"
@@ -290,9 +290,10 @@ jobs:
           fi
 
       - name: 🚀 Publish if needed
-        # P193/P217: never Homey-publish 5.12 from this workflow while master 9.0 soaks
-        # the shared App ID Test slot. Stable drafts go through publish-stable.yml.
-        if: (env.trigger_publish == 'true' || github.event_name == 'workflow_dispatch') && github.ref_name != 'stable-v5'
+        # P193/P217/P2385: never Homey-publish 5.12 from this workflow while master 9.0 soaks.
+        # Publish ONLY when recovery gate set trigger_publish=true — bare workflow_dispatch
+        # must NOT bypass P139 (that spam-bumped on socket hang up).
+        if: env.trigger_publish == 'true' && github.ref_name != 'stable-v5'
         env:
           HOMEY_PAT: ${{ secrets.HOMEY_PAT }}
           # P138: Match workflow-level 50 MB (prepared dir ~37 MB uncompressed).
@@ -300,11 +301,17 @@ jobs:
           HOMEY_PUBLISH_SOURCE_MAX_MB: "50"
           HOMEY_ZIGBEE_MAX_TOTAL_COMBOS: "20000"
           HOMEY_ZIGBEE_MAX_DRIVER_COMBOS: "2000"
+          HOMEY_ZIGBEE_MAX_CASE_FORMS: "2"
+          HOMEY_API_TIMEOUT_MS: "120000"
+          HOMEY_BUILD_POLL_TIMEOUT_MS: "360000"
+          HOMEY_DRAFT_WAIT_MS: "600000"
+          HOMEY_HEALTHY_TEST_PATCH_LAG: "8"
         run: |
           # v9.0.255 (P62.2): Also export in the shell because npm subshells
           # don't always inherit step env blocks on all GHA runner images.
           export HOMEY_PUBLISH_MAX_UNCOMPRESSED_MB HOMEY_PUBLISH_SOURCE_MAX_MB
-          export HOMEY_ZIGBEE_MAX_TOTAL_COMBOS HOMEY_ZIGBEE_MAX_DRIVER_COMBOS
+          export HOMEY_ZIGBEE_MAX_TOTAL_COMBOS HOMEY_ZIGBEE_MAX_DRIVER_COMBOS HOMEY_ZIGBEE_MAX_CASE_FORMS
+          export HOMEY_API_TIMEOUT_MS HOMEY_BUILD_POLL_TIMEOUT_MS HOMEY_DRAFT_WAIT_MS
           echo "Limits: HOMEY_PUBLISH_MAX_UNCOMPRESSED_MB=$HOMEY_PUBLISH_MAX_UNCOMPRESSED_MB MB"
           npx homey app build
           node scripts/maintenance/fix-large-images.js
@@ -335,9 +342,9 @@ jobs:
           set +e
           publish_output=$(run_homey_cli_publish 2>&1)
           publish_status=$?
-          if [ "$publish_status" -ne 0 ] && printf '%s\n' "$publish_output" | grep -Eiq 'Timeout after [0-9]+ms|fetch failed|ETIMEDOUT|ECONNRESET|ECONNABORTED'; then
-            echo "::warning::Homey CLI publish hit a transient API timeout; retrying via direct Athom Apps API with extended timeouts."
-            fallback_output=$(HOMEY_PAT="$HOMEY_PAT" HOMEY_API_TIMEOUT_MS="${HOMEY_API_TIMEOUT_MS:-60000}" HOMEY_BUILD_POLL_TIMEOUT_MS="${HOMEY_BUILD_POLL_TIMEOUT_MS:-240000}" node "$GITHUB_WORKSPACE/scripts/direct-api-publish.js" --path "$PUBLISH_DIR" 2>&1)
+          if [ "$publish_status" -ne 0 ] && printf '%s\n' "$publish_output" | grep -Eiq 'Timeout after [0-9]+ms|fetch failed|ETIMEDOUT|ECONNRESET|ECONNABORTED|socket hang up|too many requests|\b429\b|processing_failed'; then
+            echo "::warning::Homey CLI publish hit a transient Athom hang; retrying via direct Athom Apps API with extended timeouts."
+            fallback_output=$(HOMEY_PAT="$HOMEY_PAT" HOMEY_API_TIMEOUT_MS="${HOMEY_API_TIMEOUT_MS:-120000}" HOMEY_BUILD_POLL_TIMEOUT_MS="${HOMEY_BUILD_POLL_TIMEOUT_MS:-360000}" node "$GITHUB_WORKSPACE/scripts/direct-api-publish.js" --path "$PUBLISH_DIR" --channel test 2>&1)
             fallback_status=$?
             publish_output="$(printf '%s\n%s' "$publish_output" "$fallback_output")"
             publish_status=$fallback_status
@@ -345,19 +352,21 @@ jobs:
           set -e
           printf '%s\n' "$publish_output"
           if [ "$publish_status" -ne 0 ]; then
-            if printf '%s\n' "$publish_output" | grep -Eiq 'already been published|currently in review'; then
-              echo "::warning::Homey reports this version is already published or in review; continuing so test promotion can proceed."
-            else
-              exit "$publish_status"
+            if printf '%s\n' "$publish_output" | grep -Eiq 'already been published|currently in review|socket hang up|SOFT-EXPECT|peer-test|P139'; then
+              echo "::warning::P139 Athom transient / already published — leaving last healthy Test in place"
+              exit 0
             fi
+            exit "$publish_status"
           fi
+          echo "Draft publish completed"
 
       - name: 📊 Post-publish dashboard check
         env:
           HOMEY_PAT: ${{ secrets.HOMEY_PAT }}
+          HOMEY_API_TIMEOUT_MS: "120000"
         run: |
           sleep 60
-          timeout 20 node scripts/automation/dashboard-monitor.js --latest || true
+          timeout 150 node scripts/automation/dashboard-monitor.js --latest || true
 
       - name: 🔔 Notify on failure
         if: failure()

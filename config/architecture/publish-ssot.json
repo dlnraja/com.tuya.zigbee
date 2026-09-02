@@ -77,6 +77,20 @@
     "env": "HOMEY_API_TIMEOUT_MS",
     "softAlert": "scripts/lib/soft-expect-decision.js → softAlertDecision"
   },
+  "p2385": {
+    "why": "Stop processing_failed amplifiers + lock Lerlink fan couple #536",
+    "workflows": {
+      "force_publish_default": false,
+      "auto_fix_publish_only_if_trigger": true,
+      "self_heal_cancel_in_progress": false
+    },
+    "device": {
+      "couple": "_TZE200/204_r32ctezx+TS0601",
+      "driver": "fan_controller",
+      "forbid": "water_valve_smart"
+    },
+    "classify": "BOTH"
+  },
   "p2325": {
     "why": "Auto-Publish verify fail-closed skipped healthy Test after Athom hang (9.0.720/721 draft vs 9.0.719 test)",
     "verify": ".github/scripts/verify-test-version.js → softContinueOnTransientHang",

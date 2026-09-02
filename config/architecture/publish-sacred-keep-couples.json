@@ -415,6 +415,18 @@
       "pid": "TS0601",
       "driverId": "presence_sensor_radar",
       "note": "P2366 Riccardo 4-gang mfr on radar class — keep presence not dimmer"
+    },
+    {
+      "mfr": "_TZE200_r32ctezx",
+      "productId": "TS0601",
+      "driverId": "fan_controller",
+      "why": "P2385 GitHub#536 Lerlink fan switch"
+    },
+    {
+      "mfr": "_TZE204_r32ctezx",
+      "productId": "TS0601",
+      "driverId": "fan_controller",
+      "why": "P2385 GitHub#536 Lerlink fan switch"
     }
   ]
 }

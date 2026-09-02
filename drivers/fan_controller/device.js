@@ -107,15 +107,40 @@ class FanControllerDevice extends TuyaZigbeeDevice {
     }
   }
 
+  // WHY(P2385): Z2M TS0601_fan_switch (_TZE200/204_r32ctezx) uses DP3 enum 0–4
+  // (speeds 1–5). Older value-type fans still accept datatype 2.
+  _isLerlinkFanSwitch() {
+    const mfr = String(
+      this.getSetting?.('zb_manufacturer_name')
+      || this.getData?.()?.manufacturerName
+      || this.getStoreValue?.('manufacturerName')
+      || ''
+    ).toLowerCase();
+    return /r32ctezx/.test(mfr);
+  }
+
+  _speedToDp3(value) {
+    const clamped = Math.max(0, Math.min(1, Number(value) || 0));
+    return Math.round(clamped * 4); // 0..4 → fan speeds 1..5
+  }
+
+  async _writeFanSpeedDp(tuyaCluster, speed) {
+    // WHY(P2385): Z2M fan_switch uses enum DP3; humidifier pattern = datatype 4 + value
+    const payload = this._isLerlinkFanSwitch()
+      ? { dp: 3, datatype: 4, value: speed }
+      : { dp: 3, datatype: 2, value: speed };
+    await tuyaCluster.datapoint(payload);
+  }
+
   async _setFanSpeed(value) {
     const ep1 = this._zclNode?.endpoints?.[1];
     if (!ep1) {return;}
     const tuyaCluster = ep1.clusters?.tuya || ep1.clusters?.[61184];
     if (!tuyaCluster) {return;}
 
-    const speed = Math.round(value * 4);
+    const speed = this._speedToDp3(value);
     try {
-      await tuyaCluster.datapoint({ dp: 3, datatype: 2, value: speed });
+      await this._writeFanSpeedDp(tuyaCluster, speed);
     } catch (e) {
       this.error('Failed to set fan speed:', e.message);
     }
@@ -132,10 +157,10 @@ class FanControllerDevice extends TuyaZigbeeDevice {
 
     if (this.hasCapability('dim')) {
       this.registerCapabilityListener('dim', async (value) => {
-        const speed = Math.round(value * 4);
-        this.log(`Setting fan speed to: ${speed}`);
+        const speed = this._speedToDp3(value);
+        this.log(`Setting fan speed to: ${speed} (lerlink=${this._isLerlinkFanSwitch()})`);
         try {
-          await tuyaCluster.datapoint({ dp: 3, datatype: 2, value: speed });
+          await this._writeFanSpeedDp(tuyaCluster, speed);
         } catch (e) {
           this.error('Failed to set speed:', e.message);
         }
