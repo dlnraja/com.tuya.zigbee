@@ -1407,5 +1407,8 @@
   },
   "5.12.121": {
     "en": "Firmware quirk compensate: strip DIY DP caps and phantom mains battery on radar/mains devices."
+  },
+  "5.12.122": {
+    "en": "Moes curtain: ignore Homey UI stop that cancels open/close within a few seconds."
   }
 }
