@@ -122,6 +122,10 @@
       "tag": "BOTH",
       "note": "Strip driver-scoped flow cards from app.json + .homeycompose after homey build / auto-fix"
     },
+    "p2378_button_1gang_flow_fire": {
+      "tag": "BOTH",
+      "note": "Peter cfbf687f — triggerButtonPress must fire *_button_1gang_* compose cards (was gated gangCount>1); RX 0xFD already OK"
+    },
     "p2372_flow_heuristics_knob_rotary": {
       "tag": "BOTH",
       "note": "FlowCardHeuristics knob/rotary + SOS patterns — runtime flow resolve reliability"
