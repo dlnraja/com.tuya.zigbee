@@ -11,7 +11,6 @@
     "meter_power",
     "measure_voltage",
     "measure_current",
-    "measure_battery",
     "button.1"
   ],
   "capabilitiesOptions": {
@@ -38,12 +37,6 @@
       "getable": false,
       "setable": false
     }
-  },
-  "energy": {
-    "batteries": [
-      "AAA",
-      "AAA"
-    ]
   },
   "settings": [
     {
@@ -187,8 +180,6 @@
     "manufacturerName": [
       "_TZ3000_BYFDWKTR",
       "_TZ3000_VSN4QAL7",
-      "_TZ3000_ixla93vd",
-      "_TZ3000_uri7ongn",
       "_TZE200_81YRT3L",
       "_TZE200_DSU7J6DN",
       "_TZE200_LSANAE78",
@@ -203,13 +194,8 @@
       "_TZE284_WJK6RURM",
       "_TZE284_byzdayie",
       "_TZE284_wjk6rurm",
-      "_tze204_81yrt3l",
       "_tz3000_byfdwktr",
       "_tz3000_vsn4qal7",
-      "_TZ3000_IXLA93VD",
-      "_tz3000_ixla93vd",
-      "_TZ3000_URI7ONGN",
-      "_tz3000_uri7ongn",
       "_tze200_81yrt3l",
       "_tze200_dsu7j6dn",
       "_tze200_lsanae78",
@@ -223,7 +209,6 @@
       "_tze284_wjk6rurm",
       "_TZE284_BYZDAYIE",
       "_tze284_byzdayie",
-      "_TZE204_81YRT3L",
       "_TZ3000_byfdwktr",
       "_TZ3000_vsn4qal7",
       "_TZE200_81yrt3l",
@@ -232,10 +217,21 @@
       "_TZE200_lsanae86",
       "_TZE204_lsanae78",
       "_TZE284_81yrt3l",
-      "_TZE204_81yrt3l"
+      "_tz3000_BYFDWKTR",
+      "_tz3000_VSN4QAL7",
+      "_tze200_81YRT3L",
+      "_tze200_DSU7J6DN",
+      "_tze200_LSANAE78",
+      "_tze200_LSANAE86",
+      "_tze200_WJK6RURM",
+      "_tze200_RK1WOJNP",
+      "_tze204_LSANAE78",
+      "_tze204_WJK6RURM",
+      "_tze284_81YRT3L",
+      "_tze284_WJK6RURM",
+      "_tze284_BYZDAYIE"
     ],
     "productId": [
-      "TS0601",
       "TS0601_meter",
       "PJ-1203A",
       "TS004F"
@@ -251,8 +247,7 @@
   },
   "images": {
     "small": "/drivers/power_meter/assets/images/small.png",
-    "large": "/drivers/power_meter/assets/images/large.png",
-    "xlarge": "/drivers/power_meter/assets/images/xlarge.png"
+    "large": "/drivers/power_meter/assets/images/large.png"
   },
   "platforms": [
     "local"
@@ -273,20 +268,21 @@
       "id": "tuya_revive",
       "title": {
         "en": "Tuya Revive (device recovery)",
-        "fr": "Tuya Revive (récupération appareil)"
+        "fr": "Tuya Revive (récupération appareil)",
+        "nl": "Tuya Revive (apparaatherstel)",
+        "de": "Tuya Revive (Gerätewiederherstellung)"
       }
     },
     {
       "id": "generate_issue_report",
       "title": {
         "en": "Generate support report (GitHub issue)",
-        "fr": "Générer rapport de support (issue GitHub)"
+        "fr": "Générer rapport de support (issue GitHub)",
+        "nl": "Supportrapport genereren (GitHub issue)",
+        "de": "Supportbericht erstellen (GitHub Issue)"
       }
     }
   ],
   "id": "power_meter",
-  "version": "1.0.0",
-  "_pidConflictNotes": [
-    "// PID-CONFLICT-NOTE TS004F shared with 19 other drivers (cross-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md"
-  ]
+  "version": "1.0.0"
 }

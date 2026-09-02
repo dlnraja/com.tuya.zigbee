@@ -20,9 +20,8 @@
     "button.1"
   ],
   "images": {
-    "large": "/drivers/handheld_remote_4_buttons/assets/images/large.png",
     "small": "/drivers/handheld_remote_4_buttons/assets/images/small.png",
-    "xlarge": "/drivers/handheld_remote_4_buttons/assets/images/xlarge.png"
+    "large": "/drivers/handheld_remote_4_buttons/assets/images/large.png"
   },
   "energy": {
     "batteries": [
@@ -60,7 +59,17 @@
       "_TZ3000_w4thianr",
       "_TZ3000_xkh6oajz",
       "_TZ3000_yesuiipb",
-      "_TZ3000_zszzgweg"
+      "_TZ3000_zszzgweg",
+      "_tz3000_J70OANAB",
+      "_tz3000_LXW3KCW2",
+      "_tz3000_RRJR1DSK",
+      "_tz3000_SQW3QQTC",
+      "_tz3000_URI7EZ8U",
+      "_tz3000_VDFWJOPK",
+      "_tz3000_W4THIANR",
+      "_tz3000_XKH6OAJZ",
+      "_tz3000_YESUIIPB",
+      "_tz3000_ZSZZGWEG"
     ],
     "productId": [
       "SNZB-01M",
@@ -69,7 +78,8 @@
       "TS0044",
       "TS004F",
       "TS0215A",
-      "TS0601"
+      "TS0601",
+      "TS0219"
     ],
     "endpoints": {
       "1": {
@@ -152,14 +162,18 @@
       "id": "tuya_revive",
       "title": {
         "en": "Tuya Revive (device recovery)",
-        "fr": "Tuya Revive (récupération appareil)"
+        "fr": "Tuya Revive (récupération appareil)",
+        "nl": "Tuya Revive (apparaatherstel)",
+        "de": "Tuya Revive (Gerätewiederherstellung)"
       }
     },
     {
       "id": "generate_issue_report",
       "title": {
         "en": "Generate support report (GitHub issue)",
-        "fr": "Générer rapport de support (issue GitHub)"
+        "fr": "Générer rapport de support (issue GitHub)",
+        "nl": "Supportrapport genereren (GitHub issue)",
+        "de": "Supportbericht erstellen (GitHub Issue)"
       }
     }
   ],
@@ -174,12 +188,5 @@
       "getable": false,
       "setable": false
     }
-  },
-  "_pidConflictNotes": [
-    "// PID-CONFLICT-NOTE TS0215A shared with 28 other drivers (cross-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md",
-    "// PID-CONFLICT-NOTE TS004F shared with 19 other drivers (cross-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md",
-    "// PID-CONFLICT-NOTE TS0044 shared with 9 other drivers (cross-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md",
-    "// PID-CONFLICT-NOTE TS0014 shared with 7 other drivers (cross-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md",
-    "// PID-CONFLICT-NOTE SNZB-01M shared with 5 other drivers (cross-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md"
-  ]
+  }
 }

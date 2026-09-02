@@ -89,7 +89,6 @@
       "_TZE200_ZNLLDQL1",
       "_TZE200_mwgsmffw",
       "_TZE200_myd45weu",
-      "_TZE200_npj9bug3",
       "_TZE200_wqashyqo",
       "_TZE200_WQASHYQO",
       "_tze200_wqashyqo",
@@ -147,8 +146,6 @@
       "_tze200_znlldql1",
       "_TZE200_MWGSMFFW",
       "_tze200_mwgsmffw",
-      "_TZE200_NPJ9BUG3",
-      "_tze200_npj9bug3",
       "_tze204_4xsypney",
       "_tze204_a0gspfyz",
       "_tze204_fqytfmyk",
@@ -208,7 +205,6 @@
       "_tze200_SH8V7FHD",
       "_tze200_ZNLLDQL1",
       "_tze200_MWGSMFFW",
-      "_tze200_NPJ9BUG3",
       "_tze204_4XSYPNEY",
       "_tze204_A0GSPFYZ",
       "_tze204_FQYTFMYK",
@@ -263,10 +259,15 @@
       "HOBEIAN",
       "hobeian",
       "Hobeian",
+      "_TZE204_qaxkdgyt",
+      "_tze204_qaxkdgyt",
       "_TZE284_rovbuqdo",
       "_tze284_rovbuqdo",
-      "_TZE284_ga1maeof",
-      "_tze284_ga1maeof"
+      "_TZE200_npj9bug3",
+      "_tze200_npj9bug3",
+      "_TZE284_0ints6wl",
+      "_tze284_0ints6wl",
+      "_TZE284_0INTS6WL"
     ],
     "productId": [
       "TS0601",
@@ -513,5 +514,39 @@
     }
   ],
   "id": "soil_sensor",
-  "version": "1.0.0"
+  "version": "1.0.0",
+  "firmwareUpdates": {
+    "updates": [
+      {
+        "changelog": {
+          "en": "OEM Zigbee firmware v20525057 (Koenkk zigbee-OTA, SHA512-verified). Install via Homey Device Updates (Settings → Device Updates) on Homey ≥13.2 / Mobile ≥9.10.",
+          "fr": "Firmware Zigbee OEM v20525057 (Koenkk zigbee-OTA, SHA512 vérifié). Installez via Homey Device Updates — Homey ≥13.2 / Mobile ≥9.10."
+        },
+        "device": {
+          "manufacturerName": [
+            "Hobeian"
+          ],
+          "productId": [
+            "ZG-303Z"
+          ]
+        },
+        "files": [
+          {
+            "fileVersion": 20525057,
+            "imageType": 565,
+            "manufacturerCode": 4417,
+            "minHardwareVersion": 16713,
+            "maxHardwareVersion": 14926,
+            "size": 131618,
+            "name": "1141-0235-01393001-ZG223Z.zigbee",
+            "integrity": "sha256:e6be63f694e3355fa4b6fc0c39c5586a6ea7a96e56954f2ca2170350fb691d93"
+          }
+        ]
+      }
+    ],
+    "wakeInstruction": {
+      "en": "Press the sensor button once to wake it, then start Device Updates.",
+      "fr": "Appuyez une fois sur le bouton du capteur pour le réveiller, puis lancez Device Updates."
+    }
+  }
 }

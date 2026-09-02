@@ -47,7 +47,6 @@
       "_tze200_bj9m6v91",
       "_TZ3000_mcxw5ehu",
       "_TZ3000_msl6wxk9",
-      "_TZ3000_o4mkahkc",
       "_TZ3210_cwamkvua",
       "_TYZB01_jytabjkb",
       "_TZ3000_lltemgsf",
@@ -55,7 +54,6 @@
       "_TZ3000_mg4dy6z6",
       "_TZ3000_bsvqrxru",
       "_TZ3040_wqmtjsyk",
-      "_TZ3000_otvn3lne",
       "_TZ3000_h4wnrtck",
       "_TZ3000_qomxlryd",
       "_TZ3000_jmrgyl7o",
@@ -78,8 +76,6 @@
       "_tz3000_mcxw5ehu",
       "_TZ3000_MSL6WXK9",
       "_tz3000_msl6wxk9",
-      "_TZ3000_O4MKAHKC",
-      "_tz3000_o4mkahkc",
       "_TZ3210_CWAMKVUA",
       "_tz3210_cwamkvua",
       "_TYZB01_JYTABJKB",
@@ -94,8 +90,6 @@
       "_tz3000_bsvqrxru",
       "_TZ3040_WQMTJSYK",
       "_tz3040_wqmtjsyk",
-      "_TZ3000_OTVN3LNE",
-      "_tz3000_otvn3lne",
       "_TZ3000_H4WNRTCK",
       "_tz3000_h4wnrtck",
       "_TZ3000_QOMXLRYD",
@@ -130,7 +124,34 @@
       "_TZ3040_6ygjfyll",
       "_TZ3210_7vgttna6",
       "_TZ3210_a04acm9s",
-      "_TZ3210_cm9mbpr1"
+      "_TZ3210_cm9mbpr1",
+      "_tze200_BJ9M6V91",
+      "_tz3000_MCXW5EHU",
+      "_tz3000_MSL6WXK9",
+      "_tz3210_CWAMKVUA",
+      "_tyzb01_JYTABJKB",
+      "_tz3000_LLTEMGSF",
+      "_tyzb01_5NR7NCPL",
+      "_tz3000_MG4DY6Z6",
+      "_tz3000_BSVQRXRU",
+      "_tz3040_WQMTJSYK",
+      "_tz3000_H4WNRTCK",
+      "_tz3000_QOMXLRYD",
+      "_tz3000_JMRGYL7O",
+      "_tz3000_NSS8AMZ9",
+      "_tz3040_FWXUZCF4",
+      "_tz3040_MSL6WXK9",
+      "_tz3000_6YGJFYLL",
+      "_tz3040_6YGJFYLL",
+      "_tze200_8ISDKY6J",
+      "_tze200_P6FUHVEZ",
+      "_tze200_AJ0OXO1I",
+      "_tz3210_7VGTTNA6",
+      "_tze200_JSAQGAKF",
+      "_tze200_2PDDNNRK",
+      "_tze284_TRE6HAIF",
+      "_tz3210_A04ACM9S",
+      "_tz3210_CM9MBPR1"
     ],
     "productId": [
       "CK-TLSR8656-SS5-01(7014)",
@@ -144,7 +165,6 @@
       "TS0201",
       "TS0202",
       "TS0222",
-      "TS0225",
       "TS0601",
       "TS1201",
       "TY0201",
@@ -158,7 +178,7 @@
       "lumi.weather"
     ],
     "learnmode": {
-      "image": "/drivers/presence_sensor_radar/assets/learnmode.svg",
+      "image": "{{driverAssetsPath}}/icon.svg",
       "instruction": {
         "en": "Press and hold the pairing button for 5 seconds until the LED flashes.",
         "fr": "Appuyez et maintenez le bouton d'appairage pendant 5 secondes jusqu'à ce que la LED clignote."
@@ -669,8 +689,7 @@
   ],
   "images": {
     "small": "/drivers/presence_sensor_radar/assets/images/small.png",
-    "large": "/drivers/presence_sensor_radar/assets/images/large.png",
-    "xlarge": "/drivers/presence_sensor_radar/assets/images/xlarge.png"
+    "large": "/drivers/presence_sensor_radar/assets/images/large.png"
   },
   "platforms": [
     "local"
@@ -686,10 +705,7 @@
       "AA",
       "CR123A",
       "INTERNAL"
-    ],
-    "approximation": {
-      "usageConstant": 0.5
-    }
+    ]
   },
   "pair": [
     {
@@ -723,22 +739,21 @@
       "id": "tuya_revive",
       "title": {
         "en": "Tuya Revive (device recovery)",
-        "fr": "Tuya Revive (récupération appareil)"
+        "fr": "Tuya Revive (récupération appareil)",
+        "nl": "Tuya Revive (apparaatherstel)",
+        "de": "Tuya Revive (Gerätewiederherstellung)"
       }
     },
     {
       "id": "generate_issue_report",
       "title": {
         "en": "Generate support report (GitHub issue)",
-        "fr": "Générer rapport de support (issue GitHub)"
+        "fr": "Générer rapport de support (issue GitHub)",
+        "nl": "Supportrapport genereren (GitHub issue)",
+        "de": "Supportbericht erstellen (GitHub Issue)"
       }
     }
   ],
   "id": "sensor_motion_presence",
-  "version": "1.0.0",
-  "_pidConflictNotes": [
-    "// PID-CONFLICT-NOTE TS0001 shared with 35 other drivers (cross-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md",
-    "// PID-CONFLICT-NOTE Excellux shared with 30 other drivers (cross-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md",
-    "// PID-CONFLICT-NOTE TS0225 shared with 19 other drivers (cross-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md"
-  ]
+  "version": "1.0.0"
 }

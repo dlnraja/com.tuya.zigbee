@@ -22,23 +22,51 @@
     ]
   },
   "images": {
-    "large": "/{{driverAssetsPath}}/images/large.png",
-    "small": "/{{driverAssetsPath}}/images/small.png"
+    "small": "/drivers/pir_sensor_2/assets/images/small.png",
+    "large": "/drivers/pir_sensor_2/assets/images/large.png"
   },
   "zigbee": {
     "manufacturerName": [
       "_tz3000_kmh5qpmb",
       "_tz3040_bb6xaihh",
       "_TYZB01_dl7cejts",
+      "_tyzb01_dr6sduka",
       "_TYZB01_geepvxsy",
+      "_TYZB01_dr6sduka",
       "_TZ3000_KMH5QPMB",
       "_TZ3040_BB6XAIHH",
       "_TYZB01_DL7CEJTS",
       "_tyzb01_dl7cejts",
+      "_TYZB01_DR6SDUKA",
       "_TYZB01_GEEPVXSY",
       "_tyzb01_geepvxsy",
       "_TZ3000_kmh5qpmb",
-      "_TZ3040_bb6xaihh"
+      "_TZ3040_bb6xaihh",
+      "_tz3000_KMH5QPMB",
+      "_tz3040_BB6XAIHH",
+      "_tyzb01_DL7CEJTS",
+      "_tyzb01_DR6SDUKA",
+      "_tyzb01_GEEPVXSY",
+      "_TZ3000_mmtwjmaq",
+      "_TZ3000_msl6wxk9",
+      "_TZ3000_mcxw5ehu",
+      "_TZ3040_6ygjfyll",
+      "_TZ3000_nss8amz9",
+      "_TZ3000_bsvqrxru",
+      "_TZ3000_c8ozah8n",
+      "_TZ3040_wqmtjsyk",
+      "_TZ3000_mg4dy6z6",
+      "_TZ3000_y56pgpgs",
+      "_tz3000_mmtwjmaq",
+      "_tz3000_msl6wxk9",
+      "_tz3000_mcxw5ehu",
+      "_tz3040_6ygjfyll",
+      "_tz3000_nss8amz9",
+      "_tz3000_bsvqrxru",
+      "_tz3000_c8ozah8n",
+      "_tz3040_wqmtjsyk",
+      "_tz3000_mg4dy6z6",
+      "_tz3000_y56pgpgs"
     ],
     "productId": [
       "01MINIZB",
@@ -111,8 +139,5 @@
       "getable": false,
       "setable": false
     }
-  },
-  "_pidConflictNotes": [
-    "// PID-CONFLICT-NOTE TS0202 shared with 3 other drivers (same-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md"
-  ]
+  }
 }
