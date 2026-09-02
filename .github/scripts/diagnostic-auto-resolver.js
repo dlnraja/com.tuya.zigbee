@@ -77,6 +77,11 @@ try{const r=await fetchWithRetry(GH+ep,{headers:hdrs(TOKEN)},{retries:2,label:"g
 }
 async function ghPost(ep,body){
 if(DRY){console.log("[DRY] POST",ep.slice(0,60));return{id:"dry"}}
+// WHY(P2394): refuse issue comment posts unless GITHUB_RESOLVER_COMMENT=1
+if(/\/comments(?:\?|$)/i.test(ep)&&process.env.GITHUB_RESOLVER_COMMENT!=="1"){
+console.log("[P2394] skip comment POST (GITHUB_RESOLVER_COMMENT!=1)",ep.slice(0,80));
+return null;
+}
 if(shadowSkip(ep,"POST",body))return null;
 try{const r=await fetchWithRetry(GH+ep,{method:"POST",headers:{...hdrs(TOKEN),"Content-Type":"application/json"},body:JSON.stringify(body)},{retries:2,label:"ghPost"});return r.ok?r.json():null}catch{return null}
 }
@@ -130,24 +135,14 @@ items.push(...d);await sleep(1000);
 _cache[k]=items;return items;
 }
 function buildComment(fpResults,isPR,isDelay,syms=[],issueUser="",protocol="unknown"){
-const pd=getProfileDetector();
-let profileNote="";
-if(pd&&issueUser){try{const det=pd.detectFromGitHub(issueUser,"");if(det.isReturning&&det.pending)profileNote="\n> **Your pending issue:** "+det.pending.note+"\n"}catch{}}
-const drvList=fpResults.map(f=>"`"+f.fp+"` -> **"+f.drivers.join(", ")+"**").join("\n- ");
-let protocolNote="";
-if(protocol==="hybrid")protocolNote="\n> **Protocol:** Hybrid device (IAS Zone + Tuya DP). Magic packet timing and enrollment crucial.\n";
-else if(protocol==="tuya_dp")protocolNote="\n> **Protocol:** Tuya DP (cluster 0xEF00). Ensure DP listeners active.\n";
-else if(protocol==="ias")protocolNote="\n> **Protocol:** IAS Zone. Enrollment and zone listeners required.\n";
-return TAG+"\n### Auto-resolved by Diagnostic Resolver\n\n"+profileNote+
-"All fingerprints in this "+(isPR?"PR":"issue")+" found in **Tuya Unified Zigbee v"+appVer+"**:\n- "+drvList+"\n\n"+
-"**Install:** https://homey.app/a/com.dlnraja.tuya.zigbee/test/\n"+
-"Remove and re-pair your device after installing.\n\n"+
-protocolNote+
-(fpResults.some(f=>f.drivers.length>1)?"> Note: Some fingerprints map to multiple drivers — the correct driver is determined by the **productId** (e.g. TS0001, TS0002).\n\n":"")+
-(isDelay?"> **Delay fix (v"+appVer+"+):** Devices now send dataQuery immediately on init. Update and re-pair to fix.\n\n":"")+
-(syms.length?"\n**Detected issues:**\n"+syms.map(s=>"- "+s.fix).join("\n")+"\n\n":"")+
-"**Troubleshooting:** https://github.com/"+OWN+"/wiki/Troubleshooting\n\n"+
-(fpResults.some(f=>f.protocol)?"> **Detected protocols:** "+fpResults.map(f=>f.protocol||"unknown").filter((v,i,a)=>a.indexOf(v)===i).join(", ")+"\n":"");
+// WHY(P2394): short Dylan-ish note — never "Auto-resolved by Diagnostic Resolver" walls.
+const drv=fpResults.map(f=>f.fp+" → "+f.drivers.join("/")).join(", ");
+const tip="https://homey.app/a/com.dlnraja.tuya.zigbee/test/";
+let line="Hey — I think this fingerprint is already in the Test app (v"+appVer+"): "+drv+".\n\n";
+line+="Please update Universal Tuya Test ("+tip+"), remove the device, and re-pair.\n";
+if(syms.length)line+="\nAlso check: "+syms.map(s=>s.fix).join("; ")+".\n";
+line+="\nIf it still fails after that tip, reply with a Diagnostic Report ID.";
+return TAG+"\n"+line;
 }
 // v9.0.390: Anti-spam guard — dedup + escalation, decided from issue comments.
 // Returns {action:"post"|"skip"|"escalate",reason}. "escalate" = a human replied

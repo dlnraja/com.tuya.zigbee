@@ -3,6 +3,9 @@
 ## Couple
 `_TZE204_5slehgeo` + `TS0601` → `curtain_motor` (Moes ZTS-EUR-C)
 
+## Status
+OPEN (user closed by mistake — reopened). Tip ≥ **9.0.794** for P2393 idle-cancel fix.
+
 ## Thread (resolved in code)
 | Date | Symptom | Fix |
 |------|---------|-----|
@@ -13,5 +16,5 @@
 | 2026-09-01 | Cover stop working `ab5aaf04` @ 9.0.775 | P2380 false-success TX |
 | 2026-09-02 | Pairs OK, no motion `a9e4d712` @ 9.0.784 | **P2393** Homey idle cancels down |
 
-## User tip
-Update Universal Tuya Test ≥ **next tip after P2393** (≥9.0.794). Use up/down — do not mash stop. Explicit STOP still works after ~5s.
+## GitHub voice (P2394)
+Human Dylan replies only. No reopen-bot / diag-resolver walls on this thread.
