@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-02T18:07:50.156Z",
+  "generatedAt": "2026-09-02T21:19:08.181Z",
   "date": "2026-09-02",
   "mode": "full",
   "phases": [
@@ -12,18 +12,18 @@
     {
       "name": "github",
       "ok": true,
-      "durationMs": 355
+      "durationMs": 382
     },
     {
       "name": "gmail",
       "ok": true,
-      "durationMs": 185,
+      "durationMs": 127,
       "details": {
         "crash": {
           "ok": true,
           "skipped": false,
           "status": 0,
-          "durationMs": 37,
+          "durationMs": 24,
           "stderr": "",
           "stdoutTail": "[gmail-crash-pattern-gate] sources=32 hits=0 unknown=0\n  wrote .github/state/gmail-crash-patterns.json\n  verdict: ok\n"
         },
@@ -31,16 +31,16 @@
           "ok": true,
           "skipped": false,
           "status": 0,
-          "durationMs": 147,
+          "durationMs": 102,
           "stderr": "",
-          "stdoutTail": "[automate] inbox total=0 have=30 missing=0 ingested_now=0\n[recursive-treat] sources: 136\n[recursive-treat] wrote /home/runner/work/com.tuya.zigbee/com.tuya.zigbee/reports/diag-recursive-treat-2026-09-02\n{\n  \"generatedAt\": \"2026-09-02T18:07:50.683Z\",\n  \"methodology\": \"f647d35b-style full-body recursive treat — sacred couple never invented; P2246 derive from interview when ABSENT\",\n  \"sourcesScanned\": 136,\n  \"uniqueCases\": 122,\n  \"actionable\": 22,\n  \"derivedFromInterview\": 2,\n  \"signalTally\": {\n    \"scene_mode_unsupported\": 3,\n    \"wrong_driver_hint\": 4,\n    \"athom_socket_hang\": 5,\n    \"athom_processing_failed\": 2,\n    \"wrong_smart_rcbo\": 2,\n    \"flow_guard_spam\": 2,\n    \"processing_failed\": 5,\n    \"scene_0x8004\": 2,\n    \"invalid_flow_card\": 1,\n    \"missing_capability_listener\": 1,\n    \"physical_vs_virtual_button\": 1\n  },\n  \"gmailBodiesPresent\": 30,\n  \"interviews\": 90\n}\n[automate] status → .github/state/diag-recursive-inbox/automate-status.json\n{\n  \"total\": 0,\n  \"have\": 30,\n  \"missing\": 0,\n  \"missingIds\": []\n}\n[automate] actionable= 22 gmailBodies= 30\n"
+          "stdoutTail": "[automate] inbox total=0 have=30 missing=0 ingested_now=0\n[recursive-treat] sources: 136\n[recursive-treat] wrote /home/runner/work/com.tuya.zigbee/com.tuya.zigbee/reports/diag-recursive-treat-2026-09-02\n{\n  \"generatedAt\": \"2026-09-02T21:19:08.680Z\",\n  \"methodology\": \"f647d35b-style full-body recursive treat — sacred couple never invented; P2246 derive from interview when ABSENT\",\n  \"sourcesScanned\": 136,\n  \"uniqueCases\": 122,\n  \"actionable\": 25,\n  \"derivedFromInterview\": 1,\n  \"signalTally\": {\n    \"scene_mode_unsupported\": 3,\n    \"wrong_driver_hint\": 4,\n    \"athom_socket_hang\": 9,\n    \"athom_processing_failed\": 2,\n    \"wrong_smart_rcbo\": 2,\n    \"flow_guard_spam\": 2,\n    \"processing_failed\": 9,\n    \"scene_0x8004\": 2,\n    \"invalid_flow_card\": 1,\n    \"missing_capability_listener\": 1\n  },\n  \"gmailBodiesPresent\": 30,\n  \"interviews\": 90\n}\n[automate] status → .github/state/diag-recursive-inbox/automate-status.json\n{\n  \"total\": 0,\n  \"have\": 30,\n  \"missing\": 0,\n  \"missingIds\": []\n}\n[automate] actionable= 25 gmailBodies= 30\n"
         }
       }
     },
     {
       "name": "forum",
       "ok": true,
-      "durationMs": 27750,
+      "durationMs": 22570,
       "skipScan": false,
       "steps": [
         {
@@ -64,7 +64,7 @@
     {
       "name": "drivers",
       "ok": false,
-      "durationMs": 1280,
+      "durationMs": 689,
       "mfs": {
         "high": 0,
         "changes": 0,
@@ -75,8 +75,8 @@
     {
       "name": "prioritize",
       "ok": true,
-      "durationMs": 1,
-      "count": 4
+      "durationMs": 0,
+      "count": 1
     },
     {
       "name": "docs",
@@ -87,62 +87,18 @@
     {
       "name": "gates",
       "ok": true,
-      "durationMs": 2504
+      "durationMs": 1413
     }
   ],
   "github": {
-    "harvestedAt": "2026-09-02T18:07:50.511Z",
+    "harvestedAt": "2026-09-02T21:19:08.563Z",
     "repo": "dlnraja/com.tuya.zigbee",
     "auth": "token",
     "error": null,
-    "issues": [
-      {
-        "number": 533,
-        "title": "Device Request - [SMART ZIGBEE CURTAIN SWITCH] - [MOES]",
-        "labels": [
-          "enhancement",
-          "device-request",
-          "new-fingerprint",
-          "device_request",
-          "reopened-by-user",
-          "MOES",
-          "needs-maintainer",
-          "smart_zigbee",
-          "curtain_switch"
-        ],
-        "updatedAt": "2026-09-02T17:19:48Z",
-        "user": "salvagr",
-        "htmlUrl": "https://github.com/dlnraja/com.tuya.zigbee/issues/533",
-        "bodySnippet": "Thank you for your support.\n\n## 📱 Basic Information\n\n**Brand & Model**: SMART ZIGBEE CURTAIN SWITCH - MOES\n**Purchase Link**: https://es.aliexpress.com/item/1005008356152992.html\n**Power Source**:  Mains\n**Current Status**: pairing with wrong device type. Detected as \"radiator v"
-      },
-      {
-        "number": 536,
-        "title": "Device Request - Smart fan switch with 5-speed control - Zigbee",
-        "labels": [
-          "bug",
-          "enhancement",
-          "device-request",
-          "new-fingerprint",
-          "awaiting-verification"
-        ],
-        "updatedAt": "2026-09-02T12:44:50Z",
-        "user": "MarceloSilvaLeite",
-        "htmlUrl": "https://github.com/dlnraja/com.tuya.zigbee/issues/536",
-        "bodySnippet": "## 📱 Basic Information\n\n**Purchase Link**: https://pt.aliexpress.com/item/1005004705097813.html\n**Power Source**: Mains (AC)\n\n\n\n  \"ids\": {\n    \"modelId\": \"TS0601\",\n    \"manufacturerName\": \"_TZE200_r32ctezx\"\n  },\n  \"endpoints\": {\n    \"ieeeAddress\": \"a4:c1:38:87:6b:8d:c7:97\",\n    "
-      }
-    ],
-    "prs": [
-      {
-        "number": 534,
-        "title": "AI Monthly Audit - September 2026 | Risk: Updated",
-        "updatedAt": "2026-09-02T09:59:47Z",
-        "user": "dlnraja",
-        "htmlUrl": "https://github.com/dlnraja/com.tuya.zigbee/pull/534",
-        "draft": false
-      }
-    ],
-    "openIssueCount": 2,
-    "openPrCount": 1
+    "issues": [],
+    "prs": [],
+    "openIssueCount": 0,
+    "openPrCount": 0
   },
   "forum": {
     "path": "/home/runner/work/com.tuya.zigbee/com.tuya.zigbee/.github/state/forum/actionable-processor-report.json",
@@ -156,7 +112,7 @@
     "posts": 214
   },
   "gmail": {
-    "generatedAt": "2026-09-02T18:07:50.540Z",
+    "generatedAt": "2026-09-02T21:19:08.582Z",
     "sourcesScanned": 32,
     "patternCounts": {
       "flow_getDeviceActionCard": 0,
@@ -212,42 +168,12 @@
   },
   "priority": [
     {
-      "score": 90,
-      "dualApp": "BOTH",
-      "source": "github-issue",
-      "id": "#536",
-      "title": "Device Request - Smart fan switch with 5-speed control - Zigbee",
-      "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/536",
-      "action": "investigate-code-silent",
-      "forumReply": "NEVER"
-    },
-    {
       "score": 75,
       "dualApp": "BOTH",
       "source": "forum",
       "id": "forum-need-action",
       "title": "48 forum posts needAction (shadow processor)",
       "action": "enrich:investigate + lock mfr+pid only",
-      "forumReply": "NEVER"
-    },
-    {
-      "score": 70,
-      "dualApp": "BOTH",
-      "source": "github-issue",
-      "id": "#533",
-      "title": "Device Request - [SMART ZIGBEE CURTAIN SWITCH] - [MOES]",
-      "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/533",
-      "action": "investigate-code-silent",
-      "forumReply": "NEVER"
-    },
-    {
-      "score": 50,
-      "dualApp": "MASTER_ONLY",
-      "source": "github-pr",
-      "id": "PR#534",
-      "title": "AI Monthly Audit - September 2026 | Risk: Updated",
-      "url": "https://github.com/dlnraja/com.tuya.zigbee/pull/534",
-      "action": "review",
       "forumReply": "NEVER"
     }
   ]
