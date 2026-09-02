@@ -117,6 +117,7 @@ env:
 - Gate: `node tools/ci/forum-ai-paste-gate.js --scan-defaults`
 - Doctrine: `docs/rules/FORUM_SILENT_HUMANIZE.md`
 - Silent multi-scan: `tools/ci/forum-silent-multi-scan.js` (wired in `forum-poll.yml`, `auto-enrich-closed-loop.yml`, `fetch-diags.yml`)
+- **P2394 — GitHub humanize:** no AI-slop issue walls — silent reopen, diag-resolver dry-run (`docs/rules/GITHUB_HUMANIZE.md`)
 - **P2210 — Forum actionable processor:** `tools/ci/forum-actionable-processor.js` (`npm run forum:process`)
   - Runs **after** `multi-silent-digest.json` exists (scan step above)
   - Processes every actionable post **one-by-one**: sacred couple extraction, misattribution registry, `KNOWN_ROUTES`, `device-truth.json`, dual-app track (`BOTH` / `MASTER_ONLY` / `REVIEW`)
@@ -201,6 +202,31 @@ env:
   - Commands: `npm run ai:plan-guard` · `npm run ai:quota` · `npm run security:plan`
   - Workflows: `gmail-diagnostics`, `fetch-diags`, `auto-enrich-closed-loop`, `project-resilience`
   - Prefer local heuristics when soft/hard stop — never auto-spend overage
+
+- **P2372 — Fleet enrich all driver classes + free scrape (no paid overage, no lockouts):**
+  - SSOT: `config/enrichment/free-scrape-budget.json` + `config/enrichment/driver-class-coverage.json`
+  - Budget: `tools/ci/free-scrape-budget.js` · wired in `lib/scraper/FreeScrapeStack.js` (Jina/Microlink/AllOrigins/Wayback/Firecrawl daily caps + 429/403 cooldown)
+  - All classes: `tools/ci/driver-class-fleet-enrich.js` (button/socket/switch/sensor/light/curtain/thermostat/meter/fan/lock/siren/ir/wifi)
+  - Orchestrator: `tools/ci/fleet-intelligent-enrich.js` — cache-first crawls, sacred couple only, never degrade coverage
+  - Workflow: `.github/workflows/fleet-intelligent-enrich.yml` — cron `35 1,13 * * *` (staggered off `*/4` enrich + forum `:15`)
+  - Commands: `npm run enrich:fleet:apply` · `enrich:classes` · `scrape:budget` · `scrape:budget:preflight`
+  - Env: `FIRECRAWL_DAILY_MAX=3`, `FREE_SCRAPE_BROWSER=0`, restore `.cache/scraper-cache` across runs
+  - Never invent productId; Firecrawl last resort only; prefer Jina keyless + direct HTTP + 6h cache
+
+- **P2376 — Intelligent source diff (cache-first, never block on missing source):**
+  - SSOT: `config/enrichment/source-registry.json` + `tools/ci/intelligent-source-diff.js`
+  - Manifest: `.github/state/intelligent-source-manifest.json` (project fingerprint + per-source hashes)
+  - Policy: optional sources (`gmail`, `forum`, `johan`) **soft-fail** when secrets missing; stale cache OK
+  - Crawl only **stale/missing/forced** — not full re-download every cron (ETag + scanner TTL + manifest)
+  - GHA cache key: `intel-source-diff-${{ hashFiles('package-lock.json', 'config/enrichment/source-registry.json') }}` + restore-keys chain
+  - Doctrine: `docs/architecture/INTELLIGENT_SOURCE_DIFF.md`
+  - Commands: `npm run source:diff` · `source:diff:apply`
+  - Wired: `fleet-intelligent-enrich.yml`, `auto-enrich-closed-loop.yml`, `fleet-intelligent-enrich.js --crawl`
+
+- **P2375 — Flow fleet enrich (all driver classes, CI-only):**
+  - Script: `tools/ci/flow-fleet-enrich.js` — orphan tokens, capability triggers, Z2M cross-ref, app.json sync
+  - Commands: `npm run enrich:flow-fleet:apply` · `npm run flow:l99`
+  - Runtime BOTH: `FlowCardHeuristics.buildCapabilityFlowCandidates` + `DynamicFlowCardManager` soft resolve
 
 - **P2228 — CI vs Homey app packaging:**
   - Doctrine: `docs/architecture/CI_VS_HOMEY_RUNTIME.md`
@@ -881,7 +907,15 @@ the Universal Tuya App ID.
    (do not greenwash a failed upload). `wait-athom-draft-ready.js` must not
    exit 1 on the first `processing_failed` poll — a sibling draft/test of
    the same version wins; fail-closed only after the wait window
-   (`HOMEY_DRAFT_WAIT_MS` default **360s** after P2252).
+   (`HOMEY_DRAFT_WAIT_MS` default **600s** after P2384/P2385).
+7. **P2385 amplifiers**: `force_publish` defaults **false**; Auto-Fix publishes
+   only when `trigger_publish=true` (never bare dispatch); Publish Self-Heal
+   uses `cancel-in-progress: false` and re-triggers Auto-Publish with
+   `force_publish=false`.
+8. **P2400 Stable dispatch dedupe**: bare `workflow_dispatch` of
+   `publish-stable.yml` skips Athom when a **push** run for the same tip SHA
+   already succeeded (avoids double draft). Use `force_publish=true` to override.
+   Still keep `cancel-in-progress: false` — never kill a live Athom upload.
 5. Auto-Publish / Auto Publish workflows use `cancel-in-progress: false` on the
    publish concurrency group — cancelling mid-draft/promote causes orphan Athom
    builds and socket hang up races on the next upload.
@@ -1033,6 +1067,25 @@ Workflows that soft-run L99 dual gates on schedule:
 - `recurrent-orchestrator.yml` (03:30 UTC)
 - `forum-poll.yml` (soft after silent scan)
 Hard fail on `unified-ci.yml` / publish path for BOTH gates (`--hard`).
+
+### P2352 — L99 Inbox Intelligence (regular + intelligent)
+**Unify** Gmail crashes + GitHub issues/PRs + Homey forum SHADOW + driver/couple gates into one prioritized loop.
+
+| | |
+|---|---|
+| Workflow | `l99-inbox-intelligence.yml` |
+| Cron | `45 2,6,10,14,18,22 * * *` (+30m after `forum-poll` `:15`) |
+| Script | `tools/ci/l99-inbox-intelligence-orchestrator.js` |
+| Config | `config/enrichment/l99-inbox-intelligence.json` |
+| Docs | `docs/architecture/L99_INBOX_INTELLIGENCE.md` |
+| npm | `npm run inbox:l99` · `inbox:l99:quick` · `inbox:l99:github` |
+
+Hooks (soft, continue-on-error):
+- `forum-poll.yml` → `--quick --skip-scan` after silent scan
+- `auto-enrich-closed-loop.yml` → same
+- `recurrent-orchestrator.yml` → same
+
+Rules: `FORUM_AUTO_POST=0`, never invent pid, never blind `align-mfs --apply`, commit reports only with `[skip ci]`.
 
 ### Catalog lock checklist (when adding a sacred couple)
 1. `drivers/*/driver.compose.json` (static Homey match)
