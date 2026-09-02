@@ -2457,14 +2457,16 @@
       "forbiddenDrivers": [
         "water_leak_sensor",
         "climate_sensor",
-        "motion_sensor"
+        "motion_sensor",
+        "doorwindowsensor_3"
       ],
       "forbidMode": "couple",
       "protocol": "ias_zone",
-      "notes": "GitHub Discussion #100 Pressure band — door/window IAS contact, not climate.",
+      "notes": "GitHub Discussion #100 Pressure band — IAS contact on contact_sensor; forbid dual-home doorwindowsensor_3 (P2404).",
       "sources": [
         "discussion-100",
-        "P2300"
+        "P2300",
+        "P2404"
       ],
       "tracks": {
         "master": {
@@ -2473,7 +2475,7 @@
         },
         "stable": {
           "static": true,
-          "dynamic": false
+          "dynamic": true
         }
       }
     },
