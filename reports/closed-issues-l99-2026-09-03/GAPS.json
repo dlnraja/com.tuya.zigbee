@@ -1,0 +1,401 @@
+{
+  "recentHuman": [
+    {
+      "n": 388,
+      "title": "Bug Report: Incorrect recognition of Rain Sensor TS0207 as Water Leak Sensor",
+      "closedAt": "2026-06-22T13:30:50Z",
+      "author": "DaPicardos",
+      "isAuto": false,
+      "couples": [
+        {
+          "mfr": "_TZ3210_tgvtvdo",
+          "pid": "TS0207"
+        },
+        {
+          "mfr": "_TZ3210_tgvtvdoc",
+          "pid": "TS0207"
+        }
+      ],
+      "couple": {
+        "mfr": "_TZ3210_tgvtvdo",
+        "pid": "TS0207"
+      },
+      "status": "MFR_WITHOUT_PID",
+      "drivers": [
+        "water_detector"
+      ],
+      "registry": null
+    },
+    {
+      "n": 323,
+      "title": "Tuya PJ-1203A Incorrect measurement values",
+      "closedAt": "2026-05-23T02:22:21Z",
+      "author": "macmonty",
+      "isAuto": false,
+      "couples": [
+        {
+          "mfr": "_TZE204_81yrt3l",
+          "pid": "TS0601"
+        },
+        {
+          "mfr": "_TZE204_81yrt3lo",
+          "pid": "TS0601"
+        }
+      ],
+      "couple": {
+        "mfr": "_TZE204_81yrt3l",
+        "pid": "TS0601"
+      },
+      "status": "MFR_WITHOUT_PID",
+      "drivers": [
+        "power_meter"
+      ],
+      "registry": null
+    },
+    {
+      "n": 318,
+      "title": "Tuya PJ-1203A Incorrect measurement values",
+      "closedAt": "2026-05-13T16:03:13Z",
+      "author": "macmonty",
+      "isAuto": false,
+      "couples": [
+        {
+          "mfr": "_TZE204_81yrt3l",
+          "pid": "TS0601"
+        },
+        {
+          "mfr": "_TZE204_81yrt3lo",
+          "pid": "TS0601"
+        }
+      ],
+      "couple": {
+        "mfr": "_TZE204_81yrt3l",
+        "pid": "TS0601"
+      },
+      "status": "MFR_WITHOUT_PID",
+      "drivers": [
+        "power_meter"
+      ],
+      "registry": null
+    },
+    {
+      "n": 164,
+      "title": "[DEVICE]",
+      "closedAt": "2026-04-04T20:17:30Z",
+      "author": "late4marshmellow",
+      "isAuto": false,
+      "couples": [
+        {
+          "mfr": "_TZ3000_otvn3lne",
+          "pid": null
+        }
+      ],
+      "couple": {
+        "mfr": "_TZ3000_otvn3lne",
+        "pid": null
+      },
+      "status": "DUAL_HOME",
+      "drivers": [
+        "pir_sensor_2",
+        "sensor_motion_presence"
+      ],
+      "registry": null
+    },
+    {
+      "n": 147,
+      "title": "[Fingerprint] Add _TZ3000_itb0omhv to switch_1gang (TS0001)",
+      "closedAt": "2026-03-02T01:04:14Z",
+      "author": "dlnraja",
+      "isAuto": false,
+      "couples": [
+        {
+          "mfr": "_TZ3000_itb0omhv",
+          "pid": null
+        }
+      ],
+      "couple": {
+        "mfr": "_TZ3000_itb0omhv",
+        "pid": null
+      },
+      "status": "DUAL_HOME",
+      "drivers": [
+        "smart_button_switch",
+        "switch_1gang"
+      ],
+      "registry": null
+    },
+    {
+      "n": 130,
+      "title": "[Forum] Responses for posts #1443-#1447",
+      "closedAt": "2026-02-27T21:20:38Z",
+      "author": "dlnraja",
+      "isAuto": false,
+      "couples": [
+        {
+          "mfr": "_TZ3000_tzvbimpq",
+          "pid": "TS0042"
+        },
+        {
+          "mfr": "_TZ3000_ja5osu5g",
+          "pid": "TS0041"
+        }
+      ],
+      "couple": {
+        "mfr": "_TZ3000_ja5osu5g",
+        "pid": "TS0041"
+      },
+      "status": "MFR_WITHOUT_PID",
+      "drivers": [
+        "smart_remote_1_button_2"
+      ],
+      "registry": null
+    },
+    {
+      "n": 76,
+      "title": "[DEVICE] 4 button touch remote (TS0044 / _TZ3000_u3nv1jwk)",
+      "closedAt": "2026-07-13T15:30:13Z",
+      "author": "jocke-sve-62",
+      "isAuto": false,
+      "couples": [
+        {
+          "mfr": "_TZ3000_u3nv1jwk",
+          "pid": null
+        }
+      ],
+      "couple": {
+        "mfr": "_TZ3000_u3nv1jwk",
+        "pid": null
+      },
+      "status": "DUAL_HOME",
+      "drivers": [
+        "button_wireless_4",
+        "handheld_remote_4_buttons"
+      ],
+      "registry": null
+    }
+  ],
+  "actionableAbsent": [],
+  "dualHomeHuman": [
+    {
+      "n": 164,
+      "title": "[DEVICE]",
+      "closedAt": "2026-04-04T20:17:30Z",
+      "author": "late4marshmellow",
+      "isAuto": false,
+      "couples": [
+        {
+          "mfr": "_TZ3000_otvn3lne",
+          "pid": null
+        }
+      ],
+      "couple": {
+        "mfr": "_TZ3000_otvn3lne",
+        "pid": null
+      },
+      "status": "DUAL_HOME",
+      "drivers": [
+        "pir_sensor_2",
+        "sensor_motion_presence"
+      ],
+      "registry": null
+    },
+    {
+      "n": 147,
+      "title": "[Fingerprint] Add _TZ3000_itb0omhv to switch_1gang (TS0001)",
+      "closedAt": "2026-03-02T01:04:14Z",
+      "author": "dlnraja",
+      "isAuto": false,
+      "couples": [
+        {
+          "mfr": "_TZ3000_itb0omhv",
+          "pid": null
+        }
+      ],
+      "couple": {
+        "mfr": "_TZ3000_itb0omhv",
+        "pid": null
+      },
+      "status": "DUAL_HOME",
+      "drivers": [
+        "smart_button_switch",
+        "switch_1gang"
+      ],
+      "registry": null
+    },
+    {
+      "n": 88,
+      "title": "Bug - Incorrect driver assigned to device - 2 gang dimmer module x climate sensor",
+      "closedAt": "2025-12-16T15:30:29Z",
+      "author": "theunissendave",
+      "isAuto": false,
+      "couples": [
+        {
+          "mfr": "_TZE200_e3oitdyu",
+          "pid": "TS0601"
+        }
+      ],
+      "couple": {
+        "mfr": "_TZE200_e3oitdyu",
+        "pid": "TS0601"
+      },
+      "status": "DUAL_HOME",
+      "drivers": [
+        "dimmer_2_gang_tuya",
+        "wall_dimmer_tuya"
+      ],
+      "registry": null
+    },
+    {
+      "n": 79,
+      "title": "Device Request - Curtain motor - Tuya / _TZE200_uj3f4wr5",
+      "closedAt": "2025-11-28T21:21:41Z",
+      "author": "Patrickske1",
+      "isAuto": false,
+      "couples": [
+        {
+          "mfr": "_TZE200_uj3f4wr5",
+          "pid": "TS0601"
+        }
+      ],
+      "couple": {
+        "mfr": "_TZE200_uj3f4wr5",
+        "pid": "TS0601"
+      },
+      "status": "DUAL_HOME",
+      "drivers": [
+        "curtain_motor",
+        "curtain_motor_shutter"
+      ],
+      "registry": null
+    },
+    {
+      "n": 76,
+      "title": "[DEVICE] 4 button touch remote (TS0044 / _TZ3000_u3nv1jwk)",
+      "closedAt": "2026-07-13T15:30:13Z",
+      "author": "jocke-sve-62",
+      "isAuto": false,
+      "couples": [
+        {
+          "mfr": "_TZ3000_u3nv1jwk",
+          "pid": null
+        }
+      ],
+      "couple": {
+        "mfr": "_TZ3000_u3nv1jwk",
+        "pid": null
+      },
+      "status": "DUAL_HOME",
+      "drivers": [
+        "button_wireless_4",
+        "handheld_remote_4_buttons"
+      ],
+      "registry": null
+    }
+  ],
+  "mfrOnlyHuman": [
+    {
+      "n": 388,
+      "title": "Bug Report: Incorrect recognition of Rain Sensor TS0207 as Water Leak Sensor",
+      "closedAt": "2026-06-22T13:30:50Z",
+      "author": "DaPicardos",
+      "isAuto": false,
+      "couples": [
+        {
+          "mfr": "_TZ3210_tgvtvdo",
+          "pid": "TS0207"
+        },
+        {
+          "mfr": "_TZ3210_tgvtvdoc",
+          "pid": "TS0207"
+        }
+      ],
+      "couple": {
+        "mfr": "_TZ3210_tgvtvdo",
+        "pid": "TS0207"
+      },
+      "status": "MFR_WITHOUT_PID",
+      "drivers": [
+        "water_detector"
+      ],
+      "registry": null
+    },
+    {
+      "n": 323,
+      "title": "Tuya PJ-1203A Incorrect measurement values",
+      "closedAt": "2026-05-23T02:22:21Z",
+      "author": "macmonty",
+      "isAuto": false,
+      "couples": [
+        {
+          "mfr": "_TZE204_81yrt3l",
+          "pid": "TS0601"
+        },
+        {
+          "mfr": "_TZE204_81yrt3lo",
+          "pid": "TS0601"
+        }
+      ],
+      "couple": {
+        "mfr": "_TZE204_81yrt3l",
+        "pid": "TS0601"
+      },
+      "status": "MFR_WITHOUT_PID",
+      "drivers": [
+        "power_meter"
+      ],
+      "registry": null
+    },
+    {
+      "n": 318,
+      "title": "Tuya PJ-1203A Incorrect measurement values",
+      "closedAt": "2026-05-13T16:03:13Z",
+      "author": "macmonty",
+      "isAuto": false,
+      "couples": [
+        {
+          "mfr": "_TZE204_81yrt3l",
+          "pid": "TS0601"
+        },
+        {
+          "mfr": "_TZE204_81yrt3lo",
+          "pid": "TS0601"
+        }
+      ],
+      "couple": {
+        "mfr": "_TZE204_81yrt3l",
+        "pid": "TS0601"
+      },
+      "status": "MFR_WITHOUT_PID",
+      "drivers": [
+        "power_meter"
+      ],
+      "registry": null
+    },
+    {
+      "n": 130,
+      "title": "[Forum] Responses for posts #1443-#1447",
+      "closedAt": "2026-02-27T21:20:38Z",
+      "author": "dlnraja",
+      "isAuto": false,
+      "couples": [
+        {
+          "mfr": "_TZ3000_tzvbimpq",
+          "pid": "TS0042"
+        },
+        {
+          "mfr": "_TZ3000_ja5osu5g",
+          "pid": "TS0041"
+        }
+      ],
+      "couple": {
+        "mfr": "_TZ3000_ja5osu5g",
+        "pid": "TS0041"
+      },
+      "status": "MFR_WITHOUT_PID",
+      "drivers": [
+        "smart_remote_1_button_2"
+      ],
+      "registry": null
+    }
+  ]
+}

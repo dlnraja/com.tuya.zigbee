@@ -1,0 +1,2400 @@
+[
+  {
+    "n": 536,
+    "title": "Device Request - Smart fan switch with 5-speed control - Zigbee",
+    "closedAt": "2026-09-02T21:15:54Z",
+    "author": "MarceloSilvaLeite",
+    "isAuto": false,
+    "couples": [
+      {
+        "mfr": "_TZE200_r32ctezx",
+        "pid": "TS0601"
+      }
+    ]
+  },
+  {
+    "n": 533,
+    "title": "Device Request - [SMART ZIGBEE CURTAIN SWITCH] - [MOES]",
+    "closedAt": "2026-09-02T21:15:57Z",
+    "author": "salvagr",
+    "isAuto": false,
+    "couples": [
+      {
+        "mfr": "_TZE204_5slehgeo",
+        "pid": "TS0601"
+      }
+    ]
+  },
+  {
+    "n": 532,
+    "title": "[Device] Zigbee Smart AC Thermostat",
+    "closedAt": "2026-08-31T09:11:24Z",
+    "author": "xDMcGee",
+    "isAuto": false,
+    "couples": [
+      {
+        "mfr": "_TZE204_mpbki2zm",
+        "pid": "TS0601"
+      }
+    ]
+  },
+  {
+    "n": 531,
+    "title": "[Bug] _TZE204_ogkdpgy2 (CO2 sensor) misclassified under climate_sensor instead of air_quality_co2",
+    "closedAt": "2026-08-28T21:32:08Z",
+    "author": "Nespouique",
+    "isAuto": false,
+    "couples": [
+      {
+        "mfr": "_TZE204_ogkdpgy2",
+        "pid": "TS0601"
+      },
+      {
+        "mfr": "_TZE200_ogkdpgy2",
+        "pid": "TS0601"
+      }
+    ]
+  },
+  {
+    "n": 516,
+    "title": "Bug report -Humidity divided by 10",
+    "closedAt": "2026-08-14T06:41:01Z",
+    "author": "finnamu",
+    "isAuto": false,
+    "couples": []
+  },
+  {
+    "n": 513,
+    "title": "Bug report - Zigbee Climate sensor not installing",
+    "closedAt": "2026-08-16T09:45:51Z",
+    "author": "finnamu",
+    "isAuto": false,
+    "couples": [
+      {
+        "mfr": "_TZE284_hodyryli",
+        "pid": "TS0601"
+      }
+    ]
+  },
+  {
+    "n": 511,
+    "title": "Support Smart Solar Soil Sensor TS0601 (_TZE284_awepdiwi)",
+    "closedAt": "2026-07-17T03:33:28Z",
+    "author": "stephanmaastricht",
+    "isAuto": false,
+    "couples": [
+      {
+        "mfr": "_TZE284_awepdiwi",
+        "pid": "TS0601"
+      },
+      {
+        "mfr": "_TZE284_ga1maeof",
+        "pid": "TS0601"
+      }
+    ]
+  },
+  {
+    "n": 506,
+    "title": "Temp and humidity sensor",
+    "closedAt": "2026-07-18T05:28:55Z",
+    "author": "Lalla80111",
+    "isAuto": false,
+    "couples": [
+      {
+        "mfr": "_TZ3000_fllyghyj",
+        "pid": "TS0201"
+      }
+    ]
+  },
+  {
+    "n": 428,
+    "title": "Bug report - unable to add known sensor",
+    "closedAt": "2026-07-03T20:40:56Z",
+    "author": "sondregjessing-blip",
+    "isAuto": false,
+    "couples": [
+      {
+        "mfr": "_TZE284_0ints6wl",
+        "pid": "TS0601"
+      }
+    ]
+  },
+  {
+    "n": 424,
+    "title": "[Device Support] Bed sensor _TZE200_seq9cm6u pairs as \"Unknown Zigbee Device\"",
+    "closedAt": "2026-06-20T18:58:14Z",
+    "author": "squizzeak",
+    "isAuto": false,
+    "couples": [
+      {
+        "mfr": "_TZE200_seq9cm6u",
+        "pid": "TS0601"
+      }
+    ]
+  },
+  {
+    "n": 420,
+    "title": "_TZE204_clrdrnya (Wenzhi MTG235-ZB-RL) pairs but reports no data on motion_sensor_radar_mmwave",
+    "closedAt": "2026-06-26T13:48:07Z",
+    "author": "RidderGH",
+    "isAuto": false,
+    "couples": [
+      {
+        "mfr": "_TZE204_clrdrnya",
+        "pid": "TS0601"
+      }
+    ]
+  },
+  {
+    "n": 417,
+    "title": "Rainsensor",
+    "closedAt": "2026-06-22T13:30:47Z",
+    "author": "avanderwulp",
+    "isAuto": false,
+    "couples": []
+  },
+  {
+    "n": 413,
+    "title": "[plug_energy_monitor] Bug: \t_TZ3000_wzmuk9ai   \tTS011F",
+    "closedAt": "2026-06-09T20:15:50Z",
+    "author": "haadeess",
+    "isAuto": false,
+    "couples": [
+      {
+        "mfr": "_TZ3000_wzmuk9ai",
+        "pid": "TS011F"
+      }
+    ]
+  },
+  {
+    "n": 412,
+    "title": "_TZ3000_yj6k7vfo [button_wireless_smart] Bug: No button press detected again. #334  #410",
+    "closedAt": "2026-06-09T20:15:48Z",
+    "author": "haadeess",
+    "isAuto": false,
+    "couples": [
+      {
+        "mfr": "_TZ3000_yj6k7vfo",
+        "pid": null
+      }
+    ]
+  },
+  {
+    "n": 410,
+    "title": "_TZ3000_yj6k7vfo [button_wireless_smart] Bug: No button press detected again. #334",
+    "closedAt": "2026-06-09T16:24:53Z",
+    "author": "haadeess",
+    "isAuto": false,
+    "couples": [
+      {
+        "mfr": "_TZ3000_yj6k7vfo",
+        "pid": null
+      }
+    ]
+  },
+  {
+    "n": 406,
+    "title": "[presence_sensor_radar] Bug: _TZE200_ka8l86iu PesenceSensor #374 #382 #399 ",
+    "closedAt": "2026-06-08T14:47:44Z",
+    "author": "haadeess",
+    "isAuto": false,
+    "couples": [
+      {
+        "mfr": "_TZE200_ka8l86iu",
+        "pid": null
+      },
+      {
+        "mfr": "_TZE200_zbfmvj13",
+        "pid": null
+      }
+    ]
+  },
+  {
+    "n": 399,
+    "title": "[presence_sensor_radar] Bug: _TZE200_ka8l86iu PesenceSensor #374 #382",
+    "closedAt": "2026-06-08T08:14:29Z",
+    "author": "haadeess",
+    "isAuto": false,
+    "couples": [
+      {
+        "mfr": "_TZE200_ka8l86iu",
+        "pid": null
+      },
+      {
+        "mfr": "_TZE284_oitavov2",
+        "pid": null
+      }
+    ]
+  },
+  {
+    "n": 398,
+    "title": "Bug report - Strange readings from the soil sensors  #376",
+    "closedAt": "2026-06-08T12:10:50Z",
+    "author": "haadeess",
+    "isAuto": false,
+    "couples": []
+  },
+  {
+    "n": 395,
+    "title": "TS0601 _TZE200_9xfjixap #339#379 #381  #384",
+    "closedAt": "2026-06-15T06:05:48Z",
+    "author": "haadeess",
+    "isAuto": false,
+    "couples": [
+      {
+        "mfr": "_TZE200_9xfjixap",
+        "pid": null
+      }
+    ]
+  },
+  {
+    "n": 394,
+    "title": "_TZE200_u6x1zyv2 \tTS0601 From #370  #373",
+    "closedAt": "2026-06-11T08:37:35Z",
+    "author": "haadeess",
+    "isAuto": false,
+    "couples": [
+      {
+        "mfr": "_TZE200_u6x1zyv2",
+        "pid": "TS0601"
+      }
+    ]
+  },
+  {
+    "n": 388,
+    "title": "Bug Report: Incorrect recognition of Rain Sensor TS0207 as Water Leak Sensor",
+    "closedAt": "2026-06-22T13:30:50Z",
+    "author": "DaPicardos",
+    "isAuto": false,
+    "couples": [
+      {
+        "mfr": "_TZ3210_tgvtvdo",
+        "pid": "TS0207"
+      },
+      {
+        "mfr": "_TZ3210_tgvtvdoc",
+        "pid": "TS0207"
+      }
+    ]
+  },
+  {
+    "n": 384,
+    "title": "TS0601 _TZE200_9xfjixap #339#379 #381",
+    "closedAt": "2026-06-06T15:13:48Z",
+    "author": "haadeess",
+    "isAuto": false,
+    "couples": [
+      {
+        "mfr": "_TZE200_9xfjixap",
+        "pid": "TS0601"
+      }
+    ]
+  },
+  {
+    "n": 383,
+    "title": "Bug Report: Bed Sensor issues still persist in v8.1.141",
+    "closedAt": "2026-06-22T13:30:45Z",
+    "author": "DaPicardos",
+    "isAuto": false,
+    "couples": []
+  },
+  {
+    "n": 382,
+    "title": "[presence_sensor_radar] Bug: _TZE200_ka8l86iu PesenceSensor #374",
+    "closedAt": "2026-06-06T17:33:50Z",
+    "author": "haadeess",
+    "isAuto": false,
+    "couples": [
+      {
+        "mfr": "_TZE200_ka8l86iu",
+        "pid": "TS0601"
+      },
+      {
+        "mfr": "_TZE200_9xfjixap",
+        "pid": "TS0601"
+      }
+    ]
+  },
+  {
+    "n": 381,
+    "title": "TS0601  _TZE200_9xfjixap  #339#379",
+    "closedAt": "2026-06-06T11:13:46Z",
+    "author": "haadeess",
+    "isAuto": false,
+    "couples": [
+      {
+        "mfr": "_TZE200_9xfjixap",
+        "pid": "TS0601"
+      }
+    ]
+  },
+  {
+    "n": 380,
+    "title": "361 configuration page is still loading endlessly",
+    "closedAt": "2026-06-22T13:30:52Z",
+    "author": "haadeess",
+    "isAuto": false,
+    "couples": []
+  },
+  {
+    "n": 379,
+    "title": "[radiator_valve] Bug: _TZE200_9xfjixap Still not working #339",
+    "closedAt": "2026-06-06T09:41:49Z",
+    "author": "haadeess",
+    "isAuto": false,
+    "couples": [
+      {
+        "mfr": "_TZE200_9xfjixap",
+        "pid": null
+      }
+    ]
+  },
+  {
+    "n": 378,
+    "title": "Bug Report: Bed Sensor issues still persist in v8.1.124",
+    "closedAt": "2026-06-06T02:58:44Z",
+    "author": "DaPicardos",
+    "isAuto": false,
+    "couples": []
+  },
+  {
+    "n": 376,
+    "title": "Bug report - Strange readings from the soil sensors",
+    "closedAt": "2026-06-06T11:11:42Z",
+    "author": "haadeess",
+    "isAuto": false,
+    "couples": [
+      {
+        "mfr": "_TZE200_npj9bug3",
+        "pid": "ZG-303Z"
+      },
+      {
+        "mfr": "_TZE284_aao3yzhs",
+        "pid": "ZG-303Z"
+      },
+      {
+        "mfr": "_TZE284_oitavov2",
+        "pid": "ZG-303Z"
+      },
+      {
+        "mfr": "_TZE284_hdml1aav",
+        "pid": "ZG-303Z"
+      }
+    ]
+  },
+  {
+    "n": 375,
+    "title": "361 Still loading endlessly",
+    "closedAt": "2026-06-06T01:16:26Z",
+    "author": "haadeess",
+    "isAuto": false,
+    "couples": []
+  },
+  {
+    "n": 374,
+    "title": "[presence_sensor_radar] Bug: _TZE200_ka8l86iu PesenceSensor",
+    "closedAt": "2026-06-05T23:18:40Z",
+    "author": "haadeess",
+    "isAuto": false,
+    "couples": [
+      {
+        "mfr": "_TZE200_ka8l86iu",
+        "pid": "TS0601"
+      }
+    ]
+  },
+  {
+    "n": 373,
+    "title": "From #370",
+    "closedAt": "2026-06-05T23:18:39Z",
+    "author": "haadeess",
+    "isAuto": false,
+    "couples": []
+  },
+  {
+    "n": 371,
+    "title": "Bug Report: Bed Sensor issues still persist in v8.1.106",
+    "closedAt": "2026-06-05T23:18:39Z",
+    "author": "DaPicardos",
+    "isAuto": false,
+    "couples": []
+  },
+  {
+    "n": 370,
+    "title": "[rain_sensor] Bug: _TZE200_u6x1zyv2",
+    "closedAt": "2026-06-05T12:09:50Z",
+    "author": "haadeess",
+    "isAuto": false,
+    "couples": [
+      {
+        "mfr": "_TZE200_u6x1zyv2",
+        "pid": "TS0601"
+      }
+    ]
+  },
+  {
+    "n": 367,
+    "title": "Bug Report: Bed Sensor issues still persist in v8.1.92",
+    "closedAt": "2026-06-04T13:24:50Z",
+    "author": "DaPicardos",
+    "isAuto": false,
+    "couples": []
+  },
+  {
+    "n": 365,
+    "title": "[radiator_valve] Bug: \t_TZE200_9xfjixap",
+    "closedAt": "2026-06-04T07:27:54Z",
+    "author": "haadeess",
+    "isAuto": false,
+    "couples": [
+      {
+        "mfr": "_TZE200_9xfjixap",
+        "pid": "TS0601"
+      }
+    ]
+  },
+  {
+    "n": 363,
+    "title": "Bug: Issue in post #328 ist not fixed, please reopen the issue",
+    "closedAt": "2026-06-03T16:09:01Z",
+    "author": "DaPicardos",
+    "isAuto": false,
+    "couples": []
+  },
+  {
+    "n": 361,
+    "title": "Bug report - Debugging option not loading",
+    "closedAt": "2026-06-03T12:14:58Z",
+    "author": "haadeess",
+    "isAuto": false,
+    "couples": []
+  },
+  {
+    "n": 360,
+    "title": "[bed_sensor] Bug: Issue in post #328 ist not fixed",
+    "closedAt": "2026-06-03T12:26:05Z",
+    "author": "DaPicardos",
+    "isAuto": false,
+    "couples": []
+  },
+  {
+    "n": 355,
+    "title": "[bed_sensor] Bug:  Issue in post #328 ist not fixed!",
+    "closedAt": "2026-06-01T02:12:38Z",
+    "author": "DaPicardos",
+    "isAuto": false,
+    "couples": []
+  },
+  {
+    "n": 340,
+    "title": "[soil_sensor] Bug: ZG-303Z ",
+    "closedAt": "2026-06-03T18:50:16Z",
+    "author": "haadeess",
+    "isAuto": false,
+    "couples": []
+  },
+  {
+    "n": 339,
+    "title": "[radiator_valve] Bug: _TZE200_9xfjixap Still not working",
+    "closedAt": "2026-06-01T02:12:37Z",
+    "author": "haadeess",
+    "isAuto": false,
+    "couples": [
+      {
+        "mfr": "_TZE200_9xfjixap",
+        "pid": "TS0601"
+      }
+    ]
+  },
+  {
+    "n": 338,
+    "title": "Bug report - App Crash on startup",
+    "closedAt": "2026-05-28T04:10:09Z",
+    "author": "ftrueck",
+    "isAuto": false,
+    "couples": []
+  },
+  {
+    "n": 337,
+    "title": "[motion_sensor_2] Bug: _TZE200_3towulqd ",
+    "closedAt": "2026-06-03T18:50:18Z",
+    "author": "haadeess",
+    "isAuto": false,
+    "couples": [
+      {
+        "mfr": "_TZE200_3towulqd",
+        "pid": "TS0601"
+      }
+    ]
+  },
+  {
+    "n": 334,
+    "title": "_TZ3000_yj6k7vfo  [button_wireless_smart] Bug: No button press detected again.",
+    "closedAt": "2026-05-29T23:13:26Z",
+    "author": "haadeess",
+    "isAuto": false,
+    "couples": [
+      {
+        "mfr": "_TZ3000_yj6k7vfo",
+        "pid": "TS0041"
+      }
+    ]
+  },
+  {
+    "n": 333,
+    "title": "Smart Button (round). Added but not working",
+    "closedAt": "2026-06-03T17:29:32Z",
+    "author": "Lalla80111",
+    "isAuto": false,
+    "couples": [
+      {
+        "mfr": "_TZ3000_b4awzgct",
+        "pid": "TS0041"
+      }
+    ]
+  },
+  {
+    "n": 332,
+    "title": "[BUG] Could not get device by ID - Zigbee Gate Opener Module / QS-Zigbee-C03 / TS0603",
+    "closedAt": "2026-05-23T02:27:19Z",
+    "author": "PDominikPL",
+    "isAuto": false,
+    "couples": []
+  },
+  {
+    "n": 331,
+    "title": "[BUG] Setting tab not loading",
+    "closedAt": "2026-05-23T02:26:04Z",
+    "author": "PDominikPL",
+    "isAuto": false,
+    "couples": []
+  },
+  {
+    "n": 329,
+    "title": "CT Clamp Power Meter",
+    "closedAt": "2026-06-03T18:50:21Z",
+    "author": "speerke",
+    "isAuto": false,
+    "couples": []
+  },
+  {
+    "n": 328,
+    "title": "Pressure Sensing Strap/Bed Occupancy Sensor",
+    "closedAt": "2026-05-31T08:06:20Z",
+    "author": "DaPicardos",
+    "isAuto": false,
+    "couples": [
+      {
+        "mfr": "_TZE200_seq9cm6u",
+        "pid": null
+      }
+    ]
+  },
+  {
+    "n": 326,
+    "title": "[rain_sensor] Bug: _TZE200_u6x1zyv2",
+    "closedAt": "2026-05-23T02:24:57Z",
+    "author": "haadeess",
+    "isAuto": false,
+    "couples": [
+      {
+        "mfr": "_TZE200_u6x1zyv2",
+        "pid": null
+      }
+    ]
+  },
+  {
+    "n": 325,
+    "title": "[climate_sensor] Bug: Ist detected as an Climate Sensor but is a presence Sensor",
+    "closedAt": "2026-05-23T02:23:12Z",
+    "author": "haadeess",
+    "isAuto": false,
+    "couples": [
+      {
+        "mfr": "_TZE200_ka8l86iu",
+        "pid": "TS0601"
+      }
+    ]
+  },
+  {
+    "n": 324,
+    "title": "2.4 ghz MMwave _TZE200_hl0ss9oa",
+    "closedAt": "2026-05-31T08:06:22Z",
+    "author": "kringloper",
+    "isAuto": false,
+    "couples": [
+      {
+        "mfr": "_TZE200_hl0ss9oa",
+        "pid": "TS0225"
+      }
+    ]
+  },
+  {
+    "n": 323,
+    "title": "Tuya PJ-1203A Incorrect measurement values",
+    "closedAt": "2026-05-23T02:22:21Z",
+    "author": "macmonty",
+    "isAuto": false,
+    "couples": [
+      {
+        "mfr": "_TZE204_81yrt3l",
+        "pid": "TS0601"
+      },
+      {
+        "mfr": "_TZE204_81yrt3lo",
+        "pid": "TS0601"
+      }
+    ]
+  },
+  {
+    "n": 322,
+    "title": "DEVICE REQUEST LORATAP TS0043",
+    "closedAt": "2026-05-31T08:06:24Z",
+    "author": "macmonty",
+    "isAuto": false,
+    "couples": [
+      {
+        "mfr": "_TZ3000_famkxci2",
+        "pid": null
+      }
+    ]
+  },
+  {
+    "n": 319,
+    "title": "Add support for device Tuya ZG-101Z_D_1",
+    "closedAt": "2026-05-13T15:59:09Z",
+    "author": "macmonty",
+    "isAuto": false,
+    "couples": [
+      {
+        "mfr": "_TZ3000_402vrq2i",
+        "pid": null
+      }
+    ]
+  },
+  {
+    "n": 318,
+    "title": "Tuya PJ-1203A Incorrect measurement values",
+    "closedAt": "2026-05-13T16:03:13Z",
+    "author": "macmonty",
+    "isAuto": false,
+    "couples": [
+      {
+        "mfr": "_TZE204_81yrt3l",
+        "pid": "TS0601"
+      },
+      {
+        "mfr": "_TZE204_81yrt3lo",
+        "pid": "TS0601"
+      }
+    ]
+  },
+  {
+    "n": 317,
+    "title": "NOT WORK FOR HIST SERVER VERSION",
+    "closedAt": "2026-05-13T16:03:38Z",
+    "author": "vladivdv-bot",
+    "isAuto": false,
+    "couples": []
+  },
+  {
+    "n": 316,
+    "title": "Climate sensor, wrong device recognized",
+    "closedAt": "2026-05-11T15:09:24Z",
+    "author": "Lalla80111",
+    "isAuto": false,
+    "couples": [
+      {
+        "mfr": "_TZ3000_fllyghyj",
+        "pid": "TS0201"
+      }
+    ]
+  },
+  {
+    "n": 314,
+    "title": "Smart Wireless Button (1), unknown device",
+    "closedAt": "2026-05-13T16:04:20Z",
+    "author": "Lalla80111",
+    "isAuto": false,
+    "couples": [
+      {
+        "mfr": "_TZ3000_b4awzgct",
+        "pid": "TS0041"
+      }
+    ]
+  },
+  {
+    "n": 312,
+    "title": "INSOMA DUAL IRRIGATION VALVE ISSUE. New COMPLETE fingerprint",
+    "closedAt": "2026-05-13T16:05:26Z",
+    "author": "tjoepatjoep",
+    "isAuto": false,
+    "couples": [
+      {
+        "mfr": "_TZE284_fhvpaltk",
+        "pid": "TS0601"
+      }
+    ]
+  },
+  {
+    "n": 309,
+    "title": "[Device Request] Tuya PJ-1203A Bidirectional Energy Meter - _TZE204_81yrt3lo TS0601",
+    "closedAt": "2026-05-05T14:56:54Z",
+    "author": "macmonty",
+    "isAuto": false,
+    "couples": [
+      {
+        "mfr": "_TZE204_81yrt3lo",
+        "pid": "TS0601"
+      }
+    ]
+  },
+  {
+    "n": 308,
+    "title": "[BUG] Setting tab not loading",
+    "closedAt": "2026-05-05T11:50:07Z",
+    "author": "PDominikPL",
+    "isAuto": false,
+    "couples": []
+  },
+  {
+    "n": 305,
+    "title": "Zigbee Gate Opener Module / QS-Zigbee-C03 / TS0603",
+    "closedAt": "2026-05-13T15:57:23Z",
+    "author": "PDominikPL",
+    "isAuto": false,
+    "couples": [
+      {
+        "mfr": "_TZE608_c75zqghm",
+        "pid": null
+      }
+    ]
+  },
+  {
+    "n": 302,
+    "title": "App crashes during startup",
+    "closedAt": "2026-05-02T23:10:36Z",
+    "author": "pemikalsen-sudo",
+    "isAuto": false,
+    "couples": []
+  },
+  {
+    "n": 276,
+    "title": "Smart Solar Soil Sensor",
+    "closedAt": "2026-05-13T16:06:02Z",
+    "author": "vikinos",
+    "isAuto": false,
+    "couples": [
+      {
+        "mfr": "_TZE284_rqcuwlsa",
+        "pid": "TS0601"
+      }
+    ]
+  },
+  {
+    "n": 275,
+    "title": "_TZE200_xlppj4f5 Immax NEO Smart Water Timer still does not work",
+    "closedAt": "2026-04-28T14:24:27Z",
+    "author": "Domingoso",
+    "isAuto": false,
+    "couples": [
+      {
+        "mfr": "_TZE200_xlppj4f5",
+        "pid": "TS0601"
+      }
+    ]
+  },
+  {
+    "n": 260,
+    "title": "[Device] Insoma Two Way Irrigation Valve (Zigbee)",
+    "closedAt": "2026-04-28T14:24:30Z",
+    "author": "tjoepatjoep",
+    "isAuto": false,
+    "couples": [
+      {
+        "mfr": "_TZE284_fhvpaltk",
+        "pid": "TS0601"
+      }
+    ]
+  },
+  {
+    "n": 206,
+    "title": "[Zigbee USB Plug 3 Gang] TS0003 - _TZ3210_n0wbkysi",
+    "closedAt": "2026-04-12T07:31:23Z",
+    "author": "cristianoisaac",
+    "isAuto": false,
+    "couples": [
+      {
+        "mfr": "_TZ3210_n0wbkysi",
+        "pid": null
+      }
+    ]
+  },
+  {
+    "n": 200,
+    "title": "Temperature and Humidity LCD sensor",
+    "closedAt": "2026-04-12T07:31:25Z",
+    "author": "tencoo",
+    "isAuto": false,
+    "couples": [
+      {
+        "mfr": "_TZ3210_ncw88jfq",
+        "pid": null
+      }
+    ]
+  },
+  {
+    "n": 198,
+    "title": "SNZB-01M still detected as unknown Zigbee device",
+    "closedAt": "2026-04-12T07:31:27Z",
+    "author": "clementloridan",
+    "isAuto": false,
+    "couples": []
+  },
+  {
+    "n": 197,
+    "title": "[plug_energy_monitor] Bug: _TZ3000_wzmuk9ai",
+    "closedAt": "2026-04-08T18:26:28Z",
+    "author": "haadeess",
+    "isAuto": false,
+    "couples": [
+      {
+        "mfr": "_TZ3000_wzmuk9ai",
+        "pid": "TS011F"
+      }
+    ]
+  },
+  {
+    "n": 194,
+    "title": "[plug_energy_monitor CK-BL702-SWP-01(7020)] Bug: follow-up from #188",
+    "closedAt": "2026-04-28T14:24:30Z",
+    "author": "john1v",
+    "isAuto": false,
+    "couples": []
+  },
+  {
+    "n": 193,
+    "title": "[climate_sensor _TZ3000_xr3htd96 TS0201] Bug:",
+    "closedAt": "2026-04-06T00:37:50Z",
+    "author": "john1v",
+    "isAuto": false,
+    "couples": [
+      {
+        "mfr": "_TZ3000_xr3htd96",
+        "pid": "TS0201"
+      }
+    ]
+  },
+  {
+    "n": 188,
+    "title": "[plug_energy_monitor] Bug:",
+    "closedAt": "2026-04-04T20:18:07Z",
+    "author": "john1v",
+    "isAuto": false,
+    "couples": []
+  },
+  {
+    "n": 184,
+    "title": "Device Request - Temperature &humidity sensor with external probe - Shenzen New Green Energy Techologies Co ltd / _TZE284_8se38w3c TS0601",
+    "closedAt": "2026-04-28T14:24:28Z",
+    "author": "pemikalsen-sudo",
+    "isAuto": false,
+    "couples": [
+      {
+        "mfr": "_TZE284_8se38w3c",
+        "pid": "TS0601"
+      }
+    ]
+  },
+  {
+    "n": 183,
+    "title": "[Device Request] Climate Sensor Model TS0201 ID _TZ3000_tsgqxdb4",
+    "closedAt": "2026-04-06T00:36:24Z",
+    "author": "Snacker80",
+    "isAuto": false,
+    "couples": [
+      {
+        "mfr": "_TZ3000_tsgqxdb4",
+        "pid": null
+      }
+    ]
+  },
+  {
+    "n": 179,
+    "title": "Pairing fails for TS0601 presence sensors: create_bindings_failed (zdoInvalidEndpoint)",
+    "closedAt": "2026-03-30T04:42:11Z",
+    "author": "Robsta86",
+    "isAuto": false,
+    "couples": []
+  },
+  {
+    "n": 178,
+    "title": "[soil_sensor] Bug: No Connetion possible \t_TZE284_oitavov2",
+    "closedAt": "2026-04-04T20:20:07Z",
+    "author": "haadeess",
+    "isAuto": false,
+    "couples": [
+      {
+        "mfr": "_TZE284_oitavov2",
+        "pid": "TS0601"
+      }
+    ]
+  },
+  {
+    "n": 177,
+    "title": "Soil Sensor with fertilizer level A89G12C",
+    "closedAt": "2026-03-29T08:54:52Z",
+    "author": "haadeess",
+    "isAuto": false,
+    "couples": []
+  },
+  {
+    "n": 176,
+    "title": "[soil_sensor] Bug:",
+    "closedAt": "2026-03-29T10:36:47Z",
+    "author": "haadeess",
+    "isAuto": false,
+    "couples": [
+      {
+        "mfr": "_TZE284_hdml1aav",
+        "pid": "TS0601"
+      }
+    ]
+  },
+  {
+    "n": 175,
+    "title": "[soil_sensor] Bug:",
+    "closedAt": "2026-03-28T14:04:42Z",
+    "author": "haadeess",
+    "isAuto": false,
+    "couples": []
+  },
+  {
+    "n": 174,
+    "title": "[DEVICE] Bug report - Identification mismatch for ZG-204ZE (Presence Sensor Radar)",
+    "closedAt": "2026-03-29T08:54:51Z",
+    "author": "Wuma68",
+    "isAuto": false,
+    "couples": []
+  },
+  {
+    "n": 173,
+    "title": "Human motion sensor (radar)",
+    "closedAt": "2026-03-26T19:31:55Z",
+    "author": "Wuma68",
+    "isAuto": false,
+    "couples": []
+  },
+  {
+    "n": 172,
+    "title": "Unable to connect Something went wrong while adding this device, please try again",
+    "closedAt": "2026-03-26T14:49:56Z",
+    "author": "ronaldbok",
+    "isAuto": false,
+    "couples": [
+      {
+        "mfr": "_TZE284_oitavov2",
+        "pid": "TS0601"
+      }
+    ]
+  },
+  {
+    "n": 171,
+    "title": "Bseed E-touch series Zigbee 1-Gang",
+    "closedAt": "2026-04-04T20:20:10Z",
+    "author": "vbesteiro",
+    "isAuto": false,
+    "couples": [
+      {
+        "mfr": "_TZ3002_jn2x20tg",
+        "pid": "TS0726"
+      }
+    ]
+  },
+  {
+    "n": 170,
+    "title": "Bug: TS0003 (_TZ3000_v4l4b0lp) - Sub-capability Flow cards (Gang 1/2/3) are completely unlinked",
+    "closedAt": "2026-04-28T14:24:29Z",
+    "author": "Ssssneak",
+    "isAuto": false,
+    "couples": [
+      {
+        "mfr": "_TZ3000_v4l4b0lp",
+        "pid": "TS0003"
+      }
+    ]
+  },
+  {
+    "n": 169,
+    "title": "Device Request - [Wall Plug Zigbee] - [Zbeacon] / [TS011F]",
+    "closedAt": "2026-03-24T21:10:40Z",
+    "author": "cristianoisaac",
+    "isAuto": false,
+    "couples": []
+  },
+  {
+    "n": 168,
+    "title": "Device Request - [PIR Motion Brightness] - [_TZE284_bquwrqh1] / [TS0601]",
+    "closedAt": "2026-03-24T20:24:21Z",
+    "author": "cristianoisaac",
+    "isAuto": false,
+    "couples": [
+      {
+        "mfr": "_TZE284_bquwrqh1",
+        "pid": "TS0601"
+      }
+    ]
+  },
+  {
+    "n": 165,
+    "title": "Device Request - Zigbee Light sensor ZG-106Z",
+    "closedAt": "2026-04-04T20:17:14Z",
+    "author": "johnx1971",
+    "isAuto": false,
+    "couples": [
+      {
+        "mfr": "_TZ3000_7y90pany",
+        "pid": null
+      }
+    ]
+  },
+  {
+    "n": 164,
+    "title": "[DEVICE]",
+    "closedAt": "2026-04-04T20:17:30Z",
+    "author": "late4marshmellow",
+    "isAuto": false,
+    "couples": [
+      {
+        "mfr": "_TZ3000_otvn3lne",
+        "pid": null
+      }
+    ]
+  },
+  {
+    "n": 163,
+    "title": "[DEVICE] Motion Sensor",
+    "closedAt": "2026-03-22T07:17:27Z",
+    "author": "late4marshmellow",
+    "isAuto": false,
+    "couples": [
+      {
+        "mfr": "_TZE200_kb5noeto",
+        "pid": null
+      }
+    ]
+  },
+  {
+    "n": 155,
+    "title": "[Alert] Gmail OAuth token EXPIRED ??? IMAP fallback active",
+    "closedAt": "2026-03-11T03:40:22Z",
+    "author": "dlnraja",
+    "isAuto": false,
+    "couples": []
+  },
+  {
+    "n": 154,
+    "title": "[Alert] Gmail token EXPIRED ??? regenerate at OAuth Playground",
+    "closedAt": "2026-03-11T03:38:40Z",
+    "author": "dlnraja",
+    "isAuto": false,
+    "couples": []
+  },
+  {
+    "n": 153,
+    "title": "[Alert] Gmail token EXPIRED ??? regenerate at OAuth Playground",
+    "closedAt": "2026-03-02T20:05:12Z",
+    "author": "dlnraja",
+    "isAuto": false,
+    "couples": []
+  },
+  {
+    "n": 151,
+    "title": "[Info] SOS button IAS enrollment fails on init (sleepy device ??? expected)",
+    "closedAt": "2026-03-02T20:05:35Z",
+    "author": "dlnraja",
+    "isAuto": false,
+    "couples": []
+  },
+  {
+    "n": 150,
+    "title": "[Feature] Soil sensor missing fertilizer/EC value (measure_ec capability)",
+    "closedAt": "2026-03-02T01:06:19Z",
+    "author": "dlnraja",
+    "isAuto": false,
+    "couples": [
+      {
+        "mfr": "_TZE284_hdml1aav",
+        "pid": null
+      }
+    ]
+  },
+  {
+    "n": 149,
+    "title": "[Bug] LCD Temp/Humidity sensor paired as thermostat (wrong driver)",
+    "closedAt": "2026-03-02T01:05:48Z",
+    "author": "dlnraja",
+    "isAuto": false,
+    "couples": []
+  },
+  {
+    "n": 148,
+    "title": "[Bug] Contact sensor with luminance paired as mmWave radar (wrong driver match)",
+    "closedAt": "2026-03-02T20:06:00Z",
+    "author": "dlnraja",
+    "isAuto": false,
+    "couples": []
+  },
+  {
+    "n": 147,
+    "title": "[Fingerprint] Add _TZ3000_itb0omhv to switch_1gang (TS0001)",
+    "closedAt": "2026-03-02T01:04:14Z",
+    "author": "dlnraja",
+    "isAuto": false,
+    "couples": [
+      {
+        "mfr": "_TZ3000_itb0omhv",
+        "pid": null
+      }
+    ]
+  },
+  {
+    "n": 146,
+    "title": "[Bug] isTuyaDP ReferenceError in IAS Zone enrollment verification",
+    "closedAt": "2026-03-02T02:24:21Z",
+    "author": "dlnraja",
+    "isAuto": false,
+    "couples": []
+  },
+  {
+    "n": 145,
+    "title": "[Alert] Gmail token EXPIRED",
+    "closedAt": "2026-03-02T02:25:12Z",
+    "author": "app/github-actions",
+    "isAuto": false,
+    "couples": []
+  },
+  {
+    "n": 144,
+    "title": "[Alert] Gmail token EXPIRED",
+    "closedAt": "2026-03-02T01:24:11Z",
+    "author": "app/github-actions",
+    "isAuto": false,
+    "couples": []
+  },
+  {
+    "n": 143,
+    "title": "[Alert] Gmail token EXPIRED",
+    "closedAt": "2026-03-02T01:23:54Z",
+    "author": "app/github-actions",
+    "isAuto": false,
+    "couples": []
+  },
+  {
+    "n": 137,
+    "title": "Plug Energy Monitor, wrong voltage",
+    "closedAt": "2026-03-06T18:47:36Z",
+    "author": "Lalla80111",
+    "isAuto": false,
+    "couples": [
+      {
+        "mfr": "_TZ3210_w0qqde0g",
+        "pid": "TS011F"
+      }
+    ]
+  },
+  {
+    "n": 135,
+    "title": "Device Request - _TZE200_xlppj4f5- TS0601 - Immax Neo smart water timer",
+    "closedAt": "2026-03-13T18:47:31Z",
+    "author": "Domingoso",
+    "isAuto": false,
+    "couples": [
+      {
+        "mfr": "_TZE200_xlppj4f5",
+        "pid": "TS0601"
+      }
+    ]
+  },
+  {
+    "n": 132,
+    "title": "Forum Triage: Posts #1442-#1461 (Feb 18-20, 2026)",
+    "closedAt": "2026-02-27T21:19:55Z",
+    "author": "dlnraja",
+    "isAuto": false,
+    "couples": [
+      {
+        "mfr": "_TZ3000_tzvbimpq",
+        "pid": "TS0042"
+      },
+      {
+        "mfr": "_TZE204_9mjy74mp",
+        "pid": "TS0601"
+      }
+    ]
+  },
+  {
+    "n": 131,
+    "title": "[Triage] Forum #1448-#1454 + GitHub activity Feb 2025",
+    "closedAt": "2026-02-27T21:20:00Z",
+    "author": "dlnraja",
+    "isAuto": false,
+    "couples": [
+      {
+        "mfr": "_TZE204_nklqjk62",
+        "pid": "TS0601"
+      },
+      {
+        "mfr": "_TZ3210_xzhnra8x",
+        "pid": "TS011F"
+      },
+      {
+        "mfr": "_TZE284_6ycgarab",
+        "pid": "TS0601"
+      },
+      {
+        "mfr": "_TZE200_u6x1zyv2",
+        "pid": "TS0601"
+      },
+      {
+        "mfr": "_TZE204_gkfbdvyx",
+        "pid": "TS0601"
+      },
+      {
+        "mfr": "_TZE204_dwcarsat",
+        "pid": "TS0601"
+      },
+      {
+        "mfr": "_TZ3000_zutizvyk",
+        "pid": "TS0203"
+      },
+      {
+        "mfr": "_TZE284_xnbkhhdr",
+        "pid": "TS0601"
+      },
+      {
+        "mfr": "_TZE200_rhgsbacq",
+        "pid": "TS0601"
+      },
+      {
+        "mfr": "_TZE284_aao3yzhs",
+        "pid": "TS0601"
+      },
+      {
+        "mfr": "_TZE284_aa03yzhs",
+        "pid": "TS0601"
+      }
+    ]
+  },
+  {
+    "n": 130,
+    "title": "[Forum] Responses for posts #1443-#1447",
+    "closedAt": "2026-02-27T21:20:38Z",
+    "author": "dlnraja",
+    "isAuto": false,
+    "couples": [
+      {
+        "mfr": "_TZ3000_tzvbimpq",
+        "pid": "TS0042"
+      },
+      {
+        "mfr": "_TZ3000_ja5osu5g",
+        "pid": "TS0041"
+      }
+    ]
+  },
+  {
+    "n": 129,
+    "title": "Curtain Motor Switch TS130F_TZ3000_5iixzdo7",
+    "closedAt": "2026-02-20T11:07:40Z",
+    "author": "MitchV94",
+    "isAuto": false,
+    "couples": [
+      {
+        "mfr": "_TZ3000_5iixzdo7",
+        "pid": null
+      }
+    ]
+  },
+  {
+    "n": 128,
+    "title": "Garagedoor controller",
+    "closedAt": "2026-03-02T03:22:39Z",
+    "author": "Wuma68",
+    "isAuto": false,
+    "couples": [
+      {
+        "mfr": "_TZE204_nklqjk62",
+        "pid": "TS0601"
+      }
+    ]
+  },
+  {
+    "n": 127,
+    "title": "Presence Sensor (Radar) _TZE204_e5m9c5hl not working correctly",
+    "closedAt": "2026-02-11T11:20:19Z",
+    "author": "Tauno20",
+    "isAuto": false,
+    "couples": [
+      {
+        "mfr": "_TZE204_e5m9c5hl",
+        "pid": "TS0601"
+      }
+    ]
+  },
+  {
+    "n": 126,
+    "title": "Tuya Door/Window Sensor (Black model)",
+    "closedAt": "2026-02-11T11:15:13Z",
+    "author": "azkysmarthome",
+    "isAuto": false,
+    "couples": [
+      {
+        "mfr": "_TZ3000_zutizvyk",
+        "pid": "TS0203"
+      }
+    ]
+  },
+  {
+    "n": 124,
+    "title": "TZ uppercase for wireless button and temp.sensor",
+    "closedAt": "2026-02-11T11:19:55Z",
+    "author": "Lalla80111",
+    "isAuto": false,
+    "couples": [
+      {
+        "mfr": "_tz3000_fllyghyj",
+        "pid": null
+      },
+      {
+        "mfr": "_tz3000_b4awzgct",
+        "pid": null
+      }
+    ]
+  },
+  {
+    "n": 122,
+    "title": "Longsam mini m3 curtain motor",
+    "closedAt": "2026-01-30T18:09:27Z",
+    "author": "elgato7",
+    "isAuto": false,
+    "couples": [
+      {
+        "mfr": "_TZE204_xu4a5rhj",
+        "pid": "TS0601"
+      }
+    ]
+  },
+  {
+    "n": 121,
+    "title": "_TZ3000_an5rjiwd - not working",
+    "closedAt": "2026-01-30T14:45:40Z",
+    "author": "DAVID9SE",
+    "isAuto": false,
+    "couples": [
+      {
+        "mfr": "_TZ3000_an5rjiwd",
+        "pid": null
+      }
+    ]
+  },
+  {
+    "n": 117,
+    "title": "Longsam mini m3 Smart Curtain",
+    "closedAt": "2026-01-28T20:51:57Z",
+    "author": "elgato7",
+    "isAuto": false,
+    "couples": [
+      {
+        "mfr": "_TZE204_xu4a5rhj",
+        "pid": "TS0601"
+      }
+    ]
+  },
+  {
+    "n": 115,
+    "title": "Temperature & Humidity Sensor",
+    "closedAt": "2026-01-27T04:41:50Z",
+    "author": "Lalla80111",
+    "isAuto": false,
+    "couples": [
+      {
+        "mfr": "_TZ3000_fllyghyj",
+        "pid": "TS0201"
+      }
+    ]
+  },
+  {
+    "n": 114,
+    "title": "Smart Button",
+    "closedAt": "2026-01-27T04:41:38Z",
+    "author": "Lalla80111",
+    "isAuto": false,
+    "couples": [
+      {
+        "mfr": "_TZ3000_b4awzgct",
+        "pid": "TS0041"
+      }
+    ]
+  },
+  {
+    "n": 113,
+    "title": "Request for New Zigbee Device - Smart KNobe Scene Switch (Remote Dimmer)",
+    "closedAt": "2026-01-27T04:41:32Z",
+    "author": "Ernst02507",
+    "isAuto": false,
+    "couples": [
+      {
+        "mfr": "_TZ3000_gwkzibhs",
+        "pid": null
+      }
+    ]
+  },
+  {
+    "n": 110,
+    "title": "unknown zigbee-device",
+    "closedAt": "2026-03-03T18:48:38Z",
+    "author": "Pollepa",
+    "isAuto": false,
+    "couples": [
+      {
+        "mfr": "_TZ3210_w0qqde0g",
+        "pid": null
+      }
+    ]
+  },
+  {
+    "n": 109,
+    "title": "Request #107 - continuation",
+    "closedAt": "2026-01-22T00:48:16Z",
+    "author": "eskilask-maker",
+    "isAuto": false,
+    "couples": []
+  },
+  {
+    "n": 108,
+    "title": "Request for a Tuya air quality monitor",
+    "closedAt": "2026-01-19T12:42:56Z",
+    "author": "gfi63",
+    "isAuto": false,
+    "couples": [
+      {
+        "mfr": "_TZE204_yvx5lh6k",
+        "pid": "TS0601"
+      }
+    ]
+  },
+  {
+    "n": 107,
+    "title": "Climate Sensor (Temp & Humidity) from AliExpress",
+    "closedAt": "2026-01-19T12:43:04Z",
+    "author": "eskilask-maker",
+    "isAuto": false,
+    "couples": []
+  },
+  {
+    "n": 105,
+    "title": "BSEED 1 button wall switch zigbee with neutral. _TZ3000_ysdv91bk TS0001",
+    "closedAt": "2026-01-19T12:15:48Z",
+    "author": "pjmpessers",
+    "isAuto": false,
+    "couples": [
+      {
+        "mfr": "_TZ3000_ysdv91bk",
+        "pid": "TS0001"
+      }
+    ]
+  },
+  {
+    "n": 104,
+    "title": "BSEED 1 button wall switch zigbee with neutral. _TZ3000_blhvsaqf TS0001",
+    "closedAt": "2026-01-19T12:16:48Z",
+    "author": "pjmpessers",
+    "isAuto": false,
+    "couples": [
+      {
+        "mfr": "_TZ3000_blhvsaqf",
+        "pid": "TS0001"
+      }
+    ]
+  },
+  {
+    "n": 103,
+    "title": "BSEED 2 button wallswitch zigbee with neutral _TZ3000_l9brjwau TS0003",
+    "closedAt": "2026-01-19T12:17:40Z",
+    "author": "pjmpessers",
+    "isAuto": false,
+    "couples": [
+      {
+        "mfr": "_TZ3000_l9brjwau",
+        "pid": "TS0003"
+      }
+    ]
+  },
+  {
+    "n": 102,
+    "title": "BSEED 3 button wall switch zigbee with neutral _TZ3000_qkixdnon TS0003",
+    "closedAt": "2026-01-19T12:19:03Z",
+    "author": "pjmpessers",
+    "isAuto": false,
+    "couples": [
+      {
+        "mfr": "_TZ3000_qkixdnon",
+        "pid": "TS0003"
+      }
+    ]
+  },
+  {
+    "n": 101,
+    "title": "[Device] Tuya Zigbee TS0601 Soil Moisture / Temperature Sensor (_TZE284_aa03yzhs)",
+    "closedAt": "2026-01-19T12:19:54Z",
+    "author": "csmobiel",
+    "isAuto": false,
+    "couples": [
+      {
+        "mfr": "_TZE284_aa03yzhs",
+        "pid": "TS0601"
+      }
+    ]
+  },
+  {
+    "n": 99,
+    "title": "[Device] Sonoff S60ZBTPF",
+    "closedAt": "2026-01-19T12:21:18Z",
+    "author": "fcarrozzo",
+    "isAuto": false,
+    "couples": []
+  },
+  {
+    "n": 98,
+    "title": "[Device] TS0043 LoraTap 3 Button Remote",
+    "closedAt": "2026-01-12T20:50:06Z",
+    "author": "DVMasters",
+    "isAuto": false,
+    "couples": [
+      {
+        "mfr": "_TZ3000_famkxci2",
+        "pid": null
+      }
+    ]
+  },
+  {
+    "n": 97,
+    "title": "[DEVICE] Presence Sensor Radar: ?? zb_product_id????????????\"TS0225\" - zb_manufacturer_name???????????????\"_TZ321C_fkzihaxe8\" - Wenzhi cant get any value.",
+    "closedAt": "2026-03-17T05:50:16Z",
+    "author": "NoroddH",
+    "isAuto": false,
+    "couples": [
+      {
+        "mfr": "_TZ321C_fkzihaxe8",
+        "pid": "TS0225"
+      }
+    ]
+  },
+  {
+    "n": 96,
+    "title": "Can't add Tuya Zigbee smoke detector (model PG-S11Z)",
+    "closedAt": "2026-01-19T12:22:05Z",
+    "author": "mjolink",
+    "isAuto": false,
+    "couples": []
+  },
+  {
+    "n": 95,
+    "title": "[DEVICE] HOBEIAN ZG-227Z Temperature sensor",
+    "closedAt": "2025-12-28T15:14:28Z",
+    "author": "JeffreyOtten1234",
+    "isAuto": false,
+    "couples": []
+  },
+  {
+    "n": 94,
+    "title": "[Feature] Add direct link to README.md",
+    "closedAt": "2025-12-26T14:25:07Z",
+    "author": "bartagergely",
+    "isAuto": false,
+    "couples": []
+  },
+  {
+    "n": 93,
+    "title": "Device Request: Moes TRV from Aliexpress",
+    "closedAt": "2025-12-23T13:35:47Z",
+    "author": "Necka44",
+    "isAuto": false,
+    "couples": [
+      {
+        "mfr": "_TZE204_qyr2m29i",
+        "pid": "TS0601"
+      }
+    ]
+  },
+  {
+    "n": 92,
+    "title": "Device request - Tuya smart button HMJ-SC021",
+    "closedAt": "2025-12-24T21:00:08Z",
+    "author": "djfry134",
+    "isAuto": false,
+    "couples": [
+      {
+        "mfr": "_TZ3000_b4awzgct",
+        "pid": null
+      }
+    ]
+  },
+  {
+    "n": 91,
+    "title": "[Device] Zigbee IR remote controle (ZS06)",
+    "closedAt": "2025-12-24T20:51:09Z",
+    "author": "snorro80",
+    "isAuto": false,
+    "couples": [
+      {
+        "mfr": "_TZ3290_7v1k4vufotpowp9z",
+        "pid": null
+      }
+    ]
+  },
+  {
+    "n": 90,
+    "title": "[BUG] can't compile the code due to an error",
+    "closedAt": "2025-12-13T20:53:39Z",
+    "author": "artisare",
+    "isAuto": false,
+    "couples": []
+  },
+  {
+    "n": 89,
+    "title": "Support Request ??? eWeLink Mini PIR Sensor (CK-TLSR8656-SS5-01)",
+    "closedAt": "2025-12-13T10:53:22Z",
+    "author": "eskilask-maker",
+    "isAuto": false,
+    "couples": [
+      {
+        "mfr": "_TZE200_bh3n6gk8",
+        "pid": "TS0601"
+      }
+    ]
+  },
+  {
+    "n": 88,
+    "title": "Bug - Incorrect driver assigned to device - 2 gang dimmer module x climate sensor",
+    "closedAt": "2025-12-16T15:30:29Z",
+    "author": "theunissendave",
+    "isAuto": false,
+    "couples": [
+      {
+        "mfr": "_TZE200_e3oitdyu",
+        "pid": "TS0601"
+      }
+    ]
+  },
+  {
+    "n": 87,
+    "title": "Device Request - Presence Sensor Radar - _TZE204_mtoaryre / TS0601",
+    "closedAt": "2025-12-13T20:42:52Z",
+    "author": "Verectra",
+    "isAuto": false,
+    "couples": [
+      {
+        "mfr": "_TZE204_mtoaryre",
+        "pid": "TS0601"
+      }
+    ]
+  },
+  {
+    "n": 83,
+    "title": "WoodUpp / Tuya 24V LED Driver",
+    "closedAt": "2025-12-06T00:32:36Z",
+    "author": "xSondreBx",
+    "isAuto": false,
+    "couples": [
+      {
+        "mfr": "_TZB210_ngnt8kni",
+        "pid": "TS0501B"
+      }
+    ]
+  },
+  {
+    "n": 82,
+    "title": "Add support for TS0501B / _TZB210_ngnt8kni (Tuya 24V LED Driver)",
+    "closedAt": "2025-12-03T14:19:12Z",
+    "author": "xSondreBx",
+    "isAuto": false,
+    "couples": [
+      {
+        "mfr": "_TZB210_ngnt8kni",
+        "pid": null
+      }
+    ]
+  },
+  {
+    "n": 80,
+    "title": "Tuya Zigbee Temperature Humidity Sensor with LCD Screen ZTH05Z",
+    "closedAt": "2025-12-03T14:15:49Z",
+    "author": "telenut",
+    "isAuto": false,
+    "couples": []
+  },
+  {
+    "n": 79,
+    "title": "Device Request - Curtain motor - Tuya / _TZE200_uj3f4wr5",
+    "closedAt": "2025-11-28T21:21:41Z",
+    "author": "Patrickske1",
+    "isAuto": false,
+    "couples": [
+      {
+        "mfr": "_TZE200_uj3f4wr5",
+        "pid": "TS0601"
+      }
+    ]
+  },
+  {
+    "n": 78,
+    "title": "[DEVICE] TS0601_TZE200_9yapgbuv incorrectly defined as sound controller",
+    "closedAt": "2025-11-27T00:19:48Z",
+    "author": "tknapstad",
+    "isAuto": false,
+    "couples": [
+      {
+        "mfr": "_TZE200_9yapgbuv",
+        "pid": null
+      }
+    ]
+  },
+  {
+    "n": 77,
+    "title": "[DEVICE] Thermostat Radiator Valve",
+    "closedAt": "2025-11-27T00:20:04Z",
+    "author": "Haellos07",
+    "isAuto": false,
+    "couples": [
+      {
+        "mfr": "_TZE200_hvaxb2tc",
+        "pid": "TS0601"
+      }
+    ]
+  },
+  {
+    "n": 76,
+    "title": "[DEVICE] 4 button touch remote (TS0044 / _TZ3000_u3nv1jwk)",
+    "closedAt": "2026-07-13T15:30:13Z",
+    "author": "jocke-sve-62",
+    "isAuto": false,
+    "couples": [
+      {
+        "mfr": "_TZ3000_u3nv1jwk",
+        "pid": null
+      }
+    ]
+  },
+  {
+    "n": 75,
+    "title": "[Device] ZG-204ZL",
+    "closedAt": "2025-11-27T00:20:34Z",
+    "author": "Didiervu91",
+    "isAuto": false,
+    "couples": []
+  },
+  {
+    "n": 74,
+    "title": "???? Auto-organize workflow failed",
+    "closedAt": "2025-11-10T20:28:22Z",
+    "author": "app/github-actions",
+    "isAuto": false,
+    "couples": []
+  },
+  {
+    "n": 73,
+    "title": "???? Auto-organize workflow failed",
+    "closedAt": "2025-11-10T20:28:18Z",
+    "author": "app/github-actions",
+    "isAuto": false,
+    "couples": []
+  },
+  {
+    "n": 72,
+    "title": "???? Auto-organize workflow failed",
+    "closedAt": "2025-11-10T20:28:14Z",
+    "author": "app/github-actions",
+    "isAuto": false,
+    "couples": []
+  },
+  {
+    "n": 71,
+    "title": "???? Auto-organize workflow failed",
+    "closedAt": "2025-11-10T20:28:10Z",
+    "author": "app/github-actions",
+    "isAuto": false,
+    "couples": []
+  },
+  {
+    "n": 70,
+    "title": "???? Auto-organize workflow failed",
+    "closedAt": "2025-11-10T20:28:04Z",
+    "author": "app/github-actions",
+    "isAuto": false,
+    "couples": []
+  },
+  {
+    "n": 69,
+    "title": "???? Auto-organize workflow failed",
+    "closedAt": "2025-11-10T20:28:00Z",
+    "author": "app/github-actions",
+    "isAuto": false,
+    "couples": []
+  },
+  {
+    "n": 68,
+    "title": "???? Auto-organize workflow failed",
+    "closedAt": "2025-11-10T20:27:54Z",
+    "author": "app/github-actions",
+    "isAuto": false,
+    "couples": []
+  },
+  {
+    "n": 67,
+    "title": "???? Auto-organize workflow failed",
+    "closedAt": "2025-11-10T20:27:49Z",
+    "author": "app/github-actions",
+    "isAuto": false,
+    "couples": []
+  },
+  {
+    "n": 66,
+    "title": "???? Auto-organize workflow failed",
+    "closedAt": "2025-11-10T20:27:42Z",
+    "author": "app/github-actions",
+    "isAuto": false,
+    "couples": []
+  },
+  {
+    "n": 65,
+    "title": "???? Auto-organize workflow failed",
+    "closedAt": "2025-11-10T20:27:36Z",
+    "author": "app/github-actions",
+    "isAuto": false,
+    "couples": []
+  },
+  {
+    "n": 64,
+    "title": "???? Auto-organize workflow failed",
+    "closedAt": "2025-11-10T20:27:31Z",
+    "author": "app/github-actions",
+    "isAuto": false,
+    "couples": []
+  },
+  {
+    "n": 63,
+    "title": "???? Auto-organize workflow failed",
+    "closedAt": "2025-11-10T20:27:25Z",
+    "author": "app/github-actions",
+    "isAuto": false,
+    "couples": []
+  },
+  {
+    "n": 62,
+    "title": "???? Auto-organize workflow failed",
+    "closedAt": "2025-11-10T20:27:19Z",
+    "author": "app/github-actions",
+    "isAuto": false,
+    "couples": []
+  },
+  {
+    "n": 61,
+    "title": "???? Auto-organize workflow failed",
+    "closedAt": "2025-11-10T20:27:15Z",
+    "author": "app/github-actions",
+    "isAuto": false,
+    "couples": []
+  },
+  {
+    "n": 60,
+    "title": "???? Auto-organize workflow failed",
+    "closedAt": "2025-11-10T20:27:09Z",
+    "author": "app/github-actions",
+    "isAuto": false,
+    "couples": []
+  },
+  {
+    "n": 59,
+    "title": "???? Auto-organize workflow failed",
+    "closedAt": "2025-11-10T20:27:03Z",
+    "author": "app/github-actions",
+    "isAuto": false,
+    "couples": []
+  },
+  {
+    "n": 58,
+    "title": "???? Auto-organize workflow failed",
+    "closedAt": "2025-11-10T20:26:58Z",
+    "author": "app/github-actions",
+    "isAuto": false,
+    "couples": []
+  },
+  {
+    "n": 57,
+    "title": "???? Auto-organize workflow failed",
+    "closedAt": "2025-11-10T20:26:53Z",
+    "author": "app/github-actions",
+    "isAuto": false,
+    "couples": []
+  },
+  {
+    "n": 56,
+    "title": "???? Auto-organize workflow failed",
+    "closedAt": "2025-11-10T20:26:47Z",
+    "author": "app/github-actions",
+    "isAuto": false,
+    "couples": []
+  },
+  {
+    "n": 55,
+    "title": "???? Auto-organize workflow failed",
+    "closedAt": "2025-11-10T20:26:42Z",
+    "author": "app/github-actions",
+    "isAuto": false,
+    "couples": []
+  },
+  {
+    "n": 54,
+    "title": "???? Auto-organize workflow failed",
+    "closedAt": "2025-11-10T20:26:36Z",
+    "author": "app/github-actions",
+    "isAuto": false,
+    "couples": []
+  },
+  {
+    "n": 53,
+    "title": "???? Auto-organize workflow failed",
+    "closedAt": "2025-11-10T20:26:28Z",
+    "author": "app/github-actions",
+    "isAuto": false,
+    "couples": []
+  },
+  {
+    "n": 52,
+    "title": "???? Auto-organize workflow failed",
+    "closedAt": "2025-11-10T20:26:24Z",
+    "author": "app/github-actions",
+    "isAuto": false,
+    "couples": []
+  },
+  {
+    "n": 51,
+    "title": "???? Auto-organize workflow failed",
+    "closedAt": "2025-11-10T20:26:19Z",
+    "author": "app/github-actions",
+    "isAuto": false,
+    "couples": []
+  },
+  {
+    "n": 50,
+    "title": "???? Auto-organize workflow failed",
+    "closedAt": "2025-11-10T20:26:14Z",
+    "author": "app/github-actions",
+    "isAuto": false,
+    "couples": []
+  },
+  {
+    "n": 49,
+    "title": "???? Auto-organize workflow failed",
+    "closedAt": "2025-11-10T20:26:09Z",
+    "author": "app/github-actions",
+    "isAuto": false,
+    "couples": []
+  },
+  {
+    "n": 48,
+    "title": "???? Auto-organize workflow failed",
+    "closedAt": "2025-11-10T20:26:03Z",
+    "author": "app/github-actions",
+    "isAuto": false,
+    "couples": []
+  },
+  {
+    "n": 44,
+    "title": "[DEVICE] TS011F Tuya zigbee Smart plug 20 Ampere _TZ3210_fgwhjm9j",
+    "closedAt": "2025-11-14T20:08:25Z",
+    "author": "Rickert1993",
+    "isAuto": false,
+    "couples": [
+      {
+        "mfr": "_TZ3210_fgwhjm9j",
+        "pid": null
+      }
+    ]
+  },
+  {
+    "n": 43,
+    "title": "[Feature] Making pull requests public",
+    "closedAt": "2025-10-24T10:57:44Z",
+    "author": "sinan92",
+    "isAuto": false,
+    "couples": []
+  },
+  {
+    "n": 42,
+    "title": "??? Homey App Store Publish Failed - v3.1.9",
+    "closedAt": "2025-11-10T20:30:04Z",
+    "author": "app/github-actions",
+    "isAuto": false,
+    "couples": []
+  },
+  {
+    "n": 41,
+    "title": "??? Homey App Store Publish Failed - v3.1.5",
+    "closedAt": "2025-11-10T20:30:01Z",
+    "author": "app/github-actions",
+    "isAuto": false,
+    "couples": []
+  },
+  {
+    "n": 40,
+    "title": "??? Homey App Store Publish Failed - v3.1.1",
+    "closedAt": "2025-11-10T20:29:56Z",
+    "author": "app/github-actions",
+    "isAuto": false,
+    "couples": []
+  },
+  {
+    "n": 39,
+    "title": "??? Homey App Store Publish Failed - v3.1.0",
+    "closedAt": "2025-11-10T20:29:51Z",
+    "author": "app/github-actions",
+    "isAuto": false,
+    "couples": []
+  },
+  {
+    "n": 38,
+    "title": "???? System Health Check Failed",
+    "closedAt": "2025-11-10T20:29:18Z",
+    "author": "app/github-actions",
+    "isAuto": false,
+    "couples": []
+  },
+  {
+    "n": 37,
+    "title": "[DEVICE] TS0201 _TZ3000_1o6x1bl0 Temperature and Humidity Sensor with buzzer and external sensor",
+    "closedAt": "2025-11-27T00:20:49Z",
+    "author": "laborhexe0210",
+    "isAuto": false,
+    "couples": [
+      {
+        "mfr": "_TZ3000_1o6x1bl0",
+        "pid": null
+      }
+    ]
+  },
+  {
+    "n": 36,
+    "title": "???? System Health Check Failed",
+    "closedAt": "2025-10-18T20:48:23Z",
+    "author": "app/github-actions",
+    "isAuto": false,
+    "couples": []
+  },
+  {
+    "n": 35,
+    "title": "[DEVICE] TS0601 MOES CO detector",
+    "closedAt": "2025-11-27T00:21:02Z",
+    "author": "gore-",
+    "isAuto": false,
+    "couples": [
+      {
+        "mfr": "_TZE284_rjxqso4a",
+        "pid": "TS0601"
+      }
+    ]
+  },
+  {
+    "n": 34,
+    "title": "Device Request Tuya Zigbee 3.0 Smart RGB COLOR LED Strip Controller - _TZ3210_0zabbfa / TS0503B",
+    "closedAt": "2025-11-27T00:21:16Z",
+    "author": "kircuvaloglu",
+    "isAuto": false,
+    "couples": [
+      {
+        "mfr": "_TZ3210_0zabbfa",
+        "pid": "TS0503B"
+      }
+    ]
+  },
+  {
+    "n": 33,
+    "title": "[BUG]  #26 & #27 implemented but not working",
+    "closedAt": "2025-11-14T20:08:30Z",
+    "author": "gfi63",
+    "isAuto": false,
+    "couples": []
+  },
+  {
+    "n": 32,
+    "title": "[DEVICE] TS0201 Temp and Humidity Sensor with Screen",
+    "closedAt": "2025-11-27T00:21:29Z",
+    "author": "kodalissri",
+    "isAuto": false,
+    "couples": [
+      {
+        "mfr": "_TZ3000_bgsigers",
+        "pid": "TS0201"
+      }
+    ]
+  },
+  {
+    "n": 31,
+    "title": "[DEVICE] TS0203",
+    "closedAt": "2025-11-14T22:25:12Z",
+    "author": "askseb",
+    "isAuto": false,
+    "couples": [
+      {
+        "mfr": "_TZ3000_okohwwap",
+        "pid": "TS0203"
+      }
+    ]
+  },
+  {
+    "n": 30,
+    "title": "[DEVICE]  TS0041",
+    "closedAt": "2025-11-14T22:25:12Z",
+    "author": "askseb",
+    "isAuto": false,
+    "couples": [
+      {
+        "mfr": "_TZ3000_yj6k7vfo",
+        "pid": "TS0041"
+      }
+    ]
+  },
+  {
+    "n": 29,
+    "title": "[DEVICE] ZG-204ZM PIR radar and illumination sensor",
+    "closedAt": "2025-11-27T00:21:44Z",
+    "author": "kodalissri",
+    "isAuto": false,
+    "couples": [
+      {
+        "mfr": "_TZE200_2aaelwxk",
+        "pid": null
+      },
+      {
+        "mfr": "_TZE200_kb5noeto",
+        "pid": null
+      },
+      {
+        "mfr": "_TZE200_tyffvoij",
+        "pid": null
+      }
+    ]
+  },
+  {
+    "n": 28,
+    "title": "[DEVICE] ZG-204ZV Motion, Temp,Humidity and Illumination Sensor",
+    "closedAt": "2025-11-27T00:21:56Z",
+    "author": "kodalissri",
+    "isAuto": false,
+    "couples": [
+      {
+        "mfr": "_TZE200_uli8wasj",
+        "pid": null
+      },
+      {
+        "mfr": "_TZE200_grgol3xp",
+        "pid": null
+      },
+      {
+        "mfr": "_TZE200_rhgsbacq",
+        "pid": null
+      },
+      {
+        "mfr": "_TZE200_y8jijhba",
+        "pid": null
+      }
+    ]
+  },
+  {
+    "n": 27,
+    "title": "[DEVICE] TS011F (not recognized by Homey)",
+    "closedAt": "2025-10-09T13:04:12Z",
+    "author": "gfi63",
+    "isAuto": false,
+    "couples": [
+      {
+        "mfr": "_TZ3000_npg02xft",
+        "pid": null
+      }
+    ]
+  },
+  {
+    "n": 26,
+    "title": "[DEVICE] TS0210 vibration sensor",
+    "closedAt": "2025-10-09T12:59:57Z",
+    "author": "gfi63",
+    "isAuto": false,
+    "couples": [
+      {
+        "mfr": "_TZ3000_lqpt3mvr",
+        "pid": null
+      }
+    ]
+  },
+  {
+    "n": 25,
+    "title": "Device Request - Aqara precision motion sensor",
+    "closedAt": "2025-11-27T00:22:11Z",
+    "author": "GXA064",
+    "isAuto": false,
+    "couples": []
+  },
+  {
+    "n": 24,
+    "title": "[BUG] Settings screen - spinning wheel",
+    "closedAt": "2025-11-27T00:22:26Z",
+    "author": "l-i-n-k",
+    "isAuto": false,
+    "couples": []
+  },
+  {
+    "n": 23,
+    "title": "Device Request - Tuya Smart Temperature And Humidity Sensor- Tuya / CK-TLSR8656-SS5-01(7014)",
+    "closedAt": "2025-11-27T00:22:40Z",
+    "author": "luuk0412-wq",
+    "isAuto": false,
+    "couples": []
+  },
+  {
+    "n": 22,
+    "title": "Device Request - [Smart Knob] - [_TZ3000_gwkzibhs] / [TS004F]",
+    "closedAt": "2025-11-27T00:22:56Z",
+    "author": "rsalinger",
+    "isAuto": false,
+    "couples": [
+      {
+        "mfr": "_TZ3000_gwkzibhs",
+        "pid": "TS004F"
+      }
+    ]
+  },
+  {
+    "n": 21,
+    "title": "Device Request - ZigBee Smart Inline Switch - 3A Smart Home DE / LXN59-2S7LX1.0",
+    "closedAt": "2025-11-27T00:23:10Z",
+    "author": "MarceloSilvaLeite",
+    "isAuto": false,
+    "couples": []
+  },
+  {
+    "n": 20,
+    "title": "Device Request - Human Presence Detector mm wave radar - MOES Human Presence Sensor - _TZ3218_t9ynfz4x / TS0225",
+    "closedAt": "2025-11-14T21:29:34Z",
+    "author": "MarceloSilvaLeite",
+    "isAuto": false,
+    "couples": [
+      {
+        "mfr": "_TZ3218_t9ynfz4x",
+        "pid": "TS0225"
+      }
+    ]
+  },
+  {
+    "n": 19,
+    "title": "Device Request - Human Presence Detector mm wave radar - MOES Human Presence Sensor - _TZ3218_awarhusb / TS0225",
+    "closedAt": "2025-11-14T21:29:34Z",
+    "author": "MarceloSilvaLeite",
+    "isAuto": false,
+    "couples": [
+      {
+        "mfr": "_TZ3218_awarhusb",
+        "pid": "TS0225"
+      }
+    ]
+  },
+  {
+    "n": 17,
+    "title": "??? Validation Failed - MEGA-PROMPT CURSOR ULTIME",
+    "closedAt": "2025-08-09T19:16:12Z",
+    "author": "app/github-actions",
+    "isAuto": false,
+    "couples": []
+  },
+  {
+    "n": 16,
+    "title": "??? Validation Failed - MEGA-PROMPT CURSOR ULTIME",
+    "closedAt": "2025-08-09T19:16:13Z",
+    "author": "app/github-actions",
+    "isAuto": false,
+    "couples": []
+  },
+  {
+    "n": 15,
+    "title": "??? Validation Failed - MEGA-PROMPT CURSOR ULTIME",
+    "closedAt": "2025-08-09T19:16:14Z",
+    "author": "app/github-actions",
+    "isAuto": false,
+    "couples": []
+  },
+  {
+    "n": 14,
+    "title": "??? Validation Failed - MEGA-PROMPT CURSOR ULTIME",
+    "closedAt": "2025-08-09T19:16:15Z",
+    "author": "app/github-actions",
+    "isAuto": false,
+    "couples": []
+  },
+  {
+    "n": 13,
+    "title": "??? Validation Failed - MEGA-PROMPT CURSOR ULTIME",
+    "closedAt": "2025-08-09T19:16:16Z",
+    "author": "app/github-actions",
+    "isAuto": false,
+    "couples": []
+  },
+  {
+    "n": 12,
+    "title": "??? Validation Failed - MEGA-PROMPT CURSOR ULTIME",
+    "closedAt": "2025-08-09T19:16:16Z",
+    "author": "app/github-actions",
+    "isAuto": false,
+    "couples": []
+  },
+  {
+    "n": 11,
+    "title": "??? Validation Failed - MEGA-PROMPT CURSOR ULTIME",
+    "closedAt": "2025-08-09T19:16:17Z",
+    "author": "app/github-actions",
+    "isAuto": false,
+    "couples": []
+  },
+  {
+    "n": 4,
+    "title": "[FIX] R??soudre le rejet du push (rejected master -> master)",
+    "closedAt": "2025-11-10T20:30:38Z",
+    "author": "dlnraja",
+    "isAuto": false,
+    "couples": []
+  },
+  {
+    "n": 3,
+    "title": "Int??grer les ??volutions de code pour les boutons 3 et 4 gangs",
+    "closedAt": "2025-10-27T21:31:19Z",
+    "author": "dlnraja",
+    "isAuto": false,
+    "couples": []
+  },
+  {
+    "n": 2,
+    "title": "[BUG] Le workflow ??choue ?? l'??tape de checkout avec une erreur de token li??e aux permissions du fork",
+    "closedAt": "2025-10-12T22:25:30Z",
+    "author": "dlnraja",
+    "isAuto": false,
+    "couples": []
+  },
+  {
+    "n": 1,
+    "title": "Bug: ??chec de l'automatisation ?? cause d'un historique Git conflictuel insoluble",
+    "closedAt": "2025-10-12T22:25:29Z",
+    "author": "dlnraja",
+    "isAuto": false,
+    "couples": []
+  }
+]
