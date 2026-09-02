@@ -91,7 +91,7 @@
       "realMfrsAdded": 5,
       "details": "tmp/synthetic-resolution.json + tmp/pruned21-resolution.json"
     },
-    "lastAlignedAt": "2026-09-01T07:55:42.613Z",
+    "lastAlignedAt": "2026-09-02T21:23:23.379Z",
     "alignTool": "align-mfs-db-intelligent@P169",
     "lastSyncedFromCompose": "2026-09-01T07:55:33.978Z",
     "syncComposeTool": "sync-compose-to-mfs-db@P2368"
@@ -140507,7 +140507,7 @@
     "modelIdsCount": 3
   },
   "_TZ3000_2putqrmw": {
-    "driverId": "smartplug",
+    "driverId": "button_wireless_2",
     "source": "compose-exclusive",
     "modelIds": [
       "TS011F",
@@ -215148,7 +215148,7 @@
     "modelIdsCount": 1
   },
   "_tz3210_ncw88jfq": {
-    "driverId": "lcdtemphumidsensor",
+    "driverId": "sensor_climate_temphumidsensor",
     "source": "compose-exclusive",
     "modelIds": [
       "EXCELLUX",
@@ -215161,7 +215161,7 @@
     "modelIdsCount": 5
   },
   "_TZ3000_ywagc4rj": {
-    "driverId": "lcdtemphumidsensor",
+    "driverId": "sensor_climate_temphumidsensor",
     "source": "compose-exclusive",
     "modelIds": [
       "EXCELLUX",
@@ -245307,7 +245307,7 @@
   },
   "_tze284_eaet5qt5": {
     "driverId": "valve_dual_irrigation",
-    "source": "auto-sync|adjudicated-z2m-arbiter",
+    "source": "registry:valve-dual-fhvpaltk",
     "modelIds": [
       "TS0601"
     ],
@@ -245316,7 +245316,7 @@
   },
   "_tze284_fhvpaltk": {
     "driverId": "valve_dual_irrigation",
-    "source": "auto-sync|adjudicated-z2m-arbiter",
+    "source": "registry:valve-dual-fhvpaltk",
     "modelIds": [
       "TS0601"
     ],
@@ -250683,7 +250683,10 @@
       "github_536"
     ],
     "confidence": 0.95,
-    "lastSeen": "2026-09-02T17:27:05.642Z"
+    "lastSeen": "2026-09-02T17:27:05.642Z",
+    "pid": "TS0601",
+    "modelIdsCount": 1,
+    "source": "user-misattribution-registry"
   },
   "_TZE200_YLTIVVZB": {
     "driverId": "water_valve_smart",
@@ -250721,7 +250724,10 @@
       "github_536"
     ],
     "confidence": 0.95,
-    "lastSeen": "2026-09-02T17:27:05.656Z"
+    "lastSeen": "2026-09-02T17:27:05.656Z",
+    "pid": "TS0601",
+    "modelIdsCount": 1,
+    "source": "user-misattribution-registry"
   },
   "_TZE204_WT66HAAX": {
     "driverId": "water_valve_smart",

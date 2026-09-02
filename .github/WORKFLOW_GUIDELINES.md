@@ -912,6 +912,10 @@ the Universal Tuya App ID.
    only when `trigger_publish=true` (never bare dispatch); Publish Self-Heal
    uses `cancel-in-progress: false` and re-triggers Auto-Publish with
    `force_publish=false`.
+8. **P2400 Stable dispatch dedupe**: bare `workflow_dispatch` of
+   `publish-stable.yml` skips Athom when a **push** run for the same tip SHA
+   already succeeded (avoids double draft). Use `force_publish=true` to override.
+   Still keep `cancel-in-progress: false` — never kill a live Athom upload.
 5. Auto-Publish / Auto Publish workflows use `cancel-in-progress: false` on the
    publish concurrency group — cancelling mid-draft/promote causes orphan Athom
    builds and socket hang up races on the next upload.
