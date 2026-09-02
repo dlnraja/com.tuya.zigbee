@@ -38,19 +38,25 @@ Gmail and Homey diagnostic workflows are allowed to keep technical evidence only
 7. Raw exports must remain local and ignored by git: `.github/state/gmail-raw/`, `gmail-dumps/`, `diagnostics/raw/` and `*.raw.json`.
 8. **P2206:** Never commit `gmail-ci-dump.json`, `diag-*-excerpt.txt`, or forum user media under `reports/`. Keep `TREAT.md` / FP couples only. Gate: `npm run security:github`.
 
-## 🛡️ GitHub Actions elementary rules (P2206)
+## 🛡️ GitHub Actions elementary rules (P2206 / P2383)
 
 | Rule | Requirement |
 |------|-------------|
 | `permissions:` | Required at workflow top level; least privilege |
+| `defaults.run.shell: bash` | Required (Windows runner safety) |
+| `timeout-minutes:` | Required on jobs |
+| `concurrency:` | Required when `contents: write` |
 | Secrets in logs | Never echo / printenv secrets |
 | `pull_request_target` | No untrusted checkout; document with `P2206-ALLOW-PRT` |
+| Actions pins | `checkout@v4+`, prefer `setup-node@v5` |
 | Artifacts | Redact before upload; short retention preferred |
 | Fork PRs | Do not pass write secrets to untrusted workflows |
+| Verified push | Prefer `git push` without `|| true` on integration commits |
 
 ```bash
 npm run security:github
 npm run security:full
+npm run security:strict
 ```
 
 ## 📋 Pre-Commit Checklist
@@ -68,6 +74,7 @@ The `unified-ci.yml` workflow runs the security scanner as a required job:
 - Fails if any secret patterns detected in tracked files
 - Fails if `.env` or `credentials.json` committed
 - Warns if remote URL contains embedded token
+- P2383 gate also enforces bash defaults, timeouts, and forbids `write-all`
 
 ## 🚑 Incident Response
 

@@ -248,7 +248,13 @@ reports/forum-*/**/*.jpg
 reports/forum-*/**/*.png
 reports/forum-*/**/*.gif
 reports/forum-*/**/*.webp
+reports/forum-verify-*/**/*.jpeg
+reports/forum-verify-*/**/*.jpg
+reports/forum-verify-*/**/*.png
+reports/forum-verify-*/**/*.gif
+reports/forum-verify-*/**/*.webp
 !reports/forum-*/README.md
+!reports/forum-verify-*/README.md
 .tmp/
 agent-tools/
 .github/state-forum-tail.json

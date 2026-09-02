@@ -150,5 +150,6 @@ jobs:
             exit 0
           fi
           git commit -m "chore(intel): L99 inbox intelligence report [skip ci]" || true
+          # WHY(P2383): verified push — step already continue-on-error
           git pull --rebase origin master || true
-          git push origin HEAD || true
+          git push origin HEAD
