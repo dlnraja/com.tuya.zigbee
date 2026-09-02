@@ -1416,5 +1416,8 @@
   },
   "5.12.124": {
     "en": "Fixed garden valve and other flow conditions when Homey lacks getDeviceConditionCard; radar presence value 2 now counts as occupied."
+  },
+  "5.12.125": {
+    "en": "Fixed Moes curtain wall switch stopping too early after open/close from Homey UI."
   }
 }
