@@ -33,10 +33,10 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 
 | Metric | Value |
 |--------|-------|
-| **App Version** | v9.0.789 |
+| **App Version** | v9.0.791 |
 | **Drivers** | 431 (381 Zigbee + 50 WiFi) |
 | **Unique Fingerprints** | 4,389 |
-| **Pairing Variants** | 16,207 (4 case combos per fingerprint) |
+| **Pairing Variants** | 16,213 (4 case combos per fingerprint) |
 | **Unique Product IDs** | 576 |
 | **Flow Cards** | 5,724 |
 | **Unique Capabilities** | 170 |
@@ -55,7 +55,7 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 | 2 | `switch_1gang` | 1,560 |
 | 3 | `presence_sensor_radar` | 731 |
 | 4 | `radiator_valve` | 599 |
-| 5 | `button_wireless_2` | 564 |
+| 5 | `button_wireless_2` | 566 |
 | 6 | `curtain_motor` | 552 |
 | 7 | `wall_dimmer_tuya` | 490 |
 | 8 | `generic_tuya` | 415 |
@@ -102,6 +102,8 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 
 | Version | Changes |
 |---------|---------|
+| **v9.0.791** | Fixed presence radar switching to curtain/blind UI after app updates. |
+| **v9.0.790** | Fixed presence radar switching to curtain/blind UI after app updates. |
 | **v9.0.789** | Fixed Lerlink 5-speed fan switch pairing; hardened App Store publish against processing timeouts. |
 | **v9.0.788** | Fixed Lerlink 5-speed fan switch pairing; hardened App Store publish against processing timeouts. |
 | **v9.0.787** | Improved App Store publish reliability after Athom processing timeouts. |
@@ -112,8 +114,6 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 | **v9.0.782** | Fixed app crash from Invalid Driver ID in flows; restored remote button fingerprint gate. |
 | **v9.0.781** | Fixed app crash from Invalid Driver ID in flows; restored remote button fingerprint gate. |
 | **v9.0.780** | Fixed app crash from Invalid Driver ID in flows; restored remote button fingerprint gate. |
-| **v9.0.779** | Fixed app crash from Invalid Driver ID in flows; restored remote button fingerprint gate. |
-| **v9.0.778** | Fixed app crash from Invalid Driver ID in flows; restored remote button fingerprint gate. |
 
 <!-- CHANGELOG_END -->
 
