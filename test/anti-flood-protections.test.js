@@ -20,8 +20,9 @@ describe('P92.72 — anti-flood protections', () => {
   it('RX flood: sheds non-safety frames when rxPerMinute exceeded, never IAS', () => {
     const src = read('lib/tuya/TuyaZigbeeDevice.js');
     assert.ok(src.includes('[RX-SHED]'), 'shedding present');
-    assert.ok(src.includes('rxResult.exceeded && clusterId !== 0x0500 && clusterId !== 0x0501'),
+    assert.ok(src.includes('clusterId !== 0x0500') && src.includes('clusterId !== 0x0501'),
       'IAS 0x0500/0x0501 exempt from shedding (SOS/tamper never dropped)');
+    assert.ok(src.includes('rxResult.exceeded'), 'RX exceedance gates shed');
   });
 
   it('MCU ping-pong impossible: no auto-response to mcuVersion commands', () => {

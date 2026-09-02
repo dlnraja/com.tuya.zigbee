@@ -8,7 +8,7 @@ Forum topic: **T140352** · Posts: 1, 2199
 
 | Tile | Driver | Couple | User action |
 |---|---|---|---|
-| Linptech / Moes mmWave ES1 | motion_sensor_radar_mmwave | _TZ3218_t9ynfz4x+TS0225 | Update Test ≥9.0.741 / Stable after P2343; re-pair mmWave; use Motion/Static/Distance settings; send Homey diag UUID for live cluster confirm |
+| Linptech / Moes mmWave ES1 | motion_sensor_radar_mmwave | _TZ3218_t9ynfz4x+TS0225 | Update Test ≥9.0.790; settings via 0xE002 (not DP9); **NEED_INTERVIEW** confirm TS0225 + cluster 57346 in Developer Tools |
 
 ## Do not invent
 
