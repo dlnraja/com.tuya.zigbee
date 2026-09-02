@@ -546,16 +546,16 @@ class Button1GangDevice extends ButtonDevice {
   // v5.9.8: Raw frame interceptor (GH#124 _TZ3000_b4awzgct fix)
   async _setupRawFrameInterceptor(zclNode) {
     try {
-      if (!zclNode || typeof zclNode.handleFrame !== 'function') {return;}
-      const orig = zclNode.handleFrame.bind(zclNode);
-      zclNode.handleFrame = async (epId, cId, frame, meta) => {
-        if (cId === 57344 || cId === 0xE000) {
+      const { installE000RawInterceptor, isE000Cluster } = require('../../lib/utils/ButtonE000RawInterceptor');
+      installE000RawInterceptor(this, zclNode, {
+        tag: 'remote-button-wireless-wall-raw',
+        logPrefix: 'BUTTON1-RAW',
+        onFrame(epId, cId, frame) {
+          if (!isE000Cluster(cId)) { return; }
           this.log(`[BUTTON1-RAW] EP${epId} E000 frame`);
           this._parseRawE000Frame(epId, frame);
-        }
-        return orig(epId, cId, frame, meta);
-      };
-      this.log('[BUTTON1-RAW]  Frame interceptor ready');
+        },
+      });
     } catch (e) { this.log(`[BUTTON1-RAW]  ${e.message}`); }
   }
 
@@ -807,11 +807,14 @@ class Button1GangDevice extends ButtonDevice {
     // Device is awake after button press - try to read battery
     if (this._powerCluster && typeof this._powerCluster.readAttributes === 'function') {
       this.homey.setTimeout(async () => {
-        if (this._destroyed) return;
+        if (this._destroyed) {return;}
         try {
           const attrs = await this._powerCluster.readAttributes(['batteryPercentageRemaining', 'batteryVoltage']);
           if (attrs?.batteryPercentageRemaining !== undefined && attrs.batteryPercentageRemaining !== 255) {
-            const battery = Math.round(attrs.batteryPercentageRemaining );
+            const battery = UnifiedBatteryHandler
+              ? UnifiedBatteryHandler.normalizeZigbeeValue(attrs.batteryPercentageRemaining, { manufacturer: (this.getSetting && this.getSetting('zb_manufacturer_name')) || '', batteryType: 'CR2032' })
+              : Math.round(attrs.batteryPercentageRemaining / 2);
+            if (battery == null) { return; }
             this.log(`[BUTTON1-BATTERY]  Battery read on wake: ${battery}%`);
             // v5.5.519: Check capability exists before setting
             if (this.hasCapability('measure_battery')) {
@@ -897,7 +900,7 @@ class Button1GangDevice extends ButtonDevice {
   }
 
   async onDeleted() {
-    if (this._destroyed) return;
+    if (this._destroyed) {return;}
     this._destroyed = true;
     this.log('Button1GangDevice deleted');
 

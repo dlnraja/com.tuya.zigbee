@@ -248,7 +248,7 @@ class Button1GangDevice extends ButtonDevice {
           };
 
           // Try event mode first (default), then command mode
-          let pressType = eventModeMap[commandName] || commandModeMap[commandName];
+          const pressType = eventModeMap[commandName] || commandModeMap[commandName];
 
           if (pressType) {
             this.log(`[BUTTON1-ONOFF]  Button 1 ${pressType.toUpperCase()} (${commandName})`);
@@ -396,10 +396,10 @@ class Button1GangDevice extends ButtonDevice {
 
             // v5.5.480: Additional keep-alive detection
             // If message arrives at ~30min or ~60min intervals, it's likely keep-alive
-            const isLikelyKeepAlive = (
+            const isLikelyKeepAlive = 
               (timeSinceLast > 1700000 && timeSinceLast < 1900000) || // ~30 min
               (timeSinceLast > 3500000 && timeSinceLast < 3700000)    // ~60 min
-            );
+            ;
 
             if (isLikelyKeepAlive && this._iasZoneLastStatus === zoneStatus) {
               this.log('[BUTTON1-IASZONE]  BLOCKED: Likely keep-alive message (30/60min interval)');
@@ -488,7 +488,7 @@ class Button1GangDevice extends ButtonDevice {
   async _setupHobeianCluster(zclNode) {
     try {
       const endpoint = zclNode?.endpoints?.[1];
-      if (!endpoint ) return;
+      if (!endpoint ) {return;}
 
       // Cluster 57345 = 0xE001 - Tuya button event cluster
       const hobeianCluster = endpoint.clusters?.[57345] || endpoint.clusters?.['57345'];
@@ -529,14 +529,14 @@ class Button1GangDevice extends ButtonDevice {
     try {
       const E000 = require('../../lib/clusters/TuyaE000BoundCluster');
       const ep = zclNode?.endpoints?.[1];
-      if (!ep ) return;
+      if (!ep ) {return;}
       const bc = new E000({ device: this, onButtonPress: async (b, p) => {
         const pt = resolvePressType(p, 'BUTTON1-E000');
         this.log(`[BUTTON1-E000]  ${pt} (btn=${b})`);
         await this.triggerButtonPress(1, pt);
       }});
       bc.endpoint = 1;
-      if (!ep.bindings) ep.bindings = {};
+      if (!ep.bindings) {ep.bindings = {};}
       ep.bindings['tuyaE000'] = bc;
       this.log('[BUTTON1-E000]  BoundCluster EP1');
     } catch (e) { this.log('[BUTTON1-E000]  skip:', e.message); }
@@ -545,16 +545,16 @@ class Button1GangDevice extends ButtonDevice {
   // v5.9.8: Raw frame interceptor (GH#124 _TZ3000_b4awzgct fix)
   async _setupRawFrameInterceptor(zclNode) {
     try {
-      if (!zclNode || typeof zclNode.handleFrame !== 'function') return;
-      const orig = zclNode.handleFrame.bind(zclNode);
-      zclNode.handleFrame = async (epId, cId, frame, meta) => {
-        if (cId === 57344 || cId === 0xE000) {
+      const { installE000RawInterceptor, isE000Cluster } = require('../../lib/utils/ButtonE000RawInterceptor');
+      installE000RawInterceptor(this, zclNode, {
+        tag: 'remote-button-wireless-smart-raw',
+        logPrefix: 'BUTTON1-RAW',
+        onFrame(epId, cId, frame) {
+          if (!isE000Cluster(cId)) { return; }
           this.log(`[BUTTON1-RAW] EP${epId} E000 frame`);
           this._parseRawE000Frame(epId, frame);
-        }
-        return orig(epId, cId, frame, meta);
-      };
-      this.log('[BUTTON1-RAW]  Frame interceptor ready');
+        },
+      });
     } catch (e) { this.log(`[BUTTON1-RAW]  ${e.message}`); }
   }
 
@@ -806,11 +806,14 @@ class Button1GangDevice extends ButtonDevice {
     // Device is awake after button press - try to read battery
     if (this._powerCluster && typeof this._powerCluster.readAttributes === 'function') {
       this.homey.setTimeout(async () => {
-        if (this._destroyed) return;
+        if (this._destroyed) {return;}
         try {
           const attrs = await this._powerCluster.readAttributes(['batteryPercentageRemaining', 'batteryVoltage']);
           if (attrs?.batteryPercentageRemaining !== undefined && attrs.batteryPercentageRemaining !== 255) {
-            const battery = Math.round(attrs.batteryPercentageRemaining );
+            const battery = UnifiedBatteryHandler
+              ? UnifiedBatteryHandler.normalizeZigbeeValue(attrs.batteryPercentageRemaining, { manufacturer: (this.getSetting && this.getSetting('zb_manufacturer_name')) || '', batteryType: 'CR2032' })
+              : Math.round(attrs.batteryPercentageRemaining / 2);
+            if (battery == null) { return; }
             this.log(`[BUTTON1-BATTERY]  Battery read on wake: ${battery}%`);
             // v5.5.519: Check capability exists before setting
             if (this.hasCapability('measure_battery')) {
@@ -896,7 +899,7 @@ class Button1GangDevice extends ButtonDevice {
   }
 
   async onDeleted() {
-    if (this._destroyed) return;
+    if (this._destroyed) {return;}
     this._destroyed = true;
     this.log('Button1GangDevice deleted');
 

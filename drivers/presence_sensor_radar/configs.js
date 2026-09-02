@@ -52,6 +52,8 @@ const SENSOR_CONFIGS = {
       '_TZE204_lyetpprm', '_TZE200_lyetpprm',
       '_TZE204_wukb7rhc', '_TZE200_wukb7rhc',
       '_TZE204_jva8ink8', '_TZE200_jva8ink8',
+      // P102: SZR07U 24GHz (Z2M) — presence + fading_time
+      '_TZE204_muvkrjr5', '_TZE200_muvkrjr5',
     ],
     battery: false,
     mainsPowered: true,
@@ -72,6 +74,7 @@ const SENSOR_CONFIGS = {
       12: { cap: 'measure_luminance', type: 'lux_direct' },
       101: { cap: null, setting: 'static_sensitivity', min: 0, max: 10 },
       102: { cap: null, setting: 'motion_sensitivity', min: 0, max: 10 },
+      105: { cap: null, setting: 'fading_time', min: 0, max: 28800 },
     }
   },
 
@@ -86,7 +89,7 @@ const SENSOR_CONFIGS = {
       '_TZE204_mtoaryre', '_TZE200_mp902om5',
       '_TZE204_pfayrzcw', '_TZE284_4qznlkbu',
       '_TZE200_clrdrnya', '_TZE200_sbyx0lm6',
-      '_TZE284_clrdrnya',
+      '_TZE284_clrdrnya', // compose FP family; avoid DEFAULT DP fallback
     ],
     battery: false,
     mainsPowered: true,
@@ -101,6 +104,12 @@ const SENSOR_CONFIGS = {
     suppressBatteryCapability: true,
     disableBatteryReporting: true,
     invertPresence: false,
+    // WHY(P2389): VicHY/clrdrnya firmware floods DP9 distance + DP104 lux (~196 msg/min, Z2M#14742).
+    // Presence (DP1) stays immediate; telemetry coalesced in device.js.
+    floodCalm: true,
+    ultraAggressiveDebounce: true,
+    dpThrottleMs: { 9: 2500, 104: 5000 },
+    dpMinDelta: { 9: 0.15, 104: 2 },
     dpMap: {
       1: { cap: 'alarm_motion', type: 'presence_bool' },
       2: { cap: null, setting: 'radar_sensitivity', min: 0, max: 9 },
@@ -263,7 +272,7 @@ const SENSOR_CONFIGS = {
       '_TZE204_bvfld3xc', '_TZE204_sbkgeilo',
       '_TZE200_f1pvdgoh', '_TZE200_hyhl5y36',
       '_TZE204_b8vxct9l', '_TZE204_hyt4iucb',
-      '_TZE200_juzago6i', '_TZ3218_ewrxirng',
+      '_TZE200_juzago6i',
     ],
     battery: false,
     mainsPowered: true,
@@ -355,7 +364,8 @@ const SENSOR_CONFIGS = {
   'KA8L86IU_BATTERY': {
     configName: 'KA8L86IU_BATTERY',
     sensors: [
-      '_TZE200_ka8l86iu', '_tze200_ka8l86iu', '_TZE200_KA8L86IU',
+      '_TZE200_ka8l86iu', '_tze200_ka8l86iu', '_TZE200_KA8L86IU', '_tze200_KA8L86IU',
+      '_TZE284_ka8l86iu', '_tze284_ka8l86iu', '_TZE284_KA8L86IU', '_tze284_KA8L86IU',
       '_TZE200_zbfmvj13', '_tze200_zbfmvj13', '_TZE200_ZBFMVJ13',
     ],
     battery: true,
@@ -367,8 +377,10 @@ const SENSOR_CONFIGS = {
     presenceEnumMapping: { 0: true, 1: false },
     dpMap: {
       1: { cap: 'alarm_motion', type: 'presence_enum', enumMap: { 0: true, 1: false } },
+      4: { cap: 'measure_luminance.distance', smartDivisor: true }, // detection_distance (dp_registry/Z2M ZG-204ZK)
       106: { cap: 'measure_luminance', type: 'lux_direct' },
       110: { cap: 'measure_battery', divisor: 1 },
+      121: { cap: 'measure_battery', divisor: 1 }, // battery (dp_registry/Z2M ZG-204ZK — alt DP to 110)
     }
   },
 
