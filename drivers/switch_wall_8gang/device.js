@@ -2,9 +2,7 @@
 
 const { safeSetTimeout, safeClearTimeout } = require('../../lib/utils/safe-timers');
 const UnifiedSwitchBase = require('../../lib/devices/UnifiedSwitchBase');
-const VirtualButtonMixin = require('../../lib/mixins/VirtualButtonMixin');
 const { includesCI } = require('../../lib/utils/CaseInsensitiveMatcher');
-const PhysicalButtonMixin = require('../../lib/mixins/PhysicalButtonMixin');
 
 /**
  * 8-Gang Wall Switch Device - v5.5.922 + ZCL-Only Mode (packetninja technique)
@@ -17,12 +15,13 @@ const PhysicalButtonMixin = require('../../lib/mixins/PhysicalButtonMixin');
  * 
  * ManufacturerName: _TZE204_nvxorhcj, etc.
  * ProductId: TS0601
+ * WHY(P2395/B10): no Physical/Virtual double-wrap — already on TuyaZigbeeDevice.
  */
 const ZCL_ONLY_MANUFACTURERS_8G = [
   '_TZ3000_blhvsaqf', '_TZ3000_ysdv91bk', '_TZ3000_hafsqare'
 ];
 
-class Switch8GangDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedSwitchBase)) {
+class Switch8GangDevice extends UnifiedSwitchBase {
   get gangCount() { return 8; }
 
   /**

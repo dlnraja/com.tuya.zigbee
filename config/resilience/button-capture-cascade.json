@@ -67,7 +67,7 @@
       "id": "ef00_dp",
       "cluster": "0xEF00",
       "impl": "DP listeners when MCU/scene-pad profile; leftover EF00 on IAS/ZCL remotes stays observe-first",
-      "status": "present_conditional"
+      "status": "applied_conditional"
     },
     {
       "level": 8,
@@ -142,6 +142,20 @@
       4,
       1,
       2
+    ],
+    "TS0215A": [
+      1,
+      2,
+      5,
+      3,
+      4
+    ],
+    "TS0215": [
+      1,
+      2,
+      5,
+      3,
+      4
     ]
   },
   "manufacturerPreferredLevels": {

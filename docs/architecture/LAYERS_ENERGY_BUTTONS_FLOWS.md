@@ -29,8 +29,13 @@ Gates: `node tools/ci/energy-compose-gate.js` · `node tools/ci/adaptive-double-
 | Physical wall | `PhysicalButtonMixin` debounce / sliding window |
 | Never raw | `setCapabilityValue('button', …)` without L14 path |
 | Visual | `ButtonVisual.js` + `safeSetTimeout` |
+| Cascade L1–L8 | `ButtonCaptureCascade` applies `preferredLevels` (P2395) — skip L7 on TS004x; L5 E000 when preferred |
+| Mixin flag | `_hasPhysicalButtonMixin` stamped in phys init so UnifiedSwitchBase skips duplicate ZCL listeners |
+| Dead stack | Do **not** extend `UnifiedButtonEngine` — alias vocab to `button_capture_l1_l8` |
 
-Mixin order (switches): `PhysicalButtonMixin(VirtualButtonMixin(UnifiedSwitchBase))`
+Mixin order (switches): inherit via `TuyaZigbeeDevice` / `UnifiedSwitchBase` — **no** double-wrap `PhysicalButtonMixin(VirtualButtonMixin(...))` (B10 / P2395).
+
+Gate: `node tools/ci/button-physical-gang-parity-gate.js`
 
 ## Flows
 

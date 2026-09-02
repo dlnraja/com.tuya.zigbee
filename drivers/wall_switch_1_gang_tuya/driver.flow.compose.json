@@ -39,6 +39,38 @@
         "fr": "Physical button off"
       },
       "args": []
+    },
+    {
+      "id": "wall_switch_1_gang_tuya_physical_gang1_on",
+      "title": {
+        "en": "Physical gang 1 ON",
+        "fr": "Physique gang 1 ON",
+        "nl": "Fysiek gang 1 AAN",
+        "de": "Physisch gang 1 EIN"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Physical gang 1 ON",
+        "fr": "Physique gang 1 ON",
+        "nl": "Fysiek gang 1 AAN",
+        "de": "Physisch gang 1 EIN"
+      }
+    },
+    {
+      "id": "wall_switch_1_gang_tuya_physical_gang1_off",
+      "title": {
+        "en": "Physical gang 1 OFF",
+        "fr": "Physique gang 1 OFF",
+        "nl": "Fysiek gang 1 UIT",
+        "de": "Physisch gang 1 AUS"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Physical gang 1 OFF",
+        "fr": "Physique gang 1 OFF",
+        "nl": "Fysiek gang 1 UIT",
+        "de": "Physisch gang 1 AUS"
+      }
     }
   ],
   "conditions": [
@@ -52,6 +84,22 @@
       "titleFormatted": {
         "en": "Is turned !{{on|off}}",
         "fr": "Est !{{allume|eteint}}"
+      }
+    },
+    {
+      "id": "wall_switch_1_gang_tuya_gang1_is_on",
+      "title": {
+        "en": "Gang 1 is !{{on|off}}",
+        "fr": "Gang 1 est !{{allumé|éteint}}",
+        "nl": "Gang 1 is !{{aan|uit}}",
+        "de": "Gang 1 ist !{{ein|aus}}"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Gang 1 is !{{on|off}}",
+        "fr": "Gang 1 est !{{allumé|éteint}}",
+        "nl": "Gang 1 is !{{aan|uit}}",
+        "de": "Gang 1 ist !{{ein|aus}}"
       }
     }
   ],
@@ -90,6 +138,54 @@
       "titleFormatted": {
         "en": "Toggle",
         "fr": "Basculer"
+      }
+    },
+    {
+      "id": "wall_switch_1_gang_tuya_turn_on_gang1",
+      "title": {
+        "en": "Turn on gang 1",
+        "fr": "Allumer gang 1",
+        "nl": "Gang 1 aanzetten",
+        "de": "Gang 1 einschalten"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Turn on gang 1",
+        "fr": "Allumer gang 1",
+        "nl": "Gang 1 aanzetten",
+        "de": "Gang 1 einschalten"
+      }
+    },
+    {
+      "id": "wall_switch_1_gang_tuya_turn_off_gang1",
+      "title": {
+        "en": "Turn off gang 1",
+        "fr": "Éteindre gang 1",
+        "nl": "Gang 1 uitzetten",
+        "de": "Gang 1 ausschalten"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Turn off gang 1",
+        "fr": "Éteindre gang 1",
+        "nl": "Gang 1 uitzetten",
+        "de": "Gang 1 ausschalten"
+      }
+    },
+    {
+      "id": "wall_switch_1_gang_tuya_toggle_gang1",
+      "title": {
+        "en": "Toggle gang 1",
+        "fr": "Basculer gang 1",
+        "nl": "Gang 1 wisselen",
+        "de": "Gang 1 umschalten"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Toggle gang 1",
+        "fr": "Basculer gang 1",
+        "nl": "Gang 1 wisselen",
+        "de": "Gang 1 umschalten"
       }
     }
   ]

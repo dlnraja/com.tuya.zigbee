@@ -6298,7 +6298,9 @@
       "hasEf00Cluster": true,
       "endpointCount": 1,
       "locks": [],
-      "peculiarities": []
+      "peculiarities": [
+        "P2396 GitHub #536: _TZE200/204_r32ctezx+TS0601 Lerlink fan_switch DP1/2/3/11 — not water valve"
+      ]
     },
     "fingerbot": {
       "id": "fingerbot",
@@ -17639,11 +17641,9 @@
         "_TZ3000_YZ38GDRA",
         "_TZ3290_IXD9MVV4",
         "_TZ3290_ixd9mvv4",
-        "_TZE200_R32CTEZX",
         "_TZE200_YLTIVVZB",
         "_TZE200_a7sghmms",
-        "_TZE200_fphxkxue",
-        "_TZE200_r32ctezx"
+        "_TZE200_fphxkxue"
       ],
       "capabilities": [
         "onoff",
