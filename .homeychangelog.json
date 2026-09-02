@@ -2927,5 +2927,8 @@
   },
   "9.0.797": {
     "en": "Improved multi-gang switch Homey buttons (physical and app UI stay in sync); added fan countdown and power-on settings; richer per-gang flow cards on legacy wall switches."
+  },
+  "9.0.798": {
+    "en": "Fixed garden valve and other flow conditions when Homey lacks getDeviceConditionCard; radar presence value 2 now counts as occupied."
   }
 }
