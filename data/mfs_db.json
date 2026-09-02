@@ -91,7 +91,7 @@
       "realMfrsAdded": 5,
       "details": "tmp/synthetic-resolution.json + tmp/pruned21-resolution.json"
     },
-    "lastAlignedAt": "2026-09-02T21:23:23.379Z",
+    "lastAlignedAt": "2026-09-02T23:38:26.919Z",
     "alignTool": "align-mfs-db-intelligent@P169",
     "lastSyncedFromCompose": "2026-09-01T07:55:33.978Z",
     "syncComposeTool": "sync-compose-to-mfs-db@P2368"
@@ -193356,15 +193356,13 @@
     "modelIdsCount": 3
   },
   "_TZE200_uj3f4wr5": {
-    "driverId": "curtain_motor_shutter",
-    "source": "auto-sync",
+    "driverId": "curtain_motor",
+    "source": "registry:p2405-uj3f4wr5-curtain-motor",
     "modelIds": [
-      "TS0301",
-      "TS0601",
-      "TS0726"
+      "TS0601"
     ],
-    "pid": "TS0301",
-    "modelIdsCount": 3
+    "pid": "TS0601",
+    "modelIdsCount": 1
   },
   "_TZE210_inpjmc0h": {
     "driverId": "curtain_motor_shutter",
@@ -214248,27 +214246,21 @@
   },
   "_TZ3210_tgvtvdoc": {
     "driverId": "rain_sensor",
-    "source": "auto-sync",
+    "source": "registry:p2405-tgvtvdoc-rain-sensor",
     "modelIds": [
-      "TS0207",
-      "TS0207_rain",
-      "TS0601",
-      "ZG-223Z"
+      "TS0207"
     ],
     "pid": "TS0207",
-    "modelIdsCount": 4
+    "modelIdsCount": 1
   },
   "_TZ3210_p68kms0l": {
     "driverId": "rain_sensor",
-    "source": "auto-sync",
+    "source": "registry:p2405-tgvtvdoc-rain-sensor",
     "modelIds": [
-      "TS0207",
-      "TS0207_rain",
-      "TS0601",
-      "ZG-223Z"
+      "TS0207"
     ],
     "pid": "TS0207",
-    "modelIdsCount": 4
+    "modelIdsCount": 1
   },
   "_TZE200_u6x1zyv2": {
     "driverId": "rain_sensor",
@@ -214418,11 +214410,11 @@
   },
   "_tz3000_u3nv1jwk": {
     "driverId": "button_wireless_4",
-    "source": "auto-sync",
+    "source": "registry:p2405-u3nv1jwk-button-wireless-4",
     "modelIds": [
       "TS0044"
     ],
-    "pid": "DISABLED_REMOTE_BUTTON_WIRELESS_HANDHELD",
+    "pid": "TS0044",
     "modelIdsCount": 1,
     "note": "Remapped from disabled remote_button_wireless_handheld (forum Moes TS0044)"
   },
@@ -218516,34 +218508,13 @@
     "modelIdsCount": 22
   },
   "_TZ3000_otvn3lne": {
-    "driverId": "sensor_motion_presence",
-    "source": "auto-sync",
+    "driverId": "motion_sensor",
+    "source": "registry:p2405-otvn3lne-motion-ts0202",
     "modelIds": [
-      "CK-TLSR8656-SS5-01(7014)",
-      "EXCELLUX",
-      "LUMI.SENSOR_HT",
-      "LUMI.SENSOR_HT.AGL02",
-      "LUMI.WEATHER",
-      "RH3052",
-      "SM0201",
-      "TH01",
-      "THS317-ET",
-      "TS0001",
-      "TS0049",
-      "TS0201",
-      "TS0202",
-      "TS0222",
-      "TS0601",
-      "TS1201",
-      "TY0201",
-      "WSDCGQ01LM",
-      "WSDCGQ11LM",
-      "WSDCGQ12LM",
-      "ZG-227Z",
-      "ZG-227ZL"
+      "TS0202"
     ],
-    "pid": "CK-TLSR8656-SS5-01(7014)",
-    "modelIdsCount": 22
+    "pid": "TS0202",
+    "modelIdsCount": 1
   },
   "_TZ3000_h4wnrtck": {
     "driverId": "sensor_motion_presence",
@@ -219355,7 +219326,7 @@
     "modelIdsCount": 1
   },
   "_tz3000_ja5osu5g": {
-    "driverId": "smart_remote_1_button_2",
+    "driverId": "button_wireless_1",
     "source": "compose-exclusive",
     "modelIds": [
       "TS004F"
@@ -220816,62 +220787,6 @@
     ],
     "pid": "TS0601",
     "modelIdsCount": 3
-  },
-  "_TZE284_0INTS6WL": {
-    "driverId": "curtain_motor",
-    "source": "compose-exclusive",
-    "modelIds": [
-      "01MINIZB",
-      "AM02",
-      "AM43-0.45/40-ES-EB",
-      "AM43-0.45/40-ES-EZ",
-      "BASICZBR3",
-      "DS421",
-      "DS82",
-      "E1757",
-      "FYRTUR",
-      "KADRILJ",
-      "LUMI.CURTAIN",
-      "LUMI.CURTAIN.ACN002",
-      "LUMI.CURTAIN.HAGL04",
-      "S26R2ZB",
-      "S31ZB",
-      "TS0001",
-      "TS0001_POWER",
-      "TS0001_SWITCH",
-      "TS0001_SWITCH_MODULE",
-      "TS000F",
-      "TS0011",
-      "TS0012",
-      "TS0014",
-      "TS0101",
-      "TS0111",
-      "TS011F",
-      "TS0301",
-      "TS0302",
-      "TS030F",
-      "TS0601",
-      "TS0601_GENERIC",
-      "TS0603",
-      "TS0726",
-      "TS110E",
-      "TS130F",
-      "TS4100",
-      "ZBCURTAIN",
-      "ZBM5-1C-120",
-      "ZBM5-2C-120",
-      "ZBM5-3C-120",
-      "ZBMINI",
-      "ZBMINIL2",
-      "ZBMINIL2-R2",
-      "ZBMINIR",
-      "ZBMINIR2",
-      "ZBMINIR2-R2",
-      "ZG-301Z",
-      "ZG-302Z1"
-    ],
-    "pid": "01MINIZB",
-    "modelIdsCount": 48
   },
   "_hybrid_soil_sensor_ec_needs_device_assignment": {
     "driverId": "soil_sensor_ec",
@@ -247722,8 +247637,13 @@
     "modelIdsCount": 9
   },
   "_tze200_e3oitdyu": {
-    "driverId": "wall_dimmer_tuya",
-    "source": "auto-sync|adjudicated-z2m-arbiter"
+    "driverId": "dimmer_2_gang_tuya",
+    "source": "registry:p2405-e3oitdyu-dimmer-2gang",
+    "modelIds": [
+      "TS0601"
+    ],
+    "pid": "TS0601",
+    "modelIdsCount": 1
   },
   "_tze204_zenj4lxv": {
     "driverId": "wall_dimmer_tuya",
@@ -359097,33 +359017,12 @@
   },
   "_tze204_81yrt3lo": {
     "driverId": "power_clamp_meter",
-    "source": "auto-sync",
+    "source": "registry:p2405-81yrt3lo-power-clamp",
     "modelIds": [
-      "CK-BL702-MWS-01",
-      "CK-BL702-MWS-01(7016)",
-      "MG1_5RZ",
-      "SZLMR10",
-      "TS0004",
-      "TS0203",
-      "TS0225",
-      "TS0601",
-      "TS0601_CLAMP",
-      "TS110E",
-      "ZG-204ZE",
-      "ZG-204ZH",
-      "ZG-204ZK",
-      "ZG-204ZL",
-      "ZG-204ZM",
-      "ZG-204ZQ",
-      "ZG-204ZV",
-      "ZG-205Z",
-      "ZG-205ZL",
-      "ZG-302ZL",
-      "ZG-302ZM",
-      "ZP-301Z"
+      "TS0601"
     ],
-    "pid": "CK-BL702-MWS-01",
-    "modelIdsCount": 22,
+    "pid": "TS0601",
+    "modelIdsCount": 1,
     "variants": [
       "_TZE204_81YRT3LO",
       "_TZE204_81yrt3lo"
@@ -359133,13 +359032,12 @@
   },
   "_tze200_81yrt3lo": {
     "driverId": "power_clamp_meter",
-    "source": "auto-sync",
+    "source": "registry:p2405-81yrt3lo-power-clamp",
     "modelIds": [
-      "TS0601",
-      "TS0601_clamp"
+      "TS0601"
     ],
     "pid": "TS0601",
-    "modelIdsCount": 2,
+    "modelIdsCount": 1,
     "variants": [
       "_TZE200_81YRT3LO",
       "_TZE200_81yrt3lo"
@@ -368957,7 +368855,7 @@
   },
   "_TZ3000_uw3dadam": {
     "driverId": "motion_sensor",
-    "source": "gmail-p2402-deconz-8503",
+    "source": "registry:tz3000-uw3dadam-ts0202-motion",
     "modelIds": [
       "TS0202"
     ],
@@ -368966,28 +368864,7 @@
     "confidence": 0.9,
     "lastSeen": "2026-09-02T22:19:18.423Z"
   },
-  "_tz3000_uw3dadam": {
-    "driverId": "motion_sensor",
-    "source": "gmail-p2402-deconz-8503",
-    "modelIds": [
-      "TS0202"
-    ],
-    "pid": "TS0202",
-    "modelIdsCount": 1,
-    "confidence": 0.9,
-    "lastSeen": "2026-09-02T22:19:18.423Z",
-    "manufacturerId": "_tz3000_uw3dadam"
-  },
   "_TZE284_0ints6wl": {
-    "driverId": "soil_sensor",
-    "source": "registry:p2405-0ints6wl-soil-not-curtain",
-    "modelIds": [
-      "TS0601"
-    ],
-    "pid": "TS0601",
-    "notes": "GH #428 soil not curtain"
-  },
-  "_tze284_0ints6wl": {
     "driverId": "soil_sensor",
     "source": "registry:p2405-0ints6wl-soil-not-curtain",
     "modelIds": [

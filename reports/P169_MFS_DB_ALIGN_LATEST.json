@@ -1,13 +1,301 @@
 {
-  "timestamp": "2026-09-02T21:32:37.528Z",
+  "timestamp": "2026-09-02T23:38:26.925Z",
   "gate": "align-mfs-db-intelligent",
-  "apply": false,
-  "check": true,
-  "changeCount": 0,
+  "apply": true,
+  "check": false,
+  "changeCount": 13,
   "skippedCount": 35,
-  "highSeverityCount": 0,
-  "byAction": {},
-  "changes": [],
+  "highSeverityCount": 9,
+  "byAction": {
+    "registry_force": 9,
+    "compose_exclusive": 1,
+    "case_dedupe": 3
+  },
+  "changes": [
+    {
+      "severity": "high",
+      "action": "registry_force",
+      "mfr": "_TZE284_0INTS6WL",
+      "from": {
+        "driverId": "curtain_motor",
+        "modelIds": [
+          "01MINIZB",
+          "AM02",
+          "AM43-0.45/40-ES-EB",
+          "AM43-0.45/40-ES-EZ",
+          "BASICZBR3",
+          "DS421",
+          "DS82",
+          "E1757",
+          "FYRTUR",
+          "KADRILJ",
+          "LUMI.CURTAIN",
+          "LUMI.CURTAIN.ACN002",
+          "LUMI.CURTAIN.HAGL04",
+          "S26R2ZB",
+          "S31ZB",
+          "TS0001",
+          "TS0001_POWER",
+          "TS0001_SWITCH",
+          "TS0001_SWITCH_MODULE",
+          "TS000F",
+          "TS0011",
+          "TS0012",
+          "TS0014",
+          "TS0101",
+          "TS0111",
+          "TS011F",
+          "TS0301",
+          "TS0302",
+          "TS030F",
+          "TS0601",
+          "TS0601_GENERIC",
+          "TS0603",
+          "TS0726",
+          "TS110E",
+          "TS130F",
+          "TS4100",
+          "ZBCURTAIN",
+          "ZBM5-1C-120",
+          "ZBM5-2C-120",
+          "ZBM5-3C-120",
+          "ZBMINI",
+          "ZBMINIL2",
+          "ZBMINIL2-R2",
+          "ZBMINIR",
+          "ZBMINIR2",
+          "ZBMINIR2-R2",
+          "ZG-301Z",
+          "ZG-302Z1"
+        ]
+      },
+      "to": {
+        "driverId": "soil_sensor",
+        "modelIds": [
+          "TS0601"
+        ]
+      },
+      "caseId": "p2405-0ints6wl-soil-not-curtain"
+    },
+    {
+      "severity": "high",
+      "action": "registry_force",
+      "mfr": "_tze200_e3oitdyu",
+      "from": {
+        "driverId": "wall_dimmer_tuya",
+        "modelIds": []
+      },
+      "to": {
+        "driverId": "dimmer_2_gang_tuya",
+        "modelIds": [
+          "TS0601"
+        ]
+      },
+      "caseId": "p2405-e3oitdyu-dimmer-2gang"
+    },
+    {
+      "severity": "high",
+      "action": "registry_force",
+      "mfr": "_TZE200_uj3f4wr5",
+      "from": {
+        "driverId": "curtain_motor_shutter",
+        "modelIds": [
+          "TS0301",
+          "TS0601",
+          "TS0726"
+        ]
+      },
+      "to": {
+        "driverId": "curtain_motor",
+        "modelIds": [
+          "TS0601"
+        ]
+      },
+      "caseId": "p2405-uj3f4wr5-curtain-motor"
+    },
+    {
+      "severity": "high",
+      "action": "registry_force",
+      "mfr": "_tz3000_u3nv1jwk",
+      "from": {
+        "driverId": "button_wireless_4",
+        "modelIds": [
+          "TS0044"
+        ]
+      },
+      "to": {
+        "driverId": "button_wireless_4",
+        "modelIds": [
+          "TS0044"
+        ]
+      },
+      "caseId": "p2405-u3nv1jwk-button-wireless-4"
+    },
+    {
+      "severity": "high",
+      "action": "registry_force",
+      "mfr": "_TZ3000_otvn3lne",
+      "from": {
+        "driverId": "sensor_motion_presence",
+        "modelIds": [
+          "CK-TLSR8656-SS5-01(7014)",
+          "EXCELLUX",
+          "LUMI.SENSOR_HT",
+          "LUMI.SENSOR_HT.AGL02",
+          "LUMI.WEATHER",
+          "RH3052",
+          "SM0201",
+          "TH01",
+          "THS317-ET",
+          "TS0001",
+          "TS0049",
+          "TS0201",
+          "TS0202",
+          "TS0222",
+          "TS0601",
+          "TS1201",
+          "TY0201",
+          "WSDCGQ01LM",
+          "WSDCGQ11LM",
+          "WSDCGQ12LM",
+          "ZG-227Z",
+          "ZG-227ZL"
+        ]
+      },
+      "to": {
+        "driverId": "motion_sensor",
+        "modelIds": [
+          "TS0202"
+        ]
+      },
+      "caseId": "p2405-otvn3lne-motion-ts0202"
+    },
+    {
+      "severity": "high",
+      "action": "registry_force",
+      "mfr": "_tze204_81yrt3lo",
+      "from": {
+        "driverId": "power_clamp_meter",
+        "modelIds": [
+          "CK-BL702-MWS-01",
+          "CK-BL702-MWS-01(7016)",
+          "MG1_5RZ",
+          "SZLMR10",
+          "TS0004",
+          "TS0203",
+          "TS0225",
+          "TS0601",
+          "TS0601_CLAMP",
+          "TS110E",
+          "ZG-204ZE",
+          "ZG-204ZH",
+          "ZG-204ZK",
+          "ZG-204ZL",
+          "ZG-204ZM",
+          "ZG-204ZQ",
+          "ZG-204ZV",
+          "ZG-205Z",
+          "ZG-205ZL",
+          "ZG-302ZL",
+          "ZG-302ZM",
+          "ZP-301Z"
+        ]
+      },
+      "to": {
+        "driverId": "power_clamp_meter",
+        "modelIds": [
+          "TS0601"
+        ]
+      },
+      "caseId": "p2405-81yrt3lo-power-clamp"
+    },
+    {
+      "severity": "high",
+      "action": "registry_force",
+      "mfr": "_tze200_81yrt3lo",
+      "from": {
+        "driverId": "power_clamp_meter",
+        "modelIds": [
+          "TS0601",
+          "TS0601_clamp"
+        ]
+      },
+      "to": {
+        "driverId": "power_clamp_meter",
+        "modelIds": [
+          "TS0601"
+        ]
+      },
+      "caseId": "p2405-81yrt3lo-power-clamp"
+    },
+    {
+      "severity": "high",
+      "action": "registry_force",
+      "mfr": "_TZ3210_tgvtvdoc",
+      "from": {
+        "driverId": "rain_sensor",
+        "modelIds": [
+          "TS0207",
+          "TS0207_rain",
+          "TS0601",
+          "ZG-223Z"
+        ]
+      },
+      "to": {
+        "driverId": "rain_sensor",
+        "modelIds": [
+          "TS0207"
+        ]
+      },
+      "caseId": "p2405-tgvtvdoc-rain-sensor"
+    },
+    {
+      "severity": "high",
+      "action": "registry_force",
+      "mfr": "_TZ3210_p68kms0l",
+      "from": {
+        "driverId": "rain_sensor",
+        "modelIds": [
+          "TS0207",
+          "TS0207_rain",
+          "TS0601",
+          "ZG-223Z"
+        ]
+      },
+      "to": {
+        "driverId": "rain_sensor",
+        "modelIds": [
+          "TS0207"
+        ]
+      },
+      "caseId": "p2405-tgvtvdoc-rain-sensor"
+    },
+    {
+      "severity": "medium",
+      "action": "compose_exclusive",
+      "mfr": "_tz3000_ja5osu5g",
+      "from": "smart_remote_1_button_2",
+      "to": "button_wireless_1"
+    },
+    {
+      "severity": "medium",
+      "action": "case_dedupe",
+      "drop": "_TZE284_0INTS6WL",
+      "keep": "_TZE284_0ints6wl"
+    },
+    {
+      "severity": "medium",
+      "action": "case_dedupe",
+      "drop": "_tze284_0ints6wl",
+      "keep": "_TZE284_0ints6wl"
+    },
+    {
+      "severity": "medium",
+      "action": "case_dedupe",
+      "drop": "_tz3000_uw3dadam",
+      "keep": "_TZ3000_uw3dadam"
+    }
+  ],
   "skipped": [
     {
       "reason": "registry_enrich_only",
@@ -332,5 +620,15 @@
       ]
     }
   ],
-  "highSeverity": []
+  "highSeverity": [
+    "registry drift _TZE284_0INTS6WL → soil_sensor",
+    "registry drift _tze200_e3oitdyu → dimmer_2_gang_tuya",
+    "registry drift _TZE200_uj3f4wr5 → curtain_motor",
+    "registry drift _tz3000_u3nv1jwk → button_wireless_4",
+    "registry drift _TZ3000_otvn3lne → motion_sensor",
+    "registry drift _tze204_81yrt3lo → power_clamp_meter",
+    "registry drift _tze200_81yrt3lo → power_clamp_meter",
+    "registry drift _TZ3210_tgvtvdoc → rain_sensor",
+    "registry drift _TZ3210_p68kms0l → rain_sensor"
+  ]
 }

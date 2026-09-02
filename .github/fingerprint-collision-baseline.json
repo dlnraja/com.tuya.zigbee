@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-08-30T00:48:06.513Z",
+  "generatedAt": "2026-09-02T23:31:20.351Z",
   "description": "Known historical fingerprint collisions. CI fails only for collisions not listed here.",
   "collisions": [
     {
@@ -4930,6 +4930,14 @@
         "presence_sensor_radar"
       ],
       "reason": "HOBEIAN brand; TS0225 presence P2312 pid lock"
+    },
+    {
+      "key": "_tz3000_ja5osu5g|TS004F",
+      "drivers": [
+        "button_wireless_1",
+        "smart_remote_1_button_2"
+      ],
+      "note": "P2406: TS0041→button_wireless_1; TS004F cartesian dual with smart_remote intentional"
     }
   ]
 }
