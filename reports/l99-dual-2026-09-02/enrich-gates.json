@@ -1,0 +1,178 @@
+{
+  "at": "2026-09-02T09:42:03.755Z",
+  "track": "master",
+  "appId": "com.dlnraja.tuya.zigbee",
+  "hard": false,
+  "results": [
+    {
+      "tag": "BOTH",
+      "ok": true,
+      "skipped": false,
+      "name": "tools/ci/energy-compose-gate.js",
+      "detail": "energy-compose-gate: scanned 431 driver.compose.json files | OK: no Homey Energy v3 approximation + power-cap conflicts | NOTE: 4 driver(s) have energy.batteries + measure_power/meter_power without approximation (informational)",
+      "status": 0
+    },
+    {
+      "tag": "BOTH",
+      "ok": true,
+      "skipped": false,
+      "name": "tools/ci/adaptive-double-division-gate.js",
+      "detail": "[adaptive-double-division-gate] hits=2 hardHits=0 mode=soft |   (soft) lib/devices/BaseUnifiedDevice.js: AdaptiveDataParser + local divisor/smartDivisor in same file |   (soft) lib/tuya/TuyaEF00Manager.js: AdaptiveDataParser + local divisor",
+      "status": 0
+    },
+    {
+      "tag": "BOTH",
+      "ok": true,
+      "skipped": false,
+      "name": "scripts/validation/check-energy-divisor.js",
+      "detail": "   Drivers without divisor: 0 |  | ✅ All energy drivers have proper divisor settings",
+      "status": 0
+    },
+    {
+      "tag": "BOTH",
+      "ok": true,
+      "skipped": false,
+      "name": "tools/ci/smart-features-brand-scrub-gate.js",
+      "detail": "smart-features-brand-scrub-gate: OK (no commercial UI tokens in .homeycompose/flow)",
+      "status": 0
+    },
+    {
+      "tag": "BOTH",
+      "ok": true,
+      "skipped": false,
+      "name": "test/critical/l99-energy-jump-divisor.test.js",
+      "detail": "# skipped 0 | # todo 0 | # duration_ms 41.271755",
+      "status": 0
+    },
+    {
+      "tag": "MASTER_ONLY",
+      "ok": true,
+      "skipped": false,
+      "name": "test/critical/l99-daylight-atmosphere.test.js",
+      "detail": "# skipped 0 | # todo 0 | # duration_ms 41.325677",
+      "status": 0
+    },
+    {
+      "tag": "MASTER_ONLY",
+      "ok": true,
+      "skipped": false,
+      "name": "test/hue-smart-features.test.js",
+      "detail": "# skipped 0 | # todo 0 | # duration_ms 91.475192",
+      "status": 0
+    },
+    {
+      "tag": "MASTER_ONLY",
+      "ok": true,
+      "skipped": false,
+      "name": "tools/ci/flow-l99-orchestrator.js",
+      "detail": "  ], |   \"failCount\": 0 | }",
+      "status": 0
+    }
+  ],
+  "classification": {
+    "energy_compensation_ssot": {
+      "tag": "BOTH",
+      "note": "SmartDivisor + EnergyJumpGuard + rememberLearnedDivisor — reliability/data correctness"
+    },
+    "energy_compose_gate": {
+      "tag": "BOTH",
+      "note": "Athom schema — approximation vs meter caps"
+    },
+    "daylight_atmosphere_solar_sync": {
+      "tag": "MASTER_ONLY",
+      "note": "Circadian / AdaptiveLighting / Path Light / Room Balance — feature engines"
+    },
+    "smart_features_brand_scrub": {
+      "tag": "BOTH",
+      "note": "UI titles/hints only — no commercial names; safe to mirror on stable compose flow titles"
+    },
+    "homey_gap_compensator_soft": {
+      "tag": "BOTH",
+      "note": "Soft notes only — no phantom caps"
+    },
+    "intelligent_lazy_load_boot_budget": {
+      "tag": "BOTH",
+      "note": "64MB heap — BootBudget / IntelligentLazyLoad"
+    },
+    "intelligent_infra_ci_caches": {
+      "tag": "MASTER_ONLY",
+      "note": "CI .cache/ + workflows — not Homey bundle"
+    },
+    "forum_shadow_github_respond": {
+      "tag": "MASTER_ONLY",
+      "note": "Silent forum + GH comments — never Discourse POST"
+    },
+    "p227x_sacred_couple_unsteals": {
+      "tag": "BOTH",
+      "note": "P2274–P2279 compose+registry+TX/RX (strip/curtain/smoke/meter/TRV cal/cover/USB) — reliability pairing"
+    },
+    "p2269_anti_spaghetti_ssot": {
+      "tag": "MASTER_ONLY",
+      "note": "SSOT docs + PathFinder + harvest gates — CI/docs; soft-port reliability TX/RX only to stable"
+    },
+    "p2360_mcu_l99_hardening": {
+      "tag": "BOTH",
+      "note": "Skip MCU 0x10 on battery covers; Formats+seq10+FORCE_UPDATE; brightness 0-1000 clamp — reliability"
+    },
+    "p2363_curtain_ef00_hybrid_timeout": {
+      "tag": "BOTH",
+      "note": "Cover EF00 manager soft-create + optimistic windowcoverings + hybrid skip-disable + Z2M cover FPs — reliability (diag 05867379 couple absent)"
+    },
+    "p2361_w0qqde0g_plug_not_button": {
+      "tag": "BOTH",
+      "note": "Gmail L3: _TZ3210_w0qqde0g+TS011F is Z2M plug — strip from button_wireless_2; lock plug_energy_monitor"
+    },
+    "p2286_publish_soft_expect": {
+      "tag": "BOTH",
+      "note": "prepare-publish temp only; soft-expect Athom race; refuse repo-root publish"
+    },
+    "p2287_ias_leftover_ef00": {
+      "tag": "BOTH",
+      "note": "shouldSkipIasOnlyEf00Tx pure helper + unit gate — sleepy IAS never leftover EF00 TX"
+    },
+    "p2288_sacred_keep_compaction": {
+      "tag": "BOTH",
+      "note": "publish-sacred-keep-couples.json pin list survives Athom matrix budget cuts"
+    },
+    "p2284_handleframe_chain": {
+      "tag": "BOTH",
+      "note": "wrapHandleFrame SSOT — L0/IO/P0 always next; stable backport TuyaUnifiedDevice"
+    },
+    "p2359_homey_device_updates": {
+      "tag": "BOTH",
+      "note": "Native Homey Device Updates OTA — SSOT + wakeInstruction + gate/verify + UX; OEM images only"
+    },
+    "p2372_fleet_free_scrape_all_classes": {
+      "tag": "MASTER_ONLY",
+      "note": "Fleet enrich cron + free-scrape budget + driver-class coverage — CI infra; soft-port FlowCardHeuristics + sacred strips to stable as BOTH"
+    },
+    "p2375_flow_fleet_enrich": {
+      "tag": "MASTER_ONLY",
+      "note": "flow-fleet-enrich CI — orphan tokens, capability triggers, Z2M cross-ref, app.json sync; FlowCardHeuristics buildCapabilityFlowCandidates is BOTH"
+    },
+    "p2376_intelligent_source_diff": {
+      "tag": "MASTER_ONLY",
+      "note": "Cache-first source diff orchestrator — optional sources soft-fail, GHA intel cache, never block pipeline"
+    },
+    "p2376_appjson_flow_dedupe": {
+      "tag": "BOTH",
+      "note": "Strip driver-scoped flow cards from app.json + .homeycompose after homey build / auto-fix"
+    },
+    "p2378_button_1gang_flow_fire": {
+      "tag": "BOTH",
+      "note": "Peter cfbf687f — triggerButtonPress must fire *_button_1gang_* compose cards (was gated gangCount>1); RX 0xFD already OK"
+    },
+    "p2379_presence_radar_no_curtain_dyncap": {
+      "tag": "BOTH",
+      "note": "VicHY — DynCap must not invent windowcoverings_set/dim from radar DP2/3/102; heal phantom curtain UI + stuck presence"
+    },
+    "p2372_flow_heuristics_knob_rotary": {
+      "tag": "BOTH",
+      "note": "FlowCardHeuristics knob/rotary + SOS patterns — runtime flow resolve reliability"
+    },
+    "p218_2imwyigp_contact_strip": {
+      "tag": "BOTH",
+      "note": "Anti-bot: never list 2imwyigp/u6x1zyv2 on contact_sensor compose — pairing correctness"
+    }
+  }
+}
