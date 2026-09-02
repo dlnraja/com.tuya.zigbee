@@ -12,6 +12,11 @@ on:
   push:
     branches: [master, main]
   workflow_dispatch:
+    inputs:
+      force_publish:
+        description: 'Force Athom createBuild even if soft-expect would skip (P139 one-shot)'
+        type: boolean
+        default: true
 
 permissions:
   contents: write
@@ -34,9 +39,10 @@ defaults:
 jobs:
   publish:
     name: Validate & Auto-Publish to Homey App Store
-    if: "!contains(github.event.head_commit.message, '[skip ci]')"
+    # WHY(P2384): workflow_dispatch must run even when tip commit is [skip ci]
+    if: ${{ github.event_name == 'workflow_dispatch' || !contains(github.event.head_commit.message, '[skip ci]') }}
     runs-on: ubuntu-latest
-    timeout-minutes: 35
+    timeout-minutes: 45
     # v9.0.287 (P74): Bumped publish-size limits to 50 MB. With .homeyignore
     # pruning (mfs_db.json, dev artifacts, branding assets) the source
     # directory is ~40 MB. The gzipped tarball is ~18 MB.
@@ -48,11 +54,13 @@ jobs:
       HOMEY_PUBLISH_MAX_UNCOMPRESSED_MB: "50"
       HOMEY_ZIGBEE_MAX_TOTAL_COMBOS: "20000"
       HOMEY_ZIGBEE_MAX_DRIVER_COMBOS: "2000"
-      # P2323/P2325: Athom apps API default ~10s is too short (tip hang / Timeout after)
-      HOMEY_API_TIMEOUT_MS: "60000"
-      HOMEY_BUILD_POLL_TIMEOUT_MS: "240000"
+      # P2384: Athom apps API + draft wait — longer than 60s/360s (tip socket hang up)
+      HOMEY_API_TIMEOUT_MS: "120000"
+      HOMEY_BUILD_POLL_TIMEOUT_MS: "360000"
       HOMEY_ZIGBEE_MAX_CASE_FORMS: "2"
-      HOMEY_DRAFT_WAIT_MS: "360000"
+      HOMEY_DRAFT_WAIT_MS: "600000"
+      HOMEY_HEALTHY_TEST_PATCH_LAG: "8"
+      HOMEY_FORCE_PUBLISH: ${{ github.event_name == 'workflow_dispatch' && inputs.force_publish != false && '1' || '0' }}
 
     steps:
       # ─────────────────────────────────────────────────────────────

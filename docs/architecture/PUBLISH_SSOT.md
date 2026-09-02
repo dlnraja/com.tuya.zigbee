@@ -36,8 +36,9 @@ Implementation: `scripts/lib/soft-expect-decision.js` · Gate: `npm run check:p2
 | Signal | Action |
 |--------|--------|
 | Tip email / Dev Tools `socket hang up` | Do **not** bump-loop |
-| `dashboard-monitor` `Timeout after 10000ms` | Use `HOMEY_API_TIMEOUT_MS=60000` + soft-alert |
+| `dashboard-monitor` `Timeout after 10000ms` | Use `HOMEY_API_TIMEOUT_MS=120000` + soft-alert |
 | Verify expected version still `draft`/`processing_failed` but older Test healthy | `verify-test-version.js` soft-continues (P2325) |
+| Human one-shot retry | `workflow_dispatch` + `force_publish` → `direct-api-publish --force` (P2384) |
 
 Gate: `npm run check:p2325`
 
@@ -71,8 +72,10 @@ npm run check:p2286 && npm run check:p2287 && npm run check:p2288
 node tools/ci/prune-fp-collision-bleed.js --check
 ```
 
-## P139
+## P139 / P2384
 
 Do **not** spam republish on Athom `processing_failed` / `socket hang up`. Soft-expect + wait for healthy Test build.
+
+Controlled override (once): Auto-Publish `workflow_dispatch` with `force_publish=true` sets `HOMEY_FORCE_PUBLISH=1` → `scripts/direct-api-publish.js --force`, with `HOMEY_API_TIMEOUT_MS=120000`, `HOMEY_DRAFT_WAIT_MS=600000`, `HOMEY_HEALTHY_TEST_PATCH_LAG=8`.
 
 See also: [PROTOCOL_TX_RX_SSOT.md](./PROTOCOL_TX_RX_SSOT.md) (IAS skip) · [DUAL_APP_VISION.md](../rules/DUAL_APP_VISION.md)

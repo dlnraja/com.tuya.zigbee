@@ -61,9 +61,19 @@
     "doNot": "spam republish on processing_failed / socket hang up",
     "do": "soft-expect exit 0 when peer already on test; wait Athom cooldown"
   },
+  "p2384": {
+    "why": "Athom tip socket hang up / processing_failed — longer API+draft waits + one-shot force_publish",
+    "apiTimeoutMs": 120000,
+    "buildPollTimeoutMs": 360000,
+    "draftWaitMs": 600000,
+    "healthyTestPatchLag": 8,
+    "forceEnv": "HOMEY_FORCE_PUBLISH=1 → direct-api-publish.js --force",
+    "dispatch": "auto-publish-on-push.yml workflow_dispatch force_publish",
+    "classify": "BOTH"
+  },
   "p2323": {
     "why": "Tip email + Homey developer tools hang / Timeout after 10000ms",
-    "dashboardTimeoutMs": 60000,
+    "dashboardTimeoutMs": 120000,
     "env": "HOMEY_API_TIMEOUT_MS",
     "softAlert": "scripts/lib/soft-expect-decision.js → softAlertDecision"
   },

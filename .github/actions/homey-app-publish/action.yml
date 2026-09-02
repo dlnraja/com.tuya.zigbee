@@ -82,15 +82,22 @@ runs:
         }
 
         set +e
-        publish_output=$(run_homey_cli_publish 2>&1)
-        publish_status=$?
-
-        if [ "$publish_status" -ne 0 ] && printf '%s\n' "$publish_output" | grep -Eiq 'Timeout after [0-9]+ms|fetch failed|ETIMEDOUT|ECONNRESET|ECONNABORTED|too many requests|\b429\b'; then
-          echo "::warning::Homey CLI publish hit a transient API timeout; retrying via direct Athom Apps API with extended timeouts."
-          fallback_output=$(HOMEY_PAT="$HOMEY_PAT" HOMEY_API_TIMEOUT_MS="${HOMEY_API_TIMEOUT_MS:-60000}" HOMEY_BUILD_POLL_TIMEOUT_MS="${HOMEY_BUILD_POLL_TIMEOUT_MS:-240000}" node "$GITHUB_WORKSPACE/scripts/direct-api-publish.js" --path "$PUBLISH_DIR" 2>&1)
-          fallback_status=$?
-          publish_output="$(printf '%s\n%s' "$publish_output" "$fallback_output")"
-          publish_status=$fallback_status
+        # WHY(P2384): workflow_dispatch force → direct Apps API --force (bypass soft-expect skip
+        # on prior processing_failed / socket hang up). Normal pushes keep CLI + soft hang fallback.
+        if [ "${HOMEY_FORCE_PUBLISH:-0}" = "1" ]; then
+          echo "::notice::HOMEY_FORCE_PUBLISH=1 — one-shot direct-api-publish --force (P139 override)"
+          publish_output=$(HOMEY_PAT="$HOMEY_PAT" HOMEY_API_TIMEOUT_MS="${HOMEY_API_TIMEOUT_MS:-120000}" HOMEY_BUILD_POLL_TIMEOUT_MS="${HOMEY_BUILD_POLL_TIMEOUT_MS:-360000}" node "$GITHUB_WORKSPACE/scripts/direct-api-publish.js" --path "$PUBLISH_DIR" --channel test --force 2>&1)
+          publish_status=$?
+        else
+          publish_output=$(run_homey_cli_publish 2>&1)
+          publish_status=$?
+          if [ "$publish_status" -ne 0 ] && printf '%s\n' "$publish_output" | grep -Eiq 'Timeout after [0-9]+ms|fetch failed|ETIMEDOUT|ECONNRESET|ECONNABORTED|socket hang up|too many requests|\b429\b|processing_failed'; then
+            echo "::warning::Homey CLI publish hit a transient Athom hang; retrying via direct Athom Apps API with extended timeouts."
+            fallback_output=$(HOMEY_PAT="$HOMEY_PAT" HOMEY_API_TIMEOUT_MS="${HOMEY_API_TIMEOUT_MS:-120000}" HOMEY_BUILD_POLL_TIMEOUT_MS="${HOMEY_BUILD_POLL_TIMEOUT_MS:-360000}" node "$GITHUB_WORKSPACE/scripts/direct-api-publish.js" --path "$PUBLISH_DIR" --channel test 2>&1)
+            fallback_status=$?
+            publish_output="$(printf '%s\n%s' "$publish_output" "$fallback_output")"
+            publish_status=$fallback_status
+          fi
         fi
         set -e
         printf '%s\n' "$publish_output"
@@ -99,6 +106,11 @@ runs:
         if [ "$publish_status" -ne 0 ]; then
           if printf '%s\n' "$publish_output" | grep -Eiq 'already been published|currently in review'; then
             echo "::warning::Homey reports this version is already published or in review; continuing so test promotion can proceed."
+            exit 0
+          fi
+          # P139 soft (non-force only): peer Test healthy + hang → leave last healthy Test
+          if [ "${HOMEY_FORCE_PUBLISH:-0}" != "1" ] && printf '%s\n' "$publish_output" | grep -Eiq 'socket hang up|SOFT-EXPECT|peer-test|P139'; then
+            echo "::warning::P139 Athom transient / soft-expect — leaving last healthy Test in place"
             exit 0
           fi
           exit "$publish_status"
