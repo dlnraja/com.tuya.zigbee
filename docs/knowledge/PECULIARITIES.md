@@ -147,6 +147,7 @@ Generated 2026-08-19T08:50:15.322Z from registry (54 cases) × compound DB (209 
 - **P2340 (diag 4217d5e3 / VicHY):** publish compact dropped `_TZE204_clrdrnya` from app.json — sacred-keep + force-inject restores mfr; user on **9.0.719** must update Test ≥9.0.739 + re-pair `presence_sensor_radar`.
 - **Search UX:** Users typing “PIR mmWave” often pick `pir_mmwave_sensor` (`_TZ3000_3towulqd` only). MTG235/clrdrnya must use **Presence Sensor (Radar / mmWave)** tile.
 - **P2379 (VicHY):** DynCap invented `windowcoverings_set` from DP2/3/102 (sensitivity/range/departure_delay) → Homey UI showed **curtain + opening slider**; DP102→`alarm_motion` stuck presence true. Fix: disable DynCap invent on presence radars + heal phantom caps.
+- **P2386 (VicHY #2222):** Recurring after app updates — store DynCap restore re-applied blind UI. Fix: clear store when DynCap disabled; delayed re-heal 15s/60s/180s; restore `sensor` class if drifted to windowcoverings; heal on settings. Diag `4217d5e3`. User: update Test ≥ tip + restart app (re-pair only if still curtain).
 
 ### `valve-dual-fhvpaltk` → `valve_dual_irrigation`
 
