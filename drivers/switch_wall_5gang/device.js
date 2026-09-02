@@ -2,19 +2,18 @@
 
 const { safeSetTimeout, safeClearTimeout } = require('../../lib/utils/safe-timers');
 const UnifiedSwitchBase = require('../../lib/devices/UnifiedSwitchBase');
-const VirtualButtonMixin = require('../../lib/mixins/VirtualButtonMixin');
 const { includesCI } = require('../../lib/utils/CaseInsensitiveMatcher');
-const PhysicalButtonMixin = require('../../lib/mixins/PhysicalButtonMixin');
 
 /**
  * 5-GANG SWITCH - v5.5.922 + ZCL-Only Mode (packetninja technique)
  * Physical button detection via attribute reports
+ * WHY(P2395/B10): no Physical/Virtual double-wrap — already on TuyaZigbeeDevice.
  */
 const ZCL_ONLY_MANUFACTURERS_5G = [
   '_TZ3000_blhvsaqf', '_TZ3000_ysdv91bk', '_TZ3000_hafsqare'
 ];
 
-class Switch5GangDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedSwitchBase)) {
+class Switch5GangDevice extends UnifiedSwitchBase {
   get gangCount() { return 5; }
 
   /**
@@ -90,7 +89,7 @@ class Switch5GangDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedSw
       this.registerCapabilityListener(capName, async (value) => {
         this._zclState.pending[epNum] = true;
         safeClearTimeout(this, this._zclState.timeout[epNum]);
-        this._zclState.timeout[epNum] = safeSetTimeout(this, () => { if (this._destroyed) return; this._zclState.pending[epNum] = false; }, 2000);
+        this._zclState.timeout[epNum] = safeSetTimeout(this, () => { if (this._destroyed) {return;} this._zclState.pending[epNum] = false; }, 2000);
         const onOff = getOnOffCluster(epNum);
         if (onOff) {await onOff[value ? 'setOn' : 'setOff']();}
         return true;
@@ -104,7 +103,7 @@ class Switch5GangDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedSw
 
       const capName = epNum === 1 ? 'onoff' : `onoff.gang${epNum}`;
       onOff.on('attr.onOff', async (value) => {
-        if (this._destroyed) return;
+        if (this._destroyed) {return;}
         const isPhysical = !this._zclState.pending[epNum];
         if (this._zclState.lastState[epNum] !== value) {
           this._zclState.lastState[epNum] = value;
