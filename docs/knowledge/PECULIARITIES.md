@@ -158,7 +158,8 @@ Generated 2026-08-19T08:50:15.322Z from registry (54 cases) × compound DB (209 
 ### `button-wireless-1-mrpevh8p` → `button_wireless_1` (P2378)
 
 - Couple: `_TZ3000_mrpevh8p` + `TS0041` (SH-SC07)
-- **Peter diag `cfbf687f` (9.0.779):** 0xFD RX + `button_matrix` OK, but Homey Flows on `*_button_1gang_*` never fired — `triggerButtonPress` gated Ngang cards behind `gangCount > 1`
+- **P2378 (Peter diag `cfbf687f` @ 9.0.779):** 0xFD RX + `button_matrix` OK, but Homey Flows on `*_button_1gang_*` never fired — `triggerButtonPress` gated Ngang cards behind `gangCount > 1`
+- **P2381 (same diag, tip-lag):** even after P2378, driver.compose cards were stripped from `app.json` (P2376 dedupe) so `collectDeclaredFlowIds` / `_tryCard` refused them — only app-level `button_matrix` ran. Fix: merge `driver.manifest.flow` (+ getDrivers) into declared set; allow driver-scoped getDeviceTriggerCard.
 - Fix BOTH: always try `*_button_1gang_*` + `buildPhysicalFlowCandidates`; late identity overrides for profile
 
 ### `presence-radar-cam-zg204zl` / Cam HOBEIAN
