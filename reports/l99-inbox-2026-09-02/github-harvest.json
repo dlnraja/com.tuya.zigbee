@@ -1,0 +1,46 @@
+{
+  "harvestedAt": "2026-09-02T00:35:23.100Z",
+  "repo": "dlnraja/com.tuya.zigbee",
+  "auth": "token",
+  "error": null,
+  "issues": [
+    {
+      "number": 536,
+      "title": "Device Request - Smart fan switch with 5-speed control - Zigbee",
+      "labels": [
+        "enhancement",
+        "device-request"
+      ],
+      "updatedAt": "2026-09-01T22:47:46Z",
+      "user": "MarceloSilvaLeite",
+      "htmlUrl": "https://github.com/dlnraja/com.tuya.zigbee/issues/536",
+      "bodySnippet": "## 📱 Basic Information\n\n**Purchase Link**: https://pt.aliexpress.com/item/1005004705097813.html\n**Power Source**: Mains (AC)\n\n\n\n  \"ids\": {\n    \"modelId\": \"TS0601\",\n    \"manufacturerName\": \"_TZE200_r32ctezx\"\n  },\n  \"endpoints\": {\n    \"ieeeAddress\": \"a4:c1:38:87:6b:8d:c7:97\",\n    "
+    },
+    {
+      "number": 533,
+      "title": "Device Request - [SMART ZIGBEE CURTAIN SWITCH] - [MOES]",
+      "labels": [
+        "enhancement",
+        "device-request",
+        "new-fingerprint",
+        "needs-maintainer"
+      ],
+      "updatedAt": "2026-09-01T14:53:05Z",
+      "user": "salvagr",
+      "htmlUrl": "https://github.com/dlnraja/com.tuya.zigbee/issues/533",
+      "bodySnippet": "Thank you for your support.\n\n## 📱 Basic Information\n\n**Brand & Model**: SMART ZIGBEE CURTAIN SWITCH - MOES\n**Purchase Link**: https://es.aliexpress.com/item/1005008356152992.html\n**Power Source**:  Mains\n**Current Status**: pairing with wrong device type. Detected as \"radiator v"
+    }
+  ],
+  "prs": [
+    {
+      "number": 534,
+      "title": "AI Monthly Audit - September 2026 | Risk: Updated",
+      "updatedAt": "2026-09-01T10:32:02Z",
+      "user": "dlnraja",
+      "htmlUrl": "https://github.com/dlnraja/com.tuya.zigbee/pull/534",
+      "draft": false
+    }
+  ],
+  "openIssueCount": 2,
+  "openPrCount": 1
+}
