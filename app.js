@@ -172,32 +172,63 @@ class TuyaUnifiedZigbeeApp extends Homey.App {
       installSafeGetDriver(Object.getPrototypeOf(this.homey.drivers), logFn, { force: true });
     } catch (_e) { /* best-effort */ }
 
-    // P100: wrap OR polyfill flow-card getters so a missing card id OR an SDK
-    // without getDeviceActionCard cannot kill a driver's whole onInit.
+    // P100 / P2398: wrap OR polyfill flow-card getters. Prefer sibling alias when
+    // getDeviceConditionCard / getDeviceActionCard are missing (SDK3), mark noops,
+    // log missing once — BaseZigBeeDriver skips __flowGuardNoop (2b0b4e4f).
     try {
       const flow = this.homey.flow;
       const noopCard = {
+        __flowGuardNoop: true,
         registerRunListener() { return this; },
         registerArgumentAutocompleteListener() { return this; },
         register() { return this; },
         async trigger() { return false; },
         async getValue() { return false; },
       };
+      const sibling = {
+        getDeviceActionCard: 'getActionCard',
+        getActionCard: 'getDeviceActionCard',
+        getDeviceConditionCard: 'getConditionCard',
+        getConditionCard: 'getDeviceConditionCard',
+        getDeviceTriggerCard: 'getTriggerCard',
+        getTriggerCard: 'getDeviceTriggerCard',
+      };
+      const missingLogged = global.__tuyaFlowGuardMissingLogged || (global.__tuyaFlowGuardMissingLogged = new Set());
       for (const m of ['getActionCard', 'getDeviceActionCard', 'getTriggerCard', 'getDeviceTriggerCard', 'getConditionCard', 'getDeviceConditionCard']) {
         const orig = flow[m];
         if (typeof orig === 'function' && orig.__crashGuarded) {continue;}
         const wrapped = (...args) => {
-          if (typeof orig !== 'function') {
-            this.log('[FLOW-GUARD]', m, args[0], 'not a function on this SDK — noop');
-            return noopCard;
+          if (typeof orig === 'function') {
+            try { return orig.apply(flow, args); }
+            catch (e) {
+              this.log('[FLOW-GUARD]', m, args[0], e.message);
+              return noopCard;
+            }
           }
-          try { return orig.apply(flow, args); }
-          catch (e) {
-            this.log('[FLOW-GUARD]', m, args[0], e.message);
-            return noopCard;
+          const altName = sibling[m];
+          const alt = altName && flow[altName];
+          if (typeof alt === 'function' && !alt.__flowGuardNoopFn) {
+            try {
+              const raw = alt.__crashGuarded && typeof alt.__flowGuardOrig === 'function'
+                ? alt.__flowGuardOrig
+                : alt;
+              if (typeof raw === 'function' && !raw.__flowGuardNoopFn) {
+                return raw.apply(flow, args);
+              }
+            } catch (e) {
+              this.log('[FLOW-GUARD]', m, '→', altName, args[0], e.message);
+              return noopCard;
+            }
           }
+          if (!missingLogged.has(m)) {
+            missingLogged.add(m);
+            this.log('[FLOW-GUARD]', m, 'not a function on this SDK — noop (once)');
+          }
+          return noopCard;
         };
         wrapped.__crashGuarded = true;
+        wrapped.__flowGuardOrig = typeof orig === 'function' ? orig : null;
+        wrapped.__flowGuardNoopFn = typeof orig !== 'function';
         try { flow[m] = wrapped; } catch (_e) { /* flow methods may be non-writable */ }
       }
     } catch (e) { /* flow guard is best-effort */ }
