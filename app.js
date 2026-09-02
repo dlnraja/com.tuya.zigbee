@@ -183,36 +183,69 @@ class TuyaUnifiedZigbeeApp extends Homey.App {
       installSafeGetDriver(Object.getPrototypeOf(this.homey.drivers), logFn, { force: true });
     } catch (_) { /* best-effort */ }
 
-    // v10.2.1 crash guard: wrap OR polyfill flow-card getters so a missing
-    // card id OR an SDK without getDeviceActionCard cannot kill a driver's
-    // whole onInit ("Initializing Driver X: TypeError … is not a function").
-    // Gmail crash logs (Aug 2026): curtain_motor_tilt / radiator_controller /
-    // ir_blaster still called getDeviceActionCard when it was undefined —
-    // previous guard only wrapped existing methods and skipped missing ones.
+    // v10.2.1 / P2398 crash guard: wrap OR polyfill flow-card getters so a
+    // missing card id OR an SDK without getDeviceActionCard/ConditionCard
+    // cannot kill a driver's onInit.
+    // WHY (P2398): Homey SDK3 often lacks getDeviceConditionCard /
+    // getDeviceActionCard. Old polyfill returned a silent noop that still
+    // looked like a real card — BaseZigBeeDriver then never fell through to
+    // getConditionCard/getActionCard (meter91 2b0b4e4f / water_valve_garden
+    // FLOW-GUARD spam on 9.0.743). Prefer sibling alias; mark true noops.
     try {
       const flow = this.homey.flow;
       const noopCard = {
+        __flowGuardNoop: true,
         registerRunListener() { return this; },
         registerArgumentAutocompleteListener() { return this; },
         register() { return this; },
         async trigger() { return false; },
         async getValue() { return false; },
       };
+      const sibling = {
+        getDeviceActionCard: 'getActionCard',
+        getActionCard: 'getDeviceActionCard',
+        getDeviceConditionCard: 'getConditionCard',
+        getConditionCard: 'getDeviceConditionCard',
+        getDeviceTriggerCard: 'getTriggerCard',
+        getTriggerCard: 'getDeviceTriggerCard',
+      };
+      const missingLogged = global.__tuyaFlowGuardMissingLogged || (global.__tuyaFlowGuardMissingLogged = new Set());
       for (const m of ['getActionCard', 'getDeviceActionCard', 'getTriggerCard', 'getDeviceTriggerCard', 'getConditionCard', 'getDeviceConditionCard']) {
         const orig = flow[m];
         if (typeof orig === 'function' && orig.__crashGuarded) {continue;}
         const wrapped = (...args) => {
-          if (typeof orig !== 'function') {
-            this.log('[FLOW-GUARD]', m, args[0], 'not a function on this SDK — noop');
-            return noopCard;
+          if (typeof orig === 'function') {
+            try { return orig.apply(flow, args); }
+            catch (e) {
+              this.log('[FLOW-GUARD]', m, args[0], e.message);
+              return noopCard;
+            }
           }
-          try { return orig.apply(flow, args); }
-          catch (e) {
-            this.log('[FLOW-GUARD]', m, args[0], e.message);
-            return noopCard;
+          const altName = sibling[m];
+          const alt = altName && flow[altName];
+          // Prefer real sibling (unwrap guarded alias) when Device* is absent.
+          if (typeof alt === 'function' && !alt.__flowGuardNoopFn) {
+            try {
+              const raw = alt.__crashGuarded && typeof alt.__flowGuardOrig === 'function'
+                ? alt.__flowGuardOrig
+                : alt;
+              if (typeof raw === 'function' && !raw.__flowGuardNoopFn) {
+                return raw.apply(flow, args);
+              }
+            } catch (e) {
+              this.log('[FLOW-GUARD]', m, '→', altName, args[0], e.message);
+              return noopCard;
+            }
           }
+          if (!missingLogged.has(m)) {
+            missingLogged.add(m);
+            this.log('[FLOW-GUARD]', m, 'not a function on this SDK — noop (once)');
+          }
+          return noopCard;
         };
         wrapped.__crashGuarded = true;
+        wrapped.__flowGuardOrig = typeof orig === 'function' ? orig : null;
+        wrapped.__flowGuardNoopFn = typeof orig !== 'function';
         try { flow[m] = wrapped; } catch (_e) { /* flow methods may be non-writable */ }
       }
     } catch (e) { /* flow guard is best-effort */ }

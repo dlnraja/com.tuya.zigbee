@@ -2,13 +2,13 @@
 
 > Curated fleet profile
 
-Forum topic: **T140352** · Posts: 2208, 2211, **2222**, **2224**
+Forum topic: **T140352** · Posts: 2208, 2211, **2222**, **2224**, **2225** (Dylan reply)
 
 ## Devices
 
 | Tile | Driver | Couple | User action |
 |---|---|---|---|
-| Presencia baño principal | presence_sensor_radar | `_TZE204_clrdrnya`+`TS0601` | Update Test ≥ **9.0.792+** (P2379/P2386/P2389/P2391) + restart app |
+| Presencia baño principal | presence_sensor_radar | `_TZE204_clrdrnya`+`TS0601` | Update Test ≥ **9.0.797** (P2379/P2386/P2389/P2391) + **restart app** (re-pair only if still curtain UI) |
 
 ## #2224 (2026-09-02)
 
