@@ -27,6 +27,7 @@ on:
 
 permissions:
   contents: write
+  actions: read
 
 defaults:
   run:
@@ -55,8 +56,50 @@ env:
   HOMEY_ZIGBEE_MAX_CASE_FORMS: "2"
 
 jobs:
+  # WHY(P2400): bare workflow_dispatch while push-publish already ran for this SHA
+  # double-hits Athom (P139 orphan drafts). Skip unless force_publish=true.
+  dispatch-dedupe:
+    name: "Dispatch dedupe (P2400)"
+    runs-on: ubuntu-latest
+    timeout-minutes: 2
+    outputs:
+      skip: ${{ steps.dedupe.outputs.skip }}
+    steps:
+      - name: Skip redundant workflow_dispatch
+        id: dedupe
+        env:
+          GH_TOKEN: ${{ github.token }}
+          EVENT_NAME: ${{ github.event_name }}
+          FORCE_PUBLISH: ${{ github.event.inputs.force_publish || 'false' }}
+          SHA: ${{ github.sha }}
+          REPO: ${{ github.repository }}
+        run: |
+          set -euo pipefail
+          echo "skip=false" >> "$GITHUB_OUTPUT"
+          if [ "$EVENT_NAME" != "workflow_dispatch" ]; then
+            echo "push/schedule — no dispatch dedupe"
+            exit 0
+          fi
+          if [ "$FORCE_PUBLISH" = "true" ]; then
+            echo "force_publish=true — allow dispatch"
+            exit 0
+          fi
+          # Look for a successful push-triggered run of this workflow for the same tip SHA (last 2h)
+          JSON=$(gh api "repos/$REPO/actions/workflows/publish-stable.yml/runs?event=push&status=completed&per_page=20" \
+            --jq "[.workflow_runs[] | select(.head_sha==\"$SHA\" and .conclusion==\"success\" and .status==\"completed\")] | .[0] // empty" \
+            || true)
+          if [ -n "$JSON" ] && [ "$JSON" != "null" ]; then
+            echo "P2400: tip SHA already published via push — skipping redundant workflow_dispatch"
+            echo "skip=true" >> "$GITHUB_OUTPUT"
+            echo "::notice::P2400 skipped duplicate Stable publish dispatch (push already succeeded for $SHA)"
+            exit 0
+          fi
+          echo "No successful push publish for this SHA — continue dispatch"
+
   upstream-guard:
     name: "🛡️ Upstream Guard"
+    needs: dispatch-dedupe
+    if: needs.dispatch-dedupe.outputs.skip != 'true'
     runs-on: ubuntu-latest
     timeout-minutes: 2
     steps:
