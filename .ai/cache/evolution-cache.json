@@ -1,6 +1,6 @@
 {
   "version": "1.0.0",
-  "lastUpdated": "2026-06-18T04:58:48.297Z",
+  "lastUpdated": "2026-09-01T05:16:30.457Z",
   "snapshots": [
     {
       "timestamp": "2026-05-19 15:52:26 +0000",
@@ -791,6 +791,4586 @@
         "scripts": 613,
         "workflows": 66,
         "libFiles": 586
+      }
+    },
+    {
+      "timestamp": "2026-07-13 07:09:55 +0000",
+      "version": "9.0.190",
+      "metrics": {
+        "drivers": 431,
+        "fingerprints": 2702
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-07-13 07:16:12 +0000",
+      "version": "9.0.191",
+      "metrics": {
+        "drivers": 431,
+        "fingerprints": 2681
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-07-13 07:21:15 +0000",
+      "version": "9.0.192",
+      "metrics": {
+        "drivers": 431,
+        "fingerprints": 2681
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-07-13 07:35:17 +0000",
+      "version": "9.0.193",
+      "metrics": {
+        "drivers": 431,
+        "fingerprints": 2681
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-07-13 08:14:53 +0000",
+      "version": "9.0.194",
+      "metrics": {
+        "drivers": 431,
+        "fingerprints": 2681
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-07-13 08:23:27 +0000",
+      "version": "9.0.195",
+      "metrics": {
+        "drivers": 431,
+        "fingerprints": 2681
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-07-13 10:07:49 +0000",
+      "version": "9.0.196",
+      "metrics": {
+        "drivers": 431,
+        "fingerprints": 2681
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-07-13 10:32:03 +0000",
+      "version": "9.0.197",
+      "metrics": {
+        "drivers": 431,
+        "fingerprints": 2681
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-07-13 10:38:40 +0000",
+      "version": "9.0.198",
+      "metrics": {
+        "drivers": 431,
+        "fingerprints": 2681
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-07-13 11:05:09 +0000",
+      "version": "9.0.199",
+      "metrics": {
+        "drivers": 431,
+        "fingerprints": 2681
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-07-13 11:13:39 +0000",
+      "version": "9.0.200",
+      "metrics": {
+        "drivers": 431,
+        "fingerprints": 2681
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-07-13 11:21:21 +0000",
+      "version": "9.0.201",
+      "metrics": {
+        "drivers": 431,
+        "fingerprints": 2681
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-07-13 11:28:13 +0000",
+      "version": "9.0.202",
+      "metrics": {
+        "drivers": 431,
+        "fingerprints": 2681
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-07-13 11:33:36 +0000",
+      "version": "9.0.203",
+      "metrics": {
+        "drivers": 431,
+        "fingerprints": 2681
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-07-13 11:40:06 +0000",
+      "version": "9.0.204",
+      "metrics": {
+        "drivers": 431,
+        "fingerprints": 2681
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-07-13 11:46:04 +0000",
+      "version": "9.0.205",
+      "metrics": {
+        "drivers": 431,
+        "fingerprints": 2681
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-07-13 11:55:39 +0000",
+      "version": "9.0.206",
+      "metrics": {
+        "drivers": 431,
+        "fingerprints": 2681
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-07-13 12:29:28 +0000",
+      "version": "9.0.207",
+      "metrics": {
+        "drivers": 431,
+        "fingerprints": 2681
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-07-13 12:45:19 +0000",
+      "version": "9.0.208",
+      "metrics": {
+        "drivers": 431,
+        "fingerprints": 2681
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-07-13 14:47:55 +0000",
+      "version": "9.0.210",
+      "metrics": {
+        "drivers": 431,
+        "fingerprints": 2681
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-07-13 21:33:11 +0000",
+      "version": "9.0.211",
+      "metrics": {
+        "drivers": 431,
+        "fingerprints": 2681
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-07-13 22:05:13 +0000",
+      "version": "9.0.212",
+      "metrics": {
+        "drivers": 431,
+        "fingerprints": 2681
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-07-13 22:12:55 +0000",
+      "version": "9.0.213",
+      "metrics": {
+        "drivers": 431,
+        "fingerprints": 2681
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-07-13 22:48:03 +0000",
+      "version": "9.0.214",
+      "metrics": {
+        "drivers": 431,
+        "fingerprints": 2689
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-07-13 22:57:17 +0000",
+      "version": "9.0.215",
+      "metrics": {
+        "drivers": 431,
+        "fingerprints": 2709
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-07-14 00:01:53 +0000",
+      "version": "9.0.216",
+      "metrics": {
+        "drivers": 431,
+        "fingerprints": 2940
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-07-14 00:12:17 +0000",
+      "version": "9.0.217",
+      "metrics": {
+        "drivers": 431,
+        "fingerprints": 2737
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-07-14 00:39:13 +0000",
+      "version": "9.0.218",
+      "metrics": {
+        "drivers": 431,
+        "fingerprints": 2968
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-07-14 00:58:10 +0000",
+      "version": "9.0.219",
+      "metrics": {
+        "drivers": 431,
+        "fingerprints": 2968
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-07-14 08:53:21 +0000",
+      "version": "9.0.220",
+      "metrics": {
+        "drivers": 431,
+        "fingerprints": 3013
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-07-14 08:58:30 +0000",
+      "version": "9.0.221",
+      "metrics": {
+        "drivers": 431,
+        "fingerprints": 2810
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-07-14 09:11:25 +0000",
+      "version": "9.0.222",
+      "metrics": {
+        "drivers": 431,
+        "fingerprints": 2810
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-07-14 09:16:34 +0000",
+      "version": "9.0.223",
+      "metrics": {
+        "drivers": 431,
+        "fingerprints": 2810
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-07-14 09:37:30 +0000",
+      "version": "9.0.224",
+      "metrics": {
+        "drivers": 431,
+        "fingerprints": 2810
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-07-14 09:45:41 +0000",
+      "version": "9.0.225",
+      "metrics": {
+        "drivers": 431,
+        "fingerprints": 2810
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-07-14 10:14:57 +0000",
+      "version": "9.0.226",
+      "metrics": {
+        "drivers": 431,
+        "fingerprints": 2810
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-07-14 10:46:27 +0000",
+      "version": "9.0.227",
+      "metrics": {
+        "drivers": 431,
+        "fingerprints": 2874
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-07-14 11:09:25 +0000",
+      "version": "9.0.228",
+      "metrics": {
+        "drivers": 431,
+        "fingerprints": 2874
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-07-14 11:23:55 +0000",
+      "version": "9.0.229",
+      "metrics": {
+        "drivers": 431,
+        "fingerprints": 2874
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-07-14 11:38:00 +0000",
+      "version": "9.0.230",
+      "metrics": {
+        "drivers": 431,
+        "fingerprints": 2874
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-07-14 12:48:47 +0000",
+      "version": "9.0.231",
+      "metrics": {
+        "drivers": 431,
+        "fingerprints": 2874
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-07-14 13:38:32 +0000",
+      "version": "9.0.232",
+      "metrics": {
+        "drivers": 431,
+        "fingerprints": 2874
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-07-14 13:49:19 +0000",
+      "version": "9.0.233",
+      "metrics": {
+        "drivers": 431,
+        "fingerprints": 2874
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-07-14 13:53:41 +0000",
+      "version": "9.0.234",
+      "metrics": {
+        "drivers": 431,
+        "fingerprints": 2874
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-07-14 13:59:20 +0000",
+      "version": "9.0.235",
+      "metrics": {
+        "drivers": 431,
+        "fingerprints": 2874
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-07-14 14:23:51 +0000",
+      "version": "9.0.236",
+      "metrics": {
+        "drivers": 431,
+        "fingerprints": 2874
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-07-14 15:02:47 +0000",
+      "version": "9.0.237",
+      "metrics": {
+        "drivers": 431,
+        "fingerprints": 2874
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-07-14 15:08:11 +0000",
+      "version": "9.0.238",
+      "metrics": {
+        "drivers": 431,
+        "fingerprints": 2874
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-07-14 15:13:50 +0000",
+      "version": "9.0.239",
+      "metrics": {
+        "drivers": 431,
+        "fingerprints": 2874
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-07-14 16:02:00 +0000",
+      "version": "9.0.240",
+      "metrics": {
+        "drivers": 431,
+        "fingerprints": 2874
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-07-14 16:12:14 +0000",
+      "version": "9.0.241",
+      "metrics": {
+        "drivers": 431,
+        "fingerprints": 2874
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-07-14 16:20:01 +0000",
+      "version": "9.0.242",
+      "metrics": {
+        "drivers": 431,
+        "fingerprints": 2874
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-07-14 18:15:02 +0000",
+      "version": "9.0.243",
+      "metrics": {
+        "drivers": 431,
+        "fingerprints": 2874
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-07-14 18:27:06 +0000",
+      "version": "9.0.244",
+      "metrics": {
+        "drivers": 431,
+        "fingerprints": 2874
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-07-14 18:55:41 +0000",
+      "version": "9.0.245",
+      "metrics": {
+        "drivers": 431,
+        "fingerprints": 2874
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-07-14 19:13:00 +0000",
+      "version": "9.0.246",
+      "metrics": {
+        "drivers": 431,
+        "fingerprints": 2874
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-07-15 04:34:50 +0000",
+      "version": "9.0.247",
+      "metrics": {
+        "drivers": 431,
+        "fingerprints": 2874
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-07-15 05:28:51 +0000",
+      "version": "9.0.248",
+      "metrics": {
+        "drivers": 431,
+        "fingerprints": 2874
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-07-15 05:39:44 +0000",
+      "version": "9.0.249",
+      "metrics": {
+        "drivers": 431,
+        "fingerprints": 2874
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-07-15 06:12:15 +0000",
+      "version": "9.0.250",
+      "metrics": {
+        "drivers": 431,
+        "fingerprints": 2874
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-07-15 07:00:38 +0000",
+      "version": "9.0.251",
+      "metrics": {
+        "drivers": 431,
+        "fingerprints": 2874
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-07-15 08:23:29 +0000",
+      "version": "9.0.252",
+      "metrics": {
+        "drivers": 431,
+        "fingerprints": 2874
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-07-15 08:34:09 +0000",
+      "version": "9.0.253",
+      "metrics": {
+        "drivers": 431,
+        "fingerprints": 2874
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-07-15 08:38:32 +0000",
+      "version": "9.0.254",
+      "metrics": {
+        "drivers": 431,
+        "fingerprints": 2874
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-07-15 08:47:03 +0000",
+      "version": "9.0.255",
+      "metrics": {
+        "drivers": 431,
+        "fingerprints": 2874
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-07-15 08:55:28 +0000",
+      "version": "9.0.256",
+      "metrics": {
+        "drivers": 431,
+        "fingerprints": 2874
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-07-15 09:04:22 +0000",
+      "version": "9.0.257",
+      "metrics": {
+        "drivers": 431,
+        "fingerprints": 2874
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-07-15 09:16:15 +0000",
+      "version": "9.0.258",
+      "metrics": {
+        "drivers": 431,
+        "fingerprints": 2874
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-07-15 09:58:07 +0000",
+      "version": "9.0.259",
+      "metrics": {
+        "drivers": 431,
+        "fingerprints": 2874
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-07-15 10:15:15 +0000",
+      "version": "9.0.260",
+      "metrics": {
+        "drivers": 431,
+        "fingerprints": 2874
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-07-15 12:34:56 +0000",
+      "version": "9.0.261",
+      "metrics": {
+        "drivers": 431,
+        "fingerprints": 2874
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-07-15 12:38:30 +0000",
+      "version": "9.0.262",
+      "metrics": {
+        "drivers": 431,
+        "fingerprints": 2874
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-07-15 18:24:35 +0000",
+      "version": "9.0.263",
+      "metrics": {
+        "drivers": 431,
+        "fingerprints": 2874
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-07-15 19:22:30 +0000",
+      "version": "9.0.264",
+      "metrics": {
+        "drivers": 431,
+        "fingerprints": 2874
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-07-15 19:29:36 +0000",
+      "version": "9.0.265",
+      "metrics": {
+        "drivers": 431,
+        "fingerprints": 2874
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-07-15 19:39:09 +0000",
+      "version": "9.0.266",
+      "metrics": {
+        "drivers": 431,
+        "fingerprints": 2874
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-07-15 20:00:29 +0000",
+      "version": "9.0.267",
+      "metrics": {
+        "drivers": 431,
+        "fingerprints": 2876
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-07-15 20:34:32 +0000",
+      "version": "9.0.268",
+      "metrics": {
+        "drivers": 431,
+        "fingerprints": 2876
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-07-15 20:39:38 +0000",
+      "version": "9.0.269",
+      "metrics": {
+        "drivers": 431,
+        "fingerprints": 2876
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-07-15 21:00:31 +0000",
+      "version": "9.0.270",
+      "metrics": {
+        "drivers": 431,
+        "fingerprints": 2876
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-07-15 21:54:21 +0000",
+      "version": "9.0.271",
+      "metrics": {
+        "drivers": 431,
+        "fingerprints": 2876
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-07-15 22:08:29 +0000",
+      "version": "9.0.272",
+      "metrics": {
+        "drivers": 431,
+        "fingerprints": 2876
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-07-15 22:26:46 +0000",
+      "version": "9.0.273",
+      "metrics": {
+        "drivers": 431,
+        "fingerprints": 2876
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-07-16 16:22:51 +0000",
+      "version": "9.0.274",
+      "metrics": {
+        "drivers": 431,
+        "fingerprints": 2888
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-07-16 16:57:36 +0000",
+      "version": "9.0.275",
+      "metrics": {
+        "drivers": 431,
+        "fingerprints": 2888
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-07-16 17:12:48 +0000",
+      "version": "9.0.276",
+      "metrics": {
+        "drivers": 431,
+        "fingerprints": 2888
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-07-16 17:49:12 +0000",
+      "version": "9.0.277",
+      "metrics": {
+        "drivers": 431,
+        "fingerprints": 2888
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-07-16 18:02:31 +0000",
+      "version": "9.0.278",
+      "metrics": {
+        "drivers": 431,
+        "fingerprints": 2888
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-07-16 18:45:31 +0000",
+      "version": "9.0.279",
+      "metrics": {
+        "drivers": 431,
+        "fingerprints": 2889
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-07-16 18:54:02 +0000",
+      "version": "9.0.280",
+      "metrics": {
+        "drivers": 431,
+        "fingerprints": 2889
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-07-16 18:57:58 +0000",
+      "version": "9.0.281",
+      "metrics": {
+        "drivers": 431,
+        "fingerprints": 2889
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-07-16 19:02:16 +0000",
+      "version": "9.0.282",
+      "metrics": {
+        "drivers": 431,
+        "fingerprints": 2889
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-07-16 19:13:03 +0000",
+      "version": "9.0.283",
+      "metrics": {
+        "drivers": 431,
+        "fingerprints": 2889
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-07-16 19:22:47 +0000",
+      "version": "9.0.284",
+      "metrics": {
+        "drivers": 431,
+        "fingerprints": 2889
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-07-16 20:09:39 +0000",
+      "version": "9.0.285",
+      "metrics": {
+        "drivers": 431,
+        "fingerprints": 2889
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-07-16 20:18:23 +0000",
+      "version": "9.0.286",
+      "metrics": {
+        "drivers": 431,
+        "fingerprints": 2889
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-07-16 21:09:26 +0000",
+      "version": "9.0.287",
+      "metrics": {
+        "drivers": 431,
+        "fingerprints": 2889
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-07-16 21:16:55 +0000",
+      "version": "9.0.288",
+      "metrics": {
+        "drivers": 431,
+        "fingerprints": 2889
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-07-16 21:24:05 +0000",
+      "version": "9.0.289",
+      "metrics": {
+        "drivers": 431,
+        "fingerprints": 2889
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-07-16 21:41:36 +0000",
+      "version": "9.0.290",
+      "metrics": {
+        "drivers": 431,
+        "fingerprints": 2889
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-07-16 22:06:01 +0000",
+      "version": "9.0.291",
+      "metrics": {
+        "drivers": 431,
+        "fingerprints": 2889
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-07-16 22:27:38 +0000",
+      "version": "9.0.292",
+      "metrics": {
+        "drivers": 431,
+        "fingerprints": 2889
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-07-16 23:21:38 +0000",
+      "version": "9.0.293",
+      "metrics": {
+        "drivers": 431,
+        "fingerprints": 2889
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-07-17 01:08:04 +0000",
+      "version": "9.0.294",
+      "metrics": {
+        "drivers": 431,
+        "fingerprints": 2908
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-07-17 01:34:26 +0000",
+      "version": "9.0.295",
+      "metrics": {
+        "drivers": 431,
+        "fingerprints": 2901
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-07-17 03:20:33 +0000",
+      "version": "9.0.296",
+      "metrics": {
+        "drivers": 431,
+        "fingerprints": 2901
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-07-17 03:38:42 +0000",
+      "version": "9.0.297",
+      "metrics": {
+        "drivers": 431,
+        "fingerprints": 2901
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-07-17 03:55:43 +0000",
+      "version": "9.0.298",
+      "metrics": {
+        "drivers": 431,
+        "fingerprints": 2902
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-07-17 06:40:18 +0000",
+      "version": "9.0.299",
+      "metrics": {
+        "drivers": 431,
+        "fingerprints": 2902
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-07-18 05:32:18 +0000",
+      "version": "9.0.300",
+      "metrics": {
+        "drivers": 431,
+        "fingerprints": 2903
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-07-18 05:40:20 +0000",
+      "version": "9.0.301",
+      "metrics": {
+        "drivers": 431,
+        "fingerprints": 2902
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-07-19 07:22:11 +0000",
+      "version": "9.0.302",
+      "metrics": {
+        "drivers": 431,
+        "fingerprints": 2908
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-07-19 07:30:11 +0000",
+      "version": "9.0.303",
+      "metrics": {
+        "drivers": 431,
+        "fingerprints": 2902
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-07-19 15:04:53 +0000",
+      "version": "9.0.304",
+      "metrics": {
+        "drivers": 431,
+        "fingerprints": 2902
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-07-19 15:29:36 +0000",
+      "version": "9.0.306",
+      "metrics": {
+        "drivers": 431,
+        "fingerprints": 2902
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-07-19 15:40:59 +0000",
+      "version": "9.0.307",
+      "metrics": {
+        "drivers": 431,
+        "fingerprints": 2902
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-07-19 15:48:49 +0000",
+      "version": "9.0.308",
+      "metrics": {
+        "drivers": 431,
+        "fingerprints": 2902
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-07-19 16:09:00 +0000",
+      "version": "9.0.309",
+      "metrics": {
+        "drivers": 431,
+        "fingerprints": 2902
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-07-19 21:36:51 +0000",
+      "version": "5.12.7",
+      "metrics": {
+        "drivers": 431,
+        "fingerprints": 2937
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-07-19 23:07:41 +0000",
+      "version": "9.0.312",
+      "metrics": {
+        "drivers": 431,
+        "fingerprints": 2888
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-07-20 04:59:44 +0200",
+      "version": "9.0.313",
+      "metrics": {
+        "drivers": null,
+        "fingerprints": null
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-07-20 03:28:59 +0000",
+      "version": "9.0.314",
+      "metrics": {
+        "drivers": 431,
+        "fingerprints": 2889
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-07-20 10:31:59 +0000",
+      "version": "9.0.315",
+      "metrics": {
+        "drivers": 431,
+        "fingerprints": 2889
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-07-20 13:51:05 +0200",
+      "version": "9.0.316",
+      "metrics": {
+        "drivers": null,
+        "fingerprints": null
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-07-20 11:58:02 +0000",
+      "version": "9.0.317",
+      "metrics": {
+        "drivers": 431,
+        "fingerprints": 2889
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-07-20 12:21:20 +0000",
+      "version": "9.0.318",
+      "metrics": {
+        "drivers": 431,
+        "fingerprints": 2889
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-07-20 15:04:51 +0200",
+      "version": "9.0.319",
+      "metrics": {
+        "drivers": null,
+        "fingerprints": null
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-07-20 13:26:00 +0000",
+      "version": "9.0.320",
+      "metrics": {
+        "drivers": 431,
+        "fingerprints": 2889
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-07-20 16:32:16 +0000",
+      "version": "9.0.321",
+      "metrics": {
+        "drivers": 431,
+        "fingerprints": 2889
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-07-20 16:58:09 +0000",
+      "version": "9.0.322",
+      "metrics": {
+        "drivers": 431,
+        "fingerprints": 2889
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-07-20 17:20:52 +0000",
+      "version": "9.0.323",
+      "metrics": {
+        "drivers": 431,
+        "fingerprints": 2889
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-07-20 17:39:04 +0000",
+      "version": "9.0.324",
+      "metrics": {
+        "drivers": 431,
+        "fingerprints": 2889
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-07-20 19:44:39 +0000",
+      "version": "9.0.325",
+      "metrics": {
+        "drivers": 431,
+        "fingerprints": 2889
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-07-21 00:26:00 +0200",
+      "version": "9.0.327",
+      "metrics": {
+        "drivers": null,
+        "fingerprints": null
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-07-20 22:35:48 +0000",
+      "version": "9.0.328",
+      "metrics": {
+        "drivers": 431,
+        "fingerprints": 2889
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-07-21 16:43:44 +0000",
+      "version": "9.0.329",
+      "metrics": {
+        "drivers": 431,
+        "fingerprints": 2889
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-07-21 23:46:00 +0000",
+      "version": "9.0.331",
+      "metrics": {
+        "drivers": 431,
+        "fingerprints": 2913
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-07-22 00:10:24 +0000",
+      "version": "9.0.332",
+      "metrics": {
+        "drivers": 431,
+        "fingerprints": 2902
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-07-22 00:59:53 +0000",
+      "version": "9.0.333",
+      "metrics": {
+        "drivers": 431,
+        "fingerprints": 2904
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-07-23 15:20:41 +0200",
+      "version": "10.0.0",
+      "metrics": {
+        "drivers": null,
+        "fingerprints": null
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-07-23 13:30:22 +0000",
+      "version": "9.0.334",
+      "metrics": {
+        "drivers": 431,
+        "fingerprints": 2904
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-07-23 16:42:40 +0000",
+      "version": "9.0.336",
+      "metrics": {
+        "drivers": 431,
+        "fingerprints": 2904
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-07-23 17:02:49 +0000",
+      "version": "5.12.18",
+      "metrics": {
+        "drivers": 431,
+        "fingerprints": 2971
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-07-23 18:27:53 +0000",
+      "version": "9.0.337",
+      "metrics": {
+        "drivers": 431,
+        "fingerprints": 2914
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-07-23 18:47:18 +0000",
+      "version": "5.12.20",
+      "metrics": {
+        "drivers": 431,
+        "fingerprints": 2931
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-07-23 19:28:32 +0000",
+      "version": "9.0.339",
+      "metrics": {
+        "drivers": 431,
+        "fingerprints": 2951
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-07-23 19:38:27 +0000",
+      "version": "5.12.21",
+      "metrics": {
+        "drivers": 431,
+        "fingerprints": 2932
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-07-23 20:58:24 +0000",
+      "version": "9.0.341",
+      "metrics": {
+        "drivers": 431,
+        "fingerprints": 2916
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-07-23 21:19:33 +0000",
+      "version": "5.12.22",
+      "metrics": {
+        "drivers": 431,
+        "fingerprints": 2932
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-07-23 21:47:18 +0000",
+      "version": "9.0.342",
+      "metrics": {
+        "drivers": 431,
+        "fingerprints": 2890
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-07-23 22:35:48 +0000",
+      "version": "9.0.343",
+      "metrics": {
+        "drivers": 431,
+        "fingerprints": 2890
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-07-23 22:58:31 +0000",
+      "version": "5.12.23",
+      "metrics": {
+        "drivers": 431,
+        "fingerprints": 2909
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-07-24 19:47:18 +0000",
+      "version": "9.0.344",
+      "metrics": {
+        "drivers": 431,
+        "fingerprints": 2891
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-07-24 21:01:54 +0000",
+      "version": "9.0.345",
+      "metrics": {
+        "drivers": 431,
+        "fingerprints": 2891
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-07-24 21:10:30 +0000",
+      "version": "9.0.346",
+      "metrics": {
+        "drivers": 431,
+        "fingerprints": 2891
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-07-25 00:46:22 +0000",
+      "version": "9.0.347",
+      "metrics": {
+        "drivers": 431,
+        "fingerprints": 2889
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-07-25 02:02:19 +0000",
+      "version": "9.0.348",
+      "metrics": {
+        "drivers": 431,
+        "fingerprints": 2891
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-07-29 00:13:12 +0000",
+      "version": "9.0.349",
+      "metrics": {
+        "drivers": 431,
+        "fingerprints": 2931
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-07-29 00:37:33 +0000",
+      "version": "9.0.350",
+      "metrics": {
+        "drivers": 431,
+        "fingerprints": 2931
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-07-29 00:55:14 +0000",
+      "version": "9.0.351",
+      "metrics": {
+        "drivers": 431,
+        "fingerprints": 2931
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-07-29 02:27:38 +0000",
+      "version": "9.0.352",
+      "metrics": {
+        "drivers": 431,
+        "fingerprints": 2937
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-07-29 03:11:51 +0000",
+      "version": "9.0.353",
+      "metrics": {
+        "drivers": 431,
+        "fingerprints": 2937
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-07-29 03:30:47 +0000",
+      "version": "9.0.355",
+      "metrics": {
+        "drivers": 431,
+        "fingerprints": 2933
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-07-29 03:47:28 +0000",
+      "version": "9.0.354",
+      "metrics": {
+        "drivers": 431,
+        "fingerprints": 2937
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-07-29 04:05:34 +0000",
+      "version": "9.0.356",
+      "metrics": {
+        "drivers": 431,
+        "fingerprints": 2933
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-07-29 12:50:51 +0000",
+      "version": "9.0.357",
+      "metrics": {
+        "drivers": 431,
+        "fingerprints": 2934
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-07-29 13:19:40 +0000",
+      "version": "9.0.358",
+      "metrics": {
+        "drivers": 431,
+        "fingerprints": 2933
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-07-29 13:55:07 +0000",
+      "version": "9.0.360",
+      "metrics": {
+        "drivers": 431,
+        "fingerprints": 2934
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-07-29 13:56:46 +0000",
+      "version": "9.0.359",
+      "metrics": {
+        "drivers": 431,
+        "fingerprints": 2938
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-07-29 14:07:47 +0000",
+      "version": "9.0.361",
+      "metrics": {
+        "drivers": 431,
+        "fingerprints": 2938
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-07-29 21:25:39 +0000",
+      "version": "9.0.362",
+      "metrics": {
+        "drivers": 431,
+        "fingerprints": 2938
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-07-29 23:08:27 +0000",
+      "version": "9.0.363",
+      "metrics": {
+        "drivers": 431,
+        "fingerprints": 2938
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-07-29 23:18:28 +0000",
+      "version": "9.0.365",
+      "metrics": {
+        "drivers": 431,
+        "fingerprints": 2938
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-07-30 00:05:11 +0000",
+      "version": "9.0.366",
+      "metrics": {
+        "drivers": 431,
+        "fingerprints": 2940
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-07-30 01:49:39 +0000",
+      "version": "9.0.370",
+      "metrics": {
+        "drivers": 431,
+        "fingerprints": 2940
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-07-30 05:15:53 +0200",
+      "version": "9.0.371",
+      "metrics": {
+        "drivers": 10,
+        "fingerprints": null
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-07-30 03:23:15 +0000",
+      "version": "9.0.372",
+      "metrics": {
+        "drivers": 431,
+        "fingerprints": 2943
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-07-30 04:05:08 +0000",
+      "version": "9.0.374",
+      "metrics": {
+        "drivers": 431,
+        "fingerprints": 3774
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-07-30 04:51:58 +0000",
+      "version": "9.0.376",
+      "metrics": {
+        "drivers": 431,
+        "fingerprints": 3774
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-07-30 04:59:53 +0000",
+      "version": "9.0.377",
+      "metrics": {
+        "drivers": 431,
+        "fingerprints": 3774
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-07-30 22:18:29 +0000",
+      "version": "9.0.378",
+      "metrics": {
+        "drivers": 431,
+        "fingerprints": 3774
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-07-30 22:41:23 +0000",
+      "version": "9.0.380",
+      "metrics": {
+        "drivers": 431,
+        "fingerprints": null
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-07-30 22:56:29 +0000",
+      "version": "9.0.381",
+      "metrics": {
+        "drivers": 431,
+        "fingerprints": 3774
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-07-30 23:15:43 +0000",
+      "version": "9.0.382",
+      "metrics": {
+        "drivers": 431,
+        "fingerprints": null
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-07-31 00:17:58 +0000",
+      "version": "9.0.384",
+      "metrics": {
+        "drivers": 431,
+        "fingerprints": 3774
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-07-31 01:05:28 +0000",
+      "version": "9.0.386",
+      "metrics": {
+        "drivers": 431,
+        "fingerprints": 3774
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-07-31 01:44:59 +0000",
+      "version": "9.0.388",
+      "metrics": {
+        "drivers": 431,
+        "fingerprints": 3775
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-07-31 02:09:52 +0000",
+      "version": "9.0.389",
+      "metrics": {
+        "drivers": 431,
+        "fingerprints": 3775
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-07-31 10:33:45 +0200",
+      "version": "4.4.1",
+      "metrics": {
+        "drivers": 6,
+        "fingerprints": null
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-08-03 19:32:58 +0000",
+      "version": "9.0.390",
+      "metrics": {
+        "drivers": 431,
+        "fingerprints": 3788
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-08-03 20:02:37 +0000",
+      "version": "9.0.391",
+      "metrics": {
+        "drivers": 431,
+        "fingerprints": 3788
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-08-03 20:28:05 +0000",
+      "version": "9.0.392",
+      "metrics": {
+        "drivers": 431,
+        "fingerprints": 3788
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-08-03 20:47:26 +0000",
+      "version": "9.0.393",
+      "metrics": {
+        "drivers": 431,
+        "fingerprints": 3788
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-08-03 21:04:25 +0000",
+      "version": "9.0.394",
+      "metrics": {
+        "drivers": 431,
+        "fingerprints": 3788
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-08-03 22:07:16 +0000",
+      "version": "9.0.395",
+      "metrics": {
+        "drivers": 431,
+        "fingerprints": 3788
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-08-03 22:23:24 +0000",
+      "version": "9.0.396",
+      "metrics": {
+        "drivers": 431,
+        "fingerprints": 3788
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-08-03 22:34:26 +0000",
+      "version": "9.0.397",
+      "metrics": {
+        "drivers": 431,
+        "fingerprints": 3788
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-08-04 00:50:49 +0000",
+      "version": "9.0.398",
+      "metrics": {
+        "drivers": 431,
+        "fingerprints": 3788
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-08-04 02:08:22 +0000",
+      "version": "9.0.399",
+      "metrics": {
+        "drivers": 431,
+        "fingerprints": 3788
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-08-04 02:40:00 +0000",
+      "version": "9.0.400",
+      "metrics": {
+        "drivers": 431,
+        "fingerprints": 3788
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-08-04 03:16:00 +0000",
+      "version": "9.0.401",
+      "metrics": {
+        "drivers": 431,
+        "fingerprints": 3788
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-08-04 03:26:01 +0000",
+      "version": "9.0.402",
+      "metrics": {
+        "drivers": 431,
+        "fingerprints": 3788
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-08-04 04:15:12 +0000",
+      "version": "9.0.403",
+      "metrics": {
+        "drivers": 431,
+        "fingerprints": 3788
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-08-04 06:31:08 +0000",
+      "version": "9.0.404",
+      "metrics": {
+        "drivers": 431,
+        "fingerprints": 3788
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-08-04 06:48:54 +0000",
+      "version": "9.0.405",
+      "metrics": {
+        "drivers": 431,
+        "fingerprints": 3788
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-08-04 07:34:28 +0000",
+      "version": "9.0.406",
+      "metrics": {
+        "drivers": 431,
+        "fingerprints": 3788
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-08-04 07:49:18 +0000",
+      "version": "9.0.407",
+      "metrics": {
+        "drivers": 431,
+        "fingerprints": 3788
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-08-04 08:17:39 +0000",
+      "version": "9.0.408",
+      "metrics": {
+        "drivers": 431,
+        "fingerprints": 3788
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-08-04 08:43:09 +0000",
+      "version": "9.0.409",
+      "metrics": {
+        "drivers": 431,
+        "fingerprints": 3788
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-08-04 09:16:37 +0000",
+      "version": "9.0.410",
+      "metrics": {
+        "drivers": 431,
+        "fingerprints": 3788
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-08-04 09:58:39 +0000",
+      "version": "9.0.411",
+      "metrics": {
+        "drivers": 431,
+        "fingerprints": 3788
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-08-04 10:35:01 +0000",
+      "version": "9.0.412",
+      "metrics": {
+        "drivers": 431,
+        "fingerprints": 3788
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-08-04 10:43:04 +0000",
+      "version": "9.0.413",
+      "metrics": {
+        "drivers": 431,
+        "fingerprints": 3788
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-08-04 13:31:32 +0000",
+      "version": "9.0.414",
+      "metrics": {
+        "drivers": 431,
+        "fingerprints": 3788
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-08-04 13:39:23 +0000",
+      "version": "9.0.415",
+      "metrics": {
+        "drivers": 431,
+        "fingerprints": 3788
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-08-04 15:25:15 +0000",
+      "version": "9.0.416",
+      "metrics": {
+        "drivers": 430,
+        "fingerprints": 3788
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-08-04 16:38:46 +0000",
+      "version": "9.0.417",
+      "metrics": {
+        "drivers": 430,
+        "fingerprints": 3788
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-08-04 16:46:50 +0000",
+      "version": "9.0.418",
+      "metrics": {
+        "drivers": 430,
+        "fingerprints": 3788
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-08-04 17:12:15 +0000",
+      "version": "9.0.419",
+      "metrics": {
+        "drivers": 430,
+        "fingerprints": 3788
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-08-04 17:58:42 +0000",
+      "version": "9.0.420",
+      "metrics": {
+        "drivers": 430,
+        "fingerprints": 3788
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-08-04 18:07:33 +0000",
+      "version": "9.0.421",
+      "metrics": {
+        "drivers": 430,
+        "fingerprints": 3788
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-08-04 18:26:59 +0000",
+      "version": "9.0.422",
+      "metrics": {
+        "drivers": 430,
+        "fingerprints": 3788
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-08-04 19:04:06 +0000",
+      "version": "9.0.423",
+      "metrics": {
+        "drivers": 430,
+        "fingerprints": 3788
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-08-04 19:16:22 +0000",
+      "version": "9.0.424",
+      "metrics": {
+        "drivers": 430,
+        "fingerprints": 3788
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-08-04 19:29:17 +0000",
+      "version": "9.0.425",
+      "metrics": {
+        "drivers": 430,
+        "fingerprints": 3788
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-08-05 14:26:28 +0000",
+      "version": "9.0.426",
+      "metrics": {
+        "drivers": 430,
+        "fingerprints": 3788
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-08-05 18:23:49 +0000",
+      "version": "9.0.427",
+      "metrics": {
+        "drivers": 430,
+        "fingerprints": 3789
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-08-05 18:47:04 +0000",
+      "version": "9.0.428",
+      "metrics": {
+        "drivers": 430,
+        "fingerprints": 3789
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-08-05 19:05:47 +0000",
+      "version": "9.0.429",
+      "metrics": {
+        "drivers": 430,
+        "fingerprints": 3789
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-08-05 19:11:06 +0000",
+      "version": "9.0.430",
+      "metrics": {
+        "drivers": 430,
+        "fingerprints": 3789
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-08-05 19:20:17 +0000",
+      "version": "9.0.431",
+      "metrics": {
+        "drivers": 430,
+        "fingerprints": 3789
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-08-05 19:34:27 +0000",
+      "version": "9.0.432",
+      "metrics": {
+        "drivers": 430,
+        "fingerprints": 3789
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-08-05 20:14:26 +0000",
+      "version": "9.0.433",
+      "metrics": {
+        "drivers": 430,
+        "fingerprints": 3791
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-08-05 20:32:31 +0000",
+      "version": "9.0.434",
+      "metrics": {
+        "drivers": 430,
+        "fingerprints": 3791
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-08-10 04:38:03 +0000",
+      "version": "9.0.435",
+      "metrics": {
+        "drivers": 430,
+        "fingerprints": 3791
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-08-10 04:58:18 +0000",
+      "version": "9.0.436",
+      "metrics": {
+        "drivers": 430,
+        "fingerprints": 3791
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-08-10 05:24:22 +0000",
+      "version": "9.0.438",
+      "metrics": {
+        "drivers": 430,
+        "fingerprints": 3791
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-08-10 05:47:04 +0000",
+      "version": "9.0.439",
+      "metrics": {
+        "drivers": 430,
+        "fingerprints": 3791
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-08-10 08:51:09 +0000",
+      "version": "9.0.440",
+      "metrics": {
+        "drivers": 430,
+        "fingerprints": 3791
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-08-10 09:16:58 +0000",
+      "version": "9.0.441",
+      "metrics": {
+        "drivers": 430,
+        "fingerprints": 3791
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-08-10 09:38:54 +0000",
+      "version": "9.0.443",
+      "metrics": {
+        "drivers": 430,
+        "fingerprints": 3791
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-08-10 16:17:54 +0000",
+      "version": "9.0.444",
+      "metrics": {
+        "drivers": 430,
+        "fingerprints": 3794
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-08-10 22:06:29 +0000",
+      "version": "9.0.445",
+      "metrics": {
+        "drivers": 430,
+        "fingerprints": 3795
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-08-10 22:39:06 +0000",
+      "version": "9.0.446",
+      "metrics": {
+        "drivers": 430,
+        "fingerprints": 3795
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-08-10 23:13:56 +0000",
+      "version": "9.0.447",
+      "metrics": {
+        "drivers": 430,
+        "fingerprints": 3816
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-08-10 23:24:18 +0000",
+      "version": "9.0.448",
+      "metrics": {
+        "drivers": 430,
+        "fingerprints": 3816
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-08-11 00:05:34 +0000",
+      "version": "9.0.450",
+      "metrics": {
+        "drivers": 430,
+        "fingerprints": 3816
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-08-11 00:44:56 +0000",
+      "version": "9.0.452",
+      "metrics": {
+        "drivers": 430,
+        "fingerprints": 3816
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-08-11 00:56:26 +0000",
+      "version": "9.0.454",
+      "metrics": {
+        "drivers": 430,
+        "fingerprints": 3821
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-08-11 01:33:11 +0000",
+      "version": "9.0.456",
+      "metrics": {
+        "drivers": 430,
+        "fingerprints": 3821
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-08-11 01:36:55 +0000",
+      "version": "9.0.457",
+      "metrics": {
+        "drivers": 430,
+        "fingerprints": 3821
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-08-11 01:47:04 +0000",
+      "version": "9.0.459",
+      "metrics": {
+        "drivers": 430,
+        "fingerprints": 3821
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-08-11 01:59:39 +0000",
+      "version": "9.0.461",
+      "metrics": {
+        "drivers": 430,
+        "fingerprints": 3821
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-08-11 02:03:55 +0000",
+      "version": "9.0.463",
+      "metrics": {
+        "drivers": 430,
+        "fingerprints": 3821
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-08-11 02:26:04 +0000",
+      "version": "9.0.465",
+      "metrics": {
+        "drivers": 430,
+        "fingerprints": 3823
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-08-11 02:34:20 +0000",
+      "version": "9.0.467",
+      "metrics": {
+        "drivers": 430,
+        "fingerprints": 3824
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-08-11 02:40:21 +0000",
+      "version": "9.0.469",
+      "metrics": {
+        "drivers": 430,
+        "fingerprints": 3824
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-08-11 03:42:18 +0000",
+      "version": "9.0.471",
+      "metrics": {
+        "drivers": 430,
+        "fingerprints": 3824
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-08-11 03:46:23 +0000",
+      "version": "9.0.472",
+      "metrics": {
+        "drivers": 430,
+        "fingerprints": 3824
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-08-11 03:56:28 +0000",
+      "version": "9.0.473",
+      "metrics": {
+        "drivers": 430,
+        "fingerprints": 3824
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-08-11 04:09:49 +0000",
+      "version": "9.0.475",
+      "metrics": {
+        "drivers": 430,
+        "fingerprints": 3832
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-08-11 04:17:16 +0000",
+      "version": "9.0.476",
+      "metrics": {
+        "drivers": 430,
+        "fingerprints": 3832
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-08-11 04:27:34 +0000",
+      "version": "9.0.477",
+      "metrics": {
+        "drivers": 430,
+        "fingerprints": 3832
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-08-11 04:51:55 +0000",
+      "version": "9.0.479",
+      "metrics": {
+        "drivers": 430,
+        "fingerprints": 3830
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-08-11 05:48:27 +0000",
+      "version": "9.0.480",
+      "metrics": {
+        "drivers": 430,
+        "fingerprints": 3832
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-08-11 13:18:20 +0000",
+      "version": "9.0.482",
+      "metrics": {
+        "drivers": 430,
+        "fingerprints": 3830
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-08-11 13:32:41 +0000",
+      "version": "9.0.484",
+      "metrics": {
+        "drivers": 430,
+        "fingerprints": 3832
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-08-12 13:26:43 +0200",
+      "version": "9.0.486",
+      "metrics": {
+        "drivers": null,
+        "fingerprints": null
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-08-12 11:28:31 +0000",
+      "version": "9.0.485",
+      "metrics": {
+        "drivers": 430,
+        "fingerprints": 3832
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-08-12 11:36:10 +0000",
+      "version": "9.0.487",
+      "metrics": {
+        "drivers": 430,
+        "fingerprints": 3832
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-08-12 11:45:32 +0000",
+      "version": "9.0.488",
+      "metrics": {
+        "drivers": 430,
+        "fingerprints": 3832
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-08-12 11:53:26 +0000",
+      "version": "9.0.489",
+      "metrics": {
+        "drivers": 430,
+        "fingerprints": 3832
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-08-12 12:03:31 +0000",
+      "version": "9.0.491",
+      "metrics": {
+        "drivers": 430,
+        "fingerprints": 3832
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-08-14 08:39:20 +0200",
+      "version": "9.0.492",
+      "metrics": {
+        "drivers": null,
+        "fingerprints": null
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-08-14 06:48:11 +0000",
+      "version": "9.0.493",
+      "metrics": {
+        "drivers": 430,
+        "fingerprints": 3832
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-08-14 09:22:00 +0000",
+      "version": "9.0.495",
+      "metrics": {
+        "drivers": 430,
+        "fingerprints": 3832
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-08-14 10:07:02 +0000",
+      "version": "9.0.496",
+      "metrics": {
+        "drivers": 430,
+        "fingerprints": 3829
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-08-14 10:25:34 +0000",
+      "version": "9.0.498",
+      "metrics": {
+        "drivers": 430,
+        "fingerprints": 3832
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-08-14 10:37:25 +0000",
+      "version": "9.0.499",
+      "metrics": {
+        "drivers": 430,
+        "fingerprints": 3832
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-08-14 10:51:14 +0000",
+      "version": "9.0.500",
+      "metrics": {
+        "drivers": 430,
+        "fingerprints": 3832
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-08-14 10:54:40 +0000",
+      "version": "9.0.501",
+      "metrics": {
+        "drivers": 430,
+        "fingerprints": 3832
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-08-14 11:05:28 +0000",
+      "version": "9.0.502",
+      "metrics": {
+        "drivers": 430,
+        "fingerprints": 3832
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-08-14 11:09:35 +0000",
+      "version": "9.0.503",
+      "metrics": {
+        "drivers": 431,
+        "fingerprints": 3832
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-08-14 13:20:57 +0200",
+      "version": "9.0.504",
+      "metrics": {
+        "drivers": null,
+        "fingerprints": null
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-08-14 11:37:53 +0000",
+      "version": "9.0.505",
+      "metrics": {
+        "drivers": 431,
+        "fingerprints": 3835
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-08-15 08:47:45 +0000",
+      "version": "9.0.506",
+      "metrics": {
+        "drivers": 431,
+        "fingerprints": 3839
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-08-15 11:38:21 +0000",
+      "version": "9.0.508",
+      "metrics": {
+        "drivers": 431,
+        "fingerprints": 3839
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-08-15 12:54:48 +0000",
+      "version": "9.0.509",
+      "metrics": {
+        "drivers": 431,
+        "fingerprints": 3839
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-08-15 12:59:13 +0000",
+      "version": "9.0.510",
+      "metrics": {
+        "drivers": 431,
+        "fingerprints": 3839
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-08-15 13:23:20 +0000",
+      "version": "9.0.511",
+      "metrics": {
+        "drivers": 431,
+        "fingerprints": 3839
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-08-15 13:35:04 +0000",
+      "version": "9.0.512",
+      "metrics": {
+        "drivers": 431,
+        "fingerprints": 3839
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-08-15 14:01:26 +0000",
+      "version": "9.0.513",
+      "metrics": {
+        "drivers": 431,
+        "fingerprints": 3839
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-08-15 14:16:57 +0000",
+      "version": "9.0.514",
+      "metrics": {
+        "drivers": 431,
+        "fingerprints": 3839
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-08-15 15:16:31 +0000",
+      "version": "9.0.516",
+      "metrics": {
+        "drivers": 431,
+        "fingerprints": 3839
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-08-15 15:37:22 +0000",
+      "version": "9.0.517",
+      "metrics": {
+        "drivers": 431,
+        "fingerprints": 3839
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-08-15 16:02:35 +0000",
+      "version": "9.0.518",
+      "metrics": {
+        "drivers": 431,
+        "fingerprints": 3838
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-08-15 16:30:38 +0000",
+      "version": "9.0.519",
+      "metrics": {
+        "drivers": 431,
+        "fingerprints": 3838
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-08-15 16:40:31 +0000",
+      "version": "9.0.520",
+      "metrics": {
+        "drivers": 431,
+        "fingerprints": 3838
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-08-15 17:02:15 +0000",
+      "version": "9.0.521",
+      "metrics": {
+        "drivers": 431,
+        "fingerprints": 3838
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-08-15 17:32:42 +0000",
+      "version": "9.0.522",
+      "metrics": {
+        "drivers": 431,
+        "fingerprints": 3838
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-08-15 18:30:41 +0000",
+      "version": "9.0.523",
+      "metrics": {
+        "drivers": 431,
+        "fingerprints": 3838
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-08-15 18:55:17 +0000",
+      "version": "9.0.524",
+      "metrics": {
+        "drivers": 431,
+        "fingerprints": 3838
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-08-15 19:13:33 +0000",
+      "version": "9.0.525",
+      "metrics": {
+        "drivers": 431,
+        "fingerprints": 3838
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-08-15 19:19:29 +0000",
+      "version": "9.0.526",
+      "metrics": {
+        "drivers": 431,
+        "fingerprints": 3838
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-08-15 20:36:06 +0000",
+      "version": "9.0.527",
+      "metrics": {
+        "drivers": 431,
+        "fingerprints": 3838
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-08-15 21:12:48 +0000",
+      "version": "9.0.529",
+      "metrics": {
+        "drivers": 431,
+        "fingerprints": 3838
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-08-15 21:15:34 +0000",
+      "version": "9.0.528",
+      "metrics": {
+        "drivers": 431,
+        "fingerprints": 3838
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-08-15 21:32:19 +0000",
+      "version": "9.0.530",
+      "metrics": {
+        "drivers": 431,
+        "fingerprints": 3838
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-08-15 22:22:38 +0000",
+      "version": "9.0.531",
+      "metrics": {
+        "drivers": 431,
+        "fingerprints": 3838
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-08-15 23:11:52 +0000",
+      "version": "9.0.532",
+      "metrics": {
+        "drivers": 431,
+        "fingerprints": 3838
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-08-15 23:34:47 +0000",
+      "version": "9.0.533",
+      "metrics": {
+        "drivers": 431,
+        "fingerprints": 3838
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-08-16 08:25:22 +0000",
+      "version": "9.0.534",
+      "metrics": {
+        "drivers": 431,
+        "fingerprints": 3838
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-08-16 09:48:01 +0000",
+      "version": "9.0.535",
+      "metrics": {
+        "drivers": 431,
+        "fingerprints": 3835
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-08-16 09:58:46 +0000",
+      "version": "9.0.536",
+      "metrics": {
+        "drivers": 431,
+        "fingerprints": 3835
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-08-16 10:10:31 +0000",
+      "version": "9.0.537",
+      "metrics": {
+        "drivers": 431,
+        "fingerprints": 3835
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-08-16 10:55:18 +0000",
+      "version": "9.0.538",
+      "metrics": {
+        "drivers": 431,
+        "fingerprints": 3835
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-08-16 11:05:35 +0000",
+      "version": "9.0.539",
+      "metrics": {
+        "drivers": 431,
+        "fingerprints": 3835
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-08-16 11:13:02 +0000",
+      "version": "9.0.540",
+      "metrics": {
+        "drivers": 431,
+        "fingerprints": 3835
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-08-16 11:36:12 +0000",
+      "version": "9.0.541",
+      "metrics": {
+        "drivers": 431,
+        "fingerprints": 3835
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-08-16 11:51:42 +0000",
+      "version": "9.0.542",
+      "metrics": {
+        "drivers": 431,
+        "fingerprints": 3835
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-08-16 12:15:59 +0000",
+      "version": "9.0.543",
+      "metrics": {
+        "drivers": 431,
+        "fingerprints": 3835
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-08-16 12:35:26 +0000",
+      "version": "9.0.544",
+      "metrics": {
+        "drivers": 431,
+        "fingerprints": 3835
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-08-16 12:49:38 +0000",
+      "version": "9.0.545",
+      "metrics": {
+        "drivers": 431,
+        "fingerprints": 3835
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-08-16 13:09:56 +0000",
+      "version": "9.0.546",
+      "metrics": {
+        "drivers": 431,
+        "fingerprints": 3834
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-08-16 13:19:24 +0000",
+      "version": "9.0.547",
+      "metrics": {
+        "drivers": 431,
+        "fingerprints": 3835
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-08-16 14:21:32 +0000",
+      "version": "9.0.548",
+      "metrics": {
+        "drivers": 431,
+        "fingerprints": 3834
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-08-16 14:31:10 +0000",
+      "version": "9.0.549",
+      "metrics": {
+        "drivers": 431,
+        "fingerprints": 3835
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-08-16 14:43:21 +0000",
+      "version": "9.0.550",
+      "metrics": {
+        "drivers": 431,
+        "fingerprints": 3835
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-08-16 14:58:11 +0000",
+      "version": "9.0.551",
+      "metrics": {
+        "drivers": 431,
+        "fingerprints": 3835
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-08-16 15:06:10 +0000",
+      "version": "9.0.552",
+      "metrics": {
+        "drivers": 431,
+        "fingerprints": 3835
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-08-16 15:28:34 +0000",
+      "version": "9.0.553",
+      "metrics": {
+        "drivers": 431,
+        "fingerprints": 3835
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-08-16 15:37:07 +0000",
+      "version": "9.0.554",
+      "metrics": {
+        "drivers": 431,
+        "fingerprints": 3835
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-08-16 16:12:35 +0000",
+      "version": "9.0.555",
+      "metrics": {
+        "drivers": 431,
+        "fingerprints": 3835
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-08-16 16:56:42 +0000",
+      "version": "9.0.556",
+      "metrics": {
+        "drivers": 431,
+        "fingerprints": 3835
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-08-16 17:16:14 +0000",
+      "version": "9.0.557",
+      "metrics": {
+        "drivers": 431,
+        "fingerprints": 3835
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-08-16 17:34:32 +0000",
+      "version": "9.0.558",
+      "metrics": {
+        "drivers": 431,
+        "fingerprints": 3835
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-08-16 17:53:48 +0000",
+      "version": "9.0.559",
+      "metrics": {
+        "drivers": 431,
+        "fingerprints": 3835
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-08-16 18:47:06 +0000",
+      "version": "9.0.560",
+      "metrics": {
+        "drivers": 431,
+        "fingerprints": 3835
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-08-16 18:55:36 +0000",
+      "version": "9.0.561",
+      "metrics": {
+        "drivers": 431,
+        "fingerprints": 3835
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-08-16 19:07:51 +0000",
+      "version": "9.0.562",
+      "metrics": {
+        "drivers": 431,
+        "fingerprints": 3835
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-08-16 19:35:18 +0000",
+      "version": "9.0.563",
+      "metrics": {
+        "drivers": 431,
+        "fingerprints": 3835
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-08-16 20:05:45 +0000",
+      "version": "9.0.564",
+      "metrics": {
+        "drivers": 431,
+        "fingerprints": 3835
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-08-16 21:06:48 +0000",
+      "version": "9.0.565",
+      "metrics": {
+        "drivers": 431,
+        "fingerprints": 3835
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-08-16 21:38:26 +0000",
+      "version": "9.0.566",
+      "metrics": {
+        "drivers": 431,
+        "fingerprints": 3835
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-08-16 21:57:32 +0000",
+      "version": "9.0.567",
+      "metrics": {
+        "drivers": 431,
+        "fingerprints": 3835
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-08-16 22:20:40 +0000",
+      "version": "9.0.568",
+      "metrics": {
+        "drivers": 431,
+        "fingerprints": 3835
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-08-16 22:38:46 +0000",
+      "version": "9.0.569",
+      "metrics": {
+        "drivers": 431,
+        "fingerprints": 3835
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-08-16 22:51:16 +0000",
+      "version": "9.0.570",
+      "metrics": {
+        "drivers": 431,
+        "fingerprints": 3835
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-08-16 23:30:42 +0000",
+      "version": "9.0.571",
+      "metrics": {
+        "drivers": 431,
+        "fingerprints": 3835
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-08-16 23:47:28 +0000",
+      "version": "9.0.572",
+      "metrics": {
+        "drivers": 431,
+        "fingerprints": 3835
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-08-17 12:55:28 +0000",
+      "version": "9.0.573",
+      "metrics": {
+        "drivers": 431,
+        "fingerprints": 3835
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-08-17 16:42:49 +0000",
+      "version": "9.0.584",
+      "metrics": {
+        "drivers": 431,
+        "fingerprints": 3837
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-08-17 22:34:13 +0000",
+      "version": "9.0.585",
+      "metrics": {
+        "drivers": 431,
+        "fingerprints": 3838
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-08-17 23:01:49 +0000",
+      "version": "9.0.586",
+      "metrics": {
+        "drivers": 431,
+        "fingerprints": 3838
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-08-18 00:00:32 +0000",
+      "version": "9.0.587",
+      "metrics": {
+        "drivers": 431,
+        "fingerprints": 3838
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-08-18 05:09:05 +0000",
+      "version": "9.0.588",
+      "metrics": {
+        "drivers": 431,
+        "fingerprints": 3838
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-08-18 05:44:58 +0000",
+      "version": "9.0.589",
+      "metrics": {
+        "drivers": 431,
+        "fingerprints": 3838
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-08-18 15:22:17 +0000",
+      "version": "9.0.590",
+      "metrics": {
+        "drivers": 431,
+        "fingerprints": 3838
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-08-18 15:51:53 +0000",
+      "version": "9.0.591",
+      "metrics": {
+        "drivers": 431,
+        "fingerprints": 3838
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-08-18 16:21:47 +0000",
+      "version": "9.0.592",
+      "metrics": {
+        "drivers": 431,
+        "fingerprints": 3838
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-08-18 16:52:44 +0000",
+      "version": "9.0.593",
+      "metrics": {
+        "drivers": 431,
+        "fingerprints": 3838
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-08-18 17:24:48 +0000",
+      "version": "9.0.594",
+      "metrics": {
+        "drivers": 431,
+        "fingerprints": 3838
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-08-18 23:02:58 +0000",
+      "version": "9.0.595",
+      "metrics": {
+        "drivers": 431,
+        "fingerprints": 3838
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-08-19 01:29:45 +0000",
+      "version": "9.0.596",
+      "metrics": {
+        "drivers": 431,
+        "fingerprints": 3838
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-08-19 08:17:42 +0000",
+      "version": "9.0.597",
+      "metrics": {
+        "drivers": 431,
+        "fingerprints": 3838
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-08-19 09:01:00 +0000",
+      "version": "9.0.598",
+      "metrics": {
+        "drivers": 431,
+        "fingerprints": 3838
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-08-19 09:17:25 +0000",
+      "version": "9.0.599",
+      "metrics": {
+        "drivers": 431,
+        "fingerprints": 3838
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-08-19 09:30:23 +0000",
+      "version": "9.0.600",
+      "metrics": {
+        "drivers": 431,
+        "fingerprints": 3838
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-08-19 11:09:32 +0000",
+      "version": "9.0.601",
+      "metrics": {
+        "drivers": 431,
+        "fingerprints": 3838
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-08-19 11:27:44 +0000",
+      "version": "9.0.602",
+      "metrics": {
+        "drivers": 431,
+        "fingerprints": 3838
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-08-19 11:47:45 +0000",
+      "version": "9.0.603",
+      "metrics": {
+        "drivers": 431,
+        "fingerprints": 3838
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-08-19 12:10:00 +0000",
+      "version": "9.0.604",
+      "metrics": {
+        "drivers": 431,
+        "fingerprints": 3838
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-08-19 15:23:30 +0000",
+      "version": "9.0.605",
+      "metrics": {
+        "drivers": 431,
+        "fingerprints": 3838
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-08-19 16:57:40 +0000",
+      "version": "9.0.606",
+      "metrics": {
+        "drivers": 431,
+        "fingerprints": 3838
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-08-19 17:15:27 +0000",
+      "version": "9.0.607",
+      "metrics": {
+        "drivers": 431,
+        "fingerprints": 3838
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-08-19 17:34:32 +0000",
+      "version": "9.0.608",
+      "metrics": {
+        "drivers": 431,
+        "fingerprints": 3838
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-08-19 18:06:49 +0000",
+      "version": "9.0.609",
+      "metrics": {
+        "drivers": 431,
+        "fingerprints": 3838
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-08-19 18:35:34 +0000",
+      "version": "9.0.610",
+      "metrics": {
+        "drivers": 431,
+        "fingerprints": 3838
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-08-20 16:01:33 +0000",
+      "version": "9.0.611",
+      "metrics": {
+        "drivers": 431,
+        "fingerprints": 3838
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-08-20 16:14:57 +0000",
+      "version": "9.0.612",
+      "metrics": {
+        "drivers": 431,
+        "fingerprints": 3838
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-08-20 16:28:21 +0000",
+      "version": "9.0.613",
+      "metrics": {
+        "drivers": 431,
+        "fingerprints": 3838
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-08-20 16:42:35 +0000",
+      "version": "9.0.614",
+      "metrics": {
+        "drivers": 431,
+        "fingerprints": 3838
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-08-20 18:52:33 +0000",
+      "version": "9.0.615",
+      "metrics": {
+        "drivers": 431,
+        "fingerprints": 3838
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-08-20 19:03:23 +0000",
+      "version": "9.0.616",
+      "metrics": {
+        "drivers": 431,
+        "fingerprints": 3837
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-08-20 19:14:22 +0000",
+      "version": "9.0.617",
+      "metrics": {
+        "drivers": 431,
+        "fingerprints": 3838
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-08-21 19:57:34 +0000",
+      "version": "9.0.618",
+      "metrics": {
+        "drivers": 431,
+        "fingerprints": 3838
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-08-21 20:09:33 +0000",
+      "version": "9.0.619",
+      "metrics": {
+        "drivers": 431,
+        "fingerprints": 3838
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-08-21 20:59:28 +0000",
+      "version": "9.0.620",
+      "metrics": {
+        "drivers": 431,
+        "fingerprints": 3838
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-08-21 21:14:50 +0000",
+      "version": "9.0.621",
+      "metrics": {
+        "drivers": 431,
+        "fingerprints": 3838
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-08-21 22:29:56 +0000",
+      "version": "9.0.622",
+      "metrics": {
+        "drivers": 431,
+        "fingerprints": 3838
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-08-22 01:24:52 +0000",
+      "version": "9.0.623",
+      "metrics": {
+        "drivers": 431,
+        "fingerprints": 3838
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-08-22 01:31:49 +0000",
+      "version": "9.0.624",
+      "metrics": {
+        "drivers": 431,
+        "fingerprints": 3838
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-08-22 01:56:59 +0000",
+      "version": "9.0.625",
+      "metrics": {
+        "drivers": 431,
+        "fingerprints": 3838
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-08-22 02:17:23 +0000",
+      "version": "9.0.626",
+      "metrics": {
+        "drivers": 431,
+        "fingerprints": 3838
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-08-23 13:20:30 +0000",
+      "version": "9.0.628",
+      "metrics": {
+        "drivers": 431,
+        "fingerprints": 3839
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-08-23 13:53:14 +0000",
+      "version": "9.0.629",
+      "metrics": {
+        "drivers": 431,
+        "fingerprints": 3838
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-08-23 14:46:07 +0000",
+      "version": "9.0.630",
+      "metrics": {
+        "drivers": 431,
+        "fingerprints": 3838
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-08-23 15:00:50 +0000",
+      "version": "9.0.631",
+      "metrics": {
+        "drivers": 431,
+        "fingerprints": 3838
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-08-23 17:04:40 +0000",
+      "version": "9.0.632",
+      "metrics": {
+        "drivers": 431,
+        "fingerprints": 3838
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-08-23 22:06:58 +0000",
+      "version": "9.0.633",
+      "metrics": {
+        "drivers": 431,
+        "fingerprints": 3838
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-08-23 23:17:41 +0000",
+      "version": "9.0.634",
+      "metrics": {
+        "drivers": 431,
+        "fingerprints": 3838
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-08-24 01:46:58 +0000",
+      "version": "9.0.635",
+      "metrics": {
+        "drivers": 431,
+        "fingerprints": 3840
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-08-24 02:27:11 +0000",
+      "version": "9.0.636",
+      "metrics": {
+        "drivers": 431,
+        "fingerprints": 3839
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-08-24 10:06:14 +0000",
+      "version": "9.0.637",
+      "metrics": {
+        "drivers": 431,
+        "fingerprints": 3840
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-08-24 14:01:15 +0000",
+      "version": "9.0.638",
+      "metrics": {
+        "drivers": 431,
+        "fingerprints": 3840
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-08-24 14:28:00 +0000",
+      "version": "9.0.639",
+      "metrics": {
+        "drivers": 431,
+        "fingerprints": 3847
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-08-24 18:41:01 +0000",
+      "version": "9.0.640",
+      "metrics": {
+        "drivers": 431,
+        "fingerprints": 3847
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-08-24 19:02:32 +0000",
+      "version": "9.0.641",
+      "metrics": {
+        "drivers": 431,
+        "fingerprints": 3847
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-08-24 21:00:39 +0000",
+      "version": "9.0.642",
+      "metrics": {
+        "drivers": 431,
+        "fingerprints": 3847
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-08-24 21:20:59 +0000",
+      "version": "9.0.643",
+      "metrics": {
+        "drivers": 431,
+        "fingerprints": 3847
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-08-25 01:41:40 +0000",
+      "version": "9.0.645",
+      "metrics": {
+        "drivers": 431,
+        "fingerprints": 3847
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-08-25 01:59:44 +0000",
+      "version": "9.0.646",
+      "metrics": {
+        "drivers": 431,
+        "fingerprints": 3847
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-08-25 03:20:13 +0000",
+      "version": "9.0.647",
+      "metrics": {
+        "drivers": 431,
+        "fingerprints": 3848
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-08-25 20:13:15 +0000",
+      "version": "9.0.648",
+      "metrics": {
+        "drivers": 431,
+        "fingerprints": 3848
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-08-25 23:04:40 +0000",
+      "version": "9.0.649",
+      "metrics": {
+        "drivers": 431,
+        "fingerprints": 3848
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-08-25 23:25:58 +0000",
+      "version": "9.0.650",
+      "metrics": {
+        "drivers": 431,
+        "fingerprints": 3848
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-08-25 23:41:34 +0000",
+      "version": "9.0.651",
+      "metrics": {
+        "drivers": 431,
+        "fingerprints": 3848
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-08-26 00:02:44 +0000",
+      "version": "9.0.652",
+      "metrics": {
+        "drivers": 431,
+        "fingerprints": 3848
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-08-26 00:19:38 +0000",
+      "version": "9.0.653",
+      "metrics": {
+        "drivers": 431,
+        "fingerprints": 3848
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-08-26 00:31:56 +0000",
+      "version": "9.0.654",
+      "metrics": {
+        "drivers": 431,
+        "fingerprints": 3848
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-08-26 00:46:39 +0000",
+      "version": "9.0.655",
+      "metrics": {
+        "drivers": 431,
+        "fingerprints": 3848
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-08-26 01:07:25 +0000",
+      "version": "9.0.656",
+      "metrics": {
+        "drivers": 431,
+        "fingerprints": 3848
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-08-26 01:22:47 +0000",
+      "version": "9.0.657",
+      "metrics": {
+        "drivers": 431,
+        "fingerprints": 3848
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-08-26 01:38:46 +0000",
+      "version": "9.0.658",
+      "metrics": {
+        "drivers": 431,
+        "fingerprints": 3849
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-08-26 01:59:49 +0000",
+      "version": "9.0.659",
+      "metrics": {
+        "drivers": 431,
+        "fingerprints": 3851
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-08-26 02:31:25 +0000",
+      "version": "9.0.661",
+      "metrics": {
+        "drivers": 431,
+        "fingerprints": 3850
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-08-26 17:28:30 +0000",
+      "version": "9.0.663",
+      "metrics": {
+        "drivers": 431,
+        "fingerprints": 3861
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-08-26 18:27:01 +0000",
+      "version": "9.0.665",
+      "metrics": {
+        "drivers": 431,
+        "fingerprints": 3862
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-08-26 18:48:45 +0000",
+      "version": "9.0.666",
+      "metrics": {
+        "drivers": 431,
+        "fingerprints": 3862
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-08-26 20:54:35 +0000",
+      "version": "9.0.667",
+      "metrics": {
+        "drivers": 431,
+        "fingerprints": 3862
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-08-26 21:29:25 +0000",
+      "version": "9.0.668",
+      "metrics": {
+        "drivers": 431,
+        "fingerprints": 3862
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-08-26 22:01:17 +0000",
+      "version": "9.0.669",
+      "metrics": {
+        "drivers": 431,
+        "fingerprints": 3860
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-08-27 13:21:50 +0000",
+      "version": "9.0.670",
+      "metrics": {
+        "drivers": 431,
+        "fingerprints": 3863
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-08-28 06:40:44 +0000",
+      "version": "9.0.671",
+      "metrics": {
+        "drivers": 431,
+        "fingerprints": 3860
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-08-29 00:42:13 +0000",
+      "version": "9.0.672",
+      "metrics": {
+        "drivers": 431,
+        "fingerprints": 3860
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-08-29 00:50:22 +0000",
+      "version": "9.0.673",
+      "metrics": {
+        "drivers": 431,
+        "fingerprints": 3860
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-08-29 01:09:24 +0000",
+      "version": "9.0.674",
+      "metrics": {
+        "drivers": 431,
+        "fingerprints": 3860
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-08-29 01:45:01 +0000",
+      "version": "9.0.675",
+      "metrics": {
+        "drivers": 431,
+        "fingerprints": 3860
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-08-29 02:26:52 +0000",
+      "version": "9.0.676",
+      "metrics": {
+        "drivers": 431,
+        "fingerprints": 3860
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-08-29 03:35:04 +0000",
+      "version": "9.0.677",
+      "metrics": {
+        "drivers": 431,
+        "fingerprints": 3861
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-08-29 04:02:44 +0000",
+      "version": "9.0.678",
+      "metrics": {
+        "drivers": 431,
+        "fingerprints": 3861
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-08-29 04:57:51 +0000",
+      "version": "9.0.679",
+      "metrics": {
+        "drivers": 431,
+        "fingerprints": 3861
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-08-29 05:30:16 +0000",
+      "version": "9.0.681",
+      "metrics": {
+        "drivers": 431,
+        "fingerprints": 3861
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-08-29 06:09:55 +0000",
+      "version": "9.0.682",
+      "metrics": {
+        "drivers": 431,
+        "fingerprints": 3861
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-08-29 06:31:51 +0000",
+      "version": "9.0.683",
+      "metrics": {
+        "drivers": 431,
+        "fingerprints": 3861
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-08-29 06:55:35 +0000",
+      "version": "9.0.684",
+      "metrics": {
+        "drivers": 431,
+        "fingerprints": 3861
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-08-29 08:42:00 +0000",
+      "version": "9.0.686",
+      "metrics": {
+        "drivers": 431,
+        "fingerprints": 3861
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-08-29 08:57:42 +0000",
+      "version": "9.0.688",
+      "metrics": {
+        "drivers": 431,
+        "fingerprints": 3861
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-08-29 16:51:18 +0000",
+      "version": "9.0.689",
+      "metrics": {
+        "drivers": 431,
+        "fingerprints": 3862
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-08-29 17:26:09 +0000",
+      "version": "9.0.691",
+      "metrics": {
+        "drivers": 431,
+        "fingerprints": 3862
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-08-29 22:35:11 +0000",
+      "version": "9.0.693",
+      "metrics": {
+        "drivers": 431,
+        "fingerprints": 3862
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-08-29 23:10:49 +0000",
+      "version": "9.0.695",
+      "metrics": {
+        "drivers": 431,
+        "fingerprints": 3863
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-08-29 23:41:09 +0000",
+      "version": "9.0.697",
+      "metrics": {
+        "drivers": 431,
+        "fingerprints": 3863
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-08-30 00:21:26 +0000",
+      "version": "9.0.698",
+      "metrics": {
+        "drivers": 431,
+        "fingerprints": 3863
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-08-30 00:56:52 +0000",
+      "version": "9.0.699",
+      "metrics": {
+        "drivers": 431,
+        "fingerprints": 3863
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-08-30 01:42:42 +0000",
+      "version": "9.0.701",
+      "metrics": {
+        "drivers": 431,
+        "fingerprints": 3863
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-08-30 02:42:33 +0000",
+      "version": "9.0.703",
+      "metrics": {
+        "drivers": 431,
+        "fingerprints": 3863
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-08-30 03:28:16 +0000",
+      "version": "9.0.706",
+      "metrics": {
+        "drivers": 431,
+        "fingerprints": 3882
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-08-30 04:08:56 +0000",
+      "version": "9.0.708",
+      "metrics": {
+        "drivers": 431,
+        "fingerprints": 3882
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-08-30 04:41:49 +0000",
+      "version": "9.0.710",
+      "metrics": {
+        "drivers": 431,
+        "fingerprints": 3863
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-08-30 05:08:25 +0000",
+      "version": "9.0.712",
+      "metrics": {
+        "drivers": 431,
+        "fingerprints": 3863
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-08-30 05:38:22 +0000",
+      "version": "9.0.714",
+      "metrics": {
+        "drivers": 431,
+        "fingerprints": 3863
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-08-30 06:11:29 +0000",
+      "version": "9.0.715",
+      "metrics": {
+        "drivers": 431,
+        "fingerprints": 3863
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-08-30 06:47:19 +0000",
+      "version": "9.0.716",
+      "metrics": {
+        "drivers": 431,
+        "fingerprints": 3863
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-08-30 07:17:20 +0000",
+      "version": "9.0.717",
+      "metrics": {
+        "drivers": 431,
+        "fingerprints": 3863
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-08-30 07:56:50 +0000",
+      "version": "9.0.718",
+      "metrics": {
+        "drivers": 431,
+        "fingerprints": 3864
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-08-30 09:36:08 +0000",
+      "version": "9.0.719",
+      "metrics": {
+        "drivers": 431,
+        "fingerprints": 3864
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-08-30 11:46:15 +0000",
+      "version": "9.0.720",
+      "metrics": {
+        "drivers": 431,
+        "fingerprints": 3865
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-08-30 13:10:59 +0000",
+      "version": "9.0.721",
+      "metrics": {
+        "drivers": 431,
+        "fingerprints": 3865
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-08-30 18:45:44 +0000",
+      "version": "9.0.722",
+      "metrics": {
+        "drivers": 431,
+        "fingerprints": 3865
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-08-30 20:02:39 +0000",
+      "version": "9.0.723",
+      "metrics": {
+        "drivers": 431,
+        "fingerprints": 3865
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-08-30 23:05:24 +0000",
+      "version": "9.0.724",
+      "metrics": {
+        "drivers": 431,
+        "fingerprints": 3865
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-08-30 23:16:31 +0000",
+      "version": "9.0.725",
+      "metrics": {
+        "drivers": 431,
+        "fingerprints": 3865
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-08-30 23:40:58 +0000",
+      "version": "9.0.727",
+      "metrics": {
+        "drivers": 431,
+        "fingerprints": 3865
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-08-31 00:26:33 +0000",
+      "version": "9.0.729",
+      "metrics": {
+        "drivers": 431,
+        "fingerprints": 3865
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-08-31 00:34:31 +0000",
+      "version": "9.0.730",
+      "metrics": {
+        "drivers": 431,
+        "fingerprints": 3865
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-08-31 00:53:44 +0000",
+      "version": "9.0.731",
+      "metrics": {
+        "drivers": 431,
+        "fingerprints": 3865
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-08-31 01:45:05 +0000",
+      "version": "9.0.733",
+      "metrics": {
+        "drivers": 431,
+        "fingerprints": 3865
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-08-31 02:44:52 +0000",
+      "version": "9.0.735",
+      "metrics": {
+        "drivers": 431,
+        "fingerprints": 3865
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-08-31 03:33:41 +0000",
+      "version": "9.0.736",
+      "metrics": {
+        "drivers": 431,
+        "fingerprints": 3865
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-08-31 04:57:37 +0000",
+      "version": "9.0.737",
+      "metrics": {
+        "drivers": 431,
+        "fingerprints": 3865
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-08-31 05:59:51 +0000",
+      "version": "9.0.738",
+      "metrics": {
+        "drivers": 431,
+        "fingerprints": 3865
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-08-31 06:16:56 +0000",
+      "version": "9.0.739",
+      "metrics": {
+        "drivers": 431,
+        "fingerprints": 3865
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-08-31 06:41:23 +0000",
+      "version": "9.0.740",
+      "metrics": {
+        "drivers": 431,
+        "fingerprints": 3865
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-08-31 06:55:33 +0000",
+      "version": "9.0.741",
+      "metrics": {
+        "drivers": 431,
+        "fingerprints": 3865
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-08-31 07:15:32 +0000",
+      "version": "9.0.742",
+      "metrics": {
+        "drivers": 431,
+        "fingerprints": 3865
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-08-31 07:26:00 +0000",
+      "version": "9.0.743",
+      "metrics": {
+        "drivers": 431,
+        "fingerprints": 3865
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-08-31 08:52:31 +0000",
+      "version": "9.0.744",
+      "metrics": {
+        "drivers": 431,
+        "fingerprints": 3866
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-08-31 09:28:28 +0000",
+      "version": "9.0.745",
+      "metrics": {
+        "drivers": 431,
+        "fingerprints": 3866
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-08-31 09:42:27 +0000",
+      "version": "9.0.746",
+      "metrics": {
+        "drivers": 431,
+        "fingerprints": 3866
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-08-31 09:56:23 +0000",
+      "version": "9.0.747",
+      "metrics": {
+        "drivers": 431,
+        "fingerprints": 3866
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-08-31 10:28:40 +0000",
+      "version": "9.0.748",
+      "metrics": {
+        "drivers": 431,
+        "fingerprints": 3866
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-08-31 11:05:19 +0000",
+      "version": "9.0.749",
+      "metrics": {
+        "drivers": 431,
+        "fingerprints": 3866
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-08-31 11:39:26 +0000",
+      "version": "9.0.750",
+      "metrics": {
+        "drivers": 431,
+        "fingerprints": 3867
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-08-31 22:17:30 +0000",
+      "version": "9.0.751",
+      "metrics": {
+        "drivers": 431,
+        "fingerprints": 3867
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-08-31 22:57:30 +0000",
+      "version": "9.0.754",
+      "metrics": {
+        "drivers": 431,
+        "fingerprints": 3867
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-08-31 23:32:15 +0000",
+      "version": "9.0.755",
+      "metrics": {
+        "drivers": 431,
+        "fingerprints": 3867
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-08-31 23:46:43 +0000",
+      "version": "9.0.756",
+      "metrics": {
+        "drivers": 431,
+        "fingerprints": 3867
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-08-31 23:55:03 +0000",
+      "version": "9.0.757",
+      "metrics": {
+        "drivers": 431,
+        "fingerprints": 3867
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-09-01 00:22:28 +0000",
+      "version": "9.0.758",
+      "metrics": {
+        "drivers": 431,
+        "fingerprints": 3867
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-09-01 00:52:46 +0000",
+      "version": "9.0.760",
+      "metrics": {
+        "drivers": 431,
+        "fingerprints": 3867
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-09-01 01:18:29 +0000",
+      "version": "9.0.761",
+      "metrics": {
+        "drivers": 431,
+        "fingerprints": 3867
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-09-01 01:31:56 +0000",
+      "version": "9.0.762",
+      "metrics": {
+        "drivers": 431,
+        "fingerprints": 3867
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-09-01 01:39:52 +0000",
+      "version": "9.0.763",
+      "metrics": {
+        "drivers": 431,
+        "fingerprints": 3867
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-09-01 01:49:43 +0000",
+      "version": "9.0.765",
+      "metrics": {
+        "drivers": 431,
+        "fingerprints": 3867
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-09-01 02:01:15 +0000",
+      "version": "9.0.767",
+      "metrics": {
+        "drivers": 431,
+        "fingerprints": 3867
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-09-01 03:34:15 +0000",
+      "version": "9.0.768",
+      "metrics": {
+        "drivers": 431,
+        "fingerprints": 3867
+      },
+      "source": "git-history"
+    },
+    {
+      "timestamp": "2026-09-01T05:16:30.423Z",
+      "version": "9.0.769",
+      "metrics": {
+        "drivers": 430,
+        "zigbeeDrivers": 379,
+        "wifiDrivers": 51,
+        "fingerprints": 4304,
+        "flowCards": 4138,
+        "capabilities": 156,
+        "timeSyncFormats": 23,
+        "pipelineLayers": 11,
+        "scripts": 565,
+        "workflows": 40,
+        "libFiles": 533
       }
     }
   ]
