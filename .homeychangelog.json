@@ -1,4 +1,7 @@
 {
+  "9.0.786": {
+    "en": "Improved App Store publish reliability after Athom processing timeouts."
+  },
   "9.0.774": {
     "en": "Fixed app crash from Invalid Driver ID in flows; restored remote button fingerprint gate."
   },
