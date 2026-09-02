@@ -2462,7 +2462,7 @@
       ],
       "forbidMode": "couple",
       "protocol": "ias_zone",
-      "notes": "GitHub Discussion #100 Pressure band — IAS contact on contact_sensor; remove dual-home doorwindowsensor_3 (P2404).",
+      "notes": "GitHub Discussion #100 Pressure band — IAS contact on contact_sensor; forbid dual-home doorwindowsensor_3 (P2404).",
       "sources": [
         "discussion-100",
         "P2300",
@@ -5144,6 +5144,240 @@
       ],
       "notes": "P2402 Gmail unmatched: deCONZ/Z2S IAS TS0202 presence/motion clone — lock motion_sensor only (never invent other pids)",
       "forbidMode": "couple"
+    },
+    {
+      "id": "p2405-0ints6wl-soil-not-curtain",
+      "mfr": [
+        "_TZE284_0ints6wl",
+        "_tze284_0ints6wl",
+        "_TZE284_0INTS6WL"
+      ],
+      "productId": [
+        "TS0601"
+      ],
+      "canonicalDriver": "soil_sensor",
+      "forbiddenDrivers": [
+        "curtain_motor",
+        "curtain_motor_shutter",
+        "climate_sensor"
+      ],
+      "forbidMode": "couple",
+      "protocol": "tuya_ef00",
+      "notes": "GH #428 closed — Z2M soil TS0601; was wrongly on curtain_motor",
+      "sources": [
+        "issue-428",
+        "P2405",
+        "z2m-pr-11576"
+      ],
+      "tracks": {
+        "master": {
+          "static": true,
+          "dynamic": true
+        },
+        "stable": {
+          "static": true,
+          "dynamic": true
+        }
+      }
+    },
+    {
+      "id": "p2405-e3oitdyu-dimmer-2gang",
+      "mfr": [
+        "_TZE200_e3oitdyu",
+        "_tze200_e3oitdyu"
+      ],
+      "productId": [
+        "TS0601"
+      ],
+      "canonicalDriver": "dimmer_2_gang_tuya",
+      "forbiddenDrivers": [
+        "wall_dimmer_tuya",
+        "climate_sensor",
+        "radiator_valve"
+      ],
+      "forbidMode": "couple",
+      "protocol": "tuya_ef00",
+      "notes": "GH #88 Moes 2-gang dimmer",
+      "sources": [
+        "issue-88",
+        "P2405",
+        "z2m"
+      ],
+      "tracks": {
+        "master": {
+          "static": true,
+          "dynamic": true
+        },
+        "stable": {
+          "static": true,
+          "dynamic": true
+        }
+      }
+    },
+    {
+      "id": "p2405-uj3f4wr5-curtain-motor",
+      "mfr": [
+        "_TZE200_uj3f4wr5",
+        "_tze200_uj3f4wr5"
+      ],
+      "productId": [
+        "TS0601"
+      ],
+      "canonicalDriver": "curtain_motor",
+      "forbiddenDrivers": [
+        "curtain_motor_shutter"
+      ],
+      "forbidMode": "couple",
+      "protocol": "tuya_ef00",
+      "notes": "GH #79 curtain motor",
+      "sources": [
+        "issue-79",
+        "P2405"
+      ],
+      "tracks": {
+        "master": {
+          "static": true,
+          "dynamic": true
+        },
+        "stable": {
+          "static": true,
+          "dynamic": true
+        }
+      }
+    },
+    {
+      "id": "p2405-u3nv1jwk-button-wireless-4",
+      "mfr": [
+        "_TZ3000_u3nv1jwk",
+        "_tz3000_u3nv1jwk"
+      ],
+      "productId": [
+        "TS0044"
+      ],
+      "canonicalDriver": "button_wireless_4",
+      "forbiddenDrivers": [
+        "handheld_remote_4_buttons",
+        "scene_switch_4"
+      ],
+      "forbidMode": "couple",
+      "protocol": "zcl",
+      "notes": "GH #76 / PECULIARITIES TM-YKQ004",
+      "sources": [
+        "issue-76",
+        "P2405"
+      ],
+      "tracks": {
+        "master": {
+          "static": true,
+          "dynamic": true
+        },
+        "stable": {
+          "static": true,
+          "dynamic": true
+        }
+      }
+    },
+    {
+      "id": "p2405-otvn3lne-motion-ts0202",
+      "mfr": [
+        "_TZ3000_otvn3lne",
+        "_tz3000_otvn3lne"
+      ],
+      "productId": [
+        "TS0202"
+      ],
+      "canonicalDriver": "motion_sensor",
+      "forbiddenDrivers": [
+        "pir_sensor_2",
+        "sensor_motion_presence"
+      ],
+      "forbidMode": "couple",
+      "protocol": "ias_zone",
+      "notes": "GH #164 ZMS02 motion",
+      "sources": [
+        "issue-164",
+        "P2405"
+      ],
+      "tracks": {
+        "master": {
+          "static": true,
+          "dynamic": true
+        },
+        "stable": {
+          "static": true,
+          "dynamic": true
+        }
+      }
+    },
+    {
+      "id": "p2405-81yrt3lo-power-clamp",
+      "mfr": [
+        "_TZE204_81yrt3lo",
+        "_tze204_81yrt3lo",
+        "_TZE200_81yrt3lo"
+      ],
+      "productId": [
+        "TS0601"
+      ],
+      "canonicalDriver": "power_clamp_meter",
+      "forbiddenDrivers": [
+        "power_meter",
+        "din_rail_meter"
+      ],
+      "forbidMode": "couple",
+      "protocol": "tuya_ef00",
+      "notes": "GH #318/#323 PJ-1203A — full mfr 81yrt3lo only (truncated 81yrt3l removed)",
+      "sources": [
+        "issue-318",
+        "issue-323",
+        "P2405",
+        "z2m"
+      ],
+      "tracks": {
+        "master": {
+          "static": true,
+          "dynamic": true
+        },
+        "stable": {
+          "static": true,
+          "dynamic": true
+        }
+      }
+    },
+    {
+      "id": "p2405-tgvtvdoc-rain-sensor",
+      "mfr": [
+        "_TZ3210_tgvtvdoc",
+        "_tz3210_tgvtvdoc",
+        "_TZ3210_p68kms0l"
+      ],
+      "productId": [
+        "TS0207"
+      ],
+      "canonicalDriver": "rain_sensor",
+      "forbiddenDrivers": [
+        "water_detector",
+        "water_leak_sensor",
+        "water_leak_sensor_tuya"
+      ],
+      "forbidMode": "couple",
+      "protocol": "ias_zone",
+      "notes": "GH #388 RB-SRAIN01 — already on rain_sensor; truncated tgvtvdo on water_detector never matches",
+      "sources": [
+        "issue-388",
+        "P2405",
+        "z2m"
+      ],
+      "tracks": {
+        "master": {
+          "static": true,
+          "dynamic": true
+        },
+        "stable": {
+          "static": true,
+          "dynamic": true
+        }
+      }
     }
   ]
 }

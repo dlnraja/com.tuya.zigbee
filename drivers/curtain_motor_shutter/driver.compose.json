@@ -14,7 +14,6 @@
     "measure_luminance",
     "button",
     "dim",
-    "alarm_generic",
     "button.1"
   ],
   "capabilitiesOptions": {
@@ -59,8 +58,7 @@
   ],
   "images": {
     "small": "/drivers/curtain_motor/assets/images/small.png",
-    "large": "/drivers/curtain_motor/assets/images/large.png",
-    "xlarge": "/drivers/curtain_motor/assets/images/xlarge.png"
+    "large": "/drivers/curtain_motor/assets/images/large.png"
   },
   "zigbee": {
     "productId": [
@@ -87,7 +85,6 @@
       "TH01",
       "THS317-ET",
       "TS0052",
-      "TS0201",
       "TS0202",
       "TS0222",
       "TS0301",
@@ -102,7 +99,6 @@
       "TS110E",
       "TS110F",
       "TS1201",
-      "TY0201",
       "WSDCGQ01LM",
       "WSDCGQ11LM",
       "WSDCGQ12LM",
@@ -125,7 +121,7 @@
       }
     },
     "learnmode": {
-      "image": "{{driverAssetsPath}}/learnmode.svg",
+      "image": "{{driverAssetsPath}}/icon.svg",
       "instruction": {
         "en": "Follow the pairing instructions for your Smart Curtain Motor."
       }
@@ -133,20 +129,14 @@
     "manufacturerName": [
       "_TZ3000_bs93npae",
       "_TZ3000_8h7wgocw",
-      "_TZ3000_e3vhyirx",
-      "_TZ3000_femsaaua",
       "_TZ3000_5iixzdo7",
       "_TZ3000_yruungrl",
-      "_TZ3000_jwv3cwak",
       "_TZ3000_74hsp7qy",
       "_TZ3000_vw8pawxa",
       "_TZ3210_xbpt8ewc",
       "_TZ3000_cet6ch1r",
-      "_TZ3000_1dd0d5yi",
       "_TZE200_9caxna4s",
       "_TZE600_ogyg1y6b",
-      "_TZE200_libht6ua",
-      "_TZE284_libht6ua",
       "_TZE200_9vpe3fl1",
       "_TZE200_icka1clh",
       "_TZE200_p6vz3wzt",
@@ -154,7 +144,6 @@
       "_TZB000_42ha4rsc",
       "_TZE200_jhkttplm",
       "_TZE200_5nldle7w",
-      "_TZE200_uj3f4wr5",
       "_TZE210_inpjmc0h",
       "_TZE28C1000000_alh14edn",
       "_TZE204_p6vz3wzt",
@@ -164,16 +153,10 @@
       "_tz3000_bs93npae",
       "_TZ3000_8H7WGOCW",
       "_tz3000_8h7wgocw",
-      "_TZ3000_E3VHYIRX",
-      "_tz3000_e3vhyirx",
-      "_TZ3000_FEMSAAUA",
-      "_tz3000_femsaaua",
       "_TZ3000_5IIXZDO7",
       "_tz3000_5iixzdo7",
       "_TZ3000_YRUUNGRL",
       "_tz3000_yruungrl",
-      "_TZ3000_JWV3CWAK",
-      "_tz3000_jwv3cwak",
       "_TZ3000_74HSP7QY",
       "_tz3000_74hsp7qy",
       "_TZ3000_VW8PAWXA",
@@ -182,16 +165,10 @@
       "_tz3210_xbpt8ewc",
       "_TZ3000_CET6CH1R",
       "_tz3000_cet6ch1r",
-      "_TZ3000_1DD0D5YI",
-      "_tz3000_1dd0d5yi",
       "_TZE200_9CAXNA4S",
       "_tze200_9caxna4s",
       "_TZE600_OGYG1Y6B",
       "_tze600_ogyg1y6b",
-      "_TZE200_LIBHT6UA",
-      "_tze200_libht6ua",
-      "_TZE284_LIBHT6UA",
-      "_tze284_libht6ua",
       "_TZE200_9VPE3FL1",
       "_tze200_9vpe3fl1",
       "_TZE200_ICKA1CLH",
@@ -206,8 +183,6 @@
       "_tze200_jhkttplm",
       "_TZE200_5NLDLE7W",
       "_tze200_5nldle7w",
-      "_TZE200_UJ3F4WR5",
-      "_tze200_uj3f4wr5",
       "_TZE210_INPJMC0H",
       "_tze210_inpjmc0h",
       "_TZE28C1000000_ALH14EDN",
@@ -217,7 +192,29 @@
       "_TZE284_WAA352QV",
       "_tze284_waa352qv",
       "_TZ3000_42HA4RSC",
-      "_tz3000_42ha4rsc"
+      "_tz3000_42ha4rsc",
+      "_tz3000_BS93NPAE",
+      "_tz3000_8H7WGOCW",
+      "_tz3000_5IIXZDO7",
+      "_tz3000_YRUUNGRL",
+      "_tz3000_74HSP7QY",
+      "_tz3000_VW8PAWXA",
+      "_tz3210_XBPT8EWC",
+      "_tz3000_CET6CH1R",
+      "_tze200_9CAXNA4S",
+      "_tze600_OGYG1Y6B",
+      "_tze200_9VPE3FL1",
+      "_tze200_ICKA1CLH",
+      "_tze200_P6VZ3WZT",
+      "_tze284_UQFPH8AH",
+      "_tzb000_42HA4RSC",
+      "_tze200_JHKTTPLM",
+      "_tze200_5NLDLE7W",
+      "_tze210_INPJMC0H",
+      "_tze28c1000000_ALH14EDN",
+      "_tze204_P6VZ3WZT",
+      "_tze284_WAA352QV",
+      "_tz3000_42HA4RSC"
     ]
   },
   "settings": [
@@ -541,50 +538,21 @@
       "id": "tuya_revive",
       "title": {
         "en": "Tuya Revive (device recovery)",
-        "fr": "Tuya Revive (récupération appareil)"
+        "fr": "Tuya Revive (récupération appareil)",
+        "nl": "Tuya Revive (apparaatherstel)",
+        "de": "Tuya Revive (Gerätewiederherstellung)"
       }
     },
     {
       "id": "generate_issue_report",
       "title": {
         "en": "Generate support report (GitHub issue)",
-        "fr": "Générer rapport de support (issue GitHub)"
+        "fr": "Générer rapport de support (issue GitHub)",
+        "nl": "Supportrapport genereren (GitHub issue)",
+        "de": "Supportbericht erstellen (GitHub Issue)"
       }
     }
   ],
   "id": "curtain_motor_shutter",
-  "version": "1.0.0",
-  "_pidConflictNotes": [
-    "// PID-CONFLICT-NOTE TS0726 shared with 21 other drivers (cross-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md",
-    "// PID-CONFLICT-NOTE TS0301 shared with 5 other drivers (cross-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md"
-  ],
-  "firmwareUpdates": {
-    "updates": [
-      {
-        "changelog": {
-          "en": "OEM Tuya firmware v71 (MG21 window cover relay, Koenkk zigbee-OTA, SHA512-verified)"
-        },
-        "device": {
-          "manufacturerName": [
-            "_TZ3000_1dd0d5yi"
-          ],
-          "productId": [
-            "TS0301",
-            "TS0601",
-            "TS0726"
-          ]
-        },
-        "files": [
-          {
-            "fileVersion": 71,
-            "imageType": 5634,
-            "manufacturerCode": 4098,
-            "size": 222762,
-            "name": "1662693814-oem_mg21_zg_nh_win_cover_relay_OTA_1.0.7.bin",
-            "integrity": "sha256:d0611939f48a1c6953104d7d2f8752366a45e16da3fe54d082be277bec9e97a5"
-          }
-        ]
-      }
-    ]
-  }
+  "version": "1.0.0"
 }
