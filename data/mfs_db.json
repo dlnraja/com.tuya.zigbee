@@ -115237,30 +115237,26 @@
     "_tze200_r32ctezx": {
       "manufacturerId": "_tze200_r32ctezx",
       "modelIds": [
-        "TS0601_watervalve",
         "TS0601"
       ],
       "variants": [],
-      "deviceType": "unknown",
-      "driverHint": "water_valve_smart",
+      "deviceType": "fan",
+      "driverHint": "fan_controller",
       "capabilities": [
         "onoff",
-        "meter_water",
-        "measure_temperature",
-        "alarm_water",
-        "measure_battery",
-        "alarm_battery"
+        "dim"
       ],
-      "powerSource": "battery",
+      "powerSource": "mains",
       "sources": [
         "local",
-        "z2m"
+        "z2m",
+        "github-536"
       ],
       "sourceDetails": {
         "local": 1,
         "z2m": 1
       },
-      "confidence": 0.17,
+      "confidence": 0.95,
       "lastSeen": "2026-06-19T20:58:49.743Z"
     },
     "_tze200_yltivvzb": {
@@ -115292,30 +115288,26 @@
     "_tze204_r32ctezx": {
       "manufacturerId": "_tze204_r32ctezx",
       "modelIds": [
-        "TS0601_watervalve",
         "TS0601"
       ],
       "variants": [],
-      "deviceType": "unknown",
-      "driverHint": "water_valve_smart",
+      "deviceType": "fan",
+      "driverHint": "fan_controller",
       "capabilities": [
         "onoff",
-        "meter_water",
-        "measure_temperature",
-        "alarm_water",
-        "measure_battery",
-        "alarm_battery"
+        "dim"
       ],
-      "powerSource": "battery",
+      "powerSource": "mains",
       "sources": [
         "local",
-        "z2m"
+        "z2m",
+        "github-536"
       ],
       "sourceDetails": {
         "local": 1,
         "z2m": 1
       },
-      "confidence": 0.17,
+      "confidence": 0.95,
       "lastSeen": "2026-06-19T20:58:49.743Z"
     },
     "_tze204_wt66haax": {
@@ -262404,10 +262396,12 @@
     "_tze200_r32ctezx|ts0601": {
       "mfr": "_tze200_r32ctezx",
       "pid": "ts0601",
-      "driver": "water_valve_smart",
+      "driver": "fan_controller",
       "sources": [
         "canonical",
-        "mfs_db"
+        "mfs_db",
+        "z2m",
+        "github-536"
       ],
       "confidence": 0.95
     },
@@ -265391,10 +265385,12 @@
     "_tze204_r32ctezx|ts0601": {
       "mfr": "_tze204_r32ctezx",
       "pid": "ts0601",
-      "driver": "water_valve_smart",
+      "driver": "fan_controller",
       "sources": [
         "canonical",
-        "mfs_db"
+        "mfs_db",
+        "z2m",
+        "github-536"
       ],
       "confidence": 0.95
     },
@@ -311128,11 +311124,13 @@
     "_tze200_r32ctezx|ts0601_watervalve": {
       "mfr": "_tze200_r32ctezx",
       "pid": "ts0601_watervalve",
-      "driver": "water_valve_smart",
+      "driver": "fan_controller",
       "sources": [
-        "mfs_db"
+        "mfs_db",
+        "z2m",
+        "github-536"
       ],
-      "confidence": 0.17
+      "confidence": 0.95
     },
     "_tze200_yltivvzb|ts0601_watervalve": {
       "mfr": "_tze200_yltivvzb",
@@ -311146,11 +311144,13 @@
     "_tze204_r32ctezx|ts0601_watervalve": {
       "mfr": "_tze204_r32ctezx",
       "pid": "ts0601_watervalve",
-      "driver": "water_valve_smart",
+      "driver": "fan_controller",
       "sources": [
-        "mfs_db"
+        "mfs_db",
+        "z2m",
+        "github-536"
       ],
-      "confidence": 0.17
+      "confidence": 0.95
     },
     "_tze204_wt66haax|ts0601_watervalve": {
       "mfr": "_tze204_wt66haax",
@@ -320815,7 +320815,12 @@
         "TS0601"
       ],
       "source": "fingerprints-2026-07-14",
-      "confidence": 0.95
+      "confidence": 0.95,
+      "driver": "fan_controller",
+      "sources": [
+        "z2m",
+        "github-536"
+      ]
     },
     "_TZE200_raz9qavg": {
       "driverId": "switch_1gang",
@@ -323125,7 +323130,12 @@
         "TS0601"
       ],
       "source": "fingerprints-2026-07-14",
-      "confidence": 0.95
+      "confidence": 0.95,
+      "driver": "fan_controller",
+      "sources": [
+        "z2m",
+        "github-536"
+      ]
     },
     "_TZE204_rbbx5mfq": {
       "driverId": "air_quality_co2",
@@ -358033,7 +358043,12 @@
         "TS0601_watervalve"
       ],
       "source": "fingerprints-2026-07-14",
-      "confidence": 0.95
+      "confidence": 0.95,
+      "driver": "fan_controller",
+      "sources": [
+        "z2m",
+        "github-536"
+      ]
     },
     "_TZE200_YLTIVVZB": {
       "driverId": "water_valve_smart",
@@ -358049,7 +358064,12 @@
         "TS0601_watervalve"
       ],
       "source": "fingerprints-2026-07-14",
-      "confidence": 0.95
+      "confidence": 0.95,
+      "driver": "fan_controller",
+      "sources": [
+        "z2m",
+        "github-536"
+      ]
     },
     "_TZE204_WT66HAAX": {
       "driverId": "water_valve_smart",

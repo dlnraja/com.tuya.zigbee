@@ -5051,6 +5051,62 @@
           "dynamic": true
         }
       }
+    },
+    {
+      "id": "p2385-lerlink-r32ctezx-fan-switch",
+      "mfr": [
+        "_TZE200_r32ctezx",
+        "_TZE204_r32ctezx",
+        "_tze200_r32ctezx",
+        "_tze204_r32ctezx",
+        "_TZE200_R32CTEZX",
+        "_TZE204_R32CTEZX",
+        "_tze200_R32CTEZX",
+        "_tze204_R32CTEZX"
+      ],
+      "productId": [
+        "TS0601"
+      ],
+      "canonicalDriver": "fan_controller",
+      "forbiddenDrivers": [
+        "water_valve_smart",
+        "water_valve_garden",
+        "wifi_water_valve",
+        "device_radiator_valve",
+        "radiator_valve",
+        "generic_tuya",
+        "zigbee_universal"
+      ],
+      "forbidMode": "couple",
+      "protocol": "tuya_ef00",
+      "clusters": [
+        0,
+        4,
+        5,
+        61184
+      ],
+      "retailNames": [
+        "Lerlink T2-Z67",
+        "Lerlink T2-W67",
+        "TS0601_fan_switch"
+      ],
+      "notes": "GitHub #536 — Z2M/Blakadder Lerlink 5-speed fan. Was wrongly on water_valve_smart. DP1 on/off, DP3 enum 0-4.",
+      "sources": [
+        "z2m:TS0601_fan_switch",
+        "blakadder:Lerlink_T2-Z67",
+        "github#536",
+        "P2385"
+      ],
+      "tracks": {
+        "master": {
+          "static": true,
+          "dynamic": true
+        },
+        "stable": {
+          "static": true,
+          "dynamic": false
+        }
+      }
     }
   ]
 }
