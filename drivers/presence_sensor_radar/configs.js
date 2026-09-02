@@ -450,14 +450,13 @@ function transformPresence(value, type, invertPresence, configName) {
     return invertPresence ? !value : !!value;
   }
   if (type === 'presence_enum') {
-    const bool = value === 1 || value === true;
+    const bool = value === 1 || value === 2 || value === true;
     return invertPresence ? !bool : bool;
   }
   // v9.7.6: Handle gkfbdvyx-style enum mapping (presence_enum_gkfbdvyx)
   // The dpMap can carry an enumMap: { 0: false, 1: true, 2: true }
   if (type && type.startsWith('presence_enum_')) {
-    // Use enumMap if provided by the mapping; fallback to presence_enum logic
-    const bool = value === 1 || value === true;
+    const bool = value === 1 || value === 2 || value === true;
     return invertPresence ? !bool : bool;
   }
   if (type === 'motion_state_enum') {
