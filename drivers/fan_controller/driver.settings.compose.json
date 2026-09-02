@@ -1,0 +1,47 @@
+[
+  {
+    "type": "group",
+    "label": {
+      "en": "Fan switch (Tuya MCU)",
+      "fr": "Interrupteur ventilateur (MCU Tuya)"
+    },
+    "children": [
+      {
+        "id": "countdown",
+        "type": "number",
+        "label": {
+          "en": "Countdown (seconds)",
+          "fr": "Compte à rebours (secondes)"
+        },
+        "hint": {
+          "en": "Auto-off timer DP2 (0–43200). Z2M TS0601_fan_switch / Lerlink T2-Z67.",
+          "fr": "Minuterie arrêt auto DP2 (0–43200)."
+        },
+        "value": 0,
+        "min": 0,
+        "max": 43200,
+        "units": {
+          "en": "s",
+          "fr": "s"
+        }
+      },
+      {
+        "id": "power_on_behavior",
+        "type": "dropdown",
+        "label": {
+          "en": "Power-on behavior",
+          "fr": "Comportement au secteur"
+        },
+        "hint": {
+          "en": "After power loss (DP11). Z2M fan_switch: off / on only.",
+          "fr": "Après coupure (DP11) : off / on uniquement."
+        },
+        "value": "off",
+        "values": [
+          { "id": "off", "label": { "en": "Off", "fr": "Éteint" } },
+          { "id": "on", "label": { "en": "On", "fr": "Allumé" } }
+        ]
+      }
+    ]
+  }
+]

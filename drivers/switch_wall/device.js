@@ -1,7 +1,5 @@
 'use strict';
 const UnifiedSwitchBase = require('../../lib/devices/UnifiedSwitchBase');
-const VirtualButtonMixin = require('../../lib/mixins/VirtualButtonMixin');
-const PhysicalButtonMixin = require('../../lib/mixins/PhysicalButtonMixin');
 const { setupSonoffEwelink, handleSonoffEwlSettings } = require('../../lib/mixins/SonoffEwelinkMixin');
 
 /**
@@ -15,10 +13,11 @@ const { setupSonoffEwelink, handleSonoffEwlSettings } = require('../../lib/mixin
  *   - ProtocolAutoOptimizer for automatic detection                             
  *                                                                                
  *   NOTE: BSEED devices should use wall_switch_1gang_1way driver instead       
- *   (PR #118 by packetninja/Attilla)                                            
+ *   (PR #118 by packetninja/Attilla)
+ *   WHY(P2395/B10): no Physical/Virtual double-wrap — already on TuyaZigbeeDevice.
  * 
  */
-class Switch1GangDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedSwitchBase)) {
+class Switch1GangDevice extends UnifiedSwitchBase {
 
   get gangCount() { return 1; }
 
@@ -92,7 +91,7 @@ class Switch1GangDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedSw
   }
   async onSettings({ oldSettings, newSettings, changedKeys }) {
     await super.onSettings({ oldSettings, newSettings, changedKeys });
-    for (var k of changedKeys) {
+    for (const k of changedKeys) {
       await handleSonoffEwlSettings(this, k, newSettings[k]);
     }
   }

@@ -1,40 +1,43 @@
 'use strict';
 
-const { ZigBeeDevice } = require('homey-zigbeedriver');
+const TuyaZigbeeDevice = require('../../lib/tuya/TuyaZigbeeDevice');
 const { CLUSTER } = require('zigbee-clusters');
 
 /**
- * Fan Speed Controller Device
+ * Fan Speed Controller Device — P123: TuyaZigbeeDevice (L14) + mainsPowered
  *
- * Supports on/off and multi-speed control
- * DP mappings:
+ * DP mappings (Z2M TS0601_fan_switch / Lerlink T2-Z67):
  * DP1: On/Off
- * DP3: Speed (0-4 typically: off, low, medium, high, turbo)
+ * DP2: Countdown seconds 0–43200 (P2396)
+ * DP3: Speed enum 0–4 (speeds 1–5)
  * DP6: Mode (normal, sleep, natural, etc)
+ * DP11: Power-on behavior off/on (P2396)
  */
-class FanControllerDevice extends ZigBeeDevice {
+class FanControllerDevice extends TuyaZigbeeDevice {
 
-  // v9.0.74: This device is mains-powered. Declare it so UnifiedBatteryHandler
-  // does not add a false measure_battery capability (fixes false-battery reports).
   get mainsPowered() { return true; }
 
   async onNodeInit({ zclNode }) {
     try {
       await super.onNodeInit({ zclNode });
       this.log('Fan Controller initializing...');
-      
+
       this._zclNode = zclNode;
-      
+
+      if (this.hasCapability('measure_battery')) {
+        await this.removeCapability('measure_battery').catch(() => {});
+      }
+
       if (this.hasCapability('onoff')) {
         this.registerCapability('onoff', CLUSTER.ON_OFF);
       }
       if (this.hasCapability('dim')) {
         this.registerCapability('dim', CLUSTER.LEVEL_CONTROL);
       }
-      
+
       await this._setupTuyaDP(zclNode);
-      await this._registerFlowCards();
-      
+      // P131: flow listeners in driver.js
+
       this.log('Fan Controller initialized');
     } catch (err) {
       this.error('Fan Controller initialization failed:', err.message);
@@ -106,15 +109,40 @@ class FanControllerDevice extends ZigBeeDevice {
     }
   }
 
+  // WHY(P2385): Z2M TS0601_fan_switch (_TZE200/204_r32ctezx) uses DP3 enum 0–4
+  // (speeds 1–5). Older value-type fans still accept datatype 2.
+  _isLerlinkFanSwitch() {
+    const mfr = String(
+      this.getSetting?.('zb_manufacturer_name')
+      || this.getData?.()?.manufacturerName
+      || this.getStoreValue?.('manufacturerName')
+      || ''
+    ).toLowerCase();
+    return /r32ctezx/.test(mfr);
+  }
+
+  _speedToDp3(value) {
+    const clamped = Math.max(0, Math.min(1, Number(value) || 0));
+    return Math.round(clamped * 4); // 0..4 → fan speeds 1..5
+  }
+
+  async _writeFanSpeedDp(tuyaCluster, speed) {
+    // WHY(P2385): Z2M fan_switch uses enum DP3; humidifier pattern = datatype 4 + value
+    const payload = this._isLerlinkFanSwitch()
+      ? { dp: 3, datatype: 4, value: speed }
+      : { dp: 3, datatype: 2, value: speed };
+    await tuyaCluster.datapoint(payload);
+  }
+
   async _setFanSpeed(value) {
     const ep1 = this._zclNode?.endpoints?.[1];
     if (!ep1) {return;}
     const tuyaCluster = ep1.clusters?.tuya || ep1.clusters?.[61184];
     if (!tuyaCluster) {return;}
 
-    const speed = Math.round(value * 4);
+    const speed = this._speedToDp3(value);
     try {
-      await tuyaCluster.datapoint({ dp: 3, datatype: 2, value: speed });
+      await this._writeFanSpeedDp(tuyaCluster, speed);
     } catch (e) {
       this.error('Failed to set fan speed:', e.message);
     }
@@ -131,10 +159,10 @@ class FanControllerDevice extends ZigBeeDevice {
 
     if (this.hasCapability('dim')) {
       this.registerCapabilityListener('dim', async (value) => {
-        const speed = Math.round(value * 4);
-        this.log(`Setting fan speed to: ${speed}`);
+        const speed = this._speedToDp3(value);
+        this.log(`Setting fan speed to: ${speed} (lerlink=${this._isLerlinkFanSwitch()})`);
         try {
-          await tuyaCluster.datapoint({ dp: 3, datatype: 2, value: speed });
+          await this._writeFanSpeedDp(tuyaCluster, speed);
         } catch (e) {
           this.error('Failed to set speed:', e.message);
         }
@@ -157,8 +185,36 @@ class FanControllerDevice extends ZigBeeDevice {
     tuyaCluster.on('datapoint', (dp, value) => this._handleDP(dp, value));
   }
 
+  /**
+   * WHY(P2396 / GitHub #536): Lerlink fan_switch exposes DP2 countdown + DP11 power-on.
+   */
+  async onSettings({ newSettings, changedKeys }) {
+    const ep1 = this._zclNode?.endpoints?.[1];
+    const tuyaCluster = ep1?.clusters?.tuya || ep1?.clusters?.[61184];
+    if (!tuyaCluster || typeof tuyaCluster.datapoint !== 'function') {
+      return;
+    }
+    const keys = changedKeys || Object.keys(newSettings || {});
+    for (const key of keys) {
+      try {
+        if (key === 'countdown') {
+          const sec = Math.max(0, Math.min(43200, Number(newSettings.countdown) || 0));
+          await tuyaCluster.datapoint({ dp: 2, datatype: 2, value: sec });
+          this.log(`[SETTINGS] DP2 countdown=${sec}`);
+        }
+        if (key === 'power_on_behavior') {
+          const v = String(newSettings.power_on_behavior || 'off').toLowerCase() === 'on' ? 1 : 0;
+          await tuyaCluster.datapoint({ dp: 11, datatype: 4, value: v });
+          this.log(`[SETTINGS] DP11 power_on_behavior=${v}`);
+        }
+      } catch (e) {
+        this.error(`[SETTINGS] ${key} TX failed: ${e.message}`);
+      }
+    }
+  }
+
   async _handleDP(dp, value) {
-    if (this._destroyed) return;
+    if (this._destroyed) {return;}
     if (dp === undefined) {return;}
     this.log(`[DP${dp}] = ${value}`);
 
@@ -176,11 +232,23 @@ class FanControllerDevice extends ZigBeeDevice {
         break;
       }
 
+      case 2: { // Countdown seconds (P2396)
+        const sec = Math.max(0, Math.min(43200, Number(value) || 0));
+        await this.setSettings({ countdown: sec }).catch(() => {});
+        break;
+      }
+
       case 3: { // Speed (0-4)
         const dim = value / 4;
         await this['safeSetCapabilityValue']('dim', dim).catch(this._boundError || ((e) => { try { this.error(e); } catch (_) {} }));
         const trigger = this.homey.flow.getDeviceTriggerCard('fan_controller_speed_changed');
         if (trigger) {trigger.trigger(this, { speed: Math.round(dim * 100) }).catch(this._boundError || ((e) => { try { this.error(e); } catch (_) {} }));}
+        break;
+      }
+
+      case 11: { // Power-on behavior — Z2M off/on only
+        const key = { 0: 'off', 1: 'on' }[Number(value)];
+        if (key) await this.setSettings({ power_on_behavior: key }).catch(() => {});
         break;
       }
 

@@ -1410,5 +1410,8 @@
   },
   "5.12.122": {
     "en": "Moes curtain: ignore Homey UI stop that cancels open/close within a few seconds."
+  },
+  "5.12.123": {
+    "en": "Improved multi-gang Homey button UI sync with physical presses; fan countdown/power-on settings; richer per-gang flow cards (reliability)."
   }
 }

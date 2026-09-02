@@ -11,22 +11,23 @@ try {
   UnifiedSwitchBase = ZigBeeDevice;
 }
 
-const VirtualButtonMixin = require('../../lib/mixins/VirtualButtonMixin');
-const PhysicalButtonMixin = require('../../lib/mixins/PhysicalButtonMixin');
 const { includesCI } = require('../../lib/utils/CaseInsensitiveMatcher');
 
 /**
  * 4-GANG SWITCH - v5.9.23
+ * WHY(P2395/B10): no Physical/Virtual double-wrap — already on TuyaZigbeeDevice.
  */
 
+// P141: _TYZB01_bagt1e4o + TS0014 — Oz Smart Things 4-gang; EndDevice, ZCL OnOff only.
 const ZCL_ONLY_MANUFACTURERS_4G = [
   '_TZ3002_pzao9ls1', '_TZ3002_vaq2bfcu', '_TZ3000_blhvsaqf',
   '_TZ3000_ysdv91bk', '_TZ3000_hafsqare', '_TZ3000_e98krvvk',
-  '_TZ3000_qkixdnon', '_TZ3000_xk5udnd6', '_TZ3000_bseed'
+  '_TZ3000_qkixdnon', '_TZ3000_xk5udnd6', '_TZ3000_bseed',
+  '_TYZB01_bagt1e4o',
 ];
 
-const BaseClass = typeof UnifiedSwitchBase === 'function' 
-  ? PhysicalButtonMixin(VirtualButtonMixin(UnifiedSwitchBase))
+const BaseClass = typeof UnifiedSwitchBase === 'function'
+  ? UnifiedSwitchBase
   : UnifiedSwitchBase;
 
 class Switch4GangDevice extends BaseClass {
@@ -91,6 +92,12 @@ class Switch4GangDevice extends BaseClass {
 
   async _initZclOnlyMode(zclNode) {
     await this._migrateCapabilities().catch(() => {});
+    // P141: TS001x ZCL-only — no electricalMeasurement; strip phantom energy caps
+    for (const phantom of ['measure_power', 'measure_voltage', 'measure_current', 'meter_power']) {
+      if (this.hasCapability(phantom)) {
+        await this.removeCapability(phantom).catch(e => this.log(`[BSEED-4G] strip ${phantom}: ${e.message}`));
+      }
+    }
 
     const cs = (ep) => { try { return this.getCapabilityValue(ep === 1 ? 'onoff' : `onoff.gang${ep}`); } catch { return null; } };
     this._zclState = {
@@ -125,7 +132,7 @@ class Switch4GangDevice extends BaseClass {
         this._lastCommandTime = Date.now();
         this._zclState.pending[epNum] = true;
         safeClearTimeout(this, this._zclState.timeout[epNum]);
-        this._zclState.timeout[epNum] = safeSetTimeout(this, () => { if (this._destroyed) return; this._zclState.pending[epNum] = false; }, 2000);
+        this._zclState.timeout[epNum] = safeSetTimeout(this, () => { if (this._destroyed) {return;} this._zclState.pending[epNum] = false; }, 2000);
         
         const onOff = getOnOffCluster(epNum);
         if (onOff && typeof onOff.writeAttributes === 'function') {
@@ -154,7 +161,7 @@ class Switch4GangDevice extends BaseClass {
       const capName = epNum === 1 ? 'onoff' : `onoff.gang${epNum}`;
       onOff.on('attr.onOff', async (value) => {
         const now = Date.now();
-        if (now - (this._zclState.lastReport[epNum] || 0) < 1000) return;
+        if (now - (this._zclState.lastReport[epNum] || 0) < 1000) {return;}
         this._zclState.lastReport[epNum] = now;
 
         const isPhysical = !this._zclState.pending[epNum];
@@ -211,6 +218,14 @@ class Switch4GangDevice extends BaseClass {
         }
       });
       this.log(`[BSEED-4G] EP${epNum} attr listener registered`);
+    }
+
+    // v10.6.2 FIX: register button.1..4 listeners — super.onNodeInit() is
+    // bypassed in ZCL-only mode, so UnifiedSwitchBase._registerButtonCapabilityListeners()
+    // never ran and pressing a maintenance button in the app UI logged
+    // "Missing Capability Listener: Button N" (diag Gmail 16/07/2026).
+    if (typeof this._registerButtonCapabilityListeners === 'function') {
+      this._registerButtonCapabilityListeners();
     }
 
     await this.initVirtualButtons?.();
