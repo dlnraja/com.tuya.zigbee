@@ -493,6 +493,35 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
   }
 
   /**
+   * WHY(P2389): coalesce chatty telemetry DPs (distance/lux) without delaying presence (DP1).
+   * Firmware still TX on air — this only protects Homey CPU/flows/UI.
+   * @returns {boolean} true = skip capability commit
+   */
+  _shouldSkipFloodCalmDp(dpId, numericValue, config) {
+    if (!config?.floodCalm && !config?.dpThrottleMs) {return false;}
+    const dp = Number(dpId);
+    const throttleMs = config.dpThrottleMs?.[dp];
+    if (!throttleMs) {return false;}
+    if (!this._radarDpCalm) {this._radarDpCalm = Object.create(null);}
+    const now = Date.now();
+    const last = this._radarDpCalm[dp] || { t: 0, v: null };
+    const minDelta = config.dpMinDelta?.[dp];
+    const elapsed = now - last.t;
+
+    if (elapsed >= throttleMs) {
+      this._radarDpCalm[dp] = { t: now, v: numericValue };
+      return false;
+    }
+    // Inside window: allow only significant telemetry jumps (e.g. person moved far)
+    if (minDelta != null && Number.isFinite(numericValue) && last.v != null
+      && Math.abs(numericValue - last.v) >= minDelta) {
+      this._radarDpCalm[dp] = { t: now, v: numericValue };
+      return false;
+    }
+    return true;
+  }
+
+  /**
    * Handle DPs defined in the SENSOR_CONFIGS
    */
   _handleStaticDP(dpId, value, mapping, config) {
@@ -557,6 +586,8 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
         distance = value / (mapping.divisor || 100);
       }
       this._ensureInference().updateDistance(distance);
+      // WHY(P2389): still feed inference every frame; only coalesce Homey capability writes
+      if (this._shouldSkipFloodCalmDp(dpId, distance, config)) {return;}
       return this.safeSetCapabilityValue('measure_luminance.distance', distance).catch(() => {});
     }
 
@@ -583,6 +614,7 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
       } else if (mapping.divisor) {lux = value / mapping.divisor;}
 
       this._ensureInference().updateLux(lux);
+      if (this._shouldSkipFloodCalmDp(dpId, lux, config)) {return;}
       return this.safeSetCapabilityValue('measure_luminance', lux).catch(() => {});
     }
 

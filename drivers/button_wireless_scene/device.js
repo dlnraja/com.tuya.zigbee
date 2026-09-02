@@ -153,19 +153,13 @@ class Button2GangDevice extends ButtonDevice {
 
   async _setupRawFrameInterceptor(zclNode) {
     try {
-      if (!zclNode || typeof zclNode.handleFrame !== 'function') {return;}
-      const orig = zclNode.handleFrame.bind(zclNode);
-      zclNode.handleFrame = async (epId, cId, f, m) => {
-        if (cId === 57344 || cId === 0xE000) {
-          const d = f?.data;this.log(`[BUTTON2-RAW] EP${epId} E000` );
-          let btn = epId, pt = 'single';
-          if (d?.length >= 2 && d[0] >= 1 && d[0] <= 2) { btn = d[0]; pt = resolvePressType(d[1], 'BTN2-RAW'); }
-          else if (d?.length >= 1) { pt = resolvePressType(d[0], 'BTN2-RAW'); }
-          this.triggerButtonPress(btn, pt );
-        }
-        return orig(epId, cId, f, m);
-      };
-      this.log('[BUTTON2-RAW]  Ready');
+      const { installE000RawInterceptor } = require('../../lib/utils/ButtonE000RawInterceptor');
+      installE000RawInterceptor(this, zclNode, {
+        tag: 'button-wireless-scene-raw',
+        maxButton: 2,
+        logPrefix: 'BUTTON2-RAW',
+        pressContext: 'BTN2-RAW',
+      });
     } catch (e) { this.log(`[BUTTON2-RAW]  ${e.message}`); }
   }
 

@@ -58,6 +58,7 @@ Generated 2026-08-19T08:50:15.322Z from registry (54 cases) × compound DB (209 
 - Root cause: publish compact lowercased sacred-keep pins → kept `_TZE204_5SLEHGEO` / `_tze204_5slehgeo` but dropped exact `_TZE204_5slehgeo` (Homey case-sensitive)
 - Fix: preserve exact `pin.mfr` in compact + sacred-keep pins; trim absurd curtain productIds
 - **P2356 (2026-08-31):** post-pair diag `05867379` — position RX + DP3/7/8/10 settings + strip `button.1` (UI errors); `_handleTuyaDP` → `_handleDP`
+- **P2388 (2026-09-02):** diag `05867379-dabd-4299-bb1a-cad53fa57189` @ **9.0.750** — couple **ABSENT**; timeout + hybrid RX none + EF00 manager missing at init. P2363 optimistic cover + soft-create shipped; **NEED_INTERVIEW** (mfr+pid + `[COVER-INIT]` lines). Cross-ref Z2M TS0601_cover siblings in `reports/couple-absent-search/05867379.json` — never lock #533 TRV couple without log proof.
 - **P2363 (2026-09-01):** same diag still **couple ABSENT** (hybrid RX none) — do not invent mfr+pid. Soft-create `TuyaEF00Manager` on `UnifiedCoverBase`, optimistic `windowcoverings_*` after successful TX, skip hybrid protocol-disable for cover/curtain drivers. Added verified Z2M cover motors (`mfr`+`TS0601` only); stripped tilt `_TZE204_r0jdjrvi` from `curtain_motor`.
 - **P2380 (2026-09-02):** diag `ab5aaf04` @ 9.0.775 “Cover stop working” — `UniversalDPSender._try` treated `sendDP()===false` as success (`✅DP mgr` while stderr `Tuya cluster not available`). Fix: honor false + multi-EP EF00 scan + ZCL windowCovering fallback on cover TX.
 
@@ -148,6 +149,7 @@ Generated 2026-08-19T08:50:15.322Z from registry (54 cases) × compound DB (209 
 - **Search UX:** Users typing “PIR mmWave” often pick `pir_mmwave_sensor` (`_TZ3000_3towulqd` only). MTG235/clrdrnya must use **Presence Sensor (Radar / mmWave)** tile.
 - **P2379 (VicHY):** DynCap invented `windowcoverings_set` from DP2/3/102 (sensitivity/range/departure_delay) → Homey UI showed **curtain + opening slider**; DP102→`alarm_motion` stuck presence true. Fix: disable DynCap invent on presence radars + heal phantom caps.
 - **P2386 (VicHY #2222):** Recurring after app updates — store DynCap restore re-applied blind UI. Fix: clear store when DynCap disabled; delayed re-heal 15s/60s/180s; restore `sensor` class if drifted to windowcoverings; heal on settings. Diag `4217d5e3`. User: update Test ≥ tip + restart app (re-pair only if still curtain).
+- **P2389 (VicHY flood alert ~196 msg/min):** Tuya mmWave firmware spam (Z2M#14742) — cannot stop airtime. Fix: `radar` RX budget 250/min; no Homey timeline alert for presence radars; MTG075/clrdrnya `floodCalm` coalesces DP9 distance (2.5s/0.15m) + DP104 lux (5s/2lx); presence DP1 stays immediate.
 
 ### `valve-dual-fhvpaltk` → `valve_dual_irrigation`
 
@@ -160,6 +162,7 @@ Generated 2026-08-19T08:50:15.322Z from registry (54 cases) × compound DB (209 
 
 - Couple: `_TZ3000_mrpevh8p` + `TS0041` (SH-SC07)
 - **P2378 (Peter diag `cfbf687f` @ 9.0.779):** 0xFD RX + `button_matrix` OK, but Homey Flows on `*_button_1gang_*` never fired — `triggerButtonPress` gated Ngang cards behind `gangCount > 1`
+- **P2381/P2387 (Peter #2203):** Flow fix ≥9.0.782 + button `wrapHandleFrame` SSOT ≥9.0.790; couple still **ABSENT** in posts — NEED_INTERVIEW (press during pair; zb_manufacturer_name + zb_model_id)
 - **P2381 (same diag, tip-lag):** even after P2378, driver.compose cards were stripped from `app.json` (P2376 dedupe) so `collectDeclaredFlowIds` / `_tryCard` refused them — only app-level `button_matrix` ran. Fix: merge `driver.manifest.flow` (+ getDrivers) into declared set; allow driver-scoped getDeviceTriggerCard.
 - Fix BOTH: always try `*_button_1gang_*` + `buildPhysicalFlowCandidates`; late identity overrides for profile
 
@@ -742,6 +745,7 @@ Regenerate: `node tools/ci/investigate-device-peculiarities.js`
 - P2289: mfr-only detect when Homey settings omit pid; P2298 onSettings never throws to UI
 - Stable: P2343 backport LinptechES1Profile + full device.js (was EF00 DP9 stub — broken settings path)
 - User: update Test ≥9.0.738 + re-pair; use Linptech-specific settings group
+- **P2388:** A_Tas forum posts mfr-only — Z2M/GitHub lock `_TZ3218_t9ynfz4x`+**TS0225** separately; live interview must confirm 0xE002 cluster 57346 before treating as closed
 
 ### `gabriel-zemismart-bulk-2173` (forum #2173 / #2186 / lwthnp7j)
 

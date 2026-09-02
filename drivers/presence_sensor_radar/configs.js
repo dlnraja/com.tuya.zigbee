@@ -104,6 +104,12 @@ const SENSOR_CONFIGS = {
     suppressBatteryCapability: true,
     disableBatteryReporting: true,
     invertPresence: false,
+    // WHY(P2389): VicHY/clrdrnya firmware floods DP9 distance + DP104 lux (~196 msg/min, Z2M#14742).
+    // Presence (DP1) stays immediate; telemetry coalesced in device.js.
+    floodCalm: true,
+    ultraAggressiveDebounce: true,
+    dpThrottleMs: { 9: 2500, 104: 5000 },
+    dpMinDelta: { 9: 0.15, 104: 2 },
     dpMap: {
       1: { cap: 'alarm_motion', type: 'presence_bool' },
       2: { cap: null, setting: 'radar_sensitivity', min: 0, max: 9 },
