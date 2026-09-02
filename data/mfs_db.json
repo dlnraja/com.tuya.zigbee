@@ -358713,6 +358713,16 @@
       ],
       "source": "P2362",
       "confidence": 0.99
+    },
+    "_tz3000_uw3dadam|ts0202": {
+      "mfr": "_tz3000_uw3dadam",
+      "pid": "ts0202",
+      "driver": "motion_sensor",
+      "sources": [
+        "gmail-p2402",
+        "deconz#8503"
+      ],
+      "confidence": 0.9
     }
   },
   "_TZE204_ZG204Z": {
@@ -368944,5 +368954,28 @@
     "modelIds": [
       "TS004F"
     ]
+  },
+  "_TZ3000_uw3dadam": {
+    "driverId": "motion_sensor",
+    "source": "gmail-p2402-deconz-8503",
+    "modelIds": [
+      "TS0202"
+    ],
+    "pid": "TS0202",
+    "modelIdsCount": 1,
+    "confidence": 0.9,
+    "lastSeen": "2026-09-02T22:19:18.423Z"
+  },
+  "_tz3000_uw3dadam": {
+    "driverId": "motion_sensor",
+    "source": "gmail-p2402-deconz-8503",
+    "modelIds": [
+      "TS0202"
+    ],
+    "pid": "TS0202",
+    "modelIdsCount": 1,
+    "confidence": 0.9,
+    "lastSeen": "2026-09-02T22:19:18.423Z",
+    "manufacturerId": "_tz3000_uw3dadam"
   }
 }

@@ -5107,6 +5107,41 @@
           "dynamic": false
         }
       }
+    },
+    {
+      "id": "tz3000-uw3dadam-ts0202-motion",
+      "mfr": [
+        "_TZ3000_uw3dadam",
+        "_tz3000_uw3dadam"
+      ],
+      "productId": [
+        "TS0202"
+      ],
+      "canonicalDriver": "motion_sensor",
+      "forbiddenDrivers": [
+        "presence_sensor_radar",
+        "climate_sensor",
+        "soil_sensor",
+        "contact_sensor",
+        "pir_mmwave_sensor"
+      ],
+      "protocol": "ias_zone",
+      "clusters": [
+        0,
+        1,
+        3,
+        1280
+      ],
+      "bindings": [
+        1280
+      ],
+      "sources": [
+        "gmail-unmatched-fp",
+        "deconz#8503",
+        "z2s-TS0202"
+      ],
+      "notes": "P2402 Gmail unmatched: deCONZ/Z2S IAS TS0202 presence/motion clone — lock motion_sensor only (never invent other pids)",
+      "forbidMode": "couple"
     }
   ]
 }
