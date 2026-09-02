@@ -264630,7 +264630,7 @@
     "_tze204_iadro9bf|ts0601": {
       "mfr": "_tze204_iadro9bf",
       "pid": "ts0601",
-      "driver": "generic_tuya",
+      "driver": "presence_sensor_radar",
       "sources": [
         "canonical",
         "mfs_db"
@@ -266707,7 +266707,7 @@
     "_tze284_iadro9bf|ts0601": {
       "mfr": "_tze284_iadro9bf",
       "pid": "ts0601",
-      "driver": "generic_tuya",
+      "driver": "presence_sensor_radar",
       "sources": [
         "canonical",
         "mfs_db",
