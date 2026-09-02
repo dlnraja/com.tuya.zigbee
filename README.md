@@ -33,7 +33,7 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 
 | Metric | Value |
 |--------|-------|
-| **App Version** | v9.0.779 |
+| **App Version** | v9.0.780 |
 | **Drivers** | 431 (381 Zigbee + 50 WiFi) |
 | **Unique Fingerprints** | 4,389 |
 | **Pairing Variants** | 16,225 (4 case combos per fingerprint) |
@@ -41,11 +41,11 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 | **Flow Cards** | 5,724 |
 | **Unique Capabilities** | 170 |
 | **Native OTA Drivers** | 9 |
-| **Test Suites** | 213 files |
+| **Test Suites** | 214 files |
 | **SVG Icons** | 731 |
 | **Languages** | EN, FR, NL, DE |
 | **SDK / Homey** | 3 / >= 12.2.0 |
-| **Last Updated** | 2026-09-01 |
+| **Last Updated** | 2026-09-02 |
 
 ### Top 20 Drivers by Fingerprint Count
 
@@ -102,6 +102,7 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 
 | Version | Changes |
 |---------|---------|
+| **v9.0.780** | Fixed app crash from Invalid Driver ID in flows; restored remote button fingerprint gate. |
 | **v9.0.779** | Fixed app crash from Invalid Driver ID in flows; restored remote button fingerprint gate. |
 | **v9.0.778** | Fixed app crash from Invalid Driver ID in flows; restored remote button fingerprint gate. |
 | **v9.0.777** | Fixed app crash from Invalid Driver ID in flows; restored remote button fingerprint gate. |
@@ -113,7 +114,6 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 | **v9.0.771** | Added verified curtain motors from live Z2M harvest; improved cover fingerprint tooling. |
 | **v9.0.770** | Added verified curtain motors from live Z2M harvest; improved cover fingerprint tooling. |
 | **v9.0.769** | Added verified curtain motors from live Z2M harvest; improved cover fingerprint tooling. |
-| **v9.0.768** | Improved curtain motors: EF00 RX hardening, timeout-safe position updates, and more verified cover fingerprints. |
 
 <!-- CHANGELOG_END -->
 
