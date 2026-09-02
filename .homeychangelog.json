@@ -1,4 +1,10 @@
 {
+  "9.0.790": {
+    "en": "Fixed presence radar switching to curtain/blind UI after app updates."
+  },
+  "9.0.789": {
+    "en": "Fixed Lerlink 5-speed fan switch pairing; hardened App Store publish against processing timeouts."
+  },
   "9.0.788": {
     "en": "Fixed Lerlink 5-speed fan switch pairing; hardened App Store publish against processing timeouts."
   },
@@ -46,7 +52,7 @@
   },
   "9.0.501": {
     "en": "Improved sensor flow conditions and actuator Homey UI classes. Hybrid heater flows use capability listeners.",
-    "fr": "Amélioration des conditions Flow capteurs et des classes UI actionneurs. Flows chauffage hybride via listeners de capacités."
+    "fr": "Am\u00e9lioration des conditions Flow capteurs et des classes UI actionneurs. Flows chauffage hybride via listeners de capacit\u00e9s."
   },
   "9.0.500": {
     "en": "P131: patch missing actuator flow registerRunListener on 21 drivers; fan_controller flow ownership fix."
@@ -127,14 +133,14 @@
       "date": "2026-08-11",
       "channel": "test",
       "en": "Workflow hardening: unique flow card gate, safer timers, forum inbox bridge, CI npm install gaps filled.",
-      "fr": "Durcissement workflows: gate flow cards uniques, timers plus surs, pont forum→inbox, npm install CI complete."
+      "fr": "Durcissement workflows: gate flow cards uniques, timers plus surs, pont forum\u2192inbox, npm install CI complete."
     },
     {
       "version": "9.0.469",
       "date": "2026-08-11",
       "channel": "test",
       "en": "Workflow hardening: unique flow card gate, safer timers, forum inbox bridge, CI npm install gaps filled.",
-      "fr": "Durcissement workflows: gate flow cards uniques, timers plus surs, pont forum→inbox, npm install CI complete."
+      "fr": "Durcissement workflows: gate flow cards uniques, timers plus surs, pont forum\u2192inbox, npm install CI complete."
     },
     {
       "version": "9.0.468",
@@ -211,14 +217,14 @@
       "date": "2026-08-11",
       "channel": "test",
       "en": "Universal flow-card heuristics, driver-mapping repair, DeviceIO on legacy Tuya/light bases, WiFi I/O channel, missing flow compose for 4 drivers.",
-      "fr": "Heuristiques Flow universelles, mapping drivers réparé, DeviceIO sur bases Tuya/light legacy, canal WiFi I/O, compose Flow manquant pour 4 drivers."
+      "fr": "Heuristiques Flow universelles, mapping drivers r\u00e9par\u00e9, DeviceIO sur bases Tuya/light legacy, canal WiFi I/O, compose Flow manquant pour 4 drivers."
     },
     {
       "version": "9.0.455",
       "date": "2026-08-11",
       "channel": "test",
       "en": "Improved device wake/handshake and interview recovery; added contact sensor fingerprints from incomplete-source cross-check.",
-      "fr": "Amélioration handshake/wake device et récupération interview; empreintes contact depuis cross-check sources incomplètes."
+      "fr": "Am\u00e9lioration handshake/wake device et r\u00e9cup\u00e9ration interview; empreintes contact depuis cross-check sources incompl\u00e8tes."
     },
     {
       "version": "9.0.453",
@@ -232,56 +238,56 @@
       "date": "2026-07-31",
       "channel": "test",
       "en": "Central destroyed guards on capability ops, linear battery formulas eliminated.",
-      "fr": "Gardes destroyed centrales sur les opérations capabilities, formules batterie linéaires éliminées."
+      "fr": "Gardes destroyed centrales sur les op\u00e9rations capabilities, formules batterie lin\u00e9aires \u00e9limin\u00e9es."
     },
     {
       "version": "9.0.387",
       "date": "2026-07-31",
       "channel": "test",
       "en": "Flow DP send hardening + typed handler with per-type validation.",
-      "fr": "Blindage des envois DP par flow + handler typé avec validation par type."
+      "fr": "Blindage des envois DP par flow + handler typ\u00e9 avec validation par type."
     },
     {
       "version": "9.0.386",
       "date": "2026-07-31",
       "channel": "test",
       "en": "Full forum topic scan (2039 posts with images/links) + digest, sqcn0y re-added (purge), version alignment.",
-      "fr": "Scan complet du topic forum (2039 posts avec images/liens) + digest, sqcn0y ré-ajouté (purge), alignement version."
+      "fr": "Scan complet du topic forum (2039 posts avec images/liens) + digest, sqcn0y r\u00e9-ajout\u00e9 (purge), alignement version."
     },
     {
       "version": "9.0.385",
       "date": "2026-07-31",
       "channel": "test",
       "en": "OTA hardening: SHA512 verified before flashing, header validation, download timeout + size cap, index schema validation.",
-      "fr": "Blindage OTA : SHA512 vérifié avant flash, validation du header, timeout + limite de taille, validation du schéma de l'index."
+      "fr": "Blindage OTA : SHA512 v\u00e9rifi\u00e9 avant flash, validation du header, timeout + limite de taille, validation du sch\u00e9ma de l'index."
     },
     {
       "version": "9.0.384",
       "date": "2026-07-31",
       "channel": "test",
       "en": "Dashboards: navigation fixed (hub/finder/inbox links), precise fingerprint metric, version alignment.",
-      "fr": "Dashboards : navigation corrigée (liens hub/finder/inbox), métrique empreintes précise, alignement version."
+      "fr": "Dashboards : navigation corrig\u00e9e (liens hub/finder/inbox), m\u00e9trique empreintes pr\u00e9cise, alignement version."
     },
     {
       "version": "9.0.383",
       "date": "2026-07-31",
       "channel": "test",
       "en": "51 critical ESLint errors fixed (phantom modules, this-less calls, missing super(), duplicate keys, dead switch cases).",
-      "fr": "51 erreurs ESLint critiques corrigées (modules fantômes, appels sans this, super() manquant, clés dupliquées, cases morts)."
+      "fr": "51 erreurs ESLint critiques corrig\u00e9es (modules fant\u00f4mes, appels sans this, super() manquant, cl\u00e9s dupliqu\u00e9es, cases morts)."
     },
     {
       "version": "9.0.382",
       "date": "2026-07-30",
       "channel": "test",
       "en": "Key-version changelog format (required by headless homey publish), OTA guidance, Hue batch 4.",
-      "fr": "Format clé-version du changelog (requis par homey publish headless), guidance OTA, batch Hue 4."
+      "fr": "Format cl\u00e9-version du changelog (requis par homey publish headless), guidance OTA, batch Hue 4."
     },
     {
       "version": "9.0.381",
       "date": "2026-07-30",
       "channel": "test",
       "en": "Changelog backticks stripped (publish extractor fix), publish-size bundle excludes product-reference, version alignment.",
-      "fr": "Backticks du changelog retirés (fix extracteur publish), exclusion product-reference du bundle, alignement version."
+      "fr": "Backticks du changelog retir\u00e9s (fix extracteur publish), exclusion product-reference du bundle, alignement version."
     },
     {
       "version": "9.0.380",
@@ -295,56 +301,56 @@
       "date": "2026-07-30",
       "channel": "test",
       "en": "OTA real firmware version via swBuildId, Hue batch 3 (dim_to_level, scene_cycle), publish -X theirs.",
-      "fr": "OTA version réelle via swBuildId, batch Hue 3 (dim_to_level, scene_cycle), publish -X theirs."
+      "fr": "OTA version r\u00e9elle via swBuildId, batch Hue 3 (dim_to_level, scene_cycle), publish -X theirs."
     },
     {
       "version": "9.0.378",
       "date": "2026-07-30",
       "channel": "test",
       "en": "OTA overhaul (Tuya MCU fallback, manufacturerName matching, notifications + 3 flow cards), Hue batch 2 (sleep, scenes, DND window), publish race fix.",
-      "fr": "Refonte OTA (fallback MCU Tuya, matching par fabricant, notifications + 3 cards), batch Hue 2 (coucher, scènes, fenêtre DND), fix course publish."
+      "fr": "Refonte OTA (fallback MCU Tuya, matching par fabricant, notifications + 3 cards), batch Hue 2 (coucher, sc\u00e8nes, fen\u00eatre DND), fix course publish."
     },
     {
       "version": "9.0.377",
       "date": "2026-07-30",
       "channel": "test",
       "en": "Temperature compensation inversion fixed (cold inflated battery estimates) + 10 battery profile tests + 9 button press-type tests.",
-      "fr": "Inversion de la compensation température corrigée (le froid gonflait les estimations batterie) + 10 tests profils batterie + 9 tests boutons."
+      "fr": "Inversion de la compensation temp\u00e9rature corrig\u00e9e (le froid gonflait les estimations batterie) + 10 tests profils batterie + 9 tests boutons."
     },
     {
       "version": "9.0.376",
       "date": "2026-07-30",
       "channel": "test",
-      "en": "Hue-style smart features: motion-activated lighting (lux guard, auto-off), circadian curve application, wake-up sunrise ramp — as flow action cards.",
-      "fr": "Smart features style Hue : éclairage sur mouvement (garde lux, auto-off), courbe circadienne, rampe réveil — en cartes de flow."
+      "en": "Hue-style smart features: motion-activated lighting (lux guard, auto-off), circadian curve application, wake-up sunrise ramp \u2014 as flow action cards.",
+      "fr": "Smart features style Hue : \u00e9clairage sur mouvement (garde lux, auto-off), courbe circadienne, rampe r\u00e9veil \u2014 en cartes de flow."
     },
     {
       "version": "9.0.375",
       "date": "2026-07-30",
       "channel": "test",
       "en": "Product reference DB (9027 fingerprints: vendor/model/battery/energy/variants), energy consumption reference for the telemetry estimator, telemetry_is_estimated flow condition, mfs_db gap fix.",
-      "fr": "Base de référence produits (9027 empreintes : vendor/modèle/batterie/énergie/variants), référence de consommation pour l'estimateur, condition de flow telemetry_is_estimated, fix gap mfs_db."
+      "fr": "Base de r\u00e9f\u00e9rence produits (9027 empreintes : vendor/mod\u00e8le/batterie/\u00e9nergie/variants), r\u00e9f\u00e9rence de consommation pour l'estimateur, condition de flow telemetry_is_estimated, fix gap mfs_db."
     },
     {
       "version": "9.0.373",
       "date": "2026-07-30",
       "channel": "test",
       "en": "Case-variant completeness (4950 fingerprints, unknown device prevention) + publish compactor counts case groups (0 observed purged).",
-      "fr": "Complétude des casses (4950 empreintes, anti unknown device) + compacteur par groupes de casse (0 purge observée)."
+      "fr": "Compl\u00e9tude des casses (4950 empreintes, anti unknown device) + compacteur par groupes de casse (0 purge observ\u00e9e)."
     },
     {
       "version": "9.0.371",
       "date": "2026-07-30",
       "channel": "test",
       "en": "10 drivers fixed at load time (bot-corrupted imports), ZCL measuredValue parsed spec-exactly, new smoke/syntax/dead-module audits.",
-      "fr": "10 drivers corrigés au chargement (imports corrompus par un bot), measuredValue ZCL parsé selon la spec, nouveaux audits smoke/syntaxe/modules morts."
+      "fr": "10 drivers corrig\u00e9s au chargement (imports corrompus par un bot), measuredValue ZCL pars\u00e9 selon la spec, nouveaux audits smoke/syntaxe/modules morts."
     },
     {
       "version": "9.0.369",
       "date": "2026-07-30",
       "channel": "test",
       "en": "Humidity scaling heuristic (magnitude-based: raw 65/650/6500 all read 65%), temperature rejects impossible values, 33 new parser tests, DeviceFingerprintDB test suite.",
-      "fr": "Heuristique humidité par magnitude (65/650/6500 lus 65%), rejet des températures impossibles, 33 nouveaux tests parsers, suite DeviceFingerprintDB."
+      "fr": "Heuristique humidit\u00e9 par magnitude (65/650/6500 lus 65%), rejet des temp\u00e9ratures impossibles, 33 nouveaux tests parsers, suite DeviceFingerprintDB."
     },
     {
       "version": "9.0.359",
@@ -662,7 +668,7 @@
         },
         {
           "type": "chore",
-          "description": "28 redundant GitHub Actions workflows archived to .archive/workflows-disabled/ (66 → 36 active)"
+          "description": "28 redundant GitHub Actions workflows archived to .archive/workflows-disabled/ (66 \u2192 36 active)"
         },
         {
           "type": "fix",
@@ -682,7 +688,7 @@
         },
         {
           "type": "chore",
-          "description": "20 dead scripts deleted (571 → 551 scripts)"
+          "description": "20 dead scripts deleted (571 \u2192 551 scripts)"
         },
         {
           "type": "chore",
@@ -960,16 +966,16 @@
     }
   ],
   "5.12.0": {
-    "en": "v5.12.0: stable-v5 batch sync (drivers, FPs, flows, manifest) from master v9.0.240–v9.0.260."
+    "en": "v5.12.0: stable-v5 batch sync (drivers, FPs, flows, manifest) from master v9.0.240\u2013v9.0.260."
   },
   "5.12.1": {
-    "en": "v5.12.1: stable-v5 sync of v9.0.263–v9.0.275 (drivers, FPs, flows, manifest)."
+    "en": "v5.12.1: stable-v5 sync of v9.0.263\u2013v9.0.275 (drivers, FPs, flows, manifest)."
   },
   "5.12.2": {
-    "en": "v5.12.2: stable-v5 sync of v9.0.276–v9.0.282 (drivers, FPs, flows, manifest)."
+    "en": "v5.12.2: stable-v5 sync of v9.0.276\u2013v9.0.282 (drivers, FPs, flows, manifest)."
   },
   "5.12.3": {
-    "en": "v5.12.3: stable-v5 P74 sync — publish-size-gate fix, .homeyignore pruning, HOBEIAN collision resolved, 88 driver.js flow handlers, master baseline updated."
+    "en": "v5.12.3: stable-v5 P74 sync \u2014 publish-size-gate fix, .homeyignore pruning, HOBEIAN collision resolved, 88 driver.js flow handlers, master baseline updated."
   },
   "9.0.125": {
     "en": "v9.0.125: automated publish, manifest sync, and Homey test promotion."
@@ -1176,10 +1182,10 @@
     "en": "Stability improvements and Homey test publication retry after transient processing failure."
   },
   "9.0.193": {
-    "en": "P11 release: door_sensor driver (TS0203), 96 Johan mfrs integrated (1618 FPs), workflow consolidation (47→34), continuous-flow + e2e-dashboard + upstream-guard, 13 archived. 657 dlnraja comments deleted from JohanBendz/com.tuya.zigbee.",
-    "fr": "Release P11: driver door_sensor (TS0203), 96 mfrs Johan intégrés (1618 FPs), consolidation workflows (47→34), continuous-flow + e2e-dashboard + upstream-guard, 13 archivés. 657 commentaires dlnraja supprimés sur JohanBendz/com.tuya.zigbee.",
-    "nl": "P11 release: door_sensor driver (TS0203), 96 Johan mfrs geïntegreerd (1618 FPs), workflow consolidatie (47→34), continuous-flow + e2e-dashboard + upstream-guard, 13 gearchiveerd. 657 dlnraja reacties verwijderd van JohanBendz/com.tuya.zigbee.",
-    "de": "P11-Release: door_sensor-Treiber (TS0203), 96 Johan-mfrs integriert (1618 FPs), Workflow-Konsolidierung (47→34), continuous-flow + e2e-dashboard + upstream-guard, 13 archiviert. 657 dlnraja-Kommentare aus JohanBendz/com.tuya.zigbee gelöscht."
+    "en": "P11 release: door_sensor driver (TS0203), 96 Johan mfrs integrated (1618 FPs), workflow consolidation (47\u219234), continuous-flow + e2e-dashboard + upstream-guard, 13 archived. 657 dlnraja comments deleted from JohanBendz/com.tuya.zigbee.",
+    "fr": "Release P11: driver door_sensor (TS0203), 96 mfrs Johan int\u00e9gr\u00e9s (1618 FPs), consolidation workflows (47\u219234), continuous-flow + e2e-dashboard + upstream-guard, 13 archiv\u00e9s. 657 commentaires dlnraja supprim\u00e9s sur JohanBendz/com.tuya.zigbee.",
+    "nl": "P11 release: door_sensor driver (TS0203), 96 Johan mfrs ge\u00efntegreerd (1618 FPs), workflow consolidatie (47\u219234), continuous-flow + e2e-dashboard + upstream-guard, 13 gearchiveerd. 657 dlnraja reacties verwijderd van JohanBendz/com.tuya.zigbee.",
+    "de": "P11-Release: door_sensor-Treiber (TS0203), 96 Johan-mfrs integriert (1618 FPs), Workflow-Konsolidierung (47\u219234), continuous-flow + e2e-dashboard + upstream-guard, 13 archiviert. 657 dlnraja-Kommentare aus JohanBendz/com.tuya.zigbee gel\u00f6scht."
   },
   "9.0.194": {
     "en": "P11 release: door_sensor driver (TS0203), 96 Johan mfrs integrated (1618 FPs), continuous-flow + e2e-dashboard + upstream-guard, 13 archived. 657 dlnraja comments deleted from JohanBendz/com.tuya.zigbee."
@@ -1522,7 +1528,7 @@
   },
   "9.0.307": {
     "en": "P75.26: re-inject-manual-fixes.js - always check addIfMissing (fix logic bug that allowed auto-fix-all bot to revert forum-routing test mfrs). Re-applied P75.18-22 mfrs (button_wireless_4, smart_knob_rotary, switch_3gang, wall_switch_4gang_1way) + HOBEIAN to sensor_contact_zigbee (P61 fix preserved). 431 drivers, 2902 FPs.",
-    "fr": "P75.26: re-inject-manual-fixes.js - vérification complète de addIfMissing (correction du bug logique qui permettait au bot auto-fix-all de revenir sur les mfrs des tests forum-routing). Ré-application des mfrs P75.18-22 (button_wireless_4, smart_knob_rotary, switch_3gang, wall_switch_4gang_1way) + HOBEIAN sur sensor_contact_zigbee (correction P61 préservée). 431 drivers, 2902 FPs."
+    "fr": "P75.26: re-inject-manual-fixes.js - v\u00e9rification compl\u00e8te de addIfMissing (correction du bug logique qui permettait au bot auto-fix-all de revenir sur les mfrs des tests forum-routing). R\u00e9-application des mfrs P75.18-22 (button_wireless_4, smart_knob_rotary, switch_3gang, wall_switch_4gang_1way) + HOBEIAN sur sensor_contact_zigbee (correction P61 pr\u00e9serv\u00e9e). 431 drivers, 2902 FPs."
   },
   "9.0.308": {
     "en": "Stability improvements and Homey test publication retry."
@@ -1549,18 +1555,18 @@
     "en": "Stability improvements and Homey test publication retry after transient processing failure."
   },
   "9.0.316": {
-    "en": "P75.27: HOMEY_PUBLISH_MAX 30 → 35 MB (size gate fix). P75.32/32b test coverage: 49 mixins + 29 flow cards + 23 regression audit = 101 tests passing. P75.26: re-inject script logic fix (always check addIfMissing). 431 drivers, 2902 FPs.",
-    "fr": "P75.27: HOMEY_PUBLISH_MAX 30 → 35 MB (correctif size gate). P75.32/32b couverture: 49 mixins + 29 flow cards + 23 audit régression = 101 tests passants. P75.26: correctif logique re-inject script. 431 drivers, 2902 FPs."
+    "en": "P75.27: HOMEY_PUBLISH_MAX 30 \u2192 35 MB (size gate fix). P75.32/32b test coverage: 49 mixins + 29 flow cards + 23 regression audit = 101 tests passing. P75.26: re-inject script logic fix (always check addIfMissing). 431 drivers, 2902 FPs.",
+    "fr": "P75.27: HOMEY_PUBLISH_MAX 30 \u2192 35 MB (correctif size gate). P75.32/32b couverture: 49 mixins + 29 flow cards + 23 audit r\u00e9gression = 101 tests passants. P75.26: correctif logique re-inject script. 431 drivers, 2902 FPs."
   },
   "9.0.317": {
-    "en": "P75.27: HOMEY_PUBLISH_MAX 30 → 35 MB (size gate fix). P75.32/32b test coverage: 49 mixins + 29 flow cards + 23 regression audit = 101 tests passing. P75.26: re-inject script logic fix (always check addIfMissing). 431 drivers, 2902 FPs."
+    "en": "P75.27: HOMEY_PUBLISH_MAX 30 \u2192 35 MB (size gate fix). P75.32/32b test coverage: 49 mixins + 29 flow cards + 23 regression audit = 101 tests passing. P75.26: re-inject script logic fix (always check addIfMissing). 431 drivers, 2902 FPs."
   },
   "9.0.318": {
-    "en": "P75.27: HOMEY_PUBLISH_MAX 30 → 35 MB (size gate fix). P75.32/32b test coverage: 49 mixins + 29 flow cards + 23 regression audit = 101 tests passing. P75.26: re-inject script logic fix (always check addIfMissing). 431 drivers, 2902 FPs."
+    "en": "P75.27: HOMEY_PUBLISH_MAX 30 \u2192 35 MB (size gate fix). P75.32/32b test coverage: 49 mixins + 29 flow cards + 23 regression audit = 101 tests passing. P75.26: re-inject script logic fix (always check addIfMissing). 431 drivers, 2902 FPs."
   },
   "9.0.319": {
     "en": "P76 architectural fix: 7 new HOBEIAN/ga1maeof fingerprint collisions baselined (P75.31 follow-up). Architectural test false positives fixed (raw setCapabilityValue=0, global timers=0). Security Shield v8.5.0 fixed: 4 forbidden state files untracked. 28+ architectural tests passing (was 27 false positives), 129/129 master tests passing. 431 drivers, 2902 FPs.",
-    "fr": "P76 correction architecturale: 7 nouvelles collisions HOBEIAN/ga1maeof fingerprint baselinées (suivi P75.31). Faux positifs des tests architecturaux corrigés (raw setCapabilityValue=0, timers globaux=0). Security Shield v8.5.0 corrigé: 4 fichiers d'état interdits détrackés. 28+ tests architecturaux passants (était 27 faux positifs), 129/129 tests master passants. 431 drivers, 2902 FPs."
+    "fr": "P76 correction architecturale: 7 nouvelles collisions HOBEIAN/ga1maeof fingerprint baselin\u00e9es (suivi P75.31). Faux positifs des tests architecturaux corrig\u00e9s (raw setCapabilityValue=0, timers globaux=0). Security Shield v8.5.0 corrig\u00e9: 4 fichiers d'\u00e9tat interdits d\u00e9track\u00e9s. 28+ tests architecturaux passants (\u00e9tait 27 faux positifs), 129/129 tests master passants. 431 drivers, 2902 FPs."
   },
   "9.0.320": {
     "en": "P76 architectural fix: 7 new HOBEIAN/ga1maeof fingerprint collisions baselined (P75.31 follow-up). Architectural test false positives fixed (raw setCapabilityValue=0, global timers=0). Security Shield v8.5.0 fixed: 4 forbidden state files untracked. 28+ architectural tests passing (was 27 false positives), 129/129 master tests passing. 431 drivers, 2902 FPs."
@@ -1585,7 +1591,7 @@
   },
   "9.0.327": {
     "en": "P77 + P78: battery/button enrichment analysis (247 battery drivers, 54 button drivers audited). P29.7 temporal-monitor refreshed against P77 baselines. 141/141 master tests passing, 137/137 stable. 3 new diagnostic tools (find-battery-missing-mfs, enrich-button-drivers, enrich-orig-wrappers). 431 drivers, 5712 fingerprints, 0 new collisions, 0 truly raw setCapabilityValue, 0 global timers.",
-    "fr": "P77 + P78: analyse enrichissement batteries/boutons (247 drivers battery, 54 drivers button audités). P29.7 temporal-monitor rafraîchi contre baselines P77. 141/141 tests master passants, 137/137 stable. 3 nouveaux outils diagnostic (find-battery-missing-mfs, enrich-button-drivers, enrich-orig-wrappers). 431 drivers, 5712 fingerprints, 0 collision, 0 raw setCapabilityValue, 0 timer global."
+    "fr": "P77 + P78: analyse enrichissement batteries/boutons (247 drivers battery, 54 drivers button audit\u00e9s). P29.7 temporal-monitor rafra\u00eechi contre baselines P77. 141/141 tests master passants, 137/137 stable. 3 nouveaux outils diagnostic (find-battery-missing-mfs, enrich-button-drivers, enrich-orig-wrappers). 431 drivers, 5712 fingerprints, 0 collision, 0 raw setCapabilityValue, 0 timer global."
   },
   "9.0.328": {
     "en": "P77 + P78: battery/button enrichment analysis (247 battery drivers, 54 button drivers audited). P29.7 temporal-monitor refreshed against P77 baselines. 141/141 master tests passing, 137/137 stable. 3 new diagnostic tools (find-battery-missing-mfs, enrich-button-drivers, enrich-orig-wrappers). 431 drivers, 5712 fingerprints, 0 new collisions, 0 truly raw setCapabilityValue, 0 global timers."
@@ -1607,7 +1613,7 @@
   },
   "5.12.13": {
     "en": "P77 + P78: battery/button enrichment analysis tools (3 new tools). P29.7 temporal-monitor refreshed. 137/137 stable tests passing. 431 drivers, 5712 fingerprints, 0 new collisions.",
-    "fr": "P77 + P78: outils analyse enrichissement batteries/boutons (3 nouveaux outils). P29.7 temporal-monitor rafraîchi. 137/137 tests stable passants. 431 drivers, 5712 fingerprints, 0 collision."
+    "fr": "P77 + P78: outils analyse enrichissement batteries/boutons (3 nouveaux outils). P29.7 temporal-monitor rafra\u00eechi. 137/137 tests stable passants. 431 drivers, 5712 fingerprints, 0 collision."
   },
   "5.12.18": {
     "en": "v5.12.17: v5.12.17: P83.1-stable docs + TuyaNormalizer propagation to 6 lib files"
@@ -1673,19 +1679,19 @@
     "en": "Stability improvements and Homey test publication retry after transient processing failure."
   },
   "9.0.360": {
-    "en": "v9.0.359: chore: bump v9.0.359 — débloque le publish (9.0.358 déjà publiée en build 2689)"
+    "en": "v9.0.359: chore: bump v9.0.359 \u2014 d\u00e9bloque le publish (9.0.358 d\u00e9j\u00e0 publi\u00e9e en build 2689)"
   },
   "9.0.359": {
     "en": "v9.0.359: automated publish, manifest sync, and Homey test promotion."
   },
   "9.0.361": {
-    "en": "v9.0.359: chore: bump v9.0.359 — débloque le publish (9.0.358 déjà publiée en build 2689)"
+    "en": "v9.0.359: chore: bump v9.0.359 \u2014 d\u00e9bloque le publish (9.0.358 d\u00e9j\u00e0 publi\u00e9e en build 2689)"
   },
   "9.0.362": {
-    "en": "v9.0.361: 'measure_temperature.probe' (external probe, DP38 — e.g. '_TZE284_hodyryli', issue #513): probe temperature was shown 10x too low. 'SmartDivisorManager' now knows 'measure_temperature.probe' (temperature type, ×10 divisor, valid range), so the raw ×10 value is scaled before 'ProductValueValidator' auto-correction. Regression test added ('test/smart-divisor-probe.test.js')."
+    "en": "v9.0.361: 'measure_temperature.probe' (external probe, DP38 \u2014 e.g. '_TZE284_hodyryli', issue #513): probe temperature was shown 10x too low. 'SmartDivisorManager' now knows 'measure_temperature.probe' (temperature type, \u00d710 divisor, valid range), so the raw \u00d710 value is scaled before 'ProductValueValidator' auto-correction. Regression test added ('test/smart-divisor-probe.test.js')."
   },
   "9.0.363": {
-    "en": "v9.0.361: 'measure_temperature.probe' (external probe, DP38 — e.g. '_TZE284_hodyryli', issue #513): probe temperature was shown 10x too low. 'SmartDivisorManager' now knows 'measure_temperature.probe' (temperature type, ×10 divisor, valid range), so the raw ×10 value is scaled before 'ProductValueValidator' auto-correction. Regression test added ('test/smart-divisor-probe.test.js')."
+    "en": "v9.0.361: 'measure_temperature.probe' (external probe, DP38 \u2014 e.g. '_TZE284_hodyryli', issue #513): probe temperature was shown 10x too low. 'SmartDivisorManager' now knows 'measure_temperature.probe' (temperature type, \u00d710 divisor, valid range), so the raw \u00d710 value is scaled before 'ProductValueValidator' auto-correction. Regression test added ('test/smart-divisor-probe.test.js')."
   },
   "9.0.365": {
     "en": "v9.0.364: Smart scaling engine (dynamic divisors/multipliers):"
@@ -1694,10 +1700,10 @@
     "en": "v9.0.365: Battery estimation: the generic 0-50-scale doubling heuristic in 'UnifiedBatteryHandler.normalizeZigbeeValue' misread genuinely discharged devices (a real 40 % report became 80 %). Doubling now applies only to curated manufacturers ('BATTERY_0_50_SCALE_MFRS')., SOS button ('button_emergency_sos') battery info: percentage and Tuya DP reports now go through the smart normalizer (ZCL 0-200,"
   },
   "9.0.370": {
-    "en": "v9.0.369: 'AdaptiveDataParser.toHumidity': magnitude-based scaling (≤100 = percent, ≤1000 = ×10, else ×100). The old default ÷100 misread both common encodings: raw 65 → 1 % and raw 650 → 7 %., 'AdaptiveDataParser.toTemperature': returns null instead of an impossible value (e.g. 215 °C) when no divisor yields a plausible temperature., Tests: all 31 test files verified individually; 'manufacturerRe"
+    "en": "v9.0.369: 'AdaptiveDataParser.toHumidity': magnitude-based scaling (\u2264100 = percent, \u22641000 = \u00d710, else \u00d7100). The old default \u00f7100 misread both common encodings: raw 65 \u2192 1 % and raw 650 \u2192 7 %., 'AdaptiveDataParser.toTemperature': returns null instead of an impossible value (e.g. 215 \u00b0C) when no divisor yields a plausible temperature., Tests: all 31 test files verified individually; 'manufacturerRe"
   },
   "9.0.372": {
-    "en": "v9.0.371: 10 drivers were broken at load time, 'UniversalTuyaParser' fixed earlier (37 undefined 'capability' shorthands)., Coherence: removed the duplicated 'smartDivisorDetect' heuristic in 'TuyaZigbeeDevice' — ZCL 'measuredValue' is now parsed spec-exactly (0.01 units), Tuya DP scaling stays centralized in 'SmartDivisorManager'., New audits: 'drivers-smoke-test.js', 'js-syntax-audit.js', 'lib-s"
+    "en": "v9.0.371: 10 drivers were broken at load time, 'UniversalTuyaParser' fixed earlier (37 undefined 'capability' shorthands)., Coherence: removed the duplicated 'smartDivisorDetect' heuristic in 'TuyaZigbeeDevice' \u2014 ZCL 'measuredValue' is now parsed spec-exactly (0.01 units), Tuya DP scaling stays centralized in 'SmartDivisorManager'., New audits: 'drivers-smoke-test.js', 'js-syntax-audit.js', 'lib-s"
   },
   "9.0.374": {
     "en": "v9.0.373: Unknown device prevention (case), Publish compactor, Added '_TZE204_kwi6bbk4' (ZHA source) to climate_sensor earlier this session."
@@ -1712,31 +1718,31 @@
     "en": "v9.0.377: Temperature compensation was inverted, New test suites: 10 battery chemistry/health tests (17 profiles validated: sane curves, monotonic discharge, temp compensation) and 9 button press-type/gang tests (TS0044 contract, SOS button)."
   },
   "9.0.380": {
-    "en": "v9.0.379: OTA: real current firmware version read from the basic cluster (swBuildId/appVersion) in the Tuya MCU fallback — fewer false update notifications., Hue-style batch 3: 'dim_to_level' (fade to brightness over time, Lutron-style), 'scene_cycle' (cycle scene slots 1→2→3, IKEA shortcut style)., Publish ."
+    "en": "v9.0.379: OTA: real current firmware version read from the basic cluster (swBuildId/appVersion) in the Tuya MCU fallback \u2014 fewer false update notifications., Hue-style batch 3: 'dim_to_level' (fade to brightness over time, Lutron-style), 'scene_cycle' (cycle scene slots 1\u21922\u21923, IKEA shortcut style)., Publish ."
   },
   "9.0.381": {
     "en": "Changelog backticks stripped (publish extractor fix), publish-size bundle excludes product-reference, version alignment.",
-    "fr": "Backticks du changelog retirés (fix extracteur publish), exclusion product-reference du bundle, alignement version."
+    "fr": "Backticks du changelog retir\u00e9s (fix extracteur publish), exclusion product-reference du bundle, alignement version."
   },
   "9.0.379": {
     "en": "OTA real firmware version via swBuildId, Hue batch 3 (dim_to_level, scene_cycle), publish -X theirs.",
-    "fr": "OTA version réelle via swBuildId, batch Hue 3 (dim_to_level, scene_cycle), publish -X theirs."
+    "fr": "OTA version r\u00e9elle via swBuildId, batch Hue 3 (dim_to_level, scene_cycle), publish -X theirs."
   },
   "9.0.375": {
     "en": "Product reference DB (9027 fingerprints: vendor/model/battery/energy/variants), energy consumption reference for the telemetry estimator, telemetry_is_estimated flow condition, mfs_db gap fix.",
-    "fr": "Base de référence produits (9027 empreintes : vendor/modèle/batterie/énergie/variants), référence de consommation pour l'estimateur, condition de flow telemetry_is_estimated, fix gap mfs_db."
+    "fr": "Base de r\u00e9f\u00e9rence produits (9027 empreintes : vendor/mod\u00e8le/batterie/\u00e9nergie/variants), r\u00e9f\u00e9rence de consommation pour l'estimateur, condition de flow telemetry_is_estimated, fix gap mfs_db."
   },
   "9.0.373": {
     "en": "Case-variant completeness (4950 fingerprints, unknown device prevention) + publish compactor counts case groups (0 observed purged).",
-    "fr": "Complétude des casses (4950 empreintes, anti unknown device) + compacteur par groupes de casse (0 purge observée)."
+    "fr": "Compl\u00e9tude des casses (4950 empreintes, anti unknown device) + compacteur par groupes de casse (0 purge observ\u00e9e)."
   },
   "9.0.371": {
     "en": "10 drivers fixed at load time (bot-corrupted imports), ZCL measuredValue parsed spec-exactly, new smoke/syntax/dead-module audits.",
-    "fr": "10 drivers corrigés au chargement (imports corrompus par un bot), measuredValue ZCL parsé selon la spec, nouveaux audits smoke/syntaxe/modules morts."
+    "fr": "10 drivers corrig\u00e9s au chargement (imports corrompus par un bot), measuredValue ZCL pars\u00e9 selon la spec, nouveaux audits smoke/syntaxe/modules morts."
   },
   "9.0.369": {
     "en": "Humidity scaling heuristic (magnitude-based: raw 65/650/6500 all read 65%), temperature rejects impossible values, 33 new parser tests, DeviceFingerprintDB test suite.",
-    "fr": "Heuristique humidité par magnitude (65/650/6500 lus 65%), rejet des températures impossibles, 33 nouveaux tests parsers, suite DeviceFingerprintDB."
+    "fr": "Heuristique humidit\u00e9 par magnitude (65/650/6500 lus 65%), rejet des temp\u00e9ratures impossibles, 33 nouveaux tests parsers, suite DeviceFingerprintDB."
   },
   "9.0.330": {
     "en": "P80: +685 issue #439 FPs to generic_tuya, +135 mfrs to 7 orphan drivers (PR #512), enrich-orphan-drivers.js v4 cross-orphan safe",
@@ -1748,31 +1754,31 @@
   },
   "9.0.382": {
     "en": "Key-version changelog format (required by headless homey publish), OTA guidance, Hue batch 4.",
-    "fr": "Format clé-version du changelog (requis par homey publish headless), guidance OTA, batch Hue 4."
+    "fr": "Format cl\u00e9-version du changelog (requis par homey publish headless), guidance OTA, batch Hue 4."
   },
   "9.0.383": {
     "en": "51 critical ESLint errors fixed (phantom modules, this-less calls, missing super(), duplicate keys, dead switch cases).",
-    "fr": "51 erreurs ESLint critiques corrigées (modules fantômes, appels sans this, super() manquant, clés dupliquées, cases morts)."
+    "fr": "51 erreurs ESLint critiques corrig\u00e9es (modules fant\u00f4mes, appels sans this, super() manquant, cl\u00e9s dupliqu\u00e9es, cases morts)."
   },
   "9.0.384": {
     "en": "Dashboards: navigation fixed (hub/finder/inbox links), precise fingerprint metric, version alignment.",
-    "fr": "Dashboards : navigation corrigée (liens hub/finder/inbox), métrique empreintes précise, alignement version."
+    "fr": "Dashboards : navigation corrig\u00e9e (liens hub/finder/inbox), m\u00e9trique empreintes pr\u00e9cise, alignement version."
   },
   "9.0.385": {
     "en": "OTA hardening: SHA512 verified before flashing, header validation, download timeout + size cap, index schema validation.",
-    "fr": "Blindage OTA : SHA512 vérifié avant flash, validation du header, timeout + limite de taille, validation du schéma de l'index."
+    "fr": "Blindage OTA : SHA512 v\u00e9rifi\u00e9 avant flash, validation du header, timeout + limite de taille, validation du sch\u00e9ma de l'index."
   },
   "9.0.386": {
     "en": "Full forum topic scan (2039 posts with images/links) + digest, sqcn0y re-added (purge), version alignment.",
-    "fr": "Scan complet du topic forum (2039 posts avec images/liens) + digest, sqcn0y ré-ajouté (purge), alignement version."
+    "fr": "Scan complet du topic forum (2039 posts avec images/liens) + digest, sqcn0y r\u00e9-ajout\u00e9 (purge), alignement version."
   },
   "9.0.387": {
     "en": "Flow DP send hardening + typed handler with per-type validation.",
-    "fr": "Blindage des envois DP par flow + handler typé avec validation par type."
+    "fr": "Blindage des envois DP par flow + handler typ\u00e9 avec validation par type."
   },
   "9.0.388": {
     "en": "Central destroyed guards on capability ops, linear battery formulas eliminated.",
-    "fr": "Gardes destroyed centrales sur les opérations capabilities, formules batterie linéaires éliminées."
+    "fr": "Gardes destroyed centrales sur les op\u00e9rations capabilities, formules batterie lin\u00e9aires \u00e9limin\u00e9es."
   },
   "9.0.389": {
     "en": "Central destroyed guards on capability ops, linear battery formulas eliminated."
@@ -2012,7 +2018,7 @@
     "en": "v9.0.466: fix: remove rebase conflict markers from version manifests (v9.0.466)"
   },
   "9.0.469": {
-    "en": "v9.0.468: fix(P110): audit follow-up — time sync, MCU helper, battery DP, climate FP rehome (v9.0.468)"
+    "en": "v9.0.468: fix(P110): audit follow-up \u2014 time sync, MCU helper, battery DP, climate FP rehome (v9.0.468)"
   },
   "9.0.471": {
     "en": "v9.0.470: fix(P111): harden , timers, forum inbox bridge (v9.0.470)"
@@ -2367,7 +2373,7 @@
     "en": "Two-gang wall switches show linked gang names in settings. LED and switch mode stay on the main tile. After a power cut the configured LED state is pushed again. Optional pulse/inching; use Flows for countdown timers. App Settings shows message counts for the last hour and 24 hours, and which device talks most."
   },
   "9.0.595": {
-    "en": "Sleepy SOS, scene, leak and contact sensors keep enroll, probe, lux/DP query and leak backup poll — they run on wake and when RAM allows, not while the hub is out of memory. Homey Flows stay enabled. Extra engines wait and retry instead of being dropped. Three-gang and four-gang ZCL wall switches pair as linked gang tiles. One-gang switches with a temperature probe pair as a switch-plus-temperature device."
+    "en": "Sleepy SOS, scene, leak and contact sensors keep enroll, probe, lux/DP query and leak backup poll \u2014 they run on wake and when RAM allows, not while the hub is out of memory. Homey Flows stay enabled. Extra engines wait and retry instead of being dropped. Three-gang and four-gang ZCL wall switches pair as linked gang tiles. One-gang switches with a temperature probe pair as a switch-plus-temperature device."
   },
   "9.0.596": {
     "en": "Sleepy SOS, leak and contact sensors keep enroll on wake. Multi-gang ZCL wall switches pair as linked tiles. One-gang switches with a temperature probe stay on the switch-plus-temperature driver. Homey Flows stay enabled."
@@ -2463,56 +2469,56 @@
     "en": "Docs cartography for dual App IDs; reliability carry-forward from 9.0.620."
   },
   "9.0.627": {
-    "en": "Tongou DIN meter pairing lock (not Smart RCBO); block DP6 raw→humidity; button flow ID heuristics; resilience critical-first inventory; Gmail IMAP secrets cascade.",
-    "fr": "Verrouillage compteur DIN Tongou (pas Smart RCBO); blocage DP6 raw→humidité; heuristiques IDs Flow boutons; inventaire resilience critical-first; cascade Gmail IMAP secrets."
+    "en": "Tongou DIN meter pairing lock (not Smart RCBO); block DP6 raw\u2192humidity; button flow ID heuristics; resilience critical-first inventory; Gmail IMAP secrets cascade.",
+    "fr": "Verrouillage compteur DIN Tongou (pas Smart RCBO); blocage DP6 raw\u2192humidit\u00e9; heuristiques IDs Flow boutons; inventaire resilience critical-first; cascade Gmail IMAP secrets."
   },
   "9.0.628": {
-    "en": "Tongou DIN meter pairing lock (not Smart RCBO); block DP6 raw→humidity; button flow ID heuristics; resilience critical-first inventory; ."
+    "en": "Tongou DIN meter pairing lock (not Smart RCBO); block DP6 raw\u2192humidity; button flow ID heuristics; resilience critical-first inventory; ."
   },
   "9.0.629": {
-    "en": "Tongou DIN meter pairing lock (not Smart RCBO); block DP6 raw→humidity; button flow ID heuristics; resilience critical-first inventory; ."
+    "en": "Tongou DIN meter pairing lock (not Smart RCBO); block DP6 raw\u2192humidity; button flow ID heuristics; resilience critical-first inventory; ."
   },
   "9.0.630": {
-    "en": "Tongou DIN meter pairing lock (not Smart RCBO); block DP6 raw→humidity; button flow ID heuristics; resilience critical-first inventory; ."
+    "en": "Tongou DIN meter pairing lock (not Smart RCBO); block DP6 raw\u2192humidity; button flow ID heuristics; resilience critical-first inventory; ."
   },
   "9.0.631": {
-    "en": "Tongou DIN meter pairing lock (not Smart RCBO); block DP6 raw→humidity; button flow ID heuristics; resilience critical-first inventory; ."
+    "en": "Tongou DIN meter pairing lock (not Smart RCBO); block DP6 raw\u2192humidity; button flow ID heuristics; resilience critical-first inventory; ."
   },
   "9.0.632": {
-    "en": "Tongou DIN meter pairing lock (not Smart RCBO); block DP6 raw→humidity; button flow ID heuristics; resilience critical-first inventory; ."
+    "en": "Tongou DIN meter pairing lock (not Smart RCBO); block DP6 raw\u2192humidity; button flow ID heuristics; resilience critical-first inventory; ."
   },
   "9.0.633": {
-    "en": "Tongou DIN meter pairing lock (not Smart RCBO); block DP6 raw→humidity; button flow ID heuristics; resilience critical-first inventory; ."
+    "en": "Tongou DIN meter pairing lock (not Smart RCBO); block DP6 raw\u2192humidity; button flow ID heuristics; resilience critical-first inventory; ."
   },
   "9.0.634": {
-    "en": "Tongou DIN meter pairing lock (not Smart RCBO); block DP6 raw→humidity; button flow ID heuristics; resilience critical-first inventory; ."
+    "en": "Tongou DIN meter pairing lock (not Smart RCBO); block DP6 raw\u2192humidity; button flow ID heuristics; resilience critical-first inventory; ."
   },
   "9.0.635": {
-    "en": "Tongou DIN meter pairing lock (not Smart RCBO); block DP6 raw→humidity; button flow ID heuristics; resilience critical-first inventory; ."
+    "en": "Tongou DIN meter pairing lock (not Smart RCBO); block DP6 raw\u2192humidity; button flow ID heuristics; resilience critical-first inventory; ."
   },
   "9.0.636": {
-    "en": "Tongou DIN meter pairing lock (not Smart RCBO); block DP6 raw→humidity; button flow ID heuristics; resilience critical-first inventory; ."
+    "en": "Tongou DIN meter pairing lock (not Smart RCBO); block DP6 raw\u2192humidity; button flow ID heuristics; resilience critical-first inventory; ."
   },
   "9.0.637": {
-    "en": "Tongou DIN meter pairing lock (not Smart RCBO); block DP6 raw→humidity; button flow ID heuristics; resilience critical-first inventory; ."
+    "en": "Tongou DIN meter pairing lock (not Smart RCBO); block DP6 raw\u2192humidity; button flow ID heuristics; resilience critical-first inventory; ."
   },
   "9.0.638": {
-    "en": "Tongou DIN meter pairing lock (not Smart RCBO); block DP6 raw→humidity; button flow ID heuristics; resilience critical-first inventory; ."
+    "en": "Tongou DIN meter pairing lock (not Smart RCBO); block DP6 raw\u2192humidity; button flow ID heuristics; resilience critical-first inventory; ."
   },
   "9.0.639": {
-    "en": "Tongou DIN meter pairing lock (not Smart RCBO); block DP6 raw→humidity; button flow ID heuristics; resilience critical-first inventory; ."
+    "en": "Tongou DIN meter pairing lock (not Smart RCBO); block DP6 raw\u2192humidity; button flow ID heuristics; resilience critical-first inventory; ."
   },
   "9.0.640": {
-    "en": "Tongou DIN meter pairing lock (not Smart RCBO); block DP6 raw→humidity; button flow ID heuristics; resilience critical-first inventory; ."
+    "en": "Tongou DIN meter pairing lock (not Smart RCBO); block DP6 raw\u2192humidity; button flow ID heuristics; resilience critical-first inventory; ."
   },
   "9.0.641": {
-    "en": "Tongou DIN meter pairing lock (not Smart RCBO); block DP6 raw→humidity; button flow ID heuristics; resilience critical-first inventory; ."
+    "en": "Tongou DIN meter pairing lock (not Smart RCBO); block DP6 raw\u2192humidity; button flow ID heuristics; resilience critical-first inventory; ."
   },
   "9.0.642": {
-    "en": "Tongou DIN meter pairing lock (not Smart RCBO); block DP6 raw→humidity; button flow ID heuristics; resilience critical-first inventory; ."
+    "en": "Tongou DIN meter pairing lock (not Smart RCBO); block DP6 raw\u2192humidity; button flow ID heuristics; resilience critical-first inventory; ."
   },
   "9.0.643": {
-    "en": "Tongou DIN meter pairing lock (not Smart RCBO); block DP6 raw→humidity; button flow ID heuristics; resilience critical-first inventory; ."
+    "en": "Tongou DIN meter pairing lock (not Smart RCBO); block DP6 raw\u2192humidity; button flow ID heuristics; resilience critical-first inventory; ."
   },
   "9.0.644": {
     "en": "P2244/P2245 remote sacred couples + irrigation valve compose; Athom republish after 9.0.643 processing_failed."
@@ -2632,16 +2638,16 @@
     "en": "Fix wall thermostat crash on OFF (safeSetCapability recursion) for FCU/BAC006 couples; Athom draft wait soft-continues on ."
   },
   "9.0.685": {
-    "en": "P2302: FCU thermostat OFF/setpoint (diag f84180b7) — fix FRAG false-positive on DP24, bool DP1→onoff, arm FCU listeners; gbm10jnj→button_wireless_3 TS0043"
+    "en": "P2302: FCU thermostat OFF/setpoint (diag f84180b7) \u2014 fix FRAG false-positive on DP24, bool DP1\u2192onoff, arm FCU listeners; gbm10jnj\u2192button_wireless_3 TS0043"
   },
   "9.0.686": {
-    "en": "P2302: FCU thermostat OFF/setpoint (diag f84180b7) — fix FRAG false-positive on DP24, bool DP1→onoff, arm FCU listeners; gbm10jnj→button_wireless_3 TS0043"
+    "en": "P2302: FCU thermostat OFF/setpoint (diag f84180b7) \u2014 fix FRAG false-positive on DP24, bool DP1\u2192onoff, arm FCU listeners; gbm10jnj\u2192button_wireless_3 TS0043"
   },
   "9.0.687": {
-    "en": "P2303: Adam K #532 FCU — arm from DP28/36/101 + Basic identity, DeviceIO TX cascade for OFF/setpoint"
+    "en": "P2303: Adam K #532 FCU \u2014 arm from DP28/36/101 + Basic identity, DeviceIO TX cascade for OFF/setpoint"
   },
   "9.0.688": {
-    "en": "P2303: Adam K #532 FCU — arm from DP28/36/101 + Basic identity, DeviceIO TX cascade for OFF/setpoint"
+    "en": "P2303: Adam K #532 FCU \u2014 arm from DP28/36/101 + Basic identity, DeviceIO TX cascade for OFF/setpoint"
   },
   "9.0.689": {
     "en": "Improved Moes curtain switch pairing (ZTS-EUR-C) and Homey validate / forum poll CI gates."
@@ -2900,8 +2906,5 @@
   },
   "9.0.787": {
     "en": "Improved App Store publish reliability after Athom processing timeouts."
-  },
-  "9.0.789": {
-    "en": "Fixed Lerlink 5-speed fan switch pairing; hardened App Store publish against processing timeouts."
   }
 }

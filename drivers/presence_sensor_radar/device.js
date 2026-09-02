@@ -139,6 +139,9 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
     // WHY(P2379 / VicHY): expose config.dpMap to DynCap ownership checks + strip curtain phantoms
     this._armRadarDynCapGuards();
     await this._healRadarPhantomCaps();
+    // WHY(P2386 / VicHY #2222): Homey may re-apply store caps async after app update —
+    // re-heal shortly after boot so "blind mode" does not stick until delete+re-pair.
+    this._scheduleRadarPhantomReheal();
 
     await this._applyRadarCapabilityProfile();
     this._registerRadarCapabilityListeners();
@@ -209,15 +212,27 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
       'windowcoverings_state',
       'windowcoverings_tilt_set',
       'dim',
+      'target_temperature',
+      'thermostat_mode',
     ];
     for (const cap of phantoms) {
       try {
         if (typeof this.hasCapability === 'function' && this.hasCapability(cap)) {
           await this.removeCapability(cap).catch(() => {});
-          this.log(`[RADAR] P2379 removed phantom capability ${cap}`);
+          this.log(`[RADAR] P2379/P2386 removed phantom capability ${cap}`);
         }
       } catch (_e) { /* soft */ }
     }
+    try {
+      // Homey UI "blind/curtain" often tracks class drift after DynCap poison
+      if (typeof this.getClass === 'function' && typeof this.setClass === 'function') {
+        const cls = String(this.getClass() || '');
+        if (/windowcoverings|curtain|blind|cover/i.test(cls)) {
+          await this.setClass('sensor').catch(() => {});
+          this.log(`[RADAR] P2386 restored class sensor (was ${cls})`);
+        }
+      }
+    } catch (_e) { /* soft */ }
     try {
       await this.unsetStoreValue('dynamic_capabilities').catch(() => {});
     } catch (_e) { /* soft */ }
@@ -229,6 +244,39 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
         mgr._discoveredDPs.clear();
       }
     } catch (_e) { /* soft */ }
+  }
+
+  /**
+   * WHY(P2386): re-heal after app updates when Homey restores capabilities asynchronously.
+   */
+  _scheduleRadarPhantomReheal() {
+    try {
+      const { safeSetTimeout } = require('../../lib/utils/safe-timers');
+      const delays = [15_000, 60_000, 180_000];
+      for (const ms of delays) {
+        safeSetTimeout(this, () => {
+          this._healRadarPhantomCaps().catch(() => {});
+        }, ms);
+      }
+    } catch (_e) {
+      // Fallback without safe-timers
+      try {
+        this.homey.setTimeout(() => {
+          this._healRadarPhantomCaps().catch(() => {});
+        }, 30_000);
+      } catch (__e) { /* soft */ }
+    }
+  }
+
+  async onSettings({ oldSettings, newSettings, changedKeys }) {
+    try {
+      if (typeof super.onSettings === 'function') {
+        await super.onSettings({ oldSettings, newSettings, changedKeys });
+      }
+    } catch (_e) { /* soft */ }
+    // Settings writes touch DP2/3/102 — never let DynCap reinvent curtain from those values
+    this._armRadarDynCapGuards();
+    await this._healRadarPhantomCaps();
   }
 
   /**
