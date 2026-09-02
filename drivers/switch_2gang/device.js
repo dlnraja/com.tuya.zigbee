@@ -5,8 +5,6 @@ const { safeParse } = require('../../lib/utils/tuyaUtils.js');
 const { smartParse } = require('../../lib/managers/SmartDivisorManager');
 
 const UnifiedSwitchBase = require('../../lib/devices/UnifiedSwitchBase');
-const VirtualButtonMixin = require('../../lib/mixins/VirtualButtonMixin');
-const PhysicalButtonMixin = require('../../lib/mixins/PhysicalButtonMixin');
 const { CLUSTER } = require('zigbee-clusters');
 const { includesCI } = require('../../lib/utils/CaseInsensitiveMatcher');
 
@@ -37,7 +35,8 @@ const ZCL_ONLY_MANUFACTURERS_2G = [
   '_TYZB01_6g8b7at8', '_TYZB01_vzrytttn',
 ];
 
-class Switch2GangDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedSwitchBase)) {
+// WHY(P2395/B10): UnifiedSwitchBase already inherits Physical+Virtual via TuyaZigbeeDevice
+class Switch2GangDevice extends UnifiedSwitchBase {
   get gangCount() { return 2; }
 
   /**

@@ -28,9 +28,10 @@
         "L8 MultistateInput",
         "VirtualButtonMixin markAppCommand + UI P2220/P2221"
       ],
-      "gates": ["tools/ci/battery-button-intelligence-gate.js"],
+      "gates": ["tools/ci/battery-button-intelligence-gate.js", "tools/ci/button-physical-gang-parity-gate.js"],
       "tests": [
         "test/critical/p2223-button-capture-cascade.test.js",
+        "test/critical/p2395-button-capture-preferred-levels.test.js",
         "test/critical/p2221-bidirectional-buttons.test.js",
         "test/critical/p2220-button-ui-ux.test.js",
         "test/button-bidirectional.test.js"
@@ -92,12 +93,12 @@
     "flows": {
       "priority": 2,
       "status": "partial",
-      "homeyGap": "titleFormatted [[device]]; Missing Capability Listener",
-      "stack": ["unique flow IDs", "no [[device]]", "hashed resolve", "safeRegisterCapability"],
-      "gates": [],
+      "homeyGap": "titleFormatted [[device]]; Missing Capability Listener; legacy underscore drivers thin physical_gang",
+      "stack": ["unique flow IDs", "no [[device]]", "hashed resolve", "safeRegisterCapability", "physical_gang parity P2395"],
+      "gates": ["tools/ci/button-physical-gang-parity-gate.js", "tools/ci/button-flow-harvest.js"],
       "npm": ["check:flows", "check:flow-dups"],
       "npmSoft": ["check:button-flows"],
-      "tests": ["test/critical/p2205-flow-id-hygiene.test.js", "test/critical/p2198-flow-runtime-coherence.test.js"]
+      "tests": ["test/critical/p2205-flow-id-hygiene.test.js", "test/critical/p2198-flow-runtime-coherence.test.js", "test/critical/p2395-button-capture-preferred-levels.test.js"]
     },
     "mcu_time": {
       "priority": 2,

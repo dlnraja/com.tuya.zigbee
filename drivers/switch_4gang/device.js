@@ -11,12 +11,11 @@ try {
   UnifiedSwitchBase = ZigBeeDevice;
 }
 
-const VirtualButtonMixin = require('../../lib/mixins/VirtualButtonMixin');
-const PhysicalButtonMixin = require('../../lib/mixins/PhysicalButtonMixin');
 const { includesCI } = require('../../lib/utils/CaseInsensitiveMatcher');
 
 /**
  * 4-GANG SWITCH - v5.9.23
+ * WHY(P2395/B10): no Physical/Virtual double-wrap — already on TuyaZigbeeDevice.
  */
 
 // P141: _TYZB01_bagt1e4o + TS0014 — Oz Smart Things 4-gang; EndDevice, ZCL OnOff only.
@@ -27,8 +26,8 @@ const ZCL_ONLY_MANUFACTURERS_4G = [
   '_TYZB01_bagt1e4o',
 ];
 
-const BaseClass = typeof UnifiedSwitchBase === 'function' 
-  ? PhysicalButtonMixin(VirtualButtonMixin(UnifiedSwitchBase))
+const BaseClass = typeof UnifiedSwitchBase === 'function'
+  ? UnifiedSwitchBase
   : UnifiedSwitchBase;
 
 class Switch4GangDevice extends BaseClass {

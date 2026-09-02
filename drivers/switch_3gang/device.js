@@ -2,8 +2,6 @@
 
 const { safeSetTimeout, safeClearTimeout } = require('../../lib/utils/safe-timers');
 const UnifiedSwitchBase = require('../../lib/devices/UnifiedSwitchBase');
-const VirtualButtonMixin = require('../../lib/mixins/VirtualButtonMixin');
-const PhysicalButtonMixin = require('../../lib/mixins/PhysicalButtonMixin');
 const { includesCI } = require('../../lib/utils/CaseInsensitiveMatcher');
 
 /**
@@ -12,6 +10,7 @@ const { includesCI } = require('../../lib/utils/CaseInsensitiveMatcher');
  * BSEED ZCL-only mode: _TZ3000_qkixdnon (Pieter_Pessers forum)
  * v5.9.23: GROUP ISOLATION FIX — remove group memberships + broadcast filter
  * v7.5.43: Added _TZ3000_v4l4b0lp to ZCL_ONLY manufacturers (Issue #170)
+ * WHY(P2395/B10): no Physical/Virtual double-wrap — already on TuyaZigbeeDevice.
  */
 
 // ZCL-Only manufacturers (no Tuya DP) - forum: Pieter_Pessers BSEED 3-gang
@@ -24,7 +23,7 @@ const ZCL_ONLY_MANUFACTURERS_3G = [
   '_TYZB01_mqel1whf',
 ];
 
-class Switch3GangDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedSwitchBase)) {
+class Switch3GangDevice extends UnifiedSwitchBase {
   get gangCount() { return 3; }
 
   /**

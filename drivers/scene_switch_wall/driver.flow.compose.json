@@ -177,6 +177,78 @@
         "nl": "Batterij laag",
         "de": "Batterie schwach"
       }
+    },
+    {
+      "id": "scene_switch_wall_button_2gang_button_1_pressed",
+      "title": {
+        "en": "Button 1 pressed",
+        "fr": "Bouton 1 pressé"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Button 1 pressed",
+        "fr": "Bouton 1 pressé"
+      }
+    },
+    {
+      "id": "scene_switch_wall_button_2gang_button_1_double_pressed",
+      "title": {
+        "en": "Button 1 double pressed",
+        "fr": "Bouton 1 double pressé"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Button 1 double pressed",
+        "fr": "Bouton 1 double pressé"
+      }
+    },
+    {
+      "id": "scene_switch_wall_button_2gang_button_1_long_pressed",
+      "title": {
+        "en": "Button 1 long pressed",
+        "fr": "Bouton 1 appui long"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Button 1 long pressed",
+        "fr": "Bouton 1 appui long"
+      }
+    },
+    {
+      "id": "scene_switch_wall_button_2gang_button_2_pressed",
+      "title": {
+        "en": "Button 2 pressed",
+        "fr": "Bouton 2 pressé"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Button 2 pressed",
+        "fr": "Bouton 2 pressé"
+      }
+    },
+    {
+      "id": "scene_switch_wall_button_2gang_button_2_double_pressed",
+      "title": {
+        "en": "Button 2 double pressed",
+        "fr": "Bouton 2 double pressé"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Button 2 double pressed",
+        "fr": "Bouton 2 double pressé"
+      }
+    },
+    {
+      "id": "scene_switch_wall_button_2gang_button_2_long_pressed",
+      "title": {
+        "en": "Button 2 long pressed",
+        "fr": "Bouton 2 appui long"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Button 2 long pressed",
+        "fr": "Bouton 2 appui long"
+      }
     }
   ]
 }

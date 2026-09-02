@@ -1,6 +1,6 @@
 {
   "name": "com.dlnraja.tuya.zigbee",
-  "version": "9.0.795",
+  "version": "9.0.796",
   "description": "Tuya Unified Zigbee - Local-first control with AI automation",
   "main": "app.js",
   "scripts": {
@@ -262,6 +262,8 @@
     "curtain:audit": "node tools/ci/_curtain-couple-audit.js",
     "button:harvest": "node tools/ci/button-flow-harvest.js",
     "button:harvest:apply": "node tools/ci/button-flow-harvest.js --apply-fixes",
+    "check:p2395": "node tools/ci/button-physical-gang-parity-gate.js && node --test test/critical/p2395-button-capture-preferred-levels.test.js",
+    "check:p2397": "node --test test/critical/p2397-gang-ui-bidirectional.test.js test/critical/p2220-button-ui-ux.test.js",
     "check:p2364": "node --test test/critical/p2364-button-flow-harvest.test.js",
     "couple:search": "node tools/ci/couple-absent-search.js",
     "unknown:harden": "node tools/ci/harden-unknown-zigbee.js",

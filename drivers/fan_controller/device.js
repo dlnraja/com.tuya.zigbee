@@ -6,10 +6,12 @@ const { CLUSTER } = require('zigbee-clusters');
 /**
  * Fan Speed Controller Device — P123: TuyaZigbeeDevice (L14) + mainsPowered
  *
- * DP mappings:
+ * DP mappings (Z2M TS0601_fan_switch / Lerlink T2-Z67):
  * DP1: On/Off
- * DP3: Speed (0-4 typically: off, low, medium, high, turbo)
+ * DP2: Countdown seconds 0–43200 (P2396)
+ * DP3: Speed enum 0–4 (speeds 1–5)
  * DP6: Mode (normal, sleep, natural, etc)
+ * DP11: Power-on behavior off/on (P2396)
  */
 class FanControllerDevice extends TuyaZigbeeDevice {
 
@@ -183,6 +185,34 @@ class FanControllerDevice extends TuyaZigbeeDevice {
     tuyaCluster.on('datapoint', (dp, value) => this._handleDP(dp, value));
   }
 
+  /**
+   * WHY(P2396 / GitHub #536): Lerlink fan_switch exposes DP2 countdown + DP11 power-on.
+   */
+  async onSettings({ newSettings, changedKeys }) {
+    const ep1 = this._zclNode?.endpoints?.[1];
+    const tuyaCluster = ep1?.clusters?.tuya || ep1?.clusters?.[61184];
+    if (!tuyaCluster || typeof tuyaCluster.datapoint !== 'function') {
+      return;
+    }
+    const keys = changedKeys || Object.keys(newSettings || {});
+    for (const key of keys) {
+      try {
+        if (key === 'countdown') {
+          const sec = Math.max(0, Math.min(43200, Number(newSettings.countdown) || 0));
+          await tuyaCluster.datapoint({ dp: 2, datatype: 2, value: sec });
+          this.log(`[SETTINGS] DP2 countdown=${sec}`);
+        }
+        if (key === 'power_on_behavior') {
+          const v = String(newSettings.power_on_behavior || 'off').toLowerCase() === 'on' ? 1 : 0;
+          await tuyaCluster.datapoint({ dp: 11, datatype: 4, value: v });
+          this.log(`[SETTINGS] DP11 power_on_behavior=${v}`);
+        }
+      } catch (e) {
+        this.error(`[SETTINGS] ${key} TX failed: ${e.message}`);
+      }
+    }
+  }
+
   async _handleDP(dp, value) {
     if (this._destroyed) {return;}
     if (dp === undefined) {return;}
@@ -202,11 +232,23 @@ class FanControllerDevice extends TuyaZigbeeDevice {
         break;
       }
 
+      case 2: { // Countdown seconds (P2396)
+        const sec = Math.max(0, Math.min(43200, Number(value) || 0));
+        await this.setSettings({ countdown: sec }).catch(() => {});
+        break;
+      }
+
       case 3: { // Speed (0-4)
         const dim = value / 4;
         await this['safeSetCapabilityValue']('dim', dim).catch(this._boundError || ((e) => { try { this.error(e); } catch (_) {} }));
         const trigger = this.homey.flow.getDeviceTriggerCard('fan_controller_speed_changed');
         if (trigger) {trigger.trigger(this, { speed: Math.round(dim * 100) }).catch(this._boundError || ((e) => { try { this.error(e); } catch (_) {} }));}
+        break;
+      }
+
+      case 11: { // Power-on behavior — Z2M off/on only
+        const key = { 0: 'off', 1: 'on' }[Number(value)];
+        if (key) await this.setSettings({ power_on_behavior: key }).catch(() => {});
         break;
       }
 

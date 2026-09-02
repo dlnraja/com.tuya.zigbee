@@ -58,14 +58,15 @@
     },
     "button_capture_l1_l8": {
       "source": ["config/resilience/button-capture-cascade.json", "docs/RULES_PHYSICAL_BUTTONS.md"],
+      "note": "P2395: preferredLevels gate L5/L7/bind-retry (applied, not log-only). L1–L4/L6/L8 remain in PhysicalButtonMixin. UnifiedButtonEngine L1–L5 is dead parallel — do not extend.",
       "layers": {
         "L1": "OnOffBound 0xFD/0xFC",
         "L2": "raw node catcher",
         "L3": "scenes",
         "L4": "ZCL on/off/toggle",
-        "L5": "E000/E001",
+        "L5": "E000/E001 (cascade when preferred)",
         "L6": "LevelControl",
-        "L7": "EF00 DP conditional",
+        "L7": "EF00 DP conditional (cascade skip on TS004x)",
         "L8": "MultistateInput"
       }
     },

@@ -126,6 +126,18 @@
       "tag": "BOTH",
       "note": "Peter cfbf687f — triggerButtonPress must fire *_button_1gang_* compose cards (was gated gangCount>1); RX 0xFD already OK"
     },
+    "p2395_button_capture_lx_flows": {
+      "tag": "BOTH",
+      "note": "Cascade preferredLevels apply L5/L7 gates; _hasPhysicalButtonMixin; legacy physical_gang compose; SOS skip8004. CI parity gate MASTER_ONLY side."
+    },
+    "p2396_lerlink_fan_dp2_dp11": {
+      "tag": "BOTH",
+      "note": "GitHub #536 — _TZE200/204_r32ctezx+TS0601 fan_controller DP2 countdown + DP11 power-on; scrub water_valve leftovers"
+    },
+    "p2397_gang_ui_bidirectional": {
+      "tag": "BOTH",
+      "note": "Homey UI button.N ↔ physical EP: resolveGangCount from caps, soft-ensure onoff.gangN (not on zigbee.devices parents), EP-only virtual TX, physical pulse"
+    },
     "p2379_presence_radar_no_curtain_dyncap": {
       "tag": "BOTH",
       "note": "VicHY — DynCap must not invent windowcoverings_set/dim from radar DP2/3/102; heal phantom curtain UI + stuck presence"
