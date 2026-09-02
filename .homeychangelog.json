@@ -2924,5 +2924,8 @@
   },
   "9.0.795": {
     "en": "Fixed presence radar switching to curtain/blind UI after app updates."
+  },
+  "9.0.797": {
+    "en": "Improved multi-gang switch Homey buttons (physical and app UI stay in sync); added fan countdown and power-on settings; richer per-gang flow cards on legacy wall switches."
   }
 }
