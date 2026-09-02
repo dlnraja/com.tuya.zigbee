@@ -2900,5 +2900,8 @@
   },
   "9.0.787": {
     "en": "Improved App Store publish reliability after Athom processing timeouts."
+  },
+  "9.0.789": {
+    "en": "Fixed Lerlink 5-speed fan switch pairing; hardened App Store publish against processing timeouts."
   }
 }
