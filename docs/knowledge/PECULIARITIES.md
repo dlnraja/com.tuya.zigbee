@@ -83,8 +83,8 @@ Generated 2026-08-19T08:50:15.322Z from registry (54 cases) × compound DB (209 
 - Compound `_TZE204_m1cvyneb|TS0601`: tuya_dp DP {"1":"onoff","2":"dim/1000"}
 - Compound `_TZE200_m1cvyneb|TS0601`: tuya_dp DP {"1":"onoff","2":"dim/1000"}
 - Compose: class=light eps=1 EF00=true IAS=false batteries=mains?
-- Notes: BSEED Click 1-gang EF00 dimmer insert. MCU brightness 0-1000 (never write >1000, Z2M#32305). Stale climate pairing cannot be swapped at runtime — remove and re-add as wall dimmer. Couple is TS0601 only; do not invent TS0201.
-- Sources: forum-140352, diag-f20dc4f0, P139, P149, z2m#32305
+- Notes: BSEED Click 1-gang EF00 dimmer insert. MCU brightness 0-1000 (never write >1000, Z2M#32305). Stale climate pairing cannot be swapped at runtime — remove and re-add as wall dimmer. Couple is TS0601 only; do not invent TS0201. Interview EP1 clusters: 0/4/5/0xEF00 + proprietary **0xED00 (60672)** — do not compose 0xED00. **#2221** (2026-09-01) claims “updated diagnostic ID and interview” but the post body has **no UUID / no interview** (reply_to #2206 only). Evidence remains `60959c24` @ **9.0.688**: DynCap DP2→humidity + Missing IEEE 404 TX (P2314/P2333); tip ≥9.0.744+ heal/dp map; **P2382** skip HYBRID 15-min disable on EF00 dimmers.
+- Sources: forum-140352 #2206/#2221, diag-60959c24, diag-f20dc4f0, P139, P149, P2314, P2333, P2382, z2m#32305
 
 ### `tboy-relay-4ch-imaccztn` → `relay_board_4_channel`
 
