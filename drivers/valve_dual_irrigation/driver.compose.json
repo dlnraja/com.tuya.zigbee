@@ -1,9 +1,9 @@
 {
   "name": {
-    "en": "Smart Valve 2-Way",
-    "fr": "Vanne Connectée 2 Voies",
-    "nl": "Tweevoudige Irrigatieklep",
-    "de": "Zwei-Wege-BewÃ¤sserungsventil"
+    "en": "Smart 2-Way Irrigation Valve",
+    "fr": "Vanne d'irrigation 2 voies",
+    "nl": "Tweevoudige irrigatieklep",
+    "de": "Zwei-Wege-Bewässerungsventil"
   },
   "class": "other",
   "capabilities": [
@@ -26,14 +26,14 @@
       }
     },
     "manufacturerName": [
-      "_MASTER_VALVE_DUAL_IRRIGATION_NEEDS_DEVICE_ASSIGNMENT",
-      "_TZE284_EAET5QT5",
-      "_TZE284_FHVPALTK",
-      "_TZE284_eaet5qt5",
-      "_TZE284_fhvpaltk",
-      "_master_valve_dual_irrigation_needs_device_assignment",
       "_tze284_eaet5qt5",
-      "_tze284_fhvpaltk"
+      "_TZE284_EAET5QT5",
+      "_TZE284_eaet5qt5",
+      "_tze284_EAET5QT5",
+      "_tze284_fhvpaltk",
+      "_TZE284_FHVPALTK",
+      "_TZE284_fhvpaltk",
+      "_tze284_FHVPALTK"
     ]
   },
   "images": {
@@ -56,7 +56,7 @@
       "id": "ota_check",
       "title": {
         "en": "Check Zigbee OTA Update",
-        "fr": "Vérifier MÃJ OTA",
+        "fr": "Vérifier MàJ OTA",
         "nl": "Controleer op OTA-updates"
       }
     },
@@ -64,14 +64,18 @@
       "id": "tuya_revive",
       "title": {
         "en": "Tuya Revive (device recovery)",
-        "fr": "Tuya Revive (récupération appareil)"
+        "fr": "Tuya Revive (récupération appareil)",
+        "nl": "Tuya Revive (apparaatherstel)",
+        "de": "Tuya Revive (Gerätewiederherstellung)"
       }
     },
     {
       "id": "generate_issue_report",
       "title": {
         "en": "Generate support report (GitHub issue)",
-        "fr": "Générer rapport de support (issue GitHub)"
+        "fr": "Générer rapport de support (issue GitHub)",
+        "nl": "Supportrapport genereren (GitHub issue)",
+        "de": "Supportbericht erstellen (GitHub Issue)"
       }
     }
   ],
