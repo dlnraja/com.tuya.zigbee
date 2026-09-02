@@ -117,6 +117,7 @@ env:
 - Gate: `node tools/ci/forum-ai-paste-gate.js --scan-defaults`
 - Doctrine: `docs/rules/FORUM_SILENT_HUMANIZE.md`
 - Silent multi-scan: `tools/ci/forum-silent-multi-scan.js` (wired in `forum-poll.yml`, `auto-enrich-closed-loop.yml`, `fetch-diags.yml`)
+- **P2394 — GitHub humanize:** no AI-slop issue walls — silent reopen, diag-resolver dry-run (`docs/rules/GITHUB_HUMANIZE.md`)
 - **P2210 — Forum actionable processor:** `tools/ci/forum-actionable-processor.js` (`npm run forum:process`)
   - Runs **after** `multi-silent-digest.json` exists (scan step above)
   - Processes every actionable post **one-by-one**: sacred couple extraction, misattribution registry, `KNOWN_ROUTES`, `device-truth.json`, dual-app track (`BOTH` / `MASTER_ONLY` / `REVIEW`)
