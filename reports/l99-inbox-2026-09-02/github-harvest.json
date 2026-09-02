@@ -1,21 +1,9 @@
 {
-  "harvestedAt": "2026-09-02T07:22:40.481Z",
+  "harvestedAt": "2026-09-02T18:07:50.511Z",
   "repo": "dlnraja/com.tuya.zigbee",
   "auth": "token",
   "error": null,
   "issues": [
-    {
-      "number": 536,
-      "title": "Device Request - Smart fan switch with 5-speed control - Zigbee",
-      "labels": [
-        "enhancement",
-        "device-request"
-      ],
-      "updatedAt": "2026-09-02T01:41:43Z",
-      "user": "MarceloSilvaLeite",
-      "htmlUrl": "https://github.com/dlnraja/com.tuya.zigbee/issues/536",
-      "bodySnippet": "## 📱 Basic Information\n\n**Purchase Link**: https://pt.aliexpress.com/item/1005004705097813.html\n**Power Source**: Mains (AC)\n\n\n\n  \"ids\": {\n    \"modelId\": \"TS0601\",\n    \"manufacturerName\": \"_TZE200_r32ctezx\"\n  },\n  \"endpoints\": {\n    \"ieeeAddress\": \"a4:c1:38:87:6b:8d:c7:97\",\n    "
-    },
     {
       "number": 533,
       "title": "Device Request - [SMART ZIGBEE CURTAIN SWITCH] - [MOES]",
@@ -23,19 +11,39 @@
         "enhancement",
         "device-request",
         "new-fingerprint",
-        "needs-maintainer"
+        "device_request",
+        "reopened-by-user",
+        "MOES",
+        "needs-maintainer",
+        "smart_zigbee",
+        "curtain_switch"
       ],
-      "updatedAt": "2026-09-01T14:53:05Z",
+      "updatedAt": "2026-09-02T17:19:48Z",
       "user": "salvagr",
       "htmlUrl": "https://github.com/dlnraja/com.tuya.zigbee/issues/533",
       "bodySnippet": "Thank you for your support.\n\n## 📱 Basic Information\n\n**Brand & Model**: SMART ZIGBEE CURTAIN SWITCH - MOES\n**Purchase Link**: https://es.aliexpress.com/item/1005008356152992.html\n**Power Source**:  Mains\n**Current Status**: pairing with wrong device type. Detected as \"radiator v"
+    },
+    {
+      "number": 536,
+      "title": "Device Request - Smart fan switch with 5-speed control - Zigbee",
+      "labels": [
+        "bug",
+        "enhancement",
+        "device-request",
+        "new-fingerprint",
+        "awaiting-verification"
+      ],
+      "updatedAt": "2026-09-02T12:44:50Z",
+      "user": "MarceloSilvaLeite",
+      "htmlUrl": "https://github.com/dlnraja/com.tuya.zigbee/issues/536",
+      "bodySnippet": "## 📱 Basic Information\n\n**Purchase Link**: https://pt.aliexpress.com/item/1005004705097813.html\n**Power Source**: Mains (AC)\n\n\n\n  \"ids\": {\n    \"modelId\": \"TS0601\",\n    \"manufacturerName\": \"_TZE200_r32ctezx\"\n  },\n  \"endpoints\": {\n    \"ieeeAddress\": \"a4:c1:38:87:6b:8d:c7:97\",\n    "
     }
   ],
   "prs": [
     {
       "number": 534,
       "title": "AI Monthly Audit - September 2026 | Risk: Updated",
-      "updatedAt": "2026-09-01T10:32:02Z",
+      "updatedAt": "2026-09-02T09:59:47Z",
       "user": "dlnraja",
       "htmlUrl": "https://github.com/dlnraja/com.tuya.zigbee/pull/534",
       "draft": false
