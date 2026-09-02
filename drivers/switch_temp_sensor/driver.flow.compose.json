@@ -119,30 +119,6 @@
         "nl": "Vochtigheid gewijzigd",
         "de": "Feuchtigkeit geändert"
       }
-    },
-    {
-      "id": "switch_temp_sensor_physical_gang1_on",
-      "title": {
-        "en": "Physical gang 1 ON",
-        "fr": "Physique gang 1 ON"
-      },
-      "args": [],
-      "titleFormatted": {
-        "en": "Physical gang 1 ON",
-        "fr": "Physique gang 1 ON"
-      }
-    },
-    {
-      "id": "switch_temp_sensor_physical_gang1_off",
-      "title": {
-        "en": "Physical gang 1 OFF",
-        "fr": "Physique gang 1 OFF"
-      },
-      "args": [],
-      "titleFormatted": {
-        "en": "Physical gang 1 OFF",
-        "fr": "Physique gang 1 OFF"
-      }
     }
   ],
   "conditions": [
