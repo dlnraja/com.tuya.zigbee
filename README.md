@@ -33,7 +33,7 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 
 | Metric | Value |
 |--------|-------|
-| **App Version** | v9.0.797 |
+| **App Version** | v9.0.799 |
 | **Drivers** | 431 (381 Zigbee + 50 WiFi) |
 | **Unique Fingerprints** | 4,389 |
 | **Pairing Variants** | 16,213 (4 case combos per fingerprint) |
@@ -102,6 +102,8 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 
 | Version | Changes |
 |---------|---------|
+| **v9.0.799** | Fixed garden valve and other flow conditions when Homey lacks getDeviceConditionCard; radar presence value 2 now counts as occupied. |
+| **v9.0.798** | Fixed garden valve and other flow conditions when Homey lacks getDeviceConditionCard; radar presence value 2 now counts as occupied. |
 | **v9.0.797** | Improved multi-gang switch Homey buttons (physical and app UI stay in sync); added fan countdown and power-on settings; richer per-gang f… |
 | **v9.0.796** | Improved multi-gang switch Homey buttons (physical and app UI stay in sync); added fan countdown and power-on settings; richer per-gang f… |
 | **v9.0.795** | Fixed presence radar switching to curtain/blind UI after app updates. |
@@ -112,8 +114,6 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 | **v9.0.790** | Fixed presence radar switching to curtain/blind UI after app updates. |
 | **v9.0.789** | Fixed Lerlink 5-speed fan switch pairing; hardened App Store publish against processing timeouts. |
 | **v9.0.788** | Fixed Lerlink 5-speed fan switch pairing; hardened App Store publish against processing timeouts. |
-| **v9.0.787** | Improved App Store publish reliability after Athom processing timeouts. |
-| **v9.0.786** | Improved App Store publish reliability after Athom processing timeouts. |
 
 <!-- CHANGELOG_END -->
 
