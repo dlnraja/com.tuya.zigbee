@@ -33,7 +33,7 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 
 | Metric | Value |
 |--------|-------|
-| **App Version** | v9.0.802 |
+| **App Version** | v9.0.803 |
 | **Drivers** | 431 (381 Zigbee + 50 WiFi) |
 | **Unique Fingerprints** | 4,389 |
 | **Pairing Variants** | 16,204 (4 case combos per fingerprint) |
@@ -102,6 +102,7 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 
 | Version | Changes |
 |---------|---------|
+| **v9.0.803** | Fixed Moes curtain wall switch stopping too early after open/close from Homey UI. |
 | **v9.0.802** | Fixed Moes curtain wall switch stopping too early after open/close from Homey UI. |
 | **v9.0.801** | Fixed Moes curtain wall switch stopping too early after open/close from Homey UI. |
 | **v9.0.800** | Fixed Moes curtain wall switch stopping too early after open/close from Homey UI. |
@@ -113,7 +114,6 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 | **v9.0.794** | Fixed presence radar switching to curtain/blind UI after app updates. |
 | **v9.0.793** | Fixed presence radar switching to curtain/blind UI after app updates. |
 | **v9.0.792** | Fixed presence radar switching to curtain/blind UI after app updates. |
-| **v9.0.791** | Fixed presence radar switching to curtain/blind UI after app updates. |
 
 <!-- CHANGELOG_END -->
 
