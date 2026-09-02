@@ -33,7 +33,7 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 
 | Metric | Value |
 |--------|-------|
-| **App Version** | v9.0.794 |
+| **App Version** | v9.0.795 |
 | **Drivers** | 431 (381 Zigbee + 50 WiFi) |
 | **Unique Fingerprints** | 4,389 |
 | **Pairing Variants** | 16,213 (4 case combos per fingerprint) |
@@ -41,7 +41,7 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 | **Flow Cards** | 5,724 |
 | **Unique Capabilities** | 170 |
 | **Native OTA Drivers** | 9 |
-| **Test Suites** | 224 files |
+| **Test Suites** | 225 files |
 | **SVG Icons** | 731 |
 | **Languages** | EN, FR, NL, DE |
 | **SDK / Homey** | 3 / >= 12.2.0 |
@@ -102,6 +102,7 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 
 | Version | Changes |
 |---------|---------|
+| **v9.0.795** | Fixed presence radar switching to curtain/blind UI after app updates. |
 | **v9.0.794** | Fixed presence radar switching to curtain/blind UI after app updates. |
 | **v9.0.793** | Fixed presence radar switching to curtain/blind UI after app updates. |
 | **v9.0.792** | Fixed presence radar switching to curtain/blind UI after app updates. |
@@ -113,7 +114,6 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 | **v9.0.786** | Improved App Store publish reliability after Athom processing timeouts. |
 | **v9.0.785** | Fixed app crash from Invalid Driver ID in flows; restored remote button fingerprint gate. |
 | **v9.0.784** | Fixed app crash from Invalid Driver ID in flows; restored remote button fingerprint gate. |
-| **v9.0.783** | Fixed app crash from Invalid Driver ID in flows; restored remote button fingerprint gate. |
 
 <!-- CHANGELOG_END -->
 
