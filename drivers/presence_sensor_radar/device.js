@@ -157,6 +157,11 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
 
     // WHY(P2379 / VicHY): expose config.dpMap to DynCap ownership checks + strip curtain phantoms
     this._armRadarDynCapGuards();
+    // WHY(P2401): arm flood-calm flag ASAP so L0 RX shed skips Homey timeline mid-update
+    try {
+      const earlyCfg = this._getRadarConfig();
+      this._radarFloodCalm = !!(earlyCfg && (earlyCfg.floodCalm || earlyCfg.mainsPowered));
+    } catch (_e) { this._radarFloodCalm = true; /* driver is radar */ }
     await this._healRadarPhantomCaps();
     // WHY(P2386 / VicHY #2222): Homey may re-apply store caps async after app update —
     // re-heal shortly after boot so "blind mode" does not stick until delete+re-pair.

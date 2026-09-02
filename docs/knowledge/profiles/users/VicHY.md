@@ -2,13 +2,17 @@
 
 > Curated fleet profile
 
-Forum topic: **T140352** · Posts: 2208, 2211, **2222**, **2224**, **2225** (Dylan reply)
+Forum topic: **T140352** · Posts: 2208, 2211, **2222**, **2224**, **2225** (Dylan reply), **2226** (ack)
 
 ## Devices
 
 | Tile | Driver | Couple | User action |
 |---|---|---|---|
-| Presencia baño principal | presence_sensor_radar | `_TZE204_clrdrnya`+`TS0601` | Update Test ≥ **9.0.797** (P2379/P2386/P2389/P2391) + **restart app** (re-pair only if still curtain UI) |
+| Presencia baño principal | presence_sensor_radar | `_TZE204_clrdrnya`+`TS0601` | Update Test ≥ **9.0.802** (P2379/P2386/P2389/P2391/P2401) + **restart app** (re-pair only if still curtain UI) |
+
+## #2226 (2026-09-02)
+
+Ack only — will try tip and report back. No new couple/symptom.
 
 ## #2224 (2026-09-02)
 
@@ -19,7 +23,7 @@ Interview locked in post:
 - Timeline: update → low battery → Zigbee flood (~196 msg/min) → low battery
 
 Root causes (silent):
-- Flood = Tuya mmWave firmware chatty (P2389 calm on tip)
+- Flood = Tuya mmWave firmware chatty (P2389 calm; **P2401** also when `driver.id` lags mid-update)
 - Low battery = phantom Homey Energy / `measure_battery` on **mains** MTG radar (P2391 strip + clear energy)
 - App on diag was 9.0.781 — tip has fixes
 
@@ -31,7 +35,7 @@ Symptom: UI becomes **blind/curtain** + continuous presence after updates. Fix P
 
 ## Flood timeline (~196 msg/min)
 
-Firmware chatty (Z2M#14742). **P2389**: radar RX budget + no Homey flood notification + DP9/DP104 coalesce.
+Firmware chatty (Z2M#14742). **P2389/P2401**: radar RX budget + no Homey flood notification (driver id **or** clrdrnya mfr / distance cap / floodCalm) + DP9/DP104 coalesce.
 
 **No forum reply** (T157628).
 

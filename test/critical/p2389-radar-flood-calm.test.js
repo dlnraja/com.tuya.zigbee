@@ -32,9 +32,18 @@ describe('P2389 — radar flood calm', () => {
 
   it('TuyaZigbeeDevice skips Homey flood notification for radar drivers', () => {
     const src = read('lib/tuya/TuyaZigbeeDevice.js');
-    assert.ok(src.includes('isRadarFloodDriver'), 'imports radar classifier');
-    assert.ok(src.includes('[P2389] Radar firmware chatty'), 'log-only path for radars');
-    assert.ok(src.includes("rxType = isRadarFloodDriver(driverId) ? 'radar'"), 'trackRx uses radar type');
+    assert.ok(src.includes('isRadarFloodDriver') || src.includes('isRadarFloodContext'), 'imports radar classifier');
+    assert.ok(src.includes('_isRadarFloodCalmDevice'), 'P2401 multi-hint calm');
+    assert.ok(src.includes('[P2389') || src.includes('Radar firmware chatty'), 'log-only path for radars');
+    assert.ok(src.includes("_isRadarFloodCalmDevice() ? 'radar'"), 'trackRx uses radar type via calm helper');
+  });
+
+  it('P2401 isRadarFloodContext matches clrdrnya without driver id', () => {
+    const { isRadarFloodContext } = require('../../lib/utils/UniversalThrottleManager');
+    assert.strictEqual(isRadarFloodContext({ manufacturerName: '_TZE204_clrdrnya' }), true);
+    assert.strictEqual(isRadarFloodContext({ hasDistanceCap: true }), true);
+    assert.strictEqual(isRadarFloodContext({ floodCalm: true }), true);
+    assert.strictEqual(isRadarFloodContext({ driverId: '', manufacturerName: '_TZ3000_switch' }), false);
   });
 
   it('MTG075/clrdrnya config enables floodCalm + DP throttle for distance/lux', () => {
