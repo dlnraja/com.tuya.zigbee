@@ -61,6 +61,7 @@ Generated 2026-08-19T08:50:15.322Z from registry (54 cases) × compound DB (209 
 - **P2388 (2026-09-02):** diag `05867379-dabd-4299-bb1a-cad53fa57189` @ **9.0.750** — couple **ABSENT**; timeout + hybrid RX none + EF00 manager missing at init. P2363 optimistic cover + soft-create shipped; **NEED_INTERVIEW** (mfr+pid + `[COVER-INIT]` lines). Cross-ref Z2M TS0601_cover siblings in `reports/couple-absent-search/05867379.json` — never lock #533 TRV couple without log proof.
 - **P2363 (2026-09-01):** same diag still **couple ABSENT** (hybrid RX none) — do not invent mfr+pid. Soft-create `TuyaEF00Manager` on `UnifiedCoverBase`, optimistic `windowcoverings_*` after successful TX, skip hybrid protocol-disable for cover/curtain drivers. Added verified Z2M cover motors (`mfr`+`TS0601` only); stripped tilt `_TZE204_r0jdjrvi` from `curtain_motor`.
 - **P2380 (2026-09-02):** diag `ab5aaf04` @ 9.0.775 “Cover stop working” — `UniversalDPSender._try` treated `sendDP()===false` as success (`✅DP mgr` while stderr `Tuya cluster not available`). Fix: honor false + multi-EP EF00 scan + ZCL windowCovering fallback on cover TX.
+- **P2393 (2026-09-02):** diags `ab5aaf04` + `a9e4d712` @ 9.0.775/784 — TX `✅` but cover dead: Homey UI sends `down` then `idle` ~1s later (momentary release) → DP1 STOP cancels travel. Fix: motion guard skips idle for 5s (Moes ZTS) / 2.5s (other EF00 covers); do not snap position to 0/1 on state TX.
 
 ## Cases (1 by 1)
 
