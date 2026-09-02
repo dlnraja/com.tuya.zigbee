@@ -193,23 +193,34 @@
       "forumTopic": 140352,
       "posts": [
         2208,
-        2211
+        2211,
+        2222,
+        2224,
+        2225,
+        2226
       ],
       "diags": [
-        "4217d5e3-c845-4f0b-a351-5e5a59295cbb"
+        "4217d5e3-c845-4f0b-a351-5e5a59295cbb",
+        "0e28d470-c67e-4876-9d19-75f816abc7bb"
       ],
       "devices": [
         {
-          "tile": "24G presence radar",
+          "tile": "Presencia baño principal",
           "driver": "presence_sensor_radar",
           "couple": "_TZE204_clrdrnya+TS0601",
           "symptoms": [
-            "unknown at pairing (compact dropped mfr from app.json)"
+            "blind/curtain UI after update",
+            "stuck presence",
+            "Homey flood timeline ~196 msg/min",
+            "phantom low battery on mains MTG"
           ],
           "fixes": [
-            "P2340 sacred-keep force-inject clrdrnya"
+            "P2340 sacred-keep force-inject clrdrnya",
+            "P2379/P2386 phantom curtain strip",
+            "P2389/P2401 radar flood calm (no Homey alert)",
+            "P2391 mains battery heal + energy clear"
           ],
-          "userAction": "Update Test ≥9.0.738 + re-pair Presence Sensor Radar"
+          "userAction": "Update Test ≥9.0.802 + restart app; re-pair only if still curtain UI"
         }
       ],
       "dualApp": "BOTH"
