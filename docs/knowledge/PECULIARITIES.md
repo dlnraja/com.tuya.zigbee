@@ -59,6 +59,7 @@ Generated 2026-08-19T08:50:15.322Z from registry (54 cases) × compound DB (209 
 - Fix: preserve exact `pin.mfr` in compact + sacred-keep pins; trim absurd curtain productIds
 - **P2356 (2026-08-31):** post-pair diag `05867379` — position RX + DP3/7/8/10 settings + strip `button.1` (UI errors); `_handleTuyaDP` → `_handleDP`
 - **P2363 (2026-09-01):** same diag still **couple ABSENT** (hybrid RX none) — do not invent mfr+pid. Soft-create `TuyaEF00Manager` on `UnifiedCoverBase`, optimistic `windowcoverings_*` after successful TX, skip hybrid protocol-disable for cover/curtain drivers. Added verified Z2M cover motors (`mfr`+`TS0601` only); stripped tilt `_TZE204_r0jdjrvi` from `curtain_motor`.
+- **P2380 (2026-09-02):** diag `ab5aaf04` @ 9.0.775 “Cover stop working” — `UniversalDPSender._try` treated `sendDP()===false` as success (`✅DP mgr` while stderr `Tuya cluster not available`). Fix: honor false + multi-EP EF00 scan + ZCL windowCovering fallback on cover TX.
 
 ## Cases (1 by 1)
 
