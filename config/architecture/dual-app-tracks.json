@@ -126,6 +126,10 @@
       "tag": "BOTH",
       "note": "Peter cfbf687f — triggerButtonPress must fire *_button_1gang_* compose cards (was gated gangCount>1); RX 0xFD already OK"
     },
+    "p2379_presence_radar_no_curtain_dyncap": {
+      "tag": "BOTH",
+      "note": "VicHY — DynCap must not invent windowcoverings_set/dim from radar DP2/3/102; heal phantom curtain UI + stuck presence"
+    },
     "p2372_flow_heuristics_knob_rotary": {
       "tag": "BOTH",
       "note": "FlowCardHeuristics knob/rotary + SOS patterns — runtime flow resolve reliability"

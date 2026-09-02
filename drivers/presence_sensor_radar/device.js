@@ -55,6 +55,18 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
     return MAINS_POWERED_RADARS.has(mfr);
   }
 
+  /**
+   * WHY(P2379): override UnifiedSensorBase climate defaults — radar owns config.dpMap
+   * (sensitivity/range/delay DPs must show as driver-owned to DynCap).
+   */
+  get dpMappings() {
+    if (this._dynamicDpMappings && Object.keys(this._dynamicDpMappings).length) {
+      return this._dynamicDpMappings;
+    }
+    const config = this._getRadarConfig() || {};
+    return config.dpMap || {};
+  }
+
   get sensorCapabilities() {
     const config = this._getRadarConfig();
     const caps = new Set(['alarm_motion', 'alarm_human', 'button.1']);
@@ -124,6 +136,10 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
     this._inference = new IntelligentPresenceInference(this);
     this._discovery = new IntelligentDPAutoDiscovery(this);
 
+    // WHY(P2379 / VicHY): expose config.dpMap to DynCap ownership checks + strip curtain phantoms
+    this._armRadarDynCapGuards();
+    await this._healRadarPhantomCaps();
+
     await this._applyRadarCapabilityProfile();
     this._registerRadarCapabilityListeners();
 
@@ -148,6 +164,71 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
     this._startInitializationCycle(zclNode);
 
     this.log('[RADAR] Ready');
+  }
+
+  /**
+   * WHY(P2379): DynCap must treat radar config.dpMap as driver-owned (settings DPs
+   * have cap:null but must still block invent). Also forbid curtain/dim phantoms.
+   */
+  _armRadarDynCapGuards() {
+    try {
+      const config = this._getRadarConfig() || {};
+      const dpMap = config.dpMap || {};
+      const block = new Set(Object.keys(dpMap).map(Number).filter((n) => Number.isFinite(n)));
+      for (const id of [1, 2, 3, 4, 6, 9, 12, 101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112, 113, 114, 115]) {
+        block.add(id);
+      }
+      this._dynCapBlockDps = block;
+      this._forbiddenCapabilities = Array.from(new Set([
+        ...(this._forbiddenCapabilities || []),
+        'windowcoverings_set',
+        'windowcoverings_state',
+        'windowcoverings_tilt_set',
+        'dim',
+        'target_temperature',
+        'thermostat_mode',
+      ]));
+      // Bridge configs.dpMap → _dynamicDpMappings (dpMappings getter prefers this)
+      const bridged = {};
+      for (const [k, v] of Object.entries(dpMap)) {
+        bridged[k] = v;
+        bridged[Number(k)] = v;
+      }
+      this._dynamicDpMappings = { ...(this._dynamicDpMappings || {}), ...bridged };
+    } catch (e) {
+      this.log('[RADAR] P2379 dyn-cap guards skipped:', e.message);
+    }
+  }
+
+  /**
+   * WHY(P2379): remove DynCap-poisoned curtain UI + clear stored dyn discoveries.
+   */
+  async _healRadarPhantomCaps() {
+    const phantoms = [
+      'windowcoverings_set',
+      'windowcoverings_state',
+      'windowcoverings_tilt_set',
+      'dim',
+    ];
+    for (const cap of phantoms) {
+      try {
+        if (typeof this.hasCapability === 'function' && this.hasCapability(cap)) {
+          await this.removeCapability(cap).catch(() => {});
+          this.log(`[RADAR] P2379 removed phantom capability ${cap}`);
+        }
+      } catch (_e) { /* soft */ }
+    }
+    try {
+      await this.unsetStoreValue('dynamic_capabilities').catch(() => {});
+    } catch (_e) { /* soft */ }
+    try {
+      const mgr = this.dynamicCapabilityManager;
+      if (mgr && typeof mgr.purgeDriverOwnedDiscoveries === 'function') {
+        await mgr.purgeDriverOwnedDiscoveries();
+      } else if (mgr && mgr._discoveredDPs) {
+        mgr._discoveredDPs.clear();
+      }
+    } catch (_e) { /* soft */ }
   }
 
   /**
