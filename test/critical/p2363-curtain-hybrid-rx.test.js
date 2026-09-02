@@ -10,7 +10,7 @@ describe('P2363 curtain hybrid + cover hardening', () => {
     const src = fs.readFileSync(path.join(__dirname, '../../lib/protocol/HybridProtocolManager.js'), 'utf8');
     assert.match(src, /isCoverish/);
     assert.match(src, /curtain\|cover\|shutter\|blind/);
-    assert.match(src, /Skip protocol disable on sleepy\/IAS-only\/button\/cover device/);
+    assert.match(src, /Skip protocol disable on sleepy\/IAS-only\/button\/cover\/EF00-dimmer device/);
   });
 
   it('UnifiedCoverBase creates EF00 manager and optimistic UI updates', () => {
