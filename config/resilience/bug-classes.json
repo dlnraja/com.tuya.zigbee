@@ -62,7 +62,22 @@
         "battery",
         "sacred_couple_fp"
       ],
-      "fix": "mainsPowered strip"
+      "fix": "mainsPowered strip + P2391/P2392 FirmwareQuirkCompensator + Energy clear"
+    },
+    "diy_dp_cap_injection": {
+      "status": "fixed",
+      "domains": [
+        "ef00_dp",
+        "hybrid_protocol"
+      ],
+      "fix": "P2392 TuyaUniversalBridge DIY-only + safeSet refuse"
+    },
+    "mmwave_rx_flood": {
+      "status": "partial",
+      "domains": [
+        "hybrid_protocol"
+      ],
+      "fix": "P2389 radar RX budget + floodCalm DP coalesce (airtime is firmware)"
     },
     "ias_ef00_leftover": {
       "status": "partial",
