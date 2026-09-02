@@ -5987,3 +5987,59 @@ _TZ3000_l9brjwau, _TZ3000_blhvsaqf, _TZ3000_ysdv91bk, _TZ3000_hafsqare, _TZ3000_
 | _tze204 + SWITCH | dlnraja/com.tuya.zigbee#533 | device_request |
 | _tze204 + ts0601 | dlnraja/com.tuya.zigbee#533 | device_request |
 | _tze204 + ROUTER | dlnraja/com.tuya.zigbee#533 | device_request |
+
+
+## Auto-discovered from GitHub (2026-09-02)
+
+| Fingerprint | Source | Type |
+|---|---|---|
+| _TZE200_r32ctezx + ROUTER | dlnraja/com.tuya.zigbee#536 | bug_report |
+| _TZE200_r32ctezx + SWITCH | dlnraja/com.tuya.zigbee#536 | bug_report |
+| _TZE200_ + ROUTER | dlnraja/com.tuya.zigbee#536 | bug_report |
+| _TZE200_ + SWITCH | dlnraja/com.tuya.zigbee#536 | bug_report |
+| router + TS0601 | dlnraja/com.tuya.zigbee#536 | bug_report |
+| router + ts0601 | dlnraja/com.tuya.zigbee#536 | bug_report |
+| vision + TS0601 | dlnraja/com.tuya.zigbee#536 | bug_report |
+| vision + ts0601 | dlnraja/com.tuya.zigbee#536 | bug_report |
+| vision + ROUTER | dlnraja/com.tuya.zigbee#536 | bug_report |
+| vision + SWITCH | dlnraja/com.tuya.zigbee#536 | bug_report |
+| coordinator + TS0601 | dlnraja/com.tuya.zigbee#536 | bug_report |
+| coordinator + ts0601 | dlnraja/com.tuya.zigbee#536 | bug_report |
+| COORDINATOR + TS0601 | dlnraja/com.tuya.zigbee#536 | bug_report |
+| COORDINATOR + ts0601 | dlnraja/com.tuya.zigbee#536 | bug_report |
+| ROUTER + TS0601 | dlnraja/com.tuya.zigbee#536 | bug_report |
+| ROUTER + ts0601 | dlnraja/com.tuya.zigbee#536 | bug_report |
+| VISION + TS0601 | dlnraja/com.tuya.zigbee#536 | bug_report |
+| VISION + ts0601 | dlnraja/com.tuya.zigbee#536 | bug_report |
+| VISION + ROUTER | dlnraja/com.tuya.zigbee#536 | bug_report |
+| VISION + SWITCH | dlnraja/com.tuya.zigbee#536 | bug_report |
+| _TZE200 + TS0601 | dlnraja/com.tuya.zigbee#536 | bug_report |
+| _TZE200 + ts0601 | dlnraja/com.tuya.zigbee#536 | bug_report |
+| _TZE200 + ROUTER | dlnraja/com.tuya.zigbee#536 | bug_report |
+| _TZE200 + SWITCH | dlnraja/com.tuya.zigbee#536 | bug_report |
+| _tze200 + TS0601 | dlnraja/com.tuya.zigbee#536 | bug_report |
+| _tze200 + ts0601 | dlnraja/com.tuya.zigbee#536 | bug_report |
+| _tze200 + ROUTER | dlnraja/com.tuya.zigbee#536 | bug_report |
+| _tze200 + SWITCH | dlnraja/com.tuya.zigbee#536 | bug_report |
+| _tze + ROUTER | dlnraja/com.tuya.zigbee#536 | bug_report |
+| _tze + SWITCH | dlnraja/com.tuya.zigbee#536 | bug_report |
+| _tze200_ + ROUTER | dlnraja/com.tuya.zigbee#536 | bug_report |
+| _tze200_ + SWITCH | dlnraja/com.tuya.zigbee#536 | bug_report |
+| _TZE + ROUTER | dlnraja/com.tuya.zigbee#536 | bug_report |
+| _TZE + SWITCH | dlnraja/com.tuya.zigbee#536 | bug_report |
+| _TZE200_R32CTEZX + ROUTER | dlnraja/com.tuya.zigbee#536 | bug_report |
+| _TZE200_R32CTEZX + SWITCH | dlnraja/com.tuya.zigbee#536 | bug_report |
+| _tze200_r32ctezx + ROUTER | dlnraja/com.tuya.zigbee#536 | bug_report |
+| _tze200_r32ctezx + SWITCH | dlnraja/com.tuya.zigbee#536 | bug_report |
+| _tze200_R32CTEZX + ROUTER | dlnraja/com.tuya.zigbee#536 | bug_report |
+| _tze200_R32CTEZX + SWITCH | dlnraja/com.tuya.zigbee#536 | bug_report |
+| _TZE204_5slehgeo + SWITCH | dlnraja/com.tuya.zigbee#533 | device_request |
+| _TZE204_5slehgeo + ROUTER | dlnraja/com.tuya.zigbee#533 | device_request |
+| _TZE204_5slehgeo + LIGHT | dlnraja/com.tuya.zigbee#533 | device_request |
+| _TZE204_ + SWITCH | dlnraja/com.tuya.zigbee#533 | device_request |
+| _TZE204_ + ROUTER | dlnraja/com.tuya.zigbee#533 | device_request |
+| _TZE204_ + LIGHT | dlnraja/com.tuya.zigbee#533 | device_request |
+| router + TS0601 | dlnraja/com.tuya.zigbee#533 | device_request |
+| router + ts0601 | dlnraja/com.tuya.zigbee#533 | device_request |
+| vision + TS0601 | dlnraja/com.tuya.zigbee#533 | device_request |
+| vision + SWITCH | dlnraja/com.tuya.zigbee#533 | device_request |
