@@ -20,9 +20,14 @@ on:
         description: 'Promote to Test even if master 9.0.x is soaking (overwrites shared App ID)'
         type: boolean
         default: false
+      force_publish:
+        description: 'Force Athom createBuild even if soft-expect would skip (P139 one-shot)'
+        type: boolean
+        default: false
 
 permissions:
   contents: write
+  actions: read
 
 defaults:
   run:
@@ -30,6 +35,11 @@ defaults:
 
 env:
   NODE_VERSION: "22"
+  # P2384: longer Athom API / draft wait (socket hang up mitigation)
+  HOMEY_API_TIMEOUT_MS: "120000"
+  HOMEY_BUILD_POLL_TIMEOUT_MS: "360000"
+  HOMEY_DRAFT_WAIT_MS: "600000"
+  HOMEY_HEALTHY_TEST_PATCH_LAG: "8"
   # v5.12.0: 431 drivers × assets still overshoots the 26 MB default.
   # v5.12.4 (P75.1): Bumped 45 → 50 MB to match master after .homeyignore
   # pruning reduces the source directory to ~40 MB. The gzipped tarball
@@ -46,8 +56,50 @@ env:
   HOMEY_ZIGBEE_MAX_CASE_FORMS: "2"
 
 jobs:
+  # WHY(P2400): bare workflow_dispatch while push-publish already ran for this SHA
+  # double-hits Athom (P139 orphan drafts). Skip unless force_publish=true.
+  dispatch-dedupe:
+    name: "Dispatch dedupe (P2400)"
+    runs-on: ubuntu-latest
+    timeout-minutes: 2
+    outputs:
+      skip: ${{ steps.dedupe.outputs.skip }}
+    steps:
+      - name: Skip redundant workflow_dispatch
+        id: dedupe
+        env:
+          GH_TOKEN: ${{ github.token }}
+          EVENT_NAME: ${{ github.event_name }}
+          FORCE_PUBLISH: ${{ github.event.inputs.force_publish || 'false' }}
+          SHA: ${{ github.sha }}
+          REPO: ${{ github.repository }}
+        run: |
+          set -euo pipefail
+          echo "skip=false" >> "$GITHUB_OUTPUT"
+          if [ "$EVENT_NAME" != "workflow_dispatch" ]; then
+            echo "push/schedule — no dispatch dedupe"
+            exit 0
+          fi
+          if [ "$FORCE_PUBLISH" = "true" ]; then
+            echo "force_publish=true — allow dispatch"
+            exit 0
+          fi
+          # Look for a successful push-triggered run of this workflow for the same tip SHA (last 2h)
+          JSON=$(gh api "repos/$REPO/actions/workflows/publish-stable.yml/runs?event=push&status=completed&per_page=20" \
+            --jq "[.workflow_runs[] | select(.head_sha==\"$SHA\" and .conclusion==\"success\" and .status==\"completed\")] | .[0] // empty" \
+            || true)
+          if [ -n "$JSON" ] && [ "$JSON" != "null" ]; then
+            echo "P2400: tip SHA already published via push — skipping redundant workflow_dispatch"
+            echo "skip=true" >> "$GITHUB_OUTPUT"
+            echo "::notice::P2400 skipped duplicate Stable publish dispatch (push already succeeded for $SHA)"
+            exit 0
+          fi
+          echo "No successful push publish for this SHA — continue dispatch"
+
   upstream-guard:
     name: "🛡️ Upstream Guard"
+    needs: dispatch-dedupe
+    if: needs.dispatch-dedupe.outputs.skip != 'true'
     runs-on: ubuntu-latest
     timeout-minutes: 2
     steps:
@@ -190,6 +242,7 @@ jobs:
         id: publish
         env:
           HOMEY_PAT: ${{ secrets.HOMEY_PAT }}
+          HOMEY_FORCE_PUBLISH: ${{ github.event_name == 'workflow_dispatch' && inputs.force_publish == true && '1' || '0' }}
         run: |
           PUBLISH_DIR="${HOMEY_PUBLISH_DIR:-$(node -p "require('path').join(require('os').tmpdir(), 'homey-publish-temp')")}"
           if [ ! -d "$PUBLISH_DIR" ]; then
@@ -212,14 +265,20 @@ jobs:
             fi
           }
           set +e
-          publish_output=$(run_homey_cli_publish 2>&1)
-          publish_status=$?
-          if [ "$publish_status" -ne 0 ] && printf '%s\n' "$publish_output" | grep -Eiq 'Timeout after [0-9]+ms|fetch failed|ETIMEDOUT|ECONNRESET|ECONNABORTED'; then
-            echo "::warning::Homey CLI publish hit a transient API timeout; retrying via direct Athom Apps API with extended timeouts."
-            fallback_output=$(HOMEY_PAT="$HOMEY_PAT" HOMEY_API_TIMEOUT_MS="${HOMEY_API_TIMEOUT_MS:-60000}" HOMEY_BUILD_POLL_TIMEOUT_MS="${HOMEY_BUILD_POLL_TIMEOUT_MS:-240000}" node "$GITHUB_WORKSPACE/scripts/direct-api-publish.js" --path "$PUBLISH_DIR" 2>&1)
-            fallback_status=$?
-            publish_output="$(printf '%s\n%s' "$publish_output" "$fallback_output")"
-            publish_status=$fallback_status
+          if [ "${HOMEY_FORCE_PUBLISH:-0}" = "1" ]; then
+            echo "::notice::HOMEY_FORCE_PUBLISH=1 — one-shot direct-api-publish --force (P139 override)"
+            publish_output=$(HOMEY_PAT="$HOMEY_PAT" HOMEY_API_TIMEOUT_MS="${HOMEY_API_TIMEOUT_MS:-120000}" HOMEY_BUILD_POLL_TIMEOUT_MS="${HOMEY_BUILD_POLL_TIMEOUT_MS:-360000}" node "$GITHUB_WORKSPACE/scripts/direct-api-publish.js" --path "$PUBLISH_DIR" --channel test --force 2>&1)
+            publish_status=$?
+          else
+            publish_output=$(run_homey_cli_publish 2>&1)
+            publish_status=$?
+            if [ "$publish_status" -ne 0 ] && printf '%s\n' "$publish_output" | grep -Eiq 'Timeout after [0-9]+ms|fetch failed|ETIMEDOUT|ECONNRESET|ECONNABORTED|socket hang up|too many requests|\b429\b|processing_failed'; then
+              echo "::warning::Homey CLI publish hit a transient Athom hang; retrying via direct Athom Apps API with extended timeouts."
+              fallback_output=$(HOMEY_PAT="$HOMEY_PAT" HOMEY_API_TIMEOUT_MS="${HOMEY_API_TIMEOUT_MS:-120000}" HOMEY_BUILD_POLL_TIMEOUT_MS="${HOMEY_BUILD_POLL_TIMEOUT_MS:-360000}" node "$GITHUB_WORKSPACE/scripts/direct-api-publish.js" --path "$PUBLISH_DIR" --channel test 2>&1)
+              fallback_status=$?
+              publish_output="$(printf '%s\n%s' "$publish_output" "$fallback_output")"
+              publish_status=$fallback_status
+            fi
           fi
           set -e
           printf '%s\n' "$publish_output"
@@ -304,7 +363,7 @@ jobs:
         if: steps.soak.outputs.skip != 'true'
         env:
           HOMEY_PAT: ${{ secrets.HOMEY_PAT }}
-          HOMEY_API_TIMEOUT_MS: "60000"
+          HOMEY_API_TIMEOUT_MS: "120000"
           APP_ID: ${{ needs.publish.outputs.app_id }}
           HOMEY_EXPECTED_VERSION: ${{ needs.publish.outputs.uploaded_version }}
         run: |
