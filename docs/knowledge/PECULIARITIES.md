@@ -138,6 +138,12 @@ Generated 2026-08-19T08:50:15.322Z from registry (54 cases) × compound DB (209 
 - Notes: ZT08 weather — unix_1970 time sync + DP17 commit (GH #513).
 - Sources: forum-140352, github#513, P140
 
+### `motion-tz3000-uw3dadam` → `motion_sensor`
+
+- Couple: `_TZ3000_uw3dadam` + `TS0202`
+- Protocol: IAS Zone (deCONZ DDF #8503 / Z2S IAS)
+- **P2402 (Gmail unmatched FP):** lock `motion_sensor` only — never climate/radar/soil. Re-pair after Test update if tile missing.
+
 ### `presence-radar-clrdrnya` → `presence_sensor_radar`
 
 - Couple: `_TZE204_clrdrnya` + TS0601
