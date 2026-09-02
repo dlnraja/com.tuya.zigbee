@@ -1401,5 +1401,8 @@
   },
   "5.12.116": {
     "en": "Improved curtain motors: EF00 RX hardening, timeout-safe position updates, and more verified cover fingerprints."
+  },
+  "5.12.120": {
+    "en": "Reliability: button wrapHandleFrame + presence radar flood calm (backport)."
   }
 }
