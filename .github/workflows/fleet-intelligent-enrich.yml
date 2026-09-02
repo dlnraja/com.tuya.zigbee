@@ -72,7 +72,8 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Setup Node.js
-        uses: actions/setup-node@v4
+        # WHY(P2383): prefer setup-node@v5 — security/policy gate warning
+        uses: actions/setup-node@v5
         with:
           node-version: ${{ env.NODE_VERSION }}
           cache: npm
@@ -153,7 +154,9 @@ jobs:
             exit 0
           fi
           git commit -m "fleet-enrich: intelligent all-class coverage (P2372) [skip ci]" || true
-          git push origin HEAD:master || true
+          # WHY(P2383): verified push — do not mask failures (policy gate)
+          git pull --rebase origin master || true
+          git push origin HEAD:master
 
       - name: Upload reports
         if: always()
@@ -166,4 +169,4 @@ jobs:
             fleet-enrich.log
             .cache/scraper-cache/_free-scrape-budget.json
             .github/state/intelligent-source-manifest.json
-          retention-days: 14
+          retention-days: 7
