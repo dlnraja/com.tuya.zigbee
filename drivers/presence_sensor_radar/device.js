@@ -98,8 +98,20 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
    * Cache the radar config lookup to avoid repeated calls.
    */
   _getRadarConfig() {
+    // WHY(P2391 / VicHY #2224): never freeze DEFAULT when mfr arrives late —
+    // wrong cache can attach HOBEIAN battery DP121 → Homey "low battery" on mains MTG.
+    const mfr = MfrHelper.getManufacturerName(this);
+    const modelId = this.getStoreValue('modelId') || this.getSetting?.('zb_model_id');
+    const resolved = getSensorConfig(mfr, modelId);
     if (!this._cachedRadarConfig) {
-      this._cachedRadarConfig = getSensorConfig(MfrHelper.getManufacturerName(this), this.getStoreValue('modelId'));
+      this._cachedRadarConfig = resolved;
+      return this._cachedRadarConfig;
+    }
+    const cachedName = this._cachedRadarConfig.configName || 'DEFAULT';
+    const nextName = resolved.configName || 'DEFAULT';
+    if ((cachedName === 'DEFAULT' || !mfr) && nextName !== cachedName && mfr) {
+      this.log(`[RADAR] P2391 config upgrade ${cachedName} → ${nextName} (mfr resolved)`);
+      this._cachedRadarConfig = resolved;
     }
     return this._cachedRadarConfig;
   }
@@ -113,6 +125,13 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
    * mirroring is consistent with the driver's own semantics.
    */
   async safeSetCapabilityValue(capability, value) {
+    // WHY(P2391): mains MTG/clrdrnya must never commit phantom battery or DIY DP caps
+    if (this.mainsPowered && (capability === 'measure_battery' || capability === 'alarm_battery')) {
+      return false;
+    }
+    if (capability === 'tuya_dp_value' || capability === 'tuya_dp_raw' || capability === 'tuya_dp_string') {
+      return false;
+    }
     const result = await super.safeSetCapabilityValue(capability, value);
     if (capability === 'alarm_motion' && typeof value === 'boolean' &&
         typeof this.hasCapability === 'function' && this.hasCapability('alarm_human')) {
@@ -182,14 +201,23 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
         block.add(id);
       }
       this._dynCapBlockDps = block;
-      this._forbiddenCapabilities = Array.from(new Set([
-        ...(this._forbiddenCapabilities || []),
+      const forbidden = [
         'windowcoverings_set',
         'windowcoverings_state',
         'windowcoverings_tilt_set',
         'dim',
         'target_temperature',
         'thermostat_mode',
+        'tuya_dp_value',
+        'tuya_dp_raw',
+        'tuya_dp_string',
+      ];
+      if (this.mainsPowered || config.noBatteryCapability || config.suppressBatteryCapability) {
+        forbidden.push('measure_battery', 'alarm_battery');
+      }
+      this._forbiddenCapabilities = Array.from(new Set([
+        ...(this._forbiddenCapabilities || []),
+        ...forbidden,
       ]));
       // Bridge configs.dpMap → _dynamicDpMappings (dpMappings getter prefers this)
       const bridged = {};
@@ -205,6 +233,8 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
 
   /**
    * WHY(P2379): remove DynCap-poisoned curtain UI + clear stored dyn discoveries.
+   * WHY(P2391 / VicHY #2224): mains clrdrnya also strips phantom battery + Homey Energy batteries
+   * so timeline stops showing "low battery" after app updates.
    */
   async _healRadarPhantomCaps() {
     const phantoms = [
@@ -214,12 +244,18 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
       'dim',
       'target_temperature',
       'thermostat_mode',
+      'tuya_dp_value',
+      'tuya_dp_raw',
+      'tuya_dp_string',
     ];
+    if (this.mainsPowered) {
+      phantoms.push('measure_battery', 'alarm_battery');
+    }
     for (const cap of phantoms) {
       try {
         if (typeof this.hasCapability === 'function' && this.hasCapability(cap)) {
           await this.removeCapability(cap).catch(() => {});
-          this.log(`[RADAR] P2379/P2386 removed phantom capability ${cap}`);
+          this.log(`[RADAR] P2379/P2386/P2391 removed phantom capability ${cap}`);
         }
       } catch (_e) { /* soft */ }
     }
@@ -233,6 +269,17 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
         }
       }
     } catch (_e) { /* soft */ }
+    // WHY(P2391): compose ships energy.batteries for hybrid battery HOBEIAN siblings —
+    // mains MTG must clear Energy metadata or Homey timeline fires "low battery".
+    if (this.mainsPowered && typeof this.setEnergy === 'function') {
+      try {
+        const energy = (typeof this.getEnergy === 'function' && this.getEnergy()) || {};
+        if (Array.isArray(energy.batteries) && energy.batteries.length) {
+          await this.setEnergy({}).catch(() => {});
+          this.log('[RADAR] P2391 cleared Homey Energy batteries on mains radar');
+        }
+      } catch (_e) { /* soft */ }
+    }
     try {
       await this.unsetStoreValue('dynamic_capabilities').catch(() => {});
     } catch (_e) { /* soft */ }
@@ -255,7 +302,11 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
       const delays = [15_000, 60_000, 180_000];
       for (const ms of delays) {
         safeSetTimeout(this, () => {
+          this._armRadarDynCapGuards();
           this._healRadarPhantomCaps().catch(() => {});
+          if (this.mainsPowered) {
+            this._applyRadarCapabilityProfile().catch(() => {});
+          }
         }, ms);
       }
     } catch (_e) {

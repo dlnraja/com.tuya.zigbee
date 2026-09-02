@@ -1404,5 +1404,8 @@
   },
   "5.12.120": {
     "en": "Reliability: button wrapHandleFrame + presence radar flood calm (backport)."
+  },
+  "5.12.121": {
+    "en": "Firmware quirk compensate: strip DIY DP caps and phantom mains battery on radar/mains devices."
   }
 }
