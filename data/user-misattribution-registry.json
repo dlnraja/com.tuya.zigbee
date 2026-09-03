@@ -5378,6 +5378,43 @@
           "dynamic": true
         }
       }
+    },
+    {
+      "id": "p2415-zg204zv-tze200-presence",
+      "patch": "P2415",
+      "couple": [
+        "_TZE200_grgol3xp+TS0601",
+        "_TZE200_uli8wasj+TS0601",
+        "_TZE200_rhgsbacq+TS0601"
+      ],
+      "canonicalDriver": "presence_sensor_radar",
+      "forbidDrivers": [
+        "motion_sensor",
+        "sensor_illuminance_presence",
+        "climate_sensor"
+      ],
+      "note": "ZG-204ZV multi-cap (PIR+radar+climate+lux) — Z2M/ZHA verified; TZE200 siblings lock to presence",
+      "sources": [
+        "Z2M ZG-204ZV",
+        "ZHA #4268"
+      ]
+    },
+    {
+      "id": "p2415-zs301z-soil",
+      "patch": "P2415",
+      "couple": [
+        "_TZE284_o9ofysmo+TS0601",
+        "_TZE284_xc3vwx5a+TS0601"
+      ],
+      "canonicalDriver": "soil_sensor",
+      "forbidDrivers": [
+        "climate_sensor",
+        "presence_sensor_radar"
+      ],
+      "note": "Z2M ZS-301Z soil+env+lux — not climate-only and not radar",
+      "sources": [
+        "Z2M #27955"
+      ]
     }
   ]
 }
