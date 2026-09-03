@@ -122,7 +122,7 @@
       "id": "ota_check",
       "title": {
         "en": "Check Zigbee OTA Update",
-        "fr": "Vérifier MàJ OTA",
+        "fr": "VÃ©rifier MÃ J OTA",
         "nl": "Controleer op OTA-updates"
       }
     },
@@ -130,14 +130,14 @@
       "id": "tuya_revive",
       "title": {
         "en": "Tuya Revive (device recovery)",
-        "fr": "Tuya Revive (récupération appareil)"
+        "fr": "Tuya Revive (rÃ©cupÃ©ration appareil)"
       }
     },
     {
       "id": "generate_issue_report",
       "title": {
         "en": "Generate support report (GitHub issue)",
-        "fr": "Générer rapport de support (issue GitHub)"
+        "fr": "GÃ©nÃ©rer rapport de support (issue GitHub)"
       }
     }
   ],
@@ -156,5 +156,6 @@
   },
   "ui": {
     "quickAction": "onoff"
-  }
+  },
+  "discovery": "tuya_wifi"
 }
