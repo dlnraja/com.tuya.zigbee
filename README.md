@@ -33,8 +33,7 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 
 | Metric | Value |
 |--------|-------|
-| **App Version** | v9.0.810 |
-| **App Version** | v9.0.811 |
+| **App Version** | v9.0.813 |
 | **Drivers** | 431 (381 Zigbee + 50 WiFi) |
 | **Unique Fingerprints** | 4,393 |
 | **Pairing Variants** | 16,194 (4 case combos per fingerprint) |
@@ -42,7 +41,7 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 | **Flow Cards** | 5,950 |
 | **Unique Capabilities** | 170 |
 | **Native OTA Drivers** | 9 |
-| **Test Suites** | 237 files |
+| **Test Suites** | 238 files |
 | **SVG Icons** | 731 |
 | **Languages** | EN, FR, NL, DE |
 | **SDK / Homey** | 3 / >= 12.2.0 |
@@ -103,7 +102,8 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 
 | Version | Changes |
 |---------|---------|
-| **v9.0.810** | Moes ZTS curtain dual TX + invert (#533), presence radar DP2 humidity invent skip, SafeCapability CI harden, WiFi max LAN discovery/auth. |
+| **v9.0.813** | CI: WiFi pairing timer gate, Athom processing_failed soft-expect, diagnostics dashboard soft shell. |
+| **v9.0.812** | CI: WiFi pairing timer gate, Athom processing_failed soft-expect, diagnostics dashboard soft shell. |
 | **v9.0.811** | PIR/multi-cap enrich: ZG-204ZV TZE200→presence, strip motion cartesian ZG-204, ZS-301Z soil lock, radar config clean. |
 | **v9.0.810** | PIR/multi-cap enrich: ZG-204ZV TZE200→presence, strip motion cartesian ZG-204, ZS-301Z soil lock, radar config clean. |
 | **v9.0.809** | Moes ZTS curtain dual TX + invert (#533), presence radar DP2 humidity invent skip, SafeCapability CI harden, WiFi max LAN discovery/auth. |
@@ -114,9 +114,6 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 | **v9.0.804** | Fixed Moes curtain wall switch stopping too early after open/close from Homey UI. |
 | **v9.0.803** | Fixed Moes curtain wall switch stopping too early after open/close from Homey UI. |
 | **v9.0.802** | Fixed Moes curtain wall switch stopping too early after open/close from Homey UI. |
-| **v9.0.801** | Fixed Moes curtain wall switch stopping too early after open/close from Homey UI. |
-| **v9.0.800** | Fixed Moes curtain wall switch stopping too early after open/close from Homey UI. |
-| **v9.0.799** | Fixed garden valve and other flow conditions when Homey lacks getDeviceConditionCard; radar presence value 2 now counts as occupied. |
 
 <!-- CHANGELOG_END -->
 
