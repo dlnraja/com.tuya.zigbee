@@ -91,7 +91,7 @@
       "realMfrsAdded": 5,
       "details": "tmp/synthetic-resolution.json + tmp/pruned21-resolution.json"
     },
-    "lastAlignedAt": "2026-09-01T07:55:42.613Z",
+    "lastAlignedAt": "2026-09-02T23:41:04.107Z",
     "alignTool": "align-mfs-db-intelligent@P169",
     "lastSyncedFromCompose": "2026-09-01T07:55:33.978Z",
     "syncComposeTool": "sync-compose-to-mfs-db@P2368"
@@ -115237,30 +115237,26 @@
     "_tze200_r32ctezx": {
       "manufacturerId": "_tze200_r32ctezx",
       "modelIds": [
-        "TS0601_watervalve",
         "TS0601"
       ],
       "variants": [],
-      "deviceType": "unknown",
-      "driverHint": "water_valve_smart",
+      "deviceType": "fan",
+      "driverHint": "fan_controller",
       "capabilities": [
         "onoff",
-        "meter_water",
-        "measure_temperature",
-        "alarm_water",
-        "measure_battery",
-        "alarm_battery"
+        "dim"
       ],
-      "powerSource": "battery",
+      "powerSource": "mains",
       "sources": [
         "local",
-        "z2m"
+        "z2m",
+        "github-536"
       ],
       "sourceDetails": {
         "local": 1,
         "z2m": 1
       },
-      "confidence": 0.17,
+      "confidence": 0.95,
       "lastSeen": "2026-06-19T20:58:49.743Z"
     },
     "_tze200_yltivvzb": {
@@ -115292,30 +115288,26 @@
     "_tze204_r32ctezx": {
       "manufacturerId": "_tze204_r32ctezx",
       "modelIds": [
-        "TS0601_watervalve",
         "TS0601"
       ],
       "variants": [],
-      "deviceType": "unknown",
-      "driverHint": "water_valve_smart",
+      "deviceType": "fan",
+      "driverHint": "fan_controller",
       "capabilities": [
         "onoff",
-        "meter_water",
-        "measure_temperature",
-        "alarm_water",
-        "measure_battery",
-        "alarm_battery"
+        "dim"
       ],
-      "powerSource": "battery",
+      "powerSource": "mains",
       "sources": [
         "local",
-        "z2m"
+        "z2m",
+        "github-536"
       ],
       "sourceDetails": {
         "local": 1,
         "z2m": 1
       },
-      "confidence": 0.17,
+      "confidence": 0.95,
       "lastSeen": "2026-06-19T20:58:49.743Z"
     },
     "_tze204_wt66haax": {
@@ -124017,9 +124009,7 @@
         "_tze200_vuwtqx0t",
         "_tze284_vuwtqx0t",
         "_tz3000_yz38gdra",
-        "_tze200_r32ctezx",
         "_tze200_yltivvzb",
-        "_tze204_r32ctezx",
         "_tze204_wt66haax",
         "_tze284_7zazvlyn",
         "_tze284_wt66haax",
@@ -126278,7 +126268,9 @@
         "_tze204_fvldku9h",
         "_tze204_kds0prmv",
         "_tze204_lawxy9e2",
-        "_tze200_lawxy9e2"
+        "_tze200_lawxy9e2",
+        "_tze200_r32ctezx",
+        "_tze204_r32ctezx"
       ],
       "modelIds": [
         "TS0601_fanctrl",
@@ -128549,11 +128541,11 @@
     "multiSourceCount": 1756,
     "lastAggregation": "2026-06-19T20:58:49.874Z",
     "lastEnrichment": "2026-07-29T01:45:45.427Z",
-    "sacredCouples": 12356,
+    "sacredCouples": 12355,
     "lastSacredCoupleEnrichment": "2026-07-13T23:57:58.590Z",
     "fingerprints": 5710,
     "lastUpdate": "2026-07-14",
-    "lastUpdated": "2026-09-02T09:30:01.092Z",
+    "lastUpdated": "2026-09-03T04:13:54.901Z",
     "totalModelIds": 62784,
     "multiPidMfrs": 3299,
     "variantMfrs": 82,
@@ -140515,7 +140507,7 @@
     "modelIdsCount": 3
   },
   "_TZ3000_2putqrmw": {
-    "driverId": "smartplug",
+    "driverId": "button_wireless_2",
     "source": "compose-exclusive",
     "modelIds": [
       "TS011F",
@@ -193364,15 +193356,13 @@
     "modelIdsCount": 3
   },
   "_TZE200_uj3f4wr5": {
-    "driverId": "curtain_motor_shutter",
-    "source": "auto-sync",
+    "driverId": "curtain_motor",
+    "source": "registry:p2405-uj3f4wr5-curtain-motor",
     "modelIds": [
-      "TS0301",
-      "TS0601",
-      "TS0726"
+      "TS0601"
     ],
-    "pid": "TS0301",
-    "modelIdsCount": 3
+    "pid": "TS0601",
+    "modelIdsCount": 1
   },
   "_TZE210_inpjmc0h": {
     "driverId": "curtain_motor_shutter",
@@ -214256,27 +214246,21 @@
   },
   "_TZ3210_tgvtvdoc": {
     "driverId": "rain_sensor",
-    "source": "auto-sync",
+    "source": "registry:p2405-tgvtvdoc-rain-sensor",
     "modelIds": [
-      "TS0207",
-      "TS0207_rain",
-      "TS0601",
-      "ZG-223Z"
+      "TS0207"
     ],
     "pid": "TS0207",
-    "modelIdsCount": 4
+    "modelIdsCount": 1
   },
   "_TZ3210_p68kms0l": {
     "driverId": "rain_sensor",
-    "source": "auto-sync",
+    "source": "registry:p2405-tgvtvdoc-rain-sensor",
     "modelIds": [
-      "TS0207",
-      "TS0207_rain",
-      "TS0601",
-      "ZG-223Z"
+      "TS0207"
     ],
     "pid": "TS0207",
-    "modelIdsCount": 4
+    "modelIdsCount": 1
   },
   "_TZE200_u6x1zyv2": {
     "driverId": "rain_sensor",
@@ -214426,11 +214410,11 @@
   },
   "_tz3000_u3nv1jwk": {
     "driverId": "button_wireless_4",
-    "source": "auto-sync",
+    "source": "registry:p2405-u3nv1jwk-button-wireless-4",
     "modelIds": [
       "TS0044"
     ],
-    "pid": "DISABLED_REMOTE_BUTTON_WIRELESS_HANDHELD",
+    "pid": "TS0044",
     "modelIdsCount": 1,
     "note": "Remapped from disabled remote_button_wireless_handheld (forum Moes TS0044)"
   },
@@ -215156,7 +215140,7 @@
     "modelIdsCount": 1
   },
   "_tz3210_ncw88jfq": {
-    "driverId": "lcdtemphumidsensor",
+    "driverId": "sensor_climate_temphumidsensor",
     "source": "compose-exclusive",
     "modelIds": [
       "EXCELLUX",
@@ -215169,7 +215153,7 @@
     "modelIdsCount": 5
   },
   "_TZ3000_ywagc4rj": {
-    "driverId": "lcdtemphumidsensor",
+    "driverId": "sensor_climate_temphumidsensor",
     "source": "compose-exclusive",
     "modelIds": [
       "EXCELLUX",
@@ -218524,34 +218508,13 @@
     "modelIdsCount": 22
   },
   "_TZ3000_otvn3lne": {
-    "driverId": "sensor_motion_presence",
-    "source": "auto-sync",
+    "driverId": "motion_sensor",
+    "source": "registry:p2405-otvn3lne-motion-ts0202",
     "modelIds": [
-      "CK-TLSR8656-SS5-01(7014)",
-      "EXCELLUX",
-      "LUMI.SENSOR_HT",
-      "LUMI.SENSOR_HT.AGL02",
-      "LUMI.WEATHER",
-      "RH3052",
-      "SM0201",
-      "TH01",
-      "THS317-ET",
-      "TS0001",
-      "TS0049",
-      "TS0201",
-      "TS0202",
-      "TS0222",
-      "TS0601",
-      "TS1201",
-      "TY0201",
-      "WSDCGQ01LM",
-      "WSDCGQ11LM",
-      "WSDCGQ12LM",
-      "ZG-227Z",
-      "ZG-227ZL"
+      "TS0202"
     ],
-    "pid": "CK-TLSR8656-SS5-01(7014)",
-    "modelIdsCount": 22
+    "pid": "TS0202",
+    "modelIdsCount": 1
   },
   "_TZ3000_h4wnrtck": {
     "driverId": "sensor_motion_presence",
@@ -219363,7 +219326,7 @@
     "modelIdsCount": 1
   },
   "_tz3000_ja5osu5g": {
-    "driverId": "smart_remote_1_button_2",
+    "driverId": "button_wireless_1",
     "source": "compose-exclusive",
     "modelIds": [
       "TS004F"
@@ -220824,62 +220787,6 @@
     ],
     "pid": "TS0601",
     "modelIdsCount": 3
-  },
-  "_TZE284_0INTS6WL": {
-    "driverId": "curtain_motor",
-    "source": "compose-exclusive",
-    "modelIds": [
-      "01MINIZB",
-      "AM02",
-      "AM43-0.45/40-ES-EB",
-      "AM43-0.45/40-ES-EZ",
-      "BASICZBR3",
-      "DS421",
-      "DS82",
-      "E1757",
-      "FYRTUR",
-      "KADRILJ",
-      "LUMI.CURTAIN",
-      "LUMI.CURTAIN.ACN002",
-      "LUMI.CURTAIN.HAGL04",
-      "S26R2ZB",
-      "S31ZB",
-      "TS0001",
-      "TS0001_POWER",
-      "TS0001_SWITCH",
-      "TS0001_SWITCH_MODULE",
-      "TS000F",
-      "TS0011",
-      "TS0012",
-      "TS0014",
-      "TS0101",
-      "TS0111",
-      "TS011F",
-      "TS0301",
-      "TS0302",
-      "TS030F",
-      "TS0601",
-      "TS0601_GENERIC",
-      "TS0603",
-      "TS0726",
-      "TS110E",
-      "TS130F",
-      "TS4100",
-      "ZBCURTAIN",
-      "ZBM5-1C-120",
-      "ZBM5-2C-120",
-      "ZBM5-3C-120",
-      "ZBMINI",
-      "ZBMINIL2",
-      "ZBMINIL2-R2",
-      "ZBMINIR",
-      "ZBMINIR2",
-      "ZBMINIR2-R2",
-      "ZG-301Z",
-      "ZG-302Z1"
-    ],
-    "pid": "01MINIZB",
-    "modelIdsCount": 48
   },
   "_hybrid_soil_sensor_ec_needs_device_assignment": {
     "driverId": "soil_sensor_ec",
@@ -245315,7 +245222,7 @@
   },
   "_tze284_eaet5qt5": {
     "driverId": "valve_dual_irrigation",
-    "source": "auto-sync|adjudicated-z2m-arbiter",
+    "source": "registry:valve-dual-fhvpaltk",
     "modelIds": [
       "TS0601"
     ],
@@ -245324,7 +245231,7 @@
   },
   "_tze284_fhvpaltk": {
     "driverId": "valve_dual_irrigation",
-    "source": "auto-sync|adjudicated-z2m-arbiter",
+    "source": "registry:valve-dual-fhvpaltk",
     "modelIds": [
       "TS0601"
     ],
@@ -247730,8 +247637,13 @@
     "modelIdsCount": 9
   },
   "_tze200_e3oitdyu": {
-    "driverId": "wall_dimmer_tuya",
-    "source": "auto-sync|adjudicated-z2m-arbiter"
+    "driverId": "dimmer_2_gang_tuya",
+    "source": "registry:p2405-e3oitdyu-dimmer-2gang",
+    "modelIds": [
+      "TS0601"
+    ],
+    "pid": "TS0601",
+    "modelIdsCount": 1
   },
   "_tze204_zenj4lxv": {
     "driverId": "wall_dimmer_tuya",
@@ -250672,20 +250584,29 @@
     "modelIdsCount": 8
   },
   "_TZE200_R32CTEZX": {
-    "driverId": "water_valve_smart",
-    "source": "auto-sync",
+    "manufacturerId": "_tze200_r32ctezx",
     "modelIds": [
-      "SWV-ZF2",
-      "SWV-ZFE",
-      "SWV-ZFU",
-      "SWV-ZN",
-      "SWV-ZNE",
-      "SWV-ZNU",
-      "TS0601",
-      "TS0601_watervalve"
+      "TS0601"
     ],
-    "pid": "SWV-ZF2",
-    "modelIdsCount": 8
+    "variants": [],
+    "deviceType": "fan",
+    "driverHint": "fan_controller",
+    "driverId": "fan_controller",
+    "capabilities": [
+      "onoff",
+      "dim"
+    ],
+    "powerSource": "mains",
+    "sources": [
+      "P2396",
+      "z2m_TS0601_fan_switch",
+      "github_536"
+    ],
+    "confidence": 0.95,
+    "lastSeen": "2026-09-02T17:27:05.642Z",
+    "pid": "TS0601",
+    "modelIdsCount": 1,
+    "source": "user-misattribution-registry"
   },
   "_TZE200_YLTIVVZB": {
     "driverId": "water_valve_smart",
@@ -250704,20 +250625,29 @@
     "modelIdsCount": 8
   },
   "_TZE204_R32CTEZX": {
-    "driverId": "water_valve_smart",
-    "source": "auto-sync",
+    "manufacturerId": "_tze204_r32ctezx",
     "modelIds": [
-      "SWV-ZF2",
-      "SWV-ZFE",
-      "SWV-ZFU",
-      "SWV-ZN",
-      "SWV-ZNE",
-      "SWV-ZNU",
-      "TS0601",
-      "TS0601_watervalve"
+      "TS0601"
     ],
-    "pid": "SWV-ZF2",
-    "modelIdsCount": 8
+    "variants": [],
+    "deviceType": "fan",
+    "driverHint": "fan_controller",
+    "driverId": "fan_controller",
+    "capabilities": [
+      "onoff",
+      "dim"
+    ],
+    "powerSource": "mains",
+    "sources": [
+      "P2396",
+      "z2m_TS0601_fan_switch",
+      "github_536"
+    ],
+    "confidence": 0.95,
+    "lastSeen": "2026-09-02T17:27:05.656Z",
+    "pid": "TS0601",
+    "modelIdsCount": 1,
+    "source": "user-misattribution-registry"
   },
   "_TZE204_WT66HAAX": {
     "driverId": "water_valve_smart",
@@ -262404,10 +262334,12 @@
     "_tze200_r32ctezx|ts0601": {
       "mfr": "_tze200_r32ctezx",
       "pid": "ts0601",
-      "driver": "water_valve_smart",
+      "driver": "fan_controller",
       "sources": [
         "canonical",
-        "mfs_db"
+        "mfs_db",
+        "z2m",
+        "github-536"
       ],
       "confidence": 0.95
     },
@@ -265391,10 +265323,12 @@
     "_tze204_r32ctezx|ts0601": {
       "mfr": "_tze204_r32ctezx",
       "pid": "ts0601",
-      "driver": "water_valve_smart",
+      "driver": "fan_controller",
       "sources": [
         "canonical",
-        "mfs_db"
+        "mfs_db",
+        "z2m",
+        "github-536"
       ],
       "confidence": 0.95
     },
@@ -311125,15 +311059,6 @@
       ],
       "confidence": 0.08
     },
-    "_tze200_r32ctezx|ts0601_watervalve": {
-      "mfr": "_tze200_r32ctezx",
-      "pid": "ts0601_watervalve",
-      "driver": "water_valve_smart",
-      "sources": [
-        "mfs_db"
-      ],
-      "confidence": 0.17
-    },
     "_tze200_yltivvzb|ts0601_watervalve": {
       "mfr": "_tze200_yltivvzb",
       "pid": "ts0601_watervalve",
@@ -311142,15 +311067,6 @@
         "mfs_db"
       ],
       "confidence": 0.08
-    },
-    "_tze204_r32ctezx|ts0601_watervalve": {
-      "mfr": "_tze204_r32ctezx",
-      "pid": "ts0601_watervalve",
-      "driver": "water_valve_smart",
-      "sources": [
-        "mfs_db"
-      ],
-      "confidence": 0.17
     },
     "_tze204_wt66haax|ts0601_watervalve": {
       "mfr": "_tze204_wt66haax",
@@ -320815,7 +320731,12 @@
         "TS0601"
       ],
       "source": "fingerprints-2026-07-14",
-      "confidence": 0.95
+      "confidence": 0.95,
+      "driver": "fan_controller",
+      "sources": [
+        "z2m",
+        "github-536"
+      ]
     },
     "_TZE200_raz9qavg": {
       "driverId": "switch_1gang",
@@ -323125,7 +323046,12 @@
         "TS0601"
       ],
       "source": "fingerprints-2026-07-14",
-      "confidence": 0.95
+      "confidence": 0.95,
+      "driver": "fan_controller",
+      "sources": [
+        "z2m",
+        "github-536"
+      ]
     },
     "_TZE204_rbbx5mfq": {
       "driverId": "air_quality_co2",
@@ -358029,11 +357955,14 @@
     },
     "_TZE200_R32CTEZX": {
       "driverId": "water_valve_smart",
-      "productIds": [
-        "TS0601_watervalve"
-      ],
+      "productIds": [],
       "source": "fingerprints-2026-07-14",
-      "confidence": 0.95
+      "confidence": 0.95,
+      "driver": "fan_controller",
+      "sources": [
+        "z2m",
+        "github-536"
+      ]
     },
     "_TZE200_YLTIVVZB": {
       "driverId": "water_valve_smart",
@@ -358045,11 +357974,14 @@
     },
     "_TZE204_R32CTEZX": {
       "driverId": "water_valve_smart",
-      "productIds": [
-        "TS0601_watervalve"
-      ],
+      "productIds": [],
       "source": "fingerprints-2026-07-14",
-      "confidence": 0.95
+      "confidence": 0.95,
+      "driver": "fan_controller",
+      "sources": [
+        "z2m",
+        "github-536"
+      ]
     },
     "_TZE204_WT66HAAX": {
       "driverId": "water_valve_smart",
@@ -358701,6 +358633,16 @@
       ],
       "source": "P2362",
       "confidence": 0.99
+    },
+    "_tz3000_uw3dadam|ts0202": {
+      "mfr": "_tz3000_uw3dadam",
+      "pid": "ts0202",
+      "driver": "motion_sensor",
+      "sources": [
+        "gmail-p2402",
+        "deconz#8503"
+      ],
+      "confidence": 0.9
     }
   },
   "_TZE204_ZG204Z": {
@@ -359075,33 +359017,12 @@
   },
   "_tze204_81yrt3lo": {
     "driverId": "power_clamp_meter",
-    "source": "auto-sync",
+    "source": "registry:p2405-81yrt3lo-power-clamp",
     "modelIds": [
-      "CK-BL702-MWS-01",
-      "CK-BL702-MWS-01(7016)",
-      "MG1_5RZ",
-      "SZLMR10",
-      "TS0004",
-      "TS0203",
-      "TS0225",
-      "TS0601",
-      "TS0601_CLAMP",
-      "TS110E",
-      "ZG-204ZE",
-      "ZG-204ZH",
-      "ZG-204ZK",
-      "ZG-204ZL",
-      "ZG-204ZM",
-      "ZG-204ZQ",
-      "ZG-204ZV",
-      "ZG-205Z",
-      "ZG-205ZL",
-      "ZG-302ZL",
-      "ZG-302ZM",
-      "ZP-301Z"
+      "TS0601"
     ],
-    "pid": "CK-BL702-MWS-01",
-    "modelIdsCount": 22,
+    "pid": "TS0601",
+    "modelIdsCount": 1,
     "variants": [
       "_TZE204_81YRT3LO",
       "_TZE204_81yrt3lo"
@@ -359111,13 +359032,12 @@
   },
   "_tze200_81yrt3lo": {
     "driverId": "power_clamp_meter",
-    "source": "auto-sync",
+    "source": "registry:p2405-81yrt3lo-power-clamp",
     "modelIds": [
-      "TS0601",
-      "TS0601_clamp"
+      "TS0601"
     ],
     "pid": "TS0601",
-    "modelIdsCount": 2,
+    "modelIdsCount": 1,
     "variants": [
       "_TZE200_81YRT3LO",
       "_TZE200_81yrt3lo"
@@ -368935,25 +368855,23 @@
   },
   "_TZ3000_uw3dadam": {
     "driverId": "motion_sensor",
-    "source": "gmail-p2402-deconz-8503",
+    "source": "registry:tz3000-uw3dadam-ts0202-motion",
     "modelIds": [
       "TS0202"
     ],
     "pid": "TS0202",
     "modelIdsCount": 1,
     "confidence": 0.9,
-    "lastSeen": "2026-09-02T22:19:47.407Z"
+    "lastSeen": "2026-09-02T22:19:18.423Z"
   },
-  "_tz3000_uw3dadam": {
-    "driverId": "motion_sensor",
-    "source": "gmail-p2402-deconz-8503",
+  "_TZE284_0ints6wl": {
+    "driverId": "soil_sensor",
+    "source": "registry:p2405-0ints6wl-soil-not-curtain",
     "modelIds": [
-      "TS0202"
+      "TS0601"
     ],
-    "pid": "TS0202",
-    "modelIdsCount": 1,
-    "confidence": 0.9,
-    "lastSeen": "2026-09-02T22:19:47.407Z",
-    "manufacturerId": "_tz3000_uw3dadam"
+    "pid": "TS0601",
+    "notes": "GH #428 soil not curtain",
+    "modelIdsCount": 1
   }
 }
