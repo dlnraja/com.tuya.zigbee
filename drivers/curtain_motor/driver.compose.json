@@ -730,6 +730,19 @@
       }
     },
     {
+      "id": "moes_control_invert",
+      "type": "checkbox",
+      "label": {
+        "en": "Invert open/close commands (Moes ZTS)",
+        "fr": "Inverser ouvrir/fermer (Moes ZTS)"
+      },
+      "value": false,
+      "hint": {
+        "en": "If the motor ignores Up/Down or moves the wrong way on tip 9.0.807+, try this (GitHub #533 / diag 4a918200). Sends both DP1 motion and DP2 target.",
+        "fr": "Si le moteur ignore Haut/Bas ou part dans le mauvais sens — activer (GitHub #533)."
+      }
+    },
+    {
       "id": "moes_backlight",
       "type": "checkbox",
       "label": {

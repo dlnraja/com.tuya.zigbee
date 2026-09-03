@@ -3,8 +3,8 @@
     "en": "WiFi Liquid Level Sensor",
     "fr": "Capteur de niveau de liquide WiFi",
     "nl": "WiFi-vloeistofniveausensor",
-    "de": "WiFi-Flüssigkeitsstandsensor",
-    "es": "Sensor de nivel de líquido WiFi"
+    "de": "WiFi-FlÃ¼ssigkeitsstandsensor",
+    "es": "Sensor de nivel de lÃ­quido WiFi"
   },
   "class": "sensor",
   "capabilities": [
@@ -223,5 +223,6 @@
     "lan"
   ],
   "id": "wifi_water_tank_monitor",
-  "version": "1.0.0"
+  "version": "1.0.0",
+  "discovery": "tuya_wifi"
 }

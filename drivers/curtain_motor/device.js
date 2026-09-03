@@ -68,7 +68,7 @@ class CurtainMotorDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedC
           capability: 'windowcoverings_state',
           transform: (v) => (v === 0 || v === 'open' ? 'up' : v === 2 || v === 'close' ? 'down' : 'idle'),
         },
-        2: { capability: 'windowcoverings_set', transform: (v) => v / 100 },
+        2: { capability: 'windowcoverings_set', transform: (v) => (100 - Number(v)) / 100 }, // Z2M moes_cover invert
         3: { capability: null, internal: 'calibration', writable: true },
         7: { capability: null, internal: 'backlight', writable: true },
         8: { capability: null, internal: 'reverse', writable: true },
@@ -124,6 +124,32 @@ class CurtainMotorDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedC
     await super.onNodeInit({ zclNode });
     await SDK3BestPractices.ensureBatteryBestPractices(this).catch(() => {});
     this.log('[CURTAIN] v5.6.0 - DPs: 1-15,101-105 | ZCL: 258,6,8,EF00 | mains=', this.mainsPowered);
+
+    // WHY(P2412 / #533): Z2M ZTS-EUR-C uses forceTimeUpdates — MCU may ignore motor
+    // commands until time is synced (Homey ACK still succeeds on empty MCU action).
+    if (this._isMoesZtsEurC()) {
+      this._invertedPosition = true;
+      try {
+        const TuyaTimeSyncFormats = require('../../lib/tuya/TuyaTimeSyncFormats');
+        const fmt = TuyaTimeSyncFormats.guessFormat({
+          manufacturerName: this.getManufacturerName?.() || this.getSetting?.('zb_manufacturer_name'),
+          productId: this.getSetting?.('zb_model_id') || 'TS0601',
+          driverClass: 'Cover',
+        });
+        const payload = TuyaTimeSyncFormats.buildPayload(fmt, { homey: this.homey });
+        if (payload && typeof this._sendTuyaDP === 'function') {
+          // Soft — never block init if time DP unknown
+          this.log(`[CURTAIN] P2412 Moes time-sync attempt format=${fmt}`);
+        }
+        if (typeof this.syncTuyaTime === 'function') {
+          await this.syncTuyaTime().catch(() => {});
+        } else if (typeof this._syncTuyaTime === 'function') {
+          await this._syncTuyaTime().catch(() => {});
+        } else if (this.tuyaEF00Manager?.syncTime) {
+          await this.tuyaEF00Manager.syncTime().catch(() => {});
+        }
+      } catch (_e) { /* soft */ }
+    }
 
     // v5.5.322: Add luminance + button for Tuya DP curtains (Eftychis #779)
     // v5.8.40: Skip for TS130F ZCL curtains (Tbao forum: _TZ3000_bs93npae)
