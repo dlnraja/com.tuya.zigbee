@@ -1,6 +1,6 @@
 {
   "name": "com.dlnraja.tuya.zigbee",
-  "version": "9.0.807",
+  "version": "9.0.808",
   "description": "Tuya Unified Zigbee - Local-first control with AI automation",
   "main": "app.js",
   "scripts": {
@@ -271,6 +271,13 @@
     "check:p2366": "node --test test/critical/p2366-unknown-zigbee-harden.test.js",
     "wifi:harden": "node tools/ci/harden-wifi-local.js",
     "check:p2367": "node --test test/critical/p2367-wifi-local-harden.test.js",
+    "check:p2407": "node --test test/critical/p2407-wifi-community-hints.test.js",
+    "check:p2408": "node --test test/critical/p2408-wifi-discovery-keys.test.js",
+    "check:p2409": "node --test test/critical/p2409-wifi-pairing-auth.test.js",
+    "check:p2410": "node --test test/critical/p2410-advertising-discovery.test.js",
+    "check:p2411": "node --test test/critical/p2411-max-discovery-pairing.test.js",
+    "wifi:build-hints": "node tools/ci/build-wifi-community-dp-hints.js",
+    "wifi:check-hints": "node tools/ci/build-wifi-community-dp-hints.js --check",
     "mfs:sync": "node tools/ci/sync-compose-to-mfs-db.js",
     "mfs:sync:apply": "node tools/ci/sync-compose-to-mfs-db.js --apply",
     "mfs:harden": "node tools/ci/harden-mfs-db.js",

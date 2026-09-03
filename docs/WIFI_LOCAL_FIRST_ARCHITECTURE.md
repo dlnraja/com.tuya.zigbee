@@ -1,5 +1,9 @@
 # WiFi Local-First Architecture — Complete Visual Reference
-> Version 9.0.40 | June 2026 | 51 WiFi Drivers
+> Version 9.1.1 | September 2026 | 50 WiFi Drivers | **P2407 community DP hints**
+
+> **P2407 (2026-09-03):** Runtime DP enrichment loads compact `data/wifi/community-dp-hints.json`
+> (330 products from make-all/tuya-local crawl). Cloud = pairing / optional diagnostic only.
+> Rebuild: `node tools/ci/build-wifi-community-dp-hints.js`. Gate: `node tools/ci/harden-wifi-local.js`.
 
 ## 1. High-Level Architecture
 

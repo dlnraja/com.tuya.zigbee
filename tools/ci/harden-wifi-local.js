@@ -34,6 +34,12 @@ function main() {
   report.phases.push(runNode(['tools/ci/wifi-local-first-gate.js'], 'wifi-local-first-gate'));
   report.phases.push(runNode(['--test', 'test/critical/wifi-local-first-resolver.test.js'], 'wifi-local-first-resolver'));
   report.phases.push(runNode(['--test', 'test/critical/p2367-wifi-local-harden.test.js'], 'p2367-wifi-local-harden'));
+  report.phases.push(runNode(['tools/ci/build-wifi-community-dp-hints.js', '--check'], 'p2407-community-hints-check'));
+  report.phases.push(runNode(['--test', 'test/critical/p2407-wifi-community-hints.test.js'], 'p2407-wifi-community-hints'));
+  report.phases.push(runNode(['--test', 'test/critical/p2408-wifi-discovery-keys.test.js'], 'p2408-wifi-discovery-keys'));
+  report.phases.push(runNode(['--test', 'test/critical/p2409-wifi-pairing-auth.test.js'], 'p2409-wifi-pairing-auth'));
+  report.phases.push(runNode(['--test', 'test/critical/p2410-advertising-discovery.test.js'], 'p2410-advertising-discovery'));
+  report.phases.push(runNode(['--test', 'test/critical/p2411-max-discovery-pairing.test.js'], 'p2411-max-discovery-pairing'));
 
   const failed = report.phases.filter((p) => !p.ok);
   report.pass = failed.length === 0;

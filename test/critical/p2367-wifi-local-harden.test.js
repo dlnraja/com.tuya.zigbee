@@ -19,8 +19,10 @@ const { QuirkRegistry } = require('../../lib/tuya-local/TuyaQuirk');
 describe('P2367 WiFi local hardening', () => {
   it('UdpDiscoveryKeys has 3 ECB fallbacks (TinyTuya/tuyapi parity)', () => {
     assert.strictEqual(ECB_KEYS.length, 3);
-    assert.ok(UDP_KEY_RAW.equals(ECB_KEYS[0]));
-    assert.ok(UDP_KEY_HEX.equals(ECB_KEYS[1]));
+    assert.ok(ECB_KEYS.some((k) => k.equals(UDP_KEY_RAW)));
+    assert.ok(ECB_KEYS.some((k) => k.equals(UDP_KEY_HEX)));
+    // TinyTuya prefers MD5(UDP_KEY) first for 6667 ECB
+    assert.ok(ECB_KEYS[0].equals(require('../../lib/tuya-local/UdpDiscoveryKeys').UDP_KEY_MD5));
   });
 
   it('decryptUdpEcb round-trips with raw key', () => {

@@ -1,20 +1,24 @@
 ﻿# Diag / crash / socket hang / build-failed — integral 2026-09-03 (P2406)
 
 ## Crash gate
-`npm run check:gmail-crashes` → **verdict ok** (unknown=0). Known tip-soaked patterns only (FLOW-GUARD, IAS sleepy, DCM audit, heap, destroyed timers).
+`npm run check:gmail-crashes` → **verdict ok** (unknown=0). Known tip-soaked patterns only.
 
 ## Athom socket hang up / processing_failed (P139)
-Transient Athom processor errors. Soft-expect + `processing-failure-republish-check` **must not** bump→republish loops. Tip Test builds after P2403–P2405 remain valid; wait cooldown if draft fails.
+Soft-expect only — no republish spam.
 
-## Build failed (CI) this cycle
-| Failure | Root | Fix |
-|---------|------|-----|
-| Syntax / mfs align high=9 | P2405 registry vs mfs_db lag | `align-mfs-db-intelligent --apply` |
-| Fingerprint collision ja5osu5g\|TS004F | Cartesian dual after P2405 | Restore mfr on `button_wireless_1` + baseline intentional dual-claim |
-| Stable publish missing OTA soil asset | Master soil compose copied | Restored Stable soil base + 0ints6wl only (prior push) |
+## Build failed (CI) — closed this cycle
+| Failure | Root | Fix | Status |
+|---------|------|-----|--------|
+| Syntax mfs high drift | P2405 registry vs mfs | align `--apply` + commit `3169c32dc` | master Syntax green |
+| ja5osu5g\|TS004F collision | P2405 dual-claim | baseline + restore button_wireless_1 | BOTH |
+| Stable validate missing soil OTA | master compose copy | strip soil firmwareUpdates | fixed earlier |
+| Stable validate missing wall_dimmer OTA bin | master compose copy | strip wall_dimmer firmwareUpdates `233260eb6` | **Publish Stable SUCCESS** `33696313746` |
 
-## Homey app diags
-Prior integral (P2403): DIY tuya_dp spam, cover cluster-miss, radar flood — tip ≥9.0.803+. GHA Gmail + Fetch Homey Diagnostics re-triggered this session.
+## Tips
+| Track | Tip | Note |
+|-------|-----|------|
+| master | **9.0.806** | Auto-Publish after mfs sync |
+| stable | **5.12.125** | Publish Stable to Test green after OTA strip |
 
 ## Dual-app
-P2406 CI/mfs/baseline → **BOTH** where mfs/registry apply; crash gate MASTER_ONLY reports.
+P2406 CI/mfs/OTA strip → **BOTH**. Never copy master `firmwareUpdates` onto Stable without assets.

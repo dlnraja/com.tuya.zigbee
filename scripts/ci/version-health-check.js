@@ -55,14 +55,34 @@ async function main() {
     '',
   ];
 
+  // Athom processing_failed is often transient (P139 socket hang) — soft-expect:
+  // report in summary but do not fail the cron when crashes are clean.
+  // Hard-fail only when the newest tip/live build itself is processing_failed
+  // AND older than VERSION_HEALTH_FAIL_AGE_H (default 6h) without a newer testing tip.
+  const softExpect = process.env.VERSION_HEALTH_SOFT_EXPECT !== '0';
+  const failAgeH = Number(process.env.VERSION_HEALTH_FAIL_AGE_H || 6);
+  const newestTesting = recent.find((b) => b.state === 'test' || b.state === 'testing');
+  const stuckFailed = failed.filter((b) => {
+    if (newestTesting && newestTesting.id > b.id) return false; // superseded by a tip that made it
+    return ageDays(b) * 24 >= failAgeH;
+  });
+
   let bad = false;
   if (crashed.length > 0) {
     bad = true;
     lines.push(`❌ Builds with crashes on test/live: ${crashed.map((b) => `#${b.id} v${b.version} (${b.crashes})`).join(', ')}`);
   }
   if (failed.length > 0) {
-    bad = true;
-    lines.push(`❌ processing_failed builds: ${failed.map((b) => `#${b.id} v${b.version}`).join(', ')}`);
+    const label = softExpect && stuckFailed.length === 0 ? '⚠️' : '❌';
+    lines.push(`${label} processing_failed builds: ${failed.map((b) => `#${b.id} v${b.version}`).join(', ')}`);
+    if (!softExpect || stuckFailed.length > 0) {
+      bad = true;
+      if (stuckFailed.length > 0) {
+        lines.push(`❌ stuck processing_failed (>${failAgeH}h, no newer tip): ${stuckFailed.map((b) => `#${b.id}`).join(', ')}`);
+      }
+    } else {
+      lines.push('ℹ️ P139 soft-expect: Athom processing_failed ignored while a newer tip exists / age < fail window.');
+    }
   }
   if (!bad) {lines.push('✅ No crashed or failed builds in the window.');}
 

@@ -149,6 +149,50 @@
     "p218_2imwyigp_contact_strip": {
       "tag": "BOTH",
       "note": "Anti-bot: never list 2imwyigp/u6x1zyv2 on contact_sensor compose — pairing correctness"
+    },
+    "p2407_wifi_local_first_community": {
+      "tag": "MASTER_ONLY",
+      "note": "Community DP catalog + settings local-first UX + DeviceIOFacade resolveWifi — feature/soak"
+    },
+    "p2407_wifi_local_first_reliability": {
+      "tag": "BOTH",
+      "note": "LocalFirstResolver + CloudHealthState + WiFiDPRegistry enrich on TuyaLocalDevice — LAN decision + DP gaps"
+    },
+    "p2408_wifi_discovery_keys_protocols": {
+      "tag": "BOTH",
+      "note": "UDP cascade decrypt + 6699/7000 solicitation + local_key normalize + protocol 3.1-3.5 chain from discovery hint"
+    },
+    "p2409_wifi_pairing_auth_cascade": {
+      "tag": "BOTH",
+      "note": "Multi-region/schema/API pairing auth + LAN match orchestrator + protocol probe cascade"
+    },
+    "p2410_wifi_advertising_discovery": {
+      "tag": "BOTH",
+      "note": "Autonomous WiFi UDP advertising (listAdvertising/burstProbe) + Homey tuya_wifi mDNS hooks on TuyaLocalDevice/Driver"
+    },
+    "p2410_zigbee_advertising_mesh": {
+      "tag": "MASTER_ONLY",
+      "note": "Zigbee mesh advertising flags + settings wifi-lan-map / zigbee advertising chips — Homey settings UX"
+    },
+    "p2411_max_discovery_pairing": {
+      "tag": "BOTH",
+      "note": "Max pair discover: UDP burst + TinyTuya TCP/6668 force scan + mDNS merge + stronger cloud↔LAN match + probe ipHints"
+    },
+    "p2412_moes_zts_dual_tx": {
+      "tag": "BOTH",
+      "note": "Moes ZTS curtain (#533 / diag 4a918200+03d33fcc): dual TX DP2+DP1 + Z2M invert + time sync + moes_control_invert"
+    },
+    "p2413_safe_capability_ci_fallback": {
+      "tag": "BOTH",
+      "note": "SafeCapabilityMixin: never require Homey CLI; depth-guarded setCapabilityValue fallback — Nightly P58"
+    },
+    "p2414_presence_dp2_no_humidity": {
+      "tag": "BOTH",
+      "note": "TuyaEF00Manager: skip generic DP2→measure_humidity on presence/radar (diag c5165a37 invent humidity)"
+    },
+    "p2414_version_health_soft_expect": {
+      "tag": "BOTH",
+      "note": "version-health-check: P139 soft-expect processing_failed when superseded by newer tip"
     }
   },
   "ci": {
