@@ -2969,5 +2969,8 @@
   },
   "9.0.811": {
     "en": "PIR/multi-cap enrich: ZG-204ZV TZE200→presence, strip motion cartesian ZG-204, ZS-301Z soil lock, radar config clean."
+  },
+  "9.0.812": {
+    "en": "CI: WiFi pairing timer gate, Athom processing_failed soft-expect, diagnostics dashboard soft shell."
   }
 }

@@ -4,8 +4,9 @@
 /**
  * Wait until the current app.json version is a usable Athom draft/test build.
  *
- * P139: do not bump/republish here. Fail-closed only after the wait window if
- * the expected version is still processing_failed AND no draft/test exists.
+ * P139: do not bump/republish here. Soft-expect (default) soft-continues when
+ * the expected version is still processing_failed after the wait window —
+ * promote/verify decide next. Set HOMEY_DRAFT_FAIL_CLOSED=1 to hard-fail.
  *
  * WHY: a sibling failed build (or a first poll that sees processing_failed
  * while Athom is still creating the draft) used to exit 1 immediately and
@@ -19,7 +20,11 @@ const ROOT = path.join(__dirname, '..', '..');
 const APP = process.env.APP_ID || 'com.dlnraja.tuya.zigbee';
 const MAX_MS = Number(process.env.HOMEY_DRAFT_WAIT_MS || 600000);
 const STEP_MS = Number(process.env.HOMEY_DRAFT_POLL_MS || 20000);
-const HEALTHY_TEST_PATCH_LAG = Number(process.env.HOMEY_HEALTHY_TEST_PATCH_LAG || 8);
+// WHY(P2416): Stable 5.12.x patch trains can lag >8 while Athom flakes (P139);
+// keep soft-continue viable without bump-loop republish.
+const HEALTHY_TEST_PATCH_LAG = Number(process.env.HOMEY_HEALTHY_TEST_PATCH_LAG || 32);
+const DRAFT_SOFT_EXPECT = process.env.HOMEY_DRAFT_SOFT_EXPECT !== '0'
+  && process.env.HOMEY_DRAFT_FAIL_CLOSED !== '1';
 
 function parseSemver(v) {
   const m = String(v || '').replace(/^v/i, '').match(/^(\d+)\.(\d+)\.(\d+)/);
@@ -125,6 +130,66 @@ function decideDraftWait(classified) {
   return 'keep-waiting';
 }
 
+/**
+ * Final outcome after the wait window when expected version never became draft/test.
+ * Soft-expect (default ON) avoids P139 fail-closed spam on Athom processing_failed.
+ *
+ * @returns {{action:'soft-continue'|'fail-closed', message:string, healthyVersion?:string}}
+ */
+function decideFinalDraftOutcome({
+  expected,
+  failed,
+  allBuilds,
+  listError,
+  softExpect = true,
+  healthyLag = HEALTHY_TEST_PATCH_LAG,
+} = {}) {
+  const want = String(expected || '').replace(/^v/i, '');
+  const failState = failed?.state || 'processing_failed';
+  const failId = failed?.id || '?';
+
+  const fallback = (() => {
+    const test = latestTestBuild(allBuilds);
+    if (!test) return null;
+    const lag = patchDistance(test.version, want);
+    if (lag === null || lag > healthyLag) return null;
+    return test;
+  })();
+
+  if (fallback) {
+    return {
+      action: 'soft-continue',
+      healthyVersion: fallback.version,
+      message: `wait-draft: P139 — v${want} still ${failState} (#${failId}) but Test healthy at v${fallback.version} #${fallback.id} (patch lag ${patchDistance(fallback.version, want)} ≤ ${healthyLag}); continue`,
+    };
+  }
+
+  // WHY(P2301): Athom list token blips must not hard-fail after upload succeeded.
+  if (listError || !allBuilds || allBuilds.length === 0) {
+    return {
+      action: 'soft-continue',
+      message: `wait-draft: P139 soft-continue — v${want} saw ${failState} (#${failId}) but builds list unavailable; do not fail-closed`,
+    };
+  }
+
+  // WHY(P2416): default soft-expect — leave promote/verify a chance; no bump-loop.
+  if (softExpect) {
+    const anyTest = latestTestBuild(allBuilds);
+    return {
+      action: 'soft-continue',
+      healthyVersion: anyTest?.version,
+      message: anyTest
+        ? `wait-draft: P139 soft-expect — v${want} still ${failState} (#${failId}); keep soaking Test v${anyTest.version} #${anyTest.id} (do not fail-closed)`
+        : `wait-draft: P139 soft-expect — v${want} still ${failState} (#${failId}); continue to promote/verify (do not fail-closed)`,
+    };
+  }
+
+  return {
+    action: 'fail-closed',
+    message: `wait-draft: v${want} still ${failState} (#${failId}) after ${MAX_MS}ms — P139 fail-closed`,
+  };
+}
+
 async function main() {
   const expected = versionOf();
   if (!process.env.HOMEY_PAT) {
@@ -202,25 +267,25 @@ async function main() {
   const failed = classified.failed[0] || lastFailed;
   if (failed) {
     const allBuilds = (Array.isArray(list) ? list : []).map(normalizeBuild);
-    const fallback = healthyTestFallback(allBuilds, expected);
-    if (fallback) {
-      console.log(`wait-draft: P139 — v${expected} still ${failed.state} (#${failed.id}) but Test healthy at v${fallback.version} #${fallback.id} (patch lag ${patchDistance(fallback.version, expected)} ≤ ${HEALTHY_TEST_PATCH_LAG}); continue`);
+    const decision = decideFinalDraftOutcome({
+      expected,
+      failed,
+      allBuilds,
+      listError,
+      softExpect: DRAFT_SOFT_EXPECT,
+      healthyLag: HEALTHY_TEST_PATCH_LAG,
+    });
+    if (decision.action === 'soft-continue') {
+      console.log(decision.message);
       if (process.env.GITHUB_OUTPUT) {
-        fs.appendFileSync(process.env.GITHUB_OUTPUT, `healthy_test_version=${fallback.version}\n`, 'utf8');
+        if (decision.healthyVersion) {
+          fs.appendFileSync(process.env.GITHUB_OUTPUT, `healthy_test_version=${decision.healthyVersion}\n`, 'utf8');
+        }
         fs.appendFileSync(process.env.GITHUB_OUTPUT, `processing_failed_degraded=true\n`, 'utf8');
       }
       return;
     }
-    // WHY(P2301): Athom list token blips must not hard-fail the whole Auto-Publish
-    // after upload succeeded — leave promote/verify a chance (continue-on-error too).
-    if (listError || allBuilds.length === 0) {
-      console.log(`wait-draft: P139 soft-continue — v${expected} saw ${failed.state} (#${failed.id}) but builds list unavailable; do not fail-closed`);
-      if (process.env.GITHUB_OUTPUT) {
-        fs.appendFileSync(process.env.GITHUB_OUTPUT, `processing_failed_degraded=true\n`, 'utf8');
-      }
-      return;
-    }
-    console.error(`wait-draft: v${expected} still ${failed.state} (#${failed.id}) after ${MAX_MS}ms — P139 fail-closed`);
+    console.error(decision.message);
     process.exit(1);
   }
   console.log(`wait-draft: timed out after ${MAX_MS}ms — continue to promote/verify`);
@@ -229,6 +294,7 @@ async function main() {
 module.exports = {
   classifyDraftWait,
   decideDraftWait,
+  decideFinalDraftOutcome,
   normalizeBuild,
   isReady,
   isFailed,

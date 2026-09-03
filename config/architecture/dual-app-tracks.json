@@ -197,6 +197,10 @@
     "p2415_pir_multicap_enrich": {
       "tag": "BOTH",
       "note": "ZG-204ZV TZE200 siblings → presence; strip ZG-204 cartesian from motion; ZS-301Z soil lock; clean radar configs"
+    },
+    "p2416_ci_dashboard_p139_soft": {
+      "tag": "BOTH",
+      "note": "Bare-timer docs on WiFi pairing; wait-athom soft-expect P139; diagnostics dashboard empty shell for Pages/e2e"
     }
   },
   "ci": {

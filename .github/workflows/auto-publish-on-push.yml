@@ -400,6 +400,8 @@ jobs:
         continue-on-error: true
         env:
           HOMEY_PAT: ${{ secrets.HOMEY_PAT }}
+          HOMEY_DRAFT_SOFT_EXPECT: '1'
+          HOMEY_HEALTHY_TEST_PATCH_LAG: '32'
         run: node .github/scripts/wait-athom-draft-ready.js
 
       - name: Install Puppeteer (draft → test promotion)

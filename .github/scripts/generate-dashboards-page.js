@@ -93,7 +93,7 @@ ${cards}
 </html>`;
 
   fs.writeFileSync(path.join(OUT, 'dashboards.html'), html);
-  console.log(`[dashboards-page] ${published.length}/6 dashboards published + hub page written`);
+  console.log(`[dashboards-page] ${published.length}/${DASHBOARDS.length} dashboards published + hub page written`);
   return published.length;
 };
 
