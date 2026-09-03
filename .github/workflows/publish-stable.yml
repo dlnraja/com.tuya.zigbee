@@ -332,6 +332,8 @@ jobs:
           HOMEY_PAT: ${{ secrets.HOMEY_PAT }}
           APP_ID: ${{ needs.publish.outputs.app_id }}
           HOMEY_EXPECTED_VERSION: ${{ needs.publish.outputs.uploaded_version }}
+          HOMEY_DRAFT_SOFT_EXPECT: '1'
+          HOMEY_HEALTHY_TEST_PATCH_LAG: '32'
         run: node .github/scripts/wait-athom-draft-ready.js
       - name: Install Puppeteer
         if: steps.soak.outputs.skip != 'true'

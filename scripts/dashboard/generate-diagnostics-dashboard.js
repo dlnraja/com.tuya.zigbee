@@ -91,7 +91,7 @@ function severityClass(sev) {
 
 function buildRows(diags) {
   return diags.map((d) => {
-    const en = enrich(bodyBits(d));
+    const en = enrichEntry(d);
     return {
       date: (d.date || '').slice(0, 16).replace('T', ' '),
       type: d.type || 'unknown',
@@ -153,9 +153,30 @@ function renderBarList(entries, max = 8) {
 function main() {
   const report = loadReport();
   if (!report) {
-    console.error('[diagnostics-dashboard] Missing', REPORT);
-    console.error('Run: npm run diag:gmail  (or copy sanitized report into .github/state/)');
-    process.exit(1);
+    // WHY(P2416): Pages / e2e must not hard-fail when Gmail state is absent —
+    // publish an empty triage shell so dashboards.html still links a live page.
+    console.warn('[diagnostics-dashboard] Missing report — writing empty shell:', REPORT);
+    const emptyHtml = T.buildPage({
+      title: 'Diagnostics Dashboard',
+      subtitle: 'Gmail triage — no diagnostics-report.json yet (run npm run diag:gmail)',
+      current: 'diagnostics',
+      dashboards: [{ id: 'diagnostics', label: 'Diagnostics', file: 'diagnostics-dashboard.html' }],
+      sections: [
+        `<div class="summary-bar">
+          ${T.metricCardSm('Total diags', 0, 'waiting for report')}
+          ${T.metricCardSm('Known signals', 0, '—')}
+          ${T.metricCardSm('Status', 'empty', 'soft shell')}
+        </div>
+        <p class="subtitle">Place a sanitized report at <code>.github/state/diagnostics-report.json</code> then regenerate.</p>`,
+      ],
+    });
+    fs.writeFileSync(OUT, emptyHtml);
+    if (JSON_MODE) {
+      console.log(JSON.stringify({ generatedAt: new Date().toISOString(), total: 0, empty: true }, null, 2));
+    } else {
+      console.log('[diagnostics-dashboard] empty HTML:', OUT);
+    }
+    return;
   }
 
   const raw = report.diagnostics || [];

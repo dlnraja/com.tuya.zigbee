@@ -78,6 +78,14 @@
       "tag": "BOTH",
       "note": "Skip MCU 0x10 on battery covers; Formats+seq10+FORCE_UPDATE; brightness 0-1000 clamp — reliability"
     },
+    "p2363_curtain_ef00_hybrid_timeout": {
+      "tag": "BOTH",
+      "note": "Cover EF00 manager soft-create + optimistic windowcoverings + hybrid skip-disable + Z2M cover FPs — reliability (diag 05867379 couple absent)"
+    },
+    "p2361_w0qqde0g_plug_not_button": {
+      "tag": "BOTH",
+      "note": "Gmail L3: _TZ3210_w0qqde0g+TS011F is Z2M plug — strip from button_wireless_2; lock plug_energy_monitor"
+    },
     "p2286_publish_soft_expect": {
       "tag": "BOTH",
       "note": "prepare-publish temp only; soft-expect Athom race; refuse repo-root publish"
@@ -100,7 +108,39 @@
     },
     "p2372_fleet_free_scrape_all_classes": {
       "tag": "MASTER_ONLY",
-      "note": "Fleet enrich cron lives on master; stable soft-ports free-scrape budget + FlowCardHeuristics"
+      "note": "Fleet enrich cron + free-scrape budget + driver-class coverage — CI infra; soft-port FlowCardHeuristics + sacred strips to stable as BOTH"
+    },
+    "p2375_flow_fleet_enrich": {
+      "tag": "MASTER_ONLY",
+      "note": "flow-fleet-enrich CI — orphan tokens, capability triggers, Z2M cross-ref, app.json sync; FlowCardHeuristics buildCapabilityFlowCandidates is BOTH"
+    },
+    "p2376_intelligent_source_diff": {
+      "tag": "MASTER_ONLY",
+      "note": "Cache-first source diff orchestrator — optional sources soft-fail, GHA intel cache, never block pipeline"
+    },
+    "p2376_appjson_flow_dedupe": {
+      "tag": "BOTH",
+      "note": "Strip driver-scoped flow cards from app.json + .homeycompose after homey build / auto-fix"
+    },
+    "p2378_button_1gang_flow_fire": {
+      "tag": "BOTH",
+      "note": "Peter cfbf687f — triggerButtonPress must fire *_button_1gang_* compose cards (was gated gangCount>1); RX 0xFD already OK"
+    },
+    "p2395_button_capture_lx_flows": {
+      "tag": "BOTH",
+      "note": "Cascade preferredLevels apply L5/L7 gates; _hasPhysicalButtonMixin; legacy physical_gang compose; SOS skip8004. CI parity gate MASTER_ONLY side."
+    },
+    "p2396_lerlink_fan_dp2_dp11": {
+      "tag": "BOTH",
+      "note": "GitHub #536 — _TZE200/204_r32ctezx+TS0601 fan_controller DP2 countdown + DP11 power-on; scrub water_valve leftovers"
+    },
+    "p2397_gang_ui_bidirectional": {
+      "tag": "BOTH",
+      "note": "Homey UI button.N ↔ physical EP: resolveGangCount from caps, soft-ensure onoff.gangN (not on zigbee.devices parents), EP-only virtual TX, physical pulse"
+    },
+    "p2379_presence_radar_no_curtain_dyncap": {
+      "tag": "BOTH",
+      "note": "VicHY — DynCap must not invent windowcoverings_set/dim from radar DP2/3/102; heal phantom curtain UI + stuck presence"
     },
     "p2372_flow_heuristics_knob_rotary": {
       "tag": "BOTH",
@@ -108,7 +148,59 @@
     },
     "p218_2imwyigp_contact_strip": {
       "tag": "BOTH",
-      "note": "Anti-bot: never list 2imwyigp/u6x1zyv2 on contact_sensor compose"
+      "note": "Anti-bot: never list 2imwyigp/u6x1zyv2 on contact_sensor compose — pairing correctness"
+    },
+    "p2407_wifi_local_first_community": {
+      "tag": "MASTER_ONLY",
+      "note": "Community DP catalog + settings local-first UX + DeviceIOFacade resolveWifi — feature/soak"
+    },
+    "p2407_wifi_local_first_reliability": {
+      "tag": "BOTH",
+      "note": "LocalFirstResolver + CloudHealthState + WiFiDPRegistry enrich on TuyaLocalDevice — LAN decision + DP gaps"
+    },
+    "p2408_wifi_discovery_keys_protocols": {
+      "tag": "BOTH",
+      "note": "UDP cascade decrypt + 6699/7000 solicitation + local_key normalize + protocol 3.1-3.5 chain from discovery hint"
+    },
+    "p2409_wifi_pairing_auth_cascade": {
+      "tag": "BOTH",
+      "note": "Multi-region/schema/API pairing auth + LAN match orchestrator + protocol probe cascade"
+    },
+    "p2410_wifi_advertising_discovery": {
+      "tag": "BOTH",
+      "note": "Autonomous WiFi UDP advertising (listAdvertising/burstProbe) + Homey tuya_wifi mDNS hooks on TuyaLocalDevice/Driver"
+    },
+    "p2410_zigbee_advertising_mesh": {
+      "tag": "MASTER_ONLY",
+      "note": "Zigbee mesh advertising flags + settings wifi-lan-map / zigbee advertising chips — Homey settings UX"
+    },
+    "p2411_max_discovery_pairing": {
+      "tag": "BOTH",
+      "note": "Max pair discover: UDP burst + TinyTuya TCP/6668 force scan + mDNS merge + stronger cloud↔LAN match + probe ipHints"
+    },
+    "p2412_moes_zts_dual_tx": {
+      "tag": "BOTH",
+      "note": "Moes ZTS curtain (#533 / diag 4a918200+03d33fcc): dual TX DP2+DP1 + Z2M invert + time sync + moes_control_invert"
+    },
+    "p2413_safe_capability_ci_fallback": {
+      "tag": "BOTH",
+      "note": "SafeCapabilityMixin: never require Homey CLI; depth-guarded setCapabilityValue fallback — Nightly P58"
+    },
+    "p2414_presence_dp2_no_humidity": {
+      "tag": "BOTH",
+      "note": "TuyaEF00Manager: skip generic DP2→measure_humidity on presence/radar (diag c5165a37 invent humidity)"
+    },
+    "p2414_version_health_soft_expect": {
+      "tag": "BOTH",
+      "note": "version-health-check: P139 soft-expect processing_failed when superseded by newer tip"
+    },
+    "p2415_pir_multicap_enrich": {
+      "tag": "BOTH",
+      "note": "ZG-204ZV TZE200 siblings → presence; strip ZG-204 cartesian from motion; ZS-301Z soil lock; clean radar configs"
+    },
+    "p2416_ci_dashboard_p139_soft": {
+      "tag": "BOTH",
+      "note": "Bare-timer docs on WiFi pairing; wait-athom soft-expect P139; diagnostics dashboard empty shell for Pages/e2e"
     }
   },
   "ci": {
@@ -116,6 +208,7 @@
     "npm": "check:l99-dual",
     "workflows": [
       "auto-enrich-closed-loop.yml",
+      "fleet-intelligent-enrich.yml",
       "project-resilience.yml",
       "recurrent-orchestrator.yml",
       "unified-ci.yml",
