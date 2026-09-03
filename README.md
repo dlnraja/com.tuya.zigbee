@@ -4,11 +4,11 @@
 
 [![Version](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fraw.githubusercontent.com%2Fdlnraja%2Fcom.tuya.zigbee%2Fmaster%2Fapp.json&query=%24.version&label=version&color=blue)](https://homey.app/a/com.dlnraja.tuya.zigbee/)
 [![Drivers](https://img.shields.io/badge/drivers-431-brightgreen)](https://homey.app/a/com.dlnraja.tuya.zigbee/)
-[![Fingerprints](https://img.shields.io/badge/fingerprints-4,390%20unique-green)](https://homey.app/a/com.dlnraja.tuya.zigbee/)
+[![Fingerprints](https://img.shields.io/badge/fingerprints-4,392%20unique-green)](https://homey.app/a/com.dlnraja.tuya.zigbee/)
 [![SDK](https://img.shields.io/badge/SDK-3-orange)](https://apps.developer.homey.app/)
 [![License](https://img.shields.io/badge/license-GPL--3.0-green)](LICENSE)
 
-Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, sensors, lights, thermostats, covers, valves — **431 drivers**, **4,390 unique fingerprints**. No cloud required.
+Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, sensors, lights, thermostats, covers, valves — **431 drivers**, **4,392 unique fingerprints**. No cloud required.
 
 **What it does:**
 - Talks to devices on your Homey Zigbee mesh (Tuya DP `0xEF00` and standard ZCL)
@@ -33,21 +33,19 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 
 | Metric | Value |
 |--------|-------|
-| **App Version** | v9.0.807 |
+| **App Version** | v9.0.809 |
 | **Drivers** | 431 (381 Zigbee + 50 WiFi) |
-| **Unique Fingerprints** | 4,388 |
-| **Pairing Variants** | 16,183 (4 case combos per fingerprint) |
-| **Unique Fingerprints** | 4,390 |
-| **Pairing Variants** | 16,188 (4 case combos per fingerprint) |
+| **Unique Fingerprints** | 4,392 |
+| **Pairing Variants** | 16,198 (4 case combos per fingerprint) |
 | **Unique Product IDs** | 576 |
 | **Flow Cards** | 5,950 |
 | **Unique Capabilities** | 170 |
 | **Native OTA Drivers** | 9 |
-| **Test Suites** | 229 files |
+| **Test Suites** | 236 files |
 | **SVG Icons** | 731 |
 | **Languages** | EN, FR, NL, DE |
 | **SDK / Homey** | 3 / >= 12.2.0 |
-| **Last Updated** | 2026-09-02 |
+| **Last Updated** | 2026-09-03 |
 
 ### Top 20 Drivers by Fingerprint Count
 
@@ -62,13 +60,12 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 | 7 | `wall_dimmer_tuya` | 486 |
 | 8 | `generic_tuya` | 415 |
 | 9 | `device_radiator_valve` | 334 |
-| 10 | `switch_4gang` | 274 |
-| 11 | `switch_2gang` | 251 |
+| 10 | `switch_4gang` | 276 |
+| 11 | `switch_2gang` | 255 |
 | 12 | `motion_sensor` | 217 |
 | 13 | `switch_3gang` | 214 |
 | 14 | `diy_custom_zigbee` | 206 |
 | 15 | `thermostat_tuya_dp` | 192 |
-| 16 | `soil_sensor` | 186 |
 | 16 | `soil_sensor` | 188 |
 | 17 | `sensor_contact_zigbee` | 182 |
 | 18 | `water_leak_sensor_tuya` | 178 |
@@ -105,7 +102,9 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 
 | Version | Changes |
 |---------|---------|
-| **v9.0.807** | Fixed Moes curtain wall switch stopping too early after open/close from Homey UI. |
+| **v9.0.809** | Moes ZTS curtain dual TX + invert (#533), presence radar DP2 humidity invent skip, SafeCapability CI harden, WiFi max LAN discovery/auth. |
+| **v9.0.808** | Moes ZTS curtain dual TX + invert (#533), presence radar DP2 humidity invent skip, SafeCapability CI harden, WiFi max LAN discovery/auth. |
+| **v9.0.807** | Improved cover idle-stop guard and WiFi local discovery harden. |
 | **v9.0.806** | Fixed Moes curtain wall switch stopping too early after open/close from Homey UI. |
 | **v9.0.805** | Fixed Moes curtain wall switch stopping too early after open/close from Homey UI. |
 | **v9.0.804** | Fixed Moes curtain wall switch stopping too early after open/close from Homey UI. |
@@ -115,8 +114,6 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 | **v9.0.800** | Fixed Moes curtain wall switch stopping too early after open/close from Homey UI. |
 | **v9.0.799** | Fixed garden valve and other flow conditions when Homey lacks getDeviceConditionCard; radar presence value 2 now counts as occupied. |
 | **v9.0.798** | Fixed garden valve and other flow conditions when Homey lacks getDeviceConditionCard; radar presence value 2 now counts as occupied. |
-| **v9.0.797** | Improved multi-gang switch Homey buttons (physical and app UI stay in sync); added fan countdown and power-on settings; richer per-gang f… |
-| **v9.0.796** | Improved multi-gang switch Homey buttons (physical and app UI stay in sync); added fan countdown and power-on settings; richer per-gang f… |
 
 <!-- CHANGELOG_END -->
 
