@@ -1,7 +1,7 @@
 {
   "name": {
     "en": "WiFi Siren (Tuya Local)",
-    "fr": "Sirène WiFi (Tuya Local)",
+    "fr": "SirÃ¨ne WiFi (Tuya Local)",
     "nl": "WiFi Sirene (Tuya Lokaal)",
     "de": "WiFi Sirene (Tuya Lokal)",
     "es": "Sirena WiFi (Tuya Local)"
@@ -133,7 +133,7 @@
       "id": "ota_check",
       "title": {
         "en": "Check Zigbee OTA Update",
-        "fr": "Vérifier MàJ OTA",
+        "fr": "VÃ©rifier MÃ J OTA",
         "nl": "Controleer op OTA-updates"
       }
     },
@@ -141,16 +141,16 @@
       "id": "tuya_revive",
       "title": {
         "en": "Tuya Revive (device recovery)",
-        "fr": "Tuya Revive (récupération appareil)",
+        "fr": "Tuya Revive (rÃ©cupÃ©ration appareil)",
         "nl": "Tuya Revive (apparaatherstel)",
-        "de": "Tuya Revive (Gerätewiederherstellung)"
+        "de": "Tuya Revive (GerÃ¤tewiederherstellung)"
       }
     },
     {
       "id": "generate_issue_report",
       "title": {
         "en": "Generate support report (GitHub issue)",
-        "fr": "Générer rapport de support (issue GitHub)",
+        "fr": "GÃ©nÃ©rer rapport de support (issue GitHub)",
         "nl": "Supportrapport genereren (GitHub issue)",
         "de": "Supportbericht erstellen (GitHub Issue)"
       }
@@ -171,5 +171,6 @@
   },
   "ui": {
     "quickAction": "onoff"
-  }
+  },
+  "discovery": "tuya_wifi"
 }

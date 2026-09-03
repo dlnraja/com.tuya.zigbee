@@ -90,9 +90,20 @@ Credentials saved locally. Cloud only used once for key retrieval.
 </div>
 <div class="row">
 <div class="fg"><label>Country Code</label><input type="text" id="sl_cc" value="33" placeholder="33"/><div class="hint">33=FR, 1=US, 44=UK, 49=DE</div></div>
-<div class="fg"><label>Region</label><select id="sl_reg"><option value="eu">Europe</option><option value="us">Americas</option><option value="cn">China</option><option value="in">India</option></select></div>
+<div class="fg"><label>Region</label><select id="sl_reg">
+<option value="eu">Europe (Central)</option>
+<option value="we">Europe (West)</option>
+<option value="us">Americas (West)</option>
+<option value="ue">Americas (East)</option>
+<option value="in">India</option>
+<option value="sg">Southeast Asia</option>
+<option value="cn">China</option>
+</select></div>
 <div class="fg"><label>App</label><select id="sl_schema"><option value="smartlife">Smart Life</option><option value="tuyaSmart">Tuya Smart</option></select></div>
 </div>
+<label style="font-size:11px;display:flex;align-items:center;gap:6px;margin:4px 0 8px;">
+<input type="checkbox" id="sl_auto_reg" checked/> Auto-try other Tuya regions if login fails
+</label>
 <button class="btn btn-p" id="btn-sl" onclick="doSmartLife()">Log in & scan devices</button>
 <div class="err" id="sl-err"></div><div class="ok" id="sl-ok"></div>
 </div>
@@ -105,7 +116,15 @@ Same setup as above but without email/password (uses linked account).
 </div>
 <div class="fg"><label>Access ID</label><input type="text" id="iot_aid" placeholder="from iot.tuya.com"/></div>
 <div class="fg"><label>Access Secret</label><input type="password" id="iot_as" placeholder="from iot.tuya.com"/></div>
-<div class="fg"><label>Region</label><select id="iot_reg"><option value="eu">Europe</option><option value="us">Americas</option><option value="cn">China</option><option value="in">India</option></select></div>
+<div class="fg"><label>Region</label><select id="iot_reg">
+<option value="eu">Europe (Central)</option>
+<option value="we">Europe (West)</option>
+<option value="us">Americas (West)</option>
+<option value="ue">Americas (East)</option>
+<option value="in">India</option>
+<option value="sg">Southeast Asia</option>
+<option value="cn">China</option>
+</select></div>
 <button class="btn btn-p" id="btn-iot" onclick="doIoT()">Scan devices</button>
 <div class="err" id="iot-err"></div><div class="ok" id="iot-ok"></div>
 </div>
@@ -116,11 +135,29 @@ Same setup as above but without email/password (uses linked account).
 <b>Local / ad hoc</b> - Enter Device ID and Local Key directly. Homey connects on LAN first.
 Get these from <b>tinytuya wizard</b>, browser extension, or iot.tuya.com API Explorer.
 </div>
+<div class="box">
+<b>Max LAN discover</b> — UDP 6666/6667/6668/7000 + TCP/6668 force scan (TinyTuya style) + mDNS.
+<button class="btn btn-p" id="btn-lan" type="button" onclick="doLanScan()">📡 Scan advertising devices</button>
+<div class="ok" id="lan-ok" style="max-height:140px;overflow:auto"></div>
+<div class="err" id="lan-err"></div>
+</div>
 <div class="fg"><label>Device ID *</label><input type="text" id="m_did" placeholder="e.g. bf1234abcdef567890"/></div>
 <div class="fg"><label>Local Key *</label><input type="text" id="m_lk" placeholder="16-char AES key"/></div>
-<div class="fg"><label>IP Address</label><input type="text" id="m_ip" placeholder="auto-discovered if empty"/></div>
+<div class="fg"><label>IP Address</label>
+<select id="m_ip_sel" style="margin-bottom:4px"><option value="">(type below or pick from scan)</option></select>
+<input type="text" id="m_ip" placeholder="auto-discovered if empty"/>
+</div>
 <div class="fg"><label>Device Name</label><input type="text" id="m_name" placeholder="e.g. Radiateur Salon"/></div>
-<div class="fg"><label>Protocol</label><select id="m_pv"><option value="3.1">3.1</option><option value="3.3" selected>3.3</option><option value="3.4">3.4</option><option value="3.5">3.5</option></select></div>
+<div class="fg"><label>Protocol</label><select id="m_pv">
+<option value="auto" selected>Auto (3.5→3.1)</option>
+<option value="3.5">3.5 (GCM)</option>
+<option value="3.4">3.4</option>
+<option value="3.3">3.3</option>
+<option value="3.2">3.2</option>
+<option value="3.1">3.1</option>
+</select>
+<div class="hint">Auto tries all Tuya LAN versions; local_key accepts 16-char or 32-hex</div>
+</div>
 <div class="err" id="man-err"></div>
 </div>
 
@@ -170,32 +207,34 @@ function doEasy(){
 function doSmartLife(){
   var aid=document.getElementById('sl_aid').value.trim(),as=document.getElementById('sl_as').value.trim();
   var reg=document.getElementById('sl_reg').value,schema=document.getElementById('sl_schema').value;
+  var autoReg=document.getElementById('sl_auto_reg')?document.getElementById('sl_auto_reg').checked:true;
   hide('sl-err');hide('sl-ok');
   spin('btn-sl');
   
   if (aid && as) {
-      // Direct IoT login
-      H.emit('login',{mode:'cloud',accessId:aid,accessSecret:as,region:reg},function(err,r){
+      H.emit('login',{mode:'cloud',accessId:aid,accessSecret:as,region:reg,autoRegion:autoReg},function(err,r){
         unspin('btn-sl');
         if(err){show('sl-err',err.message||String(err));return}
-        done=true;show('sl-ok',r.count+' devices found! Click Next to select.');
+        if(r&&r.success===false){show('sl-err',r.error||'Login failed');return}
+        done=true;show('sl-ok',(r.count||0)+' devices found (LAN matched: '+(r.lan_count||0)+')! Click Next.');
       });
   } else {
-      // SmartLife QR + DeepLink approach (no accessId/secret)
-      H.emit('login',{mode:'smartlife_qr',region:reg,schema:schema},function(err,r){
+      H.emit('login',{mode:'smartlife_qr',region:reg,schema:schema,autoRegion:autoReg},function(err,r){
         unspin('btn-sl');
         if(err){show('sl-err',err.message||String(err));return}
-        var qrUrl = schema + '://qrLogin?token=' + r.qrCode;
+        if(r&&r.success===false){show('sl-err',r.error||'QR failed');return}
+        var usedSchema = r.schema || schema;
+        var qrUrl = usedSchema + '://qrLogin?token=' + r.qrCode;
         
-        // Android Intent magic URL to force open app from sandboxed webview
         var androidIntent = '';
-        if (schema === 'smartlife') {
+        if (usedSchema === 'smartlife' || usedSchema === 'smart_life') {
           androidIntent = 'intent://qrLogin?token=' + r.qrCode + '#Intent;scheme=smartlife;package=com.tuya.smartlife;end';
         } else {
           androidIntent = 'intent://qrLogin?token=' + r.qrCode + '#Intent;scheme=tuyaSmart;package=com.tuya.smart;end';
         }
 
         var msg = '<b>Scan this or click a link below!</b><br>';
+        if (r.region) msg += '<span style="font-size:10px;color:#666;">Region: '+r.region+' / App: '+usedSchema+'</span><br>';
         if (r.localQrImage) {
           msg += '<img src="'+r.localQrImage+'" style="margin:10px auto;display:block;" /><br>';
         }
@@ -203,13 +242,12 @@ function doSmartLife(){
         msg += '<a href="'+qrUrl+'" target="_blank" style="flex:1;display:inline-block;padding:9px;background:#00a870;color:white;text-decoration:none;border-radius:5px;font-weight:bold;text-align:center;">Launch App</a>';
         msg += '<a href="'+androidIntent+'" target="_blank" style="flex:1;display:inline-block;padding:9px;background:#007aff;color:white;text-decoration:none;border-radius:5px;font-weight:bold;text-align:center;">Android Magic Link</a>';
         msg += '</div>';
-        msg += '<i style="font-size:10px;color:#666;">(Wait here after authorizing in the app)</i>';
+        msg += '<i style="font-size:10px;color:#666;">(Wait here after authorizing — close Smart Life Wi‑Fi if probe fails)</i>';
         show('sl-ok',msg);
         
-        // Start polling!
         H.emit('poll_qr',{}, function(err2,r2) {
            if(err2){show('sl-err',err2.message||String(err2));return}
-           done=true; show('sl-ok',r2.count+' devices found! Click Next.');
+           done=true; show('sl-ok',(r2.count||0)+' devices found! Click Next.');
         });
       });
   }
@@ -225,6 +263,45 @@ function doIoT(){
     unspin('btn-iot');
     if(err){show('iot-err',err.message||String(err));return}
     done=true;show('iot-ok',r.count+' devices found! Click Next to select.');
+  });
+}
+
+function doLanScan(){
+  hide('lan-err');hide('lan-ok');
+  spin('btn-lan');
+  H.emit('max_discover',{},function(err,r){
+    unspin('btn-lan');
+    if(err){show('lan-err',err.message||String(err));return}
+    if(!r||r.success===false){show('lan-err',(r&&r.error)||'LAN scan failed');return}
+    var devices=r.devices||[];
+    var st=r.stats||{};
+    var sel=document.getElementById('m_ip_sel');
+    if(sel){
+      sel.innerHTML='<option value="">(type below or pick from scan)</option>';
+      devices.forEach(function(d){
+        if(!d.ip) return;
+        var label=(d.id&&String(d.id).indexOf('tcp:')!==0?String(d.id).slice(-8):'open')+' @ '+d.ip+' v'+(d.version||'?')+' ['+(d.source||'lan')+']';
+        var o=document.createElement('option');
+        o.value=d.ip;
+        o.textContent=label;
+        o.dataset.did=d.id||'';
+        o.dataset.ver=d.version||'auto';
+        sel.appendChild(o);
+      });
+      sel.onchange=function(){
+        var o=sel.options[sel.selectedIndex];
+        if(!o||!o.value) return;
+        document.getElementById('m_ip').value=o.value;
+        if(o.dataset.did&&String(o.dataset.did).indexOf('tcp:')!==0){
+          document.getElementById('m_did').value=o.dataset.did;
+        }
+        if(o.dataset.ver&&o.dataset.ver!=='auto'){
+          document.getElementById('m_pv').value=o.dataset.ver;
+        }
+      };
+    }
+    var msg='Found <b>'+(st.total||devices.length)+'</b> (UDP '+(st.udp||0)+' / TCP '+(st.tcpOpen||0)+' / mDNS '+(st.mdns||0)+'). Pick an IP or paste local_key then Next.';
+    show('lan-ok',msg);
   });
 }
 
@@ -245,7 +322,7 @@ function onHomeyReady(Homey){
     var did=document.getElementById('m_did').value.trim(),lk=document.getElementById('m_lk').value.trim();
     hide('man-err');
     if(!did||!lk){show('man-err','Device ID and Local Key required');return}
-    if(lk.length<16){show('man-err','Local Key must be at least 16 characters');return}
+    if(lk.length<8){show('man-err','Local Key too short (need 16 ascii or 32 hex)');return}
     H.emit('configure',{device_id:did,local_key:lk,ip:document.getElementById('m_ip').value.trim(),name:document.getElementById('m_name').value.trim(),protocol_version:document.getElementById('m_pv').value},function(err){if(err){show('man-err',err.message||String(err))}else{done=true}});
   });
 }

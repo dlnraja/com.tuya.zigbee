@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-01T06:14:42.955Z",
+  "generatedAt": "2026-09-03T10:09:26.748Z",
   "phases": [
     {
       "label": "wifi-local-first-gate",
@@ -11,13 +11,49 @@
       "label": "wifi-local-first-resolver",
       "ok": true,
       "status": 0,
-      "tail": " a cloud status snapshot when fallback opted in and credentials present (0.371ms)\n  ✔ skips cloud status snapshot when cloud is rate-limited (0.2488ms)\n✔ LocalFirstResolver - resolveLanFailureAction (31.2758ms)\n▶ LocalWiFiTuyaBridge - local-first sessions\n  ✔ registers a LAN session when local credentials are present and logs the decision (21.7741ms)\n  ✔ registers NO session without local_key and explains why (0.5209ms)\n  ✔ rejects commands for devices without a local session (3.2483ms)\n  ✔ forwards dp-update events as data events (unless destroyed) (2.8412ms)\n  ✔ refreshes session IP when UDP discovery reports a new address (11.9955ms)\n✔ LocalWiFiTuyaBridge - local-first sessions (49.1035ms)\nℹ tests 17\nℹ suites 3\nℹ pass 17\nℹ fail 0\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 942.362\n"
+      "tail": "s a cloud status snapshot when fallback opted in and credentials present (0.3512ms)\n  ✔ skips cloud status snapshot when cloud is rate-limited (0.399ms)\n✔ LocalFirstResolver - resolveLanFailureAction (12.0595ms)\n▶ LocalWiFiTuyaBridge - local-first sessions\n  ✔ registers a LAN session when local credentials are present and logs the decision (2.8283ms)\n  ✔ registers NO session without local_key and explains why (4.7267ms)\n  ✔ rejects commands for devices without a local session (1.8119ms)\n  ✔ forwards dp-update events as data events (unless destroyed) (3.4943ms)\n  ✔ refreshes session IP when UDP discovery reports a new address (0.8903ms)\n✔ LocalWiFiTuyaBridge - local-first sessions (14.3912ms)\nℹ tests 17\nℹ suites 3\nℹ pass 17\nℹ fail 0\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 483.0847\n"
     },
     {
       "label": "p2367-wifi-local-harden",
       "ok": true,
       "status": 0,
-      "tail": "▶ P2367 WiFi local hardening\n  ✔ UdpDiscoveryKeys has 3 ECB fallbacks (TinyTuya/tuyapi parity) (2.4953ms)\n  ✔ decryptUdpEcb round-trips with raw key (1.9362ms)\n  ✔ buildActiveProbePayload matches TinyTuya scan format (0.5554ms)\n  ✔ WiFiDPRegistry enriches category-based DPs without overwriting explicit mappings (1.0076ms)\n  ✔ QuirkRegistry matches WiFi product_id settings (1.6982ms)\n  ✔ TuyaUDPDiscovery exports active probe interval option (5.8449ms)\n  ✔ CATEGORY_DP_HINTS covers common Tuya categories (0.3736ms)\n✔ P2367 WiFi local hardening (18.0474ms)\nℹ tests 7\nℹ suites 1\nℹ pass 7\nℹ fail 0\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 311.5387\n"
+      "tail": "▶ P2367 WiFi local hardening\n  ✔ UdpDiscoveryKeys has 3 ECB fallbacks (TinyTuya/tuyapi parity) (3.1527ms)\n  ✔ decryptUdpEcb round-trips with raw key (2.6586ms)\n  ✔ buildActiveProbePayload matches TinyTuya scan format (0.495ms)\n  ✔ WiFiDPRegistry enriches category-based DPs without overwriting explicit mappings (5.9617ms)\n  ✔ QuirkRegistry matches WiFi product_id settings (1.0412ms)\n  ✔ TuyaUDPDiscovery exports active probe interval option (3.3458ms)\n  ✔ CATEGORY_DP_HINTS covers common Tuya categories (0.7754ms)\n✔ P2367 WiFi local hardening (23.8311ms)\nℹ tests 7\nℹ suites 1\nℹ pass 7\nℹ fail 0\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 453.458\n"
+    },
+    {
+      "label": "p2407-community-hints-check",
+      "ok": true,
+      "status": 0,
+      "tail": "CHECK OK: community-dp-hints products= 330 bytes= 64240\n"
+    },
+    {
+      "label": "p2407-wifi-community-hints",
+      "ok": true,
+      "status": 0,
+      "tail": "▶ P2407 WiFi community local-first\n  ✔ community-dp-hints.json ships with enough products (12.6616ms)\n  ✔ CATEGORY_DP_HINTS includes fan/strip/AC categories (0.4074ms)\n  ✔ enrichWiFiDpMappings merges community product hints without overwrite (5.3235ms)\n  ✔ resolveWiFiTransport prefers LAN when credentials present (0.7834ms)\n  ✔ DeviceIOFacade.resolveWifi uses LocalFirstResolver helpers (2248.9924ms)\n✔ P2407 WiFi community local-first (2276.0957ms)\nℹ tests 5\nℹ suites 1\nℹ pass 5\nℹ fail 0\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 2618.2364\n"
+    },
+    {
+      "label": "p2408-wifi-discovery-keys",
+      "ok": true,
+      "status": 0,
+      "tail": "▶ P2408 discovery + keys + protocols\n  ✔ PROTOCOL_VERSIONS covers 3.1 through 3.5 (2.506ms)\n  ✔ buildProtocolFallbackChain starts at preferred (0.5591ms)\n  ✔ normalizeLocalKey accepts ascii16 and hex32 (0.8805ms)\n  ✔ 6699 discovery solicitation round-trips decrypt (4.6518ms)\n  ✔ decryptUdpDiscoveryMessage finds plaintext JSON (0.8989ms)\n  ✔ guessProtocolFromDiscovery maps frames (0.5438ms)\n  ✔ TuyaKeyTypes resolveDeviceLanKey prefers local_key (0.5775ms)\n  ✔ TuyaLocalClient cascade starts at preferredVersion (0.707ms)\n  ✔ listLanBroadcastTargets returns at least one target (18.7117ms)\n✔ P2408 discovery + keys + protocols (32.9291ms)\nℹ tests 9\nℹ suites 1\nℹ pass 9\nℹ fail 0\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 848.5964\n"
+    },
+    {
+      "label": "p2409-wifi-pairing-auth",
+      "ok": true,
+      "status": 0,
+      "tail": "▶ P2409 WiFi pairing auth catalog\n  ✔ covers major Tuya OpenAPI regions (2.2001ms)\n  ✔ normalizes region aliases (0.4904ms)\n  ✔ app schema fallback includes smartlife and tuyaSmart (0.5459ms)\n  ✔ device list API cascade has sharing + iot paths (0.3395ms)\n  ✔ listRegionsForUi returns labeled options (0.4633ms)\n  ✔ matchCloudToLan merges IP/version from LAN (1.4704ms)\n  ✔ TuyaSmartLifeAuth exports catalog regions (1.526ms)\n✔ P2409 WiFi pairing auth catalog (9.9097ms)\nℹ tests 7\nℹ suites 1\nℹ pass 7\nℹ fail 0\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 219.8914\n"
+    },
+    {
+      "label": "p2410-advertising-discovery",
+      "ok": true,
+      "status": 0,
+      "tail": "▶ P2410 autonomous advertising discovery\n  ✔ UDP discovery exposes listAdvertising + burstProbe (1.8309ms)\n  ✔ buildWifiLanSnapshot merges UDP advertising and marks paired (1.1525ms)\n  ✔ annotateZigbeeAdvertising marks recent online nodes (1.9547ms)\n  ✔ ZigbeeMeshMap snapshot includes advertising stats when devices present (1.3585ms)\n  ✔ DynamicEndpointDiscovery catalogs advertised clusters (1.3158ms)\n  ✔ burstWifiProbe falls back to probeNow (1.2003ms)\n✔ P2410 autonomous advertising discovery (11.3313ms)\nℹ tests 6\nℹ suites 1\nℹ pass 6\nℹ fail 0\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 199.7506\n"
+    },
+    {
+      "label": "p2411-max-discovery-pairing",
+      "ok": true,
+      "status": 0,
+      "tail": "▶ P2411 max discovery + pairing\n  ✔ ipv4 int roundtrip (1.3973ms)\n  ✔ listLanSubnetHosts returns /24-ish hosts or empty safely (24.9615ms)\n  ✔ matchCloudToLan matches case-insensitive id and keeps orphans (2.2276ms)\n  ✔ matchCloudToLan soft-matches unique productKey (2.4225ms)\n  ✔ exports maxDiscover and forceScanTcp6668 (0.4397ms)\n  ✔ forceScanTcp6668 completes with empty/safe result off-LAN (0.8516ms)\n✔ P2411 max discovery + pairing (34.613ms)\nℹ tests 6\nℹ suites 1\nℹ pass 6\nℹ fail 0\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 248.6042\n"
     }
   ],
   "pass": true

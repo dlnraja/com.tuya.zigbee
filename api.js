@@ -61,6 +61,66 @@ module.exports = {
   },
 
   /**
+   * WHY: Settings / pairing need WiFi devices currently advertising on LAN.
+   * HOW: UDP cache (+ mDNS strategy) via AutonomousAdvertisingDiscovery.
+   * WHO: Homey Pro user (local-first). Cloud not used.
+   * WHEN: Settings refresh or pair lan_discover.
+   */
+  async getWifiLanMap({ homey }) {
+    let hub;
+    try {
+      hub = require('./lib/discovery/AutonomousAdvertisingDiscovery');
+    } catch (err) {
+      homey.error('[WifiLanMap] module missing:', err);
+      throw new Error('WiFi LAN map module unavailable');
+    }
+    try {
+      const app = homey.__tuyaApp || homey.app;
+      const udp = app && app._tuyaUDPDiscovery;
+      if (udp && typeof hub.burstWifiProbe === 'function') {
+        await hub.burstWifiProbe(udp, { durationMs: 4000 }).catch(() => {});
+        await new Promise((r) => setTimeout(r, 1000));
+      }
+      const snap = hub.buildWifiLanSnapshot(homey, { udpDiscovery: udp });
+      // P2411: optional TCP force (settings "deep scan")
+      try {
+        const { forceScanTcp6668 } = require('./lib/tuya-local/TuyaTcpForceScan');
+        const tcp = await forceScanTcp6668({
+          log: (...a) => homey.log?.(...a),
+          concurrency: 24,
+          timeoutMs: 250,
+        });
+        const byIp = new Map((snap.devices || []).map((d) => [d.ip, d]));
+        for (const hit of tcp) {
+          if (byIp.has(hit.ip)) {
+            const row = byIp.get(hit.ip);
+            row.source = `${row.source || 'udp'}+tcp6668`;
+            row.advertising = true;
+          } else {
+            snap.devices.push({
+              deviceId: '',
+              ip: hit.ip,
+              version: 'auto',
+              source: 'tcp6668',
+              advertising: true,
+              paired: false,
+              lastSeen: Date.now(),
+            });
+          }
+        }
+        snap.stats = snap.stats || {};
+        snap.stats.tcpOpen = tcp.length;
+        snap.stats.total = snap.devices.length;
+        snap.note = (snap.note || '') + ' + TinyTuya TCP/6668 force scan.';
+      } catch (_e) { /* non-fatal on constrained hosts */ }
+      return snap;
+    } catch (err) {
+      homey.error('[WifiLanMap] snapshot failed:', err);
+      throw new Error(`WiFi LAN map failed: ${err.message}`);
+    }
+  },
+
+  /**
    * Search and replace old device references with new ones
    * inside triggers, conditions, and actions of all Flows and Advanced Flows.
    * Uses native Homey SDK3 ManagerFlow APIs.

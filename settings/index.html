@@ -387,8 +387,41 @@
   </div>
 
   <div class="card">
+    <h3>WiFi / SmartLife — Local-First</h3>
+    <p style="font-size:11px;color:#666">
+      Runtime control uses the LAN (TinyTuya / tuyapi / tuya-local style): UDP discovery + TCP on the device.
+      Cloud credentials below are for <strong>pairing / local_key recovery only</strong> — not day-to-day control.
+      Default policy is local-first with cloud fallback off (same idea as Home Assistant tuya-local / LocalTuya).
+    </p>
+    <label style="font-size:12px;display:flex;align-items:center;gap:8px;margin:8px 0;">
+      <input type="checkbox" id="wifi-cloud-fallback"/>
+      Allow diagnostic cloud status when LAN is unreachable (still no cloud control)
+    </label>
+    <button class="btn btn-c" type="button" onclick="saveWifiLocalFirst()">Save WiFi policy default</button>
+  </div>
+
+  <div class="card" id="wifi-lan-card">
+    <h3>WiFi LAN — advertising devices</h3>
+    <p style="font-size:11px;color:#666">
+      Autonomous UDP listen (6666/6667/6668/7000) + burst probe. Shows devices currently advertising on your LAN.
+      Unpaired rows still need a local_key from SmartLife / IoT during pairing.
+    </p>
+    <div class="mesh-toolbar">
+      <button class="btn" type="button" id="btn-wifi-lan-refresh">Scan / Refresh</button>
+    </div>
+    <div class="mesh-stats" id="wifi-lan-stats"></div>
+    <div class="mesh-msg" id="wifi-lan-msg"></div>
+    <table class="mesh-table" id="wifi-lan-table">
+      <thead>
+        <tr><th>Device ID</th><th>IP</th><th>Ver</th><th>Source</th><th>Paired</th></tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+  </div>
+
+  <div class="card">
     <h3>WiFi Cloud Credentials</h3>
-    <p style="font-size:11px;color:#666">Save your Tuya IoT credentials here. They will be pre-filled when pairing WiFi devices.</p>
+    <p style="font-size:11px;color:#666">Save your Tuya IoT / SmartLife credentials here. They will be pre-filled when pairing WiFi devices (local_key). After pair, devices stay on LAN.</p>
     
     <div class="row font-group">
       <div class="fg">
@@ -405,10 +438,13 @@
     <div class="fg">
       <label for="reg">Region</label>
       <select id="reg">
-        <option value="eu">Europe</option>
-        <option value="us">Americas</option>
-        <option value="cn">China</option>
+        <option value="eu">Europe (Central)</option>
+        <option value="we">Europe (West)</option>
+        <option value="us">Americas (West)</option>
+        <option value="ue">Americas (East)</option>
         <option value="in">India</option>
+        <option value="sg">Southeast Asia</option>
+        <option value="cn">China</option>
       </select>
     </div>
 
@@ -566,6 +602,61 @@
       show('ok-msg', 'Credentials cleared');
     }
 
+    function saveWifiLocalFirst() {
+      if (!Homey) { show('err-msg', 'App not ready yet'); return; }
+      var allow = !!document.getElementById('wifi-cloud-fallback').checked;
+      Homey.set('wifi_default_cloud_fallback', allow, function(e) {
+        if (e) { show('err-msg', 'Save failed: ' + e.message); return; }
+        show('ok-msg', allow
+          ? 'Cloud diagnostic fallback allowed (control stays LAN)'
+          : 'Local-first only (recommended)');
+      });
+    }
+
+    function refreshWifiLanMap() {
+      if (!Homey || typeof Homey.api !== 'function') {
+        var m0 = document.getElementById('wifi-lan-msg');
+        if (m0) { m0.textContent = 'Homey API not ready'; m0.className = 'mesh-msg err'; }
+        return;
+      }
+      var msg = document.getElementById('wifi-lan-msg');
+      var stats = document.getElementById('wifi-lan-stats');
+      var tbody = document.querySelector('#wifi-lan-table tbody');
+      if (msg) { msg.textContent = 'Scanning LAN advertising…'; msg.className = 'mesh-msg'; }
+      Homey.api('GET', '/wifi-lan-map', {}, function (err, data) {
+        if (err) {
+          if (msg) { msg.textContent = (err.message || String(err)); msg.className = 'mesh-msg err'; }
+          return;
+        }
+        var s = (data && data.stats) || {};
+        if (stats) {
+          stats.innerHTML =
+            '<span class="mesh-chip"><b>' + (s.total || 0) + '</b> advertising</span>' +
+            '<span class="mesh-chip"><b>' + (s.paired || 0) + '</b> paired</span>' +
+            '<span class="mesh-chip"><b>' + (s.unpaired || 0) + '</b> unpaired</span>' +
+            '<span class="mesh-chip">UDP <b>' + (s.udp || 0) + '</b></span>' +
+            '<span class="mesh-chip">mDNS <b>' + (s.mdns || 0) + '</b></span>';
+        }
+        if (tbody) {
+          var rows = (data && data.devices) || [];
+          if (!rows.length) {
+            tbody.innerHTML = '<tr><td colspan="5">No Tuya WiFi advertising right now — try again near devices or after power-cycle.</td></tr>';
+          } else {
+            tbody.innerHTML = rows.map(function (d) {
+              var id = (d.deviceId || '').slice(0, 22);
+              return '<tr><td title="' + (d.deviceId || '') + '">' + id + '</td><td>' + (d.ip || '—') +
+                '</td><td>' + (d.version || '—') + '</td><td>' + (d.source || 'udp') +
+                '</td><td>' + (d.paired ? 'yes' : 'no') + '</td></tr>';
+            }).join('');
+          }
+        }
+        if (msg) {
+          msg.textContent = (data && data.note) ? data.note : 'OK';
+          msg.className = 'mesh-msg';
+        }
+      });
+    }
+
     function setToggle(key, val) {
       if (!Homey) return;
       Homey.set(key, val, function(e) {
@@ -715,6 +806,16 @@
       Homey.get('tuya_cloud_access_id', function(e, v) { if (v) document.getElementById('aid').value = v; });
       Homey.get('tuya_cloud_access_secret', function(e, v) { updateSecretStatus(!!v); });
       Homey.get('tuya_cloud_region', function(e, v) { if (v) document.getElementById('reg').value = v; });
+      Homey.get('wifi_default_cloud_fallback', function(e, v) {
+        var el = document.getElementById('wifi-cloud-fallback');
+        if (el) el.checked = !!v;
+      });
+
+      var btnWifiLan = document.getElementById('btn-wifi-lan-refresh');
+      if (btnWifiLan) {
+        btnWifiLan.addEventListener('click', function () { refreshWifiLanMap(); });
+        setTimeout(function () { refreshWifiLanMap(); }, 400);
+      }
       
       Homey.get('smartthings_client_id', function(e, v) { if (v) document.getElementById('st-cid').value = v; });
       Homey.get('smartthings_client_secret', function(e, v) { updateSTSecretStatus(!!v); });

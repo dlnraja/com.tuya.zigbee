@@ -127,6 +127,7 @@
     var st = (snapshot && snapshot.stats) || {};
     var chips = [
       ['Devices', st.total || 0],
+      ['Advertising', st.advertising != null ? st.advertising : '—'],
       ['Routers', st.routers || 0],
       ['End', st.endDevices || 0],
       ['Online', st.online || 0],
@@ -151,7 +152,8 @@
     var hidden = childrenOf(n.id).length;
     box.innerHTML =
       '<b>' + escapeHtml(n.name) + '</b> · ' + escapeHtml(n.role) +
-      (n.online ? ' · online' : ' · offline') + '<br>' +
+      (n.online ? ' · online' : ' · offline') +
+      (n.advertising ? ' · advertising' : '') + '<br>' +
       (n.zone ? ('Zone: ' + escapeHtml(n.zone) + '<br>') : '') +
       (n.driverId ? ('Driver: ' + escapeHtml(n.driverId) + '<br>') : '') +
       (n.ieee ? ('IEEE: ' + escapeHtml(n.ieee) + '<br>') : '') +

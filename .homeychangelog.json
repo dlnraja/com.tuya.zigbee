@@ -2956,6 +2956,9 @@
     "en": "Fixed Moes curtain wall switch stopping too early after open/close from Homey UI."
   },
   "9.0.807": {
-    "en": "Fixed Moes curtain wall switch stopping too early after open/close from Homey UI."
+    "en": "Improved cover idle-stop guard and WiFi local discovery harden."
+  },
+  "9.0.808": {
+    "en": "Moes ZTS curtain dual TX + invert (#533), presence radar DP2 humidity invent skip, SafeCapability CI harden, WiFi max LAN discovery/auth."
   }
 }
