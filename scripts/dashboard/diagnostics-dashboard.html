@@ -97,7 +97,7 @@
 <body>
 
 <h1>Diagnostics Dashboard</h1>
-<p class="subtitle">Gmail triage — 100 emails | 0 with known signals | 2026-09-03 12:08:40</p>
+<p class="subtitle">Gmail triage — 100 emails | 2 with known signals | 2026-09-04 14:19:07</p>
 
 <div class="nav-links"><a href="../index.html">🔍 Device Finder</a> | <a href="../dashboards.html">📊 Hub</a> | <a href="master-dashboard.html">Master Dashboard</a> | <a href="coverage-dashboard.html">Coverage</a> | <a href="driver-dashboard.html">Drivers</a> | <a href="dependency-dashboard.html">Dependencies</a> | <a href="error-dashboard.html">Errors</a> | <a href="performance-dashboard.html">Performance</a> | <span style="color:#f0f6fc;font-weight:600">Diagnostics</span> | <a href="../inbox.html">📥 Community Inbox</a> | <span style="color:#f0f6fc;font-weight:600">Diagnostics</span></div>
 
@@ -109,8 +109,8 @@
 </div>
         <div class="card">
   <div class="card-title">Known signals</div>
-  <div class="metric-sm">0</div>
-  <div class="metric-label">0% matched</div>
+  <div class="metric-sm">2</div>
+  <div class="metric-label">2% matched</div>
 </div>
         <div class="card">
   <div class="card-title">Types</div>
@@ -126,8 +126,49 @@
 <h2>History categories</h2><div class="grid-sm"><div class="card"><div class="card-title">Runtime crash / exception</div>
      <div class="metric-sm">2</div>
      <div class="metric-label"><span class="tag tag-red">error</span></div></div></div>
+<h2>Homey developer dashboard</h2>
+    <div class="summary-bar">
+      <div class="card">
+  <div class="card-title">Test tip</div>
+  <div class="metric-sm">v9.0.787</div>
+  <div class="metric-label">#3090 test</div>
+</div>
+      <div class="card">
+  <div class="card-title">Latest build</div>
+  <div class="metric-sm">v9.0.787</div>
+  <div class="metric-label">#3090 test</div>
+</div>
+      <div class="card">
+  <div class="card-title">Builds</div>
+  <div class="metric-sm">3,090</div>
+  <div class="metric-label">1283 on Test · 442 failed</div>
+</div>
+      <div class="card">
+  <div class="card-title">P139</div>
+  <div class="metric-sm">2 recent fail</div>
+  <div class="metric-label">no hang meta</div>
+</div>
+    </div>
+    <p class="subtitle"><a href="https://tools.developer.homey.app/apps/app/com.dlnraja.tuya.zigbee/build/3090" target="_blank" rel="noopener">Open Athom developer tools</a>
+      · snapshot dashboard-monitor-report.json</p>
+    <table><thead><tr><th>Build</th><th>Version</th><th>State</th><th>Meta</th></tr></thead><tbody><tr>
+      <td>#3089</td><td>v9.0.785</td>
+      <td><span class="tag tag-red">processing_failed</span></td>
+      <td title="socket hang up">socket hang up</td>
+    </tr>
+<tr>
+      <td>#3087</td><td>v9.0.783</td>
+      <td><span class="tag tag-red">processing_failed</span></td>
+      <td title="socket hang up">socket hang up</td>
+    </tr></tbody></table>
 <div class="grid">
-        <div class="section"><h2>Top signals</h2></div>
+        <div class="section"><h2>Top signals</h2>
+    <div style="margin:6px 0">
+      <div style="display:flex;justify-content:space-between;font-size:0.85em">
+        <span>foreign_driver_id</span><span>2</span>
+      </div>
+      <div class="bar" style="width:100%"><div class="bar-fill" style="width:100%;background:#58a6ff"></div></div>
+    </div></div>
         <div class="section"><h2>App versions</h2></div>
         <div class="section"><h2>Sacred couples (in logs)</h2>
     <div style="margin:6px 0">
@@ -617,22 +658,22 @@
       <td><span class="tag tag-gray">—</span></td>
       <td title="Diagnostic #46">Diagnostic #46</td>
     </tr>
-<tr data-type="crash_report" data-signals="—">
+<tr data-type="crash_report" data-signals="foreign_driver_id">
       <td>2026-08-31 09:18</td>
       <td><code>—</code></td>
       <td>crash_report</td>
       <td>v—</td>
       <td><code style="font-size:0.8em">—</code></td>
-      <td><span class="tag tag-gray">—</span></td>
+      <td><span class="tag tag-red" title="P2351 safe-get-driver-patch — update Test + re-pair foreign IDs">foreign_driver_id</span></td>
       <td title="Diagnostic #47">Diagnostic #47</td>
     </tr>
-<tr data-type="crash_report" data-signals="—">
+<tr data-type="crash_report" data-signals="foreign_driver_id">
       <td>2026-08-31 09:22</td>
       <td><code>—</code></td>
       <td>crash_report</td>
       <td>v—</td>
       <td><code style="font-size:0.8em">—</code></td>
-      <td><span class="tag tag-gray">—</span></td>
+      <td><span class="tag tag-red" title="P2351 safe-get-driver-patch — update Test + re-pair foreign IDs">foreign_driver_id</span></td>
       <td title="Diagnostic #48">Diagnostic #48</td>
     </tr>
 <tr data-type="diagnostic" data-signals="—">
@@ -931,7 +972,7 @@
        </script>
 
 <pre>
-Generated: 2026-09-03 12:08:40
+Generated: 2026-09-04 14:19:07
 Universal Tuya Zigbee - Dashboard Suite
 </pre>
 </body>

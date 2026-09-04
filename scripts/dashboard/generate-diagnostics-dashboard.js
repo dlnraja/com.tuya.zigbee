@@ -49,6 +49,42 @@ function bodyBits(d) {
   ].filter(Boolean).join('\n');
 }
 
+function mergeSignals(a, b) {
+  const byId = new Map();
+  for (const s of [...(a || []), ...(b || [])]) {
+    if (!s || !s.id) continue;
+    if (!byId.has(s.id)) byId.set(s.id, s);
+  }
+  return [...byId.values()];
+}
+
+function loadHomeyDashboard() {
+  const candidates = [
+    path.join(ROOT, '.github', 'state', 'dashboard-monitor-report.json'),
+    path.join(ROOT, '.github', 'state', 'dashboard-monitor-both.json'),
+    path.join(ROOT, '.github', 'state', 'dashboard-monitor-report-master.json'),
+  ];
+  for (const p of candidates) {
+    if (!fs.existsSync(p)) continue;
+    try {
+      return { path: p, data: JSON.parse(fs.readFileSync(p, 'utf8')) };
+    } catch {
+      /* skip corrupt */
+    }
+  }
+  return null;
+}
+
+function homeySnapshot(data) {
+  if (!data) return null;
+  if (data.snapshot) return data.snapshot;
+  if (Array.isArray(data.apps)) {
+    const master = data.apps.find((a) => a.id === 'com.dlnraja.tuya.zigbee') || data.apps[0];
+    return master?.result?.snapshot || null;
+  }
+  return data;
+}
+
 function enrichEntry(d) {
   const fromReport = {
     logIdShort: d.logIdShort || (d.logId ? String(d.logId).slice(0, 8) : null),
@@ -71,7 +107,7 @@ function enrichEntry(d) {
   return {
     logIdShort: fromReport.logIdShort || parsed.logIdShort,
     couples: fromReport.couples.length ? fromReport.couples : parsed.couples,
-    signals: fromReport.signals.length ? fromReport.signals : parsed.signals,
+    signals: mergeSignals(fromReport.signals, parsed.signals),
     drivers: fromReport.drivers.length ? fromReport.drivers : parsed.drivers,
     meta: {
       appVersion: fromReport.meta.appVersion || parsed.meta.appVersion,
@@ -150,6 +186,45 @@ function renderBarList(entries, max = 8) {
     </div>`).join('');
 }
 
+function renderHomeyDashboardSection(homey) {
+  if (!homey) {
+    return `<h2>Homey developer dashboard</h2>
+      <p class="subtitle">No dashboard-monitor snapshot — run <code>npm run dashboard:summary</code> or CI publish monitor.</p>`;
+  }
+  const snap = homeySnapshot(homey.data);
+  if (!snap) {
+    return `<h2>Homey developer dashboard</h2>
+      <p class="subtitle">Snapshot missing in ${T.escapeHtml(path.basename(homey.path))}</p>`;
+  }
+  const latest = snap.latestBuild || (snap.latestBuilds || [])[0];
+  const failedRecent = (snap.latestBuilds || []).filter((b) =>
+    /fail|processing_failed/i.test(String(b.state || '')),
+  ).slice(0, 5);
+  const testTip = latest?.state === 'test' ? latest : (snap.latestBuilds || []).find((b) => b.state === 'test');
+  const failMeta = latest?.failureDetail || latest?.stateMeta;
+  const failText = typeof failMeta === 'string' ? failMeta : (failMeta?.message || failMeta?.detail || '');
+  const rows = failedRecent.map((b) => {
+    const meta = b.failureDetail || b.stateMeta;
+    const metaStr = typeof meta === 'string' ? meta : (meta?.message || JSON.stringify(meta || {}).slice(0, 80));
+    return `<tr>
+      <td>#${b.id}</td><td>v${T.escapeHtml(String(b.version || '—'))}</td>
+      <td><span class="tag tag-red">${T.escapeHtml(String(b.state || '—'))}</span></td>
+      <td title="${T.escapeHtml(metaStr)}">${T.escapeHtml(String(metaStr || '—').slice(0, 48))}</td>
+    </tr>`;
+  }).join('\n');
+  const devUrl = latest?.url || `https://tools.developer.homey.app/app/${snap.appId || 'com.dlnraja.tuya.zigbee'}`;
+  return `<h2>Homey developer dashboard</h2>
+    <div class="summary-bar">
+      ${T.metricCardSm('Test tip', testTip ? `v${testTip.version}` : '—', testTip ? `#${testTip.id} ${testTip.state}` : 'no test build')}
+      ${T.metricCardSm('Latest build', latest ? `v${latest.version}` : '—', latest ? `#${latest.id} ${latest.state}` : '—')}
+      ${T.metricCardSm('Builds', snap.totalBuilds ?? '—', `${snap.inTest ?? '?'} on Test · ${snap.failed ?? '?'} failed`)}
+      ${T.metricCardSm('P139', failedRecent.length ? `${failedRecent.length} recent fail` : 'clean', failText ? failText.slice(0, 40) : 'no hang meta')}
+    </div>
+    <p class="subtitle"><a href="${T.escapeHtml(devUrl)}" target="_blank" rel="noopener">Open Athom developer tools</a>
+      · snapshot ${T.escapeHtml(path.basename(homey.path))}</p>
+    ${rows ? `<table><thead><tr><th>Build</th><th>Version</th><th>State</th><th>Meta</th></tr></thead><tbody>${rows}</tbody></table>` : ''}`;
+}
+
 function main() {
   const report = loadReport();
   if (!report) {
@@ -167,7 +242,8 @@ function main() {
           ${T.metricCardSm('Known signals', 0, '—')}
           ${T.metricCardSm('Status', 'empty', 'soft shell')}
         </div>
-        <p class="subtitle">Place a sanitized report at <code>.github/state/diagnostics-report.json</code> then regenerate.</p>`,
+        <p class="subtitle">Place a sanitized report at <code>.github/state/diagnostics-report.json</code> then regenerate.</p>
+        ${renderHomeyDashboardSection(loadHomeyDashboard())}`,
       ],
     });
     fs.writeFileSync(OUT, emptyHtml);
@@ -186,6 +262,7 @@ function main() {
   const appVersions = countBy(rows, (r) => r.app);
   const couples = countBy(rows, (r) => r.couple);
   const types = report.byType || {};
+  const homey = loadHomeyDashboard();
 
   const summary = {
     generatedAt: new Date().toISOString(),
@@ -195,6 +272,11 @@ function main() {
     runMode: report.run?.mode,
     authOk: report.access?.gmail?.ok,
     topSignals: signalTop,
+    homeyTip: (() => {
+      const snap = homeySnapshot(homey?.data);
+      const tip = snap?.latestBuilds?.find((b) => b.state === 'test') || snap?.latestBuild;
+      return tip ? { version: tip.version, id: tip.id, state: tip.state } : null;
+    })(),
   };
 
   if (JSON_MODE) {
@@ -238,6 +320,8 @@ function main() {
 
       historyCats ? `<h2>History categories</h2><div class="grid-sm">${historyCats}</div>` : '',
 
+      renderHomeyDashboardSection(homey),
+
       `<div class="grid">
         <div class="section"><h2>Top signals</h2>${renderBarList(signalTop)}</div>
         <div class="section"><h2>App versions</h2>${renderBarList(appVersions)}</div>
@@ -279,6 +363,9 @@ function main() {
   fs.writeFileSync(OUT, html);
   console.log('[diagnostics-dashboard] HTML:', OUT);
   console.log(`  rows: ${rows.length} | signals: ${withSignals.length} | report: ${REPORT}`);
+  if (summary.homeyTip) {
+    console.log(`  homey Test tip: v${summary.homeyTip.version} #${summary.homeyTip.id}`);
+  }
 }
 
 main();

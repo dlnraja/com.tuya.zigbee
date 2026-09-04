@@ -214,5 +214,11 @@
       "unified-ci.yml",
       "forum-poll.yml"
     ]
+  },
+  "patches": {
+    "p2417_homey_diag_dashboard": {
+      "tag": "BOTH",
+      "note": "Diagnostics dashboard Homey Athom tip panel + mergeSignals; FP cartesian collision strip for Validate"
+    }
   }
 }
