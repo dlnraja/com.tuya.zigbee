@@ -1,4 +1,4 @@
-# 📥 Community Inbox — 2026-09-03 09:47 UTC
+# 📥 Community Inbox — 2026-09-04 09:38 UTC
 
 Généré par `.github/scripts/community-inbox-digest.js` (workflow `community-inbox.yml`).
 
