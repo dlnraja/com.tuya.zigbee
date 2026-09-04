@@ -134,7 +134,7 @@ if (APPLY) {
 }
 
 phase('sacred-couple-gate', () => run('p2138', 'tools/ci/p2138-sacred-couple-matrix-gate.js', [], 180000, false));
-phase('anti-bot-gate', () => run('anti-bot', 'tools/ci/anti-bot-regression-gate.js', [], 180000, false));
+phase('anti-bot-gate', () => run('anti-bot', 'tools/ci/anti-bot-regression-gate.js', [], 180000, true));
 phase('fp-collision-check', () => run('fp-check', 'tools/ci/prune-fp-collision-bleed.js', ['--check'], 180000, true));
 phase('flow-l99', () => run('flow-l99', 'tools/ci/flow-l99-orchestrator.js', [], 300000, true));
 

@@ -129,9 +129,10 @@ jobs:
         continue-on-error: true
         timeout-minutes: 8
         run: |
-          echo "## Compensate incomplete (P2418 — soft, no invent pid)" >> "$GITHUB_STEP_SUMMARY"
+          echo "## Compensate incomplete (P2419 hang-proof — soft, no invent pid)" >> "$GITHUB_STEP_SUMMARY"
           if [ -f tools/ci/compensate-incomplete-reports.js ]; then
-            node tools/ci/compensate-incomplete-reports.js --apply-safe --skip-investigate 2>&1 | tee compensate-p2418.log || echo "compensate soft warn"
+            COMPENSATE_SKIP_INVESTIGATE=1 COMPENSATE_MAX_MS=45000 \
+              node tools/ci/compensate-incomplete-reports.js --apply-safe --skip-investigate 2>&1 | tee compensate-p2418.log || echo "compensate soft warn"
             DATE=$(date -u +%F)
             head -n 35 "reports/compensate-$DATE/TREAT.md" >> "$GITHUB_STEP_SUMMARY" 2>/dev/null || true
           fi
