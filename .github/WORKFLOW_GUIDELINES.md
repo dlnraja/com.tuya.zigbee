@@ -1131,6 +1131,29 @@ SSOT: `config/enrichment/market-couples-sources.json`
 
 ---
 
+## N2. Compensate incomplete reports (P2418)
+
+**Mandate:** Do **not** stall on missing `productId` / empty interview / absent diag UUID.
+Continue treating with soft hypotheses + class-level fixes. Never invent pid. Never forum POST.
+
+```bash
+npm run enrich:compensate              # soft report + NEED_INTERVIEW
+npm run enrich:compensate:apply        # applySafe compose mfr locks only when couple already has pid on driver
+npm run enrich:investigate             # auto-investigate-need-action (no user wait)
+```
+
+**SSOT:** `config/enrichment/soft-hypotheses-missing-pid.json`  
+**Script:** `tools/ci/compensate-incomplete-reports.js`  
+**Reports:** `reports/compensate-YYYY-MM-DD/TREAT.md`
+
+**Wired crons (soft, continue-on-error):**
+- `forum-poll.yml` — after actionable processor
+- `auto-enrich-closed-loop.yml` — after silent enrich phases
+- `l99-inbox-intelligence.yml` — after inbox orchestrator
+- `recurrent-orchestrator.yml` — daily after L99 inbox soft
+
+---
+
 ## O. GitHub elementary security & data-leak hygiene (P2206)
 
 ### Always

@@ -311,6 +311,11 @@ jobs:
             fi
             node .github/scripts/privacy-redactor.js .github/state/inbox-diag-harvest .github/state/homey-app-diag || true
           fi
+          # WHY(P2418): compensate MISSING_PID / incomplete forum+gmail without stalling
+          if [ -f tools/ci/compensate-incomplete-reports.js ]; then
+            echo "## 🩹 Compensate incomplete reports (P2418)" >> $GITHUB_STEP_SUMMARY
+            node tools/ci/compensate-incomplete-reports.js --apply-safe || echo "compensate soft warn"
+          fi
           # Settings enrich plan (dry-run — apply only via explicit enrich:settings:apply)
           if [ -f tools/ci/enrich-driver-settings-intelligent.js ]; then
             node tools/ci/enrich-driver-settings-intelligent.js || echo "settings-enrich plan warn"

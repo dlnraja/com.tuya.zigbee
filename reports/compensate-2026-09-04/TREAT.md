@@ -1,0 +1,30 @@
+# Compensate incomplete reports — 2026-09-04
+
+Silent only. Soft hypotheses from SSOT — **never invent pid**. No forum POST (T157628).
+
+Missing-PID hints: **90** · Hypotheses: **6** · NEED_INTERVIEW: **5** · Applied: **0**
+
+## Soft hypotheses
+
+| Couple | Driver | Conf | Locked | Soft apply |
+|--------|--------|-----:|:------:|:----------:|
+| `_TZ3218_t9ynfz4x+TS0225` | `motion_sensor_radar_mmwave` | 98 | yes | safe |
+| `_TZ3000_xabckq1v+TS004F` | `button_wireless_4` | 90 | yes | doc-only |
+| `_TZ3000_kfu8zapd+TS0044` | `scene_switch_4` | 98 | no | safe |
+| `_TZE204_5slehgeo+TS0601` | `curtain_motor` | 99 | yes | safe |
+| `_TZ3000_4upl1fcj+TS0041` | `button_wireless_1` | 95 | yes | safe |
+| `_TZ3000_wkai4ga5+TS0044` | `button_wireless_4` | 95 | no | safe |
+
+## NEED_INTERVIEW (compensate without waiting)
+
+- **_TZ3218_t9ynfz4x+TS0225** → `motion_sensor_radar_mmwave` — ask: zb_manufacturer_name, zb_model_id, clusters 0xE002 (MISSING_PID in forum/processor)
+- **_TZ3000_xabckq1v+TS004F** → `button_wireless_4` — ask: zb_manufacturer_name, zb_model_id, endpoints (MISSING_PID in forum/processor)
+- **_TZ3000_kfu8zapd+TS0044** → `scene_switch_4` — ask: zb_manufacturer_name, zb_model_id (MISSING_PID in forum/processor)
+- **_TZ3000_4upl1fcj+TS0041** → `button_wireless_1` — ask: zb_manufacturer_name, zb_model_id (MISSING_PID in forum/processor)
+- **_TZ3000_wkai4ga5+TS0044** → `button_wireless_4` — ask: zb_manufacturer_name, zb_model_id (MISSING_PID in forum/processor)
+
+## Doctrine
+- Continue treating posts even when couple absent
+- Class-level fixes (battery, button RX, soft-expect) ship without pid
+- Publish Homey Test; never Community reply
+

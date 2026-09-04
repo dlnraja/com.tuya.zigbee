@@ -198,9 +198,13 @@
       "tag": "BOTH",
       "note": "ZG-204ZV TZE200 siblings → presence; strip ZG-204 cartesian from motion; ZS-301Z soil lock; clean radar configs"
     },
-    "p2416_ci_dashboard_p139_soft": {
+    "p2417_homey_diag_dashboard": {
       "tag": "BOTH",
-      "note": "Bare-timer docs on WiFi pairing; wait-athom soft-expect P139; diagnostics dashboard empty shell for Pages/e2e"
+      "note": "Diagnostics dashboard Homey Athom tip panel + mergeSignals; FP cartesian collision strip for Validate"
+    },
+    "p2418_compensate_incomplete_crons": {
+      "tag": "BOTH",
+      "note": "Soft-hypothesis compensate for MISSING_PID; wired into forum-poll / auto-enrich / l99-inbox / recurrent / fetch-diags crons"
     }
   },
   "ci": {
@@ -214,11 +218,5 @@
       "unified-ci.yml",
       "forum-poll.yml"
     ]
-  },
-  "patches": {
-    "p2417_homey_diag_dashboard": {
-      "tag": "BOTH",
-      "note": "Diagnostics dashboard Homey Athom tip panel + mergeSignals; FP cartesian collision strip for Validate"
-    }
   }
 }

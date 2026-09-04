@@ -1,6 +1,6 @@
 {
   "name": "com.dlnraja.tuya.zigbee",
-  "version": "9.0.814",
+  "version": "9.0.815",
   "description": "Tuya Unified Zigbee - Local-first control with AI automation",
   "main": "app.js",
   "scripts": {
@@ -179,6 +179,8 @@
     "forum:silent-scan": "node tools/ci/forum-silent-multi-scan.js",
     "forum:parse-digest": "node tools/ci/parse-forum-digest.js --topic=140352",
     "forum:process": "node tools/ci/forum-actionable-processor.js",
+    "enrich:compensate": "node tools/ci/compensate-incomplete-reports.js --skip-investigate",
+    "enrich:compensate:apply": "node tools/ci/compensate-incomplete-reports.js --apply-safe",
     "inbox:l99": "node tools/ci/l99-inbox-intelligence-orchestrator.js",
     "inbox:l99:quick": "node tools/ci/l99-inbox-intelligence-orchestrator.js --quick --skip-scan",
     "inbox:l99:github": "node tools/ci/l99-inbox-intelligence-orchestrator.js --phase=github",
