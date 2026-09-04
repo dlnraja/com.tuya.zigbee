@@ -209,6 +209,10 @@
     "p2419_job_hangproof_soft_expect": {
       "tag": "BOTH",
       "note": "Compensate hang-proof + Version Health tipHealthy + direct-publish soft-exit on PF when Test tip healthy; fleet soft anti-bot; self-improve soft test gate"
+    },
+    "p2420_vichy_2227_mains_energy_dp2": {
+      "tag": "BOTH",
+      "note": "VicHY #2227 clrdrnya: always setEnergy({}) on mains radar; early re-heal; EF00 owns DP2 setting (no humidity SmartDivisor)"
     }
   },
   "ci": {

@@ -1437,5 +1437,8 @@
   },
   "5.12.130": {
     "en": "Compensate incomplete reports in crons (soft MISSING_PID, no invent pid)."
+  },
+  "5.12.132": {
+    "en": "Fixed mains mmWave radar phantom battery warning after app updates; radar settings DPs no longer misread as humidity."
   }
 }
