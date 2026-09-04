@@ -1,0 +1,14 @@
+﻿'use strict';
+const assert = require('assert');
+const fs = require('fs');
+const path = require('path');
+const { execFileSync } = require('child_process');
+const ROOT = path.join(__dirname, '..', '..');
+const gen = fs.readFileSync(path.join(ROOT, 'scripts', 'dashboard', 'generate-diagnostics-dashboard.js'), 'utf8');
+assert.ok(gen.includes('renderHomeyDashboardSection'), 'Homey panel');
+assert.ok(gen.includes('function main()'), 'main restored');
+assert.ok(gen.includes('mergeSignals'), 'mergeSignals');
+const enrich = fs.readFileSync(path.join(ROOT, 'lib', 'diagnostics', 'DiagContentEnricher.js'), 'utf8');
+assert.ok(enrich.includes('foreign_driver_id'), 'foreign driver signal');
+execFileSync(process.execPath, [path.join(ROOT, 'scripts', 'dashboard', 'generate-diagnostics-dashboard.js'), '--json'], { cwd: ROOT, stdio: 'pipe' });
+console.log('P2417 Homey diag dashboard: PASS');
