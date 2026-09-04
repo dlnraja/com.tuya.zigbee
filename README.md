@@ -33,7 +33,7 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 
 | Metric | Value |
 |--------|-------|
-| **App Version** | v9.0.814 |
+| **App Version** | v9.0.816 |
 | **Drivers** | 431 (381 Zigbee + 50 WiFi) |
 | **Unique Fingerprints** | 4,395 |
 | **Pairing Variants** | 16,188 (4 case combos per fingerprint) |
@@ -41,7 +41,7 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 | **Flow Cards** | 5,950 |
 | **Unique Capabilities** | 170 |
 | **Native OTA Drivers** | 9 |
-| **Test Suites** | 239 files |
+| **Test Suites** | 240 files |
 | **SVG Icons** | 731 |
 | **Languages** | EN, FR, NL, DE |
 | **SDK / Homey** | 3 / >= 12.2.0 |
@@ -102,6 +102,8 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 
 | Version | Changes |
 |---------|---------|
+| **v9.0.816** | Compensate incomplete forum/. |
+| **v9.0.815** | Compensate incomplete forum/gmail (soft MISSING_PID); enrich poll/enrich/l99/recurrent/fetch-diags crons. |
 | **v9.0.814** | Homey diag dashboard Athom tip panel; clear FP collisions (iwtv2jwo/sj7jbgks/ttkgurpb); foreign-driver signal. |
 | **v9.0.813** | Homey diag dashboard Athom tip panel; clear FP collisions (iwtv2jwo/sj7jbgks/ttkgurpb); foreign-driver signal. |
 | **v9.0.812** | CI: WiFi pairing timer gate, Athom processing_failed soft-expect, diagnostics dashboard soft shell. |
@@ -112,8 +114,6 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 | **v9.0.807** | Improved cover idle-stop guard and WiFi local discovery harden. |
 | **v9.0.806** | Fixed Moes curtain wall switch stopping too early after open/close from Homey UI. |
 | **v9.0.805** | Fixed Moes curtain wall switch stopping too early after open/close from Homey UI. |
-| **v9.0.804** | Fixed Moes curtain wall switch stopping too early after open/close from Homey UI. |
-| **v9.0.803** | Fixed Moes curtain wall switch stopping too early after open/close from Homey UI. |
 
 <!-- CHANGELOG_END -->
 
