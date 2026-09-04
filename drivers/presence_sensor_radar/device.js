@@ -274,15 +274,13 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
         }
       }
     } catch (_e) { /* soft */ }
-    // WHY(P2391): compose ships energy.batteries for hybrid battery HOBEIAN siblings —
-    // mains MTG must clear Energy metadata or Homey timeline fires "low battery".
+    // WHY(P2391/P2420 VicHY #2227): compose ships energy.batteries for hybrid HOBEIAN siblings —
+    // mains MTG must ALWAYS clear Energy metadata. Homey may keep timeline "low battery"
+    // even when getEnergy() looks empty after removeCapability (manifest re-apply race).
     if (this.mainsPowered && typeof this.setEnergy === 'function') {
       try {
-        const energy = (typeof this.getEnergy === 'function' && this.getEnergy()) || {};
-        if (Array.isArray(energy.batteries) && energy.batteries.length) {
-          await this.setEnergy({}).catch(() => {});
-          this.log('[RADAR] P2391 cleared Homey Energy batteries on mains radar');
-        }
+        await this.setEnergy({});
+        this.log('[RADAR] P2391/P2420 cleared Homey Energy batteries on mains radar');
       } catch (_e) { /* soft */ }
     }
     try {
@@ -304,7 +302,9 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
   _scheduleRadarPhantomReheal() {
     try {
       const { safeSetTimeout } = require('../../lib/utils/safe-timers');
-      const delays = [15_000, 60_000, 180_000];
+      // WHY(P2420 / VicHY #2227): Homey restores energy.batteries + curtain caps within
+      // seconds of an app update — 2s/5s catch the race before user sees phantom UI.
+      const delays = [2_000, 5_000, 15_000, 60_000, 180_000];
       for (const ms of delays) {
         safeSetTimeout(this, () => {
           this._armRadarDynCapGuards();
@@ -319,7 +319,7 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
       try {
         this.homey.setTimeout(() => {
           this._healRadarPhantomCaps().catch(() => {});
-        }, 30_000);
+        }, 5_000);
       } catch (__e) { /* soft */ }
     }
   }

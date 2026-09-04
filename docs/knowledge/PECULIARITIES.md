@@ -103,6 +103,7 @@ Generated 2026-08-19T08:50:15.322Z from registry (54 cases) × compound DB (209 
 - Compound `_TZE204_clrdrnya|TS0601`: tuya_dp  MTG235-ZB-RL mmWave+relay (sbyx0lm6 family). Never climate/motion_pir. Z2M#18677 GH#420
 - Compound `_TZE284_clrdrnya|TS0601`: tuya_dp  TZE284 sibling of clrdrnya radar; same TS0601 couple only
 - Compound `_TZE200_clrdrnya|TS0601`: tuya_dp  TZE200 sibling; Z2M discussion#25712 lost-support reminder — keep compound lock
+- **P2420 (VicHY #2227 diag `c5165a37`):** After tip update, curtain UI again (delete+re-pair works); flood gone; **battery warning still**. Root: (1) `setEnergy({})` only ran when `getEnergy().batteries` non-empty; (2) DP2 `cap:null`+`setting` fell through generic DP2→humidity SmartDivisor. Fix: always clear Energy on mains; re-heal at 2s/5s; EF00 treats `setting`/`cap:null` as owned. User: update Test + **restart app** (re-pair only if still curtain).
 - **P2340 (diag 4217d5e3 / VicHY):** publish compact dropped `_TZE204_clrdrnya` from app.json — sacred-keep + force-inject restores mfr; user on **9.0.719** must update Test ≥9.0.739 + re-pair `presence_sensor_radar`.
 - **P2340 (forum Cam / HOBEIAN ZG-204ZL):** compact dropped `HOBEIAN` mfr while pid `ZG-204ZL` remained — sacred-keep pins couple; motion flows need update + re-pair on `presence_sensor_radar`.
 - Compose: class=sensor eps=1 EF00=true IAS=false batteries=CR2032/CR2450/AAA/AA/CR123A/INTERNAL
