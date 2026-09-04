@@ -2,7 +2,9 @@
 
 Silent only. Soft hypotheses from SSOT — **never invent pid**. No forum POST (T157628).
 
-Missing-PID hints: **90** · Hypotheses: **6** · NEED_INTERVIEW: **5** · Applied: **0**
+Elapsed: **15ms** / budget 15000ms
+
+Missing-PID hints: **14** · Hypotheses: **6** · NEED_INTERVIEW: **4** · Applied: **0**
 
 ## Soft hypotheses
 
@@ -20,11 +22,10 @@ Missing-PID hints: **90** · Hypotheses: **6** · NEED_INTERVIEW: **5** · Appli
 - **_TZ3218_t9ynfz4x+TS0225** → `motion_sensor_radar_mmwave` — ask: zb_manufacturer_name, zb_model_id, clusters 0xE002 (MISSING_PID in forum/processor)
 - **_TZ3000_xabckq1v+TS004F** → `button_wireless_4` — ask: zb_manufacturer_name, zb_model_id, endpoints (MISSING_PID in forum/processor)
 - **_TZ3000_kfu8zapd+TS0044** → `scene_switch_4` — ask: zb_manufacturer_name, zb_model_id (MISSING_PID in forum/processor)
-- **_TZ3000_4upl1fcj+TS0041** → `button_wireless_1` — ask: zb_manufacturer_name, zb_model_id (MISSING_PID in forum/processor)
-- **_TZ3000_wkai4ga5+TS0044** → `button_wireless_4` — ask: zb_manufacturer_name, zb_model_id (MISSING_PID in forum/processor)
+- **_TZ3000_wkai4ga5+TS0044** → `button_wireless_4` — ask: zb_manufacturer_name, zb_model_id (soft-hypothesize until interview confirm)
 
 ## Doctrine
 - Continue treating posts even when couple absent
-- Class-level fixes (battery, button RX, soft-expect) ship without pid
-- Publish Homey Test; never Community reply
+- Class-level fixes ship without pid
+- Hang-proof: line-scan + wall-clock; never block cron
 

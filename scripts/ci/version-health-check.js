@@ -57,13 +57,17 @@ async function main() {
 
   // Athom processing_failed is often transient (P139 socket hang) — soft-expect:
   // report in summary but do not fail the cron when crashes are clean.
-  // Hard-fail only when the newest tip/live build itself is processing_failed
-  // AND older than VERSION_HEALTH_FAIL_AGE_H (default 6h) without a newer testing tip.
+  // Hard-fail only when:
+  //   - soft-expect disabled, OR
+  //   - no healthy testing tip in window AND a processing_failed is older than FAIL_AGE_H
+  // P2419: a newer draft can fail while an older tip stays healthy — do not red the cron.
   const softExpect = process.env.VERSION_HEALTH_SOFT_EXPECT !== '0';
   const failAgeH = Number(process.env.VERSION_HEALTH_FAIL_AGE_H || 6);
   const newestTesting = recent.find((b) => b.state === 'test' || b.state === 'testing');
+  const tipHealthy = !!(newestTesting && !(Number(newestTesting.crashes) > 0));
   const stuckFailed = failed.filter((b) => {
-    if (newestTesting && newestTesting.id > b.id) return false; // superseded by a tip that made it
+    if (tipHealthy) return false; // WHY: healthy tip on Test = users OK; draft PF is Athom noise
+    if (newestTesting && newestTesting.id > b.id) return false;
     return ageDays(b) * 24 >= failAgeH;
   });
 
@@ -75,13 +79,16 @@ async function main() {
   if (failed.length > 0) {
     const label = softExpect && stuckFailed.length === 0 ? '⚠️' : '❌';
     lines.push(`${label} processing_failed builds: ${failed.map((b) => `#${b.id} v${b.version}`).join(', ')}`);
+    if (tipHealthy) {
+      lines.push(`ℹ️ P139/P2419 soft-expect: healthy Test tip #${newestTesting.id} v${newestTesting.version} — ignoring draft processing_failed.`);
+    }
     if (!softExpect || stuckFailed.length > 0) {
       bad = true;
       if (stuckFailed.length > 0) {
-        lines.push(`❌ stuck processing_failed (>${failAgeH}h, no newer tip): ${stuckFailed.map((b) => `#${b.id}`).join(', ')}`);
+        lines.push(`❌ stuck processing_failed (>${failAgeH}h, no healthy tip): ${stuckFailed.map((b) => `#${b.id}`).join(', ')}`);
       }
-    } else {
-      lines.push('ℹ️ P139 soft-expect: Athom processing_failed ignored while a newer tip exists / age < fail window.');
+    } else if (!tipHealthy) {
+      lines.push('ℹ️ P139 soft-expect: Athom processing_failed ignored while age < fail window.');
     }
   }
   if (!bad) {lines.push('✅ No crashed or failed builds in the window.');}

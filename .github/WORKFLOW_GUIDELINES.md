@@ -1131,10 +1131,14 @@ SSOT: `config/enrichment/market-couples-sources.json`
 
 ---
 
-## N2. Compensate incomplete reports (P2418)
+## N2. Compensate incomplete reports (P2418 / P2419 hang-proof)
 
 **Mandate:** Do **not** stall on missing `productId` / empty interview / absent diag UUID.
 Continue treating with soft hypotheses + class-level fixes. Never invent pid. Never forum POST.
+
+**P2419 hang-proof:** line-scan PROCESS.md (no catastrophic regex), `COMPENSATE_MAX_MS` (default 45s),
+CI defaults `--skip-investigate`, soft exit 0. Version Health ignores draft `processing_failed` when a
+healthy Test tip exists. `direct-api-publish` soft-exits 0 on PF/timeout when any healthy tip remains (P139).
 
 ```bash
 npm run enrich:compensate              # soft report + NEED_INTERVIEW

@@ -313,8 +313,9 @@ jobs:
           fi
           # WHY(P2418): compensate MISSING_PID / incomplete forum+gmail without stalling
           if [ -f tools/ci/compensate-incomplete-reports.js ]; then
-            echo "## 🩹 Compensate incomplete reports (P2418)" >> $GITHUB_STEP_SUMMARY
-            node tools/ci/compensate-incomplete-reports.js --apply-safe || echo "compensate soft warn"
+            echo "## 🩹 Compensate incomplete reports (P2419 hang-proof)" >> $GITHUB_STEP_SUMMARY
+            COMPENSATE_SKIP_INVESTIGATE=1 COMPENSATE_MAX_MS=45000 \
+              node tools/ci/compensate-incomplete-reports.js --apply-safe --skip-investigate || echo "compensate soft warn"
           fi
           # Settings enrich plan (dry-run — apply only via explicit enrich:settings:apply)
           if [ -f tools/ci/enrich-driver-settings-intelligent.js ]; then
