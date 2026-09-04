@@ -1,0 +1,167 @@
+# L99 Inbox Intelligence (P2352)
+# Regular intelligent harvest: Gmail + GitHub issues/PRs + Homey forum (SHADOW) +
+# driver/couple gates → prioritized silent report. Never forum POST. Never invent pid.
+# Triggers: cron every 4h (:45 after forum-poll :15) + workflow_dispatch
+# Doc: docs/architecture/L99_INBOX_INTELLIGENCE.md
+
+name: L99 Inbox Intelligence (P2352)
+
+on:
+  schedule:
+    # Stagger +30m after forum-poll (02/06/10/14/18/22 :15)
+    - cron: '45 2,6,10,14,18,22 * * *'
+  workflow_dispatch:
+    inputs:
+      mode:
+        description: 'full | quick | github (github-only)'
+        required: false
+        type: choice
+        options:
+          - full
+          - quick
+          - github
+        default: full
+      skip_scan:
+        description: 'Skip live forum silent scan (use cached digest)'
+        required: false
+        type: boolean
+        default: false
+      commit_reports:
+        description: 'Commit PRIORITY reports to master [skip ci]'
+        required: false
+        type: boolean
+        default: true
+
+permissions:
+  contents: write
+  issues: read
+  pull-requests: read
+  actions: read
+
+concurrency:
+  group: l99-inbox-intelligence
+  cancel-in-progress: false
+
+defaults:
+  run:
+    shell: bash
+
+env:
+  NODE_VERSION: '22'
+  FORUM_AUTO_POST: '0'
+  SHADOW_FORUM: '1'
+  DISCOURSE_WRITE: '0'
+  # WHY(P2354): Fleetwood WFL_REPLY_TOPICS_LEAK rejects empty — must be T140352 only (never other topics)
+  REPLY_TOPICS: '140352'
+  AI_PLAN_MODE: forfait
+  AI_ALLOW_PAID: 'false'
+  GMAIL_DIAG_AI_MAX: '0'
+  SMART_FETCH_READER_FALLBACK: '1'
+
+jobs:
+  inbox-l99:
+    name: L99 Inbox Intelligence
+    runs-on: ubuntu-latest
+    timeout-minutes: 35
+    env:
+      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      GH_PAT: ${{ secrets.GH_PAT }}
+      GH_TOKEN: ${{ secrets.GH_PAT || secrets.GITHUB_TOKEN }}
+      GMAIL_APP_PASSWORD: ${{ secrets.GMAIL_APP_PASSWORD }}
+      GMAIL_EMAIL: ${{ secrets.GMAIL_EMAIL }}
+      GMAIL_CLIENT_ID: ${{ secrets.GMAIL_CLIENT_ID }}
+      GMAIL_CLIENT_SECRET: ${{ secrets.GMAIL_CLIENT_SECRET }}
+      GMAIL_REFRESH_TOKEN: ${{ secrets.GMAIL_REFRESH_TOKEN }}
+      FIRECRAWL_API_KEY: ${{ secrets.FIRECRAWL_API_KEY }}
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # v5.1.0
+        with:
+          fetch-depth: 0
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Setup Node.js
+        uses: actions/setup-node@a0853c24544627f65ddf259abe73b1d18a591444 # v5.0.0
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: npm
+
+      - name: Install deps
+        run: npm ci --prefer-offline --no-audit || npm install --no-audit
+
+      - name: Soft Gmail diagnostics harvest
+        if: ${{ github.event_name == 'schedule' || inputs.mode == 'full' || inputs.mode == '' }}
+        continue-on-error: true
+        timeout-minutes: 8
+        run: |
+          if [ -z "${GMAIL_EMAIL:-}" ] && [ -z "${GMAIL_REFRESH_TOKEN:-}" ] && [ -z "${GMAIL_APP_PASSWORD:-}" ]; then
+            echo "No Gmail secrets — skip harvest"
+            exit 0
+          fi
+          npm run diag:gmail -- --max-results 30 || echo "gmail soft warn"
+
+      - name: Run L99 inbox intelligence
+        id: l99
+        continue-on-error: true
+        timeout-minutes: 20
+        run: |
+          MODE="${{ inputs.mode || 'full' }}"
+          ARGS=""
+          if [ "$MODE" = "quick" ]; then ARGS="--quick"; fi
+          if [ "$MODE" = "github" ]; then ARGS="--phase=github"; fi
+          if [ "${{ inputs.skip_scan }}" = "true" ] || [ "$MODE" = "quick" ]; then
+            ARGS="$ARGS --skip-scan"
+          fi
+          echo "## L99 Inbox Intelligence (P2352)" >> "$GITHUB_STEP_SUMMARY"
+          echo "Mode: \`$MODE\` args=\`$ARGS\`" >> "$GITHUB_STEP_SUMMARY"
+          echo '```' >> "$GITHUB_STEP_SUMMARY"
+          node tools/ci/l99-inbox-intelligence-orchestrator.js $ARGS 2>&1 | tee l99-inbox.log
+          echo '```' >> "$GITHUB_STEP_SUMMARY"
+          DATE=$(date -u +%F)
+          if [ -f "reports/l99-inbox-$DATE/PRIORITY.md" ]; then
+            echo "### Priority (head)" >> "$GITHUB_STEP_SUMMARY"
+            head -n 40 "reports/l99-inbox-$DATE/PRIORITY.md" >> "$GITHUB_STEP_SUMMARY" || true
+          fi
+
+      - name: Compensate incomplete reports (P2418)
+        if: always()
+        continue-on-error: true
+        timeout-minutes: 8
+        run: |
+          echo "## Compensate incomplete (P2418 — soft, no invent pid)" >> "$GITHUB_STEP_SUMMARY"
+          if [ -f tools/ci/compensate-incomplete-reports.js ]; then
+            node tools/ci/compensate-incomplete-reports.js --apply-safe --skip-investigate 2>&1 | tee compensate-p2418.log || echo "compensate soft warn"
+            DATE=$(date -u +%F)
+            head -n 35 "reports/compensate-$DATE/TREAT.md" >> "$GITHUB_STEP_SUMMARY" 2>/dev/null || true
+          fi
+
+      - name: Upload artifacts
+        if: always()
+        uses: actions/upload-artifact@330a01c490aca151604b8cf639adc76d48f6c5d4 # v5.0.0
+        with:
+          name: l99-inbox-intelligence-${{ github.run_id }}
+          path: |
+            reports/l99-inbox-*/
+            .github/state/l99-inbox-intelligence/
+            docs/architecture/L99_INBOX_INTELLIGENCE.md
+            l99-inbox.log
+          if-no-files-found: warn
+          retention-days: 21
+
+      - name: Commit intelligence reports [skip ci]
+        if: always() && (github.event_name == 'schedule' || inputs.commit_reports == true || inputs.commit_reports == '')
+        continue-on-error: true
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git pull --rebase origin master || true
+          git add -A reports/l99-inbox-*/ docs/architecture/L99_INBOX_INTELLIGENCE.md .github/state/l99-inbox-intelligence/ || true
+          if git diff --cached --quiet; then
+            echo "No report changes"
+            exit 0
+          fi
+          git commit -m "chore(intel): L99 inbox intelligence report [skip ci]" || true
+          # WHY(P2383): verified push — step already continue-on-error
+          git pull --rebase origin master || true
+          git push origin HEAD

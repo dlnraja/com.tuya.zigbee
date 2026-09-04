@@ -1,3 +1,7 @@
+# Recurrent Orchestrator (P32)
+# Triggers: cron: 30 3 * * * + workflow_dispatch | Secrets: GITHUB_TOKEN only
+# Doc header added 2026-07-29 (workflows genealogy enrichment).
+
 defaults:
   run:
     shell: bash
@@ -35,6 +39,17 @@ on:
         required: false
         default: 'false'
 
+# Least privilege: read-only pipeline (activity/issues/pulls scans)
+permissions:
+  contents: read
+  issues: read
+  pull-requests: read
+  actions: read
+
+concurrency:
+  group: recurrent-orchestrator
+  cancel-in-progress: false
+
 jobs:
   orchestrate:
     runs-on: ubuntu-latest
@@ -42,12 +57,12 @@ jobs:
 
     steps:
       - name: Checkout
-        uses: actions/checkout@v5
+        uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # v5.1.0
 
       - name: Setup Node.js
-        uses: actions/setup-node@v5
+        uses: actions/setup-node@a0853c24544627f65ddf259abe73b1d18a591444 # v5.0.0
         with:
-          node-version: '20'
+          node-version: '22'
 
       - name: Run Recurrent Orchestrator
         env:
@@ -62,8 +77,55 @@ jobs:
           fi
           node tools/ci/recurrent-orchestrator.js $ARGS
 
+      - name: "P2281 discovery lineage + harvest (SHADOW soft)"
+        continue-on-error: true
+        timeout-minutes: 10
+        env:
+          FORUM_AUTO_POST: '0'
+          SHADOW_FORUM: '1'
+          DISCOURSE_WRITE: '0'
+        run: |
+          # Past P102–P2266 · recent P2267 E002 + P2268 parallel · present P2269+
+          if [ -f tools/ci/silent-enrichment-orchestrator.js ]; then
+            node tools/ci/silent-enrichment-orchestrator.js --phase=sync --skip-scan || echo "sync harvest warn"
+          fi
+          node tools/ci/discovery-lineage-enrich-gate.js || echo "discovery-lineage warn"
+          node tools/ci/p2270-regenerate-discoveries-md.js || echo "discoveries md warn"
+
+      - name: L99 dual-app enrich gates (soft regular)
+        continue-on-error: true
+        timeout-minutes: 8
+        run: |
+          if [ -f tools/ci/l99-dual-app-enrich-gates.js ]; then
+            node tools/ci/l99-dual-app-enrich-gates.js --track=auto || echo "l99-dual soft warn"
+          fi
+
+      - name: L99 Inbox Intelligence soft (P2352)
+        continue-on-error: true
+        timeout-minutes: 10
+        env:
+          FORUM_AUTO_POST: '0'
+          SHADOW_FORUM: '1'
+          DISCOURSE_WRITE: '0'
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          if [ -f tools/ci/l99-inbox-intelligence-orchestrator.js ]; then
+            node tools/ci/l99-inbox-intelligence-orchestrator.js --quick --skip-scan || echo "l99-inbox soft warn"
+          fi
+
+      - name: Compensate incomplete reports (P2418)
+        continue-on-error: true
+        timeout-minutes: 8
+        run: |
+          if [ -f tools/ci/compensate-incomplete-reports.js ]; then
+            node tools/ci/compensate-incomplete-reports.js --apply-safe --skip-investigate || echo "compensate soft warn"
+          fi
+          if [ -f tools/ci/auto-investigate-need-action.js ]; then
+            node tools/ci/auto-investigate-need-action.js || echo "auto-investigate soft warn"
+          fi
+
       - name: Upload Reports
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@330a01c490aca151604b8cf639adc76d48f6c5d4 # v5.0.0
         with:
           name: orchestrator-reports-${{ github.run_id }}
           path: |

@@ -1431,5 +1431,8 @@
   },
   "5.12.129": {
     "en": "Homey diag dashboard Athom panel; clear FP collisions for Validate (BOTH)."
+  },
+  "5.12.130": {
+    "en": "Compensate incomplete reports in crons (soft MISSING_PID, no invent pid)."
   }
 }

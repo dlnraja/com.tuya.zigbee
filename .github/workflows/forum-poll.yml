@@ -135,6 +135,15 @@ jobs:
             echo "## 📋 Forum actionable processor (P2210 — post-by-post cross-ref)" >> $GITHUB_STEP_SUMMARY
             node tools/ci/forum-actionable-processor.js 2>&1 | tee forum-actionable-processor.log || echo "PROCESSOR_SKIP"
           fi
+          # WHY(P2418): treat MISSING_PID / incomplete posts without waiting — soft hypotheses only
+          if [ -f tools/ci/compensate-incomplete-reports.js ]; then
+            echo "## 🩹 Compensate incomplete reports (P2418 — no invent pid, no forum POST)" >> $GITHUB_STEP_SUMMARY
+            node tools/ci/compensate-incomplete-reports.js --apply-safe 2>&1 | tee compensate-incomplete.log || echo "COMPENSATE_SOFT_WARN"
+            DATE=$(date -u +%F)
+            head -n 40 "reports/compensate-$DATE/TREAT.md" >> $GITHUB_STEP_SUMMARY 2>/dev/null || true
+          elif [ -f tools/ci/auto-investigate-need-action.js ]; then
+            node tools/ci/auto-investigate-need-action.js 2>&1 | tee auto-investigate-need-action.log || echo "AUTO_INVESTIGATE_WARN"
+          fi
           if [ -f tools/ci/apply-forum-silent-multi.js ]; then
             node tools/ci/apply-forum-silent-multi.js 2>&1 | tee forum-known-routes.log || echo "KNOWN_ROUTES_SKIP"
           fi
@@ -173,6 +182,13 @@ jobs:
           fi
           if [ -f tools/ci/l99-dual-app-enrich-gates.js ]; then
             node tools/ci/l99-dual-app-enrich-gates.js --track=auto || echo "L99_DUAL_SOFT_WARN"
+          fi
+          # P2352: unified inbox intelligence (GH + forum + drivers) — SHADOW, soft
+          if [ -f tools/ci/l99-inbox-intelligence-orchestrator.js ]; then
+            echo "## 🧠 L99 Inbox Intelligence (P2352 — SHADOW)" >> $GITHUB_STEP_SUMMARY
+            node tools/ci/l99-inbox-intelligence-orchestrator.js --quick --skip-scan 2>&1 | tee forum-l99-inbox.log || echo "L99_INBOX_SOFT_WARN"
+            DATE=$(date -u +%F)
+            head -n 30 "reports/l99-inbox-$DATE/PRIORITY.md" >> $GITHUB_STEP_SUMMARY 2>/dev/null || true
           fi
           # P2232: soft market couples cross-ref (no compose apply on forum poll — review only)
           if [ -f tools/ci/market-couples-intake.js ]; then

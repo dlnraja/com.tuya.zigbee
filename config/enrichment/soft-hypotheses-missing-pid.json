@@ -1,0 +1,62 @@
+{
+  "$schemaNote": "P2418 soft hypotheses for MISSING_PID forum/gmail posts — NEVER invent pid. Only verified or high-confidence couples from Z2M/ZHA/device-truth/operational memory. CI documents NEED_INTERVIEW; apply compose only when confidence>=95 and applySafe=true.",
+  "updatedAt": "2026-09-04",
+  "hypotheses": [
+    {
+      "mfr": "_TZ3218_t9ynfz4x",
+      "pid": "TS0225",
+      "driver": "motion_sensor_radar_mmwave",
+      "confidence": 98,
+      "applySafe": true,
+      "sources": ["Z2M Linptech/Moes ES1", "forum Gabriel T158757#2", "P2297"],
+      "expectedInterview": ["zb_manufacturer_name", "zb_model_id", "clusters 0xE002"]
+    },
+    {
+      "mfr": "_TZ3000_xabckq1v",
+      "pid": "TS004F",
+      "driver": "button_wireless_4",
+      "confidence": 90,
+      "applySafe": false,
+      "note": "Known couple is TS004F→button_wireless_4; TS0001 soft-only — do not invent. Soft until interview.",
+      "sources": ["operational-memory soft", "compose already has mfr"],
+      "expectedInterview": ["zb_manufacturer_name", "zb_model_id", "endpoints"]
+    },
+    {
+      "mfr": "_TZ3000_kfu8zapd",
+      "pid": "TS0044",
+      "driver": "scene_switch_4",
+      "confidence": 98,
+      "applySafe": true,
+      "sources": ["forum T150690", "LOCKED_OK"],
+      "expectedInterview": ["zb_manufacturer_name", "zb_model_id"]
+    },
+    {
+      "mfr": "_TZE204_5slehgeo",
+      "pid": "TS0601",
+      "driver": "curtain_motor",
+      "confidence": 99,
+      "applySafe": true,
+      "sources": ["GitHub #533", "P2412 Moes ZTS-EUR-C", "misattribution forbid radiator_valve"],
+      "expectedInterview": ["zb_manufacturer_name", "zb_model_id", "DP1/DP2"]
+    },
+    {
+      "mfr": "_TZ3000_4upl1fcj",
+      "pid": "TS0041",
+      "driver": "button_wireless_1",
+      "confidence": 95,
+      "applySafe": true,
+      "sources": ["forum T156967 LOCKED_OK"],
+      "expectedInterview": ["zb_manufacturer_name", "zb_model_id"]
+    },
+    {
+      "mfr": "_TZ3000_wkai4ga5",
+      "pid": "TS0044",
+      "driver": "button_wireless_4",
+      "confidence": 95,
+      "applySafe": true,
+      "sources": ["forum interview TS0044", "LOCKED_OK"],
+      "note": "TS0042 sibling NOT invent — NEED_INTERVIEW if user only has TS0042 claim",
+      "expectedInterview": ["zb_manufacturer_name", "zb_model_id"]
+    }
+  ]
+}

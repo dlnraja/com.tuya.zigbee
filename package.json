@@ -1,6 +1,6 @@
 {
   "name": "com.dlnraja.tuya.zigbee",
-  "version": "5.12.129",
+  "version": "5.12.130",
   "description": "Tuya Unified Zigbee - Local-first control with AI automation",
   "main": "app.js",
   "scripts": {
@@ -153,7 +153,9 @@
     "enrich:classes": "node tools/ci/driver-class-fleet-enrich.js",
     "scrape:budget": "node tools/ci/free-scrape-budget.js --report",
     "scrape:budget:preflight": "node tools/ci/free-scrape-budget.js --preflight",
-    "check:p2372": "node --test test/critical/p2372-free-scrape-fleet.test.js"
+    "check:p2372": "node --test test/critical/p2372-free-scrape-fleet.test.js",
+    "enrich:compensate": "node tools/ci/compensate-incomplete-reports.js --skip-investigate",
+    "enrich:compensate:apply": "node tools/ci/compensate-incomplete-reports.js --apply-safe"
   },
   "keywords": [
     "homey",
