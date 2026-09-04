@@ -137,8 +137,9 @@ jobs:
           fi
           # WHY(P2418): treat MISSING_PID / incomplete posts without waiting — soft hypotheses only
           if [ -f tools/ci/compensate-incomplete-reports.js ]; then
-            echo "## 🩹 Compensate incomplete reports (P2418 — no invent pid, no forum POST)" >> $GITHUB_STEP_SUMMARY
-            node tools/ci/compensate-incomplete-reports.js --apply-safe 2>&1 | tee compensate-incomplete.log || echo "COMPENSATE_SOFT_WARN"
+            echo "## Compensate incomplete reports (P2419 hang-proof - no invent pid, no forum POST)" >> $GITHUB_STEP_SUMMARY
+            COMPENSATE_SKIP_INVESTIGATE=1 COMPENSATE_MAX_MS=45000 \
+            node tools/ci/compensate-incomplete-reports.js --apply-safe --skip-investigate 2>&1 | tee compensate-incomplete.log || echo "COMPENSATE_SOFT_WARN"
             DATE=$(date -u +%F)
             head -n 40 "reports/compensate-$DATE/TREAT.md" >> $GITHUB_STEP_SUMMARY 2>/dev/null || true
           elif [ -f tools/ci/auto-investigate-need-action.js ]; then
