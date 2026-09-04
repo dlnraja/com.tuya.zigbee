@@ -2,13 +2,21 @@
 
 > Curated fleet profile
 
-Forum topic: **T140352** · Posts: 2208, 2211, **2222**, **2224**, **2225** (Dylan reply), **2226** (ack)
+Forum topic: **T140352** · Posts: 2208, 2211, **2222**, **2224**, **2225** (Dylan reply), **2226** (ack), **2227**
 
 ## Devices
 
 | Tile | Driver | Couple | User action |
 |---|---|---|---|
-| Presencia baño principal | presence_sensor_radar | `_TZE204_clrdrnya`+`TS0601` | Update Test ≥ **9.0.802** (P2379/P2386/P2389/P2391/P2401) + **restart app** (re-pair only if still curtain UI) |
+| Presencia baño principal | presence_sensor_radar | `_TZE204_clrdrnya`+`TS0601` | Update Test ≥ **9.0.818** (P2420) + **restart app** (re-pair only if still curtain UI) |
+
+## #2227 (2026-09-02) — recurring after tip update
+
+- Was OK on **9.0.791** as mmWave PIR; after update → **curtain** again (delete+reinstall restores presence)
+- Flood timeline warning **gone** (P2389 OK)
+- **Battery warning still** on 220V mains
+- Diag: `c5165a37-2208-47a8-baaf-7a4190c4f97a` @ **9.0.797** — driver `presence_sensor_radar`, heal removed `measure_battery` but Energy clear was gated
+- Silent fix **P2420**: always `setEnergy({})` on mains; faster re-heal; EF00 owns DP2 settings (no humidity SmartDivisor)
 
 ## #2226 (2026-09-02)
 
