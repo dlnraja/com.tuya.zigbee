@@ -91,7 +91,7 @@
       "realMfrsAdded": 5,
       "details": "tmp/synthetic-resolution.json + tmp/pruned21-resolution.json"
     },
-    "lastAlignedAt": "2026-09-02T23:41:04.107Z",
+    "lastAlignedAt": "2026-09-04T09:12:38.625Z",
     "alignTool": "align-mfs-db-intelligent@P169",
     "lastSyncedFromCompose": "2026-09-01T07:55:33.978Z",
     "syncComposeTool": "sync-compose-to-mfs-db@P2368"
@@ -161971,7 +161971,7 @@
     "modelIdsCount": 48
   },
   "_TZE200_GRGOL3XP": {
-    "driverId": "motion_sensor",
+    "driverId": "presence_sensor_radar",
     "source": "compose-exclusive",
     "modelIds": [
       "3305-S",
@@ -167416,7 +167416,7 @@
     "modelIdsCount": 59
   },
   "_TZE200_ULI8WASJ": {
-    "driverId": "motion_sensor",
+    "driverId": "presence_sensor_radar",
     "source": "compose-exclusive",
     "modelIds": [
       "3305-S",
@@ -189521,8 +189521,8 @@
     "modelIdsCount": 59
   },
   "_TZE284_o9ofysmo": {
-    "driverId": "climate_sensor",
-    "source": "auto-sync",
+    "driverId": "soil_sensor",
+    "source": "compose-exclusive",
     "modelIds": [
       "01MINIZB",
       "BASICZBR3",
@@ -189588,8 +189588,8 @@
     "modelIdsCount": 59
   },
   "_TZE284_xc3vwx5a": {
-    "driverId": "climate_sensor",
-    "source": "auto-sync",
+    "driverId": "soil_sensor",
+    "source": "compose-exclusive",
     "modelIds": [
       "01MINIZB",
       "BASICZBR3",
@@ -218152,8 +218152,8 @@
     "modelIdsCount": 8
   },
   "_TZE204_y8jijhba": {
-    "driverId": "sensor_illuminance_presence",
-    "source": "auto-sync",
+    "driverId": "presence_sensor_radar",
+    "source": "compose-exclusive",
     "modelIds": [
       "CK-BL702-MWS-01(7016)",
       "TS0004",

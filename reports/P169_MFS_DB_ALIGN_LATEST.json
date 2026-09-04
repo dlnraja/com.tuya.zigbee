@@ -1,10 +1,10 @@
 {
-  "timestamp": "2026-09-03T09:20:41.446Z",
+  "timestamp": "2026-09-04T09:12:39.737Z",
   "gate": "align-mfs-db-intelligent",
   "apply": false,
   "check": true,
   "changeCount": 0,
-  "skippedCount": 35,
+  "skippedCount": 37,
   "highSeverityCount": 0,
   "byAction": {},
   "changes": [],
@@ -28,6 +28,16 @@
       "reason": "registry_enrich_only",
       "caseId": "p2347-gabriel-zemismart-cartesian-doc-only",
       "canon": "wall_switch_1gang_1way"
+    },
+    {
+      "reason": "registry_empty_mfr",
+      "caseId": "p2415-zg204zv-tze200-presence",
+      "canon": "presence_sensor_radar"
+    },
+    {
+      "reason": "registry_empty_mfr",
+      "caseId": "p2415-zs301z-soil",
+      "canon": "soil_sensor"
     },
     {
       "reason": "registry_bare_brand_multi_canon",
