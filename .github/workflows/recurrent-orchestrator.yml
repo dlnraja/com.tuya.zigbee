@@ -62,7 +62,7 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@a0853c24544627f65ddf259abe73b1d18a591444 # v5.0.0
         with:
-          node-version: '20'
+          node-version: '22'
 
       - name: Run Recurrent Orchestrator
         env:
@@ -111,6 +111,17 @@ jobs:
         run: |
           if [ -f tools/ci/l99-inbox-intelligence-orchestrator.js ]; then
             node tools/ci/l99-inbox-intelligence-orchestrator.js --quick --skip-scan || echo "l99-inbox soft warn"
+          fi
+
+      - name: Compensate incomplete reports (P2418)
+        continue-on-error: true
+        timeout-minutes: 8
+        run: |
+          if [ -f tools/ci/compensate-incomplete-reports.js ]; then
+            node tools/ci/compensate-incomplete-reports.js --apply-safe --skip-investigate || echo "compensate soft warn"
+          fi
+          if [ -f tools/ci/auto-investigate-need-action.js ]; then
+            node tools/ci/auto-investigate-need-action.js || echo "auto-investigate soft warn"
           fi
 
       - name: Upload Reports

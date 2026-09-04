@@ -124,6 +124,18 @@ jobs:
             head -n 40 "reports/l99-inbox-$DATE/PRIORITY.md" >> "$GITHUB_STEP_SUMMARY" || true
           fi
 
+      - name: Compensate incomplete reports (P2418)
+        if: always()
+        continue-on-error: true
+        timeout-minutes: 8
+        run: |
+          echo "## Compensate incomplete (P2418 — soft, no invent pid)" >> "$GITHUB_STEP_SUMMARY"
+          if [ -f tools/ci/compensate-incomplete-reports.js ]; then
+            node tools/ci/compensate-incomplete-reports.js --apply-safe --skip-investigate 2>&1 | tee compensate-p2418.log || echo "compensate soft warn"
+            DATE=$(date -u +%F)
+            head -n 35 "reports/compensate-$DATE/TREAT.md" >> "$GITHUB_STEP_SUMMARY" 2>/dev/null || true
+          fi
+
       - name: Upload artifacts
         if: always()
         uses: actions/upload-artifact@330a01c490aca151604b8cf639adc76d48f6c5d4 # v5.0.0

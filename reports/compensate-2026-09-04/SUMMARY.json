@@ -1,0 +1,690 @@
+{
+  "summary": {
+    "patch": "P2418",
+    "generatedAt": "2026-09-04T22:32:21.160Z",
+    "missingPidHints": 90,
+    "hypotheses": 6,
+    "needInterview": 5,
+    "applied": 0,
+    "applySafeMode": false,
+    "investigate": null
+  },
+  "matched": [
+    {
+      "mfr": "_TZ3218_t9ynfz4x",
+      "pid": "TS0225",
+      "driver": "motion_sensor_radar_mmwave",
+      "confidence": 98,
+      "applySafe": true,
+      "lockedInCompose": true,
+      "missingPidReports": 5,
+      "sources": [
+        "Z2M Linptech/Moes ES1",
+        "forum Gabriel T158757#2",
+        "P2297"
+      ],
+      "expectedInterview": [
+        "zb_manufacturer_name",
+        "zb_model_id",
+        "clusters 0xE002"
+      ],
+      "note": null
+    },
+    {
+      "mfr": "_TZ3000_xabckq1v",
+      "pid": "TS004F",
+      "driver": "button_wireless_4",
+      "confidence": 90,
+      "applySafe": false,
+      "lockedInCompose": true,
+      "missingPidReports": 4,
+      "sources": [
+        "operational-memory soft",
+        "compose already has mfr"
+      ],
+      "expectedInterview": [
+        "zb_manufacturer_name",
+        "zb_model_id",
+        "endpoints"
+      ],
+      "note": "Known couple is TS004F→button_wireless_4; TS0001 soft-only — do not invent. Soft until interview."
+    },
+    {
+      "mfr": "_TZ3000_kfu8zapd",
+      "pid": "TS0044",
+      "driver": "scene_switch_4",
+      "confidence": 98,
+      "applySafe": true,
+      "lockedInCompose": false,
+      "missingPidReports": 5,
+      "sources": [
+        "forum T150690",
+        "LOCKED_OK"
+      ],
+      "expectedInterview": [
+        "zb_manufacturer_name",
+        "zb_model_id"
+      ],
+      "note": null
+    },
+    {
+      "mfr": "_TZE204_5slehgeo",
+      "pid": "TS0601",
+      "driver": "curtain_motor",
+      "confidence": 99,
+      "applySafe": true,
+      "lockedInCompose": true,
+      "missingPidReports": 0,
+      "sources": [
+        "GitHub #533",
+        "P2412 Moes ZTS-EUR-C",
+        "misattribution forbid radiator_valve"
+      ],
+      "expectedInterview": [
+        "zb_manufacturer_name",
+        "zb_model_id",
+        "DP1/DP2"
+      ],
+      "note": null
+    },
+    {
+      "mfr": "_TZ3000_4upl1fcj",
+      "pid": "TS0041",
+      "driver": "button_wireless_1",
+      "confidence": 95,
+      "applySafe": true,
+      "lockedInCompose": true,
+      "missingPidReports": 5,
+      "sources": [
+        "forum T156967 LOCKED_OK"
+      ],
+      "expectedInterview": [
+        "zb_manufacturer_name",
+        "zb_model_id"
+      ],
+      "note": null
+    },
+    {
+      "mfr": "_TZ3000_wkai4ga5",
+      "pid": "TS0044",
+      "driver": "button_wireless_4",
+      "confidence": 95,
+      "applySafe": true,
+      "lockedInCompose": false,
+      "missingPidReports": 2,
+      "sources": [
+        "forum interview TS0044",
+        "LOCKED_OK"
+      ],
+      "expectedInterview": [
+        "zb_manufacturer_name",
+        "zb_model_id"
+      ],
+      "note": "TS0042 sibling NOT invent — NEED_INTERVIEW if user only has TS0042 claim"
+    }
+  ],
+  "needInterview": [
+    {
+      "couple": "_TZ3218_t9ynfz4x+TS0225",
+      "driver": "motion_sensor_radar_mmwave",
+      "fields": [
+        "zb_manufacturer_name",
+        "zb_model_id",
+        "clusters 0xE002"
+      ],
+      "why": "MISSING_PID in forum/processor"
+    },
+    {
+      "couple": "_TZ3000_xabckq1v+TS004F",
+      "driver": "button_wireless_4",
+      "fields": [
+        "zb_manufacturer_name",
+        "zb_model_id",
+        "endpoints"
+      ],
+      "why": "MISSING_PID in forum/processor"
+    },
+    {
+      "couple": "_TZ3000_kfu8zapd+TS0044",
+      "driver": "scene_switch_4",
+      "fields": [
+        "zb_manufacturer_name",
+        "zb_model_id"
+      ],
+      "why": "MISSING_PID in forum/processor"
+    },
+    {
+      "couple": "_TZ3000_4upl1fcj+TS0041",
+      "driver": "button_wireless_1",
+      "fields": [
+        "zb_manufacturer_name",
+        "zb_model_id"
+      ],
+      "why": "MISSING_PID in forum/processor"
+    },
+    {
+      "couple": "_TZ3000_wkai4ga5+TS0044",
+      "driver": "button_wireless_4",
+      "fields": [
+        "zb_manufacturer_name",
+        "zb_model_id"
+      ],
+      "why": "MISSING_PID in forum/processor"
+    }
+  ],
+  "applied": [],
+  "missing": [
+    {
+      "mfr": "_TZ3218_T9YNFZ4X",
+      "topic": 158757,
+      "post": 2,
+      "user": "Gabriel_Pedrosa_Mach"
+    },
+    {
+      "mfr": "_TZ3218_T9YNFZ4X",
+      "topic": 158757,
+      "post": 1,
+      "user": "A_Tas"
+    },
+    {
+      "mfr": "_TZ3000_4UPL1FCJ",
+      "topic": 156967,
+      "post": 26,
+      "user": "SunBeech"
+    },
+    {
+      "mfr": "_TZ3000_4UPL1FCJ",
+      "topic": 156967,
+      "post": 25,
+      "user": "SergeP"
+    },
+    {
+      "mfr": "_TZ3000_WKAI4GA5",
+      "topic": 156967,
+      "post": 12,
+      "user": "SunBeech"
+    },
+    {
+      "mfr": "_TZ3000_4UPL1FCJ",
+      "topic": 156967,
+      "post": 10,
+      "user": "SergeP"
+    },
+    {
+      "mfr": "_TZ3000_4UPL1FCJ",
+      "topic": 156967,
+      "post": 9,
+      "user": "SunBeech"
+    },
+    {
+      "mfr": "_TZE200_CF1SL3TJ",
+      "topic": 154092,
+      "post": 30,
+      "user": "Henk_Renting"
+    },
+    {
+      "mfr": "_TZE200_68NVBIO9",
+      "topic": 154092,
+      "post": 29,
+      "user": "Marcelo_Leite"
+    },
+    {
+      "mfr": "_TZE200_M6LWAZH9",
+      "topic": 154092,
+      "post": 26,
+      "user": "Zemismart_Official"
+    },
+    {
+      "mfr": "_TZE200_M6LWAZH9",
+      "topic": 154092,
+      "post": 25,
+      "user": "JOSE_ANGEL_RUIZ_JIME"
+    },
+    {
+      "mfr": "_TZE28C100000_RZDKN5RX",
+      "topic": 154092,
+      "post": 11,
+      "user": "Zemismart_Official"
+    },
+    {
+      "mfr": "_TZE28C100000_RZDKN5RX",
+      "topic": 154092,
+      "post": 10,
+      "user": "Michael_Hadjicosta"
+    },
+    {
+      "mfr": "_TZ3000_KFU8ZAPD",
+      "topic": 150690,
+      "post": 39,
+      "user": "Jocke_Wallen"
+    },
+    {
+      "mfr": "_TZ3000_KFU8ZAPD",
+      "topic": 150690,
+      "post": 35,
+      "user": "Primordial"
+    },
+    {
+      "mfr": "_TZ3000_KFU8ZAPD",
+      "topic": 150690,
+      "post": 34,
+      "user": "Primordial"
+    },
+    {
+      "mfr": "_TZ3000_KFU8ZAPD",
+      "topic": 150690,
+      "post": 33,
+      "user": "Graeme_Hindmarsh"
+    },
+    {
+      "mfr": "_TZ3000_XABCKQ1V",
+      "topic": 150690,
+      "post": 30,
+      "user": "SteampunkLolcat"
+    },
+    {
+      "mfr": "_TZ3000_XABCKQ1V",
+      "topic": 150690,
+      "post": 28,
+      "user": "SteampunkLolcat"
+    },
+    {
+      "mfr": "_TZ3000_22UGZKME",
+      "topic": 150690,
+      "post": 16,
+      "user": "Relax_swe"
+    },
+    {
+      "mfr": "_TZ3000_22UGZKME",
+      "topic": 150690,
+      "post": 15,
+      "user": "Chris_M"
+    },
+    {
+      "mfr": "_TZ3000_W8JWKCZZ",
+      "topic": 150690,
+      "post": 10,
+      "user": "Relax_swe"
+    },
+    {
+      "mfr": "_TZ3000_ZGYZGDUA",
+      "topic": 150690,
+      "post": 1,
+      "user": "Relax_swe"
+    },
+    {
+      "mfr": "_TZE200_NPJ9BUG3",
+      "topic": 146667,
+      "post": 10,
+      "user": "Michael_Edholm"
+    },
+    {
+      "mfr": "_TZE204_CLRDRNYA",
+      "topic": 140352,
+      "post": 2224,
+      "user": "VicHY"
+    },
+    {
+      "mfr": "_TZ3000_ZGYZGDUA",
+      "topic": 140352,
+      "post": 2213,
+      "user": "meter91"
+    },
+    {
+      "mfr": "_TZE204_CLRDRNYA",
+      "topic": 140352,
+      "post": 2208,
+      "user": "VicHY"
+    },
+    {
+      "mfr": "_TZE284_M1CVYNEB",
+      "topic": 140352,
+      "post": 2206,
+      "user": "PresentSky"
+    },
+    {
+      "mfr": "_TZE204_OGKDPGY2",
+      "topic": 140352,
+      "post": 2204,
+      "user": "Elliot_Hallais"
+    },
+    {
+      "mfr": "_TZ3218_T9YNFZ4X",
+      "topic": 140352,
+      "post": 2199,
+      "user": "A_Tas"
+    },
+    {
+      "mfr": "_TZE284_6OCNQLHN",
+      "topic": 140352,
+      "post": 2191,
+      "user": "Toni_UrbanoMarquez"
+    },
+    {
+      "mfr": "_TZ3000_ZGYZGDUA",
+      "topic": 140352,
+      "post": 2189,
+      "user": "meter91"
+    },
+    {
+      "mfr": "_TZ3000_LWTHNP7J",
+      "topic": 140352,
+      "post": 2188,
+      "user": "Gabriel_Pedrosa_Mach"
+    },
+    {
+      "mfr": "_TZ3210_TGVTVDOC",
+      "topic": 120477,
+      "post": 1,
+      "user": "FKey"
+    },
+    {
+      "mfr": "_TZ3000_V5498KDM",
+      "topic": 99614,
+      "post": 286,
+      "user": "SergeP"
+    },
+    {
+      "mfr": "_TZ3000_V5498KDM",
+      "topic": 99614,
+      "post": 285,
+      "user": "Antek_Tek"
+    },
+    {
+      "mfr": "_TZ3000_V7CHGQSO",
+      "topic": 99614,
+      "post": 11,
+      "user": "Attila_Danis"
+    },
+    {
+      "mfr": "_TZE200_P0GZBQCT",
+      "topic": 89271,
+      "post": 671,
+      "user": "Henk_de_Boom"
+    },
+    {
+      "mfr": "_TZ3000_WKR3JQMR",
+      "topic": 89271,
+      "post": 670,
+      "user": "Trond_Sandland"
+    },
+    {
+      "mfr": "_TZ3000_QEUVNOHG",
+      "topic": 89271,
+      "post": 669,
+      "user": "Erwin3"
+    },
+    {
+      "mfr": "_TZE200_MYD45WEU",
+      "topic": 89271,
+      "post": 668,
+      "user": "Peter_N"
+    },
+    {
+      "mfr": "_TZ3210_3LBTUXGP",
+      "topic": 89271,
+      "post": 667,
+      "user": "late4marshmellow"
+    },
+    {
+      "mfr": "_TZ3210_0ZABBFAX",
+      "topic": 89271,
+      "post": 666,
+      "user": "RezaRose"
+    },
+    {
+      "mfr": "_TYZB01_6G8B7AT8",
+      "topic": 89271,
+      "post": 665,
+      "user": "Johan_Rossouw"
+    },
+    {
+      "mfr": "_TZ3210_IYSTCADI",
+      "topic": 89271,
+      "post": 664,
+      "user": "MBrandt"
+    },
+    {
+      "mfr": "_TZE200_3TOWULQD",
+      "topic": 89271,
+      "post": 663,
+      "user": "Janderek"
+    },
+    {
+      "mfr": "_TZE204_HLX9TNZB",
+      "topic": 89271,
+      "post": 661,
+      "user": "Anders_Lim"
+    },
+    {
+      "mfr": "_TZE200_3P5YDOS3",
+      "topic": 89271,
+      "post": 660,
+      "user": "Ferenc_Szasz"
+    },
+    {
+      "mfr": "_TZE204_SXM7L9XA",
+      "topic": 89271,
+      "post": 659,
+      "user": "Marcel_Visser"
+    },
+    {
+      "mfr": "_TZ3000_AMDYMR7L",
+      "topic": 89271,
+      "post": 658,
+      "user": "Bram_B"
+    },
+    {
+      "mfr": "_TZ3000_DECXRTWA",
+      "topic": 89271,
+      "post": 657,
+      "user": "Vincent_Lim"
+    },
+    {
+      "mfr": "_TZ3000_XR3HTD96",
+      "topic": 89271,
+      "post": 656,
+      "user": "Mr_D_Forrest"
+    },
+    {
+      "mfr": "_TZE204_QASJIF9E",
+      "topic": 89271,
+      "post": 654,
+      "user": "G4nd41f"
+    },
+    {
+      "mfr": "_TZ3000_WKAI4GA5",
+      "topic": 89271,
+      "post": 653,
+      "user": "Rob_G"
+    },
+    {
+      "mfr": "_TZ3000_4UPL1FCJ",
+      "topic": 89271,
+      "post": 652,
+      "user": "Bo_Kjaergaard"
+    },
+    {
+      "mfr": "_TZ3000_UPGCBODY",
+      "topic": 89271,
+      "post": 651,
+      "user": "melectro"
+    },
+    {
+      "mfr": "_TZE200_2EKUZ3DZ",
+      "topic": 89271,
+      "post": 650,
+      "user": "melectro"
+    },
+    {
+      "mfr": "_TZ3000_3DFEWSK1",
+      "topic": 89271,
+      "post": 649,
+      "user": "Roy1"
+    },
+    {
+      "mfr": "_TZ3000_WKR3JQMR",
+      "topic": 89271,
+      "post": 648,
+      "user": "Roy1"
+    },
+    {
+      "mfr": "_TZ3000_RUXEXJFZ",
+      "topic": 89271,
+      "post": 647,
+      "user": "melectro"
+    },
+    {
+      "mfr": "_TZ3000_MMKBPTMX",
+      "topic": 89271,
+      "post": 646,
+      "user": "melectro"
+    },
+    {
+      "mfr": "_TZ3000_LVHY15IX",
+      "topic": 89271,
+      "post": 645,
+      "user": "melectro"
+    },
+    {
+      "mfr": "_TZ3000_NKCOBIES",
+      "topic": 89271,
+      "post": 644,
+      "user": "Bo_Kjaergaard"
+    },
+    {
+      "mfr": "_TZ3000_EYZB8YG3",
+      "topic": 89271,
+      "post": 643,
+      "user": "Roald_Oien"
+    },
+    {
+      "mfr": "_TZE200_8YGSUHE1",
+      "topic": 89271,
+      "post": 642,
+      "user": "Yannick_Eeckelaert"
+    },
+    {
+      "mfr": "_TZ3000_QEUVNOHG",
+      "topic": 89271,
+      "post": 641,
+      "user": "Zdenek_Sadek"
+    },
+    {
+      "mfr": "_TZE284_DEBCZECI",
+      "topic": 26439,
+      "post": 5493,
+      "user": "Alejandro_Palladino"
+    },
+    {
+      "mfr": "_TZE284_NT4PQUEF",
+      "topic": 26439,
+      "post": 5491,
+      "user": "Martin_Kliment"
+    },
+    {
+      "mfr": "_TZE28C100000_RZDKN5RX",
+      "topic": 26439,
+      "post": 5484,
+      "user": "Michael_Hadjicosta"
+    },
+    {
+      "mfr": "_TZ3000_996RPFY6",
+      "topic": 26439,
+      "post": 5482,
+      "user": "John_Kijk_in_de_Vegt"
+    },
+    {
+      "mfr": "_TZE284_MYD45WEU",
+      "topic": 26439,
+      "post": 5479,
+      "user": "Remco_Ter_haar"
+    },
+    {
+      "mfr": "_TZE200_SEQ9CM6U",
+      "topic": 26439,
+      "post": 5472,
+      "user": "DaPicard"
+    },
+    {
+      "mfr": "_TZE284_MYD45WEU",
+      "topic": 26439,
+      "post": 5470,
+      "user": "Remco_Ter_haar"
+    },
+    {
+      "mfr": "_TZE204_EX3RCDHA",
+      "topic": 26439,
+      "post": 5460,
+      "user": "Riccardo_Baro"
+    },
+    {
+      "mfr": "_TZE200_JTHF7VB6",
+      "topic": 26439,
+      "post": 1636,
+      "user": "johan_bendz"
+    },
+    {
+      "mfr": "_TZ3000_I8JFIEZR",
+      "topic": 26439,
+      "post": 1,
+      "user": "johan_bendz"
+    },
+    {
+      "mfr": "_TZ3218_T9YNFZ4X",
+      "source": "forum-verify-2026-09-03"
+    },
+    {
+      "mfr": "_TZ3000_KFU8ZAPD",
+      "source": "forum-verify-2026-09-03"
+    },
+    {
+      "mfr": "_TZ3000_XABCKQ1V",
+      "source": "forum-verify-2026-09-03"
+    },
+    {
+      "mfr": "_TZ3000_XABCKQ1V",
+      "source": "forum-verify-2026-09-03"
+    },
+    {
+      "mfr": "_TZE200_NPJ9BUG3",
+      "source": "forum-verify-2026-09-03"
+    },
+    {
+      "mfr": "_TZE204_CLRDRNYA",
+      "source": "forum-verify-2026-09-03"
+    },
+    {
+      "mfr": "_TZE204_OGKDPGY2",
+      "source": "forum-verify-2026-09-03"
+    },
+    {
+      "mfr": "_TZ3218_T9YNFZ4X",
+      "source": "forum-verify-2026-09-03"
+    },
+    {
+      "mfr": "_TZ3000_LWTHNP7J",
+      "source": "forum-verify-2026-09-03"
+    },
+    {
+      "mfr": "_TZ3210_TGVTVDOC",
+      "source": "forum-verify-2026-09-03"
+    },
+    {
+      "mfr": "_TZ3000_QEUVNOHG",
+      "source": "forum-verify-2026-09-03"
+    },
+    {
+      "mfr": "_TZ3000_AMDYMR7L",
+      "source": "forum-verify-2026-09-03"
+    },
+    {
+      "mfr": "_TZ3000_NKCOBIES",
+      "source": "forum-verify-2026-09-03"
+    },
+    {
+      "mfr": "_TZ3000_QEUVNOHG",
+      "source": "forum-verify-2026-09-03"
+    }
+  ]
+}
