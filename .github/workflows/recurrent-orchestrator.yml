@@ -118,6 +118,7 @@ jobs:
         timeout-minutes: 8
         run: |
           if [ -f tools/ci/compensate-incomplete-reports.js ]; then
+            COMPENSATE_SKIP_INVESTIGATE=1 COMPENSATE_MAX_MS=45000 \
             node tools/ci/compensate-incomplete-reports.js --apply-safe --skip-investigate || echo "compensate soft warn"
           fi
           if [ -f tools/ci/auto-investigate-need-action.js ]; then

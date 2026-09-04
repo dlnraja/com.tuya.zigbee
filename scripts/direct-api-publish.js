@@ -97,7 +97,7 @@ function err(...args) { console.error('[direct-publish]', ...args); }
 
 const TRANSIENT_API_RE = /socket hang up|econnreset|econnaborted|etimedout|too many requests|\b429\b|fetch failed|network|502|503|504/i;
 
-const { softExpectDecision } = require('./lib/soft-expect-decision');
+const { softExpectDecision, findHealthyTest } = require('./lib/soft-expect-decision');
 
 async function withAthomRetry(label, fn, { maxAttempts = 5 } = {}) {
   let lastErr;
@@ -510,11 +510,19 @@ async function main() {
     });
   } catch (pollErr) {
     // If this build failed but a peer of the same version is already test, soft-exit 0.
+    // P2419/P139: also soft-exit when ANY healthy Test tip exists - Athom PF on a
+    // newer draft must not red Auto-Publish / trigger bump-loops while users keep tip.
     try {
       const afterFail = await listBuilds(api, token);
       const peer = softExpectDecision(afterFail, APP_VERSION, { force, excludeBuildId: buildId });
       if (peer.skip && (peer.reason === 'already-test' || peer.reason === 'peer-test-after-failed')) {
-        log(`SOFT-EXPECT: build #${buildId} failed but peer #${peer.build?.id} already on test — exit 0.`);
+        log(`SOFT-EXPECT: build #${buildId} failed but peer #${peer.build?.id} already on test - exit 0.`);
+        return;
+      }
+      const healthyTip = findHealthyTest(afterFail);
+      const msg = String(pollErr?.message || pollErr || '');
+      if (!force && healthyTip && /processing_failed|Timed out waiting/i.test(msg)) {
+        log(`SOFT-EXPECT P2419: build #${buildId} PF/timeout but healthy Test tip #${healthyTip.id} v${healthyTip.version} - exit 0 (P139 no bump-loop).`);
         return;
       }
     } catch (_e) { /* fall through */ }

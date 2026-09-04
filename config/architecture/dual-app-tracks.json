@@ -201,6 +201,14 @@
     "p2416_ci_dashboard_p139_soft": {
       "tag": "BOTH",
       "note": "Bare-timer docs on WiFi pairing; wait-athom soft-expect P139; diagnostics dashboard empty shell for Pages/e2e"
+    },
+    "p2418_compensate_incomplete_crons": {
+      "tag": "BOTH",
+      "note": "Soft-hypothesis compensate for MISSING_PID; wired into forum-poll / auto-enrich / l99-inbox / recurrent / fetch-diags crons"
+    },
+    "p2419_job_hangproof_soft_expect": {
+      "tag": "BOTH",
+      "note": "Compensate hang-proof + Version Health tipHealthy + direct-publish soft-exit on PF when Test tip healthy; fleet soft anti-bot; self-improve soft test gate"
     }
   },
   "ci": {

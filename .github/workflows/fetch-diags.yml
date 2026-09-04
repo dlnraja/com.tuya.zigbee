@@ -314,6 +314,7 @@ jobs:
             node tools/ci/forum-actionable-processor.js --no-chain || echo "forum actionable processor warn (non-blocking)"
           fi
           if [ -f tools/ci/compensate-incomplete-reports.js ]; then
+            COMPENSATE_SKIP_INVESTIGATE=1 COMPENSATE_MAX_MS=45000 \
             node tools/ci/compensate-incomplete-reports.js --apply-safe --skip-investigate || echo "compensate soft warn"
           fi
           node .github/scripts/privacy-redactor.js \
