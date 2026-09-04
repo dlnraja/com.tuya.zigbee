@@ -33,7 +33,7 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 
 | Metric | Value |
 |--------|-------|
-| **App Version** | v9.0.818 |
+| **App Version** | v9.0.820 |
 | **Drivers** | 431 (381 Zigbee + 50 WiFi) |
 | **Unique Fingerprints** | 4,395 |
 | **Pairing Variants** | 16,190 (4 case combos per fingerprint) |
@@ -102,7 +102,9 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 
 | Version | Changes |
 |---------|---------|
-| **v9.0.818** | CI hang-proof compensate + Athom processing_failed soft-expect when Test tip healthy. Soil sensor pairing clusters aligned for HOBEIAN in… |
+| **v9.0.820** | Fixed mains mmWave radar phantom battery warning after app updates; radar settings DPs no longer misread as humidity. |
+| **v9.0.819** | Fixed mains mmWave radar phantom battery warning after app updates; radar settings DPs no longer misread as humidity. |
+| **v9.0.818** | Fixed mains mmWave radar phantom battery warning after app updates; radar settings DPs no longer misread as humidity. |
 | **v9.0.817** | CI hang-proof compensate + Athom processing_failed soft-expect when Test tip healthy. Soil sensor pairing clusters aligned for HOBEIAN in… |
 | **v9.0.816** | Compensate incomplete forum/gmail (soft MISSING_PID). |
 | **v9.0.815** | Compensate incomplete forum/gmail (soft MISSING_PID); enrich poll/enrich/l99/recurrent/fetch-diags crons. |
@@ -112,8 +114,6 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 | **v9.0.811** | PIR/multi-cap enrich: ZG-204ZV TZE200→presence, strip motion cartesian ZG-204, ZS-301Z soil lock, radar config clean. |
 | **v9.0.810** | PIR/multi-cap enrich: ZG-204ZV TZE200→presence, strip motion cartesian ZG-204, ZS-301Z soil lock, radar config clean. |
 | **v9.0.809** | Moes ZTS curtain dual TX + invert (#533), presence radar DP2 humidity invent skip, SafeCapability CI harden, WiFi max LAN discovery/auth. |
-| **v9.0.808** | Moes ZTS curtain dual TX + invert (#533), presence radar DP2 humidity invent skip, SafeCapability CI harden, WiFi max LAN discovery/auth. |
-| **v9.0.807** | Improved cover idle-stop guard and WiFi local discovery harden. |
 
 <!-- CHANGELOG_END -->
 
