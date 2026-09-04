@@ -33,10 +33,10 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 
 | Metric | Value |
 |--------|-------|
-| **App Version** | v9.0.816 |
+| **App Version** | v9.0.818 |
 | **Drivers** | 431 (381 Zigbee + 50 WiFi) |
 | **Unique Fingerprints** | 4,395 |
-| **Pairing Variants** | 16,188 (4 case combos per fingerprint) |
+| **Pairing Variants** | 16,190 (4 case combos per fingerprint) |
 | **Unique Product IDs** | 576 |
 | **Flow Cards** | 5,950 |
 | **Unique Capabilities** | 170 |
@@ -102,7 +102,9 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 
 | Version | Changes |
 |---------|---------|
-| **v9.0.816** | Compensate incomplete forum/. |
+| **v9.0.818** | CI hang-proof compensate + Athom processing_failed soft-expect when Test tip healthy. Soil sensor pairing clusters aligned for HOBEIAN in… |
+| **v9.0.817** | CI hang-proof compensate + Athom processing_failed soft-expect when Test tip healthy. Soil sensor pairing clusters aligned for HOBEIAN in… |
+| **v9.0.816** | Compensate incomplete forum/gmail (soft MISSING_PID). |
 | **v9.0.815** | Compensate incomplete forum/gmail (soft MISSING_PID); enrich poll/enrich/l99/recurrent/fetch-diags crons. |
 | **v9.0.814** | Homey diag dashboard Athom tip panel; clear FP collisions (iwtv2jwo/sj7jbgks/ttkgurpb); foreign-driver signal. |
 | **v9.0.813** | Homey diag dashboard Athom tip panel; clear FP collisions (iwtv2jwo/sj7jbgks/ttkgurpb); foreign-driver signal. |
@@ -112,8 +114,6 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 | **v9.0.809** | Moes ZTS curtain dual TX + invert (#533), presence radar DP2 humidity invent skip, SafeCapability CI harden, WiFi max LAN discovery/auth. |
 | **v9.0.808** | Moes ZTS curtain dual TX + invert (#533), presence radar DP2 humidity invent skip, SafeCapability CI harden, WiFi max LAN discovery/auth. |
 | **v9.0.807** | Improved cover idle-stop guard and WiFi local discovery harden. |
-| **v9.0.806** | Fixed Moes curtain wall switch stopping too early after open/close from Homey UI. |
-| **v9.0.805** | Fixed Moes curtain wall switch stopping too early after open/close from Homey UI. |
 
 <!-- CHANGELOG_END -->
 
