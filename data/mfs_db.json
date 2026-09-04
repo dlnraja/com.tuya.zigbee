@@ -91,7 +91,7 @@
       "realMfrsAdded": 5,
       "details": "tmp/synthetic-resolution.json + tmp/pruned21-resolution.json"
     },
-    "lastAlignedAt": "2026-09-04T09:12:38.625Z",
+    "lastAlignedAt": "2026-09-04T22:48:43.919Z",
     "alignTool": "align-mfs-db-intelligent@P169",
     "lastSyncedFromCompose": "2026-09-01T07:55:33.978Z",
     "syncComposeTool": "sync-compose-to-mfs-db@P2368"
@@ -144749,8 +144749,8 @@
     "modelIdsCount": 104
   },
   "_TZ3000_sj7jbgks": {
-    "driverId": "button_wireless_2",
-    "source": "auto-sync",
+    "driverId": "button_wireless_3",
+    "source": "compose-exclusive",
     "modelIds": [
       "01MINIZB",
       "A11Z",
@@ -225500,8 +225500,8 @@
     "modelIdsCount": 37
   },
   "_TZ3000_IWTV2JWO": {
-    "driverId": "switch_1gang",
-    "source": "auto-sync",
+    "driverId": "switch_2gang",
+    "source": "compose-exclusive",
     "modelIds": [
       "01MINIZB",
       "BASICZBR3",
