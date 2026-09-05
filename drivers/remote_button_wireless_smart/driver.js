@@ -15,11 +15,11 @@ class Button1GangDriver extends ZigBeeDriver {
 
   async onInit() {
     await super.onInit();
-    if (this._flowCardsRegistered) return;
+    if (this._flowCardsRegistered) {return;}
     this._flowCardsRegistered = true;
 
     this.log('Remote smart button driver initialized');
-    registerButtonFlowCards(this, 'remote_button_wireless_smart_button_wireless_1', 1);
+    registerButtonFlowCards(this, 'remote_button_wireless_smart', 1);
   }
 }
 

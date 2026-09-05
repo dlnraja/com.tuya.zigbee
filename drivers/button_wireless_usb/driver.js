@@ -20,21 +20,15 @@ class USBHubDualDriver extends ZigBeeDriver {
     }
   async onInit() {
     await super.onInit();
-    if (this._flowCardsRegistered) return;
+    if (this._flowCardsRegistered) {return;}
     this._flowCardsRegistered = true;
 
-    
-    if (this._flowCardsRegistered) return;
-    this._flowCardsRegistered = true;
-
-     // v5.5.534: SDK3 CRITICAL
+    // v5.5.534: SDK3 CRITICAL
     this.log('USB Hub Dual Driver v5.5.534 initialized');
-    // v5.13.3: Flow card handlers
-    const r=(i,fn)=>{
-    r('usb_dongle_dual_repeater_turn_on',async({device})=>{await device['setCapabilityValue']('onoff',true);return true;});
-    r('usb_dongle_dual_repeater_turn_off',async({device})=>{await device['setCapabilityValue']('onoff',false);return true;});
-    r('usb_dongle_dual_repeater_toggle',async({device})=>{const v=device.getCapabilityValue('onoff');await device['setCapabilityValue']('onoff',!v);return true;});
-    }
-}
+
+    // v9.0.378: button flow cards (gate button-flow-routing)
+    const { registerButtonFlowCards } = require('../../lib/FlowCardHelper');
+    registerButtonFlowCards(this, 'button_wireless_usb', 1);
+  }
 }
 module.exports = USBHubDualDriver;

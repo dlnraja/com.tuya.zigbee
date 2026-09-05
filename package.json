@@ -57,6 +57,7 @@
     "check:health": "node scripts/validation/check-driver-health.js",
     "check:wifi": "node scripts/validation/check-wifi-lifecycle.js",
     "check:mixin": "node scripts/validation/check-mixin-order.js",
+    "check:voice": "node scripts/validation/check-google-assistant-voice-safety.js",
     "check:all": "npm run check && npm run check:athom && npm run check:voice",
     "titan": "node scripts/ci/titan-pre-commit.js",
     "titan:json": "node scripts/ci/titan-pre-commit.js --json",

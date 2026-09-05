@@ -6,7 +6,7 @@ const { registerButtonFlowCards } = require('../../lib/FlowCardHelper');
 class SmartRemote1ButtonDriver extends Driver {
   async onInit() {
     this.log('smart_remote_1_button driver init');
-    registerButtonFlowCards(this, 'smart_remote_1_button', 1);
+    registerButtonFlowCards(this, 'smart_remote_1', 1);
   }
 }
 

@@ -23,7 +23,7 @@
         "fr": "Bouton 1"
       },
       "getable": false,
-      "setable": true,
+      "setable": false,
       "maintenanceAction": true
     },
     "button.2": {
@@ -32,7 +32,7 @@
         "fr": "Bouton 2"
       },
       "getable": false,
-      "setable": true,
+      "setable": false,
       "maintenanceAction": true
     },
     "measure_battery": {

@@ -145,10 +145,8 @@ function validateKnownTs0041Routing() {
     '_tz3000_yj6k7vfo',
     '_TZ3000_yj6k7vfo',
     '_TZ3000_YJ6K7VFO',
-    '_tz3000_b4awzgct',
-    '_TZ3000_b4awzgct',
-    '_TZ3000_B4AWZGCT',
   ];
+  // WHY P2285: _TZ3000_b4awzgct|+TS0041 is SH-SC07 1-button sibling → button_wireless_1 only.
 
   if (!fourButtonProducts.has('TS0041')) {
     addError('button_wireless_4_ts0041', 'Known 4-endpoint TS0041 wrapper lost productId TS0041');

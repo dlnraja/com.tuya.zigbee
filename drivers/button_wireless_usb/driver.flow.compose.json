@@ -55,39 +55,39 @@
       }
     },
     {
-      "id": "button_wireless_usb_dongle_dual_repeater_turned_off",
+      "id": "button_wireless_usb_dongle_dual_repeater_tur_67093",
       "title": {
         "en": "Turned off",
-        "fr": "Ã‰teint",
+        "fr": "Éteint",
         "nl": "Uitgezet",
         "de": "Ausgeschaltet"
       },
       "args": [],
       "titleFormatted": {
         "en": "Turned off",
-        "fr": "Ã‰teint",
+        "fr": "Éteint",
         "nl": "Uitgezet",
         "de": "Ausgeschaltet"
       }
     },
     {
-      "id": "button_wireless_usb_dongle_dual_repeater_power_changed",
+      "id": "button_wireless_usb_dongle_dual_repeater_pow_4d1a5",
       "title": {
         "en": "Power changed",
         "fr": "Puissance changée",
         "nl": "Vermogen gewijzigd",
-        "de": "Leistung geÃ¤ndert"
+        "de": "Leistung geändert"
       },
       "args": [],
       "titleFormatted": {
         "en": "Power changed",
         "fr": "Puissance changée",
         "nl": "Vermogen gewijzigd",
-        "de": "Leistung geÃ¤ndert"
+        "de": "Leistung geändert"
       }
     },
     {
-      "id": "button_wireless_usb_button_1gang_button_scene_recall",
+      "id": "button_wireless_usb_button_1gang_button_scen_1252c",
       "title": {
         "en": "Button 1 scene recalled",
         "fr": "Bouton 1 scène rappelée",
@@ -119,6 +119,29 @@
         "fr": "Bouton 1 scène [[scene_id]] rappelée ({scene_id})",
         "nl": "Knop 1 scène [[scène_id]] opgeroepen ({scene_id})",
         "de": "Taste 1 Szene [[Szene_id]] aufgerufen ({scene_id})"
+      }
+    },
+    {
+      "id": "button_wireless_usb_measure_power_changed",
+      "title": {
+        "en": "Power changed",
+        "fr": "Puissance changée"
+      },
+      "tokens": [
+        {
+          "name": "power",
+          "type": "number",
+          "title": {
+            "en": "Power (W)",
+            "fr": "Puissance (W)"
+          },
+          "example": 42
+        }
+      ],
+      "args": [],
+      "titleFormatted": {
+        "en": "Power changed to {power} W",
+        "fr": "Puissance {power} W"
       }
     },
     {
