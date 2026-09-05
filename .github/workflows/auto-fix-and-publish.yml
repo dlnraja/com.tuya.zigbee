@@ -30,7 +30,7 @@ env:
   # while Athom still accepts the tarball. prepare-publish.js default is 50.
   HOMEY_PUBLISH_MAX_UNCOMPRESSED_MB: "50"
   HOMEY_PUBLISH_SOURCE_MAX_MB: "50"
-  HOMEY_ZIGBEE_MAX_TOTAL_COMBOS: "20000"
+  HOMEY_ZIGBEE_MAX_TOTAL_COMBOS: "17000"
   HOMEY_ZIGBEE_MAX_DRIVER_COMBOS: "2000"
 
 concurrency:
@@ -298,7 +298,7 @@ jobs:
           # P138: Match workflow-level 50 MB (prepared dir ~37 MB uncompressed).
           HOMEY_PUBLISH_MAX_UNCOMPRESSED_MB: "50"
           HOMEY_PUBLISH_SOURCE_MAX_MB: "50"
-          HOMEY_ZIGBEE_MAX_TOTAL_COMBOS: "20000"
+          HOMEY_ZIGBEE_MAX_TOTAL_COMBOS: "17000"
           HOMEY_ZIGBEE_MAX_DRIVER_COMBOS: "2000"
         run: |
           # v9.0.255 (P62.2): Also export in the shell because npm subshells
