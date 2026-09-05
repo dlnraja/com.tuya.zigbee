@@ -1440,5 +1440,8 @@
   },
   "5.12.132": {
     "en": "Fixed mains mmWave radar phantom battery warning after app updates; radar settings DPs no longer misread as humidity."
+  },
+  "5.12.133": {
+    "en": "HOBEIAN sensors: corrected mmWave DP maps and locked motion-sensing switches; fixed wrong climate/vibration pairing."
   }
 }

@@ -19,6 +19,49 @@ Generated 2026-08-19T08:50:15.322Z from registry (54 cases) × compound DB (209 
 
 ## Gaps
 
+### `p2354-forum-inspiration-ts004f-event` → remotes / CI
+
+- **Threads:** T150690 Steampunk (`_TZ3000_xabckq1v`+TS004F), T156967 Manfred (`kalzta4` typo), T140352 meter91/PresentSky/VicHY/Cam (tip lag)
+- **Inspiration:** Z2M Moes TS004F_1 requires `operation_mode=event` for multi-click; Homesuite/Gabriel soft-fail settings; Primordial DIY 0xFD on TS0044
+- **Bug:** `xabckq1v` was in DeviceOperatingMode TS0044 skip-0x8004 list → never forced event mode
+- **Fix:** force `ts004f` + writeSceneAttr for `xabckq1v`; forum processor typo `kalzta4`→`kaflzta4` → `smart_knob`+TS004F; sacred-keep pin
+- **Against:** treating real TS004F like 4-EP TS0044; inventing pid for Manfred without couple
+
+### `p2351-foreign-driver-id-serializer` → runtime (all drivers)
+
+- Symptom: App crash `Invalid Driver ID: ZG9101SAC_HP` (Philips Hue ID) during HomeySerializer flow parse
+- Seen: Gmail crashes on **v9.0.730** and **v9.0.743** (build #3046 / #3059)
+- Stack: `_getDriverManifest` → `getDriver` → SDK.fromJSON → HomeySerializer
+- Fix: `lib/utils/safe-get-driver-patch.js` (P2306 hardened) — soft-fail foreign IDs; re-bind on live `homey.drivers` in `App.onInit`
+- Against: treating Hue/virtual IDs as Tuya drivers; crashing whole app for one bad flow token
+
+### `p2351-cartesian-registry-refuse` → gang switches
+
+- Bad case: `p2347-gabriel-zemismart-verified-only` listed OVYAISIP/YWUBFUVT/… + TS0001+2+3 on `wall_switch_1gang_1way`
+- Effect: `align-mfs-db-intelligent --check` tried to merge 2gang/3gang onto 1gang (CI red)
+- Fix: doc-only enrichOnly case + align skip/refuse Cartesian multi-mfr×multi-gang-pid
+- Real locks remain per couple (TB25-1 / NovaDigital 2g / 3g)
+
+### `p2353-flow-button-triggers` → remotes / scene_switch_4
+
+- Symptom: PhysicalButtonMixin candidates for `scene_switch_4` skipped `*_button_4gang_button_N_*` declared cards when treated as “scene_switch 1gang branch”
+- Fix: emit both `*_button_N_*` and `*_button_Ngang_button_N_*`; never invent `*_button_N_button_pressed`
+- Sacred-keep: `wkai4ga5`+TS0044 scene_switch_4; `dfgbtub0`+TS0044 bw4 / +TS0042 bw2
+- Do **not** lock `wkai4ga5`+TS0042 without interview (forum soft only)
+
+### `p2348-salvagr-5slehgeo-curtain` → `curtain_motor`
+
+- Couple: `_TZE204_5slehgeo` + TS0601 (siblings `_TZE284_` / `_TZE200_5slehgeo`, also `_TZE200_nhyj64w2` / `_TZE200_127x7wnl`)
+- Retail: Moes ZTS-EUR-C (GitHub #533 Salvagr)
+- Protocol: EF00 interview clusters `[0,4,5,61184]` — not OnOff/WindowCovering
+- Diag: `724d4bc9` on 9.0.741 — Unknown Device (no driver init; pairing miss)
+- Root cause: publish compact lowercased sacred-keep pins → kept `_TZE204_5SLEHGEO` / `_tze204_5slehgeo` but dropped exact `_TZE204_5slehgeo` (Homey case-sensitive)
+- Fix: preserve exact `pin.mfr` in compact + sacred-keep pins; trim absurd curtain productIds
+- **P2356 (2026-08-31):** post-pair diag `05867379` — position RX + DP3/7/8/10 settings + strip `button.1` (UI errors); `_handleTuyaDP` → `_handleDP`
+- **P2388 (2026-09-02):** diag `05867379-dabd-4299-bb1a-cad53fa57189` @ **9.0.750** — couple **ABSENT**; timeout + hybrid RX none + EF00 manager missing at init. P2363 optimistic cover + soft-create shipped; **NEED_INTERVIEW** (mfr+pid + `[COVER-INIT]` lines). Cross-ref Z2M TS0601_cover siblings in `reports/couple-absent-search/05867379.json` — never lock #533 TRV couple without log proof.
+- **P2363 (2026-09-01):** same diag still **couple ABSENT** (hybrid RX none) — do not invent mfr+pid. Soft-create `TuyaEF00Manager` on `UnifiedCoverBase`, optimistic `windowcoverings_*` after successful TX, skip hybrid protocol-disable for cover/curtain drivers. Added verified Z2M cover motors (`mfr`+`TS0601` only); stripped tilt `_TZE204_r0jdjrvi` from `curtain_motor`.
+- **P2380 (2026-09-02):** diag `ab5aaf04` @ 9.0.775 “Cover stop working” — `UniversalDPSender._try` treated `sendDP()===false` as success (`✅DP mgr` while stderr `Tuya cluster not available`). Fix: honor false + multi-EP EF00 scan + ZCL windowCovering fallback on cover TX.
+- **P2393 (2026-09-02):** diags `ab5aaf04` + `a9e4d712` @ 9.0.775/784 — TX `✅` but cover dead: Homey UI sends `down` then `idle` ~1s later (momentary release) → DP1 STOP cancels travel. Fix: motion guard skips idle for 5s (Moes ZTS) / 2.5s (other EF00 covers); do not snap position to 0/1 on state TX.
 
 ## Cases (1 by 1)
 
@@ -42,8 +85,8 @@ Generated 2026-08-19T08:50:15.322Z from registry (54 cases) × compound DB (209 
 - Compound `_TZE204_m1cvyneb|TS0601`: tuya_dp DP {"1":"onoff","2":"dim/1000"}
 - Compound `_TZE200_m1cvyneb|TS0601`: tuya_dp DP {"1":"onoff","2":"dim/1000"}
 - Compose: class=light eps=1 EF00=true IAS=false batteries=mains?
-- Notes: BSEED Click 1-gang EF00 dimmer insert. MCU brightness 0-1000 (never write >1000, Z2M#32305). Stale climate pairing cannot be swapped at runtime — remove and re-add as wall dimmer. Couple is TS0601 only; do not invent TS0201.
-- Sources: forum-140352, diag-f20dc4f0, P139, P149, z2m#32305
+- Notes: BSEED Click 1-gang EF00 dimmer insert. MCU brightness 0-1000 (never write >1000, Z2M#32305). Stale climate pairing cannot be swapped at runtime — remove and re-add as wall dimmer. Couple is TS0601 only; do not invent TS0201. Interview EP1 clusters: 0/4/5/0xEF00 + proprietary **0xED00 (60672)** — do not compose 0xED00. **#2221** (2026-09-01) claims “updated diagnostic ID and interview” but the post body has **no UUID / no interview** (reply_to #2206 only). Evidence remains `60959c24` @ **9.0.688**: DynCap DP2→humidity + Missing IEEE 404 TX (P2314/P2333); tip ≥9.0.744+ heal/dp map; **P2382** skip HYBRID 15-min disable on EF00 dimmers.
+- Sources: forum-140352 #2206/#2221, diag-60959c24, diag-f20dc4f0, P139, P149, P2314, P2333, P2382, z2m#32305
 
 ### `tboy-relay-4ch-imaccztn` → `relay_board_4_channel`
 
@@ -95,6 +138,12 @@ Generated 2026-08-19T08:50:15.322Z from registry (54 cases) × compound DB (209 
 - Notes: ZT08 weather — unix_1970 time sync + DP17 commit (GH #513).
 - Sources: forum-140352, github#513, P140
 
+### `motion-tz3000-uw3dadam` → `motion_sensor`
+
+- Couple: `_TZ3000_uw3dadam` + `TS0202`
+- Protocol: IAS Zone (deCONZ DDF #8503 / Z2S IAS)
+- **P2402 (Gmail unmatched FP):** lock `motion_sensor` only — never climate/radar/soil. Re-pair after Test update if tile missing.
+
 ### `presence-radar-clrdrnya` → `presence_sensor_radar`
 
 - Couple: `_TZE204_clrdrnya` + TS0601
@@ -103,8 +152,44 @@ Generated 2026-08-19T08:50:15.322Z from registry (54 cases) × compound DB (209 
 - Compound `_TZE204_clrdrnya|TS0601`: tuya_dp  MTG235-ZB-RL mmWave+relay (sbyx0lm6 family). Never climate/motion_pir. Z2M#18677 GH#420
 - Compound `_TZE284_clrdrnya|TS0601`: tuya_dp  TZE284 sibling of clrdrnya radar; same TS0601 couple only
 - Compound `_TZE200_clrdrnya|TS0601`: tuya_dp  TZE200 sibling; Z2M discussion#25712 lost-support reminder — keep compound lock
-- **P2420 (VicHY #2227 diag `c5165a37`):** After tip update, curtain UI again (delete+re-pair works); flood gone; **battery warning still**. Root: (1) `setEnergy({})` only ran when `getEnergy().batteries` non-empty; (2) DP2 `cap:null`+`setting` fell through generic DP2→humidity SmartDivisor. Fix: always clear Energy on mains; re-heal at 2s/5s; EF00 treats `setting`/`cap:null` as owned. User: update Test + **restart app** (re-pair only if still curtain).
 - **P2340 (diag 4217d5e3 / VicHY):** publish compact dropped `_TZE204_clrdrnya` from app.json — sacred-keep + force-inject restores mfr; user on **9.0.719** must update Test ≥9.0.739 + re-pair `presence_sensor_radar`.
+- **Search UX:** Users typing “PIR mmWave” often pick `pir_mmwave_sensor` (`_TZ3000_3towulqd` only). MTG235/clrdrnya must use **Presence Sensor (Radar / mmWave)** tile.
+- **P2379 (VicHY):** DynCap invented `windowcoverings_set` from DP2/3/102 (sensitivity/range/departure_delay) → Homey UI showed **curtain + opening slider**; DP102→`alarm_motion` stuck presence true. Fix: disable DynCap invent on presence radars + heal phantom caps.
+- **P2386 (VicHY #2222):** Recurring after app updates — store DynCap restore re-applied blind UI. Fix: clear store when DynCap disabled; delayed re-heal 15s/60s/180s; restore `sensor` class if drifted to windowcoverings; heal on settings. Diag `4217d5e3`. User: update Test ≥ tip + restart app (re-pair only if still curtain).
+- **P2389 (VicHY flood alert ~196 msg/min):** Tuya mmWave firmware spam (Z2M#14742) — cannot stop airtime. Fix: `radar` RX budget 250/min; no Homey timeline alert for presence radars; MTG075/clrdrnya `floodCalm` coalesces DP9 distance (2.5s/0.15m) + DP104 lux (5s/2lx); presence DP1 stays immediate.
+- **P2391 (VicHY #2224 diag `0e28d470` @ 9.0.781):** Interview locks `_TZE204_clrdrnya`+TS0601. Timeline low-battery on mains MTG = compose `energy.batteries` + possible DEFAULT/HOBEIAN config cache before mfr resolves. Fix: upgrade radar config when mfr arrives; heal strips `measure_battery`/`alarm_battery`; `setEnergy({})` clears Homey Energy batteries; block `tuya_dp_value` DIY cap recursion.
+- **P2401 (VicHY #2226 ack / update race):** Homey flood + low-battery timeline after update can fire while `driver.id` still empty. `isRadarFloodContext` + `_isRadarFloodCalmDevice` match clrdrnya mfr / `measure_luminance.distance` / `floodCalm` so tip ≥9.0.802 stays quiet without waiting for driver id.
+- **P2420 (VicHY #2227 diag `c5165a37` @ 9.0.797):** After tip update, curtain UI again (delete+re-pair works); flood gone; **battery warning still**. Root: (1) `setEnergy({})` only ran when `getEnergy().batteries` non-empty — Homey kept Energy icon from compose; (2) DP2 `cap:null`+`setting` fell through generic DP2→humidity SmartDivisor. Fix: always clear Energy on mains; re-heal at 2s/5s; EF00 treats `setting`/`cap:null` as owned. User: update Test ≥ tip + **restart app** (re-pair only if still curtain).
+- **P2421 (HOBEIAN Z2M internet enrich):** Canonical herdsman DPs for ZG-204ZM (DP2 static sens, DP4 static dist/100 — drop invented large/small/micro map). New configs ZG-204ZH (`vuqzj1ej`/`hdih4foa`), ZG-302ZM/ZL sensing-switch (moved off vibration + climate cartesian). Strip ZG-204*/302* from `power_clamp_meter` / `motion_sensor`. Re-pair if previously matched climate/vibration/clamp.
+- **P2392 (fleet firmware compensate):** Root cause of `tuya_dp_value` P2308 spam — `TuyaUniversalBridge` added DIY caps on **every** device. Fix: DIY caps only on universal/DIY drivers; `_updateCapability` gated on `hasCapability`; `FirmwareQuirkCompensator` strips DIY + mains battery fleet-wide via HomeyGapCompensator; `safeSetCapabilityValue` refuses ghost caps.
+
+### `hobeian-zg204zh` / `hobeian-zg302z*` (P2421)
+
+- Couples (Z2M only — never invent pid):
+  - `_TZE200_vuqzj1ej` / `_TZE200_hdih4foa` + `TS0601` / `ZG-204ZH` → `presence_sensor_radar` (temp+humid+lux+presence)
+  - `_TZE200_2aaelwxk` / `kb5noeto` / `tyffvoij` / `yflzeeqj` + `TS0601` / `ZG-204ZM` → `presence_sensor_radar`
+  - `_TZE200_kccdzaeo` (+ s7rsrtbg/tmszbtzq/bfmfhxra/ahpcyzth/kijxnb8q) + `TS0601` / `ZG-302ZM` → sensing switch (presence + onoff)
+  - `_TZE200_khzbklyh` (+ df04ghrb/toeldckg/cqtamhh5/xlnzk169/llvwkkde) + `TS0601` / `ZG-302ZL` → sensing switch (DP101 presence)
+- Forbid: `climate_sensor`, `vibration_sensor`, `power_clamp_meter`, `motion_sensor`
+- Clusters: EF00 (0xEF00) + optional ZCL illuminance on ZG-204ZM
+
+### `valve-dual-fhvpaltk` → `valve_dual_irrigation`
+
+- Couple: `_TZE284_fhvpaltk` + `TS0601` (sibling `_TZE284_eaet5qt5`)
+- Insoma 2-way irrigation — `onoff.valve_1` / `onoff.valve_2`
+- **Joep #2218:** “repair” on an **unknown** device does not re-run driver matching → remove + re-pair under **Smart 2-Way Irrigation Valve**
+- Not GIEX `_TZE284_8zizsafo` (that is `valve_irrigation` 4-zone)
+
+### `button-wireless-1-mrpevh8p` → `button_wireless_1` (P2378)
+
+- Couple: `_TZ3000_mrpevh8p` + `TS0041` (SH-SC07)
+- **P2378 (Peter diag `cfbf687f` @ 9.0.779):** 0xFD RX + `button_matrix` OK, but Homey Flows on `*_button_1gang_*` never fired — `triggerButtonPress` gated Ngang cards behind `gangCount > 1`
+- **P2381/P2387 (Peter #2203):** Flow fix ≥9.0.782 + button `wrapHandleFrame` SSOT ≥9.0.790; couple still **ABSENT** in posts — NEED_INTERVIEW (press during pair; zb_manufacturer_name + zb_model_id)
+- **P2381 (same diag, tip-lag):** even after P2378, driver.compose cards were stripped from `app.json` (P2376 dedupe) so `collectDeclaredFlowIds` / `_tryCard` refused them — only app-level `button_matrix` ran. Fix: merge `driver.manifest.flow` (+ getDrivers) into declared set; allow driver-scoped getDeviceTriggerCard.
+- Fix BOTH: always try `*_button_1gang_*` + `buildPhysicalFlowCandidates`; late identity overrides for profile
+
+### `presence-radar-cam-zg204zl` / Cam HOBEIAN
+
 - **P2340 (forum Cam / HOBEIAN ZG-204ZL):** compact dropped `HOBEIAN` mfr while pid `ZG-204ZL` remained — sacred-keep pins couple; motion flows need update + re-pair on `presence_sensor_radar`.
 - Compose: class=sensor eps=1 EF00=true IAS=false batteries=CR2032/CR2450/AAA/AA/CR123A/INTERNAL
 - Notes: MTG235-ZB-RL mmWave + relay — presence_sensor_radar only (GH#420, Z2M#18677 sbyx0lm6 family). Mains. Never climate or PIR motion.
@@ -682,6 +767,7 @@ Regenerate: `node tools/ci/investigate-device-peculiarities.js`
 - P2289: mfr-only detect when Homey settings omit pid; P2298 onSettings never throws to UI
 - Stable: P2343 backport LinptechES1Profile + full device.js (was EF00 DP9 stub — broken settings path)
 - User: update Test ≥9.0.738 + re-pair; use Linptech-specific settings group
+- **P2388:** A_Tas forum posts mfr-only — Z2M/GitHub lock `_TZ3218_t9ynfz4x`+**TS0225** separately; live interview must confirm 0xE002 cluster 57346 before treating as closed
 
 ### `gabriel-zemismart-bulk-2173` (forum #2173 / #2186 / lwthnp7j)
 

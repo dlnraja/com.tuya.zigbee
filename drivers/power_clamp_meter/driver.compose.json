@@ -105,6 +105,42 @@
         "en": "Current transformer ratio (e.g. 100:1 = 100)",
         "fr": "Ratio du transformateur de courant"
       }
+    },
+    {
+      "id": "power_scale",
+      "type": "dropdown",
+      "label": {
+        "en": "Power Measurement Scale",
+        "fr": "Échelle de puissance"
+      },
+      "value": "1",
+      "values": [
+        {
+          "id": "0.1",
+          "label": {
+            "en": "÷10",
+            "fr": "÷10"
+          }
+        },
+        {
+          "id": "1",
+          "label": {
+            "en": "×1 (Default)",
+            "fr": "×1 (défaut)"
+          }
+        },
+        {
+          "id": "10",
+          "label": {
+            "en": "×10",
+            "fr": "×10"
+          }
+        }
+      ],
+      "hint": {
+        "en": "Use if W/kWh readings are 10× too high or low.",
+        "fr": "Si W/kWh sont ×10 trop hauts ou bas."
+      }
     }
   ],
   "zigbee": {
@@ -112,14 +148,39 @@
       "_tze200_sur36rju",
       "_tze204_sur36rju",
       "_TZE200_81yrt3lo",
+      "_TZE204_81YRT3LO",
+      "_TZE204_81yrt3lo",
+      "_tze204_81yrt3lo",
+      "_TZE284_81YRT3LO",
+      "_TZE284_81yrt3lo",
+      "_tze284_81yrt3lo",
       "_TZE200_SUR36RJU",
       "_TZE204_SUR36RJU",
       "_TZE200_81YRT3LO",
       "_tze200_81yrt3lo",
       "_TZE200_sur36rju",
-      "_TZE204_sur36rju"
+      "_TZE204_sur36rju",
+      "_tze200_SUR36RJU",
+      "_tze204_SUR36RJU",
+      "_tze200_81YRT3LO",
+      "_tze204_81YRT3LO",
+      "_tze284_81YRT3LO",
+      "_TZE28C1000000_81yrt3lo",
+      "_tze28c1000000_81yrt3lo",
+      "_TZE28C1000000_81YRT3LO",
+      "_tze28c1000000_81YRT3LO",
+      "_TZE204_cjbofhxw",
+      "_tze204_cjbofhxw",
+      "_TZE204_CJBOFHXW",
+      "_TZE284_cjbofhxw",
+      "_tze284_cjbofhxw",
+      "_TZE284_CJBOFHXW",
+      "_TZE200_cjbofhxw",
+      "_tze200_cjbofhxw",
+      "_TZE200_CJBOFHXW"
     ],
     "productId": [
+      "TS0601",
       "CK-BL702-MWS-01",
       "CK-BL702-MWS-01(7016)",
       "MG1_5RZ",
@@ -127,20 +188,8 @@
       "TS0004",
       "TS0203",
       "TS0225",
-      "TS0601",
       "TS0601_clamp",
       "TS110E",
-      "ZG-204ZE",
-      "ZG-204ZH",
-      "ZG-204ZK",
-      "ZG-204ZL",
-      "ZG-204ZM",
-      "ZG-204ZQ",
-      "ZG-204ZV",
-      "ZG-205Z",
-      "ZG-205ZL",
-      "ZG-302ZL",
-      "ZG-302ZM",
       "ZP-301Z"
     ],
     "endpoints": {
@@ -166,8 +215,7 @@
   },
   "images": {
     "small": "/drivers/power_clamp_meter/assets/images/small.png",
-    "large": "/drivers/power_clamp_meter/assets/images/large.png",
-    "xlarge": "/drivers/power_clamp_meter/assets/images/xlarge.png"
+    "large": "/drivers/power_clamp_meter/assets/images/large.png"
   },
   "platforms": [
     "local"
@@ -188,14 +236,18 @@
       "id": "tuya_revive",
       "title": {
         "en": "Tuya Revive (device recovery)",
-        "fr": "Tuya Revive (récupération appareil)"
+        "fr": "Tuya Revive (récupération appareil)",
+        "nl": "Tuya Revive (apparaatherstel)",
+        "de": "Tuya Revive (Gerätewiederherstellung)"
       }
     },
     {
       "id": "generate_issue_report",
       "title": {
         "en": "Generate support report (GitHub issue)",
-        "fr": "Générer rapport de support (issue GitHub)"
+        "fr": "Générer rapport de support (issue GitHub)",
+        "nl": "Supportrapport genereren (GitHub issue)",
+        "de": "Supportbericht erstellen (GitHub Issue)"
       }
     }
   ],

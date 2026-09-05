@@ -198,9 +198,9 @@
       "tag": "BOTH",
       "note": "ZG-204ZV TZE200 siblings → presence; strip ZG-204 cartesian from motion; ZS-301Z soil lock; clean radar configs"
     },
-    "p2416_ci_dashboard_p139_soft": {
+    "p2417_homey_diag_dashboard": {
       "tag": "BOTH",
-      "note": "Bare-timer docs on WiFi pairing; wait-athom soft-expect P139; diagnostics dashboard empty shell for Pages/e2e"
+      "note": "Diagnostics dashboard Homey Athom tip panel + mergeSignals; FP cartesian collision strip for Validate"
     },
     "p2418_compensate_incomplete_crons": {
       "tag": "BOTH",
@@ -213,6 +213,10 @@
     "p2420_vichy_2227_mains_energy_dp2": {
       "tag": "BOTH",
       "note": "VicHY #2227 clrdrnya: always setEnergy({}) on mains radar; early re-heal; EF00 owns DP2 setting (no humidity SmartDivisor)"
+    },
+    "p2421_hobeian_z2m_dp_enrich": {
+      "tag": "BOTH",
+      "note": "HOBEIAN Z2M: fix ZG-204ZM DPs; add ZH/302ZM/ZL configs; move mfrs off climate/vibration; strip clamp/motion cartesian"
     }
   },
   "ci": {

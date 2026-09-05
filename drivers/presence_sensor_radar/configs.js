@@ -315,9 +315,18 @@ const SENSOR_CONFIGS = {
     }
   },
 
-  // TYPE G: HOBEIAN_ZG204ZM (Hybrid)
+  // TYPE G: HOBEIAN_ZG204ZM (Hybrid) — Z2M herdsman tuya.ts canonical (P2421)
+  // WHY: old map invented large/small/micro DPs + used DP3 as distance; Z2M locks
+  // DP2=static_detection_sensitivity, DP4=static_detection_distance/100, DP101=motion_state.
   'HOBEIAN_ZG204ZM': {
-    sensors: ['HOBEIAN'],
+    configName: 'HOBEIAN_ZG204ZM',
+    sensors: [
+      'HOBEIAN',
+      '_TZE200_2aaelwxk', '_TZE204_2aaelwxk',
+      '_TZE200_kb5noeto', '_TZE204_kb5noeto',
+      '_TZE200_tyffvoij', '_TZE204_tyffvoij',
+      '_TZE200_yflzeeqj', '_TZE204_yflzeeqj',
+    ],
     modelId: 'ZG-204ZM',
     battery: true,
     useZcl: true,
@@ -327,35 +336,121 @@ const SENSOR_CONFIGS = {
     noTemperature: true,
     noHumidity: true,
     noIasMotion: true,
-    writableDPs: [2, 3, 4, 102, 103, 104, 105, 107, 108, 109, 110, 111, 114, 115, 116, 117, 118, 119, 120, 122, 123],
+    writableDPs: [2, 4, 102, 107, 122, 123],
     dpMap: {
       1: { cap: 'alarm_motion', type: 'presence_bool' },
+      2: { cap: null, setting: 'static_detection_sensitivity', min: 0, max: 10 },
+      4: { cap: null, setting: 'static_detection_distance', divisor: 100, min: 0, max: 6 },
       101: { cap: 'alarm_motion', type: 'motion_state_enum', enumMap: { 0: false, 1: true, 2: true, 3: true } },
-      106: { cap: 'measure_luminance', type: 'lux_direct' },
-      121: { cap: 'measure_battery', divisor: 1 },
-      2: { cap: null, setting: 'large_motion_sensitivity', min: 0, max: 10 },
-      3: { cap: 'measure_luminance.distance', smartDivisor: true },
-      4: { cap: null, setting: 'large_motion_distance', divisor: 100, min: 0, max: 10 },
       102: { cap: null, setting: 'fading_time', min: 0, max: 28800 },
-      104: { cap: null, setting: 'static_detection_distance', divisor: 100, min: 0, max: 6 },
-      105: { cap: null, setting: 'static_detection_sensitivity', min: 0, max: 10 },
+      106: { cap: 'measure_luminance', type: 'lux_direct' },
       107: { cap: null, setting: 'indicator' },
-      108: { cap: null, setting: 'small_detection_distance', divisor: 100, min: 0, max: 6 },
-      109: { cap: null, setting: 'small_detection_sensitivity', min: 0, max: 10 },
-      103: { cap: null, setting: 'motion_false_detection' },
-      110: { cap: null, setting: 'micro_minimum_distance', divisor: 100 },
-      111: { cap: null, setting: 'motionless_minimum_distance', divisor: 100 },
-      112: { cap: null, internal: 'reset_setting' },
-      113: { cap: null, setting: 'breathe_false_detection' },
-      114: { cap: null, setting: 'time' },
-      115: { cap: null, setting: 'alarm_time', min: 0, max: 28800 },
-      116: { cap: null, setting: 'alarm_volume', min: 0, max: 100 },
-      117: { cap: null, setting: 'working_mode' },
-      118: { cap: null, internal: 'auto1' },
-      119: { cap: null, internal: 'auto2' },
-      120: { cap: null, internal: 'auto3' },
+      121: { cap: 'measure_battery', divisor: 1 },
       122: { cap: null, setting: 'motion_detection_mode' },
       123: { cap: null, setting: 'motion_detection_sensitivity', min: 0, max: 10 },
+    }
+  },
+
+  // TYPE G2: HOBEIAN ZG-204ZH — presence + climate (Z2M P2421)
+  'HOBEIAN_ZG204ZH': {
+    configName: 'HOBEIAN_ZG204ZH',
+    sensors: [
+      '_TZE200_vuqzj1ej', '_TZE204_vuqzj1ej',
+      '_TZE200_hdih4foa', '_TZE204_hdih4foa',
+    ],
+    modelId: 'ZG-204ZH',
+    battery: true,
+    useTuyaDP: true,
+    hasIlluminance: true,
+    noTemperature: false,
+    noHumidity: false,
+    noIasMotion: true,
+    writableDPs: [2, 4, 102, 104, 105, 107, 108, 109, 112, 123],
+    dpMap: {
+      1: { cap: 'alarm_motion', type: 'presence_bool' },
+      2: { cap: null, setting: 'static_detection_sensitivity', min: 0, max: 10 },
+      4: { cap: null, setting: 'static_detection_distance', divisor: 100, min: 0, max: 5 },
+      101: { cap: 'measure_humidity', divisor: 1 },
+      102: { cap: null, setting: 'fading_time', min: 0, max: 28800 },
+      103: { cap: 'alarm_motion', type: 'motion_state_enum', enumMap: { 0: false, 1: true, 2: true, 3: true } },
+      104: { cap: null, setting: 'humidity_calibration', min: -30, max: 30 },
+      105: { cap: null, setting: 'temperature_calibration', divisor: 10, min: -20, max: 20 },
+      106: { cap: 'measure_luminance', type: 'lux_direct' },
+      107: { cap: null, setting: 'illuminance_interval', min: 1, max: 720 },
+      108: { cap: null, setting: 'indicator' },
+      109: { cap: null, setting: 'temperature_unit' },
+      110: { cap: 'measure_battery', divisor: 1 },
+      111: { cap: 'measure_temperature', smartDivisor: true },
+      112: { cap: null, setting: 'motion_detection_mode' },
+      123: { cap: null, setting: 'motion_detection_sensitivity', min: 0, max: 10 },
+    }
+  },
+
+  // TYPE G3: HOBEIAN ZG-302ZM motion sensing switch (Z2M P2421)
+  'HOBEIAN_ZG302ZM': {
+    configName: 'HOBEIAN_ZG302ZM',
+    sensors: [
+      '_TZE200_kccdzaeo', '_TZE200_s7rsrtbg', '_TZE200_tmszbtzq',
+      '_TZE200_bfmfhxra', '_TZE200_ahpcyzth', '_TZE200_kijxnb8q',
+    ],
+    modelId: 'ZG-302ZM',
+    battery: false,
+    mainsPowered: true,
+    noBatteryCapability: true,
+    useTuyaDP: true,
+    hasIlluminance: false,
+    hasRelay: true,
+    relayDp: 101,
+    noTemperature: true,
+    noHumidity: true,
+    noIasMotion: true,
+    writableDPs: [2, 4, 101, 102, 103, 108, 111, 112, 113, 114, 115],
+    dpMap: {
+      1: { cap: 'alarm_motion', type: 'presence_bool' },
+      2: { cap: null, setting: 'radar_sensitivity', min: 0, max: 19 },
+      4: { cap: 'measure_luminance.distance', divisor: 100 },
+      101: { cap: 'onoff', type: 'bool' },
+      102: { cap: null, internal: 'switch2' },
+      103: { cap: null, internal: 'switch3' },
+      108: { cap: null, internal: 'trigger_switch' },
+      111: { cap: null, setting: 'indicator' },
+      112: { cap: null, setting: 'power_on_behavior' },
+      113: { cap: null, internal: 'auto_on' },
+      114: { cap: null, setting: 'fading_time', min: 5, max: 28800 },
+      115: { cap: null, internal: 'auto_off' },
+    }
+  },
+
+  // TYPE G4: HOBEIAN ZG-302ZL motion sensing switch (Z2M P2421) — different DP layout
+  'HOBEIAN_ZG302ZL': {
+    configName: 'HOBEIAN_ZG302ZL',
+    sensors: [
+      '_TZE200_khzbklyh', '_TZE200_df04ghrb', '_TZE200_toeldckg',
+      '_TZE200_cqtamhh5', '_TZE200_xlnzk169', '_TZE200_llvwkkde',
+    ],
+    modelId: 'ZG-302ZL',
+    battery: false,
+    mainsPowered: true,
+    noBatteryCapability: true,
+    useTuyaDP: true,
+    hasIlluminance: false,
+    hasRelay: true,
+    relayDp: 1,
+    noTemperature: true,
+    noHumidity: true,
+    noIasMotion: true,
+    writableDPs: [1, 2, 3, 14, 16, 102, 103, 104, 105],
+    dpMap: {
+      101: { cap: 'alarm_motion', type: 'presence_bool' },
+      102: { cap: null, setting: 'radar_sensitivity', min: 0, max: 19 },
+      1: { cap: 'onoff', type: 'bool' },
+      2: { cap: null, internal: 'switch2' },
+      3: { cap: null, internal: 'switch3' },
+      16: { cap: null, setting: 'indicator' },
+      103: { cap: null, setting: 'fading_time', min: 5, max: 28800 },
+      14: { cap: null, setting: 'power_on_behavior' },
+      104: { cap: null, internal: 'auto_on' },
+      105: { cap: null, internal: 'auto_off' },
     }
   },
 
@@ -421,13 +516,26 @@ for (const [configName, config] of Object.entries(SENSOR_CONFIGS)) {
 }
 
 function getSensorConfig(manufacturerName, modelId = null) {
+  // WHY(P2421): route by modelId first, then verified TZE mfr — never invent pid.
+  const model = (modelId && modelId !== 'null') ? String(modelId).toUpperCase() : '';
+  if (model.includes('ZG-204ZH') || model.includes('AY208Z')) {
+    return { ...SENSOR_CONFIGS.HOBEIAN_ZG204ZH, configName: 'HOBEIAN_ZG204ZH' };
+  }
+  if (model.includes('ZG-204ZM') || model.includes('AY205Z')) {
+    return { ...SENSOR_CONFIGS.HOBEIAN_ZG204ZM, configName: 'HOBEIAN_ZG204ZM' };
+  }
+  if (model.includes('ZG-302ZM')) {
+    return { ...SENSOR_CONFIGS.HOBEIAN_ZG302ZM, configName: 'HOBEIAN_ZG302ZM' };
+  }
+  if (model.includes('ZG-302ZL')) {
+    return { ...SENSOR_CONFIGS.HOBEIAN_ZG302ZL, configName: 'HOBEIAN_ZG302ZL' };
+  }
+  if (model.includes('ZG-204ZV')) {
+    return { ...SENSOR_CONFIGS.ZG_204ZV_MULTISENSOR, configName: 'ZG_204ZV_MULTISENSOR' };
+  }
+
   if (containsCI(manufacturerName, 'HOBEIAN')) {
-    const validModelId = modelId && modelId !== 'null' && modelId.trim() !== '';
-    if (validModelId) {
-      const model = modelId.toUpperCase();
-      if (model.includes('ZG-204ZM')) {return { ...SENSOR_CONFIGS.HOBEIAN_ZG204ZM, configName: 'HOBEIAN_ZG204ZM' };}
-      if (model.includes('ZG-204ZV')) {return { ...SENSOR_CONFIGS.ZG_204ZV_MULTISENSOR, configName: 'ZG_204ZV_MULTISENSOR' };}
-    }
+    // Brand-only: soft ZG204ZM (no climate phantoms) — never HOBEIAN_10G_MULTI
     return { ...SENSOR_CONFIGS.HOBEIAN_ZG204ZM, configName: 'HOBEIAN_ZG204ZM_FALLBACK' };
   }
 
@@ -435,6 +543,23 @@ function getSensorConfig(manufacturerName, modelId = null) {
   if (MANUFACTURER_CONFIG_MAP[mfrKey]) {return MANUFACTURER_CONFIG_MAP[mfrKey];}
 
   if (manufacturerName) {
+    if (containsCI(manufacturerName, 'vuqzj1ej') || containsCI(manufacturerName, 'hdih4foa')) {
+      return { ...SENSOR_CONFIGS.HOBEIAN_ZG204ZH, configName: 'HOBEIAN_ZG204ZH' };
+    }
+    if (containsCI(manufacturerName, '2aaelwxk') || containsCI(manufacturerName, 'kb5noeto')
+      || containsCI(manufacturerName, 'tyffvoij') || containsCI(manufacturerName, 'yflzeeqj')) {
+      return { ...SENSOR_CONFIGS.HOBEIAN_ZG204ZM, configName: 'HOBEIAN_ZG204ZM' };
+    }
+    if (containsCI(manufacturerName, 'kccdzaeo') || containsCI(manufacturerName, 's7rsrtbg')
+      || containsCI(manufacturerName, 'tmszbtzq') || containsCI(manufacturerName, 'bfmfhxra')
+      || containsCI(manufacturerName, 'ahpcyzth') || containsCI(manufacturerName, 'kijxnb8q')) {
+      return { ...SENSOR_CONFIGS.HOBEIAN_ZG302ZM, configName: 'HOBEIAN_ZG302ZM' };
+    }
+    if (containsCI(manufacturerName, 'khzbklyh') || containsCI(manufacturerName, 'df04ghrb')
+      || containsCI(manufacturerName, 'toeldckg') || containsCI(manufacturerName, 'cqtamhh5')
+      || containsCI(manufacturerName, 'xlnzk169') || containsCI(manufacturerName, 'llvwkkde')) {
+      return { ...SENSOR_CONFIGS.HOBEIAN_ZG302ZL, configName: 'HOBEIAN_ZG302ZL' };
+    }
     if (containsCI(manufacturerName, 'iadro9bf') || containsCI(manufacturerName, 'qasjif9e')) {
       return { ...SENSOR_CONFIGS.TZE284_IADRO9BF, configName: 'TZE284_IADRO9BF' };
     }
