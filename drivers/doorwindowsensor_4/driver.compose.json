@@ -22,14 +22,17 @@
     ]
   },
   "images": {
-    "large": "/{{driverAssetsPath}}/images/large.png",
-    "small": "/{{driverAssetsPath}}/images/small.png"
+    "small": "/drivers/doorwindowsensor_4/assets/images/small.png",
+    "large": "/drivers/doorwindowsensor_4/assets/images/large.png"
   },
   "zigbee": {
     "manufacturerName": [
-      "_tz3000_c8zfad4a",
-      "_TZ3000_C8ZFAD4A",
-      "_TZ3000_c8zfad4a"
+      "cat0001",
+      "dss0010",
+      "CAT0001",
+      "DSS0010",
+      "zbeacon",
+      "ZBEACON"
     ],
     "productId": [
       "CK-TLSR8656-SS5-01(7014)",
@@ -49,8 +52,6 @@
       "WSDCGQ01LM",
       "WSDCGQ11LM",
       "WSDCGQ12LM",
-      "ZG-227Z",
-      "ZG-227ZL",
       "lumi.sensor_ht",
       "lumi.sensor_ht.agl02",
       "lumi.weather"
@@ -86,10 +87,6 @@
       "setable": false
     }
   },
-  "_pidConflictNotes": [
-    "// PID-CONFLICT-NOTE TS0203 shared with 10 other drivers (cross-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md",
-    "// PID-CONFLICT-NOTE DS01 shared with 3 other drivers (same-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md"
-  ],
   "settings": [
     {
       "id": "invert_contact",

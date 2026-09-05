@@ -62,6 +62,12 @@ const WATER_SENSOR_PROFILES = {
     hasTamper: true,
     notes: 'case variant of _TZ3000_k4ej3ww2'
   },
+  // P2422 Z2M ZG-226Z water leak alarm (siren DPs soft)
+  'HOBEIAN|ZG-226Z': {
+    type: 'tuya_dp', productId: 'ZG-226Z', brand: 'HOBEIAN',
+    dpMappings: { 1: 'alarm_water', 4: 'measure_battery' },
+    notes: 'Z2M ZG-226Z: DP1 water_leak trueFalse0, DP4 battery; alarm/muffling settings soft'
+  },
   '_TZ3000_85czd6fy': {
     type: 'ias_zone', productId: 'TS0207',
     iasAlarmBit: 'alarm1',
@@ -162,7 +168,21 @@ class WaterLeakSensorDevice extends UnifiedSensorBase {
 
   _getDeviceProfile() {
     const mfr = getManufacturer(this) || '';
-    
+    const pid = String(getModelId(this) || this.getSetting?.('zb_model_id') || '').toUpperCase();
+
+    // WHY(P2422): HOBEIAN brand alone is ZG-222Z IAS; ZG-226Z is EF00 water alarm
+    if (pid.includes('ZG-226Z')) {
+      return {
+        type: 'tuya_dp',
+        productId: 'ZG-226Z',
+        brand: 'HOBEIAN',
+        dpMappings: { 1: 'alarm_water', 4: 'measure_battery' },
+        matchedBy: 'productId_ZG-226Z',
+        mfr,
+        notes: 'Z2M ZG-226Z water leak alarm',
+      };
+    }
+
     if (WATER_SENSOR_PROFILES[mfr]) {
       return { ...WATER_SENSOR_PROFILES[mfr], matchedBy: 'manufacturerName', mfr };
     }
@@ -200,6 +220,18 @@ class WaterLeakSensorDevice extends UnifiedSensorBase {
     const transformAlarm = (value) => this._deviceProfile?.invertRawAlarm
       ? !alarmTransform(value)
       : alarmTransform(value);
+    // Z2M ZG-226Z: water_leak trueFalse0 (0=leak)
+    if (this._deviceProfile?.productId === 'ZG-226Z' || String(getModelId(this) || '').toUpperCase().includes('ZG-226Z')) {
+      return {
+        1: { capability: 'alarm_water', transform: (v) => v === 0 || v === '0' || v === false },
+        4: { capability: 'measure_battery', divisor: 1 },
+        7: { capability: null, internal: 'muffling' },
+        101: { capability: null, internal: 'alarm' },
+        102: { capability: null, internal: 'alarm_time' },
+        103: { capability: null, internal: 'alarm_ring' },
+        104: { capability: null, internal: 'alarm_volume' },
+      };
+    }
     return {
       1: { capability: 'alarm_water', transform: transformAlarm },
       101: { capability: 'alarm_water', transform: boolean() },

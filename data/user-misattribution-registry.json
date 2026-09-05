@@ -765,7 +765,8 @@
         "ZG-205Z",
         "ZG-205ZL",
         "ZG-302ZM",
-        "ZG-302ZL"
+        "ZG-302ZL",
+        "ZG-204ZX"
       ],
       "canonicalDriver": "presence_sensor_radar",
       "forbiddenDrivers": [
@@ -5619,6 +5620,161 @@
       "sources": [
         "z2m-tuya.ts-ZG-302ZL",
         "P2421"
+      ],
+      "tracks": {
+        "master": {
+          "static": true,
+          "dynamic": true
+        },
+        "stable": {
+          "static": true,
+          "dynamic": false
+        }
+      }
+    },
+    {
+      "id": "hobeian-zg102zm-vibration-contact",
+      "mfr": [
+        "_TZE200_jfw0a4aa",
+        "_tze200_jfw0a4aa",
+        "_TZE200_JFW0A4AA",
+        "_tze200_JFW0A4AA",
+        "_TZE200_wzk0x7fq",
+        "_tze200_wzk0x7fq",
+        "_TZE200_WZK0X7FQ",
+        "_tze200_WZK0X7FQ"
+      ],
+      "productId": [
+        "TS0601",
+        "ZG-102ZM",
+        "AY02SZ"
+      ],
+      "canonicalDriver": "vibration_sensor",
+      "forbiddenDrivers": [
+        "sensor_illuminance_presence",
+        "contact_sensor",
+        "presence_sensor_radar"
+      ],
+      "forbidMode": "couple",
+      "protocol": "tuya_ef00",
+      "notes": "Z2M ZG-102ZM: DP1 vibration, DP101 contact inverse, DP4 battery, DP6 sensitivity.",
+      "sources": [
+        "z2m-ZG-102ZM",
+        "P2422"
+      ],
+      "tracks": {
+        "master": {
+          "static": true,
+          "dynamic": true
+        },
+        "stable": {
+          "static": true,
+          "dynamic": false
+        }
+      }
+    },
+    {
+      "id": "hobeian-zg103z-vibration-tilt",
+      "mfr": [
+        "_TZE200_iba1ckek",
+        "_tze200_iba1ckek",
+        "_TZE200_IBA1CKEK",
+        "_tze200_IBA1CKEK",
+        "_TZE200_hggxgsjj",
+        "_tze200_hggxgsjj",
+        "_TZE200_HGGXGSJJ",
+        "_tze200_HGGXGSJJ",
+        "_TZE200_yjryxpot",
+        "_tze200_yjryxpot",
+        "_TZE200_YJRYXPOT",
+        "_tze200_YJRYXPOT",
+        "_TZE200_afycb3cg",
+        "_tze200_afycb3cg",
+        "_TZE200_AFYCB3CG",
+        "_tze200_AFYCB3CG"
+      ],
+      "productId": [
+        "TS0601",
+        "ZG-103Z"
+      ],
+      "canonicalDriver": "vibration_sensor",
+      "forbiddenDrivers": [
+        "sensor_illuminance_presence",
+        "switch_3gang"
+      ],
+      "forbidMode": "couple",
+      "protocol": "tuya_ef00",
+      "notes": "Z2M ZG-103Z: vibration+tilt+xyz; not illuminance presence.",
+      "sources": [
+        "z2m-ZG-103Z",
+        "P2422"
+      ],
+      "tracks": {
+        "master": {
+          "static": true,
+          "dynamic": true
+        },
+        "stable": {
+          "static": true,
+          "dynamic": false
+        }
+      }
+    },
+    {
+      "id": "hobeian-zg226z-water-alarm",
+      "mfr": [
+        "HOBEIAN",
+        "hobeian",
+        "Hobeian"
+      ],
+      "productId": [
+        "ZG-226Z"
+      ],
+      "canonicalDriver": "water_leak_sensor",
+      "forbiddenDrivers": [
+        "vibration_sensor",
+        "soil_sensor",
+        "rain_sensor"
+      ],
+      "forbidMode": "couple",
+      "protocol": "tuya_ef00",
+      "notes": "Z2M ZG-226Z water leak alarm with siren DPs.",
+      "sources": [
+        "z2m-ZG-226Z",
+        "P2422"
+      ],
+      "tracks": {
+        "master": {
+          "static": true,
+          "dynamic": true
+        },
+        "stable": {
+          "static": true,
+          "dynamic": false
+        }
+      }
+    },
+    {
+      "id": "hobeian-zg228z-vibration-alarm",
+      "mfr": [
+        "HOBEIAN",
+        "hobeian",
+        "Hobeian"
+      ],
+      "productId": [
+        "ZG-228Z"
+      ],
+      "canonicalDriver": "vibration_sensor",
+      "forbiddenDrivers": [
+        "water_leak_sensor",
+        "siren"
+      ],
+      "forbidMode": "couple",
+      "protocol": "tuya_ef00",
+      "notes": "Z2M ZG-228Z vibration alarm/siren.",
+      "sources": [
+        "z2m-ZG-228Z",
+        "P2422"
       ],
       "tracks": {
         "master": {

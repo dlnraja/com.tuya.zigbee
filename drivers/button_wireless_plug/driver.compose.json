@@ -21,16 +21,7 @@
     "manufacturerName": [
       "_tz3000_2xlvlnez",
       "_tz3000_2xlvlnvp",
-      "_TZE200_byzdayie",
-      "_TZE200_fsb6zw01",
-      "_TZE200_ewxhg6o9",
-      "_TZE204_byzdayie",
       "_TZE204_fsb6zw01",
-      "_TZE200_bkkmqmyo",
-      "_TZE200_eaac7dkw",
-      "_TZE204_bkkmqmyo",
-      "_TZE200_lsanae15",
-      "_TZE204_lsanae15",
       "_TZE200_tz32mtza",
       "_TZ3000_gjnozsaz",
       "_TZ3000_hkuahi4e",
@@ -41,36 +32,16 @@
       "_TZ3000_waho4ber",
       "_TZ3000_cehuw1lw",
       "_TZ3000_uwkja6z1",
-      "_TZ3000_yujkchbz",
       "_TZ3210_xzhnra8x",
       "_tz3000_u5u4cakc",
-      "_TZE200_nkjintbl",
       "_TZE204_nkjintbl",
       "_TZE200_nphsqjnz",
       "_TZE204_nphsqjnz",
       "_TZE200_v9hkz2up",
       "_TZ3000_2XLVLNEZ",
       "_TZ3000_2XLVLNVP",
-      "_TZE200_BYZDAYIE",
-      "_tze200_byzdayie",
-      "_TZE200_FSB6ZW01",
-      "_tze200_fsb6zw01",
-      "_TZE200_EWXHG6O9",
-      "_tze200_ewxhg6o9",
-      "_TZE204_BYZDAYIE",
-      "_tze204_byzdayie",
       "_TZE204_FSB6ZW01",
       "_tze204_fsb6zw01",
-      "_TZE200_BKKMQMYO",
-      "_tze200_bkkmqmyo",
-      "_TZE200_EAAC7DKW",
-      "_tze200_eaac7dkw",
-      "_TZE204_BKKMQMYO",
-      "_tze204_bkkmqmyo",
-      "_TZE200_LSANAE15",
-      "_tze200_lsanae15",
-      "_TZE204_LSANAE15",
-      "_tze204_lsanae15",
       "_TZE200_TZ32MTZA",
       "_tze200_tz32mtza",
       "_TZ3000_GJNOZSAZ",
@@ -91,13 +62,9 @@
       "_tz3000_cehuw1lw",
       "_TZ3000_UWKJA6Z1",
       "_tz3000_uwkja6z1",
-      "_TZ3000_YUJKCHBZ",
-      "_tz3000_yujkchbz",
       "_TZ3210_XZHNRA8X",
       "_tz3210_xzhnra8x",
       "_TZ3000_U5U4CAKC",
-      "_TZE200_NKJINTBL",
-      "_tze200_nkjintbl",
       "_TZE204_NKJINTBL",
       "_tze204_nkjintbl",
       "_TZE200_NPHSQJNZ",
@@ -108,7 +75,30 @@
       "_tze200_v9hkz2up",
       "_TZ3000_2xlvlnez",
       "_TZ3000_2xlvlnvp",
-      "_TZ3000_u5u4cakc"
+      "_TZ3000_u5u4cakc",
+      "_tz3000_2XLVLNEZ",
+      "_tz3000_2XLVLNVP",
+      "_tze204_FSB6ZW01",
+      "_tze200_TZ32MTZA",
+      "_tz3000_GJNOZSAZ",
+      "_tz3000_HKUAHI4E",
+      "_tz3000_IV6PH5TR",
+      "_tz3000_JVOVFWYK",
+      "_tz3000_MLSWGKC3",
+      "_tz3000_PS3DMATO",
+      "_tz3000_WAHO4BER",
+      "_tz3000_CEHUW1LW",
+      "_tz3000_UWKJA6Z1",
+      "_tz3210_XZHNRA8X",
+      "_tz3000_U5U4CAKC",
+      "_tze204_NKJINTBL",
+      "_tze200_NPHSQJNZ",
+      "_tze204_NPHSQJNZ",
+      "_tze200_V9HKZ2UP",
+      "_TZ3000_yujkchbz",
+      "_tz3000_yujkchbz",
+      "_TZ3000_YUJKCHBZ",
+      "_tz3000_YUJKCHBZ"
     ],
     "productId": [
       "CK-TLSR8656-SS5-01(7014)",
@@ -145,15 +135,12 @@
       "WSDCGQ01LM",
       "WSDCGQ11LM",
       "WSDCGQ12LM",
-      "ZG-225Z",
-      "ZG-227Z",
-      "ZG-227ZL",
       "lumi.sensor_ht",
       "lumi.sensor_ht.agl02",
       "lumi.weather"
     ],
     "learnmode": {
-      "image": "/drivers/plug_energy_monitor/assets/learnmode.svg",
+      "image": "{{driverAssetsPath}}/icon.svg",
       "instruction": {
         "en": "Press and hold the pairing button for 5 seconds until the LED flashes.",
         "fr": "Appuyez et maintenez le bouton d'appairage pendant 5 secondes jusqu'à ce que la LED clignote."
@@ -528,8 +515,7 @@
   ],
   "images": {
     "small": "/drivers/plug_energy_monitor/assets/images/small.png",
-    "large": "/drivers/plug_energy_monitor/assets/images/large.png",
-    "xlarge": "/drivers/plug_energy_monitor/assets/images/xlarge.png"
+    "large": "/drivers/plug_energy_monitor/assets/images/large.png"
   },
   "platforms": [
     "local"
@@ -588,31 +574,23 @@
       "id": "tuya_revive",
       "title": {
         "en": "Tuya Revive (device recovery)",
-        "fr": "Tuya Revive (récupération appareil)"
+        "fr": "Tuya Revive (récupération appareil)",
+        "nl": "Tuya Revive (apparaatherstel)",
+        "de": "Tuya Revive (Gerätewiederherstellung)"
       }
     },
     {
       "id": "generate_issue_report",
       "title": {
         "en": "Generate support report (GitHub issue)",
-        "fr": "Générer rapport de support (issue GitHub)"
+        "fr": "Générer rapport de support (issue GitHub)",
+        "nl": "Supportrapport genereren (GitHub issue)",
+        "de": "Supportbericht erstellen (GitHub Issue)"
       }
     }
   ],
   "id": "button_wireless_plug",
   "version": "1.0.0",
-  "_pidConflictNotes": [
-    "// PID-CONFLICT-NOTE TS011F shared with 43 other drivers (cross-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md",
-    "// PID-CONFLICT-NOTE TS0001 shared with 35 other drivers (cross-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md",
-    "// PID-CONFLICT-NOTE TS0002 shared with 27 other drivers (cross-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md",
-    "// PID-CONFLICT-NOTE TS0003 shared with 20 other drivers (cross-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md",
-    "// PID-CONFLICT-NOTE TS0013 shared with 15 other drivers (cross-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md",
-    "// PID-CONFLICT-NOTE TS0011 shared with 14 other drivers (cross-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md",
-    "// PID-CONFLICT-NOTE TS0012 shared with 12 other drivers (cross-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md",
-    "// PID-CONFLICT-NOTE TS0121 shared with 11 other drivers (cross-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md",
-    "// PID-CONFLICT-NOTE TS000F shared with 9 other drivers (cross-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md",
-    "// PID-CONFLICT-NOTE TS0111 shared with 8 other drivers (cross-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md"
-  ],
   "ui": {
     "quickAction": "onoff"
   }
