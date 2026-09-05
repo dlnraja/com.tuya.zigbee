@@ -1,10 +1,10 @@
 {
-  "timestamp": "2026-09-05T16:15:25.899Z",
+  "timestamp": "2026-09-05T21:32:56.154Z",
   "gate": "align-mfs-db-intelligent",
   "apply": false,
   "check": true,
   "changeCount": 0,
-  "skippedCount": 38,
+  "skippedCount": 44,
   "highSeverityCount": 0,
   "byAction": {},
   "changes": [],
@@ -68,7 +68,16 @@
       "mfr": "hobeian",
       "canon": "switch_2gang",
       "caseIds": [
-        "p217-hobeian-zg305z-usb-2gang"
+        "p217-hobeian-zg305z-usb-2gang",
+        "hobeian-zg301z-2ch-switch"
+      ]
+    },
+    {
+      "reason": "registry_oem_multi_canon",
+      "mfr": "_tz3000_wkai4ga5",
+      "canon": "scene_switch_4",
+      "caseIds": [
+        "p2328-wkai4ga5-ts0044-scene"
       ]
     },
     {
@@ -94,6 +103,54 @@
       "canon": "vibration_sensor",
       "caseIds": [
         "hobeian-zg228z-vibration-alarm"
+      ]
+    },
+    {
+      "reason": "registry_bare_brand_multi_canon",
+      "mfr": "hobeian",
+      "canon": "switch_1gang",
+      "caseIds": [
+        "hobeian-zg301z-switch"
+      ]
+    },
+    {
+      "reason": "registry_bare_brand_multi_canon",
+      "mfr": "hobeian",
+      "canon": "switch_3gang",
+      "caseIds": [
+        "hobeian-zg302z3-switch"
+      ]
+    },
+    {
+      "reason": "registry_bare_brand_multi_canon",
+      "mfr": "hobeian",
+      "canon": "scene_switch_4",
+      "caseIds": [
+        "hobeian-zg101zs-scene"
+      ]
+    },
+    {
+      "reason": "registry_bare_brand_multi_canon",
+      "mfr": "hobeian",
+      "canon": "siren",
+      "caseIds": [
+        "hobeian-zg229z-siren"
+      ]
+    },
+    {
+      "reason": "registry_bare_brand_multi_canon",
+      "mfr": "hobeian",
+      "canon": "gas_sensor",
+      "caseIds": [
+        "hobeian-zg225z-gas"
+      ]
+    },
+    {
+      "reason": "registry_oem_multi_canon",
+      "mfr": "_tz3000_wkai4ga5",
+      "canon": "button_wireless_2",
+      "caseIds": [
+        "p2432-tz3000-wkai4ga5-button-2"
       ]
     },
     {
@@ -151,8 +208,8 @@
     },
     {
       "reason": "unclaimed_no_compose",
-      "mfr": "_TZE200_J1XL73IW",
-      "curated": "curtain_motor"
+      "mfr": "_tze204_mja3fuja",
+      "curated": "climate_sensor"
     },
     {
       "reason": "pair_conflict_ambiguous",
@@ -335,15 +392,6 @@
       "claimers": [
         "sensor_climate_motion",
         "slim_motion_sensor"
-      ]
-    },
-    {
-      "reason": "unclaimed_multi",
-      "mfr": "_TZE200_aqnazj70",
-      "curated": "switch_4gang",
-      "claimers": [
-        "wall_switch_4_gang",
-        "wall_switch_5_gang_tuya"
       ]
     }
   ],
