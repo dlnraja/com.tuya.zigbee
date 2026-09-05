@@ -1,0 +1,47 @@
+{
+  "generatedAt": "2026-09-05T04:52:30.883Z",
+  "outDir": "C:\\Users\\Dell\\Documents\\homey\\master\\reports\\flow-l99-2026-09-05",
+  "steps": [
+    {
+      "label": "flow-dups",
+      "ok": true,
+      "status": 0
+    },
+    {
+      "label": "flows-integrity",
+      "ok": true,
+      "status": 0
+    },
+    {
+      "label": "flow-coherence",
+      "ok": true,
+      "status": 0
+    },
+    {
+      "label": "flow-fleet-enrich",
+      "ok": true,
+      "status": 0
+    },
+    {
+      "label": "appjson-flow-dedupe",
+      "ok": true,
+      "status": 0
+    },
+    {
+      "label": "voice-safety",
+      "ok": true,
+      "status": 0
+    },
+    {
+      "label": "dp-cluster-flow-coverage",
+      "ok": true,
+      "status": 0
+    },
+    {
+      "label": "button-flow-harvest",
+      "ok": true,
+      "status": 0
+    }
+  ],
+  "failCount": 0
+}

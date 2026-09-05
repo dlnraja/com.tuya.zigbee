@@ -25,7 +25,7 @@
         "fr": "Bouton 1"
       },
       "getable": false,
-      "setable": false,
+      "setable": true,
       "maintenanceAction": true
     },
     "button.2": {
@@ -34,7 +34,7 @@
         "fr": "Bouton 2"
       },
       "getable": false,
-      "setable": false,
+      "setable": true,
       "maintenanceAction": true
     },
     "button.3": {
@@ -43,7 +43,7 @@
         "fr": "Bouton 3"
       },
       "getable": false,
-      "setable": false,
+      "setable": true,
       "maintenanceAction": true
     },
     "button.4": {
@@ -52,7 +52,7 @@
         "fr": "Bouton 4"
       },
       "getable": false,
-      "setable": false,
+      "setable": true,
       "maintenanceAction": true
     },
     "measure_battery": {
@@ -139,9 +139,9 @@
     },
     "manufacturerName": [
       "_TZ3000_YJ6K7VFO",
-      "_tz3000_yj6k7vfo",
       "_TZ3000_yj6k7vfo",
-      "_tz3000_YJ6K7VFO"
+      "_tz3000_YJ6K7VFO",
+      "_tz3000_yj6k7vfo"
     ]
   },
   "images": {

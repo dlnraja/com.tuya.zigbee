@@ -63,7 +63,7 @@ const { ensureDedup, stampVirtual, stampPhysical } = require('../utils/Bidirecti
 
 **Every** virtual path (`markAppCommand`, `_recordVirtualButtonEvent`, UI `button.N`, NamedButtonFallback) must `stampVirtual`.
 
-## Scene Mode (TS004F vs TS0041–44)
+## Scene Mode (TS004F vs TS0041–44 — writeSceneAttr is for TS004F, NOT TS0044)
 
 | Pid | Write genOnOff 0x8004? | Homey `button_mode` |
 |-----|------------------------|---------------------|

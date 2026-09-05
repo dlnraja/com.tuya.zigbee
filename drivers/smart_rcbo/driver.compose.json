@@ -71,6 +71,12 @@
     }
   ],
   "id": "smart_rcbo",
+  "metadata": {
+    "driver": {
+      "catchall": true,
+      "reason": "Fallback for unlisted Zigbee RCBO devices with PID TS0601_rcbo"
+    }
+  },
   "capabilitiesOptions": {
     "button.1": {
       "setable": false,

@@ -91,7 +91,7 @@ try {
         console.error(`  "${d.id}" used by: ${d.drivers.join(', ')}`);
       }
     } else {
-      console.log('All flow card IDs are globally unique.');
+      console.log('PASSED: All flow card IDs are globally unique.');
     }
   }
 

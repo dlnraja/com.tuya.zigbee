@@ -1,4 +1,7 @@
-'use strict';
+﻿'use strict';
+
+const testApi = global.describe && global.it ? global : require('node:test');
+const { describe, it } = testApi;
 
 /**
  * P2264/P2265 — ZHA #862 + Abysim Medium Neo `_TZ3000_qaaysllp` + TS0201
@@ -17,7 +20,7 @@ function read(rel) {
 }
 
 describe('P2264/P2265 qaaysllp Neo TH02B Abysim/ZHA gate', function () {
-  this.timeout(15000);
+  this.timeout?.(15000);
 
   it('compose locks couple to lcdtemphumidluxsensor with EP2 temp/humidity', () => {
     const compose = JSON.parse(read('drivers/lcdtemphumidluxsensor/driver.compose.json'));

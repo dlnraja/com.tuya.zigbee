@@ -1,4 +1,7 @@
-'use strict';
+﻿'use strict';
+
+const testApi = global.describe && global.it ? global : require('node:test');
+const { describe, it } = testApi;
 
 /**
  * P2267 — Google 0xE002 Tuya sweep
@@ -18,7 +21,7 @@ function read(rel) {
 }
 
 describe('P2267 0xE002 Tuya Google-sweep gate', function () {
-  this.timeout(15000);
+  this.timeout?.(15000);
 
   it('TuyaE002Cluster matches Z2M ManuSpecificTuya2 IDs + int16', () => {
     const attrs = TuyaE002.ATTRIBUTES;

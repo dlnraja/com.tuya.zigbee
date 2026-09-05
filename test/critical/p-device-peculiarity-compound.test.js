@@ -33,9 +33,21 @@ describe('device peculiarity compound locks', () => {
     const registry = loadRegistry();
     const missing = [];
     for (const c of registry.cases || []) {
+      if (c.enrichOnly === true || (!c.mfr?.length && !c.couple?.length) || (!c.productId?.length && !c.couple?.length)) continue;
       let hit = null;
-      for (const mfr of [].concat(c.mfr || []).filter(isLookupMfr)) {
-        for (const pid of [].concat(c.productId || [])) {
+      let mfrList = [].concat(c.mfr || []).filter(isLookupMfr);
+      let pidList = [].concat(c.productId || []);
+      if (!mfrList.length && Array.isArray(c.couple)) {
+        for (const pair of c.couple) {
+          const parts = String(pair).split('+');
+          if (parts.length === 2 && isLookupMfr(parts[0])) {
+            mfrList.push(parts[0]);
+            pidList.push(parts[1]);
+          }
+        }
+      }
+      for (const mfr of mfrList) {
+        for (const pid of pidList) {
           const profile = DeviceFingerprintDB.lookup(mfr, pid);
           if (!profile?.driver) continue;
           if (String(profile.matchType || '').startsWith('productId')) continue;

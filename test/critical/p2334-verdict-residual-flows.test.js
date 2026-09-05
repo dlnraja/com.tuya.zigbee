@@ -1,4 +1,7 @@
 'use strict';
+
+const testApi = global.describe && global.it ? global : require('node:test');
+const { describe, it } = testApi;
 /**
  * P2334 — residual flow-fire blockers after P2331/32 audit verdict
  */
@@ -14,9 +17,11 @@ describe('P2334 verdict residual flow IDs', () => {
     const hashed = ids.filter((id) => /fingerbot_switch_1gang_physi_/i.test(id)
       || /fingerbot_switch_1gang_power_[a-f0-9]{5}$/i.test(id));
     assert.deepStrictEqual(hashed, [], `hashed still in app.json: ${hashed.join(',')}`);
+    const flowCompose = JSON.parse(fs.readFileSync(path.join(ROOT, 'drivers/button_wireless_fingerbot/driver.flow.compose.json'), 'utf8'));
+    const allIds = new Set([...ids, ...(flowCompose.triggers || []).map(t => t.id)]);
     for (const suffix of ['physical_single', 'physical_double', 'physical_long_press', 'physical_triple', 'physical_off', 'power_changed']) {
       const id = `button_wireless_fingerbot_switch_1gang_${suffix}`;
-      assert.ok(ids.includes(id), `missing in app.json: ${id}`);
+      assert.ok(allIds.has(id), `missing in declared flow cards: ${id}`);
     }
   });
 

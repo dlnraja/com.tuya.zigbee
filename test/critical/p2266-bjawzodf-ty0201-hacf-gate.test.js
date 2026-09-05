@@ -1,4 +1,7 @@
-'use strict';
+﻿'use strict';
+
+const testApi = global.describe && global.it ? global : require('node:test');
+const { describe, it } = testApi;
 
 /**
  * P2266 — HACF #38762 / ZHA #2862 Temu `_TZ3000_bjawzodf` + TY0201/TS0201
@@ -16,7 +19,7 @@ function read(rel) {
 }
 
 describe('P2266 bjawzodf Temu TY0201 HACF gate', function () {
-  this.timeout(15000);
+  this.timeout?.(15000);
 
   it('compose locks TZ3000_bjawzodf with TY0201/TS0201 and ZCL clusters', () => {
     const compose = JSON.parse(read('drivers/lcdtemphumidsensor/driver.compose.json'));

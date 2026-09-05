@@ -187,5 +187,11 @@
       }
     }
   },
+  "metadata": {
+    "driver": {
+      "catchall": true,
+      "reason": "Fallback for unlisted 4-gang Zigbee wall remotes with PID TS0043/TS0601/TS0215A"
+    }
+  },
   "version": "1.0.0"
 }

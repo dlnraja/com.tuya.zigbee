@@ -1,4 +1,7 @@
-'use strict';
+﻿'use strict';
+
+const testApi = global.describe && global.it ? global : require('node:test');
+const { describe, it } = testApi;
 
 /**
  * P2268 — Parallel projects shadow enrich (ZHA / Z2M / ZHC)
@@ -15,7 +18,7 @@ function read(rel) {
 }
 
 describe('P2268 parallel ZHA/Z2M couple corrections', function () {
-  this.timeout(20000);
+  this.timeout?.(20000);
 
   it('cjbofhxw removed from smoke, locked on power_clamp_meter', () => {
     const smoke = JSON.parse(read('drivers/smoke_sensor3/driver.compose.json'));

@@ -1,4 +1,7 @@
-'use strict';
+﻿'use strict';
+
+const testApi = global.describe && global.it ? global : require('node:test');
+const { describe, it } = testApi;
 /**
  * P2331 — deeper button↔flow card hygiene (after P2330)
  */

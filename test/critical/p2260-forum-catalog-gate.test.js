@@ -1,4 +1,7 @@
-'use strict';
+﻿'use strict';
+
+const testApi = global.describe && global.it ? global : require('node:test');
+const { describe, it } = testApi;
 
 /**
  * P2260 — forum NOT_IN_CATALOG couples + P2258 anti-bot collision cleanup
@@ -16,7 +19,7 @@ function loadCompose(id) {
 }
 
 describe('P2260 forum catalog gate', function () {
-  this.timeout(30000);
+  this.timeout?.(30000);
 
   it('Linptech ewrxirng removed from presence_sensor_radar (P2258 anti-bot)', () => {
     const pr = loadCompose('presence_sensor_radar');

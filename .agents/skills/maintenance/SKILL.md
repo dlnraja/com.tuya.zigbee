@@ -1,4 +1,9 @@
-# Workflow: Autonomous Maintenance & Repair
+﻿---
+name: maintenance
+description: Autonomous maintenance, self-healing loop, and driver repair for the Tuya Unified Homey app.
+---
+
+# Autonomous Maintenance & Repair
 
 This workflow defines the steps for the periodic "Self-Healing" loop of the Tuya Unified app.
 

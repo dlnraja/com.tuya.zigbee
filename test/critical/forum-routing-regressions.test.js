@@ -77,7 +77,7 @@ describe('forum routing regressions', () => {
     assert.match(source, /_setupE000Detection/);
     assert.match(source, /_setupTuyaDPButtonDetection/);
     assert.match(source, /_decodeRawFrameArgs/);
-    assert.match(source, /orig\(\.\.\.args\)/);
+    assert.match(source, /orig\(\.\.\.args\)|next\(\.\.\.args\)/);
   });
 
   it('routes Moes/Lidl TS004F physical button variants to transport-aware drivers', () => {

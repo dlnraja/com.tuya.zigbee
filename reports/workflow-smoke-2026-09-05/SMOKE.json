@@ -1,0 +1,57 @@
+{
+  "workflows": [
+    {
+      "file": ".github/workflows/project-resilience.yml",
+      "ok": true,
+      "name": "🛡️ Project Resilience Inventory"
+    },
+    {
+      "file": ".github/workflows/forum-poll.yml",
+      "ok": true,
+      "name": "🌍 Forum Poll (P69)"
+    },
+    {
+      "file": ".github/workflows/auto-enrich-closed-loop.yml",
+      "ok": true,
+      "name": "🔄 Auto-Enrich Closed Loop (P69)"
+    },
+    {
+      "file": ".github/workflows/fetch-diags.yml",
+      "ok": true,
+      "name": "Fetch Homey Diagnostics"
+    },
+    {
+      "file": ".github/workflows/gmail-diagnostics.yml",
+      "ok": true,
+      "name": "Gmail Diagnostics Auto-Analysis"
+    },
+    {
+      "file": ".github/workflows/gmail-token-keepalive.yml",
+      "ok": true,
+      "name": "Gmail Auth Health Check"
+    }
+  ],
+  "scripts": [
+    {
+      "script": "tools/ci/inventory-features-bugs.js",
+      "ok": true,
+      "status": 0
+    },
+    {
+      "script": "tools/ci/project-resilience-orchestrator.js",
+      "ok": true,
+      "status": 0
+    },
+    {
+      "script": ".github/scripts/gmail-auth-cascade.js",
+      "ok": true,
+      "status": 0
+    },
+    {
+      "script": "tools/ci/ai-plan-guard.js",
+      "ok": true,
+      "status": 0
+    }
+  ],
+  "ok": true
+}

@@ -1,0 +1,252 @@
+{
+  "generatedAt": "2026-09-04T23:23:59.149Z",
+  "policy": "search-not-invent — never write compose from soft hypotheses",
+  "query": {
+    "uuid": "c5165a37",
+    "driver": "presence_sensor_radar"
+  },
+  "diag": {
+    "uuid": "c5165a37-2208-47a8-baaf-7a4190c4f97a",
+    "version": "9.0.797",
+    "createdAt": "2026-09-02T21:46:38.079Z",
+    "userMessage": "Problem with PIR mmwave",
+    "drivers": [
+      "presence_sensor_radar"
+    ],
+    "coupleAbsent": true,
+    "couplesInLog": []
+  },
+  "hypotheses": [
+    {
+      "mfr": "_TZE204_clrdrnya",
+      "pid": "TS0601",
+      "driver": "presence_sensor_radar",
+      "confidence": "registry_locked",
+      "reason": "presence-radar-clrdrnya",
+      "sources": [
+        "forum-140352",
+        "github#420",
+        "P139",
+        "P204",
+        "z2m#18677"
+      ]
+    },
+    {
+      "mfr": "_TZE284_clrdrnya",
+      "pid": "TS0601",
+      "driver": "presence_sensor_radar",
+      "confidence": "registry_locked",
+      "reason": "presence-radar-clrdrnya",
+      "sources": [
+        "forum-140352",
+        "github#420",
+        "P139",
+        "P204",
+        "z2m#18677"
+      ]
+    },
+    {
+      "mfr": "_TZE200_clrdrnya",
+      "pid": "TS0601",
+      "driver": "presence_sensor_radar",
+      "confidence": "registry_locked",
+      "reason": "presence-radar-clrdrnya",
+      "sources": [
+        "forum-140352",
+        "github#420",
+        "P139",
+        "P204",
+        "z2m#18677"
+      ]
+    },
+    {
+      "mfr": "HOBEIAN",
+      "pid": "ZG-204Z",
+      "driver": "presence_sensor_radar",
+      "confidence": "registry_locked",
+      "reason": "hobeian-zg204-presence",
+      "sources": [
+        "z2m-ZG-204ZM",
+        "P2250"
+      ]
+    },
+    {
+      "mfr": "HOBEIAN",
+      "pid": "ZG-204ZE",
+      "driver": "presence_sensor_radar",
+      "confidence": "registry_locked",
+      "reason": "hobeian-zg204-presence",
+      "sources": [
+        "z2m-ZG-204ZM",
+        "P2250"
+      ]
+    },
+    {
+      "mfr": "HOBEIAN",
+      "pid": "ZG-204ZH",
+      "driver": "presence_sensor_radar",
+      "confidence": "registry_locked",
+      "reason": "hobeian-zg204-presence",
+      "sources": [
+        "z2m-ZG-204ZM",
+        "P2250"
+      ]
+    },
+    {
+      "mfr": "HOBEIAN",
+      "pid": "ZG-204ZK",
+      "driver": "presence_sensor_radar",
+      "confidence": "registry_locked",
+      "reason": "hobeian-zg204-presence",
+      "sources": [
+        "z2m-ZG-204ZM",
+        "P2250"
+      ]
+    },
+    {
+      "mfr": "HOBEIAN",
+      "pid": "ZG-204ZL",
+      "driver": "presence_sensor_radar",
+      "confidence": "registry_locked",
+      "reason": "hobeian-zg204-presence",
+      "sources": [
+        "z2m-ZG-204ZM",
+        "P2250"
+      ]
+    },
+    {
+      "mfr": "HOBEIAN",
+      "pid": "ZG-204ZM",
+      "driver": "presence_sensor_radar",
+      "confidence": "registry_locked",
+      "reason": "hobeian-zg204-presence",
+      "sources": [
+        "z2m-ZG-204ZM",
+        "P2250"
+      ]
+    },
+    {
+      "mfr": "HOBEIAN",
+      "pid": "ZG-204ZQ",
+      "driver": "presence_sensor_radar",
+      "confidence": "registry_locked",
+      "reason": "hobeian-zg204-presence",
+      "sources": [
+        "z2m-ZG-204ZM",
+        "P2250"
+      ]
+    },
+    {
+      "mfr": "HOBEIAN",
+      "pid": "ZG-204ZV",
+      "driver": "presence_sensor_radar",
+      "confidence": "registry_locked",
+      "reason": "hobeian-zg204-presence",
+      "sources": [
+        "z2m-ZG-204ZM",
+        "P2250"
+      ]
+    },
+    {
+      "mfr": "HOBEIAN",
+      "pid": "ZG-205Z",
+      "driver": "presence_sensor_radar",
+      "confidence": "registry_locked",
+      "reason": "hobeian-zg204-presence",
+      "sources": [
+        "z2m-ZG-204ZM",
+        "P2250"
+      ]
+    },
+    {
+      "mfr": "HOBEIAN",
+      "pid": "ZG-205ZL",
+      "driver": "presence_sensor_radar",
+      "confidence": "registry_locked",
+      "reason": "hobeian-zg204-presence",
+      "sources": [
+        "z2m-ZG-204ZM",
+        "P2250"
+      ]
+    },
+    {
+      "mfr": "_TZE284_debczeci",
+      "pid": "TS0601",
+      "driver": "presence_sensor_radar",
+      "confidence": "registry_locked",
+      "reason": "p2261-ihseno-debczeci-presence",
+      "sources": [
+        "z2m-27773",
+        "forum-26439-5493",
+        "P2261"
+      ],
+      "z2mDesc": "Cover motor"
+    },
+    {
+      "mfr": "_TZE204_debczeci",
+      "pid": "TS0601",
+      "driver": "presence_sensor_radar",
+      "confidence": "registry_locked",
+      "reason": "p2261-ihseno-debczeci-presence",
+      "sources": [
+        "z2m-27773",
+        "forum-26439-5493",
+        "P2261"
+      ],
+      "z2mDesc": "Cover motor"
+    },
+    {
+      "mfr": "_TZE284_1lvln0x6",
+      "pid": "TS0601",
+      "driver": "presence_sensor_radar",
+      "confidence": "registry_locked",
+      "reason": "p2261-ihseno-debczeci-presence",
+      "sources": [
+        "z2m-27773",
+        "forum-26439-5493",
+        "P2261"
+      ],
+      "z2mDesc": "Cover motor"
+    },
+    {
+      "mfr": "_TZ321C_fkzihaxe8",
+      "pid": "TS0225",
+      "driver": "presence_sensor_radar",
+      "confidence": "interview",
+      "reason": "INT-005",
+      "sources": [
+        "interview"
+      ]
+    },
+    {
+      "mfr": "_TZ3000_*",
+      "pid": "TS0041",
+      "confidence": "interview",
+      "reason": "INT-010",
+      "sources": [
+        "interview"
+      ]
+    },
+    {
+      "mfr": "_TZ3000_wkai4ga5",
+      "pid": "TS0044",
+      "confidence": "interview",
+      "reason": "INT-011",
+      "sources": [
+        "interview"
+      ]
+    },
+    {
+      "mfr": "_TZE200_rhgsbacq",
+      "pid": "TS0601",
+      "driver": "presence_sensor_radar",
+      "confidence": "interview",
+      "reason": "INT-016",
+      "sources": [
+        "interview"
+      ],
+      "z2mDesc": "Vibration sensor"
+    }
+  ],
+  "action": "Request fresh Homey diag with [COVER-INIT] or [FLEET] mfr=… pid=… lines"
+}

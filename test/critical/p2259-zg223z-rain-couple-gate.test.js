@@ -1,4 +1,7 @@
-'use strict';
+﻿'use strict';
+
+const testApi = global.describe && global.it ? global : require('node:test');
+const { describe, it } = testApi;
 
 /**
  * P2259 — HOBEIAN ZG-223Z rain sensor vs water_leak_sensor collision
@@ -17,7 +20,7 @@ function loadCompose(driverId) {
 }
 
 describe('P2259 ZG-223Z rain couple gate', function () {
-  this.timeout(30000);
+  this.timeout?.(30000);
 
   it('rain_sensor owns ZG-223Z + HOBEIAN; water_leak drivers must not claim ZG-223Z', () => {
     const rain = loadCompose('rain_sensor');
