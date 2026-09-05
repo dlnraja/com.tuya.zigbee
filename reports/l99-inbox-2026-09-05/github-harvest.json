@@ -1,0 +1,40 @@
+{
+  "harvestedAt": "2026-09-05T07:10:03.481Z",
+  "repo": "dlnraja/com.tuya.zigbee",
+  "auth": "token",
+  "error": null,
+  "issues": [
+    {
+      "number": 533,
+      "title": "Device Request - [SMART ZIGBEE CURTAIN SWITCH] - [MOES]",
+      "labels": [
+        "enhancement",
+        "device-request",
+        "new-fingerprint",
+        "device_request",
+        "reopened-by-user",
+        "MOES",
+        "needs-maintainer",
+        "smart_zigbee",
+        "curtain_switch",
+        "SMART ZIGBEE CURTAIN SWITCH - MOES"
+      ],
+      "updatedAt": "2026-09-04T22:41:10Z",
+      "user": "salvagr",
+      "htmlUrl": "https://github.com/dlnraja/com.tuya.zigbee/issues/533",
+      "bodySnippet": "Thank you for your support.\n\n## 📱 Basic Information\n\n**Brand & Model**: SMART ZIGBEE CURTAIN SWITCH - MOES\n**Purchase Link**: https://es.aliexpress.com/item/1005008356152992.html\n**Power Source**:  Mains\n**Current Status**: pairing with wrong device type. Detected as \"radiator v"
+    }
+  ],
+  "prs": [
+    {
+      "number": 539,
+      "title": "AI Monthly Audit - September 2026 | Risk: Updated",
+      "updatedAt": "2026-09-04T22:41:38Z",
+      "user": "dlnraja",
+      "htmlUrl": "https://github.com/dlnraja/com.tuya.zigbee/pull/539",
+      "draft": false
+    }
+  ],
+  "openIssueCount": 1,
+  "openPrCount": 1
+}
