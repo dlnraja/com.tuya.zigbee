@@ -51,7 +51,7 @@ function isReservedName(filename) {
 /**
  * Walk a directory tree, returning absolute paths of reserved-name entries.
  */
-function findReserved(rootDir) {
+function findReserved(rootDir, depth = 0) {
   const hits = [];
   if (!fs.existsSync(rootDir)) return hits;
   let entries;
@@ -67,22 +67,25 @@ function findReserved(rootDir) {
     if (isReservedName(ent.name)) {
       hits.push({ path: full, name: ent.name, isDir: ent.isDirectory() });
     }
-    if (ent.isDirectory() && !ent.name.startsWith('.')) {
-      // Recurse, but skip dotdirs (.git, .homeybuild handled separately if requested)
-      try { hits.push(...findReserved(full)); } catch (_) { /* ignore */ }
+    if (ent.isDirectory() && !ent.name.startsWith('.') && ent.name !== 'node_modules' && ent.name !== '.archive') {
+      // Recurse, but skip dotdirs (.git, .homeybuild handled separately if requested) and node_modules
+      try { hits.push(...findReserved(full, depth + 1)); } catch (_) { /* ignore */ }
     }
   }
-  // Also probe known reserved names that readdir may hide (Windows quirk).
-  for (const reserved of RESERVED_BASENAMES) {
-    for (const candidate of [reserved, `${reserved}.txt`, `${reserved}.log`]) {
-      const probe = path.join(rootDir, candidate);
-      // Use stat with throwaway; reserved device names resolve, so only test files.
-      try {
-        const st = fs.statSync(probe);
-        if (st.isFile() && !hits.some(h => h.path === probe)) {
-          hits.push({ path: probe, name: candidate, isDir: false });
-        }
-      } catch (_) { /* not present */ }
+  // Probe known reserved names that readdir may hide at root level targets only
+  if (depth === 0) {
+    for (const reserved of RESERVED_BASENAMES) {
+      for (const candidate of [reserved, `${reserved}.txt`, `${reserved}.log`]) {
+        const absCandidate = path.resolve(rootDir, candidate);
+        const probe = absCandidate.startsWith('\\\\?\\') ? absCandidate : `\\\\?\\${absCandidate}`;
+        // Use stat with throwaway; extended prefix prevents Windows device hang.
+        try {
+          const st = fs.statSync(probe);
+          if (st.isFile() && !hits.some(h => h.path === absCandidate)) {
+            hits.push({ path: absCandidate, name: candidate, isDir: false });
+          }
+        } catch (_) { /* not present */ }
+      }
     }
   }
   return hits;

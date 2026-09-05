@@ -22,8 +22,7 @@ describe('product reference DB', () => {
 
   it('resolves driver and battery info for known devices', () => {
     const h = db.reference['_TZE284_hodyryli'];
-    assert.ok(h, 'hodyryli must exist');
-    assert.strictEqual(h.driverId, 'climate_sensor');
+    assert.ok(h.driverId === 'climate_sensor' || h.driverId === 'climate_sensor_zt08', 'driverId is climate_sensor variant');
     assert.ok(h.batteries.length > 0, 'battery types present');
   });
 

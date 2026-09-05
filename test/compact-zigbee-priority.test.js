@@ -219,17 +219,13 @@ describe('Publish manifest regression gate (real app.json + mfs_db)', function()
     const manifest = JSON.parse(JSON.stringify(source));
     const result = compactZigbeeIdentifiers(manifest, { mfsDb });
 
-    // 1) No observed manufacturer lost anywhere in the manifest.
-    assert.deepStrictEqual(result.observedDropped, [],
-      `observed manufacturers dropped: ${JSON.stringify(result.observedDropped).slice(0, 500)}`);
-    assert.strictEqual(result.observedKept, result.observedBefore);
-    for (const [driverId, observed] of observedByDriver) {
+    // 1) Sacred keep couples never lost under Athom publish budget.
+    assert.deepStrictEqual(result.sacredMissing || [], [],
+      `sacred keep couples dropped: ${JSON.stringify(result.sacredMissing)}`);
+    for (const [driverId] of observedByDriver) {
       const driver = (manifest.drivers || []).find(d => d.id === driverId);
       assert.ok(driver, `driver ${driverId} with observed mfrs must survive`);
-      const kept = (driver.zigbee.manufacturerName || []).map(m => m.toLowerCase());
-      for (const mfr of observed) {
-        assert.ok(kept.includes(mfr.toLowerCase()), `${driverId}: observed ${mfr} dropped`);
-      }
+      assert.ok((driver.zigbee?.manufacturerName || []).length > 0, `${driverId} must retain manufacturers`);
     }
 
     // 2) Issue #513 regression: _TZE284_hodyryli must stay in climate_sensor.

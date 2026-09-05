@@ -37,12 +37,12 @@ describe('P2238 FP collision bleed prune', () => {
     assert.ok(pids.includes('ZG-303Z'), 'soil_sensor must list ZG-303Z productId');
   });
 
-  it('water_leak_sensor: no HOBEIAN brand bleed (uses _TZ3000_k4ej3ww2 couple)', () => {
+  it('water_leak_sensor: HOBEIAN brand retained for 3315-S couple (P2282)', () => {
     const fs = require('fs');
     const path = require('path');
     const j = JSON.parse(fs.readFileSync(path.join(__dirname, '..', '..', 'drivers', 'water_leak_sensor', 'driver.compose.json'), 'utf8'));
     const mfrs = (j.zigbee?.manufacturerName || []).map((m) => String(m).toLowerCase());
-    assert.ok(!mfrs.includes('hobeian'), 'water_leak must not cartesian HOBEIAN brand');
+    assert.ok(mfrs.includes('hobeian'), 'water_leak must retain HOBEIAN for 3315-S couple');
     assert.ok(mfrs.some((m) => m.includes('k4ej3ww2')), 'water_leak keeps k4ej3ww2 sacred mfr');
   });
 });

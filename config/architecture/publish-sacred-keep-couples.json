@@ -3,6 +3,24 @@
   "why": "Budget truncation can drop observed mfrs from broad drivers (button_wireless_1 had 31→2 pids). Sacred locks stay pin-first.",
   "couples": [
     {
+      "mfr": "_TZE284_fodv6bkr",
+      "pid": "TS0601",
+      "driverId": "curtain_motor",
+      "note": "Forum Eduard_Martirosyan #2228 DC tubular roller blind motor"
+    },
+    {
+      "mfr": "_TZE284_libht6ua",
+      "pid": "TS0601",
+      "driverId": "curtain_motor",
+      "note": "Roller blind motor sibling to fodv6bkr"
+    },
+    {
+      "mfr": "_TZE284_hodyryli",
+      "pid": "TS0601",
+      "driverId": "climate_sensor",
+      "note": "Issue #513 ZT08 climate sensor sacred keep"
+    },
+    {
       "mfr": "_TZ3000_mrpevh8p",
       "pid": "TS0041",
       "driverId": "button_wireless_1",

@@ -125,6 +125,12 @@
       "variants": ["Centralite", "CENTRALITE", "centralite", "Centralite Products"],
       "device_id_patterns": ["^3157100$"],
       "metadata": { "country": "US", "protocols": ["zigbee"], "first_seen": "2018-01-01" }
+    },
+    {
+      "canonical": "hobeian",
+      "variants": ["HOBEIAN", "Hobeian", "hobeian", "Heobian", "HEOBIAN", "heobian", "Hobeian Home"],
+      "device_id_patterns": ["^ZG-.*$", "^3315-.*$", "^TS.*$"],
+      "metadata": { "country": "CN", "protocols": ["zigbee"], "first_seen": "2022-01-01" }
     }
   ],
   "generated_mapping": {
@@ -158,6 +164,8 @@
     "zemismart": "zentra",
     "bseed": "bseed",
     "zosung": "zosung",
-    "centralite": "centralite"
+    "centralite": "centralite",
+    "hobeian": "hobeian",
+    "heobian": "hobeian"
   }
 }
