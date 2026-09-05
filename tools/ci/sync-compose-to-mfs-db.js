@@ -178,6 +178,10 @@ function main() {
     const nm = norm(key);
     const entry = db[key];
     if (!entry || typeof entry !== 'object') continue;
+    // WHY: multiCouple brands (HOBEIAN) use byPid → never collapse to one compose driver's productId list
+    if (entry.multiCouple === true && entry.byPid && typeof entry.byPid === 'object') {
+      continue;
+    }
     const claimers = [...(index.byMfr.get(nm) || [])].filter(isRealDriver);
     let curated = entry.driverId;
 
@@ -213,12 +217,21 @@ function main() {
   }
   for (const [, keys] of byNorm) {
     if (keys.length < 2) continue;
-    const keep = preferredMfrKey(keys);
+    // Prefer multiCouple brand key (HOBEIAN) over TitleCase preferredMfrKey score
+    const multiKey = keys.find((k) => db[k]?.multiCouple === true);
+    const keep = multiKey || preferredMfrKey(keys);
     const keepEntry = ensureEntry(db, keep);
     for (const k of keys) {
       if (k === keep) continue;
-      keepEntry.modelIds = sorted([...(keepEntry.modelIds || []), ...(db[k].modelIds || [])]);
-      if (!keepEntry.driverId && db[k].driverId) keepEntry.driverId = db[k].driverId;
+      const drop = db[k] || {};
+      keepEntry.modelIds = sorted([...(keepEntry.modelIds || []), ...(drop.modelIds || [])]);
+      if (!keepEntry.driverId && drop.driverId) keepEntry.driverId = drop.driverId;
+      if (drop.multiCouple) keepEntry.multiCouple = true;
+      if (drop.byPid && typeof drop.byPid === 'object') {
+        keepEntry.byPid = { ...(keepEntry.byPid || {}), ...drop.byPid };
+        keepEntry.modelIds = sorted(Object.keys(keepEntry.byPid));
+        keepEntry.modelIdsCount = keepEntry.modelIds.length;
+      }
       delete db[k];
       changes.push({ action: 'case_dedupe', from: k, to: keep });
     }

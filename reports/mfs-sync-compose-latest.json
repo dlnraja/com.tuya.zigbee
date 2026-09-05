@@ -1,7 +1,7 @@
 {
-  "generatedAt": "2026-09-01T06:32:12.786Z",
+  "generatedAt": "2026-09-05T01:12:02.023Z",
   "mode": "APPLY",
-  "changeCount": 8,
+  "changeCount": 106,
   "changes": [
     {
       "action": "merge_wrong_prefix",
@@ -45,11 +45,12 @@
     },
     {
       "action": "known_correction",
-      "mfr": "_TZE200_r0jdjrvi",
+      "mfr": "_TZE204_r0jdjrvi",
       "before": {
-        "driverId": "curtain_motor",
+        "driverId": "curtain_motor_tilt",
         "modelIds": [
-          "TS0601"
+          "TS0601",
+          "TS0601_curtain_tilt"
         ]
       },
       "after": {
@@ -61,46 +62,241 @@
     },
     {
       "action": "add_from_compose",
-      "mfr": "_tze284_8whfphjv",
-      "driverId": "curtain_motor",
+      "mfr": "_tze200_muvkrjr5",
+      "driverId": "presence_sensor_radar",
+      "modelIds": [
+        "AY-204ZX",
+        "AY204T",
+        "AY205Z",
+        "AY208Z",
+        "CK-BL702-MWS-01",
+        "CK-BL702-MWS-01(7016)",
+        "CK-TLSR8656-SS5-01(7014)",
+        "EDM-1ZBA-EU",
+        "EXCELLUX",
+        "LUMI.SENSOR_HT",
+        "LUMI.SENSOR_HT.AGL02",
+        "LUMI.WEATHER",
+        "MG1_5RZ",
+        "RH3052",
+        "SM0201",
+        "SNZB-06P",
+        "SNZB-06P24",
+        "SZLMR10",
+        "TH01",
+        "THS317-ET",
+        "TRI-C1ZR",
+        "TRI-K1ZR",
+        "TS0004",
+        "TS0045",
+        "TS004F",
+        "TS0201",
+        "TS0202",
+        "TS0203",
+        "TS0215A",
+        "TS0222",
+        "TS0225",
+        "TS0501B",
+        "TS0601",
+        "TS0601_WIRELESSSW",
+        "TS110E",
+        "TS1201",
+        "TY0201",
+        "WSDCGQ01LM",
+        "WSDCGQ11LM",
+        "WSDCGQ12LM",
+        "ZG-204Z",
+        "ZG-204ZE",
+        "ZG-204ZH",
+        "ZG-204ZK",
+        "ZG-204ZL",
+        "ZG-204ZM",
+        "ZG-204ZQ",
+        "ZG-204ZV",
+        "ZG-204ZX",
+        "ZG-205Z",
+        "ZG-205ZL",
+        "ZG-302ZL",
+        "ZG-302ZM",
+        "ZP-301Z"
+      ]
+    },
+    {
+      "action": "add_from_compose",
+      "mfr": "_tze284_cipobaav",
+      "driverId": "presence_sensor_radar",
+      "modelIds": [
+        "AY-204ZX",
+        "AY204T",
+        "AY205Z",
+        "AY208Z",
+        "CK-BL702-MWS-01",
+        "CK-BL702-MWS-01(7016)",
+        "CK-TLSR8656-SS5-01(7014)",
+        "EDM-1ZBA-EU",
+        "EXCELLUX",
+        "LUMI.SENSOR_HT",
+        "LUMI.SENSOR_HT.AGL02",
+        "LUMI.WEATHER",
+        "MG1_5RZ",
+        "RH3052",
+        "SM0201",
+        "SNZB-06P",
+        "SNZB-06P24",
+        "SZLMR10",
+        "TH01",
+        "THS317-ET",
+        "TRI-C1ZR",
+        "TRI-K1ZR",
+        "TS0004",
+        "TS0045",
+        "TS004F",
+        "TS0201",
+        "TS0202",
+        "TS0203",
+        "TS0215A",
+        "TS0222",
+        "TS0225",
+        "TS0501B",
+        "TS0601",
+        "TS0601_WIRELESSSW",
+        "TS110E",
+        "TS1201",
+        "TY0201",
+        "WSDCGQ01LM",
+        "WSDCGQ11LM",
+        "WSDCGQ12LM",
+        "ZG-204Z",
+        "ZG-204ZE",
+        "ZG-204ZH",
+        "ZG-204ZK",
+        "ZG-204ZL",
+        "ZG-204ZM",
+        "ZG-204ZQ",
+        "ZG-204ZV",
+        "ZG-204ZX",
+        "ZG-205Z",
+        "ZG-205ZL",
+        "ZG-302ZL",
+        "ZG-302ZM",
+        "ZP-301Z"
+      ]
+    },
+    {
+      "action": "add_from_compose",
+      "mfr": "_tze284_h7oalfxa",
+      "driverId": "presence_sensor_radar",
+      "modelIds": [
+        "AY-204ZX",
+        "AY204T",
+        "AY205Z",
+        "AY208Z",
+        "CK-BL702-MWS-01",
+        "CK-BL702-MWS-01(7016)",
+        "CK-TLSR8656-SS5-01(7014)",
+        "EDM-1ZBA-EU",
+        "EXCELLUX",
+        "LUMI.SENSOR_HT",
+        "LUMI.SENSOR_HT.AGL02",
+        "LUMI.WEATHER",
+        "MG1_5RZ",
+        "RH3052",
+        "SM0201",
+        "SNZB-06P",
+        "SNZB-06P24",
+        "SZLMR10",
+        "TH01",
+        "THS317-ET",
+        "TRI-C1ZR",
+        "TRI-K1ZR",
+        "TS0004",
+        "TS0045",
+        "TS004F",
+        "TS0201",
+        "TS0202",
+        "TS0203",
+        "TS0215A",
+        "TS0222",
+        "TS0225",
+        "TS0501B",
+        "TS0601",
+        "TS0601_WIRELESSSW",
+        "TS110E",
+        "TS1201",
+        "TY0201",
+        "WSDCGQ01LM",
+        "WSDCGQ11LM",
+        "WSDCGQ12LM",
+        "ZG-204Z",
+        "ZG-204ZE",
+        "ZG-204ZH",
+        "ZG-204ZK",
+        "ZG-204ZL",
+        "ZG-204ZM",
+        "ZG-204ZQ",
+        "ZG-204ZV",
+        "ZG-204ZX",
+        "ZG-205Z",
+        "ZG-205ZL",
+        "ZG-302ZL",
+        "ZG-302ZM",
+        "ZP-301Z"
+      ]
+    },
+    {
+      "action": "add_from_compose",
+      "mfr": "_tze204_dqy15zxy",
+      "driverId": "switch_2gang",
+      "modelIds": [
+        "TS0002",
+        "TS0002_POWER",
+        "TS0002_SWITCH_MODULE",
+        "TS0003",
+        "TS000F",
+        "TS0012",
+        "TS0013",
+        "TS011F",
+        "TS0601",
+        "TS0726",
+        "ZG-302Z2",
+        "ZG-305Z"
+      ]
+    },
+    {
+      "action": "add_from_compose",
+      "mfr": "_tze284_wkvfb2ld",
+      "driverId": "switch_4gang",
       "modelIds": [
         "01MINIZB",
-        "AM02",
-        "AM43-0.45/40-ES-EB",
-        "AM43-0.45/40-ES-EZ",
         "BASICZBR3",
-        "DS421",
-        "DS82",
-        "E1757",
-        "FYRTUR",
-        "KADRILJ",
-        "LUMI.CURTAIN",
-        "LUMI.CURTAIN.ACN002",
-        "LUMI.CURTAIN.HAGL04",
+        "JZ-ZB-004",
         "S26R2ZB",
         "S31ZB",
         "TS0001",
         "TS0001_POWER",
         "TS0001_SWITCH",
         "TS0001_SWITCH_MODULE",
+        "TS0002",
+        "TS0003",
+        "TS0004",
+        "TS0004_POWER",
+        "TS0004_SWITCH_MODULE",
+        "TS0006",
         "TS000F",
         "TS0011",
         "TS0012",
         "TS0014",
+        "TS0041",
         "TS0101",
         "TS0111",
         "TS011F",
-        "TS0301",
-        "TS0302",
-        "TS030F",
+        "TS0203",
+        "TS0215A",
         "TS0601",
-        "TS0601_GENERIC",
-        "TS0603",
         "TS0726",
         "TS110E",
         "TS130F",
         "TS4100",
-        "ZBCURTAIN",
         "ZBM5-1C-120",
         "ZBM5-2C-120",
         "ZBM5-3C-120",
@@ -115,17 +311,672 @@
       ]
     },
     {
-      "action": "fix_driverId",
-      "mfr": "_TYST11_wmcdj3aq",
-      "from": "switch_1gang",
-      "to": "curtain_motor"
+      "action": "prune_modelIds",
+      "mfr": "_TZ3210_7VGTTNA6",
+      "driverId": "sensor_motion_presence",
+      "before": 22,
+      "after": 20
     },
     {
       "action": "prune_modelIds",
-      "mfr": "_TYST11_wmcdj3aq",
-      "driverId": "curtain_motor",
+      "mfr": "_TZ3210_A04ACM9S",
+      "driverId": "sensor_motion_presence",
+      "before": 22,
+      "after": 20
+    },
+    {
+      "action": "prune_modelIds",
+      "mfr": "_TZ3210_CM9MBPR1",
+      "driverId": "sensor_motion_presence",
+      "before": 22,
+      "after": 20
+    },
+    {
+      "action": "prune_modelIds",
+      "mfr": "_TZ3000_sj7jbgks",
+      "driverId": "button_wireless_3",
+      "before": 104,
+      "after": 4
+    },
+    {
+      "action": "prune_modelIds",
+      "mfr": "_TZ3040_FWXUZCF4",
+      "driverId": "sensor_motion_presence",
+      "before": 22,
+      "after": 20
+    },
+    {
+      "action": "prune_modelIds",
+      "mfr": "_tz3000_2xlvlnez",
+      "driverId": "button_wireless_plug",
+      "before": 40,
+      "after": 37
+    },
+    {
+      "action": "prune_modelIds",
+      "mfr": "_TZ3000_iv6ph5tr",
+      "driverId": "button_wireless_plug",
+      "before": 40,
+      "after": 37
+    },
+    {
+      "action": "prune_modelIds",
+      "mfr": "_TZ3000_mlswgkc3",
+      "driverId": "button_wireless_plug",
+      "before": 40,
+      "after": 37
+    },
+    {
+      "action": "prune_modelIds",
+      "mfr": "_TZ3000_cehuw1lw",
+      "driverId": "button_wireless_plug",
+      "before": 15,
+      "after": 37
+    },
+    {
+      "action": "prune_modelIds",
+      "mfr": "_TZE200_01FVXAMO",
+      "driverId": "motion_sensor",
+      "before": 48,
+      "after": 36
+    },
+    {
+      "action": "prune_modelIds",
+      "mfr": "_TZE200_IQ4YGAAI",
+      "driverId": "motion_sensor",
+      "before": 48,
+      "after": 36
+    },
+    {
+      "action": "prune_modelIds",
+      "mfr": "_TZE200_MGXY2D9F",
+      "driverId": "motion_sensor",
+      "before": 48,
+      "after": 36
+    },
+    {
+      "action": "prune_modelIds",
+      "mfr": "_TZE284_o9ofysmo",
+      "driverId": "soil_sensor",
+      "before": 59,
+      "after": 45
+    },
+    {
+      "action": "prune_modelIds",
+      "mfr": "_TZE284_xc3vwx5a",
+      "driverId": "soil_sensor",
+      "before": 59,
+      "after": 45
+    },
+    {
+      "action": "prune_modelIds",
+      "mfr": "_TZE200_pay2byax",
+      "driverId": "contact_sensor_zigbee",
+      "before": 3,
+      "after": 1
+    },
+    {
+      "action": "prune_modelIds",
+      "mfr": "_TZB210_lmqquxus",
+      "driverId": "light_bulb_rgb",
+      "before": 59,
+      "after": 57
+    },
+    {
+      "action": "prune_modelIds",
+      "mfr": "_TZE28C1000000_81yrt3lo",
+      "driverId": "power_clamp_meter",
+      "before": 22,
+      "after": 11
+    },
+    {
+      "action": "prune_modelIds",
+      "mfr": "_tz3210_0zabbfax",
+      "driverId": "light_bulb_rgb",
+      "before": 59,
+      "after": 57
+    },
+    {
+      "action": "prune_modelIds",
+      "mfr": "_tz3210_95txyzbx",
+      "driverId": "light_bulb_rgb",
+      "before": 59,
+      "after": 57
+    },
+    {
+      "action": "prune_modelIds",
+      "mfr": "_TZ3210_keabpigv",
+      "driverId": "light_bulb_rgb",
+      "before": 59,
+      "after": 57
+    },
+    {
+      "action": "prune_modelIds",
+      "mfr": "_TYST11_7HFCUDW5",
+      "driverId": "motion_sensor",
+      "before": 48,
+      "after": 36
+    },
+    {
+      "action": "prune_modelIds",
+      "mfr": "_TYST11_I5J6IFXJ",
+      "driverId": "motion_sensor",
+      "before": 48,
+      "after": 36
+    },
+    {
+      "action": "prune_modelIds",
+      "mfr": "_TYZB01_2B8F6CIO",
+      "driverId": "motion_sensor",
+      "before": 48,
+      "after": 36
+    },
+    {
+      "action": "prune_modelIds",
+      "mfr": "_TYZB01_2JZBHOMB",
+      "driverId": "motion_sensor",
+      "before": 48,
+      "after": 36
+    },
+    {
+      "action": "prune_modelIds",
+      "mfr": "_TYZB01_71KFVVMA",
+      "driverId": "motion_sensor",
+      "before": 48,
+      "after": 36
+    },
+    {
+      "action": "prune_modelIds",
+      "mfr": "_TYZB01_BHXCJVLV",
+      "driverId": "motion_sensor",
+      "before": 48,
+      "after": 36
+    },
+    {
+      "action": "prune_modelIds",
+      "mfr": "_TYZB01_EF5XLC9Q",
+      "driverId": "motion_sensor",
+      "before": 48,
+      "after": 36
+    },
+    {
+      "action": "prune_modelIds",
+      "mfr": "_TYZB01_HQBDRU35",
+      "driverId": "motion_sensor",
+      "before": 48,
+      "after": 36
+    },
+    {
+      "action": "prune_modelIds",
+      "mfr": "_TYZB01_QJQGMQXR",
+      "driverId": "motion_sensor",
+      "before": 48,
+      "after": 36
+    },
+    {
+      "action": "prune_modelIds",
+      "mfr": "_TYZB01_RWB0HXTF",
+      "driverId": "motion_sensor",
+      "before": 48,
+      "after": 36
+    },
+    {
+      "action": "prune_modelIds",
+      "mfr": "_TYZB01_TV3WXHCZ",
+      "driverId": "motion_sensor",
+      "before": 48,
+      "after": 36
+    },
+    {
+      "action": "prune_modelIds",
+      "mfr": "_TYZB01_V8JNCLQD",
+      "driverId": "motion_sensor",
+      "before": 48,
+      "after": 36
+    },
+    {
+      "action": "prune_modelIds",
+      "mfr": "_TYZB01_VWQNZ1SN",
+      "driverId": "motion_sensor",
+      "before": 48,
+      "after": 36
+    },
+    {
+      "action": "prune_modelIds",
+      "mfr": "_TYZB01_ZWVAJ5WY",
+      "driverId": "motion_sensor",
+      "before": 48,
+      "after": 36
+    },
+    {
+      "action": "prune_modelIds",
+      "mfr": "_TZ3000_6ZVPCDNY",
+      "driverId": "motion_sensor",
+      "before": 48,
+      "after": 36
+    },
+    {
+      "action": "prune_modelIds",
+      "mfr": "_TZ3000_BMG14AX7",
+      "driverId": "motion_sensor",
+      "before": 48,
+      "after": 36
+    },
+    {
+      "action": "prune_modelIds",
+      "mfr": "_TZ3000_BSVQRK3B",
+      "driverId": "motion_sensor",
+      "before": 48,
+      "after": 36
+    },
+    {
+      "action": "prune_modelIds",
+      "mfr": "_TZ3000_C8OZAH8N",
+      "driverId": "motion_sensor",
+      "before": 48,
+      "after": 36
+    },
+    {
+      "action": "prune_modelIds",
+      "mfr": "_TZ3000_MMTWJMAQ",
+      "driverId": "motion_sensor",
+      "before": 48,
+      "after": 36
+    },
+    {
+      "action": "prune_modelIds",
+      "mfr": "_TZ3000_MSL6WXKP",
+      "driverId": "motion_sensor",
+      "before": 48,
+      "after": 36
+    },
+    {
+      "action": "prune_modelIds",
+      "mfr": "_TZ3000_O4MKAHK",
+      "driverId": "motion_sensor",
+      "before": 48,
+      "after": 36
+    },
+    {
+      "action": "prune_modelIds",
+      "mfr": "_TZ3000_OTVN6Y0A",
+      "driverId": "motion_sensor",
+      "before": 48,
+      "after": 36
+    },
+    {
+      "action": "prune_modelIds",
+      "mfr": "_TZ3000_PIRDDKFC",
+      "driverId": "motion_sensor",
+      "before": 48,
+      "after": 36
+    },
+    {
+      "action": "prune_modelIds",
+      "mfr": "_TZ3000_SR0VAAFI",
+      "driverId": "motion_sensor",
+      "before": 48,
+      "after": 36
+    },
+    {
+      "action": "prune_modelIds",
+      "mfr": "_TZ3000_TIWQ83WK",
+      "driverId": "motion_sensor",
+      "before": 48,
+      "after": 36
+    },
+    {
+      "action": "prune_modelIds",
+      "mfr": "_TZ3000_WRGN6XRZ",
+      "driverId": "motion_sensor",
+      "before": 48,
+      "after": 36
+    },
+    {
+      "action": "prune_modelIds",
+      "mfr": "_TZ3000_XABCK15B",
+      "driverId": "motion_sensor",
+      "before": 48,
+      "after": 36
+    },
+    {
+      "action": "prune_modelIds",
+      "mfr": "_TZ3000_YKWCWXMZ",
+      "driverId": "motion_sensor",
+      "before": 48,
+      "after": 36
+    },
+    {
+      "action": "prune_modelIds",
+      "mfr": "_TZ3210_JIJR1SSS",
+      "driverId": "motion_sensor",
+      "before": 48,
+      "after": 36
+    },
+    {
+      "action": "prune_modelIds",
+      "mfr": "_TZE200_8VIYDIWR",
+      "driverId": "motion_sensor",
+      "before": 48,
+      "after": 36
+    },
+    {
+      "action": "prune_modelIds",
+      "mfr": "_TZE200_ARGE1PTM",
+      "driverId": "motion_sensor",
+      "before": 48,
+      "after": 36
+    },
+    {
+      "action": "prune_modelIds",
+      "mfr": "_TZE200_BH4N9CLUK",
+      "driverId": "motion_sensor",
+      "before": 48,
+      "after": 36
+    },
+    {
+      "action": "prune_modelIds",
+      "mfr": "_TZE200_DCRRZTPA",
+      "driverId": "motion_sensor",
+      "before": 48,
+      "after": 36
+    },
+    {
+      "action": "prune_modelIds",
+      "mfr": "_TZE200_MCHXVE9O",
+      "driverId": "motion_sensor",
+      "before": 48,
+      "after": 36
+    },
+    {
+      "action": "prune_modelIds",
+      "mfr": "_TZE200_NHK3BPXQ",
+      "driverId": "motion_sensor",
+      "before": 48,
+      "after": 36
+    },
+    {
+      "action": "prune_modelIds",
+      "mfr": "_TZE200_XQ4HGAFZ",
+      "driverId": "motion_sensor",
+      "before": 48,
+      "after": 36
+    },
+    {
+      "action": "prune_modelIds",
+      "mfr": "_TZE204_BJF8QUM1",
+      "driverId": "motion_sensor",
+      "before": 48,
+      "after": 36
+    },
+    {
+      "action": "prune_modelIds",
+      "mfr": "_TZE204_MCHXVE9O",
+      "driverId": "motion_sensor",
+      "before": 48,
+      "after": 36
+    },
+    {
+      "action": "prune_modelIds",
+      "mfr": "_TZE204_SNDKANFR",
+      "driverId": "motion_sensor",
+      "before": 48,
+      "after": 36
+    },
+    {
+      "action": "prune_modelIds",
+      "mfr": "_TZE284_0ZSE7XQG",
+      "driverId": "motion_sensor",
+      "before": 48,
+      "after": 36
+    },
+    {
+      "action": "prune_modelIds",
+      "mfr": "_tz3040_6ygjfyll",
+      "driverId": "sensor_motion_presence",
+      "before": 22,
+      "after": 20
+    },
+    {
+      "action": "prune_modelIds",
+      "mfr": "_TYZB01_jytabjkb",
+      "driverId": "sensor_motion_presence",
+      "before": 22,
+      "after": 20
+    },
+    {
+      "action": "prune_modelIds",
+      "mfr": "_TZ3000_6ygjfyll",
+      "driverId": "sensor_motion_presence",
+      "before": 22,
+      "after": 20
+    },
+    {
+      "action": "prune_modelIds",
+      "mfr": "_tz3210_ncw88jfq",
+      "driverId": "sensor_climate_temphumidsensor",
+      "before": 5,
+      "after": 26
+    },
+    {
+      "action": "prune_modelIds",
+      "mfr": "_TZ3000_ywagc4rj",
+      "driverId": "sensor_climate_temphumidsensor",
+      "before": 5,
+      "after": 26
+    },
+    {
+      "action": "prune_modelIds",
+      "mfr": "_TZE204_y8jijhba",
+      "driverId": "presence_sensor_radar",
+      "before": 8,
+      "after": 54
+    },
+    {
+      "action": "prune_modelIds",
+      "mfr": "_tze200_bj9m6v91",
+      "driverId": "sensor_motion_presence",
+      "before": 22,
+      "after": 20
+    },
+    {
+      "action": "prune_modelIds",
+      "mfr": "_TZ3000_mcxw5ehu",
+      "driverId": "sensor_motion_presence",
+      "before": 22,
+      "after": 20
+    },
+    {
+      "action": "prune_modelIds",
+      "mfr": "_TZ3000_msl6wxk9",
+      "driverId": "sensor_motion_presence",
+      "before": 22,
+      "after": 20
+    },
+    {
+      "action": "prune_modelIds",
+      "mfr": "_TZ3210_cwamkvua",
+      "driverId": "sensor_motion_presence",
+      "before": 22,
+      "after": 20
+    },
+    {
+      "action": "prune_modelIds",
+      "mfr": "_TZ3000_lltemgsf",
+      "driverId": "sensor_motion_presence",
+      "before": 22,
+      "after": 20
+    },
+    {
+      "action": "prune_modelIds",
+      "mfr": "_TYZB01_5nr7ncpl",
+      "driverId": "sensor_motion_presence",
+      "before": 22,
+      "after": 20
+    },
+    {
+      "action": "prune_modelIds",
+      "mfr": "_TZ3000_mg4dy6z6",
+      "driverId": "sensor_motion_presence",
+      "before": 22,
+      "after": 20
+    },
+    {
+      "action": "prune_modelIds",
+      "mfr": "_TZ3000_bsvqrxru",
+      "driverId": "sensor_motion_presence",
+      "before": 22,
+      "after": 20
+    },
+    {
+      "action": "prune_modelIds",
+      "mfr": "_TZ3040_wqmtjsyk",
+      "driverId": "sensor_motion_presence",
+      "before": 22,
+      "after": 20
+    },
+    {
+      "action": "prune_modelIds",
+      "mfr": "_TZ3000_h4wnrtck",
+      "driverId": "sensor_motion_presence",
+      "before": 22,
+      "after": 20
+    },
+    {
+      "action": "prune_modelIds",
+      "mfr": "_TZ3000_qomxlryd",
+      "driverId": "sensor_motion_presence",
+      "before": 22,
+      "after": 20
+    },
+    {
+      "action": "prune_modelIds",
+      "mfr": "_TZ3000_jmrgyl7o",
+      "driverId": "sensor_motion_presence",
+      "before": 22,
+      "after": 20
+    },
+    {
+      "action": "prune_modelIds",
+      "mfr": "_TZ3000_nss8amz9",
+      "driverId": "sensor_motion_presence",
+      "before": 22,
+      "after": 20
+    },
+    {
+      "action": "prune_modelIds",
+      "mfr": "_TZ3040_msl6wxk9",
+      "driverId": "sensor_motion_presence",
+      "before": 22,
+      "after": 20
+    },
+    {
+      "action": "prune_modelIds",
+      "mfr": "_TZE200_8isdky6j",
+      "driverId": "sensor_motion_presence",
+      "before": 22,
+      "after": 20
+    },
+    {
+      "action": "prune_modelIds",
+      "mfr": "_TZE200_p6fuhvez",
+      "driverId": "sensor_motion_presence",
+      "before": 22,
+      "after": 20
+    },
+    {
+      "action": "prune_modelIds",
+      "mfr": "_TZE200_aj0oxo1i",
+      "driverId": "sensor_motion_presence",
+      "before": 22,
+      "after": 20
+    },
+    {
+      "action": "prune_modelIds",
+      "mfr": "_TZE284_tre6haif",
+      "driverId": "sensor_motion_presence",
+      "before": 22,
+      "after": 20
+    },
+    {
+      "action": "prune_modelIds",
+      "mfr": "_TZE204_pay2byax",
+      "driverId": "contact_sensor_zigbee",
+      "before": 3,
+      "after": 1
+    },
+    {
+      "action": "prune_modelIds",
+      "mfr": "_TZ3000_IWTV2JWO",
+      "driverId": "switch_2gang",
       "before": 37,
-      "after": 48
+      "after": 12
+    },
+    {
+      "action": "prune_modelIds",
+      "mfr": "_tze284_81yrt3lo",
+      "driverId": "power_clamp_meter",
+      "before": 22,
+      "after": 11
+    },
+    {
+      "action": "prune_modelIds",
+      "mfr": "cat0001",
+      "driverId": "doorwindowsensor_4",
+      "before": 22,
+      "after": 20
+    },
+    {
+      "action": "prune_modelIds",
+      "mfr": "dss0010",
+      "driverId": "doorwindowsensor_4",
+      "before": 22,
+      "after": 20
+    },
+    {
+      "action": "prune_modelIds",
+      "mfr": "_tz3000_9ni6xxld",
+      "driverId": "gas_sensor_switch",
+      "before": 51,
+      "after": 50
+    },
+    {
+      "action": "prune_modelIds",
+      "mfr": "_tz3000_2hpk2v9l",
+      "driverId": "motion_sensor",
+      "before": 48,
+      "after": 36
+    },
+    {
+      "action": "prune_modelIds",
+      "mfr": "_tz3000_n2jmgqxl",
+      "driverId": "motion_sensor",
+      "before": 48,
+      "after": 36
+    },
+    {
+      "action": "prune_modelIds",
+      "mfr": "_tze284_sndkanfr",
+      "driverId": "motion_sensor",
+      "before": 48,
+      "after": 36
+    },
+    {
+      "action": "prune_modelIds",
+      "mfr": "_tz3210_tgvtvdo",
+      "driverId": "water_detector",
+      "before": 25,
+      "after": 23
+    },
+    {
+      "action": "case_dedupe",
+      "from": "hobeian",
+      "to": "HOBEIAN"
+    },
+    {
+      "action": "case_dedupe",
+      "from": "Hobeian",
+      "to": "HOBEIAN"
     }
   ]
 }

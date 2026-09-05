@@ -37,3 +37,12 @@ Added/locked:
 Still soft / NEED_INTERVIEW (no invent mfr-only for new pids without Z2M fingerprint):
 - ZG-229Z siren (zigbeeModel only in Z2M — brand HOBEIAN, no TZE list yet)
 - ZG-101ZL button (local OK, no Z2M tuya.ts entry)
+
+## P2423 — mfs_db enrich
+
+- Locked 38 TZE sacred couples in `data/mfs_db.json` (prune cartesian pollution → verified pids only).
+- Expanded `HOBEIAN.byPid` (32 pids) incl. ZG-204ZX, ZG-302ZM/ZL, ZG-102ZM, ZG-103Z, ZG-226Z, ZG-228Z.
+- Stripped `_TZE200_zbfmvj13` from `curtain_motor`; ZG-103Z mfrs from `switch_1gang`.
+- `sync-compose-to-mfs-db.js` skips `multiCouple` brands (no soil_sensor pid collapse).
+- Report: `reports/hobeian-enrich-2026-09-05/MFS_P2423.json`
+- Gate: `node test/critical/p2423-hobeian-mfs-enrich.test.js`
