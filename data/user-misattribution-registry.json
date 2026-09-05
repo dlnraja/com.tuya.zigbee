@@ -5847,7 +5847,8 @@
       ],
       "forbidMode": "couple",
       "source": "p2430-hobeian-fleet",
-      "notes": "P2430: HOBEIAN 1-gang switch couple lock. Never cartesian to radar/soil/dimmer."
+      "notes": "P2430: HOBEIAN 1-gang switch couple lock. Never cartesian to radar/soil/dimmer.",
+      "doNotTouch": true
     },
     {
       "id": "hobeian-zg301z-2ch-switch",
@@ -5871,7 +5872,8 @@
       ],
       "forbidMode": "couple",
       "source": "p2430-hobeian-fleet",
-      "notes": "P2430: HOBEIAN 2-gang switch couple lock."
+      "notes": "P2430: HOBEIAN 2-gang switch couple lock.",
+      "doNotTouch": true
     },
     {
       "id": "hobeian-zg302z3-switch",
@@ -5894,7 +5896,8 @@
       ],
       "forbidMode": "couple",
       "source": "p2430-hobeian-fleet",
-      "notes": "P2430: HOBEIAN 3-gang switch couple lock."
+      "notes": "P2430: HOBEIAN 3-gang switch couple lock.",
+      "doNotTouch": true
     },
     {
       "id": "hobeian-zg101zs-scene",
@@ -5915,7 +5918,8 @@
       ],
       "forbidMode": "couple",
       "source": "p2430-hobeian-fleet",
-      "notes": "P2430: HOBEIAN Star Ring 4-gang scene switch couple lock."
+      "notes": "P2430: HOBEIAN Star Ring 4-gang scene switch couple lock.",
+      "doNotTouch": true
     },
     {
       "id": "hobeian-zg229z-siren",
@@ -5936,7 +5940,8 @@
       ],
       "forbidMode": "couple",
       "source": "p2430-hobeian-fleet",
-      "notes": "P2430: HOBEIAN smart siren couple lock."
+      "notes": "P2430: HOBEIAN smart siren couple lock.",
+      "doNotTouch": true
     },
     {
       "id": "hobeian-zg225z-gas",
@@ -5957,7 +5962,8 @@
       ],
       "forbidMode": "couple",
       "source": "p2430-hobeian-fleet",
-      "notes": "P2430: HOBEIAN gas sensor couple lock."
+      "notes": "P2430: HOBEIAN gas sensor couple lock.",
+      "doNotTouch": true
     }
   ]
 }
