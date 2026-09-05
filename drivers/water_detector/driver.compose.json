@@ -22,14 +22,15 @@
     ]
   },
   "images": {
-    "large": "/{{driverAssetsPath}}/images/large.png",
-    "small": "/{{driverAssetsPath}}/images/small.png"
+    "small": "/drivers/water_detector/assets/images/small.png",
+    "large": "/drivers/water_detector/assets/images/large.png"
   },
   "zigbee": {
     "manufacturerName": [
-      "_TZ3000_6oabgtzv",
-      "_TZ3000_6OABGTZV",
-      "_tz3000_6oabgtzv"
+      "_tz3210_tgvtvdo",
+      "_TZ3210_TGVTVDO",
+      "_TZ3210_tgvtvdo",
+      "_tz3210_TGVTVDO"
     ],
     "productId": [
       "3300-S",
@@ -48,11 +49,8 @@
       "TRADFRI open/close remote",
       "TS0021",
       "TS0203",
-      "TS0207",
       "TS0601",
       "TY0203",
-      "ZG-102Z",
-      "ZG-102ZL",
       "lumi.magnet.ac01",
       "lumi.magnet.agl02",
       "lumi.sensor_magnet",
@@ -91,8 +89,5 @@
       "getable": false,
       "setable": false
     }
-  },
-  "_pidConflictNotes": [
-    "// PID-CONFLICT-NOTE TS0207 shared with 5 other drivers (cross-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md"
-  ]
+  }
 }

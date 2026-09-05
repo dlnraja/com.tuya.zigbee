@@ -11,7 +11,6 @@
     "button.toggle_3",
     "button.toggle_4",
     "button.identify",
-    "measure_battery",
     "alarm_co",
     "alarm_co2",
     "alarm_contact",
@@ -50,7 +49,6 @@
       "TS0111",
       "TS011F",
       "TS0203",
-      "TS0207",
       "TS0601",
       "TS0601_generic",
       "TS0603",
@@ -67,11 +65,9 @@
       "ZBMINIR",
       "ZBMINIR2",
       "ZBMINIR2-R2",
-      "ZG-223Z",
       "ZG-301Z",
       "ZG-302Z1",
       "_tz3000_eit6l5",
-      "_tz3000_k4ej3ww2",
       "_tz3000_kyb656no",
       "lumi.sensor_wleak.aq1"
     ],
@@ -99,14 +95,16 @@
       }
     },
     "learnmode": {
-      "image": "/drivers/switch_4gang/assets/learnmode.svg",
+      "image": "{{driverAssetsPath}}/icon.svg",
       "instruction": {
         "en": "Turn the switch on/off 3 times quickly"
       }
     },
     "manufacturerName": [
-      "_MASTER_GAS_SENSOR_SWITCH_NEEDS_DEVICE_ASSIGNMENT",
-      "_master_gas_sensor_switch_needs_device_assignment"
+      "_TZ3000_9ni6xxld",
+      "_tz3000_9ni6xxld",
+      "_TZ3000_9NI6XXLD",
+      "_tz3000_9NI6XXLD"
     ]
   },
   "images": {
@@ -130,22 +128,22 @@
           },
           "hint": {
             "en": "Select the type of device connected to this module. Radiator will invert the ON/OFF logic.",
-            "fr": "Sélectionnez le type d'appareil connecté àce module. Radiateur inversera la logique MARCHE/ARRÃŠT."
+            "fr": "Sélectionnez le type d'appareil connecté àce module. Radiateur inversera la logique MARCHE/ARRÊT."
           },
           "value": "light",
           "values": [
             {
               "id": "light",
               "label": {
-                "en": " Ã‰clairage",
-                "fr": " Ã‰clairage"
+                "en": " Éclairage",
+                "fr": " Éclairage"
               }
             },
             {
               "id": "outdoor_light",
               "label": {
-                "en": " Ã‰clairage extérieur",
-                "fr": " Ã‰clairage extérieur"
+                "en": " Éclairage extérieur",
+                "fr": " Éclairage extérieur"
               }
             },
             {
@@ -235,8 +233,8 @@
             {
               "id": "pool",
               "label": {
-                "en": " Ã‰quipement piscine",
-                "fr": " Ã‰quipement piscine"
+                "en": " Équipement piscine",
+                "fr": " Équipement piscine"
               }
             },
             {
@@ -249,8 +247,8 @@
             {
               "id": "appliance",
               "label": {
-                "en": " Ã‰lectroménager",
-                "fr": " Ã‰lectroménager"
+                "en": " Électroménager",
+                "fr": " Électroménager"
               }
             },
             {
@@ -277,8 +275,8 @@
             {
               "id": "tv",
               "label": {
-                "en": " TV / Ã‰cran",
-                "fr": " TV / Ã‰cran"
+                "en": " TV / Écran",
+                "fr": " TV / Écran"
               }
             },
             {
@@ -313,7 +311,7 @@
           },
           "hint": {
             "en": "Force invert ON/OFF logic regardless of device type (advanced users only)",
-            "fr": "Forcer l'inversion de la logique MARCHE/ARRÃŠT indépendamment du type (utilisateurs avancés uniquement)"
+            "fr": "Forcer l'inversion de la logique MARCHE/ARRÊT indépendamment du type (utilisateurs avancés uniquement)"
           },
           "value": false
         }
@@ -485,7 +483,7 @@
       "type": "dropdown",
       "label": {
         "en": "Energy Optimization Mode",
-        "fr": "Mode Optimisation Ã‰nergétique"
+        "fr": "Mode Optimisation Énergétique"
       },
       "value": "balanced",
       "values": [
@@ -500,20 +498,20 @@
           "id": "balanced",
           "label": {
             "en": "Balanced",
-            "fr": "Ã‰quilibré"
+            "fr": "Équilibré"
           }
         },
         {
           "id": "power_saving",
           "label": {
             "en": "Power Saving (Longer battery)",
-            "fr": "Ã‰conomie d'énergie (Batterie plus longue)"
+            "fr": "Économie d'énergie (Batterie plus longue)"
           }
         }
       ],
       "hint": {
         "en": "Balance between responsiveness and battery life",
-        "fr": "Ã‰quilibre entre réactivité et durée de vie de la batterie"
+        "fr": "Équilibre entre réactivité et durée de vie de la batterie"
       }
     },
     {
@@ -701,9 +699,6 @@
     }
   },
   "energy": {
-    "batteries": [
-      "CR2450"
-    ],
     "mains": true
   },
   "pair": [
@@ -735,7 +730,7 @@
       "id": "ota_check",
       "title": {
         "en": "Check Zigbee OTA Update",
-        "fr": "Vérifier MÃJ OTA",
+        "fr": "Vérifier MàJ OTA",
         "nl": "Controleer op OTA-updates"
       }
     },
@@ -743,14 +738,18 @@
       "id": "tuya_revive",
       "title": {
         "en": "Tuya Revive (device recovery)",
-        "fr": "Tuya Revive (récupération appareil)"
+        "fr": "Tuya Revive (récupération appareil)",
+        "nl": "Tuya Revive (apparaatherstel)",
+        "de": "Tuya Revive (Gerätewiederherstellung)"
       }
     },
     {
       "id": "generate_issue_report",
       "title": {
         "en": "Generate support report (GitHub issue)",
-        "fr": "Générer rapport de support (issue GitHub)"
+        "fr": "Générer rapport de support (issue GitHub)",
+        "nl": "Supportrapport genereren (GitHub issue)",
+        "de": "Supportbericht erstellen (GitHub Issue)"
       }
     }
   ],

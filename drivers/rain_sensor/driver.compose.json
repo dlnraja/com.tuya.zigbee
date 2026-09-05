@@ -9,6 +9,7 @@
   "capabilities": [
     "alarm_water",
     "measure_humidity",
+    "measure_luminance",
     "measure_battery",
     "button.1"
   ],
@@ -39,7 +40,8 @@
   "energy": {
     "batteries": [
       "AAA",
-      "AA"
+      "AA",
+      "CR123A"
     ]
   },
   "zigbee": {
@@ -49,22 +51,38 @@
       "Hobeian",
       "_tz3000_k1msavlx",
       "_tz3000_otwpdq1d",
-      "_TZ3210_tgvtvdoc",
-      "_TZ3210_p68kms0l",
-      "_TZE200_u6x1zyv2",
       "_TZE204_u6x1zyv2",
       "_TZ3000_K1MSAVLX",
       "_TZ3000_OTWPDQ1D",
-      "_TZ3210_TGVTVDOC",
-      "_tz3210_tgvtvdoc",
-      "_TZ3210_P68KMS0L",
-      "_tz3210_p68kms0l",
-      "_TZE200_U6X1ZYV2",
-      "_tze200_u6x1zyv2",
       "_TZE204_U6X1ZYV2",
       "_tze204_u6x1zyv2",
       "_TZ3000_k1msavlx",
-      "_TZ3000_otwpdq1d"
+      "_TZ3000_otwpdq1d",
+      "_tz3000_K1MSAVLX",
+      "_tz3000_OTWPDQ1D",
+      "_tze204_U6X1ZYV2",
+      "_TZ3210_p68kms0l",
+      "_TZ3210_tgvtvdoc",
+      "_tz3210_p68kms0l",
+      "_tz3210_tgvtvdoc",
+      "_TZ3210_P68KMS0L",
+      "_tz3210_P68KMS0L",
+      "_TZ3210_TGVTVDOC",
+      "_tz3210_TGVTVDOC",
+      "_TZE200_u6x1zyv2",
+      "_tze200_u6x1zyv2",
+      "_TZE200_U6X1ZYV2",
+      "_tze200_U6X1ZYV2",
+      "_TZE284_u6x1zyv2",
+      "_tze284_u6x1zyv2",
+      "_TZE200_jsaqgakf",
+      "_TZE200_2pddnnrk",
+      "_tze200_jsaqgakf",
+      "_tze200_2pddnnrk",
+      "_TZE200_2PDDNNRK",
+      "_tze200_2PDDNNRK",
+      "_TZE200_JSAQGAKF",
+      "_tze200_JSAQGAKF"
     ],
     "productId": [
       "TS0207_rain",
@@ -77,11 +95,13 @@
         "clusters": [
           0,
           1,
+          1024,
           1280,
           61184
         ],
         "bindings": [
           1,
+          1024,
           1280
         ]
       }
@@ -127,8 +147,7 @@
   ],
   "images": {
     "small": "/drivers/rain_sensor/assets/images/small.png",
-    "large": "/drivers/rain_sensor/assets/images/large.png",
-    "xlarge": "/drivers/rain_sensor/assets/images/xlarge.png"
+    "large": "/drivers/rain_sensor/assets/images/large.png"
   },
   "platforms": [
     "local"
@@ -149,21 +168,21 @@
       "id": "tuya_revive",
       "title": {
         "en": "Tuya Revive (device recovery)",
-        "fr": "Tuya Revive (récupération appareil)"
+        "fr": "Tuya Revive (récupération appareil)",
+        "nl": "Tuya Revive (apparaatherstel)",
+        "de": "Tuya Revive (Gerätewiederherstellung)"
       }
     },
     {
       "id": "generate_issue_report",
       "title": {
         "en": "Generate support report (GitHub issue)",
-        "fr": "Générer rapport de support (issue GitHub)"
+        "fr": "Générer rapport de support (issue GitHub)",
+        "nl": "Supportrapport genereren (GitHub issue)",
+        "de": "Supportbericht erstellen (GitHub Issue)"
       }
     }
   ],
   "id": "rain_sensor",
-  "version": "1.0.0",
-  "_pidConflictNotes": [
-    "// PID-CONFLICT-NOTE TS0207 shared with 5 other drivers (cross-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md",
-    "// PID-CONFLICT-NOTE ZG-223Z shared with 3 other drivers (same-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md"
-  ]
+  "version": "1.0.0"
 }

@@ -172,6 +172,7 @@ Generated 2026-08-19T08:50:15.322Z from registry (54 cases) × compound DB (209 
   - `_TZE200_khzbklyh` (+ df04ghrb/toeldckg/cqtamhh5/xlnzk169/llvwkkde) + `TS0601` / `ZG-302ZL` → sensing switch (DP101 presence)
 - Forbid: `climate_sensor`, `vibration_sensor`, `power_clamp_meter`, `motion_sensor`
 - Clusters: EF00 (0xEF00) + optional ZCL illuminance on ZG-204ZM
+- **P2422 (full fleet):** ZE/ZK/ZQ/ZX radar configs; ZG-102ZM contact+vibration DPs; ZG-103Z tilt; ZG-226Z water alarm; ZG-228Z vibration alarm; strip ZG cartesian from illuminance/plug/curtain catch-alls.
 
 ### `valve-dual-fhvpaltk` → `valve_dual_irrigation`
 

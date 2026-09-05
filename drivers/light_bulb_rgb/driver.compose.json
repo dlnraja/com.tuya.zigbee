@@ -3,8 +3,8 @@
     "en": "Light Bulb Rgb",
     "nl": "Rgb Lamp",
     "fr": "Ampoule Rgb",
-    "de": "Rgb GlÃ¼hbirne",
-    "es": "Bombilla Rgb HÃ­brida"
+    "de": "Rgb Glühbirne",
+    "es": "Bombilla Rgb Híbrida"
   },
   "class": "light",
   "capabilities": [
@@ -14,17 +14,10 @@
     "light_temperature",
     "light_mode",
     "onoff",
-    "measure_battery",
     "button.1"
   ],
   "energy": {
-    "approximation": {
-      "usageConstant": 6
-    },
-    "mains": true,
-    "batteries": [
-      "CR2450"
-    ]
+    "mains": true
   },
   "zigbee": {
     "manufacturerName": [
@@ -69,7 +62,21 @@
       "_TZ3000_4g7vxuqk",
       "_TZ3000_mn9k8nhm",
       "_TZ3000_rnnzvseu",
-      "_TZ3210_quinzf3w"
+      "_TZ3210_quinzf3w",
+      "_tz3000_GN91MCMZ",
+      "_tz3210_0ZABBFAX",
+      "_tz3210_5VBJZW54",
+      "_tz3210_95TXYZBX",
+      "_tz3290_GNL5A6A5",
+      "_tzb210_AAVHAADB",
+      "_tzb210_QUINZF3W",
+      "_tzb210_LMQQUXUS",
+      "_tz3210_778DRFDT",
+      "_tz3000_4G7VXUQK",
+      "_tz3000_MN9K8NHM",
+      "_tz3000_RNNZVSEU",
+      "_tz3210_QUINZF3W",
+      "_tz3210_KEABPIGV"
     ],
     "endpoints": {
       "1": {
@@ -85,7 +92,7 @@
       }
     },
     "learnmode": {
-      "image": "/drivers/bulb_rgb/assets/learnmode.svg",
+      "image": "{{driverAssetsPath}}/icon.svg",
       "instruction": {
         "en": "Press and hold the pairing button for 5 seconds until the LED flashes.",
         "fr": "Appuyez et maintenez le bouton d'appairage pendant 5 secondes jusqu'àce que la LED clignote."
@@ -145,8 +152,6 @@
       "ZBMINI-DIM",
       "ZBMINID",
       "ZBT-ColorLight",
-      "ZG-102Z",
-      "ZG-102ZL",
       "lumi.magnet.ac01",
       "lumi.magnet.agl02",
       "lumi.sensor_magnet",
@@ -177,7 +182,7 @@
             "en": "Turn Off",
             "nl": "Uitschakelen",
             "de": "Ausschalten",
-            "fr": "Ã‰teindre"
+            "fr": "Éteindre"
           }
         },
         {
@@ -212,7 +217,7 @@
       "label": {
         "en": "Do Not Disturb",
         "nl": "Niet storen",
-        "de": "Nicht stÃ¶ren",
+        "de": "Nicht stören",
         "fr": "Ne pas déranger"
       },
       "value": false,
@@ -220,7 +225,7 @@
         "en": "Keep light off after power loss (prevents unwanted turn on)",
         "nl": "Lamp uit houden na stroomuitval (voorkomt ongewenst inschakelen)",
         "de": "Licht nach Stromausfall aus lassen (verhindert ungewolltes Einschalten)",
-        "fr": "Garder la lumière éteinte après coupure (empÃªche l'allumage non souhaité)"
+        "fr": "Garder la lumière éteinte après coupure (empêche l'allumage non souhaité)"
       }
     },
     {
@@ -229,7 +234,7 @@
       "label": {
         "en": "Transition Time (seconds)",
         "nl": "Overgangstijd (seconden)",
-        "de": "Ãœbergangszeit (Sekunden)",
+        "de": "Übergangszeit (Sekunden)",
         "fr": "Temps de transition (secondes)"
       },
       "value": 0.4,
@@ -239,7 +244,7 @@
       "hint": {
         "en": "Time for brightness/color transitions (0 = instant)",
         "nl": "Tijd voor helderheid/kleur overgangen (0 = direct)",
-        "de": "Zeit fÃ¼r Helligkeits-/FarbÃ¼bergÃ¤nge (0 = sofort)",
+        "de": "Zeit für Helligkeits-/Farbübergänge (0 = sofort)",
         "fr": "Temps pour les transitions de luminosité/couleur (0 = instantané)"
       }
     },
@@ -269,7 +274,7 @@
             "en": "Extended (2000K-6500K)",
             "nl": "Uitgebreid (2000K-6500K)",
             "de": "Erweitert (2000K-6500K)",
-            "fr": "Ã‰tendu (2000K-6500K)"
+            "fr": "Étendu (2000K-6500K)"
           }
         },
         {
@@ -285,7 +290,7 @@
       "hint": {
         "en": "Adjust color temperature range based on your bulb capabilities",
         "nl": "Pas kleurtemperatuurbereik aan op basis van lampcapaciteiten",
-        "de": "Farbtemperaturbereich basierend auf LampenfÃ¤higkeiten anpassen",
+        "de": "Farbtemperaturbereich basierend auf Lampenfähigkeiten anpassen",
         "fr": "Ajuster la plage de température de couleur selon les capacités de l'ampoule"
       }
     },
@@ -455,7 +460,7 @@
       "type": "dropdown",
       "label": {
         "en": "Energy Optimization Mode",
-        "fr": "Mode Optimisation Ã‰nergétique"
+        "fr": "Mode Optimisation Énergétique"
       },
       "value": "balanced",
       "values": [
@@ -470,20 +475,20 @@
           "id": "balanced",
           "label": {
             "en": "Balanced",
-            "fr": "Ã‰quilibré"
+            "fr": "Équilibré"
           }
         },
         {
           "id": "power_saving",
           "label": {
             "en": "Power Saving (Longer battery)",
-            "fr": "Ã‰conomie d'énergie (Batterie plus longue)"
+            "fr": "Économie d'énergie (Batterie plus longue)"
           }
         }
       ],
       "hint": {
         "en": "Balance between responsiveness and battery life",
-        "fr": "Ã‰quilibre entre réactivité et durée de vie de la batterie"
+        "fr": "Équilibre entre réactivité et durée de vie de la batterie"
       }
     },
     {
@@ -548,7 +553,7 @@
       "id": "ota_check",
       "title": {
         "en": "Check Zigbee OTA Update",
-        "fr": "Vérifier MÃJ OTA",
+        "fr": "Vérifier MàJ OTA",
         "nl": "Controleer op OTA-updates"
       }
     },
@@ -556,14 +561,18 @@
       "id": "tuya_revive",
       "title": {
         "en": "Tuya Revive (device recovery)",
-        "fr": "Tuya Revive (récupération appareil)"
+        "fr": "Tuya Revive (récupération appareil)",
+        "nl": "Tuya Revive (apparaatherstel)",
+        "de": "Tuya Revive (Gerätewiederherstellung)"
       }
     },
     {
       "id": "generate_issue_report",
       "title": {
         "en": "Generate support report (GitHub issue)",
-        "fr": "Générer rapport de support (issue GitHub)"
+        "fr": "Générer rapport de support (issue GitHub)",
+        "nl": "Supportrapport genereren (GitHub issue)",
+        "de": "Supportbericht erstellen (GitHub Issue)"
       }
     }
   ],
@@ -579,31 +588,6 @@
   },
   "id": "light_bulb_rgb",
   "version": "1.0.0",
-  "_pidConflictNotes": [
-    "// PID-CONFLICT-NOTE TS0505B shared with 19 other drivers (cross-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md",
-    "// PID-CONFLICT-NOTE TS0505A shared with 13 other drivers (cross-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md",
-    "// PID-CONFLICT-NOTE TS0504B shared with 7 other drivers (cross-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md",
-    "// PID-CONFLICT-NOTE TS0503B shared with 5 other drivers (cross-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md",
-    "// PID-CONFLICT-NOTE TS0503A shared with 4 other drivers (cross-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md",
-    "// PID-CONFLICT-NOTE ZB-CL01 shared with 3 other drivers (same-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md",
-    "// PID-CONFLICT-NOTE LCT001 shared with 2 other drivers (same-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md",
-    "// PID-CONFLICT-NOTE LCT002 shared with 2 other drivers (same-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md",
-    "// PID-CONFLICT-NOTE LCT003 shared with 2 other drivers (same-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md",
-    "// PID-CONFLICT-NOTE LCT007 shared with 2 other drivers (same-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md",
-    "// PID-CONFLICT-NOTE LCT010 shared with 2 other drivers (same-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md",
-    "// PID-CONFLICT-NOTE LCT011 shared with 2 other drivers (same-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md",
-    "// PID-CONFLICT-NOTE LCT012 shared with 2 other drivers (same-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md",
-    "// PID-CONFLICT-NOTE LCT014 shared with 2 other drivers (same-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md",
-    "// PID-CONFLICT-NOTE LCT015 shared with 2 other drivers (same-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md",
-    "// PID-CONFLICT-NOTE LCT016 shared with 2 other drivers (same-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md",
-    "// PID-CONFLICT-NOTE GL-C-006 shared with 2 other drivers (same-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md",
-    "// PID-CONFLICT-NOTE RB 185 C shared with 2 other drivers (same-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md",
-    "// PID-CONFLICT-NOTE RB 285 C shared with 2 other drivers (same-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md",
-    "// PID-CONFLICT-NOTE E11-G13 shared with 2 other drivers (same-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md",
-    "// PID-CONFLICT-NOTE E11-G14 shared with 2 other drivers (same-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md",
-    "// PID-CONFLICT-NOTE E11-G23 shared with 2 other drivers (same-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md",
-    "// PID-CONFLICT-NOTE ZBT-ColorLight shared with 2 other drivers (same-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md"
-  ],
   "ui": {
     "quickAction": "onoff"
   }

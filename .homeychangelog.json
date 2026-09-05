@@ -1443,5 +1443,8 @@
   },
   "5.12.133": {
     "en": "HOBEIAN sensors: corrected mmWave DP maps and locked motion-sensing switches; fixed wrong climate/vibration pairing."
+  },
+  "5.12.134": {
+    "en": "HOBEIAN full enrich: mmWave ZE/ZK/ZQ/ZX, vibration+contact, tilt, water/vibration alarms."
   }
 }
