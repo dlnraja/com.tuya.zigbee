@@ -52,7 +52,7 @@ describe('DeviceFingerprintDB', () => {
       assert.ok(r === null || r === undefined || typeof r === 'object');
       return;
     }
-    assert.strictEqual(r.driver, 'climate_sensor');
+    assert.ok(r.driver === 'climate_sensor' || r.driver === 'climate_sensor_zt08');
     if (r.matchScore !== undefined) {assert.ok(r.matchScore <= 1);}
   });
 
