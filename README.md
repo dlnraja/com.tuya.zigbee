@@ -33,7 +33,7 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 
 | Metric | Value |
 |--------|-------|
-| **App Version** | v9.0.833 |
+| **App Version** | v9.0.834 |
 | **Drivers** | 431 (381 Zigbee + 50 WiFi) |
 | **Unique Fingerprints** | 4,396 |
 | **Pairing Variants** | 16,182 (4 case combos per fingerprint) |
@@ -41,7 +41,7 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 | **Flow Cards** | 5,952 |
 | **Unique Capabilities** | 170 |
 | **Native OTA Drivers** | 9 |
-| **Test Suites** | 250 files |
+| **Test Suites** | 251 files |
 | **SVG Icons** | 731 |
 | **Languages** | EN, FR, NL, DE |
 | **SDK / Homey** | 3 / >= 12.2.0 |
@@ -102,6 +102,7 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 
 | Version | Changes |
 |---------|---------|
+| **v9.0.834** | Fixed BSEED 1-gang switch routing (Issue #540), pruned manifest flow duplicates, resolved ZG-303Z registry lock, and enforced zero guidel… |
 | **v9.0.833** | Fixed BSEED 1-gang switch routing (Issue #540), pruned manifest flow duplicates, resolved ZG-303Z registry lock, and enforced zero guidel… |
 | **v9.0.832** | Fixed BSEED 1-gang switch routing (Issue #540), pruned manifest flow duplicates, resolved ZG-303Z registry lock, and enforced zero guidel… |
 | **v9.0.831** | Improved manufacturer fingerprint database for HOBEIAN devices (presence, vibration, soil) and fixed wrong curtain/switch matches. |
@@ -113,7 +114,6 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 | **v9.0.825** | Improved manufacturer fingerprint database for HOBEIAN devices (presence, vibration, soil) and fixed wrong curtain/switch matches. |
 | **v9.0.824** | HOBEIAN full enrich: more mmWave variants (ZE/ZK/ZQ/ZX), vibration+contact (ZG-102ZM), tilt (ZG-103Z), water/vibration alarms (ZG-226Z/22… |
 | **v9.0.823** | HOBEIAN full enrich: more mmWave variants (ZE/ZK/ZQ/ZX), vibration+contact (ZG-102ZM), tilt (ZG-103Z), water/vibration alarms (ZG-226Z/22… |
-| **v9.0.822** | HOBEIAN sensors: corrected mmWave DP maps (ZG-204ZM/ZH) and locked motion-sensing switches (ZG-302ZM/ZL); fixed wrong climate/vibration p… |
 
 <!-- CHANGELOG_END -->
 
