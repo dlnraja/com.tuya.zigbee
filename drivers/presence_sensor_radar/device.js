@@ -141,7 +141,19 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
   }
 
   async onNodeInit({ zclNode }) {
-    // v5.11.139: Call super.onNodeInit() FIRST to initialize TuyaZigbeeDevice base class
+    // WHY(VicHY #2227 / P2431): Arm DynCap guards and heal phantom curtain/battery caps FIRST
+    // before super.onNodeInit can trigger any background adaptation or restore stale store caps.
+    this._armRadarDynCapGuards();
+    try {
+      const earlyCfg = this._getRadarConfig();
+      this._radarFloodCalm = !!(earlyCfg && (earlyCfg.floodCalm || earlyCfg.mainsPowered));
+    } catch (_e) { this._radarFloodCalm = true; /* driver is radar */ }
+    await this._healRadarPhantomCaps();
+    // WHY(P2386 / VicHY #2222): Homey may re-apply store caps async after app update —
+    // re-heal shortly after boot so "blind mode" does not stick until delete+re-pair.
+    this._scheduleRadarPhantomReheal();
+
+    // v5.11.139: Call super.onNodeInit() to initialize TuyaZigbeeDevice base class
     // which provides _safeInvoke and other L14 features
     try {
       await super.onNodeInit({ zclNode });
@@ -154,18 +166,6 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
     // Initialize v8 components
     this._inference = new IntelligentPresenceInference(this);
     this._discovery = new IntelligentDPAutoDiscovery(this);
-
-    // WHY(P2379 / VicHY): expose config.dpMap to DynCap ownership checks + strip curtain phantoms
-    this._armRadarDynCapGuards();
-    // WHY(P2401): arm flood-calm flag ASAP so L0 RX shed skips Homey timeline mid-update
-    try {
-      const earlyCfg = this._getRadarConfig();
-      this._radarFloodCalm = !!(earlyCfg && (earlyCfg.floodCalm || earlyCfg.mainsPowered));
-    } catch (_e) { this._radarFloodCalm = true; /* driver is radar */ }
-    await this._healRadarPhantomCaps();
-    // WHY(P2386 / VicHY #2222): Homey may re-apply store caps async after app update —
-    // re-heal shortly after boot so "blind mode" does not stick until delete+re-pair.
-    this._scheduleRadarPhantomReheal();
 
     await this._applyRadarCapabilityProfile();
     this._registerRadarCapabilityListeners();
@@ -274,13 +274,13 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
         }
       }
     } catch (_e) { /* soft */ }
-    // WHY(P2391/P2420 VicHY #2227): compose ships energy.batteries for hybrid HOBEIAN siblings —
-    // mains MTG must ALWAYS clear Energy metadata. Homey may keep timeline "low battery"
-    // even when getEnergy() looks empty after removeCapability (manifest re-apply race).
+    // WHY(P2391/P2420/P2431 VicHY #2227): compose ships energy.batteries for hybrid HOBEIAN siblings —
+    // mains MTG must ALWAYS clear Energy metadata with batteries: null. Homey requires batteries: null
+    // to actually remove the battery warning / icon inherited from manifest.
     if (this.mainsPowered && typeof this.setEnergy === 'function') {
       try {
-        await this.setEnergy({});
-        this.log('[RADAR] P2391/P2420 cleared Homey Energy batteries on mains radar');
+        await this.setEnergy({ batteries: null, mains: true });
+        this.log('[RADAR] P2391/P2420/P2431 cleared Homey Energy batteries on mains radar');
       } catch (_e) { /* soft */ }
     }
     try {

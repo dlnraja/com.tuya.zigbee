@@ -37,6 +37,35 @@
       "notes": "Eduard_Martirosyan #2228 DC tubular roller blind motor; EF00 Tuya cover DPs"
     },
     {
+      "id": "vichy-clrdrnya-presence",
+      "mfr": [
+        "_TZE204_clrdrnya",
+        "_tze204_clrdrnya",
+        "_TZE204_CLRDRNYA",
+        "_TZE200_clrdrnya",
+        "_tze200_clrdrnya",
+        "_TZE200_CLRDRNYA",
+        "_TZE284_clrdrnya",
+        "_tze284_clrdrnya",
+        "_TZE284_CLRDRNYA"
+      ],
+      "productId": [
+        "TS0601"
+      ],
+      "canonicalDriver": "presence_sensor_radar",
+      "forbiddenDrivers": [
+        "curtain_motor",
+        "curtain_motor_shutter",
+        "motion_sensor_radar_mmwave",
+        "climate_sensor",
+        "zigbee_universal",
+        "generic_tuya"
+      ],
+      "forbidMode": "couple",
+      "protocol": "tuya_ef00",
+      "notes": "VicHY #2224/#2227 MTG075 220V AC ceiling mmWave presence radar. Forbid curtain_motor phantom flip."
+    },
+    {
       "id": "hobeian-aubess-k4ej3ww2-ias",
       "mfr": [
         "_TZ3000_k4ej3ww2",
@@ -5847,7 +5876,8 @@
       ],
       "forbidMode": "couple",
       "source": "p2430-hobeian-fleet",
-      "notes": "P2430: HOBEIAN 1-gang switch couple lock. Never cartesian to radar/soil/dimmer."
+      "notes": "P2430: HOBEIAN 1-gang switch couple lock. Never cartesian to radar/soil/dimmer.",
+      "doNotTouch": true
     },
     {
       "id": "hobeian-zg301z-2ch-switch",
@@ -5871,7 +5901,8 @@
       ],
       "forbidMode": "couple",
       "source": "p2430-hobeian-fleet",
-      "notes": "P2430: HOBEIAN 2-gang switch couple lock."
+      "notes": "P2430: HOBEIAN 2-gang switch couple lock.",
+      "doNotTouch": true
     },
     {
       "id": "hobeian-zg302z3-switch",
@@ -5894,7 +5925,8 @@
       ],
       "forbidMode": "couple",
       "source": "p2430-hobeian-fleet",
-      "notes": "P2430: HOBEIAN 3-gang switch couple lock."
+      "notes": "P2430: HOBEIAN 3-gang switch couple lock.",
+      "doNotTouch": true
     },
     {
       "id": "hobeian-zg101zs-scene",
@@ -5915,7 +5947,8 @@
       ],
       "forbidMode": "couple",
       "source": "p2430-hobeian-fleet",
-      "notes": "P2430: HOBEIAN Star Ring 4-gang scene switch couple lock."
+      "notes": "P2430: HOBEIAN Star Ring 4-gang scene switch couple lock.",
+      "doNotTouch": true
     },
     {
       "id": "hobeian-zg229z-siren",
@@ -5936,7 +5969,8 @@
       ],
       "forbidMode": "couple",
       "source": "p2430-hobeian-fleet",
-      "notes": "P2430: HOBEIAN smart siren couple lock."
+      "notes": "P2430: HOBEIAN smart siren couple lock.",
+      "doNotTouch": true
     },
     {
       "id": "hobeian-zg225z-gas",
@@ -5957,7 +5991,8 @@
       ],
       "forbidMode": "couple",
       "source": "p2430-hobeian-fleet",
-      "notes": "P2430: HOBEIAN gas sensor couple lock."
+      "notes": "P2430: HOBEIAN gas sensor couple lock.",
+      "doNotTouch": true
     }
   ]
 }
