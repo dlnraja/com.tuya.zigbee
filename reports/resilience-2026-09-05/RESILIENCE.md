@@ -1,9 +1,9 @@
 # Project resilience audit — 2026-09-05
 
 SHADOW forum. Methodology: Homey-native gaps → parallel complementary stacks (P2221→P2225).
-Mode: **critical-first** (sacred_couple_fp, buttons_bidirectional, handleframe_chain, ias_sleepy, battery, energy_divisors, ef00_dp, l14_telemetry)
+Mode: full fleet
 
-Domains: **7/7** gates green | Bug classes: fixed=11 partial=29 open=3
+Domains: **18/22** gates green | Bug classes: fixed=11 partial=42 open=3
 
 See also: `INVENTORY.md` (`npm run resilience:inventory`)
 
@@ -18,6 +18,21 @@ See also: `INVENTORY.md` (`npm run resilience:inventory`)
 | energy_divisors | 1 | partial | 4/4 | Double division; energy.approximation vs meter caps; paralle |
 | ef00_dp | 1 | partial | 1/1 | Opaque 0xEF00; type0 misread |
 | l14_telemetry | 1 | partial | 1/1 | Raw setCapability floods UI; no EMA/ROC |
+| hybrid_protocol | 2 | partial | 1/1 | Assumes single cluster path |
+| flows | 2 | partial | 2/2 ⚠ | titleFormatted [[device]]; Missing Capability Listener; lega |
+| mcu_time | 2 | partial | 0/0 | Wrong epoch / format variants |
+| dimmer_brightness | 2 | hardened | 1/1 | dim 0–1 vs MCU 0–1000 |
+| timers_destroyed | 2 | partial | 0/0 ⚠ | setTimeout after destroy |
+| heap_json | 2 | partial | 1/1 | UTF-16 string OOM on large JSON |
+| enrichment_shadow | 2 | hardened | 1/2 ⚠ | N/A — ops; forum write forbidden |
+| dual_app_publish | 2 | partial | 0/0 | Shared Test slot historically |
+| protocol_rxtx_bus | 2 | partial | 2/2 | Single confirm path; reconnect storms |
+| identity_normalize | 2 | partial | 1/1 | Case-sensitive mfr/pid mismatches |
+| ci_fleetwood | 2 | partial | 1/1 ⚠ | N/A — CI purity (braces, shell bash, schema) |
+| wifi_local | 3 | partial | 1/1 | Cloud-only MCU handshake |
+| layers_fusion | 3 | partial | 1/1 | Single-path RX loss |
+| dynamic_adaptation | 3 | partial | 0/0 | Static compose cannot hot-adapt DP/caps |
+| bypass_elite_complement | 3 | partial | 0/0 | Documented elite bypass intent — runtime denser now |
 
 ## Residual OPEN/PARTIAL bugs
 
