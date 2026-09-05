@@ -3,17 +3,14 @@
 Silent only. **Never** Homey forum POST / PM / AI paste (T157628).
 Lock **manufacturerName + productId** only. Never invent pid. Dual-app: BOTH | MASTER_ONLY | STABLE_ONLY.
 
-Generated: **2026-09-05T07:50:46.926Z** · Mode: `quick`
-Generated: **2026-09-05T07:10:03.176Z** · Mode: `full`
+Generated: **2026-09-05T13:36:21.727Z** · Mode: `full`
 
 ## Snapshot
 
 | Channel | Count / note |
 |---------|--------------|
-| GitHub open issues | 1 |
-| GitHub open PRs | 1 |
-| Forum needAction | 48 |
-| Gmail crash state | absent |
+| GitHub open issues | 2 |
+| GitHub open PRs | 0 |
 | Forum needAction | 49 |
 | Gmail crash state | present |
 | mfs high drift | 0 |
@@ -22,19 +19,17 @@ Generated: **2026-09-05T07:10:03.176Z** · Mode: `full`
 
 | Score | Dual | Source | ID | Action |
 |------:|------|--------|----|--------|
+| 90 | BOTH | github-issue | #540 | investigate-code-silent |
 | 75 | BOTH | forum | forum-need-action | enrich:investigate + lock mfr+pid only |
 | 70 | BOTH | github-issue | #533 | investigate-code-silent |
-| 50 | MASTER_ONLY | github-pr | PR#539 | review |
 
 ## Phase results
 
 - **guard**: ok (0ms)
-- **github**: ok (434ms)
-- **forum**: ok (6009ms)
-- **github**: ok (306ms)
-- **gmail**: ok (201ms)
-- **forum**: ok (27864ms)
-- **drivers**: warn (1330ms)
+- **github**: ok (526ms)
+- **gmail**: ok (190ms)
+- **forum**: ok (24622ms)
+- **drivers**: warn (1365ms)
 
 ## Doctrine
 
