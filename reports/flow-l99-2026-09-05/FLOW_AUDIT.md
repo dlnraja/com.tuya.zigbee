@@ -1,6 +1,6 @@
 # Flow + L99 audit — 2026-09-05
 
-Failing steps: **0** / 8
+Failing steps: **1** / 8
 
 | Step | OK |
 |------|----|
@@ -9,7 +9,7 @@ Failing steps: **0** / 8
 | flow-coherence | yes |
 | flow-fleet-enrich | yes |
 | appjson-flow-dedupe | yes |
-| voice-safety | yes |
+| voice-safety | NO |
 | dp-cluster-flow-coverage | yes |
 | button-flow-harvest | yes |
 
@@ -51,7 +51,7 @@ Cards with orphan tokens (declared but not used in args/title): 0
 
 ```
 {
-  "generatedAt": "2026-09-05T04:52:21.234Z",
+  "generatedAt": "2026-09-05T07:55:34.232Z",
   "mode": "dry-run",
   "driversTouched": 1,
   "orphanTokensFixed": 0,
@@ -111,7 +111,6 @@ Cards with orphan tokens (declared but not used in args/title): 0
 Google Assistant voice-safety gate
 Drivers checked: 431
 button.* capabilities checked: 632
-OK: all button.* capabilities are event/maintenance-only.
 
 ```
 

@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-01T06:17:25.860Z",
+  "generatedAt": "2026-09-05T07:54:37.023Z",
   "users": [
     {
       "username": "SunBeech",
@@ -17,7 +17,7 @@
     },
     {
       "username": "dlnraja",
-      "posts": 11,
+      "posts": 13,
       "devices": 1,
       "autoStub": true,
       "file": "users/dlnraja.md"
@@ -35,6 +35,13 @@
       "devices": 5,
       "autoStub": false,
       "file": "users/Peter_van_Werkhoven.md"
+    },
+    {
+      "username": "VicHY",
+      "posts": 8,
+      "devices": 2,
+      "autoStub": false,
+      "file": "users/VicHY.md"
     },
     {
       "username": "smarthomesven",
@@ -147,13 +154,6 @@
       "devices": 12,
       "autoStub": true,
       "file": "users/johan_bendz.md"
-    },
-    {
-      "username": "VicHY",
-      "posts": 2,
-      "devices": 1,
-      "autoStub": false,
-      "file": "users/VicHY.md"
     },
     {
       "username": "A_Tas",
@@ -1643,12 +1643,12 @@
     }
   ],
   "processorTotals": {
-    "posts": 248,
-    "withCouples": 78,
-    "needAction": 54,
-    "both": 153,
-    "masterOnly": 7
+    "posts": 214,
+    "withCouples": 76,
+    "needAction": 48,
+    "both": 134,
+    "masterOnly": 10
   },
-  "parseStatus": "OK — digest covers live highest actionable window",
-  "liveHighest": 2218
+  "parseStatus": "STALE — re-run forum:silent-scan",
+  "liveHighest": 2228
 }

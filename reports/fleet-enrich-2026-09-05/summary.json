@@ -1,0 +1,119 @@
+{
+  "generatedAt": "2026-09-05T07:51:46.056Z",
+  "mode": "dry-run",
+  "crawl": false,
+  "phases": [
+    {
+      "name": "ai-plan-guard",
+      "label": "ai-guard",
+      "ok": true,
+      "exitCode": 0,
+      "durationMs": 174,
+      "tail": "=== AI plan forfait guard (P2227) ===\nmode: forfait | allowPaid: false\nglobal: 10/400 (3%)\nsoftStop: false | hardStop: false | preferLocal: true\n  gemini: 10/400 (3%)\n  openai: 0/0 (0%) [PAID-BLOCK]\n  deepseek: 0/0 (0%) [PAID-BLOCK]\nstate: C:\\Users\\Dell\\Documents\\homey\\master\\.github\\state\\ai-plan-guard.json"
+    },
+    {
+      "name": "free-scrape-budget",
+      "label": "scrape-budget",
+      "ok": true,
+      "exitCode": 0,
+      "durationMs": 182,
+      "tail": "{\n  \"ok\": true,\n  \"softStopped\": [],\n  \"capped\": [],\n  \"report\": {\n    \"date\": \"2026-09-05\",\n    \"mode\": \"free_first\",\n    \"hits429\": 0,\n    \"hits403\": 0,\n    \"tiers\": [\n      {\n        \"tier\": \"jina\",\n        \"ok\": true,\n        \"used\": 0,\n        \"cap\": 80,\n        \"remaining\": 80,\n        \"cooldownUntil\": null\n      },\n      {\n        \"tier\": \"microlink\",\n        \"ok\": true,\n        \"used\": 0,\n        \"cap\": 40,\n        \"remaining\": 40,\n        \"cooldownUntil\": null\n      },\n      {\n        \"tier\": \"allorigins\",\n        \"ok\": true,\n        \"used\": 0,\n        \"cap\": 40,\n        \"remaining\": 40,\n        \"cooldownUntil\": null\n      },\n      {\n        \"tier\": \"wayback\",\n        \"ok\": true,\n        \"used\": 0,\n        \"cap\": 20,\n        \"remaining\": 20,\n        \"cooldownUntil\": null\n      },\n      {\n        \"tier\": \"crawl4ai\",\n        \"ok\": true,\n        \"used\": 0,\n        \"cap\": 100,\n        \"remaining\": 100,\n        \"cooldownUntil\": null\n      },\n      {\n        \"tier\": \"firecrawl\",\n        \"ok\": true,\n        \"used\": 0,\n        \"cap\": 3,\n        \"remaining\": 3,\n        \"cooldownUntil\": null\n      },\n      {\n        \"tier\": \"browser\",\n        \"ok\": false,\n        \"reason\": \"disabled\",\n        \"used\": 0,\n        \"cap\": 0,\n        \"remaining\": 0,\n        \"cooldownUntil\": null\n      },\n      {\n        \"tier\": \"direct\",\n        \"ok\": true,\n        \"used\": 0,\n        \"cap\": 2000,\n        \"remaining\": 2000,\n        \"cooldownUntil\": null\n      }\n    ],\n    \"softStopPercent\": 85\n  }\n}"
+    },
+    {
+      "name": "source-diff-plan",
+      "label": "source-diff",
+      "ok": true,
+      "exitCode": 0,
+      "durationMs": 1330,
+      "tail": "[source-diff] mode=plan project=a39cb3e0b14bd74d changed=false\n  skip=3 crawl=6 blocked=false\n  z2m: crawl-stale — TTL expired or hash drift\n  zha: crawl-missing — no state file\n  blakadder: crawl-missing — no state file\n  deconz: crawl-missing — no state file\n  johan: skip-unavailable — secrets missing: GH_PAT\n  forum: skip-unavailable — secrets missing: DISCOURSE_API_KEY\n  gmail: skip-unavailable — secrets missing: GMAIL_EMAIL, GMAIL_APP_PASSWORD\n  cross-ref: run-local — local script stale or forced\n  flow-fleet: run-local — local script stale or forced\n  manifest → C:\\Users\\Dell\\Documents\\homey\\master\\.github\\state\\intelligent-source-manifest.json"
+    },
+    {
+      "name": "cross-ref-all-sources",
+      "label": "cross-ref",
+      "ok": true,
+      "exitCode": 0,
+      "durationMs": 3098,
+      "tail": "ee)\n  _TZ3000_2mbfxlzr + TS0601 (driverHint: sensor_contact_zigbee)\n  _TZ3000_303avxxt + TS0601 (driverHint: switch_1gang)\n  _TZ3000_3zofvcaa + TS0601 (driverHint: device_plug_energy)\n  _TZ3000_402vrq2i + TS0601 (driverHint: switch_4_gang_metering)\n  _TZ3000_4ugnzsli + TS0601 (driverHint: sensor_contact_zigbee)\n  _TZ3000_5k5vh43t + TS0601 (driverHint: zigbee_repeater)\n  _TZ3000_7d8yme6f + TS0601 (driverHint: sensor_contact_zigbee)\n  _TZ3000_8ybe88nf + TS0601 (driverHint: temphumidsensor)\n\nMarket-new (external sources, not in driver.compose): 83\n  _TZ1800_akzvkzqq + TS0211 (mfs_db,z2m)\n  _TZ1800_ladpngdx + TS0211 (mfs_db,z2m)\n  _TZ3000_5af5r192 + TS0049 (mfs_db,z2m)\n  _TZ3000_6dwfra5l + SMD9300 (mfs_db,z2m)\n  _TZ3000_7dcddnye + TS0501A (mfs_db,blakadder,z2m)\n  _TZ3000_85czd6fy + TS0207 (mfs_db,blakadder)\n  _TZ3000_aaifmpuq + TS0002 (z2m)\n  _TZ3000_bumeauzp + SMD9300 (mfs_db,z2m)\n  _TZ3000_c8bqthpo + TS0207 (mfs_db,z2m)\n  _TZ3000_fa9mlvja + TS0041 (mfs_db,blakadder,z2m)\n  _TZ3000_hgm6k8ku + TS0207 (mfs_db,z2m)\n  _TZ3000_huvxrx4i + TS0002 (z2m)\n  _TZ3000_irrmjcgi + TS0002 (z2m)\n  _TZ3000_j6adk9id + TS0222 (z2m)\n  _TZ3000_ja5osu5g + ZG-101ZE (johan-issue)\n  _TZ3000_ja5osu5g + ZG-103ZL (interview)\n  _TZ3000_jcqs2mrv + SM0001 (mfs_db,z2m)\n  _TZ3000_jyupj3fw + TS0006 (mfs_db,blakadder)\n  _TZ3000_kgxej1dv + TS00002 (johan-issue)\n  _TZ3000_kyb656no + TS0207 (mfs_db,blakadder)\n\nSaved summary to .github/state/mfr-pid-cross-ref.json\nSaved all pairs to .github/state/all-mfr-pid-pairs.json"
+    },
+    {
+      "name": "market-couples-intake",
+      "label": "market-intake",
+      "ok": true,
+      "exitCode": 0,
+      "durationMs": 3274,
+      "tail": "   \"needsReview\": true,\n      \"catalogHit\": true,\n      \"blakadderHit\": false,\n      \"z2mHit\": true,\n      \"knowledgeHit\": false,\n      \"agreement\": 1,\n      \"heuristicSoft\": true\n    },\n    {\n      \"mfr\": \"_TZE284_tokhh9pf\",\n      \"pid\": \"TS0601\",\n      \"sources\": [\n        \"z2m\"\n      ],\n      \"meta\": [\n        {\n          \"source\": \"z2m\",\n          \"vendor\": \"EyZEE\",\n          \"file\": \"tuya.ts\"\n        }\n      ],\n      \"routeHint\": \"climate_sensor\",\n      \"tier\": \"heuristic_pid\",\n      \"applySafe\": false,\n      \"reason\": \"suggestDriverFromPid count=375\",\n      \"z2mDesc\": \"5-Gang TZExxx Zigbee Touch Switch\",\n      \"needsReview\": true,\n      \"catalogHit\": true,\n      \"blakadderHit\": false,\n      \"z2mHit\": true,\n      \"knowledgeHit\": false,\n      \"agreement\": 1,\n      \"heuristicSoft\": true\n    }\n  ],\n  \"crawlResults\": [],\n  \"crossRef\": {\n    \"ok\": true,\n    \"tail\": \"_c8bqthpo + TS0207 (mfs_db,z2m)\\n  _TZ3000_fa9mlvja + TS0041 (mfs_db,blakadder,z2m)\\n  _TZ3000_hgm6k8ku + TS0207 (mfs_db,z2m)\\n  _TZ3000_huvxrx4i + TS0002 (z2m)\\n  _TZ3000_irrmjcgi + TS0002 (z2m)\\n  _TZ3000_j6adk9id + TS0222 (z2m)\\n  _TZ3000_ja5osu5g + ZG-101ZE (johan-issue)\\n  _TZ3000_ja5osu5g + ZG-103ZL (interview)\\n  _TZ3000_jcqs2mrv + SM0001 (mfs_db,z2m)\\n  _TZ3000_jyupj3fw + TS0006 (mfs_db,blakadder)\\n  _TZ3000_kgxej1dv + TS00002 (johan-issue)\\n  _TZ3000_kyb656no + TS0207 (mfs_db,blakadder)\\n\\nSaved summary to .github/state/mfr-pid-cross-ref.json\\nSaved all pairs to .github/state/all-mfr-pid-pairs.json\"\n  }\n}"
+    },
+    {
+      "name": "multi-source-dry",
+      "label": "multi-source",
+      "ok": true,
+      "exitCode": 0,
+      "durationMs": 203734,
+      "tail": "multi-source] ✓ 1c-silent-enrichment-users (0.7s)\n[multi-source] ▶ 2-forum-ai-paste-gate\n[multi-source] ✓ 2-forum-ai-paste-gate (0.1s)\n[multi-source] ▶ 3-apply-forum-known-routes\n[multi-source] ✓ 3-apply-forum-known-routes (0.1s)\n[multi-source] ▶ 4-sacred-lot2\n[multi-source] ✓ 4-sacred-lot2 (2.8s)\n[multi-source] ▶ 5-sacred-lot3\n[multi-source] ✓ 5-sacred-lot3 (5.0s)\n[multi-source] ▶ 6-blakadder-new\n[multi-source] ✓ 6-blakadder-new (0.3s)\n[multi-source] ▶ 6b-market-couples-intake\n[multi-source] ✓ 6b-market-couples-intake (3.7s)\n[multi-source] ▶ 6c-market-couples-apply\n[multi-source] ✓ 6c-market-couples-apply (2.1s)\n[multi-source] ▶ 7-infer-enrich-dry\n[multi-source] ✓ 7-infer-enrich-dry (7.1s)\n[multi-source] ▶ 8-sacred-couple-dry-gate\n[multi-source] ✓ 8-sacred-couple-dry-gate (11.9s)\n[multi-source] ▶ 9-collision-resolve-dry\n[multi-source] ✓ 9-collision-resolve-dry (1.8s)\n[multi-source] ▶ 10-case-variants\n[multi-source] ✓ 10-case-variants (0.6s)\n[multi-source] ▶ 10b-cross-project-reimpl-gate\n[multi-source] ✓ 10b-cross-project-reimpl-gate (0.2s)\n[multi-source] ▶ 10c-dual-claim-compose-gate\n[multi-source] ✓ 10c-dual-claim-compose-gate (0.5s)\n[multi-source] ▶ 10d-align-mfs-db-intelligent-check\n[multi-source] ✓ 10d-align-mfs-db-intelligent-check (3.8s)\n[multi-source] ▶ 11-coverage-snapshot\n[multi-source] ✓ 11-coverage-snapshot (0.1s)\n[multi-source] Report → C:\\Users\\Dell\\Documents\\homey\\master\\.github\\state\\multi-source\\enrich-report.json\n[multi-source] Mode=dry-run phases=18 ok=true"
+    },
+    {
+      "name": "infer-enrich-dry",
+      "label": "infer-enrich",
+      "ok": true,
+      "exitCode": 0,
+      "durationMs": 6037,
+      "tail": "═══════════════════════════════════════════════\n  Infer-enrich from incomplete sources\n  root: C:\\Users\\Dell\\Documents\\homey\\master\n  mode: DRY-RUN\n═══════════════════════════════════════════════\nSources loaded: 14 | missing: 2\n  missing: forum-state.json, mega-crawl/summary.json\nCandidates: 6215\n  applied / would-apply (HIGH): 5\n  inferred_needs_review:        1394\n  skipped_ambiguous:            4816\n  · WOULD _tz3290_7v1k4vufotpowp9z + ts0601 → ir_remote (95) [mfs_curated]\n  · WOULD _tze200_8eazvzo6 + ts0601 → climate_sensor (95) [mfs_curated]\n  · WOULD _tze284_a14rjslz + ts0601 → climate_sensor (95) [mfs_curated]\n  · WOULD _tze204_2imwyigp + ts0203 → contact_sensor (92) [pid_TS0203_contact]\n  · WOULD _tze200_u6x1zyv2 + ts0203 → contact_sensor (92) [pid_TS0203_contact]\nReview samples:\n  · _tz3000_26fmupbb + TS0601 → sensor_contact_zigbee (95)\n  · _tz3000_2mbfxlzr + TS0601 → sensor_contact_zigbee (95)\n  · _tz3000_2mbfxlzr + AY-101Z → sensor_contact_zigbee (95)\n  · _tz3000_402jjyro + TS0601 → sensor_contact_zigbee (95)\n  · _tz3000_996rpfy6 + TS0601 → sensor_contact_zigbee (95)\n  · _tz3000_996rpfy6 + AY-101Z → sensor_contact_zigbee (95)\n  · _tz3000_bpkijo14 + TS0601 → sensor_contact_zigbee (95)\n  · _tz3000_n2egfsli + TS0601 → sensor_contact_water (95)\nReport: C:\\Users\\Dell\\Documents\\homey\\master\\.github\\state\\infer-enrich-report.json\n═══════════════════════════════════════════════"
+    },
+    {
+      "name": "align-mfs-check",
+      "label": "align-mfs",
+      "ok": false,
+      "exitCode": 1,
+      "durationMs": 5398,
+      "tail": "]}→{\"driverId\":\"presence_sensor_radar\",\"modelIds\":[\"AY205Z\",\"TS0225\",\"TS0601\",\"ZG-204ZM\"]}\n  [high] registry_force _TZE200_yflzeeqj {\"driverId\":\"presence_sensor_radar\",\"modelIds\":[\"TS0601\",\"ZG-204ZM\"]}→{\"driverId\":\"presence_sensor_radar\",\"modelIds\":[\"AY205Z\",\"TS0225\",\"TS0601\",\"ZG-204ZM\"]}\n  [high] registry_force _TZE200_jfw0a4aa {\"driverId\":\"vibration_sensor\",\"modelIds\":[\"AY02SZ\",\"TS0601\",\"ZG-102ZM\"]}→{\"driverId\":\"vibration_sensor\",\"modelIds\":[\"AY02SZ\",\"TS0601\",\"ZG-102ZM\"]}\n  [high] registry_force _TZE200_wzk0x7fq {\"driverId\":\"vibration_sensor\",\"modelIds\":[\"AY02SZ\",\"TS0601\",\"ZG-102ZM\"]}→{\"driverId\":\"vibration_sensor\",\"modelIds\":[\"AY02SZ\",\"TS0601\",\"ZG-102ZM\"]}\nskipped (ambiguous/report-only): 38\n  registry_enrich_only p2317-cvis4qmw-ts0006-6gang  \n  registry_enrich_only p2317-g9chy2ib-ts0003-3gang  \n  registry_enrich_only p2317-etufnltx-ts1002-foria  \n  registry_enrich_only p2347-gabriel-zemismart-cartesian-doc-only  \n  registry_empty_mfr p2415-zg204zv-tze200-presence  \n  registry_empty_mfr p2415-zs301z-soil  \n  registry_bare_brand_multi_canon hobeian  \n  registry_bare_brand_multi_canon hobeian  \n  registry_bare_brand_multi_canon hobeian  \n  registry_bare_brand_multi_canon hobeian  \n  registry_bare_brand_multi_canon hobeian  \n  registry_bare_brand_multi_canon hobeian  \n  registry_bare_brand_multi_canon hobeian  \n  unclaimed_no_compose _tze20x_xxxxxxxx air_purifier \n  unclaimed_no_compose _TZ3210_JLF1NEPW bulb_rgb \nCHECK FAIL: 12 high-severity mfs_db drift(s) — run with --apply"
+    },
+    {
+      "name": "sacred-couple-gate",
+      "label": "p2138",
+      "ok": true,
+      "exitCode": 0,
+      "durationMs": 315,
+      "tail": "_tuya\n  ✅ getDriverId(_TZE200_m1cvyneb, TS0601) → wall_dimmer_tuya\n  ✅ DeviceFingerprintDB.lookup(m1cvyneb, TS0601) → wall_dimmer_tuya\n  ✅ DeviceFingerprintDB.lookup(m1cvyneb, TS0201) does not invent dimmer/climate\n  ✅ PRODUCT_ID_DEFAULTS.TS0201.driver === null (no invent)\n  ✅ PRODUCT_ID_DEFAULTS.TS0207.driver === null (water vs repeater vs rain)\n  ✅ PRODUCT_ID_DEFAULTS.TS011F.driver === null (plug vs DIN vs strip)\n  ✅ compound _TZ3000_k4ej3ww2+TS0207 → water_leak_sensor\n  ✅ compound _TZ3000_5k5vh43t+TS0207 → zigbee_repeater\n  ✅ compound _TZ3000_okaz9tjs+TS011F → plug_energy_monitor\n  ✅ compound _TZE284_nt4pquef+TS0601 → soil_sensor\n  ✅ compound _TZE284_6ocnqlhn+TS0601 → din_rail_meter\n  ✅ compound _TZ3000_mrpevh8p+TS0041 → button_wireless_1\n  ✅ compound _TZ3000_zgyzgdua+TS0044 → scene_switch_4\n  ✅ compound _TZ3000_kfu8zapd+TS0044 → button_wireless_4\n  ✅ compound _TZ3000_xabckq1v+TS004F → button_wireless_4\n  ✅ compound _TZ3000_4upl1fcj+TS0041 → button_wireless_1\n  ✅ compound _TZ3000_qeuvnohg+TS011F → din_rail_switch\n  ✅ compound HOBEIAN+3315-S → water_leak_sensor\n  ✅ wall_dimmer_tuya compose lists m1cvyneb\n  ✅ wall_dimmer_tuya productId includes TS0601\n  ✅ TuyaBrightnessScale 0.5 ↔ 500\n  ✅ TuyaBrightnessScale clamps to 0–1000\n  ✅ anti-bot mentions m1cvyneb\n  ✅ anti-bot mentions climate_sensor\n  ✅ anti-bot mentions soil_sensor\n  ✅ anti-bot mentions zigbee_universal\n  ✅ anti-bot mentions wall_dimmer\n  ✅ mfs_db has no m1cvyneb|TS0201 invent\n\nPASS: P2138 sacred-couple matrix gate"
+    },
+    {
+      "name": "anti-bot-gate",
+      "label": "anti-bot",
+      "ok": false,
+      "exitCode": 1,
+      "durationMs": 1544,
+      "tail": "_universal\n  ~ skip registry:p2273-guvc7pdy-curtain-not-1gang:zigbee_universal: missing driver zigbee_universal\n  ~ skip registry:p2273-hdml1aav-soil-zs300tf:zigbee_universal: missing driver zigbee_universal\n  ~ skip registry:p2276-rccxox8p-smoke-not-climate:zigbee_universal: missing driver zigbee_universal\n  ~ skip registry:p2277-lpedvtvr-thermostat-not-climate:zigbee_universal: missing driver zigbee_universal\n  ~ skip registry:p2277-xalsoe3m-bht002-not-trv:zigbee_universal: missing driver zigbee_universal\n  ~ skip registry:p2278-ogx8u5z6-trv-cal-tenths:zigbee_universal: missing driver zigbee_universal\n  ~ skip registry:p2279-1fuxihti-cover-not-climate:zigbee_universal: missing driver zigbee_universal\n  ~ skip registry:p2291-ogkdpgy2-co2-not-climate:zigbee_universal: missing driver zigbee_universal\n  ~ skip registry:p2304-moes-zts-eur-c-curtain:zigbee_universal: missing driver zigbee_universal\n  ~ skip registry:p2304-moes-zts-eur-c-curtain:unknown_zigbee_unit: missing driver unknown_zigbee_unit\n  ~ skip registry:p2363-curtain-ef00-hybrid-timeout:zigbee_universal: missing driver zigbee_universal\n  ~ skip registry:p2385-lerlink-r32ctezx-fan-switch:zigbee_universal: missing driver zigbee_universal\n  ❌ REQUIRED p2282-hobeian-3315s-water: HOBEIAN missing from drivers/water_leak_sensor\n  ❌ REQUIRED p2282-hobeian-3315s-water: hobeian missing from drivers/water_leak_sensor\n  ❌ REQUIRED p2282-hobeian-3315s-water: Hobeian missing from drivers/water_leak_sensor\n\nFAILED: 3 regression(s)"
+    },
+    {
+      "name": "fp-collision-check",
+      "label": "fp-check",
+      "ok": true,
+      "exitCode": 0,
+      "durationMs": 1398,
+      "tail": "prune-fp-collision-bleed: new=0 actions=0 dry-run"
+    },
+    {
+      "name": "flow-l99",
+      "label": "flow-l99",
+      "ok": false,
+      "exitCode": 1,
+      "durationMs": 5522,
+      "tail": "{\n  \"generatedAt\": \"2026-09-05T07:55:38.091Z\",\n  \"outDir\": \"C:\\\\Users\\\\Dell\\\\Documents\\\\homey\\\\master\\\\reports\\\\flow-l99-2026-09-05\",\n  \"steps\": [\n    {\n      \"label\": \"flow-dups\",\n      \"ok\": true,\n      \"status\": 0\n    },\n    {\n      \"label\": \"flows-integrity\",\n      \"ok\": true,\n      \"status\": 0\n    },\n    {\n      \"label\": \"flow-coherence\",\n      \"ok\": true,\n      \"status\": 0\n    },\n    {\n      \"label\": \"flow-fleet-enrich\",\n      \"ok\": true,\n      \"status\": 0\n    },\n    {\n      \"label\": \"appjson-flow-dedupe\",\n      \"ok\": true,\n      \"status\": 0\n    },\n    {\n      \"label\": \"voice-safety\",\n      \"ok\": false,\n      \"status\": 1\n    },\n    {\n      \"label\": \"dp-cluster-flow-coverage\",\n      \"ok\": true,\n      \"status\": 0\n    },\n    {\n      \"label\": \"button-flow-harvest\",\n      \"ok\": true,\n      \"status\": 0\n    }\n  ],\n  \"failCount\": 1\n}"
+    }
+  ],
+  "ok": true,
+  "baseline": {
+    "driverCount": 431,
+    "mfrEntries": 16194,
+    "pidEntries": 3028
+  },
+  "final": {
+    "driverCount": 431,
+    "mfrEntries": 16194,
+    "pidEntries": 3028
+  },
+  "delta": {
+    "drivers": 0,
+    "mfrs": 0,
+    "pids": 0
+  }
+}
