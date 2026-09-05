@@ -33,15 +33,15 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 
 | Metric | Value |
 |--------|-------|
-| **App Version** | v9.0.822 |
+| **App Version** | v9.0.824 |
 | **Drivers** | 431 (381 Zigbee + 50 WiFi) |
 | **Unique Fingerprints** | 4,395 |
-| **Pairing Variants** | 16,190 (4 case combos per fingerprint) |
-| **Unique Product IDs** | 578 |
+| **Pairing Variants** | 16,202 (4 case combos per fingerprint) |
+| **Unique Product IDs** | 584 |
 | **Flow Cards** | 5,950 |
 | **Unique Capabilities** | 170 |
 | **Native OTA Drivers** | 9 |
-| **Test Suites** | 241 files |
+| **Test Suites** | 242 files |
 | **SVG Icons** | 731 |
 | **Languages** | EN, FR, NL, DE |
 | **SDK / Homey** | 3 / >= 12.2.0 |
@@ -52,8 +52,8 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 | # | Driver | Fingerprints |
 |---|--------|-------------|
 | 1 | `climate_sensor` | 2,098 |
-| 2 | `switch_1gang` | 1,556 |
-| 3 | `presence_sensor_radar` | 803 |
+| 2 | `switch_1gang` | 1,540 |
+| 3 | `presence_sensor_radar` | 807 |
 | 4 | `radiator_valve` | 599 |
 | 5 | `button_wireless_2` | 562 |
 | 6 | `curtain_motor` | 550 |
@@ -102,6 +102,8 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 
 | Version | Changes |
 |---------|---------|
+| **v9.0.824** | HOBEIAN full enrich: more mmWave variants (ZE/ZK/ZQ/ZX), vibration+contact (ZG-102ZM), tilt (ZG-103Z), water/vibration alarms (ZG-226Z/22… |
+| **v9.0.823** | HOBEIAN full enrich: more mmWave variants (ZE/ZK/ZQ/ZX), vibration+contact (ZG-102ZM), tilt (ZG-103Z), water/vibration alarms (ZG-226Z/22… |
 | **v9.0.822** | HOBEIAN sensors: corrected mmWave DP maps (ZG-204ZM/ZH) and locked motion-sensing switches (ZG-302ZM/ZL); fixed wrong climate/vibration p… |
 | **v9.0.821** | HOBEIAN sensors: corrected mmWave DP maps (ZG-204ZM/ZH) and locked motion-sensing switches (ZG-302ZM/ZL); fixed wrong climate/vibration p… |
 | **v9.0.820** | Fixed mains mmWave radar phantom battery warning after app updates; radar settings DPs no longer misread as humidity. |
@@ -112,8 +114,6 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 | **v9.0.815** | Compensate incomplete forum/gmail (soft MISSING_PID); enrich poll/enrich/l99/recurrent/fetch-diags crons. |
 | **v9.0.814** | Homey diag dashboard Athom tip panel; clear FP collisions (iwtv2jwo/sj7jbgks/ttkgurpb); foreign-driver signal. |
 | **v9.0.813** | Homey diag dashboard Athom tip panel; clear FP collisions (iwtv2jwo/sj7jbgks/ttkgurpb); foreign-driver signal. |
-| **v9.0.812** | CI: WiFi pairing timer gate, Athom processing_failed soft-expect, diagnostics dashboard soft shell. |
-| **v9.0.811** | PIR/multi-cap enrich: ZG-204ZV TZE200→presence, strip motion cartesian ZG-204, ZS-301Z soil lock, radar config clean. |
 
 <!-- CHANGELOG_END -->
 
