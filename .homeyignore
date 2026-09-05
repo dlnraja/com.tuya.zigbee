@@ -1,4 +1,11 @@
 # P74: exclude operational/tooling from Homey build
+# The `*.tmp` patterns below only match a file EXTENSION. The scratch directory
+# `tmp/` (405 MB, 13k files) was not excluded by anything and would have been
+# pulled into .homeybuild by `homey app build`.
+tmp
+# WHY(P2286): Homey CLI injects ignore rule `.*` (all dotfiles). Re-include the
+# Athom store changelog so prepare-publish / direct-api-publish see real notes.
+!.homeychangelog.json
 # P74.6: global *.bak files (catches lib/tuya/fingerprints.json.bak.*)
 **/*.bak.*
 **/*.bak
@@ -58,8 +65,16 @@ DEAD-SIMPLE-DELETION.ps1
 DO-EVERYTHING.ps1
 ONE-CLICK.ps1
 nul
-CLAUDE.md
-*.md
+AGENTS.md
+AI_CONTEXT_MANDATE.md
+AI_INSTRUCTIONS.md
+CHANGELOG.md
+CODE_OF_CONDUCT.md
+CONTRIBUTING.md
+CORE_RULES.md
+CREDITS.md
+PROJECT_INDEX.md
+README.md
 *.bak
 *.tmp
 *.log
@@ -73,3 +88,22 @@ stable_app.json
 # v9.0.380: grosses références build-time only (hors bundle publish)
 data/product-reference.json
 FLOW_CARDS_AUDIT_REPORT.json
+
+# =============================================================================
+# P2228 — CI / GitHub Actions ONLY (never ship in Homey app package)
+# Homey runtime keeps: lib/resilience/HomeyGapCompensator.js, ButtonCaptureCascade,
+#   lib/resilience/data/*, lib/helpers/UnknownCaseRealigner.js,
+#   lib/enrichment/HeuristicUnknownResolver.js + lib/helpers/data/heuristic-model.json
+# =============================================================================
+config/enrichment
+config/security
+config/resilience
+lib/enrichment/PhaseRunner.js
+lib/enrichment/EnrichmentRegistry.js
+lib/enrichment/NeedActionInvestigator.js
+lib/enrichment/ProfileSynchronizer.js
+# P2269: dead parser legacy (stub remains at lib/tuya/UniversalTuyaParser.js)
+lib/tuya/_quarantine
+data/user-impact-catalog.json
+data/dp_couple_knowledge.json
+.cursor

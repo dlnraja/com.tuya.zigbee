@@ -11,14 +11,32 @@
     "fr": "Se déclenche quand la découverte OTA trouve un firmware plus récent pour un device (vérifié périodiquement sur l'index public zigbee-OTA)"
   },
   "args": [
-    { "type": "device", "name": "device", "title": { "en": "Device", "fr": "Device" } }
+    {
+      "type": "device",
+      "name": "device",
+      "title": {
+        "en": "Device",
+        "fr": "Device"
+      },
+      "filter": "driver_id=*"
+    }
   ],
   "tokens": [
-    { "name": "current_version", "type": "string", "title": { "en": "Current version", "fr": "Version actuelle" } },
-    { "name": "new_version", "type": "string", "title": { "en": "New version", "fr": "Nouvelle version" } }
-  ],
-  "titleFormatted": {
-    "en": "OTA update available for [[device]]",
-    "fr": "MàJ OTA disponible pour [[device]]"
-  }
+    {
+      "name": "current_version",
+      "type": "string",
+      "title": {
+        "en": "Current version",
+        "fr": "Version actuelle"
+      }
+    },
+    {
+      "name": "new_version",
+      "type": "string",
+      "title": {
+        "en": "New version",
+        "fr": "Nouvelle version"
+      }
+    }
+  ]
 }

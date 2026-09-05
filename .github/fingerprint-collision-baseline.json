@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-05T05:26:44.085Z",
+  "generatedAt": "2026-09-05T16:31:15.404Z",
   "description": "Known historical fingerprint collisions. CI fails only for collisions not listed here.",
   "collisions": [
     {
@@ -326,13 +326,6 @@
       ]
     },
     {
-      "key": "_tz3000_d16y6col|TS0601",
-      "drivers": [
-        "switch_1gang",
-        "water_leak_sensor"
-      ]
-    },
-    {
       "key": "_tz3000_fqoynhku|TS011F",
       "drivers": [
         "plug_energy_monitor",
@@ -393,13 +386,6 @@
       "drivers": [
         "plug_energy_monitor",
         "smartplug"
-      ]
-    },
-    {
-      "key": "_tz3000_lbtpiody|TS0601",
-      "drivers": [
-        "switch_1gang",
-        "water_leak_sensor"
       ]
     },
     {
@@ -781,20 +767,6 @@
       ]
     },
     {
-      "key": "_tze200_afycb3cg|TS011F",
-      "drivers": [
-        "switch_1gang",
-        "vibration_sensor"
-      ]
-    },
-    {
-      "key": "_tze200_afycb3cg|TS0601",
-      "drivers": [
-        "switch_1gang",
-        "vibration_sensor"
-      ]
-    },
-    {
       "key": "_tze200_aqnazj70|TS0004",
       "drivers": [
         "relay_board_4_channel",
@@ -844,38 +816,10 @@
       ]
     },
     {
-      "key": "_tze200_hggxgsjj|TS011F",
-      "drivers": [
-        "switch_1gang",
-        "vibration_sensor"
-      ]
-    },
-    {
-      "key": "_tze200_hggxgsjj|TS0601",
-      "drivers": [
-        "switch_1gang",
-        "vibration_sensor"
-      ]
-    },
-    {
       "key": "_tze200_hvaxb2tc|TS0601",
       "drivers": [
         "device_radiator_valve_smart",
         "wall_thermostat"
-      ]
-    },
-    {
-      "key": "_tze200_iba1ckek|TS011F",
-      "drivers": [
-        "switch_1gang",
-        "vibration_sensor"
-      ]
-    },
-    {
-      "key": "_tze200_iba1ckek|TS0601",
-      "drivers": [
-        "switch_1gang",
-        "vibration_sensor"
       ]
     },
     {
@@ -907,38 +851,10 @@
       ]
     },
     {
-      "key": "_tze200_yjryxpot|TS011F",
-      "drivers": [
-        "switch_1gang",
-        "vibration_sensor"
-      ]
-    },
-    {
-      "key": "_tze200_yjryxpot|TS0601",
-      "drivers": [
-        "switch_1gang",
-        "vibration_sensor"
-      ]
-    },
-    {
       "key": "_tze200_zah67ekd|TS0601",
       "drivers": [
         "curtain_motor",
         "curtain_motor_tilt"
-      ]
-    },
-    {
-      "key": "_tze200_zbfmvj13|TS0601",
-      "drivers": [
-        "curtain_motor",
-        "presence_sensor_radar"
-      ]
-    },
-    {
-      "key": "_tze200_zbfmvj13|TS110E",
-      "drivers": [
-        "curtain_motor",
-        "presence_sensor_radar"
       ]
     },
     {
@@ -1165,10 +1081,18 @@
       ]
     },
     {
+      "key": "hobeian|q9mpfhw",
+      "drivers": [
+        "contact_sensor",
+        "water_leak_sensor"
+      ]
+    },
+    {
       "key": "hobeian|RH3001",
       "drivers": [
         "contact_sensor",
-        "sensor_contact_zigbee"
+        "sensor_contact_zigbee",
+        "water_leak_sensor"
       ]
     },
     {
@@ -1313,7 +1237,8 @@
       "key": "hobeian|TS0201",
       "drivers": [
         "climate_sensor",
-        "presence_sensor_radar"
+        "presence_sensor_radar",
+        "water_leak_sensor"
       ]
     },
     {
@@ -1336,7 +1261,8 @@
       "key": "hobeian|TS0207",
       "drivers": [
         "contact_sensor",
-        "rain_sensor"
+        "rain_sensor",
+        "water_leak_sensor"
       ]
     },
     {
@@ -1364,7 +1290,8 @@
         "sensor_contact_zigbee",
         "soil_sensor",
         "switch_2gang",
-        "vibration_sensor"
+        "vibration_sensor",
+        "water_leak_sensor"
       ]
     },
     {
@@ -1482,90 +1409,6 @@
       "drivers": [
         "climate_sensor",
         "presence_sensor_radar"
-      ]
-    },
-    {
-      "key": "tuyatec-1uxx9cci|CK-TLSR8656-SS5-01(7014)",
-      "drivers": [
-        "climate_sensor",
-        "temphumidsensor"
-      ]
-    },
-    {
-      "key": "tuyatec-1uxx9cci|RH3052",
-      "drivers": [
-        "climate_sensor",
-        "temphumidsensor"
-      ]
-    },
-    {
-      "key": "tuyatec-1uxx9cci|SNTZ003",
-      "drivers": [
-        "climate_sensor",
-        "temphumidsensor"
-      ]
-    },
-    {
-      "key": "tuyatec-1uxx9cci|TS0201",
-      "drivers": [
-        "climate_sensor",
-        "temphumidsensor"
-      ]
-    },
-    {
-      "key": "tuyatec-1uxx9cci|TY0201",
-      "drivers": [
-        "climate_sensor",
-        "temphumidsensor"
-      ]
-    },
-    {
-      "key": "tuyatec-1uxx9cci|ZG-227Z",
-      "drivers": [
-        "climate_sensor",
-        "temphumidsensor"
-      ]
-    },
-    {
-      "key": "tuyatec-haoiuwzy|CK-TLSR8656-SS5-01(7014)",
-      "drivers": [
-        "climate_sensor",
-        "temphumidsensor"
-      ]
-    },
-    {
-      "key": "tuyatec-haoiuwzy|RH3052",
-      "drivers": [
-        "climate_sensor",
-        "temphumidsensor"
-      ]
-    },
-    {
-      "key": "tuyatec-haoiuwzy|SNTZ003",
-      "drivers": [
-        "climate_sensor",
-        "temphumidsensor"
-      ]
-    },
-    {
-      "key": "tuyatec-haoiuwzy|TS0201",
-      "drivers": [
-        "climate_sensor",
-        "temphumidsensor"
-      ]
-    },
-    {
-      "key": "tuyatec-haoiuwzy|TY0201",
-      "drivers": [
-        "climate_sensor",
-        "temphumidsensor"
-      ]
-    },
-    {
-      "key": "tuyatec-haoiuwzy|ZG-227Z",
-      "drivers": [
-        "climate_sensor",
-        "temphumidsensor"
       ]
     }
   ]

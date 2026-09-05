@@ -38,52 +38,6 @@
         "en": "Cover position changed to {position}%",
         "fr": "Position {position}%"
       }
-    },
-    {
-      "id": "air_purifier_curtain_brightness_changed",
-      "title": {
-        "en": "Brightness changed",
-        "fr": "Luminosité changée"
-      },
-      "tokens": [
-        {
-          "name": "brightness",
-          "type": "number",
-          "title": {
-            "en": "Brightness (%)",
-            "fr": "Luminosité (%)"
-          },
-          "example": 80
-        }
-      ],
-      "args": [],
-      "titleFormatted": {
-        "en": "Brightness changed to {brightness}%",
-        "fr": "Luminosité {brightness}%"
-      }
-    },
-    {
-      "id": "air_purifier_curtain_pm25_changed",
-      "title": {
-        "en": "PM2.5 changed",
-        "fr": "PM2.5 changé"
-      },
-      "tokens": [
-        {
-          "name": "pm25",
-          "type": "number",
-          "title": {
-            "en": "PM2.5",
-            "fr": "PM2.5"
-          },
-          "example": 12
-        }
-      ],
-      "args": [],
-      "titleFormatted": {
-        "en": "PM2.5 changed to {pm25}",
-        "fr": "PM2.5 {pm25}"
-      }
     }
   ],
   "conditions": [],
@@ -120,14 +74,14 @@
         "en": "Open",
         "fr": "Ouvrir",
         "nl": "Openen",
-        "de": "Ã–ffnen"
+        "de": "Öffnen"
       },
       "args": [],
       "titleFormatted": {
         "en": "Open",
         "fr": "Ouvrir",
         "nl": "Openen",
-        "de": "Ã–ffnen"
+        "de": "Öffnen"
       }
     },
     {
@@ -136,30 +90,89 @@
         "en": "Close",
         "fr": "Fermer",
         "nl": "Sluiten",
-        "de": "SchlieÃŸen"
+        "de": "Schließen"
       },
       "args": [],
       "titleFormatted": {
         "en": "Close",
         "fr": "Fermer",
         "nl": "Sluiten",
-        "de": "SchlieÃŸen"
+        "de": "Schließen"
       }
     },
     {
       "id": "air_purifier_curtain_motor_tilt_stop",
       "title": {
         "en": "Stop",
-        "fr": "ArrÃªter",
+        "fr": "Arrêter",
         "nl": "Stoppen",
         "de": "Stoppen"
       },
       "args": [],
       "titleFormatted": {
         "en": "Stop",
-        "fr": "ArrÃªter",
+        "fr": "Arrêter",
         "nl": "Stoppen",
         "de": "Stoppen"
+      }
+    },
+    {
+      "id": "air_purifier_curtain_curtain_calibrate",
+      "title": {
+        "en": "Calibrate",
+        "fr": "Calibrate"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Calibrate",
+        "fr": "Calibrate"
+      }
+    },
+    {
+      "id": "air_purifier_curtain_curtain_reset_position",
+      "title": {
+        "en": "Reset position",
+        "fr": "Reset position"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Reset position",
+        "fr": "Reset position"
+      }
+    },
+    {
+      "id": "air_purifier_curtain_curtain_hold",
+      "title": {
+        "en": "Hold and stop",
+        "fr": "Hold and stop"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Hold and stop",
+        "fr": "Hold and stop"
+      }
+    },
+    {
+      "id": "air_purifier_curtain_curtain_open_partial",
+      "title": {
+        "en": "Open partially",
+        "fr": "Open partially"
+      },
+      "args": [
+        {
+          "name": "position",
+          "type": "number",
+          "min": 0,
+          "max": 100,
+          "step": 1,
+          "placeholder": {
+            "en": "50"
+          }
+        }
+      ],
+      "titleFormatted": {
+        "en": "Open partially to [[position]]",
+        "fr": "Open partially to [[position]]"
       }
     }
   ]

@@ -1,18 +1,22 @@
 {
   "id": "natural_light_enable",
   "title": {
-    "en": "Enable Natural Light - solar sync",
-    "fr": "Activer Natural Light (Synchro Solaire)"
+    "en": "Enable Solar Sync",
+    "fr": "Activer Synchro solaire"
   },
   "hint": {
-    "en": "Automatically adjusts color temperature throughout the day",
-    "fr": "Ajuste automatiquement la tempÃ©rature de couleur au fil de la journÃ©e"
+    "en": "Enroll this light in Daylight Atmosphere (sun-driven white + brightness)",
+    "fr": "Inscrit cette lumière à Atmosphère jour (blanc + luminosité selon le soleil)"
   },
   "args": [
     {
-      "name": "device",
       "type": "device",
-      "filter": "driver_id=bulb_rgbw|driver_id=led_controller_cct|driver_id=bulb_tunable_white|driver_id=led_strip"
+      "name": "device",
+      "title": {
+        "en": "Light",
+        "fr": "Lumière"
+      },
+      "filter": "capabilities=dim|capabilities=light_temperature|capabilities=light_hue"
     }
   ]
 }

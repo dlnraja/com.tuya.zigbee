@@ -1,10 +1,10 @@
 {
   "id": "hue_wakeup",
   "title": {
-    "en": "Wake-up routine (sunrise simulation)",
-    "fr": "Routine réveil (simulation d'aube)",
-    "nl": "Wekroutine (zonsopgangsimulatie)",
-    "de": "Aufwachroutine (Sonnenaufgangssimulation)"
+    "en": "Wake-up routine sunrise simulation",
+    "fr": "Routine réveil simulation d'aube",
+    "nl": "Wekroutine zonsopgangsimulatie",
+    "de": "Aufwachroutine Sonnenaufgangssimulation"
   },
   "hint": {
     "en": "Gradually raises the light brightness from 1% to the target over the chosen duration, then holds",
@@ -13,9 +13,41 @@
     "de": "Erhöht die Helligkeit schrittweise von 1% auf das Ziel über die gewählte Dauer"
   },
   "args": [
-    { "type": "device", "name": "light", "title": { "en": "Light", "fr": "Lumière" } },
-    { "type": "number", "name": "ramp_minutes", "title": { "en": "Duration (min)", "fr": "Durée (min)" }, "min": 1, "max": 60, "placeholder": { "en": "15" } },
-    { "type": "number", "name": "target", "title": { "en": "Target brightness (%)", "fr": "Luminosité cible (%)" }, "min": 10, "max": 100, "placeholder": { "en": "100" } }
+    {
+      "type": "device",
+      "name": "light",
+      "title": {
+        "en": "Light",
+        "fr": "Lumière"
+      },
+      "filter": "capabilities=dim|capabilities=onoff"
+    },
+    {
+      "type": "number",
+      "name": "ramp_minutes",
+      "title": {
+        "en": "Duration (min)",
+        "fr": "Durée (min)"
+      },
+      "min": 1,
+      "max": 60,
+      "placeholder": {
+        "en": "15"
+      }
+    },
+    {
+      "type": "number",
+      "name": "target",
+      "title": {
+        "en": "Target brightness (%)",
+        "fr": "Luminosité cible (%)"
+      },
+      "min": 10,
+      "max": 100,
+      "placeholder": {
+        "en": "100"
+      }
+    }
   ],
   "titleFormatted": {
     "en": "Wake-up: ramp [[light]] to [[target]]% over [[ramp_minutes]] min",
