@@ -26,7 +26,7 @@ on:
       - '.github/workflows/**'
       - 'package*.json'
   schedule:
-    - cron: '15 4 * * 3'  # Weekly Wednesday 04:15, clear of nightly 03:45 and self-heal 04:00
+    - cron: '20 4 * * 3'  # Weekly Wednesday 04:20, clear of nightly 03:45, self-heal 04:00, and blakadder 04:15
   workflow_dispatch:
 
 permissions:

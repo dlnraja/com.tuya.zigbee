@@ -7,8 +7,8 @@ name: 📡 Market Couples Intake
 
 on:
   schedule:
-    # After blakadder-fetch (04:15 UTC), before auto-enrich peak
-    - cron: '45 4 * * *'
+    # After blakadder-fetch (04:15 UTC) and issue-triage (04:45 UTC), before auto-enrich peak
+    - cron: '50 4 * * *'
   workflow_dispatch:
     inputs:
       crawl:
