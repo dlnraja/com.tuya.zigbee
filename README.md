@@ -33,15 +33,15 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 
 | Metric | Value |
 |--------|-------|
-| **App Version** | v9.0.831 |
+| **App Version** | v9.0.833 |
 | **Drivers** | 431 (381 Zigbee + 50 WiFi) |
 | **Unique Fingerprints** | 4,396 |
-| **Pairing Variants** | 16,202 (4 case combos per fingerprint) |
+| **Pairing Variants** | 16,188 (4 case combos per fingerprint) |
 | **Unique Product IDs** | 584 |
-| **Flow Cards** | 5,950 |
+| **Flow Cards** | 5,952 |
 | **Unique Capabilities** | 170 |
 | **Native OTA Drivers** | 9 |
-| **Test Suites** | 247 files |
+| **Test Suites** | 248 files |
 | **SVG Icons** | 731 |
 | **Languages** | EN, FR, NL, DE |
 | **SDK / Homey** | 3 / >= 12.2.0 |
@@ -58,7 +58,7 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 | 5 | `button_wireless_2` | 562 |
 | 6 | `curtain_motor` | 550 |
 | 7 | `wall_dimmer_tuya` | 486 |
-| 8 | `generic_tuya` | 416 |
+| 8 | `generic_tuya` | 414 |
 | 9 | `device_radiator_valve` | 334 |
 | 10 | `switch_4gang` | 276 |
 | 11 | `switch_2gang` | 255 |
@@ -102,6 +102,8 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 
 | Version | Changes |
 |---------|---------|
+| **v9.0.833** | Fixed BSEED 1-gang switch routing (Issue #540), pruned manifest flow duplicates, resolved ZG-303Z registry lock, and enforced zero guidel… |
+| **v9.0.832** | Fixed BSEED 1-gang switch routing (Issue #540), pruned manifest flow duplicates, resolved ZG-303Z registry lock, and enforced zero guidel… |
 | **v9.0.831** | Improved manufacturer fingerprint database for HOBEIAN devices (presence, vibration, soil) and fixed wrong curtain/switch matches. |
 | **v9.0.830** | Improved manufacturer fingerprint database for HOBEIAN devices (presence, vibration, soil) and fixed wrong curtain/switch matches. |
 | **v9.0.829** | Improved manufacturer fingerprint database for HOBEIAN devices (presence, vibration, soil) and fixed wrong curtain/switch matches. |
@@ -112,8 +114,6 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 | **v9.0.824** | HOBEIAN full enrich: more mmWave variants (ZE/ZK/ZQ/ZX), vibration+contact (ZG-102ZM), tilt (ZG-103Z), water/vibration alarms (ZG-226Z/22… |
 | **v9.0.823** | HOBEIAN full enrich: more mmWave variants (ZE/ZK/ZQ/ZX), vibration+contact (ZG-102ZM), tilt (ZG-103Z), water/vibration alarms (ZG-226Z/22… |
 | **v9.0.822** | HOBEIAN sensors: corrected mmWave DP maps (ZG-204ZM/ZH) and locked motion-sensing switches (ZG-302ZM/ZL); fixed wrong climate/vibration p… |
-| **v9.0.821** | HOBEIAN sensors: corrected mmWave DP maps (ZG-204ZM/ZH) and locked motion-sensing switches (ZG-302ZM/ZL); fixed wrong climate/vibration p… |
-| **v9.0.820** | Fixed mains mmWave radar phantom battery warning after app updates; radar settings DPs no longer misread as humidity. |
 
 <!-- CHANGELOG_END -->
 
