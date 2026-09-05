@@ -763,7 +763,9 @@
         "ZG-204ZQ",
         "ZG-204ZV",
         "ZG-205Z",
-        "ZG-205ZL"
+        "ZG-205ZL",
+        "ZG-302ZM",
+        "ZG-302ZL"
       ],
       "canonicalDriver": "presence_sensor_radar",
       "forbiddenDrivers": [
@@ -772,11 +774,15 @@
         "sensor_climate_temphumidsensor",
         "temphumidsensor",
         "temphumidsensor5",
-        "soil_sensor"
+        "soil_sensor",
+        "vibration_sensor",
+        "power_clamp_meter",
+        "motion_sensor",
+        "radar_sensor_ceiling"
       ],
       "forbidMode": "couple",
       "protocol": "tuya_ef00",
-      "notes": "HOBEIAN ZG-204*/ZG-205* radar/PIR presence family — never climate or soil catch-all.",
+      "notes": "HOBEIAN ZG-204*/ZG-205*/ZG-302Z* radar/presence (+ sensing-switch). Never climate/soil/vibration/clamp cartesian. Z2M herdsman couples.",
       "sources": [
         "z2m-ZG-204ZM",
         "P2250"
@@ -5415,6 +5421,215 @@
       "sources": [
         "Z2M #27955"
       ]
+    },
+    {
+      "id": "hobeian-zg204zh-tze",
+      "mfr": [
+        "_TZE200_vuqzj1ej",
+        "_tze200_vuqzj1ej",
+        "_TZE200_VUQZJ1EJ",
+        "_tze200_VUQZJ1EJ",
+        "_TZE200_hdih4foa",
+        "_tze200_hdih4foa",
+        "_TZE200_HDIH4FOA",
+        "_tze200_HDIH4FOA"
+      ],
+      "productId": [
+        "TS0601",
+        "ZG-204ZH",
+        "AY208Z"
+      ],
+      "canonicalDriver": "presence_sensor_radar",
+      "forbiddenDrivers": [
+        "climate_sensor",
+        "climate_sensor_energy",
+        "vibration_sensor",
+        "soil_sensor",
+        "power_clamp_meter"
+      ],
+      "forbidMode": "couple",
+      "protocol": "tuya_ef00",
+      "notes": "Z2M ZG-204ZH: vuqzj1ej/hdih4foa + TS0601 — presence+temp+humid+lux. Not climate catch-all.",
+      "sources": [
+        "z2m-tuya.ts-ZG-204ZH",
+        "P2421"
+      ],
+      "tracks": {
+        "master": {
+          "static": true,
+          "dynamic": true
+        },
+        "stable": {
+          "static": true,
+          "dynamic": false
+        }
+      }
+    },
+    {
+      "id": "hobeian-zg204zm-tze",
+      "mfr": [
+        "_TZE200_2aaelwxk",
+        "_tze200_2aaelwxk",
+        "_TZE200_2AAELWXK",
+        "_tze200_2AAELWXK",
+        "_TZE200_kb5noeto",
+        "_tze200_kb5noeto",
+        "_TZE200_KB5NOETO",
+        "_tze200_KB5NOETO",
+        "_TZE200_tyffvoij",
+        "_tze200_tyffvoij",
+        "_TZE200_TYFFVOIJ",
+        "_tze200_TYFFVOIJ",
+        "_TZE200_yflzeeqj",
+        "_tze200_yflzeeqj",
+        "_TZE200_YFLZEEQJ",
+        "_tze200_YFLZEEQJ"
+      ],
+      "productId": [
+        "TS0601",
+        "ZG-204ZM",
+        "AY205Z",
+        "TS0225"
+      ],
+      "canonicalDriver": "presence_sensor_radar",
+      "forbiddenDrivers": [
+        "climate_sensor",
+        "vibration_sensor",
+        "soil_sensor",
+        "power_clamp_meter",
+        "motion_sensor"
+      ],
+      "forbidMode": "couple",
+      "protocol": "tuya_ef00",
+      "notes": "Z2M ZG-204ZM: 2aaelwxk/kb5noeto/tyffvoij/yflzeeqj — PIR+24GHz. DP2=static sens, DP4=static dist/100.",
+      "sources": [
+        "z2m-tuya.ts-ZG-204ZM",
+        "P2421"
+      ],
+      "tracks": {
+        "master": {
+          "static": true,
+          "dynamic": true
+        },
+        "stable": {
+          "static": true,
+          "dynamic": false
+        }
+      }
+    },
+    {
+      "id": "hobeian-zg302zm-sensing-switch",
+      "mfr": [
+        "_TZE200_kccdzaeo",
+        "_tze200_kccdzaeo",
+        "_TZE200_KCCDZAEO",
+        "_tze200_KCCDZAEO",
+        "_TZE200_s7rsrtbg",
+        "_tze200_s7rsrtbg",
+        "_TZE200_S7RSRTBG",
+        "_tze200_S7RSRTBG",
+        "_TZE200_tmszbtzq",
+        "_tze200_tmszbtzq",
+        "_TZE200_TMSZBTZQ",
+        "_tze200_TMSZBTZQ",
+        "_TZE200_bfmfhxra",
+        "_tze200_bfmfhxra",
+        "_TZE200_BFMFHXRA",
+        "_tze200_BFMFHXRA",
+        "_TZE200_ahpcyzth",
+        "_tze200_ahpcyzth",
+        "_TZE200_AHPCYZTH",
+        "_tze200_AHPCYZTH",
+        "_TZE200_kijxnb8q",
+        "_tze200_kijxnb8q",
+        "_TZE200_KIJXNB8Q",
+        "_tze200_KIJXNB8Q"
+      ],
+      "productId": [
+        "TS0601",
+        "ZG-302ZM"
+      ],
+      "canonicalDriver": "presence_sensor_radar",
+      "forbiddenDrivers": [
+        "vibration_sensor",
+        "power_clamp_meter",
+        "motion_sensor",
+        "switch_3gang"
+      ],
+      "forbidMode": "couple",
+      "protocol": "tuya_ef00",
+      "notes": "Z2M ZG-302ZM motion sensing switch: presence + switch1/2/3 DPs. Not vibration/clamp.",
+      "sources": [
+        "z2m-tuya.ts-ZG-302ZM",
+        "P2421"
+      ],
+      "tracks": {
+        "master": {
+          "static": true,
+          "dynamic": true
+        },
+        "stable": {
+          "static": true,
+          "dynamic": false
+        }
+      }
+    },
+    {
+      "id": "hobeian-zg302zl-sensing-switch",
+      "mfr": [
+        "_TZE200_khzbklyh",
+        "_tze200_khzbklyh",
+        "_TZE200_KHZBKLYH",
+        "_tze200_KHZBKLYH",
+        "_TZE200_df04ghrb",
+        "_tze200_df04ghrb",
+        "_TZE200_DF04GHRB",
+        "_tze200_DF04GHRB",
+        "_TZE200_toeldckg",
+        "_tze200_toeldckg",
+        "_TZE200_TOELDCKG",
+        "_tze200_TOELDCKG",
+        "_TZE200_cqtamhh5",
+        "_tze200_cqtamhh5",
+        "_TZE200_CQTAMHH5",
+        "_tze200_CQTAMHH5",
+        "_TZE200_xlnzk169",
+        "_tze200_xlnzk169",
+        "_TZE200_XLNZK169",
+        "_tze200_XLNZK169",
+        "_TZE200_llvwkkde",
+        "_tze200_llvwkkde",
+        "_TZE200_LLVWKKDE",
+        "_tze200_LLVWKKDE"
+      ],
+      "productId": [
+        "TS0601",
+        "ZG-302ZL"
+      ],
+      "canonicalDriver": "presence_sensor_radar",
+      "forbiddenDrivers": [
+        "vibration_sensor",
+        "power_clamp_meter",
+        "motion_sensor",
+        "switch_3gang"
+      ],
+      "forbidMode": "couple",
+      "protocol": "tuya_ef00",
+      "notes": "Z2M ZG-302ZL motion sensing switch: DP101 presence, DP1-3 switches. Not vibration/clamp.",
+      "sources": [
+        "z2m-tuya.ts-ZG-302ZL",
+        "P2421"
+      ],
+      "tracks": {
+        "master": {
+          "static": true,
+          "dynamic": true
+        },
+        "stable": {
+          "static": true,
+          "dynamic": false
+        }
+      }
     }
   ]
 }
