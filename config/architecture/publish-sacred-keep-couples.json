@@ -393,6 +393,12 @@
       "note": "P2320/P2366 Antek T99614 NOUS B1Z — forbid unknown at pairing"
     },
     {
+      "mfr": "_TZ3000_blhvsaqf",
+      "pid": "TS0001",
+      "driverId": "switch_1gang",
+      "note": "Issue #540 1-gang switch module — forbid unknown at pairing"
+    },
+    {
       "mfr": "_TZE284_fhvpaltk",
       "pid": "TS0601",
       "driverId": "valve_dual_irrigation",
