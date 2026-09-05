@@ -1035,5 +1035,165 @@
         "Z2M"
       ]
     }
+  },
+  "_TZE284_fodv6bkr": {
+    "driverId": "curtain_motor",
+    "source": "community:Eduard_Martirosyan#2228",
+    "modelIds": [
+      "TS0601"
+    ],
+    "pid": "TS0601",
+    "modelIdsCount": 1
+  },
+  "HOBEIAN": {
+    "driverId": "soil_sensor",
+    "multiCouple": true,
+    "byPid": {
+      "ZG-303Z": "soil_sensor",
+      "ZG-227Z": "climate_sensor",
+      "ZG-227ZL": "climate_sensor",
+      "ZG-204Z": "presence_sensor_radar",
+      "ZG-204ZE": "presence_sensor_radar",
+      "ZG-204ZH": "presence_sensor_radar",
+      "ZG-204ZK": "presence_sensor_radar",
+      "ZG-204ZL": "presence_sensor_radar",
+      "ZG-204ZM": "presence_sensor_radar",
+      "ZG-204ZQ": "presence_sensor_radar",
+      "ZG-204ZV": "presence_sensor_radar",
+      "ZG-205Z": "presence_sensor_radar",
+      "ZG-205ZL": "presence_sensor_radar",
+      "ZG-102Z": "contact_sensor",
+      "ZG-102ZL": "contact_sensor",
+      "ZG-222Z": "water_leak_sensor",
+      "ZG-222ZA": "water_leak_sensor",
+      "3315-S": "water_leak_sensor",
+      "3315-Seu": "water_leak_sensor",
+      "ZG-223Z": "rain_sensor",
+      "ZG-305Z": "switch_2gang",
+      "ZG-106Z": "illuminance_sensor",
+      "ZG-101ZL": "button_wireless_1",
+      "ZG-101ZS": "scene_switch_4",
+      "ZG-204ZX": "presence_sensor_radar",
+      "ZG-302ZM": "presence_sensor_radar",
+      "ZG-302ZL": "presence_sensor_radar",
+      "ZG-102ZM": "vibration_sensor",
+      "ZG-103Z": "vibration_sensor",
+      "ZG-103ZL": "vibration_sensor",
+      "ZG-226Z": "water_leak_sensor",
+      "ZG-228Z": "vibration_sensor"
+    },
+    "modelIds": [
+      "3315-S",
+      "3315-Seu",
+      "ZG-101ZL",
+      "ZG-101ZS",
+      "ZG-102Z",
+      "ZG-102ZL",
+      "ZG-102ZM",
+      "ZG-103Z",
+      "ZG-103ZL",
+      "ZG-106Z",
+      "ZG-204Z",
+      "ZG-204ZE",
+      "ZG-204ZH",
+      "ZG-204ZK",
+      "ZG-204ZL",
+      "ZG-204ZM",
+      "ZG-204ZQ",
+      "ZG-204ZV",
+      "ZG-204ZX",
+      "ZG-205Z",
+      "ZG-205ZL",
+      "ZG-222Z",
+      "ZG-222ZA",
+      "ZG-223Z",
+      "ZG-226Z",
+      "ZG-227Z",
+      "ZG-227ZL",
+      "ZG-228Z",
+      "ZG-302ZL",
+      "ZG-302ZM",
+      "ZG-303Z",
+      "ZG-305Z"
+    ],
+    "source": "p2423-hobeian-mfs",
+    "addedAt": "2026-08-25T00:00:00.000Z",
+    "notes": "P2423: HOBEIAN brand → many pids/drivers (Z2M+compose). Lookup byPid only; never invent pid.",
+    "modelIdsCount": 32,
+    "pid": "ZG-303Z",
+    "deviceNamesByPid": {
+      "3315-S": [
+        "HOBEIAN water leak",
+        "3315-S",
+        "3315-Seu"
+      ],
+      "3315-Seu": [
+        "HOBEIAN water leak EU",
+        "3315-Seu"
+      ],
+      "ZG-222Z": [
+        "HOBEIAN water leak ZG-222Z"
+      ],
+      "ZG-222ZA": [
+        "HOBEIAN water leak ZG-222ZA"
+      ],
+      "ZG-303Z": [
+        "HOBEIAN soil ZG-303Z",
+        "ZG-303L",
+        "ZG-303B"
+      ],
+      "ZG-227Z": [
+        "HOBEIAN climate ZG-227Z"
+      ],
+      "ZG-227ZL": [
+        "HOBEIAN climate ZG-227ZL"
+      ],
+      "ZG-204ZM": [
+        "HOBEIAN presence PIR+mmWave ZG-204ZM",
+        "ZG-204ZS"
+      ],
+      "ZG-101ZL": [
+        "HOBEIAN button ZG-101ZL"
+      ],
+      "ZG-204ZX": [
+        "HOBEIAN presence ZG-204ZX"
+      ],
+      "ZG-302ZM": [
+        "HOBEIAN motion sensing switch ZG-302ZM"
+      ],
+      "ZG-302ZL": [
+        "HOBEIAN motion sensing switch ZG-302ZL"
+      ],
+      "ZG-102ZM": [
+        "HOBEIAN vibration+contact ZG-102ZM"
+      ],
+      "ZG-103Z": [
+        "HOBEIAN vibration+tilt ZG-103Z"
+      ],
+      "ZG-226Z": [
+        "HOBEIAN water leak alarm ZG-226Z"
+      ],
+      "ZG-228Z": [
+        "HOBEIAN vibration alarm ZG-228Z"
+      ]
+    },
+    "deviceNames": [
+      "3315-S",
+      "3315-Seu",
+      "HOBEIAN button ZG-101ZL",
+      "HOBEIAN climate ZG-227Z",
+      "HOBEIAN climate ZG-227ZL",
+      "HOBEIAN presence PIR+mmWave ZG-204ZM",
+      "HOBEIAN soil ZG-303Z",
+      "HOBEIAN water leak",
+      "HOBEIAN water leak EU",
+      "HOBEIAN water leak ZG-222Z",
+      "HOBEIAN water leak ZG-222ZA",
+      "ZG-204ZS",
+      "ZG-303B",
+      "ZG-303L"
+    ],
+    "lastEnrichment": "p2423-hobeian-mfs",
+    "updatedAt": "2026-09-05"
   }
 }

@@ -485,8 +485,6 @@ class CurtainMotorDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedC
    */
   async onSettings({ oldSettings, newSettings, changedKeys }) {
     try {
-      await super.onSettings?.({ oldSettings, newSettings, changedKeys });
-
       if (this._isMoesZtsEurC()) {
         if (this._isInternalSettingsSync) {
           this.log('[CURTAIN] Skipping Moes ZTS send on settings - synced from device report');
@@ -502,6 +500,8 @@ class CurtainMotorDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedC
         }
         return;
       }
+
+      await super.onSettings?.({ oldSettings, newSettings, changedKeys });
 
       if (changedKeys.includes('open_time') || changedKeys.includes('close_time') || changedKeys.includes('reverse_direction')) {
         this.log('[CURTAIN] Calibration settings changed, applying...');
