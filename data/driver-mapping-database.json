@@ -92,7 +92,7 @@
       "air_purifier"
     ],
     "_TZE204_hlx9tnzb": [
-      "air_purifier"
+      "dimmer_1_gang_tuya"
     ],
     "_TZE204_5cuocqty": [
       "air_purifier"
@@ -173,7 +173,7 @@
       "air_purifier"
     ],
     "_TZE200_3towulqd": [
-      "air_purifier"
+      "presence_sensor_radar"
     ],
     "_TZE200_bh3n6gk8": [
       "air_purifier"
@@ -200,7 +200,7 @@
       "air_purifier"
     ],
     "_TZE204_qasjif9e": [
-      "air_purifier"
+      "presence_sensor_radar"
     ],
     "_TZE200_sgpeacqp": [
       "air_purifier"
@@ -233,7 +233,7 @@
       "air_purifier"
     ],
     "_TZE204_sxm7l9xa": [
-      "air_purifier"
+      "presence_sensor_radar"
     ],
     "_TZE204_ijxvkhd0": [
       "air_purifier"
@@ -254,7 +254,7 @@
       "air_purifier"
     ],
     "_TZE200_mja3fuja": [
-      "air_purifier"
+      "air_quality_comprehensive"
     ],
     "_TZE200_ryfmq5rl": [
       "air_purifier"
@@ -449,7 +449,7 @@
       "air_purifier"
     ],
     "_TZE200_3p5ydos3": [
-      "air_purifier"
+      "wall_dimmer_tuya"
     ],
     "_TZE200_whpb9yts": [
       "air_purifier"
@@ -464,7 +464,7 @@
       "air_purifier"
     ],
     "_TZE200_dfxkcots": [
-      "air_purifier"
+      "wall_dimmer_tuya"
     ],
     "_TZE200_w4cryh2i": [
       "air_purifier"
@@ -482,7 +482,7 @@
       "air_purifier"
     ],
     "_TZE200_p0gzbqct": [
-      "air_purifier"
+      "wall_dimmer_tuya"
     ],
     "_TZE204_vevc4c6g": [
       "air_purifier"
@@ -500,13 +500,13 @@
       "air_purifier"
     ],
     "_TZE200_aqnazj70": [
-      "air_purifier"
+      "switch_4gang"
     ],
     "_TZE200_di3tfv5b": [
       "air_purifier"
     ],
     "_TZE200_mexisfik": [
-      "air_purifier"
+      "switch_4gang"
     ],
     "_TZE204_6wi2mope": [
       "air_purifier"
@@ -530,7 +530,7 @@
       "air_purifier"
     ],
     "_TZE200_2ekuz3dz": [
-      "air_purifier"
+      "wall_thermostat"
     ],
     "_TZE200_qq9mpfhw": [
       "air_purifier"
@@ -603,8 +603,7 @@
       "dimmer_wall_1gang"
     ],
     "_tze204_hlx9tnzb": [
-      "air_purifier",
-      "dimmer_wall_1gang"
+      "dimmer_1_gang_tuya"
     ],
     "_tze204_5cuocqty": [
       "air_purifier",
@@ -702,8 +701,7 @@
       "climate_sensor"
     ],
     "_tze200_3towulqd": [
-      "air_purifier",
-      "device_air_purifier_motion"
+      "presence_sensor_radar"
     ],
     "_tze200_bh3n6gk8": [
       "air_purifier",
@@ -738,8 +736,7 @@
       "device_air_purifier_presence"
     ],
     "_tze204_qasjif9e": [
-      "air_purifier",
-      "device_air_purifier_presence"
+      "presence_sensor_radar"
     ],
     "_tze200_sgpeacqp": [
       "air_purifier",
@@ -782,8 +779,7 @@
       "device_air_purifier_presence"
     ],
     "_tze204_sxm7l9xa": [
-      "air_purifier",
-      "device_air_purifier_presence"
+      "presence_sensor_radar"
     ],
     "_tze204_ijxvkhd0": [
       "air_purifier",
@@ -811,9 +807,7 @@
       "device_air_purifier"
     ],
     "_tze200_mja3fuja": [
-      "air_purifier",
-      "device_air_purifier_humidifier",
-      "device_air_purifier"
+      "air_quality_comprehensive"
     ],
     "_tze200_ryfmq5rl": [
       "air_purifier",
@@ -1023,7 +1017,7 @@
       "device_air_purifier"
     ],
     "_tze200_3p5ydos3": [
-      "air_purifier"
+      "wall_dimmer_tuya"
     ],
     "_tze200_whpb9yts": [
       "air_purifier",
@@ -1041,7 +1035,7 @@
       "air_purifier"
     ],
     "_tze200_dfxkcots": [
-      "air_purifier"
+      "wall_dimmer_tuya"
     ],
     "_tze200_w4cryh2i": [
       "air_purifier"
@@ -1064,8 +1058,7 @@
       "air_purifier"
     ],
     "_tze200_p0gzbqct": [
-      "air_purifier",
-      "climate_sensor"
+      "wall_dimmer_tuya"
     ],
     "_tze204_vevc4c6g": [
       "air_purifier",
@@ -1088,17 +1081,14 @@
       "climate_sensor"
     ],
     "_tze200_aqnazj70": [
-      "air_purifier",
-      "air_purifier_din",
-      "device_air_purifier_din"
+      "switch_4gang"
     ],
     "_tze200_di3tfv5b": [
       "air_purifier",
       "climate_sensor"
     ],
     "_tze200_mexisfik": [
-      "air_purifier",
-      "climate_sensor"
+      "switch_4gang"
     ],
     "_tze204_6wi2mope": [
       "air_purifier",
@@ -1129,8 +1119,7 @@
       "device_air_purifier"
     ],
     "_tze200_2ekuz3dz": [
-      "air_purifier",
-      "device_air_purifier"
+      "wall_thermostat"
     ],
     "_tze200_qq9mpfhw": [
       "air_purifier",
@@ -1386,7 +1375,7 @@
       "air_purifier_dimmer"
     ],
     "_TZE204_zenj4lxv": [
-      "air_purifier_dimmer"
+      "dimmer_2_gang_tuya"
     ],
     "_TZE204_bxoo2swd": [
       "air_purifier_dimmer"
@@ -1395,7 +1384,7 @@
       "air_purifier_dimmer"
     ],
     "_TZE200_fjjbhx9d": [
-      "air_purifier_dimmer"
+      "dimmer_2_gang_tuya"
     ],
     "_tze200_ip2akl4w": [
       "air_purifier_dimmer"
@@ -1427,8 +1416,7 @@
       "climate_sensor"
     ],
     "_tze204_zenj4lxv": [
-      "air_purifier_dimmer",
-      "dimmer_wall_1gang"
+      "dimmer_2_gang_tuya"
     ],
     "_tze204_bxoo2swd": [
       "air_purifier_dimmer",
@@ -1439,8 +1427,7 @@
       "climate_sensor"
     ],
     "_tze200_fjjbhx9d": [
-      "air_purifier_dimmer",
-      "climate_sensor"
+      "dimmer_2_gang_tuya"
     ],
     "_TZE200_AQNAZJ70": [
       "air_purifier_din",
@@ -1967,8 +1954,7 @@
       "scene_switch_1"
     ],
     "_tz3210_0zabbfax": [
-      "bulb_rgb",
-      "led_strip_rgbw"
+      "light_bulb_rgb"
     ],
     "_tz3210_5vbjzw54": [
       "bulb_rgb"
@@ -2068,7 +2054,7 @@
       "bulb_rgb"
     ],
     "_tzb210_rkgngb5o": [
-      "bulb_rgb"
+      "bulb_tunable_white"
     ],
     "_TZ3000_odygigth": [
       "bulb_rgb"
@@ -3680,7 +3666,7 @@
       "button_wireless_2"
     ],
     "_TZ3000_ruxexjfz": [
-      "button_wireless_2"
+      "switch_2gang"
     ],
     "_TZ3000_zmy4lslw": [
       "button_wireless_2"
@@ -3788,7 +3774,7 @@
       "button_wireless_2"
     ],
     "_TYZB01_qeqvmvti": [
-      "button_wireless_2"
+      "switch_1gang"
     ],
     "_TYZB01_seqwasot": [
       "button_wireless_2"
@@ -3881,7 +3867,7 @@
       "button_wireless_2"
     ],
     "_TYZB01_6g8b7at8": [
-      "button_wireless_2"
+      "switch_2gang"
     ],
     "TUYATEC-nzrrvgco": [
       "button_wireless_2"
@@ -4267,8 +4253,7 @@
       "button_wireless_2"
     ],
     "_tz3000_ruxexjfz": [
-      "button_wireless_2",
-      "climate_sensor"
+      "switch_2gang"
     ],
     "_tz3000_odzoiovu": [
       "button_wireless_2"
@@ -4393,7 +4378,7 @@
       "button_wireless_2"
     ],
     "_tyzb01_qeqvmvti": [
-      "button_wireless_2"
+      "switch_1gang"
     ],
     "_tyzb01_seqwasot": [
       "button_wireless_2"
@@ -4503,7 +4488,7 @@
       "remote_button_wireless_wall"
     ],
     "_tyzb01_6g8b7at8": [
-      "button_wireless_2"
+      "switch_2gang"
     ],
     "_tz3000_qn8qvk9y": [
       "button_wireless_2"
@@ -4971,7 +4956,7 @@
       "button_wireless_4"
     ],
     "_TZ3000_wkai4ga5": [
-      "button_wireless_4"
+      "button_wireless_2"
     ],
     "_TZ3000_uaa99arv": [
       "button_wireless_4"
@@ -5032,8 +5017,7 @@
       "scene_switch_4"
     ],
     "_tz3000_wkai4ga5": [
-      "button_wireless_4",
-      "scene_switch_4"
+      "button_wireless_2"
     ],
     "_tz3000_jcspr0tp": [
       "button_wireless_4",
@@ -9117,8 +9101,7 @@
       "lcdtemphumidsensor"
     ],
     "_tze200_yjjdcqsq": [
-      "climate_sensor",
-      "lcdtemphumidsensor"
+      "climate_sensor"
     ],
     "_tze284_9ern5sfh": [
       "climate_sensor"
@@ -9267,7 +9250,7 @@
       "contact_sensor"
     ],
     "_TZ3000_3dfewsk1": [
-      "contact_sensor"
+      "water_leak_sensor"
     ],
     "_TZ3000_402JJYRO": [
       "contact_sensor"
@@ -9877,7 +9860,7 @@
       "contact_sensor"
     ],
     "_tz3000_3dfewsk1": [
-      "contact_sensor"
+      "water_leak_sensor"
     ],
     "_tz3000_4uvovz4r": [
       "contact_sensor"
@@ -13969,7 +13952,7 @@
       "temphumidsensor"
     ],
     "_TZE200_yjjdcqsq": [
-      "lcdtemphumidsensor"
+      "climate_sensor"
     ],
     "_TZ3210_ncw88jfq": [
       "lcdtemphumidsensor"
@@ -23070,6 +23053,12 @@
     ],
     "_TZE200_clrdrnya": [
       "presence_sensor_radar"
+    ],
+    "_TZB210_rkgngb5o": [
+      "bulb_tunable_white"
+    ],
+    "_TZ3210_0zabbfax": [
+      "light_bulb_rgb"
     ]
   },
   "pid_index": {

@@ -559,6 +559,150 @@
       "pid": "ZG-301Z-2CH",
       "driverId": "switch_2gang",
       "note": "P2430 HOBEIAN 2-gang switch"
+    },
+    {
+      "mfr": "_TZE200_aqnazj70",
+      "pid": "TS0601",
+      "driverId": "switch_4gang",
+      "note": "TS0601 4-gang switch module"
+    },
+    {
+      "mfr": "_TZE200_dfxkcots",
+      "pid": "TS0601",
+      "driverId": "wall_dimmer_tuya",
+      "note": "TS0601 rotary smart dimmer"
+    },
+    {
+      "mfr": "_TZE200_fjjbhx9d",
+      "pid": "TS0601",
+      "driverId": "dimmer_2_gang_tuya",
+      "note": "TS0601 2-gang smart dimmer"
+    },
+    {
+      "mfr": "_TZE200_mexisfik",
+      "pid": "TS0601",
+      "driverId": "switch_4gang",
+      "note": "TS0601 4-gang wall switch"
+    },
+    {
+      "mfr": "_TZE200_p0gzbqct",
+      "pid": "TS0601",
+      "driverId": "wall_dimmer_tuya",
+      "note": "Henk de Boom #671 rotary knob dimmer"
+    },
+    {
+      "mfr": "_TYZB01_qeqvmvti",
+      "pid": "TS0011",
+      "driverId": "switch_1gang",
+      "note": "TS0011 1-gang light switch"
+    },
+    {
+      "mfr": "_TZ3000_mmkbptmx",
+      "pid": "TS0004",
+      "driverId": "switch_4gang",
+      "note": "Melectro #646 4-gang wall switch"
+    },
+    {
+      "mfr": "_TZ3000_ruxexjfz",
+      "pid": "TS0002",
+      "driverId": "switch_2gang",
+      "note": "Melectro #647 2-gang wall switch"
+    },
+    {
+      "mfr": "_TZE200_2ekuz3dz",
+      "pid": "TS0601",
+      "driverId": "wall_thermostat",
+      "note": "Melectro #650 Beok/Moes thermostat"
+    },
+    {
+      "mfr": "_TZ3000_upgcbody",
+      "pid": "TS0207",
+      "driverId": "water_leak_sensor",
+      "note": "Melectro #651 water leak sensor"
+    },
+    {
+      "mfr": "_TZ3000_wkr3jqmr",
+      "pid": "TS0004",
+      "driverId": "switch_4gang",
+      "note": "Roy1 #648 4-channel relay"
+    },
+    {
+      "mfr": "_TZ3000_3dfewsk1",
+      "pid": "TS0207",
+      "driverId": "water_leak_sensor",
+      "note": "Roy1 #649 water flood sensor"
+    },
+    {
+      "mfr": "_TZ3000_wkai4ga5",
+      "pid": "TS0042",
+      "driverId": "button_wireless_2",
+      "note": "Rob_G #653 2-gang wireless button"
+    },
+    {
+      "mfr": "_TZE204_qasjif9e",
+      "pid": "TS0601",
+      "driverId": "presence_sensor_radar",
+      "note": "G4nd41f #654 ZY-M100 radar"
+    },
+    {
+      "mfr": "_TZE204_sxm7l9xa",
+      "pid": "TS0601",
+      "driverId": "presence_sensor_radar",
+      "note": "G4nd41f ZY-M100-S radar"
+    },
+    {
+      "mfr": "_TZE200_3p5ydos3",
+      "pid": "TS0601",
+      "driverId": "wall_dimmer_tuya",
+      "note": "Ferenc_Szasz #660 BSEED dimmer"
+    },
+    {
+      "mfr": "_TZE204_hlx9tnzb",
+      "pid": "TS0601",
+      "driverId": "dimmer_1_gang_tuya",
+      "note": "Anders_Lim #661 Star Ring dimmer"
+    },
+    {
+      "mfr": "_TZE204_zenj4lxv",
+      "pid": "TS0601",
+      "driverId": "dimmer_2_gang_tuya",
+      "note": "Anders_Lim #661 Star Ring 2-gang dimmer"
+    },
+    {
+      "mfr": "_TZB210_rkgngb5o",
+      "pid": "TS0502B",
+      "driverId": "bulb_tunable_white",
+      "note": "radiothieves #662 CCT tunable bulb"
+    },
+    {
+      "mfr": "_TZE200_3towulqd",
+      "pid": "TS0601",
+      "driverId": "presence_sensor_radar",
+      "note": "Janderek #663 ZG-204ZL motion lux radar"
+    },
+    {
+      "mfr": "_TYZB01_6g8b7at8",
+      "pid": "TS0012",
+      "driverId": "switch_2gang",
+      "note": "Johan_Rossouw #665 2-gang switch"
+    },
+    {
+      "mfr": "_TZ3210_0zabbfax",
+      "pid": "TS0503B",
+      "driverId": "light_bulb_rgb",
+      "note": "RezaRose #666 USB RGB strip"
+    },
+    {
+      "mfr": "_TZE200_yjjdcqsq",
+      "pid": "TS0601",
+      "driverId": "climate_sensor",
+      "note": "Topic 1 #1379 temp/humidity sensor"
+    },
+    {
+      "mfr": "_TZE200_mja3fuja",
+      "pid": "TS0601",
+      "driverId": "air_quality_comprehensive",
+      "note": "Topic 1 #1379 Smart Air House Keeper"
     }
   ]
 }

@@ -3038,5 +3038,8 @@
   },
   "9.0.834": {
     "en": "Fixed BSEED 1-gang switch routing (Issue #540), pruned manifest flow duplicates, resolved ZG-303Z registry lock, and enforced zero guidelines warnings."
+  },
+  "9.0.835": {
+    "en": "Forum media deep sweep & misattribution cleansing: cleansed wall_switch_5_gang_tuya stubs, added 25 verified forum Zigbee devices (Melectro, Roy1, Rob_G, G4nd41f, Ferenc_Szasz, Anders_Lim, radiothieves, Janderek, Johan_Rossouw, RezaRose, Henk de Boom), fixed Athom 17k combo pass2 budget reduction, and passed all mandatory checks."
   }
 }
