@@ -3,6 +3,40 @@
   "description": "Community-reported wrong-driver / pairing conflict cases. Sacred couple = mfr + productId. Master: static compose + dynamic lookup. Stable: static compose only (copy canonicalDriver into driver.compose.json). P2318 ENRICHMENT-FIRST: lock by adding to canonicalDriver; forbidMode=couple only strips manufacturerName when the forbidden productId is also present — never strip shared productIds (coverage reduction ban); never delete a mfr from a driver solely because it appears elsewhere with a different pid.",
   "cases": [
     {
+      "id": "eduard-martirosyan-tze284-fodv6bkr-curtain",
+      "mfr": [
+        "_TZE284_fodv6bkr",
+        "_tze284_fodv6bkr",
+        "_TZE284_FODV6BKR",
+        "_TZE284_libht6ua",
+        "_tze284_libht6ua",
+        "_TZE284_LIBHT6UA"
+      ],
+      "productId": [
+        "TS0601"
+      ],
+      "canonicalDriver": "curtain_motor",
+      "forbiddenDrivers": [
+        "climate_sensor",
+        "soil_sensor",
+        "switch_1gang",
+        "generic_tuya",
+        "universal_fallback",
+        "button_wireless_1"
+      ],
+      "protocol": "tuya_dp",
+      "clusters": [
+        0,
+        4,
+        5,
+        61184
+      ],
+      "bindings": [
+        61184
+      ],
+      "notes": "Eduard_Martirosyan #2228 DC tubular roller blind motor; EF00 Tuya cover DPs"
+    },
+    {
       "id": "hobeian-aubess-k4ej3ww2-ias",
       "mfr": [
         "_TZ3000_k4ej3ww2",
@@ -767,7 +801,8 @@
         "ZG-205ZL",
         "ZG-302ZM",
         "ZG-302ZL",
-        "ZG-204ZX"
+        "ZG-204ZX",
+        "ZG-204ZP"
       ],
       "canonicalDriver": "presence_sensor_radar",
       "forbiddenDrivers": [
@@ -5787,6 +5822,142 @@
           "dynamic": false
         }
       }
+    },
+    {
+      "id": "hobeian-zg301z-switch",
+      "mfr": [
+        "HOBEIAN",
+        "hobeian",
+        "Hobeian"
+      ],
+      "productId": [
+        "ZG-301Z",
+        "ZG-302Z1"
+      ],
+      "canonicalDriver": "switch_1gang",
+      "forbiddenDrivers": [
+        "presence_sensor_radar",
+        "climate_sensor",
+        "soil_sensor",
+        "generic_tuya",
+        "button_wireless_1",
+        "button_wireless_2",
+        "button_wireless_4",
+        "dimmer_wall_switch"
+      ],
+      "forbidMode": "couple",
+      "source": "p2430-hobeian-fleet",
+      "notes": "P2430: HOBEIAN 1-gang switch couple lock. Never cartesian to radar/soil/dimmer."
+    },
+    {
+      "id": "hobeian-zg301z-2ch-switch",
+      "mfr": [
+        "HOBEIAN",
+        "hobeian",
+        "Hobeian"
+      ],
+      "productId": [
+        "ZG-301Z-2CH",
+        "ZG-302Z2"
+      ],
+      "canonicalDriver": "switch_2gang",
+      "forbiddenDrivers": [
+        "switch_1gang",
+        "switch_3gang",
+        "presence_sensor_radar",
+        "climate_sensor",
+        "soil_sensor",
+        "generic_tuya"
+      ],
+      "forbidMode": "couple",
+      "source": "p2430-hobeian-fleet",
+      "notes": "P2430: HOBEIAN 2-gang switch couple lock."
+    },
+    {
+      "id": "hobeian-zg302z3-switch",
+      "mfr": [
+        "HOBEIAN",
+        "hobeian",
+        "Hobeian"
+      ],
+      "productId": [
+        "ZG-302Z3"
+      ],
+      "canonicalDriver": "switch_3gang",
+      "forbiddenDrivers": [
+        "switch_1gang",
+        "switch_2gang",
+        "presence_sensor_radar",
+        "climate_sensor",
+        "soil_sensor",
+        "generic_tuya"
+      ],
+      "forbidMode": "couple",
+      "source": "p2430-hobeian-fleet",
+      "notes": "P2430: HOBEIAN 3-gang switch couple lock."
+    },
+    {
+      "id": "hobeian-zg101zs-scene",
+      "mfr": [
+        "HOBEIAN",
+        "hobeian",
+        "Hobeian"
+      ],
+      "productId": [
+        "ZG-101ZS"
+      ],
+      "canonicalDriver": "scene_switch_4",
+      "forbiddenDrivers": [
+        "switch_1gang",
+        "button_wireless_1",
+        "presence_sensor_radar",
+        "generic_tuya"
+      ],
+      "forbidMode": "couple",
+      "source": "p2430-hobeian-fleet",
+      "notes": "P2430: HOBEIAN Star Ring 4-gang scene switch couple lock."
+    },
+    {
+      "id": "hobeian-zg229z-siren",
+      "mfr": [
+        "HOBEIAN",
+        "hobeian",
+        "Hobeian"
+      ],
+      "productId": [
+        "ZG-229Z"
+      ],
+      "canonicalDriver": "siren",
+      "forbiddenDrivers": [
+        "switch_1gang",
+        "presence_sensor_radar",
+        "water_leak_sensor",
+        "generic_tuya"
+      ],
+      "forbidMode": "couple",
+      "source": "p2430-hobeian-fleet",
+      "notes": "P2430: HOBEIAN smart siren couple lock."
+    },
+    {
+      "id": "hobeian-zg225z-gas",
+      "mfr": [
+        "HOBEIAN",
+        "hobeian",
+        "Hobeian"
+      ],
+      "productId": [
+        "ZG-225Z"
+      ],
+      "canonicalDriver": "gas_sensor",
+      "forbiddenDrivers": [
+        "switch_1gang",
+        "presence_sensor_radar",
+        "water_leak_sensor",
+        "generic_tuya"
+      ],
+      "forbidMode": "couple",
+      "source": "p2430-hobeian-fleet",
+      "notes": "P2430: HOBEIAN gas sensor couple lock."
     }
   ]
 }

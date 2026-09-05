@@ -29,14 +29,14 @@ const path = require('path');
 
 // Legacy budgets (no mfs_db available): historical behavior.
 const DEFAULT_MAX_DRIVER_COMBOS = 350;
-const DEFAULT_MAX_TOTAL_COMBOS = 20000;
+const DEFAULT_MAX_TOTAL_COMBOS = 17000;
 // Prioritized budgets (mfs_db available).
 // WHY(P2252): Athom expands manufacturerName[] × productId[] using RAW array
 // lengths (every CASE form counts). Unique-lowercase under-counting let
 // publish think ~28k while Athom saw 100k+ → processor socket hang up /
 // processing_failed (#2977 on 9.0.646). Keep raw totals Athom-safe.
-const PRIORITIZED_MAX_DRIVER_COMBOS = 2000;
-const PRIORITIZED_MAX_TOTAL_COMBOS = 20000;
+const PRIORITIZED_MAX_DRIVER_COMBOS = 1500;
+const PRIORITIZED_MAX_TOTAL_COMBOS = 17000;
 // Above this per-driver combo count (and only when mfs_db is available),
 // productIds are reduced to the ones actually observed with the driver's
 // manufacturers — this shrinks the cross-product without losing any real pair.
