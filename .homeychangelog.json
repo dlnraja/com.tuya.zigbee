@@ -1455,5 +1455,8 @@
   },
   "5.12.137": {
     "en": "Fixed BSEED 1-gang switch routing (Issue #540), pruned manifest flow duplicates, and enforced zero flow guidelines warnings."
+  },
+  "5.12.138": {
+    "en": "Forum media deep sweep & misattribution cleansing: cleansed wall_switch_5_gang_tuya stubs, added 25 verified forum Zigbee devices, resolved Athom 17k combo pass2 budget reduction, and passed all mandatory checks."
   }
 }

@@ -634,32 +634,52 @@ function compactZigbeeIdentifiers(manifest, opts = {}) {
       .map((d) => ({ d, c: comboCount(d) }))
       .filter((x) => x.c > 1)
       .sort((a, b) => b.c - a.c);
-    if (!ranked.length) break;
-    const target = ranked[0].d;
-    const mfrs = uniqStrings(target.zigbee.manufacturerName);
-    const pids = uniqStrings(target.zigbee.productId);
-    const pins = sacredPinsForDriver(sacredAll, target.id);
-    // WHY(P2348): pass2 must compare lowercase keys to lowercase sacred pins
-    // (previously pinMfr held original case → sacred mfrs looked droppable).
-    const pinMfrLc = new Set(pins.map((p) => String(p.mfr).toLowerCase()));
-    const pinPid = new Set(pins.map((p) => String(p.pid).toUpperCase()));
-    if (mfrs.length <= 1 && pids.length <= 1) break;
-    if (mfrs.length > pids.length) {
-      const keys = [...new Set(mfrs.map((v) => v.toLowerCase()))];
-      const drop = [...keys].reverse().find((k) => !pinMfrLc.has(k));
-      if (!drop) {
-        // Cannot drop mfr — try pid instead
-        const dropPid = [...pids].reverse().find((p) => !pinPid.has(String(p).toUpperCase()));
-        if (!dropPid) break;
-        target.zigbee.productId = pids.filter((p) => p !== dropPid);
+    let cutMade = false;
+    for (const item of ranked) {
+      const target = item.d;
+      const mfrs = uniqStrings(target.zigbee.manufacturerName);
+      const pids = uniqStrings(target.zigbee.productId);
+      const pins = sacredPinsForDriver(sacredAll, target.id);
+      // WHY(P2348): pass2 must compare lowercase keys to lowercase sacred pins
+      // (previously pinMfr held original case → sacred mfrs looked droppable).
+      const pinMfrLc = new Set(pins.map((p) => String(p.mfr).toLowerCase()));
+      const pinPid = new Set(pins.map((p) => String(p.pid).toUpperCase()));
+      if (mfrs.length <= 1 && pids.length <= 1) continue;
+
+      if (mfrs.length > pids.length) {
+        const keys = [...new Set(mfrs.map((v) => v.toLowerCase()))];
+        const drop = [...keys].reverse().find((k) => !pinMfrLc.has(k));
+        if (!drop) {
+          // Cannot drop mfr — try pid instead
+          const dropPid = [...pids].reverse().find((p) => !pinPid.has(String(p).toUpperCase()));
+          if (dropPid) {
+            target.zigbee.productId = pids.filter((p) => p !== dropPid);
+            cutMade = true;
+            break;
+          }
+        } else {
+          target.zigbee.manufacturerName = mfrs.filter((v) => v.toLowerCase() !== drop);
+          cutMade = true;
+          break;
+        }
       } else {
-        target.zigbee.manufacturerName = mfrs.filter((v) => v.toLowerCase() !== drop);
+        const dropPid = [...pids].reverse().find((p) => !pinPid.has(String(p).toUpperCase()));
+        if (dropPid) {
+          target.zigbee.productId = pids.filter((p) => p !== dropPid);
+          cutMade = true;
+          break;
+        } else {
+          const keys = [...new Set(mfrs.map((v) => v.toLowerCase()))];
+          const drop = [...keys].reverse().find((k) => !pinMfrLc.has(k));
+          if (drop) {
+            target.zigbee.manufacturerName = mfrs.filter((v) => v.toLowerCase() !== drop);
+            cutMade = true;
+            break;
+          }
+        }
       }
-    } else {
-      const dropPid = [...pids].reverse().find((p) => !pinPid.has(String(p).toUpperCase()));
-      if (!dropPid) break;
-      target.zigbee.productId = pids.filter((p) => p !== dropPid);
     }
+    if (!cutMade) break;
     pass2Cuts += 1;
     afterTotal = rawTotal();
     if (pass2Cuts > 50000) break; // safety
