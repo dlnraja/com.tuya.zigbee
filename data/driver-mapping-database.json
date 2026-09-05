@@ -15161,7 +15161,7 @@
       "motion_sensor_radar_mmwave"
     ],
     "_TZE200_CLRDRNYA": [
-      "motion_sensor_radar_mmwave"
+      "presence_sensor_radar"
     ],
     "_TZE200_LU01T0ZL": [
       "motion_sensor_radar_mmwave"
@@ -15173,7 +15173,7 @@
       "motion_sensor_radar_mmwave"
     ],
     "_TZE204_CLRDRNYA": [
-      "motion_sensor_radar_mmwave"
+      "presence_sensor_radar"
     ],
     "_TZE204_FWONDBZY": [
       "motion_sensor_radar_mmwave"
@@ -15203,7 +15203,7 @@
       "motion_sensor_radar_mmwave"
     ],
     "_tze200_clrdrnya": [
-      "motion_sensor_radar_mmwave"
+      "presence_sensor_radar"
     ],
     "_tze200_lu01t0zl": [
       "motion_sensor_radar_mmwave"
@@ -15215,7 +15215,7 @@
       "motion_sensor_radar_mmwave"
     ],
     "_tze204_clrdrnya": [
-      "motion_sensor_radar_mmwave"
+      "presence_sensor_radar"
     ],
     "_tze204_fwondbzy": [
       "motion_sensor_radar_mmwave"
@@ -23055,6 +23055,21 @@
     ],
     "_TZE284_libht6ua": [
       "curtain_motor"
+    ],
+    "_TZE284_CLRDRNYA": [
+      "presence_sensor_radar"
+    ],
+    "_TZE284_clrdrnya": [
+      "presence_sensor_radar"
+    ],
+    "_tze284_clrdrnya": [
+      "presence_sensor_radar"
+    ],
+    "_TZE204_clrdrnya": [
+      "presence_sensor_radar"
+    ],
+    "_TZE200_clrdrnya": [
+      "presence_sensor_radar"
     ]
   },
   "pid_index": {
