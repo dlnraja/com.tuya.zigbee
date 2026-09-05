@@ -3002,5 +3002,8 @@
   },
   "9.0.822": {
     "en": "HOBEIAN sensors: corrected mmWave DP maps (ZG-204ZM/ZH) and locked motion-sensing switches (ZG-302ZM/ZL); fixed wrong climate/vibration pairing."
+  },
+  "9.0.823": {
+    "en": "HOBEIAN full enrich: more mmWave variants (ZE/ZK/ZQ/ZX), vibration+contact (ZG-102ZM), tilt (ZG-103Z), water/vibration alarms (ZG-226Z/228Z)."
   }
 }
