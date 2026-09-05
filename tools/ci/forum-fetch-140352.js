@@ -33,10 +33,21 @@ const ROOT = path.resolve(__dirname, '..', '..');
 const STATE_DIR = path.join(ROOT, '.github', 'state', 'forum');
 const TOPIC_ID = 140352;
 const BASE = 'https://community.homey.app';
+const CLI_ARGS = process.argv.slice(2);
+function cliNum(name, fallback) {
+  const a = CLI_ARGS.find((x) => x.startsWith(`--${name}=`));
+  if (!a) {return fallback;}
+  const n = parseInt(a.split('=')[1], 10);
+  return Number.isFinite(n) ? n : fallback;
+}
+// Rate-limit-safe harvest: only fetch a post_number window (+ optional latest tail).
+const FROM_POST = cliNum('from-post', 0);
+const TO_POST = cliNum('to-post', 0);
+const ALSO_LATEST = cliNum('also-latest', 0);
 
 const UA = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36';
 
-const MFR_REGEX = /_T[YZ](?:E200|E2[E2]8[0-9]|ZB\d{2}|Z3000|Z3210)[_-][A-Za-z0-9]+/g;
+const MFR_REGEX = /_T[YZ](?:E200|E204|E284|E28[0-9A-Z]*|ZB\d{2}|Z3000|Z3002|Z3210|Z3218|ST11)[_-][A-Za-z0-9]+/gi;
 const PID_REGEX = /\bTS\d{4}[A-Z]?\b/g;
 
 // P55 — smart fetcher with browser UA + cache + retry + adaptive rate limit
@@ -197,7 +208,7 @@ async function main() {
   // Discourse returns up to 20 posts in post_stream.posts by default.
   // Use the /t/{id}/posts.json endpoint with the stream IDs.
   const streamIds = topic.post_stream?.stream || [];
-  const allPosts = topic.post_stream?.posts ? [...topic.post_stream.posts] : [];
+  let allPosts = topic.post_stream?.posts ? [...topic.post_stream.posts] : [];
   console.log('Stream IDs:', streamIds.length, '| Initial posts from meta:', allPosts.length);
 
   // Try fetching the rest via the per-post stream
@@ -206,7 +217,23 @@ async function main() {
     // Discourse has a post_ids[] param. Use it in chunks of 20.
     const chunkSize = 20;
     const have = new Set(allPosts.map(p => p.id));
-    const want = streamIds.filter(id => !have.has(id));
+    const ranged = new Set();
+    if (FROM_POST > 0 && TO_POST >= FROM_POST) {
+      const start = Math.max(0, FROM_POST - 1);
+      const end = Math.min(streamIds.length, TO_POST);
+      for (const id of streamIds.slice(start, end)) {ranged.add(id);}
+    }
+    if (ALSO_LATEST > 0) {
+      for (const id of streamIds.slice(-ALSO_LATEST)) {ranged.add(id);}
+    }
+    const want = streamIds.filter((id) => {
+      if (have.has(id)) {return false;}
+      if (ranged.size === 0) {return true;}
+      return ranged.has(id);
+    });
+    if (ranged.size) {
+      console.log('  Range filter: posts', FROM_POST || '-', '-', TO_POST || '-', '+ latest', ALSO_LATEST, '→', want.length, 'ids');
+    }
     // Build all URLs upfront
     const chunkUrls = [];
     for (let i = 0; i < want.length; i += chunkSize) {
@@ -239,10 +266,23 @@ async function main() {
   }
   console.log('Total posts fetched:', allPosts.length, '/', totalPosts);
 
+  if (FROM_POST > 0 || TO_POST > 0) {
+    const lo = FROM_POST > 0 ? FROM_POST : 0;
+    const hi = TO_POST > 0 ? TO_POST : Number.MAX_SAFE_INTEGER;
+    const latestCut = ALSO_LATEST > 0
+      ? Math.max(...allPosts.map((p) => p.post_number || 0)) - ALSO_LATEST + 1
+      : Number.MAX_SAFE_INTEGER;
+    allPosts = allPosts.filter((p) => {
+      const n = p.post_number || 0;
+      return (n >= lo && n <= hi) || n >= latestCut;
+    });
+  }
+
   // 3. Extract mfrs+pids per post
   console.log('Extracting mfrs+pids per post...');
   const enriched = allPosts.map(p => {
-    const text = stripHtml(p.cooked || '');
+    const alts = [...String(p.cooked || '').matchAll(/alt="([^"]+)"/gi)].map((m) => m[1]).join(' ');
+    const text = stripHtml((p.cooked || '') + ' ' + alts);
     const { mfrs, pids } = extractMfrsPid(text);
     return {
       id: p.id,
@@ -256,7 +296,12 @@ async function main() {
       mfrs,
       pids,
       has_image: /<img\s/i.test(p.cooked || ''),
-      image_urls: (p.cooked || '').match(/src="(https:\/\/[^"]+\.(?:jpe?g|png|gif|webp))"/gi) || [],
+      image_urls: [...new Set(
+        [...String(p.cooked || '').matchAll(/src="(https:\/\/[^"]+\.(?:jpe?g|png|gif|webp)[^"]*)"/gi)]
+          .map((m) => m[1]
+            .replace(/\/optimized\//g, '/original/')
+            .replace(/_\d+_\d+x\d+(\.(?:jpe?g|png|gif|webp))/gi, '$1')),
+      )],
     };
   });
 

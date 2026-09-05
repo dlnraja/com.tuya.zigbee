@@ -1,1 +1,66 @@
-[]
+[
+  {
+    "type": "group",
+    "label": {
+      "en": "Dimmer (Tuya MCU)"
+    },
+    "children": [
+      {
+        "id": "power_on_behavior",
+        "type": "dropdown",
+        "label": {
+          "en": "Power-on behavior"
+        },
+        "hint": {
+          "en": "After power loss (DP14). Z2M: off / on / previous."
+        },
+        "value": "previous",
+        "values": [
+          { "id": "off", "label": { "en": "Off" } },
+          { "id": "on", "label": { "en": "On" } },
+          { "id": "previous", "label": { "en": "Last state" } }
+        ]
+      },
+      {
+        "id": "light_type",
+        "type": "dropdown",
+        "label": {
+          "en": "Light type"
+        },
+        "hint": {
+          "en": "Load type for MCU dimming curve (DP4)."
+        },
+        "value": "led",
+        "values": [
+          { "id": "led", "label": { "en": "LED" } },
+          { "id": "incandescent", "label": { "en": "Incandescent" } },
+          { "id": "halogen", "label": { "en": "Halogen" } }
+        ]
+      }
+    ]
+  },
+  {
+    "type": "group",
+    "label": {
+      "en": "Backlight"
+    },
+    "children": [
+      {
+        "id": "backlight_mode",
+        "type": "dropdown",
+        "label": {
+          "en": "Backlight mode"
+        },
+        "hint": {
+          "en": "Strings only: off / normal / inverted (DP21). Never use numeric IDs in UI."
+        },
+        "value": "normal",
+        "values": [
+          { "id": "off", "label": { "en": "Off" } },
+          { "id": "normal", "label": { "en": "Normal" } },
+          { "id": "inverted", "label": { "en": "Inverted" } }
+        ]
+      }
+    ]
+  }
+]

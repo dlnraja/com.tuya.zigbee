@@ -27,6 +27,19 @@ const mfsDb = load('data/mfs_db.json', {});
 const enriched = load('data/community-sync/all-enriched.json', []);
 const energyRef = load('data/energy-consumption-reference.json', { drivers: {}, classes: {} });
 
+// Sortie précédente : sert de fallback pour PRÉSERVER l'enrichissement
+// (vendor/model/title/productPage/imageCandidates/variants) quand une source
+// locale est absente — ex. data/blakadder/devices.json n'est pas tracké en git
+// et manque donc sur les runners CI (régression housekeeping 2026-08-03).
+const prevRef = load('data/product-reference.json', { reference: {} }).reference || {};
+// Champs d'enrichissement préservés ; le routage (driverId, modelIds, batteries,
+// energy, deviceClass) est toujours recalculé à frais.
+const ENRICHED_FIELDS = ['vendor', 'model', 'title', 'category', 'description', 'productPage', 'imageCandidates', 'capabilities'];
+const isEmpty = (v) => v == null || (Array.isArray(v) && v.length === 0);
+// Index insensible à la casse (les clés de l'ancien fichier peuvent différer)
+const prevByLc = new Map();
+for (const [k, v] of Object.entries(prevRef)) {prevByLc.set(String(k).toLowerCase(), v);}
+
 // Index blakadder par empreinte zigbee
 const byMfr = new Map();
 const blakArr = Array.isArray(blakadder) ? blakadder : Object.values(blakadder);
@@ -131,6 +144,14 @@ for (const mfr of allMfrs) {
     capabilities: enr?.capabilities || null,
     source: entry.source || (blak ? 'blakadder' : null),
   };
+  // Préserve l'enrichissement existant quand la régénération ne peut pas le
+  // reproduire (source blakadder absente ou empreinte absente du crawl).
+  const prev = prevByLc.get(lc) || null;
+  if (prev) {
+    for (const f of ENRICHED_FIELDS) {
+      if (isEmpty(reference[mfr][f]) && !isEmpty(prev[f])) {reference[mfr][f] = prev[f];}
+    }
+  }
   if (blak) {withBlak++;}
   if (batteries.length) {withBatteries++;}
   if (reference[mfr].energy) {withEnergy++;}

@@ -69,7 +69,7 @@ function phaseCrawl() {
     { id: 'blakadder', cmd: 'node tools/ci/mega-crawler.js --only=blakadder --timeout=300' },
     { id: 'johan', cmd: 'node tools/ci/johan-dump.js --no-auth 2>&1 || node tools/ci/johan-dump.js' },
     { id: 'gmail', cmd: 'node tools/ci/gmail-diagnostics.js --max 100 2>&1 || echo GMAIL_SKIP' },
-    { id: 'forum', cmd: 'node tools/ci/forum-integration.js 2>&1 || echo FORUM_SKIP' },
+    { id: 'forum', cmd: 'node tools/ci/forum-silent-multi-scan.js --max=40 2>&1 || echo FORUM_SKIP' },
     { id: 'z2m', cmd: 'node scripts/sync/crawl-z2m.js 2>&1 || echo Z2M_SKIP' },
     { id: 'zha', cmd: 'node scripts/sync/crawl-zha.js 2>&1 || echo ZHA_SKIP' },
   ];
@@ -112,6 +112,39 @@ function phaseCrossRef() {
   return { findings: state, lastRun: lastState };
 }
 
+/** P2231/P2232: max-source couples → market-new; apply-safe when not dry-run */
+function phaseMarketCouples() {
+  try {
+    process.env.TUYA_FP_HEURISTIC = process.env.TUYA_FP_HEURISTIC || '1';
+    const out = runNode('tools/ci/market-couples-intake.js', '');
+    const intakePath = path.join(ROOT, '.github', 'state', 'market-couples', 'intake.json');
+    let stats = {};
+    if (fs.existsSync(intakePath)) {
+      stats = JSON.parse(fs.readFileSync(intakePath, 'utf8'));
+    }
+    let apply = { skipped: true };
+    if (!dryRun && !skipCommit) {
+      try {
+        const aOut = runNode('tools/ci/apply-market-couples.js', '--apply');
+        apply = { applied: true, output: String(aOut).slice(-300) };
+      } catch (e) {
+        apply = { softError: e.message.slice(0, 200) };
+      }
+    }
+    return {
+      output: String(out).slice(-400),
+      marketNew: stats.marketNew,
+      applySafe: stats.applySafe,
+      heuristicSoft: stats.heuristicSoft,
+      knowledgeNew: stats.knowledgeNew,
+      needsReview: stats.needsReview,
+      apply,
+    };
+  } catch (e) {
+    return { error: e.message, soft: true };
+  }
+}
+
 function phaseApplyBlakadder() {
   if (skipCommit) { log('  skipped (--skip-commit)'); return { skipped: true }; }
   try {
@@ -119,6 +152,19 @@ function phaseApplyBlakadder() {
     return { output: String(out).slice(-500) };
   } catch (e) {
     return { error: e.message };
+  }
+}
+
+/** P114: forum routes + sacred lots + blakadder + collision dry gate */
+function phaseMultiSourceEnrich() {
+  if (skipCommit) { log('  skipped (--skip-commit)'); return { skipped: true }; }
+  const args = ['--skip-scan'];
+  if (!dryRun) args.push('--apply');
+  try {
+    const out = runNode('tools/ci/multi-source-enrich-orchestrator.js', args.join(' '));
+    return { output: String(out).slice(-600), applied: !dryRun };
+  } catch (e) {
+    return { softError: e.message.slice(0, 400) };
   }
 }
 
@@ -147,7 +193,11 @@ function phaseReInject() {
 }
 
 function phaseAntiBotGate() {
-  // Always run — hard fail closed for known bot regressions
+  // Enrichers can re-place forbidden mfrs; strip first, then detect.
+  // Hard-fail only if a regression remains after repair.
+  if (!dryRun) {
+    runNode('tools/ci/anti-bot-regression-gate.js', '--strip');
+  }
   const out = runNode('tools/ci/anti-bot-regression-gate.js');
   return { output: String(out).slice(-300) };
 }
@@ -216,7 +266,9 @@ function phasePublishSafe() {
 
 runPhase('1-crawl', phaseCrawl);
 runPhase('2-cross-ref', phaseCrossRef);
+runPhase('2b-market-couples', phaseMarketCouples);
 runPhase('3-apply-blakadder', phaseApplyBlakadder);
+runPhase('3a-multi-source-enrich', phaseMultiSourceEnrich);
 runPhase('3b-bidirectional-enrich', phaseBidirectionalEnrich);
 runPhase('3c-ensure-case-variants', phaseEnsureCaseVariants);
 runPhase('3d-re-inject', phaseReInject);

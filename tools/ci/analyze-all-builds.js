@@ -17,6 +17,7 @@ function findFile(dir, name) {
 }
 
 const dashFile = findFile(base, 'dashboard-monitor-report.json');
+if (!dashFile) { console.log('[SKIP] CI artifact dashboard-monitor-report.json not found locally — run in CI or download state first.'); process.exit(0); }
 const dash = JSON.parse(fs.readFileSync(dashFile, 'utf8'));
 
 // Combine working + test + failedOnly

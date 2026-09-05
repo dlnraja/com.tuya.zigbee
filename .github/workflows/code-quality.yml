@@ -26,7 +26,7 @@ on:
       - '.github/workflows/**'
       - 'package*.json'
   schedule:
-    - cron: '0 3 * * 3'  # Weekly Wednesday
+    - cron: '15 3 * * 3'  # Weekly Wednesday (staggered: avoids 03:00 collision)
   workflow_dispatch:
 
 permissions:

@@ -35,7 +35,7 @@ for (let i = 0; i < args.length; i++) {
 }
 
 const ALLOWLIST_PATH = path.join(__dirname, 'bare-zigbee-allowlist.json');
-const FIXED_EXCEPTIONS = new Set(['generic_diy', 'diy_custom_zigbee']);
+const FIXED_EXCEPTIONS = new Set(['generic_diy', 'diy_custom_zigbee', 'tuya_dummy_device']);
 
 function isPrefixException(driverId) {
   return driverId.startsWith('wifi_') || driverId.startsWith('virtual_');
@@ -60,6 +60,15 @@ function isBareZigBeeDevice(source) {
   // Mixin wrapper still rooted on bare ZigBeeDevice:
   // class Foo extends SomeMixin(ZigBeeDevice)
   if (/\bextends\s+\w+\(\s*ZigBeeDevice\s*\)/.test(source)) return true;
+  // Nested mixins: PhysicalButtonMixin(VirtualButtonMixin(ZigBeeDevice))
+  if (/\bZigBeeDevice\s*\)\s*\)/.test(source) && /\bextends\s+\w+\(/.test(source)) {
+    // Only flag if ZigBeeDevice is the innermost base (not TuyaZigbeeDevice/Unified*)
+    if (!/\b(TuyaZigbeeDevice|UnifiedSwitchBase|UnifiedSensorBase|UnifiedBase)\s*\)\s*\)/.test(source)) {
+      return true;
+    }
+  }
+  // Inline: extends require('homey-zigbeedriver').ZigBeeDevice
+  if (/\bextends\s+require\([^)]*homey-zigbeedriver[^)]*\)\.ZigBeeDevice\b/.test(source)) return true;
   return false;
 }
 

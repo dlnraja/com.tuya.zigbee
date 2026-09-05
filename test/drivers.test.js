@@ -8,7 +8,7 @@ const LIB_DIR = path.join(__dirname, '..', 'lib');
 
 describe('Tuya Unified Zigbee - Driver Integrity', function() {
   if (typeof this !== 'undefined' && typeof this.timeout === 'function') {
-    this.timeout(10000);
+    this.timeout?.(10000);
   }
 
   const driverDirs = fs.readdirSync(DRIVERS_DIR)
@@ -92,7 +92,7 @@ describe('Tuya Unified Zigbee - Driver Integrity', function() {
 
 describe('Tuya Unified Zigbee - SDK v3 Compliance', function() {
   if (typeof this !== 'undefined' && typeof this.timeout === 'function') {
-    this.timeout(5000);
+    this.timeout?.(5000);
   }
 
   const driverDirs = fs.readdirSync(DRIVERS_DIR)

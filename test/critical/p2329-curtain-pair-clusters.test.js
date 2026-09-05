@@ -1,4 +1,7 @@
-'use strict';
+﻿'use strict';
+
+const testApi = global.describe && global.it ? global : require('node:test');
+const { describe, it } = testApi;
 /**
  * P2329 — Moes curtain Cover Controller pairs as Unknown Zigbee (#533 salvagr)
  * WHY: interview clusters are 0/4/5/61184 only; compose required 6+258 → Homey

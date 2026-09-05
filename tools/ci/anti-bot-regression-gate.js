@@ -16,9 +16,10 @@
 
 const fs = require('fs');
 const path = require('path');
-const { includesCI } = require('../../lib/utils/TuyaNormalizer');
+const { includesCI, pairingCaseVariants, normalize } = require('../../lib/utils/TuyaNormalizer');
 
 const args = process.argv.slice(2);
+const STRIP = args.includes('--strip');
 let ROOT = process.cwd();
 for (let i = 0; i < args.length; i++) {
   if (args[i] === '--root') ROOT = path.resolve(args[++i]);
@@ -42,46 +43,140 @@ function hasPid(compose, pid) {
 
 /** Forbidden placements: driver must NOT contain these mfrs (case-insensitive). */
 const FORBIDDEN = [
-  // P129: TS004F remotes must NOT live on 1-gang switch catch-all
+  // P2270 / P2289: bot auto-fix-all re-bleed — rotary knob ≠ 4-gang metering
+  {
+    id: 'p2270-402vrq2i-not-metering',
+    driver: 'switch_4_gang_metering',
+    mfrs: ['_TZ3210_402vrq2i', '_TZ3400_402vrq2i', '_TZ3000_402vrq2i'],
+  },
+  // P2270 / P2289: bot re-bleed — dimmer couple ≠ switch_1gang
+  {
+    id: 'p2270-hlx9tnzb-not-switch1',
+    driver: 'switch_1gang',
+    mfrs: ['_TZE284_hlx9tnzb', '_TZE204_hlx9tnzb', '_TZE200_hlx9tnzb'],
+  },
+  // P129: TS004F 4-button remotes (Z2M/ZHA) must NOT live on 1-gang switch catch-all
   {
     id: 'p129-ts004f-not-switch1',
     driver: 'switch_1gang',
     mfrs: ['_TZ3000_xabckq1v', '_TZ3000_czuyt8lz', '_TZ3000_b3mgfu0d', '_TZ3000_abrsvsou', '_TZ3000_4fjiwweb'],
   },
-  // P133 / GH #513: ZT08 LCD climate uses thin dedicated driver
+  {
+    id: 'p212-ts0043-not-button2',
+    driver: 'button_wireless_2',
+    mfrs: ['_TZ3000_a7ouggvs', '_TZ3000_qzjcsmar'],
+  },
+  {
+    id: 'p129-ts004f-not-relay4',
+    driver: 'relay_board_4_channel',
+    mfrs: ['_TZ3000_abrsvsou', '_TZ3000_4fjiwweb'],
+  },
+  // P133 / GH #513: ZT08 LCD climate must use thin dedicated driver (not bloated climate_sensor)
   {
     id: 'p133-hodyryli-not-climate',
     driver: 'climate_sensor',
     mfrs: ['_TZE284_hodyryli'],
   },
+  // PresentSky wall 6-gang — climate catch-all must never reclaim this switch FP
+  {
+    id: 'p137-8eazvzo6-not-climate',
+    driver: 'climate_sensor',
+    mfrs: ['_TZE200_8eazvzo6', '_TZE204_8eazvzo6'],
+  },
+  // Forum T26439 #5491 / Z2M SGS02Z — soil FP must not stay on climate catch-all
+  {
+    id: 'p138-nt4pquef-not-climate',
+    driver: 'climate_sensor',
+    mfrs: ['_TZE284_nt4pquef'],
+  },
   // Forum #2131: relay fingerprint must not stay on switch_4gang
   {
     id: 'p94-imaccztn-not-switch4',
     driver: 'switch_4gang',
-    mfrs: ['_TZ3210_imaccztn'],
+    mfrs: ['_TZ3210_imaccztn', '_TZ3000_imaccztn'],
   },
-  // Forum #2133: BSEED dimmer must not be climate sensor
+  {
+    id: 'p127-imaccztn-not-bulb',
+    driver: 'bulb_dimmable',
+    mfrs: ['_TZ3000_imaccztn', '_TZ3210_imaccztn'],
+  },
+  {
+    id: 'p127-pcdmj88b-not-device-radiator',
+    driver: 'device_radiator_valve',
+    mfrs: ['_TZE200_pcdmj88b', '_TZE204_pcdmj88b', '_TZE284_pcdmj88b'],
+  },
+  // Forum silent-scan: BSEED dimmer family must not be climate sensor
   {
     id: 'p94-m1cvyneb-not-climate',
     driver: 'climate_sensor',
-    mfrs: ['_TZE284_m1cvyneb'],
+    mfrs: ['_TZE284_m1cvyneb', '_TZE204_m1cvyneb', '_TZE200_m1cvyneb'],
   },
   // Forum #2135: Avatto ZDMS16-2 must not be climate sensor
   {
     id: 'p96-jtbgusdc-not-climate',
     driver: 'climate_sensor',
-    mfrs: ['_TZE204_jtbgusdc', '_TZE284_jtbgusdc', '_TZE28C1000000_jtbgusdc', '_TZE204_o9gyszw2'],
+    mfrs: ['_TZE204_jtbgusdc', '_TZE284_jtbgusdc', '_TZE28C1000000_jtbgusdc', '_TZE204_o9gyszw2', '_TZE204_fjms2pi9'],
   },
-  // Forum #2133/#2131: specific devices must not collide with generic_tuya catch-all
+  // Forum silent-scan: specific devices must not collide with generic_tuya catch-all
   {
     id: 'p94-m1cvyneb-not-generic',
     driver: 'generic_tuya',
-    mfrs: ['_TZE284_m1cvyneb'],
+    mfrs: ['_TZE284_m1cvyneb', '_TZE204_m1cvyneb', '_TZE200_m1cvyneb'],
+  },
+  {
+    id: 'p94-m1cvyneb-not-soil',
+    driver: 'soil_sensor',
+    mfrs: ['_TZE284_m1cvyneb', '_TZE204_m1cvyneb', '_TZE200_m1cvyneb'],
   },
   {
     id: 'p94-m1cvyneb-not-universal',
     driver: 'zigbee_universal',
     mfrs: ['_TZE284_m1cvyneb', '_TZE204_m1cvyneb', '_TZE200_m1cvyneb'],
+  },
+  {
+    id: 'p218-k4ej3ww2-not-gas',
+    driver: 'gas_sensor_switch',
+    mfrs: ['_TZ3000_k4ej3ww2'],
+  },
+  {
+    id: 'p218-k4ej3ww2-not-rain',
+    driver: 'rain_sensor',
+    mfrs: ['_TZ3000_k4ej3ww2'],
+  },
+  {
+    id: 'p218-k4ej3ww2-not-tuya-water',
+    driver: 'water_leak_sensor_tuya',
+    mfrs: ['_TZ3000_k4ej3ww2'],
+  },
+  {
+    id: 'p218-k4ej3ww2-not-repeater',
+    driver: 'zigbee_repeater',
+    mfrs: ['_TZ3000_k4ej3ww2'],
+  },
+  {
+    id: 'p218-k4ej3ww2-not-contact',
+    driver: 'contact_sensor',
+    mfrs: ['_TZ3000_k4ej3ww2'],
+  },
+  {
+    id: 'p218-5k5vh43t-not-water',
+    driver: 'water_leak_sensor',
+    mfrs: ['_TZ3000_5k5vh43t'],
+  },
+  {
+    id: 'p218-7fiyo3kv-not-1gang',
+    driver: 'switch_1gang',
+    mfrs: ['_TZ3218_7fiyo3kv', '_TZ3218_ya5d6wth'],
+  },
+  {
+    id: 'p218-okaz9tjs-not-climate',
+    driver: 'climate_sensor',
+    mfrs: ['_TZ3000_okaz9tjs', '_TZ3210_fgwhjm9j'],
+  },
+  {
+    id: 'p218-2imwyigp-not-contact',
+    driver: 'contact_sensor',
+    mfrs: ['_TZE200_2imwyigp', '_TZE204_2imwyigp'],
   },
   {
     id: 'p94-imaccztn-not-generic',
@@ -91,7 +186,11 @@ const FORBIDDEN = [
   {
     id: 'p96-jtbgusdc-not-generic',
     driver: 'generic_tuya',
-    mfrs: ['_TZE204_jtbgusdc', '_TZE28C1000000_jtbgusdc', '_TZE204_o9gyszw2'],
+    mfrs: [
+      '_TZE204_jtbgusdc', '_TZE284_jtbgusdc', '_TZE28C1000000_jtbgusdc',
+      '_TZE204_o9gyszw2', '_TZE284_o9gyszw2', '_TZE28C1000000_o9gyszw2',
+      '_TZE204_fjms2pi9', '_TZE284_fjms2pi9', '_TZE28C1000000_fjms2pi9',
+    ],
   },
   {
     id: 'p217-wfxuhoea-not-button-plug',
@@ -116,7 +215,12 @@ const FORBIDDEN = [
   {
     id: 'p97-pcdmj88b-not-wall-thermostat',
     driver: 'wall_thermostat',
-    mfrs: ['_TZE284_pcdmj88b', '_TZE204_pcdmj88b'],
+    mfrs: ['_TZE284_pcdmj88b', '_TZE204_pcdmj88b', '_TZE200_pcdmj88b'],
+  },
+  {
+    id: 'p127-iadro9bf-not-generic',
+    driver: 'generic_tuya',
+    mfrs: ['_TZE204_iadro9bf', '_TZE200_iadro9bf', '_TZE284_iadro9bf'],
   },
   {
     id: 'p96-hlla45kx-not-generic',
@@ -127,6 +231,26 @@ const FORBIDDEN = [
     id: 'p97-dhotiauw-not-generic',
     driver: 'generic_tuya',
     mfrs: ['_TZE204_dhotiauw', '_TZE284_dhotiauw'],
+  },
+  {
+    id: 'p98-myd45weu-not-wall-switch-4',
+    driver: 'wall_switch_4_gang',
+    mfrs: ['_TZE200_myd45weu', '_TZE204_myd45weu', '_TZE284_myd45weu'],
+  },
+  {
+    id: 'p98-u6x1zyv2-not-contact',
+    driver: 'contact_sensor',
+    mfrs: ['_TZE200_u6x1zyv2', '_TZE204_u6x1zyv2'],
+  },
+  {
+    id: 'p98-u6x1zyv2-not-contact-rain',
+    driver: 'sensor_contact_rain',
+    mfrs: ['_TZE200_u6x1zyv2'],
+  },
+  {
+    id: 'p98-pay2byax-not-soil',
+    driver: 'soil_sensor',
+    mfrs: ['_TZE200_pay2byax', '_TZE204_pay2byax'],
   },
   // P98 sacred-couple rehomes — never dump back into generic/wrong class
   {
@@ -181,6 +305,107 @@ const FORBIDDEN = [
     driver: 'climate_sensor',
     mfrs: ['_TYST11_fzo2pocs'],
   },
+  {
+    id: 'p122-fzo2pocs-not-switch1',
+    driver: 'switch_1gang',
+    mfrs: ['_TZE200_fzo2pocs', '_TZE204_fzo2pocs', '_TYST11_fzo2pocs'],
+  },
+  {
+    // P124: clrdrnya sacred couple stays on presence_sensor_radar only (not mmWave twin)
+    id: 'p124-clrdrnya-not-mmwave',
+    driver: 'motion_sensor_radar_mmwave',
+    mfrs: ['_TZE200_clrdrnya', '_TZE204_clrdrnya', '_TZE284_clrdrnya'],
+  },
+  {
+    id: 'p125-xu4a5rhj-not-climate',
+    driver: 'climate_sensor',
+    mfrs: ['_TZE200_xu4a5rhj', '_TZE204_xu4a5rhj', '_TZE284_xu4a5rhj'],
+  },
+  {
+    id: 'p125-lawxy9e2-not-climate',
+    driver: 'climate_sensor',
+    mfrs: ['_TZE200_lawxy9e2', '_TZE204_lawxy9e2', '_TZE284_lawxy9e2'],
+  },
+  {
+    id: 'p125-oxslv1c9-not-socket-strip',
+    driver: 'socket_power_strip',
+    mfrs: ['_TZ3000_oxslv1c9'],
+  },
+  {
+    id: 'p126-iadro9bf-not-climate',
+    driver: 'climate_sensor',
+    mfrs: ['_TZE204_iadro9bf', '_TZE200_iadro9bf', '_TZE284_iadro9bf'],
+  },
+  // P102 lot3 — typed rehomes must never bounce back to generic / wrong class
+  {
+    id: 'p102-lot3-not-generic',
+    driver: 'generic_tuya',
+    mfrs: [
+      '_TZE204_trwaxi57', '_TZE28C1000000_81yrt3lo', '_TZE20C_xbexmf8h',
+      '_TYST11_udank5zs', '_TZE200_udank5zs', '_TZE284_udank5zs',
+      '_TYST11_wv90ladg', '_TZE200_wv90ladg',
+      '_TYST11_2dpplnsn', '_TZE200_2dpplnsn', '_TZE204_2dpplnsn',
+      '_TYST11_pisltm67', '_TZE200_pisltm67', '_TZE204_pisltm67',
+      '_TZ3000_l8fsgo6p',
+      '_TZE200_byzdayie', '_TZE204_byzdayie', '_TZE200_fsb6zw01', '_TZE200_ewxhg6o9',
+      '_TZE200_bkkmqmyo', '_TZE204_bkkmqmyo', '_TZE200_eaac7dkw',
+      '_TZE200_lsanae15', '_TZE204_lsanae15', '_TZE200_nkjintbl',
+      '_TZE204_muvkrjr5', '_TZE200_hkdl5fmv',
+      '_TZ3000_fisb3ajo', '_TZ3000_aa5t61rh', '_TZ3000_rul9yxcc',
+      '_TZ3000_ji4araar', '_TZ3000_prits6g4', '_TZ3000_tqlv4ug4', '_TZ3210_tqlv4ug4',
+      '_TZ3000_qmi1cfuq', '_TZ3000_4o16jdca', '_TZ3000_lvhy15ix', '_TZ3000_odzoiovu',
+      '_TZE200_44af8vyi', '_TZE200_bjawzodf', '_TZE200_bq5c8xfe',
+      '_TZE200_d7lpruvi', '_TZE204_d7lpruvi', '_TZE284_d7lpruvi',
+      // forum sacred couples
+      '_TZ3000_u3nv1jwk', '_TZE284_aaeasoll', '_TZE284_fhvpaltk',
+      '_TZ3000_mrduubod', '_TZE200_clrdrnya', '_TZE204_clrdrnya',
+    ],
+  },
+  {
+    id: 'p102-tyst11-not-climate',
+    driver: 'climate_sensor',
+    mfrs: [
+      '_TYST11_udank5zs', '_TZE200_udank5zs', '_TZE284_udank5zs',
+      '_TYST11_wv90ladg', '_TZE200_wv90ladg',
+      '_TYST11_2dpplnsn', '_TZE200_2dpplnsn', '_TZE204_2dpplnsn',
+      '_TYST11_pisltm67', '_TZ3000_l8fsgo6p',
+    ],
+  },
+  {
+    id: 'p102-pisltm67-not-thermostat-dp',
+    driver: 'thermostat_tuya_dp',
+    mfrs: ['_TYST11_pisltm67', '_TZE200_pisltm67', '_TZE204_pisltm67'],
+  },
+  {
+    id: 'p102-din-not-btn-plug',
+    driver: 'button_wireless_plug',
+    mfrs: [
+      '_TZE200_byzdayie', '_TZE204_byzdayie', '_TZE200_fsb6zw01', '_TZE200_ewxhg6o9',
+      '_TZE200_bkkmqmyo', '_TZE204_bkkmqmyo', '_TZE200_eaac7dkw',
+      '_TZE200_lsanae15', '_TZE204_lsanae15', '_TZE200_nkjintbl',
+    ],
+  },
+  // WHY: Z2M DAC2161C / TS0601_din — lsanae15 is energy_meter_din, never smart_rcbo (FP collision)
+  {
+    id: 'p2231-lsanae15-not-rcbo',
+    driver: 'smart_rcbo',
+    mfrs: [
+      '_TZE200_lsanae15', '_TZE204_lsanae15', '_TZE284_lsanae15',
+      '_tze200_lsanae15', '_tze204_lsanae15', '_tze284_lsanae15',
+    ],
+  },
+  {
+    id: 'p102-switches-not-btn2',
+    driver: 'button_wireless_2',
+    mfrs: [
+      '_TZE204_muvkrjr5', '_TZE200_hkdl5fmv',
+      '_TZ3000_fisb3ajo', '_TZ3000_aa5t61rh', '_TZ3000_rul9yxcc',
+      '_TZ3000_ji4araar', '_TZ3000_prits6g4', '_TZ3000_tqlv4ug4', '_TZ3210_tqlv4ug4',
+      '_TZ3000_qmi1cfuq', '_TZ3000_4o16jdca', '_TZ3000_lvhy15ix', '_TZ3000_odzoiovu',
+      '_TZE200_44af8vyi', '_TZE200_bjawzodf', '_TZE200_bq5c8xfe',
+      '_TZE200_d7lpruvi', '_TZE204_d7lpruvi', '_TZE284_d7lpruvi',
+    ],
+  },
 ];
 
 /** Forbidden productIds on a driver. */
@@ -190,11 +415,39 @@ const FORBIDDEN_PIDS = [
     driver: 'gas_sensor_switch',
     pids: ['ZG-222Z'],
   },
+  {
+    // P126: dual-home 2imwyigp — contact owns TS0203 only; switch_3gang owns TS0601
+    id: 'p126-contact-no-TS0601',
+    driver: 'contact_sensor',
+    pids: ['TS0601'],
+  },
+  // P2250: HOBEIAN climate vs presence vs soil — pid pollution bans
+  {
+    id: 'p2250-climate-no-zg204-presence',
+    driver: 'climate_sensor',
+    pids: ['ZG-204Z', 'ZG-204ZE', 'ZG-204ZH', 'ZG-204ZK', 'ZG-204ZL', 'ZG-204ZM', 'ZG-204ZQ', 'ZG-204ZV', 'ZG-205Z', 'ZG-205ZL', 'ZG-303Z'],
+  },
+  {
+    id: 'p2250-presence-no-zg227-climate',
+    driver: 'presence_sensor_radar',
+    pids: ['ZG-227Z', 'ZG-227ZL', 'ZG-303Z'],
+  },
+  {
+    id: 'p2250-soil-no-zg227-climate',
+    driver: 'soil_sensor',
+    pids: ['ZG-227Z', 'ZG-227ZL'],
+  },
 ];
 
 /** Required placements (must be present). */
 const REQUIRED = [
-  // P129: sacred couples are mfr+TS004F → button_wireless_4
+  // P133 / GH #513: dedicated ZT08 driver owns hodyryli+TS0601
+  {
+    id: 'p133-hodyryli-zt08',
+    driver: 'climate_sensor_zt08',
+    mfrs: ['_TZE284_hodyryli'],
+  },
+  // P129: sacred couples are mfr+TS004F → button_wireless_4 (not switch_1gang)
   {
     id: 'p129-ts004f-btn4',
     driver: 'button_wireless_4',
@@ -204,13 +457,14 @@ const REQUIRED = [
       '_TZ3000_b3mgfu0d',
       '_TZ3000_abrsvsou',
       '_TZ3000_4fjiwweb',
+      '_TZ3000_kfu8zapd',
+      '_TZ3000_rco1yzb1',
     ],
   },
-  // P133 / GH #513
   {
-    id: 'p133-hodyryli-zt08',
-    driver: 'climate_sensor_zt08',
-    mfrs: ['_TZE284_hodyryli'],
+    id: 'p212-ts0043-btn3',
+    driver: 'button_wireless_3',
+    mfrs: ['_TZ3000_a7ouggvs', '_TZ3000_qzjcsmar'],
   },
   {
     id: 'p94-w5xztuy7-switch2',
@@ -220,17 +474,74 @@ const REQUIRED = [
   {
     id: 'p94-m1cvyneb-dimmer',
     driver: 'wall_dimmer_tuya',
-    mfrs: ['_TZE284_m1cvyneb'],
+    mfrs: ['_TZE284_m1cvyneb', '_TZE204_m1cvyneb', '_TZE200_m1cvyneb'],
+  },
+  // P2250: HOBEIAN climate ZG-227Z/ZL — brand case forms must stay on climate_sensor
+  {
+    id: 'p2250-hobeian-climate',
+    driver: 'climate_sensor',
+    mfrs: ['HOBEIAN', 'hobeian', 'Hobeian'],
+    pids: ['ZG-227Z', 'ZG-227ZL'],
+  },
+  {
+    id: 'p2250-hobeian-soil',
+    driver: 'soil_sensor',
+    mfrs: ['HOBEIAN'],
+    pids: ['ZG-303Z'],
+  },
+  {
+    id: 'p2250-hobeian-presence',
+    driver: 'presence_sensor_radar',
+    mfrs: ['HOBEIAN'],
+    pids: ['ZG-204ZM'],
+  },
+  {
+    id: 'p2250-hobeian-contact',
+    driver: 'contact_sensor',
+    mfrs: ['HOBEIAN'],
+    pids: ['ZG-102Z'],
+  },
+  {
+    id: 'p2250-hobeian-switch2',
+    driver: 'switch_2gang',
+    mfrs: ['HOBEIAN'],
+    pids: ['ZG-305Z'],
+  },
+  {
+    id: 'p2282-hobeian-3315s-water',
+    driver: 'water_leak_sensor',
+    mfrs: ['HOBEIAN', 'hobeian', 'Hobeian'],
+    pids: ['3315-S', '3315-Seu'],
+  },
+  {
+    id: 'p2259-hobeian-zg223z-rain',
+    driver: 'rain_sensor',
+    mfrs: ['HOBEIAN', 'hobeian', 'Hobeian'],
+    pids: ['ZG-223Z'],
+  },
+  {
+    id: 'p108-wkr3jqmr-switch4',
+    driver: 'switch_4gang',
+    mfrs: ['_TZ3000_wkr3jqmr'],
   },
   {
     id: 'p94-imaccztn-relay',
     driver: 'relay_board_4_channel',
-    mfrs: ['_TZ3210_imaccztn'],
+    mfrs: ['_TZ3210_imaccztn', '_TZ3000_imaccztn'],
+  },
+  {
+    id: 'p127-pcdmj88b-trv',
+    driver: 'thermostatic_radiator_valve',
+    mfrs: ['_TZE284_pcdmj88b', '_TZE204_pcdmj88b', '_TZE200_pcdmj88b'],
   },
   {
     id: 'p96-jtbgusdc-dimmer2',
     driver: 'dimmer_2_gang_tuya',
-    mfrs: ['_TZE204_jtbgusdc', '_TZE28C1000000_jtbgusdc'],
+    mfrs: [
+      '_TZE204_jtbgusdc', '_TZE284_jtbgusdc', '_TZE200_jtbgusdc', '_TZE28C1000000_jtbgusdc',
+      '_TZE204_o9gyszw2', '_TZE284_o9gyszw2', '_TZE28C1000000_o9gyszw2',
+      '_TZE204_fjms2pi9', '_TZE284_fjms2pi9', '_TZE28C1000000_fjms2pi9',
+    ],
   },
   {
     id: 'p96-hlla45kx-socket',
@@ -261,6 +572,53 @@ const REQUIRED = [
     id: 'p97-awepdiwi-soil',
     driver: 'soil_sensor',
     mfrs: ['_TZE284_awepdiwi'],
+  },
+  {
+    id: 'p98-myd45weu-soil',
+    driver: 'soil_sensor',
+    mfrs: ['_TZE200_myd45weu', '_TZE204_myd45weu', '_TZE284_myd45weu'],
+  },
+  // Forum T26439 #5491 / Z2M SGS02Z — soil must own nt4pquef
+  {
+    id: 'p138-nt4pquef-soil',
+    driver: 'soil_sensor',
+    mfrs: ['_TZE284_nt4pquef'],
+  },
+  {
+    id: 'p218-k4ej3ww2-water-ias',
+    driver: 'water_leak_sensor',
+    mfrs: ['_TZ3000_k4ej3ww2'],
+  },
+  {
+    id: 'p218-5k5vh43t-repeater',
+    driver: 'zigbee_repeater',
+    mfrs: ['_TZ3000_5k5vh43t'],
+  },
+  {
+    id: 'p218-7fiyo3kv-switch-temp',
+    driver: 'switch_temp_sensor',
+    mfrs: ['_TZ3218_7fiyo3kv', '_TZ3218_ya5d6wth'],
+  },
+  {
+    id: 'p218-okaz9tjs-metering-plug',
+    driver: 'plug_energy_monitor',
+    mfrs: ['_TZ3000_okaz9tjs'],
+  },
+  {
+    id: 'p98-u6x1zyv2-rain',
+    driver: 'rain_sensor',
+    mfrs: ['_TZE200_u6x1zyv2', '_TZE204_u6x1zyv2'],
+  },
+  {
+    id: 'p98-pay2byax-contact',
+    // ZG-102ZL path on contact_sensor; TS0601 pairs via contact_sensor_zigbee (P126)
+    driver: 'contact_sensor',
+    mfrs: ['_TZE200_pay2byax'],
+  },
+  {
+    id: 'p2201-pay2byax-contact-zigbee-ts0601',
+    driver: 'contact_sensor_zigbee',
+    mfrs: ['_TZE200_pay2byax', '_TZE204_pay2byax'],
   },
   {
     id: 'p98-pftj0i7z-btn4',
@@ -312,10 +670,186 @@ const REQUIRED = [
     driver: 'wall_switch_4gang_1way',
     mfrs: ['_TZ3000_mrduubod'],
   },
+  {
+    id: 'p102-forum-clrdrnya-radar',
+    driver: 'presence_sensor_radar',
+    mfrs: ['_TZE200_clrdrnya', '_TZE204_clrdrnya', '_TZE284_clrdrnya'],
+  },
+  {
+    id: 'p126-iadro9bf-presence',
+    driver: 'presence_sensor_radar',
+    mfrs: ['_TZE204_iadro9bf', '_TZE284_iadro9bf'],
+  },
+  {
+    id: 'p102-trwaxi57-curtain',
+    driver: 'curtain_motor',
+    mfrs: ['_TZE204_trwaxi57'],
+  },
+  {
+    id: 'p102-81yrt3lo-clamp',
+    driver: 'power_clamp_meter',
+    mfrs: ['_TZE28C1000000_81yrt3lo'],
+  },
+  {
+    id: 'p102-xbexmf8h-wall-curtain',
+    driver: 'wall_curtain_switch',
+    mfrs: ['_TZE20C_xbexmf8h'],
+  },
+  {
+    id: 'p102-udank5zs-curtain',
+    driver: 'curtain_motor',
+    mfrs: ['_TYST11_udank5zs', '_TZE200_udank5zs'],
+  },
+  {
+    id: 'p102-wv90ladg-thermostat',
+    driver: 'wall_thermostat',
+    mfrs: ['_TYST11_wv90ladg', '_TZE200_wv90ladg'],
+  },
+  {
+    id: 'p102-2dpplnsn-trv',
+    driver: 'radiator_valve',
+    mfrs: ['_TYST11_2dpplnsn', '_TZE200_2dpplnsn'],
+  },
+  {
+    id: 'p102-pisltm67-lux',
+    driver: 'light_sensor_outdoor',
+    mfrs: ['_TYST11_pisltm67', '_TZE200_pisltm67'],
+  },
+  {
+    id: 'p102-byzdayie-din',
+    driver: 'energy_meter_din',
+    mfrs: ['_TZE200_byzdayie'],
+  },
+  {
+    id: 'p102-muvkrjr5-radar',
+    driver: 'presence_sensor_radar',
+    mfrs: ['_TZE204_muvkrjr5'],
+  },
+  {
+    id: 'p102-fisb3ajo-sw2',
+    driver: 'switch_2gang',
+    mfrs: ['_TZ3000_fisb3ajo', '_TZ3000_aa5t61rh'],
+  },
+  {
+    id: 'p102-ji4araar-sw1',
+    driver: 'switch_1gang',
+    mfrs: ['_TZ3000_ji4araar', '_TZ3000_l8fsgo6p'],
+  },
+  {
+    id: 'p102-4o16jdca-sw3',
+    driver: 'switch_3gang',
+    mfrs: ['_TZ3000_4o16jdca', '_TZ3000_lvhy15ix'],
+  },
 ];
+
+/**
+ * data/user-misattribution-registry.json already records, per case, the driver a
+ * couple belongs to and the drivers it must never appear in. Until now this gate
+ * carried its own hand-maintained FORBIDDEN list, so a case added to the registry
+ * was not actually defended — which is how auto-fix-all was able to re-add
+ * _TZ3210_jaap6jeb to contact_sensor and _TZ3000_qeuvnohg to
+ * lcdtemphumidsensor_plug_energy roughly twenty minutes after they were removed.
+ * Deriving the rules from the registry makes it one source of truth.
+ */
+/**
+ * Registry → FORBIDDEN rules.
+ *
+ * P2250: when a case sets forbidMode:"couple" (or has productIds + forbidMode couple),
+ * the ban is (mfr AND any listed productId) on the forbidden driver — not brand-wide.
+ * One OEM brand (HOBEIAN) owns many verified couples (climate ZG-227, soil ZG-303,
+ * presence ZG-204, contact ZG-102…). Mfr-only bans wrongly strip climate support.
+ */
+function forbiddenFromRegistry() {
+  const file = path.join(ROOT, 'data', 'user-misattribution-registry.json');
+  if (!fs.existsSync(file)) return [];
+  let parsed;
+  try {
+    parsed = JSON.parse(fs.readFileSync(file, 'utf8'));
+  } catch (err) {
+    notes.push(`registry unreadable: ${err.message}`);
+    return [];
+  }
+  const cases = Array.isArray(parsed) ? parsed
+    : Array.isArray(parsed.cases) ? parsed.cases
+      : Object.values(parsed).find(Array.isArray) || [];
+
+  const rules = [];
+  for (const c of cases) {
+    if (!c || !Array.isArray(c.forbiddenDrivers) || !c.forbiddenDrivers.length) continue;
+    const mfrs = [].concat(c.mfr || c.mfrs || []).filter(Boolean);
+    if (!mfrs.length) continue;
+    const pids = [].concat(c.productId || c.productIds || []).filter(Boolean);
+    const couple = String(c.forbidMode || '').toLowerCase() === 'couple' && pids.length > 0;
+    for (const driver of c.forbiddenDrivers) {
+      rules.push({
+        id: `registry:${c.id || 'case'}:${driver}`,
+        driver,
+        mfrs,
+        pids: couple ? pids : undefined,
+        couple,
+      });
+    }
+  }
+  return rules;
+}
 
 const failures = [];
 const notes = [];
+
+FORBIDDEN.push(...forbiddenFromRegistry());
+
+/**
+ * After enrichers re-inject a forbidden mfr, strip every pairing-case form
+ * from that driver's compose before the check runs. The gate stays the
+ * single source of truth; --strip is the repair half of detect+repair.
+ */
+function stripForbiddenPlacements() {
+  const stripped = [];
+  const seen = new Set();
+  for (const rule of FORBIDDEN) {
+    const fp = path.join(ROOT, 'drivers', rule.driver, 'driver.compose.json');
+    if (!fs.existsSync(fp)) continue;
+    let compose;
+    try {
+      compose = JSON.parse(fs.readFileSync(fp, 'utf8'));
+    } catch {
+      notes.push(`strip skip ${rule.id}: unreadable compose`);
+      continue;
+    }
+    // Couple-aware: only strip brand when the forbidden pid is also present
+    if (rule.couple && Array.isArray(rule.pids) && rule.pids.length) {
+      const hasForbiddenPid = rule.pids.some((pid) => hasPid(compose, pid));
+      if (!hasForbiddenPid) continue;
+    }
+    const list = compose && compose.zigbee && compose.zigbee.manufacturerName;
+    if (!Array.isArray(list) || !list.length) continue;
+    const ban = new Set();
+    for (const mfr of rule.mfrs || []) {
+      ban.add(normalize(mfr));
+      for (const v of pairingCaseVariants(mfr)) ban.add(normalize(v));
+    }
+    const next = list.filter((m) => !ban.has(normalize(m)));
+    if (next.length === list.length) continue;
+    const key = `${rule.driver}:${fp}`;
+    compose.zigbee.manufacturerName = next;
+    fs.writeFileSync(fp, `${JSON.stringify(compose, null, 2)}\n`, 'utf8');
+    const removed = list.length - next.length;
+    if (!seen.has(key)) {
+      seen.add(key);
+      stripped.push(`${rule.driver}: -${removed} (${rule.id})`);
+    }
+  }
+  return stripped;
+}
+
+if (STRIP) {
+  const stripped = stripForbiddenPlacements();
+  if (stripped.length) {
+    notes.push(`stripped ${stripped.length} forbidden placement(s): ${stripped.join('; ')}`);
+  } else {
+    notes.push('strip: nothing to remove');
+  }
+}
 
 for (const rule of FORBIDDEN) {
   const compose = loadCompose(rule.driver);
@@ -324,9 +858,15 @@ for (const rule of FORBIDDEN) {
     continue;
   }
   for (const mfr of rule.mfrs) {
-    if (hasMfr(compose, mfr)) {
-      failures.push(`FORBIDDEN ${rule.id}: ${mfr} still in drivers/${rule.driver}`);
+    if (!hasMfr(compose, mfr)) continue;
+    // Couple-aware registry bans: mfr alone is OK when the forbidden pid is absent
+    if (rule.couple && Array.isArray(rule.pids) && rule.pids.length) {
+      const hitPid = rule.pids.find((pid) => hasPid(compose, pid));
+      if (!hitPid) continue;
+      failures.push(`FORBIDDEN ${rule.id}: couple ${mfr}|${hitPid} still in drivers/${rule.driver}`);
+      continue;
     }
+    failures.push(`FORBIDDEN ${rule.id}: ${mfr} still in drivers/${rule.driver}`);
   }
 }
 
@@ -355,10 +895,83 @@ for (const rule of REQUIRED) {
       failures.push(`REQUIRED ${rule.id}: ${mfr} missing from drivers/${rule.driver}`);
     }
   }
+  if (Array.isArray(rule.pids)) {
+    for (const pid of rule.pids) {
+      if (!hasPid(compose, pid)) {
+        failures.push(`REQUIRED ${rule.id}: productId ${pid} missing from drivers/${rule.driver}`);
+      }
+    }
+  }
+}
+
+// P127: secondary DB must not re-poison sacred couples (lib/tuya/fingerprints.json)
+const FP_PATH = path.join(ROOT, 'lib', 'tuya', 'fingerprints.json');
+const FP_REQUIRED = [
+  { mfr: '_TZE204_iadro9bf', driverId: 'presence_sensor_radar' },
+  { mfr: '_TZE284_iadro9bf', driverId: 'presence_sensor_radar' },
+  { mfr: '_tze204_iadro9bf', driverId: 'presence_sensor_radar' },
+  { mfr: '_TZ3210_imaccztn', driverId: 'relay_board_4_channel' },
+  { mfr: '_tz3210_imaccztn', driverId: 'relay_board_4_channel' },
+  { mfr: '_TZ3000_imaccztn', driverId: 'relay_board_4_channel' },
+  { mfr: '_TZE284_pcdmj88b', driverId: 'thermostatic_radiator_valve' },
+  { mfr: '_TZE204_pcdmj88b', driverId: 'thermostatic_radiator_valve' },
+  { mfr: '_tze200_pcdmj88b', driverId: 'thermostatic_radiator_valve' },
+  { mfr: '_TZE200_clrdrnya', driverId: 'presence_sensor_radar' },
+  { mfr: '_TZE204_clrdrnya', driverId: 'presence_sensor_radar' },
+  { mfr: '_TZ3000_xabckq1v', driverId: 'button_wireless_4' },
+  { mfr: '_TZ3000_czuyt8lz', driverId: 'button_wireless_4' },
+  { mfr: '_TZ3000_b3mgfu0d', driverId: 'button_wireless_4' },
+  { mfr: '_TZ3000_abrsvsou', driverId: 'button_wireless_4' },
+  { mfr: '_TZ3000_4fjiwweb', driverId: 'button_wireless_4' },
+  { mfr: '_TZ3000_a7ouggvs', driverId: 'button_wireless_3' },
+  { mfr: '_TZ3000_qzjcsmar', driverId: 'button_wireless_3' },
+];
+const FP_FORBIDDEN_DRIVERS = {
+  iadro9bf: ['climate_sensor', 'generic_tuya'],
+  imaccztn: ['switch_4gang', 'bulb_dimmable', 'generic_tuya'],
+  pcdmj88b: ['wall_thermostat', 'device_radiator_valve'],
+  clrdrnya: ['motion_sensor_radar_mmwave', 'climate_sensor'],
+  xabckq1v: ['switch_1gang', 'relay_board_4_channel'],
+  czuyt8lz: ['switch_1gang'],
+  b3mgfu0d: ['switch_1gang'],
+  abrsvsou: ['relay_board_4_channel', 'switch_1gang'],
+  '4fjiwweb': ['relay_board_4_channel', 'switch_1gang'],
+  a7ouggvs: ['button_wireless_2', 'switch_1gang'],
+  qzjcsmar: ['button_wireless_2', 'switch_1gang'],
+};
+
+if (fs.existsSync(FP_PATH)) {
+  let fpDb = {};
+  try {
+    fpDb = JSON.parse(fs.readFileSync(FP_PATH));
+  } catch (e) {
+    failures.push(`FP-DB parse error: ${e.message}`);
+  }
+  for (const rule of FP_REQUIRED) {
+    const entry = fpDb[rule.mfr];
+    if (!entry) {
+      notes.push(`skip fp-required ${rule.mfr}: missing key`);
+      continue;
+    }
+    if (String(entry.driverId) !== rule.driverId) {
+      failures.push(`FP-REQUIRED ${rule.mfr}: driverId=${entry.driverId} want ${rule.driverId}`);
+    }
+  }
+  for (const [key, entry] of Object.entries(fpDb)) {
+    const low = String(key).toLowerCase();
+    for (const [needle, badDrivers] of Object.entries(FP_FORBIDDEN_DRIVERS)) {
+      if (!low.includes(needle)) continue;
+      if (badDrivers.includes(String(entry.driverId))) {
+        failures.push(`FP-FORBIDDEN ${key}: driverId=${entry.driverId} (poison)`);
+      }
+    }
+  }
+} else {
+  notes.push('skip fp-db: lib/tuya/fingerprints.json missing');
 }
 
 console.log('═══════════════════════════════════════════════');
-console.log('  Anti-bot regression gate (P94+)');
+console.log('  Anti-bot regression gate (P94+/P127)');
 console.log(`  root: ${ROOT}`);
 console.log('═══════════════════════════════════════════════');
 for (const n of notes) console.log(`  ~ ${n}`);

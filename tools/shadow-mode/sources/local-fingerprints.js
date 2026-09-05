@@ -18,7 +18,7 @@ const fs = require('fs');
 const path = require('path');
 
 const CANONICAL_FPS = path.resolve(__dirname, '..', '..', 'data', 'fingerprints.json');
-const MFR_DRIVER_MAP = path.resolve(__dirname, '..', '..', 'driver-mapping-database.json');
+const MFR_DRIVER_MAP = path.resolve(__dirname, '..', '..', 'data', 'driver-mapping-database.json');
 const HERDSMAN_CACHE = path.resolve(__dirname, '..', '..', '.github', 'cache', 'z2m', 'tuya.ts');
 
 function pullFromFingerprints(root) {

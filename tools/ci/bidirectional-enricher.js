@@ -33,6 +33,7 @@ const {
   mergeManufacturerCaseVariants,
   normalize,
 } = require('../../lib/utils/TuyaNormalizer');
+const { isForbiddenPlacement } = require('../../lib/pairing/UserMisattributionRegistry');
 
 const ROOT = path.resolve(__dirname, '..', '..');
 const MASTER_DIR = ROOT; // current dir
@@ -84,6 +85,9 @@ function loadProposals() {
 }
 
 function applyMfrToDriver(driverId, mfr, productId) {
+  if (isForbiddenPlacement(mfr, driverId)) {
+    return { ok: false, reason: `registry forbids ${mfr} on ${driverId}` };
+  }
   const cpPath = path.join(MASTER_DIR, 'drivers', driverId, 'driver.compose.json');
   if (!fs.existsSync(cpPath)) return { ok: false, reason: 'driver missing' };
   const j = JSON.parse(fs.readFileSync(cpPath, 'utf8'));
@@ -109,6 +113,9 @@ function applyMfrToDriver(driverId, mfr, productId) {
 }
 
 function applyMfrToStableDriver(driverId, mfr, productId) {
+  if (isForbiddenPlacement(mfr, driverId)) {
+    return { ok: false, reason: `registry forbids ${mfr} on ${driverId}` };
+  }
   const cpPath = path.join(STABLE_DIR, 'drivers', driverId, 'driver.compose.json');
   if (!fs.existsSync(cpPath)) return { ok: false, reason: 'stable driver missing' };
   const j = JSON.parse(fs.readFileSync(cpPath, 'utf8'));

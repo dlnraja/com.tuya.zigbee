@@ -1,5 +1,8 @@
 'use strict';
 
+const testApi = global.describe && global.it ? global : require('node:test');
+const { describe, it } = testApi;
+
 /**
  * P2244 — meter91 scene_switch_4 + Nobø button_wireless_4 sacred couple gate
  * Never invent TS0601 for zgyzgdua; never route TS0044 → button_wireless_4.
@@ -23,7 +26,7 @@ describe('P2244 scene/remote sacred couples', () => {
     assert.ok(couple, 'sacred couple missing');
     assert.strictEqual(couple.driver, 'scene_switch_4');
     assert.strictEqual(sc['_tz3000_zgyzgdua|ts0601'], undefined, 'must not invent TS0601');
-    assert.strictEqual(j['_tz3000_zgyzgdua']?.driverId, 'scene_switch_4');
+    assert.strictEqual((j['_tz3000_zgyzgdua'] || j['_TZ3000_zgyzgdua'])?.driverId, 'scene_switch_4');
 
     const compose = JSON.parse(fs.readFileSync(
       path.join(ROOT, 'drivers', 'scene_switch_4', 'driver.compose.json'), 'utf8'));

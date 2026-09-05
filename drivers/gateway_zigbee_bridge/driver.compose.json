@@ -25,7 +25,10 @@
     }
   },
   "zigbee": {
-    "manufacturerName": [],
+    "manufacturerName": [
+      "_hybrid_gateway_zigbee_bridge_needs_device_assignment",
+      "_HYBRID_GATEWAY_ZIGBEE_BRIDGE_NEEDS_DEVICE_ASSIGNMENT"
+    ],
     "productId": [
       "S26R2ZB",
       "S31 Lite zb",

@@ -2,7 +2,7 @@
 const tls = require('tls');
 const { Socket } = require('tls');
 
-const EMAIL = '9746898+dlnraja@users.noreply.github.com';
+const EMAIL = process.env.GMAIL_EMAIL || '9746898+dlnraja@users.noreply.github.com';
 const APP_PASSWORD = process.env.GMAIL_APP_PASSWORD_TEST || 'NOT_SET'; // would need actual password
 
 function imapCommand(socket, cmd, wait = 500) {

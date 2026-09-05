@@ -244,15 +244,23 @@ class wall_dimmer_tuya extends TuyaSpecificClusterDevice {
     let r = { ok: false };
     const delays = [0, 350, 350];
     for (let i = 0; i < delays.length; i++) {
+      if (this._destroyed) { return r; }
       if (delays[i] > 0) {
         await new Promise((resolve) => {
+          if (this._destroyed) { resolve(); return; }
           try {
             const { safeSetTimeout } = require('../../lib/utils/safe-timers');
-            safeSetTimeout(this, resolve, delays[i]);
+            safeSetTimeout(this, () => {
+              if (this._destroyed) { resolve(); return; }
+              resolve();
+            }, delays[i]);
           } catch (_e) {
             // WHY(P2329): never bare setTimeout — TITAN syntax-check fails CI
             if (this.homey && typeof this.homey.setTimeout === 'function') {
-              this.homey.setTimeout(resolve, delays[i]);
+              this.homey.setTimeout(() => {
+                if (this._destroyed) { resolve(); return; }
+                resolve();
+              }, delays[i]);
             } else {
               resolve();
             }
@@ -295,6 +303,7 @@ class wall_dimmer_tuya extends TuyaSpecificClusterDevice {
   }
 
   async processDatapoint(data) {
+    if (this._destroyed) { return; }
     const dp = data.dp;
     const parsedValue = getDataValue(data);
     const dataType = data.datatype;
@@ -382,6 +391,8 @@ class wall_dimmer_tuya extends TuyaSpecificClusterDevice {
   }
 
   onDeleted() {
+    if (this._destroyed) { return; }
+    this._destroyed = true;
     super.onDeleted();
     this.log('Wall Dimmer removed');
   }

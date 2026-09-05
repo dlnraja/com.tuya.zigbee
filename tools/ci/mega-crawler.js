@@ -9,8 +9,8 @@
  * Sources covered (12 internal + 4 external references):
  *   1.  zigbee.blakadder.com     (devices)        — already integrated
  *   2.  JohanBendz issues        (user reports)   — johan-dump
- *   3.  Gmail diagnostics        (crash logs)     — fetch-gmail-diags
- *   4.  community.homey.app      (forum)          — forum-integration
+ *   3.  Gmail diagnostics        (crash logs)     — gmail-diagnostics → fetch-gmail-diagnostics
+ *   4.  community.homey.app      (forum)          — forum-fetch-140352 + forum-silent
  *   5.  Koenkk/zigbee2mqtt       (converters)     — sync-z2m-mappings
  *   6.  zigpy/zha-device-handlers (quirks)        — (covered by external-sources)
  *   7.  deconz-rest-plugin       (Tuya FPs)       — crawl-deconz
@@ -72,15 +72,39 @@ const CRAWLERS = [
     cmd: 'node tools/ci/gmail-diagnostics.js --max 100 2>&1 || echo "GMAIL_SKIP_AUTH"',
     weight: 'high',
     estimated: '60s',
-    desc: 'Fetch Gmail crash logs / diagnostics (requires GMAIL_APP_PASSWORD)',
+    desc: 'Fetch Gmail crash logs / diagnostics (wrapper → .github/scripts/fetch-gmail-diagnostics.js)',
   },
   {
     id: 'forum',
     name: 'community.homey.app forum',
-    cmd: 'node tools/ci/forum-integration.js 2>&1 || echo "FORUM_SKIP"',
+    cmd: 'node tools/ci/forum-fetch-140352.js 2>&1 || echo "FORUM_SKIP"',
     weight: 'medium',
+    estimated: '300s',
+    desc: 'Live Discourse fetch of topic 140352 (canonical AGENTS crawler)',
+  },
+  {
+    id: 'forum-silent',
+    name: 'Forum silent multi-topic (T157628 READ-ONLY)',
+    cmd: 'node tools/ci/forum-silent-multi-scan.js --max=40 2>&1 || echo "FORUM_SKIP"',
+    weight: 'medium',
+    estimated: '60s',
+    desc: 'Silent scan 140352+satellites; never posts',
+  },
+  {
+    id: 'contributor-dump',
+    name: 'Contributor Zigbee repos (HomeSuite / Johan READ-ONLY)',
+    cmd: 'node tools/ci/contributor-repo-dump.js 2>&1 || echo "SKIP"',
+    weight: 'low',
     estimated: '45s',
-    desc: 'Crawl Homey community forum topic 140352 + related',
+    desc: 'Cluster/jitter/retry intel from sibling Homey Zigbee repos — no code copy',
+  },
+  {
+    id: 'free-scrape',
+    name: 'Free scrape stack (Jina/Microlink/Wayback/Crawl4AI?/Firecrawl budget)',
+    cmd: 'node scripts/ci/diag-investigate-orchestrator.js --full --skip-fetch --focus=2137',
+    weight: 'medium',
+    estimated: '90s',
+    desc: 'Keyless-first multi-source cross-ref (forum + Z2M + GitHub + Reddit)',
   },
   {
     id: 'z2m',

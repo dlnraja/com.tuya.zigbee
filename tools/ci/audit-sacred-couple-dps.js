@@ -60,6 +60,8 @@ function loadJson(fp) {
 }
 
 function extractDpMappingsFromDevice(driverId) {
+  // WHY: soft-watch registry rows may omit canonicalDriver — never path.join(null).
+  if (!driverId || typeof driverId !== 'string') return { found: false, dps: new Map() };
   const fp = path.join(ROOT, 'drivers', driverId, 'device.js');
   if (!fs.existsSync(fp)) return { found: false, dps: new Map() };
   const src = fs.readFileSync(fp, 'utf8');

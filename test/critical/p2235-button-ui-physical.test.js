@@ -90,8 +90,7 @@ describe('P2235 button UI / physical hardening', () => {
       require('path').join(__dirname, '..', '..', 'lib', 'mixins', 'PhysicalButtonMixin.js'),
       'utf8'
     );
-    assert.ok(src.includes("press = dir === 1 ? 'rotate_left'"));
-    assert.ok(src.includes('_triggerPhysicalFlow(gang, press, { rotate: true'));
+    assert.ok(src.includes("pt = dir === 1 ? 'rotate_left'"));
     assert.ok(src.includes("self._triggerPhysicalFlow(gang, pt, { rotate: true"));
   });
 });

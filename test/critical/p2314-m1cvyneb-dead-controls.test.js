@@ -46,11 +46,11 @@ describe('P2314 PresentSky m1cvyneb dead controls (stable)', () => {
     assert.strictEqual(r.ok, true);
   });
 
-  it('wall_dimmer uses heal without CapabilityCommandRouter', () => {
+  it('wall_dimmer uses heal + CapabilityCommandRouter + no queryAll on TX', () => {
     const src = read('drivers/wall_dimmer_tuya/device.js');
     assert.match(src, /healZigbeeNodeIdentity/);
-    assert.match(src, /_ensureEf00Manager/);
-    assert.doesNotMatch(src, /CapabilityCommandRouter/);
+    assert.match(src, /CapabilityCommandRouter/);
+    assert.doesNotMatch(src, /this\.queryAll\(\)/);
   });
 
   it('TuyaSpecificClusterDevice has P2314 cascade', () => {

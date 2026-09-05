@@ -23,6 +23,13 @@ const verFile = findFile(base, 'version-intelligence-report.json');
 console.log('Dashboard file:', dashFile);
 console.log('Version file:', verFile);
 
+if (!dashFile) {
+  console.log('\n[analyze-dashboard] dashboard-monitor-report.json introuvable sous ' + base);
+  console.log('[analyze-dashboard] L\'etat CI (.github/state/all-diagnostics-*) n\'est pas telecharge en local — rien a analyser.');
+  process.exit(0);
+}
+
+if (!dashFile) { console.log('[SKIP] CI artifact dashboard-monitor-report.json not found locally — run in CI or download state first.'); process.exit(0); }
 const dash = JSON.parse(fs.readFileSync(dashFile, 'utf8'));
 console.log('\n=== DASHBOARD REPORT TOP KEYS ===');
 for (const k of Object.keys(dash)) {

@@ -1,0 +1,9 @@
+{
+  "description": "Drivers to skip when applying canonical gaps (manual fixes in place).",
+  "drivers": [
+    "air_quality_co2"
+  ],
+  "reasons": {
+    "air_quality_co2": "Issue 506: _TZ2000_a476raq2/xogb73am/avdnvykf/hjsgdkfl are LCD temp/humidity sensors per JohanBendz upstream, NOT CO2. Already moved to lcdtemphumidsensor. Do NOT re-add."
+  }
+}
