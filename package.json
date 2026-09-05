@@ -1,6 +1,6 @@
 {
   "name": "com.dlnraja.tuya.zigbee",
-  "version": "9.0.825",
+  "version": "9.0.826",
   "description": "Tuya Unified Zigbee - Local-first control with AI automation",
   "main": "app.js",
   "scripts": {
@@ -147,7 +147,6 @@
     "skills:security": "node scripts/ci/security-scanner.js",
     "skills:prepush": "npm run precommit:full && npm test && npm run build-docs",
     "check:timer-context": "node scripts/validation/check-homey-timer-context.js",
-    "check:voice": "node scripts/validation/check-google-assistant-voice-safety.js",
     "fix:case-variants": "node tools/ci/ensure-case-variants.js --apply",
     "check:case-variants": "node tools/ci/ensure-case-variants.js",
     "check:anti-bot": "node tools/ci/anti-bot-regression-gate.js",
