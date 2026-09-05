@@ -50,6 +50,7 @@ console.log('\n=== VirtualEnergyMeterMixin tests ===');
 try {
   const V = require('../../lib/mixins/VirtualEnergyMeterMixin.js');
   t('exports _initVirtualEnergy', () => typeof V._initVirtualEnergy === 'function');
+  t('exports _cleanupVirtualEnergy', () => typeof V._cleanupVirtualEnergy === 'function');
   t('exports _updateVirtualEnergy', () => typeof V._updateVirtualEnergy === 'function');
   t('exports _ensureNominalPower', () => typeof V._ensureNominalPower === 'function');
   t('exports _safeSetCapability', () => typeof V._safeSetCapability === 'function');

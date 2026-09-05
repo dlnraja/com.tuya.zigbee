@@ -221,6 +221,14 @@
     "p2422_hobeian_full_fleet_enrich": {
       "tag": "BOTH",
       "note": "HOBEIAN full fleet: ZE/ZK/ZQ/ZX configs; ZG-102ZM contact+vib; ZG-103Z tilt; ZG-226Z/228Z; cartesian strip"
+    },
+    "p2424_moes_settings_loop_fix": {
+      "tag": "BOTH",
+      "note": "Moes ZTS #533 salvagr: break setSettings -> onSettings -> _sendTuyaDP write loop; skip boot calibration blast; pace DP writes"
+    },
+    "p2425_fan_settings_loop_fix": {
+      "tag": "BOTH",
+      "note": "Fan controller #536: break setSettings -> onSettings -> datapoint write loop on DP2/11 sync; check getSetting before write"
     }
   },
   "ci": {

@@ -38,13 +38,17 @@ function assertDriverClaims(driverId, manufacturerName) {
 }
 
 function assertDriverDoesNotClaim(driverId, manufacturerName) {
-  for (const source of [appDriver(driverId), composeDriver(driverId)]) {
+  const app = readJson('app.json').drivers.find(item => item.id === driverId);
+  const comp = fs.existsSync(path.join('drivers', driverId, 'driver.compose.json')) ? composeDriver(driverId) : null;
+  for (const source of [app, comp].filter(Boolean)) {
     assert(!includesCI(source.zigbee?.manufacturerName, manufacturerName), `${driverId} must not claim ${manufacturerName}`);
   }
 }
 
 function assertDriverHasNoProductId(driverId, productId) {
-  for (const source of [appDriver(driverId), composeDriver(driverId)]) {
+  const app = readJson('app.json').drivers.find(item => item.id === driverId);
+  const comp = fs.existsSync(path.join('drivers', driverId, 'driver.compose.json')) ? composeDriver(driverId) : null;
+  for (const source of [app, comp].filter(Boolean)) {
     assert(!includesCI(source.zigbee?.productId, productId), `${driverId} must not claim ${productId} without an exact manufacturer`);
   }
 }
@@ -77,7 +81,7 @@ describe('forum routing regressions', () => {
     assert.match(source, /_setupE000Detection/);
     assert.match(source, /_setupTuyaDPButtonDetection/);
     assert.match(source, /_decodeRawFrameArgs/);
-    assert.match(source, /orig\(\.\.\.args\)/);
+    assert.match(source, /orig\(\.\.\.args\)|next\(\.\.\.args\)/);
   });
 
   it('routes Moes/Lidl TS004F physical button variants to transport-aware drivers', () => {
@@ -145,8 +149,8 @@ describe('forum routing regressions', () => {
       ['_TZ3000_ovyaisip', 'TS0001', 'wall_switch_1gang_1way'],
       ['_TZ3000_pk8tgtdb', 'TS0001', 'wall_switch_1gang_1way'],
       ['_TZ3000_yervjnlj', 'TS0003', 'wall_switch_3gang_1way'],
-      ['_TZ3000_eqsair32', 'TS0003', 'switch_3gang'],
-      ['_TZ3000_qxcnwv26', 'TS0003', 'switch_3gang'],
+      ['_TZ3000_eqsair32', 'TS0003', 'wall_switch_3gang_1way'],
+      ['_TZ3000_qxcnwv26', 'TS0003', 'wall_switch_3gang_1way'],
       ['_TZE204_q76rtoa9', 'TS0601', 'siren'],
       ['_TZE200_lvkk0hdg', 'TS0601', 'water_tank_monitor'],
       ['_TZE204_r0jdjrvi', 'TS0601', 'curtain_motor_tilt'],

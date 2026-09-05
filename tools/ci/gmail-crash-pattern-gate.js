@@ -30,11 +30,12 @@ const path = require('path');
 
 const ROOT = path.join(__dirname, '..', '..');
 const OUT = path.join(ROOT, '.github', 'state', 'gmail-crash-patterns.json');
+const ERROR_PATTERNS_PATH = path.join(ROOT, 'data', 'error-patterns.json');
 const args = process.argv.slice(2);
 const STRICT = args.includes('--strict');
 const JSON_MODE = args.includes('--json');
 
-const KNOWN_PATTERNS = [
+const KNOWN_PATTERNS_EMBEDDED = [
   {
     id: 'flow_getDeviceActionCard',
     severity: 'fatal',
@@ -77,7 +78,89 @@ const KNOWN_PATTERNS = [
     fix: 'Promise.resolve(x).catch(...) or guard return values before .catch',
     status: 'fixed_p101',
   },
+  {
+    id: 'registerRunListenerasync_typo',
+    severity: 'fatal',
+    re: /registerRunListenerasync\s+is not a function|card\.registerRunListenerasync/i,
+    fix: 'registerRunListener(async ...) — never concatenate async into the method name (P19)',
+    status: 'fixed_p19',
+  },
+  {
+    id: 'settimeout_destroyed',
+    severity: 'fatal',
+    re: /setTimeout is not a function|Cannot read properties of undefined \(reading 'setTimeout'\)/i,
+    fix: 'safeSetTimeout(this, cb, ms) from lib/utils/safe-timers.js (P19)',
+    status: 'fixed_p19',
+  },
+  {
+    id: 'onDeleted_null',
+    severity: 'fatal',
+    re: /reading ['_"]_onDeleted['_"]|Cannot read properties of null \(reading '_onDeleted'\)/i,
+    fix: 'Call super.onDeleted after _destroyed; TuyaZigbeeDevice/UnifiedSensorBase v9.0.349 guards',
+    status: 'fixed_p349',
+  },
+  {
+    id: 'dcm_auditCapabilities_missing',
+    severity: 'fatal',
+    re: /auditCapabilities\s+is not a function/i,
+    fix: 'Guard typeof auditCapabilities; add method on lib/dynamic/DynamicCapabilityManager',
+    status: 'fixed_p108',
+  },
+  {
+    id: 'capability_ref_undefined',
+    severity: 'fatal',
+    re: /ReferenceError:\s*capability is not defined|capability is not defined/i,
+    fix: 'generic_tuya._autoMapDP: destructure capability + skip internal mappings',
+    status: 'fixed_p136',
+  },
+  {
+    id: 'clusterutils_destroyed_unbound',
+    severity: 'fatal',
+    re: /clusterUtils\.js:.*_destroyed|Timeout\._onTimeout \(\/app\/lib\/utils\/clusterUtils\.js/i,
+    fix: 'clusterUtils free functions must not close over this; use globalThis.setTimeout only',
+    status: 'fixed_p137',
+  },
+  {
+    id: 'heap_oom_live_data',
+    severity: 'fatal',
+    re: /JavaScript heap out of memory|Ineffective mark-compacts near heap limit|Reached heap limit Allocation failed/i,
+    fix: 'LiveDataUpdater: cap overlay (1500), store ≤180KB, manifest version check before segments, heap skip (P148)',
+    status: 'fixed_p148',
+  },
 ];
+
+function loadExternalPatterns() {
+  try {
+    if (!fs.existsSync(ERROR_PATTERNS_PATH)) return [];
+    const raw = JSON.parse(fs.readFileSync(ERROR_PATTERNS_PATH, 'utf8'));
+    const list = raw.patterns || raw;
+    if (!Array.isArray(list)) return [];
+    return list.map((p) => ({
+      id: p.id,
+      severity: p.severity === 'critical' ? 'fatal' : (p.severity || 'warn'),
+      re: p.regex ? new RegExp(p.regex, 'i') : null,
+      keywords: p.keywords || [],
+      fix: p.suggestedFix || p.fixAction || '',
+      status: p.status || 'catalog',
+    })).filter((p) => p.id && (p.re || p.keywords.length));
+  } catch {
+    return [];
+  }
+}
+
+const KNOWN_PATTERNS = (() => {
+  const external = loadExternalPatterns();
+  const seen = new Set(KNOWN_PATTERNS_EMBEDDED.map((p) => p.id));
+  const merged = [...KNOWN_PATTERNS_EMBEDDED];
+  for (const p of external) {
+    if (seen.has(p.id)) continue;
+    // Also skip if embedded already covers same heap OOM via heap_oom_live_data
+    if (p.id === 'ERR_OOM_HEAP_LIMIT' && seen.has('heap_oom_live_data')) continue;
+    merged.push(p);
+    seen.add(p.id);
+  }
+  return merged;
+})();
 
 function readJson(p) {
   try {
@@ -99,6 +182,15 @@ function collectTextBlobs() {
     path.join(ROOT, 'tmp', 'gmail-art', '.github', 'state', 'diagnostics-report.json'),
     path.join(ROOT, 'tmp', 'gmail-art', 'diagnostics', 'summary.json'),
   ];
+
+  // Homey App Store crash dumps (manual Log IDs)
+  const diagDir = path.join(ROOT, '.github', 'state', 'homey-app-diag');
+  if (fs.existsSync(diagDir)) {
+    for (const name of fs.readdirSync(diagDir)) {
+      if (!name.endsWith('.sanitized.json') && !name.endsWith('.raw-stack.txt')) continue;
+      candidates.push(path.join(diagDir, name));
+    }
+  }
 
   for (const p of candidates) {
     if (!fs.existsSync(p)) continue;
@@ -143,6 +235,19 @@ function extractSacredHints(text) {
   };
 }
 
+function patternMatches(pat, text) {
+  if (pat.re) {
+    try {
+      if (pat.re.test(text)) return true;
+    } catch { /* ignore */ }
+  }
+  if (Array.isArray(pat.keywords) && pat.keywords.length) {
+    const lower = text.toLowerCase();
+    return pat.keywords.some((k) => lower.includes(String(k).toLowerCase()));
+  }
+  return false;
+}
+
 function main() {
   const blobs = collectTextBlobs();
   const hits = [];
@@ -151,7 +256,7 @@ function main() {
 
   for (const blob of blobs) {
     for (const pat of KNOWN_PATTERNS) {
-      if (pat.re.test(blob.text)) {
+      if (patternMatches(pat, blob.text)) {
         counts[pat.id] += 1;
         hits.push({
           pattern: pat.id,
@@ -167,7 +272,7 @@ function main() {
     const unk = blob.text.match(/TypeError:\s*([^\n\r"']{10,120})/gi) || [];
     for (const u of unk) {
       if (KNOWN_PATTERNS.some(p => p.re.test(u))) continue;
-      if (/getDeviceActi|read only property|getDiscoveries|_destroyed|reading ['"]catch['"]/i.test(u)) continue;
+      if (/getDeviceActi|read only property|getDiscoveries|_destroyed|reading ['"]catch['"]|registerRunListenerasync|setTimeout is not|reading ['_"]_onDeleted/i.test(u)) continue;
       // Truncated Homey emails often cut mid-message; treat as covered by known patterns
       if (/Cannot read properties of undefined \(reading\s*$/i.test(u)) continue;
       if (/TIMEOUT|MAC_NO_ACK|UNSUPPORTED/i.test(u)) continue;
@@ -190,7 +295,7 @@ function main() {
     patternCounts: counts,
     hits: uniqueHits,
     unknownFatals: unknownFatals.slice(0, 40),
-    knownFixed: KNOWN_PATTERNS.filter(p => p.status === 'fixed_p100').map(p => p.id),
+    knownFixed: KNOWN_PATTERNS.filter(p => String(p.status || '').startsWith('fixed_')).map(p => p.id),
     watch: KNOWN_PATTERNS.filter(p => p.status === 'watch').map(p => p.id),
     verdict: unknownFatals.length === 0 ? 'ok' : 'review_unknown',
   };

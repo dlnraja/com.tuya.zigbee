@@ -189,6 +189,10 @@ class FanControllerDevice extends TuyaZigbeeDevice {
    * WHY(P2396 / GitHub #536): Lerlink fan_switch exposes DP2 countdown + DP11 power-on.
    */
   async onSettings({ newSettings, changedKeys }) {
+    if (this._isInternalSettingsSync) {
+      this.log('[SETTINGS] Skipping write-back: synced internally from DP report');
+      return;
+    }
     const ep1 = this._zclNode?.endpoints?.[1];
     const tuyaCluster = ep1?.clusters?.tuya || ep1?.clusters?.[61184];
     if (!tuyaCluster || typeof tuyaCluster.datapoint !== 'function') {
@@ -234,7 +238,16 @@ class FanControllerDevice extends TuyaZigbeeDevice {
 
       case 2: { // Countdown seconds (P2396)
         const sec = Math.max(0, Math.min(43200, Number(value) || 0));
-        await this.setSettings({ countdown: sec }).catch(() => {});
+        if (this.getSetting?.('countdown') !== sec) {
+          this._isInternalSettingsSync = true;
+          try {
+            await this.setSettings({ countdown: sec });
+          } catch (err) {
+            this.log('[FAN] setSettings countdown error:', err.message);
+          } finally {
+            this.homey.setTimeout(() => { this._isInternalSettingsSync = false; }, 800);
+          }
+        }
         break;
       }
 
@@ -248,7 +261,16 @@ class FanControllerDevice extends TuyaZigbeeDevice {
 
       case 11: { // Power-on behavior — Z2M off/on only
         const key = { 0: 'off', 1: 'on' }[Number(value)];
-        if (key) await this.setSettings({ power_on_behavior: key }).catch(() => {});
+        if (key && this.getSetting?.('power_on_behavior') !== key) {
+          this._isInternalSettingsSync = true;
+          try {
+            await this.setSettings({ power_on_behavior: key });
+          } catch (err) {
+            this.log('[FAN] setSettings power_on_behavior error:', err.message);
+          } finally {
+            this.homey.setTimeout(() => { this._isInternalSettingsSync = false; }, 800);
+          }
+        }
         break;
       }
 

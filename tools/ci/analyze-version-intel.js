@@ -17,6 +17,7 @@ function findFile(dir, name) {
 }
 
 const verFile = findFile(base, 'version-intelligence-report.json');
+if (!verFile) { console.log('[SKIP] CI artifact version-intelligence-report.json not found locally.'); process.exit(0); }
 const ver = JSON.parse(fs.readFileSync(verFile, 'utf8'));
 
 console.log('=== VERSION INTELLIGENCE ===');

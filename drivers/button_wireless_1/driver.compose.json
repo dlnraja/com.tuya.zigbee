@@ -22,10 +22,11 @@
         "fr": "Bouton 1"
       },
       "getable": false,
-      "setable": false,
+      "setable": true,
       "maintenanceAction": true
     },
     "measure_battery": {
+      "getable": false,
       "title": {
         "en": "Battery",
         "fr": "Batterie",

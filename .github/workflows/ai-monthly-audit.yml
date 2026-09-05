@@ -2,7 +2,7 @@ name: AI Monthly Audit (TITAN Protocol v2)
 
 on:
   schedule:
-    - cron: '0 0 1 * *'  # 1st of every month at 00:00 UTC
+    - cron: '17 0 1 * *'  # 1st of every month at 00:17 UTC (staggered: avoids monthly collision)
   workflow_dispatch:
     inputs:
       analysis_depth:

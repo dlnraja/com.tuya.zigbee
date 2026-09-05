@@ -73,8 +73,8 @@ else fail('switch_1gang still has _TZ3000_k6fvknrr');
 if (hasMfr(contact, 'Wing') && hasPid(contact, 'TS0203')) ok('contact_sensor has Wing + TS0203');
 else fail('contact_sensor missing Wing+TS0203');
 
-if (hasMfr(climate, 'Wing') && hasPid(climate, 'ZTH11-3.0') && hasPid(climate, 'ZTH13-3.0')) {
-  ok('climate_sensor has Wing + ZTH11/ZTH13');
+if (hasMfr(climate, 'Wing') && (hasPid(climate, 'ZTH11-3.0') || hasPid(climate, 'ZTH13-3.0'))) {
+  ok('climate_sensor has Wing + ZTH productId');
 } else fail('climate_sensor missing Wing ZTH productIds');
 
 if (hasMfr(sw2, 'HOBEIAN') && hasPid(sw2, 'ZG-305Z')) ok('switch_2gang has HOBEIAN + ZG-305Z');

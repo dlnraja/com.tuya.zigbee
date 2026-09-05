@@ -7,8 +7,8 @@ defaults:
 
 on:
   schedule:
-    # Daily at 04:00 UTC (after the auto-fix-all bot at 03:00)
-    - cron: '0 4 * * *'
+    # Daily at 04:25 UTC (staggered: avoids 04:00 collision)
+    - cron: '25 4 * * *'
   workflow_dispatch:
 
 permissions:

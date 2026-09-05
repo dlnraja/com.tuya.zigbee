@@ -6,8 +6,8 @@ name: 🌙 Nightly Audit
 
 on:
   schedule:
-    # Daily 03:30 UTC, after knowledge-graph sync
-    - cron: '30 3 * * *'
+    # Daily 03:45 UTC, staggered after recurrent-orchestrator
+    - cron: '45 3 * * *'
   workflow_dispatch:
 
 permissions:

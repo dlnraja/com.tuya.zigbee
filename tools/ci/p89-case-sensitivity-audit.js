@@ -170,4 +170,9 @@ function main() {
   console.log(JSON.stringify(out.summary, null, 2));
 }
 
-main().catch(e => { console.error(e); process.exit(1); });
+try {
+  main();
+} catch (e) {
+  console.error(e);
+  process.exit(1);
+}

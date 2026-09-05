@@ -9,7 +9,7 @@ name: 🌙 Monthly Tuya Intelligence & URL Audit
 
 on:
   schedule:
-    - cron: '0 0 1 * *' # Once a month on the 1st
+    - cron: '9 1 1 * *' # Once a month on the 1st at 01:09 UTC (staggered)
   workflow_dispatch: # Allow manual trigger
 
 permissions:

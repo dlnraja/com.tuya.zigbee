@@ -426,6 +426,13 @@ function summarize(matches) {
 // ─── DIAGNOSTIC ANALYSIS (raw text files) ───────────────────────
 function analyzeDiagnostics() {
   const results = [];
+  // v10.17.2 FIX: .github/state is untracked (security policy) — absent on
+  // fresh CI checkouts. Tolerate the missing directory instead of ENOENT,
+  // and keep the expected return SHAPE ({diagnostics, summary}).
+  if (!fs.existsSync(stateDir)) {
+    console.log('[offline-crash-analyzer] .github/state absent (checkout frais) — 0 diagnostic à analyser');
+    return { diagnostics: [], summary: summarize([]) };
+  }
   const diagDirs = fs.readdirSync(stateDir).filter(d => d.startsWith('diagnostics') || d.startsWith('all-diagnostics') || d.startsWith('emails'));
 
   for (const d of diagDirs) {
@@ -487,6 +494,7 @@ function main() {
     topRecommendations: buildTopRecommendations(crashResults, diagResults),
   };
 
+  fs.mkdirSync(stateDir, { recursive: true }); // v10.17.3: state dir is untracked — absent on fresh CI
   fs.writeFileSync(outputFile, JSON.stringify(report, null, 2));
   console.log('');
   console.log('─'.repeat(60));

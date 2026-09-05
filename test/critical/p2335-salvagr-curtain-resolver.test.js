@@ -1,4 +1,7 @@
-'use strict';
+﻿'use strict';
+
+const testApi = global.describe && global.it ? global : require('node:test');
+const { describe, it } = testApi;
 /**
  * P2335 — Salvagr #533 residual + diag-resolver couple lock + MVM TZE284
  */

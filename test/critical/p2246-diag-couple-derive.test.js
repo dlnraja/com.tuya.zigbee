@@ -1,4 +1,7 @@
-'use strict';
+﻿'use strict';
+
+const testApi = global.describe && global.it ? global : require('node:test');
+const { describe, it } = testApi;
 
 /**
  * P2246 — diag couple extract + derive (never invent brand×TS cartesian)

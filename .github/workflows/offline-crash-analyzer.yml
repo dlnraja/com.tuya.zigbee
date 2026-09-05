@@ -15,8 +15,8 @@ name: Offline Crash Analyzer (P31)
 
 on:
   schedule:
-    # Daily at 05:00 UTC (after activity-monitor at 04:00)
-    - cron: '0 5 * * *'
+    # Daily at 05:20 UTC (staggered: avoids 05:00 collision)
+    - cron: '20 5 * * *'
   workflow_dispatch:
     inputs:
       use_ai:

@@ -125,6 +125,7 @@ function applyPhases(neededPhases) {
   const results = [];
   const map = {
     'button-flow-harvest': ['tools/ci/button-flow-harvest.js', APPLY ? ['--apply-fixes'] : []],
+    'flow-fleet-enrich': ['tools/ci/flow-fleet-enrich.js', APPLY ? ['--apply'] : []],
     settings: ['tools/ci/enrich-driver-settings-intelligent.js', APPLY ? ['--apply'] : []],
     'case-variants': ['tools/ci/ensure-case-variants.js', APPLY ? ['--apply'] : []],
     'infer-enrich': ['tools/ci/infer-enrich-from-incomplete.js', APPLY ? ['--apply'] : []],

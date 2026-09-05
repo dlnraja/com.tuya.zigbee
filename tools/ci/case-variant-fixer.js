@@ -22,6 +22,27 @@ const onlyDrivers = process.argv.slice(2).filter(a => !a.startsWith('-'));
 const TUYA_RX = /^_t[zy][a-z0-9]{4,}_/i; // _TZ3000_, _TZE200_, _TYZB01_, _TYST11_, variants longues
 const SYNTHETIC_RX = /_disabled|_dummy|_generic|_hybrid|_master|placeholder|needs_/i;
 
+/**
+ * ALL 4 prefix/suffix case combos for a Tuya ID. Homey matches
+ * manufacturerName CASE-SENSITIVELY at pairing, and firmwares in the
+ * wild have been observed reporting every combination:
+ *   1. `_tz3000_g9g2xnch` (lower/lower)
+ *   2. `_TZ3000_G9G2XNCH` (UPPER/UPPER)
+ *   3. `_TZ3000_g9g2xnch` (UPPER/lower — canonical, most common)
+ *   4. `_tz3000_G9G2XNCH` (lower/UPPER — rare but observed)
+ */
+function allCaseCombos(m) {
+  const match = String(m).match(/^(_t[zy][a-z0-9]+)_(.+)$/i);
+  if (!match) {return [String(m).toLowerCase(), String(m).toUpperCase()];}
+  const [, prefix, suffix] = match;
+  return [...new Set([
+    `${prefix.toLowerCase()}_${suffix.toLowerCase()}`,
+    `${prefix.toUpperCase()}_${suffix.toUpperCase()}`,
+    `${prefix.toUpperCase()}_${suffix.toLowerCase()}`,
+    `${prefix.toLowerCase()}_${suffix.toUpperCase()}`
+  ])];
+}
+
 const report = { apply: APPLY, drivers: 0, added: 0, skippedSynthetic: 0, details: [] };
 
 for (const d of fs.readdirSync(path.join(ROOT, 'drivers'))) {
@@ -37,12 +58,10 @@ for (const d of fs.readdirSync(path.join(ROOT, 'drivers'))) {
   for (const m of [...set]) {
     if (!TUYA_RX.test(m)) {continue;}
     if (SYNTHETIC_RX.test(m)) {report.skippedSynthetic++; continue;}
-    const up = m.toUpperCase();
-    const lo = m.toLowerCase();
-    const hasUp = mfrs.some(x => x === up);
-    const hasLo = mfrs.some(x => x === lo);
-    if (!hasUp && up !== lo) {toAdd.push(up);}
-    if (!hasLo) {toAdd.push(lo);}
+    const hasExact = (v) => mfrs.some(x => x === v);
+    for (const v of allCaseCombos(m)) {
+      if (!hasExact(v)) {toAdd.push(v);}
+    }
   }
   if (!toAdd.length) {continue;}
 
