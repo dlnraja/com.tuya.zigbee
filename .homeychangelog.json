@@ -1452,5 +1452,8 @@
   },
   "5.12.135": {
     "en": "Universal cluster resolution, caseless driver & flow card compensation, and enhanced battery cluster detection (reliability)."
+  },
+  "5.12.137": {
+    "en": "Fixed BSEED 1-gang switch routing (Issue #540), pruned manifest flow duplicates, and enforced zero flow guidelines warnings."
   }
 }

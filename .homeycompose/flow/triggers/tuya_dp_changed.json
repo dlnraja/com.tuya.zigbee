@@ -48,9 +48,5 @@
       "name": "device",
       "filter": "capabilities=tuya_dp_value"
     }
-  ],
-  "titleFormatted": {
-    "en": "Any Tuya DP changed [[device]]",
-    "fr": "Tout DP Tuya changé [[device]]"
-  }
+  ]
 }

@@ -1,28 +1,98 @@
 {
   "id": "hue_motion_lighting",
   "title": {
-    "en": "Motion-activated lighting (Hue-style)",
-    "fr": "Éclairage activé par mouvement (style Hue)",
-    "nl": "Bewegingsgeactiveerde verlichting (Hue-stijl)",
-    "de": "Bewegungsaktivierte Beleuchtung (Hue-Stil)"
+    "en": "Path Light on motion",
+    "fr": "Lumière de passage sur mouvement",
+    "nl": "Padlicht bij beweging",
+    "de": "Weglicht bei Bewegung"
   },
   "hint": {
-    "en": "Turn on a light when motion is detected (with lux + time guards), auto-off after timeout without motion",
-    "fr": "Allume une lumière sur mouvement (gardes lux + horaires), extinction auto après un délai sans mouvement",
-    "nl": "Schakel licht in bij beweging (lux- en tijdbeperking), auto-uit na time-out",
-    "de": "Licht bei Bewegung einschalten (Lux- und Zeitgrenzen), Auto-Aus nach Zeitablauf"
+    "en": "Turns a light on from motion, with optional lux gate and quiet hours; applies Daylight Atmosphere white",
+    "fr": "Allume une lumière au mouvement, avec seuil lux et heures calmes optionnels ; blanc Atmosphère jour"
   },
   "args": [
-    { "type": "device", "name": "motion_sensor", "title": { "en": "Motion sensor", "fr": "Capteur de mouvement" } },
-    { "type": "device", "name": "light", "title": { "en": "Light", "fr": "Lumière" } },
-    { "type": "number", "name": "brightness", "title": { "en": "Brightness (%)", "fr": "Luminosité (%)" }, "min": 1, "max": 100, "placeholder": { "en": "80" } },
-    { "type": "number", "name": "timeout", "title": { "en": "Auto-off after (min)", "fr": "Extinction après (min)" }, "min": 1, "max": 120, "placeholder": { "en": "5" } },
-    { "type": "number", "name": "lux_threshold", "title": { "en": "Only if lux below (0 = ignore)", "fr": "Seulement si lux sous (0 = ignorer)" }, "min": 0, "max": 100000, "placeholder": { "en": "0" } },
-    { "type": "text", "name": "quiet_start", "title": { "en": "Quiet hours start (HH:MM, optional)", "fr": "Début heures calmes (HH:MM, optionnel)" }, "placeholder": { "en": "22:00" } },
-    { "type": "text", "name": "quiet_end", "title": { "en": "Quiet hours end (HH:MM, optional)", "fr": "Fin heures calmes (HH:MM, optionnel)" }, "placeholder": { "en": "07:00" } }
+    {
+      "type": "device",
+      "name": "motion_sensor",
+      "title": {
+        "en": "Motion sensor",
+        "fr": "Capteur mouvement"
+      },
+      "filter": "capabilities=alarm_motion|capabilities=alarm_human|capabilities=alarm_presence"
+    },
+    {
+      "type": "device",
+      "name": "light",
+      "title": {
+        "en": "Light",
+        "fr": "Lumière"
+      },
+      "filter": "capabilities=onoff"
+    },
+    {
+      "type": "number",
+      "name": "brightness",
+      "title": {
+        "en": "Brightness (%)",
+        "fr": "Luminosité (%)"
+      },
+      "min": 1,
+      "max": 100,
+      "placeholder": {
+        "en": "80"
+      }
+    },
+    {
+      "type": "number",
+      "name": "timeout",
+      "title": {
+        "en": "Timeout (min)",
+        "fr": "Délai (min)"
+      },
+      "min": 1,
+      "max": 60,
+      "placeholder": {
+        "en": "5"
+      }
+    },
+    {
+      "type": "number",
+      "name": "lux_threshold",
+      "title": {
+        "en": "Skip if lux ≥",
+        "fr": "Ignorer si lux ≥"
+      },
+      "min": 0,
+      "max": 10000,
+      "placeholder": {
+        "en": "0"
+      }
+    },
+    {
+      "type": "text",
+      "name": "quiet_start",
+      "title": {
+        "en": "Quiet start (HH:MM)",
+        "fr": "Début calme (HH:MM)"
+      },
+      "placeholder": {
+        "en": "22:00"
+      }
+    },
+    {
+      "type": "text",
+      "name": "quiet_end",
+      "title": {
+        "en": "Quiet end (HH:MM)",
+        "fr": "Fin calme (HH:MM)"
+      },
+      "placeholder": {
+        "en": "07:00"
+      }
+    }
   ],
   "titleFormatted": {
-    "en": "Hue-style: [[motion_sensor]] turns on [[light]] at [[brightness]]% for [[timeout]] min (lux < [[lux_threshold]], quiet [[quiet_start]]-[[quiet_end]])",
-    "fr": "Style Hue : [[motion_sensor]] allume [[light]] à [[brightness]]% pour [[timeout]] min (lux < [[lux_threshold]], calme [[quiet_start]]-[[quiet_end]])"
+    "en": "Path Light: [[motion_sensor]] → [[light]] at [[brightness]]% for [[timeout]] min (lux < [[lux_threshold]], quiet [[quiet_start]]-[[quiet_end]])",
+    "fr": "Passage : [[motion_sensor]] → [[light]] à [[brightness]]% pour [[timeout]] min (lux < [[lux_threshold]], calme [[quiet_start]]-[[quiet_end]])"
   }
 }

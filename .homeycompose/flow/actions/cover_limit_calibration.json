@@ -1,27 +1,88 @@
 {
   "id": "cover_limit_calibration",
   "title": {
-    "en": "Calibrate cover limits (Tuya DP16)",
-    "fr": "Calibrer les fins de course du volet (Tuya DP16)",
-    "nl": "Eindposities rolluik kalibreren (Tuya DP16)",
-    "de": "Rolladen-Endlagen kalibrieren (Tuya DP16)"
+    "en": "Calibrate cover limits Tuya DP16",
+    "fr": "Calibrer les fins de course du volet Tuya DP16",
+    "nl": "Eindposities rolluik kalibreren Tuya DP16",
+    "de": "Rolladen-Endlagen kalibrieren Tuya DP16"
   },
   "hint": {
     "en": "Set or clear the upper/lower travel limits of a Tuya curtain motor (Quoya/Dooya). Move the cover to the desired position first, then run the matching action.",
     "fr": "Définit ou supprime les fins de course haute/basse d'un moteur de volet Tuya (Quoya/Dooya). Placez d'abord le volet à la position voulue, puis lancez l'action correspondante."
   },
   "args": [
-    { "type": "device", "name": "cover", "title": { "en": "Cover", "fr": "Volet" } },
+    {
+      "type": "device",
+      "name": "cover",
+      "title": {
+        "en": "Cover",
+        "fr": "Volet"
+      },
+      "filter": "capabilities=windowcoverings_set|capabilities=windowcoverings_state"
+    },
     {
       "type": "dropdown",
       "name": "command",
-      "title": { "en": "Command", "fr": "Commande" },
+      "title": {
+        "en": "Command",
+        "fr": "Commande"
+      },
       "values": [
-        { "id": "set_upper", "label": { "en": "Set UPPER limit here", "fr": "Définir fin de course HAUTE ici" } },
-        { "id": "set_lower", "label": { "en": "Set LOWER limit here", "fr": "Définir fin de course BASSE ici" } },
-        { "id": "delete_upper", "label": { "en": "Delete upper limit", "fr": "Supprimer fin de course haute" } },
-        { "id": "delete_lower", "label": { "en": "Delete lower limit", "fr": "Supprimer fin de course basse" } },
-        { "id": "remove_all", "label": { "en": "Remove ALL limits", "fr": "Supprimer TOUTES les fins de course" } }
+        {
+          "id": "set_upper",
+          "label": {
+            "en": "Set UPPER limit here",
+            "fr": "Définir fin de course HAUTE ici"
+          },
+          "title": {
+            "en": "Set UPPER limit here",
+            "fr": "Définir fin de course HAUTE ici"
+          }
+        },
+        {
+          "id": "set_lower",
+          "label": {
+            "en": "Set LOWER limit here",
+            "fr": "Définir fin de course BASSE ici"
+          },
+          "title": {
+            "en": "Set LOWER limit here",
+            "fr": "Définir fin de course BASSE ici"
+          }
+        },
+        {
+          "id": "delete_upper",
+          "label": {
+            "en": "Delete upper limit",
+            "fr": "Supprimer fin de course haute"
+          },
+          "title": {
+            "en": "Delete upper limit",
+            "fr": "Supprimer fin de course haute"
+          }
+        },
+        {
+          "id": "delete_lower",
+          "label": {
+            "en": "Delete lower limit",
+            "fr": "Supprimer fin de course basse"
+          },
+          "title": {
+            "en": "Delete lower limit",
+            "fr": "Supprimer fin de course basse"
+          }
+        },
+        {
+          "id": "remove_all",
+          "label": {
+            "en": "Remove ALL limits",
+            "fr": "Supprimer TOUTES les fins de course"
+          },
+          "title": {
+            "en": "Remove ALL limits",
+            "fr": "Supprimer TOUTES les fins de course"
+          }
+        }
       ]
     }
   ],

@@ -88,7 +88,7 @@
       "realMfrsAdded": 5,
       "details": "tmp/synthetic-resolution.json + tmp/pruned21-resolution.json"
     },
-    "lastAlignedAt": "2026-09-04T22:48:43.919Z",
+    "lastAlignedAt": "2026-09-05T16:15:14.798Z",
     "alignTool": "align-mfs-db-intelligent@P169",
     "lastSyncedFromCompose": "2026-09-05T01:12:02.022Z",
     "syncComposeTool": "sync-compose-to-mfs-db@P2368"
@@ -128771,7 +128771,7 @@
     "lastSacredCoupleEnrichment": "2026-07-13T23:57:58.590Z",
     "fingerprints": 5710,
     "lastUpdate": "2026-07-14",
-    "lastUpdated": "2026-09-05T04:16:28.022Z",
+    "lastUpdated": "2026-09-05T15:51:02.270Z",
     "totalModelIds": 62784,
     "multiPidMfrs": 3299,
     "variantMfrs": 82,
@@ -189354,7 +189354,7 @@
   },
   "_TZE200_wqashyqo": {
     "driverId": "soil_sensor",
-    "source": "p2423-hobeian-mfs",
+    "source": "registry:wqashyqo-ts0601-soil",
     "modelIds": [
       "TS0601",
       "ZG-303Z"
@@ -189625,10 +189625,12 @@
     "driverId": "contact_sensor_zigbee",
     "source": "registry:p2201-pay2byax-zg102zl-contact",
     "modelIds": [
-      "TS0601"
+      "TS0601",
+      "ZG-102Z",
+      "ZG-102ZL"
     ],
     "pid": "TS0601",
-    "modelIdsCount": 1
+    "modelIdsCount": 3
   },
   "_hybrid_contact_sensor_curtain_needs_device_assignment": {
     "driverId": "contact_sensor_curtain",
@@ -197452,8 +197454,8 @@
     "modelIdsCount": 5
   },
   "_TZ3000_ysdv91bk": {
-    "driverId": "gas_sensor_switch",
-    "source": "auto-sync"
+    "driverId": "switch_1gang",
+    "source": "compose-exclusive"
   },
   "_TZ3000_hafsqare": {
     "driverId": "switch_1gang",
@@ -209544,9 +209546,10 @@
   },
   "_TZE204_r0jdjrvi": {
     "driverId": "curtain_motor_tilt",
-    "source": "sync-compose-known",
+    "source": "registry:curtain-r0jdjrvi-tilt",
     "modelIds": [
-      "TS0601"
+      "TS0601",
+      "TS0601_curtain_tilt"
     ],
     "pid": "TS0601",
     "modelIdsCount": 2
@@ -219788,10 +219791,12 @@
     "driverId": "contact_sensor_zigbee",
     "source": "registry:p2201-pay2byax-zg102zl-contact",
     "modelIds": [
-      "TS0601"
+      "TS0601",
+      "ZG-102Z",
+      "ZG-102ZL"
     ],
     "pid": "TS0601",
-    "modelIdsCount": 1
+    "modelIdsCount": 3
   },
   "_hybrid_soil_sensor_ec_needs_device_assignment": {
     "driverId": "soil_sensor_ec",
@@ -233501,7 +233506,7 @@
   },
   "_TZE200_iba1ckek": {
     "driverId": "vibration_sensor",
-    "source": "p2423-hobeian-mfs",
+    "source": "registry:hobeian-zg103z-vibration-tilt",
     "modelIds": [
       "TS0601",
       "ZG-103Z"
@@ -233513,7 +233518,7 @@
   },
   "_TZE200_hggxgsjj": {
     "driverId": "vibration_sensor",
-    "source": "p2423-hobeian-mfs",
+    "source": "registry:hobeian-zg103z-vibration-tilt",
     "modelIds": [
       "TS0601",
       "ZG-103Z"
@@ -233525,7 +233530,7 @@
   },
   "_TZE200_yjryxpot": {
     "driverId": "vibration_sensor",
-    "source": "p2423-hobeian-mfs",
+    "source": "registry:hobeian-zg103z-vibration-tilt",
     "modelIds": [
       "TS0601",
       "ZG-103Z"
@@ -233537,7 +233542,7 @@
   },
   "_TZE200_afycb3cg": {
     "driverId": "vibration_sensor",
-    "source": "p2423-hobeian-mfs",
+    "source": "registry:hobeian-zg103z-vibration-tilt",
     "modelIds": [
       "TS0601",
       "ZG-103Z"
@@ -236795,7 +236800,7 @@
   },
   "_tze204_hlx9tnzb": {
     "driverId": "dimmer_1_gang_tuya",
-    "source": "sync-compose-known",
+    "source": "registry:p2270-hlx9tnzb-dimmer-not-1gang",
     "modelIds": [
       "TS0601"
     ],
@@ -244625,7 +244630,7 @@
   },
   "_TZE200_kccdzaeo": {
     "driverId": "presence_sensor_radar",
-    "source": "p2423-hobeian-mfs",
+    "source": "registry:hobeian-zg302zm-sensing-switch",
     "modelIds": [
       "TS0601",
       "ZG-302ZM"
@@ -244637,7 +244642,7 @@
   },
   "_TZE200_s7rsrtbg": {
     "driverId": "presence_sensor_radar",
-    "source": "p2423-hobeian-mfs",
+    "source": "registry:hobeian-zg302zm-sensing-switch",
     "modelIds": [
       "TS0601",
       "ZG-302ZM"
@@ -244649,7 +244654,7 @@
   },
   "_TZE200_tmszbtzq": {
     "driverId": "presence_sensor_radar",
-    "source": "p2423-hobeian-mfs",
+    "source": "registry:hobeian-zg302zm-sensing-switch",
     "modelIds": [
       "TS0601",
       "ZG-302ZM"
@@ -244661,7 +244666,7 @@
   },
   "_TZE200_bfmfhxra": {
     "driverId": "presence_sensor_radar",
-    "source": "p2423-hobeian-mfs",
+    "source": "registry:hobeian-zg302zm-sensing-switch",
     "modelIds": [
       "TS0601",
       "ZG-302ZM"
@@ -244673,7 +244678,7 @@
   },
   "_TZE200_ahpcyzth": {
     "driverId": "presence_sensor_radar",
-    "source": "p2423-hobeian-mfs",
+    "source": "registry:hobeian-zg302zm-sensing-switch",
     "modelIds": [
       "TS0601",
       "ZG-302ZM"
@@ -244685,7 +244690,7 @@
   },
   "_TZE200_kijxnb8q": {
     "driverId": "presence_sensor_radar",
-    "source": "p2423-hobeian-mfs",
+    "source": "registry:hobeian-zg302zm-sensing-switch",
     "modelIds": [
       "TS0601",
       "ZG-302ZM"
@@ -244697,7 +244702,7 @@
   },
   "_TZE200_khzbklyh": {
     "driverId": "presence_sensor_radar",
-    "source": "p2423-hobeian-mfs",
+    "source": "registry:hobeian-zg302zl-sensing-switch",
     "modelIds": [
       "TS0601",
       "ZG-302ZL"
@@ -244709,7 +244714,7 @@
   },
   "_TZE200_df04ghrb": {
     "driverId": "presence_sensor_radar",
-    "source": "p2423-hobeian-mfs",
+    "source": "registry:hobeian-zg302zl-sensing-switch",
     "modelIds": [
       "TS0601",
       "ZG-302ZL"
@@ -244721,7 +244726,7 @@
   },
   "_TZE200_toeldckg": {
     "driverId": "presence_sensor_radar",
-    "source": "p2423-hobeian-mfs",
+    "source": "registry:hobeian-zg302zl-sensing-switch",
     "modelIds": [
       "TS0601",
       "ZG-302ZL"
@@ -244733,7 +244738,7 @@
   },
   "_TZE200_cqtamhh5": {
     "driverId": "presence_sensor_radar",
-    "source": "p2423-hobeian-mfs",
+    "source": "registry:hobeian-zg302zl-sensing-switch",
     "modelIds": [
       "TS0601",
       "ZG-302ZL"
@@ -244745,7 +244750,7 @@
   },
   "_TZE200_xlnzk169": {
     "driverId": "presence_sensor_radar",
-    "source": "p2423-hobeian-mfs",
+    "source": "registry:hobeian-zg302zl-sensing-switch",
     "modelIds": [
       "TS0601",
       "ZG-302ZL"
@@ -244757,7 +244762,7 @@
   },
   "_TZE200_llvwkkde": {
     "driverId": "presence_sensor_radar",
-    "source": "p2423-hobeian-mfs",
+    "source": "registry:hobeian-zg302zl-sensing-switch",
     "modelIds": [
       "TS0601",
       "ZG-302ZL"
@@ -359988,7 +359993,7 @@
   },
   "_TZ3000_402vrq2i": {
     "driverId": "smart_knob",
-    "source": "sync-compose-known",
+    "source": "registry:p2270-402vrq2i-knob-not-4gang",
     "modelIds": [
       "TS004F"
     ],
@@ -367524,8 +367529,8 @@
       "TS0601",
       "ZG-204ZM"
     ],
-    "source": "p2423-hobeian-mfs",
-    "pid": "TS0601",
+    "source": "registry:hobeian-zg204zm-tze",
+    "pid": "AY205Z",
     "modelIdsCount": 4,
     "notes": "Sacred couple lock _TZE200_2aaelwxk+(TS0601,ZG-204ZM,AY205Z,TS0225) → presence_sensor_radar",
     "updatedAt": "2026-09-05"
@@ -367534,36 +367539,41 @@
     "driverId": "presence_sensor_radar",
     "modelIds": [
       "AY205Z",
+      "TS0225",
       "TS0601",
       "ZG-204ZM"
     ],
-    "source": "p2423-hobeian-mfs",
-    "pid": "TS0601",
-    "modelIdsCount": 3,
+    "source": "registry:hobeian-zg204zm-tze",
+    "pid": "AY205Z",
+    "modelIdsCount": 4,
     "notes": "Sacred couple lock _TZE200_kb5noeto+(TS0601,ZG-204ZM,AY205Z) → presence_sensor_radar",
     "updatedAt": "2026-09-05"
   },
   "_TZE200_tyffvoij": {
     "driverId": "presence_sensor_radar",
     "modelIds": [
+      "AY205Z",
+      "TS0225",
       "TS0601",
       "ZG-204ZM"
     ],
-    "source": "p2423-hobeian-mfs",
-    "pid": "TS0601",
-    "modelIdsCount": 2,
+    "source": "registry:hobeian-zg204zm-tze",
+    "pid": "AY205Z",
+    "modelIdsCount": 4,
     "notes": "Sacred couple lock _TZE200_tyffvoij+(TS0601,ZG-204ZM) → presence_sensor_radar",
     "updatedAt": "2026-09-05"
   },
   "_TZE200_yflzeeqj": {
     "driverId": "presence_sensor_radar",
     "modelIds": [
+      "AY205Z",
+      "TS0225",
       "TS0601",
       "ZG-204ZM"
     ],
-    "source": "p2423-hobeian-mfs",
-    "pid": "TS0601",
-    "modelIdsCount": 2,
+    "source": "registry:hobeian-zg204zm-tze",
+    "pid": "AY205Z",
+    "modelIdsCount": 4,
     "notes": "Sacred couple lock _TZE200_yflzeeqj+(TS0601,ZG-204ZM) → presence_sensor_radar",
     "updatedAt": "2026-09-05"
   },
@@ -367574,8 +367584,8 @@
       "TS0601",
       "ZG-204ZH"
     ],
-    "source": "p2423-hobeian-mfs",
-    "pid": "TS0601",
+    "source": "registry:hobeian-zg204zh-tze",
+    "pid": "AY208Z",
     "modelIdsCount": 3,
     "notes": "Sacred couple lock _TZE200_vuqzj1ej+(TS0601,ZG-204ZH,AY208Z) → presence_sensor_radar",
     "updatedAt": "2026-09-05"
@@ -367587,8 +367597,8 @@
       "TS0601",
       "ZG-204ZH"
     ],
-    "source": "p2423-hobeian-mfs",
-    "pid": "TS0601",
+    "source": "registry:hobeian-zg204zh-tze",
+    "pid": "AY208Z",
     "modelIdsCount": 3,
     "notes": "Sacred couple lock _TZE200_hdih4foa+(TS0601,ZG-204ZH,AY208Z) → presence_sensor_radar",
     "updatedAt": "2026-09-05"
@@ -367712,8 +367722,8 @@
       "TS0601",
       "ZG-102ZM"
     ],
-    "source": "p2423-hobeian-mfs",
-    "pid": "TS0601",
+    "source": "registry:hobeian-zg102zm-vibration-contact",
+    "pid": "AY02SZ",
     "modelIdsCount": 3,
     "notes": "Sacred couple lock _TZE200_jfw0a4aa+(TS0601,ZG-102ZM,AY02SZ) → vibration_sensor",
     "updatedAt": "2026-09-05"
@@ -367725,8 +367735,8 @@
       "TS0601",
       "ZG-102ZM"
     ],
-    "source": "p2423-hobeian-mfs",
-    "pid": "TS0601",
+    "source": "registry:hobeian-zg102zm-vibration-contact",
+    "pid": "AY02SZ",
     "modelIdsCount": 3,
     "notes": "Sacred couple lock _TZE200_wzk0x7fq+(TS0601,ZG-102ZM,AY02SZ) → vibration_sensor",
     "updatedAt": "2026-09-05"

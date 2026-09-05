@@ -22,23 +22,62 @@
       "type": "dropdown",
       "name": "capability",
       "title": {
-        "en": "Capability", "fr": "Capability", "nl": "Capability", "de": "Capability"
+        "en": "Capability",
+        "fr": "Capability",
+        "nl": "Capability",
+        "de": "Capability"
       },
       "values": [
-        { "id": "measure_power", "title": { "en": "Power (W)", "fr": "Puissance (W)" } },
-        { "id": "measure_voltage", "title": { "en": "Voltage (V)", "fr": "Tension (V)" } },
-        { "id": "measure_current", "title": { "en": "Current (A)", "fr": "Courant (A)" } },
-        { "id": "meter_power", "title": { "en": "Energy (kWh)", "fr": "Énergie (kWh)" } },
-        { "id": "measure_battery", "title": { "en": "Battery (%)", "fr": "Batterie (%)" } },
-        { "id": "measure_temperature", "title": { "en": "Temperature", "fr": "Température" } },
-        { "id": "measure_humidity", "title": { "en": "Humidity", "fr": "Humidité" } }
+        {
+          "id": "measure_power",
+          "title": {
+            "en": "Power (W)",
+            "fr": "Puissance (W)"
+          }
+        },
+        {
+          "id": "measure_voltage",
+          "title": {
+            "en": "Voltage (V)",
+            "fr": "Tension (V)"
+          }
+        },
+        {
+          "id": "measure_current",
+          "title": {
+            "en": "Current (A)",
+            "fr": "Courant (A)"
+          }
+        },
+        {
+          "id": "meter_power",
+          "title": {
+            "en": "Energy (kWh)",
+            "fr": "Énergie (kWh)"
+          }
+        },
+        {
+          "id": "measure_battery",
+          "title": {
+            "en": "Battery (%)",
+            "fr": "Batterie (%)"
+          }
+        },
+        {
+          "id": "measure_temperature",
+          "title": {
+            "en": "Temperature",
+            "fr": "Température"
+          }
+        },
+        {
+          "id": "measure_humidity",
+          "title": {
+            "en": "Humidity",
+            "fr": "Humidité"
+          }
+        }
       ]
     }
-  ],
-  "titleFormatted": {
-    "en": "[[capability]] of [[device]] !{{is|is not}} estimated",
-    "fr": "[[capability]] de [[device]] !{{est|n'est pas}} estimée",
-    "nl": "[[capability]] van [[device]] !{{is|is niet}} geschat",
-    "de": "[[capability]] von [[device]] !{{ist|ist nicht}} geschätzt"
-  }
+  ]
 }

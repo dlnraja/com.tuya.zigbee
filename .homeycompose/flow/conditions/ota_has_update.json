@@ -11,10 +11,14 @@
     "fr": "Vrai quand le dernier scan OTA a trouvé un firmware plus récent pour ce device"
   },
   "args": [
-    { "type": "device", "name": "device", "title": { "en": "Device", "fr": "Device" } }
-  ],
-  "titleFormatted": {
-    "en": "[[device]] !{{has|has no}} OTA update",
-    "fr": "[[device]] !{{a|n'a pas}} de MàJ OTA"
-  }
+    {
+      "type": "device",
+      "name": "device",
+      "title": {
+        "en": "Device",
+        "fr": "Device"
+      },
+      "filter": "driver_id=*"
+    }
+  ]
 }

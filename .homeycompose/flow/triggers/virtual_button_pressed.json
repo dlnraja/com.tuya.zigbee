@@ -24,19 +24,22 @@
         "fr": "Type d'action"
       },
       "example": "toggle"
+    },
+    {
+      "name": "correlationId",
+      "type": "string",
+      "title": {
+        "en": "Correlation ID",
+        "fr": "ID de corrélation"
+      },
+      "example": "a1b2c3"
     }
   ],
   "args": [
     {
       "type": "device",
       "name": "device",
-      "filter": "capabilities=button.1,capabilities=button"
+      "filter": "capabilities=button.1,capabilities=button,capabilities=onoff,capabilities=button.toggle"
     }
-  ],
-  "titleFormatted": {
-    "en": "Virtual button pressed in app [[device]]",
-    "fr": "Bouton virtuel appuyé dans l'app [[device]]",
-    "nl": "Virtuele knop ingedrukt in app [[device]]",
-    "de": "Virtuelle Taste in App gedrückt [[device]]"
-  }
+  ]
 }

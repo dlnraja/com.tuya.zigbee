@@ -11,9 +11,41 @@
     "fr": "Fait passer progressivement la lumière de sa luminosité actuelle à la cible sur la durée choisie"
   },
   "args": [
-    { "type": "device", "name": "light", "title": { "en": "Light", "fr": "Lumière" } },
-    { "type": "number", "name": "target", "title": { "en": "Target brightness (%)", "fr": "Luminosité cible (%)" }, "min": 0, "max": 100, "placeholder": { "en": "50" } },
-    { "type": "number", "name": "ramp_minutes", "title": { "en": "Duration (min)", "fr": "Durée (min)" }, "min": 0, "max": 120, "placeholder": { "en": "5" } }
+    {
+      "type": "device",
+      "name": "light",
+      "title": {
+        "en": "Light",
+        "fr": "Lumière"
+      },
+      "filter": "capabilities=dim"
+    },
+    {
+      "type": "number",
+      "name": "target",
+      "title": {
+        "en": "Target brightness (%)",
+        "fr": "Luminosité cible (%)"
+      },
+      "min": 0,
+      "max": 100,
+      "placeholder": {
+        "en": "50"
+      }
+    },
+    {
+      "type": "number",
+      "name": "ramp_minutes",
+      "title": {
+        "en": "Duration (min)",
+        "fr": "Durée (min)"
+      },
+      "min": 0,
+      "max": 120,
+      "placeholder": {
+        "en": "5"
+      }
+    }
   ],
   "titleFormatted": {
     "en": "Fade [[light]] to [[target]]% over [[ramp_minutes]] min",

@@ -147,21 +147,12 @@
     "manufacturerName": [
       "_tyzb01_7gang001",
       "_tz3000_7gang001",
-      "HOBEIAN",
-      "_TZ3000_BLHVSAQF",
-      "_TZ3000_YSDV91BK",
-      "_TZ3000_HAFSQARE",
-      "hobeian",
       "_TYZB01_7GANG001",
       "_TZ3000_7GANG001",
-      "_tz3000_blhvsaqf",
-      "_tz3000_ysdv91bk",
-      "_tz3000_hafsqare",
       "_TYZB01_7gang001",
       "_TZ3000_7gang001",
-      "_TZ3000_blhvsaqf",
-      "_TZ3000_ysdv91bk",
-      "_TZ3000_hafsqare"
+      "_tyzb01_7GANG001",
+      "_tz3000_7GANG001"
     ],
     "productId": [
       "TS0007"
@@ -506,8 +497,7 @@
   ],
   "images": {
     "small": "/drivers/switch_wall_7gang/assets/images/small.png",
-    "large": "/drivers/switch_wall_7gang/assets/images/large.png",
-    "xlarge": "/drivers/switch_wall_7gang/assets/images/xlarge.png"
+    "large": "/drivers/switch_wall_7gang/assets/images/large.png"
   },
   "platforms": [
     "local"
@@ -528,14 +518,18 @@
       "id": "tuya_revive",
       "title": {
         "en": "Tuya Revive (device recovery)",
-        "fr": "Tuya Revive (récupération appareil)"
+        "fr": "Tuya Revive (récupération appareil)",
+        "nl": "Tuya Revive (apparaatherstel)",
+        "de": "Tuya Revive (Gerätewiederherstellung)"
       }
     },
     {
       "id": "generate_issue_report",
       "title": {
         "en": "Generate support report (GitHub issue)",
-        "fr": "Générer rapport de support (issue GitHub)"
+        "fr": "Générer rapport de support (issue GitHub)",
+        "nl": "Supportrapport genereren (GitHub issue)",
+        "de": "Supportbericht erstellen (GitHub Issue)"
       }
     }
   ],

@@ -2,7 +2,7 @@
   "id": "overload_detected",
   "title": {
     "en": "Overload detected - safety cutoff",
-    "fr": "Surcharge dÃ©tectÃ©e (Coupure SÃ©curitÃ©)"
+    "fr": "Surcharge détectée (Coupure Sécurité)"
   },
   "args": [
     {
@@ -20,9 +20,5 @@
         "fr": "Puissance actuelle (W)"
       }
     }
-  ],
-  "titleFormatted": {
-    "en": "Overload detected - safety cutoff [[device]]",
-    "fr": "Surcharge dÃ©tectÃ©e (Coupure SÃ©curitÃ©) [[device]]"
-  }
+  ]
 }
