@@ -189356,10 +189356,11 @@
     "driverId": "soil_sensor",
     "source": "registry:wqashyqo-ts0601-soil",
     "modelIds": [
-      "TS0601"
+      "TS0601",
+      "ZG-303Z"
     ],
     "pid": "TS0601",
-    "modelIdsCount": 1,
+    "modelIdsCount": 2,
     "notes": "Sacred couple lock _TZE200_wqashyqo+(TS0601,ZG-303Z) → soil_sensor",
     "updatedAt": "2026-09-05"
   },

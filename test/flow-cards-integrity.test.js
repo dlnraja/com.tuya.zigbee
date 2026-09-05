@@ -17,10 +17,14 @@ const testApi = global.describe && global.it ? global : require('node:test');
 const { describe, it } = testApi;
 
 const ROOT = path.join(__dirname, '..');
-const app = require(path.join(ROOT, 'app.json'));
+const rootApp = require(path.join(ROOT, 'app.json'));
+const buildAppFile = path.join(ROOT, '.homeybuild', 'app.json');
+const buildApp = fs.existsSync(buildAppFile) ? require(buildAppFile) : rootApp;
 
 function flowCards() {
-  const f = app.flow || {};
+  const f = (buildApp.flow && (buildApp.flow.triggers || []).length > 100)
+    ? buildApp.flow
+    : (rootApp.flow || {});
   return [
     ...(f.triggers || []).map(c => ({ ...c, _kind: 'trigger' })),
     ...(f.conditions || []).map(c => ({ ...c, _kind: 'condition' })),
@@ -29,7 +33,7 @@ function flowCards() {
 }
 
 describe('flow cards integrity', () => {
-  const driverIds = new Set(app.drivers.map(d => d.id));
+  const driverIds = new Set((rootApp.drivers || []).map(d => d.id));
   const cards = flowCards();
 
   it('has flow cards', () => {
@@ -72,7 +76,7 @@ describe('mfs_db bidirectionality', () => {
   it('routes mfs_db pointent vers des drivers existants (rapport d\'audit des dual-claims)', () => {
     const mfs = JSON.parse(fs.readFileSync(path.join(ROOT, 'data', 'mfs_db.json'), 'utf8'));
     const claimsByDriver = new Map();
-    for (const d of app.drivers) {
+    for (const d of rootApp.drivers) {
       claimsByDriver.set(d.id, {
         mfrs: new Set((d.zigbee?.manufacturerName || []).map(m => m.toLowerCase())),
         pids: new Set((d.zigbee?.productId || []).map(p => String(p).toLowerCase())),

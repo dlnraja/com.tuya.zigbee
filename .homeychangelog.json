@@ -1,4 +1,7 @@
 {
+  "9.0.830": {
+    "en": "Added support for Eduard DC tubular roller blind motor (_TZE284_fodv6bkr); fortified WiFi local-first recovery and safe timers; caseless Hobeian/Heobian exotic PIDs and sacred-keep couples."
+  },
   "9.0.796": {
     "en": "Improved multi-gang switch Homey buttons (physical and app UI stay in sync); added fan countdown and power-on settings; richer per-gang flow cards on legacy wall switches."
   },

@@ -141,7 +141,7 @@ describe('fingerprint-matcher (P92 heuristic matching)', function() {
     });
 
     it('keeps exact mfr + known pid at full score (pid case-insensitive)', function() {
-      const hit = FM.matchFingerprint('_TZ3000_qaaysllp', 'ts0201', makeDb());
+      const hit = FM.matchFingerprint('_TZE200_vvmbj46n', 'ts0601', makeDb());
       assert.strictEqual(hit.matchType, 'exact');
       assert.strictEqual(hit.score, 1.0);
     });

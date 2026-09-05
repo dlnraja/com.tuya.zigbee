@@ -24,7 +24,10 @@ const { describe, it } = testApi;
 const ROOT = path.join(__dirname, '..');
 
 function collectManifestIds() {
-  const app = JSON.parse(fs.readFileSync(path.join(ROOT, 'app.json'), 'utf8'));
+  const appFile = fs.existsSync(path.join(ROOT, '.homeybuild', 'app.json'))
+    ? path.join(ROOT, '.homeybuild', 'app.json')
+    : path.join(ROOT, 'app.json');
+  const app = JSON.parse(fs.readFileSync(appFile, 'utf8'));
   const ids = new Set();
   for (const section of ['triggers', 'actions', 'conditions']) {
     for (const card of (app.flow && app.flow[section]) || []) {
