@@ -3578,7 +3578,9 @@
     {
       "id": "p2270-hlx9tnzb-dimmer-not-1gang",
       "mfr": [
-        "_TZE204_hlx9tnzb"
+        "_TZE204_hlx9tnzb",
+        "_tze204_hlx9tnzb",
+        "_TZE204_HLX9TNZB"
       ],
       "productId": [
         "TS0601"
@@ -3587,7 +3589,9 @@
       "forbiddenDrivers": [
         "switch_1gang",
         "water_leak_sensor",
-        "climate_sensor"
+        "climate_sensor",
+        "wall_switch_5_gang_tuya",
+        "air_purifier"
       ],
       "forbidMode": "couple",
       "protocol": "tuya_dp",
@@ -5993,6 +5997,414 @@
       "source": "p2430-hobeian-fleet",
       "notes": "P2430: HOBEIAN gas sensor couple lock.",
       "doNotTouch": true
+    },
+    {
+      "id": "p2432-dze200-dfxkcots-rotary-dimmer",
+      "mfr": [
+        "_TZE200_dfxkcots",
+        "_tze200_dfxkcots",
+        "_TZE200_DFXKCOTS"
+      ],
+      "productId": [
+        "TS0601"
+      ],
+      "canonicalDriver": "wall_dimmer_tuya",
+      "forbiddenDrivers": [
+        "wall_switch_5_gang_tuya",
+        "switch_wall_5gang",
+        "air_purifier",
+        "switch_1gang"
+      ],
+      "protocol": "tuya_dp",
+      "notes": "Rotary smart dimmer TS0601; forbidden from wall_switch_5_gang_tuya & air_purifier"
+    },
+    {
+      "id": "p2432-dze200-p0gzbqct-rotary-knob-dimmer",
+      "mfr": [
+        "_TZE200_p0gzbqct",
+        "_tze200_p0gzbqct",
+        "_TZE200_P0GZBQCT"
+      ],
+      "productId": [
+        "TS0601"
+      ],
+      "canonicalDriver": "wall_dimmer_tuya",
+      "forbiddenDrivers": [
+        "wall_switch_5_gang_tuya",
+        "switch_wall_5gang",
+        "air_purifier",
+        "climate_sensor"
+      ],
+      "protocol": "tuya_dp",
+      "notes": "Henk de Boom #671 Rotary knob dimmer TS0601; forbidden from wall_switch_5_gang_tuya & air_purifier"
+    },
+    {
+      "id": "p2432-dze200-fjjbhx9d-dimmer-2gang",
+      "mfr": [
+        "_TZE200_fjjbhx9d",
+        "_tze200_fjjbhx9d",
+        "_TZE200_FJJBHX9D"
+      ],
+      "productId": [
+        "TS0601"
+      ],
+      "canonicalDriver": "dimmer_2_gang_tuya",
+      "forbiddenDrivers": [
+        "wall_switch_5_gang_tuya",
+        "switch_wall_5gang",
+        "air_purifier"
+      ],
+      "protocol": "tuya_dp",
+      "notes": "2-gang smart dimmer TS0601; forbidden from wall_switch_5_gang_tuya"
+    },
+    {
+      "id": "p2432-dze200-aqnazj70-switch-4gang",
+      "mfr": [
+        "_TZE200_aqnazj70",
+        "_tze200_aqnazj70",
+        "_TZE200_AQNAZJ70"
+      ],
+      "productId": [
+        "TS0601"
+      ],
+      "canonicalDriver": "switch_4gang",
+      "forbiddenDrivers": [
+        "wall_switch_5_gang_tuya",
+        "switch_wall_5gang",
+        "air_purifier",
+        "switch_1gang"
+      ],
+      "protocol": "tuya_dp",
+      "notes": "4-gang switch TS0601; forbidden from wall_switch_5_gang_tuya"
+    },
+    {
+      "id": "p2432-dze200-mexisfik-switch-4gang",
+      "mfr": [
+        "_TZE200_mexisfik",
+        "_tze200_mexisfik",
+        "_TZE200_MEXISFIK"
+      ],
+      "productId": [
+        "TS0601"
+      ],
+      "canonicalDriver": "switch_4gang",
+      "forbiddenDrivers": [
+        "wall_switch_5_gang_tuya",
+        "switch_wall_5gang",
+        "air_purifier",
+        "switch_1gang"
+      ],
+      "protocol": "tuya_dp",
+      "notes": "4-gang wall switch TS0601; forbidden from wall_switch_5_gang_tuya"
+    },
+    {
+      "id": "p2432-tyzb01-qeqvmvti-switch-1gang",
+      "mfr": [
+        "_TYZB01_qeqvmvti",
+        "_tyzb01_qeqvmvti",
+        "_TYZB01_QEQVMVTI"
+      ],
+      "productId": [
+        "TS0011"
+      ],
+      "canonicalDriver": "switch_1gang",
+      "forbiddenDrivers": [
+        "wall_switch_5_gang_tuya",
+        "switch_wall_5gang"
+      ],
+      "protocol": "zcl",
+      "notes": "1-gang light switch TS0011; forbidden from wall_switch_5_gang_tuya"
+    },
+    {
+      "id": "p2432-dze200-mja3fuja-air-quality",
+      "mfr": [
+        "_TZE200_mja3fuja",
+        "_tze200_mja3fuja",
+        "_TZE200_MJA3FUJA"
+      ],
+      "productId": [
+        "TS0601"
+      ],
+      "canonicalDriver": "air_quality_comprehensive",
+      "forbiddenDrivers": [
+        "air_purifier",
+        "wall_switch_5_gang_tuya"
+      ],
+      "protocol": "tuya_dp",
+      "notes": "Topic 1 #1379 Smart Air House Keeper; forbidden from air_purifier"
+    },
+    {
+      "id": "p2432-dze200-2ekuz3dz-thermostat",
+      "mfr": [
+        "_TZE200_2ekuz3dz",
+        "_tze200_2ekuz3dz",
+        "_TZE200_2EKUZ3DZ"
+      ],
+      "productId": [
+        "TS0601"
+      ],
+      "canonicalDriver": "wall_thermostat",
+      "forbiddenDrivers": [
+        "air_purifier",
+        "wall_switch_5_gang_tuya"
+      ],
+      "protocol": "tuya_dp",
+      "notes": "Melectro #650 Beok/Moes X5H-GB-B thermostat; forbidden from air_purifier"
+    },
+    {
+      "id": "p2432-dze204-qasjif9e-presence",
+      "mfr": [
+        "_TZE204_qasjif9e",
+        "_tze204_qasjif9e",
+        "_TZE204_QASJIF9E"
+      ],
+      "productId": [
+        "TS0601"
+      ],
+      "canonicalDriver": "presence_sensor_radar",
+      "forbiddenDrivers": [
+        "air_purifier",
+        "wall_switch_5_gang_tuya"
+      ],
+      "protocol": "tuya_dp",
+      "notes": "G4nd41f #654 ZY-M100 radar; forbidden from air_purifier"
+    },
+    {
+      "id": "p2432-dze204-sxm7l9xa-presence",
+      "mfr": [
+        "_TZE204_sxm7l9xa",
+        "_tze204_sxm7l9xa",
+        "_TZE204_SXM7L9XA"
+      ],
+      "productId": [
+        "TS0601"
+      ],
+      "canonicalDriver": "presence_sensor_radar",
+      "forbiddenDrivers": [
+        "air_purifier",
+        "wall_switch_5_gang_tuya"
+      ],
+      "protocol": "tuya_dp",
+      "notes": "G4nd41f ZY-M100-S radar; forbidden from air_purifier"
+    },
+    {
+      "id": "p2432-dze200-3towulqd-presence",
+      "mfr": [
+        "_TZE200_3towulqd",
+        "_tze200_3towulqd",
+        "_TZE200_3TOWULQD"
+      ],
+      "productId": [
+        "TS0601"
+      ],
+      "canonicalDriver": "presence_sensor_radar",
+      "forbiddenDrivers": [
+        "air_purifier",
+        "wall_switch_5_gang_tuya",
+        "climate_sensor"
+      ],
+      "protocol": "tuya_dp",
+      "notes": "Janderek #663 ZG-204ZL motion & lux radar; forbidden from air_purifier"
+    },
+    {
+      "id": "p2432-dze200-3p5ydos3-dimmer",
+      "mfr": [
+        "_TZE200_3p5ydos3",
+        "_tze200_3p5ydos3",
+        "_TZE200_3P5YDOS3"
+      ],
+      "productId": [
+        "TS0601"
+      ],
+      "canonicalDriver": "wall_dimmer_tuya",
+      "forbiddenDrivers": [
+        "air_purifier",
+        "wall_switch_5_gang_tuya"
+      ],
+      "protocol": "tuya_dp",
+      "notes": "Ferenc_Szasz #660 BSEED dimmer; forbidden from air_purifier"
+    },
+    {
+      "id": "p2432-tz3000-mmkbptmx-switch-4gang",
+      "mfr": [
+        "_TZ3000_mmkbptmx",
+        "_tz3000_mmkbptmx",
+        "_TZ3000_MMKBPTMX"
+      ],
+      "productId": [
+        "TS0004"
+      ],
+      "canonicalDriver": "switch_4gang",
+      "forbiddenDrivers": [
+        "switch_1gang",
+        "wall_switch_5_gang_tuya"
+      ],
+      "protocol": "zcl",
+      "notes": "Melectro #646 4-gang switch TS0004"
+    },
+    {
+      "id": "p2432-tz3000-ruxexjfz-switch-2gang",
+      "mfr": [
+        "_TZ3000_ruxexjfz",
+        "_tz3000_ruxexjfz",
+        "_TZ3000_RUXEXJFZ"
+      ],
+      "productId": [
+        "TS0002"
+      ],
+      "canonicalDriver": "switch_2gang",
+      "forbiddenDrivers": [
+        "switch_1gang",
+        "wall_switch_5_gang_tuya"
+      ],
+      "protocol": "zcl",
+      "notes": "Melectro #647 2-gang switch TS0002"
+    },
+    {
+      "id": "p2432-tz3000-3dfewsk1-water-leak",
+      "mfr": [
+        "_TZ3000_3dfewsk1",
+        "_tz3000_3dfewsk1",
+        "_TZ3000_3DFEWSK1"
+      ],
+      "productId": [
+        "TS0207"
+      ],
+      "canonicalDriver": "water_leak_sensor",
+      "forbiddenDrivers": [
+        "climate_sensor",
+        "motion_sensor"
+      ],
+      "protocol": "zcl",
+      "notes": "Roy1 #649 Water flood sensor TS0207"
+    },
+    {
+      "id": "p2432-tz3000-wkai4ga5-button-2",
+      "mfr": [
+        "_TZ3000_wkai4ga5",
+        "_tz3000_wkai4ga5",
+        "_TZ3000_WKAI4GA5"
+      ],
+      "productId": [
+        "TS0042"
+      ],
+      "canonicalDriver": "button_wireless_2",
+      "forbiddenDrivers": [
+        "scene_switch_4",
+        "wall_switch_5_gang_tuya"
+      ],
+      "protocol": "zcl",
+      "notes": "Rob_G #653 2-gang wireless button TS0042",
+      "forbidMode": "couple"
+    },
+    {
+      "id": "p2432-tze204-zenj4lxv-dimmer-2gang",
+      "mfr": [
+        "_TZE204_zenj4lxv",
+        "_tze204_zenj4lxv",
+        "_TZE204_ZENJ4LXV"
+      ],
+      "productId": [
+        "TS0601"
+      ],
+      "canonicalDriver": "dimmer_2_gang_tuya",
+      "forbiddenDrivers": [
+        "switch_2gang",
+        "wall_switch_5_gang_tuya",
+        "air_purifier"
+      ],
+      "protocol": "tuya_dp",
+      "notes": "Anders_Lim #661 Star Ring 2-gang dimmer"
+    },
+    {
+      "id": "p2432-tzb210-rkgngb5o-cct",
+      "mfr": [
+        "_TZB210_rkgngb5o",
+        "_tzb210_rkgngb5o",
+        "_TZB210_RKGNGb5O"
+      ],
+      "productId": [
+        "TS0502B"
+      ],
+      "canonicalDriver": "bulb_tunable_white",
+      "forbiddenDrivers": [
+        "switch_1gang",
+        "wall_switch_5_gang_tuya"
+      ],
+      "protocol": "zcl",
+      "notes": "radiothieves #662 CCT tunable bulb"
+    },
+    {
+      "id": "p2432-tyzb01-6g8b7at8-switch-2gang",
+      "mfr": [
+        "_TYZB01_6g8b7at8",
+        "_tyzb01_6g8b7at8",
+        "_TYZB01_6G8B7AT8"
+      ],
+      "productId": [
+        "TS0012"
+      ],
+      "canonicalDriver": "switch_2gang",
+      "forbiddenDrivers": [
+        "switch_1gang",
+        "wall_switch_5_gang_tuya"
+      ],
+      "protocol": "zcl",
+      "notes": "Johan_Rossouw #665 2-gang switch"
+    },
+    {
+      "id": "p2432-tz3210-0zabbfax-bulb-rgb",
+      "mfr": [
+        "_TZ3210_0zabbfax",
+        "_tz3210_0zabbfax",
+        "_TZ3210_0ZABBFAX"
+      ],
+      "productId": [
+        "TS0503B"
+      ],
+      "canonicalDriver": "light_bulb_rgb",
+      "forbiddenDrivers": [
+        "switch_1gang",
+        "wall_switch_5_gang_tuya"
+      ],
+      "protocol": "zcl",
+      "notes": "RezaRose #666 USB RGB strip"
+    },
+    {
+      "id": "p2432-tze204-ex3rcdha-presence",
+      "mfr": [
+        "_TZE204_ex3rcdha",
+        "_tze204_ex3rcdha",
+        "_TZE204_EX3RCDHA"
+      ],
+      "productId": [
+        "TS0601"
+      ],
+      "canonicalDriver": "presence_sensor_radar",
+      "forbiddenDrivers": [
+        "air_purifier",
+        "wall_switch_5_gang_tuya"
+      ],
+      "protocol": "tuya_dp",
+      "notes": "Topic 1 #1379 / #31079 radar"
+    },
+    {
+      "id": "p2432-tze200-yjjdcqsq-climate",
+      "mfr": [
+        "_TZE200_yjjdcqsq",
+        "_tze200_yjjdcqsq",
+        "_TZE200_YJJDCQSQ"
+      ],
+      "productId": [
+        "TS0601"
+      ],
+      "canonicalDriver": "climate_sensor",
+      "forbiddenDrivers": [
+        "air_purifier",
+        "wall_switch_5_gang_tuya"
+      ],
+      "protocol": "tuya_dp",
+      "notes": "Topic 1 #1379 temp/humidity sensor"
     }
   ]
 }
