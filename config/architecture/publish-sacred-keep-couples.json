@@ -451,6 +451,114 @@
       "productId": "TS0601",
       "driverId": "fan_controller",
       "why": "P2385 GitHub#536 Lerlink fan switch"
+    },
+    {
+      "mfr": "HOBEIAN",
+      "pid": "ZG-101ZL",
+      "driverId": "button_wireless_1",
+      "note": "P2430 HOBEIAN 1-btn"
+    },
+    {
+      "mfr": "HOBEIAN",
+      "pid": "ZG-102Z",
+      "driverId": "contact_sensor",
+      "note": "P2430 HOBEIAN contact"
+    },
+    {
+      "mfr": "HOBEIAN",
+      "pid": "ZG-103Z",
+      "driverId": "vibration_sensor",
+      "note": "P2430 HOBEIAN vibration"
+    },
+    {
+      "mfr": "HOBEIAN",
+      "pid": "ZG-222Z",
+      "driverId": "water_leak_sensor",
+      "note": "P2430 HOBEIAN water leak"
+    },
+    {
+      "mfr": "HOBEIAN",
+      "pid": "ZG-223Z",
+      "driverId": "rain_sensor",
+      "note": "P2430 HOBEIAN rain"
+    },
+    {
+      "mfr": "HOBEIAN",
+      "pid": "ZG-226Z",
+      "driverId": "water_leak_sensor",
+      "note": "P2430 HOBEIAN water alarm"
+    },
+    {
+      "mfr": "HOBEIAN",
+      "pid": "ZG-228Z",
+      "driverId": "vibration_sensor",
+      "note": "P2430 HOBEIAN vibration alarm"
+    },
+    {
+      "mfr": "HOBEIAN",
+      "pid": "ZG-106Z",
+      "driverId": "illuminance_sensor",
+      "note": "P2430 HOBEIAN lux"
+    },
+    {
+      "mfr": "HOBEIAN",
+      "pid": "ZG-204ZK",
+      "driverId": "presence_sensor_radar",
+      "note": "P2430 HOBEIAN radar ZK"
+    },
+    {
+      "mfr": "HOBEIAN",
+      "pid": "ZG-204ZH",
+      "driverId": "presence_sensor_radar",
+      "note": "P2430 HOBEIAN radar ZH"
+    },
+    {
+      "mfr": "HOBEIAN",
+      "pid": "ZG-204ZE",
+      "driverId": "presence_sensor_radar",
+      "note": "P2430 HOBEIAN radar ZE"
+    },
+    {
+      "mfr": "HOBEIAN",
+      "pid": "ZG-204ZV",
+      "driverId": "presence_sensor_radar",
+      "note": "P2430 HOBEIAN radar ZV"
+    },
+    {
+      "mfr": "HOBEIAN",
+      "pid": "ZG-204ZX",
+      "driverId": "presence_sensor_radar",
+      "note": "P2430 HOBEIAN radar ZX"
+    },
+    {
+      "mfr": "HOBEIAN",
+      "pid": "ZG-302ZM",
+      "driverId": "presence_sensor_radar",
+      "note": "P2430 HOBEIAN radar 302ZM"
+    },
+    {
+      "mfr": "HOBEIAN",
+      "pid": "ZG-302ZL",
+      "driverId": "presence_sensor_radar",
+      "note": "P2430 HOBEIAN radar 302ZL"
+    },
+    {
+      "mfr": "HOBEIAN",
+      "pid": "ZG-102ZM",
+      "driverId": "vibration_sensor",
+      "note": "P2430 HOBEIAN vibration 102ZM"
+    },
+    {
+      "mfr": "HOBEIAN",
+      "pid": "ZG-301Z",
+      "driverId": "switch_1gang",
+      "note": "P2430 HOBEIAN 1-gang switch"
+    },
+    {
+      "mfr": "HOBEIAN",
+      "pid": "ZG-301Z-2CH",
+      "driverId": "switch_2gang",
+      "note": "P2430 HOBEIAN 2-gang switch"
     }
   ]
 }

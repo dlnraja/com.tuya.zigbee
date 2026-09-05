@@ -334,6 +334,15 @@ try {
     console.log('Publish: injected .homeychangelog.json from repo (Homey .* ignore bypass).');
   }
 
+  {
+    const repoPackage = path.join(__dirname, '..', 'package.json');
+    const destPackage = path.join(destDir, 'package.json');
+    if (fs.existsSync(repoPackage)) {
+      fs.copyFileSync(repoPackage, destPackage);
+      console.log('Publish: injected package.json from repo.');
+    }
+  }
+
   if (skippedReserved > 0) {
     console.error(`FATAL: ${skippedReserved} reserved-name file(s) were rejected during copy.`);
     console.error('The source tree is contaminated. Run: node scripts/maintenance/kill-stray-nulls.cjs --force');

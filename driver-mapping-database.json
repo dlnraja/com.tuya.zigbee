@@ -1,10 +1,18 @@
 {
   "version": "2026-04-12",
   "mfr_index": {
-    "_TZE284_fhvpaltk": ["valve_dual_irrigation"],
-    "_TZE284_eaet5qt5": ["valve_dual_irrigation"],
-    "_TZ3210_dwytrmda": ["light", "dimmer"],
-    "_TZE200_s8gkrkxk": ["sensor_motion"],
+    "_TZE284_fhvpaltk": [
+      "valve_dual_irrigation"
+    ],
+    "_TZE284_eaet5qt5": [
+      "valve_dual_irrigation"
+    ],
+    "_TZ3210_dwytrmda": [
+      "curtain_motor"
+    ],
+    "_TZE200_s8gkrkxk": [
+      "device_air_purifier_led"
+    ],
     "_TZE200_7BZTMFM1": [
       "air_purifier"
     ],
@@ -10180,9 +10188,6 @@
     "_TZ3210_ZANA8D08": [
       "curtain_motor"
     ],
-    "_TZ3210_dwytrmda": [
-      "curtain_motor"
-    ],
     "_TZ3210_ol1uhvza": [
       "curtain_motor"
     ],
@@ -11009,9 +11014,6 @@
     ],
     "_tze200_s8gkrkxk": [
       "device_air_purifier",
-      "device_air_purifier_led"
-    ],
-    "_TZE200_s8gkrkxk": [
       "device_air_purifier_led"
     ],
     "_TZE200_3TOWULQD": [
@@ -23028,6 +23030,18 @@
     ],
     "_tz3000_rku4cnct": [
       "zigbee_repeater"
+    ],
+    "_TZE284_fodv6bkr": [
+      "curtain_motor"
+    ],
+    "_tze284_fodv6bkr": [
+      "curtain_motor"
+    ],
+    "_TZE284_FODV6BKR": [
+      "curtain_motor"
+    ],
+    "_TZE284_libht6ua": [
+      "curtain_motor"
     ]
   },
   "pid_index": {
@@ -27949,23 +27963,6 @@
       ]
     },
     "air_quality_comprehensive": {
-      "name": "Comprehensive Air Monitor",
-      "class": "sensor",
-      "capabilities": [
-        "measure_co2",
-        "measure_pm25",
-        "measure_pm10",
-        "measure_temperature",
-        "measure_humidity",
-        "measure_voc",
-        "measure_formaldehyde",
-        "alarm_generic",
-        "measure_battery",
-        "measure_radio_stability",
-        "measure_maintenance_score"
-      ]
-    },
-    "air_quality_comprehensive": {
       "name": "Air Quality Comprehensive Hybrid",
       "class": "sensor",
       "capabilities": [
@@ -28073,21 +28070,6 @@
     },
     "bulb_rgb_rgbw": {
       "name": "Bulb Rgb Rgbw Hybrid",
-      "class": "light",
-      "capabilities": [
-        "dim",
-        "light_hue",
-        "light_saturation",
-        "light_temperature",
-        "light_mode",
-        "onoff",
-        "measure_battery",
-        "measure_radio_stability",
-        "measure_maintenance_score"
-      ]
-    },
-    "bulb_tunable_white": {
-      "name": "Bulb Tunable",
       "class": "light",
       "capabilities": [
         "dim",
@@ -28591,6 +28573,10 @@
         "measure_battery",
         "measure_radio_stability",
         "measure_maintenance_score"
+      ],
+      "manufacturers": [
+        "_TZE284_fodv6bkr",
+        "_TZE284_libht6ua"
       ]
     },
     "curtain_motor_shutter": {
@@ -28605,19 +28591,6 @@
         "dim",
         "measure_battery",
         "alarm_generic",
-        "measure_radio_stability",
-        "measure_maintenance_score"
-      ]
-    },
-    "curtain_motor_tilt": {
-      "name": "Curtain Motor with Tilt",
-      "class": "windowcoverings",
-      "capabilities": [
-        "windowcoverings_state",
-        "windowcoverings_set",
-        "windowcoverings_tilt_set",
-        "alarm_generic",
-        "measure_battery",
         "measure_radio_stability",
         "measure_maintenance_score"
       ]
@@ -29058,18 +29031,6 @@
         "dim.channel2",
         "onoff.channel3",
         "dim.channel3",
-        "measure_radio_stability",
-        "measure_maintenance_score"
-      ]
-    },
-    "dimmer_dual_channel": {
-      "name": "2-Channel Dimmer Module",
-      "class": "light",
-      "capabilities": [
-        "onoff",
-        "dim",
-        "onoff.channel2",
-        "dim.channel2",
         "measure_radio_stability",
         "measure_maintenance_score"
       ]
@@ -29695,21 +29656,6 @@
       ]
     },
     "module_mini_switch": {
-      "name": "Mini Switch",
-      "class": "socket",
-      "capabilities": [
-        "measure_battery",
-        "alarm_generic",
-        "measure_power",
-        "measure_voltage",
-        "measure_current",
-        "onoff",
-        "meter_power",
-        "measure_radio_stability",
-        "measure_maintenance_score"
-      ]
-    },
-    "module_mini_switch": {
       "name": "Module Mini Switch Hybrid",
       "class": "socket",
       "capabilities": [
@@ -29801,19 +29747,6 @@
         "button",
         "measure_weight",
         "alarm_generic",
-        "measure_radio_stability",
-        "measure_maintenance_score"
-      ]
-    },
-    "plug_energy_monitor": {
-      "name": "Plug Energy Monitor",
-      "class": "socket",
-      "capabilities": [
-        "measure_power",
-        "meter_power",
-        "measure_voltage",
-        "measure_current",
-        "onoff",
         "measure_radio_stability",
         "measure_maintenance_score"
       ]
@@ -30572,19 +30505,6 @@
       ]
     },
     "smart_knob_rotary": {
-      "name": "Smart Knob / Scene Switch",
-      "class": "sensor",
-      "capabilities": [
-        "button.rotate_left",
-        "button.rotate_right",
-        "button.press",
-        "dim",
-        "measure_battery",
-        "measure_radio_stability",
-        "measure_maintenance_score"
-      ]
-    },
-    "smart_knob_rotary": {
       "name": "Smart Knob Rotary Hybrid",
       "class": "sensor",
       "capabilities": [
@@ -30597,16 +30517,6 @@
         "button.2",
         "button.3",
         "button.4",
-        "measure_radio_stability",
-        "measure_maintenance_score"
-      ]
-    },
-    "smart_knob_switch": {
-      "name": "Smart Knob Switch",
-      "class": "remote",
-      "capabilities": [
-        "dim",
-        "alarm_battery",
         "measure_radio_stability",
         "measure_maintenance_score"
       ]
