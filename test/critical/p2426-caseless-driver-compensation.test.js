@@ -122,4 +122,47 @@ const r4 = fcm._resolveCardActionAndCapability('dimmer_set_dim');
 assert.strictEqual(r4.action, 'set');
 assert.strictEqual(r4.targetCap, 'dim');
 
-console.log('P2426 caseless driver & flow card compensation: PASS');
+// 6. findClusterOnEndpoint (ZclClusterLexicon)
+const { findClusterOnEndpoint } = require(path.join(ROOT, 'lib', 'zigbee', 'ZclClusterLexicon'));
+const testEp = {
+  clusters: {
+    powerConfiguration: { ID: 1, name: 'powerConfiguration' },
+    closuresWindowCovering: { ID: 0x0102, name: 'closuresWindowCovering' },
+    manuSpecificTuya: { ID: 0xEF00, name: 'manuSpecificTuya' },
+  },
+};
+assert.strictEqual(findClusterOnEndpoint(testEp, 1).name, 'powerConfiguration', 'findClusterOnEndpoint(1) should find powerConfiguration');
+assert.strictEqual(findClusterOnEndpoint(testEp, 'genPowerCfg').name, 'powerConfiguration', 'findClusterOnEndpoint("genPowerCfg") should find powerConfiguration');
+assert.strictEqual(findClusterOnEndpoint(testEp, 'POWERCONFIGURATION').name, 'powerConfiguration', 'findClusterOnEndpoint uppercase should find powerConfiguration');
+assert.strictEqual(findClusterOnEndpoint(testEp, 0x0102).name, 'closuresWindowCovering', 'findClusterOnEndpoint(0x0102) should find closuresWindowCovering');
+assert.strictEqual(findClusterOnEndpoint(testEp, 'windowCovering').name, 'closuresWindowCovering', 'findClusterOnEndpoint("windowCovering") should find closuresWindowCovering');
+assert.strictEqual(findClusterOnEndpoint(testEp, 0xEF00).name, 'manuSpecificTuya', 'findClusterOnEndpoint(0xEF00) should find manuSpecificTuya');
+assert.strictEqual(findClusterOnEndpoint(testEp, 'tuyaSpecific').name, 'manuSpecificTuya', 'findClusterOnEndpoint("tuyaSpecific") should find manuSpecificTuya');
+
+// 7. BatteryManagerV4._getPowerCluster
+const BatteryManagerV4 = require(path.join(ROOT, 'lib', 'BatteryManagerV4'));
+const bmDevice = { homey: { setInterval: () => {}, clearInterval: () => {} }, log: () => {} };
+const bm = new BatteryManagerV4(bmDevice);
+const bmEp1 = { clusters: { powerConfiguration: { ID: 1 } } };
+const bmEp2 = { clusters: { genPowerCfg: { ID: 1 } } };
+const bmEp3 = { clusters: { 1: { ID: 1 } } };
+assert.ok(bm._getPowerCluster(bmEp1), 'BatteryManagerV4 must resolve powerConfiguration');
+assert.ok(bm._getPowerCluster(bmEp2), 'BatteryManagerV4 must resolve genPowerCfg');
+assert.ok(bm._getPowerCluster(bmEp3), 'BatteryManagerV4 must resolve numeric cluster 1');
+
+// 8. UniversalPairingManager.detectDeviceType caseless
+(async () => {
+  const UniversalPairingManager = require(path.join(ROOT, 'lib', 'pairing', 'UniversalPairingManager'));
+  const upm = new UniversalPairingManager();
+  const nodeTuya = { endpoints: { 1: { clusters: { manuSpecificTuya: { ID: 0xEF00 } } } } };
+  const nodeSwitch = { endpoints: { 1: { clusters: { genOnOff: { ID: 6 } } } } };
+  const nodeCurtain = { endpoints: { 1: { clusters: { closuresWindowCovering: { ID: 0x0102 } } } } };
+
+  assert.strictEqual(await upm.detectDeviceType(nodeTuya), 'tuya_dp', 'UniversalPairingManager must classify manuSpecificTuya as tuya_dp');
+  assert.strictEqual(await upm.detectDeviceType(nodeCurtain), 'curtain', 'UniversalPairingManager must classify closuresWindowCovering as curtain');
+
+  console.log('P2426 caseless driver & flow card compensation: PASS');
+})().catch(err => {
+  console.error(err);
+  process.exit(1);
+});
