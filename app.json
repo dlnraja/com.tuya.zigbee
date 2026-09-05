@@ -58312,7 +58312,10 @@
         },
         "manufacturerName": [
           "_HYBRID_ILLUMINANCE_SENSOR_NEEDS_DEVICE_ASSIGNMENT",
-          "_hybrid_illuminance_sensor_needs_device_assignment"
+          "_hybrid_illuminance_sensor_needs_device_assignment",
+          "HOBEIAN",
+          "hobeian",
+          "Hobeian"
         ]
       },
       "icon": "/drivers/illuminance_sensor/assets/icon.svg",
@@ -71959,10 +71962,6 @@
           "_TZE284_ar5przmw",
           "_TZE284_chcnj5st",
           "_TZE284_debczeci",
-          "_TZE284_1LVLN0X6",
-          "_tze284_1LVLN0X6",
-          "_TZE284_1lvln0x6",
-          "_tze284_1lvln0x6",
           "_TZE284_ft7qqpx3",
           "_TZE284_gkfb",
           "_TZE284_gw05grph",
@@ -81037,8 +81036,6 @@
       "zigbee": {
         "manufacturerName": [
           "_tz3000_iszegwpd",
-          "HOBEIAN",
-          "hobeian",
           "_TZ3000_ISZEGWPD",
           "_TZ3000_iszegwpd"
         ],
@@ -86015,14 +86012,8 @@
       },
       "subDevices": [],
       "zigbee": {
-        "manufacturerName": [
-          "HOBEIAN",
-          "hobeian"
-        ],
-        "productId": [
-          "ZG-227Z",
-          "ZG-227ZL"
-        ],
+        "manufacturerName": [],
+        "productId": [],
         "learnmode": {
           "image": "/drivers/presence_sensor_radar/assets/learnmode.svg",
           "instruction": {
@@ -105348,10 +105339,7 @@
         "button.1"
       ],
       "zigbee": {
-        "manufacturerName": [
-          "HOBEIAN",
-          "hobeian"
-        ],
+        "manufacturerName": [],
         "productId": [
           "TS0601_sp1"
         ],
@@ -105656,10 +105644,7 @@
         "button.1"
       ],
       "zigbee": {
-        "manufacturerName": [
-          "HOBEIAN",
-          "hobeian"
-        ],
+        "manufacturerName": [],
         "productId": [
           "TS0122"
         ],
@@ -106020,10 +106005,7 @@
         ]
       },
       "zigbee": {
-        "manufacturerName": [
-          "HOBEIAN",
-          "hobeian"
-        ],
+        "manufacturerName": [],
         "productId": [
           "TS0601_tempswitch"
         ],
@@ -114649,10 +114631,7 @@
         }
       },
       "zigbee": {
-        "manufacturerName": [
-          "HOBEIAN",
-          "hobeian"
-        ],
+        "manufacturerName": [],
         "productId": [
           "TS130F"
         ],
@@ -115576,8 +115555,7 @@
           "TS110F",
           "TS1101",
           "TS0052",
-          "TS0011",
-          "TS0601"
+          "TS0011"
         ],
         "endpoints": {
           "1": {

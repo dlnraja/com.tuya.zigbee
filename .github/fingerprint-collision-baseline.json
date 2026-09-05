@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-05T16:31:15.404Z",
+  "generatedAt": "2026-09-05T20:30:33.209Z",
   "description": "Known historical fingerprint collisions. CI fails only for collisions not listed here.",
   "collisions": [
     {
@@ -1277,14 +1277,23 @@
       "key": "hobeian|TS0222",
       "drivers": [
         "climate_sensor",
+        "illuminance_sensor",
         "presence_sensor_radar",
         "soil_sensor"
+      ]
+    },
+    {
+      "key": "hobeian|TS0225",
+      "drivers": [
+        "illuminance_sensor",
+        "presence_sensor_radar"
       ]
     },
     {
       "key": "hobeian|TS0601",
       "drivers": [
         "button_wireless_1",
+        "illuminance_sensor",
         "presence_sensor_radar",
         "rain_sensor",
         "sensor_contact_zigbee",
@@ -1322,13 +1331,6 @@
         "climate_sensor",
         "presence_sensor_radar",
         "soil_sensor"
-      ]
-    },
-    {
-      "key": "hobeian|TS130F",
-      "drivers": [
-        "sensor_contact_zigbee",
-        "wall_curtain_switch"
       ]
     },
     {
@@ -1388,20 +1390,6 @@
       "drivers": [
         "contact_sensor",
         "sensor_contact_zigbee"
-      ]
-    },
-    {
-      "key": "hobeian|ZG-227Z",
-      "drivers": [
-        "climate_sensor",
-        "sensor_contact_presence"
-      ]
-    },
-    {
-      "key": "hobeian|ZG-227ZL",
-      "drivers": [
-        "climate_sensor",
-        "sensor_contact_presence"
       ]
     },
     {
