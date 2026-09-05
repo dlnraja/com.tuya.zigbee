@@ -1,10 +1,10 @@
 {
   "version": "2.0",
-  "lastAudit": "2026-09-01T05:16:34Z",
+  "lastAudit": "2026-09-04T22:41:28Z",
   "auditEngine": "local-fallback",
   "project": {
     "name": "com.dlnraja.tuya.zigbee",
-    "version": "9.0.769",
+    "version": "9.0.815",
     "drivers": 431,
     "fingerprints": 4304,
     "flowCards": 4138,
@@ -127,13 +127,13 @@
   "auditHistory": {
     "last30Days": {
       "commits": 1470,
-      "filesChanged": 3398,
-      "insertions": 2651285,
-      "deletions": 263094,
-      "newUrls": 1908
+      "filesChanged": 4009,
+      "insertions": 5707306,
+      "deletions": 346522,
+      "newUrls": 1924
     },
     "currentAudit": {
-      "date": "2026-09-01T05:16:34Z",
+      "date": "2026-09-04T22:41:28Z",
       "engine": "local-fallback",
       "riskScore": 0,
       "confidence": 0
