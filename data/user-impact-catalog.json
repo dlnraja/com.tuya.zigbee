@@ -1,10 +1,10 @@
 {
   "_meta": {
     "version": "1.0.0",
-    "updated": "2026-09-01",
+    "updated": "2026-09-05",
     "policy": "Never invent mfr+pid from tile names. Diag UUID + driver + forum text only.",
-    "lastSync": "2026-09-01T06:17:25.155Z",
-    "lastInvestigation": "2026-08-31T07:10:18.269Z",
+    "lastSync": "2026-09-05T07:54:36.717Z",
+    "lastInvestigation": "2026-09-05T07:54:36.505Z",
     "p2347": "Gabriel verified-only + A_Tas/Cam/Peter batch",
     "p2388": "Compensate-without-waiting + interview batch curtain/Peter/Cam/A_Tas"
   },
@@ -194,10 +194,12 @@
       "posts": [
         2208,
         2211,
+        2219,
         2222,
         2224,
         2225,
-        2226
+        2226,
+        2227
       ],
       "diags": [
         "4217d5e3-c845-4f0b-a351-5e5a59295cbb",
@@ -221,9 +223,19 @@
             "P2391 mains battery heal + energy clear"
           ],
           "userAction": "Update Test ≥9.0.802 + restart app; re-pair only if still curtain UI"
+        },
+        {
+          "tile": "Forum T140352 #2224",
+          "driver": "presence_sensor_radar",
+          "couple": "_TZE204_CLRDRNYA+TS0601",
+          "symptoms": [],
+          "fixes": [],
+          "userAction": "Update Universal Tuya Test to latest soak build; re-pair only if driver/EP changed",
+          "_autoStub": true
         }
       ],
-      "dualApp": "BOTH"
+      "dualApp": "BOTH",
+      "investigationNote": "Update Universal Tuya Test to latest soak; re-pair if driver changed"
     },
     "A_Tas": {
       "forumTopic": 140352,
@@ -1417,7 +1429,9 @@
         2171,
         2174,
         2176,
-        2210
+        2210,
+        2223,
+        2225
       ],
       "diags": [],
       "devices": [

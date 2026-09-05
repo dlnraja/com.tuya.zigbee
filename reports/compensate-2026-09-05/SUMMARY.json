@@ -1,11 +1,11 @@
 {
   "summary": {
     "patch": "P2419",
-    "generatedAt": "2026-09-05T05:35:45.394Z",
-    "elapsedMs": 24,
+    "generatedAt": "2026-09-05T09:35:09.291Z",
+    "elapsedMs": 43,
     "maxMs": 15000,
     "aborted": false,
-    "missingPidHints": 14,
+    "missingPidHints": 28,
     "hypotheses": 6,
     "needInterview": 4,
     "applied": 0,
@@ -24,7 +24,7 @@
       "confidence": 98,
       "applySafe": true,
       "lockedInCompose": true,
-      "missingPidReports": 2,
+      "missingPidReports": 4,
       "sources": [
         "Z2M Linptech/Moes ES1",
         "forum Gabriel T158757#2",
@@ -44,7 +44,7 @@
       "confidence": 90,
       "applySafe": false,
       "lockedInCompose": true,
-      "missingPidReports": 2,
+      "missingPidReports": 4,
       "sources": [
         "operational-memory soft",
         "compose already has mfr"
@@ -63,7 +63,7 @@
       "confidence": 98,
       "applySafe": true,
       "lockedInCompose": false,
-      "missingPidReports": 1,
+      "missingPidReports": 2,
       "sources": [
         "forum T150690",
         "LOCKED_OK"
@@ -172,6 +172,62 @@
   ],
   "applied": [],
   "missing": [
+    {
+      "mfr": "_TZ3218_T9YNFZ4X",
+      "source": "forum-verify-2026-09-05"
+    },
+    {
+      "mfr": "_TZ3000_KFU8ZAPD",
+      "source": "forum-verify-2026-09-05"
+    },
+    {
+      "mfr": "_TZ3000_XABCKQ1V",
+      "source": "forum-verify-2026-09-05"
+    },
+    {
+      "mfr": "_TZ3000_XABCKQ1V",
+      "source": "forum-verify-2026-09-05"
+    },
+    {
+      "mfr": "_TZE200_NPJ9BUG3",
+      "source": "forum-verify-2026-09-05"
+    },
+    {
+      "mfr": "_TZE204_CLRDRNYA",
+      "source": "forum-verify-2026-09-05"
+    },
+    {
+      "mfr": "_TZE204_OGKDPGY2",
+      "source": "forum-verify-2026-09-05"
+    },
+    {
+      "mfr": "_TZ3218_T9YNFZ4X",
+      "source": "forum-verify-2026-09-05"
+    },
+    {
+      "mfr": "_TZ3000_LWTHNP7J",
+      "source": "forum-verify-2026-09-05"
+    },
+    {
+      "mfr": "_TZ3210_TGVTVDOC",
+      "source": "forum-verify-2026-09-05"
+    },
+    {
+      "mfr": "_TZ3000_QEUVNOHG",
+      "source": "forum-verify-2026-09-05"
+    },
+    {
+      "mfr": "_TZ3000_AMDYMR7L",
+      "source": "forum-verify-2026-09-05"
+    },
+    {
+      "mfr": "_TZ3000_NKCOBIES",
+      "source": "forum-verify-2026-09-05"
+    },
+    {
+      "mfr": "_TZ3000_QEUVNOHG",
+      "source": "forum-verify-2026-09-05"
+    },
     {
       "mfr": "_TZ3218_T9YNFZ4X",
       "source": "forum-verify-2026-09-03"

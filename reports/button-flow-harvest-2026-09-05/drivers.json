@@ -543,18 +543,18 @@
     "gangCount": 3,
     "runtimePath": "PhysicalButtonMixin+ZCL OnOff/multistate",
     "sacredCouples": [
-      "_TZ3000_BCZR4E10+TS0043",
-      "_TZ3000_BCZR4E10+TS0013",
-      "_TZ3000_BCZR4E10+TS0601",
-      "_TZ3000_BCZR4E10+TS0215A",
-      "_TZ3000_I5J6K7L8+TS0043",
-      "_TZ3000_I5J6K7L8+TS0013",
-      "_TZ3000_I5J6K7L8+TS0601",
-      "_TZ3000_I5J6K7L8+TS0215A",
-      "_TZ3000_MJWG6A52+TS0043",
-      "_TZ3000_MJWG6A52+TS0013",
-      "_TZ3000_MJWG6A52+TS0601",
-      "_TZ3000_MJWG6A52+TS0215A"
+      "_TZ3000_1KMURVLX+TS0043",
+      "_TZ3000_1KMURVLX+TS0013",
+      "_TZ3000_1KMURVLX+TS0601",
+      "_TZ3000_1KMURVLX+TS0215A",
+      "_TZ3000_1kmurvlx+TS0043",
+      "_TZ3000_1kmurvlx+TS0013",
+      "_TZ3000_1kmurvlx+TS0601",
+      "_TZ3000_1kmurvlx+TS0215A",
+      "_TZ3000_A7OUGGVS+TS0043",
+      "_TZ3000_A7OUGGVS+TS0013",
+      "_TZ3000_A7OUGGVS+TS0601",
+      "_TZ3000_A7OUGGVS+TS0215A"
     ],
     "buttonCapabilities": [
       "button.1",
@@ -632,7 +632,7 @@
       "TS0601",
       "TS0215A"
     ],
-    "mfrCount": 48
+    "mfrCount": 50
   },
   {
     "driverId": "button_wireless_4",
@@ -789,9 +789,9 @@
     "runtimePath": "PhysicalButtonMixin+ZCL OnOff/multistate",
     "sacredCouples": [
       "_TZ3000_YJ6K7VFO+TS0041",
-      "_tz3000_yj6k7vfo+TS0041",
       "_TZ3000_yj6k7vfo+TS0041",
-      "_tz3000_YJ6K7VFO+TS0041"
+      "_tz3000_YJ6K7VFO+TS0041",
+      "_tz3000_yj6k7vfo+TS0041"
     ],
     "buttonCapabilities": [
       "button.1",

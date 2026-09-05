@@ -1,6 +1,6 @@
 # Enrichment profiles index
 
-Generated: 2026-09-01T06:17:25 · manifest `config/enrichment/manifest.json`
+Generated: 2026-09-05T07:54:37 · manifest `config/enrichment/manifest.json`
 
 ## Users
 
@@ -8,9 +8,10 @@ Generated: 2026-09-01T06:17:25 · manifest `config/enrichment/manifest.json`
 |---|---:|---:|---|---|
 | SunBeech | 25 | 5 | stub | [profile](users/SunBeech.md) |
 | SergeP | 24 | 2 | stub | [profile](users/SergeP.md) |
-| dlnraja | 11 | 1 | stub | [profile](users/dlnraja.md) |
+| dlnraja | 13 | 1 | stub | [profile](users/dlnraja.md) |
 | Gabriel_Pedrosa_Mach | 10 | 19 | yes | [profile](users/Gabriel_Pedrosa_Mach.md) |
 | Peter_van_Werkhoven | 9 | 5 | yes | [profile](users/Peter_van_Werkhoven.md) |
+| VicHY | 8 | 2 | yes | [profile](users/VicHY.md) |
 | smarthomesven | 8 | 0 | stub | [profile](users/smarthomesven.md) |
 | Zemismart_Official | 6 | 2 | stub | [profile](users/Zemismart_Official.md) |
 | Peter_Kawa | 6 | 0 | stub | [profile](users/Peter_Kawa.md) |
@@ -27,7 +28,6 @@ Generated: 2026-09-01T06:17:25 · manifest `config/enrichment/manifest.json`
 | Florian_Truck | 3 | 0 | stub | [profile](users/Florian_Truck.md) |
 | Arie_J_Godschalk | 3 | 0 | stub | [profile](users/Arie_J_Godschalk.md) |
 | johan_bendz | 3 | 12 | stub | [profile](users/johan_bendz.md) |
-| VicHY | 2 | 1 | yes | [profile](users/VicHY.md) |
 | A_Tas | 2 | 1 | yes | [profile](users/A_Tas.md) |
 | Pascal_Nohl | 2 | 0 | stub | [profile](users/Pascal_Nohl.md) |
 | Dijker | 2 | 0 | stub | [profile](users/Dijker.md) |
