@@ -33,7 +33,7 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 
 | Metric | Value |
 |--------|-------|
-| **App Version** | v9.0.829 |
+| **App Version** | v9.0.830 |
 | **Drivers** | 431 (381 Zigbee + 50 WiFi) |
 | **Unique Fingerprints** | 4,396 |
 | **Pairing Variants** | 16,201 (4 case combos per fingerprint) |
@@ -102,6 +102,7 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 
 | Version | Changes |
 |---------|---------|
+| **v9.0.830** | Improved manufacturer fingerprint database for HOBEIAN devices (presence, vibration, soil) and fixed wrong curtain/switch matches. |
 | **v9.0.829** | Improved manufacturer fingerprint database for HOBEIAN devices (presence, vibration, soil) and fixed wrong curtain/switch matches. |
 | **v9.0.828** | Improved manufacturer fingerprint database for HOBEIAN devices (presence, vibration, soil) and fixed wrong curtain/switch matches. |
 | **v9.0.827** | Improved manufacturer fingerprint database for HOBEIAN devices (presence, vibration, soil) and fixed wrong curtain/switch matches. |
@@ -113,7 +114,6 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 | **v9.0.821** | HOBEIAN sensors: corrected mmWave DP maps (ZG-204ZM/ZH) and locked motion-sensing switches (ZG-302ZM/ZL); fixed wrong climate/vibration p… |
 | **v9.0.820** | Fixed mains mmWave radar phantom battery warning after app updates; radar settings DPs no longer misread as humidity. |
 | **v9.0.819** | Fixed mains mmWave radar phantom battery warning after app updates; radar settings DPs no longer misread as humidity. |
-| **v9.0.818** | Fixed mains mmWave radar phantom battery warning after app updates; radar settings DPs no longer misread as humidity. |
 
 <!-- CHANGELOG_END -->
 
