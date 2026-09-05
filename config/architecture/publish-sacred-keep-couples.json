@@ -385,6 +385,54 @@
       "pid": "TS0601",
       "driverId": "curtain_motor",
       "note": "P2348 Z2M ZTS-EUR-C sibling from #533"
+    },
+    {
+      "mfr": "_TZ3000_v5498kdm",
+      "pid": "TS0001",
+      "driverId": "switch_1gang",
+      "note": "P2320/P2366 Antek T99614 NOUS B1Z — forbid unknown at pairing"
+    },
+    {
+      "mfr": "_TZ3000_blhvsaqf",
+      "pid": "TS0001",
+      "driverId": "switch_1gang",
+      "note": "Issue #540 1-gang switch module — forbid unknown at pairing"
+    },
+    {
+      "mfr": "_TZE284_fhvpaltk",
+      "pid": "TS0601",
+      "driverId": "valve_dual_irrigation",
+      "note": "P2366 Joep #2218 Insoma two-way irrigation valve"
+    },
+    {
+      "mfr": "_TZ3000_lvhy15ix",
+      "pid": "TS0003",
+      "driverId": "switch_3gang",
+      "note": "P2366 melectro T89271 #645 — not wall_dimmer catch-all"
+    },
+    {
+      "mfr": "_TZ3000_decxrtwa",
+      "pid": "TS0203",
+      "driverId": "contact_sensor",
+      "note": "P2366 Vincent T89271 #657 contact — not wall_dimmer"
+    },
+    {
+      "mfr": "_TZE204_ex3rcdha",
+      "pid": "TS0601",
+      "driverId": "presence_sensor_radar",
+      "note": "P2366 Riccardo 4-gang mfr on radar class — keep presence not dimmer"
+    },
+    {
+      "mfr": "_TZE200_r32ctezx",
+      "productId": "TS0601",
+      "driverId": "fan_controller",
+      "why": "P2385 GitHub#536 Lerlink fan switch"
+    },
+    {
+      "mfr": "_TZE204_r32ctezx",
+      "productId": "TS0601",
+      "driverId": "fan_controller",
+      "why": "P2385 GitHub#536 Lerlink fan switch"
     }
   ]
 }

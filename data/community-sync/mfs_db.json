@@ -1195,5 +1195,18 @@
     ],
     "lastEnrichment": "p2423-hobeian-mfs",
     "updatedAt": "2026-09-05"
+  },
+  "_TZ3000_blhvsaqf": {
+    "driverId": "switch_1gang",
+    "source": "github:issue#540",
+    "modelIds": [
+      "TS0001",
+      "TS0203",
+      "TS0601",
+      "TS0601_generic",
+      "TS0603"
+    ],
+    "pid": "TS0001",
+    "modelIdsCount": 5
   }
 }
