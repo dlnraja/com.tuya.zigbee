@@ -3,7 +3,7 @@
     "en": "WiFi Device (Tuya Local)",
     "fr": "Appareil WiFi (Tuya Local)",
     "nl": "WiFi Apparaat (Tuya Lokaal)",
-    "de": "WiFi GerÃ¤t (Tuya Lokal)"
+    "de": "WiFi Gerät (Tuya Lokal)"
   },
   "class": "other",
   "capabilities": [
@@ -143,7 +143,7 @@
       "id": "ota_check",
       "title": {
         "en": "Check Zigbee OTA Update",
-        "fr": "VÃ©rifier MÃ J OTA",
+        "fr": "Vérifier Mà J OTA",
         "nl": "Controleer op OTA-updates"
       }
     },
@@ -151,16 +151,16 @@
       "id": "tuya_revive",
       "title": {
         "en": "Tuya Revive (device recovery)",
-        "fr": "Tuya Revive (rÃ©cupÃ©ration appareil)",
+        "fr": "Tuya Revive (récupération appareil)",
         "nl": "Tuya Revive (apparaatherstel)",
-        "de": "Tuya Revive (GerÃ¤tewiederherstellung)"
+        "de": "Tuya Revive (Gerätewiederherstellung)"
       }
     },
     {
       "id": "generate_issue_report",
       "title": {
         "en": "Generate support report (GitHub issue)",
-        "fr": "GÃ©nÃ©rer rapport de support (issue GitHub)",
+        "fr": "Générer rapport de support (issue GitHub)",
         "nl": "Supportrapport genereren (GitHub issue)",
         "de": "Supportbericht erstellen (GitHub Issue)"
       }

@@ -225,6 +225,10 @@
     "p2423_hobeian_mfs_db_enrich": {
       "tag": "BOTH",
       "note": "mfs_db lock HOBEIAN TZE couples + byPid multiCouple; strip curtain/switch steals; sync skips multiCouple prune"
+    },
+    "p2424_moes_settings_loop_fix": {
+      "tag": "BOTH",
+      "note": "Moes ZTS #533 salvagr: break setSettings -> onSettings -> _sendTuyaDP write loop; skip boot calibration blast; pace DP writes"
     }
   },
   "ci": {
