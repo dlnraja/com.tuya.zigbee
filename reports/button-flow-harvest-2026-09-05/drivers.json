@@ -373,7 +373,7 @@
       "button.1",
       "button.2"
     ],
-    "triggerCount": 16,
+    "triggerCount": 18,
     "conditionCount": 0,
     "actionCount": 0,
     "triggerIds": [
@@ -392,7 +392,9 @@
       "button_wireless_2_button_2gang_button_1_release",
       "button_wireless_2_button_2gang_button_2_release",
       "button_wireless_2_battery_low",
-      "button_wireless_2_button_2gang_button_scene_recall"
+      "button_wireless_2_button_2gang_button_scene_recall",
+      "button_wireless_2_physical_on",
+      "button_wireless_2_physical_off"
     ],
     "missingInAppJson": [
       "button_wireless_2_button_2gang_button_pressed",
@@ -410,7 +412,9 @@
       "button_wireless_2_button_2gang_button_1_release",
       "button_wireless_2_button_2gang_button_2_release",
       "button_wireless_2_battery_low",
-      "button_wireless_2_button_2gang_button_scene_recall"
+      "button_wireless_2_button_2gang_button_scene_recall",
+      "button_wireless_2_physical_on",
+      "button_wireless_2_physical_off"
     ],
     "heuristicResolvable": true,
     "heuristicGaps": [],
@@ -419,7 +423,7 @@
       {
         "type": "app_json_drift",
         "severity": "high",
-        "count": 16,
+        "count": 18,
         "sample": [
           "button_wireless_2_button_2gang_button_pressed",
           "button_wireless_2_button_2gang_button_double_press",

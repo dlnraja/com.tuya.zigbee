@@ -11,8 +11,28 @@
     "fr": "Déplace un volet/store vers une position précise (0% = fermé, 100% = ouvert)"
   },
   "args": [
-    { "type": "device", "name": "cover", "title": { "en": "Cover", "fr": "Volet" } },
-    { "type": "number", "name": "position", "title": { "en": "Position (%)", "fr": "Position (%)" }, "min": 0, "max": 100, "placeholder": { "en": "50" } }
+    {
+      "type": "device",
+      "name": "cover",
+      "title": {
+        "en": "Cover",
+        "fr": "Volet"
+      },
+      "filter": "capabilities=windowcoverings_set|capabilities=windowcoverings_state"
+    },
+    {
+      "type": "number",
+      "name": "position",
+      "title": {
+        "en": "Position (%)",
+        "fr": "Position (%)"
+      },
+      "min": 0,
+      "max": 100,
+      "placeholder": {
+        "en": "50"
+      }
+    }
   ],
   "titleFormatted": {
     "en": "Move [[cover]] to [[position]]%",

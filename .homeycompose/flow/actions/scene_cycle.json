@@ -2,7 +2,7 @@
   "id": "scene_cycle",
   "title": {
     "en": "Cycle to next scene slot",
-    "fr": "Scène suivante (slot)",
+    "fr": "Scène suivante slot",
     "nl": "Volgende scène-slot",
     "de": "Nächsten Szenen-Slot"
   },
@@ -11,8 +11,28 @@
     "fr": "Applique le slot de scène suivant (1→2→3→1…)"
   },
   "args": [
-    { "type": "device", "name": "light", "title": { "en": "Light", "fr": "Lumière" } },
-    { "type": "number", "name": "slots", "title": { "en": "Number of slots (1-5)", "fr": "Nombre de slots (1-5)" }, "min": 1, "max": 5, "placeholder": { "en": "3" } }
+    {
+      "type": "device",
+      "name": "light",
+      "title": {
+        "en": "Light",
+        "fr": "Lumière"
+      },
+      "filter": "capabilities=dim|capabilities=light_hue|capabilities=onoff"
+    },
+    {
+      "type": "number",
+      "name": "slots",
+      "title": {
+        "en": "Number of slots (1-5)",
+        "fr": "Nombre de slots (1-5)"
+      },
+      "min": 1,
+      "max": 5,
+      "placeholder": {
+        "en": "3"
+      }
+    }
   ],
   "titleFormatted": {
     "en": "Cycle [[light]] to next scene ([[slots]] slots)",

@@ -1,10 +1,10 @@
 {
   "id": "device_pulse",
   "title": {
-    "en": "Pulse device (inching)",
-    "fr": "Impulsion sur l'appareil (inching)",
-    "nl": "Apparaat pulseren (inching)",
-    "de": "Gerät pulsen (Inching)"
+    "en": "Pulse device inching",
+    "fr": "Impulsion sur l'appareil inching",
+    "nl": "Apparaat pulseren inching",
+    "de": "Gerät pulsen Inching"
   },
   "hint": {
     "en": "Switches a device on (or off) for the given duration, then restores its previous state — like Tuya Smart Life inching mode for garage doors and momentary buttons",

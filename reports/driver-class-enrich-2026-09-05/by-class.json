@@ -1,0 +1,6501 @@
+{
+  "button": [
+    {
+      "driverId": "blaster_remote",
+      "homeyClass": "other",
+      "mfrCount": 2,
+      "pidCount": 2,
+      "capCount": 5,
+      "settingCount": 0,
+      "flowTriggers": 2,
+      "gaps": [],
+      "productIds": [
+        "TS0601",
+        "TS1201"
+      ]
+    },
+    {
+      "driverId": "button_emergency_sos",
+      "homeyClass": "button",
+      "mfrCount": 108,
+      "pidCount": 5,
+      "capCount": 3,
+      "settingCount": 13,
+      "flowTriggers": 6,
+      "gaps": [],
+      "productIds": [
+        "ZBPB10BK",
+        "TS0218",
+        "TS0601",
+        "TS0215",
+        "TS0215A"
+      ]
+    },
+    {
+      "driverId": "button_wireless",
+      "homeyClass": "button",
+      "mfrCount": 14,
+      "pidCount": 11,
+      "capCount": 2,
+      "settingCount": 7,
+      "flowTriggers": 5,
+      "gaps": [],
+      "productIds": [
+        "TS0040",
+        "SNZB-01",
+        "SNZB-01P",
+        "SNZB-01M",
+        "WB01",
+        "WB-01"
+      ]
+    },
+    {
+      "driverId": "button_wireless_1",
+      "homeyClass": "button",
+      "mfrCount": 92,
+      "pidCount": 31,
+      "capCount": 2,
+      "settingCount": 9,
+      "flowTriggers": 11,
+      "gaps": [],
+      "productIds": [
+        "3450-L",
+        "E1524/E1810",
+        "E1743",
+        "E1744",
+        "E1812",
+        "E2001/E2002"
+      ]
+    },
+    {
+      "driverId": "button_wireless_2",
+      "homeyClass": "button",
+      "mfrCount": 562,
+      "pidCount": 104,
+      "capCount": 3,
+      "settingCount": 10,
+      "flowTriggers": 18,
+      "gaps": [],
+      "productIds": [
+        "01MINIZB",
+        "A11Z",
+        "A7Z",
+        "BASICZBR3",
+        "CK-BL702-SWP-01(7020)",
+        "E11-G13"
+      ]
+    },
+    {
+      "driverId": "button_wireless_3",
+      "homeyClass": "button",
+      "mfrCount": 50,
+      "pidCount": 4,
+      "capCount": 4,
+      "settingCount": 13,
+      "flowTriggers": 21,
+      "gaps": [],
+      "productIds": [
+        "TS0043",
+        "TS0013",
+        "TS0601",
+        "TS0215A"
+      ]
+    },
+    {
+      "driverId": "button_wireless_4",
+      "homeyClass": "button",
+      "mfrCount": 126,
+      "pidCount": 47,
+      "capCount": 5,
+      "settingCount": 13,
+      "flowTriggers": 28,
+      "gaps": [],
+      "productIds": [
+        "01MINIZB",
+        "BASICZBR3",
+        "Excellux",
+        "S26R2ZB",
+        "S31ZB",
+        "SNZB-01M"
+      ]
+    },
+    {
+      "driverId": "button_wireless_4_ts0041",
+      "homeyClass": "button",
+      "mfrCount": 4,
+      "pidCount": 1,
+      "capCount": 5,
+      "settingCount": 12,
+      "flowTriggers": 25,
+      "gaps": [],
+      "productIds": [
+        "TS0041"
+      ]
+    },
+    {
+      "driverId": "button_wireless_6",
+      "homeyClass": "button",
+      "mfrCount": 8,
+      "pidCount": 2,
+      "capCount": 7,
+      "settingCount": 10,
+      "flowTriggers": 35,
+      "gaps": [],
+      "productIds": [
+        "TS0046",
+        "TS0601"
+      ]
+    },
+    {
+      "driverId": "button_wireless_8",
+      "homeyClass": "button",
+      "mfrCount": 4,
+      "pidCount": 1,
+      "capCount": 9,
+      "settingCount": 10,
+      "flowTriggers": 45,
+      "gaps": [],
+      "productIds": [
+        "TS0048"
+      ]
+    },
+    {
+      "driverId": "button_wireless_fingerbot",
+      "homeyClass": "socket",
+      "mfrCount": 2,
+      "pidCount": 1,
+      "capCount": 10,
+      "settingCount": 15,
+      "flowTriggers": 16,
+      "gaps": [
+        "missing_power_scale_setting"
+      ],
+      "productIds": [
+        "TS0601"
+      ]
+    },
+    {
+      "driverId": "button_wireless_plug",
+      "homeyClass": "socket",
+      "mfrCount": 80,
+      "pidCount": 37,
+      "capCount": 7,
+      "settingCount": 12,
+      "flowTriggers": 10,
+      "gaps": [],
+      "productIds": [
+        "CK-TLSR8656-SS5-01(7014)",
+        "Excellux",
+        "PJ-1203A",
+        "RH3052",
+        "SM0201",
+        "TH01"
+      ]
+    },
+    {
+      "driverId": "button_wireless_scene",
+      "homeyClass": "button",
+      "mfrCount": 8,
+      "pidCount": 7,
+      "capCount": 3,
+      "settingCount": 9,
+      "flowTriggers": 15,
+      "gaps": [],
+      "productIds": [
+        "TS0601",
+        "TS0041",
+        "TS0042",
+        "TS0043",
+        "TS0044",
+        "TS0215A"
+      ]
+    },
+    {
+      "driverId": "button_wireless_smart",
+      "homeyClass": "button",
+      "mfrCount": 4,
+      "pidCount": 4,
+      "capCount": 2,
+      "settingCount": 9,
+      "flowTriggers": 29,
+      "gaps": [],
+      "productIds": [
+        "TS0041",
+        "TS0042",
+        "TS0601",
+        "TS0215A"
+      ]
+    },
+    {
+      "driverId": "button_wireless_switch",
+      "homeyClass": "socket",
+      "mfrCount": 2,
+      "pidCount": 35,
+      "capCount": 11,
+      "settingCount": 11,
+      "flowTriggers": 20,
+      "gaps": [
+        "missing_power_scale_setting"
+      ],
+      "productIds": [
+        "01MINIZB",
+        "BASICZBR3",
+        "S26R2ZB",
+        "S31ZB",
+        "TS0001",
+        "TS0001_power"
+      ]
+    },
+    {
+      "driverId": "button_wireless_usb",
+      "homeyClass": "socket",
+      "mfrCount": 2,
+      "pidCount": 2,
+      "capCount": 8,
+      "settingCount": 4,
+      "flowTriggers": 8,
+      "gaps": [
+        "missing_power_scale_setting"
+      ],
+      "productIds": [
+        "TS0601",
+        "TS011F"
+      ]
+    },
+    {
+      "driverId": "button_wireless_valve",
+      "homeyClass": "socket",
+      "mfrCount": 2,
+      "pidCount": 1,
+      "capCount": 5,
+      "settingCount": 9,
+      "flowTriggers": 15,
+      "gaps": [],
+      "productIds": [
+        "TS0601"
+      ]
+    },
+    {
+      "driverId": "button_wireless_wall",
+      "homeyClass": "button",
+      "mfrCount": 4,
+      "pidCount": 2,
+      "capCount": 4,
+      "settingCount": 9,
+      "flowTriggers": 15,
+      "gaps": [],
+      "productIds": [
+        "TS0041",
+        "TS0042"
+      ]
+    },
+    {
+      "driverId": "fingerbot",
+      "homeyClass": "button",
+      "mfrCount": 28,
+      "pidCount": 6,
+      "capCount": 5,
+      "settingCount": 6,
+      "flowTriggers": 4,
+      "gaps": [],
+      "productIds": [
+        "TS0001",
+        "TS0001_fingerbot",
+        "TS0003",
+        "TS011F",
+        "TS0011",
+        "TS000F"
+      ]
+    },
+    {
+      "driverId": "handheld_remote_4_buttons",
+      "homeyClass": "remote",
+      "mfrCount": 40,
+      "pidCount": 8,
+      "capCount": 3,
+      "settingCount": 1,
+      "flowTriggers": 20,
+      "gaps": [],
+      "productIds": [
+        "SNZB-01M",
+        "TS0014",
+        "TS0043",
+        "TS0044",
+        "TS004F",
+        "TS0215A"
+      ]
+    },
+    {
+      "driverId": "ir_remote",
+      "homeyClass": "other",
+      "mfrCount": 8,
+      "pidCount": 1,
+      "capCount": 4,
+      "settingCount": 3,
+      "flowTriggers": 0,
+      "gaps": [],
+      "productIds": [
+        "TS0601"
+      ]
+    },
+    {
+      "driverId": "remote_button_emergency_sos",
+      "homeyClass": "remote",
+      "mfrCount": 4,
+      "pidCount": 8,
+      "capCount": 6,
+      "settingCount": 1,
+      "flowTriggers": 20,
+      "gaps": [],
+      "productIds": [
+        "TS0040",
+        "SNZB-01",
+        "SNZB-01P",
+        "SNZB-01M",
+        "WB01",
+        "WB-01"
+      ]
+    },
+    {
+      "driverId": "remote_button_wireless",
+      "homeyClass": "button",
+      "mfrCount": 2,
+      "pidCount": 7,
+      "capCount": 4,
+      "settingCount": 12,
+      "flowTriggers": 20,
+      "gaps": [],
+      "productIds": [
+        "TS0043",
+        "TS011F",
+        "TS0121",
+        "TS0601",
+        "TS0215A",
+        "TS0046"
+      ]
+    },
+    {
+      "driverId": "remote_button_wireless_fingerbot",
+      "homeyClass": "socket",
+      "mfrCount": 2,
+      "pidCount": 1,
+      "capCount": 10,
+      "settingCount": 15,
+      "flowTriggers": 17,
+      "gaps": [
+        "missing_power_scale_setting"
+      ],
+      "productIds": [
+        "TS0601"
+      ]
+    },
+    {
+      "driverId": "remote_button_wireless_handheld",
+      "homeyClass": "button",
+      "mfrCount": 3,
+      "pidCount": 1,
+      "capCount": 5,
+      "settingCount": 12,
+      "flowTriggers": 25,
+      "gaps": [],
+      "productIds": [
+        "DISABLED_REMOTE_BUTTON_WIRELESS_HANDHELD"
+      ]
+    },
+    {
+      "driverId": "remote_button_wireless_plug",
+      "homeyClass": "socket",
+      "mfrCount": 2,
+      "pidCount": 2,
+      "capCount": 7,
+      "settingCount": 12,
+      "flowTriggers": 10,
+      "gaps": [],
+      "productIds": [
+        "TS011F",
+        "TS0121"
+      ]
+    },
+    {
+      "driverId": "remote_button_wireless_scene",
+      "homeyClass": "button",
+      "mfrCount": 2,
+      "pidCount": 2,
+      "capCount": 3,
+      "settingCount": 9,
+      "flowTriggers": 15,
+      "gaps": [],
+      "productIds": [
+        "TS0601",
+        "TS0215A"
+      ]
+    },
+    {
+      "driverId": "remote_button_wireless_smart",
+      "homeyClass": "button",
+      "mfrCount": 4,
+      "pidCount": 2,
+      "capCount": 2,
+      "settingCount": 9,
+      "flowTriggers": 10,
+      "gaps": [],
+      "productIds": [
+        "TS0601",
+        "TS0215A"
+      ]
+    },
+    {
+      "driverId": "remote_button_wireless_usb",
+      "homeyClass": "socket",
+      "mfrCount": 2,
+      "pidCount": 2,
+      "capCount": 8,
+      "settingCount": 3,
+      "flowTriggers": 9,
+      "gaps": [
+        "missing_power_scale_setting"
+      ],
+      "productIds": [
+        "TS0601",
+        "TS011F"
+      ]
+    },
+    {
+      "driverId": "remote_button_wireless_valve",
+      "homeyClass": "socket",
+      "mfrCount": 2,
+      "pidCount": 1,
+      "capCount": 5,
+      "settingCount": 9,
+      "flowTriggers": 15,
+      "gaps": [],
+      "productIds": [
+        "TS0601"
+      ]
+    },
+    {
+      "driverId": "remote_button_wireless_wall",
+      "homeyClass": "button",
+      "mfrCount": 16,
+      "pidCount": 7,
+      "capCount": 2,
+      "settingCount": 9,
+      "flowTriggers": 10,
+      "gaps": [],
+      "productIds": [
+        "TS0041",
+        "TS0042",
+        "TS0043",
+        "TS0044",
+        "TS0046",
+        "TS004F"
+      ]
+    },
+    {
+      "driverId": "remote_dimmer",
+      "homeyClass": "remote",
+      "mfrCount": 4,
+      "pidCount": 1,
+      "capCount": 2,
+      "settingCount": 0,
+      "flowTriggers": 10,
+      "gaps": [],
+      "productIds": [
+        "TS1001"
+      ]
+    },
+    {
+      "driverId": "scene_switch_1",
+      "homeyClass": "button",
+      "mfrCount": 12,
+      "pidCount": 4,
+      "capCount": 2,
+      "settingCount": 1,
+      "flowTriggers": 10,
+      "gaps": [],
+      "productIds": [
+        "TS0601_scene1",
+        "TS0601",
+        "TS004F",
+        "TS0215A"
+      ]
+    },
+    {
+      "driverId": "scene_switch_2",
+      "homeyClass": "button",
+      "mfrCount": 4,
+      "pidCount": 5,
+      "capCount": 3,
+      "settingCount": 1,
+      "flowTriggers": 14,
+      "gaps": [],
+      "productIds": [
+        "TS0601_scene2",
+        "TS0726",
+        "TS0042",
+        "TS0601",
+        "TS0215A"
+      ]
+    },
+    {
+      "driverId": "scene_switch_3",
+      "homeyClass": "button",
+      "mfrCount": 8,
+      "pidCount": 7,
+      "capCount": 4,
+      "settingCount": 1,
+      "flowTriggers": 19,
+      "gaps": [],
+      "productIds": [
+        "TS0003",
+        "TS0013",
+        "TS0043",
+        "TS0215A",
+        "TS0601",
+        "TS0601_scene3"
+      ]
+    },
+    {
+      "driverId": "scene_switch_4",
+      "homeyClass": "button",
+      "mfrCount": 35,
+      "pidCount": 2,
+      "capCount": 5,
+      "settingCount": 2,
+      "flowTriggers": 47,
+      "gaps": [],
+      "productIds": [
+        "TS0044",
+        "TS1002"
+      ]
+    },
+    {
+      "driverId": "scene_switch_6",
+      "homeyClass": "button",
+      "mfrCount": 4,
+      "pidCount": 1,
+      "capCount": 7,
+      "settingCount": 1,
+      "flowTriggers": 34,
+      "gaps": [],
+      "productIds": [
+        "TS0601_scene6"
+      ]
+    },
+    {
+      "driverId": "scene_switch_6ch",
+      "homeyClass": "remote",
+      "mfrCount": 2,
+      "pidCount": 1,
+      "capCount": 7,
+      "settingCount": 1,
+      "flowTriggers": 40,
+      "gaps": [],
+      "productIds": [
+        "TS0601"
+      ]
+    },
+    {
+      "driverId": "scene_switch_wall",
+      "homeyClass": "button",
+      "mfrCount": 48,
+      "pidCount": 2,
+      "capCount": 3,
+      "settingCount": 1,
+      "flowTriggers": 10,
+      "gaps": [],
+      "productIds": [
+        "TS0042",
+        "TS0043"
+      ]
+    },
+    {
+      "driverId": "smart_button_switch",
+      "homeyClass": "remote",
+      "mfrCount": 24,
+      "pidCount": 10,
+      "capCount": 2,
+      "settingCount": 1,
+      "flowTriggers": 7,
+      "gaps": [],
+      "productIds": [
+        "TS0040",
+        "SNZB-01",
+        "SNZB-01P",
+        "SNZB-01M",
+        "WB01",
+        "WB-01"
+      ]
+    },
+    {
+      "driverId": "smart_knob",
+      "homeyClass": "button",
+      "mfrCount": 23,
+      "pidCount": 2,
+      "capCount": 4,
+      "settingCount": 0,
+      "flowTriggers": 11,
+      "gaps": [],
+      "productIds": [
+        "TS004F",
+        "ERS-10TZBVK-AA"
+      ]
+    },
+    {
+      "driverId": "smart_knob_rotary",
+      "homeyClass": "button",
+      "mfrCount": 24,
+      "pidCount": 5,
+      "capCount": 6,
+      "settingCount": 1,
+      "flowTriggers": 11,
+      "gaps": [],
+      "productIds": [
+        "TS004F",
+        "ERS-10TZBVK-AA",
+        "ZG-101ZD",
+        "TS0044",
+        "TS0601"
+      ]
+    },
+    {
+      "driverId": "smart_knob_switch",
+      "homeyClass": "remote",
+      "mfrCount": 4,
+      "pidCount": 4,
+      "capCount": 3,
+      "settingCount": 1,
+      "flowTriggers": 6,
+      "gaps": [],
+      "productIds": [
+        "TS004F",
+        "ERS-10TZBVK-AA",
+        "TS0601",
+        "TS0215A"
+      ]
+    },
+    {
+      "driverId": "smart_remote_1_button",
+      "homeyClass": "remote",
+      "mfrCount": 6,
+      "pidCount": 1,
+      "capCount": 2,
+      "settingCount": 1,
+      "flowTriggers": 5,
+      "gaps": [],
+      "productIds": [
+        "TS004F"
+      ]
+    },
+    {
+      "driverId": "smart_remote_1_button_2",
+      "homeyClass": "remote",
+      "mfrCount": 0,
+      "pidCount": 1,
+      "capCount": 2,
+      "settingCount": 1,
+      "flowTriggers": 5,
+      "gaps": [
+        "empty_mfr"
+      ],
+      "productIds": [
+        "TS004F"
+      ]
+    },
+    {
+      "driverId": "smart_remote_4_buttons",
+      "homeyClass": "remote",
+      "mfrCount": 4,
+      "pidCount": 2,
+      "capCount": 5,
+      "settingCount": 1,
+      "flowTriggers": 20,
+      "gaps": [],
+      "productIds": [
+        "TS0215A",
+        "TS0601"
+      ]
+    },
+    {
+      "driverId": "wall_remote_1_gang",
+      "homeyClass": "remote",
+      "mfrCount": 4,
+      "pidCount": 1,
+      "capCount": 2,
+      "settingCount": 1,
+      "flowTriggers": 5,
+      "gaps": [],
+      "productIds": [
+        "TS0041"
+      ]
+    },
+    {
+      "driverId": "wall_remote_2_gang",
+      "homeyClass": "remote",
+      "mfrCount": 12,
+      "pidCount": 1,
+      "capCount": 3,
+      "settingCount": 1,
+      "flowTriggers": 1,
+      "gaps": [],
+      "productIds": [
+        "TS0042"
+      ]
+    },
+    {
+      "driverId": "wall_remote_3_gang",
+      "homeyClass": "remote",
+      "mfrCount": 4,
+      "pidCount": 1,
+      "capCount": 4,
+      "settingCount": 1,
+      "flowTriggers": 15,
+      "gaps": [],
+      "productIds": [
+        "TS0043"
+      ]
+    },
+    {
+      "driverId": "wall_remote_4_gang",
+      "homeyClass": "remote",
+      "mfrCount": 0,
+      "pidCount": 3,
+      "capCount": 5,
+      "settingCount": 1,
+      "flowTriggers": 20,
+      "gaps": [
+        "empty_mfr"
+      ],
+      "productIds": [
+        "TS0043",
+        "TS0601",
+        "TS0215A"
+      ]
+    },
+    {
+      "driverId": "wall_remote_4_gang_2",
+      "homeyClass": "remote",
+      "mfrCount": 2,
+      "pidCount": 3,
+      "capCount": 5,
+      "settingCount": 0,
+      "flowTriggers": 3,
+      "gaps": [],
+      "productIds": [
+        "TS0043",
+        "TS0601",
+        "TS0215A"
+      ]
+    },
+    {
+      "driverId": "wall_remote_4_gang_3",
+      "homeyClass": "remote",
+      "mfrCount": 2,
+      "pidCount": 3,
+      "capCount": 5,
+      "settingCount": 1,
+      "flowTriggers": 20,
+      "gaps": [],
+      "productIds": [
+        "TS0043",
+        "TS0601",
+        "TS0215A"
+      ]
+    },
+    {
+      "driverId": "wall_remote_6_gang",
+      "homeyClass": "remote",
+      "mfrCount": 4,
+      "pidCount": 3,
+      "capCount": 7,
+      "settingCount": 1,
+      "flowTriggers": 30,
+      "gaps": [],
+      "productIds": [
+        "TS0046",
+        "TS0601",
+        "TS0215A"
+      ]
+    },
+    {
+      "driverId": "wifi_ir_remote",
+      "homeyClass": "remote",
+      "mfrCount": 0,
+      "pidCount": 0,
+      "capCount": 2,
+      "settingCount": 1,
+      "flowTriggers": 0,
+      "gaps": [],
+      "productIds": []
+    }
+  ],
+  "socket": [
+    {
+      "driverId": "boiler_switch_energy",
+      "homeyClass": "socket",
+      "mfrCount": 12,
+      "pidCount": 1,
+      "capCount": 7,
+      "settingCount": 0,
+      "flowTriggers": 8,
+      "gaps": [
+        "missing_power_scale_setting"
+      ],
+      "productIds": [
+        "TS0601"
+      ]
+    },
+    {
+      "driverId": "climate_sensor_plug",
+      "homeyClass": "socket",
+      "mfrCount": 2,
+      "pidCount": 3,
+      "capCount": 9,
+      "settingCount": 16,
+      "flowTriggers": 14,
+      "gaps": [],
+      "productIds": [
+        "TS0601",
+        "TS0201",
+        "Excellux"
+      ]
+    },
+    {
+      "driverId": "climate_sensor_smart",
+      "homeyClass": "socket",
+      "mfrCount": 2,
+      "pidCount": 1,
+      "capCount": 7,
+      "settingCount": 3,
+      "flowTriggers": 7,
+      "gaps": [],
+      "productIds": [
+        "TS0601"
+      ]
+    },
+    {
+      "driverId": "climate_sensor_switch",
+      "homeyClass": "socket",
+      "mfrCount": 2,
+      "pidCount": 1,
+      "capCount": 10,
+      "settingCount": 15,
+      "flowTriggers": 18,
+      "gaps": [
+        "missing_power_scale_setting"
+      ],
+      "productIds": [
+        "TS0601"
+      ]
+    },
+    {
+      "driverId": "contact_sensor_plug",
+      "homeyClass": "socket",
+      "mfrCount": 2,
+      "pidCount": 2,
+      "capCount": 10,
+      "settingCount": 16,
+      "flowTriggers": 13,
+      "gaps": [],
+      "productIds": [
+        "TS0601",
+        "Excellux"
+      ]
+    },
+    {
+      "driverId": "contact_sensor_switch",
+      "homeyClass": "socket",
+      "mfrCount": 2,
+      "pidCount": 2,
+      "capCount": 11,
+      "settingCount": 15,
+      "flowTriggers": 17,
+      "gaps": [
+        "missing_power_scale_setting"
+      ],
+      "productIds": [
+        "TS0601",
+        "Excellux"
+      ]
+    },
+    {
+      "driverId": "device_air_purifier_plug",
+      "homeyClass": "socket",
+      "mfrCount": 14,
+      "pidCount": 54,
+      "capCount": 8,
+      "settingCount": 5,
+      "flowTriggers": 15,
+      "gaps": [],
+      "productIds": [
+        "0x8040",
+        "BASICZBR3",
+        "BSP-EZ2",
+        "BSP-FZ2",
+        "Battery switch, 1 button",
+        "Battery switch, 2 buttons"
+      ]
+    },
+    {
+      "driverId": "device_plug_energy",
+      "homeyClass": "socket",
+      "mfrCount": 8,
+      "pidCount": 3,
+      "capCount": 7,
+      "settingCount": 16,
+      "flowTriggers": 11,
+      "gaps": [],
+      "productIds": [
+        "TS0002",
+        "TS0121",
+        "TS011F"
+      ]
+    },
+    {
+      "driverId": "device_plug_energy_monitor",
+      "homeyClass": "socket",
+      "mfrCount": 0,
+      "pidCount": 3,
+      "capCount": 7,
+      "settingCount": 16,
+      "flowTriggers": 11,
+      "gaps": [
+        "empty_mfr"
+      ],
+      "productIds": [
+        "TS0601",
+        "TS004F",
+        "TS011F"
+      ]
+    },
+    {
+      "driverId": "device_plug_smart",
+      "homeyClass": "socket",
+      "mfrCount": 0,
+      "pidCount": 21,
+      "capCount": 7,
+      "settingCount": 16,
+      "flowTriggers": 11,
+      "gaps": [
+        "empty_mfr"
+      ],
+      "productIds": [
+        "CK-TLSR8656-SS5-01(7014)",
+        "Excellux",
+        "RH3052",
+        "SM0201",
+        "TH01",
+        "THS317-ET"
+      ]
+    },
+    {
+      "driverId": "device_plug_smart_water",
+      "homeyClass": "socket",
+      "mfrCount": 4,
+      "pidCount": 1,
+      "capCount": 7,
+      "settingCount": 16,
+      "flowTriggers": 11,
+      "gaps": [],
+      "productIds": [
+        "TS0601"
+      ]
+    },
+    {
+      "driverId": "dimmer_2_gang_tuya",
+      "homeyClass": "socket",
+      "mfrCount": 60,
+      "pidCount": 36,
+      "capCount": 4,
+      "settingCount": 0,
+      "flowTriggers": 5,
+      "gaps": [],
+      "productIds": [
+        "01MINIZB",
+        "BASICZBR3",
+        "S26R2ZB",
+        "S31ZB",
+        "TS0001",
+        "TS0001_power"
+      ]
+    },
+    {
+      "driverId": "dimmer_wall_plug",
+      "homeyClass": "socket",
+      "mfrCount": 4,
+      "pidCount": 1,
+      "capCount": 7,
+      "settingCount": 5,
+      "flowTriggers": 12,
+      "gaps": [],
+      "productIds": [
+        "TS0601"
+      ]
+    },
+    {
+      "driverId": "dimmer_wall_switch",
+      "homeyClass": "socket",
+      "mfrCount": 2,
+      "pidCount": 1,
+      "capCount": 11,
+      "settingCount": 11,
+      "flowTriggers": 20,
+      "gaps": [
+        "missing_power_scale_setting"
+      ],
+      "productIds": [
+        "TS0601"
+      ]
+    },
+    {
+      "driverId": "din_rail_switch",
+      "homeyClass": "socket",
+      "mfrCount": 36,
+      "pidCount": 3,
+      "capCount": 6,
+      "settingCount": 0,
+      "flowTriggers": 11,
+      "gaps": [
+        "missing_power_scale_setting"
+      ],
+      "productIds": [
+        "TS0001_din",
+        "TS0601",
+        "TS011F"
+      ]
+    },
+    {
+      "driverId": "double_power_point",
+      "homeyClass": "socket",
+      "mfrCount": 0,
+      "pidCount": 2,
+      "capCount": 6,
+      "settingCount": 0,
+      "flowTriggers": 5,
+      "gaps": [
+        "empty_mfr",
+        "missing_power_scale_setting"
+      ],
+      "productIds": [
+        "TS0601",
+        "TS011F"
+      ]
+    },
+    {
+      "driverId": "double_power_point_2",
+      "homeyClass": "socket",
+      "mfrCount": 8,
+      "pidCount": 2,
+      "capCount": 6,
+      "settingCount": 0,
+      "flowTriggers": 7,
+      "gaps": [
+        "missing_power_scale_setting"
+      ],
+      "productIds": [
+        "TS0601",
+        "TS011F"
+      ]
+    },
+    {
+      "driverId": "energy_meter_din",
+      "homeyClass": "socket",
+      "mfrCount": 48,
+      "pidCount": 1,
+      "capCount": 7,
+      "settingCount": 1,
+      "flowTriggers": 7,
+      "gaps": [
+        "missing_power_scale_setting"
+      ],
+      "productIds": [
+        "TS0601"
+      ]
+    },
+    {
+      "driverId": "fingerbot_switch",
+      "homeyClass": "socket",
+      "mfrCount": 4,
+      "pidCount": 2,
+      "capCount": 10,
+      "settingCount": 15,
+      "flowTriggers": 16,
+      "gaps": [
+        "missing_power_scale_setting"
+      ],
+      "productIds": [
+        "TS0001",
+        "TS0601"
+      ]
+    },
+    {
+      "driverId": "gas_sensor_switch",
+      "homeyClass": "socket",
+      "mfrCount": 4,
+      "pidCount": 50,
+      "capCount": 16,
+      "settingCount": 11,
+      "flowTriggers": 47,
+      "gaps": [
+        "missing_power_scale_setting"
+      ],
+      "productIds": [
+        "01MINIZB",
+        "3315-S",
+        "3315-Seu",
+        "BASICZBR3",
+        "CK-TLSR8656-SS5-01(7019)",
+        "HS1WL"
+      ]
+    },
+    {
+      "driverId": "hybrid_switch_sensor",
+      "homeyClass": "socket",
+      "mfrCount": 8,
+      "pidCount": 4,
+      "capCount": 5,
+      "settingCount": 2,
+      "flowTriggers": 6,
+      "gaps": [],
+      "productIds": [
+        "TS0601",
+        "TS0001",
+        "TS0011",
+        "TS011F"
+      ]
+    },
+    {
+      "driverId": "lcdtemphumidsensor_plug_energy",
+      "homeyClass": "socket",
+      "mfrCount": 4,
+      "pidCount": 1,
+      "capCount": 6,
+      "settingCount": 12,
+      "flowTriggers": 12,
+      "gaps": [],
+      "productIds": [
+        "TS0601"
+      ]
+    },
+    {
+      "driverId": "module_mini_switch",
+      "homeyClass": "socket",
+      "mfrCount": 20,
+      "pidCount": 9,
+      "capCount": 6,
+      "settingCount": 15,
+      "flowTriggers": 10,
+      "gaps": [
+        "missing_power_scale_setting"
+      ],
+      "productIds": [
+        "ZBMINI",
+        "ZBMINI-L",
+        "ZBMINIL2",
+        "ZBMINIR2",
+        "01MINIZB",
+        "ZBM5-1C-120"
+      ]
+    },
+    {
+      "driverId": "motion_sensor_switch",
+      "homeyClass": "socket",
+      "mfrCount": 8,
+      "pidCount": 5,
+      "capCount": 13,
+      "settingCount": 15,
+      "flowTriggers": 19,
+      "gaps": [
+        "missing_power_scale_setting"
+      ],
+      "productIds": [
+        "Excellux",
+        "TS0001",
+        "TS0202",
+        "TS0225",
+        "TS0601"
+      ]
+    },
+    {
+      "driverId": "outdoor_2_socket",
+      "homeyClass": "socket",
+      "mfrCount": 0,
+      "pidCount": 2,
+      "capCount": 6,
+      "settingCount": 1,
+      "flowTriggers": 5,
+      "gaps": [
+        "empty_mfr",
+        "missing_power_scale_setting"
+      ],
+      "productIds": [
+        "TS0601",
+        "TS011F"
+      ]
+    },
+    {
+      "driverId": "outdoor_plug",
+      "homeyClass": "socket",
+      "mfrCount": 6,
+      "pidCount": 2,
+      "capCount": 2,
+      "settingCount": 0,
+      "flowTriggers": 2,
+      "gaps": [],
+      "productIds": [
+        "TS0101",
+        "TS0049"
+      ]
+    },
+    {
+      "driverId": "plug",
+      "homeyClass": "socket",
+      "mfrCount": 24,
+      "pidCount": 5,
+      "capCount": 2,
+      "settingCount": 0,
+      "flowTriggers": 2,
+      "gaps": [],
+      "productIds": [
+        "TS0001",
+        "TS0001_fingerbot",
+        "TS0003",
+        "TS000F",
+        "TS0011"
+      ]
+    },
+    {
+      "driverId": "plug_energy_monitor",
+      "homeyClass": "socket",
+      "mfrCount": 148,
+      "pidCount": 79,
+      "capCount": 6,
+      "settingCount": 12,
+      "flowTriggers": 10,
+      "gaps": [],
+      "productIds": [
+        "TS0601",
+        "01MINIZB",
+        "A11Z",
+        "A7Z",
+        "BASICZBR3",
+        "CK-BL702-SWP-01(7020)"
+      ]
+    },
+    {
+      "driverId": "plug_smart",
+      "homeyClass": "socket",
+      "mfrCount": 31,
+      "pidCount": 11,
+      "capCount": 8,
+      "settingCount": 16,
+      "flowTriggers": 11,
+      "gaps": [],
+      "productIds": [
+        "TS0111",
+        "TS0101",
+        "TS0601",
+        "TS011F",
+        "S26R2ZB",
+        "S31 Lite zb"
+      ]
+    },
+    {
+      "driverId": "plug_smart_switch",
+      "homeyClass": "socket",
+      "mfrCount": 2,
+      "pidCount": 2,
+      "capCount": 8,
+      "settingCount": 15,
+      "flowTriggers": 16,
+      "gaps": [
+        "missing_power_scale_setting"
+      ],
+      "productIds": [
+        "TS0601",
+        "TS011F"
+      ]
+    },
+    {
+      "driverId": "pool_pump",
+      "homeyClass": "socket",
+      "mfrCount": 16,
+      "pidCount": 2,
+      "capCount": 4,
+      "settingCount": 0,
+      "flowTriggers": 4,
+      "gaps": [
+        "missing_power_scale_setting"
+      ],
+      "productIds": [
+        "TS0601_pool",
+        "TS0601"
+      ]
+    },
+    {
+      "driverId": "relay_board_1_channel",
+      "homeyClass": "socket",
+      "mfrCount": 0,
+      "pidCount": 2,
+      "capCount": 2,
+      "settingCount": 0,
+      "flowTriggers": 2,
+      "gaps": [
+        "empty_mfr"
+      ],
+      "productIds": [
+        "TS0601",
+        "TS0001"
+      ]
+    },
+    {
+      "driverId": "relay_board_2_channel",
+      "homeyClass": "socket",
+      "mfrCount": 8,
+      "pidCount": 2,
+      "capCount": 2,
+      "settingCount": 0,
+      "flowTriggers": 2,
+      "gaps": [],
+      "productIds": [
+        "TS0002",
+        "TS011F"
+      ]
+    },
+    {
+      "driverId": "relay_board_4_channel",
+      "homeyClass": "socket",
+      "mfrCount": 12,
+      "pidCount": 1,
+      "capCount": 8,
+      "settingCount": 0,
+      "flowTriggers": 16,
+      "gaps": [],
+      "productIds": [
+        "TS0004"
+      ]
+    },
+    {
+      "driverId": "sensor_climate_smart",
+      "homeyClass": "socket",
+      "mfrCount": 2,
+      "pidCount": 1,
+      "capCount": 7,
+      "settingCount": 3,
+      "flowTriggers": 7,
+      "gaps": [],
+      "productIds": [
+        "TS0601"
+      ]
+    },
+    {
+      "driverId": "sensor_contact_plug",
+      "homeyClass": "socket",
+      "mfrCount": 2,
+      "pidCount": 2,
+      "capCount": 10,
+      "settingCount": 16,
+      "flowTriggers": 13,
+      "gaps": [],
+      "productIds": [
+        "TS0601",
+        "Excellux"
+      ]
+    },
+    {
+      "driverId": "smartplug",
+      "homeyClass": "socket",
+      "mfrCount": 72,
+      "pidCount": 3,
+      "capCount": 7,
+      "settingCount": 1,
+      "flowTriggers": 6,
+      "gaps": [
+        "missing_power_scale_setting"
+      ],
+      "productIds": [
+        "TS0121",
+        "TS011F",
+        "TSO121"
+      ]
+    },
+    {
+      "driverId": "smartplug_2_socket",
+      "homeyClass": "socket",
+      "mfrCount": 2,
+      "pidCount": 2,
+      "capCount": 7,
+      "settingCount": 0,
+      "flowTriggers": 8,
+      "gaps": [
+        "missing_power_scale_setting"
+      ],
+      "productIds": [
+        "TS011F",
+        "TS0601"
+      ]
+    },
+    {
+      "driverId": "smartPlug_DinRail",
+      "homeyClass": "socket",
+      "mfrCount": 8,
+      "pidCount": 3,
+      "capCount": 7,
+      "settingCount": 0,
+      "flowTriggers": 6,
+      "gaps": [
+        "missing_power_scale_setting"
+      ],
+      "productIds": [
+        "TS0121",
+        "TS011F",
+        "TSO121"
+      ]
+    },
+    {
+      "driverId": "smart_breaker",
+      "homeyClass": "socket",
+      "mfrCount": 8,
+      "pidCount": 2,
+      "capCount": 7,
+      "settingCount": 0,
+      "flowTriggers": 8,
+      "gaps": [
+        "missing_power_scale_setting"
+      ],
+      "productIds": [
+        "TS0601_breaker",
+        "TS0601"
+      ]
+    },
+    {
+      "driverId": "smart_irrigation_valve",
+      "homeyClass": "socket",
+      "mfrCount": 8,
+      "pidCount": 3,
+      "capCount": 3,
+      "settingCount": 0,
+      "flowTriggers": 4,
+      "gaps": [],
+      "productIds": [
+        "TS0601",
+        "TS0202",
+        "TS0049"
+      ]
+    },
+    {
+      "driverId": "smart_scene_panel",
+      "homeyClass": "socket",
+      "mfrCount": 4,
+      "pidCount": 1,
+      "capCount": 5,
+      "settingCount": 3,
+      "flowTriggers": 5,
+      "gaps": [],
+      "productIds": [
+        "TS0601"
+      ]
+    },
+    {
+      "driverId": "smart_switch",
+      "homeyClass": "socket",
+      "mfrCount": 0,
+      "pidCount": 2,
+      "capCount": 2,
+      "settingCount": 0,
+      "flowTriggers": 2,
+      "gaps": [
+        "empty_mfr"
+      ],
+      "productIds": [
+        "TS0601",
+        "TS0001"
+      ]
+    },
+    {
+      "driverId": "socket_power_strip",
+      "homeyClass": "socket",
+      "mfrCount": 12,
+      "pidCount": 2,
+      "capCount": 2,
+      "settingCount": 0,
+      "flowTriggers": 2,
+      "gaps": [],
+      "productIds": [
+        "TS011F",
+        "TS0115"
+      ]
+    },
+    {
+      "driverId": "socket_power_strip_four",
+      "homeyClass": "socket",
+      "mfrCount": 10,
+      "pidCount": 3,
+      "capCount": 2,
+      "settingCount": 0,
+      "flowTriggers": 4,
+      "gaps": [],
+      "productIds": [
+        "TS0115",
+        "TS0601",
+        "TS011F"
+      ]
+    },
+    {
+      "driverId": "socket_power_strip_four_three",
+      "homeyClass": "socket",
+      "mfrCount": 17,
+      "pidCount": 4,
+      "capCount": 2,
+      "settingCount": 0,
+      "flowTriggers": 4,
+      "gaps": [],
+      "productIds": [
+        "JZ-ZB-004",
+        "TS0601",
+        "TS011F",
+        "TS0115"
+      ]
+    },
+    {
+      "driverId": "socket_power_strip_four_two",
+      "homeyClass": "socket",
+      "mfrCount": 2,
+      "pidCount": 9,
+      "capCount": 2,
+      "settingCount": 0,
+      "flowTriggers": 4,
+      "gaps": [],
+      "productIds": [
+        "TS0111",
+        "TS0101",
+        "TS0601",
+        "TS011F",
+        "S26R2ZB",
+        "S31 Lite zb"
+      ]
+    },
+    {
+      "driverId": "sr_zs_switch",
+      "homeyClass": "socket",
+      "mfrCount": 2,
+      "pidCount": 1,
+      "capCount": 4,
+      "settingCount": 0,
+      "flowTriggers": 2,
+      "gaps": [],
+      "productIds": [
+        "TS0002"
+      ]
+    },
+    {
+      "driverId": "switch",
+      "homeyClass": "socket",
+      "mfrCount": 2,
+      "pidCount": 3,
+      "capCount": 11,
+      "settingCount": 11,
+      "flowTriggers": 21,
+      "gaps": [
+        "missing_power_scale_setting"
+      ],
+      "productIds": [
+        "TS0601",
+        "TS011F",
+        "TS0726"
+      ]
+    },
+    {
+      "driverId": "switch_1gang",
+      "homeyClass": "socket",
+      "mfrCount": 1540,
+      "pidCount": 37,
+      "capCount": 9,
+      "settingCount": 17,
+      "flowTriggers": 10,
+      "gaps": [],
+      "productIds": [
+        "01MINIZB",
+        "BASICZBR3",
+        "S26R2ZB",
+        "S31ZB",
+        "TS0001",
+        "TS0001_power"
+      ]
+    },
+    {
+      "driverId": "switch_1_gang",
+      "homeyClass": "socket",
+      "mfrCount": 2,
+      "pidCount": 8,
+      "capCount": 3,
+      "settingCount": 1,
+      "flowTriggers": 6,
+      "gaps": [],
+      "productIds": [
+        "TS0003",
+        "TS011F",
+        "TS0011",
+        "TS000F",
+        "TS0001",
+        "TS0601"
+      ]
+    },
+    {
+      "driverId": "switch_1_gang_metering",
+      "homeyClass": "socket",
+      "mfrCount": 2,
+      "pidCount": 2,
+      "capCount": 6,
+      "settingCount": 0,
+      "flowTriggers": 9,
+      "gaps": [
+        "missing_power_scale_setting"
+      ],
+      "productIds": [
+        "TS0601",
+        "TS004F"
+      ]
+    },
+    {
+      "driverId": "switch_2gang",
+      "homeyClass": "socket",
+      "mfrCount": 255,
+      "pidCount": 12,
+      "capCount": 12,
+      "settingCount": 13,
+      "flowTriggers": 12,
+      "gaps": [],
+      "productIds": [
+        "ZG-305Z",
+        "TS0002",
+        "TS0012",
+        "TS0002_power",
+        "TS0002_switch_module",
+        "ZG-302Z2"
+      ]
+    },
+    {
+      "driverId": "switch_2_gang",
+      "homeyClass": "socket",
+      "mfrCount": 12,
+      "pidCount": 5,
+      "capCount": 4,
+      "settingCount": 0,
+      "flowTriggers": 8,
+      "gaps": [],
+      "productIds": [
+        "TS0003",
+        "TS0012",
+        "TS0013",
+        "TS0002",
+        "TS011F"
+      ]
+    },
+    {
+      "driverId": "switch_2_gang_metering",
+      "homeyClass": "socket",
+      "mfrCount": 0,
+      "pidCount": 3,
+      "capCount": 7,
+      "settingCount": 0,
+      "flowTriggers": 11,
+      "gaps": [
+        "empty_mfr",
+        "missing_power_scale_setting"
+      ],
+      "productIds": [
+        "TS0601",
+        "TS004F",
+        "TS0002"
+      ]
+    },
+    {
+      "driverId": "switch_3gang",
+      "homeyClass": "socket",
+      "mfrCount": 214,
+      "pidCount": 47,
+      "capCount": 13,
+      "settingCount": 13,
+      "flowTriggers": 17,
+      "gaps": [],
+      "productIds": [
+        "01MINIZB",
+        "BASICZBR3",
+        "JZ-ZB-004",
+        "S26R2ZB",
+        "S31ZB",
+        "TS0001"
+      ]
+    },
+    {
+      "driverId": "switch_3_gang",
+      "homeyClass": "socket",
+      "mfrCount": 4,
+      "pidCount": 2,
+      "capCount": 5,
+      "settingCount": 0,
+      "flowTriggers": 10,
+      "gaps": [],
+      "productIds": [
+        "TS0003",
+        "TS0013"
+      ]
+    },
+    {
+      "driverId": "switch_4gang",
+      "homeyClass": "socket",
+      "mfrCount": 276,
+      "pidCount": 41,
+      "capCount": 15,
+      "settingCount": 12,
+      "flowTriggers": 33,
+      "gaps": [
+        "missing_power_scale_setting"
+      ],
+      "productIds": [
+        "01MINIZB",
+        "BASICZBR3",
+        "JZ-ZB-004",
+        "S26R2ZB",
+        "S31ZB",
+        "TS0001"
+      ]
+    },
+    {
+      "driverId": "switch_4_gang_metering",
+      "homeyClass": "socket",
+      "mfrCount": 24,
+      "pidCount": 6,
+      "capCount": 9,
+      "settingCount": 0,
+      "flowTriggers": 15,
+      "gaps": [
+        "missing_power_scale_setting"
+      ],
+      "productIds": [
+        "ERS-10TZBVK-AA",
+        "TS0004",
+        "TS0044",
+        "TS0601",
+        "ZG-101ZD",
+        "TS004F"
+      ]
+    },
+    {
+      "driverId": "switch_plug_1",
+      "homeyClass": "socket",
+      "mfrCount": 2,
+      "pidCount": 1,
+      "capCount": 4,
+      "settingCount": 1,
+      "flowTriggers": 7,
+      "gaps": [
+        "missing_power_scale_setting"
+      ],
+      "productIds": [
+        "TS0601_sp1"
+      ]
+    },
+    {
+      "driverId": "switch_plug_2",
+      "homeyClass": "socket",
+      "mfrCount": 2,
+      "pidCount": 1,
+      "capCount": 5,
+      "settingCount": 1,
+      "flowTriggers": 6,
+      "gaps": [
+        "missing_power_scale_setting"
+      ],
+      "productIds": [
+        "TS0122"
+      ]
+    },
+    {
+      "driverId": "switch_temp_sensor",
+      "homeyClass": "socket",
+      "mfrCount": 6,
+      "pidCount": 1,
+      "capCount": 3,
+      "settingCount": 0,
+      "flowTriggers": 6,
+      "gaps": [],
+      "productIds": [
+        "TS000F"
+      ]
+    },
+    {
+      "driverId": "switch_usb_dongle",
+      "homeyClass": "socket",
+      "mfrCount": 28,
+      "pidCount": 2,
+      "capCount": 5,
+      "settingCount": 1,
+      "flowTriggers": 8,
+      "gaps": [
+        "missing_power_scale_setting"
+      ],
+      "productIds": [
+        "TS0002",
+        "TS011F"
+      ]
+    },
+    {
+      "driverId": "switch_wall",
+      "homeyClass": "socket",
+      "mfrCount": 2,
+      "pidCount": 1,
+      "capCount": 8,
+      "settingCount": 15,
+      "flowTriggers": 16,
+      "gaps": [
+        "missing_power_scale_setting"
+      ],
+      "productIds": [
+        "TS0601"
+      ]
+    },
+    {
+      "driverId": "switch_wall_5gang",
+      "homeyClass": "socket",
+      "mfrCount": 2,
+      "pidCount": 2,
+      "capCount": 11,
+      "settingCount": 10,
+      "flowTriggers": 47,
+      "gaps": [],
+      "productIds": [
+        "TS0015",
+        "TS0601"
+      ]
+    },
+    {
+      "driverId": "switch_wall_6gang",
+      "homeyClass": "socket",
+      "mfrCount": 23,
+      "pidCount": 4,
+      "capCount": 13,
+      "settingCount": 10,
+      "flowTriggers": 56,
+      "gaps": [],
+      "productIds": [
+        "TS0016",
+        "TS0601",
+        "TS0726",
+        "TS0006"
+      ]
+    },
+    {
+      "driverId": "switch_wall_7gang",
+      "homeyClass": "socket",
+      "mfrCount": 8,
+      "pidCount": 1,
+      "capCount": 15,
+      "settingCount": 4,
+      "flowTriggers": 65,
+      "gaps": [],
+      "productIds": [
+        "TS0007"
+      ]
+    },
+    {
+      "driverId": "switch_wall_8gang",
+      "homeyClass": "socket",
+      "mfrCount": 16,
+      "pidCount": 2,
+      "capCount": 18,
+      "settingCount": 2,
+      "flowTriggers": 74,
+      "gaps": [],
+      "productIds": [
+        "TS0601_8gang",
+        "TS0601"
+      ]
+    },
+    {
+      "driverId": "usb_dongle_dual_repeater",
+      "homeyClass": "socket",
+      "mfrCount": 8,
+      "pidCount": 2,
+      "capCount": 7,
+      "settingCount": 3,
+      "flowTriggers": 6,
+      "gaps": [
+        "missing_power_scale_setting"
+      ],
+      "productIds": [
+        "TS0601_repeater",
+        "TS0002"
+      ]
+    },
+    {
+      "driverId": "usb_dongle_triple",
+      "homeyClass": "socket",
+      "mfrCount": 164,
+      "pidCount": 9,
+      "capCount": 8,
+      "settingCount": 3,
+      "flowTriggers": 6,
+      "gaps": [
+        "missing_power_scale_setting"
+      ],
+      "productIds": [
+        "TS0111",
+        "TS0101",
+        "TS0601",
+        "S26R2ZB",
+        "S31 Lite zb",
+        "S40LITE"
+      ]
+    },
+    {
+      "driverId": "usb_outlet_advanced",
+      "homeyClass": "socket",
+      "mfrCount": 70,
+      "pidCount": 5,
+      "capCount": 10,
+      "settingCount": 11,
+      "flowTriggers": 10,
+      "gaps": [
+        "missing_power_scale_setting"
+      ],
+      "productIds": [
+        "TS0115",
+        "TS0601",
+        "TS011F",
+        "TS0002",
+        "TS0121"
+      ]
+    },
+    {
+      "driverId": "valve_irrigation",
+      "homeyClass": "socket",
+      "mfrCount": 92,
+      "pidCount": 3,
+      "capCount": 9,
+      "settingCount": 0,
+      "flowTriggers": 7,
+      "gaps": [],
+      "productIds": [
+        "TS0601_irrigation",
+        "TS0601",
+        "TS0049"
+      ]
+    },
+    {
+      "driverId": "wall_dimmer_1gang_1way",
+      "homeyClass": "socket",
+      "mfrCount": 4,
+      "pidCount": 5,
+      "capCount": 3,
+      "settingCount": 2,
+      "flowTriggers": 8,
+      "gaps": [],
+      "productIds": [
+        "TS004F",
+        "TS0501B",
+        "TRI-C1ZR",
+        "TRI-K1ZR",
+        "EDM-1ZBA-EU"
+      ]
+    },
+    {
+      "driverId": "wall_socket",
+      "homeyClass": "socket",
+      "mfrCount": 4,
+      "pidCount": 1,
+      "capCount": 7,
+      "settingCount": 1,
+      "flowTriggers": 6,
+      "gaps": [
+        "missing_power_scale_setting"
+      ],
+      "productIds": [
+        "TS011F"
+      ]
+    },
+    {
+      "driverId": "wall_switch_1gang_1way",
+      "homeyClass": "socket",
+      "mfrCount": 24,
+      "pidCount": 7,
+      "capCount": 1,
+      "settingCount": 4,
+      "flowTriggers": 11,
+      "gaps": [],
+      "productIds": [
+        "TS0001",
+        "TS0011",
+        "TS0601",
+        "TS011F",
+        "TS0002",
+        "TS0003"
+      ]
+    },
+    {
+      "driverId": "wall_switch_1_gang",
+      "homeyClass": "socket",
+      "mfrCount": 4,
+      "pidCount": 7,
+      "capCount": 3,
+      "settingCount": 0,
+      "flowTriggers": 6,
+      "gaps": [],
+      "productIds": [
+        "TS0001",
+        "TS0011",
+        "TS0601",
+        "TS011F",
+        "TS0002",
+        "TS0003"
+      ]
+    },
+    {
+      "driverId": "wall_switch_1_gang_tuya",
+      "homeyClass": "socket",
+      "mfrCount": 2,
+      "pidCount": 27,
+      "capCount": 3,
+      "settingCount": 0,
+      "flowTriggers": 6,
+      "gaps": [],
+      "productIds": [
+        "TS0001",
+        "TS0011",
+        "TS0001_power",
+        "TS0001_switch",
+        "TS0001_switch_module",
+        "TS000F"
+      ]
+    },
+    {
+      "driverId": "wall_switch_2gang_1way",
+      "homeyClass": "socket",
+      "mfrCount": 17,
+      "pidCount": 3,
+      "capCount": 4,
+      "settingCount": 6,
+      "flowTriggers": 8,
+      "gaps": [],
+      "productIds": [
+        "TS0002",
+        "TS0012",
+        "TS0042"
+      ]
+    },
+    {
+      "driverId": "wall_switch_2_gang",
+      "homeyClass": "socket",
+      "mfrCount": 8,
+      "pidCount": 3,
+      "capCount": 4,
+      "settingCount": 0,
+      "flowTriggers": 8,
+      "gaps": [],
+      "productIds": [
+        "TS0002",
+        "TS0012",
+        "TS0042"
+      ]
+    },
+    {
+      "driverId": "wall_switch_3gang_1way",
+      "homeyClass": "socket",
+      "mfrCount": 36,
+      "pidCount": 2,
+      "capCount": 6,
+      "settingCount": 6,
+      "flowTriggers": 11,
+      "gaps": [],
+      "productIds": [
+        "TS0003",
+        "TS0013"
+      ]
+    },
+    {
+      "driverId": "wall_switch_3_gang",
+      "homeyClass": "socket",
+      "mfrCount": 16,
+      "pidCount": 3,
+      "capCount": 5,
+      "settingCount": 0,
+      "flowTriggers": 10,
+      "gaps": [],
+      "productIds": [
+        "TS0003",
+        "TS0013",
+        "TS0043"
+      ]
+    },
+    {
+      "driverId": "wall_switch_4gang_1way",
+      "homeyClass": "socket",
+      "mfrCount": 24,
+      "pidCount": 4,
+      "capCount": 8,
+      "settingCount": 6,
+      "flowTriggers": 16,
+      "gaps": [],
+      "productIds": [
+        "TS0004",
+        "TS0014",
+        "TS000F",
+        "TS0726"
+      ]
+    },
+    {
+      "driverId": "wall_switch_4_gang",
+      "homeyClass": "socket",
+      "mfrCount": 12,
+      "pidCount": 2,
+      "capCount": 6,
+      "settingCount": 0,
+      "flowTriggers": 12,
+      "gaps": [],
+      "productIds": [
+        "TS0014",
+        "TS0004"
+      ]
+    },
+    {
+      "driverId": "wall_switch_4_gang_tuya",
+      "homeyClass": "socket",
+      "mfrCount": 20,
+      "pidCount": 1,
+      "capCount": 6,
+      "settingCount": 0,
+      "flowTriggers": 12,
+      "gaps": [],
+      "productIds": [
+        "TS0601"
+      ]
+    },
+    {
+      "driverId": "wall_switch_5_gang_tuya",
+      "homeyClass": "socket",
+      "mfrCount": 24,
+      "pidCount": 23,
+      "capCount": 7,
+      "settingCount": 0,
+      "flowTriggers": 14,
+      "gaps": [],
+      "productIds": [
+        "TS0011",
+        "TS0001_power",
+        "TS0001_switch",
+        "TS0001_switch_module",
+        "TS000F",
+        "ZBMINI"
+      ]
+    },
+    {
+      "driverId": "wall_switch_6_gang_tuya",
+      "homeyClass": "socket",
+      "mfrCount": 32,
+      "pidCount": 1,
+      "capCount": 8,
+      "settingCount": 0,
+      "flowTriggers": 16,
+      "gaps": [],
+      "productIds": [
+        "TS0601"
+      ]
+    },
+    {
+      "driverId": "wifi_ewelink_plug",
+      "homeyClass": "socket",
+      "mfrCount": 0,
+      "pidCount": 0,
+      "capCount": 2,
+      "settingCount": 1,
+      "flowTriggers": 3,
+      "gaps": [],
+      "productIds": []
+    },
+    {
+      "driverId": "wifi_ewelink_pow",
+      "homeyClass": "socket",
+      "mfrCount": 0,
+      "pidCount": 0,
+      "capCount": 5,
+      "settingCount": 1,
+      "flowTriggers": 5,
+      "gaps": [
+        "missing_power_scale_setting"
+      ],
+      "productIds": []
+    },
+    {
+      "driverId": "wifi_ewelink_switch",
+      "homeyClass": "socket",
+      "mfrCount": 0,
+      "pidCount": 0,
+      "capCount": 2,
+      "settingCount": 1,
+      "flowTriggers": 2,
+      "gaps": [],
+      "productIds": []
+    },
+    {
+      "driverId": "wifi_ewelink_switch_2ch",
+      "homeyClass": "socket",
+      "mfrCount": 0,
+      "pidCount": 0,
+      "capCount": 3,
+      "settingCount": 1,
+      "flowTriggers": 4,
+      "gaps": [],
+      "productIds": []
+    },
+    {
+      "driverId": "wifi_ewelink_switch_4ch",
+      "homeyClass": "socket",
+      "mfrCount": 0,
+      "pidCount": 0,
+      "capCount": 5,
+      "settingCount": 1,
+      "flowTriggers": 8,
+      "gaps": [],
+      "productIds": []
+    },
+    {
+      "driverId": "wifi_ewelink_th",
+      "homeyClass": "socket",
+      "mfrCount": 0,
+      "pidCount": 0,
+      "capCount": 2,
+      "settingCount": 1,
+      "flowTriggers": 2,
+      "gaps": [],
+      "productIds": []
+    },
+    {
+      "driverId": "wifi_plug",
+      "homeyClass": "socket",
+      "mfrCount": 0,
+      "pidCount": 0,
+      "capCount": 6,
+      "settingCount": 1,
+      "flowTriggers": 6,
+      "gaps": [
+        "missing_power_scale_setting"
+      ],
+      "productIds": []
+    },
+    {
+      "driverId": "wifi_power_strip",
+      "homeyClass": "socket",
+      "mfrCount": 0,
+      "pidCount": 0,
+      "capCount": 8,
+      "settingCount": 1,
+      "flowTriggers": 3,
+      "gaps": [
+        "missing_power_scale_setting"
+      ],
+      "productIds": []
+    },
+    {
+      "driverId": "wifi_sonoff_basicr4",
+      "homeyClass": "socket",
+      "mfrCount": 0,
+      "pidCount": 0,
+      "capCount": 2,
+      "settingCount": 1,
+      "flowTriggers": 2,
+      "gaps": [],
+      "productIds": []
+    },
+    {
+      "driverId": "wifi_sonoff_dualr3",
+      "homeyClass": "socket",
+      "mfrCount": 0,
+      "pidCount": 0,
+      "capCount": 6,
+      "settingCount": 1,
+      "flowTriggers": 7,
+      "gaps": [
+        "missing_power_scale_setting"
+      ],
+      "productIds": []
+    },
+    {
+      "driverId": "wifi_sonoff_micro",
+      "homeyClass": "socket",
+      "mfrCount": 0,
+      "pidCount": 0,
+      "capCount": 2,
+      "settingCount": 1,
+      "flowTriggers": 2,
+      "gaps": [],
+      "productIds": []
+    },
+    {
+      "driverId": "wifi_sonoff_minir3",
+      "homeyClass": "socket",
+      "mfrCount": 0,
+      "pidCount": 0,
+      "capCount": 2,
+      "settingCount": 1,
+      "flowTriggers": 3,
+      "gaps": [],
+      "productIds": []
+    },
+    {
+      "driverId": "wifi_sonoff_minir4",
+      "homeyClass": "socket",
+      "mfrCount": 0,
+      "pidCount": 0,
+      "capCount": 2,
+      "settingCount": 1,
+      "flowTriggers": 2,
+      "gaps": [],
+      "productIds": []
+    },
+    {
+      "driverId": "wifi_sonoff_pow_elite",
+      "homeyClass": "socket",
+      "mfrCount": 0,
+      "pidCount": 0,
+      "capCount": 6,
+      "settingCount": 1,
+      "flowTriggers": 6,
+      "gaps": [
+        "missing_power_scale_setting"
+      ],
+      "productIds": []
+    },
+    {
+      "driverId": "wifi_sonoff_smate2",
+      "homeyClass": "socket",
+      "mfrCount": 0,
+      "pidCount": 0,
+      "capCount": 2,
+      "settingCount": 1,
+      "flowTriggers": 5,
+      "gaps": [],
+      "productIds": []
+    },
+    {
+      "driverId": "wifi_sonoff_tx_1ch",
+      "homeyClass": "socket",
+      "mfrCount": 0,
+      "pidCount": 0,
+      "capCount": 2,
+      "settingCount": 1,
+      "flowTriggers": 2,
+      "gaps": [],
+      "productIds": []
+    },
+    {
+      "driverId": "wifi_sonoff_tx_2ch",
+      "homeyClass": "socket",
+      "mfrCount": 0,
+      "pidCount": 0,
+      "capCount": 3,
+      "settingCount": 1,
+      "flowTriggers": 4,
+      "gaps": [],
+      "productIds": []
+    },
+    {
+      "driverId": "wifi_sonoff_tx_3ch",
+      "homeyClass": "socket",
+      "mfrCount": 0,
+      "pidCount": 0,
+      "capCount": 4,
+      "settingCount": 1,
+      "flowTriggers": 6,
+      "gaps": [],
+      "productIds": []
+    },
+    {
+      "driverId": "wifi_switch",
+      "homeyClass": "socket",
+      "mfrCount": 0,
+      "pidCount": 0,
+      "capCount": 3,
+      "settingCount": 1,
+      "flowTriggers": 2,
+      "gaps": [],
+      "productIds": []
+    },
+    {
+      "driverId": "wifi_switch_2gang",
+      "homeyClass": "socket",
+      "mfrCount": 0,
+      "pidCount": 0,
+      "capCount": 5,
+      "settingCount": 1,
+      "flowTriggers": 8,
+      "gaps": [],
+      "productIds": []
+    },
+    {
+      "driverId": "wifi_switch_3gang",
+      "homeyClass": "socket",
+      "mfrCount": 0,
+      "pidCount": 0,
+      "capCount": 7,
+      "settingCount": 1,
+      "flowTriggers": 6,
+      "gaps": [],
+      "productIds": []
+    },
+    {
+      "driverId": "wifi_switch_4gang",
+      "homeyClass": "socket",
+      "mfrCount": 0,
+      "pidCount": 0,
+      "capCount": 9,
+      "settingCount": 1,
+      "flowTriggers": 8,
+      "gaps": [],
+      "productIds": []
+    }
+  ],
+  "switch": [
+    {
+      "driverId": "curtain_module_2_gang",
+      "homeyClass": "windowcoverings",
+      "mfrCount": 40,
+      "pidCount": 3,
+      "capCount": 4,
+      "settingCount": 0,
+      "flowTriggers": 3,
+      "gaps": [],
+      "productIds": [
+        "TS130F",
+        "TS0601",
+        "TS0726"
+      ]
+    },
+    {
+      "driverId": "dimmer_1_gang",
+      "homeyClass": "light",
+      "mfrCount": 26,
+      "pidCount": 3,
+      "capCount": 4,
+      "settingCount": 2,
+      "flowTriggers": 5,
+      "gaps": [],
+      "productIds": [
+        "TS110F",
+        "TS110E",
+        "TS0052"
+      ]
+    },
+    {
+      "driverId": "dimmer_1_gang_2",
+      "homeyClass": "light",
+      "mfrCount": 0,
+      "pidCount": 11,
+      "capCount": 4,
+      "settingCount": 0,
+      "flowTriggers": 5,
+      "gaps": [
+        "empty_mfr"
+      ],
+      "productIds": [
+        "TS110E",
+        "TS0601",
+        "TS0505B",
+        "TS0215A",
+        "TS0002",
+        "TS0003"
+      ]
+    },
+    {
+      "driverId": "dimmer_1_gang_tuya",
+      "homeyClass": "light",
+      "mfrCount": 33,
+      "pidCount": 12,
+      "capCount": 4,
+      "settingCount": 0,
+      "flowTriggers": 5,
+      "gaps": [],
+      "productIds": [
+        "TS110F",
+        "TS110E",
+        "TS0052",
+        "TS0601",
+        "TS0505B",
+        "TS0215A"
+      ]
+    },
+    {
+      "driverId": "dimmer_2_gang",
+      "homeyClass": "light",
+      "mfrCount": 20,
+      "pidCount": 36,
+      "capCount": 5,
+      "settingCount": 0,
+      "flowTriggers": 5,
+      "gaps": [],
+      "productIds": [
+        "01MINIZB",
+        "BASICZBR3",
+        "S26R2ZB",
+        "S31ZB",
+        "TS0001",
+        "TS0001_power"
+      ]
+    },
+    {
+      "driverId": "dimmer_3gang",
+      "homeyClass": "light",
+      "mfrCount": 4,
+      "pidCount": 2,
+      "capCount": 10,
+      "settingCount": 0,
+      "flowTriggers": 14,
+      "gaps": [],
+      "productIds": [
+        "TS0601_dimmer3",
+        "TS0601"
+      ]
+    },
+    {
+      "driverId": "dimmer_wall_1gang",
+      "homeyClass": "light",
+      "mfrCount": 152,
+      "pidCount": 19,
+      "capCount": 6,
+      "settingCount": 9,
+      "flowTriggers": 13,
+      "gaps": [
+        "missing_power_scale_setting"
+      ],
+      "productIds": [
+        "TS0001",
+        "TS0002",
+        "TS0003",
+        "TS0011",
+        "TS0012",
+        "TS0013"
+      ]
+    },
+    {
+      "driverId": "switch_dimmer_1gang",
+      "homeyClass": "light",
+      "mfrCount": 8,
+      "pidCount": 1,
+      "capCount": 3,
+      "settingCount": 1,
+      "flowTriggers": 7,
+      "gaps": [],
+      "productIds": [
+        "TS0601"
+      ]
+    },
+    {
+      "driverId": "switch_wireless",
+      "homeyClass": "sensor",
+      "mfrCount": 48,
+      "pidCount": 3,
+      "capCount": 2,
+      "settingCount": 9,
+      "flowTriggers": 9,
+      "gaps": [],
+      "productIds": [
+        "TS0601_wirelesssw",
+        "TS0601",
+        "TS0215A"
+      ]
+    }
+  ],
+  "sensor": [
+    {
+      "driverId": "air_purifier_climate",
+      "homeyClass": "sensor",
+      "mfrCount": 2,
+      "pidCount": 1,
+      "capCount": 3,
+      "settingCount": 0,
+      "flowTriggers": 5,
+      "gaps": [],
+      "productIds": [
+        "TS0601"
+      ]
+    },
+    {
+      "driverId": "air_purifier_contact",
+      "homeyClass": "sensor",
+      "mfrCount": 2,
+      "pidCount": 5,
+      "capCount": 4,
+      "settingCount": 11,
+      "flowTriggers": 9,
+      "gaps": [],
+      "productIds": [
+        "Excellux",
+        "TS0203",
+        "TS0601",
+        "TS0601_generic",
+        "TS0603"
+      ]
+    },
+    {
+      "driverId": "air_purifier_dimmer",
+      "homeyClass": "sensor",
+      "mfrCount": 2,
+      "pidCount": 1,
+      "capCount": 1,
+      "settingCount": 9,
+      "flowTriggers": 12,
+      "gaps": [
+        "missing_power_scale_setting"
+      ],
+      "productIds": [
+        "TS0601"
+      ]
+    },
+    {
+      "driverId": "air_purifier_din",
+      "homeyClass": "sensor",
+      "mfrCount": 2,
+      "pidCount": 1,
+      "capCount": 4,
+      "settingCount": 0,
+      "flowTriggers": 13,
+      "gaps": [
+        "missing_power_scale_setting"
+      ],
+      "productIds": [
+        "TS0601"
+      ]
+    },
+    {
+      "driverId": "air_purifier_lcdtemphumidsensor",
+      "homeyClass": "sensor",
+      "mfrCount": 2,
+      "pidCount": 1,
+      "capCount": 3,
+      "settingCount": 0,
+      "flowTriggers": 3,
+      "gaps": [],
+      "productIds": [
+        "TS0601"
+      ]
+    },
+    {
+      "driverId": "air_purifier_motion",
+      "homeyClass": "sensor",
+      "mfrCount": 2,
+      "pidCount": 15,
+      "capCount": 3,
+      "settingCount": 0,
+      "flowTriggers": 4,
+      "gaps": [],
+      "productIds": [
+        "TS0601",
+        "TS0225",
+        "Excellux",
+        "TS0001",
+        "TS0001_fingerbot",
+        "TS0003"
+      ]
+    },
+    {
+      "driverId": "air_purifier_presence",
+      "homeyClass": "sensor",
+      "mfrCount": 2,
+      "pidCount": 1,
+      "capCount": 6,
+      "settingCount": 25,
+      "flowTriggers": 9,
+      "gaps": [],
+      "productIds": [
+        "TS0601"
+      ]
+    },
+    {
+      "driverId": "air_purifier_quality",
+      "homeyClass": "sensor",
+      "mfrCount": 2,
+      "pidCount": 1,
+      "capCount": 7,
+      "settingCount": 4,
+      "flowTriggers": 10,
+      "gaps": [
+        "missing_power_scale_setting"
+      ],
+      "productIds": [
+        "TS0601"
+      ]
+    },
+    {
+      "driverId": "air_purifier_soil",
+      "homeyClass": "sensor",
+      "mfrCount": 2,
+      "pidCount": 2,
+      "capCount": 8,
+      "settingCount": 3,
+      "flowTriggers": 12,
+      "gaps": [],
+      "productIds": [
+        "TS0601",
+        "TS0001"
+      ]
+    },
+    {
+      "driverId": "air_purifier_switch",
+      "homeyClass": "sensor",
+      "mfrCount": 2,
+      "pidCount": 1,
+      "capCount": 6,
+      "settingCount": 15,
+      "flowTriggers": 16,
+      "gaps": [
+        "missing_power_scale_setting"
+      ],
+      "productIds": [
+        "TS0601"
+      ]
+    },
+    {
+      "driverId": "air_quality_co2",
+      "homeyClass": "sensor",
+      "mfrCount": 36,
+      "pidCount": 4,
+      "capCount": 9,
+      "settingCount": 4,
+      "flowTriggers": 9,
+      "gaps": [],
+      "productIds": [
+        "TS0601",
+        "RH3052",
+        "TS0005",
+        "TS0006"
+      ]
+    },
+    {
+      "driverId": "air_quality_comprehensive",
+      "homeyClass": "sensor",
+      "mfrCount": 32,
+      "pidCount": 3,
+      "capCount": 9,
+      "settingCount": 9,
+      "flowTriggers": 7,
+      "gaps": [],
+      "productIds": [
+        "TS0005",
+        "TS0006",
+        "TS0601"
+      ]
+    },
+    {
+      "driverId": "bed_sensor",
+      "homeyClass": "sensor",
+      "mfrCount": 24,
+      "pidCount": 1,
+      "capCount": 4,
+      "settingCount": 3,
+      "flowTriggers": 3,
+      "gaps": [],
+      "productIds": [
+        "TS0601"
+      ]
+    },
+    {
+      "driverId": "climate_sensor",
+      "homeyClass": "sensor",
+      "mfrCount": 2098,
+      "pidCount": 60,
+      "capCount": 5,
+      "settingCount": 5,
+      "flowTriggers": 10,
+      "gaps": [],
+      "productIds": [
+        "ZTH13-3.0",
+        "ZTH11-3.0",
+        "01MINIZB",
+        "BASICZBR3",
+        "CK-BL702-MWS-01",
+        "CK-BL702-MWS-01(7016)"
+      ]
+    },
+    {
+      "driverId": "climate_sensor_device",
+      "homeyClass": "thermostat",
+      "mfrCount": 2,
+      "pidCount": 1,
+      "capCount": 8,
+      "settingCount": 8,
+      "flowTriggers": 5,
+      "gaps": [],
+      "productIds": [
+        "TS0601"
+      ]
+    },
+    {
+      "driverId": "climate_sensor_dimmer",
+      "homeyClass": "light",
+      "mfrCount": 2,
+      "pidCount": 3,
+      "capCount": 6,
+      "settingCount": 9,
+      "flowTriggers": 12,
+      "gaps": [
+        "missing_power_scale_setting"
+      ],
+      "productIds": [
+        "TS0601",
+        "TS0201",
+        "Excellux"
+      ]
+    },
+    {
+      "driverId": "climate_sensor_energy",
+      "homeyClass": "sensor",
+      "mfrCount": 2,
+      "pidCount": 23,
+      "capCount": 4,
+      "settingCount": 0,
+      "flowTriggers": 3,
+      "gaps": [],
+      "productIds": [
+        "TS0201",
+        "TS0222",
+        "TH01",
+        "WSDCGQ01LM",
+        "WSDCGQ11LM",
+        "WSDCGQ12LM"
+      ]
+    },
+    {
+      "driverId": "climate_sensor_gas",
+      "homeyClass": "sensor",
+      "mfrCount": 2,
+      "pidCount": 3,
+      "capCount": 7,
+      "settingCount": 8,
+      "flowTriggers": 11,
+      "gaps": [],
+      "productIds": [
+        "TS0601",
+        "TS0201",
+        "Excellux"
+      ]
+    },
+    {
+      "driverId": "climate_sensor_presence",
+      "homeyClass": "sensor",
+      "mfrCount": 2,
+      "pidCount": 1,
+      "capCount": 19,
+      "settingCount": 25,
+      "flowTriggers": 13,
+      "gaps": [
+        "missing_power_scale_setting"
+      ],
+      "productIds": [
+        "TS0601"
+      ]
+    },
+    {
+      "driverId": "climate_sensor_zt08",
+      "homeyClass": "sensor",
+      "mfrCount": 4,
+      "pidCount": 1,
+      "capCount": 4,
+      "settingCount": 0,
+      "flowTriggers": 4,
+      "gaps": [],
+      "productIds": [
+        "TS0601"
+      ]
+    },
+    {
+      "driverId": "contact_sensor",
+      "homeyClass": "sensor",
+      "mfrCount": 165,
+      "pidCount": 28,
+      "capCount": 5,
+      "settingCount": 13,
+      "flowTriggers": 9,
+      "gaps": [],
+      "productIds": [
+        "TS0203",
+        "ZG-102Z",
+        "ZG-102ZL",
+        "DS01",
+        "RH3001",
+        "MCCGQ01LM"
+      ]
+    },
+    {
+      "driverId": "contact_sensor_curtain",
+      "homeyClass": "windowcoverings",
+      "mfrCount": 2,
+      "pidCount": 2,
+      "capCount": 10,
+      "settingCount": 12,
+      "flowTriggers": 8,
+      "gaps": [],
+      "productIds": [
+        "TS0601",
+        "Excellux"
+      ]
+    },
+    {
+      "driverId": "contact_sensor_dimmer",
+      "homeyClass": "sensor",
+      "mfrCount": 2,
+      "pidCount": 2,
+      "capCount": 7,
+      "settingCount": 11,
+      "flowTriggers": 11,
+      "gaps": [
+        "missing_power_scale_setting"
+      ],
+      "productIds": [
+        "TS0601",
+        "Excellux"
+      ]
+    },
+    {
+      "driverId": "contact_sensor_zigbee",
+      "homeyClass": "sensor",
+      "mfrCount": 8,
+      "pidCount": 1,
+      "capCount": 5,
+      "settingCount": 11,
+      "flowTriggers": 9,
+      "gaps": [],
+      "productIds": [
+        "TS0601"
+      ]
+    },
+    {
+      "driverId": "co_sensor",
+      "homeyClass": "sensor",
+      "mfrCount": 32,
+      "pidCount": 2,
+      "capCount": 5,
+      "settingCount": 0,
+      "flowTriggers": 8,
+      "gaps": [],
+      "productIds": [
+        "TS0601_co",
+        "TS0601"
+      ]
+    },
+    {
+      "driverId": "device_air_purifier_din",
+      "homeyClass": "sensor",
+      "mfrCount": 2,
+      "pidCount": 1,
+      "capCount": 9,
+      "settingCount": 1,
+      "flowTriggers": 6,
+      "gaps": [
+        "missing_power_scale_setting"
+      ],
+      "productIds": [
+        "TS0601"
+      ]
+    },
+    {
+      "driverId": "device_air_purifier_humidifier",
+      "homeyClass": "fan",
+      "mfrCount": 2,
+      "pidCount": 1,
+      "capCount": 6,
+      "settingCount": 0,
+      "flowTriggers": 5,
+      "gaps": [],
+      "productIds": [
+        "TS0601"
+      ]
+    },
+    {
+      "driverId": "device_air_purifier_motion",
+      "homeyClass": "fan",
+      "mfrCount": 2,
+      "pidCount": 4,
+      "capCount": 7,
+      "settingCount": 0,
+      "flowTriggers": 6,
+      "gaps": [],
+      "productIds": [
+        "TS0601",
+        "TS0225",
+        "Excellux",
+        "TS0001"
+      ]
+    },
+    {
+      "driverId": "device_air_purifier_presence",
+      "homeyClass": "sensor",
+      "mfrCount": 2,
+      "pidCount": 1,
+      "capCount": 11,
+      "settingCount": 25,
+      "flowTriggers": 13,
+      "gaps": [],
+      "productIds": [
+        "TS0601"
+      ]
+    },
+    {
+      "driverId": "device_air_purifier_quality",
+      "homeyClass": "sensor",
+      "mfrCount": 2,
+      "pidCount": 1,
+      "capCount": 11,
+      "settingCount": 9,
+      "flowTriggers": 10,
+      "gaps": [],
+      "productIds": [
+        "TS0601"
+      ]
+    },
+    {
+      "driverId": "device_air_purifier_smoke",
+      "homeyClass": "sensor",
+      "mfrCount": 2,
+      "pidCount": 1,
+      "capCount": 9,
+      "settingCount": 8,
+      "flowTriggers": 13,
+      "gaps": [],
+      "productIds": [
+        "TS0601"
+      ]
+    },
+    {
+      "driverId": "device_air_purifier_soil",
+      "homeyClass": "sensor",
+      "mfrCount": 2,
+      "pidCount": 2,
+      "capCount": 12,
+      "settingCount": 3,
+      "flowTriggers": 16,
+      "gaps": [],
+      "productIds": [
+        "TS0601",
+        "TS0001"
+      ]
+    },
+    {
+      "driverId": "device_air_purifier_water",
+      "homeyClass": "sensor",
+      "mfrCount": 2,
+      "pidCount": 1,
+      "capCount": 10,
+      "settingCount": 2,
+      "flowTriggers": 6,
+      "gaps": [],
+      "productIds": [
+        "TS0601"
+      ]
+    },
+    {
+      "driverId": "din_rail_meter",
+      "homeyClass": "sensor",
+      "mfrCount": 42,
+      "pidCount": 8,
+      "capCount": 6,
+      "settingCount": 1,
+      "flowTriggers": 4,
+      "gaps": [
+        "missing_power_scale_setting"
+      ],
+      "productIds": [
+        "TS0601",
+        "SDM01-3Z1",
+        "SDM02-2Z1",
+        "SPM01-1Z2",
+        "SPM02-3Z3",
+        "TS0203"
+      ]
+    },
+    {
+      "driverId": "doorwindowsensor",
+      "homeyClass": "sensor",
+      "mfrCount": 0,
+      "pidCount": 3,
+      "capCount": 3,
+      "settingCount": 1,
+      "flowTriggers": 3,
+      "gaps": [
+        "empty_mfr"
+      ],
+      "productIds": [
+        "RH3001",
+        "TS0203",
+        "SNZB-04"
+      ]
+    },
+    {
+      "driverId": "doorwindowsensor_2",
+      "homeyClass": "sensor",
+      "mfrCount": 2,
+      "pidCount": 5,
+      "capCount": 4,
+      "settingCount": 1,
+      "flowTriggers": 3,
+      "gaps": [],
+      "productIds": [
+        "TS0601",
+        "RH3001",
+        "TS0203",
+        "DoorWindow-Sensor-ZB3.0",
+        "MCT-340 E"
+      ]
+    },
+    {
+      "driverId": "doorwindowsensor_3",
+      "homeyClass": "sensor",
+      "mfrCount": 10,
+      "pidCount": 34,
+      "capCount": 3,
+      "settingCount": 1,
+      "flowTriggers": 3,
+      "gaps": [],
+      "productIds": [
+        "01MINIZB",
+        "BASICZBR3",
+        "S26R2ZB",
+        "S31ZB",
+        "TS0001",
+        "TS0001_power"
+      ]
+    },
+    {
+      "driverId": "doorwindowsensor_4",
+      "homeyClass": "sensor",
+      "mfrCount": 6,
+      "pidCount": 20,
+      "capCount": 3,
+      "settingCount": 1,
+      "flowTriggers": 3,
+      "gaps": [],
+      "productIds": [
+        "CK-TLSR8656-SS5-01(7014)",
+        "DS01",
+        "Excellux",
+        "RH3052",
+        "SM0201",
+        "TH01"
+      ]
+    },
+    {
+      "driverId": "door_sensor",
+      "homeyClass": "sensor",
+      "mfrCount": 12,
+      "pidCount": 2,
+      "capCount": 2,
+      "settingCount": 2,
+      "flowTriggers": 8,
+      "gaps": [],
+      "productIds": [
+        "TS0203",
+        "TS0601"
+      ]
+    },
+    {
+      "driverId": "energy_meter_3phase",
+      "homeyClass": "sensor",
+      "mfrCount": 58,
+      "pidCount": 2,
+      "capCount": 10,
+      "settingCount": 1,
+      "flowTriggers": 5,
+      "gaps": [
+        "missing_power_scale_setting"
+      ],
+      "productIds": [
+        "TS0601",
+        "TS0601_3phase"
+      ]
+    },
+    {
+      "driverId": "flood_sensor",
+      "homeyClass": "sensor",
+      "mfrCount": 4,
+      "pidCount": 2,
+      "capCount": 3,
+      "settingCount": 0,
+      "flowTriggers": 3,
+      "gaps": [],
+      "productIds": [
+        "TS0207",
+        "RH3001"
+      ]
+    },
+    {
+      "driverId": "formaldehyde_sensor",
+      "homeyClass": "sensor",
+      "mfrCount": 4,
+      "pidCount": 2,
+      "capCount": 5,
+      "settingCount": 2,
+      "flowTriggers": 8,
+      "gaps": [],
+      "productIds": [
+        "TS0601_hcho",
+        "TS0601"
+      ]
+    },
+    {
+      "driverId": "gas_detector",
+      "homeyClass": "sensor",
+      "mfrCount": 36,
+      "pidCount": 9,
+      "capCount": 5,
+      "settingCount": 9,
+      "flowTriggers": 9,
+      "gaps": [],
+      "productIds": [
+        "TS0203",
+        "TS0204",
+        "TS0225",
+        "TS0301",
+        "TS0601",
+        "TS0601_gas"
+      ]
+    },
+    {
+      "driverId": "gas_sensor",
+      "homeyClass": "sensor",
+      "mfrCount": 14,
+      "pidCount": 5,
+      "capCount": 6,
+      "settingCount": 8,
+      "flowTriggers": 11,
+      "gaps": [],
+      "productIds": [
+        "TS0601_gas",
+        "TS0601",
+        "TS0225",
+        "ZG-225Z",
+        "TS0301"
+      ]
+    },
+    {
+      "driverId": "humidifier",
+      "homeyClass": "fan",
+      "mfrCount": 20,
+      "pidCount": 2,
+      "capCount": 5,
+      "settingCount": 0,
+      "flowTriggers": 4,
+      "gaps": [],
+      "productIds": [
+        "TS0601_humid",
+        "TS0601"
+      ]
+    },
+    {
+      "driverId": "hvac_dehumidifier",
+      "homeyClass": "fan",
+      "mfrCount": 20,
+      "pidCount": 2,
+      "capCount": 9,
+      "settingCount": 8,
+      "flowTriggers": 13,
+      "gaps": [
+        "missing_power_scale_setting"
+      ],
+      "productIds": [
+        "TS0601_dehum",
+        "TS0601"
+      ]
+    },
+    {
+      "driverId": "hybrid_fan_sensor",
+      "homeyClass": "fan",
+      "mfrCount": 6,
+      "pidCount": 1,
+      "capCount": 7,
+      "settingCount": 2,
+      "flowTriggers": 6,
+      "gaps": [],
+      "productIds": [
+        "TS0601"
+      ]
+    },
+    {
+      "driverId": "hybrid_garage_door_sensor",
+      "homeyClass": "garagedoor",
+      "mfrCount": 20,
+      "pidCount": 2,
+      "capCount": 5,
+      "settingCount": 2,
+      "flowTriggers": 4,
+      "gaps": [],
+      "productIds": [
+        "TS0601",
+        "TS0001"
+      ]
+    },
+    {
+      "driverId": "hybrid_light_sensor",
+      "homeyClass": "light",
+      "mfrCount": 8,
+      "pidCount": 6,
+      "capCount": 4,
+      "settingCount": 1,
+      "flowTriggers": 6,
+      "gaps": [],
+      "productIds": [
+        "TS0601",
+        "TS0041",
+        "TS0042",
+        "TS0001",
+        "TS000F",
+        "TS011F"
+      ]
+    },
+    {
+      "driverId": "hybrid_sensor_thermostat",
+      "homeyClass": "thermostat",
+      "mfrCount": 4,
+      "pidCount": 35,
+      "capCount": 6,
+      "settingCount": 4,
+      "flowTriggers": 5,
+      "gaps": [],
+      "productIds": [
+        "01MINIZB",
+        "BASICZBR3",
+        "S26R2ZB",
+        "S31ZB",
+        "TS0001",
+        "TS0001_power"
+      ]
+    },
+    {
+      "driverId": "illuminance_sensor",
+      "homeyClass": "sensor",
+      "mfrCount": 5,
+      "pidCount": 4,
+      "capCount": 3,
+      "settingCount": 0,
+      "flowTriggers": 2,
+      "gaps": [],
+      "productIds": [
+        "TS0222",
+        "ZG-106Z",
+        "TS0225",
+        "TS0601"
+      ]
+    },
+    {
+      "driverId": "lcdtemphumidluxsensor",
+      "homeyClass": "sensor",
+      "mfrCount": 18,
+      "pidCount": 4,
+      "capCount": 5,
+      "settingCount": 0,
+      "flowTriggers": 4,
+      "gaps": [],
+      "productIds": [
+        "TS0201",
+        "TS0222",
+        "TS0601",
+        "Excellux"
+      ]
+    },
+    {
+      "driverId": "lcdtemphumidsensor",
+      "homeyClass": "sensor",
+      "mfrCount": 64,
+      "pidCount": 5,
+      "capCount": 4,
+      "settingCount": 1,
+      "flowTriggers": 3,
+      "gaps": [],
+      "productIds": [
+        "TS0201",
+        "TS0601_lcd",
+        "TS0601",
+        "TY0201",
+        "Excellux"
+      ]
+    },
+    {
+      "driverId": "lcdtemphumidsensor_2",
+      "homeyClass": "sensor",
+      "mfrCount": 2,
+      "pidCount": 4,
+      "capCount": 4,
+      "settingCount": 0,
+      "flowTriggers": 3,
+      "gaps": [],
+      "productIds": [
+        "TS0601",
+        "TS0201",
+        "Excellux",
+        "SM0201"
+      ]
+    },
+    {
+      "driverId": "lcdtemphumidsensor_3",
+      "homeyClass": "sensor",
+      "mfrCount": 38,
+      "pidCount": 2,
+      "capCount": 4,
+      "settingCount": 0,
+      "flowTriggers": 3,
+      "gaps": [],
+      "productIds": [
+        "TS0601",
+        "Excellux"
+      ]
+    },
+    {
+      "driverId": "light_sensor_outdoor",
+      "homeyClass": "sensor",
+      "mfrCount": 20,
+      "pidCount": 2,
+      "capCount": 3,
+      "settingCount": 0,
+      "flowTriggers": 1,
+      "gaps": [],
+      "productIds": [
+        "TS0601",
+        "TS0222"
+      ]
+    },
+    {
+      "driverId": "motion_sensor",
+      "homeyClass": "sensor",
+      "mfrCount": 213,
+      "pidCount": 36,
+      "capCount": 6,
+      "settingCount": 11,
+      "flowTriggers": 10,
+      "gaps": [],
+      "productIds": [
+        "3305-S",
+        "3325-S",
+        "3326-L",
+        "CK-BL702-MWS-01",
+        "CK-BL702-MWS-01(7016)",
+        "CK-TLSR8656-SS5-01(7002)"
+      ]
+    },
+    {
+      "driverId": "motion_sensor_2",
+      "homeyClass": "sensor",
+      "mfrCount": 3,
+      "pidCount": 4,
+      "capCount": 4,
+      "settingCount": 0,
+      "flowTriggers": 4,
+      "gaps": [],
+      "productIds": [
+        "TS0601",
+        "TS0225",
+        "Excellux",
+        "TS0001"
+      ]
+    },
+    {
+      "driverId": "motion_sensor_radar_mmwave",
+      "homeyClass": "sensor",
+      "mfrCount": 36,
+      "pidCount": 7,
+      "capCount": 4,
+      "settingCount": 10,
+      "flowTriggers": 13,
+      "gaps": [],
+      "productIds": [
+        "TS0601",
+        "TS0601_mmwave",
+        "TS0225",
+        "CK-BL702-MWS-01(7016)",
+        "ZP-301Z",
+        "TS110E"
+      ]
+    },
+    {
+      "driverId": "pirsensor",
+      "homeyClass": "sensor",
+      "mfrCount": 0,
+      "pidCount": 1,
+      "capCount": 3,
+      "settingCount": 0,
+      "flowTriggers": 3,
+      "gaps": [
+        "empty_mfr"
+      ],
+      "productIds": [
+        "RH3040"
+      ]
+    },
+    {
+      "driverId": "pir_mmwave_sensor",
+      "homeyClass": "sensor",
+      "mfrCount": 4,
+      "pidCount": 6,
+      "capCount": 4,
+      "settingCount": 0,
+      "flowTriggers": 6,
+      "gaps": [],
+      "productIds": [
+        "TS0225",
+        "CK-BL702-MWS-01(7016)",
+        "ZP-301Z",
+        "TS0601",
+        "TS110E",
+        "TS0004"
+      ]
+    },
+    {
+      "driverId": "pir_sensor_2",
+      "homeyClass": "sensor",
+      "mfrCount": 40,
+      "pidCount": 37,
+      "capCount": 4,
+      "settingCount": 0,
+      "flowTriggers": 4,
+      "gaps": [],
+      "productIds": [
+        "01MINIZB",
+        "BASICZBR3",
+        "Excellux",
+        "S26R2ZB",
+        "S31ZB",
+        "TS0001"
+      ]
+    },
+    {
+      "driverId": "power_clamp_meter",
+      "homeyClass": "sensor",
+      "mfrCount": 33,
+      "pidCount": 11,
+      "capCount": 11,
+      "settingCount": 2,
+      "flowTriggers": 2,
+      "gaps": [],
+      "productIds": [
+        "TS0601",
+        "CK-BL702-MWS-01",
+        "CK-BL702-MWS-01(7016)",
+        "MG1_5RZ",
+        "SZLMR10",
+        "TS0004"
+      ]
+    },
+    {
+      "driverId": "power_meter",
+      "homeyClass": "sensor",
+      "mfrCount": 54,
+      "pidCount": 4,
+      "capCount": 5,
+      "settingCount": 1,
+      "flowTriggers": 4,
+      "gaps": [
+        "missing_power_scale_setting"
+      ],
+      "productIds": [
+        "TS0601_meter",
+        "PJ-1203A",
+        "TS004F",
+        "ts0601"
+      ]
+    },
+    {
+      "driverId": "presence_detector",
+      "homeyClass": "sensor",
+      "mfrCount": 0,
+      "pidCount": 0,
+      "capCount": 4,
+      "settingCount": 9,
+      "flowTriggers": 4,
+      "gaps": [],
+      "productIds": []
+    },
+    {
+      "driverId": "presence_sensor_ceiling",
+      "homeyClass": "sensor",
+      "mfrCount": 12,
+      "pidCount": 7,
+      "capCount": 11,
+      "settingCount": 3,
+      "flowTriggers": 5,
+      "gaps": [],
+      "productIds": [
+        "TS0601_ceiling",
+        "TS0601",
+        "TS0225",
+        "CK-BL702-MWS-01(7016)",
+        "ZP-301Z",
+        "TS110E"
+      ]
+    },
+    {
+      "driverId": "presence_sensor_radar",
+      "homeyClass": "sensor",
+      "mfrCount": 807,
+      "pidCount": 54,
+      "capCount": 15,
+      "settingCount": 53,
+      "flowTriggers": 13,
+      "gaps": [],
+      "productIds": [
+        "TS0601",
+        "CK-BL702-MWS-01",
+        "CK-BL702-MWS-01(7016)",
+        "CK-TLSR8656-SS5-01(7014)",
+        "EDM-1ZBA-EU",
+        "Excellux"
+      ]
+    },
+    {
+      "driverId": "radar_sensor",
+      "homeyClass": "sensor",
+      "mfrCount": 8,
+      "pidCount": 1,
+      "capCount": 4,
+      "settingCount": 0,
+      "flowTriggers": 3,
+      "gaps": [],
+      "productIds": [
+        "TS0601"
+      ]
+    },
+    {
+      "driverId": "radar_sensor_2",
+      "homeyClass": "sensor",
+      "mfrCount": 0,
+      "pidCount": 6,
+      "capCount": 4,
+      "settingCount": 0,
+      "flowTriggers": 4,
+      "gaps": [
+        "empty_mfr"
+      ],
+      "productIds": [
+        "TS0601",
+        "TS0225",
+        "CK-BL702-MWS-01(7016)",
+        "ZP-301Z",
+        "TS110E",
+        "TS0004"
+      ]
+    },
+    {
+      "driverId": "radar_sensor_ceiling",
+      "homeyClass": "sensor",
+      "mfrCount": 0,
+      "pidCount": 11,
+      "capCount": 4,
+      "settingCount": 0,
+      "flowTriggers": 3,
+      "gaps": [
+        "empty_mfr"
+      ],
+      "productIds": [
+        "CK-BL702-MWS-01",
+        "CK-BL702-MWS-01(7016)",
+        "MG1_5RZ",
+        "SZLMR10",
+        "TS0203",
+        "TS0225"
+      ]
+    },
+    {
+      "driverId": "rain_sensor",
+      "homeyClass": "sensor",
+      "mfrCount": 37,
+      "pidCount": 4,
+      "capCount": 5,
+      "settingCount": 2,
+      "flowTriggers": 7,
+      "gaps": [],
+      "productIds": [
+        "TS0207_rain",
+        "TS0601",
+        "TS0207",
+        "ZG-223Z"
+      ]
+    },
+    {
+      "driverId": "sensor_climate_contact",
+      "homeyClass": "sensor",
+      "mfrCount": 12,
+      "pidCount": 1,
+      "capCount": 8,
+      "settingCount": 7,
+      "flowTriggers": 9,
+      "gaps": [],
+      "productIds": [
+        "TS0601"
+      ]
+    },
+    {
+      "driverId": "sensor_climate_lcdtemphumidsensor",
+      "homeyClass": "sensor",
+      "mfrCount": 2,
+      "pidCount": 1,
+      "capCount": 4,
+      "settingCount": 7,
+      "flowTriggers": 8,
+      "gaps": [],
+      "productIds": [
+        "TS0601"
+      ]
+    },
+    {
+      "driverId": "sensor_climate_motion",
+      "homeyClass": "sensor",
+      "mfrCount": 4,
+      "pidCount": 4,
+      "capCount": 7,
+      "settingCount": 11,
+      "flowTriggers": 10,
+      "gaps": [],
+      "productIds": [
+        "TS0601",
+        "TS0225",
+        "Excellux",
+        "TS0001"
+      ]
+    },
+    {
+      "driverId": "sensor_climate_presence",
+      "homeyClass": "sensor",
+      "mfrCount": 2,
+      "pidCount": 1,
+      "capCount": 11,
+      "settingCount": 25,
+      "flowTriggers": 9,
+      "gaps": [],
+      "productIds": [
+        "TS0601"
+      ]
+    },
+    {
+      "driverId": "sensor_climate_temphumidsensor",
+      "homeyClass": "sensor",
+      "mfrCount": 6,
+      "pidCount": 26,
+      "capCount": 4,
+      "settingCount": 8,
+      "flowTriggers": 8,
+      "gaps": [],
+      "productIds": [
+        "CK-TLSR8656-SS5-01(7014)",
+        "Excellux",
+        "RH3052",
+        "SM0201",
+        "SNZB-02",
+        "SNZB-02D"
+      ]
+    },
+    {
+      "driverId": "sensor_contact_climate",
+      "homeyClass": "sensor",
+      "mfrCount": 2,
+      "pidCount": 2,
+      "capCount": 8,
+      "settingCount": 7,
+      "flowTriggers": 9,
+      "gaps": [],
+      "productIds": [
+        "TS0601",
+        "Excellux"
+      ]
+    },
+    {
+      "driverId": "sensor_contact_motion",
+      "homeyClass": "sensor",
+      "mfrCount": 12,
+      "pidCount": 2,
+      "capCount": 7,
+      "settingCount": 11,
+      "flowTriggers": 10,
+      "gaps": [],
+      "productIds": [
+        "TS0601",
+        "Excellux"
+      ]
+    },
+    {
+      "driverId": "sensor_contact_presence",
+      "homeyClass": "sensor",
+      "mfrCount": 3,
+      "pidCount": 1,
+      "capCount": 10,
+      "settingCount": 24,
+      "flowTriggers": 9,
+      "gaps": [],
+      "productIds": [
+        "DISABLED_SENSOR_CONTACT_PRESENCE"
+      ]
+    },
+    {
+      "driverId": "sensor_contact_rain",
+      "homeyClass": "sensor",
+      "mfrCount": 2,
+      "pidCount": 5,
+      "capCount": 7,
+      "settingCount": 11,
+      "flowTriggers": 10,
+      "gaps": [],
+      "productIds": [
+        "Excellux",
+        "TS0203",
+        "TS0601",
+        "TY0203",
+        "TS0207"
+      ]
+    },
+    {
+      "driverId": "sensor_contact_water",
+      "homeyClass": "sensor",
+      "mfrCount": 2,
+      "pidCount": 2,
+      "capCount": 6,
+      "settingCount": 11,
+      "flowTriggers": 9,
+      "gaps": [],
+      "productIds": [
+        "TS0601",
+        "Excellux"
+      ]
+    },
+    {
+      "driverId": "sensor_contact_zigbee",
+      "homeyClass": "sensor",
+      "mfrCount": 182,
+      "pidCount": 36,
+      "capCount": 5,
+      "settingCount": 11,
+      "flowTriggers": 10,
+      "gaps": [],
+      "productIds": [
+        "3300-S",
+        "3320-L",
+        "CK-TLSR8656-SS5-01(7003)",
+        "DS01",
+        "DoorWindow-Sensor-ZB3.0",
+        "E1603/E1702"
+      ]
+    },
+    {
+      "driverId": "sensor_gas_presence",
+      "homeyClass": "sensor",
+      "mfrCount": 44,
+      "pidCount": 5,
+      "capCount": 13,
+      "settingCount": 25,
+      "flowTriggers": 9,
+      "gaps": [],
+      "productIds": [
+        "TS0601_gas",
+        "TS0601",
+        "TS0225",
+        "ZG-225Z",
+        "TS0301"
+      ]
+    },
+    {
+      "driverId": "sensor_illuminance_presence",
+      "homeyClass": "sensor",
+      "mfrCount": 56,
+      "pidCount": 11,
+      "capCount": 9,
+      "settingCount": 23,
+      "flowTriggers": 9,
+      "gaps": [],
+      "productIds": [
+        "CK-BL702-MWS-01(7016)",
+        "TS0004",
+        "TS011F",
+        "TS0209",
+        "TS0210",
+        "TS0222"
+      ]
+    },
+    {
+      "driverId": "sensor_lcdtemphumidsensor_soil",
+      "homeyClass": "sensor",
+      "mfrCount": 4,
+      "pidCount": 2,
+      "capCount": 9,
+      "settingCount": 3,
+      "flowTriggers": 12,
+      "gaps": [],
+      "productIds": [
+        "TS0601",
+        "TS0001"
+      ]
+    },
+    {
+      "driverId": "sensor_lcdtemphumidsensor_temphumidsensor",
+      "homeyClass": "sensor",
+      "mfrCount": 0,
+      "pidCount": 4,
+      "capCount": 4,
+      "settingCount": 1,
+      "flowTriggers": 3,
+      "gaps": [
+        "empty_mfr"
+      ],
+      "productIds": [
+        "TS0601_lcd",
+        "TS0601",
+        "TS0201",
+        "TY0201"
+      ]
+    },
+    {
+      "driverId": "sensor_motion_presence",
+      "homeyClass": "sensor",
+      "mfrCount": 108,
+      "pidCount": 20,
+      "capCount": 10,
+      "settingCount": 23,
+      "flowTriggers": 10,
+      "gaps": [],
+      "productIds": [
+        "CK-TLSR8656-SS5-01(7014)",
+        "Excellux",
+        "RH3052",
+        "SM0201",
+        "TH01",
+        "THS317-ET"
+      ]
+    },
+    {
+      "driverId": "sensor_motion_radar",
+      "homeyClass": "sensor",
+      "mfrCount": 2,
+      "pidCount": 1,
+      "capCount": 7,
+      "settingCount": 10,
+      "flowTriggers": 16,
+      "gaps": [],
+      "productIds": [
+        "TS0601"
+      ]
+    },
+    {
+      "driverId": "sensor_presence_radar",
+      "homeyClass": "sensor",
+      "mfrCount": 4,
+      "pidCount": 10,
+      "capCount": 9,
+      "settingCount": 24,
+      "flowTriggers": 9,
+      "gaps": [],
+      "productIds": [
+        "TS0203",
+        "TS0601",
+        "ZG-204ZL",
+        "ZG-204ZM",
+        "ZG-204ZV",
+        "TS0225"
+      ]
+    },
+    {
+      "driverId": "sirentemphumidsensor",
+      "homeyClass": "other",
+      "mfrCount": 0,
+      "pidCount": 1,
+      "capCount": 6,
+      "settingCount": 0,
+      "flowTriggers": 1,
+      "gaps": [
+        "empty_mfr"
+      ],
+      "productIds": [
+        "TS0601"
+      ]
+    },
+    {
+      "driverId": "siren_sirentemphumidsensor",
+      "homeyClass": "other",
+      "mfrCount": 16,
+      "pidCount": 1,
+      "capCount": 8,
+      "settingCount": 0,
+      "flowTriggers": 2,
+      "gaps": [],
+      "productIds": [
+        "TS0601"
+      ]
+    },
+    {
+      "driverId": "slim_motion_sensor",
+      "homeyClass": "sensor",
+      "mfrCount": 4,
+      "pidCount": 1,
+      "capCount": 3,
+      "settingCount": 0,
+      "flowTriggers": 3,
+      "gaps": [],
+      "productIds": [
+        "TS0202"
+      ]
+    },
+    {
+      "driverId": "smart_air_detection_box",
+      "homeyClass": "sensor",
+      "mfrCount": 0,
+      "pidCount": 1,
+      "capCount": 6,
+      "settingCount": 0,
+      "flowTriggers": 3,
+      "gaps": [
+        "empty_mfr"
+      ],
+      "productIds": [
+        "TS0601"
+      ]
+    },
+    {
+      "driverId": "smart_door_window_sensor",
+      "homeyClass": "sensor",
+      "mfrCount": 8,
+      "pidCount": 35,
+      "capCount": 4,
+      "settingCount": 1,
+      "flowTriggers": 3,
+      "gaps": [],
+      "productIds": [
+        "01MINIZB",
+        "BASICZBR3",
+        "S26R2ZB",
+        "S31ZB",
+        "TS0001",
+        "TS0001_power"
+      ]
+    },
+    {
+      "driverId": "smart_motion_sensor",
+      "homeyClass": "sensor",
+      "mfrCount": 4,
+      "pidCount": 2,
+      "capCount": 4,
+      "settingCount": 0,
+      "flowTriggers": 5,
+      "gaps": [],
+      "productIds": [
+        "TY0202",
+        "ts0601"
+      ]
+    },
+    {
+      "driverId": "smoke_detector_advanced",
+      "homeyClass": "sensor",
+      "mfrCount": 12,
+      "pidCount": 15,
+      "capCount": 6,
+      "settingCount": 8,
+      "flowTriggers": 9,
+      "gaps": [],
+      "productIds": [
+        "GS361A-H04",
+        "HS1SA",
+        "HS3SA",
+        "JTYJ-GD-01LM/BW",
+        "NAS-SD02B0",
+        "PG-S11Z"
+      ]
+    },
+    {
+      "driverId": "smoke_sensor",
+      "homeyClass": "sensor",
+      "mfrCount": 14,
+      "pidCount": 3,
+      "capCount": 3,
+      "settingCount": 0,
+      "flowTriggers": 3,
+      "gaps": [],
+      "productIds": [
+        "TS0205",
+        "TS0601",
+        "SMD9300"
+      ]
+    },
+    {
+      "driverId": "smoke_sensor2",
+      "homeyClass": "sensor",
+      "mfrCount": 112,
+      "pidCount": 14,
+      "capCount": 4,
+      "settingCount": 0,
+      "flowTriggers": 5,
+      "gaps": [],
+      "productIds": [
+        "TS0205",
+        "PG-S11Z",
+        "YG400A",
+        "SA12IZL",
+        "SD8SC_00.00.03.12TC",
+        "GS361A-H04"
+      ]
+    },
+    {
+      "driverId": "smoke_sensor3",
+      "homeyClass": "sensor",
+      "mfrCount": 44,
+      "pidCount": 1,
+      "capCount": 4,
+      "settingCount": 0,
+      "flowTriggers": 5,
+      "gaps": [],
+      "productIds": [
+        "TS0205"
+      ]
+    },
+    {
+      "driverId": "soilsensor",
+      "homeyClass": "sensor",
+      "mfrCount": 4,
+      "pidCount": 1,
+      "capCount": 4,
+      "settingCount": 0,
+      "flowTriggers": 3,
+      "gaps": [],
+      "productIds": [
+        "TS0601"
+      ]
+    },
+    {
+      "driverId": "soilsensor_2",
+      "homeyClass": "sensor",
+      "mfrCount": 3,
+      "pidCount": 5,
+      "capCount": 5,
+      "settingCount": 0,
+      "flowTriggers": 3,
+      "gaps": [],
+      "productIds": [
+        "Arteco",
+        "CS-201Z",
+        "DISABLED_SOILSENSOR_2",
+        "TS0001",
+        "TS0601"
+      ]
+    },
+    {
+      "driverId": "soil_sensor",
+      "homeyClass": "sensor",
+      "mfrCount": 192,
+      "pidCount": 45,
+      "capCount": 9,
+      "settingCount": 3,
+      "flowTriggers": 14,
+      "gaps": [],
+      "productIds": [
+        "TS0601",
+        "0x8040",
+        "Arteco",
+        "BASICZBR3",
+        "BSP-EZ2",
+        "BSP-FZ2"
+      ]
+    },
+    {
+      "driverId": "soil_sensor_ec",
+      "homeyClass": "sensor",
+      "mfrCount": 2,
+      "pidCount": 1,
+      "capCount": 5,
+      "settingCount": 0,
+      "flowTriggers": 4,
+      "gaps": [],
+      "productIds": [
+        "TS0601"
+      ]
+    },
+    {
+      "driverId": "temphumidsensor",
+      "homeyClass": "sensor",
+      "mfrCount": 48,
+      "pidCount": 5,
+      "capCount": 4,
+      "settingCount": 1,
+      "flowTriggers": 3,
+      "gaps": [],
+      "productIds": [
+        "TY0201",
+        "SNTZ003",
+        "CK-TLSR8656-SS5-01(7014)",
+        "RH3052",
+        "TS0201"
+      ]
+    },
+    {
+      "driverId": "temphumidsensor2",
+      "homeyClass": "sensor",
+      "mfrCount": 18,
+      "pidCount": 3,
+      "capCount": 4,
+      "settingCount": 0,
+      "flowTriggers": 3,
+      "gaps": [],
+      "productIds": [
+        "RH3052",
+        "TS0201",
+        "TS0601"
+      ]
+    },
+    {
+      "driverId": "temphumidsensor3",
+      "homeyClass": "sensor",
+      "mfrCount": 18,
+      "pidCount": 2,
+      "capCount": 4,
+      "settingCount": 0,
+      "flowTriggers": 3,
+      "gaps": [],
+      "productIds": [
+        "SNTZ003",
+        "TS0201"
+      ]
+    },
+    {
+      "driverId": "temphumidsensor4",
+      "homeyClass": "sensor",
+      "mfrCount": 2,
+      "pidCount": 1,
+      "capCount": 4,
+      "settingCount": 0,
+      "flowTriggers": 3,
+      "gaps": [],
+      "productIds": [
+        "TS0601"
+      ]
+    },
+    {
+      "driverId": "temphumidsensor5",
+      "homeyClass": "sensor",
+      "mfrCount": 4,
+      "pidCount": 5,
+      "capCount": 4,
+      "settingCount": 0,
+      "flowTriggers": 3,
+      "gaps": [],
+      "productIds": [
+        "TY0201",
+        "SNTZ003",
+        "CK-TLSR8656-SS5-01(7014)",
+        "RH3052",
+        "TS0201"
+      ]
+    },
+    {
+      "driverId": "tuya_dummy_device",
+      "homeyClass": "sensor",
+      "mfrCount": 2,
+      "pidCount": 1,
+      "capCount": 1,
+      "settingCount": 0,
+      "flowTriggers": 0,
+      "gaps": [],
+      "productIds": [
+        "TS0601"
+      ]
+    },
+    {
+      "driverId": "ultrasonic_heat_meter",
+      "homeyClass": "sensor",
+      "mfrCount": 4,
+      "pidCount": 1,
+      "capCount": 5,
+      "settingCount": 0,
+      "flowTriggers": 4,
+      "gaps": [
+        "missing_power_scale_setting"
+      ],
+      "productIds": [
+        "TS0601"
+      ]
+    },
+    {
+      "driverId": "ultrasonic_water_meter",
+      "homeyClass": "sensor",
+      "mfrCount": 2,
+      "pidCount": 1,
+      "capCount": 4,
+      "settingCount": 0,
+      "flowTriggers": 2,
+      "gaps": [],
+      "productIds": [
+        "TS0601"
+      ]
+    },
+    {
+      "driverId": "vibration_sensor",
+      "homeyClass": "sensor",
+      "mfrCount": 123,
+      "pidCount": 10,
+      "capCount": 6,
+      "settingCount": 1,
+      "flowTriggers": 9,
+      "gaps": [],
+      "productIds": [
+        "TS0209",
+        "TS0210",
+        "ZG-102ZM",
+        "TS0601",
+        "ZG-103ZL",
+        "ZG-103Z"
+      ]
+    },
+    {
+      "driverId": "water_detector",
+      "homeyClass": "sensor",
+      "mfrCount": 4,
+      "pidCount": 23,
+      "capCount": 4,
+      "settingCount": 0,
+      "flowTriggers": 5,
+      "gaps": [],
+      "productIds": [
+        "3300-S",
+        "3320-L",
+        "CK-TLSR8656-SS5-01(7003)",
+        "DS01",
+        "DoorWindow-Sensor-ZB3.0",
+        "E1603/E1702"
+      ]
+    },
+    {
+      "driverId": "water_leak_sensor",
+      "homeyClass": "sensor",
+      "mfrCount": 69,
+      "pidCount": 22,
+      "capCount": 4,
+      "settingCount": 10,
+      "flowTriggers": 6,
+      "gaps": [],
+      "productIds": [
+        "3315-S",
+        "3315-Seu",
+        "CK-TLSR8656-SS5-01(7019)",
+        "HS1WL",
+        "LS21001",
+        "SJCGQ11LM"
+      ]
+    },
+    {
+      "driverId": "water_leak_sensor_tuya",
+      "homeyClass": "sensor",
+      "mfrCount": 178,
+      "pidCount": 17,
+      "capCount": 3,
+      "settingCount": 0,
+      "flowTriggers": 3,
+      "gaps": [],
+      "productIds": [
+        "q9mpfhw",
+        "ZG-222Z",
+        "LS21001",
+        "_tz3000_eit6l5",
+        "_tz3000_kyb656no",
+        "lumi.sensor_wleak.aq1"
+      ]
+    },
+    {
+      "driverId": "water_tank_monitor",
+      "homeyClass": "sensor",
+      "mfrCount": 40,
+      "pidCount": 3,
+      "capCount": 7,
+      "settingCount": 2,
+      "flowTriggers": 4,
+      "gaps": [],
+      "productIds": [
+        "TS0049",
+        "TS0601",
+        "TS0601_tank"
+      ]
+    },
+    {
+      "driverId": "weather_station_outdoor",
+      "homeyClass": "sensor",
+      "mfrCount": 8,
+      "pidCount": 2,
+      "capCount": 6,
+      "settingCount": 4,
+      "flowTriggers": 7,
+      "gaps": [],
+      "productIds": [
+        "TS0601_weather",
+        "TS0601"
+      ]
+    },
+    {
+      "driverId": "wifi_air_quality",
+      "homeyClass": "sensor",
+      "mfrCount": 0,
+      "pidCount": 0,
+      "capCount": 5,
+      "settingCount": 1,
+      "flowTriggers": 4,
+      "gaps": [],
+      "productIds": []
+    },
+    {
+      "driverId": "wifi_dehumidifier",
+      "homeyClass": "fan",
+      "mfrCount": 0,
+      "pidCount": 0,
+      "capCount": 7,
+      "settingCount": 1,
+      "flowTriggers": 4,
+      "gaps": [],
+      "productIds": []
+    },
+    {
+      "driverId": "wifi_humidifier",
+      "homeyClass": "fan",
+      "mfrCount": 0,
+      "pidCount": 0,
+      "capCount": 5,
+      "settingCount": 1,
+      "flowTriggers": 2,
+      "gaps": [],
+      "productIds": []
+    },
+    {
+      "driverId": "wifi_sensor",
+      "homeyClass": "sensor",
+      "mfrCount": 0,
+      "pidCount": 0,
+      "capCount": 4,
+      "settingCount": 1,
+      "flowTriggers": 3,
+      "gaps": [],
+      "productIds": []
+    },
+    {
+      "driverId": "wifi_water_tank_monitor",
+      "homeyClass": "sensor",
+      "mfrCount": 0,
+      "pidCount": 0,
+      "capCount": 6,
+      "settingCount": 2,
+      "flowTriggers": 4,
+      "gaps": [],
+      "productIds": []
+    }
+  ],
+  "light": [
+    {
+      "driverId": "bulb_dimmable",
+      "homeyClass": "light",
+      "mfrCount": 138,
+      "pidCount": 88,
+      "capCount": 8,
+      "settingCount": 8,
+      "flowTriggers": 8,
+      "gaps": [],
+      "productIds": [
+        "01MINIZB",
+        "A19 W 10 year",
+        "BASICZBR3",
+        "BR30 W 10 year",
+        "CK-BL702-AL-01(7009_Z102LG03-1)",
+        "Classic A60 RGBW"
+      ]
+    },
+    {
+      "driverId": "bulb_dimmable_dimmer",
+      "homeyClass": "light",
+      "mfrCount": 48,
+      "pidCount": 4,
+      "capCount": 10,
+      "settingCount": 8,
+      "flowTriggers": 6,
+      "gaps": [],
+      "productIds": [
+        "TS1101",
+        "TS110E",
+        "TS110F",
+        "TS0052"
+      ]
+    },
+    {
+      "driverId": "bulb_rgb",
+      "homeyClass": "light",
+      "mfrCount": 33,
+      "pidCount": 37,
+      "capCount": 7,
+      "settingCount": 12,
+      "flowTriggers": 4,
+      "gaps": [],
+      "productIds": [
+        "E11-G13",
+        "E11-G14",
+        "E11-G23",
+        "Excellux",
+        "GL-C-006",
+        "LCT001"
+      ]
+    },
+    {
+      "driverId": "bulb_rgbw",
+      "homeyClass": "light",
+      "mfrCount": 104,
+      "pidCount": 14,
+      "capCount": 8,
+      "settingCount": 8,
+      "flowTriggers": 6,
+      "gaps": [],
+      "productIds": [
+        "generic",
+        "TS0504A",
+        "TS0504B",
+        "TS0505A",
+        "TS0505B",
+        "Classic A60 RGBW"
+      ]
+    },
+    {
+      "driverId": "bulb_rgbw_universal",
+      "homeyClass": "other",
+      "mfrCount": 20,
+      "pidCount": 3,
+      "capCount": 25,
+      "settingCount": 3,
+      "flowTriggers": 11,
+      "gaps": [
+        "missing_power_scale_setting"
+      ],
+      "productIds": [
+        "TS0505B",
+        "TS0504B",
+        "TS0503B"
+      ]
+    },
+    {
+      "driverId": "bulb_rgb_led",
+      "homeyClass": "light",
+      "mfrCount": 40,
+      "pidCount": 1,
+      "capCount": 8,
+      "settingCount": 12,
+      "flowTriggers": 8,
+      "gaps": [],
+      "productIds": [
+        "TS0505B"
+      ]
+    },
+    {
+      "driverId": "bulb_rgb_rgbw",
+      "homeyClass": "light",
+      "mfrCount": 2,
+      "pidCount": 1,
+      "capCount": 7,
+      "settingCount": 12,
+      "flowTriggers": 4,
+      "gaps": [],
+      "productIds": [
+        "TS0601"
+      ]
+    },
+    {
+      "driverId": "bulb_tunable_white",
+      "homeyClass": "light",
+      "mfrCount": 4,
+      "pidCount": 46,
+      "capCount": 7,
+      "settingCount": 9,
+      "flowTriggers": 6,
+      "gaps": [],
+      "productIds": [
+        "Classic A60 TW",
+        "E11-N13",
+        "E11-N14",
+        "E12-N13",
+        "E12-N14",
+        "GL-B-007Z"
+      ]
+    },
+    {
+      "driverId": "bulb_white",
+      "homeyClass": "light",
+      "mfrCount": 4,
+      "pidCount": 2,
+      "capCount": 7,
+      "settingCount": 8,
+      "flowTriggers": 4,
+      "gaps": [],
+      "productIds": [
+        "TS0501",
+        "TS0601_strip_adv"
+      ]
+    },
+    {
+      "driverId": "christmas_lights",
+      "homeyClass": "light",
+      "mfrCount": 8,
+      "pidCount": 2,
+      "capCount": 6,
+      "settingCount": 0,
+      "flowTriggers": 3,
+      "gaps": [],
+      "productIds": [
+        "TS0601",
+        "TS0504B"
+      ]
+    },
+    {
+      "driverId": "device_air_purifier_led",
+      "homeyClass": "light",
+      "mfrCount": 2,
+      "pidCount": 1,
+      "capCount": 7,
+      "settingCount": 8,
+      "flowTriggers": 7,
+      "gaps": [],
+      "productIds": [
+        "TS0601"
+      ]
+    },
+    {
+      "driverId": "dimmable_led_strip",
+      "homeyClass": "light",
+      "mfrCount": 82,
+      "pidCount": 10,
+      "capCount": 3,
+      "settingCount": 0,
+      "flowTriggers": 6,
+      "gaps": [],
+      "productIds": [
+        "TS0011",
+        "TS0052",
+        "TS0502B",
+        "TS0601",
+        "TS0601_dim1",
+        "TS1101"
+      ]
+    },
+    {
+      "driverId": "dimmable_recessed_led",
+      "homeyClass": "light",
+      "mfrCount": 18,
+      "pidCount": 1,
+      "capCount": 3,
+      "settingCount": 0,
+      "flowTriggers": 6,
+      "gaps": [],
+      "productIds": [
+        "TS0502B"
+      ]
+    },
+    {
+      "driverId": "dimmer_0_10v",
+      "homeyClass": "light",
+      "mfrCount": 2,
+      "pidCount": 1,
+      "capCount": 3,
+      "settingCount": 1,
+      "flowTriggers": 4,
+      "gaps": [],
+      "productIds": [
+        "TS0601"
+      ]
+    },
+    {
+      "driverId": "dimmer_4ch",
+      "homeyClass": "light",
+      "mfrCount": 2,
+      "pidCount": 1,
+      "capCount": 9,
+      "settingCount": 0,
+      "flowTriggers": 10,
+      "gaps": [],
+      "productIds": [
+        "TS0601"
+      ]
+    },
+    {
+      "driverId": "dimmer_air_purifier",
+      "homeyClass": "light",
+      "mfrCount": 2,
+      "pidCount": 1,
+      "capCount": 5,
+      "settingCount": 9,
+      "flowTriggers": 12,
+      "gaps": [
+        "missing_power_scale_setting"
+      ],
+      "productIds": [
+        "TS0601"
+      ]
+    },
+    {
+      "driverId": "dimmer_bulb_dimmable",
+      "homeyClass": "light",
+      "mfrCount": 2,
+      "pidCount": 2,
+      "capCount": 9,
+      "settingCount": 8,
+      "flowTriggers": 9,
+      "gaps": [
+        "missing_power_scale_setting"
+      ],
+      "productIds": [
+        "TS0601",
+        "TS0052"
+      ]
+    },
+    {
+      "driverId": "dimmer_dual_channel",
+      "homeyClass": "light",
+      "mfrCount": 0,
+      "pidCount": 2,
+      "capCount": 5,
+      "settingCount": 0,
+      "flowTriggers": 5,
+      "gaps": [
+        "empty_mfr"
+      ],
+      "productIds": [
+        "TS1101",
+        "TS0601"
+      ]
+    },
+    {
+      "driverId": "dimmer_ts110e",
+      "homeyClass": "light",
+      "mfrCount": 8,
+      "pidCount": 10,
+      "capCount": 4,
+      "settingCount": 2,
+      "flowTriggers": 3,
+      "gaps": [],
+      "productIds": [
+        "TS0601",
+        "TS0505B",
+        "TS0215A",
+        "TS0002",
+        "TS0003",
+        "TS0012"
+      ]
+    },
+    {
+      "driverId": "dimmer_wall_water",
+      "homeyClass": "light",
+      "mfrCount": 2,
+      "pidCount": 1,
+      "capCount": 6,
+      "settingCount": 9,
+      "flowTriggers": 10,
+      "gaps": [
+        "missing_power_scale_setting"
+      ],
+      "productIds": [
+        "TS0601"
+      ]
+    },
+    {
+      "driverId": "hybrid_light_windowcoverings",
+      "homeyClass": "windowcoverings",
+      "mfrCount": 2,
+      "pidCount": 3,
+      "capCount": 5,
+      "settingCount": 2,
+      "flowTriggers": 4,
+      "gaps": [],
+      "productIds": [
+        "TS0601",
+        "TS0001",
+        "TS0002"
+      ]
+    },
+    {
+      "driverId": "led_controller_cct",
+      "homeyClass": "light",
+      "mfrCount": 16,
+      "pidCount": 8,
+      "capCount": 5,
+      "settingCount": 0,
+      "flowTriggers": 4,
+      "gaps": [],
+      "productIds": [
+        "TRI-C1ZR",
+        "TRI-K1ZR",
+        "TS0501B",
+        "TS0502",
+        "TS0503",
+        "TS0504"
+      ]
+    },
+    {
+      "driverId": "led_controller_dimmable",
+      "homeyClass": "light",
+      "mfrCount": 8,
+      "pidCount": 4,
+      "capCount": 3,
+      "settingCount": 0,
+      "flowTriggers": 2,
+      "gaps": [],
+      "productIds": [
+        "TS0601_led",
+        "TS0501B",
+        "TRI-C1ZR",
+        "TRI-K1ZR"
+      ]
+    },
+    {
+      "driverId": "led_controller_rgb",
+      "homeyClass": "light",
+      "mfrCount": 6,
+      "pidCount": 3,
+      "capCount": 7,
+      "settingCount": 0,
+      "flowTriggers": 4,
+      "gaps": [],
+      "productIds": [
+        "TS0503",
+        "TS0504",
+        "TS0601"
+      ]
+    },
+    {
+      "driverId": "led_strip",
+      "homeyClass": "light",
+      "mfrCount": 8,
+      "pidCount": 2,
+      "capCount": 6,
+      "settingCount": 8,
+      "flowTriggers": 4,
+      "gaps": [],
+      "productIds": [
+        "TS0601_strip",
+        "TS0505B"
+      ]
+    },
+    {
+      "driverId": "led_strip_advanced",
+      "homeyClass": "light",
+      "mfrCount": 4,
+      "pidCount": 1,
+      "capCount": 7,
+      "settingCount": 8,
+      "flowTriggers": 4,
+      "gaps": [],
+      "productIds": [
+        "TS0601_strip_adv"
+      ]
+    },
+    {
+      "driverId": "led_strip_rgbw",
+      "homeyClass": "light",
+      "mfrCount": 30,
+      "pidCount": 27,
+      "capCount": 7,
+      "settingCount": 11,
+      "flowTriggers": 4,
+      "gaps": [],
+      "productIds": [
+        "E11-G13",
+        "E11-G14",
+        "E11-G23",
+        "GL-C-006",
+        "LCT001",
+        "LCT002"
+      ]
+    },
+    {
+      "driverId": "light_bulb_dimmable_tunable",
+      "homeyClass": "light",
+      "mfrCount": 28,
+      "pidCount": 29,
+      "capCount": 8,
+      "settingCount": 9,
+      "flowTriggers": 8,
+      "gaps": [],
+      "productIds": [
+        "Classic A60 TW",
+        "E11-N13",
+        "E11-N14",
+        "E12-N13",
+        "E12-N14",
+        "GL-B-007Z"
+      ]
+    },
+    {
+      "driverId": "light_bulb_rgb",
+      "homeyClass": "light",
+      "mfrCount": 56,
+      "pidCount": 57,
+      "capCount": 7,
+      "settingCount": 12,
+      "flowTriggers": 4,
+      "gaps": [],
+      "productIds": [
+        "3300-S",
+        "3320-L",
+        "CK-TLSR8656-SS5-01(7003)",
+        "DS01",
+        "DoorWindow-Sensor-ZB3.0",
+        "E11-G13"
+      ]
+    },
+    {
+      "driverId": "light_bulb_rgb_led",
+      "homeyClass": "light",
+      "mfrCount": 80,
+      "pidCount": 1,
+      "capCount": 7,
+      "settingCount": 12,
+      "flowTriggers": 4,
+      "gaps": [],
+      "productIds": [
+        "TS0505B"
+      ]
+    },
+    {
+      "driverId": "light_bulb_rgb_rgbw",
+      "homeyClass": "light",
+      "mfrCount": 148,
+      "pidCount": 4,
+      "capCount": 7,
+      "settingCount": 12,
+      "flowTriggers": 4,
+      "gaps": [],
+      "productIds": [
+        "TS0505A",
+        "TS0505B",
+        "TS0501A",
+        "TS0601"
+      ]
+    },
+    {
+      "driverId": "light_bulb_tunable_white",
+      "homeyClass": "light",
+      "mfrCount": 8,
+      "pidCount": 4,
+      "capCount": 7,
+      "settingCount": 9,
+      "flowTriggers": 3,
+      "gaps": [],
+      "productIds": [
+        "TS0502A",
+        "TS0502B",
+        "TS0504A",
+        "TS0503A"
+      ]
+    },
+    {
+      "driverId": "rgb_bulb_E14",
+      "homeyClass": "light",
+      "mfrCount": 4,
+      "pidCount": 1,
+      "capCount": 5,
+      "settingCount": 0,
+      "flowTriggers": 4,
+      "gaps": [],
+      "productIds": [
+        "TS0505A"
+      ]
+    },
+    {
+      "driverId": "rgb_bulb_E27",
+      "homeyClass": "light",
+      "mfrCount": 0,
+      "pidCount": 3,
+      "capCount": 5,
+      "settingCount": 0,
+      "flowTriggers": 4,
+      "gaps": [
+        "empty_mfr"
+      ],
+      "productIds": [
+        "TS0505A",
+        "TS0505B",
+        "ZB-CL01"
+      ]
+    },
+    {
+      "driverId": "rgb_ceiling_led_light",
+      "homeyClass": "light",
+      "mfrCount": 4,
+      "pidCount": 1,
+      "capCount": 5,
+      "settingCount": 0,
+      "flowTriggers": 4,
+      "gaps": [],
+      "productIds": [
+        "TS0505B"
+      ]
+    },
+    {
+      "driverId": "rgb_floor_led_light",
+      "homeyClass": "light",
+      "mfrCount": 4,
+      "pidCount": 1,
+      "capCount": 5,
+      "settingCount": 0,
+      "flowTriggers": 4,
+      "gaps": [],
+      "productIds": [
+        "TS0502A"
+      ]
+    },
+    {
+      "driverId": "rgb_led_light_bar",
+      "homeyClass": "light",
+      "mfrCount": 4,
+      "pidCount": 2,
+      "capCount": 5,
+      "settingCount": 0,
+      "flowTriggers": 4,
+      "gaps": [],
+      "productIds": [
+        "TS0505A",
+        "TS0505B"
+      ]
+    },
+    {
+      "driverId": "rgb_led_strip",
+      "homeyClass": "light",
+      "mfrCount": 16,
+      "pidCount": 3,
+      "capCount": 5,
+      "settingCount": 0,
+      "flowTriggers": 4,
+      "gaps": [],
+      "productIds": [
+        "TS0505A",
+        "TS0601",
+        "TS0502"
+      ]
+    },
+    {
+      "driverId": "rgb_led_strip_controller",
+      "homeyClass": "light",
+      "mfrCount": 18,
+      "pidCount": 6,
+      "capCount": 5,
+      "settingCount": 0,
+      "flowTriggers": 4,
+      "gaps": [],
+      "productIds": [
+        "TS0503A",
+        "TS0503B",
+        "TS0505B",
+        "TS0504B",
+        "TS0121",
+        "TS0601"
+      ]
+    },
+    {
+      "driverId": "rgb_mood_light",
+      "homeyClass": "light",
+      "mfrCount": 6,
+      "pidCount": 4,
+      "capCount": 5,
+      "settingCount": 0,
+      "flowTriggers": 4,
+      "gaps": [],
+      "productIds": [
+        "TS0505A",
+        "TS0505B",
+        "TS0501A",
+        "TS0601"
+      ]
+    },
+    {
+      "driverId": "rgb_spot_GardenLight",
+      "homeyClass": "light",
+      "mfrCount": 4,
+      "pidCount": 1,
+      "capCount": 5,
+      "settingCount": 0,
+      "flowTriggers": 4,
+      "gaps": [],
+      "productIds": [
+        "TS0505A"
+      ]
+    },
+    {
+      "driverId": "rgb_spot_GU10",
+      "homeyClass": "light",
+      "mfrCount": 4,
+      "pidCount": 4,
+      "capCount": 5,
+      "settingCount": 0,
+      "flowTriggers": 4,
+      "gaps": [],
+      "productIds": [
+        "TS0505A",
+        "TS0505B",
+        "TS0502A",
+        "TS0601"
+      ]
+    },
+    {
+      "driverId": "rgb_wall_led_light",
+      "homeyClass": "light",
+      "mfrCount": 8,
+      "pidCount": 2,
+      "capCount": 5,
+      "settingCount": 0,
+      "flowTriggers": 4,
+      "gaps": [],
+      "productIds": [
+        "TS0505A",
+        "TS0505B"
+      ]
+    },
+    {
+      "driverId": "tunable_bulb_E14",
+      "homeyClass": "light",
+      "mfrCount": 40,
+      "pidCount": 3,
+      "capCount": 4,
+      "settingCount": 0,
+      "flowTriggers": 4,
+      "gaps": [],
+      "productIds": [
+        "TS0502A",
+        "TS0601",
+        "TS0503A"
+      ]
+    },
+    {
+      "driverId": "tunable_bulb_E27",
+      "homeyClass": "light",
+      "mfrCount": 4,
+      "pidCount": 1,
+      "capCount": 4,
+      "settingCount": 0,
+      "flowTriggers": 4,
+      "gaps": [],
+      "productIds": [
+        "TS0502A"
+      ]
+    },
+    {
+      "driverId": "tunable_spot_GU10",
+      "homeyClass": "light",
+      "mfrCount": 4,
+      "pidCount": 1,
+      "capCount": 4,
+      "settingCount": 0,
+      "flowTriggers": 4,
+      "gaps": [],
+      "productIds": [
+        "TS0502A"
+      ]
+    },
+    {
+      "driverId": "wall_dimmer_tuya",
+      "homeyClass": "light",
+      "mfrCount": 486,
+      "pidCount": 10,
+      "capCount": 3,
+      "settingCount": 0,
+      "flowTriggers": 5,
+      "gaps": [],
+      "productIds": [
+        "TS0601",
+        "TS0601_dim1",
+        "ZBMINI-DIM",
+        "ZBMINID",
+        "TS110E",
+        "TS110F"
+      ]
+    },
+    {
+      "driverId": "wifi_dimmer",
+      "homeyClass": "light",
+      "mfrCount": 0,
+      "pidCount": 0,
+      "capCount": 3,
+      "settingCount": 1,
+      "flowTriggers": 4,
+      "gaps": [],
+      "productIds": []
+    },
+    {
+      "driverId": "wifi_ewelink_bulb",
+      "homeyClass": "light",
+      "mfrCount": 0,
+      "pidCount": 0,
+      "capCount": 4,
+      "settingCount": 1,
+      "flowTriggers": 3,
+      "gaps": [],
+      "productIds": []
+    },
+    {
+      "driverId": "wifi_ewelink_dimmer",
+      "homeyClass": "light",
+      "mfrCount": 0,
+      "pidCount": 0,
+      "capCount": 3,
+      "settingCount": 1,
+      "flowTriggers": 2,
+      "gaps": [],
+      "productIds": []
+    },
+    {
+      "driverId": "wifi_ewelink_led",
+      "homeyClass": "light",
+      "mfrCount": 0,
+      "pidCount": 0,
+      "capCount": 3,
+      "settingCount": 1,
+      "flowTriggers": 3,
+      "gaps": [],
+      "productIds": []
+    },
+    {
+      "driverId": "wifi_led_strip",
+      "homeyClass": "light",
+      "mfrCount": 0,
+      "pidCount": 0,
+      "capCount": 7,
+      "settingCount": 1,
+      "flowTriggers": 3,
+      "gaps": [],
+      "productIds": []
+    },
+    {
+      "driverId": "wifi_light",
+      "homeyClass": "light",
+      "mfrCount": 0,
+      "pidCount": 0,
+      "capCount": 7,
+      "settingCount": 1,
+      "flowTriggers": 3,
+      "gaps": [],
+      "productIds": []
+    }
+  ],
+  "curtain": [
+    {
+      "driverId": "air_purifier_curtain",
+      "homeyClass": "windowcoverings",
+      "mfrCount": 0,
+      "pidCount": 1,
+      "capCount": 4,
+      "settingCount": 0,
+      "flowTriggers": 2,
+      "gaps": [
+        "empty_mfr"
+      ],
+      "productIds": [
+        "TS0601"
+      ]
+    },
+    {
+      "driverId": "curtain_module",
+      "homeyClass": "windowcoverings",
+      "mfrCount": 26,
+      "pidCount": 2,
+      "capCount": 3,
+      "settingCount": 0,
+      "flowTriggers": 1,
+      "gaps": [],
+      "productIds": [
+        "TS130F",
+        "TS0726"
+      ]
+    },
+    {
+      "driverId": "curtain_motor",
+      "homeyClass": "windowcoverings",
+      "mfrCount": 550,
+      "pidCount": 48,
+      "capCount": 8,
+      "settingCount": 19,
+      "flowTriggers": 8,
+      "gaps": [],
+      "productIds": [
+        "01MINIZB",
+        "AM02",
+        "AM43-0.45/40-ES-EB",
+        "AM43-0.45/40-ES-EZ",
+        "BASICZBR3",
+        "DS421"
+      ]
+    },
+    {
+      "driverId": "curtain_motor_shutter",
+      "homeyClass": "windowcoverings",
+      "mfrCount": 88,
+      "pidCount": 45,
+      "capCount": 7,
+      "settingCount": 12,
+      "flowTriggers": 10,
+      "gaps": [],
+      "productIds": [
+        "CK-TLSR8656-SS5-01(7014)",
+        "E11-G13",
+        "E11-G14",
+        "E11-G23",
+        "Excellux",
+        "GL-C-006"
+      ]
+    },
+    {
+      "driverId": "curtain_motor_tilt",
+      "homeyClass": "windowcoverings",
+      "mfrCount": 34,
+      "pidCount": 2,
+      "capCount": 5,
+      "settingCount": 0,
+      "flowTriggers": 2,
+      "gaps": [],
+      "productIds": [
+        "TS0601_curtain_tilt",
+        "TS0601"
+      ]
+    },
+    {
+      "driverId": "curtain_motor_wall",
+      "homeyClass": "windowcoverings",
+      "mfrCount": 28,
+      "pidCount": 1,
+      "capCount": 7,
+      "settingCount": 12,
+      "flowTriggers": 10,
+      "gaps": [],
+      "productIds": [
+        "TS130F"
+      ]
+    },
+    {
+      "driverId": "shutter_roller_controller",
+      "homeyClass": "windowcoverings",
+      "mfrCount": 2,
+      "pidCount": 2,
+      "capCount": 6,
+      "settingCount": 8,
+      "flowTriggers": 7,
+      "gaps": [],
+      "productIds": [
+        "TS0601_shutter",
+        "TS0601"
+      ]
+    },
+    {
+      "driverId": "wall_curtain_switch",
+      "homeyClass": "curtain",
+      "mfrCount": 30,
+      "pidCount": 2,
+      "capCount": 3,
+      "settingCount": 0,
+      "flowTriggers": 3,
+      "gaps": [],
+      "productIds": [
+        "TS0601",
+        "TS130F"
+      ]
+    },
+    {
+      "driverId": "wifi_cover",
+      "homeyClass": "curtain",
+      "mfrCount": 0,
+      "pidCount": 0,
+      "capCount": 3,
+      "settingCount": 1,
+      "flowTriggers": 2,
+      "gaps": [],
+      "productIds": []
+    }
+  ],
+  "thermostat": [
+    {
+      "driverId": "device_air_purifier",
+      "homeyClass": "thermostat",
+      "mfrCount": 2,
+      "pidCount": 1,
+      "capCount": 9,
+      "settingCount": 0,
+      "flowTriggers": 14,
+      "gaps": [],
+      "productIds": [
+        "TS0601"
+      ]
+    },
+    {
+      "driverId": "device_air_purifier_floor",
+      "homeyClass": "thermostat",
+      "mfrCount": 2,
+      "pidCount": 1,
+      "capCount": 9,
+      "settingCount": 0,
+      "flowTriggers": 3,
+      "gaps": [],
+      "productIds": [
+        "TS0601"
+      ]
+    },
+    {
+      "driverId": "device_air_purifier_radiator",
+      "homeyClass": "thermostat",
+      "mfrCount": 4,
+      "pidCount": 18,
+      "capCount": 9,
+      "settingCount": 8,
+      "flowTriggers": 8,
+      "gaps": [],
+      "productIds": [
+        "014G2461",
+        "014G2463",
+        "SEA801-Zigbee",
+        "SPZB0001",
+        "SPZB0003",
+        "STZB402"
+      ]
+    },
+    {
+      "driverId": "device_air_purifier_smart",
+      "homeyClass": "thermostat",
+      "mfrCount": 2,
+      "pidCount": 1,
+      "capCount": 9,
+      "settingCount": 0,
+      "flowTriggers": 4,
+      "gaps": [],
+      "productIds": [
+        "TS0601"
+      ]
+    },
+    {
+      "driverId": "device_air_purifier_thermostat",
+      "homeyClass": "thermostat",
+      "mfrCount": 2,
+      "pidCount": 1,
+      "capCount": 9,
+      "settingCount": 0,
+      "flowTriggers": 14,
+      "gaps": [],
+      "productIds": [
+        "TS0601"
+      ]
+    },
+    {
+      "driverId": "device_floor_heating",
+      "homeyClass": "thermostat",
+      "mfrCount": 2,
+      "pidCount": 1,
+      "capCount": 8,
+      "settingCount": 0,
+      "flowTriggers": 1,
+      "gaps": [],
+      "productIds": [
+        "TS0601"
+      ]
+    },
+    {
+      "driverId": "device_floor_heating_thermostat",
+      "homeyClass": "thermostat",
+      "mfrCount": 2,
+      "pidCount": 1,
+      "capCount": 8,
+      "settingCount": 0,
+      "flowTriggers": 1,
+      "gaps": [],
+      "productIds": [
+        "TS0601"
+      ]
+    },
+    {
+      "driverId": "device_radiator_valve",
+      "homeyClass": "thermostat",
+      "mfrCount": 334,
+      "pidCount": 1,
+      "capCount": 8,
+      "settingCount": 9,
+      "flowTriggers": 7,
+      "gaps": [],
+      "productIds": [
+        "TS0601"
+      ]
+    },
+    {
+      "driverId": "device_radiator_valve_smart",
+      "homeyClass": "thermostat",
+      "mfrCount": 8,
+      "pidCount": 49,
+      "capCount": 8,
+      "settingCount": 8,
+      "flowTriggers": 8,
+      "gaps": [],
+      "productIds": [
+        "0x8040",
+        "BASICZBR3",
+        "BSP-EZ2",
+        "BSP-FZ2",
+        "Battery switch, 1 button",
+        "Battery switch, 2 buttons"
+      ]
+    },
+    {
+      "driverId": "device_radiator_valve_thermostat",
+      "homeyClass": "thermostat",
+      "mfrCount": 2,
+      "pidCount": 1,
+      "capCount": 7,
+      "settingCount": 0,
+      "flowTriggers": 12,
+      "gaps": [],
+      "productIds": [
+        "TS0601"
+      ]
+    },
+    {
+      "driverId": "floor_heating_thermostat",
+      "homeyClass": "thermostat",
+      "mfrCount": 4,
+      "pidCount": 1,
+      "capCount": 7,
+      "settingCount": 0,
+      "flowTriggers": 4,
+      "gaps": [],
+      "productIds": [
+        "TS0601"
+      ]
+    },
+    {
+      "driverId": "hvac_air_conditioner",
+      "homeyClass": "thermostat",
+      "mfrCount": 2,
+      "pidCount": 2,
+      "capCount": 6,
+      "settingCount": 8,
+      "flowTriggers": 8,
+      "gaps": [],
+      "productIds": [
+        "TS0601_ac",
+        "TS0601"
+      ]
+    },
+    {
+      "driverId": "hvac_controller",
+      "homeyClass": "thermostat",
+      "mfrCount": 8,
+      "pidCount": 1,
+      "capCount": 5,
+      "settingCount": 0,
+      "flowTriggers": 5,
+      "gaps": [],
+      "productIds": [
+        "TS0601"
+      ]
+    },
+    {
+      "driverId": "hybrid_heater_thermostat",
+      "homeyClass": "thermostat",
+      "mfrCount": 20,
+      "pidCount": 1,
+      "capCount": 9,
+      "settingCount": 3,
+      "flowTriggers": 9,
+      "gaps": [
+        "missing_power_scale_setting"
+      ],
+      "productIds": [
+        "TS0601"
+      ]
+    },
+    {
+      "driverId": "radiator_controller",
+      "homeyClass": "heater",
+      "mfrCount": 2,
+      "pidCount": 2,
+      "capCount": 6,
+      "settingCount": 2,
+      "flowTriggers": 6,
+      "gaps": [],
+      "productIds": [
+        "TS0601_rad",
+        "TS0601"
+      ]
+    },
+    {
+      "driverId": "radiator_valve",
+      "homeyClass": "thermostat",
+      "mfrCount": 599,
+      "pidCount": 60,
+      "capCount": 7,
+      "settingCount": 9,
+      "flowTriggers": 6,
+      "gaps": [],
+      "productIds": [
+        "TV01-ZB",
+        "TV02-ZB",
+        "TRV601",
+        "TRV602",
+        "SEA801-Zigbee",
+        "eTRV0100"
+      ]
+    },
+    {
+      "driverId": "radiator_valve_zigbee",
+      "homeyClass": "thermostat",
+      "mfrCount": 8,
+      "pidCount": 1,
+      "capCount": 9,
+      "settingCount": 0,
+      "flowTriggers": 6,
+      "gaps": [],
+      "productIds": [
+        "TS0601"
+      ]
+    },
+    {
+      "driverId": "radiator_wifi_tuya",
+      "homeyClass": "thermostat",
+      "mfrCount": 0,
+      "pidCount": 0,
+      "capCount": 6,
+      "settingCount": 1,
+      "flowTriggers": 3,
+      "gaps": [],
+      "productIds": []
+    },
+    {
+      "driverId": "smart_lcd_thermostat",
+      "homeyClass": "thermostat",
+      "mfrCount": 24,
+      "pidCount": 1,
+      "capCount": 6,
+      "settingCount": 0,
+      "flowTriggers": 7,
+      "gaps": [],
+      "productIds": [
+        "TS0601"
+      ]
+    },
+    {
+      "driverId": "thermostatic_radiator_valve",
+      "homeyClass": "thermostat",
+      "mfrCount": 104,
+      "pidCount": 20,
+      "capCount": 5,
+      "settingCount": 0,
+      "flowTriggers": 1,
+      "gaps": [],
+      "productIds": [
+        "TS0601",
+        "014G2461",
+        "014G2463",
+        "PJ-1203A",
+        "SEA801-Zigbee",
+        "SPZB0001"
+      ]
+    },
+    {
+      "driverId": "thermostat_4ch",
+      "homeyClass": "thermostat",
+      "mfrCount": 4,
+      "pidCount": 2,
+      "capCount": 14,
+      "settingCount": 0,
+      "flowTriggers": 4,
+      "gaps": [],
+      "productIds": [
+        "TS0601_thermo4ch",
+        "TS0601"
+      ]
+    },
+    {
+      "driverId": "thermostat_tuya_dp",
+      "homeyClass": "thermostat",
+      "mfrCount": 192,
+      "pidCount": 2,
+      "capCount": 8,
+      "settingCount": 1,
+      "flowTriggers": 10,
+      "gaps": [],
+      "productIds": [
+        "TS0601_thermo",
+        "TS0601"
+      ]
+    },
+    {
+      "driverId": "valvecontroller",
+      "homeyClass": "other",
+      "mfrCount": 18,
+      "pidCount": 3,
+      "capCount": 2,
+      "settingCount": 0,
+      "flowTriggers": 2,
+      "gaps": [],
+      "productIds": [
+        "TS0111",
+        "TS0001",
+        "TS011F"
+      ]
+    },
+    {
+      "driverId": "valve_dual_irrigation",
+      "homeyClass": "other",
+      "mfrCount": 8,
+      "pidCount": 1,
+      "capCount": 4,
+      "settingCount": 0,
+      "flowTriggers": 3,
+      "gaps": [],
+      "productIds": [
+        "TS0601"
+      ]
+    },
+    {
+      "driverId": "valve_single",
+      "homeyClass": "other",
+      "mfrCount": 8,
+      "pidCount": 3,
+      "capCount": 4,
+      "settingCount": 0,
+      "flowTriggers": 5,
+      "gaps": [],
+      "productIds": [
+        "TS0601_valve",
+        "TS0601",
+        "TS0001"
+      ]
+    },
+    {
+      "driverId": "wall_thermostat",
+      "homeyClass": "thermostat",
+      "mfrCount": 131,
+      "pidCount": 2,
+      "capCount": 6,
+      "settingCount": 0,
+      "flowTriggers": 4,
+      "gaps": [],
+      "productIds": [
+        "TS0003",
+        "TS0601"
+      ]
+    },
+    {
+      "driverId": "water_valve_garden",
+      "homeyClass": "other",
+      "mfrCount": 36,
+      "pidCount": 9,
+      "capCount": 3,
+      "settingCount": 2,
+      "flowTriggers": 5,
+      "gaps": [],
+      "productIds": [
+        "SWV-ZF2",
+        "SWV-ZFE",
+        "SWV-ZFU",
+        "SWV-ZN",
+        "SWV-ZNE",
+        "SWV-ZNU"
+      ]
+    },
+    {
+      "driverId": "water_valve_smart",
+      "homeyClass": "other",
+      "mfrCount": 72,
+      "pidCount": 8,
+      "capCount": 6,
+      "settingCount": 6,
+      "flowTriggers": 10,
+      "gaps": [],
+      "productIds": [
+        "TS0601_watervalve",
+        "TS0601",
+        "SWV-ZN",
+        "SWV-ZNE",
+        "SWV-ZFE",
+        "SWV-ZNU"
+      ]
+    },
+    {
+      "driverId": "wifi_sonoff_thr316d",
+      "homeyClass": "thermostat",
+      "mfrCount": 0,
+      "pidCount": 0,
+      "capCount": 5,
+      "settingCount": 1,
+      "flowTriggers": 3,
+      "gaps": [],
+      "productIds": []
+    },
+    {
+      "driverId": "wifi_thermostat",
+      "homeyClass": "thermostat",
+      "mfrCount": 0,
+      "pidCount": 0,
+      "capCount": 6,
+      "settingCount": 1,
+      "flowTriggers": 3,
+      "gaps": [],
+      "productIds": []
+    },
+    {
+      "driverId": "wifi_water_valve",
+      "homeyClass": "other",
+      "mfrCount": 0,
+      "pidCount": 0,
+      "capCount": 3,
+      "settingCount": 1,
+      "flowTriggers": 2,
+      "gaps": [],
+      "productIds": []
+    }
+  ],
+  "meter": [
+    {
+      "driverId": "device_din_rail",
+      "homeyClass": "doorbell",
+      "mfrCount": 12,
+      "pidCount": 27,
+      "capCount": 10,
+      "settingCount": 8,
+      "flowTriggers": 7,
+      "gaps": [
+        "missing_power_scale_setting"
+      ],
+      "productIds": [
+        "E11-G13",
+        "E11-G14",
+        "E11-G23",
+        "GL-C-006",
+        "LCT001",
+        "LCT002"
+      ]
+    },
+    {
+      "driverId": "device_din_rail_meter",
+      "homeyClass": "doorbell",
+      "mfrCount": 2,
+      "pidCount": 5,
+      "capCount": 9,
+      "settingCount": 1,
+      "flowTriggers": 16,
+      "gaps": [
+        "missing_power_scale_setting"
+      ],
+      "productIds": [
+        "TS0001",
+        "TS0002",
+        "TS011F",
+        "TS0601",
+        "TS004F"
+      ]
+    },
+    {
+      "driverId": "smart_rcbo",
+      "homeyClass": "other",
+      "mfrCount": 0,
+      "pidCount": 1,
+      "capCount": 6,
+      "settingCount": 0,
+      "flowTriggers": 7,
+      "gaps": [
+        "empty_mfr",
+        "missing_power_scale_setting"
+      ],
+      "productIds": [
+        "TS0601_rcbo"
+      ]
+    }
+  ],
+  "fan": [
+    {
+      "driverId": "air_purifier",
+      "homeyClass": "fan",
+      "mfrCount": 12,
+      "pidCount": 2,
+      "capCount": 4,
+      "settingCount": 0,
+      "flowTriggers": 4,
+      "gaps": [],
+      "productIds": [
+        "TS0601_air_purifier",
+        "TS0601"
+      ]
+    },
+    {
+      "driverId": "ceiling_fan",
+      "homeyClass": "fan",
+      "mfrCount": 20,
+      "pidCount": 2,
+      "capCount": 4,
+      "settingCount": 8,
+      "flowTriggers": 4,
+      "gaps": [],
+      "productIds": [
+        "TS0601_fan",
+        "TS0601"
+      ]
+    },
+    {
+      "driverId": "fan_controller",
+      "homeyClass": "fan",
+      "mfrCount": 56,
+      "pidCount": 5,
+      "capCount": 3,
+      "settingCount": 0,
+      "flowTriggers": 4,
+      "gaps": [],
+      "productIds": [
+        "TS0203",
+        "TS0601",
+        "TS0601_fanctrl",
+        "TS0601_generic",
+        "TS0603"
+      ]
+    },
+    {
+      "driverId": "wifi_air_purifier",
+      "homeyClass": "fan",
+      "mfrCount": 0,
+      "pidCount": 0,
+      "capCount": 6,
+      "settingCount": 1,
+      "flowTriggers": 4,
+      "gaps": [],
+      "productIds": []
+    },
+    {
+      "driverId": "wifi_ewelink_fan",
+      "homeyClass": "fan",
+      "mfrCount": 0,
+      "pidCount": 0,
+      "capCount": 4,
+      "settingCount": 1,
+      "flowTriggers": 3,
+      "gaps": [],
+      "productIds": []
+    },
+    {
+      "driverId": "wifi_fan",
+      "homeyClass": "fan",
+      "mfrCount": 0,
+      "pidCount": 0,
+      "capCount": 3,
+      "settingCount": 1,
+      "flowTriggers": 1,
+      "gaps": [],
+      "productIds": []
+    }
+  ],
+  "lock": [
+    {
+      "driverId": "door_controller",
+      "homeyClass": "lock",
+      "mfrCount": 8,
+      "pidCount": 2,
+      "capCount": 5,
+      "settingCount": 8,
+      "flowTriggers": 8,
+      "gaps": [],
+      "productIds": [
+        "TS0601_door",
+        "TS0601"
+      ]
+    },
+    {
+      "driverId": "door_controller_garage",
+      "homeyClass": "lock",
+      "mfrCount": 2,
+      "pidCount": 2,
+      "capCount": 6,
+      "settingCount": 8,
+      "flowTriggers": 9,
+      "gaps": [],
+      "productIds": [
+        "TS0603",
+        "TS0601"
+      ]
+    },
+    {
+      "driverId": "fingerprint_lock",
+      "homeyClass": "lock",
+      "mfrCount": 32,
+      "pidCount": 2,
+      "capCount": 4,
+      "settingCount": 0,
+      "flowTriggers": 3,
+      "gaps": [],
+      "productIds": [
+        "TS0601_lock",
+        "TS0601"
+      ]
+    },
+    {
+      "driverId": "lock_smart",
+      "homeyClass": "lock",
+      "mfrCount": 28,
+      "pidCount": 2,
+      "capCount": 5,
+      "settingCount": 8,
+      "flowTriggers": 5,
+      "gaps": [],
+      "productIds": [
+        "TS0601_smartlock",
+        "TS0601"
+      ]
+    },
+    {
+      "driverId": "wifi_door_lock",
+      "homeyClass": "lock",
+      "mfrCount": 0,
+      "pidCount": 0,
+      "capCount": 5,
+      "settingCount": 1,
+      "flowTriggers": 2,
+      "gaps": [],
+      "productIds": []
+    }
+  ],
+  "siren": [
+    {
+      "driverId": "air_purifier_siren",
+      "homeyClass": "other",
+      "mfrCount": 3,
+      "pidCount": 1,
+      "capCount": 4,
+      "settingCount": 0,
+      "flowTriggers": 3,
+      "gaps": [],
+      "productIds": [
+        "TS0601"
+      ]
+    },
+    {
+      "driverId": "device_air_purifier_siren",
+      "homeyClass": "other",
+      "mfrCount": 2,
+      "pidCount": 1,
+      "capCount": 6,
+      "settingCount": 6,
+      "flowTriggers": 8,
+      "gaps": [],
+      "productIds": [
+        "TS0601"
+      ]
+    },
+    {
+      "driverId": "doorbell",
+      "homeyClass": "doorbell",
+      "mfrCount": 32,
+      "pidCount": 2,
+      "capCount": 6,
+      "settingCount": 8,
+      "flowTriggers": 7,
+      "gaps": [],
+      "productIds": [
+        "TS0211",
+        "TS0601"
+      ]
+    },
+    {
+      "driverId": "siren",
+      "homeyClass": "other",
+      "mfrCount": 100,
+      "pidCount": 3,
+      "capCount": 5,
+      "settingCount": 6,
+      "flowTriggers": 6,
+      "gaps": [],
+      "productIds": [
+        "TS0216",
+        "TS0219",
+        "TS0601"
+      ]
+    },
+    {
+      "driverId": "wifi_doorbell",
+      "homeyClass": "doorbell",
+      "mfrCount": 0,
+      "pidCount": 0,
+      "capCount": 3,
+      "settingCount": 1,
+      "flowTriggers": 2,
+      "gaps": [],
+      "productIds": []
+    },
+    {
+      "driverId": "wifi_siren",
+      "homeyClass": "speaker",
+      "mfrCount": 0,
+      "pidCount": 0,
+      "capCount": 6,
+      "settingCount": 1,
+      "flowTriggers": 4,
+      "gaps": [],
+      "productIds": []
+    }
+  ],
+  "ir": [
+    {
+      "driverId": "ir_blaster",
+      "homeyClass": "remote",
+      "mfrCount": 128,
+      "pidCount": 4,
+      "capCount": 12,
+      "settingCount": 1,
+      "flowTriggers": 6,
+      "gaps": [],
+      "productIds": [
+        "TS0002",
+        "TS0601",
+        "TS0601_repeater",
+        "TS1201"
+      ]
+    }
+  ],
+  "wifi": [
+    {
+      "driverId": "wifi_camera",
+      "homeyClass": "camera",
+      "mfrCount": 0,
+      "pidCount": 0,
+      "capCount": 3,
+      "settingCount": 3,
+      "flowTriggers": 2,
+      "gaps": [],
+      "productIds": []
+    },
+    {
+      "driverId": "wifi_garage_door",
+      "homeyClass": "garagedoor",
+      "mfrCount": 0,
+      "pidCount": 0,
+      "capCount": 3,
+      "settingCount": 1,
+      "flowTriggers": 2,
+      "gaps": [],
+      "productIds": []
+    },
+    {
+      "driverId": "wifi_generic",
+      "homeyClass": "other",
+      "mfrCount": 0,
+      "pidCount": 0,
+      "capCount": 2,
+      "settingCount": 1,
+      "flowTriggers": 1,
+      "gaps": [],
+      "productIds": []
+    },
+    {
+      "driverId": "wifi_heater",
+      "homeyClass": "heater",
+      "mfrCount": 0,
+      "pidCount": 0,
+      "capCount": 7,
+      "settingCount": 1,
+      "flowTriggers": 4,
+      "gaps": [],
+      "productIds": []
+    },
+    {
+      "driverId": "wifi_pet_feeder",
+      "homeyClass": "other",
+      "mfrCount": 0,
+      "pidCount": 0,
+      "capCount": 3,
+      "settingCount": 1,
+      "flowTriggers": 0,
+      "gaps": [],
+      "productIds": []
+    },
+    {
+      "driverId": "wifi_robot_vacuum",
+      "homeyClass": "vacuumcleaner",
+      "mfrCount": 0,
+      "pidCount": 0,
+      "capCount": 4,
+      "settingCount": 2,
+      "flowTriggers": 7,
+      "gaps": [],
+      "productIds": []
+    }
+  ],
+  "garagedoor": [
+    {
+      "driverId": "garage_door",
+      "homeyClass": "garagedoor",
+      "mfrCount": 32,
+      "pidCount": 2,
+      "capCount": 3,
+      "settingCount": 0,
+      "flowTriggers": 1,
+      "gaps": [],
+      "productIds": [
+        "TS0601_garage",
+        "TS0601"
+      ]
+    },
+    {
+      "driverId": "garage_door_opener",
+      "homeyClass": "garagedoor",
+      "mfrCount": 40,
+      "pidCount": 2,
+      "capCount": 3,
+      "settingCount": 0,
+      "flowTriggers": 2,
+      "gaps": [],
+      "productIds": [
+        "TS0601",
+        "TS0603"
+      ]
+    }
+  ],
+  "heater": [
+    {
+      "driverId": "smart_heater",
+      "homeyClass": "heater",
+      "mfrCount": 2,
+      "pidCount": 2,
+      "capCount": 6,
+      "settingCount": 0,
+      "flowTriggers": 6,
+      "gaps": [
+        "missing_power_scale_setting"
+      ],
+      "productIds": [
+        "TS0601_heater",
+        "TS0601"
+      ]
+    },
+    {
+      "driverId": "smart_heater_controller",
+      "homeyClass": "heater",
+      "mfrCount": 8,
+      "pidCount": 2,
+      "capCount": 8,
+      "settingCount": 3,
+      "flowTriggers": 6,
+      "gaps": [
+        "missing_power_scale_setting"
+      ],
+      "productIds": [
+        "TS0601_heatctrl",
+        "TS0601"
+      ]
+    }
+  ],
+  "windowcoverings": [
+    {
+      "driverId": "smart_screen_switch",
+      "homeyClass": "windowcoverings",
+      "mfrCount": 2,
+      "pidCount": 1,
+      "capCount": 6,
+      "settingCount": 0,
+      "flowTriggers": 6,
+      "gaps": [],
+      "productIds": [
+        "TS0601"
+      ]
+    }
+  ],
+  "other": [
+    {
+      "driverId": "device_generic_diy_universal",
+      "homeyClass": "other",
+      "mfrCount": 2,
+      "pidCount": 1,
+      "capCount": 26,
+      "settingCount": 0,
+      "flowTriggers": 11,
+      "gaps": [
+        "missing_power_scale_setting"
+      ],
+      "productIds": [
+        "TS0601"
+      ]
+    },
+    {
+      "driverId": "device_generic_tuya",
+      "homeyClass": "other",
+      "mfrCount": 6,
+      "pidCount": 1,
+      "capCount": 26,
+      "settingCount": 0,
+      "flowTriggers": 11,
+      "gaps": [
+        "missing_power_scale_setting"
+      ],
+      "productIds": [
+        "TS0601"
+      ]
+    },
+    {
+      "driverId": "device_generic_tuya_universal",
+      "homeyClass": "other",
+      "mfrCount": 28,
+      "pidCount": 2,
+      "capCount": 4,
+      "settingCount": 2,
+      "flowTriggers": 8,
+      "gaps": [],
+      "productIds": [
+        "TS0203",
+        "TS0601"
+      ]
+    },
+    {
+      "driverId": "diy_custom_zigbee",
+      "homeyClass": "other",
+      "mfrCount": 206,
+      "pidCount": 73,
+      "capCount": 5,
+      "settingCount": 3,
+      "flowTriggers": 6,
+      "gaps": [],
+      "productIds": [
+        "ARDUINO_ZIGBEE",
+        "BUTTON",
+        "CC1352P_DEV",
+        "CC1352_DEV",
+        "CC2530_ROUTER",
+        "CC2530_SENSOR"
+      ]
+    },
+    {
+      "driverId": "gateway_zigbee_bridge",
+      "homeyClass": "other",
+      "mfrCount": 2,
+      "pidCount": 10,
+      "capCount": 3,
+      "settingCount": 6,
+      "flowTriggers": 7,
+      "gaps": [],
+      "productIds": [
+        "S26R2ZB",
+        "S31 Lite zb",
+        "S40LITE",
+        "S60ZBTPF",
+        "S60ZBTPG",
+        "TS0101"
+      ]
+    },
+    {
+      "driverId": "generic_diy",
+      "homeyClass": "other",
+      "mfrCount": 56,
+      "pidCount": 50,
+      "capCount": 1,
+      "settingCount": 3,
+      "flowTriggers": 15,
+      "gaps": [],
+      "productIds": [
+        "BUTTON",
+        "CC2530",
+        "CC2531",
+        "CC2652",
+        "CUSTOM",
+        "DIY"
+      ]
+    },
+    {
+      "driverId": "generic_tuya",
+      "homeyClass": "other",
+      "mfrCount": 416,
+      "pidCount": 3,
+      "capCount": 4,
+      "settingCount": 2,
+      "flowTriggers": 6,
+      "gaps": [],
+      "productIds": [
+        "TS0203",
+        "TS0601_generic",
+        "TS0603"
+      ]
+    },
+    {
+      "driverId": "pet_feeder",
+      "homeyClass": "other",
+      "mfrCount": 16,
+      "pidCount": 2,
+      "capCount": 3,
+      "settingCount": 0,
+      "flowTriggers": 2,
+      "gaps": [],
+      "productIds": [
+        "TS0601_feeder",
+        "TS0601"
+      ]
+    },
+    {
+      "driverId": "pet_feeder_zigbee",
+      "homeyClass": "other",
+      "mfrCount": 8,
+      "pidCount": 1,
+      "capCount": 4,
+      "settingCount": 0,
+      "flowTriggers": 2,
+      "gaps": [],
+      "productIds": [
+        "TS0601"
+      ]
+    },
+    {
+      "driverId": "smart_garden_irrigation_control",
+      "homeyClass": "other",
+      "mfrCount": 10,
+      "pidCount": 11,
+      "capCount": 3,
+      "settingCount": 0,
+      "flowTriggers": 3,
+      "gaps": [],
+      "productIds": [
+        "TS0011",
+        "TS0049",
+        "TS0052",
+        "TS0101",
+        "TS0601",
+        "TS0601_dim1"
+      ]
+    },
+    {
+      "driverId": "universal_fallback",
+      "homeyClass": "other",
+      "mfrCount": 2,
+      "pidCount": 1,
+      "capCount": 2,
+      "settingCount": 2,
+      "flowTriggers": 0,
+      "gaps": [],
+      "productIds": [
+        "TS0601"
+      ]
+    },
+    {
+      "driverId": "universal_zigbee",
+      "homeyClass": "other",
+      "mfrCount": 112,
+      "pidCount": 66,
+      "capCount": 26,
+      "settingCount": 0,
+      "flowTriggers": 18,
+      "gaps": [
+        "missing_power_scale_setting"
+      ],
+      "productIds": [
+        "TS0001",
+        "TS0002",
+        "TS0003",
+        "TS0004",
+        "TS0005",
+        "TS0006"
+      ]
+    },
+    {
+      "driverId": "zigbee_repeater",
+      "homeyClass": "other",
+      "mfrCount": 54,
+      "pidCount": 2,
+      "capCount": 1,
+      "settingCount": 0,
+      "flowTriggers": 0,
+      "gaps": [],
+      "productIds": [
+        "TS0207",
+        "TS0001"
+      ]
+    }
+  ]
+}

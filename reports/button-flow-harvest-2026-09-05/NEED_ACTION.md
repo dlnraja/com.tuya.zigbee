@@ -1,6 +1,6 @@
 # Button Flow Harvest — NEED_ACTION
 
-Generated: 2026-09-05T07:55:37.973Z
+Generated: 2026-09-05T16:01:17.568Z
 
 ## Exempt (not button-flow scope)
 
@@ -55,8 +55,8 @@ CI harvest tries generic patterns first; `FlowCardHeuristics` + `ButtonDevice` r
   - `button_wireless_1_button_1gang_button_multi_press`
   - `button_wireless_1_button_1gang_button_1_pressed`
 
-### button_wireless_2 (button, 16 triggers)
-- **app_json_drift** (high) — 16 hits
+### button_wireless_2 (button, 18 triggers)
+- **app_json_drift** (high) — 18 hits
   - `button_wireless_2_button_2gang_button_pressed`
   - `button_wireless_2_button_2gang_button_double_press`
   - `button_wireless_2_button_2gang_button_long_press`

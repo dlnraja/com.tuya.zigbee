@@ -10,7 +10,7 @@ Critical gaps: **0**
 
 ## Clusters
 - Compose unique: 34
-- Lexicon size: 34
+- Lexicon size: 43
 - Missing from lexicon: 0
 
 ## DP knowledge

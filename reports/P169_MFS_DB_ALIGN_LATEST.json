@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-09-05T14:21:47.205Z",
+  "timestamp": "2026-09-05T16:15:25.899Z",
   "gate": "align-mfs-db-intelligent",
   "apply": false,
   "check": true,
@@ -150,6 +150,11 @@
       ]
     },
     {
+      "reason": "unclaimed_no_compose",
+      "mfr": "_TZE200_J1XL73IW",
+      "curated": "curtain_motor"
+    },
+    {
       "reason": "pair_conflict_ambiguous",
       "mfr": "_TZ3000_8uaoilu9",
       "curated": "curtain_motor_shutter",
@@ -249,15 +254,6 @@
         "contact_sensor",
         "hybrid_fan_sensor",
         "temphumidsensor"
-      ]
-    },
-    {
-      "reason": "unclaimed_multi",
-      "mfr": "_TZ3000_ysdv91bk",
-      "curated": "gas_sensor_switch",
-      "claimers": [
-        "switch_1gang",
-        "switch_wall_7gang"
       ]
     },
     {

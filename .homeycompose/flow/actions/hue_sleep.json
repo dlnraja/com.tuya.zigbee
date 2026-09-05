@@ -1,10 +1,10 @@
 {
   "id": "hue_sleep",
   "title": {
-    "en": "Sleep routine (sunset simulation)",
-    "fr": "Routine coucher (simulation de crépuscule)",
-    "nl": "Slaaproutine (zonsondergangsimulatie)",
-    "de": "Schlafroutine (Sonnenuntergangssimulation)"
+    "en": "Sleep routine sunset simulation",
+    "fr": "Routine coucher simulation de crépuscule",
+    "nl": "Slaaproutine zonsondergangsimulatie",
+    "de": "Schlafroutine Sonnenuntergangssimulation"
   },
   "hint": {
     "en": "Gradually dims the light to 1% over the chosen duration, then turns it off",
@@ -13,8 +13,28 @@
     "de": "Dimmt das Licht schrittweise auf 1% und schaltet dann aus"
   },
   "args": [
-    { "type": "device", "name": "light", "title": { "en": "Light", "fr": "Lumière" } },
-    { "type": "number", "name": "ramp_minutes", "title": { "en": "Duration (min)", "fr": "Durée (min)" }, "min": 1, "max": 60, "placeholder": { "en": "15" } }
+    {
+      "type": "device",
+      "name": "light",
+      "title": {
+        "en": "Light",
+        "fr": "Lumière"
+      },
+      "filter": "capabilities=dim|capabilities=onoff"
+    },
+    {
+      "type": "number",
+      "name": "ramp_minutes",
+      "title": {
+        "en": "Duration (min)",
+        "fr": "Durée (min)"
+      },
+      "min": 1,
+      "max": 60,
+      "placeholder": {
+        "en": "15"
+      }
+    }
   ],
   "titleFormatted": {
     "en": "Sleep: dim [[light]] to off over [[ramp_minutes]] min",

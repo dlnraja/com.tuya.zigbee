@@ -17,7 +17,8 @@
       "title": {
         "en": "Device",
         "fr": "Device"
-      }
+      },
+      "filter": "driver_id=*"
     }
   ],
   "tokens": [

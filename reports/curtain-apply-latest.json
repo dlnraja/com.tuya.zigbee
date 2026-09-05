@@ -1,15 +1,8 @@
 {
-  "generatedAt": "2026-09-01T06:16:58.008Z",
+  "generatedAt": "2026-09-05T16:01:31.974Z",
   "verdict": "curtain-z2m-missing-2026-09-01",
   "verified36_present": true,
   "added": [
-    {
-      "mfr": "_TYST11_WMCDJ3AQ",
-      "pid": "TS0601",
-      "source": "live-z2m-crawl",
-      "model": "ZM25TQ",
-      "desc": "Tubular Motor for Roller Shades"
-    },
     {
       "mfr": "_TZE200_1n2kyphz",
       "pid": "TS0601",
@@ -147,13 +140,6 @@
       "desc": "Tubular motor"
     },
     {
-      "mfr": "_TZE284_8whfphjv",
-      "pid": "TS0601",
-      "source": "live-z2m-crawl",
-      "model": "ZC-LP01",
-      "desc": "Smart sliding window pusher"
-    },
-    {
       "mfr": "_TZE284_ajuasrmx",
       "pid": "TS0601",
       "source": "live-z2m-crawl",
@@ -182,11 +168,11 @@
       "desc": "Roller blind motor 17mm/25mm/28mm"
     }
   ],
-  "stripped_from_curtain_motor": 4,
+  "stripped_from_curtain_motor": 2,
   "module2_gang_added": [
     "_TZ3000_j1xl73iw",
     "_TZ3000_l6iqph4f"
   ],
-  "curtainMfrCount": 572,
+  "curtainMfrCount": 573,
   "climateStripped": 0
 }

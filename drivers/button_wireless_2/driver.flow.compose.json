@@ -271,6 +271,22 @@
         "nl": "Knop 2 scène [[scène_id]] opgeroepen ({scene_id})",
         "de": "Taste 2 Szene [[Szene_id]] aufgerufen ({scene_id})"
       }
+    },
+    {
+      "id": "button_wireless_2_physical_on",
+      "title": {
+        "en": "Physical button on",
+        "fr": "Physical button on"
+      },
+      "args": []
+    },
+    {
+      "id": "button_wireless_2_physical_off",
+      "title": {
+        "en": "Physical button off",
+        "fr": "Physical button off"
+      },
+      "args": []
     }
   ],
   "conditions": [],

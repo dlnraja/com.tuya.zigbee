@@ -3029,5 +3029,8 @@
   },
   "9.0.831": {
     "en": "Improved manufacturer fingerprint database for HOBEIAN devices (presence, vibration, soil) and fixed wrong curtain/switch matches."
+  },
+  "9.0.832": {
+    "en": "Fixed BSEED 1-gang switch routing (Issue #540), pruned manifest flow duplicates, resolved ZG-303Z registry lock, and enforced zero guidelines warnings."
   }
 }
