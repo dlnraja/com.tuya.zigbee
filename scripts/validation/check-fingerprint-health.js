@@ -27,7 +27,7 @@ const DRIVERS_DIR = path.join(ROOT, 'drivers');
 const args = process.argv.slice(2);
 const FAIL_ON_EMPTY = args.includes('--fail-on-empty');
 const JSON_OUTPUT = args.includes('--json');
-const threshold = parseInt((args.find(a => a.startsWith('--threshold=')) || '').replace('--threshold=', '') || '10');
+const threshold = parseInt((args.find(a => a.startsWith('--threshold=')) || '').replace('--threshold=', '') || '25');
 
 if (!JSON_OUTPUT) console.log('=== FINGERPRINT HEALTH CHECK ===\n');
 

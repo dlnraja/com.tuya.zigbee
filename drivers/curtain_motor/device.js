@@ -373,7 +373,7 @@ class CurtainMotorDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedC
     const send = async (dp, val, type) => {
       try {
         await this._sendTuyaDP(dp, val, type);
-        await new Promise((r) => setTimeout(r, 150));
+        await new Promise((r) => this.homey.setTimeout(r, 150));
       } catch (err) {
         const msg = err?.message || String(err);
         if (/timeout/i.test(msg)) {

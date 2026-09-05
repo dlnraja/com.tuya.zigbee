@@ -24,13 +24,13 @@ describe('P2237 scene-remote-classify + FP collision guard', () => {
     }), true);
   });
 
-  it('cvis4qmw not on switch_4gang (mfs+canonical → switch_1gang only)', () => {
+  it('cvis4qmw not on switch_4gang (mfs+canonical → switch_wall_6gang only)', () => {
     const fs = require('fs');
     const path = require('path');
     const s4 = JSON.parse(fs.readFileSync(path.join(__dirname, '..', '..', 'drivers', 'switch_4gang', 'driver.compose.json'), 'utf8'));
-    const s1 = JSON.parse(fs.readFileSync(path.join(__dirname, '..', '..', 'drivers', 'switch_1gang', 'driver.compose.json'), 'utf8'));
+    const s6 = JSON.parse(fs.readFileSync(path.join(__dirname, '..', '..', 'drivers', 'switch_wall_6gang', 'driver.compose.json'), 'utf8'));
     const has = (j, mfr) => (j.zigbee.manufacturerName || []).some((m) => String(m).toLowerCase() === mfr.toLowerCase());
     assert.strictEqual(has(s4, '_TZ3000_cvis4qmw'), false);
-    assert.strictEqual(has(s1, '_TZ3000_cvis4qmw'), true);
+    assert.strictEqual(has(s6, '_TZ3000_cvis4qmw'), true);
   });
 });

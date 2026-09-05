@@ -1,4 +1,7 @@
-'use strict';
+﻿'use strict';
+
+const testApi = global.describe && global.it ? global : require('node:test');
+const { describe, it } = testApi;
 
 /**
  * P2253 — TS0043/TS0044 hybrid RX/TX + scene mode + no 0x8004 + LED doctrine

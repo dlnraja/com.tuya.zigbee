@@ -1,4 +1,7 @@
-'use strict';
+﻿'use strict';
+
+const testApi = global.describe && global.it ? global : require('node:test');
+const { describe, it } = testApi;
 
 /**
  * P2251 — Enrich from interviews / prior prompts / soft couples
@@ -29,14 +32,19 @@ describe('P2251 interview + soft-couple enrich', () => {
     assert.ok(!/TS011F/i.test(String(found.productId)));
   });
 
-  it('kfu8zapd / xabckq1v never write 0x8004', () => {
-    for (const mfr of ['_TZ3000_kfu8zapd', '_TZ3000_xabckq1v', '_TZ3000_xffhmvhv']) {
+  it('kfu8zapd / xffhmvhv never write 0x8004, xabckq1v forces event write', () => {
+    for (const mfr of ['_TZ3000_kfu8zapd', '_TZ3000_xffhmvhv']) {
       const fam = classifyOperatingFamily({
         getSetting: (k) => (k === 'zb_manufacturer_name' ? mfr : (k === 'zb_model_id' ? 'TS004F' : undefined)),
         getSettings: () => ({ zb_manufacturer_name: mfr, zb_model_id: 'TS004F' }),
       });
       assert.strictEqual(fam.writeSceneAttr, false, mfr);
     }
+    const xab = classifyOperatingFamily({
+      getSetting: (k) => (k === 'zb_manufacturer_name' ? '_TZ3000_xabckq1v' : (k === 'zb_model_id' ? 'TS004F' : undefined)),
+      getSettings: () => ({ zb_manufacturer_name: '_TZ3000_xabckq1v', zb_model_id: 'TS004F' }),
+    });
+    assert.strictEqual(xab.writeSceneAttr, true, '_TZ3000_xabckq1v');
   });
 
   it('FPDB has nkcobies + HOBEIAN climate ZG-227ZL', () => {

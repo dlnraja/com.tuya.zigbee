@@ -1,0 +1,232 @@
+{
+  "summary": {
+    "patch": "P2419",
+    "generatedAt": "2026-09-05T05:35:45.394Z",
+    "elapsedMs": 24,
+    "maxMs": 15000,
+    "aborted": false,
+    "missingPidHints": 14,
+    "hypotheses": 6,
+    "needInterview": 4,
+    "applied": 0,
+    "applySafeMode": false,
+    "skipInvestigate": true,
+    "investigate": {
+      "ok": true,
+      "skipped": true
+    }
+  },
+  "matched": [
+    {
+      "mfr": "_TZ3218_t9ynfz4x",
+      "pid": "TS0225",
+      "driver": "motion_sensor_radar_mmwave",
+      "confidence": 98,
+      "applySafe": true,
+      "lockedInCompose": true,
+      "missingPidReports": 2,
+      "sources": [
+        "Z2M Linptech/Moes ES1",
+        "forum Gabriel T158757#2",
+        "P2297"
+      ],
+      "expectedInterview": [
+        "zb_manufacturer_name",
+        "zb_model_id",
+        "clusters 0xE002"
+      ],
+      "note": null
+    },
+    {
+      "mfr": "_TZ3000_xabckq1v",
+      "pid": "TS004F",
+      "driver": "button_wireless_4",
+      "confidence": 90,
+      "applySafe": false,
+      "lockedInCompose": true,
+      "missingPidReports": 2,
+      "sources": [
+        "operational-memory soft",
+        "compose already has mfr"
+      ],
+      "expectedInterview": [
+        "zb_manufacturer_name",
+        "zb_model_id",
+        "endpoints"
+      ],
+      "note": "Known couple is TS004F→button_wireless_4; TS0001 soft-only — do not invent. Soft until interview."
+    },
+    {
+      "mfr": "_TZ3000_kfu8zapd",
+      "pid": "TS0044",
+      "driver": "scene_switch_4",
+      "confidence": 98,
+      "applySafe": true,
+      "lockedInCompose": false,
+      "missingPidReports": 1,
+      "sources": [
+        "forum T150690",
+        "LOCKED_OK"
+      ],
+      "expectedInterview": [
+        "zb_manufacturer_name",
+        "zb_model_id"
+      ],
+      "note": null
+    },
+    {
+      "mfr": "_TZE204_5slehgeo",
+      "pid": "TS0601",
+      "driver": "curtain_motor",
+      "confidence": 99,
+      "applySafe": true,
+      "lockedInCompose": true,
+      "missingPidReports": 0,
+      "sources": [
+        "GitHub #533",
+        "P2412 Moes ZTS-EUR-C",
+        "misattribution forbid radiator_valve"
+      ],
+      "expectedInterview": [
+        "zb_manufacturer_name",
+        "zb_model_id",
+        "DP1/DP2"
+      ],
+      "note": null
+    },
+    {
+      "mfr": "_TZ3000_4upl1fcj",
+      "pid": "TS0041",
+      "driver": "button_wireless_1",
+      "confidence": 95,
+      "applySafe": true,
+      "lockedInCompose": true,
+      "missingPidReports": 0,
+      "sources": [
+        "forum T156967 LOCKED_OK"
+      ],
+      "expectedInterview": [
+        "zb_manufacturer_name",
+        "zb_model_id"
+      ],
+      "note": null
+    },
+    {
+      "mfr": "_TZ3000_wkai4ga5",
+      "pid": "TS0044",
+      "driver": "button_wireless_4",
+      "confidence": 95,
+      "applySafe": true,
+      "lockedInCompose": false,
+      "missingPidReports": 0,
+      "sources": [
+        "forum interview TS0044",
+        "LOCKED_OK"
+      ],
+      "expectedInterview": [
+        "zb_manufacturer_name",
+        "zb_model_id"
+      ],
+      "note": "TS0042 sibling NOT invent — NEED_INTERVIEW if user only has TS0042 claim"
+    }
+  ],
+  "needInterview": [
+    {
+      "couple": "_TZ3218_t9ynfz4x+TS0225",
+      "driver": "motion_sensor_radar_mmwave",
+      "fields": [
+        "zb_manufacturer_name",
+        "zb_model_id",
+        "clusters 0xE002"
+      ],
+      "why": "MISSING_PID in forum/processor"
+    },
+    {
+      "couple": "_TZ3000_xabckq1v+TS004F",
+      "driver": "button_wireless_4",
+      "fields": [
+        "zb_manufacturer_name",
+        "zb_model_id",
+        "endpoints"
+      ],
+      "why": "MISSING_PID in forum/processor"
+    },
+    {
+      "couple": "_TZ3000_kfu8zapd+TS0044",
+      "driver": "scene_switch_4",
+      "fields": [
+        "zb_manufacturer_name",
+        "zb_model_id"
+      ],
+      "why": "MISSING_PID in forum/processor"
+    },
+    {
+      "couple": "_TZ3000_wkai4ga5+TS0044",
+      "driver": "button_wireless_4",
+      "fields": [
+        "zb_manufacturer_name",
+        "zb_model_id"
+      ],
+      "why": "soft-hypothesize until interview confirm"
+    }
+  ],
+  "applied": [],
+  "missing": [
+    {
+      "mfr": "_TZ3218_T9YNFZ4X",
+      "source": "forum-verify-2026-09-03"
+    },
+    {
+      "mfr": "_TZ3000_KFU8ZAPD",
+      "source": "forum-verify-2026-09-03"
+    },
+    {
+      "mfr": "_TZ3000_XABCKQ1V",
+      "source": "forum-verify-2026-09-03"
+    },
+    {
+      "mfr": "_TZ3000_XABCKQ1V",
+      "source": "forum-verify-2026-09-03"
+    },
+    {
+      "mfr": "_TZE200_NPJ9BUG3",
+      "source": "forum-verify-2026-09-03"
+    },
+    {
+      "mfr": "_TZE204_CLRDRNYA",
+      "source": "forum-verify-2026-09-03"
+    },
+    {
+      "mfr": "_TZE204_OGKDPGY2",
+      "source": "forum-verify-2026-09-03"
+    },
+    {
+      "mfr": "_TZ3218_T9YNFZ4X",
+      "source": "forum-verify-2026-09-03"
+    },
+    {
+      "mfr": "_TZ3000_LWTHNP7J",
+      "source": "forum-verify-2026-09-03"
+    },
+    {
+      "mfr": "_TZ3210_TGVTVDOC",
+      "source": "forum-verify-2026-09-03"
+    },
+    {
+      "mfr": "_TZ3000_QEUVNOHG",
+      "source": "forum-verify-2026-09-03"
+    },
+    {
+      "mfr": "_TZ3000_AMDYMR7L",
+      "source": "forum-verify-2026-09-03"
+    },
+    {
+      "mfr": "_TZ3000_NKCOBIES",
+      "source": "forum-verify-2026-09-03"
+    },
+    {
+      "mfr": "_TZ3000_QEUVNOHG",
+      "source": "forum-verify-2026-09-03"
+    }
+  ]
+}

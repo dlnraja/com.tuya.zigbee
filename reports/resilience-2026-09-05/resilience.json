@@ -1,0 +1,608 @@
+{
+  "generatedAt": "2026-09-05T05:01:16.653Z",
+  "policy": "SHADOW forum — intelligence in code/CI only",
+  "complementary": "P2224/P2225 — inventory + critical-first + parallel layer vocabularies",
+  "criticalFirst": true,
+  "criticalIds": [
+    "sacred_couple_fp",
+    "buttons_bidirectional",
+    "handleframe_chain",
+    "ias_sleepy",
+    "battery",
+    "energy_divisors",
+    "ef00_dp",
+    "l14_telemetry"
+  ],
+  "domainsAudited": 7,
+  "domainsOk": 7,
+  "bugClassCounts": {
+    "fixed": 11,
+    "partial": 29,
+    "open": 3,
+    "hardened": 1
+  },
+  "layerSchemes": [
+    "pipeline_l0_l11",
+    "bypass_elite_l1_l9",
+    "capability_protocol_l0_l6",
+    "button_capture_l1_l8",
+    "ai_three_layers"
+  ],
+  "evolutionRefs": [
+    "docs/CHRONOLOGICAL_EVOLUTION.md",
+    "docs/PROJECT_EVOLUTION_HISTORY.md",
+    "docs/MASTER_EVOLUTION_REFERENCE.md",
+    "docs/architecture/LAYERS_CAPABILITY_PROTOCOL.md",
+    "docs/architecture/LAYERS_ENERGY_BUTTONS_FLOWS.md",
+    "docs/architecture/ARCHITECTURE_TELEMETRY_V5.md",
+    "docs/architecture/COMPLEMENTARY_ENRICHMENT.md",
+    "docs/rules/BYPASS_ELITE_LAYERS.md",
+    "docs/rules/DUAL_APP_VISION.md",
+    "docs/ARCHITECTURE_AI.md",
+    "AI_CONTEXT_MANDATE.md"
+  ],
+  "results": [
+    {
+      "id": "sacred_couple_fp",
+      "priority": 1,
+      "status": "partial",
+      "homeyGap": "No hot-swap; mfr-only pairing ambiguous",
+      "stack": [
+        "compose static FP",
+        "DeviceFingerprintDB",
+        "misattribution-registry",
+        "softHypothesis never lock"
+      ],
+      "gates": [
+        {
+          "script": "tools/ci/p2138-sacred-couple-matrix-gate.js",
+          "ok": true,
+          "exitCode": 0,
+          "durationMs": 421,
+          "tail": " compose lists m1cvyneb\n  ✅ wall_dimmer_tuya productId includes TS0601\n  ✅ TuyaBrightnessScale 0.5 ↔ 500\n  ✅ TuyaBrightnessScale clamps to 0–1000\n  ✅ anti-bot mentions m1cvyneb\n  ✅ anti-bot mentions climate_sensor\n  ✅ anti-bot mentions soil_sensor\n  ✅ anti-bot mentions zigbee_universal\n  ✅ anti-bot mentions wall_dimmer\n  ✅ mfs_db has no m1cvyneb|TS0201 invent\n\nPASS: P2138 sacred-couple matrix gate"
+        },
+        {
+          "script": "tools/ci/sacred-couple-dry-gate.js",
+          "ok": true,
+          "exitCode": 0,
+          "durationMs": 5466,
+          "tail": "[sacred-couple-dry-gate] dry-run apply scripts\n  - p101-lot2: ok\n  - blakadder-new: ok\n  - issue-439: ok\n  - canonical-gaps: ok"
+        },
+        {
+          "script": "tools/ci/dual-claim-compose-gate.js",
+          "ok": true,
+          "exitCode": 0,
+          "durationMs": 613,
+          "tail": "[ts0001, ts0001_fingerbot, ts0003, ts000f, ts0011] drivers=button_wireless_2 | plug\n  [TZ] _tz3000_ew31dmgx shared=[ts0001, ts0001_fingerbot, ts0003, ts000f, ts0011] drivers=button_wireless_2 | plug\n  [TZ] _tz3000_hyfvrar3 shared=[ts0001, ts0001_fingerbot, ts0003, ts000f, ts0011] drivers=button_wireless_2 | plug\n  ... and 72 more\nMode: warn (exit 0). Pass --strict to fail on _TZ* family conflicts."
+        }
+      ],
+      "npm": [],
+      "tests": [
+        {
+          "file": "test/critical/p218-device-truth.test.js",
+          "ok": true,
+          "present": true
+        },
+        {
+          "file": "test/critical/p-device-peculiarity-compound.test.js",
+          "ok": true,
+          "present": true
+        }
+      ],
+      "missingArtifacts": [],
+      "ok": true,
+      "gateFails": 0,
+      "npmFails": 0
+    },
+    {
+      "id": "buttons_bidirectional",
+      "priority": 1,
+      "status": "hardened",
+      "homeyGap": "No physical vs app distinction; mfr OnOff 0xFD/0xFC dropped; unknown 0xE000",
+      "stack": [
+        "L1 OnOffBoundCluster 0xFD/0xFC per-EP",
+        "L2 raw handleFrame + wide command match",
+        "L3 scenes recall",
+        "L4 ZCL on/off/toggle",
+        "L5 TuyaE000BoundCluster + E001 (ButtonCaptureCascade P2223)",
+        "L6 LevelControl knobs",
+        "L7 EF00 conditional MCU",
+        "L8 MultistateInput",
+        "VirtualButtonMixin markAppCommand + UI P2220/P2221"
+      ],
+      "gates": [
+        {
+          "script": "tools/ci/battery-button-intelligence-gate.js",
+          "ok": true,
+          "exitCode": 0,
+          "durationMs": 2251,
+          "tail": "[battery-button-gate] errors=0 warnings=57\n  B5: 14\n  F1: 38\n  C2: 5\n[battery-button-gate] report: reports/BATTERY_BUTTON_INTELLIGENCE.md"
+        },
+        {
+          "script": "tools/ci/button-physical-gang-parity-gate.js",
+          "ok": true,
+          "exitCode": 0,
+          "durationMs": 499,
+          "tail": "[P2395] physical_gang parity OK (16 drivers)"
+        }
+      ],
+      "npm": [],
+      "tests": [
+        {
+          "file": "test/critical/p2223-button-capture-cascade.test.js",
+          "ok": true,
+          "present": true
+        },
+        {
+          "file": "test/critical/p2395-button-capture-preferred-levels.test.js",
+          "ok": true,
+          "present": true
+        },
+        {
+          "file": "test/critical/p2221-bidirectional-buttons.test.js",
+          "ok": true,
+          "present": true
+        },
+        {
+          "file": "test/critical/p2220-button-ui-ux.test.js",
+          "ok": true,
+          "present": true
+        },
+        {
+          "file": "test/button-bidirectional.test.js",
+          "ok": true,
+          "present": true
+        }
+      ],
+      "missingArtifacts": [],
+      "ok": true,
+      "gateFails": 0,
+      "npmFails": 0
+    },
+    {
+      "id": "ias_sleepy",
+      "priority": 1,
+      "status": "partial",
+      "homeyGap": "Boot poll storms; zoneStatus shapes; leftover EF00",
+      "stack": [
+        "IASZoneEnhanced.coerce",
+        "shouldSkipIasOnlyEf00Tx",
+        "_ensureIasBound",
+        "wake enroll",
+        "no Poll Control sleepy"
+      ],
+      "gates": [],
+      "npm": [],
+      "tests": [
+        {
+          "file": "test/critical/p2183-sleepy-wake-skip.test.js",
+          "ok": true,
+          "present": true
+        },
+        {
+          "file": "test/critical/p2183-tuya-dataquery-skip.test.js",
+          "ok": true,
+          "present": true
+        },
+        {
+          "file": "test/critical/alarm-polarity-manager.test.js",
+          "ok": true,
+          "present": true
+        }
+      ],
+      "missingArtifacts": [],
+      "ok": true,
+      "gateFails": 0,
+      "npmFails": 0
+    },
+    {
+      "id": "battery",
+      "priority": 1,
+      "status": "partial",
+      "homeyGap": "0–200 vs 0–100; no nonlinear curves",
+      "stack": [
+        "normalizeZclBatteryPercent",
+        "UnifiedBatteryHandler nonlinear",
+        "DP cascade",
+        "linear formula ban"
+      ],
+      "gates": [
+        {
+          "script": "tools/ci/p216-zcl-battery-half-percent-gate.js",
+          "ok": true,
+          "exitCode": 0,
+          "durationMs": 307,
+          "tail": "PASS: P216 ZCL battery half-percent (no blind /2)"
+        },
+        {
+          "script": "tools/ci/battery-button-intelligence-gate.js",
+          "ok": true,
+          "exitCode": 0,
+          "durationMs": 2266,
+          "tail": "[battery-button-gate] errors=0 warnings=57\n  B5: 14\n  F1: 38\n  C2: 5\n[battery-button-gate] report: reports/BATTERY_BUTTON_INTELLIGENCE.md"
+        }
+      ],
+      "npm": [],
+      "tests": [
+        {
+          "file": "test/critical/p216-zcl-battery-half-percent.test.js",
+          "ok": true,
+          "present": true
+        },
+        {
+          "file": "test/critical/unified-battery-cascade.test.js",
+          "ok": true,
+          "present": true
+        },
+        {
+          "file": "test/critical/multi-protocol-battery.test.js",
+          "ok": true,
+          "present": true
+        }
+      ],
+      "missingArtifacts": [],
+      "ok": true,
+      "gateFails": 0,
+      "npmFails": 0
+    },
+    {
+      "id": "energy_divisors",
+      "priority": 1,
+      "status": "partial",
+      "homeyGap": "Double division; energy.approximation vs meter caps; parallel estimators overwrite real W/kWh",
+      "stack": [
+        "SmartDivisorManager (parse SSOT)",
+        "EnergyJumpGuard → rememberLearnedDivisor",
+        "SmartEnergyManager (real vs estimated audit)",
+        "VirtualEnergyMeterMixin (estimates only after silence)",
+        "L14 safeSetCapabilityValue",
+        "HomeyGapCompensator soft notes only"
+      ],
+      "gates": [
+        {
+          "script": "tools/ci/adaptive-double-division-gate.js",
+          "ok": true,
+          "exitCode": 0,
+          "durationMs": 1725,
+          "tail": "[adaptive-double-division-gate] hits=2 hardHits=0 mode=soft\n  (soft) lib/devices/BaseUnifiedDevice.js: AdaptiveDataParser + local divisor/smartDivisor in same file\n  (soft) lib/tuya/TuyaEF00Manager.js: AdaptiveDataParser + local divisor/smartDivisor in same file"
+        },
+        {
+          "script": "tools/ci/energy-compose-gate.js",
+          "ok": true,
+          "exitCode": 0,
+          "durationMs": 675,
+          "tail": "energy-compose-gate: scanned 431 driver.compose.json files\nOK: no Homey Energy v3 approximation + power-cap conflicts\nNOTE: 4 driver(s) have energy.batteries + measure_power/meter_power without approximation (informational)"
+        },
+        {
+          "script": "tools/ci/l14-capability-writers-gate.js",
+          "ok": true,
+          "exitCode": 0,
+          "durationMs": 342,
+          "tail": "[l14-capability-writers-gate] PASS"
+        },
+        {
+          "script": "scripts/validation/check-energy-divisor.js",
+          "ok": true,
+          "exitCode": 0,
+          "durationMs": 777,
+          "tail": "🔍 TITAN v5 — Checking energy divisor validation...\n\nFound 73 drivers with meter_power capability\n\n\n📊 Results:\n   Drivers with energy capability: 73\n   Drivers without divisor: 0\n\n✅ All energy drivers have proper divisor settings"
+        }
+      ],
+      "npm": [],
+      "tests": [
+        {
+          "file": "test/critical/smart-energy-audit.test.js",
+          "ok": true,
+          "present": true
+        },
+        {
+          "file": "test/critical/l99-energy-jump-divisor.test.js",
+          "ok": true,
+          "present": true
+        },
+        {
+          "file": "test/critical/commit-capability.test.js",
+          "ok": true,
+          "present": true
+        }
+      ],
+      "missingArtifacts": [],
+      "ok": true,
+      "gateFails": 0,
+      "npmFails": 0
+    },
+    {
+      "id": "ef00_dp",
+      "priority": 1,
+      "status": "partial",
+      "homeyGap": "Opaque 0xEF00; type0 misread",
+      "stack": [
+        "couple dp profile",
+        "DpByteArrayProfiles",
+        "SmartDivisor",
+        "UnknownDPLogger observe-only TX"
+      ],
+      "gates": [
+        {
+          "script": "tools/ci/audit-sacred-couple-dps.js",
+          "ok": true,
+          "exitCode": 0,
+          "durationMs": 1076,
+          "tail": "pping\n p2293-zemismart-68nvbio9-curtain-not-trv (curtain_motor): 25 issue(s)\n   DP2 missing_in_driver — knowledge documents DP — not in driver compose/device\n   DP3 missing_in_driver — knowledge documents DP — not in driver compose/device\n   DP4 missing_in_driver — knowledge documents DP — not in driver compose/device\n   DP5 missing_in_driver — knowledge documents DP — not in driver compose/device"
+        }
+      ],
+      "npm": [],
+      "tests": [
+        {
+          "file": "test/critical/p2207-tongou-din-meter.test.js",
+          "ok": true,
+          "present": true
+        },
+        {
+          "file": "test/critical/p2212-dp6-tongou-byte-array.test.js",
+          "ok": true,
+          "present": true
+        }
+      ],
+      "missingArtifacts": [],
+      "ok": true,
+      "gateFails": 0,
+      "npmFails": 0
+    },
+    {
+      "id": "l14_telemetry",
+      "priority": 1,
+      "status": "partial",
+      "homeyGap": "Raw setCapability floods UI; no EMA/ROC",
+      "stack": [
+        "SanityFilter EMA/ROC",
+        "anti-flood",
+        "safeSetCapabilityValue",
+        "commitCapability"
+      ],
+      "gates": [
+        {
+          "script": "tools/ci/l14-capability-writers-gate.js",
+          "ok": true,
+          "exitCode": 0,
+          "durationMs": 536,
+          "tail": "[l14-capability-writers-gate] PASS"
+        }
+      ],
+      "npm": [],
+      "tests": [
+        {
+          "file": "test/critical/commit-capability.test.js",
+          "ok": true,
+          "present": true
+        },
+        {
+          "file": "test/critical/energy-battery-button-flows.test.js",
+          "ok": true,
+          "present": true
+        }
+      ],
+      "missingArtifacts": [],
+      "ok": true,
+      "gateFails": 0,
+      "npmFails": 0
+    }
+  ],
+  "openBugs": [
+    {
+      "id": "ghost_flow_echo",
+      "status": "partial",
+      "domains": [
+        "buttons_bidirectional",
+        "flows"
+      ],
+      "fix": "markAppCommand + dedup"
+    },
+    {
+      "id": "missing_capability_listener",
+      "status": "partial",
+      "domains": [
+        "buttons_bidirectional",
+        "flows"
+      ],
+      "fix": "P2220/P2221 UI listeners"
+    },
+    {
+      "id": "double_division",
+      "status": "partial",
+      "domains": [
+        "energy_divisors"
+      ],
+      "fix": "SmartDivisorManager + gate"
+    },
+    {
+      "id": "zcl_battery_half",
+      "status": "partial",
+      "domains": [
+        "battery"
+      ],
+      "fix": "normalizeZclBatteryPercent P216"
+    },
+    {
+      "id": "linear_battery_formula",
+      "status": "partial",
+      "domains": [
+        "battery"
+      ],
+      "fix": "nonlinear profiles ban"
+    },
+    {
+      "id": "phantom_mains_battery",
+      "status": "partial",
+      "domains": [
+        "battery",
+        "sacred_couple_fp"
+      ],
+      "fix": "mainsPowered strip + P2391/P2392 FirmwareQuirkCompensator + Energy clear"
+    },
+    {
+      "id": "mmwave_rx_flood",
+      "status": "partial",
+      "domains": [
+        "hybrid_protocol"
+      ],
+      "fix": "P2389 radar RX budget + floodCalm DP coalesce (airtime is firmware)"
+    },
+    {
+      "id": "ias_ef00_leftover",
+      "status": "partial",
+      "domains": [
+        "ias_sleepy"
+      ],
+      "fix": "shouldSkipIasOnlyEf00Tx"
+    },
+    {
+      "id": "fp_collision_ts0601",
+      "status": "open",
+      "domains": [
+        "sacred_couple_fp"
+      ],
+      "fix": "sacred locks + softHypothesis"
+    },
+    {
+      "id": "sacred_misroute",
+      "status": "partial",
+      "domains": [
+        "sacred_couple_fp",
+        "dimmer_brightness",
+        "ef00_dp"
+      ],
+      "fix": "p2138 matrix"
+    },
+    {
+      "id": "oom_json_utf16",
+      "status": "partial",
+      "domains": [
+        "heap_json"
+      ],
+      "fix": "Buffer JSON.parse"
+    },
+    {
+      "id": "settimeout_destroyed",
+      "status": "partial",
+      "domains": [
+        "timers_destroyed"
+      ],
+      "fix": "safe-timers"
+    },
+    {
+      "id": "unsupported_cluster",
+      "status": "partial",
+      "domains": [
+        "hybrid_protocol"
+      ],
+      "fix": "parallelDiscover cascade"
+    },
+    {
+      "id": "mcu_time_wrong",
+      "status": "partial",
+      "domains": [
+        "mcu_time"
+      ],
+      "fix": "guessFormat chain"
+    },
+    {
+      "id": "dp_type0_misread",
+      "status": "partial",
+      "domains": [
+        "ef00_dp"
+      ],
+      "fix": "DpByteArrayProfiles + audit"
+    },
+    {
+      "id": "bseed_group_all_gangs",
+      "status": "partial",
+      "domains": [
+        "buttons_bidirectional"
+      ],
+      "fix": "group strip + per-gang mark"
+    },
+    {
+      "id": "enricher_reinject",
+      "status": "partial",
+      "domains": [
+        "sacred_couple_fp",
+        "enrichment_shadow"
+      ],
+      "fix": "anti-bot + sacred gate"
+    },
+    {
+      "id": "forum_soft_hypothesis",
+      "status": "open",
+      "domains": [
+        "enrichment_shadow"
+      ],
+      "fix": "never invent pid; soft only"
+    },
+    {
+      "id": "p139_processing_failed",
+      "status": "open",
+      "domains": [
+        "dual_app_publish"
+      ],
+      "fix": "wait cooldown no loop"
+    },
+    {
+      "id": "onoff_fd_dropped",
+      "status": "partial",
+      "domains": [
+        "buttons_bidirectional"
+      ],
+      "fix": "OnOffBoundCluster 0xFD/0xFC + cascade L1"
+    },
+    {
+      "id": "e000_unbound_silent",
+      "status": "partial",
+      "domains": [
+        "buttons_bidirectional"
+      ],
+      "fix": "ButtonCaptureCascade L5 E000 BoundCluster"
+    },
+    {
+      "id": "raw_capability_flood",
+      "status": "partial",
+      "domains": [
+        "l14_telemetry"
+      ],
+      "fix": "safeSetCapabilityValue + SanityFilter"
+    },
+    {
+      "id": "case_sensitive_mfr",
+      "status": "partial",
+      "domains": [
+        "identity_normalize"
+      ],
+      "fix": "CaseInsensitiveMatcher"
+    },
+    {
+      "id": "reconnect_confirm_storm",
+      "status": "partial",
+      "domains": [
+        "protocol_rxtx_bus"
+      ],
+      "fix": "ReconnectBurstCoalescer + confirmInbound"
+    },
+    {
+      "id": "shared_test_slot_overwrite",
+      "status": "partial",
+      "domains": [
+        "dual_app_publish"
+      ],
+      "fix": "independent .stable App ID + soak-guard"
+    },
+    {
+      "id": "appjson_compose_drift",
+      "status": "partial",
+      "domains": [
+        "sacred_couple_fp",
+        "ci_fleetwood"
+      ],
+      "fix": "sync-appjson-zigbee after compose FP changes"
+    }
+  ]
+}

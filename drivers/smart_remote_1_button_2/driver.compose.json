@@ -139,5 +139,11 @@
       }
     }
   },
+  "metadata": {
+    "driver": {
+      "catchall": true,
+      "reason": "Fallback for unlisted 1-button Zigbee remotes with PID TS004F"
+    }
+  },
   "version": "1.0.0"
 }

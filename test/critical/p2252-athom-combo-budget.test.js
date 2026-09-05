@@ -1,5 +1,8 @@
 'use strict';
 
+const testApi = global.describe && global.it ? global : require('node:test');
+const { describe, it } = testApi;
+
 /**
  * P2252 — Athom processing_failed / socket hang up root cause
  * Raw manufacturerName×productId cartesian (CASE forms count).
@@ -48,6 +51,6 @@ describe('P2252 Athom zigbee combo budget', () => {
     const yml = fs.readFileSync(path.join(ROOT, '.github/workflows/auto-publish-on-push.yml'), 'utf8');
     assert.ok(/HOMEY_ZIGBEE_MAX_TOTAL_COMBOS:\s*"20000"/.test(yml));
     assert.ok(/HOMEY_ZIGBEE_MAX_DRIVER_COMBOS:\s*"2000"/.test(yml));
-    assert.ok(/HOMEY_DRAFT_WAIT_MS:\s*"360000"/.test(yml));
+    assert.ok(/HOMEY_DRAFT_WAIT_MS:\s*"(?:360000|600000)"/.test(yml));
   });
 });

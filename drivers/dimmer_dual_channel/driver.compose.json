@@ -20,6 +20,11 @@
   "connectivity": [
     "zigbee"
   ],
+  "metadata": {
+    "driver": {
+      "catchall": true
+    }
+  },
   "zigbee": {
     "manufacturerName": [],
     "productId": [

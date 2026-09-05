@@ -1,4 +1,7 @@
-'use strict';
+﻿'use strict';
+
+const testApi = global.describe && global.it ? global : require('node:test');
+const { describe, it } = testApi;
 
 /**
  * P2249 — TS0043 / TS0044 multi-button battery remotes (Zemismart / Moes / Peter)

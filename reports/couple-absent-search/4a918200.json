@@ -1,0 +1,290 @@
+{
+  "generatedAt": "2026-09-03T09:06:23.071Z",
+  "policy": "search-not-invent — never write compose from soft hypotheses",
+  "query": {
+    "uuid": "4a918200",
+    "driver": null
+  },
+  "diag": null,
+  "hypotheses": [
+    {
+      "mfr": "_TZE204_5slehgeo",
+      "pid": "TS0601",
+      "driver": "curtain_motor",
+      "confidence": "github_context_soft",
+      "reason": "GitHub #533 Salvagr Moes ZTS-EUR-C — NOT proven in target diag log",
+      "sources": [
+        "github-533",
+        "diag-724d4bc9",
+        "PECULIARITIES-p2348",
+        "z2m"
+      ],
+      "z2mDesc": "Thermostatic radiator valve"
+    },
+    {
+      "mfr": "_TZ3000_k4ej3ww2",
+      "pid": "TS0207",
+      "driver": "water_leak_sensor",
+      "confidence": "registry_locked",
+      "reason": "hobeian-aubess-k4ej3ww2-ias",
+      "sources": [
+        "z2m#17685",
+        "z2m#28181",
+        "z2m#19308",
+        "forum-140352",
+        "P143",
+        "P144",
+        "P146"
+      ]
+    },
+    {
+      "mfr": "_TZ3000_mwd3c2at",
+      "pid": "TS0202",
+      "driver": "smart_irrigation_valve",
+      "confidence": "registry_locked",
+      "reason": "p2240-mwd3c2at-irrigation-valve-ts0202",
+      "sources": [
+        "z2m",
+        "P2231",
+        "P2240"
+      ],
+      "z2mDesc": "Zigbee smart water valve"
+    },
+    {
+      "mfr": "_TZE284_m1cvyneb",
+      "pid": "TS0601",
+      "driver": "wall_dimmer_tuya",
+      "confidence": "registry_locked",
+      "reason": "presentsky-bseed-dimmer-m1cvyneb",
+      "sources": [
+        "forum-140352-2206",
+        "forum-140352",
+        "diag-60959c24",
+        "diag-f20dc4f0",
+        "P139",
+        "P149",
+        "P2314",
+        "P2322",
+        "z2m#32305",
+        "z2m-TS0601_dimmer_1_gang_1"
+      ]
+    },
+    {
+      "mfr": "_TZE204_m1cvyneb",
+      "pid": "TS0601",
+      "driver": "wall_dimmer_tuya",
+      "confidence": "registry_locked",
+      "reason": "presentsky-bseed-dimmer-m1cvyneb",
+      "sources": [
+        "forum-140352-2206",
+        "forum-140352",
+        "diag-60959c24",
+        "diag-f20dc4f0",
+        "P139",
+        "P149",
+        "P2314",
+        "P2322",
+        "z2m#32305",
+        "z2m-TS0601_dimmer_1_gang_1"
+      ]
+    },
+    {
+      "mfr": "_TZE200_m1cvyneb",
+      "pid": "TS0601",
+      "driver": "wall_dimmer_tuya",
+      "confidence": "registry_locked",
+      "reason": "presentsky-bseed-dimmer-m1cvyneb",
+      "sources": [
+        "forum-140352-2206",
+        "forum-140352",
+        "diag-60959c24",
+        "diag-f20dc4f0",
+        "P139",
+        "P149",
+        "P2314",
+        "P2322",
+        "z2m#32305",
+        "z2m-TS0601_dimmer_1_gang_1"
+      ]
+    },
+    {
+      "mfr": "_TZ3210_imaccztn",
+      "pid": "TS0004",
+      "driver": "relay_board_4_channel",
+      "confidence": "registry_locked",
+      "reason": "tboy-relay-4ch-imaccztn",
+      "sources": [
+        "forum-140352",
+        "P139",
+        "P149"
+      ],
+      "z2mDesc": "4 channel relay"
+    },
+    {
+      "mfr": "_TZ3000_w5xztuy7",
+      "pid": "TS0002",
+      "driver": "switch_2gang",
+      "confidence": "registry_locked",
+      "reason": "kanbros-bseed-2gang-w5xztuy7",
+      "sources": [
+        "forum-140352",
+        "P139",
+        "P141"
+      ]
+    },
+    {
+      "mfr": "_TYZB01_hlla45kx",
+      "pid": "TS011F",
+      "driver": "double_power_point_2",
+      "confidence": "registry_locked",
+      "reason": "welsh-double-outlet-hlla45kx",
+      "sources": [
+        "forum-140352",
+        "P139"
+      ]
+    },
+    {
+      "mfr": "_TZE284_nt4pquef",
+      "pid": "TS0601",
+      "driver": "soil_sensor",
+      "confidence": "registry_locked",
+      "reason": "soil-nt4pquef",
+      "sources": [
+        "forum-140352",
+        "P141",
+        "z2m-herdsman#10315",
+        "zha#4707"
+      ],
+      "z2mDesc": "Thermostatic radiator valve"
+    },
+    {
+      "mfr": "_TZE284_hodyryli",
+      "pid": "TS0601",
+      "driver": "climate_sensor_zt08",
+      "confidence": "registry_locked",
+      "reason": "zt08-hodyryli",
+      "sources": [
+        "forum-140352",
+        "github#513",
+        "P140"
+      ],
+      "z2mDesc": "Thermostat radiator valve"
+    },
+    {
+      "mfr": "_TZE204_clrdrnya",
+      "pid": "TS0601",
+      "driver": "presence_sensor_radar",
+      "confidence": "registry_locked",
+      "reason": "presence-radar-clrdrnya",
+      "sources": [
+        "forum-140352",
+        "github#420",
+        "P139",
+        "P204",
+        "z2m#18677"
+      ]
+    },
+    {
+      "mfr": "_TZE284_clrdrnya",
+      "pid": "TS0601",
+      "driver": "presence_sensor_radar",
+      "confidence": "registry_locked",
+      "reason": "presence-radar-clrdrnya",
+      "sources": [
+        "forum-140352",
+        "github#420",
+        "P139",
+        "P204",
+        "z2m#18677"
+      ]
+    },
+    {
+      "mfr": "_TZE200_clrdrnya",
+      "pid": "TS0601",
+      "driver": "presence_sensor_radar",
+      "confidence": "registry_locked",
+      "reason": "presence-radar-clrdrnya",
+      "sources": [
+        "forum-140352",
+        "github#420",
+        "P139",
+        "P204",
+        "z2m#18677"
+      ]
+    },
+    {
+      "mfr": "_TZE284_fhvpaltk",
+      "pid": "TS0601",
+      "driver": "valve_dual_irrigation",
+      "confidence": "registry_locked",
+      "reason": "valve-dual-fhvpaltk",
+      "sources": [
+        "forum-140352",
+        "z2m",
+        "P2377"
+      ],
+      "z2mDesc": "Solar intelligent timed water valve controller"
+    },
+    {
+      "mfr": "_TZE284_eaet5qt5",
+      "pid": "TS0601",
+      "driver": "valve_dual_irrigation",
+      "confidence": "registry_locked",
+      "reason": "valve-dual-fhvpaltk",
+      "sources": [
+        "forum-140352",
+        "z2m",
+        "P2377"
+      ],
+      "z2mDesc": "Solar intelligent timed water valve controller"
+    },
+    {
+      "mfr": "_TZ3000_wkr3jqmr",
+      "pid": "TS0004",
+      "driver": "switch_4gang",
+      "confidence": "registry_locked",
+      "reason": "switch-4gang-wkr3jqmr",
+      "sources": [
+        "zha#2538",
+        "P168"
+      ]
+    },
+    {
+      "mfr": "_TZ3210_vbfp8eyv",
+      "pid": "TS011F",
+      "driver": "din_rail_switch",
+      "confidence": "registry_locked",
+      "reason": "din-relay-vbfp8eyv-qeuvnohg",
+      "sources": [
+        "z2m-herdsman",
+        "P167"
+      ],
+      "z2mDesc": "Vibration sensor"
+    },
+    {
+      "mfr": "_TZ3000_qeuvnohg",
+      "pid": "TS011F",
+      "driver": "din_rail_switch",
+      "confidence": "registry_locked",
+      "reason": "din-relay-vbfp8eyv-qeuvnohg",
+      "sources": [
+        "z2m-herdsman",
+        "P167"
+      ],
+      "z2mDesc": "Din smart relay (with power monitoring)"
+    },
+    {
+      "mfr": "_TZ3000_ky0fq4ho",
+      "pid": "TS011F",
+      "driver": "din_rail_switch",
+      "confidence": "registry_locked",
+      "reason": "din-relay-vbfp8eyv-qeuvnohg",
+      "sources": [
+        "z2m-herdsman",
+        "P167"
+      ],
+      "z2mDesc": "Din smart relay (with power monitoring)"
+    }
+  ],
+  "action": "Request fresh Homey diag with [COVER-INIT] or [FLEET] mfr=… pid=… lines"
+}

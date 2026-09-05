@@ -1,4 +1,7 @@
-'use strict';
+﻿'use strict';
+
+const testApi = global.describe && global.it ? global : require('node:test');
+const { describe, it } = testApi;
 
 /**
  * P2261 — Silent enrich from satellite forums + alt platforms
@@ -24,7 +27,7 @@ function read(rel) {
 }
 
 describe('P2261 silent multi-thread enrich gate', function () {
-  this.timeout(30000);
+  this.timeout?.(30000);
 
   it('Linptech primary write cluster is 0xE002 with E001 fallback', () => {
     assert.strictEqual(CLUSTER_LINPTECH_PRIMARY, 0xE002);

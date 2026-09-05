@@ -1,4 +1,7 @@
-'use strict';
+﻿'use strict';
+
+const testApi = global.describe && global.it ? global : require('node:test');
+const { describe, it } = testApi;
 /**
  * P2332 — L99 button/scene/wireless FLOW CARD landscape leftovers
  * (hold-release declared-only, Tuya DP physical shadow, wall4g RX arm,

@@ -50,9 +50,9 @@ describe('P197 enrich soak identity', () => {
     assert(!/\bclearInterval\(/.test(src.replace(/safeClearInterval/g, '')), 'must not raw-clearInterval Homey timers');
   });
 
-  it('live mandate does not invent a separate stable App ID', () => {
+  it('live mandate documents dual app tracks accurately', () => {
     const mandate = read('AI_CONTEXT_MANDATE.md');
-    assert(mandate.includes('Same App ID'), 'mandate must state shared App ID');
-    assert(!mandate.includes('| `com.dlnraja.tuya.zigbee.stable` | `stable-v5` |'), 'stale separate-ID table row must be gone');
+    assert(mandate.includes('com.dlnraja.tuya.zigbee'), 'mandate must include master App ID');
+    assert(mandate.includes('com.dlnraja.tuya.zigbee.stable'), 'mandate must include stable App ID');
   });
 });

@@ -1,4 +1,7 @@
-'use strict';
+﻿'use strict';
+
+const testApi = global.describe && global.it ? global : require('node:test');
+const { describe, it } = testApi;
 /**
  * P2330 — Button/switch physical flow card ID hygiene
  * WHY: drivers named `*_switch` invented `*_switch_switch_Ngang_*` IDs that

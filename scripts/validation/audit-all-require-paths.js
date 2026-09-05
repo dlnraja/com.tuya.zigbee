@@ -56,7 +56,7 @@ function scanDir(dir) {
   for (const item of items) {
     const full = path.join(dir, item.name);
     if (item.isDirectory()) {
-      if (['node_modules', '.git', '.cache', '.archive', '.diag', 'assets', 'pair', 'reference pdf', 'tmp'].includes(item.name)) continue;
+      if (['node_modules', '.git', '.cache', '.archive', '.diag', 'assets', 'pair', 'reference pdf', 'tmp', '_quarantine'].includes(item.name)) continue;
       scanDir(full);
     } else if (item.name.endsWith('.js')) {
       scanFile(full);

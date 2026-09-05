@@ -810,6 +810,7 @@ class Button1GangDevice extends ButtonDevice {
         if (this._destroyed) {return;}
         try {
           const attrs = await this._powerCluster.readAttributes(['batteryPercentageRemaining', 'batteryVoltage']);
+          if (this._destroyed) { return; }
           if (attrs?.batteryPercentageRemaining !== undefined && attrs.batteryPercentageRemaining !== 255) {
             const battery = UnifiedBatteryHandler
               ? UnifiedBatteryHandler.normalizeZigbeeValue(attrs.batteryPercentageRemaining, { manufacturer: (this.getSetting && this.getSetting('zb_manufacturer_name')) || '', batteryType: 'CR2032' })
@@ -817,6 +818,7 @@ class Button1GangDevice extends ButtonDevice {
             if (battery == null) { return; }
             this.log(`[BUTTON1-BATTERY]  Battery read on wake: ${battery}%`);
             // v5.5.519: Check capability exists before setting
+            if (this._destroyed) { return; }
             if (this.hasCapability('measure_battery')) {
               await this.safeSetCapabilityValue('measure_battery', parseFloat(battery)).catch(() => { });
             }

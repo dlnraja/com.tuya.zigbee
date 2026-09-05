@@ -1,0 +1,59 @@
+{
+  "generatedAt": "2026-09-05T05:35:40.241Z",
+  "mode": "plan",
+  "projectFingerprint": "a39cb3e0b14bd74d",
+  "projectChanged": false,
+  "plan": [
+    {
+      "id": "z2m",
+      "action": "crawl-stale",
+      "reason": "TTL expired or hash drift"
+    },
+    {
+      "id": "zha",
+      "action": "crawl-missing",
+      "reason": "no state file"
+    },
+    {
+      "id": "blakadder",
+      "action": "crawl-missing",
+      "reason": "no state file"
+    },
+    {
+      "id": "deconz",
+      "action": "crawl-missing",
+      "reason": "no state file"
+    },
+    {
+      "id": "johan",
+      "action": "skip-unavailable",
+      "reason": "secrets missing: GH_PAT"
+    },
+    {
+      "id": "forum",
+      "action": "skip-unavailable",
+      "reason": "secrets missing: DISCOURSE_API_KEY"
+    },
+    {
+      "id": "gmail",
+      "action": "skip-unavailable",
+      "reason": "secrets missing: GMAIL_EMAIL, GMAIL_APP_PASSWORD"
+    },
+    {
+      "id": "cross-ref",
+      "action": "run-local",
+      "reason": "local script stale or forced"
+    },
+    {
+      "id": "flow-fleet",
+      "action": "run-local",
+      "reason": "local script stale or forced"
+    }
+  ],
+  "skipCount": 3,
+  "crawlCount": 6,
+  "applyResults": [],
+  "manifestPath": ".github/state/intelligent-source-manifest.json",
+  "blocked": false,
+  "ok": true
+}

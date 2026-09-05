@@ -1,0 +1,25 @@
+{
+  "generatedAt": "2026-09-05T04:52:21.234Z",
+  "mode": "dry-run",
+  "driversTouched": 1,
+  "orphanTokensFixed": 0,
+  "triggersAdded": 1,
+  "actionsAdded": 0,
+  "appJsonDedupe": {
+    "mode": "dry-run"
+  },
+  "z2mCrossRef": {
+    "count": 27
+  },
+  "subtools": [],
+  "topChanges": [
+    {
+      "driver": "smart_knob",
+      "orphans": 0,
+      "triggers": [
+        "smart_knob_brightness_changed"
+      ],
+      "actions": []
+    }
+  ]
+}

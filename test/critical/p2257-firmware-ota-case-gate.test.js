@@ -1,4 +1,7 @@
-'use strict';
+﻿'use strict';
+
+const testApi = global.describe && global.it ? global : require('node:test');
+const { describe, it } = testApi;
 
 /**
  * P2257 — firmwareUpdates manufacturerName must match zigbee list exactly after compact
@@ -15,7 +18,7 @@ const ROOT = path.join(__dirname, '..', '..');
 const { compactManifestFile } = require('../../scripts/maintenance/compact-zigbee-identifiers.cjs');
 
 describe('P2257 firmware OTA case gate', function () {
-  this.timeout(60000);
+  this.timeout?.(60000);
 
   it('compact canonicalizes firmwareUpdates mfr to surviving zigbee case', () => {
     const tmp = path.join(os.tmpdir(), `p2257-fw-case-${Date.now()}.json`);

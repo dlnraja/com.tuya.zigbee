@@ -1,4 +1,7 @@
-'use strict';
+﻿'use strict';
+
+const testApi = global.describe && global.it ? global : require('node:test');
+const { describe, it } = testApi;
 
 /**
  * P2258 — Linptech ES1ZZ / Moes _TZ3218_t9ynfz4x + TS0225 settings save
@@ -23,7 +26,7 @@ function read(rel) {
 }
 
 describe('P2258 Linptech ES1ZZ settings gate', function () {
-  this.timeout(30000);
+  this.timeout?.(30000);
 
   it('profile locks t9ynfz4x + TS0225 as Linptech ES1', () => {
     assert.ok(isLinptechES1('_TZ3218_t9ynfz4x', 'TS0225'));
