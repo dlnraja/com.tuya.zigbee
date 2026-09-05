@@ -1,85 +1,8 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-02T23:31:20.351Z",
+  "generatedAt": "2026-09-05T21:35:10.311Z",
   "description": "Known historical fingerprint collisions. CI fails only for collisions not listed here.",
   "collisions": [
-    {
-      "key": "_tz3000_7dcddnye|TS0001",
-      "drivers": [
-        "bulb_dimmable",
-        "dimmer_wall_1gang"
-      ]
-    },
-    {
-      "key": "_tz3000_7dcddnye|TS0002",
-      "drivers": [
-        "bulb_dimmable",
-        "dimmer_wall_1gang"
-      ]
-    },
-    {
-      "key": "_tz3000_7dcddnye|TS0003",
-      "drivers": [
-        "bulb_dimmable",
-        "dimmer_wall_1gang"
-      ]
-    },
-    {
-      "key": "_tz3000_7dcddnye|TS0011",
-      "drivers": [
-        "bulb_dimmable",
-        "dimmer_wall_1gang"
-      ]
-    },
-    {
-      "key": "_tz3000_7dcddnye|TS0012",
-      "drivers": [
-        "bulb_dimmable",
-        "dimmer_wall_1gang"
-      ]
-    },
-    {
-      "key": "_tz3000_7dcddnye|TS0052",
-      "drivers": [
-        "bulb_dimmable",
-        "dimmer_wall_1gang"
-      ]
-    },
-    {
-      "key": "_tz3000_7dcddnye|TS0505B",
-      "drivers": [
-        "bulb_dimmable",
-        "dimmer_wall_1gang"
-      ]
-    },
-    {
-      "key": "_tz3000_7dcddnye|TS0726",
-      "drivers": [
-        "bulb_dimmable",
-        "dimmer_wall_1gang"
-      ]
-    },
-    {
-      "key": "_tz3000_7dcddnye|TS1101",
-      "drivers": [
-        "bulb_dimmable",
-        "dimmer_wall_1gang"
-      ]
-    },
-    {
-      "key": "_tz3000_7dcddnye|TS110E",
-      "drivers": [
-        "bulb_dimmable",
-        "dimmer_wall_1gang"
-      ]
-    },
-    {
-      "key": "_tz3000_7dcddnye|TS110F",
-      "drivers": [
-        "bulb_dimmable",
-        "dimmer_wall_1gang"
-      ]
-    },
     {
       "key": "_tz3000_bpkijo14|TS0203",
       "drivers": [
@@ -501,20 +424,6 @@
       ]
     },
     {
-      "key": "_tz3000_eafaa66e|TS0726",
-      "drivers": [
-        "curtain_module",
-        "curtain_motor"
-      ]
-    },
-    {
-      "key": "_tz3000_eafaa66e|TS130F",
-      "drivers": [
-        "curtain_module",
-        "curtain_motor"
-      ]
-    },
-    {
       "key": "_tz3000_ee8nrt2l|01MINIZB",
       "drivers": [
         "button_wireless_2",
@@ -760,258 +669,6 @@
       ]
     },
     {
-      "key": "_tz3000_eg7awg6a|TS0726",
-      "drivers": [
-        "curtain_module",
-        "curtain_motor"
-      ]
-    },
-    {
-      "key": "_tz3000_eg7awg6a|TS130F",
-      "drivers": [
-        "curtain_module",
-        "curtain_motor"
-      ]
-    },
-    {
-      "key": "_tz3000_etufnltx|01MINIZB",
-      "drivers": [
-        "switch_1gang",
-        "switch_4gang"
-      ]
-    },
-    {
-      "key": "_tz3000_etufnltx|BASICZBR3",
-      "drivers": [
-        "switch_1gang",
-        "switch_4gang"
-      ]
-    },
-    {
-      "key": "_tz3000_etufnltx|S26R2ZB",
-      "drivers": [
-        "switch_1gang",
-        "switch_4gang"
-      ]
-    },
-    {
-      "key": "_tz3000_etufnltx|S31ZB",
-      "drivers": [
-        "switch_1gang",
-        "switch_4gang"
-      ]
-    },
-    {
-      "key": "_tz3000_etufnltx|TS0001",
-      "drivers": [
-        "switch_1gang",
-        "switch_4gang"
-      ]
-    },
-    {
-      "key": "_tz3000_etufnltx|TS0001_power",
-      "drivers": [
-        "switch_1gang",
-        "switch_4gang"
-      ]
-    },
-    {
-      "key": "_tz3000_etufnltx|TS0001_switch",
-      "drivers": [
-        "switch_1gang",
-        "switch_4gang"
-      ]
-    },
-    {
-      "key": "_tz3000_etufnltx|TS0001_switch_module",
-      "drivers": [
-        "switch_1gang",
-        "switch_4gang"
-      ]
-    },
-    {
-      "key": "_tz3000_etufnltx|TS0003",
-      "drivers": [
-        "switch_1gang",
-        "switch_4gang"
-      ]
-    },
-    {
-      "key": "_tz3000_etufnltx|TS0004",
-      "drivers": [
-        "switch_1gang",
-        "switch_4gang"
-      ]
-    },
-    {
-      "key": "_tz3000_etufnltx|TS000F",
-      "drivers": [
-        "switch_1gang",
-        "switch_4gang"
-      ]
-    },
-    {
-      "key": "_tz3000_etufnltx|TS0011",
-      "drivers": [
-        "switch_1gang",
-        "switch_4gang"
-      ]
-    },
-    {
-      "key": "_tz3000_etufnltx|TS0012",
-      "drivers": [
-        "switch_1gang",
-        "switch_4gang"
-      ]
-    },
-    {
-      "key": "_tz3000_etufnltx|TS0014",
-      "drivers": [
-        "switch_1gang",
-        "switch_4gang"
-      ]
-    },
-    {
-      "key": "_tz3000_etufnltx|TS0101",
-      "drivers": [
-        "switch_1gang",
-        "switch_4gang"
-      ]
-    },
-    {
-      "key": "_tz3000_etufnltx|TS0111",
-      "drivers": [
-        "switch_1gang",
-        "switch_4gang"
-      ]
-    },
-    {
-      "key": "_tz3000_etufnltx|TS011F",
-      "drivers": [
-        "switch_1gang",
-        "switch_4gang"
-      ]
-    },
-    {
-      "key": "_tz3000_etufnltx|TS0203",
-      "drivers": [
-        "switch_1gang",
-        "switch_4gang"
-      ]
-    },
-    {
-      "key": "_tz3000_etufnltx|TS0601",
-      "drivers": [
-        "switch_1gang",
-        "switch_4gang"
-      ]
-    },
-    {
-      "key": "_tz3000_etufnltx|TS0726",
-      "drivers": [
-        "switch_1gang",
-        "switch_4gang"
-      ]
-    },
-    {
-      "key": "_tz3000_etufnltx|TS110E",
-      "drivers": [
-        "switch_1gang",
-        "switch_4gang"
-      ]
-    },
-    {
-      "key": "_tz3000_etufnltx|TS130F",
-      "drivers": [
-        "switch_1gang",
-        "switch_4gang"
-      ]
-    },
-    {
-      "key": "_tz3000_etufnltx|TS4100",
-      "drivers": [
-        "switch_1gang",
-        "switch_4gang"
-      ]
-    },
-    {
-      "key": "_tz3000_etufnltx|ZBM5-1C-120",
-      "drivers": [
-        "switch_1gang",
-        "switch_4gang"
-      ]
-    },
-    {
-      "key": "_tz3000_etufnltx|ZBM5-2C-120",
-      "drivers": [
-        "switch_1gang",
-        "switch_4gang"
-      ]
-    },
-    {
-      "key": "_tz3000_etufnltx|ZBM5-3C-120",
-      "drivers": [
-        "switch_1gang",
-        "switch_4gang"
-      ]
-    },
-    {
-      "key": "_tz3000_etufnltx|ZBMINI",
-      "drivers": [
-        "switch_1gang",
-        "switch_4gang"
-      ]
-    },
-    {
-      "key": "_tz3000_etufnltx|ZBMINIL2",
-      "drivers": [
-        "switch_1gang",
-        "switch_4gang"
-      ]
-    },
-    {
-      "key": "_tz3000_etufnltx|ZBMINIL2-R2",
-      "drivers": [
-        "switch_1gang",
-        "switch_4gang"
-      ]
-    },
-    {
-      "key": "_tz3000_etufnltx|ZBMINIR",
-      "drivers": [
-        "switch_1gang",
-        "switch_4gang"
-      ]
-    },
-    {
-      "key": "_tz3000_etufnltx|ZBMINIR2",
-      "drivers": [
-        "switch_1gang",
-        "switch_4gang"
-      ]
-    },
-    {
-      "key": "_tz3000_etufnltx|ZBMINIR2-R2",
-      "drivers": [
-        "switch_1gang",
-        "switch_4gang"
-      ]
-    },
-    {
-      "key": "_tz3000_etufnltx|ZG-301Z",
-      "drivers": [
-        "switch_1gang",
-        "switch_4gang"
-      ]
-    },
-    {
-      "key": "_tz3000_etufnltx|ZG-302Z1",
-      "drivers": [
-        "switch_1gang",
-        "switch_4gang"
-      ]
-    },
-    {
       "key": "_tz3000_ew31dmgx|TS0001",
       "drivers": [
         "button_wireless_2",
@@ -1047,20 +704,6 @@
       ]
     },
     {
-      "key": "_tz3000_fccpjz5z|TS0726",
-      "drivers": [
-        "curtain_module",
-        "curtain_motor"
-      ]
-    },
-    {
-      "key": "_tz3000_fccpjz5z|TS130F",
-      "drivers": [
-        "curtain_module",
-        "curtain_motor"
-      ]
-    },
-    {
       "key": "_tz3000_fqoynhku|TS011F",
       "drivers": [
         "plug_energy_monitor",
@@ -1086,6 +729,13 @@
       "drivers": [
         "bulb_dimmable",
         "tunable_bulb_E14"
+      ]
+    },
+    {
+      "key": "_tz3000_gbm10jnj|TS0601",
+      "drivers": [
+        "button_wireless_3",
+        "button_wireless_4"
       ]
     },
     {
@@ -1313,41 +963,6 @@
       ]
     },
     {
-      "key": "_tz3000_iwtv2jwo|TS0003",
-      "drivers": [
-        "switch_1gang",
-        "switch_2gang"
-      ]
-    },
-    {
-      "key": "_tz3000_iwtv2jwo|TS000F",
-      "drivers": [
-        "switch_1gang",
-        "switch_2gang"
-      ]
-    },
-    {
-      "key": "_tz3000_iwtv2jwo|TS0012",
-      "drivers": [
-        "switch_1gang",
-        "switch_2gang"
-      ]
-    },
-    {
-      "key": "_tz3000_iwtv2jwo|TS011F",
-      "drivers": [
-        "switch_1gang",
-        "switch_2gang"
-      ]
-    },
-    {
-      "key": "_tz3000_iwtv2jwo|TS0726",
-      "drivers": [
-        "switch_1gang",
-        "switch_2gang"
-      ]
-    },
-    {
       "key": "_tz3000_iystcadi|TS0601",
       "drivers": [
         "dimmable_led_strip",
@@ -1373,27 +988,6 @@
       "drivers": [
         "plug_energy_monitor",
         "smartplug"
-      ]
-    },
-    {
-      "key": "_tz3000_j1xl73iw|TS0601",
-      "drivers": [
-        "curtain_module_2_gang",
-        "curtain_motor"
-      ]
-    },
-    {
-      "key": "_tz3000_j1xl73iw|TS0726",
-      "drivers": [
-        "curtain_module_2_gang",
-        "curtain_motor"
-      ]
-    },
-    {
-      "key": "_tz3000_j1xl73iw|TS130F",
-      "drivers": [
-        "curtain_module_2_gang",
-        "curtain_motor"
       ]
     },
     {
@@ -1600,20 +1194,6 @@
       ]
     },
     {
-      "key": "_tz3000_ke7pzj5d|TS0726",
-      "drivers": [
-        "curtain_module",
-        "curtain_motor"
-      ]
-    },
-    {
-      "key": "_tz3000_ke7pzj5d|TS130F",
-      "drivers": [
-        "curtain_module",
-        "curtain_motor"
-      ]
-    },
-    {
       "key": "_tz3000_keabpigv|E11-G13",
       "drivers": [
         "bulb_rgb",
@@ -1786,27 +1366,6 @@
       "drivers": [
         "smart_garden_irrigation_control",
         "water_valve_garden"
-      ]
-    },
-    {
-      "key": "_tz3000_l6iqph4f|TS0601",
-      "drivers": [
-        "curtain_module_2_gang",
-        "curtain_motor"
-      ]
-    },
-    {
-      "key": "_tz3000_l6iqph4f|TS0726",
-      "drivers": [
-        "curtain_module_2_gang",
-        "curtain_motor"
-      ]
-    },
-    {
-      "key": "_tz3000_l6iqph4f|TS130F",
-      "drivers": [
-        "curtain_module_2_gang",
-        "curtain_motor"
       ]
     },
     {
@@ -2132,108 +1691,10 @@
       ]
     },
     {
-      "key": "_tz3000_o005nuxx|S26R2ZB",
-      "drivers": [
-        "button_wireless_2",
-        "socket_power_strip_four_two"
-      ]
-    },
-    {
-      "key": "_tz3000_o005nuxx|S31 Lite zb",
-      "drivers": [
-        "button_wireless_2",
-        "socket_power_strip_four_two"
-      ]
-    },
-    {
-      "key": "_tz3000_o005nuxx|S40LITE",
-      "drivers": [
-        "button_wireless_2",
-        "socket_power_strip_four_two"
-      ]
-    },
-    {
-      "key": "_tz3000_o005nuxx|S60ZBTPF",
-      "drivers": [
-        "button_wireless_2",
-        "socket_power_strip_four_two"
-      ]
-    },
-    {
-      "key": "_tz3000_o005nuxx|S60ZBTPG",
-      "drivers": [
-        "button_wireless_2",
-        "socket_power_strip_four_two"
-      ]
-    },
-    {
-      "key": "_tz3000_o005nuxx|TS0101",
-      "drivers": [
-        "button_wireless_2",
-        "socket_power_strip_four_two"
-      ]
-    },
-    {
-      "key": "_tz3000_o005nuxx|TS0111",
-      "drivers": [
-        "button_wireless_2",
-        "socket_power_strip_four_two"
-      ]
-    },
-    {
-      "key": "_tz3000_o005nuxx|TS011F",
-      "drivers": [
-        "button_wireless_2",
-        "socket_power_strip_four_two"
-      ]
-    },
-    {
-      "key": "_tz3000_o005nuxx|TS0601",
-      "drivers": [
-        "button_wireless_2",
-        "socket_power_strip_four_two"
-      ]
-    },
-    {
       "key": "_tz3000_o4mkahkc|Excellux",
       "drivers": [
         "contact_sensor",
         "motion_sensor"
-      ]
-    },
-    {
-      "key": "_tz3000_o4mkahkc|TS0203",
-      "drivers": [
-        "contact_sensor",
-        "motion_sensor"
-      ]
-    },
-    {
-      "key": "_tz3000_otvn3lne|Excellux",
-      "drivers": [
-        "pir_sensor_2",
-        "sensor_motion_presence"
-      ]
-    },
-    {
-      "key": "_tz3000_otvn3lne|TS0001",
-      "drivers": [
-        "pir_sensor_2",
-        "sensor_motion_presence"
-      ]
-    },
-    {
-      "key": "_tz3000_otvn3lne|TS0202",
-      "drivers": [
-        "pir_sensor_2",
-        "sensor_motion_presence"
-      ]
-    },
-    {
-      "key": "_tz3000_otvn3lne|TS0601",
-      "drivers": [
-        "pir_sensor_2",
-        "sensor_motion_presence"
       ]
     },
     {
@@ -2545,41 +2006,6 @@
       ]
     },
     {
-      "key": "_tz3000_u3nv1jwk|SNZB-01M",
-      "drivers": [
-        "button_wireless_4",
-        "handheld_remote_4_buttons"
-      ]
-    },
-    {
-      "key": "_tz3000_u3nv1jwk|TS0014",
-      "drivers": [
-        "button_wireless_4",
-        "handheld_remote_4_buttons"
-      ]
-    },
-    {
-      "key": "_tz3000_u3nv1jwk|TS0044",
-      "drivers": [
-        "button_wireless_4",
-        "handheld_remote_4_buttons"
-      ]
-    },
-    {
-      "key": "_tz3000_u3nv1jwk|TS004F",
-      "drivers": [
-        "button_wireless_4",
-        "handheld_remote_4_buttons"
-      ]
-    },
-    {
-      "key": "_tz3000_u3nv1jwk|TS0601",
-      "drivers": [
-        "button_wireless_4",
-        "handheld_remote_4_buttons"
-      ]
-    },
-    {
       "key": "_tz3000_u5u4cakc|TS011F",
       "drivers": [
         "button_wireless_plug",
@@ -2731,20 +2157,6 @@
       "drivers": [
         "doorwindowsensor_3",
         "sensor_contact_zigbee"
-      ]
-    },
-    {
-      "key": "_tz3000_zirycpws|TS0726",
-      "drivers": [
-        "curtain_module",
-        "curtain_motor"
-      ]
-    },
-    {
-      "key": "_tz3000_zirycpws|TS130F",
-      "drivers": [
-        "curtain_module",
-        "curtain_motor"
       ]
     },
     {
@@ -3371,41 +2783,6 @@
       ]
     },
     {
-      "key": "_tzb210_rkgngb5o|TS0011",
-      "drivers": [
-        "bulb_dimmable",
-        "wall_dimmer_tuya"
-      ]
-    },
-    {
-      "key": "_tzb210_rkgngb5o|TS0052",
-      "drivers": [
-        "bulb_dimmable",
-        "wall_dimmer_tuya"
-      ]
-    },
-    {
-      "key": "_tzb210_rkgngb5o|TS1101",
-      "drivers": [
-        "bulb_dimmable",
-        "wall_dimmer_tuya"
-      ]
-    },
-    {
-      "key": "_tzb210_rkgngb5o|TS110E",
-      "drivers": [
-        "bulb_dimmable",
-        "wall_dimmer_tuya"
-      ]
-    },
-    {
-      "key": "_tzb210_rkgngb5o|TS110F",
-      "drivers": [
-        "bulb_dimmable",
-        "wall_dimmer_tuya"
-      ]
-    },
-    {
       "key": "_tzb210_zdvrsts8|TS0504B",
       "drivers": [
         "bulb_rgb",
@@ -3578,237 +2955,6 @@
       "drivers": [
         "curtain_motor",
         "device_radiator_valve"
-      ]
-    },
-    {
-      "key": "_tze200_e3oitdyu|TS0011",
-      "drivers": [
-        "dimmer_2_gang_tuya",
-        "wall_dimmer_tuya"
-      ]
-    },
-    {
-      "key": "_tze200_e3oitdyu|TS0601",
-      "drivers": [
-        "dimmer_2_gang_tuya",
-        "wall_dimmer_tuya"
-      ]
-    },
-    {
-      "key": "_tze200_e3oitdyu|TS1101",
-      "drivers": [
-        "dimmer_2_gang_tuya",
-        "wall_dimmer_tuya"
-      ]
-    },
-    {
-      "key": "_tze200_e3oitdyu|TS110E",
-      "drivers": [
-        "dimmer_2_gang_tuya",
-        "wall_dimmer_tuya"
-      ]
-    },
-    {
-      "key": "_tze200_e3oitdyu|TS110F",
-      "drivers": [
-        "dimmer_2_gang_tuya",
-        "wall_dimmer_tuya"
-      ]
-    },
-    {
-      "key": "_tze200_fjjbhx9d|01MINIZB",
-      "drivers": [
-        "dimmer_2_gang_tuya",
-        "wall_switch_5_gang_tuya"
-      ]
-    },
-    {
-      "key": "_tze200_fjjbhx9d|BASICZBR3",
-      "drivers": [
-        "dimmer_2_gang_tuya",
-        "wall_switch_5_gang_tuya"
-      ]
-    },
-    {
-      "key": "_tze200_fjjbhx9d|S26R2ZB",
-      "drivers": [
-        "dimmer_2_gang_tuya",
-        "wall_switch_5_gang_tuya"
-      ]
-    },
-    {
-      "key": "_tze200_fjjbhx9d|S31ZB",
-      "drivers": [
-        "dimmer_2_gang_tuya",
-        "wall_switch_5_gang_tuya"
-      ]
-    },
-    {
-      "key": "_tze200_fjjbhx9d|TS0001_power",
-      "drivers": [
-        "dimmer_2_gang_tuya",
-        "wall_switch_5_gang_tuya"
-      ]
-    },
-    {
-      "key": "_tze200_fjjbhx9d|TS0001_switch",
-      "drivers": [
-        "dimmer_2_gang_tuya",
-        "wall_switch_5_gang_tuya"
-      ]
-    },
-    {
-      "key": "_tze200_fjjbhx9d|TS0001_switch_module",
-      "drivers": [
-        "dimmer_2_gang_tuya",
-        "wall_switch_5_gang_tuya"
-      ]
-    },
-    {
-      "key": "_tze200_fjjbhx9d|TS000F",
-      "drivers": [
-        "dimmer_2_gang_tuya",
-        "wall_switch_5_gang_tuya"
-      ]
-    },
-    {
-      "key": "_tze200_fjjbhx9d|TS0011",
-      "drivers": [
-        "dimmer_2_gang_tuya",
-        "wall_switch_5_gang_tuya"
-      ]
-    },
-    {
-      "key": "_tze200_fjjbhx9d|TS0101",
-      "drivers": [
-        "dimmer_2_gang_tuya",
-        "wall_switch_5_gang_tuya"
-      ]
-    },
-    {
-      "key": "_tze200_fjjbhx9d|TS0601",
-      "drivers": [
-        "dimmer_2_gang_tuya",
-        "wall_switch_5_gang_tuya"
-      ]
-    },
-    {
-      "key": "_tze200_fjjbhx9d|TS0726",
-      "drivers": [
-        "dimmer_2_gang_tuya",
-        "wall_switch_5_gang_tuya"
-      ]
-    },
-    {
-      "key": "_tze200_fjjbhx9d|TS4100",
-      "drivers": [
-        "dimmer_2_gang_tuya",
-        "wall_switch_5_gang_tuya"
-      ]
-    },
-    {
-      "key": "_tze200_fjjbhx9d|ZBM5-1C-120",
-      "drivers": [
-        "dimmer_2_gang_tuya",
-        "wall_switch_5_gang_tuya"
-      ]
-    },
-    {
-      "key": "_tze200_fjjbhx9d|ZBM5-2C-120",
-      "drivers": [
-        "dimmer_2_gang_tuya",
-        "wall_switch_5_gang_tuya"
-      ]
-    },
-    {
-      "key": "_tze200_fjjbhx9d|ZBM5-3C-120",
-      "drivers": [
-        "dimmer_2_gang_tuya",
-        "wall_switch_5_gang_tuya"
-      ]
-    },
-    {
-      "key": "_tze200_fjjbhx9d|ZBMINI",
-      "drivers": [
-        "dimmer_2_gang_tuya",
-        "wall_switch_5_gang_tuya"
-      ]
-    },
-    {
-      "key": "_tze200_fjjbhx9d|ZBMINIL2",
-      "drivers": [
-        "dimmer_2_gang_tuya",
-        "wall_switch_5_gang_tuya"
-      ]
-    },
-    {
-      "key": "_tze200_fjjbhx9d|ZBMINIL2-R2",
-      "drivers": [
-        "dimmer_2_gang_tuya",
-        "wall_switch_5_gang_tuya"
-      ]
-    },
-    {
-      "key": "_tze200_fjjbhx9d|ZBMINIR",
-      "drivers": [
-        "dimmer_2_gang_tuya",
-        "wall_switch_5_gang_tuya"
-      ]
-    },
-    {
-      "key": "_tze200_fjjbhx9d|ZBMINIR2",
-      "drivers": [
-        "dimmer_2_gang_tuya",
-        "wall_switch_5_gang_tuya"
-      ]
-    },
-    {
-      "key": "_tze200_fjjbhx9d|ZBMINIR2-R2",
-      "drivers": [
-        "dimmer_2_gang_tuya",
-        "wall_switch_5_gang_tuya"
-      ]
-    },
-    {
-      "key": "_tze200_fjjbhx9d|ZG-302Z1",
-      "drivers": [
-        "dimmer_2_gang_tuya",
-        "wall_switch_5_gang_tuya"
-      ]
-    },
-    {
-      "key": "_tze200_g1ib5ldv|TS0003",
-      "drivers": [
-        "switch_1gang",
-        "switch_2gang"
-      ]
-    },
-    {
-      "key": "_tze200_g1ib5ldv|TS000F",
-      "drivers": [
-        "switch_1gang",
-        "switch_2gang"
-      ]
-    },
-    {
-      "key": "_tze200_g1ib5ldv|TS0012",
-      "drivers": [
-        "switch_1gang",
-        "switch_2gang"
-      ]
-    },
-    {
-      "key": "_tze200_g1ib5ldv|TS011F",
-      "drivers": [
-        "switch_1gang",
-        "switch_2gang"
-      ]
-    },
-    {
-      "key": "_tze200_g1ib5ldv|TS0726",
-      "drivers": [
-        "switch_1gang",
-        "switch_2gang"
       ]
     },
     {
@@ -3987,34 +3133,6 @@
       ]
     },
     {
-      "key": "_tze200_uj3f4wr5|TS0301",
-      "drivers": [
-        "curtain_motor",
-        "curtain_motor_shutter"
-      ]
-    },
-    {
-      "key": "_tze200_uj3f4wr5|TS0601",
-      "drivers": [
-        "curtain_motor",
-        "curtain_motor_shutter"
-      ]
-    },
-    {
-      "key": "_tze200_uj3f4wr5|TS0726",
-      "drivers": [
-        "curtain_motor",
-        "curtain_motor_shutter"
-      ]
-    },
-    {
-      "key": "_tze200_uj3f4wr5|TS110E",
-      "drivers": [
-        "curtain_motor",
-        "curtain_motor_shutter"
-      ]
-    },
-    {
       "key": "_tze200_vucankjx|TS0052",
       "drivers": [
         "dimmer_1_gang_tuya",
@@ -4054,48 +3172,6 @@
       "drivers": [
         "lcdtemphumidsensor",
         "lcdtemphumidsensor_3"
-      ]
-    },
-    {
-      "key": "_tze200_wunufsil|TS0002",
-      "drivers": [
-        "switch_2gang",
-        "switch_4gang"
-      ]
-    },
-    {
-      "key": "_tze200_wunufsil|TS0003",
-      "drivers": [
-        "switch_2gang",
-        "switch_4gang"
-      ]
-    },
-    {
-      "key": "_tze200_wunufsil|TS000F",
-      "drivers": [
-        "switch_2gang",
-        "switch_4gang"
-      ]
-    },
-    {
-      "key": "_tze200_wunufsil|TS0012",
-      "drivers": [
-        "switch_2gang",
-        "switch_4gang"
-      ]
-    },
-    {
-      "key": "_tze200_wunufsil|TS011F",
-      "drivers": [
-        "switch_2gang",
-        "switch_4gang"
-      ]
-    },
-    {
-      "key": "_tze200_wunufsil|TS0726",
-      "drivers": [
-        "switch_2gang",
-        "switch_4gang"
       ]
     },
     {
@@ -4358,41 +3434,6 @@
       ]
     },
     {
-      "key": "_tze204_zenj4lxv|TS0011",
-      "drivers": [
-        "dimmer_2_gang_tuya",
-        "wall_dimmer_tuya"
-      ]
-    },
-    {
-      "key": "_tze204_zenj4lxv|TS0601",
-      "drivers": [
-        "dimmer_2_gang_tuya",
-        "wall_dimmer_tuya"
-      ]
-    },
-    {
-      "key": "_tze204_zenj4lxv|TS1101",
-      "drivers": [
-        "dimmer_2_gang_tuya",
-        "wall_dimmer_tuya"
-      ]
-    },
-    {
-      "key": "_tze204_zenj4lxv|TS110E",
-      "drivers": [
-        "dimmer_2_gang_tuya",
-        "wall_dimmer_tuya"
-      ]
-    },
-    {
-      "key": "_tze204_zenj4lxv|TS110F",
-      "drivers": [
-        "dimmer_2_gang_tuya",
-        "wall_dimmer_tuya"
-      ]
-    },
-    {
       "key": "_tze284_6ycgarab|TS0205",
       "drivers": [
         "smoke_sensor",
@@ -4468,13 +3509,6 @@
       "key": "hobeian|E1603/E1702",
       "drivers": [
         "contact_sensor",
-        "sensor_contact_zigbee"
-      ]
-    },
-    {
-      "key": "hobeian|ERS-10TZBVK-AA",
-      "drivers": [
-        "scene_switch_4",
         "sensor_contact_zigbee"
       ]
     },
@@ -4719,20 +3753,6 @@
       ]
     },
     {
-      "key": "hobeian|TS0043",
-      "drivers": [
-        "scene_switch_4",
-        "sensor_contact_zigbee"
-      ]
-    },
-    {
-      "key": "hobeian|TS0044",
-      "drivers": [
-        "scene_switch_4",
-        "sensor_contact_zigbee"
-      ]
-    },
-    {
       "key": "hobeian|TS004F",
       "drivers": [
         "button_wireless_1",
@@ -4753,8 +3773,7 @@
         "climate_sensor",
         "presence_sensor_radar",
         "water_leak_sensor"
-      ],
-      "reason": "HOBEIAN brand multi-device; TS0201 climate sibling P2312"
+      ]
     },
     {
       "key": "hobeian|TS0202",
@@ -4797,9 +3816,17 @@
       ]
     },
     {
+      "key": "hobeian|TS0225",
+      "drivers": [
+        "illuminance_sensor",
+        "presence_sensor_radar"
+      ]
+    },
+    {
       "key": "hobeian|TS0601",
       "drivers": [
         "button_wireless_1",
+        "climate_sensor",
         "illuminance_sensor",
         "presence_sensor_radar",
         "rain_sensor",
@@ -4808,8 +3835,7 @@
         "switch_2gang",
         "vibration_sensor",
         "water_leak_sensor"
-      ],
-      "reason": "HOBEIAN brand EF00/IAS matrix; ZG-305Z switch_2gang + sensor siblings P2312/P217"
+      ]
     },
     {
       "key": "hobeian|TS0601_wirelesssw",
@@ -4817,14 +3843,6 @@
         "climate_sensor",
         "presence_sensor_radar"
       ]
-    },
-    {
-      "key": "hobeian|TY0201",
-      "drivers": [
-        "climate_sensor",
-        "presence_sensor_radar"
-      ],
-      "reason": "HOBEIAN brand cartesian; runtime routes ZG-227Z climate vs ZG-204Z presence"
     },
     {
       "key": "hobeian|TS0726",
@@ -4847,6 +3865,13 @@
         "climate_sensor",
         "presence_sensor_radar",
         "soil_sensor"
+      ]
+    },
+    {
+      "key": "hobeian|TY0201",
+      "drivers": [
+        "climate_sensor",
+        "presence_sensor_radar"
       ]
     },
     {
@@ -4914,30 +3939,6 @@
         "doorwindowsensor_4",
         "plug_smart"
       ]
-    },
-    {
-      "key": "_tz3000_gbm10jnj|TS0601",
-      "drivers": [
-        "button_wireless_3",
-        "button_wireless_4"
-      ],
-      "reason": "MULTI_PID OEM: TS0043→wireless_3 TS0044→wireless_4; shared TS0601 productId matrix bleed"
-    },
-    {
-      "key": "hobeian|TS0225",
-      "drivers": [
-        "illuminance_sensor",
-        "presence_sensor_radar"
-      ],
-      "reason": "HOBEIAN brand; TS0225 presence P2312 pid lock"
-    },
-    {
-      "key": "_tz3000_ja5osu5g|TS004F",
-      "drivers": [
-        "button_wireless_1",
-        "smart_remote_1_button_2"
-      ],
-      "note": "P2406: TS0041→button_wireless_1; TS004F cartesian dual with smart_remote intentional"
     }
   ]
 }
