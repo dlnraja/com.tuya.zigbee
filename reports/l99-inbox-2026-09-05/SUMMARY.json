@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-05T13:36:21.727Z",
+  "generatedAt": "2026-09-05T16:59:45.191Z",
   "date": "2026-09-05",
   "mode": "full",
   "phases": [
@@ -12,18 +12,18 @@
     {
       "name": "github",
       "ok": true,
-      "durationMs": 526
+      "durationMs": 240
     },
     {
       "name": "gmail",
       "ok": true,
-      "durationMs": 190,
+      "durationMs": 215,
       "details": {
         "crash": {
           "ok": true,
           "skipped": false,
           "status": 0,
-          "durationMs": 34,
+          "durationMs": 43,
           "stderr": "",
           "stdoutTail": "[gmail-crash-pattern-gate] sources=32 hits=0 unknown=0\n  wrote .github/state/gmail-crash-patterns.json\n  verdict: ok\n"
         },
@@ -31,16 +31,16 @@
           "ok": true,
           "skipped": false,
           "status": 0,
-          "durationMs": 155,
+          "durationMs": 169,
           "stderr": "",
-          "stdoutTail": "[automate] inbox total=0 have=30 missing=0 ingested_now=0\n[recursive-treat] sources: 136\n[recursive-treat] wrote /home/runner/work/com.tuya.zigbee/com.tuya.zigbee/reports/diag-recursive-treat-2026-09-05\n{\n  \"generatedAt\": \"2026-09-05T13:36:22.433Z\",\n  \"methodology\": \"f647d35b-style full-body recursive treat — sacred couple never invented; P2246 derive from interview when ABSENT\",\n  \"sourcesScanned\": 136,\n  \"uniqueCases\": 122,\n  \"actionable\": 28,\n  \"derivedFromInterview\": 0,\n  \"signalTally\": {\n    \"scene_mode_unsupported\": 3,\n    \"wrong_driver_hint\": 4,\n    \"athom_socket_hang\": 8,\n    \"athom_processing_failed\": 2,\n    \"wrong_smart_rcbo\": 2,\n    \"flow_guard_spam\": 2,\n    \"processing_failed\": 8,\n    \"scene_0x8004\": 2,\n    \"invalid_flow_card\": 1,\n    \"missing_capability_listener\": 1\n  },\n  \"gmailBodiesPresent\": 30,\n  \"interviews\": 90\n}\n[automate] status → .github/state/diag-recursive-inbox/automate-status.json\n{\n  \"total\": 0,\n  \"have\": 30,\n  \"missing\": 0,\n  \"missingIds\": []\n}\n[automate] actionable= 28 gmailBodies= 30\n"
+          "stdoutTail": "[automate] inbox total=0 have=30 missing=0 ingested_now=0\n[recursive-treat] sources: 136\n[recursive-treat] wrote /home/runner/work/com.tuya.zigbee/com.tuya.zigbee/reports/diag-recursive-treat-2026-09-05\n{\n  \"generatedAt\": \"2026-09-05T16:59:45.635Z\",\n  \"methodology\": \"f647d35b-style full-body recursive treat — sacred couple never invented; P2246 derive from interview when ABSENT\",\n  \"sourcesScanned\": 136,\n  \"uniqueCases\": 122,\n  \"actionable\": 27,\n  \"derivedFromInterview\": 1,\n  \"signalTally\": {\n    \"scene_mode_unsupported\": 3,\n    \"wrong_driver_hint\": 4,\n    \"athom_socket_hang\": 7,\n    \"athom_processing_failed\": 2,\n    \"wrong_smart_rcbo\": 2,\n    \"flow_guard_spam\": 2,\n    \"processing_failed\": 7,\n    \"scene_0x8004\": 2,\n    \"invalid_flow_card\": 1,\n    \"missing_capability_listener\": 1\n  },\n  \"gmailBodiesPresent\": 30,\n  \"interviews\": 90\n}\n[automate] status → .github/state/diag-recursive-inbox/automate-status.json\n{\n  \"total\": 0,\n  \"have\": 30,\n  \"missing\": 0,\n  \"missingIds\": []\n}\n[automate] actionable= 27 gmailBodies= 30\n"
         }
       }
     },
     {
       "name": "forum",
       "ok": true,
-      "durationMs": 24622,
+      "durationMs": 27365,
       "skipScan": false,
       "steps": [
         {
@@ -63,50 +63,39 @@
     },
     {
       "name": "drivers",
-      "ok": false,
-      "durationMs": 1365,
+      "ok": true,
+      "durationMs": 1320,
       "mfs": {
         "high": 0,
         "changes": 0,
-        "fail": true
+        "fail": false
       },
       "sacredOk": true
     },
     {
       "name": "prioritize",
       "ok": true,
-      "durationMs": 1,
+      "durationMs": 0,
       "count": 3
     },
     {
       "name": "docs",
       "ok": true,
-      "durationMs": 0,
+      "durationMs": 1,
       "doc": "/home/runner/work/com.tuya.zigbee/com.tuya.zigbee/docs/architecture/L99_INBOX_INTELLIGENCE.md"
     },
     {
       "name": "gates",
       "ok": true,
-      "durationMs": 1332
+      "durationMs": 2311
     }
   ],
   "github": {
-    "harvestedAt": "2026-09-05T13:36:22.254Z",
+    "harvestedAt": "2026-09-05T16:59:45.432Z",
     "repo": "dlnraja/com.tuya.zigbee",
     "auth": "token",
     "error": null,
     "issues": [
-      {
-        "number": 540,
-        "title": "[Device Support Request] _TZ3000_blhvsaqf / TS0001 mapped to virtualdriverzigbee",
-        "labels": [
-          "bug"
-        ],
-        "updatedAt": "2026-09-05T12:00:36Z",
-        "user": "migueleap",
-        "htmlUrl": "https://github.com/dlnraja/com.tuya.zigbee/issues/540",
-        "bodySnippet": "### Device Description\n* **Device Name:** 1 Gang Switch Module / Wall Switch\n* **Manufacturer Name:** `_TZ3000_blhvsaqf`\n* **Product ID:** `TS0001`\n\n### Issue Summary\nThe device `_TZ3000_blhvsaqf` (TS0001) is currently recognized as an unknown/generic device (`virtualdriverzigbee"
-      },
       {
         "number": 533,
         "title": "Device Request - [SMART ZIGBEE CURTAIN SWITCH] - [MOES]",
@@ -122,10 +111,22 @@
           "curtain_switch",
           "SMART ZIGBEE CURTAIN SWITCH - MOES"
         ],
-        "updatedAt": "2026-09-04T22:41:10Z",
+        "updatedAt": "2026-09-05T16:11:40Z",
         "user": "salvagr",
         "htmlUrl": "https://github.com/dlnraja/com.tuya.zigbee/issues/533",
         "bodySnippet": "Thank you for your support.\n\n## 📱 Basic Information\n\n**Brand & Model**: SMART ZIGBEE CURTAIN SWITCH - MOES\n**Purchase Link**: https://es.aliexpress.com/item/1005008356152992.html\n**Power Source**:  Mains\n**Current Status**: pairing with wrong device type. Detected as \"radiator v"
+      },
+      {
+        "number": 540,
+        "title": "[Device Support Request] _TZ3000_blhvsaqf / TS0001 mapped to virtualdriverzigbee",
+        "labels": [
+          "bug",
+          "reopened-by-user"
+        ],
+        "updatedAt": "2026-09-05T14:17:28Z",
+        "user": "migueleap",
+        "htmlUrl": "https://github.com/dlnraja/com.tuya.zigbee/issues/540",
+        "bodySnippet": "### Device Description\n* **Device Name:** 1 Gang Switch Module / Wall Switch\n* **Manufacturer Name:** `_TZ3000_blhvsaqf`\n* **Product ID:** `TS0001`\n\n### Issue Summary\nThe device `_TZ3000_blhvsaqf` (TS0001) is currently recognized as an unknown/generic device (`virtualdriverzigbee"
       }
     ],
     "prs": [],
@@ -144,7 +145,7 @@
     "posts": 213
   },
   "gmail": {
-    "generatedAt": "2026-09-05T13:36:22.281Z",
+    "generatedAt": "2026-09-05T16:59:45.468Z",
     "sourcesScanned": 32,
     "patternCounts": {
       "flow_getDeviceActionCard": 0,
@@ -196,7 +197,7 @@
   "mfs": {
     "high": 0,
     "changes": 0,
-    "fail": true
+    "fail": false
   },
   "priority": [
     {
