@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-09-05T14:21:09.971Z",
+  "timestamp": "2026-09-05T21:31:09.318Z",
   "gate": "audit-sacred-couple-by-class",
   "apply": false,
   "scanned": 431,
@@ -1206,397 +1206,6 @@
       "absurd": true
     },
     {
-      "couple": "_tze200_fjjbhx9d|01minizb",
-      "mfr": "_tze200_fjjbhx9d",
-      "pid": "01minizb",
-      "drivers": [
-        "dimmer_2_gang_tuya",
-        "wall_switch_5_gang_tuya"
-      ],
-      "classes": [
-        "socket"
-      ],
-      "families": [
-        "light",
-        "socket"
-      ],
-      "absurd": true
-    },
-    {
-      "couple": "_tze200_fjjbhx9d|basiczbr3",
-      "mfr": "_tze200_fjjbhx9d",
-      "pid": "basiczbr3",
-      "drivers": [
-        "dimmer_2_gang_tuya",
-        "wall_switch_5_gang_tuya"
-      ],
-      "classes": [
-        "socket"
-      ],
-      "families": [
-        "light",
-        "socket"
-      ],
-      "absurd": true
-    },
-    {
-      "couple": "_tze200_fjjbhx9d|s26r2zb",
-      "mfr": "_tze200_fjjbhx9d",
-      "pid": "s26r2zb",
-      "drivers": [
-        "dimmer_2_gang_tuya",
-        "wall_switch_5_gang_tuya"
-      ],
-      "classes": [
-        "socket"
-      ],
-      "families": [
-        "light",
-        "socket"
-      ],
-      "absurd": true
-    },
-    {
-      "couple": "_tze200_fjjbhx9d|s31zb",
-      "mfr": "_tze200_fjjbhx9d",
-      "pid": "s31zb",
-      "drivers": [
-        "dimmer_2_gang_tuya",
-        "wall_switch_5_gang_tuya"
-      ],
-      "classes": [
-        "socket"
-      ],
-      "families": [
-        "light",
-        "socket"
-      ],
-      "absurd": true
-    },
-    {
-      "couple": "_tze200_fjjbhx9d|ts0001_power",
-      "mfr": "_tze200_fjjbhx9d",
-      "pid": "ts0001_power",
-      "drivers": [
-        "dimmer_2_gang_tuya",
-        "wall_switch_5_gang_tuya"
-      ],
-      "classes": [
-        "socket"
-      ],
-      "families": [
-        "light",
-        "socket"
-      ],
-      "absurd": true
-    },
-    {
-      "couple": "_tze200_fjjbhx9d|ts0001_switch",
-      "mfr": "_tze200_fjjbhx9d",
-      "pid": "ts0001_switch",
-      "drivers": [
-        "dimmer_2_gang_tuya",
-        "wall_switch_5_gang_tuya"
-      ],
-      "classes": [
-        "socket"
-      ],
-      "families": [
-        "light",
-        "socket"
-      ],
-      "absurd": true
-    },
-    {
-      "couple": "_tze200_fjjbhx9d|ts0001_switch_module",
-      "mfr": "_tze200_fjjbhx9d",
-      "pid": "ts0001_switch_module",
-      "drivers": [
-        "dimmer_2_gang_tuya",
-        "wall_switch_5_gang_tuya"
-      ],
-      "classes": [
-        "socket"
-      ],
-      "families": [
-        "light",
-        "socket"
-      ],
-      "absurd": true
-    },
-    {
-      "couple": "_tze200_fjjbhx9d|ts000f",
-      "mfr": "_tze200_fjjbhx9d",
-      "pid": "ts000f",
-      "drivers": [
-        "dimmer_2_gang_tuya",
-        "wall_switch_5_gang_tuya"
-      ],
-      "classes": [
-        "socket"
-      ],
-      "families": [
-        "light",
-        "socket"
-      ],
-      "absurd": true
-    },
-    {
-      "couple": "_tze200_fjjbhx9d|ts0011",
-      "mfr": "_tze200_fjjbhx9d",
-      "pid": "ts0011",
-      "drivers": [
-        "dimmer_2_gang_tuya",
-        "wall_switch_5_gang_tuya"
-      ],
-      "classes": [
-        "socket"
-      ],
-      "families": [
-        "light",
-        "socket"
-      ],
-      "absurd": true
-    },
-    {
-      "couple": "_tze200_fjjbhx9d|ts0101",
-      "mfr": "_tze200_fjjbhx9d",
-      "pid": "ts0101",
-      "drivers": [
-        "dimmer_2_gang_tuya",
-        "wall_switch_5_gang_tuya"
-      ],
-      "classes": [
-        "socket"
-      ],
-      "families": [
-        "light",
-        "socket"
-      ],
-      "absurd": true
-    },
-    {
-      "couple": "_tze200_fjjbhx9d|ts0601",
-      "mfr": "_tze200_fjjbhx9d",
-      "pid": "ts0601",
-      "drivers": [
-        "dimmer_2_gang_tuya",
-        "wall_switch_5_gang_tuya"
-      ],
-      "classes": [
-        "socket"
-      ],
-      "families": [
-        "light",
-        "socket"
-      ],
-      "absurd": true
-    },
-    {
-      "couple": "_tze200_fjjbhx9d|ts0726",
-      "mfr": "_tze200_fjjbhx9d",
-      "pid": "ts0726",
-      "drivers": [
-        "dimmer_2_gang_tuya",
-        "wall_switch_5_gang_tuya"
-      ],
-      "classes": [
-        "socket"
-      ],
-      "families": [
-        "light",
-        "socket"
-      ],
-      "absurd": true
-    },
-    {
-      "couple": "_tze200_fjjbhx9d|ts4100",
-      "mfr": "_tze200_fjjbhx9d",
-      "pid": "ts4100",
-      "drivers": [
-        "dimmer_2_gang_tuya",
-        "wall_switch_5_gang_tuya"
-      ],
-      "classes": [
-        "socket"
-      ],
-      "families": [
-        "light",
-        "socket"
-      ],
-      "absurd": true
-    },
-    {
-      "couple": "_tze200_fjjbhx9d|zbm5-1c-120",
-      "mfr": "_tze200_fjjbhx9d",
-      "pid": "zbm5-1c-120",
-      "drivers": [
-        "dimmer_2_gang_tuya",
-        "wall_switch_5_gang_tuya"
-      ],
-      "classes": [
-        "socket"
-      ],
-      "families": [
-        "light",
-        "socket"
-      ],
-      "absurd": true
-    },
-    {
-      "couple": "_tze200_fjjbhx9d|zbm5-2c-120",
-      "mfr": "_tze200_fjjbhx9d",
-      "pid": "zbm5-2c-120",
-      "drivers": [
-        "dimmer_2_gang_tuya",
-        "wall_switch_5_gang_tuya"
-      ],
-      "classes": [
-        "socket"
-      ],
-      "families": [
-        "light",
-        "socket"
-      ],
-      "absurd": true
-    },
-    {
-      "couple": "_tze200_fjjbhx9d|zbm5-3c-120",
-      "mfr": "_tze200_fjjbhx9d",
-      "pid": "zbm5-3c-120",
-      "drivers": [
-        "dimmer_2_gang_tuya",
-        "wall_switch_5_gang_tuya"
-      ],
-      "classes": [
-        "socket"
-      ],
-      "families": [
-        "light",
-        "socket"
-      ],
-      "absurd": true
-    },
-    {
-      "couple": "_tze200_fjjbhx9d|zbmini",
-      "mfr": "_tze200_fjjbhx9d",
-      "pid": "zbmini",
-      "drivers": [
-        "dimmer_2_gang_tuya",
-        "wall_switch_5_gang_tuya"
-      ],
-      "classes": [
-        "socket"
-      ],
-      "families": [
-        "light",
-        "socket"
-      ],
-      "absurd": true
-    },
-    {
-      "couple": "_tze200_fjjbhx9d|zbminil2",
-      "mfr": "_tze200_fjjbhx9d",
-      "pid": "zbminil2",
-      "drivers": [
-        "dimmer_2_gang_tuya",
-        "wall_switch_5_gang_tuya"
-      ],
-      "classes": [
-        "socket"
-      ],
-      "families": [
-        "light",
-        "socket"
-      ],
-      "absurd": true
-    },
-    {
-      "couple": "_tze200_fjjbhx9d|zbminil2-r2",
-      "mfr": "_tze200_fjjbhx9d",
-      "pid": "zbminil2-r2",
-      "drivers": [
-        "dimmer_2_gang_tuya",
-        "wall_switch_5_gang_tuya"
-      ],
-      "classes": [
-        "socket"
-      ],
-      "families": [
-        "light",
-        "socket"
-      ],
-      "absurd": true
-    },
-    {
-      "couple": "_tze200_fjjbhx9d|zbminir",
-      "mfr": "_tze200_fjjbhx9d",
-      "pid": "zbminir",
-      "drivers": [
-        "dimmer_2_gang_tuya",
-        "wall_switch_5_gang_tuya"
-      ],
-      "classes": [
-        "socket"
-      ],
-      "families": [
-        "light",
-        "socket"
-      ],
-      "absurd": true
-    },
-    {
-      "couple": "_tze200_fjjbhx9d|zbminir2",
-      "mfr": "_tze200_fjjbhx9d",
-      "pid": "zbminir2",
-      "drivers": [
-        "dimmer_2_gang_tuya",
-        "wall_switch_5_gang_tuya"
-      ],
-      "classes": [
-        "socket"
-      ],
-      "families": [
-        "light",
-        "socket"
-      ],
-      "absurd": true
-    },
-    {
-      "couple": "_tze200_fjjbhx9d|zbminir2-r2",
-      "mfr": "_tze200_fjjbhx9d",
-      "pid": "zbminir2-r2",
-      "drivers": [
-        "dimmer_2_gang_tuya",
-        "wall_switch_5_gang_tuya"
-      ],
-      "classes": [
-        "socket"
-      ],
-      "families": [
-        "light",
-        "socket"
-      ],
-      "absurd": true
-    },
-    {
-      "couple": "_tze200_fjjbhx9d|zg-302z1",
-      "mfr": "_tze200_fjjbhx9d",
-      "pid": "zg-302z1",
-      "drivers": [
-        "dimmer_2_gang_tuya",
-        "wall_switch_5_gang_tuya"
-      ],
-      "classes": [
-        "socket"
-      ],
-      "families": [
-        "light",
-        "socket"
-      ],
-      "absurd": true
-    },
-    {
       "couple": "_tz3210_huzkzqyk|ts0601",
       "mfr": "_tz3210_huzkzqyk",
       "pid": "ts0601",
@@ -1670,91 +1279,6 @@
     }
   ],
   "crossClassOther": [
-    {
-      "couple": "_tze204_zenj4lxv|ts0011",
-      "mfr": "_tze204_zenj4lxv",
-      "pid": "ts0011",
-      "drivers": [
-        "dimmer_2_gang_tuya",
-        "wall_dimmer_tuya"
-      ],
-      "classes": [
-        "socket",
-        "light"
-      ],
-      "families": [
-        "light"
-      ],
-      "absurd": false
-    },
-    {
-      "couple": "_tze204_zenj4lxv|ts0601",
-      "mfr": "_tze204_zenj4lxv",
-      "pid": "ts0601",
-      "drivers": [
-        "dimmer_2_gang_tuya",
-        "wall_dimmer_tuya"
-      ],
-      "classes": [
-        "socket",
-        "light"
-      ],
-      "families": [
-        "light"
-      ],
-      "absurd": false
-    },
-    {
-      "couple": "_tze204_zenj4lxv|ts1101",
-      "mfr": "_tze204_zenj4lxv",
-      "pid": "ts1101",
-      "drivers": [
-        "dimmer_2_gang_tuya",
-        "wall_dimmer_tuya"
-      ],
-      "classes": [
-        "socket",
-        "light"
-      ],
-      "families": [
-        "light"
-      ],
-      "absurd": false
-    },
-    {
-      "couple": "_tze204_zenj4lxv|ts110e",
-      "mfr": "_tze204_zenj4lxv",
-      "pid": "ts110e",
-      "drivers": [
-        "dimmer_2_gang_tuya",
-        "wall_dimmer_tuya"
-      ],
-      "classes": [
-        "socket",
-        "light"
-      ],
-      "families": [
-        "light"
-      ],
-      "absurd": false
-    },
-    {
-      "couple": "_tze204_zenj4lxv|ts110f",
-      "mfr": "_tze204_zenj4lxv",
-      "pid": "ts110f",
-      "drivers": [
-        "dimmer_2_gang_tuya",
-        "wall_dimmer_tuya"
-      ],
-      "classes": [
-        "socket",
-        "light"
-      ],
-      "families": [
-        "light"
-      ],
-      "absurd": false
-    },
     {
       "couple": "_tze204_bxoo2swd|ts0011",
       "mfr": "_tze204_bxoo2swd",
@@ -3403,86 +2927,6 @@
       "drivers": [
         "bulb_dimmable",
         "tunable_bulb_E14"
-      ],
-      "classes": [
-        "light"
-      ],
-      "families": [
-        "light"
-      ],
-      "absurd": false
-    },
-    {
-      "couple": "_tzb210_rkgngb5o|ts0011",
-      "mfr": "_tzb210_rkgngb5o",
-      "pid": "ts0011",
-      "drivers": [
-        "bulb_dimmable",
-        "wall_dimmer_tuya"
-      ],
-      "classes": [
-        "light"
-      ],
-      "families": [
-        "light"
-      ],
-      "absurd": false
-    },
-    {
-      "couple": "_tzb210_rkgngb5o|ts0052",
-      "mfr": "_tzb210_rkgngb5o",
-      "pid": "ts0052",
-      "drivers": [
-        "bulb_dimmable",
-        "wall_dimmer_tuya"
-      ],
-      "classes": [
-        "light"
-      ],
-      "families": [
-        "light"
-      ],
-      "absurd": false
-    },
-    {
-      "couple": "_tzb210_rkgngb5o|ts1101",
-      "mfr": "_tzb210_rkgngb5o",
-      "pid": "ts1101",
-      "drivers": [
-        "bulb_dimmable",
-        "wall_dimmer_tuya"
-      ],
-      "classes": [
-        "light"
-      ],
-      "families": [
-        "light"
-      ],
-      "absurd": false
-    },
-    {
-      "couple": "_tzb210_rkgngb5o|ts110e",
-      "mfr": "_tzb210_rkgngb5o",
-      "pid": "ts110e",
-      "drivers": [
-        "bulb_dimmable",
-        "wall_dimmer_tuya"
-      ],
-      "classes": [
-        "light"
-      ],
-      "families": [
-        "light"
-      ],
-      "absurd": false
-    },
-    {
-      "couple": "_tzb210_rkgngb5o|ts110f",
-      "mfr": "_tzb210_rkgngb5o",
-      "pid": "ts110f",
-      "drivers": [
-        "bulb_dimmable",
-        "wall_dimmer_tuya"
       ],
       "classes": [
         "light"
@@ -8583,6 +8027,70 @@
         "socket"
       ],
       "absurd": false
+    },
+    {
+      "couple": "_tze200_aqnazj70|ts0004",
+      "mfr": "_tze200_aqnazj70",
+      "pid": "ts0004",
+      "drivers": [
+        "switch_4gang",
+        "wall_switch_4_gang"
+      ],
+      "classes": [
+        "socket"
+      ],
+      "families": [
+        "socket"
+      ],
+      "absurd": false
+    },
+    {
+      "couple": "_tze200_aqnazj70|ts0014",
+      "mfr": "_tze200_aqnazj70",
+      "pid": "ts0014",
+      "drivers": [
+        "switch_4gang",
+        "wall_switch_4_gang"
+      ],
+      "classes": [
+        "socket"
+      ],
+      "families": [
+        "socket"
+      ],
+      "absurd": false
+    },
+    {
+      "couple": "_tze200_mexisfik|ts0004",
+      "mfr": "_tze200_mexisfik",
+      "pid": "ts0004",
+      "drivers": [
+        "switch_4gang",
+        "wall_switch_4_gang"
+      ],
+      "classes": [
+        "socket"
+      ],
+      "families": [
+        "socket"
+      ],
+      "absurd": false
+    },
+    {
+      "couple": "_tze200_mexisfik|ts0014",
+      "mfr": "_tze200_mexisfik",
+      "pid": "ts0014",
+      "drivers": [
+        "switch_4gang",
+        "wall_switch_4_gang"
+      ],
+      "classes": [
+        "socket"
+      ],
+      "families": [
+        "socket"
+      ],
+      "absurd": false
     }
   ],
   "energy": [
@@ -8599,9 +8107,9 @@
     }
   ],
   "counts": {
-    "crossClassAbsurd": 93,
-    "crossClassOther": 12,
-    "sameClassDual": 419,
+    "crossClassAbsurd": 70,
+    "crossClassOther": 7,
+    "sameClassDual": 418,
     "energyIssues": 1
   }
 }
