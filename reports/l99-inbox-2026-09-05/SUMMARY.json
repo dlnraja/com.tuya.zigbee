@@ -1,7 +1,7 @@
 {
-  "generatedAt": "2026-09-05T07:50:46.926Z",
+  "generatedAt": "2026-09-05T07:10:03.176Z",
   "date": "2026-09-05",
-  "mode": "quick",
+  "mode": "full",
   "phases": [
     {
       "name": "guard",
@@ -12,14 +12,41 @@
     {
       "name": "github",
       "ok": true,
-      "durationMs": 434
+      "durationMs": 306
+    },
+    {
+      "name": "gmail",
+      "ok": true,
+      "durationMs": 201,
+      "details": {
+        "crash": {
+          "ok": true,
+          "skipped": false,
+          "status": 0,
+          "durationMs": 37,
+          "stderr": "",
+          "stdoutTail": "[gmail-crash-pattern-gate] sources=32 hits=0 unknown=0\n  wrote .github/state/gmail-crash-patterns.json\n  verdict: ok\n"
+        },
+        "treat": {
+          "ok": true,
+          "skipped": false,
+          "status": 0,
+          "durationMs": 162,
+          "stderr": "",
+          "stdoutTail": "[automate] inbox total=0 have=30 missing=0 ingested_now=0\n[recursive-treat] sources: 136\n[recursive-treat] wrote /home/runner/work/com.tuya.zigbee/com.tuya.zigbee/reports/diag-recursive-treat-2026-09-05\n{\n  \"generatedAt\": \"2026-09-05T07:10:03.671Z\",\n  \"methodology\": \"f647d35b-style full-body recursive treat — sacred couple never invented; P2246 derive from interview when ABSENT\",\n  \"sourcesScanned\": 136,\n  \"uniqueCases\": 122,\n  \"actionable\": 30,\n  \"derivedFromInterview\": 0,\n  \"signalTally\": {\n    \"scene_mode_unsupported\": 3,\n    \"wrong_driver_hint\": 4,\n    \"athom_socket_hang\": 10,\n    \"athom_processing_failed\": 2,\n    \"wrong_smart_rcbo\": 2,\n    \"flow_guard_spam\": 2,\n    \"processing_failed\": 10,\n    \"scene_0x8004\": 2,\n    \"invalid_flow_card\": 1,\n    \"missing_capability_listener\": 1\n  },\n  \"gmailBodiesPresent\": 30,\n  \"interviews\": 90\n}\n[automate] status → .github/state/diag-recursive-inbox/automate-status.json\n{\n  \"total\": 0,\n  \"have\": 30,\n  \"missing\": 0,\n  \"missingIds\": []\n}\n[automate] actionable= 30 gmailBodies= 30\n"
+        }
+      }
     },
     {
       "name": "forum",
       "ok": true,
-      "durationMs": 6009,
-      "skipScan": true,
+      "durationMs": 27864,
+      "skipScan": false,
       "steps": [
+        {
+          "ok": true,
+          "skipped": false
+        },
         {
           "ok": true,
           "skipped": false
@@ -35,25 +62,36 @@
       ]
     },
     {
+      "name": "drivers",
+      "ok": false,
+      "durationMs": 1330,
+      "mfs": {
+        "high": 0,
+        "changes": 0,
+        "fail": true
+      },
+      "sacredOk": true
+    },
+    {
       "name": "prioritize",
       "ok": true,
-      "durationMs": 2,
+      "durationMs": 0,
       "count": 3
     },
     {
       "name": "docs",
       "ok": true,
       "durationMs": 1,
-      "doc": "C:\\Users\\Dell\\Documents\\homey\\master\\docs\\architecture\\L99_INBOX_INTELLIGENCE.md"
+      "doc": "/home/runner/work/com.tuya.zigbee/com.tuya.zigbee/docs/architecture/L99_INBOX_INTELLIGENCE.md"
     },
     {
       "name": "gates",
       "ok": true,
-      "durationMs": 17089
+      "durationMs": 2373
     }
   ],
   "github": {
-    "harvestedAt": "2026-09-05T07:50:47.359Z",
+    "harvestedAt": "2026-09-05T07:10:03.481Z",
     "repo": "dlnraja/com.tuya.zigbee",
     "auth": "token",
     "error": null,
@@ -93,25 +131,78 @@
     "openPrCount": 1
   },
   "forum": {
-    "path": "C:\\Users\\Dell\\Documents\\homey\\master\\.github\\state\\forum\\actionable-processor-report.json",
+    "path": "/home/runner/work/com.tuya.zigbee/com.tuya.zigbee/.github/state/forum/actionable-processor-report.json",
     "totals": {
-      "posts": 214,
-      "withCouples": 76,
-      "needAction": 48,
-      "both": 134,
+      "posts": 213,
+      "withCouples": 77,
+      "needAction": 49,
+      "both": 133,
       "masterOnly": 10
     },
-    "posts": 214
+    "posts": 213
   },
-  "gmail": null,
-  "mfs": null,
+  "gmail": {
+    "generatedAt": "2026-09-05T07:10:03.513Z",
+    "sourcesScanned": 32,
+    "patternCounts": {
+      "flow_getDeviceActionCard": 0,
+      "readonly_error_assign": 0,
+      "unbound_destroyed": 0,
+      "getDiscoveries_not_fn": 0,
+      "getDeviceById": 0,
+      "catch_on_undefined": 0,
+      "registerRunListenerasync_typo": 0,
+      "settimeout_destroyed": 0,
+      "onDeleted_null": 0,
+      "dcm_auditCapabilities_missing": 0,
+      "capability_ref_undefined": 0,
+      "clusterutils_destroyed_unbound": 0,
+      "heap_oom_live_data": 0,
+      "ERR_IAS_SLEEPY_TIMEOUT": 0,
+      "ERR_DESTROYED_DEVICE_TIMER": 0,
+      "ERR_UNBOUND_DESTROYED": 0,
+      "ERR_CATCH_ON_UNDEFINED": 0,
+      "ERR_CAPABILITY_NOT_FOUND": 0,
+      "ERR_AUDIT_CAPABILITIES": 0,
+      "ERR_ZIGBEE_ROUTE_FULL": 0
+    },
+    "hits": [],
+    "unknownFatals": [],
+    "knownFixed": [
+      "flow_getDeviceActionCard",
+      "readonly_error_assign",
+      "unbound_destroyed",
+      "getDiscoveries_not_fn",
+      "getDeviceById",
+      "catch_on_undefined",
+      "registerRunListenerasync_typo",
+      "settimeout_destroyed",
+      "onDeleted_null",
+      "dcm_auditCapabilities_missing",
+      "capability_ref_undefined",
+      "clusterutils_destroyed_unbound",
+      "heap_oom_live_data",
+      "ERR_IAS_SLEEPY_TIMEOUT",
+      "ERR_DESTROYED_DEVICE_TIMER",
+      "ERR_UNBOUND_DESTROYED",
+      "ERR_CATCH_ON_UNDEFINED",
+      "ERR_AUDIT_CAPABILITIES"
+    ],
+    "watch": [],
+    "verdict": "ok"
+  },
+  "mfs": {
+    "high": 0,
+    "changes": 0,
+    "fail": true
+  },
   "priority": [
     {
       "score": 75,
       "dualApp": "BOTH",
       "source": "forum",
       "id": "forum-need-action",
-      "title": "48 forum posts needAction (shadow processor)",
+      "title": "49 forum posts needAction (shadow processor)",
       "action": "enrich:investigate + lock mfr+pid only",
       "forumReply": "NEVER"
     },

@@ -1,8 +1,8 @@
 {
-  "generatedAt": "2026-09-05T05:01:16.653Z",
+  "generatedAt": "2026-09-05T09:08:39.325Z",
   "policy": "SHADOW forum — intelligence in code/CI only",
   "complementary": "P2224/P2225 — inventory + critical-first + parallel layer vocabularies",
-  "criticalFirst": true,
+  "criticalFirst": false,
   "criticalIds": [
     "sacred_couple_fp",
     "buttons_bidirectional",
@@ -13,13 +13,13 @@
     "ef00_dp",
     "l14_telemetry"
   ],
-  "domainsAudited": 7,
-  "domainsOk": 7,
+  "domainsAudited": 22,
+  "domainsOk": 18,
   "bugClassCounts": {
     "fixed": 11,
-    "partial": 29,
+    "partial": 42,
     "open": 3,
-    "hardened": 1
+    "hardened": 3
   },
   "layerSchemes": [
     "pipeline_l0_l11",
@@ -58,22 +58,22 @@
           "script": "tools/ci/p2138-sacred-couple-matrix-gate.js",
           "ok": true,
           "exitCode": 0,
-          "durationMs": 421,
+          "durationMs": 156,
           "tail": " compose lists m1cvyneb\n  ✅ wall_dimmer_tuya productId includes TS0601\n  ✅ TuyaBrightnessScale 0.5 ↔ 500\n  ✅ TuyaBrightnessScale clamps to 0–1000\n  ✅ anti-bot mentions m1cvyneb\n  ✅ anti-bot mentions climate_sensor\n  ✅ anti-bot mentions soil_sensor\n  ✅ anti-bot mentions zigbee_universal\n  ✅ anti-bot mentions wall_dimmer\n  ✅ mfs_db has no m1cvyneb|TS0201 invent\n\nPASS: P2138 sacred-couple matrix gate"
         },
         {
           "script": "tools/ci/sacred-couple-dry-gate.js",
           "ok": true,
           "exitCode": 0,
-          "durationMs": 5466,
-          "tail": "[sacred-couple-dry-gate] dry-run apply scripts\n  - p101-lot2: ok\n  - blakadder-new: ok\n  - issue-439: ok\n  - canonical-gaps: ok"
+          "durationMs": 553,
+          "tail": "[sacred-couple-dry-gate] dry-run apply scripts\n  - p101-lot2: ok\n  - blakadder-new: skip (input_missing)\n  - issue-439: ok\n  - canonical-gaps: skip (input_missing)"
         },
         {
           "script": "tools/ci/dual-claim-compose-gate.js",
           "ok": true,
           "exitCode": 0,
-          "durationMs": 613,
-          "tail": "[ts0001, ts0001_fingerbot, ts0003, ts000f, ts0011] drivers=button_wireless_2 | plug\n  [TZ] _tz3000_ew31dmgx shared=[ts0001, ts0001_fingerbot, ts0003, ts000f, ts0011] drivers=button_wireless_2 | plug\n  [TZ] _tz3000_hyfvrar3 shared=[ts0001, ts0001_fingerbot, ts0003, ts000f, ts0011] drivers=button_wireless_2 | plug\n  ... and 72 more\nMode: warn (exit 0). Pass --strict to fail on _TZ* family conflicts."
+          "durationMs": 94,
+          "tail": "[ts0001, ts0001_fingerbot, ts0003, ts000f, ts0011] drivers=button_wireless_2 | plug\n  [TZ] _tz3000_hyfvrar3 shared=[ts0001, ts0001_fingerbot, ts0003, ts000f, ts0011] drivers=button_wireless_2 | plug\n  [TZ] _tz3000_kdi2o9m6 shared=[ts0001, ts0001_fingerbot, ts0003, ts000f, ts0011] drivers=button_wireless_2 | plug\n  ... and 69 more\nMode: warn (exit 0). Pass --strict to fail on _TZ* family conflicts."
         }
       ],
       "npm": [],
@@ -115,14 +115,14 @@
           "script": "tools/ci/battery-button-intelligence-gate.js",
           "ok": true,
           "exitCode": 0,
-          "durationMs": 2251,
+          "durationMs": 324,
           "tail": "[battery-button-gate] errors=0 warnings=57\n  B5: 14\n  F1: 38\n  C2: 5\n[battery-button-gate] report: reports/BATTERY_BUTTON_INTELLIGENCE.md"
         },
         {
           "script": "tools/ci/button-physical-gang-parity-gate.js",
           "ok": true,
           "exitCode": 0,
-          "durationMs": 499,
+          "durationMs": 28,
           "tail": "[P2395] physical_gang parity OK (16 drivers)"
         }
       ],
@@ -211,14 +211,14 @@
           "script": "tools/ci/p216-zcl-battery-half-percent-gate.js",
           "ok": true,
           "exitCode": 0,
-          "durationMs": 307,
+          "durationMs": 34,
           "tail": "PASS: P216 ZCL battery half-percent (no blind /2)"
         },
         {
           "script": "tools/ci/battery-button-intelligence-gate.js",
           "ok": true,
           "exitCode": 0,
-          "durationMs": 2266,
+          "durationMs": 329,
           "tail": "[battery-button-gate] errors=0 warnings=57\n  B5: 14\n  F1: 38\n  C2: 5\n[battery-button-gate] report: reports/BATTERY_BUTTON_INTELLIGENCE.md"
         }
       ],
@@ -263,28 +263,28 @@
           "script": "tools/ci/adaptive-double-division-gate.js",
           "ok": true,
           "exitCode": 0,
-          "durationMs": 1725,
+          "durationMs": 147,
           "tail": "[adaptive-double-division-gate] hits=2 hardHits=0 mode=soft\n  (soft) lib/devices/BaseUnifiedDevice.js: AdaptiveDataParser + local divisor/smartDivisor in same file\n  (soft) lib/tuya/TuyaEF00Manager.js: AdaptiveDataParser + local divisor/smartDivisor in same file"
         },
         {
           "script": "tools/ci/energy-compose-gate.js",
           "ok": true,
           "exitCode": 0,
-          "durationMs": 675,
+          "durationMs": 58,
           "tail": "energy-compose-gate: scanned 431 driver.compose.json files\nOK: no Homey Energy v3 approximation + power-cap conflicts\nNOTE: 4 driver(s) have energy.batteries + measure_power/meter_power without approximation (informational)"
         },
         {
           "script": "tools/ci/l14-capability-writers-gate.js",
           "ok": true,
           "exitCode": 0,
-          "durationMs": 342,
+          "durationMs": 28,
           "tail": "[l14-capability-writers-gate] PASS"
         },
         {
           "script": "scripts/validation/check-energy-divisor.js",
           "ok": true,
           "exitCode": 0,
-          "durationMs": 777,
+          "durationMs": 64,
           "tail": "🔍 TITAN v5 — Checking energy divisor validation...\n\nFound 73 drivers with meter_power capability\n\n\n📊 Results:\n   Drivers with energy capability: 73\n   Drivers without divisor: 0\n\n✅ All energy drivers have proper divisor settings"
         }
       ],
@@ -327,7 +327,7 @@
           "script": "tools/ci/audit-sacred-couple-dps.js",
           "ok": true,
           "exitCode": 0,
-          "durationMs": 1076,
+          "durationMs": 85,
           "tail": "pping\n p2293-zemismart-68nvbio9-curtain-not-trv (curtain_motor): 25 issue(s)\n   DP2 missing_in_driver — knowledge documents DP — not in driver compose/device\n   DP3 missing_in_driver — knowledge documents DP — not in driver compose/device\n   DP4 missing_in_driver — knowledge documents DP — not in driver compose/device\n   DP5 missing_in_driver — knowledge documents DP — not in driver compose/device"
         }
       ],
@@ -365,7 +365,7 @@
           "script": "tools/ci/l14-capability-writers-gate.js",
           "ok": true,
           "exitCode": 0,
-          "durationMs": 536,
+          "durationMs": 28,
           "tail": "[l14-capability-writers-gate] PASS"
         }
       ],
@@ -382,6 +382,525 @@
           "present": true
         }
       ],
+      "missingArtifacts": [],
+      "ok": true,
+      "gateFails": 0,
+      "npmFails": 0
+    },
+    {
+      "id": "hybrid_protocol",
+      "priority": 2,
+      "status": "partial",
+      "homeyGap": "Assumes single cluster path",
+      "stack": [
+        "IntelligentProtocolDetect HYBRID",
+        "CapabilityCommandRouter parallelDiscover",
+        "sacred zcl_only BSEED"
+      ],
+      "gates": [
+        {
+          "script": "tools/ci/p214-intelligent-protocol-gate.js",
+          "ok": true,
+          "exitCode": 0,
+          "durationMs": 32,
+          "tail": "xists test/critical/p214-intelligent-protocol-detect.test.js\n  ✅ BSEED w5xztuy7 sacred zcl_only\n  ✅ TS000x leftover EF00 → zcl_only (no gang bleed)\n  ✅ MCU EF00+ZCL → HYBRID listen\n  ✅ EF00-only → TUYA_DP\n  ✅ TS0601 ZCL escape (no EF00)\n  ✅ IntelligentProtocolRouter respects sacred zcl_only\n  ✅ UniversalLayerBootstrap wires detect + EF00 soft-attach\n\nPASS: P214 intelligent ZCL/EF00 adaptation gate"
+        }
+      ],
+      "npm": [],
+      "tests": [
+        {
+          "file": "test/critical/p214-intelligent-protocol-detect.test.js",
+          "ok": true,
+          "present": true
+        },
+        {
+          "file": "test/critical/unsupported-cluster-cascade.test.js",
+          "ok": true,
+          "present": true
+        }
+      ],
+      "missingArtifacts": [],
+      "ok": true,
+      "gateFails": 0,
+      "npmFails": 0
+    },
+    {
+      "id": "flows",
+      "priority": 2,
+      "status": "partial",
+      "homeyGap": "titleFormatted [[device]]; Missing Capability Listener; legacy underscore drivers thin physical_gang",
+      "stack": [
+        "unique flow IDs",
+        "no [[device]]",
+        "hashed resolve",
+        "safeRegisterCapability",
+        "physical_gang parity P2395"
+      ],
+      "gates": [
+        {
+          "script": "tools/ci/button-physical-gang-parity-gate.js",
+          "ok": true,
+          "exitCode": 0,
+          "durationMs": 29,
+          "tail": "[P2395] physical_gang parity OK (16 drivers)"
+        },
+        {
+          "script": "tools/ci/button-flow-harvest.js",
+          "ok": true,
+          "exitCode": 0,
+          "durationMs": 1108,
+          "tail": "},\n    {\n      \"driverId\": \"button_wireless_3\",\n      \"triggers\": 21\n    },\n    {\n      \"driverId\": \"button_wireless_switch\",\n      \"triggers\": 20\n    },\n    {\n      \"driverId\": \"handheld_remote_4_buttons\",\n      \"triggers\": 20\n    },\n    {\n      \"driverId\": \"remote_button_emergency_sos\",\n      \"triggers\": 20\n    },\n    {\n      \"driverId\": \"remote_button_wireless\",\n      \"triggers\": 20\n    }\n  ]\n}"
+        }
+      ],
+      "npm": [
+        {
+          "script": "check:flows",
+          "ok": false,
+          "exitCode": 127,
+          "durationMs": 2,
+          "tail": "/bin/sh: 1: npm.cmd: not found"
+        },
+        {
+          "script": "check:flow-dups",
+          "ok": false,
+          "exitCode": 127,
+          "durationMs": 2,
+          "tail": "/bin/sh: 1: npm.cmd: not found"
+        },
+        {
+          "script": "check:button-flows",
+          "soft": true,
+          "ok": false,
+          "exitCode": 127,
+          "durationMs": 2,
+          "tail": "/bin/sh: 1: npm.cmd: not found"
+        }
+      ],
+      "tests": [
+        {
+          "file": "test/critical/p2205-flow-id-hygiene.test.js",
+          "ok": true,
+          "present": true
+        },
+        {
+          "file": "test/critical/p2198-flow-runtime-coherence.test.js",
+          "ok": true,
+          "present": true
+        },
+        {
+          "file": "test/critical/p2395-button-capture-preferred-levels.test.js",
+          "ok": true,
+          "present": true
+        }
+      ],
+      "missingArtifacts": [],
+      "ok": false,
+      "gateFails": 0,
+      "npmFails": 2
+    },
+    {
+      "id": "mcu_time",
+      "priority": 2,
+      "status": "partial",
+      "homeyGap": "Wrong epoch / format variants",
+      "stack": [
+        "TuyaTimeSyncFormats.guessFormat",
+        "fallback chain",
+        "ZT08 DP17 commit"
+      ],
+      "gates": [],
+      "npm": [],
+      "tests": [
+        {
+          "file": "test/critical/time-cluster-policy.test.js",
+          "ok": true,
+          "present": true
+        }
+      ],
+      "missingArtifacts": [],
+      "ok": true,
+      "gateFails": 0,
+      "npmFails": 0
+    },
+    {
+      "id": "dimmer_brightness",
+      "priority": 2,
+      "status": "hardened",
+      "homeyGap": "dim 0–1 vs MCU 0–1000",
+      "stack": [
+        "TuyaBrightnessScale clamp",
+        "P2138 sacred wall_dimmer_tuya"
+      ],
+      "gates": [
+        {
+          "script": "tools/ci/p2138-sacred-couple-matrix-gate.js",
+          "ok": true,
+          "exitCode": 0,
+          "durationMs": 150,
+          "tail": " compose lists m1cvyneb\n  ✅ wall_dimmer_tuya productId includes TS0601\n  ✅ TuyaBrightnessScale 0.5 ↔ 500\n  ✅ TuyaBrightnessScale clamps to 0–1000\n  ✅ anti-bot mentions m1cvyneb\n  ✅ anti-bot mentions climate_sensor\n  ✅ anti-bot mentions soil_sensor\n  ✅ anti-bot mentions zigbee_universal\n  ✅ anti-bot mentions wall_dimmer\n  ✅ mfs_db has no m1cvyneb|TS0201 invent\n\nPASS: P2138 sacred-couple matrix gate"
+        }
+      ],
+      "npm": [],
+      "tests": [
+        {
+          "file": "test/critical/p2138-bseed-wall-dimmer.test.js",
+          "ok": true,
+          "present": true
+        }
+      ],
+      "missingArtifacts": [],
+      "ok": true,
+      "gateFails": 0,
+      "npmFails": 0
+    },
+    {
+      "id": "timers_destroyed",
+      "priority": 2,
+      "status": "partial",
+      "homeyGap": "setTimeout after destroy",
+      "stack": [
+        "safe-timers",
+        "onDeleted/onUninit clear"
+      ],
+      "gates": [],
+      "npm": [
+        {
+          "script": "check:timer-context",
+          "ok": false,
+          "exitCode": 127,
+          "durationMs": 2,
+          "tail": "/bin/sh: 1: npm.cmd: not found"
+        }
+      ],
+      "tests": [
+        {
+          "file": "test/critical/p199-homey-timer-clears.test.js",
+          "ok": true,
+          "present": true
+        },
+        {
+          "file": "test/critical/p200-homey-timer-api-match.test.js",
+          "ok": true,
+          "present": true
+        }
+      ],
+      "missingArtifacts": [],
+      "ok": false,
+      "gateFails": 0,
+      "npmFails": 1
+    },
+    {
+      "id": "heap_json",
+      "priority": 2,
+      "status": "partial",
+      "homeyGap": "UTF-16 string OOM on large JSON",
+      "stack": [
+        "Buffer JSON.parse",
+        "homey-heap-json-gate"
+      ],
+      "gates": [
+        {
+          "script": "tools/ci/homey-heap-json-gate.js",
+          "ok": true,
+          "exitCode": 0,
+          "durationMs": 83,
+          "tail": "homey-heap-json-gate: max 2 MB\nWARN data/mfs_db.json 7.63MB ignored=true\nWARN data/product-reference.json 9.64MB ignored=true\nOK"
+        }
+      ],
+      "npm": [],
+      "tests": [
+        {
+          "file": "test/critical/p2184-peter-sleepy-heap.test.js",
+          "ok": true,
+          "present": true
+        }
+      ],
+      "missingArtifacts": [],
+      "ok": true,
+      "gateFails": 0,
+      "npmFails": 0
+    },
+    {
+      "id": "enrichment_shadow",
+      "priority": 2,
+      "status": "hardened",
+      "homeyGap": "N/A — ops; forum write forbidden",
+      "stack": [
+        "SHADOW GET only",
+        "NeedActionInvestigator",
+        "HeuristicUnknownResolver"
+      ],
+      "gates": [
+        {
+          "script": "tools/ci/forum-ai-paste-gate.js",
+          "ok": true,
+          "exitCode": 0,
+          "durationMs": 29,
+          "tail": "=== Forum AI-paste gate (T157628) ===\nPolicy: prefer silent enrichment; never paste unchecked AI to Discourse.\nNo files given. Pass draft paths or --scan-defaults.\nOK (policy reminder only)."
+        },
+        {
+          "script": "tools/ci/anti-bot-regression-gate.js",
+          "ok": false,
+          "exitCode": 1,
+          "durationMs": 568,
+          "tail": "ee_universal\n  ~ skip registry:p2385-lerlink-r32ctezx-fan-switch:zigbee_universal: missing driver zigbee_universal\n  ❌ REQUIRED p2282-hobeian-3315s-water: HOBEIAN missing from drivers/water_leak_sensor\n  ❌ REQUIRED p2282-hobeian-3315s-water: hobeian missing from drivers/water_leak_sensor\n  ❌ REQUIRED p2282-hobeian-3315s-water: Hobeian missing from drivers/water_leak_sensor\n\nFAILED: 3 regression(s)"
+        }
+      ],
+      "npm": [],
+      "tests": [
+        {
+          "file": "test/critical/forum-routing-regressions.test.js",
+          "ok": true,
+          "present": true
+        }
+      ],
+      "missingArtifacts": [],
+      "ok": false,
+      "gateFails": 1,
+      "npmFails": 0
+    },
+    {
+      "id": "dual_app_publish",
+      "priority": 2,
+      "status": "partial",
+      "homeyGap": "Shared Test slot historically",
+      "stack": [
+        "independent App IDs",
+        "P139 wait cooldown",
+        "BOTH/MASTER_ONLY classify"
+      ],
+      "gates": [],
+      "npm": [],
+      "tests": [
+        {
+          "file": "test/critical/p139-wait-athom-draft.test.js",
+          "ok": true,
+          "present": true
+        },
+        {
+          "file": "test/critical/p197-enrich-soak-identity.test.js",
+          "ok": true,
+          "present": true
+        }
+      ],
+      "missingArtifacts": [],
+      "ok": true,
+      "gateFails": 0,
+      "npmFails": 0
+    },
+    {
+      "id": "protocol_rxtx_bus",
+      "priority": 2,
+      "status": "partial",
+      "homeyGap": "Single confirm path; reconnect storms",
+      "stack": [
+        "ProtocolRxTxChain",
+        "confirmInbound",
+        "ReconnectBurstCoalescer",
+        "CrossLayerRedundancy"
+      ],
+      "gates": [
+        {
+          "script": "tools/ci/layer-coverage-gate.js",
+          "ok": true,
+          "exitCode": 0,
+          "durationMs": 41,
+          "tail": " remotes\nPASS  Power-cut rejoin fires a flow trigger independent of unavailable timeout\nPASS  PowerClusterPolicy exists\nPASS  PollControlPolicy exists\nPASS  DeviceIOFacade skips pollControl bind on sleepy\nPASS  Availability restores last_seen after restart\nPASS  TuyaZigbeeDevice onUninit tears down via _destroyDevice\nPASS  UnifiedSwitchBase tears down on onUninit not only onDeleted\n\nOK (54 checks)"
+        },
+        {
+          "script": "tools/ci/p214-intelligent-protocol-gate.js",
+          "ok": true,
+          "exitCode": 0,
+          "durationMs": 31,
+          "tail": "xists test/critical/p214-intelligent-protocol-detect.test.js\n  ✅ BSEED w5xztuy7 sacred zcl_only\n  ✅ TS000x leftover EF00 → zcl_only (no gang bleed)\n  ✅ MCU EF00+ZCL → HYBRID listen\n  ✅ EF00-only → TUYA_DP\n  ✅ TS0601 ZCL escape (no EF00)\n  ✅ IntelligentProtocolRouter respects sacred zcl_only\n  ✅ UniversalLayerBootstrap wires detect + EF00 soft-attach\n\nPASS: P214 intelligent ZCL/EF00 adaptation gate"
+        }
+      ],
+      "npm": [],
+      "tests": [
+        {
+          "file": "test/critical/layer-signal-fusion.test.js",
+          "ok": true,
+          "present": true
+        },
+        {
+          "file": "test/critical/unsupported-cluster-cascade.test.js",
+          "ok": true,
+          "present": true
+        }
+      ],
+      "missingArtifacts": [],
+      "ok": true,
+      "gateFails": 0,
+      "npmFails": 0
+    },
+    {
+      "id": "identity_normalize",
+      "priority": 2,
+      "status": "partial",
+      "homeyGap": "Case-sensitive mfr/pid mismatches",
+      "stack": [
+        "CaseInsensitiveMatcher",
+        "TuyaNormalizer",
+        "fingerprint-matcher"
+      ],
+      "gates": [
+        {
+          "script": "tools/ci/ensure-case-variants.js",
+          "ok": true,
+          "exitCode": 0,
+          "durationMs": 100,
+          "tail": "═══════════════════════════════════════════════\n  Ensure Homey case variants (P99)\n  root: /home/runner/work/com.tuya.zigbee/com.tuya.zigbee\n  mode: DRY-RUN\n═══════════════════════════════════════════════\nDrivers needing variants: 1\nVariants to add: 1\n  · generic_tuya: +1 (was 415 → 416)\n\nRe-run with --apply to write.\n═══════════════════════════════════════════════"
+        }
+      ],
+      "npm": [],
+      "tests": [
+        {
+          "file": "test/critical/manufacturerResolver.test.js",
+          "ok": true,
+          "present": true
+        }
+      ],
+      "missingArtifacts": [],
+      "ok": true,
+      "gateFails": 0,
+      "npmFails": 0
+    },
+    {
+      "id": "ci_fleetwood",
+      "priority": 2,
+      "status": "partial",
+      "homeyGap": "N/A — CI purity (braces, shell bash, schema)",
+      "stack": [
+        "PRE_COMMIT_CHECKS",
+        "syntax-purity",
+        "workflow-estate-gate",
+        "defaults bash"
+      ],
+      "gates": [
+        {
+          "script": "tools/ci/workflow-estate-gate.js",
+          "ok": true,
+          "exitCode": 0,
+          "durationMs": 131,
+          "tail": "═══════════════════════════════════════════════\n  Workflow estate gate (P193)\n  workflows: 67\n═══════════════════════════════════════════════\n  ✅ Estate checks passed"
+        }
+      ],
+      "npm": [
+        {
+          "script": "check:yaml",
+          "ok": false,
+          "exitCode": 127,
+          "durationMs": 2,
+          "tail": "/bin/sh: 1: npm.cmd: not found"
+        }
+      ],
+      "tests": [],
+      "missingArtifacts": [],
+      "ok": false,
+      "gateFails": 0,
+      "npmFails": 1
+    },
+    {
+      "id": "wifi_local",
+      "priority": 3,
+      "status": "partial",
+      "homeyGap": "Cloud-only MCU handshake",
+      "stack": [
+        "LocalFirstResolver",
+        "handshake rotate v3.1–3.5"
+      ],
+      "gates": [
+        {
+          "script": "tools/ci/wifi-local-first-gate.js",
+          "ok": true,
+          "exitCode": 0,
+          "durationMs": 31,
+          "tail": "═══════════════════════════════════════════════\n  WiFi local-first gate (P194)\n═══════════════════════════════════════════════\n  ~ wifi_camera: device.js does not extend TuyaLocalDevice\n  ✅ 29 Tuya wifi_* drivers expose local-first settings"
+        }
+      ],
+      "npm": [],
+      "tests": [
+        {
+          "file": "test/critical/wifi-local-first-resolver.test.js",
+          "ok": true,
+          "present": true
+        }
+      ],
+      "missingArtifacts": [],
+      "ok": true,
+      "gateFails": 0,
+      "npmFails": 0
+    },
+    {
+      "id": "layers_fusion",
+      "priority": 3,
+      "status": "partial",
+      "homeyGap": "Single-path RX loss",
+      "stack": [
+        "LayerSignalFusion",
+        "CrossLayerRedundancy",
+        "UniversalLayerBootstrap"
+      ],
+      "gates": [
+        {
+          "script": "tools/ci/layer-coverage-gate.js",
+          "ok": true,
+          "exitCode": 0,
+          "durationMs": 36,
+          "tail": " remotes\nPASS  Power-cut rejoin fires a flow trigger independent of unavailable timeout\nPASS  PowerClusterPolicy exists\nPASS  PollControlPolicy exists\nPASS  DeviceIOFacade skips pollControl bind on sleepy\nPASS  Availability restores last_seen after restart\nPASS  TuyaZigbeeDevice onUninit tears down via _destroyDevice\nPASS  UnifiedSwitchBase tears down on onUninit not only onDeleted\n\nOK (54 checks)"
+        }
+      ],
+      "npm": [],
+      "tests": [
+        {
+          "file": "test/critical/layer-signal-fusion.test.js",
+          "ok": true,
+          "present": true
+        },
+        {
+          "file": "test/critical/layer-coverage.test.js",
+          "ok": true,
+          "present": true
+        }
+      ],
+      "missingArtifacts": [],
+      "ok": true,
+      "gateFails": 0,
+      "npmFails": 0
+    },
+    {
+      "id": "dynamic_adaptation",
+      "priority": 3,
+      "status": "partial",
+      "homeyGap": "Static compose cannot hot-adapt DP/caps",
+      "stack": [
+        "DPAdaptationEngine",
+        "DynamicCapabilityManager",
+        "IntelligentDriverHotSwap",
+        "UniversalLayerBootstrap"
+      ],
+      "gates": [],
+      "npm": [],
+      "tests": [],
+      "missingArtifacts": [],
+      "ok": true,
+      "gateFails": 0,
+      "npmFails": 0
+    },
+    {
+      "id": "bypass_elite_complement",
+      "priority": 3,
+      "status": "partial",
+      "homeyGap": "Documented elite bypass intent — runtime denser now",
+      "stack": [
+        "UniversalLayerBootstrap",
+        "ButtonCaptureCascade",
+        "HomeyGapCompensator",
+        "layer-glossary crosswalk"
+      ],
+      "gates": [],
+      "npm": [],
+      "tests": [],
       "missingArtifacts": [],
       "ok": true,
       "gateFails": 0,
