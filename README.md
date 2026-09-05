@@ -33,15 +33,15 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 
 | Metric | Value |
 |--------|-------|
-| **App Version** | v9.0.833 |
+| **App Version** | v9.0.836 |
 | **Drivers** | 431 (381 Zigbee + 50 WiFi) |
 | **Unique Fingerprints** | 4,396 |
-| **Pairing Variants** | 16,182 (4 case combos per fingerprint) |
+| **Pairing Variants** | 16,159 (4 case combos per fingerprint) |
 | **Unique Product IDs** | 584 |
 | **Flow Cards** | 5,952 |
 | **Unique Capabilities** | 170 |
 | **Native OTA Drivers** | 9 |
-| **Test Suites** | 250 files |
+| **Test Suites** | 252 files |
 | **SVG Icons** | 731 |
 | **Languages** | EN, FR, NL, DE |
 | **SDK / Homey** | 3 / >= 12.2.0 |
@@ -51,17 +51,17 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 
 | # | Driver | Fingerprints |
 |---|--------|-------------|
-| 1 | `climate_sensor` | 2,098 |
-| 2 | `switch_1gang` | 1,540 |
+| 1 | `climate_sensor` | 2,090 |
+| 2 | `switch_1gang` | 1,539 |
 | 3 | `presence_sensor_radar` | 803 |
 | 4 | `radiator_valve` | 599 |
-| 5 | `button_wireless_2` | 562 |
+| 5 | `button_wireless_2` | 561 |
 | 6 | `curtain_motor` | 550 |
-| 7 | `wall_dimmer_tuya` | 486 |
+| 7 | `wall_dimmer_tuya` | 484 |
 | 8 | `generic_tuya` | 414 |
 | 9 | `device_radiator_valve` | 334 |
-| 10 | `switch_4gang` | 276 |
-| 11 | `switch_2gang` | 255 |
+| 10 | `switch_4gang` | 285 |
+| 11 | `switch_2gang` | 258 |
 | 12 | `switch_3gang` | 214 |
 | 13 | `motion_sensor` | 213 |
 | 14 | `diy_custom_zigbee` | 206 |
@@ -102,6 +102,9 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 
 | Version | Changes |
 |---------|---------|
+| **v9.0.836** | Forum media deep sweep & misattribution cleansing: cleansed wall_switch_5_gang_tuya stubs, added 25 verified forum Zigbee devices (Melect… |
+| **v9.0.835** | Forum media deep sweep & misattribution cleansing: cleansed wall_switch_5_gang_tuya stubs, added 25 verified forum Zigbee devices (Melect… |
+| **v9.0.834** | Fixed BSEED 1-gang switch routing (Issue #540), pruned manifest flow duplicates, resolved ZG-303Z registry lock, and enforced zero guidel… |
 | **v9.0.833** | Fixed BSEED 1-gang switch routing (Issue #540), pruned manifest flow duplicates, resolved ZG-303Z registry lock, and enforced zero guidel… |
 | **v9.0.832** | Fixed BSEED 1-gang switch routing (Issue #540), pruned manifest flow duplicates, resolved ZG-303Z registry lock, and enforced zero guidel… |
 | **v9.0.831** | Improved manufacturer fingerprint database for HOBEIAN devices (presence, vibration, soil) and fixed wrong curtain/switch matches. |
@@ -111,9 +114,6 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 | **v9.0.827** | Improved manufacturer fingerprint database for HOBEIAN devices (presence, vibration, soil) and fixed wrong curtain/switch matches. |
 | **v9.0.826** | Improved manufacturer fingerprint database for HOBEIAN devices (presence, vibration, soil) and fixed wrong curtain/switch matches. |
 | **v9.0.825** | Improved manufacturer fingerprint database for HOBEIAN devices (presence, vibration, soil) and fixed wrong curtain/switch matches. |
-| **v9.0.824** | HOBEIAN full enrich: more mmWave variants (ZE/ZK/ZQ/ZX), vibration+contact (ZG-102ZM), tilt (ZG-103Z), water/vibration alarms (ZG-226Z/22… |
-| **v9.0.823** | HOBEIAN full enrich: more mmWave variants (ZE/ZK/ZQ/ZX), vibration+contact (ZG-102ZM), tilt (ZG-103Z), water/vibration alarms (ZG-226Z/22… |
-| **v9.0.822** | HOBEIAN sensors: corrected mmWave DP maps (ZG-204ZM/ZH) and locked motion-sensing switches (ZG-302ZM/ZL); fixed wrong climate/vibration p… |
 
 <!-- CHANGELOG_END -->
 
