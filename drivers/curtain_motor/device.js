@@ -328,25 +328,44 @@ class CurtainMotorDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedC
   }
 
   /**
-   * WHY(P2356): mirror Moes ZTS DP3/7/8/10 into device settings on RX (#533).
+   * WHY(P2356, P2424): mirror Moes ZTS DP3/7/8/10 into device settings on RX (#533).
+   * Guards against setSettings() -> onSettings() -> _sendTuyaDP write loop.
    */
   async _syncMoesSettingFromDp(dp, value) {
     if (this._destroyed || !this._isMoesZtsEurC()) {return;}
     const v = typeof value === 'number' ? value : parseInt(value, 10);
     if (!Number.isFinite(v)) {return;}
     const updates = {};
-    if (dp === 7) {updates.moes_backlight = v !== 0;}
-    else if (dp === 8) {updates.moes_motor_direction = v === 0 ? 'forward' : 'back';}
-    else if (dp === 10) {updates.moes_calibration_seconds = Math.max(10, Math.min(180, v));}
-    else if (dp === 3) {updates.moes_calibration_mode = v === 0 ? 'start' : 'end';}
+    if (dp === 7) {
+      const val = v !== 0;
+      if (this.getSetting?.('moes_backlight') !== val) {updates.moes_backlight = val;}
+    } else if (dp === 8) {
+      const val = v === 0 ? 'forward' : 'back';
+      if (this.getSetting?.('moes_motor_direction') !== val) {updates.moes_motor_direction = val;}
+    } else if (dp === 10) {
+      const val = Math.max(10, Math.min(180, v));
+      if (this.getSetting?.('moes_calibration_seconds') !== val) {updates.moes_calibration_seconds = val;}
+    } else if (dp === 3) {
+      const val = v === 0 ? 'start' : 'end';
+      if (this.getSetting?.('moes_calibration_mode') !== val) {updates.moes_calibration_mode = val;}
+    }
     if (Object.keys(updates).length) {
-      await this.setSettings(updates).catch(() => {});
+      this._isInternalSettingsSync = true;
+      try {
+        await this.setSettings(updates);
+      } catch (err) {
+        this.log('[CURTAIN] setSettings error:', err.message);
+      } finally {
+        this.homey.setTimeout(() => {
+          this._isInternalSettingsSync = false;
+        }, 800);
+      }
     }
   }
 
-  /** WHY(P2356): push Moes wall-switch DPs 3/7/8/10 from settings UI (#533). */
+  /** WHY(P2356, P2424): push Moes wall-switch DPs 3/7/8/10 from settings UI (#533). */
   async _applyMoesZtsSettings(changedKeys = null) {
-    if (!this._isMoesZtsEurC()) {return;}
+    if (!this._isMoesZtsEurC() || this._isInternalSettingsSync) {return;}
     const keys = changedKeys || [
       'moes_backlight', 'moes_motor_direction', 'moes_calibration_seconds', 'moes_calibration_mode',
       'reverse_direction', 'open_time',
@@ -354,6 +373,7 @@ class CurtainMotorDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedC
     const send = async (dp, val, type) => {
       try {
         await this._sendTuyaDP(dp, val, type);
+        await new Promise((r) => setTimeout(r, 150));
       } catch (err) {
         const msg = err?.message || String(err);
         if (/timeout/i.test(msg)) {
@@ -414,7 +434,10 @@ class CurtainMotorDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedC
   async _applyCalibrationSettings() {
     try {
       if (this._isMoesZtsEurC()) {
-        await this._applyMoesZtsSettings();
+        // WHY(P2424 / #533 salvagr): Do NOT blast DP3/7/8/10 at boot — switch keeps its
+        // flash calibration and direction. Blasting 4 writes at boot saturates MCU queue
+        // and triggers a setSettings echo loop that blocks DP1 (open/close).
+        this.log('[CURTAIN] Moes ZTS - skipping boot calibration blast (retaining hardware config)');
         return;
       }
       const openTime = this.getSetting('open_time') || 0;
@@ -465,6 +488,10 @@ class CurtainMotorDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedC
       await super.onSettings?.({ oldSettings, newSettings, changedKeys });
 
       if (this._isMoesZtsEurC()) {
+        if (this._isInternalSettingsSync) {
+          this.log('[CURTAIN] Skipping Moes ZTS send on settings - synced from device report');
+          return;
+        }
         const moesKeys = changedKeys.filter((k) => [
           'moes_backlight', 'moes_motor_direction', 'moes_calibration_seconds',
           'moes_calibration_mode', 'reverse_direction', 'open_time',
