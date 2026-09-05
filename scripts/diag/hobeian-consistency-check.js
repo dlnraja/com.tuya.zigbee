@@ -18,7 +18,7 @@ const HOBEIAN_DEVICE_MAP = {
   'ZG-301Z': 'switch_1gang',      // 1-gang switch (TS0001)
   'ZG-301Z-2CH': 'switch_2gang',  // 2-gang switch
   'ZG-204ZM': 'presence_sensor_radar',  // mmWave radar
-  'ZG-227Z': 'sensor_contact_presence', // contact+presence
+  'ZG-227Z': 'climate_sensor',          // climate (temp+humidity)
   'ZG-303Z': 'soil_sensor',       // soil moisture
   'ZG-204Z': 'presence_sensor_radar',
 };
@@ -80,7 +80,7 @@ function check() {
     } catch (_) {}
   }
 
-  if (hobeianDrivers.length > 10) {
+  if (hobeianDrivers.length > 15) {
     console.warn(`⚠️  HOBEIAN présent dans ${hobeianDrivers.length} drivers (prolifération — vérifier BOT_FORCED_DISCOVERY.json)`);
     warnings++;
   } else {
