@@ -213,6 +213,10 @@
     "p2420_vichy_2227_mains_energy_dp2": {
       "tag": "BOTH",
       "note": "VicHY #2227 clrdrnya: always setEnergy({}) on mains radar; early re-heal; EF00 owns DP2 setting (no humidity SmartDivisor)"
+    },
+    "p2421_hobeian_z2m_dp_enrich": {
+      "tag": "BOTH",
+      "note": "HOBEIAN Z2M: fix ZG-204ZM DPs; add ZH/302ZM/ZL configs; move mfrs off climate/vibration; strip clamp/motion cartesian"
     }
   },
   "ci": {

@@ -160,7 +160,18 @@ Generated 2026-08-19T08:50:15.322Z from registry (54 cases) × compound DB (209 
 - **P2391 (VicHY #2224 diag `0e28d470` @ 9.0.781):** Interview locks `_TZE204_clrdrnya`+TS0601. Timeline low-battery on mains MTG = compose `energy.batteries` + possible DEFAULT/HOBEIAN config cache before mfr resolves. Fix: upgrade radar config when mfr arrives; heal strips `measure_battery`/`alarm_battery`; `setEnergy({})` clears Homey Energy batteries; block `tuya_dp_value` DIY cap recursion.
 - **P2401 (VicHY #2226 ack / update race):** Homey flood + low-battery timeline after update can fire while `driver.id` still empty. `isRadarFloodContext` + `_isRadarFloodCalmDevice` match clrdrnya mfr / `measure_luminance.distance` / `floodCalm` so tip ≥9.0.802 stays quiet without waiting for driver id.
 - **P2420 (VicHY #2227 diag `c5165a37` @ 9.0.797):** After tip update, curtain UI again (delete+re-pair works); flood gone; **battery warning still**. Root: (1) `setEnergy({})` only ran when `getEnergy().batteries` non-empty — Homey kept Energy icon from compose; (2) DP2 `cap:null`+`setting` fell through generic DP2→humidity SmartDivisor. Fix: always clear Energy on mains; re-heal at 2s/5s; EF00 treats `setting`/`cap:null` as owned. User: update Test ≥ tip + **restart app** (re-pair only if still curtain).
+- **P2421 (HOBEIAN Z2M internet enrich):** Canonical herdsman DPs for ZG-204ZM (DP2 static sens, DP4 static dist/100 — drop invented large/small/micro map). New configs ZG-204ZH (`vuqzj1ej`/`hdih4foa`), ZG-302ZM/ZL sensing-switch (moved off vibration + climate cartesian). Strip ZG-204*/302* from `power_clamp_meter` / `motion_sensor`. Re-pair if previously matched climate/vibration/clamp.
 - **P2392 (fleet firmware compensate):** Root cause of `tuya_dp_value` P2308 spam — `TuyaUniversalBridge` added DIY caps on **every** device. Fix: DIY caps only on universal/DIY drivers; `_updateCapability` gated on `hasCapability`; `FirmwareQuirkCompensator` strips DIY + mains battery fleet-wide via HomeyGapCompensator; `safeSetCapabilityValue` refuses ghost caps.
+
+### `hobeian-zg204zh` / `hobeian-zg302z*` (P2421)
+
+- Couples (Z2M only — never invent pid):
+  - `_TZE200_vuqzj1ej` / `_TZE200_hdih4foa` + `TS0601` / `ZG-204ZH` → `presence_sensor_radar` (temp+humid+lux+presence)
+  - `_TZE200_2aaelwxk` / `kb5noeto` / `tyffvoij` / `yflzeeqj` + `TS0601` / `ZG-204ZM` → `presence_sensor_radar`
+  - `_TZE200_kccdzaeo` (+ s7rsrtbg/tmszbtzq/bfmfhxra/ahpcyzth/kijxnb8q) + `TS0601` / `ZG-302ZM` → sensing switch (presence + onoff)
+  - `_TZE200_khzbklyh` (+ df04ghrb/toeldckg/cqtamhh5/xlnzk169/llvwkkde) + `TS0601` / `ZG-302ZL` → sensing switch (DP101 presence)
+- Forbid: `climate_sensor`, `vibration_sensor`, `power_clamp_meter`, `motion_sensor`
+- Clusters: EF00 (0xEF00) + optional ZCL illuminance on ZG-204ZM
 
 ### `valve-dual-fhvpaltk` → `valve_dual_irrigation`
 

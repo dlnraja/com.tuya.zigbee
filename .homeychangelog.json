@@ -2996,5 +2996,8 @@
   },
   "9.0.820": {
     "en": "Fixed mains mmWave radar phantom battery warning after app updates; radar settings DPs no longer misread as humidity."
+  },
+  "9.0.821": {
+    "en": "HOBEIAN sensors: corrected mmWave DP maps (ZG-204ZM/ZH) and locked motion-sensing switches (ZG-302ZM/ZL); fixed wrong climate/vibration pairing."
   }
 }
