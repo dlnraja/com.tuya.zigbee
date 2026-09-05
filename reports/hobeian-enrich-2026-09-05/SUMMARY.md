@@ -25,3 +25,15 @@
 
 ## User action
 Update Homey Test tip + **re-pair** if device was on climate / vibration / clamp tile.
+
+## P2422 — Full fleet (follow-up)
+
+Added/locked:
+- Presence configs: ZG-204ZE, ZG-204ZK, ZG-204ZQ, ZG-204ZX
+- Vibration: ZG-102ZM (contact DP101 + sens DP6), ZG-103Z (tilt), ZG-228Z
+- Water: ZG-226Z EF00 alarm (brand HOBEIAN pid-aware vs ZG-222 IAS)
+- Cartesian strip: illuminance/plug/curtain/gas catch-alls no longer steal ZG-102/103/227/223
+
+Still soft / NEED_INTERVIEW (no invent mfr-only for new pids without Z2M fingerprint):
+- ZG-229Z siren (zigbeeModel only in Z2M — brand HOBEIAN, no TZE list yet)
+- ZG-101ZL button (local OK, no Z2M tuya.ts entry)

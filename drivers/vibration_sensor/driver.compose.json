@@ -11,7 +11,8 @@
     "measure_temperature",
     "measure_battery",
     "alarm_tamper",
-    "button.1"
+    "button.1",
+    "alarm_contact"
   ],
   "energy": {
     "batteries": [
@@ -124,7 +125,27 @@
       "_TZE200_jfw0a4aa",
       "_tze200_jfw0a4aa",
       "_TZE200_wzk0x7fq",
-      "_tze200_wzk0x7fq"
+      "_tze200_wzk0x7fq",
+      "_TZE200_JFW0A4AA",
+      "_tze200_JFW0A4AA",
+      "_TZE200_WZK0X7FQ",
+      "_tze200_WZK0X7FQ",
+      "_TZE200_iba1ckek",
+      "_tze200_iba1ckek",
+      "_TZE200_IBA1CKEK",
+      "_tze200_IBA1CKEK",
+      "_TZE200_hggxgsjj",
+      "_tze200_hggxgsjj",
+      "_TZE200_HGGXGSJJ",
+      "_tze200_HGGXGSJJ",
+      "_TZE200_yjryxpot",
+      "_tze200_yjryxpot",
+      "_TZE200_YJRYXPOT",
+      "_tze200_YJRYXPOT",
+      "_TZE200_afycb3cg",
+      "_tze200_afycb3cg",
+      "_TZE200_AFYCB3CG",
+      "_tze200_AFYCB3CG"
     ],
     "productId": [
       "TS0209",
@@ -134,7 +155,9 @@
       "ZG-103ZL",
       "ZG-103Z",
       "TS011F",
-      "CK-BL702-MWS-01(7016)"
+      "CK-BL702-MWS-01(7016)",
+      "ZG-228Z",
+      "AY02SZ"
     ],
     "endpoints": {
       "1": {

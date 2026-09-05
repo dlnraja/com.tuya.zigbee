@@ -477,6 +477,106 @@ const SENSOR_CONFIGS = {
     }
   },
 
+  // TYPE G5: HOBEIAN ZG-204ZK (P2422 Z2M)
+  'HOBEIAN_ZG204ZK': {
+    configName: 'HOBEIAN_ZG204ZK',
+    sensors: ['_TZE200_ka8l86iu', '_TZE200_zbfmvj13', '_TZE284_ka8l86iu'],
+    modelId: 'ZG-204ZK',
+    battery: true,
+    useTuyaDP: true,
+    hasIlluminance: false,
+    noTemperature: true,
+    noHumidity: true,
+    noIasMotion: true,
+    writableDPs: [2, 4, 102, 107, 122, 123],
+    dpMap: {
+      1: { cap: 'alarm_motion', type: 'presence_bool' },
+      2: { cap: null, setting: 'static_detection_sensitivity', min: 0, max: 10 },
+      4: { cap: null, setting: 'static_detection_distance', divisor: 100, min: 0, max: 5 },
+      102: { cap: null, setting: 'fading_time', min: 10, max: 28800 },
+      107: { cap: null, setting: 'indicator' },
+      121: { cap: 'measure_battery', divisor: 1 },
+      122: { cap: null, setting: 'anti_interference' },
+      123: { cap: null, setting: 'motion_detection_sensitivity', min: 0, max: 10 },
+    }
+  },
+
+  // TYPE G6: HOBEIAN ZG-204ZE (P2422 Z2M)
+  'HOBEIAN_ZG204ZE': {
+    configName: 'HOBEIAN_ZG204ZE',
+    sensors: ['_TZE200_4pm4pekt', '_TZE200_cq8lu23i', '_TZE200_y8jijhba'],
+    modelId: 'ZG-204ZE',
+    battery: true,
+    useTuyaDP: true,
+    hasIlluminance: true,
+    noTemperature: true,
+    noHumidity: true,
+    noIasMotion: true,
+    writableDPs: [2, 102, 107, 108],
+    dpMap: {
+      1: { cap: 'alarm_motion', type: 'presence_bool' },
+      2: { cap: null, setting: 'motion_detection_sensitivity', min: 0, max: 19 },
+      102: { cap: null, setting: 'fading_time', min: 0, max: 28800 },
+      106: { cap: 'measure_luminance', type: 'lux_direct' },
+      107: { cap: null, setting: 'illuminance_interval', min: 1, max: 720 },
+      108: { cap: null, setting: 'indicator' },
+      110: { cap: 'measure_battery', divisor: 1 },
+    }
+  },
+
+  // TYPE G7: HOBEIAN ZG-204ZQ PIR + climate (P2422 Z2M)
+  'HOBEIAN_ZG204ZQ': {
+    configName: 'HOBEIAN_ZG204ZQ',
+    sensors: ['_TZE200_p9zbdqgs'],
+    modelId: 'ZG-204ZQ',
+    battery: true,
+    useTuyaDP: true,
+    hasIlluminance: true,
+    noTemperature: false,
+    noHumidity: false,
+    noIasMotion: true,
+    writableDPs: [102, 104, 105, 107, 108, 109],
+    dpMap: {
+      1: { cap: 'alarm_motion', type: 'presence_bool' },
+      101: { cap: 'measure_humidity', divisor: 1 },
+      102: { cap: null, setting: 'fading_time', min: 0, max: 28800 },
+      104: { cap: null, setting: 'humidity_calibration', min: -30, max: 30 },
+      105: { cap: null, setting: 'temperature_calibration', divisor: 10, min: -20, max: 20 },
+      106: { cap: 'measure_luminance', type: 'lux_direct' },
+      107: { cap: null, setting: 'illuminance_interval', min: 1, max: 720 },
+      108: { cap: null, setting: 'indicator' },
+      109: { cap: null, setting: 'temperature_unit' },
+      110: { cap: 'measure_battery', divisor: 1 },
+      111: { cap: 'measure_temperature', smartDivisor: true },
+    }
+  },
+
+  // TYPE G8: HOBEIAN ZG-204ZX mmWave + T&H (P2422 Z2M)
+  'HOBEIAN_ZG204ZX': {
+    configName: 'HOBEIAN_ZG204ZX',
+    sensors: ['_TZE200_w0ap83qu'],
+    modelId: 'ZG-204ZX',
+    battery: true,
+    useTuyaDP: true,
+    hasIlluminance: true,
+    noTemperature: false,
+    noHumidity: false,
+    noIasMotion: true,
+    writableDPs: [2, 4, 102, 103],
+    dpMap: {
+      1: { cap: 'alarm_motion', type: 'presence_bool' },
+      2: { cap: null, setting: 'static_detection_sensitivity', min: 0, max: 10 },
+      4: { cap: null, setting: 'static_detection_distance', divisor: 100, min: 0, max: 5 },
+      102: { cap: null, setting: 'fading_time', min: 0, max: 28800 },
+      103: { cap: null, setting: 'anti_interference' },
+      106: { cap: 'measure_luminance', type: 'lux_direct' },
+      // Soft climate extras observed on sibling firmwares
+      101: { cap: 'measure_humidity', divisor: 1 },
+      110: { cap: 'measure_battery', divisor: 1 },
+      111: { cap: 'measure_temperature', smartDivisor: true },
+    }
+  },
+
   // DEFAULT fallback — with multi-zone support (Idea #21)
   'DEFAULT': {
     sensors: [],
@@ -516,10 +616,22 @@ for (const [configName, config] of Object.entries(SENSOR_CONFIGS)) {
 }
 
 function getSensorConfig(manufacturerName, modelId = null) {
-  // WHY(P2421): route by modelId first, then verified TZE mfr — never invent pid.
+  // WHY(P2421/P2422): route by modelId first, then verified TZE mfr — never invent pid.
   const model = (modelId && modelId !== 'null') ? String(modelId).toUpperCase() : '';
   if (model.includes('ZG-204ZH') || model.includes('AY208Z')) {
     return { ...SENSOR_CONFIGS.HOBEIAN_ZG204ZH, configName: 'HOBEIAN_ZG204ZH' };
+  }
+  if (model.includes('ZG-204ZX')) {
+    return { ...SENSOR_CONFIGS.HOBEIAN_ZG204ZX, configName: 'HOBEIAN_ZG204ZX' };
+  }
+  if (model.includes('ZG-204ZK') || model.includes('AY-204ZX')) {
+    return { ...SENSOR_CONFIGS.HOBEIAN_ZG204ZK, configName: 'HOBEIAN_ZG204ZK' };
+  }
+  if (model.includes('ZG-204ZE')) {
+    return { ...SENSOR_CONFIGS.HOBEIAN_ZG204ZE, configName: 'HOBEIAN_ZG204ZE' };
+  }
+  if (model.includes('ZG-204ZQ')) {
+    return { ...SENSOR_CONFIGS.HOBEIAN_ZG204ZQ, configName: 'HOBEIAN_ZG204ZQ' };
   }
   if (model.includes('ZG-204ZM') || model.includes('AY205Z')) {
     return { ...SENSOR_CONFIGS.HOBEIAN_ZG204ZM, configName: 'HOBEIAN_ZG204ZM' };
@@ -530,7 +642,7 @@ function getSensorConfig(manufacturerName, modelId = null) {
   if (model.includes('ZG-302ZL')) {
     return { ...SENSOR_CONFIGS.HOBEIAN_ZG302ZL, configName: 'HOBEIAN_ZG302ZL' };
   }
-  if (model.includes('ZG-204ZV')) {
+  if (model.includes('ZG-204ZV') || model.includes('AY204T')) {
     return { ...SENSOR_CONFIGS.ZG_204ZV_MULTISENSOR, configName: 'ZG_204ZV_MULTISENSOR' };
   }
 
@@ -545,6 +657,19 @@ function getSensorConfig(manufacturerName, modelId = null) {
   if (manufacturerName) {
     if (containsCI(manufacturerName, 'vuqzj1ej') || containsCI(manufacturerName, 'hdih4foa')) {
       return { ...SENSOR_CONFIGS.HOBEIAN_ZG204ZH, configName: 'HOBEIAN_ZG204ZH' };
+    }
+    if (containsCI(manufacturerName, 'w0ap83qu')) {
+      return { ...SENSOR_CONFIGS.HOBEIAN_ZG204ZX, configName: 'HOBEIAN_ZG204ZX' };
+    }
+    if (containsCI(manufacturerName, 'ka8l86iu') || containsCI(manufacturerName, 'zbfmvj13')) {
+      return { ...SENSOR_CONFIGS.HOBEIAN_ZG204ZK, configName: 'HOBEIAN_ZG204ZK' };
+    }
+    if (containsCI(manufacturerName, '4pm4pekt') || containsCI(manufacturerName, 'cq8lu23i')
+      || containsCI(manufacturerName, 'y8jijhba')) {
+      return { ...SENSOR_CONFIGS.HOBEIAN_ZG204ZE, configName: 'HOBEIAN_ZG204ZE' };
+    }
+    if (containsCI(manufacturerName, 'p9zbdqgs')) {
+      return { ...SENSOR_CONFIGS.HOBEIAN_ZG204ZQ, configName: 'HOBEIAN_ZG204ZQ' };
     }
     if (containsCI(manufacturerName, '2aaelwxk') || containsCI(manufacturerName, 'kb5noeto')
       || containsCI(manufacturerName, 'tyffvoij') || containsCI(manufacturerName, 'yflzeeqj')) {
