@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-01T06:16:24.631Z",
+  "generatedAt": "2026-09-05T16:01:29.775Z",
   "mode": "APPLY",
   "compose": [],
   "sacredKeep": [],
@@ -12,7 +12,7 @@
     {
       "name": "sync-appjson-zigbee",
       "ok": true,
-      "tail": "[sync-appjson-zigbee] synced: 379 | changed: 1 | no compose: 0"
+      "tail": "[sync-appjson-zigbee] synced: 379 | changed: 202 | no compose: 0"
     },
     {
       "name": "p2138-gate",

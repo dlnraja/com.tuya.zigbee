@@ -1,6 +1,6 @@
 # Flow + L99 audit — 2026-09-05
 
-Failing steps: **1** / 8
+Failing steps: **0** / 8
 
 | Step | OK |
 |------|----|
@@ -9,7 +9,7 @@ Failing steps: **1** / 8
 | flow-coherence | yes |
 | flow-fleet-enrich | yes |
 | appjson-flow-dedupe | yes |
-| voice-safety | NO |
+| voice-safety | yes |
 | dp-cluster-flow-coverage | yes |
 | button-flow-harvest | yes |
 
@@ -51,7 +51,7 @@ Cards with orphan tokens (declared but not used in args/title): 0
 
 ```
 {
-  "generatedAt": "2026-09-05T07:55:34.232Z",
+  "generatedAt": "2026-09-05T16:00:45.683Z",
   "mode": "dry-run",
   "driversTouched": 1,
   "orphanTokensFixed": 0,
@@ -84,14 +84,14 @@ Cards with orphan tokens (declared but not used in args/title): 0
 {
   "mode": "dry-run",
   "removed": {
-    "triggers": 0,
-    "conditions": 0,
-    "actions": 0
+    "triggers": 3550,
+    "conditions": 671,
+    "actions": 1558
   },
   "kept": {
-    "triggers": 47,
+    "triggers": 82,
     "conditions": 29,
-    "actions": 57
+    "actions": 60
   },
   "homeycompose": {
     "removed": {
@@ -111,6 +111,7 @@ Cards with orphan tokens (declared but not used in args/title): 0
 Google Assistant voice-safety gate
 Drivers checked: 431
 button.* capabilities checked: 632
+OK: all button.* capabilities are event/maintenance-only.
 
 ```
 
@@ -124,7 +125,7 @@ button.* capabilities checked: 632
 
 ## Clusters
 - Compose unique: 34
-- Lexicon size: 34
+- Lexicon size: 43
 - Missing from lexicon: 0
 
 ## DP knowledge
@@ -189,7 +190,7 @@ npm run flow:l99
 ### button-flow-harvest
 
 ```
-s": 52,
+rs": 4,
   "appLevelButtonTriggers": [
     "button_pressed",
     "button_double_press",

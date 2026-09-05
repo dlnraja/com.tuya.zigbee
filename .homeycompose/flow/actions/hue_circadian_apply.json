@@ -1,17 +1,25 @@
 {
   "id": "hue_circadian_apply",
   "title": {
-    "en": "Apply Solar Sync (Daylight Atmosphere)",
-    "fr": "Appliquer Synchro solaire (Atmosphère jour)",
-    "nl": "Zonnesync toepassen (daglichtatmosfeer)",
-    "de": "Solar Sync anwenden (Tageslicht-Atmosphäre)"
+    "en": "Apply Solar Sync Daylight Atmosphere",
+    "fr": "Appliquer Synchro solaire Atmosphère jour",
+    "nl": "Zonnesync toepassen daglichtatmosfeer",
+    "de": "Solar Sync anwenden Tageslicht-Atmosphäre"
   },
   "hint": {
     "en": "Sets brightness and white temperature from real sun position (and Room Balance lux when available)",
     "fr": "Règle luminosité et blanc selon la position réelle du soleil (et le lux Room Balance si dispo)"
   },
   "args": [
-    { "type": "device", "name": "light", "title": { "en": "Light", "fr": "Lumière" } }
+    {
+      "type": "device",
+      "name": "light",
+      "title": {
+        "en": "Light",
+        "fr": "Lumière"
+      },
+      "filter": "capabilities=dim|capabilities=light_temperature|capabilities=light_hue"
+    }
   ],
   "titleFormatted": {
     "en": "Solar Sync on [[light]]",

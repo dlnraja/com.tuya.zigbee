@@ -9,6 +9,14 @@
     "fr": "Inscrit cette lumière à Atmosphère jour (blanc + luminosité selon le soleil)"
   },
   "args": [
-    { "type": "device", "name": "device", "title": { "en": "Light", "fr": "Lumière" } }
+    {
+      "type": "device",
+      "name": "device",
+      "title": {
+        "en": "Light",
+        "fr": "Lumière"
+      },
+      "filter": "capabilities=dim|capabilities=light_temperature|capabilities=light_hue"
+    }
   ]
 }

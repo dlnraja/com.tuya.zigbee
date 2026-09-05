@@ -9,7 +9,8 @@
   "args": [
     {
       "name": "device",
-      "type": "device"
+      "type": "device",
+      "filter": "driver_id=*"
     }
   ],
   "tokens": [
@@ -45,4 +46,3 @@
     }
   ]
 }
-

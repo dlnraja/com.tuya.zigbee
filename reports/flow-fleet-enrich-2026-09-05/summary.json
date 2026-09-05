@@ -1,17 +1,37 @@
 {
-  "generatedAt": "2026-09-05T07:55:34.232Z",
-  "mode": "dry-run",
+  "generatedAt": "2026-09-05T16:01:14.214Z",
+  "mode": "apply",
   "driversTouched": 1,
   "orphanTokensFixed": 0,
   "triggersAdded": 1,
   "actionsAdded": 0,
   "appJsonDedupe": {
-    "mode": "dry-run"
+    "ok": true,
+    "report": {}
   },
   "z2mCrossRef": {
     "count": 27
   },
-  "subtools": [],
+  "subtools": [
+    {
+      "label": "ensure-physical-flow-cards",
+      "ok": true,
+      "exitCode": 0,
+      "tail": "[ensure-physical-flow-cards] apply\n  mixin drivers needing cards: 0\n  cards written: 0"
+    },
+    {
+      "label": "patch-missing-flow-listeners",
+      "ok": true,
+      "exitCode": 0,
+      "tail": "evice_air_purifier_humidifier\",\n      \"skip\": \"ok\"\n    },\n    {\n      \"id\": \"led_controller_dimmable\",\n      \"skip\": \"ok\"\n    },\n    {\n      \"id\": \"led_controller_rgb\",\n      \"skip\": \"ok\"\n    },\n    {\n      \"id\": \"led_controller_cct\",\n      \"skip\": \"ok\"\n    },\n    {\n      \"id\": \"plug_smart\",\n      \"skip\": \"ok\"\n    },\n    {\n      \"id\": \"smart_scene_panel\",\n      \"skip\": \"ok\"\n    },\n    {\n      \"id\": \"device_radiator_valve_smart\",\n      \"skip\": \"ok\"\n    },\n    {\n      \"id\": \"smart_heater\",\n      \"skip\": \"ok\"\n    },\n    {\n      \"id\": \"smart_heater_controller\",\n      \"skip\": \"ok\"\n    },\n    {\n      \"id\": \"hybrid_heater_thermostat\",\n      \"skip\": \"ok\"\n    },\n    {\n      \"id\": \"climate_sensor_plug\",\n      \"skip\": \"ok\"\n    },\n    {\n      \"id\": \"contact_sensor_plug\",\n      \"skip\": \"ok\"\n    }\n  ]\n}"
+    },
+    {
+      "label": "button-flow-harvest",
+      "ok": true,
+      "exitCode": 0,
+      "tail": ": 34\n    },\n    {\n      \"driverId\": \"wall_remote_6_gang\",\n      \"triggers\": 30\n    },\n    {\n      \"driverId\": \"button_wireless_smart\",\n      \"triggers\": 29\n    },\n    {\n      \"driverId\": \"button_wireless_4\",\n      \"triggers\": 28\n    },\n    {\n      \"driverId\": \"button_wireless_4_ts0041\",\n      \"triggers\": 25\n    },\n    {\n      \"driverId\": \"remote_button_wireless_handheld\",\n      \"triggers\": 25\n    },\n    {\n      \"driverId\": \"button_wireless_3\",\n      \"triggers\": 21\n    },\n    {\n      \"driverId\": \"button_wireless_switch\",\n      \"triggers\": 20\n    },\n    {\n      \"driverId\": \"handheld_remote_4_buttons\",\n      \"triggers\": 20\n    },\n    {\n      \"driverId\": \"remote_button_emergency_sos\",\n      \"triggers\": 20\n    },\n    {\n      \"driverId\": \"remote_button_wireless\",\n      \"triggers\": 20\n    }\n  ]\n}"
+    }
+  ],
   "topChanges": [
     {
       "driver": "smart_knob",

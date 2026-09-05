@@ -1,10 +1,10 @@
 {
   "id": "cascade_link",
   "title": {
-    "en": "Link motion to light (path lighting)",
-    "fr": "Lier le mouvement à une lumière (éclairage de passage)",
-    "nl": "Koppel beweging aan lamp (padverlichting)",
-    "de": "Bewegung mit Licht verknüpfen (Wegbeleuchtung)"
+    "en": "Link motion to light for path lighting",
+    "fr": "Lier le mouvement à une lumière pour éclairage de passage",
+    "nl": "Koppel beweging aan lamp voor padverlichting",
+    "de": "Bewegung mit Licht verknüpfen für Wegbeleuchtung"
   },
   "hint": {
     "en": "Turns the light on when motion is detected and off automatically after the delay without motion",

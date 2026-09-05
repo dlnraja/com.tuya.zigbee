@@ -1,0 +1,441 @@
+{
+  "generatedAt": "2026-09-05T16:01:11.034Z",
+  "mode": "apply",
+  "classFilter": null,
+  "neverInventProductId": true,
+  "classes": {
+    "button": {
+      "count": 54,
+      "withGaps": 7,
+      "mfrEntries": 1419,
+      "flowTriggers": 842,
+      "gapSamples": [
+        {
+          "id": "button_wireless_fingerbot",
+          "gaps": [
+            "missing_power_scale_setting"
+          ]
+        },
+        {
+          "id": "button_wireless_switch",
+          "gaps": [
+            "missing_power_scale_setting"
+          ]
+        },
+        {
+          "id": "button_wireless_usb",
+          "gaps": [
+            "missing_power_scale_setting"
+          ]
+        },
+        {
+          "id": "remote_button_wireless_fingerbot",
+          "gaps": [
+            "missing_power_scale_setting"
+          ]
+        },
+        {
+          "id": "remote_button_wireless_usb",
+          "gaps": [
+            "missing_power_scale_setting"
+          ]
+        },
+        {
+          "id": "smart_remote_1_button_2",
+          "gaps": [
+            "empty_mfr"
+          ]
+        },
+        {
+          "id": "wall_remote_4_gang",
+          "gaps": [
+            "empty_mfr"
+          ]
+        }
+      ]
+    },
+    "socket": {
+      "count": 108,
+      "withGaps": 41,
+      "mfrEntries": 3631,
+      "flowTriggers": 1164,
+      "gapSamples": [
+        {
+          "id": "boiler_switch_energy",
+          "gaps": [
+            "missing_power_scale_setting"
+          ]
+        },
+        {
+          "id": "climate_sensor_switch",
+          "gaps": [
+            "missing_power_scale_setting"
+          ]
+        },
+        {
+          "id": "contact_sensor_switch",
+          "gaps": [
+            "missing_power_scale_setting"
+          ]
+        },
+        {
+          "id": "device_plug_energy_monitor",
+          "gaps": [
+            "empty_mfr"
+          ]
+        },
+        {
+          "id": "device_plug_smart",
+          "gaps": [
+            "empty_mfr"
+          ]
+        },
+        {
+          "id": "dimmer_wall_switch",
+          "gaps": [
+            "missing_power_scale_setting"
+          ]
+        },
+        {
+          "id": "din_rail_switch",
+          "gaps": [
+            "missing_power_scale_setting"
+          ]
+        },
+        {
+          "id": "double_power_point",
+          "gaps": [
+            "empty_mfr",
+            "missing_power_scale_setting"
+          ]
+        }
+      ]
+    },
+    "switch": {
+      "count": 9,
+      "withGaps": 2,
+      "mfrEntries": 331,
+      "flowTriggers": 66,
+      "gapSamples": [
+        {
+          "id": "dimmer_1_gang_2",
+          "gaps": [
+            "empty_mfr"
+          ]
+        },
+        {
+          "id": "dimmer_wall_1gang",
+          "gaps": [
+            "missing_power_scale_setting"
+          ]
+        }
+      ]
+    },
+    "sensor": {
+      "count": 122,
+      "withGaps": 20,
+      "mfrEntries": 5491,
+      "flowTriggers": 793,
+      "gapSamples": [
+        {
+          "id": "air_purifier_dimmer",
+          "gaps": [
+            "missing_power_scale_setting"
+          ]
+        },
+        {
+          "id": "air_purifier_din",
+          "gaps": [
+            "missing_power_scale_setting"
+          ]
+        },
+        {
+          "id": "air_purifier_quality",
+          "gaps": [
+            "missing_power_scale_setting"
+          ]
+        },
+        {
+          "id": "air_purifier_switch",
+          "gaps": [
+            "missing_power_scale_setting"
+          ]
+        },
+        {
+          "id": "climate_sensor_dimmer",
+          "gaps": [
+            "missing_power_scale_setting"
+          ]
+        },
+        {
+          "id": "climate_sensor_presence",
+          "gaps": [
+            "missing_power_scale_setting"
+          ]
+        },
+        {
+          "id": "contact_sensor_dimmer",
+          "gaps": [
+            "missing_power_scale_setting"
+          ]
+        },
+        {
+          "id": "device_air_purifier_din",
+          "gaps": [
+            "missing_power_scale_setting"
+          ]
+        }
+      ]
+    },
+    "light": {
+      "count": 53,
+      "withGaps": 6,
+      "mfrEntries": 1521,
+      "flowTriggers": 260,
+      "gapSamples": [
+        {
+          "id": "bulb_rgbw_universal",
+          "gaps": [
+            "missing_power_scale_setting"
+          ]
+        },
+        {
+          "id": "dimmer_air_purifier",
+          "gaps": [
+            "missing_power_scale_setting"
+          ]
+        },
+        {
+          "id": "dimmer_bulb_dimmable",
+          "gaps": [
+            "missing_power_scale_setting"
+          ]
+        },
+        {
+          "id": "dimmer_dual_channel",
+          "gaps": [
+            "empty_mfr"
+          ]
+        },
+        {
+          "id": "dimmer_wall_water",
+          "gaps": [
+            "missing_power_scale_setting"
+          ]
+        },
+        {
+          "id": "rgb_bulb_E27",
+          "gaps": [
+            "empty_mfr"
+          ]
+        }
+      ]
+    },
+    "curtain": {
+      "count": 9,
+      "withGaps": 1,
+      "mfrEntries": 758,
+      "flowTriggers": 45,
+      "gapSamples": [
+        {
+          "id": "air_purifier_curtain",
+          "gaps": [
+            "empty_mfr"
+          ]
+        }
+      ]
+    },
+    "thermostat": {
+      "count": 31,
+      "withGaps": 1,
+      "mfrEntries": 1600,
+      "flowTriggers": 178,
+      "gapSamples": [
+        {
+          "id": "hybrid_heater_thermostat",
+          "gaps": [
+            "missing_power_scale_setting"
+          ]
+        }
+      ]
+    },
+    "meter": {
+      "count": 3,
+      "withGaps": 3,
+      "mfrEntries": 14,
+      "flowTriggers": 30,
+      "gapSamples": [
+        {
+          "id": "device_din_rail",
+          "gaps": [
+            "missing_power_scale_setting"
+          ]
+        },
+        {
+          "id": "device_din_rail_meter",
+          "gaps": [
+            "missing_power_scale_setting"
+          ]
+        },
+        {
+          "id": "smart_rcbo",
+          "gaps": [
+            "empty_mfr",
+            "missing_power_scale_setting"
+          ]
+        }
+      ]
+    },
+    "fan": {
+      "count": 6,
+      "withGaps": 0,
+      "mfrEntries": 88,
+      "flowTriggers": 20,
+      "gapSamples": []
+    },
+    "lock": {
+      "count": 5,
+      "withGaps": 0,
+      "mfrEntries": 70,
+      "flowTriggers": 27,
+      "gapSamples": []
+    },
+    "siren": {
+      "count": 6,
+      "withGaps": 0,
+      "mfrEntries": 137,
+      "flowTriggers": 30,
+      "gapSamples": []
+    },
+    "ir": {
+      "count": 1,
+      "withGaps": 0,
+      "mfrEntries": 128,
+      "flowTriggers": 6,
+      "gapSamples": []
+    },
+    "wifi": {
+      "count": 6,
+      "withGaps": 0,
+      "mfrEntries": 0,
+      "flowTriggers": 16,
+      "gapSamples": []
+    },
+    "garagedoor": {
+      "count": 2,
+      "withGaps": 0,
+      "mfrEntries": 72,
+      "flowTriggers": 3,
+      "gapSamples": []
+    },
+    "heater": {
+      "count": 2,
+      "withGaps": 2,
+      "mfrEntries": 10,
+      "flowTriggers": 12,
+      "gapSamples": [
+        {
+          "id": "smart_heater",
+          "gaps": [
+            "missing_power_scale_setting"
+          ]
+        },
+        {
+          "id": "smart_heater_controller",
+          "gaps": [
+            "missing_power_scale_setting"
+          ]
+        }
+      ]
+    },
+    "windowcoverings": {
+      "count": 1,
+      "withGaps": 0,
+      "mfrEntries": 2,
+      "flowTriggers": 6,
+      "gapSamples": []
+    },
+    "other": {
+      "count": 13,
+      "withGaps": 3,
+      "mfrEntries": 918,
+      "flowTriggers": 89,
+      "gapSamples": [
+        {
+          "id": "device_generic_diy_universal",
+          "gaps": [
+            "missing_power_scale_setting"
+          ]
+        },
+        {
+          "id": "device_generic_tuya",
+          "gaps": [
+            "missing_power_scale_setting"
+          ]
+        },
+        {
+          "id": "universal_zigbee",
+          "gaps": [
+            "missing_power_scale_setting"
+          ]
+        }
+      ]
+    }
+  },
+  "totals": {
+    "drivers": 431,
+    "withGaps": 86,
+    "mfrEntries": 16190,
+    "flowTriggers": 3587
+  },
+  "applyResults": [
+    {
+      "phase": "flow-fleet-enrich",
+      "ok": true,
+      "exitCode": 0,
+      "tail": "_wireless_3\\\",\\n      \\\"triggers\\\": 21\\n    },\\n    {\\n      \\\"driverId\\\": \\\"button_wireless_switch\\\",\\n      \\\"triggers\\\": 20\\n    },\\n    {\\n      \\\"driverId\\\": \\\"handheld_remote_4_buttons\\\",\\n      \\\"triggers\\\": 20\\n    },\\n    {\\n      \\\"driverId\\\": \\\"remote_button_emergency_sos\\\",\\n      \\\"triggers\\\": 20\\n    },\\n    {\\n      \\\"driverId\\\": \\\"remote_button_wireless\\\",\\n      \\\"triggers\\\": 20\\n    }\\n  ]\\n}\"\n    }\n  ],\n  \"topChanges\": [\n    {\n      \"driver\": \"smart_knob\",\n      \"orphans\": 0,\n      \"triggers\": [\n        \"smart_knob_brightness_changed\"\n      ],\n      \"actions\": []\n    }\n  ]\n}"
+    },
+    {
+      "phase": "button-flow-harvest",
+      "ok": true,
+      "exitCode": 0,
+      "tail": "ess_4\",\n      \"triggers\": 28\n    },\n    {\n      \"driverId\": \"button_wireless_4_ts0041\",\n      \"triggers\": 25\n    },\n    {\n      \"driverId\": \"remote_button_wireless_handheld\",\n      \"triggers\": 25\n    },\n    {\n      \"driverId\": \"button_wireless_3\",\n      \"triggers\": 21\n    },\n    {\n      \"driverId\": \"button_wireless_switch\",\n      \"triggers\": 20\n    },\n    {\n      \"driverId\": \"handheld_remote_4_buttons\",\n      \"triggers\": 20\n    },\n    {\n      \"driverId\": \"remote_button_emergency_sos\",\n      \"triggers\": 20\n    },\n    {\n      \"driverId\": \"remote_button_wireless\",\n      \"triggers\": 20\n    }\n  ]\n}"
+    },
+    {
+      "phase": "case-variants",
+      "ok": true,
+      "exitCode": 0,
+      "tail": "═══════════════════════════════════════════════\n  Ensure Homey case variants (P99)\n  root: C:\\Users\\Dell\\Documents\\homey\\master\n  mode: APPLY\n═══════════════════════════════════════════════\nDrivers needing variants: 0\nVariants to add: 0\n═══════════════════════════════════════════════"
+    },
+    {
+      "phase": "settings",
+      "ok": true,
+      "exitCode": 0,
+      "tail": "enrich-driver-settings-intelligent: 0 driver(s) to update (apply=true)"
+    },
+    {
+      "phase": "infer-enrich",
+      "ok": true,
+      "exitCode": 0,
+      "tail": "_tz3000_26fmupbb + TS0601 → sensor_contact_zigbee (95)\n  · _tz3000_2mbfxlzr + TS0601 → sensor_contact_zigbee (95)\n  · _tz3000_2mbfxlzr + AY-101Z → sensor_contact_zigbee (95)\n  · _tz3000_402jjyro + TS0601 → sensor_contact_zigbee (95)\n  · _tz3000_996rpfy6 + TS0601 → sensor_contact_zigbee (95)\n  · _tz3000_996rpfy6 + AY-101Z → sensor_contact_zigbee (95)\n  · _tz3000_bpkijo14 + TS0601 → sensor_contact_zigbee (95)\n  · _tz3000_n2egfsli + TS0601 → sensor_contact_water (95)\nReport: C:\\Users\\Dell\\Documents\\homey\\master\\.github\\state\\infer-enrich-report.json\n═══════════════════════════════════════════════"
+    },
+    {
+      "phase": "harden-unknown",
+      "ok": true,
+      "exitCode": 0,
+      "tail": "=== harden-unknown-zigbee (P2366) ===\nMode: APPLY\nCompose changes: 0\nSacred-keep adds: 0\n  ✓ case-variants\n  ✓ sync-appjson-zigbee\n  ✓ p2138-gate\nReport: C:\\Users\\Dell\\Documents\\homey\\master\\reports\\unknown-zigbee-harden-latest.json"
+    },
+    {
+      "phase": "curtain-couples",
+      "ok": true,
+      "exitCode": 0,
+      "tail": "erdsman]\n  + _TZE204_zxkwaztm (ADCBZI01) [live-z2m-crawl]\n  + _TZE284_3mzb0sdz (cover) [live-z2m-crawl]\n  + _TZE284_6hrnp30w (ZM16B) [live-z2m-crawl]\n  + _TZE284_ajuasrmx (PIMS3028) [live-z2m-crawl]\n  + _TZE284_ozf4e02o (PIMS3028) [live-z2m-crawl]\n  + _TZE284_r3szw0xr (TS0601_cover_11) [z2m_herdsman]\n  + _TZE284_rlytpmij (FWJZCEH18A001) [live-z2m-crawl]\n[apply-curtain-couples] strip curtain_motor: 2 rows (tilt/module/shutter/forbidden)\n  → curtain_module_2_gang: _TZ3000_j1xl73iw\n  → curtain_module_2_gang: _TZ3000_l6iqph4f\n[apply-curtain-couples] APPLIED +25 mfrs, -2 stripped, curtain total=573"
+    },
+    {
+      "phase": "harden-wifi-local",
+      "ok": true,
+      "exitCode": 0,
+      "tail": "=== harden-wifi-local (P2367) ===\n  ✓ wifi-local-first-gate\n  ✓ wifi-local-first-resolver\n  ✓ p2367-wifi-local-harden\n  ✓ p2407-community-hints-check\n  ✓ p2407-wifi-community-hints\n  ✓ p2408-wifi-discovery-keys\n  ✓ p2409-wifi-pairing-auth\n  ✓ p2410-advertising-discovery\n  ✓ p2411-max-discovery-pairing\nReport: C:\\Users\\Dell\\Documents\\homey\\master\\reports\\wifi-local-harden-latest.json"
+    }
+  ]
+}

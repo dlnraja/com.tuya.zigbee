@@ -3,8 +3,8 @@
     {
       "id": "soil_sensor_ec_conductivity_above",
       "title": {
-        "en": "Conductivity (EC) !{{is|is not}} above",
-        "fr": "Conductivité (EC) !{{est|n'est pas}} au-dessus de"
+        "en": "Conductivity EC !{{is|is not}} above",
+        "fr": "Conductivité EC !{{est|n'est pas}} au-dessus de"
       },
       "args": [
         {
@@ -19,8 +19,8 @@
         }
       ],
       "titleFormatted": {
-        "en": "Conductivity (EC) !{{is|is not}} above [[threshold]]",
-        "fr": "Conductivité (EC) !{{est|n'est pas}} au-dessus de [[threshold]]"
+        "en": "Conductivity EC !{{is|is not}} above [[threshold]]",
+        "fr": "Conductivité EC !{{est|n'est pas}} au-dessus de [[threshold]]"
       }
     },
     {

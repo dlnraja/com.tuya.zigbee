@@ -14,7 +14,7 @@
     {
       "name": "device",
       "type": "device",
-      "filter": ""
+      "filter": "driver_id=*"
     }
   ],
   "tokens": [

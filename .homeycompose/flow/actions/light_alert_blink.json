@@ -1,10 +1,10 @@
 {
   "id": "light_alert_blink",
   "title": {
-    "en": "Blink light (alert)",
-    "fr": "Faire clignoter la lumière (alerte)",
-    "nl": "Lamp laten knipperen (alarm)",
-    "de": "Licht blinken lassen (Alarm)"
+    "en": "Blink light alert",
+    "fr": "Faire clignoter la lumière alerte",
+    "nl": "Lamp laten knipperen alarm",
+    "de": "Licht blinken lassen Alarm"
   },
   "hint": {
     "en": "Blinks a light for the given duration — uses ZCL Identify when available, otherwise on/off pulses with state restore",
