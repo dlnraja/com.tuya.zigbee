@@ -2,7 +2,7 @@
 
 Silent only. Soft hypotheses from SSOT — **never invent pid**. No forum POST (T157628).
 
-Elapsed: **54ms** / budget 45000ms
+Elapsed: **11ms** / budget 45000ms
 
 Missing-PID hints: **0** · Hypotheses: **6** · NEED_INTERVIEW: **2** · Applied: **0**
 
