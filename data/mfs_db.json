@@ -367988,5 +367988,14 @@
       "ZG-301Z",
       "ZG-302Z1"
     ]
+  },
+  "_TZE284_fodv6bkr": {
+    "driverId": "curtain_motor",
+    "source": "community:Eduard_Martirosyan#2228",
+    "modelIds": [
+      "TS0601"
+    ],
+    "pid": "TS0601",
+    "modelIdsCount": 1
   }
 }

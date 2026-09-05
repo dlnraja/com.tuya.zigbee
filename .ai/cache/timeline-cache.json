@@ -1,8 +1,2566 @@
 {
   "version": "1.0.0",
-  "generatedAt": "2026-09-01T05:16:30.414Z",
+  "generatedAt": "2026-09-04T22:41:23.678Z",
   "stale": false,
   "commits": [
+    {
+      "hash": "0c101b24f07403eca493b569a2d6ec2e9bbe3f07",
+      "date": "2026-09-04 22:34:55 +0000",
+      "author": "github-actions[bot]",
+      "message": "🤖 auto-fix-all: automated fixes [skip ci]",
+      "classification": "other",
+      "issues": {
+        "issues": [],
+        "forumPosts": [],
+        "prs": []
+      },
+      "type": "bot"
+    },
+    {
+      "hash": "0090182a52607eac92de161d0d5aa2d75d0f6f23",
+      "date": "2026-09-05 00:32:51 +0200",
+      "author": "Dylan Rajasekaram",
+      "message": "feat(P2418): compensate incomplete reports + enrich forum/l99/recurrent crons",
+      "classification": "feature",
+      "issues": {
+        "issues": [],
+        "forumPosts": [],
+        "prs": []
+      },
+      "type": "human"
+    },
+    {
+      "hash": "f4ba088ec6bdffbceaa59a41c426009195199f78",
+      "date": "2026-09-04 21:05:33 +0000",
+      "author": "github-actions[bot]",
+      "message": "chore(intel): L99 inbox intelligence report [skip ci]",
+      "classification": "other",
+      "issues": {
+        "issues": [],
+        "forumPosts": [],
+        "prs": []
+      },
+      "type": "bot"
+    },
+    {
+      "hash": "a309767141e8545cf944587bf9af3422deca6f41",
+      "date": "2026-09-04 20:45:42 +0000",
+      "author": "github-actions[bot]",
+      "message": "🤖 auto-fix-all: automated fixes [skip ci]",
+      "classification": "other",
+      "issues": {
+        "issues": [],
+        "forumPosts": [],
+        "prs": []
+      },
+      "type": "bot"
+    },
+    {
+      "hash": "a0309af44f162a89034ce74f42a75828a87cbad9",
+      "date": "2026-09-04 17:52:06 +0000",
+      "author": "github-actions[bot]",
+      "message": "chore(intel): L99 inbox intelligence report [skip ci]",
+      "classification": "other",
+      "issues": {
+        "issues": [],
+        "forumPosts": [],
+        "prs": []
+      },
+      "type": "bot"
+    },
+    {
+      "hash": "e17250a11e323f888d4c8c82f543149e3d5d2e49",
+      "date": "2026-09-04 16:19:08 +0000",
+      "author": "github-actions[bot]",
+      "message": "🤖 auto-fix-all: automated fixes [skip ci]",
+      "classification": "other",
+      "issues": {
+        "issues": [],
+        "forumPosts": [],
+        "prs": []
+      },
+      "type": "bot"
+    },
+    {
+      "hash": "8650e0ce25baafd9c0a2c4834d629aa25308c929",
+      "date": "2026-09-04 14:41:13 +0000",
+      "author": "github-actions[bot]",
+      "message": "v9.0.814: 431 drivers, 3877 FPs [skip ci]",
+      "classification": "release",
+      "issues": {
+        "issues": [],
+        "forumPosts": [],
+        "prs": []
+      },
+      "type": "bot"
+    },
+    {
+      "hash": "2649f7770ec2e4ff5606c3e03c8bef0c7958768b",
+      "date": "2026-09-04 14:36:33 +0000",
+      "author": "github-actions[bot]",
+      "message": "chore(intel): L99 inbox intelligence report [skip ci]",
+      "classification": "other",
+      "issues": {
+        "issues": [],
+        "forumPosts": [],
+        "prs": []
+      },
+      "type": "bot"
+    },
+    {
+      "hash": "3cb2db9f0e72f1b13f113748a23f8f0c8dacfbab",
+      "date": "2026-09-04 14:22:26 +0000",
+      "author": "github-actions[bot]",
+      "message": "🤖 auto-fix-all: automated fixes [skip ci]",
+      "classification": "other",
+      "issues": {
+        "issues": [],
+        "forumPosts": [],
+        "prs": []
+      },
+      "type": "bot"
+    },
+    {
+      "hash": "1c566e3f61877d2649db413e5dcddf0f7e5f47a6",
+      "date": "2026-09-04 16:19:43 +0200",
+      "author": "Dylan Rajasekaram",
+      "message": "fix(P2417): Homey diag dashboard Athom panel + clear Validate FP collisions",
+      "classification": "bugfix",
+      "issues": {
+        "issues": [],
+        "forumPosts": [],
+        "prs": []
+      },
+      "type": "human"
+    },
+    {
+      "hash": "c19d0bba75cade36ea6630ea0ef7ae3e77da58fe",
+      "date": "2026-09-04 11:12:34 +0000",
+      "author": "github-actions[bot]",
+      "message": "🤖 auto-fix-all: automated fixes [skip ci]",
+      "classification": "other",
+      "issues": {
+        "issues": [],
+        "forumPosts": [],
+        "prs": []
+      },
+      "type": "bot"
+    },
+    {
+      "hash": "535f6808640d277b5c4a3baa9e163d9bdba95ad6",
+      "date": "2026-09-04 09:45:17 +0000",
+      "author": "github-actions[bot]",
+      "message": "chore(resilience): inventory + critical-first audit [skip ci]",
+      "classification": "other",
+      "issues": {
+        "issues": [],
+        "forumPosts": [],
+        "prs": []
+      },
+      "type": "bot"
+    },
+    {
+      "hash": "cd7121c4c3de73264c2b8cff10438849456daa48",
+      "date": "2026-09-04 09:38:00 +0000",
+      "author": "github-actions[bot]",
+      "message": "📥 community inbox digest 2026-09-04 [skip ci]",
+      "classification": "other",
+      "issues": {
+        "issues": [],
+        "forumPosts": [],
+        "prs": []
+      },
+      "type": "bot"
+    },
+    {
+      "hash": "856583002027f3d479b94262df255e88ffa80ce2",
+      "date": "2026-09-04 09:12:42 +0000",
+      "author": "github-actions[bot]",
+      "message": "market(P2232): max-source intake + apply-safe couples v9.0.812 [skip ci]",
+      "classification": "release",
+      "issues": {
+        "issues": [],
+        "forumPosts": [],
+        "prs": []
+      },
+      "type": "bot"
+    },
+    {
+      "hash": "0685faba8d12a8fe2e934acac6b21a39c67a3b3b",
+      "date": "2026-09-04 07:29:26 +0000",
+      "author": "github-actions[bot]",
+      "message": "chore(intel): L99 inbox intelligence report [skip ci]",
+      "classification": "other",
+      "issues": {
+        "issues": [],
+        "forumPosts": [],
+        "prs": []
+      },
+      "type": "bot"
+    },
+    {
+      "hash": "8ad5bfed2eb5082d03d32b583bbd18453be64ab0",
+      "date": "2026-09-04 04:24:34 +0000",
+      "author": "github-actions[bot]",
+      "message": "🤖 auto-fix-all: automated fixes [skip ci]",
+      "classification": "other",
+      "issues": {
+        "issues": [],
+        "forumPosts": [],
+        "prs": []
+      },
+      "type": "bot"
+    },
+    {
+      "hash": "ad6c8c69e785f4a45d8f8d3c190741876b1ccd72",
+      "date": "2026-09-04 00:27:11 +0000",
+      "author": "github-actions[bot]",
+      "message": "chore(intel): L99 inbox intelligence report [skip ci]",
+      "classification": "other",
+      "issues": {
+        "issues": [],
+        "forumPosts": [],
+        "prs": []
+      },
+      "type": "bot"
+    },
+    {
+      "hash": "2dd05bf44a55a41930025fc344da680dfa4faa82",
+      "date": "2026-09-03 21:23:19 +0000",
+      "author": "github-actions[bot]",
+      "message": "chore(intel): L99 inbox intelligence report [skip ci]",
+      "classification": "other",
+      "issues": {
+        "issues": [],
+        "forumPosts": [],
+        "prs": []
+      },
+      "type": "bot"
+    },
+    {
+      "hash": "0b11928c8f34fd121def9f97178e5de76ab8739a",
+      "date": "2026-09-03 20:59:54 +0000",
+      "author": "github-actions[bot]",
+      "message": "🤖 auto-fix-all: automated fixes [skip ci]",
+      "classification": "other",
+      "issues": {
+        "issues": [],
+        "forumPosts": [],
+        "prs": []
+      },
+      "type": "bot"
+    },
+    {
+      "hash": "4ad8153fa3ed832ed5eac3f226723e40ecfefdc4",
+      "date": "2026-09-03 18:09:28 +0000",
+      "author": "github-actions[bot]",
+      "message": "chore(intel): L99 inbox intelligence report [skip ci]",
+      "classification": "other",
+      "issues": {
+        "issues": [],
+        "forumPosts": [],
+        "prs": []
+      },
+      "type": "bot"
+    },
+    {
+      "hash": "3caa54f8d12e07d0a863712ce54b8bb8dcf5c4bf",
+      "date": "2026-09-03 16:23:26 +0000",
+      "author": "github-actions[bot]",
+      "message": "🤖 auto-fix-all: automated fixes [skip ci]",
+      "classification": "other",
+      "issues": {
+        "issues": [],
+        "forumPosts": [],
+        "prs": []
+      },
+      "type": "bot"
+    },
+    {
+      "hash": "84e740ab48c8adbbe3fa504370c74d121e2caeb1",
+      "date": "2026-09-03 14:47:19 +0000",
+      "author": "github-actions[bot]",
+      "message": "chore(intel): L99 inbox intelligence report [skip ci]",
+      "classification": "other",
+      "issues": {
+        "issues": [],
+        "forumPosts": [],
+        "prs": []
+      },
+      "type": "bot"
+    },
+    {
+      "hash": "36243810389ff922c10ccda7db88da8552e61895",
+      "date": "2026-09-03 12:30:01 +0000",
+      "author": "github-actions[bot]",
+      "message": "v9.0.813: 431 drivers, 3875 FPs [skip ci]",
+      "classification": "release",
+      "issues": {
+        "issues": [],
+        "forumPosts": [],
+        "prs": []
+      },
+      "type": "bot"
+    },
+    {
+      "hash": "4d420918991fbcf4d59edfa4c52666180716abb9",
+      "date": "2026-09-03 12:11:52 +0000",
+      "author": "github-actions[bot]",
+      "message": "🤖 auto-fix-all: automated fixes [skip ci]",
+      "classification": "other",
+      "issues": {
+        "issues": [],
+        "forumPosts": [],
+        "prs": []
+      },
+      "type": "bot"
+    },
+    {
+      "hash": "2a007e68c984c8d2f22fc12a2d5059801e7fb60d",
+      "date": "2026-09-03 14:08:51 +0200",
+      "author": "Dylan Rajasekaram",
+      "message": "fix(P2416): CI timer gate, Athom P139 soft-expect, diag dashboard soft shell",
+      "classification": "bugfix",
+      "issues": {
+        "issues": [],
+        "forumPosts": [],
+        "prs": []
+      },
+      "type": "human"
+    },
+    {
+      "hash": "21cd4c6a0ac3ece00539a376f6265797c8717082",
+      "date": "2026-09-03 11:09:40 +0000",
+      "author": "github-actions[bot]",
+      "message": "🤖 auto-fix-all: automated fixes [skip ci]",
+      "classification": "other",
+      "issues": {
+        "issues": [],
+        "forumPosts": [],
+        "prs": []
+      },
+      "type": "bot"
+    },
+    {
+      "hash": "f2fa2bac893a5eac56b965483162691a60e15416",
+      "date": "2026-09-03 11:06:59 +0000",
+      "author": "github-actions[bot]",
+      "message": "v9.0.811: 431 drivers, 3875 FPs [skip ci]",
+      "classification": "release",
+      "issues": {
+        "issues": [],
+        "forumPosts": [],
+        "prs": []
+      },
+      "type": "bot"
+    },
+    {
+      "hash": "ee8a459371d944610606a703f34acd734e50c26f",
+      "date": "2026-09-03 10:45:38 +0000",
+      "author": "github-actions[bot]",
+      "message": "v9.0.810: 431 drivers, 3874 FPs [skip ci]",
+      "classification": "release",
+      "issues": {
+        "issues": [],
+        "forumPosts": [],
+        "prs": []
+      },
+      "type": "bot"
+    },
+    {
+      "hash": "8e3d2772ea58fe5a7851ae50c768aa1fcba27b62",
+      "date": "2026-09-03 10:44:22 +0000",
+      "author": "github-actions[bot]",
+      "message": "🤖 auto-fix-all: automated fixes [skip ci]",
+      "classification": "other",
+      "issues": {
+        "issues": [],
+        "forumPosts": [],
+        "prs": []
+      },
+      "type": "bot"
+    },
+    {
+      "hash": "5b0a89b92209cd5fae528eb7bbbfd02533d93cb8",
+      "date": "2026-09-03 12:41:58 +0200",
+      "author": "Dylan Rajasekaram",
+      "message": "fix(P2415): PIR/multi-cap enrich — ZG-204ZV presence lock + soil ZS-301Z",
+      "classification": "bugfix",
+      "issues": {
+        "issues": [],
+        "forumPosts": [],
+        "prs": []
+      },
+      "type": "human"
+    },
+    {
+      "hash": "973b02403477cb8de129789ba3fcf5d78026fafc",
+      "date": "2026-09-03 10:27:26 +0000",
+      "author": "github-actions[bot]",
+      "message": "🤖 auto-fix-all: automated fixes [skip ci]",
+      "classification": "other",
+      "issues": {
+        "issues": [],
+        "forumPosts": [],
+        "prs": []
+      },
+      "type": "bot"
+    },
+    {
+      "hash": "c9e73840397f37a723464bfa60274222b5aa988c",
+      "date": "2026-09-03 12:25:15 +0200",
+      "author": "Dylan Rajasekaram",
+      "message": "chore: sync manifests to 9.0.809 after Auto-Publish + Homey timer fix",
+      "classification": "chore",
+      "issues": {
+        "issues": [],
+        "forumPosts": [],
+        "prs": []
+      },
+      "type": "automated"
+    },
+    {
+      "hash": "a348a6be17fed74e5f2fdc783d32de641ecba91a",
+      "date": "2026-09-03 12:23:35 +0200",
+      "author": "Dylan Rajasekaram",
+      "message": "fix(P2412): use Homey timer for Moes dual-TX gap (TITAN bare setTimeout)",
+      "classification": "bugfix",
+      "issues": {
+        "issues": [],
+        "forumPosts": [],
+        "prs": []
+      },
+      "type": "human"
+    },
+    {
+      "hash": "ef26beba027ffd5e98c9039e7021d4168fc6325e",
+      "date": "2026-09-03 10:22:19 +0000",
+      "author": "github-actions[bot]",
+      "message": "v9.0.809: 431 drivers, 3874 FPs [skip ci]",
+      "classification": "release",
+      "issues": {
+        "issues": [],
+        "forumPosts": [],
+        "prs": []
+      },
+      "type": "bot"
+    },
+    {
+      "hash": "1a0f5ece3ec192f5070b8d57134cfc118c06aeae",
+      "date": "2026-09-03 10:17:42 +0000",
+      "author": "github-actions[bot]",
+      "message": "🤖 auto-fix-all: automated fixes [skip ci]",
+      "classification": "other",
+      "issues": {
+        "issues": [],
+        "forumPosts": [],
+        "prs": []
+      },
+      "type": "bot"
+    },
+    {
+      "hash": "e73938f3d10d6cf39a5dd8c9e4c61075471e3c7f",
+      "date": "2026-09-03 12:14:53 +0200",
+      "author": "Dylan Rajasekaram",
+      "message": "fix(P2412-P2414): Moes dual-TX, presence DP2, SafeCapability + WiFi local-first",
+      "classification": "bugfix",
+      "issues": {
+        "issues": [],
+        "forumPosts": [],
+        "prs": []
+      },
+      "type": "human"
+    },
+    {
+      "hash": "6ed3861b5b8d1eacca2829c8e3a43f9e3cd1c059",
+      "date": "2026-09-03 09:54:44 +0000",
+      "author": "github-actions[bot]",
+      "message": "chore(resilience): inventory + critical-first audit [skip ci]",
+      "classification": "other",
+      "issues": {
+        "issues": [],
+        "forumPosts": [],
+        "prs": []
+      },
+      "type": "bot"
+    },
+    {
+      "hash": "770ced6d36e2257a93bf2335526a473c59a317ed",
+      "date": "2026-09-03 09:48:00 +0000",
+      "author": "github-actions[bot]",
+      "message": "📥 community inbox digest 2026-09-03 [skip ci]",
+      "classification": "other",
+      "issues": {
+        "issues": [],
+        "forumPosts": [],
+        "prs": []
+      },
+      "type": "bot"
+    },
+    {
+      "hash": "6bc56b5ee40f4e797ff44aabdc9f8afd6d89d28d",
+      "date": "2026-09-03 09:20:43 +0000",
+      "author": "github-actions[bot]",
+      "message": "market(P2232): max-source intake + apply-safe couples v9.0.807 [skip ci]",
+      "classification": "release",
+      "issues": {
+        "issues": [],
+        "forumPosts": [],
+        "prs": []
+      },
+      "type": "bot"
+    },
+    {
+      "hash": "b3c81bc09eb26899d84cc2ffef0b5ea7b8f70d43",
+      "date": "2026-09-03 08:58:13 +0000",
+      "author": "github-actions[bot]",
+      "message": "blakadder(P53): refresh cross-ref data v9.0.807 [skip ci]",
+      "classification": "release",
+      "issues": {
+        "issues": [],
+        "forumPosts": [],
+        "prs": []
+      },
+      "type": "bot"
+    },
+    {
+      "hash": "e2be35bdf70570a7404470584f7837f6168bd9f0",
+      "date": "2026-09-03 07:26:37 +0000",
+      "author": "github-actions[bot]",
+      "message": "chore(intel): L99 inbox intelligence report [skip ci]",
+      "classification": "other",
+      "issues": {
+        "issues": [],
+        "forumPosts": [],
+        "prs": []
+      },
+      "type": "bot"
+    },
+    {
+      "hash": "e46cfc1f933b4b99b764a06cae32cd1ada54258a",
+      "date": "2026-09-03 04:17:21 +0000",
+      "author": "github-actions[bot]",
+      "message": "🤖 auto-fix-all: automated fixes [skip ci]",
+      "classification": "other",
+      "issues": {
+        "issues": [],
+        "forumPosts": [],
+        "prs": []
+      },
+      "type": "bot"
+    },
+    {
+      "hash": "1bf22aa0b729435703a42485baef01b545a72198",
+      "date": "2026-09-03 00:43:15 +0000",
+      "author": "github-actions[bot]",
+      "message": "chore(intel): L99 inbox intelligence report [skip ci]",
+      "classification": "other",
+      "issues": {
+        "issues": [],
+        "forumPosts": [],
+        "prs": []
+      },
+      "type": "bot"
+    },
+    {
+      "hash": "62c093a95b1166aba5a53554722fb6b50cdc0eb2",
+      "date": "2026-09-02 23:57:33 +0000",
+      "author": "github-actions[bot]",
+      "message": "v9.0.807: 431 drivers, 3872 FPs [skip ci]",
+      "classification": "release",
+      "issues": {
+        "issues": [],
+        "forumPosts": [],
+        "prs": []
+      },
+      "type": "bot"
+    },
+    {
+      "hash": "448fc2cb31c11df6672f8252fd2a8e7b8ed388bd",
+      "date": "2026-09-02 23:51:53 +0000",
+      "author": "github-actions[bot]",
+      "message": "🤖 auto-fix-all: automated fixes [skip ci]",
+      "classification": "other",
+      "issues": {
+        "issues": [],
+        "forumPosts": [],
+        "prs": []
+      },
+      "type": "bot"
+    },
+    {
+      "hash": "01fa47d98d6b5f7ea56dd549c03b883c5d9a149a",
+      "date": "2026-09-02 23:50:47 +0000",
+      "author": "github-actions[bot]",
+      "message": "v9.0.806: 431 drivers, 3872 FPs [skip ci]",
+      "classification": "release",
+      "issues": {
+        "issues": [],
+        "forumPosts": [],
+        "prs": []
+      },
+      "type": "bot"
+    },
+    {
+      "hash": "3169c32dcb7c97e18fd5b7b65b08381580955881",
+      "date": "2026-09-03 01:41:55 +0200",
+      "author": "Dylan Rajasekaram",
+      "message": "chore: mfs_db align after P2406 + sync app.json to 9.0.806",
+      "classification": "chore",
+      "issues": {
+        "issues": [],
+        "forumPosts": [],
+        "prs": []
+      },
+      "type": "automated"
+    },
+    {
+      "hash": "8736bb8b8be8e41ed965e0a133077e7a62525f96",
+      "date": "2026-09-02 23:44:16 +0000",
+      "author": "github-actions[bot]",
+      "message": "v9.0.806: 431 drivers, 3870 FPs [skip ci]",
+      "classification": "release",
+      "issues": {
+        "issues": [],
+        "forumPosts": [],
+        "prs": []
+      },
+      "type": "bot"
+    },
+    {
+      "hash": "a75c177efd31f5cd8e932acffc380fffa48c3ef4",
+      "date": "2026-09-02 23:40:59 +0000",
+      "author": "github-actions[bot]",
+      "message": "🤖 auto-fix-all: automated fixes [skip ci]",
+      "classification": "other",
+      "issues": {
+        "issues": [],
+        "forumPosts": [],
+        "prs": []
+      },
+      "type": "bot"
+    },
+    {
+      "hash": "f8bd1abfa068fa88fd73709dc77ab56c4a6980be",
+      "date": "2026-09-03 01:33:56 +0200",
+      "author": "Dylan Rajasekaram",
+      "message": "fix(P2406): clear build-failed mfs drift + ja5osu5g collision",
+      "classification": "bugfix",
+      "issues": {
+        "issues": [],
+        "forumPosts": [],
+        "prs": []
+      },
+      "type": "human"
+    },
+    {
+      "hash": "b93d9505ca80760a011996ae0d12454156093512",
+      "date": "2026-09-02 23:26:37 +0000",
+      "author": "github-actions[bot]",
+      "message": "🤖 auto-fix-all: automated fixes [skip ci]",
+      "classification": "other",
+      "issues": {
+        "issues": [],
+        "forumPosts": [],
+        "prs": []
+      },
+      "type": "bot"
+    },
+    {
+      "hash": "ba533c182f7e765f580be7c1f6e6d8b850264424",
+      "date": "2026-09-03 01:24:10 +0200",
+      "author": "Dylan Rajasekaram",
+      "message": "chore: sync app.json to 9.0.805 after P2405 rebase",
+      "classification": "chore",
+      "issues": {
+        "issues": [],
+        "forumPosts": [],
+        "prs": []
+      },
+      "type": "automated"
+    },
+    {
+      "hash": "757cb0f6098a1184d61efe05e47d395a23ef5592",
+      "date": "2026-09-03 01:16:02 +0200",
+      "author": "Dylan Rajasekaram",
+      "message": "fix(P2405): L99 closed-issues pass — soil/dimmer/curtain dual-homes",
+      "classification": "bugfix",
+      "issues": {
+        "issues": [],
+        "forumPosts": [],
+        "prs": []
+      },
+      "type": "human"
+    },
+    {
+      "hash": "38c4940ab732d82716b62fd87280c9a3e176defe",
+      "date": "2026-09-02 23:10:58 +0000",
+      "author": "github-actions[bot]",
+      "message": "v9.0.805: 431 drivers, 3872 FPs [skip ci]",
+      "classification": "release",
+      "issues": {
+        "issues": [],
+        "forumPosts": [],
+        "prs": []
+      },
+      "type": "bot"
+    },
+    {
+      "hash": "441e3833d789619d975fdadd905243cd5aff2a26",
+      "date": "2026-09-02 23:06:36 +0000",
+      "author": "github-actions[bot]",
+      "message": "🤖 auto-fix-all: automated fixes [skip ci]",
+      "classification": "other",
+      "issues": {
+        "issues": [],
+        "forumPosts": [],
+        "prs": []
+      },
+      "type": "bot"
+    },
+    {
+      "hash": "e07e7c33e6ec03bdcf98823e724e3742beafc9a3",
+      "date": "2026-09-03 01:01:50 +0200",
+      "author": "Dylan Rajasekaram",
+      "message": "docs(P2404): lock Discussion #100 couple; forbid doorwindowsensor_3",
+      "classification": "other",
+      "issues": {
+        "issues": [
+          100
+        ],
+        "forumPosts": [],
+        "prs": []
+      },
+      "type": "human"
+    },
+    {
+      "hash": "33e8a5ce2963003d264e84086e2b0c1533de8013",
+      "date": "2026-09-02 22:56:53 +0000",
+      "author": "github-actions[bot]",
+      "message": "v9.0.804: 431 drivers, 3872 FPs [skip ci]",
+      "classification": "release",
+      "issues": {
+        "issues": [],
+        "forumPosts": [],
+        "prs": []
+      },
+      "type": "bot"
+    },
+    {
+      "hash": "cf8d5e68e039c304ba712d4622d6fa46ceed03e9",
+      "date": "2026-09-02 22:49:42 +0000",
+      "author": "github-actions[bot]",
+      "message": "v9.0.804: 431 drivers, 3872 FPs [skip ci]",
+      "classification": "release",
+      "issues": {
+        "issues": [],
+        "forumPosts": [],
+        "prs": []
+      },
+      "type": "bot"
+    },
+    {
+      "hash": "172c84ed928e37f1ed548b06ba40ad0788fbe276",
+      "date": "2026-09-02 22:47:58 +0000",
+      "author": "github-actions[bot]",
+      "message": "🤖 auto-fix-all: automated fixes [skip ci]",
+      "classification": "other",
+      "issues": {
+        "issues": [],
+        "forumPosts": [],
+        "prs": []
+      },
+      "type": "bot"
+    },
+    {
+      "hash": "4e699672c4a89c1e8726327ecfb4a9a011513066",
+      "date": "2026-09-03 00:46:11 +0200",
+      "author": "Dylan Rajasekaram",
+      "message": "fix(P2403): stop DIY tuya_dp_* P2308 spam + soft cover cluster-miss",
+      "classification": "bugfix",
+      "issues": {
+        "issues": [],
+        "forumPosts": [],
+        "prs": []
+      },
+      "type": "human"
+    },
+    {
+      "hash": "6832d6184ca4db08b7071ccbb7de50836ef8667c",
+      "date": "2026-09-02 22:31:04 +0000",
+      "author": "github-actions[bot]",
+      "message": "🤖 auto-fix-all: automated fixes [skip ci]",
+      "classification": "other",
+      "issues": {
+        "issues": [],
+        "forumPosts": [],
+        "prs": []
+      },
+      "type": "bot"
+    },
+    {
+      "hash": "e0d0c309deed75bebd2f754a44985b83c2d62470",
+      "date": "2026-09-03 00:28:41 +0200",
+      "author": "Dylan Rajasekaram",
+      "message": "chore: sync app.json to 9.0.803 after P2402 rebase",
+      "classification": "chore",
+      "issues": {
+        "issues": [],
+        "forumPosts": [],
+        "prs": []
+      },
+      "type": "automated"
+    },
+    {
+      "hash": "6aebd78302c6c185e45b14a5988429ebbbe17dac",
+      "date": "2026-09-03 00:22:19 +0200",
+      "author": "Dylan Rajasekaram",
+      "message": "fix(P2402): lock _TZ3000_uw3dadam+TS0202 motion from Homey Gmail unmatched FP",
+      "classification": "bugfix",
+      "issues": {
+        "issues": [],
+        "forumPosts": [],
+        "prs": []
+      },
+      "type": "human"
+    },
+    {
+      "hash": "eb790c0c8348d18f0b6e4b7ffafd57ccba4e61a5",
+      "date": "2026-09-02 22:18:43 +0000",
+      "author": "github-actions[bot]",
+      "message": "v9.0.803: 431 drivers, 3871 FPs [skip ci]",
+      "classification": "release",
+      "issues": {
+        "issues": [],
+        "forumPosts": [],
+        "prs": []
+      },
+      "type": "bot"
+    },
+    {
+      "hash": "56a80d8b6ce231f2246ef28679063e2b537fc49a",
+      "date": "2026-09-02 22:00:38 +0000",
+      "author": "github-actions[bot]",
+      "message": "🤖 auto-fix-all: automated fixes [skip ci]",
+      "classification": "other",
+      "issues": {
+        "issues": [],
+        "forumPosts": [],
+        "prs": []
+      },
+      "type": "bot"
+    },
+    {
+      "hash": "4413bf9a0845011a27d189f106a2a292ee94d106",
+      "date": "2026-09-02 23:58:04 +0200",
+      "author": "Dylan Rajasekaram",
+      "message": "chore: sync app.json to 9.0.802 after P2401 rebase",
+      "classification": "chore",
+      "issues": {
+        "issues": [],
+        "forumPosts": [],
+        "prs": []
+      },
+      "type": "automated"
+    },
+    {
+      "hash": "836d84333990aff724940e3bf3db4c7b605f9fd9",
+      "date": "2026-09-02 23:55:00 +0200",
+      "author": "Dylan Rajasekaram",
+      "message": "fix(P2401): VicHY radar flood calm when driver.id lags mid-update",
+      "classification": "bugfix",
+      "issues": {
+        "issues": [],
+        "forumPosts": [],
+        "prs": []
+      },
+      "type": "human"
+    },
+    {
+      "hash": "5458066694073722d81d1862b101af94ff42faea",
+      "date": "2026-09-02 21:42:13 +0000",
+      "author": "github-actions[bot]",
+      "message": "v9.0.802: 431 drivers, 3871 FPs [skip ci]",
+      "classification": "release",
+      "issues": {
+        "issues": [],
+        "forumPosts": [],
+        "prs": []
+      },
+      "type": "bot"
+    },
+    {
+      "hash": "2eec28940f5117890ccb57f34cdcd139ccc56080",
+      "date": "2026-09-02 21:37:33 +0000",
+      "author": "github-actions[bot]",
+      "message": "🤖 auto-fix-all: automated fixes [skip ci]",
+      "classification": "other",
+      "issues": {
+        "issues": [],
+        "forumPosts": [],
+        "prs": []
+      },
+      "type": "bot"
+    },
+    {
+      "hash": "9f67b5fd4eb903972bd52c80162ac02e1568ff24",
+      "date": "2026-09-02 23:34:25 +0200",
+      "author": "Dylan Rajasekaram",
+      "message": "fix(P2400): P2284 shed chain-forward + mfs align + Stable dispatch dedupe",
+      "classification": "bugfix",
+      "issues": {
+        "issues": [],
+        "forumPosts": [],
+        "prs": []
+      },
+      "type": "human"
+    },
+    {
+      "hash": "6c194f35f4a1cae5b11071acc30f726f0cb81991",
+      "date": "2026-09-02 21:20:29 +0000",
+      "author": "github-actions[bot]",
+      "message": "v9.0.801: 431 drivers, 3871 FPs [skip ci]",
+      "classification": "release",
+      "issues": {
+        "issues": [],
+        "forumPosts": [],
+        "prs": []
+      },
+      "type": "bot"
+    },
+    {
+      "hash": "3d075b6fb6673aa7442748c14100679b2afc8dda",
+      "date": "2026-09-02 21:19:34 +0000",
+      "author": "github-actions[bot]",
+      "message": "chore(intel): L99 inbox intelligence report [skip ci]",
+      "classification": "other",
+      "issues": {
+        "issues": [],
+        "forumPosts": [],
+        "prs": []
+      },
+      "type": "bot"
+    },
+    {
+      "hash": "2013cc7d99741ce666e7077a6ff847d95196e1a3",
+      "date": "2026-09-02 21:16:09 +0000",
+      "author": "github-actions[bot]",
+      "message": "🤖 auto-fix-all: automated fixes [skip ci]",
+      "classification": "other",
+      "issues": {
+        "issues": [],
+        "forumPosts": [],
+        "prs": []
+      },
+      "type": "bot"
+    },
+    {
+      "hash": "1c47ded0fea17582615db6cb00687fda9d479d90",
+      "date": "2026-09-02 23:16:00 +0200",
+      "author": "dlnraja",
+      "message": "ai: monthly audit 2026-09 [skip ci] (#534)",
+      "classification": "other",
+      "issues": {
+        "issues": [
+          534
+        ],
+        "forumPosts": [],
+        "prs": []
+      },
+      "type": "bot"
+    },
+    {
+      "hash": "bdd2fb10f05585af64d39258d034cbe1fbdd38e2",
+      "date": "2026-09-02 23:13:04 +0200",
+      "author": "Dylan Rajasekaram",
+      "message": "fix(P2399): Moes curtain idle-stop guard 25s + arm before TX",
+      "classification": "bugfix",
+      "issues": {
+        "issues": [],
+        "forumPosts": [],
+        "prs": []
+      },
+      "type": "human"
+    },
+    {
+      "hash": "6cf3936bf3d02bdb3b31058e09334d8a37796f30",
+      "date": "2026-09-02 21:01:45 +0000",
+      "author": "github-actions[bot]",
+      "message": "🤖 auto-fix-all: automated fixes [skip ci]",
+      "classification": "other",
+      "issues": {
+        "issues": [],
+        "forumPosts": [],
+        "prs": []
+      },
+      "type": "bot"
+    },
+    {
+      "hash": "493b650a4679f919faf50b2a4740d9765d79a5cf",
+      "date": "2026-09-02 20:50:22 +0000",
+      "author": "github-actions[bot]",
+      "message": "v9.0.799: 431 drivers, 3871 FPs [skip ci]",
+      "classification": "release",
+      "issues": {
+        "issues": [],
+        "forumPosts": [],
+        "prs": []
+      },
+      "type": "bot"
+    },
+    {
+      "hash": "0be7e07719aa6bceb01230006dc6628c2c3d11f4",
+      "date": "2026-09-02 20:29:34 +0000",
+      "author": "github-actions[bot]",
+      "message": "v9.0.799: 431 drivers, 3871 FPs [skip ci]",
+      "classification": "release",
+      "issues": {
+        "issues": [],
+        "forumPosts": [],
+        "prs": []
+      },
+      "type": "bot"
+    },
+    {
+      "hash": "e3330f7085c9e8ef96cd17b69ff2309cac5f9a2d",
+      "date": "2026-09-02 20:21:21 +0000",
+      "author": "github-actions[bot]",
+      "message": "🤖 auto-fix-all: automated fixes [skip ci]",
+      "classification": "other",
+      "issues": {
+        "issues": [],
+        "forumPosts": [],
+        "prs": []
+      },
+      "type": "bot"
+    },
+    {
+      "hash": "5870493a3461fba7eb73b4c94b1c96c768452e1b",
+      "date": "2026-09-02 22:18:48 +0200",
+      "author": "Dylan Rajasekaram",
+      "message": "fix(ci): prune 3 NEW fingerprint collisions for Unified CI",
+      "classification": "bugfix",
+      "issues": {
+        "issues": [],
+        "forumPosts": [],
+        "prs": []
+      },
+      "type": "human"
+    },
+    {
+      "hash": "6c0c4b083b99fe9db1f3e804df9f27ada0c4a17f",
+      "date": "2026-09-02 20:11:19 +0000",
+      "author": "github-actions[bot]",
+      "message": "🤖 auto-fix-all: automated fixes [skip ci]",
+      "classification": "other",
+      "issues": {
+        "issues": [],
+        "forumPosts": [],
+        "prs": []
+      },
+      "type": "bot"
+    },
+    {
+      "hash": "b616b77b10abd90e182bf10e66ee19a16e1e4aa0",
+      "date": "2026-09-02 22:06:32 +0200",
+      "author": "Dylan Rajasekaram",
+      "message": "fix(P2398): flow condition fallback + radar enum2; L99 diag/forum re-enrich",
+      "classification": "bugfix",
+      "issues": {
+        "issues": [],
+        "forumPosts": [],
+        "prs": []
+      },
+      "type": "human"
+    },
+    {
+      "hash": "db248c23637576a3b4d42ef72e76c7d7703ba8f6",
+      "date": "2026-09-02 19:47:14 +0000",
+      "author": "github-actions[bot]",
+      "message": "v9.0.797: 431 drivers, 3871 FPs [skip ci]",
+      "classification": "release",
+      "issues": {
+        "issues": [],
+        "forumPosts": [],
+        "prs": []
+      },
+      "type": "bot"
+    },
+    {
+      "hash": "ad9e67e98a13af926aa934da1aab2f49675a2cba",
+      "date": "2026-09-02 19:40:07 +0000",
+      "author": "github-actions[bot]",
+      "message": "v9.0.797: 431 drivers, 3871 FPs [skip ci]",
+      "classification": "release",
+      "issues": {
+        "issues": [],
+        "forumPosts": [],
+        "prs": []
+      },
+      "type": "bot"
+    },
+    {
+      "hash": "22c63c9deb966301a86041ca787a736809c798a2",
+      "date": "2026-09-02 19:29:16 +0000",
+      "author": "github-actions[bot]",
+      "message": "🤖 auto-fix-all: automated fixes [skip ci]",
+      "classification": "other",
+      "issues": {
+        "issues": [],
+        "forumPosts": [],
+        "prs": []
+      },
+      "type": "bot"
+    },
+    {
+      "hash": "1624e55148a738511b67b579581bb4792210d77d",
+      "date": "2026-09-02 21:25:57 +0200",
+      "author": "Dylan Rajasekaram",
+      "message": "fix(P2397): drop bare setTimeout fallback in gang UI pulse (TITAN CI)",
+      "classification": "bugfix",
+      "issues": {
+        "issues": [],
+        "forumPosts": [],
+        "prs": []
+      },
+      "type": "human"
+    },
+    {
+      "hash": "06ff8ce2fc12e38035bbf7e0e167a5a9f5222d85",
+      "date": "2026-09-02 19:21:57 +0000",
+      "author": "github-actions[bot]",
+      "message": "🤖 auto-fix-all: automated fixes [skip ci]",
+      "classification": "other",
+      "issues": {
+        "issues": [],
+        "forumPosts": [],
+        "prs": []
+      },
+      "type": "bot"
+    },
+    {
+      "hash": "397fd733b7c0cc31ceb348bb3d4f8b906598b75e",
+      "date": "2026-09-02 21:16:18 +0200",
+      "author": "Dylan Rajasekaram",
+      "message": "fix(P2395-P2397): button Lx + Homey UI bidirectional + Lerlink fan DP2/11",
+      "classification": "bugfix",
+      "issues": {
+        "issues": [],
+        "forumPosts": [],
+        "prs": []
+      },
+      "type": "human"
+    },
+    {
+      "hash": "245f66a0a850646a47d2ec4e5bb0d2bc58120ecb",
+      "date": "2026-09-02 18:08:23 +0000",
+      "author": "github-actions[bot]",
+      "message": "chore(intel): L99 inbox intelligence report [skip ci]",
+      "classification": "other",
+      "issues": {
+        "issues": [],
+        "forumPosts": [],
+        "prs": []
+      },
+      "type": "bot"
+    },
+    {
+      "hash": "6fc1cbb33efa8a806d38e843dad3eeaedd740e18",
+      "date": "2026-09-02 16:44:05 +0000",
+      "author": "github-actions[bot]",
+      "message": "v9.0.795: 431 drivers, 3871 FPs [skip ci]",
+      "classification": "release",
+      "issues": {
+        "issues": [],
+        "forumPosts": [],
+        "prs": []
+      },
+      "type": "bot"
+    },
+    {
+      "hash": "ddf182f8c67b0ad6cb052287a730230e88f23e98",
+      "date": "2026-09-02 16:33:08 +0000",
+      "author": "github-actions[bot]",
+      "message": "🤖 auto-fix-all: automated fixes [skip ci]",
+      "classification": "other",
+      "issues": {
+        "issues": [],
+        "forumPosts": [],
+        "prs": []
+      },
+      "type": "bot"
+    },
+    {
+      "hash": "196bc5eac8206f803c4b7daae6b1ce75d2813ec4",
+      "date": "2026-09-02 16:25:59 +0000",
+      "author": "github-actions[bot]",
+      "message": "🤖 auto-fix-all: automated fixes [skip ci]",
+      "classification": "other",
+      "issues": {
+        "issues": [],
+        "forumPosts": [],
+        "prs": []
+      },
+      "type": "bot"
+    },
+    {
+      "hash": "fb72da653c4c620b0df0c5d1fa83c2763ddaeb99",
+      "date": "2026-09-02 18:23:06 +0200",
+      "author": "Dylan Rajasekaram",
+      "message": "docs(P2394): note GitHub humanize in WORKFLOW_GUIDELINES",
+      "classification": "other",
+      "issues": {
+        "issues": [],
+        "forumPosts": [],
+        "prs": []
+      },
+      "type": "human"
+    },
+    {
+      "hash": "e8d36d09c9774a3c4b94043b635a7223689629a2",
+      "date": "2026-09-02 18:20:40 +0200",
+      "author": "Dylan Rajasekaram",
+      "message": "fix(P2394): humanize GitHub replies — stop AI-slop auto comments",
+      "classification": "bugfix",
+      "issues": {
+        "issues": [],
+        "forumPosts": [],
+        "prs": []
+      },
+      "type": "human"
+    },
+    {
+      "hash": "a0bca0b930be12421c054e448bd5b52450d28689",
+      "date": "2026-09-02 16:09:41 +0000",
+      "author": "github-actions[bot]",
+      "message": "v9.0.794: 431 drivers, 3871 FPs [skip ci]",
+      "classification": "release",
+      "issues": {
+        "issues": [],
+        "forumPosts": [],
+        "prs": []
+      },
+      "type": "bot"
+    },
+    {
+      "hash": "90a7238b384e8b941215f2b34d5c383706d3f45a",
+      "date": "2026-09-02 16:05:14 +0000",
+      "author": "github-actions[bot]",
+      "message": "🤖 auto-fix-all: automated fixes [skip ci]",
+      "classification": "other",
+      "issues": {
+        "issues": [],
+        "forumPosts": [],
+        "prs": []
+      },
+      "type": "bot"
+    },
+    {
+      "hash": "3e60220176b5bb96b4d0802671b48296a0704962",
+      "date": "2026-09-02 18:02:56 +0200",
+      "author": "Dylan Rajasekaram",
+      "message": "fix(P2393 BOTH): Salvagr #533 Moes cover — skip Homey UI idle cancel after open/close",
+      "classification": "bugfix",
+      "issues": {
+        "issues": [
+          533
+        ],
+        "forumPosts": [],
+        "prs": []
+      },
+      "type": "human"
+    },
+    {
+      "hash": "0c17a9998df0780d612b26a15af2eeedd482508d",
+      "date": "2026-09-02 15:51:37 +0000",
+      "author": "github-actions[bot]",
+      "message": "v9.0.793: 431 drivers, 3871 FPs [skip ci]",
+      "classification": "release",
+      "issues": {
+        "issues": [],
+        "forumPosts": [],
+        "prs": []
+      },
+      "type": "bot"
+    },
+    {
+      "hash": "ae04ef8daf634af45e0e71d1090a46ccf29a69e3",
+      "date": "2026-09-02 15:33:23 +0000",
+      "author": "github-actions[bot]",
+      "message": "🤖 auto-fix-all: automated fixes [skip ci]",
+      "classification": "other",
+      "issues": {
+        "issues": [],
+        "forumPosts": [],
+        "prs": []
+      },
+      "type": "bot"
+    },
+    {
+      "hash": "a0b1b8191ae396f04af4fc70442c8446832acb2e",
+      "date": "2026-09-02 17:30:38 +0200",
+      "author": "Dylan Rajasekaram",
+      "message": "fix(P2391+P2392 BOTH): fleet firmware quirk compensate (DIY caps, mains battery)",
+      "classification": "bugfix",
+      "issues": {
+        "issues": [],
+        "forumPosts": [],
+        "prs": []
+      },
+      "type": "human"
+    },
+    {
+      "hash": "82b4a4e00023e9100dbbc15fd4338ed0e5b08b07",
+      "date": "2026-09-02 14:49:18 +0000",
+      "author": "github-actions[bot]",
+      "message": "v9.0.792: 431 drivers, 3871 FPs [skip ci]",
+      "classification": "release",
+      "issues": {
+        "issues": [],
+        "forumPosts": [],
+        "prs": []
+      },
+      "type": "bot"
+    },
+    {
+      "hash": "8881cbdd74dd7f98b37df2c93259b93e48e8b9e7",
+      "date": "2026-09-02 14:44:58 +0000",
+      "author": "github-actions[bot]",
+      "message": "🤖 auto-fix-all: automated fixes [skip ci]",
+      "classification": "other",
+      "issues": {
+        "issues": [],
+        "forumPosts": [],
+        "prs": []
+      },
+      "type": "bot"
+    },
+    {
+      "hash": "3731e6b5d5e2ed60f28e7f713c3f459a55810ce4",
+      "date": "2026-09-02 16:42:56 +0200",
+      "author": "Dylan Rajasekaram",
+      "message": "chore: sync app.json version to 9.0.791",
+      "classification": "chore",
+      "issues": {
+        "issues": [],
+        "forumPosts": [],
+        "prs": []
+      },
+      "type": "automated"
+    },
+    {
+      "hash": "7cff9516ccea4cab7b1544dcf12abe63dae20e57",
+      "date": "2026-09-02 16:39:05 +0200",
+      "author": "Dylan Rajasekaram",
+      "message": "fix(P2387+P2389 BOTH): button wrapHandleFrame + calm presence radar flood alerts",
+      "classification": "bugfix",
+      "issues": {
+        "issues": [],
+        "forumPosts": [],
+        "prs": []
+      },
+      "type": "human"
+    },
+    {
+      "hash": "e80f49bdba1b48d7df3b3b04ec6bb8ef44ebe107",
+      "date": "2026-09-02 13:30:32 +0000",
+      "author": "github-actions[bot]",
+      "message": "v9.0.791: 431 drivers, 3871 FPs [skip ci]",
+      "classification": "release",
+      "issues": {
+        "issues": [],
+        "forumPosts": [],
+        "prs": []
+      },
+      "type": "bot"
+    },
+    {
+      "hash": "fd49e28172b53f653ba766a6460a5f473a5c2ea7",
+      "date": "2026-09-02 13:26:17 +0000",
+      "author": "github-actions[bot]",
+      "message": "🤖 auto-fix-all: automated fixes [skip ci]",
+      "classification": "other",
+      "issues": {
+        "issues": [],
+        "forumPosts": [],
+        "prs": []
+      },
+      "type": "bot"
+    },
+    {
+      "hash": "abcfe6d7a04ab3c5755014d4691b934f36f54830",
+      "date": "2026-09-02 15:17:58 +0200",
+      "author": "Dylan Rajasekaram",
+      "message": "fix(P2386 BOTH): VicHY #2222 — stop presence radar reverting to blind/curtain after updates",
+      "classification": "bugfix",
+      "issues": {
+        "issues": [
+          2222
+        ],
+        "forumPosts": [],
+        "prs": []
+      },
+      "type": "human"
+    },
+    {
+      "hash": "bba0a246eaf2ee99a36241771a966ec3b38d329b",
+      "date": "2026-09-02 12:54:33 +0000",
+      "author": "github-actions[bot]",
+      "message": "v9.0.789: 431 drivers, 3871 FPs [skip ci]",
+      "classification": "release",
+      "issues": {
+        "issues": [],
+        "forumPosts": [],
+        "prs": []
+      },
+      "type": "bot"
+    },
+    {
+      "hash": "0aa765e8538f68435afd66c6f37aa928fbab130c",
+      "date": "2026-09-02 12:49:06 +0000",
+      "author": "github-actions[bot]",
+      "message": "🤖 auto-fix-all: automated fixes [skip ci]",
+      "classification": "other",
+      "issues": {
+        "issues": [],
+        "forumPosts": [],
+        "prs": []
+      },
+      "type": "bot"
+    },
+    {
+      "hash": "0ae6b5765d2c0e9dd0205371d7384880b05822c1",
+      "date": "2026-09-02 14:46:52 +0200",
+      "author": "Dylan Rajasekaram",
+      "message": "fix(P2385 BOTH): stop processing_failed amplifiers + lock Lerlink fan #536",
+      "classification": "bugfix",
+      "issues": {
+        "issues": [
+          536
+        ],
+        "forumPosts": [],
+        "prs": []
+      },
+      "type": "human"
+    },
+    {
+      "hash": "8e0c7073794f6f38d5acffc955d62c1f91a3c938",
+      "date": "2026-09-02 11:28:00 +0000",
+      "author": "github-actions[bot]",
+      "message": "v9.0.786: 431 drivers, 3871 FPs [skip ci]",
+      "classification": "release",
+      "issues": {
+        "issues": [],
+        "forumPosts": [],
+        "prs": []
+      },
+      "type": "bot"
+    },
+    {
+      "hash": "375706d2e98fec83c35a0f02318c58882237b6ef",
+      "date": "2026-09-02 11:25:24 +0000",
+      "author": "github-actions[bot]",
+      "message": "v9.0.787: 431 drivers, 3871 FPs [skip ci]",
+      "classification": "release",
+      "issues": {
+        "issues": [],
+        "forumPosts": [],
+        "prs": []
+      },
+      "type": "bot"
+    },
+    {
+      "hash": "7ef37cafa9ebcfd5de93e884111ec06bd04a3e32",
+      "date": "2026-09-02 11:21:14 +0000",
+      "author": "github-actions[bot]",
+      "message": "🤖 auto-fix-all: automated fixes [skip ci]",
+      "classification": "other",
+      "issues": {
+        "issues": [],
+        "forumPosts": [],
+        "prs": []
+      },
+      "type": "bot"
+    },
+    {
+      "hash": "b01e0297a70173c1f00d9da2c0ef32070e2dcda7",
+      "date": "2026-09-02 13:09:54 +0200",
+      "author": "Dylan Rajasekaram",
+      "message": "fix(P2384 BOTH): Athom socket hang up — longer API waits + force_publish one-shot",
+      "classification": "bugfix",
+      "issues": {
+        "issues": [],
+        "forumPosts": [],
+        "prs": []
+      },
+      "type": "human"
+    },
+    {
+      "hash": "37eb7fd0c1b0ab3eaf99af1cee12e2ba28c00ce8",
+      "date": "2026-09-02 11:13:26 +0000",
+      "author": "github-actions[bot]",
+      "message": "🤖 auto-fix-all: automated fixes [skip ci]",
+      "classification": "other",
+      "issues": {
+        "issues": [],
+        "forumPosts": [],
+        "prs": []
+      },
+      "type": "bot"
+    },
+    {
+      "hash": "09aa3521905ebf8ab4fb4ee5c06a84cd766c070b",
+      "date": "2026-09-02 10:50:16 +0000",
+      "author": "github-actions[bot]",
+      "message": "v9.0.785: 431 drivers, 3871 FPs [skip ci]",
+      "classification": "release",
+      "issues": {
+        "issues": [],
+        "forumPosts": [],
+        "prs": []
+      },
+      "type": "bot"
+    },
+    {
+      "hash": "374606148c1629e982c38331ec263219c454859e",
+      "date": "2026-09-02 10:40:02 +0000",
+      "author": "github-actions[bot]",
+      "message": "auto: batch close/respond state update [skip ci]",
+      "classification": "other",
+      "issues": {
+        "issues": [],
+        "forumPosts": [],
+        "prs": []
+      },
+      "type": "bot"
+    },
+    {
+      "hash": "4a33be9acccc05283d12268e428a8444d32be8d8",
+      "date": "2026-09-02 10:36:20 +0000",
+      "author": "github-actions[bot]",
+      "message": "🤖 auto-fix-all: automated fixes [skip ci]",
+      "classification": "other",
+      "issues": {
+        "issues": [],
+        "forumPosts": [],
+        "prs": []
+      },
+      "type": "bot"
+    },
+    {
+      "hash": "b7c7c3c5600f0990170d7f32cfbd4deaa692debb",
+      "date": "2026-09-02 12:29:55 +0200",
+      "author": "Dylan Rajasekaram",
+      "message": "security(P2383 BOTH): harden workflow gate, verified push, setup-node v5",
+      "classification": "other",
+      "issues": {
+        "issues": [],
+        "forumPosts": [],
+        "prs": []
+      },
+      "type": "human"
+    },
+    {
+      "hash": "c937d5ed2ed63892efd32f3cac67a3021f9e1c49",
+      "date": "2026-09-02 10:10:26 +0000",
+      "author": "github-actions[bot]",
+      "message": "v9.0.784: 431 drivers, 3871 FPs [skip ci]",
+      "classification": "release",
+      "issues": {
+        "issues": [],
+        "forumPosts": [],
+        "prs": []
+      },
+      "type": "bot"
+    },
+    {
+      "hash": "9a95ba73857b3285ecc57fa2ce467c0e01773f91",
+      "date": "2026-09-02 12:02:46 +0200",
+      "author": "Dylan Rajasekaram",
+      "message": "chore: sync app.json version to 9.0.783 [skip ci]",
+      "classification": "chore",
+      "issues": {
+        "issues": [],
+        "forumPosts": [],
+        "prs": []
+      },
+      "type": "bot"
+    },
+    {
+      "hash": "eac3c339a4951a2a6ef6b420ff09e04b19e52cae",
+      "date": "2026-09-02 11:59:47 +0200",
+      "author": "Dylan Rajasekaram",
+      "message": "fix(P2382 BOTH): EF00 dimmer HYBRID skip + lock iadro9bf radar couple",
+      "classification": "bugfix",
+      "issues": {
+        "issues": [],
+        "forumPosts": [],
+        "prs": []
+      },
+      "type": "human"
+    },
+    {
+      "hash": "3190428e48da200c48d852812e50f07ed0832b8b",
+      "date": "2026-09-02 09:44:39 +0000",
+      "author": "github-actions[bot]",
+      "message": "v9.0.783: 431 drivers, 3871 FPs [skip ci]",
+      "classification": "release",
+      "issues": {
+        "issues": [],
+        "forumPosts": [],
+        "prs": []
+      },
+      "type": "bot"
+    },
+    {
+      "hash": "2fdfb41c4f113761b903ca410cca83b4c40ea332",
+      "date": "2026-09-02 09:42:04 +0000",
+      "author": "github-actions[bot]",
+      "message": "chore(resilience): inventory + critical-first audit [skip ci]",
+      "classification": "other",
+      "issues": {
+        "issues": [],
+        "forumPosts": [],
+        "prs": []
+      },
+      "type": "bot"
+    },
+    {
+      "hash": "495612fd6ac784c258f7fe59a7ebe1ba35c3a05e",
+      "date": "2026-09-02 09:36:30 +0000",
+      "author": "github-actions[bot]",
+      "message": "📥 community inbox digest 2026-09-02 [skip ci]",
+      "classification": "other",
+      "issues": {
+        "issues": [],
+        "forumPosts": [],
+        "prs": []
+      },
+      "type": "bot"
+    },
+    {
+      "hash": "b7ef9d963eb2ff94ddc604f981899a8f384041b6",
+      "date": "2026-09-02 09:30:33 +0000",
+      "author": "github-actions[bot]",
+      "message": "🤖 auto-fix-all: automated fixes [skip ci]",
+      "classification": "other",
+      "issues": {
+        "issues": [],
+        "forumPosts": [],
+        "prs": []
+      },
+      "type": "bot"
+    },
+    {
+      "hash": "8862a03a573e361ca6e925b467b0ffb059a61b0b",
+      "date": "2026-09-02 11:26:31 +0200",
+      "author": "Dylan Rajasekaram",
+      "message": "fix(P2381 BOTH): fire driver.compose button flows after app.json dedupe",
+      "classification": "bugfix",
+      "issues": {
+        "issues": [],
+        "forumPosts": [],
+        "prs": []
+      },
+      "type": "human"
+    },
+    {
+      "hash": "be1b822b9f9ecdec70ffbeeb1284e15699b8a840",
+      "date": "2026-09-02 09:19:29 +0000",
+      "author": "github-actions[bot]",
+      "message": "v9.0.782: 431 drivers, 3871 FPs [skip ci]",
+      "classification": "release",
+      "issues": {
+        "issues": [],
+        "forumPosts": [],
+        "prs": []
+      },
+      "type": "bot"
+    },
+    {
+      "hash": "956f084645ef9cbe4b6b9ca4b4fa4bcd24e2e1d3",
+      "date": "2026-09-02 09:12:28 +0000",
+      "author": "github-actions[bot]",
+      "message": "market(P2232): max-source intake + apply-safe couples v9.0.781 [skip ci]",
+      "classification": "release",
+      "issues": {
+        "issues": [],
+        "forumPosts": [],
+        "prs": []
+      },
+      "type": "bot"
+    },
+    {
+      "hash": "0b69bc2de570ade478fdad1870666c87d10ec3da",
+      "date": "2026-09-02 11:02:36 +0200",
+      "author": "Dylan Rajasekaram",
+      "message": "chore: sync app.json version to 9.0.781 [skip ci]",
+      "classification": "chore",
+      "issues": {
+        "issues": [],
+        "forumPosts": [],
+        "prs": []
+      },
+      "type": "bot"
+    },
+    {
+      "hash": "fa31ad857543bbcb3d305dcba2eed90d3925d64d",
+      "date": "2026-09-02 10:57:48 +0200",
+      "author": "Dylan Rajasekaram",
+      "message": "fix(P2380 BOTH): stop false-success cover DP TX when EF00 missing",
+      "classification": "bugfix",
+      "issues": {
+        "issues": [],
+        "forumPosts": [],
+        "prs": []
+      },
+      "type": "human"
+    },
+    {
+      "hash": "5dc20d68c340649c14052f09a6b870826f0a4d60",
+      "date": "2026-09-02 08:49:12 +0000",
+      "author": "github-actions[bot]",
+      "message": "blakadder(P53): refresh cross-ref data v9.0.780 [skip ci]",
+      "classification": "release",
+      "issues": {
+        "issues": [],
+        "forumPosts": [],
+        "prs": []
+      },
+      "type": "bot"
+    },
+    {
+      "hash": "c0503a0e597b6a11ba2c6594069fddff1bb741d8",
+      "date": "2026-09-02 08:33:11 +0000",
+      "author": "github-actions[bot]",
+      "message": "v9.0.781: 431 drivers, 3871 FPs [skip ci]",
+      "classification": "release",
+      "issues": {
+        "issues": [],
+        "forumPosts": [],
+        "prs": []
+      },
+      "type": "bot"
+    },
+    {
+      "hash": "85779099f1a91289463e987a0e1962f684cf621f",
+      "date": "2026-09-02 08:28:23 +0000",
+      "author": "github-actions[bot]",
+      "message": "🤖 auto-fix-all: automated fixes [skip ci]",
+      "classification": "other",
+      "issues": {
+        "issues": [],
+        "forumPosts": [],
+        "prs": []
+      },
+      "type": "bot"
+    },
+    {
+      "hash": "a62b1b875711a19c79d90ad2d0c7c248d915ac77",
+      "date": "2026-09-02 10:26:16 +0200",
+      "author": "Dylan Rajasekaram",
+      "message": "fix(P2379 BOTH): stop DynCap inventing curtain UI on presence radars (VicHY)",
+      "classification": "bugfix",
+      "issues": {
+        "issues": [],
+        "forumPosts": [],
+        "prs": []
+      },
+      "type": "human"
+    },
+    {
+      "hash": "6cc8490a0f148bbb28a980f78d07d36de7dd5d26",
+      "date": "2026-09-02 08:18:23 +0000",
+      "author": "github-actions[bot]",
+      "message": "v9.0.780: 431 drivers, 3871 FPs [skip ci]",
+      "classification": "release",
+      "issues": {
+        "issues": [],
+        "forumPosts": [],
+        "prs": []
+      },
+      "type": "bot"
+    },
+    {
+      "hash": "69ca8e495845ae9f957196e348676df9956596d0",
+      "date": "2026-09-02 08:13:40 +0000",
+      "author": "github-actions[bot]",
+      "message": "🤖 auto-fix-all: automated fixes [skip ci]",
+      "classification": "other",
+      "issues": {
+        "issues": [],
+        "forumPosts": [],
+        "prs": []
+      },
+      "type": "bot"
+    },
+    {
+      "hash": "393afb3978672bd22d9587d9ecacce85562a69c4",
+      "date": "2026-09-02 10:10:59 +0200",
+      "author": "Dylan Rajasekaram",
+      "message": "fix(P2378 BOTH): fire 1gang button flow cards (Peter Smartbutton cfbf687f)",
+      "classification": "bugfix",
+      "issues": {
+        "issues": [],
+        "forumPosts": [],
+        "prs": []
+      },
+      "type": "human"
+    },
+    {
+      "hash": "85676a93943b479507f75a4c601ce366109b81a1",
+      "date": "2026-09-02 07:23:11 +0000",
+      "author": "github-actions[bot]",
+      "message": "chore(intel): L99 inbox intelligence report [skip ci]",
+      "classification": "other",
+      "issues": {
+        "issues": [],
+        "forumPosts": [],
+        "prs": []
+      },
+      "type": "bot"
+    },
+    {
+      "hash": "e9c3b07495420402e70ccdbded4fe4eeeaafe9e8",
+      "date": "2026-09-02 04:23:12 +0000",
+      "author": "github-actions[bot]",
+      "message": "🤖 auto-fix-all: automated fixes [skip ci]",
+      "classification": "other",
+      "issues": {
+        "issues": [],
+        "forumPosts": [],
+        "prs": []
+      },
+      "type": "bot"
+    },
+    {
+      "hash": "3a8d39b7a8535fe8647b3239c73b1770d447a9e0",
+      "date": "2026-09-02 00:35:54 +0000",
+      "author": "github-actions[bot]",
+      "message": "chore(intel): L99 inbox intelligence report [skip ci]",
+      "classification": "other",
+      "issues": {
+        "issues": [],
+        "forumPosts": [],
+        "prs": []
+      },
+      "type": "bot"
+    },
+    {
+      "hash": "4f3eead6aa2de1e1a2fc08873754874664e9512d",
+      "date": "2026-09-01 21:23:52 +0000",
+      "author": "github-actions[bot]",
+      "message": "chore(intel): L99 inbox intelligence report [skip ci]",
+      "classification": "other",
+      "issues": {
+        "issues": [],
+        "forumPosts": [],
+        "prs": []
+      },
+      "type": "bot"
+    },
+    {
+      "hash": "9b91a9342fba06113fc29c2522b66e0c5f1ff844",
+      "date": "2026-09-01 21:01:27 +0000",
+      "author": "github-actions[bot]",
+      "message": "🤖 auto-fix-all: automated fixes [skip ci]",
+      "classification": "other",
+      "issues": {
+        "issues": [],
+        "forumPosts": [],
+        "prs": []
+      },
+      "type": "bot"
+    },
+    {
+      "hash": "5c966dc7dcadda16655f579009d12dd39eb78e0e",
+      "date": "2026-09-01 16:35:34 +0000",
+      "author": "github-actions[bot]",
+      "message": "🤖 auto-fix-all: automated fixes [skip ci]",
+      "classification": "other",
+      "issues": {
+        "issues": [],
+        "forumPosts": [],
+        "prs": []
+      },
+      "type": "bot"
+    },
+    {
+      "hash": "6fb0df779d11a70fc1e613476abc880d518d4f41",
+      "date": "2026-09-01 16:05:09 +0000",
+      "author": "github-actions[bot]",
+      "message": "v9.0.779: 431 drivers, 3871 FPs [skip ci]",
+      "classification": "release",
+      "issues": {
+        "issues": [],
+        "forumPosts": [],
+        "prs": []
+      },
+      "type": "bot"
+    },
+    {
+      "hash": "633bff9198e7b70b348a0948bf6807459a155ab7",
+      "date": "2026-09-01 16:00:44 +0000",
+      "author": "github-actions[bot]",
+      "message": "🤖 auto-fix-all: automated fixes [skip ci]",
+      "classification": "other",
+      "issues": {
+        "issues": [],
+        "forumPosts": [],
+        "prs": []
+      },
+      "type": "bot"
+    },
+    {
+      "hash": "e228c50c9991deab89c51b1ba4b77471d2bd14fe",
+      "date": "2026-09-01 17:58:27 +0200",
+      "author": "Dylan Rajasekaram",
+      "message": "fix(BOTH): lock app.json flow dedupe in all publish pipelines (P2376)",
+      "classification": "bugfix",
+      "issues": {
+        "issues": [],
+        "forumPosts": [],
+        "prs": []
+      },
+      "type": "human"
+    },
+    {
+      "hash": "a454d777cafcbc63a253f9851ce48b73a5f78328",
+      "date": "2026-09-01 15:43:59 +0000",
+      "author": "github-actions[bot]",
+      "message": "v9.0.778: 431 drivers, 3871 FPs [skip ci]",
+      "classification": "release",
+      "issues": {
+        "issues": [],
+        "forumPosts": [],
+        "prs": []
+      },
+      "type": "bot"
+    },
+    {
+      "hash": "6c1cbd5316cbada455b0fe3bc04c1dbda14fda35",
+      "date": "2026-09-01 15:21:10 +0000",
+      "author": "github-actions[bot]",
+      "message": "🤖 auto-fix-all: automated fixes [skip ci]",
+      "classification": "other",
+      "issues": {
+        "issues": [],
+        "forumPosts": [],
+        "prs": []
+      },
+      "type": "bot"
+    },
+    {
+      "hash": "113913a757cc4dee87f61b99a21085ba461fb25c",
+      "date": "2026-09-01 17:17:49 +0200",
+      "author": "Dylan Rajasekaram",
+      "message": "chore: activate GHA cron schedules (P2376 intelligent source diff)",
+      "classification": "chore",
+      "issues": {
+        "issues": [],
+        "forumPosts": [],
+        "prs": []
+      },
+      "type": "automated"
+    },
+    {
+      "hash": "f56d2dbc66843f45b4c54e4d78dff55a93637bf0",
+      "date": "2026-09-01 15:15:31 +0000",
+      "author": "github-actions[bot]",
+      "message": "chore(intel): L99 inbox intelligence report [skip ci]",
+      "classification": "other",
+      "issues": {
+        "issues": [],
+        "forumPosts": [],
+        "prs": []
+      },
+      "type": "bot"
+    },
+    {
+      "hash": "960f7d7b3259d7687ffb4471b5c0d81a65595749",
+      "date": "2026-09-01 15:09:53 +0000",
+      "author": "github-actions[bot]",
+      "message": "v9.0.777: 431 drivers, 3871 FPs [skip ci]",
+      "classification": "release",
+      "issues": {
+        "issues": [],
+        "forumPosts": [],
+        "prs": []
+      },
+      "type": "bot"
+    },
+    {
+      "hash": "b85170e8dc19c04991df303cbc7f8a6a38ee203c",
+      "date": "2026-09-01 15:09:50 +0000",
+      "author": "github-actions[bot]",
+      "message": "🤖 auto-fix-all: automated fixes [skip ci]",
+      "classification": "other",
+      "issues": {
+        "issues": [],
+        "forumPosts": [],
+        "prs": []
+      },
+      "type": "bot"
+    },
+    {
+      "hash": "d1b5df9f1ba219869d6ba41494fb96b32a81cc74",
+      "date": "2026-09-01 17:05:14 +0200",
+      "author": "Dylan Rajasekaram",
+      "message": "fix(P2376): dedupe .homeycompose flow cards that duplicate driver compose",
+      "classification": "bugfix",
+      "issues": {
+        "issues": [],
+        "forumPosts": [],
+        "prs": []
+      },
+      "type": "human"
+    },
+    {
+      "hash": "7c892d230b2175a88136a7d7ac51cbef37078e22",
+      "date": "2026-09-01 14:55:35 +0000",
+      "author": "github-actions[bot]",
+      "message": "🤖 auto-fix-all: automated fixes [skip ci]",
+      "classification": "other",
+      "issues": {
+        "issues": [],
+        "forumPosts": [],
+        "prs": []
+      },
+      "type": "bot"
+    },
+    {
+      "hash": "ff98dec1e3b27384031f3625ea61464448db2ecf",
+      "date": "2026-09-01 16:53:35 +0200",
+      "author": "Dylan Rajasekaram",
+      "message": "fix(P2376): strip driver flow cards from app.json for Athom publish",
+      "classification": "bugfix",
+      "issues": {
+        "issues": [],
+        "forumPosts": [],
+        "prs": []
+      },
+      "type": "human"
+    },
+    {
+      "hash": "3fdefb0fb101205e97d9f5fa1d3b47009e9a632a",
+      "date": "2026-09-01 14:47:24 +0000",
+      "author": "github-actions[bot]",
+      "message": "v9.0.776: 431 drivers, 3871 FPs [skip ci]",
+      "classification": "release",
+      "issues": {
+        "issues": [],
+        "forumPosts": [],
+        "prs": []
+      },
+      "type": "bot"
+    },
+    {
+      "hash": "340cfd96bb431351dd8f5a342c397deb271866de",
+      "date": "2026-09-01 14:33:36 +0000",
+      "author": "github-actions[bot]",
+      "message": "🤖 auto-fix-all: automated fixes [skip ci]",
+      "classification": "other",
+      "issues": {
+        "issues": [],
+        "forumPosts": [],
+        "prs": []
+      },
+      "type": "bot"
+    },
+    {
+      "hash": "08e8e6bd32a2238a896a68038352054e976e13d9",
+      "date": "2026-09-01 16:29:20 +0200",
+      "author": "Dylan Rajasekaram",
+      "message": "feat(P2375/P2376): flow fleet enrich + intelligent source diff cache",
+      "classification": "feature",
+      "issues": {
+        "issues": [],
+        "forumPosts": [],
+        "prs": []
+      },
+      "type": "human"
+    },
+    {
+      "hash": "bdd690076111a1d339ca6f05cc7308a067f9ceb5",
+      "date": "2026-09-01 13:33:32 +0000",
+      "author": "github-actions[bot]",
+      "message": "v9.0.775: 431 drivers, 3871 FPs [skip ci]",
+      "classification": "release",
+      "issues": {
+        "issues": [],
+        "forumPosts": [],
+        "prs": []
+      },
+      "type": "bot"
+    },
+    {
+      "hash": "020f834fd2f435066fbfcfb3b0f591bcf76827cc",
+      "date": "2026-09-01 13:29:13 +0000",
+      "author": "github-actions[bot]",
+      "message": "🤖 auto-fix-all: automated fixes [skip ci]",
+      "classification": "other",
+      "issues": {
+        "issues": [],
+        "forumPosts": [],
+        "prs": []
+      },
+      "type": "bot"
+    },
+    {
+      "hash": "55f677e05738ea85937cea82a600f20cbe22c116",
+      "date": "2026-09-01 15:26:03 +0200",
+      "author": "Dylan Rajasekaram",
+      "message": "fix(P2373): unblock Auto-Publish after soft-fail crash guard",
+      "classification": "bugfix",
+      "issues": {
+        "issues": [],
+        "forumPosts": [],
+        "prs": []
+      },
+      "type": "human"
+    },
+    {
+      "hash": "a89ff85d08f1de797dd1883ed997493e4b2328c6",
+      "date": "2026-09-01 13:13:11 +0000",
+      "author": "github-actions[bot]",
+      "message": "🤖 auto-fix-all: automated fixes [skip ci]",
+      "classification": "other",
+      "issues": {
+        "issues": [],
+        "forumPosts": [],
+        "prs": []
+      },
+      "type": "bot"
+    },
+    {
+      "hash": "79007cb46bccb9302fa6770a98f0afe3821ddd97",
+      "date": "2026-09-01 13:12:43 +0000",
+      "author": "github-actions[bot]",
+      "message": "v9.0.773: 431 drivers, 3871 FPs [skip ci]",
+      "classification": "release",
+      "issues": {
+        "issues": [],
+        "forumPosts": [],
+        "prs": []
+      },
+      "type": "bot"
+    },
+    {
+      "hash": "b7c3578a8533ddfdd3ca9d42c5e295992c3f7cb0",
+      "date": "2026-09-01 15:07:38 +0200",
+      "author": "Dylan Rajasekaram",
+      "message": "fix(P2373): soft-fail Homey class driver IDs that crash serializer",
+      "classification": "bugfix",
+      "issues": {
+        "issues": [],
+        "forumPosts": [],
+        "prs": []
+      },
+      "type": "human"
+    },
+    {
+      "hash": "fc38a96e0374c2891c46a7ccbdf6f3840edcaa08",
+      "date": "2026-09-01 12:58:40 +0000",
+      "author": "github-actions[bot]",
+      "message": "🤖 auto-fix-all: automated fixes [skip ci]",
+      "classification": "other",
+      "issues": {
+        "issues": [],
+        "forumPosts": [],
+        "prs": []
+      },
+      "type": "bot"
+    },
+    {
+      "hash": "8758780294f68cc334fdd8608cc8d2ef59289364",
+      "date": "2026-09-01 12:58:19 +0000",
+      "author": "github-actions[bot]",
+      "message": "v9.0.772: 431 drivers, 3871 FPs [skip ci]",
+      "classification": "release",
+      "issues": {
+        "issues": [],
+        "forumPosts": [],
+        "prs": []
+      },
+      "type": "bot"
+    },
+    {
+      "hash": "8a191c86a9b4766128ec52b807caa468415585f0",
+      "date": "2026-09-01 14:56:28 +0200",
+      "author": "Dylan Rajasekaram",
+      "message": "test(p2372): allow stable without fleet workflow file",
+      "classification": "other",
+      "issues": {
+        "issues": [],
+        "forumPosts": [],
+        "prs": []
+      },
+      "type": "human"
+    },
+    {
+      "hash": "3fa19b8eea125d33846fee74794cc833e134c173",
+      "date": "2026-09-01 12:53:51 +0000",
+      "author": "github-actions[bot]",
+      "message": "🤖 auto-fix-all: automated fixes [skip ci]",
+      "classification": "other",
+      "issues": {
+        "issues": [],
+        "forumPosts": [],
+        "prs": []
+      },
+      "type": "bot"
+    },
+    {
+      "hash": "145fd089c853c7e01a2ead44f6279d44669ede06",
+      "date": "2026-09-01 12:53:31 +0000",
+      "author": "github-actions[bot]",
+      "message": "v9.0.772: 431 drivers, 3871 FPs [skip ci]",
+      "classification": "release",
+      "issues": {
+        "issues": [],
+        "forumPosts": [],
+        "prs": []
+      },
+      "type": "bot"
+    },
+    {
+      "hash": "ae3831f5873ec56722590c624b5d4fe5e560027c",
+      "date": "2026-09-01 14:47:29 +0200",
+      "author": "Dylan Rajasekaram",
+      "message": "feat(enrich): P2372 fleet all-class free-scrape + dual-app BOTH heuristics",
+      "classification": "feature",
+      "issues": {
+        "issues": [],
+        "forumPosts": [],
+        "prs": []
+      },
+      "type": "human"
+    },
+    {
+      "hash": "298016fe54ed9b0aca6e64e1dee7040ee060e943",
+      "date": "2026-09-01 11:37:09 +0000",
+      "author": "github-actions[bot]",
+      "message": "🤖 auto-fix-all: automated fixes [skip ci]",
+      "classification": "other",
+      "issues": {
+        "issues": [],
+        "forumPosts": [],
+        "prs": []
+      },
+      "type": "bot"
+    },
+    {
+      "hash": "abdcc89a72d50cd9fdccfe967f5093f4f6ad56b5",
+      "date": "2026-09-01 11:12:53 +0000",
+      "author": "github-actions[bot]",
+      "message": "auto: batch close/respond state update [skip ci]",
+      "classification": "other",
+      "issues": {
+        "issues": [],
+        "forumPosts": [],
+        "prs": []
+      },
+      "type": "bot"
+    },
+    {
+      "hash": "59eede4dbe3aa3ee6ccbf2dd295d800a71ebd13a",
+      "date": "2026-09-01 10:11:22 +0000",
+      "author": "github-actions[bot]",
+      "message": "chore(resilience): inventory + critical-first audit [skip ci]",
+      "classification": "other",
+      "issues": {
+        "issues": [],
+        "forumPosts": [],
+        "prs": []
+      },
+      "type": "bot"
+    },
+    {
+      "hash": "dfa5c94421d9d956cc0e1037b67d4a79d325e721",
+      "date": "2026-09-01 10:05:15 +0000",
+      "author": "github-actions[bot]",
+      "message": "📥 community inbox digest 2026-09-01 [skip ci]",
+      "classification": "other",
+      "issues": {
+        "issues": [],
+        "forumPosts": [],
+        "prs": []
+      },
+      "type": "bot"
+    },
+    {
+      "hash": "27dc8f9b6c4a891ab6fe411857aa464942ce12a3",
+      "date": "2026-09-01 09:43:51 +0000",
+      "author": "github-actions[bot]",
+      "message": "market(P2232): max-source intake + apply-safe couples v9.0.771 [skip ci]",
+      "classification": "release",
+      "issues": {
+        "issues": [],
+        "forumPosts": [],
+        "prs": []
+      },
+      "type": "bot"
+    },
+    {
+      "hash": "a1e31d7a654e16809fd06d6b3661498eaa5e43ea",
+      "date": "2026-09-01 08:01:55 +0000",
+      "author": "github-actions[bot]",
+      "message": "chore(intel): L99 inbox intelligence report [skip ci]",
+      "classification": "other",
+      "issues": {
+        "issues": [],
+        "forumPosts": [],
+        "prs": []
+      },
+      "type": "bot"
+    },
+    {
+      "hash": "84044142786fde67698282a20a11e6bd0c5f96c3",
+      "date": "2026-09-01 07:04:32 +0000",
+      "author": "github-actions[bot]",
+      "message": "v9.0.772: 431 drivers, 3866 FPs [skip ci]",
+      "classification": "release",
+      "issues": {
+        "issues": [],
+        "forumPosts": [],
+        "prs": []
+      },
+      "type": "bot"
+    },
+    {
+      "hash": "ee6013f28472159ead9bebe24d837feff8cb874c",
+      "date": "2026-09-01 06:58:59 +0000",
+      "author": "github-actions[bot]",
+      "message": "🤖 auto-fix-all: automated fixes [skip ci]",
+      "classification": "other",
+      "issues": {
+        "issues": [],
+        "forumPosts": [],
+        "prs": []
+      },
+      "type": "bot"
+    },
+    {
+      "hash": "b592d19b6550e7984fcf64d236e96290e0e46a88",
+      "date": "2026-09-01 08:57:03 +0200",
+      "author": "Dylan Rajasekaram",
+      "message": "fix(contact): strip 2imwyigp from contact_sensor (P218 anti-bot regression)",
+      "classification": "bugfix",
+      "issues": {
+        "issues": [],
+        "forumPosts": [],
+        "prs": []
+      },
+      "type": "human"
+    },
+    {
+      "hash": "27258416a235d14b1c4617d2e80214cdb224f992",
+      "date": "2026-09-01 06:54:12 +0000",
+      "author": "github-actions[bot]",
+      "message": "v9.0.771: 431 drivers, 3866 FPs [skip ci]",
+      "classification": "release",
+      "issues": {
+        "issues": [],
+        "forumPosts": [],
+        "prs": []
+      },
+      "type": "bot"
+    },
+    {
+      "hash": "f373827d9130d69c0c34c144319ba671d643db2d",
+      "date": "2026-09-01 08:52:05 +0200",
+      "author": "Dylan Rajasekaram",
+      "message": "fix(app.json): restore empty zigbee MFs after harvest flow sync",
+      "classification": "bugfix",
+      "issues": {
+        "issues": [],
+        "forumPosts": [],
+        "prs": []
+      },
+      "type": "human"
+    },
+    {
+      "hash": "ca9279552c5fe7dee29be85b243b193e0252a941",
+      "date": "2026-09-01 08:43:38 +0200",
+      "author": "Dylan Rajasekaram",
+      "message": "feat(harvest): apply P2364-P2368 harvest pipelines and silent enrich",
+      "classification": "feature",
+      "issues": {
+        "issues": [],
+        "forumPosts": [],
+        "prs": []
+      },
+      "type": "human"
+    },
+    {
+      "hash": "d25ab0722d6bcb383e6117869dceeb77ead7810b",
+      "date": "2026-09-01 06:26:27 +0000",
+      "author": "github-actions[bot]",
+      "message": "v9.0.771: 431 drivers, 3866 FPs [skip ci]",
+      "classification": "release",
+      "issues": {
+        "issues": [],
+        "forumPosts": [],
+        "prs": []
+      },
+      "type": "bot"
+    },
+    {
+      "hash": "3e21c39e6f5deaabffe587551944e996d8b5fa8c",
+      "date": "2026-09-01 06:09:23 +0000",
+      "author": "github-actions[bot]",
+      "message": "v9.0.770: 431 drivers, 3866 FPs [skip ci]",
+      "classification": "release",
+      "issues": {
+        "issues": [],
+        "forumPosts": [],
+        "prs": []
+      },
+      "type": "bot"
+    },
+    {
+      "hash": "188f8efec0adb1007d9d541483ef7c3c254488e0",
+      "date": "2026-09-01 06:08:42 +0000",
+      "author": "github-actions[bot]",
+      "message": "🤖 auto-fix-all: automated fixes [skip ci]",
+      "classification": "other",
+      "issues": {
+        "issues": [],
+        "forumPosts": [],
+        "prs": []
+      },
+      "type": "bot"
+    },
+    {
+      "hash": "b8efccda85dadee50fb8d1d62aa9f08cef7a05af",
+      "date": "2026-09-01 08:06:41 +0200",
+      "author": "Dylan Rajasekaram",
+      "message": "fix(ci): baseline hobeian|TY0201 climate vs presence cartesian",
+      "classification": "bugfix",
+      "issues": {
+        "issues": [],
+        "forumPosts": [],
+        "prs": []
+      },
+      "type": "human"
+    },
+    {
+      "hash": "de4e6584f1bbd8d6b23a4b318f469497fea12ab2",
+      "date": "2026-09-01 06:02:03 +0000",
+      "author": "github-actions[bot]",
+      "message": "🤖 auto-fix-all: automated fixes [skip ci]",
+      "classification": "other",
+      "issues": {
+        "issues": [],
+        "forumPosts": [],
+        "prs": []
+      },
+      "type": "bot"
+    },
+    {
+      "hash": "3dcd2c6886e07f71aef2911fa52139fcae087a60",
+      "date": "2026-09-01 06:01:27 +0000",
+      "author": "github-actions[bot]",
+      "message": "v9.0.770: 431 drivers, 3847 FPs [skip ci]",
+      "classification": "release",
+      "issues": {
+        "issues": [],
+        "forumPosts": [],
+        "prs": []
+      },
+      "type": "bot"
+    },
+    {
+      "hash": "0ba12d3b284e015eb812cd8399057ffc243af2f8",
+      "date": "2026-09-01 08:00:11 +0200",
+      "author": "Dylan Rajasekaram",
+      "message": "fix(ci): destructure fwCompose in firmware-updates-gate",
+      "classification": "bugfix",
+      "issues": {
+        "issues": [],
+        "forumPosts": [],
+        "prs": []
+      },
+      "type": "human"
+    },
+    {
+      "hash": "8fdc06b6aa4d36237984644f6f099e4d7cb9fbce",
+      "date": "2026-09-01 05:56:27 +0000",
+      "author": "github-actions[bot]",
+      "message": "🤖 auto-fix-all: automated fixes [skip ci]",
+      "classification": "other",
+      "issues": {
+        "issues": [],
+        "forumPosts": [],
+        "prs": []
+      },
+      "type": "bot"
+    },
+    {
+      "hash": "f9b8fd202a7e26af1a31b7f60411b96763148d31",
+      "date": "2026-09-01 07:52:36 +0200",
+      "author": "Dylan Rajasekaram",
+      "message": "fix(ci): strip 2imwyigp from contact_sensor (P218 anti-bot)",
+      "classification": "bugfix",
+      "issues": {
+        "issues": [],
+        "forumPosts": [],
+        "prs": []
+      },
+      "type": "human"
+    },
+    {
+      "hash": "eb256d0544a1591acf0e4f68d5a30da765585179",
+      "date": "2026-09-01 05:50:01 +0000",
+      "author": "github-actions[bot]",
+      "message": "v9.0.769: 431 drivers, 3847 FPs [skip ci]",
+      "classification": "release",
+      "issues": {
+        "issues": [],
+        "forumPosts": [],
+        "prs": []
+      },
+      "type": "bot"
+    },
+    {
+      "hash": "d0ca74442b449c6fa97fb285f3d6e73c50786baa",
+      "date": "2026-09-01 07:47:01 +0200",
+      "author": "Dylan Rajasekaram",
+      "message": "fix(ci): restore shkxsgis TZE200/204 on wall_switch_4_gang_tuya",
+      "classification": "bugfix",
+      "issues": {
+        "issues": [],
+        "forumPosts": [],
+        "prs": []
+      },
+      "type": "human"
+    },
+    {
+      "hash": "7f709b55cd0680a63d5efc2ad453498348d33c2f",
+      "date": "2026-09-01 05:45:11 +0000",
+      "author": "github-actions[bot]",
+      "message": "v9.0.769: 431 drivers, 3845 FPs [skip ci]",
+      "classification": "release",
+      "issues": {
+        "issues": [],
+        "forumPosts": [],
+        "prs": []
+      },
+      "type": "bot"
+    },
+    {
+      "hash": "0d0cf1550f70dbf3f59f70cb778d393e6107be16",
+      "date": "2026-09-01 07:40:09 +0200",
+      "author": "Dylan Rajasekaram",
+      "message": "fix(ci): prune P2363 curtain FP bleed and restore sacred-couple gates",
+      "classification": "bugfix",
+      "issues": {
+        "issues": [],
+        "forumPosts": [],
+        "prs": []
+      },
+      "type": "human"
+    },
     {
       "hash": "55ead60c709b9b85297a8de2426632e08a6af245",
       "date": "2026-09-01 05:00:36 +0000",
@@ -32847,6 +35405,382 @@
   "regressions": [],
   "issues": [],
   "releases": [
+    {
+      "hash": "8650e0ce25baafd9c0a2c4834d629aa25308c929",
+      "date": "2026-09-04 14:41:13 +0000",
+      "version": "9.0.814",
+      "message": "v9.0.814: 431 drivers, 3877 FPs [skip ci]",
+      "drivers": 431,
+      "fingerprints": 3877
+    },
+    {
+      "hash": "36243810389ff922c10ccda7db88da8552e61895",
+      "date": "2026-09-03 12:30:01 +0000",
+      "version": "9.0.813",
+      "message": "v9.0.813: 431 drivers, 3875 FPs [skip ci]",
+      "drivers": 431,
+      "fingerprints": 3875
+    },
+    {
+      "hash": "f2fa2bac893a5eac56b965483162691a60e15416",
+      "date": "2026-09-03 11:06:59 +0000",
+      "version": "9.0.811",
+      "message": "v9.0.811: 431 drivers, 3875 FPs [skip ci]",
+      "drivers": 431,
+      "fingerprints": 3875
+    },
+    {
+      "hash": "ee8a459371d944610606a703f34acd734e50c26f",
+      "date": "2026-09-03 10:45:38 +0000",
+      "version": "9.0.810",
+      "message": "v9.0.810: 431 drivers, 3874 FPs [skip ci]",
+      "drivers": 431,
+      "fingerprints": 3874
+    },
+    {
+      "hash": "ef26beba027ffd5e98c9039e7021d4168fc6325e",
+      "date": "2026-09-03 10:22:19 +0000",
+      "version": "9.0.809",
+      "message": "v9.0.809: 431 drivers, 3874 FPs [skip ci]",
+      "drivers": 431,
+      "fingerprints": 3874
+    },
+    {
+      "hash": "62c093a95b1166aba5a53554722fb6b50cdc0eb2",
+      "date": "2026-09-02 23:57:33 +0000",
+      "version": "9.0.807",
+      "message": "v9.0.807: 431 drivers, 3872 FPs [skip ci]",
+      "drivers": 431,
+      "fingerprints": 3872
+    },
+    {
+      "hash": "01fa47d98d6b5f7ea56dd549c03b883c5d9a149a",
+      "date": "2026-09-02 23:50:47 +0000",
+      "version": "9.0.806",
+      "message": "v9.0.806: 431 drivers, 3872 FPs [skip ci]",
+      "drivers": 431,
+      "fingerprints": 3872
+    },
+    {
+      "hash": "8736bb8b8be8e41ed965e0a133077e7a62525f96",
+      "date": "2026-09-02 23:44:16 +0000",
+      "version": "9.0.806",
+      "message": "v9.0.806: 431 drivers, 3870 FPs [skip ci]",
+      "drivers": 431,
+      "fingerprints": 3870
+    },
+    {
+      "hash": "38c4940ab732d82716b62fd87280c9a3e176defe",
+      "date": "2026-09-02 23:10:58 +0000",
+      "version": "9.0.805",
+      "message": "v9.0.805: 431 drivers, 3872 FPs [skip ci]",
+      "drivers": 431,
+      "fingerprints": 3872
+    },
+    {
+      "hash": "33e8a5ce2963003d264e84086e2b0c1533de8013",
+      "date": "2026-09-02 22:56:53 +0000",
+      "version": "9.0.804",
+      "message": "v9.0.804: 431 drivers, 3872 FPs [skip ci]",
+      "drivers": 431,
+      "fingerprints": 3872
+    },
+    {
+      "hash": "cf8d5e68e039c304ba712d4622d6fa46ceed03e9",
+      "date": "2026-09-02 22:49:42 +0000",
+      "version": "9.0.804",
+      "message": "v9.0.804: 431 drivers, 3872 FPs [skip ci]",
+      "drivers": 431,
+      "fingerprints": 3872
+    },
+    {
+      "hash": "eb790c0c8348d18f0b6e4b7ffafd57ccba4e61a5",
+      "date": "2026-09-02 22:18:43 +0000",
+      "version": "9.0.803",
+      "message": "v9.0.803: 431 drivers, 3871 FPs [skip ci]",
+      "drivers": 431,
+      "fingerprints": 3871
+    },
+    {
+      "hash": "5458066694073722d81d1862b101af94ff42faea",
+      "date": "2026-09-02 21:42:13 +0000",
+      "version": "9.0.802",
+      "message": "v9.0.802: 431 drivers, 3871 FPs [skip ci]",
+      "drivers": 431,
+      "fingerprints": 3871
+    },
+    {
+      "hash": "6c194f35f4a1cae5b11071acc30f726f0cb81991",
+      "date": "2026-09-02 21:20:29 +0000",
+      "version": "9.0.801",
+      "message": "v9.0.801: 431 drivers, 3871 FPs [skip ci]",
+      "drivers": 431,
+      "fingerprints": 3871
+    },
+    {
+      "hash": "493b650a4679f919faf50b2a4740d9765d79a5cf",
+      "date": "2026-09-02 20:50:22 +0000",
+      "version": "9.0.799",
+      "message": "v9.0.799: 431 drivers, 3871 FPs [skip ci]",
+      "drivers": 431,
+      "fingerprints": 3871
+    },
+    {
+      "hash": "0be7e07719aa6bceb01230006dc6628c2c3d11f4",
+      "date": "2026-09-02 20:29:34 +0000",
+      "version": "9.0.799",
+      "message": "v9.0.799: 431 drivers, 3871 FPs [skip ci]",
+      "drivers": 431,
+      "fingerprints": 3871
+    },
+    {
+      "hash": "db248c23637576a3b4d42ef72e76c7d7703ba8f6",
+      "date": "2026-09-02 19:47:14 +0000",
+      "version": "9.0.797",
+      "message": "v9.0.797: 431 drivers, 3871 FPs [skip ci]",
+      "drivers": 431,
+      "fingerprints": 3871
+    },
+    {
+      "hash": "ad9e67e98a13af926aa934da1aab2f49675a2cba",
+      "date": "2026-09-02 19:40:07 +0000",
+      "version": "9.0.797",
+      "message": "v9.0.797: 431 drivers, 3871 FPs [skip ci]",
+      "drivers": 431,
+      "fingerprints": 3871
+    },
+    {
+      "hash": "6fc1cbb33efa8a806d38e843dad3eeaedd740e18",
+      "date": "2026-09-02 16:44:05 +0000",
+      "version": "9.0.795",
+      "message": "v9.0.795: 431 drivers, 3871 FPs [skip ci]",
+      "drivers": 431,
+      "fingerprints": 3871
+    },
+    {
+      "hash": "a0bca0b930be12421c054e448bd5b52450d28689",
+      "date": "2026-09-02 16:09:41 +0000",
+      "version": "9.0.794",
+      "message": "v9.0.794: 431 drivers, 3871 FPs [skip ci]",
+      "drivers": 431,
+      "fingerprints": 3871
+    },
+    {
+      "hash": "0c17a9998df0780d612b26a15af2eeedd482508d",
+      "date": "2026-09-02 15:51:37 +0000",
+      "version": "9.0.793",
+      "message": "v9.0.793: 431 drivers, 3871 FPs [skip ci]",
+      "drivers": 431,
+      "fingerprints": 3871
+    },
+    {
+      "hash": "82b4a4e00023e9100dbbc15fd4338ed0e5b08b07",
+      "date": "2026-09-02 14:49:18 +0000",
+      "version": "9.0.792",
+      "message": "v9.0.792: 431 drivers, 3871 FPs [skip ci]",
+      "drivers": 431,
+      "fingerprints": 3871
+    },
+    {
+      "hash": "e80f49bdba1b48d7df3b3b04ec6bb8ef44ebe107",
+      "date": "2026-09-02 13:30:32 +0000",
+      "version": "9.0.791",
+      "message": "v9.0.791: 431 drivers, 3871 FPs [skip ci]",
+      "drivers": 431,
+      "fingerprints": 3871
+    },
+    {
+      "hash": "bba0a246eaf2ee99a36241771a966ec3b38d329b",
+      "date": "2026-09-02 12:54:33 +0000",
+      "version": "9.0.789",
+      "message": "v9.0.789: 431 drivers, 3871 FPs [skip ci]",
+      "drivers": 431,
+      "fingerprints": 3871
+    },
+    {
+      "hash": "8e0c7073794f6f38d5acffc955d62c1f91a3c938",
+      "date": "2026-09-02 11:28:00 +0000",
+      "version": "9.0.786",
+      "message": "v9.0.786: 431 drivers, 3871 FPs [skip ci]",
+      "drivers": 431,
+      "fingerprints": 3871
+    },
+    {
+      "hash": "375706d2e98fec83c35a0f02318c58882237b6ef",
+      "date": "2026-09-02 11:25:24 +0000",
+      "version": "9.0.787",
+      "message": "v9.0.787: 431 drivers, 3871 FPs [skip ci]",
+      "drivers": 431,
+      "fingerprints": 3871
+    },
+    {
+      "hash": "09aa3521905ebf8ab4fb4ee5c06a84cd766c070b",
+      "date": "2026-09-02 10:50:16 +0000",
+      "version": "9.0.785",
+      "message": "v9.0.785: 431 drivers, 3871 FPs [skip ci]",
+      "drivers": 431,
+      "fingerprints": 3871
+    },
+    {
+      "hash": "c937d5ed2ed63892efd32f3cac67a3021f9e1c49",
+      "date": "2026-09-02 10:10:26 +0000",
+      "version": "9.0.784",
+      "message": "v9.0.784: 431 drivers, 3871 FPs [skip ci]",
+      "drivers": 431,
+      "fingerprints": 3871
+    },
+    {
+      "hash": "3190428e48da200c48d852812e50f07ed0832b8b",
+      "date": "2026-09-02 09:44:39 +0000",
+      "version": "9.0.783",
+      "message": "v9.0.783: 431 drivers, 3871 FPs [skip ci]",
+      "drivers": 431,
+      "fingerprints": 3871
+    },
+    {
+      "hash": "be1b822b9f9ecdec70ffbeeb1284e15699b8a840",
+      "date": "2026-09-02 09:19:29 +0000",
+      "version": "9.0.782",
+      "message": "v9.0.782: 431 drivers, 3871 FPs [skip ci]",
+      "drivers": 431,
+      "fingerprints": 3871
+    },
+    {
+      "hash": "c0503a0e597b6a11ba2c6594069fddff1bb741d8",
+      "date": "2026-09-02 08:33:11 +0000",
+      "version": "9.0.781",
+      "message": "v9.0.781: 431 drivers, 3871 FPs [skip ci]",
+      "drivers": 431,
+      "fingerprints": 3871
+    },
+    {
+      "hash": "6cc8490a0f148bbb28a980f78d07d36de7dd5d26",
+      "date": "2026-09-02 08:18:23 +0000",
+      "version": "9.0.780",
+      "message": "v9.0.780: 431 drivers, 3871 FPs [skip ci]",
+      "drivers": 431,
+      "fingerprints": 3871
+    },
+    {
+      "hash": "6fb0df779d11a70fc1e613476abc880d518d4f41",
+      "date": "2026-09-01 16:05:09 +0000",
+      "version": "9.0.779",
+      "message": "v9.0.779: 431 drivers, 3871 FPs [skip ci]",
+      "drivers": 431,
+      "fingerprints": 3871
+    },
+    {
+      "hash": "a454d777cafcbc63a253f9851ce48b73a5f78328",
+      "date": "2026-09-01 15:43:59 +0000",
+      "version": "9.0.778",
+      "message": "v9.0.778: 431 drivers, 3871 FPs [skip ci]",
+      "drivers": 431,
+      "fingerprints": 3871
+    },
+    {
+      "hash": "960f7d7b3259d7687ffb4471b5c0d81a65595749",
+      "date": "2026-09-01 15:09:53 +0000",
+      "version": "9.0.777",
+      "message": "v9.0.777: 431 drivers, 3871 FPs [skip ci]",
+      "drivers": 431,
+      "fingerprints": 3871
+    },
+    {
+      "hash": "3fdefb0fb101205e97d9f5fa1d3b47009e9a632a",
+      "date": "2026-09-01 14:47:24 +0000",
+      "version": "9.0.776",
+      "message": "v9.0.776: 431 drivers, 3871 FPs [skip ci]",
+      "drivers": 431,
+      "fingerprints": 3871
+    },
+    {
+      "hash": "bdd690076111a1d339ca6f05cc7308a067f9ceb5",
+      "date": "2026-09-01 13:33:32 +0000",
+      "version": "9.0.775",
+      "message": "v9.0.775: 431 drivers, 3871 FPs [skip ci]",
+      "drivers": 431,
+      "fingerprints": 3871
+    },
+    {
+      "hash": "79007cb46bccb9302fa6770a98f0afe3821ddd97",
+      "date": "2026-09-01 13:12:43 +0000",
+      "version": "9.0.773",
+      "message": "v9.0.773: 431 drivers, 3871 FPs [skip ci]",
+      "drivers": 431,
+      "fingerprints": 3871
+    },
+    {
+      "hash": "8758780294f68cc334fdd8608cc8d2ef59289364",
+      "date": "2026-09-01 12:58:19 +0000",
+      "version": "9.0.772",
+      "message": "v9.0.772: 431 drivers, 3871 FPs [skip ci]",
+      "drivers": 431,
+      "fingerprints": 3871
+    },
+    {
+      "hash": "145fd089c853c7e01a2ead44f6279d44669ede06",
+      "date": "2026-09-01 12:53:31 +0000",
+      "version": "9.0.772",
+      "message": "v9.0.772: 431 drivers, 3871 FPs [skip ci]",
+      "drivers": 431,
+      "fingerprints": 3871
+    },
+    {
+      "hash": "84044142786fde67698282a20a11e6bd0c5f96c3",
+      "date": "2026-09-01 07:04:32 +0000",
+      "version": "9.0.772",
+      "message": "v9.0.772: 431 drivers, 3866 FPs [skip ci]",
+      "drivers": 431,
+      "fingerprints": 3866
+    },
+    {
+      "hash": "27258416a235d14b1c4617d2e80214cdb224f992",
+      "date": "2026-09-01 06:54:12 +0000",
+      "version": "9.0.771",
+      "message": "v9.0.771: 431 drivers, 3866 FPs [skip ci]",
+      "drivers": 431,
+      "fingerprints": 3866
+    },
+    {
+      "hash": "d25ab0722d6bcb383e6117869dceeb77ead7810b",
+      "date": "2026-09-01 06:26:27 +0000",
+      "version": "9.0.771",
+      "message": "v9.0.771: 431 drivers, 3866 FPs [skip ci]",
+      "drivers": 431,
+      "fingerprints": 3866
+    },
+    {
+      "hash": "3e21c39e6f5deaabffe587551944e996d8b5fa8c",
+      "date": "2026-09-01 06:09:23 +0000",
+      "version": "9.0.770",
+      "message": "v9.0.770: 431 drivers, 3866 FPs [skip ci]",
+      "drivers": 431,
+      "fingerprints": 3866
+    },
+    {
+      "hash": "3dcd2c6886e07f71aef2911fa52139fcae087a60",
+      "date": "2026-09-01 06:01:27 +0000",
+      "version": "9.0.770",
+      "message": "v9.0.770: 431 drivers, 3847 FPs [skip ci]",
+      "drivers": 431,
+      "fingerprints": 3847
+    },
+    {
+      "hash": "eb256d0544a1591acf0e4f68d5a30da765585179",
+      "date": "2026-09-01 05:50:01 +0000",
+      "version": "9.0.769",
+      "message": "v9.0.769: 431 drivers, 3847 FPs [skip ci]",
+      "drivers": 431,
+      "fingerprints": 3847
+    },
+    {
+      "hash": "7f709b55cd0680a63d5efc2ad453498348d33c2f",
+      "date": "2026-09-01 05:45:11 +0000",
+      "version": "9.0.769",
+      "message": "v9.0.769: 431 drivers, 3845 FPs [skip ci]",
+      "drivers": 431,
+      "fingerprints": 3845
+    },
     {
       "hash": "00c28068603b1cd6ff98a700bd7fa3af4061b4dc",
       "date": "2026-09-01 04:07:26 +0000",
