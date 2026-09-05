@@ -62,8 +62,7 @@ class MotionSensorRadarDevice extends UnifiedSensorBase {
       || this.getData?.()?.manufacturerName
       || this._manufacturerName
       || '';
-    const pid = this.getSetting('zb_product_id')
-      || this.getSetting('zb_model_id')
+    const pid = this.getSetting('zb_model_id')
       || this.getData?.()?.productId
       || this.getData?.()?.modelId
       || this._modelId
