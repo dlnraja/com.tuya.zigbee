@@ -22,8 +22,8 @@ on:
   # recurrent-orchestrator (03:30 — offline-crash-analyzer + smart-auto-fix).
   # Artifact jamais téléchargé, 0 commit. Reste lançable via workflow_dispatch.
   # schedule:
-  #   # Daily at 05:00 UTC (after activity-monitor at 04:00)
-  #   - cron: '0 5 * * *'
+  #   # Daily at 05:05 UTC (clear of stale.yml at 05:00)
+  #   - cron: '5 5 * * *'
   workflow_dispatch:
     inputs:
       use_ai:
