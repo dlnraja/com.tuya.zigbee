@@ -1,7 +1,7 @@
 # Weekly Sovereign Loop
 
-Generated: 2026-09-04T22:46:46.894Z
-Version: **9.0.815** · Branch: `master`
+Generated: 2026-09-06T11:06:19.784Z
+Version: **9.0.836** · Branch: `master`
 
 ## Quota policy
 - Cursor Automation = thin weekly brain (read report → bounded reliability fixes)
@@ -40,32 +40,37 @@ Version: **9.0.815** · Branch: `master`
 - ❌ `self-improve.yml` — workflow not found
 
 ## Recent workflow runs
-- [success] Secure Notifications (Enhanced) (`master`) — https://github.com/dlnraja/com.tuya.zigbee/actions/runs/33926866162
-- [skipped] Auto-Reopen on Comment (`master`) — https://github.com/dlnraja/com.tuya.zigbee/actions/runs/33926865668
-- [skipped] Auto-Reopen on Comment (`master`) — https://github.com/dlnraja/com.tuya.zigbee/actions/runs/33926865656
-- [cancelled] Secure Notifications (Enhanced) (`master`) — https://github.com/dlnraja/com.tuya.zigbee/actions/runs/33926864522
-- [in_progress] Tuya Deep Diagnostics Recovery (`master`) — https://github.com/dlnraja/com.tuya.zigbee/actions/runs/33926719333
-- [success] e2e-dashboard-test (`master`) — https://github.com/dlnraja/com.tuya.zigbee/actions/runs/33926598466
-- [success] PR Labeler (`ai/monthly-audit-2026-09`) — https://github.com/dlnraja/com.tuya.zigbee/actions/runs/33926578098
-- [failure] 🧠 Fleet Intelligent Enrich (P2372) (`master`) — https://github.com/dlnraja/com.tuya.zigbee/actions/runs/33926382639
-- [success] L99 Inbox Intelligence (P2352) (`master`) — https://github.com/dlnraja/com.tuya.zigbee/actions/runs/33926379566
-- [success] 📡 Market Couples Intake (`master`) — https://github.com/dlnraja/com.tuya.zigbee/actions/runs/33926376990
+- [in_progress] Fetch Homey Diagnostics (`master`) — https://github.com/dlnraja/com.tuya.zigbee/actions/runs/34029271368
+- [in_progress] Weekly Sovereign Loop (`master`) — https://github.com/dlnraja/com.tuya.zigbee/actions/runs/34029099510
+- [success] Autonomous Verification (P37) (`master`) — https://github.com/dlnraja/com.tuya.zigbee/actions/runs/34029030957
+- [skipped] Auto-Reopen on Comment (`master`) — https://github.com/dlnraja/com.tuya.zigbee/actions/runs/34028563300
+- [success] 🤖 Auto-Fix + Publish Pipeline (`master`) — https://github.com/dlnraja/com.tuya.zigbee/actions/runs/34028433642
+- [skipped] Auto Bot Issue Triage (`master`) — https://github.com/dlnraja/com.tuya.zigbee/actions/runs/34027853996
+- [skipped] Bug Report Auto-PR (`master`) — https://github.com/dlnraja/com.tuya.zigbee/actions/runs/34027853991
+- [success] Secure Notifications (Enhanced) (`master`) — https://github.com/dlnraja/com.tuya.zigbee/actions/runs/34027853936
+- [cancelled] Bug Report Auto-PR (`master`) — https://github.com/dlnraja/com.tuya.zigbee/actions/runs/34027853919
+- [skipped] Auto Bot Issue Triage (`master`) — https://github.com/dlnraja/com.tuya.zigbee/actions/runs/34027853918
+
+## Publish / validate related
+- [in_progress] Fetch Homey Diagnostics — https://github.com/dlnraja/com.tuya.zigbee/actions/runs/34029271368
+- [success] 🤖 Auto-Fix + Publish Pipeline — https://github.com/dlnraja/com.tuya.zigbee/actions/runs/34028433642
 
 ## Open issues
+- #544 [Device Support] Fingerprint issue for Tuya 2-gang switch (_TZ3000_l9brjwau / TS0002)
+- #543 [Device Support] Add support for Tuya 2-gang switch _TZ3000_ptjcjise / TS0002
+- #542 [Device Support] TS0012 / _TZ3000_xk5udnd6 not recognized in wall_switch_2gang_1way
+- #541 [Device Support] TS0004 / _TZ3000_enmfaave not matching in switch_4gang
+- #540 [Device Support Request] _TZ3000_blhvsaqf / TS0001 mapped to virtualdriverzigbee
 - #533 Device Request - [SMART ZIGBEE CURTAIN SWITCH] - [MOES]
 
 ## Open PRs
-- #539 AI Monthly Audit - September 2026 | Risk: Updated — https://github.com/dlnraja/com.tuya.zigbee/pull/539
+- none
 
 ## Cursor brain — do this week (max)
-- **P0**: Inspect failed CI/publish runs and apply reliability-only fixes on master; backport crash fixes to stable-v5 only after soak.
-  - https://github.com/dlnraja/com.tuya.zigbee/actions/runs/33926382639
 - **P1**: Human issues remain open — verify FP/runtime fixes silently; do not mass-close needs-maintainer.
-  - #533 Device Request - [SMART ZIGBEE CURTAIN SWITCH] - [MOES]
+  - #544 [Device Support] Fingerprint issue for Tuya 2-gang switch (_TZ3000_l9brjwau / TS0002) · #543 [Device Support] Add support for Tuya 2-gang switch _TZ3000_ptjcjise / TS0002 · #542 [Device Support] TS0012 / _TZ3000_xk5udnd6 not recognized in wall_switch_2gang_1way · #541 [Device Support] TS0004 / _TZ3000_enmfaave not matching in switch_4gang · #540 [Device Support Request] _TZ3000_blhvsaqf / TS0001 mapped to virtualdriverzigbee · #533 Device Request - [SMART ZIGBEE CURTAIN SWITCH] - [MOES]
 - **P0**: Local gates failing: dualClaim — fix before any publish.
 - **P1**: Some workflow dispatches failed (check GH_PAT / workflow names): mega-crawl.yml, gmail-diagnostics.yml, forum-poll.yml, auto-bot-issue-triage.yml, publish-diagnose.yml, safe-sync-stable.yml, self-improve.yml
-- **P1**: Open non-draft PRs — review for reliability merges on master only.
-  - https://github.com/dlnraja/com.tuya.zigbee/pull/539
 
 ## Hard stops
 - Do NOT paste unchecked AI to Homey forum
