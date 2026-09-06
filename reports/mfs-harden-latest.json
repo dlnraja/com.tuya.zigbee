@@ -1,36 +1,36 @@
 {
-  "generatedAt": "2026-09-01T06:32:47.796Z",
+  "generatedAt": "2026-09-06T06:32:32.383Z",
   "mode": "APPLY",
   "phases": [
     {
       "name": "mfs-db-dedupe",
       "ok": true,
       "exit": 0,
-      "tail": "[mfs-db-dedupe] OK — aucun doublon de casse (4396 clés)\n"
+      "tail": "[mfs-db-dedupe] OK — aucun doublon de casse (4407 clés)\n"
     },
     {
       "name": "sync-compose-to-mfs-db",
       "ok": true,
       "exit": 0,
-      "tail": "sync-compose-to-mfs-db: 8 change(s) (APPLY)\nbyAction: {\n  merge_wrong_prefix: 2,\n  known_correction: 3,\n  add_from_compose: 1,\n  fix_driverId: 1,\n  prune_modelIds: 1\n}\nWritten: C:\\Users\\Dell\\Documents\\homey\\master\\data\\mfs_db.json\n"
+      "tail": "sync-compose-to-mfs-db: 4 change(s) (APPLY)\nbyAction: { merge_wrong_prefix: 2, known_correction: 2 }\nWritten: /home/runner/work/com.tuya.zigbee/com.tuya.zigbee/data/mfs_db.json\n"
     },
     {
       "name": "enrich-mfs-p2295",
-      "ok": false,
-      "exit": 1,
-      "tail": "mfs-p2295-multi-identity.js:596:1)\r\n    at Module._compile (node:internal/modules/cjs/loader:1871:14)\r\n    at Object..js (node:internal/modules/cjs/loader:2002:10)\r\n    at Module.load (node:internal/modules/cjs/loader:1594:32)\r\n    at Module._load (node:internal/modules/cjs/loader:1396:12)\r\n    at wrapModuleLoad (node:internal/modules/cjs/loader:255:19)\r\n    at Module.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:154:5) {\r\n  errno: -4094,\r\n  code: 'UNKNOWN',\r\n  syscall: 'open',\r\n  path: 'C:\\\\Users\\\\Dell\\\\Documents\\\\homey\\\\master\\\\data\\\\mfs_db.json'\r\n}\r\n\r\nNode.js v24.18.0\r\n"
+      "ok": true,
+      "exit": 0,
+      "tail": "ypo mfr 68nvbi09)\",\n    \"Zemismart/Zemismart curtain motor\",\n    \"Zemismart/ZM16EL\",\n    \"Zemismart/TS0601_cover\",\n    \"Zemismart/ZM85EL-2Z\",\n    \"Zemismart/Zemismart dual curtain\",\n    \"Zemismart/TS0601_cover\",\n    \"Zemismart/Zemismart / Tuya TS0601 cover (Z2M group 148)\",\n    \"Zemismart/TS0601_cover\",\n    \"Zemismart/ZM16EL\",\n    \"Zemismart/ZM85EL-2Z\",\n    \"TuyaFCU/TYBAC-006\",\n    \"TuyaFCU/BAC006\",\n    \"TuyaFCU/Tuya FCU thermostat\",\n    \"TuyaFCU/BAC-006\",\n    \"TuyaButton/SH-SC07\",\n    \"TuyaButton/RSH-SC021\",\n    \"TuyaButton/Tuya 1-button scene switch\",\n    \"TuyaButton/TS0041\"\n  ]\n}\n\nApplied.\n"
     },
     {
       "name": "align-mfs-db-intelligent",
-      "ok": false,
-      "exit": 1,
-      "tail": "._compile (node:internal/modules/cjs/loader:1871:14)\r\n    at Object..js (node:internal/modules/cjs/loader:2002:10)\r\n    at Module.load (node:internal/modules/cjs/loader:1594:32)\r\n    at Module._load (node:internal/modules/cjs/loader:1396:12)\r\n    at wrapModuleLoad (node:internal/modules/cjs/loader:255:19)\r\n    at Module.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:154:5)\r\n    at node:internal/main/run_main_module:33:47 {\r\n  errno: -4094,\r\n  code: 'UNKNOWN',\r\n  syscall: 'open',\r\n  path: 'C:\\\\Users\\\\Dell\\\\Documents\\\\homey\\\\master\\\\data\\\\mfs_db.json'\r\n}\r\n\r\nNode.js v24.18.0\r\n"
+      "ok": true,
+      "exit": 0,
+      "tail": "rich_only p2317-etufnltx-ts1002-foria  \n  registry_enrich_only p2347-gabriel-zemismart-cartesian-doc-only  \n  registry_empty_mfr p2415-zg204zv-tze200-presence  \n  registry_empty_mfr p2415-zs301z-soil  \n  registry_bare_brand_multi_canon hobeian  \n  registry_bare_brand_multi_canon hobeian  \n  registry_bare_brand_multi_canon hobeian  \n  registry_bare_brand_multi_canon hobeian  \n  registry_oem_multi_canon _tz3000_wkai4ga5  \n  registry_bare_brand_multi_canon hobeian  \n  registry_bare_brand_multi_canon hobeian  \n  registry_bare_brand_multi_canon hobeian  \n  registry_bare_brand_multi_canon hobeian  \n"
     },
     {
       "name": "compose-mfsdb-class-guard",
       "ok": true,
       "exit": 0,
-      "tail": "0_iystcadi (TS0504): curé=led_controller_cct mais la PAIRE est claimée par led_controller_rgb\n    _TZ3000_iystcadi (TS0601_led): curé=led_controller_cct mais la PAIRE est claimée par led_controller_dimmable\n    _tz3000_dd8wwzcy (?): curé=plug_energy_monitor mais la PAIRE est claimée par climate_sensor, device_plug_energy\n  UNCLAIMED (driver curé ne claim pas le mfr): 5\n    _tze20x_xxxxxxxx: curé=air_purifier\n    _TZE200_J1XL73IW: curé=curtain_motor\n    _TZE200_r0jdjrvi: curé=curtain_motor_tilt\n    _tz3210_402vrq2i: curé=smart_knob\n    _tz3400_402vrq2i: curé=smart_knob\n[compose-mfsdb-guard] OK\n"
+      "tail": "   _TZ3000_iystcadi (TS0504): curé=led_controller_cct mais la PAIRE est claimée par led_controller_rgb\n    _TZ3000_iystcadi (TS0601_led): curé=led_controller_cct mais la PAIRE est claimée par led_controller_dimmable\n    _tz3000_dd8wwzcy (?): curé=plug_energy_monitor mais la PAIRE est claimée par climate_sensor, device_plug_energy\n    _TZ3000_lf56vpxj (Excellux): curé=sensor_motion_presence mais la PAIRE est claimée par sensor_climate_motion\n  UNCLAIMED (driver curé ne claim pas le mfr): 2\n    _tze20x_xxxxxxxx: curé=air_purifier\n    _TZE200_J1XL73IW: curé=curtain_motor\n[compose-mfsdb-guard] OK\n"
     },
     {
       "name": "p2138-sacred-couple-gate",
@@ -42,8 +42,8 @@
       "name": "p2368-mfs-test",
       "ok": true,
       "exit": 0,
-      "tail": "▶ P2368 mfs_db hardening\n  ✔ mfs_db loads and has _meta (344.1847ms)\n  ✔ known corrections are reflected in mfs_db (1999.2248ms)\n  ✔ 402vrq2i routes to smart_knob not switch_4_gang_metering (287.9504ms)\n  ✔ HLX9TNZB TZE284 routes to dimmer_1_gang_tuya (260.6563ms)\n  ✔ no case-duplicate mfr keys (241.9092ms)\n  ✔ UdpDiscoveryKeys SSOT exists (wifi unrelated sanity) (0.8566ms)\n✔ P2368 mfs_db hardening (3137.9384ms)\nℹ tests 6\nℹ suites 1\nℹ pass 6\nℹ fail 0\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 4019.7673\n"
+      "tail": "    duration_ms: 47.070084\n      type: 'test'\n      ...\n    # Subtest: no case-duplicate mfr keys\n    ok 5 - no case-duplicate mfr keys\n      ---\n      duration_ms: 46.517515\n      type: 'test'\n      ...\n    # Subtest: UdpDiscoveryKeys SSOT exists (wifi unrelated sanity)\n    ok 6 - UdpDiscoveryKeys SSOT exists (wifi unrelated sanity)\n      ---\n      duration_ms: 0.231239\n      type: 'test'\n      ...\n    1..6\nok 1 - P2368 mfs_db hardening\n  ---\n  duration_ms: 591.323606\n  type: 'suite'\n  ...\n1..1\n# tests 6\n# suites 1\n# pass 6\n# fail 0\n# cancelled 0\n# skipped 0\n# todo 0\n# duration_ms 651.985454\n"
     }
   ],
-  "pass": false
+  "pass": true
 }

@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-05T07:54:37.023Z",
+  "generatedAt": "2026-09-06T06:32:14.035Z",
   "users": [
     {
       "username": "SunBeech",
@@ -1642,13 +1642,7 @@
       "file": "couples/_TZ3000_dfgbtub0_TS0044.md"
     }
   ],
-  "processorTotals": {
-    "posts": 214,
-    "withCouples": 76,
-    "needAction": 48,
-    "both": 134,
-    "masterOnly": 10
-  },
-  "parseStatus": "STALE — re-run forum:silent-scan",
-  "liveHighest": 2228
+  "processorTotals": null,
+  "parseStatus": null,
+  "liveHighest": null
 }
