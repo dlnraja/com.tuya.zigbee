@@ -1,0 +1,233 @@
+{
+  "generatedAt": "2026-09-06T00:15:50.812Z",
+  "date": "2026-09-06",
+  "mode": "full",
+  "phases": [
+    {
+      "name": "guard",
+      "ok": true,
+      "durationMs": 0,
+      "note": "SHADOW env forced"
+    },
+    {
+      "name": "github",
+      "ok": true,
+      "durationMs": 313
+    },
+    {
+      "name": "gmail",
+      "ok": true,
+      "durationMs": 193,
+      "details": {
+        "crash": {
+          "ok": true,
+          "skipped": false,
+          "status": 0,
+          "durationMs": 36,
+          "stderr": "",
+          "stdoutTail": "[gmail-crash-pattern-gate] sources=32 hits=0 unknown=0\n  wrote .github/state/gmail-crash-patterns.json\n  verdict: ok\n"
+        },
+        "treat": {
+          "ok": true,
+          "skipped": false,
+          "status": 0,
+          "durationMs": 155,
+          "stderr": "",
+          "stdoutTail": "[automate] inbox total=0 have=30 missing=0 ingested_now=0\n[recursive-treat] sources: 136\n[recursive-treat] wrote /home/runner/work/com.tuya.zigbee/com.tuya.zigbee/reports/diag-recursive-treat-2026-09-06\n{\n  \"generatedAt\": \"2026-09-06T00:15:51.306Z\",\n  \"methodology\": \"f647d35b-style full-body recursive treat — sacred couple never invented; P2246 derive from interview when ABSENT\",\n  \"sourcesScanned\": 136,\n  \"uniqueCases\": 122,\n  \"actionable\": 29,\n  \"derivedFromInterview\": 1,\n  \"signalTally\": {\n    \"scene_mode_unsupported\": 3,\n    \"wrong_driver_hint\": 4,\n    \"athom_socket_hang\": 8,\n    \"athom_processing_failed\": 2,\n    \"wrong_smart_rcbo\": 2,\n    \"flow_guard_spam\": 2,\n    \"processing_failed\": 8,\n    \"scene_0x8004\": 2,\n    \"invalid_flow_card\": 1,\n    \"missing_capability_listener\": 1\n  },\n  \"gmailBodiesPresent\": 30,\n  \"interviews\": 90\n}\n[automate] status → .github/state/diag-recursive-inbox/automate-status.json\n{\n  \"total\": 0,\n  \"have\": 30,\n  \"missing\": 0,\n  \"missingIds\": []\n}\n[automate] actionable= 29 gmailBodies= 30\n"
+        }
+      }
+    },
+    {
+      "name": "forum",
+      "ok": true,
+      "durationMs": 24450,
+      "skipScan": false,
+      "steps": [
+        {
+          "ok": true,
+          "skipped": false
+        },
+        {
+          "ok": true,
+          "skipped": false
+        },
+        {
+          "ok": true,
+          "skipped": false
+        },
+        {
+          "ok": true,
+          "skipped": false
+        }
+      ]
+    },
+    {
+      "name": "drivers",
+      "ok": true,
+      "durationMs": 1438,
+      "mfs": {
+        "high": 0,
+        "changes": 0,
+        "fail": false
+      },
+      "sacredOk": true
+    },
+    {
+      "name": "prioritize",
+      "ok": true,
+      "durationMs": 1,
+      "count": 3
+    },
+    {
+      "name": "docs",
+      "ok": true,
+      "durationMs": 0,
+      "doc": "/home/runner/work/com.tuya.zigbee/com.tuya.zigbee/docs/architecture/L99_INBOX_INTELLIGENCE.md"
+    },
+    {
+      "name": "gates",
+      "ok": true,
+      "durationMs": 2389
+    }
+  ],
+  "github": {
+    "harvestedAt": "2026-09-06T00:15:51.126Z",
+    "repo": "dlnraja/com.tuya.zigbee",
+    "auth": "token",
+    "error": null,
+    "issues": [
+      {
+        "number": 533,
+        "title": "Device Request - [SMART ZIGBEE CURTAIN SWITCH] - [MOES]",
+        "labels": [
+          "enhancement",
+          "device-request",
+          "new-fingerprint",
+          "device_request",
+          "reopened-by-user",
+          "MOES",
+          "needs-maintainer",
+          "smart_zigbee",
+          "curtain_switch",
+          "SMART ZIGBEE CURTAIN SWITCH - MOES"
+        ],
+        "updatedAt": "2026-09-05T22:56:35Z",
+        "user": "salvagr",
+        "htmlUrl": "https://github.com/dlnraja/com.tuya.zigbee/issues/533",
+        "bodySnippet": "Thank you for your support.\n\n## 📱 Basic Information\n\n**Brand & Model**: SMART ZIGBEE CURTAIN SWITCH - MOES\n**Purchase Link**: https://es.aliexpress.com/item/1005008356152992.html\n**Power Source**:  Mains\n**Current Status**: pairing with wrong device type. Detected as \"radiator v"
+      },
+      {
+        "number": 540,
+        "title": "[Device Support Request] _TZ3000_blhvsaqf / TS0001 mapped to virtualdriverzigbee",
+        "labels": [
+          "bug",
+          "reopened-by-user"
+        ],
+        "updatedAt": "2026-09-05T14:17:28Z",
+        "user": "migueleap",
+        "htmlUrl": "https://github.com/dlnraja/com.tuya.zigbee/issues/540",
+        "bodySnippet": "### Device Description\n* **Device Name:** 1 Gang Switch Module / Wall Switch\n* **Manufacturer Name:** `_TZ3000_blhvsaqf`\n* **Product ID:** `TS0001`\n\n### Issue Summary\nThe device `_TZ3000_blhvsaqf` (TS0001) is currently recognized as an unknown/generic device (`virtualdriverzigbee"
+      }
+    ],
+    "prs": [],
+    "openIssueCount": 2,
+    "openPrCount": 0
+  },
+  "forum": {
+    "path": "/home/runner/work/com.tuya.zigbee/com.tuya.zigbee/.github/state/forum/actionable-processor-report.json",
+    "totals": {
+      "posts": 213,
+      "withCouples": 78,
+      "needAction": 48,
+      "both": 134,
+      "masterOnly": 10
+    },
+    "posts": 213
+  },
+  "gmail": {
+    "generatedAt": "2026-09-06T00:15:51.156Z",
+    "sourcesScanned": 32,
+    "patternCounts": {
+      "flow_getDeviceActionCard": 0,
+      "readonly_error_assign": 0,
+      "unbound_destroyed": 0,
+      "getDiscoveries_not_fn": 0,
+      "getDeviceById": 0,
+      "catch_on_undefined": 0,
+      "registerRunListenerasync_typo": 0,
+      "settimeout_destroyed": 0,
+      "onDeleted_null": 0,
+      "dcm_auditCapabilities_missing": 0,
+      "capability_ref_undefined": 0,
+      "clusterutils_destroyed_unbound": 0,
+      "heap_oom_live_data": 0,
+      "ERR_IAS_SLEEPY_TIMEOUT": 0,
+      "ERR_DESTROYED_DEVICE_TIMER": 0,
+      "ERR_UNBOUND_DESTROYED": 0,
+      "ERR_CATCH_ON_UNDEFINED": 0,
+      "ERR_CAPABILITY_NOT_FOUND": 0,
+      "ERR_AUDIT_CAPABILITIES": 0,
+      "ERR_ZIGBEE_ROUTE_FULL": 0
+    },
+    "hits": [],
+    "unknownFatals": [],
+    "knownFixed": [
+      "flow_getDeviceActionCard",
+      "readonly_error_assign",
+      "unbound_destroyed",
+      "getDiscoveries_not_fn",
+      "getDeviceById",
+      "catch_on_undefined",
+      "registerRunListenerasync_typo",
+      "settimeout_destroyed",
+      "onDeleted_null",
+      "dcm_auditCapabilities_missing",
+      "capability_ref_undefined",
+      "clusterutils_destroyed_unbound",
+      "heap_oom_live_data",
+      "ERR_IAS_SLEEPY_TIMEOUT",
+      "ERR_DESTROYED_DEVICE_TIMER",
+      "ERR_UNBOUND_DESTROYED",
+      "ERR_CATCH_ON_UNDEFINED",
+      "ERR_AUDIT_CAPABILITIES"
+    ],
+    "watch": [],
+    "verdict": "ok"
+  },
+  "mfs": {
+    "high": 0,
+    "changes": 0,
+    "fail": false
+  },
+  "priority": [
+    {
+      "score": 90,
+      "dualApp": "BOTH",
+      "source": "github-issue",
+      "id": "#540",
+      "title": "[Device Support Request] _TZ3000_blhvsaqf / TS0001 mapped to virtualdriverzigbee",
+      "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/540",
+      "action": "investigate-code-silent",
+      "forumReply": "NEVER"
+    },
+    {
+      "score": 75,
+      "dualApp": "BOTH",
+      "source": "forum",
+      "id": "forum-need-action",
+      "title": "48 forum posts needAction (shadow processor)",
+      "action": "enrich:investigate + lock mfr+pid only",
+      "forumReply": "NEVER"
+    },
+    {
+      "score": 70,
+      "dualApp": "BOTH",
+      "source": "github-issue",
+      "id": "#533",
+      "title": "Device Request - [SMART ZIGBEE CURTAIN SWITCH] - [MOES]",
+      "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/533",
+      "action": "investigate-code-silent",
+      "forumReply": "NEVER"
+    }
+  ]
+}
