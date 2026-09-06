@@ -1,0 +1,43 @@
+{
+  "harvestedAt": "2026-09-06T00:15:51.126Z",
+  "repo": "dlnraja/com.tuya.zigbee",
+  "auth": "token",
+  "error": null,
+  "issues": [
+    {
+      "number": 533,
+      "title": "Device Request - [SMART ZIGBEE CURTAIN SWITCH] - [MOES]",
+      "labels": [
+        "enhancement",
+        "device-request",
+        "new-fingerprint",
+        "device_request",
+        "reopened-by-user",
+        "MOES",
+        "needs-maintainer",
+        "smart_zigbee",
+        "curtain_switch",
+        "SMART ZIGBEE CURTAIN SWITCH - MOES"
+      ],
+      "updatedAt": "2026-09-05T22:56:35Z",
+      "user": "salvagr",
+      "htmlUrl": "https://github.com/dlnraja/com.tuya.zigbee/issues/533",
+      "bodySnippet": "Thank you for your support.\n\n## 📱 Basic Information\n\n**Brand & Model**: SMART ZIGBEE CURTAIN SWITCH - MOES\n**Purchase Link**: https://es.aliexpress.com/item/1005008356152992.html\n**Power Source**:  Mains\n**Current Status**: pairing with wrong device type. Detected as \"radiator v"
+    },
+    {
+      "number": 540,
+      "title": "[Device Support Request] _TZ3000_blhvsaqf / TS0001 mapped to virtualdriverzigbee",
+      "labels": [
+        "bug",
+        "reopened-by-user"
+      ],
+      "updatedAt": "2026-09-05T14:17:28Z",
+      "user": "migueleap",
+      "htmlUrl": "https://github.com/dlnraja/com.tuya.zigbee/issues/540",
+      "bodySnippet": "### Device Description\n* **Device Name:** 1 Gang Switch Module / Wall Switch\n* **Manufacturer Name:** `_TZ3000_blhvsaqf`\n* **Product ID:** `TS0001`\n\n### Issue Summary\nThe device `_TZ3000_blhvsaqf` (TS0001) is currently recognized as an unknown/generic device (`virtualdriverzigbee"
+    }
+  ],
+  "prs": [],
+  "openIssueCount": 2,
+  "openPrCount": 0
+}
