@@ -3,7 +3,7 @@
 Silent only. **Never** Homey forum POST / PM / AI paste (T157628).
 Lock **manufacturerName + productId** only. Never invent pid. Dual-app: BOTH | MASTER_ONLY | STABLE_ONLY.
 
-Generated: **2026-09-06T00:15:50.812Z** · Mode: `full`
+Generated: **2026-09-06T07:21:41.711Z** · Mode: `full`
 
 ## Snapshot
 
@@ -11,7 +11,7 @@ Generated: **2026-09-06T00:15:50.812Z** · Mode: `full`
 |---------|--------------|
 | GitHub open issues | 2 |
 | GitHub open PRs | 0 |
-| Forum needAction | 48 |
+| Forum needAction | 47 |
 | Gmail crash state | present |
 | mfs high drift | 0 |
 
@@ -26,10 +26,10 @@ Generated: **2026-09-06T00:15:50.812Z** · Mode: `full`
 ## Phase results
 
 - **guard**: ok (0ms)
-- **github**: ok (313ms)
-- **gmail**: ok (193ms)
-- **forum**: ok (24450ms)
-- **drivers**: ok (1438ms)
+- **github**: ok (339ms)
+- **gmail**: ok (198ms)
+- **forum**: ok (24580ms)
+- **drivers**: ok (1435ms)
 
 ## Doctrine
 
