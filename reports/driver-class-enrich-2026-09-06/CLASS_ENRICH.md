@@ -6,12 +6,12 @@ Mode: **apply**
 |-------|--------:|-----:|-----:|--------------:|
 | sensor | 122 | 20 | 5497 | 793 |
 | socket | 108 | 41 | 3616 | 1164 |
-| button | 54 | 7 | 1430 | 842 |
+| button | 54 | 7 | 1428 | 842 |
 | light | 53 | 6 | 1534 | 260 |
 | thermostat | 31 | 1 | 1600 | 178 |
 | other | 13 | 3 | 916 | 89 |
 | switch | 9 | 2 | 331 | 66 |
-| curtain | 9 | 1 | 807 | 45 |
+| curtain | 9 | 1 | 765 | 45 |
 | fan | 6 | 0 | 88 | 20 |
 | siren | 6 | 0 | 137 | 30 |
 | wifi | 6 | 0 | 0 | 16 |
@@ -22,6 +22,6 @@ Mode: **apply**
 | ir | 1 | 0 | 128 | 6 |
 | windowcoverings | 1 | 0 | 2 | 6 |
 
-**Totals:** 431 drivers · 16252 MFR entries · 86 with soft gaps
+**Totals:** 431 drivers · 16208 MFR entries · 86 with soft gaps
 
 Doctrine: never invent productId · never degrade coverage · free scrape + forfait AI only.
