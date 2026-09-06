@@ -1,9 +1,67 @@
 {
-  "harvestedAt": "2026-09-06T07:21:42.050Z",
+  "harvestedAt": "2026-09-06T13:51:22.707Z",
   "repo": "dlnraja/com.tuya.zigbee",
   "auth": "token",
   "error": null,
   "issues": [
+    {
+      "number": 541,
+      "title": "[Device Support] TS0004 / _TZ3000_enmfaave not matching in switch_4gang",
+      "labels": [
+        "bug"
+      ],
+      "updatedAt": "2026-09-06T12:38:52Z",
+      "user": "migueleap",
+      "htmlUrl": "https://github.com/dlnraja/com.tuya.zigbee/issues/541",
+      "bodySnippet": "Hi @dlnraja,\n\nThe switch_4gang driver is not matching TS0004 (_TZ3000_enmfaave) during pairing, even though the manufacturer name is listed in driver.compose.json.\n\nThe issue is caused by the cluster definitions in zigbee.endpoints for the multi-endpoint setup. Homey requires sta"
+    },
+    {
+      "number": 543,
+      "title": "[Device Support] Add support for Tuya 2-gang switch _TZ3000_ptjcjise / TS0002",
+      "labels": [
+        "enhancement",
+        "device-request",
+        "new-fingerprint"
+      ],
+      "updatedAt": "2026-09-06T10:51:09Z",
+      "user": "migueleap",
+      "htmlUrl": "https://github.com/dlnraja/com.tuya.zigbee/issues/543",
+      "bodySnippet": "## 📱 Basic Information\n\n**Brand & Model**: Tuya / Moes 2-Gang Switch Module\n**Purchase Link**: N/A\n**Power Source**: [ ] Battery / [x] Mains\n**Current Status**: [ ] Not pairing / [x] Pairs but missing features / [ ] Not working at all\n\n---\n\n## 🔍 Zigbee Fingerprint (MANDATORY)\n\n"
+    },
+    {
+      "number": 544,
+      "title": "[Device Support] Fingerprint issue for Tuya 2-gang switch (_TZ3000_l9brjwau / TS0002)",
+      "labels": [
+        "bug"
+      ],
+      "updatedAt": "2026-09-06T10:35:34Z",
+      "user": "migueleap",
+      "htmlUrl": "https://github.com/dlnraja/com.tuya.zigbee/issues/544",
+      "bodySnippet": "## Device Description\n* **Brand:** Tuya / LoraTap\n* **Device Type:** 2-Gang Zigbee Switch Module\n* **Model:** TS0002\n* **Manufacturer Name:** `_TZ3000_l9brjwau`\n\n## Problem Description\nEven though the manufacturer ID `_TZ3000_l9brjwau` is already included in the `manufacturerName"
+    },
+    {
+      "number": 542,
+      "title": "[Device Support] TS0012 / _TZ3000_xk5udnd6 not recognized in wall_switch_2gang_1way",
+      "labels": [
+        "bug"
+      ],
+      "updatedAt": "2026-09-06T08:07:02Z",
+      "user": "migueleap",
+      "htmlUrl": "https://github.com/dlnraja/com.tuya.zigbee/issues/542",
+      "bodySnippet": "Hi @dlnraja,\n\nThe wall_switch_2gang_1way driver is also failing to match TS0012 (_TZ3000_xk5udnd6).\n\nThe issue is in drivers/wall_switch_2gang_1way/driver.compose.json under zigbee.endpoints. Homey requires the standard cluster array format to match Tuya 2-gang switches properly "
+    },
+    {
+      "number": 540,
+      "title": "[Device Support Request] _TZ3000_blhvsaqf / TS0001 mapped to virtualdriverzigbee",
+      "labels": [
+        "bug",
+        "reopened-by-user"
+      ],
+      "updatedAt": "2026-09-06T07:53:41Z",
+      "user": "migueleap",
+      "htmlUrl": "https://github.com/dlnraja/com.tuya.zigbee/issues/540",
+      "bodySnippet": "### Device Description\n* **Device Name:** 1 Gang Switch Module / Wall Switch\n* **Manufacturer Name:** `_TZ3000_blhvsaqf`\n* **Product ID:** `TS0001`\n\n### Issue Summary\nThe device `_TZ3000_blhvsaqf` (TS0001) is currently recognized as an unknown/generic device (`virtualdriverzigbee"
+    },
     {
       "number": 533,
       "title": "Device Request - [SMART ZIGBEE CURTAIN SWITCH] - [MOES]",
@@ -23,21 +81,9 @@
       "user": "salvagr",
       "htmlUrl": "https://github.com/dlnraja/com.tuya.zigbee/issues/533",
       "bodySnippet": "Thank you for your support.\n\n## 📱 Basic Information\n\n**Brand & Model**: SMART ZIGBEE CURTAIN SWITCH - MOES\n**Purchase Link**: https://es.aliexpress.com/item/1005008356152992.html\n**Power Source**:  Mains\n**Current Status**: pairing with wrong device type. Detected as \"radiator v"
-    },
-    {
-      "number": 540,
-      "title": "[Device Support Request] _TZ3000_blhvsaqf / TS0001 mapped to virtualdriverzigbee",
-      "labels": [
-        "bug",
-        "reopened-by-user"
-      ],
-      "updatedAt": "2026-09-05T14:17:28Z",
-      "user": "migueleap",
-      "htmlUrl": "https://github.com/dlnraja/com.tuya.zigbee/issues/540",
-      "bodySnippet": "### Device Description\n* **Device Name:** 1 Gang Switch Module / Wall Switch\n* **Manufacturer Name:** `_TZ3000_blhvsaqf`\n* **Product ID:** `TS0001`\n\n### Issue Summary\nThe device `_TZ3000_blhvsaqf` (TS0001) is currently recognized as an unknown/generic device (`virtualdriverzigbee"
     }
   ],
   "prs": [],
-  "openIssueCount": 2,
+  "openIssueCount": 6,
   "openPrCount": 0
 }
