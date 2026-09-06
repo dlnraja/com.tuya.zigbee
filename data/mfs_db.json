@@ -88,9 +88,9 @@
       "realMfrsAdded": 5,
       "details": "tmp/synthetic-resolution.json + tmp/pruned21-resolution.json"
     },
-    "lastAlignedAt": "2026-09-06T06:32:31.167Z",
+    "lastAlignedAt": "2026-09-06T16:26:54.115Z",
     "alignTool": "align-mfs-db-intelligent@P169",
-    "lastSyncedFromCompose": "2026-09-06T06:32:28.940Z",
+    "lastSyncedFromCompose": "2026-09-06T16:26:52.262Z",
     "syncComposeTool": "sync-compose-to-mfs-db@P2368"
   },
   "sources": {
@@ -5439,7 +5439,7 @@
         "hubitat": 1
       },
       "confidence": 0.95,
-      "lastSeen": "2026-09-06T06:32:30.029Z",
+      "lastSeen": "2026-09-06T16:26:53.165Z",
       "driverId": "button_wireless_1",
       "deviceNames": [
         "RSH-SC021",
@@ -16328,7 +16328,7 @@
         "z2m": 1
       },
       "confidence": 0.95,
-      "lastSeen": "2026-09-06T06:32:29.761Z",
+      "lastSeen": "2026-09-06T16:26:52.927Z",
       "driverId": "air_quality_co2",
       "deviceNames": [
         "NDIR CO2 sensor",
@@ -17139,7 +17139,7 @@
         "z2m": 1
       },
       "confidence": 0.95,
-      "lastSeen": "2026-09-06T06:32:29.969Z",
+      "lastSeen": "2026-09-06T16:26:53.115Z",
       "driverId": "curtain_motor",
       "deviceNames": [
         "TS0601_cover",
@@ -17861,7 +17861,7 @@
         "z2m": 1
       },
       "confidence": 0.95,
-      "lastSeen": "2026-09-06T06:32:29.955Z",
+      "lastSeen": "2026-09-06T16:26:53.104Z",
       "driverId": "curtain_motor",
       "deviceNames": [
         "TS0601_cover",
@@ -19889,7 +19889,7 @@
         "z2m": 1
       },
       "confidence": 0.95,
-      "lastSeen": "2026-09-06T06:32:29.715Z",
+      "lastSeen": "2026-09-06T16:26:52.885Z",
       "driverId": "air_quality_co2",
       "deviceNames": [
         "DCR-LCD",
@@ -20651,7 +20651,7 @@
         "z2m": 1
       },
       "confidence": 0.95,
-      "lastSeen": "2026-09-06T06:32:29.985Z",
+      "lastSeen": "2026-09-06T16:26:53.131Z",
       "driverId": "curtain_motor",
       "deviceNames": [
         "TS0601_cover",
@@ -22939,7 +22939,7 @@
         "z2m": 1
       },
       "confidence": 0.95,
-      "lastSeen": "2026-09-06T06:32:29.776Z",
+      "lastSeen": "2026-09-06T16:26:52.939Z",
       "driverId": "air_quality_co2",
       "deviceNames": [
         "NDIR CO2 sensor",
@@ -24020,7 +24020,7 @@
         "z2m": 1
       },
       "confidence": 0.95,
-      "lastSeen": "2026-09-06T06:32:29.997Z",
+      "lastSeen": "2026-09-06T16:26:53.142Z",
       "driverId": "curtain_motor",
       "deviceNames": [
         "TS0601_cover",
@@ -24986,7 +24986,7 @@
         "z2m": 1
       },
       "confidence": 0.95,
-      "lastSeen": "2026-09-06T06:32:29.738Z",
+      "lastSeen": "2026-09-06T16:26:52.907Z",
       "driverId": "air_quality_co2",
       "deviceNames": [
         "DCR-LCD",
@@ -48761,7 +48761,7 @@
         "z2m": 1
       },
       "confidence": 0.95,
-      "lastSeen": "2026-09-06T06:32:29.926Z",
+      "lastSeen": "2026-09-06T16:26:53.083Z",
       "driverId": "curtain_motor",
       "deviceNames": [
         "TS0601_cover",
@@ -100891,7 +100891,7 @@
         "z2m": 1
       },
       "confidence": 0.95,
-      "lastSeen": "2026-09-06T06:32:30.012Z",
+      "lastSeen": "2026-09-06T16:26:53.154Z",
       "driverId": "wall_thermostat",
       "source": "p2234b-couple-refine",
       "pid": "TS0601",
@@ -111642,7 +111642,7 @@
         "z2m": 1
       },
       "confidence": 0.95,
-      "lastSeen": "2026-09-06T06:32:29.799Z",
+      "lastSeen": "2026-09-06T16:26:52.958Z",
       "driverId": "curtain_motor",
       "deviceNames": [
         "Zemismart curtain motor",
@@ -111700,7 +111700,7 @@
         "z2m": 1
       },
       "confidence": 0.95,
-      "lastSeen": "2026-09-06T06:32:29.881Z",
+      "lastSeen": "2026-09-06T16:26:53.048Z",
       "driverId": "curtain_motor",
       "deviceNames": [
         "TS0601_cover",
@@ -111752,7 +111752,7 @@
         "z2m": 1
       },
       "confidence": 0.95,
-      "lastSeen": "2026-09-06T06:32:29.850Z",
+      "lastSeen": "2026-09-06T16:26:53.022Z",
       "driverId": "curtain_motor",
       "deviceNames": [
         "Zemismart dual curtain",
@@ -111805,7 +111805,7 @@
         "z2m": 1
       },
       "confidence": 0.95,
-      "lastSeen": "2026-09-06T06:32:29.911Z",
+      "lastSeen": "2026-09-06T16:26:53.071Z",
       "driverId": "curtain_motor",
       "deviceNames": [
         "TS0601_cover",
@@ -111857,7 +111857,7 @@
         "z2m": 1
       },
       "confidence": 0.95,
-      "lastSeen": "2026-09-06T06:32:29.832Z",
+      "lastSeen": "2026-09-06T16:26:52.984Z",
       "driverId": "curtain_motor",
       "deviceNames": [
         "Zemismart curtain motor",
@@ -113043,7 +113043,7 @@
         "z2m": 1
       },
       "confidence": 0.95,
-      "lastSeen": "2026-09-06T06:32:29.940Z",
+      "lastSeen": "2026-09-06T16:26:53.093Z",
       "driverId": "curtain_motor",
       "deviceNames": [
         "TS0601_cover",
@@ -113093,7 +113093,7 @@
         "local": 1
       },
       "confidence": 0.95,
-      "lastSeen": "2026-09-06T06:32:29.897Z",
+      "lastSeen": "2026-09-06T16:26:53.060Z",
       "driverId": "curtain_motor",
       "deviceNames": [
         "TS0601_cover",
@@ -113143,7 +113143,7 @@
         "local": 1
       },
       "confidence": 0.95,
-      "lastSeen": "2026-09-06T06:32:29.813Z",
+      "lastSeen": "2026-09-06T16:26:52.969Z",
       "driverId": "curtain_motor",
       "deviceNames": [
         "Zemismart curtain motor",
@@ -128776,7 +128776,7 @@
     "multiPidMfrs": 3299,
     "variantMfrs": 82,
     "lastMfsMultiUpdate": "2026-07-23T21:38:43.390Z",
-    "lastP2295Enrichment": "2026-09-06T06:32:30.049Z",
+    "lastP2295Enrichment": "2026-09-06T16:26:53.176Z",
     "p2295Note": "modelIds=real Zigbee pids; deviceNames/z2mModels/whiteLabels/productNames=aliases; multiCouple brands use byPid"
   },
   "diff": {
