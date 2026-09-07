@@ -3,7 +3,7 @@
 Silent only. **Never** Homey forum POST / PM / AI paste (T157628).
 Lock **manufacturerName + productId** only. Never invent pid. Dual-app: BOTH | MASTER_ONLY | STABLE_ONLY.
 
-Generated: **2026-09-07T16:06:38.146Z** · Mode: `full`
+Generated: **2026-09-07T21:50:35.789Z** · Mode: `full`
 
 ## Snapshot
 
@@ -30,10 +30,10 @@ Generated: **2026-09-07T16:06:38.146Z** · Mode: `full`
 ## Phase results
 
 - **guard**: ok (0ms)
-- **github**: ok (437ms)
-- **gmail**: ok (200ms)
-- **forum**: ok (26056ms)
-- **drivers**: ok (1463ms)
+- **github**: ok (371ms)
+- **gmail**: ok (203ms)
+- **forum**: ok (24835ms)
+- **drivers**: ok (1423ms)
 
 ## Doctrine
 
