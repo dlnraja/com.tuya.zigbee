@@ -3,6 +3,44 @@
   "description": "Community-reported wrong-driver / pairing conflict cases. Sacred couple = mfr + productId. Master: static compose + dynamic lookup. Stable: static compose only (copy canonicalDriver into driver.compose.json). P2318 ENRICHMENT-FIRST: lock by adding to canonicalDriver; forbidMode=couple only strips manufacturerName when the forbidden productId is also present — never strip shared productIds (coverage reduction ban); never delete a mfr from a driver solely because it appears elsewhere with a different pid.",
   "cases": [
     {
+      "id": "p2435-ptjcjise-ts0002-switch-2gang",
+      "mfr": [
+        "_TZ3000_ptjcjise",
+        "_tz3000_ptjcjise"
+      ],
+      "productId": [
+        "TS0002"
+      ],
+      "canonicalDriver": "switch_2gang",
+      "forbiddenDrivers": [
+        "switch_1gang"
+      ],
+      "forbidMode": "couple",
+      "protocol": "zcl",
+      "notes": "P2435 GH#543 Moes 2-gang was on switch_1gang"
+    },
+    {
+      "id": "p2435-xk5udnd6-ts0012-wall-switch",
+      "mfr": [
+        "_TZ3000_xk5udnd6",
+        "_tz3000_xk5udnd6",
+        "_TZ3000_XK5UDND6"
+      ],
+      "productId": [
+        "TS0012"
+      ],
+      "canonicalDriver": "wall_switch_2gang_1way",
+      "forbiddenDrivers": [
+        "water_leak_sensor",
+        "water_leak_sensor_tuya",
+        "switch_4gang",
+        "wall_switch_3gang_1way"
+      ],
+      "forbidMode": "couple",
+      "protocol": "zcl",
+      "notes": "P2435 GH#542 — mfs top-level wrongly routed to water_leak_sensor"
+    },
+    {
       "id": "eduard-martirosyan-tze284-fodv6bkr-curtain",
       "mfr": [
         "_TZE284_fodv6bkr",

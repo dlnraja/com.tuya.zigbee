@@ -414,7 +414,31 @@
       "mfr": "_TZ3000_blhvsaqf",
       "pid": "TS0001",
       "driverId": "switch_1gang",
-      "note": "Issue #540 1-gang switch module — forbid unknown at pairing"
+      "note": "Issue #540 / P2435 BSEED 1-gang ZCL — forbid unknown at pairing"
+    },
+    {
+      "mfr": "_TZ3000_enmfaave",
+      "pid": "TS0004",
+      "driverId": "switch_4gang",
+      "note": "P2435 GH#541 ZCL 4-gang endpoints — no EF00 required"
+    },
+    {
+      "mfr": "_TZ3000_xk5udnd6",
+      "pid": "TS0012",
+      "driverId": "wall_switch_2gang_1way",
+      "note": "P2435 GH#542 — never water_leak_sensor"
+    },
+    {
+      "mfr": "_TZ3000_ptjcjise",
+      "pid": "TS0002",
+      "driverId": "switch_2gang",
+      "note": "P2435 GH#543 Moes 2-gang — was switch_1gang"
+    },
+    {
+      "mfr": "_TZ3000_l9brjwau",
+      "pid": "TS0002",
+      "driverId": "switch_2gang",
+      "note": "P2435 GH#544 BSEED/LoraTap 2-gang ZCL-only"
     },
     {
       "mfr": "_TZE284_fhvpaltk",
