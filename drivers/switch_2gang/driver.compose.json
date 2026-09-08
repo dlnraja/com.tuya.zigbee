@@ -16,7 +16,9 @@
   ],
   "zigbee": {
     "productId": [
-      "ZG-305Z",
+      "hobeian",
+      "Hobeian",
+      "HOBEIAN",
       "TS0002",
       "TS0002_power",
       "TS0002_switch_module",
@@ -28,7 +30,8 @@
       "TS0601",
       "TS0726",
       "ZG-301Z-2CH",
-      "ZG-302Z2"
+      "ZG-302Z2",
+      "ZG-305Z"
     ],
     "learnmode": {
       "image": "{{driverAssetsPath}}/icon.svg",
@@ -294,6 +297,7 @@
       "_tze284_rip8l748",
       "_TZE284_rip8l748",
       "hobeian",
+      "Hobeian",
       "HOBEIAN"
     ],
     "endpoints": {
