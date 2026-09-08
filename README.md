@@ -15,7 +15,7 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 - Case-insensitive fingerprint matching so pairing is reliable across OEM variants
 - Battery curves by chemistry (no linear `%` guesses)
 - Flow cards for physical buttons, sensors, and actuators (EN, FR, NL, DE)
-- Optional native Zigbee OTA for 10 drivers (Homey v13.2.0+)
+- Optional native Zigbee OTA for 9 drivers (Homey v13.2.0+)
 
 ---
 
@@ -33,14 +33,14 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 
 | Metric | Value |
 |--------|-------|
-| **App Version** | v9.0.844 |
+| **App Version** | v9.0.846 |
 | **Drivers** | 431 (381 Zigbee + 50 WiFi) |
 | **Unique Fingerprints** | 4,399 |
 | **Pairing Variants** | 17,066 (4 case combos per fingerprint) |
 | **Unique Product IDs** | 590 |
 | **Flow Cards** | 5,952 |
 | **Unique Capabilities** | 170 |
-| **Native OTA Drivers** | 10 |
+| **Native OTA Drivers** | 9 |
 | **Test Suites** | 255 files |
 | **SVG Icons** | 731 |
 | **Languages** | EN, FR, NL, DE |
@@ -102,6 +102,8 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 
 | Version | Changes |
 |---------|---------|
+| **v9.0.846** | Removed broken contact-sensor OTA firmware reference that blocked Athom publish validation. |
+| **v9.0.845** | Removed broken contact-sensor OTA firmware reference that blocked Athom publish validation. |
 | **v9.0.844** | Aligned fingerprint routing for Moes/BSEED ZCL switches after pairing fixes. |
 | **v9.0.843** | Aligned fingerprint routing for Moes/BSEED ZCL switches after pairing fixes. |
 | **v9.0.842** | Improved pairing for several Tuya ZCL wall switches (4-gang, 2-gang, 1-gang) that Homey previously left as unknown. |
@@ -112,8 +114,6 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 | **v9.0.835** | Forum media deep sweep & misattribution cleansing: cleansed wall_switch_5_gang_tuya stubs, added 25 verified forum Zigbee devices (Melect… |
 | **v9.0.834** | Fixed BSEED 1-gang switch routing (Issue #540), pruned manifest flow duplicates, resolved ZG-303Z registry lock, and enforced zero guidel… |
 | **v9.0.833** | Fixed BSEED 1-gang switch routing (Issue #540), pruned manifest flow duplicates, resolved ZG-303Z registry lock, and enforced zero guidel… |
-| **v9.0.832** | Fixed BSEED 1-gang switch routing (Issue #540), pruned manifest flow duplicates, resolved ZG-303Z registry lock, and enforced zero guidel… |
-| **v9.0.831** | Improved manufacturer fingerprint database for HOBEIAN devices (presence, vibration, soil) and fixed wrong curtain/switch matches. |
 
 <!-- CHANGELOG_END -->
 
