@@ -3062,5 +3062,8 @@
   },
   "9.0.844": {
     "en": "Aligned fingerprint routing for Moes/BSEED ZCL switches after pairing fixes."
+  },
+  "9.0.845": {
+    "en": "Removed broken contact-sensor OTA firmware reference that blocked Athom publish validation."
   }
 }
