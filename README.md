@@ -33,7 +33,7 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 
 | Metric | Value |
 |--------|-------|
-| **App Version** | v9.0.842 |
+| **App Version** | v9.0.844 |
 | **Drivers** | 431 (381 Zigbee + 50 WiFi) |
 | **Unique Fingerprints** | 4,399 |
 | **Pairing Variants** | 17,066 (4 case combos per fingerprint) |
@@ -102,6 +102,8 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 
 | Version | Changes |
 |---------|---------|
+| **v9.0.844** | Aligned fingerprint routing for Moes/BSEED ZCL switches after pairing fixes. |
+| **v9.0.843** | Aligned fingerprint routing for Moes/BSEED ZCL switches after pairing fixes. |
 | **v9.0.842** | Improved pairing for several Tuya ZCL wall switches (4-gang, 2-gang, 1-gang) that Homey previously left as unknown. |
 | **v9.0.841** | Improved pairing for several Tuya ZCL wall switches (4-gang, 2-gang, 1-gang) that Homey previously left as unknown. |
 | **v9.0.840** | HOBEIAN devices now match when Homey reports the brand as product ID or product name, not only manufacturer. |
@@ -112,8 +114,6 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 | **v9.0.833** | Fixed BSEED 1-gang switch routing (Issue #540), pruned manifest flow duplicates, resolved ZG-303Z registry lock, and enforced zero guidel… |
 | **v9.0.832** | Fixed BSEED 1-gang switch routing (Issue #540), pruned manifest flow duplicates, resolved ZG-303Z registry lock, and enforced zero guidel… |
 | **v9.0.831** | Improved manufacturer fingerprint database for HOBEIAN devices (presence, vibration, soil) and fixed wrong curtain/switch matches. |
-| **v9.0.830** | Improved manufacturer fingerprint database for HOBEIAN devices (presence, vibration, soil) and fixed wrong curtain/switch matches. |
-| **v9.0.829** | Improved manufacturer fingerprint database for HOBEIAN devices (presence, vibration, soil) and fixed wrong curtain/switch matches. |
 
 <!-- CHANGELOG_END -->
 
