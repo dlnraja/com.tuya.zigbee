@@ -1,4 +1,7 @@
 {
+  "9.0.839": {
+    "en": "HOBEIAN devices now match when Homey reports the brand as product ID or product name, not only manufacturer."
+  },
   "9.0.837": {
     "en": "Improved battery roller blind motors (_TZE284_fodv6bkr) open/close/position; expanded HOBEIAN pairing for siren, switches and presence models Homey does not cover natively."
   },
@@ -3044,8 +3047,5 @@
   },
   "9.0.835": {
     "en": "Forum media deep sweep & misattribution cleansing: cleansed wall_switch_5_gang_tuya stubs, added 25 verified forum Zigbee devices (Melectro, Roy1, Rob_G, G4nd41f, Ferenc_Szasz, Anders_Lim, radiothieves, Janderek, Johan_Rossouw, RezaRose, Henk de Boom), fixed Athom 17k combo pass2 budget reduction, and passed all mandatory checks."
-  },
-  "9.0.838": {
-    "en": "Improved battery roller blind motors (_TZE284_fodv6bkr) open/close/position; expanded HOBEIAN pairing for siren, switches and presence models Homey does not cover natively."
   }
 }
