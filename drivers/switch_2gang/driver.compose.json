@@ -16,6 +16,7 @@
   ],
   "zigbee": {
     "productId": [
+      "ZG-305Z",
       "TS0002",
       "TS0002_power",
       "TS0002_switch_module",
@@ -27,8 +28,7 @@
       "TS0601",
       "TS0726",
       "ZG-301Z-2CH",
-      "ZG-302Z2",
-      "ZG-305Z"
+      "ZG-302Z2"
     ],
     "learnmode": {
       "image": "{{driverAssetsPath}}/icon.svg",
