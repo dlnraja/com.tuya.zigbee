@@ -3056,5 +3056,8 @@
   },
   "9.0.842": {
     "en": "Improved pairing for several Tuya ZCL wall switches (4-gang, 2-gang, 1-gang) that Homey previously left as unknown."
+  },
+  "9.0.843": {
+    "en": "Aligned fingerprint routing for Moes/BSEED ZCL switches after pairing fixes."
   }
 }
