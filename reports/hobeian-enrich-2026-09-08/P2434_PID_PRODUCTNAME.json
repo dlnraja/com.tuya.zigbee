@@ -1,0 +1,159 @@
+{
+  "generatedAt": "2026-09-08T08:51:52.181Z",
+  "mode": "APPLY",
+  "changes": [
+    {
+      "driverId": "button_wireless_1",
+      "addedMfr": [],
+      "addedPid": [
+        "hobeian",
+        "Hobeian",
+        "HOBEIAN"
+      ]
+    },
+    {
+      "driverId": "climate_sensor",
+      "addedMfr": [],
+      "addedPid": [
+        "hobeian",
+        "Hobeian",
+        "HOBEIAN"
+      ]
+    },
+    {
+      "driverId": "contact_sensor",
+      "addedMfr": [],
+      "addedPid": [
+        "hobeian",
+        "Hobeian",
+        "HOBEIAN"
+      ]
+    },
+    {
+      "driverId": "gas_sensor",
+      "addedMfr": [
+        "hobeian",
+        "Hobeian"
+      ],
+      "addedPid": [
+        "hobeian",
+        "Hobeian",
+        "HOBEIAN"
+      ]
+    },
+    {
+      "driverId": "illuminance_sensor",
+      "addedMfr": [],
+      "addedPid": [
+        "hobeian",
+        "Hobeian",
+        "HOBEIAN"
+      ]
+    },
+    {
+      "driverId": "presence_sensor_radar",
+      "addedMfr": [],
+      "addedPid": [
+        "hobeian",
+        "Hobeian",
+        "HOBEIAN"
+      ]
+    },
+    {
+      "driverId": "rain_sensor",
+      "addedMfr": [],
+      "addedPid": [
+        "hobeian",
+        "Hobeian",
+        "HOBEIAN"
+      ]
+    },
+    {
+      "driverId": "sensor_contact_zigbee",
+      "addedMfr": [
+        "Hobeian"
+      ],
+      "addedPid": [
+        "hobeian",
+        "Hobeian",
+        "HOBEIAN"
+      ]
+    },
+    {
+      "driverId": "siren",
+      "addedMfr": [],
+      "addedPid": [
+        "hobeian",
+        "Hobeian",
+        "HOBEIAN"
+      ]
+    },
+    {
+      "driverId": "soil_sensor",
+      "addedMfr": [],
+      "addedPid": [
+        "hobeian",
+        "Hobeian",
+        "HOBEIAN"
+      ]
+    },
+    {
+      "driverId": "switch_1gang",
+      "addedMfr": [
+        "hobeian",
+        "Hobeian"
+      ],
+      "addedPid": [
+        "hobeian",
+        "Hobeian",
+        "HOBEIAN"
+      ]
+    },
+    {
+      "driverId": "switch_2gang",
+      "addedMfr": [
+        "Hobeian"
+      ],
+      "addedPid": [
+        "hobeian",
+        "Hobeian",
+        "HOBEIAN"
+      ]
+    },
+    {
+      "driverId": "switch_3gang",
+      "addedMfr": [
+        "hobeian",
+        "Hobeian"
+      ],
+      "addedPid": [
+        "hobeian",
+        "Hobeian",
+        "HOBEIAN"
+      ]
+    },
+    {
+      "driverId": "vibration_sensor",
+      "addedMfr": [],
+      "addedPid": [
+        "hobeian",
+        "Hobeian",
+        "HOBEIAN"
+      ]
+    },
+    {
+      "driverId": "water_leak_sensor",
+      "addedMfr": [],
+      "addedPid": [
+        "hobeian",
+        "Hobeian",
+        "HOBEIAN"
+      ]
+    },
+    {
+      "action": "mfs_brand",
+      "productNames": 5,
+      "deviceNames": 108
+    }
+  ]
+}
