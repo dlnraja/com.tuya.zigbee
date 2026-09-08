@@ -16,6 +16,7 @@
   ],
   "zigbee": {
     "productId": [
+      "ZG-305Z",
       "hobeian",
       "Hobeian",
       "HOBEIAN",
@@ -30,8 +31,7 @@
       "TS0601",
       "TS0726",
       "ZG-301Z-2CH",
-      "ZG-302Z2",
-      "ZG-305Z"
+      "ZG-302Z2"
     ],
     "learnmode": {
       "image": "{{driverAssetsPath}}/icon.svg",
@@ -298,17 +298,31 @@
       "_TZE284_rip8l748",
       "hobeian",
       "Hobeian",
-      "HOBEIAN"
+      "HOBEIAN",
+      "_tz3000_ptjcjise",
+      "_tz3000_PTJCJISE",
+      "_TZ3000_ptjcjise",
+      "_TZ3000_PTJCJISE"
     ],
     "endpoints": {
       "1": {
         "clusters": [
           0,
+          4,
+          5,
+          6
+        ],
+        "bindings": [
           6
         ]
       },
       "2": {
         "clusters": [
+          4,
+          5,
+          6
+        ],
+        "bindings": [
           6
         ]
       }

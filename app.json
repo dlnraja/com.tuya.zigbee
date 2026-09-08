@@ -1,7 +1,7 @@
 {
   "_comment": "Generated from .homeycompose/app.json. STABLE channel — only bug fixes applied.",
   "id": "com.dlnraja.tuya.zigbee.stable",
-  "version": "5.12.142",
+  "version": "5.12.143",
   "compatibility": ">=12.2.0",
   "platforms": [
     "local"
@@ -233040,10 +233040,6 @@
           "_tz3000_PRITS6G4",
           "_TZ3000_prits6g4",
           "_TZ3000_PRITS6G4",
-          "_tz3000_ptjcjise",
-          "_tz3000_PTJCJISE",
-          "_TZ3000_ptjcjise",
-          "_TZ3000_PTJCJISE",
           "_tz3000_pxfjrzyj",
           "_tz3000_PXFJRZYJ",
           "_TZ3000_pxfjrzyj",
@@ -233814,13 +233810,17 @@
           "Hobeian",
           "HOBEIAN",
           "tze204_7sjncirf",
-          "TZE204_7SJNCIRF",
-          "hobeian"
+          "TZE204_7SJNCIRF"
         ],
         "endpoints": {
           "1": {
             "clusters": [
               0,
+              4,
+              5,
+              6
+            ],
+            "bindings": [
               6
             ]
           }
@@ -235005,6 +235005,7 @@
       ],
       "zigbee": {
         "productId": [
+          "ZG-305Z",
           "hobeian",
           "Hobeian",
           "HOBEIAN",
@@ -235019,8 +235020,7 @@
           "TS0601",
           "TS0726",
           "ZG-301Z-2CH",
-          "ZG-302Z2",
-          "ZG-305Z"
+          "ZG-302Z2"
         ],
         "learnmode": {
           "image": "{{driverAssetsPath}}/icon.svg",
@@ -235287,17 +235287,31 @@
           "_TZE284_rip8l748",
           "hobeian",
           "Hobeian",
-          "HOBEIAN"
+          "HOBEIAN",
+          "_tz3000_ptjcjise",
+          "_tz3000_PTJCJISE",
+          "_TZ3000_ptjcjise",
+          "_TZ3000_PTJCJISE"
         ],
         "endpoints": {
           "1": {
             "clusters": [
               0,
+              4,
+              5,
+              6
+            ],
+            "bindings": [
               6
             ]
           },
           "2": {
             "clusters": [
+              4,
+              5,
+              6
+            ],
+            "bindings": [
               6
             ]
           }
@@ -237545,31 +237559,47 @@
           "1": {
             "clusters": [
               0,
-              3,
               4,
               5,
-              6,
-              61184
+              6
+            ],
+            "bindings": [
+              6
             ]
           },
           "2": {
             "clusters": [
+              4,
+              5,
+              6
+            ],
+            "bindings": [
               6
             ]
           },
           "3": {
             "clusters": [
+              4,
+              5,
+              6
+            ],
+            "bindings": [
               6
             ]
           },
           "4": {
             "clusters": [
+              4,
+              5,
+              6
+            ],
+            "bindings": [
               6
             ]
           }
         },
         "learnmode": {
-          "image": "/drivers/switch_4gang/assets/icon.svg",
+          "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
             "en": "Turn the switch on/off 3 times quickly"
           }
@@ -251372,12 +251402,19 @@
           "_TZ3000_Z1UEZKPI",
           "_TZ3000_xk5udnd6",
           "_TZ3000_z1uezkpi",
-          "_tz3000_ywubfuvt",
+          "_tz3000_XK5UDND6",
+          "_tz3000_Z1UEZKPI",
           "_TZ3000_ywubfuvt",
+          "_tz3000_ywubfuvt",
           "_TZ3000_YWUBFUVT",
+          "_TZ3000_kgxej1dv",
+          "_tz3000_kgxej1dv",
+          "_TZ3000_KGXEJ1DV",
           "_TZ3000_jjdkhueq",
           "_tz3000_jjdkhueq",
           "_TZ3000_JJDKHUEQ",
+          "_tz3000_YWUBFUVT",
+          "_tz3000_KGXEJ1DV",
           "_tz3000_JJDKHUEQ"
         ],
         "productId": [
@@ -251389,20 +251426,21 @@
           "1": {
             "clusters": [
               0,
-              3,
               4,
               5,
-              6,
-              57344,
-              57345
+              6
+            ],
+            "bindings": [
+              6
             ]
           },
           "2": {
             "clusters": [
-              0,
-              3,
               4,
               5,
+              6
+            ],
+            "bindings": [
               6
             ]
           }
@@ -254176,10 +254214,6 @@
           "_tz3000_UPGCBODY",
           "_TZ3000_upgcbody",
           "_TZ3000_UPGCBODY",
-          "_tz3000_xk5udnd6",
-          "_tz3000_XK5UDND6",
-          "_TZ3000_xk5udnd6",
-          "_TZ3000_XK5UDND6",
           "_tz3000_zojh9vz7",
           "_tz3000_ZOJH9VZ7",
           "_TZ3000_zojh9vz7",

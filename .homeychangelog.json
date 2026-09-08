@@ -1467,5 +1467,8 @@
   },
   "5.12.142": {
     "en": "HOBEIAN devices now match when Homey reports the brand as product ID or product name, not only manufacturer."
+  },
+  "5.12.143": {
+    "en": "Improved pairing for several Tuya ZCL wall switches that Homey previously left as unknown."
   }
 }
