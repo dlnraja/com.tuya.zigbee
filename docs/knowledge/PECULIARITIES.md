@@ -1,6 +1,6 @@
 # Device peculiarities — cross-source investigation
 
-Generated 2026-08-19T08:50:15.322Z from registry (54 cases) × compound DB (209 keys) × local Z2M fps.
+Generated 2026-09-08T07:29:59.472Z from registry (201 cases) × compound DB (454 keys) × local Z2M fps.
 
 ## Class notes (always)
 
@@ -13,57 +13,51 @@ Generated 2026-08-19T08:50:15.322Z from registry (54 cases) × compound DB (209 
 
 | | Count |
 |---|---|
-| Cases with compound DB hit | 54 |
-| Cases with Z2M pid overlap | 27 |
-| Cases still gapped | 0 |
+| Cases with compound DB hit | 171 |
+| Cases with Z2M pid overlap | 92 |
+| Cases still gapped | 90 |
 
 ## Gaps
 
-### `p2354-forum-inspiration-ts004f-event` → remotes / CI
-
-- **Threads:** T150690 Steampunk (`_TZ3000_xabckq1v`+TS004F), T156967 Manfred (`kalzta4` typo), T140352 meter91/PresentSky/VicHY/Cam (tip lag)
-- **Inspiration:** Z2M Moes TS004F_1 requires `operation_mode=event` for multi-click; Homesuite/Gabriel soft-fail settings; Primordial DIY 0xFD on TS0044
-- **Bug:** `xabckq1v` was in DeviceOperatingMode TS0044 skip-0x8004 list → never forced event mode
-- **Fix:** force `ts004f` + writeSceneAttr for `xabckq1v`; forum processor typo `kalzta4`→`kaflzta4` → `smart_knob`+TS004F; sacred-keep pin
-- **Against:** treating real TS004F like 4-EP TS0044; inventing pid for Manfred without couple
-
-### `p2351-foreign-driver-id-serializer` → runtime (all drivers)
-
-- Symptom: App crash `Invalid Driver ID: ZG9101SAC_HP` (Philips Hue ID) during HomeySerializer flow parse
-- Seen: Gmail crashes on **v9.0.730** and **v9.0.743** (build #3046 / #3059)
-- Stack: `_getDriverManifest` → `getDriver` → SDK.fromJSON → HomeySerializer
-- Fix: `lib/utils/safe-get-driver-patch.js` (P2306 hardened) — soft-fail foreign IDs; re-bind on live `homey.drivers` in `App.onInit`
-- Against: treating Hue/virtual IDs as Tuya drivers; crashing whole app for one bad flow token
-
-### `p2351-cartesian-registry-refuse` → gang switches
-
-- Bad case: `p2347-gabriel-zemismart-verified-only` listed OVYAISIP/YWUBFUVT/… + TS0001+2+3 on `wall_switch_1gang_1way`
-- Effect: `align-mfs-db-intelligent --check` tried to merge 2gang/3gang onto 1gang (CI red)
-- Fix: doc-only enrichOnly case + align skip/refuse Cartesian multi-mfr×multi-gang-pid
-- Real locks remain per couple (TB25-1 / NovaDigital 2g / 3g)
-
-### `p2353-flow-button-triggers` → remotes / scene_switch_4
-
-- Symptom: PhysicalButtonMixin candidates for `scene_switch_4` skipped `*_button_4gang_button_N_*` declared cards when treated as “scene_switch 1gang branch”
-- Fix: emit both `*_button_N_*` and `*_button_Ngang_button_N_*`; never invent `*_button_N_button_pressed`
-- Sacred-keep: `wkai4ga5`+TS0044 scene_switch_4; `dfgbtub0`+TS0044 bw4 / +TS0042 bw2
-- Do **not** lock `wkai4ga5`+TS0042 without interview (forum soft only)
-
-### `p2348-salvagr-5slehgeo-curtain` → `curtain_motor`
-
-- Couple: `_TZE204_5slehgeo` + TS0601 (siblings `_TZE284_` / `_TZE200_5slehgeo`, also `_TZE200_nhyj64w2` / `_TZE200_127x7wnl`)
-- Retail: Moes ZTS-EUR-C (GitHub #533 Salvagr)
-- Protocol: EF00 interview clusters `[0,4,5,61184]` — not OnOff/WindowCovering
-- Diag: `724d4bc9` on 9.0.741 — Unknown Device (no driver init; pairing miss)
-- Root cause: publish compact lowercased sacred-keep pins → kept `_TZE204_5SLEHGEO` / `_tze204_5slehgeo` but dropped exact `_TZE204_5slehgeo` (Homey case-sensitive)
-- Fix: preserve exact `pin.mfr` in compact + sacred-keep pins; trim absurd curtain productIds
-- **P2356 (2026-08-31):** post-pair diag `05867379` — position RX + DP3/7/8/10 settings + strip `button.1` (UI errors); `_handleTuyaDP` → `_handleDP`
-- **P2388 (2026-09-02):** diag `05867379-dabd-4299-bb1a-cad53fa57189` @ **9.0.750** — couple **ABSENT**; timeout + hybrid RX none + EF00 manager missing at init. P2363 optimistic cover + soft-create shipped; **NEED_INTERVIEW** (mfr+pid + `[COVER-INIT]` lines). Cross-ref Z2M TS0601_cover siblings in `reports/couple-absent-search/05867379.json` — never lock #533 TRV couple without log proof.
-- **P2363 (2026-09-01):** same diag still **couple ABSENT** (hybrid RX none) — do not invent mfr+pid. Soft-create `TuyaEF00Manager` on `UnifiedCoverBase`, optimistic `windowcoverings_*` after successful TX, skip hybrid protocol-disable for cover/curtain drivers. Added verified Z2M cover motors (`mfr`+`TS0601` only); stripped tilt `_TZE204_r0jdjrvi` from `curtain_motor`.
-- **P2380 (2026-09-02):** diag `ab5aaf04` @ 9.0.775 “Cover stop working” — `UniversalDPSender._try` treated `sendDP()===false` as success (`✅DP mgr` while stderr `Tuya cluster not available`). Fix: honor false + multi-EP EF00 scan + ZCL windowCovering fallback on cover TX.
-- **P2393 (2026-09-02):** diags `ab5aaf04` + `a9e4d712` @ 9.0.775/784 — TX `✅` but cover dead: Homey UI sends `down` then `idle` ~1s later (momentary release) → DP1 STOP cancels travel. Fix: motion guard skips idle for 5s (Moes ZTS) / 2.5s (other EF00 covers); do not snap position to 0/1 on state TX.
+- `no_sources`: 66
+- `no_compound_db_key`: 30
+- `not_in_local_z2m_fps`: 34
+- `compose_pid_mismatch`: 5
 
 ## Cases (1 by 1)
+
+### `eduard-martirosyan-tze284-fodv6bkr-curtain` → `curtain_motor`
+
+- Couple: `_TZE284_fodv6bkr` + TS0601
+- Protocol: tuya_dp
+- Z2M local pids for mfr: TS0601 ✓ overlap
+- Compound `_TZE284_fodv6bkr|TS0601`: tuya_dp DP {"1":"windowcoverings_state","2":"windowcoverings_set/100","3":"windowcoverings_set/100","5":"reverse_direction","13":"measure_battery"} Forum Eduard_Martirosyan #2228 DC tubular roller blind motor
+- Compound `_tze284_fodv6bkr|TS0601`: tuya_dp DP {"1":"windowcoverings_state","2":"windowcoverings_set/100","3":"windowcoverings_set/100","5":"reverse_direction","13":"measure_battery"} Forum Eduard_Martirosyan #2228 DC tubular roller blind motor
+- Compound `_TZE284_FODV6BKR|TS0601`: tuya_dp DP {"1":"windowcoverings_state","2":"windowcoverings_set/100","3":"windowcoverings_set/100","5":"reverse_direction","13":"measure_battery"} Forum Eduard_Martirosyan #2228 DC tubular roller blind motor
+- Compound `_TZE284_libht6ua|TS0601`: tuya_dp DP {"1":"windowcoverings_state","2":"windowcoverings_set/100","3":"windowcoverings_set/100","5":"reverse_direction","13":"measure_battery"} Roller blind motor sibling to fodv6bkr
+- Compound `_tze284_libht6ua|TS0601`: tuya_dp DP {"1":"windowcoverings_state","2":"windowcoverings_set/100","3":"windowcoverings_set/100","5":"reverse_direction","13":"measure_battery"} Roller blind motor sibling to fodv6bkr
+- Compound `_TZE284_LIBHT6UA|TS0601`: tuya_dp DP {"1":"windowcoverings_state","2":"windowcoverings_set/100","3":"windowcoverings_set/100","5":"reverse_direction","13":"measure_battery"} Roller blind motor sibling to fodv6bkr
+- Compose: class=windowcoverings eps=1 EF00=true IAS=false batteries=OTHER
+- Notes: Eduard_Martirosyan #2228 DC tubular roller blind motor; EF00 Tuya cover DPs
+- **Gaps:** no_sources
+
+### `vichy-clrdrnya-presence` → `presence_sensor_radar`
+
+- Couple: `_TZE204_clrdrnya` + TS0601
+- Protocol: tuya_ef00
+- Z2M local pids for mfr: TS0601 ✓ overlap
+- Compound `_TZE204_clrdrnya|TS0601`: tuya_dp  MTG235-ZB-RL mmWave+relay (sbyx0lm6 family). Never climate/motion_pir. Z2M#18677 GH#420
+- Compound `_tze204_clrdrnya|TS0601`: tuya_dp  VicHY #2224/#2227 MTG075 mmWave radar 220V
+- Compound `_TZE204_CLRDRNYA|TS0601`: tuya_dp  VicHY #2224/#2227 MTG075 mmWave radar 220V
+- Compound `_TZE200_clrdrnya|TS0601`: tuya_dp  TZE200 sibling; Z2M discussion#25712 lost-support reminder — keep compound lock
+- Compound `_tze200_clrdrnya|TS0601`: tuya_dp  VicHY #2224/#2227 MTG075 mmWave radar 220V
+- Compound `_TZE200_CLRDRNYA|TS0601`: tuya_dp  VicHY #2224/#2227 MTG075 mmWave radar 220V
+- Compound `_TZE284_clrdrnya|TS0601`: tuya_dp  TZE284 sibling of clrdrnya radar; same TS0601 couple only
+- Compound `_tze284_clrdrnya|TS0601`: tuya_dp  VicHY #2224/#2227 MTG075 mmWave radar 220V
+- Compound `_TZE284_CLRDRNYA|TS0601`: tuya_dp  VicHY #2224/#2227 MTG075 mmWave radar 220V
+- Compose: class=sensor eps=1 EF00=true IAS=false batteries=CR2032/CR2450/AAA/AA/CR123A/INTERNAL
+- Notes: VicHY #2224/#2227 MTG075 220V AC ceiling mmWave presence radar. Forbid curtain_motor phantom flip.
+- **Gaps:** no_sources
 
 ### `hobeian-aubess-k4ej3ww2-ias` → `water_leak_sensor`
 
@@ -76,6 +70,16 @@ Generated 2026-08-19T08:50:15.322Z from registry (54 cases) × compound DB (209 
 - Notes: Never EF00/Tuya-DP water driver. modelId is always TS0207; ZG-222ZA/IH-K665/IH-1218 are retail labels. Sleepy IAS 1280 reports on wet/dry only (Z2M#17685/#19308). Same pid TS0207 is a mains repeater for 5k5vh43t — lock the couple. Removed from water_leak_sensor_tuya (P144) and gas_sensor productId abuse (P143).
 - Sources: z2m#17685, z2m#28181, z2m#19308, forum-140352, P143, P144, P146
 
+### `p2240-mwd3c2at-irrigation-valve-ts0202` → `smart_irrigation_valve`
+
+- Couple: `_TZ3000_mwd3c2at` + TS0202
+- Protocol: tuya_ef00
+- Z2M local pids for mfr: (none in dump) 
+- Compose: class=socket eps=1 EF00=true IAS=false batteries=mains?
+- Notes: Z2M irrigation/water valve — TS0202 must not cartesian to motion PIR default (P2231 CI-safe without z2m.json index).
+- Sources: z2m, P2231, P2240
+- **Gaps:** no_compound_db_key
+
 ### `presentsky-bseed-dimmer-m1cvyneb` → `wall_dimmer_tuya`
 
 - Couple: `_TZE284_m1cvyneb` + TS0601
@@ -85,8 +89,8 @@ Generated 2026-08-19T08:50:15.322Z from registry (54 cases) × compound DB (209 
 - Compound `_TZE204_m1cvyneb|TS0601`: tuya_dp DP {"1":"onoff","2":"dim/1000"}
 - Compound `_TZE200_m1cvyneb|TS0601`: tuya_dp DP {"1":"onoff","2":"dim/1000"}
 - Compose: class=light eps=1 EF00=true IAS=false batteries=mains?
-- Notes: BSEED Click 1-gang EF00 dimmer insert. MCU brightness 0-1000 (never write >1000, Z2M#32305). Stale climate pairing cannot be swapped at runtime — remove and re-add as wall dimmer. Couple is TS0601 only; do not invent TS0201. Interview EP1 clusters: 0/4/5/0xEF00 + proprietary **0xED00 (60672)** — do not compose 0xED00. **#2221** (2026-09-01) claims “updated diagnostic ID and interview” but the post body has **no UUID / no interview** (reply_to #2206 only). Evidence remains `60959c24` @ **9.0.688**: DynCap DP2→humidity + Missing IEEE 404 TX (P2314/P2333); tip ≥9.0.744+ heal/dp map; **P2382** skip HYBRID 15-min disable on EF00 dimmers.
-- Sources: forum-140352 #2206/#2221, diag-60959c24, diag-f20dc4f0, P139, P149, P2314, P2333, P2382, z2m#32305
+- Notes: P2322 PresentSky #2206: pair as wall_dimmer OK but controls were dead — force magic handshake + IEEE heal from node + flow cards must TX via _txCapability (not setCapabilityValue alone). MCU brightness 0-1000. Couple TS0601 only; never invent TS0201. Remove+re-pair after update.
+- Sources: forum-140352-2206, forum-140352, diag-60959c24, diag-f20dc4f0, P139, P149, P2314, P2322, z2m#32305, z2m-TS0601_dimmer_1_gang_1
 
 ### `tboy-relay-4ch-imaccztn` → `relay_board_4_channel`
 
@@ -138,20 +142,16 @@ Generated 2026-08-19T08:50:15.322Z from registry (54 cases) × compound DB (209 
 - Notes: ZT08 weather — unix_1970 time sync + DP17 commit (GH #513).
 - Sources: forum-140352, github#513, P140
 
-### `motion-tz3000-uw3dadam` → `motion_sensor`
-
-- Couple: `_TZ3000_uw3dadam` + `TS0202`
-- Protocol: IAS Zone (deCONZ DDF #8503 / Z2S IAS)
-- **P2402 (Gmail unmatched FP):** lock `motion_sensor` only — never climate/radar/soil. Re-pair after Test update if tile missing.
-
 ### `presence-radar-clrdrnya` → `presence_sensor_radar`
 
 - Couple: `_TZE204_clrdrnya` + TS0601
 - Protocol: tuya_ef00
 - Z2M local pids for mfr: TS0601 ✓ overlap
 - Compound `_TZE204_clrdrnya|TS0601`: tuya_dp  MTG235-ZB-RL mmWave+relay (sbyx0lm6 family). Never climate/motion_pir. Z2M#18677 GH#420
+- Compound `_tze204_clrdrnya|TS0601`: tuya_dp  VicHY #2224/#2227 MTG075 mmWave radar 220V
 - Compound `_TZE284_clrdrnya|TS0601`: tuya_dp  TZE284 sibling of clrdrnya radar; same TS0601 couple only
 - Compound `_TZE200_clrdrnya|TS0601`: tuya_dp  TZE200 sibling; Z2M discussion#25712 lost-support reminder — keep compound lock
+- Compound `_tze200_clrdrnya|TS0601`: tuya_dp  VicHY #2224/#2227 MTG075 mmWave radar 220V
 - **P2340 (diag 4217d5e3 / VicHY):** publish compact dropped `_TZE204_clrdrnya` from app.json — sacred-keep + force-inject restores mfr; user on **9.0.719** must update Test ≥9.0.739 + re-pair `presence_sensor_radar`.
 - **Search UX:** Users typing “PIR mmWave” often pick `pir_mmwave_sensor` (`_TZ3000_3towulqd` only). MTG235/clrdrnya must use **Presence Sensor (Radar / mmWave)** tile.
 - **P2379 (VicHY):** DynCap invented `windowcoverings_set` from DP2/3/102 (sensitivity/range/departure_delay) → Homey UI showed **curtain + opening slider**; DP102→`alarm_motion` stuck presence true. Fix: disable DynCap invent on presence radars + heal phantom caps.
@@ -161,6 +161,8 @@ Generated 2026-08-19T08:50:15.322Z from registry (54 cases) × compound DB (209 
 - **P2401 (VicHY #2226 ack / update race):** Homey flood + low-battery timeline after update can fire while `driver.id` still empty. `isRadarFloodContext` + `_isRadarFloodCalmDevice` match clrdrnya mfr / `measure_luminance.distance` / `floodCalm` so tip ≥9.0.802 stays quiet without waiting for driver id.
 - **P2420 (VicHY #2227 diag `c5165a37` @ 9.0.797):** After tip update, curtain UI again (delete+re-pair works); flood gone; **battery warning still**. Root: (1) `setEnergy({})` only ran when `getEnergy().batteries` non-empty — Homey kept Energy icon from compose; (2) DP2 `cap:null`+`setting` fell through generic DP2→humidity SmartDivisor. Fix: always clear Energy on mains; re-heal at 2s/5s; EF00 treats `setting`/`cap:null` as owned. User: update Test ≥ tip + **restart app** (re-pair only if still curtain).
 - **P2421 (HOBEIAN Z2M internet enrich):** Canonical herdsman DPs for ZG-204ZM (DP2 static sens, DP4 static dist/100 — drop invented large/small/micro map). New configs ZG-204ZH (`vuqzj1ej`/`hdih4foa`), ZG-302ZM/ZL sensing-switch (moved off vibration + climate cartesian). Strip ZG-204*/302* from `power_clamp_meter` / `motion_sensor`. Re-pair if previously matched climate/vibration/clamp.
+- **P2423 (mfs_db):** Lock TZE couples to verified drivers/pids; expand `HOBEIAN.byPid` (ZX/302/102ZM/103Z/226Z/228Z). `sync-compose-to-mfs-db` skips `multiCouple` prune. Forbid curtain←`zbfmvj13`, switch_1gang←ZG-103Z mfrs.
+- **P2433 (Eduard #2228 + HOBEIAN gaps):** `_TZE284_fodv6bkr`+`TS0601` battery tubular — DP3=position (not dim); strip phantom lux/button/tilt. Compose locks HOBEIAN|ZG-229Z→siren, ZG-204ZP→presence, ZG-301Z/302Z*→switches, ZG-101ZD→button; strip cartesian pid theft.
 - **P2392 (fleet firmware compensate):** Root cause of `tuya_dp_value` P2308 spam — `TuyaUniversalBridge` added DIY caps on **every** device. Fix: DIY caps only on universal/DIY drivers; `_updateCapability` gated on `hasCapability`; `FirmwareQuirkCompensator` strips DIY + mains battery fleet-wide via HomeyGapCompensator; `safeSetCapabilityValue` refuses ghost caps.
 
 ### `hobeian-zg204zh` / `hobeian-zg302z*` (P2421)
@@ -195,6 +197,17 @@ Generated 2026-08-19T08:50:15.322Z from registry (54 cases) × compound DB (209 
 - Compose: class=sensor eps=1 EF00=true IAS=false batteries=CR2032/CR2450/AAA/AA/CR123A/INTERNAL
 - Notes: MTG235-ZB-RL mmWave + relay — presence_sensor_radar only (GH#420, Z2M#18677 sbyx0lm6 family). Mains. Never climate or PIR motion.
 - Sources: forum-140352, github#420, P139, P204, z2m#18677
+
+### `valve-dual-fhvpaltk` → `valve_dual_irrigation`
+
+- Couple: `_TZE284_fhvpaltk` + TS0601
+- Protocol: tuya_ef00
+- Z2M local pids for mfr: TS0601 ✓ overlap
+- Compound `_TZE284_fhvpaltk|TS0601`: tuya_dp DP {"1":"onoff.valve_1","2":"onoff.valve_2","15":"measure_battery","59":"measure_battery","101":"measure_battery"} Homey forum #2082 Insoma 2-way valve; not curtain_motor or 4-way dim valve
+- Compound `_TZE284_eaet5qt5|TS0601`: tuya_dp DP {"1":"onoff.valve_1","2":"onoff.valve_2","15":"measure_battery","59":"measure_battery","101":"measure_battery"} Insoma 2-way valve variant; not curtain_motor or 4-way dim valve
+- Compose: class=other eps=1 EF00=true IAS=false batteries=AA
+- Notes: Insoma / Tuya 2-way irrigation — onoff.valve_1 + onoff.valve_2. Joep #2082/#2102/#2218. GIEX 8zizsafo is valve_irrigation (4-zone), not this couple.
+- Sources: forum-140352, z2m, P2377
 
 ### `switch-4gang-wkr3jqmr` → `switch_4gang`
 
@@ -234,11 +247,11 @@ Generated 2026-08-19T08:50:15.322Z from registry (54 cases) × compound DB (209 
 - Couple: `_TZE284_mvtclclq` + TS0601
 - Protocol: tuya_ef00
 - Z2M local pids for mfr: TS0601 ✓ overlap
-- Compound `_TZE284_mvtclclq|TS0601`: tuya_dp DP {"1":"onoff.usb1","2":"onoff.usb2","3":"onoff","4":"onoff.socket2"} Z2M DS-1450WN / BSEED USB+sockets (P2279). Forbid wall_dimmer.
+- Compound `_TZE284_mvtclclq|TS0601`: tuya_dp DP {"1":"onoff.usb1","2":"onoff.usb2","3":"onoff","4":"onoff.socket2"} Z2M DS-1450WN — forbid wall_dimmer. z2m#31275
 - Compound `_TZE204_mvtclclq|TS0601`: tuya_dp DP {"1":"onoff.usb1","2":"onoff.usb2","3":"onoff","4":"onoff.socket2"}
 - Compose: class=socket eps=1 EF00=true IAS=false batteries=mains?
-- Notes: Z2M DS-1450WN USB/plug switch with power — not TRV, wireless button, or wall dimmer. Metering DP21–23/105.
-- Sources: z2m#31275, z2m#28937, P167, P2279
+- Notes: Z2M DS-1450WN USB/plug switch with power — not TRV or wireless button.
+- Sources: z2m#31275, P167
 
 ### `rgb-bulb-jaap6jeb` → `bulb_rgbw`
 
@@ -250,14 +263,14 @@ Generated 2026-08-19T08:50:15.322Z from registry (54 cases) × compound DB (209 
 - Notes: LEDEPLY SG45-E26 RGB+CCT — not door/motion sensor.
 - Sources: z2m-herdsman, P167
 
-### `plug-vzopcetz-1obwwnmq` → `device_plug_energy_monitor`
+### `plug-vzopcetz-1obwwnmq` → `socket_power_strip`
 
 - Couple: `_TZ3000_vzopcetz` + TS011F
 - Protocol: zcl
 - Z2M local pids for mfr: (none in dump) 
 - Compound `_TZ3000_vzopcetz|TS011F`: zcl  Johan/Silvercrest metering plug/strip; not button or E14
 - Compound `_TZ3000_1obwwnmq|TS011F`: zcl
-- Compose: class=socket eps=1 EF00=false IAS=false batteries=mains?
+- Compose: class=socket eps=3 EF00=false IAS=false batteries=mains?
 - Notes: Johan/Silvercrest TS011F strip/plug — not button or E14 bulb.
 - Sources: johan, P167
 
@@ -273,14 +286,57 @@ Generated 2026-08-19T08:50:15.322Z from registry (54 cases) × compound DB (209 
 
 ### `hobeian-zg303z-soil` → `soil_sensor`
 
-- Couple: `HOBEIAN` + ZG-303Z, TS0601
+- Couple: `HOBEIAN` + ZG-303Z
 - Protocol: tuya_ef00
-- Z2M local pids for mfr: CK-BL702-MWS-01(7016), TS0601 ✓ overlap
+- Z2M local pids for mfr: CK-BL702-MWS-01(7016) 
 - Compound `HOBEIAN|ZG-303Z`: tuya_dp  Retail ZG-303Z only — do NOT lock HOBEIAN|TS0601 (other HOBEIAN TS0601 exist)
+- Compose: class=sensor eps=1 EF00=true IAS=false batteries=AAA/CR2032/CR2450
+- Notes: HOBEIAN|ZG-303Z soil only. Brand HOBEIAN also owns climate ZG-227Z/ZL, presence ZG-204*, contact ZG-102*, water ZG-222*, switch ZG-305Z — never ban brand from climate mfr-only. nt4pquef / wqashyqo are separate couples.
+- Sources: z2m-ZG-303Z, forum-blutch32, P178, P2250
+
+### `wqashyqo-ts0601-soil` → `soil_sensor`
+
+- Couple: `_TZE200_wqashyqo` + TS0601, ZG-303Z
+- Protocol: tuya_ef00
+- Z2M local pids for mfr: TS0601 ✓ overlap
 - Compound `_TZE200_wqashyqo|TS0601`: tuya_dp  HOBEIAN ZG-303Z MCU soil; DP107 moisture family. nt4pquef is a different couple
 - Compose: class=sensor eps=1 EF00=true IAS=false batteries=AAA/CR2032/CR2450
-- Notes: HOBEIAN ZG-303Z / _TZE200_wqashyqo soil. Lock HOBEIAN|ZG-303Z and wqashyqo|TS0601 only — never HOBEIAN|TS0601 (other HOBEIAN TS0601 exist). nt4pquef stays on soil-nt4pquef.
-- Sources: z2m-ZG-303Z, forum-blutch32, P178
+- Notes: HOBEIAN ZG-303Z MCU alias _TZE200_wqashyqo|TS0601 — mfr-forbid on climate catch-alls. Do not invent HOBEIAN|TS0601 brand lock.
+- Sources: z2m-ZG-303Z, P178, P2250
+
+### `hobeian-zg227z-climate` → `climate_sensor`
+
+- Couple: `HOBEIAN` + ZG-227Z, ZG-227ZL
+- Protocol: zcl
+- Z2M local pids for mfr: CK-BL702-MWS-01(7016) 
+- Compound `HOBEIAN|ZG-227Z`: zcl  Interview INT-031 temp/humidity
+- Compound `HOBEIAN|ZG-227ZL`: zcl  P2251 LCD climate sibling of ZG-227Z
+- Compose: class=sensor eps=1 EF00=true IAS=false batteries=AAA/CR2032/CR2450
+- Notes: HOBEIAN ZG-227Z/ZL temp+humidity (Z2M). Pure ZCL msTemperatureMeasurement+msRelativeHumidity. Case-insensitive brand forms required. Not soil/presence/contact.
+- Sources: z2m-ZG-227Z, z2m-ZG-227ZL, P2250
+
+### `hobeian-zg204-presence` → `presence_sensor_radar`
+
+- Couple: `HOBEIAN` + ZG-204Z, ZG-204ZE, ZG-204ZH, ZG-204ZK, ZG-204ZL, ZG-204ZM, ZG-204ZQ, ZG-204ZV, ZG-205Z, ZG-205ZL, ZG-302ZM, ZG-302ZL, ZG-204ZX, ZG-204ZP
+- Protocol: tuya_ef00
+- Z2M local pids for mfr: CK-BL702-MWS-01(7016) 
+- Compound `HOBEIAN|ZG-204Z`: tuya_dp  P2430 HOBEIAN radar 204Z
+- Compound `HOBEIAN|ZG-204ZE`: tuya_dp  P2422 ZE
+- Compound `HOBEIAN|ZG-204ZH`: tuya_dp  P2421 ZG-204ZH climate+presence
+- Compound `HOBEIAN|ZG-204ZK`: tuya_dp  P2422 ZK
+- Compound `HOBEIAN|ZG-204ZL`: tuya_dp  P2251 PIR/radar family
+- Compound `HOBEIAN|ZG-204ZM`: tuya_dp  Interview / market apply-safe mmWave
+- Compound `HOBEIAN|ZG-204ZQ`: tuya_dp  P2422 ZQ climate+PIR
+- Compound `HOBEIAN|ZG-204ZV`: tuya_dp  Interview / market apply-safe mmWave
+- Compound `HOBEIAN|ZG-205Z`: tuya_dp  P2430 HOBEIAN radar 205Z
+- Compound `HOBEIAN|ZG-205ZL`: tuya_dp  P2430 HOBEIAN radar 205ZL
+- Compound `HOBEIAN|ZG-302ZM`: tuya_dp  P2421 motion sensing switch 3ch
+- Compound `HOBEIAN|ZG-302ZL`: tuya_dp  P2421 motion sensing switch 3ch alt DP
+- Compound `HOBEIAN|ZG-204ZX`: tuya_dp  P2422 ZX
+- Compound `HOBEIAN|ZG-204ZP`: tuya_dp  P2430 HOBEIAN radar 204ZP
+- Compose: class=sensor eps=1 EF00=true IAS=false batteries=CR2032/CR2450/AAA/AA/CR123A/INTERNAL
+- Notes: HOBEIAN ZG-204*/ZG-205*/ZG-302Z* radar/presence (+ sensing-switch). Never climate/soil/vibration/clamp cartesian. Z2M herdsman couples.
+- Sources: z2m-ZG-204ZM, P2250
 
 ### `curtain-r0jdjrvi-tilt` → `curtain_motor_tilt`
 
@@ -370,7 +426,7 @@ Generated 2026-08-19T08:50:15.322Z from registry (54 cases) × compound DB (209 
 - Couple: `_TZ3210_ol1uhvza` + TS130F
 - Protocol: zcl
 - Z2M local pids for mfr: (none in dump) 
-- Compound `_TZ3210_ol1uhvza|TS130F`: zcl  TS130F curtain module; not climate or dimmer
+- Compound `_TZ3210_ol1uhvza|TS130F`: zcl  ZHA#5226 inverted lift % + mid-travel; invert_position + RX reporting (P2275)
 - Compound `_TZ3210_dwytrmda|TS130F`: zcl
 - Compose: class=curtain eps=1 EF00=false IAS=false batteries=mains?
 - Notes: TS130F curtain switch module per Johan enrichment and product-reference (deviceClass windowcoverings). Not a climate sensor and not a dimmer.
@@ -628,8 +684,20 @@ Generated 2026-08-19T08:50:15.322Z from registry (54 cases) × compound DB (209 
 - Z2M local pids for mfr: (none in dump) 
 - Compound `_TZ3000_lwthnp7j|TS0004`: zcl  Zemismart TB25-4 ZCL; sub-device tiles; not EF00 TS0601
 - Compose: class=socket eps=4 EF00=false IAS=false batteries=mains?
-- Notes: ZCL 4-gang TB25-4 (not EF00 TS0601). Sub-device tiles. Do not invent 606/808/ZMS-206 pids.
-- Sources: forum-140352-2173, forum-140352-2182
+- Notes: P2322: HomeSuite interview confirms TS0004 + EP1-4 genOnOff (clusters 3,4,5,6,57344,57345). ZCL TB25-4 touch — not EF00. Sub-device tiles. Forum #2186/#2188 Gabriel.
+- Sources: forum-140352-2173, forum-140352-2182, forum-140352-2186, forum-140352-2188, gpm-homesuite-interview-TS0004, P2322
+
+### `p2261-ihseno-debczeci-presence` → `presence_sensor_radar`
+
+- Couple: `_TZE284_debczeci` + TS0601
+- Protocol: tuya_dp
+- Z2M local pids for mfr: TS0601 ✓ overlap
+- Compound `_TZE284_debczeci|TS0601`: tuya_dp  iHseno mmWave DP1 presence; Johan T26439 #5493
+- Compound `_TZE204_debczeci|TS0601`: tuya_dp
+- Compound `_TZE284_1lvln0x6|TS0601`: tuya_dp  Z2M sibling of debczeci
+- Compose: class=sensor eps=1 EF00=true IAS=false batteries=CR2032/CR2450/AAA/AA/CR123A/INTERNAL
+- Notes: iHseno mmWave presence — DP1 occupancy DP4 battery. Johan T26439 #5493; Z2M sibling 1lvln0x6.
+- Sources: z2m-27773, forum-26439-5493, P2261
 
 ### `okaz9tjs-ts011f-metering-plug` → `plug_energy_monitor`
 
@@ -679,7 +747,7 @@ Generated 2026-08-19T08:50:15.322Z from registry (54 cases) × compound DB (209 
 - Z2M local pids for mfr: CK-BL702-MWS-01(7016) 
 - Compound `HOBEIAN|ZG-305Z`: zcl  MHCOZY/HOBEIAN 2ch USB switch; not wireless button
 - Compose: class=socket eps=2 EF00=false IAS=false batteries=mains?
-- Notes: HOBEIAN ZG-305Z MHCOZY dual USB-C switch (JohanBendz PR #1435). Unique pid avoids TS0601 cartesian with other HOBEIAN sensors.
+- Notes: HOBEIAN ZG-305Z MHCOZY dual USB-C switch (JohanBendz PR #1435). Unique pid avoids TS0601 cartesian with other HOBEIAN sensors. forbidMode couple — same brand has climate/soil/radar siblings.
 - Sources: JohanBendz#1435
 
 ### `pm-rolp-tz3218-7fiyo3kv-ts000f-switch-temp` → `switch_temp_sensor`
@@ -704,97 +772,1485 @@ Generated 2026-08-19T08:50:15.322Z from registry (54 cases) × compound DB (209 
 - Notes: TZ3210 TS011F metering plug sibling of okaz9tjs. ZCL electrical+metering; not climate. Pid TS011F is ambiguous without mfr.
 - Sources: homesuite-field
 
-### `p2266-bjawzodf-ty0201-temu` → `lcdtemphumidsensor`
+### `blitzwolf-amdymr7l-shp13-plug` → `plug_energy_monitor`
 
-- Couple: `_TZ3000_bjawzodf` + TY0201 (also TS0201 in Z2M WSD500A list)
-- Protocol: zcl EP1
-- Retail: Temu round white LCD temp/humidity (HACF #38762)
-- Compound: EP1 clusters 0/1/3/0x0402/0x0405 — NOT Neo qaaysllp (no lux, no EP2, no 0xE002)
-- Notes: Needs Tuya magic 0xFFFE. Sibling `_TZE200_bjawzodf`+TS0601 is EF00 → `climate_sensor` (different couple).
-- Sources: hacf-38762, zha-device-handlers#2862, z2m-WSD500A, P2266
+- Couple: `_TZ3000_amdymr7l` + TS011F
+- Protocol: zcl
+- Z2M local pids for mfr: (none in dump) 
+- Compound `_TZ3000_amdymr7l|TS011F`: zcl  BlitzWolf BW-SHP13 metering; never button
+- Compound `_TZ3210_amdymr7l|TS011F`: zcl  BlitzWolf BW-SHP13 TZ3210 sibling; Phoscon/Z2M
+- Compose: class=socket eps=1 EF00=false IAS=false batteries=mains?
+- Notes: BlitzWolf BW-SHP13 metering plug (Phoscon/Z2M). Never button driver. Pid TS011F ambiguous without mfr.
+- Sources: phoscon-compat, z2m-11703, fork-mmaaikel
+
+### `p2201-pay2byax-zg102zl-contact` → `contact_sensor_zigbee`
+
+- Couple: `_TZE200_pay2byax` + TS0601, ZG-102ZL, ZG-102Z
+- Protocol: tuya_dp
+- Z2M local pids for mfr: TS0601 ✓ overlap
+- Compound `_TZE200_pay2byax|TS0601`: tuya_dp  ZG-102ZL luminance contact; P2201 P126-safe
+- Compound `_TZE200_pay2byax|ZG-102ZL`: tuya_dp
+- Compound `_TZE204_pay2byax|TS0601`: tuya_dp  TZE204 sibling; P2201 P126-safe
+- Compound `_TZE204_pay2byax|ZG-102ZL`: tuya_dp
+- Compose: class=sensor eps=1 EF00=false IAS=false batteries=CR2450
+- Notes: ZG-102ZL luminance contact. TS0601 pairs via contact_sensor_zigbee (P126 forbids TS0601 on contact_sensor). ZG-102ZL also on contact_sensor.
+- Sources: z2m-zg-102zl, p126-contact-no-TS0601, fork-p2200
+
+### `tongou-to-q-sys-jzt-din-meter` → `din_rail_meter`
+
+- Couple: `_TZE284_6ocnqlhn` + TS0601
+- Protocol: tuya_ef00
+- Retail: Tongou TO-Q-SYS-JZT
+- Z2M local pids for mfr: (none in dump) 
+- Compound `_TZE284_6ocnqlhn|TS0601`: tuya_dp  Tongou TO-Q-SYS-JZT. DP6 type0 composite V/A/W. Forbid smart_rcbo. Re-pair after update.
+- Compose: class=sensor eps=1 EF00=true IAS=false batteries=mains?
+- Notes: Gmail diags 3a1f196d + 31e654a4 (Aug 2026). Z2M din rail smart meter — not RCBO. smart_rcbo stole couple; DP6 raw was mapped to measure_humidity. User must update Test and re-pair.
+- Sources: gmail-diag-3a1f196d, gmail-diag-31e654a4, z2m-TO-Q-SYS-JZT
+
+### `p2234-gdsvhfao-repeater` → `zigbee_repeater`
+
+- Couple: `_TZ3000_gdsvhfao` + TS0001
+- Protocol: unknown
+- Z2M local pids for mfr: TS0001 ✓ overlap
+- Compound `_TZ3000_gdsvhfao|TS0001`: zcl  Z2M#11207 TS0001_repeater — not switch_1gang
+- Compose: class=other eps=1 EF00=false IAS=false batteries=mains?
+- Notes: TS0001_repeater — pairing button repeater
+- **Gaps:** no_sources
+
+### `p2234-itp8dt7f-dimmer` → `wall_dimmer_tuya`
+
+- Couple: `_TZE200_itp8dt7f` + TS0601
+- Protocol: unknown
+- Z2M local pids for mfr: (none in dump) 
+- Compound `_TZE200_itp8dt7f|TS0601`: tuya_dp DP {"1":"onoff","2":"dim/1000"} Z2M#12213 ION dimmer alias ykgar0ow — not soil
+- Compose: class=light eps=1 EF00=true IAS=false batteries=mains?
+- Notes: ION touch dimmer alias of ykgar0ow
+- **Gaps:** no_sources, not_in_local_z2m_fps
+
+### `p2234-qujphad5-tybac` → `wall_thermostat`
+
+- Couple: `_TZE204_qujphad5` + TS0601
+- Protocol: unknown
+- Z2M local pids for mfr: (none in dump) 
+- Compound `_TZE204_qujphad5|TS0601`: tuya_dp  Z2M#12869 TYBAC-006 FCU — not bulb
+- Compose: class=thermostat eps=1 EF00=true IAS=false batteries=mains?
+- Notes: TYBAC-006 FCU thermostat
+- **Gaps:** no_sources, not_in_local_z2m_fps
+
+### `p2234-apiu8k13-q9qytwfa-water-heater` → `plug_energy_monitor`
+
+- Couple: `_TZE204_apiu8k13` + TS0601
+- Protocol: unknown
+- Z2M local pids for mfr: (none in dump) 
+- Compound `_TZE204_apiu8k13|TS0601`: tuya_dp  Water heater power-monitoring switch
+- Compound `_TZE284_q9qytwfa|TS0601`: tuya_dp  Z2M#32883 Nisko — same DPs as apiu8k13
+- Compose: class=socket eps=1 EF00=false IAS=false batteries=mains?
+- Notes: Power-monitoring water heater controller
+- **Gaps:** no_sources, not_in_local_z2m_fps
+
+### `p2234b-tz3000_gdsvhfao` → `zigbee_repeater`
+
+- Couple: `_TZ3000_gdsvhfao` + TS0001
+- Protocol: unknown
+- Z2M local pids for mfr: TS0001 ✓ overlap
+- Compound `_TZ3000_gdsvhfao|TS0001`: zcl  Z2M#11207 TS0001_repeater — not switch_1gang
+- Compose: class=other eps=1 EF00=false IAS=false batteries=mains?
+- Notes: Z2M#11207 TS0001_repeater only — not every TS0001
+- **Gaps:** no_sources
+
+### `p2234b-tze200_itp8dt7f` → `wall_dimmer_tuya`
+
+- Couple: `_TZE200_itp8dt7f` + TS0601
+- Protocol: unknown
+- Z2M local pids for mfr: (none in dump) 
+- Compound `_TZE200_itp8dt7f|TS0601`: tuya_dp DP {"1":"onoff","2":"dim/1000"} Z2M#12213 ION dimmer alias ykgar0ow — not soil
+- Compose: class=light eps=1 EF00=true IAS=false batteries=mains?
+- Notes: Z2M#12213 ION dimmer — strip fake ZG-303Z soil pid from mfs
+- **Gaps:** no_sources, not_in_local_z2m_fps
+
+### `p2234b-tz3000_dershnvx` → `switch_2gang`
+
+- Couple: `_TZ3000_dershnvx` + TS0002
+- Protocol: unknown
+- Z2M local pids for mfr: (none in dump) 
+- Compound `_TZ3000_dershnvx|TS0002`: zcl  Z2M#12246 2-gang no-neutral
+- Compose: class=socket eps=2 EF00=false IAS=false batteries=mains?
+- Notes: Z2M#32034 / #12246 — ONLY TS0002 (no TS0001/TS0601 invent)
+- **Gaps:** no_sources, not_in_local_z2m_fps
+
+### `p2234b-tz3000_icoxotza` → `switch_2gang`
+
+- Couple: `_TZ3000_icoxotza` + TS0726
+- Protocol: unknown
+- Z2M local pids for mfr: (none in dump) 
+- Compound `_TZ3000_icoxotza|TS0726`: zcl  Z2M#11720 TS0726_2_gang
+- Compose: class=socket eps=2 EF00=false IAS=false batteries=mains?
+- Notes: Z2M#11720 TS0726_2_gang — pid is TS0726 not TS0002
+- **Gaps:** no_sources, not_in_local_z2m_fps
+
+### `p2234b-tze204_qujphad5` → `wall_thermostat`
+
+- Couple: `_TZE204_qujphad5` + TS0601
+- Protocol: unknown
+- Z2M local pids for mfr: (none in dump) 
+- Compound `_TZE204_qujphad5|TS0601`: tuya_dp  Z2M#12869 TYBAC-006 FCU — not bulb
+- Compose: class=thermostat eps=1 EF00=true IAS=false batteries=mains?
+- Notes: TYBAC-006 FCU — sibling mpbki2zm is a SEPARATE couple
+- **Gaps:** no_sources, not_in_local_z2m_fps
+
+### `p2300-tz3000_pjb1ua0m-contact-ts0203` → `contact_sensor`
+
+- Couple: `_TZ3000_pjb1ua0m` + TS0203
+- Protocol: ias_zone
+- Z2M local pids for mfr: TS0203 ✓ overlap
+- Compose: class=sensor eps=1 EF00=false IAS=true batteries=CR2032/CR1632/AAA
+- Notes: GitHub Discussion #100 Pressure band — IAS contact on contact_sensor; forbid dual-home doorwindowsensor_3 (P2404).
+- Sources: discussion-100, P2300, P2404
+- **Gaps:** no_compound_db_key
+
+### `p2234b-tze204_mpbki2zm` → `wall_thermostat`
+
+- Couple: `_tze204_mpbki2zm` + TS0601
+- Protocol: tuya_ef00
+- Z2M local pids for mfr: TS0601 ✓ overlap
+- Compound `_TZE204_mpbki2zm|TS0601`: tuya_dp  TYBAC-006 — not TRV
+- Compose: class=thermostat eps=1 EF00=true IAS=false batteries=mains?
+- Notes: P2295: zigbee pid=TS0601 only — PJ-1203A was invent. TYBAC-006/BAC006 are retail names. Sibling qujphad5 is a separate couple.
+- Sources: p2234b-tze204_mpbki2zm, P2295, P2300, TYBAC-006, BAC-006, issue-532
+
+### `p2234b-tze204_apiu8k13` → `plug_energy_monitor`
+
+- Couple: `_TZE204_apiu8k13` + TS0601
+- Protocol: unknown
+- Z2M local pids for mfr: (none in dump) 
+- Compound `_TZE204_apiu8k13|TS0601`: tuya_dp  Water heater power-monitoring switch
+- Compose: class=socket eps=1 EF00=false IAS=false batteries=mains?
+- Notes: Water-heater monitor — TZE284_q9qytwfa is sibling couple, not same mfr
+- **Gaps:** no_sources, not_in_local_z2m_fps
+
+### `p2234b-tze284_q9qytwfa` → `plug_energy_monitor`
+
+- Couple: `_TZE284_q9qytwfa` + TS0601
+- Protocol: unknown
+- Z2M local pids for mfr: (none in dump) 
+- Compound `_TZE284_q9qytwfa|TS0601`: tuya_dp  Z2M#32883 Nisko — same DPs as apiu8k13
+- Compose: class=socket eps=1 EF00=false IAS=false batteries=mains?
+- Notes: Z2M#32883 — TZE284 ≠ TZE204; lock separately
+- **Gaps:** no_sources, not_in_local_z2m_fps
+
+### `p2234b-tze200_7upwjcca` → `curtain_motor`
+
+- Couple: `_TZE200_7upwjcca` + TS0601
+- Protocol: unknown
+- Z2M local pids for mfr: (none in dump) 
+- Compound `_TZE200_7upwjcca|TS0601`: tuya_dp  Z2M#32905 cover motor
+- Compose: class=windowcoverings eps=1 EF00=true IAS=false batteries=OTHER
+- Notes: Z2M#32905 cover — only TS0601
+- **Gaps:** no_sources, not_in_local_z2m_fps
+
+### `p2234b-tz3000_anptztic` → `plug_energy_monitor`
+
+- Couple: `_TZ3000_anptztic` + TS0001
+- Protocol: unknown
+- Z2M local pids for mfr: (none in dump) 
+- Compound `_TZ3000_anptztic|TS0001`: zcl  Z2M#32609 metering TS0001
+- Compose: class=socket eps=1 EF00=false IAS=false batteries=mains?
+- Notes: Z2M#32609 metering TS0001 — same pid as repeater family but DIFFERENT mfr
+- **Gaps:** no_sources, not_in_local_z2m_fps
+
+### `p2234b-tz3000_ly9apzky` → `wall_switch_3gang_1way`
+
+- Couple: `_TZ3000_ly9apzky` + TS0003
+- Protocol: unknown
+- Z2M local pids for mfr: (none in dump) 
+- Compound `_TZ3000_ly9apzky|TS0003`: zcl  Z2M#32810 3ch relay
+- Compose: class=socket eps=3 EF00=false IAS=false batteries=mains?
+- Notes: Z2M#32810 + doctrine: TS0003 3-gang → wall_switch_3gang_1way NOT switch_3gang
+- **Gaps:** no_sources, not_in_local_z2m_fps
+
+### `p2234b-tze204_pkpfn9hc` → `air_quality_co2`
+
+- Couple: `_TZE204_pkpfn9hc` + TS0601
+- Protocol: unknown
+- Z2M local pids for mfr: (none in dump) 
+- Compound `_TZE204_pkpfn9hc|TS0601`: tuya_dp  Z2M#12949 CO2/temp/humidity
+- Compose: class=sensor eps=1 EF00=true IAS=false batteries=AAA/OTHER
+- Notes: Z2M#12949 CO2 — TS0601 shared pid, mfr locks type
+- **Gaps:** no_sources, not_in_local_z2m_fps
+
+### `p2234b-tz3002_y7wpizuw` → `switch_4gang`
+
+- Couple: `_TZ3002_y7wpizuw` + TS0726
+- Protocol: unknown
+- Z2M local pids for mfr: (none in dump) 
+- Compound `_TZ3002_y7wpizuw|TS0726`: zcl  Z2M#32628 4-gang TS0726
+- Compose: class=socket eps=4 EF00=true IAS=false batteries=mains?
+- Notes: Z2M#32628 4-gang TS0726 — icoxotza+TS0726 is 2-gang (different mfr)
+- **Gaps:** no_sources, not_in_local_z2m_fps
+
+### `p2234b-tze284_smcqit2l` → `wall_thermostat`
+
+- Couple: `_TZE284_smcqit2l` + TS0601
+- Protocol: unknown
+- Z2M local pids for mfr: (none in dump) 
+- Compound `_TZE284_smcqit2l|TS0601`: tuya_dp  Z2M#32568 BHT-209W interview mfr
+- Compose: class=thermostat eps=1 EF00=true IAS=false batteries=mains?
+- Notes: Z2M#32568 — do not conflate with qujphad5/mpbki2zm
+- **Gaps:** no_sources, not_in_local_z2m_fps
+
+### `p2234b-tze284_6uyu20xu` → `climate_sensor`
+
+- Couple: `_TZE284_6uyu20xu` + TS0601
+- Protocol: unknown
+- Z2M local pids for mfr: (none in dump) 
+- Compound `_TZE284_6uyu20xu|TS0601`: tuya_dp  Z2M#32491 Chayo TOVTH temp/humidity
+- Compose: class=sensor eps=1 EF00=true IAS=false batteries=AAA/CR2032/CR2450
+- Notes: Z2M#32491 Chayo TOVTH
+- **Gaps:** no_sources, not_in_local_z2m_fps
+
+### `p2236-4upl1fcj-ts0041-button` → `button_wireless_1`
+
+- Couple: `_TZ3000_4upl1fcj` + TS0041
+- Protocol: unknown
+- Z2M local pids for mfr: (none in dump) 
+- Compound `_TZ3000_4upl1fcj|TS0041`: zcl  P2236 SunBeech T156967 — TS0041 remote NOT switch_1gang
+- Compose: class=button eps=1 EF00=true IAS=true batteries=CR2032/CR2450
+- Notes: SunBeech T156967 — TS0041 wireless remote, NEVER switch_1gang (processor false ROUTED_OK)
+- **Gaps:** no_sources, not_in_local_z2m_fps
+
+### `p2236-qeuvnohg-ts011f-din` → `din_rail_switch`
+
+- Couple: `_TZ3000_qeuvnohg` + TS011F
+- Protocol: unknown
+- Z2M local pids for mfr: TS011F ✓ overlap
+- Compound `_TZ3000_qeuvnohg|TS011F`: zcl
+- Compose: class=socket eps=1 EF00=true IAS=false batteries=mains?
+- Notes: T89271 Erwin3/Zdenek — registry+DeviceFingerprintDB din_rail_switch; strip fake TS0042/TS0601
+- **Gaps:** no_sources
+
+### `p2236-amdymr7l-tz3210-energy` → `plug_energy_monitor`
+
+- Couple: `_TZ3210_amdymr7l` + TS011F
+- Protocol: unknown
+- Z2M local pids for mfr: (none in dump) 
+- Compound `_TZ3210_amdymr7l|TS011F`: zcl  BlitzWolf BW-SHP13 TZ3210 sibling; Phoscon/Z2M
+- Compose: class=socket eps=1 EF00=false IAS=false batteries=mains?
+- Notes: T89271 Bram_B — BlitzWolf SHP13 dual-compose; energy only
+- **Gaps:** no_sources, not_in_local_z2m_fps
+
+### `p2236-amdymr7l-tz3000-energy` → `plug_energy_monitor`
+
+- Couple: `_TZ3000_amdymr7l` + TS011F
+- Protocol: unknown
+- Z2M local pids for mfr: (none in dump) 
+- Compound `_TZ3000_amdymr7l|TS011F`: zcl  BlitzWolf BW-SHP13 metering; never button
+- Compose: class=socket eps=1 EF00=false IAS=false batteries=mains?
+- Notes: Sibling TZ3000 BlitzWolf — TS011F only
+- **Gaps:** no_sources, not_in_local_z2m_fps
+
+### `p2236-xabckq1v-ts004f` → `button_wireless_4`
+
+- Couple: `_TZ3000_xabckq1v` + TS004F
+- Protocol: unknown
+- Z2M local pids for mfr: TS004F ✓ overlap
+- Compound `_TZ3000_xabckq1v|TS004F`: zcl  Moes TS004F 4-button scene switch, cross-checked with Z2M/ZHA/deCONZ
+- Compose: class=button eps=4 EF00=false IAS=false batteries=CR2032/CR2450/AAA
+- Notes: Steampunk soft TS0001 REJECTED — known couple is TS004F only
+- **Gaps:** no_sources
+
+### `p2236-kfu8zapd-ts0044f` → `button_wireless_4`
+
+- Couple: `_TZ3000_kfu8zapd` + TS0044, TS004F
+- Protocol: unknown
+- Z2M local pids for mfr: (none in dump) 
+- Compound `_TZ3000_kfu8zapd|TS0044`: zcl  Moes TS0044 4-button scene remote (forum #2098-#2104, JohanBendz #1418), OnOff 0xFD action path, no scenes cluster
+- Compound `_TZ3000_kfu8zapd|TS004F`: zcl  Moes TS004F 4-button scene switch, cross-checked with Z2M/ZHA/Hubitat
+- Compose: class=button eps=4 EF00=false IAS=false batteries=CR2032/CR2450/AAA
+- Notes: Primordial T150690 — Moes 4-btn; mfs must list TS0044/TS004F not TS0001
+- **Gaps:** no_sources, not_in_local_z2m_fps
+
+### `p2236-zgyzgdua-ts0044-scene` → `scene_switch_4`
+
+- Couple: `_TZ3000_zgyzgdua` + TS0044
+- Protocol: zcl
+- Z2M local pids for mfr: (none in dump) 
+- Compound `_TZ3000_zgyzgdua|TS0044`: zcl  Moes XH-SY-04Z physical press genOnOff 0xFD; skip 0x8004. Update Test + re-pair.
+- Compose: class=button eps=4 EF00=false IAS=false batteries=CR2450/AAA
+- Notes: meter91 #2189/#2207 — scene_switch_4 genOnOff 0xFD; diag c40705a1 on 9.0.714 needs Test ≥9.0.734 + re-pair
+- **Gaps:** no_sources, not_in_local_z2m_fps
+
+### `p2328-wkai4ga5-ts0044-scene` → `scene_switch_4`
+
+- Couple: `_TZ3000_wkai4ga5` + TS0044
+- Protocol: unknown
+- Z2M local pids for mfr: (none in dump) 
+- Compose: class=button eps=4 EF00=false IAS=false batteries=CR2450/AAA
+- Notes: Moes/SunBeech TS0044 — NOT TS004F 0x8004; strip wall_switch steal
+- **Gaps:** no_compound_db_key, no_sources, not_in_local_z2m_fps
+
+### `p2332-xffhmvhv-ts004f-nobo` → `button_wireless_4`
+
+- Couple: `_TZ3000_xffhmvhv` + TS004F
+- Protocol: unknown
+- Z2M local pids for mfr: (none in dump) 
+- Compound `_TZ3000_xffhmvhv|TS004F`: zcl  Nobø SWS-IZ — skip 0x8004; OnOff 0xFD path. Update Test + re-pair.
+- Compose: class=button eps=4 EF00=false IAS=false batteries=CR2032/CR2450/AAA
+- Notes: Nobø SWS-IZ (Z2M #12768); diag 9cbf9eb6 — skip 0x8004 write (firmware rejects); 0xFD/hybrid RX
+- **Gaps:** no_sources, not_in_local_z2m_fps
+
+### `p2328-ts0044-remotes-not-wall-switch` → `scene_switch_4`
+
+- Couple: `_TZ3000_ufhtxr59` + TS0044
+- Protocol: unknown
+- Z2M local pids for mfr: (none in dump) 
+- Compound `_TZ3000_ufhtxr59|TS0044`: zcl  P2337 battery scene remote — forbid wall_remote_4_gang steal
+- Compound `_TZ3000_vp6clf9d|TS0044`: zcl  P2337 battery scene remote — forbid wall_remote_4_gang steal
+- Compose: class=button eps=4 EF00=false IAS=false batteries=CR2450/AAA
+- Notes: Battery scene remotes — never pair as wall_switch_4_gang
+- **Gaps:** no_sources, not_in_local_z2m_fps
+
+### `p2236-nkcobies-ts011f-plug` → `smartplug`
+
+- Couple: `_TZ3000_nkcobies` + TS011F, TS0121
+- Protocol: unknown
+- Z2M local pids for mfr: (none in dump) 
+- Compound `_TZ3000_nkcobies|TS011F`: zcl  P2251 forum soft lock verified compose/mfs — not TS0001
+- Compound `_TZ3000_nkcobies|TS0121`: zcl  P2251 nkcobies alt pid
+- Compose: class=socket eps=1 EF00=false IAS=false batteries=mains?
+- Notes: Bo_Kjaergaard soft TS0001 REJECTED — compose plug TS011F/TS0121
+- **Gaps:** no_sources, not_in_local_z2m_fps
+
+### `p2321-mtnpt6ws-ts0002-2gang` → `switch_2gang`
+
+- Couple: `_TZ3000_mtnpt6ws` + TS0002
+- Protocol: zcl
+- Retail: Nous L13Z, AVATTO ZWSM16-2, OXT SWTZ22
+- Z2M local pids for mfr: TS0002 ✓ overlap
+- Compose: class=socket eps=2 EF00=false IAS=false batteries=mains?
+- Notes: P2321: HomeSuite switch_2_ch + Z2M TS0002_switch_module. 2-EP ZCL module.
+- Sources: homesuite, z2m, P2321
+- **Gaps:** no_compound_db_key
+
+### `p2321-ddigca5n-ts011f-nous-a9z` → `plug_energy_monitor`
+
+- Couple: `_TZ3210_ddigca5n` + TS011F
+- Protocol: zcl
+- Retail: Nous A9Z
+- Z2M local pids for mfr: (none in dump) 
+- Compose: class=socket eps=1 EF00=false IAS=false batteries=mains?
+- Notes: P2321: Johan #1452 + Z2M Nous A9Z metering plug. Complementary from alt-app harvest.
+- Sources: JohanBendz#1452, z2m, P2321
+- **Gaps:** no_compound_db_key
+
+### `p2251-sergep-nous-sophos-external` → `switch_1gang`
+
+- Couple: `_TZ3000_v5498kdm` + TS0001
+- Protocol: zcl
+- Z2M local pids for mfr: (none in dump) 
+- Compose: class=socket eps=1 EF00=false IAS=false batteries=mains?
+- Notes: P2320: user asked to carry SergeP/Antek T99614 Nous/SoPhos TS0001 into Universal Tuya. Lock switch_1gang (mfr+pid). Was doNotTouch external-only.
+- Sources: forum-T99614, P2251, P2320
+- **Gaps:** no_compound_db_key
+
+### `p2258-linptech-es1zz-ts0225` → `motion_sensor_radar_mmwave`
+
+- Couple: `_TZ3218_t9ynfz4x` + TS0225
+- Protocol: hybrid
+- Z2M local pids for mfr: (none in dump) 
+- Compound `_TZ3218_t9ynfz4x|TS0225`: hybrid  P2261: settings via 0xE002 attrs 57348/57349/57355 (fallback 0xE001) + DP101 fading
+- Compound `_TZ3218_awarhusb|TS0225`: hybrid
+- Compound `_TZ3218_ewrxirng|TS0225`: hybrid
+- Compose: class=sensor eps=1 EF00=true IAS=true batteries=mains?
+- Notes: Linptech ES1ZZ / Moes ZSS-LP-HP02-MS — settings via 0xE002 attrs 57348/57349/57355 (fallback 0xE001), not EF00 DP9. A_Tas #2199 / T158757 / P2261.
+- Sources: z2m-ES1ZZ, zha-3012, forum-140352, forum-158757, P2258, P2261
+
+### `p2259-hobeian-zg223z-rain` → `rain_sensor`
+
+- Couple: `HOBEIAN` + ZG-223Z
+- Protocol: tuya_dp
+- Retail: HOBEIAN Raindrop Detection Sensor, ZG-223Z
+- Z2M local pids for mfr: CK-BL702-MWS-01(7016) 
+- Compound `HOBEIAN|ZG-223Z`: hybrid  IAS rain + ZCL illuminance + CR123A; forbid water_leak_sensor
+- Compose: class=sensor eps=1 EF00=true IAS=true batteries=AAA/AA/CR123A
+- Notes: Z2M rainwater sensor — alarm_water + rain level, NOT IAS leak. Johan T158754 / forum #1610.
+- Sources: z2m-ZG-223Z, forum-158754, P2259
+
+### `p2260-upgcbody-ts0207-water` → `water_leak_sensor`
+
+- Couple: `_TZ3000_upgcbody` + TS0207
+- Protocol: ias_zone
+- Z2M local pids for mfr: (none in dump) 
+- Compound `_TZ3000_upgcbody|TS0207`: ias_zone  Z2M TS0207 water leak IAS; melectro T89271 #651
+- Compose: class=sensor eps=1 EF00=false IAS=true batteries=CR2032/CR2450/AAA
+- Notes: Z2M TS0207 IAS water leak; melectro T89271 #651
+- Sources: z2m#21247, blakadder, P2260
+
+### `p2260-3lbtuxgp-ts0505b-bulb` → `bulb_rgb`
+
+- Couple: `_TZ3210_3lbtuxgp` + TS0505B
+- Protocol: zcl
+- Z2M local pids for mfr: (none in dump) 
+- Compound `_TZ3210_3lbtuxgp|TS0505B`: zcl  Tuya RGBCW downlight Z2M #13579; forbid wall_dimmer_tuya
+- Compose: class=light eps=1 EF00=false IAS=false batteries=mains?
+- Notes: Tuya RGBCW downlight; late4marshmellow T89271 #667; Z2M #13579
+- Sources: z2m#13579, P2260
 
 ### `p2264-qaaysllp-neo-th02b` → `lcdtemphumidluxsensor`
 
 - Couple: `_TZ3000_qaaysllp` + TS0201
-- Protocol: zcl (multi-endpoint)
-- Retail: Neo NAS-TH02B2 / NAS-TH02B / TH01 / Z2M LCZ030
-- Compound `_TZ3000_qaaysllp|TS0201`: EP1 lux+battery+0xE002; undeclared EP2 temp 0x0402 + humidity 0x0405 after Basic magic 0xFFFE
-- Compose: class=sensor eps=2 EF00=false batteries=AAA/AAA
-- Notes: Abysim Medium layers — (1) lying descriptor (2) reports on EP2 (3) magic 0xFFFE (4) EP2 read → UNSUPPORTED 0x86 so no configureReporting on EP2; unsolicited reports only. E002 `alarm_humidity_max` is **0xD00D** (upstream ZHA wrongly used 0xD00C). Scale /100. Wait ~1–2 min after pair for first temp/hum.
+- Protocol: zcl
+- Retail: Neo NAS-TH02B2, Neo NAS-TH02B, Neo TH01, NAS-TH02B, Tuya LCZ030
+- Z2M local pids for mfr: TS0201 ✓ overlap
+- Compound `_TZ3000_qaaysllp|TS0201`: zcl  Neo NAS-TH02B; virtual EP2 + TuyaMagicPacket; never climate_sensor-only
+- Compose: class=sensor eps=2 EF00=false IAS=false batteries=AAA/AAA
+- Notes: ZHA #862 + Abysim Medium: (1) interview EP1 only (2) temp/humidity on undeclared EP2 (3) needs Basic 0xFFFE magic (4) EP2 read/CFG → UNSUPPORTED 0x86 — use unsolicited reports. E002 humidity max attr is 0xD00D not 0xD00C. Homey: virtual EP2 + magic + delayed retries.
 - Sources: zha-device-handlers#862, abysim-medium-ts0201-neo, z2m-LCZ030, P2264, P2265
 
+### `p2266-bjawzodf-ty0201-temu` → `lcdtemphumidsensor`
+
+- Couple: `_TZ3000_bjawzodf` + TY0201, TS0201
+- Protocol: zcl
+- Retail: Temu Zigbee temp humidity display, Tuya WSD500A, TH02Z class
+- Z2M local pids for mfr: TS0201 ✓ overlap
+- Compound `_TZ3000_bjawzodf|TY0201`: zcl  Temu WSD500A-class; magic 0xFFFE; clusters 0/1/3/1026/1029
+- Compound `_TZ3000_bjawzodf|TS0201`: zcl  Z2M WSD500A fingerprint sibling of TY0201
+- Compose: class=sensor eps=1 EF00=true IAS=false batteries=CR2032/CR2450/AAA
+- Notes: HACF #38762 + ZHA #2862: EP1 ZCL temp/humidity (0x0402/0x0405), not Neo qaaysllp EP2/lux. Needs magic 0xFFFE (Z2M WSD500A). Distinct from _TZE200_bjawzodf|TS0601 EF00 climate.
+- Sources: hacf-38762, zha-device-handlers#2862, z2m-WSD500A, P2266
+
+### `p2267-e002-alarm-taxonomy` → `lcdtemphumidsensor`
+
+- Couple: `_TZ3210_qkj7rujp` + TS0201
+- Protocol: zcl
+- Z2M local pids for mfr: (none in dump) 
+- Compound `_TZ3210_qkj7rujp|TS0201`: zcl  LCD with E002 alarms; silence via beepSilence 0xD010
+- Compose: class=sensor eps=1 EF00=true IAS=false batteries=CR2032/CR2450/AAA
+- Notes: P2267 Google 0xE002 sweep: LCD E002 alarms; mute beeper via attr 0xD010=1. Humidity max attr 0xD00D (Z2M). Cluster taxonomy Z2M manuSpecificTuya2=0xE002.
+- Sources: ha-community-692449, z2m-ManuSpecificTuya2, zigpy-discussion-823, P2267
+
+### `p2268-cjbofhxw-clamp-not-smoke` → `power_clamp_meter`
+
+- Couple: `_TZE204_cjbofhxw` + TS0601
+- Protocol: tuya_dp
+- Z2M local pids for mfr: TS0601 ✓ overlap
+- Compound `_TZE204_cjbofhxw|TS0601`: tuya_dp  Z2M PJ-MGW1203; forbid smoke
+- Compound `_TZE284_cjbofhxw|TS0601`: tuya_dp  Z2M PJ-MGW1203; forbid smoke
+- Compound `_TZE200_cjbofhxw|TS0601`: tuya_dp  TZE200 sibling clamp
+- Compose: class=sensor eps=1 EF00=true IAS=false batteries=mains?
+- Notes: Z2M PJ-MGW1203 clamp meter — was cartesian-stolen by smoke_sensor3 via TS0601
+- Sources: z2m-PJ-MGW1203, ha-community-931745, P2268
+
+### `p2268-a14rjslz-3phase-not-climate` → `energy_meter_3phase`
+
+- Couple: `_TZE284_a14rjslz` + TS0601
+- Protocol: tuya_dp
+- Z2M local pids for mfr: TS0601 ✓ overlap
+- Compound `_TZE284_a14rjslz|TS0601`: tuya_dp  Ourtop ATMS10013Z3; forbid climate
+- Compose: class=sensor eps=1 EF00=true IAS=false batteries=mains?
+- Notes: Z2M ATMS10013Z3 Ourtop 3-phase meter — was on climate_sensor
+- Sources: z2m-ATMS10013Z3, zhc-8658, P2268
+
+### `p2268-tonrapsk-ts0002-2gang` → `switch_2gang`
+
+- Couple: `_TZ3000_tonrapsk` + TS0002
+- Protocol: zcl
+- Z2M local pids for mfr: (none in dump) 
+- Compound `_TZ3000_tonrapsk|TS0002`: zcl  ZHA #5260; per-gang needs Tuya magic
+- Compose: class=socket eps=2 EF00=false IAS=false batteries=mains?
+- Notes: ZHA #5260 Zemismart ZB811 — per-gang needs Tuya magic (UnifiedSwitchBase already sends). Works in Z2M.
+- Sources: zha-device-handlers#5260, P2268
+
+### `p2268-cf4b5ktf-moes-3phase-soft` → `energy_meter_3phase`
+
+- Couple: `_TZE284_cf4b5ktf` + TS0601
+- Protocol: tuya_dp
+- Z2M local pids for mfr: (none in dump) 
+- Compound `_TZE284_cf4b5ktf|TS0601`: tuya_dp  ZHA #5117 Moes 3-phase; soft lock pending full DP map
+- Compose: class=sensor eps=1 EF00=true IAS=false batteries=mains?
+- Notes: ZHA #5117 Moes 3-phase — Z2M converter still absent; soft route only, no invented DPs
+- Sources: zha-device-handlers#5117, P2268
+
+### `p2270-402vrq2i-knob-not-4gang` → `smart_knob`
+
+- Couple: `_TZ3000_402vrq2i` + TS004F
+- Protocol: zcl
+- Z2M local pids for mfr: TS004F ✓ overlap
+- Compound `_TZ3000_402vrq2i|TS004F`: zcl  ZHA#5261 / GitHub#1349 rotary knob — not 4-gang metering
+- Compose: class=button eps=1 EF00=false IAS=false batteries=CR2032
+- Notes: ZHA#5261 rotary knob — was stolen by switch_4_gang_metering cartesian TS004F
+- Sources: zha-device-handlers#5261, P2270
+
+### `p2270-hlx9tnzb-dimmer-not-1gang` → `dimmer_1_gang_tuya`
+
+- Couple: `_TZE204_hlx9tnzb` + TS0601
+- Protocol: tuya_dp
+- Z2M local pids for mfr: TS0601 ✓ overlap
+- Compound `_TZE204_hlx9tnzb|TS0601`: tuya_dp  Z2M#32815 dimmer; mesh flap after power cycle
+- Compose: class=light eps=1 EF00=true IAS=false batteries=CR2032
+- Notes: Z2M#32815 Moes dimmer (mesh flood after reboot) — not switch_1gang
+- Sources: zigbee2mqtt#32815, P2270
+
+### `p2270-gnpflcoq-4in1-mmwave` → `motion_sensor_radar_mmwave`
+
+- Couple: `_TZE284_gnpflcoq` + TS0601
+- Protocol: tuya_dp
+- Z2M local pids for mfr: (none in dump) 
+- Compound `_TZE284_gnpflcoq|TS0601`: tuya_dp  ZHA#5252 DP1 inverted presence; DP7 temp/10; DP8 humidity; DP11 lux
+- Compose: class=sensor eps=1 EF00=true IAS=true batteries=mains?
+- Notes: ZHA#5252 4in1 — DP1 presence inverted (0=occupied). Prefer mmwave driver.
+- Sources: zha-device-handlers#5252, P2270
+
+### `p2270-fqm2sfpe-trv-soft` → `device_radiator_valve`
+
+- Couple: `_TZE284_fqm2sfpe` + TS0601
+- Protocol: tuya_dp
+- Z2M local pids for mfr: (none in dump) 
+- Compound `_TZE284_fqm2sfpe|TS0601`: tuya_dp  Z2M#32931 TRV soft lock pending full DP map
+- Compose: class=thermostat eps=1 EF00=false IAS=false batteries=AA
+- Notes: Z2M#32931 TRV soft lock — no invented DPs
+- Sources: zigbee2mqtt#32931, P2270
+
+### `p2271-tdg4ckyh-rf-cloner` → `ir_blaster`
+
+- Couple: `_TZE284_tdg4ckyh` + TS0601
+- Protocol: tuya_dp
+- Z2M local pids for mfr: (none in dump) 
+- Compound `_TZE284_tdg4ckyh|TS0601`: tuya_dp  Z2M RF Cloner / ZRF01 family; soft lock
+- Compose: class=remote eps=1 EF00=true IAS=false batteries=CR2450/CR2032
+- Notes: Z2M#32756/#32836 Zigbee RF Cloner — soft ir_blaster; no invented RF DPs
+- Sources: zigbee2mqtt#32756, zigbee2mqtt#32836, P2271
+
+### `p2271-kq1l5eu5-moes-curtain` → `wall_curtain_switch`
+
+- Couple: `_TZE284_kq1l5eu5` + TS0601
+- Protocol: tuya_dp
+- Z2M local pids for mfr: (none in dump) 
+- Compound `_TZE284_kq1l5eu5|TS0601`: tuya_dp  Z2M#31244 Moes SFC02 curtain switch; soft pending full DP map
+- Compose: class=curtain eps=1 EF00=false IAS=false batteries=mains?
+- Notes: Z2M#31244 Moes SFC02 curtain wall switch — soft lock pending full DP map
+- Sources: zigbee2mqtt#31244, P2271
+
+### `p2272-bjoccxbi-rgb-cct` → `led_controller_rgb`
+
+- Couple: `_TZE284_bjoccxbi` + TS0601
+- Protocol: tuya_dp
+- Z2M local pids for mfr: (none in dump) 
+- Compound `_TZE284_bjoccxbi|TS0601`: tuya_dp DP {"1":"onoff","2":"dim/1000","3":"light_temperature","5":"light_hue"} Z2M#32594 RGB+CCT; MCU brightness 0-1000
+- Compose: class=light eps=1 EF00=false IAS=false batteries=mains?
+- Notes: Z2M#32594 RGB+CCT controller; brightness MCU 0-1000
+- Sources: zigbee2mqtt#32594, P2272
+
+### `p2272-lq0ffndf-dual-gpo-usb` → `usb_outlet_advanced`
+
+- Couple: `_TZE284_lq0ffndf` + TS0601
+- Protocol: tuya_dp
+- Z2M local pids for mfr: (none in dump) 
+- Compound `_TZE284_lq0ffndf|TS0601`: tuya_dp DP {"1":"onoff","2":"onoff.gang2","20":"meter_power/1000","21":"measure_current/1000","22":"measure_power/10","23":"measure_voltage/10","101":"child_lock"} Z2M#32901 MG-AU03GPOZLP; live-tested DPs
+- Compose: class=socket eps=1 EF00=true IAS=false batteries=mains?
+- Notes: Z2M#32901 MakeGood dual GPO+USB-C; DPs 1/2/20-23/101 live-tested
+- Sources: zigbee2mqtt#32901, P2272
+
+### `p2272-hdc8bbha-ts000f-relay` → `switch_1gang`
+
+- Couple: `_TZ3218_hdc8bbha` + TS000F
+- Protocol: zcl
+- Z2M local pids for mfr: TS000F ✓ overlap
+- Compound `_TZ3218_hdc8bbha|TS000F`: zcl  ZHA#5241 QS-Zigbee-SEC01-DC; magic + onOff 0x8001/0x8002; not 7fiyo3kv temp hybrid
+- Compose: class=socket eps=1 EF00=false IAS=false batteries=mains?
+- Notes: ZHA#5241 1-gang relay — magic enchantment; NOT 7fiyo3kv temp hybrid
+- Sources: zha-device-handlers#5241, P2272
+
+### `p2273-guvc7pdy-curtain-not-1gang` → `curtain_motor`
+
+- Couple: `_TZE204_guvc7pdy` + TS0601
+- Protocol: tuya_dp
+- Z2M local pids for mfr: TS0601 ✓ overlap
+- Compound `_TZE204_guvc7pdy|TS0601`: tuya_dp  ZHA#5140 Moes curtain; forbid switch_1gang
+- Compound `_TZE200_guvc7pdy|TS0601`: tuya_dp  TZE200 sibling curtain
+- Compose: class=windowcoverings eps=1 EF00=true IAS=false batteries=OTHER
+- Notes: ZHA#5140 Moes curtain motor — was cartesian-stolen by switch_1gang
+- Sources: zha-device-handlers#5140, P2273
+
+### `p2273-hdml1aav-soil-zs300tf` → `soil_sensor`
+
+- Couple: `_TZE284_hdml1aav` + TS0601
+- Protocol: tuya_dp
+- Z2M local pids for mfr: TS0601 ✓ overlap
+- Compound `_TZE284_hdml1aav|TS0601`: tuya_dp  ZHA#5276 ZS-300TF/ZS-301; DP15 battery
+- Compound `_TZE2841000000_hdml1aav|TS0601`: tuya_dp  Corrupt interview mfr form
+- Compose: class=sensor eps=1 EF00=true IAS=false batteries=AAA/CR2032/CR2450
+- Notes: ZHA#5276 Excellux ZS-300TF/ZS-301 soil fertility
+- Sources: zha-device-handlers#5276, P2273
+
+### `p2274-6cmeijtd-nous-a11z-strip` → `socket_power_strip`
+
+- Couple: `_TZ3210_6cmeijtd` + TS011F
+- Protocol: zcl
+- Z2M local pids for mfr: (none in dump) 
+- Compound `_TZ3210_6cmeijtd|TS011F`: zcl  Nous A11Z 3-gang strip — magic packet + multi-ep; not usb_dongle_triple (Z2M#30799)
+- Compose: class=socket eps=3 EF00=false IAS=false batteries=mains?
+- Notes: Nous A11Z 3-gang power strip — magic packet + multi-ep; Z2M#30799 / ZHA#5185
+- Sources: zigbee2mqtt#30799, zha-device-handlers#5185, P2274
+
+### `p2276-rccxox8p-smoke-not-climate` → `smoke_sensor2`
+
+- Couple: `_TZE284_rccxox8p` + TS0601
+- Protocol: hybrid
+- Z2M local pids for mfr: TS0601 ✓ overlap
+- Compound `_TZE284_rccxox8p|TS0601`: hybrid  ZHA#4687 PA-44Z smoke IAS+EF00 battery DP15 — NOT climate (P2276)
+- Compound `_TZE200_rccxox8p|TS0601`: hybrid  PA-44Z sibling
+- Compound `_TZE204_rccxox8p|TS0601`: hybrid
+- Compose: class=sensor eps=1 EF00=true IAS=false batteries=AAA/AAA
+- Notes: ZHA#4687 PA-44Z smoke IAS+EF00 DP15 battery — was stolen by climate_sensor
+- Sources: zha-device-handlers#4687, P2276
+
+### `p2276-dikb3dp6-3phase-not-climate` → `energy_meter_3phase`
+
+- Couple: `_TZE284_dikb3dp6` + TS0601
+- Protocol: tuya_dp
+- Z2M local pids for mfr: TS0601 ✓ overlap
+- Compound `_TZE284_dikb3dp6|TS0601`: tuya_dp  ZHA#3955 Zemismart 3-phase DIN meter — NOT climate (P2276)
+- Compound `_TZE200_dikb3dp6|TS0601`: tuya_dp
+- Compound `_TZE204_dikb3dp6|TS0601`: tuya_dp
+- Compose: class=sensor eps=1 EF00=true IAS=false batteries=mains?
+- Notes: ZHA#3955 Zemismart 3-phase energy meter — was stolen by climate_sensor
+- Sources: zha-device-handlers#3955, P2276
+
+### `p2277-lpedvtvr-thermostat-not-climate` → `wall_thermostat`
+
+- Couple: `_TZE204_lpedvtvr` + TS0601
+- Protocol: tuya_dp
+- Z2M local pids for mfr: (none in dump) 
+- Compound `_TZE204_lpedvtvr|TS0601`: tuya_dp  ZHA#3666 Moes Star Ring — NOT climate (P2277)
+- Compose: class=thermostat eps=1 EF00=true IAS=false batteries=mains?
+- Notes: ZHA#3666 Moes Star Ring thermostat — was stolen by climate_sensor
+- Sources: zha-device-handlers#3666, P2277
+
+### `p2277-xalsoe3m-bht002-not-trv` → `wall_thermostat`
+
+- Couple: `_TZE204_xalsoe3m` + TS0601
+- Protocol: tuya_dp
+- Z2M local pids for mfr: TS0601 ✓ overlap
+- Compound `_TZE204_xalsoe3m|TS0601`: tuya_dp  Z2M#25372 BHT-002 sibling aoclfnxz — NOT TRV (P2277)
+- Compose: class=thermostat eps=1 EF00=true IAS=false batteries=mains?
+- Notes: Z2M#25372 Moes BHT-002 sibling of aoclfnxz — was on TRV driver
+- Sources: zigbee2mqtt#25372, zha-device-handlers#3788, P2277
+
+### `p2277-te34fjg4-ts1002-scene4` → `scene_switch_4`
+
+- Couple: `_TZ3000_te34fjg4` + TS1002
+- Protocol: zcl
+- Z2M local pids for mfr: (none in dump) 
+- Compound `_TZ3000_te34fjg4|TS1002`: zcl  ZHA#5224 Arlight 4-scene 0xFD panel — not bulb (P2277)
+- Compose: class=button eps=4 EF00=false IAS=false batteries=CR2450/AAA
+- Notes: ZHA#5224 Arlight 4-button scene panel 0xFD — mains, strip phantom battery
+- Sources: zha-device-handlers#5224, P2277
+
+### `p2278-ogx8u5z6-trv-cal-tenths` → `device_radiator_valve`
+
+- Couple: `_TZE204_ogx8u5z6` + TS0601
+- Protocol: tuya_dp
+- Z2M local pids for mfr: TS0601 ✓ overlap
+- Compound `_TZE204_ogx8u5z6|TS0601`: tuya_dp  P2278 me167/thermostat_3 DPs + cal DP47 /10 (ZHA#4124)
+- Compound `_TZE284_ogx8u5z6|TS0601`: tuya_dp  P2278 sibling ogx8u5z6
+- Compose: class=thermostat eps=1 EF00=false IAS=false batteries=AA
+- Notes: P2278 me167 profile + DP47 cal ÷10 (ZHA#4124 / Z2M#25199 user firmware); other ME167 stay whole °C
+- Sources: zha-device-handlers#4124, zigbee2mqtt#25199, P2278
+
+### `p2279-1fuxihti-cover-not-climate` → `curtain_motor`
+
+- Couple: `_TZE200_1fuxihti` + TS0601
+- Protocol: tuya_dp
+- Z2M local pids for mfr: TS0601 ✓ overlap
+- Compound `_TZE200_1fuxihti|TS0601`: tuya_dp  P2279 cover — unsteal climate
+- Compound `_TZE204_1fuxihti|TS0601`: tuya_dp  P2279 cover sibling
+- Compound `_TZE284_1fuxihti|TS0601`: tuya_dp  P2279 Z2M cover; was climate steal
+- Compose: class=windowcoverings eps=1 EF00=true IAS=false batteries=OTHER
+- Notes: Z2M cover family — TZE284 sibling was stolen by climate_sensor
+- Sources: zigbee-herdsman-converters tuya TS0601_cover, P2279
+
+### `p2279-mvtclclq-usb-not-dimmer` → `usb_outlet_advanced`
+
+- Couple: `_TZE204_mvtclclq` + TS0601
+- Protocol: tuya_dp
+- Z2M local pids for mfr: TS0601 ✓ overlap
+- Compound `_TZE204_mvtclclq|TS0601`: tuya_dp DP {"1":"onoff.usb1","2":"onoff.usb2","3":"onoff","4":"onoff.socket2"}
+- Compound `_TZE284_mvtclclq|TS0601`: tuya_dp DP {"1":"onoff.usb1","2":"onoff.usb2","3":"onoff","4":"onoff.socket2"} Z2M DS-1450WN — forbid wall_dimmer. z2m#31275
+- Compose: class=socket eps=1 EF00=true IAS=false batteries=mains?
+- Notes: Z2M DS-1450WN BSEED 2plug+2USB — TZE200 was wrongly on wall_dimmer
+- Sources: zigbee2mqtt#31275, zigbee2mqtt#28937, P2279
+
+### `p2291-ogkdpgy2-co2-not-climate` → `air_quality_co2`
+
+- Couple: `_tze200_ogkdpgy2` + TS0601
+- Protocol: tuya_ef00
+- Z2M local pids for mfr: TS0601 ✓ overlap
+- Compound `_TZE200_ogkdpgy2|TS0601`: tuya_dp DP {"2":"measure_co2"} Z2M DCR-LCD NDIR CO2 — Elliot #2204; forbid climate_sensor
+- Compound `_TZE204_ogkdpgy2|TS0601`: tuya_dp DP {"2":"measure_co2"} Z2M#24858 mains router CO2-only DP2 — forum T140352 #2204
+- Compose: class=sensor eps=1 EF00=true IAS=false batteries=AAA/OTHER
+- Notes: P2295: zigbee pid=TS0601 only. Retail/Z2M names stay in deviceNames — never CK-TLSR climate bleed, never TS0601_co2 as Homey productId.
+- Sources: forum-140352-2204, Z2M#24858, Z2M-PR-8354, P2291, p2291-ogkdpgy2-co2-not-climate, P2295, TS0601_co2_sensor, TS0601_TZE204_ogkdpgy2, DCR-LCD
+
+### `p2282-mrpevh8p-ts0041-button` → `button_wireless_1`
+
+- Couple: `_tz3000_mrpevh8p` + TS0041
+- Protocol: zcl
+- Z2M local pids for mfr: (none in dump) 
+- Compound `_TZ3000_mrpevh8p|TS0041`: zcl  P2285 Z2M SH-SC07/Johan#1120; 0xFD scene; skip 0x8004; magic packet; no EF00; battery EP1 only
+- Compose: class=button eps=1 EF00=true IAS=true batteries=CR2032/CR2450
+- Notes: P2295: zigbee pid=TS0041 only. SH-SC07/RSH-SC021 are whiteLabels. Interview may show phantom EP2–4 — still 1 physical button.
+- Sources: forum-140352-2202, diag-95a7c6e5, zigbee-herdsman-converters#6225, JohanBendz#1120, Hubitat-kkossev-TS004F, Z2M-TS0041-SH-SC07, P2282, P2285, p2282-mrpevh8p-ts0041-button, P2295, TS0041, SH-SC07
+
+### `p2285-sh-sc07-siblings-ts0041` → `button_wireless_1`
+
+- Couple: `_TZ3000_5bpeda8u` + TS0041
+- Protocol: zcl
+- Z2M local pids for mfr: (none in dump) 
+- Compound `_TZ3000_5bpeda8u|TS0041`: zcl  P2285 Z2M whitelabel SH-SC07 sibling of mrpevh8p
+- Compound `_TZ3000_b4awzgct|TS0041`: zcl  P2285 was button_wireless_4_ts0041 misroute — Z2M 1-button SH-SC07
+- Compose: class=button eps=1 EF00=true IAS=true batteries=CR2032/CR2450
+- Notes: Z2M whitelabel SH-SC07 same as mrpevh8p — 1-button not 4_ts0041
+- Sources: zigbee2mqtt-TS0041-whitelabel, P2285
+
+### `p2282-hobeian-3315s-water-not-soil` → `water_leak_sensor`
+
+- Couple: `HOBEIAN` + 3315-S, 3315-Seu
+- Protocol: ias_zone
+- Z2M local pids for mfr: CK-BL702-MWS-01(7016) 
+- Compound `HOBEIAN|3315-S`: ias_zone  P2282 diag 95a7c6e5; IAS water — not soil/rain
+- Compound `HOBEIAN|3315-Seu`: ias_zone  P2282 EU sibling of 3315-S under HOBEIAN brand interview
+- Compose: class=sensor eps=1 EF00=false IAS=true batteries=CR2032/CR2450/AAA
+- Notes: Peter #2202 diag 95a7c6e5 — false MISATTR soil via rain placement. Keep water_leak; never invent k4ej pid onto this tile.
+- Sources: forum-140352-2202, diag-95a7c6e5, P2282
+
+### `p2293-zemismart-68nvbio9-curtain-not-trv` → `curtain_motor`
+
+- Couple: `_tze200_68nvbio9` + TS0601
+- Protocol: tuya_ef00
+- Z2M local pids for mfr: TS0601 ✓ overlap
+- Compose: class=windowcoverings eps=1 EF00=true IAS=false batteries=OTHER
+- Notes: P2295: Zigbee pid=TS0601; ZM16EL* are retail aliases not productIds.
+- Sources: Z2M#29124, Z2M#28655, forum-154092, P2293, p2293-zemismart-68nvbio9-curtain-not-trv, P2295, ZM16EL, TS0601_cover
+- **Gaps:** no_compound_db_key
+
+### `p2293-zemismart-cf1sl3tj-curtain-not-trv` → `curtain_motor`
+
+- Couple: `_tze200_cf1sl3tj` + TS0601
+- Protocol: tuya_ef00
+- Z2M local pids for mfr: TS0601 ✓ overlap
+- Compose: class=windowcoverings eps=1 EF00=true IAS=false batteries=OTHER
+- Notes: P2295: Zigbee pid=TS0601; ZM85EL-2Z is retail alias.
+- Sources: Z2M#18413, forum-154092, P2293, p2293-zemismart-cf1sl3tj-curtain-not-trv, P2295, ZM85EL-2Z, TS0601_cover
+- **Gaps:** no_compound_db_key
+
+### `p2293-dfgbtub0-ts0044-wireless-4` → `button_wireless_4`
+
+- Couple: `_TZ3000_dfgbtub0` + TS0044
+- Protocol: zcl
+- Z2M local pids for mfr: (none in dump) 
+- Compose: class=button eps=4 EF00=false IAS=false batteries=CR2032/CR2450/AAA
+- Notes: SunBeech Moes T156967 — TS0044 = 4-gang remote; TS0042 stays on button_wireless_2
+- Sources: forum-156967-12, P2293
+- **Gaps:** no_compound_db_key
+
+### `p2295-3ejwxpmu-co2-sibling` → `air_quality_co2`
+
+- Couple: `_tze200_3ejwxpmu` + TS0601
+- Protocol: tuya_ef00
+- Z2M local pids for mfr: TS0601 ✓ overlap
+- Compose: class=sensor eps=1 EF00=true IAS=false batteries=AAA/OTHER
+- Notes: P2295: Z2M same fingerprint group as ogkdpgy2 CO2 — not climate_sensor cartesian bleed.
+- Sources: p2295-3ejwxpmu-co2-sibling, P2295, TS0601_co2_sensor
+- **Gaps:** no_compound_db_key
+
+### `p2295-zemismart-68nvbi09-typo-curtain` → `curtain_motor`
+
+- Couple: `_tze200_68nvbi09` + TS0601
+- Protocol: tuya_ef00
+- Z2M local pids for mfr: TS0601 ✓ overlap
+- Compose: class=windowcoverings eps=1 EF00=true IAS=false batteries=OTHER
+- Notes: P2295: Z2M fingerprint typo sibling of 68nvbio9 — cover not TRV.
+- Sources: p2295-zemismart-68nvbi09-typo-curtain, P2295, ZM16EL, TS0601_cover
+- **Gaps:** no_compound_db_key
+
+### `p2295-zemismart-cover-siblings` → `curtain_motor`
+
+- Couple: `_tze200_9p5xmj5r` + TS0601
+- Protocol: tuya_ef00
+- Z2M local pids for mfr: TS0601 ✓ overlap
+- Compose: class=windowcoverings eps=1 EF00=true IAS=false batteries=OTHER
+- Notes: P2295: Z2M cover fingerprint siblings of 68nvbio9/cf1sl3tj — each couple keeps pid TS0601 only.
+- Sources: p2295-zemismart-cover-siblings, P2295, TS0601_cover, ZM16EL, ZM85EL-2Z
+- **Gaps:** no_compound_db_key
+
+### `p2297-m6lwazh9-tze210-ts0301-curtain` → `curtain_motor`
+
+- Couple: `_TZE210_m6lwazh9` + TS0301
+- Protocol: tuya_ef00
+- Z2M local pids for mfr: TS0301 ✓ overlap
+- Compose: class=windowcoverings eps=1 EF00=true IAS=false batteries=OTHER
+- Notes: Z2M #30273 A-OK AM25 blind — battery DP13; never switch_1gang
+- Sources: Z2M#30273, P2297
+- **Gaps:** no_compound_db_key
+
+### `p2297-m6lwazh9-tze200-ts0601-curtain` → `curtain_motor`
+
+- Couple: `_TZE200_m6lwazh9` + TS0601
+- Protocol: tuya_ef00
+- Z2M local pids for mfr: (none in dump) 
+- Compose: class=windowcoverings eps=1 EF00=true IAS=false batteries=OTHER
+- Notes: Forum T154092 Zemismart Official — cover couple; strip from switch_1gang cartesian bleed
+- Sources: forum-154092-26, P2297
+- **Gaps:** no_compound_db_key
+
+### `p2297-t9ynfz4x-ts0225-mmwave` → `motion_sensor_radar_mmwave`
+
+- Couple: `_TZ3218_t9ynfz4x` + TS0225
+- Protocol: zcl
+- Z2M local pids for mfr: (none in dump) 
+- Compound `_TZ3218_t9ynfz4x|TS0225`: hybrid  P2261: settings via 0xE002 attrs 57348/57349/57355 (fallback 0xE001) + DP101 fading
+- Compose: class=sensor eps=1 EF00=true IAS=true batteries=mains?
+- Notes: A_Tas T158757/T140352 — Linptech-class mmWave; posts without pid stay soft; never invent pid
+- Sources: forum-158757, forum-140352-2199, P2297
+
+### `p2304-moes-zts-eur-c-curtain` → `curtain_motor`
+
+- Couple: `_TZE200_127x7wnl` + TS0601
+- Protocol: unknown
+- Z2M local pids for mfr: (none in dump) 
+- Compound `_TZE200_127x7wnl|TS0601`: tuya_dp  Moes ZTS-EUR-C family
+- Compound `_TZE200_nhyj64w2|TS0601`: tuya_dp  Moes ZTS-EUR-C family
+- Compound `_TZE204_5slehgeo|TS0601`: tuya_dp  GitHub #533 Moes ZTS-EUR-C; forbid radiator/generic
+- Compound `_TZE284_5slehgeo|TS0601`: tuya_dp  TZE284 sibling ZTS-EUR-C
+- Compose: class=windowcoverings eps=1 EF00=true IAS=false batteries=OTHER
+- Notes: P2324: Moes ZTS-EUR-C curtain. Expand TRV/generic forbids (coupleMode). Do NOT forbid wall_thermostat — strip_pid would gut TS0601 there.
+- **Gaps:** no_sources, not_in_local_z2m_fps
+
+### `p2307-moes-star-feather-upt8lzi0` → `curtain_motor`
+
+- Couple: `_TZE284_upt8lzi0` + TS0601
+- Protocol: unknown
+- Z2M local pids for mfr: (none in dump) 
+- Compose: class=windowcoverings eps=1 EF00=true IAS=false batteries=OTHER
+- Notes: Moes Star Feather curtain. DPs same family as ZTS-EUR-C.
+- **Gaps:** no_compound_db_key, no_sources, not_in_local_z2m_fps
+
+### `p2312-a4xycprs-ts0044-scene` → `scene_switch_4`
+
+- Couple: `_TZ3000_a4xycprs` + TS0044
+- Protocol: unknown
+- Z2M local pids for mfr: (none in dump) 
+- Compose: class=button eps=4 EF00=false IAS=false batteries=CR2450/AAA
+- Notes: P2312 market: Z2M scene remote — not wall switch_4gang
+- **Gaps:** no_compound_db_key, no_sources, not_in_local_z2m_fps
+
+### `p2312-jthf7vb6-ts0601-water` → `water_leak_sensor`
+
+- Couple: `_TZE200_jthf7vb6` + TS0601
+- Protocol: unknown
+- Z2M local pids for mfr: TS0601 ✓ overlap
+- Compound `_TZE200_jthf7vb6|TS0601`: tuya_dp DP {"1":"alarm_water"}
+- Compose: class=sensor eps=1 EF00=false IAS=true batteries=CR2032/CR2450/AAA
+- Notes: P2312: mfr was on water_leak without TS0601 pid
+- **Gaps:** no_sources
+
+### `p2317-cvis4qmw-ts0006-6gang` → `switch_wall_6gang`
+
+- Couple: `_TZ3000_cvis4qmw` + TS0006
+- Protocol: unknown
+- Z2M local pids for mfr: (none in dump) 
+- Compose: class=socket eps=6 EF00=true IAS=false batteries=OTHER
+- Notes: Market said switch_4gang; Z2M binds EP1-6. P2318: enrichment-first — do not strip shared pids; mfr may remain on other drivers when forbidden pid absent.
+- **Gaps:** no_compound_db_key, no_sources, not_in_local_z2m_fps
+
+### `p2317-g9chy2ib-ts0003-3gang` → `wall_switch_3gang_1way`
+
+- Couple: `_TZ3000_g9chy2ib` + TS0003
+- Protocol: unknown
+- Z2M local pids for mfr: TS0003 ✓ overlap
+- Compose: class=socket eps=3 EF00=false IAS=false batteries=mains?
+- Notes: Market wrongly said wall_thermostat; Z2M=3-gang backlight. P2318: enrichment-first — do not strip shared pids; mfr may remain on other drivers when forbidden pid absent.
+- **Gaps:** no_compound_db_key, no_sources
+
+### `p2317-etufnltx-ts1002-foria` → `button_wireless_4`
+
+- Couple: `_TZ3000_etufnltx` + TS1002
+- Protocol: unknown
+- Z2M local pids for mfr: TS1002 ✓ overlap
+- Compose: class=button eps=4 EF00=false IAS=false batteries=CR2032/CR2450/AAA
+- Notes: Battery dimmer/scene remote — not wall switch. P2318: enrichment-first — do not strip shared pids; mfr may remain on other drivers when forbidden pid absent.
+- **Gaps:** no_compound_db_key, no_sources
+
+### `p2347-gabriel-zemismart-cartesian-doc-only` → `wall_switch_1gang_1way`
+
+- Couple: `?` + 
+- Protocol: zcl
+- Z2M local pids for mfr: (none in dump) 
+- Compose: class=socket eps=1 EF00=false IAS=false batteries=mains?
+- Notes: P2351: DOC ONLY — forum #2173 Cartesian OEM dump must NEVER become a multi-mfr/multi-pid registry_force (was collapsing YWUBFUVT/KGXEJ1DV/JJDKHUEQ/YERVJNLJ onto wall_switch_1gang_1way with TS0001+2+3). Real locks stay per-couple: zemismart-ts0001-tb25-1, novadigital-ts0002-*, novadigital-ts0003-yervjnlj + publish-sacred-keep.
+- Sources: forum-140352-2173, P2347, P2351
+- **Gaps:** no_compound_db_key, compose_pid_mismatch
+
+### `p2347-cam-smart-button-need-diag` → `button_wireless_1`
+
+- Couple: `_TZ3000_5bpeda8u` + TS0041
+- Protocol: zcl
+- Z2M local pids for mfr: (none in dump) 
+- Compound `_TZ3000_5bpeda8u|TS0041`: zcl  P2285 Z2M whitelabel SH-SC07 sibling of mrpevh8p
+- Compose: class=button eps=1 EF00=true IAS=true batteries=CR2032/CR2450
+- Notes: Cam T146735 #8 smart button couple ABSENT in post. Soft hypothesis 5bpeda8u+TS0041 NEED_DIAG. Motion is separate HOBEIAN+ZG-204ZL.
+- Sources: forum-146735-8, INT-010, P2347
+
+### `p2361-w0qqde0g-ts011f-plug-not-button` → `plug_energy_monitor`
+
+- Couple: `_TZ3210_w0qqde0g` + TS011F
+- Protocol: zcl
+- Z2M local pids for mfr: (none in dump) 
+- Compose: class=socket eps=1 EF00=false IAS=false batteries=mains?
+- Notes: WHY(P2361/P2362): Gmail L3 couple _TZ3210_w0qqde0g+TS011F. Z2M TS011F_plug_3. Strip ALL pairing-case forms from button drivers (anti-bot re-bleed).
+- Sources: gmail-l3-2026-09-01, z2m-TS011F_plug_3, P2361
+- **Gaps:** no_compound_db_key
+
+### `p2363-curtain-ef00-hybrid-timeout` → `curtain_motor`
+
+- Couple: `_TZE204_a2jcoyuk` + TS0601
+- Protocol: tuya_ef00
+- Z2M local pids for mfr: TS0601 ✓ overlap
+- Compound `_TZE284_libht6ua|TS0601`: tuya_dp DP {"1":"windowcoverings_state","2":"windowcoverings_set/100","3":"windowcoverings_set/100","5":"reverse_direction","13":"measure_battery"} Roller blind motor sibling to fodv6bkr
+- Compound `_tze284_libht6ua|TS0601`: tuya_dp DP {"1":"windowcoverings_state","2":"windowcoverings_set/100","3":"windowcoverings_set/100","5":"reverse_direction","13":"measure_battery"} Roller blind motor sibling to fodv6bkr
+- Compose: class=windowcoverings eps=1 EF00=true IAS=false batteries=OTHER
+- Notes: WHY(P2363): diag 05867379 @ 9.0.750 curtain timeout — couple ABSENT in log (do not invent). Soft-create TuyaEF00Manager + optimistic windowcoverings after TX; HybridProtocolManager never disables cover drivers. Harvest Z2M cover motors (mfr+TS0601 only); strip tilt r0jdjrvi from curtain_motor.
+- Sources: diag-05867379, z2m-herdsman-cover, P2363
+
+### `p2385-lerlink-r32ctezx-fan-switch` → `fan_controller`
+
+- Couple: `_TZE200_r32ctezx` + TS0601
+- Protocol: tuya_ef00
+- Retail: Lerlink T2-Z67, Lerlink T2-W67, TS0601_fan_switch
+- Z2M local pids for mfr: TS0601 ✓ overlap
+- Compose: class=fan eps=1 EF00=true IAS=false batteries=mains?
+- Notes: GitHub #536 — Z2M/Blakadder Lerlink 5-speed fan. Was wrongly on water_valve_smart. DP1 on/off, DP3 enum 0-4.
+- Sources: z2m:TS0601_fan_switch, blakadder:Lerlink_T2-Z67, github#536, P2385
+- **Gaps:** no_compound_db_key
+
+### `tz3000-uw3dadam-ts0202-motion` → `motion_sensor`
+
+- Couple: `_TZ3000_uw3dadam` + TS0202
+- Protocol: ias_zone
+- Z2M local pids for mfr: (none in dump) 
+- Compose: class=sensor eps=1 EF00=false IAS=false batteries=mains?
+- Notes: P2402 Gmail unmatched: deCONZ/Z2S IAS TS0202 presence/motion clone — lock motion_sensor only (never invent other pids)
+- Sources: gmail-unmatched-fp, deconz#8503, z2s-TS0202
+- **Gaps:** no_compound_db_key
+
+### `p2405-0ints6wl-soil-not-curtain` → `soil_sensor`
+
+- Couple: `_TZE284_0ints6wl` + TS0601
+- Protocol: tuya_ef00
+- Z2M local pids for mfr: TS0601 ✓ overlap
+- Compound `_TZE284_0ints6wl|TS0601`: tuya_dp DP {"3":"measure_humidity.soil","5":"measure_temperature/10","15":"measure_battery"} GitHub #428 solid moisture sensor
+- Compose: class=sensor eps=1 EF00=true IAS=false batteries=AAA/CR2032/CR2450
+- Notes: GH #428 closed — Z2M soil TS0601; was wrongly on curtain_motor
+- Sources: issue-428, P2405, z2m-pr-11576
+
+### `p2405-e3oitdyu-dimmer-2gang` → `dimmer_2_gang_tuya`
+
+- Couple: `_TZE200_e3oitdyu` + TS0601
+- Protocol: tuya_ef00
+- Z2M local pids for mfr: TS0601 ✓ overlap
+- Compose: class=socket eps=1 EF00=true IAS=false batteries=mains?
+- Notes: GH #88 Moes 2-gang dimmer
+- Sources: issue-88, P2405, z2m
+- **Gaps:** no_compound_db_key
+
+### `p2405-uj3f4wr5-curtain-motor` → `curtain_motor`
+
+- Couple: `_TZE200_uj3f4wr5` + TS0601
+- Protocol: tuya_ef00
+- Z2M local pids for mfr: (none in dump) 
+- Compose: class=windowcoverings eps=1 EF00=true IAS=false batteries=OTHER
+- Notes: GH #79 curtain motor
+- Sources: issue-79, P2405
+- **Gaps:** no_compound_db_key
+
+### `p2405-u3nv1jwk-button-wireless-4` → `button_wireless_4`
+
+- Couple: `_TZ3000_u3nv1jwk` + TS0044
+- Protocol: zcl
+- Z2M local pids for mfr: (none in dump) 
+- Compound `_TZ3000_u3nv1jwk|TS0044`: zcl  Homey forum TS0044 4-button remote, E000/DP action path
+- Compose: class=button eps=4 EF00=false IAS=false batteries=CR2032/CR2450/AAA
+- Notes: GH #76 / PECULIARITIES TM-YKQ004
+- Sources: issue-76, P2405
+
+### `p2405-otvn3lne-motion-ts0202` → `motion_sensor`
+
+- Couple: `_TZ3000_otvn3lne` + TS0202
+- Protocol: ias_zone
+- Z2M local pids for mfr: (none in dump) 
+- Compose: class=sensor eps=1 EF00=false IAS=false batteries=mains?
+- Notes: GH #164 ZMS02 motion
+- Sources: issue-164, P2405
+- **Gaps:** no_compound_db_key
+
+### `p2405-81yrt3lo-power-clamp` → `power_clamp_meter`
+
+- Couple: `_TZE204_81yrt3lo` + TS0601
+- Protocol: tuya_ef00
+- Z2M local pids for mfr: TS0601 ✓ overlap
+- Compose: class=sensor eps=1 EF00=true IAS=false batteries=mains?
+- Notes: GH #318/#323 PJ-1203A — full mfr 81yrt3lo only (truncated 81yrt3l removed)
+- Sources: issue-318, issue-323, P2405, z2m
+- **Gaps:** no_compound_db_key
+
+### `p2405-tgvtvdoc-rain-sensor` → `rain_sensor`
+
+- Couple: `_TZ3210_tgvtvdoc` + TS0207
+- Protocol: ias_zone
+- Z2M local pids for mfr: TS0207 ✓ overlap
+- Compose: class=sensor eps=1 EF00=true IAS=true batteries=AAA/AA/CR123A
+- Notes: GH #388 RB-SRAIN01 — already on rain_sensor; truncated tgvtvdo on water_detector never matches
+- Sources: issue-388, P2405, z2m
+- **Gaps:** no_compound_db_key
+
+### `p2415-zg204zv-tze200-presence` → `presence_sensor_radar`
+
+- Couple: `?` + 
+- Protocol: unknown
+- Z2M local pids for mfr: (none in dump) 
+- Compose: class=sensor eps=1 EF00=true IAS=false batteries=CR2032/CR2450/AAA/AA/CR123A/INTERNAL
+- Sources: Z2M ZG-204ZV, ZHA #4268
+- **Gaps:** no_compound_db_key, compose_pid_mismatch
+
+### `p2415-zs301z-soil` → `soil_sensor`
+
+- Couple: `?` + 
+- Protocol: unknown
+- Z2M local pids for mfr: (none in dump) 
+- Compose: class=sensor eps=1 EF00=true IAS=false batteries=AAA/CR2032/CR2450
+- Sources: Z2M #27955
+- **Gaps:** no_compound_db_key, compose_pid_mismatch
+
+### `hobeian-zg204zh-tze` → `presence_sensor_radar`
+
+- Couple: `_TZE200_vuqzj1ej` + TS0601, ZG-204ZH, AY208Z
+- Protocol: tuya_ef00
+- Z2M local pids for mfr: TS0601 ✓ overlap
+- Compound `_TZE200_vuqzj1ej|TS0601`: tuya_dp  P2421 Z2M ZG-204ZH — was climate cartesian
+- Compound `_TZE200_hdih4foa|TS0601`: tuya_dp  P2421 Z2M ZG-204ZH — was climate cartesian
+- Compose: class=sensor eps=1 EF00=true IAS=false batteries=CR2032/CR2450/AAA/AA/CR123A/INTERNAL
+- Notes: Z2M ZG-204ZH: vuqzj1ej/hdih4foa + TS0601 — presence+temp+humid+lux. Not climate catch-all.
+- Sources: z2m-tuya.ts-ZG-204ZH, P2421
+
+### `hobeian-zg204zm-tze` → `presence_sensor_radar`
+
+- Couple: `_TZE200_2aaelwxk` + TS0601, ZG-204ZM, AY205Z, TS0225
+- Protocol: tuya_ef00
+- Z2M local pids for mfr: TS0225, TS0601 ✓ overlap
+- Compound `_TZE200_2aaelwxk|TS0601`: tuya_dp  P2421 Z2M ZG-204ZM
+- Compound `_TZE200_kb5noeto|TS0601`: tuya_dp  P2421 Z2M ZG-204ZM
+- Compound `_TZE200_tyffvoij|TS0601`: tuya_dp  P2421 Z2M ZG-204ZM
+- Compound `_TZE200_yflzeeqj|TS0601`: tuya_dp  P2421 Z2M ZG-204ZM — was climate cartesian
+- Compose: class=sensor eps=1 EF00=true IAS=false batteries=CR2032/CR2450/AAA/AA/CR123A/INTERNAL
+- Notes: Z2M ZG-204ZM: 2aaelwxk/kb5noeto/tyffvoij/yflzeeqj — PIR+24GHz. DP2=static sens, DP4=static dist/100.
+- Sources: z2m-tuya.ts-ZG-204ZM, P2421
+
+### `hobeian-zg302zm-sensing-switch` → `presence_sensor_radar`
+
+- Couple: `_TZE200_kccdzaeo` + TS0601, ZG-302ZM
+- Protocol: tuya_ef00
+- Z2M local pids for mfr: TS0601 ✓ overlap
+- Compound `_TZE200_kccdzaeo|TS0601`: tuya_dp  P2421 Z2M ZG-302ZM — was vibration cartesian
+- Compound `_TZE200_s7rsrtbg|TS0601`: tuya_dp  P2421 Z2M ZG-302ZM
+- Compound `_TZE200_tmszbtzq|TS0601`: tuya_dp  P2421 Z2M ZG-302ZM
+- Compound `_TZE200_bfmfhxra|TS0601`: tuya_dp  P2421 Z2M ZG-302ZM
+- Compound `_TZE200_ahpcyzth|TS0601`: tuya_dp  P2421 Z2M ZG-302ZM
+- Compound `_TZE200_kijxnb8q|TS0601`: tuya_dp  P2421 Z2M ZG-302ZM
+- Compose: class=sensor eps=1 EF00=true IAS=false batteries=CR2032/CR2450/AAA/AA/CR123A/INTERNAL
+- Notes: Z2M ZG-302ZM motion sensing switch: presence + switch1/2/3 DPs. Not vibration/clamp.
+- Sources: z2m-tuya.ts-ZG-302ZM, P2421
+
+### `hobeian-zg302zl-sensing-switch` → `presence_sensor_radar`
+
+- Couple: `_TZE200_khzbklyh` + TS0601, ZG-302ZL
+- Protocol: tuya_ef00
+- Z2M local pids for mfr: TS0601 ✓ overlap
+- Compound `_TZE200_khzbklyh|TS0601`: tuya_dp  P2421 Z2M ZG-302ZL — was vibration cartesian
+- Compound `_TZE200_df04ghrb|TS0601`: tuya_dp  P2421 Z2M ZG-302ZL
+- Compound `_TZE200_toeldckg|TS0601`: tuya_dp  P2421 Z2M ZG-302ZL
+- Compound `_TZE200_cqtamhh5|TS0601`: tuya_dp  P2421 Z2M ZG-302ZL
+- Compound `_TZE200_xlnzk169|TS0601`: tuya_dp  P2421 Z2M ZG-302ZL
+- Compound `_TZE200_llvwkkde|TS0601`: tuya_dp  P2421 Z2M ZG-302ZL
+- Compose: class=sensor eps=1 EF00=true IAS=false batteries=CR2032/CR2450/AAA/AA/CR123A/INTERNAL
+- Notes: Z2M ZG-302ZL motion sensing switch: DP101 presence, DP1-3 switches. Not vibration/clamp.
+- Sources: z2m-tuya.ts-ZG-302ZL, P2421
+
+### `hobeian-zg102zm-vibration-contact` → `vibration_sensor`
+
+- Couple: `_TZE200_jfw0a4aa` + TS0601, ZG-102ZM, AY02SZ
+- Protocol: tuya_ef00
+- Z2M local pids for mfr: TS0601 ✓ overlap
+- Compound `_TZE200_jfw0a4aa|TS0601`: tuya_dp  P2422 ZG-102ZM
+- Compound `_TZE200_wzk0x7fq|TS0601`: tuya_dp  P2422 ZG-102ZM
+- Compose: class=sensor eps=1 EF00=false IAS=false batteries=CR2032/CR2450
+- Notes: Z2M ZG-102ZM: DP1 vibration, DP101 contact inverse, DP4 battery, DP6 sensitivity.
+- Sources: z2m-ZG-102ZM, P2422
+
+### `hobeian-zg103z-vibration-tilt` → `vibration_sensor`
+
+- Couple: `_TZE200_iba1ckek` + TS0601, ZG-103Z
+- Protocol: tuya_ef00
+- Z2M local pids for mfr: TS0601 ✓ overlap
+- Compound `_TZE200_iba1ckek|TS0601`: tuya_dp  P2422 ZG-103Z
+- Compose: class=sensor eps=1 EF00=false IAS=false batteries=CR2032/CR2450
+- Notes: Z2M ZG-103Z: vibration+tilt+xyz; not illuminance presence.
+- Sources: z2m-ZG-103Z, P2422
+
+### `hobeian-zg226z-water-alarm` → `water_leak_sensor`
+
+- Couple: `HOBEIAN` + ZG-226Z
+- Protocol: tuya_ef00
+- Z2M local pids for mfr: CK-BL702-MWS-01(7016) 
+- Compound `HOBEIAN|ZG-226Z`: tuya_dp  P2422 water alarm
+- Compose: class=sensor eps=1 EF00=false IAS=true batteries=CR2032/CR2450/AAA
+- Notes: Z2M ZG-226Z water leak alarm with siren DPs.
+- Sources: z2m-ZG-226Z, P2422
+
+### `hobeian-zg228z-vibration-alarm` → `vibration_sensor`
+
+- Couple: `HOBEIAN` + ZG-228Z
+- Protocol: tuya_ef00
+- Z2M local pids for mfr: CK-BL702-MWS-01(7016) 
+- Compound `HOBEIAN|ZG-228Z`: tuya_dp  P2422 vibration alarm
+- Compose: class=sensor eps=1 EF00=false IAS=false batteries=CR2032/CR2450
+- Notes: Z2M ZG-228Z vibration alarm/siren.
+- Sources: z2m-ZG-228Z, P2422
+
+### `hobeian-zg301z-switch` → `switch_1gang`
+
+- Couple: `HOBEIAN` + ZG-301Z, ZG-302Z1
+- Protocol: unknown
+- Z2M local pids for mfr: CK-BL702-MWS-01(7016) 
+- Compound `HOBEIAN|ZG-301Z`: zcl  P2430 HOBEIAN 1-gang in-wall switch
+- Compound `HOBEIAN|ZG-302Z1`: zcl  P2430 HOBEIAN 1-gang wall switch
+- Compose: class=socket eps=1 EF00=false IAS=false batteries=mains?
+- Notes: P2430: HOBEIAN 1-gang switch couple lock. Never cartesian to radar/soil/dimmer.
+- **Gaps:** no_sources
+
+### `hobeian-zg301z-2ch-switch` → `switch_2gang`
+
+- Couple: `HOBEIAN` + ZG-301Z-2CH, ZG-302Z2
+- Protocol: unknown
+- Z2M local pids for mfr: CK-BL702-MWS-01(7016) 
+- Compound `HOBEIAN|ZG-301Z-2CH`: zcl  P2430 HOBEIAN 2-gang in-wall switch
+- Compound `HOBEIAN|ZG-302Z2`: zcl  P2430 HOBEIAN 2-gang wall switch
+- Compose: class=socket eps=2 EF00=false IAS=false batteries=mains?
+- Notes: P2430: HOBEIAN 2-gang switch couple lock.
+- **Gaps:** no_sources
+
+### `hobeian-zg302z3-switch` → `switch_3gang`
+
+- Couple: `HOBEIAN` + ZG-302Z3
+- Protocol: unknown
+- Z2M local pids for mfr: CK-BL702-MWS-01(7016) 
+- Compound `HOBEIAN|ZG-302Z3`: zcl  P2430 HOBEIAN 3-gang wall switch
+- Compose: class=socket eps=3 EF00=false IAS=false batteries=mains?
+- Notes: P2430: HOBEIAN 3-gang switch couple lock.
+- **Gaps:** no_sources
+
+### `hobeian-zg101zs-scene` → `scene_switch_4`
+
+- Couple: `HOBEIAN` + ZG-101ZS
+- Protocol: unknown
+- Z2M local pids for mfr: CK-BL702-MWS-01(7016) 
+- Compound `HOBEIAN|ZG-101ZS`: zcl  P2430 HOBEIAN Star Ring 4-gang scene switch
+- Compose: class=button eps=4 EF00=false IAS=false batteries=CR2450/AAA
+- Notes: P2430: HOBEIAN Star Ring 4-gang scene switch couple lock.
+- **Gaps:** compose_pid_mismatch, no_sources
+
+### `hobeian-zg229z-siren` → `siren`
+
+- Couple: `HOBEIAN` + ZG-229Z
+- Protocol: unknown
+- Z2M local pids for mfr: CK-BL702-MWS-01(7016) 
+- Compound `HOBEIAN|ZG-229Z`: tuya_dp  P2430 HOBEIAN smart siren light/sound
+- Compose: class=other eps=1 EF00=false IAS=false batteries=OTHER/OTHER
+- Notes: P2430: HOBEIAN smart siren couple lock.
+- **Gaps:** compose_pid_mismatch, no_sources
+
+### `hobeian-zg225z-gas` → `gas_sensor`
+
+- Couple: `HOBEIAN` + ZG-225Z
+- Protocol: unknown
+- Z2M local pids for mfr: CK-BL702-MWS-01(7016) 
+- Compound `HOBEIAN|ZG-225Z`: tuya_dp  P2430 HOBEIAN gas sensor
+- Compose: class=sensor eps=1 EF00=true IAS=false batteries=mains?
+- Notes: P2430: HOBEIAN gas sensor couple lock.
+- **Gaps:** no_sources
+
+### `p2432-dze200-dfxkcots-rotary-dimmer` → `wall_dimmer_tuya`
+
+- Couple: `_TZE200_dfxkcots` + TS0601
+- Protocol: tuya_dp
+- Z2M local pids for mfr: TS0601 ✓ overlap
+- Compound `_TZE200_dfxkcots|TS0601`: tuya_dp DP {"1":"onoff","2":"dim/1000"} Tuya TS0601 rotary smart dimmer
+- Compound `_tze200_dfxkcots|TS0601`: tuya_dp DP {"1":"onoff","2":"dim/1000"} Tuya TS0601 rotary smart dimmer
+- Compound `_TZE200_DFXKCOTS|TS0601`: tuya_dp DP {"1":"onoff","2":"dim/1000"} Tuya TS0601 rotary smart dimmer
+- Compose: class=light eps=1 EF00=true IAS=false batteries=mains?
+- Notes: Rotary smart dimmer TS0601; forbidden from wall_switch_5_gang_tuya & air_purifier
+- **Gaps:** no_sources
+
+### `p2432-dze200-p0gzbqct-rotary-knob-dimmer` → `wall_dimmer_tuya`
+
+- Couple: `_TZE200_p0gzbqct` + TS0601
+- Protocol: tuya_dp
+- Z2M local pids for mfr: TS0601 ✓ overlap
+- Compound `_TZE200_p0gzbqct|TS0601`: tuya_dp DP {"1":"onoff","2":"dim/1000"} Forum Henk de Boom #671 Rotary smart knob dimmer TS0601
+- Compound `_tze200_p0gzbqct|TS0601`: tuya_dp DP {"1":"onoff","2":"dim/1000"} Forum Henk de Boom #671 Rotary smart knob dimmer TS0601
+- Compound `_TZE200_P0GZBQCT|TS0601`: tuya_dp DP {"1":"onoff","2":"dim/1000"} Forum Henk de Boom #671 Rotary smart knob dimmer TS0601
+- Compose: class=light eps=1 EF00=true IAS=false batteries=mains?
+- Notes: Henk de Boom #671 Rotary knob dimmer TS0601; forbidden from wall_switch_5_gang_tuya & air_purifier
+- **Gaps:** no_sources
+
+### `p2432-dze200-fjjbhx9d-dimmer-2gang` → `dimmer_2_gang_tuya`
+
+- Couple: `_TZE200_fjjbhx9d` + TS0601
+- Protocol: tuya_dp
+- Z2M local pids for mfr: TS0601 ✓ overlap
+- Compound `_TZE200_fjjbhx9d|TS0601`: tuya_dp DP {"1":"onoff.1","2":"dim.1/1000","7":"onoff.2","8":"dim.2/1000"} Tuya TS0601 2-gang smart dimmer switch
+- Compound `_tze200_fjjbhx9d|TS0601`: tuya_dp DP {"1":"onoff.1","2":"dim.1/1000","7":"onoff.2","8":"dim.2/1000"} Tuya TS0601 2-gang smart dimmer switch
+- Compound `_TZE200_FJJBHX9D|TS0601`: tuya_dp DP {"1":"onoff.1","2":"dim.1/1000","7":"onoff.2","8":"dim.2/1000"} Tuya TS0601 2-gang smart dimmer switch
+- Compose: class=socket eps=1 EF00=true IAS=false batteries=mains?
+- Notes: 2-gang smart dimmer TS0601; forbidden from wall_switch_5_gang_tuya
+- **Gaps:** no_sources
+
+### `p2432-dze200-aqnazj70-switch-4gang` → `switch_4gang`
+
+- Couple: `_TZE200_aqnazj70` + TS0601
+- Protocol: tuya_dp
+- Z2M local pids for mfr: TS0601 ✓ overlap
+- Compound `_TZE200_aqnazj70|TS0601`: tuya_dp DP {"1":"onoff.1","2":"onoff.2","3":"onoff.3","4":"onoff.4"} Tuya TS0601 4-gang switch module
+- Compound `_tze200_aqnazj70|TS0601`: tuya_dp DP {"1":"onoff.1","2":"onoff.2","3":"onoff.3","4":"onoff.4"} Tuya TS0601 4-gang switch module
+- Compound `_TZE200_AQNAZJ70|TS0601`: tuya_dp DP {"1":"onoff.1","2":"onoff.2","3":"onoff.3","4":"onoff.4"} Tuya TS0601 4-gang switch module
+- Compose: class=socket eps=4 EF00=true IAS=false batteries=mains?
+- Notes: 4-gang switch TS0601; forbidden from wall_switch_5_gang_tuya
+- **Gaps:** no_sources
+
+### `p2432-dze200-mexisfik-switch-4gang` → `switch_4gang`
+
+- Couple: `_TZE200_mexisfik` + TS0601
+- Protocol: tuya_dp
+- Z2M local pids for mfr: TS0601 ✓ overlap
+- Compound `_TZE200_mexisfik|TS0601`: tuya_dp DP {"1":"onoff.1","2":"onoff.2","3":"onoff.3","4":"onoff.4"} Tuya TS0601 4-gang wall switch
+- Compound `_tze200_mexisfik|TS0601`: tuya_dp DP {"1":"onoff.1","2":"onoff.2","3":"onoff.3","4":"onoff.4"} Tuya TS0601 4-gang wall switch
+- Compound `_TZE200_MEXISFIK|TS0601`: tuya_dp DP {"1":"onoff.1","2":"onoff.2","3":"onoff.3","4":"onoff.4"} Tuya TS0601 4-gang wall switch
+- Compose: class=socket eps=4 EF00=true IAS=false batteries=mains?
+- Notes: 4-gang wall switch TS0601; forbidden from wall_switch_5_gang_tuya
+- **Gaps:** no_sources
+
+### `p2432-tyzb01-qeqvmvti-switch-1gang` → `switch_1gang`
+
+- Couple: `_TYZB01_qeqvmvti` + TS0011
+- Protocol: zcl
+- Z2M local pids for mfr: (none in dump) 
+- Compound `_TYZB01_qeqvmvti|TS0011`: zcl  Tuya TS0011 1-gang light switch
+- Compound `_tyzb01_qeqvmvti|TS0011`: zcl  Tuya TS0011 1-gang light switch
+- Compound `_TYZB01_QEQVMVTI|TS0011`: zcl  Tuya TS0011 1-gang light switch
+- Compose: class=socket eps=1 EF00=false IAS=false batteries=mains?
+- Notes: 1-gang light switch TS0011; forbidden from wall_switch_5_gang_tuya
+- **Gaps:** no_sources, not_in_local_z2m_fps
+
+### `p2432-dze200-mja3fuja-air-quality` → `air_quality_comprehensive`
+
+- Couple: `_TZE200_mja3fuja` + TS0601
+- Protocol: tuya_dp
+- Z2M local pids for mfr: TS0601 ✓ overlap
+- Compound `_TZE200_mja3fuja|TS0601`: tuya_dp DP {"2":"measure_pm25","18":"measure_temperature/10","19":"measure_humidity","21":"measure_voc","22":"measure_co2"} Forum #1379 / #31079 Smart Air House Keeper
+- Compound `_tze200_mja3fuja|TS0601`: tuya_dp DP {"2":"measure_pm25","18":"measure_temperature/10","19":"measure_humidity","21":"measure_voc","22":"measure_co2"} Forum #1379 / #31079 Smart Air House Keeper
+- Compound `_TZE200_MJA3FUJA|TS0601`: tuya_dp DP {"2":"measure_pm25","18":"measure_temperature/10","19":"measure_humidity","21":"measure_voc","22":"measure_co2"} Forum #1379 / #31079 Smart Air House Keeper
+- Compose: class=sensor eps=1 EF00=true IAS=false batteries=mains?
+- Notes: Topic 1 #1379 Smart Air House Keeper; forbidden from air_purifier
+- **Gaps:** no_sources
+
+### `p2432-dze200-2ekuz3dz-thermostat` → `wall_thermostat`
+
+- Couple: `_TZE200_2ekuz3dz` + TS0601
+- Protocol: tuya_dp
+- Z2M local pids for mfr: TS0601 ✓ overlap
+- Compound `_TZE200_2ekuz3dz|TS0601`: tuya_dp DP {"16":"target_temperature/10","24":"measure_temperature/10"} Forum Melectro #650 Beok/Moes X5H-GB-B smart thermostat
+- Compound `_tze200_2ekuz3dz|TS0601`: tuya_dp DP {"16":"target_temperature/10","24":"measure_temperature/10"} Forum Melectro #650 Beok/Moes X5H-GB-B smart thermostat
+- Compound `_TZE200_2EKUZ3DZ|TS0601`: tuya_dp DP {"16":"target_temperature/10","24":"measure_temperature/10"} Forum Melectro #650 Beok/Moes X5H-GB-B smart thermostat
+- Compose: class=thermostat eps=1 EF00=true IAS=false batteries=mains?
+- Notes: Melectro #650 Beok/Moes X5H-GB-B thermostat; forbidden from air_purifier
+- **Gaps:** no_sources
+
+### `p2432-dze204-qasjif9e-presence` → `presence_sensor_radar`
+
+- Couple: `_TZE204_qasjif9e` + TS0601
+- Protocol: tuya_dp
+- Z2M local pids for mfr: TS0601 ✓ overlap
+- Compound `_TZE204_qasjif9e|TS0601`: tuya_dp DP {"1":"alarm_motion","104":"measure_luminance"} Forum G4nd41f #654 ZY-M100 mmWave radar presence
+- Compound `_tze204_qasjif9e|TS0601`: tuya_dp DP {"1":"alarm_motion","104":"measure_luminance"} Forum G4nd41f #654 ZY-M100 mmWave radar presence
+- Compound `_TZE204_QASJIF9E|TS0601`: tuya_dp DP {"1":"alarm_motion","104":"measure_luminance"} Forum G4nd41f #654 ZY-M100 mmWave radar presence
+- Compose: class=sensor eps=1 EF00=true IAS=false batteries=CR2032/CR2450/AAA/AA/CR123A/INTERNAL
+- Notes: G4nd41f #654 ZY-M100 radar; forbidden from air_purifier
+- **Gaps:** no_sources
+
+### `p2432-dze204-sxm7l9xa-presence` → `presence_sensor_radar`
+
+- Couple: `_TZE204_sxm7l9xa` + TS0601
+- Protocol: tuya_dp
+- Z2M local pids for mfr: TS0601 ✓ overlap
+- Compound `_TZE204_sxm7l9xa|TS0601`: tuya_dp DP {"1":"alarm_motion","104":"measure_luminance"} Forum G4nd41f ZY-M100-S mmWave radar presence
+- Compound `_tze204_sxm7l9xa|TS0601`: tuya_dp DP {"1":"alarm_motion","104":"measure_luminance"} Forum G4nd41f ZY-M100-S mmWave radar presence
+- Compound `_TZE204_SXM7L9XA|TS0601`: tuya_dp DP {"1":"alarm_motion","104":"measure_luminance"} Forum G4nd41f ZY-M100-S mmWave radar presence
+- Compose: class=sensor eps=1 EF00=true IAS=false batteries=CR2032/CR2450/AAA/AA/CR123A/INTERNAL
+- Notes: G4nd41f ZY-M100-S radar; forbidden from air_purifier
+- **Gaps:** no_sources
+
+### `p2432-dze200-3towulqd-presence` → `presence_sensor_radar`
+
+- Couple: `_TZE200_3towulqd` + TS0601
+- Protocol: tuya_dp
+- Z2M local pids for mfr: TS0601 ✓ overlap
+- Compound `_TZE200_3towulqd|TS0601`: tuya_dp DP {"1":"alarm_motion","104":"measure_luminance"} Forum Janderek #663 ZG-204ZL motion & lux radar/PIR
+- Compound `_tze200_3towulqd|TS0601`: tuya_dp DP {"1":"alarm_motion","104":"measure_luminance"} Forum Janderek #663 ZG-204ZL motion & lux radar/PIR
+- Compound `_TZE200_3TOWULQD|TS0601`: tuya_dp DP {"1":"alarm_motion","104":"measure_luminance"} Forum Janderek #663 ZG-204ZL motion & lux radar/PIR
+- Compose: class=sensor eps=1 EF00=true IAS=false batteries=CR2032/CR2450/AAA/AA/CR123A/INTERNAL
+- Notes: Janderek #663 ZG-204ZL motion & lux radar; forbidden from air_purifier
+- **Gaps:** no_sources
+
+### `p2432-dze200-3p5ydos3-dimmer` → `wall_dimmer_tuya`
+
+- Couple: `_TZE200_3p5ydos3` + TS0601
+- Protocol: tuya_dp
+- Z2M local pids for mfr: TS0601 ✓ overlap
+- Compound `_TZE200_3p5ydos3|TS0601`: tuya_dp DP {"1":"onoff","2":"dim/1000"} Forum Ferenc_Szasz #660 BSEED smart dimmer switch
+- Compound `_tze200_3p5ydos3|TS0601`: tuya_dp DP {"1":"onoff","2":"dim/1000"} Forum Ferenc_Szasz #660 BSEED smart dimmer switch
+- Compound `_TZE200_3P5YDOS3|TS0601`: tuya_dp DP {"1":"onoff","2":"dim/1000"} Forum Ferenc_Szasz #660 BSEED smart dimmer switch
+- Compose: class=light eps=1 EF00=true IAS=false batteries=mains?
+- Notes: Ferenc_Szasz #660 BSEED dimmer; forbidden from air_purifier
+- **Gaps:** no_sources
+
+### `p2432-tz3000-mmkbptmx-switch-4gang` → `switch_4gang`
+
+- Couple: `_TZ3000_mmkbptmx` + TS0004
+- Protocol: zcl
+- Z2M local pids for mfr: TS0004 ✓ overlap
+- Compound `_TZ3000_mmkbptmx|TS0004`: zcl  Forum Melectro #646 4-gang wall switch TS0004
+- Compound `_tz3000_mmkbptmx|TS0004`: zcl  Forum Melectro #646 4-gang wall switch TS0004
+- Compound `_TZ3000_MMKBPTMX|TS0004`: zcl  Forum Melectro #646 4-gang wall switch TS0004
+- Compose: class=socket eps=4 EF00=true IAS=false batteries=mains?
+- Notes: Melectro #646 4-gang switch TS0004
+- **Gaps:** no_sources
+
+### `p2432-tz3000-ruxexjfz-switch-2gang` → `switch_2gang`
+
+- Couple: `_TZ3000_ruxexjfz` + TS0002
+- Protocol: zcl
+- Z2M local pids for mfr: TS0002 ✓ overlap
+- Compound `_TZ3000_ruxexjfz|TS0002`: zcl  Forum Melectro #647 2-gang wall switch TS0002
+- Compound `_tz3000_ruxexjfz|TS0002`: zcl  Forum Melectro #647 2-gang wall switch TS0002
+- Compound `_TZ3000_RUXEXJFZ|TS0002`: zcl  Forum Melectro #647 2-gang wall switch TS0002
+- Compose: class=socket eps=2 EF00=false IAS=false batteries=mains?
+- Notes: Melectro #647 2-gang switch TS0002
+- **Gaps:** no_sources
+
+### `p2432-tz3000-3dfewsk1-water-leak` → `water_leak_sensor`
+
+- Couple: `_TZ3000_3dfewsk1` + TS0207
+- Protocol: zcl
+- Z2M local pids for mfr: (none in dump) 
+- Compound `_TZ3000_3dfewsk1|TS0207`: zcl  Forum Roy1 #649 Water flood sensor TS0207
+- Compound `_tz3000_3dfewsk1|TS0207`: zcl  Forum Roy1 #649 Water flood sensor TS0207
+- Compound `_TZ3000_3DFEWSK1|TS0207`: zcl  Forum Roy1 #649 Water flood sensor TS0207
+- Compose: class=sensor eps=1 EF00=false IAS=true batteries=CR2032/CR2450/AAA
+- Notes: Roy1 #649 Water flood sensor TS0207
+- **Gaps:** no_sources, not_in_local_z2m_fps
+
+### `p2432-tz3000-wkai4ga5-button-2` → `button_wireless_2`
+
+- Couple: `_TZ3000_wkai4ga5` + TS0042
+- Protocol: zcl
+- Z2M local pids for mfr: (none in dump) 
+- Compound `_TZ3000_wkai4ga5|TS0042`: zcl  Forum Rob_G #653 2-gang wireless button/scene switch TS0042
+- Compound `_tz3000_wkai4ga5|TS0042`: zcl  Forum Rob_G #653 2-gang wireless button/scene switch TS0042
+- Compound `_TZ3000_WKAI4GA5|TS0042`: zcl  Forum Rob_G #653 2-gang wireless button/scene switch TS0042
+- Compose: class=button eps=2 EF00=true IAS=true batteries=CR2032/CR2450
+- Notes: Rob_G #653 2-gang wireless button TS0042
+- **Gaps:** no_sources, not_in_local_z2m_fps
+
+### `p2432-tze204-zenj4lxv-dimmer-2gang` → `dimmer_2_gang_tuya`
+
+- Couple: `_TZE204_zenj4lxv` + TS0601
+- Protocol: tuya_dp
+- Z2M local pids for mfr: TS0601 ✓ overlap
+- Compound `_TZE204_zenj4lxv|TS0601`: tuya_dp DP {"1":"onoff.1","2":"dim.1/1000","7":"onoff.2","8":"dim.2/1000"} Forum Anders_Lim #661 Moes Star Ring 2-gang dimmer ZS-SR-EUD-2
+- Compound `_tze204_zenj4lxv|TS0601`: tuya_dp DP {"1":"onoff.1","2":"dim.1/1000","7":"onoff.2","8":"dim.2/1000"} Forum Anders_Lim #661 Moes Star Ring 2-gang dimmer ZS-SR-EUD-2
+- Compound `_TZE204_ZENJ4LXV|TS0601`: tuya_dp DP {"1":"onoff.1","2":"dim.1/1000","7":"onoff.2","8":"dim.2/1000"} Forum Anders_Lim #661 Moes Star Ring 2-gang dimmer ZS-SR-EUD-2
+- Compose: class=socket eps=1 EF00=true IAS=false batteries=mains?
+- Notes: Anders_Lim #661 Star Ring 2-gang dimmer
+- **Gaps:** no_sources
+
+### `p2432-tzb210-rkgngb5o-cct` → `bulb_tunable_white`
+
+- Couple: `_TZB210_rkgngb5o` + TS0502B
+- Protocol: zcl
+- Z2M local pids for mfr: TS0501B 
+- Compound `_TZB210_rkgngb5o|TS0502B`: zcl  Forum radiothieves #662 CCT tunable white bulb TS0502B
+- Compound `_tzb210_rkgngb5o|TS0502B`: zcl  Forum radiothieves #662 CCT tunable white bulb TS0502B
+- Compound `_TZB210_RKGNGb5O|TS0502B`: zcl  Forum radiothieves #662 CCT tunable white bulb TS0502B
+- Compose: class=light eps=1 EF00=false IAS=false batteries=mains?
+- Notes: radiothieves #662 CCT tunable bulb
+- **Gaps:** no_sources
+
+### `p2432-tyzb01-6g8b7at8-switch-2gang` → `switch_2gang`
+
+- Couple: `_TYZB01_6g8b7at8` + TS0012
+- Protocol: zcl
+- Z2M local pids for mfr: (none in dump) 
+- Compound `_TYZB01_6g8b7at8|TS0012`: zcl  Forum Johan_Rossouw #665 2-gang switch TS0012
+- Compound `_tyzb01_6g8b7at8|TS0012`: zcl  Forum Johan_Rossouw #665 2-gang switch TS0012
+- Compound `_TYZB01_6G8B7AT8|TS0012`: zcl  Forum Johan_Rossouw #665 2-gang switch TS0012
+- Compose: class=socket eps=2 EF00=false IAS=false batteries=mains?
+- Notes: Johan_Rossouw #665 2-gang switch
+- **Gaps:** no_sources, not_in_local_z2m_fps
+
+### `p2432-tz3210-0zabbfax-bulb-rgb` → `light_bulb_rgb`
+
+- Couple: `_TZ3210_0zabbfax` + TS0503B
+- Protocol: zcl
+- Z2M local pids for mfr: (none in dump) 
+- Compound `_TZ3210_0zabbfax|TS0503B`: zcl  Forum RezaRose #666 USB RGB LED strip controller TS0503B
+- Compound `_tz3210_0zabbfax|TS0503B`: zcl  Forum RezaRose #666 USB RGB LED strip controller TS0503B
+- Compound `_TZ3210_0ZABBFAX|TS0503B`: zcl  Forum RezaRose #666 USB RGB LED strip controller TS0503B
+- Compose: class=light eps=1 EF00=false IAS=false batteries=mains?
+- Notes: RezaRose #666 USB RGB strip
+- **Gaps:** no_sources, not_in_local_z2m_fps
+
+### `p2432-tze204-ex3rcdha-presence` → `presence_sensor_radar`
+
+- Couple: `_TZE204_ex3rcdha` + TS0601
+- Protocol: tuya_dp
+- Z2M local pids for mfr: TS0601 ✓ overlap
+- Compound `_TZE204_ex3rcdha|TS0601`: tuya_dp DP {"1":"alarm_motion","104":"measure_luminance"} Forum #1379 / #31079 / Riccardo_Baro #5460 Human presence radar + luminance
+- Compound `_tze204_ex3rcdha|TS0601`: tuya_dp DP {"1":"alarm_motion","104":"measure_luminance"} Forum #1379 / #31079 / Riccardo_Baro #5460 Human presence radar + luminance
+- Compound `_TZE204_EX3RCDHA|TS0601`: tuya_dp DP {"1":"alarm_motion","104":"measure_luminance"} Forum #1379 / #31079 / Riccardo_Baro #5460 Human presence radar + luminance
+- Compose: class=sensor eps=1 EF00=true IAS=false batteries=CR2032/CR2450/AAA/AA/CR123A/INTERNAL
+- Notes: Topic 1 #1379 / #31079 radar
+- **Gaps:** no_sources
+
+### `p2432-tze200-yjjdcqsq-climate` → `climate_sensor`
+
+- Couple: `_TZE200_yjjdcqsq` + TS0601
+- Protocol: tuya_dp
+- Z2M local pids for mfr: TS0601 ✓ overlap
+- Compound `_TZE200_yjjdcqsq|TS0601`: tuya_dp DP {"1":"measure_temperature/10","2":"measure_humidity"} Forum #1379 / #31079 Temperature & humidity sensor TS0601
+- Compound `_tze200_yjjdcqsq|TS0601`: tuya_dp DP {"1":"measure_temperature/10","2":"measure_humidity"} Forum #1379 / #31079 Temperature & humidity sensor TS0601
+- Compound `_TZE200_YJJDCQSQ|TS0601`: tuya_dp DP {"1":"measure_temperature/10","2":"measure_humidity"} Forum #1379 / #31079 Temperature & humidity sensor TS0601
+- Compose: class=sensor eps=1 EF00=true IAS=false batteries=AAA/CR2032/CR2450
+- Notes: Topic 1 #1379 temp/humidity sensor
+- **Gaps:** no_sources
+
 Regenerate: `node tools/ci/investigate-device-peculiarities.js`
-
-
-### `nobo-sws-iz-xffhmvhv` → `button_wireless_4` (Gmail 9cbf9eb6 / 2026-08-22)
-
-- Couple: `_TZ3000_xffhmvhv` + TS004F (user) / TS0044 (Z2M Nous wireless 4-button)
-- Protocol: ZCL multi-EP OnOff/Level (clusters 5/6/8), **no genOnOff 0x8004**
-- Retail: Nobø SWS-IZ
-- Notes: Physical presses arrive as `[TS0044-RAW] EPn`; writing 32772 spam kills UX. Prefer `*_button_4gang_button_N_*` Flow cards. Never invent `*_button_N_button_pressed`.
-- Sources: gmail-diag-9cbf9eb6, z2m-tuya.ts Nous TS0044
-
-### `meter91-zgyzgdua-ts0044` → `scene_switch_4` (forum #2189 / #2207 / diags 55e3e591, c40705a1)
-
-- Couple: `_TZ3000_zgyzgdua` + TS0044 (Moes TS0044_2 / XH-SY-04Z whitelabel — **not** ERS-10TZBVK knob)
-- Protocol: **ZCL** multi-EP genOnOff **0xFD** (payload 0/1/2); E000 on EP1 fallback only; **no EF00**, **no 0x8004**
-- Pairing (P2336): compose EP1 `[0,1,6]` ⊆ interview `[0,1,6,57344]`; EP2–4 `[6]` only
-- Diag **c40705a1** (2026-08-30): user on **9.0.714** → unknown device = pre-P2336; update Test **≥9.0.738** + remove + re-pair
-- Z2M: Moes portable 4-button; `tuya.fz.on_off_action` only
-
-### `p2337-ts0044-routing` (Z2M whitelabel split)
-
-- `_TZ3000_u3nv1jwk` + TS0044 → `button_wireless_4` (Z2M TM-YKQ004 portable remote)
-- `_TZ3000_bgtzm4ny` + TS0044 → `button_wireless_4` (HOBEIAN ZG-101ZS Star Ring)
-- `_TZ3000_vp6clf9d` / `_TZ3000_ufhtxr59` + TS0044 → `scene_switch_4` only — removed from `wall_remote_4_gang` (P2328 steal)
-- MVM `resolveDriverType` must not route u3nv1jwk/bgtzm4ny to scene_switch_4
-- Notes: Update Test ≥9.0.733 + re-pair. Skip toast `button_wireless_4`. Physical = 0xFD.
-- Sources: forum-140352#2189, gmail-55e3e591, diag c40705a1
-
-### `peter-0cea6870-hybrid-contact` → `contact_sensor` (forum #2190)
-
-- Couple: **ABSENT in post** — do not invent
-- Protocol: hybrid IAS Zone + EF00 (DP1 contact, DP101 lux)
-- Tiles: Raam onze slpkamer, Raam Computerkamer, Raam Slpkamer voor (UUID `53c35301…`)
-- Notes: Prefer IAS over DP1 for `alarm_contact` (pulse open/close). Lux via DP101 (raw ~121–141 in diag) may differ from dedicated window lux sensor — need interview for scale. Water/smartbutton need re-pair on Test with IAS leftover EF00 skip.
-- Fleet: `data/user-impact-catalog.json` → `Peter_van_Werkhoven`; report `reports/forum-verify-*/users/Peter_van_Werkhoven.md`
-- Sources: forum-140352#2183–2190, gmail-0cea6870, 1cf775a2, 96c19859, 634f7b19
-
-### `p2297-t9ynfz4x-ts0225-mmwave` → `motion_sensor_radar_mmwave` (A_Tas #2199 / T158757)
-
-- Couple: `_TZ3218_t9ynfz4x` + TS0225 (Linptech ES1ZZ / Moes ZSS-LP-HP02-MS whitelabel)
-- Protocol: **ZCL hybrid** — presence via IAS/mmwave; settings on **0xE002** attrs 57348/57349/57355 (NOT EF00 DP9)
-- Z2M ref: [ES1ZZ(TY)](https://www.zigbee2mqtt.io/devices/ES1ZZ(TY).html) — motion/static sensitivity, motion distance, fading_time DP101, led 57353
-- P2289: mfr-only detect when Homey settings omit pid; P2298 onSettings never throws to UI
-- Stable: P2343 backport LinptechES1Profile + full device.js (was EF00 DP9 stub — broken settings path)
-- User: update Test ≥9.0.738 + re-pair; use Linptech-specific settings group
-- **P2388:** A_Tas forum posts mfr-only — Z2M/GitHub lock `_TZ3218_t9ynfz4x`+**TS0225** separately; live interview must confirm 0xE002 cluster 57346 before treating as closed
-
-### `gabriel-zemismart-bulk-2173` (forum #2173 / #2186 / lwthnp7j)
-
-- **#2173 is a Cartesian OEM dump** — each mfr expanded to TS0001|2|3|0601. Lock **one verified pid per mfr** only (HomeSuite + Z2M + Blakadder).
-- Verified 1-gang: `_TZ3000_OVYAISIP`+`TS0001`, `_TZ3000_PK8TGTDB`+`TS0001` → `wall_switch_1gang_1way`
-- Verified 2-gang: `YWUBFUVT`/`KGXEJ1DV`/`JJDKHUEQ`+`TS0002` → `wall_switch_2gang_1way`
-- Verified 3-gang: `YERVJNLJ`/`VJHCENZO`/`QXCNWV26`/`EQSAIR32`/`F09J9QJB`/`FAWK5XJV`/`OK0GGPK7`+`TS0003` → `wall_switch_3gang_1way`
-- Verified 4-gang ZCL: `_TZ3000_lwthnp7j`+`TS0004` → `wall_switch_4gang_1way` (never `switch_4gang` / EF00)
-- Verified 4-gang MCU: `_TZE200/_TZE284_SHKXSGIS`, `_TZE204_AAGRXLBD`+`TS0601` → `wall_switch_4_gang_tuya`
-- Verified 6-gang MCU: `_TZE200/_TZE284_R731ZLXK`+`TS0601` → `wall_switch_6_gang_tuya`
-- Soft OEM siblings (compact pins only): `_TZE204_SHKXSGIS`, `_TZE284_AAGRXLBD`, `_TZE204_R731ZLXK`
-- **Forbidden:** Cartesian cross-pids; routing to `switch_Ngang` or `wall_dimmer_tuya`; inventing pid onto #2186 when ABSENT
-- P2343/P2347 sacred-keep pins prevent compact drop
-- Sources: HomeSuite device table, Z2M herdsman, Blakadder TB26-6, forum-140352#2173
-
-### `p2347-cam-smart-button-need-diag` → `button_wireless_1` (Cam T146735 #8)
-
-- Motion locked: `HOBEIAN`+`ZG-204ZL` → `presence_sensor_radar` (P2340)
-- Smart button couple **ABSENT** in post; hist diag `4d7b45a5` (#1160) not re-proven
-- Soft hypothesis only: `_TZ3000_5bpeda8u`+`TS0041` — NEED_DIAG interview
-- Do not invent Cam button pid from Peter / 4x4_Pete radar posts
-
-### `p2347-peter-2190-absent` → multi-tile (Peter_van_Werkhoven)
-
-- Diags `0cea6870` / `1cf775a2` known; extract has **0** mfr/pid lines
-- Tiles SOS / contact / water / smartbutton remain `couple: null`
-- Do not glue `k4ej3ww2`, `mrpevh8p`, `TS0207` onto #2190
-- Reliability BOTH already: IAS coerce, skip IAS-only EF00 TX, SOS battery debounce
 

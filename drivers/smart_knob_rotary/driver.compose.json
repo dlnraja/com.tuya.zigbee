@@ -5,7 +5,7 @@
     "nl": "Slimme Draaiknop",
     "de": "Intelligenter Drehknopf"
   },
-  "class": "sensor",
+  "class": "button",
   "capabilities": [
     "button.rotate_left",
     "button.rotate_right",
@@ -80,10 +80,7 @@
     "batteries": [
       "CR2032",
       "CR2450"
-    ],
-    "approximation": {
-      "usageConstant": 0.3
-    }
+    ]
   },
   "platforms": [
     "local"
@@ -95,27 +92,32 @@
     "manufacturerName": [
       "_TZ3000_gwkzibhs",
       "_TZ3000_qja6nq5z",
-      "_TZ3000_ugi8ky6u",
       "_tz3000_csflgqj2",
       "_tz3000_gwkzibhs",
-      "_tz3000_pcqjmcud",
       "_tz3000_pzui3skt",
       "_tz3000_qja6nq5z",
+      "_TZ3000_ugi8ky6u",
+      "_TZ3000_UGI8KY6U",
       "_TZ3000_GWKZIBHS",
       "_TZ3000_QJA6NQ5Z",
-      "_TZ3000_UGI8KY6U",
-      "_tz3000_ugi8ky6u",
       "_TZ3000_CSFLGQJ2",
-      "_TZ3000_PCQJMCUD",
       "_TZ3000_PZUI3SKT",
+      "_tz3000_ugi8ky6u",
       "_TZ3000_csflgqj2",
+      "_TZ3000_pzui3skt",
+      "_tz3000_GWKZIBHS",
+      "_tz3000_QJA6NQ5Z",
+      "_tz3000_CSFLGQJ2",
+      "_tz3000_PZUI3SKT",
+      "_tz3000_UGI8KY6U",
+      "_tz3000_pcqjmcud",
+      "_TZ3000_PCQJMCUD",
       "_TZ3000_pcqjmcud",
-      "_TZ3000_pzui3skt"
+      "_tz3000_PCQJMCUD"
     ],
     "productId": [
       "TS004F",
       "ERS-10TZBVK-AA",
-      "ZG-101ZD",
       "TS0044",
       "TS0601"
     ],
@@ -143,8 +145,7 @@
   },
   "images": {
     "small": "/drivers/smart_knob_rotary/assets/images/small.png",
-    "large": "/drivers/smart_knob_rotary/assets/images/large.png",
-    "xlarge": "/drivers/smart_knob_rotary/assets/images/xlarge.png"
+    "large": "/drivers/smart_knob_rotary/assets/images/large.png"
   },
   "maintenanceActions": [
     {
@@ -159,23 +160,23 @@
       "id": "tuya_revive",
       "title": {
         "en": "Tuya Revive (device recovery)",
-        "fr": "Tuya Revive (récupération appareil)"
+        "fr": "Tuya Revive (récupération appareil)",
+        "nl": "Tuya Revive (apparaatherstel)",
+        "de": "Tuya Revive (Gerätewiederherstellung)"
       }
     },
     {
       "id": "generate_issue_report",
       "title": {
         "en": "Generate support report (GitHub issue)",
-        "fr": "Générer rapport de support (issue GitHub)"
+        "fr": "Générer rapport de support (issue GitHub)",
+        "nl": "Supportrapport genereren (GitHub issue)",
+        "de": "Supportbericht erstellen (GitHub Issue)"
       }
     }
   ],
   "id": "smart_knob_rotary",
   "version": "1.0.0",
-  "_pidConflictNotes": [
-    "// PID-CONFLICT-NOTE TS004F shared with 19 other drivers (cross-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md",
-    "// PID-CONFLICT-NOTE ERS-10TZBVK-AA shared with 4 other drivers (cross-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md"
-  ],
   "settings": [
     {
       "id": "button_mode",

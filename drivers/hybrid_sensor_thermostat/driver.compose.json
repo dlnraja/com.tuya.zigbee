@@ -87,9 +87,7 @@
       "ZBMINIL2-R2",
       "ZBMINIR",
       "ZBMINIR2",
-      "ZBMINIR2-R2",
-      "ZG-301Z",
-      "ZG-302Z1"
+      "ZBMINIR2-R2"
     ],
     "endpoints": {
       "1": {
@@ -106,7 +104,8 @@
     "manufacturerName": [
       "_TZE204_x1ovyvy1",
       "_TZE204_X1OVYVY1",
-      "_tze204_x1ovyvy1"
+      "_tze204_x1ovyvy1",
+      "_tze204_X1OVYVY1"
     ]
   },
   "settings": [
@@ -164,8 +163,7 @@
   ],
   "images": {
     "small": "/drivers/hybrid_sensor_thermostat/assets/images/small.png",
-    "large": "/drivers/hybrid_sensor_thermostat/assets/images/large.png",
-    "xlarge": "/drivers/hybrid_sensor_thermostat/assets/images/xlarge.png"
+    "large": "/drivers/hybrid_sensor_thermostat/assets/images/large.png"
   },
   "platforms": [
     "local"
@@ -185,20 +183,21 @@
       "id": "tuya_revive",
       "title": {
         "en": "Tuya Revive (device recovery)",
-        "fr": "Tuya Revive (récupération appareil)"
+        "fr": "Tuya Revive (récupération appareil)",
+        "nl": "Tuya Revive (apparaatherstel)",
+        "de": "Tuya Revive (Gerätewiederherstellung)"
       }
     },
     {
       "id": "generate_issue_report",
       "title": {
         "en": "Generate support report (GitHub issue)",
-        "fr": "Générer rapport de support (issue GitHub)"
+        "fr": "Générer rapport de support (issue GitHub)",
+        "nl": "Supportrapport genereren (GitHub issue)",
+        "de": "Supportbericht erstellen (GitHub Issue)"
       }
     }
   ],
   "id": "hybrid_sensor_thermostat",
-  "version": "1.0.0",
-  "_pidConflictNotes": [
-    "// PID-CONFLICT-NOTE TS0201 shared with 18 other drivers (cross-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md"
-  ]
+  "version": "1.0.0"
 }

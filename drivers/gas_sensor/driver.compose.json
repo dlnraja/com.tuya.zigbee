@@ -22,14 +22,14 @@
   "subDevices": [],
   "zigbee": {
     "productId": [
-      "TS0601_gas",
-      "TS0601",
       "TS0225",
-      "ZG-225Z",
-      "TS0301"
+      "TS0301",
+      "TS0601",
+      "TS0601_gas",
+      "ZG-225Z"
     ],
     "learnmode": {
-      "image": "/drivers/gas_sensor/assets/learnmode.svg",
+      "image": "{{driverAssetsPath}}/icon.svg",
       "instruction": {
         "en": "Press and hold the pairing button for 5 seconds until the LED flashes.",
         "fr": "Appuyez et maintenez le bouton d'appairage pendant 5 secondes jusqu'à ce que la LED clignote."
@@ -44,11 +44,21 @@
       }
     },
     "manufacturerName": [
-      "_HYBRID_GAS_SENSOR_NEEDS_DEVICE_ASSIGNMENT",
+      "_tze200_chbyv06x",
+      "_tze200_CHBYV06X",
+      "_TZE200_chbyv06x",
+      "_TZE200_CHBYV06X",
+      "_tze200_vrcfo4i0",
+      "_TZE200_vrcfo4i0",
+      "_tze204_chbyv06x",
+      "_tze204_CHBYV06X",
       "_TZE204_chbyv06x",
-      "_hybrid_gas_sensor_needs_device_assignment",
       "_TZE204_CHBYV06X",
-      "_tze204_chbyv06x"
+      "_tze284_chbyv06x",
+      "_tze284_CHBYV06X",
+      "_TZE284_chbyv06x",
+      "_TZE284_CHBYV06X",
+      "HOBEIAN"
     ]
   },
   "settings": [
@@ -265,8 +275,7 @@
   ],
   "images": {
     "small": "/drivers/gas_sensor/assets/images/small.png",
-    "large": "/drivers/gas_sensor/assets/images/large.png",
-    "xlarge": "/drivers/gas_sensor/assets/images/xlarge.png"
+    "large": "/drivers/gas_sensor/assets/images/large.png"
   },
   "platforms": [
     "local"
@@ -317,14 +326,18 @@
       "id": "tuya_revive",
       "title": {
         "en": "Tuya Revive (device recovery)",
-        "fr": "Tuya Revive (récupération appareil)"
+        "fr": "Tuya Revive (récupération appareil)",
+        "nl": "Tuya Revive (apparaatherstel)",
+        "de": "Tuya Revive (Gerätewiederherstellung)"
       }
     },
     {
       "id": "generate_issue_report",
       "title": {
         "en": "Generate support report (GitHub issue)",
-        "fr": "Générer rapport de support (issue GitHub)"
+        "fr": "Générer rapport de support (issue GitHub)",
+        "nl": "Supportrapport genereren (GitHub issue)",
+        "de": "Supportbericht erstellen (GitHub Issue)"
       }
     }
   ],
@@ -335,11 +348,5 @@
       "catchall": true,
       "reason": "Fallback for unmatched devices with PIDs: TS0601_gas, TS0601, TS0225, ZG-225Z, TS0301"
     }
-  },
-  "_pidConflictNotes": [
-    "// PID-CONFLICT-NOTE TS0225 shared with 19 other drivers (cross-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md",
-    "// PID-CONFLICT-NOTE TS0301 shared with 5 other drivers (cross-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md",
-    "// PID-CONFLICT-NOTE TS0601_gas shared with 2 other drivers (same-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md",
-    "// PID-CONFLICT-NOTE ZG-225Z shared with 2 other drivers (same-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md"
-  ]
+  }
 }

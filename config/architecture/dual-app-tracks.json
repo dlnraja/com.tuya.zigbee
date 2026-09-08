@@ -222,6 +222,10 @@
       "tag": "BOTH",
       "note": "HOBEIAN full fleet: ZE/ZK/ZQ/ZX configs; ZG-102ZM contact+vib; ZG-103Z tilt; ZG-226Z/228Z; cartesian strip"
     },
+    "p2423_hobeian_mfs_db_enrich": {
+      "tag": "BOTH",
+      "note": "mfs_db lock HOBEIAN TZE couples + byPid multiCouple; strip curtain/switch steals; sync skips multiCouple prune"
+    },
     "p2424_moes_settings_loop_fix": {
       "tag": "BOTH",
       "note": "Moes ZTS #533 salvagr: break setSettings -> onSettings -> _sendTuyaDP write loop; skip boot calibration blast; pace DP writes"
@@ -229,6 +233,10 @@
     "p2425_fan_settings_loop_fix": {
       "tag": "BOTH",
       "note": "Fan controller #536: break setSettings -> onSettings -> datapoint write loop on DP2/11 sync; check getSetting before write"
+    },
+    "p2433_hobeian_fodv6bkr_tubular": {
+      "tag": "BOTH",
+      "note": "Eduard #2228 tubular DP3=position; HOBEIAN ZG-229Z/204ZP/301/302/101ZD compose locks; strip cartesian pids; p2382 alias"
     }
   },
   "ci": {

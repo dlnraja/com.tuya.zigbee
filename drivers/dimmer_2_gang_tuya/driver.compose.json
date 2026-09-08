@@ -13,7 +13,6 @@
   "capabilities": [
     "onoff",
     "dim",
-    "measure_battery",
     "button.1",
     "button.2"
   ],
@@ -32,14 +31,6 @@
       "getable": false,
       "setable": false
     },
-    "measure_battery": {
-      "title": {
-        "en": "Battery",
-        "fr": "Batterie",
-        "nl": "Batterij",
-        "de": "Batterie"
-      }
-    },
     "button.2": {
       "title": {
         "en": "Button 2",
@@ -51,21 +42,13 @@
     }
   },
   "images": {
-    "large": "/{{driverAssetsPath}}/images/large.png",
-    "small": "/{{driverAssetsPath}}/images/small.png"
-  },
-  "energy": {
-    "approximation": {
-      "usageOn": 0,
-      "usageOff": 0
-    },
-    "batteries": [
-      "CR2032"
-    ]
+    "small": "/drivers/dimmer_2_gang_tuya/assets/images/small.png",
+    "large": "/drivers/dimmer_2_gang_tuya/assets/images/large.png"
   },
   "zigbee": {
     "manufacturerName": [
-      "_tyzb01_v8gtiaed",
+      "_tz3210_eejm8dcr",
+      "_tze284_nthhgkd6",
       "_TZE204_jtbgusdc",
       "_TZE284_jtbgusdc",
       "_TZE28C1000000_jtbgusdc",
@@ -80,21 +63,62 @@
       "_tze204_o9gyszw2",
       "_tze284_o9gyszw2",
       "_tze28c1000000_o9gyszw2",
-      "_TYZB01_v8gtiaed",
+      "_TZ3210_eejm8dcr",
+      "_TZE284_nthhgkd6",
+      "_TZ3210_EEJM8DCR",
+      "_tz3210_EEJM8DCR",
+      "_TZE284_NTHHGKD6",
+      "_tze284_NTHHGKD6",
+      "_TZE204_JTBGUSDC",
+      "_tze204_JTBGUSDC",
+      "_TZE284_JTBGUSDC",
+      "_tze284_JTBGUSDC",
+      "_TZE28C1000000_JTBGUSDC",
+      "_tze28c1000000_JTBGUSDC",
+      "_TZE200_JTBGUSDC",
+      "_tze200_JTBGUSDC",
+      "_TZE204_O9GYSZW2",
+      "_tze204_O9GYSZW2",
+      "_TZE284_O9GYSZW2",
+      "_tze284_O9GYSZW2",
+      "_TZE28C1000000_O9GYSZW2",
+      "_tze28c1000000_O9GYSZW2",
       "_TZE204_fjms2pi9",
-      "_TZE284_fjms2pi9",
-      "_TZE28C1000000_fjms2pi9",
       "_tze204_fjms2pi9",
+      "_TZE204_FJMS2PI9",
+      "_tze204_FJMS2PI9",
+      "_TZE284_fjms2pi9",
       "_tze284_fjms2pi9",
+      "_TZE284_FJMS2PI9",
+      "_tze284_FJMS2PI9",
+      "_TZE200_fjms2pi9",
+      "_tze200_fjms2pi9",
+      "_TZE28C1000000_fjms2pi9",
       "_tze28c1000000_fjms2pi9",
+      "_TZE28C1000000_FJMS2PI9",
+      "_tze28c1000000_FJMS2PI9",
       "_TZE200_e3oitdyu",
-      "_tze200_e3oitdyu",
-      "_TZE200_fjjbhx9d",
-      "_TZE200_FJJBHX9D",
-      "_tze200_fjjbhx9d",
       "_TZE204_zenj4lxv",
+      "_TZE204_bxoo2swd",
+      "_TZE200_gwkapsoq",
+      "_TZE200_fjjbhx9d",
+      "_tze200_e3oitdyu",
+      "_tze204_zenj4lxv",
+      "_tze204_bxoo2swd",
+      "_tze200_gwkapsoq",
+      "_tze200_fjjbhx9d",
+      "_TZE200_FJJBHX9D",
       "_TZE204_ZENJ4LXV",
-      "_tze204_zenj4lxv"
+      "_TZE200_FJMS2PI9",
+      "_tze200_FJMS2PI9",
+      "_TZE200_E3OITDYU",
+      "_tze200_E3OITDYU",
+      "_tze204_ZENJ4LXV",
+      "_TZE204_BXOO2SWD",
+      "_tze204_BXOO2SWD",
+      "_TZE200_GWKAPSOQ",
+      "_tze200_GWKAPSOQ",
+      "_tze200_FJJBHX9D"
     ],
     "productId": [
       "01MINIZB",
@@ -130,9 +154,7 @@
       "ZBMINIL2-R2",
       "ZBMINIR",
       "ZBMINIR2",
-      "ZBMINIR2-R2",
-      "ZG-301Z",
-      "ZG-302Z1"
+      "ZBMINIR2-R2"
     ],
     "endpoints": {
       "1": {
@@ -140,13 +162,9 @@
           0,
           4,
           5,
-          6,
-          8,
           61184
         ],
         "bindings": [
-          6,
-          8,
           25,
           10
         ]
@@ -178,10 +196,6 @@
     }
   },
   "version": "1.0.0",
-  "_pidConflictNotes": [
-    "// PID-CONFLICT-NOTE TS110E shared with 18 other drivers (cross-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md",
-    "// PID-CONFLICT-NOTE TS110F shared with 9 other drivers (cross-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md"
-  ],
   "ui": {
     "quickAction": "onoff"
   }

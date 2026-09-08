@@ -60,6 +60,19 @@ class CurtainMotorDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedC
       || mfr.includes('i8sdouy0');
   }
 
+  // WHY(P2433 / Eduard #2228): DC tubular battery rollers (`_TZE284_fodv6bkr` / `libht6ua`)
+  // share EF00 DPs with sibling motors — DP3 is position (%), NOT robot `dim`.
+  // Homey has no native windowCovering (258); all TX/RX via 0xEF00.
+  _isBatteryTubularRoller() {
+    const mfr = String(
+      this.getManufacturerName?.()
+      || this.getSetting?.('zb_manufacturer_name')
+      || this.getData?.()?.manufacturerName
+      || ''
+    ).toLowerCase();
+    return mfr.includes('fodv6bkr') || mfr.includes('libht6ua');
+  }
+
   // v5.5.322: Extended DP mappings with lux sensor and button support
   get dpMappings() {
     if (this._isMoesZtsEurC()) {
@@ -73,6 +86,18 @@ class CurtainMotorDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedC
         7: { capability: null, internal: 'backlight', writable: true },
         8: { capability: null, internal: 'reverse', writable: true },
         10: { capability: null, internal: 'open_time', writable: true },
+      };
+    }
+    if (this._isBatteryTubularRoller()) {
+      return {
+        1: {
+          capability: 'windowcoverings_state',
+          transform: (v) => (v === 0 || v === 'open' ? 'up' : v === 2 || v === 'close' ? 'down' : 'idle'),
+        },
+        2: { capability: 'windowcoverings_set', transform: (v) => Number(v) / 100 },
+        3: { capability: 'windowcoverings_set', transform: (v) => Number(v) / 100 },
+        5: { capability: null, internal: 'reverse', writable: true },
+        13: { capability: 'measure_battery', divisor: 1 },
       };
     }
     return {
@@ -155,8 +180,9 @@ class CurtainMotorDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedC
     // v5.8.40: Skip for TS130F ZCL curtains (Tbao forum: _TZ3000_bs93npae)
     const { protocol } = this._detectProtocol?.() || {};
     const moesZts = this._isMoesZtsEurC();
-    // WHY(P2304): Moes ZTS-EUR-C wall switch — no lux/button robot extras
-    if (protocol !== 'ZCL' && !moesZts) {
+    const batteryTubular = this._isBatteryTubularRoller();
+    // WHY(P2304/P2433): Moes ZTS + battery tubular rollers — no lux/button robot extras
+    if (protocol !== 'ZCL' && !moesZts && !batteryTubular) {
       if (!this.hasCapability('measure_luminance')) {
         try {
           await this.addCapability('measure_luminance');
@@ -172,17 +198,19 @@ class CurtainMotorDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedC
     } else {
       const strip = protocol === 'ZCL'
         ? ['measure_luminance', 'button', 'measure_battery', 'button.1']
-        : ['measure_luminance', 'button', 'dim', 'windowcoverings_tilt_set', 'measure_battery', 'alarm_battery', 'button.1'];
+        : batteryTubular
+          ? ['measure_luminance', 'button', 'dim', 'windowcoverings_tilt_set', 'alarm_battery', 'button.1']
+          : ['measure_luminance', 'button', 'dim', 'windowcoverings_tilt_set', 'measure_battery', 'alarm_battery', 'button.1'];
       for (const cap of strip) {
         if (this.hasCapability(cap)) {
           this.removeCapability(cap).catch(() => {});
-          this.log(`[CURTAIN] 🗑️ Removed incorrect ${cap} from ${protocol === 'ZCL' ? 'ZCL' : 'Moes ZTS'} curtain`);
+          this.log(`[CURTAIN] 🗑️ Removed incorrect ${cap} from ${protocol === 'ZCL' ? 'ZCL' : batteryTubular ? 'battery-tubular' : 'Moes ZTS'} curtain`);
         }
       }
     }
 
     // WHY(P2356): button.1 maintenanceAction without listener → Homey UI errors on #533
-    if (moesZts && this.hasCapability('button.1')) {
+    if ((moesZts || batteryTubular) && this.hasCapability('button.1')) {
       await this.removeCapability('button.1').catch(() => {});
     }
 

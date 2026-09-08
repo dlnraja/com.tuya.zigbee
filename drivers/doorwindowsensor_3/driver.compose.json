@@ -22,14 +22,27 @@
     ]
   },
   "images": {
-    "large": "/{{driverAssetsPath}}/images/large.png",
-    "small": "/{{driverAssetsPath}}/images/small.png"
+    "small": "/drivers/doorwindowsensor_3/assets/images/small.png",
+    "large": "/drivers/doorwindowsensor_3/assets/images/large.png"
   },
   "zigbee": {
     "manufacturerName": [
       "_TZ3000_jowhpxop",
+      "_tz3000_jowhpxop",
       "_TZ3000_JOWHPXOP",
-      "_tz3000_jowhpxop"
+      "_tz3000_JOWHPXOP",
+      "_TZ3000_zgrffiwg",
+      "_TZ3000_bpkijo14",
+      "_TZ3000_uvti8nkd",
+      "_tz3000_zgrffiwg",
+      "_tz3000_bpkijo14",
+      "_tz3000_uvti8nkd",
+      "_TZ3000_ZGRFFIWG",
+      "_tz3000_ZGRFFIWG",
+      "_TZ3000_BPKIJO14",
+      "_tz3000_BPKIJO14",
+      "_TZ3000_UVTI8NKD",
+      "_tz3000_UVTI8NKD"
     ],
     "productId": [
       "01MINIZB",
@@ -63,9 +76,7 @@
       "ZBMINIL2-R2",
       "ZBMINIR",
       "ZBMINIR2",
-      "ZBMINIR2-R2",
-      "ZG-301Z",
-      "ZG-302Z1"
+      "ZBMINIR2-R2"
     ],
     "endpoints": {
       "1": {
@@ -81,7 +92,7 @@
       }
     },
     "learnmode": {
-      "image": "{{driverAssetsPath}}/learn.svg",
+      "image": "{{driverAssetsPath}}/icon.svg",
       "instruction": {
         "en": "Insert a pin into the single hole on the side of the device and press it gently for aprox 10 seconds until the LED blinks rapidly."
       }
@@ -105,9 +116,6 @@
       "setable": false
     }
   },
-  "_pidConflictNotes": [
-    "// PID-CONFLICT-NOTE TS0203 shared with 10 other drivers (cross-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md"
-  ],
   "settings": [
     {
       "id": "invert_contact",
