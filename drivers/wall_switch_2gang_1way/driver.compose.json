@@ -13,15 +13,6 @@
     "button.1",
     "button.2"
   ],
-  "energy": {
-    "approximation": {
-      "usageOn": 100,
-      "usageOff": 1
-    },
-    "batteries": [
-      "CR2032"
-    ]
-  },
   "platforms": [
     "local"
   ],
@@ -30,8 +21,7 @@
   ],
   "images": {
     "small": "/drivers/wall_switch_2gang_1way/assets/images/small.png",
-    "large": "/drivers/wall_switch_2gang_1way/assets/images/large.png",
-    "xlarge": "/drivers/wall_switch_2gang_1way/assets/images/xlarge.png"
+    "large": "/drivers/wall_switch_2gang_1way/assets/images/large.png"
   },
   "devices": {
     "secondSwitch": {
@@ -57,12 +47,19 @@
       "_TZ3000_Z1UEZKPI",
       "_TZ3000_xk5udnd6",
       "_TZ3000_z1uezkpi",
-      "_tz3000_ywubfuvt",
+      "_tz3000_XK5UDND6",
+      "_tz3000_Z1UEZKPI",
       "_TZ3000_ywubfuvt",
+      "_tz3000_ywubfuvt",
       "_TZ3000_YWUBFUVT",
+      "_TZ3000_kgxej1dv",
+      "_tz3000_kgxej1dv",
+      "_TZ3000_KGXEJ1DV",
       "_TZ3000_jjdkhueq",
       "_tz3000_jjdkhueq",
       "_TZ3000_JJDKHUEQ",
+      "_tz3000_YWUBFUVT",
+      "_tz3000_KGXEJ1DV",
       "_tz3000_JJDKHUEQ"
     ],
     "productId": [
@@ -74,20 +71,21 @@
       "1": {
         "clusters": [
           0,
-          3,
           4,
           5,
-          6,
-          57344,
-          57345
+          6
+        ],
+        "bindings": [
+          6
         ]
       },
       "2": {
         "clusters": [
-          0,
-          3,
           4,
           5,
+          6
+        ],
+        "bindings": [
           6
         ]
       }
@@ -283,6 +281,87 @@
           ]
         }
       ]
+    },
+    {
+      "type": "group",
+      "label": {
+        "en": "Connected switches",
+        "nl": "Gekoppelde schakelaars",
+        "fr": "Interrupteurs liés",
+        "de": "Verbundene Schalter"
+      },
+      "children": [
+        {
+          "id": "connected_siblings",
+          "type": "label",
+          "label": {
+            "en": "This wall unit",
+            "nl": "Dit wandapparaat",
+            "fr": "Cet interrupteur mural",
+            "de": "Diese Wandeinheit",
+            "it": "Questa unità a parete",
+            "es": "Esta unidad de pared",
+            "sv": "Denna väggenhet",
+            "pt": "Esta unidade de parede"
+          },
+          "value": "—"
+        },
+        {
+          "id": "traffic_stats",
+          "type": "label",
+          "label": {
+            "en": "Network activity",
+            "nl": "Netwerkactiviteit",
+            "fr": "Activité réseau",
+            "de": "Netzwerkaktivität",
+            "it": "Attività di rete",
+            "es": "Actividad de red",
+            "sv": "Nätverksaktivitet",
+            "pt": "Atividade de rede"
+          },
+          "value": "—"
+        }
+      ]
+    },
+    {
+      "type": "group",
+      "label": {
+        "en": "Pulse / inching",
+        "nl": "Puls / inching",
+        "fr": "Impulsion / inching",
+        "de": "Impuls / Inching"
+      },
+      "children": [
+        {
+          "id": "inching",
+          "type": "checkbox",
+          "label": {
+            "en": "Pulse mode (auto-off)",
+            "nl": "Pulsmodus (automatisch uit)",
+            "fr": "Mode impulsion (extinction auto)",
+            "de": "Impulsmodus (Auto-Aus)"
+          },
+          "hint": {
+            "en": "Change LED and pulse only on the main gang tile. Homey Flows cover timers/countdowns.",
+            "nl": "LED en puls alleen op de hoofdtegel. Timers via Flows.",
+            "fr": "LED et impulsion uniquement sur la tuile principale. Les minuteries passent par les Flows."
+          },
+          "value": false
+        },
+        {
+          "id": "inching_duration",
+          "type": "number",
+          "label": {
+            "en": "Pulse duration (seconds)",
+            "nl": "Pulsduur (seconden)",
+            "fr": "Durée d'impulsion (secondes)",
+            "de": "Impulsdauer (Sekunden)"
+          },
+          "value": 60,
+          "min": 1,
+          "max": 3600
+        }
+      ]
     }
   ],
   "maintenanceActions": [
@@ -298,14 +377,18 @@
       "id": "tuya_revive",
       "title": {
         "en": "Tuya Revive (device recovery)",
-        "fr": "Tuya Revive (récupération appareil)"
+        "fr": "Tuya Revive (récupération appareil)",
+        "nl": "Tuya Revive (apparaatherstel)",
+        "de": "Tuya Revive (Gerätewiederherstellung)"
       }
     },
     {
       "id": "generate_issue_report",
       "title": {
         "en": "Generate support report (GitHub issue)",
-        "fr": "Générer rapport de support (issue GitHub)"
+        "fr": "Générer rapport de support (issue GitHub)",
+        "nl": "Supportrapport genereren (GitHub issue)",
+        "de": "Supportbericht erstellen (GitHub Issue)"
       }
     }
   ],
@@ -339,11 +422,6 @@
       }
     }
   },
-  "_pidConflictNotes": [
-    "// PID-CONFLICT-NOTE TS0002 shared with 27 other drivers (cross-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md",
-    "// PID-CONFLICT-NOTE TS0042 shared with 13 other drivers (cross-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md",
-    "// PID-CONFLICT-NOTE TS0012 shared with 12 other drivers (cross-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md"
-  ],
   "ui": {
     "quickAction": "onoff"
   }
