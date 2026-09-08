@@ -253,18 +253,18 @@
     "gangCount": 1,
     "runtimePath": "PhysicalButtonMixin+ZCL OnOff/multistate",
     "sacredCouples": [
-      "_TZ3000_0CXTPYLT+3450-L",
-      "_TZ3000_0CXTPYLT+E1524/E1810",
-      "_TZ3000_0CXTPYLT+E1743",
-      "_TZ3000_0CXTPYLT+E1744",
-      "_TZ3000_22UGZKME+3450-L",
-      "_TZ3000_22UGZKME+E1524/E1810",
-      "_TZ3000_22UGZKME+E1743",
-      "_TZ3000_22UGZKME+E1744",
-      "_TZ3000_4a3l0x0t+3450-L",
-      "_TZ3000_4a3l0x0t+E1524/E1810",
-      "_TZ3000_4a3l0x0t+E1743",
-      "_TZ3000_4a3l0x0t+E1744"
+      "_tz3000_0cxtpylt+3450-L",
+      "_tz3000_0cxtpylt+E1524/E1810",
+      "_tz3000_0cxtpylt+E1743",
+      "_tz3000_0cxtpylt+E1744",
+      "_tz3000_0CXTPYLT+3450-L",
+      "_tz3000_0CXTPYLT+E1524/E1810",
+      "_tz3000_0CXTPYLT+E1743",
+      "_tz3000_0CXTPYLT+E1744",
+      "_TZ3000_0cxtpylt+3450-L",
+      "_TZ3000_0cxtpylt+E1524/E1810",
+      "_TZ3000_0cxtpylt+E1743",
+      "_TZ3000_0cxtpylt+E1744"
     ],
     "buttonCapabilities": [
       "button.1"
@@ -323,6 +323,9 @@
       "E1812",
       "E2001/E2002",
       "E2123",
+      "hobeian",
+      "Hobeian",
+      "HOBEIAN",
       "lumi.remote.b1acn01",
       "lumi.sensor_switch",
       "lumi.sensor_switch.aq2",
@@ -346,6 +349,7 @@
       "WXKG07LM",
       "WXKG11LM",
       "WXKG12LM",
+      "ZG-101ZD",
       "ZG-101ZL"
     ],
     "mfrCount": 92
@@ -531,15 +535,12 @@
       "ZBMINIR2",
       "ZBMINIR2-R2",
       "ZBT-ColorLight",
-      "ZG-301Z",
-      "ZG-302Z1",
-      "ZG-302Z2",
       "lumi.plug.macn01",
       "lumi.plug.maeu01",
       "lumi.plug.mmeu01",
       "SNZB-01M"
     ],
-    "mfrCount": 561
+    "mfrCount": 570
   },
   {
     "driverId": "button_wireless_3",
@@ -636,7 +637,7 @@
       "TS0601",
       "TS0215A"
     ],
-    "mfrCount": 50
+    "mfrCount": 60
   },
   {
     "driverId": "button_wireless_4",
@@ -780,11 +781,9 @@
       "ZBMINIR",
       "ZBMINIR2",
       "ZBMINIR2-R2",
-      "ZG-301Z",
-      "ZG-302Z1",
       "TS1002"
     ],
-    "mfrCount": 126
+    "mfrCount": 144
   },
   {
     "driverId": "button_wireless_4_ts0041",
@@ -1812,9 +1811,7 @@
       "ZBMINIL2-R2",
       "ZBMINIR",
       "ZBMINIR2",
-      "ZBMINIR2-R2",
-      "ZG-301Z",
-      "ZG-302Z1"
+      "ZBMINIR2-R2"
     ],
     "mfrCount": 2
   },
@@ -2622,7 +2619,11 @@
       "_tz3000_fa9mlvja+TS0043",
       "_tz3000_fa9mlvja+TS011F",
       "_tz3000_fa9mlvja+TS0121",
-      "_tz3000_fa9mlvja+TS0601"
+      "_tz3000_fa9mlvja+TS0601",
+      "_TZ3000_FA9MLVJA+TS0043",
+      "_TZ3000_FA9MLVJA+TS011F",
+      "_TZ3000_FA9MLVJA+TS0121",
+      "_TZ3000_FA9MLVJA+TS0601"
     ],
     "buttonCapabilities": [
       "button.1",
@@ -2702,7 +2703,7 @@
       "TS0046",
       "TS004F"
     ],
-    "mfrCount": 2
+    "mfrCount": 4
   },
   {
     "driverId": "remote_button_wireless_fingerbot",
@@ -4123,16 +4124,16 @@
     "sacredCouples": [
       "_tz3000_jckxip3g+TS0044",
       "_tz3000_jckxip3g+TS1002",
+      "_tz3000_jckxip3g+ZG-101ZS",
       "_tz3000_kgvamgxs+TS0044",
       "_tz3000_kgvamgxs+TS1002",
+      "_tz3000_kgvamgxs+ZG-101ZS",
       "_tz3000_wkai4ga5+TS0044",
       "_tz3000_wkai4ga5+TS1002",
+      "_tz3000_wkai4ga5+ZG-101ZS",
       "_tz3000_zgyzgdua+TS0044",
       "_tz3000_zgyzgdua+TS1002",
-      "_tze200_zqtiam9d+TS0044",
-      "_tze200_zqtiam9d+TS1002",
-      "_tze204_zqtiam9d+TS0044",
-      "_tze204_zqtiam9d+TS1002"
+      "_tz3000_zgyzgdua+ZG-101ZS"
     ],
     "buttonCapabilities": [
       "button.1",
@@ -4233,9 +4234,10 @@
     ],
     "productIds": [
       "TS0044",
-      "TS1002"
+      "TS1002",
+      "ZG-101ZS"
     ],
-    "mfrCount": 35
+    "mfrCount": 46
   },
   {
     "driverId": "scene_switch_6",
@@ -4587,7 +4589,7 @@
       "TS0601",
       "TS0215A"
     ],
-    "mfrCount": 24
+    "mfrCount": 32
   },
   {
     "driverId": "smart_knob",
@@ -4662,7 +4664,7 @@
       "TS004F",
       "ERS-10TZBVK-AA"
     ],
-    "mfrCount": 23
+    "mfrCount": 32
   },
   {
     "driverId": "smart_knob_rotary",
@@ -4672,16 +4674,16 @@
     "sacredCouples": [
       "_TZ3000_gwkzibhs+TS004F",
       "_TZ3000_gwkzibhs+ERS-10TZBVK-AA",
-      "_TZ3000_gwkzibhs+ZG-101ZD",
       "_TZ3000_gwkzibhs+TS0044",
+      "_TZ3000_gwkzibhs+TS0601",
       "_TZ3000_qja6nq5z+TS004F",
       "_TZ3000_qja6nq5z+ERS-10TZBVK-AA",
-      "_TZ3000_qja6nq5z+ZG-101ZD",
       "_TZ3000_qja6nq5z+TS0044",
+      "_TZ3000_qja6nq5z+TS0601",
       "_tz3000_csflgqj2+TS004F",
       "_tz3000_csflgqj2+ERS-10TZBVK-AA",
-      "_tz3000_csflgqj2+ZG-101ZD",
-      "_tz3000_csflgqj2+TS0044"
+      "_tz3000_csflgqj2+TS0044",
+      "_tz3000_csflgqj2+TS0601"
     ],
     "buttonCapabilities": [
       "button.rotate_left",
@@ -4807,7 +4809,6 @@
     "productIds": [
       "TS004F",
       "ERS-10TZBVK-AA",
-      "ZG-101ZD",
       "TS0044",
       "TS0601"
     ],
@@ -4890,7 +4891,9 @@
       "_TZ3000_yirp2pgd+TS004F",
       "_tz3000_YIRP2PGD+TS004F",
       "_TZ3000_kjfzuycl+TS004F",
-      "_tz3000_kjfzuycl+TS004F"
+      "_tz3000_kjfzuycl+TS004F",
+      "_TZ3000_KJFZUYCL+TS004F",
+      "_tz3000_KJFZUYCL+TS004F"
     ],
     "buttonCapabilities": [
       "button.1"
@@ -4932,7 +4935,7 @@
     "productIds": [
       "TS004F"
     ],
-    "mfrCount": 6
+    "mfrCount": 8
   },
   {
     "driverId": "smart_remote_1_button_2",

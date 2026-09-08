@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-08T07:29:46.634Z",
+  "generatedAt": "2026-09-08T17:30:48.303Z",
   "patch": "P2247",
   "drivers": {
     "count": 431,
@@ -14,11 +14,13 @@
   },
   "dps": {
     "knowledgeCouples": 121,
-    "registryCouples": 175,
+    "registryCouples": 177,
     "registryCovered": 120,
-    "coveragePct": 68.6,
+    "coveragePct": 67.8,
     "skippedBrandOrExternal": 15,
     "uncovered": [
+      "_TZ3000_ptjcjise|TS0002",
+      "_TZ3000_xk5udnd6|TS0012",
       "_TZE284_fodv6bkr|TS0601",
       "_TZE284_fhvpaltk|TS0601",
       "_TZ3000_pjb1ua0m|TS0203",

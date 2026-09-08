@@ -1,8 +1,8 @@
 {
-  "generatedAt": "2026-09-08T07:30:10.335Z",
+  "generatedAt": "2026-09-08T17:30:43.375Z",
   "mode": "plan",
-  "projectFingerprint": "25a1b96bf02ffcdb",
-  "projectChanged": false,
+  "projectFingerprint": "03e2cad3980e03a8",
+  "projectChanged": true,
   "plan": [
     {
       "id": "z2m",
@@ -26,8 +26,8 @@
     },
     {
       "id": "johan",
-      "action": "skip-unavailable",
-      "reason": "secrets missing: GH_PAT"
+      "action": "crawl-missing",
+      "reason": "no state file"
     },
     {
       "id": "forum",
@@ -41,8 +41,8 @@
     },
     {
       "id": "cross-ref",
-      "action": "skip-fresh",
-      "reason": "local cache fresh"
+      "action": "run-local",
+      "reason": "project fingerprint changed — cross-ref only"
     },
     {
       "id": "flow-fleet",
@@ -50,8 +50,8 @@
       "reason": "local script stale or forced"
     }
   ],
-  "skipCount": 5,
-  "crawlCount": 4,
+  "skipCount": 3,
+  "crawlCount": 6,
   "applyResults": [],
   "manifestPath": ".github/state/intelligent-source-manifest.json",
   "blocked": false,

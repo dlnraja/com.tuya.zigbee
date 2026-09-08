@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-08T06:34:42.941Z",
+  "generatedAt": "2026-09-08T17:30:34.779Z",
   "mode": "apply",
   "classFilter": null,
   "neverInventProductId": true,
@@ -7,7 +7,7 @@
     "button": {
       "count": 54,
       "withGaps": 7,
-      "mfrEntries": 1430,
+      "mfrEntries": 1499,
       "flowTriggers": 842,
       "gapSamples": [
         {
@@ -57,7 +57,7 @@
     "socket": {
       "count": 108,
       "withGaps": 41,
-      "mfrEntries": 3616,
+      "mfrEntries": 3809,
       "flowTriggers": 1164,
       "gapSamples": [
         {
@@ -114,7 +114,7 @@
     "switch": {
       "count": 9,
       "withGaps": 2,
-      "mfrEntries": 331,
+      "mfrEntries": 372,
       "flowTriggers": 66,
       "gapSamples": [
         {
@@ -134,7 +134,7 @@
     "sensor": {
       "count": 122,
       "withGaps": 20,
-      "mfrEntries": 5497,
+      "mfrEntries": 5743,
       "flowTriggers": 793,
       "gapSamples": [
         {
@@ -190,7 +190,7 @@
     "light": {
       "count": 53,
       "withGaps": 6,
-      "mfrEntries": 1534,
+      "mfrEntries": 1606,
       "flowTriggers": 260,
       "gapSamples": [
         {
@@ -234,7 +234,7 @@
     "curtain": {
       "count": 9,
       "withGaps": 1,
-      "mfrEntries": 807,
+      "mfrEntries": 1045,
       "flowTriggers": 45,
       "gapSamples": [
         {
@@ -248,7 +248,7 @@
     "thermostat": {
       "count": 31,
       "withGaps": 1,
-      "mfrEntries": 1600,
+      "mfrEntries": 1621,
       "flowTriggers": 178,
       "gapSamples": [
         {
@@ -289,7 +289,7 @@
     "fan": {
       "count": 6,
       "withGaps": 0,
-      "mfrEntries": 88,
+      "mfrEntries": 92,
       "flowTriggers": 20,
       "gapSamples": []
     },
@@ -303,14 +303,14 @@
     "siren": {
       "count": 6,
       "withGaps": 0,
-      "mfrEntries": 137,
+      "mfrEntries": 140,
       "flowTriggers": 30,
       "gapSamples": []
     },
     "ir": {
       "count": 1,
       "withGaps": 0,
-      "mfrEntries": 128,
+      "mfrEntries": 136,
       "flowTriggers": 6,
       "gapSamples": []
     },
@@ -358,7 +358,7 @@
     "other": {
       "count": 13,
       "withGaps": 3,
-      "mfrEntries": 916,
+      "mfrEntries": 924,
       "flowTriggers": 89,
       "gapSamples": [
         {
@@ -385,7 +385,7 @@
   "totals": {
     "drivers": 431,
     "withGaps": 86,
-    "mfrEntries": 16252,
+    "mfrEntries": 17155,
     "flowTriggers": 3587
   },
   "applyResults": [
@@ -429,7 +429,7 @@
       "phase": "curtain-couples",
       "ok": true,
       "exitCode": 0,
-      "tail": "[apply-curtain-couples] candidates=150 toAdd=0 strip_curtain=2\n[apply-curtain-couples] strip curtain_motor: 2 rows (tilt/module/shutter/forbidden)\n  → curtain_module_2_gang: _TZ3000_j1xl73iw\n  → curtain_module_2_gang: _TZ3000_l6iqph4f\n[apply-curtain-couples] APPLIED +0 mfrs, -2 stripped, curtain total=599"
+      "tail": "[apply-curtain-couples] candidates=150 toAdd=0 strip_curtain=2\n[apply-curtain-couples] strip curtain_motor: 2 rows (tilt/module/shutter/forbidden)\n  → curtain_module_2_gang: _TZ3000_j1xl73iw\n  → curtain_module_2_gang: _TZ3000_l6iqph4f\n[apply-curtain-couples] APPLIED +0 mfrs, -2 stripped, curtain total=831"
     },
     {
       "phase": "harden-wifi-local",

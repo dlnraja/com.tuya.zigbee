@@ -51,7 +51,7 @@ Cards with orphan tokens (declared but not used in args/title): 0
 
 ```
 {
-  "generatedAt": "2026-09-08T06:34:53.385Z",
+  "generatedAt": "2026-09-08T17:30:48.045Z",
   "mode": "dry-run",
   "driversTouched": 1,
   "orphanTokensFixed": 0,
@@ -89,9 +89,9 @@ Cards with orphan tokens (declared but not used in args/title): 0
     "actions": 0
   },
   "kept": {
-    "triggers": 76,
+    "triggers": 47,
     "conditions": 29,
-    "actions": 60
+    "actions": 57
   },
   "homeycompose": {
     "removed": {
