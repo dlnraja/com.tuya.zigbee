@@ -16,7 +16,6 @@
     "meter_power",
     "measure_current",
     "measure_voltage",
-    "measure_battery",
     "button.1",
     "button.2",
     "button.3",
@@ -34,14 +33,6 @@
       "maintenanceAction": true,
       "getable": false,
       "setable": false
-    },
-    "measure_battery": {
-      "title": {
-        "en": "Battery",
-        "fr": "Batterie",
-        "nl": "Batterij",
-        "de": "Batterie"
-      }
     },
     "button.2": {
       "title": {
@@ -72,37 +63,42 @@
     }
   },
   "images": {
-    "large": "/{{driverAssetsPath}}/images/large.png",
-    "small": "/{{driverAssetsPath}}/images/small.png"
+    "small": "/drivers/switch_4_gang_metering/assets/images/small.png",
+    "large": "/drivers/switch_4_gang_metering/assets/images/large.png"
   },
   "zigbee": {
     "manufacturerName": [
-      "_tze200_rhblgy0z",
-      "_tze204_rhblgy0z",
-      "_tze200_rks0sgb7",
       "_TZ3000_1fqpj6qz",
-      "_tze284_kow4ok3t",
+      "_tze200_rhblgy0z",
+      "_tze200_rks0sgb7",
       "_tze204_eaac7dkw",
-      "_TZE200_RHBLGY0Z",
-      "_TZE204_RHBLGY0Z",
-      "_TZE200_RKS0SGB7",
+      "_tze204_rhblgy0z",
+      "_tze284_kow4ok3t",
       "_TZ3000_1FQPJ6QZ",
       "_tz3000_1fqpj6qz",
-      "_TZE284_KOW4OK3T",
+      "_TZE200_RHBLGY0Z",
+      "_TZE200_RKS0SGB7",
       "_TZE204_EAAC7DKW",
+      "_TZE204_RHBLGY0Z",
+      "_TZE284_KOW4OK3T",
       "_TZE200_rhblgy0z",
-      "_TZE204_rhblgy0z",
       "_TZE200_rks0sgb7",
+      "_TZE204_eaac7dkw",
+      "_TZE204_rhblgy0z",
       "_TZE284_kow4ok3t",
-      "_TZE204_eaac7dkw"
+      "_tz3000_1FQPJ6QZ",
+      "_tze200_RHBLGY0Z",
+      "_tze200_RKS0SGB7",
+      "_tze204_EAAC7DKW",
+      "_tze204_RHBLGY0Z",
+      "_tze284_KOW4OK3T"
     ],
     "productId": [
       "ERS-10TZBVK-AA",
       "TS0004",
       "TS0044",
-      "TS004F",
       "TS0601",
-      "ZG-101ZD"
+      "TS004F"
     ],
     "endpoints": {
       "1": {
@@ -184,14 +180,8 @@
   },
   "version": "1.0.0",
   "energy": {
-    "batteries": [
-      "CR2032"
-    ]
+    "mains": true
   },
-  "_pidConflictNotes": [
-    "// PID-CONFLICT-NOTE TS004F shared with 19 other drivers (cross-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md",
-    "// PID-CONFLICT-NOTE TS0004 shared with 14 other drivers (cross-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md"
-  ],
   "ui": {
     "quickAction": "onoff"
   }

@@ -11,35 +11,32 @@
     "button.toggle_1",
     "button.toggle_2",
     "button.identify",
-    "measure_battery",
     "button.1",
     "button.2"
   ],
   "zigbee": {
     "productId": [
-      "ZG-305Z",
       "TS0002",
-      "TS0012",
       "TS0002_power",
       "TS0002_switch_module",
-      "TS0601",
-      "ZG-302Z2",
-      "TS011F",
       "TS0003",
+      "TS000F",
+      "TS0012",
       "TS0013",
+      "TS011F",
+      "TS0601",
       "TS0726",
-      "TS000F"
+      "ZG-301Z-2CH",
+      "ZG-302Z2",
+      "ZG-305Z"
     ],
     "learnmode": {
-      "image": "/drivers/switch_2gang/assets/learnmode.svg",
+      "image": "{{driverAssetsPath}}/icon.svg",
       "instruction": {
         "en": "Turn the switch on/off 3 times quickly"
       }
     },
     "manufacturerName": [
-      "Hobeian",
-      "hobeian",
-      "HOBEIAN",
       "_tyzb01_6g8b7at8",
       "_tyzb01_6G8B7AT8",
       "_TYZB01_6g8b7at8",
@@ -48,135 +45,212 @@
       "_tyzb01_VZRYTTTN",
       "_TYZB01_vzrytttn",
       "_TYZB01_VZRYTTTN",
+      "_tyzb01_zsl6z0pw",
+      "_TYZB01_zsl6z0pw",
       "_tz3000_01gpyda5",
+      "_tz3000_01GPYDA5",
       "_TZ3000_01gpyda5",
       "_TZ3000_01GPYDA5",
+      "_tz3000_18ejxno0",
+      "_TZ3000_18ejxno0",
       "_tz3000_4js6g1cw",
+      "_tz3000_4JS6G1CW",
       "_TZ3000_4js6g1cw",
       "_TZ3000_4JS6G1CW",
       "_tz3000_4xfqlgqo",
+      "_tz3000_4XFQLGQO",
       "_TZ3000_4xfqlgqo",
       "_TZ3000_4XFQLGQO",
       "_tz3000_4zf0crgo",
+      "_tz3000_4ZF0CRGO",
       "_TZ3000_4zf0crgo",
       "_TZ3000_4ZF0CRGO",
       "_tz3000_5ksufhqi",
+      "_tz3000_5KSUFHQI",
       "_TZ3000_5ksufhqi",
       "_TZ3000_5KSUFHQI",
       "_tz3000_7vcdo2vn",
+      "_tz3000_7VCDO2VN",
       "_TZ3000_7vcdo2vn",
       "_TZ3000_7VCDO2VN",
+      "_tz3000_aa5t61rh",
+      "_tz3000_AA5T61RH",
+      "_TZ3000_aa5t61rh",
+      "_TZ3000_AA5T61RH",
       "_tz3000_cauq1okq",
+      "_tz3000_CAUQ1OKQ",
       "_TZ3000_cauq1okq",
       "_TZ3000_CAUQ1OKQ",
       "_tz3000_criiahcg",
+      "_tz3000_CRIIAHCG",
       "_TZ3000_criiahcg",
       "_TZ3000_CRIIAHCG",
+      "_tz3000_dershnvx",
+      "_TZ3000_dershnvx",
       "_tz3000_eei0ubpy",
+      "_tz3000_EEI0UBPY",
       "_TZ3000_eei0ubpy",
       "_TZ3000_EEI0UBPY",
       "_tz3000_fbjdkph9",
+      "_tz3000_FBJDKPH9",
       "_TZ3000_fbjdkph9",
       "_TZ3000_FBJDKPH9",
+      "_tz3000_fisb3ajo",
+      "_tz3000_FISB3AJO",
+      "_TZ3000_fisb3ajo",
+      "_TZ3000_FISB3AJO",
       "_tz3000_gkesadus",
+      "_tz3000_GKESADUS",
       "_TZ3000_gkesadus",
       "_TZ3000_GKESADUS",
       "_tz3000_h1ipgkwn",
+      "_tz3000_H1IPGKWN",
       "_TZ3000_h1ipgkwn",
       "_TZ3000_H1IPGKWN",
       "_tz3000_h1lpgkwn",
+      "_tz3000_H1LPGKWN",
       "_TZ3000_h1lpgkwn",
       "_TZ3000_H1LPGKWN",
       "_tz3000_hojntt34",
+      "_tz3000_HOJNTT34",
       "_TZ3000_hojntt34",
       "_TZ3000_HOJNTT34",
       "_tz3000_hznzbl0x",
+      "_tz3000_HZNZBL0X",
       "_TZ3000_hznzbl0x",
       "_TZ3000_HZNZBL0X",
+      "_tz3000_icoxotza",
+      "_TZ3000_icoxotza",
       "_tz3000_itgngnqz",
+      "_tz3000_ITGNGNQZ",
       "_TZ3000_itgngnqz",
       "_TZ3000_ITGNGNQZ",
+      "_tz3000_iwtv2jwo",
+      "_TZ3000_iwtv2jwo",
       "_tz3000_jl7qyupf",
+      "_tz3000_JL7QYUPF",
       "_TZ3000_jl7qyupf",
       "_TZ3000_JL7QYUPF",
-      "_tz3000_kgxej1dv",
-      "_TZ3000_kgxej1dv",
-      "_TZ3000_KGXEJ1DV",
       "_tz3000_kpatq5pq",
+      "_tz3000_KPATQ5PQ",
       "_TZ3000_kpatq5pq",
       "_TZ3000_KPATQ5PQ",
       "_tz3000_l9brjwau",
+      "_tz3000_L9BRJWAU",
       "_TZ3000_l9brjwau",
       "_TZ3000_L9BRJWAU",
       "_tz3000_ljhbw1c9",
+      "_tz3000_LJHBW1C9",
       "_TZ3000_ljhbw1c9",
       "_TZ3000_LJHBW1C9",
       "_tz3000_lmlsduws",
+      "_tz3000_LMLSDUWS",
       "_TZ3000_lmlsduws",
       "_TZ3000_LMLSDUWS",
       "_tz3000_lugaswf8",
+      "_tz3000_LUGASWF8",
       "_TZ3000_lugaswf8",
       "_TZ3000_LUGASWF8",
+      "_tz3000_mtnpt6ws",
+      "_TZ3000_mtnpt6ws",
+      "_tz3000_npgipl5d",
+      "_TZ3000_npgipl5d",
       "_tz3000_npzfykbs",
+      "_tz3000_NPZFYKBS",
       "_TZ3000_npzfykbs",
       "_TZ3000_NPZFYKBS",
       "_tz3000_pgcclddi",
+      "_tz3000_PGCCLDDI",
       "_TZ3000_pgcclddi",
       "_TZ3000_PGCCLDDI",
       "_tz3000_rfjctviq",
+      "_tz3000_RFJCTVIQ",
       "_TZ3000_rfjctviq",
       "_TZ3000_RFJCTVIQ",
       "_tz3000_rmiew70n",
+      "_tz3000_RMIEW70N",
       "_TZ3000_rmiew70n",
       "_TZ3000_RMIEW70N",
+      "_tz3000_rul9yxcc",
+      "_tz3000_RUL9YXCC",
+      "_TZ3000_rul9yxcc",
+      "_TZ3000_RUL9YXCC",
       "_tz3000_ruldv5dt",
+      "_tz3000_RULDV5DT",
       "_TZ3000_ruldv5dt",
       "_TZ3000_RULDV5DT",
+      "_tz3000_ruxexjfz",
+      "_TZ3000_ruxexjfz",
+      "_TZ3000_RUXEXJFZ",
       "_tz3000_s8r1qoyq",
+      "_tz3000_S8R1QOYQ",
       "_TZ3000_s8r1qoyq",
       "_TZ3000_S8R1QOYQ",
       "_tz3000_tas0zemd",
+      "_tz3000_TAS0ZEMD",
       "_TZ3000_tas0zemd",
       "_TZ3000_TAS0ZEMD",
+      "_tz3000_tonrapsk",
+      "_TZ3000_tonrapsk",
+      "_TZ3000_TONRAPSK",
       "_tz3000_tribakzk",
+      "_tz3000_TRIBAKZK",
       "_TZ3000_tribakzk",
       "_TZ3000_TRIBAKZK",
       "_tz3000_ugaem1nb",
+      "_tz3000_UGAEM1NB",
       "_TZ3000_ugaem1nb",
       "_TZ3000_UGAEM1NB",
       "_tz3000_vjhcxjqb",
+      "_tz3000_VJHCXJQB",
       "_TZ3000_vjhcxjqb",
       "_TZ3000_VJHCXJQB",
       "_tz3000_w5xztuy7",
+      "_tz3000_W5XZTUY7",
       "_TZ3000_w5xztuy7",
+      "_TZ3000_W5XZTUY7",
       "_tz3000_wnzoyohq",
+      "_tz3000_WNZOYOHQ",
       "_TZ3000_wnzoyohq",
       "_TZ3000_WNZOYOHQ",
       "_tz3000_yw8z2axp",
+      "_tz3000_YW8Z2AXP",
       "_TZ3000_yw8z2axp",
       "_TZ3000_YW8Z2AXP",
       "_tz3000_yxmafzmd",
+      "_tz3000_YXMAFZMD",
       "_TZ3000_yxmafzmd",
       "_TZ3000_YXMAFZMD",
       "_tz3000_zbfya6h0",
+      "_tz3000_ZBFYA6H0",
       "_TZ3000_zbfya6h0",
       "_TZ3000_ZBFYA6H0",
       "_tz3000_zmlunnhy",
+      "_tz3000_ZMLUNNHY",
       "_TZ3000_zmlunnhy",
       "_TZ3000_ZMLUNNHY",
       "_tz3000_zmy4lslw",
+      "_tz3000_ZMY4LSLW",
       "_TZ3000_zmy4lslw",
       "_TZ3000_ZMY4LSLW",
       "_tz3000_zxrfobzw",
+      "_tz3000_ZXRFOBZW",
       "_TZ3000_zxrfobzw",
       "_TZ3000_ZXRFOBZW",
       "_tz3002_ovsw7u2p",
+      "_tz3002_OVSW7U2P",
       "_TZ3002_ovsw7u2p",
       "_TZ3002_OVSW7U2P",
       "_tz3002_ymcctknk",
+      "_tz3002_YMCCTKNK",
       "_TZ3002_ymcctknk",
       "_TZ3002_YMCCTKNK",
+      "_tz3210_5ksufhqi",
+      "_tz3210_5KSUFHQI",
+      "_TZ3210_5ksufhqi",
+      "_TZ3210_5KSUFHQI",
       "_tz3210_pdnwpnz5",
+      "_tz3210_PDNWPNZ5",
       "_TZ3210_pdnwpnz5",
       "_TZ3210_PDNWPNZ5",
       "_tz3218_sgbsg6mr",
@@ -184,28 +258,43 @@
       "_TZ3218_sgbsg6mr",
       "_TZ3218_SGBSG6MR",
       "_tze200_e3kr8tbp",
+      "_tze200_E3KR8TBP",
       "_TZE200_e3kr8tbp",
       "_TZE200_E3KR8TBP",
       "_tze200_g1ib5ldv",
+      "_tze200_G1IB5LDV",
       "_TZE200_g1ib5ldv",
       "_TZE200_G1IB5LDV",
+      "_tze200_nkjintbl",
+      "_tze200_NKJINTBL",
+      "_TZE200_nkjintbl",
+      "_TZE200_NKJINTBL",
       "_tze200_o7vduidq",
+      "_tze200_O7VDUIDQ",
       "_TZE200_o7vduidq",
       "_TZE200_O7VDUIDQ",
       "_tze200_wunufsil",
+      "_tze200_WUNUFSIL",
       "_TZE200_wunufsil",
       "_TZE200_WUNUFSIL",
+      "_tze204_dqy15zxy",
+      "_TZE204_dqy15zxy",
+      "_tze204_f5whkz9n",
+      "_tze204_F5WHKZ9N",
+      "_TZE204_f5whkz9n",
+      "_TZE204_F5WHKZ9N",
       "_tze204_g1ib5ldv",
+      "_tze204_G1IB5LDV",
       "_TZE204_g1ib5ldv",
       "_TZE204_G1IB5LDV",
       "_tze204_wunufsil",
+      "_tze204_WUNUFSIL",
       "_TZE204_wunufsil",
       "_TZE204_WUNUFSIL",
-      "_TZ3000_mtnpt6ws",
-      "_tz3000_mtnpt6ws",
-      "_TZ3000_ruxexjfz",
-      "_TZ3000_RUXEXJFZ",
-      "_tz3000_ruxexjfz"
+      "_tze284_rip8l748",
+      "_TZE284_rip8l748",
+      "hobeian",
+      "HOBEIAN"
     ],
     "endpoints": {
       "1": {
@@ -223,8 +312,7 @@
   },
   "images": {
     "small": "/drivers/switch_2gang/assets/images/small.png",
-    "large": "/drivers/switch_2gang/assets/images/large.png",
-    "xlarge": "/drivers/switch_2gang/assets/images/xlarge.png"
+    "large": "/drivers/switch_2gang/assets/images/large.png"
   },
   "settings": [
     {
@@ -711,6 +799,87 @@
           }
         }
       ]
+    },
+    {
+      "type": "group",
+      "label": {
+        "en": "LED Indicator (Backlight)",
+        "fr": "Indicateur LED"
+      },
+      "children": [
+        {
+          "id": "backlight_mode",
+          "type": "dropdown",
+          "label": {
+            "en": "Backlight mode",
+            "fr": "Mode rétroéclairage"
+          },
+          "value": "normal",
+          "values": [
+            {
+              "id": "off",
+              "label": {
+                "en": "Off",
+                "fr": "Éteint"
+              }
+            },
+            {
+              "id": "normal",
+              "label": {
+                "en": "Normal",
+                "fr": "Normal"
+              }
+            },
+            {
+              "id": "inverted",
+              "label": {
+                "en": "Inverted",
+                "fr": "Inversé"
+              }
+            }
+          ],
+          "hint": {
+            "en": "Strings only: off / normal / inverted.",
+            "fr": "Chaînes uniquement : off / normal / inverted."
+          }
+        }
+      ]
+    },
+    {
+      "id": "power_scale",
+      "type": "dropdown",
+      "label": {
+        "en": "Power Measurement Scale",
+        "fr": "Échelle de puissance"
+      },
+      "value": "1",
+      "values": [
+        {
+          "id": "0.1",
+          "label": {
+            "en": "÷10",
+            "fr": "÷10"
+          }
+        },
+        {
+          "id": "1",
+          "label": {
+            "en": "×1 (Default)",
+            "fr": "×1 (défaut)"
+          }
+        },
+        {
+          "id": "10",
+          "label": {
+            "en": "×10",
+            "fr": "×10"
+          }
+        }
+      ],
+      "hint": {
+        "en": "Use if W/kWh readings are 10× too high or low.",
+        "fr": "Si W/kWh sont ×10 trop hauts ou bas."
+      }
     }
   ],
   "name": {
@@ -762,14 +931,6 @@
       "getable": false,
       "setable": false
     },
-    "measure_battery": {
-      "title": {
-        "en": "Battery",
-        "fr": "Batterie",
-        "nl": "Batterij",
-        "de": "Batterie"
-      }
-    },
     "button.toggle_1": {
       "setable": false,
       "maintenanceAction": true,
@@ -801,9 +962,7 @@
     }
   },
   "energy": {
-    "batteries": [
-      "OTHER"
-    ]
+    "mains": true
   },
   "pair": [
     {
@@ -837,27 +996,23 @@
       "id": "tuya_revive",
       "title": {
         "en": "Tuya Revive (device recovery)",
-        "fr": "Tuya Revive (récupération appareil)"
+        "fr": "Tuya Revive (récupération appareil)",
+        "nl": "Tuya Revive (apparaatherstel)",
+        "de": "Tuya Revive (Gerätewiederherstellung)"
       }
     },
     {
       "id": "generate_issue_report",
       "title": {
         "en": "Generate support report (GitHub issue)",
-        "fr": "Générer rapport de support (issue GitHub)"
+        "fr": "Générer rapport de support (issue GitHub)",
+        "nl": "Supportrapport genereren (GitHub issue)",
+        "de": "Supportbericht erstellen (GitHub Issue)"
       }
     }
   ],
   "id": "switch_2gang",
   "version": "1.0.0",
-  "_pidConflictNotes": [
-    "// PID-CONFLICT-NOTE TS011F shared with 43 other drivers (cross-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md",
-    "// PID-CONFLICT-NOTE TS0002 shared with 27 other drivers (cross-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md",
-    "// PID-CONFLICT-NOTE TS0726 shared with 21 other drivers (cross-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md",
-    "// PID-CONFLICT-NOTE TS0003 shared with 20 other drivers (cross-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md",
-    "// PID-CONFLICT-NOTE TS0013 shared with 15 other drivers (cross-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md",
-    "// PID-CONFLICT-NOTE TS0012 shared with 12 other drivers (cross-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md"
-  ],
   "ui": {
     "quickAction": "onoff"
   }

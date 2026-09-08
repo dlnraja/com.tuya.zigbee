@@ -51,14 +51,10 @@
     }
   },
   "images": {
-    "large": "/{{driverAssetsPath}}/images/large.png",
-    "small": "/{{driverAssetsPath}}/images/small.png"
+    "small": "/drivers/dimmer_2_gang/assets/images/small.png",
+    "large": "/drivers/dimmer_2_gang/assets/images/large.png"
   },
   "energy": {
-    "approximation": {
-      "usageOn": 0,
-      "usageOff": 0
-    },
     "batteries": [
       "CR2032"
     ]
@@ -98,9 +94,7 @@
       "ZBMINIL2-R2",
       "ZBMINIR",
       "ZBMINIR2",
-      "ZBMINIR2-R2",
-      "ZG-301Z",
-      "ZG-302Z1"
+      "ZBMINIR2-R2"
     ],
     "endpoints": {
       "1": {
@@ -159,17 +153,35 @@
       "_tze200_92t1xwwa",
       "_TZE200_FCO1MKYS",
       "_tze200_fco1mkys",
-      "_tze200_bxoo2swd",
-      "_TZE200_BXOO2SWD",
-      "_TZE200_bxoo2swd",
-      "_tze200_BXOO2SWD"
+      "_tze200_92T1XWWA",
+      "_tze200_FCO1MKYS",
+      "_TZ3000_92chsky7",
+      "_TZ3210_wdexaypg",
+      "_TZ3210_3mpwqzuu",
+      "_TZ3210_pagajpog",
+      "_TZ3210_4ubylghk",
+      "_TZ3000_7ysdnebc",
+      "_tz3000_92chsky7",
+      "_tz3210_wdexaypg",
+      "_tz3210_3mpwqzuu",
+      "_tz3210_pagajpog",
+      "_tz3210_4ubylghk",
+      "_tz3000_7ysdnebc",
+      "_TZ3000_92CHSKY7",
+      "_tz3000_92CHSKY7",
+      "_TZ3210_WDEXAYPG",
+      "_tz3210_WDEXAYPG",
+      "_TZ3210_3MPWQZUU",
+      "_tz3210_3MPWQZUU",
+      "_TZ3210_PAGAJPOG",
+      "_tz3210_PAGAJPOG",
+      "_TZ3210_4UBYLGHK",
+      "_tz3210_4UBYLGHK",
+      "_TZ3000_7YSDNEBC",
+      "_tz3000_7YSDNEBC"
     ]
   },
   "version": "1.0.0",
-  "_pidConflictNotes": [
-    "// PID-CONFLICT-NOTE TS110E shared with 18 other drivers (cross-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md",
-    "// PID-CONFLICT-NOTE TS110F shared with 9 other drivers (cross-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md"
-  ],
   "ui": {
     "quickAction": "onoff"
   }
