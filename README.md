@@ -4,11 +4,11 @@
 
 [![Version](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fraw.githubusercontent.com%2Fdlnraja%2Fcom.tuya.zigbee%2Fmaster%2Fapp.json&query=%24.version&label=version&color=blue)](https://homey.app/a/com.dlnraja.tuya.zigbee/)
 [![Drivers](https://img.shields.io/badge/drivers-431-brightgreen)](https://homey.app/a/com.dlnraja.tuya.zigbee/)
-[![Fingerprints](https://img.shields.io/badge/fingerprints-4,397%20unique-green)](https://homey.app/a/com.dlnraja.tuya.zigbee/)
+[![Fingerprints](https://img.shields.io/badge/fingerprints-4,399%20unique-green)](https://homey.app/a/com.dlnraja.tuya.zigbee/)
 [![SDK](https://img.shields.io/badge/SDK-3-orange)](https://apps.developer.homey.app/)
 [![License](https://img.shields.io/badge/license-GPL--3.0-green)](LICENSE)
 
-Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, sensors, lights, thermostats, covers, valves — **431 drivers**, **4,397 unique fingerprints**. No cloud required.
+Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, sensors, lights, thermostats, covers, valves — **431 drivers**, **4,399 unique fingerprints**. No cloud required.
 
 **What it does:**
 - Talks to devices on your Homey Zigbee mesh (Tuya DP `0xEF00` and standard ZCL)
@@ -33,15 +33,15 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 
 | Metric | Value |
 |--------|-------|
-| **App Version** | v9.0.838 |
+| **App Version** | v9.0.840 |
 | **Drivers** | 431 (381 Zigbee + 50 WiFi) |
-| **Unique Fingerprints** | 4,397 |
-| **Pairing Variants** | 17,065 (4 case combos per fingerprint) |
-| **Unique Product IDs** | 587 |
+| **Unique Fingerprints** | 4,399 |
+| **Pairing Variants** | 17,071 (4 case combos per fingerprint) |
+| **Unique Product IDs** | 590 |
 | **Flow Cards** | 5,952 |
 | **Unique Capabilities** | 170 |
 | **Native OTA Drivers** | 10 |
-| **Test Suites** | 253 files |
+| **Test Suites** | 254 files |
 | **SVG Icons** | 731 |
 | **Languages** | EN, FR, NL, DE |
 | **SDK / Homey** | 3 / >= 12.2.0 |
@@ -52,23 +52,23 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 | # | Driver | Fingerprints |
 |---|--------|-------------|
 | 1 | `climate_sensor` | 2,118 |
-| 2 | `switch_1gang` | 1,541 |
-| 3 | `presence_sensor_radar` | 803 |
-| 4 | `curtain_motor` | 780 |
+| 2 | `switch_1gang` | 1,543 |
+| 3 | `presence_sensor_radar` | 805 |
+| 4 | `curtain_motor` | 782 |
 | 5 | `radiator_valve` | 599 |
 | 6 | `button_wireless_2` | 570 |
 | 7 | `wall_dimmer_tuya` | 488 |
 | 8 | `generic_tuya` | 414 |
 | 9 | `device_radiator_valve` | 336 |
 | 10 | `switch_4gang` | 292 |
-| 11 | `switch_2gang` | 258 |
-| 12 | `contact_sensor` | 232 |
+| 11 | `switch_2gang` | 259 |
+| 12 | `contact_sensor` | 228 |
 | 13 | `motion_sensor` | 225 |
-| 14 | `switch_3gang` | 216 |
+| 14 | `switch_3gang` | 217 |
 | 15 | `soil_sensor` | 209 |
 | 16 | `diy_custom_zigbee` | 206 |
 | 17 | `thermostat_tuya_dp` | 192 |
-| 18 | `sensor_contact_zigbee` | 182 |
+| 18 | `sensor_contact_zigbee` | 183 |
 | 19 | `water_leak_sensor_tuya` | 178 |
 | 20 | `plug_energy_monitor` | 170 |
 
@@ -102,7 +102,8 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 
 | Version | Changes |
 |---------|---------|
-| **v9.0.838** | Improved battery roller blind motors (_TZE284_fodv6bkr) open/close/position; expanded HOBEIAN pairing for siren, switches and presence mo… |
+| **v9.0.840** | HOBEIAN devices now match when Homey reports the brand as product ID or product name, not only manufacturer. |
+| **v9.0.839** | HOBEIAN devices now match when Homey reports the brand as product ID or product name, not only manufacturer. |
 | **v9.0.837** | Improved battery roller blind motors (_TZE284_fodv6bkr) open/close/position; expanded HOBEIAN pairing for siren, switches and presence mo… |
 | **v9.0.835** | Forum media deep sweep & misattribution cleansing: cleansed wall_switch_5_gang_tuya stubs, added 25 verified forum Zigbee devices (Melect… |
 | **v9.0.834** | Fixed BSEED 1-gang switch routing (Issue #540), pruned manifest flow duplicates, resolved ZG-303Z registry lock, and enforced zero guidel… |
@@ -113,7 +114,6 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 | **v9.0.829** | Improved manufacturer fingerprint database for HOBEIAN devices (presence, vibration, soil) and fixed wrong curtain/switch matches. |
 | **v9.0.828** | Improved manufacturer fingerprint database for HOBEIAN devices (presence, vibration, soil) and fixed wrong curtain/switch matches. |
 | **v9.0.827** | Improved manufacturer fingerprint database for HOBEIAN devices (presence, vibration, soil) and fixed wrong curtain/switch matches. |
-| **v9.0.826** | Improved manufacturer fingerprint database for HOBEIAN devices (presence, vibration, soil) and fixed wrong curtain/switch matches. |
 
 <!-- CHANGELOG_END -->
 
