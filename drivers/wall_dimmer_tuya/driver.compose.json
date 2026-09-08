@@ -526,7 +526,11 @@
       "_tze200_dfxkcots",
       "_TZE200_p0gzbqct",
       "_TZE200_P0GZBQCT",
-      "_tze200_p0gzbqct"
+      "_tze200_p0gzbqct",
+      "_TZE200_ITP8DT7F",
+      "_tze200_ITP8DT7F",
+      "_tze200_DFXKCOTS",
+      "_tze200_P0GZBQCT"
     ],
     "productId": [
       "TS0601",
@@ -569,7 +573,7 @@
       {
         "changelog": {
           "en": "OEM Zigbee firmware v70 (Koenkk zigbee-OTA, SHA512-verified). Install via Homey Device Updates (Settings → Device Updates) on Homey ≥13.2 / Mobile ≥9.10.",
-          "fr": "Firmware Zigbee OEM v70 (Koenkk zigbee-OTA, SHA512 vérifié). Installez via Homey Device Updates — Homey ≥13.2 / Mobile ≥9.10."
+          "fr": "Firmware Zigbee OEM v70 (Koenkk zigbee-OTA, SHA512 vérifié). Installez via Homey Device Updates (Réglages → Device Updates) — Homey ≥13.2 / Mobile ≥9.10."
         },
         "device": {
           "manufacturerName": [
@@ -579,7 +583,6 @@
             "TS0011",
             "TS0052",
             "TS0601",
-            "TS0601_dim1",
             "TS1101",
             "TS110E",
             "TS110F",

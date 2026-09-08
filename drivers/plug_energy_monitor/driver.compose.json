@@ -164,7 +164,29 @@
       "_tze284_q9qytwfa",
       "_tz3000_anptztic",
       "_TZ3210_ddigca5n",
-      "_tz3210_ddigca5n"
+      "_tz3210_ddigca5n",
+      "_TZ3000_OKAZ9TJS",
+      "_tz3000_OKAZ9TJS",
+      "_TZ3210_FGWHJM9J",
+      "_tz3210_FGWHJM9J",
+      "_TZ3210_W0QQDE0G",
+      "_tz3210_W0QQDE0G",
+      "_TZ3000_W0QQDE0G",
+      "_tz3000_W0QQDE0G",
+      "_TZ3000_AMDYMR7L",
+      "_tz3000_AMDYMR7L",
+      "_TZ3210_AMDYMR7L",
+      "_tz3210_AMDYMR7L",
+      "_TZ3000_LXW3ZCDK",
+      "_tz3000_LXW3ZCDK",
+      "_TZE204_APIU8K13",
+      "_tze204_APIU8K13",
+      "_TZE284_Q9QYTWFA",
+      "_tze284_Q9QYTWFA",
+      "_TZ3000_ANPTZTIC",
+      "_tz3000_ANPTZTIC",
+      "_TZ3210_DDIGCA5N",
+      "_tz3210_DDIGCA5N"
     ],
     "productId": [
       "TS0601",
@@ -694,5 +716,35 @@
   "version": "1.0.0",
   "ui": {
     "quickAction": "onoff"
+  },
+  "firmwareUpdates": {
+    "updates": [
+      {
+        "changelog": {
+          "en": "OEM Zigbee firmware v82 (Koenkk zigbee-OTA, SHA512-verified). Install via Homey Device Updates (Settings → Device Updates) on Homey ≥13.2 / Mobile ≥9.10.",
+          "fr": "Firmware Zigbee OEM v82 (Koenkk zigbee-OTA, SHA512 vérifié). Installez via Homey Device Updates (Réglages → Device Updates) — Homey ≥13.2 / Mobile ≥9.10."
+        },
+        "device": {
+          "manufacturerName": [
+            "_TZ3000_w0qqde0g"
+          ],
+          "productId": [
+            "TS011F"
+          ]
+        },
+        "files": [
+          {
+            "fileVersion": 82,
+            "imageType": 54179,
+            "manufacturerCode": 4417,
+            "minHardwareVersion": 27502,
+            "maxHardwareVersion": 20256,
+            "size": 311026,
+            "name": "1730081189-oem_zg_tl8258_plug_OTA_1.1.2.bin",
+            "integrity": "sha256:4c16a0403e1633fa7098f91fcd378ebe4a7a76724f42b4e877a8ad8090213b0e"
+          }
+        ]
+      }
+    ]
   }
 }

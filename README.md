@@ -4,18 +4,18 @@
 
 [![Version](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fraw.githubusercontent.com%2Fdlnraja%2Fcom.tuya.zigbee%2Fmaster%2Fapp.json&query=%24.version&label=version&color=blue)](https://homey.app/a/com.dlnraja.tuya.zigbee/)
 [![Drivers](https://img.shields.io/badge/drivers-431-brightgreen)](https://homey.app/a/com.dlnraja.tuya.zigbee/)
-[![Fingerprints](https://img.shields.io/badge/fingerprints-4,396%20unique-green)](https://homey.app/a/com.dlnraja.tuya.zigbee/)
+[![Fingerprints](https://img.shields.io/badge/fingerprints-4,398%20unique-green)](https://homey.app/a/com.dlnraja.tuya.zigbee/)
 [![SDK](https://img.shields.io/badge/SDK-3-orange)](https://apps.developer.homey.app/)
 [![License](https://img.shields.io/badge/license-GPL--3.0-green)](LICENSE)
 
-Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, sensors, lights, thermostats, covers, valves — **431 drivers**, **4,396 unique fingerprints**. No cloud required.
+Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, sensors, lights, thermostats, covers, valves — **431 drivers**, **4,398 unique fingerprints**. No cloud required.
 
 **What it does:**
 - Talks to devices on your Homey Zigbee mesh (Tuya DP `0xEF00` and standard ZCL)
 - Case-insensitive fingerprint matching so pairing is reliable across OEM variants
 - Battery curves by chemistry (no linear `%` guesses)
 - Flow cards for physical buttons, sensors, and actuators (EN, FR, NL, DE)
-- Optional native Zigbee OTA for 9 drivers (Homey v13.2.0+)
+- Optional native Zigbee OTA for 10 drivers (Homey v13.2.0+)
 
 ---
 
@@ -33,44 +33,44 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 
 | Metric | Value |
 |--------|-------|
-| **App Version** | v9.0.836 |
+| **App Version** | v9.0.835 |
 | **Drivers** | 431 (381 Zigbee + 50 WiFi) |
-| **Unique Fingerprints** | 4,396 |
-| **Pairing Variants** | 16,159 (4 case combos per fingerprint) |
+| **Unique Fingerprints** | 4,398 |
+| **Pairing Variants** | 17,122 (4 case combos per fingerprint) |
 | **Unique Product IDs** | 584 |
 | **Flow Cards** | 5,952 |
 | **Unique Capabilities** | 170 |
-| **Native OTA Drivers** | 9 |
+| **Native OTA Drivers** | 10 |
 | **Test Suites** | 252 files |
 | **SVG Icons** | 731 |
 | **Languages** | EN, FR, NL, DE |
 | **SDK / Homey** | 3 / >= 12.2.0 |
-| **Last Updated** | 2026-09-05 |
+| **Last Updated** | 2026-09-08 |
 
 ### Top 20 Drivers by Fingerprint Count
 
 | # | Driver | Fingerprints |
 |---|--------|-------------|
-| 1 | `climate_sensor` | 2,090 |
-| 2 | `switch_1gang` | 1,539 |
-| 3 | `presence_sensor_radar` | 803 |
-| 4 | `radiator_valve` | 599 |
-| 5 | `button_wireless_2` | 561 |
-| 6 | `curtain_motor` | 550 |
-| 7 | `wall_dimmer_tuya` | 484 |
+| 1 | `climate_sensor` | 2,118 |
+| 2 | `switch_1gang` | 1,548 |
+| 3 | `presence_sensor_radar` | 821 |
+| 4 | `curtain_motor` | 780 |
+| 5 | `radiator_valve` | 599 |
+| 6 | `button_wireless_2` | 570 |
+| 7 | `wall_dimmer_tuya` | 488 |
 | 8 | `generic_tuya` | 414 |
-| 9 | `device_radiator_valve` | 334 |
-| 10 | `switch_4gang` | 285 |
-| 11 | `switch_2gang` | 258 |
-| 12 | `switch_3gang` | 214 |
-| 13 | `motion_sensor` | 213 |
-| 14 | `diy_custom_zigbee` | 206 |
-| 15 | `soil_sensor` | 192 |
-| 16 | `thermostat_tuya_dp` | 192 |
-| 17 | `sensor_contact_zigbee` | 182 |
-| 18 | `water_leak_sensor_tuya` | 178 |
-| 19 | `usb_dongle_triple` | 164 |
-| 20 | `contact_sensor` | 163 |
+| 9 | `device_radiator_valve` | 336 |
+| 10 | `switch_4gang` | 292 |
+| 11 | `switch_2gang` | 278 |
+| 12 | `contact_sensor` | 232 |
+| 13 | `motion_sensor` | 225 |
+| 14 | `switch_3gang` | 220 |
+| 15 | `soil_sensor` | 209 |
+| 16 | `diy_custom_zigbee` | 206 |
+| 17 | `thermostat_tuya_dp` | 192 |
+| 18 | `sensor_contact_zigbee` | 182 |
+| 19 | `water_leak_sensor_tuya` | 178 |
+| 20 | `plug_energy_monitor` | 170 |
 
 ### Drivers by Device Class
 

@@ -1,8 +1,8 @@
 # Rules Enforcement Matrix
 
-Generated: 2026-08-16T17:02:16.694Z
+Generated: 2026-09-08T07:29:56.036Z
 
-Machine-checkable rules tracked: **49** — enforced **39**, unenforced **10**, broken references **0** (coverage **80%**).
+Machine-checkable rules tracked: **50** — enforced **40**, unenforced **10**, broken references **0** (coverage **80%**).
 
 A rule is "broken" when the gate it names has been renamed, deleted, or no longer contains the check.
 
@@ -54,6 +54,7 @@ A rule is "broken" when the gate it names has been renamed, deleted, or no longe
 | M1 | forum | REPLY_TOPICS is 140352 and nothing else | enforced | `tools/ci/forum-ai-paste-gate.js` |
 | M2 | forum | Never paste unchecked AI output into the Homey community | enforced | `tools/ci/forum-ai-paste-gate.js` |
 | M3 | forum | External sources are never credited in commits, changelogs or forum text | unenforced | wording policy — needs human review |
+| M4 | forum | Private messages are harvested on a schedule; never POST replies | enforced | `test/critical/p218-forum-ci-harvest.test.js` |
 | D1 | branches | Never push directly to stable-v5; backport surgically after a clean master soak | unenforced | branch protection concern, not a repo script |
 | D2 | branches | Never full-tree sync between master and stable-v5 | unenforced | human classification BOTH / MASTER_ONLY / STABLE_ONLY |
 | D3 | branches | App identity files are never copied across tracks | unenforced | no cross-branch diff gate exists |
