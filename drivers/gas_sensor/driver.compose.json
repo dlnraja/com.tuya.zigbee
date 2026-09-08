@@ -22,11 +22,11 @@
   "subDevices": [],
   "zigbee": {
     "productId": [
-      "TS0601_gas",
-      "TS0601",
       "TS0225",
-      "ZG-225Z",
-      "TS0301"
+      "TS0301",
+      "TS0601",
+      "TS0601_gas",
+      "ZG-225Z"
     ],
     "learnmode": {
       "image": "{{driverAssetsPath}}/icon.svg",
@@ -44,22 +44,21 @@
       }
     },
     "manufacturerName": [
-      "_TZE204_chbyv06x",
-      "_TZE204_CHBYV06X",
+      "_tze200_chbyv06x",
+      "_tze200_CHBYV06X",
+      "_TZE200_chbyv06x",
+      "_TZE200_CHBYV06X",
+      "_tze200_vrcfo4i0",
+      "_TZE200_vrcfo4i0",
       "_tze204_chbyv06x",
       "_tze204_CHBYV06X",
-      "_TZE284_chbyv06x",
+      "_TZE204_chbyv06x",
+      "_TZE204_CHBYV06X",
       "_tze284_chbyv06x",
-      "_TZE200_chbyv06x",
-      "_tze200_chbyv06x",
-      "_TZE284_CHBYV06X",
       "_tze284_CHBYV06X",
-      "_TZE200_CHBYV06X",
-      "_tze200_CHBYV06X",
-      "_TZE200_vrcfo4i0",
-      "_tze200_vrcfo4i0",
-      "_TZE200_VRCFO4I0",
-      "_tze200_VRCFO4I0"
+      "_TZE284_chbyv06x",
+      "_TZE284_CHBYV06X",
+      "HOBEIAN"
     ]
   },
   "settings": [
