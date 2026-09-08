@@ -15,10 +15,12 @@ Critical gaps: **0**
 
 ## DP knowledge
 - Knowledge couples: 121
-- Registry couples (Tuya EF00-eligible): 175
-- Covered: 120 (68.6%)
+- Registry couples (Tuya EF00-eligible): 177
+- Covered: 120 (67.8%)
 - Skipped brand/external soft-watch: 15
 - Uncovered:
+  - _TZ3000_ptjcjise|TS0002
+  - _TZ3000_xk5udnd6|TS0012
   - _TZE284_fodv6bkr|TS0601
   - _TZE284_fhvpaltk|TS0601
   - _TZ3000_pjb1ua0m|TS0203
