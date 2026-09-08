@@ -828,10 +828,6 @@
       "_tz3000_PRITS6G4",
       "_TZ3000_prits6g4",
       "_TZ3000_PRITS6G4",
-      "_tz3000_ptjcjise",
-      "_tz3000_PTJCJISE",
-      "_TZ3000_ptjcjise",
-      "_TZ3000_PTJCJISE",
       "_tz3000_pxfjrzyj",
       "_tz3000_PXFJRZYJ",
       "_TZ3000_pxfjrzyj",
@@ -1602,13 +1598,17 @@
       "Hobeian",
       "HOBEIAN",
       "tze204_7sjncirf",
-      "TZE204_7SJNCIRF",
-      "hobeian"
+      "TZE204_7SJNCIRF"
     ],
     "endpoints": {
       "1": {
         "clusters": [
           0,
+          4,
+          5,
+          6
+        ],
+        "bindings": [
           6
         ]
       }

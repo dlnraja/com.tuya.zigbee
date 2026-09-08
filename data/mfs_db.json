@@ -47354,11 +47354,12 @@
         "TS0601",
         "TS0004",
         "TS0002",
-        "TS0003"
+        "TS0003",
+        "TS0012"
       ],
       "variants": [],
-      "deviceType": "unknown",
-      "driverHint": "wall_switch_3gang_1way",
+      "deviceType": "switch",
+      "driverHint": "wall_switch_2gang_1way",
       "capabilities": [
         "onoff",
         "onoff.gang2",
@@ -47379,7 +47380,7 @@
         "alarm_battery",
         "power_on_behavior"
       ],
-      "powerSource": "battery",
+      "powerSource": "mains",
       "sources": [
         "local"
       ],
@@ -118080,10 +118081,12 @@
     },
     "_TZ3000_ptjcjise": {
       "manufacturerId": "_TZ3000_ptjcjise",
-      "modelIds": [],
+      "modelIds": [
+        "TS0002"
+      ],
       "variants": [],
       "deviceType": "switch",
-      "driverHint": null,
+      "driverHint": "switch_2gang",
       "capabilities": [],
       "powerSource": "unknown",
       "sources": [
@@ -357680,39 +357683,18 @@
     "variantsCount": 2
   },
   "_tz3000_xk5udnd6": {
-    "driverId": "water_leak_sensor",
-    "source": "couple-exclusive",
-    "addedAt": "2026-06-26T14:42:09.179Z",
+    "driverId": "wall_switch_2gang_1way",
+    "source": "p2435-gh542",
+    "addedAt": "2026-09-08T09:40:06.375Z",
     "modelIds": [
-      "_TZ3000_EIT6L5",
-      "_TZ3000_KYB656NO",
-      "3315-S",
-      "3315-SEU",
-      "CK-TLSR8656-SS5-01(7019)",
-      "HS1WL",
-      "LS21001",
-      "LUMI.SENSOR_WLEAK.AQ1",
-      "Q9MPFHW",
-      "RH3001",
-      "SJCGQ11LM",
-      "SJCGQ12LM",
-      "SJCGQ13LM",
-      "SNZB-05",
-      "SNZB-05P",
-      "SQ510A",
-      "TS0201",
-      "TS0207",
-      "TS0601",
-      "ZG-222Z",
-      "ZG-222ZA"
+      "TS0012",
+      "TS0002"
     ],
-    "pid": "_TZ3000_EIT6L5",
-    "modelIdsCount": 21,
-    "variants": [
-      "_TZ3000_XK5UDND6",
-      "_TZ3000_xk5udnd6"
-    ],
-    "variantsCount": 2
+    "pid": "TS0012",
+    "modelIdsCount": 2,
+    "variants": [],
+    "variantsCount": 0,
+    "notes": "P2435 GH#542 — was wrongly water_leak_sensor"
   },
   "_tz3000_ky0fq4ho": {
     "driverId": "din_rail_switch",

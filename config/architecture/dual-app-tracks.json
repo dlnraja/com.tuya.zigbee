@@ -241,6 +241,10 @@
     "p2434_hobeian_pid_productname": {
       "tag": "BOTH",
       "note": "HOBEIAN also as productId case forms + mfs productNames/deviceNames; normalize brand-as-modelId"
+    },
+    "p2435_gh540_544_switch_pairing": {
+      "tag": "BOTH",
+      "note": "GH #540-#544: ZCL switch endpoints (drop EF00-required / ep2 Basic); ptjcjise→2gang; strip xk5udnd6 from water_leak; mfs top-level fix"
     }
   },
   "ci": {
