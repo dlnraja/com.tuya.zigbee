@@ -152,6 +152,48 @@ Generated 2026-09-08T07:29:59.472Z from registry (201 cases) × compound DB (454
 - Compound `_TZE284_clrdrnya|TS0601`: tuya_dp  TZE284 sibling of clrdrnya radar; same TS0601 couple only
 - Compound `_TZE200_clrdrnya|TS0601`: tuya_dp  TZE200 sibling; Z2M discussion#25712 lost-support reminder — keep compound lock
 - Compound `_tze200_clrdrnya|TS0601`: tuya_dp  VicHY #2224/#2227 MTG075 mmWave radar 220V
+- **P2340 (diag 4217d5e3 / VicHY):** publish compact dropped `_TZE204_clrdrnya` from app.json — sacred-keep + force-inject restores mfr; user on **9.0.719** must update Test ≥9.0.739 + re-pair `presence_sensor_radar`.
+- **Search UX:** Users typing “PIR mmWave” often pick `pir_mmwave_sensor` (`_TZ3000_3towulqd` only). MTG235/clrdrnya must use **Presence Sensor (Radar / mmWave)** tile.
+- **P2379 (VicHY):** DynCap invented `windowcoverings_set` from DP2/3/102 (sensitivity/range/departure_delay) → Homey UI showed **curtain + opening slider**; DP102→`alarm_motion` stuck presence true. Fix: disable DynCap invent on presence radars + heal phantom caps.
+- **P2386 (VicHY #2222):** Recurring after app updates — store DynCap restore re-applied blind UI. Fix: clear store when DynCap disabled; delayed re-heal 15s/60s/180s; restore `sensor` class if drifted to windowcoverings; heal on settings. Diag `4217d5e3`. User: update Test ≥ tip + restart app (re-pair only if still curtain).
+- **P2389 (VicHY flood alert ~196 msg/min):** Tuya mmWave firmware spam (Z2M#14742) — cannot stop airtime. Fix: `radar` RX budget 250/min; no Homey timeline alert for presence radars; MTG075/clrdrnya `floodCalm` coalesces DP9 distance (2.5s/0.15m) + DP104 lux (5s/2lx); presence DP1 stays immediate.
+- **P2391 (VicHY #2224 diag `0e28d470` @ 9.0.781):** Interview locks `_TZE204_clrdrnya`+TS0601. Timeline low-battery on mains MTG = compose `energy.batteries` + possible DEFAULT/HOBEIAN config cache before mfr resolves. Fix: upgrade radar config when mfr arrives; heal strips `measure_battery`/`alarm_battery`; `setEnergy({})` clears Homey Energy batteries; block `tuya_dp_value` DIY cap recursion.
+- **P2401 (VicHY #2226 ack / update race):** Homey flood + low-battery timeline after update can fire while `driver.id` still empty. `isRadarFloodContext` + `_isRadarFloodCalmDevice` match clrdrnya mfr / `measure_luminance.distance` / `floodCalm` so tip ≥9.0.802 stays quiet without waiting for driver id.
+- **P2420 (VicHY #2227 diag `c5165a37` @ 9.0.797):** After tip update, curtain UI again (delete+re-pair works); flood gone; **battery warning still**. Root: (1) `setEnergy({})` only ran when `getEnergy().batteries` non-empty — Homey kept Energy icon from compose; (2) DP2 `cap:null`+`setting` fell through generic DP2→humidity SmartDivisor. Fix: always clear Energy on mains; re-heal at 2s/5s; EF00 treats `setting`/`cap:null` as owned. User: update Test ≥ tip + **restart app** (re-pair only if still curtain).
+- **P2421 (HOBEIAN Z2M internet enrich):** Canonical herdsman DPs for ZG-204ZM (DP2 static sens, DP4 static dist/100 — drop invented large/small/micro map). New configs ZG-204ZH (`vuqzj1ej`/`hdih4foa`), ZG-302ZM/ZL sensing-switch (moved off vibration + climate cartesian). Strip ZG-204*/302* from `power_clamp_meter` / `motion_sensor`. Re-pair if previously matched climate/vibration/clamp.
+- **P2423 (mfs_db):** Lock TZE couples to verified drivers/pids; expand `HOBEIAN.byPid` (ZX/302/102ZM/103Z/226Z/228Z). `sync-compose-to-mfs-db` skips `multiCouple` prune. Forbid curtain←`zbfmvj13`, switch_1gang←ZG-103Z mfrs.
+- **P2433 (Eduard #2228 + HOBEIAN gaps):** `_TZE284_fodv6bkr`+`TS0601` battery tubular — DP3=position (not dim); strip phantom lux/button/tilt. Compose locks HOBEIAN|ZG-229Z→siren, ZG-204ZP→presence, ZG-301Z/302Z*→switches, ZG-101ZD→button; strip cartesian pid theft.
+- **P2392 (fleet firmware compensate):** Root cause of `tuya_dp_value` P2308 spam — `TuyaUniversalBridge` added DIY caps on **every** device. Fix: DIY caps only on universal/DIY drivers; `_updateCapability` gated on `hasCapability`; `FirmwareQuirkCompensator` strips DIY + mains battery fleet-wide via HomeyGapCompensator; `safeSetCapabilityValue` refuses ghost caps.
+
+### `hobeian-zg204zh` / `hobeian-zg302z*` (P2421)
+
+- Couples (Z2M only — never invent pid):
+  - `_TZE200_vuqzj1ej` / `_TZE200_hdih4foa` + `TS0601` / `ZG-204ZH` → `presence_sensor_radar` (temp+humid+lux+presence)
+  - `_TZE200_2aaelwxk` / `kb5noeto` / `tyffvoij` / `yflzeeqj` + `TS0601` / `ZG-204ZM` → `presence_sensor_radar`
+  - `_TZE200_kccdzaeo` (+ s7rsrtbg/tmszbtzq/bfmfhxra/ahpcyzth/kijxnb8q) + `TS0601` / `ZG-302ZM` → sensing switch (presence + onoff)
+  - `_TZE200_khzbklyh` (+ df04ghrb/toeldckg/cqtamhh5/xlnzk169/llvwkkde) + `TS0601` / `ZG-302ZL` → sensing switch (DP101 presence)
+- Forbid: `climate_sensor`, `vibration_sensor`, `power_clamp_meter`, `motion_sensor`
+- Clusters: EF00 (0xEF00) + optional ZCL illuminance on ZG-204ZM
+- **P2422 (full fleet):** ZE/ZK/ZQ/ZX radar configs; ZG-102ZM contact+vibration DPs; ZG-103Z tilt; ZG-226Z water alarm; ZG-228Z vibration alarm; strip ZG cartesian from illuminance/plug/curtain catch-alls.
+
+### `valve-dual-fhvpaltk` → `valve_dual_irrigation`
+
+- Couple: `_TZE284_fhvpaltk` + `TS0601` (sibling `_TZE284_eaet5qt5`)
+- Insoma 2-way irrigation — `onoff.valve_1` / `onoff.valve_2`
+- **Joep #2218:** “repair” on an **unknown** device does not re-run driver matching → remove + re-pair under **Smart 2-Way Irrigation Valve**
+- Not GIEX `_TZE284_8zizsafo` (that is `valve_irrigation` 4-zone)
+
+### `button-wireless-1-mrpevh8p` → `button_wireless_1` (P2378)
+
+- Couple: `_TZ3000_mrpevh8p` + `TS0041` (SH-SC07)
+- **P2378 (Peter diag `cfbf687f` @ 9.0.779):** 0xFD RX + `button_matrix` OK, but Homey Flows on `*_button_1gang_*` never fired — `triggerButtonPress` gated Ngang cards behind `gangCount > 1`
+- **P2381/P2387 (Peter #2203):** Flow fix ≥9.0.782 + button `wrapHandleFrame` SSOT ≥9.0.790; couple still **ABSENT** in posts — NEED_INTERVIEW (press during pair; zb_manufacturer_name + zb_model_id)
+- **P2381 (same diag, tip-lag):** even after P2378, driver.compose cards were stripped from `app.json` (P2376 dedupe) so `collectDeclaredFlowIds` / `_tryCard` refused them — only app-level `button_matrix` ran. Fix: merge `driver.manifest.flow` (+ getDrivers) into declared set; allow driver-scoped getDeviceTriggerCard.
+- Fix BOTH: always try `*_button_1gang_*` + `buildPhysicalFlowCandidates`; late identity overrides for profile
+
+### `presence-radar-cam-zg204zl` / Cam HOBEIAN
+
+- **P2340 (forum Cam / HOBEIAN ZG-204ZL):** compact dropped `HOBEIAN` mfr while pid `ZG-204ZL` remained — sacred-keep pins couple; motion flows need update + re-pair on `presence_sensor_radar`.
 - Compose: class=sensor eps=1 EF00=true IAS=false batteries=CR2032/CR2450/AAA/AA/CR123A/INTERNAL
 - Notes: MTG235-ZB-RL mmWave + relay — presence_sensor_radar only (GH#420, Z2M#18677 sbyx0lm6 family). Mains. Never climate or PIR motion.
 - Sources: forum-140352, github#420, P139, P204, z2m#18677

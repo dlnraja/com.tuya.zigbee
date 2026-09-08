@@ -93,4 +93,21 @@ describe('P2428 Eduard_Martirosyan #2228 DC tubular roller blind motor (_TZE284_
     const db = JSON.parse(fs.readFileSync(file, 'utf8'));
     assert.ok(db.mfr_index['_TZE284_fodv6bkr'] || db.mfr_index['_tze284_fodv6bkr']);
   });
+
+  it('curtain_motor device.js maps fodv6bkr/libht6ua DP3 to position not dim (P2433)', () => {
+    const src = fs.readFileSync(
+      path.join(ROOT, 'drivers', 'curtain_motor', 'device.js'),
+      'utf8',
+    );
+    assert.match(src, /_isBatteryTubularRoller/);
+    assert.match(src, /fodv6bkr/);
+    assert.match(src, /P2433/);
+    const start = src.indexOf('if (this._isBatteryTubularRoller())');
+    assert.ok(start > 0, 'tubular branch must exist');
+    const ret = src.indexOf('return {', start);
+    assert.ok(ret > start, 'tubular return map must exist');
+    const tubularBlock = src.slice(ret, ret + 550);
+    assert.match(tubularBlock, /3:\s*\{\s*capability:\s*'windowcoverings_set'/);
+    assert.ok(!/capability:\s*'dim'/.test(tubularBlock), 'tubular map must not use dim');
+  });
 });

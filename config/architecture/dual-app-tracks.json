@@ -233,6 +233,10 @@
     "p2425_fan_settings_loop_fix": {
       "tag": "BOTH",
       "note": "Fan controller #536: break setSettings -> onSettings -> datapoint write loop on DP2/11 sync; check getSetting before write"
+    },
+    "p2433_hobeian_fodv6bkr_tubular": {
+      "tag": "BOTH",
+      "note": "Eduard #2228 tubular DP3=position; HOBEIAN ZG-229Z/204ZP/301/302/101ZD compose locks; strip cartesian pids; p2382 alias"
     }
   },
   "ci": {
