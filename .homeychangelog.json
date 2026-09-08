@@ -3053,5 +3053,8 @@
   },
   "9.0.840": {
     "en": "HOBEIAN devices now match when Homey reports the brand as product ID or product name, not only manufacturer."
+  },
+  "9.0.842": {
+    "en": "Improved pairing for several Tuya ZCL wall switches (4-gang, 2-gang, 1-gang) that Homey previously left as unknown."
   }
 }
