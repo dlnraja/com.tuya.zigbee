@@ -237,6 +237,10 @@
     "p2433_hobeian_fodv6bkr_tubular": {
       "tag": "BOTH",
       "note": "Eduard #2228 tubular DP3=position; HOBEIAN ZG-229Z/204ZP/301/302/101ZD compose locks; strip cartesian pids; p2382 alias"
+    },
+    "p2434_hobeian_pid_productname": {
+      "tag": "BOTH",
+      "note": "HOBEIAN also as productId case forms + mfs productNames/deviceNames; normalize brand-as-modelId"
     }
   },
   "ci": {

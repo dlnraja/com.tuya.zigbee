@@ -20,10 +20,13 @@
   },
   "zigbee": {
     "productId": [
+      "hobeian",
+      "Hobeian",
+      "HOBEIAN",
       "TS0222",
-      "ZG-106Z",
       "TS0225",
-      "TS0601"
+      "TS0601",
+      "ZG-106Z"
     ],
     "endpoints": {
       "1": {
@@ -41,11 +44,11 @@
       }
     },
     "manufacturerName": [
-      "_HYBRID_ILLUMINANCE_SENSOR_NEEDS_DEVICE_ASSIGNMENT",
       "_hybrid_illuminance_sensor_needs_device_assignment",
-      "HOBEIAN",
+      "_HYBRID_ILLUMINANCE_SENSOR_NEEDS_DEVICE_ASSIGNMENT",
       "hobeian",
-      "Hobeian"
+      "Hobeian",
+      "HOBEIAN"
     ]
   },
   "icon": "/drivers/illuminance_sensor/assets/icon.svg",

@@ -1464,5 +1464,8 @@
   },
   "5.12.141": {
     "en": "Improved battery roller blind motors (fodv6bkr) open/close/position; expanded HOBEIAN pairing coverage."
+  },
+  "5.12.142": {
+    "en": "HOBEIAN devices now match when Homey reports the brand as product ID or product name, not only manufacturer."
   }
 }
