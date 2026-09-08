@@ -33,15 +33,15 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 
 | Metric | Value |
 |--------|-------|
-| **App Version** | v9.0.840 |
+| **App Version** | v9.0.842 |
 | **Drivers** | 431 (381 Zigbee + 50 WiFi) |
 | **Unique Fingerprints** | 4,399 |
-| **Pairing Variants** | 17,071 (4 case combos per fingerprint) |
+| **Pairing Variants** | 17,066 (4 case combos per fingerprint) |
 | **Unique Product IDs** | 590 |
 | **Flow Cards** | 5,952 |
 | **Unique Capabilities** | 170 |
 | **Native OTA Drivers** | 10 |
-| **Test Suites** | 254 files |
+| **Test Suites** | 255 files |
 | **SVG Icons** | 731 |
 | **Languages** | EN, FR, NL, DE |
 | **SDK / Homey** | 3 / >= 12.2.0 |
@@ -52,7 +52,7 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 | # | Driver | Fingerprints |
 |---|--------|-------------|
 | 1 | `climate_sensor` | 2,118 |
-| 2 | `switch_1gang` | 1,543 |
+| 2 | `switch_1gang` | 1,538 |
 | 3 | `presence_sensor_radar` | 805 |
 | 4 | `curtain_motor` | 782 |
 | 5 | `radiator_valve` | 599 |
@@ -61,7 +61,7 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 | 8 | `generic_tuya` | 414 |
 | 9 | `device_radiator_valve` | 336 |
 | 10 | `switch_4gang` | 292 |
-| 11 | `switch_2gang` | 259 |
+| 11 | `switch_2gang` | 263 |
 | 12 | `contact_sensor` | 228 |
 | 13 | `motion_sensor` | 225 |
 | 14 | `switch_3gang` | 217 |
@@ -102,6 +102,8 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 
 | Version | Changes |
 |---------|---------|
+| **v9.0.842** | Improved pairing for several Tuya ZCL wall switches (4-gang, 2-gang, 1-gang) that Homey previously left as unknown. |
+| **v9.0.841** | Improved pairing for several Tuya ZCL wall switches (4-gang, 2-gang, 1-gang) that Homey previously left as unknown. |
 | **v9.0.840** | HOBEIAN devices now match when Homey reports the brand as product ID or product name, not only manufacturer. |
 | **v9.0.839** | HOBEIAN devices now match when Homey reports the brand as product ID or product name, not only manufacturer. |
 | **v9.0.837** | Improved battery roller blind motors (_TZE284_fodv6bkr) open/close/position; expanded HOBEIAN pairing for siren, switches and presence mo… |
@@ -112,8 +114,6 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 | **v9.0.831** | Improved manufacturer fingerprint database for HOBEIAN devices (presence, vibration, soil) and fixed wrong curtain/switch matches. |
 | **v9.0.830** | Improved manufacturer fingerprint database for HOBEIAN devices (presence, vibration, soil) and fixed wrong curtain/switch matches. |
 | **v9.0.829** | Improved manufacturer fingerprint database for HOBEIAN devices (presence, vibration, soil) and fixed wrong curtain/switch matches. |
-| **v9.0.828** | Improved manufacturer fingerprint database for HOBEIAN devices (presence, vibration, soil) and fixed wrong curtain/switch matches. |
-| **v9.0.827** | Improved manufacturer fingerprint database for HOBEIAN devices (presence, vibration, soil) and fixed wrong curtain/switch matches. |
 
 <!-- CHANGELOG_END -->
 
