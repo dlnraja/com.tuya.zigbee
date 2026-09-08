@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-09-05T21:31:09.318Z",
+  "timestamp": "2026-09-08T07:27:33.288Z",
   "gate": "audit-sacred-couple-by-class",
   "apply": false,
   "scanned": 431,
@@ -8027,70 +8027,6 @@
         "socket"
       ],
       "absurd": false
-    },
-    {
-      "couple": "_tze200_aqnazj70|ts0004",
-      "mfr": "_tze200_aqnazj70",
-      "pid": "ts0004",
-      "drivers": [
-        "switch_4gang",
-        "wall_switch_4_gang"
-      ],
-      "classes": [
-        "socket"
-      ],
-      "families": [
-        "socket"
-      ],
-      "absurd": false
-    },
-    {
-      "couple": "_tze200_aqnazj70|ts0014",
-      "mfr": "_tze200_aqnazj70",
-      "pid": "ts0014",
-      "drivers": [
-        "switch_4gang",
-        "wall_switch_4_gang"
-      ],
-      "classes": [
-        "socket"
-      ],
-      "families": [
-        "socket"
-      ],
-      "absurd": false
-    },
-    {
-      "couple": "_tze200_mexisfik|ts0004",
-      "mfr": "_tze200_mexisfik",
-      "pid": "ts0004",
-      "drivers": [
-        "switch_4gang",
-        "wall_switch_4_gang"
-      ],
-      "classes": [
-        "socket"
-      ],
-      "families": [
-        "socket"
-      ],
-      "absurd": false
-    },
-    {
-      "couple": "_tze200_mexisfik|ts0014",
-      "mfr": "_tze200_mexisfik",
-      "pid": "ts0014",
-      "drivers": [
-        "switch_4gang",
-        "wall_switch_4_gang"
-      ],
-      "classes": [
-        "socket"
-      ],
-      "families": [
-        "socket"
-      ],
-      "absurd": false
     }
   ],
   "energy": [
@@ -8109,7 +8045,7 @@
   "counts": {
     "crossClassAbsurd": 70,
     "crossClassOther": 7,
-    "sameClassDual": 418,
+    "sameClassDual": 414,
     "energyIssues": 1
   }
 }

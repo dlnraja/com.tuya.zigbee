@@ -1596,7 +1596,16 @@
       "_tze204_gm8h14wy",
       "_TYZB01_qeqvmvti",
       "_TYZB01_QEQVMVTI",
-      "_tyzb01_qeqvmvti"
+      "_tyzb01_qeqvmvti",
+      "_TZE284_U15PABBC",
+      "_tze284_U15PABBC",
+      "_TZ3000_RK2YZT0U",
+      "_tz3000_RK2YZT0U",
+      "_TZ3000_V5498KDM",
+      "_tz3000_V5498KDM",
+      "_TZE204_GM8H14WY",
+      "_tze204_GM8H14WY",
+      "_tyzb01_QEQVMVTI"
     ],
     "endpoints": {
       "1": {
@@ -2395,7 +2404,7 @@
       {
         "changelog": {
           "en": "OEM Zigbee firmware v74 (Koenkk zigbee-OTA, SHA512-verified). Install via Homey Device Updates (Settings → Device Updates) on Homey ≥13.2 / Mobile ≥9.10.",
-          "fr": "Firmware Zigbee OEM v74 (Koenkk zigbee-OTA, SHA512 vérifié). Installez via Homey Device Updates — Homey ≥13.2 / Mobile ≥9.10."
+          "fr": "Firmware Zigbee OEM v74 (Koenkk zigbee-OTA, SHA512 vérifié). Installez via Homey Device Updates (Réglages → Device Updates) — Homey ≥13.2 / Mobile ≥9.10."
         },
         "device": {
           "manufacturerName": [
