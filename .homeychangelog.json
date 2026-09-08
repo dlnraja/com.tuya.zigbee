@@ -1470,5 +1470,8 @@
   },
   "5.12.143": {
     "en": "Improved pairing for several Tuya ZCL wall switches that Homey previously left as unknown."
+  },
+  "5.12.144": {
+    "en": "Aligned fingerprint routing for Moes/BSEED ZCL switches after pairing fixes."
   }
 }
