@@ -6043,3 +6043,59 @@ _TZ3000_l9brjwau, _TZ3000_blhvsaqf, _TZ3000_ysdv91bk, _TZ3000_hafsqare, _TZ3000_
 | router + ts0601 | dlnraja/com.tuya.zigbee#533 | device_request |
 | vision + TS0601 | dlnraja/com.tuya.zigbee#533 | device_request |
 | vision + SWITCH | dlnraja/com.tuya.zigbee#533 | device_request |
+
+
+## Auto-discovered from GitHub (2026-09-09)
+
+| Fingerprint | Source | Type |
+|---|---|---|
+| _TZ3000_enmfaave + SWITCH | dlnraja/com.tuya.zigbee#541 | bug_report |
+| _TZ3000_ + SWITCH | dlnraja/com.tuya.zigbee#541 | bug_report |
+| dlnraja + TS0004 | dlnraja/com.tuya.zigbee#541 | bug_report |
+| DLNRAJA + TS0004 | dlnraja/com.tuya.zigbee#541 | bug_report |
+| _tz3000 + SWITCH | dlnraja/com.tuya.zigbee#541 | bug_report |
+| _TZ3000 + SWITCH | dlnraja/com.tuya.zigbee#541 | bug_report |
+| _tz3000_enmfaave + SWITCH | dlnraja/com.tuya.zigbee#541 | bug_report |
+| _tz3000_ENMFAAVE + SWITCH | dlnraja/com.tuya.zigbee#541 | bug_report |
+| _TZ3000_ENMFAAVE + SWITCH | dlnraja/com.tuya.zigbee#541 | bug_report |
+| _tz3000_ + SWITCH | dlnraja/com.tuya.zigbee#541 | bug_report |
+| _TZ3000_ptjcjise + RELAY | dlnraja/com.tuya.zigbee#543 | bug_report |
+| _TZ3000_ptjcjise + SENSOR | dlnraja/com.tuya.zigbee#543 | bug_report |
+| _TZ3000_ptjcjise + SWITCH | dlnraja/com.tuya.zigbee#543 | bug_report |
+| _TZ3000_ + RELAY | dlnraja/com.tuya.zigbee#543 | bug_report |
+| _TZ3000_ + SENSOR | dlnraja/com.tuya.zigbee#543 | bug_report |
+| _TZ3000_ + SWITCH | dlnraja/com.tuya.zigbee#543 | bug_report |
+| zigbee2mqtt + TS0002 | dlnraja/com.tuya.zigbee#543 | bug_report |
+| zigbee2mqtt + TS0601 | dlnraja/com.tuya.zigbee#543 | bug_report |
+| zigbee2mqtt + ts0601 | dlnraja/com.tuya.zigbee#543 | bug_report |
+| zigbee2mqtt + RELAY | dlnraja/com.tuya.zigbee#543 | bug_report |
+| tuya + TS0002 | dlnraja/com.tuya.zigbee#543 | bug_report |
+| tuya + RELAY | dlnraja/com.tuya.zigbee#543 | bug_report |
+| tuya + SENSOR | dlnraja/com.tuya.zigbee#543 | bug_report |
+| tuya + SWITCH | dlnraja/com.tuya.zigbee#543 | bug_report |
+| TUYA + TS0002 | dlnraja/com.tuya.zigbee#543 | bug_report |
+| TUYA + RELAY | dlnraja/com.tuya.zigbee#543 | bug_report |
+| TUYA + SENSOR | dlnraja/com.tuya.zigbee#543 | bug_report |
+| TUYA + SWITCH | dlnraja/com.tuya.zigbee#543 | bug_report |
+| ZIGBEE2MQTT + TS0002 | dlnraja/com.tuya.zigbee#543 | bug_report |
+| ZIGBEE2MQTT + TS0601 | dlnraja/com.tuya.zigbee#543 | bug_report |
+| ZIGBEE2MQTT + ts0601 | dlnraja/com.tuya.zigbee#543 | bug_report |
+| ZIGBEE2MQTT + RELAY | dlnraja/com.tuya.zigbee#543 | bug_report |
+| _tz3000_ptjcjise + RELAY | dlnraja/com.tuya.zigbee#543 | bug_report |
+| _tz3000_ptjcjise + SENSOR | dlnraja/com.tuya.zigbee#543 | bug_report |
+| _tz3000_ptjcjise + SWITCH | dlnraja/com.tuya.zigbee#543 | bug_report |
+| _tz3000_PTJCJISE + RELAY | dlnraja/com.tuya.zigbee#543 | bug_report |
+| _tz3000_PTJCJISE + SENSOR | dlnraja/com.tuya.zigbee#543 | bug_report |
+| _tz3000_PTJCJISE + SWITCH | dlnraja/com.tuya.zigbee#543 | bug_report |
+| _TZ3000_PTJCJISE + RELAY | dlnraja/com.tuya.zigbee#543 | bug_report |
+| _TZ3000_PTJCJISE + SENSOR | dlnraja/com.tuya.zigbee#543 | bug_report |
+| _TZ3000_PTJCJISE + SWITCH | dlnraja/com.tuya.zigbee#543 | bug_report |
+| _tz3000 + RELAY | dlnraja/com.tuya.zigbee#543 | bug_report |
+| _tz3000 + SENSOR | dlnraja/com.tuya.zigbee#543 | bug_report |
+| _tz3000 + SWITCH | dlnraja/com.tuya.zigbee#543 | bug_report |
+| _TZ3000 + RELAY | dlnraja/com.tuya.zigbee#543 | bug_report |
+| _TZ3000 + SENSOR | dlnraja/com.tuya.zigbee#543 | bug_report |
+| _TZ3000 + SWITCH | dlnraja/com.tuya.zigbee#543 | bug_report |
+| Moes + RELAY | dlnraja/com.tuya.zigbee#543 | bug_report |
+| Moes + SENSOR | dlnraja/com.tuya.zigbee#543 | bug_report |
+| Moes + SWITCH | dlnraja/com.tuya.zigbee#543 | bug_report |
