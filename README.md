@@ -36,16 +36,16 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 | **App Version** | v9.0.846 |
 | **Drivers** | 431 (381 Zigbee + 50 WiFi) |
 | **Unique Fingerprints** | 4,399 |
-| **Pairing Variants** | 17,066 (4 case combos per fingerprint) |
-| **Unique Product IDs** | 590 |
+| **Pairing Variants** | 17,074 (4 case combos per fingerprint) |
+| **Unique Product IDs** | 591 |
 | **Flow Cards** | 5,952 |
 | **Unique Capabilities** | 170 |
 | **Native OTA Drivers** | 9 |
-| **Test Suites** | 255 files |
+| **Test Suites** | 256 files |
 | **SVG Icons** | 731 |
 | **Languages** | EN, FR, NL, DE |
 | **SDK / Homey** | 3 / >= 12.2.0 |
-| **Last Updated** | 2026-09-08 |
+| **Last Updated** | 2026-09-09 |
 
 ### Top 20 Drivers by Fingerprint Count
 
@@ -54,7 +54,7 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 | 1 | `climate_sensor` | 2,118 |
 | 2 | `switch_1gang` | 1,538 |
 | 3 | `presence_sensor_radar` | 805 |
-| 4 | `curtain_motor` | 782 |
+| 4 | `curtain_motor` | 780 |
 | 5 | `radiator_valve` | 599 |
 | 6 | `button_wireless_2` | 570 |
 | 7 | `wall_dimmer_tuya` | 488 |
@@ -70,7 +70,7 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 | 17 | `thermostat_tuya_dp` | 192 |
 | 18 | `sensor_contact_zigbee` | 183 |
 | 19 | `water_leak_sensor_tuya` | 178 |
-| 20 | `plug_energy_monitor` | 170 |
+| 20 | `bulb_dimmable` | 172 |
 
 ### Drivers by Device Class
 
@@ -102,6 +102,7 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 
 | Version | Changes |
 |---------|---------|
+| **v9.0.847** | Fixed Moes curtain EF00 listen/query, forced Moes protocol to Tuya DP, reduced GitHub bot auto-PR/triage noise, added Homey match unit mo… |
 | **v9.0.846** | Removed broken contact-sensor OTA firmware reference that blocked Athom publish validation. |
 | **v9.0.845** | Removed broken contact-sensor OTA firmware reference that blocked Athom publish validation. |
 | **v9.0.844** | Aligned fingerprint routing for Moes/BSEED ZCL switches after pairing fixes. |
@@ -113,7 +114,6 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 | **v9.0.837** | Improved battery roller blind motors (_TZE284_fodv6bkr) open/close/position; expanded HOBEIAN pairing for siren, switches and presence mo… |
 | **v9.0.835** | Forum media deep sweep & misattribution cleansing: cleansed wall_switch_5_gang_tuya stubs, added 25 verified forum Zigbee devices (Melect… |
 | **v9.0.834** | Fixed BSEED 1-gang switch routing (Issue #540), pruned manifest flow duplicates, resolved ZG-303Z registry lock, and enforced zero guidel… |
-| **v9.0.833** | Fixed BSEED 1-gang switch routing (Issue #540), pruned manifest flow duplicates, resolved ZG-303Z registry lock, and enforced zero guidel… |
 
 <!-- CHANGELOG_END -->
 
