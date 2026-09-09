@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-08T17:27:46.836Z",
+  "generatedAt": "2026-09-09T06:38:56.811Z",
   "mode": "APPLY",
   "policy": "P2319 enrichment-first colocate — never strip other drivers",
   "applied": [
@@ -337,11 +337,5 @@
       "soft": null
     }
   ],
-  "already": [
-    {
-      "mfr": "HOBEIAN",
-      "pid": "ZG-101ZS",
-      "driver": "scene_switch_4"
-    }
-  ]
+  "already": []
 }
