@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-09T14:51:49.054Z",
+  "generatedAt": "2026-09-09T21:13:51.791Z",
   "date": "2026-09-09",
   "mode": "full",
   "phases": [
@@ -12,18 +12,18 @@
     {
       "name": "github",
       "ok": true,
-      "durationMs": 790
+      "durationMs": 292
     },
     {
       "name": "gmail",
       "ok": true,
-      "durationMs": 200,
+      "durationMs": 213,
       "details": {
         "crash": {
           "ok": true,
           "skipped": false,
           "status": 0,
-          "durationMs": 39,
+          "durationMs": 38,
           "stderr": "",
           "stdoutTail": "[gmail-crash-pattern-gate] sources=32 hits=0 unknown=0\n  wrote .github/state/gmail-crash-patterns.json\n  verdict: ok\n"
         },
@@ -31,16 +31,16 @@
           "ok": true,
           "skipped": false,
           "status": 0,
-          "durationMs": 159,
+          "durationMs": 174,
           "stderr": "",
-          "stdoutTail": "[automate] inbox total=0 have=30 missing=0 ingested_now=0\n[recursive-treat] sources: 136\n[recursive-treat] wrote /home/runner/work/com.tuya.zigbee/com.tuya.zigbee/reports/diag-recursive-treat-2026-09-09\n{\n  \"generatedAt\": \"2026-09-09T14:51:50.028Z\",\n  \"methodology\": \"f647d35b-style full-body recursive treat — sacred couple never invented; P2246 derive from interview when ABSENT\",\n  \"sourcesScanned\": 136,\n  \"uniqueCases\": 122,\n  \"actionable\": 28,\n  \"derivedFromInterview\": 0,\n  \"signalTally\": {\n    \"scene_mode_unsupported\": 4,\n    \"wrong_driver_hint\": 4,\n    \"athom_socket_hang\": 3,\n    \"athom_processing_failed\": 2,\n    \"wrong_smart_rcbo\": 2,\n    \"flow_guard_spam\": 3,\n    \"processing_failed\": 3,\n    \"scene_0x8004\": 3,\n    \"invalid_flow_card\": 2,\n    \"missing_capability_listener\": 1,\n    \"ias_storm_button\": 2\n  },\n  \"gmailBodiesPresent\": 30,\n  \"interviews\": 90\n}\n[automate] status → .github/state/diag-recursive-inbox/automate-status.json\n{\n  \"total\": 0,\n  \"have\": 30,\n  \"missing\": 0,\n  \"missingIds\": []\n}\n[automate] actionable= 28 gmailBodies= 30\n"
+          "stdoutTail": "[automate] inbox total=0 have=30 missing=0 ingested_now=0\n[recursive-treat] sources: 136\n[recursive-treat] wrote /home/runner/work/com.tuya.zigbee/com.tuya.zigbee/reports/diag-recursive-treat-2026-09-09\n{\n  \"generatedAt\": \"2026-09-09T21:13:52.281Z\",\n  \"methodology\": \"f647d35b-style full-body recursive treat — sacred couple never invented; P2246 derive from interview when ABSENT\",\n  \"sourcesScanned\": 136,\n  \"uniqueCases\": 122,\n  \"actionable\": 28,\n  \"derivedFromInterview\": 0,\n  \"signalTally\": {\n    \"scene_mode_unsupported\": 4,\n    \"wrong_driver_hint\": 4,\n    \"athom_socket_hang\": 3,\n    \"athom_processing_failed\": 2,\n    \"wrong_smart_rcbo\": 2,\n    \"flow_guard_spam\": 3,\n    \"processing_failed\": 3,\n    \"scene_0x8004\": 3,\n    \"invalid_flow_card\": 2,\n    \"missing_capability_listener\": 1,\n    \"ias_storm_button\": 2\n  },\n  \"gmailBodiesPresent\": 30,\n  \"interviews\": 90\n}\n[automate] status → .github/state/diag-recursive-inbox/automate-status.json\n{\n  \"total\": 0,\n  \"have\": 30,\n  \"missing\": 0,\n  \"missingIds\": []\n}\n[automate] actionable= 28 gmailBodies= 30\n"
         }
       }
     },
     {
       "name": "forum",
       "ok": true,
-      "durationMs": 26635,
+      "durationMs": 29461,
       "skipScan": false,
       "steps": [
         {
@@ -64,7 +64,7 @@
     {
       "name": "drivers",
       "ok": true,
-      "durationMs": 1514,
+      "durationMs": 1504,
       "mfs": {
         "high": 0,
         "changes": 0,
@@ -87,11 +87,11 @@
     {
       "name": "gates",
       "ok": true,
-      "durationMs": 2471
+      "durationMs": 2428
     }
   ],
   "github": {
-    "harvestedAt": "2026-09-09T14:51:49.845Z",
+    "harvestedAt": "2026-09-09T21:13:52.084Z",
     "repo": "dlnraja/com.tuya.zigbee",
     "auth": "token",
     "error": null,
@@ -199,16 +199,16 @@
   "forum": {
     "path": "/home/runner/work/com.tuya.zigbee/com.tuya.zigbee/.github/state/forum/actionable-processor-report.json",
     "totals": {
-      "posts": 214,
+      "posts": 213,
       "withCouples": 77,
       "needAction": 49,
       "both": 136,
       "masterOnly": 10
     },
-    "posts": 214
+    "posts": 213
   },
   "gmail": {
-    "generatedAt": "2026-09-09T14:51:49.877Z",
+    "generatedAt": "2026-09-09T21:13:52.114Z",
     "sourcesScanned": 32,
     "patternCounts": {
       "flow_getDeviceActionCard": 0,
