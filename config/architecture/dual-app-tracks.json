@@ -245,6 +245,10 @@
     "p2435_gh540_544_switch_pairing": {
       "tag": "BOTH",
       "note": "GH #540-#544: ZCL switch endpoints (drop EF00-required / ep2 Basic); ptjcjise→2gang; strip xk5udnd6 from water_leak; mfs top-level fix"
+    },
+    "p2436_moes_setup_listener_bot_reduce": {
+      "tag": "BOTH",
+      "note": "#533 Moes: fix missing _setupTuyaDPListener crash + EF00 re-arm/query; reduce Bug Auto-PR/triage issue-event bots; Homey match mocks"
     }
   },
   "ci": {

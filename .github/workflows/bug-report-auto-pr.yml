@@ -9,14 +9,18 @@ name: "Bug Report Auto-PR"
 # <!-- badges:end -->
 
 
+# WHY(P2436): reduce bot automation noise — no auto PR on every bug open.
+# Maintainer runs workflow_dispatch when an issue is ready for a silent code PR.
 on:
-  issues:
-    types: [opened, labeled]
   workflow_dispatch:
     inputs:
       issue_number:
         description: "Issue number to process"
         type: number
+      dry_run:
+        description: "Dry run (no branch/PR/comment)"
+        type: boolean
+        default: true
 
 permissions:
   contents: write
@@ -36,10 +40,7 @@ defaults:
 
 jobs:
   process-bug:
-    if: >-
-      github.event_name == 'workflow_dispatch' ||
-      (github.event.action == 'labeled' && github.event.label.name == 'auto-fix') ||
-      (github.event.action == 'opened' && contains(github.event.issue.labels.*.name, 'bug'))
+    if: github.event_name == 'workflow_dispatch' && inputs.issue_number != ''
     runs-on: ubuntu-latest
     timeout-minutes: 15
     env:
@@ -55,6 +56,9 @@ jobs:
       CEREBRAS_API_KEY: ${{ secrets.CEREBRAS_API_KEY || '' }}
       TOGETHER_API_KEY: ${{ secrets.TOGETHER_API_KEY || '' }}
       KIMI_API_KEY: ${{ secrets.KIMI_API_KEY || '' }}
+      DRY_RUN: ${{ inputs.dry_run && 'true' || 'false' }}
+      GITHUB_RESOLVER_COMMENT: '0'
+      FORUM_AUTO_POST: '0'
 
     steps:
       - uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # v5.1.0
@@ -73,15 +77,16 @@ jobs:
         env:
           GH_TOKEN: ${{ secrets.GH_PAT || secrets.GITHUB_TOKEN }}
           GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
-          ISSUE_NUMBER: ${{ github.event.issue.number || inputs.issue_number }}
+          ISSUE_NUMBER: ${{ inputs.issue_number }}
+          DRY_RUN: ${{ inputs.dry_run && 'true' || 'false' }}
         run: node .github/scripts/bug-report-processor.js
 
       - name: Create Fix Branch and PR
-        if: steps.bug.outputs.has_fix == 'true'
+        if: steps.bug.outputs.has_fix == 'true' && inputs.dry_run != true
         env:
           GH_TOKEN: ${{ secrets.GH_PAT || secrets.GITHUB_TOKEN }}
         run: |
-          ISSUE=${{ github.event.issue.number || inputs.issue_number }}
+          ISSUE=${{ inputs.issue_number }}
           BRANCH="fix/issue-${ISSUE}"
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"

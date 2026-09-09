@@ -4,18 +4,18 @@
 
 name: Auto Bot Issue Triage
 
+# WHY(P2436): reduce hook/bot noise — no issue-event spam on human reopen.
+# Schedule stays dry-run by default; live close only via dispatch dry_run=false.
 on:
   schedule:
     # Daily 04:45 UTC — after blakadder (04:15), before community-inbox (05:17)
     - cron: '45 4 * * *'
-  issues:
-    types: [opened, labeled, reopened]
   workflow_dispatch:
     inputs:
       dry_run:
         description: 'Dry run (no comment/close)'
         type: boolean
-        default: false
+        default: true
       issue:
         description: 'Optional single issue number'
         type: string
@@ -41,12 +41,6 @@ jobs:
     name: Treat & close bot issues
     runs-on: ubuntu-latest
     timeout-minutes: 15
-    # Skip human issues on event triggers; always run on schedule/dispatch
-    if: |
-      github.event_name != 'issues' ||
-      startsWith(github.event.issue.title, '[Auto]') ||
-      contains(join(github.event.issue.labels.*.name, ','), 'auto-scan') ||
-      github.event.issue.user.login == 'github-actions[bot]'
     steps:
       - uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # v5.1.0
         with:
@@ -67,17 +61,18 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           GH_TOKEN: ${{ secrets.GH_PAT || secrets.GITHUB_TOKEN }}
           ALLOW_BOT_ISSUE_CLOSE: 'true'
-          DRY_RUN: ${{ inputs.dry_run || 'false' }}
+          # Schedule always dry-run; dispatch uses input (default true)
+          DRY_RUN: ${{ github.event_name == 'schedule' && 'true' || (inputs.dry_run && 'true' || 'false') }}
+          GITHUB_RESOLVER_COMMENT: '0'
+          FORUM_AUTO_POST: '0'
           GITHUB_REPOSITORY: ${{ github.repository }}
         run: |
-          ARGS=()
-          if [ "${{ inputs.dry_run }}" = "true" ]; then ARGS+=(--dry-run); fi
+          ARGS=(--dry-run)
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ] && [ "${{ inputs.dry_run }}" != "true" ]; then
+            ARGS=()
+          fi
           ISSUE="${{ inputs.issue }}"
           if [ -n "$ISSUE" ]; then ARGS+=(--issue="$ISSUE"); fi
-          # On issues event, prefer the triggering issue
-          if [ "${{ github.event_name }}" = "issues" ] && [ -z "$ISSUE" ]; then
-            ARGS+=(--issue="${{ github.event.issue.number }}")
-          fi
           node tools/ci/auto-bot-issue-triage.js "${ARGS[@]}"
 
       - name: Commit candidate state
