@@ -87,9 +87,9 @@
       "realMfrsAdded": 5,
       "details": "tmp/synthetic-resolution.json + tmp/pruned21-resolution.json"
     },
-    "lastAlignedAt": "2026-09-08T10:02:20.699Z",
+    "lastAlignedAt": "2026-09-09T06:39:18.597Z",
     "alignTool": "align-mfs-db-intelligent@P169",
-    "lastSyncedFromCompose": "2026-09-08T06:34:39.190Z",
+    "lastSyncedFromCompose": "2026-09-09T06:39:16.203Z",
     "syncComposeTool": "sync-compose-to-mfs-db@P2368"
   },
   "sources": {
@@ -5438,7 +5438,7 @@
         "hubitat": 1
       },
       "confidence": 0.95,
-      "lastSeen": "2026-09-08T06:34:40.167Z",
+      "lastSeen": "2026-09-09T06:39:17.244Z",
       "driverId": "button_wireless_1",
       "deviceNames": [
         "RSH-SC021",
@@ -16327,7 +16327,7 @@
         "z2m": 1
       },
       "confidence": 0.95,
-      "lastSeen": "2026-09-08T06:34:39.906Z",
+      "lastSeen": "2026-09-09T06:39:16.920Z",
       "driverId": "air_quality_co2",
       "deviceNames": [
         "NDIR CO2 sensor",
@@ -17138,7 +17138,7 @@
         "z2m": 1
       },
       "confidence": 0.95,
-      "lastSeen": "2026-09-08T06:34:40.111Z",
+      "lastSeen": "2026-09-09T06:39:17.177Z",
       "driverId": "curtain_motor",
       "deviceNames": [
         "TS0601_cover",
@@ -17860,7 +17860,7 @@
         "z2m": 1
       },
       "confidence": 0.95,
-      "lastSeen": "2026-09-08T06:34:40.097Z",
+      "lastSeen": "2026-09-09T06:39:17.160Z",
       "driverId": "curtain_motor",
       "deviceNames": [
         "TS0601_cover",
@@ -19888,7 +19888,7 @@
         "z2m": 1
       },
       "confidence": 0.95,
-      "lastSeen": "2026-09-08T06:34:39.856Z",
+      "lastSeen": "2026-09-09T06:39:16.865Z",
       "driverId": "air_quality_co2",
       "deviceNames": [
         "DCR-LCD",
@@ -20650,7 +20650,7 @@
         "z2m": 1
       },
       "confidence": 0.95,
-      "lastSeen": "2026-09-08T06:34:40.126Z",
+      "lastSeen": "2026-09-09T06:39:17.195Z",
       "driverId": "curtain_motor",
       "deviceNames": [
         "TS0601_cover",
@@ -22938,7 +22938,7 @@
         "z2m": 1
       },
       "confidence": 0.95,
-      "lastSeen": "2026-09-08T06:34:39.921Z",
+      "lastSeen": "2026-09-09T06:39:16.938Z",
       "driverId": "air_quality_co2",
       "deviceNames": [
         "NDIR CO2 sensor",
@@ -24019,7 +24019,7 @@
         "z2m": 1
       },
       "confidence": 0.95,
-      "lastSeen": "2026-09-08T06:34:40.137Z",
+      "lastSeen": "2026-09-09T06:39:17.209Z",
       "driverId": "curtain_motor",
       "deviceNames": [
         "TS0601_cover",
@@ -24985,7 +24985,7 @@
         "z2m": 1
       },
       "confidence": 0.95,
-      "lastSeen": "2026-09-08T06:34:39.883Z",
+      "lastSeen": "2026-09-09T06:39:16.893Z",
       "driverId": "air_quality_co2",
       "deviceNames": [
         "DCR-LCD",
@@ -48757,7 +48757,7 @@
         "z2m": 1
       },
       "confidence": 0.95,
-      "lastSeen": "2026-09-08T06:34:40.069Z",
+      "lastSeen": "2026-09-09T06:39:17.127Z",
       "driverId": "curtain_motor",
       "deviceNames": [
         "TS0601_cover",
@@ -100887,7 +100887,7 @@
         "z2m": 1
       },
       "confidence": 0.95,
-      "lastSeen": "2026-09-08T06:34:40.152Z",
+      "lastSeen": "2026-09-09T06:39:17.227Z",
       "driverId": "wall_thermostat",
       "source": "p2234b-couple-refine",
       "pid": "TS0601",
@@ -111638,7 +111638,7 @@
         "z2m": 1
       },
       "confidence": 0.95,
-      "lastSeen": "2026-09-08T06:34:39.943Z",
+      "lastSeen": "2026-09-09T06:39:16.963Z",
       "driverId": "curtain_motor",
       "deviceNames": [
         "Zemismart curtain motor",
@@ -111696,7 +111696,7 @@
         "z2m": 1
       },
       "confidence": 0.95,
-      "lastSeen": "2026-09-08T06:34:40.025Z",
+      "lastSeen": "2026-09-09T06:39:17.074Z",
       "driverId": "curtain_motor",
       "deviceNames": [
         "TS0601_cover",
@@ -111748,7 +111748,7 @@
         "z2m": 1
       },
       "confidence": 0.95,
-      "lastSeen": "2026-09-08T06:34:39.994Z",
+      "lastSeen": "2026-09-09T06:39:17.027Z",
       "driverId": "curtain_motor",
       "deviceNames": [
         "Zemismart dual curtain",
@@ -111801,7 +111801,7 @@
         "z2m": 1
       },
       "confidence": 0.95,
-      "lastSeen": "2026-09-08T06:34:40.054Z",
+      "lastSeen": "2026-09-09T06:39:17.109Z",
       "driverId": "curtain_motor",
       "deviceNames": [
         "TS0601_cover",
@@ -111853,7 +111853,7 @@
         "z2m": 1
       },
       "confidence": 0.95,
-      "lastSeen": "2026-09-08T06:34:39.975Z",
+      "lastSeen": "2026-09-09T06:39:17.003Z",
       "driverId": "curtain_motor",
       "deviceNames": [
         "Zemismart curtain motor",
@@ -113039,7 +113039,7 @@
         "z2m": 1
       },
       "confidence": 0.95,
-      "lastSeen": "2026-09-08T06:34:40.083Z",
+      "lastSeen": "2026-09-09T06:39:17.143Z",
       "driverId": "curtain_motor",
       "deviceNames": [
         "TS0601_cover",
@@ -113089,7 +113089,7 @@
         "local": 1
       },
       "confidence": 0.95,
-      "lastSeen": "2026-09-08T06:34:40.041Z",
+      "lastSeen": "2026-09-09T06:39:17.092Z",
       "driverId": "curtain_motor",
       "deviceNames": [
         "TS0601_cover",
@@ -113139,7 +113139,7 @@
         "local": 1
       },
       "confidence": 0.95,
-      "lastSeen": "2026-09-08T06:34:39.957Z",
+      "lastSeen": "2026-09-09T06:39:16.980Z",
       "driverId": "curtain_motor",
       "deviceNames": [
         "Zemismart curtain motor",
@@ -128769,12 +128769,12 @@
     "lastSacredCoupleEnrichment": "2026-07-13T23:57:58.590Z",
     "fingerprints": 5710,
     "lastUpdate": "2026-07-14",
-    "lastUpdated": "2026-09-08T09:13:07.078Z",
+    "lastUpdated": "2026-09-09T04:30:05.378Z",
     "totalModelIds": 62784,
     "multiPidMfrs": 3299,
     "variantMfrs": 82,
     "lastMfsMultiUpdate": "2026-07-23T21:38:43.390Z",
-    "lastP2295Enrichment": "2026-09-08T06:34:40.182Z",
+    "lastP2295Enrichment": "2026-09-09T06:39:17.262Z",
     "p2295Note": "modelIds=real Zigbee pids; deviceNames/z2mModels/whiteLabels/productNames=aliases; multiCouple brands use byPid"
   },
   "diff": {
@@ -129764,12 +129764,10 @@
       "ZBMINIR2",
       "ZBMINIR2-R2",
       "ZBT-CCTLIGHT",
-      "ZBT-DIMMABLELIGHT",
-      "ZG-301Z",
-      "ZG-302Z1"
+      "ZBT-DIMMABLELIGHT"
     ],
     "pid": "01MINIZB",
-    "modelIdsCount": 88
+    "modelIdsCount": 86
   },
   "_TZ3000_FBJA4Q6H": {
     "driverId": "bulb_dimmable",
@@ -129860,12 +129858,10 @@
       "ZBMINIR2",
       "ZBMINIR2-R2",
       "ZBT-CCTLIGHT",
-      "ZBT-DIMMABLELIGHT",
-      "ZG-301Z",
-      "ZG-302Z1"
+      "ZBT-DIMMABLELIGHT"
     ],
     "pid": "01MINIZB",
-    "modelIdsCount": 88
+    "modelIdsCount": 86
   },
   "_TZ3000_HCM1FQXE": {
     "driverId": "bulb_dimmable",
@@ -129956,12 +129952,10 @@
       "ZBMINIR2",
       "ZBMINIR2-R2",
       "ZBT-CCTLIGHT",
-      "ZBT-DIMMABLELIGHT",
-      "ZG-301Z",
-      "ZG-302Z1"
+      "ZBT-DIMMABLELIGHT"
     ],
     "pid": "01MINIZB",
-    "modelIdsCount": 88
+    "modelIdsCount": 86
   },
   "_TZ3000_KEABPIGB": {
     "driverId": "light_bulb_dimmable_tunable",
@@ -130080,12 +130074,10 @@
       "ZBMINIR2",
       "ZBMINIR2-R2",
       "ZBT-CCTLIGHT",
-      "ZBT-DIMMABLELIGHT",
-      "ZG-301Z",
-      "ZG-302Z1"
+      "ZBT-DIMMABLELIGHT"
     ],
     "pid": "01MINIZB",
-    "modelIdsCount": 88
+    "modelIdsCount": 86
   },
   "_TZ3000_LZFWT5QX": {
     "driverId": "bulb_dimmable",
@@ -130176,12 +130168,10 @@
       "ZBMINIR2",
       "ZBMINIR2-R2",
       "ZBT-CCTLIGHT",
-      "ZBT-DIMMABLELIGHT",
-      "ZG-301Z",
-      "ZG-302Z1"
+      "ZBT-DIMMABLELIGHT"
     ],
     "pid": "01MINIZB",
-    "modelIdsCount": 88
+    "modelIdsCount": 86
   },
   "_TZ3000_M6U3Q8JY": {
     "driverId": "bulb_dimmable",
@@ -130272,12 +130262,10 @@
       "ZBMINIR2",
       "ZBMINIR2-R2",
       "ZBT-CCTLIGHT",
-      "ZBT-DIMMABLELIGHT",
-      "ZG-301Z",
-      "ZG-302Z1"
+      "ZBT-DIMMABLELIGHT"
     ],
     "pid": "01MINIZB",
-    "modelIdsCount": 88
+    "modelIdsCount": 86
   },
   "_TZ3000_TQLV4YZ4": {
     "driverId": "bulb_dimmable",
@@ -130368,12 +130356,10 @@
       "ZBMINIR2",
       "ZBMINIR2-R2",
       "ZBT-CCTLIGHT",
-      "ZBT-DIMMABLELIGHT",
-      "ZG-301Z",
-      "ZG-302Z1"
+      "ZBT-DIMMABLELIGHT"
     ],
     "pid": "01MINIZB",
-    "modelIdsCount": 88
+    "modelIdsCount": 86
   },
   "_TZ3000_U5U4CAKC": {
     "driverId": "button_wireless_plug",
@@ -130477,12 +130463,10 @@
       "ZBMINIR2",
       "ZBMINIR2-R2",
       "ZBT-CCTLIGHT",
-      "ZBT-DIMMABLELIGHT",
-      "ZG-301Z",
-      "ZG-302Z1"
+      "ZBT-DIMMABLELIGHT"
     ],
     "pid": "01MINIZB",
-    "modelIdsCount": 88
+    "modelIdsCount": 86
   },
   "_TZ3000_X2FQBDUN": {
     "driverId": "bulb_dimmable",
@@ -130573,12 +130557,10 @@
       "ZBMINIR2",
       "ZBMINIR2-R2",
       "ZBT-CCTLIGHT",
-      "ZBT-DIMMABLELIGHT",
-      "ZG-301Z",
-      "ZG-302Z1"
+      "ZBT-DIMMABLELIGHT"
     ],
     "pid": "01MINIZB",
-    "modelIdsCount": 88
+    "modelIdsCount": 86
   },
   "_TZ3210_0C4NP92R": {
     "driverId": "bulb_dimmable",
@@ -130669,12 +130651,10 @@
       "ZBMINIR2",
       "ZBMINIR2-R2",
       "ZBT-CCTLIGHT",
-      "ZBT-DIMMABLELIGHT",
-      "ZG-301Z",
-      "ZG-302Z1"
+      "ZBT-DIMMABLELIGHT"
     ],
     "pid": "01MINIZB",
-    "modelIdsCount": 88
+    "modelIdsCount": 86
   },
   "_TZ3210_0FC3G9SQ": {
     "driverId": "bulb_dimmable",
@@ -130765,12 +130745,10 @@
       "ZBMINIR2",
       "ZBMINIR2-R2",
       "ZBT-CCTLIGHT",
-      "ZBT-DIMMABLELIGHT",
-      "ZG-301Z",
-      "ZG-302Z1"
+      "ZBT-DIMMABLELIGHT"
     ],
     "pid": "01MINIZB",
-    "modelIdsCount": 88
+    "modelIdsCount": 86
   },
   "_TZ3210_1AGIHF3Z": {
     "driverId": "bulb_dimmable",
@@ -130861,12 +130839,10 @@
       "ZBMINIR2",
       "ZBMINIR2-R2",
       "ZBT-CCTLIGHT",
-      "ZBT-DIMMABLELIGHT",
-      "ZG-301Z",
-      "ZG-302Z1"
+      "ZBT-DIMMABLELIGHT"
     ],
     "pid": "01MINIZB",
-    "modelIdsCount": 88
+    "modelIdsCount": 86
   },
   "_TZ3210_BCPLF4DS": {
     "driverId": "bulb_dimmable",
@@ -130957,12 +130933,10 @@
       "ZBMINIR2",
       "ZBMINIR2-R2",
       "ZBT-CCTLIGHT",
-      "ZBT-DIMMABLELIGHT",
-      "ZG-301Z",
-      "ZG-302Z1"
+      "ZBT-DIMMABLELIGHT"
     ],
     "pid": "01MINIZB",
-    "modelIdsCount": 88
+    "modelIdsCount": 86
   },
   "_TZ3210_DXRJKPI6": {
     "driverId": "bulb_dimmable",
@@ -131053,12 +131027,10 @@
       "ZBMINIR2",
       "ZBMINIR2-R2",
       "ZBT-CCTLIGHT",
-      "ZBT-DIMMABLELIGHT",
-      "ZG-301Z",
-      "ZG-302Z1"
+      "ZBT-DIMMABLELIGHT"
     ],
     "pid": "01MINIZB",
-    "modelIdsCount": 88
+    "modelIdsCount": 86
   },
   "_TZ3210_EBBFKVOY": {
     "driverId": "bulb_dimmable",
@@ -131149,12 +131121,10 @@
       "ZBMINIR2",
       "ZBMINIR2-R2",
       "ZBT-CCTLIGHT",
-      "ZBT-DIMMABLELIGHT",
-      "ZG-301Z",
-      "ZG-302Z1"
+      "ZBT-DIMMABLELIGHT"
     ],
     "pid": "01MINIZB",
-    "modelIdsCount": 88
+    "modelIdsCount": 86
   },
   "_TZ3210_H1ZVCPWD": {
     "driverId": "bulb_dimmable",
@@ -131245,12 +131215,10 @@
       "ZBMINIR2",
       "ZBMINIR2-R2",
       "ZBT-CCTLIGHT",
-      "ZBT-DIMMABLELIGHT",
-      "ZG-301Z",
-      "ZG-302Z1"
+      "ZBT-DIMMABLELIGHT"
     ],
     "pid": "01MINIZB",
-    "modelIdsCount": 88
+    "modelIdsCount": 86
   },
   "_TZ3210_HZDHB62Z": {
     "driverId": "bulb_dimmable",
@@ -131341,12 +131309,10 @@
       "ZBMINIR2",
       "ZBMINIR2-R2",
       "ZBT-CCTLIGHT",
-      "ZBT-DIMMABLELIGHT",
-      "ZG-301Z",
-      "ZG-302Z1"
+      "ZBT-DIMMABLELIGHT"
     ],
     "pid": "01MINIZB",
-    "modelIdsCount": 88
+    "modelIdsCount": 86
   },
   "_TZ3210_JKBDRVVF": {
     "driverId": "bulb_dimmable",
@@ -131437,12 +131403,10 @@
       "ZBMINIR2",
       "ZBMINIR2-R2",
       "ZBT-CCTLIGHT",
-      "ZBT-DIMMABLELIGHT",
-      "ZG-301Z",
-      "ZG-302Z1"
+      "ZBT-DIMMABLELIGHT"
     ],
     "pid": "01MINIZB",
-    "modelIdsCount": 88
+    "modelIdsCount": 86
   },
   "_TZ3210_LEZKAFXF": {
     "driverId": "bulb_dimmable",
@@ -131533,12 +131497,10 @@
       "ZBMINIR2",
       "ZBMINIR2-R2",
       "ZBT-CCTLIGHT",
-      "ZBT-DIMMABLELIGHT",
-      "ZG-301Z",
-      "ZG-302Z1"
+      "ZBT-DIMMABLELIGHT"
     ],
     "pid": "01MINIZB",
-    "modelIdsCount": 88
+    "modelIdsCount": 86
   },
   "_TZ3210_LFBZ816S": {
     "driverId": "bulb_dimmable",
@@ -131629,12 +131591,10 @@
       "ZBMINIR2",
       "ZBMINIR2-R2",
       "ZBT-CCTLIGHT",
-      "ZBT-DIMMABLELIGHT",
-      "ZG-301Z",
-      "ZG-302Z1"
+      "ZBT-DIMMABLELIGHT"
     ],
     "pid": "01MINIZB",
-    "modelIdsCount": 88
+    "modelIdsCount": 86
   },
   "_TZ3210_LMQQUXUS": {
     "driverId": "bulb_dimmable",
@@ -131725,12 +131685,10 @@
       "ZBMINIR2",
       "ZBMINIR2-R2",
       "ZBT-CCTLIGHT",
-      "ZBT-DIMMABLELIGHT",
-      "ZG-301Z",
-      "ZG-302Z1"
+      "ZBT-DIMMABLELIGHT"
     ],
     "pid": "01MINIZB",
-    "modelIdsCount": 88
+    "modelIdsCount": 86
   },
   "_TZ3210_RBGFKWBL": {
     "driverId": "bulb_dimmable",
@@ -131821,12 +131779,10 @@
       "ZBMINIR2",
       "ZBMINIR2-R2",
       "ZBT-CCTLIGHT",
-      "ZBT-DIMMABLELIGHT",
-      "ZG-301Z",
-      "ZG-302Z1"
+      "ZBT-DIMMABLELIGHT"
     ],
     "pid": "01MINIZB",
-    "modelIdsCount": 88
+    "modelIdsCount": 86
   },
   "_TZ3210_SROEZL0S": {
     "driverId": "bulb_rgbw",
@@ -131938,12 +131894,10 @@
       "ZBMINIR2",
       "ZBMINIR2-R2",
       "ZBT-CCTLIGHT",
-      "ZBT-DIMMABLELIGHT",
-      "ZG-301Z",
-      "ZG-302Z1"
+      "ZBT-DIMMABLELIGHT"
     ],
     "pid": "01MINIZB",
-    "modelIdsCount": 88
+    "modelIdsCount": 86
   },
   "_TZ3210_V5YQUXMA": {
     "driverId": "bulb_dimmable",
@@ -132034,12 +131988,10 @@
       "ZBMINIR2",
       "ZBMINIR2-R2",
       "ZBT-CCTLIGHT",
-      "ZBT-DIMMABLELIGHT",
-      "ZG-301Z",
-      "ZG-302Z1"
+      "ZBT-DIMMABLELIGHT"
     ],
     "pid": "01MINIZB",
-    "modelIdsCount": 88
+    "modelIdsCount": 86
   },
   "_TZ3210_WUHEYHVM": {
     "driverId": "bulb_dimmable",
@@ -132130,12 +132082,10 @@
       "ZBMINIR2",
       "ZBMINIR2-R2",
       "ZBT-CCTLIGHT",
-      "ZBT-DIMMABLELIGHT",
-      "ZG-301Z",
-      "ZG-302Z1"
+      "ZBT-DIMMABLELIGHT"
     ],
     "pid": "01MINIZB",
-    "modelIdsCount": 88
+    "modelIdsCount": 86
   },
   "_TZ3210_YLUVWHJC": {
     "driverId": "bulb_dimmable",
@@ -132226,12 +132176,10 @@
       "ZBMINIR2",
       "ZBMINIR2-R2",
       "ZBT-CCTLIGHT",
-      "ZBT-DIMMABLELIGHT",
-      "ZG-301Z",
-      "ZG-302Z1"
+      "ZBT-DIMMABLELIGHT"
     ],
     "pid": "01MINIZB",
-    "modelIdsCount": 88
+    "modelIdsCount": 86
   },
   "_TZ3000_9CPUACA6": {
     "driverId": "rgb_mood_light",
@@ -134024,13 +133972,10 @@
       "ZBMINIR",
       "ZBMINIR2",
       "ZBMINIR2-R2",
-      "ZBT-COLORLIGHT",
-      "ZG-301Z",
-      "ZG-302Z1",
-      "ZG-302Z2"
+      "ZBT-COLORLIGHT"
     ],
     "pid": "01MINIZB",
-    "modelIdsCount": 104
+    "modelIdsCount": 101
   },
   "_tz3000_adkvzooy": {
     "driverId": "button_wireless_2",
@@ -134136,13 +134081,10 @@
       "ZBMINIR",
       "ZBMINIR2",
       "ZBMINIR2-R2",
-      "ZBT-COLORLIGHT",
-      "ZG-301Z",
-      "ZG-302Z1",
-      "ZG-302Z2"
+      "ZBT-COLORLIGHT"
     ],
     "pid": "01MINIZB",
-    "modelIdsCount": 104
+    "modelIdsCount": 101
   },
   "_tz3000_arfwfgoa": {
     "driverId": "button_wireless_2",
@@ -134248,13 +134190,10 @@
       "ZBMINIR",
       "ZBMINIR2",
       "ZBMINIR2-R2",
-      "ZBT-COLORLIGHT",
-      "ZG-301Z",
-      "ZG-302Z1",
-      "ZG-302Z2"
+      "ZBT-COLORLIGHT"
     ],
     "pid": "01MINIZB",
-    "modelIdsCount": 104
+    "modelIdsCount": 101
   },
   "_tz3000_d0ypg4o2": {
     "driverId": "button_wireless_2",
@@ -134360,13 +134299,10 @@
       "ZBMINIR",
       "ZBMINIR2",
       "ZBMINIR2-R2",
-      "ZBT-COLORLIGHT",
-      "ZG-301Z",
-      "ZG-302Z1",
-      "ZG-302Z2"
+      "ZBT-COLORLIGHT"
     ],
     "pid": "01MINIZB",
-    "modelIdsCount": 104
+    "modelIdsCount": 101
   },
   "_tz3000_fq1sxfrj": {
     "driverId": "button_wireless_2",
@@ -134472,13 +134408,10 @@
       "ZBMINIR",
       "ZBMINIR2",
       "ZBMINIR2-R2",
-      "ZBT-COLORLIGHT",
-      "ZG-301Z",
-      "ZG-302Z1",
-      "ZG-302Z2"
+      "ZBT-COLORLIGHT"
     ],
     "pid": "01MINIZB",
-    "modelIdsCount": 104
+    "modelIdsCount": 101
   },
   "_tz3000_kt7obmnn": {
     "driverId": "button_wireless_2",
@@ -134584,13 +134517,10 @@
       "ZBMINIR",
       "ZBMINIR2",
       "ZBMINIR2-R2",
-      "ZBT-COLORLIGHT",
-      "ZG-301Z",
-      "ZG-302Z1",
-      "ZG-302Z2"
+      "ZBT-COLORLIGHT"
     ],
     "pid": "01MINIZB",
-    "modelIdsCount": 104
+    "modelIdsCount": 101
   },
   "_tz3000_qous95zh": {
     "driverId": "button_wireless_2",
@@ -134696,13 +134626,10 @@
       "ZBMINIR",
       "ZBMINIR2",
       "ZBMINIR2-R2",
-      "ZBT-COLORLIGHT",
-      "ZG-301Z",
-      "ZG-302Z1",
-      "ZG-302Z2"
+      "ZBT-COLORLIGHT"
     ],
     "pid": "01MINIZB",
-    "modelIdsCount": 104
+    "modelIdsCount": 101
   },
   "_tz3000_xr7itfxq": {
     "driverId": "button_wireless_2",
@@ -134808,13 +134735,10 @@
       "ZBMINIR",
       "ZBMINIR2",
       "ZBMINIR2-R2",
-      "ZBT-COLORLIGHT",
-      "ZG-301Z",
-      "ZG-302Z1",
-      "ZG-302Z2"
+      "ZBT-COLORLIGHT"
     ],
     "pid": "01MINIZB",
-    "modelIdsCount": 104
+    "modelIdsCount": 101
   },
   "tuyatec-o6sncwd6": {
     "driverId": "button_wireless_2",
@@ -134948,13 +134872,10 @@
       "ZBMINIR",
       "ZBMINIR2",
       "ZBMINIR2-R2",
-      "ZBT-COLORLIGHT",
-      "ZG-301Z",
-      "ZG-302Z1",
-      "ZG-302Z2"
+      "ZBT-COLORLIGHT"
     ],
     "pid": "01MINIZB",
-    "modelIdsCount": 104
+    "modelIdsCount": 101
   },
   "_tyzb01_ymcdbl3u": {
     "driverId": "valvecontroller",
@@ -135082,13 +135003,10 @@
       "ZBMINIR",
       "ZBMINIR2",
       "ZBMINIR2-R2",
-      "ZBT-COLORLIGHT",
-      "ZG-301Z",
-      "ZG-302Z1",
-      "ZG-302Z2"
+      "ZBT-COLORLIGHT"
     ],
     "pid": "01MINIZB",
-    "modelIdsCount": 104
+    "modelIdsCount": 101
   },
   "_tyzb01_qeqvmvti": {
     "driverId": "switch_1gang",
@@ -135203,13 +135121,10 @@
       "ZBMINIR",
       "ZBMINIR2",
       "ZBMINIR2-R2",
-      "ZBT-COLORLIGHT",
-      "ZG-301Z",
-      "ZG-302Z1",
-      "ZG-302Z2"
+      "ZBT-COLORLIGHT"
     ],
     "pid": "01MINIZB",
-    "modelIdsCount": 104
+    "modelIdsCount": 101
   },
   "_tyzb01_mtlhqn48": {
     "driverId": "button_wireless_2",
@@ -135315,13 +135230,10 @@
       "ZBMINIR",
       "ZBMINIR2",
       "ZBMINIR2-R2",
-      "ZBT-COLORLIGHT",
-      "ZG-301Z",
-      "ZG-302Z1",
-      "ZG-302Z2"
+      "ZBT-COLORLIGHT"
     ],
     "pid": "01MINIZB",
-    "modelIdsCount": 104
+    "modelIdsCount": 101
   },
   "_tyzb01_6sadkhcy": {
     "driverId": "button_wireless_2",
@@ -135427,13 +135339,10 @@
       "ZBMINIR",
       "ZBMINIR2",
       "ZBMINIR2-R2",
-      "ZBT-COLORLIGHT",
-      "ZG-301Z",
-      "ZG-302Z1",
-      "ZG-302Z2"
+      "ZBT-COLORLIGHT"
     ],
     "pid": "01MINIZB",
-    "modelIdsCount": 104
+    "modelIdsCount": 101
   },
   "_tyzb01_vzrytttn": {
     "driverId": "switch_2gang",
@@ -135559,13 +135468,10 @@
       "ZBMINIR",
       "ZBMINIR2",
       "ZBMINIR2-R2",
-      "ZBT-COLORLIGHT",
-      "ZG-301Z",
-      "ZG-302Z1",
-      "ZG-302Z2"
+      "ZBT-COLORLIGHT"
     ],
     "pid": "01MINIZB",
-    "modelIdsCount": 104
+    "modelIdsCount": 101
   },
   "_tyzb01_6g8b7at8": {
     "driverId": "switch_2gang",
@@ -135680,13 +135586,10 @@
       "ZBMINIR",
       "ZBMINIR2",
       "ZBMINIR2-R2",
-      "ZBT-COLORLIGHT",
-      "ZG-301Z",
-      "ZG-302Z1",
-      "ZG-302Z2"
+      "ZBT-COLORLIGHT"
     ],
     "pid": "01MINIZB",
-    "modelIdsCount": 104
+    "modelIdsCount": 101
   },
   "_tyzb01_b8cr31hp": {
     "driverId": "button_wireless_2",
@@ -135792,13 +135695,10 @@
       "ZBMINIR",
       "ZBMINIR2",
       "ZBMINIR2-R2",
-      "ZBT-COLORLIGHT",
-      "ZG-301Z",
-      "ZG-302Z1",
-      "ZG-302Z2"
+      "ZBT-COLORLIGHT"
     ],
     "pid": "01MINIZB",
-    "modelIdsCount": 104
+    "modelIdsCount": 101
   },
   "_tyzb01_mqel1whf": {
     "driverId": "switch_3gang",
@@ -135806,6 +135706,7 @@
     "modelIds": [
       "01MINIZB",
       "BASICZBR3",
+      "HOBEIAN",
       "JZ-ZB-004",
       "S26R2ZB",
       "S31ZB",
@@ -135848,12 +135749,10 @@
       "ZBMINIR",
       "ZBMINIR2",
       "ZBMINIR2-R2",
-      "ZG-301Z",
-      "ZG-302Z1",
       "ZG-302Z3"
     ],
     "pid": "01MINIZB",
-    "modelIdsCount": 47
+    "modelIdsCount": 46
   },
   "_tyzb01_phjeraqq": {
     "driverId": "button_wireless_2",
@@ -135959,13 +135858,10 @@
       "ZBMINIR",
       "ZBMINIR2",
       "ZBMINIR2-R2",
-      "ZBT-COLORLIGHT",
-      "ZG-301Z",
-      "ZG-302Z1",
-      "ZG-302Z2"
+      "ZBT-COLORLIGHT"
     ],
     "pid": "01MINIZB",
-    "modelIdsCount": 104
+    "modelIdsCount": 101
   },
   "_tyzb01_ncutbjdi": {
     "driverId": "switch_2_gang",
@@ -136097,13 +135993,10 @@
       "ZBMINIR",
       "ZBMINIR2",
       "ZBMINIR2-R2",
-      "ZBT-COLORLIGHT",
-      "ZG-301Z",
-      "ZG-302Z1",
-      "ZG-302Z2"
+      "ZBT-COLORLIGHT"
     ],
     "pid": "01MINIZB",
-    "modelIdsCount": 104
+    "modelIdsCount": 101
   },
   "_tyzb02_key8kk7r": {
     "driverId": "button_wireless_2",
@@ -136209,13 +136102,10 @@
       "ZBMINIR",
       "ZBMINIR2",
       "ZBMINIR2-R2",
-      "ZBT-COLORLIGHT",
-      "ZG-301Z",
-      "ZG-302Z1",
-      "ZG-302Z2"
+      "ZBT-COLORLIGHT"
     ],
     "pid": "01MINIZB",
-    "modelIdsCount": 104
+    "modelIdsCount": 101
   },
   "_tyzb01_iuepbmpv": {
     "driverId": "smartplug",
@@ -136332,13 +136222,10 @@
       "ZBMINIR",
       "ZBMINIR2",
       "ZBMINIR2-R2",
-      "ZBT-COLORLIGHT",
-      "ZG-301Z",
-      "ZG-302Z1",
-      "ZG-302Z2"
+      "ZBT-COLORLIGHT"
     ],
     "pid": "01MINIZB",
-    "modelIdsCount": 104
+    "modelIdsCount": 101
   },
   "_tz3000_n2egfsli": {
     "driverId": "contact_sensor",
@@ -136479,13 +136366,10 @@
       "ZBMINIR",
       "ZBMINIR2",
       "ZBMINIR2-R2",
-      "ZBT-COLORLIGHT",
-      "ZG-301Z",
-      "ZG-302Z1",
-      "ZG-302Z2"
+      "ZBT-COLORLIGHT"
     ],
     "pid": "01MINIZB",
-    "modelIdsCount": 104
+    "modelIdsCount": 101
   },
   "_TZE200_bjawzodf": {
     "driverId": "climate_sensor",
@@ -136658,13 +136542,10 @@
       "ZBMINIR",
       "ZBMINIR2",
       "ZBMINIR2-R2",
-      "ZBT-COLORLIGHT",
-      "ZG-301Z",
-      "ZG-302Z1",
-      "ZG-302Z2"
+      "ZBT-COLORLIGHT"
     ],
     "pid": "01MINIZB",
-    "modelIdsCount": 104
+    "modelIdsCount": 101
   },
   "_TZ3000_ug1vtuzn": {
     "driverId": "button_wireless_2",
@@ -136770,13 +136651,10 @@
       "ZBMINIR",
       "ZBMINIR2",
       "ZBMINIR2-R2",
-      "ZBT-COLORLIGHT",
-      "ZG-301Z",
-      "ZG-302Z1",
-      "ZG-302Z2"
+      "ZBT-COLORLIGHT"
     ],
     "pid": "01MINIZB",
-    "modelIdsCount": 104
+    "modelIdsCount": 101
   },
   "_TZE200_bq5c8xfe": {
     "driverId": "climate_sensor",
@@ -137016,13 +136894,10 @@
       "ZBMINIR",
       "ZBMINIR2",
       "ZBMINIR2-R2",
-      "ZBT-COLORLIGHT",
-      "ZG-301Z",
-      "ZG-302Z1",
-      "ZG-302Z2"
+      "ZBT-COLORLIGHT"
     ],
     "pid": "01MINIZB",
-    "modelIdsCount": 104
+    "modelIdsCount": 101
   },
   "_TZE200_d7lpruvi": {
     "driverId": "climate_sensor",
@@ -137195,13 +137070,10 @@
       "ZBMINIR",
       "ZBMINIR2",
       "ZBMINIR2-R2",
-      "ZBT-COLORLIGHT",
-      "ZG-301Z",
-      "ZG-302Z1",
-      "ZG-302Z2"
+      "ZBT-COLORLIGHT"
     ],
     "pid": "01MINIZB",
-    "modelIdsCount": 104
+    "modelIdsCount": 101
   },
   "_TZE204_1wnh8bqp": {
     "driverId": "button_wireless_2",
@@ -137307,13 +137179,10 @@
       "ZBMINIR",
       "ZBMINIR2",
       "ZBMINIR2-R2",
-      "ZBT-COLORLIGHT",
-      "ZG-301Z",
-      "ZG-302Z1",
-      "ZG-302Z2"
+      "ZBT-COLORLIGHT"
     ],
     "pid": "01MINIZB",
-    "modelIdsCount": 104
+    "modelIdsCount": 101
   },
   "_TZE284_1wnh8bqp": {
     "driverId": "button_wireless_2",
@@ -137419,13 +137288,10 @@
       "ZBMINIR",
       "ZBMINIR2",
       "ZBMINIR2-R2",
-      "ZBT-COLORLIGHT",
-      "ZG-301Z",
-      "ZG-302Z1",
-      "ZG-302Z2"
+      "ZBT-COLORLIGHT"
     ],
     "pid": "01MINIZB",
-    "modelIdsCount": 104
+    "modelIdsCount": 101
   },
   "_TZ3000_p6ju8myv": {
     "driverId": "button_wireless_2",
@@ -137531,13 +137397,10 @@
       "ZBMINIR",
       "ZBMINIR2",
       "ZBMINIR2-R2",
-      "ZBT-COLORLIGHT",
-      "ZG-301Z",
-      "ZG-302Z1",
-      "ZG-302Z2"
+      "ZBT-COLORLIGHT"
     ],
     "pid": "01MINIZB",
-    "modelIdsCount": 104
+    "modelIdsCount": 101
   },
   "_TZ3000_0zrccfgx": {
     "driverId": "button_wireless_2",
@@ -137643,13 +137506,10 @@
       "ZBMINIR",
       "ZBMINIR2",
       "ZBMINIR2-R2",
-      "ZBT-COLORLIGHT",
-      "ZG-301Z",
-      "ZG-302Z1",
-      "ZG-302Z2"
+      "ZBT-COLORLIGHT"
     ],
     "pid": "01MINIZB",
-    "modelIdsCount": 104
+    "modelIdsCount": 101
   },
   "_TZ3000_fsiepnrh": {
     "driverId": "button_wireless_2",
@@ -137755,13 +137615,10 @@
       "ZBMINIR",
       "ZBMINIR2",
       "ZBMINIR2-R2",
-      "ZBT-COLORLIGHT",
-      "ZG-301Z",
-      "ZG-302Z1",
-      "ZG-302Z2"
+      "ZBT-COLORLIGHT"
     ],
     "pid": "01MINIZB",
-    "modelIdsCount": 104
+    "modelIdsCount": 101
   },
   "_TZ3000_eo3dttwe": {
     "driverId": "button_wireless_2",
@@ -137867,13 +137724,10 @@
       "ZBMINIR",
       "ZBMINIR2",
       "ZBMINIR2-R2",
-      "ZBT-COLORLIGHT",
-      "ZG-301Z",
-      "ZG-302Z1",
-      "ZG-302Z2"
+      "ZBT-COLORLIGHT"
     ],
     "pid": "01MINIZB",
-    "modelIdsCount": 104
+    "modelIdsCount": 101
   },
   "_TZ3000_jwcixnrz": {
     "driverId": "button_wireless_2",
@@ -137979,13 +137833,10 @@
       "ZBMINIR",
       "ZBMINIR2",
       "ZBMINIR2-R2",
-      "ZBT-COLORLIGHT",
-      "ZG-301Z",
-      "ZG-302Z1",
-      "ZG-302Z2"
+      "ZBT-COLORLIGHT"
     ],
     "pid": "01MINIZB",
-    "modelIdsCount": 104
+    "modelIdsCount": 101
   },
   "_TZE200_hkdl5fmv": {
     "driverId": "energy_meter_din",
@@ -138100,13 +137951,10 @@
       "ZBMINIR",
       "ZBMINIR2",
       "ZBMINIR2-R2",
-      "ZBT-COLORLIGHT",
-      "ZG-301Z",
-      "ZG-302Z1",
-      "ZG-302Z2"
+      "ZBT-COLORLIGHT"
     ],
     "pid": "01MINIZB",
-    "modelIdsCount": 104
+    "modelIdsCount": 101
   },
   "_TZ3290_uc8lwbi2": {
     "driverId": "button_wireless_2",
@@ -138212,13 +138060,10 @@
       "ZBMINIR",
       "ZBMINIR2",
       "ZBMINIR2-R2",
-      "ZBT-COLORLIGHT",
-      "ZG-301Z",
-      "ZG-302Z1",
-      "ZG-302Z2"
+      "ZBT-COLORLIGHT"
     ],
     "pid": "01MINIZB",
-    "modelIdsCount": 104
+    "modelIdsCount": 101
   },
   "_TZ3290_8xzb2ghn": {
     "driverId": "button_wireless_2",
@@ -138324,13 +138169,10 @@
       "ZBMINIR",
       "ZBMINIR2",
       "ZBMINIR2-R2",
-      "ZBT-COLORLIGHT",
-      "ZG-301Z",
-      "ZG-302Z1",
-      "ZG-302Z2"
+      "ZBT-COLORLIGHT"
     ],
     "pid": "01MINIZB",
-    "modelIdsCount": 104
+    "modelIdsCount": 101
   },
   "_TZ3290_yac64inudpovoaba": {
     "driverId": "button_wireless_2",
@@ -138436,13 +138278,10 @@
       "ZBMINIR",
       "ZBMINIR2",
       "ZBMINIR2-R2",
-      "ZBT-COLORLIGHT",
-      "ZG-301Z",
-      "ZG-302Z1",
-      "ZG-302Z2"
+      "ZBT-COLORLIGHT"
     ],
     "pid": "01MINIZB",
-    "modelIdsCount": 104
+    "modelIdsCount": 101
   },
   "_TZ3000_itnrsufe": {
     "driverId": "button_wireless_2",
@@ -138548,13 +138387,10 @@
       "ZBMINIR",
       "ZBMINIR2",
       "ZBMINIR2-R2",
-      "ZBT-COLORLIGHT",
-      "ZG-301Z",
-      "ZG-302Z1",
-      "ZG-302Z2"
+      "ZBT-COLORLIGHT"
     ],
     "pid": "01MINIZB",
-    "modelIdsCount": 104
+    "modelIdsCount": 101
   },
   "_TZE204_muvkrjr5": {
     "driverId": "presence_sensor_radar",
@@ -138737,13 +138573,10 @@
       "ZBMINIR",
       "ZBMINIR2",
       "ZBMINIR2-R2",
-      "ZBT-COLORLIGHT",
-      "ZG-301Z",
-      "ZG-302Z1",
-      "ZG-302Z2"
+      "ZBT-COLORLIGHT"
     ],
     "pid": "01MINIZB",
-    "modelIdsCount": 104
+    "modelIdsCount": 101
   },
   "_TZ3000_u2bbagu4": {
     "driverId": "button_wireless_2",
@@ -138849,13 +138682,10 @@
       "ZBMINIR",
       "ZBMINIR2",
       "ZBMINIR2-R2",
-      "ZBT-COLORLIGHT",
-      "ZG-301Z",
-      "ZG-302Z1",
-      "ZG-302Z2"
+      "ZBT-COLORLIGHT"
     ],
     "pid": "01MINIZB",
-    "modelIdsCount": 104
+    "modelIdsCount": 101
   },
   "_tz3000_qzjcsmar": {
     "driverId": "button_wireless_3",
@@ -138984,13 +138814,10 @@
       "ZBMINIR",
       "ZBMINIR2",
       "ZBMINIR2-R2",
-      "ZBT-COLORLIGHT",
-      "ZG-301Z",
-      "ZG-302Z1",
-      "ZG-302Z2"
+      "ZBT-COLORLIGHT"
     ],
     "pid": "01MINIZB",
-    "modelIdsCount": 104
+    "modelIdsCount": 101
   },
   "_TZ3000_kdi2o9m6": {
     "driverId": "button_wireless_2",
@@ -139096,13 +138923,10 @@
       "ZBMINIR",
       "ZBMINIR2",
       "ZBMINIR2-R2",
-      "ZBT-COLORLIGHT",
-      "ZG-301Z",
-      "ZG-302Z1",
-      "ZG-302Z2"
+      "ZBT-COLORLIGHT"
     ],
     "pid": "01MINIZB",
-    "modelIdsCount": 104
+    "modelIdsCount": 101
   },
   "_TZ3000_dpo1ysak": {
     "driverId": "button_wireless_2",
@@ -139234,13 +139058,10 @@
       "ZBMINIR",
       "ZBMINIR2",
       "ZBMINIR2-R2",
-      "ZBT-COLORLIGHT",
-      "ZG-301Z",
-      "ZG-302Z1",
-      "ZG-302Z2"
+      "ZBT-COLORLIGHT"
     ],
     "pid": "01MINIZB",
-    "modelIdsCount": 104
+    "modelIdsCount": 101
   },
   "_TZ3000_hyfvrar3": {
     "driverId": "button_wireless_2",
@@ -139346,13 +139167,10 @@
       "ZBMINIR",
       "ZBMINIR2",
       "ZBMINIR2-R2",
-      "ZBT-COLORLIGHT",
-      "ZG-301Z",
-      "ZG-302Z1",
-      "ZG-302Z2"
+      "ZBT-COLORLIGHT"
     ],
     "pid": "01MINIZB",
-    "modelIdsCount": 104
+    "modelIdsCount": 101
   },
   "_TZ3000_cymsnfvf": {
     "driverId": "button_wireless_2",
@@ -139458,13 +139276,10 @@
       "ZBMINIR",
       "ZBMINIR2",
       "ZBMINIR2-R2",
-      "ZBT-COLORLIGHT",
-      "ZG-301Z",
-      "ZG-302Z1",
-      "ZG-302Z2"
+      "ZBT-COLORLIGHT"
     ],
     "pid": "01MINIZB",
-    "modelIdsCount": 104
+    "modelIdsCount": 101
   },
   "_TZ3000_upjrsxh1": {
     "driverId": "button_wireless_2",
@@ -139570,13 +139385,10 @@
       "ZBMINIR",
       "ZBMINIR2",
       "ZBMINIR2-R2",
-      "ZBT-COLORLIGHT",
-      "ZG-301Z",
-      "ZG-302Z1",
-      "ZG-302Z2"
+      "ZBT-COLORLIGHT"
     ],
     "pid": "01MINIZB",
-    "modelIdsCount": 104
+    "modelIdsCount": 101
   },
   "_TZ3000_qeuvnohg": {
     "driverId": "din_rail_switch",
@@ -139770,13 +139582,10 @@
       "ZBMINIR",
       "ZBMINIR2",
       "ZBMINIR2-R2",
-      "ZBT-COLORLIGHT",
-      "ZG-301Z",
-      "ZG-302Z1",
-      "ZG-302Z2"
+      "ZBT-COLORLIGHT"
     ],
     "pid": "01MINIZB",
-    "modelIdsCount": 104
+    "modelIdsCount": 101
   },
   "_TZ3000_MRAOVVMM": {
     "driverId": "smartplug",
@@ -139893,13 +139702,10 @@
       "ZBMINIR",
       "ZBMINIR2",
       "ZBMINIR2-R2",
-      "ZBT-COLORLIGHT",
-      "ZG-301Z",
-      "ZG-302Z1",
-      "ZG-302Z2"
+      "ZBT-COLORLIGHT"
     ],
     "pid": "01MINIZB",
-    "modelIdsCount": 104
+    "modelIdsCount": 101
   },
   "_TZ3210_232nryqh": {
     "driverId": "fingerbot",
@@ -140033,13 +139839,10 @@
       "ZBMINIR",
       "ZBMINIR2",
       "ZBMINIR2-R2",
-      "ZBT-COLORLIGHT",
-      "ZG-301Z",
-      "ZG-302Z1",
-      "ZG-302Z2"
+      "ZBT-COLORLIGHT"
     ],
     "pid": "01MINIZB",
-    "modelIdsCount": 104
+    "modelIdsCount": 101
   },
   "_TZ3000_nuenzetq": {
     "driverId": "button_wireless_2",
@@ -140145,13 +139948,10 @@
       "ZBMINIR",
       "ZBMINIR2",
       "ZBMINIR2-R2",
-      "ZBT-COLORLIGHT",
-      "ZG-301Z",
-      "ZG-302Z1",
-      "ZG-302Z2"
+      "ZBT-COLORLIGHT"
     ],
     "pid": "01MINIZB",
-    "modelIdsCount": 104
+    "modelIdsCount": 101
   },
   "_TZ3000_ruldv5dt": {
     "driverId": "switch_2gang",
@@ -140276,13 +140076,10 @@
       "ZBMINIR",
       "ZBMINIR2",
       "ZBMINIR2-R2",
-      "ZBT-COLORLIGHT",
-      "ZG-301Z",
-      "ZG-302Z1",
-      "ZG-302Z2"
+      "ZBT-COLORLIGHT"
     ],
     "pid": "01MINIZB",
-    "modelIdsCount": 104
+    "modelIdsCount": 101
   },
   "_TZ3000_lepzuhto": {
     "driverId": "button_wireless_2",
@@ -140388,13 +140185,10 @@
       "ZBMINIR",
       "ZBMINIR2",
       "ZBMINIR2-R2",
-      "ZBT-COLORLIGHT",
-      "ZG-301Z",
-      "ZG-302Z1",
-      "ZG-302Z2"
+      "ZBT-COLORLIGHT"
     ],
     "pid": "01MINIZB",
-    "modelIdsCount": 104
+    "modelIdsCount": 101
   },
   "_TZ3000_6l1pjfqe": {
     "driverId": "plug_energy_monitor",
@@ -140838,13 +140632,10 @@
       "ZBMINIR",
       "ZBMINIR2",
       "ZBMINIR2-R2",
-      "ZBT-COLORLIGHT",
-      "ZG-301Z",
-      "ZG-302Z1",
-      "ZG-302Z2"
+      "ZBT-COLORLIGHT"
     ],
     "pid": "01MINIZB",
-    "modelIdsCount": 104
+    "modelIdsCount": 101
   },
   "_TZ3000_3uimvkn6": {
     "driverId": "button_wireless_2",
@@ -140950,13 +140741,10 @@
       "ZBMINIR",
       "ZBMINIR2",
       "ZBMINIR2-R2",
-      "ZBT-COLORLIGHT",
-      "ZG-301Z",
-      "ZG-302Z1",
-      "ZG-302Z2"
+      "ZBT-COLORLIGHT"
     ],
     "pid": "01MINIZB",
-    "modelIdsCount": 104
+    "modelIdsCount": 101
   },
   "_TZ3000_pjcqjtev": {
     "driverId": "button_wireless_2",
@@ -141062,13 +140850,10 @@
       "ZBMINIR",
       "ZBMINIR2",
       "ZBMINIR2-R2",
-      "ZBT-COLORLIGHT",
-      "ZG-301Z",
-      "ZG-302Z1",
-      "ZG-302Z2"
+      "ZBT-COLORLIGHT"
     ],
     "pid": "01MINIZB",
-    "modelIdsCount": 104
+    "modelIdsCount": 101
   },
   "_TZ3000_3ias4w4o": {
     "driverId": "button_wireless_2",
@@ -141174,13 +140959,10 @@
       "ZBMINIR",
       "ZBMINIR2",
       "ZBMINIR2-R2",
-      "ZBT-COLORLIGHT",
-      "ZG-301Z",
-      "ZG-302Z1",
-      "ZG-302Z2"
+      "ZBT-COLORLIGHT"
     ],
     "pid": "01MINIZB",
-    "modelIdsCount": 104
+    "modelIdsCount": 101
   },
   "_TZ3000_4uf3d0ax": {
     "driverId": "socket_power_strip",
@@ -141296,13 +141078,10 @@
       "ZBMINIR",
       "ZBMINIR2",
       "ZBMINIR2-R2",
-      "ZBT-COLORLIGHT",
-      "ZG-301Z",
-      "ZG-302Z1",
-      "ZG-302Z2"
+      "ZBT-COLORLIGHT"
     ],
     "pid": "01MINIZB",
-    "modelIdsCount": 104
+    "modelIdsCount": 101
   },
   "_TZ3000_o005nuxx": {
     "driverId": "button_wireless_2",
@@ -141408,13 +141187,10 @@
       "ZBMINIR",
       "ZBMINIR2",
       "ZBMINIR2-R2",
-      "ZBT-COLORLIGHT",
-      "ZG-301Z",
-      "ZG-302Z1",
-      "ZG-302Z2"
+      "ZBT-COLORLIGHT"
     ],
     "pid": "01MINIZB",
-    "modelIdsCount": 104
+    "modelIdsCount": 101
   },
   "_TZ3000_cfnprab5": {
     "driverId": "socket_power_strip_four_three",
@@ -141529,13 +141305,10 @@
       "ZBMINIR",
       "ZBMINIR2",
       "ZBMINIR2-R2",
-      "ZBT-COLORLIGHT",
-      "ZG-301Z",
-      "ZG-302Z1",
-      "ZG-302Z2"
+      "ZBT-COLORLIGHT"
     ],
     "pid": "01MINIZB",
-    "modelIdsCount": 104
+    "modelIdsCount": 101
   },
   "_TZ3000_pmvbt5hh": {
     "driverId": "button_wireless_2",
@@ -141641,13 +141414,10 @@
       "ZBMINIR",
       "ZBMINIR2",
       "ZBMINIR2-R2",
-      "ZBT-COLORLIGHT",
-      "ZG-301Z",
-      "ZG-302Z1",
-      "ZG-302Z2"
+      "ZBT-COLORLIGHT"
     ],
     "pid": "01MINIZB",
-    "modelIdsCount": 104
+    "modelIdsCount": 101
   },
   "_TZ3000_sjpl9eg3": {
     "driverId": "button_wireless_2",
@@ -141753,13 +141523,10 @@
       "ZBMINIR",
       "ZBMINIR2",
       "ZBMINIR2-R2",
-      "ZBT-COLORLIGHT",
-      "ZG-301Z",
-      "ZG-302Z1",
-      "ZG-302Z2"
+      "ZBT-COLORLIGHT"
     ],
     "pid": "01MINIZB",
-    "modelIdsCount": 104
+    "modelIdsCount": 101
   },
   "_TZ3000_m9af2l6g": {
     "driverId": "button_wireless_2",
@@ -141865,13 +141632,10 @@
       "ZBMINIR",
       "ZBMINIR2",
       "ZBMINIR2-R2",
-      "ZBT-COLORLIGHT",
-      "ZG-301Z",
-      "ZG-302Z1",
-      "ZG-302Z2"
+      "ZBT-COLORLIGHT"
     ],
     "pid": "01MINIZB",
-    "modelIdsCount": 104
+    "modelIdsCount": 101
   },
   "_TZ3000_ji4araar": {
     "driverId": "switch_1gang",
@@ -142067,13 +141831,10 @@
       "ZBMINIR",
       "ZBMINIR2",
       "ZBMINIR2-R2",
-      "ZBT-COLORLIGHT",
-      "ZG-301Z",
-      "ZG-302Z1",
-      "ZG-302Z2"
+      "ZBT-COLORLIGHT"
     ],
     "pid": "01MINIZB",
-    "modelIdsCount": 104
+    "modelIdsCount": 101
   },
   "_TZ3000_tqlv4ug4": {
     "driverId": "switch_1gang",
@@ -142224,13 +141985,10 @@
       "ZBMINIR",
       "ZBMINIR2",
       "ZBMINIR2-R2",
-      "ZBT-COLORLIGHT",
-      "ZG-301Z",
-      "ZG-302Z1",
-      "ZG-302Z2"
+      "ZBT-COLORLIGHT"
     ],
     "pid": "01MINIZB",
-    "modelIdsCount": 104
+    "modelIdsCount": 101
   },
   "_TZ3000_mx3vgyea": {
     "driverId": "button_wireless_2",
@@ -142336,13 +142094,10 @@
       "ZBMINIR",
       "ZBMINIR2",
       "ZBMINIR2-R2",
-      "ZBT-COLORLIGHT",
-      "ZG-301Z",
-      "ZG-302Z1",
-      "ZG-302Z2"
+      "ZBT-COLORLIGHT"
     ],
     "pid": "01MINIZB",
-    "modelIdsCount": 104
+    "modelIdsCount": 101
   },
   "_TZ3000_46t1rvdu": {
     "driverId": "switch_1gang",
@@ -142493,13 +142248,10 @@
       "ZBMINIR",
       "ZBMINIR2",
       "ZBMINIR2-R2",
-      "ZBT-COLORLIGHT",
-      "ZG-301Z",
-      "ZG-302Z1",
-      "ZG-302Z2"
+      "ZBT-COLORLIGHT"
     ],
     "pid": "01MINIZB",
-    "modelIdsCount": 104
+    "modelIdsCount": 101
   },
   "_TZ3000_6axxqqi2": {
     "driverId": "button_wireless_2",
@@ -142605,13 +142357,10 @@
       "ZBMINIR",
       "ZBMINIR2",
       "ZBMINIR2-R2",
-      "ZBT-COLORLIGHT",
-      "ZG-301Z",
-      "ZG-302Z1",
-      "ZG-302Z2"
+      "ZBT-COLORLIGHT"
     ],
     "pid": "01MINIZB",
-    "modelIdsCount": 104
+    "modelIdsCount": 101
   },
   "_TZ3000_prits6g4": {
     "driverId": "switch_1gang",
@@ -142762,13 +142511,10 @@
       "ZBMINIR",
       "ZBMINIR2",
       "ZBMINIR2-R2",
-      "ZBT-COLORLIGHT",
-      "ZG-301Z",
-      "ZG-302Z1",
-      "ZG-302Z2"
+      "ZBT-COLORLIGHT"
     ],
     "pid": "01MINIZB",
-    "modelIdsCount": 104
+    "modelIdsCount": 101
   },
   "_TZ3000_pmz6mjyu": {
     "driverId": "button_wireless_2",
@@ -142874,13 +142620,10 @@
       "ZBMINIR",
       "ZBMINIR2",
       "ZBMINIR2-R2",
-      "ZBT-COLORLIGHT",
-      "ZG-301Z",
-      "ZG-302Z1",
-      "ZG-302Z2"
+      "ZBT-COLORLIGHT"
     ],
     "pid": "01MINIZB",
-    "modelIdsCount": 104
+    "modelIdsCount": 101
   },
   "_TZ3000_fisb3ajo": {
     "driverId": "switch_2gang",
@@ -143006,13 +142749,10 @@
       "ZBMINIR",
       "ZBMINIR2",
       "ZBMINIR2-R2",
-      "ZBT-COLORLIGHT",
-      "ZG-301Z",
-      "ZG-302Z1",
-      "ZG-302Z2"
+      "ZBT-COLORLIGHT"
     ],
     "pid": "01MINIZB",
-    "modelIdsCount": 104
+    "modelIdsCount": 101
   },
   "_TZ3000_7ed9cqgi": {
     "driverId": "button_wireless_2",
@@ -143118,13 +142858,10 @@
       "ZBMINIR",
       "ZBMINIR2",
       "ZBMINIR2-R2",
-      "ZBT-COLORLIGHT",
-      "ZG-301Z",
-      "ZG-302Z1",
-      "ZG-302Z2"
+      "ZBT-COLORLIGHT"
     ],
     "pid": "01MINIZB",
-    "modelIdsCount": 104
+    "modelIdsCount": 101
   },
   "_TZ3000_llfaquvp": {
     "driverId": "button_wireless_2",
@@ -143230,13 +142967,10 @@
       "ZBMINIR",
       "ZBMINIR2",
       "ZBMINIR2-R2",
-      "ZBT-COLORLIGHT",
-      "ZG-301Z",
-      "ZG-302Z1",
-      "ZG-302Z2"
+      "ZBT-COLORLIGHT"
     ],
     "pid": "01MINIZB",
-    "modelIdsCount": 104
+    "modelIdsCount": 101
   },
   "_TZ3000_qaa59zqd": {
     "driverId": "button_wireless_2",
@@ -143342,13 +143076,10 @@
       "ZBMINIR",
       "ZBMINIR2",
       "ZBMINIR2-R2",
-      "ZBT-COLORLIGHT",
-      "ZG-301Z",
-      "ZG-302Z1",
-      "ZG-302Z2"
+      "ZBT-COLORLIGHT"
     ],
     "pid": "01MINIZB",
-    "modelIdsCount": 104
+    "modelIdsCount": 101
   },
   "_TZ3000_qcgw8qfa": {
     "driverId": "button_wireless_2",
@@ -143454,13 +143185,10 @@
       "ZBMINIR",
       "ZBMINIR2",
       "ZBMINIR2-R2",
-      "ZBT-COLORLIGHT",
-      "ZG-301Z",
-      "ZG-302Z1",
-      "ZG-302Z2"
+      "ZBT-COLORLIGHT"
     ],
     "pid": "01MINIZB",
-    "modelIdsCount": 104
+    "modelIdsCount": 101
   },
   "_TZ3000_jcfje0kb": {
     "driverId": "button_wireless_2",
@@ -143566,13 +143294,10 @@
       "ZBMINIR",
       "ZBMINIR2",
       "ZBMINIR2-R2",
-      "ZBT-COLORLIGHT",
-      "ZG-301Z",
-      "ZG-302Z1",
-      "ZG-302Z2"
+      "ZBT-COLORLIGHT"
     ],
     "pid": "01MINIZB",
-    "modelIdsCount": 104
+    "modelIdsCount": 101
   },
   "_TZ3000_ruxexjfz": {
     "driverId": "switch_2gang",
@@ -143589,6 +143314,7 @@
     "modelIds": [
       "01MINIZB",
       "BASICZBR3",
+      "HOBEIAN",
       "JZ-ZB-004",
       "S26R2ZB",
       "S31ZB",
@@ -143631,12 +143357,10 @@
       "ZBMINIR",
       "ZBMINIR2",
       "ZBMINIR2-R2",
-      "ZG-301Z",
-      "ZG-302Z1",
       "ZG-302Z3"
     ],
     "pid": "01MINIZB",
-    "modelIdsCount": 47
+    "modelIdsCount": 46
   },
   "_TZ3000_lvhy15ix": {
     "driverId": "switch_3gang",
@@ -143644,6 +143368,7 @@
     "modelIds": [
       "01MINIZB",
       "BASICZBR3",
+      "HOBEIAN",
       "JZ-ZB-004",
       "S26R2ZB",
       "S31ZB",
@@ -143686,12 +143411,10 @@
       "ZBMINIR",
       "ZBMINIR2",
       "ZBMINIR2-R2",
-      "ZG-301Z",
-      "ZG-302Z1",
       "ZG-302Z3"
     ],
     "pid": "01MINIZB",
-    "modelIdsCount": 47
+    "modelIdsCount": 46
   },
   "_TZ3000_4o16jdca": {
     "driverId": "switch_3gang",
@@ -143699,6 +143422,7 @@
     "modelIds": [
       "01MINIZB",
       "BASICZBR3",
+      "HOBEIAN",
       "JZ-ZB-004",
       "S26R2ZB",
       "S31ZB",
@@ -143741,12 +143465,10 @@
       "ZBMINIR",
       "ZBMINIR2",
       "ZBMINIR2-R2",
-      "ZG-301Z",
-      "ZG-302Z1",
       "ZG-302Z3"
     ],
     "pid": "01MINIZB",
-    "modelIdsCount": 47
+    "modelIdsCount": 46
   },
   "_TZ3000_o4cjetlm": {
     "driverId": "valvecontroller",
@@ -143896,13 +143618,10 @@
       "ZBMINIR",
       "ZBMINIR2",
       "ZBMINIR2-R2",
-      "ZBT-COLORLIGHT",
-      "ZG-301Z",
-      "ZG-302Z1",
-      "ZG-302Z2"
+      "ZBT-COLORLIGHT"
     ],
     "pid": "01MINIZB",
-    "modelIdsCount": 104
+    "modelIdsCount": 101
   },
   "_TZ3000_5ucujjts": {
     "driverId": "button_wireless_2",
@@ -144008,13 +143727,10 @@
       "ZBMINIR",
       "ZBMINIR2",
       "ZBMINIR2-R2",
-      "ZBT-COLORLIGHT",
-      "ZG-301Z",
-      "ZG-302Z1",
-      "ZG-302Z2"
+      "ZBT-COLORLIGHT"
     ],
     "pid": "01MINIZB",
-    "modelIdsCount": 104
+    "modelIdsCount": 101
   },
   "_TZ3000_owgcnkrh": {
     "driverId": "button_wireless_2",
@@ -144120,13 +143836,10 @@
       "ZBMINIR",
       "ZBMINIR2",
       "ZBMINIR2-R2",
-      "ZBT-COLORLIGHT",
-      "ZG-301Z",
-      "ZG-302Z1",
-      "ZG-302Z2"
+      "ZBT-COLORLIGHT"
     ],
     "pid": "01MINIZB",
-    "modelIdsCount": 104
+    "modelIdsCount": 101
   },
   "_TZ3000_oikiyf3b": {
     "driverId": "button_wireless_2",
@@ -144232,13 +143945,10 @@
       "ZBMINIR",
       "ZBMINIR2",
       "ZBMINIR2-R2",
-      "ZBT-COLORLIGHT",
-      "ZG-301Z",
-      "ZG-302Z1",
-      "ZG-302Z2"
+      "ZBT-COLORLIGHT"
     ],
     "pid": "01MINIZB",
-    "modelIdsCount": 104
+    "modelIdsCount": 101
   },
   "_TZ3000_dfgbtub0": {
     "driverId": "button_wireless_4",
@@ -144353,13 +144063,10 @@
       "ZBMINIR",
       "ZBMINIR2",
       "ZBMINIR2-R2",
-      "ZBT-COLORLIGHT",
-      "ZG-301Z",
-      "ZG-302Z1",
-      "ZG-302Z2"
+      "ZBT-COLORLIGHT"
     ],
     "pid": "01MINIZB",
-    "modelIdsCount": 104
+    "modelIdsCount": 101
   },
   "_TZ3400_keyjhapk": {
     "driverId": "button_wireless_2",
@@ -144465,13 +144172,10 @@
       "ZBMINIR",
       "ZBMINIR2",
       "ZBMINIR2-R2",
-      "ZBT-COLORLIGHT",
-      "ZG-301Z",
-      "ZG-302Z1",
-      "ZG-302Z2"
+      "ZBT-COLORLIGHT"
     ],
     "pid": "01MINIZB",
-    "modelIdsCount": 104
+    "modelIdsCount": 101
   },
   "_TZ3000_fkvaniuu": {
     "driverId": "button_wireless_2",
@@ -144577,13 +144281,10 @@
       "ZBMINIR",
       "ZBMINIR2",
       "ZBMINIR2-R2",
-      "ZBT-COLORLIGHT",
-      "ZG-301Z",
-      "ZG-302Z1",
-      "ZG-302Z2"
+      "ZBT-COLORLIGHT"
     ],
     "pid": "01MINIZB",
-    "modelIdsCount": 104
+    "modelIdsCount": 101
   },
   "_TZ3000_a7ouggvs": {
     "driverId": "button_wireless_3",
@@ -144698,13 +144399,10 @@
       "ZBMINIR",
       "ZBMINIR2",
       "ZBMINIR2-R2",
-      "ZBT-COLORLIGHT",
-      "ZG-301Z",
-      "ZG-302Z1",
-      "ZG-302Z2"
+      "ZBT-COLORLIGHT"
     ],
     "pid": "01MINIZB",
-    "modelIdsCount": 104
+    "modelIdsCount": 101
   },
   "_TZ3000_gbm10jnj": {
     "driverId": null,
@@ -144822,13 +144520,10 @@
       "ZBMINIR",
       "ZBMINIR2",
       "ZBMINIR2-R2",
-      "ZBT-COLORLIGHT",
-      "ZG-301Z",
-      "ZG-302Z1",
-      "ZG-302Z2"
+      "ZBT-COLORLIGHT"
     ],
     "pid": "01MINIZB",
-    "modelIdsCount": 104
+    "modelIdsCount": 101
   },
   "_TZ3000_sj7jbgks": {
     "driverId": "button_wireless_3",
@@ -144946,13 +144641,10 @@
       "ZBMINIR",
       "ZBMINIR2",
       "ZBMINIR2-R2",
-      "ZBT-COLORLIGHT",
-      "ZG-301Z",
-      "ZG-302Z1",
-      "ZG-302Z2"
+      "ZBT-COLORLIGHT"
     ],
     "pid": "01MINIZB",
-    "modelIdsCount": 104
+    "modelIdsCount": 101
   },
   "_TZ3000_4ux0ondb": {
     "driverId": "button_wireless_2",
@@ -145058,13 +144750,10 @@
       "ZBMINIR",
       "ZBMINIR2",
       "ZBMINIR2-R2",
-      "ZBT-COLORLIGHT",
-      "ZG-301Z",
-      "ZG-302Z1",
-      "ZG-302Z2"
+      "ZBT-COLORLIGHT"
     ],
     "pid": "01MINIZB",
-    "modelIdsCount": 104
+    "modelIdsCount": 101
   },
   "_TZ3000_y4ona9me": {
     "driverId": "button_wireless_2",
@@ -145170,13 +144859,10 @@
       "ZBMINIR",
       "ZBMINIR2",
       "ZBMINIR2-R2",
-      "ZBT-COLORLIGHT",
-      "ZG-301Z",
-      "ZG-302Z1",
-      "ZG-302Z2"
+      "ZBT-COLORLIGHT"
     ],
     "pid": "01MINIZB",
-    "modelIdsCount": 104
+    "modelIdsCount": 101
   },
   "_TZ3000_5ct6e7ye": {
     "driverId": "plug_energy_monitor",
@@ -145328,13 +145014,10 @@
       "ZBMINIR",
       "ZBMINIR2",
       "ZBMINIR2-R2",
-      "ZBT-COLORLIGHT",
-      "ZG-301Z",
-      "ZG-302Z1",
-      "ZG-302Z2"
+      "ZBT-COLORLIGHT"
     ],
     "pid": "01MINIZB",
-    "modelIdsCount": 104
+    "modelIdsCount": 101
   },
   "_TZ3000_f8tmviy0": {
     "driverId": "button_wireless_2",
@@ -145440,13 +145123,10 @@
       "ZBMINIR",
       "ZBMINIR2",
       "ZBMINIR2-R2",
-      "ZBT-COLORLIGHT",
-      "ZG-301Z",
-      "ZG-302Z1",
-      "ZG-302Z2"
+      "ZBT-COLORLIGHT"
     ],
     "pid": "01MINIZB",
-    "modelIdsCount": 104
+    "modelIdsCount": 101
   },
   "_TZ3000_gidy6sjs": {
     "driverId": "button_wireless_2",
@@ -145552,13 +145232,10 @@
       "ZBMINIR",
       "ZBMINIR2",
       "ZBMINIR2-R2",
-      "ZBT-COLORLIGHT",
-      "ZG-301Z",
-      "ZG-302Z1",
-      "ZG-302Z2"
+      "ZBT-COLORLIGHT"
     ],
     "pid": "01MINIZB",
-    "modelIdsCount": 104
+    "modelIdsCount": 101
   },
   "_TZ3000_hktqahrq": {
     "driverId": "button_wireless_2",
@@ -145664,13 +145341,10 @@
       "ZBMINIR",
       "ZBMINIR2",
       "ZBMINIR2-R2",
-      "ZBT-COLORLIGHT",
-      "ZG-301Z",
-      "ZG-302Z1",
-      "ZG-302Z2"
+      "ZBT-COLORLIGHT"
     ],
     "pid": "01MINIZB",
-    "modelIdsCount": 104
+    "modelIdsCount": 101
   },
   "_TZ3000_yl3zuyaw": {
     "driverId": "button_wireless_2",
@@ -145776,13 +145450,10 @@
       "ZBMINIR",
       "ZBMINIR2",
       "ZBMINIR2-R2",
-      "ZBT-COLORLIGHT",
-      "ZG-301Z",
-      "ZG-302Z1",
-      "ZG-302Z2"
+      "ZBT-COLORLIGHT"
     ],
     "pid": "01MINIZB",
-    "modelIdsCount": 104
+    "modelIdsCount": 101
   },
   "_TZ3000_3wkqni6o": {
     "driverId": "button_wireless_2",
@@ -145888,13 +145559,10 @@
       "ZBMINIR",
       "ZBMINIR2",
       "ZBMINIR2-R2",
-      "ZBT-COLORLIGHT",
-      "ZG-301Z",
-      "ZG-302Z1",
-      "ZG-302Z2"
+      "ZBT-COLORLIGHT"
     ],
     "pid": "01MINIZB",
-    "modelIdsCount": 104
+    "modelIdsCount": 101
   },
   "_TZ3000_oex7egmt": {
     "driverId": "button_wireless_2",
@@ -146000,13 +145668,10 @@
       "ZBMINIR",
       "ZBMINIR2",
       "ZBMINIR2-R2",
-      "ZBT-COLORLIGHT",
-      "ZG-301Z",
-      "ZG-302Z1",
-      "ZG-302Z2"
+      "ZBT-COLORLIGHT"
     ],
     "pid": "01MINIZB",
-    "modelIdsCount": 104
+    "modelIdsCount": 101
   },
   "_TZ3000_oaq83gqc": {
     "driverId": "button_wireless_2",
@@ -146112,13 +145777,10 @@
       "ZBMINIR",
       "ZBMINIR2",
       "ZBMINIR2-R2",
-      "ZBT-COLORLIGHT",
-      "ZG-301Z",
-      "ZG-302Z1",
-      "ZG-302Z2"
+      "ZBT-COLORLIGHT"
     ],
     "pid": "01MINIZB",
-    "modelIdsCount": 104
+    "modelIdsCount": 101
   },
   "_TZ3000_hhiodade": {
     "driverId": "button_wireless_2",
@@ -146224,13 +145886,10 @@
       "ZBMINIR",
       "ZBMINIR2",
       "ZBMINIR2-R2",
-      "ZBT-COLORLIGHT",
-      "ZG-301Z",
-      "ZG-302Z1",
-      "ZG-302Z2"
+      "ZBT-COLORLIGHT"
     ],
     "pid": "01MINIZB",
-    "modelIdsCount": 104
+    "modelIdsCount": 101
   },
   "_TZ3000_6eyydfyg": {
     "driverId": "button_wireless_2",
@@ -146336,13 +145995,10 @@
       "ZBMINIR",
       "ZBMINIR2",
       "ZBMINIR2-R2",
-      "ZBT-COLORLIGHT",
-      "ZG-301Z",
-      "ZG-302Z1",
-      "ZG-302Z2"
+      "ZBT-COLORLIGHT"
     ],
     "pid": "01MINIZB",
-    "modelIdsCount": 104
+    "modelIdsCount": 101
   },
   "_TZ3000_7jx5ypra": {
     "driverId": "button_wireless_2",
@@ -146448,13 +146104,10 @@
       "ZBMINIR",
       "ZBMINIR2",
       "ZBMINIR2-R2",
-      "ZBT-COLORLIGHT",
-      "ZG-301Z",
-      "ZG-302Z1",
-      "ZG-302Z2"
+      "ZBT-COLORLIGHT"
     ],
     "pid": "01MINIZB",
-    "modelIdsCount": 104
+    "modelIdsCount": 101
   },
   "_TZ3000_3u4hripk": {
     "driverId": "button_wireless_2",
@@ -146560,13 +146213,10 @@
       "ZBMINIR",
       "ZBMINIR2",
       "ZBMINIR2-R2",
-      "ZBT-COLORLIGHT",
-      "ZG-301Z",
-      "ZG-302Z1",
-      "ZG-302Z2"
+      "ZBT-COLORLIGHT"
     ],
     "pid": "01MINIZB",
-    "modelIdsCount": 104
+    "modelIdsCount": 101
   },
   "_TZ3000_fvh3pjaz": {
     "driverId": "button_wireless_2",
@@ -146672,13 +146322,10 @@
       "ZBMINIR",
       "ZBMINIR2",
       "ZBMINIR2-R2",
-      "ZBT-COLORLIGHT",
-      "ZG-301Z",
-      "ZG-302Z1",
-      "ZG-302Z2"
+      "ZBT-COLORLIGHT"
     ],
     "pid": "01MINIZB",
-    "modelIdsCount": 104
+    "modelIdsCount": 101
   },
   "_TZ3000_svoqrno4": {
     "driverId": "button_wireless_2",
@@ -146784,13 +146431,10 @@
       "ZBMINIR",
       "ZBMINIR2",
       "ZBMINIR2-R2",
-      "ZBT-COLORLIGHT",
-      "ZG-301Z",
-      "ZG-302Z1",
-      "ZG-302Z2"
+      "ZBT-COLORLIGHT"
     ],
     "pid": "01MINIZB",
-    "modelIdsCount": 104
+    "modelIdsCount": 101
   },
   "_TZ3000_nta0gb8h": {
     "driverId": "button_wireless_2",
@@ -146896,13 +146540,10 @@
       "ZBMINIR",
       "ZBMINIR2",
       "ZBMINIR2-R2",
-      "ZBT-COLORLIGHT",
-      "ZG-301Z",
-      "ZG-302Z1",
-      "ZG-302Z2"
+      "ZBT-COLORLIGHT"
     ],
     "pid": "01MINIZB",
-    "modelIdsCount": 104
+    "modelIdsCount": 101
   },
   "_TZ3000_lupfd8zu": {
     "driverId": "button_wireless_2",
@@ -147008,13 +146649,10 @@
       "ZBMINIR",
       "ZBMINIR2",
       "ZBMINIR2-R2",
-      "ZBT-COLORLIGHT",
-      "ZG-301Z",
-      "ZG-302Z1",
-      "ZG-302Z2"
+      "ZBT-COLORLIGHT"
     ],
     "pid": "01MINIZB",
-    "modelIdsCount": 104
+    "modelIdsCount": 101
   },
   "_TZ3000_yhagrqmd": {
     "driverId": "button_wireless_2",
@@ -147120,13 +146758,10 @@
       "ZBMINIR",
       "ZBMINIR2",
       "ZBMINIR2-R2",
-      "ZBT-COLORLIGHT",
-      "ZG-301Z",
-      "ZG-302Z1",
-      "ZG-302Z2"
+      "ZBT-COLORLIGHT"
     ],
     "pid": "01MINIZB",
-    "modelIdsCount": 104
+    "modelIdsCount": 101
   },
   "_TZ3000_5vujyute": {
     "driverId": "button_wireless_2",
@@ -147232,13 +146867,10 @@
       "ZBMINIR",
       "ZBMINIR2",
       "ZBMINIR2-R2",
-      "ZBT-COLORLIGHT",
-      "ZG-301Z",
-      "ZG-302Z1",
-      "ZG-302Z2"
+      "ZBT-COLORLIGHT"
     ],
     "pid": "01MINIZB",
-    "modelIdsCount": 104
+    "modelIdsCount": 101
   },
   "_TZ3000_56bdyj21": {
     "driverId": "button_wireless_2",
@@ -147344,13 +146976,10 @@
       "ZBMINIR",
       "ZBMINIR2",
       "ZBMINIR2-R2",
-      "ZBT-COLORLIGHT",
-      "ZG-301Z",
-      "ZG-302Z1",
-      "ZG-302Z2"
+      "ZBT-COLORLIGHT"
     ],
     "pid": "01MINIZB",
-    "modelIdsCount": 104
+    "modelIdsCount": 101
   },
   "_TZ3000_atp7xmd9": {
     "driverId": "button_wireless_2",
@@ -147456,13 +147085,10 @@
       "ZBMINIR",
       "ZBMINIR2",
       "ZBMINIR2-R2",
-      "ZBT-COLORLIGHT",
-      "ZG-301Z",
-      "ZG-302Z1",
-      "ZG-302Z2"
+      "ZBT-COLORLIGHT"
     ],
     "pid": "01MINIZB",
-    "modelIdsCount": 104
+    "modelIdsCount": 101
   },
   "_TZ3000_mrqea2uu": {
     "driverId": "button_wireless_2",
@@ -147568,13 +147194,10 @@
       "ZBMINIR",
       "ZBMINIR2",
       "ZBMINIR2-R2",
-      "ZBT-COLORLIGHT",
-      "ZG-301Z",
-      "ZG-302Z1",
-      "ZG-302Z2"
+      "ZBT-COLORLIGHT"
     ],
     "pid": "01MINIZB",
-    "modelIdsCount": 104
+    "modelIdsCount": 101
   },
   "_TZ3000_mklgayek": {
     "driverId": "button_wireless_2",
@@ -147680,13 +147303,10 @@
       "ZBMINIR",
       "ZBMINIR2",
       "ZBMINIR2-R2",
-      "ZBT-COLORLIGHT",
-      "ZG-301Z",
-      "ZG-302Z1",
-      "ZG-302Z2"
+      "ZBT-COLORLIGHT"
     ],
     "pid": "01MINIZB",
-    "modelIdsCount": 104
+    "modelIdsCount": 101
   },
   "_TZ3000_p8alo7qa": {
     "driverId": "button_wireless_2",
@@ -147792,13 +147412,10 @@
       "ZBMINIR",
       "ZBMINIR2",
       "ZBMINIR2-R2",
-      "ZBT-COLORLIGHT",
-      "ZG-301Z",
-      "ZG-302Z1",
-      "ZG-302Z2"
+      "ZBT-COLORLIGHT"
     ],
     "pid": "01MINIZB",
-    "modelIdsCount": 104
+    "modelIdsCount": 101
   },
   "_TZ3000_qn8qvk9y": {
     "driverId": "button_wireless_2",
@@ -147904,13 +147521,10 @@
       "ZBMINIR",
       "ZBMINIR2",
       "ZBMINIR2-R2",
-      "ZBT-COLORLIGHT",
-      "ZG-301Z",
-      "ZG-302Z1",
-      "ZG-302Z2"
+      "ZBT-COLORLIGHT"
     ],
     "pid": "01MINIZB",
-    "modelIdsCount": 104
+    "modelIdsCount": 101
   },
   "_TZ3000_wyhuocal": {
     "driverId": "button_wireless_2",
@@ -148016,13 +147630,10 @@
       "ZBMINIR",
       "ZBMINIR2",
       "ZBMINIR2-R2",
-      "ZBT-COLORLIGHT",
-      "ZG-301Z",
-      "ZG-302Z1",
-      "ZG-302Z2"
+      "ZBT-COLORLIGHT"
     ],
     "pid": "01MINIZB",
-    "modelIdsCount": 104
+    "modelIdsCount": 101
   },
   "_TZ3000_cdamjqm9": {
     "driverId": "button_wireless_2",
@@ -148128,13 +147739,10 @@
       "ZBMINIR",
       "ZBMINIR2",
       "ZBMINIR2-R2",
-      "ZBT-COLORLIGHT",
-      "ZG-301Z",
-      "ZG-302Z1",
-      "ZG-302Z2"
+      "ZBT-COLORLIGHT"
     ],
     "pid": "01MINIZB",
-    "modelIdsCount": 104
+    "modelIdsCount": 101
   },
   "_TZ3000_hlwm8e96": {
     "driverId": "button_wireless_2",
@@ -148240,13 +147848,10 @@
       "ZBMINIR",
       "ZBMINIR2",
       "ZBMINIR2-R2",
-      "ZBT-COLORLIGHT",
-      "ZG-301Z",
-      "ZG-302Z1",
-      "ZG-302Z2"
+      "ZBT-COLORLIGHT"
     ],
     "pid": "01MINIZB",
-    "modelIdsCount": 104
+    "modelIdsCount": 101
   },
   "_TZ3000_thhxrept": {
     "driverId": "button_wireless_2",
@@ -148352,13 +147957,10 @@
       "ZBMINIR",
       "ZBMINIR2",
       "ZBMINIR2-R2",
-      "ZBT-COLORLIGHT",
-      "ZG-301Z",
-      "ZG-302Z1",
-      "ZG-302Z2"
+      "ZBT-COLORLIGHT"
     ],
     "pid": "01MINIZB",
-    "modelIdsCount": 104
+    "modelIdsCount": 101
   },
   "_TZ3000_2dlwlvex": {
     "driverId": "button_wireless_2",
@@ -148464,13 +148066,10 @@
       "ZBMINIR",
       "ZBMINIR2",
       "ZBMINIR2-R2",
-      "ZBT-COLORLIGHT",
-      "ZG-301Z",
-      "ZG-302Z1",
-      "ZG-302Z2"
+      "ZBT-COLORLIGHT"
     ],
     "pid": "01MINIZB",
-    "modelIdsCount": 104
+    "modelIdsCount": 101
   },
   "_TZ3000_qcdqw8nf": {
     "driverId": "button_wireless_2",
@@ -148576,13 +148175,10 @@
       "ZBMINIR",
       "ZBMINIR2",
       "ZBMINIR2-R2",
-      "ZBT-COLORLIGHT",
-      "ZG-301Z",
-      "ZG-302Z1",
-      "ZG-302Z2"
+      "ZBT-COLORLIGHT"
     ],
     "pid": "01MINIZB",
-    "modelIdsCount": 104
+    "modelIdsCount": 101
   },
   "_TZ3000_vvlivusi": {
     "driverId": "button_wireless_2",
@@ -148688,13 +148284,10 @@
       "ZBMINIR",
       "ZBMINIR2",
       "ZBMINIR2-R2",
-      "ZBT-COLORLIGHT",
-      "ZG-301Z",
-      "ZG-302Z1",
-      "ZG-302Z2"
+      "ZBT-COLORLIGHT"
     ],
     "pid": "01MINIZB",
-    "modelIdsCount": 104
+    "modelIdsCount": 101
   },
   "_TZ3000_5e5ptb24": {
     "driverId": "button_wireless_2",
@@ -148800,13 +148393,10 @@
       "ZBMINIR",
       "ZBMINIR2",
       "ZBMINIR2-R2",
-      "ZBT-COLORLIGHT",
-      "ZG-301Z",
-      "ZG-302Z1",
-      "ZG-302Z2"
+      "ZBT-COLORLIGHT"
     ],
     "pid": "01MINIZB",
-    "modelIdsCount": 104
+    "modelIdsCount": 101
   },
   "_TZ3000_lrgccsxm": {
     "driverId": "button_wireless_2",
@@ -148912,13 +148502,10 @@
       "ZBMINIR",
       "ZBMINIR2",
       "ZBMINIR2-R2",
-      "ZBT-COLORLIGHT",
-      "ZG-301Z",
-      "ZG-302Z1",
-      "ZG-302Z2"
+      "ZBT-COLORLIGHT"
     ],
     "pid": "01MINIZB",
-    "modelIdsCount": 104
+    "modelIdsCount": 101
   },
   "_TZ3000_w05exif3": {
     "driverId": "button_wireless_2",
@@ -149024,13 +148611,10 @@
       "ZBMINIR",
       "ZBMINIR2",
       "ZBMINIR2-R2",
-      "ZBT-COLORLIGHT",
-      "ZG-301Z",
-      "ZG-302Z1",
-      "ZG-302Z2"
+      "ZBT-COLORLIGHT"
     ],
     "pid": "01MINIZB",
-    "modelIdsCount": 104
+    "modelIdsCount": 101
   },
   "_TZ3000_qewo8dlz": {
     "driverId": "button_wireless_2",
@@ -149136,13 +148720,10 @@
       "ZBMINIR",
       "ZBMINIR2",
       "ZBMINIR2-R2",
-      "ZBT-COLORLIGHT",
-      "ZG-301Z",
-      "ZG-302Z1",
-      "ZG-302Z2"
+      "ZBT-COLORLIGHT"
     ],
     "pid": "01MINIZB",
-    "modelIdsCount": 104
+    "modelIdsCount": 101
   },
   "_TZ3000_aezbqpcu": {
     "driverId": "button_wireless_2",
@@ -149248,13 +148829,10 @@
       "ZBMINIR",
       "ZBMINIR2",
       "ZBMINIR2-R2",
-      "ZBT-COLORLIGHT",
-      "ZG-301Z",
-      "ZG-302Z1",
-      "ZG-302Z2"
+      "ZBT-COLORLIGHT"
     ],
     "pid": "01MINIZB",
-    "modelIdsCount": 104
+    "modelIdsCount": 101
   },
   "_TZ3000_okoz9tjs": {
     "driverId": "button_wireless_2",
@@ -149360,13 +148938,10 @@
       "ZBMINIR",
       "ZBMINIR2",
       "ZBMINIR2-R2",
-      "ZBT-COLORLIGHT",
-      "ZG-301Z",
-      "ZG-302Z1",
-      "ZG-302Z2"
+      "ZBT-COLORLIGHT"
     ],
     "pid": "01MINIZB",
-    "modelIdsCount": 104
+    "modelIdsCount": 101
   },
   "_TZE200_eatmkx5j": {
     "driverId": "curtain_motor",
@@ -149528,13 +149103,10 @@
       "ZBMINIR",
       "ZBMINIR2",
       "ZBMINIR2-R2",
-      "ZBT-COLORLIGHT",
-      "ZG-301Z",
-      "ZG-302Z1",
-      "ZG-302Z2"
+      "ZBT-COLORLIGHT"
     ],
     "pid": "01MINIZB",
-    "modelIdsCount": 104
+    "modelIdsCount": 101
   },
   "_TZE204_zl1kmjqx": {
     "driverId": "button_wireless_2",
@@ -149640,13 +149212,10 @@
       "ZBMINIR",
       "ZBMINIR2",
       "ZBMINIR2-R2",
-      "ZBT-COLORLIGHT",
-      "ZG-301Z",
-      "ZG-302Z1",
-      "ZG-302Z2"
+      "ZBT-COLORLIGHT"
     ],
     "pid": "01MINIZB",
-    "modelIdsCount": 104
+    "modelIdsCount": 101
   },
   "_TZ3000_zl1kmjqx": {
     "driverId": "button_wireless_2",
@@ -149752,13 +149321,10 @@
       "ZBMINIR",
       "ZBMINIR2",
       "ZBMINIR2-R2",
-      "ZBT-COLORLIGHT",
-      "ZG-301Z",
-      "ZG-302Z1",
-      "ZG-302Z2"
+      "ZBT-COLORLIGHT"
     ],
     "pid": "01MINIZB",
-    "modelIdsCount": 104
+    "modelIdsCount": 101
   },
   "_TZ3000_xiuox57i": {
     "driverId": "button_wireless_2",
@@ -149864,13 +149430,10 @@
       "ZBMINIR",
       "ZBMINIR2",
       "ZBMINIR2-R2",
-      "ZBT-COLORLIGHT",
-      "ZG-301Z",
-      "ZG-302Z1",
-      "ZG-302Z2"
+      "ZBT-COLORLIGHT"
     ],
     "pid": "01MINIZB",
-    "modelIdsCount": 104
+    "modelIdsCount": 101
   },
   "_tz3400_key8kk7r": {
     "driverId": "button_wireless_2",
@@ -149976,13 +149539,10 @@
       "ZBMINIR",
       "ZBMINIR2",
       "ZBMINIR2-R2",
-      "ZBT-COLORLIGHT",
-      "ZG-301Z",
-      "ZG-302Z1",
-      "ZG-302Z2"
+      "ZBT-COLORLIGHT"
     ],
     "pid": "01MINIZB",
-    "modelIdsCount": 104
+    "modelIdsCount": 101
   },
   "_TZ3000_b3mgfu0d": {
     "driverId": "button_wireless_4",
@@ -150032,12 +149592,10 @@
       "ZBMINIL2-R2",
       "ZBMINIR",
       "ZBMINIR2",
-      "ZBMINIR2-R2",
-      "ZG-301Z",
-      "ZG-302Z1"
+      "ZBMINIR2-R2"
     ],
     "pid": "01MINIZB",
-    "modelIdsCount": 47
+    "modelIdsCount": 45
   },
   "_TZE204_d7lpruvi": {
     "driverId": "climate_sensor",
@@ -150277,13 +149835,10 @@
       "ZBMINIR",
       "ZBMINIR2",
       "ZBMINIR2-R2",
-      "ZBT-COLORLIGHT",
-      "ZG-301Z",
-      "ZG-302Z1",
-      "ZG-302Z2"
+      "ZBT-COLORLIGHT"
     ],
     "pid": "01MINIZB",
-    "modelIdsCount": 104
+    "modelIdsCount": 101
   },
   "_tz3210_w0qqde0g": {
     "driverId": "plug_energy_monitor",
@@ -150398,13 +149953,10 @@
       "ZBMINIR",
       "ZBMINIR2",
       "ZBMINIR2-R2",
-      "ZBT-COLORLIGHT",
-      "ZG-301Z",
-      "ZG-302Z1",
-      "ZG-302Z2"
+      "ZBT-COLORLIGHT"
     ],
     "pid": "01MINIZB",
-    "modelIdsCount": 104
+    "modelIdsCount": 101
   },
   "_tzn3000_cfnprab5": {
     "driverId": "button_wireless_2",
@@ -150510,13 +150062,10 @@
       "ZBMINIR",
       "ZBMINIR2",
       "ZBMINIR2-R2",
-      "ZBT-COLORLIGHT",
-      "ZG-301Z",
-      "ZG-302Z1",
-      "ZG-302Z2"
+      "ZBT-COLORLIGHT"
     ],
     "pid": "01MINIZB",
-    "modelIdsCount": 104
+    "modelIdsCount": 101
   },
   "_TZ3210_tqlv4ug4": {
     "driverId": "switch_1gang",
@@ -156455,12 +156004,10 @@
       "ZBMINIL2-R2",
       "ZBMINIR",
       "ZBMINIR2",
-      "ZBMINIR2-R2",
-      "ZG-301Z",
-      "ZG-302Z1"
+      "ZBMINIR2-R2"
     ],
     "pid": "01MINIZB",
-    "modelIdsCount": 79
+    "modelIdsCount": 77
   },
   "_TZ3000_XDO0HJ1K": {
     "driverId": "climate_sensor",
@@ -161966,12 +161513,10 @@
       "ZBMINIL2-R2",
       "ZBMINIR",
       "ZBMINIR2",
-      "ZBMINIR2-R2",
-      "ZG-301Z",
-      "ZG-302Z1"
+      "ZBMINIR2-R2"
     ],
     "pid": "01MINIZB",
-    "modelIdsCount": 36
+    "modelIdsCount": 34
   },
   "_TZE200_H2RCTIFA": {
     "driverId": "climate_sensor",
@@ -167810,37 +167355,15 @@
     "driverId": "gas_sensor",
     "source": "compose-exclusive",
     "modelIds": [
-      "3300-S",
-      "3320-L",
-      "CK-TLSR8656-SS5-01(7003)",
-      "DOORWINDOW-SENSOR-ZB3.0",
-      "DS01",
-      "E1603/E1702",
-      "EXCELLUX",
-      "LUMI.MAGNET.AC01",
-      "LUMI.MAGNET.AGL02",
-      "LUMI.SENSOR_MAGNET",
-      "LUMI.SENSOR_MAGNET.AQ2",
-      "MCCGQ01LM",
-      "MCCGQ11LM",
-      "MCCGQ12LM",
-      "MCCGQ14LM",
-      "MCT-340 E",
-      "Q9MPFHW",
-      "RH3001",
-      "SNZB-04",
-      "SNZB-04P",
-      "SNZB-04PR2",
-      "SNZB-04R2",
-      "TRADFRI OPEN/CLOSE REMOTE",
-      "TS0021",
-      "TS0203",
-      "TY0203",
-      "ZG-102Z",
-      "ZG-102ZL"
+      "HOBEIAN",
+      "TS0225",
+      "TS0301",
+      "TS0601",
+      "TS0601_GAS",
+      "ZG-225Z"
     ],
-    "pid": "3300-S",
-    "modelIdsCount": 28
+    "pid": "HOBEIAN",
+    "modelIdsCount": 6
   },
   "_TZE200_VRFECYKU": {
     "driverId": "climate_sensor",
@@ -173464,12 +172987,10 @@
       "ZBMINIL2-R2",
       "ZBMINIR",
       "ZBMINIR2",
-      "ZBMINIR2-R2",
-      "ZG-301Z",
-      "ZG-302Z1"
+      "ZBMINIR2-R2"
     ],
     "pid": "01MINIZB",
-    "modelIdsCount": 36
+    "modelIdsCount": 34
   },
   "_TZE204_K7V0EQKE": {
     "driverId": "climate_sensor",
@@ -174710,12 +174231,10 @@
       "ZBMINIL2-R2",
       "ZBMINIR",
       "ZBMINIR2",
-      "ZBMINIR2-R2",
-      "ZG-301Z",
-      "ZG-302Z1"
+      "ZBMINIR2-R2"
     ],
     "pid": "01MINIZB",
-    "modelIdsCount": 36
+    "modelIdsCount": 34
   },
   "_TZE204_ODLLDRXX": {
     "driverId": "curtain_motor",
@@ -188472,12 +187991,10 @@
       "ZBMINIL2-R2",
       "ZBMINIR",
       "ZBMINIR2",
-      "ZBMINIR2-R2",
-      "ZG-301Z",
-      "ZG-302Z1"
+      "ZBMINIR2-R2"
     ],
     "pid": "01MINIZB",
-    "modelIdsCount": 36
+    "modelIdsCount": 34
   },
   "_TZE284_tdhnhhiy": {
     "driverId": "climate_sensor",
@@ -197410,12 +196927,10 @@
       "ZBMINIL2-R2",
       "ZBMINIR",
       "ZBMINIR2",
-      "ZBMINIR2-R2",
-      "ZG-301Z",
-      "ZG-302Z1"
+      "ZBMINIR2-R2"
     ],
     "pid": "01MINIZB",
-    "modelIdsCount": 41
+    "modelIdsCount": 39
   },
   "_tz3002_vsom92pp": {
     "driverId": "switch_3gang",
@@ -197423,6 +196938,7 @@
     "modelIds": [
       "01MINIZB",
       "BASICZBR3",
+      "HOBEIAN",
       "JZ-ZB-004",
       "S26R2ZB",
       "S31ZB",
@@ -197465,12 +196981,10 @@
       "ZBMINIR",
       "ZBMINIR2",
       "ZBMINIR2-R2",
-      "ZG-301Z",
-      "ZG-302Z1",
       "ZG-302Z3"
     ],
     "pid": "01MINIZB",
-    "modelIdsCount": 47
+    "modelIdsCount": 46
   },
   "_tz3008_reatplte": {
     "driverId": "button_wireless_4",
@@ -197520,12 +197034,10 @@
       "ZBMINIL2-R2",
       "ZBMINIR",
       "ZBMINIR2",
-      "ZBMINIR2-R2",
-      "ZG-301Z",
-      "ZG-302Z1"
+      "ZBMINIR2-R2"
     ],
     "pid": "01MINIZB",
-    "modelIdsCount": 47
+    "modelIdsCount": 45
   },
   "_tz3210_6smingw0": {
     "driverId": "button_wireless_4",
@@ -197575,12 +197087,10 @@
       "ZBMINIL2-R2",
       "ZBMINIR",
       "ZBMINIR2",
-      "ZBMINIR2-R2",
-      "ZG-301Z",
-      "ZG-302Z1"
+      "ZBMINIR2-R2"
     ],
     "pid": "01MINIZB",
-    "modelIdsCount": 47
+    "modelIdsCount": 45
   },
   "_tz3210_vbfp8eyv": {
     "driverId": "din_rail_switch",
@@ -197639,12 +197149,10 @@
       "ZBMINIL2-R2",
       "ZBMINIR",
       "ZBMINIR2",
-      "ZBMINIR2-R2",
-      "ZG-301Z",
-      "ZG-302Z1"
+      "ZBMINIR2-R2"
     ],
     "pid": "01MINIZB",
-    "modelIdsCount": 47
+    "modelIdsCount": 45
   },
   "_tz3290_7v1k4vufotpowp9z": {
     "driverId": "ir_blaster",
@@ -197746,12 +197254,10 @@
       "ZBMINIL2-R2",
       "ZBMINIR",
       "ZBMINIR2",
-      "ZBMINIR2-R2",
-      "ZG-301Z",
-      "ZG-302Z1"
+      "ZBMINIR2-R2"
     ],
     "pid": "01MINIZB",
-    "modelIdsCount": 47
+    "modelIdsCount": 45
   },
   "_tze284_4vbj3fxh": {
     "driverId": "button_wireless_4",
@@ -197801,12 +197307,10 @@
       "ZBMINIL2-R2",
       "ZBMINIR",
       "ZBMINIR2",
-      "ZBMINIR2-R2",
-      "ZG-301Z",
-      "ZG-302Z1"
+      "ZBMINIR2-R2"
     ],
     "pid": "01MINIZB",
-    "modelIdsCount": 47
+    "modelIdsCount": 45
   },
   "_tze284_bw4ayyeh": {
     "driverId": "button_wireless_4",
@@ -197856,12 +197360,10 @@
       "ZBMINIL2-R2",
       "ZBMINIR",
       "ZBMINIR2",
-      "ZBMINIR2-R2",
-      "ZG-301Z",
-      "ZG-302Z1"
+      "ZBMINIR2-R2"
     ],
     "pid": "01MINIZB",
-    "modelIdsCount": 47
+    "modelIdsCount": 45
   },
   "_tze284_kow4ok3t": {
     "driverId": "switch_4_gang_metering",
@@ -197871,11 +197373,10 @@
       "TS0004",
       "TS0044",
       "TS004F",
-      "TS0601",
-      "ZG-101ZD"
+      "TS0601"
     ],
     "pid": "ERS-10TZBVK-AA",
-    "modelIdsCount": 6
+    "modelIdsCount": 5
   },
   "_tze284_mvtclclq": {
     "driverId": "usb_outlet_advanced",
@@ -198037,6 +197538,7 @@
     "modelIds": [
       "01MINIZB",
       "BASICZBR3",
+      "HOBEIAN",
       "JZ-ZB-004",
       "S26R2ZB",
       "S31ZB",
@@ -198079,12 +197581,10 @@
       "ZBMINIR",
       "ZBMINIR2",
       "ZBMINIR2-R2",
-      "ZG-301Z",
-      "ZG-302Z1",
       "ZG-302Z3"
     ],
     "pid": "01MINIZB",
-    "modelIdsCount": 47
+    "modelIdsCount": 46
   },
   "_TYST11_2atgpdho": {
     "driverId": "thermostatic_radiator_valve",
@@ -204818,13 +204318,10 @@
       "ZBMINIR",
       "ZBMINIR2",
       "ZBMINIR2-R2",
-      "ZBT-COLORLIGHT",
-      "ZG-301Z",
-      "ZG-302Z1",
-      "ZG-302Z2"
+      "ZBT-COLORLIGHT"
     ],
     "pid": "01MINIZB",
-    "modelIdsCount": 104
+    "modelIdsCount": 101
   },
   "_TZ3210_5CT6E7YE": {
     "driverId": "plug_smart",
@@ -212903,12 +212400,10 @@
       "ZBMINIL2-R2",
       "ZBMINIR",
       "ZBMINIR2",
-      "ZBMINIR2-R2",
-      "ZG-301Z",
-      "ZG-302Z1"
+      "ZBMINIR2-R2"
     ],
     "pid": "01MINIZB",
-    "modelIdsCount": 47
+    "modelIdsCount": 45
   },
   "_tz3000_an5rjiwd": {
     "driverId": "button_wireless_4",
@@ -213793,12 +213288,10 @@
       "ZBMINIL2-R2",
       "ZBMINIR",
       "ZBMINIR2",
-      "ZBMINIR2-R2",
-      "ZG-301Z",
-      "ZG-302Z1"
+      "ZBMINIR2-R2"
     ],
     "pid": "01MINIZB",
-    "modelIdsCount": 35
+    "modelIdsCount": 33
   },
   "_GENERIC_SENSOR_CONTACT_WATER": {
     "driverId": "sensor_contact_water",
@@ -214644,11 +214137,10 @@
       "ERS-10TZBVK-AA",
       "TS0044",
       "TS004F",
-      "TS0601",
-      "ZG-101ZD"
+      "TS0601"
     ],
     "pid": "ERS-10TZBVK-AA",
-    "modelIdsCount": 5
+    "modelIdsCount": 4
   },
   "_tz3000_qrldbmfn": {
     "driverId": "contact_sensor",
@@ -216235,11 +215727,10 @@
       "TS0225",
       "TS0301",
       "TS0601",
-      "TS0601_gas",
-      "ZG-225Z"
+      "TS0601_GAS"
     ],
     "pid": "TS0225",
-    "modelIdsCount": 5
+    "modelIdsCount": 4
   },
   "_tze200_wzqkpstm": {
     "driverId": "sensor_gas_presence",
@@ -216248,11 +215739,10 @@
       "TS0225",
       "TS0301",
       "TS0601",
-      "TS0601_gas",
-      "ZG-225Z"
+      "TS0601_GAS"
     ],
     "pid": "TS0225",
-    "modelIdsCount": 5
+    "modelIdsCount": 4
   },
   "_tze204_yojqa8xn": {
     "driverId": "sensor_gas_presence",
@@ -216261,11 +215751,10 @@
       "TS0225",
       "TS0301",
       "TS0601",
-      "TS0601_gas",
-      "ZG-225Z"
+      "TS0601_GAS"
     ],
     "pid": "TS0225",
-    "modelIdsCount": 5
+    "modelIdsCount": 4
   },
   "_tze204_ggev5fsl": {
     "driverId": "sensor_gas_presence",
@@ -216274,11 +215763,10 @@
       "TS0225",
       "TS0301",
       "TS0601",
-      "TS0601_gas",
-      "ZG-225Z"
+      "TS0601_GAS"
     ],
     "pid": "TS0225",
-    "modelIdsCount": 5
+    "modelIdsCount": 4
   },
   "_tze284_ggev5fsl": {
     "driverId": "sensor_gas_presence",
@@ -216287,11 +215775,10 @@
       "TS0225",
       "TS0301",
       "TS0601",
-      "TS0601_gas",
-      "ZG-225Z"
+      "TS0601_GAS"
     ],
     "pid": "TS0225",
-    "modelIdsCount": 5
+    "modelIdsCount": 4
   },
   "_tze284_nj7sfid2": {
     "driverId": "sensor_gas_presence",
@@ -216300,11 +215787,10 @@
       "TS0225",
       "TS0301",
       "TS0601",
-      "TS0601_gas",
-      "ZG-225Z"
+      "TS0601_GAS"
     ],
     "pid": "TS0225",
-    "modelIdsCount": 5
+    "modelIdsCount": 4
   },
   "_tze284_rjgdhqqi": {
     "driverId": "sensor_gas_presence",
@@ -216313,11 +215799,10 @@
       "TS0225",
       "TS0301",
       "TS0601",
-      "TS0601_gas",
-      "ZG-225Z"
+      "TS0601_GAS"
     ],
     "pid": "TS0225",
-    "modelIdsCount": 5
+    "modelIdsCount": 4
   },
   "_tze200_yojqa8xn": {
     "driverId": "switch_wireless",
@@ -216337,11 +215822,10 @@
       "TS0225",
       "TS0301",
       "TS0601",
-      "TS0601_gas",
-      "ZG-225Z"
+      "TS0601_GAS"
     ],
     "pid": "TS0225",
-    "modelIdsCount": 5
+    "modelIdsCount": 4
   },
   "_tze200_ggev5fsl": {
     "driverId": "sensor_gas_presence",
@@ -216350,11 +215834,10 @@
       "TS0225",
       "TS0301",
       "TS0601",
-      "TS0601_gas",
-      "ZG-225Z"
+      "TS0601_GAS"
     ],
     "pid": "TS0225",
-    "modelIdsCount": 5
+    "modelIdsCount": 4
   },
   "_tz3210_2uollq9d": {
     "driverId": "sensor_gas_presence",
@@ -216363,11 +215846,10 @@
       "TS0225",
       "TS0301",
       "TS0601",
-      "TS0601_gas",
-      "ZG-225Z"
+      "TS0601_GAS"
     ],
     "pid": "TS0225",
-    "modelIdsCount": 5
+    "modelIdsCount": 4
   },
   "_tz3000_do6txrcw": {
     "driverId": "sensor_illuminance_presence",
@@ -217917,11 +217399,10 @@
       "ERS-10TZBVK-AA",
       "TS0044",
       "TS004F",
-      "TS0601",
-      "ZG-101ZD"
+      "TS0601"
     ],
     "pid": "ERS-10TZBVK-AA",
-    "modelIdsCount": 5
+    "modelIdsCount": 4
   },
   "_tz3000_pcqjmcud": {
     "driverId": "smart_knob_rotary",
@@ -220209,12 +219690,10 @@
       "ZBMINIR2",
       "ZBMINIR2-R2",
       "ZBT-CCTLIGHT",
-      "ZBT-DIMMABLELIGHT",
-      "ZG-301Z",
-      "ZG-302Z1"
+      "ZBT-DIMMABLELIGHT"
     ],
     "pid": "01MINIZB",
-    "modelIdsCount": 88
+    "modelIdsCount": 86
   },
   "_TZ3000_54HJN4VS": {
     "driverId": "switch_1gang",
@@ -221428,12 +220907,10 @@
       "ZBMINIL2-R2",
       "ZBMINIR",
       "ZBMINIR2",
-      "ZBMINIR2-R2",
-      "ZG-301Z",
-      "ZG-302Z1"
+      "ZBMINIR2-R2"
     ],
     "pid": "01MINIZB",
-    "modelIdsCount": 47
+    "modelIdsCount": 45
   },
   "_TZ3000_B9VANMES": {
     "driverId": "switch_1gang",
@@ -222376,12 +221853,10 @@
       "ZBMINIL2-R2",
       "ZBMINIR",
       "ZBMINIR2",
-      "ZBMINIR2-R2",
-      "ZG-301Z",
-      "ZG-302Z1"
+      "ZBMINIR2-R2"
     ],
     "pid": "01MINIZB",
-    "modelIdsCount": 47
+    "modelIdsCount": 45
   },
   "_TZ3000_E8CQUWDK": {
     "driverId": "switch_1gang",
@@ -223984,12 +223459,10 @@
       "ZBMINIL2-R2",
       "ZBMINIR",
       "ZBMINIR2",
-      "ZBMINIR2-R2",
-      "ZG-301Z",
-      "ZG-302Z1"
+      "ZBMINIR2-R2"
     ],
     "pid": "01MINIZB",
-    "modelIdsCount": 47
+    "modelIdsCount": 45
   },
   "_TZ3000_J6KFV0R": {
     "driverId": "switch_1gang",
@@ -224668,42 +224141,85 @@
     "source": "compose-exclusive",
     "modelIds": [
       "01MINIZB",
+      "A11Z",
+      "A7Z",
       "BASICZBR3",
+      "CK-BL702-SWP-01(7020)",
+      "E1603/E1702/E1708",
+      "HY0104",
+      "HY0105",
+      "JZ-ZB-005",
+      "LSPA9",
+      "LUMI.PLUG.MACN01",
+      "LUMI.PLUG.MAEU01",
+      "LUMI.PLUG.MMEU01",
       "S26R2ZB",
+      "S31 LITE ZB",
       "S31ZB",
+      "S40LITE",
+      "S40ZBTPB",
+      "S40ZBTPF",
+      "S40ZBTPG",
+      "S60ZBTPE",
+      "S60ZBTPF",
+      "S60ZBTPF-R2",
+      "S60ZBTPG",
+      "SA-028-1",
+      "SA-029-1",
+      "SP 120",
+      "SP 220",
+      "SP 222",
+      "SP-EUC01",
+      "SP-EUC02",
+      "SPM01",
+      "SPMZBR2",
+      "TRADFRI CONTROL OUTLET",
       "TS0001",
-      "TS0001_power",
-      "TS0001_switch",
-      "TS0001_switch_module",
+      "TS0001_POWER",
+      "TS0001_SWITCH",
+      "TS0001_SWITCH_MODULE",
       "TS0002",
       "TS0003",
       "TS000F",
       "TS0011",
       "TS0012",
+      "TS0013",
       "TS0014",
       "TS0041",
+      "TS0042",
+      "TS0043",
+      "TS0044",
+      "TS0052",
       "TS0101",
       "TS0111",
       "TS011F",
+      "TS0121",
+      "TS0215A",
+      "TS0505B",
       "TS0601",
+      "TS0601_DIM1",
       "TS0726",
+      "TS1101",
       "TS110E",
+      "TS110F",
       "TS130F",
       "TS4100",
+      "TSO121",
+      "Z111PL0H-1JX",
       "ZBM5-1C-120",
       "ZBM5-2C-120",
       "ZBM5-3C-120",
       "ZBMINI",
+      "ZBMINI-DIM",
+      "ZBMINID",
       "ZBMINIL2",
       "ZBMINIL2-R2",
       "ZBMINIR",
       "ZBMINIR2",
-      "ZBMINIR2-R2",
-      "ZG-301Z",
-      "ZG-302Z1"
+      "ZBMINIR2-R2"
     ],
     "pid": "01MINIZB",
-    "modelIdsCount": 34
+    "modelIdsCount": 77
   },
   "_TZ3000_M4AH6BCZ": {
     "driverId": "switch_1gang",
@@ -224888,12 +224404,10 @@
       "ZBMINIL2-R2",
       "ZBMINIR",
       "ZBMINIR2",
-      "ZBMINIR2-R2",
-      "ZG-301Z",
-      "ZG-302Z1"
+      "ZBMINIR2-R2"
     ],
     "pid": "01MINIZB",
-    "modelIdsCount": 47
+    "modelIdsCount": 45
   },
   "_TZ3000_MHHXXJRS": {
     "driverId": "switch_1gang",
@@ -226999,42 +226513,109 @@
     "source": "compose-exclusive",
     "modelIds": [
       "01MINIZB",
+      "A11Z",
+      "A7Z",
       "BASICZBR3",
+      "CK-BL702-SWP-01(7020)",
+      "E11-G13",
+      "E11-G14",
+      "E11-G23",
+      "E1603/E1702/E1708",
+      "GL-C-006",
+      "HY0104",
+      "HY0105",
+      "JZ-ZB-005",
+      "LCT001",
+      "LCT002",
+      "LCT003",
+      "LCT007",
+      "LCT010",
+      "LCT011",
+      "LCT012",
+      "LCT014",
+      "LCT015",
+      "LCT016",
+      "LSPA9",
+      "LUMI.PLUG.MACN01",
+      "LUMI.PLUG.MAEU01",
+      "LUMI.PLUG.MMEU01",
+      "RB 185 C",
+      "RB 285 C",
       "S26R2ZB",
+      "S31 LITE ZB",
       "S31ZB",
+      "S40LITE",
+      "S40ZBTPB",
+      "S40ZBTPF",
+      "S40ZBTPG",
+      "S60ZBTPE",
+      "S60ZBTPF",
+      "S60ZBTPF-R2",
+      "S60ZBTPG",
+      "SA-028-1",
+      "SA-029-1",
+      "SNZB-01M",
+      "SP 120",
+      "SP 220",
+      "SP 222",
+      "SP-EUC01",
+      "SP-EUC02",
+      "SPM01",
+      "SPMZBR2",
+      "TRADFRI CONTROL OUTLET",
       "TS0001",
-      "TS0001_power",
-      "TS0001_switch",
-      "TS0001_switch_module",
+      "TS0001_FINGERBOT",
+      "TS0001_POWER",
+      "TS0001_SWITCH",
+      "TS0001_SWITCH_MODULE",
       "TS0002",
+      "TS0002_POWER",
+      "TS0002_SWITCH_MODULE",
       "TS0003",
       "TS000F",
       "TS0011",
       "TS0012",
+      "TS0013",
       "TS0014",
       "TS0041",
+      "TS0042",
+      "TS004F",
       "TS0101",
       "TS0111",
       "TS011F",
+      "TS0121",
+      "TS0122",
+      "TS0215A",
+      "TS0503A",
+      "TS0503B",
+      "TS0504B",
+      "TS0505A",
+      "TS0505B",
       "TS0601",
+      "TS0601_SP1",
       "TS0726",
+      "TS1101",
       "TS110E",
+      "TS110F",
       "TS130F",
       "TS4100",
+      "TSO121",
+      "Z111PL0H-1JX",
+      "ZB-CL01",
       "ZBM5-1C-120",
       "ZBM5-2C-120",
       "ZBM5-3C-120",
       "ZBMINI",
+      "ZBMINI-L",
       "ZBMINIL2",
       "ZBMINIL2-R2",
       "ZBMINIR",
       "ZBMINIR2",
       "ZBMINIR2-R2",
-      "ZG-301Z",
-      "ZG-302Z1"
+      "ZBT-COLORLIGHT"
     ],
     "pid": "01MINIZB",
-    "modelIdsCount": 34
+    "modelIdsCount": 101
   },
   "_TZ3000_TK3S5TYA": {
     "driverId": "switch_1gang",
@@ -228595,12 +228176,10 @@
       "ZBMINIL2-R2",
       "ZBMINIR",
       "ZBMINIR2",
-      "ZBMINIR2-R2",
-      "ZG-301Z",
-      "ZG-302Z1"
+      "ZBMINIR2-R2"
     ],
     "pid": "01MINIZB",
-    "modelIdsCount": 47
+    "modelIdsCount": 45
   },
   "_TZ3000_Y4CHE4DC": {
     "driverId": "switch_1gang",
@@ -228695,12 +228274,10 @@
       "ZBMINIL2-R2",
       "ZBMINIR",
       "ZBMINIR2",
-      "ZBMINIR2-R2",
-      "ZG-301Z",
-      "ZG-302Z1"
+      "ZBMINIR2-R2"
     ],
     "pid": "01MINIZB",
-    "modelIdsCount": 47
+    "modelIdsCount": 45
   },
   "_TZ3000_ZFMXVPRS": {
     "driverId": "switch_1gang",
@@ -229779,6 +229356,7 @@
     "modelIds": [
       "01MINIZB",
       "BASICZBR3",
+      "HOBEIAN",
       "JZ-ZB-004",
       "S26R2ZB",
       "S31ZB",
@@ -229821,12 +229399,10 @@
       "ZBMINIR",
       "ZBMINIR2",
       "ZBMINIR2-R2",
-      "ZG-301Z",
-      "ZG-302Z1",
       "ZG-302Z3"
     ],
     "pid": "01MINIZB",
-    "modelIdsCount": 47
+    "modelIdsCount": 46
   },
   "_TZE200_3T91NB6K": {
     "driverId": "switch_1gang",
@@ -233954,42 +233530,85 @@
     "source": "compose-exclusive",
     "modelIds": [
       "01MINIZB",
+      "A11Z",
+      "A7Z",
       "BASICZBR3",
+      "CK-BL702-SWP-01(7020)",
+      "E1603/E1702/E1708",
+      "HY0104",
+      "HY0105",
+      "JZ-ZB-005",
+      "LSPA9",
+      "LUMI.PLUG.MACN01",
+      "LUMI.PLUG.MAEU01",
+      "LUMI.PLUG.MMEU01",
       "S26R2ZB",
+      "S31 LITE ZB",
       "S31ZB",
+      "S40LITE",
+      "S40ZBTPB",
+      "S40ZBTPF",
+      "S40ZBTPG",
+      "S60ZBTPE",
+      "S60ZBTPF",
+      "S60ZBTPF-R2",
+      "S60ZBTPG",
+      "SA-028-1",
+      "SA-029-1",
+      "SP 120",
+      "SP 220",
+      "SP 222",
+      "SP-EUC01",
+      "SP-EUC02",
+      "SPM01",
+      "SPMZBR2",
+      "TRADFRI CONTROL OUTLET",
       "TS0001",
-      "TS0001_power",
-      "TS0001_switch",
-      "TS0001_switch_module",
+      "TS0001_POWER",
+      "TS0001_SWITCH",
+      "TS0001_SWITCH_MODULE",
       "TS0002",
       "TS0003",
       "TS000F",
       "TS0011",
       "TS0012",
+      "TS0013",
       "TS0014",
       "TS0041",
+      "TS0042",
+      "TS0043",
+      "TS0044",
+      "TS0052",
       "TS0101",
       "TS0111",
       "TS011F",
+      "TS0121",
+      "TS0215A",
+      "TS0505B",
       "TS0601",
+      "TS0601_DIM1",
       "TS0726",
+      "TS1101",
       "TS110E",
+      "TS110F",
       "TS130F",
       "TS4100",
+      "TSO121",
+      "Z111PL0H-1JX",
       "ZBM5-1C-120",
       "ZBM5-2C-120",
       "ZBM5-3C-120",
       "ZBMINI",
+      "ZBMINI-DIM",
+      "ZBMINID",
       "ZBMINIL2",
       "ZBMINIL2-R2",
       "ZBMINIR",
       "ZBMINIR2",
-      "ZBMINIR2-R2",
-      "ZG-301Z",
-      "ZG-302Z1"
+      "ZBMINIR2-R2"
     ],
     "pid": "01MINIZB",
-    "modelIdsCount": 34,
+    "modelIdsCount": 77,
     "variants": [
       "_TZ3000_wzmuk9ai",
       "_tz3000_wzmuk9ai"
@@ -238021,6 +237640,7 @@
     "modelIds": [
       "01MINIZB",
       "BASICZBR3",
+      "HOBEIAN",
       "JZ-ZB-004",
       "S26R2ZB",
       "S31ZB",
@@ -238063,12 +237683,10 @@
       "ZBMINIR",
       "ZBMINIR2",
       "ZBMINIR2-R2",
-      "ZG-301Z",
-      "ZG-302Z1",
       "ZG-302Z3"
     ],
     "pid": "01MINIZB",
-    "modelIdsCount": 47
+    "modelIdsCount": 46
   },
   "_TZE200_vhy3iakz": {
     "driverId": "climate_sensor",
@@ -238144,12 +237762,10 @@
       "ZBMINIL2-R2",
       "ZBMINIR",
       "ZBMINIR2",
-      "ZBMINIR2-R2",
-      "ZG-301Z",
-      "ZG-302Z1"
+      "ZBMINIR2-R2"
     ],
     "pid": "01MINIZB",
-    "modelIdsCount": 41
+    "modelIdsCount": 39
   },
   "_TZ3000_5KXL9ESG": {
     "driverId": "switch_4gang",
@@ -238193,12 +237809,10 @@
       "ZBMINIL2-R2",
       "ZBMINIR",
       "ZBMINIR2",
-      "ZBMINIR2-R2",
-      "ZG-301Z",
-      "ZG-302Z1"
+      "ZBMINIR2-R2"
     ],
     "pid": "01MINIZB",
-    "modelIdsCount": 41
+    "modelIdsCount": 39
   },
   "_TZ3000_A37EIX1S": {
     "driverId": "switch_4gang",
@@ -238242,12 +237856,10 @@
       "ZBMINIL2-R2",
       "ZBMINIR",
       "ZBMINIR2",
-      "ZBMINIR2-R2",
-      "ZG-301Z",
-      "ZG-302Z1"
+      "ZBMINIR2-R2"
     ],
     "pid": "01MINIZB",
-    "modelIdsCount": 41
+    "modelIdsCount": 39
   },
   "_TZ3000_AQSJYH1H": {
     "driverId": "switch_4gang",
@@ -238291,12 +237903,10 @@
       "ZBMINIL2-R2",
       "ZBMINIR",
       "ZBMINIR2",
-      "ZBMINIR2-R2",
-      "ZG-301Z",
-      "ZG-302Z1"
+      "ZBMINIR2-R2"
     ],
     "pid": "01MINIZB",
-    "modelIdsCount": 41
+    "modelIdsCount": 39
   },
   "_TZ3000_ENMFAAVE": {
     "driverId": "switch_4gang",
@@ -238340,12 +237950,10 @@
       "ZBMINIL2-R2",
       "ZBMINIR",
       "ZBMINIR2",
-      "ZBMINIR2-R2",
-      "ZG-301Z",
-      "ZG-302Z1"
+      "ZBMINIR2-R2"
     ],
     "pid": "01MINIZB",
-    "modelIdsCount": 41
+    "modelIdsCount": 39
   },
   "_TZ3000_EXCGG5KB": {
     "driverId": "switch_4gang",
@@ -238389,12 +237997,10 @@
       "ZBMINIL2-R2",
       "ZBMINIR",
       "ZBMINIR2",
-      "ZBMINIR2-R2",
-      "ZG-301Z",
-      "ZG-302Z1"
+      "ZBMINIR2-R2"
     ],
     "pid": "01MINIZB",
-    "modelIdsCount": 41
+    "modelIdsCount": 39
   },
   "_TZ3000_EYZPWHTC": {
     "driverId": "switch_4gang",
@@ -238438,12 +238044,10 @@
       "ZBMINIL2-R2",
       "ZBMINIR",
       "ZBMINIR2",
-      "ZBMINIR2-R2",
-      "ZG-301Z",
-      "ZG-302Z1"
+      "ZBMINIR2-R2"
     ],
     "pid": "01MINIZB",
-    "modelIdsCount": 41
+    "modelIdsCount": 39
   },
   "_TZ3000_EZQBVRQZ": {
     "driverId": "switch_4gang",
@@ -238487,12 +238091,10 @@
       "ZBMINIL2-R2",
       "ZBMINIR",
       "ZBMINIR2",
-      "ZBMINIR2-R2",
-      "ZG-301Z",
-      "ZG-302Z1"
+      "ZBMINIR2-R2"
     ],
     "pid": "01MINIZB",
-    "modelIdsCount": 41
+    "modelIdsCount": 39
   },
   "_TZ3000_GEXNIQBQ": {
     "driverId": "switch_4gang",
@@ -238536,12 +238138,10 @@
       "ZBMINIL2-R2",
       "ZBMINIR",
       "ZBMINIR2",
-      "ZBMINIR2-R2",
-      "ZG-301Z",
-      "ZG-302Z1"
+      "ZBMINIR2-R2"
     ],
     "pid": "01MINIZB",
-    "modelIdsCount": 41
+    "modelIdsCount": 39
   },
   "_TZ3000_IYMFXDIS": {
     "driverId": "switch_4gang",
@@ -238585,12 +238185,10 @@
       "ZBMINIL2-R2",
       "ZBMINIR",
       "ZBMINIR2",
-      "ZBMINIR2-R2",
-      "ZG-301Z",
-      "ZG-302Z1"
+      "ZBMINIR2-R2"
     ],
     "pid": "01MINIZB",
-    "modelIdsCount": 41
+    "modelIdsCount": 39
   },
   "_TZ3000_JWOYQYCG": {
     "driverId": "switch_4gang",
@@ -238634,12 +238232,10 @@
       "ZBMINIL2-R2",
       "ZBMINIR",
       "ZBMINIR2",
-      "ZBMINIR2-R2",
-      "ZG-301Z",
-      "ZG-302Z1"
+      "ZBMINIR2-R2"
     ],
     "pid": "01MINIZB",
-    "modelIdsCount": 41
+    "modelIdsCount": 39
   },
   "_TZ3000_KFKQKJQE": {
     "driverId": "switch_4gang",
@@ -238683,12 +238279,10 @@
       "ZBMINIL2-R2",
       "ZBMINIR",
       "ZBMINIR2",
-      "ZBMINIR2-R2",
-      "ZG-301Z",
-      "ZG-302Z1"
+      "ZBMINIR2-R2"
     ],
     "pid": "01MINIZB",
-    "modelIdsCount": 41
+    "modelIdsCount": 39
   },
   "_TZ3000_KT6XXA4O": {
     "driverId": "switch_4gang",
@@ -238732,12 +238326,10 @@
       "ZBMINIL2-R2",
       "ZBMINIR",
       "ZBMINIR2",
-      "ZBMINIR2-R2",
-      "ZG-301Z",
-      "ZG-302Z1"
+      "ZBMINIR2-R2"
     ],
     "pid": "01MINIZB",
-    "modelIdsCount": 41
+    "modelIdsCount": 39
   },
   "_TZ3000_LCJSEWLO": {
     "driverId": "switch_4gang",
@@ -238781,12 +238373,10 @@
       "ZBMINIL2-R2",
       "ZBMINIR",
       "ZBMINIR2",
-      "ZBMINIR2-R2",
-      "ZG-301Z",
-      "ZG-302Z1"
+      "ZBMINIR2-R2"
     ],
     "pid": "01MINIZB",
-    "modelIdsCount": 41
+    "modelIdsCount": 39
   },
   "_TZ3000_M3PAFCNK": {
     "driverId": "switch_4gang",
@@ -238830,12 +238420,10 @@
       "ZBMINIL2-R2",
       "ZBMINIR",
       "ZBMINIR2",
-      "ZBMINIR2-R2",
-      "ZG-301Z",
-      "ZG-302Z1"
+      "ZBMINIR2-R2"
     ],
     "pid": "01MINIZB",
-    "modelIdsCount": 41
+    "modelIdsCount": 39
   },
   "_TZ3000_MDJ7KRA9": {
     "driverId": "switch_4gang",
@@ -238879,12 +238467,10 @@
       "ZBMINIL2-R2",
       "ZBMINIR",
       "ZBMINIR2",
-      "ZBMINIR2-R2",
-      "ZG-301Z",
-      "ZG-302Z1"
+      "ZBMINIR2-R2"
     ],
     "pid": "01MINIZB",
-    "modelIdsCount": 41
+    "modelIdsCount": 39
   },
   "_TZ3000_NCB6MKX8": {
     "driverId": "switch_4gang",
@@ -238928,12 +238514,10 @@
       "ZBMINIL2-R2",
       "ZBMINIR",
       "ZBMINIR2",
-      "ZBMINIR2-R2",
-      "ZG-301Z",
-      "ZG-302Z1"
+      "ZBMINIR2-R2"
     ],
     "pid": "01MINIZB",
-    "modelIdsCount": 41
+    "modelIdsCount": 39
   },
   "_TZ3000_NIVAVASG": {
     "driverId": "switch_4gang",
@@ -238977,12 +238561,10 @@
       "ZBMINIL2-R2",
       "ZBMINIR",
       "ZBMINIR2",
-      "ZBMINIR2-R2",
-      "ZG-301Z",
-      "ZG-302Z1"
+      "ZBMINIR2-R2"
     ],
     "pid": "01MINIZB",
-    "modelIdsCount": 41
+    "modelIdsCount": 39
   },
   "_TZ3000_NORU9TIX": {
     "driverId": "switch_4gang",
@@ -239026,12 +238608,10 @@
       "ZBMINIL2-R2",
       "ZBMINIR",
       "ZBMINIR2",
-      "ZBMINIR2-R2",
-      "ZG-301Z",
-      "ZG-302Z1"
+      "ZBMINIR2-R2"
     ],
     "pid": "01MINIZB",
-    "modelIdsCount": 41
+    "modelIdsCount": 39
   },
   "_TZ3000_PDVKKCUC": {
     "driverId": "switch_4gang",
@@ -239075,12 +238655,10 @@
       "ZBMINIL2-R2",
       "ZBMINIR",
       "ZBMINIR2",
-      "ZBMINIR2-R2",
-      "ZG-301Z",
-      "ZG-302Z1"
+      "ZBMINIR2-R2"
     ],
     "pid": "01MINIZB",
-    "modelIdsCount": 41
+    "modelIdsCount": 39
   },
   "_TZ3000_QHYADM57": {
     "driverId": "switch_4gang",
@@ -239124,12 +238702,10 @@
       "ZBMINIL2-R2",
       "ZBMINIR",
       "ZBMINIR2",
-      "ZBMINIR2-R2",
-      "ZG-301Z",
-      "ZG-302Z1"
+      "ZBMINIR2-R2"
     ],
     "pid": "01MINIZB",
-    "modelIdsCount": 41
+    "modelIdsCount": 39
   },
   "_TZ3000_R9E2W7DN": {
     "driverId": "switch_4gang",
@@ -239173,12 +238749,10 @@
       "ZBMINIL2-R2",
       "ZBMINIR",
       "ZBMINIR2",
-      "ZBMINIR2-R2",
-      "ZG-301Z",
-      "ZG-302Z1"
+      "ZBMINIR2-R2"
     ],
     "pid": "01MINIZB",
-    "modelIdsCount": 41
+    "modelIdsCount": 39
   },
   "_TZ3000_RSYLFTHG": {
     "driverId": "switch_4gang",
@@ -239222,12 +238796,10 @@
       "ZBMINIL2-R2",
       "ZBMINIR",
       "ZBMINIR2",
-      "ZBMINIR2-R2",
-      "ZG-301Z",
-      "ZG-302Z1"
+      "ZBMINIR2-R2"
     ],
     "pid": "01MINIZB",
-    "modelIdsCount": 41
+    "modelIdsCount": 39
   },
   "_TZ3000_S6MA1NH4": {
     "driverId": "switch_4gang",
@@ -239271,12 +238843,10 @@
       "ZBMINIL2-R2",
       "ZBMINIR",
       "ZBMINIR2",
-      "ZBMINIR2-R2",
-      "ZG-301Z",
-      "ZG-302Z1"
+      "ZBMINIR2-R2"
     ],
     "pid": "01MINIZB",
-    "modelIdsCount": 41
+    "modelIdsCount": 39
   },
   "_TZ3000_SSUP6H68": {
     "driverId": "switch_4gang",
@@ -239320,12 +238890,10 @@
       "ZBMINIL2-R2",
       "ZBMINIR",
       "ZBMINIR2",
-      "ZBMINIR2-R2",
-      "ZG-301Z",
-      "ZG-302Z1"
+      "ZBMINIR2-R2"
     ],
     "pid": "01MINIZB",
-    "modelIdsCount": 41
+    "modelIdsCount": 39
   },
   "_TZ3000_U3OUPGDY": {
     "driverId": "relay_board_4_channel",
@@ -239378,12 +238946,10 @@
       "ZBMINIL2-R2",
       "ZBMINIR",
       "ZBMINIR2",
-      "ZBMINIR2-R2",
-      "ZG-301Z",
-      "ZG-302Z1"
+      "ZBMINIR2-R2"
     ],
     "pid": "01MINIZB",
-    "modelIdsCount": 41
+    "modelIdsCount": 39
   },
   "_TZ3000_WOPF2SOX": {
     "driverId": "switch_4gang",
@@ -239427,12 +238993,10 @@
       "ZBMINIL2-R2",
       "ZBMINIR",
       "ZBMINIR2",
-      "ZBMINIR2-R2",
-      "ZG-301Z",
-      "ZG-302Z1"
+      "ZBMINIR2-R2"
     ],
     "pid": "01MINIZB",
-    "modelIdsCount": 41
+    "modelIdsCount": 39
   },
   "_TZ3000_WWTNSHOL": {
     "driverId": "switch_4gang",
@@ -239476,12 +239040,10 @@
       "ZBMINIL2-R2",
       "ZBMINIR",
       "ZBMINIR2",
-      "ZBMINIR2-R2",
-      "ZG-301Z",
-      "ZG-302Z1"
+      "ZBMINIR2-R2"
     ],
     "pid": "01MINIZB",
-    "modelIdsCount": 41
+    "modelIdsCount": 39
   },
   "_TZ3000_XABCKQV1": {
     "driverId": "switch_4gang",
@@ -239525,12 +239087,10 @@
       "ZBMINIL2-R2",
       "ZBMINIR",
       "ZBMINIR2",
-      "ZBMINIR2-R2",
-      "ZG-301Z",
-      "ZG-302Z1"
+      "ZBMINIR2-R2"
     ],
     "pid": "01MINIZB",
-    "modelIdsCount": 41
+    "modelIdsCount": 39
   },
   "_TZ3000_Z6ZPLT0Y": {
     "driverId": "switch_4gang",
@@ -239574,12 +239134,10 @@
       "ZBMINIL2-R2",
       "ZBMINIR",
       "ZBMINIR2",
-      "ZBMINIR2-R2",
-      "ZG-301Z",
-      "ZG-302Z1"
+      "ZBMINIR2-R2"
     ],
     "pid": "01MINIZB",
-    "modelIdsCount": 41
+    "modelIdsCount": 39
   },
   "_TZ3002_1S0VFMTV": {
     "driverId": "switch_4gang",
@@ -239623,12 +239181,10 @@
       "ZBMINIL2-R2",
       "ZBMINIR",
       "ZBMINIR2",
-      "ZBMINIR2-R2",
-      "ZG-301Z",
-      "ZG-302Z1"
+      "ZBMINIR2-R2"
     ],
     "pid": "01MINIZB",
-    "modelIdsCount": 41
+    "modelIdsCount": 39
   },
   "_TZ3002_9EAVTO1K": {
     "driverId": "switch_4gang",
@@ -239672,12 +239228,10 @@
       "ZBMINIL2-R2",
       "ZBMINIR",
       "ZBMINIR2",
-      "ZBMINIR2-R2",
-      "ZG-301Z",
-      "ZG-302Z1"
+      "ZBMINIR2-R2"
     ],
     "pid": "01MINIZB",
-    "modelIdsCount": 41
+    "modelIdsCount": 39
   },
   "_TZ3002_A4KVF6ZD": {
     "driverId": "switch_4gang",
@@ -239721,12 +239275,10 @@
       "ZBMINIL2-R2",
       "ZBMINIR",
       "ZBMINIR2",
-      "ZBMINIR2-R2",
-      "ZG-301Z",
-      "ZG-302Z1"
+      "ZBMINIR2-R2"
     ],
     "pid": "01MINIZB",
-    "modelIdsCount": 41
+    "modelIdsCount": 39
   },
   "_TZ3002_AEWSVJCU": {
     "driverId": "switch_4gang",
@@ -239770,12 +239322,10 @@
       "ZBMINIL2-R2",
       "ZBMINIR",
       "ZBMINIR2",
-      "ZBMINIR2-R2",
-      "ZG-301Z",
-      "ZG-302Z1"
+      "ZBMINIR2-R2"
     ],
     "pid": "01MINIZB",
-    "modelIdsCount": 41
+    "modelIdsCount": 39
   },
   "_TZ3002_GDWJA9A7": {
     "driverId": "switch_4gang",
@@ -239819,12 +239369,10 @@
       "ZBMINIL2-R2",
       "ZBMINIR",
       "ZBMINIR2",
-      "ZBMINIR2-R2",
-      "ZG-301Z",
-      "ZG-302Z1"
+      "ZBMINIR2-R2"
     ],
     "pid": "01MINIZB",
-    "modelIdsCount": 41
+    "modelIdsCount": 39
   },
   "_TZ3002_HKAKTRYD": {
     "driverId": "switch_4gang",
@@ -239868,12 +239416,10 @@
       "ZBMINIL2-R2",
       "ZBMINIR",
       "ZBMINIR2",
-      "ZBMINIR2-R2",
-      "ZG-301Z",
-      "ZG-302Z1"
+      "ZBMINIR2-R2"
     ],
     "pid": "01MINIZB",
-    "modelIdsCount": 41
+    "modelIdsCount": 39
   },
   "_TZ3002_IEDHXGYI": {
     "driverId": "switch_4gang",
@@ -239917,12 +239463,10 @@
       "ZBMINIL2-R2",
       "ZBMINIR",
       "ZBMINIR2",
-      "ZBMINIR2-R2",
-      "ZG-301Z",
-      "ZG-302Z1"
+      "ZBMINIR2-R2"
     ],
     "pid": "01MINIZB",
-    "modelIdsCount": 41
+    "modelIdsCount": 39
   },
   "_TZ3002_KQ3KQWJT": {
     "driverId": "switch_4gang",
@@ -239966,12 +239510,10 @@
       "ZBMINIL2-R2",
       "ZBMINIR",
       "ZBMINIR2",
-      "ZBMINIR2-R2",
-      "ZG-301Z",
-      "ZG-302Z1"
+      "ZBMINIR2-R2"
     ],
     "pid": "01MINIZB",
-    "modelIdsCount": 41
+    "modelIdsCount": 39
   },
   "_TZ3002_L8BFZLCD": {
     "driverId": "switch_4gang",
@@ -240015,12 +239557,10 @@
       "ZBMINIL2-R2",
       "ZBMINIR",
       "ZBMINIR2",
-      "ZBMINIR2-R2",
-      "ZG-301Z",
-      "ZG-302Z1"
+      "ZBMINIR2-R2"
     ],
     "pid": "01MINIZB",
-    "modelIdsCount": 41
+    "modelIdsCount": 39
   },
   "_TZ3002_M3PAFCNK": {
     "driverId": "switch_4gang",
@@ -240064,12 +239604,10 @@
       "ZBMINIL2-R2",
       "ZBMINIR",
       "ZBMINIR2",
-      "ZBMINIR2-R2",
-      "ZG-301Z",
-      "ZG-302Z1"
+      "ZBMINIR2-R2"
     ],
     "pid": "01MINIZB",
-    "modelIdsCount": 41
+    "modelIdsCount": 39
   },
   "_TZ3002_PHU8YGAW": {
     "driverId": "switch_4gang",
@@ -240113,12 +239651,10 @@
       "ZBMINIL2-R2",
       "ZBMINIR",
       "ZBMINIR2",
-      "ZBMINIR2-R2",
-      "ZG-301Z",
-      "ZG-302Z1"
+      "ZBMINIR2-R2"
     ],
     "pid": "01MINIZB",
-    "modelIdsCount": 41
+    "modelIdsCount": 39
   },
   "_TZ3002_RBNYCSAV": {
     "driverId": "switch_4gang",
@@ -240162,12 +239698,10 @@
       "ZBMINIL2-R2",
       "ZBMINIR",
       "ZBMINIR2",
-      "ZBMINIR2-R2",
-      "ZG-301Z",
-      "ZG-302Z1"
+      "ZBMINIR2-R2"
     ],
     "pid": "01MINIZB",
-    "modelIdsCount": 41
+    "modelIdsCount": 39
   },
   "_TZ3002_TLSVXHXC": {
     "driverId": "switch_4gang",
@@ -240211,12 +239745,10 @@
       "ZBMINIL2-R2",
       "ZBMINIR",
       "ZBMINIR2",
-      "ZBMINIR2-R2",
-      "ZG-301Z",
-      "ZG-302Z1"
+      "ZBMINIR2-R2"
     ],
     "pid": "01MINIZB",
-    "modelIdsCount": 41
+    "modelIdsCount": 39
   },
   "_TZ3002_U7D3NES3": {
     "driverId": "switch_4gang",
@@ -240260,12 +239792,10 @@
       "ZBMINIL2-R2",
       "ZBMINIR",
       "ZBMINIR2",
-      "ZBMINIR2-R2",
-      "ZG-301Z",
-      "ZG-302Z1"
+      "ZBMINIR2-R2"
     ],
     "pid": "01MINIZB",
-    "modelIdsCount": 41
+    "modelIdsCount": 39
   },
   "_TZ3002_UMDKR64X": {
     "driverId": "switch_4gang",
@@ -240309,12 +239839,10 @@
       "ZBMINIL2-R2",
       "ZBMINIR",
       "ZBMINIR2",
-      "ZBMINIR2-R2",
-      "ZG-301Z",
-      "ZG-302Z1"
+      "ZBMINIR2-R2"
     ],
     "pid": "01MINIZB",
-    "modelIdsCount": 41
+    "modelIdsCount": 39
   },
   "_TZ3002_XKXGFXSG": {
     "driverId": "switch_4gang",
@@ -240358,12 +239886,10 @@
       "ZBMINIL2-R2",
       "ZBMINIR",
       "ZBMINIR2",
-      "ZBMINIR2-R2",
-      "ZG-301Z",
-      "ZG-302Z1"
+      "ZBMINIR2-R2"
     ],
     "pid": "01MINIZB",
-    "modelIdsCount": 41
+    "modelIdsCount": 39
   },
   "_TZ3002_YBTQBYK3": {
     "driverId": "switch_4gang",
@@ -240407,12 +239933,10 @@
       "ZBMINIL2-R2",
       "ZBMINIR",
       "ZBMINIR2",
-      "ZBMINIR2-R2",
-      "ZG-301Z",
-      "ZG-302Z1"
+      "ZBMINIR2-R2"
     ],
     "pid": "01MINIZB",
-    "modelIdsCount": 41
+    "modelIdsCount": 39
   },
   "_TZ3002_YMV5VYTN": {
     "driverId": "switch_4gang",
@@ -240456,12 +239980,10 @@
       "ZBMINIL2-R2",
       "ZBMINIR",
       "ZBMINIR2",
-      "ZBMINIR2-R2",
-      "ZG-301Z",
-      "ZG-302Z1"
+      "ZBMINIR2-R2"
     ],
     "pid": "01MINIZB",
-    "modelIdsCount": 41
+    "modelIdsCount": 39
   },
   "_TZ3002_ZJUVW9ZF": {
     "driverId": "switch_4gang",
@@ -240505,12 +240027,10 @@
       "ZBMINIL2-R2",
       "ZBMINIR",
       "ZBMINIR2",
-      "ZBMINIR2-R2",
-      "ZG-301Z",
-      "ZG-302Z1"
+      "ZBMINIR2-R2"
     ],
     "pid": "01MINIZB",
-    "modelIdsCount": 41
+    "modelIdsCount": 39
   },
   "_TZ3002_ZYUAJKZZ": {
     "driverId": "switch_4gang",
@@ -240554,12 +240074,10 @@
       "ZBMINIL2-R2",
       "ZBMINIR",
       "ZBMINIR2",
-      "ZBMINIR2-R2",
-      "ZG-301Z",
-      "ZG-302Z1"
+      "ZBMINIR2-R2"
     ],
     "pid": "01MINIZB",
-    "modelIdsCount": 41
+    "modelIdsCount": 39
   },
   "_TZ300A_OHJMIFIZ": {
     "driverId": "switch_4gang",
@@ -240603,12 +240121,10 @@
       "ZBMINIL2-R2",
       "ZBMINIR",
       "ZBMINIR2",
-      "ZBMINIR2-R2",
-      "ZG-301Z",
-      "ZG-302Z1"
+      "ZBMINIR2-R2"
     ],
     "pid": "01MINIZB",
-    "modelIdsCount": 41
+    "modelIdsCount": 39
   },
   "_TZ300A_RNCJ86AF": {
     "driverId": "switch_4gang",
@@ -240652,12 +240168,10 @@
       "ZBMINIL2-R2",
       "ZBMINIR",
       "ZBMINIR2",
-      "ZBMINIR2-R2",
-      "ZG-301Z",
-      "ZG-302Z1"
+      "ZBMINIR2-R2"
     ],
     "pid": "01MINIZB",
-    "modelIdsCount": 41
+    "modelIdsCount": 39
   },
   "_TZ300A_VKFLNSL0": {
     "driverId": "switch_4gang",
@@ -240701,12 +240215,10 @@
       "ZBMINIL2-R2",
       "ZBMINIR",
       "ZBMINIR2",
-      "ZBMINIR2-R2",
-      "ZG-301Z",
-      "ZG-302Z1"
+      "ZBMINIR2-R2"
     ],
     "pid": "01MINIZB",
-    "modelIdsCount": 41
+    "modelIdsCount": 39
   },
   "_TZ300A_VQRS45NJ": {
     "driverId": "switch_4gang",
@@ -240750,12 +240262,10 @@
       "ZBMINIL2-R2",
       "ZBMINIR",
       "ZBMINIR2",
-      "ZBMINIR2-R2",
-      "ZG-301Z",
-      "ZG-302Z1"
+      "ZBMINIR2-R2"
     ],
     "pid": "01MINIZB",
-    "modelIdsCount": 41
+    "modelIdsCount": 39
   },
   "_TZ300A_82iab0pn": {
     "driverId": "switch_4gang",
@@ -240799,12 +240309,10 @@
       "ZBMINIL2-R2",
       "ZBMINIR",
       "ZBMINIR2",
-      "ZBMINIR2-R2",
-      "ZG-301Z",
-      "ZG-302Z1"
+      "ZBMINIR2-R2"
     ],
     "pid": "01MINIZB",
-    "modelIdsCount": 41
+    "modelIdsCount": 39
   },
   "_TZ3210_IYMFXDIS": {
     "driverId": "switch_4gang",
@@ -240848,12 +240356,10 @@
       "ZBMINIL2-R2",
       "ZBMINIR",
       "ZBMINIR2",
-      "ZBMINIR2-R2",
-      "ZG-301Z",
-      "ZG-302Z1"
+      "ZBMINIR2-R2"
     ],
     "pid": "01MINIZB",
-    "modelIdsCount": 41
+    "modelIdsCount": 39
   },
   "_TZE204_XIBAABMU": {
     "driverId": "switch_4gang",
@@ -240897,12 +240403,10 @@
       "ZBMINIL2-R2",
       "ZBMINIR",
       "ZBMINIR2",
-      "ZBMINIR2-R2",
-      "ZG-301Z",
-      "ZG-302Z1"
+      "ZBMINIR2-R2"
     ],
     "pid": "01MINIZB",
-    "modelIdsCount": 41
+    "modelIdsCount": 39
   },
   "_TZE284_XIBAABMU": {
     "driverId": "switch_4gang",
@@ -240946,12 +240450,10 @@
       "ZBMINIL2-R2",
       "ZBMINIR",
       "ZBMINIR2",
-      "ZBMINIR2-R2",
-      "ZG-301Z",
-      "ZG-302Z1"
+      "ZBMINIR2-R2"
     ],
     "pid": "01MINIZB",
-    "modelIdsCount": 41
+    "modelIdsCount": 39
   },
   "_TZ3000_nsa76jai": {
     "driverId": "climate_sensor",
@@ -241027,12 +240529,10 @@
       "ZBMINIL2-R2",
       "ZBMINIR",
       "ZBMINIR2",
-      "ZBMINIR2-R2",
-      "ZG-301Z",
-      "ZG-302Z1"
+      "ZBMINIR2-R2"
     ],
     "pid": "01MINIZB",
-    "modelIdsCount": 47
+    "modelIdsCount": 45
   },
   "_tze200_rhblgy0z": {
     "driverId": "switch_4_gang_metering",
@@ -241104,12 +240604,10 @@
       "ZBMINIL2-R2",
       "ZBMINIR",
       "ZBMINIR2",
-      "ZBMINIR2-R2",
-      "ZG-301Z",
-      "ZG-302Z1"
+      "ZBMINIR2-R2"
     ],
     "pid": "01MINIZB",
-    "modelIdsCount": 47
+    "modelIdsCount": 45
   },
   "_tz3000_uri7ongn": {
     "driverId": "smart_knob",
@@ -241127,11 +240625,10 @@
       "ERS-10TZBVK-AA",
       "TS0044",
       "TS004F",
-      "TS0601",
-      "ZG-101ZD"
+      "TS0601"
     ],
     "pid": "ERS-10TZBVK-AA",
-    "modelIdsCount": 5
+    "modelIdsCount": 4
   },
   "_tz3000_gwkzibhs": {
     "driverId": "smart_knob_rotary",
@@ -241140,11 +240637,10 @@
       "ERS-10TZBVK-AA",
       "TS0044",
       "TS004F",
-      "TS0601",
-      "ZG-101ZD"
+      "TS0601"
     ],
     "pid": "ERS-10TZBVK-AA",
-    "modelIdsCount": 5
+    "modelIdsCount": 4
   },
   "_tze200_rks0sgb7": {
     "driverId": "switch_4_gang_metering",
@@ -241220,11 +240716,10 @@
       "ERS-10TZBVK-AA",
       "TS0044",
       "TS004F",
-      "TS0601",
-      "ZG-101ZD"
+      "TS0601"
     ],
     "pid": "ERS-10TZBVK-AA",
-    "modelIdsCount": 5
+    "modelIdsCount": 4
   },
   "_TZ3000_1fqpj6qz": {
     "driverId": "switch_4_gang_metering",
@@ -241628,7 +241123,7 @@
     "powerSource": "mains",
     "deviceType": "thermostat",
     "coupleLock": true,
-    "updatedAt": "2026-09-08",
+    "updatedAt": "2026-09-09",
     "lastEnrichment": "p2295-multi-identity"
   },
   "_TZE200_6kijc7nd": {
@@ -244190,12 +243685,10 @@
       "ZBMINIL2-R2",
       "ZBMINIR",
       "ZBMINIR2",
-      "ZBMINIR2-R2",
-      "ZG-301Z",
-      "ZG-302Z1"
+      "ZBMINIR2-R2"
     ],
     "pid": "01MINIZB",
-    "modelIdsCount": 36
+    "modelIdsCount": 34
   },
   "_tz3000_f3xka28j": {
     "driverId": "wall_dimmer_tuya",
@@ -246392,7 +245885,7 @@
     "powerSource": "mains",
     "deviceType": "curtain",
     "coupleLock": true,
-    "updatedAt": "2026-09-08",
+    "updatedAt": "2026-09-09",
     "lastEnrichment": "p2295-multi-identity"
   },
   "_TZE200_pw7mji0l": {
@@ -246441,7 +245934,7 @@
     "powerSource": "mains",
     "deviceType": "curtain",
     "coupleLock": true,
-    "updatedAt": "2026-09-08",
+    "updatedAt": "2026-09-09",
     "lastEnrichment": "p2295-multi-identity"
   },
   "_TZE200_cf1sl3tj": {
@@ -246481,7 +245974,7 @@
     "powerSource": "mains",
     "deviceType": "curtain",
     "coupleLock": true,
-    "updatedAt": "2026-09-08",
+    "updatedAt": "2026-09-09",
     "lastEnrichment": "p2295-multi-identity"
   },
   "_TZE200_nw1r9hp6": {
@@ -246530,7 +246023,7 @@
     "powerSource": "mains",
     "deviceType": "curtain",
     "coupleLock": true,
-    "updatedAt": "2026-09-08",
+    "updatedAt": "2026-09-09",
     "lastEnrichment": "p2295-multi-identity"
   },
   "_TZE200_68nvbi09": {
@@ -246568,7 +246061,7 @@
     "powerSource": "mains",
     "deviceType": "curtain",
     "coupleLock": true,
-    "updatedAt": "2026-09-08",
+    "updatedAt": "2026-09-09",
     "lastEnrichment": "p2295-multi-identity"
   },
   "_TZE200_e9ba97vf": {
@@ -247005,7 +246498,7 @@
     "powerSource": "mains",
     "deviceType": "curtain",
     "coupleLock": true,
-    "updatedAt": "2026-09-08",
+    "updatedAt": "2026-09-09",
     "lastEnrichment": "p2295-multi-identity"
   },
   "_TZE204_pw7mji0l": {
@@ -247054,7 +246547,7 @@
     "powerSource": "mains",
     "deviceType": "curtain",
     "coupleLock": true,
-    "updatedAt": "2026-09-08",
+    "updatedAt": "2026-09-09",
     "lastEnrichment": "p2295-multi-identity"
   },
   "_tze200_lzriup1j": {
@@ -358777,7 +358270,7 @@
     "powerSource": "mains",
     "deviceType": "air_quality",
     "coupleLock": true,
-    "updatedAt": "2026-09-08",
+    "updatedAt": "2026-09-09",
     "lastEnrichment": "p2295-multi-identity"
   },
   "_TZE204_ogkdpgy2": {
@@ -358828,7 +358321,7 @@
     "powerSource": "mains",
     "deviceType": "air_quality",
     "coupleLock": true,
-    "updatedAt": "2026-09-08",
+    "updatedAt": "2026-09-09",
     "lastEnrichment": "p2295-multi-identity"
   },
   "_TZE200_3ejwxpmu": {
@@ -358868,7 +358361,7 @@
     "powerSource": "mains",
     "deviceType": "air_quality",
     "coupleLock": true,
-    "updatedAt": "2026-09-08",
+    "updatedAt": "2026-09-09",
     "lastEnrichment": "p2295-multi-identity"
   },
   "_TZE204_3ejwxpmu": {
@@ -358908,7 +358401,7 @@
     "powerSource": "mains",
     "deviceType": "air_quality",
     "coupleLock": true,
-    "updatedAt": "2026-09-08",
+    "updatedAt": "2026-09-09",
     "lastEnrichment": "p2295-multi-identity"
   },
   "_TZE204_68nvbio9": {
@@ -358954,7 +358447,7 @@
     "powerSource": "mains",
     "deviceType": "curtain",
     "coupleLock": true,
-    "updatedAt": "2026-09-08",
+    "updatedAt": "2026-09-09",
     "lastEnrichment": "p2295-multi-identity"
   },
   "_TZE200_9p5xmj5r": {
@@ -359003,7 +358496,7 @@
     "powerSource": "mains",
     "deviceType": "curtain",
     "coupleLock": true,
-    "updatedAt": "2026-09-08",
+    "updatedAt": "2026-09-09",
     "lastEnrichment": "p2295-multi-identity"
   },
   "_TZE200_eevqq1uv": {
@@ -359052,7 +358545,7 @@
     "powerSource": "mains",
     "deviceType": "curtain",
     "coupleLock": true,
-    "updatedAt": "2026-09-08",
+    "updatedAt": "2026-09-09",
     "lastEnrichment": "p2295-multi-identity"
   },
   "_TZE200_ba69l9ol": {
@@ -359101,7 +358594,7 @@
     "powerSource": "mains",
     "deviceType": "curtain",
     "coupleLock": true,
-    "updatedAt": "2026-09-08",
+    "updatedAt": "2026-09-09",
     "lastEnrichment": "p2295-multi-identity"
   },
   "_TZE200_sfqyhvpv": {
@@ -359150,7 +358643,7 @@
     "powerSource": "mains",
     "deviceType": "curtain",
     "coupleLock": true,
-    "updatedAt": "2026-09-08",
+    "updatedAt": "2026-09-09",
     "lastEnrichment": "p2295-multi-identity"
   },
   "_TZE204_ejh6owwz": {
@@ -359199,7 +358692,7 @@
     "powerSource": "mains",
     "deviceType": "curtain",
     "coupleLock": true,
-    "updatedAt": "2026-09-08",
+    "updatedAt": "2026-09-09",
     "lastEnrichment": "p2295-multi-identity"
   },
   "_TZ3000_mrpevh8p": {
@@ -359240,7 +358733,7 @@
     "powerSource": "battery",
     "deviceType": "button",
     "coupleLock": true,
-    "updatedAt": "2026-09-08",
+    "updatedAt": "2026-09-09",
     "lastEnrichment": "p2295-multi-identity"
   },
   "_TZE284_60cnqlhn": {
@@ -359393,13 +358886,10 @@
       "ZBMINIR",
       "ZBMINIR2",
       "ZBMINIR2-R2",
-      "ZBT-COLORLIGHT",
-      "ZG-301Z",
-      "ZG-302Z1",
-      "ZG-302Z2"
+      "ZBT-COLORLIGHT"
     ],
     "pid": "01MINIZB",
-    "modelIdsCount": 105,
+    "modelIdsCount": 102,
     "driverHint": "scene_switch_4",
     "coupleLock": true,
     "powerSource": "battery",
@@ -359589,10 +359079,10 @@
       "ZBMINIR2",
       "ZBMINIR2-R2",
       "ZBT-CCTLIGHT",
-      "ZBT-DIMMABLELIGHT",
-      "ZG-301Z",
-      "ZG-302Z1"
-    ]
+      "ZBT-DIMMABLELIGHT"
+    ],
+    "pid": "01MINIZB",
+    "modelIdsCount": 86
   },
   "_tz3210_htdm5hvw": {
     "driverId": "bulb_rgbw",
@@ -359955,11 +359445,10 @@
       "ZBMINIR",
       "ZBMINIR2",
       "ZBMINIR2-R2",
-      "ZBT-COLORLIGHT",
-      "ZG-301Z",
-      "ZG-302Z1",
-      "ZG-302Z2"
-    ]
+      "ZBT-COLORLIGHT"
+    ],
+    "pid": "01MINIZB",
+    "modelIdsCount": 101
   },
   "_tz3000_cllghx1k": {
     "driverId": "button_wireless_2",
@@ -360065,11 +359554,10 @@
       "ZBMINIR",
       "ZBMINIR2",
       "ZBMINIR2-R2",
-      "ZBT-COLORLIGHT",
-      "ZG-301Z",
-      "ZG-302Z1",
-      "ZG-302Z2"
-    ]
+      "ZBT-COLORLIGHT"
+    ],
+    "pid": "01MINIZB",
+    "modelIdsCount": 101
   },
   "_tz3000_i5j6k7l8": {
     "driverId": "button_wireless_3",
@@ -360149,10 +359637,10 @@
       "ZBMINIL2-R2",
       "ZBMINIR",
       "ZBMINIR2",
-      "ZBMINIR2-R2",
-      "ZG-301Z",
-      "ZG-302Z1"
-    ]
+      "ZBMINIR2-R2"
+    ],
+    "pid": "01MINIZB",
+    "modelIdsCount": 45
   },
   "_tz3000_gbmcijn6": {
     "driverId": "button_wireless_4",
@@ -360202,10 +359690,10 @@
       "ZBMINIL2-R2",
       "ZBMINIR",
       "ZBMINIR2",
-      "ZBMINIR2-R2",
-      "ZG-301Z",
-      "ZG-302Z1"
-    ]
+      "ZBMINIR2-R2"
+    ],
+    "pid": "01MINIZB",
+    "modelIdsCount": 45
   },
   "_tz3000_pftj0i7z": {
     "driverId": "button_wireless_4",
@@ -360255,10 +359743,10 @@
       "ZBMINIL2-R2",
       "ZBMINIR",
       "ZBMINIR2",
-      "ZBMINIR2-R2",
-      "ZG-301Z",
-      "ZG-302Z1"
-    ]
+      "ZBMINIR2-R2"
+    ],
+    "pid": "01MINIZB",
+    "modelIdsCount": 45
   },
   "_tz3000_g": {
     "driverId": "button_wireless_scene",
@@ -362878,10 +362366,10 @@
       "ZBMINIL2-R2",
       "ZBMINIR",
       "ZBMINIR2",
-      "ZBMINIR2-R2",
-      "ZG-301Z",
-      "ZG-302Z1"
-    ]
+      "ZBMINIR2-R2"
+    ],
+    "pid": "01MINIZB",
+    "modelIdsCount": 34
   },
   "_tze28c1000000_jtbgusdc": {
     "driverId": "dimmer_2_gang_tuya",
@@ -362920,10 +362408,10 @@
       "ZBMINIL2-R2",
       "ZBMINIR",
       "ZBMINIR2",
-      "ZBMINIR2-R2",
-      "ZG-301Z",
-      "ZG-302Z1"
-    ]
+      "ZBMINIR2-R2"
+    ],
+    "pid": "01MINIZB",
+    "modelIdsCount": 34
   },
   "_tze200_jtbgusdc": {
     "driverId": "dimmer_2_gang_tuya",
@@ -362962,10 +362450,10 @@
       "ZBMINIL2-R2",
       "ZBMINIR",
       "ZBMINIR2",
-      "ZBMINIR2-R2",
-      "ZG-301Z",
-      "ZG-302Z1"
-    ]
+      "ZBMINIR2-R2"
+    ],
+    "pid": "01MINIZB",
+    "modelIdsCount": 34
   },
   "_tze284_o9gyszw2": {
     "driverId": "dimmer_2_gang_tuya",
@@ -363004,10 +362492,10 @@
       "ZBMINIL2-R2",
       "ZBMINIR",
       "ZBMINIR2",
-      "ZBMINIR2-R2",
-      "ZG-301Z",
-      "ZG-302Z1"
-    ]
+      "ZBMINIR2-R2"
+    ],
+    "pid": "01MINIZB",
+    "modelIdsCount": 34
   },
   "_tze28c1000000_o9gyszw2": {
     "driverId": "dimmer_2_gang_tuya",
@@ -363046,10 +362534,10 @@
       "ZBMINIL2-R2",
       "ZBMINIR",
       "ZBMINIR2",
-      "ZBMINIR2-R2",
-      "ZG-301Z",
-      "ZG-302Z1"
-    ]
+      "ZBMINIR2-R2"
+    ],
+    "pid": "01MINIZB",
+    "modelIdsCount": 34
   },
   "_tze204_fjms2pi9": {
     "driverId": "dimmer_2_gang_tuya",
@@ -363088,10 +362576,10 @@
       "ZBMINIL2-R2",
       "ZBMINIR",
       "ZBMINIR2",
-      "ZBMINIR2-R2",
-      "ZG-301Z",
-      "ZG-302Z1"
-    ]
+      "ZBMINIR2-R2"
+    ],
+    "pid": "01MINIZB",
+    "modelIdsCount": 34
   },
   "_tze284_fjms2pi9": {
     "driverId": "dimmer_2_gang_tuya",
@@ -363130,10 +362618,10 @@
       "ZBMINIL2-R2",
       "ZBMINIR",
       "ZBMINIR2",
-      "ZBMINIR2-R2",
-      "ZG-301Z",
-      "ZG-302Z1"
-    ]
+      "ZBMINIR2-R2"
+    ],
+    "pid": "01MINIZB",
+    "modelIdsCount": 34
   },
   "_tze200_fjms2pi9": {
     "driverId": "dimmer_2_gang_tuya",
@@ -363172,10 +362660,10 @@
       "ZBMINIL2-R2",
       "ZBMINIR",
       "ZBMINIR2",
-      "ZBMINIR2-R2",
-      "ZG-301Z",
-      "ZG-302Z1"
-    ]
+      "ZBMINIR2-R2"
+    ],
+    "pid": "01MINIZB",
+    "modelIdsCount": 34
   },
   "_tze28c1000000_fjms2pi9": {
     "driverId": "dimmer_2_gang_tuya",
@@ -363214,10 +362702,10 @@
       "ZBMINIL2-R2",
       "ZBMINIR",
       "ZBMINIR2",
-      "ZBMINIR2-R2",
-      "ZG-301Z",
-      "ZG-302Z1"
-    ]
+      "ZBMINIR2-R2"
+    ],
+    "pid": "01MINIZB",
+    "modelIdsCount": 34
   },
   "_tz3000_rjxqso4a": {
     "driverId": "din_rail_switch",
@@ -363347,9 +362835,10 @@
       "TS0601",
       "TS0601_GAS",
       "TS0601_GENERIC",
-      "TS0603",
-      "ZG-225Z"
-    ]
+      "TS0603"
+    ],
+    "pid": "TS0203",
+    "modelIdsCount": 8
   },
   "_tze200_chbyv06x": {
     "driverId": "gas_sensor",
@@ -363413,12 +362902,10 @@
       "ZBMINIL2-R2",
       "ZBMINIR",
       "ZBMINIR2",
-      "ZBMINIR2-R2",
-      "ZG-301Z",
-      "ZG-302Z1"
+      "ZBMINIR2-R2"
     ],
     "pid": "_TZ3000_EIT6L5",
-    "modelIdsCount": 50
+    "modelIdsCount": 48
   },
   "_tz3000_yujem9ee": {
     "driverId": "lcdtemphumidsensor_3",
@@ -364290,6 +363777,7 @@
       "E1603/E1702",
       "ERS-10TZBVK-AA",
       "EXCELLUX",
+      "HOBEIAN",
       "LUMI.MAGNET.AC01",
       "LUMI.MAGNET.AGL02",
       "LUMI.SENSOR_MAGNET",
@@ -364315,10 +363803,11 @@
       "TS0601",
       "TS0726",
       "TS130F",
-      "ZG-101ZD",
       "ZG-102Z",
       "ZG-102ZL"
-    ]
+    ],
+    "pid": "3300-S",
+    "modelIdsCount": 36
   },
   "_tz3000_psqjayrd": {
     "driverId": "sensor_contact_zigbee",
@@ -364332,6 +363821,7 @@
       "E1603/E1702",
       "ERS-10TZBVK-AA",
       "EXCELLUX",
+      "HOBEIAN",
       "LUMI.MAGNET.AC01",
       "LUMI.MAGNET.AGL02",
       "LUMI.SENSOR_MAGNET",
@@ -364357,10 +363847,11 @@
       "TS0601",
       "TS0726",
       "TS130F",
-      "ZG-101ZD",
       "ZG-102Z",
       "ZG-102ZL"
-    ]
+    ],
+    "pid": "3300-S",
+    "modelIdsCount": 36
   },
   "_tyzb01_8wt0zp49": {
     "driverId": "sensor_gas_presence",
@@ -364369,9 +363860,10 @@
       "TS0225",
       "TS0301",
       "TS0601",
-      "TS0601_GAS",
-      "ZG-225Z"
-    ]
+      "TS0601_GAS"
+    ],
+    "pid": "TS0225",
+    "modelIdsCount": 4
   },
   "_tyzb01_8scntis1": {
     "driverId": "siren",
@@ -365830,6 +365322,7 @@
     "modelIds": [
       "01MINIZB",
       "BASICZBR3",
+      "HOBEIAN",
       "JZ-ZB-004",
       "S26R2ZB",
       "S31ZB",
@@ -365872,10 +365365,10 @@
       "ZBMINIR",
       "ZBMINIR2",
       "ZBMINIR2-R2",
-      "ZG-301Z",
-      "ZG-302Z1",
       "ZG-302Z3"
-    ]
+    ],
+    "pid": "01MINIZB",
+    "modelIdsCount": 46
   },
   "_tz3210_aksyshpw": {
     "driverId": "switch_3gang",
@@ -365883,6 +365376,7 @@
     "modelIds": [
       "01MINIZB",
       "BASICZBR3",
+      "HOBEIAN",
       "JZ-ZB-004",
       "S26R2ZB",
       "S31ZB",
@@ -365925,10 +365419,10 @@
       "ZBMINIR",
       "ZBMINIR2",
       "ZBMINIR2-R2",
-      "ZG-301Z",
-      "ZG-302Z1",
       "ZG-302Z3"
-    ]
+    ],
+    "pid": "01MINIZB",
+    "modelIdsCount": 46
   },
   "_tz3210_fawk5xjv": {
     "driverId": "switch_3gang",
@@ -365936,6 +365430,7 @@
     "modelIds": [
       "01MINIZB",
       "BASICZBR3",
+      "HOBEIAN",
       "JZ-ZB-004",
       "S26R2ZB",
       "S31ZB",
@@ -365978,10 +365473,10 @@
       "ZBMINIR",
       "ZBMINIR2",
       "ZBMINIR2-R2",
-      "ZG-301Z",
-      "ZG-302Z1",
       "ZG-302Z3"
-    ]
+    ],
+    "pid": "01MINIZB",
+    "modelIdsCount": 46
   },
   "_tze204_qfg3gz3w": {
     "driverId": "switch_3gang",
@@ -365989,6 +365484,7 @@
     "modelIds": [
       "01MINIZB",
       "BASICZBR3",
+      "HOBEIAN",
       "JZ-ZB-004",
       "S26R2ZB",
       "S31ZB",
@@ -366031,10 +365527,10 @@
       "ZBMINIR",
       "ZBMINIR2",
       "ZBMINIR2-R2",
-      "ZG-301Z",
-      "ZG-302Z1",
       "ZG-302Z3"
-    ]
+    ],
+    "pid": "01MINIZB",
+    "modelIdsCount": 46
   },
   "_tze284_exfilann": {
     "driverId": "switch_3gang",
@@ -366042,6 +365538,7 @@
     "modelIds": [
       "01MINIZB",
       "BASICZBR3",
+      "HOBEIAN",
       "JZ-ZB-004",
       "S26R2ZB",
       "S31ZB",
@@ -366084,10 +365581,10 @@
       "ZBMINIR",
       "ZBMINIR2",
       "ZBMINIR2-R2",
-      "ZG-301Z",
-      "ZG-302Z1",
       "ZG-302Z3"
-    ]
+    ],
+    "pid": "01MINIZB",
+    "modelIdsCount": 46
   },
   "_tyzb01_dvakyzhd": {
     "driverId": "switch_4gang",
@@ -366131,10 +365628,10 @@
       "ZBMINIL2-R2",
       "ZBMINIR",
       "ZBMINIR2",
-      "ZBMINIR2-R2",
-      "ZG-301Z",
-      "ZG-302Z1"
-    ]
+      "ZBMINIR2-R2"
+    ],
+    "pid": "01MINIZB",
+    "modelIdsCount": 39
   },
   "_tz3000": {
     "driverId": "switch_4gang",
@@ -366178,10 +365675,10 @@
       "ZBMINIL2-R2",
       "ZBMINIR",
       "ZBMINIR2",
-      "ZBMINIR2-R2",
-      "ZG-301Z",
-      "ZG-302Z1"
-    ]
+      "ZBMINIR2-R2"
+    ],
+    "pid": "01MINIZB",
+    "modelIdsCount": 39
   },
   "_tz302_pzao9ls1": {
     "driverId": "switch_4gang",
@@ -366225,10 +365722,10 @@
       "ZBMINIL2-R2",
       "ZBMINIR",
       "ZBMINIR2",
-      "ZBMINIR2-R2",
-      "ZG-301Z",
-      "ZG-302Z1"
-    ]
+      "ZBMINIR2-R2"
+    ],
+    "pid": "01MINIZB",
+    "modelIdsCount": 39
   },
   "_tz3210_qjvi92wz": {
     "driverId": "switch_4gang",
@@ -366272,10 +365769,10 @@
       "ZBMINIL2-R2",
       "ZBMINIR",
       "ZBMINIR2",
-      "ZBMINIR2-R2",
-      "ZG-301Z",
-      "ZG-302Z1"
-    ]
+      "ZBMINIR2-R2"
+    ],
+    "pid": "01MINIZB",
+    "modelIdsCount": 39
   },
   "_tz3210_w3hl6rao": {
     "driverId": "switch_4gang",
@@ -366319,10 +365816,10 @@
       "ZBMINIL2-R2",
       "ZBMINIR",
       "ZBMINIR2",
-      "ZBMINIR2-R2",
-      "ZG-301Z",
-      "ZG-302Z1"
-    ]
+      "ZBMINIR2-R2"
+    ],
+    "pid": "01MINIZB",
+    "modelIdsCount": 39
   },
   "_tz3210_wts1g2oh": {
     "driverId": "switch_4gang",
@@ -366366,10 +365863,10 @@
       "ZBMINIL2-R2",
       "ZBMINIR",
       "ZBMINIR2",
-      "ZBMINIR2-R2",
-      "ZG-301Z",
-      "ZG-302Z1"
-    ]
+      "ZBMINIR2-R2"
+    ],
+    "pid": "01MINIZB",
+    "modelIdsCount": 39
   },
   "_tz3210_z4hgsevd": {
     "driverId": "switch_4gang",
@@ -366413,10 +365910,10 @@
       "ZBMINIL2-R2",
       "ZBMINIR",
       "ZBMINIR2",
-      "ZBMINIR2-R2",
-      "ZG-301Z",
-      "ZG-302Z1"
-    ]
+      "ZBMINIR2-R2"
+    ],
+    "pid": "01MINIZB",
+    "modelIdsCount": 39
   },
   "_tze204_8eazvzo6": {
     "driverId": "switch_wall_6gang",
@@ -367423,10 +366920,10 @@
       "ZBMINIL2-R2",
       "ZBMINIR",
       "ZBMINIR2",
-      "ZBMINIR2-R2",
-      "ZG-301Z",
-      "ZG-302Z1"
-    ]
+      "ZBMINIR2-R2"
+    ],
+    "pid": "01MINIZB",
+    "modelIdsCount": 39
   },
   "_TZE284_fodv6bkr": {
     "driverId": "curtain_motor",
@@ -367526,10 +367023,10 @@
       "ZBMINIR2",
       "ZBMINIR2-R2",
       "ZBT-CCTLIGHT",
-      "ZBT-DIMMABLELIGHT",
-      "ZG-301Z",
-      "ZG-302Z1"
-    ]
+      "ZBT-DIMMABLELIGHT"
+    ],
+    "pid": "01MINIZB",
+    "modelIdsCount": 86
   },
   "_tze284_grxx6qek": {
     "driverId": "presence_sensor_radar",
@@ -367589,20 +367086,6 @@
       "ZG-302ZL",
       "ZG-302ZM",
       "ZP-301Z"
-    ]
-  },
-  "_tz3210_402vrq2i": {
-    "driverId": "smart_knob",
-    "source": "sync-compose-known",
-    "modelIds": [
-      "TS004F"
-    ]
-  },
-  "_tz3400_402vrq2i": {
-    "driverId": "smart_knob",
-    "source": "sync-compose-known",
-    "modelIds": [
-      "TS004F"
     ]
   },
   "Hobeian": {
@@ -368005,6 +367488,20 @@
       "HOBEIAN",
       "HOBEIAN Device",
       "HOBEIAN Zigbee"
+    ]
+  },
+  "_tz3210_402vrq2i": {
+    "driverId": "smart_knob",
+    "source": "sync-compose-known",
+    "modelIds": [
+      "TS004F"
+    ]
+  },
+  "_tz3400_402vrq2i": {
+    "driverId": "smart_knob",
+    "source": "sync-compose-known",
+    "modelIds": [
+      "TS004F"
     ]
   }
 }
