@@ -1,12 +1,12 @@
 {
-  "generatedAt": "2026-09-09T06:39:20.003Z",
+  "generatedAt": "2026-09-09T17:18:11.790Z",
   "mode": "APPLY",
   "phases": [
     {
       "name": "mfs-db-dedupe",
       "ok": true,
       "exit": 0,
-      "tail": "[mfs-db-dedupe] OK — aucun doublon de casse (4407 clés)\n"
+      "tail": "[mfs-db-dedupe] OK — aucun doublon de casse (4408 clés)\n"
     },
     {
       "name": "sync-compose-to-mfs-db",
@@ -42,7 +42,7 @@
       "name": "p2368-mfs-test",
       "ok": true,
       "exit": 0,
-      "tail": "    duration_ms: 53.797431\n      type: 'test'\n      ...\n    # Subtest: no case-duplicate mfr keys\n    ok 5 - no case-duplicate mfr keys\n      ---\n      duration_ms: 55.168706\n      type: 'test'\n      ...\n    # Subtest: UdpDiscoveryKeys SSOT exists (wifi unrelated sanity)\n    ok 6 - UdpDiscoveryKeys SSOT exists (wifi unrelated sanity)\n      ---\n      duration_ms: 0.262342\n      type: 'test'\n      ...\n    1..6\nok 1 - P2368 mfs_db hardening\n  ---\n  duration_ms: 642.449036\n  type: 'suite'\n  ...\n1..1\n# tests 6\n# suites 1\n# pass 6\n# fail 0\n# cancelled 0\n# skipped 0\n# todo 0\n# duration_ms 717.178908\n"
+      "tail": "    duration_ms: 56.919105\n      type: 'test'\n      ...\n    # Subtest: no case-duplicate mfr keys\n    ok 5 - no case-duplicate mfr keys\n      ---\n      duration_ms: 57.664303\n      type: 'test'\n      ...\n    # Subtest: UdpDiscoveryKeys SSOT exists (wifi unrelated sanity)\n    ok 6 - UdpDiscoveryKeys SSOT exists (wifi unrelated sanity)\n      ---\n      duration_ms: 0.274433\n      type: 'test'\n      ...\n    1..6\nok 1 - P2368 mfs_db hardening\n  ---\n  duration_ms: 674.531143\n  type: 'suite'\n  ...\n1..1\n# tests 6\n# suites 1\n# pass 6\n# fail 0\n# cancelled 0\n# skipped 0\n# todo 0\n# duration_ms 753.753987\n"
     }
   ],
   "pass": true

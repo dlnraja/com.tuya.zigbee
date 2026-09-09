@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-09T06:39:20.552Z",
+  "generatedAt": "2026-09-09T17:18:12.339Z",
   "mode": "apply",
   "classFilter": null,
   "neverInventProductId": true,
@@ -7,7 +7,7 @@
     "button": {
       "count": 54,
       "withGaps": 7,
-      "mfrEntries": 1497,
+      "mfrEntries": 1495,
       "flowTriggers": 842,
       "gapSamples": [
         {
@@ -57,7 +57,7 @@
     "socket": {
       "count": 108,
       "withGaps": 41,
-      "mfrEntries": 3807,
+      "mfrEntries": 3809,
       "flowTriggers": 1164,
       "gapSamples": [
         {
@@ -190,7 +190,7 @@
     "light": {
       "count": 53,
       "withGaps": 6,
-      "mfrEntries": 1600,
+      "mfrEntries": 1608,
       "flowTriggers": 260,
       "gapSamples": [
         {
@@ -385,7 +385,7 @@
   "totals": {
     "drivers": 431,
     "withGaps": 86,
-    "mfrEntries": 17105,
+    "mfrEntries": 17113,
     "flowTriggers": 3587
   },
   "applyResults": [
