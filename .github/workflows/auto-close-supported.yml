@@ -1,5 +1,5 @@
 # Universal Tuya Zigbee - Batch Analyze & Respond
-# Responses and labels remain available on dlnraja. State transitions are manual.
+# P119: daily schedule + bot triage first. Human issue closes stay manual (shadow).
 # JohanBendz is a strict read-only evidence source.
 
 name: "Batch Analyze & Respond"
@@ -10,12 +10,15 @@ name: "Batch Analyze & Respond"
 
 
 on:
+  schedule:
+    # Daily 05:45 UTC — after bot-issue triage (04:45) and community-inbox (05:17)
+    - cron: '45 5 * * *'
   workflow_dispatch:
     inputs:
       dry_run:
         description: "Dry run (no comments/closes)"
         type: boolean
-        default: false
+        default: true
       max_items:
         description: "Max items per repo (0=all)"
         type: number
@@ -51,12 +54,12 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 45
     steps:
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # v5.1.0
         with:
           fetch-depth: 0
           token: ${{ secrets.GH_PAT || secrets.GITHUB_TOKEN }}
 
-      - uses: actions/setup-node@v5
+      - uses: actions/setup-node@a0853c24544627f65ddf259abe73b1d18a591444 # v5.0.0
         with:
           node-version: ${{ env.NODE_VERSION }}
           cache: npm
@@ -73,6 +76,26 @@ jobs:
           echo "drivers=$D" >> $GITHUB_OUTPUT
           echo "fps=$F" >> $GITHUB_OUTPUT
           echo "App v$V — $D drivers — $F fingerprints"
+
+      - name: "Bot/[Auto] treat & close first"
+        id: bot_triage
+        continue-on-error: true
+        env:
+          GH_PAT: ${{ secrets.GH_PAT }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GH_TOKEN: ${{ secrets.GH_PAT || secrets.GITHUB_TOKEN }}
+          ALLOW_BOT_ISSUE_CLOSE: 'true'
+          # WHY(P2436): schedule always dry-run; live only via dispatch dry_run=false
+          DRY_RUN: ${{ github.event_name == 'schedule' && 'true' || (inputs.dry_run && 'true' || 'false') }}
+          GITHUB_RESOLVER_COMMENT: '0'
+          FORUM_AUTO_POST: '0'
+          GITHUB_REPOSITORY: ${{ github.repository }}
+        run: |
+          if [ "${{ github.event_name }}" = "schedule" ] || [ "${{ inputs.dry_run }}" = "true" ]; then
+            node tools/ci/auto-bot-issue-triage.js --dry-run
+          else
+            node tools/ci/auto-bot-issue-triage.js
+          fi
 
       - name: "Process dlnraja issues & PRs"
         id: own_repo
@@ -91,12 +114,16 @@ jobs:
           NVIDIA_API_KEY: ${{ secrets.NVIDIA_API_KEY }}
           HOMEY_EMAIL: ${{ secrets.HOMEY_EMAIL }}
           HOMEY_PASSWORD: ${{ secrets.HOMEY_PASSWORD }}
-          DRY_RUN: ${{ inputs.dry_run || 'false' }}
+          DRY_RUN: ${{ github.event_name == 'schedule' && 'true' || (inputs.dry_run && 'true' || 'false') }}
+          GITHUB_RESOLVER_COMMENT: '0'
+          FORUM_AUTO_POST: '0'
           STALE_DAYS: "30"
           MAX_ITEMS: ${{ inputs.max_items || '100' }}
           INCLUDE_CLOSED: ${{ inputs.include_closed || 'false' }}
           FORCE_REPROCESS: ${{ inputs.force_reprocess || 'false' }}
           REPOS: "dlnraja/com.tuya.zigbee"
+          # Bot closes only via auto-bot-issue-triage; keep manager shadow-safe for humans
+          ALLOW_BOT_ISSUE_CLOSE: 'false'
         run: node .github/scripts/github-issue-manager.js
 
       - name: "Process JohanBendz issues & PRs"
@@ -138,7 +165,7 @@ jobs:
           fi
 
       - name: Upload reports
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@330a01c490aca151604b8cf639adc76d48f6c5d4 # v5.0.0
         if: always()
         with:
           name: batch-close-reports
