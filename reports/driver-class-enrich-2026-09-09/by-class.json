@@ -359,7 +359,7 @@
     {
       "driverId": "remote_button_wireless",
       "homeyClass": "button",
-      "mfrCount": 4,
+      "mfrCount": 2,
       "pidCount": 7,
       "capCount": 4,
       "settingCount": 12,
@@ -1727,7 +1727,7 @@
     {
       "driverId": "switch_3gang",
       "homeyClass": "socket",
-      "mfrCount": 215,
+      "mfrCount": 217,
       "pidCount": 48,
       "capCount": 13,
       "settingCount": 13,
@@ -4485,7 +4485,7 @@
     {
       "driverId": "bulb_dimmable",
       "homeyClass": "light",
-      "mfrCount": 174,
+      "mfrCount": 178,
       "pidCount": 86,
       "capCount": 8,
       "settingCount": 8,
@@ -4563,7 +4563,7 @@
     {
       "driverId": "bulb_rgbw",
       "homeyClass": "light",
-      "mfrCount": 106,
+      "mfrCount": 110,
       "pidCount": 14,
       "capCount": 8,
       "settingCount": 8,
