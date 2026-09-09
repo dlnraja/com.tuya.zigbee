@@ -214,12 +214,29 @@ class CurtainMotorDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedC
       await this.removeCapability('button.1').catch(() => {});
     }
 
-    // v5.8.79: Only setup Tuya DP listener and calibration for Tuya DP devices
-    // Root cause (Tbao TS130F): _setupTuyaDPListener on ZCL devices registers
-    // unused listeners and _applyCalibrationSettings sends Tuya DP commands that
-    // fail silently on ZCL devices (TS130F uses windowCovering cluster 258)
+    // WHY(P2436 / #533 salvagr): soft-rearm TuyaEF00Manager + keep direct cluster
+    // listener (`_setupTuyaDPListener`) so physical moves report when manager hollow.
+    // Also arm passive EF00 wrap + DataQuery for Moes ZTS.
     if (protocol !== 'ZCL') {
-      await this._setupTuyaDPListener();
+      try {
+        if (typeof this._setupTuyaDPMode === 'function') {
+          await Promise.resolve(this._setupTuyaDPMode()).catch(() => {});
+        }
+        await this._setupTuyaDPListener();
+        if (moesZts) {
+          try {
+            this.io?._enablePassiveTuyaListen?.({});
+            const mgr = this.tuyaEF00Manager;
+            if (mgr && typeof mgr.queryAll === 'function') {
+              await mgr.queryAll().catch(() => {});
+            } else if (mgr && typeof mgr.sendCommand === 'function') {
+              await mgr.sendCommand(0x03, Buffer.alloc(0)).catch(() => {});
+            }
+          } catch (_e) { /* soft */ }
+        }
+      } catch (e) {
+        this.log('[CURTAIN] ⚠️ Tuya DP re-arm:', e.message);
+      }
       await this._applyCalibrationSettings();
     } else {
       this.log('[CURTAIN] ℹ️ ZCL device - skipping Tuya DP listener and calibration');
@@ -283,8 +300,11 @@ class CurtainMotorDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedC
    */
   async _setupTuyaDPListener() {
     try {
-      const tuyaCluster = this.zclNode?.endpoints?.[1]?.clusters?.tuya
-        || this.zclNode?.endpoints?.[1]?.clusters?.[61184];
+      const clusters = this.zclNode?.endpoints?.[1]?.clusters || {};
+      const tuyaCluster = clusters.tuya
+        || clusters.manuSpecificTuya
+        || clusters[61184]
+        || clusters['61184'];
 
       if (tuyaCluster && typeof tuyaCluster.on === 'function') {
         tuyaCluster.on('response', (status, transId, data) => {
@@ -293,7 +313,14 @@ class CurtainMotorDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedC
         tuyaCluster.on('dataReport', (data) => {
           this._handleTuyaDP(data);
         });
+        tuyaCluster.on('reporting', (data) => {
+          this._handleTuyaDP(data);
+        });
         this.log('[CURTAIN] ✅ Tuya DP listener registered');
+      } else {
+        // Hollow interview cluster — still arm passive frame path via I/O facade
+        this.io?._enablePassiveTuyaListen?.({});
+        this.log('[CURTAIN] ⚠️ No live Tuya cluster object — passive EF00 listen armed');
       }
     } catch (err) {
       this.log('[CURTAIN] ⚠️ Tuya DP listener setup failed:', err.message);

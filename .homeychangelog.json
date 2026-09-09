@@ -1476,5 +1476,8 @@
   },
   "5.12.145": {
     "en": "Removed broken contact-sensor OTA firmware reference that blocked Athom publish validation."
+  },
+  "5.12.146": {
+    "en": "Improved Moes curtain EF00 listen, reduced GitHub bot auto noise, Homey match unit mocks."
   }
 }
