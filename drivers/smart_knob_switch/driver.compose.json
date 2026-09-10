@@ -50,6 +50,7 @@
           3,
           4,
           6,
+          8,
           4096
         ]
       }
@@ -71,10 +72,10 @@
         "fr": "Mode de fonctionnement"
       },
       "hint": {
-        "en": "Scene Mode allows single/double/long press. Dimmer Mode only supports single press. Auto tries to detect and switch automatically.",
-        "fr": "Le mode Scène permet les appuis simples/doubles/longs. Le mode Variateur ne supporte que l'appui simple. Auto tente de détecter et basculer automatiquement."
+        "en": "Dimmer/command (default) sends levelControl steps on rotate. Scene mode is for multi-press only. Auto follows driver dimmer default (P2448).",
+        "fr": "Dimmer/commande (defaut) envoie des pas levelControl a la rotation. Mode scene pour multi-clics. Auto suit le defaut dimmer (P2448)."
       },
-      "value": "auto",
+      "value": "dimmer",
       "values": [
         {
           "id": "auto",
@@ -93,8 +94,8 @@
         {
           "id": "dimmer",
           "label": {
-            "en": "Dimmer Mode",
-            "fr": "Mode Variateur"
+            "en": "Dimmer/command mode (default — rotation)",
+            "fr": "Mode dimmer/commande (defaut — rotation)"
           }
         }
       ]

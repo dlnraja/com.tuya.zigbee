@@ -4,7 +4,7 @@
     "updated": "2026-09-10",
     "policy": "Never invent mfr+pid from tile names. Diag UUID + driver + forum text only.",
     "lastSync": "2026-09-10T06:42:06.237Z",
-    "lastInvestigation": "2026-09-05T07:54:36.505Z",
+    "lastInvestigation": "2026-09-10T12:33:55.114Z",
     "p2347": "Gabriel verified-only + A_Tas/Cam/Peter batch",
     "p2388": "Compensate-without-waiting + interview batch curtain/Peter/Cam/A_Tas"
   },
@@ -20,7 +20,8 @@
         2190,
         2193,
         2202,
-        2203
+        2203,
+        2230
       ],
       "diags": [
         {
@@ -3022,6 +3023,73 @@
       "devices": [],
       "_autoStub": true,
       "dualApp": "REVIEW"
+    },
+    "Stefan_Persson2": {
+      "forumTopic": 154092,
+      "posts": [
+        37
+      ],
+      "diags": [],
+      "devices": [],
+      "_autoStub": true
+    },
+    "Eduard_Martirosyan": {
+      "forumTopic": 140352,
+      "posts": [
+        2228
+      ],
+      "diags": [],
+      "devices": [
+        {
+          "tile": "Auto T140352 #2228",
+          "driver": "curtain_motor",
+          "couple": "_TZE284_FODV6BKR+TS0601",
+          "symptoms": [
+            "blind",
+            "unknown",
+            "curtain",
+            "cover",
+            "gang",
+            "battery",
+            "endpoint"
+          ],
+          "fixes": [
+            "endpoint jitter hardening",
+            "markAppCommand per-gang",
+            "SOS battery spike guard",
+            "UnifiedBatteryHandler"
+          ],
+          "userAction": "Update Universal Tuya Test to latest soak build; re-pair only if driver/EP changed",
+          "_autoStub": true,
+          "_source": "processor",
+          "_tier": "hardLock"
+        },
+        {
+          "tile": "Auto T140352 #2228",
+          "driver": "curtain_motor",
+          "couple": "_TZE284_LIBHT6UA+TS0601",
+          "symptoms": [
+            "blind",
+            "unknown",
+            "curtain",
+            "cover",
+            "gang",
+            "battery",
+            "endpoint"
+          ],
+          "fixes": [
+            "endpoint jitter hardening",
+            "markAppCommand per-gang",
+            "SOS battery spike guard",
+            "UnifiedBatteryHandler"
+          ],
+          "userAction": "Update Universal Tuya Test to latest soak build; re-pair only if driver/EP changed",
+          "_autoStub": true,
+          "_source": "processor",
+          "_tier": "hardLock"
+        }
+      ],
+      "_autoStub": true
     }
   },
   "fixCatalog": {

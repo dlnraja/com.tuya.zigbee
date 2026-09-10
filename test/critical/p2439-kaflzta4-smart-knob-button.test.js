@@ -65,14 +65,48 @@ describe('P2439 — kaflzta4+TS004F scene mode (diag a342c411)', () => {
     assert.strictEqual(fam.family, 'ts004f');
   });
 
-  it('true rotary knob mfr still skips 0x8004', () => {
+  it('true rotary knob mfr writes dimmer/command (not skip)', () => {
     const fam = classifyOperatingFamily(mockDevice({
       mfr: '_TZ3000_402vrq2i',
       pid: 'TS004F',
       driver: 'smart_knob',
     }));
     assert.strictEqual(fam.family, 'knob');
-    assert.strictEqual(fam.writeSceneAttr, false);
+    assert.strictEqual(fam.writeSceneAttr, true);
+    assert.strictEqual(fam.defaultMode, 'dimmer');
+  });
+
+  // WHY(P2448): ERS-10 uri7ongn must not fall through smart_knob→scene
+  it('uri7ongn ERS-10 is knob/dimmer on smart_knob', () => {
+    const fam = classifyOperatingFamily(mockDevice({
+      mfr: '_TZ3000_uri7ongn',
+      pid: 'TS004F',
+      driver: 'smart_knob',
+    }));
+    assert.strictEqual(fam.family, 'knob');
+    assert.strictEqual(fam.defaultMode, 'dimmer');
+    assert.strictEqual(fam.writeSceneAttr, true);
+  });
+
+  it('smart_knob_rotary always knob/dimmer (even ABSENT mfr)', () => {
+    const fam = classifyOperatingFamily(mockDevice({
+      mfr: '',
+      pid: 'TS004F',
+      driver: 'smart_knob_rotary',
+    }));
+    assert.strictEqual(fam.family, 'knob');
+    assert.strictEqual(fam.defaultMode, 'dimmer');
+    assert.strictEqual(fam.writeSceneAttr, true);
+  });
+
+  it('ixla93vd on smart_knob_rotary is knob/dimmer', () => {
+    const fam = classifyOperatingFamily(mockDevice({
+      mfr: '_TZ3000_ixla93vd',
+      pid: 'TS004F',
+      driver: 'smart_knob_rotary',
+    }));
+    assert.strictEqual(fam.family, 'knob');
+    assert.strictEqual(fam.defaultMode, 'dimmer');
   });
 
   it('PhysicalButtonMixin profile exists for kaflzta4', () => {

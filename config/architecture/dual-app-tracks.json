@@ -34,6 +34,10 @@
     "store changelog identity"
   ],
   "l99RecentClassification": {
+    "p2448_rotary_knob_command_mode": {
+      "tag": "BOTH",
+      "note": "ERS-10/ZG-101ZD command/dimmer 0x8004 + levelControl RX; DeviceOperatingMode KNOB_MFR; p2448 gate — reliability"
+    },
     "p2438_multi_source_local_solver_ai_limit": {
       "tag": "BOTH",
       "note": "Local intelligent solver + forfait AI skip in GHA + unit tests P2435–P2438 — reliability/cost; Cursor hooks MASTER_ONLY side already"

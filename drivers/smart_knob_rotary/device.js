@@ -36,8 +36,9 @@ class SmartKnobRotaryDevice extends TuyaZigbeeDevice {
       await this.safeSetCapabilityValue('dim', this._simulatedBrightness).catch(this._boundError || ((e) => { try { this.error(e); } catch (_) {} }));
     }
 
-    // v5.5.976: Enable TS004F scene mode (critical for button events)
-    await this._enableTS004FSceneMode(zclNode);
+    // WHY(P2448): command/dimmer mode — levelControl step/move for rotation.
+    // Old scene-force wrote 0x8004=1 and killed brightness_step RX.
+    await this._enableTS004FOperatingMode(zclNode);
 
     // Setup battery reporting
     await this._setupBatteryReporting(zclNode);
@@ -66,56 +67,32 @@ class SmartKnobRotaryDevice extends TuyaZigbeeDevice {
   }
 
   /**
-   * v5.5.976: Enable TS004F scene mode via attribute 0x8004 on OnOff cluster
-   * Without this, TS004F devices may not send scene/button commands
-   * Based on Ernst02507 interview data and Z2M/ZHA research
+   * WHY(P2448): ERS-10 / ZG-101ZD rotary needs genOnOff 0x8004=command (0) so
+   * levelControl step/move frames reach Homey. Prior scene-force (0x8004=1) here and
+   * in DeviceOperatingMode via /smart_knob/ regex — rotation stayed dead.
+   * Also migrate compose default button_mode=scene → dimmer once per device.
    */
-  async _enableTS004FSceneMode(zclNode) {
+  async _enableTS004FOperatingMode(zclNode) {
     try {
       const modelId = this.getSetting('zb_model_id') || '';
-      const mfr = this.getSetting('zb_manufacturer_name') || '';
-      
-      // Only for TS004F devices
-      if (!CI.includesCI(modelId, 'TS004F')) {
-        this.log('[TS004F] Not a TS004F device, skipping scene mode enable');
-        return;
+      if (!CI.includesCI(modelId, 'TS004F') && modelId) {
+        // Still apply when model empty (ABSENT wake) — classifier handles it
       }
-      
-      this.log('[TS004F] Attempting to enable scene mode for', mfr);
-      
-      if (zclNode.endpoints[1]?.clusters?.onOff) {
-        const onOffCluster = zclNode.endpoints[1].clusters.onOff;
-        
-        // Try to write attribute 0x8004 = 1 to enable scene mode
-        // This switches TS004F from dimmer mode to scene/command mode
-        try {
-          await onOffCluster.writeAttributes({ 32772: 1 }); // 0x8004 = 32772
-          this.log('[TS004F]  Scene mode enabled via attribute 0x8004');
-        } catch (writeErr) {
-          // Some devices don't support this attribute - that's OK
-          this.log('[TS004F] Could not write 0x8004:', writeErr.message);
-          
-          // Alternative: Try via raw Zigbee command
-          try {
-            await onOffCluster.writeAttributes({ switchMode: 1 });
-            this.log('[TS004F]  Scene mode enabled via switchMode');
-          } catch (altErr) {
-            this.log('[TS004F] Alternative also failed:', altErr.message);
-          }
+
+      const DeviceOperatingMode = require('../../lib/zigbee/DeviceOperatingMode');
+      if (this.getStoreValue('p2448_rotary_cmd_migrated') !== true) {
+        const cur = String(this.getSetting('button_mode') || '').toLowerCase();
+        if (!cur || cur === 'auto' || cur === 'scene') {
+          await this.setSettings({ button_mode: 'dimmer' }).catch(() => {});
         }
-        
-        // Read back to verify
-        try {
-          const attrs = await onOffCluster.readAttributes([32772]).catch(() => null);
-          if (attrs) {
-            this.log('[TS004F] Current mode attribute:', attrs);
-          }
-        } catch (readErr) {
-          // Ignore read errors
-        }
+        await this.setStoreValue('p2448_rotary_cmd_migrated', true).catch(() => {});
       }
+
+      const r = await DeviceOperatingMode.applyDesiredMode(this, zclNode);
+      this.log('[TS004F] operating mode:', r.desired || r.skipped, r.via || r.ok);
+      DeviceOperatingMode.registerOperationModeListener(this, zclNode);
     } catch (err) {
-      this.log('[TS004F] Scene mode setup error:', err.message);
+      this.log('[TS004F] operating mode setup error:', err.message);
     }
   }
 
@@ -215,9 +192,60 @@ class SmartKnobRotaryDevice extends TuyaZigbeeDevice {
 
       await this._setupScenesCluster(zclNode);
       this._setupCommandListeners(zclNode);
+      this._setupOnOffRotateFc(zclNode);
 
     } catch (err) {
       this.log('Knob event handling setup error:', err.message);
+    }
+  }
+
+  /**
+   * WHY(P2448): event-mode rotate_left/right arrives as genOnOff mfr cmd 0xFC
+   * (same as PhysicalButtonMixin). Keep as parallel RX when user stays in scene.
+   */
+  _setupOnOffRotateFc(zclNode) {
+    try {
+      const ep = zclNode?.endpoints?.[1];
+      if (!ep) {return;}
+      const onOff = ep.clusters?.onOff || ep.clusters?.genOnOff || ep.clusters?.[6];
+      if (onOff && typeof onOff.on === 'function') {
+        onOff.on('onToggle', (payload) => {
+          try {
+            if (payload && Number(payload.cmdId) === 0xFC) {
+              const dir = Number(payload.data?.[0] ?? payload.direction ?? 0);
+              if (dir === 1) this._triggerRotateLeft();
+              else if (dir === 2) { /* stop */ }
+              else this._triggerRotateRight();
+            }
+          } catch (_e) { /* noop */ }
+        });
+      }
+      const original = ep.handleFrame?.bind(ep);
+      if (!original || ep._p2448RotateFcWrapped) {return;}
+      ep._p2448RotateFcWrapped = true;
+      const self = this;
+      ep.handleFrame = (clusterId, frame, meta) => {
+        try {
+          const cid = Number(clusterId);
+          if (cid === 6 || cid === 0x0006) {
+            const data = Buffer.isBuffer(frame) ? frame
+              : Array.isArray(frame) ? Buffer.from(frame) : null;
+            if (data && data.length >= 3) {
+              const { parseZclHeader } = require('../../lib/zigbee/ZigbeeHelpers');
+              const hdr = parseZclHeader(data);
+              if (hdr && hdr.cmdId === 0xFC) {
+                const dir = data[hdr.payloadOffset] ?? 0;
+                self.log('[KNOB-FC] rotate dir=', dir);
+                if (dir === 1) self._triggerRotateLeft();
+                else if (dir !== 2) self._triggerRotateRight();
+              }
+            }
+          }
+        } catch (_e) { /* noop */ }
+        return original(clusterId, frame, meta);
+      };
+    } catch (e) {
+      this.log('[KNOB-FC] setup error:', e.message);
     }
   }
 
