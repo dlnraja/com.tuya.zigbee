@@ -1,4 +1,7 @@
 {
+  "9.0.856": {
+    "en": "Fixed rotary smart knobs (ERS-10): rotation uses command/dimmer mode again; improved knob fingerprints and CI gates."
+  },
   "9.0.855": {
     "en": "Fixed smart knob button presses when manufacturer id is missing at wake (scene mode); stopped battery percent flipping from voltage."
   },

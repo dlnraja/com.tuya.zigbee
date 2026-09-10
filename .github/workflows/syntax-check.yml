@@ -222,6 +222,8 @@ jobs:
           node --test test/critical/p2436-homey-match-moes-bot-mocks.test.js
           node --test test/critical/p2437-ai-forfait-cursor-hooks.test.js
           node --test test/critical/p2438-multi-source-harvest-ai-limit.test.js
+          node --test test/critical/p2439-kaflzta4-smart-knob-button.test.js
+          npm run check:p2448
 
       - name: Validate Homey SDK3 compliance
         run: |

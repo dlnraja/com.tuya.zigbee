@@ -421,7 +421,7 @@ Generated 2026-09-08T07:29:59.472Z from registry (201 cases) × compound DB (454
 - Compound `_TZ3000_uri7ongn|TS004F`: zcl  ERS-10TZBVK-AA / ZG-101ZD rotary; never power_meter
 - Compound `_TZ3000_ixla93vd|TS004F`: zcl
 - Compose: class=button eps=1 EF00=false IAS=false batteries=CR2032
-- Notes: z2m ERS-10TZBVK-AA smart knob (zigbeeModel ZG-101ZD, TS004F, CR2032). Battery rotary remote — never an energy meter, relay board or mains wall switch. power_meter also declares TS004F, so leaving it there is a live dual-claim.
+- Notes: z2m ERS-10TZBVK-AA smart knob (zigbeeModel ZG-101ZD, TS004F, CR2032). Battery rotary remote — never an energy meter, relay board or mains wall switch. power_meter also declares TS004F, so leaving it there is a live dual-claim. **P2448:** must stay `family=knob` + `0x8004=command/dimmer` (levelControl rotation). Never force scene via `/smart_knob/` catch-all — that killed rotate on `uri7ongn`/`ixla93vd`/`smart_knob_rotary`.
 - Sources: z2m-herdsman, johan-enrichment, P190
 
 ### `p190-ts130f-curtain-not-climate-or-dimmer` → `wall_curtain_switch`
