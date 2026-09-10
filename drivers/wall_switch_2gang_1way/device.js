@@ -4,10 +4,10 @@ const UnifiedSwitchBase = require('../../lib/devices/UnifiedSwitchBase');
 
 /**
  * WALL SWITCH 2-GANG 1-WAY (BSEED) - v9.7.3 Unified Architecture
- * v9.7.3: Migrated to unified mixin architecture with sub-device support.
- * Each gang can be a separate Homey device (Sub-device architecture).
- * v10.3.0 FIX (B10): Removed the redundant PhysicalButtonMixin + VirtualButtonMixin double wrap
- * double wrap — UnifiedSwitchBase already inherits both via TuyaZigbeeDevice.
+ *
+ * P2455 GH#544 (migueleap): wired dual-relay UI must be onoff + onoff.gang2 only.
+ * Do NOT expose button.* tiles or spawn devices.secondSwitch sub-devices.
+ * Couple: _TZ3000_l9brjwau + TS0002 → this driver (ZCL EP1/EP2), not switch_2gang.
  */
 class WallSwitch2Gang1WayDevice extends UnifiedSwitchBase {
 
@@ -17,18 +17,15 @@ class WallSwitch2Gang1WayDevice extends UnifiedSwitchBase {
 
   get switchCapabilities() {
     const { subDeviceId } = (typeof this.getData === 'function' && this.getData()) || {};
+    // Legacy sub-device instances (already paired) keep a single onoff tile
     if (subDeviceId) { return ['onoff']; }
-    return [
-      ...super.switchCapabilities,
-      ...Array.from({ length: this.gangCount }, (_, index) => `button.${index + 1}`),
-    ];
+    // WHY(P2455): no button.1/button.2 — wired relays only
+    return ['onoff', 'onoff.gang2'];
   }
 
   get dpMappings() {
     const { subDeviceId } = (typeof this.getData === 'function' && this.getData()) || {};
     const mappings = { ...super.dpMappings };
-    
-    // v9.7.3: For sub-devices, map the specific Tuya DP to the 'onoff' capability
     if (subDeviceId === 'secondSwitch') {
       mappings[2] = { capability: 'onoff', transform: (v) => v === 1 || v === true };
     }
@@ -36,38 +33,41 @@ class WallSwitch2Gang1WayDevice extends UnifiedSwitchBase {
   }
 
   async onNodeInit({ zclNode }) {
-    // Auto-fix: Remove battery capabilities for mains-powered devices
     await this.removeCapability('measure_battery').catch(() => {});
     await this.removeCapability('alarm_battery').catch(() => {});
+    // Strip leftover button clutter from older compose / re-pair without wipe
+    for (const cap of ['button.1', 'button.2', 'button.toggle_1', 'button.toggle_2', 'button.identify']) {
+      if (this.hasCapability(cap)) {
+        await this.removeCapability(cap).catch(() => {});
+      }
+    }
+
     await this._safeInvoke(async () => {
       const { subDeviceId } = (typeof this.getData === 'function' && this.getData()) || {};
       if (subDeviceId === 'secondSwitch') {
         this._gangNumber = 2;
-        this.log('[WALL-2G] Initializing Sub-Device (Gang 2)');
+        this._isSubDevice = true;
+        this.log('[WALL-2G] Legacy sub-device Gang 2');
       } else {
         this._gangNumber = 1;
-        this.log('[WALL-2G] Initializing Primary Device (Gang 1)');
+        this._isSubDevice = false;
+        this.log('[WALL-2G] Primary onoff + onoff.gang2 (P2455)');
       }
-      this._isSubDevice = Boolean(subDeviceId);
       await super.onNodeInit({ zclNode });
-      await this.initVirtualButtons();
-      if (typeof this._registerButtonCapabilityListeners === 'function') {
-        this._registerButtonCapabilityListeners();
-      }
-      this.log(`[WALL-2G] v9.7.3 - Unified initialization complete for Gang ${this._gangNumber}`);
+      this.log(`[WALL-2G] init complete gang=${this._gangNumber} sub=${this._isSubDevice}`);
     }, 'onNodeInit');
   }
 
   /**
-   * Filter physical button triggers to only process the gang assigned to this device.
-   * v10.3.0 FIX (B10): the primary instance now filters too when sub-devices
-   * are paired — previously it processed every gang, double-triggering flows
-   * alongside the owning sub-device.
+   * Keep physical press → flow routing for already-paired sub-devices only.
+   * Primary device uses onoff.gang* — no button.* tiles.
    */
   triggerButtonPress(button, type = 'single', countOrOptions = {}, options = {}) {
-    if (this._gangNumber !== undefined && button !== this._gangNumber
-      && (this._isSubDevice || this._hasPairedSubDevices())) {
-      return; // Ignore events for gangs owned by another (sub-)device
+    if (!this._isSubDevice) {
+      return; // primary: ignore button-tile path
+    }
+    if (this._gangNumber !== undefined && button !== this._gangNumber) {
+      return;
     }
     const tokens = typeof countOrOptions === 'number'
       ? { clicks: countOrOptions }
@@ -78,25 +78,14 @@ class WallSwitch2Gang1WayDevice extends UnifiedSwitchBase {
     return this._triggerPhysicalFlow(button, type, { ...tokens, _internalTrigger: true });
   }
 
-  /**
-   * v10.3.0 FIX (B10): True when sibling sub-devices (e.g. 'secondSwitch')
-   * are paired — the primary device must then ignore their gangs.
-   */
   _hasPairedSubDevices() {
     try {
-      return (this.driver?.getDevices?.() || [])
-        .some((d) => d !== this && Boolean(d.getData?.()?.subDeviceId));
-    } catch (_e) {return false;}
+      const kids = this.getChildren?.() || [];
+      return Array.isArray(kids) && kids.length > 0;
+    } catch (_) {
+      return false;
+    }
   }
-
-  /**
-   * Map UI commands to the correct Zigbee/Tuya gang.
-   */
-  _setGangOnOff(gang, value) {
-    const targetGang = this._isSubDevice ? this._gangNumber : gang;
-    return super._setGangOnOff(targetGang, value);
-  }
-
 }
 
 module.exports = WallSwitch2Gang1WayDevice;
