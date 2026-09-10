@@ -1,3 +1,4 @@
+- **P2458 (Athom tip #3140 / #3142):** Homey email `processing_failed` + `socket hang up`. **P139** — soft-expect / no bump-loop. Docs: `docs/architecture/PUBLISH_SSOT.md`.
 # Device peculiarities — cross-source investigation
 
 Generated 2026-09-08T07:29:59.472Z from registry (201 cases) × compound DB (454 keys) × local Z2M fps.

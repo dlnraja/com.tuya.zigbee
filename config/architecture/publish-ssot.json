@@ -16,7 +16,10 @@
     ],
     "alternate": "npm run publish:temp -- --channel test",
     "tempDirName": "homey-publish-temp",
-    "refuseUnless": ["HOMEY_ALLOW_REPO_PUBLISH=1", "--force"]
+    "refuseUnless": [
+      "HOMEY_ALLOW_REPO_PUBLISH=1",
+      "--force"
+    ]
   },
   "scripts": {
     "prepare": "scripts/prepare-publish.js",
@@ -28,7 +31,11 @@
   "softExpect": {
     "why": "Race when auto-publish and manual publish both createBuild same version (#2997→#2998, Stable #23).",
     "reListAfterCreateBuild": true,
-    "skipWhen": ["already-test", "in-flight", "peer-test-after-failed"],
+    "skipWhen": [
+      "already-test",
+      "in-flight",
+      "peer-test-after-failed"
+    ],
     "test": "test/critical/p2286-soft-expect-publish.test.js",
     "npm": "check:p2286"
   },
@@ -59,7 +66,14 @@
   },
   "p139": {
     "doNot": "spam republish on processing_failed / socket hang up",
-    "do": "soft-expect exit 0 when peer already on test; wait Athom cooldown"
+    "do": "soft-expect exit 0 when peer already on test; wait Athom cooldown",
+    "tipEmailExamples": [
+      "#3140",
+      "#3142"
+    ],
+    "tipEmailBody": "Your build has failed processing … socket hang up",
+    "patch": "P2458",
+    "humanDoc": "docs/architecture/PUBLISH_SSOT.md §P139 / tip email pattern"
   },
   "p2323": {
     "why": "Tip email + Homey developer tools hang / Timeout after 10000ms",

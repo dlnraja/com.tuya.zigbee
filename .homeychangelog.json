@@ -1533,5 +1533,8 @@
   },
   "5.12.164": {
     "en": "Cleaned 4-gang switch UI: relay gangs only — removed redundant button tiles from Homey device view."
+  },
+  "5.12.165": {
+    "en": "Hardened Athom publish soft-expect docs/tests for tip socket hang up."
   }
 }
