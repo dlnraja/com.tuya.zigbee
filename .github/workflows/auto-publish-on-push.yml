@@ -234,25 +234,15 @@ jobs:
         run: node .github/scripts/bump-homey-version.js
 
       - name: Sync package manifests version
+        run: node tools/ci/sync-root-package-version.js sync
+
+      - name: Package-lock integrity gate (P2454)
+        run: node tools/ci/sync-root-package-version.js assert
+
+      - name: Align mfs_db (P169 auto-heal before publish)
         run: |
-          node -e "
-            const f=require('fs');
-            const app=JSON.parse(f.readFileSync('app.json','utf8'));
-            const version=app.version;
-            for (const file of ['package.json', 'package-lock.json']) {
-              if (!f.existsSync(file)) continue;
-              const json=JSON.parse(f.readFileSync(file,'utf8'));
-              json.version=version;
-              if (json.packages && json.packages['']) json.packages[''].version=version;
-              f.writeFileSync(file, JSON.stringify(json,null,2)+'\n');
-            }
-            if (f.existsSync('.homeycompose/app.json')) {
-              const hc=JSON.parse(f.readFileSync('.homeycompose/app.json','utf8'));
-              hc.version=version;
-              f.writeFileSync('.homeycompose/app.json', JSON.stringify(hc,null,2)+'\n');
-            }
-            console.log('Synced package manifests to v'+version);
-          "
+          node tools/ci/align-mfs-db-intelligent.js --apply || true
+          node tools/ci/align-mfs-db-intelligent.js --check
 
       - name: Read bumped version
         id: info
@@ -482,7 +472,7 @@ jobs:
             done
           }
           stage_publish_metadata() {
-            for path in app.json .homeycompose .homeychangelog.json CHANGELOG.md README.md docs .github/scripts/_stats.json package.json package-lock.json; do
+            for path in app.json .homeycompose .homeychangelog.json CHANGELOG.md README.md docs .github/scripts/_stats.json package.json package-lock.json data/mfs_db.json; do
               [ -e "$path" ] && git add "$path"
             done
             for path in drivers/*/driver.compose.json; do
@@ -493,6 +483,7 @@ jobs:
           node tools/ci/sync-appjson-flow-dedupe.js --apply || true
           node <<'NODE'
           const fs = require('fs');
+          const { syncRootPackageVersion } = require('./tools/ci/sync-root-package-version');
           // Self-healing version sync: take the HIGHEST version among the
           // three manifests as canonical. bump-homey-version.js increments
           // all of them, but a regenerated app.json can lag one patch behind
@@ -513,18 +504,8 @@ jobs:
             app.version = version;
             fs.writeFileSync('app.json', JSON.stringify(app, null, 2) + '\n');
           }
-          for (const file of ['package.json', 'package-lock.json']) {
-            if (!fs.existsSync(file)) continue;
-            const json = JSON.parse(fs.readFileSync(file, 'utf8'));
-            json.version = version;
-            if (json.packages && json.packages['']) json.packages[''].version = version;
-            fs.writeFileSync(file, JSON.stringify(json, null, 2) + '\n');
-          }
-          if (fs.existsSync('.homeycompose/app.json')) {
-            const compose = JSON.parse(fs.readFileSync('.homeycompose/app.json', 'utf8'));
-            compose.version = version;
-            fs.writeFileSync('.homeycompose/app.json', JSON.stringify(compose, null, 2) + '\n');
-          }
+          // P2454: root-only — never stamp cosmiconfig / nested deps
+          syncRootPackageVersion(version);
           if (fs.existsSync('.homeychangelog.json')) {
             const changelog = JSON.parse(fs.readFileSync('.homeychangelog.json', 'utf8'));
             const current = changelog[version] && String(changelog[version].en || '');

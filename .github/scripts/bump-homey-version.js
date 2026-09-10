@@ -58,8 +58,8 @@ if (fs.existsSync(".homeycompose/app.json")) {
   writeJson(".homeycompose/app.json", compose);
 }
 
-syncPackageVersion("package.json", nextVersion);
-syncPackageVersion("package-lock.json", nextVersion);
+// P2454: root-only sync (never stamp nested lock deps with Homey version)
+require("../../tools/ci/sync-root-package-version").syncRootPackageVersion(nextVersion);
 
 if (fs.existsSync(".homeychangelog.json")) {
   const changelog = readJson(".homeychangelog.json");

@@ -167,8 +167,22 @@ jobs:
       - name: Homey heap JSON size gate (P148/P157)
         run: node tools/ci/homey-heap-json-gate.js
 
+      - name: Package-lock integrity gate (P2454)
+        run: node tools/ci/sync-root-package-version.js assert
+
       - name: Intelligent mfs_db alignment check (P169)
-        run: node tools/ci/align-mfs-db-intelligent.js --check
+        run: |
+          set -euo pipefail
+          if ! node tools/ci/align-mfs-db-intelligent.js --check; then
+            echo "::error::mfs_db high drift — run: node tools/ci/align-mfs-db-intelligent.js --apply && commit data/mfs_db.json"
+            node tools/ci/align-mfs-db-intelligent.js --apply
+            node tools/ci/align-mfs-db-intelligent.js --check
+            if ! git diff --quiet -- data/mfs_db.json; then
+              echo "::error::CI applied mfs_db fixes that are not in the commit — push the apply"
+              git diff --stat -- data/mfs_db.json
+              exit 1
+            fi
+          fi
 
       - name: Sacred couple registry audit (P151)
         run: node tools/ci/audit-sacred-couple.js --from-registry
@@ -223,6 +237,9 @@ jobs:
           node --test test/critical/p2437-ai-forfait-cursor-hooks.test.js
           node --test test/critical/p2438-multi-source-harvest-ai-limit.test.js
           node --test test/critical/p2439-kaflzta4-smart-knob-button.test.js
+          node --test test/critical/p2452-gh-issue-ssot.test.js
+          node --test test/critical/p2453-gmail-gh-couple-locks.test.js
+          node --test test/critical/p2454-package-lock-integrity.test.js
           npm run check:p244x
 
       - name: Validate Homey SDK3 compliance

@@ -183,7 +183,9 @@ jobs:
 
       - name: Sync package manifests and .homeycompose version
         if: steps.pat.outputs.ok == 'true'
-        run: node -e "const f=require('fs'),a=require('./app.json'),v=a.version;for(const file of ['package.json','package-lock.json']){if(!f.existsSync(file))continue;const j=JSON.parse(f.readFileSync(file,'utf8'));j.version=v;if(j.packages&&j.packages[''])j.packages[''].version=v;f.writeFileSync(file,JSON.stringify(j,null,2)+'\n');}if(f.existsSync('.homeycompose/app.json')){const hc=JSON.parse(f.readFileSync('.homeycompose/app.json','utf8'));hc.version=v;f.writeFileSync('.homeycompose/app.json',JSON.stringify(hc,null,2)+'\n');}console.log('Synced package manifests and .homeycompose to v'+v);"
+        run: |
+          node tools/ci/sync-root-package-version.js sync
+          node tools/ci/sync-root-package-version.js assert
 
       - name: Update Changelogs for New Version
         if: steps.pat.outputs.ok == 'true'

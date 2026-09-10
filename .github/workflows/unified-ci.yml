@@ -168,6 +168,9 @@ jobs:
           node --test test/critical/p2437-ai-forfait-cursor-hooks.test.js
           node --test test/critical/p2438-multi-source-harvest-ai-limit.test.js
           node --test test/critical/p2439-kaflzta4-smart-knob-button.test.js
+          node --test test/critical/p2452-gh-issue-ssot.test.js
+          node --test test/critical/p2453-gmail-gh-couple-locks.test.js
+          node --test test/critical/p2454-package-lock-integrity.test.js
           npm run check:p244x
 
       - name: 🛡️ Firmware / OTA path gate

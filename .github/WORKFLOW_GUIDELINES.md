@@ -1088,6 +1088,27 @@ npm run check:p244x   # = check:p2448 + check:p2449
 
 After changes to `drivers/smart_knob*`, `ButtonDevice`, button/dimmer flow compose, `DeviceOperatingMode`, or `DeclaredFlowCardAutoWire`: run `npm run check:p244x` before push.
 
+### P2454 — package-lock root-only version sync (2026-09-10)
+
+**Problem:** Stamping every `"version"` in `package-lock.json` with the Homey app tip
+(e.g. `9.0.861`) corrupted nested deps (`cosmiconfig@9.0.861`) → `npm ci` **ETARGET**
+→ Auto-Publish / e2e-dashboard dead.
+
+**Rule:** Sync **root only** (`package.json` + `package-lock.json` top-level + `packages[""]`).
+Never mutate `node_modules/*` entries.
+
+```bash
+node tools/ci/sync-root-package-version.js sync    # from app.json
+node tools/ci/sync-root-package-version.js assert  # fail if nested stamped with app version
+```
+
+**Wired:** `bump-homey-version.js`, `auto-publish-on-push.yml`, `publish.yml`,
+`syntax-check.yml`, `e2e-dashboard-test.yml`, `unified-ci.yml` (P2454 test).
+
+**P169 mfs:** Auto-Publish runs `align-mfs-db-intelligent --apply` before publish and
+stages `data/mfs_db.json` in the bot commit. Syntax-check still fails if the push
+omitted an apply (prints remediation).
+
 ### L99 enrich automation (regular)
 Workflows that soft-run L99 dual gates on schedule:
 - `auto-enrich-closed-loop.yml` (every 4h)
