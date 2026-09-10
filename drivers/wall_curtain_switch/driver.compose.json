@@ -31,9 +31,15 @@
     }
   },
   "zigbee": {
-    "manufacturerName": [],
+    "manufacturerName": [
+      "_tze20c_xbexmf8h",
+      "_TZE20C_xbexmf8h",
+      "_TZE20C_XBEXMF8H",
+      "_tze20c_XBEXMF8H"
+    ],
     "productId": [
-      "TS130F"
+      "TS130F",
+      "TS0601"
     ],
     "endpoints": {
       "1": {
