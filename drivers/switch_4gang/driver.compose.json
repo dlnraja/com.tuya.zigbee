@@ -6,16 +6,7 @@
     "onoff.gang3",
     "onoff.gang4",
     "measure_power",
-    "power_on_behavior",
-    "button.toggle_1",
-    "button.toggle_2",
-    "button.toggle_3",
-    "button.toggle_4",
-    "button.identify",
-    "button.1",
-    "button.2",
-    "button.3",
-    "button.4"
+    "power_on_behavior"
   ],
   "zigbee": {
     "productId": [
@@ -981,67 +972,6 @@
         "en": "Power On Behavior",
         "fr": "Comportement à la mise sous tension"
       }
-    },
-    "button.1": {
-      "title": {
-        "en": "Button 1",
-        "fr": "Bouton 1"
-      },
-      "maintenanceAction": true,
-      "getable": false,
-      "setable": false
-    },
-    "button.2": {
-      "title": {
-        "en": "Button 2",
-        "fr": "Bouton 2"
-      },
-      "maintenanceAction": true,
-      "getable": false,
-      "setable": false
-    },
-    "button.3": {
-      "title": {
-        "en": "Button 3",
-        "fr": "Bouton 3"
-      },
-      "maintenanceAction": true,
-      "getable": false,
-      "setable": false
-    },
-    "button.4": {
-      "title": {
-        "en": "Button 4",
-        "fr": "Bouton 4"
-      },
-      "maintenanceAction": true,
-      "getable": false,
-      "setable": false
-    },
-    "button.toggle_1": {
-      "setable": false,
-      "maintenanceAction": true,
-      "getable": false
-    },
-    "button.toggle_2": {
-      "setable": false,
-      "maintenanceAction": true,
-      "getable": false
-    },
-    "button.toggle_3": {
-      "setable": false,
-      "maintenanceAction": true,
-      "getable": false
-    },
-    "button.toggle_4": {
-      "setable": false,
-      "maintenanceAction": true,
-      "getable": false
-    },
-    "button.identify": {
-      "setable": false,
-      "maintenanceAction": true,
-      "getable": false
     },
     "measure_power": {
       "approximated": true

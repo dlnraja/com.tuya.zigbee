@@ -1,4 +1,7 @@
 {
+  "9.0.861": {
+    "en": "Fixed switch pairing catalogs (BSEED/Moes 1-4 gang) and Moes curtain fingerprint routing; removed extra button tiles on 4-gang switches."
+  },
   "9.0.856": {
     "en": "Fixed smart knob button presses when manufacturer id is missing at wake (scene mode); stopped battery percent flipping from voltage."
   },
