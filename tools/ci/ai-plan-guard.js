@@ -43,7 +43,7 @@ function buildReport() {
   const mode = process.env.AI_PLAN_MODE || defaults.AI_PLAN_MODE || 'forfait';
   const allowPaid = /^(1|true|yes)$/i.test(String(process.env.AI_ALLOW_PAID || defaults.AI_ALLOW_PAID || 'false'));
   const softPct = Number(process.env.AI_SOFT_STOP_PERCENT || defaults.AI_SOFT_STOP_PERCENT || 85);
-  const globalCap = Number(process.env.AI_GLOBAL_DAILY_CAP || defaults.AI_GLOBAL_DAILY_CAP || 400);
+  const globalCap = Number(process.env.AI_GLOBAL_DAILY_CAP || defaults.AI_GLOBAL_DAILY_CAP || 120);
   const usage = todayUsage();
 
   const providers = [];

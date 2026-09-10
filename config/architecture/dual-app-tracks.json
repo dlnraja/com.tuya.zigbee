@@ -34,6 +34,18 @@
     "store changelog identity"
   ],
   "l99RecentClassification": {
+    "p2438_multi_source_local_solver_ai_limit": {
+      "tag": "BOTH",
+      "note": "Local intelligent solver + forfait AI skip in GHA + unit tests P2435–P2438 — reliability/cost; Cursor hooks MASTER_ONLY side already"
+    },
+    "p2437_cursor_ai_forfait_hooks": {
+      "tag": "MASTER_ONLY",
+      "note": "Cursor hooks/rules + forfait soft-stop — IDE quota; CI env caps 120/70 also safe on stable workflows when backported"
+    },
+    "p2436_homey_match_moes_bot": {
+      "tag": "BOTH",
+      "note": "Switch pairing clusters + Moes curtain EF00 re-arm + bot dry-run — reliability"
+    },
     "energy_compensation_ssot": {
       "tag": "BOTH",
       "note": "SmartDivisor + EnergyJumpGuard + rememberLearnedDivisor — reliability/data correctness"

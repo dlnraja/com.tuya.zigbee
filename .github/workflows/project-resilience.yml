@@ -36,8 +36,9 @@ env:
   NODE_VERSION: '22'
   AI_PLAN_MODE: forfait
   AI_ALLOW_PAID: 'false'
-  AI_GLOBAL_DAILY_CAP: '400'
-  AI_SOFT_STOP_PERCENT: '85'
+  AI_GLOBAL_DAILY_CAP: '120'
+  AI_SOFT_STOP_PERCENT: '70'
+  AI_FORCE_LOCAL: 'true'
   FORUM_AUTO_POST: '0'
   SHADOW_FORUM: '1'
   DISCOURSE_WRITE: '0'
@@ -86,6 +87,12 @@ jobs:
           npm run security-scan || echo "security-scan warn"
           npm run infra:cache-stats || echo "cache-stats warn"
           npm run infra:log-smoke || true
+          # WHY(P2438): automated unit tests for harvest + forfait + pairing mocks
+          node --test test/critical/p2435-gh540-544-switch-pairing.test.js || echo "p2435 warn"
+          node --test test/critical/p2436-homey-match-moes-bot-mocks.test.js || echo "p2436 warn"
+          node --test test/critical/p2437-ai-forfait-cursor-hooks.test.js || echo "p2437 warn"
+          node --test test/critical/p2438-multi-source-harvest-ai-limit.test.js || echo "p2438 warn"
+          node tools/ci/local-intelligent-solver.js 533 'Moes _TZE204_5slehgeo TS0601' || true
 
       - name: "P2225 Inventory features + historical bugs"
         if: always()

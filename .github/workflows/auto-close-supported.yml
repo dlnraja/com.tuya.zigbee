@@ -47,6 +47,15 @@ defaults:
 
 env:
   NODE_VERSION: "22"
+  AI_PLAN_MODE: forfait
+  AI_ALLOW_PAID: "false"
+  AI_GLOBAL_DAILY_CAP: "120"
+  AI_SOFT_STOP_PERCENT: "70"
+  AI_FORCE_LOCAL: "true"
+  SKIP_AI: "true"
+  GMAIL_DIAG_AI_MAX: "0"
+  GITHUB_RESOLVER_COMMENT: "0"
+  FORUM_AUTO_POST: "0"
 
 jobs:
   process-all:
@@ -103,15 +112,10 @@ jobs:
         env:
           GH_PAT: ${{ secrets.GH_PAT }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
-          MISTRAL_API_KEY: ${{ secrets.MISTRAL_API_KEY || '' }}
-          KIMI_API_KEY: ${{ secrets.KIMI_API_KEY || '' }}
-          TOGETHER_API_KEY: ${{ secrets.TOGETHER_API_KEY || '' }}
-          CEREBRAS_API_KEY: ${{ secrets.CEREBRAS_API_KEY || '' }}
-          HF_TOKEN: ${{ secrets.HF_TOKEN || '' }}
-          OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY || '' }}
-          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
-          NVIDIA_API_KEY: ${{ secrets.NVIDIA_API_KEY }}
+          AI_FORCE_LOCAL: 'true'
+          SKIP_AI: 'true'
+          AI_PLAN_MODE: forfait
+          AI_ALLOW_PAID: 'false'
           HOMEY_EMAIL: ${{ secrets.HOMEY_EMAIL }}
           HOMEY_PASSWORD: ${{ secrets.HOMEY_PASSWORD }}
           DRY_RUN: ${{ github.event_name == 'schedule' && 'true' || (inputs.dry_run && 'true' || 'false') }}
@@ -132,15 +136,10 @@ jobs:
         env:
           GH_PAT: ${{ secrets.GH_PAT }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
-          MISTRAL_API_KEY: ${{ secrets.MISTRAL_API_KEY || '' }}
-          KIMI_API_KEY: ${{ secrets.KIMI_API_KEY || '' }}
-          TOGETHER_API_KEY: ${{ secrets.TOGETHER_API_KEY || '' }}
-          CEREBRAS_API_KEY: ${{ secrets.CEREBRAS_API_KEY || '' }}
-          HF_TOKEN: ${{ secrets.HF_TOKEN || '' }}
-          OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY || '' }}
-          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
-          NVIDIA_API_KEY: ${{ secrets.NVIDIA_API_KEY }}
+          AI_FORCE_LOCAL: 'true'
+          SKIP_AI: 'true'
+          AI_PLAN_MODE: forfait
+          AI_ALLOW_PAID: 'false'
           STALE_DAYS: "14"
           MAX_ITEMS: ${{ inputs.max_items || '200' }}
           INCLUDE_CLOSED: ${{ inputs.include_closed || 'false' }}

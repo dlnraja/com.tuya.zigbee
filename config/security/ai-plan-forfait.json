@@ -1,33 +1,46 @@
 {
   "_meta": {
-    "id": "P2227",
-    "updated": "2026-08-23",
-    "policy": "Plan forfait inclus only — never exceed included free/subscription quotas; never auto-spend paid overage. Prefer local heuristics. SHADOW forum. Never echo secrets."
+    "id": "P2227+P2437",
+    "updated": "2026-09-09",
+    "policy": "Plan forfait inclus only — never exceed included free/subscription quotas; never auto-spend paid overage. Prefer local heuristics. SHADOW forum. Never echo secrets. Cursor: no Grok/cloud Task burn."
   },
   "mode": "forfait",
   "defaults": {
     "AI_PLAN_MODE": "forfait",
     "AI_ALLOW_PAID": "false",
-    "AI_GLOBAL_DAILY_CAP": "400",
-    "AI_SOFT_STOP_PERCENT": "85",
+    "AI_GLOBAL_DAILY_CAP": "120",
+    "AI_SOFT_STOP_PERCENT": "70",
     "GMAIL_DIAG_AI_MAX": "0",
     "preferLocalHeuristics": true
   },
+  "cursorIde": {
+    "preferModel": "inherit",
+    "forbidModels": ["grok", "cursor-grok", "opus", "o1", "o3", "gpt-5", "claude-opus"],
+    "forbidCloudAgents": true,
+    "forbidHeavySubagents": true,
+    "maxParallelSubagents": 1,
+    "maxSubagentsPerDay": 8,
+    "forbidAutomationsWithoutAsk": true,
+    "hooks": ".cursor/hooks.json",
+    "rule": ".cursor/rules/ai-forfait-cursor-limit.mdc"
+  },
   "includedDailyCaps": {
-    "gemini": 400,
-    "openrouter": 200,
-    "huggingface": 200,
-    "groq": 200,
-    "cerebras": 50,
-    "together": 80,
-    "nvidia": 200,
-    "mistral": 20,
-    "kimi": 20,
+    "gemini": 80,
+    "openrouter": 40,
+    "huggingface": 40,
+    "groq": 40,
+    "cerebras": 10,
+    "together": 20,
+    "nvidia": 40,
+    "mistral": 5,
+    "kimi": 5,
     "openai": 0,
     "deepseek": 0,
-    "github-models": 50
+    "github-models": 10,
+    "grok": 0,
+    "cursor-cloud": 0
   },
-  "blockedUnlessPaidFlag": ["openai", "deepseek"],
+  "blockedUnlessPaidFlag": ["openai", "deepseek", "grok", "cursor-cloud"],
   "security": {
     "neverEchoSecrets": true,
     "redactBeforeCommit": true,

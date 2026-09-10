@@ -163,6 +163,10 @@ jobs:
           node --test test/critical/poll-control-policy.test.js
           node --test test/critical/p214-intelligent-protocol-detect.test.js
           node --test test/critical/p2231-market-couples-intake.test.js
+          node --test test/critical/p2435-gh540-544-switch-pairing.test.js
+          node --test test/critical/p2436-homey-match-moes-bot-mocks.test.js
+          node --test test/critical/p2437-ai-forfait-cursor-hooks.test.js
+          node --test test/critical/p2438-multi-source-harvest-ai-limit.test.js
 
       - name: 🛡️ Firmware / OTA path gate
         run: node tools/ci/firmware-updates-gate.js --coverage
