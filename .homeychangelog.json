@@ -3101,5 +3101,8 @@
   },
   "9.0.857": {
     "en": "Fixed smart knob button presses when manufacturer id is missing at wake (scene mode); stopped battery percent flipping from voltage."
+  },
+  "9.0.858": {
+    "en": "Fixed smart knob button press (scene mode) and wired rotate/brightness flow cards."
   }
 }
