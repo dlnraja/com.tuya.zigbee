@@ -4,11 +4,11 @@
 
 [![Version](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fraw.githubusercontent.com%2Fdlnraja%2Fcom.tuya.zigbee%2Fmaster%2Fapp.json&query=%24.version&label=version&color=blue)](https://homey.app/a/com.dlnraja.tuya.zigbee/)
 [![Drivers](https://img.shields.io/badge/drivers-431-brightgreen)](https://homey.app/a/com.dlnraja.tuya.zigbee/)
-[![Fingerprints](https://img.shields.io/badge/fingerprints-4,401%20unique-green)](https://homey.app/a/com.dlnraja.tuya.zigbee/)
+[![Fingerprints](https://img.shields.io/badge/fingerprints-4,400%20unique-green)](https://homey.app/a/com.dlnraja.tuya.zigbee/)
 [![SDK](https://img.shields.io/badge/SDK-3-orange)](https://apps.developer.homey.app/)
 [![License](https://img.shields.io/badge/license-GPL--3.0-green)](LICENSE)
 
-Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, sensors, lights, thermostats, covers, valves — **431 drivers**, **4,401 unique fingerprints**. No cloud required.
+Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, sensors, lights, thermostats, covers, valves — **431 drivers**, **4,400 unique fingerprints**. No cloud required.
 
 **What it does:**
 - Talks to devices on your Homey Zigbee mesh (Tuya DP `0xEF00` and standard ZCL)
@@ -33,15 +33,15 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 
 | Metric | Value |
 |--------|-------|
-| **App Version** | v9.0.857 |
+| **App Version** | v9.0.858 |
 | **Drivers** | 431 (381 Zigbee + 50 WiFi) |
-| **Unique Fingerprints** | 4,401 |
-| **Pairing Variants** | 17,064 (4 case combos per fingerprint) |
+| **Unique Fingerprints** | 4,400 |
+| **Pairing Variants** | 17,062 (4 case combos per fingerprint) |
 | **Unique Product IDs** | 592 |
-| **Flow Cards** | 5,952 |
+| **Flow Cards** | 5,969 |
 | **Unique Capabilities** | 170 |
 | **Native OTA Drivers** | 9 |
-| **Test Suites** | 263 files |
+| **Test Suites** | 265 files |
 | **SVG Icons** | 731 |
 | **Languages** | EN, FR, NL, DE |
 | **SDK / Homey** | 3 / >= 12.2.0 |
@@ -54,7 +54,7 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 | 1 | `climate_sensor` | 2,118 |
 | 2 | `switch_1gang` | 1,538 |
 | 3 | `presence_sensor_radar` | 805 |
-| 4 | `curtain_motor` | 788 |
+| 4 | `curtain_motor` | 786 |
 | 5 | `radiator_valve` | 599 |
 | 6 | `button_wireless_2` | 570 |
 | 7 | `wall_dimmer_tuya` | 488 |
@@ -102,6 +102,7 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 
 | Version | Changes |
 |---------|---------|
+| **v9.0.858** | Fixed smart knob button press (scene mode) and wired rotate/brightness flow cards. |
 | **v9.0.857** | Fixed smart knob button presses when manufacturer id is missing at wake (scene mode); stopped battery percent flipping from voltage. |
 | **v9.0.856** | Fixed smart knob button presses when manufacturer id is missing at wake (scene mode); stopped battery percent flipping from voltage. |
 | **v9.0.855** | Fixed smart knob button presses when manufacturer id is missing at wake (scene mode); stopped battery percent flipping from voltage. |
@@ -113,7 +114,6 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 | **v9.0.849** | Fixed smart_knob TS004F button presses (_TZ3000_kaflzta4) by forcing scene/event mode instead of skipping 0x8004. |
 | **v9.0.848** | Limited Grok/AI bot burn (forfait), local issue solver, multi-source harvest unit tests, CI wires P2435-P2438. |
 | **v9.0.847** | Fixed Moes curtain EF00 listen/query, forced Moes protocol to Tuya DP, reduced GitHub bot auto-PR/triage noise, added Homey match unit mo… |
-| **v9.0.846** | Removed broken contact-sensor OTA firmware reference that blocked Athom publish validation. |
 
 <!-- CHANGELOG_END -->
 
