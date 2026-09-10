@@ -1,6 +1,6 @@
 "use strict";
 
-const { ZigBeeDevice } = require("homey-zigbeedriver");
+const TuyaZigbeeDevice = require('../../lib/tuya/TuyaZigbeeDevice');
 const { Cluster, debug, CLUSTER } = require("zigbee-clusters");
 const TuyaWindowCoveringCluster = require("../../lib/TuyaWindowCoveringCluster");
 const { mapValueRange } = require('../../lib/util');
@@ -11,7 +11,7 @@ const UP_OPEN = 'upOpen';
 const DOWN_CLOSE = 'downClose';
 const REPORT_DEBOUNCER = 5000;
 
-class curtain_module extends ZigBeeDevice {
+class curtain_module extends TuyaZigbeeDevice {
 
     invertPercentageLiftValue = false;
 

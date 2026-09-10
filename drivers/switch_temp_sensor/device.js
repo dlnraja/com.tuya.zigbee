@@ -1,6 +1,6 @@
 'use strict';
 
-const { ZigBeeDevice } = require('homey-zigbeedriver');
+const TuyaZigbeeDevice = require('../../lib/tuya/TuyaZigbeeDevice');
 const { smartParse } = require('../../lib/managers/SmartDivisorManager');
 const { CLUSTER } = require('zigbee-clusters');
 
@@ -29,7 +29,7 @@ const CLUSTER_TUYA_E002 = 57346;  // 0xE002 - Temperature/Humidity
 const CLUSTER_TEMP = 1026;        // 0x0402 - ZCL Temperature
 const CLUSTER_HUMIDITY = 1029;    // 0x0405 - ZCL Humidity
 
-class SwitchTempSensorDevice extends ZigBeeDevice {
+class SwitchTempSensorDevice extends TuyaZigbeeDevice {
 
   async onNodeInit({ zclNode }) {
     await super.onNodeInit({ zclNode });

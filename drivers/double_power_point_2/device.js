@@ -1,6 +1,6 @@
 'use strict';
 
-const { ZigBeeDevice } = require('homey-zigbeedriver');
+const TuyaZigbeeDevice = require('../../lib/tuya/TuyaZigbeeDevice');
 const { CLUSTER } = require('zigbee-clusters');
 
 // Energy scaling divisors — this ZCL-only driver performs no raw attribute
@@ -13,7 +13,7 @@ const ENERGY_DIVISORS = {
   measure_voltage: { divisor: 1 },
 };
 
-class doublepowerpoint2 extends ZigBeeDevice {
+class doublepowerpoint2 extends TuyaZigbeeDevice {
 
   async onNodeInit({ zclNode }) {
 

@@ -1,10 +1,10 @@
 'use strict';
 
+const UnifiedSwitchBase = require('../../lib/devices/UnifiedSwitchBase');
 const { safeSetTimeout, safeClearTimeout } = require('../../lib/utils/safe-timers');
 const { safeDivide, safeMultiply, safeParse } = require('../../lib/utils/tuyaUtils.js');
 
 
-const { ZigBeeDevice } = require('homey-zigbeedriver');
 const { CLUSTER } = require('zigbee-clusters');
 const VirtualButtonMixin = require('../../lib/mixins/VirtualButtonMixin');
 const PhysicalButtonMixin = require('../../lib/mixins/PhysicalButtonMixin');
@@ -33,7 +33,7 @@ const TUYA_DP_ENERGY_DIVISORS = {
  *   v5.6.0: Added bidirectional physical/virtual button support                
  * 
  */
-class DinRailSwitchDevice extends PhysicalButtonMixin(VirtualButtonMixin(ZigBeeDevice)) {
+class DinRailSwitchDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedSwitchBase)) {
 
   get gangCount() { return 1; }
 

@@ -1,4 +1,5 @@
 'use strict';
+const TuyaZigbeeDevice = require('../../lib/tuya/TuyaZigbeeDevice');
 const ZclBatteryMonitor = require('../../lib/battery/ZclBatteryMonitor');
 
 const { Cluster } = require('zigbee-clusters');
@@ -49,7 +50,7 @@ const getDataValue = (dpValue) => {
     }
 }
 
-class pir_mmwave_sensor extends ZigBeeDevice {
+class pir_mmwave_sensor extends TuyaZigbeeDevice {
 
     async onNodeInit({ zclNode }) {
     ZclBatteryMonitor.attach(this, zclNode);

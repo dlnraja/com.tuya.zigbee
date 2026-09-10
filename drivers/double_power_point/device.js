@@ -1,6 +1,6 @@
 'use strict';
 
-const { ZigBeeDevice } = require('homey-zigbeedriver');
+const TuyaZigbeeDevice = require('../../lib/tuya/TuyaZigbeeDevice');
 const { CLUSTER, Cluster, ZCLDataTypes } = require('zigbee-clusters');
 const TuyaOnOffCluster = require('../../lib/TuyaOnOffCluster');
 
@@ -14,7 +14,7 @@ const ENERGY_DIVISORS = {
   measure_voltage: { divisor: 1 }
 };
 
-class doublepowerpoint extends ZigBeeDevice {
+class doublepowerpoint extends TuyaZigbeeDevice {
 
   async onNodeInit({ zclNode }) {
     const { subDeviceId } = this.getData();

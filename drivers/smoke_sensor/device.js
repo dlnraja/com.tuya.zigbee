@@ -1,10 +1,10 @@
 'use strict';
+const TuyaZigbeeDevice = require('../../lib/tuya/TuyaZigbeeDevice');
 const ZclBatteryMonitor = require('../../lib/battery/ZclBatteryMonitor');
 
-const { ZigBeeDevice } = require('homey-zigbeedriver');
 const { CLUSTER } = require('zigbee-clusters');
 
-class smoke_sensor extends ZigBeeDevice {
+class smoke_sensor extends TuyaZigbeeDevice {
 
 	async onNodeInit({zclNode}) {
     ZclBatteryMonitor.attach(this, zclNode);

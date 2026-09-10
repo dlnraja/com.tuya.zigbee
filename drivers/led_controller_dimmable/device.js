@@ -1,11 +1,11 @@
 'use strict';
+const TuyaZigbeeDevice = require('../../lib/tuya/TuyaZigbeeDevice');
 const { safeMultiply, safeParse } = require('../../lib/utils/tuyaUtils.js');
 
 
 const { CLUSTERS } = require('../../lib/constants/ZigbeeConstants.js');
 
 
-const { ZigBeeDevice } = require('homey-zigbeedriver');
 const { CLUSTER } = require('zigbee-clusters');
 const TuyaSpecificCluster = require('../../lib/tuya/TuyaSpecificCluster');
 const TuyaSpecificClusterDevice = require('../../lib/tuya/TuyaSpecificClusterDevice');
@@ -35,7 +35,7 @@ const TUYA_DP = {
  * - 10 dimming strategies including Tuya DP
  * - Ultra-verbose logging for diagnostics
  */
-class LEDControllerDimmableDevice extends ZigBeeDevice {
+class LEDControllerDimmableDevice extends TuyaZigbeeDevice {
 
   // v9.0.74: This device is mains-powered. Declare it so UnifiedBatteryHandler
   // does not add a false measure_battery capability (fixes false-battery reports).
