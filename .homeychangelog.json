@@ -1,6 +1,6 @@
 {
   "9.0.856": {
-    "en": "Fixed rotary smart knobs (ERS-10): rotation uses command/dimmer mode again; improved knob fingerprints and CI gates."
+    "en": "Fixed smart knob button presses when manufacturer id is missing at wake (scene mode); stopped battery percent flipping from voltage."
   },
   "9.0.855": {
     "en": "Fixed smart knob button presses when manufacturer id is missing at wake (scene mode); stopped battery percent flipping from voltage."
@@ -3099,7 +3099,7 @@
   "9.0.849": {
     "en": "Fixed smart_knob TS004F button presses (_TZ3000_kaflzta4) by forcing scene/event mode instead of skipping 0x8004."
   },
-  "9.0.856": {
+  "9.0.857": {
     "en": "Fixed smart knob button presses when manufacturer id is missing at wake (scene mode); stopped battery percent flipping from voltage."
   }
 }
