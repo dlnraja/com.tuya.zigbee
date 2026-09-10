@@ -126,6 +126,8 @@ jobs:
           cache: npm
       - name: Install Dependencies
         run: npm ci --prefer-offline --no-audit || npm install
+      - name: Package-lock integrity gate (P2454)
+        run: node tools/ci/sync-root-package-version.js assert
       - name: Crash regression guard - Homey timer context
         run: npm run check:timer-context
       - name: Regression lessons gate (MUST-KEEP fatals)
