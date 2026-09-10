@@ -1196,11 +1196,12 @@
         "wall_switch_4_gang"
       ],
       "protocol": "zcl",
-      "notes": "z2m ERS-10TZBVK-AA smart knob (zigbeeModel ZG-101ZD, TS004F, CR2032). Battery rotary remote — never an energy meter, relay board or mains wall switch. power_meter also declares TS004F, so leaving it there is a live dual-claim.",
+      "notes": "z2m ERS-10TZBVK-AA smart knob (zigbeeModel ZG-101ZD, TS004F, CR2032). Battery rotary remote — never an energy meter, relay board or mains wall switch. power_meter also declares TS004F, so leaving it there is a live dual-claim. P2448: force command/dimmer 0x8004 (levelControl rotation); never scene catch-all.",
       "sources": [
         "z2m-herdsman",
         "johan-enrichment",
-        "P190"
+        "P190",
+        "P2448"
       ],
       "tracks": {
         "master": {

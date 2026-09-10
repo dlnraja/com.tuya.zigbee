@@ -1,7 +1,7 @@
 {
   "_meta": {
     "id": "P2225",
-    "updated": "2026-08-26",
+    "updated": "2026-09-10",
     "policy": "SHADOW forum. Inventory + critical-first Homey-gap compensation. Parallel stacks only — never collapse.",
     "methodology": [
       "Document Homey-native gap per domain",
@@ -70,7 +70,36 @@
         "scene remotes flow-only",
         "P2230 FlowCardHeuristics: no *_1gang_button_pressed / *_button_N_button_pressed invent",
         "P2283 wrapHandleFrame SSOT",
-        "P2284 L0/IO/P0 always next — never orphan 0xFD"
+        "P2284 L0/IO/P0 always next — never orphan 0xFD",
+        "P2448 rotary: command/dimmer 0x8004 + levelControl; never scene-force on smart_knob_rotary"
+      ]
+    },
+    {
+      "id": "rotary_knob_command_mode",
+      "priority": 1,
+      "why": "ERS-10 rotation dies when Homey forces scene mode while RX listens to levelControl only",
+      "homeyGap": "No native TS004F operation_mode; OnOff 0xFC/levelControl not wired by default",
+      "stack": [
+        "DeviceOperatingMode KNOB_MFR",
+        "smart_knob_rotary command write",
+        "0xFC parallel RX",
+        "rotary-knob-ssot.json",
+        "p2448 gate"
+      ],
+      "bugs": [
+        "rotary_scene_force",
+        "knob_mfr_missing",
+        "smart_knob_regex_catch_all"
+      ],
+      "gates": [
+        "tools/ci/p2448-rotary-knob-gate.js",
+        "test/critical/p2448-rotary-knob-command-mode.test.js",
+        "test/critical/p2439-kaflzta4-smart-knob-button.test.js"
+      ],
+      "discoveries": [
+        "P2448 uri7ongn/ixla93vd/g9g2xnch → knob/dimmer",
+        "compose button_mode default dimmer",
+        "abrsvsou/4fjiwweb stay button_wireless_4 off KNOB_MFR"
       ]
     },
     {
