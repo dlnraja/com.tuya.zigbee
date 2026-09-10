@@ -1,6 +1,6 @@
 {
-  "updated": "2026-08-14T11:02:17.377Z",
-  "note": "Legacy bare ZigBeeDevice leftovers. P133: smartPlug_DinRail migrated; ir_blaster remains.",
+  "updated": "2026-09-10T12:27:56.421Z",
+  "note": "P2446: migrated 27 bare ZigBeeDevice → TuyaZigbeeDevice/UnifiedSwitchBase. Only ir_blaster remains.",
   "drivers": [
     "ir_blaster"
   ]

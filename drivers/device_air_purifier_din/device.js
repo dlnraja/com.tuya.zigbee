@@ -1,11 +1,11 @@
 'use strict';
+const TuyaZigbeeDevice = require('../../lib/tuya/TuyaZigbeeDevice');
 const { safeDivide, safeMultiply, safeParse } = require('../../lib/utils/tuyaUtils.js');
 
 
 const { CLUSTERS } = require('../../lib/constants/ZigbeeConstants.js');
 
 
-const { ZigBeeDevice } = require('homey-zigbeedriver');
 const { CLUSTER } = require('zigbee-clusters');
 
 // Energy scaling divisors — ZCL raw attributes / Tuya DP raw values scaled below;
@@ -35,7 +35,7 @@ const ENERGY_DIVISORS = {
  * DP101: Power factor
  * DP102: Frequency
  */
-class DinRailMeterDevice extends ZigBeeDevice {
+class DinRailMeterDevice extends TuyaZigbeeDevice {
 
   async onNodeInit({ zclNode }) {
     this.log('DIN Rail Meter initializing...');

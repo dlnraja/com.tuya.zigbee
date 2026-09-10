@@ -1,8 +1,8 @@
 'use strict';
 
+const TuyaZigbeeDevice = require('../../lib/tuya/TuyaZigbeeDevice');
 const ZclBatteryMonitor = require('../../lib/battery/ZclBatteryMonitor');
 const Homey = require('homey');
-const { ZigBeeDevice } = require('homey-zigbeedriver');
 const { Cluster, debug, CLUSTER } = require('zigbee-clusters');
 const TuyaSpecificCluster = require('../../lib/TuyaSpecificCluster');
 
@@ -10,7 +10,7 @@ Cluster.addCluster(TuyaSpecificCluster);
 
 const DEFAULT_ONOFF_DURATION = 1000
 
-class IrrigationController extends ZigBeeDevice {
+class IrrigationController extends TuyaZigbeeDevice {
 
   async onNodeInit({zclNode}) {
     // Primary battery path (attr listeners + initial read)

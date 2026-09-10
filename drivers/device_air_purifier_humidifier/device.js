@@ -1,7 +1,7 @@
 'use strict';
+const TuyaZigbeeDevice = require('../../lib/tuya/TuyaZigbeeDevice');
 const { safeDivide, safeMultiply, safeParse } = require('../../lib/utils/tuyaUtils.js');
 
-const { ZigBeeDevice } = require('homey-zigbeedriver');
 
 /**
  * Smart Humidifier Device
@@ -13,7 +13,7 @@ const { ZigBeeDevice } = require('homey-zigbeedriver');
  * DP5: Mist level (low/medium/high)
  * DP12: Water shortage alarm
  */
-class HumidifierDevice extends ZigBeeDevice {
+class HumidifierDevice extends TuyaZigbeeDevice {
 
   // v9.0.74: This device is mains-powered. Declare it so UnifiedBatteryHandler
   // does not add a false measure_battery capability (fixes false-battery reports).

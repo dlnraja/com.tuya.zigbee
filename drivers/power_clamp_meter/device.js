@@ -1,9 +1,9 @@
+const TuyaZigbeeDevice = require('../../lib/tuya/TuyaZigbeeDevice');
 const { includesCI } = require('../../lib/utils/CaseInsensitiveMatcher');
 'use strict';
 const { safeDivide, safeMultiply, safeParse } = require('../../lib/utils/tuyaUtils.js');
 const { smartParse } = require('../../lib/managers/SmartDivisorManager');
 
-const { ZigBeeDevice } = require('homey-zigbeedriver');
 
 /**
  * CT Clamp Power Meter Device
@@ -49,7 +49,7 @@ const { ZigBeeDevice } = require('homey-zigbeedriver');
  * - _TZE200_nslr42tt / _TZE204_nslr42tt - 3-phase meter
  * 
  */
-class PowerClampMeterDevice extends ZigBeeDevice {
+class PowerClampMeterDevice extends TuyaZigbeeDevice {
 
   async onNodeInit({ zclNode }) {
     await super.onNodeInit({ zclNode });

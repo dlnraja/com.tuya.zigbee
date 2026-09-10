@@ -1,6 +1,6 @@
 'use strict';
 
-const { ZigBeeDevice } = require('homey-zigbeedriver');
+const TuyaZigbeeDevice = require('../../lib/tuya/TuyaZigbeeDevice');
 const { Cluster } = require('zigbee-clusters');
 const ZosungIRTransmitCluster = require('../../lib/clusters/ZosungIRTransmitCluster');
 const ZosungIRControlCluster = require('../../lib/clusters/ZosungIRControlCluster');
@@ -18,7 +18,7 @@ try { Cluster.addCluster(ZosungIRControlCluster); } catch (e) { /* Cluster may a
  * - Cluster 0xED00 (zosungIRTransmit): chunked IR code transfer
  * - Cluster 0xE004 (zosungIRControl): learn mode + send trigger
  */
-class IRRemoteDevice extends ZigBeeDevice {
+class IRRemoteDevice extends TuyaZigbeeDevice {
 
   get mainsPowered() { return true; }
 

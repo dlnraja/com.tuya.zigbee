@@ -1,4 +1,7 @@
 {
+  "5.12.153": {
+    "en": "Migrated leftover bare ZigBeeDevice drivers to TuyaZigbeeDevice (P102 Auto-Fix)."
+  },
   "5.12.152": {
     "en": "AM43 curtain: multi-pid mfr locks (icka1clh/zah67ekd) on curtain_motor; strip tilt dual-home."
   },

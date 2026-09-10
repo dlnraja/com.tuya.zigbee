@@ -1,6 +1,6 @@
 'use strict';
 
-const { ZigBeeDevice } = require('homey-zigbeedriver');
+const TuyaZigbeeDevice = require('../../lib/tuya/TuyaZigbeeDevice');
 const { Cluster } = require('zigbee-clusters');
 const ZigbeeTimeSync = require('../../lib/ZigbeeTimeSync');
 
@@ -8,7 +8,7 @@ const ZigbeeTimeSync = require('../../lib/ZigbeeTimeSync');
  * Radiator Controller Device - v5.6.0
  * Specialized for electric radiators with pilot wire (French standard)
  */
-class RadiatorControllerDevice extends ZigBeeDevice {
+class RadiatorControllerDevice extends TuyaZigbeeDevice {
 
   get mainsPowered() { return true; }
 
