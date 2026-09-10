@@ -245,6 +245,10 @@
     "p2435_gh540_544_switch_pairing": {
       "tag": "BOTH",
       "note": "GH #540-#544: ZCL switch endpoints (drop EF00-required / ep2 Basic); ptjcjise→2gang; strip xk5udnd6 from water_leak; mfs top-level fix"
+    },
+    "p2448_rotary_knob_command_mode": {
+      "tag": "BOTH",
+      "note": "ERS-10/ZG-101ZD command/dimmer 0x8004 + levelControl RX; p2448 gate — reliability"
     }
   },
   "ci": {

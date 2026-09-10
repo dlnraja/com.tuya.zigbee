@@ -1,4 +1,7 @@
 {
+  "5.12.155": {
+    "en": "Fixed rotary smart knobs (ERS-10): rotation uses command/dimmer mode again; improved knob fingerprints and CI gates."
+  },
   "5.12.154": {
     "en": "Forum soft-hypothesis prefers mfs/registry pids over polluted compose junk."
   },

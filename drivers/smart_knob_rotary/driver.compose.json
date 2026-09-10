@@ -119,7 +119,9 @@
       "TS004F",
       "ERS-10TZBVK-AA",
       "TS0044",
-      "TS0601"
+      "TS0601",
+      "ZG-101ZD",
+      "ZG-101Z"
     ],
     "endpoints": {
       "1": {
@@ -187,7 +189,7 @@
         "nl": "Knopmodus (geavanceerd)",
         "de": "Tastenmodus (erweitert)"
       },
-      "value": "scene",
+      "value": "dimmer",
       "values": [
         {
           "id": "auto",
@@ -199,25 +201,25 @@
         {
           "id": "scene",
           "label": {
-            "en": "Force scene mode (default — multi-press)",
-            "fr": "Forcer mode scène (par défaut — multi-clics)",
-            "nl": "Scène-modus forceren (standaard — multi-klik)",
-            "de": "Szenenmodus erzwingen (Standard — Mehrfachdruck)"
+            "en": "Force scene mode (rotate_left/right events)",
+            "fr": "Forcer mode scène (événements rotate_left/right)",
+            "nl": "Scène-modus forceren (rotate_left/right)",
+            "de": "Szenenmodus erzwingen (rotate_left/right)"
           }
         },
         {
           "id": "dimmer",
           "label": {
-            "en": "Force dimmer mode",
-            "fr": "Forcer mode variateur",
-            "nl": "Dimmer-modus forceren",
-            "de": "Dimmermodus erzwingen"
+            "en": "Force dimmer/command mode (default — brightness step)",
+            "fr": "Forcer mode dimmer/commande (défaut)",
+            "nl": "Dimmer/commando-modus forceren (standaard)",
+            "de": "Dimmer/Befehlsmodus erzwingen (Standard)"
           }
         }
       ],
       "hint": {
-        "en": "Scene mode (default) sends cluster 0x05 commands. Use \"Force scene mode\" for TS0041/TS004F/TS0601 4-endpoint devices and multi-press detection.",
-        "fr": "Mode scène (par défaut) envoie des commandes cluster 0x05. Utiliser \"Forcer mode scène\" pour TS0041/TS004F/TS0601 4-endpoints et détection multi-clics."
+        "en": "Dimmer/command (default) sends levelControl brightness steps on rotate. Scene mode uses OnOff 0xFC rotate_left/right instead.",
+        "fr": "Dimmer/commande (défaut) envoie des pas levelControl à la rotation. Mode scène utilise OnOff 0xFC rotate_left/right."
       }
     }
   ]

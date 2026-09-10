@@ -1,6 +1,6 @@
 {
   "name": "com.dlnraja.tuya.zigbee",
-  "version": "5.12.154",
+  "version": "5.12.155",
   "description": "Tuya Unified Zigbee - Local-first control with AI automation",
   "main": "app.js",
   "scripts": {
@@ -155,7 +155,11 @@
     "scrape:budget:preflight": "node tools/ci/free-scrape-budget.js --preflight",
     "check:p2372": "node --test test/critical/p2372-free-scrape-fleet.test.js",
     "enrich:compensate": "node tools/ci/compensate-incomplete-reports.js --skip-investigate",
-    "enrich:compensate:apply": "node tools/ci/compensate-incomplete-reports.js --apply-safe"
+    "enrich:compensate:apply": "node tools/ci/compensate-incomplete-reports.js --apply-safe",
+    "check:p2439": "node --test test/critical/p2439-kaflzta4-smart-knob-button.test.js",
+    "check:p2448": "node tools/ci/p2448-rotary-knob-gate.js && node --test test/critical/p2448-rotary-knob-command-mode.test.js",
+    "check:p244x": "npm run check:p2448",
+    "check:p243x": "node --test test/critical/p2435-gh540-544-switch-pairing.test.js test/critical/p2436-homey-match-moes-bot-mocks.test.js test/critical/p2437-ai-forfait-cursor-hooks.test.js test/critical/p2438-multi-source-harvest-ai-limit.test.js test/critical/p2439-kaflzta4-smart-knob-button.test.js test/critical/p2448-rotary-knob-command-mode.test.js"
   },
   "keywords": [
     "homey",

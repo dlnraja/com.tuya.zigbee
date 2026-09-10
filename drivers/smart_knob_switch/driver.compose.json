@@ -21,9 +21,8 @@
     "button.1"
   ],
   "images": {
-    "large": "/drivers/smart_knob_switch/assets/images/large.png",
     "small": "/drivers/smart_knob_switch/assets/images/small.png",
-    "xlarge": "/drivers/smart_knob_switch/assets/images/xlarge.png"
+    "large": "/drivers/smart_knob_switch/assets/images/large.png"
   },
   "energy": {
     "batteries": [
@@ -34,7 +33,8 @@
     "manufacturerName": [
       "_tz3000_uri7ber7",
       "_TZ3000_URI7BER7",
-      "_TZ3000_uri7ber7"
+      "_TZ3000_uri7ber7",
+      "_tz3000_URI7BER7"
     ],
     "productId": [
       "TS004F",
@@ -50,6 +50,7 @@
           3,
           4,
           6,
+          8,
           4096
         ]
       }
@@ -71,10 +72,10 @@
         "fr": "Mode de fonctionnement"
       },
       "hint": {
-        "en": "Scene Mode allows single/double/long press. Dimmer Mode only supports single press. Auto tries to detect and switch automatically.",
-        "fr": "Le mode Scène permet les appuis simples/doubles/longs. Le mode Variateur ne supporte que l'appui simple. Auto tente de détecter et basculer automatiquement."
+        "en": "Dimmer/command (default) sends levelControl steps on rotate. Scene mode is for multi-press only. Auto follows driver dimmer default (P2448).",
+        "fr": "Dimmer/commande (defaut) envoie des pas levelControl a la rotation. Mode scene pour multi-clics. Auto suit le defaut dimmer (P2448)."
       },
-      "value": "auto",
+      "value": "dimmer",
       "values": [
         {
           "id": "auto",
@@ -93,8 +94,8 @@
         {
           "id": "dimmer",
           "label": {
-            "en": "Dimmer Mode",
-            "fr": "Mode Variateur"
+            "en": "Dimmer/command mode (default — rotation)",
+            "fr": "Mode dimmer/commande (defaut — rotation)"
           }
         }
       ]
@@ -113,14 +114,18 @@
       "id": "tuya_revive",
       "title": {
         "en": "Tuya Revive (device recovery)",
-        "fr": "Tuya Revive (récupération appareil)"
+        "fr": "Tuya Revive (récupération appareil)",
+        "nl": "Tuya Revive (apparaatherstel)",
+        "de": "Tuya Revive (Gerätewiederherstellung)"
       }
     },
     {
       "id": "generate_issue_report",
       "title": {
         "en": "Generate support report (GitHub issue)",
-        "fr": "Générer rapport de support (issue GitHub)"
+        "fr": "Générer rapport de support (issue GitHub)",
+        "nl": "Supportrapport genereren (GitHub issue)",
+        "de": "Supportbericht erstellen (GitHub Issue)"
       }
     }
   ],
@@ -135,10 +140,5 @@
       "getable": false,
       "setable": false
     }
-  },
-  "_pidConflictNotes": [
-    "// PID-CONFLICT-NOTE TS0215A shared with 28 other drivers (cross-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md",
-    "// PID-CONFLICT-NOTE TS004F shared with 19 other drivers (cross-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md",
-    "// PID-CONFLICT-NOTE ERS-10TZBVK-AA shared with 4 other drivers (cross-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md"
-  ]
+  }
 }

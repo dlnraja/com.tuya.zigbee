@@ -233,3 +233,6 @@ jobs:
             fi
           done
           echo "ℹ️  $MISSING/$TOTAL drivers have missing image assets (non-blocking)"
+
+      - name: P2448 rotary knob command-mode gate
+        run: npm run check:p2448
