@@ -3137,5 +3137,8 @@
   },
   "9.0.869": {
     "en": "Stability improvements and Homey test build recovery."
+  },
+  "9.0.870": {
+    "en": "Fixed Moes/Tuya wired 2-gang pairing (_TZ3000_ptjcjise/TS0002): maps to wall switch with onoff/onoff.gang2 only — no button clutter."
   }
 }
