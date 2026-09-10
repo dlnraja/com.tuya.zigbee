@@ -1,4 +1,7 @@
 {
+  "5.12.156": {
+    "en": "Fixed 1-button smart knob presses stuck in dimmer mode; scene mode re-applied after identity is known."
+  },
   "5.12.155": {
     "en": "Fixed rotary smart knobs (ERS-10): rotation uses command/dimmer mode again; improved knob fingerprints and CI gates."
   },
