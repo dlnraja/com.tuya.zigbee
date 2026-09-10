@@ -16,10 +16,10 @@ const fpdb = fs.readFileSync(path.join(__dirname, '../../lib/DeviceFingerprintDB
 const sw4 = JSON.parse(fs.readFileSync(path.join(__dirname, '../../drivers/switch_4gang/driver.compose.json'), 'utf8'));
 
 describe('P2452 — GH issue SSOT locks', () => {
-  it('#544 l9brjwau+TS0002 → switch_2gang', () => {
-    assert.strictEqual(fp._TZ3000_l9brjwau.driverId, 'switch_2gang');
+  it('#544 l9brjwau+TS0002 → wall_switch_2gang_1way', () => {
+    assert.strictEqual(fp._TZ3000_l9brjwau.driverId, 'wall_switch_2gang_1way');
     assert.ok(fp._TZ3000_l9brjwau.modelIds.includes('TS0002'));
-    assert.strictEqual(mfs.sacredCouples['_tz3000_l9brjwau|ts0002'].driver, 'switch_2gang');
+    assert.strictEqual(mfs.sacredCouples['_tz3000_l9brjwau|ts0002'].driver, 'wall_switch_2gang_1way');
   });
 
   it('#543 ptjcjise+TS0002 → switch_2gang (not switch_1gang)', () => {
