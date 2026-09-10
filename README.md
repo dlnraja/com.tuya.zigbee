@@ -33,7 +33,7 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 
 | Metric | Value |
 |--------|-------|
-| **App Version** | v9.0.855 |
+| **App Version** | v9.0.856 |
 | **Drivers** | 431 (381 Zigbee + 50 WiFi) |
 | **Unique Fingerprints** | 4,401 |
 | **Pairing Variants** | 17,064 (4 case combos per fingerprint) |
@@ -41,7 +41,7 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 | **Flow Cards** | 5,952 |
 | **Unique Capabilities** | 170 |
 | **Native OTA Drivers** | 9 |
-| **Test Suites** | 261 files |
+| **Test Suites** | 262 files |
 | **SVG Icons** | 731 |
 | **Languages** | EN, FR, NL, DE |
 | **SDK / Homey** | 3 / >= 12.2.0 |
@@ -102,6 +102,7 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 
 | Version | Changes |
 |---------|---------|
+| **v9.0.856** | Fixed smart knob button presses when manufacturer id is missing at wake (scene mode); stopped battery percent flipping from voltage. |
 | **v9.0.855** | Fixed smart knob button presses when manufacturer id is missing at wake (scene mode); stopped battery percent flipping from voltage. |
 | **v9.0.854** | Fixed smart knob button presses when manufacturer id is missing at wake (scene mode); stopped battery percent flipping from voltage. |
 | **v9.0.853** | Fixed smart knob button presses when manufacturer id is missing at wake (scene mode); stopped battery percent flipping from voltage. |
@@ -113,7 +114,6 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 | **v9.0.847** | Fixed Moes curtain EF00 listen/query, forced Moes protocol to Tuya DP, reduced GitHub bot auto-PR/triage noise, added Homey match unit mo… |
 | **v9.0.846** | Removed broken contact-sensor OTA firmware reference that blocked Athom publish validation. |
 | **v9.0.845** | Removed broken contact-sensor OTA firmware reference that blocked Athom publish validation. |
-| **v9.0.844** | Aligned fingerprint routing for Moes/BSEED ZCL switches after pairing fixes. |
 
 <!-- CHANGELOG_END -->
 
