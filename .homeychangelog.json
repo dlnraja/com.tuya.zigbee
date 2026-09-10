@@ -1,6 +1,6 @@
 {
   "9.0.851": {
-    "en": "Restored Wing climate ZTH pairing alongside contact sensors; smartbutton flicker fix remains."
+    "en": "Improved 1-button remote consistency (less flicker from duplicate Zigbee paths) and battery wake read. Fixed bulb fingerprint conflict blocking publish."
   },
   "9.0.850": {
     "en": "Improved 1-button remote consistency (less flicker from duplicate Zigbee paths) and battery wake read. Fixed bulb fingerprint conflict blocking publish."
@@ -3084,7 +3084,7 @@
   "9.0.849": {
     "en": "Fixed smart_knob TS004F button presses (_TZ3000_kaflzta4) by forcing scene/event mode instead of skipping 0x8004."
   },
-  "9.0.851": {
+  "9.0.852": {
     "en": "Improved 1-button remote consistency (less flicker from duplicate Zigbee paths) and battery wake read. Fixed bulb fingerprint conflict blocking publish."
   }
 }
