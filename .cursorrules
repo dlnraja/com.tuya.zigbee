@@ -36,6 +36,8 @@ Homey Pro app for 4200+ Tuya Zigbee devices. Hybrid protocol: Tuya DP (0xEF00) +
 - NO `titleFormatted` with `[[device]]` - causes bugs
 - Always check driver.flow.compose.json for exact IDs
 - Virtual buttons MUST use `this.safeSetCapabilityValue()` to route through the v5 hardening pipeline in `TuyaZigbeeDevice.js`. This ensures flow triggers map optimally and are protected by the L14 SanityFilter.
+- **P2449:** Declare⇒wire — never leave `scene_recall` / `set_brightness` / `brightness_changed` / `rotate_*` as compose-only. Fleet hook: `lib/flow/DeclaredFlowCardAutoWire.js` (boot via `UniversalFlowCardLoader`).
+- **SDK3:** `getDeviceTriggerCard(cardId)` only — no second `'trigger'` arg.
 
 ## Imports
 ```javascript
@@ -110,6 +112,9 @@ When encountering an unknown device, the system uses 6 heuristics to rank time f
 - **RULE**: IDs must be globally unique across ALL drivers
 - **RULE**: NO `titleFormatted` with `[[device]]` (causes manual device selection bug)
 - **RULE**: Virtual buttons MUST use `this.safeSetCapabilityValue()` through VirtualButtonMixin hardening
+- **RULE (P2449 SDK3)**: `this.homey.flow.getDeviceTriggerCard(id)` — **one argument only** (never `(id, 'trigger')`)
+- **RULE (P2449)**: Every declared `*_scene_recall` / `*_set_brightness` / `*_brightness_changed` / `*_rotate_*` must be wired (device fire + `registerRunListener`, or `DeclaredFlowCardAutoWire`)
+- **RULE (P2448 knobs)**: ERS-10 / ZG-101ZD / `smart_knob_rotary` → command/dimmer (`0x8004=0`) + levelControl; use `SmartKnobRotationMixin`. `kaflzta4` stays scene (P2439). SSOT: `config/architecture/rotary-knob-ssot.json` · `npm run check:p244x`
 
 ## UnifiedBatteryHandler v8.2.0 (Phoenix Sovereign Fusion)
 - FUSION COMPLÈTE: v8 runtime-adaptive + v5 BatteryManagerV4/V5 courbes non-linéaires
@@ -209,6 +214,7 @@ Do NOT remove just because mfr appears in another driver with different productI
 13. After enrich/apply/anti-bot: run `node tools/ci/p2138-sacred-couple-matrix-gate.js` (mfr+pid only — no invent; see WORKFLOW_GUIDELINES §N)
 14. Dual-app: classify BOTH | MASTER_ONLY | STABLE_ONLY before backport; never Publish Stable→Test while 9.0 soaks
 15. Protocol: all drivers adapt ZCL↔EF00 via `IntelligentProtocolDetect` (HYBRID listen + cascade TX); never force EF00 on sacred `zcl_only` (BSEED)
+16. **P2448/P2449:** after knob/button/dimmer/flow compose changes run `npm run check:p244x` (rotary command mode + declared flow wire). See WORKFLOW_GUIDELINES §P2448/P2449 + `docs/architecture/KNOB_FLOW_WIRING_SSOT.md`
 17. P216: never blindly `/2` ZCL `batteryPercentageRemaining` — Tuya 0–100 stays 100%; spec 0–200 uses `/2`. Use `normalizeZclBatteryPercent()`.
 
 ## SDK v3 OFFICIAL RULES (apps-sdk-v3.developer.homey.app)

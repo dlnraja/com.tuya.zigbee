@@ -134,6 +134,13 @@ jobs:
             head -n 45 "reports/resilience-$(date -u +%F)/RESILIENCE.md" >> "$GITHUB_STEP_SUMMARY" || true
           fi
 
+      - name: "P2448/P2449 knob + declared flow gates (soft)"
+        if: ${{ github.event_name == 'schedule' || inputs.mode == 'all' || inputs.mode == 'critical' || inputs.mode == '' }}
+        continue-on-error: true
+        timeout-minutes: 5
+        run: |
+          npm run check:p244x || echo "P244x soft warn"
+
       - name: "Enrichment gates (SHADOW — soft)"
         if: ${{ github.event_name == 'schedule' || inputs.mode == 'all' || inputs.mode == '' }}
         continue-on-error: true

@@ -124,4 +124,29 @@ describe('P2448 — rotary knob command mode', () => {
     const desired = (setting === 'dimmer' || setting === 'command') ? 'command' : 'scene';
     assert.strictEqual(desired, 'command');
   });
+
+  it('P2449 flow UX — rotate + brightness cards on all knob drivers', () => {
+    const required = ssot.flowUx.requiredTriggersByDriver;
+    for (const [driverId, ids] of Object.entries(required)) {
+      const flow = JSON.parse(fs.readFileSync(
+        path.join(ROOT, `drivers/${driverId}/driver.flow.compose.json`), 'utf8'
+      ));
+      const allIds = [
+        ...(flow.triggers || []).map((t) => t.id),
+        ...(flow.conditions || []).map((t) => t.id),
+        ...(flow.actions || []).map((t) => t.id),
+      ];
+      for (const id of ids) {
+        assert.ok(allIds.includes(id), `${driverId} missing ${id}`);
+      }
+    }
+  });
+
+  it('P2449 SmartKnobRotationMixin exists and knob devices use it', () => {
+    assert.ok(fs.existsSync(path.join(ROOT, 'lib/mixins/SmartKnobRotationMixin.js')));
+    for (const d of ['smart_knob', 'smart_knob_switch', 'smart_knob_rotary']) {
+      const src = fs.readFileSync(path.join(ROOT, `drivers/${d}/device.js`), 'utf8');
+      assert.ok(/SmartKnobRotationMixin/.test(src), `${d} should use mixin`);
+    }
+  });
 });

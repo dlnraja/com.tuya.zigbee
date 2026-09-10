@@ -1032,9 +1032,10 @@ catches invent regressions anti-bot alone might miss (wrong-PID catalog force).
 | Present | P2269–P2270 | Anti-spaghetti SSOT + harvest ≥50 + PathFinder |
 | Present | P2271–P2279 | Polarity / strip / curtain / smoke / meter / TRV cal / cover+USB |
 | Present | P2280–P2281 | Dual-app inconsistency sweep + workflow lineage SSOT |
+| Present | P2448–P2449 | Rotary command/dimmer + declared flow auto-wire (BOTH) |
 
-- Extra gates: `npm run check:p2278` · `npm run check:p2279` · `npm run check:discovery-lineage`.
-- Dual-app: P227x couple unsteals + TRV cal TX/RX = **BOTH**. PathFinder / Daylight / mega feature managers = **MASTER_ONLY**.
+- Extra gates: `npm run check:p2278` · `npm run check:p2279` · `npm run check:discovery-lineage` · `npm run check:p244x`.
+- Dual-app: P227x couple unsteals + TRV cal TX/RX + **P2448/P2449** = **BOTH**. PathFinder / Daylight / mega feature managers = **MASTER_ONLY**.
 
 ### P2201 — Homey cartesian / contact TS0601 (2026-08-20)
 - Never put **TS0601** on `contact_sensor` compose (pairs with every mfr → climate collisions).
@@ -1052,13 +1053,40 @@ catches invent regressions anti-bot alone might miss (wrong-PID catalog force).
 - **BOTH**: wall_dimmer harden, brightness clamp, fingerprint refuse-wrong-pid,
   Poll Control skip sleepy, battery no-invent, compose FP locks,
   energy divisors / EnergyJumpGuard / energy-compose gate, BootBudget heap,
-  brand-scrub of flow **titles** (no commercial names).
+  brand-scrub of flow **titles** (no commercial names),
+  **P2448/P2449** rotary command mode + declared flow card wiring.
 - **MASTER_ONLY**: command pacer, reconnect coalescer, availability last-seen,
   presence sim, Daylight Atmosphere / Solar Sync / Path Light engines,
   free-scrape, AlarmPolarity smart-learn, CI `.cache/` intel infra.
 - Never Publish Stable with App ID `com.dlnraja.tuya.zigbee` (must be `.stable`).
 - SSOT: `config/architecture/dual-app-tracks.json` · enrich gates:
   `node tools/ci/l99-dual-app-enrich-gates.js` (soft on enrich; `--hard` on unified-ci).
+
+### P2448 / P2449 — Rotary knobs + declared flow wiring (2026-09-10)
+
+**SSOT:** [`docs/architecture/KNOB_FLOW_WIRING_SSOT.md`](../docs/architecture/KNOB_FLOW_WIRING_SSOT.md) · [`config/architecture/rotary-knob-ssot.json`](../config/architecture/rotary-knob-ssot.json)
+
+| Patch | Problem | Fix |
+|-------|---------|-----|
+| P2448 | ERS-10 rotate dead — scene `0x8004=1` while RX is levelControl | `DeviceOperatingMode` knob/dimmer + `SmartKnobRotationMixin`; no `/smart_knob/` scene catch-all |
+| P2449 | Compose cards declared, never wired | `DeclaredFlowCardAutoWire` + ButtonDevice driver-scoped `scene_recall` + dim→`brightness_changed` |
+| P2439 | 1-btn `kaflzta4` needs scene | Stay scene — do not force dimmer |
+
+**SDK3:** `getDeviceTriggerCard(id)` one arg only. **Dim flows:** normalize 0–100 → Homey `dim` 0–1.
+
+**Mandatory gates:**
+```bash
+npm run check:p244x   # = check:p2448 + check:p2449
+```
+
+**Workflows that MUST run `npm run check:p244x`:**
+- Hard: `unified-ci.yml`, `syntax-check.yml`, `pr-gate.yml`, `validate.yml`, `code-quality.yml`
+- Soft: `project-resilience.yml` (`continue-on-error`)
+
+**Cursor rule:** `.cursor/rules/knob-flow-wiring.mdc`  
+**Resilience:** `rotary_knob_command_mode` + `declared_flow_card_wiring` in `config/resilience/critical-gaps.json`
+
+After changes to `drivers/smart_knob*`, `ButtonDevice`, button/dimmer flow compose, `DeviceOperatingMode`, or `DeclaredFlowCardAutoWire`: run `npm run check:p244x` before push.
 
 ### L99 enrich automation (regular)
 Workflows that soft-run L99 dual gates on schedule:

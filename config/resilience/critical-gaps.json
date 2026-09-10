@@ -94,12 +94,45 @@
       "gates": [
         "tools/ci/p2448-rotary-knob-gate.js",
         "test/critical/p2448-rotary-knob-command-mode.test.js",
-        "test/critical/p2439-kaflzta4-smart-knob-button.test.js"
+        "test/critical/p2439-kaflzta4-smart-knob-button.test.js",
+        "tools/ci/p2449-declared-flow-wire-gate.js",
+        "test/critical/p2449-declared-flow-wire.test.js"
       ],
       "discoveries": [
         "P2448 uri7ongn/ixla93vd/g9g2xnch → knob/dimmer",
         "compose button_mode default dimmer",
-        "abrsvsou/4fjiwweb stay button_wireless_4 off KNOB_MFR"
+        "abrsvsou/4fjiwweb stay button_wireless_4 off KNOB_MFR",
+        "P2449 DeclaredFlowCardAutoWire + scene_recall driver-scoped + brightness_changed on dim"
+      ]
+    },
+    {
+      "id": "declared_flow_card_wiring",
+      "priority": 1,
+      "why": "Compose declares scene_recall / set_brightness / brightness_changed / rotate cards but drivers never registerRunListener or fire triggers",
+      "homeyGap": "SDK3 requires explicit registerRunListener; getDeviceTriggerCard(id) only (no second arg)",
+      "stack": [
+        "lib/flow/DeclaredFlowCardAutoWire.js",
+        "UniversalFlowCardLoader autoWire",
+        "ButtonDevice _tryCard scene_recall",
+        "FlowCardHelper scene_recall register",
+        "TuyaZigbeeDevice/SafeCapabilityMixin dim→brightness_changed",
+        "SmartKnobRotationMixin"
+      ],
+      "bugs": [
+        "declared_only_flow_card",
+        "getDeviceTriggerCard_two_arg",
+        "buttondevice_forbids_dim_on_knob",
+        "scene_recall_app_level_only"
+      ],
+      "gates": [
+        "tools/ci/p2449-declared-flow-wire-gate.js",
+        "test/critical/p2449-declared-flow-wire.test.js",
+        "tools/ci/p2448-rotary-knob-gate.js"
+      ],
+      "discoveries": [
+        "P2449 fleet auto-wire from driver.manifest.flow",
+        "normalizeDim 0–100 → 0–1 for set_brightness",
+        "kaflzta4 stays scene (P2439) while ERS-10 rotary stays dimmer"
       ]
     },
     {

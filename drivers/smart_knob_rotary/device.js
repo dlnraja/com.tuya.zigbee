@@ -9,10 +9,15 @@ const { safeExtends } = require('../../lib/utils/ClassExtendsGuard');
 const TuyaZigbeeDevice = safeExtends('TuyaZigbeeDevice', () => {
   return require('../../lib/tuya/TuyaZigbeeDevice');
 });
+const SmartKnobRotationMixin = require('../../lib/mixins/SmartKnobRotationMixin');
 const { CLUSTER } = require('zigbee-clusters');
 const { resolve: resolvePressType } = require('../../lib/utils/TuyaPressTypeMap');
 
-class SmartKnobRotaryDevice extends TuyaZigbeeDevice {
+class SmartKnobRotaryDevice extends SmartKnobRotationMixin(TuyaZigbeeDevice) {
+
+  get knobFlowPrefix() {
+    return 'smart_knob_rotary';
+  }
 
   async onNodeInit({ zclNode }) {
     await super.onNodeInit({ zclNode });
@@ -45,6 +50,9 @@ class SmartKnobRotaryDevice extends TuyaZigbeeDevice {
 
     // Setup button/knob event handling
     await this._setupKnobEventHandling(zclNode);
+
+    // P2449: dim action listener + press+rotate helpers (no second levelControl bind)
+    this._registerKnobDimListener();
 
     // v5.9.3: E000 + Tuya DP detection layers
     await this._setupE000Detection(zclNode);
@@ -320,6 +328,9 @@ class SmartKnobRotaryDevice extends TuyaZigbeeDevice {
 
   _handleSceneCommand(sceneId) {
     const map = { 0: 'single', 1: 'double', 2: 'hold', 3: 'triple' };
+    const sid = Number(sceneId);
+    // WHY(P2449): also fire dedicated scene_recall flow card (was press-only)
+    this._triggerKnobSceneRecall(Number.isFinite(sid) ? sid : sceneId).catch(() => {});
     this._triggerButtonPress(map[sceneId] || `scene_${sceneId}`);
   }
 
@@ -377,39 +388,35 @@ class SmartKnobRotaryDevice extends TuyaZigbeeDevice {
       this.safeSetCapabilityValue('dim', this._simulatedBrightness).catch(this._boundError || ((e) => { try { this.error(e); } catch (_) {} }));
     }
     this.log('Simulated brightness:', Math.round(this._simulatedBrightness * 100), '%');
+    // WHY(P2449): brightness_changed flow was declared but never triggered
+    this._triggerKnobBrightnessChanged().catch(() => {});
   }
 
   async _triggerRotateLeft() {
-    if (this.hasCapability('button.rotate_left')) {
-      await this.safeSetCapabilityValue('button.rotate_left', true).catch(this._boundError || ((e) => { try { this.error(e); } catch (_) {} }));
-      this.homey.setTimeout(() => { if (this._destroyed) {return;} this.safeSetCapabilityValue('button.rotate_left', false).catch(this._boundError || ((e) => { try { this.error(e); } catch (_) {} })); }, 100);
-    }
-    const rotateLeftTrigger = (() => { try { return this.homey.flow.getDeviceTriggerCard('smart_knob_rotary_rotate_left', 'trigger'); } catch(e) { return null; } })();
-    if (rotateLeftTrigger) {
-      await rotateLeftTrigger.trigger(this, this._rotationTokens()).catch(this._boundError || ((e) => { try { this.error(e); } catch (_) {} }));
-    }
+    // Delegate to mixin — also fires press_and_rotate_left when held
+    await this._triggerKnobRotateLeft();
   }
 
   async _triggerRotateRight() {
-    if (this._destroyed) {return;}
-    if (this.hasCapability('button.rotate_right')) {
-      await this.safeSetCapabilityValue('button.rotate_right', true).catch(this._boundError || ((e) => { try { this.error(e); } catch (_) {} }));
-      this.homey.setTimeout(() => { if (this._destroyed) {return;} this.safeSetCapabilityValue('button.rotate_right', false).catch(this._boundError || ((e) => { try { this.error(e); } catch (_) {} })); }, 100);
-    }
-    const rotateRightTrigger = (() => { try { return this.homey.flow.getDeviceTriggerCard('smart_knob_rotary_rotate_right', 'trigger'); } catch(e) { return null; } })();
-    if (rotateRightTrigger) {
-      await rotateRightTrigger.trigger(this, this._rotationTokens()).catch(this._boundError || ((e) => { try { this.error(e); } catch (_) {} }));
-    }
+    await this._triggerKnobRotateRight();
   }
 
   async _triggerButtonPress(action) {
     if (this._destroyed) {return;}
+    if (action === 'hold' || action === 'long' || action === 'long_press') {
+      this.markKnobPressHeld();
+    } else if (action === 'single') {
+      this.markKnobPressHeld(800);
+    } else if (action === 'release') {
+      this.clearKnobPressHeld();
+    }
     if (this.hasCapability('button.press')) {
       await this.safeSetCapabilityValue('button.press', true).catch(this._boundError || ((e) => { try { this.error(e); } catch (_) {} }));
       this.homey.setTimeout(() => { if (this._destroyed) {return;} this.safeSetCapabilityValue('button.press', false).catch(this._boundError || ((e) => { try { this.error(e); } catch (_) {} })); }, 100);
     }
     try {
-      const genericTrigger = (() => { try { return this.homey.flow.getDeviceTriggerCard('smart_knob_rotary_pressed', 'trigger'); } catch(e) { return null; } })();
+      // SDK3: getDeviceTriggerCard(id) only — second arg was a no-op / risk
+      const genericTrigger = (() => { try { return this.homey.flow.getDeviceTriggerCard('smart_knob_rotary_pressed'); } catch(e) { return null; } })();
       if (genericTrigger) {
         await genericTrigger.trigger(this, { action }).catch(() => {});
       }
@@ -426,7 +433,7 @@ class SmartKnobRotaryDevice extends TuyaZigbeeDevice {
     
     if (specificCardId) {
       try {
-        const triggerCard = this.homey.flow.getDeviceTriggerCard(specificCardId, 'trigger');
+        const triggerCard = this.homey.flow.getDeviceTriggerCard(specificCardId);
         if (triggerCard) {
             await triggerCard.trigger(this, { action }).catch(() => {});
         }

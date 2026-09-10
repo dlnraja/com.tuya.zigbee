@@ -34,9 +34,13 @@
     "store changelog identity"
   ],
   "l99RecentClassification": {
+    "p2449_declared_flow_wire": {
+      "tag": "BOTH",
+      "note": "DeclaredFlowCardAutoWire + ButtonDevice scene_recall + dim→brightness_changed + SDK3 getDeviceTriggerCard arity — flow reliability fleet-wide"
+    },
     "p2448_rotary_knob_command_mode": {
       "tag": "BOTH",
-      "note": "ERS-10/ZG-101ZD command/dimmer 0x8004 + levelControl RX; DeviceOperatingMode KNOB_MFR; p2448 gate — reliability"
+      "note": "ERS-10/ZG-101ZD command/dimmer 0x8004 + levelControl RX; DeviceOperatingMode KNOB_MFR; SmartKnobRotationMixin; p2448/p2449 gates — reliability"
     },
     "p2438_multi_source_local_solver_ai_limit": {
       "tag": "BOTH",

@@ -22,7 +22,10 @@ node tools/ci/forum-actionable-processor.js
 node tools/ci/l99-dual-app-enrich-gates.js
 node tools/ci/flow-l99-orchestrator.js
 node tools/ci/p2138-sacred-couple-matrix-gate.js
+node tools/ci/p2448-rotary-knob-gate.js
+node tools/ci/p2449-declared-flow-wire-gate.js
 node tools/ci/coverage-dp-cluster-flow.js --strict
+npm run check:p244x
 ```
 
 ## Anti-patterns

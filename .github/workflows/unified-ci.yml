@@ -168,7 +168,7 @@ jobs:
           node --test test/critical/p2437-ai-forfait-cursor-hooks.test.js
           node --test test/critical/p2438-multi-source-harvest-ai-limit.test.js
           node --test test/critical/p2439-kaflzta4-smart-knob-button.test.js
-          npm run check:p2448
+          npm run check:p244x
 
       - name: 🛡️ Firmware / OTA path gate
         run: node tools/ci/firmware-updates-gate.js --coverage

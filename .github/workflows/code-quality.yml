@@ -118,11 +118,12 @@ jobs:
           fi
           echo "✓ All driver.compose.json files valid"
 
-      - name: Anti-bot + P2138 sacred-couple matrix
+      - name: Anti-bot + P2138 sacred-couple matrix + P244x flow/knob
         id: sacred
         run: |
           node tools/ci/anti-bot-regression-gate.js
           node tools/ci/p2138-sacred-couple-matrix-gate.js
+          npm run check:p244x
 
       - name: Driver health check
         id: health

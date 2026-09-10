@@ -76,7 +76,7 @@
       ]
     },
     "present": {
-      "range": "P2269–P2288",
+      "range": "P2269–P2449",
       "mustRemember": [
         {
           "id": "P2269",
@@ -125,6 +125,18 @@
         {
           "id": "P2288",
           "note": "Sacred-keep compaction: publish-sacred-keep-couples.json (23 pins) + prepare-publish fail-closed"
+        },
+        {
+          "id": "P2439",
+          "note": "kaflzta4/ja5osu5g/an5rjiwd TS004F 1-btn stay scene/event — not rotary dimmer"
+        },
+        {
+          "id": "P2448",
+          "note": "ERS-10/ZG-101ZD rotary: command/dimmer 0x8004 + levelControl; SmartKnobRotationMixin; rotary-knob-ssot; never scene-force"
+        },
+        {
+          "id": "P2449",
+          "note": "Declared flow wire fleet: DeclaredFlowCardAutoWire + ButtonDevice scene_recall + dim→brightness_changed; SDK3 getDeviceTriggerCard(id) only; check:p244x"
         }
       ],
       "workflowHooks": [
@@ -133,6 +145,12 @@
         "lib/protocol/CommunicationPathFinder.js",
         "lib/utils/BidirectionalButtonState.js",
         "tools/ci/p2284-handleframe-chain-gate.js",
+        "tools/ci/p2448-rotary-knob-gate.js",
+        "tools/ci/p2449-declared-flow-wire-gate.js",
+        "lib/flow/DeclaredFlowCardAutoWire.js",
+        "lib/mixins/SmartKnobRotationMixin.js",
+        "config/architecture/rotary-knob-ssot.json",
+        "docs/architecture/KNOB_FLOW_WIRING_SSOT.md",
         "test/critical/p2269-anti-spaghetti-ssot-gate.test.js",
         "test/critical/p2270-discussion-harvest-gate.test.js",
         "test/critical/p2282-forum-2202-peter-misattr-button.test.js",
@@ -142,6 +160,8 @@
         "test/critical/p2286-soft-expect-publish.test.js",
         "test/critical/p2287-ias-leftover-ef00-skip.test.js",
         "test/critical/p2288-prepare-publish-sacred-keep.test.js",
+        "test/critical/p2448-rotary-knob-command-mode.test.js",
+        "test/critical/p2449-declared-flow-wire.test.js",
         "config/architecture/publish-ssot.json",
         "docs/architecture/PUBLISH_SSOT.md",
         "reports/l99-reco-apply-2026-08-26/SUMMARY.md",
@@ -154,6 +174,8 @@
       "unified-ci.yml",
       "pr-gate.yml",
       "validate.yml",
+      "syntax-check.yml",
+      "code-quality.yml",
       "auto-publish-on-push.yml"
     ],
     "softHarvestSync": [
@@ -176,7 +198,9 @@
       "gate-p2287-ias-ef00",
       "gate-p2288-sacred-keep",
       "gate-discovery-lineage",
-      "gate-p2138-sacred-couple"
+      "gate-p2138-sacred-couple",
+      "gate-p2448-rotary-knob",
+      "gate-p2449-declared-flow-wire"
     ]
   }
 }

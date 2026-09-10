@@ -207,6 +207,58 @@ for (const c of ssot.rotaryCouples) {
   else ok(`compose ${c.driver} has ${c.mfr}`);
 }
 
+// 8) P2449 flow UX + mixin + dim not forbidden on knob devices
+{
+  const mixinRel = 'lib/mixins/SmartKnobRotationMixin.js';
+  if (!fs.existsSync(path.join(ROOT, mixinRel))) fail(`missing ${mixinRel}`);
+  else ok('SmartKnobRotationMixin present');
+
+  const flowUx = ssot.flowUx || {};
+  const required = flowUx.requiredTriggersByDriver || {};
+  for (const [driverId, ids] of Object.entries(required)) {
+    const flowRel = `drivers/${driverId}/driver.flow.compose.json`;
+    if (!fs.existsSync(path.join(ROOT, flowRel))) {
+      fail(`missing ${flowRel}`);
+      continue;
+    }
+    const flow = readJson(flowRel);
+    const allIds = [
+      ...(flow.triggers || []).map((t) => t.id),
+      ...(flow.conditions || []).map((t) => t.id),
+      ...(flow.actions || []).map((t) => t.id),
+    ];
+    for (const id of ids) {
+      if (!allIds.includes(id)) fail(`${driverId} flow missing ${id}`);
+      else ok(`flow ${id}`);
+    }
+  }
+
+  for (const driverId of ['smart_knob', 'smart_knob_switch', 'smart_knob_rotary']) {
+    const src = readText(`drivers/${driverId}/device.js`);
+    if (!/SmartKnobRotationMixin|initSmartKnobRotation|_triggerKnobRotateLeft|_triggerKnobBrightnessChanged/.test(src)) {
+      fail(`${driverId}/device.js missing P2449 rotation wiring`);
+    } else ok(`${driverId} device rotation wiring`);
+  }
+
+  const rotarySrc = readText('drivers/smart_knob_rotary/device.js');
+  if (/getDeviceTriggerCard\([^)]+,\s*['"]trigger['"]\)/.test(rotarySrc)) {
+    fail('smart_knob_rotary still passes second arg to getDeviceTriggerCard');
+  } else ok('getDeviceTriggerCard SDK3 arity OK');
+
+  if (!/press_and_rotate|_triggerKnobSceneRecall|markKnobPressHeld/.test(rotarySrc)) {
+    fail('smart_knob_rotary missing press+rotate / scene_recall wiring');
+  } else ok('press+rotate + scene_recall wired');
+
+  const knobCompose = readJson('drivers/smart_knob/driver.compose.json');
+  const caps = knobCompose.capabilities || [];
+  if (!caps.includes('button.rotate_left') || !caps.includes('button.rotate_right')) {
+    fail('smart_knob missing rotate capabilities');
+  } else ok('smart_knob has rotate caps');
+  const btnMode = (knobCompose.settings || []).find((s) => s.id === 'button_mode');
+  if (!btnMode) fail('smart_knob missing button_mode setting');
+  else ok('smart_knob has button_mode setting');
+}
+
 if (failures.length) {
   console.error(`\nP2448 FAIL (${failures.length})`);
   process.exit(1);

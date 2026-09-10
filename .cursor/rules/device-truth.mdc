@@ -59,5 +59,6 @@ Homey SDK/interview does **not** cover every ZCL/EF00 path. Runtime must keep pa
 - SOS / water leak / contact = sleepy IAS. Enroll on wake. No boot poll storm. No leftover EF00 TX.
 - Backlight settings are strings `off`/`normal`/`inverted`. Battery: no linear `(V-2.5)/0.5`.
 - BSEED zcl_only mfrs: `_TZ3000_l9brjwau`, `_TZ3000_blhvsaqf`, `_TZ3000_ysdv91bk`, `_TZ3000_hafsqare`, `_TZ3000_e98krvvk`, `_TZ3000_iedbgyxt`, `_TZ3000_cauq1okq`, `_TZ3000_w5xztuy7`.
+- **P2448 knobs:** `_TZ3000_uri7ongn`/`ixla93vd`/`g9g2xnch`/`402vrq2i`+`TS004F` → `smart_knob` **command/dimmer** (levelControl). `smart_knob_rotary` / `smart_knob_switch` same. Never scene-force. **P2439:** `kaflzta4`/`ja5osu5g`/`an5rjiwd` stay **scene**. Never put `abrsvsou`/`4fjiwweb` in `KNOB_MFR` (`button_wireless_4`). SSOT: `config/architecture/rotary-knob-ssot.json` · `docs/architecture/KNOB_FLOW_WIRING_SSOT.md` · `npm run check:p244x`.
 
 Regenerate catalog: `node tools/ci/build-device-truth.js` then `node tools/ci/investigate-device-peculiarities.js`.

@@ -42,12 +42,14 @@ npm run enrich:profiles
 3. **Never invent pid as hard lock** — soft hypotheses OK; catalog write only at `hardLock` (≥92).
 4. **Predictive unknowns (P2218)** — symptom/prefix/peer boosts; runtime `UnknownCaseRealigner` observes (no TX guess).
 5. **Button UI/UX (P2220–P2221)** — bidirectional physical↔virtual: UnifiedSwitchBase inits all three (physical+virtual+UI); 0xFD/0xFC parallel RX; `markAppCommand` before TX; scene remotes flow-only; 2s dedup.
-6. **Auto stubs only** — never overwrite curated `users.*.devices`.
-7. **`userAction` fields** — shadow report guidance — **not** forum copy.
-8. **Megathread guard** — ≤6 couples/post, ≤12 auto devices/user.
-9. **Extend via config** — `phases.json` + models, not spaghetti.
-10. **Complementary resilience (P2224)** — enrichment layers point at resilience domains/glossary; investigate routes symptoms → domain IDs; never delete older layer docs.
+6. **Declared flow wiring (P2449)** — compose `scene_recall` / `set_brightness` / `brightness_changed` / `rotate_*` must be wired (`DeclaredFlowCardAutoWire` + ButtonDevice / mixin). SDK3: `getDeviceTriggerCard(id)` one arg. Knobs: P2448 command/dimmer — see `knob-flow-wiring.mdc` + `npm run check:p244x`.
+7. **Auto stubs only** — never overwrite curated `users.*.devices`.
+8. **`userAction` fields** — shadow report guidance — **not** forum copy.
+9. **Megathread guard** — ≤6 couples/post, ≤12 auto devices/user.
+10. **Extend via config** — `phases.json` + models, not spaghetti.
+11. **Complementary resilience (P2224)** — enrichment layers point at resilience domains/glossary; investigate routes symptoms → domain IDs; never delete older layer docs.
 
 ## Workflows
 
-`forum-poll.yml`, `auto-enrich-closed-loop.yml`, `fetch-diags.yml` → orchestrator with `FORUM_AUTO_POST=0` + `SHADOW_FORUM=1` forced.
+`forum-poll.yml`, `auto-enrich-closed-loop.yml`, `fetch-diags.yml` → orchestrator with `FORUM_AUTO_POST=0` + `SHADOW_FORUM=1` forced.  
+Hard knob/flow gates: `unified-ci` / `syntax-check` / `pr-gate` / `validate` / `code-quality` → `npm run check:p244x`. Soft: `project-resilience.yml`.

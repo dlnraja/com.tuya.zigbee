@@ -13,9 +13,17 @@ alwaysApply: true
 
 SSOT: `config/architecture/dual-app-tracks.json` · publish: `config/architecture/publish-ssot.json` · `docs/architecture/PUBLISH_SSOT.md` · regular gates: `npm run check:l99-dual` / `check:p2286`–`p2288`.
 
-L99 classify: energy/divisors/BootBudget/brand-scrub titles = **BOTH**; Daylight Atmosphere / Path Light / presence / CI intel = **MASTER_ONLY**.
+L99 classify: energy/divisors/BootBudget/brand-scrub titles = **BOTH**; Daylight Atmosphere / Path Light / presence / CI intel = **MASTER_ONLY**. **P2448/P2449** knob command mode + declared flow wire = **BOTH**.
 
 Clone Stable: `Documents\homey\stable`. `stable-v5-p195` is **STALE**.
+
+## P2448 / P2449 — Rotary knobs + declared flows (2026-09-10)
+- **P2448:** ERS-10 / ZG-101ZD need `0x8004=command` + levelControl; never scene-force on `smart_knob_rotary`. SSOT `config/architecture/rotary-knob-ssot.json`.
+- **P2449:** Fleet declare⇒wire — `DeclaredFlowCardAutoWire`, ButtonDevice driver-scoped `*_scene_recall`, dim→`*_brightness_changed`. SDK3: `getDeviceTriggerCard(id)` only.
+- **P2439:** `kaflzta4` / `ja5osu5g` / `an5rjiwd` stay **scene**.
+- Gates: `npm run check:p244x` (hard in unified-ci / syntax-check / pr-gate / validate / code-quality).
+- Docs: `docs/architecture/KNOB_FLOW_WIRING_SSOT.md` · rule: `.cursor/rules/knob-flow-wiring.mdc`
+- Couples: `uri7ongn`/`ixla93vd`/`g9g2xnch`→`smart_knob` dimmer; `abrsvsou`/`4fjiwweb` stay `button_wireless_4`.
 
 ## P2313 — User report doctrine (every prompt)
 - **Never** dismiss with “déjà couvert” / “user wrong” without full pass: driver, flows, flow cards, DP/cluster, RX/TX, interview, Gmail diag cross-ref.
@@ -72,6 +80,8 @@ Clone Stable: `Documents\homey\stable`. `stable-v5-p195` is **STALE**.
 | `_TZ3000_lwthnp7j`+TS0004 | `wall_switch_4gang_1way` | Gabriel; pid not in #2186 post |
 | `_TZE200/204_pay2byax`+TS0601 | `contact_sensor_zigbee` | P126 no TS0601 on contact_sensor |
 | `_TZ3000_xffhmvhv`+TS004F | `button_wireless_4` | Nobø diag `9cbf9eb6` |
+| `_TZ3000_uri7ongn`+TS004F | `smart_knob` | P2448 ERS-10 rotary; command/dimmer |
+| `_TZ3000_kaflzta4`+TS004F | `smart_knob` | P2439 1-btn scene — not rotary |
 
 ## P139 — Athom transient (DO NOT LOOP)
 - Stable 5.12.88 upload succeeded then **processing_failed** — wait; do not force_test spam.
@@ -85,6 +95,7 @@ npm run enrich:investigate
 npm run resilience:audit
 npm run forum:process
 npm run forum:parse-digest
+npm run check:p244x
 ```
 
 ## Resilience (P2222 / P2224 / P2225) — BOTH tracks

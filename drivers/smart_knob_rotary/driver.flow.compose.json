@@ -279,10 +279,10 @@
         "de": "Szene aufgerufen"
       },
       "hint": {
-        "en": "When the device recalls a Zigbee scene (cluster 0x05 — scene mode, P29)",
-        "fr": "Lorsque l'appareil rappelle une scène Zigbee (cluster 0x05 — mode scène, P29)",
-        "nl": "When the device recalls a Zigbee scène (cluster 0x05 — scène mode, P29)",
-        "de": "When the device recalls a Zigbee Szene (Cluster 0x05 — Szene mode, P29)"
+        "en": "When the device recalls a Zigbee scene (cluster 0x05 — scene mode)",
+        "fr": "Lorsque l'appareil rappelle une scène Zigbee (cluster 0x05 — mode scène)",
+        "nl": "Wanneer het apparaat een Zigbee-scène oproept (cluster 0x05)",
+        "de": "Wenn das Gerät eine Zigbee-Szene aufruft (Cluster 0x05)"
       },
       "tokens": [
         {
@@ -299,17 +299,25 @@
       ],
       "args": [],
       "titleFormatted": {
-        "en": "Scene [[scene_id]] recalled ({scene_id})",
-        "fr": "Scène [[scene_id]] rappelée ({scene_id})",
-        "nl": "Scène [[scène_id]] opgeroepen ({scene_id})",
-        "de": "Szene [[Szene_id]] aufgerufen ({scene_id})"
+        "en": "Scene recalled ({scene_id})",
+        "fr": "Scène rappelée ({scene_id})",
+        "nl": "Scène opgeroepen ({scene_id})",
+        "de": "Szene aufgerufen ({scene_id})"
       }
     },
     {
       "id": "smart_knob_rotary_brightness_changed",
       "title": {
         "en": "Brightness changed",
-        "fr": "Luminosité changée"
+        "fr": "Luminosité changée",
+        "nl": "Helderheid gewijzigd",
+        "de": "Helligkeit geändert"
+      },
+      "hint": {
+        "en": "When simulated rotation brightness changes",
+        "fr": "Lorsque la luminosité simulée change",
+        "nl": "Wanneer de gesimuleerde helderheid verandert",
+        "de": "Wenn die simulierte Helligkeit sich ändert"
       },
       "tokens": [
         {
@@ -317,7 +325,9 @@
           "type": "number",
           "title": {
             "en": "Brightness (%)",
-            "fr": "Luminosité (%)"
+            "fr": "Luminosité (%)",
+            "nl": "Helderheid (%)",
+            "de": "Helligkeit (%)"
           },
           "example": 80
         }
@@ -325,7 +335,9 @@
       "args": [],
       "titleFormatted": {
         "en": "Brightness changed to {brightness}%",
-        "fr": "Luminosité {brightness}%"
+        "fr": "Luminosité {brightness}%",
+        "nl": "Helderheid {brightness}%",
+        "de": "Helligkeit {brightness}%"
       }
     },
     {
@@ -350,7 +362,9 @@
       "id": "smart_knob_rotary_brightness_above",
       "title": {
         "en": "Brightness level is above...",
-        "fr": "Niveau de luminosité supérieur à..."
+        "fr": "Niveau de luminosité supérieur à...",
+        "nl": "Helderheid is hoger dan...",
+        "de": "Helligkeit ist höher als..."
       },
       "args": [
         {
@@ -361,13 +375,17 @@
           "step": 1,
           "title": {
             "en": "Level",
-            "fr": "Niveau"
+            "fr": "Niveau",
+            "nl": "Niveau",
+            "de": "Stufe"
           }
         }
       ],
       "titleFormatted": {
-        "en": "Brightness level is above... [[level]]",
-        "fr": "Niveau de luminosité supérieur à... [[level]]"
+        "en": "Brightness level is above [[level]]",
+        "fr": "Niveau de luminosité supérieur à [[level]]",
+        "nl": "Helderheid is hoger dan [[level]]",
+        "de": "Helligkeit ist höher als [[level]]"
       }
     }
   ],

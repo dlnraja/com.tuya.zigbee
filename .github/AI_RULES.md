@@ -39,7 +39,18 @@ node scripts/ci/security-scanner.js
 
 # Pre-push validation
 npm run precommit:full
+
+# Knob + declared flow wiring (P2448/P2449)
+npm run check:p244x
 ```
+
+## Flow / knob wiring (P2448 / P2449)
+
+- **Declare ⇒ wire** — never leave compose-only `scene_recall` / `set_brightness` / `brightness_changed` / `rotate_*`.
+- **SDK3:** `homey.flow.getDeviceTriggerCard(id)` — one argument only.
+- **Rotary:** ERS-10 needs command/dimmer (`0x8004=0`); `kaflzta4` stays scene (P2439).
+- Docs: `docs/architecture/KNOB_FLOW_WIRING_SSOT.md` · rule: `.cursor/rules/knob-flow-wiring.mdc`
+- Dual-app: **BOTH**.
 
 ## Security Rules
 

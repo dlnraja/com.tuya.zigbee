@@ -32,10 +32,12 @@ Gates: `node tools/ci/energy-compose-gate.js` · `node tools/ci/adaptive-double-
 | Cascade L1–L8 | `ButtonCaptureCascade` applies `preferredLevels` (P2395) — skip L7 on TS004x; L5 E000 when preferred |
 | Mixin flag | `_hasPhysicalButtonMixin` stamped in phys init so UnifiedSwitchBase skips duplicate ZCL listeners |
 | Dead stack | Do **not** extend `UnifiedButtonEngine` — alias vocab to `button_capture_l1_l8` |
+| Rotary knobs P2448 | `SmartKnobRotationMixin` + `DeviceOperatingMode` command/dimmer — never scene-force ERS-10 |
+| Scene recall P2449 | `ButtonDevice` `_tryCard` driver-scoped `*_scene_recall` (not app-level only) |
 
 Mixin order (switches): inherit via `TuyaZigbeeDevice` / `UnifiedSwitchBase` — **no** double-wrap `PhysicalButtonMixin(VirtualButtonMixin(...))` (B10 / P2395).
 
-Gate: `node tools/ci/button-physical-gang-parity-gate.js`
+Gate: `node tools/ci/button-physical-gang-parity-gate.js` · `npm run check:p244x`
 
 ## Flows
 
@@ -44,8 +46,11 @@ Gate: `node tools/ci/button-physical-gang-parity-gate.js`
 | IDs | Globally unique; prefer `{driver}_physical_gang{N}_{on\|off}` for wall |
 | No | `titleFormatted` with `[[device]]` |
 | Capability filter | Prefer capability-based cards over “every device” |
+| SDK3 | `getDeviceTriggerCard(id)` — **one argument only** |
+| Declare⇒wire P2449 | `DeclaredFlowCardAutoWire` at boot; `set_brightness` normalizes 0–100→0–1; dim emits `*_brightness_changed` |
 
-Audit: `node tools/ci/layer-pass-audit.js` (4843+ cards scanned; zero `[[device]]` as of P155)
+Audit: `node tools/ci/layer-pass-audit.js` (4843+ cards scanned; zero `[[device]]` as of P155)  
+Knob/flow SSOT: [`KNOB_FLOW_WIRING_SSOT.md`](./KNOB_FLOW_WIRING_SSOT.md)
 
 ## Auto-maintenance (honest scope)
 

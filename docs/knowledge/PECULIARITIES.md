@@ -421,8 +421,16 @@ Generated 2026-09-08T07:29:59.472Z from registry (201 cases) × compound DB (454
 - Compound `_TZ3000_uri7ongn|TS004F`: zcl  ERS-10TZBVK-AA / ZG-101ZD rotary; never power_meter
 - Compound `_TZ3000_ixla93vd|TS004F`: zcl
 - Compose: class=button eps=1 EF00=false IAS=false batteries=CR2032
-- Notes: z2m ERS-10TZBVK-AA smart knob (zigbeeModel ZG-101ZD, TS004F, CR2032). Battery rotary remote — never an energy meter, relay board or mains wall switch. power_meter also declares TS004F, so leaving it there is a live dual-claim. **P2448:** must stay `family=knob` + `0x8004=command/dimmer` (levelControl rotation). Never force scene via `/smart_knob/` catch-all — that killed rotate on `uri7ongn`/`ixla93vd`/`smart_knob_rotary`.
-- Sources: z2m-herdsman, johan-enrichment, P190
+- Notes: z2m ERS-10TZBVK-AA smart knob (zigbeeModel ZG-101ZD, TS004F, CR2032). Battery rotary remote — never an energy meter, relay board or mains wall switch. power_meter also declares TS004F, so leaving it there is a live dual-claim. **P2448:** must stay `family=knob` + `0x8004=command/dimmer` (levelControl rotation). Never force scene via `/smart_knob/` catch-all — that killed rotate on `uri7ongn`/`ixla93vd`/`smart_knob_rotary`. **P2449:** `SmartKnobRotationMixin` + rotate/brightness flow cards on `smart_knob` / `smart_knob_switch` / `smart_knob_rotary` (press_and_rotate, brightness_changed, set_brightness, scene_recall wired). ButtonDevice no longer strips `dim` for these drivers. `button_mode` setting on `smart_knob` (auto/scene/dimmer). Fleet: `DeclaredFlowCardAutoWire` + ButtonDevice driver-scoped `*_scene_recall` + dim→`*_brightness_changed` for all sacred couples that declare those cards.
+- Sources: z2m-herdsman, johan-enrichment, P190, P2448, P2449
+
+### `p2439-p2450-kaflzta4-smart-knob-press` → `smart_knob`
+
+- Couple: `_TZ3000_kaflzta4` + TS004F
+- Protocol: zcl (genOnOff 0x8004 event/scene + 0xFD)
+- Diags: `a342c411` (9.0.846 press dead), `8adfe4ce` (9.0.857 still not working — log had no knob RX, curtain only)
+- Notes: Moes 1-btn TS004F scene remote on `smart_knob` (not rotary ERS-10). **Must** write `0x8004=1` (event). **P2439/P2442:** never classify as `family=knob` / skip 0x8004 when ABSENT at wake. **P2450:** reset stuck `button_mode=dimmer` → auto/scene; on late MFR-ENSURE re-apply scene + re-arm 0xFD. Sibling scene mfrs: `ja5osu5g`, `an5rjiwd`. Rotary `uri7ongn`/`ixla93vd` stay command/dimmer (P2448).
+- Sources: Homey diag a342c411/8adfe4ce, Z2M TS004F operation_mode=event, P2439, P2442, P2450
 
 ### `p190-ts130f-curtain-not-climate-or-dimmer` → `wall_curtain_switch`
 
