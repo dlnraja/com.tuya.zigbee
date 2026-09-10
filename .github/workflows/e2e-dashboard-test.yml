@@ -65,7 +65,13 @@ jobs:
 
       - name: Install master deps (cached)
         working-directory: master
-        run: npm ci --prefer-offline --no-audit
+        run: |
+          set -euo pipefail
+          # P2454: fail fast on corrupted lock (cosmiconfig@appVersion) before npm ETARGET
+          if [ -f tools/ci/sync-root-package-version.js ]; then
+            node tools/ci/sync-root-package-version.js assert
+          fi
+          npm ci --prefer-offline --no-audit
         if: hashFiles('master/package-lock.json') != ''
 
       - name: Validate master (AggregateError + process errors)

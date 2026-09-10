@@ -3122,5 +3122,8 @@
   },
   "9.0.864": {
     "en": "Fixed 1-btn remote pairing (ja5osu5g scene knob, an5rjiwd wireless button) and 4-btn wall remotes (5tqxpine); presence radar no longer sticks motion from bad DP1."
+  },
+  "9.0.865": {
+    "en": "Hardened CI publish workflows: package-lock root-only sync, mfs auto-heal on publish, e2e lock integrity gate."
   }
 }

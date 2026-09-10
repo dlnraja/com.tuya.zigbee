@@ -1,6 +1,6 @@
 {
   "name": "com.dlnraja.tuya.zigbee",
-  "version": "9.0.864",
+  "version": "9.0.865",
   "description": "Tuya Unified Zigbee - Local-first control with AI automation",
   "main": "app.js",
   "scripts": {
@@ -294,6 +294,8 @@
     "check:p243x": "node --test test/critical/p2435-gh540-544-switch-pairing.test.js test/critical/p2436-homey-match-moes-bot-mocks.test.js test/critical/p2437-ai-forfait-cursor-hooks.test.js test/critical/p2438-multi-source-harvest-ai-limit.test.js test/critical/p2439-kaflzta4-smart-knob-button.test.js test/critical/p2448-rotary-knob-command-mode.test.js test/critical/p2450-kaflzta4-stuck-dimmer.test.js",
     "check:p244x": "node tools/ci/p244x-knob-flow-gate.js",
     "check:p2450": "node --test test/critical/p2450-kaflzta4-stuck-dimmer.test.js",
+    "check:p2454": "node --test test/critical/p2454-package-lock-integrity.test.js",
+    "check:lock": "node tools/ci/sync-root-package-version.js assert",
     "harvest:all:apply": "node tools/ci/harvest-all-sources.js --apply",
     "enrich:fleet": "node tools/ci/fleet-intelligent-enrich.js",
     "enrich:fleet:apply": "node tools/ci/fleet-intelligent-enrich.js --apply --skip-crawl",
