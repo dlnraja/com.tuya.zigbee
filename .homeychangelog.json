@@ -1515,5 +1515,8 @@
   },
   "5.12.158": {
     "en": "Fixed 1-btn remote pairing (ja5osu5g / an5rjiwd) and 4-btn wall remotes (5tqxpine); presence radar sticky motion fix."
+  },
+  "5.12.159": {
+    "en": "CI harden: package-lock integrity gate on Stable publish path."
   }
 }
