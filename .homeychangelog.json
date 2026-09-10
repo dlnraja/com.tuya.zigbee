@@ -3080,5 +3080,8 @@
   },
   "9.0.849": {
     "en": "Fixed smart_knob TS004F button presses (_TZ3000_kaflzta4) by forcing scene/event mode instead of skipping 0x8004."
+  },
+  "9.0.851": {
+    "en": "Improved 1-button remote consistency (less flicker from duplicate Zigbee paths) and battery wake read. Fixed bulb fingerprint conflict blocking publish."
   }
 }
