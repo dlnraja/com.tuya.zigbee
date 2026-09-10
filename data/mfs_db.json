@@ -87,7 +87,7 @@
       "realMfrsAdded": 5,
       "details": "tmp/synthetic-resolution.json + tmp/pruned21-resolution.json"
     },
-    "lastAlignedAt": "2026-09-10T17:13:39.979Z",
+    "lastAlignedAt": "2026-09-10T20:19:06.072Z",
     "alignTool": "align-mfs-db-intelligent@P169",
     "lastSyncedFromCompose": "2026-09-10T17:13:37.520Z",
     "syncComposeTool": "sync-compose-to-mfs-db@P2368"
@@ -11957,8 +11957,7 @@
     "_tz3000_5tqxpine": {
       "manufacturerId": "_tz3000_5tqxpine",
       "modelIds": [
-        "TS0044",
-        "TS0601"
+        "TS0044"
       ],
       "variants": [],
       "deviceType": "sensor",
@@ -11983,7 +11982,15 @@
         "hubitat": 2
       },
       "confidence": 0.25,
-      "lastSeen": "2026-06-19T20:58:49.761Z"
+      "lastSeen": "2026-06-19T20:58:49.761Z",
+      "driverId": "scene_switch_4",
+      "sacredCouples": [
+        {
+          "mfr": "_TZ3000_5tqxpine",
+          "pid": "TS0044",
+          "driver": "scene_switch_4"
+        }
+      ]
     },
     "_tz3000_czuyt8lz": {
       "manufacturerId": "_tz3000_czuyt8lz",
@@ -72360,7 +72367,7 @@
     "_tz3000_an5rjiwd": {
       "manufacturerId": "_tz3000_an5rjiwd",
       "modelIds": [
-        "TS0043"
+        "TS0041"
       ],
       "variants": [],
       "deviceType": "sensor",
@@ -72380,7 +72387,15 @@
         "local": 1
       },
       "confidence": 0.08,
-      "lastSeen": "2026-06-19T20:58:49.697Z"
+      "lastSeen": "2026-06-19T20:58:49.697Z",
+      "driverId": "button_wireless_1",
+      "sacredCouples": [
+        {
+          "mfr": "_TZ3000_an5rjiwd",
+          "pid": "TS0041",
+          "driver": "button_wireless_1"
+        }
+      ]
     },
     "_hybrid_remote_button_wireless_fingerbot_needs_device_assignment": {
       "manufacturerId": "_hybrid_remote_button_wireless_fingerbot_needs_device_assignment",
@@ -78616,15 +78631,7 @@
     "_tz3000_ja5osu5g": {
       "manufacturerId": "_tz3000_ja5osu5g",
       "modelIds": [
-        "TS0040",
-        "TS004F",
-        "TS0601",
-        "TS0041",
-        "TS0042",
-        "TS0043",
-        "TS0044",
-        "TS0046",
-        "TS0215A"
+        "TS004F"
       ],
       "variants": [],
       "deviceType": "remote",
@@ -78645,7 +78652,15 @@
         "hubitat": 2
       },
       "confidence": 0.17,
-      "lastSeen": "2026-07-28T19:50:07.575Z"
+      "lastSeen": "2026-07-28T19:50:07.575Z",
+      "driverId": "smart_knob",
+      "sacredCouples": [
+        {
+          "mfr": "_TZ3000_ja5osu5g",
+          "pid": "TS004F",
+          "driver": "smart_knob"
+        }
+      ]
     },
     "_tyzb02_keyjqtha": {
       "manufacturerId": "_tyzb02_keyjqtha",
@@ -118009,7 +118024,9 @@
     },
     "_TZ3000_an5rjiwd": {
       "manufacturerId": "_TZ3000_an5rjiwd",
-      "modelIds": [],
+      "modelIds": [
+        "TS0041"
+      ],
       "variants": [],
       "deviceType": "switch",
       "driverHint": null,
@@ -118022,7 +118039,15 @@
         "integration": 1
       },
       "confidence": 0.5,
-      "lastSeen": "2026-07-12T18:15:41.795Z"
+      "lastSeen": "2026-07-12T18:15:41.795Z",
+      "driverId": "button_wireless_1",
+      "sacredCouples": [
+        {
+          "mfr": "_TZ3000_an5rjiwd",
+          "pid": "TS0041",
+          "driver": "button_wireless_1"
+        }
+      ]
     },
     "_TZ3000_bzzgvet0": {
       "manufacturerId": "_TZ3000_bzzgvet0",
@@ -121303,6 +121328,32 @@
       ],
       "confidence": 0.95,
       "lastSeen": "2026-08-29T23:32:19.548Z"
+    },
+    "_TZ3000_ja5osu5g": {
+      "driverId": "smart_knob",
+      "modelIds": [
+        "TS004F"
+      ],
+      "sacredCouples": [
+        {
+          "mfr": "_TZ3000_ja5osu5g",
+          "pid": "TS004F",
+          "driver": "smart_knob"
+        }
+      ]
+    },
+    "_TZ3000_5tqxpine": {
+      "driverId": "scene_switch_4",
+      "modelIds": [
+        "TS0044"
+      ],
+      "sacredCouples": [
+        {
+          "mfr": "_TZ3000_5tqxpine",
+          "pid": "TS0044",
+          "driver": "scene_switch_4"
+        }
+      ]
     }
   },
   "driverMapping": {
@@ -128765,11 +128816,11 @@
     "multiSourceCount": 1756,
     "lastAggregation": "2026-06-19T20:58:49.874Z",
     "lastEnrichment": "2026-07-29T01:45:45.427Z",
-    "sacredCouples": 12363,
+    "sacredCouples": 12361,
     "lastSacredCoupleEnrichment": "2026-07-13T23:57:58.590Z",
     "fingerprints": 5710,
     "lastUpdate": "2026-07-14",
-    "lastUpdated": "2026-09-10T20:02:50.563Z",
+    "lastUpdated": "2026-09-10T18:42:15.210Z",
     "totalModelIds": 62784,
     "multiPidMfrs": 3299,
     "variantMfrs": 82,
@@ -150196,8 +150247,13 @@
     "source": "auto-sync"
   },
   "_TZ3000_5TQXPINE": {
-    "driverId": "button_wireless_4",
-    "source": "auto-sync"
+    "driverId": "scene_switch_4",
+    "source": "registry:p2453-5tqxpine-ts0044-scene",
+    "modelIds": [
+      "TS0044"
+    ],
+    "pid": "TS0044",
+    "modelIdsCount": 1
   },
   "_TZ3000_CZUYT8LZ": {
     "driverId": "button_wireless_4",
@@ -196665,7 +196721,12 @@
   },
   "_TZ3000_ysdv91bk": {
     "driverId": "switch_1gang",
-    "source": "compose-exclusive"
+    "source": "registry:p2452-ysdv91bk-ts0001-switch-1gang",
+    "modelIds": [
+      "TS0001"
+    ],
+    "pid": "TS0001",
+    "modelIdsCount": 1
   },
   "_TZ3000_hafsqare": {
     "driverId": "switch_1gang",
@@ -212397,8 +212458,13 @@
     "modelIdsCount": 45
   },
   "_tz3000_an5rjiwd": {
-    "driverId": "button_wireless_4",
-    "source": "auto-sync|issue-121-packetninja"
+    "driverId": "button_wireless_1",
+    "source": "registry:p2453-an5rjiwd-ts0041-btn1",
+    "modelIds": [
+      "TS0041"
+    ],
+    "pid": "TS0041",
+    "modelIdsCount": 1
   },
   "_hybrid_remote_button_wireless_fingerbot_needs_device_assignment": {
     "driverId": "remote_button_wireless_fingerbot",
@@ -217216,8 +217282,8 @@
     "modelIdsCount": 1
   },
   "_tz3000_ja5osu5g": {
-    "driverId": "button_wireless_1",
-    "source": "compose-exclusive",
+    "driverId": "smart_knob",
+    "source": "registry:p2453-ja5osu5g-ts004f-smart-knob",
     "modelIds": [
       "TS004F"
     ],
@@ -237900,50 +237966,12 @@
   },
   "_TZ3000_ENMFAAVE": {
     "driverId": "switch_4gang",
-    "source": "auto-sync",
+    "source": "registry:p2452-enmfaave-ts0004-switch-4gang-no-button-bloat",
     "modelIds": [
-      "01MINIZB",
-      "BASICZBR3",
-      "JZ-ZB-004",
-      "S26R2ZB",
-      "S31ZB",
-      "TS0001",
-      "TS0001_POWER",
-      "TS0001_SWITCH",
-      "TS0001_SWITCH_MODULE",
-      "TS0002",
-      "TS0003",
-      "TS0004",
-      "TS0004_POWER",
-      "TS0004_SWITCH_MODULE",
-      "TS0006",
-      "TS000F",
-      "TS0011",
-      "TS0012",
-      "TS0014",
-      "TS0041",
-      "TS0101",
-      "TS0111",
-      "TS011F",
-      "TS0203",
-      "TS0215A",
-      "TS0601",
-      "TS0726",
-      "TS110E",
-      "TS130F",
-      "TS4100",
-      "ZBM5-1C-120",
-      "ZBM5-2C-120",
-      "ZBM5-3C-120",
-      "ZBMINI",
-      "ZBMINIL2",
-      "ZBMINIL2-R2",
-      "ZBMINIR",
-      "ZBMINIR2",
-      "ZBMINIR2-R2"
+      "TS0004"
     ],
-    "pid": "01MINIZB",
-    "modelIdsCount": 39
+    "pid": "TS0004",
+    "modelIdsCount": 1
   },
   "_TZ3000_EXCGG5KB": {
     "driverId": "switch_4gang",
@@ -356839,24 +356867,13 @@
   },
   "_tz3000_l9brjwau": {
     "driverId": "switch_2gang",
-    "source": "compose-exclusive",
+    "source": "registry:p2452-l9brjwau-ts0002-switch-2gang",
     "addedAt": "2026-06-26T14:42:09.174Z",
     "modelIds": [
-      "TS0002",
-      "TS0002_POWER",
-      "TS0002_SWITCH_MODULE",
-      "TS0003",
-      "TS000F",
-      "TS0012",
-      "TS0013",
-      "TS011F",
-      "TS0601",
-      "TS0726",
-      "ZG-302Z2",
-      "ZG-305Z"
+      "TS0002"
     ],
     "pid": "TS0002",
-    "modelIdsCount": 12,
+    "modelIdsCount": 1,
     "variants": [
       "_TZ3000_L9BRJWAU",
       "_TZ3000_l9brjwau"
