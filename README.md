@@ -33,10 +33,10 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 
 | Metric | Value |
 |--------|-------|
-| **App Version** | v9.0.854 |
+| **App Version** | v9.0.855 |
 | **Drivers** | 431 (381 Zigbee + 50 WiFi) |
 | **Unique Fingerprints** | 4,401 |
-| **Pairing Variants** | 17,068 (4 case combos per fingerprint) |
+| **Pairing Variants** | 17,064 (4 case combos per fingerprint) |
 | **Unique Product IDs** | 591 |
 | **Flow Cards** | 5,952 |
 | **Unique Capabilities** | 170 |
@@ -102,6 +102,7 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 
 | Version | Changes |
 |---------|---------|
+| **v9.0.855** | Fixed smart knob button presses when manufacturer id is missing at wake (scene mode); stopped battery percent flipping from voltage. |
 | **v9.0.854** | Fixed smart knob button presses when manufacturer id is missing at wake (scene mode); stopped battery percent flipping from voltage. |
 | **v9.0.853** | Fixed smart knob button presses when manufacturer id is missing at wake (scene mode); stopped battery percent flipping from voltage. |
 | **v9.0.852** | Fixed MOES AM43 / ZC-LS roller (_TZE200_icka1clh) pairing to curtain motor; smartbutton flicker fix remains. |
@@ -113,7 +114,6 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 | **v9.0.846** | Removed broken contact-sensor OTA firmware reference that blocked Athom publish validation. |
 | **v9.0.845** | Removed broken contact-sensor OTA firmware reference that blocked Athom publish validation. |
 | **v9.0.844** | Aligned fingerprint routing for Moes/BSEED ZCL switches after pairing fixes. |
-| **v9.0.843** | Aligned fingerprint routing for Moes/BSEED ZCL switches after pairing fixes. |
 
 <!-- CHANGELOG_END -->
 
