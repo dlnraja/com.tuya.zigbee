@@ -3089,5 +3089,8 @@
   },
   "9.0.849": {
     "en": "Fixed smart_knob TS004F button presses (_TZ3000_kaflzta4) by forcing scene/event mode instead of skipping 0x8004."
+  },
+  "9.0.854": {
+    "en": "Fixed smart knob button presses when manufacturer id is missing at wake (scene mode); stopped battery percent flipping from voltage."
   }
 }
