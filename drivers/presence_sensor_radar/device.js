@@ -112,8 +112,38 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
     if ((cachedName === 'DEFAULT' || !mfr) && nextName !== cachedName && mfr) {
       this.log(`[RADAR] P2391 config upgrade ${cachedName} → ${nextName} (mfr resolved)`);
       this._cachedRadarConfig = resolved;
+      // WHY(P2459 / VicHY #2227): Homey app update often resolves mfr AFTER first heal —
+      // re-arm DynCap + strip curtain/battery now that mains MTG config is known.
+      try {
+        this._armRadarDynCapGuards();
+        this._healRadarPhantomCaps().catch(() => {});
+        this._applyRadarCapabilityProfile().catch(() => {});
+      } catch (_e) { /* soft */ }
     }
     return this._cachedRadarConfig;
+  }
+
+  /**
+   * WHY(P2459 / VicHY #2227): Homey re-adds compose `measure_battery` / Energy batteries
+   * and may restore DynCap curtain caps asynchronously after tip updates. Refuse phantoms
+   * at addCapability so "blind mode" + low-battery cannot stick until delete+re-pair.
+   */
+  async addCapability(capability) {
+    const cap = String(capability || '');
+    const forbidden = Array.isArray(this._forbiddenCapabilities) ? this._forbiddenCapabilities : [];
+    if (forbidden.includes(cap)) {
+      this.log(`[RADAR] P2459 refused addCapability(${cap}) (forbidden phantom)`);
+      return;
+    }
+    if ((cap === 'measure_battery' || cap === 'alarm_battery') && this.mainsPowered) {
+      this.log(`[RADAR] P2459 refused addCapability(${cap}) (mains radar)`);
+      return;
+    }
+    if (/^windowcoverings_|^dim$|^target_temperature$|^thermostat_mode$|^tuya_dp_/.test(cap)) {
+      this.log(`[RADAR] P2459 refused addCapability(${cap}) (radar never cover/DIY)`);
+      return;
+    }
+    return super.addCapability(capability);
   }
 
   /**
@@ -253,7 +283,10 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
       'tuya_dp_raw',
       'tuya_dp_string',
     ];
-    if (this.mainsPowered) {
+    // WHY(P2459): treat known MTG/clrdrnya mfr as mains even if config cache still DEFAULT
+    const mfrNow = (MfrHelper.getManufacturerName(this) || '').toLowerCase();
+    const forceMains = this.mainsPowered || MAINS_POWERED_RADARS.has(mfrNow) || /clrdrnya|sbyx0lm6/.test(mfrNow);
+    if (forceMains) {
       phantoms.push('measure_battery', 'alarm_battery');
     }
     for (const cap of phantoms) {
@@ -274,13 +307,13 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
         }
       }
     } catch (_e) { /* soft */ }
-    // WHY(P2391/P2420/P2431 VicHY #2227): compose ships energy.batteries for hybrid HOBEIAN siblings —
+    // WHY(P2391/P2420/P2431/P2459 VicHY #2227): compose ships energy.batteries for hybrid HOBEIAN siblings —
     // mains MTG must ALWAYS clear Energy metadata with batteries: null. Homey requires batteries: null
     // to actually remove the battery warning / icon inherited from manifest.
-    if (this.mainsPowered && typeof this.setEnergy === 'function') {
+    if (forceMains && typeof this.setEnergy === 'function') {
       try {
         await this.setEnergy({ batteries: null, mains: true });
-        this.log('[RADAR] P2391/P2420/P2431 cleared Homey Energy batteries on mains radar');
+        this.log('[RADAR] P2391/P2420/P2431/P2459 cleared Homey Energy batteries on mains radar');
       } catch (_e) { /* soft */ }
     }
     try {
@@ -309,7 +342,9 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
         safeSetTimeout(this, () => {
           this._armRadarDynCapGuards();
           this._healRadarPhantomCaps().catch(() => {});
-          if (this.mainsPowered) {
+          // WHY(P2459): also re-apply profile when mfr known as mains even if getter raced
+          const mfr = (MfrHelper.getManufacturerName(this) || '').toLowerCase();
+          if (this.mainsPowered || MAINS_POWERED_RADARS.has(mfr) || /clrdrnya|sbyx0lm6/.test(mfr)) {
             this._applyRadarCapabilityProfile().catch(() => {});
           }
         }, ms);

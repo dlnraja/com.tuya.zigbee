@@ -30,10 +30,11 @@ describe('P2391 — VicHY #2224 mains radar battery/flood', () => {
     assert.ok(src.includes('P2391'), 'P2391 markers');
     assert.ok(src.includes("capability === 'tuya_dp_value'"), 'blocks DIY DP caps');
     assert.ok(src.includes('cleared Homey Energy batteries'), 'clears energy.batteries on mains');
-    assert.ok(src.includes('P2391/P2420 cleared Homey Energy'), 'P2420 always clears energy');
+    assert.ok(/P2391\/P2420.*cleared Homey Energy/.test(src), 'P2420 always clears energy');
     assert.ok(src.includes('2_000'), 'P2420 early 2s re-heal');
     assert.ok(src.includes('config upgrade'), 'upgrades DEFAULT cache when mfr resolves');
     assert.ok(src.includes("phantoms.push('measure_battery', 'alarm_battery')"), 'heal strips battery');
+    assert.ok(src.includes('P2459'), 'P2459 refuse phantom addCapability');
   });
 });
 

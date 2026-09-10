@@ -1,6 +1,6 @@
 {
   "name": "com.dlnraja.tuya.zigbee",
-  "version": "9.0.872",
+  "version": "9.0.873",
   "description": "Tuya Unified Zigbee - Local-first control with AI automation",
   "main": "app.js",
   "scripts": {
@@ -254,6 +254,8 @@
     "check:p2291": "node --test test/critical/p2291-ogkdpgy2-co2-lock.test.js",
     "check:p2286": "node --test test/critical/p2286-soft-expect-publish.test.js",
     "check:p2458": "node --test test/critical/p2458-tip-email-socket-hang.test.js test/critical/processing-failure-republish-check.test.js",
+    "check:p2459": "node --test test/critical/p2459-vichy-eduard-forum-recurrence.test.js",
+    "check:p2460": "node --test test/critical/p2460-bseed-tx-ysdv91bk.test.js",
     "check:p2287": "node --test test/critical/p2287-ias-leftover-ef00-skip.test.js",
     "check:p2288": "node --test test/critical/p2288-prepare-publish-sacred-keep.test.js",
     "check:p2325": "node --test test/critical/p2325-verify-soft-hang.test.js",

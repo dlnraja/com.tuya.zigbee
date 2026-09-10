@@ -131,7 +131,7 @@
       "notes": "migueleap #544 — wired BSEED 2-gang; onoff/onoff.gang2 only; no button tiles / secondSwitch"
     },
     {
-      "id": "p2452-ysdv91bk-ts0001-switch-1gang",
+      "id": "p2460-ysdv91bk-ts0001-wall-1gang",
       "mfr": [
         "_TZ3000_ysdv91bk",
         "_tz3000_ysdv91bk"
@@ -139,15 +139,16 @@
       "productId": [
         "TS0001"
       ],
-      "canonicalDriver": "switch_1gang",
+      "canonicalDriver": "wall_switch_1gang_1way",
       "forbiddenDrivers": [
+        "switch_1gang",
         "wall_switch_2gang_1way",
         "generic_tuya",
         "zigbee_universal"
       ],
       "forbidMode": "couple",
       "protocol": "zcl",
-      "notes": "P2452 GH#545 BSEED 1G; drop invent TS0002 wall_switch_2gang"
+      "notes": "P2460 GH#545 interview clusters [0,3,4,5,6,57344,57345] → wall_switch_1gang_1way (not metering switch_1gang)"
     },
     {
       "id": "p2452-enmfaave-ts0004-switch-4gang-no-button-bloat",

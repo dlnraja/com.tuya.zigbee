@@ -196720,8 +196720,8 @@
     "modelIdsCount": 5
   },
   "_TZ3000_ysdv91bk": {
-    "driverId": "switch_1gang",
-    "source": "registry:p2452-ysdv91bk-ts0001-switch-1gang",
+    "driverId": "wall_switch_1gang_1way",
+    "source": "registry:p2460-ysdv91bk",
     "modelIds": [
       "TS0001"
     ],
@@ -300016,11 +300016,12 @@
     "_tz3000_ysdv91bk|ts0001": {
       "mfr": "_tz3000_ysdv91bk",
       "pid": "ts0001",
-      "driver": "switch_1gang",
+      "driver": "wall_switch_1gang_1way",
       "sources": [
         "canonical",
         "github-545",
-        "P2452"
+        "P2452",
+        "P2460"
       ],
       "confidence": 0.95
     },
@@ -322848,11 +322849,11 @@
       "confidence": 0.95
     },
     "_TZ3000_l9brjwau": {
-      "driverId": "switch_2gang",
+      "driverId": "wall_switch_2gang_1way",
       "productIds": [
         "TS0002"
       ],
-      "source": "P2452-GH544",
+      "source": "P2455-P2460",
       "confidence": 0.95
     },
     "_TZ3000_ltiqubue": {
@@ -323296,11 +323297,11 @@
       "confidence": 0.95
     },
     "_TZ3000_ptjcjise": {
-      "driverId": "switch_2gang",
+      "driverId": "wall_switch_2gang_1way",
       "productIds": [
         "TS0002"
       ],
-      "source": "P2452-GH543",
+      "source": "P2456",
       "confidence": 0.95
     },
     "_TZ3000_u5u4cakc": {
@@ -349536,7 +349537,7 @@
       "confidence": 0.95
     },
     "_TZ3000_YSDV91BK": {
-      "driverId": "switch_1gang",
+      "driverId": "wall_switch_1gang_1way",
       "productIds": [
         "TS0001"
       ],
@@ -350280,11 +350281,11 @@
       "confidence": 0.95
     },
     "_tz3000_ptjcjise": {
-      "driverId": "switch_2gang",
+      "driverId": "wall_switch_2gang_1way",
       "productIds": [
         "TS0002"
       ],
-      "source": "P2452-GH543",
+      "source": "P2456",
       "confidence": 0.95
     },
     "_tz3000_sgb0xhwn": {
@@ -356379,11 +356380,12 @@
     "_TZ3000_ysdv91bk|TS0001": {
       "mfr": "_TZ3000_ysdv91bk",
       "pid": "TS0001",
-      "driver": "switch_1gang",
+      "driver": "wall_switch_1gang_1way",
       "sources": [
         "canonical",
         "github-545",
-        "P2452"
+        "P2452",
+        "P2460"
       ],
       "confidence": 0.95
     },
