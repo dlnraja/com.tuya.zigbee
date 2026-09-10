@@ -3939,6 +3939,4832 @@
         "doorwindowsensor_4",
         "plug_smart"
       ]
+    },
+    {
+      "key": "_tz3000_j2w1dw29|ts0001",
+      "drivers": [
+        "bulb_dimmable",
+        "dimmer_wall_1gang"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "_tz3000_j2w1dw29|ts0002",
+      "drivers": [
+        "bulb_dimmable",
+        "dimmer_wall_1gang"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "_tz3000_j2w1dw29|ts0003",
+      "drivers": [
+        "bulb_dimmable",
+        "dimmer_wall_1gang"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "_tz3000_j2w1dw29|ts0011",
+      "drivers": [
+        "bulb_dimmable",
+        "dimmer_wall_1gang"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "_tz3000_j2w1dw29|ts0012",
+      "drivers": [
+        "bulb_dimmable",
+        "dimmer_wall_1gang"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "_tz3000_j2w1dw29|ts0052",
+      "drivers": [
+        "bulb_dimmable",
+        "dimmer_wall_1gang"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "_tz3000_j2w1dw29|ts0505b",
+      "drivers": [
+        "bulb_dimmable",
+        "dimmer_wall_1gang"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "_tz3000_j2w1dw29|ts0726",
+      "drivers": [
+        "bulb_dimmable",
+        "dimmer_wall_1gang"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "_tz3000_j2w1dw29|ts1101",
+      "drivers": [
+        "bulb_dimmable",
+        "dimmer_wall_1gang"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "_tz3000_j2w1dw29|ts110e",
+      "drivers": [
+        "bulb_dimmable",
+        "dimmer_wall_1gang"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "_tz3000_j2w1dw29|ts110f",
+      "drivers": [
+        "bulb_dimmable",
+        "dimmer_wall_1gang"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "_tz3000_nbnmw9nc|ts0001",
+      "drivers": [
+        "bulb_dimmable",
+        "dimmer_wall_1gang"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "_tz3000_nbnmw9nc|ts0002",
+      "drivers": [
+        "bulb_dimmable",
+        "dimmer_wall_1gang"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "_tz3000_nbnmw9nc|ts0003",
+      "drivers": [
+        "bulb_dimmable",
+        "dimmer_wall_1gang"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "_tz3000_nbnmw9nc|ts0011",
+      "drivers": [
+        "bulb_dimmable",
+        "dimmer_wall_1gang"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "_tz3000_nbnmw9nc|ts0012",
+      "drivers": [
+        "bulb_dimmable",
+        "dimmer_wall_1gang"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "_tz3000_nbnmw9nc|ts0052",
+      "drivers": [
+        "bulb_dimmable",
+        "dimmer_wall_1gang"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "_tz3000_nbnmw9nc|ts0505b",
+      "drivers": [
+        "bulb_dimmable",
+        "dimmer_wall_1gang"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "_tz3000_nbnmw9nc|ts0726",
+      "drivers": [
+        "bulb_dimmable",
+        "dimmer_wall_1gang"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "_tz3000_nbnmw9nc|ts1101",
+      "drivers": [
+        "bulb_dimmable",
+        "dimmer_wall_1gang"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "_tz3000_nbnmw9nc|ts110e",
+      "drivers": [
+        "bulb_dimmable",
+        "dimmer_wall_1gang"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "_tz3000_nbnmw9nc|ts110f",
+      "drivers": [
+        "bulb_dimmable",
+        "dimmer_wall_1gang"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "_tz3000_nosnx7im|ts0001",
+      "drivers": [
+        "bulb_dimmable",
+        "dimmer_wall_1gang"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "_tz3000_nosnx7im|ts0002",
+      "drivers": [
+        "bulb_dimmable",
+        "dimmer_wall_1gang"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "_tz3000_nosnx7im|ts0003",
+      "drivers": [
+        "bulb_dimmable",
+        "dimmer_wall_1gang"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "_tz3000_nosnx7im|ts0011",
+      "drivers": [
+        "bulb_dimmable",
+        "dimmer_wall_1gang"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "_tz3000_nosnx7im|ts0012",
+      "drivers": [
+        "bulb_dimmable",
+        "dimmer_wall_1gang"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "_tz3000_nosnx7im|ts0052",
+      "drivers": [
+        "bulb_dimmable",
+        "dimmer_wall_1gang"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "_tz3000_nosnx7im|ts0505b",
+      "drivers": [
+        "bulb_dimmable",
+        "dimmer_wall_1gang"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "_tz3000_nosnx7im|ts0726",
+      "drivers": [
+        "bulb_dimmable",
+        "dimmer_wall_1gang"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "_tz3000_nosnx7im|ts1101",
+      "drivers": [
+        "bulb_dimmable",
+        "dimmer_wall_1gang"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "_tz3000_nosnx7im|ts110e",
+      "drivers": [
+        "bulb_dimmable",
+        "dimmer_wall_1gang"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "_tz3000_nosnx7im|ts110f",
+      "drivers": [
+        "bulb_dimmable",
+        "dimmer_wall_1gang"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "_tz3000_zw7wr5uo|ts0502a",
+      "drivers": [
+        "bulb_dimmable",
+        "tunable_bulb_E14"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "_tz3210_dbilpfqk|ts0001",
+      "drivers": [
+        "bulb_dimmable",
+        "dimmer_wall_1gang"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "_tz3210_dbilpfqk|ts0002",
+      "drivers": [
+        "bulb_dimmable",
+        "dimmer_wall_1gang"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "_tz3210_dbilpfqk|ts0003",
+      "drivers": [
+        "bulb_dimmable",
+        "dimmer_wall_1gang"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "_tz3210_dbilpfqk|ts0011",
+      "drivers": [
+        "bulb_dimmable",
+        "dimmer_wall_1gang"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "_tz3210_dbilpfqk|ts0012",
+      "drivers": [
+        "bulb_dimmable",
+        "dimmer_wall_1gang"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "_tz3210_dbilpfqk|ts0052",
+      "drivers": [
+        "bulb_dimmable",
+        "dimmer_wall_1gang"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "_tz3210_dbilpfqk|ts0505b",
+      "drivers": [
+        "bulb_dimmable",
+        "dimmer_wall_1gang"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "_tz3210_dbilpfqk|ts0726",
+      "drivers": [
+        "bulb_dimmable",
+        "dimmer_wall_1gang"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "_tz3210_dbilpfqk|ts1101",
+      "drivers": [
+        "bulb_dimmable",
+        "dimmer_wall_1gang"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "_tz3210_dbilpfqk|ts110e",
+      "drivers": [
+        "bulb_dimmable",
+        "dimmer_wall_1gang"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "_tz3210_dbilpfqk|ts110f",
+      "drivers": [
+        "bulb_dimmable",
+        "dimmer_wall_1gang"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "_tz3210_dxroobu3|ts0001",
+      "drivers": [
+        "bulb_dimmable",
+        "dimmer_wall_1gang"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "_tz3210_dxroobu3|ts0002",
+      "drivers": [
+        "bulb_dimmable",
+        "dimmer_wall_1gang"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "_tz3210_dxroobu3|ts0003",
+      "drivers": [
+        "bulb_dimmable",
+        "dimmer_wall_1gang"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "_tz3210_dxroobu3|ts0011",
+      "drivers": [
+        "bulb_dimmable",
+        "dimmer_wall_1gang"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "_tz3210_dxroobu3|ts0012",
+      "drivers": [
+        "bulb_dimmable",
+        "dimmer_wall_1gang"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "_tz3210_dxroobu3|ts0052",
+      "drivers": [
+        "bulb_dimmable",
+        "dimmer_wall_1gang"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "_tz3210_dxroobu3|ts0505b",
+      "drivers": [
+        "bulb_dimmable",
+        "dimmer_wall_1gang"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "_tz3210_dxroobu3|ts0726",
+      "drivers": [
+        "bulb_dimmable",
+        "dimmer_wall_1gang"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "_tz3210_dxroobu3|ts1101",
+      "drivers": [
+        "bulb_dimmable",
+        "dimmer_wall_1gang"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "_tz3210_dxroobu3|ts110e",
+      "drivers": [
+        "bulb_dimmable",
+        "dimmer_wall_1gang"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "_tz3210_dxroobu3|ts110f",
+      "drivers": [
+        "bulb_dimmable",
+        "dimmer_wall_1gang"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "_tz3000_g1glzzfk|ts0502a",
+      "drivers": [
+        "bulb_dimmable",
+        "tunable_bulb_E14"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "_tz3000_juq7i1fr|ts0001",
+      "drivers": [
+        "bulb_dimmable",
+        "dimmer_wall_1gang"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "_tz3000_juq7i1fr|ts0002",
+      "drivers": [
+        "bulb_dimmable",
+        "dimmer_wall_1gang"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "_tz3000_juq7i1fr|ts0003",
+      "drivers": [
+        "bulb_dimmable",
+        "dimmer_wall_1gang"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "_tz3000_juq7i1fr|ts0011",
+      "drivers": [
+        "bulb_dimmable",
+        "dimmer_wall_1gang"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "_tz3000_juq7i1fr|ts0012",
+      "drivers": [
+        "bulb_dimmable",
+        "dimmer_wall_1gang"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "_tz3000_juq7i1fr|ts0052",
+      "drivers": [
+        "bulb_dimmable",
+        "dimmer_wall_1gang"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "_tz3000_juq7i1fr|ts0505b",
+      "drivers": [
+        "bulb_dimmable",
+        "dimmer_wall_1gang"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "_tz3000_juq7i1fr|ts0726",
+      "drivers": [
+        "bulb_dimmable",
+        "dimmer_wall_1gang"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "_tz3000_juq7i1fr|ts1101",
+      "drivers": [
+        "bulb_dimmable",
+        "dimmer_wall_1gang"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "_tz3000_juq7i1fr|ts110e",
+      "drivers": [
+        "bulb_dimmable",
+        "dimmer_wall_1gang"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "_tz3000_juq7i1fr|ts110f",
+      "drivers": [
+        "bulb_dimmable",
+        "dimmer_wall_1gang"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "_tz3210_claeh5ds|classic a60 tw",
+      "drivers": [
+        "bulb_dimmable",
+        "light_bulb_dimmable_tunable"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "_tz3210_claeh5ds|e11-n13",
+      "drivers": [
+        "bulb_dimmable",
+        "light_bulb_dimmable_tunable"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "_tz3210_claeh5ds|e11-n14",
+      "drivers": [
+        "bulb_dimmable",
+        "light_bulb_dimmable_tunable"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "_tz3210_claeh5ds|e12-n13",
+      "drivers": [
+        "bulb_dimmable",
+        "light_bulb_dimmable_tunable"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "_tz3210_claeh5ds|e12-n14",
+      "drivers": [
+        "bulb_dimmable",
+        "light_bulb_dimmable_tunable"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "_tz3210_claeh5ds|gl-b-007z",
+      "drivers": [
+        "bulb_dimmable",
+        "light_bulb_dimmable_tunable"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "_tz3210_claeh5ds|gl-c-007",
+      "drivers": [
+        "bulb_dimmable",
+        "light_bulb_dimmable_tunable"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "_tz3210_claeh5ds|led1545g12",
+      "drivers": [
+        "bulb_dimmable",
+        "light_bulb_dimmable_tunable"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "_tz3210_claeh5ds|led1546g12",
+      "drivers": [
+        "bulb_dimmable",
+        "light_bulb_dimmable_tunable"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "_tz3210_claeh5ds|ltw001",
+      "drivers": [
+        "bulb_dimmable",
+        "light_bulb_dimmable_tunable"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "_tz3210_claeh5ds|ltw004",
+      "drivers": [
+        "bulb_dimmable",
+        "light_bulb_dimmable_tunable"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "_tz3210_claeh5ds|ltw010",
+      "drivers": [
+        "bulb_dimmable",
+        "light_bulb_dimmable_tunable"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "_tz3210_claeh5ds|ltw012",
+      "drivers": [
+        "bulb_dimmable",
+        "light_bulb_dimmable_tunable"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "_tz3210_claeh5ds|ltw013",
+      "drivers": [
+        "bulb_dimmable",
+        "light_bulb_dimmable_tunable"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "_tz3210_claeh5ds|ltw015",
+      "drivers": [
+        "bulb_dimmable",
+        "light_bulb_dimmable_tunable"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "_tz3210_claeh5ds|rb 178 t",
+      "drivers": [
+        "bulb_dimmable",
+        "light_bulb_dimmable_tunable"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "_tz3210_claeh5ds|rs 128 t",
+      "drivers": [
+        "bulb_dimmable",
+        "light_bulb_dimmable_tunable"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "_tz3210_claeh5ds|ts0011",
+      "drivers": [
+        "bulb_dimmable",
+        "light_bulb_dimmable_tunable"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "_tz3210_claeh5ds|ts0052",
+      "drivers": [
+        "bulb_dimmable",
+        "light_bulb_dimmable_tunable"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "_tz3210_claeh5ds|ts0502a",
+      "drivers": [
+        "bulb_dimmable",
+        "light_bulb_dimmable_tunable"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "_tz3210_claeh5ds|ts0502b",
+      "drivers": [
+        "bulb_dimmable",
+        "light_bulb_dimmable_tunable"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "_tz3210_claeh5ds|ts1101",
+      "drivers": [
+        "bulb_dimmable",
+        "light_bulb_dimmable_tunable"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "_tz3210_claeh5ds|ts110e",
+      "drivers": [
+        "bulb_dimmable",
+        "light_bulb_dimmable_tunable"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "_tz3210_claeh5ds|ts110f",
+      "drivers": [
+        "bulb_dimmable",
+        "light_bulb_dimmable_tunable"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "_tz3210_claeh5ds|zbt-cctlight",
+      "drivers": [
+        "bulb_dimmable",
+        "light_bulb_dimmable_tunable"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "_tzb210_0bkzabht|ts0502a",
+      "drivers": [
+        "bulb_dimmable",
+        "tunable_bulb_E14"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "_tzb210_ayx58ft5|ts0502a",
+      "drivers": [
+        "bulb_dimmable",
+        "tunable_bulb_E14"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "_tzb210_eiwanbeb|ts0502a",
+      "drivers": [
+        "bulb_dimmable",
+        "tunable_bulb_E14"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "_tz3000_dbou1ap4|ts0505a",
+      "drivers": [
+        "bulb_rgb",
+        "light_bulb_rgb_rgbw"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "_tz3000_dbou1ap4|ts0505b",
+      "drivers": [
+        "bulb_rgb",
+        "light_bulb_rgb_rgbw"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "_tz3000_dbou1ap4|ts0601",
+      "drivers": [
+        "bulb_rgb",
+        "light_bulb_rgb_rgbw"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "_tz3000_keabpigv|e11-g13",
+      "drivers": [
+        "bulb_rgb",
+        "led_strip_rgbw"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "_tz3000_keabpigv|e11-g14",
+      "drivers": [
+        "bulb_rgb",
+        "led_strip_rgbw"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "_tz3000_keabpigv|e11-g23",
+      "drivers": [
+        "bulb_rgb",
+        "led_strip_rgbw"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "_tz3000_keabpigv|gl-c-006",
+      "drivers": [
+        "bulb_rgb",
+        "led_strip_rgbw"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "_tz3000_keabpigv|lct001",
+      "drivers": [
+        "bulb_rgb",
+        "led_strip_rgbw"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "_tz3000_keabpigv|lct002",
+      "drivers": [
+        "bulb_rgb",
+        "led_strip_rgbw"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "_tz3000_keabpigv|lct003",
+      "drivers": [
+        "bulb_rgb",
+        "led_strip_rgbw"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "_tz3000_keabpigv|lct007",
+      "drivers": [
+        "bulb_rgb",
+        "led_strip_rgbw"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "_tz3000_keabpigv|lct010",
+      "drivers": [
+        "bulb_rgb",
+        "led_strip_rgbw"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "_tz3000_keabpigv|lct011",
+      "drivers": [
+        "bulb_rgb",
+        "led_strip_rgbw"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "_tz3000_keabpigv|lct012",
+      "drivers": [
+        "bulb_rgb",
+        "led_strip_rgbw"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "_tz3000_keabpigv|lct014",
+      "drivers": [
+        "bulb_rgb",
+        "led_strip_rgbw"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "_tz3000_keabpigv|lct015",
+      "drivers": [
+        "bulb_rgb",
+        "led_strip_rgbw"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "_tz3000_keabpigv|lct016",
+      "drivers": [
+        "bulb_rgb",
+        "led_strip_rgbw"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "_tz3000_keabpigv|rb 185 c",
+      "drivers": [
+        "bulb_rgb",
+        "led_strip_rgbw"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "_tz3000_keabpigv|rb 285 c",
+      "drivers": [
+        "bulb_rgb",
+        "led_strip_rgbw"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "_tz3000_keabpigv|ts0503a",
+      "drivers": [
+        "bulb_rgb",
+        "led_strip_rgbw"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "_tz3000_keabpigv|ts0503b",
+      "drivers": [
+        "bulb_rgb",
+        "led_strip_rgbw"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "_tz3000_keabpigv|ts0504b",
+      "drivers": [
+        "bulb_rgb",
+        "led_strip_rgbw"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "_tz3000_keabpigv|ts0505a",
+      "drivers": [
+        "bulb_rgb",
+        "led_strip_rgbw"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "_tz3000_keabpigv|ts0505b",
+      "drivers": [
+        "bulb_rgb",
+        "led_strip_rgbw"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "_tz3000_keabpigv|zb-cl01",
+      "drivers": [
+        "bulb_rgb",
+        "led_strip_rgbw"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "_tz3000_keabpigv|zbt-colorlight",
+      "drivers": [
+        "bulb_rgb",
+        "led_strip_rgbw"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "_tz3000_hlijwsai|e11-g13",
+      "drivers": [
+        "bulb_rgb",
+        "led_strip_rgbw"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "_tz3000_hlijwsai|e11-g14",
+      "drivers": [
+        "bulb_rgb",
+        "led_strip_rgbw"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "_tz3000_hlijwsai|e11-g23",
+      "drivers": [
+        "bulb_rgb",
+        "led_strip_rgbw"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "_tz3000_hlijwsai|gl-c-006",
+      "drivers": [
+        "bulb_rgb",
+        "led_strip_rgbw"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "_tz3000_hlijwsai|lct001",
+      "drivers": [
+        "bulb_rgb",
+        "led_strip_rgbw"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "_tz3000_hlijwsai|lct002",
+      "drivers": [
+        "bulb_rgb",
+        "led_strip_rgbw"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "_tz3000_hlijwsai|lct003",
+      "drivers": [
+        "bulb_rgb",
+        "led_strip_rgbw"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "_tz3000_hlijwsai|lct007",
+      "drivers": [
+        "bulb_rgb",
+        "led_strip_rgbw"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "_tz3000_hlijwsai|lct010",
+      "drivers": [
+        "bulb_rgb",
+        "led_strip_rgbw"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "_tz3000_hlijwsai|lct011",
+      "drivers": [
+        "bulb_rgb",
+        "led_strip_rgbw"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "_tz3000_hlijwsai|lct012",
+      "drivers": [
+        "bulb_rgb",
+        "led_strip_rgbw"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "_tz3000_hlijwsai|lct014",
+      "drivers": [
+        "bulb_rgb",
+        "led_strip_rgbw"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "_tz3000_hlijwsai|lct015",
+      "drivers": [
+        "bulb_rgb",
+        "led_strip_rgbw"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "_tz3000_hlijwsai|lct016",
+      "drivers": [
+        "bulb_rgb",
+        "led_strip_rgbw"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "_tz3000_hlijwsai|rb 185 c",
+      "drivers": [
+        "bulb_rgb",
+        "led_strip_rgbw"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "_tz3000_hlijwsai|rb 285 c",
+      "drivers": [
+        "bulb_rgb",
+        "led_strip_rgbw"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "_tz3000_hlijwsai|ts0503a",
+      "drivers": [
+        "bulb_rgb",
+        "led_strip_rgbw"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "_tz3000_hlijwsai|ts0503b",
+      "drivers": [
+        "bulb_rgb",
+        "led_strip_rgbw"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "_tz3000_hlijwsai|ts0504b",
+      "drivers": [
+        "bulb_rgb",
+        "led_strip_rgbw"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "_tz3000_hlijwsai|ts0505a",
+      "drivers": [
+        "bulb_rgb",
+        "led_strip_rgbw"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "_tz3000_hlijwsai|ts0505b",
+      "drivers": [
+        "bulb_rgb",
+        "led_strip_rgbw"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "_tz3000_hlijwsai|zb-cl01",
+      "drivers": [
+        "bulb_rgb",
+        "led_strip_rgbw"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "_tz3000_hlijwsai|zbt-colorlight",
+      "drivers": [
+        "bulb_rgb",
+        "led_strip_rgbw"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "_tz3000_qd7hej8u|ts0601",
+      "drivers": [
+        "bulb_rgb",
+        "dimmable_led_strip"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "_tz3210_mja6r5ix|ts0601",
+      "drivers": [
+        "bulb_rgb",
+        "dimmable_led_strip"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "_tz3000_q50zhdsc|ts0601",
+      "drivers": [
+        "bulb_rgb",
+        "dimmable_led_strip"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "_tzb210_zdvrsts8|ts0504b",
+      "drivers": [
+        "bulb_rgb",
+        "bulb_rgbw"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "_tzb210_zdvrsts8|ts0505a",
+      "drivers": [
+        "bulb_rgb",
+        "bulb_rgbw"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "_tzb210_zdvrsts8|ts0505b",
+      "drivers": [
+        "bulb_rgb",
+        "bulb_rgbw"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "_tzb210_zdvrsts8|ts0601",
+      "drivers": [
+        "bulb_rgb",
+        "bulb_rgbw"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "hobeian|hobeian",
+      "drivers": [
+        "button_wireless_1",
+        "climate_sensor",
+        "contact_sensor",
+        "gas_sensor",
+        "illuminance_sensor",
+        "presence_sensor_radar",
+        "rain_sensor",
+        "sensor_contact_zigbee",
+        "siren",
+        "soil_sensor",
+        "switch_1gang",
+        "switch_2gang",
+        "switch_3gang",
+        "vibration_sensor",
+        "water_leak_sensor"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "hobeian|ts0001",
+      "drivers": [
+        "button_wireless_1",
+        "soil_sensor",
+        "switch_1gang",
+        "switch_3gang"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "hobeian|ts0041",
+      "drivers": [
+        "button_wireless_1",
+        "switch_3gang"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "hobeian|ts004f",
+      "drivers": [
+        "button_wireless_1",
+        "presence_sensor_radar",
+        "sensor_contact_zigbee",
+        "switch_3gang"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "hobeian|ts0215a",
+      "drivers": [
+        "button_wireless_1",
+        "climate_sensor",
+        "presence_sensor_radar",
+        "switch_3gang"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "hobeian|ts0601",
+      "drivers": [
+        "button_wireless_1",
+        "climate_sensor",
+        "gas_sensor",
+        "illuminance_sensor",
+        "presence_sensor_radar",
+        "rain_sensor",
+        "sensor_contact_zigbee",
+        "siren",
+        "soil_sensor",
+        "switch_1gang",
+        "switch_2gang",
+        "switch_3gang",
+        "vibration_sensor",
+        "water_leak_sensor"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "_tz3000_jak16dll|ts011f",
+      "drivers": [
+        "button_wireless_2",
+        "smartplug_2_socket"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "_tz3000_jak16dll|ts0601",
+      "drivers": [
+        "button_wireless_2",
+        "smartplug_2_socket"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "_tz3000_cayepv1a|ts011f",
+      "drivers": [
+        "button_wireless_2",
+        "smartPlug_DinRail"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "_tz3000_cayepv1a|ts0121",
+      "drivers": [
+        "button_wireless_2",
+        "smartPlug_DinRail"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "_tz3000_cayepv1a|tso121",
+      "drivers": [
+        "button_wireless_2",
+        "smartPlug_DinRail"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "_tz3000_cymsnfvf|ts0001",
+      "drivers": [
+        "button_wireless_2",
+        "plug"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "_tz3000_cymsnfvf|ts0001_fingerbot",
+      "drivers": [
+        "button_wireless_2",
+        "plug"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "_tz3000_cymsnfvf|ts0003",
+      "drivers": [
+        "button_wireless_2",
+        "plug"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "_tz3000_cymsnfvf|ts000f",
+      "drivers": [
+        "button_wireless_2",
+        "plug"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "_tz3000_cymsnfvf|ts0011",
+      "drivers": [
+        "button_wireless_2",
+        "plug"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "_tz3000_dfgbtub0|01minizb",
+      "drivers": [
+        "button_wireless_2",
+        "button_wireless_4"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "_tz3000_dfgbtub0|basiczbr3",
+      "drivers": [
+        "button_wireless_2",
+        "button_wireless_4"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "_tz3000_dfgbtub0|s26r2zb",
+      "drivers": [
+        "button_wireless_2",
+        "button_wireless_4"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "_tz3000_dfgbtub0|s31zb",
+      "drivers": [
+        "button_wireless_2",
+        "button_wireless_4"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "_tz3000_dfgbtub0|ts0001",
+      "drivers": [
+        "button_wireless_2",
+        "button_wireless_4"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "_tz3000_dfgbtub0|ts0001_power",
+      "drivers": [
+        "button_wireless_2",
+        "button_wireless_4"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "_tz3000_dfgbtub0|ts0001_switch",
+      "drivers": [
+        "button_wireless_2",
+        "button_wireless_4"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "_tz3000_dfgbtub0|ts0001_switch_module",
+      "drivers": [
+        "button_wireless_2",
+        "button_wireless_4"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "_tz3000_dfgbtub0|ts0002",
+      "drivers": [
+        "button_wireless_2",
+        "button_wireless_4"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "_tz3000_dfgbtub0|ts0003",
+      "drivers": [
+        "button_wireless_2",
+        "button_wireless_4"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "_tz3000_dfgbtub0|ts000f",
+      "drivers": [
+        "button_wireless_2",
+        "button_wireless_4"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "_tz3000_dfgbtub0|ts0011",
+      "drivers": [
+        "button_wireless_2",
+        "button_wireless_4"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "_tz3000_dfgbtub0|ts0012",
+      "drivers": [
+        "button_wireless_2",
+        "button_wireless_4"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "_tz3000_dfgbtub0|ts0014",
+      "drivers": [
+        "button_wireless_2",
+        "button_wireless_4"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "_tz3000_dfgbtub0|ts004f",
+      "drivers": [
+        "button_wireless_2",
+        "button_wireless_4"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "_tz3000_dfgbtub0|ts0101",
+      "drivers": [
+        "button_wireless_2",
+        "button_wireless_4"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "_tz3000_dfgbtub0|ts0111",
+      "drivers": [
+        "button_wireless_2",
+        "button_wireless_4"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "_tz3000_dfgbtub0|ts011f",
+      "drivers": [
+        "button_wireless_2",
+        "button_wireless_4"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "_tz3000_dfgbtub0|ts0601",
+      "drivers": [
+        "button_wireless_2",
+        "button_wireless_4"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "_tz3000_dfgbtub0|ts0726",
+      "drivers": [
+        "button_wireless_2",
+        "button_wireless_4"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "_tz3000_dfgbtub0|ts110e",
+      "drivers": [
+        "button_wireless_2",
+        "button_wireless_4"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "_tz3000_dfgbtub0|ts130f",
+      "drivers": [
+        "button_wireless_2",
+        "button_wireless_4"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "_tz3000_dfgbtub0|ts4100",
+      "drivers": [
+        "button_wireless_2",
+        "button_wireless_4"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "_tz3000_dfgbtub0|zbm5-1c-120",
+      "drivers": [
+        "button_wireless_2",
+        "button_wireless_4"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "_tz3000_dfgbtub0|zbm5-2c-120",
+      "drivers": [
+        "button_wireless_2",
+        "button_wireless_4"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "_tz3000_dfgbtub0|zbm5-3c-120",
+      "drivers": [
+        "button_wireless_2",
+        "button_wireless_4"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "_tz3000_dfgbtub0|zbmini",
+      "drivers": [
+        "button_wireless_2",
+        "button_wireless_4"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "_tz3000_dfgbtub0|zbminil2",
+      "drivers": [
+        "button_wireless_2",
+        "button_wireless_4"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "_tz3000_dfgbtub0|zbminil2-r2",
+      "drivers": [
+        "button_wireless_2",
+        "button_wireless_4"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "_tz3000_dfgbtub0|zbminir",
+      "drivers": [
+        "button_wireless_2",
+        "button_wireless_4"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "_tz3000_dfgbtub0|zbminir2",
+      "drivers": [
+        "button_wireless_2",
+        "button_wireless_4"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "_tz3000_dfgbtub0|zbminir2-r2",
+      "drivers": [
+        "button_wireless_2",
+        "button_wireless_4"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "_tz3000_dfgbtub0|snzb-01m",
+      "drivers": [
+        "button_wireless_2",
+        "button_wireless_4"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "_tz3000_ee8nrt2l|01minizb",
+      "drivers": [
+        "button_wireless_2",
+        "button_wireless_4"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "_tz3000_ee8nrt2l|basiczbr3",
+      "drivers": [
+        "button_wireless_2",
+        "button_wireless_4"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "_tz3000_ee8nrt2l|s26r2zb",
+      "drivers": [
+        "button_wireless_2",
+        "button_wireless_4"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "_tz3000_ee8nrt2l|s31zb",
+      "drivers": [
+        "button_wireless_2",
+        "button_wireless_4"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "_tz3000_ee8nrt2l|ts0001",
+      "drivers": [
+        "button_wireless_2",
+        "button_wireless_4"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "_tz3000_ee8nrt2l|ts0001_power",
+      "drivers": [
+        "button_wireless_2",
+        "button_wireless_4"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "_tz3000_ee8nrt2l|ts0001_switch",
+      "drivers": [
+        "button_wireless_2",
+        "button_wireless_4"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "_tz3000_ee8nrt2l|ts0001_switch_module",
+      "drivers": [
+        "button_wireless_2",
+        "button_wireless_4"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "_tz3000_ee8nrt2l|ts0002",
+      "drivers": [
+        "button_wireless_2",
+        "button_wireless_4"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "_tz3000_ee8nrt2l|ts0003",
+      "drivers": [
+        "button_wireless_2",
+        "button_wireless_4"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "_tz3000_ee8nrt2l|ts000f",
+      "drivers": [
+        "button_wireless_2",
+        "button_wireless_4"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "_tz3000_ee8nrt2l|ts0011",
+      "drivers": [
+        "button_wireless_2",
+        "button_wireless_4"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "_tz3000_ee8nrt2l|ts0012",
+      "drivers": [
+        "button_wireless_2",
+        "button_wireless_4"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "_tz3000_ee8nrt2l|ts0014",
+      "drivers": [
+        "button_wireless_2",
+        "button_wireless_4"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "_tz3000_ee8nrt2l|ts004f",
+      "drivers": [
+        "button_wireless_2",
+        "button_wireless_4"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "_tz3000_ee8nrt2l|ts0101",
+      "drivers": [
+        "button_wireless_2",
+        "button_wireless_4"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "_tz3000_ee8nrt2l|ts0111",
+      "drivers": [
+        "button_wireless_2",
+        "button_wireless_4"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "_tz3000_ee8nrt2l|ts011f",
+      "drivers": [
+        "button_wireless_2",
+        "button_wireless_4"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "_tz3000_ee8nrt2l|ts0601",
+      "drivers": [
+        "button_wireless_2",
+        "button_wireless_4"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "_tz3000_ee8nrt2l|ts0726",
+      "drivers": [
+        "button_wireless_2",
+        "button_wireless_4"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "_tz3000_ee8nrt2l|ts110e",
+      "drivers": [
+        "button_wireless_2",
+        "button_wireless_4"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "_tz3000_ee8nrt2l|ts130f",
+      "drivers": [
+        "button_wireless_2",
+        "button_wireless_4"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "_tz3000_ee8nrt2l|ts4100",
+      "drivers": [
+        "button_wireless_2",
+        "button_wireless_4"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "_tz3000_ee8nrt2l|zbm5-1c-120",
+      "drivers": [
+        "button_wireless_2",
+        "button_wireless_4"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "_tz3000_ee8nrt2l|zbm5-2c-120",
+      "drivers": [
+        "button_wireless_2",
+        "button_wireless_4"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "_tz3000_ee8nrt2l|zbm5-3c-120",
+      "drivers": [
+        "button_wireless_2",
+        "button_wireless_4"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "_tz3000_ee8nrt2l|zbmini",
+      "drivers": [
+        "button_wireless_2",
+        "button_wireless_4"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "_tz3000_ee8nrt2l|zbminil2",
+      "drivers": [
+        "button_wireless_2",
+        "button_wireless_4"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "_tz3000_ee8nrt2l|zbminil2-r2",
+      "drivers": [
+        "button_wireless_2",
+        "button_wireless_4"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "_tz3000_ee8nrt2l|zbminir",
+      "drivers": [
+        "button_wireless_2",
+        "button_wireless_4"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "_tz3000_ee8nrt2l|zbminir2",
+      "drivers": [
+        "button_wireless_2",
+        "button_wireless_4"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "_tz3000_ee8nrt2l|zbminir2-r2",
+      "drivers": [
+        "button_wireless_2",
+        "button_wireless_4"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "_tz3000_ee8nrt2l|snzb-01m",
+      "drivers": [
+        "button_wireless_2",
+        "button_wireless_4"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "_tz3000_ew31dmgx|ts0001",
+      "drivers": [
+        "button_wireless_2",
+        "plug"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "_tz3000_ew31dmgx|ts0001_fingerbot",
+      "drivers": [
+        "button_wireless_2",
+        "plug"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "_tz3000_ew31dmgx|ts0003",
+      "drivers": [
+        "button_wireless_2",
+        "plug"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "_tz3000_ew31dmgx|ts000f",
+      "drivers": [
+        "button_wireless_2",
+        "plug"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "_tz3000_ew31dmgx|ts0011",
+      "drivers": [
+        "button_wireless_2",
+        "plug"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "_tz3000_hyfvrar3|ts0001",
+      "drivers": [
+        "button_wireless_2",
+        "plug"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "_tz3000_hyfvrar3|ts0001_fingerbot",
+      "drivers": [
+        "button_wireless_2",
+        "plug"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "_tz3000_hyfvrar3|ts0003",
+      "drivers": [
+        "button_wireless_2",
+        "plug"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "_tz3000_hyfvrar3|ts000f",
+      "drivers": [
+        "button_wireless_2",
+        "plug"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "_tz3000_hyfvrar3|ts0011",
+      "drivers": [
+        "button_wireless_2",
+        "plug"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "_tz3000_itnrsufe|ts0601",
+      "drivers": [
+        "button_wireless_2",
+        "lcdtemphumidsensor"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "_tz3000_kdi2o9m6|ts0001",
+      "drivers": [
+        "button_wireless_2",
+        "plug"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "_tz3000_kdi2o9m6|ts0001_fingerbot",
+      "drivers": [
+        "button_wireless_2",
+        "plug"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "_tz3000_kdi2o9m6|ts0003",
+      "drivers": [
+        "button_wireless_2",
+        "plug"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "_tz3000_kdi2o9m6|ts000f",
+      "drivers": [
+        "button_wireless_2",
+        "plug"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "_tz3000_kdi2o9m6|ts0011",
+      "drivers": [
+        "button_wireless_2",
+        "plug"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "_tz3000_lepzuhto|ts011f",
+      "drivers": [
+        "button_wireless_2",
+        "smartPlug_DinRail"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "_tz3000_lepzuhto|ts0121",
+      "drivers": [
+        "button_wireless_2",
+        "smartPlug_DinRail"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "_tz3000_lepzuhto|tso121",
+      "drivers": [
+        "button_wireless_2",
+        "smartPlug_DinRail"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "_tz3000_plyvnuf5|ts0001",
+      "drivers": [
+        "button_wireless_2",
+        "plug"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "_tz3000_plyvnuf5|ts0001_fingerbot",
+      "drivers": [
+        "button_wireless_2",
+        "plug"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "_tz3000_plyvnuf5|ts0003",
+      "drivers": [
+        "button_wireless_2",
+        "plug"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "_tz3000_plyvnuf5|ts000f",
+      "drivers": [
+        "button_wireless_2",
+        "plug"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "_tz3000_plyvnuf5|ts0011",
+      "drivers": [
+        "button_wireless_2",
+        "plug"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "_tz3000_upjrsxh1|ts0001",
+      "drivers": [
+        "button_wireless_2",
+        "plug"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "_tz3000_upjrsxh1|ts0001_fingerbot",
+      "drivers": [
+        "button_wireless_2",
+        "plug"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "_tz3000_upjrsxh1|ts0003",
+      "drivers": [
+        "button_wireless_2",
+        "plug"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "_tz3000_upjrsxh1|ts000f",
+      "drivers": [
+        "button_wireless_2",
+        "plug"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "_tz3000_upjrsxh1|ts0011",
+      "drivers": [
+        "button_wireless_2",
+        "plug"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "_tz3000_wzauvbcs|ts011f",
+      "drivers": [
+        "button_wireless_2",
+        "socket_power_strip"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "_tze200_zl1kmjqx|ts0601",
+      "drivers": [
+        "button_wireless_2",
+        "lcdtemphumidsensor_3"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "_tz3000_gbm10jnj|ts0601",
+      "drivers": [
+        "button_wireless_3",
+        "button_wireless_4"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "_tz3000_gjnozsaz|ts011f",
+      "drivers": [
+        "button_wireless_plug",
+        "smartplug"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "_tz3000_gjnozsaz|ts0121",
+      "drivers": [
+        "button_wireless_plug",
+        "smartplug"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "_tz3000_cehuw1lw|ts011f",
+      "drivers": [
+        "button_wireless_plug",
+        "smartplug"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "_tz3000_cehuw1lw|ts0121",
+      "drivers": [
+        "button_wireless_plug",
+        "smartplug"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "_tz3000_u5u4cakc|ts011f",
+      "drivers": [
+        "button_wireless_plug",
+        "smartplug"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "_tz3000_u5u4cakc|ts0121",
+      "drivers": [
+        "button_wireless_plug",
+        "smartplug"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "hobeian|01minizb",
+      "drivers": [
+        "climate_sensor",
+        "switch_1gang",
+        "switch_3gang"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "hobeian|basiczbr3",
+      "drivers": [
+        "climate_sensor",
+        "soil_sensor",
+        "switch_1gang",
+        "switch_3gang"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "hobeian|ck-bl702-mws-01",
+      "drivers": [
+        "climate_sensor",
+        "presence_sensor_radar"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "hobeian|ck-bl702-mws-01(7016)",
+      "drivers": [
+        "climate_sensor",
+        "presence_sensor_radar",
+        "vibration_sensor"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "hobeian|ck-tlsr8656-ss5-01(7014)",
+      "drivers": [
+        "climate_sensor",
+        "presence_sensor_radar",
+        "soil_sensor"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "hobeian|mg1_5rz",
+      "drivers": [
+        "climate_sensor",
+        "presence_sensor_radar"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "hobeian|rh3052",
+      "drivers": [
+        "climate_sensor",
+        "presence_sensor_radar",
+        "soil_sensor"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "hobeian|s26r2zb",
+      "drivers": [
+        "climate_sensor",
+        "soil_sensor",
+        "switch_1gang",
+        "switch_3gang"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "hobeian|s31zb",
+      "drivers": [
+        "climate_sensor",
+        "soil_sensor",
+        "switch_1gang",
+        "switch_3gang"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "hobeian|sm0201",
+      "drivers": [
+        "climate_sensor",
+        "presence_sensor_radar",
+        "soil_sensor"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "hobeian|szlmr10",
+      "drivers": [
+        "climate_sensor",
+        "presence_sensor_radar"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "hobeian|th01",
+      "drivers": [
+        "climate_sensor",
+        "presence_sensor_radar",
+        "soil_sensor"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "hobeian|ths317-et",
+      "drivers": [
+        "climate_sensor",
+        "presence_sensor_radar",
+        "soil_sensor"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "hobeian|ts0001_power",
+      "drivers": [
+        "climate_sensor",
+        "switch_1gang",
+        "switch_3gang"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "hobeian|ts0001_switch",
+      "drivers": [
+        "climate_sensor",
+        "switch_1gang",
+        "switch_3gang"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "hobeian|ts0001_switch_module",
+      "drivers": [
+        "climate_sensor",
+        "switch_1gang",
+        "switch_3gang"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "hobeian|ts0004",
+      "drivers": [
+        "climate_sensor",
+        "presence_sensor_radar",
+        "switch_1gang",
+        "switch_3gang"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "hobeian|ts0011",
+      "drivers": [
+        "climate_sensor",
+        "switch_1gang",
+        "switch_3gang"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "hobeian|ts0101",
+      "drivers": [
+        "climate_sensor",
+        "switch_1gang",
+        "switch_3gang"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "hobeian|ts0201",
+      "drivers": [
+        "climate_sensor",
+        "presence_sensor_radar",
+        "water_leak_sensor"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "hobeian|ts0202",
+      "drivers": [
+        "climate_sensor",
+        "presence_sensor_radar",
+        "soil_sensor"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "hobeian|ts0222",
+      "drivers": [
+        "climate_sensor",
+        "illuminance_sensor",
+        "presence_sensor_radar",
+        "soil_sensor"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "hobeian|ts0601_wirelesssw",
+      "drivers": [
+        "climate_sensor",
+        "presence_sensor_radar"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "hobeian|ts0726",
+      "drivers": [
+        "climate_sensor",
+        "sensor_contact_zigbee",
+        "switch_1gang",
+        "switch_2gang",
+        "switch_3gang"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "hobeian|ts110e",
+      "drivers": [
+        "climate_sensor",
+        "presence_sensor_radar",
+        "switch_1gang",
+        "switch_3gang"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "hobeian|ts1201",
+      "drivers": [
+        "climate_sensor",
+        "presence_sensor_radar",
+        "soil_sensor"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "hobeian|ts4100",
+      "drivers": [
+        "climate_sensor",
+        "switch_1gang",
+        "switch_3gang"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "hobeian|ty0201",
+      "drivers": [
+        "climate_sensor",
+        "presence_sensor_radar"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "hobeian|wsdcgq01lm",
+      "drivers": [
+        "climate_sensor",
+        "presence_sensor_radar",
+        "soil_sensor"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "hobeian|wsdcgq11lm",
+      "drivers": [
+        "climate_sensor",
+        "presence_sensor_radar",
+        "soil_sensor"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "hobeian|wsdcgq12lm",
+      "drivers": [
+        "climate_sensor",
+        "presence_sensor_radar",
+        "soil_sensor"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "hobeian|zbm5-1c-120",
+      "drivers": [
+        "climate_sensor",
+        "switch_1gang",
+        "switch_3gang"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "hobeian|zbm5-2c-120",
+      "drivers": [
+        "climate_sensor",
+        "switch_1gang",
+        "switch_3gang"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "hobeian|zbm5-3c-120",
+      "drivers": [
+        "climate_sensor",
+        "switch_1gang",
+        "switch_3gang"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "hobeian|zbmini",
+      "drivers": [
+        "climate_sensor",
+        "soil_sensor",
+        "switch_1gang",
+        "switch_3gang"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "hobeian|zbminil2",
+      "drivers": [
+        "climate_sensor",
+        "soil_sensor",
+        "switch_1gang",
+        "switch_3gang"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "hobeian|zbminil2-r2",
+      "drivers": [
+        "climate_sensor",
+        "switch_1gang",
+        "switch_3gang"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "hobeian|zbminir",
+      "drivers": [
+        "climate_sensor",
+        "switch_1gang",
+        "switch_3gang"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "hobeian|zbminir2",
+      "drivers": [
+        "climate_sensor",
+        "switch_1gang",
+        "switch_3gang"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "hobeian|zbminir2-r2",
+      "drivers": [
+        "climate_sensor",
+        "switch_1gang",
+        "switch_3gang"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "hobeian|zp-301z",
+      "drivers": [
+        "climate_sensor",
+        "presence_sensor_radar"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "_tz3000_bpkijo14|ts0203",
+      "drivers": [
+        "contact_sensor",
+        "doorwindowsensor_3"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "_tz3000_o4mkahkc|excellux",
+      "drivers": [
+        "contact_sensor",
+        "motion_sensor"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "_tz3000_rcuyhwe3|ts0203",
+      "drivers": [
+        "contact_sensor",
+        "smart_door_window_sensor"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "_tz3000_rcuyhwe3|ty0203",
+      "drivers": [
+        "contact_sensor",
+        "smart_door_window_sensor"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "hobeian|ts0203",
+      "drivers": [
+        "contact_sensor",
+        "presence_sensor_radar",
+        "sensor_contact_zigbee",
+        "switch_1gang"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "hobeian|3300-s",
+      "drivers": [
+        "contact_sensor",
+        "sensor_contact_zigbee"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "hobeian|3320-l",
+      "drivers": [
+        "contact_sensor",
+        "sensor_contact_zigbee"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "hobeian|ck-tlsr8656-ss5-01(7003)",
+      "drivers": [
+        "contact_sensor",
+        "sensor_contact_zigbee"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "hobeian|doorwindow-sensor-zb3.0",
+      "drivers": [
+        "contact_sensor",
+        "sensor_contact_zigbee"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "hobeian|ds01",
+      "drivers": [
+        "contact_sensor",
+        "sensor_contact_zigbee"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "hobeian|e1603/e1702",
+      "drivers": [
+        "contact_sensor",
+        "sensor_contact_zigbee"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "hobeian|excellux",
+      "drivers": [
+        "contact_sensor",
+        "presence_sensor_radar",
+        "sensor_contact_zigbee"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "hobeian|mccgq01lm",
+      "drivers": [
+        "contact_sensor",
+        "sensor_contact_zigbee"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "hobeian|mccgq11lm",
+      "drivers": [
+        "contact_sensor",
+        "sensor_contact_zigbee"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "hobeian|mccgq12lm",
+      "drivers": [
+        "contact_sensor",
+        "sensor_contact_zigbee"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "hobeian|mccgq14lm",
+      "drivers": [
+        "contact_sensor",
+        "sensor_contact_zigbee"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "hobeian|mct-340 e",
+      "drivers": [
+        "contact_sensor",
+        "sensor_contact_zigbee"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "hobeian|rh3001",
+      "drivers": [
+        "contact_sensor",
+        "sensor_contact_zigbee",
+        "water_leak_sensor"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "hobeian|snzb-04",
+      "drivers": [
+        "contact_sensor",
+        "sensor_contact_zigbee"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "hobeian|snzb-04p",
+      "drivers": [
+        "contact_sensor",
+        "sensor_contact_zigbee"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "hobeian|snzb-04pr2",
+      "drivers": [
+        "contact_sensor",
+        "sensor_contact_zigbee"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "hobeian|snzb-04r2",
+      "drivers": [
+        "contact_sensor",
+        "sensor_contact_zigbee"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "hobeian|tradfri open/close remote",
+      "drivers": [
+        "contact_sensor",
+        "sensor_contact_zigbee"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "hobeian|ts0021",
+      "drivers": [
+        "contact_sensor",
+        "sensor_contact_zigbee"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "hobeian|zg-102z",
+      "drivers": [
+        "contact_sensor",
+        "sensor_contact_zigbee"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "hobeian|zg-102zl",
+      "drivers": [
+        "contact_sensor",
+        "sensor_contact_zigbee"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "_tze200_bjzrowv2|ts0601",
+      "drivers": [
+        "curtain_motor",
+        "device_radiator_valve"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "_tze200_zah67ekd|ts0601",
+      "drivers": [
+        "curtain_motor",
+        "curtain_motor_tilt"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "_tz3000_iystcadi|ts0601",
+      "drivers": [
+        "dimmable_led_strip",
+        "led_controller_rgb"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "_tz3210_invesber|ts0011",
+      "drivers": [
+        "dimmable_led_strip",
+        "wall_dimmer_tuya"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "_tz3210_invesber|ts0052",
+      "drivers": [
+        "dimmable_led_strip",
+        "wall_dimmer_tuya"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "_tz3210_invesber|ts0601",
+      "drivers": [
+        "dimmable_led_strip",
+        "wall_dimmer_tuya"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "_tz3210_invesber|ts0601_dim1",
+      "drivers": [
+        "dimmable_led_strip",
+        "wall_dimmer_tuya"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "_tz3210_invesber|ts1101",
+      "drivers": [
+        "dimmable_led_strip",
+        "wall_dimmer_tuya"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "_tz3210_invesber|ts110e",
+      "drivers": [
+        "dimmable_led_strip",
+        "wall_dimmer_tuya"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "_tz3210_invesber|ts110f",
+      "drivers": [
+        "dimmable_led_strip",
+        "wall_dimmer_tuya"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "_tz3210_invesber|zbmini-dim",
+      "drivers": [
+        "dimmable_led_strip",
+        "wall_dimmer_tuya"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "_tz3210_invesber|zbminid",
+      "drivers": [
+        "dimmable_led_strip",
+        "wall_dimmer_tuya"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "_tze200_la2c2uo9|ts110f",
+      "drivers": [
+        "dimmer_1_gang_tuya",
+        "wall_dimmer_tuya"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "_tze200_la2c2uo9|ts110e",
+      "drivers": [
+        "dimmer_1_gang_tuya",
+        "wall_dimmer_tuya"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "_tze200_la2c2uo9|ts0052",
+      "drivers": [
+        "dimmer_1_gang_tuya",
+        "wall_dimmer_tuya"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "_tze200_la2c2uo9|ts0601",
+      "drivers": [
+        "dimmer_1_gang_tuya",
+        "wall_dimmer_tuya"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "_tze200_ip2akl4w|ts110f",
+      "drivers": [
+        "dimmer_1_gang_tuya",
+        "wall_dimmer_tuya"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "_tze200_ip2akl4w|ts110e",
+      "drivers": [
+        "dimmer_1_gang_tuya",
+        "wall_dimmer_tuya"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "_tze200_ip2akl4w|ts0052",
+      "drivers": [
+        "dimmer_1_gang_tuya",
+        "wall_dimmer_tuya"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "_tze200_ip2akl4w|ts0601",
+      "drivers": [
+        "dimmer_1_gang_tuya",
+        "wall_dimmer_tuya"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "_tze200_1agwnems|ts110f",
+      "drivers": [
+        "dimmer_1_gang_tuya",
+        "wall_dimmer_tuya"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "_tze200_1agwnems|ts110e",
+      "drivers": [
+        "dimmer_1_gang_tuya",
+        "wall_dimmer_tuya"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "_tze200_1agwnems|ts0052",
+      "drivers": [
+        "dimmer_1_gang_tuya",
+        "wall_dimmer_tuya"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "_tze200_1agwnems|ts0601",
+      "drivers": [
+        "dimmer_1_gang_tuya",
+        "wall_dimmer_tuya"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "_tze200_579lguh2|ts110f",
+      "drivers": [
+        "dimmer_1_gang_tuya",
+        "wall_dimmer_tuya"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "_tze200_579lguh2|ts110e",
+      "drivers": [
+        "dimmer_1_gang_tuya",
+        "wall_dimmer_tuya"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "_tze200_579lguh2|ts0052",
+      "drivers": [
+        "dimmer_1_gang_tuya",
+        "wall_dimmer_tuya"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "_tze200_579lguh2|ts0601",
+      "drivers": [
+        "dimmer_1_gang_tuya",
+        "wall_dimmer_tuya"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "_tze200_vucankjx|ts110f",
+      "drivers": [
+        "dimmer_1_gang_tuya",
+        "wall_dimmer_tuya"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "_tze200_vucankjx|ts110e",
+      "drivers": [
+        "dimmer_1_gang_tuya",
+        "wall_dimmer_tuya"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "_tze200_vucankjx|ts0052",
+      "drivers": [
+        "dimmer_1_gang_tuya",
+        "wall_dimmer_tuya"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "_tze200_vucankjx|ts0601",
+      "drivers": [
+        "dimmer_1_gang_tuya",
+        "wall_dimmer_tuya"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "_tze200_4mh6tyyo|ts110f",
+      "drivers": [
+        "dimmer_1_gang_tuya",
+        "dimmer_wall_1gang"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "_tze200_4mh6tyyo|ts110e",
+      "drivers": [
+        "dimmer_1_gang_tuya",
+        "dimmer_wall_1gang"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "_tze200_4mh6tyyo|ts0052",
+      "drivers": [
+        "dimmer_1_gang_tuya",
+        "dimmer_wall_1gang"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "_tze200_4mh6tyyo|ts0601",
+      "drivers": [
+        "dimmer_1_gang_tuya",
+        "dimmer_wall_1gang"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "_tze200_4mh6tyyo|ts0505b",
+      "drivers": [
+        "dimmer_1_gang_tuya",
+        "dimmer_wall_1gang"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "_tze200_4mh6tyyo|ts0002",
+      "drivers": [
+        "dimmer_1_gang_tuya",
+        "dimmer_wall_1gang"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "_tze200_4mh6tyyo|ts0003",
+      "drivers": [
+        "dimmer_1_gang_tuya",
+        "dimmer_wall_1gang"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "_tze200_4mh6tyyo|ts0012",
+      "drivers": [
+        "dimmer_1_gang_tuya",
+        "dimmer_wall_1gang"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "_tze200_4mh6tyyo|ts0013",
+      "drivers": [
+        "dimmer_1_gang_tuya",
+        "dimmer_wall_1gang"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "_tze200_4mh6tyyo|ts0001",
+      "drivers": [
+        "dimmer_1_gang_tuya",
+        "dimmer_wall_1gang"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "_tze200_4mh6tyyo|ts0726",
+      "drivers": [
+        "dimmer_1_gang_tuya",
+        "dimmer_wall_1gang"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "_tze204_n9ctkb6j|ts110e",
+      "drivers": [
+        "dimmer_1_gang_tuya",
+        "switch_1gang"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "_tze204_n9ctkb6j|ts0601",
+      "drivers": [
+        "dimmer_1_gang_tuya",
+        "switch_1gang"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "_tze204_n9ctkb6j|ts0003",
+      "drivers": [
+        "dimmer_1_gang_tuya",
+        "switch_1gang"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "_tze204_n9ctkb6j|ts0012",
+      "drivers": [
+        "dimmer_1_gang_tuya",
+        "switch_1gang"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "_tze204_n9ctkb6j|ts0001",
+      "drivers": [
+        "dimmer_1_gang_tuya",
+        "switch_1gang"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "_tze204_n9ctkb6j|ts0726",
+      "drivers": [
+        "dimmer_1_gang_tuya",
+        "switch_1gang"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "_tze204_9qhuzgo0|ts110e",
+      "drivers": [
+        "dimmer_1_gang_tuya",
+        "switch_1gang"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "_tze204_9qhuzgo0|ts0601",
+      "drivers": [
+        "dimmer_1_gang_tuya",
+        "switch_1gang"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "_tze204_9qhuzgo0|ts0003",
+      "drivers": [
+        "dimmer_1_gang_tuya",
+        "switch_1gang"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "_tze204_9qhuzgo0|ts0012",
+      "drivers": [
+        "dimmer_1_gang_tuya",
+        "switch_1gang"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "_tze204_9qhuzgo0|ts0001",
+      "drivers": [
+        "dimmer_1_gang_tuya",
+        "switch_1gang"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "_tze204_9qhuzgo0|ts0726",
+      "drivers": [
+        "dimmer_1_gang_tuya",
+        "switch_1gang"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "_tze204_dcnsggvz|ts110f",
+      "drivers": [
+        "dimmer_1_gang_tuya",
+        "dimmer_wall_1gang"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "_tze204_dcnsggvz|ts110e",
+      "drivers": [
+        "dimmer_1_gang_tuya",
+        "dimmer_wall_1gang"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "_tze204_dcnsggvz|ts0052",
+      "drivers": [
+        "dimmer_1_gang_tuya",
+        "dimmer_wall_1gang"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "_tze204_dcnsggvz|ts0601",
+      "drivers": [
+        "dimmer_1_gang_tuya",
+        "dimmer_wall_1gang"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "_tze204_dcnsggvz|ts0505b",
+      "drivers": [
+        "dimmer_1_gang_tuya",
+        "dimmer_wall_1gang"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "_tze204_dcnsggvz|ts0002",
+      "drivers": [
+        "dimmer_1_gang_tuya",
+        "dimmer_wall_1gang"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "_tze204_dcnsggvz|ts0003",
+      "drivers": [
+        "dimmer_1_gang_tuya",
+        "dimmer_wall_1gang"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "_tze204_dcnsggvz|ts0012",
+      "drivers": [
+        "dimmer_1_gang_tuya",
+        "dimmer_wall_1gang"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "_tze204_dcnsggvz|ts0013",
+      "drivers": [
+        "dimmer_1_gang_tuya",
+        "dimmer_wall_1gang"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "_tze204_dcnsggvz|ts0001",
+      "drivers": [
+        "dimmer_1_gang_tuya",
+        "dimmer_wall_1gang"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "_tze204_dcnsggvz|ts0726",
+      "drivers": [
+        "dimmer_1_gang_tuya",
+        "dimmer_wall_1gang"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "_tze204_5cuocqty|ts110e",
+      "drivers": [
+        "dimmer_1_gang_tuya",
+        "switch_1gang"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "_tze204_5cuocqty|ts0601",
+      "drivers": [
+        "dimmer_1_gang_tuya",
+        "switch_1gang"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "_tze204_5cuocqty|ts0003",
+      "drivers": [
+        "dimmer_1_gang_tuya",
+        "switch_1gang"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "_tze204_5cuocqty|ts0012",
+      "drivers": [
+        "dimmer_1_gang_tuya",
+        "switch_1gang"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "_tze204_5cuocqty|ts0001",
+      "drivers": [
+        "dimmer_1_gang_tuya",
+        "switch_1gang"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "_tze204_5cuocqty|ts0726",
+      "drivers": [
+        "dimmer_1_gang_tuya",
+        "switch_1gang"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "_tz3210_wdexaypg|ts0011",
+      "drivers": [
+        "dimmer_2_gang",
+        "wall_dimmer_tuya"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "_tz3210_wdexaypg|ts0601",
+      "drivers": [
+        "dimmer_2_gang",
+        "wall_dimmer_tuya"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "_tz3210_wdexaypg|ts1101",
+      "drivers": [
+        "dimmer_2_gang",
+        "wall_dimmer_tuya"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "_tz3210_wdexaypg|ts110e",
+      "drivers": [
+        "dimmer_2_gang",
+        "wall_dimmer_tuya"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "_tz3210_wdexaypg|ts110f",
+      "drivers": [
+        "dimmer_2_gang",
+        "wall_dimmer_tuya"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "_tz3210_3mpwqzuu|ts0011",
+      "drivers": [
+        "dimmer_2_gang",
+        "wall_dimmer_tuya"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "_tz3210_3mpwqzuu|ts0601",
+      "drivers": [
+        "dimmer_2_gang",
+        "wall_dimmer_tuya"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "_tz3210_3mpwqzuu|ts1101",
+      "drivers": [
+        "dimmer_2_gang",
+        "wall_dimmer_tuya"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "_tz3210_3mpwqzuu|ts110e",
+      "drivers": [
+        "dimmer_2_gang",
+        "wall_dimmer_tuya"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "_tz3210_3mpwqzuu|ts110f",
+      "drivers": [
+        "dimmer_2_gang",
+        "wall_dimmer_tuya"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "_tz3210_pagajpog|ts0011",
+      "drivers": [
+        "dimmer_2_gang",
+        "wall_dimmer_tuya"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "_tz3210_pagajpog|ts0601",
+      "drivers": [
+        "dimmer_2_gang",
+        "wall_dimmer_tuya"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "_tz3210_pagajpog|ts1101",
+      "drivers": [
+        "dimmer_2_gang",
+        "wall_dimmer_tuya"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "_tz3210_pagajpog|ts110e",
+      "drivers": [
+        "dimmer_2_gang",
+        "wall_dimmer_tuya"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "_tz3210_pagajpog|ts110f",
+      "drivers": [
+        "dimmer_2_gang",
+        "wall_dimmer_tuya"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "_tz3210_4ubylghk|ts0601",
+      "drivers": [
+        "dimmer_2_gang",
+        "rgb_led_strip"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "_tze204_bxoo2swd|ts0011",
+      "drivers": [
+        "dimmer_2_gang_tuya",
+        "wall_dimmer_tuya"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "_tze204_bxoo2swd|ts0601",
+      "drivers": [
+        "dimmer_2_gang_tuya",
+        "wall_dimmer_tuya"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "_tze204_bxoo2swd|ts1101",
+      "drivers": [
+        "dimmer_2_gang_tuya",
+        "wall_dimmer_tuya"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "_tze204_bxoo2swd|ts110e",
+      "drivers": [
+        "dimmer_2_gang_tuya",
+        "wall_dimmer_tuya"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "_tze204_bxoo2swd|ts110f",
+      "drivers": [
+        "dimmer_2_gang_tuya",
+        "wall_dimmer_tuya"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "_tz3000_zgrffiwg|ts0003",
+      "drivers": [
+        "doorwindowsensor_3",
+        "sensor_contact_zigbee"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "_tz3000_zgrffiwg|ts0203",
+      "drivers": [
+        "doorwindowsensor_3",
+        "sensor_contact_zigbee"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "_tz3000_zgrffiwg|ts0601",
+      "drivers": [
+        "doorwindowsensor_3",
+        "sensor_contact_zigbee"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "_tz3000_zgrffiwg|ts0726",
+      "drivers": [
+        "doorwindowsensor_3",
+        "sensor_contact_zigbee"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "_tz3000_zgrffiwg|ts130f",
+      "drivers": [
+        "doorwindowsensor_3",
+        "sensor_contact_zigbee"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "_tz3000_uvti8nkd|ts0003",
+      "drivers": [
+        "doorwindowsensor_3",
+        "sensor_contact_zigbee"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "_tz3000_uvti8nkd|ts0203",
+      "drivers": [
+        "doorwindowsensor_3",
+        "sensor_contact_zigbee"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "_tz3000_uvti8nkd|ts0601",
+      "drivers": [
+        "doorwindowsensor_3",
+        "sensor_contact_zigbee"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "_tz3000_uvti8nkd|ts0726",
+      "drivers": [
+        "doorwindowsensor_3",
+        "sensor_contact_zigbee"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "_tz3000_uvti8nkd|ts130f",
+      "drivers": [
+        "doorwindowsensor_3",
+        "sensor_contact_zigbee"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "zbeacon|ts0601",
+      "drivers": [
+        "doorwindowsensor_4",
+        "plug_smart"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "hobeian|ts0225",
+      "drivers": [
+        "gas_sensor",
+        "illuminance_sensor",
+        "presence_sensor_radar"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "_tz3210_huzkzqyk|ts0601",
+      "drivers": [
+        "lcdtemphumidluxsensor",
+        "wall_dimmer_tuya"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "_tze200_vvmbj46n|ts0601",
+      "drivers": [
+        "lcdtemphumidsensor",
+        "lcdtemphumidsensor_3"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "_tze200_vvmbj46n|excellux",
+      "drivers": [
+        "lcdtemphumidsensor",
+        "lcdtemphumidsensor_3"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "_tze200_locansqn|ts0601",
+      "drivers": [
+        "lcdtemphumidsensor",
+        "lcdtemphumidsensor_3"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "_tze200_locansqn|excellux",
+      "drivers": [
+        "lcdtemphumidsensor",
+        "lcdtemphumidsensor_3"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "_tz3210_r0xgkft5|ts0601",
+      "drivers": [
+        "led_controller_cct",
+        "rgb_mood_light"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "_tz3000_c8ozah8n|excellux",
+      "drivers": [
+        "motion_sensor",
+        "pir_sensor_2"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "_tz3000_c8ozah8n|ts0001",
+      "drivers": [
+        "motion_sensor",
+        "pir_sensor_2"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "_tz3000_c8ozah8n|ts0202",
+      "drivers": [
+        "motion_sensor",
+        "pir_sensor_2"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "_tz3000_c8ozah8n|ts0601",
+      "drivers": [
+        "motion_sensor",
+        "pir_sensor_2"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "_tz3000_c8ozah8n|ts110e",
+      "drivers": [
+        "motion_sensor",
+        "pir_sensor_2"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "_tz3000_mmtwjmaq|excellux",
+      "drivers": [
+        "motion_sensor",
+        "pir_sensor_2"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "_tz3000_mmtwjmaq|ts0001",
+      "drivers": [
+        "motion_sensor",
+        "pir_sensor_2"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "_tz3000_mmtwjmaq|ts0202",
+      "drivers": [
+        "motion_sensor",
+        "pir_sensor_2"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "_tz3000_mmtwjmaq|ts0601",
+      "drivers": [
+        "motion_sensor",
+        "pir_sensor_2"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "_tz3000_mmtwjmaq|ts110e",
+      "drivers": [
+        "motion_sensor",
+        "pir_sensor_2"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "_tz3000_msl6wxk9|excellux",
+      "drivers": [
+        "pir_sensor_2",
+        "sensor_motion_presence"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "_tz3000_msl6wxk9|ts0001",
+      "drivers": [
+        "pir_sensor_2",
+        "sensor_motion_presence"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "_tz3000_msl6wxk9|ts0202",
+      "drivers": [
+        "pir_sensor_2",
+        "sensor_motion_presence"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "_tz3000_msl6wxk9|ts0601",
+      "drivers": [
+        "pir_sensor_2",
+        "sensor_motion_presence"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "_tz3000_mcxw5ehu|excellux",
+      "drivers": [
+        "pir_sensor_2",
+        "sensor_motion_presence"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "_tz3000_mcxw5ehu|ts0001",
+      "drivers": [
+        "pir_sensor_2",
+        "sensor_motion_presence"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "_tz3000_mcxw5ehu|ts0202",
+      "drivers": [
+        "pir_sensor_2",
+        "sensor_motion_presence"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "_tz3000_mcxw5ehu|ts0601",
+      "drivers": [
+        "pir_sensor_2",
+        "sensor_motion_presence"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "_tz3040_6ygjfyll|excellux",
+      "drivers": [
+        "pir_sensor_2",
+        "sensor_motion_presence"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "_tz3040_6ygjfyll|ts0001",
+      "drivers": [
+        "pir_sensor_2",
+        "sensor_motion_presence"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "_tz3040_6ygjfyll|ts0202",
+      "drivers": [
+        "pir_sensor_2",
+        "sensor_motion_presence"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "_tz3040_6ygjfyll|ts0601",
+      "drivers": [
+        "pir_sensor_2",
+        "sensor_motion_presence"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "_tz3000_nss8amz9|excellux",
+      "drivers": [
+        "pir_sensor_2",
+        "sensor_motion_presence"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "_tz3000_nss8amz9|ts0001",
+      "drivers": [
+        "pir_sensor_2",
+        "sensor_motion_presence"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "_tz3000_nss8amz9|ts0202",
+      "drivers": [
+        "pir_sensor_2",
+        "sensor_motion_presence"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "_tz3000_nss8amz9|ts0601",
+      "drivers": [
+        "pir_sensor_2",
+        "sensor_motion_presence"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "_tz3000_bsvqrxru|excellux",
+      "drivers": [
+        "pir_sensor_2",
+        "sensor_motion_presence"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "_tz3000_bsvqrxru|ts0001",
+      "drivers": [
+        "pir_sensor_2",
+        "sensor_motion_presence"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "_tz3000_bsvqrxru|ts0202",
+      "drivers": [
+        "pir_sensor_2",
+        "sensor_motion_presence"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "_tz3000_bsvqrxru|ts0601",
+      "drivers": [
+        "pir_sensor_2",
+        "sensor_motion_presence"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "_tz3040_wqmtjsyk|excellux",
+      "drivers": [
+        "pir_sensor_2",
+        "sensor_motion_presence"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "_tz3040_wqmtjsyk|ts0001",
+      "drivers": [
+        "pir_sensor_2",
+        "sensor_motion_presence"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "_tz3040_wqmtjsyk|ts0202",
+      "drivers": [
+        "pir_sensor_2",
+        "sensor_motion_presence"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "_tz3040_wqmtjsyk|ts0601",
+      "drivers": [
+        "pir_sensor_2",
+        "sensor_motion_presence"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "_tz3000_mg4dy6z6|excellux",
+      "drivers": [
+        "pir_sensor_2",
+        "sensor_motion_presence"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "_tz3000_mg4dy6z6|ts0001",
+      "drivers": [
+        "pir_sensor_2",
+        "sensor_motion_presence"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "_tz3000_mg4dy6z6|ts0202",
+      "drivers": [
+        "pir_sensor_2",
+        "sensor_motion_presence"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "_tz3000_mg4dy6z6|ts0601",
+      "drivers": [
+        "pir_sensor_2",
+        "sensor_motion_presence"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "_tz3000_wamqdr3f|ts0001",
+      "drivers": [
+        "plug",
+        "plug_energy_monitor"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "_tz3000_wamqdr3f|ts0003",
+      "drivers": [
+        "plug",
+        "plug_energy_monitor"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "_tz3000_wamqdr3f|ts000f",
+      "drivers": [
+        "plug",
+        "plug_energy_monitor"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "_tz3000_wamqdr3f|ts0011",
+      "drivers": [
+        "plug",
+        "plug_energy_monitor"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "_tz3000_fqoynhku|ts011f",
+      "drivers": [
+        "plug_energy_monitor",
+        "smartplug"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "_tz3000_fqoynhku|ts0121",
+      "drivers": [
+        "plug_energy_monitor",
+        "smartplug"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "_tz3000_fqoynhku|tso121",
+      "drivers": [
+        "plug_energy_monitor",
+        "smartplug"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "_tz3000_j1v25l17|ts011f",
+      "drivers": [
+        "plug_energy_monitor",
+        "smartplug"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "_tz3000_j1v25l17|ts0121",
+      "drivers": [
+        "plug_energy_monitor",
+        "smartplug"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "_tz3000_j1v25l17|tso121",
+      "drivers": [
+        "plug_energy_monitor",
+        "smartplug"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "_tze200_2pddnnrk|ts0601",
+      "drivers": [
+        "rain_sensor",
+        "sensor_motion_presence"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "_tze200_jsaqgakf|ts0601",
+      "drivers": [
+        "rain_sensor",
+        "sensor_motion_presence"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "hobeian|ts0207",
+      "drivers": [
+        "rain_sensor",
+        "water_leak_sensor"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "_tz3210_k1pe6ibm|ts0601",
+      "drivers": [
+        "rgb_led_strip_controller",
+        "wall_dimmer_tuya"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "_tz3000_peszejy7|ts0601",
+      "drivers": [
+        "scene_switch_1",
+        "smart_button_switch"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "_tz3000_peszejy7|ts0215a",
+      "drivers": [
+        "scene_switch_1",
+        "smart_button_switch"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "hobeian|ts0044",
+      "drivers": [
+        "scene_switch_4",
+        "sensor_contact_zigbee",
+        "switch_3gang"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "hobeian|ts1002",
+      "drivers": [
+        "scene_switch_4",
+        "switch_3gang"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "hobeian|ts0003",
+      "drivers": [
+        "sensor_contact_zigbee",
+        "switch_1gang",
+        "switch_2gang",
+        "switch_3gang"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "hobeian|ts0013",
+      "drivers": [
+        "sensor_contact_zigbee",
+        "switch_2gang",
+        "switch_3gang"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "hobeian|ts0043",
+      "drivers": [
+        "sensor_contact_zigbee",
+        "switch_3gang"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "hobeian|ts130f",
+      "drivers": [
+        "sensor_contact_zigbee",
+        "switch_1gang",
+        "switch_3gang"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "_tz3000_qgwcxxws|ts0601",
+      "drivers": [
+        "smart_button_switch",
+        "switch_1gang"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "_tz3000_itb0omhv|ts0601",
+      "drivers": [
+        "smart_button_switch",
+        "switch_1gang"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "_tz3000_cjfmu5he|ts0049",
+      "drivers": [
+        "smart_garden_irrigation_control",
+        "water_valve_garden"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "_tz3000_cjfmu5he|ts0601",
+      "drivers": [
+        "smart_garden_irrigation_control",
+        "water_valve_garden"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "_tz3000_kz1anoi8|ts0049",
+      "drivers": [
+        "smart_garden_irrigation_control",
+        "water_valve_garden"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "_tz3000_kz1anoi8|ts0601",
+      "drivers": [
+        "smart_garden_irrigation_control",
+        "water_valve_garden"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "_tz3290_ixd9mvv4|ts0601",
+      "drivers": [
+        "smart_irrigation_valve",
+        "water_valve_smart"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "_tze200_ntcy3xu1|gs361a-h04",
+      "drivers": [
+        "smoke_detector_advanced",
+        "smoke_sensor2"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "_tze200_ntcy3xu1|hs1sa",
+      "drivers": [
+        "smoke_detector_advanced",
+        "smoke_sensor2"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "_tze200_ntcy3xu1|hs3sa",
+      "drivers": [
+        "smoke_detector_advanced",
+        "smoke_sensor2"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "_tze200_ntcy3xu1|jtyj-gd-01lm/bw",
+      "drivers": [
+        "smoke_detector_advanced",
+        "smoke_sensor2"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "_tze200_ntcy3xu1|nas-sd02b0",
+      "drivers": [
+        "smoke_detector_advanced",
+        "smoke_sensor2"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "_tze200_ntcy3xu1|pg-s11z",
+      "drivers": [
+        "smoke_detector_advanced",
+        "smoke_sensor2"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "_tze200_ntcy3xu1|sa12izl",
+      "drivers": [
+        "smoke_detector_advanced",
+        "smoke_sensor2"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "_tze200_ntcy3xu1|sd8sc_00.00.03.12tc",
+      "drivers": [
+        "smoke_detector_advanced",
+        "smoke_sensor2"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "_tze200_ntcy3xu1|smszb-120",
+      "drivers": [
+        "smoke_detector_advanced",
+        "smoke_sensor2"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "_tze200_ntcy3xu1|sssqs01lm",
+      "drivers": [
+        "smoke_detector_advanced",
+        "smoke_sensor2"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "_tze200_ntcy3xu1|ts0205",
+      "drivers": [
+        "smoke_detector_advanced",
+        "smoke_sensor2"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "_tze200_ntcy3xu1|ts0601",
+      "drivers": [
+        "smoke_detector_advanced",
+        "smoke_sensor2"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "_tze200_ntcy3xu1|yg400a",
+      "drivers": [
+        "smoke_detector_advanced",
+        "smoke_sensor2"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "_tze200_yh7aoahi|ts0205",
+      "drivers": [
+        "smoke_sensor",
+        "smoke_sensor3"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "_tze284_6ycgarab|ts0205",
+      "drivers": [
+        "smoke_sensor",
+        "smoke_sensor3"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "hobeian|ts000f",
+      "drivers": [
+        "switch_1gang",
+        "switch_2gang"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "hobeian|ts0012",
+      "drivers": [
+        "switch_1gang",
+        "switch_2gang",
+        "switch_3gang"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "hobeian|ts0014",
+      "drivers": [
+        "switch_1gang",
+        "switch_3gang"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "hobeian|ts0111",
+      "drivers": [
+        "switch_1gang",
+        "switch_3gang"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "hobeian|ts011f",
+      "drivers": [
+        "switch_1gang",
+        "switch_2gang",
+        "switch_3gang",
+        "vibration_sensor"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "hobeian|ts0002",
+      "drivers": [
+        "switch_2gang",
+        "switch_3gang"
+      ],
+      "note": "P2440 merge remaining after prune-apply"
+    },
+    {
+      "key": "hobeian|Hobeian",
+      "drivers": [
+        "button_wireless_1",
+        "climate_sensor",
+        "contact_sensor",
+        "gas_sensor",
+        "illuminance_sensor",
+        "presence_sensor_radar",
+        "rain_sensor",
+        "sensor_contact_zigbee",
+        "siren",
+        "soil_sensor",
+        "switch_1gang",
+        "switch_2gang",
+        "switch_3gang",
+        "vibration_sensor",
+        "water_leak_sensor"
+      ],
+      "note": "P2440 exact-key baseline merge"
+    },
+    {
+      "key": "hobeian|HOBEIAN",
+      "drivers": [
+        "button_wireless_1",
+        "climate_sensor",
+        "contact_sensor",
+        "gas_sensor",
+        "illuminance_sensor",
+        "presence_sensor_radar",
+        "rain_sensor",
+        "sensor_contact_zigbee",
+        "siren",
+        "soil_sensor",
+        "switch_1gang",
+        "switch_2gang",
+        "switch_3gang",
+        "vibration_sensor",
+        "water_leak_sensor"
+      ],
+      "note": "P2440 exact-key baseline merge"
+    },
+    {
+      "key": "hobeian|TS0001",
+      "drivers": [
+        "button_wireless_1",
+        "soil_sensor",
+        "switch_1gang",
+        "switch_3gang"
+      ],
+      "note": "P2440 exact-key baseline merge"
+    },
+    {
+      "key": "hobeian|TS0041",
+      "drivers": [
+        "button_wireless_1",
+        "switch_3gang"
+      ],
+      "note": "P2440 exact-key baseline merge"
+    },
+    {
+      "key": "hobeian|TS004F",
+      "drivers": [
+        "button_wireless_1",
+        "presence_sensor_radar",
+        "sensor_contact_zigbee",
+        "switch_3gang"
+      ],
+      "note": "P2440 exact-key baseline merge"
+    },
+    {
+      "key": "hobeian|TS0215A",
+      "drivers": [
+        "button_wireless_1",
+        "climate_sensor",
+        "presence_sensor_radar",
+        "switch_3gang"
+      ],
+      "note": "P2440 exact-key baseline merge"
+    },
+    {
+      "key": "hobeian|TS0601",
+      "drivers": [
+        "button_wireless_1",
+        "climate_sensor",
+        "gas_sensor",
+        "illuminance_sensor",
+        "presence_sensor_radar",
+        "rain_sensor",
+        "sensor_contact_zigbee",
+        "siren",
+        "soil_sensor",
+        "switch_1gang",
+        "switch_2gang",
+        "switch_3gang",
+        "vibration_sensor",
+        "water_leak_sensor"
+      ],
+      "note": "P2440 exact-key baseline merge"
+    },
+    {
+      "key": "hobeian|01MINIZB",
+      "drivers": [
+        "climate_sensor",
+        "switch_1gang",
+        "switch_3gang"
+      ],
+      "note": "P2440 exact-key baseline merge"
+    },
+    {
+      "key": "hobeian|BASICZBR3",
+      "drivers": [
+        "climate_sensor",
+        "soil_sensor",
+        "switch_1gang",
+        "switch_3gang"
+      ],
+      "note": "P2440 exact-key baseline merge"
+    },
+    {
+      "key": "hobeian|S26R2ZB",
+      "drivers": [
+        "climate_sensor",
+        "soil_sensor",
+        "switch_1gang",
+        "switch_3gang"
+      ],
+      "note": "P2440 exact-key baseline merge"
+    },
+    {
+      "key": "hobeian|S31ZB",
+      "drivers": [
+        "climate_sensor",
+        "soil_sensor",
+        "switch_1gang",
+        "switch_3gang"
+      ],
+      "note": "P2440 exact-key baseline merge"
+    },
+    {
+      "key": "hobeian|TS0001_power",
+      "drivers": [
+        "climate_sensor",
+        "switch_1gang",
+        "switch_3gang"
+      ],
+      "note": "P2440 exact-key baseline merge"
+    },
+    {
+      "key": "hobeian|TS0001_switch",
+      "drivers": [
+        "climate_sensor",
+        "switch_1gang",
+        "switch_3gang"
+      ],
+      "note": "P2440 exact-key baseline merge"
+    },
+    {
+      "key": "hobeian|TS0001_switch_module",
+      "drivers": [
+        "climate_sensor",
+        "switch_1gang",
+        "switch_3gang"
+      ],
+      "note": "P2440 exact-key baseline merge"
+    },
+    {
+      "key": "hobeian|TS0004",
+      "drivers": [
+        "climate_sensor",
+        "presence_sensor_radar",
+        "switch_1gang",
+        "switch_3gang"
+      ],
+      "note": "P2440 exact-key baseline merge"
+    },
+    {
+      "key": "hobeian|TS0011",
+      "drivers": [
+        "climate_sensor",
+        "switch_1gang",
+        "switch_3gang"
+      ],
+      "note": "P2440 exact-key baseline merge"
+    },
+    {
+      "key": "hobeian|TS0101",
+      "drivers": [
+        "climate_sensor",
+        "switch_1gang",
+        "switch_3gang"
+      ],
+      "note": "P2440 exact-key baseline merge"
+    },
+    {
+      "key": "hobeian|TS0726",
+      "drivers": [
+        "climate_sensor",
+        "sensor_contact_zigbee",
+        "switch_1gang",
+        "switch_2gang",
+        "switch_3gang"
+      ],
+      "note": "P2440 exact-key baseline merge"
+    },
+    {
+      "key": "hobeian|TS110E",
+      "drivers": [
+        "climate_sensor",
+        "presence_sensor_radar",
+        "switch_1gang",
+        "switch_3gang"
+      ],
+      "note": "P2440 exact-key baseline merge"
+    },
+    {
+      "key": "hobeian|TS4100",
+      "drivers": [
+        "climate_sensor",
+        "switch_1gang",
+        "switch_3gang"
+      ],
+      "note": "P2440 exact-key baseline merge"
+    },
+    {
+      "key": "hobeian|ZBM5-1C-120",
+      "drivers": [
+        "climate_sensor",
+        "switch_1gang",
+        "switch_3gang"
+      ],
+      "note": "P2440 exact-key baseline merge"
+    },
+    {
+      "key": "hobeian|ZBM5-2C-120",
+      "drivers": [
+        "climate_sensor",
+        "switch_1gang",
+        "switch_3gang"
+      ],
+      "note": "P2440 exact-key baseline merge"
+    },
+    {
+      "key": "hobeian|ZBM5-3C-120",
+      "drivers": [
+        "climate_sensor",
+        "switch_1gang",
+        "switch_3gang"
+      ],
+      "note": "P2440 exact-key baseline merge"
+    },
+    {
+      "key": "hobeian|ZBMINI",
+      "drivers": [
+        "climate_sensor",
+        "soil_sensor",
+        "switch_1gang",
+        "switch_3gang"
+      ],
+      "note": "P2440 exact-key baseline merge"
+    },
+    {
+      "key": "hobeian|ZBMINIL2",
+      "drivers": [
+        "climate_sensor",
+        "soil_sensor",
+        "switch_1gang",
+        "switch_3gang"
+      ],
+      "note": "P2440 exact-key baseline merge"
+    },
+    {
+      "key": "hobeian|ZBMINIL2-R2",
+      "drivers": [
+        "climate_sensor",
+        "switch_1gang",
+        "switch_3gang"
+      ],
+      "note": "P2440 exact-key baseline merge"
+    },
+    {
+      "key": "hobeian|ZBMINIR",
+      "drivers": [
+        "climate_sensor",
+        "switch_1gang",
+        "switch_3gang"
+      ],
+      "note": "P2440 exact-key baseline merge"
+    },
+    {
+      "key": "hobeian|ZBMINIR2",
+      "drivers": [
+        "climate_sensor",
+        "switch_1gang",
+        "switch_3gang"
+      ],
+      "note": "P2440 exact-key baseline merge"
+    },
+    {
+      "key": "hobeian|ZBMINIR2-R2",
+      "drivers": [
+        "climate_sensor",
+        "switch_1gang",
+        "switch_3gang"
+      ],
+      "note": "P2440 exact-key baseline merge"
+    },
+    {
+      "key": "hobeian|TS0203",
+      "drivers": [
+        "contact_sensor",
+        "presence_sensor_radar",
+        "sensor_contact_zigbee",
+        "switch_1gang"
+      ],
+      "note": "P2440 exact-key baseline merge"
+    },
+    {
+      "key": "hobeian|TS0225",
+      "drivers": [
+        "gas_sensor",
+        "illuminance_sensor",
+        "presence_sensor_radar"
+      ],
+      "note": "P2440 exact-key baseline merge"
+    },
+    {
+      "key": "hobeian|TS0044",
+      "drivers": [
+        "scene_switch_4",
+        "sensor_contact_zigbee",
+        "switch_3gang"
+      ],
+      "note": "P2440 exact-key baseline merge"
+    },
+    {
+      "key": "hobeian|TS1002",
+      "drivers": [
+        "scene_switch_4",
+        "switch_3gang"
+      ],
+      "note": "P2440 exact-key baseline merge"
+    },
+    {
+      "key": "hobeian|TS0003",
+      "drivers": [
+        "sensor_contact_zigbee",
+        "switch_1gang",
+        "switch_2gang",
+        "switch_3gang"
+      ],
+      "note": "P2440 exact-key baseline merge"
+    },
+    {
+      "key": "hobeian|TS0013",
+      "drivers": [
+        "sensor_contact_zigbee",
+        "switch_2gang",
+        "switch_3gang"
+      ],
+      "note": "P2440 exact-key baseline merge"
+    },
+    {
+      "key": "hobeian|TS0043",
+      "drivers": [
+        "sensor_contact_zigbee",
+        "switch_3gang"
+      ],
+      "note": "P2440 exact-key baseline merge"
+    },
+    {
+      "key": "hobeian|TS130F",
+      "drivers": [
+        "sensor_contact_zigbee",
+        "switch_1gang",
+        "switch_3gang"
+      ],
+      "note": "P2440 exact-key baseline merge"
+    },
+    {
+      "key": "hobeian|TS000F",
+      "drivers": [
+        "switch_1gang",
+        "switch_2gang"
+      ],
+      "note": "P2440 exact-key baseline merge"
+    },
+    {
+      "key": "hobeian|TS0012",
+      "drivers": [
+        "switch_1gang",
+        "switch_2gang",
+        "switch_3gang"
+      ],
+      "note": "P2440 exact-key baseline merge"
+    },
+    {
+      "key": "hobeian|TS0014",
+      "drivers": [
+        "switch_1gang",
+        "switch_3gang"
+      ],
+      "note": "P2440 exact-key baseline merge"
+    },
+    {
+      "key": "hobeian|TS0111",
+      "drivers": [
+        "switch_1gang",
+        "switch_3gang"
+      ],
+      "note": "P2440 exact-key baseline merge"
+    },
+    {
+      "key": "hobeian|TS011F",
+      "drivers": [
+        "switch_1gang",
+        "switch_2gang",
+        "switch_3gang",
+        "vibration_sensor"
+      ],
+      "note": "P2440 exact-key baseline merge"
+    },
+    {
+      "key": "hobeian|TS0002",
+      "drivers": [
+        "switch_2gang",
+        "switch_3gang"
+      ],
+      "note": "P2440 exact-key baseline merge"
     }
-  ]
+  ],
+  "updated": "2026-09-10",
+  "note": " | P2440 baseline merge +538",
+  "updatedAt": "2026-09-10T10:35:08.531Z"
 }
