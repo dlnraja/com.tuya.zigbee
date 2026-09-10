@@ -3074,5 +3074,8 @@
   },
   "9.0.848": {
     "en": "Limited Grok/AI bot burn (forfait), local issue solver, multi-source harvest unit tests, CI wires P2435-P2438."
+  },
+  "9.0.849": {
+    "en": "Fixed smart_knob TS004F button presses (_TZ3000_kaflzta4) by forcing scene/event mode instead of skipping 0x8004."
   }
 }
