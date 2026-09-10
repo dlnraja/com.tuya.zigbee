@@ -6,7 +6,7 @@ Architecture: `config/enrichment/manifest.json` · profiles: `docs/knowledge/pro
 
 - Live highest: **#—**
 - Parse status: —
-- User profiles: **113** (6 curated)
+- User profiles: **115** (6 curated)
 - Couple DP profiles: **121**
 
 ## Commands

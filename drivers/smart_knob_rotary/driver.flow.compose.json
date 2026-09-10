@@ -327,6 +327,22 @@
         "en": "Brightness changed to {brightness}%",
         "fr": "Luminosité {brightness}%"
       }
+    },
+    {
+      "id": "smart_knob_rotary_physical_on",
+      "title": {
+        "en": "Physical button on",
+        "fr": "Physical button on"
+      },
+      "args": []
+    },
+    {
+      "id": "smart_knob_rotary_physical_off",
+      "title": {
+        "en": "Physical button off",
+        "fr": "Physical button off"
+      },
+      "args": []
     }
   ],
   "conditions": [

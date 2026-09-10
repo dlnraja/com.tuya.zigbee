@@ -1,6 +1,6 @@
 # Enrichment profiles index
 
-Generated: 2026-09-10T06:41:30 · manifest `config/enrichment/manifest.json`
+Generated: 2026-09-10T17:13:18 · manifest `config/enrichment/manifest.json`
 
 ## Users
 
@@ -9,8 +9,8 @@ Generated: 2026-09-10T06:41:30 · manifest `config/enrichment/manifest.json`
 | SunBeech | 25 | 5 | stub | [profile](users/SunBeech.md) |
 | SergeP | 24 | 2 | stub | [profile](users/SergeP.md) |
 | dlnraja | 13 | 1 | stub | [profile](users/dlnraja.md) |
+| Peter_van_Werkhoven | 10 | 5 | yes | [profile](users/Peter_van_Werkhoven.md) |
 | Gabriel_Pedrosa_Mach | 10 | 19 | yes | [profile](users/Gabriel_Pedrosa_Mach.md) |
-| Peter_van_Werkhoven | 9 | 5 | yes | [profile](users/Peter_van_Werkhoven.md) |
 | VicHY | 8 | 2 | yes | [profile](users/VicHY.md) |
 | smarthomesven | 8 | 0 | stub | [profile](users/smarthomesven.md) |
 | Zemismart_Official | 6 | 2 | stub | [profile](users/Zemismart_Official.md) |

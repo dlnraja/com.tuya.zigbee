@@ -632,21 +632,23 @@
       "driverId": "smart_knob",
       "homeyClass": "button",
       "mfrCount": 32,
-      "pidCount": 2,
+      "pidCount": 4,
       "capCount": 4,
       "settingCount": 0,
       "flowTriggers": 11,
       "gaps": [],
       "productIds": [
         "TS004F",
-        "ERS-10TZBVK-AA"
+        "ERS-10TZBVK-AA",
+        "ZG-101ZD",
+        "ZG-101Z"
       ]
     },
     {
       "driverId": "smart_knob_rotary",
       "homeyClass": "button",
       "mfrCount": 24,
-      "pidCount": 4,
+      "pidCount": 6,
       "capCount": 6,
       "settingCount": 1,
       "flowTriggers": 11,
@@ -655,7 +657,9 @@
         "TS004F",
         "ERS-10TZBVK-AA",
         "TS0044",
-        "TS0601"
+        "TS0601",
+        "ZG-101ZD",
+        "ZG-101Z"
       ]
     },
     {
@@ -5302,7 +5306,7 @@
     {
       "driverId": "curtain_motor",
       "homeyClass": "windowcoverings",
-      "mfrCount": 831,
+      "mfrCount": 837,
       "pidCount": 48,
       "capCount": 8,
       "settingCount": 19,
@@ -5320,7 +5324,7 @@
     {
       "driverId": "curtain_motor_shutter",
       "homeyClass": "windowcoverings",
-      "mfrCount": 88,
+      "mfrCount": 84,
       "pidCount": 45,
       "capCount": 7,
       "settingCount": 12,
@@ -5338,7 +5342,7 @@
     {
       "driverId": "curtain_motor_tilt",
       "homeyClass": "windowcoverings",
-      "mfrCount": 36,
+      "mfrCount": 32,
       "pidCount": 2,
       "capCount": 5,
       "settingCount": 0,
