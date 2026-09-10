@@ -15,10 +15,10 @@
     "zclValue": 0
   },
   "sceneModeOneButton": {
-    "mfrSuffixes": ["kaflzta4", "ja5osu5g", "an5rjiwd"],
+    "mfrSuffixes": ["kaflzta4", "ja5osu5g"],
     "driver": "smart_knob",
     "defaultMode": "scene",
-    "why": "P2439/P2442 diag a342c411 — 1-btn press needs event/0xFD"
+    "why": "P2439/P2442 diag a342c411 — 1-btn TS004F press needs event/0xFD. P2453: an5rjiwd is TS0041→button_wireless_1 (not TS004F)."
   },
   "rotaryCouples": [
     { "mfr": "_TZ3000_uri7ongn", "pid": "TS004F", "driver": "smart_knob", "z2m": "ERS-10TZBVK-AA" },

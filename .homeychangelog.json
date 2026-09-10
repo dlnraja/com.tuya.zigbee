@@ -1,4 +1,7 @@
 {
+  "9.0.862": {
+    "en": "Fixed switch pairing catalogs (BSEED/Moes 1-4 gang) and Moes curtain fingerprint routing; removed extra button tiles on 4-gang switches."
+  },
   "9.0.861": {
     "en": "Fixed switch pairing catalogs (BSEED/Moes 1-4 gang) and Moes curtain fingerprint routing; removed extra button tiles on 4-gang switches."
   },
@@ -3114,7 +3117,7 @@
   "9.0.860": {
     "en": "Fixed smart knob switch voice-safety duplicate options and timer context; kaflzta4 press recovery."
   },
-  "9.0.862": {
-    "en": "Fixed switch pairing catalogs (BSEED/Moes 1-4 gang) and Moes curtain fingerprint routing; removed extra button tiles on 4-gang switches."
+  "9.0.863": {
+    "en": "Fixed 1-btn remote pairing (ja5osu5g scene knob, an5rjiwd wireless button) and 4-btn wall remotes (5tqxpine); presence radar no longer sticks motion from bad DP1."
   }
 }

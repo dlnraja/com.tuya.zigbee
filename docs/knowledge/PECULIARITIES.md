@@ -430,8 +430,8 @@ Generated 2026-09-08T07:29:59.472Z from registry (201 cases) × compound DB (454
 - Couple: `_TZ3000_kaflzta4` + TS004F
 - Protocol: zcl (genOnOff 0x8004 event/scene + 0xFD)
 - Diags: `a342c411` (9.0.846 press dead), `8adfe4ce` (9.0.857 still not working — log had no knob RX, curtain only)
-- Notes: Moes 1-btn TS004F scene remote on `smart_knob` (not rotary ERS-10). **Must** write `0x8004=1` (event). **P2439/P2442:** never classify as `family=knob` / skip 0x8004 when ABSENT at wake. **P2450:** reset stuck `button_mode=dimmer` → auto/scene; on late MFR-ENSURE re-apply scene + re-arm 0xFD. Sibling scene mfrs: `ja5osu5g`, `an5rjiwd`. Rotary `uri7ongn`/`ixla93vd` stay command/dimmer (P2448).
-- Sources: Homey diag a342c411/8adfe4ce, Z2M TS004F operation_mode=event, P2439, P2442, P2450
+- Notes: Moes 1-btn TS004F scene remote on `smart_knob` (not rotary ERS-10). **Must** write `0x8004=1` (event). **P2439/P2442:** never classify as `family=knob` / skip 0x8004 when ABSENT at wake. **P2450:** reset stuck `button_mode=dimmer` → auto/scene; on late MFR-ENSURE re-apply scene + re-arm 0xFD. Sibling scene mfr: `ja5osu5g`+TS004F. **P2453:** `an5rjiwd` is TS0041 → `button_wireless_1` (not smart_knob / not button_wireless_4). Rotary `uri7ongn`/`ixla93vd` stay command/dimmer (P2448).
+- Sources: Homey diag a342c411/8adfe4ce, Z2M TS004F operation_mode=event, P2439, P2442, P2450, P2453
 
 ### `p190-ts130f-curtain-not-climate-or-dimmer` → `wall_curtain_switch`
 

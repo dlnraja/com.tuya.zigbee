@@ -61,13 +61,13 @@ describe('P92.64 — button cross-source enrichment', () => {
     assert.ok(src.includes('getDeviceProfile?.()?.debounceMs'), 'profile-aware debounce');
   });
 
-  it('dlnraja#121: _TZ3000_an5rjiwd is in button_wireless_4, not switch_1gang', () => {
+  it('dlnraja#121/P2453: _TZ3000_an5rjiwd is in button_wireless_1, not switch_1gang/4', () => {
+    const b1 = JSON.parse(read('drivers/button_wireless_1/driver.compose.json'));
     const b4 = JSON.parse(read('drivers/button_wireless_4/driver.compose.json'));
     const s1 = JSON.parse(read('drivers/switch_1gang/driver.compose.json'));
-    const b4m = b4.zigbee.manufacturerName;
-    assert.ok(b4m.includes('_TZ3000_an5rjiwd'), 'canonical present');
-    assert.ok(b4m.includes('_TZ3000_AN5RJIWD'), 'upper present');
-    assert.ok(b4m.includes('_tz3000_an5rjiwd'), 'lower present');
+    const b1m = b1.zigbee.manufacturerName;
+    assert.ok(b1m.some((m) => /an5rjiwd/i.test(m)), 'an5rjiwd on button_wireless_1');
+    assert.ok(!b4.zigbee.manufacturerName.some((m) => /an5rjiwd/i.test(m)), 'removed from button_wireless_4');
     assert.ok(!s1.zigbee.manufacturerName.some((m) => /an5rjiwd/i.test(m)), 'removed from switch_1gang');
   });
 

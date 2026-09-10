@@ -18,7 +18,7 @@ Resilience: `config/resilience/critical-gaps.json` → `rotary_knob_command_mode
 
 - Sacred couples in `rotary-knob-ssot.json` → `family=knob`, `defaultMode=dimmer`, write `0x8004=0`
 - Drivers: `smart_knob_rotary`, `smart_knob_switch`; ERS-10 mfrs on `smart_knob`
-- **Stay scene (P2439):** `kaflzta4` / `ja5osu5g` / `an5rjiwd`
+- **Stay scene (P2439/P2453):** `kaflzta4` / `ja5osu5g` (+TS004F on `smart_knob`). `an5rjiwd` is **TS0041** → `button_wireless_1` (not TS004F scene knob).
 - **Never** add `abrsvsou` / `4fjiwweb` to `KNOB_MFR` (locked `button_wireless_4`)
 - Parallel RX: levelControl step/move + genOnOff `0xFC`
 

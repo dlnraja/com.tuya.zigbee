@@ -6613,6 +6613,58 @@
       ],
       "protocol": "tuya_dp",
       "notes": "Topic 1 #1379 temp/humidity sensor"
+    },
+    {
+      "id": "p2453-ja5osu5g-ts004f-smart-knob",
+      "mfr": [
+        "_TZ3000_ja5osu5g",
+        "_tz3000_ja5osu5g"
+      ],
+      "productId": [
+        "TS004F"
+      ],
+      "canonicalDriver": "smart_knob",
+      "forbiddenDrivers": [
+        "button_wireless_1",
+        "button_wireless_4"
+      ],
+      "source": "p2453-gmail-gh",
+      "notes": "ZHA/Z2M 1-btn TS004F scene — sibling kaflzta4"
+    },
+    {
+      "id": "p2453-an5rjiwd-ts0041-btn1",
+      "mfr": [
+        "_TZ3000_an5rjiwd",
+        "_tz3000_an5rjiwd"
+      ],
+      "productId": [
+        "TS0041"
+      ],
+      "canonicalDriver": "button_wireless_1",
+      "forbiddenDrivers": [
+        "button_wireless_4",
+        "smart_knob",
+        "switch_1gang"
+      ],
+      "source": "p2453-gmail-gh",
+      "notes": "Johan #1128 / ZHA TS0041 — not 4-gang"
+    },
+    {
+      "id": "p2453-5tqxpine-ts0044-scene",
+      "mfr": [
+        "_TZ3000_5tqxpine",
+        "_tz3000_5tqxpine"
+      ],
+      "productId": [
+        "TS0044"
+      ],
+      "canonicalDriver": "scene_switch_4",
+      "forbiddenDrivers": [
+        "button_wireless_4",
+        "smart_knob"
+      ],
+      "source": "p2453-gmail-gh",
+      "notes": "Z2M iHseno 4-btn wall TS0044"
     }
   ]
 }
