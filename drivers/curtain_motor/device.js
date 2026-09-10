@@ -70,7 +70,8 @@ class CurtainMotorDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedC
       || this.getData?.()?.manufacturerName
       || ''
     ).toLowerCase();
-    return mfr.includes('fodv6bkr') || mfr.includes('libht6ua');
+    return mfr.includes('fodv6bkr') || mfr.includes('libht6ua')
+      || mfr.includes('icka1clh') || mfr.includes('zah67ekd');
   }
 
   // v5.5.322: Extended DP mappings with lux sensor and button support
