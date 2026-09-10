@@ -22,7 +22,7 @@ Failing steps: **0** / 8
 ### flow-dups
 
 ```
-Flow card ID uniqueness OK (5952 compose ids)
+Flow card ID uniqueness OK (5954 compose ids)
 
 ```
 
@@ -51,7 +51,7 @@ Cards with orphan tokens (declared but not used in args/title): 0
 
 ```
 {
-  "generatedAt": "2026-09-10T06:42:07.887Z",
+  "generatedAt": "2026-09-10T17:13:54.295Z",
   "mode": "dry-run",
   "driversTouched": 1,
   "orphanTokensFixed": 0,

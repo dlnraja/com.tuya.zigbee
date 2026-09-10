@@ -7,8 +7,8 @@ Mode: **apply** | Crawl: **no**
 | Metric | Baseline | Final | Δ |
 |--------|----------|-------|---|
 | Drivers | 431 | 431 | 0 |
-| MFR entries | 17066 | 17064 | -2 |
-| PID entries | 3022 | 3022 | 0 |
+| MFR entries | 17064 | 17062 | -2 |
+| PID entries | 3026 | 3026 | 0 |
 
 ## Phases
 
@@ -38,7 +38,7 @@ Mode: **apply** | Crawl: **no**
 - sync-enrichment-profiles: OK
 - sacred-couple-gate: OK
 - anti-bot-gate: OK
-- fp-collision-check: FAIL
+- fp-collision-check: OK
 - flow-l99: OK
 
 ✅ Coverage maintained or enriched

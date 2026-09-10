@@ -11,7 +11,7 @@ Mode: **apply**
 | thermostat | 31 | 1 | 1621 | 178 |
 | other | 13 | 3 | 924 | 89 |
 | switch | 9 | 2 | 372 | 66 |
-| curtain | 9 | 1 | 1045 | 45 |
+| curtain | 9 | 1 | 1043 | 45 |
 | fan | 6 | 0 | 92 | 20 |
 | siren | 6 | 0 | 140 | 30 |
 | wifi | 6 | 0 | 0 | 16 |
@@ -22,6 +22,6 @@ Mode: **apply**
 | ir | 1 | 0 | 136 | 6 |
 | windowcoverings | 1 | 0 | 2 | 6 |
 
-**Totals:** 431 drivers · 17157 MFR entries · 86 with soft gaps
+**Totals:** 431 drivers · 17155 MFR entries · 86 with soft gaps
 
 Doctrine: never invent productId · never degrade coverage · free scrape + forfait AI only.

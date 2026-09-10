@@ -1,6 +1,6 @@
 # Button Flow Harvest — NEED_ACTION
 
-Generated: 2026-09-10T06:42:09.563Z
+Generated: 2026-09-10T17:13:55.768Z
 
 ## Exempt (not button-flow scope)
 
@@ -22,7 +22,7 @@ CI harvest tries generic patterns first; `FlowCardHeuristics` + `ButtonDevice` r
 - `remote_button_wireless_scene` (button) — 12 CI-only misses; hashed Ngang cards — runtime ButtonDevice/FlowCardHeuristics resolves
 - `remote_button_wireless_usb` (socket) — 3 CI-only misses; socket hybrid — runtime PhysicalButtonMixin + switch_1gang/physical_on
 - `remote_button_wireless_valve` (socket) — 12 CI-only misses; hashed Ngang cards — runtime ButtonDevice/FlowCardHeuristics resolves
-- `smart_knob_rotary` (button) — 3 CI-only misses; optional press type not declared
+- `smart_knob_rotary` (button) — 3 CI-only misses; socket hybrid — runtime PhysicalButtonMixin + switch_1gang/physical_on
 
 ## Open issues
 
@@ -342,8 +342,8 @@ CI harvest tries generic patterns first; `FlowCardHeuristics` + `ButtonDevice` r
   - `smart_knob_button_1gang_button_multi_press`
   - `smart_knob_button_1gang_button_1_pressed`
 
-### smart_knob_rotary (button, 11 triggers)
-- **app_json_drift** (high) — 11 hits
+### smart_knob_rotary (button, 13 triggers)
+- **app_json_drift** (high) — 13 hits
   - `smart_knob_rotary_rotate_left`
   - `smart_knob_rotary_rotate_right`
   - `smart_knob_rotary_pressed`

@@ -6,7 +6,7 @@ Critical gaps: **0**
 - Drivers: 431
 - With flow.compose: 431
 - Without: none
-- Flow card entries (compose): 5819
+- Flow card entries (compose): 5821
 
 ## Clusters
 - Compose unique: 34
@@ -15,10 +15,12 @@ Critical gaps: **0**
 
 ## DP knowledge
 - Knowledge couples: 121
-- Registry couples (Tuya EF00-eligible): 177
-- Covered: 120 (67.8%)
-- Skipped brand/external soft-watch: 15
+- Registry couples (Tuya EF00-eligible): 179
+- Covered: 120 (67%)
+- Skipped brand/external soft-watch: 16
 - Uncovered:
+  - _TZ3000_kaflzta4|TS004F
+  - _TZE200_icka1clh|TS0601
   - _TZ3000_ptjcjise|TS0002
   - _TZ3000_xk5udnd6|TS0012
   - _TZE284_fodv6bkr|TS0601

@@ -4595,16 +4595,16 @@
     "sacredCouples": [
       "_tz3000_kaflzta4+TS004F",
       "_tz3000_kaflzta4+ERS-10TZBVK-AA",
+      "_tz3000_kaflzta4+ZG-101ZD",
+      "_tz3000_kaflzta4+ZG-101Z",
       "_TZ3000_kaflzta4+TS004F",
       "_TZ3000_kaflzta4+ERS-10TZBVK-AA",
+      "_TZ3000_kaflzta4+ZG-101ZD",
+      "_TZ3000_kaflzta4+ZG-101Z",
       "_TZ3000_KAFLZTA4+TS004F",
       "_TZ3000_KAFLZTA4+ERS-10TZBVK-AA",
-      "_tz3000_g9g2xnch+TS004F",
-      "_tz3000_g9g2xnch+ERS-10TZBVK-AA",
-      "_tz3000_r0o2dahu+TS004F",
-      "_tz3000_r0o2dahu+ERS-10TZBVK-AA",
-      "_TZ3000_G9G2XNCH+TS004F",
-      "_TZ3000_G9G2XNCH+ERS-10TZBVK-AA"
+      "_TZ3000_KAFLZTA4+ZG-101ZD",
+      "_TZ3000_KAFLZTA4+ZG-101Z"
     ],
     "buttonCapabilities": [
       "button",
@@ -4658,7 +4658,9 @@
     ],
     "productIds": [
       "TS004F",
-      "ERS-10TZBVK-AA"
+      "ERS-10TZBVK-AA",
+      "ZG-101ZD",
+      "ZG-101Z"
     ],
     "mfrCount": 32
   },
@@ -4687,7 +4689,7 @@
       "button.press",
       "button.1"
     ],
-    "triggerCount": 11,
+    "triggerCount": 13,
     "conditionCount": 1,
     "actionCount": 1,
     "triggerIds": [
@@ -4701,7 +4703,9 @@
       "smart_knob_rotary_press_and_rotate_left",
       "smart_knob_rotary_press_and_rotate_right",
       "smart_knob_rotary_scene_recall",
-      "smart_knob_rotary_brightness_changed"
+      "smart_knob_rotary_brightness_changed",
+      "smart_knob_rotary_physical_on",
+      "smart_knob_rotary_physical_off"
     ],
     "missingInAppJson": [
       "smart_knob_rotary_rotate_left",
@@ -4714,7 +4718,9 @@
       "smart_knob_rotary_press_and_rotate_left",
       "smart_knob_rotary_press_and_rotate_right",
       "smart_knob_rotary_scene_recall",
-      "smart_knob_rotary_brightness_changed"
+      "smart_knob_rotary_brightness_changed",
+      "smart_knob_rotary_physical_on",
+      "smart_knob_rotary_physical_off"
     ],
     "heuristicResolvable": true,
     "heuristicGaps": [],
@@ -4787,12 +4793,12 @@
             ]
           }
         ],
-        "reason": "optional press type not declared"
+        "reason": "socket hybrid — runtime PhysicalButtonMixin + switch_1gang/physical_on"
       },
       {
         "type": "app_json_drift",
         "severity": "high",
-        "count": 11,
+        "count": 13,
         "sample": [
           "smart_knob_rotary_rotate_left",
           "smart_knob_rotary_rotate_right",
@@ -4806,7 +4812,9 @@
       "TS004F",
       "ERS-10TZBVK-AA",
       "TS0044",
-      "TS0601"
+      "TS0601",
+      "ZG-101ZD",
+      "ZG-101Z"
     ],
     "mfrCount": 24
   },

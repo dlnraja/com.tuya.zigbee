@@ -1,12 +1,12 @@
 {
-  "generatedAt": "2026-09-10T06:41:53.804Z",
+  "generatedAt": "2026-09-10T17:13:41.439Z",
   "mode": "APPLY",
   "phases": [
     {
       "name": "mfs-db-dedupe",
       "ok": true,
       "exit": 0,
-      "tail": "[mfs-db-dedupe] OK — aucun doublon de casse (4408 clés)\n"
+      "tail": "[mfs-db-dedupe] OK — aucun doublon de casse (4409 clés)\n"
     },
     {
       "name": "sync-compose-to-mfs-db",
@@ -24,7 +24,7 @@
       "name": "align-mfs-db-intelligent",
       "ok": true,
       "exit": 0,
-      "tail": "rich_only p2317-etufnltx-ts1002-foria  \n  registry_enrich_only p2347-gabriel-zemismart-cartesian-doc-only  \n  registry_empty_mfr p2415-zg204zv-tze200-presence  \n  registry_empty_mfr p2415-zs301z-soil  \n  registry_bare_brand_multi_canon hobeian  \n  registry_bare_brand_multi_canon hobeian  \n  registry_bare_brand_multi_canon hobeian  \n  registry_bare_brand_multi_canon hobeian  \n  registry_oem_multi_canon _tz3000_wkai4ga5  \n  registry_bare_brand_multi_canon hobeian  \n  registry_bare_brand_multi_canon hobeian  \n  registry_bare_brand_multi_canon hobeian  \n  registry_bare_brand_multi_canon hobeian  \n"
+      "tail": "try_enrich_only p2317-etufnltx-ts1002-foria  \n  registry_enrich_only p2347-gabriel-zemismart-cartesian-doc-only  \n  registry_empty_mfr p2415-zg204zv-tze200-presence  \n  registry_empty_mfr p2415-zs301z-soil  \n  registry_bare_brand_multi_canon hobeian  \n  registry_bare_brand_multi_canon hobeian  \n  registry_bare_brand_multi_canon hobeian  \n  registry_bare_brand_multi_canon wing  \n  registry_bare_brand_multi_canon wing  \n  registry_bare_brand_multi_canon hobeian  \n  registry_oem_multi_canon _tz3000_wkai4ga5  \n  registry_bare_brand_multi_canon hobeian  \n  registry_bare_brand_multi_canon hobeian  \n"
     },
     {
       "name": "compose-mfsdb-class-guard",
@@ -42,7 +42,7 @@
       "name": "p2368-mfs-test",
       "ok": true,
       "exit": 0,
-      "tail": "    duration_ms: 58.058073\n      type: 'test'\n      ...\n    # Subtest: no case-duplicate mfr keys\n    ok 5 - no case-duplicate mfr keys\n      ---\n      duration_ms: 58.545318\n      type: 'test'\n      ...\n    # Subtest: UdpDiscoveryKeys SSOT exists (wifi unrelated sanity)\n    ok 6 - UdpDiscoveryKeys SSOT exists (wifi unrelated sanity)\n      ---\n      duration_ms: 0.290587\n      type: 'test'\n      ...\n    1..6\nok 1 - P2368 mfs_db hardening\n  ---\n  duration_ms: 681.754487\n  type: 'suite'\n  ...\n1..1\n# tests 6\n# suites 1\n# pass 6\n# fail 0\n# cancelled 0\n# skipped 0\n# todo 0\n# duration_ms 757.013703\n"
+      "tail": "    duration_ms: 58.844394\n      type: 'test'\n      ...\n    # Subtest: no case-duplicate mfr keys\n    ok 5 - no case-duplicate mfr keys\n      ---\n      duration_ms: 59.104586\n      type: 'test'\n      ...\n    # Subtest: UdpDiscoveryKeys SSOT exists (wifi unrelated sanity)\n    ok 6 - UdpDiscoveryKeys SSOT exists (wifi unrelated sanity)\n      ---\n      duration_ms: 0.256657\n      type: 'test'\n      ...\n    1..6\nok 1 - P2368 mfs_db hardening\n  ---\n  duration_ms: 680.285233\n  type: 'suite'\n  ...\n1..1\n# tests 6\n# suites 1\n# pass 6\n# fail 0\n# cancelled 0\n# skipped 0\n# todo 0\n# duration_ms 753.158134\n"
     }
   ],
   "pass": true
