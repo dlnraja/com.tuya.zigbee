@@ -3125,5 +3125,8 @@
   },
   "9.0.865": {
     "en": "Hardened CI publish workflows: package-lock root-only sync, mfs auto-heal on publish, e2e lock integrity gate."
+  },
+  "9.0.866": {
+    "en": "Fixed BSEED wired 2-gang pairing (_TZ3000_l9brjwau/TS0002): maps to wall switch with onoff/onoff.gang2 only — no battery or button clutter."
   }
 }

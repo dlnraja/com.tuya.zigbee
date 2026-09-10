@@ -9,9 +9,7 @@
   "class": "socket",
   "capabilities": [
     "onoff",
-    "onoff.gang2",
-    "button.1",
-    "button.2"
+    "onoff.gang2"
   ],
   "platforms": [
     "local"
@@ -22,22 +20,6 @@
   "images": {
     "small": "/drivers/wall_switch_2gang_1way/assets/images/small.png",
     "large": "/drivers/wall_switch_2gang_1way/assets/images/large.png"
-  },
-  "devices": {
-    "secondSwitch": {
-      "class": "socket",
-      "capabilities": [
-        "onoff"
-      ],
-      "name": {
-        "en": "Wall Switch 2-Gang - Gang 2",
-        "nl": "Muurschakelaar 2-Gang - Gang 2"
-      },
-      "images": {
-        "small": "drivers/wall_switch_2gang_1way/assets/images/small.png",
-        "large": "drivers/wall_switch_2gang_1way/assets/images/large.png"
-      }
-    }
   },
   "zigbee": {
     "manufacturerName": [
@@ -60,7 +42,11 @@
       "_TZ3000_JJDKHUEQ",
       "_tz3000_YWUBFUVT",
       "_tz3000_KGXEJ1DV",
-      "_tz3000_JJDKHUEQ"
+      "_tz3000_JJDKHUEQ",
+      "_TZ3000_l9brjwau",
+      "_tz3000_l9brjwau",
+      "_TZ3000_L9BRJWAU",
+      "_tz3000_L9BRJWAU"
     ],
     "productId": [
       "TS0002",
@@ -394,34 +380,6 @@
   ],
   "id": "wall_switch_2gang_1way",
   "version": "1.0.0",
-  "capabilitiesOptions": {
-    "button.1": {
-      "title": {
-        "en": "Button 1",
-        "fr": "Bouton 1"
-      },
-      "maintenanceAction": true,
-      "getable": false,
-      "setable": false
-    },
-    "button.2": {
-      "title": {
-        "en": "Button 2",
-        "fr": "Bouton 2"
-      },
-      "maintenanceAction": true,
-      "getable": false,
-      "setable": false
-    },
-    "measure_battery": {
-      "title": {
-        "en": "Battery",
-        "fr": "Batterie",
-        "nl": "Batterij",
-        "de": "Batterie"
-      }
-    }
-  },
   "ui": {
     "quickAction": "onoff"
   }
