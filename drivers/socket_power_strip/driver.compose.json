@@ -33,7 +33,10 @@
     "small": "/{{driverAssetsPath}}/images/small.png"
   },
   "zigbee": {
-    "manufacturerName": [],
+    "manufacturerName": [
+      "_TZ3210_6cmeijtd",
+      "_tz3210_6cmeijtd"
+    ],
     "productId": [
       "TS011F",
       "TS0601",
