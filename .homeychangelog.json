@@ -1,4 +1,7 @@
 {
+  "9.0.851": {
+    "en": "Restored Wing climate ZTH pairing alongside contact sensors; smartbutton flicker fix remains."
+  },
   "9.0.850": {
     "en": "Improved 1-button remote consistency (less flicker from duplicate Zigbee paths) and battery wake read. Fixed bulb fingerprint conflict blocking publish."
   },

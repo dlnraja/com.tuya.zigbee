@@ -8762,6 +8762,30 @@
         "switch_3gang"
       ],
       "note": "P2440 exact-key baseline merge"
+    },
+    {
+      "key": "wing|hobeian",
+      "drivers": [
+        "climate_sensor",
+        "contact_sensor"
+      ],
+      "note": "P2440 Wing climate/contact multi-couple"
+    },
+    {
+      "key": "wing|Hobeian",
+      "drivers": [
+        "climate_sensor",
+        "contact_sensor"
+      ],
+      "note": "P2440 Wing climate/contact multi-couple"
+    },
+    {
+      "key": "wing|HOBEIAN",
+      "drivers": [
+        "climate_sensor",
+        "contact_sensor"
+      ],
+      "note": "P2440 Wing climate/contact multi-couple"
     }
   ],
   "updated": "2026-09-10",
