@@ -7,7 +7,7 @@ const UnifiedSwitchBase = require('../../lib/devices/UnifiedSwitchBase');
  *
  * P2455 GH#544 (migueleap): wired dual-relay UI must be onoff + onoff.gang2 only.
  * Do NOT expose button.* tiles or spawn devices.secondSwitch sub-devices.
- * Couple: _TZ3000_l9brjwau + TS0002 → this driver (ZCL EP1/EP2), not switch_2gang.
+ * Couple: _TZ3000_l9brjwau|_TZ3000_ptjcjise + TS0002 → this driver (ZCL EP1/EP2), not switch_2gang.
  */
 class WallSwitch2Gang1WayDevice extends UnifiedSwitchBase {
 
