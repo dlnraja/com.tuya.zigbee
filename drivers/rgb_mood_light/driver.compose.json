@@ -15,11 +15,15 @@
   "zigbee": {
     "manufacturerName": [
       "_TZE200_placeholder_rgb_mood_light",
-      "_tze200_placeholder_rgb_mood_light"
+      "_tze200_placeholder_rgb_mood_light",
+      "_TZ3000_9cpuaca6",
+      "_tz3000_9cpuaca6"
     ],
     "productId": [
       "TS0505A",
-      "TS0505B"
+      "TS0505B",
+      "TS0501A",
+      "TS0601"
     ],
     "endpoints": {
       "1": {
