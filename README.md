@@ -33,15 +33,15 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 
 | Metric | Value |
 |--------|-------|
-| **App Version** | v9.0.862 |
+| **App Version** | v9.0.864 |
 | **Drivers** | 431 (381 Zigbee + 50 WiFi) |
 | **Unique Fingerprints** | 4,401 |
-| **Pairing Variants** | 17,064 (4 case combos per fingerprint) |
+| **Pairing Variants** | 17,065 (4 case combos per fingerprint) |
 | **Unique Product IDs** | 592 |
 | **Flow Cards** | 5,969 |
 | **Unique Capabilities** | 170 |
 | **Native OTA Drivers** | 9 |
-| **Test Suites** | 266 files |
+| **Test Suites** | 267 files |
 | **SVG Icons** | 731 |
 | **Languages** | EN, FR, NL, DE |
 | **SDK / Homey** | 3 / >= 12.2.0 |
@@ -102,6 +102,8 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 
 | Version | Changes |
 |---------|---------|
+| **v9.0.864** | Fixed 1-btn remote pairing (ja5osu5g scene knob, an5rjiwd wireless button) and 4-btn wall remotes (5tqxpine); presence radar no longer st… |
+| **v9.0.863** | Fixed 1-btn remote pairing (ja5osu5g scene knob, an5rjiwd wireless button) and 4-btn wall remotes (5tqxpine); presence radar no longer st… |
 | **v9.0.862** | Fixed switch pairing catalogs (BSEED/Moes 1-4 gang) and Moes curtain fingerprint routing; removed extra button tiles on 4-gang switches. |
 | **v9.0.861** | Fixed switch pairing catalogs (BSEED/Moes 1-4 gang) and Moes curtain fingerprint routing; removed extra button tiles on 4-gang switches. |
 | **v9.0.860** | Fixed smart knob switch voice-safety duplicate options and timer context; kaflzta4 press recovery. |
@@ -112,8 +114,6 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 | **v9.0.855** | Fixed smart knob button presses when manufacturer id is missing at wake (scene mode); stopped battery percent flipping from voltage. |
 | **v9.0.854** | Fixed smart knob button presses when manufacturer id is missing at wake (scene mode); stopped battery percent flipping from voltage. |
 | **v9.0.853** | Fixed smart knob button presses when manufacturer id is missing at wake (scene mode); stopped battery percent flipping from voltage. |
-| **v9.0.852** | Fixed MOES AM43 / ZC-LS roller (_TZE200_icka1clh) pairing to curtain motor; smartbutton flicker fix remains. |
-| **v9.0.851** | Improved 1-button remote consistency (less flicker from duplicate Zigbee paths) and battery wake read. Fixed bulb fingerprint conflict bl… |
 
 <!-- CHANGELOG_END -->
 
