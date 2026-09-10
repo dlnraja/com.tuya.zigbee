@@ -1536,5 +1536,8 @@
   },
   "5.12.165": {
     "en": "Hardened Athom publish soft-expect docs/tests for tip socket hang up."
+  },
+  "5.12.166": {
+    "en": "Improved presence radar heal after updates; BSEED 2-gang Homey commands use setOn/setOff; BSEED 1-gang ysdv91bk wall switch pairing."
   }
 }

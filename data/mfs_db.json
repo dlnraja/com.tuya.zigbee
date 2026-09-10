@@ -196715,8 +196715,8 @@
     "modelIdsCount": 5
   },
   "_TZ3000_ysdv91bk": {
-    "driverId": "switch_1gang",
-    "source": "compose-exclusive"
+    "driverId": "wall_switch_1gang_1way",
+    "source": "registry:p2460-ysdv91bk"
   },
   "_TZ3000_hafsqare": {
     "driverId": "switch_1gang",
@@ -300039,7 +300039,7 @@
     "_tz3000_ysdv91bk|ts0001": {
       "mfr": "_tz3000_ysdv91bk",
       "pid": "ts0001",
-      "driver": "switch_1gang",
+      "driver": "wall_switch_1gang_1way",
       "sources": [
         "mfs_db"
       ],
@@ -323317,7 +323317,7 @@
       "confidence": 0.95
     },
     "_TZ3000_ptjcjise": {
-      "driverId": "switch_2gang",
+      "driverId": "wall_switch_2gang_1way",
       "productIds": [
         "TS0002"
       ],
@@ -349557,7 +349557,7 @@
       "confidence": 0.95
     },
     "_TZ3000_YSDV91BK": {
-      "driverId": "switch_1gang",
+      "driverId": "wall_switch_1gang_1way",
       "productIds": [
         "TS0001"
       ],
@@ -350301,7 +350301,7 @@
       "confidence": 0.95
     },
     "_tz3000_ptjcjise": {
-      "driverId": "switch_2gang",
+      "driverId": "wall_switch_2gang_1way",
       "productIds": [
         "TS0002"
       ],

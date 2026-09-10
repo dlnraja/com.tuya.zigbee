@@ -52,10 +52,34 @@ class Switch2GangDevice extends UnifiedSwitchBase {
         return ep?.clusters?.onOff || ep?.clusters?.genOnOff || ep?.clusters?.[6];
       };
       const onOff = getOnOffCluster(gang);
-      if (onOff && typeof onOff.writeAttributes === 'function') {
-        await onOff.writeAttributes({ onOff: value ? true : false });
-      } else if (onOff) {
-        await onOff[value ? 'setOn' : 'setOff']();
+      if (!onOff) {
+        throw new Error(`[BSEED-2G] EP${gang} onOff cluster missing`);
+      }
+      // WHY(P2460 / GH#546): writeAttributes({onOff}) does NOT switch BSEED relays —
+      // Homey generic Zigbee works because it sends setOn/setOff commands.
+      if (typeof this.markAppCommand === 'function') {
+        this.markAppCommand(gang, value);
+      }
+      this._zclState = this._zclState || { pending: { 1: false, 2: false }, lastState: { 1: null, 2: null }, timeout: { 1: null, 2: null } };
+      this._zclState.pending[gang] = true;
+      this._lastCommandedGang = gang;
+      this._lastCommandTime = Date.now();
+      try {
+        if (value) {
+          if (typeof onOff.setOn === 'function') {await onOff.setOn();}
+          else if (typeof onOff.writeAttributes === 'function') {await onOff.writeAttributes({ onOff: true });}
+          else {throw new Error('no setOn');}
+        } else if (typeof onOff.setOff === 'function') {
+          await onOff.setOff();
+        } else if (typeof onOff.writeAttributes === 'function') {
+          await onOff.writeAttributes({ onOff: false });
+        } else {
+          throw new Error('no setOff');
+        }
+      } finally {
+        safeSetTimeout(this, () => {
+          if (this._zclState) {this._zclState.pending[gang] = false;}
+        }, 1500);
       }
       return true;
     }
@@ -72,7 +96,9 @@ class Switch2GangDevice extends UnifiedSwitchBase {
   get isZclOnlyDevice() {
     const mfr = this.getSetting?.('zb_manufacturer_name') ||
                 this.getStoreValue?.('zb_manufacturer_name') ||
-                this.getStoreValue?.('manufacturerName') || '';
+                this.getStoreValue?.('manufacturerName') ||
+                this.getData?.()?.manufacturerName ||
+                '';
     return includesCI(ZCL_ONLY_MANUFACTURERS_2G, mfr);
   }
 
@@ -388,10 +414,13 @@ class Switch2GangDevice extends UnifiedSwitchBase {
             this.safeSetCapabilityValue(capName, invertedValue).catch(() => {});
             const invertedCluster = getOnOffCluster(epNum);
             if (invertedCluster) {
-              if (typeof invertedCluster.writeAttributes === 'function') {
+              // WHY(P2460): setOn/setOff — not writeAttributes — for BSEED relays
+              if (invertedValue && typeof invertedCluster.setOn === 'function') {
+                await invertedCluster.setOn().catch(() => {});
+              } else if (!invertedValue && typeof invertedCluster.setOff === 'function') {
+                await invertedCluster.setOff().catch(() => {});
+              } else if (typeof invertedCluster.writeAttributes === 'function') {
                 await invertedCluster.writeAttributes({ onOff: invertedValue }).catch(() => {});
-              } else {
-                await invertedCluster[invertedValue ? 'setOn' : 'setOff']().catch(() => {});
               }
             }
           }
