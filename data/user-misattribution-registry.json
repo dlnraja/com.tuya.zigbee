@@ -42,15 +42,24 @@
         "_TZE200_icka1clh",
         "_tze200_icka1clh",
         "_TZE200_ICKA1CLH",
+        "_tze200_ICKA1CLH",
         "_TZE204_icka1clh",
-        "_tze204_icka1clh"
+        "_tze204_icka1clh",
+        "_TZE204_ICKA1CLH",
+        "_TZE200_zah67ekd",
+        "_tze200_zah67ekd",
+        "_TZE200_ZAH67EKD",
+        "_tze200_ZAH67EKD"
       ],
       "productId": [
-        "TS0601"
+        "TS0601",
+        "AM43-0.45/40-ES-EB",
+        "AM43-0.45/40-ES-EZ"
       ],
       "canonicalDriver": "curtain_motor",
       "forbiddenDrivers": [
         "curtain_motor_shutter",
+        "curtain_motor_tilt",
         "climate_sensor",
         "soil_sensor",
         "zigbee_universal",
@@ -58,11 +67,12 @@
       ],
       "forbidMode": "couple",
       "protocol": "tuya_ef00",
-      "notes": "MIAMO #2229 MOES ZC-LS / AM43 — Z2M TS0601_cover_4 same family as zah67ekd. Was mis-homed on curtain_motor_shutter.",
+      "notes": "P2445: one mfr → many verified pids (TS0601 + AM43 retail variants). Z2M cover_4. Strip tilt/shutter dual-home. Never invent TS0301/TS0726 for icka1clh.",
       "sources": [
         "forum_T140352_2229",
         "Z2M_20977",
-        "P2441"
+        "P2441",
+        "P2445"
       ],
       "tracks": {
         "master": {
@@ -71,7 +81,7 @@
         },
         "stable": {
           "static": true,
-          "dynamic": false
+          "dynamic": true
         }
       }
     },

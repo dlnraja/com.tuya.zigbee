@@ -192208,15 +192208,16 @@
     "modelIdsCount": 3
   },
   "_TZE200_icka1clh": {
-    "driverId": "curtain_motor_shutter",
-    "source": "auto-sync",
+    "driverId": "curtain_motor",
+    "source": "P2445-am43-multipid-z2m-cover4",
     "modelIds": [
-      "TS0301",
       "TS0601",
-      "TS0726"
+      "AM43-0.45/40-ES-EB",
+      "AM43-0.45/40-ES-EZ"
     ],
-    "pid": "TS0301",
-    "modelIdsCount": 3
+    "pid": "TS0601",
+    "modelIdsCount": 3,
+    "notes": "One mfr → many verified pids/variants OK; Z2M TS0601_cover_4; no invent TS0301/TS0726"
   },
   "_TZE200_p6vz3wzt": {
     "driverId": "curtain_motor_shutter",
@@ -192476,14 +192477,16 @@
     "modelIdsCount": 2
   },
   "_tze200_zah67ekd": {
-    "driverId": "curtain_motor_tilt",
-    "source": "auto-sync",
+    "driverId": "curtain_motor",
+    "source": "P2445-am43-multipid-z2m-cover4",
     "modelIds": [
       "TS0601",
-      "TS0601_curtain_tilt"
+      "AM43-0.45/40-ES-EB",
+      "AM43-0.45/40-ES-EZ"
     ],
     "pid": "TS0601",
-    "modelIdsCount": 2
+    "modelIdsCount": 3,
+    "notes": "One mfr → many verified pids/variants OK; Z2M TS0601_cover_4; no invent TS0301/TS0726"
   },
   "_tz3000_8kzqqzu4": {
     "driverId": "curtain_motor_wall",
@@ -258689,10 +258692,9 @@
       "pid": "ts0601",
       "driver": "curtain_motor",
       "sources": [
-        "canonical",
-        "mfs_db",
-        "mfs_db",
-        "user-data"
+        "Z2M_TS0601_cover_4",
+        "P2445",
+        "MIAMO_#2229"
       ],
       "confidence": 0.95
     },
@@ -261159,8 +261161,9 @@
       "pid": "ts0601",
       "driver": "curtain_motor",
       "sources": [
-        "canonical",
-        "mfs_db"
+        "Z2M_TS0601_cover_4",
+        "P2445",
+        "MIAMO_#2229"
       ],
       "confidence": 0.95
     },
@@ -280533,15 +280536,6 @@
     },
     "_tze200_9vpe3fl1|ts0301": {
       "mfr": "_tze200_9vpe3fl1",
-      "pid": "ts0301",
-      "driver": "curtain_motor_shutter",
-      "sources": [
-        "mfs_db"
-      ],
-      "confidence": 0.17
-    },
-    "_tze200_icka1clh|ts0301": {
-      "mfr": "_tze200_icka1clh",
       "pid": "ts0301",
       "driver": "curtain_motor_shutter",
       "sources": [
@@ -317402,9 +317396,11 @@
     "_TZE200_icka1clh": {
       "driverId": "curtain_motor",
       "productIds": [
-        "TS0601"
+        "TS0601",
+        "AM43-0.45/40-ES-EB",
+        "AM43-0.45/40-ES-EZ"
       ],
-      "source": "fingerprints-2026-07-14",
+      "source": "P2445-multipid",
       "confidence": 0.95
     },
     "_TZE200_ijey4q29": {
@@ -319287,9 +319283,11 @@
     "_TZE200_zah67ekd": {
       "driverId": "curtain_motor",
       "productIds": [
-        "TS0601"
+        "TS0601",
+        "AM43-0.45/40-ES-EB",
+        "AM43-0.45/40-ES-EZ"
       ],
-      "source": "fingerprints-2026-07-14",
+      "source": "P2445-multipid",
       "confidence": 0.95
     },
     "_TZE200_zbfmvj13": {
@@ -356269,6 +356267,83 @@
         "deconz#8503"
       ],
       "confidence": 0.9
+    },
+    "_tze200_icka1clh|am43-0.45/40-es-eb": {
+      "mfr": "_tze200_icka1clh",
+      "pid": "am43-0.45/40-es-eb",
+      "driver": "curtain_motor",
+      "sources": [
+        "Z2M_TS0601_cover_4",
+        "P2445",
+        "MIAMO_#2229"
+      ],
+      "confidence": 0.95
+    },
+    "_tze200_icka1clh|am43-0.45/40-es-ez": {
+      "mfr": "_tze200_icka1clh",
+      "pid": "am43-0.45/40-es-ez",
+      "driver": "curtain_motor",
+      "sources": [
+        "Z2M_TS0601_cover_4",
+        "P2445",
+        "MIAMO_#2229"
+      ],
+      "confidence": 0.95
+    },
+    "_tze204_icka1clh|ts0601": {
+      "mfr": "_tze204_icka1clh",
+      "pid": "ts0601",
+      "driver": "curtain_motor",
+      "sources": [
+        "Z2M_TS0601_cover_4",
+        "P2445",
+        "MIAMO_#2229"
+      ],
+      "confidence": 0.95
+    },
+    "_tze204_icka1clh|am43-0.45/40-es-eb": {
+      "mfr": "_tze204_icka1clh",
+      "pid": "am43-0.45/40-es-eb",
+      "driver": "curtain_motor",
+      "sources": [
+        "Z2M_TS0601_cover_4",
+        "P2445",
+        "MIAMO_#2229"
+      ],
+      "confidence": 0.95
+    },
+    "_tze204_icka1clh|am43-0.45/40-es-ez": {
+      "mfr": "_tze204_icka1clh",
+      "pid": "am43-0.45/40-es-ez",
+      "driver": "curtain_motor",
+      "sources": [
+        "Z2M_TS0601_cover_4",
+        "P2445",
+        "MIAMO_#2229"
+      ],
+      "confidence": 0.95
+    },
+    "_tze200_zah67ekd|am43-0.45/40-es-eb": {
+      "mfr": "_tze200_zah67ekd",
+      "pid": "am43-0.45/40-es-eb",
+      "driver": "curtain_motor",
+      "sources": [
+        "Z2M_TS0601_cover_4",
+        "P2445",
+        "MIAMO_#2229"
+      ],
+      "confidence": 0.95
+    },
+    "_tze200_zah67ekd|am43-0.45/40-es-ez": {
+      "mfr": "_tze200_zah67ekd",
+      "pid": "am43-0.45/40-es-ez",
+      "driver": "curtain_motor",
+      "sources": [
+        "Z2M_TS0601_cover_4",
+        "P2445",
+        "MIAMO_#2229"
+      ],
+      "confidence": 0.95
     }
   },
   "_TZE204_ZG204Z": {
@@ -367523,5 +367598,29 @@
     "modelIds": [
       "TS004F"
     ]
+  },
+  "_TZE204_icka1clh": {
+    "driverId": "curtain_motor",
+    "source": "P2445-am43-multipid-z2m-cover4",
+    "modelIds": [
+      "TS0601",
+      "AM43-0.45/40-ES-EB",
+      "AM43-0.45/40-ES-EZ"
+    ],
+    "pid": "TS0601",
+    "modelIdsCount": 3,
+    "notes": "One mfr → many verified pids/variants OK; Z2M TS0601_cover_4; no invent TS0301/TS0726"
+  },
+  "_TZE200_zah67ekd": {
+    "driverId": "curtain_motor",
+    "source": "P2445-am43-multipid-z2m-cover4",
+    "modelIds": [
+      "TS0601",
+      "AM43-0.45/40-ES-EB",
+      "AM43-0.45/40-ES-EZ"
+    ],
+    "pid": "TS0601",
+    "modelIdsCount": 3,
+    "notes": "One mfr → many verified pids/variants OK; Z2M TS0601_cover_4; no invent TS0301/TS0726"
   }
 }

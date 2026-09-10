@@ -4888,20 +4888,24 @@
   },
   {
     "manufacturerName": "_TZE200_zah67ekd",
-    "driverId": "zigbee_universal",
-    "type": "other",
-    "powerSource": "unknown",
+    "driverId": "curtain_motor",
+    "type": "cover",
+    "powerSource": "battery",
     "modelIds": [
-      "TS0601"
+      "TS0601",
+      "AM43-0.45/40-ES-EB",
+      "AM43-0.45/40-ES-EZ"
     ]
   },
   {
     "manufacturerName": "_TZE200_icka1clh",
-    "driverId": "zigbee_universal",
-    "type": "other",
-    "powerSource": "unknown",
+    "driverId": "curtain_motor",
+    "type": "cover",
+    "powerSource": "battery",
     "modelIds": [
-      "TS0601"
+      "TS0601",
+      "AM43-0.45/40-ES-EB",
+      "AM43-0.45/40-ES-EZ"
     ]
   },
   {
