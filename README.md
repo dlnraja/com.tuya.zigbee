@@ -33,7 +33,7 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 
 | Metric | Value |
 |--------|-------|
-| **App Version** | v9.0.861 |
+| **App Version** | v9.0.862 |
 | **Drivers** | 431 (381 Zigbee + 50 WiFi) |
 | **Unique Fingerprints** | 4,401 |
 | **Pairing Variants** | 17,064 (4 case combos per fingerprint) |
@@ -102,6 +102,7 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 
 | Version | Changes |
 |---------|---------|
+| **v9.0.862** | Fixed switch pairing catalogs (BSEED/Moes 1-4 gang) and Moes curtain fingerprint routing; removed extra button tiles on 4-gang switches. |
 | **v9.0.861** | Fixed switch pairing catalogs (BSEED/Moes 1-4 gang) and Moes curtain fingerprint routing; removed extra button tiles on 4-gang switches. |
 | **v9.0.860** | Fixed smart knob switch voice-safety duplicate options and timer context; kaflzta4 press recovery. |
 | **v9.0.859** | Fixed smart knob switch voice-safety duplicate options and timer context; kaflzta4 press recovery. |
@@ -113,7 +114,6 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 | **v9.0.853** | Fixed smart knob button presses when manufacturer id is missing at wake (scene mode); stopped battery percent flipping from voltage. |
 | **v9.0.852** | Fixed MOES AM43 / ZC-LS roller (_TZE200_icka1clh) pairing to curtain motor; smartbutton flicker fix remains. |
 | **v9.0.851** | Improved 1-button remote consistency (less flicker from duplicate Zigbee paths) and battery wake read. Fixed bulb fingerprint conflict bl… |
-| **v9.0.850** | Improved 1-button remote consistency (less flicker from duplicate Zigbee paths) and battery wake read. Fixed bulb fingerprint conflict bl… |
 
 <!-- CHANGELOG_END -->
 
