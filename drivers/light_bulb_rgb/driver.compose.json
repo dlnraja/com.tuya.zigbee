@@ -76,7 +76,9 @@
       "_tz3000_MN9K8NHM",
       "_tz3000_RNNZVSEU",
       "_tz3210_QUINZF3W",
-      "_tz3210_KEABPIGV"
+      "_tz3210_KEABPIGV",
+      "_TZ3000_obacbukl",
+      "_tz3000_obacbukl"
     ],
     "endpoints": {
       "1": {
@@ -155,7 +157,9 @@
       "lumi.magnet.ac01",
       "lumi.magnet.agl02",
       "lumi.sensor_magnet",
-      "lumi.sensor_magnet.aq2"
+      "lumi.sensor_magnet.aq2",
+      "TS0502A",
+      "TS0502"
     ],
     "capabilities": {
       "light_color_temp": {
