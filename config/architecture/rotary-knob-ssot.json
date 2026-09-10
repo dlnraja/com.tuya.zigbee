@@ -2,7 +2,8 @@
   "_meta": {
     "id": "P2448",
     "updated": "2026-09-10",
-    "why": "ERS-10 / ZG-101ZD rotary knobs need genOnOff 0x8004=command so Homey receives levelControl brightness_step. Forcing scene killed rotation on smart_knob_rotary and missing KNOB_MFR couples.",
+    "enrichment": "P2449",
+    "why": "ERS-10 / ZG-101ZD rotary knobs need genOnOff 0x8004=command so Homey receives levelControl brightness_step. Forcing scene killed rotation on smart_knob_rotary and missing KNOB_MFR couples. P2449 wires rotate/brightness flow cards + SmartKnobRotationMixin for smart_knob / switch UI-UX parity.",
     "dualApp": "BOTH",
     "doctrine": "manufacturerName+productId only; never invent pid; never force scene on rotary drivers"
   },
@@ -41,9 +42,48 @@
     "commandMode": ["levelControl.step", "levelControl.move", "onOff.toggle"],
     "eventMode": ["genOnOff.0xFC rotate_left/right", "scenes.recall"]
   },
+  "flowUx": {
+    "mixin": "lib/mixins/SmartKnobRotationMixin.js",
+    "requiredTriggersByDriver": {
+      "smart_knob_rotary": [
+        "smart_knob_rotary_rotate_left",
+        "smart_knob_rotary_rotate_right",
+        "smart_knob_rotary_press_and_rotate_left",
+        "smart_knob_rotary_press_and_rotate_right",
+        "smart_knob_rotary_brightness_changed",
+        "smart_knob_rotary_scene_recall",
+        "smart_knob_rotary_set_brightness",
+        "smart_knob_rotary_brightness_above"
+      ],
+      "smart_knob": [
+        "smart_knob_rotate_left",
+        "smart_knob_rotate_right",
+        "smart_knob_brightness_changed",
+        "smart_knob_set_brightness",
+        "smart_knob_brightness_above"
+      ],
+      "smart_knob_switch": [
+        "smart_knob_switch_rotate_left",
+        "smart_knob_switch_rotate_right",
+        "smart_knob_switch_brightness_changed",
+        "smart_knob_switch_set_brightness",
+        "smart_knob_switch_brightness_above"
+      ]
+    },
+    "deviceWiring": [
+      "press_and_rotate_* when markKnobPressHeld",
+      "brightness_changed on dim update",
+      "scene_recall from scenes cluster",
+      "getDeviceTriggerCard(id) without second arg",
+      "dim allowed on ButtonDevice knob subclasses"
+    ]
+  },
   "gates": [
+    "tools/ci/p244x-knob-flow-gate.js",
     "tools/ci/p2448-rotary-knob-gate.js",
+    "tools/ci/p2449-declared-flow-wire-gate.js",
     "test/critical/p2448-rotary-knob-command-mode.test.js",
+    "test/critical/p2449-declared-flow-wire.test.js",
     "test/critical/p2439-kaflzta4-smart-knob-button.test.js"
   ]
 }

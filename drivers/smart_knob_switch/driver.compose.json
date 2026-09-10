@@ -16,10 +16,60 @@
     "zigbee"
   ],
   "capabilities": [
+    "button.rotate_left",
+    "button.rotate_right",
     "dim",
     "measure_battery",
     "button.1"
   ],
+  "capabilitiesOptions": {
+    "button.rotate_left": {
+      "title": {
+        "en": "Rotate Left",
+        "fr": "Rotation gauche",
+        "nl": "Links draaien",
+        "de": "Links drehen"
+      },
+      "getable": false,
+      "setable": false,
+      "maintenanceAction": true
+    },
+    "button.rotate_right": {
+      "title": {
+        "en": "Rotate Right",
+        "fr": "Rotation droite",
+        "nl": "Rechts draaien",
+        "de": "Rechts drehen"
+      },
+      "getable": false,
+      "setable": false,
+      "maintenanceAction": true
+    },
+    "dim": {
+      "title": {
+        "en": "Rotation Level",
+        "fr": "Niveau Rotation",
+        "nl": "Draainiveau",
+        "de": "Drehstufe"
+      },
+      "min": 0,
+      "max": 1,
+      "step": 0.01,
+      "getable": true,
+      "setable": true
+    },
+    "button.1": {
+      "title": {
+        "en": "Button 1",
+        "fr": "Bouton 1",
+        "nl": "Knop 1",
+        "de": "Taste 1"
+      },
+      "maintenanceAction": true,
+      "getable": false,
+      "setable": false
+    }
+  },
   "images": {
     "small": "/drivers/smart_knob_switch/assets/images/small.png",
     "large": "/drivers/smart_knob_switch/assets/images/large.png"

@@ -106,6 +106,9 @@ jobs:
       - name: 🛡️ P2138 sacred-couple matrix gate
         run: node tools/ci/p2138-sacred-couple-matrix-gate.js
 
+      - name: 🛡️ P2448/P2449 knob + declared flow wiring
+        run: npm run check:p244x
+
       - name: 🛡️ P217 fork harvest sacred-couple gate
         run: node tools/ci/p217-fork-harvest-gate.js
 

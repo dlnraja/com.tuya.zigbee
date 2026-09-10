@@ -55,7 +55,10 @@
         "nl": "Helderheidsniveau",
         "de": "Helligkeitsstufe"
       },
-      "setable": false,
+      "min": 0,
+      "max": 1,
+      "step": 0.01,
+      "setable": true,
       "getable": true
     },
     "measure_battery": {

@@ -185,6 +185,18 @@
         "hard": true
       },
       {
+        "id": "gate-p2448-rotary-knob",
+        "script": "tools/ci/p2448-rotary-knob-gate.js",
+        "args": [],
+        "softFail": true
+      },
+      {
+        "id": "gate-p2449-declared-flow-wire",
+        "script": "tools/ci/p2449-declared-flow-wire-gate.js",
+        "args": [],
+        "softFail": true
+      },
+      {
         "id": "gate-p2269-anti-spaghetti",
         "script": "tools/ci/run-node-test.js",
         "args": ["test/critical/p2269-anti-spaghetti-ssot-gate.test.js"],

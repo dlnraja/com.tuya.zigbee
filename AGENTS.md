@@ -84,6 +84,8 @@ Orchestrated via `tools/ci/mega-crawler.js` + GHA `mega-crawl.yml` (**workflow_d
 - `tools/ci/forum-fetch-140352.js` — paginate Discourse topic 140352
 - `tools/ci/mega-crawler.js` — orchestrate all 15 crawlers
 - `tools/ci/safe-timers.js` / `lib/utils/safe-timers.js` — race-condition-safe setTimeout
+- `tools/ci/p2448-rotary-knob-gate.js` — ERS-10/ZG-101ZD command/dimmer + KNOB_MFR (`npm run check:p2448`)
+- `tools/ci/p2449-declared-flow-wire-gate.js` — declared flow cards must be wirable (`npm run check:p2449` / `check:p244x`)
 - `lib/scraper/smart-fetch.js` + `lib/scraper/reader-fallback.js` — unified smart scraper; when the origin blocks a fetch, falls back to free readers (Jina Reader keyless, then Firecrawl if `FIRECRAWL_API_KEY` is set). Disable with `SMART_FETCH_READER_FALLBACK=0`.
 
 ## Key Files
@@ -91,8 +93,12 @@ Orchestrated via `tools/ci/mega-crawler.js` + GHA `mega-crawl.yml` (**workflow_d
 | Path | Purpose |
 |------|---------|
 | `config/architecture/dual-app-tracks.json` | Dual-app classification SSOT (BOTH / MASTER_ONLY / STABLE_ONLY) |
+| `config/architecture/rotary-knob-ssot.json` | P2448/P2449 rotary couples + flow UX required cards |
+| `docs/architecture/KNOB_FLOW_WIRING_SSOT.md` | Human knob + declared-flow wiring doctrine |
 | `config/architecture/publish-ssot.json` | Publish path, soft-expect, sacred-keep, IAS gate refs (P2286–P2288) |
 | `docs/architecture/PUBLISH_SSOT.md` | Human publish doctrine (points to machine SSOT) |
+| `lib/flow/DeclaredFlowCardAutoWire.js` | Fleet auto-wire set_brightness / scene_recall / brightness_changed / rotate |
+| `lib/mixins/SmartKnobRotationMixin.js` | Knob rotate RX + press_and_rotate + dim UX |
 | `app.json` / `.homeycompose/app.json` | App manifest (auto-generated from .homeycompose) |
 | `data/mfs_db.json` | Master fingerprint DB (5.7MB, 4149 mfrs) |
 | `data/fingerprints.json` | Curated fingerprint list |

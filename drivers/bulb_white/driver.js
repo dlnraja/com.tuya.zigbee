@@ -97,7 +97,11 @@ class SmartBulbWhiteDriver extends ZigBeeDriver {
           if (!args.device) { return false; }
           const raw = args.brightness ?? args.dim ?? args.value;
           if (raw == null) { return false; }
-          return setActuatorCapability(args.device, 'dim', Number(raw));
+          let dim = Number(raw);
+          if (!Number.isFinite(dim)) { return false; }
+          if (dim > 1) dim /= 100;
+          dim = Math.max(0, Math.min(1, dim));
+          return setActuatorCapability(args.device, 'dim', dim);
         });
       }
     } catch (err) {
