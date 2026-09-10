@@ -2952,7 +2952,7 @@
   },
   {
     "manufacturerName": "_TZ3000_xabckq1v",
-    "driverId": "zigbee_universal",
+    "driverId": "button_wireless_4",
     "type": "other",
     "powerSource": "unknown",
     "modelIds": [
@@ -3556,7 +3556,7 @@
   },
   {
     "manufacturerName": "_TZ3000_ok0ggpk7",
-    "driverId": "zigbee_universal",
+    "driverId": "wall_switch_3gang_1way",
     "type": "other",
     "powerSource": "unknown",
     "modelIds": [
@@ -3574,7 +3574,7 @@
   },
   {
     "manufacturerName": "_TZ3000_fawk5xjv",
-    "driverId": "zigbee_universal",
+    "driverId": "wall_switch_3gang_1way",
     "type": "other",
     "powerSource": "unknown",
     "modelIds": [
@@ -4888,20 +4888,24 @@
   },
   {
     "manufacturerName": "_TZE200_zah67ekd",
-    "driverId": "zigbee_universal",
-    "type": "other",
-    "powerSource": "unknown",
+    "driverId": "curtain_motor",
+    "type": "cover",
+    "powerSource": "battery",
     "modelIds": [
-      "TS0601"
+      "TS0601",
+      "AM43-0.45/40-ES-EB",
+      "AM43-0.45/40-ES-EZ"
     ]
   },
   {
     "manufacturerName": "_TZE200_icka1clh",
-    "driverId": "zigbee_universal",
-    "type": "other",
-    "powerSource": "unknown",
+    "driverId": "curtain_motor",
+    "type": "cover",
+    "powerSource": "battery",
     "modelIds": [
-      "TS0601"
+      "TS0601",
+      "AM43-0.45/40-ES-EB",
+      "AM43-0.45/40-ES-EZ"
     ]
   },
   {
@@ -6436,7 +6440,7 @@
   },
   {
     "manufacturerName": "_TZ3000_qeuvnohg",
-    "driverId": "zigbee_universal",
+    "driverId": "din_rail_switch",
     "type": "other",
     "powerSource": "unknown",
     "modelIds": [
@@ -7834,7 +7838,7 @@
   },
   {
     "manufacturerName": "_TZ3000_qxcnwv26",
-    "driverId": "zigbee_universal",
+    "driverId": "wall_switch_3gang_1way",
     "type": "other",
     "powerSource": "unknown",
     "modelIds": [
@@ -8643,6 +8647,15 @@
     ]
   },
   {
+    "manufacturerName": "_TZE284_clrdrnya",
+    "driverId": "presence_sensor_radar",
+    "type": "presence",
+    "powerSource": "mains",
+    "modelIds": [
+      "TS0601"
+    ]
+  },
+  {
     "manufacturerName": "_TZE204_dtzziy1e",
     "driverId": "presence_sensor_radar",
     "type": "presence",
@@ -9094,18 +9107,18 @@
   },
   {
     "manufacturerName": "_TZ3218_7fiyo3kv",
-    "driverId": "zigbee_universal",
-    "type": "other",
-    "powerSource": "unknown",
+    "driverId": "switch_temp_sensor",
+    "type": "switch",
+    "powerSource": "mains",
     "modelIds": [
       "TS000F"
     ]
   },
   {
     "manufacturerName": "_TZ3218_ya5d6wth",
-    "driverId": "zigbee_universal",
-    "type": "other",
-    "powerSource": "unknown",
+    "driverId": "switch_temp_sensor",
+    "type": "switch",
+    "powerSource": "mains",
     "modelIds": [
       "TS000F"
     ]

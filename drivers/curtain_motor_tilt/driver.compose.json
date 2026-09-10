@@ -10,24 +10,18 @@
     "windowcoverings_state",
     "windowcoverings_set",
     "windowcoverings_tilt_set",
-    "alarm_generic",
     "measure_battery",
     "button.1"
   ],
   "zigbee": {
     "manufacturerName": [
-      "_TZE200_zah67ekd",
-      "_tze200_7eue9vhc",
       "_tze200_a8zrneee",
       "_tze200_ergbiejo",
       "_tze200_iossyxra",
       "_tze200_lwlvaony",
       "_tze200_pk29mnl3",
       "_tze200_sbordckq",
-      "_tze200_zah67ekd",
-      "_tze204_r0jdjrvi",
-      "_TZE200_ZAH67EKD",
-      "_TZE200_7EUE9VHC",
+      "_TZE204_r0jdjrvi",
       "_TZE200_A8ZRNEEE",
       "_TZE200_ERGBIEJO",
       "_TZE200_IOSSYXRA",
@@ -35,14 +29,24 @@
       "_TZE200_PK29MNL3",
       "_TZE200_SBORDCKQ",
       "_TZE204_R0JDJRVI",
-      "_TZE200_7eue9vhc",
+      "_tze204_r0jdjrvi",
       "_TZE200_a8zrneee",
       "_TZE200_ergbiejo",
       "_TZE200_iossyxra",
       "_TZE200_lwlvaony",
       "_TZE200_pk29mnl3",
       "_TZE200_sbordckq",
-      "_TZE204_r0jdjrvi"
+      "_tze200_A8ZRNEEE",
+      "_tze200_ERGBIEJO",
+      "_tze200_IOSSYXRA",
+      "_tze200_LWLVAONY",
+      "_tze200_PK29MNL3",
+      "_tze200_SBORDCKQ",
+      "_tze204_R0JDJRVI",
+      "_TZE200_r0jdjrvi",
+      "_tze200_r0jdjrvi",
+      "_TZE200_R0JDJRVI",
+      "_tze200_R0JDJRVI"
     ],
     "productId": [
       "TS0601_curtain_tilt",
@@ -63,8 +67,7 @@
   },
   "images": {
     "small": "/drivers/curtain_motor_tilt/assets/images/small.png",
-    "large": "/drivers/curtain_motor_tilt/assets/images/large.png",
-    "xlarge": "/drivers/curtain_motor_tilt/assets/images/xlarge.png"
+    "large": "/drivers/curtain_motor_tilt/assets/images/large.png"
   },
   "platforms": [
     "local"
@@ -147,14 +150,18 @@
       "id": "tuya_revive",
       "title": {
         "en": "Tuya Revive (device recovery)",
-        "fr": "Tuya Revive (récupération appareil)"
+        "fr": "Tuya Revive (récupération appareil)",
+        "nl": "Tuya Revive (apparaatherstel)",
+        "de": "Tuya Revive (Gerätewiederherstellung)"
       }
     },
     {
       "id": "generate_issue_report",
       "title": {
         "en": "Generate support report (GitHub issue)",
-        "fr": "Générer rapport de support (issue GitHub)"
+        "fr": "Générer rapport de support (issue GitHub)",
+        "nl": "Supportrapport genereren (GitHub issue)",
+        "de": "Supportbericht erstellen (GitHub Issue)"
       }
     }
   ],
