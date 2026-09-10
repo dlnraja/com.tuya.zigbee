@@ -431,14 +431,20 @@
     {
       "mfr": "_TZ3000_ptjcjise",
       "pid": "TS0002",
-      "driverId": "switch_2gang",
-      "note": "P2435 GH#543 Moes 2-gang — was switch_1gang"
+      "driverId": "wall_switch_2gang_1way",
+      "note": "P2456 GH#543 Moes 2-gang wired → wall_switch_2gang_1way"
     },
     {
       "mfr": "_TZ3000_l9brjwau",
       "pid": "TS0002",
-      "driverId": "switch_2gang",
-      "note": "P2435 GH#544 BSEED/LoraTap 2-gang ZCL-only"
+      "driverId": "wall_switch_2gang_1way",
+      "note": "P2455/P2460 GH#544/#546 BSEED 2-gang ZCL setOn/setOff — not switch_2gang"
+    },
+    {
+      "mfr": "_TZ3000_ysdv91bk",
+      "pid": "TS0001",
+      "driverId": "wall_switch_1gang_1way",
+      "note": "P2460 GH#545 BSEED 1G Identify+E000/E001 match"
     },
     {
       "mfr": "_TZE284_fhvpaltk",
