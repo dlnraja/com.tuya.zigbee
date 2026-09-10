@@ -1530,5 +1530,8 @@
   },
   "5.12.163": {
     "en": "Fixed Moes/Tuya wired 2-gang pairing: maps to wall switch with onoff/onoff.gang2 only — no button clutter."
+  },
+  "5.12.164": {
+    "en": "Cleaned 4-gang switch UI: relay gangs only — removed redundant button tiles from Homey device view."
   }
 }
