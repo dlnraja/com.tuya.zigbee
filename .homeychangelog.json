@@ -1,4 +1,7 @@
 {
+  "9.0.854": {
+    "en": "AM43 curtain motors: multi-pid mfr locks (icka1clh/zah67ekd) on curtain_motor; strip tilt/shutter dual-home."
+  },
   "9.0.853": {
     "en": "Fixed smart knob button presses when manufacturer id is missing at wake (scene mode); stopped battery percent flipping from voltage."
   },

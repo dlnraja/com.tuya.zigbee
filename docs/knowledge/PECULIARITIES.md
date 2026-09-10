@@ -2257,3 +2257,12 @@ Generated 2026-09-08T07:29:59.472Z from registry (201 cases) × compound DB (454
 
 Regenerate: `node tools/ci/investigate-device-peculiarities.js`
 
+
+
+## P2445 — AM43 / `_TZE200_icka1clh` / `_TZE200_zah67ekd` (multi-pid OK)
+
+- **Couples**: `(icka1clh|zah67ekd|TZE204_icka1clh) × (TS0601 | AM43-0.45/40-ES-EB | AM43-0.45/40-ES-EZ)` → `curtain_motor` only.
+- **Z2M**: `TS0601_cover_4` (same DP family). Battery/solar AM43; EF00 cover.
+- **Forbidden**: `curtain_motor_shutter`, `curtain_motor_tilt` for these couples.
+- **Do not invent**: TS0301 / TS0726 for `icka1clh` (auto-sync pollution).
+- **Doctrine**: one `manufacturerName` may list many verified `productId` / OEM variants — lock each couple, never prune mfr across drivers for a different pid.
