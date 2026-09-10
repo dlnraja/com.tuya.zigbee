@@ -603,9 +603,9 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
 
       // Integrate with inference engine if needed
       if (mapping.useInference) {
-        presence = inference.updatePresenceDP(value);
+        presence = inference.updatePresenceDP(value, { unreliable: !!mapping.unreliable });
       } else {
-        inference.updatePresenceDP(value); // Keep in sync
+        inference.updatePresenceDP(value, { unreliable: !!mapping.unreliable });
       }
 
       if (presence !== null) {

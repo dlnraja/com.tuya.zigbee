@@ -7,39 +7,110 @@
     "doctrine": "manufacturerName+productId only; never invent pid; never force scene on rotary drivers"
   },
   "commandModeDefault": {
-    "drivers": ["smart_knob_rotary", "smart_knob_switch"],
+    "drivers": [
+      "smart_knob_rotary",
+      "smart_knob_switch"
+    ],
     "defaultMode": "dimmer",
     "writeSceneAttr": true,
     "zclAttr": "0x8004",
     "zclValue": 0
   },
   "sceneModeOneButton": {
-    "mfrSuffixes": ["kaflzta4", "ja5osu5g", "an5rjiwd"],
+    "mfrSuffixes": [
+      "kaflzta4",
+      "ja5osu5g"
+    ],
     "driver": "smart_knob",
     "defaultMode": "scene",
-    "why": "P2439/P2442 diag a342c411 — 1-btn press needs event/0xFD"
+    "why": "P2439/P2453 — an5rjiwd is TS0041→button_wireless_1"
   },
   "rotaryCouples": [
-    { "mfr": "_TZ3000_uri7ongn", "pid": "TS004F", "driver": "smart_knob", "z2m": "ERS-10TZBVK-AA" },
-    { "mfr": "_TZ3000_ixla93vd", "pid": "TS004F", "driver": "smart_knob", "z2m": "ERS-10TZBVK-AA" },
-    { "mfr": "_TZ3000_g9g2xnch", "pid": "TS004F", "driver": "smart_knob", "z2m": "ZG-101ZD" },
-    { "mfr": "_TZ3000_402vrq2i", "pid": "TS004F", "driver": "smart_knob", "z2m": "ERS-10TZBVK-AA" },
-    { "mfr": "_TZ3000_qja6nq5z", "pid": "TS004F", "driver": "smart_knob_rotary", "z2m": "ERS-10TZBVK-AA" },
-    { "mfr": "_TZ3000_gwkzibhs", "pid": "TS004F", "driver": "smart_knob_rotary", "z2m": "ERS-10TZBVK-AA" },
-    { "mfr": "_TZ3000_ugi8ky6u", "pid": "TS004F", "driver": "smart_knob_rotary", "z2m": "ERS-10TZBVK-AA" },
-    { "mfr": "_TZ3000_csflgqj2", "pid": "TS004F", "driver": "smart_knob_rotary", "z2m": "TS004F knob" },
-    { "mfr": "_TZ3000_pzui3skt", "pid": "TS004F", "driver": "smart_knob_rotary", "z2m": "TS004F knob" },
-    { "mfr": "_TZ3000_pcqjmcud", "pid": "TS004F", "driver": "smart_knob_rotary", "z2m": "TS004F knob" },
-    { "mfr": "_TZ3000_uri7ber7", "pid": "TS004F", "driver": "smart_knob_switch", "z2m": "TS004F knob switch" }
+    {
+      "mfr": "_TZ3000_uri7ongn",
+      "pid": "TS004F",
+      "driver": "smart_knob",
+      "z2m": "ERS-10TZBVK-AA"
+    },
+    {
+      "mfr": "_TZ3000_ixla93vd",
+      "pid": "TS004F",
+      "driver": "smart_knob",
+      "z2m": "ERS-10TZBVK-AA"
+    },
+    {
+      "mfr": "_TZ3000_g9g2xnch",
+      "pid": "TS004F",
+      "driver": "smart_knob",
+      "z2m": "ZG-101ZD"
+    },
+    {
+      "mfr": "_TZ3000_402vrq2i",
+      "pid": "TS004F",
+      "driver": "smart_knob",
+      "z2m": "ERS-10TZBVK-AA"
+    },
+    {
+      "mfr": "_TZ3000_qja6nq5z",
+      "pid": "TS004F",
+      "driver": "smart_knob_rotary",
+      "z2m": "ERS-10TZBVK-AA"
+    },
+    {
+      "mfr": "_TZ3000_gwkzibhs",
+      "pid": "TS004F",
+      "driver": "smart_knob_rotary",
+      "z2m": "ERS-10TZBVK-AA"
+    },
+    {
+      "mfr": "_TZ3000_ugi8ky6u",
+      "pid": "TS004F",
+      "driver": "smart_knob_rotary",
+      "z2m": "ERS-10TZBVK-AA"
+    },
+    {
+      "mfr": "_TZ3000_csflgqj2",
+      "pid": "TS004F",
+      "driver": "smart_knob_rotary",
+      "z2m": "TS004F knob"
+    },
+    {
+      "mfr": "_TZ3000_pzui3skt",
+      "pid": "TS004F",
+      "driver": "smart_knob_rotary",
+      "z2m": "TS004F knob"
+    },
+    {
+      "mfr": "_TZ3000_pcqjmcud",
+      "pid": "TS004F",
+      "driver": "smart_knob_rotary",
+      "z2m": "TS004F knob"
+    },
+    {
+      "mfr": "_TZ3000_uri7ber7",
+      "pid": "TS004F",
+      "driver": "smart_knob_switch",
+      "z2m": "TS004F knob switch"
+    }
   ],
   "forbiddenOnKnobMfr": {
     "note": "abrsvsou/4fjiwweb stay button_wireless_4 — do not add to KNOB_MFR",
-    "mfr": ["_TZ3000_abrsvsou", "_TZ3000_4fjiwweb"],
+    "mfr": [
+      "_TZ3000_abrsvsou",
+      "_TZ3000_4fjiwweb"
+    ],
     "driver": "button_wireless_4"
   },
   "rxPaths": {
-    "commandMode": ["levelControl.step", "levelControl.move", "onOff.toggle"],
-    "eventMode": ["genOnOff.0xFC rotate_left/right", "scenes.recall"]
+    "commandMode": [
+      "levelControl.step",
+      "levelControl.move",
+      "onOff.toggle"
+    ],
+    "eventMode": [
+      "genOnOff.0xFC rotate_left/right",
+      "scenes.recall"
+    ]
   },
   "gates": [
     "tools/ci/p2448-rotary-knob-gate.js",

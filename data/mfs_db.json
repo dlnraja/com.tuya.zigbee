@@ -87,7 +87,7 @@
       "realMfrsAdded": 5,
       "details": "tmp/synthetic-resolution.json + tmp/pruned21-resolution.json"
     },
-    "lastAlignedAt": "2026-09-10T06:41:52.320Z",
+    "lastAlignedAt": "2026-09-10T20:37:33.262Z",
     "alignTool": "align-mfs-db-intelligent@P169",
     "lastSyncedFromCompose": "2026-09-10T06:41:49.868Z",
     "syncComposeTool": "sync-compose-to-mfs-db@P2368"
@@ -11957,8 +11957,7 @@
     "_tz3000_5tqxpine": {
       "manufacturerId": "_tz3000_5tqxpine",
       "modelIds": [
-        "TS0044",
-        "TS0601"
+        "TS0044"
       ],
       "variants": [],
       "deviceType": "sensor",
@@ -11983,7 +11982,15 @@
         "hubitat": 2
       },
       "confidence": 0.25,
-      "lastSeen": "2026-06-19T20:58:49.761Z"
+      "lastSeen": "2026-06-19T20:58:49.761Z",
+      "driverId": "scene_switch_4",
+      "sacredCouples": [
+        {
+          "mfr": "_TZ3000_5tqxpine",
+          "pid": "TS0044",
+          "driver": "scene_switch_4"
+        }
+      ]
     },
     "_tz3000_czuyt8lz": {
       "manufacturerId": "_tz3000_czuyt8lz",
@@ -72360,7 +72367,7 @@
     "_tz3000_an5rjiwd": {
       "manufacturerId": "_tz3000_an5rjiwd",
       "modelIds": [
-        "TS0043"
+        "TS0041"
       ],
       "variants": [],
       "deviceType": "sensor",
@@ -72380,7 +72387,15 @@
         "local": 1
       },
       "confidence": 0.08,
-      "lastSeen": "2026-06-19T20:58:49.697Z"
+      "lastSeen": "2026-06-19T20:58:49.697Z",
+      "driverId": "button_wireless_1",
+      "sacredCouples": [
+        {
+          "mfr": "_TZ3000_an5rjiwd",
+          "pid": "TS0041",
+          "driver": "button_wireless_1"
+        }
+      ]
     },
     "_hybrid_remote_button_wireless_fingerbot_needs_device_assignment": {
       "manufacturerId": "_hybrid_remote_button_wireless_fingerbot_needs_device_assignment",
@@ -78616,15 +78631,7 @@
     "_tz3000_ja5osu5g": {
       "manufacturerId": "_tz3000_ja5osu5g",
       "modelIds": [
-        "TS0040",
-        "TS004F",
-        "TS0601",
-        "TS0041",
-        "TS0042",
-        "TS0043",
-        "TS0044",
-        "TS0046",
-        "TS0215A"
+        "TS004F"
       ],
       "variants": [],
       "deviceType": "remote",
@@ -78645,7 +78652,15 @@
         "hubitat": 2
       },
       "confidence": 0.17,
-      "lastSeen": "2026-07-28T19:50:07.575Z"
+      "lastSeen": "2026-07-28T19:50:07.575Z",
+      "driverId": "smart_knob",
+      "sacredCouples": [
+        {
+          "mfr": "_TZ3000_ja5osu5g",
+          "pid": "TS004F",
+          "driver": "smart_knob"
+        }
+      ]
     },
     "_tyzb02_keyjqtha": {
       "manufacturerId": "_tyzb02_keyjqtha",
@@ -118009,7 +118024,9 @@
     },
     "_TZ3000_an5rjiwd": {
       "manufacturerId": "_TZ3000_an5rjiwd",
-      "modelIds": [],
+      "modelIds": [
+        "TS0041"
+      ],
       "variants": [],
       "deviceType": "switch",
       "driverHint": null,
@@ -118022,7 +118039,15 @@
         "integration": 1
       },
       "confidence": 0.5,
-      "lastSeen": "2026-07-12T18:15:41.795Z"
+      "lastSeen": "2026-07-12T18:15:41.795Z",
+      "driverId": "button_wireless_1",
+      "sacredCouples": [
+        {
+          "mfr": "_TZ3000_an5rjiwd",
+          "pid": "TS0041",
+          "driver": "button_wireless_1"
+        }
+      ]
     },
     "_TZ3000_bzzgvet0": {
       "manufacturerId": "_TZ3000_bzzgvet0",
@@ -121303,6 +121328,32 @@
       ],
       "confidence": 0.95,
       "lastSeen": "2026-08-29T23:32:19.548Z"
+    },
+    "_TZ3000_ja5osu5g": {
+      "driverId": "smart_knob",
+      "modelIds": [
+        "TS004F"
+      ],
+      "sacredCouples": [
+        {
+          "mfr": "_TZ3000_ja5osu5g",
+          "pid": "TS004F",
+          "driver": "smart_knob"
+        }
+      ]
+    },
+    "_TZ3000_5tqxpine": {
+      "driverId": "scene_switch_4",
+      "modelIds": [
+        "TS0044"
+      ],
+      "sacredCouples": [
+        {
+          "mfr": "_TZ3000_5tqxpine",
+          "pid": "TS0044",
+          "driver": "scene_switch_4"
+        }
+      ]
     }
   },
   "driverMapping": {
@@ -128769,7 +128820,7 @@
     "lastSacredCoupleEnrichment": "2026-07-13T23:57:58.590Z",
     "fingerprints": 5710,
     "lastUpdate": "2026-07-14",
-    "lastUpdated": "2026-09-10T20:00:06.888Z",
+    "lastUpdated": "2026-09-10T18:58:19.594Z",
     "totalModelIds": 62784,
     "multiPidMfrs": 3299,
     "variantMfrs": 82,
@@ -132771,7 +132822,7 @@
     "modelIdsCount": 13
   },
   "_tz3000_xwh1e22x": {
-    "driverId": "bulb_rgbw",
+    "driverId": "smart_irrigation_valve",
     "source": "compose-exclusive",
     "modelIds": [
       "CK-BL702-AL-01(7009_Z102LG03-1)",
@@ -133152,7 +133203,7 @@
     "modelIdsCount": 9
   },
   "_tz3210_p9ao60da": {
-    "driverId": "led_controller_cct",
+    "driverId": "bulb_tunable_white",
     "source": "compose-exclusive",
     "modelIds": [
       "TRI-C1ZR",
@@ -133177,7 +133228,7 @@
     "modelIdsCount": 1
   },
   "_tz3000_kdpxju99": {
-    "driverId": "rgb_spot_GU10",
+    "driverId": "bulb_tunable_white",
     "source": "compose-exclusive"
   },
   "_tz3000_gxnstjts": {
@@ -135864,7 +135915,7 @@
     "modelIdsCount": 101
   },
   "_tyzb01_ncutbjdi": {
-    "driverId": "switch_2_gang",
+    "driverId": "switch_1_gang",
     "source": "compose-exclusive",
     "modelIds": [
       "TS0002",
@@ -135877,7 +135928,7 @@
     "modelIdsCount": 5
   },
   "_tyzb01_aneiicmq": {
-    "driverId": "switch_2_gang",
+    "driverId": "switch_1_gang",
     "source": "compose-exclusive",
     "modelIds": [
       "TS0002",
@@ -138929,8 +138980,8 @@
     "modelIdsCount": 101
   },
   "_TZ3000_dpo1ysak": {
-    "driverId": "button_wireless_2",
-    "source": "auto-sync",
+    "driverId": "smartplug",
+    "source": "compose-exclusive",
     "modelIds": [
       "TS0001",
       "TS0002",
@@ -140965,7 +141016,7 @@
     "modelIdsCount": 101
   },
   "_TZ3000_4uf3d0ax": {
-    "driverId": "socket_power_strip",
+    "driverId": "button_wireless_2",
     "source": "compose-exclusive",
     "modelIds": [
       "TS0115",
@@ -143471,7 +143522,7 @@
     "modelIdsCount": 46
   },
   "_TZ3000_o4cjetlm": {
-    "driverId": "valvecontroller",
+    "driverId": "button_wireless_2",
     "source": "compose-exclusive",
     "modelIds": [
       "TS0001",
@@ -143482,7 +143533,7 @@
     "modelIdsCount": 3
   },
   "_TZ3000_tvuarksa": {
-    "driverId": "valvecontroller",
+    "driverId": "button_wireless_2",
     "source": "compose-exclusive",
     "modelIds": [
       "TS0001",
@@ -143493,7 +143544,7 @@
     "modelIdsCount": 3
   },
   "_TZ3000_j9568h44": {
-    "driverId": "valvecontroller",
+    "driverId": "button_wireless_2",
     "source": "compose-exclusive",
     "modelIds": [
       "TS0001",
@@ -143504,7 +143555,7 @@
     "modelIdsCount": 3
   },
   "_TZ3000_iedbgyxt": {
-    "driverId": "valvecontroller",
+    "driverId": "button_wireless_2",
     "source": "compose-exclusive",
     "modelIds": [
       "TS0001",
@@ -144405,8 +144456,8 @@
     "modelIdsCount": 101
   },
   "_TZ3000_gbm10jnj": {
-    "driverId": null,
-    "source": "compose-multi-pid",
+    "driverId": "button_wireless_4",
+    "source": "compose-exclusive",
     "modelIds": [
       "TS0043",
       "TS0044"
@@ -144526,7 +144577,7 @@
     "modelIdsCount": 101
   },
   "_TZ3000_sj7jbgks": {
-    "driverId": "button_wireless_3",
+    "driverId": "button_wireless_2",
     "source": "compose-exclusive",
     "modelIds": [
       "TS0013",
@@ -150170,7 +150221,7 @@
     "modelIdsCount": 4
   },
   "_TZ3000_BI6LPSEW": {
-    "driverId": "button_wireless_3",
+    "driverId": "switch_2gang",
     "source": "compose-exclusive"
   },
   "_tz3000_0ht8dnxj": {
@@ -150196,8 +150247,8 @@
     "source": "auto-sync"
   },
   "_TZ3000_5TQXPINE": {
-    "driverId": "button_wireless_4",
-    "source": "auto-sync"
+    "driverId": "scene_switch_4",
+    "source": "compose-exclusive"
   },
   "_TZ3000_CZUYT8LZ": {
     "driverId": "button_wireless_4",
@@ -151014,7 +151065,7 @@
     "modelIdsCount": 2
   },
   "_tz3000_jd3z4yig": {
-    "driverId": "rgb_led_strip",
+    "driverId": "christmas_lights",
     "source": "compose-exclusive",
     "modelIds": [
       "TS0502",
@@ -151025,7 +151076,7 @@
     "modelIdsCount": 3
   },
   "_TZ3210_jd3z4yig": {
-    "driverId": "rgb_led_strip",
+    "driverId": "christmas_lights",
     "source": "compose-exclusive",
     "modelIds": [
       "TS0502",
@@ -151077,7 +151128,7 @@
     "modelIdsCount": 4
   },
   "_TYZB01_HJSGDKFL": {
-    "driverId": "lcdtemphumidsensor",
+    "driverId": "temphumidsensor5",
     "source": "compose-exclusive",
     "modelIds": [
       "EXCELLUX",
@@ -153345,7 +153396,7 @@
     "modelIdsCount": 59
   },
   "_TZ3000_FLLYGHYJ": {
-    "driverId": "temphumidsensor3",
+    "driverId": "climate_sensor",
     "source": "compose-exclusive",
     "modelIds": [
       "SNTZ003",
@@ -155189,7 +155240,7 @@
     "modelIdsCount": 59
   },
   "_TZ3000_SAIQCN0Y": {
-    "driverId": "temphumidsensor3",
+    "driverId": "climate_sensor",
     "source": "compose-exclusive",
     "modelIds": [
       "SNTZ003",
@@ -156144,7 +156195,7 @@
     "modelIdsCount": 59
   },
   "_TZ3000_XR3HTD96": {
-    "driverId": "temphumidsensor3",
+    "driverId": "climate_sensor",
     "source": "compose-exclusive",
     "modelIds": [
       "SNTZ003",
@@ -157221,7 +157272,7 @@
     "modelIdsCount": 36
   },
   "_TZE200_04YFVWEB": {
-    "driverId": "device_radiator_valve",
+    "driverId": "climate_sensor",
     "source": "compose-exclusive",
     "modelIds": [
       "TS0601"
@@ -157588,7 +157639,7 @@
     "modelIdsCount": 59
   },
   "_TZE200_2CS6G9I7": {
-    "driverId": "device_radiator_valve",
+    "driverId": "climate_sensor",
     "source": "compose-exclusive",
     "modelIds": [
       "TS0601"
@@ -158110,7 +158161,7 @@
     "modelIdsCount": 59
   },
   "_TZE200_6Y7KYJGA": {
-    "driverId": "device_radiator_valve",
+    "driverId": "climate_sensor",
     "source": "compose-exclusive",
     "modelIds": [
       "TS0601"
@@ -158499,7 +158550,7 @@
     "modelIdsCount": 59
   },
   "_TZE200_8DAQWRSJ": {
-    "driverId": "device_radiator_valve",
+    "driverId": "climate_sensor",
     "source": "compose-exclusive",
     "modelIds": [
       "TS0601"
@@ -158931,7 +158982,7 @@
     "modelIdsCount": 59
   },
   "_TZE200_A1OVDOBN": {
-    "driverId": "device_radiator_valve",
+    "driverId": "climate_sensor",
     "source": "compose-exclusive",
     "modelIds": [
       "TS0601"
@@ -159832,7 +159883,7 @@
     "modelIdsCount": 59
   },
   "_TZE200_CZK78PTR": {
-    "driverId": "device_radiator_valve",
+    "driverId": "climate_sensor",
     "source": "compose-exclusive",
     "modelIds": [
       "TS0601"
@@ -162499,7 +162550,7 @@
     "modelIdsCount": 59
   },
   "_TZE200_JEAXP72V": {
-    "driverId": "device_radiator_valve",
+    "driverId": "climate_sensor",
     "source": "compose-exclusive",
     "modelIds": [
       "TS0601"
@@ -164576,7 +164627,7 @@
     "modelIdsCount": 48
   },
   "_TZE200_OWWDXJBX": {
-    "driverId": "device_radiator_valve",
+    "driverId": "climate_sensor",
     "source": "compose-exclusive",
     "modelIds": [
       "TS0601"
@@ -164842,7 +164893,7 @@
     "modelIdsCount": 59
   },
   "_TZE200_PS5V5JOR": {
-    "driverId": "device_radiator_valve",
+    "driverId": "climate_sensor",
     "source": "compose-exclusive",
     "modelIds": [
       "TS0601"
@@ -165108,7 +165159,7 @@
     "modelIdsCount": 59
   },
   "_TZE200_QSOECQLK": {
-    "driverId": "device_radiator_valve",
+    "driverId": "climate_sensor",
     "source": "compose-exclusive",
     "modelIds": [
       "TS0601"
@@ -169404,7 +169455,7 @@
     "modelIdsCount": 59
   },
   "_TZE200_ZIVFVD7H": {
-    "driverId": "device_radiator_valve",
+    "driverId": "climate_sensor",
     "source": "compose-exclusive",
     "modelIds": [
       "TS0601"
@@ -174427,7 +174478,7 @@
     "modelIdsCount": 59
   },
   "_TZE204_P1QRTLJN": {
-    "driverId": "device_radiator_valve",
+    "driverId": "climate_sensor",
     "source": "compose-exclusive",
     "modelIds": [
       "TS0601"
@@ -179166,7 +179217,7 @@
     "modelIdsCount": 1
   },
   "_TZE284_A1OVDOBN": {
-    "driverId": "device_radiator_valve",
+    "driverId": "climate_sensor",
     "source": "compose-exclusive",
     "modelIds": [
       "TS0601"
@@ -179242,7 +179293,7 @@
     "modelIdsCount": 59
   },
   "_TZE284_AAEAIFEZ": {
-    "driverId": "device_radiator_valve",
+    "driverId": "climate_sensor",
     "source": "compose-exclusive",
     "modelIds": [
       "TS0601"
@@ -181539,7 +181590,7 @@
     "modelIdsCount": 59
   },
   "_TZE284_P3DBF6QS": {
-    "driverId": "device_radiator_valve",
+    "driverId": "device_air_purifier_radiator",
     "source": "compose-exclusive",
     "modelIds": [
       "TS0601"
@@ -189140,7 +189191,7 @@
     "modelIdsCount": 2
   },
   "_TZE200_AYCXWIAU": {
-    "driverId": "sensor_climate_contact",
+    "driverId": "co_sensor",
     "source": "compose-exclusive",
     "modelIds": [
       "TS0601"
@@ -189322,7 +189373,7 @@
     "modelIdsCount": 3
   },
   "_TZ3000_4UUAJA4A": {
-    "driverId": "curtain_module",
+    "driverId": "curtain_motor",
     "source": "compose-exclusive",
     "modelIds": [
       "TS0726",
@@ -189500,8 +189551,8 @@
     "modelIdsCount": 48
   },
   "_TZ3000_J1XL73IW": {
-    "driverId": "curtain_module_2_gang",
-    "source": "sync-compose-known",
+    "driverId": "curtain_motor",
+    "source": "compose-exclusive",
     "modelIds": [
       "TS0601"
     ],
@@ -189565,8 +189616,8 @@
     "modelIdsCount": 48
   },
   "_TZ3000_L6IQPH4F": {
-    "driverId": "curtain_module_2_gang",
-    "source": "sync-compose-known",
+    "driverId": "curtain_motor",
+    "source": "compose-exclusive",
     "modelIds": [
       "TS0601"
     ],
@@ -190542,7 +190593,7 @@
     "modelIdsCount": 48
   },
   "_TZE284_LNYZ4A6V": {
-    "driverId": "device_air_purifier_plug",
+    "driverId": "curtain_motor",
     "source": "compose-exclusive",
     "modelIds": [
       "0X8040",
@@ -192066,8 +192117,8 @@
     "modelIdsCount": 1
   },
   "_TZ3000_8uaoilu9": {
-    "driverId": "curtain_motor_shutter",
-    "source": "auto-sync",
+    "driverId": "rgb_floor_led_light",
+    "source": "compose-exclusive",
     "modelIds": [
       "TS0301",
       "TS0502A",
@@ -192143,8 +192194,8 @@
     "modelIdsCount": 57
   },
   "_TZ3000_odygigth": {
-    "driverId": "curtain_motor_shutter",
-    "source": "auto-sync",
+    "driverId": "rgb_bulb_E14",
+    "source": "compose-exclusive",
     "modelIds": [
       "TS0301",
       "TS0505A",
@@ -192155,8 +192206,8 @@
     "modelIdsCount": 4
   },
   "_TZ3000_gek6snaj": {
-    "driverId": "curtain_motor_shutter",
-    "source": "auto-sync",
+    "driverId": "rgb_led_light_bar",
+    "source": "compose-exclusive",
     "modelIds": [
       "TS0301",
       "TS0505A",
@@ -192209,7 +192260,7 @@
   },
   "_TZE200_icka1clh": {
     "driverId": "curtain_motor",
-    "source": "P2445-am43-multipid-z2m-cover4",
+    "source": "registry:p2441-miamo-icka1clh-am43-curtain",
     "modelIds": [
       "TS0601",
       "AM43-0.45/40-ES-EB",
@@ -192348,7 +192399,7 @@
     "modelIdsCount": 3
   },
   "_tze200_7eue9vhc": {
-    "driverId": "device_air_purifier_plug",
+    "driverId": "curtain_motor_tilt",
     "source": "compose-exclusive",
     "modelIds": [
       "0X8040",
@@ -192475,18 +192526,6 @@
     ],
     "pid": "TS0601",
     "modelIdsCount": 2
-  },
-  "_tze200_zah67ekd": {
-    "driverId": "curtain_motor",
-    "source": "P2445-am43-multipid-z2m-cover4",
-    "modelIds": [
-      "TS0601",
-      "AM43-0.45/40-ES-EB",
-      "AM43-0.45/40-ES-EZ"
-    ],
-    "pid": "TS0601",
-    "modelIdsCount": 3,
-    "notes": "One mfr → many verified pids/variants OK; Z2M TS0601_cover_4; no invent TS0301/TS0726"
   },
   "_tz3000_8kzqqzu4": {
     "driverId": "curtain_motor_wall",
@@ -192782,7 +192821,7 @@
     "modelIdsCount": 1
   },
   "_TZE284_o3x45p96": {
-    "driverId": "device_radiator_valve",
+    "driverId": "wall_thermostat",
     "source": "compose-exclusive",
     "modelIds": [
       "TS0601"
@@ -192859,7 +192898,7 @@
     "modelIdsCount": 60
   },
   "_TZE284_rv6iuyxb": {
-    "driverId": "device_radiator_valve",
+    "driverId": "wall_thermostat",
     "source": "compose-exclusive",
     "modelIds": [
       "TS0601"
@@ -192868,7 +192907,7 @@
     "modelIdsCount": 1
   },
   "_TZE284_c6wv4xyo": {
-    "driverId": "device_radiator_valve",
+    "driverId": "wall_thermostat",
     "source": "compose-exclusive",
     "modelIds": [
       "TS0601"
@@ -192877,7 +192916,7 @@
     "modelIdsCount": 1
   },
   "_TZE284_hvaxb2tc": {
-    "driverId": "device_radiator_valve",
+    "driverId": "wall_thermostat",
     "source": "compose-exclusive",
     "modelIds": [
       "TS0601"
@@ -192886,7 +192925,7 @@
     "modelIdsCount": 1
   },
   "_TZE204_o3x45p96": {
-    "driverId": "device_radiator_valve",
+    "driverId": "wall_thermostat",
     "source": "compose-exclusive",
     "modelIds": [
       "TS0601"
@@ -193220,7 +193259,7 @@
     "modelIdsCount": 1
   },
   "_tze200_spyvfeti": {
-    "driverId": "device_radiator_valve",
+    "driverId": "water_valve_smart",
     "source": "compose-exclusive",
     "modelIds": [
       "TS0601"
@@ -194400,7 +194439,7 @@
     "modelIdsCount": 19
   },
   "_TZ3210_jtifm80b": {
-    "driverId": "tunable_bulb_E14",
+    "driverId": "dimmer_wall_1gang",
     "source": "compose-exclusive",
     "modelIds": [
       "TS0502A",
@@ -194471,7 +194510,7 @@
     "modelIdsCount": 3
   },
   "_TZ3210_c2iwpxf1": {
-    "driverId": "tunable_bulb_E14",
+    "driverId": "dimmer_wall_1gang",
     "source": "couple-exclusive",
     "modelIds": [
       "TS0502A",
@@ -194482,7 +194521,7 @@
     "modelIdsCount": 3
   },
   "_TZ3210_09hzmirw": {
-    "driverId": "smoke_sensor",
+    "driverId": "dimmer_wall_1gang",
     "source": "compose-exclusive",
     "modelIds": [
       "SMD9300",
@@ -194946,7 +194985,7 @@
     "modelIdsCount": 19
   },
   "_tyzb01_qezuin6k": {
-    "driverId": "dimmer_1_gang",
+    "driverId": "dimmer_wall_1gang",
     "source": "compose-exclusive",
     "modelIds": [
       "TS0052",
@@ -196756,8 +196795,8 @@
     "modelIdsCount": 37
   },
   "_tz3000_o1jzcxou": {
-    "driverId": "gateway_zigbee_bridge",
-    "source": "auto-sync",
+    "driverId": "plug",
+    "source": "compose-exclusive",
     "modelIds": [
       "S26R2ZB",
       "S31 Lite zb",
@@ -196867,7 +196906,7 @@
     "source": "auto-sync"
   },
   "_tz3290_ot6ewjvmejq5ekhl": {
-    "driverId": "ir_blaster",
+    "driverId": "ir_remote",
     "source": "compose-exclusive",
     "modelIds": [
       "TS0002",
@@ -197158,7 +197197,7 @@
     "modelIdsCount": 45
   },
   "_tz3290_7v1k4vufotpowp9z": {
-    "driverId": "ir_blaster",
+    "driverId": "ir_remote",
     "source": "compose-exclusive",
     "modelIds": [
       "TS0002",
@@ -198625,31 +198664,31 @@
     "modelIdsCount": 2
   },
   "TUYATEC-1G3TAWNP": {
-    "driverId": "temphumidsensor",
+    "driverId": "hybrid_fan_sensor",
     "source": "compose-exclusive"
   },
   "TUYATEC-1UXX9CCI": {
-    "driverId": "climate_sensor",
+    "driverId": "hybrid_fan_sensor",
     "source": "compose-exclusive"
   },
   "TUYATEC-GQHXIXYK": {
-    "driverId": "temphumidsensor",
+    "driverId": "hybrid_fan_sensor",
     "source": "compose-exclusive"
   },
   "TUYATEC-HAOIUWZY": {
-    "driverId": "climate_sensor",
+    "driverId": "hybrid_fan_sensor",
     "source": "compose-exclusive"
   },
   "TUYATEC-OJMXEIKG": {
-    "driverId": "temphumidsensor",
+    "driverId": "hybrid_fan_sensor",
     "source": "compose-exclusive"
   },
   "TUYATEC-OJMXEIKQ": {
-    "driverId": "temphumidsensor",
+    "driverId": "hybrid_fan_sensor",
     "source": "compose-exclusive"
   },
   "TUYATEC-PRHS1RSD": {
-    "driverId": "temphumidsensor",
+    "driverId": "hybrid_fan_sensor",
     "source": "compose-exclusive"
   },
   "TUYATEC-QUN7VQ14": {
@@ -198657,19 +198696,19 @@
     "source": "auto-sync"
   },
   "TUYATEC-RIUJ5XZS": {
-    "driverId": "temphumidsensor",
+    "driverId": "hybrid_fan_sensor",
     "source": "compose-exclusive"
   },
   "TUYATEC-V3UXBUXY": {
-    "driverId": "temphumidsensor",
+    "driverId": "hybrid_fan_sensor",
     "source": "compose-exclusive"
   },
   "TUYATEC-VMGH3FXD": {
-    "driverId": "temphumidsensor",
+    "driverId": "hybrid_fan_sensor",
     "source": "compose-exclusive"
   },
   "TUYATEC-YG5DCBFU": {
-    "driverId": "temphumidsensor",
+    "driverId": "hybrid_fan_sensor",
     "source": "compose-exclusive"
   },
   "_TZE608_2wg235cx": {
@@ -198782,7 +198821,7 @@
     "modelIdsCount": 6
   },
   "_TZ3000_RYLAOZUC": {
-    "driverId": "tunable_bulb_E14",
+    "driverId": "hybrid_light_windowcoverings",
     "source": "compose-exclusive",
     "modelIds": [
       "TS0502A",
@@ -198793,7 +198832,7 @@
     "modelIdsCount": 3
   },
   "_TZ3000_5FKUFHN1": {
-    "driverId": "tunable_bulb_E14",
+    "driverId": "hybrid_light_windowcoverings",
     "source": "compose-exclusive",
     "modelIds": [
       "TS0502A",
@@ -198815,11 +198854,11 @@
     "modelIdsCount": 3
   },
   "_TZ3000_OBORYBOW": {
-    "driverId": "tunable_bulb_E14",
+    "driverId": "hybrid_light_windowcoverings",
     "source": "compose-exclusive"
   },
   "_TZ3000_RIWP3K79": {
-    "driverId": "rgb_led_strip",
+    "driverId": "hybrid_light_windowcoverings",
     "source": "compose-exclusive"
   },
   "_TZE204_x1ovyvy1": {
@@ -199244,7 +199283,7 @@
     "modelIdsCount": 1
   },
   "_TZ3290_U9XAC5RV": {
-    "driverId": "ir_blaster",
+    "driverId": "ir_remote",
     "source": "compose-exclusive",
     "modelIds": [
       "TS0601"
@@ -199446,8 +199485,8 @@
     "modelIdsCount": 1
   },
   "_TZ3000_iystcadi": {
-    "driverId": "led_controller_cct",
-    "source": "auto-sync",
+    "driverId": "led_controller_rgb",
+    "source": "compose-exclusive",
     "modelIds": [
       "TRI-C1ZR",
       "TRI-K1ZR",
@@ -200262,11 +200301,11 @@
     "modelIdsCount": 23
   },
   "_tz3000_utagpnzs": {
-    "driverId": "rgb_wall_led_light",
+    "driverId": "light_bulb_rgb_led",
     "source": "compose-exclusive"
   },
   "_tz3000_5bsf8vaj": {
-    "driverId": "rgb_wall_led_light",
+    "driverId": "light_bulb_rgb_led",
     "source": "compose-exclusive"
   },
   "_tz3210_s8lvbbu": {
@@ -200744,7 +200783,7 @@
     "source": "compose-exclusive"
   },
   "_tze204_khoqss0a": {
-    "driverId": "sensor_climate_contact",
+    "driverId": "lock_smart",
     "source": "compose-exclusive",
     "modelIds": [
       "TS0601"
@@ -203210,8 +203249,8 @@
     "modelIdsCount": 38
   },
   "_tz3000_dd8wwzcy": {
-    "driverId": "plug_energy_monitor",
-    "source": "auto-sync"
+    "driverId": "climate_sensor",
+    "source": "compose-exclusive"
   },
   "_tz3000_hhiodez3": {
     "driverId": "plug_energy_monitor",
@@ -204331,7 +204370,7 @@
     "source": "compose-exclusive"
   },
   "_TZ3000_QYSTBCJG": {
-    "driverId": "smartPlug_DinRail",
+    "driverId": "plug_energy_monitor",
     "source": "compose-exclusive"
   },
   "_hybrid_plug_smart_needs_device_assignment": {
@@ -210339,7 +210378,7 @@
     "modelIdsCount": 17
   },
   "_TZE200_CXAKECFO": {
-    "driverId": "sensor_climate_contact",
+    "driverId": "radiator_valve",
     "source": "compose-exclusive",
     "modelIds": [
       "TS0601"
@@ -212409,8 +212448,8 @@
     "modelIdsCount": 45
   },
   "_tz3000_an5rjiwd": {
-    "driverId": "button_wireless_4",
-    "source": "auto-sync|issue-121-packetninja"
+    "driverId": "button_wireless_1",
+    "source": "compose-exclusive"
   },
   "_hybrid_remote_button_wireless_fingerbot_needs_device_assignment": {
     "driverId": "remote_button_wireless_fingerbot",
@@ -212550,8 +212589,8 @@
     "modelIdsCount": 1
   },
   "_tz3000_qd7hej8u": {
-    "driverId": "bulb_rgb",
-    "source": "couple-exclusive",
+    "driverId": "rgb_bulb_E27",
+    "source": "compose-exclusive",
     "modelIds": [
       "TS0505A",
       "TS0505B",
@@ -212561,8 +212600,8 @@
     "modelIdsCount": 3
   },
   "_tz3210_mja6r5ix": {
-    "driverId": "bulb_rgb",
-    "source": "couple-exclusive",
+    "driverId": "rgb_bulb_E27",
+    "source": "compose-exclusive",
     "modelIds": [
       "TS0505A",
       "TS0505B",
@@ -212572,8 +212611,8 @@
     "modelIdsCount": 3
   },
   "_tz3000_q50zhdsc": {
-    "driverId": "bulb_rgb",
-    "source": "couple-exclusive",
+    "driverId": "rgb_bulb_E27",
+    "source": "compose-exclusive",
     "modelIds": [
       "TS0505A",
       "TS0505B",
@@ -212583,7 +212622,7 @@
     "modelIdsCount": 3
   },
   "eWeLight": {
-    "driverId": "bulb_rgb",
+    "driverId": "rgb_bulb_E27",
     "source": "compose-exclusive"
   },
   "_tz3210_x13bu7za": {
@@ -212641,7 +212680,7 @@
     "modelIdsCount": 1
   },
   "_tz3210_bfwvfyx1": {
-    "driverId": "bulb_rgb",
+    "driverId": "rgb_spot_GU10",
     "source": "compose-exclusive",
     "modelIds": [
       "TS0505A",
@@ -213256,7 +213295,7 @@
     "modelIdsCount": 2
   },
   "_TZ3000_rcuyhwe3": {
-    "driverId": "smart_door_window_sensor",
+    "driverId": "contact_sensor",
     "source": "compose-exclusive",
     "modelIds": [
       "01MINIZB",
@@ -216152,7 +216191,7 @@
     "modelIdsCount": 2
   },
   "_tz2000_xogb73am": {
-    "driverId": "lcdtemphumidsensor",
+    "driverId": "sensor_lcdtemphumidsensor_temphumidsensor",
     "source": "compose-exclusive",
     "modelIds": [
       "TS0201",
@@ -216164,7 +216203,7 @@
     "modelIdsCount": 4
   },
   "_tz3000_rusu2vzb": {
-    "driverId": "lcdtemphumidsensor",
+    "driverId": "sensor_lcdtemphumidsensor_temphumidsensor",
     "source": "compose-exclusive",
     "modelIds": [
       "TS0201",
@@ -216557,8 +216596,8 @@
     "modelIdsCount": 20
   },
   "_TZ3000_lf56vpxj": {
-    "driverId": "sensor_motion_presence",
-    "source": "auto-sync",
+    "driverId": "slim_motion_sensor",
+    "source": "compose-exclusive",
     "modelIds": [
       "Excellux",
       "TS0001",
@@ -217228,7 +217267,7 @@
     "modelIdsCount": 1
   },
   "_tz3000_ja5osu5g": {
-    "driverId": "button_wireless_1",
+    "driverId": "smart_knob",
     "source": "compose-exclusive",
     "modelIds": [
       "TS004F"
@@ -217387,13 +217426,12 @@
   },
   "_TZ3000_kaflzta4": {
     "driverId": "smart_knob",
-    "source": "auto-sync",
+    "source": "registry:p2442-kaflzta4-ts004f-smart-knob",
     "modelIds": [
-      "ERS-10TZBVK-AA",
       "TS004F"
     ],
-    "pid": "ERS-10TZBVK-AA",
-    "modelIdsCount": 2
+    "pid": "TS004F",
+    "modelIdsCount": 1
   },
   "_tz3000_csflgqj2": {
     "driverId": "smart_knob_rotary",
@@ -218159,7 +218197,7 @@
     "modelIdsCount": 1
   },
   "_TZE200_m9skfctm": {
-    "driverId": "smoke_sensor2",
+    "driverId": "switch_wireless",
     "source": "compose-exclusive"
   },
   "_TZE200_t5p1vj8r": {
@@ -218293,7 +218331,7 @@
     "modelIdsCount": 3
   },
   "_TYZB01_mtunwanm": {
-    "driverId": "switch_2_gang",
+    "driverId": "socket_power_strip_four_three",
     "source": "compose-exclusive"
   },
   "_TZ3000_9tg32trw": {
@@ -237720,7 +237758,7 @@
     "source": "compose-exclusive"
   },
   "LELLKI": {
-    "driverId": "socket_power_strip_four_three",
+    "driverId": "switch_4gang",
     "source": "compose-exclusive"
   },
   "_TZ3000_4VOBCWSC": {
@@ -241139,7 +241177,7 @@
     "modelIdsCount": 1
   },
   "_TZE204_6kijc7nd": {
-    "driverId": "device_radiator_valve",
+    "driverId": "thermostatic_radiator_valve",
     "source": "compose-exclusive",
     "modelIds": [
       "TS0601"
@@ -241148,7 +241186,7 @@
     "modelIdsCount": 1
   },
   "_TZE284_6kijc7nd": {
-    "driverId": "device_radiator_valve",
+    "driverId": "thermostatic_radiator_valve",
     "source": "compose-exclusive",
     "modelIds": [
       "TS0601"
@@ -242652,7 +242690,7 @@
     "modelIdsCount": 9
   },
   "_TYZB01_VKWRYFDR": {
-    "driverId": "socket_power_strip_four",
+    "driverId": "usb_outlet_advanced",
     "source": "compose-exclusive",
     "modelIds": [
       "TS0115",
@@ -245801,7 +245839,7 @@
     "modelIdsCount": 1
   },
   "_TZE200_hvaxb2tc": {
-    "driverId": "device_radiator_valve_smart",
+    "driverId": "wall_thermostat",
     "source": "compose-exclusive",
     "modelIds": [
       "TS0601"
@@ -245810,7 +245848,7 @@
     "modelIdsCount": 1
   },
   "_TZE200_6rdj8dzm": {
-    "driverId": "device_radiator_valve",
+    "driverId": "wall_thermostat",
     "source": "compose-exclusive",
     "modelIds": [
       "TS0601"
@@ -245819,7 +245857,7 @@
     "modelIdsCount": 1
   },
   "_TZE200_rufdtfyv": {
-    "driverId": "device_radiator_valve",
+    "driverId": "wall_thermostat",
     "source": "compose-exclusive",
     "modelIds": [
       "TS0601"
@@ -245828,7 +245866,7 @@
     "modelIdsCount": 1
   },
   "_TZE200_rk1wojce": {
-    "driverId": "device_radiator_valve",
+    "driverId": "wall_thermostat",
     "source": "compose-exclusive",
     "modelIds": [
       "TS0601"
@@ -245837,7 +245875,7 @@
     "modelIdsCount": 1
   },
   "_TZE200_rndg81sf": {
-    "driverId": "device_radiator_valve",
+    "driverId": "wall_thermostat",
     "source": "compose-exclusive",
     "modelIds": [
       "TS0601"
@@ -246068,7 +246106,7 @@
     "lastEnrichment": "p2295-multi-identity"
   },
   "_TZE200_e9ba97vf": {
-    "driverId": "device_radiator_valve",
+    "driverId": "wall_thermostat",
     "source": "compose-exclusive",
     "modelIds": [
       "TS0601"
@@ -246077,7 +246115,7 @@
     "modelIdsCount": 1
   },
   "_TZE200_7yoranx2": {
-    "driverId": "device_radiator_valve",
+    "driverId": "wall_thermostat",
     "source": "compose-exclusive",
     "modelIds": [
       "TS0601"
@@ -246086,7 +246124,7 @@
     "modelIdsCount": 1
   },
   "_TZE200_py4cm3he": {
-    "driverId": "device_radiator_valve",
+    "driverId": "wall_thermostat",
     "source": "compose-exclusive",
     "modelIds": [
       "TS0601"
@@ -246095,7 +246133,7 @@
     "modelIdsCount": 1
   },
   "_TZE200_wsbfwodu": {
-    "driverId": "device_radiator_valve",
+    "driverId": "wall_thermostat",
     "source": "compose-exclusive",
     "modelIds": [
       "TS0601"
@@ -246104,7 +246142,7 @@
     "modelIdsCount": 1
   },
   "_TZE200_x9axofse": {
-    "driverId": "device_radiator_valve",
+    "driverId": "wall_thermostat",
     "source": "compose-exclusive",
     "modelIds": [
       "TS0601"
@@ -246113,7 +246151,7 @@
     "modelIdsCount": 1
   },
   "_TZE200_lhzapfg9": {
-    "driverId": "device_radiator_valve",
+    "driverId": "wall_thermostat",
     "source": "compose-exclusive",
     "modelIds": [
       "TS0601"
@@ -246122,7 +246160,7 @@
     "modelIdsCount": 1
   },
   "_TZE200_0hg58wyk": {
-    "driverId": "device_radiator_valve",
+    "driverId": "wall_thermostat",
     "source": "compose-exclusive",
     "modelIds": [
       "TS0601"
@@ -246131,7 +246169,7 @@
     "modelIdsCount": 1
   },
   "_TZE200_cpmgn2cf": {
-    "driverId": "device_radiator_valve",
+    "driverId": "wall_thermostat",
     "source": "compose-exclusive",
     "modelIds": [
       "TS0601"
@@ -246140,7 +246178,7 @@
     "modelIdsCount": 1
   },
   "_TZE200_bvu2wnxz": {
-    "driverId": "device_radiator_valve_smart",
+    "driverId": "wall_thermostat",
     "source": "compose-exclusive",
     "modelIds": [
       "TS0601"
@@ -246149,7 +246187,7 @@
     "modelIdsCount": 1
   },
   "_TZE200_jkfbph7l": {
-    "driverId": "device_radiator_valve",
+    "driverId": "wall_thermostat",
     "source": "compose-exclusive",
     "modelIds": [
       "TS0601"
@@ -246158,7 +246196,7 @@
     "modelIdsCount": 1
   },
   "_TZE200_rxntag7i": {
-    "driverId": "device_radiator_valve",
+    "driverId": "wall_thermostat",
     "source": "compose-exclusive",
     "modelIds": [
       "TS0601"
@@ -246167,7 +246205,7 @@
     "modelIdsCount": 1
   },
   "_TZE200_4utwozi2": {
-    "driverId": "device_radiator_valve",
+    "driverId": "wall_thermostat",
     "source": "compose-exclusive",
     "modelIds": [
       "TS0601"
@@ -246176,7 +246214,7 @@
     "modelIdsCount": 1
   },
   "_TZE200_yqgbrdyo": {
-    "driverId": "device_radiator_valve",
+    "driverId": "wall_thermostat",
     "source": "compose-exclusive",
     "modelIds": [
       "TS0601"
@@ -246185,7 +246223,7 @@
     "modelIdsCount": 1
   },
   "_TZE200_rxq4iti9": {
-    "driverId": "device_radiator_valve",
+    "driverId": "wall_thermostat",
     "source": "compose-exclusive",
     "modelIds": [
       "TS0601"
@@ -246203,7 +246241,7 @@
     "modelIdsCount": 1
   },
   "_TZE200_4utwoz2": {
-    "driverId": "device_radiator_valve",
+    "driverId": "wall_thermostat",
     "source": "compose-exclusive",
     "modelIds": [
       "TS0601"
@@ -246221,7 +246259,7 @@
     "modelIdsCount": 1
   },
   "_TZE200_ow09xlxm": {
-    "driverId": "device_radiator_valve",
+    "driverId": "wall_thermostat",
     "source": "compose-exclusive",
     "modelIds": [
       "TS0601"
@@ -246230,7 +246268,7 @@
     "modelIdsCount": 1
   },
   "_TZE200_rv6iuyxb": {
-    "driverId": "device_radiator_valve",
+    "driverId": "wall_thermostat",
     "source": "compose-exclusive",
     "modelIds": [
       "TS0601"
@@ -246239,7 +246277,7 @@
     "modelIdsCount": 1
   },
   "_TZE200_suxywabt": {
-    "driverId": "device_radiator_valve",
+    "driverId": "wall_thermostat",
     "source": "compose-exclusive",
     "modelIds": [
       "TS0601"
@@ -246248,7 +246286,7 @@
     "modelIdsCount": 1
   },
   "_TZE200_d3z1ukqw": {
-    "driverId": "device_radiator_valve",
+    "driverId": "wall_thermostat",
     "source": "compose-exclusive",
     "modelIds": [
       "TS0601"
@@ -246276,7 +246314,7 @@
     "modelIdsCount": 1
   },
   "_TZE200_z1tyspqw": {
-    "driverId": "device_radiator_valve",
+    "driverId": "wall_thermostat",
     "source": "compose-exclusive",
     "modelIds": [
       "TS0601"
@@ -246285,7 +246323,7 @@
     "modelIdsCount": 1
   },
   "_TZE200_bvrlmajk": {
-    "driverId": "device_radiator_valve",
+    "driverId": "wall_thermostat",
     "source": "compose-exclusive",
     "modelIds": [
       "TS0601"
@@ -246294,7 +246332,7 @@
     "modelIdsCount": 1
   },
   "_TZE204_rtrmfadk": {
-    "driverId": "device_radiator_valve",
+    "driverId": "wall_thermostat",
     "source": "compose-exclusive",
     "modelIds": [
       "TS0601"
@@ -246303,7 +246341,7 @@
     "modelIdsCount": 1
   },
   "_TZE204_cvcu2p6e": {
-    "driverId": "device_radiator_valve",
+    "driverId": "wall_thermostat",
     "source": "compose-exclusive",
     "modelIds": [
       "TS0601"
@@ -246312,7 +246350,7 @@
     "modelIdsCount": 1
   },
   "_TZE204_9mjy74mp": {
-    "driverId": "device_radiator_valve",
+    "driverId": "wall_thermostat",
     "source": "compose-exclusive",
     "modelIds": [
       "TS0601"
@@ -246321,7 +246359,7 @@
     "modelIdsCount": 1
   },
   "_TZE200_9mjy74mp": {
-    "driverId": "device_radiator_valve",
+    "driverId": "wall_thermostat",
     "source": "compose-exclusive",
     "modelIds": [
       "TS0601"
@@ -246330,7 +246368,7 @@
     "modelIdsCount": 1
   },
   "_TZE204_qyr2m29i": {
-    "driverId": "device_radiator_valve",
+    "driverId": "wall_thermostat",
     "source": "compose-exclusive",
     "modelIds": [
       "TS0601"
@@ -246429,7 +246467,7 @@
     "modelIdsCount": 1
   },
   "_TZE284_iilebqoo": {
-    "driverId": "device_radiator_valve",
+    "driverId": "wall_thermostat",
     "source": "compose-exclusive",
     "modelIds": [
       "TS0601"
@@ -246599,7 +246637,7 @@
     "modelIdsCount": 1
   },
   "_TZE204_hvaxb2tc": {
-    "driverId": "device_radiator_valve",
+    "driverId": "wall_thermostat",
     "source": "compose-exclusive",
     "modelIds": [
       "TS0601"
@@ -363017,32 +363055,32 @@
     ]
   },
   "_tze2841000000_0ints6wl": {
-    "driverId": "lcdtemphumidsensor_3",
-    "source": "sync-compose-add",
+    "driverId": "climate_sensor",
+    "source": "compose-exclusive",
     "modelIds": [
       "EXCELLUX",
       "TS0601"
     ]
   },
   "dht0001": {
-    "driverId": "lcdtemphumidsensor_3",
-    "source": "sync-compose-add",
+    "driverId": "climate_sensor",
+    "source": "compose-exclusive",
     "modelIds": [
       "EXCELLUX",
       "TS0601"
     ]
   },
   "dhta001": {
-    "driverId": "lcdtemphumidsensor_3",
-    "source": "sync-compose-add",
+    "driverId": "climate_sensor",
+    "source": "compose-exclusive",
     "modelIds": [
       "EXCELLUX",
       "TS0601"
     ]
   },
   "ntcht01": {
-    "driverId": "lcdtemphumidsensor_3",
-    "source": "sync-compose-add",
+    "driverId": "climate_sensor",
+    "source": "compose-exclusive",
     "modelIds": [
       "EXCELLUX",
       "TS0601"
@@ -367603,7 +367641,7 @@
   },
   "_TZE204_icka1clh": {
     "driverId": "curtain_motor",
-    "source": "P2445-am43-multipid-z2m-cover4",
+    "source": "registry:p2441-miamo-icka1clh-am43-curtain",
     "modelIds": [
       "TS0601",
       "AM43-0.45/40-ES-EB",
