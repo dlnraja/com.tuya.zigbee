@@ -1521,5 +1521,8 @@
   },
   "5.12.160": {
     "en": "Fixed BSEED wired 2-gang pairing: maps to wall switch with onoff/onoff.gang2 only — no battery or button clutter."
+  },
+  "5.12.161": {
+    "en": "Fixed Moes/Tuya wired 2-gang pairing: maps to wall switch with onoff/onoff.gang2 only — no button clutter."
   }
 }

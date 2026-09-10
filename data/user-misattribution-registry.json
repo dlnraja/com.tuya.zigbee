@@ -108,7 +108,7 @@
       }
     },
     {
-      "id": "p2435-ptjcjise-ts0002-switch-2gang",
+      "id": "p2456-ptjcjise-ts0002-wall-2gang",
       "mfr": [
         "_TZ3000_ptjcjise",
         "_tz3000_ptjcjise"
@@ -116,13 +116,19 @@
       "productId": [
         "TS0002"
       ],
-      "canonicalDriver": "switch_2gang",
+      "canonicalDriver": "wall_switch_2gang_1way",
       "forbiddenDrivers": [
-        "switch_1gang"
+        "switch_2gang",
+        "switch_2_gang",
+        "switch_1gang",
+        "wall_switch_1gang_1way",
+        "button_wireless_1",
+        "button_wireless_2"
       ],
       "forbidMode": "couple",
       "protocol": "zcl",
-      "notes": "P2435 GH#543 Moes 2-gang was on switch_1gang"
+      "source": "p2456-gh543",
+      "notes": "migueleap #543 — interview locks TS0002 2-gang EP1/EP2; onoff/onoff.gang2 only. Ignore comment TS0001 invent."
     },
     {
       "id": "p2435-xk5udnd6-ts0012-wall-switch",

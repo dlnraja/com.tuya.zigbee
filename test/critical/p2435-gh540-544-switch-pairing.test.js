@@ -41,7 +41,7 @@ describe('P2435 — GH #540–#544 switch pairing endpoints + sacred couples', (
     assert.ok(!c.zigbee.manufacturerName.some((m) => /xk5udnd6/i.test(m)));
   });
 
-  it('ptjcjise+TS0002 lives on switch_2gang, not switch_1gang', () => {
+  it('ptjcjise+TS0002 lives on wall_switch_2gang_1way, not switch_1gang/switch_2gang', () => {
     const g2 = readCompose('switch_2gang');
     const g1 = readCompose('switch_1gang');
     assert.ok(g2.zigbee.manufacturerName.some((m) => /ptjcjise/i.test(m)));
@@ -62,7 +62,7 @@ describe('P2435 — GH #540–#544 switch pairing endpoints + sacred couples', (
     const { FINGERPRINT_DB } = require(path.join(ROOT, 'lib', 'DeviceFingerprintDB'));
     assert.strictEqual(FINGERPRINT_DB['_TZ3000_enmfaave|TS0004'].driver, 'switch_4gang');
     assert.strictEqual(FINGERPRINT_DB['_TZ3000_xk5udnd6|TS0012'].driver, 'wall_switch_2gang_1way');
-    assert.strictEqual(FINGERPRINT_DB['_TZ3000_ptjcjise|TS0002'].driver, 'switch_2gang');
+    assert.strictEqual(FINGERPRINT_DB['_TZ3000_ptjcjise|TS0002'].driver, 'wall_switch_2gang_1way');
     assert.strictEqual(FINGERPRINT_DB['_TZ3000_l9brjwau|TS0002'].driver, 'wall_switch_2gang_1way');
     assert.strictEqual(FINGERPRINT_DB['_TZ3000_blhvsaqf|TS0001'].driver, 'switch_1gang');
   });
