@@ -103,6 +103,58 @@
       "notes": "P2435 GH#543 Moes 2-gang was on switch_1gang"
     },
     {
+      "id": "p2452-l9brjwau-ts0002-switch-2gang",
+      "mfr": [
+        "_TZ3000_l9brjwau",
+        "_tz3000_l9brjwau"
+      ],
+      "productId": [
+        "TS0002"
+      ],
+      "canonicalDriver": "switch_2gang",
+      "forbiddenDrivers": [
+        "switch_1gang",
+        "wall_switch_1gang_1way"
+      ],
+      "forbidMode": "couple",
+      "protocol": "zcl",
+      "notes": "P2452 GH#544 BSEED/LoraTap 2-gang ZCL; fingerprints/mfs had switch_1gang"
+    },
+    {
+      "id": "p2452-ysdv91bk-ts0001-switch-1gang",
+      "mfr": [
+        "_TZ3000_ysdv91bk",
+        "_tz3000_ysdv91bk"
+      ],
+      "productId": [
+        "TS0001"
+      ],
+      "canonicalDriver": "switch_1gang",
+      "forbiddenDrivers": [
+        "wall_switch_2gang_1way",
+        "generic_tuya",
+        "zigbee_universal"
+      ],
+      "forbidMode": "couple",
+      "protocol": "zcl",
+      "notes": "P2452 GH#545 BSEED 1G; drop invent TS0002 wall_switch_2gang"
+    },
+    {
+      "id": "p2452-enmfaave-ts0004-switch-4gang-no-button-bloat",
+      "mfr": [
+        "_TZ3000_enmfaave",
+        "_tz3000_enmfaave"
+      ],
+      "productId": [
+        "TS0004"
+      ],
+      "canonicalDriver": "switch_4gang",
+      "forbiddenDrivers": [],
+      "forbidMode": "couple",
+      "protocol": "zcl",
+      "notes": "P2452 GH#541 pairing OK via ZCL endpoints; strip phantom button.* caps"
+    },
+    {
       "id": "p2435-xk5udnd6-ts0012-wall-switch",
       "mfr": [
         "_TZ3000_xk5udnd6",
