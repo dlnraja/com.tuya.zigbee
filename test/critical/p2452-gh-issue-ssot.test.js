@@ -23,9 +23,11 @@ describe('P2452 — GH issue SSOT locks', () => {
     assert.strictEqual(mfs.sacredCouples['_tz3000_l9brjwau|ts0002'].driver, 'wall_switch_2gang_1way');
   });
 
-  it('#543 ptjcjise+TS0002 → switch_2gang (not switch_1gang)', () => {
-    assert.strictEqual(fp._TZ3000_ptjcjise.driverId, 'switch_2gang');
+  // WHY(P2456): migueleap #543 — interview locks TS0002 2-gang → wall (not switch_2gang clutter; ignore TS0001 invent in comment).
+  it('#543 ptjcjise+TS0002 → wall_switch_2gang_1way (not switch_1gang / not switch_2gang)', () => {
+    assert.strictEqual(fp._TZ3000_ptjcjise.driverId, 'wall_switch_2gang_1way');
     assert.ok(fp._TZ3000_ptjcjise.modelIds.includes('TS0002'));
+    assert.ok(!fp._TZ3000_ptjcjise.modelIds.includes('TS0001'));
   });
 
   it('#533 5slehgeo → curtain_motor TS0601 (not climate/TS0201)', () => {

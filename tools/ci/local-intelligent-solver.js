@@ -17,7 +17,7 @@ const ROOT = path.resolve(__dirname, '..', '..');
 const KNOWN_OPEN_COUPLES = [
   { issue: 540, mfr: '_TZ3000_blhvsaqf', pid: 'TS0001', driver: 'switch_1gang', note: 'BSEED zcl_only — update Test + re-pair' },
   { issue: 544, mfr: '_TZ3000_l9brjwau', pid: 'TS0002', driver: 'wall_switch_2gang_1way', note: 'P2455 wired BSEED — update Test + remove/re-pair' },
-  { issue: 543, mfr: '_TZ3000_ptjcjise', pid: 'TS0002', driver: 'switch_2gang', note: 'was 1gang steal — locked 2gang' },
+  { issue: 543, mfr: '_TZ3000_ptjcjise', pid: 'TS0002', driver: 'wall_switch_2gang_1way', note: 'P2456 wired 2-gang — update Test + remove/re-pair' },
   { issue: 542, mfr: '_TZ3000_xk5udnd6', pid: 'TS0012', driver: 'wall_switch_2gang_1way', note: 'ep2 without Basic — update + re-pair' },
   { issue: 541, mfr: '_TZ3000_enmfaave', pid: 'TS0004', driver: 'switch_4gang', note: 'no required EF00 61184 — update + re-pair' },
   { issue: 533, mfr: '_TZE204_5slehgeo', pid: 'TS0601', driver: 'curtain_motor', note: 'Moes ZTS — EF00 re-arm P2436; not radiator' },
