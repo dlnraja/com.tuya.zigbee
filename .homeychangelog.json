@@ -3086,5 +3086,8 @@
   },
   "9.0.849": {
     "en": "Fixed smart_knob TS004F button presses (_TZ3000_kaflzta4) by forcing scene/event mode instead of skipping 0x8004."
+  },
+  "9.0.853": {
+    "en": "Fixed MOES AM43 / ZC-LS roller (_TZE200_icka1clh) pairing to curtain motor; smartbutton flicker fix remains."
   }
 }
