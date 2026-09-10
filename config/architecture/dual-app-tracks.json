@@ -278,5 +278,15 @@
       "unified-ci.yml",
       "forum-poll.yml"
     ]
+  },
+  "reliability": {
+    "p2459_vichy_eduard_forum": {
+      "tag": "BOTH",
+      "note": "VicHY clrdrnya heal; Eduard fodv6bkr"
+    },
+    "p2460_bseed_tx_ysdv91bk": {
+      "tag": "BOTH",
+      "note": "GH#546 setOn/setOff; GH#545 ysdv to wall_1gang"
+    }
   }
 }
