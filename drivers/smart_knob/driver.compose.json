@@ -23,7 +23,8 @@
         "de": "Tastendruck"
       },
       "getable": false,
-      "setable": false
+      "setable": false,
+      "maintenanceAction": true
     },
     "button.rotate_left": {
       "title": {

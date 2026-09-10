@@ -130,6 +130,15 @@ console.log('P2449 declared flow wiring gate\n');
   if (!/__p2449BrightnessChangedIds/.test(autoWire)) {
     fail('DeclaredFlowCardAutoWire missing brightness id cache');
   } else ok('DeclaredFlowCardAutoWire brightness cache');
+
+  // WHY(P2451): duplicate capabilitiesOptions — JSON keeps last block only
+  // (smart_knob_switch wiped rotate voice-safety flags → CI + Auto-Publish fail).
+  for (const d of ['smart_knob', 'smart_knob_switch', 'smart_knob_rotary']) {
+    const raw = fs.readFileSync(path.join(ROOT, 'drivers', d, 'driver.compose.json'), 'utf8');
+    const n = (raw.match(/"capabilitiesOptions"\s*:/g) || []).length;
+    if (n !== 1) fail(`${d} capabilitiesOptions count=${n} (must be 1)`);
+    else ok(`${d} single capabilitiesOptions`);
+  }
 }
 
 {
