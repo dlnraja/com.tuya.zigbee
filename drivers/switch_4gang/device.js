@@ -71,8 +71,30 @@ class Switch4GangDevice extends BaseClass {
     return includesCI(ZCL_ONLY_MANUFACTURERS_4G, mfr);
   }
 
+  get mainsPowered() { return true; }
+
+  /**
+   * WHY(P2457 / GH#541): wired 4-gang UI = relays only.
+   * Compose already dropped button.*; app.json drift + leftover device store
+   * still showed 9 circular tiles + scene spam. Strip on every boot.
+   */
+  async _stripPhantomButtonCaps() {
+    const phantoms = [
+      'button.1', 'button.2', 'button.3', 'button.4',
+      'button.toggle', 'button.toggle_1', 'button.toggle_2', 'button.toggle_3', 'button.toggle_4',
+      'button.identify', 'measure_battery', 'alarm_battery',
+    ];
+    for (const cap of phantoms) {
+      if (this.hasCapability(cap)) {
+        await this.removeCapability(cap).catch(() => {});
+      }
+    }
+  }
+
   async onNodeInit({ zclNode }) {
     try {
+      await this._stripPhantomButtonCaps();
+
       if (this.isZclOnlyDevice) {
         this.log('[SWITCH-4G] ZCL-ONLY MODE');
         this.zclNode = zclNode;
@@ -81,9 +103,10 @@ class Switch4GangDevice extends BaseClass {
       }
 
       await super.onNodeInit({ zclNode });
+      await this._stripPhantomButtonCaps(); // again after base may soft-add
       await this.initPhysicalButtonDetection(zclNode);
-      await this.initVirtualButtons();
-      this.log('[SWITCH-4G] Initialized');
+      // WHY(P2457): no virtual button tiles on wired relay UI
+      this.log('[SWITCH-4G] Initialized (relay caps only)');
     } catch (err) {
       this.error('[SWITCH-4G] CRITICAL INIT ERROR:', err.message);
       this.setUnavailable('Driver initialization incomplete').catch(() => {});
@@ -220,15 +243,8 @@ class Switch4GangDevice extends BaseClass {
       this.log(`[BSEED-4G] EP${epNum} attr listener registered`);
     }
 
-    // v10.6.2 FIX: register button.1..4 listeners — super.onNodeInit() is
-    // bypassed in ZCL-only mode, so UnifiedSwitchBase._registerButtonCapabilityListeners()
-    // never ran and pressing a maintenance button in the app UI logged
-    // "Missing Capability Listener: Button N" (diag Gmail 16/07/2026).
-    if (typeof this._registerButtonCapabilityListeners === 'function') {
-      this._registerButtonCapabilityListeners();
-    }
-
-    await this.initVirtualButtons?.();
+    // WHY(P2457): wired relay — no button.* listeners / virtual button tiles
+    await this._stripPhantomButtonCaps();
   }
 
   _ensureOnOffClusters(zclNode) {
