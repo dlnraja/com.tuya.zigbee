@@ -2266,3 +2266,10 @@ Regenerate: `node tools/ci/investigate-device-peculiarities.js`
 - **Forbidden**: `curtain_motor_shutter`, `curtain_motor_tilt` for these couples.
 - **Do not invent**: TS0301 / TS0726 for `icka1clh` (auto-sync pollution).
 - **Doctrine**: one `manufacturerName` may list many verified `productId` / OEM variants — lock each couple, never prune mfr across drivers for a different pid.
+
+## P2447 — Forum soft-hypothesis / multi-pid (2026-09-10)
+
+- Soft MISSING_PID must prefer `mfs_db.modelIds` + registry `productId` over polluted compose lists (e.g. `01MINIZB` on `button_wireless_4`).
+- `_TZ3000_xabckq1v` → **TS004F** (`button_wireless_4`) — never soft-lock `01MINIZB`.
+- `_TZ3000_zgyzgdua` → **TS0044 only** (Moes XH-SY-04Z). Do **not** invent TS0043 for this mfr.
+- Fake OCR `_TZE2841000000_*` — never lock.
