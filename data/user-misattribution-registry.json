@@ -2167,6 +2167,40 @@
       }
     },
     {
+      "id": "p217-wing-zth-climate",
+      "mfr": [
+        "Wing",
+        "wing",
+        "WING"
+      ],
+      "productId": [
+        "ZTH11-3.0",
+        "ZTH13-3.0"
+      ],
+      "canonicalDriver": "climate_sensor",
+      "forbiddenDrivers": [
+        "contact_sensor",
+        "water_leak_sensor"
+      ],
+      "forbidMode": "couple",
+      "protocol": "zcl",
+      "notes": "Wing climate ZTH siblings — same brand as TS0203 contact; never strip Wing from climate (P2440 prune false-positive).",
+      "sources": [
+        "P217_fork_harvest",
+        "P2440"
+      ],
+      "tracks": {
+        "master": {
+          "static": true,
+          "dynamic": true
+        },
+        "stable": {
+          "static": true,
+          "dynamic": false
+        }
+      }
+    },
+    {
       "id": "p217-hobeian-zg305z-usb-2gang",
       "mfr": [
         "HOBEIAN",
