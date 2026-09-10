@@ -41,8 +41,9 @@ function classifyTask(t,s,o){
 //     AI_ALLOW_PAID=true is set explicitly in the workflow env.
 //  2. Per-provider daily cap (config/security/ai-plan-forfait.json included caps,
 //     else scripts/automation/token-budget.js BUDGETS; overridable via AI_DAILY_CAP_<NAME>).
-//  3. Global daily cap across ALL providers (AI_GLOBAL_DAILY_CAP, default 400 in forfait).
-//  4. Soft-stop at AI_SOFT_STOP_PERCENT (default 85) — refuse further calls for that provider.
+//  3. Global daily cap across ALL providers (AI_GLOBAL_DAILY_CAP, default 120 in forfait P2437/P2438).
+//  4. Soft-stop at AI_SOFT_STOP_PERCENT (default 70) — refuse further calls for that provider.
+//  5. AI_FORCE_LOCAL=1 / GMAIL_DIAG_AI_MAX=0 / preferLocalHeuristics → skip ALL remote AI.
 // The rate-state file (.github/state/ai-rate-state.json) is restored via CI
 // cache, so caps hold across runs of the same day.
 let _BUDGETS=null;
@@ -82,12 +83,17 @@ function budgetAllows(name){
   const cap=_dailyCap(name);
   if(cap<=0){console.log(`  [${name}] BLOCKED: included cap is 0 (forfait)`);return false;}
   if(used>=cap){console.log(`  [${name}] BLOCKED: daily cap ${used}/${cap}`);return false;}
-  const softPct=parseInt(process.env.AI_SOFT_STOP_PERCENT||_forfait().defaults?.AI_SOFT_STOP_PERCENT||'85',10);
+  const softPct=parseInt(process.env.AI_SOFT_STOP_PERCENT||_forfait().defaults?.AI_SOFT_STOP_PERCENT||'70',10);
   if(softPct>0&&used>=Math.floor(cap*softPct/100)){
     console.log(`  [${name}] BLOCKED: soft-stop ${used}/${cap} (≥${softPct}% forfait)`);
     return false;
   }
-  const globalCap=parseInt(process.env.AI_GLOBAL_DAILY_CAP||_forfait().defaults?.AI_GLOBAL_DAILY_CAP||'400',10);
+  const globalCap=parseInt(process.env.AI_GLOBAL_DAILY_CAP||_forfait().defaults?.AI_GLOBAL_DAILY_CAP||'120',10);
+  // WHY(P2438): never burn grok / cursor-cloud even if a key leaks into env
+  if(/^(grok|cursor-cloud|cursor_cloud)$/i.test(String(name))){
+    console.log(`  [${name}] BLOCKED: forfait — grok/cursor-cloud cap 0`);
+    return false;
+  }
   const total=Object.values(_rt.d).reduce((a,c)=>a+c,0);
   if(total>=globalCap){console.log(`  [${name}] BLOCKED: global daily cap ${total}/${globalCap}`);return false;}
   if(softPct>0&&total>=Math.floor(globalCap*softPct/100)){
@@ -132,7 +138,46 @@ async function callAIEngine(url, headers, body, providerName, maxRetries = 1, ti
   return null;
 }
 
+/**
+ * WHY(P2438): central soft-kill for remote AI — prefer local heuristics / KB.
+ * Contre quoi: Grok/Task/CI bots exhausting forfait before Homey work finishes.
+ */
+function shouldSkipAI(opts={}){
+  if(opts.forceAI===true)return false;
+  if(/^(1|true|yes)$/i.test(String(process.env.AI_FORCE_LOCAL||'')))return true;
+  if(String(process.env.GMAIL_DIAG_AI_MAX||'0')==='0'&&/^(1|true|yes)$/i.test(String(process.env.AI_SKIP_WHEN_DIAG_MAX0||'true'))){
+    // only hard-skip when explicitly in diag/bot pipelines that set AI_FORCE_LOCAL or SKIP_AI
+  }
+  if(/^(1|true|yes)$/i.test(String(process.env.SKIP_AI||process.env.AI_SKIP||'')))return true;
+  const f=_forfait();
+  if(f.defaults?.preferLocalHeuristics===true&&/^(1|true|yes)$/i.test(String(process.env.AI_PREFER_LOCAL||'true'))){
+    // soft prefer: still allow unless soft/hard stop
+  }
+  _rtLoad();
+  const globalCap=parseInt(process.env.AI_GLOBAL_DAILY_CAP||f.defaults?.AI_GLOBAL_DAILY_CAP||'120',10);
+  const softPct=parseInt(process.env.AI_SOFT_STOP_PERCENT||f.defaults?.AI_SOFT_STOP_PERCENT||'70',10);
+  const total=Object.values(_rt.d||{}).reduce((a,c)=>a+Number(c||0),0);
+  if(globalCap>0&&total>=globalCap)return true;
+  if(softPct>0&&globalCap>0&&total>=Math.floor(globalCap*softPct/100))return true;
+  if(process.env.AI_ALLOW_PAID!=='true'&&(f.mode==='forfait'||_planMode()==='forfait')){
+    // Cap remaining providers: if every free provider is blocked, skip cascade
+    const caps=f.includedDailyCaps||{};
+    const blocked=new Set(f.blockedUnlessPaidFlag||[]);
+    let any=false;
+    for(const [name,cap] of Object.entries(caps)){
+      if(blocked.has(name)||cap<=0)continue;
+      if(budgetAllows(name)){any=true;break;}
+    }
+    if(!any)return true;
+  }
+  return false;
+}
+
 async function callAI(text,sysPrompt,opts={}){
+  if(shouldSkipAI(opts)){
+    console.log('  [ai-helper] SKIP remote AI (forfait / AI_FORCE_LOCAL / soft-stop) — use local heuristics');
+    return null;
+  }
   const maxTokens=opts.maxTokens||2048;
   const tk = classifyTask(text, sysPrompt, opts);
   
@@ -434,4 +479,4 @@ function smartMergePost(existing,fresh,opts){
 function getAIBudget(){_rtLoad();return{used:_rt.d,budget:_rtBudget()}}
 function localFallback(){}
 
-module.exports={callAI,callAIEnsemble,splitTaskAndCombine,analyzeImage,sleep,localFallback,textSimilarity,isDuplicateContent,MAX_POST_SIZE,smartMergePost,getAIBudget,classifyTask,budgetAllows};
+module.exports={callAI,callAIEnsemble,splitTaskAndCombine,analyzeImage,sleep,localFallback,textSimilarity,isDuplicateContent,MAX_POST_SIZE,smartMergePost,getAIBudget,classifyTask,budgetAllows,shouldSkipAI};

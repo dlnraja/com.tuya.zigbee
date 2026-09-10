@@ -76,3 +76,6 @@ jobs:
         run: |
           node --test test/critical/p2138-bseed-wall-dimmer.test.js
           node --test test/critical/poll-control-policy.test.js
+          node --test test/critical/p2436-homey-match-moes-bot-mocks.test.js
+          node --test test/critical/p2437-ai-forfait-cursor-hooks.test.js
+          node --test test/critical/p2438-multi-source-harvest-ai-limit.test.js

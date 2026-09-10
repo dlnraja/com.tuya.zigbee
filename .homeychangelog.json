@@ -3071,5 +3071,8 @@
   },
   "9.0.847": {
     "en": "Fixed Moes curtain EF00 listen/query, forced Moes protocol to Tuya DP, reduced GitHub bot auto-PR/triage noise, added Homey match unit mocks."
+  },
+  "9.0.848": {
+    "en": "Limited Grok/AI bot burn (forfait), local issue solver, multi-source harvest unit tests, CI wires P2435-P2438."
   }
 }

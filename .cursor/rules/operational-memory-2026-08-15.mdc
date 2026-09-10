@@ -107,9 +107,13 @@ npm run forum:parse-digest
 - Homey: soft hooks in `lib/` + `lib/**/data/*` only
 - GHA: `config/enrichment|resilience|security`, `tools/ci/*` — excluded via `.homeyignore`
 
-## AI forfait + security (P2227)
+## AI forfait + security (P2227 + P2437/P2438 Cursor + GHA)
 - Mode: `AI_PLAN_MODE=forfait` — never paid overage (`AI_ALLOW_PAID=false`)
-- Caps: global 400/day, soft-stop 85%, `GMAIL_DIAG_AI_MAX=0`
+- Caps: global **120**/day, soft-stop **70%**, `GMAIL_DIAG_AI_MAX=0`; grok/cursor-cloud cap **0**
+- **Cursor:** no Grok/Opus/cloud Task — `.cursor/hooks.json` + `.cursor/rules/ai-forfait-cursor-limit.mdc` (max 1 parallel, 8 subagents/day)
+- **GHA:** `AI_FORCE_LOCAL=true` on bug-report / batch-close / smart-merge / enrich / diags; `shouldSkipAI()` in ai-helper; `tools/ci/local-intelligent-solver.js`
+- Tests: `npm run check:p243x` (P2435–P2438) wired in unified-ci / syntax-check / pr-gate / resilience
+- Disable Cursor Automations / Autopilot cron if still burning quota (Settings → Automations)
 - `npm run ai:plan-guard` · `npm run security:plan` · SSOT `config/security/ai-plan-forfait.json`
 
 ## Handoffs (parent folder)

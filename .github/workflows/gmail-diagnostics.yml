@@ -66,8 +66,9 @@ env:
   NODE_VERSION: "22"
   AI_PLAN_MODE: forfait
   AI_ALLOW_PAID: "false"
-  AI_GLOBAL_DAILY_CAP: "400"
-  AI_SOFT_STOP_PERCENT: "85"
+  AI_GLOBAL_DAILY_CAP: "120"
+  AI_SOFT_STOP_PERCENT: "70"
+  AI_FORCE_LOCAL: "true"
   GMAIL_DIAG_AI_MAX: "0"
 
 defaults:
@@ -97,8 +98,8 @@ jobs:
           {
             echo "AI_PLAN_MODE=${AI_PLAN_MODE:-forfait}"
             echo "AI_ALLOW_PAID=false"
-            echo "AI_GLOBAL_DAILY_CAP=${AI_GLOBAL_DAILY_CAP:-400}"
-            echo "AI_SOFT_STOP_PERCENT=${AI_SOFT_STOP_PERCENT:-85}"
+            echo "AI_GLOBAL_DAILY_CAP=${AI_GLOBAL_DAILY_CAP:-120}"
+            echo "AI_SOFT_STOP_PERCENT=${AI_SOFT_STOP_PERCENT:-70}"
             echo "GMAIL_DIAG_AI_MAX=0"
           } >> "$GITHUB_ENV"
       - name: Gmail auth health preflight
