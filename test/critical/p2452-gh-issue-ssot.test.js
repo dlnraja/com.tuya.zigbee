@@ -22,8 +22,8 @@ describe('P2452 — GH issue SSOT locks', () => {
     assert.strictEqual(mfs.sacredCouples['_tz3000_l9brjwau|ts0002'].driver, 'wall_switch_2gang_1way');
   });
 
-  it('#543 ptjcjise+TS0002 → switch_2gang (not switch_1gang)', () => {
-    assert.strictEqual(fp._TZ3000_ptjcjise.driverId, 'switch_2gang');
+  it('#543 ptjcjise+TS0002 → wall_switch_2gang_1way (not switch_1gang)', () => {
+    assert.strictEqual(fp._TZ3000_ptjcjise.driverId, 'wall_switch_2gang_1way');
     assert.ok(fp._TZ3000_ptjcjise.modelIds.includes('TS0002'));
   });
 
