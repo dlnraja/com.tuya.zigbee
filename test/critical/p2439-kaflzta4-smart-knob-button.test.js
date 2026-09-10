@@ -54,6 +54,17 @@ describe('P2439 — kaflzta4+TS004F scene mode (diag a342c411)', () => {
     assert.strictEqual(fam.family, 'ts004f');
   });
 
+  // WHY(P2442): diag a342c411 wake logs mfr=ABSENT pid=ABSENT before MFR-ENSURE
+  it('ABSENT mfr+pid on smart_knob still enables scene write (P2442)', () => {
+    const fam = classifyOperatingFamily(mockDevice({
+      mfr: '',
+      pid: '',
+      driver: 'smart_knob',
+    }));
+    assert.strictEqual(fam.writeSceneAttr, true);
+    assert.strictEqual(fam.family, 'ts004f');
+  });
+
   it('true rotary knob mfr still skips 0x8004', () => {
     const fam = classifyOperatingFamily(mockDevice({
       mfr: '_TZ3000_402vrq2i',
