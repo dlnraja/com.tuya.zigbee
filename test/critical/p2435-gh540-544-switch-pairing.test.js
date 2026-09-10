@@ -63,7 +63,7 @@ describe('P2435 — GH #540–#544 switch pairing endpoints + sacred couples', (
     assert.strictEqual(FINGERPRINT_DB['_TZ3000_enmfaave|TS0004'].driver, 'switch_4gang');
     assert.strictEqual(FINGERPRINT_DB['_TZ3000_xk5udnd6|TS0012'].driver, 'wall_switch_2gang_1way');
     assert.strictEqual(FINGERPRINT_DB['_TZ3000_ptjcjise|TS0002'].driver, 'switch_2gang');
-    assert.strictEqual(FINGERPRINT_DB['_TZ3000_l9brjwau|TS0002'].driver, 'switch_2gang');
+    assert.strictEqual(FINGERPRINT_DB['_TZ3000_l9brjwau|TS0002'].driver, 'wall_switch_2gang_1way');
     assert.strictEqual(FINGERPRINT_DB['_TZ3000_blhvsaqf|TS0001'].driver, 'switch_1gang');
   });
 

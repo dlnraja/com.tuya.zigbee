@@ -103,7 +103,7 @@
       "notes": "P2435 GH#543 Moes 2-gang was on switch_1gang"
     },
     {
-      "id": "p2452-l9brjwau-ts0002-switch-2gang",
+      "id": "p2455-l9brjwau-ts0002-wall-2gang",
       "mfr": [
         "_TZ3000_l9brjwau",
         "_tz3000_l9brjwau"
@@ -111,14 +111,18 @@
       "productId": [
         "TS0002"
       ],
-      "canonicalDriver": "switch_2gang",
+      "canonicalDriver": "wall_switch_2gang_1way",
       "forbiddenDrivers": [
+        "switch_2gang",
+        "switch_2_gang",
         "switch_1gang",
-        "wall_switch_1gang_1way"
+        "wall_switch_1gang_1way",
+        "button_wireless_2"
       ],
       "forbidMode": "couple",
       "protocol": "zcl",
-      "notes": "P2452 GH#544 BSEED/LoraTap 2-gang ZCL; fingerprints/mfs had switch_1gang"
+      "source": "p2455-gh544",
+      "notes": "migueleap #544 — wired BSEED 2-gang; onoff/onoff.gang2 only; no button tiles / secondSwitch"
     },
     {
       "id": "p2452-ysdv91bk-ts0001-switch-1gang",
