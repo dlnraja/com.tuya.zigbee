@@ -63,6 +63,8 @@ class CurtainMotorDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedC
   // WHY(P2433 / Eduard #2228): DC tubular battery rollers (`_TZE284_fodv6bkr` / `libht6ua`)
   // share EF00 DPs with sibling motors — DP3 is position (%), NOT robot `dim`.
   // Homey has no native windowCovering (258); all TX/RX via 0xEF00.
+  // WHY(P2441 / MIAMO #2229): AM43 solar/battery siblings (`icka1clh` / `zah67ekd`)
+  // use the same cover_4 DP family (state/position/reverse) — never shutter driver.
   _isBatteryTubularRoller() {
     const mfr = String(
       this.getManufacturerName?.()
@@ -70,7 +72,8 @@ class CurtainMotorDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedC
       || this.getData?.()?.manufacturerName
       || ''
     ).toLowerCase();
-    return mfr.includes('fodv6bkr') || mfr.includes('libht6ua');
+    return mfr.includes('fodv6bkr') || mfr.includes('libht6ua')
+      || mfr.includes('icka1clh') || mfr.includes('zah67ekd');
   }
 
   // v5.5.322: Extended DP mappings with lux sensor and button support
