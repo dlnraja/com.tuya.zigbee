@@ -74,6 +74,30 @@ describe('processing-failure-republish-check (P139)', () => {
     assert.match(decision.reason, /not fixable by patch bump/i);
   });
 
+  it('refuses when consecutive tip hangs (#3140 then #3142) and Test is healthy', () => {
+    const decision = decidePublishRecovery({
+      appVersion: '9.0.870',
+      now,
+      report: {
+        timestamp: fresh,
+        latestBuild: {
+          id: 3142,
+          version: '9.0.870',
+          state: 'processing_failed',
+          failureDetail: 'socket hang up',
+        },
+        latestBuilds: [
+          { id: 3142, version: '9.0.870', state: 'processing_failed', failureDetail: 'socket hang up' },
+          { id: 3140, version: '9.0.868', state: 'processing_failed', stateMeta: 'socket hang up' },
+          { id: 3124, version: '9.0.829', state: 'test' },
+        ],
+      },
+    });
+    assert.equal(decision.triggerPublish, false);
+    assert.equal(decision.requiresBump, false);
+    assert.equal(decision.transient, true);
+  });
+
   it('still allows non-transient recovery for the current version', () => {
     const decision = decidePublishRecovery({
       appVersion: '9.0.530',

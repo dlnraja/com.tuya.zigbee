@@ -78,4 +78,26 @@ Do **not** spam republish on Athom `processing_failed` / `socket hang up`. Soft-
 
 Controlled override (once): Auto-Publish `workflow_dispatch` with `force_publish=true` sets `HOMEY_FORCE_PUBLISH=1` → `scripts/direct-api-publish.js --force`, with `HOMEY_API_TIMEOUT_MS=120000`, `HOMEY_DRAFT_WAIT_MS=600000`, `HOMEY_HEALTHY_TEST_PATCH_LAG=8`.
 
+### Tip email pattern (P2458 — 2026-09-10)
+
+Homey tip mail for `com.dlnraja.tuya.zigbee`:
+
+> Your build has failed processing … **socket hang up**  
+> Examples: builds **#3140**, **#3142**
+
+| Signal | Meaning | Action |
+|--------|---------|--------|
+| Tip email `socket hang up` | Athom processor/network flake (P139) | Wait cooldown; **no** bump-loop |
+| Local `publish-size-gate` PASS + compacted cartesian ≲20k | Not a local packing bug | Do not “fix” by force republish |
+| Healthy older Test still listed | Users can keep soaking last good tip | Soft-expect / soft-alert exit 0 |
+| Human wants one retry after hours | `workflow_dispatch` + `force_publish=true` once | Never cancel in-flight publish |
+
+Gates / helpers:
+
+- `npm run check:p2286` · `test/critical/p2286-soft-expect-publish.test.js`
+- `test/critical/processing-failure-republish-check.test.js`
+- `test/critical/p2458-tip-email-socket-hang.test.js`
+- `.github/scripts/processing-failure-republish-check.js` (refuses transient bump-loop)
+- `scripts/lib/soft-expect-decision.js` (`isTransientAthomFailure` / `softAlertDecision`)
+
 See also: [PROTOCOL_TX_RX_SSOT.md](./PROTOCOL_TX_RX_SSOT.md) (IAS skip) · [DUAL_APP_VISION.md](../rules/DUAL_APP_VISION.md)
