@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-10T07:33:49.589Z",
+  "generatedAt": "2026-09-10T17:54:50.688Z",
   "date": "2026-09-10",
   "mode": "full",
   "phases": [
@@ -12,18 +12,18 @@
     {
       "name": "github",
       "ok": true,
-      "durationMs": 238
+      "durationMs": 255
     },
     {
       "name": "gmail",
       "ok": true,
-      "durationMs": 193,
+      "durationMs": 157,
       "details": {
         "crash": {
           "ok": true,
           "skipped": false,
           "status": 0,
-          "durationMs": 35,
+          "durationMs": 31,
           "stderr": "",
           "stdoutTail": "[gmail-crash-pattern-gate] sources=32 hits=0 unknown=0\n  wrote .github/state/gmail-crash-patterns.json\n  verdict: ok\n"
         },
@@ -31,16 +31,16 @@
           "ok": true,
           "skipped": false,
           "status": 0,
-          "durationMs": 157,
+          "durationMs": 125,
           "stderr": "",
-          "stdoutTail": "[automate] inbox total=0 have=30 missing=0 ingested_now=0\n[recursive-treat] sources: 136\n[recursive-treat] wrote /home/runner/work/com.tuya.zigbee/com.tuya.zigbee/reports/diag-recursive-treat-2026-09-10\n{\n  \"generatedAt\": \"2026-09-10T07:33:50.007Z\",\n  \"methodology\": \"f647d35b-style full-body recursive treat — sacred couple never invented; P2246 derive from interview when ABSENT\",\n  \"sourcesScanned\": 136,\n  \"uniqueCases\": 122,\n  \"actionable\": 28,\n  \"derivedFromInterview\": 0,\n  \"signalTally\": {\n    \"scene_mode_unsupported\": 4,\n    \"wrong_driver_hint\": 4,\n    \"athom_socket_hang\": 3,\n    \"athom_processing_failed\": 2,\n    \"wrong_smart_rcbo\": 2,\n    \"flow_guard_spam\": 3,\n    \"processing_failed\": 3,\n    \"scene_0x8004\": 3,\n    \"invalid_flow_card\": 2,\n    \"missing_capability_listener\": 1,\n    \"ias_storm_button\": 2\n  },\n  \"gmailBodiesPresent\": 30,\n  \"interviews\": 90\n}\n[automate] status → .github/state/diag-recursive-inbox/automate-status.json\n{\n  \"total\": 0,\n  \"have\": 30,\n  \"missing\": 0,\n  \"missingIds\": []\n}\n[automate] actionable= 28 gmailBodies= 30\n"
+          "stdoutTail": "[automate] inbox total=0 have=30 missing=0 ingested_now=0\n[recursive-treat] sources: 136\n[recursive-treat] wrote /home/runner/work/com.tuya.zigbee/com.tuya.zigbee/reports/diag-recursive-treat-2026-09-10\n{\n  \"generatedAt\": \"2026-09-10T17:54:51.092Z\",\n  \"methodology\": \"f647d35b-style full-body recursive treat — sacred couple never invented; P2246 derive from interview when ABSENT\",\n  \"sourcesScanned\": 136,\n  \"uniqueCases\": 122,\n  \"actionable\": 26,\n  \"derivedFromInterview\": 1,\n  \"signalTally\": {\n    \"scene_mode_unsupported\": 3,\n    \"wrong_driver_hint\": 4,\n    \"athom_socket_hang\": 3,\n    \"athom_processing_failed\": 2,\n    \"wrong_smart_rcbo\": 2,\n    \"flow_guard_spam\": 2,\n    \"processing_failed\": 3,\n    \"scene_0x8004\": 2,\n    \"invalid_flow_card\": 1,\n    \"missing_capability_listener\": 1,\n    \"physical_vs_virtual_button\": 1\n  },\n  \"gmailBodiesPresent\": 30,\n  \"interviews\": 90\n}\n[automate] status → .github/state/diag-recursive-inbox/automate-status.json\n{\n  \"total\": 0,\n  \"have\": 30,\n  \"missing\": 0,\n  \"missingIds\": []\n}\n[automate] actionable= 26 gmailBodies= 30\n"
         }
       }
     },
     {
       "name": "forum",
       "ok": true,
-      "durationMs": 28235,
+      "durationMs": 29017,
       "skipScan": false,
       "steps": [
         {
@@ -64,7 +64,7 @@
     {
       "name": "drivers",
       "ok": true,
-      "durationMs": 1467,
+      "durationMs": 1167,
       "mfs": {
         "high": 0,
         "changes": 0,
@@ -76,7 +76,7 @@
       "name": "prioritize",
       "ok": true,
       "durationMs": 1,
-      "count": 7
+      "count": 5
     },
     {
       "name": "docs",
@@ -87,78 +87,25 @@
     {
       "name": "gates",
       "ok": true,
-      "durationMs": 2596
+      "durationMs": 1908
     }
   ],
   "github": {
-    "harvestedAt": "2026-09-10T07:33:49.826Z",
+    "harvestedAt": "2026-09-10T17:54:50.943Z",
     "repo": "dlnraja/com.tuya.zigbee",
     "auth": "token",
     "error": null,
     "issues": [
       {
-        "number": 541,
-        "title": "[Device Support] TS0004 / _TZ3000_enmfaave not matching in switch_4gang",
+        "number": 545,
+        "title": "Bug report - _TZ3000_ysdv91bk (TS0001) pairs as Unknown Device despite being in switch_1gang driver",
         "labels": [
-          "bug",
-          "fingerprint",
-          "new-fingerprint",
-          "pairing",
-          "switch_4gang",
-          "TS0004"
+          "bug"
         ],
-        "updatedAt": "2026-09-09T12:21:02Z",
+        "updatedAt": "2026-09-10T17:12:22Z",
         "user": "migueleap",
-        "htmlUrl": "https://github.com/dlnraja/com.tuya.zigbee/issues/541",
-        "bodySnippet": "Hi @dlnraja,\n\nThe switch_4gang driver is not matching TS0004 (_TZ3000_enmfaave) during pairing, even though the manufacturer name is listed in driver.compose.json.\n\nThe issue is caused by the cluster definitions in zigbee.endpoints for the multi-endpoint setup. Homey requires sta"
-      },
-      {
-        "number": 533,
-        "title": "Device Request - [SMART ZIGBEE CURTAIN SWITCH] - [MOES]",
-        "labels": [
-          "bug",
-          "enhancement",
-          "device-request",
-          "fingerprint",
-          "new-fingerprint",
-          "device_request",
-          "reopened-by-user",
-          "MOES",
-          "pairing",
-          "needs-maintainer",
-          "smart_zigbee",
-          "curtain_switch",
-          "SMART ZIGBEE CURTAIN SWITCH - MOES"
-        ],
-        "updatedAt": "2026-09-09T10:13:06Z",
-        "user": "salvagr",
-        "htmlUrl": "https://github.com/dlnraja/com.tuya.zigbee/issues/533",
-        "bodySnippet": "Thank you for your support.\n\n## 📱 Basic Information\n\n**Brand & Model**: SMART ZIGBEE CURTAIN SWITCH - MOES\n**Purchase Link**: https://es.aliexpress.com/item/1005008356152992.html\n**Power Source**:  Mains\n**Current Status**: pairing with wrong device type. Detected as \"radiator v"
-      },
-      {
-        "number": 540,
-        "title": "[Device Support Request] _TZ3000_blhvsaqf / TS0001 mapped to virtualdriverzigbee",
-        "labels": [
-          "bug",
-          "new-fingerprint",
-          "reopened-by-user"
-        ],
-        "updatedAt": "2026-09-09T10:12:50Z",
-        "user": "migueleap",
-        "htmlUrl": "https://github.com/dlnraja/com.tuya.zigbee/issues/540",
-        "bodySnippet": "### Device Description\n* **Device Name:** 1 Gang Switch Module / Wall Switch\n* **Manufacturer Name:** `_TZ3000_blhvsaqf`\n* **Product ID:** `TS0001`\n\n### Issue Summary\nThe device `_TZ3000_blhvsaqf` (TS0001) is currently recognized as an unknown/generic device (`virtualdriverzigbee"
-      },
-      {
-        "number": 542,
-        "title": "[Device Support] TS0012 / _TZ3000_xk5udnd6 not recognized in wall_switch_2gang_1way",
-        "labels": [
-          "bug",
-          "new-fingerprint"
-        ],
-        "updatedAt": "2026-09-09T10:12:38Z",
-        "user": "migueleap",
-        "htmlUrl": "https://github.com/dlnraja/com.tuya.zigbee/issues/542",
-        "bodySnippet": "Hi @dlnraja,\n\nThe wall_switch_2gang_1way driver is also failing to match TS0012 (_TZ3000_xk5udnd6).\n\nThe issue is in drivers/wall_switch_2gang_1way/driver.compose.json under zigbee.endpoints. Homey requires the standard cluster array format to match Tuya 2-gang switches properly "
+        "htmlUrl": "https://github.com/dlnraja/com.tuya.zigbee/issues/545",
+        "bodySnippet": "Describe the bug\nThe device _TZ3000_ysdv91bk (TS0001) pairs as a generic \"Unknown Zigbee Device\" in Homey, even though its manufacturerName is already listed in drivers/switch_1gang/driver.compose.json (lines 1143-1146).\n\nThis occurs because this model is a simple 1-gang relay wi"
       },
       {
         "number": 544,
@@ -167,10 +114,11 @@
           "bug",
           "fingerprint",
           "new-fingerprint",
+          "reopened-by-user",
           "device_support",
           "pairing"
         ],
-        "updatedAt": "2026-09-09T10:12:10Z",
+        "updatedAt": "2026-09-10T16:32:29Z",
         "user": "migueleap",
         "htmlUrl": "https://github.com/dlnraja/com.tuya.zigbee/issues/544",
         "bodySnippet": "## Device Description\n* **Brand:** Tuya / LoraTap\n* **Device Type:** 2-Gang Zigbee Switch Module\n* **Model:** TS0002\n* **Manufacturer Name:** `_TZ3000_l9brjwau`\n\n## Problem Description\nEven though the manufacturer ID `_TZ3000_l9brjwau` is already included in the `manufacturerName"
@@ -183,17 +131,35 @@
           "enhancement",
           "device-request",
           "new-fingerprint",
+          "reopened-by-user",
           "device_support",
           "fingerprint-supported"
         ],
-        "updatedAt": "2026-09-09T10:11:37Z",
+        "updatedAt": "2026-09-10T16:18:15Z",
         "user": "migueleap",
         "htmlUrl": "https://github.com/dlnraja/com.tuya.zigbee/issues/543",
         "bodySnippet": "## 📱 Basic Information\n\n**Brand & Model**: Tuya / Moes 2-Gang Switch Module\n**Purchase Link**: N/A\n**Power Source**: [ ] Battery / [x] Mains\n**Current Status**: [ ] Not pairing / [x] Pairs but missing features / [ ] Not working at all\n\n---\n\n## 🔍 Zigbee Fingerprint (MANDATORY)\n\n"
+      },
+      {
+        "number": 541,
+        "title": "[Device Support] TS0004 / _TZ3000_enmfaave not matching in switch_4gang",
+        "labels": [
+          "bug",
+          "fingerprint",
+          "new-fingerprint",
+          "reopened-by-user",
+          "pairing",
+          "switch_4gang",
+          "TS0004"
+        ],
+        "updatedAt": "2026-09-10T15:50:52Z",
+        "user": "migueleap",
+        "htmlUrl": "https://github.com/dlnraja/com.tuya.zigbee/issues/541",
+        "bodySnippet": "Hi @dlnraja,\n\nThe switch_4gang driver is not matching TS0004 (_TZ3000_enmfaave) during pairing, even though the manufacturer name is listed in driver.compose.json.\n\nThe issue is caused by the cluster definitions in zigbee.endpoints for the multi-endpoint setup. Homey requires sta"
       }
     ],
     "prs": [],
-    "openIssueCount": 6,
+    "openIssueCount": 4,
     "openPrCount": 0
   },
   "forum": {
@@ -208,7 +174,7 @@
     "posts": 212
   },
   "gmail": {
-    "generatedAt": "2026-09-10T07:33:49.855Z",
+    "generatedAt": "2026-09-10T17:54:50.969Z",
     "sourcesScanned": 32,
     "patternCounts": {
       "flow_getDeviceActionCard": 0,
@@ -267,39 +233,9 @@
       "score": 90,
       "dualApp": "BOTH",
       "source": "github-issue",
-      "id": "#541",
-      "title": "[Device Support] TS0004 / _TZ3000_enmfaave not matching in switch_4gang",
-      "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/541",
-      "action": "investigate-code-silent",
-      "forumReply": "NEVER"
-    },
-    {
-      "score": 90,
-      "dualApp": "BOTH",
-      "source": "github-issue",
-      "id": "#533",
-      "title": "Device Request - [SMART ZIGBEE CURTAIN SWITCH] - [MOES]",
-      "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/533",
-      "action": "investigate-code-silent",
-      "forumReply": "NEVER"
-    },
-    {
-      "score": 90,
-      "dualApp": "BOTH",
-      "source": "github-issue",
-      "id": "#540",
-      "title": "[Device Support Request] _TZ3000_blhvsaqf / TS0001 mapped to virtualdriverzigbee",
-      "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/540",
-      "action": "investigate-code-silent",
-      "forumReply": "NEVER"
-    },
-    {
-      "score": 90,
-      "dualApp": "BOTH",
-      "source": "github-issue",
-      "id": "#542",
-      "title": "[Device Support] TS0012 / _TZ3000_xk5udnd6 not recognized in wall_switch_2gang_1way",
-      "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/542",
+      "id": "#545",
+      "title": "Bug report - _TZ3000_ysdv91bk (TS0001) pairs as Unknown Device despite being in switch_1gang driver",
+      "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/545",
       "action": "investigate-code-silent",
       "forumReply": "NEVER"
     },
@@ -320,6 +256,16 @@
       "id": "#543",
       "title": "[Device Support] Add support for Tuya 2-gang switch _TZ3000_ptjcjise / TS0002",
       "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/543",
+      "action": "investigate-code-silent",
+      "forumReply": "NEVER"
+    },
+    {
+      "score": 90,
+      "dualApp": "BOTH",
+      "source": "github-issue",
+      "id": "#541",
+      "title": "[Device Support] TS0004 / _TZ3000_enmfaave not matching in switch_4gang",
+      "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/541",
       "action": "investigate-code-silent",
       "forumReply": "NEVER"
     },
