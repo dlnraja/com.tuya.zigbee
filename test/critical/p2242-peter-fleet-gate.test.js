@@ -24,6 +24,8 @@ describe('P2242 Peter fleet gate', () => {
     const drv = read('drivers/button_emergency_sos/driver.js');
     assert.match(dev, /Ignore spike/);
     assert.match(dev, /15_000|sos_battery_last_write_at/);
+    assert.match(dev, /Ignore jitter|Δ≤5 within 60s/);
+    assert.match(dev, /threshold \+ hyst|threshold \+ 5/);
     assert.match(drv, /sos_battery_low_flow_at/);
     assert.match(drv, /60_000/);
   });
@@ -67,8 +69,15 @@ describe('P2242 Peter fleet gate', () => {
     const p = cat.users?.Peter_van_Werkhoven;
     assert.ok(p, 'Peter_van_Werkhoven profile missing');
     assert.ok(p.diags?.length >= 3);
-    const absent = (p.devices || []).every((d) => d.couple == null);
-    assert.strictEqual(absent, true, 'must not invent sacred couples for Peter tiles');
+    // WHY(P2461): Smartbutton alone is locked from diags 048cff91/cfbf687f —
+    // other #2190 tiles must stay couple=null (no invent).
+    const smart = (p.devices || []).find((d) => /smartbutton/i.test(d.tile || ''));
+    assert.ok(smart, 'Smartbutton tile present');
+    assert.strictEqual(smart.couple, '_TZ3000_mrpevh8p+TS0041', 'Smartbutton locked couple');
+    const otherAbsent = (p.devices || [])
+      .filter((d) => !/smartbutton/i.test(d.tile || ''))
+      .every((d) => d.couple == null);
+    assert.strictEqual(otherAbsent, true, 'must not invent couples onto non-Smartbutton Peter tiles');
     const forbidden = p.forbiddenInvent || [];
     assert.ok(forbidden.some((x) => /k4ej3ww2/i.test(x)), 'forbiddenInvent must warn against k4ej glue');
     assert.ok(forbidden.some((x) => /mrpevh8p/i.test(x)), 'forbiddenInvent must warn against mrpe glue');
