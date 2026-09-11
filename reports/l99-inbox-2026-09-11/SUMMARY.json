@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-11T07:32:26.714Z",
+  "generatedAt": "2026-09-11T14:40:51.072Z",
   "date": "2026-09-11",
   "mode": "full",
   "phases": [
@@ -12,18 +12,18 @@
     {
       "name": "github",
       "ok": true,
-      "durationMs": 534
+      "durationMs": 287
     },
     {
       "name": "gmail",
       "ok": true,
-      "durationMs": 182,
+      "durationMs": 212,
       "details": {
         "crash": {
           "ok": true,
           "skipped": false,
           "status": 0,
-          "durationMs": 31,
+          "durationMs": 37,
           "stderr": "",
           "stdoutTail": "[gmail-crash-pattern-gate] sources=32 hits=0 unknown=0\n  wrote .github/state/gmail-crash-patterns.json\n  verdict: ok\n"
         },
@@ -31,16 +31,16 @@
           "ok": true,
           "skipped": false,
           "status": 0,
-          "durationMs": 150,
+          "durationMs": 174,
           "stderr": "",
-          "stdoutTail": "[automate] inbox total=0 have=30 missing=0 ingested_now=0\n[recursive-treat] sources: 136\n[recursive-treat] wrote /home/runner/work/com.tuya.zigbee/com.tuya.zigbee/reports/diag-recursive-treat-2026-09-11\n{\n  \"generatedAt\": \"2026-09-11T07:32:27.423Z\",\n  \"methodology\": \"f647d35b-style full-body recursive treat — sacred couple never invented; P2246 derive from interview when ABSENT\",\n  \"sourcesScanned\": 136,\n  \"uniqueCases\": 122,\n  \"actionable\": 33,\n  \"derivedFromInterview\": 0,\n  \"signalTally\": {\n    \"scene_mode_unsupported\": 3,\n    \"wrong_driver_hint\": 4,\n    \"athom_socket_hang\": 7,\n    \"athom_processing_failed\": 2,\n    \"wrong_smart_rcbo\": 2,\n    \"flow_guard_spam\": 2,\n    \"processing_failed\": 7,\n    \"scene_0x8004\": 2,\n    \"invalid_flow_card\": 1,\n    \"missing_capability_listener\": 1\n  },\n  \"gmailBodiesPresent\": 30,\n  \"interviews\": 90\n}\n[automate] status → .github/state/diag-recursive-inbox/automate-status.json\n{\n  \"total\": 0,\n  \"have\": 30,\n  \"missing\": 0,\n  \"missingIds\": []\n}\n[automate] actionable= 33 gmailBodies= 30\n"
+          "stdoutTail": "[automate] inbox total=0 have=30 missing=0 ingested_now=0\n[recursive-treat] sources: 136\n[recursive-treat] wrote /home/runner/work/com.tuya.zigbee/com.tuya.zigbee/reports/diag-recursive-treat-2026-09-11\n{\n  \"generatedAt\": \"2026-09-11T14:40:51.558Z\",\n  \"methodology\": \"f647d35b-style full-body recursive treat — sacred couple never invented; P2246 derive from interview when ABSENT\",\n  \"sourcesScanned\": 136,\n  \"uniqueCases\": 122,\n  \"actionable\": 34,\n  \"derivedFromInterview\": 0,\n  \"signalTally\": {\n    \"scene_mode_unsupported\": 3,\n    \"wrong_driver_hint\": 4,\n    \"athom_socket_hang\": 5,\n    \"athom_processing_failed\": 2,\n    \"wrong_smart_rcbo\": 2,\n    \"flow_guard_spam\": 2,\n    \"processing_failed\": 5,\n    \"scene_0x8004\": 2,\n    \"invalid_flow_card\": 1,\n    \"missing_capability_listener\": 1\n  },\n  \"gmailBodiesPresent\": 30,\n  \"interviews\": 90\n}\n[automate] status → .github/state/diag-recursive-inbox/automate-status.json\n{\n  \"total\": 0,\n  \"have\": 30,\n  \"missing\": 0,\n  \"missingIds\": []\n}\n[automate] actionable= 34 gmailBodies= 30\n"
         }
       }
     },
     {
       "name": "forum",
       "ok": true,
-      "durationMs": 28026,
+      "durationMs": 29189,
       "skipScan": false,
       "steps": [
         {
@@ -64,10 +64,10 @@
     {
       "name": "drivers",
       "ok": true,
-      "durationMs": 1410,
+      "durationMs": 1502,
       "mfs": {
         "high": 0,
-        "changes": 0,
+        "changes": 4,
         "fail": false
       },
       "sacredOk": true
@@ -76,7 +76,7 @@
       "name": "prioritize",
       "ok": true,
       "durationMs": 1,
-      "count": 7
+      "count": 4
     },
     {
       "name": "docs",
@@ -87,25 +87,30 @@
     {
       "name": "gates",
       "ok": true,
-      "durationMs": 2263
+      "durationMs": 2220
     }
   ],
   "github": {
-    "harvestedAt": "2026-09-11T07:32:27.249Z",
+    "harvestedAt": "2026-09-11T14:40:51.360Z",
     "repo": "dlnraja/com.tuya.zigbee",
     "auth": "token",
     "error": null,
     "issues": [
       {
-        "number": 546,
-        "title": "switch_2gang: state reporting works but commands are never applied (_TZ3000_l9brjwau / TS0002)",
+        "number": 544,
+        "title": "[Device Support] Fingerprint issue for Tuya 2-gang switch (_TZ3000_l9brjwau / TS0002)",
         "labels": [
-          "bug"
+          "bug",
+          "fingerprint",
+          "new-fingerprint",
+          "reopened-by-user",
+          "device_support",
+          "pairing"
         ],
-        "updatedAt": "2026-09-10T20:59:34Z",
-        "user": "kikosenra",
-        "htmlUrl": "https://github.com/dlnraja/com.tuya.zigbee/issues/546",
-        "bodySnippet": "### Describe the bug\n\nDevice: BSEED 2-gang wall switch with neutral, `_TZ3000_l9brjwau` / `TS0002`.\nIt pairs fine with the **2-Gang Smart Switch** driver (`switch_2gang`) and both gangs appear as `onoff` + `onoff.gang2`.\n\n**What works:** pressing a key on the wall correctly updat"
+        "updatedAt": "2026-09-11T12:17:21Z",
+        "user": "migueleap",
+        "htmlUrl": "https://github.com/dlnraja/com.tuya.zigbee/issues/544",
+        "bodySnippet": "## Device Description\n* **Brand:** Tuya / LoraTap\n* **Device Type:** 2-Gang Zigbee Switch Module\n* **Model:** TS0002\n* **Manufacturer Name:** `_TZ3000_l9brjwau`\n\n## Problem Description\nEven though the manufacturer ID `_TZ3000_l9brjwau` is already included in the `manufacturerName"
       },
       {
         "number": 533,
@@ -125,37 +130,10 @@
           "curtain_switch",
           "SMART ZIGBEE CURTAIN SWITCH - MOES"
         ],
-        "updatedAt": "2026-09-10T17:59:41Z",
+        "updatedAt": "2026-09-11T11:37:13Z",
         "user": "salvagr",
         "htmlUrl": "https://github.com/dlnraja/com.tuya.zigbee/issues/533",
         "bodySnippet": "Thank you for your support.\n\n## 📱 Basic Information\n\n**Brand & Model**: SMART ZIGBEE CURTAIN SWITCH - MOES\n**Purchase Link**: https://es.aliexpress.com/item/1005008356152992.html\n**Power Source**:  Mains\n**Current Status**: pairing with wrong device type. Detected as \"radiator v"
-      },
-      {
-        "number": 545,
-        "title": "Bug report - _TZ3000_ysdv91bk (TS0001) pairs as Unknown Device despite being in switch_1gang driver",
-        "labels": [
-          "bug"
-        ],
-        "updatedAt": "2026-09-10T17:12:22Z",
-        "user": "migueleap",
-        "htmlUrl": "https://github.com/dlnraja/com.tuya.zigbee/issues/545",
-        "bodySnippet": "Describe the bug\nThe device _TZ3000_ysdv91bk (TS0001) pairs as a generic \"Unknown Zigbee Device\" in Homey, even though its manufacturerName is already listed in drivers/switch_1gang/driver.compose.json (lines 1143-1146).\n\nThis occurs because this model is a simple 1-gang relay wi"
-      },
-      {
-        "number": 544,
-        "title": "[Device Support] Fingerprint issue for Tuya 2-gang switch (_TZ3000_l9brjwau / TS0002)",
-        "labels": [
-          "bug",
-          "fingerprint",
-          "new-fingerprint",
-          "reopened-by-user",
-          "device_support",
-          "pairing"
-        ],
-        "updatedAt": "2026-09-10T16:32:29Z",
-        "user": "migueleap",
-        "htmlUrl": "https://github.com/dlnraja/com.tuya.zigbee/issues/544",
-        "bodySnippet": "## Device Description\n* **Brand:** Tuya / LoraTap\n* **Device Type:** 2-Gang Zigbee Switch Module\n* **Model:** TS0002\n* **Manufacturer Name:** `_TZ3000_l9brjwau`\n\n## Problem Description\nEven though the manufacturer ID `_TZ3000_l9brjwau` is already included in the `manufacturerName"
       },
       {
         "number": 543,
@@ -169,46 +147,29 @@
           "device_support",
           "fingerprint-supported"
         ],
-        "updatedAt": "2026-09-10T16:18:15Z",
+        "updatedAt": "2026-09-11T11:23:53Z",
         "user": "migueleap",
         "htmlUrl": "https://github.com/dlnraja/com.tuya.zigbee/issues/543",
         "bodySnippet": "## 📱 Basic Information\n\n**Brand & Model**: Tuya / Moes 2-Gang Switch Module\n**Purchase Link**: N/A\n**Power Source**: [ ] Battery / [x] Mains\n**Current Status**: [ ] Not pairing / [x] Pairs but missing features / [ ] Not working at all\n\n---\n\n## 🔍 Zigbee Fingerprint (MANDATORY)\n\n"
-      },
-      {
-        "number": 541,
-        "title": "[Device Support] TS0004 / _TZ3000_enmfaave not matching in switch_4gang",
-        "labels": [
-          "bug",
-          "fingerprint",
-          "new-fingerprint",
-          "reopened-by-user",
-          "pairing",
-          "switch_4gang",
-          "TS0004"
-        ],
-        "updatedAt": "2026-09-10T15:50:52Z",
-        "user": "migueleap",
-        "htmlUrl": "https://github.com/dlnraja/com.tuya.zigbee/issues/541",
-        "bodySnippet": "Hi @dlnraja,\n\nThe switch_4gang driver is not matching TS0004 (_TZ3000_enmfaave) during pairing, even though the manufacturer name is listed in driver.compose.json.\n\nThe issue is caused by the cluster definitions in zigbee.endpoints for the multi-endpoint setup. Homey requires sta"
       }
     ],
     "prs": [],
-    "openIssueCount": 6,
+    "openIssueCount": 3,
     "openPrCount": 0
   },
   "forum": {
     "path": "/home/runner/work/com.tuya.zigbee/com.tuya.zigbee/.github/state/forum/actionable-processor-report.json",
     "totals": {
-      "posts": 212,
-      "withCouples": 78,
-      "needAction": 49,
-      "both": 136,
+      "posts": 208,
+      "withCouples": 77,
+      "needAction": 47,
+      "both": 131,
       "masterOnly": 10
     },
-    "posts": 212
+    "posts": 208
   },
   "gmail": {
-    "generatedAt": "2026-09-11T07:32:27.273Z",
+    "generatedAt": "2026-09-11T14:40:51.390Z",
     "sourcesScanned": 32,
     "patternCounts": {
       "flow_getDeviceActionCard": 0,
@@ -259,7 +220,7 @@
   },
   "mfs": {
     "high": 0,
-    "changes": 0,
+    "changes": 4,
     "fail": false
   },
   "priority": [
@@ -267,9 +228,9 @@
       "score": 90,
       "dualApp": "BOTH",
       "source": "github-issue",
-      "id": "#546",
-      "title": "switch_2gang: state reporting works but commands are never applied (_TZ3000_l9brjwau / TS0002)",
-      "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/546",
+      "id": "#544",
+      "title": "[Device Support] Fingerprint issue for Tuya 2-gang switch (_TZ3000_l9brjwau / TS0002)",
+      "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/544",
       "action": "investigate-code-silent",
       "forumReply": "NEVER"
     },
@@ -287,39 +248,9 @@
       "score": 90,
       "dualApp": "BOTH",
       "source": "github-issue",
-      "id": "#545",
-      "title": "Bug report - _TZ3000_ysdv91bk (TS0001) pairs as Unknown Device despite being in switch_1gang driver",
-      "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/545",
-      "action": "investigate-code-silent",
-      "forumReply": "NEVER"
-    },
-    {
-      "score": 90,
-      "dualApp": "BOTH",
-      "source": "github-issue",
-      "id": "#544",
-      "title": "[Device Support] Fingerprint issue for Tuya 2-gang switch (_TZ3000_l9brjwau / TS0002)",
-      "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/544",
-      "action": "investigate-code-silent",
-      "forumReply": "NEVER"
-    },
-    {
-      "score": 90,
-      "dualApp": "BOTH",
-      "source": "github-issue",
       "id": "#543",
       "title": "[Device Support] Add support for Tuya 2-gang switch _TZ3000_ptjcjise / TS0002",
       "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/543",
-      "action": "investigate-code-silent",
-      "forumReply": "NEVER"
-    },
-    {
-      "score": 90,
-      "dualApp": "BOTH",
-      "source": "github-issue",
-      "id": "#541",
-      "title": "[Device Support] TS0004 / _TZ3000_enmfaave not matching in switch_4gang",
-      "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/541",
       "action": "investigate-code-silent",
       "forumReply": "NEVER"
     },
@@ -328,7 +259,7 @@
       "dualApp": "BOTH",
       "source": "forum",
       "id": "forum-need-action",
-      "title": "49 forum posts needAction (shadow processor)",
+      "title": "47 forum posts needAction (shadow processor)",
       "action": "enrich:investigate + lock mfr+pid only",
       "forumReply": "NEVER"
     }
