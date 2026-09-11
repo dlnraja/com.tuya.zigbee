@@ -4,11 +4,11 @@
 
 [![Version](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fraw.githubusercontent.com%2Fdlnraja%2Fcom.tuya.zigbee%2Fmaster%2Fapp.json&query=%24.version&label=version&color=blue)](https://homey.app/a/com.dlnraja.tuya.zigbee/)
 [![Drivers](https://img.shields.io/badge/drivers-431-brightgreen)](https://homey.app/a/com.dlnraja.tuya.zigbee/)
-[![Fingerprints](https://img.shields.io/badge/fingerprints-4,400%20unique-green)](https://homey.app/a/com.dlnraja.tuya.zigbee/)
+[![Fingerprints](https://img.shields.io/badge/fingerprints-4,401%20unique-green)](https://homey.app/a/com.dlnraja.tuya.zigbee/)
 [![SDK](https://img.shields.io/badge/SDK-3-orange)](https://apps.developer.homey.app/)
 [![License](https://img.shields.io/badge/license-GPL--3.0-green)](LICENSE)
 
-Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, sensors, lights, thermostats, covers, valves — **431 drivers**, **4,400 unique fingerprints**. No cloud required.
+Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, sensors, lights, thermostats, covers, valves — **431 drivers**, **4,401 unique fingerprints**. No cloud required.
 
 **What it does:**
 - Talks to devices on your Homey Zigbee mesh (Tuya DP `0xEF00` and standard ZCL)
@@ -33,12 +33,12 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 
 | Metric | Value |
 |--------|-------|
-| **App Version** | v9.0.877 |
+| **App Version** | v9.0.878 |
 | **Drivers** | 431 (381 Zigbee + 50 WiFi) |
-| **Unique Fingerprints** | 4,400 |
-| **Pairing Variants** | 17,048 (4 case combos per fingerprint) |
+| **Unique Fingerprints** | 4,401 |
+| **Pairing Variants** | 17,050 (4 case combos per fingerprint) |
 | **Unique Product IDs** | 592 |
-| **Flow Cards** | 5,962 |
+| **Flow Cards** | 5,967 |
 | **Unique Capabilities** | 170 |
 | **Native OTA Drivers** | 9 |
 | **Test Suites** | 275 files |
@@ -54,7 +54,7 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 | 1 | `climate_sensor` | 2,106 |
 | 2 | `switch_1gang` | 1,530 |
 | 3 | `presence_sensor_radar` | 805 |
-| 4 | `curtain_motor` | 786 |
+| 4 | `curtain_motor` | 788 |
 | 5 | `radiator_valve` | 599 |
 | 6 | `button_wireless_2` | 570 |
 | 7 | `wall_dimmer_tuya` | 488 |
@@ -102,6 +102,7 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 
 | Version | Changes |
 |---------|---------|
+| **v9.0.878** | Restored smart knob rotate/brightness flow cards after enrich overwrite; Moes/FrankEver fixes remain. |
 | **v9.0.877** | Improved Moes curtain open/close TX; Moes Star Feather 3-gang pairing; FrankEver water valve fingerprint lock. |
 | **v9.0.876** | Fixed smart knob rotate/brightness flow cards so Test publish can proceed; wall switch and SPM01 fixes remain. |
 | **v9.0.875** | Fixed wall 2-gang phantom button tiles; BSEED 1-gang pairing; SPM01 energy meter no longer pairs as curtain; Moes curtain stop window imp… |
@@ -113,7 +114,6 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 | **v9.0.869** | Stability improvements and Homey test build recovery. |
 | **v9.0.868** | Fixed Moes/Tuya wired 2-gang pairing (_TZ3000_ptjcjise/TS0002): maps to wall switch with onoff/onoff.gang2 only — no button clutter. |
 | **v9.0.867** | Fixed BSEED wired 2-gang pairing (_TZ3000_l9brjwau/TS0002): maps to wall switch with onoff/onoff.gang2 only — no battery or button clutter. |
-| **v9.0.866** | Fixed BSEED wired 2-gang pairing (_TZ3000_l9brjwau/TS0002): maps to wall switch with onoff/onoff.gang2 only — no battery or button clutter. |
 
 <!-- CHANGELOG_END -->
 
