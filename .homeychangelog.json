@@ -1539,5 +1539,8 @@
   },
   "5.12.166": {
     "en": "Improved presence radar heal after updates; BSEED 2-gang Homey commands use setOn/setOff; BSEED 1-gang ysdv91bk wall switch pairing."
+  },
+  "5.12.167": {
+    "en": "Improved smartbutton reliability (SH-SC07); AM43 curtain EF00-only (P2461)."
   }
 }

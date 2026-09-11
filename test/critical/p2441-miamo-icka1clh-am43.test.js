@@ -44,6 +44,14 @@ describe('P2441/P2445 MIAMO AM43 icka1clh+zah67ekd multi-pid → curtain_motor',
     assert.ok(src.includes('icka1clh'));
     assert.ok(src.includes('zah67ekd'));
     assert.ok(src.includes('P2441'));
+    assert.ok(src.includes('_isPureTuyaDP = true'), 'P2461 force EF00 for battery tubular');
+  });
+
+  it('MVM + cover base refuse ZCL tilt/fallback for AM43', () => {
+    const mvm = fs.readFileSync(path.join(ROOT, 'lib/ManufacturerVariationManager.js'), 'utf8');
+    assert.ok(mvm.includes('am43_battery_tubular_ef00'));
+    const cover = fs.readFileSync(path.join(ROOT, 'lib/devices/UnifiedCoverBase.js'), 'utf8');
+    assert.ok(/icka1clh\|zah67ekd/.test(cover));
   });
 
   it('registry forbids shutter+tilt for multi-pid AM43 couples', () => {
