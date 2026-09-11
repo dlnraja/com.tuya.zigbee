@@ -34,6 +34,16 @@ class Button1GangDevice extends ButtonDevice {
       sendTuyaMagicPacket(this, zclNode, 1, { force: true }).catch(() => {});
     } catch (_e) { /* soft */ }
 
+    // WHY(P2470 / Peter 8afffc76): Homey showed CR2032 because compose listed it first;
+    // SH-SC07 is CR2450 (Z2M). Lock energy so Insights/battery UI stay correct after re-pair.
+    try {
+      const mfr = String(this.getSetting?.('zb_manufacturer_name') || this.getData?.()?.manufacturerName || '');
+      if (/mrpevh8p|5bpeda8u|b4awzgct/i.test(mfr) && typeof this.setEnergy === 'function') {
+        await this.setEnergy({ batteries: ['CR2450'] }).catch(() => {});
+        this.log('[BUTTON_WIRELESS_1] P2470 energy lock CR2450 (SH-SC07)');
+      }
+    } catch (_e) { /* soft */ }
+
     this.log('[BUTTON_WIRELESS_1] v10.0.0+P2316 init (1-btn lock + magic 0xFFDE)');
   }
 
