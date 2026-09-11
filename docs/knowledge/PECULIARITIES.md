@@ -215,8 +215,9 @@ Generated 2026-09-08T07:29:59.472Z from registry (201 cases) × compound DB (454
 - Battery: CR2450; Z2M: not `/get`; **never** configure `batteryPercentageRemaining` reporting ([Z2M #8072](https://github.com/Koenkk/zigbee2mqtt/issues/8072) — hourly drop / LED flash / 2 presses)
 - **P2378 (Peter diag `cfbf687f` @ 9.0.779):** 0xFD RX + `button_matrix` OK, but Homey Flows on `*_button_1gang_*` never fired
 - **P2440 / P2461 (Peter #2230 diag `048cff91` @ 9.0.836):** disco + battery `?` — 3.4s 0xFD retransmit; FLOW-GUARD invent IDs; EF00 dataQuery fail; THROTTLE blocked store 100%; wake reconfigure powerConfiguration failed. Fix: 4s cross-path, compose-only cards, store-first+skipThrottle, skip EF00 + skip batt reporting reconfigure, soft-fill TS0041, family=`ts0041`, CR2450 lock
+- **P2470 (Peter diag `8afffc76` @ 9.0.882):** tip still ZCL-QUERY configure+read Timeout; registerCapability still shipped configureAttributeReporting; log showed 100% then `[THROTTLE] duplicate_value` left UI `?`; energy CR2032. Fix: sleepy-button passive DataQuery, skip batt cfg, null-UI skipThrottle, CR2450 first + runtime setEnergy
 - Report: `reports/forum-verify-2230/PETER_DIAG_INTERNET.md`
-- User action: Update Test tip after P2461 publish; press once
+- User action: Update Test tip ≥9.0.888 (P2470); press once — Insights fills after battery paints (no separate Homey “activity” tab for `class: button`)
 
 ### `presence-radar-cam-zg204zl` / Cam HOBEIAN
 

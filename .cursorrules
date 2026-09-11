@@ -17,6 +17,7 @@
 4. Read `docs/knowledge/DEVICE_TRUTH.md` and look up `docs/knowledge/device-truth.json` for the device in scope
 5. **P215:** For every feature / non-obvious line, answer Pourquoi / Comment / Pour qui / Quand / Contre quoi — see `docs/rules/WHY_INTERROGATION.md`. Use answers to enrich workflows, rules, docs, catalogs.
 6. **L99 ALWAYS:** Max-depth investigation + deep search on every prompt — see `.cursor/rules/l99-deep-investigation-always.mdc`. Silent forum enrich; cross-ref Z2M/ZHA/alt apps; TX/RX recursive; gates before done.
+7. **P2469 ALWAYS:** Every prompt / every fix → add or extend a **smart** `test/critical/pNNNN-*.test.js` that locks Contre quoi (anti-régression). Wire `npm run check:pNNNN`. No “tests later”. Rule: `.cursor/rules/unit-test-anti-regression-always.mdc` · doctrine: `docs/rules/UNIT_TEST_ANTI_REGRESSION.md` · gate: `npm run check:p2469` / `check:p246x`.
 
 ## Project Context
 Homey Pro app for 4200+ Tuya Zigbee devices. Hybrid protocol: Tuya DP (0xEF00) + ZCL clusters.

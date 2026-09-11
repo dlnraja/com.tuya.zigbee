@@ -120,12 +120,21 @@ Orchestrated via `tools/ci/mega-crawler.js` + GHA `mega-crawl.yml` (**workflow_d
 | `lib/features/ZigbeeMeshMap.js` | Passive mesh snapshot for GET `/zigbee-map` (no ZDO flood) |
 | `.github/state/` | Per-source state (gitignored, populated by crawlers) |
 
+## Unit tests anti-régression (P2469 — every prompt)
+
+Every behavior fix **must** create or extend `test/critical/pNNNN-*.test.js` locking Contre quoi (P215). Smart locks only (compose clusters, DP maps, sacred couples) — no invent pid, no mega snapshots.
+
+- Rule: `.cursor/rules/unit-test-anti-regression-always.mdc`
+- Doctrine: `docs/rules/UNIT_TEST_ANTI_REGRESSION.md`
+- Run: `npm run check:p246x` (also `check:p2467` / `p2468` / `p2469`)
+
 ## Common Bug Patterns to Watch
 
 1. **setTimeout with destroyed device** → use `safeSetTimeout(this, cb, ms)` from `lib/utils/safe-timers.js`
 2. **Class extends value undefined** → missing import, check `require()` paths
 3. **registerRunListenerasync is not a function** → typo, should be `registerRunListener(async`
 4. **setTimeout is undefined** → `this.homey.setTimeout(...)` when homey is destroyed
+5. **Fix without critical unit test** → P2469 regression; tip/auto-fix-all will silently undo you
 
 ## Naming Conventions
 
@@ -212,6 +221,7 @@ This fetches all 2032 posts of topic 140352 in ~5 minutes with 100% success.
 - **Don't** leak GitHub PATs, Gmail passwords, or Homey tokens in commits or logs.
 - **Don't** paste unchecked AI answers into Homey Community (T157628).
 - **Don't** auto-reply on satellite forum threads; prefer silent code enrichment.
+- **Don't** ship a behavior fix without a `test/critical` lock (P2469).
 
 ## Lessons from Memory
 

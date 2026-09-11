@@ -87,6 +87,12 @@ Clone Stable: `Documents\homey\stable`. `stable-v5-p195` is **STALE**.
 - Stable 5.12.88 upload succeeded then **processing_failed** — wait; do not force_test spam.
 - Scripts: `.github/scripts/processing-failure-republish-check.js`
 
+## P2469 — Unit tests anti-régression (every prompt)
+- Always-on rule: `.cursor/rules/unit-test-anti-regression-always.mdc`
+- Doctrine: `docs/rules/UNIT_TEST_ANTI_REGRESSION.md` · system prompt: `AI_CONTEXT_MANDATE.md`
+- Every fix → extend/add `test/critical/pNNNN-*.test.js` (smart Contre quoi lock)
+- Gates: `npm run check:p2467` · `check:p2468` · `check:p2469` · `check:p246x`
+
 ## Commands
 ```bash
 gh run list --repo dlnraja/com.tuya.zigbee --limit 12
@@ -96,6 +102,7 @@ npm run resilience:audit
 npm run forum:process
 npm run forum:parse-digest
 npm run check:p244x
+npm run check:p246x
 ```
 
 ## Resilience (P2222 / P2224 / P2225) — BOTH tracks
