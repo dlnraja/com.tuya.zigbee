@@ -57,7 +57,11 @@ describe('P2435 — GH #540–#544 switch pairing endpoints + sacred couples', (
     assert.deepStrictEqual(g2.zigbee.endpoints['2'].clusters, [4, 5, 6]);
     const g1 = readCompose('switch_1gang');
     assert.deepStrictEqual(g1.zigbee.endpoints['1'].clusters, [0, 4, 5, 6]);
-    assert.ok(g1.zigbee.manufacturerName.some((m) => /blhvsaqf/i.test(m)));
+    // WHY P2462: BSEED blhvsaqf lives on wall_switch_1gang_1way (not metering switch_1gang)
+    assert.ok(!g1.zigbee.manufacturerName.some((m) => /blhvsaqf/i.test(m)));
+    const wall1 = readCompose('wall_switch_1gang_1way');
+    assert.ok(wall1.zigbee.manufacturerName.some((m) => /blhvsaqf/i.test(m)));
+    assert.ok(wall1.zigbee.productId.includes('TS0001'));
   });
 
   it('DeviceFingerprintDB routes P2435 couples', () => {
@@ -66,7 +70,8 @@ describe('P2435 — GH #540–#544 switch pairing endpoints + sacred couples', (
     assert.strictEqual(FINGERPRINT_DB['_TZ3000_xk5udnd6|TS0012'].driver, 'wall_switch_2gang_1way');
     assert.strictEqual(FINGERPRINT_DB['_TZ3000_ptjcjise|TS0002'].driver, 'wall_switch_2gang_1way');
     assert.strictEqual(FINGERPRINT_DB['_TZ3000_l9brjwau|TS0002'].driver, 'wall_switch_2gang_1way');
-    assert.strictEqual(FINGERPRINT_DB['_TZ3000_blhvsaqf|TS0001'].driver, 'switch_1gang');
+    // P2462 GH#540 — BSEED 1G ZCL wall, not switch_1gang
+    assert.strictEqual(FINGERPRINT_DB['_TZ3000_blhvsaqf|TS0001'].driver, 'wall_switch_1gang_1way');
   });
 
   it('mfs_db top-level xk5udnd6 is not water_leak_sensor', () => {
