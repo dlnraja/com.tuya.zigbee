@@ -186,10 +186,10 @@
         "de": "Taste 1 Szene aufgerufen"
       },
       "hint": {
-        "en": "When button 1 recalls a Zigbee scene (cluster 0x05 — scene mode)",
-        "fr": "Lorsque le bouton 1 rappelle une scène Zigbee (cluster 0x05 — mode scène)",
-        "nl": "Wanneer knop 1 een Zigbee-scène oproept (cluster 0x05)",
-        "de": "Wenn Taste 1 eine Zigbee-Szene aufruft (Cluster 0x05)"
+        "en": "When button 1 recalls a Zigbee scene (cluster 0x05 — scene mode, P31)",
+        "fr": "Lorsque le bouton 1 rappelle une scène Zigbee (cluster 0x05 — mode scène, P31)",
+        "nl": "Wanneer knop 1 recalls a Zigbee scène (cluster 0x05 — scène mode, P31)",
+        "de": "Wenn Taste 1 recalls a Zigbee Szene (Cluster 0x05 — Szene mode, P31)"
       },
       "tokens": [
         {
@@ -206,224 +206,13 @@
       ],
       "args": [],
       "titleFormatted": {
-        "en": "Button 1 scene recalled ({scene_id})",
-        "fr": "Bouton 1 scène rappelée ({scene_id})",
-        "nl": "Knop 1 scène opgeroepen ({scene_id})",
-        "de": "Taste 1 Szene aufgerufen ({scene_id})"
-      }
-    },
-    {
-      "id": "smart_knob_rotate_left",
-      "highlight": true,
-      "title": {
-        "en": "Rotated left",
-        "fr": "Rotation gauche",
-        "nl": "Naar links gedraaid",
-        "de": "Nach links gedreht"
-      },
-      "hint": {
-        "en": "When the knob is rotated counter-clockwise (command/dimmer mode)",
-        "fr": "Rotation antihoraire (mode dimmer/commande)",
-        "nl": "Tegen de klok in gedraaid (dimmer-modus)",
-        "de": "Gegen den Uhrzeigersinn gedreht (Dimmer-Modus)"
-      },
-      "tokens": [
-        {
-          "name": "brightness",
-          "type": "number",
-          "title": { "en": "Brightness %", "fr": "Luminosité %", "nl": "Helderheid %", "de": "Helligkeit %" },
-          "example": 50
-        },
-        {
-          "name": "speed",
-          "type": "string",
-          "title": { "en": "Rotation speed", "fr": "Vitesse", "nl": "Snelheid", "de": "Geschwindigkeit" },
-          "example": { "en": "slow, normal or fast", "fr": "slow, normal ou fast" }
-        }
-      ],
-      "args": [],
-      "titleFormatted": {
-        "en": "Rotated left ({brightness}) ({speed})",
-        "fr": "Rotation gauche ({brightness}) ({speed})",
-        "nl": "Naar links gedraaid ({brightness}) ({speed})",
-        "de": "Nach links gedreht ({brightness}) ({speed})"
-      }
-    },
-    {
-      "id": "smart_knob_rotate_right",
-      "highlight": true,
-      "title": {
-        "en": "Rotated right",
-        "fr": "Rotation droite",
-        "nl": "Naar rechts gedraaid",
-        "de": "Nach rechts gedreht"
-      },
-      "hint": {
-        "en": "When the knob is rotated clockwise (command/dimmer mode)",
-        "fr": "Rotation horaire (mode dimmer/commande)",
-        "nl": "Met de klok mee gedraaid (dimmer-modus)",
-        "de": "Im Uhrzeigersinn gedreht (Dimmer-Modus)"
-      },
-      "tokens": [
-        {
-          "name": "brightness",
-          "type": "number",
-          "title": { "en": "Brightness %", "fr": "Luminosité %", "nl": "Helderheid %", "de": "Helligkeit %" },
-          "example": 50
-        },
-        {
-          "name": "speed",
-          "type": "string",
-          "title": { "en": "Rotation speed", "fr": "Vitesse", "nl": "Snelheid", "de": "Geschwindigkeit" },
-          "example": { "en": "slow, normal or fast", "fr": "slow, normal ou fast" }
-        }
-      ],
-      "args": [],
-      "titleFormatted": {
-        "en": "Rotated right ({brightness}) ({speed})",
-        "fr": "Rotation droite ({brightness}) ({speed})",
-        "nl": "Naar rechts gedraaid ({brightness}) ({speed})",
-        "de": "Nach rechts gedreht ({brightness}) ({speed})"
-      }
-    },
-    {
-      "id": "smart_knob_press_and_rotate_left",
-      "title": {
-        "en": "Pressed and rotated left",
-        "fr": "Appuyé et tourné à gauche",
-        "nl": "Ingedrukt en naar links gedraaid",
-        "de": "Gedrückt und nach links gedreht"
-      },
-      "tokens": [
-        {
-          "name": "brightness",
-          "type": "number",
-          "title": { "en": "Brightness %", "fr": "Luminosité %" },
-          "example": 50
-        },
-        {
-          "name": "speed",
-          "type": "string",
-          "title": { "en": "Rotation speed", "fr": "Vitesse" },
-          "example": { "en": "slow, normal or fast", "fr": "slow, normal ou fast" }
-        }
-      ],
-      "args": [],
-      "titleFormatted": {
-        "en": "Pressed and rotated left ({brightness}) ({speed})",
-        "fr": "Appuyé et tourné à gauche ({brightness}) ({speed})",
-        "nl": "Ingedrukt en naar links gedraaid ({brightness}) ({speed})",
-        "de": "Gedrückt und nach links gedreht ({brightness}) ({speed})"
-      }
-    },
-    {
-      "id": "smart_knob_press_and_rotate_right",
-      "title": {
-        "en": "Pressed and rotated right",
-        "fr": "Appuyé et tourné à droite",
-        "nl": "Ingedrukt en naar rechts gedraaid",
-        "de": "Gedrückt und nach rechts gedreht"
-      },
-      "tokens": [
-        {
-          "name": "brightness",
-          "type": "number",
-          "title": { "en": "Brightness %", "fr": "Luminosité %" },
-          "example": 50
-        },
-        {
-          "name": "speed",
-          "type": "string",
-          "title": { "en": "Rotation speed", "fr": "Vitesse" },
-          "example": { "en": "slow, normal or fast", "fr": "slow, normal ou fast" }
-        }
-      ],
-      "args": [],
-      "titleFormatted": {
-        "en": "Pressed and rotated right ({brightness}) ({speed})",
-        "fr": "Appuyé et tourné à droite ({brightness}) ({speed})",
-        "nl": "Ingedrukt en naar rechts gedraaid ({brightness}) ({speed})",
-        "de": "Gedrückt und nach rechts gedreht ({brightness}) ({speed})"
-      }
-    },
-    {
-      "id": "smart_knob_brightness_changed",
-      "title": {
-        "en": "Brightness changed",
-        "fr": "Luminosité changée",
-        "nl": "Helderheid gewijzigd",
-        "de": "Helligkeit geändert"
-      },
-      "tokens": [
-        {
-          "name": "brightness",
-          "type": "number",
-          "title": { "en": "Brightness (%)", "fr": "Luminosité (%)", "nl": "Helderheid (%)", "de": "Helligkeit (%)" },
-          "example": 80
-        }
-      ],
-      "args": [],
-      "titleFormatted": {
-        "en": "Brightness changed to {brightness}%",
-        "fr": "Luminosité {brightness}%",
-        "nl": "Helderheid {brightness}%",
-        "de": "Helligkeit {brightness}%"
+        "en": "Button 1 scene [[scene_id]] recalled ({scene_id})",
+        "fr": "Bouton 1 scène [[scene_id]] rappelée ({scene_id})",
+        "nl": "Knop 1 scène [[scène_id]] opgeroepen ({scene_id})",
+        "de": "Taste 1 Szene [[Szene_id]] aufgerufen ({scene_id})"
       }
     }
   ],
-  "conditions": [
-    {
-      "id": "smart_knob_brightness_above",
-      "title": {
-        "en": "Brightness level is above...",
-        "fr": "Niveau de luminosité supérieur à...",
-        "nl": "Helderheid is hoger dan...",
-        "de": "Helligkeit ist höher als..."
-      },
-      "args": [
-        {
-          "name": "level",
-          "type": "number",
-          "min": 0,
-          "max": 100,
-          "step": 1,
-          "title": { "en": "Level", "fr": "Niveau", "nl": "Niveau", "de": "Stufe" }
-        }
-      ],
-      "titleFormatted": {
-        "en": "Brightness level is above [[level]]",
-        "fr": "Niveau de luminosité supérieur à [[level]]",
-        "nl": "Helderheid is hoger dan [[level]]",
-        "de": "Helligkeit ist höher als [[level]]"
-      }
-    }
-  ],
-  "actions": [
-    {
-      "id": "smart_knob_set_brightness",
-      "title": {
-        "en": "Set brightness",
-        "fr": "Régler luminosité",
-        "nl": "Helderheid instellen",
-        "de": "Helligkeit einstellen"
-      },
-      "args": [
-        {
-          "name": "brightness",
-          "type": "range",
-          "min": 0,
-          "max": 100,
-          "step": 1,
-          "label": "%",
-          "labelDecimals": 0
-        }
-      ],
-      "titleFormatted": {
-        "en": "Set brightness [[brightness]]",
-        "fr": "Régler luminosité [[brightness]]",
-        "nl": "Helderheid instellen [[brightness]]",
-        "de": "Helligkeit einstellen [[brightness]]"
-      }
-    }
-  ]
+  "conditions": [],
+  "actions": []
 }
