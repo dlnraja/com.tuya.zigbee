@@ -193,13 +193,15 @@ Generated 2026-09-08T07:29:59.472Z from registry (201 cases) × compound DB (454
 - **Joep #2218:** “repair” on an **unknown** device does not re-run driver matching → remove + re-pair under **Smart 2-Way Irrigation Valve**
 - Not GIEX `_TZE284_8zizsafo` (that is `valve_irrigation` 4-zone)
 
-### `button-wireless-1-mrpevh8p` → `button_wireless_1` (P2378)
+### `button-wireless-1-mrpevh8p` → `button_wireless_1` (P2378 / P2461)
 
-- Couple: `_TZ3000_mrpevh8p` + `TS0041` (SH-SC07)
-- **P2378 (Peter diag `cfbf687f` @ 9.0.779):** 0xFD RX + `button_matrix` OK, but Homey Flows on `*_button_1gang_*` never fired — `triggerButtonPress` gated Ngang cards behind `gangCount > 1`
-- **P2381/P2387 (Peter #2203):** Flow fix ≥9.0.782 + button `wrapHandleFrame` SSOT ≥9.0.790; couple still **ABSENT** in posts — NEED_INTERVIEW (press during pair; zb_manufacturer_name + zb_model_id)
-- **P2381 (same diag, tip-lag):** even after P2378, driver.compose cards were stripped from `app.json` (P2376 dedupe) so `collectDeclaredFlowIds` / `_tryCard` refused them — only app-level `button_matrix` ran. Fix: merge `driver.manifest.flow` (+ getDrivers) into declared set; allow driver-scoped getDeviceTriggerCard.
-- Fix BOTH: always try `*_button_1gang_*` + `buildPhysicalFlowCandidates`; late identity overrides for profile
+- Couple: `_TZ3000_mrpevh8p` + `TS0041` (SH-SC07 / RSH-SC021, Z2M whitelabel + Johan #1120)
+- Clusters (Johan interview): EP1 `0,1,6,E000` — **no EF00**; phantom EP2–4 → `mapAllEndpointsToButton1`
+- Battery: CR2450; Z2M: not `/get`; **never** configure `batteryPercentageRemaining` reporting ([Z2M #8072](https://github.com/Koenkk/zigbee2mqtt/issues/8072) — hourly drop / LED flash / 2 presses)
+- **P2378 (Peter diag `cfbf687f` @ 9.0.779):** 0xFD RX + `button_matrix` OK, but Homey Flows on `*_button_1gang_*` never fired
+- **P2440 / P2461 (Peter #2230 diag `048cff91` @ 9.0.836):** disco + battery `?` — 3.4s 0xFD retransmit; FLOW-GUARD invent IDs; EF00 dataQuery fail; THROTTLE blocked store 100%; wake reconfigure powerConfiguration failed. Fix: 4s cross-path, compose-only cards, store-first+skipThrottle, skip EF00 + skip batt reporting reconfigure, soft-fill TS0041, family=`ts0041`, CR2450 lock
+- Report: `reports/forum-verify-2230/PETER_DIAG_INTERNET.md`
+- User action: Update Test tip after P2461 publish; press once
 
 ### `presence-radar-cam-zg204zl` / Cam HOBEIAN
 

@@ -184,6 +184,10 @@ class CurtainMotorDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedC
     const { protocol } = this._detectProtocol?.() || {};
     const moesZts = this._isMoesZtsEurC();
     const batteryTubular = this._isBatteryTubularRoller();
+    // WHY(P2461 / MIAMO #2229): lock EF00 TX before any ZCL cover path can run
+    if (batteryTubular) {
+      this._isPureTuyaDP = true;
+    }
     // WHY(P2304/P2433): Moes ZTS + battery tubular rollers — no lux/button robot extras
     if (protocol !== 'ZCL' && !moesZts && !batteryTubular) {
       if (!this.hasCapability('measure_luminance')) {
