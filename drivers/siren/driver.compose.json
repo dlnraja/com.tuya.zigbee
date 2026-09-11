@@ -123,7 +123,8 @@
       "_TZE284_ZZM83ZPZ",
       "hobeian",
       "Hobeian",
-      "HOBEIAN"
+      "HOBEIAN",
+      "_TZ3000_vdfwjopk"
     ],
     "productId": [
       "hobeian",
@@ -145,7 +146,11 @@
       "1": {
         "clusters": [
           0,
-          6
+          1280,
+          1282
+        ],
+        "bindings": [
+          1280
         ]
       }
     }

@@ -3,6 +3,28 @@
   "description": "Community-reported wrong-driver / pairing conflict cases. Sacred couple = mfr + productId. Master: static compose + dynamic lookup. Stable: static compose only (copy canonicalDriver into driver.compose.json). P2318 ENRICHMENT-FIRST: lock by adding to canonicalDriver; forbidMode=couple only strips manufacturerName when the forbidden productId is also present — never strip shared productIds (coverage reduction ban); never delete a mfr from a driver solely because it appears elsewhere with a different pid.",
   "cases": [
     {
+      "id": "p2466-vdfwjopk-ts0219-siren",
+      "manufacturerNames": [
+        "_TZ3000_vdfwjopk",
+        "_tz3000_vdfwjopk"
+      ],
+      "productIds": [
+        "TS0219"
+      ],
+      "canonicalDriver": "siren",
+      "forbiddenDrivers": [
+        "handheld_remote_4_buttons",
+        "button_wireless_4",
+        "switch_1gang"
+      ],
+      "forbidMode": "couple",
+      "notes": "P2466 Johan#1455 Cleverio SA100 / Z2M SA100 — IAS Zone+WD mains siren; flow via startWarning",
+      "sources": [
+        "johan#1455",
+        "z2m:SA100"
+      ]
+    },
+    {
       "id": "p2465-moes-star-feather-3gang",
       "mfr": [
         "_TZE200_zo0cfekv",

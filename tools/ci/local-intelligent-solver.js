@@ -15,7 +15,8 @@ const path = require('path');
 const ROOT = path.resolve(__dirname, '..', '..');
 
 const KNOWN_OPEN_COUPLES = [
-  { issue: 540, mfr: '_TZ3000_blhvsaqf', pid: 'TS0001', driver: 'switch_1gang', note: 'BSEED zcl_only — update Test + re-pair' },
+  { issue: 1455, mfr: '_TZ3000_vdfwjopk', pid: 'TS0219', driver: 'siren', note: 'P2466 Cleverio SA100 IAS WD — update Test + re-pair' },
+  { issue: 540, mfr: '_TZ3000_blhvsaqf', pid: 'TS0001', driver: 'wall_switch_1gang_1way', note: 'P2462 BSEED zcl wall — update Test + re-pair' },
   { issue: 544, mfr: '_TZ3000_l9brjwau', pid: 'TS0002', driver: 'wall_switch_2gang_1way', note: 'P2455 wired BSEED — update Test + remove/re-pair' },
   { issue: 543, mfr: '_TZ3000_ptjcjise', pid: 'TS0002', driver: 'wall_switch_2gang_1way', note: 'P2456 wired 2-gang — update Test + remove/re-pair' },
   { issue: 542, mfr: '_TZ3000_xk5udnd6', pid: 'TS0012', driver: 'wall_switch_2gang_1way', note: 'ep2 without Basic — update + re-pair' },
