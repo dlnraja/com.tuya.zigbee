@@ -4,11 +4,11 @@
 
 [![Version](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fraw.githubusercontent.com%2Fdlnraja%2Fcom.tuya.zigbee%2Fmaster%2Fapp.json&query=%24.version&label=version&color=blue)](https://homey.app/a/com.dlnraja.tuya.zigbee/)
 [![Drivers](https://img.shields.io/badge/drivers-431-brightgreen)](https://homey.app/a/com.dlnraja.tuya.zigbee/)
-[![Fingerprints](https://img.shields.io/badge/fingerprints-4,401%20unique-green)](https://homey.app/a/com.dlnraja.tuya.zigbee/)
+[![Fingerprints](https://img.shields.io/badge/fingerprints-4,400%20unique-green)](https://homey.app/a/com.dlnraja.tuya.zigbee/)
 [![SDK](https://img.shields.io/badge/SDK-3-orange)](https://apps.developer.homey.app/)
 [![License](https://img.shields.io/badge/license-GPL--3.0-green)](LICENSE)
 
-Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, sensors, lights, thermostats, covers, valves — **431 drivers**, **4,401 unique fingerprints**. No cloud required.
+Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, sensors, lights, thermostats, covers, valves — **431 drivers**, **4,400 unique fingerprints**. No cloud required.
 
 **What it does:**
 - Talks to devices on your Homey Zigbee mesh (Tuya DP `0xEF00` and standard ZCL)
@@ -33,44 +33,44 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 
 | Metric | Value |
 |--------|-------|
-| **App Version** | v9.0.864 |
+| **App Version** | v9.0.874 |
 | **Drivers** | 431 (381 Zigbee + 50 WiFi) |
-| **Unique Fingerprints** | 4,401 |
-| **Pairing Variants** | 17,065 (4 case combos per fingerprint) |
+| **Unique Fingerprints** | 4,400 |
+| **Pairing Variants** | 17,070 (4 case combos per fingerprint) |
 | **Unique Product IDs** | 592 |
-| **Flow Cards** | 5,969 |
+| **Flow Cards** | 5,962 |
 | **Unique Capabilities** | 170 |
 | **Native OTA Drivers** | 9 |
-| **Test Suites** | 267 files |
+| **Test Suites** | 275 files |
 | **SVG Icons** | 731 |
 | **Languages** | EN, FR, NL, DE |
 | **SDK / Homey** | 3 / >= 12.2.0 |
-| **Last Updated** | 2026-09-10 |
+| **Last Updated** | 2026-09-11 |
 
 ### Top 20 Drivers by Fingerprint Count
 
 | # | Driver | Fingerprints |
 |---|--------|-------------|
 | 1 | `climate_sensor` | 2,118 |
-| 2 | `switch_1gang` | 1,538 |
+| 2 | `switch_1gang` | 1,534 |
 | 3 | `presence_sensor_radar` | 805 |
-| 4 | `curtain_motor` | 788 |
+| 4 | `curtain_motor` | 786 |
 | 5 | `radiator_valve` | 599 |
 | 6 | `button_wireless_2` | 570 |
 | 7 | `wall_dimmer_tuya` | 488 |
 | 8 | `generic_tuya` | 414 |
 | 9 | `device_radiator_valve` | 336 |
 | 10 | `switch_4gang` | 292 |
-| 11 | `switch_2gang` | 263 |
+| 11 | `switch_2gang` | 255 |
 | 12 | `contact_sensor` | 228 |
 | 13 | `motion_sensor` | 225 |
-| 14 | `switch_3gang` | 215 |
+| 14 | `switch_3gang` | 217 |
 | 15 | `soil_sensor` | 209 |
 | 16 | `diy_custom_zigbee` | 206 |
 | 17 | `thermostat_tuya_dp` | 192 |
 | 18 | `sensor_contact_zigbee` | 183 |
 | 19 | `water_leak_sensor_tuya` | 178 |
-| 20 | `plug_energy_monitor` | 170 |
+| 20 | `bulb_dimmable` | 172 |
 
 ### Drivers by Device Class
 
@@ -102,18 +102,18 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 
 | Version | Changes |
 |---------|---------|
+| **v9.0.874** | Improved smartbutton reliability (SH-SC07); AM43 curtain EF00-only; market dump Zigbee/WiFi. |
+| **v9.0.873** | Improved presence radar heal after app updates; BSEED 2-gang Homey commands use setOn/setOff; BSEED 1-gang ysdv91bk pairs as wall switch;… |
+| **v9.0.872** | Hardened Athom publish soft-expect docs/tests for tip socket hang up; switch pairing/UI reliability soak. |
+| **v9.0.871** | Cleaned 4-gang switch UI: relay gangs only — removed redundant button tiles from Homey device view. |
+| **v9.0.870** | Fixed Moes/Tuya wired 2-gang pairing (_TZ3000_ptjcjise/TS0002): maps to wall switch with onoff/onoff.gang2 only — no button clutter. |
+| **v9.0.869** | Stability improvements and Homey test build recovery. |
+| **v9.0.868** | Fixed Moes/Tuya wired 2-gang pairing (_TZ3000_ptjcjise/TS0002): maps to wall switch with onoff/onoff.gang2 only — no button clutter. |
+| **v9.0.867** | Fixed BSEED wired 2-gang pairing (_TZ3000_l9brjwau/TS0002): maps to wall switch with onoff/onoff.gang2 only — no battery or button clutter. |
+| **v9.0.866** | Fixed BSEED wired 2-gang pairing (_TZ3000_l9brjwau/TS0002): maps to wall switch with onoff/onoff.gang2 only — no battery or button clutter. |
+| **v9.0.865** | Hardened CI publish workflows: package-lock root-only sync, mfs auto-heal on publish, e2e lock integrity gate. |
 | **v9.0.864** | Fixed 1-btn remote pairing (ja5osu5g scene knob, an5rjiwd wireless button) and 4-btn wall remotes (5tqxpine); presence radar no longer st… |
 | **v9.0.863** | Fixed 1-btn remote pairing (ja5osu5g scene knob, an5rjiwd wireless button) and 4-btn wall remotes (5tqxpine); presence radar no longer st… |
-| **v9.0.862** | Fixed switch pairing catalogs (BSEED/Moes 1-4 gang) and Moes curtain fingerprint routing; removed extra button tiles on 4-gang switches. |
-| **v9.0.861** | Fixed switch pairing catalogs (BSEED/Moes 1-4 gang) and Moes curtain fingerprint routing; removed extra button tiles on 4-gang switches. |
-| **v9.0.860** | Fixed smart knob switch voice-safety duplicate options and timer context; kaflzta4 press recovery. |
-| **v9.0.859** | Fixed smart knob switch voice-safety duplicate options and timer context; kaflzta4 press recovery. |
-| **v9.0.858** | Fixed smart knob button press (scene mode) and wired rotate/brightness flow cards. |
-| **v9.0.857** | Fixed smart knob button presses when manufacturer id is missing at wake (scene mode); stopped battery percent flipping from voltage. |
-| **v9.0.856** | Fixed smart knob button presses when manufacturer id is missing at wake (scene mode); stopped battery percent flipping from voltage. |
-| **v9.0.855** | Fixed smart knob button presses when manufacturer id is missing at wake (scene mode); stopped battery percent flipping from voltage. |
-| **v9.0.854** | Fixed smart knob button presses when manufacturer id is missing at wake (scene mode); stopped battery percent flipping from voltage. |
-| **v9.0.853** | Fixed smart knob button presses when manufacturer id is missing at wake (scene mode); stopped battery percent flipping from voltage. |
 
 <!-- CHANGELOG_END -->
 
