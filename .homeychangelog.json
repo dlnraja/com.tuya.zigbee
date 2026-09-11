@@ -3161,5 +3161,8 @@
   },
   "9.0.874": {
     "en": "Improved smartbutton reliability (SH-SC07); AM43 curtain EF00-only; market dump Zigbee/WiFi."
+  },
+  "9.0.878": {
+    "en": "Restored smart knob rotate/brightness flow cards after enrich overwrite; Moes/FrankEver fixes remain."
   }
 }
