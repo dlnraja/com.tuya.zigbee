@@ -10,10 +10,7 @@
   "capabilities": [
     "onoff",
     "onoff.gang2",
-    "onoff.gang3",
-    "button.1",
-    "button.2",
-    "button.3"
+    "onoff.gang3"
   ],
   "platforms": [
     "local"
@@ -96,11 +93,15 @@
       "_TZ3000_LY9APZKY",
       "_tz3000_LY9APZKY",
       "_TZ3000_G9CHY2IB",
-      "_tz3000_G9CHY2IB"
+      "_tz3000_G9CHY2IB",
+      "_TZE200_zo0cfekv",
+      "_TZE200_tzyy0rtq",
+      "_TZE200_rd8cdssd"
     ],
     "productId": [
       "TS0003",
-      "TS0013"
+      "TS0013",
+      "TS0601"
     ],
     "endpoints": {
       "1": {
@@ -111,7 +112,8 @@
           5,
           6,
           57344,
-          57345
+          57345,
+          61184
         ]
       },
       "2": {

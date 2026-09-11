@@ -1,4 +1,10 @@
 {
+  "9.0.877": {
+    "en": "Improved Moes curtain open/close TX; Moes Star Feather 3-gang pairing; FrankEver water valve fingerprint lock."
+  },
+  "9.0.876": {
+    "en": "Fixed smart knob rotate/brightness flow cards so Test publish can proceed; wall switch and SPM01 fixes remain."
+  },
   "9.0.875": {
     "en": "Fixed wall 2-gang phantom button tiles; BSEED 1-gang pairing; SPM01 energy meter no longer pairs as curtain; Moes curtain stop window improved."
   },
@@ -3155,8 +3161,5 @@
   },
   "9.0.874": {
     "en": "Improved smartbutton reliability (SH-SC07); AM43 curtain EF00-only; market dump Zigbee/WiFi."
-  },
-  "9.0.876": {
-    "en": "Fixed smart knob rotate/brightness flow cards so Test publish can proceed; wall switch and SPM01 fixes remain."
   }
 }

@@ -6,6 +6,10 @@ const PhysicalButtonMixin = require('../../lib/mixins/PhysicalButtonMixin');
 const { containsCI } = require('../../lib/utils/CaseInsensitiveMatcher');
 
 const GARDEN_TIMER_MFRS = ['_tze200_sh1btabb', '_tze200_fphxkxue', '_tze204_sh1btabb', '_tze204_fphxkxue'];
+// WHY(P2464): FrankEver FK-BV05 / FK_V02 — Z2M/ZHA valve DPs (not thermostat)
+const FRANKEVER_VALVE_MFRS = [
+  '_tze200_nbqnmkee', '_tze200_1n2zev06', '_tze200_wt9agwf3', '_tze200_5uodvhgc',
+];
 const TRUE_VALUES = new Set([true, 1, '1', 'true', 'open', 'on']);
 
 function isTuyaTrue(value) {
@@ -33,6 +37,13 @@ class WaterValveSmartDevice extends PhysicalButtonMixin(VirtualButtonMixin(Unifi
     return this._gtCached;
   }
 
+  get isFrankeverValve() {
+    if (this._fvCached !== undefined) {return this._fvCached;}
+    const mfr = this.getSetting('zb_manufacturer_name') || this.getData?.()?.manufacturerName || '';
+    this._fvCached = FRANKEVER_VALVE_MFRS.some((m) => containsCI(mfr, m));
+    return this._fvCached;
+  }
+
   get dpMappings() {
     const parentMappings = super.dpMappings || {};
     if (this.isGardenTimer) {
@@ -45,6 +56,19 @@ class WaterValveSmartDevice extends PhysicalButtonMixin(VirtualButtonMixin(Unifi
           return v;
         }},
         101: { capability: 'meter_water', divisor: 1000 },
+      };
+    }
+    // WHY(P2464 / Z2M FK-BV05): DP1 switch, DP2 threshold%, DP3 position, DP5/6 litres, DP22 temp
+    if (this.isFrankeverValve) {
+      return {
+        ...parentMappings,
+        1: { capability: 'onoff', transform: isTuyaTrue },
+        2: { capability: null, internal: 'threshold_pct' },
+        3: { capability: null, internal: 'position_pct' },
+        5: { capability: 'meter_water', divisor: 10 },
+        6: { capability: 'meter_water', divisor: 1 },
+        22: { capability: 'measure_temperature', smartDivisor: true },
+        13: { capability: 'alarm_water', transform: isTuyaTrue },
       };
     }
     return {
@@ -78,7 +102,7 @@ class WaterValveSmartDevice extends PhysicalButtonMixin(VirtualButtonMixin(Unifi
       if (!this.hasCapability('measure_temperature')) {await this.addCapability('measure_temperature').catch(() => { });}
       if (!this.hasCapability('alarm_water')) {await this.addCapability('alarm_water').catch(() => {});}
       if (this.hasCapability('alarm_motion')) {await this.removeCapability('alarm_motion').catch(() => {});}
-      this.log(`[WATER-VALVE] ✅ v9.7.3 Ready (${this.isGardenTimer ? 'GARDEN' : 'METERED'})`);
+      this.log(`[WATER-VALVE] ✅ v9.7.3 Ready (${this.isFrankeverValve ? 'FRANKEVER' : this.isGardenTimer ? 'GARDEN' : 'METERED'})`);
     }, 'onNodeInit');
   }
 
