@@ -1,24 +1,20 @@
 {
-  "harvestedAt": "2026-09-11T14:40:51.360Z",
+  "harvestedAt": "2026-09-11T17:57:53.146Z",
   "repo": "dlnraja/com.tuya.zigbee",
   "auth": "token",
   "error": null,
   "issues": [
     {
-      "number": 544,
-      "title": "[Device Support] Fingerprint issue for Tuya 2-gang switch (_TZ3000_l9brjwau / TS0002)",
+      "number": 546,
+      "title": "switch_2gang: state reporting works but commands are never applied (_TZ3000_l9brjwau / TS0002)",
       "labels": [
         "bug",
-        "fingerprint",
-        "new-fingerprint",
-        "reopened-by-user",
-        "device_support",
-        "pairing"
+        "reopened-by-user"
       ],
-      "updatedAt": "2026-09-11T12:17:21Z",
-      "user": "migueleap",
-      "htmlUrl": "https://github.com/dlnraja/com.tuya.zigbee/issues/544",
-      "bodySnippet": "## Device Description\n* **Brand:** Tuya / LoraTap\n* **Device Type:** 2-Gang Zigbee Switch Module\n* **Model:** TS0002\n* **Manufacturer Name:** `_TZ3000_l9brjwau`\n\n## Problem Description\nEven though the manufacturer ID `_TZ3000_l9brjwau` is already included in the `manufacturerName"
+      "updatedAt": "2026-09-11T17:21:28Z",
+      "user": "kikosenra",
+      "htmlUrl": "https://github.com/dlnraja/com.tuya.zigbee/issues/546",
+      "bodySnippet": "### Describe the bug\n\nDevice: BSEED 2-gang wall switch with neutral, `_TZ3000_l9brjwau` / `TS0002`.\nIt pairs fine with the **2-Gang Smart Switch** driver (`switch_2gang`) and both gangs appear as `onoff` + `onoff.gang2`.\n\n**What works:** pressing a key on the wall correctly updat"
     },
     {
       "number": 533,
@@ -38,10 +34,26 @@
         "curtain_switch",
         "SMART ZIGBEE CURTAIN SWITCH - MOES"
       ],
-      "updatedAt": "2026-09-11T11:37:13Z",
+      "updatedAt": "2026-09-11T17:17:22Z",
       "user": "salvagr",
       "htmlUrl": "https://github.com/dlnraja/com.tuya.zigbee/issues/533",
       "bodySnippet": "Thank you for your support.\n\n## 📱 Basic Information\n\n**Brand & Model**: SMART ZIGBEE CURTAIN SWITCH - MOES\n**Purchase Link**: https://es.aliexpress.com/item/1005008356152992.html\n**Power Source**:  Mains\n**Current Status**: pairing with wrong device type. Detected as \"radiator v"
+    },
+    {
+      "number": 544,
+      "title": "[Device Support] Fingerprint issue for Tuya 2-gang switch (_TZ3000_l9brjwau / TS0002)",
+      "labels": [
+        "bug",
+        "fingerprint",
+        "new-fingerprint",
+        "reopened-by-user",
+        "device_support",
+        "pairing"
+      ],
+      "updatedAt": "2026-09-11T12:17:21Z",
+      "user": "migueleap",
+      "htmlUrl": "https://github.com/dlnraja/com.tuya.zigbee/issues/544",
+      "bodySnippet": "## Device Description\n* **Brand:** Tuya / LoraTap\n* **Device Type:** 2-Gang Zigbee Switch Module\n* **Model:** TS0002\n* **Manufacturer Name:** `_TZ3000_l9brjwau`\n\n## Problem Description\nEven though the manufacturer ID `_TZ3000_l9brjwau` is already included in the `manufacturerName"
     },
     {
       "number": 543,
@@ -62,6 +74,6 @@
     }
   ],
   "prs": [],
-  "openIssueCount": 3,
+  "openIssueCount": 4,
   "openPrCount": 0
 }
