@@ -6099,3 +6099,59 @@ _TZ3000_l9brjwau, _TZ3000_blhvsaqf, _TZ3000_ysdv91bk, _TZ3000_hafsqare, _TZ3000_
 | Moes + RELAY | dlnraja/com.tuya.zigbee#543 | bug_report |
 | Moes + SENSOR | dlnraja/com.tuya.zigbee#543 | bug_report |
 | Moes + SWITCH | dlnraja/com.tuya.zigbee#543 | bug_report |
+
+
+## Auto-discovered from GitHub (2026-09-11)
+
+| Fingerprint | Source | Type |
+|---|---|---|
+| _TZE204_mtoaryre + RELAY | JohanBendz/com.tuya.zigbee#PR1462 | pr |
+| _TZE204_mtoaryre + SENSOR | JohanBendz/com.tuya.zigbee#PR1462 | pr |
+| _TZE204_ + RELAY | JohanBendz/com.tuya.zigbee#PR1462 | pr |
+| _TZE204_ + SENSOR | JohanBendz/com.tuya.zigbee#PR1462 | pr |
+| lumi + RELAY | JohanBendz/com.tuya.zigbee#PR1462 | pr |
+| lumi + SENSOR | JohanBendz/com.tuya.zigbee#PR1462 | pr |
+| tuya + RELAY | JohanBendz/com.tuya.zigbee#PR1462 | pr |
+| tuya + SENSOR | JohanBendz/com.tuya.zigbee#PR1462 | pr |
+| LUMI + RELAY | JohanBendz/com.tuya.zigbee#PR1462 | pr |
+| LUMI + SENSOR | JohanBendz/com.tuya.zigbee#PR1462 | pr |
+| TUYA + RELAY | JohanBendz/com.tuya.zigbee#PR1462 | pr |
+| TUYA + SENSOR | JohanBendz/com.tuya.zigbee#PR1462 | pr |
+| _TZE204 + TS0601 | JohanBendz/com.tuya.zigbee#PR1462 | pr |
+| _TZE204 + ts0601 | JohanBendz/com.tuya.zigbee#PR1462 | pr |
+| _TZE204 + RELAY | JohanBendz/com.tuya.zigbee#PR1462 | pr |
+| _TZE204 + SENSOR | JohanBendz/com.tuya.zigbee#PR1462 | pr |
+| _tze204 + TS0601 | JohanBendz/com.tuya.zigbee#PR1462 | pr |
+| _tze204 + ts0601 | JohanBendz/com.tuya.zigbee#PR1462 | pr |
+| _tze204 + RELAY | JohanBendz/com.tuya.zigbee#PR1462 | pr |
+| _tze204 + SENSOR | JohanBendz/com.tuya.zigbee#PR1462 | pr |
+| _tze204_mtoaryre + RELAY | JohanBendz/com.tuya.zigbee#PR1462 | pr |
+| _tze204_mtoaryre + SENSOR | JohanBendz/com.tuya.zigbee#PR1462 | pr |
+| _tze204_MTOARYRE + RELAY | JohanBendz/com.tuya.zigbee#PR1462 | pr |
+| _tze204_MTOARYRE + SENSOR | JohanBendz/com.tuya.zigbee#PR1462 | pr |
+| _TZE204_MTOARYRE + RELAY | JohanBendz/com.tuya.zigbee#PR1462 | pr |
+| _TZE204_MTOARYRE + SENSOR | JohanBendz/com.tuya.zigbee#PR1462 | pr |
+| _tze + RELAY | JohanBendz/com.tuya.zigbee#PR1462 | pr |
+| _tze + SENSOR | JohanBendz/com.tuya.zigbee#PR1462 | pr |
+| _tze204_ + RELAY | JohanBendz/com.tuya.zigbee#PR1462 | pr |
+| _tze204_ + SENSOR | JohanBendz/com.tuya.zigbee#PR1462 | pr |
+| _TZE + RELAY | JohanBendz/com.tuya.zigbee#PR1462 | pr |
+| _TZE + SENSOR | JohanBendz/com.tuya.zigbee#PR1462 | pr |
+| _TZ3210_ddigca5n + generic | JohanBendz/com.tuya.zigbee#PR1452 | pr |
+| _TZ3210_ + generic | JohanBendz/com.tuya.zigbee#PR1452 | pr |
+| zigbee2mqtt + TS011F | JohanBendz/com.tuya.zigbee#PR1452 | pr |
+| zigbee2mqtt + generic | JohanBendz/com.tuya.zigbee#PR1452 | pr |
+| tuya + TS011F | JohanBendz/com.tuya.zigbee#PR1452 | pr |
+| tuya + generic | JohanBendz/com.tuya.zigbee#PR1452 | pr |
+| TUYA + TS011F | JohanBendz/com.tuya.zigbee#PR1452 | pr |
+| TUYA + generic | JohanBendz/com.tuya.zigbee#PR1452 | pr |
+| ZIGBEE2MQTT + TS011F | JohanBendz/com.tuya.zigbee#PR1452 | pr |
+| ZIGBEE2MQTT + generic | JohanBendz/com.tuya.zigbee#PR1452 | pr |
+| _tz3210_ddigca5n + generic | JohanBendz/com.tuya.zigbee#PR1452 | pr |
+| _TZ3210_DDIGCA5N + generic | JohanBendz/com.tuya.zigbee#PR1452 | pr |
+| _tz3210_DDIGCA5N + generic | JohanBendz/com.tuya.zigbee#PR1452 | pr |
+| _tz3210 + generic | JohanBendz/com.tuya.zigbee#PR1452 | pr |
+| _TZ3210 + generic | JohanBendz/com.tuya.zigbee#PR1452 | pr |
+| _tz3210_ + generic | JohanBendz/com.tuya.zigbee#PR1452 | pr |
+| TUYATEC + generic | JohanBendz/com.tuya.zigbee#PR1439 | pr |
+| TUYATEC + ZTH13-3.0 | JohanBendz/com.tuya.zigbee#PR1439 | pr |
