@@ -52,7 +52,7 @@
     {
       "driverId": "button_wireless_1",
       "homeyClass": "button",
-      "mfrCount": 95,
+      "mfrCount": 97,
       "pidCount": 35,
       "capCount": 2,
       "settingCount": 9,
@@ -635,7 +635,7 @@
       "pidCount": 4,
       "capCount": 6,
       "settingCount": 1,
-      "flowTriggers": 16,
+      "flowTriggers": 14,
       "gaps": [],
       "productIds": [
         "TS004F",
@@ -1646,7 +1646,7 @@
     {
       "driverId": "switch_1gang",
       "homeyClass": "socket",
-      "mfrCount": 1534,
+      "mfrCount": 1530,
       "pidCount": 40,
       "capCount": 9,
       "settingCount": 17,
@@ -1731,7 +1731,7 @@
     {
       "driverId": "switch_3gang",
       "homeyClass": "socket",
-      "mfrCount": 215,
+      "mfrCount": 217,
       "pidCount": 48,
       "capCount": 13,
       "settingCount": 13,
@@ -2057,7 +2057,7 @@
     {
       "driverId": "wall_switch_1gang_1way",
       "homeyClass": "socket",
-      "mfrCount": 28,
+      "mfrCount": 32,
       "pidCount": 7,
       "capCount": 1,
       "settingCount": 4,
@@ -4489,7 +4489,7 @@
     {
       "driverId": "bulb_dimmable",
       "homeyClass": "light",
-      "mfrCount": 174,
+      "mfrCount": 178,
       "pidCount": 86,
       "capCount": 8,
       "settingCount": 8,
@@ -4567,7 +4567,7 @@
     {
       "driverId": "bulb_rgbw",
       "homeyClass": "light",
-      "mfrCount": 108,
+      "mfrCount": 110,
       "pidCount": 14,
       "capCount": 8,
       "settingCount": 8,
@@ -5306,7 +5306,7 @@
     {
       "driverId": "curtain_motor",
       "homeyClass": "windowcoverings",
-      "mfrCount": 795,
+      "mfrCount": 827,
       "pidCount": 48,
       "capCount": 8,
       "settingCount": 19,

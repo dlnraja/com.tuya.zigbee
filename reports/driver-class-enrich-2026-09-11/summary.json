@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-11T06:38:49.791Z",
+  "generatedAt": "2026-09-11T17:12:10.112Z",
   "mode": "apply",
   "classFilter": null,
   "neverInventProductId": true,
@@ -7,8 +7,8 @@
     "button": {
       "count": 54,
       "withGaps": 7,
-      "mfrEntries": 1496,
-      "flowTriggers": 855,
+      "mfrEntries": 1498,
+      "flowTriggers": 853,
       "gapSamples": [
         {
           "id": "button_wireless_fingerbot",
@@ -57,7 +57,7 @@
     "socket": {
       "count": 108,
       "withGaps": 41,
-      "mfrEntries": 3806,
+      "mfrEntries": 3808,
       "flowTriggers": 1164,
       "gapSamples": [
         {
@@ -190,7 +190,7 @@
     "light": {
       "count": 53,
       "withGaps": 6,
-      "mfrEntries": 1602,
+      "mfrEntries": 1608,
       "flowTriggers": 260,
       "gapSamples": [
         {
@@ -234,7 +234,7 @@
     "curtain": {
       "count": 9,
       "withGaps": 1,
-      "mfrEntries": 1001,
+      "mfrEntries": 1033,
       "flowTriggers": 45,
       "gapSamples": [
         {
@@ -385,8 +385,8 @@
   "totals": {
     "drivers": 431,
     "withGaps": 86,
-    "mfrEntries": 17103,
-    "flowTriggers": 3600
+    "mfrEntries": 17145,
+    "flowTriggers": 3598
   },
   "applyResults": [
     {
@@ -429,7 +429,7 @@
       "phase": "curtain-couples",
       "ok": true,
       "exitCode": 0,
-      "tail": "[apply-curtain-couples] candidates=116 toAdd=0 strip_curtain=2\n[apply-curtain-couples] strip curtain_motor: 2 rows (tilt/module/shutter/forbidden)\n  → curtain_module_2_gang: _TZ3000_j1xl73iw\n  → curtain_module_2_gang: _TZ3000_l6iqph4f\n[apply-curtain-couples] APPLIED +0 mfrs, -2 stripped, curtain total=795"
+      "tail": "[apply-curtain-couples] candidates=146 toAdd=0 strip_curtain=2\n[apply-curtain-couples] strip curtain_motor: 2 rows (tilt/module/shutter/forbidden)\n  → curtain_module_2_gang: _TZ3000_j1xl73iw\n  → curtain_module_2_gang: _TZ3000_l6iqph4f\n[apply-curtain-couples] APPLIED +0 mfrs, -2 stripped, curtain total=827"
     },
     {
       "phase": "harden-wifi-local",

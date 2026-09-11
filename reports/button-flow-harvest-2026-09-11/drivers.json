@@ -300,8 +300,37 @@
     ],
     "heuristicResolvable": true,
     "heuristicGaps": [],
-    "heuristicFalsePositives": [],
+    "heuristicFalsePositives": [
+      {
+        "gang": 1,
+        "pressType": "hold",
+        "tried": [
+          "button_wireless_1_button_1gang_hold",
+          "BUTTON_WIRELESS_1_BUTTON_1GANG_HOLD",
+          "BUTTON_WIRELESS_1_button_1gang_hold",
+          "button_pressed"
+        ]
+      }
+    ],
     "issues": [
+      {
+        "type": "heuristic_false_positive",
+        "severity": "info",
+        "count": 1,
+        "sample": [
+          {
+            "gang": 1,
+            "pressType": "hold",
+            "tried": [
+              "button_wireless_1_button_1gang_hold",
+              "BUTTON_WIRELESS_1_BUTTON_1GANG_HOLD",
+              "BUTTON_WIRELESS_1_button_1gang_hold",
+              "button_pressed"
+            ]
+          }
+        ],
+        "reason": "Ngang cards declared — CI tries generic patterns first; runtime resolves"
+      },
       {
         "type": "app_json_drift",
         "severity": "high",
