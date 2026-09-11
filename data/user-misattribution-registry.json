@@ -3,6 +3,77 @@
   "description": "Community-reported wrong-driver / pairing conflict cases. Sacred couple = mfr + productId. Master: static compose + dynamic lookup. Stable: static compose only (copy canonicalDriver into driver.compose.json). P2318 ENRICHMENT-FIRST: lock by adding to canonicalDriver; forbidMode=couple only strips manufacturerName when the forbidden productId is also present — never strip shared productIds (coverage reduction ban); never delete a mfr from a driver solely because it appears elsewhere with a different pid.",
   "cases": [
     {
+      "id": "p2465-moes-star-feather-3gang",
+      "mfr": [
+        "_TZE200_zo0cfekv",
+        "_tze200_zo0cfekv",
+        "_TZE200_tzyy0rtq",
+        "_tze200_tzyy0rtq",
+        "_TZE200_rd8cdssd",
+        "_tze200_rd8cdssd"
+      ],
+      "productId": [
+        "TS0601"
+      ],
+      "canonicalDriver": "wall_switch_3gang_1way",
+      "forbiddenDrivers": [
+        "climate_sensor",
+        "climate_sensor_zt08",
+        "soil_sensor"
+      ],
+      "forbidMode": "couple",
+      "protocol": "tuya_dp",
+      "notes": "Moes Star Feather 3-gang SFL02-Z-3 — was wrongly on climate_sensor. DP24/25/26.",
+      "sources": [
+        "Johan#1457",
+        "Z2M_SFL02-Z-3"
+      ],
+      "tracks": {
+        "master": {
+          "static": true,
+          "dynamic": true
+        },
+        "stable": {
+          "static": true,
+          "dynamic": false
+        }
+      }
+    },
+    {
+      "id": "p2464-frankever-1n2zev06-valve",
+      "mfr": [
+        "_TZE200_1n2zev06",
+        "_tze200_1n2zev06"
+      ],
+      "productId": [
+        "TS0601"
+      ],
+      "canonicalDriver": "water_valve_smart",
+      "forbiddenDrivers": [
+        "thermostat_tuya_dp",
+        "radiator_valve",
+        "wall_thermostat"
+      ],
+      "forbidMode": "couple",
+      "protocol": "tuya_dp",
+      "notes": "FrankEver smart water valve (ZHA#2633 / Z2M FK family). Was mis-locked on thermostat_tuya_dp.",
+      "sources": [
+        "gmail_diag_frankever_2026-09-11",
+        "ZHA#2633",
+        "Z2M_FK-BV05"
+      ],
+      "tracks": {
+        "master": {
+          "static": true,
+          "dynamic": true
+        },
+        "stable": {
+          "static": true,
+          "dynamic": false
+        }
+      }
+    },
+    {
       "id": "p2442-kaflzta4-ts004f-smart-knob",
       "mfr": [
         "_TZ3000_kaflzta4",

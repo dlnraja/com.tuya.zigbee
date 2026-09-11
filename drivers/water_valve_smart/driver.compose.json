@@ -122,7 +122,13 @@
       "_tze204_A7SGHMMS",
       "_tze204_FPHXKXUE",
       "_tze204_SH1BTABB",
-      "_tze200_NBQNMKEE"
+      "_tze200_NBQNMKEE",
+      "_TZE200_1n2zev06",
+      "_tze200_1n2zev06",
+      "_TZE200_1N2ZEV06",
+      "_tze200_1N2ZEV06",
+      "_TZE200_wt9agwf3",
+      "_TZE200_5uodvhgc"
     ],
     "learnmode": {
       "image": "{{driverAssetsPath}}/icon.svg",
@@ -145,7 +151,10 @@
       "1": {
         "clusters": [
           0,
-          6
+          4,
+          5,
+          6,
+          61184
         ]
       }
     }

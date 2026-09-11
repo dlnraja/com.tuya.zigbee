@@ -1,7 +1,7 @@
 {
   "_comment": "This file is generated. Please edit .homeycompose/app.json instead.",
   "id": "com.dlnraja.tuya.zigbee",
-  "version": "9.0.876",
+  "version": "9.0.877",
   "compatibility": ">=12.2.0",
   "platforms": [
     "local"
@@ -19588,10 +19588,6 @@
           "_tze200_RBBX5MFQ",
           "_TZE200_rbbx5mfq",
           "_TZE200_RBBX5MFQ",
-          "_tze200_rd8cdssd",
-          "_tze200_RD8CDSSD",
-          "_TZE200_rd8cdssd",
-          "_TZE200_RD8CDSSD",
           "_tze200_rlqamjhp",
           "_tze200_RLQAMJHP",
           "_TZE200_rlqamjhp",
@@ -19628,10 +19624,6 @@
           "_tze200_TVIAYMWX",
           "_TZE200_tviaymwx",
           "_TZE200_TVIAYMWX",
-          "_tze200_tzyy0rtq",
-          "_tze200_TZYY0RTQ",
-          "_TZE200_tzyy0rtq",
-          "_TZE200_TZYY0RTQ",
           "_tze200_u319yc66",
           "_tze200_U319YC66",
           "_TZE200_u319yc66",
@@ -19820,10 +19812,6 @@
           "_tze200_ZNPH9215",
           "_TZE200_znph9215",
           "_TZE200_ZNPH9215",
-          "_tze200_zo0cfekv",
-          "_tze200_ZO0CFEKV",
-          "_TZE200_zo0cfekv",
-          "_TZE200_ZO0CFEKV",
           "_tze200_zppcgbdj",
           "_tze200_ZPPCGBDJ",
           "_TZE200_zppcgbdj",
@@ -84085,7 +84073,6 @@
           "_TZE204_qdihqf3l",
           "_TZE204_xby0s3ta",
           "_tze200_0j6pth9y",
-          "_tze200_1n2zev06",
           "_tze200_5toc8efa",
           "_tze200_8whxpsiw",
           "_tze200_9gvruqf5",
@@ -84139,7 +84126,6 @@
           "_TZE204_XBY0S3TA",
           "_tze204_xby0s3ta",
           "_TZE200_0J6PTH9Y",
-          "_TZE200_1N2ZEV06",
           "_TZE200_5TOC8EFA",
           "_TZE200_8WHXPSIW",
           "_TZE200_9GVRUQF5",
@@ -84181,7 +84167,6 @@
           "_TZE200_a4b6trrs",
           "_TZE204_a4b6trrs",
           "_TZE200_0j6pth9y",
-          "_TZE200_1n2zev06",
           "_TZE200_5toc8efa",
           "_TZE200_8whxpsiw",
           "_TZE200_9gvruqf5",
@@ -84229,7 +84214,6 @@
           "_tze204_QDIHQF3L",
           "_tze204_XBY0S3TA",
           "_tze200_0J6PTH9Y",
-          "_tze200_1N2ZEV06",
           "_tze200_5TOC8EFA",
           "_tze200_8WHXPSIW",
           "_tze200_9GVRUQF5",
@@ -86908,12 +86892,10 @@
           "_TZE284_zjho8u0y",
           "_tz3210_0jxeoadc",
           "_tze200_2wg5qrjy",
-          "_tze200_5uodvhgc",
           "_tze200_81isopgh",
           "_tze200_akjefhj5",
           "_tze200_gomuk3dc",
           "_tze200_ugekduaj",
-          "_tze200_wt9agwf3",
           "_tze200_xlppj4f5",
           "_tze200_yxcgyjf1",
           "_tze204_4fblxpma",
@@ -86937,12 +86919,10 @@
           "_tze284_zjho8u0y",
           "_TZ3210_0JXEOADC",
           "_TZE200_2WG5QRJY",
-          "_TZE200_5UODVHGC",
           "_TZE200_81ISOPGH",
           "_TZE200_AKJEFHJ5",
           "_TZE200_GOMUK3DC",
           "_TZE200_UGEKDUAJ",
-          "_TZE200_WT9AGWF3",
           "_TZE200_YXCGYJF1",
           "_TZE204_4FBLXPMA",
           "_TZE204_81ISOPGH",
@@ -86954,12 +86934,10 @@
           "_TZE284_LOEJKA0I",
           "_TZ3210_0jxeoadc",
           "_TZE200_2wg5qrjy",
-          "_TZE200_5uodvhgc",
           "_TZE200_81isopgh",
           "_TZE200_akjefhj5",
           "_TZE200_gomuk3dc",
           "_TZE200_ugekduaj",
-          "_TZE200_wt9agwf3",
           "_TZE200_yxcgyjf1",
           "_TZE204_4fblxpma",
           "_TZE204_81isopgh",
@@ -86977,12 +86955,10 @@
           "_tze284_ZJHO8U0Y",
           "_tz3210_0JXEOADC",
           "_tze200_2WG5QRJY",
-          "_tze200_5UODVHGC",
           "_tze200_81ISOPGH",
           "_tze200_AKJEFHJ5",
           "_tze200_GOMUK3DC",
           "_tze200_UGEKDUAJ",
-          "_tze200_WT9AGWF3",
           "_tze200_YXCGYJF1",
           "_tze204_4FBLXPMA",
           "_tze204_81ISOPGH",
@@ -90687,10 +90663,7 @@
       "capabilities": [
         "onoff",
         "onoff.gang2",
-        "onoff.gang3",
-        "button.1",
-        "button.2",
-        "button.3"
+        "onoff.gang3"
       ],
       "platforms": [
         "local"
@@ -90773,22 +90746,24 @@
           "_TZ3000_LY9APZKY",
           "_tz3000_LY9APZKY",
           "_TZ3000_G9CHY2IB",
-          "_tz3000_G9CHY2IB"
+          "_tz3000_G9CHY2IB",
+          "_TZE200_zo0cfekv",
+          "_TZE200_tzyy0rtq",
+          "_TZE200_rd8cdssd"
         ],
         "productId": [
           "TS0003",
-          "TS0013"
+          "TS0013",
+          "TS0601"
         ],
         "endpoints": {
           "1": {
             "clusters": [
               0,
-              3,
               4,
               5,
               6,
-              57344,
-              57345
+              61184
             ]
           },
           "2": {
@@ -93855,7 +93830,13 @@
           "_tze204_A7SGHMMS",
           "_tze204_FPHXKXUE",
           "_tze204_SH1BTABB",
-          "_tze200_NBQNMKEE"
+          "_tze200_NBQNMKEE",
+          "_TZE200_1n2zev06",
+          "_tze200_1n2zev06",
+          "_TZE200_1N2ZEV06",
+          "_tze200_1N2ZEV06",
+          "_TZE200_wt9agwf3",
+          "_TZE200_5uodvhgc"
         ],
         "learnmode": {
           "image": "{{driverAssetsPath}}/icon.svg",
@@ -93878,7 +93859,10 @@
           "1": {
             "clusters": [
               0,
-              6
+              4,
+              5,
+              6,
+              61184
             ]
           }
         }
