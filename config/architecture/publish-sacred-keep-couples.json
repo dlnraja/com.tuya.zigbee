@@ -413,8 +413,8 @@
     {
       "mfr": "_TZ3000_blhvsaqf",
       "pid": "TS0001",
-      "driverId": "switch_1gang",
-      "note": "Issue #540 / P2435 BSEED 1-gang ZCL — forbid unknown at pairing"
+      "driverId": "wall_switch_1gang_1way",
+      "note": "P2462 GH#540 residual — BSEED 1G Identify+E000/E001 like ysdv91bk; leave metering switch_1gang"
     },
     {
       "mfr": "_TZ3000_enmfaave",
@@ -426,7 +426,13 @@
       "mfr": "_TZ3000_xk5udnd6",
       "pid": "TS0012",
       "driverId": "wall_switch_2gang_1way",
-      "note": "P2435 GH#542 — never water_leak_sensor"
+      "note": "P2435/P2463 GH#542 — relay onoff only; P2397 must not invent button.N"
+    },
+    {
+      "mfr": "_TZE200_bcusnqt8",
+      "pid": "TS0601",
+      "driverId": "power_clamp_meter",
+      "note": "P2463 Johan#468 Z2M SPM01 energy monitor — strip from curtain_motor"
     },
     {
       "mfr": "_TZ3000_ptjcjise",

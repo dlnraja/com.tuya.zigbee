@@ -73,6 +73,9 @@ class Switch4GangDevice extends BaseClass {
 
   get mainsPowered() { return true; }
 
+  /** WHY(P2463): relay-only — P2397 must not invent button.N */
+  get skipGangButtonUi() { return true; }
+
   /**
    * WHY(P2457 / GH#541): wired 4-gang UI = relays only.
    * Compose already dropped button.*; app.json drift + leftover device store

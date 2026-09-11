@@ -8,10 +8,14 @@ const UnifiedSwitchBase = require('../../lib/devices/UnifiedSwitchBase');
  * P2455 GH#544 (migueleap): wired dual-relay UI must be onoff + onoff.gang2 only.
  * Do NOT expose button.* tiles or spawn devices.secondSwitch sub-devices.
  * Couple: _TZ3000_l9brjwau|_TZ3000_ptjcjise + TS0002 → this driver (ZCL EP1/EP2), not switch_2gang.
+ * WHY(P2463 / GH#542): xk5udnd6+TS0012 same — P2397 must not re-add button.N after strip.
  */
 class WallSwitch2Gang1WayDevice extends UnifiedSwitchBase {
 
   get mainsPowered() { return true; }
+
+  /** Contre quoi: ensureGangUiCapabilities inventing Botón tiles on relay UI */
+  get skipGangButtonUi() { return true; }
 
   get gangCount() { return 2; }
 
@@ -54,6 +58,12 @@ class WallSwitch2Gang1WayDevice extends UnifiedSwitchBase {
         this.log('[WALL-2G] Primary onoff + onoff.gang2 (P2455)');
       }
       await super.onNodeInit({ zclNode });
+      // WHY(P2463): strip again after UnifiedSwitchBase._migrateCapabilities / P2397
+      for (const cap of ['button.1', 'button.2', 'button.toggle_1', 'button.toggle_2', 'button.identify']) {
+        if (this.hasCapability(cap)) {
+          await this.removeCapability(cap).catch(() => {});
+        }
+      }
       this.log(`[WALL-2G] init complete gang=${this._gangNumber} sub=${this._isSubDevice}`);
     }, 'onNodeInit');
   }

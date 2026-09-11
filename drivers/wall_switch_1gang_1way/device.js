@@ -17,6 +17,9 @@ class WallSwitch1Gang1WayDevice extends PowerSwitchFeaturesMixin(UnifiedSwitchBa
 
   get mainsPowered() { return true; }
 
+  /** WHY(P2463): relay-only UI — never soft-add button.1 */
+  get skipGangButtonUi() { return true; }
+
   get gangCount() { return 1; }
 
   async onNodeInit({ zclNode }) {
