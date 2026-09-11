@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-10T17:10:44.291Z",
+  "generatedAt": "2026-09-11T06:38:23.985Z",
   "mode": "APPLY",
   "policy": "P2319 enrichment-first colocate — never strip other drivers",
   "applied": [
@@ -337,5 +337,11 @@
       "soft": null
     }
   ],
-  "already": []
+  "already": [
+    {
+      "mfr": "_TZ3000_l9brjwau",
+      "pid": "TS0003",
+      "driver": "switch_2gang"
+    }
+  ]
 }
