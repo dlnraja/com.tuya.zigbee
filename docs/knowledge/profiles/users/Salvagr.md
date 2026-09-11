@@ -5,7 +5,8 @@
 
 ## Status
 OPEN — pairs as Curtain Motor but **no move / no RX** on tip ≤9.0.874 (diag `d05e6530`).
-Need Test tip **≥ 9.0.885** (P2467).
+Homey UI can stick on 9.0.874 while Athom Test tip is already 9.0.88x — uninstall/reinstall Test.
+Need Test tip **≥ 9.0.886** (P2467 + P2467b).
 
 ## Thread (resolved in code)
 | Date | Symptom | Fix |
@@ -17,6 +18,7 @@ Need Test tip **≥ 9.0.885** (P2467).
 | 2026-09-01 | Cover stop working `ab5aaf04` @ 9.0.775 | P2380 false-success TX |
 | 2026-09-02 | Pairs OK, no motion `a9e4d712` @ 9.0.784 | **P2393** Homey idle cancels down |
 | 2026-09-11 | ACK on DP1/DP2, motor silent, no physical RX `d05e6530` @ 9.0.874 | **P2467** EF00 `initialize(zclNode)` + real `mcuSyncTime` + DP2→DP1 |
+| 2026-09-11 | Tip stuck 9.0.874 + wake-ping before every DP `48baba36` | **P2467b** force mains for Moes (compose phantom battery) |
 
 ## TinyTuya DPs (user 2026-09-03)
 DP1 control open/stop/close · DP2 percent_control · DP3 calib · DP7 backlight · DP8 reverse · DP10 calib seconds · DP14 light_mode

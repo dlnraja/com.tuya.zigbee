@@ -3176,5 +3176,8 @@
   },
   "9.0.885": {
     "en": "Moes ZTS curtain (#533): EF00 manager init + mcuSyncTime so open/close and position reports work."
+  },
+  "9.0.886": {
+    "en": "Moes ZTS curtain: force mains (skip battery wake ping) + EF00-only TX (#533)."
   }
 }
