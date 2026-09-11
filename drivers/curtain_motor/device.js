@@ -155,27 +155,20 @@ class CurtainMotorDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedC
 
     // WHY(P2412 / #533): Z2M ZTS-EUR-C uses forceTimeUpdates — MCU may ignore motor
     // commands until time is synced (Homey ACK still succeeds on empty MCU action).
+    // WHY(P2467): actually SEND mcuSyncTime (prior tip only logged + called missing helpers).
     if (this._isMoesZtsEurC()) {
       this._invertedPosition = true;
       try {
-        const TuyaTimeSyncFormats = require('../../lib/tuya/TuyaTimeSyncFormats');
-        const fmt = TuyaTimeSyncFormats.guessFormat({
-          manufacturerName: this.getManufacturerName?.() || this.getSetting?.('zb_manufacturer_name'),
-          productId: this.getSetting?.('zb_model_id') || 'TS0601',
-          driverClass: 'Cover',
-        });
-        const payload = TuyaTimeSyncFormats.buildPayload(fmt, { homey: this.homey });
-        if (payload && typeof this._sendTuyaDP === 'function') {
-          // Soft — never block init if time DP unknown
-          this.log(`[CURTAIN] P2412 Moes time-sync attempt format=${fmt}`);
+        if (typeof this._sendMoesMcuSyncTime === 'function') {
+          await this._sendMoesMcuSyncTime();
+        } else if (typeof this._ensureMoesMcuReady === 'function') {
+          await this._ensureMoesMcuReady();
+        } else if (this.tuyaEF00Manager?.sendTimeSync && this.zclNode) {
+          await this.tuyaEF00Manager.sendTimeSync(this.zclNode, { forceSync: true });
+        } else if (this.io?.syncTime) {
+          await this.io.syncTime({ forceSync: true });
         }
-        if (typeof this.syncTuyaTime === 'function') {
-          await this.syncTuyaTime().catch(() => {});
-        } else if (typeof this._syncTuyaTime === 'function') {
-          await this._syncTuyaTime().catch(() => {});
-        } else if (this.tuyaEF00Manager?.syncTime) {
-          await this.tuyaEF00Manager.syncTime().catch(() => {});
-        }
+        this.log('[CURTAIN] P2467 Moes MCU time-sync armed');
       } catch (_e) { /* soft */ }
     }
 
