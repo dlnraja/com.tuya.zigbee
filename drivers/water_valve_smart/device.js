@@ -6,10 +6,14 @@ const PhysicalButtonMixin = require('../../lib/mixins/PhysicalButtonMixin');
 const { containsCI } = require('../../lib/utils/CaseInsensitiveMatcher');
 
 const GARDEN_TIMER_MFRS = ['_tze200_sh1btabb', '_tze200_fphxkxue', '_tze204_sh1btabb', '_tze204_fphxkxue'];
-// WHY(P2464): FrankEver FK-BV05 / FK_V02 — Z2M/ZHA valve DPs (not thermostat)
-const FRANKEVER_VALVE_MFRS = [
-  '_tze200_nbqnmkee', '_tze200_1n2zev06', '_tze200_wt9agwf3', '_tze200_5uodvhgc',
+// WHY(P2464/P2468): FrankEver FK family — Z2M splits FK_V02 vs FK-BV05 DP maps
+const FRANKEVER_FK_V02_MFRS = [
+  '_tze200_wt9agwf3', '_tze200_5uodvhgc', '_tze200_1n2zev06',
 ];
+const FRANKEVER_FK_BV05_MFRS = [
+  '_tze200_nbqnmkee',
+];
+const FRANKEVER_VALVE_MFRS = [...FRANKEVER_FK_V02_MFRS, ...FRANKEVER_FK_BV05_MFRS];
 const TRUE_VALUES = new Set([true, 1, '1', 'true', 'open', 'on']);
 
 function isTuyaTrue(value) {
@@ -44,6 +48,20 @@ class WaterValveSmartDevice extends PhysicalButtonMixin(VirtualButtonMixin(Unifi
     return this._fvCached;
   }
 
+  get isFrankeverFkV02() {
+    if (this._fv02Cached !== undefined) {return this._fv02Cached;}
+    const mfr = this.getSetting('zb_manufacturer_name') || this.getData?.()?.manufacturerName || '';
+    this._fv02Cached = FRANKEVER_FK_V02_MFRS.some((m) => containsCI(mfr, m));
+    return this._fv02Cached;
+  }
+
+  get isFrankeverFkBv05() {
+    if (this._fv05Cached !== undefined) {return this._fv05Cached;}
+    const mfr = this.getSetting('zb_manufacturer_name') || this.getData?.()?.manufacturerName || '';
+    this._fv05Cached = FRANKEVER_FK_BV05_MFRS.some((m) => containsCI(mfr, m));
+    return this._fv05Cached;
+  }
+
   get dpMappings() {
     const parentMappings = super.dpMappings || {};
     if (this.isGardenTimer) {
@@ -58,8 +76,17 @@ class WaterValveSmartDevice extends PhysicalButtonMixin(VirtualButtonMixin(Unifi
         101: { capability: 'meter_water', divisor: 1000 },
       };
     }
+    // WHY(P2468 / Z2M FK_V02): DP1 switch, DP101 threshold%, DP9 timer seconds
+    if (this.isFrankeverFkV02) {
+      return {
+        ...parentMappings,
+        1: { capability: 'onoff', transform: isTuyaTrue },
+        9: { capability: null, internal: 'countdown_seconds' },
+        101: { capability: null, internal: 'threshold_pct' },
+      };
+    }
     // WHY(P2464 / Z2M FK-BV05): DP1 switch, DP2 threshold%, DP3 position, DP5/6 litres, DP22 temp
-    if (this.isFrankeverValve) {
+    if (this.isFrankeverFkBv05) {
       return {
         ...parentMappings,
         1: { capability: 'onoff', transform: isTuyaTrue },
@@ -102,7 +129,7 @@ class WaterValveSmartDevice extends PhysicalButtonMixin(VirtualButtonMixin(Unifi
       if (!this.hasCapability('measure_temperature')) {await this.addCapability('measure_temperature').catch(() => { });}
       if (!this.hasCapability('alarm_water')) {await this.addCapability('alarm_water').catch(() => {});}
       if (this.hasCapability('alarm_motion')) {await this.removeCapability('alarm_motion').catch(() => {});}
-      this.log(`[WATER-VALVE] ✅ v9.7.3 Ready (${this.isFrankeverValve ? 'FRANKEVER' : this.isGardenTimer ? 'GARDEN' : 'METERED'})`);
+      this.log(`[WATER-VALVE] ✅ v9.7.3 Ready (${this.isFrankeverFkBv05 ? 'FRANKEVER-FK-BV05' : this.isFrankeverFkV02 ? 'FRANKEVER-FK-V02' : this.isGardenTimer ? 'GARDEN' : 'METERED'})`);
     }, 'onNodeInit');
   }
 

@@ -745,6 +745,36 @@
       "pid": "TS0219",
       "driverId": "siren",
       "note": "P2466 Johan#1455 Cleverio SA100 IAS WD — not handheld_remote"
+    },
+    {
+      "mfr": "_TZE284_eaet5qt5",
+      "pid": "TS0601",
+      "driverId": "valve_dual_irrigation",
+      "note": "P2468 Insoma SGW08W sibling of fhvpaltk"
+    },
+    {
+      "mfr": "_TZE200_wt9agwf3",
+      "pid": "TS0601",
+      "driverId": "water_valve_smart",
+      "note": "P2468 FrankEver FK_V02 (Z2M)"
+    },
+    {
+      "mfr": "_TZE200_5uodvhgc",
+      "pid": "TS0601",
+      "driverId": "water_valve_smart",
+      "note": "P2468 FrankEver FK_V02 sibling"
+    },
+    {
+      "mfr": "_TZE200_1n2zev06",
+      "pid": "TS0601",
+      "driverId": "water_valve_smart",
+      "note": "P2468 FrankEver FK_V02 / ZHA#2633"
+    },
+    {
+      "mfr": "_TZE200_nbqnmkee",
+      "pid": "TS0601",
+      "driverId": "water_valve_smart",
+      "note": "P2468 FrankEver FK-BV05 flow meter"
     }
   ]
 }

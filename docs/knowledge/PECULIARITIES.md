@@ -4,6 +4,7 @@ Generated 2026-09-08T07:29:59.472Z from registry (201 cases) × compound DB (454
 
 ## Live locks (2026-09-11)
 
+- **P2468** Joep #2218 Insoma `_TZE284_fhvpaltk`+`TS0601`: interview clusters `[0,4,5,61184]` — compose must not require OnOff(6) or Homey pairs Unknown. FrankEver FK_V02 vs FK-BV05 DP split + sacred-keep; VicHY #2232 10min mains radar re-heal.
 - **P2466** `_TZ3000_vdfwjopk`+`TS0219` → `siren` (Cleverio SA100 / Johan#1455). IAS Zone+WD only; flow `siren_turn_on/off` → `startWarning`. Forbid `handheld_remote_4_buttons`.
 - **P2464** Moes ZTS `_TZE204_5slehgeo`+`TS0601`: open/close TX always pairs DP1 + extreme DP2.
 - **P2467** Moes ZTS (#533 diag d05e6530): `TuyaEF00Manager.initialize(zclNode)` was never called from cover (start/init missing) → no BoundCluster RX + weak TX; real `mcuSyncTime` + DP2-then-DP1 + calib-end.
@@ -203,7 +204,8 @@ Generated 2026-09-08T07:29:59.472Z from registry (201 cases) × compound DB (454
 
 - Couple: `_TZE284_fhvpaltk` + `TS0601` (sibling `_TZE284_eaet5qt5`)
 - Insoma 2-way irrigation — `onoff.valve_1` / `onoff.valve_2`
-- **Joep #2218:** “repair” on an **unknown** device does not re-run driver matching → remove + re-pair under **Smart 2-Way Irrigation Valve**
+- Interview clusters: **`[0, 4, 5, 61184]`** (no OnOff 6) — Joep #2082/#2024
+- **Joep #2218:** “repair” on unknown does not rematch; compose requiring cluster **6** refused Homey match → Unknown. **P2468** clusters `[0,4,5,61184]`. User: remove + re-pair under **Smart 2-Way Irrigation Valve**
 - Not GIEX `_TZE284_8zizsafo` (that is `valve_irrigation` 4-zone)
 
 ### `button-wireless-1-mrpevh8p` → `button_wireless_1` (P2378 / P2461)
