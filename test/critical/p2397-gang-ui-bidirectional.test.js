@@ -59,6 +59,35 @@ describe('P2397 gang UI bidirectional', () => {
     assert.strictEqual(r.subDevices, true);
   });
 
+  it('ensureGangUiCapabilities does not invent button.N on relay-only switches (P2463)', async () => {
+    const caps = new Set(['onoff', 'onoff.gang2']);
+    const d = {
+      gangCount: 2,
+      skipGangButtonUi: true,
+      hasCapability: (c) => caps.has(c),
+      getCapabilities: () => [...caps],
+      addCapability: async (c) => { caps.add(c); },
+      log: () => {},
+    };
+    await ensureGangUiCapabilities(d);
+    assert.strictEqual(caps.has('button.1'), false);
+    assert.strictEqual(caps.has('button.2'), false);
+  });
+
+  it('ensureGangUiCapabilities does not invent button.N when compose has only onoff gangs', async () => {
+    const caps = new Set(['onoff', 'onoff.gang2']);
+    const d = {
+      gangCount: 2,
+      hasCapability: (c) => caps.has(c),
+      getCapabilities: () => [...caps],
+      addCapability: async (c) => { caps.add(c); },
+      log: () => {},
+    };
+    await ensureGangUiCapabilities(d);
+    assert.strictEqual(caps.has('button.1'), false);
+    assert.strictEqual(caps.has('button.2'), false);
+  });
+
   it('pulseButtonCapability toggles button.N', async () => {
     const values = [];
     const d = {

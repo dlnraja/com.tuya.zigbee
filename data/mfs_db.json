@@ -196707,17 +196707,13 @@
     "modelIdsCount": 5
   },
   "_TZ3000_blhvsaqf": {
-    "driverId": "switch_1gang",
-    "source": "github:issue#540",
+    "driverId": "wall_switch_1gang_1way",
+    "source": "registry:p2462-blhvsaqf",
     "modelIds": [
-      "TS0001",
-      "TS0203",
-      "TS0601",
-      "TS0601_generic",
-      "TS0603"
+      "TS0001"
     ],
     "pid": "TS0001",
-    "modelIdsCount": 5
+    "modelIdsCount": 1
   },
   "_TZ3000_ysdv91bk": {
     "driverId": "wall_switch_1gang_1way",
@@ -316612,11 +316608,11 @@
       ]
     },
     "_TZE200_bcusnqt8": {
-      "driverId": "curtain_motor",
+      "driverId": "power_clamp_meter",
       "productIds": [
         "TS0601"
       ],
-      "source": "fingerprints-2026-07-14",
+      "source": "registry:p2463-spm01",
       "confidence": 0.95
     },
     "_TZE200_bfmfhxra": {
@@ -322721,7 +322717,7 @@
       "confidence": 0.95
     },
     "_TZ3000_blhvsaqf": {
-      "driverId": "switch_1gang",
+      "driverId": "wall_switch_1gang_1way",
       "productIds": [
         "TS0001"
       ],
@@ -367696,5 +367692,23 @@
     "modelIds": [
       "TS004F"
     ]
+  },
+  "_TZE200_bcusnqt8": {
+    "driverId": "power_clamp_meter",
+    "source": "registry:p2463-spm01",
+    "modelIds": [
+      "TS0601"
+    ],
+    "pid": "TS0601",
+    "modelIdsCount": 1
+  },
+  "_tze200_bcusnqt8": {
+    "driverId": "power_clamp_meter",
+    "source": "registry:p2463-spm01",
+    "modelIds": [
+      "TS0601"
+    ],
+    "pid": "TS0601",
+    "modelIdsCount": 1
   }
 }

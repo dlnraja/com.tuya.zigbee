@@ -44,6 +44,16 @@ describe('P2460 BSEED TX + ysdv91bk pairing', () => {
     assert.strictEqual(pin.driverId, 'wall_switch_2gang_1way');
   });
 
+  it('blhvsaqf+TS0001 routes to wall_switch_1gang_1way (P2462)', () => {
+    const hit = DeviceFingerprintDB.lookup('_TZ3000_blhvsaqf', 'TS0001');
+    assert.ok(hit);
+    assert.strictEqual(hit.driver, 'wall_switch_1gang_1way');
+    const compose = JSON.parse(fs.readFileSync(path.join(ROOT, 'drivers/wall_switch_1gang_1way/driver.compose.json'), 'utf8'));
+    assert.ok(compose.zigbee.manufacturerName.some((m) => /blhvsaqf/i.test(m)));
+    const s1 = JSON.parse(fs.readFileSync(path.join(ROOT, 'drivers/switch_1gang/driver.compose.json'), 'utf8'));
+    assert.ok(!s1.zigbee.manufacturerName.some((m) => /blhvsaqf/i.test(m)), 'must leave switch_1gang');
+  });
+
   it('app.json mirrors compose for ysdv91bk and l9brjwau', () => {
     const app = JSON.parse(fs.readFileSync(path.join(ROOT, 'app.json'), 'utf8'));
     const w1 = app.drivers.find((d) => d.id === 'wall_switch_1gang_1way');
