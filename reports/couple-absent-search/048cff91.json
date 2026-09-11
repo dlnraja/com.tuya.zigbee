@@ -1,0 +1,230 @@
+{
+  "generatedAt": "2026-09-11T08:21:59.805Z",
+  "policy": "search-not-invent — never write compose from soft hypotheses",
+  "query": {
+    "uuid": "048cff91",
+    "driver": null
+  },
+  "diag": null,
+  "hypotheses": [
+    {
+      "mfr": "_TZE204_5slehgeo",
+      "pid": "TS0601",
+      "driver": "curtain_motor",
+      "confidence": "github_context_soft",
+      "reason": "GitHub #533 Salvagr Moes ZTS-EUR-C — NOT proven in target diag log",
+      "sources": [
+        "github-533",
+        "diag-724d4bc9",
+        "PECULIARITIES-p2348",
+        "z2m"
+      ],
+      "z2mDesc": "Thermostatic radiator valve"
+    },
+    {
+      "mfr": "_TZ3000_kaflzta4",
+      "pid": "TS004F",
+      "driver": "smart_knob",
+      "confidence": "registry_locked",
+      "reason": "p2442-kaflzta4-ts004f-smart-knob",
+      "sources": [
+        "gmail_diag_a342c411",
+        "Johan#1365",
+        "Z2M_TS004F_event"
+      ]
+    },
+    {
+      "mfr": "_TZE200_icka1clh",
+      "pid": "TS0601",
+      "driver": "curtain_motor",
+      "confidence": "registry_locked",
+      "reason": "p2441-miamo-icka1clh-am43-curtain",
+      "sources": [
+        "forum_T140352_2229",
+        "Z2M_20977",
+        "P2441",
+        "P2445"
+      ],
+      "z2mDesc": "Cover motor"
+    },
+    {
+      "mfr": "_TZE200_icka1clh",
+      "pid": "AM43-0.45/40-ES-EB",
+      "driver": "curtain_motor",
+      "confidence": "registry_locked",
+      "reason": "p2441-miamo-icka1clh-am43-curtain",
+      "sources": [
+        "forum_T140352_2229",
+        "Z2M_20977",
+        "P2441",
+        "P2445"
+      ]
+    },
+    {
+      "mfr": "_TZE200_icka1clh",
+      "pid": "AM43-0.45/40-ES-EZ",
+      "driver": "curtain_motor",
+      "confidence": "registry_locked",
+      "reason": "p2441-miamo-icka1clh-am43-curtain",
+      "sources": [
+        "forum_T140352_2229",
+        "Z2M_20977",
+        "P2441",
+        "P2445"
+      ]
+    },
+    {
+      "mfr": "_TZE204_icka1clh",
+      "pid": "TS0601",
+      "driver": "curtain_motor",
+      "confidence": "registry_locked",
+      "reason": "p2441-miamo-icka1clh-am43-curtain",
+      "sources": [
+        "forum_T140352_2229",
+        "Z2M_20977",
+        "P2441",
+        "P2445"
+      ]
+    },
+    {
+      "mfr": "_TZE204_icka1clh",
+      "pid": "AM43-0.45/40-ES-EB",
+      "driver": "curtain_motor",
+      "confidence": "registry_locked",
+      "reason": "p2441-miamo-icka1clh-am43-curtain",
+      "sources": [
+        "forum_T140352_2229",
+        "Z2M_20977",
+        "P2441",
+        "P2445"
+      ]
+    },
+    {
+      "mfr": "_TZE204_icka1clh",
+      "pid": "AM43-0.45/40-ES-EZ",
+      "driver": "curtain_motor",
+      "confidence": "registry_locked",
+      "reason": "p2441-miamo-icka1clh-am43-curtain",
+      "sources": [
+        "forum_T140352_2229",
+        "Z2M_20977",
+        "P2441",
+        "P2445"
+      ]
+    },
+    {
+      "mfr": "_TZE200_zah67ekd",
+      "pid": "TS0601",
+      "driver": "curtain_motor",
+      "confidence": "registry_locked",
+      "reason": "p2441-miamo-icka1clh-am43-curtain",
+      "sources": [
+        "forum_T140352_2229",
+        "Z2M_20977",
+        "P2441",
+        "P2445"
+      ],
+      "z2mDesc": "Cover motor"
+    },
+    {
+      "mfr": "_TZE200_zah67ekd",
+      "pid": "AM43-0.45/40-ES-EB",
+      "driver": "curtain_motor",
+      "confidence": "registry_locked",
+      "reason": "p2441-miamo-icka1clh-am43-curtain",
+      "sources": [
+        "forum_T140352_2229",
+        "Z2M_20977",
+        "P2441",
+        "P2445"
+      ]
+    },
+    {
+      "mfr": "_TZE200_zah67ekd",
+      "pid": "AM43-0.45/40-ES-EZ",
+      "driver": "curtain_motor",
+      "confidence": "registry_locked",
+      "reason": "p2441-miamo-icka1clh-am43-curtain",
+      "sources": [
+        "forum_T140352_2229",
+        "Z2M_20977",
+        "P2441",
+        "P2445"
+      ]
+    },
+    {
+      "mfr": "_TZ3000_ptjcjise",
+      "pid": "TS0002",
+      "driver": "wall_switch_2gang_1way",
+      "confidence": "registry_locked",
+      "reason": "p2456-ptjcjise-ts0002-wall-2gang",
+      "sources": []
+    },
+    {
+      "mfr": "_TZ3000_l9brjwau",
+      "pid": "TS0002",
+      "driver": "wall_switch_2gang_1way",
+      "confidence": "registry_locked",
+      "reason": "p2455-l9brjwau-ts0002-wall-2gang",
+      "sources": []
+    },
+    {
+      "mfr": "_TZ3000_ysdv91bk",
+      "pid": "TS0001",
+      "driver": "wall_switch_1gang_1way",
+      "confidence": "registry_locked",
+      "reason": "p2460-ysdv91bk-ts0001-wall-1gang",
+      "sources": []
+    },
+    {
+      "mfr": "_TZ3000_enmfaave",
+      "pid": "TS0004",
+      "driver": "switch_4gang",
+      "confidence": "registry_locked",
+      "reason": "p2452-enmfaave-ts0004-switch-4gang-no-button-bloat",
+      "sources": []
+    },
+    {
+      "mfr": "_TZ3000_xk5udnd6",
+      "pid": "TS0012",
+      "driver": "wall_switch_2gang_1way",
+      "confidence": "registry_locked",
+      "reason": "p2435-xk5udnd6-ts0012-wall-switch",
+      "sources": []
+    },
+    {
+      "mfr": "_TZE284_fodv6bkr",
+      "pid": "TS0601",
+      "driver": "curtain_motor",
+      "confidence": "registry_locked",
+      "reason": "eduard-martirosyan-tze284-fodv6bkr-curtain",
+      "sources": []
+    },
+    {
+      "mfr": "_TZE284_libht6ua",
+      "pid": "TS0601",
+      "driver": "curtain_motor",
+      "confidence": "registry_locked",
+      "reason": "eduard-martirosyan-tze284-fodv6bkr-curtain",
+      "sources": [],
+      "z2mDesc": "Curtain motor or roller blind motor with fixed speed"
+    },
+    {
+      "mfr": "_TZE204_clrdrnya",
+      "pid": "TS0601",
+      "driver": "presence_sensor_radar",
+      "confidence": "registry_locked",
+      "reason": "vichy-clrdrnya-presence",
+      "sources": []
+    },
+    {
+      "mfr": "_TZE200_clrdrnya",
+      "pid": "TS0601",
+      "driver": "presence_sensor_radar",
+      "confidence": "registry_locked",
+      "reason": "vichy-clrdrnya-presence",
+      "sources": []
+    }
+  ],
+  "action": "Request fresh Homey diag with [COVER-INIT] or [FLEET] mfr=… pid=… lines"
+}

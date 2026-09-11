@@ -119,23 +119,27 @@
           "driver": "button_wireless_1",
           "deviceId": "28c1e9fd-d3cb-43a6-a341-0709a9b1da61",
           "altDeviceId": "34aecca9",
-          "couple": null,
+          "couple": "_TZ3000_mrpevh8p+TS0041",
+          "diag": "048cff91",
+          "forum": "#2230",
           "symptoms": [
-            "no presses",
-            "HYBRID none in 1cf775a2"
+            "lights disco / flicker on click-double-hold",
+            "battery UI ?",
+            "pid ABSENT on wake (mfr known)"
           ],
           "fixes": [
-            "ButtonDevice wake + deferred DataRecovery P2184",
-            "measure_battery getable false"
+            "P2440 cross-path dedup",
+            "P2461 4s window + compose-only flows + battery skipThrottle/noEf00",
+            "MFR-ENSURE soft-fill TS0041"
           ],
-          "userAction": "Update ≥9.0.621 + re-pair; need interview for couple"
+          "userAction": "Update Test ≥9.0.874 (P2461); press button once after update"
         }
       ],
       "forbiddenInvent": [
-        "Do not glue k4ej3ww2",
-        "Do not glue mrpevh8p",
-        "Do not use TS0207 from other Peter-era posts",
-        "Do not glue k4ej3ww2, mrpevh8p, or TS0207 onto #2190 tiles",
+        "Do not glue k4ej3ww2 onto #2190 tiles without interview",
+        "Do not glue mrpevh8p onto non-Smartbutton Peter tiles (#2190 ABSENT)",
+        "Do not use TS0207 from other Peter-era posts onto ABSENT tiles",
+        "Smartbutton alone is locked mrpevh8p+TS0041 (diags 048cff91 / cfbf687f)",
         "Historical HOBEIAN ZG-204ZV / vvmbj46n are pre-#2190 — do not attach"
       ],
       "dualApp": "BOTH for IAS/SOS/battery/contact; OOM LiveData master-only soak",

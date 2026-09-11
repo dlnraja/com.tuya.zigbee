@@ -9,6 +9,8 @@
 const assert = require('assert');
 const fs = require('fs');
 const path = require('path');
+const testApi = global.describe && global.it ? global : require('node:test');
+const { describe, it } = testApi;
 
 const ROOT = path.join(__dirname, '..', '..');
 const MIXIN = path.join(ROOT, 'lib', 'mixins', 'PhysicalButtonMixin.js');
@@ -36,8 +38,8 @@ describe('P2440 Peter smartbutton cross-path dedup', () => {
           buttonCount: 1,
           mapAllEndpointsToButton1: true,
           crossPathGangOnly: true,
-          crossPathDedupMs: 1100,
-          debounceMs: 1100,
+          crossPathDedupMs: 4000,
+          debounceMs: 4000,
         };
       },
     };
