@@ -26,8 +26,9 @@ alwaysApply: true
    - **Runtime** — `safeSetCapabilityValue`, scene 0x8004 skip, battery profiles, BootBudget
 5. **Weakness vectors** — run/consider `npm run resilience:critical`, flow-l99, coverage-dp-cluster-flow, relevant `test/critical/*` for the device class.
 6. **Fix root cause** — minimal correct diff; WHY (P215) in code/comments when non-obvious.
-7. **Dual-app** — classify `BOTH` | `MASTER_ONLY` | `STABLE_ONLY`; backport reliability fixes to `stable-v5` surgically when BOTH (see `docs/rules/DUAL_APP_VISION.md`).
-8. **Verify + ship** — gates green; when user asks **push + publish**: master Test + stable backport when BOTH; watch Auto-Publish to Test confirmation.
+7. **Unit test (P2469)** — add/extend `test/critical/pNNNN-*.test.js` for this report’s Contre quoi; `npm run check:pNNNN` green before “done”.
+8. **Dual-app** — classify `BOTH` | `MASTER_ONLY` | `STABLE_ONLY`; backport reliability fixes to `stable-v5` surgically when BOTH (see `docs/rules/DUAL_APP_VISION.md`).
+9. **Verify + ship** — gates green; when user asks **push + publish**: master Test + stable backport when BOTH; watch Auto-Publish to Test confirmation.
 
 ## Recurring problem doctrine
 - Same user or same couple reporting again → **assume gap remains** until proven by diag + interview + flow trace.

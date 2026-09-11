@@ -13,7 +13,8 @@ alwaysApply: true
 3. **Recursive TX/RX** — settings → ZCL/EF00 → clusters → capabilities → flows → mfs_db/registry/compose. Fix root cause, not symptoms.
 4. **Silent enrich** — implement in code/CI; **never** auto-post Homey forum (T157628). Publish Homey Test when asked to push/publish.
 5. **WHY (P215)** — Pourquoi / Comment / Pour qui / Quand / Contre quoi before non-trivial changes.
-6. **Verify** — critical gates + L99 green before claiming done; push/publish when user asks.
+6. **Unit tests (P2469)** — every prompt / every fix: add or extend `test/critical/pNNNN-*.test.js` locking Contre quoi; run `npm run check:pNNNN` / `check:p246x`. Smart, not spam.
+7. **Verify** — critical gates + L99 green before claiming done; push/publish when user asks.
 
 ## Tools / scripts (prefer)
 ```bash
@@ -26,6 +27,7 @@ node tools/ci/p2448-rotary-knob-gate.js
 node tools/ci/p2449-declared-flow-wire-gate.js
 node tools/ci/coverage-dp-cluster-flow.js --strict
 npm run check:p244x
+npm run check:p246x
 ```
 
 ## Anti-patterns
@@ -33,6 +35,7 @@ npm run check:p244x
 - Surface wording without intent/harm check
 - Skipping cross-ref because “already fixed once”
 - **“Already covered” / blaming the user** on reports without diag + interview + driver/flow/DP audit (see `user-report-deep-investigation-always.mdc` P2313)
+- Shipping a fix **without** a critical unit test (P2469)
 - Forum replies / AI paste
 
-See: `docs/GLOBAL_INVESTIGATION_PLAN.md`, `docs/rules/WHY_INTERROGATION.md`, `docs/rules/FORUM_SILENT_HUMANIZE.md`, `docs/rules/DUAL_APP_VISION.md`.
+See: `docs/GLOBAL_INVESTIGATION_PLAN.md`, `docs/rules/WHY_INTERROGATION.md`, `docs/rules/UNIT_TEST_ANTI_REGRESSION.md`, `docs/rules/FORUM_SILENT_HUMANIZE.md`, `docs/rules/DUAL_APP_VISION.md`.

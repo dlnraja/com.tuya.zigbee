@@ -12,7 +12,7 @@ comment near the code) is how we investigate and enrich the whole project.
 | 2 | **Comment ?** How does it work at runtime (path, DP, cluster)? | Prefer reuse over a new mega system |
 | 3 | **Pour qui ?** Who benefits (user / CI / bot / which track)? | Dual-app BOTH vs MASTER_ONLY |
 | 4 | **Quand ?** When does it run (pair / report / publish / enrich)? | Avoid boot storms & wrong hooks |
-| 5 | **Contre quoi ?** What fails if we remove or invert it? | Regression = gate or test |
+| 5 | **Contre quoi ?** What fails if we remove or invert it? | Regression = **unit test or gate** (P2469 — `test/critical/pNNNN-*.test.js` every prompt) |
 
 Optional sixth (device work): **Quel couple ?** Exact `manufacturerName` + `productId` —
 never invent a pid; Google/Z2M/ZHA/forum by the couple. Look up
@@ -22,6 +22,7 @@ never invent a pid; Google/Z2M/ZHA/forum by the couple. Look up
 
 1. **Code** — Prefer a one-line `// WHY:` above non-obvious branches (sacred zcl_only,
    brightness clamp, refuse wrong pid).
+1b. **Unit tests (P2469)** — Encode Contre quoi in `test/critical/pNNNN-*.test.js` + `npm run check:pNNNN`. See `docs/rules/UNIT_TEST_ANTI_REGRESSION.md`.
 2. **Workflows** — Every new CI step: why hard-fail vs soft; who it protects; when it runs.
 3. **Rules / `.cursorrules` / `.cursor/rules`** — State the failure mode the rule prevents.
 4. **Docs / reports** — Session reflections use the table (why/how/who/when/cross/verdict).
