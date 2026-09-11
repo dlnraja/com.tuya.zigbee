@@ -1,0 +1,106 @@
+{
+  "harvestedAt": "2026-09-11T00:35:39.902Z",
+  "repo": "dlnraja/com.tuya.zigbee",
+  "auth": "token",
+  "error": null,
+  "issues": [
+    {
+      "number": 546,
+      "title": "switch_2gang: state reporting works but commands are never applied (_TZ3000_l9brjwau / TS0002)",
+      "labels": [
+        "bug"
+      ],
+      "updatedAt": "2026-09-10T20:59:34Z",
+      "user": "kikosenra",
+      "htmlUrl": "https://github.com/dlnraja/com.tuya.zigbee/issues/546",
+      "bodySnippet": "### Describe the bug\n\nDevice: BSEED 2-gang wall switch with neutral, `_TZ3000_l9brjwau` / `TS0002`.\nIt pairs fine with the **2-Gang Smart Switch** driver (`switch_2gang`) and both gangs appear as `onoff` + `onoff.gang2`.\n\n**What works:** pressing a key on the wall correctly updat"
+    },
+    {
+      "number": 533,
+      "title": "Device Request - [SMART ZIGBEE CURTAIN SWITCH] - [MOES]",
+      "labels": [
+        "bug",
+        "enhancement",
+        "device-request",
+        "fingerprint",
+        "new-fingerprint",
+        "device_request",
+        "reopened-by-user",
+        "MOES",
+        "pairing",
+        "needs-maintainer",
+        "smart_zigbee",
+        "curtain_switch",
+        "SMART ZIGBEE CURTAIN SWITCH - MOES"
+      ],
+      "updatedAt": "2026-09-10T17:59:41Z",
+      "user": "salvagr",
+      "htmlUrl": "https://github.com/dlnraja/com.tuya.zigbee/issues/533",
+      "bodySnippet": "Thank you for your support.\n\n## 📱 Basic Information\n\n**Brand & Model**: SMART ZIGBEE CURTAIN SWITCH - MOES\n**Purchase Link**: https://es.aliexpress.com/item/1005008356152992.html\n**Power Source**:  Mains\n**Current Status**: pairing with wrong device type. Detected as \"radiator v"
+    },
+    {
+      "number": 545,
+      "title": "Bug report - _TZ3000_ysdv91bk (TS0001) pairs as Unknown Device despite being in switch_1gang driver",
+      "labels": [
+        "bug"
+      ],
+      "updatedAt": "2026-09-10T17:12:22Z",
+      "user": "migueleap",
+      "htmlUrl": "https://github.com/dlnraja/com.tuya.zigbee/issues/545",
+      "bodySnippet": "Describe the bug\nThe device _TZ3000_ysdv91bk (TS0001) pairs as a generic \"Unknown Zigbee Device\" in Homey, even though its manufacturerName is already listed in drivers/switch_1gang/driver.compose.json (lines 1143-1146).\n\nThis occurs because this model is a simple 1-gang relay wi"
+    },
+    {
+      "number": 544,
+      "title": "[Device Support] Fingerprint issue for Tuya 2-gang switch (_TZ3000_l9brjwau / TS0002)",
+      "labels": [
+        "bug",
+        "fingerprint",
+        "new-fingerprint",
+        "reopened-by-user",
+        "device_support",
+        "pairing"
+      ],
+      "updatedAt": "2026-09-10T16:32:29Z",
+      "user": "migueleap",
+      "htmlUrl": "https://github.com/dlnraja/com.tuya.zigbee/issues/544",
+      "bodySnippet": "## Device Description\n* **Brand:** Tuya / LoraTap\n* **Device Type:** 2-Gang Zigbee Switch Module\n* **Model:** TS0002\n* **Manufacturer Name:** `_TZ3000_l9brjwau`\n\n## Problem Description\nEven though the manufacturer ID `_TZ3000_l9brjwau` is already included in the `manufacturerName"
+    },
+    {
+      "number": 543,
+      "title": "[Device Support] Add support for Tuya 2-gang switch _TZ3000_ptjcjise / TS0002",
+      "labels": [
+        "bug",
+        "enhancement",
+        "device-request",
+        "new-fingerprint",
+        "reopened-by-user",
+        "device_support",
+        "fingerprint-supported"
+      ],
+      "updatedAt": "2026-09-10T16:18:15Z",
+      "user": "migueleap",
+      "htmlUrl": "https://github.com/dlnraja/com.tuya.zigbee/issues/543",
+      "bodySnippet": "## 📱 Basic Information\n\n**Brand & Model**: Tuya / Moes 2-Gang Switch Module\n**Purchase Link**: N/A\n**Power Source**: [ ] Battery / [x] Mains\n**Current Status**: [ ] Not pairing / [x] Pairs but missing features / [ ] Not working at all\n\n---\n\n## 🔍 Zigbee Fingerprint (MANDATORY)\n\n"
+    },
+    {
+      "number": 541,
+      "title": "[Device Support] TS0004 / _TZ3000_enmfaave not matching in switch_4gang",
+      "labels": [
+        "bug",
+        "fingerprint",
+        "new-fingerprint",
+        "reopened-by-user",
+        "pairing",
+        "switch_4gang",
+        "TS0004"
+      ],
+      "updatedAt": "2026-09-10T15:50:52Z",
+      "user": "migueleap",
+      "htmlUrl": "https://github.com/dlnraja/com.tuya.zigbee/issues/541",
+      "bodySnippet": "Hi @dlnraja,\n\nThe switch_4gang driver is not matching TS0004 (_TZ3000_enmfaave) during pairing, even though the manufacturer name is listed in driver.compose.json.\n\nThe issue is caused by the cluster definitions in zigbee.endpoints for the multi-endpoint setup. Homey requires sta"
+    }
+  ],
+  "prs": [],
+  "openIssueCount": 6,
+  "openPrCount": 0
+}
