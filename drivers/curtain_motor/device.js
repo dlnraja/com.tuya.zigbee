@@ -34,6 +34,10 @@ class CurtainMotorDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedC
   // WHY(P2296): Homey battery-status — ZM16EL/ZM85EL are Battery EndDevices (DP13 %).
   // Never default to UnifiedCoverBase mains=true for those couples.
   get mainsPowered() {
+    // WHY(P2467b / #533): Moes ZTS-EUR-C is a mains wall switch. Compose still lists
+    // measure_battery for tubular rollers — that made mainsPowered=false → wake-up
+    // ping before every DP TX (diag 48baba36) and delayed real EF00 motion frames.
+    if (this._isMoesZtsEurC()) {return true;}
     const powerSetting = this.getSetting('power_source');
     if (powerSetting === 'battery') {return false;}
     if (powerSetting === 'ac' || powerSetting === 'dc') {return true;}

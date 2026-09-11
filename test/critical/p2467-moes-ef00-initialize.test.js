@@ -25,8 +25,10 @@ assert.ok(cover.includes('P2467'), 'P2467 marker in UnifiedCoverBase');
 assert.ok(cover.includes('_sendMoesMcuSyncTime'), 'P2467: mcuSyncTime helper');
 assert.ok(cover.includes('_ensureMoesMcuReady'), 'P2467: MCU ready gate');
 assert.ok(cover.includes('5slehgeo'), 'P2467: Moes force pure EF00');
+assert.ok(cover.includes('skipWake'), 'P2467b: skip wake-up ping for Moes ZTS');
 
 assert.ok(curtain.includes('P2467 Moes MCU time-sync'), 'P2467: curtain_motor arms time sync');
+assert.ok(curtain.includes('_isMoesZtsEurC()') && /mainsPowered[\s\S]{0,400}_isMoesZtsEurC\(\)/.test(curtain), 'P2467b: Moes forced mainsPowered');
 assert.ok(!/buildPayload\(fmt[\s\S]{0,200}only logs/.test(curtain), 'P2467: no log-only time sync');
 
 assert.ok(mgr.includes('device?.zclNode'), 'P2467: _sendDPRaw falls back to device.zclNode');
