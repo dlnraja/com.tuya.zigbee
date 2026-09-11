@@ -337,7 +337,9 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
       const { safeSetTimeout } = require('../../lib/utils/safe-timers');
       // WHY(P2420 / VicHY #2227): Homey restores energy.batteries + curtain caps within
       // seconds of an app update — 2s/5s catch the race before user sees phantom UI.
-      const delays = [2_000, 5_000, 15_000, 60_000, 180_000];
+      const delays = [2_000, 5_000, 15_000, 60_000, 180_000, 600_000];
+      // WHY(P2468 / VicHY #2232): Homey can re-apply Energy batteries minutes after tip update —
+      // keep a 10min re-heal so low-battery timeline does not stick on 220V clrdrnya.
       for (const ms of delays) {
         safeSetTimeout(this, () => {
           this._armRadarDynCapGuards();
