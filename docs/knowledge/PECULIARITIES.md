@@ -2,6 +2,13 @@
 
 Generated 2026-09-08T07:29:59.472Z from registry (201 cases) × compound DB (454 keys) × local Z2M fps.
 
+## Live locks (2026-09-11)
+
+- **P2466** `_TZ3000_vdfwjopk`+`TS0219` → `siren` (Cleverio SA100 / Johan#1455). IAS Zone+WD only; flow `siren_turn_on/off` → `startWarning`. Forbid `handheld_remote_4_buttons`.
+- **P2464** Moes ZTS `_TZE204_5slehgeo`+`TS0601`: open/close TX always pairs DP1 + extreme DP2.
+- **P2465** Moes Star Feather `zo0cfekv`+`TS0601` → `wall_switch_3gang_1way` DP24/25/26 (not climate).
+- **P2462** BSEED `blhvsaqf`+`TS0001` → `wall_switch_1gang_1way` (not metering `switch_1gang`).
+
 ## Class notes (always)
 
 - Sleepy IAS (SOS / water / contact): enroll on wake, skip boot CIE poll, no leftover EF00 TX.

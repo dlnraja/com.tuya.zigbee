@@ -15,6 +15,16 @@ const UnifiedPlugBase = require('../../lib/devices/UnifiedPlugBase');
  */
 class SirenDevice extends UnifiedPlugBase {
 
+  // WHY P2466: Cleverio SA100 (_TZ3000_vdfwjopk+TS0219) is mains IAS WD — no phantom battery
+  get mainsPowered() {
+    try {
+      const mfr = String(this.getData?.()?.manufacturerName || this.getSetting?.('zb_manufacturer_name') || '').toLowerCase();
+      return /vdfwjopk/i.test(mfr);
+    } catch {
+      return false;
+    }
+  }
+
   get plugCapabilities() {
     return ['onoff', 'measure_battery', 'measure_temperature', 'measure_humidity'];
   }
@@ -71,6 +81,11 @@ class SirenDevice extends UnifiedPlugBase {
     this._isInitializing = true;
     await super.onNodeInit({ zclNode });
 
+    // WHY P2466: Cleverio SA100 is mains — strip phantom battery capability
+    if (this.mainsPowered && this.hasCapability('measure_battery')) {
+      try { await this.removeCapability('measure_battery'); } catch (_) { /* ignore */ }
+    }
+
     // --- Attribute Reporting Configuration (auto-generated) ---
     try {
       await this.configureAttributeReporting([
@@ -98,6 +113,11 @@ class SirenDevice extends UnifiedPlugBase {
 
     // Setup IAS WD cluster (parent doesn't have this)
     await this._setupIasWD(zclNode);
+    try {
+      if (this.io && typeof this.io.ensureIasWd === 'function') {
+        await this.io.ensureIasWd();
+      }
+    } catch (_) { /* ignore */ }
 
     // Register volume listener (send to BOTH standard DP5 + NEO DP116)
     if (this.hasCapability('volume_set')) {

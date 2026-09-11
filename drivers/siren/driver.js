@@ -12,7 +12,7 @@ async onInit() {
   }
 
   _registerFlowCards() {
-    // TRIGGERS
+    // TRIGGERS
     // CONDITIONS
     try {
       const card = this.homey.flow.getConditionCard('siren_is_sounding');
@@ -50,7 +50,14 @@ async onInit() {
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device || args.device._isInitializing) {return false;}
-          await args.device['setCapabilityValue']('onoff', true).catch(() => {});
+          // WHY P2466: route through safeSet → _setOnOff → IAS WD startWarning (Cleverio SA100)
+          if (typeof args.device.safeSetCapabilityValue === 'function') {
+            await args.device.safeSetCapabilityValue('onoff', true).catch(() => {});
+          } else if (typeof args.device._setOnOff === 'function') {
+            await args.device._setOnOff(true).catch(() => {});
+          } else {
+            await args.device.setCapabilityValue('onoff', true).catch(() => {});
+          }
           return true;
         });
       }
@@ -61,7 +68,13 @@ async onInit() {
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device || args.device._isInitializing) {return false;}
-          await args.device['setCapabilityValue']('onoff', false).catch(() => {});
+          if (typeof args.device.safeSetCapabilityValue === 'function') {
+            await args.device.safeSetCapabilityValue('onoff', false).catch(() => {});
+          } else if (typeof args.device._setOnOff === 'function') {
+            await args.device._setOnOff(false).catch(() => {});
+          } else {
+            await args.device.setCapabilityValue('onoff', false).catch(() => {});
+          }
           return true;
         });
       }
