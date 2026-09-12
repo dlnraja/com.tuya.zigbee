@@ -4,6 +4,12 @@ All notable changes to the **Tuya Unified Zigbee** app for Homey Pro.
 
 ---
 
+## v9.0.901 (2026-09-12)
+
+### Fixed
+- **P2481 Gmail crash**: preempt soft-fail for Homey class driver IDs (`motionsensor` / `light`) before `getDriver` / `_getDriverManifest` throw (Homey Pro 2026 dumps 9.0.891/895).
+
+---
 ## v9.0.899 (2026-09-12)
 
 ### Fixed
