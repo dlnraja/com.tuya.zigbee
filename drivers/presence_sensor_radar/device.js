@@ -124,9 +124,10 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
   }
 
   /**
-   * WHY(P2459 / VicHY #2227): Homey re-adds compose `measure_battery` / Energy batteries
-   * and may restore DynCap curtain caps asynchronously after tip updates. Refuse phantoms
-   * at addCapability so "blind mode" + low-battery cannot stick until delete+re-pair.
+   * WHY(P2459 / VicHY #2227): Homey may restore DynCap curtain caps after tip updates.
+   * WHY(P2472a): compose no longer ships measure_battery / energy.batteries (hybrid
+   * HOBEIAN+MTG driver) — refuse phantom battery adds on mains so 220V clrdrnya never
+   * shows Homey Energy low-battery after tip update.
    */
   async addCapability(capability) {
     const cap = String(capability || '');
@@ -307,13 +308,12 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
         }
       }
     } catch (_e) { /* soft */ }
-    // WHY(P2391/P2420/P2431/P2459 VicHY #2227): compose ships energy.batteries for hybrid HOBEIAN siblings —
-    // mains MTG must ALWAYS clear Energy metadata with batteries: null. Homey requires batteries: null
-    // to actually remove the battery warning / icon inherited from manifest.
+    // WHY(P2391/P2420/P2431/P2459/P2472a VicHY): even after compose dropped energy.batteries,
+    // Homey may keep prior session Energy metadata — mains MTG must clear batteries: null.
     if (forceMains && typeof this.setEnergy === 'function') {
       try {
         await this.setEnergy({ batteries: null, mains: true });
-        this.log('[RADAR] P2391/P2420/P2431/P2459 cleared Homey Energy batteries on mains radar');
+        this.log('[RADAR] P2391/P2420/P2431/P2459/P2472a cleared Homey Energy batteries on mains radar');
       } catch (_e) { /* soft */ }
     }
     try {
@@ -337,9 +337,9 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
       const { safeSetTimeout } = require('../../lib/utils/safe-timers');
       // WHY(P2420 / VicHY #2227): Homey restores energy.batteries + curtain caps within
       // seconds of an app update — 2s/5s catch the race before user sees phantom UI.
-      const delays = [2_000, 5_000, 15_000, 60_000, 180_000, 600_000];
-      // WHY(P2468 / VicHY #2232): Homey can re-apply Energy batteries minutes after tip update —
-      // keep a 10min re-heal so low-battery timeline does not stick on 220V clrdrnya.
+      // WHY(P2468 / VicHY #2232): Homey can re-apply Energy minutes after tip update.
+      // WHY(P2472a): also re-heal at 30min for long-lived Energy UI after tip soak.
+      const delays = [2_000, 5_000, 15_000, 60_000, 180_000, 600_000, 1_800_000];
       for (const ms of delays) {
         safeSetTimeout(this, () => {
           this._armRadarDynCapGuards();
@@ -447,7 +447,7 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
     }
 
     if (this.mainsPowered) {
-      // P120: always strip phantom energy/climate caps on mains radars (clrdrnya / MTG075)
+      // P120 / P2472a: always strip phantom energy/climate caps on mains radars (clrdrnya / MTG075)
       for (const phantom of ['measure_battery', 'alarm_battery', 'measure_temperature', 'measure_humidity']) {
         if (this.hasCapability(phantom)) {
           await this.removeCapability(phantom).catch(e => this.log(`[RADAR] Could not strip phantom ${phantom}: ${e.message}`));
@@ -455,6 +455,15 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
       }
       await this.setStoreValue('powerSource', 'mains').catch(() => {});
       await this.setStoreValue('battery', false).catch(() => {});
+      if (typeof this.setEnergy === 'function') {
+        await this.setEnergy({ batteries: null, mains: true }).catch(() => {});
+      }
+    } else if (requiredCaps.has('measure_battery') && typeof this.setEnergy === 'function') {
+      // WHY(P2472a): compose no longer declares energy.batteries — battery HOBEIAN radars
+      // must opt-in at runtime so Homey Energy UI stays correct without poisoning mains.
+      await this.setEnergy({
+        batteries: ['CR2032', 'CR2450', 'AAA', 'AA', 'CR123A', 'INTERNAL'],
+      }).catch(() => {});
     }
   }
 

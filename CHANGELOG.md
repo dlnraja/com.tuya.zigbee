@@ -4,6 +4,29 @@ All notable changes to the **Tuya Unified Zigbee** app for Homey Pro.
 
 ---
 
+## v9.0.889 (2026-09-12)
+
+### Fixed
+- **P2472a VicHY mains radar**: hybrid `presence_sensor_radar` no longer ships compose `measure_battery` / `energy.batteries` (Homey Energy re-poisoned 220V clrdrnya after tip update). Mains still `setEnergy({batteries:null,mains:true})` + 30min re-heal; battery HOBEIAN radars opt-in Energy at runtime. Gmail Moes ZTS diags @ 9.0.874 confirmed pre-P2464 (`DP2=—`); tip ≥9.0.886 already has P2464/P2467.
+
+---
+
+## v9.0.888 (2026-09-12)
+
+### Fixed
+- **P2470 Peter Smartbutton** (`_TZ3000_mrpevh8p`+`TS0041` / SH-SC07, diag `8afffc76` @ 9.0.882): battery UI stayed `?` after store painted 100% (`[THROTTLE] duplicate_value`); ZCL-QUERY still ran `configureAttributeReporting` + read → Timeout storm. Sleepy-button **passive** DataQuery; skip batt configure; null-UI `skipThrottle`; compose/runtime **CR2450** (not CR2032). OCR #2233: tip badge 9.0.882, tile gray battery, Insights empty until paint. User: update ≥9.0.888 + press once.
+- **P2469** always-on unit-test anti-régression mandate (`test/critical/pNNNN-*`, `npm run check:p246x`).
+- **P2468** Joep #2218 Insoma `_TZE284_fhvpaltk`+`TS0601`: compose clusters `[0,4,5,61184]` (no OnOff 6) so Homey stops pairing **Unknown**. FrankEver FK_V02 vs FK-BV05 DP maps + sacred-keep (NEED_INTERVIEW still — no invent pid). VicHY mains radar phantom-battery re-heal `600_000`.
+- Fleet L99 T140352 highest **#2233** — silent OCR/media matrix: `reports/forum-l99-2026-09-12/FLEET_L99.md`.
+
+### Notes (tip lag — code already locked)
+- VicHY `clrdrnya`+TS0601 → `presence_sensor_radar` (P2459/P2468) ≥9.0.887 + restart
+- meter91 `zgyzgdua`+TS0044 → `scene_switch_4` update + re-pair
+- Eduard `fodv6bkr`+TS0601 / MIAMO `icka1clh`+TS0601 → `curtain_motor` update + re-pair
+- PresentSky `m1cvyneb`+TS0601 → `wall_dimmer_tuya` brightness 0–1000
+
+---
+
 ## v9.0.587 (2026-08-18)
 
 ### Added

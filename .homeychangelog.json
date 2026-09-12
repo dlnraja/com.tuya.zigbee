@@ -3183,6 +3183,9 @@
   "9.0.887": {
     "en": "Insoma dual irrigation pairing clusters; FrankEver FK_V02 DPs; VicHY mains radar re-heal."
   },
+  "9.0.889": {
+    "en": "Fixed mains presence radar Homey Energy battery warning (compose no longer ships phantom batteries)."
+  },
   "9.0.888": {
     "en": "Fixed Smartbutton battery UI (no more ?) and skipped ZCL battery storm on SH-SC07."
   }
