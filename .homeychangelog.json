@@ -1563,5 +1563,8 @@
   },
   "5.12.174": {
     "en": "Crash harden: preempt soft-fail Homey class driver IDs (motionsensor)."
+  },
+  "5.12.175": {
+    "en": "Crash harden: never soft-fail own drivers (pirsensor/siren); ceiling mmWave gkfbdvyx mains lock."
   }
 }
