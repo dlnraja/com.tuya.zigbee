@@ -12,7 +12,7 @@ Forum topic: **T140352** · Posts: 2137, 2164, 2167, 2183, 2184, 2190, 2193, 220
 | SOS Fariba | button_emergency_sos | **ABSENT** | Update + re-pair if still glitchy |
 | Raam onze slpkamer / Raam Computerkamer / Raam Slpkamer voor | contact_sensor | **ABSENT** | Update ≥9.0.621; send interview if lux still wrong — couple unknown |
 | Waterdetector | water_leak_sensor | **ABSENT** | Update ≥9.0.621 + remove/re-pair water tile |
-| Smartbutton | button_wireless_1 | _TZ3000_mrpevh8p+TS0041 | Update Test ≥9.0.888 (P2470); press once after update — battery UI + no ZCL storm |
+| Smartbutton | button_wireless_1 | _TZ3000_mrpevh8p+TS0041 | Update Test ≥9.0.874 (P2461); press button once after update |
 
 ## Do not invent
 
