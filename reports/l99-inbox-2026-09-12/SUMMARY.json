@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-12T13:47:06.137Z",
+  "generatedAt": "2026-09-12T17:29:43.864Z",
   "date": "2026-09-12",
   "mode": "full",
   "phases": [
@@ -12,35 +12,35 @@
     {
       "name": "github",
       "ok": true,
-      "durationMs": 409
+      "durationMs": 367
     },
     {
       "name": "gmail",
       "ok": true,
-      "durationMs": 161,
+      "durationMs": 212,
       "details": {
         "crash": {
           "ok": true,
           "skipped": false,
           "status": 0,
-          "durationMs": 31,
+          "durationMs": 39,
           "stderr": "",
-          "stdoutTail": "[gmail-crash-pattern-gate] sources=32 hits=0 unknown=7\n  wrote .github/state/gmail-crash-patterns.json\n  verdict: review_unknown\n"
+          "stdoutTail": "[gmail-crash-pattern-gate] sources=32 hits=3 unknown=7\n  heap_oom_live_data: 4 source-hit(s)\n  wrote .github/state/gmail-crash-patterns.json\n  verdict: review_unknown\n"
         },
         "treat": {
           "ok": true,
           "skipped": false,
           "status": 0,
-          "durationMs": 129,
+          "durationMs": 171,
           "stderr": "",
-          "stdoutTail": "[automate] inbox total=0 have=30 missing=0 ingested_now=0\n[recursive-treat] sources: 136\n[recursive-treat] wrote /home/runner/work/com.tuya.zigbee/com.tuya.zigbee/reports/diag-recursive-treat-2026-09-12\n{\n  \"generatedAt\": \"2026-09-12T13:47:06.697Z\",\n  \"methodology\": \"f647d35b-style full-body recursive treat — sacred couple never invented; P2246 derive from interview when ABSENT\",\n  \"sourcesScanned\": 136,\n  \"uniqueCases\": 122,\n  \"actionable\": 35,\n  \"derivedFromInterview\": 1,\n  \"signalTally\": {\n    \"scene_mode_unsupported\": 4,\n    \"wrong_driver_hint\": 4,\n    \"athom_socket_hang\": 7,\n    \"athom_processing_failed\": 2,\n    \"wrong_smart_rcbo\": 2,\n    \"flow_guard_spam\": 3,\n    \"processing_failed\": 6,\n    \"scene_0x8004\": 3,\n    \"invalid_flow_card\": 2,\n    \"ef00_on_ias_only\": 1,\n    \"ias_storm_button\": 2,\n    \"ef00_leftover_ias\": 1,\n    \"missing_capability_listener\": 1\n  },\n  \"gmailBodiesPresent\": 30,\n  \"interviews\": 90\n}\n[automate] status → .github/state/diag-recursive-inbox/automate-status.json\n{\n  \"total\": 0,\n  \"have\": 30,\n  \"missing\": 0,\n  \"missingIds\": []\n}\n[automate] actionable= 35 gmailBodies= 30\n"
+          "stdoutTail": "[automate] inbox total=0 have=30 missing=0 ingested_now=0\n[recursive-treat] sources: 136\n[recursive-treat] wrote /home/runner/work/com.tuya.zigbee/com.tuya.zigbee/reports/diag-recursive-treat-2026-09-12\n{\n  \"generatedAt\": \"2026-09-12T17:29:44.430Z\",\n  \"methodology\": \"f647d35b-style full-body recursive treat — sacred couple never invented; P2246 derive from interview when ABSENT\",\n  \"sourcesScanned\": 136,\n  \"uniqueCases\": 122,\n  \"actionable\": 38,\n  \"derivedFromInterview\": 3,\n  \"signalTally\": {\n    \"scene_mode_unsupported\": 4,\n    \"wrong_driver_hint\": 4,\n    \"athom_socket_hang\": 7,\n    \"athom_processing_failed\": 2,\n    \"wrong_smart_rcbo\": 2,\n    \"flow_guard_spam\": 3,\n    \"processing_failed\": 5,\n    \"scene_0x8004\": 3,\n    \"foreign_driver_id\": 1,\n    \"heap_oom\": 4,\n    \"physical_vs_virtual_button\": 1,\n    \"invalid_flow_card\": 2,\n    \"ef00_on_ias_only\": 1,\n    \"ias_storm_button\": 2,\n    \"ef00_leftover_ias\": 1,\n    \"missing_capability_listener\": 1\n  },\n  \"gmailBodiesPresent\": 30,\n  \"interviews\": 90\n}\n[automate] status → .github/state/diag-recursive-inbox/automate-status.json\n{\n  \"total\": 0,\n  \"have\": 30,\n  \"missing\": 0,\n  \"missingIds\": []\n}\n[automate] actionable= 38 gmailBodies= 30\n"
         }
       }
     },
     {
       "name": "forum",
       "ok": true,
-      "durationMs": 27335,
+      "durationMs": 26917,
       "skipScan": false,
       "steps": [
         {
@@ -64,7 +64,7 @@
     {
       "name": "drivers",
       "ok": true,
-      "durationMs": 1238,
+      "durationMs": 1525,
       "mfs": {
         "high": 0,
         "changes": 0,
@@ -87,27 +87,15 @@
     {
       "name": "gates",
       "ok": true,
-      "durationMs": 1741
+      "durationMs": 2339
     }
   ],
   "github": {
-    "harvestedAt": "2026-09-12T13:47:06.546Z",
+    "harvestedAt": "2026-09-12T17:29:44.231Z",
     "repo": "dlnraja/com.tuya.zigbee",
     "auth": "token",
     "error": null,
     "issues": [
-      {
-        "number": 547,
-        "title": "Tuya Zigbee device Radar Sensor: pairing OK but having no function",
-        "labels": [
-          "enhancement",
-          "device-request"
-        ],
-        "updatedAt": "2026-09-12T13:26:53Z",
-        "user": "HiepSVG",
-        "htmlUrl": "https://github.com/dlnraja/com.tuya.zigbee/issues/547",
-        "bodySnippet": "## 📱 Basic Information\n\n\nhttps://www.aliexpress.com/item/1005007575802295.html\n Tuya WiFi /Zigbee 24G Human Presence Sensor Smart Human Body PIR Sensor Radar Detector Microwave Motion Sensors Home Automation\n---\n\n## 🔍 Zigbee Fingerprint (MANDATORY)\n\nPlease provide this informat"
-      },
       {
         "number": 533,
         "title": "Device Request - [SMART ZIGBEE CURTAIN SWITCH] - [MOES]",
@@ -126,10 +114,22 @@
           "curtain_switch",
           "SMART ZIGBEE CURTAIN SWITCH - MOES"
         ],
-        "updatedAt": "2026-09-12T12:49:15Z",
+        "updatedAt": "2026-09-12T15:37:01Z",
         "user": "salvagr",
         "htmlUrl": "https://github.com/dlnraja/com.tuya.zigbee/issues/533",
         "bodySnippet": "Thank you for your support.\n\n## 📱 Basic Information\n\n**Brand & Model**: SMART ZIGBEE CURTAIN SWITCH - MOES\n**Purchase Link**: https://es.aliexpress.com/item/1005008356152992.html\n**Power Source**:  Mains\n**Current Status**: pairing with wrong device type. Detected as \"radiator v"
+      },
+      {
+        "number": 547,
+        "title": "Tuya Zigbee device Radar Sensor: pairing OK but having no function",
+        "labels": [
+          "enhancement",
+          "device-request"
+        ],
+        "updatedAt": "2026-09-12T13:26:53Z",
+        "user": "HiepSVG",
+        "htmlUrl": "https://github.com/dlnraja/com.tuya.zigbee/issues/547",
+        "bodySnippet": "## 📱 Basic Information\n\n\nhttps://www.aliexpress.com/item/1005007575802295.html\n Tuya WiFi /Zigbee 24G Human Presence Sensor Smart Human Body PIR Sensor Radar Detector Microwave Motion Sensors Home Automation\n---\n\n## 🔍 Zigbee Fingerprint (MANDATORY)\n\nPlease provide this informat"
       }
     ],
     "prs": [],
@@ -140,15 +140,15 @@
     "path": "/home/runner/work/com.tuya.zigbee/com.tuya.zigbee/.github/state/forum/actionable-processor-report.json",
     "totals": {
       "posts": 208,
-      "withCouples": 77,
-      "needAction": 49,
-      "both": 131,
+      "withCouples": 78,
+      "needAction": 50,
+      "both": 130,
       "masterOnly": 11
     },
     "posts": 208
   },
   "gmail": {
-    "generatedAt": "2026-09-12T13:47:06.570Z",
+    "generatedAt": "2026-09-12T17:29:44.264Z",
     "sourcesScanned": 32,
     "patternCounts": {
       "flow_getDeviceActionCard": 0,
@@ -163,7 +163,7 @@
       "dcm_auditCapabilities_missing": 0,
       "capability_ref_undefined": 0,
       "clusterutils_destroyed_unbound": 0,
-      "heap_oom_live_data": 0,
+      "heap_oom_live_data": 4,
       "ERR_IAS_SLEEPY_TIMEOUT": 0,
       "ERR_DESTROYED_DEVICE_TIMER": 0,
       "ERR_UNBOUND_DESTROYED": 0,
@@ -172,7 +172,59 @@
       "ERR_AUDIT_CAPABILITIES": 0,
       "ERR_ZIGBEE_ROUTE_FULL": 0
     },
-    "hits": [],
+    "hits": [
+      {
+        "pattern": "heap_oom_live_data",
+        "severity": "fatal",
+        "status": "fixed_p148",
+        "fix": "LiveDataUpdater: cap overlay (1500), store ≤180KB, manifest version check before segments, heap skip (P148)",
+        "source": ".github/state/diagnostics-report.json",
+        "sacred": {
+          "mfrs": [
+            "_TZ3000_decxrtwa",
+            "_TZ3000_3dfewsk1"
+          ],
+          "pids": [
+            "TS0041",
+            "TS0203",
+            "TS0044"
+          ]
+        }
+      },
+      {
+        "pattern": "heap_oom_live_data",
+        "severity": "fatal",
+        "status": "fixed_p148",
+        "fix": "LiveDataUpdater: cap overlay (1500), store ≤180KB, manifest version check before segments, heap skip (P148)",
+        "source": ".github/state/diagnostics-crossref.yml",
+        "sacred": {
+          "mfrs": [
+            "_TZ3000_decxrtwa",
+            "_TZ3000_3dfewsk1"
+          ],
+          "pids": [
+            "TS0041",
+            "TS0203"
+          ]
+        }
+      },
+      {
+        "pattern": "heap_oom_live_data",
+        "severity": "fatal",
+        "status": "fixed_p148",
+        "fix": "LiveDataUpdater: cap overlay (1500), store ≤180KB, manifest version check before segments, heap skip (P148)",
+        "source": ".github/state/diagnostics-report.json#diag",
+        "sacred": {
+          "mfrs": [
+            "_TZ3000_3dfewsk1",
+            "_TZ3000_decxrtwa"
+          ],
+          "pids": [
+            "TS0203"
+          ]
+        }
+      }
+    ],
     "unknownFatals": [
       {
         "source": ".github/state/diagnostics-report.json",
@@ -247,7 +299,7 @@
       "dualApp": "BOTH",
       "source": "forum",
       "id": "forum-need-action",
-      "title": "49 forum posts needAction (shadow processor)",
+      "title": "50 forum posts needAction (shadow processor)",
       "action": "enrich:investigate + lock mfr+pid only",
       "forumReply": "NEVER"
     },
