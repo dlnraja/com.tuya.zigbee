@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-11T17:11:19.320Z",
+  "generatedAt": "2026-09-12T06:26:36.084Z",
   "mode": "APPLY",
   "policy": "P2319 enrichment-first colocate — never strip other drivers",
   "applied": [
@@ -141,6 +141,13 @@
       "soft": "climate_sensor"
     },
     {
+      "mfr": "_TZ3000_7dcddnye",
+      "pid": "TS0501A",
+      "reason": "not-confident",
+      "tier": "pid_default",
+      "soft": "bulb_dimmable"
+    },
+    {
       "mfr": "_TZ3000_fa9mlvja",
       "pid": "TS0041",
       "reason": "needs-deep-review",
@@ -209,6 +216,13 @@
       "reason": "not-confident",
       "tier": "pid_default",
       "soft": "motion_sensor"
+    },
+    {
+      "mfr": "_TZ3210_ttkgurpb",
+      "pid": "TS0504B",
+      "reason": "needs-deep-review",
+      "tier": null,
+      "soft": null
     },
     {
       "mfr": "_TZ3210_wp1k8xws",
