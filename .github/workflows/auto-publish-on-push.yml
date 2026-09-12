@@ -395,6 +395,9 @@ jobs:
           HOMEY_PAT: ${{ secrets.HOMEY_PAT }}
           HOMEY_DRAFT_SOFT_EXPECT: '1'
           HOMEY_HEALTHY_TEST_PATCH_LAG: '32'
+          # WHY(P2474): large uploads + Athom socket hang up need longer soak before soft-continue
+          HOMEY_DRAFT_WAIT_MS: '900000'
+          HOMEY_DRAFT_EARLY_FAIL_MS: '180000'
         run: node .github/scripts/wait-athom-draft-ready.js
 
       - name: Install Puppeteer (draft → test promotion)

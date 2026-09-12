@@ -6,6 +6,8 @@ const {
   classifyDraftWait,
   decideDraftWait,
   decideFinalDraftOutcome,
+  normalizeBuild,
+  isTransientAthomFailure,
 } = require('../../.github/scripts/wait-athom-draft-ready.js');
 
 describe('P139 wait-athom-draft-ready', () => {
@@ -68,5 +70,25 @@ describe('P139 wait-athom-draft-ready', () => {
       softExpect: false,
     });
     assert.equal(d.action, 'fail-closed');
+  });
+
+  it('P2474 treats created as processing (not failed)', () => {
+    const c = classifyDraftWait([
+      { version: '9.0.890', state: 'created', id: 3164 },
+    ], '9.0.890');
+    assert.equal(decideDraftWait(c), 'keep-waiting');
+    assert.equal(c.processing.length, 1);
+    assert.equal(c.failed.length, 0);
+  });
+
+  it('P2474 detects transient socket hang up meta on failed builds', () => {
+    const b = normalizeBuild({
+      id: 3145,
+      version: '9.0.850',
+      state: 'processing_failed',
+      stateMeta: 'socket hang up',
+    });
+    assert.equal(isTransientAthomFailure(b), true);
+    assert.equal(b.stateMeta, 'socket hang up');
   });
 });
