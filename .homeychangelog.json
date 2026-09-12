@@ -3206,5 +3206,8 @@
   },
   "9.0.896": {
     "en": "Crash fix: soft-fail Driver Not Initialized motionsensor (Homey Pro 2026)."
+  },
+  "9.0.897": {
+    "en": "Restored smart knob rotate/brightness flows; harvest no longer wipes rotary UX (publish unblock)."
   }
 }

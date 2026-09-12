@@ -43,4 +43,12 @@ assert.ok(
   'P2479: rkgngb5o stays on bulb_tunable_white'
 );
 
+// WHY(P2480b): button-flow-harvest must merge, not wipe smart_knob rotary UX
+const harvest = fs.readFileSync(
+  path.join(ROOT, 'tools', 'ci', 'button-flow-harvest.js'), 'utf8'
+);
+assert.ok(harvest.includes('never REPLACE smart_knob') || harvest.includes('merge: true')
+  || (harvest.includes('smart_knob_switch') && harvest.includes('smart_knob_rotate_left')),
+  'P2480b: harvest must preserve/merge rotary UX cards');
+
 console.log('P2479 smart_knob flows + rkgngb5o CCT couple: PASS');

@@ -4,6 +4,12 @@ All notable changes to the **Tuya Unified Zigbee** app for Homey Pro.
 
 ---
 
+## v9.0.897 (2026-09-12)
+
+### Fixed
+- **P2480b publish unblock**: restore `smart_knob` rotate/brightness flow cards; `button-flow-harvest` merges instead of replacing rotary UX (fleet-enrich wipe).
+
+---
 ## v9.0.896 (2026-09-12)
 
 ### Fixed
