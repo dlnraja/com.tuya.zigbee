@@ -1,6 +1,6 @@
 {
   "name": "com.dlnraja.tuya.zigbee",
-  "version": "5.12.173",
+  "version": "5.12.174",
   "description": "Tuya Unified Zigbee - Local-first control with AI automation",
   "main": "app.js",
   "scripts": {
@@ -166,7 +166,8 @@
     "check:p2475": "node --test test/critical/p2475-ef00-mcu-ensure-tx.test.js",
     "check:p2477": "node --test test/critical/p2477-vichy-dyncap-mains-battery.test.js",
     "check:p2478": "node --test test/critical/p2478-moes-mid-position-dp2-only.test.js",
-    "check:p2480": "node --test test/critical/p2480-motionsensor-driver-not-initialized.test.js"
+    "check:p2480": "node --test test/critical/p2480-motionsensor-driver-not-initialized.test.js",
+    "check:p2481": "node --test test/critical/p2481-motionsensor-preempt-soft-fail.test.js"
   },
   "keywords": [
     "homey",
