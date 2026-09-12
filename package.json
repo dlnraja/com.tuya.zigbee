@@ -1,6 +1,6 @@
 {
   "name": "com.dlnraja.tuya.zigbee",
-  "version": "5.12.168",
+  "version": "5.12.169",
   "description": "Tuya Unified Zigbee - Local-first control with AI automation",
   "main": "app.js",
   "scripts": {
@@ -161,7 +161,8 @@
     "check:p244x": "npm run check:p2448",
     "check:p243x": "node --test test/critical/p2435-gh540-544-switch-pairing.test.js test/critical/p2436-homey-match-moes-bot-mocks.test.js test/critical/p2437-ai-forfait-cursor-hooks.test.js test/critical/p2438-multi-source-harvest-ai-limit.test.js test/critical/p2439-kaflzta4-smart-knob-button.test.js test/critical/p2448-rotary-knob-command-mode.test.js",
     "check:p2458": "node --test test/critical/p2458-tip-email-socket-hang.test.js test/critical/processing-failure-republish-check.test.js",
-    "check:p2472a": "node --test test/critical/p2472a-vichy-compose-no-battery-energy.test.js"
+    "check:p2472a": "node --test test/critical/p2472a-vichy-compose-no-battery-energy.test.js",
+    "check:p2473": "node --test test/critical/p2473-ef00-only-interview-max-fallback.test.js"
   },
   "keywords": [
     "homey",
