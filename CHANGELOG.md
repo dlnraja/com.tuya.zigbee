@@ -4,6 +4,16 @@ All notable changes to the **Tuya Unified Zigbee** app for Homey Pro.
 
 ---
 
+## v9.0.893 (2026-09-12)
+
+### Fixed
+- **P2478 Moes ZTS mid-% + settings (#533 Salvagr)**: mid-slider writes DP2 only (no DP1 open/close); soft-fail Homey `timeout after 10000ms`; defer Moes `setSettings` off Zigbee RX so settings UI stops hanging.
+
+### Notes
+- Couple `_TZE204_5slehgeo`+`TS0601` → `curtain_motor`. Update Test ≥**9.0.893**. Diag `f177ecd4`.
+
+---
+
 ## v9.0.892 (2026-09-12)
 
 ### Fixed
