@@ -3197,5 +3197,8 @@
   },
   "9.0.892": {
     "en": "VicHY mains radar: DynCap/DCM no longer re-injects ZCL battery after tip update."
+  },
+  "9.0.893": {
+    "en": "Moes curtain mid-% position + soft timeout + settings UI (Salvagr #533)."
   }
 }

@@ -392,6 +392,7 @@ class CurtainMotorDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedC
    */
   async _syncMoesSettingFromDp(dp, value) {
     if (this._destroyed || !this._isMoesZtsEurC()) {return;}
+    // WHY(P2478): never block Homey settings UI — defer setSettings off the Zigbee RX path
     const v = typeof value === 'number' ? value : parseInt(value, 10);
     if (!Number.isFinite(v)) {return;}
     const updates = {};
@@ -408,18 +409,19 @@ class CurtainMotorDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedC
       const val = v === 0 ? 'start' : 'end';
       if (this.getSetting?.('moes_calibration_mode') !== val) {updates.moes_calibration_mode = val;}
     }
-    if (Object.keys(updates).length) {
+    if (!Object.keys(updates).length) {return;}
+    const { safeSetTimeout } = require('../../lib/utils/safe-timers');
+    safeSetTimeout(this, async () => {
+      if (this._destroyed) {return;}
       this._isInternalSettingsSync = true;
       try {
         await this.setSettings(updates);
       } catch (err) {
-        this.log('[CURTAIN] setSettings error:', err.message);
+        this.log('[CURTAIN] setSettings soft:', err.message);
       } finally {
-        this.homey.setTimeout(() => {
-          this._isInternalSettingsSync = false;
-        }, 800);
+        safeSetTimeout(this, () => { this._isInternalSettingsSync = false; }, 800);
       }
-    }
+    }, 50);
   }
 
   /** WHY(P2356, P2424): push Moes wall-switch DPs 3/7/8/10 from settings UI (#533). */
