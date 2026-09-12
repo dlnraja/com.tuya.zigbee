@@ -34,6 +34,10 @@ class CurtainMotorDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedC
   // WHY(P2296): Homey battery-status — ZM16EL/ZM85EL are Battery EndDevices (DP13 %).
   // Never default to UnifiedCoverBase mains=true for those couples.
   get mainsPowered() {
+    // WHY(P2467b / #533): Moes ZTS-EUR-C is a mains wall switch. Compose still lists
+    // measure_battery for tubular rollers — that made mainsPowered=false → wake-up
+    // ping before every DP TX (diag 48baba36) and delayed real EF00 motion frames.
+    if (this._isMoesZtsEurC()) {return true;}
     const powerSetting = this.getSetting('power_source');
     if (powerSetting === 'battery') {return false;}
     if (powerSetting === 'ac' || powerSetting === 'dc') {return true;}
@@ -155,27 +159,20 @@ class CurtainMotorDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedC
 
     // WHY(P2412 / #533): Z2M ZTS-EUR-C uses forceTimeUpdates — MCU may ignore motor
     // commands until time is synced (Homey ACK still succeeds on empty MCU action).
+    // WHY(P2467): actually SEND mcuSyncTime (prior tip only logged + called missing helpers).
     if (this._isMoesZtsEurC()) {
       this._invertedPosition = true;
       try {
-        const TuyaTimeSyncFormats = require('../../lib/tuya/TuyaTimeSyncFormats');
-        const fmt = TuyaTimeSyncFormats.guessFormat({
-          manufacturerName: this.getManufacturerName?.() || this.getSetting?.('zb_manufacturer_name'),
-          productId: this.getSetting?.('zb_model_id') || 'TS0601',
-          driverClass: 'Cover',
-        });
-        const payload = TuyaTimeSyncFormats.buildPayload(fmt, { homey: this.homey });
-        if (payload && typeof this._sendTuyaDP === 'function') {
-          // Soft — never block init if time DP unknown
-          this.log(`[CURTAIN] P2412 Moes time-sync attempt format=${fmt}`);
+        if (typeof this._sendMoesMcuSyncTime === 'function') {
+          await this._sendMoesMcuSyncTime();
+        } else if (typeof this._ensureMoesMcuReady === 'function') {
+          await this._ensureMoesMcuReady();
+        } else if (this.tuyaEF00Manager?.sendTimeSync && this.zclNode) {
+          await this.tuyaEF00Manager.sendTimeSync(this.zclNode, { forceSync: true });
+        } else if (this.io?.syncTime) {
+          await this.io.syncTime({ forceSync: true });
         }
-        if (typeof this.syncTuyaTime === 'function') {
-          await this.syncTuyaTime().catch(() => {});
-        } else if (typeof this._syncTuyaTime === 'function') {
-          await this._syncTuyaTime().catch(() => {});
-        } else if (this.tuyaEF00Manager?.syncTime) {
-          await this.tuyaEF00Manager.syncTime().catch(() => {});
-        }
+        this.log('[CURTAIN] P2467 Moes MCU time-sync armed');
       } catch (_e) { /* soft */ }
     }
 
@@ -395,6 +392,7 @@ class CurtainMotorDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedC
    */
   async _syncMoesSettingFromDp(dp, value) {
     if (this._destroyed || !this._isMoesZtsEurC()) {return;}
+    // WHY(P2478): never block Homey settings UI — defer setSettings off the Zigbee RX path
     const v = typeof value === 'number' ? value : parseInt(value, 10);
     if (!Number.isFinite(v)) {return;}
     const updates = {};
@@ -411,18 +409,19 @@ class CurtainMotorDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedC
       const val = v === 0 ? 'start' : 'end';
       if (this.getSetting?.('moes_calibration_mode') !== val) {updates.moes_calibration_mode = val;}
     }
-    if (Object.keys(updates).length) {
+    if (!Object.keys(updates).length) {return;}
+    const { safeSetTimeout } = require('../../lib/utils/safe-timers');
+    safeSetTimeout(this, async () => {
+      if (this._destroyed) {return;}
       this._isInternalSettingsSync = true;
       try {
         await this.setSettings(updates);
       } catch (err) {
-        this.log('[CURTAIN] setSettings error:', err.message);
+        this.log('[CURTAIN] setSettings soft:', err.message);
       } finally {
-        this.homey.setTimeout(() => {
-          this._isInternalSettingsSync = false;
-        }, 800);
+        safeSetTimeout(this, () => { this._isInternalSettingsSync = false; }, 800);
       }
-    }
+    }, 50);
   }
 
   /** WHY(P2356, P2424): push Moes wall-switch DPs 3/7/8/10 from settings UI (#533). */
