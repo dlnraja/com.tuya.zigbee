@@ -35,6 +35,9 @@ const MAINS_POWERED_RADARS = new Set([
   // P102: SZR07U 24GHz mmWave (Z2M) — USB/mains ceiling radar, ignore phantom battery DPs
   '_tze204_muvkrjr5',
   '_tze200_muvkrjr5',
+  // P2482 / GH#547: ZY-M100-24GV3 ceiling radar (gkfbdvyx) — mains, no phantom battery
+  '_tze200_gkfbdvyx',
+  '_tze204_gkfbdvyx',
   ...MTG_RELAY_RADARS,
 ]);
 
