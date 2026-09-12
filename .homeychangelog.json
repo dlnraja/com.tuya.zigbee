@@ -3191,5 +3191,8 @@
   },
   "9.0.890": {
     "en": "Insoma/FrankEver EF00-only pairing (no OnOff cluster 6) + max raw Zigbee DP fallback."
+  },
+  "9.0.891": {
+    "en": "MCU EF00 TX arm before mcuSyncTime/DP + WiFi Easy Login email/phone + SmartLink QR."
   }
 }

@@ -4,6 +4,18 @@ All notable changes to the **Tuya Unified Zigbee** app for Homey Pro.
 
 ---
 
+## v9.0.891 (2026-09-12)
+
+### Fixed
+- **P2475 MCU EF00 TX arm (BOTH)**: `sendDP`/`sendTimeSync` call `_ensureEf00ReadyForTx` before mcuSyncTime/DP; epoch 1970/2000 aware sync; BaseUnifiedDevice rejoin soft re-sync (Moes #533 class).
+- **P2476 WiFi Easy Login + SmartLink (master)**: email OR phone normalize; pair UI SmartLink QR (not EZ SmartConfig); settings tip card.
+
+### Notes
+- Issues #544/#543 (`l9brjwau`/`ptjcjise`+TS0002) already in `wall_switch_2gang_1way` — update tip + re-pair.
+- Silent forum/PM treat only (T157628).
+
+---
+
 ## v9.0.890 (2026-09-12)
 
 ### Fixed

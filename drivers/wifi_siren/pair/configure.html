@@ -34,16 +34,16 @@ details{margin-bottom:8px;font-size:11px}details summary{cursor:pointer;font-wei
 
 <div class="tabs">
 <div class="tab" data-t="ez">Easy Login</div>
-<div class="tab" data-t="sl">Smart Life Login</div>
+<div class="tab" data-t="sl">SmartLink QR</div>
 <div class="tab" data-t="iot">IoT Platform</div>
 <div class="tab active" data-t="man">Local / Ad hoc</div>
 </div>
 
-<!-- TAB 0: Easy Login (email+password only, uses saved creds) -->
+<!-- TAB 0: Easy Login (email OR phone + password, uses saved IoT creds) -->
 <div id="p-ez" class="pnl">
 <div class="box">
-<b>Easiest method</b> - Just enter your Smart Life / Tuya Smart email and password.<br>
-Requires IoT credentials saved in <b>App Settings</b> (one-time setup).
+<b>Easiest method</b> - Smart Life / Tuya Smart <b>email or phone</b> + password.<br>
+Requires IoT credentials saved in <b>App Settings</b> (one-time setup). Not EZ SmartConfig.
 <details><summary>First time? Save credentials in App Settings</summary>
 <ol>
 <li>Go to <b>iot.tuya.com</b> and create a free account</li>
@@ -53,23 +53,23 @@ Requires IoT credentials saved in <b>App Settings</b> (one-time setup).
 <li>Copy <b>Access ID</b> + <b>Access Secret</b> from Overview tab</li>
 <li>Go to this app's <b>Settings page</b> and save them there</li>
 </ol>
-After this one-time setup, you only need email + password to pair devices.
+After this one-time setup, you only need email/phone + password to pair devices.
 </details>
 </div>
-<div class="fg"><label>Smart Life Email</label><input type="email" id="ez_email" placeholder="your@email.com"/></div>
+<div class="fg"><label>Email or phone</label><input type="text" id="ez_email" placeholder="you@email.com or +33612345678" autocomplete="username"/></div>
 <div class="fg"><label>Password</label><input type="password" id="ez_pw" placeholder="Smart Life / Tuya Smart password"/></div>
 <div class="row">
-<div class="fg"><label>Country Code</label><input type="text" id="ez_cc" value="33" placeholder="33"/><div class="hint">33=FR, 1=US, 44=UK, 49=DE, 31=NL</div></div>
+<div class="fg"><label>Country Code</label><input type="text" id="ez_cc" value="33" placeholder="33"/><div class="hint">For phone login: 33=FR, 1=US, 44=UK, 49=DE, 31=NL</div></div>
 <div class="fg"><label>App</label><select id="ez_schema"><option value="smartlife">Smart Life</option><option value="tuyaSmart">Tuya Smart</option></select></div>
 </div>
 <button class="btn btn-p" id="btn-ez" onclick="doEasy()">Log in & scan devices</button>
 <div class="err" id="ez-err"></div><div class="ok" id="ez-ok"></div>
 </div>
 
-<!-- TAB 1: Smart Life Login -->
+<!-- TAB 1: SmartLink QR (phone app authorize — not EZ SmartConfig) -->
 <div id="p-sl" class="pnl">
 <div class="box">
-<b>Full login</b> - Enter IoT credentials + Smart Life email/password.
+<b>SmartLink QR</b> - Scan with Smart Life / Tuya Smart app (account link). Leave Access ID/Secret empty for 1-click QR.
 <details><summary>How to get Access ID/Secret (free, 5 min)</summary>
 <ol>
 <li>Go to <b>iot.tuya.com</b> and create a free account</li>
@@ -102,9 +102,9 @@ Credentials saved locally. Cloud only used once for key retrieval.
 <div class="fg"><label>App</label><select id="sl_schema"><option value="smartlife">Smart Life</option><option value="tuyaSmart">Tuya Smart</option></select></div>
 </div>
 <label style="font-size:11px;display:flex;align-items:center;gap:6px;margin:4px 0 8px;">
-<input type="checkbox" id="sl_auto_reg" checked/> Auto-try other Tuya regions if login fails
+<input type="checkbox" id="sl_auto_reg" checked/> Auto-try other Tuya regions if login / QR fails
 </label>
-<button class="btn btn-p" id="btn-sl" onclick="doSmartLife()">Log in & scan devices</button>
+<button class="btn btn-p" id="btn-sl" onclick="doSmartLife()">SmartLink — QR or API login</button>
 <div class="err" id="sl-err"></div><div class="ok" id="sl-ok"></div>
 </div>
 
@@ -195,12 +195,13 @@ function doEasy(){
   var em=document.getElementById('ez_email').value.trim(),pw=document.getElementById('ez_pw').value.trim();
   var cc=document.getElementById('ez_cc').value.trim(),schema=document.getElementById('ez_schema').value;
   hide('ez-err');hide('ez-ok');
-  if(!em||!pw){show('ez-err','Email and password required');return}
+  if(!em||!pw){show('ez-err','Email or phone + password required');return}
   spin('btn-ez');
-  H.emit('login',{mode:'simple',email:em,password:pw,countryCode:cc,schema:schema},function(err,r){
+  H.emit('login',{mode:'simple',email:em,username:em,password:pw,countryCode:cc,schema:schema,autoRegion:true},function(err,r){
     unspin('btn-ez');
     if(err){show('ez-err',err.message||String(err));return}
-    done=true;show('ez-ok',r.count+' devices found! Click Next to select.');
+    if(r&&r.success===false){show('ez-err',r.error||'Login failed');return}
+    done=true;show('ez-ok',(r.count||0)+' devices found! Click Next to select.');
   });
 }
 
