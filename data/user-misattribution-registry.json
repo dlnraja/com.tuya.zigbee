@@ -6651,6 +6651,7 @@
       ],
       "canonicalDriver": "bulb_tunable_white",
       "forbiddenDrivers": [
+        "bulb_dimmable",
         "switch_1gang",
         "wall_switch_5_gang_tuya"
       ],

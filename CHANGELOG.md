@@ -4,6 +4,13 @@ All notable changes to the **Tuya Unified Zigbee** app for Homey Pro.
 
 ---
 
+## v9.0.894 (2026-09-12)
+
+### Fixed
+- **P2479 CI/publish unblock**: restore `smart_knob` rotate/brightness flow cards; remove `_TZB210_rkgngb5o` from `bulb_dimmable` (CCT stays `bulb_tunable_white`+TS0502B).
+
+---
+
 ## v9.0.893 (2026-09-12)
 
 ### Fixed
