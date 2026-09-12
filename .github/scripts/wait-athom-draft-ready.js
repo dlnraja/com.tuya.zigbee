@@ -18,13 +18,18 @@ const path = require('path');
 
 const ROOT = path.join(__dirname, '..', '..');
 const APP = process.env.APP_ID || 'com.dlnraja.tuya.zigbee';
-const MAX_MS = Number(process.env.HOMEY_DRAFT_WAIT_MS || 600000);
+// WHY(P2474): Athom often needs >10m for large Universal Tuya uploads; email
+// "Build created" can sit without "testing" while processor flakes (socket hang up).
+const MAX_MS = Number(process.env.HOMEY_DRAFT_WAIT_MS || 900000);
 const STEP_MS = Number(process.env.HOMEY_DRAFT_POLL_MS || 20000);
+// Early soft-continue when tip already failed with Athom transient + healthy Test.
+const EARLY_FAIL_SOFT_MS = Number(process.env.HOMEY_DRAFT_EARLY_FAIL_MS || 180000);
 // WHY(P2416): Stable 5.12.x patch trains can lag >8 while Athom flakes (P139);
 // keep soft-continue viable without bump-loop republish.
 const HEALTHY_TEST_PATCH_LAG = Number(process.env.HOMEY_HEALTHY_TEST_PATCH_LAG || 32);
 const DRAFT_SOFT_EXPECT = process.env.HOMEY_DRAFT_SOFT_EXPECT !== '0'
   && process.env.HOMEY_DRAFT_FAIL_CLOSED !== '1';
+const TRANSIENT_FAIL_RE = /socket hang up|econnreset|econnaborted|etimedout|fetch failed|timeout|502|503|504|network/i;
 
 function parseSemver(v) {
   const m = String(v || '').replace(/^v/i, '').match(/^(\d+)\.(\d+)\.(\d+)/);
@@ -78,11 +83,24 @@ function versionOf() {
 }
 
 function normalizeBuild(b) {
+  const stateMeta = b.stateMeta ?? b.failureDetail ?? b.error ?? b.reason ?? '';
+  const metaText = typeof stateMeta === 'string'
+    ? stateMeta
+    : (stateMeta && typeof stateMeta === 'object'
+      ? (stateMeta.message || stateMeta.error || JSON.stringify(stateMeta))
+      : String(stateMeta || ''));
   return {
     id: b.id || b.buildId || b._id,
     version: String(b.version || b.appVersion || b.semver || '').replace(/^v/i, ''),
     state: String(b.state || b.channel || b.status || '').toLowerCase(),
+    stateMeta: metaText,
+    createdAt: b.createdAt || b.created_at || null,
   };
+}
+
+function isTransientAthomFailure(build) {
+  if (!build || !isFailed(build.state)) return false;
+  return TRANSIENT_FAIL_RE.test(String(build.stateMeta || ''));
 }
 
 function isReady(state) {
@@ -233,6 +251,25 @@ async function main() {
     const classified = classifyDraftWait(builds, expected);
     lastFailed = classified.failed[0] || lastFailed;
 
+    // Persist a fresh dashboard snapshot so local/CI recoveries aren't stuck on Sept-stale reports.
+    try {
+      const reportDir = path.join(ROOT, '.github', 'state');
+      fs.mkdirSync(reportDir, { recursive: true });
+      const latest = builds[0] || null;
+      const report = {
+        timestamp: new Date().toISOString(),
+        appId: APP,
+        source: 'wait-athom-draft-ready',
+        expectedVersion: expected,
+        totalBuilds: builds.length,
+        latestBuild: latest,
+        latestBuilds: builds.slice(0, 10),
+      };
+      fs.writeFileSync(path.join(reportDir, 'dashboard-monitor-report.json'), `${JSON.stringify(report, null, 2)}\n`);
+    } catch (e) {
+      console.log(`wait-draft: dashboard snapshot soft: ${e.message}`);
+    }
+
     if (classified.ready.length) {
       const ready = classified.ready.find((b) => b.state === 'test') || classified.ready[0];
       if (classified.failed.length) {
@@ -243,9 +280,39 @@ async function main() {
       return;
     }
 
+    // WHY(P2474): socket hang up often lands in <30s — don't burn full 15m before soft-continue.
+    const elapsed = Date.now() - started;
+    const tipFail = classified.failed[0];
+    if (
+      DRAFT_SOFT_EXPECT
+      && elapsed >= EARLY_FAIL_SOFT_MS
+      && tipFail
+      && isTransientAthomFailure(tipFail)
+      && !classified.processing.length
+      && !classified.ready.length
+    ) {
+      const decision = decideFinalDraftOutcome({
+        expected,
+        failed: tipFail,
+        allBuilds: builds,
+        softExpect: true,
+        healthyLag: HEALTHY_TEST_PATCH_LAG,
+      });
+      console.log(`wait-draft: P2474 early soft-continue after ${elapsed}ms — ${tipFail.state} (${tipFail.stateMeta || 'n/a'})`);
+      console.log(decision.message);
+      if (process.env.GITHUB_OUTPUT) {
+        if (decision.healthyVersion) {
+          fs.appendFileSync(process.env.GITHUB_OUTPUT, `healthy_test_version=${decision.healthyVersion}\n`, 'utf8');
+        }
+        fs.appendFileSync(process.env.GITHUB_OUTPUT, `processing_failed_degraded=true\n`, 'utf8');
+        fs.appendFileSync(process.env.GITHUB_OUTPUT, `early_soft_continue=true\n`, 'utf8');
+      }
+      return;
+    }
+
     const latest = classified.latestMine || builds[0];
     const failedNote = classified.failed[0]
-      ? `; saw ${classified.failed[0].state} #${classified.failed[0].id} — keep polling`
+      ? `; saw ${classified.failed[0].state} #${classified.failed[0].id}${classified.failed[0].stateMeta ? ` (${classified.failed[0].stateMeta})` : ''} — keep polling`
       : '';
     console.log(`wait-draft: v${expected} not ready yet (latest ${latest ? `${latest.version} ${latest.state}` : 'none'}${failedNote})`);
     await sleepMs(STEP_MS);
@@ -298,10 +365,12 @@ module.exports = {
   normalizeBuild,
   isReady,
   isFailed,
+  isTransientAthomFailure,
   parseSemver,
   patchDistance,
   healthyTestFallback,
   latestTestBuild,
+  TRANSIENT_FAIL_RE,
 };
 
 if (require.main === module) {
