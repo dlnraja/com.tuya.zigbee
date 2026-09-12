@@ -1,5 +1,12 @@
 # Changelog
 
+## v5.12.171 (2026-09-12)
+
+### Fixed
+- **P2477**: DynCap/DCM block measure_battery on mains mmWave (VicHY class).
+
+---
+
 ## v5.12.170 (2026-09-12)
 
 ### Fixed
