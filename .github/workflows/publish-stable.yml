@@ -38,8 +38,9 @@ env:
   # P2384: longer Athom API / draft wait (socket hang up mitigation)
   HOMEY_API_TIMEOUT_MS: "120000"
   HOMEY_BUILD_POLL_TIMEOUT_MS: "360000"
-  HOMEY_DRAFT_WAIT_MS: "600000"
-  HOMEY_HEALTHY_TEST_PATCH_LAG: "8"
+  HOMEY_DRAFT_WAIT_MS: "900000"
+  HOMEY_DRAFT_EARLY_FAIL_MS: "180000"
+  HOMEY_HEALTHY_TEST_PATCH_LAG: "32"
   # v5.12.0: 431 drivers × assets still overshoots the 26 MB default.
   # v5.12.4 (P75.1): Bumped 45 → 50 MB to match master after .homeyignore
   # pruning reduces the source directory to ~40 MB. The gzipped tarball
