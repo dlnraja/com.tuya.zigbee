@@ -1560,5 +1560,8 @@
   },
   "5.12.173": {
     "en": "Crash fix: soft-fail Driver Not Initialized motionsensor."
+  },
+  "5.12.174": {
+    "en": "Crash harden: preempt soft-fail Homey class driver IDs (motionsensor)."
   }
 }
