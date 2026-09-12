@@ -159,13 +159,19 @@ jobs:
         run: |
           if [ "${{ steps.checkout-stable.outputs.STABLE_AVAILABLE }}" != "true" ]; then
             echo "(stable not available, skipping)"
+            echo "STABLE_VALIDATION=SKIP" >> $GITHUB_OUTPUT
             exit 0
           fi
           if [ ! -f stable/app.json ]; then
             echo "(stable/app.json missing after checkout, skipping)"
+            echo "STABLE_VALIDATION=SKIP" >> $GITHUB_OUTPUT
             exit 0
           fi
           cd stable
+          # WHY(P2483): surface missing driver folders (e.g. air_purifier) before Homey validate
+          if [ -f tools/ci/assert-compose-drivers-exist.js ]; then
+            node tools/ci/assert-compose-drivers-exist.js || true
+          fi
           set +e
           OUTPUT=$(npx homey app validate --level publish 2>&1)
           EXIT=$?
@@ -173,21 +179,28 @@ jobs:
           echo "$OUTPUT" > /tmp/stable-validate.txt
           if [ $EXIT -ne 0 ]; then
             echo "::error::Stable validation FAILED (exit $EXIT)"
+            echo "::group::Stable validator output (tail)"
+            echo "$OUTPUT" | tail -40
+            echo "::endgroup::"
+            echo "STABLE_VALIDATION=FAIL" >> $GITHUB_OUTPUT
             if echo "$OUTPUT" | grep -q "AggregateError"; then
               echo "STABLE_AGGREGATE_ERROR=true" >> $GITHUB_OUTPUT
             fi
             if echo "$OUTPUT" | grep -qE "Error:|TypeError:|RangeError:|SyntaxError:"; then
               echo "STABLE_PROCESS_ERROR=true" >> $GITHUB_OUTPUT
             fi
-          else
-            echo "Stable validation PASS"
+            # Soft for Athom flake, but never claim PASS in summary (P2483)
+            exit 0
           fi
+          echo "Stable validation PASS"
+          echo "STABLE_VALIDATION=PASS" >> $GITHUB_OUTPUT
 
       - name: Build summary
         if: always()
         env:
           # Pass trigger ref through env to avoid shell injection from branch names
           TRIGGER_REF: ${{ github.event.schedule || github.event.workflow_run.head_branch || '' }}
+          STABLE_VAL: ${{ steps.validate-stable.outputs.STABLE_VALIDATION }}
         run: |
           {
             echo "## E2E Dashboard Test - $(date -u +%Y-%m-%dT%H:%M:%SZ)"
@@ -198,7 +211,15 @@ jobs:
             echo "- Driver health: ${{ steps.health-master.outcome == 'success' && 'OK' || 'WARN' }}"
             echo ""
             echo "### Stable (v5.x)"
-            echo "- Validation: ${{ steps.validate-stable.outcome == 'success' && 'PASS' || 'FAIL' }}"
+            if [ "${STABLE_VAL}" = "PASS" ]; then
+              echo "- Validation: PASS"
+            elif [ "${STABLE_VAL}" = "FAIL" ]; then
+              echo "- Validation: **FAIL** (see stable-validate artifact)"
+            elif [ "${STABLE_VAL}" = "SKIP" ]; then
+              echo "- Validation: SKIP"
+            else
+              echo "- Validation: ${{ steps.validate-stable.outcome == 'success' && 'UNKNOWN' || 'FAIL' }}"
+            fi
             echo ""
             echo "**Run ID**: ${{ github.run_id }}"
             echo "**Trigger**: ${{ github.event_name }} $TRIGGER_REF"
