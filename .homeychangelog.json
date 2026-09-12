@@ -1548,5 +1548,8 @@
   },
   "5.12.169": {
     "en": "Improved EF00-only valve pairing (no forced OnOff cluster) and smarter DP transmit fallback."
+  },
+  "5.12.170": {
+    "en": "MCU EF00 TX arm before mcuSyncTime/DP + rejoin time re-sync (Moes curtain class)."
   }
 }

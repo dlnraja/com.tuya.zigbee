@@ -1,5 +1,12 @@
 # Changelog
 
+## v5.12.170 (2026-09-12)
+
+### Fixed
+- **P2475 MCU EF00 TX arm**: `sendDP`/`sendTimeSync` ensure EF00 initialize first; epoch-aware `mcuSyncTime`; rejoin soft re-sync.
+
+---
+
 ## v5.12.169 (2026-09-12)
 
 ### Fixed
