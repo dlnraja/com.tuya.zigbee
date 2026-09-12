@@ -33,19 +33,19 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 
 | Metric | Value |
 |--------|-------|
-| **App Version** | v9.0.878 |
+| **App Version** | v9.0.893 |
 | **Drivers** | 431 (381 Zigbee + 50 WiFi) |
 | **Unique Fingerprints** | 4,401 |
-| **Pairing Variants** | 17,050 (4 case combos per fingerprint) |
+| **Pairing Variants** | 17,054 (4 case combos per fingerprint) |
 | **Unique Product IDs** | 592 |
-| **Flow Cards** | 5,967 |
+| **Flow Cards** | 5,962 |
 | **Unique Capabilities** | 170 |
 | **Native OTA Drivers** | 9 |
-| **Test Suites** | 275 files |
+| **Test Suites** | 286 files |
 | **SVG Icons** | 731 |
 | **Languages** | EN, FR, NL, DE |
 | **SDK / Homey** | 3 / >= 12.2.0 |
-| **Last Updated** | 2026-09-11 |
+| **Last Updated** | 2026-09-12 |
 
 ### Top 20 Drivers by Fingerprint Count
 
@@ -59,18 +59,18 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 | 6 | `button_wireless_2` | 570 |
 | 7 | `wall_dimmer_tuya` | 488 |
 | 8 | `generic_tuya` | 414 |
-| 9 | `device_radiator_valve` | 336 |
+| 9 | `device_radiator_valve` | 332 |
 | 10 | `switch_4gang` | 292 |
 | 11 | `switch_2gang` | 255 |
 | 12 | `contact_sensor` | 228 |
 | 13 | `motion_sensor` | 225 |
-| 14 | `switch_3gang` | 215 |
+| 14 | `switch_3gang` | 217 |
 | 15 | `soil_sensor` | 209 |
 | 16 | `diy_custom_zigbee` | 206 |
 | 17 | `thermostat_tuya_dp` | 188 |
 | 18 | `sensor_contact_zigbee` | 183 |
 | 19 | `water_leak_sensor_tuya` | 178 |
-| 20 | `plug_energy_monitor` | 170 |
+| 20 | `bulb_dimmable` | 172 |
 
 ### Drivers by Device Class
 
@@ -102,18 +102,18 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 
 | Version | Changes |
 |---------|---------|
-| **v9.0.878** | Restored smart knob rotate/brightness flow cards after enrich overwrite; Moes/FrankEver fixes remain. |
-| **v9.0.877** | Improved Moes curtain open/close TX; Moes Star Feather 3-gang pairing; FrankEver water valve fingerprint lock. |
-| **v9.0.876** | Fixed smart knob rotate/brightness flow cards so Test publish can proceed; wall switch and SPM01 fixes remain. |
-| **v9.0.875** | Fixed wall 2-gang phantom button tiles; BSEED 1-gang pairing; SPM01 energy meter no longer pairs as curtain; Moes curtain stop window imp… |
-| **v9.0.874** | Improved smartbutton reliability (SH-SC07); AM43 curtain EF00-only; market dump Zigbee/WiFi. |
-| **v9.0.873** | Improved presence radar heal after app updates; BSEED 2-gang Homey commands use setOn/setOff; BSEED 1-gang ysdv91bk pairs as wall switch;… |
-| **v9.0.872** | Hardened Athom publish soft-expect docs/tests for tip socket hang up; switch pairing/UI reliability soak. |
-| **v9.0.871** | Cleaned 4-gang switch UI: relay gangs only — removed redundant button tiles from Homey device view. |
-| **v9.0.870** | Fixed Moes/Tuya wired 2-gang pairing (_TZ3000_ptjcjise/TS0002): maps to wall switch with onoff/onoff.gang2 only — no button clutter. |
-| **v9.0.869** | Stability improvements and Homey test build recovery. |
-| **v9.0.868** | Fixed Moes/Tuya wired 2-gang pairing (_TZ3000_ptjcjise/TS0002): maps to wall switch with onoff/onoff.gang2 only — no button clutter. |
-| **v9.0.867** | Fixed BSEED wired 2-gang pairing (_TZ3000_l9brjwau/TS0002): maps to wall switch with onoff/onoff.gang2 only — no battery or button clutter. |
+| **v9.0.893** | Moes curtain mid-% position + soft timeout + settings UI (Salvagr #533). |
+| **v9.0.892** | VicHY mains radar: DynCap/DCM no longer re-injects ZCL battery after tip update. |
+| **v9.0.891** | MCU EF00 TX arm before mcuSyncTime/DP + WiFi Easy Login email/phone + SmartLink QR. |
+| **v9.0.890** | Insoma/FrankEver EF00-only pairing (no OnOff cluster 6) + max raw Zigbee DP fallback. |
+| **v9.0.889** | Fixed mains presence radar Homey Energy battery warning (compose no longer ships phantom batteries). |
+| **v9.0.888** | Fixed Smartbutton battery UI (no more ?) and skipped ZCL battery storm on SH-SC07. |
+| **v9.0.887** | Insoma dual irrigation pairing clusters; FrankEver FK_V02 DPs; VicHY mains radar re-heal. |
+| **v9.0.886** | Moes ZTS curtain: force mains (skip battery wake ping) + EF00-only TX (#533). |
+| **v9.0.885** | Moes ZTS curtain (#533): EF00 manager init + mcuSyncTime so open/close and position reports work. |
+| **v9.0.883** | mfs_db Star Feather/FrankEver/Cleverio align; IAS WD 0x0502 lexicon (siren flows). |
+| **v9.0.881** | Cleverio SA100 siren (_TZ3000_vdfwjopk/TS0219) IAS warning flows; BSEED CI align; Moes curtain DP2. |
+| **v9.0.879** | Fixed 3-gang switch fingerprint misroute blocking publish; Moes/FrankEver and smart knob flow cards remain. |
 
 <!-- CHANGELOG_END -->
 
