@@ -7,6 +7,13 @@
 
 ---
 
+## v5.12.173 (2026-09-12)
+
+### Fixed
+- **P2480**: soft-fail `Driver Not Initialized: motionsensor` (Homey Pro 2026 crash).
+
+---
+
 ## v5.12.172 (2026-09-12)
 
 ### Fixed

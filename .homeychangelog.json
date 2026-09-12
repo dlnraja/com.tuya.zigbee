@@ -1557,5 +1557,8 @@
   },
   "5.12.172": {
     "en": "Moes curtain mid-% position + soft timeout + settings UI."
+  },
+  "5.12.173": {
+    "en": "Crash fix: soft-fail Driver Not Initialized motionsensor."
   }
 }
