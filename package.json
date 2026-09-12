@@ -1,6 +1,6 @@
 {
   "name": "com.dlnraja.tuya.zigbee",
-  "version": "5.12.170",
+  "version": "5.12.171",
   "description": "Tuya Unified Zigbee - Local-first control with AI automation",
   "main": "app.js",
   "scripts": {
@@ -163,7 +163,8 @@
     "check:p2458": "node --test test/critical/p2458-tip-email-socket-hang.test.js test/critical/processing-failure-republish-check.test.js",
     "check:p2472a": "node --test test/critical/p2472a-vichy-compose-no-battery-energy.test.js",
     "check:p2473": "node --test test/critical/p2473-ef00-only-interview-max-fallback.test.js",
-    "check:p2475": "node --test test/critical/p2475-ef00-mcu-ensure-tx.test.js"
+    "check:p2475": "node --test test/critical/p2475-ef00-mcu-ensure-tx.test.js",
+    "check:p2477": "node --test test/critical/p2477-vichy-dyncap-mains-battery.test.js"
   },
   "keywords": [
     "homey",

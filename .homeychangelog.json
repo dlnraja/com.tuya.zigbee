@@ -1551,5 +1551,8 @@
   },
   "5.12.170": {
     "en": "MCU EF00 TX arm before mcuSyncTime/DP + rejoin time re-sync (Moes curtain class)."
+  },
+  "5.12.171": {
+    "en": "Mains mmWave radar: DynCap no longer re-injects ZCL battery."
   }
 }
