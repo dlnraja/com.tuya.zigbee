@@ -3194,5 +3194,8 @@
   },
   "9.0.891": {
     "en": "MCU EF00 TX arm before mcuSyncTime/DP + WiFi Easy Login email/phone + SmartLink QR."
+  },
+  "9.0.892": {
+    "en": "VicHY mains radar: DynCap/DCM no longer re-injects ZCL battery after tip update."
   }
 }

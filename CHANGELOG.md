@@ -4,6 +4,16 @@ All notable changes to the **Tuya Unified Zigbee** app for Homey Pro.
 
 ---
 
+## v9.0.892 (2026-09-12)
+
+### Fixed
+- **P2477 VicHY DynCap residual (c5165a37 class)**: managers + dynamic `DynamicCapabilityManager` block `measure_battery`/`alarm_battery` on mains mmWave (clrdrnya/MTG) so ZCL genPowerCfg cannot re-poison Homey Energy after tip update. Compose already clean (P2472a).
+
+### Notes
+- A verify: diag `c5165a37` was tip **9.0.797** — update ≥**9.0.892** + restart. B (P2475) + C (P2476) already in **9.0.891**.
+
+---
+
 ## v9.0.891 (2026-09-12)
 
 ### Fixed
