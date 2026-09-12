@@ -4,18 +4,20 @@ Generated 2026-09-08T07:29:59.472Z from registry (201 cases) × compound DB (454
 
 ## Live locks (2026-09-12)
 
+- **P2482** Crash harden: never preempt **own** driver IDs that collide with Homey classes (`pirsensor`/`siren`/`doorbell`). Expand class preempt list. GH#547 `_TZE204_gkfbdvyx`+`TS0601` → `presence_sensor_radar` (ZY_M100 mains). Tip **≥9.0.903**. BOTH.
+- **P2481** Homey Pro 2026 crash: serializer `getDriver('motionsensor')` — preempt `isForeignDriverId` before Homey (`lib/utils/safe-get-driver-patch.js`). Gmail 9.0.891/895 + Peter #2235 OCR tip **9.0.895** / diag `375def7f`. Tip **≥9.0.902** (Test #3171). BOTH.
 - **P2473** Joep Insoma / FrankEver / Moes class: interview `[0,4,5,61184]` — compose must never require OnOff **6** (Unknown). TX/RX: `lib/zigbee/Ef00OnlyInterview.js` max EF00+raw+PFC cascade. Tip **≥9.0.890**.
 - **P2472a** VicHY clrdrnya 220V: compose `measure_battery`/`energy.batteries` on hybrid `presence_sensor_radar` re-poisoned Homey Energy after tip update. Removed from compose/`app.json`; mains `setEnergy({batteries:null,mains:true})` + 30min re-heal; battery HOBEIAN opt-in at runtime. Tip **≥9.0.889**.
-- **P2470** Peter #2233 / diag `8afffc76` @ 9.0.882: `_TZ3000_mrpevh8p`+`TS0041` → `button_wireless_1`. Battery UI `?` = store 100% then THROTTLE `duplicate_value` + ZCL configure/read storm. Tip **≥9.0.888**; press once. OCR: Insights exists but empty until paint; no separate “activity history” for `class: button`.
+- **P2470** Peter #2233–#2234 / diag `8afffc76` @ 9.0.881–882: `_TZ3000_mrpevh8p`+`TS0041` → `button_wireless_1`. Battery UI `?` = store 100% then THROTTLE `duplicate_value` + ZCL configure/read storm. Tip **≥9.0.888** (prefer **≥9.0.902**); press once. OCR: Insights empty until paint; no separate “activity history” for `class: button`.
 - **P2469** Unit-test anti-régression always-on — every behavior fix ships `test/critical/pNNNN-*.test.js` + `npm run check:pNNNN` / `check:p246x`.
-- **P2468** Joep #2218 Insoma `_TZE284_fhvpaltk`+`TS0601`: interview clusters `[0,4,5,61184]` — compose must not require OnOff(6) or Homey pairs Unknown. FrankEver FK_V02 vs FK-BV05 DP split + sacred-keep (NEED_INTERVIEW); VicHY #2232 10min mains radar re-heal.
+- **P2468** Joep #2218 Insoma `_TZE284_fhvpaltk`+`TS0601`: interview clusters `[0,4,5,61184]` — compose must not require OnOff(6) or Homey pairs Unknown. FrankEver FK_V02 vs FK-BV05 DP split + sacred-keep (NEED_INTERVIEW); VicHY #2232 10min mains radar re-heal (deleted #2231 image — NEED_INTERVIEW soft).
 - **P2466** `_TZ3000_vdfwjopk`+`TS0219` → `siren` (Cleverio SA100 / Johan#1455). IAS Zone+WD only; flow `siren_turn_on/off` → `startWarning`. Forbid `handheld_remote_4_buttons`.
 - **P2464** Moes ZTS `_TZE204_5slehgeo`+`TS0601`: open/close TX always pairs DP1 + extreme DP2.
 - **P2467** Moes ZTS (#533 diag d05e6530): `TuyaEF00Manager.initialize(zclNode)` was never called from cover (start/init missing) → no BoundCluster RX + weak TX; real `mcuSyncTime` + DP2-then-DP1 + calib-end.
 - **P2467b** Moes ZTS: force `mainsPowered` (compose phantom `measure_battery`) + skip wake-up ping before EF00 TX.
 - **P2465** Moes Star Feather `zo0cfekv`+`TS0601` → `wall_switch_3gang_1way` DP24/25/26 (not climate).
 - **P2462** BSEED `blhvsaqf`+`TS0001` → `wall_switch_1gang_1way` (not metering `switch_1gang`).
-- **Fleet L99 T140352** (silent OCR 2026-09-12): highest #2233 — matrix in `reports/forum-l99-2026-09-12/FLEET_L99.md`. Ignore invent gap `_TZE200_ABC123` (Dylan placeholder).
+- **Fleet L99 T140352** (silent OCR 2026-09-12): highest **#2235** — matrix in `reports/forum-l99-2026-09-12/FLEET_L99.md`. Ignore invent gap `_TZE200_ABC123` + Stefan junk `_TZE2841000000_3MZB0SDZ`.
 
 ## Class notes (always)
 

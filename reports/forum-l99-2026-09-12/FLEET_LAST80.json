@@ -1,0 +1,1069 @@
+{
+  "highest": 2235,
+  "count": 80,
+  "posts": [
+    {
+      "n": 2154,
+      "user": "SunBeech",
+      "created": "2026-08-16T05:21:33.987Z",
+      "deleted": false,
+      "text": "Hey guys, keep in mind that the developer is receiving all your messages about his app. You might want to reach out to him directly (via a PM) if you have specific suggestions on how to improve the app.",
+      "imgs": [],
+      "uuids": [],
+      "mfrs": [],
+      "pids": []
+    },
+    {
+      "n": 2155,
+      "user": "dlnraja",
+      "created": "2026-08-16T09:18:59.924Z",
+      "deleted": false,
+      "text": "The naming apo channel is perhaps wrong Sorry",
+      "imgs": [],
+      "uuids": [],
+      "mfrs": [],
+      "pids": []
+    },
+    {
+      "n": 2156,
+      "user": "dlnraja",
+      "created": "2026-08-16T09:22:17.734Z",
+      "deleted": false,
+      "text": "The code is perhaps ugly and a mess but , it’s more trying recursively fix issues and add patches of each request rather than factorise or clean the code . Feel free to try to fork the projet to put more clean and oeganise code Best regards.",
+      "imgs": [],
+      "uuids": [],
+      "mfrs": [],
+      "pids": []
+    },
+    {
+      "n": 2157,
+      "user": "Mike_Nono",
+      "created": "2026-08-16T09:36:24.453Z",
+      "deleted": false,
+      "text": "Hi. No fork for me, but don’t have like 400 duplicates for the same device in different devices = fail. But I wish you the best on this journey.",
+      "imgs": [],
+      "uuids": [],
+      "mfrs": [],
+      "pids": []
+    },
+    {
+      "n": 2158,
+      "user": "dlnraja",
+      "created": "2026-08-16T09:42:02.637Z",
+      "deleted": false,
+      "text": "Have you seen that some manufacturer use same manufacturernames for multiple devices id and that on some case same manufacturernames+ device id are multiple variants and capacity. Yes it’s a bit difficult to manages all of these . I will and continue to do my best to improve that . But right now because of my less time , and the fact that my homey box is sold because I need money to survive ( job problem ) , it might take longer time And yes I don’t have time to buy and check each devices and each implementations of code boosted with ai. Best regards",
+      "imgs": [],
+      "uuids": [],
+      "mfrs": [],
+      "pids": []
+    },
+    {
+      "n": 2159,
+      "user": "smarthomesven",
+      "created": "2026-08-16T09:47:33.647Z",
+      "deleted": false,
+      "text": "Mike_Nono: but don’t have like 400 duplicates for the same device in different devices Just because you don’t like duplicates, doesn’t mean someone isn’t allowed create them. My apps Lotus Lantern, duoCo Strip and LotusLamp X are also 1:1 copies of eachother, just with a different icon/name. Also, for Zigbee devices it doesn’t really matter which driver you pick while pairing because Homey will automatically find the right driver for the device based on device manufacturer/model.",
+      "imgs": [],
+      "uuids": [],
+      "mfrs": [],
+      "pids": []
+    },
+    {
+      "n": 2160,
+      "user": "Peter_van_Werkhoven",
+      "created": "2026-08-16T10:07:38.318Z",
+      "deleted": false,
+      "text": "Hi Dylan Good day unfortunately the app is crashing again. 1000040469 1220×2712 226 KB Good luck and have a nice day with best regards Peter.",
+      "imgs": [
+        "https://us1.discourse-cdn.com/flex025/uploads/athom/original/3X/6/a/6a2c9b2571a7665ba1dc2a50e2e9ddbda17e10aa.jpeg"
+      ],
+      "uuids": [],
+      "mfrs": [],
+      "pids": []
+    },
+    {
+      "n": 2161,
+      "user": "dlnraja",
+      "created": "2026-08-16T10:10:25.438Z",
+      "deleted": false,
+      "text": "With over 330 Tuya devices, it’s impossible for me to physically own them all. I rely on reverse engineering and YOUR feedback. Please always provide the Homey diagnostic code when reporting a bug.",
+      "imgs": [],
+      "uuids": [],
+      "mfrs": [],
+      "pids": []
+    },
+    {
+      "n": 2162,
+      "user": "Mike_Nono",
+      "created": "2026-08-16T10:18:14.401Z",
+      "deleted": false,
+      "text": "Well don’t think it’s any good to ex: use a wall socket id as a motion detector.",
+      "imgs": [],
+      "uuids": [],
+      "mfrs": [],
+      "pids": []
+    },
+    {
+      "n": 2163,
+      "user": "smarthomesven",
+      "created": "2026-08-16T10:33:24.319Z",
+      "deleted": false,
+      "text": "Mike_Nono: Well don’t think it’s any good to ex: use a wall socket id as a motion detector But it doesn’t really matter since when people pair it as a motion sensor, Homey will automatically pair it as a wall socket since that’s where the model ID is listed. So it doesn’t matter which one you pick when pairing a device, Homey will always pick the driver based on manufacturer/model ID. Even when you pair the Tuya motion sensor as an IKEA light bulb, Homey will still pair it as a Tuya device.",
+      "imgs": [],
+      "uuids": [],
+      "mfrs": [],
+      "pids": []
+    },
+    {
+      "n": 2164,
+      "user": "Peter_van_Werkhoven",
+      "created": "2026-08-16T10:45:21.714Z",
+      "deleted": false,
+      "text": "Hi Dylan after your latest update also crash again. Diagnostic code 96c19859-c46b-44cb-a137-1d57b5d17d83 1000040475 1220×2712 233 KB Insight from CPU last hour 1000040476 1220×2712 155 KB Insight from RAM last hour 1000040477 1220×2712 187 KB Good luck Peter",
+      "imgs": [
+        "https://us1.discourse-cdn.com/flex025/uploads/athom/original/3X/c/a/cae713742aeca40b92b5c3f7c30de18a58e17844.jpeg",
+        "https://us1.discourse-cdn.com/flex025/uploads/athom/original/3X/8/6/86f16b76773ee120c0340f7f9c73261961adb099.jpeg",
+        "https://us1.discourse-cdn.com/flex025/uploads/athom/original/3X/a/5/a5dae430e8102eb9d7f333990b043b5c792c12b2.jpeg"
+      ],
+      "uuids": [
+        "96c19859-c46b-44cb-a137-1d57b5d17d83"
+      ],
+      "mfrs": [],
+      "pids": []
+    },
+    {
+      "n": 2165,
+      "user": "dlnraja",
+      "created": "2026-08-16T11:07:10.911Z",
+      "deleted": false,
+      "text": "Hey all, Thanks for the patience — I know this thread has been frustrating for a lot of you. Supporting 330+ Tuya Zigbee devices is genuinely messy. The same manufacturer names can map to completely different product IDs and variants, which means pairing duplicates and wrong drivers still happen. It’s not ideal, and I’m not hiding that. I can’t physically own every device. I actually had to sell my Homey for personal/financial reasons, so I now rely heavily on your diagnostic codes when something breaks. That’s just the reality of it. What I’m actively working on right now: Cleaning up pairing",
+      "imgs": [],
+      "uuids": [],
+      "mfrs": [
+        "_TZE200_aoclfnxz",
+        "_TZE200_abc123"
+      ],
+      "pids": [
+        "TS0601",
+        "TS0601"
+      ]
+    },
+    {
+      "n": 2166,
+      "user": "dlnraja",
+      "created": "2026-08-16T11:48:58.406Z",
+      "deleted": false,
+      "text": "@Peter_van_Werkhoven thanks for the diagnostic code. I looked at 96c19859 - the app was running out of memory (heap), not a simple SOS bug. I just pushed a fix soon so the live fingerprint feed from GitHub Pages stops loading huge files into Homey settings. When the new Test build is up (9.0.541), please update and send a new diagnostic if it still crashes. Sorry for the hassle.",
+      "imgs": [],
+      "uuids": [],
+      "mfrs": [],
+      "pids": []
+    },
+    {
+      "n": 2167,
+      "user": "Peter_van_Werkhoven",
+      "created": "2026-08-16T20:28:52.254Z",
+      "deleted": false,
+      "text": "Hi Dylan Good evening, App is not crashing anymore and Waterdetector sensor is working receiving data in Homey and triggering the Flow now 1000040577 1220×2712 190 KB SOS and Smartbutton still no response in Homey and Flow’s. Contact sensors not tested yet. Diagnostic code ace66ff9-0a41-44e0-abf4-bf0850b689ae Thanks for fixing so far and good night. Best regards Peter. Sorry to report you that the Waterdetector sensor is not responding anymore now. Diagnostic code ec514112-f5de-4399-b90a-5b1bd62d5bb8",
+      "imgs": [
+        "https://us1.discourse-cdn.com/flex025/uploads/athom/original/3X/c/5/c5ba6435647d0dd186a45b7d78b57a9d46c6a054.jpeg"
+      ],
+      "uuids": [
+        "ace66ff9-0a41-44e0-abf4-bf0850b689ae",
+        "ec514112-f5de-4399-b90a-5b1bd62d5bb8"
+      ],
+      "mfrs": [],
+      "pids": []
+    },
+    {
+      "n": 2168,
+      "user": "Gabriel_Pedrosa_Mach",
+      "created": "2026-08-17T00:45:25.775Z",
+      "deleted": false,
+      "text": "First — genuine respect for taking on a project at this scale. Broad Tuya/Zigbee coverage is a lot of surface area to maintain, and it’s a real service to people who’d otherwise have no driver at all. To be clear, I’m not against official/community apps in general — Philips Hue, Aqara, Meross, Shelly all work great for me and I use their official apps happily. It’s specifically the switches and a handful of sensors below where I ended up building my own, for context/comparison in case it’s a useful data point: I maintain a personal Homey app for ~110 physical devices (43 distinct manufacturerI",
+      "imgs": [],
+      "uuids": [],
+      "mfrs": [],
+      "pids": []
+    },
+    {
+      "n": 2169,
+      "user": "Zemismart_Official",
+      "created": "2026-08-17T03:53:51.800Z",
+      "deleted": false,
+      "text": "Thank you for sharing such detailed feedback and your testing experience. We really appreciate the time and effort you’ve put into developing and validating these drivers. We’re sorry that your previous attempt to share your Zemismart driver did not receive a response. Could you tell me which Zemismart switch you were testing? We’ll forward your feedback and the specific device support issue to our technical team for further review. Your experience with manufacturer IDs, device validation, and Zigbee traffic is very useful for us.",
+      "imgs": [],
+      "uuids": [],
+      "mfrs": [],
+      "pids": []
+    },
+    {
+      "n": 2170,
+      "user": "dlnraja",
+      "created": "2026-08-17T09:33:15.849Z",
+      "deleted": false,
+      "text": "Hi @Gabriel_Pedrosa_Mach , Thanks a lot for the kind words and for taking the time to share your detailed feedback! You’ve pinpointed the exact reality of maintaining Tuya at scale: per-device validation, handling cluster quirks (like disabling the redundant 0x000A time cluster polling), and ensuring reliable multi-gang state synchronization. It really is a lot of surface area to maintain, so I truly appreciate the comparison and the deep dive into your own implementation. I’d be very glad to compare notes and share insights, especially regarding your approach to backlight persistence and powe",
+      "imgs": [],
+      "uuids": [],
+      "mfrs": [],
+      "pids": []
+    },
+    {
+      "n": 2171,
+      "user": "dlnraja",
+      "created": "2026-08-17T09:34:21.973Z",
+      "deleted": false,
+      "text": "Hi @Zemismart_Official , Thank you for following up on this! The specific switch I am referring to is: Model / Product Reference: ZB-L03C-H Zigbee Model ID: TS0043 Type: 3-Gang Wireless Scene Switch (battery-powered CR2032 wall remote) I had previously contacted your team (Aries Lou) back in June 2025 regarding this model (AliExpress Order #3055457170131038 ) to support single click, double click, long press, and battery monitoring on Homey Pro, but it wasn’t added to the official app at the time. I have working driver implementations and device fingerprints that handle event triggers and opti",
+      "imgs": [],
+      "uuids": [],
+      "mfrs": [],
+      "pids": [
+        "TS0043"
+      ]
+    },
+    {
+      "n": 2172,
+      "user": "Gabriel_Pedrosa_Mach",
+      "created": "2026-08-17T11:43:27.496Z",
+      "deleted": false,
+      "text": "Thanks, @dlnraja — glad the comparison was useful, happy to go deeper. One caveat up front: this all applies to Tuya devices on standard ZCL clusters. The EF00 (proprietary cluster) devices don’t behave the same way, so this specific approach doesn’t carry over to those. For backlight/power-on persistence: on power restore, Tuya ZCL devices report all their current state at once — power-on state, switch/momentary mode, backlight, per-gang state per powerOnBehavior — within a very short window. I use that burst itself as the reconnect-after-power-cut signal, rather than any explicit “I just rej",
+      "imgs": [
+        "https://us1.discourse-cdn.com/flex025/uploads/athom/original/3X/4/c/4ce92bf0d2b6e2ac5d05a24b1a2012b51fc91abc.jpeg",
+        "https://us1.discourse-cdn.com/flex025/uploads/athom/original/3X/a/6/a66bcfc3d89dfae325599eefde9a20496e410d93.jpeg",
+        "https://us1.discourse-cdn.com/flex025/uploads/athom/original/3X/1/5/154d770ca9779839d4fa04d1572a9772ad48fc59.jpeg"
+      ],
+      "uuids": [],
+      "mfrs": [],
+      "pids": []
+    },
+    {
+      "n": 2173,
+      "user": "Gabriel_Pedrosa_Mach",
+      "created": "2026-08-17T11:44:24.780Z",
+      "deleted": false,
+      "text": "Hi @Zemismart_Official , following up with additional switches I’ve validated on my own driver. Some of these are Zemismart-branded directly; others I bought in Brazil under the “Novadigital” brand (a local distributor that resells Chinese hardware, in some cases whitebranded from other manufacturers) — flagging both in case some overlap with your own product line: Gangs Zigbee Model ID Manufacturer IDs 1 TS0001 _TZ3000_ovyaisip, _TZ3000_pk8tgtdb 2 TS0002 _TZ3000_ywubfuvt, _TZ3000_kgxej1dv, _TZ3000_jjdkhueq 3 TS0003 _TZ3000_yervjnlj, _TZ3000_vjhcenzo, _TZ3000_qxcnwv26, _TZ3000_eqsair32, _TZ300",
+      "imgs": [],
+      "uuids": [],
+      "mfrs": [
+        "_TZ3000_ovyaisip",
+        "_TZ3000_pk8tgtdb",
+        "_TZ3000_ywubfuvt",
+        "_TZ3000_kgxej1dv",
+        "_TZ3000_jjdkhueq",
+        "_TZ3000_yervjnlj",
+        "_TZ3000_vjhcenzo",
+        "_TZ3000_qxcnwv26",
+        "_TZ3000_eqsair32",
+        "_TZ3000_f09j9qjb",
+        "_TZ3000_fawk5xjv",
+        "_TZ3000_ok0ggpk7",
+        "_TZE200_shkxsgis",
+        "_TZE284_shkxsgis",
+        "_TZE204_aagrxlbd",
+        "_TZE200_r731zlxk",
+        "_TZE284_r731zlxk"
+      ],
+      "pids": [
+        "TS0001",
+        "TS0002",
+        "TS0003",
+        "TS0601",
+        "TS0601"
+      ]
+    },
+    {
+      "n": 2174,
+      "user": "dlnraja",
+      "created": "2026-08-17T12:33:58.272Z",
+      "deleted": false,
+      "text": "Hi @Gabriel_Pedrosa_Mach , Thanks for such transparent and actionable technical feedback! The multi-gang cross-linking and state bleeding is definitely one of the trickiest parts on Homey’s Zigbee implementation, especially when mapping sub-devices/endpoints cleanly across fresh pairing cycles. Adding command jitter and retry logic on unacknowledged frames is a great strategy to prevent collision issues on the mesh. That’s also a very solid sniffing workflow with the CC2531/zboss setup — capturing the key exchange on a genuine Tuya hub makes decoding ZCL payloads in Wireshark so much cleaner t",
+      "imgs": [],
+      "uuids": [],
+      "mfrs": [],
+      "pids": []
+    },
+    {
+      "n": 2175,
+      "user": "PresentSky",
+      "created": "2026-08-17T13:12:32.364Z",
+      "deleted": false,
+      "text": "Hi @dlnraja , I have updated the interview data with formatted text, have you perhaps had time to look at this? Thank you!",
+      "imgs": [],
+      "uuids": [],
+      "mfrs": [],
+      "pids": []
+    },
+    {
+      "n": 2176,
+      "user": "dlnraja",
+      "created": "2026-08-17T13:20:28.255Z",
+      "deleted": false,
+      "text": "Hi Gabriel, thanks for going deeper — the ZCL vs EF00 split is the important bit. I tightened the multi-gang path so endpoint 2 stays on onoff.gang2, and commands are paced with a bit of jitter plus retry if there’s no ack. Power-restore dumps are coalesced so they don’t overwrite each other. Time 0x000A on battery remotes is answer-if-asked, not polled. If a device still bleeds after a fresh pair, send me manufacturerName + modelId and I’ll check that couple. Happy to look at a small capture too.",
+      "imgs": [],
+      "uuids": [],
+      "mfrs": [],
+      "pids": []
+    },
+    {
+      "n": 2177,
+      "user": "dlnraja",
+      "created": "2026-08-17T13:22:07.739Z",
+      "deleted": false,
+      "text": "yes sure",
+      "imgs": [],
+      "uuids": [],
+      "mfrs": [],
+      "pids": []
+    },
+    {
+      "n": 2178,
+      "user": "Gabriel_Pedrosa_Mach",
+      "created": "2026-08-17T16:02:41.789Z",
+      "deleted": false,
+      "text": "Appreciate you digging into the endpoint isolation. On gang2: I get why onoff.gang2 -style capability instances mirror the physical Tuya layout more closely, but in practice it creates real friction for the end user. Several controls crammed into one tile is harder to read and act on at a glance. You can’t assign an individual name per gang — Homey only lets you rename the device itself, not a capability instance inside it, so every gang shares one generic name. And quick actions (the one-tap on/off from the device list, widgets, Google Home/Alexa voice control) don’t work per-gang that way — ",
+      "imgs": [],
+      "uuids": [],
+      "mfrs": [],
+      "pids": []
+    },
+    {
+      "n": 2179,
+      "user": "Zemismart_Official",
+      "created": "2026-08-18T03:30:20.590Z",
+      "deleted": false,
+      "text": "Thank you very much for sharing all these details and for the work you’ve already done on your own drivers. This is really helpful for us. If possible, could you also share the driver files, fingerprints, and DP mappings you are currently using? This would help our engineers reproduce and verify your implementation more quickly. i think link from github will be fine.",
+      "imgs": [],
+      "uuids": [],
+      "mfrs": [],
+      "pids": []
+    },
+    {
+      "n": 2180,
+      "user": "Zemismart_Official",
+      "created": "2026-08-18T03:30:51.550Z",
+      "deleted": false,
+      "text": "dlnraja: Hi @Gabriel_Pedrosa_Mach , Thanks for such transparent and actionable technical feedback! The multi-gang cross-linking and state bleeding is definitely one of the trickiest parts on Homey’s Zigbee implementation, especially when mapping sub-devices/endpoints cleanly across fresh pairing cycles. Adding command jitter and retry logic on unacknowledged frames is a great strategy to prevent collision issues on the mesh. That’s also a very solid sniffing workflow with the CC2531/zboss setup — capturing the key exchange on a genuine Tuya hub makes decoding ZCL payloads in Wireshark so much ",
+      "imgs": [],
+      "uuids": [],
+      "mfrs": [],
+      "pids": []
+    },
+    {
+      "n": 2181,
+      "user": "Zemismart_Official",
+      "created": "2026-08-18T05:53:06.940Z",
+      "deleted": false,
+      "text": "Could you tell me which Zemismart switch models each of these corresponds to? For example, the 606 series, 808 series, ZMS-206, etc. thanks in advance.",
+      "imgs": [],
+      "uuids": [],
+      "mfrs": [],
+      "pids": []
+    },
+    {
+      "n": 2182,
+      "user": "Gabriel_Pedrosa_Mach",
+      "created": "2026-08-18T10:28:21.684Z",
+      "deleted": false,
+      "text": "hanks for forwarding it! The switches I’ve been testing correspond to the TB25 series — TB25-1, TB25-2, TB25-3, TB25-4 and TB25-6 (1 to 6 gang), plus a 4-gang ZCL variant and a touch model. The touch model actually uses the exact same driver code as the others — I only split it into a separate driver because of its icon/artwork file, not because of any functional difference. That said, the code isn’t tied to exact model numbers — any device sharing the same clusters and functions should work with it as-is. To be clear about scope, my driver goes well beyond basic on/off: Shows sibling gangs in",
+      "imgs": [],
+      "uuids": [],
+      "mfrs": [],
+      "pids": []
+    },
+    {
+      "n": 2183,
+      "user": "Peter_van_Werkhoven",
+      "created": "2026-08-18T15:47:48.694Z",
+      "deleted": false,
+      "text": "Hi Dylan Good afternoon, is the app using to much memory, because Flow’s don’t run and device’s are difficult to start I noticed since yesterday. Diagnostic code e181bc15-ebb8-4a6f-a08a-b00b5fe71552 Also non of the devices still not function normal in your app. SOS, Smartbutton, Waterdetector and Door/Window sensors. Diagnostic code 4577486f-4233-4106-9dcf-dc1fe4dc43ab 1000040729 1220×2712 200 KB 1000040728 1220×2712 202 KB Good luck and thanks again for your effort, Peter.",
+      "imgs": [
+        "https://us1.discourse-cdn.com/flex025/uploads/athom/original/3X/8/4/849b040d75a4dfd87c5c79dcf7af3808958ca9de.jpeg",
+        "https://us1.discourse-cdn.com/flex025/uploads/athom/original/3X/6/1/61f1db652c96e5151ec3aafe432aba03267e0a79.jpeg"
+      ],
+      "uuids": [
+        "e181bc15-ebb8-4a6f-a08a-b00b5fe71552",
+        "4577486f-4233-4106-9dcf-dc1fe4dc43ab"
+      ],
+      "mfrs": [],
+      "pids": []
+    },
+    {
+      "n": 2184,
+      "user": "Peter_van_Werkhoven",
+      "created": "2026-08-19T10:37:14.180Z",
+      "deleted": false,
+      "text": "Hi Dylan Good afternoon you achieved it the SOS buttons finally work again, great job 1000040782 1220×2712 202 KB Before I had to disable the app last night because Flow’s didn’t run and I also couldn’t switch off devices manually in Homey, this morning I updated the app to version 9.0.596 and deleted the SOS, Waterleak sensor and Smartbutton, restarted Homey and re-add the device’s and SOS working again and others not. Diagnostic code 1cf775a2-be97-4b3c-88c4-c29c83bf11d4 Thanks and have a nice day, good luck Peter",
+      "imgs": [
+        "https://us1.discourse-cdn.com/flex025/uploads/athom/original/3X/e/6/e63c12c28e2af7acdceaa064590d817f76cc2380.jpeg"
+      ],
+      "uuids": [
+        "1cf775a2-be97-4b3c-88c4-c29c83bf11d4"
+      ],
+      "mfrs": [],
+      "pids": []
+    },
+    {
+      "n": 2185,
+      "user": "Zemismart_Official",
+      "created": "2026-08-20T09:49:25.260Z",
+      "deleted": false,
+      "text": "for the 4 gang ZCL, you mean the module :ZMS-206 ? the one with screen thanks for your reply!",
+      "imgs": [],
+      "uuids": [],
+      "mfrs": [],
+      "pids": []
+    },
+    {
+      "n": 2186,
+      "user": "Gabriel_Pedrosa_Mach",
+      "created": "2026-08-20T12:33:50.392Z",
+      "deleted": false,
+      "text": "The 4gang zcl device is a device sold in Brazil with the new digital brand. It is a 4-key touch device. In my repository there is his interview. com.gpm.homesuite/Homey_Interview/4G touch/_TZ3000_lwthnp7j.txt at main · gpmachado/com.gpm.homesuite · GitHub It has the list of clusters, my app has already mapped the functions, provides a time cluster server, apparently the ZCL (novadigital 1,2,3 and novadigital 4gang touch) has a shared lib and only changes the settings for the number of gangs. The same with the novadigital 4 and 6 gang (Tuya Ef00).",
+      "imgs": [],
+      "uuids": [],
+      "mfrs": [
+        "_TZ3000_lwthnp7j",
+        "_TZ3000_lwthnp7j"
+      ],
+      "pids": []
+    },
+    {
+      "n": 2187,
+      "user": "smarthomesven",
+      "created": "2026-08-20T12:47:09.604Z",
+      "deleted": false,
+      "text": "Gabriel_Pedrosa_Mach: In my repository https://github.com/gpmachado/com.gpm.homesuite/Homey_interview there is his interview That one returns a 404. I think you mean https://github.com/gpmachado/com.gpm.homesuite/tree/main/Homey_Interview ?",
+      "imgs": [],
+      "uuids": [],
+      "mfrs": [],
+      "pids": []
+    },
+    {
+      "n": 2188,
+      "user": "Gabriel_Pedrosa_Mach",
+      "created": "2026-08-20T14:28:04.112Z",
+      "deleted": false,
+      "text": "Ok com.gpm.homesuite/Homey_Interview/4G touch/_TZ3000_lwthnp7j.txt at main · gpmachado/com.gpm.homesuite · GitHub",
+      "imgs": [],
+      "uuids": [],
+      "mfrs": [
+        "_TZ3000_lwthnp7j",
+        "_TZ3000_lwthnp7j"
+      ],
+      "pids": []
+    },
+    {
+      "n": 2189,
+      "user": "meter91",
+      "created": "2026-08-21T12:51:38.641Z",
+      "deleted": false,
+      "text": "Hey! Thanks for all the great work. I’m having issues with the TS0044 + _TZ3000_zgyzgdua 4-way switch. Similair to what I read above I doesn’t work with it’s physical buttons (in-app everything works). I got below error regarding the driver. However, it doesn’t matter which device type I select during pairing, I always get this notification. (Homey Pro 2019 / MOES 4-way switch) image 435×250 16.1 KB",
+      "imgs": [
+        "https://us1.discourse-cdn.com/flex025/uploads/athom/original/3X/8/3/8338b322baacc8b351ba0ebb6c8c58f36a0852a6.png"
+      ],
+      "uuids": [],
+      "mfrs": [
+        "_TZ3000_zgyzgdua"
+      ],
+      "pids": [
+        "TS0044"
+      ]
+    },
+    {
+      "n": 2190,
+      "user": "Peter_van_Werkhoven",
+      "created": "2026-08-21T19:22:42.668Z",
+      "deleted": false,
+      "text": "Hi Dylan Good evening, SOS button’s still working fine, only Battery is very Nervous/Glitchy 1000041136 1220×2712 248 KB 1000041137 1220×2712 183 KB Contact sensors are not switching open/close but only acting as puls contact, also Luminance is not correct 1st picture is this contact Lum and 2nd picture is as it should be from another type contact/Luminance sensor. 1000041134 1220×2712 117 KB 1000041135 1220×2712 130 KB Waterdetector and Smartbutton still not working. Diagnostic code 0cea6870-69dd-4a98-abdd-e35273699e7d Good luck and thanks again for your effort Peter.",
+      "imgs": [
+        "https://us1.discourse-cdn.com/flex025/uploads/athom/original/3X/b/5/b51043f7ea566c6f8bc0fd6ec53edf7ee388601e.jpeg",
+        "https://us1.discourse-cdn.com/flex025/uploads/athom/original/3X/1/3/1381f9633753c55e98a195cce09d5dc33358b5bb.jpeg",
+        "https://us1.discourse-cdn.com/flex025/uploads/athom/original/3X/b/b/bb4028066f777f84e5b57fc7e1522e73c2d29cdc.jpeg",
+        "https://us1.discourse-cdn.com/flex025/uploads/athom/original/3X/2/d/2d75ce9398fd18efc994d57d62e9c7827b6d7c34.jpeg"
+      ],
+      "uuids": [
+        "0cea6870-69dd-4a98-abdd-e35273699e7d"
+      ],
+      "mfrs": [],
+      "pids": []
+    },
+    {
+      "n": 2191,
+      "user": "Toni_UrbanoMarquez",
+      "created": "2026-08-23T05:11:19.799Z",
+      "deleted": false,
+      "text": "Hi, I need support for a Tuya Zigbee DIN rail energy meter. Device: Model ID: TS0601 Manufacturer: _TZE284_6ocnqlhn Device: Tongou TO-Q-SYS-JZT Endpoint: 1 Clusters: 0xEF00 and 0xED00 Universal Tuya version: v9.0.626 Experimental Driver tested: DIN Rail Energy Meter Homey Developer Tools successfully interviews the device and identifies it correctly as TS0601 / _TZE284_6ocnqlhn. However, Universal Tuya does not recognize it when trying to pair it with the DIN Rail Energy Meter driver. During pairing it repeatedly detects another device called “Smart RCBO” instead of this energy meter. Diagnost",
+      "imgs": [],
+      "uuids": [
+        "3a1f196d-77e6-44f6-870e-d03d6a28da97"
+      ],
+      "mfrs": [
+        "_TZE284_6ocnqlhn",
+        "_TZE284_6ocnqlhn"
+      ],
+      "pids": [
+        "TS0601",
+        "TS0601"
+      ]
+    },
+    {
+      "n": 2192,
+      "user": "robertklep",
+      "created": "2026-08-23T05:32:03.020Z",
+      "deleted": false,
+      "text": "Toni_UrbanoMarquez: I need You really need to read the first post of the thread.",
+      "imgs": [],
+      "uuids": [],
+      "mfrs": [],
+      "pids": []
+    },
+    {
+      "n": 2193,
+      "user": "Peter_van_Werkhoven",
+      "created": "2026-08-24T08:52:16.294Z",
+      "deleted": false,
+      "text": "Hi Dylan Good morning and good News the Door/Window sensors are fine now, open close is working as on off now and Luminance seems also okay. Waterdetector is sending puls now when it’s in the water so great work Only Smartbutton to fix now because that’s still not receiving data. Diagnostic code f647d35b-c401-4077-b758-da1356e523f9 Have a very nice day and thanks for fixing so far. Best regards Peter.",
+      "imgs": [],
+      "uuids": [
+        "f647d35b-c401-4077-b758-da1356e523f9"
+      ],
+      "mfrs": [],
+      "pids": []
+    },
+    {
+      "n": 2194,
+      "user": "dlnraja",
+      "created": "2026-08-24T14:59:33.787Z",
+      "deleted": false,
+      "text": "Don’t worry I will check soon . I have also found a new work and will might start in September",
+      "imgs": [],
+      "uuids": [],
+      "mfrs": [],
+      "pids": []
+    },
+    {
+      "n": 2195,
+      "user": "Peter_van_Werkhoven",
+      "created": "2026-08-24T15:13:02.875Z",
+      "deleted": false,
+      "text": "Hi Dylan that’s good to hear, congratulations",
+      "imgs": [],
+      "uuids": [],
+      "mfrs": [],
+      "pids": []
+    },
+    {
+      "n": 2196,
+      "user": "dlnraja",
+      "created": "2026-08-25T19:16:23.073Z",
+      "deleted": false,
+      "text": "Could you re give me all the PID m+mfs name that not fully working on your homey box. Best regards",
+      "imgs": [],
+      "uuids": [],
+      "mfrs": [],
+      "pids": []
+    },
+    {
+      "n": 2197,
+      "user": "Peter_van_Werkhoven",
+      "created": "2026-08-25T21:43:45.147Z",
+      "deleted": false,
+      "text": "Hi Dylan is this message for me or someone else. Regards Peter.",
+      "imgs": [],
+      "uuids": [],
+      "mfrs": [],
+      "pids": []
+    },
+    {
+      "n": 2199,
+      "user": "A_Tas",
+      "created": "2026-08-25T22:33:35.479Z",
+      "deleted": false,
+      "text": "First of all, thank you for your great work with the app. I have the latest trial version. Thanks to these, the Moes presence detector was able to connect ZSS-LP-HP02-MS to the manufacturer ID: _TZ3218_t9ynfz4x. Unfortunately, there is always an error message when saving patamers, such as sensitivity, etc. Do you have a solution for this? I use the current Homey Pro mini and the sensor is connected to Zigbee. Thank you in advance and many greetings from Germany. Kadir",
+      "imgs": [],
+      "uuids": [],
+      "mfrs": [
+        "_TZ3218_t9ynfz4x"
+      ],
+      "pids": []
+    },
+    {
+      "n": 2200,
+      "user": "dlnraja",
+      "created": "2026-08-25T22:44:45.573Z",
+      "deleted": false,
+      "text": "you",
+      "imgs": [],
+      "uuids": [],
+      "mfrs": [],
+      "pids": []
+    },
+    {
+      "n": 2201,
+      "user": "dlnraja",
+      "created": "2026-08-25T23:47:50.614Z",
+      "deleted": false,
+      "text": "A_Tas ( #2199 ) : update ≥9.0.651, retester Motion/Static Sensitivity. meter91 ( #2189 ) : update + re-pair → scene_switch_4 . Toni ( #2191 ) : update + re-pair → din_rail_meter . Peter ( #2190 ) : re-pair smartbutton (bouton maintenu) + send diag with device info couple. ( pid + mfs) Gabriel ( #2188 ) : xonfirm pid TS0004 via diag interview. please do all these and let me know",
+      "imgs": [],
+      "uuids": [],
+      "mfrs": [],
+      "pids": [
+        "TS0004"
+      ]
+    },
+    {
+      "n": 2202,
+      "user": "Peter_van_Werkhoven",
+      "created": "2026-08-26T07:47:13.072Z",
+      "deleted": false,
+      "text": "Hi Dylan good morning I’ve installed the latest version this morning 9.0.661 and I see that the Waterdetector sensor is not connected anymore it says that device is not there because of wrong driver, I was so pleased before that it was finally working after months of trying 1000041404 1220×2712 113 KB 1000041406 1220×2712 194 KB I also repaired the Smartbutton again but still no response to Homey and his flow. 1000041405 1220×2712 194 KB Diagnostic code 95a7c6e5-969f-4469-be5d-c96b7cb42b60 Good luck,thanks and best regards Peter.",
+      "imgs": [
+        "https://us1.discourse-cdn.com/flex025/uploads/athom/original/3X/d/8/d86ca7e8a6aa0d74a44ef5f1f468459192b7901a.jpeg",
+        "https://us1.discourse-cdn.com/flex025/uploads/athom/original/3X/3/5/35c0b4ef8f3de925fb885428e5eb48adf0dd86c2.jpeg",
+        "https://us1.discourse-cdn.com/flex025/uploads/athom/original/3X/1/2/12f5ed8da41dab83474a539e3236025541652c69.jpeg"
+      ],
+      "uuids": [
+        "95a7c6e5-969f-4469-be5d-c96b7cb42b60"
+      ],
+      "mfrs": [],
+      "pids": []
+    },
+    {
+      "n": 2203,
+      "user": "Peter_van_Werkhoven",
+      "created": "2026-08-27T08:31:08.567Z",
+      "deleted": false,
+      "text": "Hi Dylan Good morning it’s me again, Despite the wrong driver message when opening the Waterdetector it’s still working normal and triggering the flow so receiving messages when it touches water. 1000045253 1220×2712 122 KB And tried to repair Smartbutton again but still no response in Homey. Diagnostic code 4b1a0dc9-9fba-4e9b-a85c-66498ab80bc1 Thanks and good luck and have a nice day Peter.",
+      "imgs": [
+        "https://us1.discourse-cdn.com/flex025/uploads/athom/original/3X/0/2/02974502402d7a2e9964422c7ffa07d2326b38c8.jpeg"
+      ],
+      "uuids": [
+        "4b1a0dc9-9fba-4e9b-a85c-66498ab80bc1"
+      ],
+      "mfrs": [],
+      "pids": []
+    },
+    {
+      "n": 2204,
+      "user": "Elliot_Hallais",
+      "created": "2026-08-27T23:21:39.724Z",
+      "deleted": false,
+      "text": "Hi Dylan, first thanks for your good work it helps a lot! I just opened an issue for a CO2 sensor I just bought (seems its only a misclassification, but it might be more as when i add it to my homey it says I have no app that match the device) : [Bug] _TZE204_ogkdpgy2 (CO2 sensor) misclassified under climate_sensor instead of air_quality_co2 · Issue #531 · dlnraja/com.tuya.zigbee · GitHub",
+      "imgs": [],
+      "uuids": [],
+      "mfrs": [
+        "_TZE204_ogkdpgy2"
+      ],
+      "pids": []
+    },
+    {
+      "n": 2205,
+      "user": "dlnraja",
+      "created": "2026-08-28T22:24:38.965Z",
+      "deleted": false,
+      "text": "okay i will check",
+      "imgs": [],
+      "uuids": [],
+      "mfrs": [],
+      "pids": []
+    },
+    {
+      "n": 2206,
+      "user": "PresentSky",
+      "created": "2026-08-29T16:17:23.564Z",
+      "deleted": false,
+      "text": "Hi @dlnraja , Thanks for looking into this. I have removed and re-added the device after your update. The device is now correctly recognized as a wall dimmer, however, none of the controls in the app work (on/off, dimming, etc.). Could you please check again? Diagnostic ID: 60959c24-a0e6-4159-8cf1-12f9ba5df612 Interview data: see below. Manufacturer ID: _TZE284_m1cvyneb Product ID: TS0601 Link: https://www.bseed.com/products/click-series-diy-part-customized-free-combinations-smart-zigbee-switch-socket-insert-white-color-crystal-glass-panel-copy?variant=46308951130267 \"ids\": { \"modelId\": \"TS060",
+      "imgs": [],
+      "uuids": [
+        "60959c24-a0e6-4159-8cf1-12f9ba5df612"
+      ],
+      "mfrs": [
+        "_TZE284_m1cvyneb",
+        "_TZE284_m1cvyneb",
+        "_TZE284_m1cvyneb",
+        "_TZE284_m1cvyneb"
+      ],
+      "pids": [
+        "TS0601",
+        "TS0601",
+        "TS0601",
+        "TS0601"
+      ]
+    },
+    {
+      "n": 2207,
+      "user": "meter91",
+      "created": "2026-08-30T08:35:19.758Z",
+      "deleted": false,
+      "text": "Hi @dlnraja , thank you for your reply. I tried adding the switch but it isn’t recognised and adds as unknown zigbee device. I tried all relevant 4-button switches and remotes but it works for all the same. Don’t know what relevant information i could give from my side at this point. Made a diag report with code c40705a1-9b08-444b-868f-c5a14ca4d2b2",
+      "imgs": [],
+      "uuids": [
+        "c40705a1-9b08-444b-868f-c5a14ca4d2b2"
+      ],
+      "mfrs": [],
+      "pids": []
+    },
+    {
+      "n": 2208,
+      "user": "VicHY",
+      "created": "2026-08-30T22:07:34.527Z",
+      "deleted": false,
+      "text": "Hello i cannot connect a presence sensor _TZE204_clrdrnya El Diagnostic ID is 4217d5e3-c845-4f0b-a351-5e5a59295cbb Thanks",
+      "imgs": [],
+      "uuids": [
+        "4217d5e3-c845-4f0b-a351-5e5a59295cbb"
+      ],
+      "mfrs": [
+        "_TZE204_clrdrnya"
+      ],
+      "pids": []
+    },
+    {
+      "n": 2209,
+      "user": "Cam",
+      "created": "2026-08-31T04:47:54.182Z",
+      "deleted": false,
+      "text": "Hi there @dlnraja Just checking in after a few months of devices not working and trying to add them again. My smart button and motion sensor aren’t detecting/passing through any data through my flows. I know the motion sensors are working because I can see the red light flash when movement occurs near it but they just don’t respond to flows, regardless of how many ways I try (same for button too). I’ve also tried adding them as several different devices to see if that helps, sadly it does not. You had them working once upon a time but I suspect one the updates along the way boned them again. T",
+      "imgs": [],
+      "uuids": [],
+      "mfrs": [],
+      "pids": []
+    },
+    {
+      "n": 2210,
+      "user": "dlnraja",
+      "created": "2026-08-31T06:02:52.941Z",
+      "deleted": false,
+      "text": "User Action meter91 Update ≥9.0.738 → remove → re-pair Scene Switch 4-Gang VicHY Update Test → re-pair Presence Sensor Radar ( clrdrnya ) Cam Update → re-pair motion on Presence Sensor Radar; send button diag if flows still dead",
+      "imgs": [],
+      "uuids": [],
+      "mfrs": [],
+      "pids": []
+    },
+    {
+      "n": 2211,
+      "user": "VicHY",
+      "created": "2026-08-31T07:35:40.739Z",
+      "deleted": false,
+      "text": "dlnraja: User Action meter91 Update ≥9.0.738 → remove → re-pair Scene Switch 4-Gang VicHY Update Test → re-pair Presence Sensor Radar ( clrdrnya ) Cam Update → re-pair motion on Presence Sensor Radar; send button diag if flows still dead Thanks, I´ll try it this afternoon. I’ll edit this to say if it works or if it still detects it the same way.",
+      "imgs": [],
+      "uuids": [],
+      "mfrs": [],
+      "pids": []
+    },
+    {
+      "n": 2212,
+      "user": "dlnraja",
+      "created": "2026-08-31T09:39:32.435Z",
+      "deleted": false,
+      "text": "Please for peoples who has issues with their devices , to remove repair et retest it with the latest app update. Please give me diags logs and interviews at each request. Best regards.",
+      "imgs": [],
+      "uuids": [],
+      "mfrs": [],
+      "pids": []
+    },
+    {
+      "n": 2213,
+      "user": "meter91",
+      "created": "2026-08-31T10:04:11.453Z",
+      "deleted": false,
+      "text": "switch still comes on as unknown device driver missing. Interview is timing out Diagnostic report ID: 2b0b4e4f-971e-4e1f-8d32-09d255e232d0 Device State: { “availability”: undefined , “zigbee_error”: undefined , “zigbee_ready”: booltrue , “zigbee_state”: { “currentCommand”: string\"IDLE\" } , 1 item “controllerState”: { “channel”: int11 , “panId”: string\"3F3D\" , “extPanId”: string\"\" , “ieeeAddr”: string\"\" , “extendedPanId”: string\"c7:09:c9:7a:32:a8:8e:e8\" , “IEEEAddress”: string\"00:12:4b:00:1b:44:e9:73\" , “networkKey”: xxx , “currentCommand”: string\"IDLE\" , “softwareVersion”: string\"2.6.3-2023112",
+      "imgs": [],
+      "uuids": [
+        "2b0b4e4f-971e-4e1f-8d32-09d255e232d0"
+      ],
+      "mfrs": [
+        "_TZ3000_zgyzgdua"
+      ],
+      "pids": [
+        "TS0044"
+      ]
+    },
+    {
+      "n": 2214,
+      "user": "smarthomesven",
+      "created": "2026-08-31T10:07:26.051Z",
+      "deleted": false,
+      "text": "meter91: “networkKey”: string I would recommend to remove the network key from your post, AFAIK this can be used to access your Zigbee network.",
+      "imgs": [],
+      "uuids": [],
+      "mfrs": [],
+      "pids": []
+    },
+    {
+      "n": 2215,
+      "user": "meter91",
+      "created": "2026-08-31T10:24:07.130Z",
+      "deleted": false,
+      "text": "thanks!",
+      "imgs": [],
+      "uuids": [],
+      "mfrs": [],
+      "pids": []
+    },
+    {
+      "n": 2216,
+      "user": "VicHY",
+      "created": "2026-08-31T14:15:53.315Z",
+      "deleted": false,
+      "text": "What type of device is it? I’ve searched for “PIR mmWave,” but it still recognizes it as generic. Thanks a lot.",
+      "imgs": [],
+      "uuids": [],
+      "mfrs": [],
+      "pids": []
+    },
+    {
+      "n": 2217,
+      "user": "VicHY",
+      "created": "2026-08-31T14:52:34.827Z",
+      "deleted": false,
+      "text": "Thanks i clear de app and reinstall and the sensor was detected. I think that have all the options Thanks!",
+      "imgs": [],
+      "uuids": [],
+      "mfrs": [],
+      "pids": []
+    },
+    {
+      "n": 2218,
+      "user": "Joep_Vullings",
+      "created": "2026-08-31T20:00:28.510Z",
+      "deleted": false,
+      "text": "I tried to repair my two way Irrigation Valve, but it wasn’t recognized. It paired as unknown Zigbee device. Could you look into it?",
+      "imgs": [],
+      "uuids": [],
+      "mfrs": [],
+      "pids": []
+    },
+    {
+      "n": 2219,
+      "user": "VicHY",
+      "created": "2026-09-01T14:04:00.634Z",
+      "deleted": false,
+      "text": "Following today's update, the sensor recognizes more data, but its type has changed to \"curtain,\" and a button for adjusting the opening range appears instead of a simple on/off switch. Also, the sensors seem to be performing worse; they keep detecting presence even when there isn't any. What could be happening? Thanks.",
+      "imgs": [],
+      "uuids": [],
+      "mfrs": [],
+      "pids": []
+    },
+    {
+      "n": 2220,
+      "user": "Peter_van_Werkhoven",
+      "created": "2026-09-01T16:43:47.889Z",
+      "deleted": false,
+      "text": "Hi Dylan Good evening, I deleted the Smartbutton again and restarted Homey, re-added the Smartbutton again but still no response from it. 1000045748 1220×2712 205 KB 1000045749 1220×2712 54.3 KB Diagnostic code cfbf687f-fcce-4cbe-b5ea-d7d245e6eee6 The Waterdetector sensor is fine now, no more errors that it needs another driver. Good luck and thanks again and have a nice evening. Regards Peter.",
+      "imgs": [
+        "https://us1.discourse-cdn.com/flex025/uploads/athom/original/3X/6/d/6d3ff38b1399628bec9fc8a77bcfb8e64da7b66c.jpeg",
+        "https://us1.discourse-cdn.com/flex025/uploads/athom/original/3X/5/4/54272ca947341ab8c30f86ee4419aeec57777699.jpeg"
+      ],
+      "uuids": [
+        "cfbf687f-fcce-4cbe-b5ea-d7d245e6eee6"
+      ],
+      "mfrs": [],
+      "pids": []
+    },
+    {
+      "n": 2221,
+      "user": "PresentSky",
+      "created": "2026-09-01T20:11:28.101Z",
+      "deleted": false,
+      "text": "Hi @dlnraja , Could you please check this as well? Updated diagnostic ID and interview data have been provided. Thanks in advance!",
+      "imgs": [],
+      "uuids": [],
+      "mfrs": [],
+      "pids": []
+    },
+    {
+      "n": 2222,
+      "user": "VicHY",
+      "created": "2026-09-02T10:54:34.231Z",
+      "deleted": false,
+      "text": "Hi @dlnraja I’ve noticed that if I delete the presence sensor and reconnect it, it works fine, but after a while (it seems to coincide roughly with updates), it switches to “blind mode” and goes haywire, continuously detecting presence and movement. Do you know what might be causing this? I’m also getting this notification on the timeline for both sensors (I have two installed in different rooms). image 1006×314 70 KB Thanks!",
+      "imgs": [
+        "https://us1.discourse-cdn.com/flex025/uploads/athom/original/3X/4/f/4f5cf0c71ada2024da9e5922c03c0e928dc6853e.jpeg"
+      ],
+      "uuids": [],
+      "mfrs": [],
+      "pids": []
+    },
+    {
+      "n": 2223,
+      "user": "dlnraja",
+      "created": "2026-09-02T11:26:12.053Z",
+      "deleted": false,
+      "text": "VicHY: Hi @dlnraja I’ve noticed that if I delete the presence sensor and reconnect it, it works fine, but after a while (it seems to coincide roughly with updates), it switches to “blind mode” and goes haywire, continuously detecting presence and movement. Do you know what might be causing this? I’m also getting this notification on the timeline for both sensors (I have two installed in different rooms). please share : The exact Manufacturer ID &amp; Model ID from Developer Tools (Zigbee tab). What the timeline notification says verbatim (e.g., what capability or warning it shows). An app diag",
+      "imgs": [],
+      "uuids": [],
+      "mfrs": [],
+      "pids": []
+    },
+    {
+      "n": 2224,
+      "user": "VicHY",
+      "created": "2026-09-02T12:47:18.300Z",
+      "deleted": false,
+      "text": "Manufacter ID: _TZE204_clrdrnya Model ID: TS0601 This is the timeline in spanish. Update-&gt;low baterry-&gt;Flood zigbee netwrk-&gt; Low batery image 479×767 79.8 KB Report Code: 0e28d470-c67e-4876-9d19-75f816abc7bb Sorry for my english.. Thanks!",
+      "imgs": [
+        "https://us1.discourse-cdn.com/flex025/uploads/athom/original/3X/d/9/d996d0a2b4152653055f414e6d7f78e6aede2d84.jpeg"
+      ],
+      "uuids": [
+        "0e28d470-c67e-4876-9d19-75f816abc7bb"
+      ],
+      "mfrs": [
+        "_TZE204_clrdrnya"
+      ],
+      "pids": [
+        "TS0601"
+      ]
+    },
+    {
+      "n": 2225,
+      "user": "dlnraja",
+      "created": "2026-09-02T13:52:27.248Z",
+      "deleted": false,
+      "text": "Hi VicHY — thanks for the detailed report, that helped a lot. I found the cause on the clrdrnya mmWave radars. After an app update, some radar setting DPs (sensitivity, range, delay) were being restored as curtain/blind capabilities from stored data. That’s the “blind mode” UI, and one of those DPs was also feeding motion, which explains the stuck presence. Delete + re-pair works until the next update because it clears that stored state temporarily. Fix is in Test 9.0.790+: phantom caps are stripped automatically and DynCap no longer re-applies them on update. Please update, restart the app, a",
+      "imgs": [],
+      "uuids": [],
+      "mfrs": [],
+      "pids": []
+    },
+    {
+      "n": 2226,
+      "user": "VicHY",
+      "created": "2026-09-02T14:27:42.691Z",
+      "deleted": false,
+      "text": "Thanks a lot for the quick response and the explanations. I’ll give it a try and let you know. Regards.",
+      "imgs": [],
+      "uuids": [],
+      "mfrs": [],
+      "pids": []
+    },
+    {
+      "n": 2227,
+      "user": "VicHY",
+      "created": "2026-09-02T21:47:08.011Z",
+      "deleted": false,
+      "text": "Hi @dlnraja I had version 9.0.791 installed, and it was working correctly as a mmWave PIR sensor; however, after the version updated, the sensor switched to “curtain” mode and stopped working again. If I delete and reinstall it, it works correctly. The Zigbee network saturation warning no longer appears, but the battery warning persists (even though they don’t use batteries; they are connected to 220V). Here is the report number (c5165a37-2208-47a8-baaf-7a4190c4f97a). Thank you very much. 121748 1080×617 137 KB",
+      "imgs": [
+        "https://us1.discourse-cdn.com/flex025/uploads/athom/original/3X/6/b/6be1013b889c64e5ffa2787d005fc048dba2ff14.jpeg"
+      ],
+      "uuids": [
+        "c5165a37-2208-47a8-baaf-7a4190c4f97a"
+      ],
+      "mfrs": [],
+      "pids": []
+    },
+    {
+      "n": 2228,
+      "user": "Eduard_Martirosyan",
+      "created": "2026-09-05T05:06:01.883Z",
+      "deleted": false,
+      "text": "Hi @dlnraja , Thanks a lot for your work on this app. I have a tubular roller blind motor with a built-in Tuya Zigbee receiver that is not recognised. It pairs fine but always ends up as “Unknown Zigbee Device” — tried Curtain Motor Shutter, Cover Controller, Curtain Motor Wall and 2 Gang Curtain Module on v9.0.809, same result every time. Fingerprint manufacturerName: _TZE284_fodv6bkr modelId: TS0601 appVersion: 67, hwVersion: 1, zclVersion: 3 powerSource: battery, deviceType: enddevice, receiveWhenIdle: false (sleepy device) endpoint 1, profileId 260, deviceId 81 inputClusters: [0, 4, 5, 611",
+      "imgs": [],
+      "uuids": [],
+      "mfrs": [
+        "_TZE284_fodv6bkr",
+        "_TZE284_libht6ua",
+        "_TZE284_fodv6bkr",
+        "_TZE284_fodv6bkr",
+        "_TZE284_fodv6bkr"
+      ],
+      "pids": [
+        "TS0601",
+        "TS0601",
+        "TS0601",
+        "TS0601"
+      ]
+    },
+    {
+      "n": 2229,
+      "user": "MIAMO_NISU",
+      "created": "2026-09-06T05:40:14.694Z",
+      "deleted": false,
+      "text": "Hi Dylan, I have a MOES ZC-LS / AM43 blind motor that is not working with Universal Tuya. Diagnostic code: 1fa26737-2acf-4255-b07d-2f7b65083da5 Manufacturer ID: _TZE200_icka1clh Product ID: TS0601 The device pairs correctly, but opening/closing does nothing and Homey returns UNSUPPORTED_CLUSTER. Device type: enddevice Receive when idle: false Could you please check the diagnostic and add/fix the driver/fingerprint for this AM43 blind motor? Thanks!",
+      "imgs": [],
+      "uuids": [
+        "1fa26737-2acf-4255-b07d-2f7b65083da5"
+      ],
+      "mfrs": [
+        "_TZE200_icka1clh"
+      ],
+      "pids": [
+        "TS0601"
+      ]
+    },
+    {
+      "n": 2230,
+      "user": "Peter_van_Werkhoven",
+      "created": "2026-09-06T18:54:15.779Z",
+      "deleted": false,
+      "text": "Hi Dylan Good evening, the Smartbutton is responding now but not very consistent, connected lights are switching on and off or flickering or staying on at 1 Click and dubbele click the first and the second light are switched on or flickering, hold the button is like disco sometimes al the 3 lights are flickering and light 1 stays on, so really weird behavior. Diagnostic code 048cff91-d453-4659-ae1c-fe94bf4bc50d 1000046057 1220×2712 190 KB 1000046055 1220×2712 78.8 KB 1000046056 1220×2712 127 KB And no battery reading. Thanks again so far and have a nice evening. Best regards Peter.",
+      "imgs": [
+        "https://us1.discourse-cdn.com/flex025/uploads/athom/original/3X/b/e/be75387adde54d667a3d101e07797af9a0959f98.jpeg",
+        "https://us1.discourse-cdn.com/flex025/uploads/athom/original/3X/9/9/99fb2750ba894f6f775e61cbc4a8496fb27e3c9a.jpeg",
+        "https://us1.discourse-cdn.com/flex025/uploads/athom/original/3X/4/6/4608a2b07b78a1de24d19a624448b90e11a5608e.jpeg"
+      ],
+      "uuids": [
+        "048cff91-d453-4659-ae1c-fe94bf4bc50d"
+      ],
+      "mfrs": [],
+      "pids": []
+    },
+    {
+      "n": 2232,
+      "user": "VicHY",
+      "created": "2026-09-11T07:40:26.170Z",
+      "deleted": false,
+      "text": "Helo @dlnraja , can you see that? I don’t think I’ve seen anything about that in the new versions. Thank you very much!",
+      "imgs": [],
+      "uuids": [],
+      "mfrs": [],
+      "pids": []
+    },
+    {
+      "n": 2233,
+      "user": "Peter_van_Werkhoven",
+      "created": "2026-09-11T21:11:37.727Z",
+      "deleted": false,
+      "text": "Hi Dylan Good evening, after update to your latest app and reading the changelog where you wrote that you’ve changed things to the Smartbutton I’ve tried to reinstall it after Homey restart but no luck, totally no response and still no battery reading. 1000046236 1220×2712 201 KB 1000046237 1220×2712 59.8 KB And as you see in the screenshot there is never a history tab where you can see the activities. Diagnostic code 8afffc76-a36c-4588-9714-4e196c50aab3 Thanks so far and good luck with best regards Peter.",
+      "imgs": [
+        "https://us1.discourse-cdn.com/flex025/uploads/athom/original/3X/e/2/e2bddc21220bee1c93c074faa7002c242147667a.jpeg",
+        "https://us1.discourse-cdn.com/flex025/uploads/athom/original/3X/0/5/05199bca2d4e4e2521e38fec4bfe898a49026393.jpeg"
+      ],
+      "uuids": [
+        "8afffc76-a36c-4588-9714-4e196c50aab3"
+      ],
+      "mfrs": [],
+      "pids": []
+    },
+    {
+      "n": 2234,
+      "user": "Peter_van_Werkhoven",
+      "created": "2026-09-12T07:37:17.868Z",
+      "deleted": false,
+      "text": "Hi Dylan Good morning and great job again Smartbutton is responding and switching normally now 1, 2 click’s and hold works well switching the lights on or off Only no battery reading yet and still no History tab there. App version 9.0.881 Diagnostic code 1e071a86-093b-4d47-8af0-ce2ff5a19680 1000046252 1220×2712 58.3 KB Thanks and have a great day, best regards Peter.",
+      "imgs": [
+        "https://us1.discourse-cdn.com/flex025/uploads/athom/original/3X/6/2/622c6cad26fd09181acbecb9f30185865653e087.jpeg"
+      ],
+      "uuids": [
+        "1e071a86-093b-4d47-8af0-ce2ff5a19680"
+      ],
+      "mfrs": [],
+      "pids": []
+    },
+    {
+      "n": 2235,
+      "user": "Peter_van_Werkhoven",
+      "created": "2026-09-12T15:29:06.065Z",
+      "deleted": false,
+      "text": "Hi Dylan Good afternoon, after the new update app keeps crashing. Diagnostic code 375def7f-d73b-4078-9e87-3ff28e578805 1000046263 1220×2712 229 KB Good luck Have a nice day, Peter.",
+      "imgs": [
+        "https://us1.discourse-cdn.com/flex025/uploads/athom/original/3X/4/5/45b19148c86376a36d8fe0ef59c9fcf0eeec8b29.jpeg"
+      ],
+      "uuids": [
+        "375def7f-d73b-4078-9e87-3ff28e578805"
+      ],
+      "mfrs": [],
+      "pids": []
+    }
+  ]
+}

@@ -3213,6 +3213,9 @@
   "9.0.899": {
     "en": "Athom republish of crash soft-fail + smart knob flow restore (retry after socket hang up)."
   },
+  "9.0.903": {
+    "en": "Improved crash resilience for Homey Pro 2026 serializer class IDs. Presence radar support hardening for ceiling mmWave sensors."
+  },
   "9.0.901": {
     "en": "Crash harden: preempt soft-fail Homey class driver IDs (motionsensor) before Homey throws."
   }
