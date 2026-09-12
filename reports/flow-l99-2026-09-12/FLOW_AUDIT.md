@@ -51,7 +51,7 @@ Cards with orphan tokens (declared but not used in args/title): 0
 
 ```
 {
-  "generatedAt": "2026-09-12T06:29:05.208Z",
+  "generatedAt": "2026-09-12T16:31:30.490Z",
   "mode": "dry-run",
   "driversTouched": 1,
   "orphanTokensFixed": 0,
