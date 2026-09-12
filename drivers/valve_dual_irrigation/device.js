@@ -1,17 +1,31 @@
 'use strict';
 
 const BaseUnifiedDevice = require('../../lib/devices/BaseUnifiedDevice');
+const {
+  forcePureTuyaDp,
+  sendEf00DpMaxFallback,
+  isKnownEf00OnlyManufacturer,
+} = require('../../lib/zigbee/Ef00OnlyInterview');
 
 /**
- * 
- *       DUAL IRRIGATION VALVE - Unified Engine Protocol                         
- * 
- *   Supports: _TZE284_fhvpaltk, _TZE284_eaet5qt5 (Insoma Two-Way)                
- *   DPs: 1=V1 ON/OFF, 2=V2 ON/OFF, 13=Countdown1, 14=Countdown2,                 
- *        25=Duration1, 26=Duration2, 59=Battery, 104=Status1, 105=Status2        
- * 
+ *
+ *       DUAL IRRIGATION VALVE - Unified Engine Protocol
+ *
+ *   Supports: _TZE284_fhvpaltk, _TZE284_eaet5qt5 (Insoma Two-Way)
+ *   Interview: [0,4,5,61184] EF00-only — never require OnOff(6) (Joep #2218 / P2468/P2473)
+ *   DPs: 1=V1 ON/OFF, 2=V2 ON/OFF, 13=Countdown1, 14=Countdown2,
+ *        25=Duration1, 26=Duration2, 59=Battery, 104=Status1, 105=Status2
+ *   TX: max EF00/raw fallback cascade (same class as Moes ZTS P2467)
+ *
  */
 class ValveDualIrrigationDevice extends BaseUnifiedDevice {
+
+  _isInsomaEf00Only() {
+    const mfr = this.getSetting?.('zb_manufacturer_name')
+      || this.getData?.()?.manufacturerName
+      || '';
+    return isKnownEf00OnlyManufacturer(mfr) || /fhvpaltk|eaet5qt5/i.test(String(mfr));
+  }
 
   _isValveOn(value) {
     if (typeof value === 'boolean') {return value;}
@@ -131,7 +145,25 @@ class ValveDualIrrigationDevice extends BaseUnifiedDevice {
   }
 
   async onNodeInit({ zclNode }) {
+    // WHY(P2473 / Joep #2218): interview [0,4,5,61184] — force pure EF00 before hybrid
+    // can prefer hollow OnOff(6) and leave TX dead / pairing Unknown.
+    if (this._isInsomaEf00Only()) {
+      forcePureTuyaDp(this, { force: true });
+      this.log('[VALVE-2] P2473 EF00-only interview — pure Tuya DP (no ZCL OnOff)');
+    }
+
     await super.onNodeInit({ zclNode });
+
+    // Re-arm EF00 BoundCluster + raw listen (Moes P2467: create ≠ initialize)
+    try {
+      const mgr = this.tuyaEF00Manager || this._tuyaEF00Manager;
+      if (mgr && zclNode && typeof mgr.initialize === 'function') {
+        await mgr.initialize(zclNode);
+        this.log('[VALVE-2] P2473 TuyaEF00Manager.initialize(zclNode) armed');
+      }
+    } catch (e) {
+      this.log('[VALVE-2] P2473 EF00 initialize soft:', e.message);
+    }
 
     // BaseUnifiedDevice owns the EF00 manager, but it does not consume a
     // child driver's dpMappings. Subscribe explicitly so reports update the
@@ -169,7 +201,7 @@ class ValveDualIrrigationDevice extends BaseUnifiedDevice {
       });
     }
 
-    this.log('[VALVE-2]  Ready (Dual Engine v7.4.4)');
+    this.log('[VALVE-2]  Ready (Dual Engine v7.4.4 + P2473 EF00 max fallback)');
   }
 
   async _sendValveDP(dp, capability, value) {
@@ -195,37 +227,14 @@ class ValveDualIrrigationDevice extends BaseUnifiedDevice {
     return true;
   }
 
-  // Override sendDP to keep dual-valve actions working across manager variants.
+  // WHY(P2473): max EF00/raw/PFC cascade — never depend on ZCL OnOff(6)
   async sendDP(dp, value, type = 'bool') {
-    const manager = this.tuyaEF00Manager || this._tuyaEF00Manager;
-
-    if (manager) {
-      if (typeof manager.sendDP === 'function') {
-        return manager.sendDP(dp, value, type, { retries: 1, timeout: 2500, expectEcho: false });
-      }
-      if (typeof manager.sendDPWithConfirmation === 'function') {
-        const result = await manager.sendDPWithConfirmation(dp, value, type, { retries: 1, timeout: 2500, expectEcho: false });
-        if (result?.success) {return true;}
-      } else if (typeof manager._sendDPRaw === 'function') {
-        const sent = await manager._sendDPRaw(dp, value, type);
-        if (sent) {return true;}
-      }
-      if (typeof manager.sendTuyaDP === 'function') {
-        const sent = await manager.sendTuyaDP(dp, this._toTuyaDPType(type), value);
-        if (sent) {return true;}
-      }
+    try {
+      return await sendEf00DpMaxFallback(this, dp, value, type);
+    } catch (err) {
+      this.error('[VALVE-2] P2473 max fallback exhausted:', err.message, err.attempts || []);
+      throw err;
     }
-
-    if (typeof this._sendTuyaDP === 'function') {
-      return this._sendTuyaDP(dp, value, type);
-    }
-
-    if (typeof this.sendTuyaCommand === 'function') {
-      return this.sendTuyaCommand(dp, value, type);
-    }
-
-    this.error('[VALVE-2] Error: no Tuya DP sender available');
-    throw new Error('tuya_dp_sender_not_found');
   }
 
   /**
