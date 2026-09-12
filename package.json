@@ -303,7 +303,7 @@
     "check:p2469": "node --test test/critical/p2469-unit-test-anti-regression-mandate.test.js",
     "check:p2470": "node --test test/critical/p2470-peter-8afffc76-smartbutton-battery.test.js",
     "check:p2472a": "node --test test/critical/p2472a-vichy-compose-no-battery-energy.test.js",
-    "check:p246x": "node --test test/critical/p2467-moes-ef00-initialize.test.js test/critical/p2468-joep-frankever-vichy.test.js test/critical/p2469-unit-test-anti-regression-mandate.test.js test/critical/p2470-peter-8afffc76-smartbutton-battery.test.js test/critical/p2472a-vichy-compose-no-battery-energy.test.js test/critical/p2473-ef00-only-interview-max-fallback.test.js",
+    "check:p246x": "node --test test/critical/p2467-moes-ef00-initialize.test.js test/critical/p2468-joep-frankever-vichy.test.js test/critical/p2469-unit-test-anti-regression-mandate.test.js test/critical/p2470-peter-8afffc76-smartbutton-battery.test.js test/critical/p2472a-vichy-compose-no-battery-energy.test.js test/critical/p2473-ef00-only-interview-max-fallback.test.js test/critical/p139-wait-athom-draft.test.js",
     "check:lock": "node tools/ci/sync-root-package-version.js assert",
     "harvest:all:apply": "node tools/ci/harvest-all-sources.js --apply",
     "enrich:fleet": "node tools/ci/fleet-intelligent-enrich.js",
@@ -318,7 +318,9 @@
     "fix:appjson-flow-dedupe": "node tools/ci/sync-appjson-flow-dedupe.js --apply",
     "scrape:budget": "node tools/ci/free-scrape-budget.js --report",
     "scrape:budget:preflight": "node tools/ci/free-scrape-budget.js --preflight",
-    "check:p2473": "node --test test/critical/p2473-ef00-only-interview-max-fallback.test.js"
+    "check:p2473": "node --test test/critical/p2473-ef00-only-interview-max-fallback.test.js",
+    "check:p139": "node --test test/critical/p139-wait-athom-draft.test.js",
+    "check:p2474": "node --test test/critical/p139-wait-athom-draft.test.js"
   },
   "keywords": [
     "homey",
