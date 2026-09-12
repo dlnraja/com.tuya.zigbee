@@ -7,6 +7,13 @@
 
 ---
 
+## v5.12.172 (2026-09-12)
+
+### Fixed
+- **P2478 Moes ZTS**: mid-slider DP2-only; soft-fail timeout; deferred settings sync.
+
+---
+
 ## v5.12.170 (2026-09-12)
 
 ### Fixed
