@@ -33,12 +33,12 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 
 | Metric | Value |
 |--------|-------|
-| **App Version** | v9.0.896 |
+| **App Version** | v9.0.899 |
 | **Drivers** | 431 (381 Zigbee + 50 WiFi) |
 | **Unique Fingerprints** | 4,401 |
 | **Pairing Variants** | 17,046 (4 case combos per fingerprint) |
 | **Unique Product IDs** | 592 |
-| **Flow Cards** | 5,962 |
+| **Flow Cards** | 5,970 |
 | **Unique Capabilities** | 170 |
 | **Native OTA Drivers** | 9 |
 | **Test Suites** | 288 files |
@@ -102,6 +102,8 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 
 | Version | Changes |
 |---------|---------|
+| **v9.0.899** | Athom republish of crash soft-fail + smart knob flow restore (retry after socket hang up). |
+| **v9.0.897** | Restored smart knob rotate/brightness flows; harvest no longer wipes rotary UX (publish unblock). |
 | **v9.0.896** | Crash fix: soft-fail Driver Not Initialized motionsensor (Homey Pro 2026). |
 | **v9.0.894** | Unblock publish: smart_knob flow cards + rkgngb5o CCT couple lock. |
 | **v9.0.893** | Moes curtain mid-% position + soft timeout + settings UI (Salvagr #533). |
@@ -112,8 +114,6 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 | **v9.0.888** | Fixed Smartbutton battery UI (no more ?) and skipped ZCL battery storm on SH-SC07. |
 | **v9.0.887** | Insoma dual irrigation pairing clusters; FrankEver FK_V02 DPs; VicHY mains radar re-heal. |
 | **v9.0.886** | Moes ZTS curtain: force mains (skip battery wake ping) + EF00-only TX (#533). |
-| **v9.0.885** | Moes ZTS curtain (#533): EF00 manager init + mcuSyncTime so open/close and position reports work. |
-| **v9.0.883** | mfs_db Star Feather/FrankEver/Cleverio align; IAS WD 0x0502 lexicon (siren flows). |
 
 <!-- CHANGELOG_END -->
 
