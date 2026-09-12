@@ -4,6 +4,12 @@ All notable changes to the **Tuya Unified Zigbee** app for Homey Pro.
 
 ---
 
+## v9.0.899 (2026-09-12)
+
+### Fixed
+- **Athom republish**: P2480 motionsensor crash soft-fail + P2480b smart_knob flow restore after #3169 `processing_failed` (socket hang up). Test was still on 9.0.895.
+
+---
 ## v9.0.897 (2026-09-12)
 
 ### Fixed
