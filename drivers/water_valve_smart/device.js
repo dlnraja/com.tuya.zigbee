@@ -4,9 +4,14 @@ const VirtualButtonMixin = require('../../lib/mixins/VirtualButtonMixin');
 const UnifiedPlugBase = require('../../lib/devices/UnifiedPlugBase');
 const PhysicalButtonMixin = require('../../lib/mixins/PhysicalButtonMixin');
 const { containsCI } = require('../../lib/utils/CaseInsensitiveMatcher');
+const {
+  forcePureTuyaDp,
+  sendEf00DpMaxFallback,
+} = require('../../lib/zigbee/Ef00OnlyInterview');
 
 const GARDEN_TIMER_MFRS = ['_tze200_sh1btabb', '_tze200_fphxkxue', '_tze204_sh1btabb', '_tze204_fphxkxue'];
-// WHY(P2464/P2468): FrankEver FK family — Z2M splits FK_V02 vs FK-BV05 DP maps
+// WHY(P2464/P2468/P2473): FrankEver FK family — Z2M splits FK_V02 vs FK-BV05 DP maps
+// Interview is EF00-only [0,4,5,61184] — compose must NOT require OnOff(6).
 const FRANKEVER_FK_V02_MFRS = [
   '_tze200_wt9agwf3', '_tze200_5uodvhgc', '_tze200_1n2zev06',
 ];
@@ -120,9 +125,23 @@ class WaterValveSmartDevice extends PhysicalButtonMixin(VirtualButtonMixin(Unifi
   }
 
   async onNodeInit({ zclNode }) {
-    await this._safeInvoke(async () => { // v9.7.3: Initialization is orchestrated by the mixin hierarchy.
-      // Handles battery reporting, physical button detection, and relay logic.
-      await super.onNodeInit({ zclNode  });
+    await this._safeInvoke(async () => {
+      // WHY(P2473 / FrankEver Gmail): same Unknown trap as Joep/Moes — force EF00
+      // before UnifiedPlugBase hybrid prefers hollow genOnOff.
+      if (this.isFrankeverValve) {
+        forcePureTuyaDp(this, { force: true });
+        this.log('[WATER-VALVE] P2473 FrankEver EF00-only — pure Tuya DP (no ZCL OnOff)');
+      }
+      await super.onNodeInit({ zclNode });
+      try {
+        const mgr = this.tuyaEF00Manager || this._tuyaEF00Manager;
+        if (this.isFrankeverValve && mgr && zclNode && typeof mgr.initialize === 'function') {
+          await mgr.initialize(zclNode);
+          this.log('[WATER-VALVE] P2473 TuyaEF00Manager.initialize armed');
+        }
+      } catch (e) {
+        this.log('[WATER-VALVE] P2473 EF00 initialize soft:', e.message);
+      }
       await this.initVirtualButtons();
       // Ensure capabilities exist
       if (!this.hasCapability('meter_water')) {await this.addCapability('meter_water').catch (() => { });}
@@ -131,6 +150,21 @@ class WaterValveSmartDevice extends PhysicalButtonMixin(VirtualButtonMixin(Unifi
       if (this.hasCapability('alarm_motion')) {await this.removeCapability('alarm_motion').catch(() => {});}
       this.log(`[WATER-VALVE] ✅ v9.7.3 Ready (${this.isFrankeverFkBv05 ? 'FRANKEVER-FK-BV05' : this.isFrankeverFkV02 ? 'FRANKEVER-FK-V02' : this.isGardenTimer ? 'GARDEN' : 'METERED'})`);
     }, 'onNodeInit');
+  }
+
+  /**
+   * WHY(P2473): FrankEver TX must use max EF00/raw cascade — never ZCL OnOff(6).
+   */
+  async _setOnOff(value) {
+    if (this.isFrankeverValve) {
+      this.log(`[WATER-VALVE] P2473 FrankEver EF00 max TX onoff=${value}`);
+      await sendEf00DpMaxFallback(this, 1, Boolean(value), 'bool');
+      return true;
+    }
+    if (typeof super._setOnOff === 'function') {
+      return super._setOnOff(value);
+    }
+    return false;
   }
 
   /**

@@ -4,6 +4,7 @@ Generated 2026-09-08T07:29:59.472Z from registry (201 cases) × compound DB (454
 
 ## Live locks (2026-09-12)
 
+- **P2473** Joep Insoma / FrankEver / Moes class: interview `[0,4,5,61184]` — compose must never require OnOff **6** (Unknown). TX/RX: `lib/zigbee/Ef00OnlyInterview.js` max EF00+raw+PFC cascade. Tip **≥9.0.890**.
 - **P2472a** VicHY clrdrnya 220V: compose `measure_battery`/`energy.batteries` on hybrid `presence_sensor_radar` re-poisoned Homey Energy after tip update. Removed from compose/`app.json`; mains `setEnergy({batteries:null,mains:true})` + 30min re-heal; battery HOBEIAN opt-in at runtime. Tip **≥9.0.889**.
 - **P2470** Peter #2233 / diag `8afffc76` @ 9.0.882: `_TZ3000_mrpevh8p`+`TS0041` → `button_wireless_1`. Battery UI `?` = store 100% then THROTTLE `duplicate_value` + ZCL configure/read storm. Tip **≥9.0.888**; press once. OCR: Insights exists but empty until paint; no separate “activity history” for `class: button`.
 - **P2469** Unit-test anti-régression always-on — every behavior fix ships `test/critical/pNNNN-*.test.js` + `npm run check:pNNNN` / `check:p246x`.

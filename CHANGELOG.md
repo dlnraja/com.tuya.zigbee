@@ -4,6 +4,13 @@ All notable changes to the **Tuya Unified Zigbee** app for Homey Pro.
 
 ---
 
+## v9.0.890 (2026-09-12)
+
+### Fixed
+- **P2473 EF00-only interview (Joep/FrankEver/Moes class)**: `water_valve_smart` compose dropped forced OnOff cluster `6` — interview is `[0,4,5,61184]` only (same Unknown pairing as Moes ZTS). Insoma `valve_dual_irrigation` already matched; both drivers now force pure Tuya DP + max EF00 TX cascade (manager → raw → UniversalDPSender → ProtocolFallbackChain). Helper: `lib/zigbee/Ef00OnlyInterview.js`. VicHY stays P2472a (mains Energy). Tip ≥9.0.890 + re-pair valves.
+
+---
+
 ## v9.0.889 (2026-09-12)
 
 ### Fixed
