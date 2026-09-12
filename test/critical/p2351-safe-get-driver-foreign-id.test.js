@@ -29,6 +29,18 @@ describe('P2351/P2373 safe-get-driver soft-fail', () => {
     assert.equal(shouldSoftFail('sensor', new Error('Invalid Driver ID: sensor')), true);
   });
 
+  // WHY(P2480): Homey Pro 2026 crash mail — motionsensor (9.0.891 / 9.0.895)
+  it('soft-fails motionsensor Driver Not Initialized (P2480)', () => {
+    assert.equal(
+      shouldSoftFail('motionsensor', new Error('Driver Not Initialized: motionsensor')),
+      true,
+    );
+    assert.equal(
+      shouldSoftFail('motionsensor', new Error('Invalid Driver ID: motionsensor')),
+      true,
+    );
+  });
+
   it('wraps getDriver and _getDriverManifest to return null', () => {
     const fake = {
       getDriver(id) {
@@ -42,6 +54,20 @@ describe('P2351/P2373 safe-get-driver soft-fail', () => {
     assert.equal(fake.getDriver('ZG9101SAC_HP'), null);
     assert.equal(fake._getDriverManifest('light'), null);
     assert.equal(fake.__p2351SafeGetDriver, true);
+  });
+
+  it('wraps Driver Not Initialized for motionsensor (P2480)', () => {
+    const fake = {
+      getDriver(id) {
+        throw new Error(`Driver Not Initialized: ${id}`);
+      },
+      _getDriverManifest(id) {
+        throw new Error(`Driver Not Initialized: ${id}`);
+      },
+    };
+    assert.equal(installSafeGetDriver(fake, null, { force: true }), true);
+    assert.equal(fake.getDriver('motionsensor'), null);
+    assert.equal(fake._getDriverManifest('motionsensor'), null);
   });
 
   it('app.js loads safe-get-driver-patch after Homey require', () => {
