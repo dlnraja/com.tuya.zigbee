@@ -4,6 +4,13 @@ All notable changes to the **Tuya Unified Zigbee** app for Homey Pro.
 
 ---
 
+## v9.0.896 (2026-09-12)
+
+### Fixed
+- **P2480 crash**: HomeySerializer `Driver Not Initialized: motionsensor` / `Invalid Driver ID: motionsensor` soft-fail (Homey Pro 2026, tips 9.0.891/895). Moes curtain fewer DP retries.
+
+---
+
 ## v9.0.894 (2026-09-12)
 
 ### Fixed

@@ -3203,5 +3203,8 @@
   },
   "9.0.894": {
     "en": "Unblock publish: smart_knob flow cards + rkgngb5o CCT couple lock."
+  },
+  "9.0.896": {
+    "en": "Crash fix: soft-fail Driver Not Initialized motionsensor (Homey Pro 2026)."
   }
 }
