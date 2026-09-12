@@ -22,6 +22,19 @@
 
 Catalog: **431** drivers, **201** locked community cases.
 
+## Live tip / fleet (manual enrich 2026-09-12 — not generated)
+
+| Item | Truth |
+|------|--------|
+| Master tip | **9.0.889+** (`com.dlnraja.tuya.zigbee`) |
+| Highest T140352 | **#2233** Peter Smartbutton OCR @ 9.0.882 → P2470 |
+| Silent report | `reports/forum-l99-2026-09-12/FLEET_L99.md` |
+| Publish vs post | Publish = Homey Test; **never** auto-post forum (T157628) |
+| P2468–P2472a | Joep Insoma · VicHY compose Energy strip · Peter battery · Moes P2467 · P2469 tests |
+| NEED_INTERVIEW | Peter SOS/Raam/Water ABSENT · FrankEver Gmail (no invent pid) |
+
+Regenerate full table: `node tools/ci/build-device-truth.js` then `node tools/ci/investigate-device-peculiarities.js`.
+
 ## Locked couples (canonical, 1 by 1)
 
 | Case | Driver | Couple | Forbidden | Protocol |
