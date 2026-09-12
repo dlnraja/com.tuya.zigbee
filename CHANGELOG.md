@@ -1,5 +1,12 @@
 # Changelog
 
+## v5.12.169 (2026-09-12)
+
+### Fixed
+- **P2473 EF00-only interview**: valve drivers match interview `[0,4,5,61184]` (no OnOff 6); max EF00/raw DP TX cascade.
+
+---
+
 All notable changes to the **Tuya Unified Zigbee** app for Homey Pro.
 
 ---

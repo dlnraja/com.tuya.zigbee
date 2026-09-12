@@ -1545,5 +1545,8 @@
   },
   "5.12.168": {
     "en": "Fixed mains presence radar Homey Energy battery warning (compose no longer ships phantom batteries)."
+  },
+  "5.12.169": {
+    "en": "Improved EF00-only valve pairing (no forced OnOff cluster) and smarter DP transmit fallback."
   }
 }
