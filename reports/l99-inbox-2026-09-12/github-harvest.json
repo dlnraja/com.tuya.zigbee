@@ -1,10 +1,46 @@
 {
-  "harvestedAt": "2026-09-12T07:24:14.868Z",
+  "harvestedAt": "2026-09-12T13:47:06.546Z",
   "repo": "dlnraja/com.tuya.zigbee",
   "auth": "token",
   "error": null,
-  "issues": [],
+  "issues": [
+    {
+      "number": 547,
+      "title": "Tuya Zigbee device Radar Sensor: pairing OK but having no function",
+      "labels": [
+        "enhancement",
+        "device-request"
+      ],
+      "updatedAt": "2026-09-12T13:26:53Z",
+      "user": "HiepSVG",
+      "htmlUrl": "https://github.com/dlnraja/com.tuya.zigbee/issues/547",
+      "bodySnippet": "## 📱 Basic Information\n\n\nhttps://www.aliexpress.com/item/1005007575802295.html\n Tuya WiFi /Zigbee 24G Human Presence Sensor Smart Human Body PIR Sensor Radar Detector Microwave Motion Sensors Home Automation\n---\n\n## 🔍 Zigbee Fingerprint (MANDATORY)\n\nPlease provide this informat"
+    },
+    {
+      "number": 533,
+      "title": "Device Request - [SMART ZIGBEE CURTAIN SWITCH] - [MOES]",
+      "labels": [
+        "bug",
+        "enhancement",
+        "device-request",
+        "fingerprint",
+        "new-fingerprint",
+        "device_request",
+        "reopened-by-user",
+        "MOES",
+        "pairing",
+        "needs-maintainer",
+        "smart_zigbee",
+        "curtain_switch",
+        "SMART ZIGBEE CURTAIN SWITCH - MOES"
+      ],
+      "updatedAt": "2026-09-12T12:49:15Z",
+      "user": "salvagr",
+      "htmlUrl": "https://github.com/dlnraja/com.tuya.zigbee/issues/533",
+      "bodySnippet": "Thank you for your support.\n\n## 📱 Basic Information\n\n**Brand & Model**: SMART ZIGBEE CURTAIN SWITCH - MOES\n**Purchase Link**: https://es.aliexpress.com/item/1005008356152992.html\n**Power Source**:  Mains\n**Current Status**: pairing with wrong device type. Detected as \"radiator v"
+    }
+  ],
   "prs": [],
-  "openIssueCount": 0,
+  "openIssueCount": 2,
   "openPrCount": 0
 }
