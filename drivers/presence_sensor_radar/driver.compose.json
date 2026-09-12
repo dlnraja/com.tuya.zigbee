@@ -13,7 +13,6 @@
     "measure_humidity",
     "alarm_human",
     "onoff",
-    "measure_battery",
     "measure_luminance.distance",
     "alarm_motion.zone1",
     "alarm_motion.zone2",
@@ -2060,16 +2059,6 @@
   "connectivity": [
     "zigbee"
   ],
-  "energy": {
-    "batteries": [
-      "CR2032",
-      "CR2450",
-      "AAA",
-      "AA",
-      "CR123A",
-      "INTERNAL"
-    ]
-  },
   "pair": [
     {
       "id": "list_devices",
