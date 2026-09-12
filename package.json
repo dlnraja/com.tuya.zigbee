@@ -1,6 +1,6 @@
 {
   "name": "com.dlnraja.tuya.zigbee",
-  "version": "9.0.899",
+  "version": "9.0.901",
   "description": "Tuya Unified Zigbee - Local-first control with AI automation",
   "main": "app.js",
   "scripts": {
@@ -326,7 +326,8 @@
     "check:p2477": "node --test test/critical/p2477-vichy-dyncap-mains-battery.test.js",
     "check:p2478": "node --test test/critical/p2478-moes-mid-position-dp2-only.test.js",
     "check:p2479": "node --test test/critical/p2479-smart-knob-flows-rkgngb5o.test.js",
-    "check:p2480": "node --test test/critical/p2480-motionsensor-driver-not-initialized.test.js test/critical/p2351-safe-get-driver-foreign-id.test.js"
+    "check:p2480": "node --test test/critical/p2480-motionsensor-driver-not-initialized.test.js test/critical/p2351-safe-get-driver-foreign-id.test.js",
+    "check:p2481": "node --test test/critical/p2481-motionsensor-preempt-soft-fail.test.js"
   },
   "keywords": [
     "homey",
