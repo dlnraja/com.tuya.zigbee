@@ -3236,5 +3236,8 @@
   },
   "9.0.911": {
     "en": "P2484 republish after Athom socket hang on 9.0.910 (EF00 OOM + gkfbdvyx sacred-keep)."
+  },
+  "9.0.913": {
+    "en": "P2484 force republish: EF00 OOM harden + gkfbdvyx sacred-keep (Athom cooldown)."
   }
 }
