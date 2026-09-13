@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-13T00:22:37.854Z",
+  "generatedAt": "2026-09-13T07:43:04.279Z",
   "date": "2026-09-13",
   "mode": "full",
   "phases": [
@@ -12,18 +12,18 @@
     {
       "name": "github",
       "ok": true,
-      "durationMs": 243
+      "durationMs": 415
     },
     {
       "name": "gmail",
       "ok": true,
-      "durationMs": 213,
+      "durationMs": 206,
       "details": {
         "crash": {
           "ok": true,
           "skipped": false,
           "status": 0,
-          "durationMs": 38,
+          "durationMs": 36,
           "stderr": "",
           "stdoutTail": "[gmail-crash-pattern-gate] sources=32 hits=3 unknown=0\n  heap_oom_live_data: 5 source-hit(s)\n  wrote .github/state/gmail-crash-patterns.json\n  verdict: ok\n"
         },
@@ -31,16 +31,16 @@
           "ok": true,
           "skipped": false,
           "status": 0,
-          "durationMs": 172,
+          "durationMs": 168,
           "stderr": "",
-          "stdoutTail": "[automate] inbox total=0 have=30 missing=0 ingested_now=0\n[recursive-treat] sources: 136\n[recursive-treat] wrote /home/runner/work/com.tuya.zigbee/com.tuya.zigbee/reports/diag-recursive-treat-2026-09-13\n{\n  \"generatedAt\": \"2026-09-13T00:22:38.298Z\",\n  \"methodology\": \"f647d35b-style full-body recursive treat — sacred couple never invented; P2246 derive from interview when ABSENT\",\n  \"sourcesScanned\": 136,\n  \"uniqueCases\": 122,\n  \"actionable\": 37,\n  \"derivedFromInterview\": 2,\n  \"signalTally\": {\n    \"scene_mode_unsupported\": 3,\n    \"wrong_driver_hint\": 4,\n    \"athom_socket_hang\": 7,\n    \"athom_processing_failed\": 2,\n    \"wrong_smart_rcbo\": 2,\n    \"flow_guard_spam\": 2,\n    \"processing_failed\": 6,\n    \"scene_0x8004\": 2,\n    \"foreign_driver_id\": 1,\n    \"heap_oom\": 6,\n    \"physical_vs_virtual_button\": 1,\n    \"invalid_flow_card\": 1,\n    \"missing_capability_listener\": 1\n  },\n  \"gmailBodiesPresent\": 30,\n  \"interviews\": 90\n}\n[automate] status → .github/state/diag-recursive-inbox/automate-status.json\n{\n  \"total\": 0,\n  \"have\": 30,\n  \"missing\": 0,\n  \"missingIds\": []\n}\n[automate] actionable= 37 gmailBodies= 30\n"
+          "stdoutTail": "[automate] inbox total=0 have=30 missing=0 ingested_now=0\n[recursive-treat] sources: 136\n[recursive-treat] wrote /home/runner/work/com.tuya.zigbee/com.tuya.zigbee/reports/diag-recursive-treat-2026-09-13\n{\n  \"generatedAt\": \"2026-09-13T07:43:04.888Z\",\n  \"methodology\": \"f647d35b-style full-body recursive treat — sacred couple never invented; P2246 derive from interview when ABSENT\",\n  \"sourcesScanned\": 136,\n  \"uniqueCases\": 122,\n  \"actionable\": 36,\n  \"derivedFromInterview\": 1,\n  \"signalTally\": {\n    \"scene_mode_unsupported\": 3,\n    \"wrong_driver_hint\": 4,\n    \"athom_socket_hang\": 6,\n    \"athom_processing_failed\": 2,\n    \"wrong_smart_rcbo\": 2,\n    \"flow_guard_spam\": 2,\n    \"processing_failed\": 6,\n    \"scene_0x8004\": 2,\n    \"heap_oom\": 6,\n    \"foreign_driver_id\": 1,\n    \"invalid_flow_card\": 1,\n    \"missing_capability_listener\": 1\n  },\n  \"gmailBodiesPresent\": 30,\n  \"interviews\": 90\n}\n[automate] status → .github/state/diag-recursive-inbox/automate-status.json\n{\n  \"total\": 0,\n  \"have\": 30,\n  \"missing\": 0,\n  \"missingIds\": []\n}\n[automate] actionable= 36 gmailBodies= 30\n"
         }
       }
     },
     {
       "name": "forum",
       "ok": true,
-      "durationMs": 29141,
+      "durationMs": 26295,
       "skipScan": false,
       "steps": [
         {
@@ -64,7 +64,7 @@
     {
       "name": "drivers",
       "ok": true,
-      "durationMs": 1566,
+      "durationMs": 1518,
       "mfs": {
         "high": 0,
         "changes": 0,
@@ -76,7 +76,7 @@
       "name": "prioritize",
       "ok": true,
       "durationMs": 1,
-      "count": 3
+      "count": 4
     },
     {
       "name": "docs",
@@ -87,15 +87,26 @@
     {
       "name": "gates",
       "ok": true,
-      "durationMs": 2424
+      "durationMs": 2351
     }
   ],
   "github": {
-    "harvestedAt": "2026-09-13T00:22:38.098Z",
+    "harvestedAt": "2026-09-13T07:43:04.693Z",
     "repo": "dlnraja/com.tuya.zigbee",
     "auth": "token",
     "error": null,
     "issues": [
+      {
+        "number": 548,
+        "title": "Bug report - [Short description] App crashes all the time",
+        "labels": [
+          "bug"
+        ],
+        "updatedAt": "2026-09-13T07:25:02Z",
+        "user": "Wuma68",
+        "htmlUrl": "https://github.com/dlnraja/com.tuya.zigbee/issues/548",
+        "bodySnippet": "### Describe the bug\n\n> A clear and concise description of what the bug is.\n\n### To Reproduce\n\nSteps to reproduce the behavior:\n\nRestart it's self all the time!\n\n1. Go to '...'\n2. Click on '....'\n3. Scroll down to '....'\n4. See error\n\n### Expected behavior\n\n> A clear and concise "
+      },
       {
         "number": 547,
         "title": "Tuya Zigbee device Radar Sensor: pairing OK but having no function",
@@ -103,7 +114,7 @@
           "enhancement",
           "device-request"
         ],
-        "updatedAt": "2026-09-12T20:36:40Z",
+        "updatedAt": "2026-09-13T06:52:25Z",
         "user": "HiepSVG",
         "htmlUrl": "https://github.com/dlnraja/com.tuya.zigbee/issues/547",
         "bodySnippet": "## 📱 Basic Information\n\n\nhttps://www.aliexpress.com/item/1005007575802295.html\n Tuya WiFi /Zigbee 24G Human Presence Sensor Smart Human Body PIR Sensor Radar Detector Microwave Motion Sensors Home Automation\n---\n\n## 🔍 Zigbee Fingerprint (MANDATORY)\n\nPlease provide this informat"
@@ -133,7 +144,7 @@
       }
     ],
     "prs": [],
-    "openIssueCount": 2,
+    "openIssueCount": 3,
     "openPrCount": 0
   },
   "forum": {
@@ -148,7 +159,7 @@
     "posts": 207
   },
   "gmail": {
-    "generatedAt": "2026-09-13T00:22:38.129Z",
+    "generatedAt": "2026-09-13T07:43:04.723Z",
     "sourcesScanned": 32,
     "patternCounts": {
       "flow_getDeviceActionCard": 0,
@@ -181,12 +192,10 @@
         "source": ".github/state/diagnostics-report.json",
         "sacred": {
           "mfrs": [
-            "_TZ3000_3dfewsk1",
-            "_TZ3000_decxrtwa",
-            "_TZE200_3towulqd"
+            "_TZE200_3towulqd",
+            "_TZE204_gkfbdvyx"
           ],
           "pids": [
-            "TS0203",
             "TS0601"
           ]
         }
@@ -199,12 +208,10 @@
         "source": ".github/state/diagnostics-crossref.yml",
         "sacred": {
           "mfrs": [
-            "_TZ3000_3dfewsk1",
-            "_TZ3000_decxrtwa",
-            "_TZE200_3towulqd"
+            "_TZE200_3towulqd",
+            "_TZE204_gkfbdvyx"
           ],
           "pids": [
-            "TS0203",
             "TS0601"
           ]
         }
@@ -217,11 +224,10 @@
         "source": ".github/state/diagnostics-report.json#diag",
         "sacred": {
           "mfrs": [
-            "_TZ3000_3dfewsk1",
-            "_TZ3000_decxrtwa"
+            "_TZE200_3towulqd"
           ],
           "pids": [
-            "TS0203"
+            "TS0601"
           ]
         }
       }
@@ -256,6 +262,16 @@
     "fail": false
   },
   "priority": [
+    {
+      "score": 90,
+      "dualApp": "BOTH",
+      "source": "github-issue",
+      "id": "#548",
+      "title": "Bug report - [Short description] App crashes all the time",
+      "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/548",
+      "action": "investigate-code-silent",
+      "forumReply": "NEVER"
+    },
     {
       "score": 90,
       "dualApp": "BOTH",
