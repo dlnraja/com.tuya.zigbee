@@ -1566,5 +1566,14 @@
   },
   "5.12.175": {
     "en": "Crash harden: never soft-fail own drivers (pirsensor/siren); ceiling mmWave gkfbdvyx mains lock."
+  },
+  "5.12.176": {
+    "en": "P2484: EF00 init OOM harden + sacred-keep gkfbdvyx (backport)."
+  },
+  "5.12.177": {
+    "en": "P2484: EF00 init OOM harden + sacred-keep gkfbdvyx (backport)."
+  },
+  "5.12.178": {
+    "en": "P2484: EF00 init OOM harden + sacred-keep gkfbdvyx (backport)."
   }
 }
