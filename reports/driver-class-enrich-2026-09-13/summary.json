@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-13T06:49:14.953Z",
+  "generatedAt": "2026-09-13T17:05:44.229Z",
   "mode": "apply",
   "classFilter": null,
   "neverInventProductId": true,
@@ -7,7 +7,7 @@
     "button": {
       "count": 54,
       "withGaps": 7,
-      "mfrEntries": 1494,
+      "mfrEntries": 1492,
       "flowTriggers": 856,
       "gapSamples": [
         {
@@ -234,7 +234,7 @@
     "curtain": {
       "count": 9,
       "withGaps": 1,
-      "mfrEntries": 1043,
+      "mfrEntries": 1001,
       "flowTriggers": 45,
       "gapSamples": [
         {
@@ -385,7 +385,7 @@
   "totals": {
     "drivers": 431,
     "withGaps": 86,
-    "mfrEntries": 17135,
+    "mfrEntries": 17091,
     "flowTriggers": 3601
   },
   "applyResults": [
@@ -429,7 +429,7 @@
       "phase": "curtain-couples",
       "ok": true,
       "exitCode": 0,
-      "tail": "[apply-curtain-couples] candidates=152 toAdd=0 strip_curtain=2\n[apply-curtain-couples] strip curtain_motor: 2 rows (tilt/module/shutter/forbidden)\n  → curtain_module_2_gang: _TZ3000_j1xl73iw\n  → curtain_module_2_gang: _TZ3000_l6iqph4f\n[apply-curtain-couples] APPLIED +0 mfrs, -2 stripped, curtain total=837"
+      "tail": "[apply-curtain-couples] candidates=116 toAdd=0 strip_curtain=2\n[apply-curtain-couples] strip curtain_motor: 2 rows (tilt/module/shutter/forbidden)\n  → curtain_module_2_gang: _TZ3000_j1xl73iw\n  → curtain_module_2_gang: _TZ3000_l6iqph4f\n[apply-curtain-couples] APPLIED +0 mfrs, -2 stripped, curtain total=795"
     },
     {
       "phase": "harden-wifi-local",
