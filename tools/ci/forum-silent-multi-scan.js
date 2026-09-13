@@ -47,6 +47,8 @@ const DEFAULT_TOPICS = [
   { id: 155646, name: 'homesuite-reliability', replyAllowed: false },
   // Satellite Tuya / Zigbee threads — silent enrich only
   { id: 106779, name: 'tuya-inc-official', replyAllowed: false },
+  // TuyaAPI / Neo Coolcam WiFi wall plug — READ-ONLY WiFi local-first patterns
+  { id: 15811, name: 'tuyapi-neo-coolcam-wifi', replyAllowed: false },
   { id: 21313, name: 'tuya-cloud', replyAllowed: false },
   { id: 156053, name: 'tuya-unknown-gang-switches', replyAllowed: false },
   { id: 156792, name: 'tuya-finger-bot', replyAllowed: false },

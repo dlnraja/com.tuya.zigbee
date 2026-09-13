@@ -1,0 +1,831 @@
+{
+  "generatedAt": "2026-09-13T22:39:08.785Z",
+  "doctrine": "SHADOW only — never forum POST/PM; never invent pid; local-first",
+  "topics": [
+    {
+      "id": 140352,
+      "name": "universal-tuya-zigbee",
+      "title": "[APP][Pro] Universal TUYA Zigbee Device App - test",
+      "postCount": 2155,
+      "highest": 2235,
+      "byClass": {
+        "maintainer": 700,
+        "other": 500,
+        "question": 184,
+        "thanks": 243,
+        "bug": 142,
+        "device_request": 44,
+        "diagnostic": 342
+      },
+      "uncoveredTop": [
+        {
+          "couple": "_TZE200_xxxxx|TS0601",
+          "mfr": "_TZE200_xxxxx",
+          "pid": "TS0601",
+          "count": 1,
+          "users": [
+            "dlnraja"
+          ],
+          "posts": [
+            1045
+          ]
+        },
+        {
+          "couple": "_TZE200_xxxxx|TS0207",
+          "mfr": "_TZE200_xxxxx",
+          "pid": "TS0207",
+          "count": 1,
+          "users": [
+            "dlnraja"
+          ],
+          "posts": [
+            1045
+          ]
+        },
+        {
+          "couple": "_TZE200_abc123|TS0601",
+          "mfr": "_TZE200_abc123",
+          "pid": "TS0601",
+          "count": 1,
+          "users": [
+            "dlnraja"
+          ],
+          "posts": [
+            2165
+          ]
+        }
+      ],
+      "diagCount": 366,
+      "imageCount": 1859,
+      "recentBugs": [
+        {
+          "n": 2157,
+          "user": "Mike_Nono",
+          "excerpt": "Hi. No fork for me, but don’t have like 400 duplicates for the same device in different devices = fail. But I wish you the best on this journey.",
+          "mfrs": [],
+          "pids": [],
+          "diags": []
+        },
+        {
+          "n": 2160,
+          "user": "Peter_van_Werkhoven",
+          "excerpt": "Hi Dylan Good day unfortunately the app is crashing again. 1000040469 1220×2712 226 KB Good luck and have a nice day with best regards Peter.",
+          "mfrs": [],
+          "pids": [],
+          "diags": []
+        },
+        {
+          "n": 2178,
+          "user": "Gabriel_Pedrosa_Mach",
+          "excerpt": "Appreciate you digging into the endpoint isolation. On gang2: I get why onoff.gang2 -style capability instances mirror the physical Tuya layout more closely, but in practice it creates real friction for the end user. Several controls crammed into one tile is harder to read and ac",
+          "mfrs": [],
+          "pids": [],
+          "diags": []
+        },
+        {
+          "n": 2182,
+          "user": "Gabriel_Pedrosa_Mach",
+          "excerpt": "hanks for forwarding it! The switches I’ve been testing correspond to the TB25 series — TB25-1, TB25-2, TB25-3, TB25-4 and TB25-6 (1 to 6 gang), plus a 4-gang ZCL variant and a touch model. The touch model actually uses the exact same driver code as the others — I only split it i",
+          "mfrs": [],
+          "pids": [],
+          "diags": []
+        },
+        {
+          "n": 2209,
+          "user": "Cam",
+          "excerpt": "Hi there @dlnraja Just checking in after a few months of devices not working and trying to add them again. My smart button and motion sensor aren’t detecting/passing through any data through my flows. I know the motion sensors are working because I can see the red light flash whe",
+          "mfrs": [],
+          "pids": [],
+          "diags": []
+        },
+        {
+          "n": 2218,
+          "user": "Joep_Vullings",
+          "excerpt": "I tried to repair my two way Irrigation Valve, but it wasn’t recognized. It paired as unknown Zigbee device. Could you look into it?",
+          "mfrs": [],
+          "pids": [],
+          "diags": []
+        },
+        {
+          "n": 2222,
+          "user": "VicHY",
+          "excerpt": "Hi @dlnraja I’ve noticed that if I delete the presence sensor and reconnect it, it works fine, but after a while (it seems to coincide roughly with updates), it switches to “blind mode” and goes haywire, continuously detecting presence and movement. Do you know what might be caus",
+          "mfrs": [],
+          "pids": [],
+          "diags": []
+        },
+        {
+          "n": 2228,
+          "user": "Eduard_Martirosyan",
+          "excerpt": "Hi @dlnraja , Thanks a lot for your work on this app. I have a tubular roller blind motor with a built-in Tuya Zigbee receiver that is not recognised. It pairs fine but always ends up as “Unknown Zigbee Device” — tried Curtain Motor Shutter, Cover Controller, Curtain Motor Wall a",
+          "mfrs": [
+            "_TZE284_fodv6bkr",
+            "_TZE284_libht6ua"
+          ],
+          "pids": [
+            "TS0601"
+          ],
+          "diags": []
+        }
+      ],
+      "recentRequests": [
+        {
+          "n": 1604,
+          "user": "Olivier_VE",
+          "excerpt": "Hi, ​ Could you please add support for this 3-gang Wall Switch (HOBEIAN ZG-302Z3)? ​ Manufacturer ID: HOBEIAN ​Product ID: ZG-302Z3 ​ Device ID: a4:c1:38:37:d3:79:0f:60 ​ Currently, only one button is recognized. Thank you!",
+          "mfrs": [],
+          "pids": []
+        },
+        {
+          "n": 1701,
+          "user": "Adri1",
+          "excerpt": "Title: Add support for temperature/humidity sensor TS0201 (_TZ3000_bgsigers) Body: Device: Temperature / Humidity sensor manufacturerName: _TZ3000_bgsigers modelId: TS0201 The device is recognized by Homey but does not report any temperature or humidity values. Device type: Zigbe",
+          "mfrs": [],
+          "pids": [
+            "TS0201"
+          ]
+        },
+        {
+          "n": 1912,
+          "user": "Roger_Gorissen",
+          "excerpt": "smarthomesven: You need to run npm install first before running homey app install . All right, did that. But that really scares me. As far as I understand the error messages, looks like people adding code to the program used old node modules. Can you please check the following er",
+          "mfrs": [],
+          "pids": []
+        },
+        {
+          "n": 2032,
+          "user": "dzsandzsee",
+          "excerpt": "Please add this Presence sensor to the app \"ieeeAddress\":string\"a4:c1:38:d3:de:d0:e6:77\", \"networkAddress\":int65248, \"modelId\":string\"CK-BL702-MWS-01(7016)\", \"manufacturerName\":string\"_TZE200_crq3r3la\", \"endpointDescriptors\":[ 0:{ \"endpointId\":int1, \"applicationProfileId\":int260,",
+          "mfrs": [
+            "_TZE200_crq3r3la"
+          ],
+          "pids": []
+        },
+        {
+          "n": 2099,
+          "user": "VicBehrens",
+          "excerpt": "Hi Dylan, Thanks for assisting with all these different device issues! I requested a Moes 4-gang smart switch to be added 2 weeks ago, and as per the Github comments the device fingerprints was found and added in the latest version. I deleted the previous generic zigbee device as",
+          "mfrs": [],
+          "pids": [
+            "TS0014"
+          ]
+        },
+        {
+          "n": 2115,
+          "user": "thierry_arguimbau",
+          "excerpt": "Hello, could you please add this dual energy meter to your app? Thank you in advance. Best regards, https://fr.aliexpress.com/item/1005007902450082.html?spm=a2g0o.order_list.order_list_main.17.77a15e5bbfajQV&amp;gatewayAdapt=glo2fra “ids”: { “modelId”: “TS0601”, “manufacturerName",
+          "mfrs": [
+            "_TZE204_dhotiauw"
+          ],
+          "pids": [
+            "TS0601"
+          ]
+        },
+        {
+          "n": 2129,
+          "user": "Welshsmarthome",
+          "excerpt": "Hi. Hope ive not missed it already, so many devices Could you please add support for Zigbee Dual wall socket without power metering IMG_0038 1289×694 63.5 KB Made by Scolmore ClickSmart 13a socket Thanks",
+          "mfrs": [],
+          "pids": []
+        },
+        {
+          "n": 2130,
+          "user": "Kanbros",
+          "excerpt": "Hi @dlnraja , Could you please add support for the BSEED 2-gang touch switch to your Universal TUYA Zigbee Device app? Currently, it pairs as a basic device and only 1 channel works. Here is the device fingerprint: - Device Model: TS0002 - Manufacturer ID / Product ID: _TZ3000_w5",
+          "mfrs": [],
+          "pids": [
+            "TS0002"
+          ]
+        }
+      ],
+      "linkHosts": [
+        [
+          "us1.discourse-cdn.com",
+          2325
+        ],
+        [
+          "emoji.discourse-cdn.com",
+          709
+        ],
+        [
+          "github.com",
+          138
+        ],
+        [
+          "homey.app",
+          122
+        ],
+        [
+          "sea1.discourse-cdn.com",
+          101
+        ],
+        [
+          "community.homey.app",
+          39
+        ],
+        [
+          "tools.developer.homey.app",
+          24
+        ],
+        [
+          "nl.aliexpress.com",
+          12
+        ],
+        [
+          "www.zigbee2mqtt.io",
+          12
+        ],
+        [
+          "a.aliexpress.com",
+          9
+        ]
+      ]
+    },
+    {
+      "id": 26439,
+      "name": "johan-tuya-zigbee",
+      "title": "[APP][Pro] Tuya Zigbee App",
+      "postCount": 1201,
+      "highest": 5511,
+      "byClass": {
+        "bug": 93,
+        "device_request": 87,
+        "thanks": 178,
+        "other": 504,
+        "question": 301,
+        "diagnostic": 23,
+        "maintainer": 15
+      },
+      "uncoveredTop": [
+        {
+          "couple": "_Tze204_1Dxkck|TS0601",
+          "mfr": "_Tze204_1Dxkck",
+          "pid": "TS0601",
+          "count": 1,
+          "users": [
+            "Gabriel_Pedrosa_Mach"
+          ],
+          "posts": [
+            5201
+          ]
+        }
+      ],
+      "diagCount": 27,
+      "imageCount": 737,
+      "recentBugs": [
+        {
+          "n": 5443,
+          "user": "Roger_Gorissen",
+          "excerpt": "This app suddenly starts to crash. Restarting, reinstalling, nothing helps. Out of the blue. Anyone any idea??",
+          "mfrs": [],
+          "pids": [],
+          "diags": []
+        },
+        {
+          "n": 5445,
+          "user": "Rudi_Hendrix",
+          "excerpt": "What do you mean with “crash”? I don’t get any notification… And everything seems to run well",
+          "mfrs": [],
+          "pids": [],
+          "diags": []
+        },
+        {
+          "n": 5448,
+          "user": "Rudi_Hendrix",
+          "excerpt": "Ah, ok… In my case there is no crash. Then again, I am using my own version of the app. I don’t have the Universal Zigbee app installed anymore. I had it for a while, but especially now that Johan has picked up development of this one again, I am more relying on this one.",
+          "mfrs": [],
+          "pids": [],
+          "diags": []
+        },
+        {
+          "n": 5449,
+          "user": "Roger_Gorissen",
+          "excerpt": "smarthomesven: You can also disable 1 of the apps before pairing, then it will pair with the other, enabled app. So before pairing, you need to disable the app that you don’t want it to pair with, and then enable it again after Seems that isn’t sufficient. I had to remove the dev",
+          "mfrs": [],
+          "pids": [],
+          "diags": []
+        },
+        {
+          "n": 5460,
+          "user": "Riccardo_Baro",
+          "excerpt": "Hi @Johann_Bendz , could you please add support for this 4-gang switch? It is currently recognized as an Unknown Zigbee Device. Manufacturer ID: _TZE204_ex3rcdha Product ID: TS0601 Thank you!",
+          "mfrs": [
+            "_TZE204_ex3rcdha"
+          ],
+          "pids": [
+            "TS0601"
+          ],
+          "diags": []
+        },
+        {
+          "n": 5463,
+          "user": "Kringloper",
+          "excerpt": "Roger_Gorissen: In the first post of this topic/ app is explained how to interview a device to get the data to add it to the app. Just mentioning the name of the device isn’t enough My problem was that the device couldn’t be added in the first place (also not as an unknown zigbee",
+          "mfrs": [],
+          "pids": [],
+          "diags": []
+        },
+        {
+          "n": 5506,
+          "user": "smarthomesven",
+          "excerpt": "At least for me, all devices work perfectly. There was only 1 issue which was caused by a bug in the Tuya Homey app, so not Tuya’s fault. Many devices I pair with the Tuya mobile app gets recognized by Homey, and if they don’t you can make workarounds with Tap-to-Run or the Other",
+          "mfrs": [],
+          "pids": [],
+          "diags": []
+        },
+        {
+          "n": 5511,
+          "user": "Kai_Dybvik",
+          "excerpt": "Thanks for a lot of good answers here nice and have a dilog on this. Tuya is cheap and works perfectly fine with the tuya app. but Homey is now my new hub. The thing is just that I had a lot of tuya devices so if possible it’s good to use it. the more gadgets the more fun",
+          "mfrs": [],
+          "pids": [],
+          "diags": []
+        }
+      ],
+      "recentRequests": [
+        {
+          "n": 5437,
+          "user": "punkportaldan",
+          "excerpt": "Thanks for the very fast answer! Is there any way to troubleshoot what my issue with this device might be? Can I collect traces somehow? As I see Github is used for device requests and this device should already be supported. Thank you.",
+          "mfrs": [],
+          "pids": []
+        },
+        {
+          "n": 5454,
+          "user": "Tobias-B",
+          "excerpt": "Hi @Johann_Bendz I’ve just submitted a device request on GitHub for a new SmarterCurry (JoyousMall) Solar Lux Sensor. It’s currently recognized as a generic Zigbee device. I’ve already performed the interview and included all the technical data in the GitHub issue. Manufacturer I",
+          "mfrs": [
+            "_TZE284_aaeasoll"
+          ],
+          "pids": [
+            "TS0601"
+          ]
+        },
+        {
+          "n": 5457,
+          "user": "Christian_Jorgensen",
+          "excerpt": "Device Request: Vibration Sensor Hi! Could you please add support for this vibration sensor? It currently adds as an Unknown/Generic Zigbee device with non-functioning generic and tamper alarms. Manufacturer ID: _TZ32101000000_jrqzgeuh Product ID: TS0210 Thank you for your great ",
+          "mfrs": [],
+          "pids": [
+            "TS0210"
+          ]
+        },
+        {
+          "n": 5481,
+          "user": "late4marshmellow",
+          "excerpt": "Even though that is indeed a better way to post interviews, they should be directed to Github johan_bendz: PROCESS FOR REQUESTING DEVICES TO BE ADDED If your device is not supported by the app it will have to be added by adding code to the app, this is done by me or by someone he",
+          "mfrs": [],
+          "pids": []
+        },
+        {
+          "n": 5488,
+          "user": "Sergio_B",
+          "excerpt": "Hi @johan_bendz Please add support for this smart button switch: Manufacturer name: Hobeian Model ID: ZG-101ZL Device type: enddevice Thank you",
+          "mfrs": [],
+          "pids": []
+        },
+        {
+          "n": 5491,
+          "user": "Martin_Kliment",
+          "excerpt": "Device Request - Soil Moisture Sensor SGS02Z - _TZE284_nt4pquef / TS0601 Hi, could you please add support for the Tuya Zigbee soil moisture &amp; temperature sensor SGS02Z (also sold as SG502Z)? It is the successor of the SGS01Z, which is already supported by the app. manufacture",
+          "mfrs": [
+            "_TZE284_nt4pquef",
+            "_TZE284_aao3yzhs"
+          ],
+          "pids": [
+            "TS0601"
+          ]
+        },
+        {
+          "n": 5493,
+          "user": "Alejandro_Palladino",
+          "excerpt": "Necesitaria conectar este dispositivo: Hi! Could you please add support for this Tuya mmWave presence sensor? Manufacturer ID: _TZE284_debczeci Product ID: TS0601 Device Type: Human Presence Sensor (mmWave) Thanks in advance!",
+          "mfrs": [
+            "_TZE284_debczeci"
+          ],
+          "pids": [
+            "TS0601"
+          ]
+        },
+        {
+          "n": 5509,
+          "user": "smarthomesven",
+          "excerpt": "Probably because the newer Tuya Zigbee devices are not supported. With a Tuya Zigbee gateway (I use one as well), you can connect them using the official app. I use everything with the new official Tuya app by Drenso. The only device I didn’t get working using the Other device ty",
+          "mfrs": [],
+          "pids": []
+        }
+      ],
+      "linkHosts": [
+        [
+          "us1.discourse-cdn.com",
+          593
+        ],
+        [
+          "emoji.discourse-cdn.com",
+          253
+        ],
+        [
+          "sea1.discourse-cdn.com",
+          206
+        ],
+        [
+          "github.com",
+          117
+        ],
+        [
+          "community.homey.app",
+          56
+        ],
+        [
+          "homey.app",
+          33
+        ],
+        [
+          "www.aliexpress.com",
+          13
+        ],
+        [
+          "a.aliexpress.com",
+          12
+        ],
+        [
+          "tools.developer.homey.app",
+          9
+        ],
+        [
+          "nl.aliexpress.com",
+          8
+        ]
+      ]
+    },
+    {
+      "id": 106779,
+      "name": "tuya-inc-official",
+      "title": "[APP] Tuya - Connect any Tuya device with Homey (by Tuya Inc. / Athom)",
+      "postCount": 1131,
+      "highest": 1172,
+      "byClass": {
+        "other": 624,
+        "thanks": 98,
+        "bug": 74,
+        "question": 298,
+        "device_request": 27,
+        "diagnostic": 5,
+        "maintainer": 5
+      },
+      "uncoveredTop": [],
+      "diagCount": 12,
+      "imageCount": 722,
+      "recentBugs": [
+        {
+          "n": 1049,
+          "user": "bogdan_marcu",
+          "excerpt": "I started looking into homey at the start of the year when the tuya was still working. Have tons of tuya devices so i thought this was a very good idea. Couple of months later i bought the homey pro without checking the forums to see that the app is not working anymore. Now i hav",
+          "mfrs": [],
+          "pids": [],
+          "diags": []
+        },
+        {
+          "n": 1052,
+          "user": "Dijker",
+          "excerpt": "dlnraja: much for 1 licence Key for 1 Homey pro for tuya cube .? I would like to buy one Go to Cube Private Cloud | Tuya Smart And push the Screenshot_20250610_063718_Chrome 458×191 19 KB But I guess you are cheaper out with the Developer Trial edition here Pricing-Tuya Developer",
+          "mfrs": [],
+          "pids": [],
+          "diags": []
+        },
+        {
+          "n": 1053,
+          "user": "bwa",
+          "excerpt": "Hi ! I’m using Homey to control my AC, it works fine, but the reporting back flow card is not working, or works but delayed with several hours. The flow card image 737×265 27.2 KB The events are occuring on my Tuya IoT Device image 1490×748 52.3 KB But does not show up in my Home",
+          "mfrs": [],
+          "pids": [],
+          "diags": []
+        },
+        {
+          "n": 1081,
+          "user": "deejayreissue",
+          "excerpt": "Thanks for the update I’m honestly done with Tuya. I’ll be replacing my Bathroom GU10s with Aqara very soon and my Knightsbridge sockets with the upcoming Aqara UK wall outlets. Can’t bloody wait! It’s just cheap tat. I’ve had endless problems with Tuya devices and having to repa",
+          "mfrs": [],
+          "pids": [],
+          "diags": []
+        },
+        {
+          "n": 1082,
+          "user": "Ronwell",
+          "excerpt": "i found a cheap work around to get tuya devices into homey. I bought a $30 rasberry pi and did a basic home assistant install ( I hear ya, I hate HA as well). I added my tuya devices to HA, nothing fancy or automations the devices just sit there. I added the HA app in homey, now ",
+          "mfrs": [],
+          "pids": [],
+          "diags": []
+        },
+        {
+          "n": 1086,
+          "user": "luca_reina",
+          "excerpt": "I struggle to understand.. probably it’s just my own problem. We all (hopefully) have reason, taste, and the freedom to choose whatever solution best fits us. Yet, despite that, people always seem to prefer discrediting others often by insulting them, and sometimes even defaming ",
+          "mfrs": [],
+          "pids": [],
+          "diags": []
+        },
+        {
+          "n": 1149,
+          "user": "Andy_Henderson",
+          "excerpt": "SamB: I am a bit stuck here too. I understand I can control the device using a flow but can’ t I tie that flow to the press of the button that’s created with the device? For supported button devices you will see a When card that activates when you press the button. For unsupporte",
+          "mfrs": [],
+          "pids": [],
+          "diags": []
+        },
+        {
+          "n": 1156,
+          "user": "Rudi_Hendrix",
+          "excerpt": "It’s broken in my case. Someone complained in the Tuya Cloud topic. However that one is still working. All devices connected mention to be unavailable",
+          "mfrs": [],
+          "pids": [],
+          "diags": []
+        }
+      ],
+      "recentRequests": [
+        {
+          "n": 459,
+          "user": "Bernd_Gaykema",
+          "excerpt": "Yep, I made a device request for my heatpump (AdlarCastra Aurora 2). Hopefully the tile will be available before the cold season starts … . In the meantime I play around with no success until now.",
+          "mfrs": [],
+          "pids": []
+        },
+        {
+          "n": 466,
+          "user": "bayrambass",
+          "excerpt": "Hi, I am getting this error: Invalid Value: led_type_2 It is a Tuya 2 Gang dimmer. These are the device specifications: { “device”: { “active_time”: 1723816911, “biz_type”: 18, “category”: “tgq”, “create_time”: 1650747401, “icon”: “smart/icon/ay15327721968035jwx9/158754172045f19c",
+          "mfrs": [],
+          "pids": []
+        },
+        {
+          "n": 509,
+          "user": "Peter_Kawa",
+          "excerpt": "Stefan, it looks like your specific siren is not supported yet. You can request for support here",
+          "mfrs": [],
+          "pids": []
+        },
+        {
+          "n": 704,
+          "user": "Rett_Pop",
+          "excerpt": "Personally for me it is perfect lesson to stay away from cloud based devices. Especially for lights. Lights I even keep on physical switches duplicating them with zigbee buttons in a printed cover right on the switch. To not end up in a dark basement because any of cloud chain pi",
+          "mfrs": [],
+          "pids": []
+        },
+        {
+          "n": 974,
+          "user": "Rudi_Hendrix",
+          "excerpt": "robertklep: Which still doesn’t explain why “In using the HA community app, I might as well think of continuing to use the Homey Tuya Cloud community app” . Yes it does. If I use the official HA - Tuya integration it is supported by Tuya. (Like we hoped the official Homey - Tuya ",
+          "mfrs": [],
+          "pids": []
+        },
+        {
+          "n": 975,
+          "user": "robertklep",
+          "excerpt": "Rudi_Hendrix: If I use the official HA - Tuya integration it is supported by Tuya. (Like we hoped the official Homey - Tuya app would be supported by Tuya) If I use the community HA - Tuya integration it is not supported by Tuya. So, I might as well use the community Homey - Tuya",
+          "mfrs": [],
+          "pids": []
+        },
+        {
+          "n": 984,
+          "user": "SunBeech",
+          "excerpt": "Are you using the latest test version of the Tuya Zigbee app (v0.2.73)? If not supported by that version, check the first post for requesting support for this device by the Tuya Zigbee app.",
+          "mfrs": [],
+          "pids": []
+        },
+        {
+          "n": 1023,
+          "user": "semolex",
+          "excerpt": "Yep, just what I thought And again - sorry for off topic. Very very sad, I really tried to struggle with it but tired up writing own drivers for each Zigbee device that is not supported. Maybe I will overcome my syndrome too and just switch back to HA completely. Sorry again",
+          "mfrs": [],
+          "pids": []
+        }
+      ],
+      "linkHosts": [
+        [
+          "us1.discourse-cdn.com",
+          462
+        ],
+        [
+          "sea1.discourse-cdn.com",
+          264
+        ],
+        [
+          "emoji.discourse-cdn.com",
+          238
+        ],
+        [
+          "github.com",
+          70
+        ],
+        [
+          "community.homey.app",
+          52
+        ],
+        [
+          "homey.app",
+          43
+        ],
+        [
+          "developer.tuya.com",
+          7
+        ],
+        [
+          "www.tuya.com",
+          4
+        ],
+        [
+          "www.youtube.com",
+          4
+        ],
+        [
+          "en.wikipedia.org",
+          3
+        ]
+      ]
+    },
+    {
+      "id": 15811,
+      "name": "tuyapi-neo-coolcam-wifi",
+      "title": "[APP][Pro] TuyAPI / Neo Coolcam wall plug WIFI app",
+      "postCount": 336,
+      "highest": 356,
+      "byClass": {
+        "other": 141,
+        "question": 113,
+        "bug": 22,
+        "thanks": 44,
+        "device_request": 14,
+        "diagnostic": 2
+      },
+      "uncoveredTop": [],
+      "diagCount": 3,
+      "imageCount": 192,
+      "recentBugs": [
+        {
+          "n": 210,
+          "user": "Giuseppe_Rechichi",
+          "excerpt": "After reinstalling app, it doesn’t crash anymore. But the power strip is still not working Any suggestion? Screenshot_2021-04-02-13-28-41-860_app.homey 1080×2340 82.2 KB",
+          "mfrs": [],
+          "pids": [],
+          "diags": []
+        },
+        {
+          "n": 214,
+          "user": "Giuseppe_Rechichi",
+          "excerpt": "Hi. Thank you. Now there’s no error shown but I it’s not working (if I switch on or off nothing happens). Tell me if I can help you to help me I don’t know what this symbol in the upper right means… IMG_20210403_140933 1080×397 37.3 KB",
+          "mfrs": [],
+          "pids": [],
+          "diags": []
+        },
+        {
+          "n": 222,
+          "user": "Giuseppe_Rechichi",
+          "excerpt": "Hi @Rens_Brandwijk , AOFO power strip still not working! The symbol on the device icon disappeared after a while, but I still can’t switch it on/off from the app. EDIT: ID and KEY are static parameters, right? Or could they change due to firmware update or similar?",
+          "mfrs": [],
+          "pids": [],
+          "diags": []
+        },
+        {
+          "n": 244,
+          "user": "Giuseppe_Rechichi",
+          "excerpt": "Nope. Still not working",
+          "mfrs": [],
+          "pids": [],
+          "diags": []
+        },
+        {
+          "n": 266,
+          "user": "LinusN",
+          "excerpt": "also finding NEW DATA ATRIBUTE: {“dps”:{“9”:0},“t”:1641751481} NEW DATA ATRIBUTE: {“dps”:{“17”:3},“t”:1641753150} 9 = Switch 1 countdown countdown_1 Send and report value Value range: 0 to 86400, interval: 1, multiple: 0, unit: s Required maybe your script fails when it receives ",
+          "mfrs": [],
+          "pids": [],
+          "diags": []
+        },
+        {
+          "n": 270,
+          "user": "Rens_Brandwijk",
+          "excerpt": "Well, the script indeed does not process these parameters (as homey does not have anywhere to store it) but i check the availability of every parameter before processing it. So i don’t see why the script would crash on this. Best way to find the reason would be to have a log / co",
+          "mfrs": [],
+          "pids": [],
+          "diags": []
+        },
+        {
+          "n": 290,
+          "user": "Kulawig",
+          "excerpt": "concerning neo plug 3600 with power meter, i have the ID and KEY for the unit but i can only connect to the plug if i use a static IP address – and even if homy is connected to the plug the energy funktions is not working is it necessary to disconnect the plug from the ap (smart ",
+          "mfrs": [],
+          "pids": [],
+          "diags": []
+        },
+        {
+          "n": 295,
+          "user": "Rens_Brandwijk",
+          "excerpt": "I removed the backend of those flowcards in the 2.1.3 release because they kept crashing multisock devices and at the time there was no real documentation on how to do devicetriggers in SDK 3. I see this is fixed so i will try to fix this.",
+          "mfrs": [],
+          "pids": [],
+          "diags": []
+        }
+      ],
+      "recentRequests": [
+        {
+          "n": 91,
+          "user": "Rens_Brandwijk",
+          "excerpt": "[APP][Pro] TuyAPI / Neo Coolcam wall plug WIFI app Apps Just submitted version 1.0.7 for review by Athom (normaly takes a couple of days to get accepted). In this update: Fix for the filament bulb icon. and… I added a little more easy way to identify parameters of a device witch ",
+          "mfrs": [],
+          "pids": []
+        },
+        {
+          "n": 167,
+          "user": "Rens_Brandwijk",
+          "excerpt": "[APP][Pro] TuyAPI / Neo Coolcam wall plug WIFI app Apps Just submitted version 1.0.7 for review by Athom (normaly takes a couple of days to get accepted). In this update: Fix for the filament bulb icon. and… I added a little more easy way to identify parameters of a device witch ",
+          "mfrs": [],
+          "pids": []
+        },
+        {
+          "n": 199,
+          "user": "Pierre-Axel_ROGER",
+          "excerpt": "Hi! Will you add support for garage door? I succesfully grab the key, the id and of course the IP. It only miss the support by the app. It’s a short contact and a sensor. It will be great if you can add into you app! Sorry for my bad english.",
+          "mfrs": [],
+          "pids": []
+        },
+        {
+          "n": 201,
+          "user": "Rens_Brandwijk",
+          "excerpt": "So, first of all. I’m sorry for being silent for so long. These are very busy times for me. I’ve published the SDK / 5.0 version to live. As far as i can see this version should not have the icon bug. But let me know if i’m wrong. i will look into new devices when i have time. I ",
+          "mfrs": [],
+          "pids": []
+        },
+        {
+          "n": 225,
+          "user": "DemonicDM",
+          "excerpt": "hello. I installed the app and added my wifi smart led strip. it wont do the changes despite it gets connected by ID, KEY and IP so i get connected but any changes i make nothing happens. I also tried with smart life uninstalled or “stopped” is it because Tasmor is not supported?",
+          "mfrs": [],
+          "pids": []
+        },
+        {
+          "n": 238,
+          "user": "BennyB100",
+          "excerpt": "Hi @Rens_Brandwijk , are you planning to add support for the LSC Smart Flood light with sensor? Thanks",
+          "mfrs": [],
+          "pids": []
+        },
+        {
+          "n": 253,
+          "user": "Rudi_Hendrix",
+          "excerpt": "A cloud version of Homey, you mean? I am aware of that, but I don’t see the added valeu compared to a Homey Pro I recently switched from Domoticz to Homey Pro because things “just work” without the need for tinkering. Now I have found myself creating a manual again on how to add ",
+          "mfrs": [],
+          "pids": []
+        },
+        {
+          "n": 297,
+          "user": "mbnn",
+          "excerpt": "Does this plugin still not need the Tuya cloud api stuff? And if so, is it possible to add support for humidifiers and heaters (Duux)?",
+          "mfrs": [],
+          "pids": []
+        }
+      ],
+      "linkHosts": [
+        [
+          "us1.discourse-cdn.com",
+          184
+        ],
+        [
+          "emoji.discourse-cdn.com",
+          62
+        ],
+        [
+          "github.com",
+          22
+        ],
+        [
+          "sea1.discourse-cdn.com",
+          22
+        ],
+        [
+          "homey.app",
+          12
+        ],
+        [
+          "ae01.alicdn.com",
+          10
+        ],
+        [
+          "community.homey.app",
+          9
+        ],
+        [
+          "www.aliexpress.com",
+          8
+        ],
+        [
+          "www.action.com",
+          5
+        ],
+        [
+          "www.amazon.co.uk",
+          4
+        ]
+      ]
+    }
+  ]
+}

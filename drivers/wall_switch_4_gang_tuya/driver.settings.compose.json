@@ -1,1 +1,108 @@
-[]
+[
+  {
+    "id": "power_on_behavior",
+    "type": "dropdown",
+    "label": {
+      "en": "Power-on behavior",
+      "fr": "Comportement à la mise sous tension"
+    },
+    "value": "previous",
+    "values": [
+      { "id": "off", "label": { "en": "Off", "fr": "Éteint" } },
+      { "id": "on", "label": { "en": "On", "fr": "Allumé" } },
+      { "id": "previous", "label": { "en": "Previous / Memory", "fr": "Mémoire" } }
+    ]
+  },
+  {
+    "id": "backlight_mode",
+    "type": "dropdown",
+    "label": {
+      "en": "LED indicator mode",
+      "fr": "Mode indicateur LED"
+    },
+    "value": "normal",
+    "values": [
+      { "id": "off", "label": { "en": "Off", "fr": "Éteint" } },
+      { "id": "normal", "label": { "en": "On/Off status", "fr": "État on/off" } },
+      { "id": "inverted", "label": { "en": "Switch position", "fr": "Position interrupteur" } }
+    ]
+  },
+  {
+    "id": "backlight_switch",
+    "type": "dropdown",
+    "label": {
+      "en": "Backlight master",
+      "fr": "Rétroéclairage (maître)"
+    },
+    "value": "on",
+    "values": [
+      { "id": "off", "label": { "en": "Off", "fr": "Éteint" } },
+      { "id": "on", "label": { "en": "On", "fr": "Allumé" } }
+    ]
+  },
+  {
+    "id": "backlight_brightness",
+    "type": "number",
+    "label": {
+      "en": "Backlight brightness %",
+      "fr": "Luminosité rétroéclairage %"
+    },
+    "value": 50,
+    "min": 0,
+    "max": 100,
+    "units": { "en": "%" }
+  },
+  {
+    "id": "child_lock",
+    "type": "dropdown",
+    "label": {
+      "en": "Child lock",
+      "fr": "Sécurité enfant"
+    },
+    "value": "unlocked",
+    "values": [
+      { "id": "unlocked", "label": { "en": "Unlocked", "fr": "Déverrouillé" } },
+      { "id": "locked", "label": { "en": "Locked", "fr": "Verrouillé" } }
+    ]
+  },
+  {
+    "id": "on_color",
+    "type": "dropdown",
+    "label": {
+      "en": "ON LED color (colored variants)",
+      "fr": "Couleur LED ON"
+    },
+    "value": "white",
+    "values": [
+      { "id": "red", "label": { "en": "Red" } },
+      { "id": "blue", "label": { "en": "Blue" } },
+      { "id": "green", "label": { "en": "Green" } },
+      { "id": "white", "label": { "en": "White" } },
+      { "id": "yellow", "label": { "en": "Yellow" } },
+      { "id": "magenta", "label": { "en": "Magenta" } },
+      { "id": "cyan", "label": { "en": "Cyan" } },
+      { "id": "warm_white", "label": { "en": "Warm white" } },
+      { "id": "warm_yellow", "label": { "en": "Warm yellow" } }
+    ]
+  },
+  {
+    "id": "off_color",
+    "type": "dropdown",
+    "label": {
+      "en": "OFF LED color (colored variants)",
+      "fr": "Couleur LED OFF"
+    },
+    "value": "blue",
+    "values": [
+      { "id": "red", "label": { "en": "Red" } },
+      { "id": "blue", "label": { "en": "Blue" } },
+      { "id": "green", "label": { "en": "Green" } },
+      { "id": "white", "label": { "en": "White" } },
+      { "id": "yellow", "label": { "en": "Yellow" } },
+      { "id": "magenta", "label": { "en": "Magenta" } },
+      { "id": "cyan", "label": { "en": "Cyan" } },
+      { "id": "warm_white", "label": { "en": "Warm white" } },
+      { "id": "warm_yellow", "label": { "en": "Warm yellow" } }
+    ]
+  }
+]

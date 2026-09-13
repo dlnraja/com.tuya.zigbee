@@ -12,7 +12,6 @@
   ],
   "capabilities": [
     "onoff",
-    "measure_battery",
     "button.1",
     "button.2",
     "button.3",
@@ -21,11 +20,6 @@
   "images": {
     "small": "/drivers/wall_switch_4_gang_tuya/assets/images/small.png",
     "large": "/drivers/wall_switch_4_gang_tuya/assets/images/large.png"
-  },
-  "energy": {
-    "batteries": [
-      "CR2032"
-    ]
   },
   "zigbee": {
     "manufacturerName": [
@@ -48,7 +42,19 @@
       "_tze284_aagrxlbd",
       "_tze284_AAGRXLBD",
       "_TZE284_aagrxlbd",
-      "_TZE284_AAGRXLBD"
+      "_TZE284_AAGRXLBD",
+      "_TZE200_hewlydpz",
+      "_tze200_hewlydpz",
+      "_TZE204_hewlydpz",
+      "_tze204_hewlydpz",
+      "_TZE204_7ytnacie",
+      "_tze204_7ytnacie",
+      "_TZE200_HEWLYDPZ",
+      "_tze200_HEWLYDPZ",
+      "_TZE204_HEWLYDPZ",
+      "_tze204_HEWLYDPZ",
+      "_TZE204_7YTNACIE",
+      "_tze204_7YTNACIE"
     ],
     "productId": [
       "TS0601"
@@ -131,14 +137,6 @@
       "maintenanceAction": true,
       "getable": false,
       "setable": false
-    },
-    "measure_battery": {
-      "title": {
-        "en": "Battery",
-        "fr": "Batterie",
-        "nl": "Batterij",
-        "de": "Batterie"
-      }
     },
     "button.2": {
       "title": {

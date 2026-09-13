@@ -3,6 +3,80 @@
   "description": "Community-reported wrong-driver / pairing conflict cases. Sacred couple = mfr + productId. Master: static compose + dynamic lookup. Stable: static compose only (copy canonicalDriver into driver.compose.json). P2318 ENRICHMENT-FIRST: lock by adding to canonicalDriver; forbidMode=couple only strips manufacturerName when the forbidden productId is also present — never strip shared productIds (coverage reduction ban); never delete a mfr from a driver solely because it appears elsewhere with a different pid.",
   "cases": [
     {
+      "id": "p2485-rkbxtclc-3gang",
+      "mfr": [
+        "_TZE204_rkbxtclc",
+        "_tze204_rkbxtclc"
+      ],
+      "productId": [
+        "TS0601"
+      ],
+      "canonicalDriver": "switch_3gang",
+      "forbiddenDrivers": [
+        "dimmer_wall_1gang",
+        "wall_switch_4_gang_tuya",
+        "climate_sensor"
+      ],
+      "forbidMode": "couple",
+      "protocol": "tuya_dp",
+      "notes": "P2485 Z2M TS0601_3gang_rkbxtclc sibling of hewlydpz family; was dimmer_wall_1gang",
+      "sources": [
+        "Z2M:TS0601_3gang_rkbxtclc",
+        "L99:four-threads"
+      ],
+      "tracks": {
+        "master": {
+          "static": true,
+          "dynamic": true
+        },
+        "stable": {
+          "static": true,
+          "dynamic": false
+        }
+      }
+    },
+    {
+      "id": "p2485-hewlydpz-7ytnacie-4gang",
+      "mfr": [
+        "_TZE200_hewlydpz",
+        "_tze200_hewlydpz",
+        "_TZE204_hewlydpz",
+        "_tze204_hewlydpz",
+        "_TZE204_7ytnacie",
+        "_tze204_7ytnacie"
+      ],
+      "productId": [
+        "TS0601"
+      ],
+      "canonicalDriver": "wall_switch_4_gang_tuya",
+      "forbiddenDrivers": [
+        "curtain_motor",
+        "sensor_illuminance_presence",
+        "dimmer_wall_1gang",
+        "climate_sensor",
+        "switch_1gang"
+      ],
+      "forbidMode": "couple",
+      "protocol": "tuya_dp",
+      "notes": "P2485 L99 four-thread: Z2M 4-gang EF00 switches misrouted (curtain/illuminance/dimmer). DP1-4 state_l*.",
+      "sources": [
+        "Z2M:TS0601_switch_4_gang_2",
+        "Z2M:TS0601_4gang_7ytnacie",
+        "L99:T26439",
+        "L99:T140352"
+      ],
+      "tracks": {
+        "master": {
+          "static": true,
+          "dynamic": true
+        },
+        "stable": {
+          "static": true,
+          "dynamic": false
+        }
+      }
+    },
+    {
       "id": "p2466-vdfwjopk-ts0219-siren",
       "mfr": [
         "_TZ3000_vdfwjopk",
