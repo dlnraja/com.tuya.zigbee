@@ -3227,5 +3227,8 @@
   },
   "9.0.901": {
     "en": "Crash harden: preempt soft-fail Homey class driver IDs (motionsensor) before Homey throws."
+  },
+  "9.0.908": {
+    "en": "Athom republish after socket hang up (P139 one-shot). Crash harden P2481/P2482 remain on Test."
   }
 }
