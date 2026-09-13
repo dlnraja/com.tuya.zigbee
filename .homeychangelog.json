@@ -3233,5 +3233,8 @@
   },
   "9.0.909": {
     "en": "P2484: EF00 init OOM harden (GH#548) + sacred-keep gkfbdvyx radar pair (GH#547)."
+  },
+  "9.0.911": {
+    "en": "P2484 republish after Athom socket hang on 9.0.910 (EF00 OOM + gkfbdvyx sacred-keep)."
   }
 }
