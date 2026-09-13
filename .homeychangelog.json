@@ -3213,6 +3213,9 @@
   "9.0.899": {
     "en": "Athom republish of crash soft-fail + smart knob flow restore (retry after socket hang up)."
   },
+  "9.0.907": {
+    "en": "Athom republish after socket hang up (P139 one-shot). Crash harden P2481/P2482 remain on Test."
+  },
   "9.0.905": {
     "en": "E2E dashboard honesty for Stable validate + compose driver folder gate."
   },
