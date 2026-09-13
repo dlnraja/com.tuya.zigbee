@@ -1575,5 +1575,8 @@
   },
   "5.12.178": {
     "en": "P2484: EF00 init OOM harden + sacred-keep gkfbdvyx (backport)."
+  },
+  "5.12.179": {
+    "en": "P2484 force republish: EF00 OOM harden + gkfbdvyx sacred-keep (backport)."
   }
 }
