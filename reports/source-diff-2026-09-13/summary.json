@@ -1,0 +1,59 @@
+{
+  "generatedAt": "2026-09-13T06:49:22.582Z",
+  "mode": "plan",
+  "projectFingerprint": "3c359bc40f28b9b7",
+  "projectChanged": true,
+  "plan": [
+    {
+      "id": "z2m",
+      "action": "skip-fresh",
+      "reason": "cache fresh (data/z2m_cache.json, 0.1h)"
+    },
+    {
+      "id": "zha",
+      "action": "crawl-missing",
+      "reason": "no state file"
+    },
+    {
+      "id": "blakadder",
+      "action": "crawl-missing",
+      "reason": "no state file"
+    },
+    {
+      "id": "deconz",
+      "action": "crawl-missing",
+      "reason": "no state file"
+    },
+    {
+      "id": "johan",
+      "action": "crawl-missing",
+      "reason": "no state file"
+    },
+    {
+      "id": "forum",
+      "action": "skip-unavailable",
+      "reason": "secrets missing: DISCOURSE_API_KEY"
+    },
+    {
+      "id": "gmail",
+      "action": "skip-unavailable",
+      "reason": "secrets missing: GMAIL_EMAIL, GMAIL_APP_PASSWORD"
+    },
+    {
+      "id": "cross-ref",
+      "action": "run-local",
+      "reason": "project fingerprint changed — cross-ref only"
+    },
+    {
+      "id": "flow-fleet",
+      "action": "run-local",
+      "reason": "local script stale or forced"
+    }
+  ],
+  "skipCount": 3,
+  "crawlCount": 6,
+  "applyResults": [],
+  "manifestPath": ".github/state/intelligent-source-manifest.json",
+  "blocked": false,
+  "ok": true
+}
