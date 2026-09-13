@@ -6941,20 +6941,26 @@
   {
     "manufacturerName": "_TZE200_hewlydpz",
     "productId": "TS0601",
-    "winner": "climate_sensor",
+    "winner": "wall_switch_4_gang_tuya",
     "losers": [
+      "curtain_motor",
+      "climate_sensor",
       "switch_1gang"
     ],
-    "winnerPriority": 100
+    "winnerPriority": 100,
+    "note": "P2485 Z2M TS0601_switch_4_gang_2"
   },
   {
     "manufacturerName": "_tze200_hewlydpz",
     "productId": "TS0601",
-    "winner": "climate_sensor",
+    "winner": "wall_switch_4_gang_tuya",
     "losers": [
+      "curtain_motor",
+      "climate_sensor",
       "switch_1gang"
     ],
-    "winnerPriority": 100
+    "winnerPriority": 100,
+    "note": "P2485 Z2M TS0601_switch_4_gang_2"
   },
   {
     "manufacturerName": "_TZE200_pcdmj88b",

@@ -459,6 +459,116 @@
         "nl": "Gang 4 wisselen",
         "de": "Gang 4 umschalten"
       }
+    },
+    {
+      "id": "wall_switch_4_gang_tuya_set_backlight",
+      "title": {
+        "en": "Set backlight mode",
+        "fr": "Définir le mode rétroéclairage"
+      },
+      "args": [
+        {
+          "name": "mode",
+          "type": "dropdown",
+          "values": [
+            { "id": "off", "title": { "en": "Off", "fr": "Éteint" } },
+            { "id": "normal", "title": { "en": "Normal", "fr": "Normal" } },
+            { "id": "inverted", "title": { "en": "Inverted", "fr": "Inversé" } }
+          ]
+        }
+      ],
+      "titleFormatted": {
+        "en": "Set backlight mode [[mode]]",
+        "fr": "Définir le mode rétroéclairage [[mode]]"
+      }
+    },
+    {
+      "id": "wall_switch_4_gang_tuya_set_power_on_behavior",
+      "title": {
+        "en": "Set power-on behavior",
+        "fr": "Comportement à la mise sous tension"
+      },
+      "args": [
+        {
+          "name": "mode",
+          "type": "dropdown",
+          "values": [
+            { "id": "off", "title": { "en": "Off" } },
+            { "id": "on", "title": { "en": "On" } },
+            { "id": "previous", "title": { "en": "Previous" } }
+          ]
+        }
+      ],
+      "titleFormatted": {
+        "en": "Set power-on behavior [[mode]]",
+        "fr": "Mise sous tension [[mode]]"
+      }
+    },
+    {
+      "id": "wall_switch_4_gang_tuya_set_child_lock",
+      "title": {
+        "en": "Set child lock",
+        "fr": "Sécurité enfant"
+      },
+      "args": [
+        {
+          "name": "locked",
+          "type": "checkbox",
+          "title": { "en": "Locked", "fr": "Verrouillé" }
+        }
+      ],
+      "titleFormatted": {
+        "en": "Child lock [[locked]]",
+        "fr": "Sécurité enfant [[locked]]"
+      }
+    },
+    {
+      "id": "wall_switch_4_gang_tuya_set_countdown",
+      "title": {
+        "en": "Set gang countdown",
+        "fr": "Compte à rebours gang"
+      },
+      "args": [
+        {
+          "name": "gang",
+          "type": "dropdown",
+          "values": [
+            { "id": "1", "title": { "en": "Gang 1" } },
+            { "id": "2", "title": { "en": "Gang 2" } },
+            { "id": "3", "title": { "en": "Gang 3" } },
+            { "id": "4", "title": { "en": "Gang 4" } }
+          ]
+        },
+        {
+          "name": "seconds",
+          "type": "number",
+          "placeholder": { "en": "Seconds (0–86400)", "fr": "Secondes (0–86400)" },
+          "min": 0,
+          "max": 86400
+        }
+      ],
+      "titleFormatted": {
+        "en": "Countdown gang [[gang]] [[seconds]]s",
+        "fr": "Compte à rebours gang [[gang]] [[seconds]]s"
+      }
+    },
+    {
+      "id": "wall_switch_4_gang_tuya_set_backlight_switch",
+      "title": {
+        "en": "Set backlight master",
+        "fr": "Rétroéclairage maître"
+      },
+      "args": [
+        {
+          "name": "on",
+          "type": "checkbox",
+          "title": { "en": "On", "fr": "Allumé" }
+        }
+      ],
+      "titleFormatted": {
+        "en": "Backlight master [[on]]",
+        "fr": "Rétroéclairage maître [[on]]"
+      }
     }
   ]
 }

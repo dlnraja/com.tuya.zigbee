@@ -1,0 +1,929 @@
+{
+  "generatedAt": "2026-09-13T22:45:24.876Z",
+  "missingTop": [],
+  "lockedTop": [
+    {
+      "couple": "_tze284_o3x45p96|TS0601",
+      "mfr": "_TZE284_o3x45p96",
+      "pid": "TS0601",
+      "count": 10,
+      "inApp": true,
+      "drivers": [
+        "device_radiator_valve"
+      ],
+      "topics": [
+        140352
+      ],
+      "users": [
+        "Haadeess"
+      ],
+      "posts": [
+        "T140352#undefined",
+        "T140352#undefined",
+        "T140352#undefined",
+        "T140352#undefined",
+        "T140352#undefined",
+        "T140352#undefined",
+        "T140352#undefined",
+        "T140352#undefined"
+      ],
+      "classes": [
+        "question",
+        "other",
+        "diagnostic",
+        "thanks"
+      ]
+    },
+    {
+      "couple": "_tze204_gkfbdvyx|?",
+      "mfr": "_TZE204_gkfbdvyx",
+      "pid": null,
+      "count": 9,
+      "inApp": true,
+      "drivers": [
+        "presence_sensor_radar"
+      ],
+      "topics": [
+        140352,
+        26439
+      ],
+      "users": [
+        "dlnraja",
+        "Ronny_M",
+        "Erno_Almassy"
+      ],
+      "posts": [
+        "T140352#undefined",
+        "T140352#undefined",
+        "T140352#undefined",
+        "T140352#undefined",
+        "T140352#undefined",
+        "T140352#undefined",
+        "T140352#undefined",
+        "T26439#undefined"
+      ],
+      "classes": [
+        "maintainer",
+        "diagnostic",
+        "thanks",
+        "bug"
+      ]
+    },
+    {
+      "couple": "_tze284_oitavov2|TS0601",
+      "mfr": "_TZE284_oitavov2",
+      "pid": "TS0601",
+      "count": 8,
+      "inApp": true,
+      "drivers": [
+        "soil_sensor"
+      ],
+      "topics": [
+        140352,
+        26439
+      ],
+      "users": [
+        "DutchDuke",
+        "Ronald_Bok",
+        "Haadeess"
+      ],
+      "posts": [
+        "T140352#undefined",
+        "T140352#undefined",
+        "T140352#undefined",
+        "T140352#undefined",
+        "T140352#undefined",
+        "T140352#undefined",
+        "T140352#undefined",
+        "T26439#undefined"
+      ],
+      "classes": [
+        "diagnostic",
+        "thanks",
+        "other",
+        "bug"
+      ]
+    },
+    {
+      "couple": "_tze204_gkfbdvyx|TS0601",
+      "mfr": "_TZE204_gkfbdvyx",
+      "pid": "TS0601",
+      "count": 8,
+      "inApp": true,
+      "drivers": [
+        "presence_sensor_radar"
+      ],
+      "topics": [
+        140352
+      ],
+      "users": [
+        "Ronny_M"
+      ],
+      "posts": [
+        "T140352#undefined",
+        "T140352#undefined",
+        "T140352#undefined",
+        "T140352#undefined",
+        "T140352#undefined",
+        "T140352#undefined",
+        "T140352#undefined",
+        "T140352#undefined"
+      ],
+      "classes": [
+        "bug",
+        "thanks",
+        "diagnostic"
+      ]
+    },
+    {
+      "couple": "_tze284_iadro9bf|TS0601",
+      "mfr": "_TZE284_iadro9bf",
+      "pid": "TS0601",
+      "count": 8,
+      "inApp": true,
+      "drivers": [
+        "presence_sensor_radar"
+      ],
+      "topics": [
+        140352
+      ],
+      "users": [
+        "Ronny_M"
+      ],
+      "posts": [
+        "T140352#undefined",
+        "T140352#undefined",
+        "T140352#undefined",
+        "T140352#undefined",
+        "T140352#undefined",
+        "T140352#undefined",
+        "T140352#undefined",
+        "T140352#undefined"
+      ],
+      "classes": [
+        "bug",
+        "thanks",
+        "diagnostic"
+      ]
+    },
+    {
+      "couple": "_tze200_kb5noeto|TS0601",
+      "mfr": "_TZE200_kb5noeto",
+      "pid": "TS0601",
+      "count": 7,
+      "inApp": true,
+      "drivers": [
+        "presence_sensor_radar"
+      ],
+      "topics": [
+        140352
+      ],
+      "users": [
+        "Rudy_De_Vylder",
+        "Naresh_Kodali",
+        "dlnraja",
+        "Patrick_Van_Deursen"
+      ],
+      "posts": [
+        "T140352#undefined",
+        "T140352#undefined",
+        "T140352#undefined",
+        "T140352#undefined",
+        "T140352#undefined",
+        "T140352#undefined",
+        "T140352#undefined"
+      ],
+      "classes": [
+        "device_request",
+        "question",
+        "other",
+        "maintainer",
+        "diagnostic"
+      ]
+    },
+    {
+      "couple": "_tze200_crq3r3la|?",
+      "mfr": "_TZE200_crq3r3la",
+      "pid": null,
+      "count": 7,
+      "inApp": true,
+      "drivers": [
+        "presence_sensor_radar"
+      ],
+      "topics": [
+        140352
+      ],
+      "users": [
+        "JJ10",
+        "dlnraja",
+        "dzsandzsee"
+      ],
+      "posts": [
+        "T140352#undefined",
+        "T140352#undefined",
+        "T140352#undefined",
+        "T140352#undefined",
+        "T140352#undefined",
+        "T140352#undefined",
+        "T140352#undefined"
+      ],
+      "classes": [
+        "question",
+        "other",
+        "thanks",
+        "maintainer",
+        "device_request"
+      ]
+    },
+    {
+      "couple": "_tze200_rhgsbacq|?",
+      "mfr": "_TZE200_rhgsbacq",
+      "pid": null,
+      "count": 6,
+      "inApp": true,
+      "drivers": [
+        "presence_sensor_radar"
+      ],
+      "topics": [
+        140352
+      ],
+      "users": [
+        "Laborhexe",
+        "Michel_Helsdingen"
+      ],
+      "posts": [
+        "T140352#undefined",
+        "T140352#undefined",
+        "T140352#undefined",
+        "T140352#undefined",
+        "T140352#undefined",
+        "T140352#undefined"
+      ],
+      "classes": [
+        "bug",
+        "other",
+        "diagnostic"
+      ]
+    },
+    {
+      "couple": "_tze200_3towulqd|TS0601",
+      "mfr": "_TZE200_3towulqd",
+      "pid": "TS0601",
+      "count": 6,
+      "inApp": true,
+      "drivers": [
+        "presence_sensor_radar"
+      ],
+      "topics": [
+        140352,
+        26439
+      ],
+      "users": [
+        "4x4_Pete",
+        "Mike_Nono",
+        "Boechie",
+        "Clement_F",
+        "GianlucaL",
+        "Eftychis_Georgilas"
+      ],
+      "posts": [
+        "T140352#undefined",
+        "T140352#undefined",
+        "T26439#undefined",
+        "T26439#undefined",
+        "T26439#undefined",
+        "T26439#undefined"
+      ],
+      "classes": [
+        "other",
+        "question",
+        "device_request",
+        "thanks"
+      ]
+    },
+    {
+      "couple": "_tze200_3p5ydos3|?",
+      "mfr": "_TZE200_3p5ydos3",
+      "pid": null,
+      "count": 6,
+      "inApp": true,
+      "drivers": [
+        "wall_dimmer_tuya"
+      ],
+      "topics": [
+        140352,
+        26439
+      ],
+      "users": [
+        "Attilla",
+        "dlnraja",
+        "JvdMeulen",
+        "Peter_van_Werkhoven",
+        "johan_bendz"
+      ],
+      "posts": [
+        "T140352#undefined",
+        "T140352#undefined",
+        "T140352#undefined",
+        "T26439#undefined",
+        "T26439#undefined",
+        "T26439#undefined"
+      ],
+      "classes": [
+        "other",
+        "maintainer",
+        "question"
+      ]
+    },
+    {
+      "couple": "_tze204_sxm7l9xa|?",
+      "mfr": "_TZE204_sxm7l9xa",
+      "pid": null,
+      "count": 6,
+      "inApp": true,
+      "drivers": [
+        "presence_sensor_radar"
+      ],
+      "topics": [
+        26439
+      ],
+      "users": [
+        "JvdMeulen",
+        "Sharkys",
+        "Marcel_Visser"
+      ],
+      "posts": [
+        "T26439#undefined",
+        "T26439#undefined",
+        "T26439#undefined",
+        "T26439#undefined",
+        "T26439#undefined",
+        "T26439#undefined"
+      ],
+      "classes": [
+        "other",
+        "bug",
+        "device_request"
+      ]
+    },
+    {
+      "couple": "_tze284_oitavov2|TS0201",
+      "mfr": "_TZE284_oitavov2",
+      "pid": "TS0201",
+      "count": 5,
+      "inApp": true,
+      "drivers": [
+        "soil_sensor"
+      ],
+      "topics": [
+        140352
+      ],
+      "users": [
+        "DutchDuke",
+        "dlnraja"
+      ],
+      "posts": [
+        "T140352#undefined",
+        "T140352#undefined",
+        "T140352#undefined",
+        "T140352#undefined",
+        "T140352#undefined"
+      ],
+      "classes": [
+        "device_request",
+        "thanks",
+        "maintainer",
+        "diagnostic"
+      ]
+    },
+    {
+      "couple": "_tze204_qasjif9e|TS0601",
+      "mfr": "_TZE204_qasjif9e",
+      "pid": "TS0601",
+      "count": 5,
+      "inApp": true,
+      "drivers": [
+        "presence_sensor_radar"
+      ],
+      "topics": [
+        140352,
+        26439
+      ],
+      "users": [
+        "F3006",
+        "Mike_Nono",
+        "Robin_Andersson",
+        "Henk_Renting"
+      ],
+      "posts": [
+        "T140352#undefined",
+        "T140352#undefined",
+        "T26439#undefined",
+        "T26439#undefined",
+        "T26439#undefined"
+      ],
+      "classes": [
+        "question",
+        "device_request"
+      ]
+    },
+    {
+      "couple": "_tze204_n9ctkb6j|TS0601",
+      "mfr": "_TZE204_n9ctkb6j",
+      "pid": "TS0601",
+      "count": 5,
+      "inApp": true,
+      "drivers": [
+        "switch_1gang",
+        "dimmer_1_gang_tuya"
+      ],
+      "topics": [
+        140352
+      ],
+      "users": [
+        "Attilla",
+        "dlnraja",
+        "Mike_Nono"
+      ],
+      "posts": [
+        "T140352#undefined",
+        "T140352#undefined",
+        "T140352#undefined",
+        "T140352#undefined",
+        "T140352#undefined"
+      ],
+      "classes": [
+        "question",
+        "maintainer",
+        "device_request",
+        "other"
+      ]
+    },
+    {
+      "couple": "_tze204_clrdrnya|TS0601",
+      "mfr": "_TZE204_clrdrnya",
+      "pid": "TS0601",
+      "count": 5,
+      "inApp": true,
+      "drivers": [
+        "presence_sensor_radar"
+      ],
+      "topics": [
+        140352
+      ],
+      "users": [
+        "7Hills",
+        "Sem",
+        "RoyceRoy",
+        "VicHY"
+      ],
+      "posts": [
+        "T140352#undefined",
+        "T140352#undefined",
+        "T140352#undefined",
+        "T140352#undefined",
+        "T140352#undefined"
+      ],
+      "classes": [
+        "diagnostic",
+        "other",
+        "thanks"
+      ]
+    },
+    {
+      "couple": "_tze204_ijxvkhd0|?",
+      "mfr": "_TZE204_ijxvkhd0",
+      "pid": null,
+      "count": 5,
+      "inApp": true,
+      "drivers": [
+        "presence_sensor_radar"
+      ],
+      "topics": [
+        26439
+      ],
+      "users": [
+        "JvdMeulen",
+        "Sharkys"
+      ],
+      "posts": [
+        "T26439#undefined",
+        "T26439#undefined",
+        "T26439#undefined",
+        "T26439#undefined",
+        "T26439#undefined"
+      ],
+      "classes": [
+        "other",
+        "question"
+      ]
+    },
+    {
+      "couple": "_tze284_vvmbj46n|TS0601",
+      "mfr": "_TZE284_vvmbj46n",
+      "pid": "TS0601",
+      "count": 4,
+      "inApp": true,
+      "drivers": [
+        "lcdtemphumidsensor"
+      ],
+      "topics": [
+        140352
+      ],
+      "users": [
+        "Karsten_Hille",
+        "dlnraja"
+      ],
+      "posts": [
+        "T140352#undefined",
+        "T140352#undefined",
+        "T140352#undefined",
+        "T140352#undefined"
+      ],
+      "classes": [
+        "device_request",
+        "maintainer",
+        "other"
+      ]
+    },
+    {
+      "couple": "_tze200_2aaelwxk|TS0601",
+      "mfr": "_TZE200_2aaelwxk",
+      "pid": "TS0601",
+      "count": 4,
+      "inApp": true,
+      "drivers": [
+        "presence_sensor_radar"
+      ],
+      "topics": [
+        140352
+      ],
+      "users": [
+        "Naresh_Kodali",
+        "dlnraja",
+        "Mike_Nono"
+      ],
+      "posts": [
+        "T140352#undefined",
+        "T140352#undefined",
+        "T140352#undefined",
+        "T140352#undefined"
+      ],
+      "classes": [
+        "other",
+        "maintainer",
+        "question"
+      ]
+    },
+    {
+      "couple": "_tze200_rhgsbacq|TS0601",
+      "mfr": "_TZE200_rhgsbacq",
+      "pid": "TS0601",
+      "count": 4,
+      "inApp": true,
+      "drivers": [
+        "presence_sensor_radar"
+      ],
+      "topics": [
+        140352
+      ],
+      "users": [
+        "Naresh_Kodali",
+        "dlnraja",
+        "Laborhexe"
+      ],
+      "posts": [
+        "T140352#undefined",
+        "T140352#undefined",
+        "T140352#undefined",
+        "T140352#undefined"
+      ],
+      "classes": [
+        "other",
+        "maintainer"
+      ]
+    },
+    {
+      "couple": "_tze284_iadro9bf|?",
+      "mfr": "_TZE284_iadro9bf",
+      "pid": null,
+      "count": 4,
+      "inApp": true,
+      "drivers": [
+        "presence_sensor_radar"
+      ],
+      "topics": [
+        140352
+      ],
+      "users": [
+        "dlnraja",
+        "Ronny_M"
+      ],
+      "posts": [
+        "T140352#undefined",
+        "T140352#undefined",
+        "T140352#undefined",
+        "T140352#undefined"
+      ],
+      "classes": [
+        "maintainer",
+        "diagnostic",
+        "bug"
+      ]
+    },
+    {
+      "couple": "_tze204_ztqnh5cg|TS0601",
+      "mfr": "_TZE204_ztqnh5cg",
+      "pid": "TS0601",
+      "count": 4,
+      "inApp": true,
+      "drivers": [
+        "presence_sensor_radar"
+      ],
+      "topics": [
+        140352
+      ],
+      "users": [
+        "tlink",
+        "Mike_Nono"
+      ],
+      "posts": [
+        "T140352#undefined",
+        "T140352#undefined",
+        "T140352#undefined",
+        "T140352#undefined"
+      ],
+      "classes": [
+        "question",
+        "thanks",
+        "diagnostic"
+      ]
+    },
+    {
+      "couple": "_tze284_aao3yzhs|TS0601",
+      "mfr": "_TZE284_aao3yzhs",
+      "pid": "TS0601",
+      "count": 4,
+      "inApp": true,
+      "drivers": [
+        "soil_sensor"
+      ],
+      "topics": [
+        140352,
+        26439
+      ],
+      "users": [
+        "Haadeess",
+        "Daniel_Larsson2",
+        "Mike_Nono",
+        "Martin_Kliment"
+      ],
+      "posts": [
+        "T140352#undefined",
+        "T140352#undefined",
+        "T140352#undefined",
+        "T26439#undefined"
+      ],
+      "classes": [
+        "diagnostic",
+        "thanks",
+        "question",
+        "device_request"
+      ]
+    },
+    {
+      "couple": "_tze200_vvmbj46n|?",
+      "mfr": "_TZE200_vvmbj46n",
+      "pid": null,
+      "count": 4,
+      "inApp": true,
+      "drivers": [
+        "lcdtemphumidsensor",
+        "lcdtemphumidsensor_3"
+      ],
+      "topics": [
+        140352,
+        26439
+      ],
+      "users": [
+        "Peter_van_Werkhoven"
+      ],
+      "posts": [
+        "T140352#undefined",
+        "T140352#undefined",
+        "T140352#undefined",
+        "T26439#undefined"
+      ],
+      "classes": [
+        "diagnostic",
+        "bug"
+      ]
+    },
+    {
+      "couple": "_tze200_pay2byax|?",
+      "mfr": "_TZE200_pay2byax",
+      "pid": null,
+      "count": 4,
+      "inApp": true,
+      "drivers": [
+        "contact_sensor",
+        "contact_sensor_zigbee"
+      ],
+      "topics": [
+        140352
+      ],
+      "users": [
+        "Peter_van_Werkhoven",
+        "dlnraja"
+      ],
+      "posts": [
+        "T140352#undefined",
+        "T140352#undefined",
+        "T140352#undefined",
+        "T140352#undefined"
+      ],
+      "classes": [
+        "diagnostic",
+        "maintainer",
+        "bug"
+      ]
+    },
+    {
+      "couple": "_tze200_3towulqd|?",
+      "mfr": "_TZE200_3towulqd",
+      "pid": null,
+      "count": 4,
+      "inApp": true,
+      "drivers": [
+        "presence_sensor_radar"
+      ],
+      "topics": [
+        140352,
+        26439
+      ],
+      "users": [
+        "dlnraja",
+        "JvdMeulen",
+        "Martin072"
+      ],
+      "posts": [
+        "T140352#undefined",
+        "T140352#undefined",
+        "T26439#undefined",
+        "T26439#undefined"
+      ],
+      "classes": [
+        "maintainer",
+        "other",
+        "question"
+      ]
+    },
+    {
+      "couple": "_tze284_fhvpaltk|TS0601",
+      "mfr": "_TZE284_fhvpaltk",
+      "pid": "TS0601",
+      "count": 4,
+      "inApp": true,
+      "drivers": [
+        "valve_dual_irrigation"
+      ],
+      "topics": [
+        140352
+      ],
+      "users": [
+        "Joep_Vullings"
+      ],
+      "posts": [
+        "T140352#undefined",
+        "T140352#undefined",
+        "T140352#undefined",
+        "T140352#undefined"
+      ],
+      "classes": [
+        "bug",
+        "other",
+        "thanks"
+      ]
+    },
+    {
+      "couple": "_tze284_aaeasoll|TS0601",
+      "mfr": "_TZE284_aaeasoll",
+      "pid": "TS0601",
+      "count": 4,
+      "inApp": true,
+      "drivers": [
+        "light_sensor_outdoor"
+      ],
+      "topics": [
+        140352,
+        26439
+      ],
+      "users": [
+        "Tobias-B"
+      ],
+      "posts": [
+        "T140352#undefined",
+        "T140352#undefined",
+        "T140352#undefined",
+        "T26439#undefined"
+      ],
+      "classes": [
+        "diagnostic",
+        "bug",
+        "device_request"
+      ]
+    },
+    {
+      "couple": "_tze204_myd45weu|TS0601",
+      "mfr": "_TZE204_myd45weu",
+      "pid": "TS0601",
+      "count": 4,
+      "inApp": true,
+      "drivers": [
+        "soil_sensor"
+      ],
+      "topics": [
+        140352,
+        26439
+      ],
+      "users": [
+        "Mike_Nono",
+        "Jan-Thomas_Borresen",
+        "DaDa",
+        "Paul_Nas"
+      ],
+      "posts": [
+        "T140352#undefined",
+        "T26439#undefined",
+        "T26439#undefined",
+        "T26439#undefined"
+      ],
+      "classes": [
+        "question",
+        "thanks"
+      ]
+    },
+    {
+      "couple": "_tze204_qasjif9e|?",
+      "mfr": "_TZE204_qasjif9e",
+      "pid": null,
+      "count": 4,
+      "inApp": true,
+      "drivers": [
+        "presence_sensor_radar"
+      ],
+      "topics": [
+        26439
+      ],
+      "users": [
+        "JvdMeulen",
+        "Sharkys",
+        "Erno_Almassy",
+        "dlnraja"
+      ],
+      "posts": [
+        "T26439#undefined",
+        "T26439#undefined",
+        "T26439#undefined",
+        "T26439#undefined"
+      ],
+      "classes": [
+        "other",
+        "bug",
+        "thanks",
+        "maintainer"
+      ]
+    },
+    {
+      "couple": "_tze200_tyffvoij|TS0601",
+      "mfr": "_TZE200_tyffvoij",
+      "pid": "TS0601",
+      "count": 3,
+      "inApp": true,
+      "drivers": [
+        "presence_sensor_radar"
+      ],
+      "topics": [
+        140352
+      ],
+      "users": [
+        "Naresh_Kodali",
+        "dlnraja"
+      ],
+      "posts": [
+        "T140352#undefined",
+        "T140352#undefined",
+        "T140352#undefined"
+      ],
+      "classes": [
+        "other",
+        "maintainer"
+      ]
+    }
+  ],
+  "stats": {
+    "couples": 601,
+    "missing": 0,
+    "locked": 601
+  }
+}

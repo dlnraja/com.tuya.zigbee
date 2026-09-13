@@ -787,6 +787,48 @@
       "pid": "TS0601",
       "driverId": "water_valve_smart",
       "note": "P2468 FrankEver FK-BV05 flow meter"
+    },
+    {
+      "mfr": "_TZE200_hewlydpz",
+      "pid": "TS0601",
+      "driverId": "wall_switch_4_gang_tuya",
+      "note": "P2485 Z2M TS0601_switch_4_gang_2 Homeetec; was curtain_motor"
+    },
+    {
+      "mfr": "_TZE204_hewlydpz",
+      "pid": "TS0601",
+      "driverId": "wall_switch_4_gang_tuya",
+      "note": "P2485 Z2M TS0601_4gang_7ytnacie sibling; was sensor_illuminance_presence"
+    },
+    {
+      "mfr": "_TZE204_7ytnacie",
+      "pid": "TS0601",
+      "driverId": "wall_switch_4_gang_tuya",
+      "note": "P2485 Z2M four gang colored backlight; was dimmer_wall_1gang"
+    },
+    {
+      "mfr": "_TZE284_debczeci",
+      "pid": "TS0601",
+      "driverId": "presence_sensor_radar",
+      "note": "P2485 L99 Johan#5493 iHseno presence; sacred-keep"
+    },
+    {
+      "mfr": "_TZE204_dhotiauw",
+      "pid": "TS0601",
+      "driverId": "din_rail_meter",
+      "note": "P2485 forum#2115 dual energy meter sacred-keep"
+    },
+    {
+      "mfr": "_TZE200_crq3r3la",
+      "pid": "TS0601",
+      "driverId": "presence_sensor_radar",
+      "note": "P2485 forum#2032 CK-BL702 presence sacred-keep"
+    },
+    {
+      "mfr": "_TZE204_rkbxtclc",
+      "pid": "TS0601",
+      "driverId": "switch_3gang",
+      "note": "P2485 Z2M TS0601_3gang_rkbxtclc; was dimmer_wall_1gang"
     }
   ]
 }
