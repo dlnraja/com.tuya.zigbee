@@ -3,7 +3,8 @@
 /**
  * P2484 — Contre quoi:
  * 1) Athom compact drops `_TZE204_gkfbdvyx` from presence_sensor_radar → Homey Unknown Zigbee (#547)
- * 2) TuyaEF00Manager.initialize() re-entrancy stacks listeners → heap OOM (#548 @ 9.0.908)
+ * 2) TuyaEF00Manager.initialize() re-entrancy stacks listeners → heap OOM
+ *    (#548 Wuma 97413373 @ 9.0.908; Peter #2235 8278ec79 @ 9.0.908 SOS / 375def7f @ 9.0.895)
  */
 
 const assert = require('assert');
