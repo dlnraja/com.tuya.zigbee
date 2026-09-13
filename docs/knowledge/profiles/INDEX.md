@@ -1,6 +1,6 @@
 # Enrichment profiles index
 
-Generated: 2026-09-13T06:48:51 · manifest `config/enrichment/manifest.json`
+Generated: 2026-09-13T17:05:21 · manifest `config/enrichment/manifest.json`
 
 ## Users
 
