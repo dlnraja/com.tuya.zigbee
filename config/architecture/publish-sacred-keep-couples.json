@@ -243,6 +243,18 @@
       "note": "clrdrnya TZE284 sibling"
     },
     {
+      "mfr": "_TZE204_gkfbdvyx",
+      "pid": "TS0601",
+      "driverId": "presence_sensor_radar",
+      "note": "P2484 GH#547 HiepSVG ZY-M100-24GV3 — compact dropped mfr → Unknown Zigbee"
+    },
+    {
+      "mfr": "_TZE200_gkfbdvyx",
+      "pid": "TS0601",
+      "driverId": "presence_sensor_radar",
+      "note": "P2484 gkfbdvyx TZE200 sibling (Z2M same fingerprint group)"
+    },
+    {
       "mfr": "HOBEIAN",
       "pid": "ZG-204ZL",
       "driverId": "presence_sensor_radar",
