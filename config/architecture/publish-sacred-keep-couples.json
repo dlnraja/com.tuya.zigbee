@@ -733,6 +733,18 @@
       "pid": "TS0001",
       "driverId": "wall_switch_1gang_1way",
       "note": "P2460 GH#545"
+    },
+    {
+      "mfr": "_TZE204_gkfbdvyx",
+      "pid": "TS0601",
+      "driverId": "presence_sensor_radar",
+      "note": "P2484 GH#547 HiepSVG ZY-M100-24GV3 — compact dropped mfr → Unknown Zigbee"
+    },
+    {
+      "mfr": "_TZE200_gkfbdvyx",
+      "pid": "TS0601",
+      "driverId": "presence_sensor_radar",
+      "note": "P2484 gkfbdvyx TZE200 sibling (Z2M same fingerprint group)"
     }
   ]
 }
