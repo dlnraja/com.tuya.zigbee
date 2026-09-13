@@ -1,9 +1,20 @@
 {
-  "harvestedAt": "2026-09-13T00:22:38.098Z",
+  "harvestedAt": "2026-09-13T07:43:04.693Z",
   "repo": "dlnraja/com.tuya.zigbee",
   "auth": "token",
   "error": null,
   "issues": [
+    {
+      "number": 548,
+      "title": "Bug report - [Short description] App crashes all the time",
+      "labels": [
+        "bug"
+      ],
+      "updatedAt": "2026-09-13T07:25:02Z",
+      "user": "Wuma68",
+      "htmlUrl": "https://github.com/dlnraja/com.tuya.zigbee/issues/548",
+      "bodySnippet": "### Describe the bug\n\n> A clear and concise description of what the bug is.\n\n### To Reproduce\n\nSteps to reproduce the behavior:\n\nRestart it's self all the time!\n\n1. Go to '...'\n2. Click on '....'\n3. Scroll down to '....'\n4. See error\n\n### Expected behavior\n\n> A clear and concise "
+    },
     {
       "number": 547,
       "title": "Tuya Zigbee device Radar Sensor: pairing OK but having no function",
@@ -11,7 +22,7 @@
         "enhancement",
         "device-request"
       ],
-      "updatedAt": "2026-09-12T20:36:40Z",
+      "updatedAt": "2026-09-13T06:52:25Z",
       "user": "HiepSVG",
       "htmlUrl": "https://github.com/dlnraja/com.tuya.zigbee/issues/547",
       "bodySnippet": "## 📱 Basic Information\n\n\nhttps://www.aliexpress.com/item/1005007575802295.html\n Tuya WiFi /Zigbee 24G Human Presence Sensor Smart Human Body PIR Sensor Radar Detector Microwave Motion Sensors Home Automation\n---\n\n## 🔍 Zigbee Fingerprint (MANDATORY)\n\nPlease provide this informat"
@@ -41,6 +52,6 @@
     }
   ],
   "prs": [],
-  "openIssueCount": 2,
+  "openIssueCount": 3,
   "openPrCount": 0
 }
