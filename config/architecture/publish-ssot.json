@@ -1,10 +1,12 @@
 {
   "_meta": {
-    "id": "P2286-P2288",
-    "updated": "2026-08-30",
-    "why": "Orphan Athom builds + tip hang soft-continue (P2325) + inbox diag harvest (P2326).",
+    "id": "P2286-P2288-P2495",
+    "updated": "2026-09-14",
+    "why": "Orphan Athom builds + tip hang soft-continue (P2325) + inbox diag harvest (P2326) + P2490 sacred-keep failover + P2494 couple-native + P2495 publish CI/CD path lock.",
     "humanDoc": "docs/architecture/PUBLISH_SSOT.md",
     "workflowGuidelines": ".github/WORKFLOW_GUIDELINES.md §M.8",
+    "forumFailoverSsot": "config/architecture/forum-complementary-failover-ssot.json",
+    "coupleSsot": "config/architecture/sacred-couple-ssot.json",
     "classify": "BOTH"
   },
   "mandatoryPath": {
@@ -16,35 +18,46 @@
     ],
     "alternate": "npm run publish:temp -- --channel test",
     "tempDirName": "homey-publish-temp",
-    "refuseUnless": [
-      "HOMEY_ALLOW_REPO_PUBLISH=1",
-      "--force"
-    ]
+    "refuseUnless": ["HOMEY_ALLOW_REPO_PUBLISH=1", "--force"],
+    "preflight": "prepare-publish validates sacred-keep couples via sacred-couple-pair (P2495)"
   },
   "scripts": {
     "prepare": "scripts/prepare-publish.js",
     "directPublish": "scripts/direct-api-publish.js",
     "softExpect": "scripts/lib/soft-expect-decision.js",
     "compact": "scripts/maintenance/compact-zigbee-identifiers.cjs",
-    "sacredKeepList": "config/architecture/publish-sacred-keep-couples.json"
+    "sacredKeepList": "config/architecture/publish-sacred-keep-couples.json",
+    "publishPathGate": "tools/ci/p2495-publish-path-gate.js"
+  },
+  "identity": {
+    "rule": "manufacturerName + productId only — never invent pid; mfs multi-pid NORMAL",
+    "settingsKeys": { "mfr": "zb_manufacturer_name", "pid": "zb_model_id" },
+    "coupleSsot": "config/architecture/sacred-couple-ssot.json",
+    "gate": "npm run check:p2494"
   },
   "softExpect": {
     "why": "Race when auto-publish and manual publish both createBuild same version (#2997→#2998, Stable #23).",
     "reListAfterCreateBuild": true,
-    "skipWhen": [
-      "already-test",
-      "in-flight",
-      "peer-test-after-failed"
-    ],
+    "skipWhen": ["already-test", "in-flight", "peer-test-after-failed"],
     "test": "test/critical/p2286-soft-expect-publish.test.js",
     "npm": "check:p2286"
   },
   "sacredKeep": {
-    "why": "Athom expands mfr×pid; budget compaction must not drop verified couples (e.g. button_wireless_1 31→2 pids).",
+    "why": "Athom expands mfr×pid; budget compaction must not drop verified couples (e.g. button_wireless_1 31→2 pids; MIAMO icka1clh P2490). Pins are always full (mfr|pid|driver) — never mfr-only.",
     "pinFile": "config/architecture/publish-sacred-keep-couples.json",
+    "coupleSsot": "config/architecture/sacred-couple-ssot.json",
     "failIfMissingAfterCompact": true,
+    "preflightInPreparePublish": true,
     "test": "test/critical/p2288-prepare-publish-sacred-keep.test.js",
-    "npm": "check:p2288"
+    "npm": "check:p2288",
+    "p2490ExtraPins": [
+      "_TZE200_icka1clh+TS0601→curtain_motor",
+      "_TZE204_icka1clh+TS0601→curtain_motor",
+      "_TZE200_zah67ekd+TS0601→curtain_motor",
+      "_TZE200_fodv6bkr+TS0601→curtain_motor"
+    ],
+    "p2490Gate": "npm run check:p2490",
+    "granularity": "Sibling OEM prefixes (TZE200/204/284) and sibling pids under one mfr are separate couples — pin each verified pair"
   },
   "iasLeftoverEf00": {
     "why": "Sleepy IAS-only devices brick on leftover HYBRID-QUERY / queryAllDPs.",
@@ -55,31 +68,86 @@
     "criticalGap": "config/resilience/critical-gaps.json → ias_sleepy"
   },
   "gates": {
+    "prePublish": [
+      "npm run check:p244x",
+      "npm run check:p246x",
+      "npm run check:p248x",
+      "npm run check:p249x",
+      "npm run check:p2286",
+      "npm run check:p2287",
+      "npm run check:p2288",
+      "npm run check:publish"
+    ],
     "unifiedCi": [
       "npm run check:p2284",
       "npm run check:p2285",
       "npm run check:p2286",
       "npm run check:p2287",
       "npm run check:p2288",
+      "npm run check:p248x",
+      "npm run check:p249x",
+      "npm run check:publish",
       "node tools/ci/prune-fp-collision-bleed.js --check"
+    ],
+    "hardWorkflows": [
+      "auto-publish-on-push.yml",
+      "auto-fix-and-publish.yml",
+      "unified-ci.yml",
+      "validate.yml",
+      "syntax-check.yml",
+      "pr-gate.yml",
+      "code-quality.yml"
+    ],
+    "softWorkflows": [
+      "continuous-flow.yml",
+      "project-resilience.yml"
     ]
+  },
+  "aiEfficiency": {
+    "why": "P2491 — publish bots must not burn remote AI quota",
+    "env": ["AI_FORCE_LOCAL=true", "AI_ALLOW_REMOTE=false"],
+    "gate": "npm run check:p2491"
   },
   "p139": {
     "doNot": "spam republish on processing_failed / socket hang up",
+    "doNotSpamRepublish": true,
     "do": "soft-expect exit 0 when peer already on test; wait Athom cooldown",
-    "tipEmailExamples": [
-      "#3140",
-      "#3142"
-    ],
+    "tipEmailExamples": ["#3140", "#3142", "#3184", "#3187"],
     "tipEmailBody": "Your build has failed processing … socket hang up",
+    "healthyTip2026_09_14": "#3186 v9.0.926 test",
+    "failedTip2026_09_14": ["#3184 v9.0.924", "#3187 v9.0.928"],
     "patch": "P2458",
     "humanDoc": "docs/architecture/PUBLISH_SSOT.md §P139 / tip email pattern"
   },
+  "p2384": {
+    "why": "Athom tip socket hang up / processing_failed — longer API+draft waits + one-shot force_publish",
+    "apiTimeoutMs": 120000,
+    "buildPollTimeoutMs": 360000,
+    "draftWaitMs": 600000,
+    "healthyTestPatchLag": 8,
+    "forceEnv": "HOMEY_FORCE_PUBLISH=1 → direct-api-publish.js --force",
+    "dispatch": "auto-publish-on-push.yml workflow_dispatch force_publish",
+    "classify": "BOTH"
+  },
   "p2323": {
     "why": "Tip email + Homey developer tools hang / Timeout after 10000ms",
-    "dashboardTimeoutMs": 60000,
+    "dashboardTimeoutMs": 120000,
     "env": "HOMEY_API_TIMEOUT_MS",
     "softAlert": "scripts/lib/soft-expect-decision.js → softAlertDecision"
+  },
+  "p2385": {
+    "why": "Stop processing_failed amplifiers + lock Lerlink fan couple #536",
+    "workflows": {
+      "force_publish_default": false,
+      "auto_fix_publish_only_if_trigger": true,
+      "self_heal_cancel_in_progress": false
+    },
+    "device": {
+      "couple": "_TZE200/204_r32ctezx+TS0601",
+      "driver": "fan_controller",
+      "forbid": "water_valve_smart"
+    },
+    "classify": "BOTH"
   },
   "p2325": {
     "why": "Auto-Publish verify fail-closed skipped healthy Test after Athom hang (9.0.720/721 draft vs 9.0.719 test)",
@@ -95,6 +163,12 @@
     "harvest": "tools/ci/inbox-diag-uuid-harvest.js",
     "test": "test/critical/p2326-dyn-cap-misroute.test.js",
     "npm": "check:p2326",
+    "classify": "BOTH"
+  },
+  "p2495": {
+    "why": "Lock publish CI/CD + prepare-publish to couple-native discoveries",
+    "gate": "npm run check:p2495",
+    "aggregator": "npm run check:publish",
     "classify": "BOTH"
   }
 }

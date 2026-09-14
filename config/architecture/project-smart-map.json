@@ -1,0 +1,114 @@
+{
+  "_meta": {
+    "id": "P2491-project-smart-map",
+    "updated": "2026-09-14",
+    "why": "Slim cartography for bots/GHA/agents — pointers not walls. Full docs stay on disk; AI gets this map unless AI_FULL_CONTEXT=1.",
+    "classify": "BOTH"
+  },
+  "tip": {
+    "healthyTest": "9.0.926",
+    "git": "9.0.927+",
+    "p139": "soft-continue on PF tip emails; no spam republish"
+  },
+  "dualApp": {
+    "ssot": "config/architecture/dual-app-tracks.json",
+    "doctrine": "docs/rules/DUAL_APP_VISION.md",
+    "master": { "appId": "com.dlnraja.tuya.zigbee", "branch": "master", "line": "9.0.x" },
+    "stable": { "appId": "com.dlnraja.tuya.zigbee.stable", "branch": "stable-v5", "line": "5.12.x" }
+  },
+  "identity": {
+    "canonical": "manufacturerName + productId (sacred couple)",
+    "ssot": "config/architecture/sacred-couple-ssot.json",
+    "fieldsSsot": "config/architecture/identity-fields-ssot.json",
+    "fieldsHuman": "docs/architecture/IDENTITY_FIELDS_SSOT.md",
+    "human": "docs/architecture/SACRED_COUPLE_SSOT.md",
+    "helper": "tools/ci/sacred-couple-pair.js",
+    "settingsKeys": { "mfr": "zb_manufacturer_name", "pid": "zb_model_id" },
+    "map": {
+      "productId": "Homey compose pairing key (= Zigbee Model ID / modelId)",
+      "pid": "internal shorthand for productId — same value",
+      "modelId": "Zigbee/Z2M interview name for productId",
+      "productName": "catalog alias only — NEVER pairing"
+    },
+    "mfs": "one mfr entry may list many modelIds — each (mfr,pid) → own driver; multi-pid is NORMAL",
+    "never": ["invent pid", "mfr-only route when pid known", "dedupe mfr across drivers on pid mismatch", "use productName as productId"],
+    "gate": "npm run check:p2494",
+    "identityGate": "npm run check:p2496"
+  },
+  "truth": [
+    "docs/knowledge/DEVICE_TRUTH.md",
+    "docs/knowledge/device-truth.json",
+    "docs/knowledge/PECULIARITIES.md",
+    "data/user-misattribution-registry.json"
+  ],
+  "publish": {
+    "ssot": "config/architecture/publish-ssot.json",
+    "human": "docs/architecture/PUBLISH_SSOT.md",
+    "sacredKeep": "config/architecture/publish-sacred-keep-couples.json",
+    "path": "build → prepare-publish → publish:direct (never repo root)",
+    "note": "compact must not drop verified (mfr,pid) pins; prepare preflights P2495",
+    "gate": "npm run check:publish",
+    "preflight": "npm run check:p244x && check:p246x && check:p248x && check:p249x && check:publish"
+  },
+  "forum": {
+    "policy": "SHADOW only — never POST (T157628)",
+    "failoverSsot": "config/architecture/forum-complementary-failover-ssot.json",
+    "harvest": "tools/ci/forum-t140352-recent-harvest.js",
+    "replyTopics": ["140352"],
+    "needInterview": "document expected zb_manufacturer_name + zb_model_id — never invent"
+  },
+  "aiEfficiency": {
+    "ssot": "config/security/ai-plan-forfait.json",
+    "compressSsot": "config/security/ai-context-compress-ssot.json",
+    "guard": "npm run ai:plan-guard",
+    "gate": "npm run check:p2491",
+    "default": "AI_FORCE_LOCAL=true; remote only if AI_ALLOW_REMOTE=true",
+    "compressKeep": "always retain mfr+pid / HOBEIAN+ZG-* couples in user text"
+  },
+  "gates": {
+    "family": ["check:p244x", "check:p246x", "check:p248x", "check:p249x", "check:l99-dual"],
+    "hardWorkflows": [
+      "unified-ci.yml",
+      "validate.yml",
+      "syntax-check.yml",
+      "pr-gate.yml",
+      "code-quality.yml",
+      "auto-publish-on-push.yml"
+    ],
+    "publish": ["check:p2286", "check:p2287", "check:p2288"],
+    "couple": ["check:p2494", "check:p2138", "check:p2288"]
+  },
+  "knobsFlows": {
+    "ssot": "config/architecture/rotary-knob-ssot.json",
+    "doc": "docs/architecture/KNOB_FLOW_WIRING_SSOT.md",
+    "note": "each rotary couple is mfr+TS004F; kaflzta4 stays scene; abrsvsou stays button_wireless_4"
+  },
+  "buttonUi": {
+    "ssot": "config/architecture/homey-button-ui-charter-ssot.json",
+    "runtime": "lib/utils/HomeyButtonUiCharter.js",
+    "doc": "docs/BIDIRECTIONAL_BUTTONS.md",
+    "gate": "npm run check:p2492",
+    "note": "UI role from couple class (switch/scene/knob), not brand"
+  },
+  "ir": {
+    "ssot": "config/architecture/intelligent-ir-ssot.json",
+    "classify": "MASTER_ONLY"
+  },
+    "entryDocs": [
+    "AI_CONTEXT_MANDATE.md",
+    "docs/GLOBAL_INVESTIGATION_PLAN.md",
+    "docs/ARCHITECTURE_AI.md",
+    "AGENTS.md",
+    "docs/architecture/SACRED_COUPLE_SSOT.md",
+    "docs/architecture/IDENTITY_FIELDS_SSOT.md"
+  ],
+  "rulesAlways": [
+    ".cursor/rules/operational-memory-2026-08-15.mdc",
+    ".cursor/rules/device-truth.mdc",
+    ".cursor/rules/ai-forfait-cursor-limit.mdc",
+    ".cursor/rules/why-interrogation.mdc",
+    ".github/WORKFLOW_GUIDELINES.md"
+  ],
+  "localSolver": "tools/ci/local-intelligent-solver.js",
+  "compressLib": "tools/ci/ai-context-compress.js"
+}

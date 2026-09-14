@@ -64,10 +64,11 @@ function loadSacredKeepCouples(repoRoot) {
       // → Unknown Device (Salvagr #533 diag 724d4bc9). Group compares still use
       // String(pin.mfr).toLowerCase() at call sites.
       return list
-        .filter((c) => c && c.mfr && c.pid && c.driverId)
+        .filter((c) => c && c.mfr && (c.pid || c.productId || c.modelId) && c.driverId)
         .map((c) => ({
           mfr: String(c.mfr),
-          pid: String(c.pid),
+          // WHY(P2495/P2496): Homey productId === Zigbee modelId === internal pid
+          pid: String(c.pid || c.productId || c.modelId),
           driverId: String(c.driverId),
         }));
     } catch {

@@ -1,0 +1,75 @@
+{
+  "_meta": {
+    "id": "P2227+P2437+P2491",
+    "updated": "2026-09-14",
+    "policy": "Plan forfait inclus only — never exceed included free/subscription quotas; never auto-spend paid overage. Prefer local heuristics. SHADOW forum. Never echo secrets. Cursor: no Grok/cloud Task burn. P2491: slim context + remote OFF by default."
+  },
+  "mode": "forfait",
+  "defaults": {
+    "AI_PLAN_MODE": "forfait",
+    "AI_ALLOW_PAID": "false",
+    "AI_FORCE_LOCAL": "true",
+    "AI_ALLOW_REMOTE": "false",
+    "AI_FULL_CONTEXT": "false",
+    "AI_ENSEMBLE": "false",
+    "AI_MAP_REDUCE": "false",
+    "AI_OPENROUTER_MODEL_LIST": "false",
+    "AI_GLOBAL_DAILY_CAP": "80",
+    "AI_SOFT_STOP_PERCENT": "60",
+    "GMAIL_DIAG_AI_MAX": "0",
+    "AI_MAX_TOKENS_DEFAULT": "800",
+    "preferLocalHeuristics": true
+  },
+  "cursorIde": {
+    "preferModel": "inherit",
+    "forbidModels": ["grok", "cursor-grok", "opus", "o1", "o3", "gpt-5", "claude-opus"],
+    "forbidCloudAgents": true,
+    "forbidHeavySubagents": true,
+    "maxParallelSubagents": 1,
+    "maxSubagentsPerDay": 8,
+    "forbidAutomationsWithoutAsk": true,
+    "hooks": ".cursor/hooks.json",
+    "rule": ".cursor/rules/ai-forfait-cursor-limit.mdc"
+  },
+  "includedDailyCaps": {
+    "gemini": 40,
+    "openrouter": 20,
+    "huggingface": 20,
+    "groq": 20,
+    "cerebras": 5,
+    "together": 10,
+    "nvidia": 10,
+    "mistral": 3,
+    "kimi": 3,
+    "openai": 0,
+    "deepseek": 0,
+    "github-models": 5,
+    "grok": 0,
+    "cursor-cloud": 0
+  },
+  "blockedUnlessPaidFlag": ["openai", "deepseek", "grok", "cursor-cloud"],
+  "contextCompress": {
+    "ssot": "config/security/ai-context-compress-ssot.json",
+    "smartMap": "config/architecture/project-smart-map.json",
+    "lib": "tools/ci/ai-context-compress.js",
+    "gate": "npm run check:p2491"
+  },
+  "security": {
+    "neverEchoSecrets": true,
+    "redactBeforeCommit": true,
+    "privacyRedactor": ".github/scripts/privacy-redactor.js",
+    "securityScan": "npm run security-scan",
+    "forbidArtifactGlobs": [
+      "**/*token*",
+      "**/.env*",
+      "**/diag-*-excerpt.txt",
+      "**/gmail-ci-dump.json"
+    ]
+  },
+  "workflowHooks": {
+    "preAi": "tools/ci/ai-plan-guard.js --preflight",
+    "report": "tools/ci/ai-quota-report.js",
+    "budget": "node scripts/automation/token-budget.js health",
+    "compressSelfTest": "node tools/ci/ai-context-compress.js --self-test"
+  }
+}

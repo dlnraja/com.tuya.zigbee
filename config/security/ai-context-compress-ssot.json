@@ -1,0 +1,69 @@
+{
+  "_meta": {
+    "id": "P2491-ai-context-compress",
+    "updated": "2026-09-14",
+    "why": "Cut GHA/bot token+request burn: slim system prompts, compress user payloads, local-first, no ensemble by default.",
+    "humanDoc": "docs/architecture/AI_EFFICIENCY_SSOT.md",
+    "classify": "BOTH"
+  },
+  "defaults": {
+    "AI_FORCE_LOCAL": "true",
+    "AI_ALLOW_REMOTE": "false",
+    "AI_FULL_CONTEXT": "false",
+    "AI_ENSEMBLE": "false",
+    "AI_PREFER_LOCAL": "true",
+    "AI_MAX_TOKENS_DEFAULT": "800",
+    "AI_USER_MAX_CHARS": "6000",
+    "AI_SYS_MAX_CHARS": "4500",
+    "AI_OPENROUTER_MODEL_LIST": "false"
+  },
+  "compress": {
+    "keepPatterns": [
+      "_TZ[A-Z0-9]+_[a-z0-9]+",
+      "\\bTS[0-9]{4}[A-Z]?\\b",
+      "HOBEIAN",
+      "ZG-[A-Z0-9-]+",
+      "manufacturerName|productId|modelId|zb_manufacturer_name|zb_model_id",
+      "[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}",
+      "capability_id_not_available_on_device",
+      "Driver Not Initialized",
+      "Invalid Driver ID",
+      "heap|OOM|MaxListeners|processing_failed|socket hang up"
+    ],
+    "dropLinePatterns": [
+      "^\\s*$",
+      "networkKey",
+      "Authorization:",
+      "Bearer ",
+      "-----BEGIN"
+    ],
+    "preferLinesWith": [
+      "error", "Error", "WARN", "FATAL",
+      "mfr", "pid", "couple", "sacred",
+      "TS0", "_TZ", "HOBEIAN", "ZG-",
+      "cluster", "0xEF00", "61184",
+      "zb_manufacturer_name", "zb_model_id"
+    ],
+    "couplePriority": "When compressing, never drop a line that contains both a Tuya mfr and a pid/modelId; prefer keeping HOBEIAN+ZG-* pairs intact"
+  },
+  "systemPromptMode": {
+    "slim": "project-smart-map + PROJECT_RULES core only",
+    "full": "LOADED_RULES + ARCHITECTURE when AI_FULL_CONTEXT=1"
+  },
+  "workflowPolicy": {
+    "alwaysSetOnCron": ["AI_FORCE_LOCAL=true", "AI_ALLOW_REMOTE=false", "GMAIL_DIAG_AI_MAX=0"],
+    "neverInjectKeysUnlessAllowRemote": true,
+    "disableOpenRouterModelListFetch": true,
+    "reduceOverlapCrons": true
+  },
+  "cronHints": {
+    "l99Inbox": "45 3,11,19 * * *",
+    "autoEnrich": "0 */6 * * *",
+    "forumPoll": "15 2,8,14,20 * * *",
+    "note": "Fewer overlapping harvests = fewer GH API + Discourse requests; quality over spam"
+  },
+  "gates": {
+    "npm": "check:p2491",
+    "family": "check:p249x"
+  }
+}

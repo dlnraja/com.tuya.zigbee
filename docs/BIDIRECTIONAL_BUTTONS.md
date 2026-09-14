@@ -3,6 +3,25 @@
 > Canonical runtime doctrine for Universal Tuya Zigbee (`com.dlnraja.tuya.zigbee`).
 > Cross-ref: `docs/knowledge/TS004X_BATTERY_REMOTES.md` · P2220–P2221 · P2235 · P2253/P2254 · **P2283** · **P2284**.
 
+## P2492 — Homey UI charter (physical ↔ virtual tiles)
+
+Machine SSOT: [`config/architecture/homey-button-ui-charter-ssot.json`](../config/architecture/homey-button-ui-charter-ssot.json)  
+Runtime: [`lib/utils/HomeyButtonUiCharter.js`](../lib/utils/HomeyButtonUiCharter.js)
+
+| Role | Homey main UI | `button.N` | Physical → UI |
+|------|---------------|------------|---------------|
+| **switch** | `onoff` / `onoff.gangN` titled Channel N | Maintenance only (charter) | Sync onoff + light pulse |
+| **scene** | `button.N` in **device view** | Not maintenance | Elegant pulse + flows |
+| **knob** | dim + button | Device view | dim/pulse + flows |
+
+Rules:
+- Never invent `onoff` on `class: button` remotes (P2235).
+- Never invent `button.N` on relay-only switches (P2463).
+- UI press and wall press share 2s dedup (`BidirectionalButtonState`).
+- Titles: Channel N (gangs) / Button N (remotes) — en/fr/nl/de.
+
+Gate: `npm run check:p2492`
+
 ## Overview
 
 The Universal Tuya Zigbee app implements a **bidirectional button system** that prevents double-triggering and keeps state synchronized between physical presses and virtual Homey app presses.

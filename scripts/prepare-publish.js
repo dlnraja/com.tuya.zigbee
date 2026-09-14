@@ -277,6 +277,65 @@ function sanitizeSourceTree() {
   }
 }
 
+function validateSacredKeepPins() {
+  // WHY(P2495 / P2494 / P2490): refuse prepare when sacred-keep pins are mfr-only
+  // or invent-shaped — compact would silently drop real (mfr,pid) couples.
+  const keepPath = path.join(__dirname, '..', 'config', 'architecture', 'publish-sacred-keep-couples.json');
+  const coupleSsotPath = path.join(__dirname, '..', 'config', 'architecture', 'sacred-couple-ssot.json');
+  if (!fs.existsSync(keepPath)) {
+    console.error('FATAL: missing config/architecture/publish-sacred-keep-couples.json');
+    process.exit(1);
+  }
+  let keep;
+  try {
+    keep = JSON.parse(fs.readFileSync(keepPath, 'utf8'));
+  } catch (e) {
+    console.error(`FATAL: cannot parse sacred-keep list: ${e.message}`);
+    process.exit(1);
+  }
+  const { isValidSacredCouple, normalizeSacredCouple } = require('../tools/ci/sacred-couple-pair');
+  const rows = keep.couples || [];
+  if (rows.length < 1) {
+    console.error('FATAL: sacred-keep couples list empty');
+    process.exit(1);
+  }
+  let bad = 0;
+  for (const c of rows) {
+    const pid = c && (c.pid || c.productId || c.modelId);
+    if (!c || !c.mfr || !pid || !c.driverId) {
+      console.error(`FATAL: sacred-keep row missing mfr/pid/driverId: ${JSON.stringify(c)}`);
+      bad++;
+      continue;
+    }
+    if (!isValidSacredCouple(c.mfr, pid) && !normalizeSacredCouple(c.mfr, pid)) {
+      console.warn(`WARN(P2495): unusual sacred-keep couple ${c.mfr}+${pid} (${c.driverId})`);
+    }
+  }
+  if (bad) process.exit(1);
+  const must = [
+    ['_TZE200_icka1clh', 'TS0601', 'curtain_motor'],
+    ['_TZE284_fodv6bkr', 'TS0601', 'curtain_motor'],
+  ];
+  for (const [mfr, pid, driverId] of must) {
+    const hit = rows.some((c) => (
+      String(c.mfr).toLowerCase() === mfr.toLowerCase()
+      && String(c.pid) === pid
+      && c.driverId === driverId
+    ));
+    if (!hit) {
+      console.error(`FATAL(P2495/P2490): missing sacred-keep pin ${mfr}+${pid}→${driverId}`);
+      process.exit(1);
+    }
+  }
+  if (fs.existsSync(coupleSsotPath)) {
+    console.log('P2495: sacred-keep preflight OK (couple-native pins + sacred-couple-ssot present)');
+  } else {
+    console.warn('WARN(P2495): sacred-couple-ssot.json missing — continue with pin list only');
+  }
+}
+
+validateSacredKeepPins();
+
 console.log(`Copying built files from ${srcDir} to ${destDir}...`);
 
 if (!fs.existsSync(srcDir)) {
@@ -399,25 +458,25 @@ try {
     const compact = JSON.stringify(raw);
     if (compact.length < fs.statSync(destAppJson).size) {
       fs.writeFileSync(destAppJson, compact);
-      console.log(`Compacted app.json: ${(fs.statSync(destAppJson).size/1024/1024).toFixed(2)} MB (was ${(compact.length > 0 ? 'whitespace' : 'already compact')})`);
+      console.log(`Compacted app.json: ${(fs.statSync(destAppJson).size/1024/1024).toFixed(2)} MB (was whitespace)`);
     }
   } catch (e) {
     console.warn('Warning: could not compact app.json:', e.message);
   }
-  const stats = fs.statSync(destAppJson);
-  const sizeMB = stats.size / (1024 * 1024);
-  console.log(`Target app.json size: ${sizeMB.toFixed(2)} MB`);
-  if (sizeMB > 4) {
-    console.error('FATAL: app.json is larger than 4MB. Athom servers will reject this build.');
-    console.error('Compact driver definitions / fingerprints before publishing.');
-    process.exit(1);
+  {
+    const preMB = fs.statSync(destAppJson).size / (1024 * 1024);
+    console.log(`Target app.json size (pre Zigbee matrix compact): ${preMB.toFixed(2)} MB`);
+    if (preMB > 4) {
+      console.warn('WARN: app.json >4MB before Zigbee identifier compaction — continuing with matrix compact (5a).');
+    }
   }
-  console.log('Success: app.json is under the 4MB Athom limit.');
 
   // 5a) Compact publish-only Zigbee identifier matrices.
   // Athom's build server expands manufacturerName x productId. The source app
   // intentionally carries broad support matrices, but the publish payload must
   // stay small enough for the App Store processor.
+  // WHY(P2485): size gate MUST run AFTER this step — early exit blocked publish when
+  // prettify-stripped JSON was still ~4.00MB but matrix compact would shrink it.
   try {
     const compact = compactManifestFile(destAppJson, {
       maxTotalCombos: Number(process.env.HOMEY_ZIGBEE_MAX_TOTAL_COMBOS) || undefined,
@@ -504,6 +563,35 @@ try {
     process.exit(1);
   }
 
+  // 5a2) Athom hard limit — AFTER Zigbee matrix compact (whitespace-only can still be ~4.00MB)
+  {
+    try {
+      const raw = JSON.parse(fs.readFileSync(destAppJson));
+      fs.writeFileSync(destAppJson, JSON.stringify(raw));
+    } catch (_) { /* already compact */ }
+    const sizeMB = fs.statSync(destAppJson).size / (1024 * 1024);
+    console.log(`Target app.json size (post Zigbee matrix compact): ${sizeMB.toFixed(2)} MB`);
+    if (sizeMB > 4) {
+      console.error('FATAL: app.json is larger than 4MB after Zigbee compaction. Athom will reject.');
+      console.error('Lower HOMEY_ZIGBEE_MAX_TOTAL_COMBOS / MAX_DRIVER_COMBOS or split broad drivers.');
+      process.exit(1);
+    }
+    console.log('Success: app.json is under the 4MB Athom limit.');
+
+    // WHY(P2471 publish): publish-size-gate also measures ROOT .homeybuild/app.json.
+    // Homey validate leaves an uncompacted ~4.00MB build copy; sync the compacted
+    // publish manifest so the gate does not fail after a successful compact.
+    try {
+      const buildAppJson = path.join(__dirname, '..', '.homeybuild', 'app.json');
+      if (fs.existsSync(path.dirname(buildAppJson))) {
+        fs.copyFileSync(destAppJson, buildAppJson);
+        console.log(`[P2471] Synced compacted app.json → .homeybuild/app.json (${sizeMB.toFixed(2)} MB)`);
+      }
+    } catch (syncErr) {
+      console.warn('[P2471] Could not sync .homeybuild/app.json:', syncErr.message);
+    }
+  }
+
   // 5b) Remove publish-only caches that are not required for runtime startup.
   // Static app pairing support is already in app.json/driver.compose.json and
   // DeviceFingerprintDB. Keeping the full MFS cache pushes Athom processing over
@@ -586,10 +674,37 @@ try {
     } else {
       console.log(`OK: 0 empty arrays across ${(manifest.drivers || []).length} drivers.`);
     }
+    // WHY: Homey publish requires zigbee.productId; deleting empty [] then fails
+    // with "should have required property 'productId'" (button_wireless_4_ts0041).
+    const missingPid = (manifest.drivers || []).filter((d) => {
+      if (!d.zigbee) return false;
+      const conn = [].concat(d.connectivity || []);
+      if (conn.length && !conn.includes('zigbee')) return false;
+      const p = d.zigbee.productId;
+      return !Array.isArray(p) || p.length === 0;
+    }).map((d) => d.id);
+    if (missingPid.length) {
+      console.error('FATAL: zigbee drivers missing non-empty productId after sanitize:');
+      for (const id of missingPid.slice(0, 30)) console.error(`  - ${id}`);
+      console.error('Fix driver.compose.json productId before publish (never ship productId: []).');
+      process.exit(1);
+    }
   } catch (valErr) {
     console.error('FATAL: could not sanitize driver arrays:', valErr.message);
     process.exit(1);
   }
+
+  // WHY(P2323): export absolute publish dir so the next CI step uses the same path
+  // (avoids "Prepared publish directory is missing" when TMPDIR / runner env drifts).
+  if (process.env.GITHUB_ENV) {
+    try {
+      fs.appendFileSync(process.env.GITHUB_ENV, `HOMEY_PUBLISH_DIR=${destDir}\n`);
+      console.log(`Exported HOMEY_PUBLISH_DIR=${destDir} to GITHUB_ENV`);
+    } catch (envErr) {
+      console.warn(`Could not write HOMEY_PUBLISH_DIR to GITHUB_ENV: ${envErr.message}`);
+    }
+  }
+  console.log(`Publish directory ready: ${destDir}`);
 
 } catch (err) {
   console.error('Error during copy:', err.message);
