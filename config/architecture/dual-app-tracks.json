@@ -37,6 +37,26 @@
     "store changelog identity"
   ],
   "l99RecentClassification": {
+    "p2497_stable_both_backport": {
+      "tag": "BOTH",
+      "note": "Surgical port P2490–P2496 reliability to stable-v5 — never App ID/version; skip P2487 IR MASTER_ONLY"
+    },
+    "p2496_identity_fields": {
+      "tag": "BOTH",
+      "note": "Homey productId === Zigbee modelId === pid; productName catalog-only — pairing vocabulary"
+    },
+    "p2495_publish_cicd_path": {
+      "tag": "BOTH",
+      "note": "prepare-publish sacred-keep preflight + check:publish; stable soft-skips master-only workflow matrix"
+    },
+    "p2494_sacred_couple_ssot": {
+      "tag": "BOTH",
+      "note": "mfs multi-pid NORMAL; couple-native decision tree"
+    },
+    "p2493_workflow_family_gates": {
+      "tag": "BOTH",
+      "note": "CI family wire lock — master hard; stable thinner LTS CI"
+    },
     "p2492_homey_button_ui_charter": {
       "tag": "BOTH",
       "note": "Homey charter physical↔virtual UI — onoff primary switches; button device-view for scene; shared sync helpers"

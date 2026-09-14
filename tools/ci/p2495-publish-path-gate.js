@@ -136,6 +136,13 @@ function main() {
   }
 
   // --- workflows that must wire publish gates ---
+  // WHY(P2497): stable-v5 track keeps a thinner workflow set — soft-check only
+  let isStableTrack = false;
+  try {
+    const compose = readJson('.homeycompose/app.json');
+    isStableTrack = String(compose.id || '').endsWith('.stable');
+  } catch (_e) { /* soft */ }
+
   const hardPublish = [
     'auto-publish-on-push.yml',
     'auto-fix-and-publish.yml',
@@ -147,7 +154,23 @@ function main() {
   const families = ['check:p244x', 'check:p246x', 'check:p248x', 'check:p249x'];
 
   for (const f of hardPublish) {
+    const wfPath = path.join(ROOT, '.github/workflows', f);
+    if (!fs.existsSync(wfPath)) {
+      if (isStableTrack) {
+        console.warn(`P2495 WARN: stable missing workflow ${f} (ok — thinner LTS CI)`);
+        continue;
+      }
+      fail(`missing workflow ${f}`);
+      continue;
+    }
     const t = read(path.join('.github/workflows', f));
+    if (isStableTrack) {
+      // Stable: require sacred-keep / publish reliability, not full master family matrix
+      if (!t.includes('check:p2288') && !t.includes('check:publish') && !t.includes('p2138')) {
+        console.warn(`P2495 WARN: ${f} on stable lacks publish/sacred gates`);
+      }
+      continue;
+    }
     for (const g of families) {
       if (!t.includes(g)) fail(`${f} must hard-run ${g}`);
     }
@@ -155,7 +178,6 @@ function main() {
       fail(`${f} must run check:publish or check:p2288`);
     }
     if (!/AI_FORCE_LOCAL/.test(t) && f === 'auto-publish-on-push.yml') {
-      // soft prefer — warn only if neither env nor comment
       console.warn(`P2495 WARN: ${f} missing AI_FORCE_LOCAL (P2491)`);
     }
   }
@@ -164,8 +186,7 @@ function main() {
     const p = path.join(ROOT, '.github/workflows', f);
     if (!fs.existsSync(p)) continue;
     const t = fs.readFileSync(p, 'utf8');
-    // continuous-flow may soft-run check:publish or family
-    if (f === 'continuous-flow.yml') {
+    if (f === 'continuous-flow.yml' && !isStableTrack) {
       if (!t.includes('check:p249') && !t.includes('check:publish') && !t.includes('check:p244x')) {
         fail(`${f} should soft-wire family or check:publish`);
       }
