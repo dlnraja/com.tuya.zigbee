@@ -22,22 +22,29 @@ echo -e "${CYAN}╚════════════════════�
 
 ROOT="$(git rev-parse --show-toplevel)"
 
+# Prefer node.exe on Windows — Git Bash `node` wrappers can die mid-M15
+NODE_BIN="node"
+if command -v node.exe >/dev/null 2>&1; then
+  NODE_BIN="node.exe"
+fi
+export NODE_OPTIONS="${NODE_OPTIONS:-} --no-warnings"
+
 # Full mandatory check (blocking)
 echo -e "${CYAN}[1/3] Mandatory files check...${RESET}"
-if ! node "$ROOT/scripts/validate/homey-mandatory-check.js"; then
+if ! "$NODE_BIN" "$ROOT/scripts/validate/homey-mandatory-check.js"; then
   echo -e "${RED}❌ PUSH BLOCKED — Fix mandatory check errors first${RESET}"
   exit 1
 fi
 
 # Athom server requirements check (O17-O21)
 echo -e "${CYAN}[2/3] Athom server requirements check...${RESET}"
-if ! node "$ROOT/scripts/validate/validate-app-json.js"; then
+if ! "$NODE_BIN" "$ROOT/scripts/validate/validate-app-json.js"; then
   echo -e "${RED}❌ PUSH BLOCKED — Fix Athom server requirement errors first${RESET}"
   exit 1
 fi
 
 echo -e "${CYAN}[3/3] Publish payload size gate...${RESET}"
-if ! node "$ROOT/scripts/ci/publish-size-gate.cjs"; then
+if ! "$NODE_BIN" "$ROOT/scripts/ci/publish-size-gate.cjs"; then
   echo -e "${RED}❌ PUSH BLOCKED — Publish payload too large for safe Homey processing${RESET}"
   exit 1
 fi
