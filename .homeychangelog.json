@@ -3251,5 +3251,8 @@
   },
   "9.0.917": {
     "en": "P2471/P2472/P2486: WiFi authorized-login + MCU DP17 + EF00 launchOnce; publish size sync after Zigbee compact."
+  },
+  "9.0.918": {
+    "en": "Homey Test #3181 — P2471/P2472/P2486 publish (WiFi login, MCU DP17, EF00 launchOnce) + size-gate sync."
   }
 }
