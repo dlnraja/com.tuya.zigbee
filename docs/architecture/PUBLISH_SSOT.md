@@ -1,8 +1,9 @@
-# Publish SSOT (P2286–P2288 + P2323/P2325/P2326)
+# Publish SSOT (P2286–P2288 + P2323/P2325/P2326 + P2490)
 
 Machine SSOT: [`config/architecture/publish-ssot.json`](../../config/architecture/publish-ssot.json)  
 Sacred pin list: [`config/architecture/publish-sacred-keep-couples.json`](../../config/architecture/publish-sacred-keep-couples.json)  
-Workflow policy: [`.github/WORKFLOW_GUIDELINES.md`](../../.github/WORKFLOW_GUIDELINES.md) §M.8–M.11
+Forum complementary failover: [`config/architecture/forum-complementary-failover-ssot.json`](../../config/architecture/forum-complementary-failover-ssot.json)  
+Workflow policy: [`.github/WORKFLOW_GUIDELINES.md`](../../.github/WORKFLOW_GUIDELINES.md) §M.8–M.12
 
 **Classify:** `BOTH` (master + stable-v5 reliability).
 
@@ -50,11 +51,15 @@ Runtime: DynCap must not invent FCU DP36→setpoint; radiator logs curtain misro
 
 Gate: `npm run check:p2326`
 
-## Sacred-keep compaction (P2288)
+## Sacred-keep compaction (P2288 + P2490)
 
 `prepare-publish` runs `compact-zigbee-identifiers.cjs` on the temp manifest. Verified `(mfr, pid, driverId)` couples in `publish-sacred-keep-couples.json` are **re-injected** after budget cuts.
 
-Gate: `npm run check:p2288`
+**P2490 lesson (2026-09-14):** Athom compact can drop one verified couple while keeping a sibling (`_TZE200_icka1clh` dropped vs `fodv6bkr` kept → MIAMO Unknown Zigbee). Always pin TZE200/204 siblings that users report, not only the TZE284 form.
+
+Extra pins: `icka1clh` (TZE200/204), `zah67ekd`, `fodv6bkr` TZE200 → `curtain_motor`.
+
+Gates: `npm run check:p2288` · `npm run check:p2490` · family `npm run check:p248x`
 
 ## IAS leftover EF00 (P2287)
 
@@ -69,6 +74,7 @@ Sleepy IAS-only devices must not receive leftover EF00 TX on wake.
 ```bash
 npm run check:p2284 && npm run check:p2285
 npm run check:p2286 && npm run check:p2287 && npm run check:p2288
+npm run check:p248x
 node tools/ci/prune-fp-collision-bleed.js --check
 ```
 
@@ -78,18 +84,19 @@ Do **not** spam republish on Athom `processing_failed` / `socket hang up`. Soft-
 
 Controlled override (once): Auto-Publish `workflow_dispatch` with `force_publish=true` sets `HOMEY_FORCE_PUBLISH=1` → `scripts/direct-api-publish.js --force`, with `HOMEY_API_TIMEOUT_MS=120000`, `HOMEY_DRAFT_WAIT_MS=600000`, `HOMEY_HEALTHY_TEST_PATCH_LAG=8`.
 
-### Tip email pattern (P2458 — 2026-09-10)
+### Tip email pattern (P2458 / P2490 — 2026-09-10→14)
 
 Homey tip mail for `com.dlnraja.tuya.zigbee`:
 
 > Your build has failed processing … **socket hang up**  
-> Examples: builds **#3140**, **#3142**
+> Examples: builds **#3140**, **#3142**, **#3184**, **#3187**
 
 | Signal | Meaning | Action |
 |--------|---------|--------|
 | Tip email `socket hang up` | Athom processor/network flake (P139) | Wait cooldown; **no** bump-loop |
 | Local `publish-size-gate` PASS + compacted cartesian ≲20k | Not a local packing bug | Do not “fix” by force republish |
 | Healthy older Test still listed | Users can keep soaking last good tip | Soft-expect / soft-alert exit 0 |
+| **2026-09-14** #3186 = **9.0.926 test** healthy; #3184/#3187 PF | Git may be ahead (P2490) | Soft-continue; users update Test ≥9.0.926 |
 | Human wants one retry after hours | `workflow_dispatch` + `force_publish=true` once | Never cancel in-flight publish |
 
 Gates / helpers:

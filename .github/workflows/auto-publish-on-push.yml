@@ -113,6 +113,9 @@ jobs:
       - name: P2448/P2449 knob + declared flow wiring
         run: npm run check:p244x
 
+      - name: P2487–P2490 IR + Smartbutton + complementary failover
+        run: npm run check:p248x
+
       - name: P217 fork harvest sacred-couple gate
         run: node tools/ci/p217-fork-harvest-gate.js
 

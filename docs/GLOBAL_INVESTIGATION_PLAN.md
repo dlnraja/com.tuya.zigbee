@@ -1,7 +1,20 @@
 # 🌐 GLOBAL INVESTIGATION PLAN — Phoenix Sovereign AI Framework
-> **Version**: 3.0.0 | **Purpose**: Master investigation methodology for ALL AI agents
+> **Version**: 3.1.0 | **Purpose**: Master investigation methodology for ALL AI agents
 > **Reference Files**: `AI_CONTEXT_MANDATE.md`, `AI_GLOBAL_ACTION_PLAN.md`, `PROJECT_INDEX.md`, `.cursorrules`, `.clinerules`, `.windsurfrules`
 > **Skills**: `Antigravity Awesome Skills` + `Claude Code Local` | **Branch**: `master` (primary) + `stable-v5` (sync)
+
+---
+
+## 📌 LIVE L99 (2026-09-14) — read before shallow “already fixed”
+
+| Item | Note |
+|------|------|
+| Tip healthy | **#3186 = 9.0.926 test** — PF #3184/#3187 = P139 soft-continue, no spam |
+| Forum fleet | `reports/forum-l99-2026-09-14-t140352/` highest **#2237** — SHADOW only |
+| Complementary | Stack **all** layers — SSOT `config/architecture/forum-complementary-failover-ssot.json` (P2490) |
+| Gates | `npm run check:p248x` · `check:p244x` · `check:p246x` · `check:l99-dual` |
+| Dual-app | P2488/P2490/P2481/P2484 = **BOTH**; P2487 IR UX = **MASTER_ONLY** |
+| Doctrine | Never invent pid; never forum POST (T157628); believe recurring reports (P2313) |
 
 ---
 

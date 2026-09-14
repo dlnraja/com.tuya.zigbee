@@ -3,19 +3,27 @@ description: Live operational memory — dual App IDs, forum #2190, P139 Stable,
 alwaysApply: true
 ---
 
-# Operational memory — dual apps (audit 2026-08-26)
+# Operational memory — dual apps (audit 2026-09-14)
 
 ## Dual Athom apps (independent Test slots)
 | Track | Branch | App ID | Tip (git) | Homey Test |
 |-------|--------|--------|-----------|------------|
-| Universal Tuya | `master` | `com.dlnraja.tuya.zigbee` | **9.0.890+** | Auto-Publish OK |
-| Tuya Unified (Stable) | `stable-v5` | `com.dlnraja.tuya.zigbee.stable` | **5.12.95** | P139 — **no republish loop** |
+| Universal Tuya | `master` | `com.dlnraja.tuya.zigbee` | **9.0.927+** (P2490) | **#3186 = 9.0.926 test** (healthy) |
+| Tuya Unified (Stable) | `stable-v5` | `com.dlnraja.tuya.zigbee.stable` | **5.12.x** | P139 — **no republish loop** |
 
-SSOT: `config/architecture/dual-app-tracks.json` · publish: `config/architecture/publish-ssot.json` · `docs/architecture/PUBLISH_SSOT.md` · regular gates: `npm run check:l99-dual` / `check:p2286`–`p2288`.
+SSOT: `config/architecture/dual-app-tracks.json` · publish: `config/architecture/publish-ssot.json` · forum failover: `config/architecture/forum-complementary-failover-ssot.json` · `docs/architecture/PUBLISH_SSOT.md` · gates: `npm run check:l99-dual` / `check:p2286`–`p2288` / `check:p248x`.
 
-L99 classify: energy/divisors/BootBudget/brand-scrub titles = **BOTH**; Daylight Atmosphere / Path Light / presence / CI intel = **MASTER_ONLY**. **P2448/P2449** knob command mode + declared flow wire = **BOTH**.
+L99 classify: energy/divisors/BootBudget/brand-scrub / **P2481–P2490 reliability** = **BOTH**; Daylight Atmosphere / Path Light / **P2487 Intelligent IR UX** / CI intel = **MASTER_ONLY**. **P2448/P2449** knob + declared flow = **BOTH**.
 
 Clone Stable: `Documents\homey\stable`. `stable-v5-p195` is **STALE**.
+
+## P2487–P2490 — Forum + Gmail complementary (2026-09-14)
+- **P2490 BOTH:** MIAMO `icka1clh` sacred-keep (Athom compact drop); Peter `a5304ce8` battery **rehydrate**; VicHY radar `staleCaps` curtains; tip PF **#3184/#3187** — soft-continue. Gate `npm run check:p2490` / `check:p248x`.
+- **P2488 BOTH:** `IntelligentDeviceAdapter` must not strip `measure_battery` on `button_*`. Tip ≥**9.0.923** (prefer ≥**9.0.926**).
+- **P2487 MASTER_ONLY:** Intelligent IR router + Homey Pronto TX UX. Doc `docs/architecture/INTELLIGENT_IR_SSOT.md`.
+- **P2484/P2481 BOTH:** EF00 OOM idempotent + `motionsensor` preempt — crash mails 9.0.891/895 = tip-lag.
+- Reports: `reports/forum-l99-2026-09-14-t140352/` · `reports/gmail-diag-2026-09-14/TREAT_LIVE.md`
+- Harvest: `tools/ci/forum-t140352-recent-harvest.js` (post_number pages, not offset pages)
 
 ## P2448 / P2449 — Rotary knobs + declared flows (2026-09-10)
 - **P2448:** ERS-10 / ZG-101ZD need `0x8004=command` + levelControl; never scene-force on `smart_knob_rotary`. SSOT `config/architecture/rotary-knob-ssot.json`.
@@ -45,14 +53,15 @@ Clone Stable: `Documents\homey\stable`. `stable-v5-p195` is **STALE**.
 - **Passive GET only** — never POST/reply/PM/like; never paste AI.
 - Scan → processor → enrich:investigate → code/CI only. `FORUM_AUTO_POST=0` + `SHADOW_FORUM=1` forced.
 - **P2218** heuristics for missing pid/DP; **P2220–P2221** bidirectional buttons (physical↔virtual+UI, 0xFD/0xFC parallel RX).
-- Reports local only: `reports/forum-verify-*/NEED_ACTION.md` · L99 fleet **2026-09-12**: `reports/forum-l99-2026-09-12/FLEET_L99.md`
-- Highest live **#2233** (Peter Smartbutton OCR @ 9.0.882 → tip ≥**9.0.888** P2470). Prior #2210–#2232: VicHY / Joep / meter91 / Eduard / MIAMO / PresentSky — mostly tip lag + re-pair.
+- Reports local only: `reports/forum-verify-*/NEED_ACTION.md` · L99 fleet **2026-09-14**: `reports/forum-l99-2026-09-14-t140352/FLEET_L99.md` (+ prior `forum-l99-2026-09-12/`).
+- Highest live **#2237** (Peter Smartbutton OCR @ **9.0.916** battery `?` → tip ≥**9.0.926** P2488+P2490). Prior #2210–#2236: VicHY / Joep / meter91 / Eduard / MIAMO / PresentSky.
+- **#2236** PresentSky `m1cvyneb`+TS0601 → `wall_dimmer_tuya` — **RESOLVED** after re-add.
 - **P2470** Peter diag `8afffc76`: battery `?` = THROTTLE after 100% + ZCL batt configure storm; CR2450; passive sleepy DataQuery.
+- **P2488/P2490** Peter Gmail `a5304ce8` @ 9.0.916: ZCL paints 76% but `capability_id_not_available_on_device` — keep + **rehydrate**.
 - **P2468** Joep Insoma clusters `[0,4,5,61184]`; FrankEver NEED_INTERVIEW; VicHY 10min mains re-heal.
 - **#2190** Peter (diag `0cea6870`) — couple **ABSENT** in post. Do not invent k4ej/mrpevh8p onto non-Smartbutton tiles.
 - **#2189/#2213** meter91: `_TZ3000_zgyzgdua`+**TS0044** → `scene_switch_4` 0xFD. Update + re-pair. Never paste networkKey.
-- **#2228** Eduard `fodv6bkr`+TS0601 / **#2229** MIAMO `icka1clh`+TS0601 → `curtain_motor`.
-- **#2206** PresentSky `m1cvyneb`+TS0601 → `wall_dimmer_tuya` (0–1000 brightness).
+- **#2228** Eduard `fodv6bkr`+TS0601 / **#2229** MIAMO `icka1clh`+TS0601 → `curtain_motor` (**P2490** pin icka1clh sacred-keep — compact was dropping FP).
 - Soft only (no lock): `_TZ3000_xabckq1v`+TS0001 hypothesis — known couple is **TS004F** → `button_wireless_4`.
 - DP audit: `npm run audit:dp-couples` · guide: `docs/guides/DP_INTERPRETATION.md`
 - Default: **no forum / PM replies**. Scan → `forum-actionable-processor.js` → code/CI only.
@@ -83,19 +92,19 @@ Clone Stable: `Documents\homey\stable`. `stable-v5-p195` is **STALE**.
 | `_TZE284_fhvpaltk`+TS0601 | `valve_dual_irrigation` | Joep Insoma; clusters no OnOff 6 (P2468) |
 | `_TZE204_clrdrnya`+TS0601 | `presence_sensor_radar` | VicHY MTG075 mains; no phantom battery |
 | `_TZE284_fodv6bkr`+TS0601 | `curtain_motor` | Eduard tubular (≥9.0.830 FP) |
-| `_TZE200_icka1clh`+TS0601 | `curtain_motor` | MIAMO AM43 P2461 EF00 |
+| `_TZE200_icka1clh`+TS0601 | `curtain_motor` | MIAMO AM43 P2461 EF00 + **P2490 sacred-keep** |
 
 ## P2473 / P2472a / P2470 / P2468 / P2469 (2026-09-11→12)
 - **P2473:** Joep/FrankEver/Moes — interview `[0,4,5,61184]` must not compose OnOff `6`; `lib/zigbee/Ef00OnlyInterview.js` max EF00+raw+PFC; `water_valve_smart` + `valve_dual_irrigation` · tip **≥9.0.890** · `npm run check:p2473`
-- **P2472a:** VicHY mains radar — no compose `measure_battery` / `energy.batteries` · tip **≥9.0.889**
-- **P2470:** `test/critical/p2470-peter-8afffc76-smartbutton-battery.test.js` · tip **9.0.888**
+- **P2472a:** VicHY mains radar — no compose `measure_battery` / `energy.batteries` · tip **≥9.0.889** (prefer ≥**9.0.920**)
+- **P2470:** `test/critical/p2470-peter-8afffc76-smartbutton-battery.test.js` · tip **9.0.888** (prefer ≥**9.0.926**)
 - **P2468:** Joep Insoma clusters + FrankEver DP soft + VicHY re-heal · tip **≥9.0.887**
 - **P2469:** always-on Contre quoi unit tests — `npm run check:p246x`
-- BOTH reliability → backport to `stable-v5` when publish asked (EF00-only Unknown / Insoma / battery storm)
+- BOTH reliability → backport to `stable-v5` when publish asked (EF00-only Unknown / Insoma / battery / sacred-keep)
 
 ## P139 — Athom transient (DO NOT LOOP)
-- Stable 5.12.88 upload succeeded then **processing_failed** — wait; do not force_test spam.
-- Scripts: `.github/scripts/processing-failure-republish-check.js`
+- Stable 5.12.88 + master tip emails **#3184/#3187** (`9.0.924`/`9.0.928`) — wait; do **not** force_test spam while **#3186 = 9.0.926** healthy.
+- Scripts: `.github/scripts/processing-failure-republish-check.js` · soft-expect / soft-continue P2325.
 
 ## P2469 — Unit tests anti-régression (every prompt)
 - Always-on rule: `.cursor/rules/unit-test-anti-regression-always.mdc`
@@ -113,6 +122,7 @@ npm run forum:process
 npm run forum:parse-digest
 npm run check:p244x
 npm run check:p246x
+npm run check:p248x
 ```
 
 ## Resilience (P2222 / P2224 / P2225) — BOTH tracks

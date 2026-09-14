@@ -339,7 +339,7 @@
     "check:p2486": "node --test test/critical/p2486-ef00-manager-no-replace.test.js",
     "check:p2487": "node --test test/critical/p2487-intelligent-ir-router.test.js",
     "check:p2488": "node --test test/critical/p2488-peter-a5304ce8-smartbutton-battery-keep.test.js",
-    "check:p248x": "npm run check:p2487 && npm run check:p2488",
+    "check:p248x": "npm run check:p2487 && npm run check:p2488 && npm run check:p2490",
     "check:p2490": "node --test test/critical/p2490-forum-complementary-failover.test.js"
   },
   "keywords": [

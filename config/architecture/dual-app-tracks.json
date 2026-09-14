@@ -1,10 +1,12 @@
 {
   "_meta": {
-    "version": "1.2.0",
-    "updated": "2026-08-26",
+    "version": "1.3.0",
+    "updated": "2026-09-14",
     "why": "Two Athom apps — never blur App ID / version / purpose. Classify every change.",
     "doctrine": "docs/rules/DUAL_APP_VISION.md",
-    "publishSsot": "config/architecture/publish-ssot.json"
+    "publishSsot": "config/architecture/publish-ssot.json",
+    "forumFailoverSsot": "config/architecture/forum-complementary-failover-ssot.json",
+    "intelligentIrSsot": "config/architecture/intelligent-ir-ssot.json"
   },
   "tracks": {
     "master": {
@@ -15,7 +17,8 @@
       "purpose": "Innovation + soak (features + reliability)",
       "cloneHint": "Documents/homey/master",
       "publish": "Auto-Publish on Push → Homey Test",
-      "version": "9.0.665"
+      "tipHealthy": "9.0.926",
+      "tipNote": "P139 PF on 9.0.924/928 — soft-continue; do not spam"
     },
     "stable": {
       "branch": "stable-v5",
@@ -34,6 +37,26 @@
     "store changelog identity"
   ],
   "l99RecentClassification": {
+    "p2490_forum_complementary_failover": {
+      "tag": "BOTH",
+      "note": "MIAMO icka1clh sacred-keep after Athom compact drop; Peter a5304ce8 battery rehydrate; VicHY staleCaps curtains — reliability"
+    },
+    "p2488_smartbutton_battery_keep": {
+      "tag": "BOTH",
+      "note": "IntelligentDeviceAdapter must not strip measure_battery on button_* (Peter a5304ce8)"
+    },
+    "p2487_intelligent_ir": {
+      "tag": "MASTER_ONLY",
+      "note": "IR wizard/router/Homey Pronto TX UX — Zosung TX/RX reliability backport ONLY if touched"
+    },
+    "p2484_ef00_oom_sacred_keep": {
+      "tag": "BOTH",
+      "note": "TuyaEF00Manager idempotent init + gkfbdvyx compact pin — heap OOM / Unknown Zigbee"
+    },
+    "p2481_motionsensor_preempt": {
+      "tag": "BOTH",
+      "note": "safe-get-driver foreign motionsensor — Homey Pro 2026 serializer crash"
+    },
     "p2449_declared_flow_wire": {
       "tag": "BOTH",
       "note": "DeclaredFlowCardAutoWire + ButtonDevice scene_recall + dim→brightness_changed + SDK3 getDeviceTriggerCard arity — flow reliability fleet-wide"

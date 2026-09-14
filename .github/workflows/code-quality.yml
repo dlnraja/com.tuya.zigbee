@@ -124,6 +124,7 @@ jobs:
           node tools/ci/anti-bot-regression-gate.js
           node tools/ci/p2138-sacred-couple-matrix-gate.js
           npm run check:p244x
+          npm run check:p248x
 
       - name: Driver health check
         id: health
