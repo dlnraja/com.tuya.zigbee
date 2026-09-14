@@ -8,6 +8,10 @@
         "nl": "IR-leren gestart",
         "de": "IR-Lernen gestartet"
       },
+      "titleFormatted": {
+        "en": "IR learning started ({name}) ({duration})",
+        "fr": "Apprentissage IR démarré ({name}) ({duration})"
+      },
       "tokens": [
         {
           "name": "name",
@@ -36,6 +40,10 @@
         "nl": "IR-code geleerd",
         "de": "IR-Code gelernt"
       },
+      "titleFormatted": {
+        "en": "IR code learned ({name}) ({format})",
+        "fr": "Code IR appris ({name}) ({format})"
+      },
       "tokens": [
         {
           "name": "name",
@@ -62,6 +70,10 @@
         "en": "IR learn needs confirm (press again)",
         "fr": "Confirmer l'apprentissage IR (rappuyer)"
       },
+      "titleFormatted": {
+        "en": "IR learn needs confirm ({name})",
+        "fr": "Confirmer apprentissage ({name})"
+      },
       "tokens": [
         {
           "name": "name",
@@ -85,10 +97,6 @@
       "title": {
         "en": "Start IR learn",
         "fr": "Démarrer apprentissage IR"
-      },
-      "titleFormatted": {
-        "en": "Learn IR as [[name]] ([[duration]]s)",
-        "fr": "Apprendre IR [[name]] ([[duration]]s)"
       },
       "args": [
         {
@@ -116,10 +124,6 @@
         "en": "Send learned IR code",
         "fr": "Envoyer code IR appris"
       },
-      "titleFormatted": {
-        "en": "Send learned [[name]]",
-        "fr": "Envoyer [[name]]"
-      },
       "args": [
         {
           "name": "device",
@@ -138,10 +142,6 @@
       "title": {
         "en": "Send raw / pasted IR code",
         "fr": "Envoyer code IR brut / collé"
-      },
-      "titleFormatted": {
-        "en": "Send pasted IR ([[format]])",
-        "fr": "Envoyer IR collé ([[format]])"
       },
       "args": [
         {
