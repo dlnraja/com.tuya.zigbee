@@ -38,6 +38,10 @@ assert.ok(driver.includes('data.email || data.username'), 'P2476: username alias
 
 const html = fs.readFileSync(path.join(ROOT, 'drivers', 'wifi_generic', 'pair', 'configure.html'), 'utf8');
 assert.ok(html.includes('SmartLink QR'), 'P2476: SmartLink QR tab');
+assert.ok(/data-t="sl"[\s\S]{0,80}data-t="ez"/.test(html) || html.indexOf('data-t="sl"') < html.indexOf('data-t="ez"'),
+  'P2476/P2471: SmartLink tab before Easy Login');
+assert.ok(html.includes('tab active" data-t="sl"') || html.includes("tab active\" data-t=\"sl\""),
+  'P2476/P2471: SmartLink is default active tab');
 assert.ok(html.includes('Email or phone'), 'P2476: email/phone field');
 assert.ok(!/EZ SmartConfig/.test(html) || html.includes('Not EZ SmartConfig') || html.includes('not EZ'), 'P2476: not EZ SmartConfig framing');
 

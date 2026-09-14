@@ -73,6 +73,8 @@ describe('P2471 Tuya WiFi user login', () => {
     assert.ok(html.includes('ez_reg'), 'Easy Login region');
     assert.ok(html.includes('Email or phone'), 'email/phone label');
     assert.ok(html.includes('SmartLink QR'), 'SmartLink tab');
+    assert.ok(html.indexOf('data-t="sl"') < html.indexOf('data-t="ez"'), 'SmartLink before Easy Login');
+    assert.ok(/class="tab active" data-t="sl"/.test(html), 'SmartLink default active');
 
     const settings = fs.readFileSync(path.join(ROOT, 'settings/index.html'), 'utf8');
     assert.ok(settings.includes('auto-reg'), 'settings auto-reg checkbox');
