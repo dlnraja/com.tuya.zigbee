@@ -3254,5 +3254,8 @@
   },
   "9.0.918": {
     "en": "Homey Test #3181 — P2471/P2472/P2486 publish (WiFi login, MCU DP17, EF00 launchOnce) + size-gate sync."
+  },
+  "9.0.919": {
+    "en": "P2487 Intelligent IR: Zigbee+WiFi router, Pronto/HEX paste, wifi_ir flows, shared learn wizard. Peter tip-lag fixed on ≥9.0.918."
   }
 }

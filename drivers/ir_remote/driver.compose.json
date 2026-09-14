@@ -41,15 +41,34 @@
   },
   "settings": [
     {
+      "id": "transport_driver",
+      "type": "dropdown",
+      "label": {
+        "en": "IR sender driver",
+        "fr": "Driver émetteur IR"
+      },
+      "value": "ir_blaster",
+      "values": [
+        { "id": "ir_blaster", "label": { "en": "Zigbee IR Blaster" } },
+        { "id": "blaster_remote", "label": { "en": "Zigbee Blaster Remote" } },
+        { "id": "wifi_ir_remote", "label": { "en": "WiFi IR Remote" } }
+      ]
+    },
+    {
+      "id": "transport_id",
+      "type": "text",
+      "label": {
+        "en": "IR sender device ID",
+        "fr": "ID émetteur IR"
+      },
+      "value": ""
+    },
+    {
       "id": "blaster_id",
       "type": "text",
       "label": {
-        "en": "Associated IR Blaster ID",
-        "fr": "ID du Blaster IR associé"
-      },
-      "hint": {
-        "en": "Internal ID of the physical IR Blaster device",
-        "fr": "ID interne du module IR Blaster physique"
+        "en": "Legacy blaster ID (Zigbee)",
+        "fr": "ID blaster legacy"
       },
       "value": ""
     },
@@ -70,59 +89,47 @@
         "fr": "Catégorie d'appareil"
       },
       "values": [
-        {
-          "id": "TV",
-          "label": {
-            "en": "TV",
-            "fr": "TV"
-          }
-        },
-        {
-          "id": "AC",
-          "label": {
-            "en": "AC",
-            "fr": "Climatiseur"
-          }
-        },
-        {
-          "id": "Fan",
-          "label": {
-            "en": "Fan",
-            "fr": "Ventilateur"
-          }
-        },
-        {
-          "id": "Audio",
-          "label": {
-            "en": "Audio",
-            "fr": "Audio"
-          }
-        },
-        {
-          "id": "Light",
-          "label": {
-            "en": "Light",
-            "fr": "Lumière"
-          }
-        }
+        { "id": "TV", "label": { "en": "TV", "fr": "TV" } },
+        { "id": "AC", "label": { "en": "AC", "fr": "Climatiseur" } },
+        { "id": "Fan", "label": { "en": "Fan", "fr": "Ventilateur" } },
+        { "id": "Audio", "label": { "en": "Audio", "fr": "Audio" } },
+        { "id": "Light", "label": { "en": "Light", "fr": "Lumière" } }
       ],
       "value": "TV"
+    },
+    {
+      "id": "ir_power_on_name",
+      "type": "text",
+      "label": { "en": "Power ON learned name" },
+      "value": "Power On"
+    },
+    {
+      "id": "ir_power_off_name",
+      "type": "text",
+      "label": { "en": "Power OFF learned name" },
+      "value": "Power Off"
+    },
+    {
+      "id": "ir_power_toggle_name",
+      "type": "text",
+      "label": { "en": "Power toggle learned name" },
+      "value": "Power"
     }
   ],
   "pair": [
     {
-      "id": "list_blasters",
+      "id": "list_devices",
       "template": "list_devices",
-      "options": {
-        "driverId": "ir_blaster"
+      "navigation": {
+        "next": "ir_setup"
       }
     },
     {
-      "id": "select_brand",
-      "template": "repair",
-      "options": {
-        "view": "ir_setup"
-      }
+      "id": "ir_setup"
+    },
+    {
+      "id": "add_devices",
+      "template": "add_devices"
     }
   ],
   "images": {
@@ -131,31 +138,6 @@
   },
   "id": "ir_remote",
   "version": "1.0.0",
-  "connectivity": [
-    "zigbee"
-  ],
-  "zigbee": {
-    "manufacturerName": [
-      "_TZ3290_ACV1IUSLXI3SHAAJ",
-      "_TZ3290_XJPBCXN92AAXVMLZ",
-      "_tz3290_acv1iuslxi3shaaj",
-      "_tz3290_xjpbcxn92aaxvmlz",
-      "_TZ3290_acv1iuslxi3shaaj",
-      "_TZ3290_xjpbcxn92aaxvmlz",
-      "_tz3290_ACV1IUSLXI3SHAAJ",
-      "_tz3290_XJPBCXN92AAXVMLZ"
-    ],
-    "productId": [
-      "TS0601"
-    ],
-    "endpoints": {
-      "1": {
-        "clusters": [
-          0
-        ]
-      }
-    }
-  },
   "ui": {
     "quickAction": "onoff"
   }

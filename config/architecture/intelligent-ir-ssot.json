@@ -1,0 +1,29 @@
+{
+  "id": "intelligent-ir-ssot",
+  "patch": "P2487",
+  "dualApp": "MASTER_ONLY",
+  "reliabilityBackport": "BOTH_for_zosung_tx_rx_only",
+  "transports": ["zigbee_zosung", "wifi_tuya_local"],
+  "senderDrivers": ["ir_blaster", "blaster_remote", "wifi_ir_remote"],
+  "virtualDriver": "ir_remote",
+  "clusters": {
+    "zosungControl": "0xE004",
+    "zosungTransmit": "0xED00"
+  },
+  "wifiDps": {
+    "send": "201",
+    "learnReceive": "202"
+  },
+  "formats": ["pronto", "broadlink", "globalcache", "hex", "zosung", "tuya_opaque"],
+  "wizard": "assets/ir/ir_setup_wizard.html",
+  "router": "lib/ir/IntelligentIRRouter.js",
+  "converter": "lib/ir/IRFormatConverter.js",
+  "outOfScope": [
+    "homey_manager_infrared",
+    "global_cache_online_scrape",
+    "ac_long_frame_synthesizer",
+    "forum_post"
+  ],
+  "gate": "npm run check:p2487",
+  "tipMin": "9.0.919"
+}
