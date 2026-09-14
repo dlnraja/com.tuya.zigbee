@@ -137,6 +137,8 @@
   ],
   "zigbee": {
     "manufacturerName": [
+      "_TZ3290_xjpbcxn92aaxvmlz",
+      "_TZ3290_acv1iuslxi3shaaj",
       "_TZ3210_JIC09I9A",
       "_TZ3210_OGX8U9IT",
       "_TZ3290_0XK5DGCV",
@@ -272,13 +274,17 @@
       "_TZ3290_U9XAC5RV",
       "_tz3290_U9XAC5RV",
       "_TZE284_3MZB0SDZ",
-      "_tze284_3MZB0SDZ"
+      "_tze284_3MZB0SDZ",
+      "_tz3290_xjpbcxn92aaxvmlz",
+      "_tz3290_acv1iuslxi3shaaj",
+      "_TZ3290_lidgqyzu",
+      "_tz3290_lidgqyzu"
     ],
     "productId": [
-      "TS0002",
       "TS0601",
-      "TS0601_repeater",
-      "TS1201"
+      "TS1201",
+      "TS0002",
+      "TS0601_repeater"
     ],
     "endpoints": {
       "1": {

@@ -848,7 +848,35 @@ const MANUAL_FIXES = [
     addProductIds: ['TS0601'],
     source: 'p2295-multi-identity',
   },
+
+  // WHY(P2487): mfs/infer used to park TZ3290 blasters on virtual ir_remote
+  {
+    id: 'p2487-tz3290-ir-blaster',
+    file: 'drivers/ir_blaster/driver.compose.json',
+    description: 'P2487: TZ3290 UFO/ZS06 couples belong on ir_blaster (not virtual ir_remote)',
+    match: () => true,
+    addIfMissing: [
+      '_TZ3290_acv1iuslxi3shaaj', '_tz3290_acv1iuslxi3shaaj',
+      '_TZ3290_xjpbcxn92aaxvmlz', '_tz3290_xjpbcxn92aaxvmlz',
+    ],
+    addProductIds: ['TS1201', 'TS0601'],
+    addAtTop: true,
+    source: 'p2487-intelligent-ir',
+  },
 ];
+
+/** P2487: virtual IR remote must never keep a Zigbee block (Homey endpoints gate). */
+function stripVirtualIrRemoteZigbee() {
+  const fp = path.join(ROOT, 'drivers', 'ir_remote', 'driver.compose.json');
+  if (!fs.existsSync(fp)) return false;
+  const j = JSON.parse(fs.readFileSync(fp, 'utf8'));
+  if (!j.zigbee && !j.connectivity) return false;
+  delete j.zigbee;
+  delete j.connectivity;
+  fs.writeFileSync(fp, `${JSON.stringify(j, null, 2)}\n`);
+  console.log('  ✅ p2487-ir-remote-virtual: stripped zigbee/connectivity from ir_remote');
+  return true;
+}
 
 function patchFix(fix) {
   const fp = path.join(ROOT, fix.file);
@@ -977,5 +1005,7 @@ for (const fix of MANUAL_FIXES) {
   total++;
   if (patchFix(fix)) applied++;
 }
+if (stripVirtualIrRemoteZigbee()) applied++;
+total++;
 console.log(`\nApplied: ${applied}/${total} manual fixes re-injected`);
 process.exit(0);

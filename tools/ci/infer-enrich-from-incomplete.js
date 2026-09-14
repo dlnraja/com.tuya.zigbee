@@ -50,6 +50,16 @@ const WIDE_CLAIM = new Set([
   'gateway_zigbee_bridge',
 ]);
 
+// WHY(P2487): virtual remotes must not receive Zigbee FPs (Homey needs endpoints;
+// Toolkit UX pairs via sender list). Remap stale mfs hints → real blaster.
+const VIRTUAL_NO_ZIGBEE = new Set(['ir_remote']);
+const VIRTUAL_DRIVER_REMAP = { ir_remote: 'ir_blaster' };
+
+function resolveDriverTarget(driverId) {
+  if (!driverId) return driverId;
+  return VIRTUAL_DRIVER_REMAP[driverId] || driverId;
+}
+
 const SYNTHETIC_RX = /_disabled|_dummy|_generic|_hybrid|_master|placeholder|needs_|xxxxxxxx/i;
 
 /** Deterministic PID → driver (HIGH when target exists; TS0601 excluded). */
@@ -75,6 +85,7 @@ const PID_CLASS_RULES = [
   { re: /^TS011F$/i, driver: 'plug', conf: 86, rule: 'pid_TS011F_plug' },
   { re: /^TS0121$/i, driver: 'plug', conf: 84, rule: 'pid_TS0121_plug' },
   { re: /^TS130F$/i, driver: 'curtain_motor', conf: 86, rule: 'pid_TS130F_cover' },
+  { re: /^TS1201$/i, driver: 'ir_blaster', conf: 94, rule: 'pid_TS1201_ir_blaster' },
 ];
 
 /** Z2M DP name → driver hint for ambiguous TS0601 + _TZE* MCU devices. */
@@ -447,9 +458,10 @@ function scoreCandidate(c, sources) {
     };
   }
 
-  // Curated mfs driver wins when typed + exists
-  const curated = c.mfsDriver && driverExists(c.mfsDriver) && !WIDE_CLAIM.has(c.mfsDriver)
-    ? c.mfsDriver
+  // Curated mfs driver wins when typed + exists (remap virtual → hardware)
+  const curatedRaw = c.mfsDriver && !WIDE_CLAIM.has(c.mfsDriver) ? resolveDriverTarget(c.mfsDriver) : null;
+  const curated = curatedRaw && driverExists(curatedRaw) && !VIRTUAL_NO_ZIGBEE.has(curatedRaw)
+    ? curatedRaw
     : null;
   if (curated) {
     hints.push({ rule: 'mfs_curated', driver: curated, conf: 95 });
@@ -635,6 +647,10 @@ function checkNeedsCaseVariants(driverId, mfr) {
 // ─── Apply (HIGH only) ────────────────────────────────────────────────────────
 
 function applyRehome(mfr, pid, targetDriver) {
+  targetDriver = resolveDriverTarget(targetDriver);
+  if (VIRTUAL_NO_ZIGBEE.has(targetDriver)) {
+    throw new Error(`refused virtual driver target ${targetDriver}`);
+  }
   if (isForbiddenPlacement(mfr, targetDriver)) {
     throw new Error(`registry forbids ${mfr} on ${targetDriver}`);
   }
