@@ -1,38 +1,55 @@
 /**
  * Project Rules + Architecture - Condensed context for AI automation
  * Sources: ARCHITECTURE.md, CRITICAL_MISTAKES.md, DEVELOPMENT_RULES.md, Windsurf workflows, memory rules
- * v2.0.0 - Now includes GLOBAL_INVESTIGATION_PLAN.md for deep diagnostic methodology
+ * v3.0.0 (P2491) — default slim smart-map; full LOADED_RULES only if AI_FULL_CONTEXT=1
  */
 const fs = require('fs');
 const path = require('path');
 
-// Load .windsurfrules + docs/rules/*.md + GLOBAL_INVESTIGATION_PLAN.md for comprehensive AI context
+function _fullContextEnabled() {
+  return /^(1|true|yes)$/i.test(String(process.env.AI_FULL_CONTEXT || ''));
+}
+
+// WHY(P2491): loading every docs/rules/*.md (~54KB) on each callAI burned forfait tokens.
+// Contre quoi: bots re-inflating LOADED_RULES without AI_FULL_CONTEXT.
 let LOADED_RULES = '';
 try {
-  const rulesDir = path.join(__dirname, '../../docs/rules');
-  const wsRulesPath = path.join(__dirname, '../../.windsurfrules');
-  const gipPath = path.join(__dirname, '../../docs/GLOBAL_INVESTIGATION_PLAN.md');
+  const smartMapPath = path.join(__dirname, '../../config/architecture/project-smart-map.json');
   const parts = [];
-  // Load .windsurfrules (primary condensed rules)
-  if (fs.existsSync(wsRulesPath)) {
-    const ws = fs.readFileSync(wsRulesPath, 'utf8');
-    // Take first 3000 chars (critical bugs, patterns, DP protocol, fingerprint rules)
-    parts.push('### .windsurfrules (condensed)\n' + ws.substring(0, 3000));
+  if (fs.existsSync(smartMapPath)) {
+    const map = JSON.parse(fs.readFileSync(smartMapPath, 'utf8'));
+    parts.push('### project-smart-map.json\n' + JSON.stringify({
+      tip: map.tip,
+      identity: map.identity,
+      dualApp: map.dualApp,
+      truth: map.truth,
+      publish: map.publish,
+      forum: map.forum,
+      aiEfficiency: map.aiEfficiency,
+      gates: map.gates,
+      entryDocs: map.entryDocs,
+    }, null, 2).slice(0, 3500));
   }
-  // Load docs/rules/*.md
-  if (fs.existsSync(rulesDir)) {
-    for (const f of fs.readdirSync(rulesDir).filter(f => f.endsWith('.md'))) {
-      const content = fs.readFileSync(path.join(rulesDir, f), 'utf8');
-      // Cap each file at 2000 chars to stay within token budgets
-      parts.push('### ' + f + '\n' + content.substring(0, 2000));
+  if (_fullContextEnabled()) {
+    const rulesDir = path.join(__dirname, '../../docs/rules');
+    const wsRulesPath = path.join(__dirname, '../../.windsurfrules');
+    const gipPath = path.join(__dirname, '../../docs/GLOBAL_INVESTIGATION_PLAN.md');
+    if (fs.existsSync(wsRulesPath)) {
+      const ws = fs.readFileSync(wsRulesPath, 'utf8');
+      parts.push('### .windsurfrules (condensed)\n' + ws.substring(0, 2000));
     }
-  }
-  // Load GLOBAL_INVESTIGATION_PLAN.md (investigation framework - 22 sections)
-  if (fs.existsSync(gipPath)) {
-    const gip = fs.readFileSync(gipPath, 'utf8');
-    // Extract condensed investigation methodology (first 4000 chars for key sections)
-    const gipContext = gip.substring(0, 4000);
-    parts.push('### GLOBAL_INVESTIGATION_PLAN.md (condensed - 22 sections)\n' + gipContext);
+    if (fs.existsSync(rulesDir)) {
+      // Cap file count + chars — never dump the whole tree
+      const files = fs.readdirSync(rulesDir).filter((f) => f.endsWith('.md')).slice(0, 8);
+      for (const f of files) {
+        const content = fs.readFileSync(path.join(rulesDir, f), 'utf8');
+        parts.push('### ' + f + '\n' + content.substring(0, 1200));
+      }
+    }
+    if (fs.existsSync(gipPath)) {
+      const gip = fs.readFileSync(gipPath, 'utf8');
+      parts.push('### GLOBAL_INVESTIGATION_PLAN.md (LIVE L99 only)\n' + gip.substring(0, 2500));
+    }
   }
   LOADED_RULES = parts.join('\n\n');
 } catch (e) { /* Rules not available in CI - that's OK */ }

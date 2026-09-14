@@ -12,7 +12,8 @@ on:
     # - 02:00 UTC: mega-crawl (also polls forum)
     # - */4 cron: auto-enrich-closed-loop
     # Dedicated run for redundancy and clearer logs.
-    - cron: '15 2,6,10,14,18,22 * * *'
+    # P2491: 4×/day (was 6) — fewer Discourse/GH API overlaps with L99/auto-enrich
+    - cron: '15 2,8,14,20 * * *'
   workflow_dispatch:
     inputs:
       topic_id:
@@ -40,6 +41,12 @@ defaults:
 
 env:
   NODE_VERSION: '22'
+  AI_FORCE_LOCAL: 'true'
+  AI_ALLOW_REMOTE: 'false'
+  AI_PLAN_MODE: forfait
+  GMAIL_DIAG_AI_MAX: '0'
+  FORUM_AUTO_POST: '0'
+  SHADOW_FORUM: '1'
 
 jobs:
   forum-poll:

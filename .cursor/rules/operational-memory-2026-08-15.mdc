@@ -145,14 +145,15 @@ npm run check:p248x
 - Homey: soft hooks in `lib/` + `lib/**/data/*` only
 - GHA: `config/enrichment|resilience|security`, `tools/ci/*` — excluded via `.homeyignore`
 
-## AI forfait + security (P2227 + P2437/P2438 Cursor + GHA)
+## AI forfait + context compress (P2227 + P2437 + P2491)
 - Mode: `AI_PLAN_MODE=forfait` — never paid overage (`AI_ALLOW_PAID=false`)
-- Caps: global **120**/day, soft-stop **70%**, `GMAIL_DIAG_AI_MAX=0`; grok/cursor-cloud cap **0**
-- **Cursor:** no Grok/Opus/cloud Task — `.cursor/hooks.json` + `.cursor/rules/ai-forfait-cursor-limit.mdc` (max 1 parallel, 8 subagents/day)
-- **GHA:** `AI_FORCE_LOCAL=true` on bug-report / batch-close / smart-merge / enrich / diags; `shouldSkipAI()` in ai-helper; `tools/ci/local-intelligent-solver.js`
-- Tests: `npm run check:p243x` (P2435–P2438) wired in unified-ci / syntax-check / pr-gate / resilience
-- Disable Cursor Automations / Autopilot cron if still burning quota (Settings → Automations)
-- `npm run ai:plan-guard` · `npm run security:plan` · SSOT `config/security/ai-plan-forfait.json`
+- **P2491:** remote OFF by default (`AI_FORCE_LOCAL=true`, `AI_ALLOW_REMOTE=false`); slim `project-smart-map.json` (~2KB) not 54KB rules dump; no ensemble/map-reduce/model-list
+- Caps: global **80**/day, soft-stop **60%**, `GMAIL_DIAG_AI_MAX=0`; grok/cursor-cloud cap **0**
+- Crons thinned: forum-poll 4×, L99 3×, auto-enrich `/6h`
+- Doc: `docs/architecture/AI_EFFICIENCY_SSOT.md` · gate: `npm run check:p2491`
+- **Cursor:** no Grok/Opus/cloud Task — `.cursor/hooks.json` + `.cursor/rules/ai-forfait-cursor-limit.mdc`
+- **GHA:** `AI_FORCE_LOCAL=true` on enrich / diags / monthly / publish validate; `local-intelligent-solver.js`
+- Tests: `npm run check:p243x` + `check:p2491`
 
 ## Handoffs (parent folder)
 `Documents\homey\FROM_THE_BEGINNING.md` · `NEXT_PATCHES.md` · `FORUM_LATEST_2190.md` · `FULL_SOURCE_SWEEP.md` · `ZIGBEE_PARALLEL_CROSS.md`

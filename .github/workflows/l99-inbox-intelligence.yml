@@ -9,7 +9,8 @@ name: L99 Inbox Intelligence (P2352)
 on:
   schedule:
     # Stagger +30m after forum-poll (02/06/10/14/18/22 :15)
-    - cron: '45 2,6,10,14,18,22 * * *'
+    # P2491: 3×/day (was 6) — stagger after forum-poll 02/08/14/20
+    - cron: '45 3,11,19 * * *'
   workflow_dispatch:
     inputs:
       mode:
@@ -55,6 +56,8 @@ env:
   REPLY_TOPICS: '140352'
   AI_PLAN_MODE: forfait
   AI_ALLOW_PAID: 'false'
+  AI_FORCE_LOCAL: 'true'
+  AI_ALLOW_REMOTE: 'false'
   GMAIL_DIAG_AI_MAX: '0'
   SMART_FETCH_READER_FALLBACK: '1'
 

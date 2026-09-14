@@ -12,8 +12,9 @@
 | Tip healthy | **#3186 = 9.0.926 test** — PF #3184/#3187 = P139 soft-continue, no spam |
 | Forum fleet | `reports/forum-l99-2026-09-14-t140352/` highest **#2237** — SHADOW only |
 | Complementary | Stack **all** layers — SSOT `config/architecture/forum-complementary-failover-ssot.json` (P2490) |
-| Gates | `npm run check:p248x` · `check:p244x` · `check:p246x` · `check:l99-dual` |
-| Dual-app | P2488/P2490/P2481/P2484 = **BOTH**; P2487 IR UX = **MASTER_ONLY** |
+| AI efficiency | P2491 — slim smart-map, remote OFF by default, thinned crons — `docs/architecture/AI_EFFICIENCY_SSOT.md` |
+| Gates | `npm run check:p248x` · `check:p2491` · `check:p244x` · `check:p246x` · `check:l99-dual` |
+| Dual-app | P2488/P2490/P2481/P2484/P2491 = **BOTH**; P2487 IR UX = **MASTER_ONLY** |
 | Doctrine | Never invent pid; never forum POST (T157628); believe recurring reports (P2313) |
 
 ---

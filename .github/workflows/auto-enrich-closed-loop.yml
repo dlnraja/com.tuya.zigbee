@@ -13,7 +13,7 @@ on:
     # - 04:15 UTC: blakadder-fetch
     # - 22:00 UTC Sunday: gmail diagnostics
     # - 30 3 *: nightly audit
-    - cron: '0 */4 * * *'
+    - cron: '0 */6 * * *'
   workflow_dispatch:
     inputs:
       skip_crawl:
@@ -45,9 +45,10 @@ env:
   TUYA_FP_HEURISTIC: '1'
   AI_PLAN_MODE: forfait
   AI_ALLOW_PAID: 'false'
-  AI_GLOBAL_DAILY_CAP: '120'
-  AI_SOFT_STOP_PERCENT: '70'
+  AI_GLOBAL_DAILY_CAP: '80'
+  AI_SOFT_STOP_PERCENT: '60'
   AI_FORCE_LOCAL: 'true'
+  AI_ALLOW_REMOTE: 'false'
   GMAIL_DIAG_AI_MAX: '0'
   FORUM_AUTO_POST: '0'
   SHADOW_FORUM: '1'
