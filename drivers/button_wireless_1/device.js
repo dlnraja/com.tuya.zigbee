@@ -44,6 +44,16 @@ class Button1GangDevice extends ButtonDevice {
       }
     } catch (_e) { /* soft */ }
 
+    // WHY(P2490 / Peter #2237 complementary to P2488): if an older tip already stripped
+    // measure_battery, keep-lock alone cannot paint % until the cap exists again.
+    // Rehydrate on boot — then wake ZCL / store paint can fill Insights.
+    try {
+      if (!this.hasCapability('measure_battery') && typeof this.addCapability === 'function') {
+        await this.addCapability('measure_battery').catch(() => {});
+        this.log('[BUTTON_WIRELESS_1] P2490 rehydrate measure_battery after strip');
+      }
+    } catch (_e) { /* soft */ }
+
     this.log('[BUTTON_WIRELESS_1] v10.0.0+P2316 init (1-btn lock + magic 0xFFDE)');
   }
 

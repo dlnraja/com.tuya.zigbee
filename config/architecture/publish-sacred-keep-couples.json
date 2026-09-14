@@ -15,6 +15,30 @@
       "note": "Roller blind motor sibling to fodv6bkr"
     },
     {
+      "mfr": "_TZE200_icka1clh",
+      "pid": "TS0601",
+      "driverId": "curtain_motor",
+      "note": "P2490 MIAMO #2229 AM43 — compact was dropping FP → Unknown Zigbee"
+    },
+    {
+      "mfr": "_TZE204_icka1clh",
+      "pid": "TS0601",
+      "driverId": "curtain_motor",
+      "note": "P2490 icka1clh TZE204 sibling sacred-keep"
+    },
+    {
+      "mfr": "_TZE200_zah67ekd",
+      "pid": "TS0601",
+      "driverId": "curtain_motor",
+      "note": "P2490 AM43 solar sibling — same cover_4 EF00 family"
+    },
+    {
+      "mfr": "_TZE200_fodv6bkr",
+      "pid": "TS0601",
+      "driverId": "curtain_motor",
+      "note": "P2490 Eduard tubular TZE200 sibling keep (TZE284 already pinned)"
+    },
+    {
       "mfr": "_TZE284_hodyryli",
       "pid": "TS0601",
       "driverId": "climate_sensor",

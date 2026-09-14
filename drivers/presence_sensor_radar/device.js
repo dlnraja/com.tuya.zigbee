@@ -422,11 +422,17 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
 
   async _applyRadarCapabilityProfile() {
     const requiredCaps = new Set(this.sensorCapabilities);
+    // WHY(P2490 / VicHY complementary): also list curtain phantoms in staleCaps so
+    // profile apply strips them even if _healRadarPhantomCaps races / store DynCap lags.
     const staleCaps = [
       'measure_battery',
       'alarm_battery',
       'measure_temperature',
       'measure_humidity',
+      'windowcoverings_set',
+      'windowcoverings_state',
+      'windowcoverings_tilt_set',
+      'dim',
       'onoff',
       'alarm_motion.zone1',
       'alarm_motion.zone2',
