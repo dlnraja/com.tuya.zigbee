@@ -27,7 +27,7 @@ class WiFiIrRemoteDriver extends TuyaLocalDriver {
       await this._router.learn({
         device: args.device,
         name: args.name || `code_${Date.now()}`,
-        timeout: Number(args.duration) || 30,
+        timeout: Number(args.timeout_s) || Number(args.duration) || 30,
         confirm: true,
       });
       return true;

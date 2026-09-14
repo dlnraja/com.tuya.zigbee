@@ -15,9 +15,9 @@
           "title": { "en": "Code name" }
         },
         {
-          "name": "duration",
+          "name": "timeout_s",
           "type": "number",
-          "title": { "en": "Duration (s)" }
+          "title": { "en": "Timeout seconds" }
         }
       ],
       "args": [
@@ -59,8 +59,8 @@
     {
       "id": "wifi_ir_remote_learn_confirm_needed",
       "title": {
-        "en": "IR learn needs confirm (press again)",
-        "fr": "Confirmer l'apprentissage IR (rappuyer)"
+        "en": "IR learn needs confirm — press again",
+        "fr": "Confirmer l'apprentissage IR — rappuyer"
       },
       "tokens": [
         {
@@ -98,7 +98,7 @@
           "placeholder": { "en": "power" }
         },
         {
-          "name": "duration",
+          "name": "timeout_s",
           "type": "number",
           "placeholder": { "en": "30" },
           "min": 5,
@@ -146,12 +146,12 @@
           "type": "dropdown",
           "name": "format",
           "values": [
-            { "id": "auto", "label": { "en": "Auto" } },
-            { "id": "tuya_opaque", "label": { "en": "Tuya opaque" } },
-            { "id": "pronto", "label": { "en": "Pronto Hex" } },
-            { "id": "broadlink", "label": { "en": "Broadlink" } },
-            { "id": "hex", "label": { "en": "HEX timings" } },
-            { "id": "globalcache", "label": { "en": "Global Caché" } }
+            { "id": "auto", "title": { "en": "Auto" } },
+            { "id": "tuya_opaque", "title": { "en": "Tuya opaque" } },
+            { "id": "pronto", "title": { "en": "Pronto Hex" } },
+            { "id": "broadlink", "title": { "en": "Broadlink" } },
+            { "id": "hex", "title": { "en": "HEX timings" } },
+            { "id": "globalcache", "title": { "en": "Global Caché" } }
           ]
         }
       ]

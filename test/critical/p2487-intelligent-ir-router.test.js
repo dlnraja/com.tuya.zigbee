@@ -84,6 +84,17 @@ describe('P2487 Intelligent IR router', () => {
     }
   });
 
+  // Contre quoi: Homey reserves Flow arg name "duration"
+  it('wifi_ir_remote start_learn uses timeout_s not duration', () => {
+    const p = path.join(ROOT, 'drivers', 'wifi_ir_remote', 'driver.flow.compose.json');
+    const j = JSON.parse(fs.readFileSync(p, 'utf8'));
+    const start = (j.actions || []).find((a) => a.id === 'wifi_ir_remote_start_learn');
+    assert.ok(start);
+    const names = (start.args || []).map((a) => a.name);
+    assert.ok(names.includes('timeout_s'));
+    assert.ok(!names.includes('duration'));
+  });
+
   it('ir_remote compose exposes multi-transport settings (not Zigbee-only)', () => {
     const p = path.join(ROOT, 'drivers', 'ir_remote', 'driver.compose.json');
     const j = JSON.parse(fs.readFileSync(p, 'utf8'));

@@ -94,7 +94,7 @@ class WiFiIRRemoteDevice extends TuyaLocalDevice {
     this.log(`[WIFI-IR] Learning: ${this._pendingCodeName} (${duration}s)`);
     try {
       const card = this.homey.flow.getDeviceTriggerCard('wifi_ir_remote_learning_started');
-      if (card) await card.trigger(this, { name: this._pendingCodeName, duration: Number(duration) || 30 }, {}).catch(() => {});
+      if (card) await card.trigger(this, { name: this._pendingCodeName, timeout_s: Number(duration) || 30 }, {}).catch(() => {});
     } catch (_) { /* ignore */ }
 
     if (this._learnTimeout) {
