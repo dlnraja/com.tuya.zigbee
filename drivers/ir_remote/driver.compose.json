@@ -191,6 +191,17 @@
   "version": "1.0.0",
   "ui": {
     "quickAction": "onoff"
+  },
+  "zigbee": {
+    "manufacturerName": [
+      "_TZ3290_acv1iuslxi3shaaj",
+      "_tz3290_acv1iuslxi3shaaj",
+      "_TZ3290_xjpbcxn92aaxvmlz",
+      "_tz3290_xjpbcxn92aaxvmlz"
+    ],
+    "productId": [
+      "ts0601",
+      "TS1201"
+    ]
   }
 }
-
