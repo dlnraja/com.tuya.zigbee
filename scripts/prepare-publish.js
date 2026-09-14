@@ -313,13 +313,21 @@ function validateSacredKeepPins() {
   }
   if (bad) process.exit(1);
   const must = [
+    // WHY(P2490): Athom compact dropped icka1clh while keeping fodv6bkr — pin BOTH families
     ['_TZE200_icka1clh', 'TS0601', 'curtain_motor'],
+    ['_TZE204_icka1clh', 'TS0601', 'curtain_motor'],
     ['_TZE284_fodv6bkr', 'TS0601', 'curtain_motor'],
+    ['_TZE200_fodv6bkr', 'TS0601', 'curtain_motor'],
+    ['_TZE200_zah67ekd', 'TS0601', 'curtain_motor'],
+    // Peter Smartbutton — battery keep through compact
+    ['_TZ3000_mrpevh8p', 'TS0041', 'button_wireless_1'],
+    // VicHY radar — never lose couple to curtain misroute
+    ['_TZE204_clrdrnya', 'TS0601', 'presence_sensor_radar'],
   ];
   for (const [mfr, pid, driverId] of must) {
     const hit = rows.some((c) => (
       String(c.mfr).toLowerCase() === mfr.toLowerCase()
-      && String(c.pid) === pid
+      && String(c.pid || c.productId || c.modelId) === pid
       && c.driverId === driverId
     ));
     if (!hit) {

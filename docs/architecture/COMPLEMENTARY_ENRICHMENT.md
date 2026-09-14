@@ -4,23 +4,36 @@
 >
 > **Dual-app:** Catalogs apply on **BOTH** tracks for CI. Homey runtime only ships slim libs — see [`CI_VS_HOMEY_RUNTIME.md`](./CI_VS_HOMEY_RUNTIME.md). Never change App ID when back-porting.
 
-## P2490 — Forum complementary failover (2026-09-14)
+## P2490 + P2502 — Forum complementary failover (2026-09-14→15)
 
-Machine SSOT: [`config/architecture/forum-complementary-failover-ssot.json`](../../config/architecture/forum-complementary-failover-ssot.json)
+Machine SSOT: [`config/architecture/forum-complementary-failover-ssot.json`](../../config/architecture/forum-complementary-failover-ssot.json)  
+Fleet method matrix: [`config/architecture/fleet-complementary-methods-ssot.json`](../../config/architecture/fleet-complementary-methods-ssot.json)
 
 **Mandate:** when T140352 / Gmail diag recur, stack **all** layers — do not stop at the first fix:
 
 | Layer | Example |
 |-------|---------|
-| Sacred-keep | Pin `icka1clh` after Athom compact drop (MIAMO) |
+| Sacred-keep | Pin `icka1clh` after Athom compact drop (MIAMO) while `fodv6bkr` kept |
 | Adapter keep + rehydrate | Peter `measure_battery` (P2488 keep + P2490 `toAdd` / boot) |
+| Getable heal | Peter P2499 History UI (`getable:false` hid battery) |
 | DynCap / staleCaps | VicHY curtain phantoms on radar |
 | EF00 force / soft-create | Eduard / MIAMO curtain_motor |
-| Tip soft-expect | Healthy #3186 while #3187 PF — no spam |
-| Tip-lag triage | Crash mails 9.0.891/895 = P2481 already shipped |
+| EF00 init idempotent | Peter crashes `375def7f`/`8278ec79` = **heap OOM + MaxListeners** (P2484) — tip ≥9.0.914 |
+| SMART ADAPT BootBudget | P2502 defer under heap critical (complements P2484) |
+| Tip soft-expect | Healthy tip while Athom PF on other builds — no spam |
+| Tip-lag triage | Crash @ 9.0.895/908 = tip-lag; prefer tip ≥9.0.930 |
+| User re-pair | PresentSky `m1cvyneb` — **RESOLVED** after re-add |
+
+| User | Couple | Stack |
+|------|--------|-------|
+| VicHY | `clrdrnya`+TS0601 | P2472a + staleCaps + sacred-keep |
+| Eduard | `fodv6bkr`+TS0601 | EF00 tubular + sacred-keep |
+| MIAMO | `icka1clh`+TS0601 | EF00 AM43 + P2490 keep (compact gap) |
+| Peter | `mrpevh8p`+TS0041 | battery P2470/P2488/P2490/P2499 + crash P2484/P2502 |
+| PresentSky | `m1cvyneb`+TS0601 | P2138 dimmer — resolved re-add |
 
 Reports: `reports/forum-l99-2026-09-14-t140352/COMPLEMENTARY_FAILOVER.md` · `reports/gmail-diag-2026-09-14/TREAT_LIVE.md`  
-Gates: `npm run check:p2490` · `npm run check:p248x`
+Gates: `npm run check:p2490` · `npm run check:p2502` · `npm run check:p248x`
 
 ## Evolution eras → live SSOT
 

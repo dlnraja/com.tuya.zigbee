@@ -1,0 +1,88 @@
+{
+  "generatedAt": "2026-09-14T22:37:41.486Z",
+  "policy": "search-not-invent — never write compose from soft hypotheses",
+  "query": {
+    "uuid": "8278ec79",
+    "driver": "button_emergency_sos"
+  },
+  "diag": {
+    "uuid": "8278ec79-cee4-44ea-8697-b3e448bed729",
+    "version": "9.0.908",
+    "createdAt": "2026-09-13T06:50:59.241Z",
+    "userMessage": "App still crashing",
+    "drivers": [
+      "button_emergency_sos"
+    ],
+    "coupleAbsent": false,
+    "couplesInLog": []
+  },
+  "hypotheses": [
+    {
+      "mfr": "_TZ3000_3dfewsk1",
+      "pid": "TS0203",
+      "confidence": "related_diag",
+      "reason": "same driver in diag 375def7f @ 9.0.895",
+      "sources": [
+        "375def7f"
+      ]
+    },
+    {
+      "mfr": "_TZ3000_decxrtwa",
+      "pid": "TS0203",
+      "confidence": "related_diag",
+      "reason": "same driver in diag 375def7f @ 9.0.895",
+      "sources": [
+        "375def7f"
+      ]
+    },
+    {
+      "mfr": "_TZ3000_mrpevh8p",
+      "pid": "TS0041",
+      "confidence": "related_diag",
+      "reason": "same driver in diag cfbf687f @ 9.0.779",
+      "sources": [
+        "cfbf687f"
+      ],
+      "z2mDesc": "Button scene switch"
+    },
+    {
+      "mfr": "_TZ3000_*",
+      "pid": "TS0041",
+      "confidence": "interview",
+      "reason": "INT-010",
+      "sources": [
+        "interview"
+      ]
+    },
+    {
+      "mfr": "_TZ3000_wkai4ga5",
+      "pid": "TS0044",
+      "confidence": "interview",
+      "reason": "INT-011",
+      "sources": [
+        "interview"
+      ]
+    },
+    {
+      "mfr": "_TZ3000_zgyzgdua",
+      "pid": "TS0044",
+      "confidence": "interview",
+      "reason": "INT-161",
+      "sources": [
+        "interview"
+      ],
+      "z2mDesc": "Wireless switch with 4 buttons"
+    },
+    {
+      "mfr": "_TZ3000_0dumfk2z",
+      "pid": "TS0215A",
+      "driver": "button_emergency_sos",
+      "confidence": "interview",
+      "reason": "INT-175",
+      "sources": [
+        "interview"
+      ]
+    }
+  ],
+  "action": "Request fresh Homey diag with [COVER-INIT] or [FLEET] mfr=… pid=… lines"
+}

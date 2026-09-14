@@ -15,6 +15,7 @@ See [`config/architecture/intelligent-ir-ssot.json`](../../config/architecture/i
 | `lib/ir/IntelligentIRRouter.js` | `listSenders` / `send` / `learn` / `storeManual` / confirm capture |
 | `lib/ir/IRFormatConverter.js` | Pronto / Broadlink / Global Caché / HEX ↔ Zosung; Pronto for Homey TX |
 | `lib/ir/HomeyInfraredTx.js` | Soft Homey Pro 2023 ProntoHex TX (`homey:wireless:ir`) |
+| `lib/ir/IRFloodGuard.js` | **P2501** anti-spam / anti-flood (dedup, throttle, global cap, learn cooldown) |
 | `lib/ir/IRCodeLibrary.js` | Offline brand DB; uses converter |
 | `lib/ir/irWizardSession.js` | Pair/repair Homey session handlers |
 | `assets/ir/ir_setup_wizard.html` | Shared wizard (copied to pair/repair views) |
@@ -35,10 +36,29 @@ Lock **mfr+pid** only — e.g. TS1201 → `ir_blaster`. Never invent pid. RF clo
 - UX / virtual remotes / Homey IR path / library polish → **MASTER_ONLY**
 - Zosung TX/RX crash fixes → **BOTH** (backport surgically)
 
+## Flood guard (P2501)
+
+Intelligent choke-point for Zigbee / WiFi / Homey Pronto TX:
+
+| Rule | Behaviour |
+|------|-----------|
+| Identical payload &lt;900ms | Soft skip (`skipped: true`) |
+| Same sender &lt;minInterval (350/300/400ms) | Soft skip |
+| `repetitions` | Cap at **3** |
+| &gt;5 TX / 1s global | Hard throw `global_flood` |
+| Learn start | 2.5s cooldown |
+
+Wired in `IntelligentIRRouter`, `HomeyInfraredTx`, `ir_blaster`, `wifi_ir_remote`, `blaster_remote` (router passes `skipFloodGuard` after check to avoid double throttle).
+
+```bash
+npm run check:p2501
+```
+
 ## Gate
 
 ```bash
 npm run check:p2487
+npm run check:p2501
 ```
 
 ## Non-goals

@@ -127,8 +127,29 @@ class IRRemoteDevice extends TuyaZigbeeDevice {
     return this._irRouter.send({ device: this, ...opts });
   }
 
-  async sendIRCode(code) {
+  async sendIRCode(code, options = {}) {
     if (!code) {return;}
+    // WHY(P2501): unify with IRFloodGuard; keep local serialize as second line
+    if (!options.skipFloodGuard) {
+      try {
+        const { getGuard } = require('../../lib/ir/IRFloodGuard');
+        const sid = (typeof this.getData === 'function' && (this.getData()?.id || this.getData()?.token))
+          || (typeof this.getId === 'function' && this.getId())
+          || 'blaster_remote';
+        const flood = getGuard(this.homey).checkSend({
+          senderKey: String(sid),
+          transport: 'zigbee',
+          payload: String(code),
+        });
+        if (!flood.allow) {
+          this.log(`[IR-TX] flood guard skip: ${flood.reason}`);
+          if (flood.hard) throw new Error(`IR flood guard: ${flood.reason}`);
+          return false;
+        }
+      } catch (err) {
+        if (String(err && err.message || '').includes('IR flood guard')) throw err;
+      }
+    }
     // v10.8.0 (z2m ZS06 lesson): a spammed IR blaster can enter a transmit
     // loop that kills the whole Zigbee network until reboot. Throttle IR
     // sends to 1 per 500ms and serialize concurrent requests — a flow storm

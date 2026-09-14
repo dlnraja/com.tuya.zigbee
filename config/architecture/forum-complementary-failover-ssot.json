@@ -1,7 +1,7 @@
 {
   "_meta": {
     "id": "P2490-forum-complementary-failover",
-    "updated": "2026-09-14",
+    "updated": "2026-09-15",
     "why": "T140352 VicHY/Eduard/MIAMO/Peter/PresentSky + Gmail a5304ce8 — use ALL layers (sacred-keep, EF00 force, DynCap, adapter rehydrate, tip soft-expect). Identity always (mfr,pid). Never invent pid. Never forum POST. mfs multi-pid under one brand is normal.",
     "humanDoc": "docs/architecture/COMPLEMENTARY_ENRICHMENT.md",
     "coupleSsot": "config/architecture/sacred-couple-ssot.json",
@@ -10,7 +10,8 @@
       "reports/forum-l99-2026-09-14-t140352/COMPLEMENTARY_FAILOVER.md",
       "reports/gmail-diag-2026-09-14/TREAT_LIVE.md"
     ],
-    "classify": "BOTH"
+    "classify": "BOTH",
+    "rootGap": "Athom compact dropped icka1clh (MIAMO Unknown) while fodv6bkr kept — complementary keep-locks + battery rehydrate + curtain stale strip"
   },
   "coupleSsot": "config/architecture/sacred-couple-ssot.json",
   "identity": {
@@ -28,9 +29,9 @@
     "mfsNote": "One mfr in mfs_db may list many modelIds — treat each couple independently (e.g. TZE200 icka1clh vs fodv6bkr both curtains but separate pins)"
   },
   "tip": {
-    "healthyTest": "9.0.926",
-    "build": "#3186",
-    "gitShip": "9.0.927+",
+    "healthyTest": "9.0.931+",
+    "build": "#3192+",
+    "gitShip": "9.0.931+",
     "p139Failed": ["#3184 v9.0.924", "#3187 v9.0.928"],
     "doNotSpamRepublish": true
   },
@@ -43,9 +44,15 @@
       "forbid": ["switch_1gang", "wall_switch_4gang_1way", "smart_knob"],
       "diags": ["a5304ce8", "8afffc76", "048cff91", "375def7f", "8278ec79", "77394256"],
       "primary": ["P2470", "P2488", "P2499"],
-      "complementary": ["P2490 rehydrate measure_battery", "P2499 getable=true + no null→0", "P2481/P2484 tip-lag crashes"],
-      "gmailProof": "a5304ce8 @9.0.916 capability_id_not_available; 77394256 @9.0.926 ZCL paints but getable:false hid UI/History",
-      "note": "Do not lock mrpevh8p onto non-Smartbutton tiles when couple ABSENT (#2190)"
+      "complementary": [
+        "P2484 heap OOM MaxListeners (375def7f@9.0.895 + 8278ec79@9.0.908) — tip ≥9.0.914 prefer ≥9.0.930",
+        "P2481 motionsensor preempt (parallel crash class on other mails)",
+        "P2490 rehydrate measure_battery",
+        "P2499 getable=true + no null→0",
+        "BootBudget defer SMART ADAPT under heap pressure (P2502)"
+      ],
+      "gmailProof": "a5304ce8 @9.0.916 capability_id_not_available; 77394256 @9.0.926 getable:false; crashes = OOM not invent pid",
+      "note": "Do not lock mrpevh8p onto non-Smartbutton tiles when couple ABSENT (#2190). Crash diags = tip-lag P2484."
     },
     "MIAMO_NISU": {
       "couple": { "mfr": "_TZE200_icka1clh", "pid": "TS0601" },
@@ -78,26 +85,35 @@
       "driver": "wall_dimmer_tuya",
       "forbid": ["climate_sensor", "soil_sensor", "zigbee_universal"],
       "brightnessScale": "0-1000",
-      "status": "RESOLVED_user_#2236",
+      "status": "RESOLVED_user_re_add",
       "stack": ["magic handshake", "writeBool×3", "CapabilityCommandRouter forceDp"],
-      "neverInvent": "TS0201 for climate under same mfr"
+      "neverInvent": "TS0201 for climate under same mfr",
+      "note": "2026-09-14: user confirmed works after adding device again"
     }
   },
+  "fleetMethodsSsot": "config/architecture/fleet-complementary-methods-ssot.json",
   "sacredKeepPins": [
     "_TZE200_icka1clh|TS0601|curtain_motor",
     "_TZE204_icka1clh|TS0601|curtain_motor",
     "_TZE200_zah67ekd|TS0601|curtain_motor",
-    "_TZE200_fodv6bkr|TS0601|curtain_motor"
+    "_TZE284_fodv6bkr|TS0601|curtain_motor",
+    "_TZE200_fodv6bkr|TS0601|curtain_motor",
+    "_TZ3000_mrpevh8p|TS0041|button_wireless_1",
+    "_TZE204_clrdrnya|TS0601|presence_sensor_radar"
   ],
   "gates": {
-    "npm": ["check:p2490", "check:p2488", "check:p2484", "check:p2288", "check:p2494"],
+    "npm": ["check:p2502", "check:p2490", "check:p2488", "check:p2499", "check:p2484", "check:p2288", "check:p2494", "check:p2495"],
     "family": "check:p248x"
   },
   "relatedPatches": {
     "P2487": "MASTER_ONLY Intelligent IR UX + Homey IR TX",
     "P2488": "BOTH adapter keep measure_battery on buttons",
+    "P2490": "BOTH complementary failover — icka1clh keep + battery rehydrate + radar staleCaps",
+    "P2499": "BOTH Smartbutton measure_battery getable (History UI)",
+    "P2502": "BOTH fleet method matrix — VicHY/Eduard/MIAMO/Peter/PresentSky all layers",
     "P2481": "BOTH motionsensor foreign preempt",
-    "P2484": "BOTH EF00 init idempotent + gkfbdvyx keep",
-    "P2494": "BOTH sacred-couple SSOT granularity"
+    "P2484": "BOTH EF00 init idempotent + gkfbdvyx keep — Peter OOM diags",
+    "P2494": "BOTH sacred-couple SSOT granularity",
+    "P2495": "BOTH prepare-publish sacred-keep must-pins"
   }
 }
