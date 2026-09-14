@@ -53,6 +53,7 @@ Clone Stable: `Documents\homey\stable`. `stable-v5-p195` is **STALE**.
 - **Passive GET only** — never POST/reply/PM/like; never paste AI.
 - Scan → processor → enrich:investigate → code/CI only. `FORUM_AUTO_POST=0` + `SHADOW_FORUM=1` forced.
 - **P2218** heuristics for missing pid/DP; **P2220–P2221** bidirectional buttons (physical↔virtual+UI, 0xFD/0xFC parallel RX).
+- **P2492** Homey button UI charter: switches = Channel onoff primary; scene remotes = Button N in device view; shared `HomeyButtonUiCharter` sync. Gate `npm run check:p2492`.
 - Reports local only: `reports/forum-verify-*/NEED_ACTION.md` · L99 fleet **2026-09-14**: `reports/forum-l99-2026-09-14-t140352/FLEET_L99.md` (+ prior `forum-l99-2026-09-12/`).
 - Highest live **#2237** (Peter Smartbutton OCR @ **9.0.916** battery `?` → tip ≥**9.0.926** P2488+P2490). Prior #2210–#2236: VicHY / Joep / meter91 / Eduard / MIAMO / PresentSky.
 - **#2236** PresentSky `m1cvyneb`+TS0601 → `wall_dimmer_tuya` — **RESOLVED** after re-add.

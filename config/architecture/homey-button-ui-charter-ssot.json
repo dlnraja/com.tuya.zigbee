@@ -1,0 +1,47 @@
+{
+  "_meta": {
+    "id": "P2492-homey-button-ui-charter",
+    "updated": "2026-09-14",
+    "why": "Coherent physical↔virtual Homey UI/UX — Homey charter: onoff primary on switches; button tiles for scene remotes; maintenanceAction for secondary press tiles; no phantom onoff on class:button.",
+    "humanDoc": "docs/BIDIRECTIONAL_BUTTONS.md",
+    "classify": "BOTH"
+  },
+  "roles": {
+    "switch": {
+      "primaryUi": ["onoff", "onoff.gangN"],
+      "buttonTiles": "maintenance",
+      "physicalSync": ["onoff", "pulse_optional"],
+      "virtualPath": "VirtualButtonMixin._handleVirtualToggle"
+    },
+    "scene": {
+      "primaryUi": ["button.N"],
+      "buttonTiles": "device_view",
+      "physicalSync": ["pulse", "flows"],
+      "virtualPath": "flow_only",
+      "forbid": ["onoff", "dim"]
+    },
+    "knob": {
+      "primaryUi": ["dim", "button.N"],
+      "buttonTiles": "device_view",
+      "physicalSync": ["dim", "pulse", "flows"],
+      "virtualPath": "SmartKnobRotationMixin"
+    }
+  },
+  "titles": {
+    "channel": {
+      "en": "Channel {n}",
+      "fr": "Canal {n}",
+      "nl": "Kanaal {n}",
+      "de": "Kanal {n}"
+    },
+    "button": {
+      "en": "Button {n}",
+      "fr": "Bouton {n}",
+      "nl": "Knop {n}",
+      "de": "Taste {n}"
+    }
+  },
+  "pulseMs": { "switch": 280, "scene": 420, "knob": 350 },
+  "dedupWindowMs": 2000,
+  "gates": { "npm": "check:p2492", "family": ["check:p2220", "check:p2397", "check:p2283"] }
+}
