@@ -7,6 +7,7 @@ const ZosungIRControlCluster = require('../../lib/clusters/ZosungIRControlCluste
 const ZosungIRTransmitBoundCluster = require('../../lib/clusters/ZosungIRTransmitBoundCluster');
 const ZosungIRControlBoundCluster = require('../../lib/clusters/ZosungIRControlBoundCluster');
 const { safeSetTimeout, safeClearTimeout } = require('../../lib/utils/safe-timers');
+const { getRouter } = require('../../lib/ir/IntelligentIRRouter');
 
 // Ensure clusters are registered
 try { Cluster.addCluster(ZosungIRTransmitCluster); } catch (e) { /* Cluster may already be registered */ }
@@ -47,11 +48,13 @@ class IRRemoteDevice extends TuyaZigbeeDevice {
       this.log('Attribute reporting config failed (device may not support it):', err.message);
     }
 
-    this.log('[IR] Init Zigbee IR Remote  Zosung protocol');
+    this.log('[IR] Init Zigbee IR Remote  Zosung protocol (P2487 router-aware)');
     this._seq = 0;
     this._pendingSend = null;   // { msg: string, seq: number, resolve, reject }
     this._learnBuffer = null;   // { seq: number, length: number, chunks: Map, resolve }
     this._learnTimeout = null;
+    this._learnedCodes = this.getStoreValue('learned_codes') || {};
+    try { this._irRouter = getRouter(this.homey); } catch (_) { this._irRouter = null; }
 
     // Store device info
     try {
@@ -111,8 +114,18 @@ class IRRemoteDevice extends TuyaZigbeeDevice {
   _nextSeq() { return this._seq = (this._seq + 1) % 0x10000; }
 
   // WHY: flow cards historically called _sendIR/_startLearn; methods are sendIRCode/startLearn.
+  // P2487 router expects enableLearnMode / _enableAdvancedLearnMode aliases.
   async _sendIR(code) { return this.sendIRCode(code); }
   async _startLearn() { return this.startLearn(); }
+  async enableLearnMode(timeout) { return this.startLearn(timeout); }
+  async _enableAdvancedLearnMode(timeout, _opts = {}) { return this.startLearn(timeout); }
+  async _disableLearnMode() { return this._stopLearnMode?.() || this.stopLearn?.(); }
+
+  /** P2487: library / learned / paste via IntelligentIRRouter */
+  async sendIntelligent(opts = {}) {
+    if (!this._irRouter) this._irRouter = getRouter(this.homey);
+    return this._irRouter.send({ device: this, ...opts });
+  }
 
   async sendIRCode(code) {
     if (!code) {return;}

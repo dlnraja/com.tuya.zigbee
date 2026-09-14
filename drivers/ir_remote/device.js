@@ -2,10 +2,11 @@
 
 const Homey = require('homey');
 const IRCodeLibrary = require('../../lib/ir/IRCodeLibrary');
-const { getRouter } = require('../../lib/ir/IntelligentIRRouter');
+const { getRouter, HOMEY_IR_SENDER_ID } = require('../../lib/ir/IntelligentIRRouter');
 
 /**
- * Virtual IR Remote — P2487: binds to Zigbee ir_blaster/blaster_remote OR wifi_ir_remote.
+ * Virtual IR Remote — P2487: Zigbee / WiFi blaster OR Homey Pro 2023 onboard IR TX.
+ * Learned codes for Homey path live on this device store (Homey radio has no learn).
  */
 class IrRemoteDevice extends Homey.Device {
 
@@ -32,6 +33,9 @@ class IrRemoteDevice extends Homey.Device {
         try {
           const sender = this._resolveSender();
           if (!sender) throw new Error('Associated IR sender not found');
+          if (sender.transport === 'homey') {
+            throw new Error('Homey onboard IR is TX-only — learn on Zigbee/WiFi, paste Pronto, or store manual');
+          }
           if (value) {
             this.log('[IR] ir_learn ON → sender learn mode (30s)');
             await this._router.learn({
@@ -40,7 +44,7 @@ class IrRemoteDevice extends Homey.Device {
               timeout: 30,
               confirm: true,
             });
-          } else if (typeof sender.device._disableLearnMode === 'function') {
+          } else if (sender.device && typeof sender.device._disableLearnMode === 'function') {
             await sender.device._disableLearnMode();
           }
         } catch (e) {
@@ -58,10 +62,35 @@ class IrRemoteDevice extends Homey.Device {
     return this._router.resolveTransportFromSettings(settings);
   }
 
+  /** Store for learned map: physical blaster, or this virtual remote when Homey TX. */
+  _storeDevice(sender) {
+    if (!sender) return this;
+    if (sender.transport === 'homey' || !sender.device) return this;
+    return sender.device;
+  }
+
+  _sendOpts(extra = {}) {
+    const sender = this._resolveSender();
+    if (!sender) return null;
+    const storeDevice = this._storeDevice(sender);
+    if (sender.transport === 'homey') {
+      return {
+        senderId: HOMEY_IR_SENDER_ID,
+        storeDevice,
+        device: storeDevice,
+        ...extra,
+      };
+    }
+    return {
+      device: sender.device,
+      storeDevice,
+      ...extra,
+    };
+  }
+
   async onCapabilityOnOff(value) {
     const brand = this.getSetting('ir_brand');
     const category = this.getSetting('ir_category');
-    // Toolkit-style dual map: prefer Power On / Power Off learned names when present
     const onName = this.getSetting('ir_power_on_name') || 'Power On';
     const offName = this.getSetting('ir_power_off_name') || 'Power Off';
     const toggleName = this.getSetting('ir_power_toggle_name') || 'Power';
@@ -69,14 +98,14 @@ class IrRemoteDevice extends Homey.Device {
     try {
       const sender = this._resolveSender();
       if (sender) {
-        const map = await this._router.getLearnedMap(sender.device);
+        const map = await this._router.getLearnedMap(this._storeDevice(sender));
         const want = value ? onName : offName;
         if (map[want] && map[want].code) {
-          await this._router.send({ device: sender.device, learnedName: want });
+          await this._router.send(this._sendOpts({ learnedName: want }));
           return true;
         }
         if (map[toggleName] && map[toggleName].code) {
-          await this._router.send({ device: sender.device, learnedName: toggleName });
+          await this._router.send(this._sendOpts({ learnedName: toggleName }));
           return true;
         }
       }
@@ -89,32 +118,29 @@ class IrRemoteDevice extends Homey.Device {
 
   async _sendRemoteCommand(brand, category, command) {
     const sender = this._resolveSender();
-    if (!sender || !sender.device) {
-      throw new Error('Associated IR sender not found. Repair and pick Zigbee or WiFi blaster.');
+    if (!sender || (sender.transport !== 'homey' && !sender.device)) {
+      throw new Error('Associated IR sender not found. Pick Zigbee, WiFi, or Homey onboard IR.');
+    }
+    if (sender.transport === 'homey' && sender.available === false) {
+      throw new Error('Homey onboard IR not available on this Homey');
     }
 
+    const storeDevice = this._storeDevice(sender);
     try {
-      await this._router.send({
-        device: sender.device,
-        brand,
-        category,
-        command,
-      });
+      await this._router.send(this._sendOpts({ brand, category, command }));
       return true;
     } catch (libErr) {
-      // Fallback: learned key brand_category_command
-      const map = await this._router.getLearnedMap(sender.device);
+      const map = await this._router.getLearnedMap(storeDevice);
       const key = `${brand}_${category}_${command}`;
       if (map[key] && map[key].code) {
-        await this._router.send({ device: sender.device, learnedName: key });
+        await this._router.send(this._sendOpts({ learnedName: key }));
         return true;
       }
-      // Legacy string store
-      const learnedCodes = sender.device.getStoreValue?.('learned_codes') || sender.device._learnedCodes || {};
+      const learnedCodes = storeDevice.getStoreValue?.('learned_codes') || storeDevice._learnedCodes || {};
       const legacy = learnedCodes[key];
       const code = typeof legacy === 'string' ? legacy : legacy?.code;
       if (code) {
-        await this._router.send({ device: sender.device, code });
+        await this._router.send(this._sendOpts({ code }));
         return true;
       }
       throw libErr;

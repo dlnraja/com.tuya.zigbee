@@ -66,6 +66,13 @@
           "label": {
             "en": "WiFi IR Remote"
           }
+        },
+        {
+          "id": "homey_infrared",
+          "label": {
+            "en": "Homey onboard IR (Pro 2023 TX)",
+            "fr": "IR intégré Homey (Pro 2023 TX)"
+          }
         }
       ]
     },

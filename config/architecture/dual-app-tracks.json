@@ -214,6 +214,14 @@
       "tag": "BOTH",
       "note": "version-health-check: P139 soft-expect processing_failed when superseded by newer tip"
     },
+    "p2487_intelligent_ir_ux": {
+      "tag": "MASTER_ONLY",
+      "note": "IntelligentIRRouter + IRFormatConverter + wifi/zigbee/homey_infrared TX + virtual ir_remote wizard/flows — feature soak"
+    },
+    "p2487c_homey_infrared_tx": {
+      "tag": "MASTER_ONLY",
+      "note": "Homey Pro 2023 ProntoHex TX via HomeyInfraredTx + homey:wireless:ir; learn stays Zigbee/WiFi"
+    },
     "p2415_pir_multicap_enrich": {
       "tag": "BOTH",
       "note": "ZG-204ZV TZE200 siblings → presence; strip ZG-204 cartesian from motion; ZS-301Z soil lock; clean radar configs"
