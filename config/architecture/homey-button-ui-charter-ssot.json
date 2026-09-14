@@ -2,29 +2,78 @@
   "_meta": {
     "id": "P2492-homey-button-ui-charter",
     "updated": "2026-09-14",
-    "why": "Coherent physical↔virtual Homey UI/UX — Homey charter: onoff primary on switches; button tiles for scene remotes; maintenanceAction for secondary press tiles; no phantom onoff on class:button.",
+    "why": "Coherent physical↔virtual Homey UI/UX — Homey charter: onoff primary on switches; button tiles for scene remotes; maintenanceAction for secondary press tiles; no phantom onoff on class:button. Role follows sacred couple class, not brand/mfs alone.",
     "humanDoc": "docs/BIDIRECTIONAL_BUTTONS.md",
+    "coupleSsot": "config/architecture/sacred-couple-ssot.json",
     "classify": "BOTH"
+  },
+  "identityRule": {
+    "resolveRoleBy": "driver class + couple (mfr+pid), never brand-only",
+    "settingsKeys": ["zb_manufacturer_name", "zb_model_id"],
+    "examples": [
+      {
+        "couple": "_TZ3000_mrpevh8p+TS0041",
+        "driver": "button_wireless_1",
+        "role": "scene",
+        "ui": "Button 1 in device view; measure_battery keep+rehydrate"
+      },
+      {
+        "couple": "_TZ3000_zgyzgdua+TS0044",
+        "driver": "scene_switch_4",
+        "role": "scene",
+        "ui": "Button 1–4 device view; 0xFD physical"
+      },
+      {
+        "couple": "_TZ3000_uri7ongn+TS004F",
+        "driver": "smart_knob",
+        "role": "knob",
+        "ui": "dim + rotate; command 0x8004=0"
+      },
+      {
+        "couple": "_TZ3000_kaflzta4+TS004F",
+        "driver": "smart_knob",
+        "role": "scene",
+        "ui": "1-btn scene — not rotary dimmer"
+      },
+      {
+        "couple": "_TZ3000_w5xztuy7+TS0002",
+        "driver": "switch_2gang",
+        "role": "switch",
+        "ui": "Channel 1/2 onoff primary; button.N maintenance"
+      },
+      {
+        "couple": "HOBEIAN+ZG-305Z",
+        "driver": "switch_2gang",
+        "role": "switch",
+        "ui": "same switch charter; do not treat HOBEIAN as scene brand"
+      }
+    ]
   },
   "roles": {
     "switch": {
       "primaryUi": ["onoff", "onoff.gangN"],
       "buttonTiles": "maintenance",
+      "maintenanceAction": true,
       "physicalSync": ["onoff", "pulse_optional"],
-      "virtualPath": "VirtualButtonMixin._handleVirtualToggle"
+      "virtualPath": "VirtualButtonMixin._handleVirtualToggle",
+      "homeyCharter": "Channel N labels; power state is the main tile"
     },
     "scene": {
       "primaryUi": ["button.N"],
       "buttonTiles": "device_view",
+      "maintenanceAction": false,
       "physicalSync": ["pulse", "flows"],
       "virtualPath": "flow_only",
-      "forbid": ["onoff", "dim"]
+      "forbid": ["onoff", "dim"],
+      "homeyCharter": "Button N visible in device UI; press feedback pulse"
     },
     "knob": {
       "primaryUi": ["dim", "button.N"],
       "buttonTiles": "device_view",
+      "maintenanceAction": false,
       "physicalSync": ["dim", "pulse", "flows"],
-      "virtualPath": "SmartKnobRotationMixin"
+      "virtualPath": "SmartKnobRotationMixin",
+      "homeyCharter": "Brightness + rotate; scene-locked couples stay scene role"
     }
   },
   "titles": {
@@ -43,5 +92,13 @@
   },
   "pulseMs": { "switch": 280, "scene": 420, "knob": 350 },
   "dedupWindowMs": 2000,
-  "gates": { "npm": "check:p2492", "family": ["check:p2220", "check:p2397", "check:p2283"] }
+  "bidirectional": {
+    "physicalToUi": "syncPhysicalToHomeyUi — stamp + onoff sync (switch) + role-aware pulse",
+    "uiToVirtual": "handleVirtualUiPress — dedup window, VBM path, scene flow-only",
+    "contreQuoi": ["ghost loops", "button spam on relays", "scene tiles only in Maintenance"]
+  },
+  "gates": {
+    "npm": "check:p2492",
+    "family": ["check:p2220", "check:p2397", "check:p2283", "check:p2494"]
+  }
 }

@@ -232,6 +232,16 @@ jobs:
         if: always()
         run: node tools/ci/p2138-sacred-couple-matrix-gate.js
 
+      - name: "🛡️ Family + publish path gates (soft)"
+        if: always()
+        continue-on-error: true
+        run: |
+          npm run check:p244x || echo "P244x soft warn"
+          npm run check:p246x || echo "P246x soft warn"
+          npm run check:p248x || echo "P248x soft warn"
+          npm run check:p249x || echo "P249x soft warn"
+          npm run check:publish || echo "check:publish soft warn"
+
       - name: Commit state (apply only)
         if: github.event.inputs.mode == 'apply' && success()
         run: |

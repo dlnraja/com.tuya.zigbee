@@ -109,8 +109,17 @@ jobs:
       - name: 🛡️ P2448/P2449 knob + declared flow wiring
         run: npm run check:p244x
 
+      - name: 🛡️ P246x anti-regression family (Moes EF00 / IAS / battery)
+        run: npm run check:p246x
+
       - name: 🛡️ P2487–P2490 complementary failover family
         run: npm run check:p248x
+
+      - name: 🛡️ P249x AI efficiency + Homey button UI charter
+        run: npm run check:p249x
+
+      - name: 🛡️ P2495 publish path aggregator
+        run: npm run check:publish
 
       - name: 🛡️ P217 fork harvest sacred-couple gate
         run: node tools/ci/p217-fork-harvest-gate.js
