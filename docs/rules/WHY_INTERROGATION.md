@@ -14,9 +14,15 @@ comment near the code) is how we investigate and enrich the whole project.
 | 4 | **Quand ?** When does it run (pair / report / publish / enrich)? | Avoid boot storms & wrong hooks |
 | 5 | **Contre quoi ?** What fails if we remove or invert it? | Regression = **unit test or gate** (P2469 — `test/critical/pNNNN-*.test.js` every prompt) |
 
-Optional sixth (device work): **Quel couple ?** Exact `manufacturerName` + `productId` —
-never invent a pid; Google/Z2M/ZHA/forum by the couple. Look up
-`docs/knowledge/DEVICE_TRUTH.md` + `docs/knowledge/device-truth.json` first.
+**Sixth (mandatory on device / fingerprint / flow / publish work): Quel couple ?**
+Exact `manufacturerName` + `productId`. The app is couple-native: pairing, mfs_db,
+registry, and sacred-keep all key on the **pair**. One mfr may have many pids in
+`mfs_db` (variants) — each is its own couple. Settings keys:
+`zb_manufacturer_name` + `zb_model_id` (never camelCase). Never invent a pid;
+Google/Z2M/ZHA/forum by the couple. Machine SSOT:
+`config/architecture/sacred-couple-ssot.json` · human:
+`docs/architecture/SACRED_COUPLE_SSOT.md` · gate: `npm run check:p2494`.
+Lookup: `DEVICE_TRUTH.md` + `device-truth.json` + `PECULIARITIES.md` first.
 
 ## How to use this to enrich the repo
 

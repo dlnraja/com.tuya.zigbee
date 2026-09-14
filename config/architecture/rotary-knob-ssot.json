@@ -5,7 +5,9 @@
     "enrichment": "P2449",
     "why": "ERS-10 / ZG-101ZD rotary knobs need genOnOff 0x8004=command so Homey receives levelControl brightness_step. Forcing scene killed rotation on smart_knob_rotary and missing KNOB_MFR couples. P2449 wires rotate/brightness flow cards + SmartKnobRotationMixin for smart_knob / switch UI-UX parity.",
     "dualApp": "BOTH",
-    "doctrine": "manufacturerName+productId only; never invent pid; never force scene on rotary drivers"
+    "doctrine": "manufacturerName+productId only; never invent pid; never force scene on rotary drivers; same TS004F pid with different mfr = different couples (uri7ongn dimmer vs kaflzta4 scene)",
+    "mfsNote": "KNOB_MFR lists are suffixes of manufacturerName — always pair with pid TS004F (or proven pid). Do not add abrsvsou/4fjiwweb (button_wireless_4+TS004F).",
+    "identitySsot": "config/architecture/sacred-couple-ssot.json"
   },
   "commandModeDefault": {
     "drivers": ["smart_knob_rotary", "smart_knob_switch"],

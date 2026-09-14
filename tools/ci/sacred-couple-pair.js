@@ -6,7 +6,8 @@
  * Supports exotic OEM forms: HOBEIAN, ZG-*, SNZB-*, _TZ3218_, _TZE608_, etc.
  */
 
-const TS_PID_RX = /^TS\d{4}[A-Z0-9]?$/i;
+/** Tuya modelIds: TS0601, TS0041, TS004F, TS011F, TS0505B, TS130F, … */
+const TS_PID_RX = /^TS\d{3,4}[A-Z0-9]?$/i;
 /** Exotic but real Zigbee modelIds seen in interviews / Blakadder / Z2M */
 const EXOTIC_PID_RX = /^(ZG-[\w-]+|SNZB-[\w-]+|RH\d{3,4}[A-Z]?|CS-[\w-]+|SM\w{2,}|FUT\d{3}Z?|HG\d+|SMA\d+\w*)$/i;
 

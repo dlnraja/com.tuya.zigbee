@@ -990,8 +990,9 @@ the Universal Tuya App ID.
     - Machine SSOT: `config/architecture/forum-complementary-failover-ssot.json`.
     - T140352 harvest: `tools/ci/forum-t140352-recent-harvest.js` — Discourse
       `/t/{id}/{N}.json` is **post_number**, not page offset.
-    - Wire `npm run check:p248x` in unified-ci / auto-publish / syntax-check /
-      pr-gate / validate / code-quality next to `check:p244x`.
+    - Wire `npm run check:p248x` **and** `npm run check:p246x` **and** `npm run check:p249x`
+      in unified-ci / auto-publish / syntax-check / pr-gate / validate / code-quality
+      next to `check:p244x` (lock: `npm run check:p2493`).
 
 ### Doctrine (never invent)
 - Identity is always **manufacturerName + productId** (Sacred Couple).
@@ -1100,8 +1101,34 @@ npm run check:p244x   # = check:p2448 + check:p2449
 ```
 
 **Workflows that MUST run `npm run check:p244x`:**
-- Hard: `unified-ci.yml`, `syntax-check.yml`, `pr-gate.yml`, `validate.yml`, `code-quality.yml`
+- Hard: `unified-ci.yml`, `syntax-check.yml`, `pr-gate.yml`, `validate.yml`, `code-quality.yml`, `auto-publish-on-push.yml`
 - Soft: `project-resilience.yml` (`continue-on-error`)
+
+**Family gates (P2493) — same hard set MUST also run:**
+```bash
+npm run check:p246x   # Moes EF00 / VicHY / Peter battery / EF00-only valves …
+npm run check:p248x   # P2487 IR + P2488 battery keep + P2490 complementary failover
+npm run check:p249x   # P2490 + P2491 AI + P2492 button UI + P2493 wire + P2494 couple
+```
+Gate that workflows stay wired: `npm run check:p2493`.
+
+### P2495 — Publish CI/CD path (couple-native)
+
+**Aggregator:** `npm run check:publish` (= p2286 + p2287 + p2288 + p2490 + p2494 + p2495)
+
+**Must hard-run before tip upload:**
+- `auto-publish-on-push.yml`, `auto-fix-and-publish.yml`
+- Also: `unified-ci.yml`, `validate.yml`, `syntax-check.yml`, `pr-gate.yml`, `code-quality.yml`
+
+**Soft:** `continuous-flow.yml`, `project-resilience.yml`  
+**Stable:** `publish-stable.yml` — anti-bot + P2138 + p2288 + p2494 + p2495 before `prepare-publish`
+
+`prepare-publish.js` preflights sacred-keep pins via `sacred-couple-pair` (never mfr-only).  
+P139: never spam republish on tip `processing_failed` / `socket hang up` while healthy Test exists.
+
+Gate: `npm run check:p2495` · Doc: `docs/architecture/PUBLISH_SSOT.md`
+
+
 
 **Cursor rule:** `.cursor/rules/knob-flow-wiring.mdc`  
 **Resilience:** `rotary_knob_command_mode` + `declared_flow_card_wiring` in `config/resilience/critical-gaps.json`

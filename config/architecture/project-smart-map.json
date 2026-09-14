@@ -16,7 +16,16 @@
     "master": { "appId": "com.dlnraja.tuya.zigbee", "branch": "master", "line": "9.0.x" },
     "stable": { "appId": "com.dlnraja.tuya.zigbee.stable", "branch": "stable-v5", "line": "5.12.x" }
   },
-  "identity": "manufacturerName+productId only — never invent pid; mfr alone is ambiguous",
+  "identity": {
+    "canonical": "manufacturerName + productId (sacred couple)",
+    "ssot": "config/architecture/sacred-couple-ssot.json",
+    "human": "docs/architecture/SACRED_COUPLE_SSOT.md",
+    "helper": "tools/ci/sacred-couple-pair.js",
+    "settingsKeys": { "mfr": "zb_manufacturer_name", "pid": "zb_model_id" },
+    "mfs": "one mfr entry may list many modelIds — each (mfr,pid) → own driver; multi-pid is NORMAL",
+    "never": ["invent pid", "mfr-only route when pid known", "dedupe mfr across drivers on pid mismatch"],
+    "gate": "npm run check:p2494"
+  },
   "truth": [
     "docs/knowledge/DEVICE_TRUTH.md",
     "docs/knowledge/device-truth.json",
@@ -27,34 +36,50 @@
     "ssot": "config/architecture/publish-ssot.json",
     "human": "docs/architecture/PUBLISH_SSOT.md",
     "sacredKeep": "config/architecture/publish-sacred-keep-couples.json",
-    "path": "build → prepare-publish → publish:direct (never repo root)"
+    "path": "build → prepare-publish → publish:direct (never repo root)",
+    "note": "compact must not drop verified (mfr,pid) pins; prepare preflights P2495",
+    "gate": "npm run check:publish",
+    "preflight": "npm run check:p244x && check:p246x && check:p248x && check:p249x && check:publish"
   },
   "forum": {
     "policy": "SHADOW only — never POST (T157628)",
     "failoverSsot": "config/architecture/forum-complementary-failover-ssot.json",
     "harvest": "tools/ci/forum-t140352-recent-harvest.js",
-    "replyTopics": ["140352"]
+    "replyTopics": ["140352"],
+    "needInterview": "document expected zb_manufacturer_name + zb_model_id — never invent"
   },
   "aiEfficiency": {
     "ssot": "config/security/ai-plan-forfait.json",
     "compressSsot": "config/security/ai-context-compress-ssot.json",
     "guard": "npm run ai:plan-guard",
     "gate": "npm run check:p2491",
-    "default": "AI_FORCE_LOCAL=true; remote only if AI_ALLOW_REMOTE=true"
+    "default": "AI_FORCE_LOCAL=true; remote only if AI_ALLOW_REMOTE=true",
+    "compressKeep": "always retain mfr+pid / HOBEIAN+ZG-* couples in user text"
   },
   "gates": {
-    "family": ["check:p244x", "check:p246x", "check:p248x", "check:p2491", "check:l99-dual"],
-    "publish": ["check:p2286", "check:p2287", "check:p2288"]
+    "family": ["check:p244x", "check:p246x", "check:p248x", "check:p249x", "check:l99-dual"],
+    "hardWorkflows": [
+      "unified-ci.yml",
+      "validate.yml",
+      "syntax-check.yml",
+      "pr-gate.yml",
+      "code-quality.yml",
+      "auto-publish-on-push.yml"
+    ],
+    "publish": ["check:p2286", "check:p2287", "check:p2288"],
+    "couple": ["check:p2494", "check:p2138", "check:p2288"]
   },
   "knobsFlows": {
     "ssot": "config/architecture/rotary-knob-ssot.json",
-    "doc": "docs/architecture/KNOB_FLOW_WIRING_SSOT.md"
+    "doc": "docs/architecture/KNOB_FLOW_WIRING_SSOT.md",
+    "note": "each rotary couple is mfr+TS004F; kaflzta4 stays scene; abrsvsou stays button_wireless_4"
   },
   "buttonUi": {
     "ssot": "config/architecture/homey-button-ui-charter-ssot.json",
     "runtime": "lib/utils/HomeyButtonUiCharter.js",
     "doc": "docs/BIDIRECTIONAL_BUTTONS.md",
-    "gate": "npm run check:p2492"
+    "gate": "npm run check:p2492",
+    "note": "UI role from couple class (switch/scene/knob), not brand"
   },
   "ir": {
     "ssot": "config/architecture/intelligent-ir-ssot.json",
@@ -64,12 +89,14 @@
     "AI_CONTEXT_MANDATE.md",
     "docs/GLOBAL_INVESTIGATION_PLAN.md",
     "docs/ARCHITECTURE_AI.md",
-    "AGENTS.md"
+    "AGENTS.md",
+    "docs/architecture/SACRED_COUPLE_SSOT.md"
   ],
   "rulesAlways": [
     ".cursor/rules/operational-memory-2026-08-15.mdc",
     ".cursor/rules/device-truth.mdc",
     ".cursor/rules/ai-forfait-cursor-limit.mdc",
+    ".cursor/rules/why-interrogation.mdc",
     ".github/WORKFLOW_GUIDELINES.md"
   ],
   "localSolver": "tools/ci/local-intelligent-solver.js",

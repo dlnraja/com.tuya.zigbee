@@ -22,6 +22,7 @@ const fs = require('fs');
 const path = require('path');
 const ROOT = path.join(__dirname, '..', '..');
 
+// Prefer couple locks: mfr + pid → driver (never invent pid)
 // Lock compose / device.js / sacred-keep / registry invariants
 assert.deepStrictEqual(/* … */);
 console.log('PNNNN …: PASS');
@@ -29,13 +30,23 @@ console.log('PNNNN …: PASS');
 
 Run: `node --test test/critical/pNNNN-….test.js`
 
+### Couple-smart asserts (P2494)
+
+| Do | Don’t |
+|----|-------|
+| Assert `(mfr, pid)` → driver in compose / FPDB / sacred-keep | Invent a pid just to green a test |
+| Assert sibling pids under same mfr stay on correct drivers | Snapshot entire `mfs_db` |
+| Assert refuse mfr-only when pid known but absent | Dedup mfr across drivers on pid mismatch |
+| Use `tools/ci/sacred-couple-pair.js` normalize helpers | Hardcode only retail SKU strings |
+
 ## Examples
 
 | Patch | Test locks |
 |-------|------------|
-| P2467 Moes EF00 | `initialize(zclNode)`, mains force, skipWake |
+| P2467 Moes EF00 | `launchOnce` / MCU ready, mains force, skipWake |
 | P2468 Joep/FrankEver/VicHY | clusters `[0,4,5,61184]`, FK DP maps, `600_000` re-heal |
 | P2469 mandate | rule + doctrine + npm scripts exist |
+| P2494 sacred couple | SSOT + multi-pid mfs doctrine + high-risk locks |
 
 ## Dual-app
 

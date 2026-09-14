@@ -31,6 +31,9 @@ concurrency:
 env:
   NODE_VERSION: "22"
   NODE_OPTIONS: "--dns-result-order=ipv4first"
+  # P2491: publish bots stay local — no remote AI burn
+  AI_FORCE_LOCAL: "true"
+  AI_ALLOW_REMOTE: "false"
 
 defaults:
   run:
@@ -113,8 +116,17 @@ jobs:
       - name: P2448/P2449 knob + declared flow wiring
         run: npm run check:p244x
 
+      - name: P246x anti-regression family
+        run: npm run check:p246x
+
       - name: P2487–P2490 IR + Smartbutton + complementary failover
         run: npm run check:p248x
+
+      - name: P249x AI efficiency + Homey button UI + couple SSOT
+        run: npm run check:p249x
+
+      - name: P2286–P2288 + P2495 publish path aggregator
+        run: npm run check:publish
 
       - name: P217 fork harvest sacred-couple gate
         run: node tools/ci/p217-fork-harvest-gate.js

@@ -54,6 +54,9 @@ Clone Stable: `Documents\homey\stable`. `stable-v5-p195` is **STALE**.
 - Scan → processor → enrich:investigate → code/CI only. `FORUM_AUTO_POST=0` + `SHADOW_FORUM=1` forced.
 - **P2218** heuristics for missing pid/DP; **P2220–P2221** bidirectional buttons (physical↔virtual+UI, 0xFD/0xFC parallel RX).
 - **P2492** Homey button UI charter: switches = Channel onoff primary; scene remotes = Button N in device view; shared `HomeyButtonUiCharter` sync. Gate `npm run check:p2492`.
+- **P2493 BOTH:** Hard CI must wire `check:p244x` + `check:p246x` + `check:p248x` + `check:p249x` (unified-ci / validate / syntax-check / pr-gate / code-quality / auto-publish). Soft: project-resilience. Gate `npm run check:p2493`.
+- **P2494 BOTH:** Sacred-couple SSOT granularity — app is `(mfr,pid)` native; mfs multi-pid NORMAL; machine `config/architecture/sacred-couple-ssot.json` · human `docs/architecture/SACRED_COUPLE_SSOT.md` · gate `npm run check:p2494`.
+- **P2495 BOTH:** Publish CI/CD path — `prepare-publish` sacred-keep preflight; `npm run check:publish`; hard on auto-publish / auto-fix-and-publish / unified-ci / validate / syntax / pr-gate / code-quality; soft continuous-flow; stable reliability subset before prepare.
 - Reports local only: `reports/forum-verify-*/NEED_ACTION.md` · L99 fleet **2026-09-14**: `reports/forum-l99-2026-09-14-t140352/FLEET_L99.md` (+ prior `forum-l99-2026-09-12/`).
 - Highest live **#2237** (Peter Smartbutton OCR @ **9.0.916** battery `?` → tip ≥**9.0.926** P2488+P2490). Prior #2210–#2236: VicHY / Joep / meter91 / Eduard / MIAMO / PresentSky.
 - **#2236** PresentSky `m1cvyneb`+TS0601 → `wall_dimmer_tuya` — **RESOLVED** after re-add.

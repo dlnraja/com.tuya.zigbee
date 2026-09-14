@@ -2,14 +2,30 @@
   "_meta": {
     "id": "P2490-forum-complementary-failover",
     "updated": "2026-09-14",
-    "why": "T140352 VicHY/Eduard/MIAMO/Peter/PresentSky + Gmail a5304ce8 — use ALL layers (sacred-keep, EF00 force, DynCap, adapter rehydrate, tip soft-expect). Never invent pid. Never forum POST.",
+    "why": "T140352 VicHY/Eduard/MIAMO/Peter/PresentSky + Gmail a5304ce8 — use ALL layers (sacred-keep, EF00 force, DynCap, adapter rehydrate, tip soft-expect). Identity always (mfr,pid). Never invent pid. Never forum POST. mfs multi-pid under one brand is normal.",
     "humanDoc": "docs/architecture/COMPLEMENTARY_ENRICHMENT.md",
+    "coupleSsot": "config/architecture/sacred-couple-ssot.json",
     "reports": [
       "reports/forum-l99-2026-09-14-t140352/NEED_ACTION.md",
       "reports/forum-l99-2026-09-14-t140352/COMPLEMENTARY_FAILOVER.md",
       "reports/gmail-diag-2026-09-14/TREAT_LIVE.md"
     ],
     "classify": "BOTH"
+  },
+  "coupleSsot": "config/architecture/sacred-couple-ssot.json",
+  "identity": {
+    "rule": "manufacturerName + productId only",
+    "settingsKeys": { "mfr": "zb_manufacturer_name", "pid": "zb_model_id" },
+    "needInterview": {
+      "when": "pid or mfr absent in post/diag",
+      "do": [
+        "document NEED_INTERVIEW",
+        "list expected zb_manufacturer_name + zb_model_id + clusters",
+        "apply verified class-level fixes only",
+        "never invent pid to close ticket"
+      ]
+    },
+    "mfsNote": "One mfr in mfs_db may list many modelIds — treat each couple independently (e.g. TZE200 icka1clh vs fodv6bkr both curtains but separate pins)"
   },
   "tip": {
     "healthyTest": "9.0.926",
@@ -20,37 +36,51 @@
   },
   "users": {
     "Peter_van_Werkhoven": {
-      "couple": "_TZ3000_mrpevh8p+TS0041",
+      "couple": { "mfr": "_TZ3000_mrpevh8p", "pid": "TS0041" },
+      "coupleKey": "_TZ3000_mrpevh8p+TS0041",
       "driver": "button_wireless_1",
+      "uiRole": "scene",
+      "forbid": ["switch_1gang", "wall_switch_4gang_1way", "smart_knob"],
       "diags": ["a5304ce8", "8afffc76", "048cff91", "375def7f", "8278ec79"],
       "primary": ["P2470", "P2488"],
       "complementary": ["P2490 rehydrate measure_battery", "P2481/P2484 tip-lag crashes"],
-      "gmailProof": "capability_id_not_available_on_device on batteryPercentageRemaining=76 @ 9.0.916"
+      "gmailProof": "capability_id_not_available_on_device on batteryPercentageRemaining=76 @ 9.0.916",
+      "note": "Do not lock mrpevh8p onto non-Smartbutton tiles when couple ABSENT (#2190)"
     },
     "MIAMO_NISU": {
-      "couple": "_TZE200_icka1clh+TS0601",
+      "couple": { "mfr": "_TZE200_icka1clh", "pid": "TS0601" },
+      "coupleKey": "_TZE200_icka1clh+TS0601",
+      "siblingOem": ["_TZE204_icka1clh+TS0601"],
       "driver": "curtain_motor",
+      "forbid": ["climate_sensor", "wall_dimmer_tuya"],
       "primary": ["P2461 EF00 force"],
-      "complementary": ["P2490 sacred-keep — Athom compact was dropping FP"]
+      "complementary": ["P2490 sacred-keep — Athom compact was dropping FP while keeping fodv6bkr"]
     },
     "Eduard_Martirosyan": {
-      "couple": "_TZE284_fodv6bkr+TS0601",
+      "couple": { "mfr": "_TZE284_fodv6bkr", "pid": "TS0601" },
+      "coupleKey": "_TZE284_fodv6bkr+TS0601",
       "driver": "curtain_motor",
       "primary": ["P2433 tubular EF00"],
-      "complementary": ["sacred-keep fodv6bkr+libht6ua already"]
+      "complementary": ["sacred-keep fodv6bkr+libht6ua already — separate couples from icka1clh"]
     },
     "VicHY": {
-      "couple": "_TZE204_clrdrnya+TS0601",
+      "couple": { "mfr": "_TZE204_clrdrnya", "pid": "TS0601" },
+      "coupleKey": "_TZE204_clrdrnya+TS0601",
       "driver": "presence_sensor_radar",
+      "forbid": ["curtain_motor", "measure_battery compose"],
       "diags": ["0e28d470", "c5165a37"],
       "primary": ["P2472a", "P2477 DynCap"],
       "complementary": ["P2490 staleCaps windowcoverings_*"]
     },
     "PresentSky": {
-      "couple": "_TZE284_m1cvyneb+TS0601",
+      "couple": { "mfr": "_TZE284_m1cvyneb", "pid": "TS0601" },
+      "coupleKey": "_TZE284_m1cvyneb+TS0601",
       "driver": "wall_dimmer_tuya",
+      "forbid": ["climate_sensor", "soil_sensor", "zigbee_universal"],
+      "brightnessScale": "0-1000",
       "status": "RESOLVED_user_#2236",
-      "stack": ["magic handshake", "writeBool×3", "CapabilityCommandRouter forceDp"]
+      "stack": ["magic handshake", "writeBool×3", "CapabilityCommandRouter forceDp"],
+      "neverInvent": "TS0201 for climate under same mfr"
     }
   },
   "sacredKeepPins": [
@@ -60,13 +90,14 @@
     "_TZE200_fodv6bkr|TS0601|curtain_motor"
   ],
   "gates": {
-    "npm": ["check:p2490", "check:p2488", "check:p2484", "check:p2288"],
+    "npm": ["check:p2490", "check:p2488", "check:p2484", "check:p2288", "check:p2494"],
     "family": "check:p248x"
   },
   "relatedPatches": {
     "P2487": "MASTER_ONLY Intelligent IR UX + Homey IR TX",
     "P2488": "BOTH adapter keep measure_battery on buttons",
     "P2481": "BOTH motionsensor foreign preempt",
-    "P2484": "BOTH EF00 init idempotent + gkfbdvyx keep"
+    "P2484": "BOTH EF00 init idempotent + gkfbdvyx keep",
+    "P2494": "BOTH sacred-couple SSOT granularity"
   }
 }

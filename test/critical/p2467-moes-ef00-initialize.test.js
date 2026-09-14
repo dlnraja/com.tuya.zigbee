@@ -20,7 +20,9 @@ const curtain = fs.readFileSync(curtainPath, 'utf8');
 const mgr = fs.readFileSync(mgrPath, 'utf8');
 
 assert.ok(cover.includes('async _setupTuyaDPMode'), 'P2467: _setupTuyaDPMode must be async');
-assert.ok(cover.includes('tuyaEF00Manager.initialize'), 'P2467: must call initialize(zclNode)');
+// Contre quoi (P2486b): never call hollow start()/init() as the primary path —
+// launchOnce → initialize(zclNode) so BoundCluster + mcuSyncTime actually arm.
+assert.ok(/launchOnce\s*\(/.test(cover), 'P2467/P2486b: must call TuyaEF00Manager.launchOnce');
 assert.ok(cover.includes('P2467'), 'P2467 marker in UnifiedCoverBase');
 assert.ok(cover.includes('_sendMoesMcuSyncTime'), 'P2467: mcuSyncTime helper');
 assert.ok(cover.includes('_ensureMoesMcuReady'), 'P2467: MCU ready gate');

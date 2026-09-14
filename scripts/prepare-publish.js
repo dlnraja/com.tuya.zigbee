@@ -277,6 +277,65 @@ function sanitizeSourceTree() {
   }
 }
 
+function validateSacredKeepPins() {
+  // WHY(P2495 / P2494 / P2490): refuse prepare when sacred-keep pins are mfr-only
+  // or invent-shaped — compact would silently drop real (mfr,pid) couples.
+  const keepPath = path.join(__dirname, '..', 'config', 'architecture', 'publish-sacred-keep-couples.json');
+  const coupleSsotPath = path.join(__dirname, '..', 'config', 'architecture', 'sacred-couple-ssot.json');
+  if (!fs.existsSync(keepPath)) {
+    console.error('FATAL: missing config/architecture/publish-sacred-keep-couples.json');
+    process.exit(1);
+  }
+  let keep;
+  try {
+    keep = JSON.parse(fs.readFileSync(keepPath, 'utf8'));
+  } catch (e) {
+    console.error(`FATAL: cannot parse sacred-keep list: ${e.message}`);
+    process.exit(1);
+  }
+  const { isValidSacredCouple, normalizeSacredCouple } = require('../tools/ci/sacred-couple-pair');
+  const rows = keep.couples || [];
+  if (rows.length < 1) {
+    console.error('FATAL: sacred-keep couples list empty');
+    process.exit(1);
+  }
+  let bad = 0;
+  for (const c of rows) {
+    const pid = c && (c.pid || c.productId);
+    if (!c || !c.mfr || !pid || !c.driverId) {
+      console.error(`FATAL: sacred-keep row missing mfr/pid/driverId: ${JSON.stringify(c)}`);
+      bad++;
+      continue;
+    }
+    if (!isValidSacredCouple(c.mfr, pid) && !normalizeSacredCouple(c.mfr, pid)) {
+      console.warn(`WARN(P2495): unusual sacred-keep couple ${c.mfr}+${pid} (${c.driverId})`);
+    }
+  }
+  if (bad) process.exit(1);
+  const must = [
+    ['_TZE200_icka1clh', 'TS0601', 'curtain_motor'],
+    ['_TZE284_fodv6bkr', 'TS0601', 'curtain_motor'],
+  ];
+  for (const [mfr, pid, driverId] of must) {
+    const hit = rows.some((c) => (
+      String(c.mfr).toLowerCase() === mfr.toLowerCase()
+      && String(c.pid) === pid
+      && c.driverId === driverId
+    ));
+    if (!hit) {
+      console.error(`FATAL(P2495/P2490): missing sacred-keep pin ${mfr}+${pid}→${driverId}`);
+      process.exit(1);
+    }
+  }
+  if (fs.existsSync(coupleSsotPath)) {
+    console.log('P2495: sacred-keep preflight OK (couple-native pins + sacred-couple-ssot present)');
+  } else {
+    console.warn('WARN(P2495): sacred-couple-ssot.json missing — continue with pin list only');
+  }
+}
+
+validateSacredKeepPins();
+
 console.log(`Copying built files from ${srcDir} to ${destDir}...`);
 
 if (!fs.existsSync(srcDir)) {

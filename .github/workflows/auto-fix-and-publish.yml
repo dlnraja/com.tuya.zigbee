@@ -32,6 +32,9 @@ env:
   HOMEY_PUBLISH_SOURCE_MAX_MB: "50"
   HOMEY_ZIGBEE_MAX_TOTAL_COMBOS: "17000"
   HOMEY_ZIGBEE_MAX_DRIVER_COMBOS: "2000"
+  # P2491: publish bots stay local — no remote AI burn
+  AI_FORCE_LOCAL: "true"
+  AI_ALLOW_REMOTE: "false"
 
 concurrency:
   # Per-branch so master and stable-v5 do not serialize/race on one lock.
@@ -85,6 +88,16 @@ jobs:
 
       - name: "🛡️ P2138 sacred-couple matrix gate"
         run: node tools/ci/p2138-sacred-couple-matrix-gate.js
+
+      - name: "🛡️ P244x / P246x / P248x / P249x family gates"
+        run: |
+          npm run check:p244x
+          npm run check:p246x
+          npm run check:p248x
+          npm run check:p249x
+
+      - name: "🛡️ P2495 publish path (soft-expect + sacred-keep + couple)"
+        run: npm run check:publish
 
       # P102: Device I/O façade smoke + bare ZigBeeDevice gate
       - name: "🔌 P102 DeviceIOFacade smoke"

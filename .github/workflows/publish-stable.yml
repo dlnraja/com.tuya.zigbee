@@ -236,6 +236,13 @@ jobs:
         env:
           HOMEY_CHANGELOG: 'Reliability improvements.'
         run: node .github/scripts/ensure-next-changelog.js
+      - name: "🛡️ Stable reliability gates (couple + sacred-keep)"
+        run: |
+          node tools/ci/anti-bot-regression-gate.js
+          node tools/ci/p2138-sacred-couple-matrix-gate.js
+          npm run check:p2288
+          npm run check:p2494
+          npm run check:p2495
       - name: Prepare Publish Directory
         run: npm run prepare-publish
       - name: Publish to Draft

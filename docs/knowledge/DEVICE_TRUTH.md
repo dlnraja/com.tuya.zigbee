@@ -22,16 +22,17 @@
 
 Catalog: **431** drivers, **201** locked community cases.
 
-## Live tip / fleet (manual enrich 2026-09-12 — not generated)
+## Live tip / fleet (manual enrich 2026-09-14 — not generated)
 
 | Item | Truth |
 |------|--------|
-| Master tip | **9.0.889+** (`com.dlnraja.tuya.zigbee`) |
-| Highest T140352 | **#2233** Peter Smartbutton OCR @ 9.0.882 → P2470 |
-| Silent report | `reports/forum-l99-2026-09-12/FLEET_L99.md` |
+| Master tip | **9.0.926** healthy (`#3186`); git **9.0.927+** |
+| Identity | Always **(mfr, pid)** — SSOT `config/architecture/sacred-couple-ssot.json` · `npm run check:p2494` |
+| mfs | One mfr → many modelIds is **NORMAL**; never invent pid |
+| Highest T140352 | **#2237** Peter Smartbutton @ 9.0.916 → tip ≥**9.0.926** (P2488+P2490) |
+| Silent report | `reports/forum-l99-2026-09-14-t140352/FLEET_L99.md` |
 | Publish vs post | Publish = Homey Test; **never** auto-post forum (T157628) |
-| P2468–P2472a | Joep Insoma · VicHY compose Energy strip · Peter battery · Moes P2467 · P2469 tests |
-| NEED_INTERVIEW | Peter SOS/Raam/Water ABSENT · FrankEver Gmail (no invent pid) |
+| NEED_INTERVIEW | Document expected `zb_manufacturer_name` + `zb_model_id` — no invent |
 
 Regenerate full table: `node tools/ci/build-device-truth.js` then `node tools/ci/investigate-device-peculiarities.js`.
 

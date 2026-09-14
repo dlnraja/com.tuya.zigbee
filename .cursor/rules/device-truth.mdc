@@ -11,8 +11,8 @@ alwaysApply: true
 - Never Publish Stable→Test while 9.x occupies the shared App ID Test slot.
 
 ## Lookup order (mandatory on device work)
-1. Lock **manufacturerName + productId**. Never invent a pid from a retail SKU.
-2. Read [docs/knowledge/DEVICE_TRUTH.md](docs/knowledge/DEVICE_TRUTH.md) (how + 54 locked couples).
+1. Lock **manufacturerName + productId** only; read [docs/knowledge/DEVICE_TRUTH.md](docs/knowledge/DEVICE_TRUTH.md) and look up [docs/knowledge/device-truth.json](docs/knowledge/device-truth.json). Never invent pid.
+2. Machine SSOT: [config/architecture/sacred-couple-ssot.json](config/architecture/sacred-couple-ssot.json) · human: [docs/architecture/SACRED_COUPLE_SSOT.md](docs/architecture/SACRED_COUPLE_SSOT.md) · gate `npm run check:p2494`.
 3. Open [docs/knowledge/device-truth.json](docs/knowledge/device-truth.json) → `drivers.<driverId>` (431 drivers, 1 by 1).
 4. Read [docs/knowledge/PECULIARITIES.md](docs/knowledge/PECULIARITIES.md) for DP/cluster/source notes per couple.
 5. Confirm in `drivers/<id>/driver.compose.json` and `data/user-misattribution-registry.json`.
@@ -29,7 +29,7 @@ alwaysApply: true
 | `mfs_db` avec **plusieurs `modelIds`** pour un mfr si **chaque** pid est un couple vérifié | Router sur mfr seul quand le pid est connu mais absent de la liste |
 | Même OEM Tuya (`_TZE200` / `_TZE204` / `_TZE284`) = familles séparées jusqu’à preuve | Supposer qu’un mfr = un seul type d’appareil |
 
-**Règle d’or :** identité = **(manufacturerName, productId)**. Variants et pid multiples sous un mfr sont attendus — toujours verrouiller et investiguer le **couple**, jamais le mfr isolé.
+**Règle d’or :** identité = **(manufacturerName, productId)**. Variants et pid multiples sous un mfr sont attendus — toujours verrouiller et investiguer le **couple**, jamais le mfr isolé. Settings: `zb_manufacturer_name` + `zb_model_id`.
 
 ### HOBEIAN (brand ≠ one device) — P2250
 | Couple | Driver | Protocol |

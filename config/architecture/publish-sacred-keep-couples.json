@@ -514,15 +514,15 @@
     },
     {
       "mfr": "_TZE200_r32ctezx",
-      "productId": "TS0601",
+      "pid": "TS0601",
       "driverId": "fan_controller",
-      "why": "P2385 GitHub#536 Lerlink fan switch"
+      "note": "P2385 GitHub#536 Lerlink fan switch"
     },
     {
       "mfr": "_TZE204_r32ctezx",
-      "productId": "TS0601",
+      "pid": "TS0601",
       "driverId": "fan_controller",
-      "why": "P2385 GitHub#536 Lerlink fan switch"
+      "note": "P2385 GitHub#536 Lerlink fan switch"
     },
     {
       "mfr": "HOBEIAN",

@@ -1,0 +1,190 @@
+{
+  "_meta": {
+    "id": "P2494-sacred-couple-ssot",
+    "updated": "2026-09-14",
+    "why": "App identity is ALWAYS (manufacturerName, productId). mfs_db may list many pids under one mfr — that is normal multi-variant OEM, not a collision. Agents/bots must reason by couple, never mfr-only or invent pid.",
+    "humanDoc": "docs/architecture/SACRED_COUPLE_SSOT.md",
+    "truth": [
+      "docs/knowledge/DEVICE_TRUTH.md",
+      "docs/knowledge/device-truth.json",
+      "docs/knowledge/PECULIARITIES.md",
+      "data/user-misattribution-registry.json"
+    ],
+    "helpers": [
+      "tools/ci/sacred-couple-pair.js",
+      "lib/utils/CaseInsensitiveMatcher.js",
+      "lib/utils/fingerprint-matcher.js"
+    ],
+    "classify": "BOTH",
+    "gates": {
+      "npm": "check:p2494",
+      "family": ["check:p249x", "check:p2138", "check:p2288"]
+    }
+  },
+  "identity": {
+    "canonical": "manufacturerName + productId",
+    "aliases": {
+      "mfr": ["manufacturerName", "zb_manufacturer_name", "mfs entry key"],
+      "pid": ["productId", "modelId", "zb_model_id"]
+    },
+    "settingsKeys": {
+      "mfr": "zb_manufacturer_name",
+      "pid": "zb_model_id",
+      "forbidCamel": ["zb_manufacturerName", "zb_modelId"]
+    },
+    "never": [
+      "invent productId from retail SKU",
+      "route by mfr alone when pid is known",
+      "dedupe/prune mfr across drivers solely because same mfr appears elsewhere with different pid",
+      "assume one mfr = one device class",
+      "forum POST / invent couple to close NEED_INTERVIEW"
+    ]
+  },
+  "mfsDoctrine": {
+    "why": "One mfs_db manufacturer entry may list multiple modelIds — each (mfr,pid) is its own sacred couple → its own driver.",
+    "allowed": [
+      "same mfr + different pid → different drivers",
+      "same mfr + OEM/retail variants under verified pids",
+      "mfs_db.modelIds array with multiple verified couples",
+      "TZE200/TZE204/TZE284 prefix siblings as separate couples until proven"
+    ],
+    "forbidden": [
+      "remove mfr from driver A because it exists on driver B with another pid",
+      "invent a second pid to cover climate or clear a collision",
+      "Cartesian explosion of unproven mfr×pid in registries",
+      "mfr-only catalog hit when pid present but absent from modelIds"
+    ],
+    "runtimeRule": "getDriverId(mfr, pid) must refuse mfr-only hit when pid is present but not in modelIds"
+  },
+  "decisionTree": [
+    {
+      "when": "mfr+pid both present and locked in truth/compose",
+      "do": "use that driver only; apply protocol/DP/peculiarities for THAT couple"
+    },
+    {
+      "when": "mfr present, pid missing (NEED_INTERVIEW)",
+      "do": "document expected interview fields; soft hypothesis only; never invent pid; class-level fixes OK if verified"
+    },
+    {
+      "when": "same mfr, wrong pid for reported device class",
+      "do": "do not reassign; lock correct couple; user remove+re-pair if stale driver"
+    },
+    {
+      "when": "same mfr appears in two drivers",
+      "do": "check pids — multi-driver mfr is NORMAL if pids differ"
+    },
+    {
+      "when": "Athom compact drops a verified couple",
+      "do": "pin in publish-sacred-keep-couples.json (P2288/P2490)"
+    }
+  ],
+  "lookupOrder": [
+    "Lock manufacturerName + productId from interview/diag/forum (exact)",
+    "docs/knowledge/DEVICE_TRUTH.md + device-truth.json drivers.<id>",
+    "docs/knowledge/PECULIARITIES.md",
+    "drivers/<id>/driver.compose.json zigbee.manufacturerName × productId",
+    "data/user-misattribution-registry.json (forbidMode couple)",
+    "data/mfs_db.json modelIds for that mfr",
+    "Z2M/ZHA/Blakadder by the couple — never invent"
+  ],
+  "multiVariantExamples": [
+    {
+      "brand": "HOBEIAN",
+      "note": "Brand ≠ one device — each pid is its own couple",
+      "couples": [
+        { "mfr": "HOBEIAN", "pid": "ZG-227Z", "driver": "climate_sensor", "protocol": "zcl" },
+        { "mfr": "HOBEIAN", "pid": "ZG-303Z", "driver": "soil_sensor", "protocol": "ef00" },
+        { "mfr": "HOBEIAN", "pid": "ZG-305Z", "driver": "switch_2gang", "protocol": "zcl" },
+        { "mfr": "HOBEIAN", "pid": "ZG-204ZL", "driver": "presence_sensor_radar", "protocol": "presence" }
+      ]
+    },
+    {
+      "brand": "TZ3000 gang family",
+      "note": "Same OEM prefix often ships 1/2/3/4-gang via pid only",
+      "pattern": "_TZ3000_* + TS0001|TS0002|TS0003|TS0004 → switch_Ngang / wall_switch_*"
+    },
+    {
+      "brand": "Tuya MCU TS0601",
+      "note": "TS0601 alone is useless — always need mfr",
+      "couples": [
+        { "mfr": "_TZE284_m1cvyneb", "pid": "TS0601", "driver": "wall_dimmer_tuya" },
+        { "mfr": "_TZE204_clrdrnya", "pid": "TS0601", "driver": "presence_sensor_radar" },
+        { "mfr": "_TZE200_icka1clh", "pid": "TS0601", "driver": "curtain_motor" },
+        { "mfr": "_TZE284_nt4pquef", "pid": "TS0601", "driver": "soil_sensor" }
+      ]
+    }
+  ],
+  "highRiskLocks": [
+    {
+      "mfr": "_TZE284_m1cvyneb",
+      "pid": "TS0601",
+      "driver": "wall_dimmer_tuya",
+      "forbid": ["climate_sensor", "soil_sensor", "zigbee_universal", "generic_tuya"],
+      "notes": "brightness MCU 0–1000; do not invent TS0201 for climate"
+    },
+    {
+      "mfr": "_TZ3000_mrpevh8p",
+      "pid": "TS0041",
+      "driver": "button_wireless_1",
+      "uiRole": "scene",
+      "notes": "Peter SH-SC07; P2470/P2488/P2490 battery keep+rehydrate"
+    },
+    {
+      "mfr": "_TZ3000_uri7ongn",
+      "pid": "TS004F",
+      "driver": "smart_knob",
+      "uiRole": "knob",
+      "notes": "P2448 command/dimmer 0x8004=0"
+    },
+    {
+      "mfr": "_TZ3000_kaflzta4",
+      "pid": "TS004F",
+      "driver": "smart_knob",
+      "uiRole": "scene",
+      "notes": "P2439 one-button scene — not rotary"
+    },
+    {
+      "mfr": "_TZ3000_zgyzgdua",
+      "pid": "TS0044",
+      "driver": "scene_switch_4",
+      "uiRole": "scene",
+      "notes": "meter91; 0xFD physical; not knob"
+    },
+    {
+      "mfr": "_TZ3000_k4ej3ww2",
+      "pid": "TS0207",
+      "driver": "water_leak_sensor",
+      "notes": "IAS sleepy; never EF00 tuya water; sibling 5k5vh43t+TS0207=repeater"
+    },
+    {
+      "mfr": "_TZE204_clrdrnya",
+      "pid": "TS0601",
+      "driver": "presence_sensor_radar",
+      "notes": "VicHY mains; no phantom battery; staleCaps curtains"
+    },
+    {
+      "mfr": "_TZE200_icka1clh",
+      "pid": "TS0601",
+      "driver": "curtain_motor",
+      "notes": "MIAMO AM43; P2490 sacred-keep pin"
+    }
+  ],
+  "uiRoleByCoupleHints": {
+    "why": "Homey button UI charter (P2492) must follow device class of the couple, not brand",
+    "switch": "onoff / Channel N primary; button.N maintenanceAction",
+    "scene": "button.N in device view; no phantom onoff",
+    "knob": "dim + button; command mode unless scene-locked mfr (kaflzta4)"
+  },
+  "enrichBots": {
+    "refuse": "apply mfr-only or invent pid",
+    "require": "Z2M/ZHA/forum proof on the couple before compose/mfs write",
+    "afterApply": ["anti-bot-regression-gate", "p2138-sacred-couple-matrix-gate", "check:p2494"]
+  },
+  "agentChecklist": [
+    "[ ] Couple locked (mfr+pid) or NEED_INTERVIEW documented",
+    "[ ] Looked up DEVICE_TRUTH + peculiarities + compose",
+    "[ ] mfs multi-pid treated as normal variants",
+    "[ ] No invent pid / no forum POST",
+    "[ ] Contre quoi unit test if behavior changed (P2469)"
+  ]
+}
