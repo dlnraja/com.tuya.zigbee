@@ -1,10 +1,11 @@
 {
   "_meta": {
     "id": "P2286-P2288",
-    "updated": "2026-08-30",
-    "why": "Orphan Athom builds + tip hang soft-continue (P2325) + inbox diag harvest (P2326).",
+    "updated": "2026-09-14",
+    "why": "Orphan Athom builds + tip hang soft-continue (P2325) + inbox diag harvest (P2326) + P2490 sacred-keep failover.",
     "humanDoc": "docs/architecture/PUBLISH_SSOT.md",
     "workflowGuidelines": ".github/WORKFLOW_GUIDELINES.md §M.8",
+    "forumFailoverSsot": "config/architecture/forum-complementary-failover-ssot.json",
     "classify": "BOTH"
   },
   "mandatoryPath": {
@@ -33,11 +34,18 @@
     "npm": "check:p2286"
   },
   "sacredKeep": {
-    "why": "Athom expands mfr×pid; budget compaction must not drop verified couples (e.g. button_wireless_1 31→2 pids).",
+    "why": "Athom expands mfr×pid; budget compaction must not drop verified couples (e.g. button_wireless_1 31→2 pids; MIAMO icka1clh P2490).",
     "pinFile": "config/architecture/publish-sacred-keep-couples.json",
     "failIfMissingAfterCompact": true,
     "test": "test/critical/p2288-prepare-publish-sacred-keep.test.js",
-    "npm": "check:p2288"
+    "npm": "check:p2288",
+    "p2490ExtraPins": [
+      "_TZE200_icka1clh+TS0601→curtain_motor",
+      "_TZE204_icka1clh+TS0601→curtain_motor",
+      "_TZE200_zah67ekd+TS0601→curtain_motor",
+      "_TZE200_fodv6bkr+TS0601→curtain_motor"
+    ],
+    "p2490Gate": "npm run check:p2490"
   },
   "iasLeftoverEf00": {
     "why": "Sleepy IAS-only devices brick on leftover HYBRID-QUERY / queryAllDPs.",
@@ -54,14 +62,17 @@
       "npm run check:p2286",
       "npm run check:p2287",
       "npm run check:p2288",
+      "npm run check:p248x",
       "node tools/ci/prune-fp-collision-bleed.js --check"
     ]
   },
   "p139": {
     "doNot": "spam republish on processing_failed / socket hang up",
     "do": "soft-expect exit 0 when peer already on test; wait Athom cooldown",
-    "tipEmailExamples": ["#3140", "#3142"],
+    "tipEmailExamples": ["#3140", "#3142", "#3184", "#3187"],
     "tipEmailBody": "Your build has failed processing … socket hang up",
+    "healthyTip2026_09_14": "#3186 v9.0.926 test",
+    "failedTip2026_09_14": ["#3184 v9.0.924", "#3187 v9.0.928"],
     "patch": "P2458",
     "humanDoc": "docs/architecture/PUBLISH_SSOT.md §P139 / tip email pattern"
   },

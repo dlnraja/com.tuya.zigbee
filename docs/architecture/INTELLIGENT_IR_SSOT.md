@@ -2,6 +2,8 @@
 
 MASTER_ONLY UX layer for Tuya **Zigbee** + **WiFi** IR blasters **and Homey Pro 2023 onboard IR TX**. Inspired by Ultimate Infrared Toolkit UX (learn+confirm, manual paste, named remotes, flows) — hardware paths: Zosung / Tuya WiFi / `homey.rf` ProntoHex.
 
+**Tip:** Homey Test ≥**9.0.922** (healthy tip **9.0.926** #3186). Family gate: `npm run check:p248x` (includes P2487 + P2488 + P2490). Zosung TX/RX reliability-only changes may classify **BOTH**.
+
 ## Machine SSOT
 
 See [`config/architecture/intelligent-ir-ssot.json`](../../config/architecture/intelligent-ir-ssot.json).

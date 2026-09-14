@@ -56,6 +56,9 @@ Homey SDK/interview does **not** cover every ZCL/EF00 path. Runtime must keep pa
 - `_TZ3000_k4ej3ww2` + `TS0207` → `water_leak_sensor` IAS (sleepy, wet/dry only). `_TZ3000_5k5vh43t` + `TS0207` → `zigbee_repeater`. Never rain from pid.
 - `_TZE284_nt4pquef` + `TS0601` → `soil_sensor`. DP2 = light enum, not moisture. Do not compose `0xED00`. SGS02Z is retail, not a pid.
 - `_TZ3000_okaz9tjs` / `_TZ3210_fgwhjm9j` + `TS011F` → `plug_energy_monitor` (fw 1.0.5+ electrical poll). Pid also used by DIN/strip/double-outlet.
+- `_TZE200_icka1clh` / `_TZE204_icka1clh` + `TS0601` → `curtain_motor` (MIAMO AM43). **P2490:** pin sacred-keep — Athom compact can drop TZE200 while keeping `fodv6bkr`.
+- `_TZ3000_mrpevh8p` + `TS0041` → `button_wireless_1` (Peter). **P2488/P2490:** keep + rehydrate `measure_battery` (adapter hourly strip / boot).
+- `_TZE204_clrdrnya` + `TS0601` → `presence_sensor_radar` (VicHY mains). No phantom battery; **P2490** strip curtain `windowcoverings_*` / `dim` phantoms.
 - SOS / water leak / contact = sleepy IAS. Enroll on wake. No boot poll storm. No leftover EF00 TX.
 - Backlight settings are strings `off`/`normal`/`inverted`. Battery: no linear `(V-2.5)/0.5`.
 - BSEED zcl_only mfrs: `_TZ3000_l9brjwau`, `_TZ3000_blhvsaqf`, `_TZ3000_ysdv91bk`, `_TZ3000_hafsqare`, `_TZ3000_e98krvvk`, `_TZ3000_iedbgyxt`, `_TZ3000_cauq1okq`, `_TZ3000_w5xztuy7`.

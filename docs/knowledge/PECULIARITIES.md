@@ -4,6 +4,8 @@ Generated 2026-09-08T07:29:59.472Z from registry (201 cases) × compound DB (454
 
 ## Live locks (2026-09-14)
 
+- **P2490** Forum complementary failover (VicHY / Eduard / MIAMO / Peter / PresentSky + Gmail): Athom compact **dropped** `_TZE200_icka1clh` while keeping `fodv6bkr` → MIAMO Unknown. Pin icka1clh/zah67ekd/fodv6bkr TZE200 in sacred-keep. Peter diag **`a5304ce8` @ 9.0.916**: ZCL `batteryPercentageRemaining=76` → `capability_id_not_available_on_device` — P2488 keep alone insufficient; **rehydrate** `measure_battery` on boot + adapter `toAdd` when keep-lock. VicHY: curtain phantoms in radar `staleCaps`. Crash mails 9.0.891/895 = `motionsensor` P2481 tip-lag. Tip healthy **#3186 = 9.0.926**; PF **#3184/#3187** — P139 no spam. SSOT `config/architecture/forum-complementary-failover-ssot.json` · `npm run check:p2490` / `check:p248x`. BOTH.
+- **P2488** Peter Smartbutton: hourly `IntelligentDeviceAdapter` must not strip `measure_battery` on `button_*`. Tip ≥**9.0.923** (prefer tip ≥**9.0.926**). BOTH.
 - **P2487 / P2487c** Intelligent IR: Zigbee Zosung + WiFi Tuya + **Homey Pro 2023 onboard Pronto TX** (`homey_infrared`, `homey:wireless:ir`). Router `IntelligentIRRouter` + `IRFormatConverter` + `HomeyInfraredTx`; shared wizard (sender pick); `wifi_ir_remote` + `ir_remote` flow parity; learn on Zigbee/WiFi only. MASTER_ONLY UX. Doc `docs/architecture/INTELLIGENT_IR_SSOT.md`. Tip ≥**9.0.922**.
 - **P2471** WiFi Easy Login: `authorized-login` (`/v1.0/iot-01/associated-users/actions/authorized-login`) + `TuyaUserLogin` (email/phone + country_code + schema) + auto-region × schema fallback; persist `tuya_cloud_region` / `tuya_cloud_auto_region`. Pair UI SSOT `wifi_generic` → SmartLink QR **first** tab; `npm run sync:wifi-pair`. BOTH (local_key). Tip ≥**9.0.920**.
 - **P2472b** MCU time-sync: EF00 `sendTimeSync` → DP17 commit (ZT08 `hodyryli`); `TuyaMCUManager` attach + 0/5/60s resync; MCU DB locks `fhvpaltk` / `5slehgeo` / `6a4vxfnv`. Doc `docs/architecture/MCU_TIME_SYNC.md`. BOTH.
@@ -23,7 +25,7 @@ Generated 2026-09-08T07:29:59.472Z from registry (201 cases) × compound DB (454
 - **P2467b** Moes ZTS: force `mainsPowered` (compose phantom `measure_battery`) + skip wake-up ping before EF00 TX.
 - **P2465** Moes Star Feather `zo0cfekv`+`TS0601` → `wall_switch_3gang_1way` DP24/25/26 (not climate).
 - **P2462** BSEED `blhvsaqf`+`TS0001` → `wall_switch_1gang_1way` (not metering `switch_1gang`).
-- **Fleet L99 T140352** (silent OCR 2026-09-12): highest **#2235** — matrix in `reports/forum-l99-2026-09-12/FLEET_L99.md`. Ignore invent gap `_TZE200_ABC123` + Stefan junk `_TZE2841000000_3MZB0SDZ`. Eduard `fodv6bkr` / MIAMO `icka1clh` → `curtain_motor`; VicHY `clrdrnya` → `presence_sensor_radar` — update Test + re-pair if stuck.
+- **Fleet L99 T140352** (silent OCR 2026-09-14): highest **#2237** — `reports/forum-l99-2026-09-14-t140352/` + `NEED_ACTION.md` + `COMPLEMENTARY_FAILOVER.md`. Ignore invent gap `_TZE200_ABC123` + Stefan junk. PresentSky #2236 RESOLVED after re-add.
 
 ## Class notes (always)
 

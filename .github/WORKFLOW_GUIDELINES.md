@@ -973,6 +973,21 @@ the Universal Tuya App ID.
     - Forum: keep `forum:media` + actionable processor SHADOW; never auto-post.
     - Classify publish/runtime reliability as **BOTH**; do not spam Athom republish.
 
+12. **P2490 forum complementary failover + tip PF pattern (2026-09-14):**
+    - Tip healthy **#3186 = 9.0.926 test**; PF tip emails **#3184** (`9.0.924`) /
+      **#3187** (`9.0.928`) `socket hang up` — soft-continue; **no** bump-loop (P139).
+    - Athom compact can **drop** a verified couple while keeping a sibling
+      (MIAMO `_TZE200_icka1clh` dropped, `fodv6bkr` kept) → Unknown Zigbee.
+      Pin in `publish-sacred-keep-couples.json`; gate `npm run check:p2288` +
+      `npm run check:p2490` (family `check:p248x`).
+    - Peter Gmail `a5304ce8` @ 9.0.916: keep-lock alone insufficient when cap already
+      stripped — boot rehydrate + adapter `toAdd` when keep-lock.
+    - Machine SSOT: `config/architecture/forum-complementary-failover-ssot.json`.
+    - T140352 harvest: `tools/ci/forum-t140352-recent-harvest.js` — Discourse
+      `/t/{id}/{N}.json` is **post_number**, not page offset.
+    - Wire `npm run check:p248x` in unified-ci / auto-publish / syntax-check /
+      pr-gate / validate / code-quality next to `check:p244x`.
+
 ### Doctrine (never invent)
 - Identity is always **manufacturerName + productId** (Sacred Couple).
 - One MFS can ship many PIDs / variants / marketing names — **mfr alone is ambiguous**.

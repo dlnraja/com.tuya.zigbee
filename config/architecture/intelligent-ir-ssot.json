@@ -35,7 +35,9 @@
     "forum_post"
   ],
   "gate": "npm run check:p2487",
-  "tipMin": "9.0.921",
+  "tipMin": "9.0.922",
+  "tipNote": "Homey Test tip healthy 9.0.926 (#3186); P2487 IR ships in tip ≥9.0.922",
+  "familyGate": "npm run check:p248x",
   "features": [
     "multi_transport_router",
     "format_normalize_pronto_broadlink_gc_hex_zosung",

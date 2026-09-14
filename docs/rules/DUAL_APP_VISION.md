@@ -45,7 +45,19 @@ Before coding, classify:
 | `STABLE_ONLY` | Stable identity, stable publish workflow, LTS versioning | Never pull into master as identity |
 
 Machine SSOT: [`config/architecture/dual-app-tracks.json`](../../config/architecture/dual-app-tracks.json)  
+Forum failover: [`config/architecture/forum-complementary-failover-ssot.json`](../../config/architecture/forum-complementary-failover-ssot.json)  
 Regular CI: `node tools/ci/l99-dual-app-enrich-gates.js` (BOTH always; MASTER_ONLY skipped on stable track)
+
+### L99 recent (2026-09-14)
+
+| Deliverable | Tag | Why |
+|-------------|-----|-----|
+| P2490 forum complementary failover (icka1clh keep + battery rehydrate + radar staleCaps) | **BOTH** | Compact drop / strip / phantom curtain |
+| P2488 Smartbutton `measure_battery` keep-lock | **BOTH** | Hourly adapter strip → `?` battery |
+| P2487 Intelligent IR UX + Homey Pronto TX | **MASTER_ONLY** | Feature; Zosung TX/RX reliability only if touched |
+| P2484 EF00 init idempotent + gkfbdvyx sacred-keep | **BOTH** | Heap OOM / Unknown Zigbee |
+| P2481 motionsensor foreign preempt | **BOTH** | Homey Pro 2026 serializer crash |
+| Tip #3186 = 9.0.926 healthy; PF #3184/#3187 | **BOTH** | P139 soft-continue — no spam |
 
 ### L99 recent (2026-08-26)
 
