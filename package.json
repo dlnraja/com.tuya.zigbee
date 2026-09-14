@@ -169,7 +169,15 @@
     "check:p2480": "node --test test/critical/p2480-motionsensor-driver-not-initialized.test.js",
     "check:p2481": "node --test test/critical/p2481-motionsensor-preempt-soft-fail.test.js",
     "check:p2482": "node --test test/critical/p2481-motionsensor-preempt-soft-fail.test.js test/critical/p2482-gkfbdvyx-presence-radar.test.js",
-    "check:p2484": "node --test test/critical/p2484-gkfbdvyx-sacred-keep-ef00-oom.test.js"
+    "check:p2484": "node --test test/critical/p2484-gkfbdvyx-sacred-keep-ef00-oom.test.js",
+    "check:p2490": "node --test test/critical/p2490-forum-complementary-failover.test.js",
+    "check:p2492": "node --test test/critical/p2492-homey-button-ui-charter.test.js",
+    "check:p2493": "node --test test/critical/p2493-workflow-family-gates.test.js",
+    "check:p2494": "node --test test/critical/p2494-sacred-couple-ssot-granularity.test.js",
+    "check:p2495": "node tools/ci/p2495-publish-path-gate.js && node --test test/critical/p2495-publish-cicd-path.test.js",
+    "check:p2496": "node --test test/critical/p2496-identity-fields-pid-productid-productname.test.js",
+    "check:p249x": "npm run check:p2490 && npm run check:p2492 && npm run check:p2494 && npm run check:p2496",
+    "check:publish": "npm run check:p2288 && npm run check:p2490 && npm run check:p2494 && npm run check:p2495 && npm run check:p2496"
   },
   "keywords": [
     "homey",

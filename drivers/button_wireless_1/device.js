@@ -27,7 +27,34 @@ class Button1GangDevice extends ButtonDevice {
       }
     } catch (_e) { /* soft */ }
 
-    this.log('[BUTTON_WIRELESS_1] 🔘 v10.0.0 initialized via ButtonDevice (P2285 1-btn lock)');
+    // WHY(P2316): Z2M/HA “first action ignored” — genBasic 0xFFDE=0x13 ASAP after pair
+    // (same as Z2M configure write). Fire-and-forget; wake path also force-resends.
+    try {
+      const { sendTuyaMagicPacket } = require('../../lib/zigbee/TuyaMagicPacket');
+      sendTuyaMagicPacket(this, zclNode, 1, { force: true }).catch(() => {});
+    } catch (_e) { /* soft */ }
+
+    // WHY(P2470 / Peter 8afffc76): Homey showed CR2032 because compose listed it first;
+    // SH-SC07 is CR2450 (Z2M). Lock energy so Insights/battery UI stay correct after re-pair.
+    try {
+      const mfr = String(this.getSetting?.('zb_manufacturer_name') || this.getData?.()?.manufacturerName || '');
+      if (/mrpevh8p|5bpeda8u|b4awzgct/i.test(mfr) && typeof this.setEnergy === 'function') {
+        await this.setEnergy({ batteries: ['CR2450'] }).catch(() => {});
+        this.log('[BUTTON_WIRELESS_1] P2470 energy lock CR2450 (SH-SC07)');
+      }
+    } catch (_e) { /* soft */ }
+
+    // WHY(P2490 / Peter #2237 complementary to P2488): if an older tip already stripped
+    // measure_battery, keep-lock alone cannot paint % until the cap exists again.
+    // Rehydrate on boot — then wake ZCL / store paint can fill Insights.
+    try {
+      if (!this.hasCapability('measure_battery') && typeof this.addCapability === 'function') {
+        await this.addCapability('measure_battery').catch(() => {});
+        this.log('[BUTTON_WIRELESS_1] P2490 rehydrate measure_battery after strip');
+      }
+    } catch (_e) { /* soft */ }
+
+    this.log('[BUTTON_WIRELESS_1] v10.0.0+P2316 init (1-btn lock + magic 0xFFDE)');
   }
 
 }

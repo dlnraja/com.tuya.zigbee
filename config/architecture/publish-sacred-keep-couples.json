@@ -15,6 +15,30 @@
       "note": "Roller blind motor sibling to fodv6bkr"
     },
     {
+      "mfr": "_TZE200_icka1clh",
+      "pid": "TS0601",
+      "driverId": "curtain_motor",
+      "note": "P2490 MIAMO #2229 AM43 — compact was dropping FP → Unknown Zigbee"
+    },
+    {
+      "mfr": "_TZE204_icka1clh",
+      "pid": "TS0601",
+      "driverId": "curtain_motor",
+      "note": "P2490 icka1clh TZE204 sibling sacred-keep"
+    },
+    {
+      "mfr": "_TZE200_zah67ekd",
+      "pid": "TS0601",
+      "driverId": "curtain_motor",
+      "note": "P2490 AM43 solar sibling — same cover_4 EF00 family"
+    },
+    {
+      "mfr": "_TZE200_fodv6bkr",
+      "pid": "TS0601",
+      "driverId": "curtain_motor",
+      "note": "P2490 Eduard tubular TZE200 sibling keep (TZE284 already pinned)"
+    },
+    {
       "mfr": "_TZE284_hodyryli",
       "pid": "TS0601",
       "driverId": "climate_sensor",
@@ -243,6 +267,18 @@
       "note": "clrdrnya TZE284 sibling"
     },
     {
+      "mfr": "_TZE204_gkfbdvyx",
+      "pid": "TS0601",
+      "driverId": "presence_sensor_radar",
+      "note": "P2484 GH#547 HiepSVG ZY-M100-24GV3 — compact dropped mfr → Unknown Zigbee"
+    },
+    {
+      "mfr": "_TZE200_gkfbdvyx",
+      "pid": "TS0601",
+      "driverId": "presence_sensor_radar",
+      "note": "P2484 gkfbdvyx TZE200 sibling (Z2M same fingerprint group)"
+    },
+    {
       "mfr": "HOBEIAN",
       "pid": "ZG-204ZL",
       "driverId": "presence_sensor_radar",
@@ -413,8 +449,8 @@
     {
       "mfr": "_TZ3000_blhvsaqf",
       "pid": "TS0001",
-      "driverId": "switch_1gang",
-      "note": "Issue #540 / P2435 BSEED 1-gang ZCL — forbid unknown at pairing"
+      "driverId": "wall_switch_1gang_1way",
+      "note": "P2462 GH#540 residual — BSEED 1G Identify+E000/E001 like ysdv91bk; leave metering switch_1gang"
     },
     {
       "mfr": "_TZ3000_enmfaave",
@@ -426,19 +462,31 @@
       "mfr": "_TZ3000_xk5udnd6",
       "pid": "TS0012",
       "driverId": "wall_switch_2gang_1way",
-      "note": "P2435 GH#542 — never water_leak_sensor"
+      "note": "P2435/P2463 GH#542 — relay onoff only; P2397 must not invent button.N"
+    },
+    {
+      "mfr": "_TZE200_bcusnqt8",
+      "pid": "TS0601",
+      "driverId": "power_clamp_meter",
+      "note": "P2463 Johan#468 Z2M SPM01 energy monitor — strip from curtain_motor"
     },
     {
       "mfr": "_TZ3000_ptjcjise",
       "pid": "TS0002",
       "driverId": "wall_switch_2gang_1way",
-      "note": "P2456 GH#543"
+      "note": "P2456 GH#543 Moes 2-gang wired → wall_switch_2gang_1way"
     },
     {
       "mfr": "_TZ3000_l9brjwau",
       "pid": "TS0002",
       "driverId": "wall_switch_2gang_1way",
-      "note": "P2455/P2460 GH#544/#546"
+      "note": "P2455/P2460 GH#544/#546 BSEED 2-gang ZCL setOn/setOff — not switch_2gang"
+    },
+    {
+      "mfr": "_TZ3000_ysdv91bk",
+      "pid": "TS0001",
+      "driverId": "wall_switch_1gang_1way",
+      "note": "P2460 GH#545 BSEED 1G Identify+E000/E001 match"
     },
     {
       "mfr": "_TZE284_fhvpaltk",
@@ -466,15 +514,15 @@
     },
     {
       "mfr": "_TZE200_r32ctezx",
-      "productId": "TS0601",
+      "pid": "TS0601",
       "driverId": "fan_controller",
-      "why": "P2385 GitHub#536 Lerlink fan switch"
+      "note": "P2385 GitHub#536 Lerlink fan switch"
     },
     {
       "mfr": "_TZE204_r32ctezx",
-      "productId": "TS0601",
+      "pid": "TS0601",
       "driverId": "fan_controller",
-      "why": "P2385 GitHub#536 Lerlink fan switch"
+      "note": "P2385 GitHub#536 Lerlink fan switch"
     },
     {
       "mfr": "HOBEIAN",
@@ -729,22 +777,82 @@
       "note": "Topic 1 #1379 Smart Air House Keeper"
     },
     {
-      "mfr": "_TZ3000_ysdv91bk",
-      "pid": "TS0001",
-      "driverId": "wall_switch_1gang_1way",
-      "note": "P2460 GH#545"
+      "mfr": "_TZ3000_vdfwjopk",
+      "pid": "TS0219",
+      "driverId": "siren",
+      "note": "P2466 Johan#1455 Cleverio SA100 IAS WD — not handheld_remote"
     },
     {
-      "mfr": "_TZE204_gkfbdvyx",
+      "mfr": "_TZE284_eaet5qt5",
       "pid": "TS0601",
-      "driverId": "presence_sensor_radar",
-      "note": "P2484 GH#547 HiepSVG ZY-M100-24GV3 — compact dropped mfr → Unknown Zigbee"
+      "driverId": "valve_dual_irrigation",
+      "note": "P2468 Insoma SGW08W sibling of fhvpaltk"
     },
     {
-      "mfr": "_TZE200_gkfbdvyx",
+      "mfr": "_TZE200_wt9agwf3",
+      "pid": "TS0601",
+      "driverId": "water_valve_smart",
+      "note": "P2468 FrankEver FK_V02 (Z2M)"
+    },
+    {
+      "mfr": "_TZE200_5uodvhgc",
+      "pid": "TS0601",
+      "driverId": "water_valve_smart",
+      "note": "P2468 FrankEver FK_V02 sibling"
+    },
+    {
+      "mfr": "_TZE200_1n2zev06",
+      "pid": "TS0601",
+      "driverId": "water_valve_smart",
+      "note": "P2468 FrankEver FK_V02 / ZHA#2633"
+    },
+    {
+      "mfr": "_TZE200_nbqnmkee",
+      "pid": "TS0601",
+      "driverId": "water_valve_smart",
+      "note": "P2468 FrankEver FK-BV05 flow meter"
+    },
+    {
+      "mfr": "_TZE200_hewlydpz",
+      "pid": "TS0601",
+      "driverId": "wall_switch_4_gang_tuya",
+      "note": "P2485 Z2M TS0601_switch_4_gang_2 Homeetec; was curtain_motor"
+    },
+    {
+      "mfr": "_TZE204_hewlydpz",
+      "pid": "TS0601",
+      "driverId": "wall_switch_4_gang_tuya",
+      "note": "P2485 Z2M TS0601_4gang_7ytnacie sibling; was sensor_illuminance_presence"
+    },
+    {
+      "mfr": "_TZE204_7ytnacie",
+      "pid": "TS0601",
+      "driverId": "wall_switch_4_gang_tuya",
+      "note": "P2485 Z2M four gang colored backlight; was dimmer_wall_1gang"
+    },
+    {
+      "mfr": "_TZE284_debczeci",
       "pid": "TS0601",
       "driverId": "presence_sensor_radar",
-      "note": "P2484 gkfbdvyx TZE200 sibling (Z2M same fingerprint group)"
+      "note": "P2485 L99 Johan#5493 iHseno presence; sacred-keep"
+    },
+    {
+      "mfr": "_TZE204_dhotiauw",
+      "pid": "TS0601",
+      "driverId": "din_rail_meter",
+      "note": "P2485 forum#2115 dual energy meter sacred-keep"
+    },
+    {
+      "mfr": "_TZE200_crq3r3la",
+      "pid": "TS0601",
+      "driverId": "presence_sensor_radar",
+      "note": "P2485 forum#2032 CK-BL702 presence sacred-keep"
+    },
+    {
+      "mfr": "_TZE204_rkbxtclc",
+      "pid": "TS0601",
+      "driverId": "switch_3gang",
+      "note": "P2485 Z2M TS0601_3gang_rkbxtclc; was dimmer_wall_1gang"
     }
   ]
 }

@@ -45,13 +45,33 @@ Before coding, classify:
 | `STABLE_ONLY` | Stable identity, stable publish workflow, LTS versioning | Never pull into master as identity |
 
 Machine SSOT: [`config/architecture/dual-app-tracks.json`](../../config/architecture/dual-app-tracks.json)  
+Forum failover: [`config/architecture/forum-complementary-failover-ssot.json`](../../config/architecture/forum-complementary-failover-ssot.json)  
 Regular CI: `node tools/ci/l99-dual-app-enrich-gates.js` (BOTH always; MASTER_ONLY skipped on stable track)
+
+### L99 recent (2026-09-14)
+
+| Deliverable | Tag | Why |
+|-------------|-----|-----|
+| P2497 surgical BOTH backport to stable-v5 | **BOTH** | Reliability only; protect `.stable` App ID; no P2487 IR |
+| P2496 identity fields (productId/modelId/pid/productName) | **BOTH** | Pairing vocabulary — crash/wrong route prevention |
+| P2495 publish path + sacred-keep preflight | **BOTH** | Compact drop / tip spam; stable soft CI matrix |
+| P2494 sacred-couple SSOT | **BOTH** | mfs multi-pid NORMAL |
+| P2493 workflow family gates | **BOTH** | Master hard; stable thinner |
+| P2492 Homey button UI charter (physical↔virtual tiles) | **BOTH** | Coherent Homey UX — onoff/Channel vs Button device-view |
+| P2491 AI efficiency / smart-map context compress | **BOTH** | Forfait + GH API burn; slim prompts; thinned crons |
+| P2490 forum complementary failover (icka1clh keep + battery rehydrate + radar staleCaps) | **BOTH** | Compact drop / strip / phantom curtain |
+| P2488 Smartbutton `measure_battery` keep-lock | **BOTH** | Hourly adapter strip → `?` battery |
+| P2487 Intelligent IR UX + Homey Pronto TX | **MASTER_ONLY** | Feature; Zosung TX/RX reliability only if touched |
+| P2484 EF00 init idempotent + gkfbdvyx sacred-keep | **BOTH** | Heap OOM / Unknown Zigbee |
+| P2481 motionsensor foreign preempt | **BOTH** | Homey Pro 2026 serializer crash |
+| Tip #3186 = 9.0.926 healthy; PF #3184/#3187 | **BOTH** | P139 soft-continue — no spam |
 
 ### L99 recent (2026-08-26)
 
 | Deliverable | Tag | Why |
 |-------------|-----|-----|
 | P2286 publish soft-expect + temp-only path | **BOTH** | Orphan Athom builds / P139 race |
+| P2448 rotary command/dimmer + P2449 declared flow wire | **BOTH** | Dead rotate / dead Flow cards |
 | P2287 IAS leftover EF00 skip helper | **BOTH** | Sleepy IAS mesh brick |
 | P2288 sacred-keep compaction pins | **BOTH** | Athom mfr×pid budget must not drop verified couples |
 | P2284 wrapHandleFrame chain | **BOTH** | Never orphan 0xFD / PhysicalButtonMixin |

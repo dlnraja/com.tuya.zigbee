@@ -1,18 +1,117 @@
 'use strict';
 
 /**
- * sacred-couple-pair.js (P2231 / P2232)
+ * sacred-couple-pair.js (P2231 / P2232 / P2496)
  * Shared validation for manufacturerName + productId (never mfr-only, never invent pid).
  * Supports exotic OEM forms: HOBEIAN, ZG-*, SNZB-*, _TZ3218_, _TZE608_, etc.
+ *
+ * P2496 identity map (Homey SDK3):
+ *   productId (compose) === modelId (Zigbee interview) === pid (internal shorthand)
+ *   productName(s) = catalog alias — NEVER a pairing key
  */
 
-const TS_PID_RX = /^TS\d{4}[A-Z0-9]?$/i;
+/** Tuya modelIds: TS0601, TS0041, TS004F, TS011F, TS0505B, TS130F, … */
+const TS_PID_RX = /^TS\d{3,4}[A-Z0-9]?$/i;
 /** Exotic but real Zigbee modelIds seen in interviews / Blakadder / Z2M */
-const EXOTIC_PID_RX = /^(ZG-[\w-]+|SNZB-[\w-]+|RH\d{3,4}[A-Z]?|CS-[\w-]+|SM\w{2,}|FUT\d{3}Z?|HG\d+|SMA\d+\w*)$/i;
+const EXOTIC_PID_RX = /^(ZG-[\w-]+|SNZB-[\w-]+|RH\d{3,4}[A-Z]?|CS-[\w-]+|SM\w{2,}|FUT\d{3}Z?|HG\d+|SMA\d+\w*|3315-S)$/i;
 
 const TUYA_MFR_RX = /^(_TZ[A-Z0-9]{1,5}_[a-zA-Z0-9]+|_TYST1[12]_[a-zA-Z0-9]+|_TYZB[0-9]+_[a-zA-Z0-9]+|TUYATEC[a-zA-Z0-9_-]*)$/i;
 /** Brand-as-mfr exotics (HOBEIAN soil/radar, etc.) */
 const EXOTIC_MFR_RX = /^(HOBEIAN|eWeLink|LUMI|Xiaomi|IKEA|Philips|Third\s*Reality)$/i;
+
+/** Keys that must NEVER be treated as Zigbee productId / pid */
+const CATALOG_ALIAS_KEYS = new Set([
+  'productname',
+  'productnames',
+  'product_name',
+  'devicenames',
+  'whitelabels',
+  'z2mmodels',
+  'z2mmodel',
+  'sku',
+  'retail',
+]);
+
+function isCatalogAliasKey(key) {
+  const k = String(key || '').toLowerCase().replace(/[^a-z0-9]/g, '');
+  return CATALOG_ALIAS_KEYS.has(k);
+}
+
+/**
+ * Pick Homey productId (= Zigbee modelId = internal pid) from heterogeneous objects.
+ * Never returns productName / catalog aliases.
+ */
+function pickProductId(obj) {
+  if (obj == null) return null;
+  if (typeof obj === 'string' || typeof obj === 'number') {
+    const s = String(obj).trim();
+    return s || null;
+  }
+  const candidates = [
+    obj.productId,
+    obj.pid,
+    obj.modelId,
+    obj.modelID,
+    obj.zb_model_id,
+    typeof obj.getSetting === 'function' ? obj.getSetting('zb_model_id') : null,
+    obj.zclNode && obj.zclNode.modelId,
+    obj.node && obj.node.modelId,
+  ];
+  try {
+    const data = typeof obj.getData === 'function' ? obj.getData() : obj.data;
+    if (data) {
+      candidates.push(data.productId, data.modelId, data.pid);
+    }
+  } catch (_e) { /* soft */ }
+  for (const c of candidates) {
+    if (c == null || c === '') continue;
+    if (Array.isArray(c)) {
+      const first = c.map(String).map((s) => s.trim()).find(Boolean);
+      if (first) return first;
+      continue;
+    }
+    const s = String(c).trim();
+    if (s) return s;
+  }
+  return null;
+}
+
+/**
+ * Pick Homey manufacturerName from heterogeneous objects.
+ */
+function pickManufacturerName(obj) {
+  if (obj == null) return null;
+  if (typeof obj === 'string') {
+    const s = obj.trim();
+    return s || null;
+  }
+  const candidates = [
+    obj.manufacturerName,
+    obj.mfr,
+    obj.manufacturer,
+    obj.zb_manufacturer_name,
+    typeof obj.getSetting === 'function' ? obj.getSetting('zb_manufacturer_name') : null,
+    obj.zclNode && obj.zclNode.manufacturerName,
+    obj.node && obj.node.manufacturerName,
+  ];
+  try {
+    const data = typeof obj.getData === 'function' ? obj.getData() : obj.data;
+    if (data) {
+      candidates.push(data.manufacturerName, data.mfr);
+    }
+  } catch (_e) { /* soft */ }
+  for (const c of candidates) {
+    if (c == null || c === '') continue;
+    if (Array.isArray(c)) {
+      const first = c.map(String).map((s) => s.trim()).find(Boolean);
+      if (first) return first;
+      continue;
+    }
+    const s = String(c).trim();
+    if (s) return s;
+  }
+  return null;
+}
 
 function isValidPid(pid) {
   const p = String(pid || '').trim();
@@ -40,16 +139,27 @@ function toClassicOem(mfr) {
 }
 
 /**
- * @returns {{ mfr: string, pid: string, key: string } | null}
+ * @returns {{ mfr: string, pid: string, key: string, productId: string } | null}
  */
 function normalizeSacredCouple(mfr, pid) {
+  // Allow passing a device-like object as first arg
+  if (mfr && typeof mfr === 'object' && pid == null) {
+    const o = mfr;
+    mfr = pickManufacturerName(o);
+    pid = pickProductId(o);
+  }
   if (!mfr || !pid) return null;
   const pidStr = String(pid).trim().replace(/\\u0000/g, '').replace(/\0/g, '');
   if (!isValidPid(pidStr)) return null;
   const classic = toClassicOem(mfr) || String(mfr).trim();
   if (!isValidMfr(classic)) return null;
   const pidNorm = TS_PID_RX.test(pidStr) ? pidStr.toUpperCase() : pidStr;
-  return { mfr: classic, pid: pidNorm, key: `${classic.toUpperCase()}|${pidNorm.toUpperCase()}` };
+  return {
+    mfr: classic,
+    pid: pidNorm,
+    productId: pidNorm,
+    key: `${classic.toUpperCase()}|${pidNorm.toUpperCase()}`,
+  };
 }
 
 function isValidSacredCouple(mfr, pid) {
@@ -97,6 +207,10 @@ module.exports = {
   EXOTIC_PID_RX,
   TUYA_MFR_RX,
   EXOTIC_MFR_RX,
+  CATALOG_ALIAS_KEYS,
+  isCatalogAliasKey,
+  pickProductId,
+  pickManufacturerName,
   isValidPid,
   isValidMfr,
   toClassicOem,
