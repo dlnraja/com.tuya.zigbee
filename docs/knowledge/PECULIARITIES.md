@@ -4,7 +4,7 @@ Generated 2026-09-08T07:29:59.472Z from registry (201 cases) × compound DB (454
 
 ## Live locks (2026-09-14)
 
-- **P2487 / P2487c** Intelligent IR: Zigbee Zosung + WiFi Tuya + **Homey Pro 2023 onboard Pronto TX** (`homey_infrared`, `homey:wireless:ir`). Router `IntelligentIRRouter` + `IRFormatConverter` + `HomeyInfraredTx`; shared wizard (sender pick); `wifi_ir_remote` + `ir_remote` flow parity; learn on Zigbee/WiFi only. MASTER_ONLY UX. Doc `docs/architecture/INTELLIGENT_IR_SSOT.md`. Tip ≥**9.0.921**.
+- **P2487 / P2487c** Intelligent IR: Zigbee Zosung + WiFi Tuya + **Homey Pro 2023 onboard Pronto TX** (`homey_infrared`, `homey:wireless:ir`). Router `IntelligentIRRouter` + `IRFormatConverter` + `HomeyInfraredTx`; shared wizard (sender pick); `wifi_ir_remote` + `ir_remote` flow parity; learn on Zigbee/WiFi only. MASTER_ONLY UX. Doc `docs/architecture/INTELLIGENT_IR_SSOT.md`. Tip ≥**9.0.922**.
 - **P2471** WiFi Easy Login: `authorized-login` (`/v1.0/iot-01/associated-users/actions/authorized-login`) + `TuyaUserLogin` (email/phone + country_code + schema) + auto-region × schema fallback; persist `tuya_cloud_region` / `tuya_cloud_auto_region`. Pair UI SSOT `wifi_generic` → SmartLink QR **first** tab; `npm run sync:wifi-pair`. BOTH (local_key). Tip ≥**9.0.920**.
 - **P2472b** MCU time-sync: EF00 `sendTimeSync` → DP17 commit (ZT08 `hodyryli`); `TuyaMCUManager` attach + 0/5/60s resync; MCU DB locks `fhvpaltk` / `5slehgeo` / `6a4vxfnv`. Doc `docs/architecture/MCU_TIME_SYNC.md`. BOTH.
 - **P2486** Gmail Salvagr `ed0de063` / Wuma `97413373` @ 9.0.908: plusieurs instances `TuyaEF00Manager` OK, mais **un seul launch** (`launchOnce` / peer-skip) — sinon double bind EF00 → MaxListeners / heap OOM. Tip ≥**9.0.918** (Test #3181). BOTH.

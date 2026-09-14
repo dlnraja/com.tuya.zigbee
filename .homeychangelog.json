@@ -1,4 +1,10 @@
 {
+  "9.0.923": {
+    "en": "Fixed Smartbutton battery tile stripped by hourly adapter (Peter a5304ce8). Intelligent IR Homey TX remains on 9.0.922+."
+  },
+  "9.0.922": {
+    "en": "Intelligent IR Homey Pro 2023 Pronto TX + Zigbee/WiFi router UX (P2487c). Users: update Test."
+  },
   "9.0.921": {
     "en": "Intelligent IR: Zigbee + WiFi + Homey Pro 2023 onboard Pronto TX; virtual remote multi-sender flows and setup wizard."
   },
