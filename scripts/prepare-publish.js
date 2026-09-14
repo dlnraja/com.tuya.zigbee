@@ -399,25 +399,25 @@ try {
     const compact = JSON.stringify(raw);
     if (compact.length < fs.statSync(destAppJson).size) {
       fs.writeFileSync(destAppJson, compact);
-      console.log(`Compacted app.json: ${(fs.statSync(destAppJson).size/1024/1024).toFixed(2)} MB (was ${(compact.length > 0 ? 'whitespace' : 'already compact')})`);
+      console.log(`Compacted app.json: ${(fs.statSync(destAppJson).size/1024/1024).toFixed(2)} MB (was whitespace)`);
     }
   } catch (e) {
     console.warn('Warning: could not compact app.json:', e.message);
   }
-  const stats = fs.statSync(destAppJson);
-  const sizeMB = stats.size / (1024 * 1024);
-  console.log(`Target app.json size: ${sizeMB.toFixed(2)} MB`);
-  if (sizeMB > 4) {
-    console.error('FATAL: app.json is larger than 4MB. Athom servers will reject this build.');
-    console.error('Compact driver definitions / fingerprints before publishing.');
-    process.exit(1);
+  {
+    const preMB = fs.statSync(destAppJson).size / (1024 * 1024);
+    console.log(`Target app.json size (pre Zigbee matrix compact): ${preMB.toFixed(2)} MB`);
+    if (preMB > 4) {
+      console.warn('WARN: app.json >4MB before Zigbee identifier compaction — continuing with matrix compact (5a).');
+    }
   }
-  console.log('Success: app.json is under the 4MB Athom limit.');
 
   // 5a) Compact publish-only Zigbee identifier matrices.
   // Athom's build server expands manufacturerName x productId. The source app
   // intentionally carries broad support matrices, but the publish payload must
   // stay small enough for the App Store processor.
+  // WHY(P2485): size gate MUST run AFTER this step — early exit blocked publish when
+  // prettify-stripped JSON was still ~4.00MB but matrix compact would shrink it.
   try {
     const compact = compactManifestFile(destAppJson, {
       maxTotalCombos: Number(process.env.HOMEY_ZIGBEE_MAX_TOTAL_COMBOS) || undefined,
@@ -502,6 +502,22 @@ try {
   } catch (e) {
     console.error('FATAL: Zigbee identifier compaction failed:', e.message);
     process.exit(1);
+  }
+
+  // 5a2) Athom hard limit — AFTER Zigbee matrix compact (whitespace-only can still be ~4.00MB)
+  {
+    try {
+      const raw = JSON.parse(fs.readFileSync(destAppJson));
+      fs.writeFileSync(destAppJson, JSON.stringify(raw));
+    } catch (_) { /* already compact */ }
+    const sizeMB = fs.statSync(destAppJson).size / (1024 * 1024);
+    console.log(`Target app.json size (post Zigbee matrix compact): ${sizeMB.toFixed(2)} MB`);
+    if (sizeMB > 4) {
+      console.error('FATAL: app.json is larger than 4MB after Zigbee compaction. Athom will reject.');
+      console.error('Lower HOMEY_ZIGBEE_MAX_TOTAL_COMBOS / MAX_DRIVER_COMBOS or split broad drivers.');
+      process.exit(1);
+    }
+    console.log('Success: app.json is under the 4MB Athom limit.');
   }
 
   // 5b) Remove publish-only caches that are not required for runtime startup.
