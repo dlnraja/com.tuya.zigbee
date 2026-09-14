@@ -1,6 +1,6 @@
 {
   "name": "com.dlnraja.tuya.zigbee",
-  "version": "9.0.918",
+  "version": "9.0.919",
   "description": "Tuya Unified Zigbee - Local-first control with AI automation",
   "main": "app.js",
   "scripts": {
@@ -336,7 +336,8 @@
     "check:p2483": "node tools/ci/assert-compose-drivers-exist.js && node --test test/critical/p2483-e2e-dashboard-honesty.test.js",
     "check:p2484": "node --test test/critical/p2484-gkfbdvyx-sacred-keep-ef00-oom.test.js",
     "check:p2485": "node --test test/critical/p2485-hewlydpz-4gang-misroute.test.js",
-    "check:p2486": "node --test test/critical/p2486-ef00-manager-no-replace.test.js"
+    "check:p2486": "node --test test/critical/p2486-ef00-manager-no-replace.test.js",
+    "check:p2487": "node --test test/critical/p2487-intelligent-ir-router.test.js"
   },
   "keywords": [
     "homey",

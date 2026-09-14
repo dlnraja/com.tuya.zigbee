@@ -1,433 +1,222 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0"/>
-    <style>
-        :root {
-            --primary: #007aff;
-            --bg: #000;
-            --card-bg: #1c1c1e;
-            --text: #fff;
-            --text-secondary: #8e8e93;
-            --accent: #34c759;
-            --danger: #ff3b30;
-        }
-
-        body { 
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; 
-            margin: 0; 
-            padding: 0; 
-            background: var(--bg); 
-            color: var(--text); 
-            overflow: hidden;
-            height: 100vh;
-        }
-
-        .screen {
-            display: flex;
-            flex-direction: column;
-            height: 100vh;
-            padding: 20px;
-            box-sizing: border-box;
-            transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-            position: absolute;
-            width: 100%;
-            top: 0;
-        }
-
-        .screen.hidden { transform: translateX(100%); }
-        .screen.active { transform: translateX(0); }
-        .screen.prev { transform: translateX(-100%); }
-
-        header { margin-bottom: 30px; text-align: left; }
-        h1 { font-size: 28px; font-weight: 700; margin: 0; }
-        p { color: var(--text-secondary); font-size: 14px; margin-top: 8px; }
-
-        .brand-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 15px;
-            overflow-y: auto;
-            padding-bottom: 40px;
-        }
-
-        .card {
-            background: var(--card-bg);
-            border-radius: 16px;
-            padding: 20px;
-            text-align: center;
-            transition: all 0.2s;
-            border: 1px solid rgba(255,255,255,0.05);
-        }
-
-        .card:active { transform: scale(0.95); background: #2c2c2e; }
-        .card.selected { border-color: var(--primary); background: rgba(0,122,255,0.1); }
-
-        .icon { font-size: 32px; margin-bottom: 10px; display: block; }
-        .card-title { font-size: 16px; font-weight: 600; }
-
-        .search-box {
-            background: #2c2c2e;
-            border-radius: 10px;
-            padding: 12px;
-            margin-bottom: 20px;
-            display: flex;
-            align-items: center;
-        }
-
-        .search-box input {
-            background: transparent;
-            border: none;
-            color: white;
-            font-size: 16px;
-            width: 100%;
-            outline: none;
-        }
-
-        .btn-main {
-            background: var(--primary);
-            color: white;
-            border: none;
-            border-radius: 12px;
-            padding: 18px;
-            font-size: 17px;
-            font-weight: 600;
-            width: 100%;
-            margin-top: auto;
-            box-shadow: 0 4px 15px rgba(0,122,255,0.3);
-        }
-
-        .btn-main:disabled { background: #3a3a3c; color: #8e8e93; box-shadow: none; }
-
-        /* Power Button Animation */
-        .power-ring {
-            width: 120px;
-            height: 120px;
-            border-radius: 50%;
-            background: var(--danger);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 40px auto;
-            position: relative;
-            box-shadow: 0 0 30px rgba(255,59,48,0.4);
-            cursor: pointer;
-            border: none;
-        }
-
-        .power-ring::after {
-            content: '';
-            position: absolute;
-            top: -10px; left: -10px; right: -10px; bottom: -10px;
-            border: 2px solid var(--danger);
-            border-radius: 50%;
-            opacity: 0.5;
-            animation: pulse 2s infinite;
-        }
-
-        @keyframes pulse {
-            0% { transform: scale(1); opacity: 0.5; }
-            100% { transform: scale(1.3); opacity: 0; }
-        }
-
-        .success-overlay {
-            position: fixed;
-            top: 0; left: 0; right: 0; bottom: 0;
-            background: var(--bg);
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            z-index: 100;
-            display: none;
-        }
-
-        .check-icon {
-            width: 80px;
-            height: 80px;
-            background: var(--accent);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 40px;
-            margin-bottom: 20px;
-            animation: bounceIn 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-        }
-
-        @keyframes bounceIn {
-            0% { transform: scale(0); }
-            100% { transform: scale(1); }
-        }
-
-        .brand-list {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-            max-height: 300px;
-            overflow-y: auto;
-        }
-
-        .brand-item {
-            padding: 15px;
-            border-bottom: 1px solid #2c2c2e;
-            font-size: 17px;
-        }
-
-        .brand-item:active { background: #2c2c2e; }
-
-    </style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0"/>
+  <title>IR Setup</title>
+  <style>
+    :root { --primary:#007aff; --bg:#000; --card:#1c1c1e; --text:#fff; --muted:#8e8e93; --ok:#34c759; --bad:#ff3b30; }
+    * { box-sizing: border-box; }
+    body { margin:0; font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif; background:var(--bg); color:var(--text); height:100vh; overflow:hidden; }
+    .screen { position:absolute; inset:0; padding:20px; display:flex; flex-direction:column; transform:translateX(100%); transition:transform .35s ease; }
+    .screen.active { transform:translateX(0); }
+    .screen.prev { transform:translateX(-100%); }
+    h1 { font-size:24px; margin:0 0 6px; }
+    p { color:var(--muted); margin:0 0 16px; font-size:14px; }
+    .grid { display:grid; grid-template-columns:1fr 1fr; gap:12px; overflow:auto; padding-bottom:20px; }
+    .card { background:var(--card); border-radius:14px; padding:16px; text-align:center; border:1px solid rgba(255,255,255,.06); }
+    .card:active { transform:scale(.97); }
+    .card.selected { border-color:var(--primary); background:rgba(0,122,255,.12); }
+    .search { background:#2c2c2e; border-radius:10px; padding:10px 12px; margin-bottom:12px; }
+    .search input, textarea, select { width:100%; background:transparent; border:0; color:#fff; font-size:16px; outline:none; }
+    textarea { min-height:90px; background:#2c2c2e; border-radius:10px; padding:12px; }
+    .brand-list { list-style:none; margin:0; padding:0; overflow:auto; max-height:45vh; }
+    .brand-list li { padding:14px; border-bottom:1px solid #2c2c2e; }
+    .btn { border:0; border-radius:12px; padding:16px; font-size:16px; font-weight:600; width:100%; background:var(--primary); color:#fff; margin-top:10px; }
+    .btn.secondary { background:#3a3a3c; }
+    .btn:disabled { opacity:.5; }
+    .power { width:110px; height:110px; border-radius:50%; border:0; background:var(--bad); color:#fff; font-size:40px; margin:24px auto; display:block; box-shadow:0 0 24px rgba(255,59,48,.35); }
+    .row { display:flex; gap:10px; margin-top:auto; }
+    .hint { font-size:13px; color:var(--muted); text-align:center; }
+  </style>
 </head>
 <body>
-
-<!-- Step 1: Category Selection -->
-<div class="screen active" id="screen-category">
-    <header>
-        <h1>Smart Remote</h1>
-        <p>Choose the type of device to control</p>
-    </header>
-    
-    <div class="brand-grid">
-        <div class="card" onclick="selectCategory('TV', '📺')">
-            <span class="icon">📺</span>
-            <span class="card-title">TV</span>
-        </div>
-        <div class="card" onclick="selectCategory('AC', '❄️')">
-            <span class="icon">❄️</span>
-            <span class="card-title">Airco</span>
-        </div>
-        <div class="card" onclick="selectCategory('Audio', '🔊')">
-            <span class="icon">🔊</span>
-            <span class="card-title">Audio</span>
-        </div>
-        <div class="card" onclick="selectCategory('Fan', '🌀')">
-            <span class="icon">🌀</span>
-            <span class="card-title">Fan</span>
-        </div>
-        <div class="card" onclick="selectCategory('STB', '🔌')">
-            <span class="icon">🔌</span>
-            <span class="card-title">Set-Top Box</span>
-        </div>
-        <div class="card" onclick="selectCategory('Light', '💡')">
-            <span class="icon">💡</span>
-            <span class="card-title">Light</span>
-        </div>
-        <div class="card" style="grid-column: span 2; border-color: var(--accent); background: rgba(52,199,89,0.1);" onclick="startManualLearn()">
-            <span class="icon">🛰️</span>
-            <span class="card-title">Manual Learning</span>
-        </div>
+  <!-- P2487 shared IR wizard: category → brand → test Power → learn / manual paste -->
+  <div class="screen active" id="s-cat">
+    <h1>What do you control?</h1>
+    <p>Toolkit-style setup for Zigbee or WiFi IR blaster</p>
+    <div class="grid">
+      <div class="card" onclick="pickCat('TV')">📺<br>TV</div>
+      <div class="card" onclick="pickCat('AC')">❄️<br>AC</div>
+      <div class="card" onclick="pickCat('Audio')">🔊<br>Audio</div>
+      <div class="card" onclick="pickCat('Fan')">🌀<br>Fan</div>
+      <div class="card" onclick="pickCat('Light')">💡<br>Light</div>
+      <div class="card" onclick="go('s-manual')">⌨️<br>Manual paste</div>
+      <div class="card" style="grid-column:span 2" onclick="go('s-learn')">🛰️<br>Learn named button</div>
     </div>
-</div>
+  </div>
 
-<!-- Step 2: Brand Selection -->
-<div class="screen hidden" id="screen-brand">
-    <header>
-        <h1 id="brand-title">Select Brand</h1>
-        <p>Searching in 2000+ codes database</p>
-    </header>
-    
-    <div class="search-box">
-        <input type="text" id="brand-search" placeholder="Search brand (e.g. Samsung)" oninput="filterBrands()">
+  <div class="screen" id="s-brand">
+    <h1 id="brandTitle">Brand</h1>
+    <p>Offline library — pick then test Power</p>
+    <div class="search"><input id="brandQ" placeholder="Search brand" oninput="renderBrands()"/></div>
+    <ul class="brand-list" id="brandList"></ul>
+    <button class="btn secondary" onclick="go('s-cat')">Back</button>
+  </div>
+
+  <div class="screen" id="s-test">
+    <h1 id="testTitle">Test Power</h1>
+    <p>Point blaster at device, tap Power, then say if it worked</p>
+    <button class="power" onclick="testPower()">⏻</button>
+    <p class="hint" id="variantHint">Variant #1</p>
+    <div class="row">
+      <button class="btn secondary" onclick="nextVariant()">No — next code</button>
+      <button class="btn" onclick="saveOk()">Yes — save</button>
     </div>
-    
-    <ul class="brand-list" id="brand-list">
-        <!-- Dynamic -->
-    </ul>
-    
-    <button class="btn-main" style="margin-top:20px; background: #3a3a3c;" onclick="goBack('screen-category')">Back</button>
-</div>
+    <button class="btn secondary" onclick="go('s-brand')">Back</button>
+  </div>
 
-<!-- Step 3: Testing -->
-<div class="screen hidden" id="screen-test">
-    <header>
-        <h1 id="test-title">Testing Connection</h1>
-        <p>Point the blaster and tap the button</p>
-    </header>
-    
-    <div style="text-align: center; margin-top: 40px;">
-        <button class="power-ring" onclick="testCode()">
-            <span style="font-size: 40px;">⏻</span>
-        </button>
-        <p style="margin-top:20px; font-size: 17px; color: #fff;">Did your device respond?</p>
+  <div class="screen" id="s-learn">
+    <h1>Learn IR</h1>
+    <p>Press same remote button twice to confirm (when supported)</p>
+    <div class="search"><input id="learnName" placeholder="Name (e.g. Power)"/></div>
+    <button class="power" style="background:var(--primary)" onclick="startLearn()">⏺</button>
+    <p class="hint" id="learnStatus">Ready</p>
+    <button class="btn secondary" onclick="go('s-cat')">Back</button>
+  </div>
+
+  <div class="screen" id="s-manual">
+    <h1>Manual paste</h1>
+    <p>Pronto Hex, Broadlink, Global Caché, HEX, or opaque Tuya</p>
+    <div class="search"><input id="manualName" placeholder="Code name"/></div>
+    <select id="manualFmt" style="background:#2c2c2e;color:#fff;border:0;border-radius:10px;padding:12px;margin-bottom:10px;width:100%;">
+      <option value="auto">Auto detect</option>
+      <option value="pronto">Pronto Hex</option>
+      <option value="broadlink">Broadlink</option>
+      <option value="globalcache">Global Caché</option>
+      <option value="hex">HEX timings</option>
+      <option value="tuya_opaque">Tuya opaque</option>
+      <option value="zosung">Zosung base64</option>
+    </select>
+    <textarea id="manualCode" placeholder="Paste IR code here"></textarea>
+    <div class="row">
+      <button class="btn secondary" onclick="storeManual(false)">Store</button>
+      <button class="btn" onclick="storeManual(true)">Store + send</button>
     </div>
-    
-    <div style="margin-top: auto; display: flex; gap: 15px;">
-        <button class="btn-main" style="background: #3a3a3c;" onclick="goBack('screen-brand')">No, Retry</button>
-        <button class="btn-main" onclick="save()">Yes, Works!</button>
-    </div>
-</div>
+    <button class="btn secondary" onclick="go('s-cat')">Back</button>
+  </div>
 
-<!-- Step 4: Manual Learn -->
-<div class="screen hidden" id="screen-learn">
-    <header>
-        <h1>Manual Learning</h1>
-        <p>Record a custom IR command</p>
-    </header>
-    
-    <div class="search-box">
-        <input type="text" id="learn-name" placeholder="Command Name (e.g. Volume Max)">
-    </div>
-
-    <div style="text-align: center; margin-top: 20px;">
-        <div id="learn-status" style="font-size: 18px; margin-bottom: 20px; color: var(--text-secondary);">Ready to record</div>
-        <button class="power-ring" id="learn-btn" onclick="triggerLearn()" style="background: var(--primary); box-shadow: 0 0 30px rgba(0,122,255,0.4);">
-            <span style="font-size: 40px;">⏺</span>
-        </button>
-        <div id="countdown" style="font-size: 32px; font-weight: 700; margin-top: 20px; display: none;">30</div>
-    </div>
-    
-    <button class="btn-main" style="margin-top: auto; background: #3a3a3c;" onclick="goBack('screen-category')">Cancel</button>
-</div>
-
-<!-- Success Overlay -->
-<div class="success-overlay" id="success">
-    <div class="check-icon">✓</div>
-    <h2>Paired Successfully</h2>
-    <p>Your remote is ready to use</p>
-</div>
-
-<script>
-    let selectedCategory = '';
-    let selectedBrand = '';
-    let allBrands = [];
+  <script>
+    let HomeyApi = null;
+    let category = 'TV';
+    let brand = 'Samsung';
+    let brands = ['Samsung','LG','Sony','Panasonic','Philips','Daikin','Xiaomi','TCL','Hisense','Toshiba','Bose','Yamaha','Dyson'];
+    let variant = 1;
+    let senderId = null;
 
     function onHomeyReady(Homey) {
-        window.Homey = Homey;
-        Homey.ready();
-        
-        // Fetch brands from device
-        Homey.emit('get_brands', null, (err, brands) => {
-            if (!err && brands) {
-                allBrands = brands;
-            }
-        });
-    }
-
-    function selectCategory(cat, icon) {
-        selectedCategory = cat;
-        document.getElementById('brand-title').innerText = icon + ' ' + cat + ' Brand';
+      HomeyApi = Homey;
+      Homey.ready();
+      Homey.emit('list_senders', {}, function(err, list) {
+        if (!err && list && list[0]) senderId = list[0].id;
+      });
+      Homey.emit('get_brands', { category: 'TV' }, function(err, list) {
+        if (!err && Array.isArray(list) && list.length) brands = list;
         renderBrands();
-        switchScreen('screen-brand');
-    }
-
-    function renderBrands(filter = '') {
-        const list = document.getElementById('brand-list');
-        list.innerHTML = '';
-        const displayBrands = allBrands.length > 0 ? allBrands : ['Samsung', 'LG', 'Sony', 'Panasonic', 'Philips', 'Daikin', 'Mitsubishi', 'Xiaomi', 'TCL', 'Hisense', 'Toshiba', 'Bose', 'Denon', 'Yamaha', 'Sharp', 'Dyson', 'Vizio', 'JVC', 'Sanyo', 'Haier'];
-        
-        displayBrands.filter(b => b.toLowerCase().includes(filter.toLowerCase())).forEach(b => {
-            const li = document.createElement('li');
-            li.className = 'brand-item';
-            li.innerText = b;
-            li.onclick = () => selectBrand(b);
-            list.appendChild(li);
-        });
-    }
-
-    function filterBrands() {
-        const val = document.getElementById('brand-search').value;
-        renderBrands(val);
-    }
-
-    function selectBrand(brand) {
-        selectedBrand = brand;
-        document.getElementById('test-title').innerText = 'Test ' + brand + ' ' + selectedCategory;
-        switchScreen('screen-test');
-    }
-
-    function startManualLearn() {
-        switchScreen('screen-learn');
-    }
-
-    function triggerLearn() {
-        const name = document.getElementById('learn-name').value.trim();
-        if (!name) {
-            Homey.alert('Please enter a name for the command');
-            return;
+      });
+      Homey.getSettings && Homey.getSettings(function(err, s) {
+        if (!err && s) {
+          if (s.transport_id) senderId = s.transport_id;
+          else if (s.blaster_id) senderId = s.blaster_id;
+          if (s.ir_brand) brand = s.ir_brand;
+          if (s.ir_category) category = s.ir_category;
         }
-
-        const btn = document.getElementById('learn-btn');
-        const status = document.getElementById('learn-status');
-        const countdown = document.getElementById('countdown');
-        
-        btn.disabled = true;
-        status.innerText = 'Waiting for IR signal...';
-        countdown.style.display = 'block';
-        
-        let timeLeft = 30;
-        const timer = setInterval(() => {
-            timeLeft--;
-            countdown.innerText = timeLeft;
-            if (timeLeft <= 0) clearInterval(timer);
-        }, 1000);
-
-        Homey.emit('start_learning', { name: name }, (err) => {
-            if (err) {
-                clearInterval(timer);
-                Homey.alert(err);
-                btn.disabled = false;
-                status.innerText = 'Error: ' + err;
-                countdown.style.display = 'none';
-            }
-        });
-
-        // Listen for learned code from device
-        Homey.on('ir_code_learned', (data) => {
-            clearInterval(timer);
-            status.innerText = 'Code Captured!';
-            countdown.style.display = 'none';
-            
-            Homey.emit('save_learned_code', { name: name, code: data.code }, (err) => {
-                if (!err) {
-                    document.getElementById('success').style.display = 'flex';
-                    setTimeout(() => Homey.done(), 2000);
-                } else {
-                    Homey.alert('Failed to save: ' + err);
-                }
-            });
-        });
+      });
     }
 
-    function testCode() {
-        if (!window.Homey) return;
-        Homey.emit('test_ir_code', {
-            brand: selectedBrand,
-            category: selectedCategory,
-            command: 'Power'
-        }, (err) => {
-            if (err) Homey.alert(err);
-        });
+    function go(id) {
+      document.querySelectorAll('.screen').forEach(function(el) {
+        el.classList.remove('active', 'prev');
+      });
+      document.getElementById(id).classList.add('active');
     }
 
-    function save() {
-        if (!window.Homey) return;
-        document.getElementById('success').style.display = 'flex';
-        Homey.emit('save_ir_config', {
-            brand: selectedBrand,
-            category: selectedCategory
-        }, (err) => {
-            if (err) {
-                document.getElementById('success').style.display = 'none';
-                Homey.alert(err);
-            } else {
-                setTimeout(() => Homey.done(), 2000);
-            }
-        });
+    function pickCat(cat) {
+      category = cat;
+      document.getElementById('brandTitle').textContent = cat + ' brand';
+      HomeyApi && HomeyApi.emit('get_brands', { category: cat }, function(err, list) {
+        if (!err && Array.isArray(list) && list.length) brands = list;
+        renderBrands();
+      });
+      go('s-brand');
     }
 
-    function switchScreen(id) {
-        document.querySelectorAll('.screen').forEach(s => {
-            s.classList.remove('active');
-            s.classList.add('hidden');
-        });
-        document.getElementById(id).classList.remove('hidden');
-        document.getElementById(id).classList.add('active');
+    function renderBrands() {
+      var q = (document.getElementById('brandQ').value || '').toLowerCase();
+      var ul = document.getElementById('brandList');
+      ul.innerHTML = '';
+      brands.filter(function(b) { return !q || String(b).toLowerCase().indexOf(q) >= 0; }).forEach(function(b) {
+        var li = document.createElement('li');
+        li.textContent = b;
+        li.onclick = function() {
+          brand = b;
+          variant = 1;
+          document.getElementById('testTitle').textContent = 'Test ' + brand + ' ' + category;
+          document.getElementById('variantHint').textContent = 'Variant #' + variant;
+          go('s-test');
+        };
+        ul.appendChild(li);
+      });
     }
 
-    function goBack(id) {
-        switchScreen(id);
+    function testPower() {
+      if (!HomeyApi) return;
+      HomeyApi.emit('test_ir_code', {
+        senderId: senderId,
+        brand: brand,
+        category: category,
+        command: 'Power',
+        variant: variant
+      }, function(err) {
+        if (err) HomeyApi.alert(String(err.message || err));
+      });
     }
-</script>
+
+    function nextVariant() {
+      variant += 1;
+      document.getElementById('variantHint').textContent = 'Variant #' + variant + ' — try again';
+      testPower();
+    }
+
+    function saveOk() {
+      if (!HomeyApi) return;
+      HomeyApi.emit('save_ir_config', {
+        ir_brand: brand,
+        ir_category: category,
+        transport_id: senderId,
+        blaster_id: senderId
+      }, function(err) {
+        if (err) return HomeyApi.alert(String(err.message || err));
+        HomeyApi.done && HomeyApi.done();
+        HomeyApi.next && HomeyApi.next('add_devices');
+      });
+    }
+
+    function startLearn() {
+      var name = (document.getElementById('learnName').value || '').trim() || 'Power';
+      document.getElementById('learnStatus').textContent = 'Listening… press remote, then again to confirm';
+      HomeyApi.emit('start_learn', { senderId: senderId, name: name, timeout: 30, confirm: true }, function(err) {
+        if (err) {
+          document.getElementById('learnStatus').textContent = 'Failed';
+          HomeyApi.alert(String(err.message || err));
+        } else {
+          document.getElementById('learnStatus').textContent = 'Learn started for "' + name + '"';
+        }
+      });
+    }
+
+    function storeManual(sendAfter) {
+      HomeyApi.emit('store_manual_ir', {
+        senderId: senderId,
+        name: (document.getElementById('manualName').value || '').trim() || 'manual',
+        code: document.getElementById('manualCode').value || '',
+        format: document.getElementById('manualFmt').value || 'auto',
+        sendAfter: !!sendAfter
+      }, function(err) {
+        if (err) HomeyApi.alert(String(err.message || err));
+        else HomeyApi.alert('Stored' + (sendAfter ? ' and sent' : ''));
+      });
+    }
+  </script>
 </body>
 </html>

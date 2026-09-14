@@ -10,6 +10,8 @@ const ZosungIRTransmitCluster = require('../../lib/clusters/ZosungIRTransmitClus
 const ZosungIRTransmitBoundCluster = require('../../lib/clusters/ZosungIRTransmitBoundCluster');
 const ZosungIRControlBoundCluster = require('../../lib/clusters/ZosungIRControlBoundCluster');
 const irBlasterInit = require('./irBlasterInit');
+const { getRouter } = require('../../lib/ir/IntelligentIRRouter');
+const { makeLearnedEntry, upsertLearnedMap, detectFormat } = require('../../lib/ir/IRFormatConverter');
 
 // IR Blaster cluster IDs
 const ZOSUNG_IR_CONTROL_CLUSTER_ID = 0xE004;    // 57348 - ZosungIRControl
@@ -168,6 +170,8 @@ class IrBlasterDevice extends TuyaZigbeeDevice {
     this._learningState = LEARNING_STATES.IDLE;
     this._protocolAnalysis = {};
     this._deviceCapabilities = null;
+    // P2487: Toolkit-style learn/send via shared router
+    try { this._irRouter = getRouter(this.homey); } catch (_) { this._irRouter = null; }
 
     // Get device info
     await irBlasterInit.init(this);
@@ -493,7 +497,8 @@ class IrBlasterDevice extends TuyaZigbeeDevice {
       if (!this.hasCapability(cap)) { continue; }
       try {
         this.registerCapabilityListener(cap, async () => {
-          const code = (this._learnedCodes || {})[key];
+          const raw = (this._learnedCodes || {})[key];
+          const code = typeof raw === 'string' ? raw : (raw && raw.code) || null;
           if (code) {
             this.log(`[IR] ${cap} → sending learned code "${key}"`);
             await this.sendIRCode(code);
@@ -963,12 +968,29 @@ class IrBlasterDevice extends TuyaZigbeeDevice {
    * Store learned IR code with name (enhanced version)
    */
   async storeLearnedCode(name, code) {
+    // P2487: double-press confirm + shared schema when router available
+    if (this._irRouter && typeof this._irRouter.onLearnedCapture === 'function') {
+      const result = await this._irRouter.onLearnedCapture(this, code, { name });
+      this._learnedCodes = await this._irRouter.getLearnedMap(this);
+      this._codeNames = Object.keys(this._learnedCodes);
+      if (result.needConfirm) {
+        this.log(`[IR-P2487] Confirm learn: press same button again for "${result.name}"`);
+        return;
+      }
+      if (this._pendingLearnOptions) this._pendingLearnOptions = null;
+      this.log(`[IR-P2487] Stored "${result.name}" (${detectFormat(code)})`);
+      return;
+    }
+
     // Use enhanced storage if we have pending options
     if (this._pendingLearnOptions) {
       await this.storeEnhancedLearnedCode(name, code, this._pendingLearnOptions);
       this._pendingLearnOptions = null;
     } else {
       // Legacy storage for backward compatibility
+      const entry = makeLearnedEntry({ name, code, format: detectFormat(code) });
+      this._learnedCodes = upsertLearnedMap(this._learnedCodes, entry);
+      // keep string alias for old callers reading map[name] as string
       this._learnedCodes[name] = code;
       this._codeNames = Object.keys(this._learnedCodes);
 
@@ -1607,8 +1629,10 @@ class IrBlasterDevice extends TuyaZigbeeDevice {
   async sendACCommand(mode, temp, fan = 'auto') {
     const patterns = [`ac_${mode}_${fan}_${temp}`, `${mode}_${fan}_${temp}`];
     for (const p of patterns) {
-      if (this._learnedCodes[p]) {
-        await this.sendIRCode(this._learnedCodes[p]);
+      const raw = this._learnedCodes[p];
+      const code = typeof raw === 'string' ? raw : raw?.code;
+      if (code) {
+        await this.sendIRCode(code);
         return true;
       }
     }
@@ -1638,11 +1662,19 @@ class IrBlasterDevice extends TuyaZigbeeDevice {
 
   /** Alias for CapabilityCommandRouter / flow helpers (D031) */
   async _sendIR(irCode, options = {}) {
-    return this.sendIRCode(irCode, options);
+    const payload = typeof irCode === 'string' ? irCode : (irCode && irCode.code) || irCode;
+    return this.sendIRCode(payload, options);
   }
 
   async sendIR(irCode, options = {}) {
-    return this.sendIRCode(irCode, options);
+    const payload = typeof irCode === 'string' ? irCode : (irCode && irCode.code) || irCode;
+    return this.sendIRCode(payload, options);
+  }
+
+  /** P2487: send via IntelligentIRRouter (library / learned / paste) */
+  async sendViaRouter(opts = {}) {
+    if (!this._irRouter) this._irRouter = getRouter(this.homey);
+    return this._irRouter.send({ device: this, ...opts });
   }
 }
 

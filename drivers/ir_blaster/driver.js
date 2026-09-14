@@ -439,6 +439,15 @@ async onInit() {
     // Devices are discovered by Zigbee
     return [];
   }
+
+  async onRepair(session, device) {
+    const { registerIrWizardHandlers } = require('../../lib/ir/irWizardSession');
+    registerIrWizardHandlers(session, {
+      homey: this.homey,
+      device,
+      log: (...a) => this.log(...a),
+    });
+  }
 }
 
 module.exports = IrBlasterDriver;
