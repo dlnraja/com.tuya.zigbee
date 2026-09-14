@@ -302,8 +302,12 @@
     "check:p2468": "node --test test/critical/p2468-joep-frankever-vichy.test.js",
     "check:p2469": "node --test test/critical/p2469-unit-test-anti-regression-mandate.test.js",
     "check:p2470": "node --test test/critical/p2470-peter-8afffc76-smartbutton-battery.test.js",
+    "check:p2471": "node --test test/critical/p2471-tuya-wifi-user-login.test.js && node tools/ci/sync-wifi-pair-configure.js --check",
+    "check:p2472": "node --test test/critical/p2472a-vichy-compose-no-battery-energy.test.js test/critical/p2472-mcu-time-sync-pipeline.test.js",
     "check:p2472a": "node --test test/critical/p2472a-vichy-compose-no-battery-energy.test.js",
-    "check:p246x": "node --test test/critical/p2467-moes-ef00-initialize.test.js test/critical/p2468-joep-frankever-vichy.test.js test/critical/p2469-unit-test-anti-regression-mandate.test.js test/critical/p2470-peter-8afffc76-smartbutton-battery.test.js test/critical/p2472a-vichy-compose-no-battery-energy.test.js test/critical/p2473-ef00-only-interview-max-fallback.test.js test/critical/p139-wait-athom-draft.test.js test/critical/p2475-ef00-mcu-ensure-tx.test.js test/critical/p2476-wifi-phone-smartlink.test.js test/critical/p2477-vichy-dyncap-mains-battery.test.js test/critical/p2478-moes-mid-position-dp2-only.test.js test/critical/p2479-smart-knob-flows-rkgngb5o.test.js test/critical/p2480-motionsensor-driver-not-initialized.test.js",
+    "check:p2472b": "node --test test/critical/p2472-mcu-time-sync-pipeline.test.js",
+    "sync:wifi-pair": "node tools/ci/sync-wifi-pair-configure.js",
+    "check:p246x": "node --test test/critical/p2467-moes-ef00-initialize.test.js test/critical/p2468-joep-frankever-vichy.test.js test/critical/p2469-unit-test-anti-regression-mandate.test.js test/critical/p2470-peter-8afffc76-smartbutton-battery.test.js test/critical/p2471-tuya-wifi-user-login.test.js test/critical/p2472a-vichy-compose-no-battery-energy.test.js test/critical/p2472-mcu-time-sync-pipeline.test.js test/critical/p2473-ef00-only-interview-max-fallback.test.js test/critical/p139-wait-athom-draft.test.js test/critical/p2475-ef00-mcu-ensure-tx.test.js test/critical/p2476-wifi-phone-smartlink.test.js test/critical/p2477-vichy-dyncap-mains-battery.test.js test/critical/p2478-moes-mid-position-dp2-only.test.js test/critical/p2479-smart-knob-flows-rkgngb5o.test.js test/critical/p2480-motionsensor-driver-not-initialized.test.js",
     "check:lock": "node tools/ci/sync-root-package-version.js assert",
     "harvest:all:apply": "node tools/ci/harvest-all-sources.js --apply",
     "enrich:fleet": "node tools/ci/fleet-intelligent-enrich.js",
@@ -331,7 +335,8 @@
     "check:p2482": "node --test test/critical/p2481-motionsensor-preempt-soft-fail.test.js test/critical/p2482-gkfbdvyx-presence-radar.test.js",
     "check:p2483": "node tools/ci/assert-compose-drivers-exist.js && node --test test/critical/p2483-e2e-dashboard-honesty.test.js",
     "check:p2484": "node --test test/critical/p2484-gkfbdvyx-sacred-keep-ef00-oom.test.js",
-    "check:p2485": "node --test test/critical/p2485-hewlydpz-4gang-misroute.test.js"
+    "check:p2485": "node --test test/critical/p2485-hewlydpz-4gang-misroute.test.js",
+    "check:p2486": "node --test test/critical/p2486-ef00-manager-no-replace.test.js"
   },
   "keywords": [
     "homey",

@@ -12,14 +12,16 @@ Generated: 2026-09-13T21:56:05 · silent enrichment only
 | T140352 | #2203 | 2026-08-27 | wrong driver,flow | — | user-update-repair |
 | T140352 | #2202 | 2026-08-26 | wrong driver,flow | — | user-update-repair |
 
-## Diagnostic lineage
+## Crash lineage (2026-09)
 
-| Log ID | Date | App | Notes |
-|--------|------|-----|-------|
-| `634f7b19` | 2026-08-15 | 5.12.70 | Crash auditCapabilities; SOS dead; smartbutton shown as contact — stable era |
-| `96c19859` | 2026-08-16 | 9.0.537 | Heap OOM LiveData segments — fixed LiveDataUpdater P148 |
-| `1cf775a2` | 2026-08-19 | 9.0.596 | SOS OK after re-pair; water leftover 11 DP; smartbutton HYBRID silent |
-| `0cea6870` | 2026-08-21 | 9.0.617 | Contact pulse IAS; lux DP101; SOS battery spike; water/button dead |
+| Log ID | Tip on device | Root cause | Fix |
+|--------|---------------|------------|-----|
+| `375def7f` | 9.0.895 | HomeySerializer `motionsensor` / foreign driver | **P2481** preempt soft-fail ≥9.0.901 |
+| `8278ec79` | 9.0.908 | EF00 `initialize()` re-entry / multi-manager bind → heap OOM (SOS Fariba in log) | **P2484** + **P2486b** launchOnce ≥**9.0.916** |
+
+User action: update Universal Tuya Test to **≥9.0.916**, restart app. Fresh diag only if still crashing.
+
+
 
 ## Impacted devices (cross-source)
 

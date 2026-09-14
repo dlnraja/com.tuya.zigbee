@@ -26,8 +26,12 @@ assert.strictEqual(intl.kind, 'phone');
 assert.ok(intl.username.includes('33612345678') || intl.username === '33612345678');
 
 const api = fs.readFileSync(path.join(ROOT, 'lib', 'tuya-local', 'TuyaCloudAPI.js'), 'utf8');
-assert.ok(api.includes('normalizeTuyaUsername'), 'P2476: CloudAPI uses normalize');
+assert.ok(api.includes('normalizeTuyaUsername') || api.includes('TuyaUserLogin'), 'P2476: CloudAPI uses normalize via TuyaUserLogin');
+assert.ok(api.includes('authorized-login') || api.includes('iot-03/users/login'), 'P2476: login endpoint present');
 
+const login = fs.readFileSync(path.join(ROOT, 'lib', 'tuya-local', 'TuyaUserLogin.js'), 'utf8');
+assert.ok(login.includes('normalizeTuyaUsername'), 'P2476: TuyaUserLogin wraps normalize');
+assert.ok(login.includes('buildLoginIdentity'), 'P2476: buildLoginIdentity');
 const driver = fs.readFileSync(path.join(ROOT, 'lib', 'tuya-local', 'TuyaLocalDriver.js'), 'utf8');
 assert.ok(driver.includes('countryCode'), 'P2476: pair login passes countryCode');
 assert.ok(driver.includes('data.email || data.username'), 'P2476: username alias');
