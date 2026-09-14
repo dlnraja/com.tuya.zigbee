@@ -518,6 +518,19 @@ try {
       process.exit(1);
     }
     console.log('Success: app.json is under the 4MB Athom limit.');
+
+    // WHY(P2471 publish): publish-size-gate also measures ROOT .homeybuild/app.json.
+    // Homey validate leaves an uncompacted ~4.00MB build copy; sync the compacted
+    // publish manifest so the gate does not fail after a successful compact.
+    try {
+      const buildAppJson = path.join(__dirname, '..', '.homeybuild', 'app.json');
+      if (fs.existsSync(path.dirname(buildAppJson))) {
+        fs.copyFileSync(destAppJson, buildAppJson);
+        console.log(`[P2471] Synced compacted app.json → .homeybuild/app.json (${sizeMB.toFixed(2)} MB)`);
+      }
+    } catch (syncErr) {
+      console.warn('[P2471] Could not sync .homeybuild/app.json:', syncErr.message);
+    }
   }
 
   // 5b) Remove publish-only caches that are not required for runtime startup.
