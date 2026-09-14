@@ -1,0 +1,147 @@
+{
+  "_meta": {
+    "id": "P2496-identity-fields-ssot",
+    "updated": "2026-09-14",
+    "why": "Stop conflating Homey productId, Zigbee modelId, internal pid shorthand, and catalog productName. Pairing identity is always manufacturerName + productId.",
+    "homeyDocs": [
+      "https://apps.developer.homey.app/wireless/zigbee",
+      "https://apps.developer.homey.app/guides/tools/zigbee",
+      "https://apps.developer.homey.app/upgrade-guides/upgrading-to-sdk-v3/upgrading-zigbee"
+    ],
+    "classify": "BOTH",
+    "gates": { "npm": "check:p2496", "family": "check:p249x" }
+  },
+  "pairingIdentity": {
+    "canonical": ["manufacturerName", "productId"],
+    "doctrine": "Sacred couple — Homey matches drivers ONLY on these two compose fields (SDK3)"
+  },
+  "fields": {
+    "manufacturerName": {
+      "layer": "Homey compose + Zigbee Basic cluster",
+      "homeyComposePath": "zigbee.manufacturerName",
+      "settingsKey": "zb_manufacturer_name",
+      "forbidSettings": ["zb_manufacturerName"],
+      "aliasesAcceptedInCode": ["mfr", "manufacturer"],
+      "zigbeeToolsLabel": "Manufacturer",
+      "notes": "Athom Developer Tools Nodes table → Manufacturer column → compose manufacturerName"
+    },
+    "productId": {
+      "layer": "Homey compose (SDK3 pairing key)",
+      "homeyComposePath": "zigbee.productId",
+      "settingsKey": "zb_model_id",
+      "forbidSettings": ["zb_modelId"],
+      "equalsZigbee": "modelId (Basic cluster / interview JSON)",
+      "zigbeeToolsLabel": "Model ID",
+      "homeyDocQuote": "Model ID: This is the productId you should include in your driver's manifest.",
+      "aliasesAcceptedInCode": ["pid", "modelId", "zb_model_id"],
+      "notes": "Homey renamed Zigbee modelId → productId in the app manifest. Same string value."
+    },
+    "modelId": {
+      "layer": "Zigbee ZCL / interview / Z2M / herdsman",
+      "notInCompose": true,
+      "mapsTo": "productId",
+      "notes": "Never invent. Interview modelId MUST be copied into zigbee.productId[]. Z2M uses model / modelID similarly."
+    },
+    "pid": {
+      "layer": "Internal shorthand (this repo / CI / SSOT JSON)",
+      "mapsTo": "productId",
+      "notes": "Convenience alias only. Prefer productId in Homey-facing docs; pid OK in machine JSON (sacred-keep, gates)."
+    },
+    "productName": {
+      "layer": "Catalog / marketing / CSA / Tuya Cloud WiFi",
+      "notPairingKey": true,
+      "plural": "productNames",
+      "siblings": ["deviceNames", "z2mModels", "whiteLabels"],
+      "notes": "Human-readable aliases (e.g. 'SH-SC07', 'ERS-10', brand strings). NEVER use as zigbee.productId for pairing. mfs_db.modelIds stay real Zigbee ids; productNames hold aliases (P2434)."
+    },
+    "product_name": {
+      "layer": "Tuya Cloud / WiFi API (snake_case)",
+      "mapsTo": "productName (catalog)",
+      "notPairingKey": true,
+      "notes": "Cloud WiFi field — not Zigbee productId. Do not write into zb_model_id."
+    }
+  },
+  "crossApp": {
+    "homeySdk3": {
+      "compose": "manufacturerName + productId",
+      "tools": "Manufacturer + Model ID columns",
+      "sdk2Removed": ["deviceId", "profileId"]
+    },
+    "johanBendz": {
+      "same": "driver.compose.json uses manufacturerName + ProductId/productId from interview",
+      "note": "Johan templates instruct: change ProductId from interview Model ID"
+    },
+    "zigbee2mqtt": {
+      "fingerprint": "manufacturerName + modelID (herdsman)",
+      "mapsToHomey": "modelID → productId"
+    },
+    "zha": {
+      "quirk": "manufacturer + model",
+      "mapsToHomey": "model → productId"
+    },
+    "blakadder": {
+      "page": "often shows Model + Manufacturer",
+      "mapsToHomey": "Model → productId"
+    }
+  },
+  "resolutionOrder": {
+    "productId": [
+      "obj.productId",
+      "obj.pid",
+      "obj.modelId",
+      "obj.modelID",
+      "settings zb_model_id",
+      "zclNode.modelId",
+      "getData().productId / modelId"
+    ],
+    "manufacturerName": [
+      "obj.manufacturerName",
+      "obj.mfr",
+      "settings zb_manufacturer_name",
+      "zclNode.manufacturerName",
+      "getData().manufacturerName"
+    ],
+    "neverAsProductId": [
+      "productName",
+      "productNames",
+      "product_name",
+      "deviceNames",
+      "whiteLabels",
+      "z2mModels",
+      "retail SKU alone"
+    ]
+  },
+  "settingsKeys": {
+    "mfr": "zb_manufacturer_name",
+    "pid": "zb_model_id",
+    "whySnake": "Homey settings keys are snake_case; camelCase zb_modelId / zb_manufacturerName are FORBIDDEN bugs"
+  },
+  "workedExamples": [
+    {
+      "interview": { "manufacturerName": "_TZ3000_mrpevh8p", "modelId": "TS0041" },
+      "compose": { "manufacturerName": ["_TZ3000_mrpevh8p"], "productId": ["TS0041"] },
+      "settings": { "zb_manufacturer_name": "_TZ3000_mrpevh8p", "zb_model_id": "TS0041" },
+      "pid": "TS0041",
+      "productName": "SH-SC07 (retail — NOT a productId)"
+    },
+    {
+      "interview": { "manufacturerName": "HOBEIAN", "modelId": "ZG-303Z" },
+      "compose": { "manufacturerName": ["HOBEIAN", "hobeian"], "productId": ["ZG-303Z", "HOBEIAN", "hobeian"] },
+      "note": "P2434: brand may also appear as productId case form for broken interviews; real type via ZG-* pid; productNames hold HOBEIAN aliases"
+    },
+    {
+      "interview": { "manufacturerName": "_TZE284_m1cvyneb", "modelId": "TS0601" },
+      "compose": { "productId": ["TS0601"] },
+      "never": "Do not invent TS0201 from productName/climate SKU"
+    }
+  ],
+  "helpers": {
+    "module": "tools/ci/sacred-couple-pair.js",
+    "exports": [
+      "pickProductId",
+      "pickManufacturerName",
+      "normalizeSacredCouple",
+      "isCatalogAliasKey"
+    ]
+  }
+}

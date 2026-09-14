@@ -10,7 +10,11 @@ Homey pairing and runtime matching for Universal Tuya Zigbee are **couple-based*
 | Field | Homey / Zigbee | Settings key |
 |-------|----------------|--------------|
 | manufacturerName | Zigbee `manufacturerName` | `zb_manufacturer_name` |
-| productId | Zigbee `modelId` | `zb_model_id` |
+| productId | Zigbee `modelId` (Homey tools: **Model ID**) | `zb_model_id` |
+| pid | Internal shorthand = productId | same |
+| productName(s) | Catalog / marketing alias | **not** a settings identity |
+
+See also: [`IDENTITY_FIELDS_SSOT.md`](./IDENTITY_FIELDS_SSOT.md) (P2496).
 
 **mfr alone is ambiguous.** One `mfs_db` entry (one manufacturerName) may list **many** `modelIds` — different gangs, sensors, OEM labels. That is **normal**, not a bug to “clean”.
 

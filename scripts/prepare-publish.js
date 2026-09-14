@@ -301,7 +301,7 @@ function validateSacredKeepPins() {
   }
   let bad = 0;
   for (const c of rows) {
-    const pid = c && (c.pid || c.productId);
+    const pid = c && (c.pid || c.productId || c.modelId);
     if (!c || !c.mfr || !pid || !c.driverId) {
       console.error(`FATAL: sacred-keep row missing mfr/pid/driverId: ${JSON.stringify(c)}`);
       bad++;
