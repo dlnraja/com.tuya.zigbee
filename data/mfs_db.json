@@ -87,9 +87,9 @@
       "realMfrsAdded": 5,
       "details": "tmp/synthetic-resolution.json + tmp/pruned21-resolution.json"
     },
-    "lastAlignedAt": "2026-09-13T06:49:13.027Z",
+    "lastAlignedAt": "2026-09-14T07:01:48.834Z",
     "alignTool": "align-mfs-db-intelligent@P169",
-    "lastSyncedFromCompose": "2026-09-13T06:49:10.566Z",
+    "lastSyncedFromCompose": "2026-09-14T07:01:46.334Z",
     "syncComposeTool": "sync-compose-to-mfs-db@P2368"
   },
   "sources": {
@@ -5438,7 +5438,7 @@
         "hubitat": 1
       },
       "confidence": 0.95,
-      "lastSeen": "2026-09-13T06:49:11.591Z",
+      "lastSeen": "2026-09-14T07:01:47.379Z",
       "driverId": "button_wireless_1",
       "deviceNames": [
         "RSH-SC021",
@@ -16334,7 +16334,7 @@
         "z2m": 1
       },
       "confidence": 0.95,
-      "lastSeen": "2026-09-13T06:49:11.284Z",
+      "lastSeen": "2026-09-14T07:01:47.063Z",
       "driverId": "air_quality_co2",
       "deviceNames": [
         "NDIR CO2 sensor",
@@ -17145,7 +17145,7 @@
         "z2m": 1
       },
       "confidence": 0.95,
-      "lastSeen": "2026-09-13T06:49:11.520Z",
+      "lastSeen": "2026-09-14T07:01:47.313Z",
       "driverId": "curtain_motor",
       "deviceNames": [
         "TS0601_cover",
@@ -17867,7 +17867,7 @@
         "z2m": 1
       },
       "confidence": 0.95,
-      "lastSeen": "2026-09-13T06:49:11.504Z",
+      "lastSeen": "2026-09-14T07:01:47.297Z",
       "driverId": "curtain_motor",
       "deviceNames": [
         "TS0601_cover",
@@ -19895,7 +19895,7 @@
         "z2m": 1
       },
       "confidence": 0.95,
-      "lastSeen": "2026-09-13T06:49:11.229Z",
+      "lastSeen": "2026-09-14T07:01:47.008Z",
       "driverId": "air_quality_co2",
       "deviceNames": [
         "DCR-LCD",
@@ -20657,7 +20657,7 @@
         "z2m": 1
       },
       "confidence": 0.95,
-      "lastSeen": "2026-09-13T06:49:11.538Z",
+      "lastSeen": "2026-09-14T07:01:47.330Z",
       "driverId": "curtain_motor",
       "deviceNames": [
         "TS0601_cover",
@@ -22945,7 +22945,7 @@
         "z2m": 1
       },
       "confidence": 0.95,
-      "lastSeen": "2026-09-13T06:49:11.301Z",
+      "lastSeen": "2026-09-14T07:01:47.081Z",
       "driverId": "air_quality_co2",
       "deviceNames": [
         "NDIR CO2 sensor",
@@ -24026,7 +24026,7 @@
         "z2m": 1
       },
       "confidence": 0.95,
-      "lastSeen": "2026-09-13T06:49:11.555Z",
+      "lastSeen": "2026-09-14T07:01:47.346Z",
       "driverId": "curtain_motor",
       "deviceNames": [
         "TS0601_cover",
@@ -24992,7 +24992,7 @@
         "z2m": 1
       },
       "confidence": 0.95,
-      "lastSeen": "2026-09-13T06:49:11.257Z",
+      "lastSeen": "2026-09-14T07:01:47.036Z",
       "driverId": "air_quality_co2",
       "deviceNames": [
         "DCR-LCD",
@@ -48764,7 +48764,7 @@
         "z2m": 1
       },
       "confidence": 0.95,
-      "lastSeen": "2026-09-13T06:49:11.469Z",
+      "lastSeen": "2026-09-14T07:01:47.263Z",
       "driverId": "curtain_motor",
       "deviceNames": [
         "TS0601_cover",
@@ -100902,7 +100902,7 @@
         "z2m": 1
       },
       "confidence": 0.95,
-      "lastSeen": "2026-09-13T06:49:11.572Z",
+      "lastSeen": "2026-09-14T07:01:47.363Z",
       "driverId": "wall_thermostat",
       "source": "p2234b-couple-refine",
       "pid": "TS0601",
@@ -111653,7 +111653,7 @@
         "z2m": 1
       },
       "confidence": 0.95,
-      "lastSeen": "2026-09-13T06:49:11.326Z",
+      "lastSeen": "2026-09-14T07:01:47.106Z",
       "driverId": "curtain_motor",
       "deviceNames": [
         "Zemismart curtain motor",
@@ -111711,7 +111711,7 @@
         "z2m": 1
       },
       "confidence": 0.95,
-      "lastSeen": "2026-09-13T06:49:11.419Z",
+      "lastSeen": "2026-09-14T07:01:47.209Z",
       "driverId": "curtain_motor",
       "deviceNames": [
         "TS0601_cover",
@@ -111763,7 +111763,7 @@
         "z2m": 1
       },
       "confidence": 0.95,
-      "lastSeen": "2026-09-13T06:49:11.383Z",
+      "lastSeen": "2026-09-14T07:01:47.168Z",
       "driverId": "curtain_motor",
       "deviceNames": [
         "Zemismart dual curtain",
@@ -111816,7 +111816,7 @@
         "z2m": 1
       },
       "confidence": 0.95,
-      "lastSeen": "2026-09-13T06:49:11.453Z",
+      "lastSeen": "2026-09-14T07:01:47.243Z",
       "driverId": "curtain_motor",
       "deviceNames": [
         "TS0601_cover",
@@ -111868,7 +111868,7 @@
         "z2m": 1
       },
       "confidence": 0.95,
-      "lastSeen": "2026-09-13T06:49:11.363Z",
+      "lastSeen": "2026-09-14T07:01:47.145Z",
       "driverId": "curtain_motor",
       "deviceNames": [
         "Zemismart curtain motor",
@@ -113054,7 +113054,7 @@
         "z2m": 1
       },
       "confidence": 0.95,
-      "lastSeen": "2026-09-13T06:49:11.486Z",
+      "lastSeen": "2026-09-14T07:01:47.281Z",
       "driverId": "curtain_motor",
       "deviceNames": [
         "TS0601_cover",
@@ -113104,7 +113104,7 @@
         "local": 1
       },
       "confidence": 0.95,
-      "lastSeen": "2026-09-13T06:49:11.437Z",
+      "lastSeen": "2026-09-14T07:01:47.227Z",
       "driverId": "curtain_motor",
       "deviceNames": [
         "TS0601_cover",
@@ -113154,7 +113154,7 @@
         "local": 1
       },
       "confidence": 0.95,
-      "lastSeen": "2026-09-13T06:49:11.342Z",
+      "lastSeen": "2026-09-14T07:01:47.123Z",
       "driverId": "curtain_motor",
       "deviceNames": [
         "Zemismart curtain motor",
@@ -128820,12 +128820,12 @@
     "lastSacredCoupleEnrichment": "2026-07-13T23:57:58.590Z",
     "fingerprints": 5710,
     "lastUpdate": "2026-07-14",
-    "lastUpdated": "2026-09-13T10:10:02.846Z",
+    "lastUpdated": "2026-09-14T04:45:38.961Z",
     "totalModelIds": 62784,
     "multiPidMfrs": 3299,
     "variantMfrs": 82,
     "lastMfsMultiUpdate": "2026-07-23T21:38:43.390Z",
-    "lastP2295Enrichment": "2026-09-13T06:49:11.616Z",
+    "lastP2295Enrichment": "2026-09-14T07:01:47.395Z",
     "p2295Note": "modelIds=real Zigbee pids; deviceNames/z2mModels/whiteLabels/productNames=aliases; multiCouple brands use byPid"
   },
   "diff": {
@@ -193442,28 +193442,22 @@
     "modelIdsCount": 1
   },
   "_TZE204_rkbxtclc": {
-    "driverId": "dimmer_wall_1gang",
-    "source": "auto-sync|adjudicated-z2m-arbiter",
+    "driverId": "switch_3gang",
+    "source": "registry:p2485-rkbxtclc-3gang",
     "modelIds": [
-      "TS0203",
-      "TS0601",
-      "TS0601_generic",
-      "TS0603"
+      "TS0601"
     ],
-    "pid": "TS0203",
-    "modelIdsCount": 4
+    "pid": "TS0601",
+    "modelIdsCount": 1
   },
   "_TZE204_7ytnacie": {
-    "driverId": "dimmer_wall_1gang",
-    "source": "auto-sync|adjudicated-z2m-arbiter",
+    "driverId": "wall_switch_4_gang_tuya",
+    "source": "registry:p2485-hewlydpz-7ytnacie-4gang",
     "modelIds": [
-      "TS0203",
-      "TS0601",
-      "TS0601_generic",
-      "TS0603"
+      "TS0601"
     ],
-    "pid": "TS0203",
-    "modelIdsCount": 4
+    "pid": "TS0601",
+    "modelIdsCount": 1
   },
   "_TZE200_dhke3p9w": {
     "driverId": "climate_sensor",
@@ -215719,20 +215713,13 @@
     "modelIdsCount": 1
   },
   "_TZE204_hewlydpz": {
-    "driverId": "sensor_illuminance_presence",
-    "source": "auto-sync",
+    "driverId": "wall_switch_4_gang_tuya",
+    "source": "registry:p2485-hewlydpz-7ytnacie-4gang",
     "modelIds": [
-      "CK-BL702-MWS-01(7016)",
-      "TS0004",
-      "TS0222",
-      "TS0225",
-      "TS0601",
-      "TS110E",
-      "ZG-106Z",
-      "ZP-301Z"
+      "TS0601"
     ],
-    "pid": "CK-BL702-MWS-01(7016)",
-    "modelIdsCount": 8
+    "pid": "TS0601",
+    "modelIdsCount": 1
   },
   "_TZE200_ef5m00u2": {
     "driverId": "sensor_illuminance_presence",
@@ -229548,60 +229535,13 @@
     "modelIdsCount": 37
   },
   "_TZE200_HEWLYDPZ": {
-    "driverId": "curtain_motor",
-    "source": "compose-exclusive",
+    "driverId": "wall_switch_4_gang_tuya",
+    "source": "registry:p2485-hewlydpz-7ytnacie-4gang",
     "modelIds": [
-      "01MINIZB",
-      "AM02",
-      "AM43-0.45/40-ES-EB",
-      "AM43-0.45/40-ES-EZ",
-      "BASICZBR3",
-      "DS421",
-      "DS82",
-      "E1757",
-      "FYRTUR",
-      "KADRILJ",
-      "LUMI.CURTAIN",
-      "LUMI.CURTAIN.ACN002",
-      "LUMI.CURTAIN.HAGL04",
-      "S26R2ZB",
-      "S31ZB",
-      "TS0001",
-      "TS0001_POWER",
-      "TS0001_SWITCH",
-      "TS0001_SWITCH_MODULE",
-      "TS000F",
-      "TS0011",
-      "TS0012",
-      "TS0014",
-      "TS0101",
-      "TS0111",
-      "TS011F",
-      "TS0301",
-      "TS0302",
-      "TS030F",
-      "TS0601",
-      "TS0601_GENERIC",
-      "TS0603",
-      "TS0726",
-      "TS110E",
-      "TS130F",
-      "TS4100",
-      "ZBCURTAIN",
-      "ZBM5-1C-120",
-      "ZBM5-2C-120",
-      "ZBM5-3C-120",
-      "ZBMINI",
-      "ZBMINIL2",
-      "ZBMINIL2-R2",
-      "ZBMINIR",
-      "ZBMINIR2",
-      "ZBMINIR2-R2",
-      "ZG-301Z",
-      "ZG-302Z1"
+      "TS0601"
     ],
-    "pid": "01MINIZB",
-    "modelIdsCount": 48
+    "pid": "TS0601",
+    "modelIdsCount": 1
   },
   "_TZE200_HTJ3HCPL": {
     "driverId": "switch_1gang",
@@ -240902,7 +240842,7 @@
     "powerSource": "mains",
     "deviceType": "thermostat",
     "coupleLock": true,
-    "updatedAt": "2026-09-13",
+    "updatedAt": "2026-09-14",
     "lastEnrichment": "p2295-multi-identity"
   },
   "_TZE200_6kijc7nd": {
@@ -245659,7 +245599,7 @@
     "powerSource": "mains",
     "deviceType": "curtain",
     "coupleLock": true,
-    "updatedAt": "2026-09-13",
+    "updatedAt": "2026-09-14",
     "lastEnrichment": "p2295-multi-identity"
   },
   "_TZE200_pw7mji0l": {
@@ -245708,7 +245648,7 @@
     "powerSource": "mains",
     "deviceType": "curtain",
     "coupleLock": true,
-    "updatedAt": "2026-09-13",
+    "updatedAt": "2026-09-14",
     "lastEnrichment": "p2295-multi-identity"
   },
   "_TZE200_cf1sl3tj": {
@@ -245748,7 +245688,7 @@
     "powerSource": "mains",
     "deviceType": "curtain",
     "coupleLock": true,
-    "updatedAt": "2026-09-13",
+    "updatedAt": "2026-09-14",
     "lastEnrichment": "p2295-multi-identity"
   },
   "_TZE200_nw1r9hp6": {
@@ -245797,7 +245737,7 @@
     "powerSource": "mains",
     "deviceType": "curtain",
     "coupleLock": true,
-    "updatedAt": "2026-09-13",
+    "updatedAt": "2026-09-14",
     "lastEnrichment": "p2295-multi-identity"
   },
   "_TZE200_68nvbi09": {
@@ -245835,7 +245775,7 @@
     "powerSource": "mains",
     "deviceType": "curtain",
     "coupleLock": true,
-    "updatedAt": "2026-09-13",
+    "updatedAt": "2026-09-14",
     "lastEnrichment": "p2295-multi-identity"
   },
   "_TZE200_e9ba97vf": {
@@ -246272,7 +246212,7 @@
     "powerSource": "mains",
     "deviceType": "curtain",
     "coupleLock": true,
-    "updatedAt": "2026-09-13",
+    "updatedAt": "2026-09-14",
     "lastEnrichment": "p2295-multi-identity"
   },
   "_TZE204_pw7mji0l": {
@@ -246321,7 +246261,7 @@
     "powerSource": "mains",
     "deviceType": "curtain",
     "coupleLock": true,
-    "updatedAt": "2026-09-13",
+    "updatedAt": "2026-09-14",
     "lastEnrichment": "p2295-multi-identity"
   },
   "_tze200_lzriup1j": {
@@ -358175,7 +358115,7 @@
     "powerSource": "mains",
     "deviceType": "air_quality",
     "coupleLock": true,
-    "updatedAt": "2026-09-13",
+    "updatedAt": "2026-09-14",
     "lastEnrichment": "p2295-multi-identity"
   },
   "_TZE204_ogkdpgy2": {
@@ -358226,7 +358166,7 @@
     "powerSource": "mains",
     "deviceType": "air_quality",
     "coupleLock": true,
-    "updatedAt": "2026-09-13",
+    "updatedAt": "2026-09-14",
     "lastEnrichment": "p2295-multi-identity"
   },
   "_TZE200_3ejwxpmu": {
@@ -358266,7 +358206,7 @@
     "powerSource": "mains",
     "deviceType": "air_quality",
     "coupleLock": true,
-    "updatedAt": "2026-09-13",
+    "updatedAt": "2026-09-14",
     "lastEnrichment": "p2295-multi-identity"
   },
   "_TZE204_3ejwxpmu": {
@@ -358306,7 +358246,7 @@
     "powerSource": "mains",
     "deviceType": "air_quality",
     "coupleLock": true,
-    "updatedAt": "2026-09-13",
+    "updatedAt": "2026-09-14",
     "lastEnrichment": "p2295-multi-identity"
   },
   "_TZE204_68nvbio9": {
@@ -358352,7 +358292,7 @@
     "powerSource": "mains",
     "deviceType": "curtain",
     "coupleLock": true,
-    "updatedAt": "2026-09-13",
+    "updatedAt": "2026-09-14",
     "lastEnrichment": "p2295-multi-identity"
   },
   "_TZE200_9p5xmj5r": {
@@ -358401,7 +358341,7 @@
     "powerSource": "mains",
     "deviceType": "curtain",
     "coupleLock": true,
-    "updatedAt": "2026-09-13",
+    "updatedAt": "2026-09-14",
     "lastEnrichment": "p2295-multi-identity"
   },
   "_TZE200_eevqq1uv": {
@@ -358450,7 +358390,7 @@
     "powerSource": "mains",
     "deviceType": "curtain",
     "coupleLock": true,
-    "updatedAt": "2026-09-13",
+    "updatedAt": "2026-09-14",
     "lastEnrichment": "p2295-multi-identity"
   },
   "_TZE200_ba69l9ol": {
@@ -358499,7 +358439,7 @@
     "powerSource": "mains",
     "deviceType": "curtain",
     "coupleLock": true,
-    "updatedAt": "2026-09-13",
+    "updatedAt": "2026-09-14",
     "lastEnrichment": "p2295-multi-identity"
   },
   "_TZE200_sfqyhvpv": {
@@ -358548,7 +358488,7 @@
     "powerSource": "mains",
     "deviceType": "curtain",
     "coupleLock": true,
-    "updatedAt": "2026-09-13",
+    "updatedAt": "2026-09-14",
     "lastEnrichment": "p2295-multi-identity"
   },
   "_TZE204_ejh6owwz": {
@@ -358597,7 +358537,7 @@
     "powerSource": "mains",
     "deviceType": "curtain",
     "coupleLock": true,
-    "updatedAt": "2026-09-13",
+    "updatedAt": "2026-09-14",
     "lastEnrichment": "p2295-multi-identity"
   },
   "_TZ3000_mrpevh8p": {
@@ -358638,7 +358578,7 @@
     "powerSource": "battery",
     "deviceType": "button",
     "coupleLock": true,
-    "updatedAt": "2026-09-13",
+    "updatedAt": "2026-09-14",
     "lastEnrichment": "p2295-multi-identity"
   },
   "_TZE284_60cnqlhn": {
