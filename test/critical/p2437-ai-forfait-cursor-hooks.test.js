@@ -31,11 +31,13 @@ const {
 } = require('../mocks/cursor-ai-forfait');
 
 describe('P2437 — forfait SSOT (live config)', () => {
-  it('global cap is 120 and soft-stop 70', () => {
+  it('global cap is 80 and soft-stop 60 (P2491 tighter forfait)', () => {
     const cfg = loadLiveForfaitCfg();
-    assert.strictEqual(String(cfg.defaults.AI_GLOBAL_DAILY_CAP), '120');
-    assert.strictEqual(String(cfg.defaults.AI_SOFT_STOP_PERCENT), '70');
+    assert.strictEqual(String(cfg.defaults.AI_GLOBAL_DAILY_CAP), '80');
+    assert.strictEqual(String(cfg.defaults.AI_SOFT_STOP_PERCENT), '60');
     assert.strictEqual(cfg.defaults.AI_ALLOW_PAID, 'false');
+    assert.strictEqual(cfg.defaults.AI_FORCE_LOCAL, 'true');
+    assert.strictEqual(cfg.defaults.AI_ALLOW_REMOTE, 'false');
   });
 
   it('grok and cursor-cloud caps are 0 and blocked unless paid', () => {
@@ -172,12 +174,12 @@ describe('P2437 — forbiddenModel helper', () => {
 });
 
 describe('P2437 — ai-plan-guard buildReport', () => {
-  it('reports globalCap 120 from forfait defaults', () => {
+  it('reports globalCap 80 from forfait defaults (P2491)', () => {
     const prev = process.env.AI_GLOBAL_DAILY_CAP;
     delete process.env.AI_GLOBAL_DAILY_CAP;
     try {
       const report = buildReport();
-      assert.strictEqual(report.globalCap, 120);
+      assert.strictEqual(report.globalCap, 80);
       assert.strictEqual(report.mode, 'forfait');
       assert.strictEqual(report.allowPaid, false);
       const grok = report.providers.find((p) => p.name === 'grok');
@@ -221,10 +223,11 @@ describe('P2437 — workflow env caps aligned (no regression)', () => {
     'project-resilience.yml',
   ];
   for (const f of files) {
-    it(`${f} uses AI_GLOBAL_DAILY_CAP 120`, () => {
+    it(`${f} uses AI_GLOBAL_DAILY_CAP 80 (P2491)`, () => {
       const body = fs.readFileSync(path.join(ROOT, '.github', 'workflows', f), 'utf8');
-      assert.ok(/AI_GLOBAL_DAILY_CAP:\s*['"]?120['"]?/.test(body), f);
+      assert.ok(/AI_GLOBAL_DAILY_CAP:\s*['"]?80['"]?/.test(body), f);
       assert.ok(!/AI_GLOBAL_DAILY_CAP:\s*['"]?400['"]?/.test(body), f);
+      assert.ok(/AI_SOFT_STOP_PERCENT:\s*['"]?60['"]?/.test(body), f);
     });
   }
 });

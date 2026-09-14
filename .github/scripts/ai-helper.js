@@ -48,6 +48,13 @@ function classifyTask(t,s,o){
 // cache, so caps hold across runs of the same day.
 let _BUDGETS=null;
 let _FORFAIT=null;
+let _COMPRESS=null;
+function _compress(){
+  if(_COMPRESS!==null)return _COMPRESS;
+  try{_COMPRESS=require('../../tools/ci/ai-context-compress');}
+  catch{_COMPRESS=false;}
+  return _COMPRESS||null;
+}
 function _forfait(){
   if(_FORFAIT)return _FORFAIT;
   try{_FORFAIT=require('../../config/security/ai-plan-forfait.json')}catch{_FORFAIT={}}
@@ -139,28 +146,30 @@ async function callAIEngine(url, headers, body, providerName, maxRetries = 1, ti
 }
 
 /**
- * WHY(P2438): central soft-kill for remote AI — prefer local heuristics / KB.
+ * WHY(P2438/P2491): central soft-kill for remote AI — prefer local heuristics / KB.
  * Contre quoi: Grok/Task/CI bots exhausting forfait before Homey work finishes.
+ * Default: remote OFF unless AI_ALLOW_REMOTE=true (or opts.forceAI).
  */
 function shouldSkipAI(opts={}){
   if(opts.forceAI===true)return false;
-  if(/^(1|true|yes)$/i.test(String(process.env.AI_FORCE_LOCAL||'')))return true;
-  if(String(process.env.GMAIL_DIAG_AI_MAX||'0')==='0'&&/^(1|true|yes)$/i.test(String(process.env.AI_SKIP_WHEN_DIAG_MAX0||'true'))){
-    // only hard-skip when explicitly in diag/bot pipelines that set AI_FORCE_LOCAL or SKIP_AI
+  const c=_compress();
+  if(c&&typeof c.remoteAiAllowed==='function'){
+    if(!c.remoteAiAllowed(opts))return true;
+  }else{
+    // Fallback if compress lib missing: force-local default
+    if(!/^(1|true|yes)$/i.test(String(process.env.AI_ALLOW_REMOTE||''))){
+      if(/^(1|true|yes)$/i.test(String(process.env.AI_FORCE_LOCAL||'true')))return true;
+    }
   }
   if(/^(1|true|yes)$/i.test(String(process.env.SKIP_AI||process.env.AI_SKIP||'')))return true;
-  const f=_forfait();
-  if(f.defaults?.preferLocalHeuristics===true&&/^(1|true|yes)$/i.test(String(process.env.AI_PREFER_LOCAL||'true'))){
-    // soft prefer: still allow unless soft/hard stop
-  }
   _rtLoad();
-  const globalCap=parseInt(process.env.AI_GLOBAL_DAILY_CAP||f.defaults?.AI_GLOBAL_DAILY_CAP||'120',10);
-  const softPct=parseInt(process.env.AI_SOFT_STOP_PERCENT||f.defaults?.AI_SOFT_STOP_PERCENT||'70',10);
+  const f=_forfait();
+  const globalCap=parseInt(process.env.AI_GLOBAL_DAILY_CAP||f.defaults?.AI_GLOBAL_DAILY_CAP||'80',10);
+  const softPct=parseInt(process.env.AI_SOFT_STOP_PERCENT||f.defaults?.AI_SOFT_STOP_PERCENT||'60',10);
   const total=Object.values(_rt.d||{}).reduce((a,c)=>a+Number(c||0),0);
   if(globalCap>0&&total>=globalCap)return true;
   if(softPct>0&&globalCap>0&&total>=Math.floor(globalCap*softPct/100))return true;
   if(process.env.AI_ALLOW_PAID!=='true'&&(f.mode==='forfait'||_planMode()==='forfait')){
-    // Cap remaining providers: if every free provider is blocked, skip cascade
     const caps=f.includedDailyCaps||{};
     const blocked=new Set(f.blockedUnlessPaidFlag||[]);
     let any=false;
@@ -178,17 +187,23 @@ async function callAI(text,sysPrompt,opts={}){
     console.log('  [ai-helper] SKIP remote AI (forfait / AI_FORCE_LOCAL / soft-stop) — use local heuristics');
     return null;
   }
-  const maxTokens=opts.maxTokens||2048;
+  const c=_compress();
+  const maxTokens=opts.maxTokens||(c&&c.defaultMaxTokens?c.defaultMaxTokens():800);
   const tk = classifyTask(text, sysPrompt, opts);
+  const userText=c&&c.compressUserText?c.compressUserText(text,{force:true}):String(text||'').slice(0,6000);
+  const fullSysPrompt=c&&c.buildSlimSystemPrompt
+    ? c.buildSlimSystemPrompt(PROJECT_RULES,{
+        architecture:ARCHITECTURE_SUMMARY,
+        loadedRules:LOADED_RULES,
+        fullContext:/^(1|true|yes)$/i.test(String(process.env.AI_FULL_CONTEXT||'')),
+      })+'\n\n'+(sysPrompt||'')
+    : PROJECT_RULES+'\n\n'+(sysPrompt||'');
   
   // Intelligent Waiter: Global retry loop for the entire API cascade
   let globalAttempts = 0;
-  const maxGlobalAttempts = opts.maxGlobalAttempts || 3;
+  const maxGlobalAttempts = opts.maxGlobalAttempts || 2;
   
   while(globalAttempts < maxGlobalAttempts) {
-    const archContext=ARCHITECTURE_SUMMARY?'\n\n---\n'+ARCHITECTURE_SUMMARY:'';
-  const rulesContext=LOADED_RULES?'\n\n---\n'+LOADED_RULES:'';
-  const fullSysPrompt=PROJECT_RULES+archContext+rulesContext+'\n\n'+sysPrompt;
   
   _rtLoad();
   
@@ -196,19 +211,22 @@ async function callAI(text,sysPrompt,opts={}){
   if (process.env.OPENROUTER_API_KEY && cbOk('openrouter')) {
     console.log('  Trying OpenRouter...');
     let orModel = 'google/gemini-2.0-flash-lite-preview-02-05:free'; // Safe fallback
-    try {
-      const mr = await fetchT('https://openrouter.ai/api/v1/models', {}, 3000);
-      if (mr.ok) {
-        const d = await mr.json();
-        const frees = d.data.filter(m => m.pricing && m.pricing.prompt === "0" && m.id.endsWith(':free'));
-        if (frees.length > 0) orModel = frees[0].id; // Pick first available free model
-      }
-    } catch(e) {}
+    // WHY(P2491): model-list fetch = extra HTTP request every call — off by default
+    if (/^(1|true|yes)$/i.test(String(process.env.AI_OPENROUTER_MODEL_LIST || ''))) {
+      try {
+        const mr = await fetchT('https://openrouter.ai/api/v1/models', {}, 3000);
+        if (mr.ok) {
+          const d = await mr.json();
+          const frees = d.data.filter(m => m.pricing && m.pricing.prompt === "0" && m.id.endsWith(':free'));
+          if (frees.length > 0) orModel = frees[0].id;
+        }
+      } catch(e) {}
+    }
     
     const res = await callAIEngine(
       'https://openrouter.ai/api/v1/chat/completions',
       {'Authorization': 'Bearer ' + process.env.OPENROUTER_API_KEY, 'Content-Type': 'application/json'},
-      {model:orModel, messages:[{role:'system',content:fullSysPrompt},{role:'user',content:text}], max_tokens:maxTokens, temperature:0.2},
+      {model:orModel, messages:[{role:'system',content:fullSysPrompt},{role:'user',content:userText}], max_tokens:maxTokens, temperature:0.2},
       'openrouter'
     );
     if (res) return res;
@@ -224,7 +242,7 @@ async function callAI(text,sysPrompt,opts={}){
     const res = await callAIEngine(
       'https://router.huggingface.co/v1/chat/completions',
       {'Authorization': 'Bearer ' + process.env.HF_TOKEN, 'Content-Type': 'application/json'},
-      {model:hfM, messages:[{role:'system',content:fullSysPrompt},{role:'user',content:text}], max_tokens:maxTokens, temperature:0.2},
+      {model:hfM, messages:[{role:'system',content:fullSysPrompt},{role:'user',content:userText}], max_tokens:maxTokens, temperature:0.2},
       `hf-${hfM.split('/').pop()}`
     );
     if (res) return res;
@@ -236,7 +254,7 @@ async function callAI(text,sysPrompt,opts={}){
     const res = await callAIEngine(
       'https://api.cerebras.ai/v1/chat/completions',
       {'Authorization': 'Bearer ' + process.env.CEREBRAS_API_KEY, 'Content-Type': 'application/json'},
-      {model:'llama3.1-70b', messages:[{role:'system',content:fullSysPrompt},{role:'user',content:text}], max_tokens:maxTokens, temperature:0.2},
+      {model:'llama3.1-70b', messages:[{role:'system',content:fullSysPrompt},{role:'user',content:userText}], max_tokens:maxTokens, temperature:0.2},
       'cerebras'
     );
     if (res) return res;
@@ -248,7 +266,7 @@ async function callAI(text,sysPrompt,opts={}){
     const res = await callAIEngine(
       'https://api.together.xyz/v1/chat/completions',
       {'Authorization': 'Bearer ' + process.env.TOGETHER_API_KEY, 'Content-Type': 'application/json'},
-      {model:'meta-llama/Llama-3.3-70B-Instruct-Turbo-Free', messages:[{role:'system',content:fullSysPrompt},{role:'user',content:text}], max_tokens:maxTokens, temperature:0.2},
+      {model:'meta-llama/Llama-3.3-70B-Instruct-Turbo-Free', messages:[{role:'system',content:fullSysPrompt},{role:'user',content:userText}], max_tokens:maxTokens, temperature:0.2},
       'together'
     );
     if (res) return res;
@@ -260,7 +278,7 @@ async function callAI(text,sysPrompt,opts={}){
     const res = await callAIEngine(
       'https://api.groq.com/openai/v1/chat/completions',
       {'Authorization': 'Bearer ' + process.env.GROQ_API_KEY, 'Content-Type': 'application/json'},
-      {model:'llama-3.3-70b-versatile', messages:[{role:'system',content:fullSysPrompt},{role:'user',content:text}], max_tokens:maxTokens, temperature:0.2},
+      {model:'llama-3.3-70b-versatile', messages:[{role:'system',content:fullSysPrompt},{role:'user',content:userText}], max_tokens:maxTokens, temperature:0.2},
       'groq'
     );
     if (res) return res;
@@ -273,7 +291,7 @@ async function callAI(text,sysPrompt,opts={}){
     const res = await callAIEngine(
       'https://api.deepseek.com/chat/completions',
       {'Authorization': 'Bearer ' + process.env.DEEPSEEK_API_KEY, 'Content-Type': 'application/json'},
-      {model:dsM, messages:[{role:'system',content:fullSysPrompt},{role:'user',content:text}], max_tokens:maxTokens, temperature:0.2},
+      {model:dsM, messages:[{role:'system',content:fullSysPrompt},{role:'user',content:userText}], max_tokens:maxTokens, temperature:0.2},
       'deepseek'
     );
     if (res) return res;
@@ -282,12 +300,13 @@ async function callAI(text,sysPrompt,opts={}){
   // 7. Gemini (High Cap, free tier limits apply)
   if (process.env.GOOGLE_API_KEY && cbOk('gemini')) {
     const gemUsed = _rt.d['gemini'] || 0;
-    if (gemUsed < 1400) {
+    const gemCap = parseInt(process.env.AI_DAILY_CAP_GEMINI || _forfait().includedDailyCaps?.gemini || '40', 10);
+    if (gemUsed < gemCap) {
       console.log('  Trying Gemini...');
       const res = await callAIEngine(
         'https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=' + process.env.GOOGLE_API_KEY,
         {'Content-Type': 'application/json'},
-        {systemInstruction:{parts:[{text:fullSysPrompt}]},contents:[{parts:[{text}]}], generationConfig:{temperature:0.2,maxOutputTokens:maxTokens}},
+        {systemInstruction:{parts:[{text:fullSysPrompt}]},contents:[{parts:[{text:userText}]}], generationConfig:{temperature:0.2,maxOutputTokens:maxTokens}},
         'gemini'
       );
       if (res) return res;
@@ -304,7 +323,7 @@ async function callAI(text,sysPrompt,opts={}){
     const res = await callAIEngine(
       'https://models.inference.ai.azure.com/chat/completions',
       {'Authorization': 'Bearer ' + ghToken, 'Content-Type': 'application/json'},
-      {model:'gpt-4o-mini', messages:[{role:'system',content:ghSys},{role:'user',content:text.substring(0,12000)}], max_tokens:maxTokens, temperature:0.2},
+      {model:'gpt-4o-mini', messages:[{role:'system',content:ghSys},{role:'user',content:userText.substring(0,12000)}], max_tokens:maxTokens, temperature:0.2},
       'gh-models'
     );
     if (res) return res;
@@ -317,7 +336,7 @@ async function callAI(text,sysPrompt,opts={}){
       const res = await callAIEngine(
         'https://api.openai.com/v1/chat/completions',
         {'Authorization': 'Bearer ' + process.env.OPENAI_API_KEY, 'Content-Type': 'application/json'},
-        {model:'gpt-3.5-turbo', messages:[{role:'system',content:fullSysPrompt.substring(0,4000)},{role:'user',content:text.substring(0,8000)}], max_tokens:Math.min(maxTokens,500), temperature:0.2},
+        {model:'gpt-3.5-turbo', messages:[{role:'system',content:fullSysPrompt.substring(0,4000)},{role:'user',content:userText.substring(0,8000)}], max_tokens:Math.min(maxTokens,500), temperature:0.2},
         'openai'
       );
       if (res) return res;
@@ -331,7 +350,7 @@ async function callAI(text,sysPrompt,opts={}){
       const res = await callAIEngine(
         'https://api.mistral.ai/v1/chat/completions',
         {'Authorization': 'Bearer ' + process.env.MISTRAL_API_KEY, 'Content-Type': 'application/json'},
-        {model:'open-mistral-nemo', messages:[{role:'system',content:fullSysPrompt.substring(0,4000)},{role:'user',content:text.substring(0,8000)}], max_tokens:Math.min(maxTokens,500), temperature:0.2},
+        {model:'open-mistral-nemo', messages:[{role:'system',content:fullSysPrompt.substring(0,4000)},{role:'user',content:userText.substring(0,8000)}], max_tokens:Math.min(maxTokens,500), temperature:0.2},
         'mistral'
       );
       if (res) return res;
@@ -344,7 +363,7 @@ async function callAI(text,sysPrompt,opts={}){
       const res = await callAIEngine(
         'https://api.moonshot.cn/v1/chat/completions',
         {'Authorization': 'Bearer ' + process.env.KIMI_API_KEY, 'Content-Type': 'application/json'},
-        {model:'moonshot-v1-8k', messages:[{role:'system',content:fullSysPrompt.substring(0,6000)},{role:'user',content:text.substring(0,6000)}], max_tokens:Math.min(maxTokens, 1024), temperature:0.2},
+        {model:'moonshot-v1-8k', messages:[{role:'system',content:fullSysPrompt.substring(0,6000)},{role:'user',content:userText.substring(0,6000)}], max_tokens:Math.min(maxTokens, 1024), temperature:0.2},
         'kimi'
       );
       if (res) return res;
@@ -359,7 +378,7 @@ async function callAI(text,sysPrompt,opts={}){
         const res = await callAIEngine(
           'https://token-plan-ams.xiaomimimo.com/v1/chat/completions',
           {'Authorization': 'Bearer ' + process.env.XIAOMI_MIMO_API_KEY, 'Content-Type': 'application/json'},
-          {model: mimoModel, messages:[{role:'system',content:fullSysPrompt},{role:'user',content:text}], max_tokens:maxTokens, temperature:0.2},
+          {model: mimoModel, messages:[{role:'system',content:fullSysPrompt},{role:'user',content:userText}], max_tokens:maxTokens, temperature:0.2},
           'xiaomi-mimo'
         );
         if (res) return res;
@@ -382,7 +401,11 @@ async function callAI(text,sysPrompt,opts={}){
 
 // Map-Reduce logic with varying models for concurrency
 async function splitTaskAndCombine(text, sysPrompt, opts={}) {
-  const maxTokens = opts.maxTokens || 2048;
+  // WHY(P2491): map-reduce multiplies remote calls — off unless AI_MAP_REDUCE=1
+  if (!/^(1|true|yes)$/i.test(String(process.env.AI_MAP_REDUCE || ''))) {
+    return await callAI(text, sysPrompt, opts);
+  }
+  const maxTokens = opts.maxTokens || 800;
   const tk = classifyTask(text, sysPrompt, opts);
   
   if (text.length < 3000 || tk.cx <= 1 || (opts.depth||0) >= 2) {
@@ -426,12 +449,22 @@ async function splitTaskAndCombine(text, sysPrompt, opts={}) {
   return { text: results[0].text + '\n\n' + results[1].text, model: 'map-reduce(fallback)' };
 }
 
-async function callAIEnsemble(t,s,o){try{const{qc,pickForTask}=require('./ai-ensemble');const tk=classifyTask(t,s,o);const ps=pickForTask(tk.type,2);if(ps.length<2)return callAI(t,s,o);const mt=Math.min((o||{}).maxTokens||2048,1500);const res=await Promise.allSettled(ps.map(p=>qc(p,t,s,mt)));const ans=res.map((r,i)=>({p:ps[i],t:r.status==='fulfilled'?r.value:null})).filter(a=>a.t&&a.t.length>20);if(!ans.length)return callAI(t,s,o);if(ans.length===1)return{text:ans[0].t,model:'ens-'+ans[0].p};const mp='Synthesize into ONE answer (max 300w):\n\n'+ans.map(a=>'['+a.p+']:\n'+a.t).join('\n\n');const m=await callAI(mp,'Merge AI answers.',{maxTokens:mt,complexity:'low'});return m||{text:ans[0].t,model:'ens-'+ans[0].p}}catch(e){console.log('  Ensemble fallback:',e.message);return callAI(t,s,o)}}
+async function callAIEnsemble(t,s,o){
+  const c=_compress();
+  if(c&&typeof c.ensembleAllowed==='function'&&!c.ensembleAllowed()){
+    return callAI(t,s,o);
+  }
+  if(!/^(1|true|yes)$/i.test(String(process.env.AI_ENSEMBLE||''))){
+    return callAI(t,s,o);
+  }
+  try{const{qc,pickForTask}=require('./ai-ensemble');const tk=classifyTask(t,s,o);const ps=pickForTask(tk.type,2);if(ps.length<2)return callAI(t,s,o);const mt=Math.min((o||{}).maxTokens||800,1000);const res=await Promise.allSettled(ps.map(p=>qc(p,t,s,mt)));const ans=res.map((r,i)=>({p:ps[i],t:r.status==='fulfilled'?r.value:null})).filter(a=>a.t&&a.t.length>20);if(!ans.length)return callAI(t,s,o);if(ans.length===1)return{text:ans[0].t,model:'ens-'+ans[0].p};const mp='Synthesize into ONE answer (max 300w):\n\n'+ans.map(a=>'['+a.p+']:\n'+a.t).join('\n\n');const m=await callAI(mp,'Merge AI answers.',{maxTokens:mt,complexity:'low'});return m||{text:ans[0].t,model:'ens-'+ans[0].p}}catch(e){console.log('  Ensemble fallback:',e.message);return callAI(t,s,o)}
+}
 
 async function analyzeImage(imageUrl,prompt){
+  if(shouldSkipAI({})){console.log('  [ai-helper] SKIP vision AI (local/forfait)');return null;}
   let b64;try{b64=await fetchImageBase64(imageUrl)}catch(e){console.log('  Img fetch fail:',e.message);return null}
   _rtLoad();
-  if (process.env.GOOGLE_API_KEY&&cbOk('gemini-vision')&&(_rt.d['gemini']||0)<1400){
+  if (process.env.GOOGLE_API_KEY&&cbOk('gemini-vision')&&(_rt.d['gemini']||0)<40){
     for(let i=0;i<2;i++){if(i)await sleep(backoff(i));try{
       const r=await fetchT('https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key='+process.env.GOOGLE_API_KEY,{
         method:'POST',headers:{'Content-Type':'application/json'},

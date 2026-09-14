@@ -195,10 +195,15 @@ env:
   - Scripts: `gmail-auth-cascade.js`, `verify-gmail-setup.js`; `npm run diag:gmail:cascade` / `diag:gmail:verify`
   - Workflows: `fetch-diags.yml`, `gmail-diagnostics.yml` probe cascade before fetch; `GMAIL_ALLOW_LOCAL_FALLBACK=1`
   - Smoke: `npm run workflow:smoke` → `tools/ci/workflow-smoke-p2226.js`
-- **P2227 — AI forfait inclus + security (never exceed included quotas):**
-  - SSOT: `config/security/ai-plan-forfait.json` — `AI_PLAN_MODE=forfait`, `AI_ALLOW_PAID=false`
-  - Caps: global daily **400**, soft-stop **85%**, paid providers blocked, `GMAIL_DIAG_AI_MAX=0`
-  - Guard: `tools/ci/ai-plan-guard.js` · wired in `ai-helper.js` `budgetAllows()` + token-budget
+- **P2227 / P2491 — AI forfait inclus + smart context compress (never exceed included quotas):**
+  - SSOT: `config/security/ai-plan-forfait.json` + `config/security/ai-context-compress-ssot.json` + `config/architecture/project-smart-map.json`
+  - Caps: global daily **80**, soft-stop **60%**, paid providers blocked, `GMAIL_DIAG_AI_MAX=0`
+  - Default: `AI_FORCE_LOCAL=true` + `AI_ALLOW_REMOTE=false` — remote AI opt-in only
+  - Context: slim smart-map (~2KB) instead of dumping all `docs/rules` (~54KB) per call; no ensemble / map-reduce / OpenRouter model-list by default
+  - Guard: `tools/ci/ai-plan-guard.js` · compress: `tools/ci/ai-context-compress.js` · gate: `npm run check:p2491`
+  - Doc: `docs/architecture/AI_EFFICIENCY_SSOT.md`
+  - Cron density: forum-poll 4×/day, L99 inbox 3×/day, auto-enrich every 6h
+  - Prefer `tools/ci/local-intelligent-solver.js` for issue/diag triage
   - Commands: `npm run ai:plan-guard` · `npm run ai:quota` · `npm run security:plan`
   - Workflows: `gmail-diagnostics`, `fetch-diags`, `auto-enrich-closed-loop`, `project-resilience`
   - Prefer local heuristics when soft/hard stop — never auto-spend overage

@@ -1,0 +1,71 @@
+{
+  "_meta": {
+    "id": "P2491-project-smart-map",
+    "updated": "2026-09-14",
+    "why": "Slim cartography for bots/GHA/agents — pointers not walls. Full docs stay on disk; AI gets this map unless AI_FULL_CONTEXT=1.",
+    "classify": "BOTH"
+  },
+  "tip": {
+    "healthyTest": "9.0.926",
+    "git": "9.0.927+",
+    "p139": "soft-continue on PF tip emails; no spam republish"
+  },
+  "dualApp": {
+    "ssot": "config/architecture/dual-app-tracks.json",
+    "doctrine": "docs/rules/DUAL_APP_VISION.md",
+    "master": { "appId": "com.dlnraja.tuya.zigbee", "branch": "master", "line": "9.0.x" },
+    "stable": { "appId": "com.dlnraja.tuya.zigbee.stable", "branch": "stable-v5", "line": "5.12.x" }
+  },
+  "identity": "manufacturerName+productId only — never invent pid; mfr alone is ambiguous",
+  "truth": [
+    "docs/knowledge/DEVICE_TRUTH.md",
+    "docs/knowledge/device-truth.json",
+    "docs/knowledge/PECULIARITIES.md",
+    "data/user-misattribution-registry.json"
+  ],
+  "publish": {
+    "ssot": "config/architecture/publish-ssot.json",
+    "human": "docs/architecture/PUBLISH_SSOT.md",
+    "sacredKeep": "config/architecture/publish-sacred-keep-couples.json",
+    "path": "build → prepare-publish → publish:direct (never repo root)"
+  },
+  "forum": {
+    "policy": "SHADOW only — never POST (T157628)",
+    "failoverSsot": "config/architecture/forum-complementary-failover-ssot.json",
+    "harvest": "tools/ci/forum-t140352-recent-harvest.js",
+    "replyTopics": ["140352"]
+  },
+  "aiEfficiency": {
+    "ssot": "config/security/ai-plan-forfait.json",
+    "compressSsot": "config/security/ai-context-compress-ssot.json",
+    "guard": "npm run ai:plan-guard",
+    "gate": "npm run check:p2491",
+    "default": "AI_FORCE_LOCAL=true; remote only if AI_ALLOW_REMOTE=true"
+  },
+  "gates": {
+    "family": ["check:p244x", "check:p246x", "check:p248x", "check:p2491", "check:l99-dual"],
+    "publish": ["check:p2286", "check:p2287", "check:p2288"]
+  },
+  "knobsFlows": {
+    "ssot": "config/architecture/rotary-knob-ssot.json",
+    "doc": "docs/architecture/KNOB_FLOW_WIRING_SSOT.md"
+  },
+  "ir": {
+    "ssot": "config/architecture/intelligent-ir-ssot.json",
+    "classify": "MASTER_ONLY"
+  },
+  "entryDocs": [
+    "AI_CONTEXT_MANDATE.md",
+    "docs/GLOBAL_INVESTIGATION_PLAN.md",
+    "docs/ARCHITECTURE_AI.md",
+    "AGENTS.md"
+  ],
+  "rulesAlways": [
+    ".cursor/rules/operational-memory-2026-08-15.mdc",
+    ".cursor/rules/device-truth.mdc",
+    ".cursor/rules/ai-forfait-cursor-limit.mdc",
+    ".github/WORKFLOW_GUIDELINES.md"
+  ],
+  "localSolver": "tools/ci/local-intelligent-solver.js",
+  "compressLib": "tools/ci/ai-context-compress.js"
+}

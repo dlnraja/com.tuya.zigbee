@@ -37,6 +37,9 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 30
     env:
+      AI_FORCE_LOCAL: "true"
+      AI_ALLOW_REMOTE: "false"
+      AI_PLAN_MODE: forfait
       # AI providers — circular chain (ai-helper.js handles rate limiting)
       GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
       OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
