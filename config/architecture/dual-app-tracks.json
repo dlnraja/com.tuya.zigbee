@@ -41,6 +41,18 @@
       "tag": "BOTH",
       "note": "Surgical port P2490–P2496 reliability to stable-v5 — never App ID/version; skip P2487 IR MASTER_ONLY"
     },
+    "p2498_pairing_discovery_ux": {
+      "tag": "BOTH",
+      "note": "Athom Zigbee learnmode + WiFi discovery SSOT; alt-app UX lessons; no Zigbee custom pair invent"
+    },
+    "p2499_peter_smartbutton_battery_ui": {
+      "tag": "BOTH",
+      "note": "button_wireless_1 measure_battery getable must stay true — Homey hid Battery+History (diag 77394256)"
+    },
+    "p2500_homey_capability_ux": {
+      "tag": "BOTH",
+      "note": "T43287 Device Capabilities + Athom getable/Insights SSOT; fleet heal sensor getable; generic capability_changed all devices"
+    },
     "p2496_identity_fields": {
       "tag": "BOTH",
       "note": "Homey productId === Zigbee modelId === pid; productName catalog-only — pairing vocabulary"

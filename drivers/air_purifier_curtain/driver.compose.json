@@ -129,7 +129,16 @@
         ]
       }
     },
-    "manufacturerName": []
+    "manufacturerName": [],
+    "learnmode": {
+      "image": "{{driverAssetsPath}}/icon.svg",
+      "instruction": {
+        "en": "Press the motor pairing button (or P2 twice) until the motor jogs / LED flashes, then start pairing in Homey.",
+        "fr": "Bouton moteur (ou P2×2) jusqu'à jog/LED, puis lancez l'appairage Homey.",
+        "nl": "Motor-paarknop (of P2×2) tot jog/LED, start daarna Homey-pairing.",
+        "de": "Motor-Pairingtaste (oder P2×2) bis Ruck/LED, dann Homey-Pairing starten."
+      }
+    }
   },
   "metadata": {
     "driver": {

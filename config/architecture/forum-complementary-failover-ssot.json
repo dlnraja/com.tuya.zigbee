@@ -41,10 +41,10 @@
       "driver": "button_wireless_1",
       "uiRole": "scene",
       "forbid": ["switch_1gang", "wall_switch_4gang_1way", "smart_knob"],
-      "diags": ["a5304ce8", "8afffc76", "048cff91", "375def7f", "8278ec79"],
-      "primary": ["P2470", "P2488"],
-      "complementary": ["P2490 rehydrate measure_battery", "P2481/P2484 tip-lag crashes"],
-      "gmailProof": "capability_id_not_available_on_device on batteryPercentageRemaining=76 @ 9.0.916",
+      "diags": ["a5304ce8", "8afffc76", "048cff91", "375def7f", "8278ec79", "77394256"],
+      "primary": ["P2470", "P2488", "P2499"],
+      "complementary": ["P2490 rehydrate measure_battery", "P2499 getable=true + no null→0", "P2481/P2484 tip-lag crashes"],
+      "gmailProof": "a5304ce8 @9.0.916 capability_id_not_available; 77394256 @9.0.926 ZCL paints but getable:false hid UI/History",
       "note": "Do not lock mrpevh8p onto non-Smartbutton tiles when couple ABSENT (#2190)"
     },
     "MIAMO_NISU": {

@@ -7,8 +7,8 @@
     "fr": "Toute valeur de capacité changée"
   },
   "hint": {
-    "en": "Triggers when any capability on any device changes value. Inspired by Device Capabilities app.",
-    "nl": "Activeert wanneer een capaciteitswaarde op een apparaat wijzigt. Geinspireerd door Device Capabilities app."
+    "en": "Triggers when any capability on any device changes. Inspired by Device Capabilities (silent enrich).",
+    "nl": "Activeert wanneer een capaciteitswaarde op een apparaat wijzigt."
   },
   "tokens": [
     {
@@ -43,7 +43,12 @@
     {
       "type": "device",
       "name": "device",
-      "filter": "capabilities=onoff"
+      "title": {
+        "en": "Device",
+        "nl": "Apparaat",
+        "de": "Gerät",
+        "fr": "Appareil"
+      }
     }
   ]
 }

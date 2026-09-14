@@ -137,7 +137,16 @@
       "_tz3000_ja5osu5g",
       "_TZ3000_JA5OSU5G",
       "_tz3000_JA5OSU5G"
-    ]
+    ],
+    "learnmode": {
+      "image": "{{driverAssetsPath}}/icon.svg",
+      "instruction": {
+        "en": "Hold all buttons together (or the reset pinhole) for 5–10 seconds until the LED flashes.",
+        "fr": "Maintenez tous les boutons (ou le trou reset) 5–10 s jusqu'à clignotement.",
+        "nl": "Houd alle knoppen (of reset) 5–10 s vast tot de LED knippert.",
+        "de": "Alle Tasten (oder Reset) 5–10 s halten bis die LED blinkt."
+      }
+    }
   },
   "images": {
     "small": "/drivers/smart_knob/assets/images/small.png",

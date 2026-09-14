@@ -1,0 +1,270 @@
+{
+  "generatedAt": "2026-09-14T21:01:54.042Z",
+  "policy": "search-not-invent — never write compose from soft hypotheses",
+  "query": {
+    "uuid": "77394256",
+    "driver": null
+  },
+  "diag": null,
+  "hypotheses": [
+    {
+      "mfr": "_TZE204_5slehgeo",
+      "pid": "TS0601",
+      "driver": "curtain_motor",
+      "confidence": "github_context_soft",
+      "reason": "GitHub #533 Salvagr Moes ZTS-EUR-C — NOT proven in target diag log",
+      "sources": [
+        "github-533",
+        "diag-724d4bc9",
+        "PECULIARITIES-p2348",
+        "z2m"
+      ],
+      "z2mDesc": "Thermostatic radiator valve"
+    },
+    {
+      "mfr": "_TZE204_rkbxtclc",
+      "pid": "TS0601",
+      "driver": "switch_3gang",
+      "confidence": "registry_locked",
+      "reason": "p2485-rkbxtclc-3gang",
+      "sources": [
+        "Z2M:TS0601_3gang_rkbxtclc",
+        "L99:four-threads"
+      ],
+      "z2mDesc": "Two gang switch with colored backlight modes"
+    },
+    {
+      "mfr": "_TZE200_hewlydpz",
+      "pid": "TS0601",
+      "driver": "wall_switch_4_gang_tuya",
+      "confidence": "registry_locked",
+      "reason": "p2485-hewlydpz-7ytnacie-4gang",
+      "sources": [
+        "Z2M:TS0601_switch_4_gang_2",
+        "Z2M:TS0601_4gang_7ytnacie",
+        "L99:T26439",
+        "L99:T140352"
+      ],
+      "z2mDesc": "3-Gang switch with backlight"
+    },
+    {
+      "mfr": "_TZE204_hewlydpz",
+      "pid": "TS0601",
+      "driver": "wall_switch_4_gang_tuya",
+      "confidence": "registry_locked",
+      "reason": "p2485-hewlydpz-7ytnacie-4gang",
+      "sources": [
+        "Z2M:TS0601_switch_4_gang_2",
+        "Z2M:TS0601_4gang_7ytnacie",
+        "L99:T26439",
+        "L99:T140352"
+      ],
+      "z2mDesc": "Three gang smart switch with colored backlight modes"
+    },
+    {
+      "mfr": "_TZE204_7ytnacie",
+      "pid": "TS0601",
+      "driver": "wall_switch_4_gang_tuya",
+      "confidence": "registry_locked",
+      "reason": "p2485-hewlydpz-7ytnacie-4gang",
+      "sources": [
+        "Z2M:TS0601_switch_4_gang_2",
+        "Z2M:TS0601_4gang_7ytnacie",
+        "L99:T26439",
+        "L99:T140352"
+      ],
+      "z2mDesc": "Three gang smart switch with colored backlight modes"
+    },
+    {
+      "mfr": "_TZ3000_vdfwjopk",
+      "pid": "TS0219",
+      "driver": "siren",
+      "confidence": "registry_locked",
+      "reason": "p2466-vdfwjopk-ts0219-siren",
+      "sources": [
+        "Johan#1455",
+        "z2m:SA100"
+      ]
+    },
+    {
+      "mfr": "_TZE200_zo0cfekv",
+      "pid": "TS0601",
+      "driver": "wall_switch_3gang_1way",
+      "confidence": "registry_locked",
+      "reason": "p2465-moes-star-feather-3gang",
+      "sources": [
+        "Johan#1457",
+        "Z2M_SFL02-Z-3"
+      ],
+      "z2mDesc": "Star feather smart switch 2 gangs"
+    },
+    {
+      "mfr": "_TZE200_tzyy0rtq",
+      "pid": "TS0601",
+      "driver": "wall_switch_3gang_1way",
+      "confidence": "registry_locked",
+      "reason": "p2465-moes-star-feather-3gang",
+      "sources": [
+        "Johan#1457",
+        "Z2M_SFL02-Z-3"
+      ],
+      "z2mDesc": "Star feather smart switch 1 gang"
+    },
+    {
+      "mfr": "_TZE200_rd8cdssd",
+      "pid": "TS0601",
+      "driver": "wall_switch_3gang_1way",
+      "confidence": "registry_locked",
+      "reason": "p2465-moes-star-feather-3gang",
+      "sources": [
+        "Johan#1457",
+        "Z2M_SFL02-Z-3"
+      ],
+      "z2mDesc": "Star feather smart switch 2 gangs"
+    },
+    {
+      "mfr": "_TZE200_1n2zev06",
+      "pid": "TS0601",
+      "driver": "water_valve_smart",
+      "confidence": "registry_locked",
+      "reason": "p2464-frankever-1n2zev06-valve",
+      "sources": [
+        "gmail_diag_frankever_2026-09-11",
+        "ZHA#2633",
+        "Z2M_FK-BV05"
+      ]
+    },
+    {
+      "mfr": "_TZ3000_kaflzta4",
+      "pid": "TS004F",
+      "driver": "smart_knob",
+      "confidence": "registry_locked",
+      "reason": "p2442-kaflzta4-ts004f-smart-knob",
+      "sources": [
+        "gmail_diag_a342c411",
+        "Johan#1365",
+        "Z2M_TS004F_event"
+      ]
+    },
+    {
+      "mfr": "_TZE200_icka1clh",
+      "pid": "TS0601",
+      "driver": "curtain_motor",
+      "confidence": "registry_locked",
+      "reason": "p2441-miamo-icka1clh-am43-curtain",
+      "sources": [
+        "forum_T140352_2229",
+        "Z2M_20977",
+        "P2441",
+        "P2445"
+      ],
+      "z2mDesc": "Cover motor"
+    },
+    {
+      "mfr": "_TZE200_icka1clh",
+      "pid": "AM43-0.45/40-ES-EB",
+      "driver": "curtain_motor",
+      "confidence": "registry_locked",
+      "reason": "p2441-miamo-icka1clh-am43-curtain",
+      "sources": [
+        "forum_T140352_2229",
+        "Z2M_20977",
+        "P2441",
+        "P2445"
+      ]
+    },
+    {
+      "mfr": "_TZE200_icka1clh",
+      "pid": "AM43-0.45/40-ES-EZ",
+      "driver": "curtain_motor",
+      "confidence": "registry_locked",
+      "reason": "p2441-miamo-icka1clh-am43-curtain",
+      "sources": [
+        "forum_T140352_2229",
+        "Z2M_20977",
+        "P2441",
+        "P2445"
+      ]
+    },
+    {
+      "mfr": "_TZE204_icka1clh",
+      "pid": "TS0601",
+      "driver": "curtain_motor",
+      "confidence": "registry_locked",
+      "reason": "p2441-miamo-icka1clh-am43-curtain",
+      "sources": [
+        "forum_T140352_2229",
+        "Z2M_20977",
+        "P2441",
+        "P2445"
+      ]
+    },
+    {
+      "mfr": "_TZE204_icka1clh",
+      "pid": "AM43-0.45/40-ES-EB",
+      "driver": "curtain_motor",
+      "confidence": "registry_locked",
+      "reason": "p2441-miamo-icka1clh-am43-curtain",
+      "sources": [
+        "forum_T140352_2229",
+        "Z2M_20977",
+        "P2441",
+        "P2445"
+      ]
+    },
+    {
+      "mfr": "_TZE204_icka1clh",
+      "pid": "AM43-0.45/40-ES-EZ",
+      "driver": "curtain_motor",
+      "confidence": "registry_locked",
+      "reason": "p2441-miamo-icka1clh-am43-curtain",
+      "sources": [
+        "forum_T140352_2229",
+        "Z2M_20977",
+        "P2441",
+        "P2445"
+      ]
+    },
+    {
+      "mfr": "_TZE200_zah67ekd",
+      "pid": "TS0601",
+      "driver": "curtain_motor",
+      "confidence": "registry_locked",
+      "reason": "p2441-miamo-icka1clh-am43-curtain",
+      "sources": [
+        "forum_T140352_2229",
+        "Z2M_20977",
+        "P2441",
+        "P2445"
+      ],
+      "z2mDesc": "Cover motor"
+    },
+    {
+      "mfr": "_TZE200_zah67ekd",
+      "pid": "AM43-0.45/40-ES-EB",
+      "driver": "curtain_motor",
+      "confidence": "registry_locked",
+      "reason": "p2441-miamo-icka1clh-am43-curtain",
+      "sources": [
+        "forum_T140352_2229",
+        "Z2M_20977",
+        "P2441",
+        "P2445"
+      ]
+    },
+    {
+      "mfr": "_TZE200_zah67ekd",
+      "pid": "AM43-0.45/40-ES-EZ",
+      "driver": "curtain_motor",
+      "confidence": "registry_locked",
+      "reason": "p2441-miamo-icka1clh-am43-curtain",
+      "sources": [
+        "forum_T140352_2229",
+        "Z2M_20977",
+        "P2441",
+        "P2445"
+      ]
+    }
+  ],
+  "action": "Request fresh Homey diag with [COVER-INIT] or [FLEET] mfr=… pid=… lines"
+}

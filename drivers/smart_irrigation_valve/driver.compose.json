@@ -65,7 +65,16 @@
       "_tz3290_ixd9mvv4",
       "_TZ3290_IXD9MVV4",
       "_tz3290_IXD9MVV4"
-    ]
+    ],
+    "learnmode": {
+      "image": "{{driverAssetsPath}}/icon.svg",
+      "instruction": {
+        "en": "Put the device in Zigbee pairing mode (usually hold reset/pairing 5 seconds until LED flashes).",
+        "fr": "Mode appairage Zigbee (souvent reset/pair 5 s jusqu'à LED clignotante).",
+        "nl": "Zet het apparaat in Zigbee-pairmodus (meestal reset/pair 5 s tot LED knippert).",
+        "de": "Gerät in Zigbee-Pairingmodus (meist Reset/Pair 5 s bis LED blinkt)."
+      }
+    }
   },
   "images": {
     "small": "/drivers/smart_irrigation_valve/assets/images/small.png",

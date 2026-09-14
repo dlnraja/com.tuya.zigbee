@@ -35,6 +35,14 @@
     "gate": "npm run check:p2494",
     "identityGate": "npm run check:p2496"
   },
+  "pairing": {
+    "ssot": "config/architecture/pairing-discovery-ssot.json",
+    "human": "docs/architecture/PAIRING_DISCOVERY_SSOT.md",
+    "learnmode": "lib/pairing/LearnmodeTemplates.js",
+    "zigbee": "Homey-owned UI — learnmode only; no custom pair views",
+    "wifi": "Homey discovery + list_devices/add_devices + TuyaLocal maxDiscover",
+    "gate": "npm run check:p2498"
+  },
   "truth": [
     "docs/knowledge/DEVICE_TRUTH.md",
     "docs/knowledge/device-truth.json",
@@ -89,6 +97,14 @@
     "doc": "docs/BIDIRECTIONAL_BUTTONS.md",
     "gate": "npm run check:p2492",
     "note": "UI role from couple class (switch/scene/knob), not brand"
+  },
+  "capabilityUx": {
+    "ssot": "config/architecture/homey-capability-ux-ssot.json",
+    "human": "docs/architecture/HOMEY_CAPABILITY_UX_SSOT.md",
+    "runtime": "lib/utils/HomeyCapabilityUx.js",
+    "gate": "npm run check:p2500",
+    "forumSilent": [43287, 140352],
+    "note": "Never getable:false on measure_*/meter_*/alarm_*; generic capability_changed = all devices"
   },
   "ir": {
     "ssot": "config/architecture/intelligent-ir-ssot.json",

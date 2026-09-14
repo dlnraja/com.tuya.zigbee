@@ -60,7 +60,16 @@
       "_tze200_qc4fpmcn",
       "_TZE200_QC4FPMCN",
       "_tze200_QC4FPMCN"
-    ]
+    ],
+    "learnmode": {
+      "image": "{{driverAssetsPath}}/icon.svg",
+      "instruction": {
+        "en": "On the thermostat, open settings → Zigbee/Network → Pair, or hold the reset pin until the display shows pairing mode.",
+        "fr": "Réglages → Zigbee/Réseau → Appairer, ou maintenez reset jusqu'au mode appairage.",
+        "nl": "Instellingen → Zigbee/Netwerk → Pairen, of reset tot pairmodus op display.",
+        "de": "Einstellungen → Zigbee/Netz → Koppeln, oder Reset bis Pairing-Modus."
+      }
+    }
   },
   "images": {
     "small": "/drivers/radiator_valve_zigbee/assets/images/small.png",
