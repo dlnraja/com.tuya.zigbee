@@ -346,8 +346,9 @@
     "check:p2493": "node --test test/critical/p2493-workflow-family-gates.test.js",
     "check:p2494": "node --test test/critical/p2494-sacred-couple-ssot-granularity.test.js",
     "check:p2495": "node tools/ci/p2495-publish-path-gate.js && node --test test/critical/p2495-publish-cicd-path.test.js",
-    "check:p249x": "npm run check:p2490 && npm run check:p2491 && npm run check:p2492 && npm run check:p2493 && npm run check:p2494 && npm run check:p2495",
-    "check:publish": "npm run check:p2286 && npm run check:p2287 && npm run check:p2288 && npm run check:p2490 && npm run check:p2494 && npm run check:p2495",
+    "check:p2496": "node --test test/critical/p2496-identity-fields-pid-productid-productname.test.js",
+    "check:p249x": "npm run check:p2490 && npm run check:p2491 && npm run check:p2492 && npm run check:p2493 && npm run check:p2494 && npm run check:p2495 && npm run check:p2496",
+    "check:publish": "npm run check:p2286 && npm run check:p2287 && npm run check:p2288 && npm run check:p2490 && npm run check:p2494 && npm run check:p2495 && npm run check:p2496",
     "ai:compress": "node tools/ci/ai-context-compress.js --self-test"
   },
   "keywords": [

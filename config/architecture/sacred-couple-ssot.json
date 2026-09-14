@@ -25,19 +25,23 @@
     "canonical": "manufacturerName + productId",
     "aliases": {
       "mfr": ["manufacturerName", "zb_manufacturer_name", "mfs entry key"],
-      "pid": ["productId", "modelId", "zb_model_id"]
+      "pid": ["productId", "modelId", "zb_model_id", "pid (shorthand)"]
     },
+    "notIdentity": ["productName", "productNames", "product_name", "deviceNames", "retail SKU"],
+    "fieldsSsot": "config/architecture/identity-fields-ssot.json",
     "settingsKeys": {
       "mfr": "zb_manufacturer_name",
       "pid": "zb_model_id",
       "forbidCamel": ["zb_manufacturerName", "zb_modelId"]
     },
+    "homeySdk3": "compose zigbee.productId === Zigbee tools Model ID === interview modelId",
     "never": [
-      "invent productId from retail SKU",
+      "invent productId from retail SKU / productName",
       "route by mfr alone when pid is known",
       "dedupe/prune mfr across drivers solely because same mfr appears elsewhere with different pid",
       "assume one mfr = one device class",
-      "forum POST / invent couple to close NEED_INTERVIEW"
+      "forum POST / invent couple to close NEED_INTERVIEW",
+      "treat pid and productId as different Homey fields"
     ]
   },
   "mfsDoctrine": {

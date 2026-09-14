@@ -77,7 +77,7 @@ function main() {
   if (couples.length < 10) fail('sacred-keep couples list too short');
   let invalid = 0;
   for (const c of couples) {
-    const pid = c.pid || c.productId;
+    const pid = c.pid || c.productId || c.modelId;
     if (!c.mfr || !pid || !c.driverId) {
       fail(`sacred-keep row incomplete: ${JSON.stringify(c)}`);
       invalid++;

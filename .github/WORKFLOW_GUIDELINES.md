@@ -1112,6 +1112,17 @@ npm run check:p249x   # P2490 + P2491 AI + P2492 button UI + P2493 wire + P2494 
 ```
 Gate that workflows stay wired: `npm run check:p2493`.
 
+### P2496 — Identity fields (pid / productId / productName)
+
+Homey SDK3 pairing = `manufacturerName` + `productId`.  
+Zigbee tools **Model ID** = compose `productId` = interview `modelId` = internal `pid`.  
+`productName(s)` = catalog alias only — never invent pid from SKU/name.
+
+- Machine: `config/architecture/identity-fields-ssot.json`
+- Human: `docs/architecture/IDENTITY_FIELDS_SSOT.md`
+- Helpers: `pickProductId` / `pickManufacturerName` in `sacred-couple-pair.js`
+- Gate: `npm run check:p2496` (inside `check:p249x` + `check:publish`)
+
 ### P2495 — Publish CI/CD path (couple-native)
 
 **Aggregator:** `npm run check:publish` (= p2286 + p2287 + p2288 + p2490 + p2494 + p2495)

@@ -29,7 +29,7 @@ alwaysApply: true
 | `mfs_db` avec **plusieurs `modelIds`** pour un mfr si **chaque** pid est un couple vérifié | Router sur mfr seul quand le pid est connu mais absent de la liste |
 | Même OEM Tuya (`_TZE200` / `_TZE204` / `_TZE284`) = familles séparées jusqu’à preuve | Supposer qu’un mfr = un seul type d’appareil |
 
-**Règle d’or :** identité = **(manufacturerName, productId)**. Variants et pid multiples sous un mfr sont attendus — toujours verrouiller et investiguer le **couple**, jamais le mfr isolé. Settings: `zb_manufacturer_name` + `zb_model_id`.
+**Règle d’or :** identité = **(manufacturerName, productId)**. Homey compose `productId` = Zigbee tools **Model ID** = interview `modelId` = internal `pid`. **productName** = alias catalogue only. Settings: `zb_manufacturer_name` + `zb_model_id`. See `docs/architecture/IDENTITY_FIELDS_SSOT.md` · `npm run check:p2496`.
 
 ### HOBEIAN (brand ≠ one device) — P2250
 | Couple | Driver | Protocol |

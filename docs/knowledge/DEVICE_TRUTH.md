@@ -15,10 +15,11 @@
 ## Lookup (do this every prompt)
 
 1. Extract **manufacturerName + productId** from the user / log / forum / PM. Never invent the pid.
-2. Grep this folder + `data/user-misattribution-registry.json` + `drivers/*/driver.compose.json` for that couple.
-3. Read `docs/knowledge/device-truth.json` key `drivers.<driverId>` for protocol, batteries, locks, peculiarities.
-4. Cross-check rules: `AI_CONTEXT_MANDATE.md`, `docs/ARCHITECTURE_AI.md`, `docs/rules/WHY_INTERROGATION.md`, `docs/rules/DUAL_APP_VISION.md`, `docs/rules/FORUM_SILENT_HUMANIZE.md`, `.cursorrules`.
-5. **Publish** means Homey App Store (master Test 9.0.x). **Do not post** means no Homey Community / PM replies.
+2. Remember: Homey **productId** = Zigbee **Model ID** / `modelId` = internal **pid**. **productName** is catalog-only (not pairing). See `docs/architecture/IDENTITY_FIELDS_SSOT.md` · `npm run check:p2496`.
+3. Grep this folder + `data/user-misattribution-registry.json` + `drivers/*/driver.compose.json` for that couple.
+4. Read `docs/knowledge/device-truth.json` key `drivers.<driverId>` for protocol, batteries, locks, peculiarities.
+5. Cross-check rules: `AI_CONTEXT_MANDATE.md`, `docs/ARCHITECTURE_AI.md`, `docs/rules/WHY_INTERROGATION.md`, `docs/rules/DUAL_APP_VISION.md`, `docs/rules/FORUM_SILENT_HUMANIZE.md`, `.cursorrules`.
+6. **Publish** means Homey App Store (master Test 9.0.x). **Do not post** means no Homey Community / PM replies.
 
 Catalog: **431** drivers, **201** locked community cases.
 

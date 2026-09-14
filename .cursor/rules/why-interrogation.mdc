@@ -13,9 +13,10 @@ Before implementing or changing anything non-trivial, answer:
 4. **Quand** — pair, RX, TX, enrich cron, publish?
 5. **Contre quoi** — what regresses if removed? → **gate or unit test** (P2469 — create/extend `test/critical/pNNNN-*.test.js` on every prompt; `npm run check:pNNNN`).
 6. **Quel couple ?** (mandatory on device work) — exact `manufacturerName` + `productId`.  
-   App matches by **couple**, not mfr alone. One `mfs` entry may list many pids — that is normal.  
-   Settings: `zb_manufacturer_name` + `zb_model_id`. Never invent pid.  
-   SSOT: `config/architecture/sacred-couple-ssot.json` · `docs/architecture/SACRED_COUPLE_SSOT.md` · gate `npm run check:p2494`.
+   Homey SDK3: compose `productId` = Zigbee tools **Model ID** = interview `modelId` = internal `pid`.  
+   **productName** = catalog alias only — never invent pid from it.  
+   Settings: `zb_manufacturer_name` + `zb_model_id`.  
+   SSOT: `config/architecture/sacred-couple-ssot.json` · `config/architecture/identity-fields-ssot.json` · gates `check:p2494` / `check:p2496`.
 
 Device work: lock the couple first → `DEVICE_TRUTH.md` / `device-truth.json` / `PECULIARITIES.md` / compose / misattribution registry. Search Z2M/ZHA/forum by the **pair**.
 

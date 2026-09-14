@@ -19,12 +19,21 @@
   "identity": {
     "canonical": "manufacturerName + productId (sacred couple)",
     "ssot": "config/architecture/sacred-couple-ssot.json",
+    "fieldsSsot": "config/architecture/identity-fields-ssot.json",
+    "fieldsHuman": "docs/architecture/IDENTITY_FIELDS_SSOT.md",
     "human": "docs/architecture/SACRED_COUPLE_SSOT.md",
     "helper": "tools/ci/sacred-couple-pair.js",
     "settingsKeys": { "mfr": "zb_manufacturer_name", "pid": "zb_model_id" },
+    "map": {
+      "productId": "Homey compose pairing key (= Zigbee Model ID / modelId)",
+      "pid": "internal shorthand for productId — same value",
+      "modelId": "Zigbee/Z2M interview name for productId",
+      "productName": "catalog alias only — NEVER pairing"
+    },
     "mfs": "one mfr entry may list many modelIds — each (mfr,pid) → own driver; multi-pid is NORMAL",
-    "never": ["invent pid", "mfr-only route when pid known", "dedupe mfr across drivers on pid mismatch"],
-    "gate": "npm run check:p2494"
+    "never": ["invent pid", "mfr-only route when pid known", "dedupe mfr across drivers on pid mismatch", "use productName as productId"],
+    "gate": "npm run check:p2494",
+    "identityGate": "npm run check:p2496"
   },
   "truth": [
     "docs/knowledge/DEVICE_TRUTH.md",
@@ -85,12 +94,13 @@
     "ssot": "config/architecture/intelligent-ir-ssot.json",
     "classify": "MASTER_ONLY"
   },
-  "entryDocs": [
+    "entryDocs": [
     "AI_CONTEXT_MANDATE.md",
     "docs/GLOBAL_INVESTIGATION_PLAN.md",
     "docs/ARCHITECTURE_AI.md",
     "AGENTS.md",
-    "docs/architecture/SACRED_COUPLE_SSOT.md"
+    "docs/architecture/SACRED_COUPLE_SSOT.md",
+    "docs/architecture/IDENTITY_FIELDS_SSOT.md"
   ],
   "rulesAlways": [
     ".cursor/rules/operational-memory-2026-08-15.mdc",
