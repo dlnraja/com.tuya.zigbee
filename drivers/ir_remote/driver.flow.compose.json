@@ -3,113 +3,105 @@
     {
       "id": "ir_remote_send_command",
       "title": {
-        "en": "Send IR Command",
-        "fr": "Envoyer commande IR"
+        "en": "Send named IR command",
+        "fr": "Envoyer commande IR nommée"
       },
       "args": [
         {
           "name": "command",
           "type": "text",
-          "label": {
-            "en": "Command Name",
-            "fr": "Nom de la commande"
-          },
           "placeholder": {
             "en": "Power, Volume Up, OK...",
             "fr": "Alimentation, Volume +, OK..."
           }
         }
-      ],
-      "titleFormatted": {
-        "en": "Send IR Command [[command]]",
-        "fr": "Envoyer commande IR [[command]]"
-      }
+      ]
     },
     {
       "id": "ir_remote_send_custom",
       "title": {
-        "en": "Send Custom Key",
-        "fr": "Envoyer touche personnalisée"
+        "en": "Send library key",
+        "fr": "Envoyer touche bibliothèque"
       },
       "args": [
         {
           "name": "key",
           "type": "dropdown",
-          "label": {
-            "en": "Key",
-            "fr": "Touche"
-          },
           "values": [
-            {
-              "id": "Power",
-              "title": {
-                "en": "Power",
-                "fr": "Alimentation"
-              }
-            },
-            {
-              "id": "Mute",
-              "title": {
-                "en": "Mute",
-                "fr": "Sourdine"
-              }
-            },
-            {
-              "id": "Volume Up",
-              "title": {
-                "en": "Volume Up",
-                "fr": "Volume +"
-              }
-            },
-            {
-              "id": "Volume Down",
-              "title": {
-                "en": "Volume Down",
-                "fr": "Volume -"
-              }
-            },
-            {
-              "id": "Channel Up",
-              "title": {
-                "en": "Channel Up",
-                "fr": "Chaîne +"
-              }
-            },
-            {
-              "id": "Channel Down",
-              "title": {
-                "en": "Channel Down",
-                "fr": "Chaîne -"
-              }
-            },
-            {
-              "id": "Source",
-              "title": {
-                "en": "Source",
-                "fr": "Source"
-              }
-            },
-            {
-              "id": "Menu",
-              "title": {
-                "en": "Menu",
-                "fr": "Menu"
-              }
-            },
-            {
-              "id": "OK",
-              "title": {
-                "en": "OK",
-                "fr": "OK"
-              }
-            }
+            { "id": "Power", "title": { "en": "Power", "fr": "Alimentation" } },
+            { "id": "Mute", "title": { "en": "Mute", "fr": "Sourdine" } },
+            { "id": "Volume Up", "title": { "en": "Volume Up", "fr": "Volume +" } },
+            { "id": "Volume Down", "title": { "en": "Volume Down", "fr": "Volume -" } },
+            { "id": "Channel Up", "title": { "en": "Channel Up", "fr": "Chaîne +" } },
+            { "id": "Channel Down", "title": { "en": "Channel Down", "fr": "Chaîne -" } },
+            { "id": "Source", "title": { "en": "Source", "fr": "Source" } },
+            { "id": "Menu", "title": { "en": "Menu", "fr": "Menu" } },
+            { "id": "OK", "title": { "en": "OK", "fr": "OK" } }
           ]
         }
-      ],
-      "titleFormatted": {
-        "en": "Send Custom Key [[key]]",
-        "fr": "Envoyer touche personnalisée [[key]]"
-      }
+      ]
+    },
+    {
+      "id": "ir_remote_send_learned",
+      "title": {
+        "en": "Send learned IR code",
+        "fr": "Envoyer code IR appris"
+      },
+      "args": [
+        {
+          "name": "name",
+          "type": "text",
+          "placeholder": { "en": "Power On" }
+        }
+      ]
+    },
+    {
+      "id": "ir_remote_send_raw",
+      "title": {
+        "en": "Send pasted IR code",
+        "fr": "Envoyer code IR collé"
+      },
+      "args": [
+        {
+          "name": "code",
+          "type": "text",
+          "placeholder": { "en": "Pronto / HEX / Broadlink / Zosung" }
+        },
+        {
+          "type": "dropdown",
+          "name": "format",
+          "values": [
+            { "id": "auto", "title": { "en": "Auto" } },
+            { "id": "pronto", "title": { "en": "Pronto Hex" } },
+            { "id": "broadlink", "title": { "en": "Broadlink" } },
+            { "id": "hex", "title": { "en": "HEX timings" } },
+            { "id": "globalcache", "title": { "en": "Global Caché" } },
+            { "id": "zosung", "title": { "en": "Zosung" } },
+            { "id": "tuya_opaque", "title": { "en": "Tuya opaque" } }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ir_remote_start_learn",
+      "title": {
+        "en": "Start IR learn on bound sender",
+        "fr": "Apprendre via l'émetteur lié"
+      },
+      "args": [
+        {
+          "name": "name",
+          "type": "text",
+          "placeholder": { "en": "Power" }
+        },
+        {
+          "name": "timeout_s",
+          "type": "number",
+          "placeholder": { "en": "30" },
+          "min": 5,
+          "max": 120
+        }
+      ]
     }
   ]
 }

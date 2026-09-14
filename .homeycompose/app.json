@@ -1,6 +1,6 @@
 {
   "id": "com.dlnraja.tuya.zigbee",
-  "version": "9.0.919",
+  "version": "9.0.921",
   "compatibility": ">=12.2.0",
   "platforms": [
     "local"
@@ -60,7 +60,9 @@
     ]
   },
   "category": "appliances",
-  "permissions": [],
+  "permissions": [
+    "homey:wireless:ir"
+  ],
   "images": {
     "small": "/assets/images/small.png",
     "large": "/assets/images/large.png",
