@@ -29,7 +29,7 @@ const PID_DRIVER_MAP={
   'TS0043':'button_wireless_3','TS0044':'button_wireless_4',
   'TS0046':'button_wireless_6','TS004F':'button_wireless_4',
   'TS0215':'button_emergency_sos',
-  'TS0601':'generic_tuya','TS1201':'ir_remote',
+  'TS0601':'generic_tuya','TS1201':'ir_blaster',
   'TS130F':'curtain_motor','TS0302':'thermostat_tuya_dp',
   'TS0222':'illuminance_sensor','TS0225':'presence_sensor_radar',
   'TS0726':'switch_wall_6gang',

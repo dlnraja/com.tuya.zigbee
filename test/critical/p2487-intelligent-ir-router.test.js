@@ -98,6 +98,21 @@ describe('P2487 Intelligent IR router', () => {
     assert.equal(j.zigbee, undefined, 'ir_remote is virtual — no zigbee block');
   });
 
+  it('infer/mfs never treat ir_remote as Zigbee FP target', () => {
+    const inferSrc = fs.readFileSync(
+      path.join(ROOT, 'tools', 'ci', 'infer-enrich-from-incomplete.js'),
+      'utf8',
+    );
+    assert.ok(inferSrc.includes("VIRTUAL_NO_ZIGBEE = new Set(['ir_remote'])"));
+    assert.ok(inferSrc.includes("ir_remote: 'ir_blaster'"));
+    const reinject = fs.readFileSync(
+      path.join(ROOT, 'tools', 'ci', 're-inject-manual-fixes.js'),
+      'utf8',
+    );
+    assert.ok(reinject.includes('stripVirtualIrRemoteZigbee'));
+    assert.ok(reinject.includes('p2487-tz3290-ir-blaster'));
+  });
+
   it('router listSenders works with mock homey (empty)', () => {
     const homey = {
       drivers: {
