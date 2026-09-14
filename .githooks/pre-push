@@ -9,6 +9,12 @@ set -e
 
 RED='\033[0;31m'; GREEN='\033[0;32m'; YELLOW='\033[1;33m'; CYAN='\033[0;36m'; RESET='\033[0m'
 
+# WHY: Git feeds local/remote refs on stdin. If the hook never drains stdin,
+# Windows Git Bash can SIGPIPE / exit 1 mid-node (seen dying during M15).
+while read -r _local_ref _local_sha _remote_ref _remote_sha; do
+  :
+done || true
+
 echo ""
 echo -e "${CYAN}╔══════════════════════════════════════════════════════════════╗${RESET}"
 echo -e "${CYAN}║     HOMEY APP PRE-PUSH GATE (Full Validation)               ║${RESET}"
@@ -17,7 +23,7 @@ echo -e "${CYAN}╚════════════════════�
 ROOT="$(git rev-parse --show-toplevel)"
 
 # Full mandatory check (blocking)
-echo -e "${CYAN}[1/2] Mandatory files check...${RESET}"
+echo -e "${CYAN}[1/3] Mandatory files check...${RESET}"
 if ! node "$ROOT/scripts/validate/homey-mandatory-check.js"; then
   echo -e "${RED}❌ PUSH BLOCKED — Fix mandatory check errors first${RESET}"
   exit 1
