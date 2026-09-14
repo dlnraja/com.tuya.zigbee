@@ -110,12 +110,33 @@ class WiFiIRRemoteDevice extends TuyaLocalDevice {
     }, ms);
   }
 
-  async sendIRCode(code) {
+  async sendIRCode(code, options = {}) {
+    const codeStr = String(code || '');
+    if (!options.skipFloodGuard) {
+      try {
+        const { getGuard } = require('../../lib/ir/IRFloodGuard');
+        const sid = (typeof this.getData === 'function' && (this.getData()?.id || this.getData()?.token))
+          || (typeof this.getId === 'function' && this.getId())
+          || 'wifi_ir_remote';
+        const flood = getGuard(this.homey).checkSend({
+          senderKey: String(sid),
+          transport: 'wifi',
+          payload: codeStr,
+        });
+        if (!flood.allow) {
+          this.log(`[WIFI-IR] flood guard skip: ${flood.reason}`);
+          if (flood.hard) throw new Error(`IR flood guard: ${flood.reason}`);
+          return { ok: true, skipped: true, reason: flood.reason };
+        }
+      } catch (err) {
+        if (String(err && err.message || '').includes('IR flood guard')) throw err;
+      }
+    }
     if (!this._client || !this._client.connected) {
       throw new Error('Not connected');
     }
-    this.log(`[WIFI-IR] Sending IR (${String(code).length} chars)`);
-    await this._client.setDP('201', code);
+    this.log(`[WIFI-IR] Sending IR (${codeStr.length} chars)`);
+    await this._client.setDP('201', codeStr);
   }
 
   async sendLearnedCode(name) {

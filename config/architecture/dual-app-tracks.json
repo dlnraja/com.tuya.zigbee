@@ -81,6 +81,10 @@
       "tag": "BOTH",
       "note": "MIAMO icka1clh sacred-keep after Athom compact drop; Peter a5304ce8 battery rehydrate; VicHY staleCaps curtains — reliability"
     },
+    "p2502_fleet_complementary_methods": {
+      "tag": "BOTH",
+      "note": "VicHY/Eduard/MIAMO/Peter/PresentSky method matrix + SMART ADAPT BootBudget defer (Peter OOM complementary)"
+    },
     "p2488_smartbutton_battery_keep": {
       "tag": "BOTH",
       "note": "IntelligentDeviceAdapter must not strip measure_battery on button_* (Peter a5304ce8)"
@@ -284,6 +288,10 @@
     "p2487c_homey_infrared_tx": {
       "tag": "MASTER_ONLY",
       "note": "Homey Pro 2023 ProntoHex TX via HomeyInfraredTx + homey:wireless:ir; learn stays Zigbee/WiFi"
+    },
+    "p2501_ir_flood_guard": {
+      "tag": "MASTER_ONLY",
+      "note": "Intelligent IRFloodGuard — dedup/throttle/cap reps/global flood + learn cooldown on all IR TX paths"
     },
     "p2415_pir_multicap_enrich": {
       "tag": "BOTH",

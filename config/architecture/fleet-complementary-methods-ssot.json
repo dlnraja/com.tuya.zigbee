@@ -1,0 +1,131 @@
+{
+  "_meta": {
+    "id": "P2502-fleet-complementary-methods",
+    "updated": "2026-09-15",
+    "classify": "BOTH",
+    "why": "Stack ALL failover/fallback/alternative/complementary methods for T140352 VicHY/Eduard/MIAMO/Peter/PresentSky — never stop at first fix; never invent pid; never forum POST",
+    "parent": "config/architecture/forum-complementary-failover-ssot.json",
+    "doctrine": "docs/architecture/COMPLEMENTARY_ENRICHMENT.md"
+  },
+  "tipMin": "9.0.930",
+  "users": {
+    "VicHY": {
+      "posts": ["2026-09-02", "2026-09-12ish"],
+      "couple": "_TZE204_clrdrnya+TS0601",
+      "driver": "presence_sensor_radar",
+      "primary": ["P2472a no phantom battery", "P2477 DynCap refuse curtains"],
+      "complementary": [
+        "P2490 staleCaps windowcoverings_*/dim",
+        "sacred-keep clrdrnya TZE200/204/284",
+        "setEnergy({}) mains",
+        "class heal sensor if curtain",
+        "tip ≥9.0.920"
+      ],
+      "alternatives": ["remove+re-pair if wrong driver class stuck"],
+      "fallback": ["HomeyGapCompensator", "IntelligentProtocolDetect HYBRID"]
+    },
+    "Eduard_Martirosyan": {
+      "posts": ["2026-09-05"],
+      "couple": "_TZE284_fodv6bkr+TS0601",
+      "driver": "curtain_motor",
+      "primary": ["P2433 tubular EF00"],
+      "complementary": [
+        "sacred-keep fodv6bkr TZE284+TZE200",
+        "libht6ua sibling pin",
+        "prepare-publish must-pin"
+      ],
+      "alternatives": ["re-pair after tip if Unknown Zigbee"],
+      "fallback": ["EF00 soft-create", "CapabilityCommandRouter"]
+    },
+    "MIAMO_NISU": {
+      "posts": ["2026-09-06"],
+      "couple": "_TZE200_icka1clh+TS0601",
+      "driver": "curtain_motor",
+      "primary": ["P2461 EF00 force AM43"],
+      "complementary": [
+        "P2490 sacred-keep icka1clh TZE200+TZE204 (Athom compact was dropping while fodv6bkr kept)",
+        "zah67ekd AM43 sibling keep",
+        "prepare-publish must-pin icka1clh"
+      ],
+      "alternatives": ["remove+re-pair after tip ≥9.0.926"],
+      "fallback": ["cover_4 EF00 map", "ProtocolFallbackChain"]
+    },
+    "Peter_van_Werkhoven": {
+      "posts": ["2026-09-06", "crash 2d", "crash 2d", "battery threads"],
+      "couple": "_TZ3000_mrpevh8p+TS0041",
+      "driver": "button_wireless_1",
+      "diags": {
+        "375def7f": {
+          "version": "9.0.895",
+          "class": "heap_oom_maxlisteners",
+          "proof": "FATAL heap OOM + MaxListenersExceededWarning 51× on TuyaSpecificCluster",
+          "treat": "P2484 EF00 initialize idempotent — tip ≥9.0.914 (prefer ≥9.0.930)"
+        },
+        "8278ec79": {
+          "version": "9.0.908",
+          "class": "heap_oom_maxlisteners",
+          "proof": "same OOM/MaxListeners family as Wuma 97413373 @ 9.0.908",
+          "treat": "P2484 tip-lag — tip ≥9.0.914 (prefer ≥9.0.930)"
+        },
+        "a5304ce8": {
+          "version": "9.0.916",
+          "class": "battery_cap_stripped",
+          "treat": "P2488 keep + P2490 rehydrate"
+        },
+        "77394256": {
+          "version": "9.0.926",
+          "class": "battery_getable_false",
+          "treat": "P2499 getable heal"
+        },
+        "8afffc76": {
+          "class": "battery_ui_throttle",
+          "treat": "P2470 CR2450 + no ZCL storm"
+        }
+      },
+      "primary": ["P2470", "P2488", "P2499"],
+      "complementary": [
+        "P2484 OOM/MaxListeners (crash diags — NOT only P2481 motionsensor)",
+        "P2481 foreign-driver preempt (parallel crash class on other mails)",
+        "P2490 battery rehydrate",
+        "BootBudget heap defer SMART ADAPT (P2502)",
+        "sacred-keep mrpevh8p+TS0041"
+      ],
+      "alternatives": [
+        "Update Homey Test tip ≥9.0.930 then reboot Homey",
+        "If crash persists: send NEW diag UUID after tip"
+      ],
+      "fallback": [
+        "safe-get-driver-patch",
+        "TuyaEF00Manager._ef00ListenersBound",
+        "peer launch skip P2486"
+      ]
+    },
+    "PresentSky": {
+      "posts": ["2026-09-14 resolved 10m"],
+      "couple": "_TZE284_m1cvyneb+TS0601",
+      "driver": "wall_dimmer_tuya",
+      "status": "RESOLVED_re_add",
+      "primary": ["P2138 sacred couple brightness 0–1000"],
+      "complementary": [
+        "magic handshake",
+        "CapabilityCommandRouter forceDp",
+        "forbid climate/soil/universal"
+      ],
+      "alternatives": ["remove+re-pair (Homey cannot hot-swap driver)"],
+      "fallback": ["TuyaBrightnessScale clamp"]
+    }
+  },
+  "methodStackOrder": [
+    "lock_couple_mfr_pid",
+    "sacred_keep_compact",
+    "runtime_rx_tx_fix",
+    "adapter_dyn_cap_heal",
+    "battery_keep_rehydrate_getable",
+    "ef00_oom_idempotent",
+    "foreign_driver_preempt",
+    "boot_budget_heap",
+    "tip_soft_expect",
+    "user_update_tip_repair"
+  ],
+  "gates": ["check:p2502", "check:p2490", "check:p2484", "check:p2488", "check:p2499", "check:p2481"]
+}

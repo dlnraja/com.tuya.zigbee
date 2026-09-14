@@ -1,0 +1,45 @@
+{
+  "generatedAt": "2026-09-14T22:37:41.187Z",
+  "policy": "search-not-invent — never write compose from soft hypotheses",
+  "query": {
+    "uuid": "375def7f",
+    "driver": "contact_sensor"
+  },
+  "diag": {
+    "uuid": "375def7f-d73b-4078-9e87-3ff28e578805",
+    "version": "9.0.895",
+    "createdAt": "2026-09-12T15:29:53.007Z",
+    "userMessage": "App crashes",
+    "drivers": [
+      "contact_sensor",
+      "water_leak_sensor",
+      "button_emergency_sos"
+    ],
+    "coupleAbsent": false,
+    "couplesInLog": [
+      {
+        "mfr": "_TZ3000_3dfewsk1",
+        "pid": "TS0203"
+      },
+      {
+        "mfr": "_TZ3000_decxrtwa",
+        "pid": "TS0203"
+      }
+    ]
+  },
+  "hypotheses": [
+    {
+      "mfr": "_TZ3000_3dfewsk1",
+      "pid": "TS0203",
+      "confidence": "proven_log",
+      "reason": "present in diag log"
+    },
+    {
+      "mfr": "_TZ3000_decxrtwa",
+      "pid": "TS0203",
+      "confidence": "proven_log",
+      "reason": "present in diag log"
+    }
+  ],
+  "action": "Request fresh Homey diag with [COVER-INIT] or [FLEET] mfr=… pid=… lines"
+}

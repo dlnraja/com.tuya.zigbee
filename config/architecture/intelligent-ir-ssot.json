@@ -28,6 +28,27 @@
   "wizard": "assets/ir/ir_setup_wizard.html",
   "router": "lib/ir/IntelligentIRRouter.js",
   "converter": "lib/ir/IRFormatConverter.js",
+  "floodGuard": {
+    "patch": "P2501",
+    "runtime": "lib/ir/IRFloodGuard.js",
+    "wire": [
+      "lib/ir/IntelligentIRRouter.js#send",
+      "lib/ir/IntelligentIRRouter.js#learn",
+      "lib/ir/HomeyInfraredTx.js#sendPronto",
+      "drivers/ir_blaster/device.js#sendIRCode",
+      "drivers/wifi_ir_remote/device.js#sendIRCode"
+    ],
+    "policy": {
+      "identicalDedupMs": 900,
+      "minIntervalMs": { "zigbee": 350, "wifi": 300, "homey": 400 },
+      "maxRepetitions": 3,
+      "globalMaxPerSecond": 5,
+      "learnCooldownMs": 2500,
+      "softSkip": ["identical_dedup", "sender_throttle"],
+      "hardThrow": ["global_flood"]
+    },
+    "why": "Prevent Flow/UI spam flooding IR LED / Zosung chunk / Homey RF"
+  },
   "outOfScope": [
     "homey_infrared_rx_learn",
     "global_cache_online_scrape",
@@ -35,8 +56,9 @@
     "forum_post"
   ],
   "gate": "npm run check:p2487",
+  "gateFlood": "npm run check:p2501",
   "tipMin": "9.0.922",
-  "tipNote": "Homey Test tip healthy 9.0.926 (#3186); P2487 IR ships in tip ≥9.0.922",
+  "tipNote": "P2487 IR ≥9.0.922; P2501 flood guard ≥9.0.932+",
   "familyGate": "npm run check:p248x",
   "features": [
     "multi_transport_router",
@@ -45,6 +67,7 @@
     "virtual_ir_remote_homey_zigbee_wifi",
     "wizard_sender_pick",
     "learned_rename_delete",
-    "homey_pro_2023_pronto_tx_only"
+    "homey_pro_2023_pronto_tx_only",
+    "p2501_ir_flood_guard"
   ]
 }

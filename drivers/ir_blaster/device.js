@@ -813,7 +813,31 @@ class IrBlasterDevice extends TuyaZigbeeDevice {
    * @param {object} options - Send options (format, frequency)
    */
   async sendIRCode(irCode, options = {}) {
-    this.log(`Sending IR code: ${irCode.substring(0, 30)}...`);
+    const codeStr = typeof irCode === 'string' ? irCode : String((irCode && irCode.code) || irCode || '');
+    this.log(`Sending IR code: ${codeStr.substring(0, 30)}...`);
+
+    // WHY(P2501): direct Flow → sendIRCode bypasses router — still need anti-flood
+    if (!options.skipFloodGuard) {
+      try {
+        const { getGuard } = require('../../lib/ir/IRFloodGuard');
+        const sid = (typeof this.getData === 'function' && (this.getData()?.id || this.getData()?.token))
+          || (typeof this.getId === 'function' && this.getId())
+          || 'ir_blaster';
+        const flood = getGuard(this.homey).checkSend({
+          senderKey: String(sid),
+          transport: 'zigbee',
+          payload: codeStr,
+          repetitions: options.repetitions,
+        });
+        if (!flood.allow) {
+          this.log(`[IR] flood guard skip: ${flood.reason}`);
+          if (flood.hard) throw new Error(`IR flood guard: ${flood.reason}`);
+          return { ok: true, skipped: true, reason: flood.reason };
+        }
+      } catch (err) {
+        if (String(err && err.message || '').includes('IR flood guard')) throw err;
+      }
+    }
 
     const zclNode = this._zclNode;
     if (!zclNode?.endpoints?.[1]) {
@@ -829,13 +853,13 @@ class IrBlasterDevice extends TuyaZigbeeDevice {
           'num': 1,
           'freq': options.frequency || 38000,
           'type': 1,
-          'key_code': irCode
+          'key_code': codeStr
         }
       });
 
       // v5.11.17: Use stored cluster instances
       const irTransmitCluster = this._irTransmitCluster;
-      if (irTransmitCluster && irCode.length > 100) {
+      if (irTransmitCluster && codeStr.length > 100) {
         try {
           await this._sendChunkedIRCode(irMessage, irTransmitCluster);
           this.log('IR code sent via chunked ZosungIRTransmit protocol');
@@ -849,7 +873,7 @@ class IrBlasterDevice extends TuyaZigbeeDevice {
       const irControlCluster = this._irControlCluster;
       if (irControlCluster) {
         try {
-          await irControlCluster.IRSend({ code: irCode });
+          await irControlCluster.IRSend({ code: codeStr });
           this.log('IR code sent via ZosungIRControl.IRSend');
           return;
         } catch (clusterErr) {
@@ -865,7 +889,7 @@ class IrBlasterDevice extends TuyaZigbeeDevice {
         await tuyaCluster.datapoint({
           dp: 201,
           datatype: 3, // string
-          data: Buffer.from(irCode, 'base64')
+          data: Buffer.from(codeStr, 'base64')
         });
         this.log('IR code sent via Tuya datapoint');
       } else {

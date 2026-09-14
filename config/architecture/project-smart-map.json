@@ -61,6 +61,7 @@
   "forum": {
     "policy": "SHADOW only — never POST (T157628)",
     "failoverSsot": "config/architecture/forum-complementary-failover-ssot.json",
+    "fleetMethodsSsot": "config/architecture/fleet-complementary-methods-ssot.json",
     "harvest": "tools/ci/forum-t140352-recent-harvest.js",
     "replyTopics": ["140352"],
     "needInterview": "document expected zb_manufacturer_name + zb_model_id — never invent"
@@ -108,7 +109,9 @@
   },
   "ir": {
     "ssot": "config/architecture/intelligent-ir-ssot.json",
-    "classify": "MASTER_ONLY"
+    "classify": "MASTER_ONLY",
+    "floodGuard": "lib/ir/IRFloodGuard.js",
+    "gate": "npm run check:p2487 && npm run check:p2501"
   },
     "entryDocs": [
     "AI_CONTEXT_MANDATE.md",

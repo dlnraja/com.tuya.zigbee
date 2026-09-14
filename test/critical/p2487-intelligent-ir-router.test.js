@@ -221,6 +221,7 @@ describe('P2487 Intelligent IR router', () => {
       'lib/ir/IntelligentIRRouter.js',
       'lib/ir/IRFormatConverter.js',
       'lib/ir/HomeyInfraredTx.js',
+      'lib/ir/IRFloodGuard.js',
       'lib/ir/irWizardSession.js',
       'docs/architecture/INTELLIGENT_IR_SSOT.md',
       'docs/architecture/INTELLIGENT_IR.md',
