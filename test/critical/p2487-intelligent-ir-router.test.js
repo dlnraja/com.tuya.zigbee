@@ -70,6 +70,20 @@ describe('P2487 Intelligent IR router', () => {
     assert.ok(ids.includes('wifi_ir_remote_start_learn'));
   });
 
+  // Contre quoi: Athom requires [[device]] in titleFormatted when device arg exists;
+  // project forbids that pattern — title-only cards (P2487 publish gate).
+  it('wifi_ir_remote flow cards omit titleFormatted (no [[device]] trap)', () => {
+    const p = path.join(ROOT, 'drivers', 'wifi_ir_remote', 'driver.flow.compose.json');
+    const j = JSON.parse(fs.readFileSync(p, 'utf8'));
+    for (const card of [...(j.actions || []), ...(j.triggers || [])]) {
+      assert.equal(
+        card.titleFormatted,
+        undefined,
+        `${card.id} must not set titleFormatted (Homey [[device]] vs project rule)`,
+      );
+    }
+  });
+
   it('ir_remote compose exposes multi-transport settings (not Zigbee-only)', () => {
     const p = path.join(ROOT, 'drivers', 'ir_remote', 'driver.compose.json');
     const j = JSON.parse(fs.readFileSync(p, 'utf8'));
@@ -80,6 +94,8 @@ describe('P2487 Intelligent IR router', () => {
     const vals = (td.values || []).map((v) => v.id);
     assert.ok(vals.includes('wifi_ir_remote'));
     assert.ok(vals.includes('ir_blaster'));
+    // Contre quoi: incomplete zigbee block without endpoints fails Homey publish
+    assert.equal(j.zigbee, undefined, 'ir_remote is virtual — no zigbee block');
   });
 
   it('router listSenders works with mock homey (empty)', () => {

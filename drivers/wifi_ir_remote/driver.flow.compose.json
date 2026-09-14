@@ -8,10 +8,6 @@
         "nl": "IR-leren gestart",
         "de": "IR-Lernen gestartet"
       },
-      "titleFormatted": {
-        "en": "IR learning started ({name}) ({duration})",
-        "fr": "Apprentissage IR démarré ({name}) ({duration})"
-      },
       "tokens": [
         {
           "name": "name",
@@ -40,10 +36,6 @@
         "nl": "IR-code geleerd",
         "de": "IR-Code gelernt"
       },
-      "titleFormatted": {
-        "en": "IR code learned ({name}) ({format})",
-        "fr": "Code IR appris ({name}) ({format})"
-      },
       "tokens": [
         {
           "name": "name",
@@ -69,10 +61,6 @@
       "title": {
         "en": "IR learn needs confirm (press again)",
         "fr": "Confirmer l'apprentissage IR (rappuyer)"
-      },
-      "titleFormatted": {
-        "en": "IR learn needs confirm ({name})",
-        "fr": "Confirmer apprentissage ({name})"
       },
       "tokens": [
         {
