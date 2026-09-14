@@ -477,7 +477,8 @@ section('M15 — Zigbee productId non-empty');
     if (conn.length && !conn.includes('zigbee')) continue;
     const pid = compose.zigbee.productId;
     if (Array.isArray(pid) && pid.length > 0) continue;
-    empty.push({ id, composePath, compose });
+    // WHY: do not retain full compose blobs — Windows Git Bash pre-push was OOM/SIGPIPE mid-M15
+    empty.push({ id, composePath });
   }
   if (!empty.length) {
     ok('M15', 'All zigbee driver.compose.json have non-empty productId');
@@ -490,8 +491,14 @@ section('M15 — Zigbee productId non-empty');
         fail('M15', `drivers/${row.id}: empty productId[] — cannot auto-fix (no _TSxxxx suffix)`);
         continue;
       }
-      row.compose.zigbee.productId = [inferred];
-      fs.writeFileSync(row.composePath, `${JSON.stringify(row.compose, null, 2)}\n`);
+      let compose;
+      try { compose = JSON.parse(fs.readFileSync(row.composePath, 'utf8')); } catch (e) {
+        fail('M15', `drivers/${row.id}: cannot re-read compose for fix: ${e.message}`);
+        continue;
+      }
+      compose.zigbee = compose.zigbee || {};
+      compose.zigbee.productId = [inferred];
+      fs.writeFileSync(row.composePath, `${JSON.stringify(compose, null, 2)}\n`);
       fixed.push(`[M15] AUTO-FIXED: drivers/${row.id} productId → [${inferred}]`);
     }
     const still = empty.filter((r) => !inferPidFromDriverId(r.id));
