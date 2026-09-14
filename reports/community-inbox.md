@@ -1,4 +1,4 @@
-# 📥 Community Inbox — 2026-09-13 10:16 UTC
+# 📥 Community Inbox — 2026-09-14 10:37 UTC
 
 Généré par `.github/scripts/community-inbox-digest.js` (workflow `community-inbox.yml`).
 
@@ -13,7 +13,7 @@ Généré par `.github/scripts/community-inbox-digest.js` (workflow `community-i
 
 - [#548](https://github.com/dlnraja/com.tuya.zigbee/issues/548) — Bug report - [Short description] App crashes all the time _(🔴 attente maintainer, maj 2026-09-13)_
 - [#547](https://github.com/dlnraja/com.tuya.zigbee/issues/547) — Tuya Zigbee device Radar Sensor: pairing OK but having no function _(🔴 attente maintainer, maj 2026-09-13)_
-- [#533](https://github.com/dlnraja/com.tuya.zigbee/issues/533) — Device Request - [SMART ZIGBEE CURTAIN SWITCH] - [MOES] _(🔴 escaladé, maj 2026-09-12)_
+- [#533](https://github.com/dlnraja/com.tuya.zigbee/issues/533) — Device Request - [SMART ZIGBEE CURTAIN SWITCH] - [MOES] _(🔴 escaladé, maj 2026-09-13)_
 
 ## 🌍 Forum — posts sans réponse
 
