@@ -455,6 +455,10 @@
         <option value="cn">China</option>
       </select>
     </div>
+    <label style="font-size:11px;display:flex;align-items:center;gap:6px;margin:6px 0 10px;">
+      <input type="checkbox" id="auto-reg" checked/>
+      Auto-try other Tuya regions on Easy Login / SmartLink failure (P2471)
+    </label>
 
     <button class="btn" id="btn-save" disabled onclick="saveCreds()">Save Credentials</button>
     <button class="btn btn-c" id="btn-clear" disabled onclick="clearCreds()">Clear</button>
@@ -581,6 +585,7 @@
       var a = document.getElementById('aid').value.trim(),
           s = document.getElementById('as').value.trim(),
           r = document.getElementById('reg').value;
+      var autoReg = document.getElementById('auto-reg') ? document.getElementById('auto-reg').checked : true;
       if (!a || (!s && !tuyaSecretConfigured)) { show('err-msg', 'Access ID and Secret required'); return; }
 
       Homey.set('tuya_cloud_access_id', a, function(e) {
@@ -589,8 +594,11 @@
           if (e2) { show('err-msg', 'Save failed: ' + e2.message); return; }
           Homey.set('tuya_cloud_region', r, function(e3) {
             if (e3) { show('err-msg', 'Save failed: ' + e3.message); return; }
-            show('ok-msg', 'Credentials saved!');
-            updateSecretStatus(s ? true : tuyaSecretConfigured);
+            Homey.set('tuya_cloud_auto_region', autoReg ? '1' : '0', function(e4) {
+              if (e4) { show('err-msg', 'Save failed: ' + e4.message); return; }
+              show('ok-msg', 'Credentials saved!');
+              updateSecretStatus(s ? true : tuyaSecretConfigured);
+            });
           });
         }
         if (s) Homey.set('tuya_cloud_access_secret', s, saveRegion);
@@ -603,9 +611,11 @@
       Homey.unset('tuya_cloud_access_id');
       Homey.unset('tuya_cloud_access_secret');
       Homey.unset('tuya_cloud_region');
+      Homey.unset('tuya_cloud_auto_region');
       document.getElementById('aid').value = '';
       document.getElementById('as').value = '';
       document.getElementById('reg').value = 'eu';
+      if (document.getElementById('auto-reg')) document.getElementById('auto-reg').checked = true;
       updateSecretStatus(false);
       show('ok-msg', 'Credentials cleared');
     }
@@ -814,6 +824,10 @@
       Homey.get('tuya_cloud_access_id', function(e, v) { if (v) document.getElementById('aid').value = v; });
       Homey.get('tuya_cloud_access_secret', function(e, v) { updateSecretStatus(!!v); });
       Homey.get('tuya_cloud_region', function(e, v) { if (v) document.getElementById('reg').value = v; });
+      Homey.get('tuya_cloud_auto_region', function(e, v) {
+        var el = document.getElementById('auto-reg');
+        if (el) el.checked = (v === undefined || v === null || v === '' || v === true || v === '1');
+      });
       Homey.get('wifi_default_cloud_fallback', function(e, v) {
         var el = document.getElementById('wifi-cloud-fallback');
         if (el) el.checked = !!v;

@@ -60,8 +60,22 @@ After this one-time setup, you only need email/phone + password to pair devices.
 <div class="fg"><label>Password</label><input type="password" id="ez_pw" placeholder="Smart Life / Tuya Smart password"/></div>
 <div class="row">
 <div class="fg"><label>Country Code</label><input type="text" id="ez_cc" value="33" placeholder="33"/><div class="hint">For phone login: 33=FR, 1=US, 44=UK, 49=DE, 31=NL</div></div>
-<div class="fg"><label>App</label><select id="ez_schema"><option value="smartlife">Smart Life</option><option value="tuyaSmart">Tuya Smart</option></select></div>
+<div class="fg"><label>App</label><select id="ez_schema"><option value="smartlife">Smart Life</option><option value="tuyaSmart" selected>Tuya Smart</option></select></div>
 </div>
+<div class="row">
+<div class="fg"><label>Region (start)</label><select id="ez_reg">
+<option value="eu">Europe (Central)</option>
+<option value="we">Europe (West)</option>
+<option value="us">Americas (West)</option>
+<option value="ue">Americas (East)</option>
+<option value="in">India</option>
+<option value="sg">Southeast Asia</option>
+<option value="cn">China</option>
+</select></div>
+</div>
+<label style="font-size:11px;display:flex;align-items:center;gap:6px;margin:4px 0 8px;">
+<input type="checkbox" id="ez_auto_reg" checked/> Auto-try other Tuya regions if login fails (P2471)
+</label>
 <button class="btn btn-p" id="btn-ez" onclick="doEasy()">Log in & scan devices</button>
 <div class="err" id="ez-err"></div><div class="ok" id="ez-ok"></div>
 </div>
@@ -194,14 +208,17 @@ function doAutoPair(){
 function doEasy(){
   var em=document.getElementById('ez_email').value.trim(),pw=document.getElementById('ez_pw').value.trim();
   var cc=document.getElementById('ez_cc').value.trim(),schema=document.getElementById('ez_schema').value;
+  var reg=document.getElementById('ez_reg')?document.getElementById('ez_reg').value:'eu';
+  var autoReg=document.getElementById('ez_auto_reg')?document.getElementById('ez_auto_reg').checked:true;
   hide('ez-err');hide('ez-ok');
   if(!em||!pw){show('ez-err','Email or phone + password required');return}
   spin('btn-ez');
-  H.emit('login',{mode:'simple',email:em,username:em,password:pw,countryCode:cc,schema:schema,autoRegion:true},function(err,r){
+  H.emit('login',{mode:'simple',email:em,username:em,password:pw,countryCode:cc,schema:schema,region:reg,autoRegion:autoReg},function(err,r){
     unspin('btn-ez');
     if(err){show('ez-err',err.message||String(err));return}
     if(r&&r.success===false){show('ez-err',r.error||'Login failed');return}
-    done=true;show('ez-ok',(r.count||0)+' devices found! Click Next to select.');
+    var extra=r.region?(' (region '+r.region+')'):'';
+    done=true;show('ez-ok',(r.count||0)+' devices found'+extra+'! Click Next to select.');
   });
 }
 

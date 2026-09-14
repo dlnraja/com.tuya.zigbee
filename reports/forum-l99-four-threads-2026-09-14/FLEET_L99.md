@@ -150,14 +150,9 @@ Generated: 2026-09-13T22:39:08.785Z
 - Gate: `npm run check:p2485`
 
 ### Already locked (tip lag / re-pair only)
-- Peter #2235 OOM → P2484 tip ≥**9.0.914**
+- Peter #2235 OOM → **P2484** tip ≥**9.0.914** (Test tip **9.0.916** #3180)
 - Joep Insoma `fhvpaltk`, VicHY `clrdrnya`, Eduard `fodv6bkr`/`libht6ua`, soil `nt4pquef`/`oitavov2`, DIN `6ocnqlhn`, BSEED `w5xztuy7`, presence `ex3rcdha` / `debczeci` / `crq3r3la` / `gkfbdvyx`, dual meter `dhotiauw`
-- Johan #5460 user said “4-gang” for `ex3rcdha` — Z2M/ZHA = **presence radar** (correct driver already)
-
-### WiFi T15811 (MASTER_ONLY local-first)
-- Demands: multisock DPS, static IP+local key, garage contact, LSC flood, Duux humidifier — map to `LocalWiFiTuyaBridge` / tuyapi local patterns; **never** Tuya Inc cloud lock from 106779.
-- Official Tuya Inc thread = cloud UX pain → reinforces Zigbee local + WiFi local-first vision.
-
-### Do not invent / do not forum-post
-- `_TZE2841000000_3MZB0SDZ`, `_TZE200_xxxxx`, `_Tze204_1Dxkck`
-- No Homey Community replies (T157628). Publish Homey Test only.
+- Johan #5460 user said “4-gang” for `ex3rcdha` — Z2M/ZHA = **presence radar** (correct driver already; do not invent switch route)
+- T106779 = cloud pain → reinforces local Zigbee + local-first WiFi (silent; never forum-paste that thread)
+- T15811 = tuyapi local key/IP/multisock → **MASTER_ONLY** local-first, no cloud lock
+- Junk ignored: `xxxxx` / `abc123` / OCR `1Dxkck` / Stefan `_TZE2841000000_*`
