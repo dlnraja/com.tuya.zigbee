@@ -342,7 +342,8 @@
     "check:p248x": "npm run check:p2487 && npm run check:p2488 && npm run check:p2490",
     "check:p2490": "node --test test/critical/p2490-forum-complementary-failover.test.js",
     "check:p2491": "node tools/ci/ai-context-compress.js --self-test && node --test test/critical/p2491-ai-efficiency-context-compress.test.js",
-    "check:p249x": "npm run check:p2490 && npm run check:p2491",
+    "check:p2492": "node --test test/critical/p2492-homey-button-ui-charter.test.js",
+    "check:p249x": "npm run check:p2490 && npm run check:p2491 && npm run check:p2492",
     "ai:compress": "node tools/ci/ai-context-compress.js --self-test"
   },
   "keywords": [

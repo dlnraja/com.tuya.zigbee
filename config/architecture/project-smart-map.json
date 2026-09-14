@@ -50,6 +50,12 @@
     "ssot": "config/architecture/rotary-knob-ssot.json",
     "doc": "docs/architecture/KNOB_FLOW_WIRING_SSOT.md"
   },
+  "buttonUi": {
+    "ssot": "config/architecture/homey-button-ui-charter-ssot.json",
+    "runtime": "lib/utils/HomeyButtonUiCharter.js",
+    "doc": "docs/BIDIRECTIONAL_BUTTONS.md",
+    "gate": "npm run check:p2492"
+  },
   "ir": {
     "ssot": "config/architecture/intelligent-ir-ssot.json",
     "classify": "MASTER_ONLY"

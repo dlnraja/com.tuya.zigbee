@@ -47,6 +47,14 @@ Re-implement smarter from Z2M/ZHA/Hubitat ideas — keep all complementary layer
 
 Bidirectional vision: Physical RX fires flows; Virtual/UI TX actuates device + optimistic UI; shared `_virtualPhysicalDedup` + `markAppCommand`. `UnifiedSwitchBase` inits physical + virtual + UI.
 
+## 6b. Homey UI charter (P2492)
+Runtime: `lib/utils/HomeyButtonUiCharter.js` · SSOT `config/architecture/homey-button-ui-charter-ssot.json`
+
+* Switches: Homey `onoff` tiles are the virtual representation of the wall — physical updates them; UI toggles TX via VirtualButtonMixin.
+* Scene remotes: `button.N` visible in device view (not only Maintenance); pulse on physical press.
+* Do not clutter switch device view with press tiles (`maintenanceAction: true` on button.N).
+* Gate: `npm run check:p2492`
+
 ## 7. Fingerprint / manufacturer
 * Route `manufacturerName`/`productId` through `TuyaNormalizer` (case-insensitive).
 * Sacred couple = manufacturerName + productId (e.g. `_TZ3000_zgyzgdua`+`TS0044` → `scene_switch_4`).

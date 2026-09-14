@@ -37,6 +37,10 @@
     "store changelog identity"
   ],
   "l99RecentClassification": {
+    "p2492_homey_button_ui_charter": {
+      "tag": "BOTH",
+      "note": "Homey charter physical↔virtual UI — onoff primary switches; button device-view for scene; shared sync helpers"
+    },
     "p2491_ai_efficiency_context_compress": {
       "tag": "BOTH",
       "note": "Slim smart-map context + AI_FORCE_LOCAL default + lower cron density — forfait/API efficiency"

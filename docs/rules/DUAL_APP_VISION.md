@@ -52,6 +52,7 @@ Regular CI: `node tools/ci/l99-dual-app-enrich-gates.js` (BOTH always; MASTER_ON
 
 | Deliverable | Tag | Why |
 |-------------|-----|-----|
+| P2492 Homey button UI charter (physical↔virtual tiles) | **BOTH** | Coherent Homey UX — onoff/Channel vs Button device-view |
 | P2491 AI efficiency / smart-map context compress | **BOTH** | Forfait + GH API burn; slim prompts; thinned crons |
 | P2490 forum complementary failover (icka1clh keep + battery rehydrate + radar staleCaps) | **BOTH** | Compact drop / strip / phantom curtain |
 | P2488 Smartbutton `measure_battery` keep-lock | **BOTH** | Hourly adapter strip → `?` battery |
