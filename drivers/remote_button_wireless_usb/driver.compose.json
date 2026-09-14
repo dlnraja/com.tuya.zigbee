@@ -233,7 +233,16 @@
     "manufacturerName": [
       "_hybrid_remote_button_wireless_usb_needs_device_assignment",
       "_HYBRID_REMOTE_BUTTON_WIRELESS_USB_NEEDS_DEVICE_ASSIGNMENT"
-    ]
+    ],
+    "learnmode": {
+      "image": "{{driverAssetsPath}}/icon.svg",
+      "instruction": {
+        "en": "Hold all buttons together (or the reset pinhole) for 5–10 seconds until the LED flashes.",
+        "fr": "Maintenez tous les boutons (ou le trou reset) 5–10 s jusqu'à clignotement.",
+        "nl": "Houd alle knoppen (of reset) 5–10 s vast tot de LED knippert.",
+        "de": "Alle Tasten (oder Reset) 5–10 s halten bis die LED blinkt."
+      }
+    }
   },
   "ui": {
     "quickAction": "onoff"

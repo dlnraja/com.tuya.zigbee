@@ -1,0 +1,178 @@
+{
+  "_meta": {
+    "id": "P2498-pairing-discovery-ssot",
+    "updated": "2026-09-14",
+    "classify": "BOTH",
+    "why": "Lock Homey Athom pairing rules + alt-app discovery UX so we improve ours without inventing Zigbee custom pair flows Athom forbids"
+  },
+  "athomOfficial": {
+    "docs": [
+      "https://apps.developer.homey.app/the-basics/devices/pairing",
+      "https://apps.developer.homey.app/wireless/zigbee",
+      "https://apps.developer.homey.app/guides/tools/zigbee",
+      "https://apps.developer.homey.app/wireless/wi-fi/discovery",
+      "https://apps.developer.homey.app/the-basics/devices/pairing/system-views",
+      "https://apps.developer.homey.app/the-basics/devices/pairing/custom-views"
+    ],
+    "zigbee": {
+      "pairingOwnedByHomey": true,
+      "customPairViewsForbidden": true,
+      "identityKeys": ["manufacturerName", "productId"],
+      "productIdEqualsInterviewModelId": true,
+      "userUxSurface": "zigbee.learnmode.instruction + learnmode.image",
+      "interviewSource": "Homey Zigbee Developer Tools → Nodes Table → Interview",
+      "settingsKeys": {
+        "mfr": "zb_manufacturer_name",
+        "pid": "zb_model_id"
+      },
+      "bindingsAtPair": "compose zigbee.endpoints[].bindings → Homey bind during pair",
+      "sleepyNote": "SEDs stay awake briefly after pair — avoid boot TX storms; wake-rebind later"
+    },
+    "wifiLan": {
+      "preferredDiscovery": ["mdns-sd", "ssdp", "mac"],
+      "systemPairTemplates": [
+        "list_devices",
+        "add_devices",
+        "login_oauth2",
+        "login_credentials",
+        "pincode",
+        "loading",
+        "done"
+      ],
+      "customViewsAllowed": true,
+      "styleLibrary": "Homey Style Library (prefer over custom purple gradients)",
+      "onPairListDevices": "Driver#onPairListDevices or session list_devices handler",
+      "deviceDataMustBeStableId": true
+    },
+    "repair": {
+      "manifestKey": "repair",
+      "useWhen": "OAuth revoked / re-auth / IR relearn — not for wrong Zigbee driver (remove+re-pair)"
+    }
+  },
+  "alternativeApps": {
+    "johanBendzTuyaZigbee": {
+      "repo": "JohanBendz/com.tuya.zigbee",
+      "pairing": "Homey-native Zigbee only — learnmode + static manufacturerName/productId",
+      "ux": "Driver list by device type; no LAN discovery",
+      "takeaway": "Keep compose fingerprints dense; invest UX in learnmode text quality"
+    },
+    "homeyGenericZigbee": {
+      "pairing": "Fallback when no app claims (mfr,pid)",
+      "ux": "Basic onoff/dim/color only",
+      "takeaway": "Sacred couple coverage prevents generic fallback — never invent pid"
+    },
+    "tuyaLocalHomey": {
+      "repo": "andiwirz/com.tuyalocal",
+      "discovery": ["UDP 6666/6667", "TCP 6668 subnet scan", "cloud Device ID + localKey fetch"],
+      "ux": ["Scan Network", "manual IP/ID/key", "cloud credential autofill", "Test & Connect", "DP inspector"],
+      "takeaway": "WiFi path should mirror: maxDiscover + credentials + list_devices/add_devices"
+    },
+    "athomWifiDiscovery": {
+      "strategies": ["mdns-sd", "ssdp", "mac"],
+      "takeaway": "Prefer Homey ManagerDiscovery over asking users for IP"
+    },
+    "z2mZhaExternal": {
+      "notHomeyApps": true,
+      "discovery": "interview converters / quirks by (mfr, modelId)",
+      "takeaway": "Cross-ref DP/cluster after Homey pair — enrich compose silently"
+    },
+    "ikeaTradfriExample": {
+      "repo": "athombv/com.ikea.tradfri-example",
+      "takeaway": "Reference Zigbee learnmode + endpoints pattern from Athom"
+    }
+  },
+  "ourApp": {
+    "zigbeePath": {
+      "match": "compose manufacturerName[] × productId[] → Homey core assigns driver",
+      "uxPrimary": "zigbee.learnmode",
+      "postPair": [
+        "PermissiveMatchingEngine",
+        "UniversalPairingManager / quirks",
+        "IntelligentProtocolDetect HYBRID",
+        "TwoPhaseEnrichment",
+        "HomeyButtonUiCharter (P2492)"
+      ],
+      "antiPatterns": [
+        "custom pair/select_driver.html on Zigbee drivers (Homey ignores / confuses — do not add new)",
+        "purple-gradient custom pair CSS (not Homey Style Library)",
+        "list_devices/add_devices on pure Zigbee drivers",
+        "invent productId to force match"
+      ],
+      "debt": {
+        "zigbeeDriversWithCustomPairHtml": "~133 legacy",
+        "policy": "do not add new; prefer strip in surgical cleanups; Homey owns Zigbee UI"
+      }
+    },
+    "wifiPath": {
+      "discoveryCompose": [
+        ".homeycompose/discovery/tuya_wifi.json",
+        ".homeycompose/discovery/ewelink_mdns.json"
+      ],
+      "runtime": [
+        "lib/tuya-local/TuyaPairingOrchestrator.js",
+        "lib/tuya-local/TuyaTcpForceScan.js",
+        "lib/pairing/AutoDetectionPairingWizard.js"
+      ],
+      "ux": "login_credentials / configure.html → list_devices → add_devices",
+      "styleCss": "assets/pairing/homey-pair-style.css",
+      "maxDiscoveryGate": "npm run check:p2411"
+    },
+    "irPath": {
+      "ssot": "config/architecture/intelligent-ir-ssot.json",
+      "ux": "custom ir_setup wizard — MASTER_ONLY P2487",
+      "allowedCustomPair": true
+    },
+    "learnmode": {
+      "helper": "lib/pairing/LearnmodeTemplates.js",
+      "image": "{{driverAssetsPath}}/icon.svg",
+      "locales": ["en", "fr", "nl", "de"],
+      "priorityDriversMustHaveLearnmode": true
+    }
+  },
+  "priorityDriverPrefixes": [
+    "climate_sensor",
+    "soil_sensor",
+    "water_leak",
+    "contact_sensor",
+    "motion_sensor",
+    "presence_",
+    "button_wireless",
+    "scene_switch",
+    "smart_knob",
+    "wall_dimmer",
+    "wall_switch",
+    "switch_1gang",
+    "switch_2gang",
+    "switch_3gang",
+    "switch_4gang",
+    "curtain_",
+    "thermostat",
+    "trv_",
+    "plug_",
+    "din_rail",
+    "valve_",
+    "smoke_",
+    "gas_",
+    "siren",
+    "ir_blaster",
+    "radiator"
+  ],
+  "uxCharter": {
+    "zigbeeUserSees": [
+      "App Store device class tile",
+      "Homey learnmode instruction (our text)",
+      "Homey radio pair progress",
+      "Device UI capabilities after assign"
+    ],
+    "wifiUserSees": [
+      "Credentials / cloud lookup (optional)",
+      "Discovered device list",
+      "Add devices"
+    ],
+    "homeyButtonTiles": "config/architecture/homey-button-ui-charter-ssot.json"
+  },
+  "gates": {
+    "check": "npm run check:p2498",
+    "family": "check:p249x"
+  }
+}

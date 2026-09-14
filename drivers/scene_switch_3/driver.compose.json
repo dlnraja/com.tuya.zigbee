@@ -74,6 +74,15 @@
           61184
         ]
       }
+    },
+    "learnmode": {
+      "image": "{{driverAssetsPath}}/icon.svg",
+      "instruction": {
+        "en": "Hold all buttons together (or the reset pinhole) for 5–10 seconds until the LED flashes.",
+        "fr": "Maintenez tous les boutons (ou le trou reset) 5–10 s jusqu'à clignotement.",
+        "nl": "Houd alle knoppen (of reset) 5–10 s vast tot de LED knippert.",
+        "de": "Alle Tasten (oder Reset) 5–10 s halten bis die LED blinkt."
+      }
     }
   },
   "images": {

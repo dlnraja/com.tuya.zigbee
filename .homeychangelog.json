@@ -1,4 +1,7 @@
 {
+  "9.0.928": {
+    "en": "Improved pairing learnmode guidance; Smartbutton battery shown again in Homey UI and History; capability UX heal so sensors stay readable; any-capability Flow trigger works for all devices."
+  },
   "9.0.927": {
     "en": "Complementary failover: keep MIAMO AM43 through Athom compact; rehydrate Smartbutton battery when stripped (Peter a5304ce8); strip VicHY curtain phantoms on profile apply."
   },

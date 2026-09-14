@@ -272,7 +272,16 @@
       "_TZ3000_GA5SHATP",
       "_tz3000_ga5shatp",
       "_tz3000_GA5SHATP"
-    ]
+    ],
+    "learnmode": {
+      "image": "{{driverAssetsPath}}/icon.svg",
+      "instruction": {
+        "en": "Power-cycle the light 3–5 times until it flashes, or hold the reset button on the controller.",
+        "fr": "Coupez/rétablissez l'alim. 3–5 fois jusqu'à clignotement, ou maintenez reset.",
+        "nl": "Schakel de lamp 3–5× uit/aan tot knipperen, of houd reset vast.",
+        "de": "Lampe 3–5× netzschalten bis Blinken, oder Reset halten."
+      }
+    }
   },
   "ui": {
     "quickAction": "onoff"

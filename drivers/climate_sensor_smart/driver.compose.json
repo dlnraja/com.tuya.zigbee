@@ -158,6 +158,15 @@
     "manufacturerName": [
       "_hybrid_climate_sensor_smart_needs_device_assignment",
       "_HYBRID_CLIMATE_SENSOR_SMART_NEEDS_DEVICE_ASSIGNMENT"
-    ]
+    ],
+    "learnmode": {
+      "image": "{{driverAssetsPath}}/icon.svg",
+      "instruction": {
+        "en": "Press and hold the pairing button for 5 seconds until the LED flashes. Keep pressing every 2 seconds during pairing if the device is battery-powered.",
+        "fr": "Maintenez le bouton d'appairage 5 secondes jusqu'à ce que la LED clignote. Sur pile, rappuyez toutes les 2 s pendant l'appairage.",
+        "nl": "Houd de paarknop 5 seconden ingedrukt tot de LED knippert. Bij batterij: druk elke 2 s tijdens het pairen.",
+        "de": "Halten Sie die Kopplungstaste 5 Sekunden, bis die LED blinkt. Bei Batterie alle 2 s während des Pairings drücken."
+      }
+    }
   }
 }

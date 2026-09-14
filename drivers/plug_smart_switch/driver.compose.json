@@ -733,7 +733,16 @@
     "manufacturerName": [
       "_hybrid_plug_smart_switch_needs_device_assignment",
       "_HYBRID_PLUG_SMART_SWITCH_NEEDS_DEVICE_ASSIGNMENT"
-    ]
+    ],
+    "learnmode": {
+      "image": "{{driverAssetsPath}}/icon.svg",
+      "instruction": {
+        "en": "Turn the device on/off 3 times quickly, or hold the reset button until the LED flashes rapidly.",
+        "fr": "Allumez/éteignez 3 fois rapidement, ou maintenez reset jusqu'à clignotement rapide.",
+        "nl": "Zet het apparaat 3× snel aan/uit, of houd reset vast tot snelle LED-knippering.",
+        "de": "Gerät 3× schnell ein/aus, oder Reset halten bis die LED schnell blinkt."
+      }
+    }
   },
   "ui": {
     "quickAction": "onoff"

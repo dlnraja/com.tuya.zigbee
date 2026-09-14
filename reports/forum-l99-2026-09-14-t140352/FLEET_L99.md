@@ -1,6 +1,6 @@
-# T140352 live harvest 2026-09-14T16:44:18.250Z
+# T140352 live harvest 2026-09-14T20:58:10.627Z
 
-Highest **#2237** · posts **#2198–#2237** (38) · silent only · never invent pid
+Highest **#2238** · posts **#2199–#2238** (39) · silent only · never invent pid
 
 ## #2199 @A_Tas
 First of all, thank you for your great work with the app. I have the latest trial version. Thanks to these, the Moes presence detector was able to connect ZSS-LP-HP02-MS to the manufacturer ID: _TZ3218_t9ynfz4x. Unfortunately, there is always an error message when saving patamers, such as sensitivity, etc. Do you have a solution for this? I use the current Homey Pro mini and the sensor is connected to Zigbee. Thank you in advance and many greetings from Germany. Kadir
@@ -161,13 +161,20 @@ Hi Dylan, after your updates the app stay’s stable no more crashes. 1000046390
   - https://us1.discourse-cdn.com/flex025/uploads/athom/original/3X/7/2/72704a300d5b42f5cc51678bb912f1fe0d47ebbf.jpeg
 - links: https://us1.discourse-cdn.com/flex025/uploads/athom/original/3X/b/1/b13eaeae746f7524962ea0cd6f18466173d9bfd3.jpeg | https://us1.discourse-cdn.com/flex025/uploads/athom/optimized/3X/b/1/b13eaeae746f7524962ea0cd6f18466173d9bfd3_2_224x500.jpeg | https://us1.discourse-cdn.com/flex025/uploads/athom/optimized/3X/b/1/b13eaeae746f7524962ea0cd6f18466173d9bfd3_2_224x500.jpeg, | https://us1.discourse-cdn.com/flex025/uploads/athom/optimized/3X/b/1/b13eaeae746f7524962ea0cd6f18466173d9bfd3_2_336x750.jpeg | https://us1.discourse-cdn.com/flex025/uploads/athom/optimized/3X/b/1/b13eaeae746f7524962ea0cd6f18466173d9bfd3_2_448x1000.jpeg | https://us1.discourse-cdn.com/flex025/uploads/athom/original/3X/c/9/c9754600d8587c5a557a833f2a32799b44a53141.jpeg | https://us1.discourse-cdn.com/flex025/uploads/athom/optimized/3X/c/9/c9754600d8587c5a557a833f2a32799b44a53141_2_224x500.jpeg | https://us1.discourse-cdn.com/flex025/uploads/athom/optimized/3X/c/9/c9754600d8587c5a557a833f2a32799b44a53141_2_224x500.jpeg, | https://us1.discourse-cdn.com/flex025/uploads/athom/optimized/3X/c/9/c9754600d8587c5a557a833f2a32799b44a53141_2_336x750.jpeg | https://us1.discourse-cdn.com/flex025/uploads/athom/optimized/3X/c/9/c9754600d8587c5a557a833f2a32799b44a53141_2_448x1000.jpeg
 
+## #2238 @Peter_van_Werkhoven
+Hi Dylan Good evening, after your last update still no battery reading and History tab on the Smartbutton. Also Deleted it, restarted Homey and re-add the Smartbutton but no changes 1000046400 1220×2712 205 KB 1000046401 1220×2712 76.1 KB Diagnostic code 77394256-0235-480f-b44b-0ee1db16ba6f Thanks and have a nice evening, regards Peter.
+- images (2):
+  - https://us1.discourse-cdn.com/flex025/uploads/athom/original/3X/4/8/480d684325ccf1584f9128740fed90f7b4562e4f.jpeg
+  - https://us1.discourse-cdn.com/flex025/uploads/athom/original/3X/7/6/760b32b476ef666d760e70be4f957ad411b040f9.jpeg
+- links: https://us1.discourse-cdn.com/flex025/uploads/athom/original/3X/4/8/480d684325ccf1584f9128740fed90f7b4562e4f.jpeg | https://us1.discourse-cdn.com/flex025/uploads/athom/optimized/3X/4/8/480d684325ccf1584f9128740fed90f7b4562e4f_2_224x500.jpeg | https://us1.discourse-cdn.com/flex025/uploads/athom/optimized/3X/4/8/480d684325ccf1584f9128740fed90f7b4562e4f_2_224x500.jpeg, | https://us1.discourse-cdn.com/flex025/uploads/athom/optimized/3X/4/8/480d684325ccf1584f9128740fed90f7b4562e4f_2_336x750.jpeg | https://us1.discourse-cdn.com/flex025/uploads/athom/optimized/3X/4/8/480d684325ccf1584f9128740fed90f7b4562e4f_2_448x1000.jpeg | https://us1.discourse-cdn.com/flex025/uploads/athom/original/3X/7/6/760b32b476ef666d760e70be4f957ad411b040f9.jpeg | https://us1.discourse-cdn.com/flex025/uploads/athom/optimized/3X/7/6/760b32b476ef666d760e70be4f957ad411b040f9_2_224x500.jpeg | https://us1.discourse-cdn.com/flex025/uploads/athom/optimized/3X/7/6/760b32b476ef666d760e70be4f957ad411b040f9_2_224x500.jpeg, | https://us1.discourse-cdn.com/flex025/uploads/athom/optimized/3X/7/6/760b32b476ef666d760e70be4f957ad411b040f9_2_336x750.jpeg | https://us1.discourse-cdn.com/flex025/uploads/athom/optimized/3X/7/6/760b32b476ef666d760e70be4f957ad411b040f9_2_448x1000.jpeg
+
 ## URL hosts (recent window)
 ```json
 {
-  "us1.discourse-cdn.com": 96,
+  "us1.discourse-cdn.com": 106,
   "github.com": 3,
   "www.bseed.com": 1
 }
 ```
 
-## Image count: 20
+## Image count: 22

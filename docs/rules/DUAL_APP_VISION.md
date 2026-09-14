@@ -53,6 +53,7 @@ Regular CI: `node tools/ci/l99-dual-app-enrich-gates.js` (BOTH always; MASTER_ON
 | Deliverable | Tag | Why |
 |-------------|-----|-----|
 | P2497 surgical BOTH backport to stable-v5 | **BOTH** | Reliability only; protect `.stable` App ID; no P2487 IR |
+| P2498 pairing/discovery UX SSOT + learnmode | **BOTH** | Athom owns Zigbee UI; enrich learnmode; WiFi discovery |
 | P2496 identity fields (productId/modelId/pid/productName) | **BOTH** | Pairing vocabulary — crash/wrong route prevention |
 | P2495 publish path + sacred-keep preflight | **BOTH** | Compact drop / tip spam; stable soft CI matrix |
 | P2494 sacred-couple SSOT | **BOTH** | mfs multi-pid NORMAL |
