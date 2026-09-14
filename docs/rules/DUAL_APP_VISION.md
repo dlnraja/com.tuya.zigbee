@@ -52,6 +52,11 @@ Regular CI: `node tools/ci/l99-dual-app-enrich-gates.js` (BOTH always; MASTER_ON
 
 | Deliverable | Tag | Why |
 |-------------|-----|-----|
+| P2497 surgical BOTH backport to stable-v5 | **BOTH** | Reliability only; protect `.stable` App ID; no P2487 IR |
+| P2496 identity fields (productId/modelId/pid/productName) | **BOTH** | Pairing vocabulary — crash/wrong route prevention |
+| P2495 publish path + sacred-keep preflight | **BOTH** | Compact drop / tip spam; stable soft CI matrix |
+| P2494 sacred-couple SSOT | **BOTH** | mfs multi-pid NORMAL |
+| P2493 workflow family gates | **BOTH** | Master hard; stable thinner |
 | P2492 Homey button UI charter (physical↔virtual tiles) | **BOTH** | Coherent Homey UX — onoff/Channel vs Button device-view |
 | P2491 AI efficiency / smart-map context compress | **BOTH** | Forfait + GH API burn; slim prompts; thinned crons |
 | P2490 forum complementary failover (icka1clh keep + battery rehydrate + radar staleCaps) | **BOTH** | Compact drop / strip / phantom curtain |

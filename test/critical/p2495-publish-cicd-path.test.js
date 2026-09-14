@@ -3,6 +3,9 @@
 /**
  * P2495 — Contre quoi: publish CI/CD drifts from couple-native discoveries
  * (sacred-keep, soft-expect, family gates, prepare-publish preflight).
+ *
+ * WHY(P2497): on `.stable` track, workflow family matrix is thinner — assert
+ * sacred-keep + check:publish scripts; soft-skip master-only hard WF wiring.
  */
 
 const { describe, it } = require('node:test');
@@ -21,6 +24,15 @@ function readJson(rel) {
   return JSON.parse(read(rel));
 }
 
+function isStableTrack() {
+  try {
+    const id = readJson('.homeycompose/app.json').id || '';
+    return String(id).endsWith('.stable');
+  } catch (_e) {
+    return false;
+  }
+}
+
 describe('P2495 publish CI/CD path', () => {
   it('publish-ssot lists prePublish family + check:publish', () => {
     const ssot = readJson('config/architecture/publish-ssot.json');
@@ -35,7 +47,13 @@ describe('P2495 publish CI/CD path', () => {
     const pkg = readJson('package.json');
     assert.ok(pkg.scripts['check:publish']);
     assert.ok(pkg.scripts['check:p2495']);
-    assert.match(pkg.scripts['check:p249x'], /check:p2495/);
+    if (isStableTrack()) {
+      // Stable LTS: check:p249x = reliability subset (no forced p2495 inside family)
+      assert.match(pkg.scripts['check:p249x'], /check:p2490/);
+      assert.match(pkg.scripts['check:publish'], /check:p2495/);
+    } else {
+      assert.match(pkg.scripts['check:p249x'], /check:p2495/);
+    }
   });
 
   it('prepare-publish preflights sacred-keep (P2495)', () => {
@@ -46,6 +64,12 @@ describe('P2495 publish CI/CD path', () => {
   });
 
   it('auto-publish + auto-fix hard-wire families and check:publish', () => {
+    if (isStableTrack()) {
+      // Contre quoi: identity stays .stable; do not require master WF matrix
+      const id = readJson('.homeycompose/app.json').id;
+      assert.equal(id, 'com.dlnraja.tuya.zigbee.stable');
+      return;
+    }
     for (const f of [
       '.github/workflows/auto-publish-on-push.yml',
       '.github/workflows/auto-fix-and-publish.yml',
@@ -59,6 +83,10 @@ describe('P2495 publish CI/CD path', () => {
   });
 
   it('continuous-flow soft-wires publish path', () => {
+    if (isStableTrack()) {
+      assert.ok(true);
+      return;
+    }
     const t = read('.github/workflows/continuous-flow.yml');
     assert.ok(t.includes('check:publish') || t.includes('check:p249x'));
   });
