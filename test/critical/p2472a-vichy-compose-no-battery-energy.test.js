@@ -51,4 +51,13 @@ describe('P2472a VicHY mains radar — no compose battery Energy poison', () => 
     const mfrs = (compose.zigbee?.manufacturerName || []).map((m) => String(m).toLowerCase());
     assert.ok(mfrs.some((m) => m.includes('clrdrnya')), 'clrdrnya fingerprint retained');
   });
+
+  // Contre quoi: DynCap invents windowcoverings from DP2/3/102 after tip update
+  it('device.js DynCap guards refuse windowcoverings on radar', () => {
+    const src = fs.readFileSync(
+      path.join(ROOT, 'drivers/presence_sensor_radar/device.js'), 'utf8');
+    assert.ok(src.includes('_armRadarDynCapGuards'), 'DynCap arm');
+    assert.ok(src.includes('windowcoverings_set'), 'forbid windowcoverings_set');
+    assert.ok(src.includes('_scheduleRadarPhantomReheal'), 'phantom re-heal');
+  });
 });
