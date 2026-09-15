@@ -125,6 +125,8 @@ if (APPLY) {
   phase('case-variants', () => run('case-variants', 'tools/ci/ensure-case-variants.js', ['--apply'], 120000, true));
   phase('prune-fp-collision', () => run('prune-fp', 'tools/ci/prune-fp-collision-bleed.js', ['--apply'], 180000, true));
   phase('re-inject-sacred-strips', () => run('re-inject', 'tools/ci/re-inject-manual-fixes.js', [], 180000, false));
+  // WHY(P2523): strip doNotLock invent bleeds before anti-bot (Fleet krwtzhfd→climate)
+  phase('strip-registry-forbidden', () => run('strip-forbidden', 'tools/ci/strip-registry-forbidden-compose.js', ['--apply'], 180000, false));
   phase('master-automation-fix', () => run('master-auto', 'scripts/master-automation.js', ['--fix'], 300000, false));
   phase('sync-enrichment-profiles', () => run('profiles', 'tools/ci/sync-enrichment-profiles.js', [], 120000, true));
 } else {
@@ -134,7 +136,8 @@ if (APPLY) {
 }
 
 phase('sacred-couple-gate', () => run('p2138', 'tools/ci/p2138-sacred-couple-matrix-gate.js', [], 180000, false));
-phase('anti-bot-gate', () => run('anti-bot', 'tools/ci/anti-bot-regression-gate.js', [], 180000, true));
+phase('p2519-anti-overwrite', () => run('p2519', 'tools/ci/p2519-anti-regression-enrich-gate.js', [], 120000, false));
+phase('anti-bot-gate', () => run('anti-bot', 'tools/ci/anti-bot-regression-gate.js', [], 180000, false));
 phase('fp-collision-check', () => run('fp-check', 'tools/ci/prune-fp-collision-bleed.js', ['--check'], 180000, true));
 phase('flow-l99', () => run('flow-l99', 'tools/ci/flow-l99-orchestrator.js', [], 300000, true));
 
