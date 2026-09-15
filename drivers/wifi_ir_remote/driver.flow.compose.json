@@ -30,13 +30,7 @@
           "type": "device",
           "filter": "driver_id=wifi_ir_remote"
         }
-      ],
-      "titleFormatted": {
-        "en": "IR learning started ({timeout_s})",
-        "fr": "Apprentissage IR démarré ({timeout_s})",
-        "nl": "IR-leren gestart ({timeout_s})",
-        "de": "IR-Lernen gestartet ({timeout_s})"
-      }
+      ]
     },
     {
       "id": "wifi_ir_remote_code_learned",
@@ -68,13 +62,7 @@
           "type": "device",
           "filter": "driver_id=wifi_ir_remote"
         }
-      ],
-      "titleFormatted": {
-        "en": "IR code learned ({format})",
-        "fr": "Code IR appris ({format})",
-        "nl": "IR-code geleerd ({format})",
-        "de": "IR-Code gelernt ({format})"
-      }
+      ]
     },
     {
       "id": "wifi_ir_remote_learn_confirm_needed",
@@ -97,11 +85,7 @@
           "type": "device",
           "filter": "driver_id=wifi_ir_remote"
         }
-      ],
-      "titleFormatted": {
-        "en": "IR learn needs confirm — press again",
-        "fr": "Confirmer l'apprentissage IR — rappuyer"
-      }
+      ]
     }
   ],
   "conditions": [],
