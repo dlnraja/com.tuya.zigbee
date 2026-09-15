@@ -85,6 +85,10 @@
       "tag": "BOTH",
       "note": "VicHY/Eduard/MIAMO/Peter/PresentSky method matrix + SMART ADAPT BootBudget defer (Peter OOM complementary)"
     },
+    "p2503_gh533_5slehgeo_curtain": {
+      "tag": "BOTH",
+      "note": "Moes ZTS-EUR-C 5slehgeo+TS0601 curtain_motor — forbid climate bleed in registry/current-fps"
+    },
     "p2488_smartbutton_battery_keep": {
       "tag": "BOTH",
       "note": "IntelligentDeviceAdapter must not strip measure_battery on button_* (Peter a5304ce8)"

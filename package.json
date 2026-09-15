@@ -1,6 +1,6 @@
 {
   "name": "com.dlnraja.tuya.zigbee",
-  "version": "9.0.931",
+  "version": "9.0.933",
   "description": "Tuya Unified Zigbee - Local-first control with AI automation",
   "main": "app.js",
   "scripts": {
@@ -340,8 +340,9 @@
     "check:p2487": "node --test test/critical/p2487-intelligent-ir-router.test.js",
     "check:p2501": "node --test test/critical/p2501-ir-flood-guard.test.js",
     "check:p2502": "node --test test/critical/p2502-fleet-complementary-methods.test.js",
+    "check:p2503": "node --test test/critical/p2503-gh533-5slehgeo-curtain.test.js",
     "check:p2488": "node --test test/critical/p2488-peter-a5304ce8-smartbutton-battery-keep.test.js",
-    "check:p248x": "npm run check:p2487 && npm run check:p2501 && npm run check:p2488 && npm run check:p2490 && npm run check:p2499 && npm run check:p2502",
+    "check:p248x": "npm run check:p2487 && npm run check:p2501 && npm run check:p2488 && npm run check:p2490 && npm run check:p2499 && npm run check:p2502 && npm run check:p2503",
     "check:p2490": "node --test test/critical/p2490-forum-complementary-failover.test.js",
     "check:p2491": "node tools/ci/ai-context-compress.js --self-test && node --test test/critical/p2491-ai-efficiency-context-compress.test.js",
     "check:p2492": "node --test test/critical/p2492-homey-button-ui-charter.test.js",
