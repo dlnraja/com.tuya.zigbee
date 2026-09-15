@@ -77,7 +77,25 @@ class Switch3GangDevice extends UnifiedSwitchBase {
     return includesCI(ZCL_ONLY_MANUFACTURERS_3G, mfr);
   }
 
-  async onNodeInit({ zclNode }) {
+  async onNodeInit({
+    // P2485: Z2M colored 3-gang rkbxtclc — log profile + force mains (no phantom battery)
+    try {
+      const { resolveEf00MultiGangProfile } = require('../../lib/tuya/Ef00MultiGangProfiles');
+      const mfr = this.getSetting?.('zb_manufacturer_name') || this.getStoreValue?.('manufacturerName') || '';
+      this._ef00Profile = resolveEf00MultiGangProfile(mfr, { gangs: 3 });
+      this.log(`[P2485] switch_3gang profile=${this._ef00Profile.id} mfr=${mfr}`);
+      if (/rkbxtclc/i.test(mfr)) {
+        if (this.hasCapability('measure_battery')) {
+          await this.removeCapability('measure_battery').catch(() => {});
+        }
+        if (typeof this.setEnergy === 'function') {
+          await this.setEnergy({ batteries: null, mains: true }).catch(() => {});
+        }
+      }
+    } catch (e) {
+      this.log('[P2485] profile resolve soft-fail:', e.message);
+    }
+ zclNode }) {
     // --- Attribute Reporting Configuration (auto-generated) ---
     try {
       await this.configureAttributeReporting([
