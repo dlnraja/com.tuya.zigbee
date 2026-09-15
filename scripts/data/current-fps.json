@@ -2800,8 +2800,6 @@
         "_TZE204_4bjixefp",
         "_tze204_58of2pfn",
         "_TZE204_58of2pfn",
-        "_tze204_5slehgeo",
-        "_TZE204_5slehgeo",
         "_tze204_5toc8efa",
         "_TZE204_5toc8efa",
         "_tze204_6a4vxfnv",
@@ -3180,8 +3178,6 @@
         "_TZE284_4hdbt6rn",
         "_tze284_5m4nchbm",
         "_TZE284_5m4nchbm",
-        "_tze284_5slehgeo",
-        "_TZE284_5slehgeo",
         "_tze284_5ys44kzo",
         "_TZE284_5ys44kzo",
         "_tze284_65gzcss7",
@@ -6109,8 +6105,8 @@
         "MONOPRICE",
         "muller licht",
         "MULLER LICHT",
-        "müller licht",
-        "MÜLLER LICHT",
+        "m\u00fcller licht",
+        "M\u00dcLLER LICHT",
         "namron",
         "NAMRON",
         "nanoleaf",
@@ -22204,10 +22200,10 @@
       "climate_sensor"
     ],
     "_tze204_5slehgeo": [
-      "climate_sensor"
+      "curtain_motor"
     ],
     "_TZE204_5slehgeo": [
-      "climate_sensor"
+      "curtain_motor"
     ],
     "_tze204_5toc8efa": [
       "climate_sensor",
@@ -23392,10 +23388,10 @@
       "climate_sensor"
     ],
     "_tze284_5slehgeo": [
-      "climate_sensor"
+      "curtain_motor"
     ],
     "_TZE284_5slehgeo": [
-      "climate_sensor"
+      "curtain_motor"
     ],
     "_tze284_5ys44kzo": [
       "climate_sensor"
@@ -28715,10 +28711,10 @@
     "MULLER LICHT": [
       "generic_tuya"
     ],
-    "müller licht": [
+    "m\u00fcller licht": [
       "generic_tuya"
     ],
-    "MÜLLER LICHT": [
+    "M\u00dcLLER LICHT": [
       "generic_tuya"
     ],
     "namron": [

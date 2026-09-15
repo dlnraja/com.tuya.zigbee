@@ -54,6 +54,19 @@ class Button1GangDevice extends ButtonDevice {
       }
     } catch (_e) { /* soft */ }
 
+    // WHY(P2499 / Peter #2238 @ 9.0.926 diag 77394256): compose once had
+    // capabilitiesOptions.measure_battery.getable=false → Homey hid Battery + History
+    // even when ZCL painted %. Soft-heal runtime options if SDK exposes setter.
+    try {
+      if (typeof this.setCapabilityOptions === 'function' && this.hasCapability('measure_battery')) {
+        const cur = (typeof this.getCapabilityOptions === 'function' && this.getCapabilityOptions('measure_battery')) || {};
+        if (cur.getable === false) {
+          await this.setCapabilityOptions('measure_battery', { ...cur, getable: true }).catch(() => {});
+          this.log('[BUTTON_WIRELESS_1] P2499 restored measure_battery getable=true');
+        }
+      }
+    } catch (_e) { /* soft */ }
+
     this.log('[BUTTON_WIRELESS_1] v10.0.0+P2316 init (1-btn lock + magic 0xFFDE)');
   }
 

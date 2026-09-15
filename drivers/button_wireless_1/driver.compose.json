@@ -26,7 +26,6 @@
       "maintenanceAction": true
     },
     "measure_battery": {
-      "getable": false,
       "title": {
         "en": "Battery",
         "fr": "Batterie",
@@ -42,8 +41,8 @@
   },
   "energy": {
     "batteries": [
-      "CR2032",
-      "CR2450"
+      "CR2450",
+      "CR2032"
     ]
   },
   "zigbee": {
