@@ -1,130 +1,8 @@
 {
-  "generatedAt": "2026-09-14T06:58:57.476Z",
+  "generatedAt": "2026-09-15T18:22:50.720Z",
   "mode": "APPLY",
   "policy": "P2319 enrichment-first colocate — never strip other drivers",
-  "applied": [
-    {
-      "mfr": "_TZ3000_85czd6fy",
-      "pid": "TS0207",
-      "driver": "water_leak_sensor",
-      "tier": "force_p2319",
-      "reason": "curated-colocate",
-      "changes": [
-        "mfr:_TZ3000_85czd6fy"
-      ],
-      "written": true
-    },
-    {
-      "mfr": "_TZ3000_kyb656no",
-      "pid": "TS0207",
-      "driver": "water_leak_sensor",
-      "tier": "force_p2319",
-      "reason": "curated-colocate",
-      "changes": [
-        "mfr:_TZ3000_kyb656no"
-      ],
-      "written": true
-    },
-    {
-      "mfr": "_TZ3000_o005nuxx",
-      "pid": "TS0115",
-      "driver": "usb_outlet_advanced",
-      "tier": "force_p2319",
-      "reason": "curated-colocate",
-      "changes": [
-        "mfr:_TZ3000_o005nuxx"
-      ],
-      "written": true
-    },
-    {
-      "mfr": "_TZ3000_pzui3skt",
-      "pid": "TS0041",
-      "driver": "button_wireless_1",
-      "tier": "force_p2319",
-      "reason": "curated-colocate",
-      "changes": [
-        "mfr:_TZ3000_pzui3skt"
-      ],
-      "written": true
-    },
-    {
-      "mfr": "_TZ3000_ww9i3e0y",
-      "pid": "TS0207",
-      "driver": "water_leak_sensor",
-      "tier": "force_p2319",
-      "reason": "curated-colocate",
-      "changes": [
-        "mfr:_TZ3000_ww9i3e0y"
-      ],
-      "written": true
-    },
-    {
-      "mfr": "_TZ3210_4zinq6io",
-      "pid": "TS0501B",
-      "driver": "bulb_dimmable",
-      "tier": "force_p2319",
-      "reason": "curated-colocate",
-      "changes": [
-        "mfr:_TZ3210_4zinq6io"
-      ],
-      "written": true
-    },
-    {
-      "mfr": "_TZ3210_9q49basr",
-      "pid": "TS0501B",
-      "driver": "bulb_dimmable",
-      "tier": "force_p2319",
-      "reason": "curated-colocate",
-      "changes": [
-        "mfr:_TZ3210_9q49basr"
-      ],
-      "written": true
-    },
-    {
-      "mfr": "_TZ3210_e5t9bfdv",
-      "pid": "TS0501B",
-      "driver": "bulb_dimmable",
-      "tier": "force_p2319",
-      "reason": "curated-colocate",
-      "changes": [
-        "mfr:_TZ3210_e5t9bfdv"
-      ],
-      "written": true
-    },
-    {
-      "mfr": "_TZ3000_rrjr1q0u",
-      "pid": "TS0043",
-      "driver": "button_wireless_3",
-      "tier": "force_p2319",
-      "reason": "curated-colocate",
-      "changes": [
-        "mfr:_TZ3000_rrjr1q0u"
-      ],
-      "written": true
-    },
-    {
-      "mfr": "_TZ3000_yw5tvzsk",
-      "pid": "TS0043",
-      "driver": "button_wireless_3",
-      "tier": "force_p2319",
-      "reason": "curated-colocate",
-      "changes": [
-        "mfr:_TZ3000_yw5tvzsk"
-      ],
-      "written": true
-    },
-    {
-      "mfr": "_TZ3400_key8kk7r",
-      "pid": "TS0043",
-      "driver": "button_wireless_3",
-      "tier": "force_p2319",
-      "reason": "curated-colocate",
-      "changes": [
-        "mfr:_TZ3400_key8kk7r"
-      ],
-      "written": true
-    }
-  ],
+  "applied": [],
   "skipped": [
     {
       "mfr": "_TZE200_n8dljorx",
@@ -141,18 +19,10 @@
       "soft": "climate_sensor"
     },
     {
-      "mfr": "_TZ3000_7dcddnye",
-      "pid": "TS0501A",
-      "reason": "not-confident",
-      "tier": "pid_default",
-      "soft": "bulb_dimmable"
-    },
-    {
-      "mfr": "_TZ3000_fa9mlvja",
-      "pid": "TS0041",
-      "reason": "needs-deep-review",
-      "tier": null,
-      "soft": null
+      "mfr": "_TZ3000_85czd6fy",
+      "pid": "TS0207",
+      "reason": "p2520-would-degrade",
+      "driver": "water_leak_sensor"
     },
     {
       "mfr": "_TZ3000_jyupj3fw",
@@ -162,6 +32,12 @@
       "soft": null
     },
     {
+      "mfr": "_TZ3000_kyb656no",
+      "pid": "TS0207",
+      "reason": "p2520-would-degrade",
+      "driver": "water_leak_sensor"
+    },
+    {
       "mfr": "_TZ3000_lfa05ajd",
       "pid": "TS0201",
       "reason": "needs-deep-review",
@@ -169,11 +45,47 @@
       "soft": null
     },
     {
+      "mfr": "_TZ3000_o005nuxx",
+      "pid": "TS0115",
+      "reason": "p2520-would-degrade",
+      "driver": "usb_outlet_advanced"
+    },
+    {
+      "mfr": "_TZ3000_pzui3skt",
+      "pid": "TS0041",
+      "reason": "p2520-would-degrade",
+      "driver": "button_wireless_1"
+    },
+    {
+      "mfr": "_TZ3000_ww9i3e0y",
+      "pid": "TS0207",
+      "reason": "p2520-would-degrade",
+      "driver": "water_leak_sensor"
+    },
+    {
       "mfr": "_TZ3210_4whigl8i",
       "pid": "TS0501",
       "reason": "needs-deep-review",
       "tier": null,
       "soft": null
+    },
+    {
+      "mfr": "_TZ3210_4zinq6io",
+      "pid": "TS0501B",
+      "reason": "p2520-would-degrade",
+      "driver": "bulb_dimmable"
+    },
+    {
+      "mfr": "_TZ3210_9q49basr",
+      "pid": "TS0501B",
+      "reason": "p2520-would-degrade",
+      "driver": "bulb_dimmable"
+    },
+    {
+      "mfr": "_TZ3210_e5t9bfdv",
+      "pid": "TS0501B",
+      "reason": "p2520-would-degrade",
+      "driver": "bulb_dimmable"
     },
     {
       "mfr": "_TZ3210_i680rtja",
@@ -218,13 +130,6 @@
       "soft": "motion_sensor"
     },
     {
-      "mfr": "_TZ3210_ttkgurpb",
-      "pid": "TS0504B",
-      "reason": "needs-deep-review",
-      "tier": null,
-      "soft": null
-    },
-    {
       "mfr": "_TZ3210_wp1k8xws",
       "pid": "TS0503B",
       "reason": "not-confident",
@@ -267,6 +172,13 @@
       "soft": null
     },
     {
+      "mfr": "_TZ3000_00mk2xzy",
+      "pid": "TS011F",
+      "reason": "not-confident",
+      "tier": "heuristic_pid",
+      "soft": "plug_energy_monitor"
+    },
+    {
       "mfr": "_TZ3000_ja5osu5g",
       "pid": "ZG-103ZL",
       "reason": "not-confident",
@@ -279,6 +191,18 @@
       "reason": "not-confident",
       "tier": "pid_default",
       "soft": "bulb_rgbw"
+    },
+    {
+      "mfr": "_TZ3000_rrjr1q0u",
+      "pid": "TS0043",
+      "reason": "p2520-would-degrade",
+      "driver": "button_wireless_3"
+    },
+    {
+      "mfr": "_TZ3000_yw5tvzsk",
+      "pid": "TS0043",
+      "reason": "p2520-would-degrade",
+      "driver": "button_wireless_3"
     },
     {
       "mfr": "_TZ3210_19qb27da",
@@ -330,6 +254,12 @@
       "soft": "wall_dimmer_tuya"
     },
     {
+      "mfr": "_TZ3400_key8kk7r",
+      "pid": "TS0043",
+      "reason": "p2520-would-degrade",
+      "driver": "button_wireless_3"
+    },
+    {
       "mfr": "TUYATEC-L8U78XHN",
       "pid": "TS0901",
       "reason": "not-confident",
@@ -337,11 +267,5 @@
       "soft": null
     }
   ],
-  "already": [
-    {
-      "mfr": "_TZ3000_l9brjwau",
-      "pid": "TS0003",
-      "driver": "switch_2gang"
-    }
-  ]
+  "already": []
 }

@@ -43,11 +43,7 @@ Format Errors: 0
 Drivers scanned: 431
 Cards with args: 643
 Cards with tokens: 1041
-Cards with orphan tokens (declared but not used in args/title): 2
-
-First 20 issues:
-  - wifi_ir_remote : wifi_ir_remote_learning_started → orphan tokens: timeout_s
-  - wifi_ir_remote : wifi_ir_remote_code_learned → orphan tokens: format
+Cards with orphan tokens (declared but not used in args/title): 0
 
 ```
 
@@ -55,10 +51,10 @@ First 20 issues:
 
 ```
 {
-  "generatedAt": "2026-09-15T09:29:23.345Z",
+  "generatedAt": "2026-09-15T18:25:59.479Z",
   "mode": "dry-run",
-  "driversTouched": 1,
-  "orphanTokensFixed": 2,
+  "driversTouched": 0,
+  "orphanTokensFixed": 0,
   "triggersAdded": 0,
   "actionsAdded": 0,
   "appJsonDedupe": {
@@ -68,14 +64,7 @@ First 20 issues:
     "count": 27
   },
   "subtools": [],
-  "topChanges": [
-    {
-      "driver": "wifi_ir_remote",
-      "orphans": 2,
-      "triggers": [],
-      "actions": []
-    }
-  ]
+  "topChanges": []
 }
 
 ```
@@ -120,50 +109,28 @@ OK: all button.* capabilities are event/maintenance-only.
 ### dp-cluster-flow-coverage
 
 ```
-ZE204_a2jcoyuk|TS0601
-  - _TZE200_r32ctezx|TS0601
-  - _TZ3000_uw3dadam|TS0202
-  - _TZE284_0ints6wl|TS0601
-  - _TZE200_e3oitdyu|TS0601
-  - _TZE200_uj3f4wr5|TS0601
-  - _TZ3000_u3nv1jwk|TS0044
-  - _TZ3000_otvn3lne|TS0202
-  - _TZE204_81yrt3lo|TS0601
-  - _TZ3210_tgvtvdoc|TS0207
-  - _TZE200_vuqzj1ej|TS0601
-  - _TZE200_2aaelwxk|TS0601
-  - _TZE200_kccdzaeo|TS0601
-  - _TZE200_khzbklyh|TS0601
-  - _TZE200_jfw0a4aa|TS0601
-  - _TZE200_iba1ckek|TS0601
-  - _TZE200_dfxkcots|TS0601
-  - _TZE200_p0gzbqct|TS0601
-  - _TZE200_fjjbhx9d|TS0601
-  - _TZE200_aqnazj70|TS0601
-  - _TZE200_mexisfik|TS0601
-  - _TYZB01_qeqvmvti|TS0011
-  - _TZE200_mja3fuja|TS0601
-  - _TZE200_2ekuz3dz|TS0601
-  - _TZE204_qasjif9e|TS0601
-  - _TZE204_sxm7l9xa|TS0601
-  - _TZE200_3towulqd|TS0601
-  - _TZE200_3p5ydos3|TS0601
-  - _TZ3000_mmkbptmx|TS0004
-  - _TZ3000_ruxexjfz|TS0002
-  - _TZ3000_3dfewsk1|TS0207
-  - _TZ3000_wkai4ga5|TS0042
-  - _TZE204_zenj4lxv|TS0601
-  - _TZB210_rkgngb5o|TS0502B
-  - _TYZB01_6g8b7at8|TS0012
-  - _TZ3210_0zabbfax|TS0503B
-  - _TZE204_ex3rcdha|TS0601
-  - _TZE200_yjjdcqsq|TS0601
-  - _TZ3000_ja5osu5g|TS004F
-  - _TZ3000_an5rjiwd|TS0041
-  - _TZ3000_5tqxpine|TS0044
-  - _TZE200_wt9agwf3|TS0601
-  - _TZE200_5uodvhgc|TS0601
-  - _TZE200_nbqnmkee|TS0601
+# DP × Cluster × Flow coverage — 2026-09-15
+
+Critical gaps: **0**
+
+## Drivers / Flow
+- Drivers: 431
+- With flow.compose: 431
+- Without: none
+- Flow card entries (compose): 5851
+
+## Clusters
+- Compose unique: 35
+- Lexicon size: 44
+- Missing from lexicon: 0
+
+## DP knowledge
+- Knowledge couples: 198
+- Registry couples (Tuya EF00-eligible): 198
+- Covered: 197 (99.5%)
+- Skipped brand/external soft-watch: 18
+- Uncovered:
+  - _TZE200_8eazvzo6|TS0601
 
 ## Flow heuristic smoke
 ```json

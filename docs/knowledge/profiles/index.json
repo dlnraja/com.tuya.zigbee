@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-15T08:05:20.663Z",
+  "generatedAt": "2026-09-15T18:25:11.186Z",
   "users": [
     {
       "username": "SunBeech",
@@ -16,18 +16,18 @@
       "file": "users/SergeP.md"
     },
     {
+      "username": "Peter_van_Werkhoven",
+      "posts": 15,
+      "devices": 5,
+      "autoStub": false,
+      "file": "users/Peter_van_Werkhoven.md"
+    },
+    {
       "username": "dlnraja",
       "posts": 13,
       "devices": 1,
       "autoStub": true,
       "file": "users/dlnraja.md"
-    },
-    {
-      "username": "Peter_van_Werkhoven",
-      "posts": 10,
-      "devices": 5,
-      "autoStub": false,
-      "file": "users/Peter_van_Werkhoven.md"
     },
     {
       "username": "Gabriel_Pedrosa_Mach",
@@ -81,7 +81,7 @@
     {
       "username": "Michael_Edholm",
       "posts": 5,
-      "devices": 0,
+      "devices": 1,
       "autoStub": true,
       "file": "users/Michael_Edholm.md"
     },
@@ -158,7 +158,7 @@
     {
       "username": "A_Tas",
       "posts": 2,
-      "devices": 1,
+      "devices": 2,
       "autoStub": false,
       "file": "users/A_Tas.md"
     },
@@ -193,7 +193,7 @@
     {
       "username": "SteampunkLolcat",
       "posts": 2,
-      "devices": 0,
+      "devices": 1,
       "autoStub": true,
       "file": "users/SteampunkLolcat.md"
     },
@@ -235,7 +235,7 @@
     {
       "username": "Bo_Kjaergaard",
       "posts": 2,
-      "devices": 2,
+      "devices": 3,
       "autoStub": true,
       "file": "users/Bo_Kjaergaard.md"
     },
@@ -249,7 +249,7 @@
     {
       "username": "FKey",
       "posts": 2,
-      "devices": 0,
+      "devices": 1,
       "autoStub": true,
       "file": "users/FKey.md"
     },
@@ -280,6 +280,20 @@
       "devices": 0,
       "autoStub": true,
       "file": "users/Reidar_Skuland.md"
+    },
+    {
+      "username": "Stefan_Persson2",
+      "posts": 2,
+      "devices": 0,
+      "autoStub": true,
+      "file": "users/Stefan_Persson2.md"
+    },
+    {
+      "username": "Rens_Brandwijk",
+      "posts": 2,
+      "devices": 0,
+      "autoStub": true,
+      "file": "users/Rens_Brandwijk.md"
     },
     {
       "username": "dsdevries",
@@ -452,7 +466,7 @@
     {
       "username": "Erwin3",
       "posts": 1,
-      "devices": 0,
+      "devices": 1,
       "autoStub": true,
       "file": "users/Erwin3.md"
     },
@@ -515,7 +529,7 @@
     {
       "username": "Bram_B",
       "posts": 1,
-      "devices": 0,
+      "devices": 1,
       "autoStub": true,
       "file": "users/Bram_B.md"
     },
@@ -571,7 +585,7 @@
     {
       "username": "Zdenek_Sadek",
       "posts": 1,
-      "devices": 0,
+      "devices": 1,
       "autoStub": true,
       "file": "users/Zdenek_Sadek.md"
     },
@@ -732,7 +746,7 @@
     {
       "username": "Elliot_Hallais",
       "posts": 1,
-      "devices": 0,
+      "devices": 1,
       "autoStub": true,
       "file": "users/Elliot_Hallais.md"
     },
@@ -791,13 +805,6 @@
       "devices": 0,
       "autoStub": true,
       "file": "users/einarso.md"
-    },
-    {
-      "username": "Stefan_Persson2",
-      "posts": 1,
-      "devices": 0,
-      "autoStub": true,
-      "file": "users/Stefan_Persson2.md"
     },
     {
       "username": "Eduard_Martirosyan",
@@ -921,6 +928,13 @@
       "file": "couples/_TZE200_m6lwazh9_TS0601.md"
     },
     {
+      "couple": "_TZE204_rkbxtclc|TS0601",
+      "driver": "switch_3gang",
+      "autoStub": false,
+      "dpCount": 18,
+      "file": "couples/_TZE204_rkbxtclc_TS0601.md"
+    },
+    {
       "couple": "_TZE204_ogx8u5z6|TS0601",
       "driver": "device_radiator_valve",
       "autoStub": false,
@@ -935,11 +949,53 @@
       "file": "couples/_TZE204_mvtclclq_TS0601.md"
     },
     {
+      "couple": "_TZE200_vuqzj1ej|TS0601",
+      "driver": "presence_sensor_radar",
+      "autoStub": false,
+      "dpCount": 16,
+      "file": "couples/_TZE200_vuqzj1ej_TS0601.md"
+    },
+    {
+      "couple": "_TZ3000_k4ej3ww2|TS0207",
+      "driver": "water_leak_sensor",
+      "autoStub": false,
+      "dpCount": 15,
+      "file": "couples/_TZ3000_k4ej3ww2_TS0207.md"
+    },
+    {
+      "couple": "_TZ3000_upgcbody|TS0207",
+      "driver": "water_leak_sensor",
+      "autoStub": false,
+      "dpCount": 15,
+      "file": "couples/_TZ3000_upgcbody_TS0207.md"
+    },
+    {
       "couple": "_TZE204_xalsoe3m|TS0601",
       "driver": "wall_thermostat",
       "autoStub": false,
       "dpCount": 15,
       "file": "couples/_TZE204_xalsoe3m_TS0601.md"
+    },
+    {
+      "couple": "_TZ3000_vdfwjopk|TS0219",
+      "driver": "siren",
+      "autoStub": false,
+      "dpCount": 15,
+      "file": "couples/_TZ3000_vdfwjopk_TS0219.md"
+    },
+    {
+      "couple": "_TZE200_npj9bug3|TS0601",
+      "driver": "soil_sensor",
+      "autoStub": false,
+      "dpCount": 14,
+      "file": "couples/_TZE200_npj9bug3_TS0601.md"
+    },
+    {
+      "couple": "_TZE284_0ints6wl|TS0601",
+      "driver": "soil_sensor",
+      "autoStub": false,
+      "dpCount": 14,
+      "file": "couples/_TZE284_0ints6wl_TS0601.md"
     },
     {
       "couple": "_TZ3210_iystcadi|TS0505B",
@@ -963,11 +1019,18 @@
       "file": "couples/_TZ3210_3lbtuxgp_TS0505B.md"
     },
     {
-      "couple": "_TZ3000_k4ej3ww2|TS0207",
-      "driver": "water_leak_sensor",
+      "couple": "_TZ3210_0zabbfax|TS0503B",
+      "driver": "light_bulb_rgb",
       "autoStub": false,
-      "dpCount": 11,
-      "file": "couples/_TZ3000_k4ej3ww2_TS0207.md"
+      "dpCount": 13,
+      "file": "couples/_TZ3210_0zabbfax_TS0503B.md"
+    },
+    {
+      "couple": "_TZE200_kccdzaeo|TS0601",
+      "driver": "presence_sensor_radar",
+      "autoStub": false,
+      "dpCount": 12,
+      "file": "couples/_TZE200_kccdzaeo_TS0601.md"
     },
     {
       "couple": "_TZ3210_jaap6jeb|TS0505B",
@@ -977,11 +1040,18 @@
       "file": "couples/_TZ3210_jaap6jeb_TS0505B.md"
     },
     {
-      "couple": "_TZ3000_upgcbody|TS0207",
-      "driver": "water_leak_sensor",
+      "couple": "_TZE200_2aaelwxk|TS0601",
+      "driver": "presence_sensor_radar",
       "autoStub": false,
-      "dpCount": 11,
-      "file": "couples/_TZ3000_upgcbody_TS0207.md"
+      "dpCount": 10,
+      "file": "couples/_TZE200_2aaelwxk_TS0601.md"
+    },
+    {
+      "couple": "_TZE200_khzbklyh|TS0601",
+      "driver": "presence_sensor_radar",
+      "autoStub": false,
+      "dpCount": 10,
+      "file": "couples/_TZE200_khzbklyh_TS0601.md"
     },
     {
       "couple": "_TZE204_r0jdjrvi|TS0601",
@@ -996,6 +1066,41 @@
       "autoStub": false,
       "dpCount": 9,
       "file": "couples/_TZE284_fqm2sfpe_TS0601.md"
+    },
+    {
+      "couple": "_TZE200_icka1clh|TS0601",
+      "driver": "curtain_motor",
+      "autoStub": false,
+      "dpCount": 9,
+      "file": "couples/_TZE200_icka1clh_TS0601.md"
+    },
+    {
+      "couple": "_TZE284_fhvpaltk|TS0601",
+      "driver": "valve_dual_irrigation",
+      "autoStub": false,
+      "dpCount": 9,
+      "file": "couples/_TZE284_fhvpaltk_TS0601.md"
+    },
+    {
+      "couple": "_TZ3210_tgvtvdoc|TS0207",
+      "driver": "rain_sensor",
+      "autoStub": false,
+      "dpCount": 9,
+      "file": "couples/_TZ3210_tgvtvdoc_TS0207.md"
+    },
+    {
+      "couple": "_TZE204_qasjif9e|TS0601",
+      "driver": "presence_sensor_radar",
+      "autoStub": false,
+      "dpCount": 9,
+      "file": "couples/_TZE204_qasjif9e_TS0601.md"
+    },
+    {
+      "couple": "_TZE204_ex3rcdha|TS0601",
+      "driver": "presence_sensor_radar",
+      "autoStub": false,
+      "dpCount": 9,
+      "file": "couples/_TZE204_ex3rcdha_TS0601.md"
     },
     {
       "couple": "_TZE284_m1cvyneb|TS0601",
@@ -1033,6 +1138,27 @@
       "file": "couples/_TZE204_hlx9tnzb_TS0601.md"
     },
     {
+      "couple": "_TZE200_dfxkcots|TS0601",
+      "driver": "wall_dimmer_tuya",
+      "autoStub": false,
+      "dpCount": 8,
+      "file": "couples/_TZE200_dfxkcots_TS0601.md"
+    },
+    {
+      "couple": "_TZE204_sxm7l9xa|TS0601",
+      "driver": "presence_sensor_radar",
+      "autoStub": false,
+      "dpCount": 8,
+      "file": "couples/_TZE204_sxm7l9xa_TS0601.md"
+    },
+    {
+      "couple": "_TZE200_3p5ydos3|TS0601",
+      "driver": "wall_dimmer_tuya",
+      "autoStub": false,
+      "dpCount": 8,
+      "file": "couples/_TZE200_3p5ydos3_TS0601.md"
+    },
+    {
       "couple": "_TZ3210_vbfp8eyv|TS011F",
       "driver": "din_rail_switch",
       "autoStub": false,
@@ -1059,6 +1185,34 @@
       "autoStub": false,
       "dpCount": 7,
       "file": "couples/_TZE284_gnpflcoq_TS0601.md"
+    },
+    {
+      "couple": "_TZE200_jthf7vb6|TS0601",
+      "driver": "water_leak_sensor",
+      "autoStub": false,
+      "dpCount": 7,
+      "file": "couples/_TZE200_jthf7vb6_TS0601.md"
+    },
+    {
+      "couple": "_TZE200_iba1ckek|TS0601",
+      "driver": "vibration_sensor",
+      "autoStub": false,
+      "dpCount": 7,
+      "file": "couples/_TZE200_iba1ckek_TS0601.md"
+    },
+    {
+      "couple": "_TZE200_3towulqd|TS0601",
+      "driver": "presence_sensor_radar",
+      "autoStub": false,
+      "dpCount": 7,
+      "file": "couples/_TZE200_3towulqd_TS0601.md"
+    },
+    {
+      "couple": "_TZ3000_3dfewsk1|TS0207",
+      "driver": "water_leak_sensor",
+      "autoStub": false,
+      "dpCount": 7,
+      "file": "couples/_TZ3000_3dfewsk1_TS0207.md"
     },
     {
       "couple": "_TZE284_nt4pquef|TS0601",
@@ -1103,11 +1257,46 @@
       "file": "couples/_TZE284_rccxox8p_TS0601.md"
     },
     {
+      "couple": "_TZE284_3MZB0SDZ|TS0601",
+      "driver": "curtain_motor",
+      "autoStub": false,
+      "dpCount": 6,
+      "file": "couples/_TZE284_3MZB0SDZ_TS0601.md"
+    },
+    {
       "couple": "_TZE284_hodyryli|TS0601",
       "driver": "climate_sensor_zt08",
       "autoStub": false,
       "dpCount": 5,
       "file": "couples/_TZE284_hodyryli_TS0601.md"
+    },
+    {
+      "couple": "_TZE200_hewlydpz|TS0601",
+      "driver": "wall_switch_4_gang_tuya",
+      "autoStub": false,
+      "dpCount": 5,
+      "file": "couples/_TZE200_hewlydpz_TS0601.md"
+    },
+    {
+      "couple": "_TZE200_p0gzbqct|TS0601",
+      "driver": "wall_dimmer_tuya",
+      "autoStub": false,
+      "dpCount": 5,
+      "file": "couples/_TZE200_p0gzbqct_TS0601.md"
+    },
+    {
+      "couple": "_TZE200_mja3fuja|TS0601",
+      "driver": "air_quality_comprehensive",
+      "autoStub": false,
+      "dpCount": 5,
+      "file": "couples/_TZE200_mja3fuja_TS0601.md"
+    },
+    {
+      "couple": "_TZE200_yjjdcqsq|TS0601",
+      "driver": "climate_sensor",
+      "autoStub": false,
+      "dpCount": 5,
+      "file": "couples/_TZE200_yjjdcqsq_TS0601.md"
     },
     {
       "couple": "_TZE204_aagrxlbd|TS0601",
@@ -1159,6 +1348,48 @@
       "file": "couples/_TZ3218_hdc8bbha_TS000F.md"
     },
     {
+      "couple": "_TZ3000_v5498kdm|TS0001",
+      "driver": "switch_1gang",
+      "autoStub": false,
+      "dpCount": 4,
+      "file": "couples/_TZ3000_v5498kdm_TS0001.md"
+    },
+    {
+      "couple": "_TZE200_r32ctezx|TS0601",
+      "driver": "fan_controller",
+      "autoStub": false,
+      "dpCount": 4,
+      "file": "couples/_TZE200_r32ctezx_TS0601.md"
+    },
+    {
+      "couple": "_TZE200_jfw0a4aa|TS0601",
+      "driver": "vibration_sensor",
+      "autoStub": false,
+      "dpCount": 4,
+      "file": "couples/_TZE200_jfw0a4aa_TS0601.md"
+    },
+    {
+      "couple": "_TZE200_aqnazj70|TS0601",
+      "driver": "switch_4gang",
+      "autoStub": false,
+      "dpCount": 4,
+      "file": "couples/_TZE200_aqnazj70_TS0601.md"
+    },
+    {
+      "couple": "_TZE200_mexisfik|TS0601",
+      "driver": "switch_4gang",
+      "autoStub": false,
+      "dpCount": 4,
+      "file": "couples/_TZE200_mexisfik_TS0601.md"
+    },
+    {
+      "couple": "_TYZB01_qeqvmvti|TS0011",
+      "driver": "switch_1gang",
+      "autoStub": false,
+      "dpCount": 4,
+      "file": "couples/_TYZB01_qeqvmvti_TS0011.md"
+    },
+    {
       "couple": "_TZE284_6uyu20xu|TS0601",
       "driver": "climate_sensor",
       "autoStub": false,
@@ -1166,11 +1397,67 @@
       "file": "couples/_TZE284_6uyu20xu_TS0601.md"
     },
     {
+      "couple": "_TZE200_1n2zev06|TS0601",
+      "driver": "water_valve_smart",
+      "autoStub": false,
+      "dpCount": 3,
+      "file": "couples/_TZE200_1n2zev06_TS0601.md"
+    },
+    {
+      "couple": "_TZE204_81yrt3lo|TS0601",
+      "driver": "power_clamp_meter",
+      "autoStub": false,
+      "dpCount": 3,
+      "file": "couples/_TZE204_81yrt3lo_TS0601.md"
+    },
+    {
+      "couple": "_TZB210_rkgngb5o|TS0502B",
+      "driver": "bulb_tunable_white",
+      "autoStub": false,
+      "dpCount": 3,
+      "file": "couples/_TZB210_rkgngb5o_TS0502B.md"
+    },
+    {
+      "couple": "_TZE200_wt9agwf3|TS0601",
+      "driver": "water_valve_smart",
+      "autoStub": false,
+      "dpCount": 3,
+      "file": "couples/_TZE200_wt9agwf3_TS0601.md"
+    },
+    {
+      "couple": "_TZE200_5uodvhgc|TS0601",
+      "driver": "water_valve_smart",
+      "autoStub": false,
+      "dpCount": 3,
+      "file": "couples/_TZE200_5uodvhgc_TS0601.md"
+    },
+    {
+      "couple": "_TZE200_nbqnmkee|TS0601",
+      "driver": "water_valve_smart",
+      "autoStub": false,
+      "dpCount": 3,
+      "file": "couples/_TZE200_nbqnmkee_TS0601.md"
+    },
+    {
       "couple": "_TZE284_cf4b5ktf|TS0601",
       "driver": "energy_meter_3phase",
       "autoStub": false,
       "dpCount": 2,
       "file": "couples/_TZE284_cf4b5ktf_TS0601.md"
+    },
+    {
+      "couple": "_TZ3000_uw3dadam|TS0202",
+      "driver": "motion_sensor",
+      "autoStub": false,
+      "dpCount": 2,
+      "file": "couples/_TZ3000_uw3dadam_TS0202.md"
+    },
+    {
+      "couple": "_TZ3000_otvn3lne|TS0202",
+      "driver": "motion_sensor",
+      "autoStub": false,
+      "dpCount": 2,
+      "file": "couples/_TZ3000_otvn3lne_TS0202.md"
     },
     {
       "couple": "_TZ3000_n2egfsli|TS0203",
@@ -1192,6 +1479,48 @@
       "autoStub": false,
       "dpCount": 1,
       "file": "couples/_tze200_3ejwxpmu_TS0601.md"
+    },
+    {
+      "couple": "_TZE284_fodv6bkr|TS0601",
+      "driver": "curtain_motor",
+      "autoStub": false,
+      "dpCount": 1,
+      "file": "couples/_TZE284_fodv6bkr_TS0601.md"
+    },
+    {
+      "couple": "_TZ3000_pjb1ua0m|TS0203",
+      "driver": "contact_sensor",
+      "autoStub": false,
+      "dpCount": 1,
+      "file": "couples/_TZ3000_pjb1ua0m_TS0203.md"
+    },
+    {
+      "couple": "_TZE200_127x7wnl|TS0601",
+      "driver": "curtain_motor",
+      "autoStub": false,
+      "dpCount": 1,
+      "file": "couples/_TZE200_127x7wnl_TS0601.md"
+    },
+    {
+      "couple": "_TZE284_upt8lzi0|TS0601",
+      "driver": "curtain_motor",
+      "autoStub": false,
+      "dpCount": 1,
+      "file": "couples/_TZE284_upt8lzi0_TS0601.md"
+    },
+    {
+      "couple": "_TZE204_a2jcoyuk|TS0601",
+      "driver": "curtain_motor",
+      "autoStub": false,
+      "dpCount": 1,
+      "file": "couples/_TZE204_a2jcoyuk_TS0601.md"
+    },
+    {
+      "couple": "_TZE200_uj3f4wr5|TS0601",
+      "driver": "curtain_motor",
+      "autoStub": false,
+      "dpCount": 1,
+      "file": "couples/_TZE200_uj3f4wr5_TS0601.md"
     },
     {
       "couple": "_TZ3210_imaccztn|TS0004",
@@ -1654,6 +1983,223 @@
       "autoStub": false,
       "dpCount": 0,
       "file": "couples/_TZ3000_dfgbtub0_TS0044.md"
+    },
+    {
+      "couple": "_TZE200_zo0cfekv|TS0601",
+      "driver": "wall_switch_3gang_1way",
+      "autoStub": false,
+      "dpCount": 0,
+      "file": "couples/_TZE200_zo0cfekv_TS0601.md"
+    },
+    {
+      "couple": "_TZ3000_kaflzta4|TS004F",
+      "driver": "smart_knob",
+      "autoStub": false,
+      "dpCount": 0,
+      "file": "couples/_TZ3000_kaflzta4_TS004F.md"
+    },
+    {
+      "couple": "_TZ3000_ptjcjise|TS0002",
+      "driver": "wall_switch_2gang_1way",
+      "autoStub": false,
+      "dpCount": 0,
+      "file": "couples/_TZ3000_ptjcjise_TS0002.md"
+    },
+    {
+      "couple": "_TZ3000_l9brjwau|TS0002",
+      "driver": "wall_switch_2gang_1way",
+      "autoStub": false,
+      "dpCount": 0,
+      "file": "couples/_TZ3000_l9brjwau_TS0002.md"
+    },
+    {
+      "couple": "_TZ3000_ysdv91bk|TS0001",
+      "driver": "wall_switch_1gang_1way",
+      "autoStub": false,
+      "dpCount": 0,
+      "file": "couples/_TZ3000_ysdv91bk_TS0001.md"
+    },
+    {
+      "couple": "_TZ3000_enmfaave|TS0004",
+      "driver": "switch_4gang",
+      "autoStub": false,
+      "dpCount": 0,
+      "file": "couples/_TZ3000_enmfaave_TS0004.md"
+    },
+    {
+      "couple": "_TZ3000_xk5udnd6|TS0012",
+      "driver": "wall_switch_2gang_1way",
+      "autoStub": false,
+      "dpCount": 0,
+      "file": "couples/_TZ3000_xk5udnd6_TS0012.md"
+    },
+    {
+      "couple": "_TZ3000_wkai4ga5|TS0044",
+      "driver": "scene_switch_4",
+      "autoStub": false,
+      "dpCount": 0,
+      "file": "couples/_TZ3000_wkai4ga5_TS0044.md"
+    },
+    {
+      "couple": "_TZ3000_xffhmvhv|TS004F",
+      "driver": "button_wireless_4",
+      "autoStub": false,
+      "dpCount": 0,
+      "file": "couples/_TZ3000_xffhmvhv_TS004F.md"
+    },
+    {
+      "couple": "_TZ3000_ufhtxr59|TS0044",
+      "driver": "scene_switch_4",
+      "autoStub": false,
+      "dpCount": 0,
+      "file": "couples/_TZ3000_ufhtxr59_TS0044.md"
+    },
+    {
+      "couple": "_TZ3000_mtnpt6ws|TS0002",
+      "driver": "switch_2gang",
+      "autoStub": false,
+      "dpCount": 0,
+      "file": "couples/_TZ3000_mtnpt6ws_TS0002.md"
+    },
+    {
+      "couple": "_TZ3210_ddigca5n|TS011F",
+      "driver": "plug_energy_monitor",
+      "autoStub": false,
+      "dpCount": 0,
+      "file": "couples/_TZ3210_ddigca5n_TS011F.md"
+    },
+    {
+      "couple": "_TZ3000_a4xycprs|TS0044",
+      "driver": "scene_switch_4",
+      "autoStub": false,
+      "dpCount": 0,
+      "file": "couples/_TZ3000_a4xycprs_TS0044.md"
+    },
+    {
+      "couple": "_TZ3000_cvis4qmw|TS0006",
+      "driver": "switch_wall_6gang",
+      "autoStub": false,
+      "dpCount": 0,
+      "file": "couples/_TZ3000_cvis4qmw_TS0006.md"
+    },
+    {
+      "couple": "_TZ3000_g9chy2ib|TS0003",
+      "driver": "wall_switch_3gang_1way",
+      "autoStub": false,
+      "dpCount": 0,
+      "file": "couples/_TZ3000_g9chy2ib_TS0003.md"
+    },
+    {
+      "couple": "_TZ3000_etufnltx|TS1002",
+      "driver": "button_wireless_4",
+      "autoStub": false,
+      "dpCount": 0,
+      "file": "couples/_TZ3000_etufnltx_TS1002.md"
+    },
+    {
+      "couple": "_TZ3210_w0qqde0g|TS011F",
+      "driver": "plug_energy_monitor",
+      "autoStub": false,
+      "dpCount": 0,
+      "file": "couples/_TZ3210_w0qqde0g_TS011F.md"
+    },
+    {
+      "couple": "_TZE200_e3oitdyu|TS0601",
+      "driver": "dimmer_2_gang_tuya",
+      "autoStub": false,
+      "dpCount": 0,
+      "file": "couples/_TZE200_e3oitdyu_TS0601.md"
+    },
+    {
+      "couple": "_TZ3000_u3nv1jwk|TS0044",
+      "driver": "button_wireless_4",
+      "autoStub": false,
+      "dpCount": 0,
+      "file": "couples/_TZ3000_u3nv1jwk_TS0044.md"
+    },
+    {
+      "couple": "_TZE200_fjjbhx9d|TS0601",
+      "driver": "dimmer_2_gang_tuya",
+      "autoStub": false,
+      "dpCount": 0,
+      "file": "couples/_TZE200_fjjbhx9d_TS0601.md"
+    },
+    {
+      "couple": "_TZE200_2ekuz3dz|TS0601",
+      "driver": "wall_thermostat",
+      "autoStub": false,
+      "dpCount": 0,
+      "file": "couples/_TZE200_2ekuz3dz_TS0601.md"
+    },
+    {
+      "couple": "_TZ3000_mmkbptmx|TS0004",
+      "driver": "switch_4gang",
+      "autoStub": false,
+      "dpCount": 0,
+      "file": "couples/_TZ3000_mmkbptmx_TS0004.md"
+    },
+    {
+      "couple": "_TZ3000_ruxexjfz|TS0002",
+      "driver": "switch_2gang",
+      "autoStub": false,
+      "dpCount": 0,
+      "file": "couples/_TZ3000_ruxexjfz_TS0002.md"
+    },
+    {
+      "couple": "_TZ3000_wkai4ga5|TS0042",
+      "driver": "button_wireless_2",
+      "autoStub": false,
+      "dpCount": 0,
+      "file": "couples/_TZ3000_wkai4ga5_TS0042.md"
+    },
+    {
+      "couple": "_TZE204_zenj4lxv|TS0601",
+      "driver": "dimmer_2_gang_tuya",
+      "autoStub": false,
+      "dpCount": 0,
+      "file": "couples/_TZE204_zenj4lxv_TS0601.md"
+    },
+    {
+      "couple": "_TYZB01_6g8b7at8|TS0012",
+      "driver": "switch_2gang",
+      "autoStub": false,
+      "dpCount": 0,
+      "file": "couples/_TYZB01_6g8b7at8_TS0012.md"
+    },
+    {
+      "couple": "_TZ3000_ja5osu5g|TS004F",
+      "driver": "smart_knob",
+      "autoStub": false,
+      "dpCount": 0,
+      "file": "couples/_TZ3000_ja5osu5g_TS004F.md"
+    },
+    {
+      "couple": "_TZ3000_an5rjiwd|TS0041",
+      "driver": "button_wireless_1",
+      "autoStub": false,
+      "dpCount": 0,
+      "file": "couples/_TZ3000_an5rjiwd_TS0041.md"
+    },
+    {
+      "couple": "_TZ3000_5tqxpine|TS0044",
+      "driver": "scene_switch_4",
+      "autoStub": false,
+      "dpCount": 0,
+      "file": "couples/_TZ3000_5tqxpine_TS0044.md"
+    },
+    {
+      "couple": "_TZ3000_t7ugva7q|TS0013",
+      "driver": "wall_switch_3gang_1way",
+      "autoStub": false,
+      "dpCount": 0,
+      "file": "couples/_TZ3000_t7ugva7q_TS0013.md"
+    },
+    {
+      "couple": "_TZ3000_l9brjwau|TS0003",
+      "driver": "wall_switch_3gang_1way",
+      "autoStub": false,
+      "dpCount": 0,
+      "file": "couples/_TZ3000_l9brjwau_TS0003.md"
     }
   ],
   "processorTotals": null,

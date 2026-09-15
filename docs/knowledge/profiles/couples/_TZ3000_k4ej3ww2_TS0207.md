@@ -15,11 +15,15 @@
 | 4 | measure_battery | — | rx | measure_battery |
 | 5 | alarm_tamper | — | rx | alarm_tamper |
 | 6 | battery_voltage | — | rx | battery_voltage |
+| 7 | muffling | — | rx | muffling |
 | 9 | dp_9 | — | rx | — |
 | 14 | battery_low | — | rx | battery_low |
 | 15 | measure_battery | — | rx | measure_battery |
 | 19 | alarm_water | — | rx | alarm_water |
 | 101 | alarm_water | — | rx | alarm_water |
+| 102 | alarm_time | — | rx | alarm_time |
+| 103 | alarm_ring | — | rx | alarm_ring |
+| 104 | alarm_volume | — | rx | alarm_volume |
 
 ---
 See `docs/guides/DP_INTERPRETATION.md`

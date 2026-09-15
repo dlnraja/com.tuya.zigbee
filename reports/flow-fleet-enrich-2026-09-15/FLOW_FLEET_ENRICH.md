@@ -1,12 +1,12 @@
 # Flow fleet enrich — 2026-09-15
 
-Mode: **apply**
+Mode: **dry-run**
 
-- Drivers touched: 1
-- Orphan tokens fixed: 2
+- Drivers touched: 0
+- Orphan tokens fixed: 0
 - Triggers added: 0
 - Child-lock actions added: 0
-- app.json flow dedupe: {}
+- app.json flow dedupe: {"mode":"dry-run"}
 - Z2M gap recommendations: 27
 
 ## Commands
