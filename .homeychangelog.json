@@ -1605,5 +1605,8 @@
   },
   "5.12.190": {
     "en": "CI heal P2521: compact mfs + FP baseline + workflow prune."
+  },
+  "5.12.191": {
+    "en": "CI: strip forbidden contact FPs (P2521b)."
   }
 }
