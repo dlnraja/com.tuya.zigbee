@@ -147,7 +147,10 @@ function main() {
     for (const c of reg.cases || []) {
       // WHY(P2256): external/doNotTouch couples (e.g. SergeP Nous/SoPhos) must not
       // fail publish — they are intentionally outside our driver lock.
-      if (c.doNotTouch === true) continue;
+      // WHY(P2514): doNotLock invent/OCR junk (Stefan `_TZE2841000000_*`) has
+      // canonicalDriver=null — must not fail registryAligned audit either.
+      if (c.doNotTouch === true || c.doNotLock === true) continue;
+      if (!c.canonicalDriver) continue;
       const mfr = (c.mfr || [])[0];
       const pid = (c.productId || [])[0];
       if (!mfr) continue;
