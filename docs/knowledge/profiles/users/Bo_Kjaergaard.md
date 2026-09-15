@@ -10,6 +10,7 @@ Forum topic: **T140352** · Posts: 644, 652
 |---|---|---|---|
 | Auto T89271 #652 | wall_dimmer_tuya | _TZ3000_4UPL1FCJ+TS0041 | Verify compose fingerprint; update Test |
 | Auto T89271 #652 | wall_dimmer_tuya | _TZ3000_QD7HEJ8U+TS0505B | Verify compose fingerprint; update Test |
+| Auto T89271 #644 | smartplug | _TZ3000_NKCOBIES+TS011F | Already in smartplug — update Universal Tuya Test + re-pair |
 
 ---
 Regenerate: `npm run enrich:sync` + `npm run enrich:profiles`

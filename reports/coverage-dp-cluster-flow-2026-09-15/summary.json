@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-15T09:31:55.208Z",
+  "generatedAt": "2026-09-15T18:25:59.678Z",
   "patch": "P2247",
   "drivers": {
     "count": 431,
@@ -13,12 +13,14 @@
     "missingFromLexicon": []
   },
   "dps": {
-    "knowledgeCouples": 196,
-    "registryCouples": 195,
-    "registryCovered": 195,
-    "coveragePct": 100,
-    "skippedBrandOrExternal": 17,
-    "uncovered": []
+    "knowledgeCouples": 198,
+    "registryCouples": 198,
+    "registryCovered": 197,
+    "coveragePct": 99.5,
+    "skippedBrandOrExternal": 18,
+    "uncovered": [
+      "_TZE200_8eazvzo6|TS0601"
+    ]
   },
   "flowSmoke": {
     "undeclaredReturnsNull": true,
