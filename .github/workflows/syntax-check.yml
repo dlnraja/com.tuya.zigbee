@@ -161,6 +161,98 @@ jobs:
           fi
           echo "✅ app.json size OK: $size bytes"
 
+      - name: Flow card uniqueness gate
+        run: node tools/ci/flow-card-dup-gate.js
+
+      - name: Homey heap JSON size gate (P148/P157)
+        run: node tools/ci/homey-heap-json-gate.js
+
+      - name: Package-lock integrity gate (P2454)
+        run: node tools/ci/sync-root-package-version.js assert
+
+      - name: Intelligent mfs_db alignment check (P169)
+        run: |
+          set -euo pipefail
+          if ! node tools/ci/align-mfs-db-intelligent.js --check; then
+            echo "::error::mfs_db high drift — run: node tools/ci/align-mfs-db-intelligent.js --apply && commit data/mfs_db.json"
+            node tools/ci/align-mfs-db-intelligent.js --apply
+            node tools/ci/align-mfs-db-intelligent.js --check
+            if ! git diff --quiet -- data/mfs_db.json; then
+              echo "::error::CI applied mfs_db fixes that are not in the commit — push the apply"
+              git diff --stat -- data/mfs_db.json
+              exit 1
+            fi
+          fi
+          # P2521: refuse pretty-printed mfs_db (Homey heap + CI false churn)
+          if head -c 2 data/mfs_db.json | grep -q '{'; then
+            lines=$(wc -l < data/mfs_db.json | tr -d ' ')
+            if [ "$lines" -gt 5 ]; then
+              echo "::warning::mfs_db.json looks pretty-printed ($lines lines) — prefer compact one-line (align --apply writes compact)"
+            fi
+          fi
+
+      - name: Sacred couple registry audit (P151)
+        run: node tools/ci/audit-sacred-couple.js --from-registry
+
+      - name: Dual-claim compose gate (P167/P168)
+        run: node tools/ci/dual-claim-compose-gate.js
+
+      - name: Class-scale sacred couple audit (P168)
+        run: node tools/ci/audit-sacred-couple-by-class.js
+
+      - name: Energy compose gate
+        run: node tools/ci/energy-compose-gate.js
+
+      # P210: layer / L14 / multi-protocol battery regression gates
+      - name: Layer coverage gate (P206–P209)
+        run: node tools/ci/layer-coverage-gate.js
+
+      - name: L14 capability writers gate (P205)
+        run: node tools/ci/l14-capability-writers-gate.js
+
+      - name: Anti-bot regression gate (P127/P2138)
+        run: node tools/ci/anti-bot-regression-gate.js
+
+      - name: P2138 sacred-couple matrix gate
+        run: node tools/ci/p2138-sacred-couple-matrix-gate.js
+
+      - name: P217 fork harvest sacred-couple gate
+        run: node tools/ci/p217-fork-harvest-gate.js
+
+      - name: P214 intelligent ZCL/EF00 adaptation gate
+        run: node tools/ci/p214-intelligent-protocol-gate.js
+
+      - name: P216 ZCL battery half-percent gate
+        run: node tools/ci/p216-zcl-battery-half-percent-gate.js
+
+      - name: Critical layer + battery tests (P206–P209)
+        run: |
+          node --test test/critical/layer-coverage.test.js
+          node --test test/critical/multi-protocol-battery.test.js
+          node --test test/critical/layer-signal-fusion.test.js
+          node --test test/critical/commit-capability.test.js
+          node --test test/critical/time-cluster-policy.test.js
+          node --test test/critical/energy-battery-button-flows.test.js
+
+      - name: P2138 BSEED dimmer + Poll Control tests
+        run: |
+          node --test test/critical/p2138-bseed-wall-dimmer.test.js
+          node --test test/critical/poll-control-policy.test.js
+          node --test test/critical/p214-intelligent-protocol-detect.test.js
+          node --test test/critical/p2435-gh540-544-switch-pairing.test.js
+          node --test test/critical/p2436-homey-match-moes-bot-mocks.test.js
+          node --test test/critical/p2437-ai-forfait-cursor-hooks.test.js
+          node --test test/critical/p2438-multi-source-harvest-ai-limit.test.js
+          node --test test/critical/p2439-kaflzta4-smart-knob-button.test.js
+          node --test test/critical/p2452-gh-issue-ssot.test.js
+          node --test test/critical/p2453-gmail-gh-couple-locks.test.js
+          node --test test/critical/p2454-package-lock-integrity.test.js
+          npm run check:p244x
+          npm run check:p246x
+          npm run check:p248x
+          npm run check:p249x
+          npm run check:publish
+
       - name: Validate Homey SDK3 compliance
         run: |
           npx homey app validate --level=publish || echo "⚠️ Homey CLI not available in CI, skipping"
@@ -233,6 +325,3 @@ jobs:
             fi
           done
           echo "ℹ️  $MISSING/$TOTAL drivers have missing image assets (non-blocking)"
-
-      - name: P2448 rotary knob command-mode gate
-        run: npm run check:p2448

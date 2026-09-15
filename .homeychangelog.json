@@ -1602,5 +1602,8 @@
   },
   "5.12.189": {
     "en": "Complementary variant enrich locks (no overwrite) + case-variant union. Update Homey Test."
+  },
+  "5.12.190": {
+    "en": "CI heal P2521: compact mfs + FP baseline + workflow prune."
   }
 }

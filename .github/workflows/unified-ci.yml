@@ -109,7 +109,23 @@ jobs:
 
       - name: 🔍 Fingerprint Collision Check
         run: |
-          node tools/ci/prune-fp-collision-bleed.js --check
+          # P2521: prune first (registry/mfs couple-aware), then baseline-aware check.
+          # Remaining NEW after prune → fail with clear remediation (update baseline only for intentional multi-home).
+          set -euo pipefail
+          if ! node tools/ci/prune-fp-collision-bleed.js --check; then
+            echo "::warning::NEW fp collisions — attempting complementary prune --apply (union-safe strip of wrong homes only)"
+            node tools/ci/prune-fp-collision-bleed.js --apply
+            if ! node tools/ci/prune-fp-collision-bleed.js --check; then
+              echo "::error::Still NEW collisions after prune — update .github/fingerprint-collision-baseline.json or fix compose dual-homes"
+              node tools/ci/prune-fp-collision-bleed.js --check || true
+              exit 1
+            fi
+            if ! git diff --quiet -- drivers; then
+              echo "::error::prune applied compose strips not in commit — review and push"
+              git diff --stat -- drivers | head -40
+              exit 1
+            fi
+          fi
           node .github/scripts/fp-collision-check.js --baseline .github/fingerprint-collision-baseline.json
 
       - name: 🛡️ Anti-bot regression gate (P127)
@@ -144,7 +160,6 @@ jobs:
           npm run check:p2288
           npm run check:p2325
           npm run check:p2326
-          npm run check:p2448
 
       - name: 🛡️ P217 fork harvest sacred-couple gate
         run: node tools/ci/p217-fork-harvest-gate.js
@@ -164,9 +179,24 @@ jobs:
           node --test test/critical/poll-control-policy.test.js
           node --test test/critical/p214-intelligent-protocol-detect.test.js
           node --test test/critical/p2231-market-couples-intake.test.js
+          node --test test/critical/p2435-gh540-544-switch-pairing.test.js
+          node --test test/critical/p2436-homey-match-moes-bot-mocks.test.js
+          node --test test/critical/p2437-ai-forfait-cursor-hooks.test.js
+          node --test test/critical/p2438-multi-source-harvest-ai-limit.test.js
+          node --test test/critical/p2439-kaflzta4-smart-knob-button.test.js
+          node --test test/critical/p2452-gh-issue-ssot.test.js
+          node --test test/critical/p2453-gmail-gh-couple-locks.test.js
+          node --test test/critical/p2454-package-lock-integrity.test.js
+          npm run check:p244x
+          npm run check:p246x
+          npm run check:p248x
+          npm run check:p249x
+          npm run check:publish
 
       - name: 🛡️ Firmware / OTA path gate
-        run: node tools/ci/firmware-updates-gate.js
+        run: node tools/ci/firmware-updates-gate.js --coverage
+      - name: Homey Device Updates verify (P2359)
+        run: node tools/ci/verify-homey-device-updates.js
 
       - name: 🛡️ WiFi local-first gate
         run: node tools/ci/wifi-local-first-gate.js

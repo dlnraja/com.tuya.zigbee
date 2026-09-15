@@ -1,6 +1,6 @@
 {
   "name": "com.dlnraja.tuya.zigbee",
-  "version": "5.12.189",
+  "version": "5.12.190",
   "description": "Tuya Unified Zigbee - Local-first control with AI automation",
   "main": "app.js",
   "scripts": {
@@ -193,7 +193,8 @@
     "check:p2518": "node --test test/critical/p2518-cap-flow-dp-rx-enrich.test.js",
     "check:p2519": "node --test test/critical/p2519-anti-regression-enrich-overwrite.test.js && node tools/ci/p2519-anti-regression-enrich-gate.js",
     "check:p2516": "node --test test/critical/p2268-parallel-zha-z2m-gate.test.js",
-    "check:p2520": "node --test test/critical/p2520-complementary-variant-enrich.test.js && node tools/ci/p2520-complementary-variant-enrich-gate.js"
+    "check:p2520": "node --test test/critical/p2520-complementary-variant-enrich.test.js && node tools/ci/p2520-complementary-variant-enrich-gate.js",
+    "check:p2521": "node --test test/critical/p2521-workflow-ci-heal.test.js"
   },
   "keywords": [
     "homey",
