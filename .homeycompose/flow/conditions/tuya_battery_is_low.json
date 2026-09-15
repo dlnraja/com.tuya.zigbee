@@ -1,0 +1,20 @@
+{
+  "id": "tuya_battery_is_low",
+  "title": {
+    "en": "Battery !{{is|is not}} low (app)",
+    "fr": "Batterie !{{est|n'est pas}} faible (app)",
+    "nl": "Batterij !{{is|is niet}} laag (app)",
+    "de": "Batterie !{{ist|ist nicht}} niedrig (App)"
+  },
+  "hint": {
+    "en": "Checks app-owned tuya_battery_low (derived from measure_battery). Never uses Homey alarm_battery.",
+    "fr": "Vérifie tuya_battery_low (dérivé de measure_battery). N'utilise jamais alarm_battery Homey."
+  },
+  "args": [
+    {
+      "name": "device",
+      "type": "device",
+      "filter": "capabilities=measure_battery"
+    }
+  ]
+}

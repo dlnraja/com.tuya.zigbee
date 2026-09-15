@@ -194,7 +194,36 @@ function resolveDriverForOta(mfr, fileName, entry, drivers) {
   return null;
 }
 
-function tightProductIds(entry, driverPids, fileName) {
+function isPvvxCommunity(img) {
+  // WHY(P2508): Koenkk ships pvvx *replacements* under images/pvvx/ (not OEM updates).
+  // Contre quoi: flashing Hobeian/Wing pvvx onto soil/contact bricks / wrong radio stack.
+  const url = String(img?.url || '');
+  if (/\/pvvx\//i.test(url)) return true;
+  if (img?.fileVersion === 20459521) return true;
+  if (/pvvx/i.test(String(img?.otaHeaderString || ''))) return true;
+  return false;
+}
+
+function normalizeOtaModelId(modelId) {
+  const raw = String(modelId || '').trim();
+  if (!raw) return [];
+  const variants = new Set([raw]);
+  // ZG-223Z-z → ZG-223Z ; TS0201-z → TS0201
+  if (/-z$/i.test(raw)) variants.add(raw.replace(/-z$/i, ''));
+  variants.add(raw.replace(/-/g, ''));
+  return [...variants];
+}
+
+function tightProductIds(entry, driverPids, fileName, img) {
+  // Prefer Koenkk modelId (sacred couple) over dumping driver productId list
+  const fromImage = [];
+  for (const mid of [].concat(img?.modelId || img?.modelIds || [])) {
+    for (const v of normalizeOtaModelId(mid)) {
+      if (driverPids.has(v)) fromImage.push(v);
+    }
+  }
+  if (fromImage.length) return [...new Set(fromImage)];
+
   const hinted = classPids(fileName).filter((p) => driverPids.has(p));
   const fromEntry = (entry.modelIds || []).filter((p) => driverPids.has(p));
   if (hinted.length) {
@@ -220,7 +249,7 @@ async function main() {
 
   const candidates = index.filter((img) => {
     if (!codes.has(img.manufacturerCode)) {return false;}
-    if (img.fileVersion === 20459521) {return false;}
+    if (isPvvxCommunity(img)) {return false;}
     if (!Array.isArray(img.manufacturerName) || !img.manufacturerName.length) {return false;}
     return img.manufacturerName.some((m) => dbLower.has(String(m).toLowerCase()));
   });
@@ -229,7 +258,7 @@ async function main() {
   const report = {
     generated: new Date().toISOString(),
     apply: APPLY,
-    patch: 'P2359',
+    patch: 'P2508',
     source: indexUrl,
     drivers: [],
     skipped: [],
@@ -252,7 +281,7 @@ async function main() {
       report.skipped.push({ mfr, driverId, reason: 'mfr absent du compose du driver' });
       continue;
     }
-    const devicePids = tightProductIds(entry, driver.pids, fileName);
+    const devicePids = tightProductIds(entry, driver.pids, fileName, img);
     if (!devicePids.length) {
       report.skipped.push({ mfr, driverId, reason: 'aucun productId class-tight compatible' });
       continue;
