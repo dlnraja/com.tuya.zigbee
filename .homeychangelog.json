@@ -907,6 +907,9 @@
       ]
     }
   ],
+  "9.0.949": {
+    "en": "CI: Auto-Fix family gates skip missing scripts (stable-safe). Update Homey Test."
+  },
   "9.0.948": {
     "en": "CI harden: compact mfs before Auto-Fix gates; sync-compose compact write. Update Homey Test."
   },
