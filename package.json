@@ -1,6 +1,6 @@
 {
   "name": "com.dlnraja.tuya.zigbee",
-  "version": "9.0.938",
+  "version": "9.0.940",
   "description": "Tuya Unified Zigbee - Local-first control with AI automation",
   "main": "app.js",
   "scripts": {
@@ -344,8 +344,13 @@
     "check:p2506": "node --test test/critical/p2506-smart-battery-low-alarm.test.js",
     "check:p2507": "node --test test/critical/p2507-peter-battery-ui-diag-treat.test.js",
     "check:p2508": "node --test test/critical/p2508-firmware-device-updates-oem-fleet.test.js && node tools/ci/firmware-updates-gate.js --coverage",
+    "check:p2509": "node --test test/critical/p2509-l99-multi-source-treat.test.js",
+    "check:p2510": "node --test test/critical/p2510-kai-t26439-irrigation-fp.test.js",
+    "check:p2511": "node --test test/critical/p2511-vichy-clrdrnya-mtg-residual.test.js",
+    "check:p2512": "node --test test/critical/p2512-peter-smartbutton-battery-history.test.js",
+    "check:p2513": "node --test test/critical/p2513-salvagr-moes-stop-midpct.test.js",
     "check:p2488": "node --test test/critical/p2488-peter-a5304ce8-smartbutton-battery-keep.test.js",
-    "check:p248x": "npm run check:p2487 && npm run check:p2501 && npm run check:p2488 && npm run check:p2490 && npm run check:p2499 && npm run check:p2502 && npm run check:p2503 && npm run check:p2506 && npm run check:p2507 && npm run check:p2508",
+    "check:p248x": "npm run check:p2487 && npm run check:p2501 && npm run check:p2488 && npm run check:p2490 && npm run check:p2499 && npm run check:p2502 && npm run check:p2503 && npm run check:p2506 && npm run check:p2507 && npm run check:p2508 && npm run check:p2509 && npm run check:p2510 && npm run check:p2511 && npm run check:p2512 && npm run check:p2513",
     "check:p2490": "node --test test/critical/p2490-forum-complementary-failover.test.js",
     "check:p2491": "node tools/ci/ai-context-compress.js --self-test && node --test test/critical/p2491-ai-efficiency-context-compress.test.js",
     "check:p2492": "node --test test/critical/p2492-homey-button-ui-charter.test.js",
