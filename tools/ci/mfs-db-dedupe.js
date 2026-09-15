@@ -75,5 +75,5 @@ for (const [lower, keys] of dups) {
   console.log(`  [MERGED] -> ${canonical}`);
 }
 
-fs.writeFileSync(DB, JSON.stringify(db, null, 2) + '\n');
+fs.writeFileSync(DB, `${JSON.stringify(db)}\n`);
 console.log(`[mfs-db-dedupe] APPLIED — ${Object.keys(db).length} clés restantes`);

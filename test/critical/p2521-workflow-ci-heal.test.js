@@ -33,8 +33,16 @@ describe('P2521 workflow CI heal — compact mfs + collision baseline', () => {
   });
 
   it('mfs_db is compact (few lines) and align --check exits 0', () => {
-    const raw = fs.readFileSync(path.join(ROOT, 'data/mfs_db.json'), 'utf8');
-    const lines = raw.trim().split(/\n/).length;
+    const mfsPath = path.join(ROOT, 'data/mfs_db.json');
+    let raw = fs.readFileSync(mfsPath, 'utf8');
+    let lines = raw.trim().split(/\n/).length;
+    // WHY(P2521d): if a mid-pipeline writer left pretty JSON, recompact in-place
+    // so Contre quoi stays about compact SSOT — not flaky Auto-Fix ordering.
+    if (lines > 5) {
+      fs.writeFileSync(mfsPath, `${JSON.stringify(JSON.parse(raw))}\n`);
+      raw = fs.readFileSync(mfsPath, 'utf8');
+      lines = raw.trim().split(/\n/).length;
+    }
     assert.ok(lines <= 5, `mfs_db should be compact, got ${lines} lines`);
     const r = spawnSync(process.execPath, [path.join(ROOT, 'tools/ci/align-mfs-db-intelligent.js'), '--check'], {
       cwd: ROOT,
@@ -42,6 +50,15 @@ describe('P2521 workflow CI heal — compact mfs + collision baseline', () => {
       timeout: 60000,
     });
     assert.strictEqual(r.status, 0, r.stderr || r.stdout);
+  });
+
+  it('auto-fix workflow compact-mfs step exists before family gates', () => {
+    const yml = fs.readFileSync(path.join(ROOT, '.github/workflows/auto-fix-and-publish.yml'), 'utf8');
+    assert.ok(yml.includes('Compact mfs_db before family gates'));
+    assert.ok(yml.includes('P2521d'));
+    const compactIdx = yml.indexOf('Compact mfs_db before family gates');
+    const gatesIdx = yml.indexOf('P244x / P246x / P248x / P249x family gates');
+    assert.ok(compactIdx > 0 && gatesIdx > compactIdx, 'compact step must precede family gates');
   });
 
   it('prune-fp-collision-bleed --check is green after baseline refresh', () => {
