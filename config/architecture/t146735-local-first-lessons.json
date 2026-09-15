@@ -1,0 +1,76 @@
+{
+  "id": "t146735-local-first-lessons",
+  "version": 1,
+  "patch": "P2525",
+  "source": {
+    "topicId": 146735,
+    "title": "[APP] Tuya - Smart Life. Smart Living",
+    "url": "https://community.homey.app/t/app-tuya-smart-life-smart-living/146735/",
+    "policy": "READ_ONLY_NO_REPLY",
+    "scannedPosts": 486,
+    "scannedAt": "2026-09-15T22:50:47.365Z"
+  },
+  "why": {
+    "pourquoi": "Cloud Smart Life thread pain → harden OUR local-first app so Homey users never depend on QR re-login / error 2001 / permanent cloud",
+    "comment": "Zigbee = Homey mesh only; WiFi = LAN credentials in settings+store; cloudFallback default false",
+    "pourQui": "Homey Pro users on Universal Tuya / Stable",
+    "quand": "pair, reboot, Homey OS update, WiFi reconnect",
+    "contreQuoi": "Cloud session death after reboot (T146735 #11/#20/#21); offline 2001; missing local_key; energy scale 10x; curtain class gaps"
+  },
+  "themeCounts": {
+    "pairing_qr": 77,
+    "cloud_session": 52,
+    "energy_scale": 21,
+    "button_scene": 21,
+    "offline_2001": 15,
+    "unsupported": 15,
+    "relogin_reboot": 13,
+    "curtain_blind": 11,
+    "local_key": 5
+  },
+  "lessons": [
+    {
+      "id": "LF-REBOOT-NO-QR",
+      "pain": "After Homey reboot/update, cloud Tuya app requires QR re-login and devices offline",
+      "ourInvariant": "Zigbee never uses Tuya cloud account; WiFi persists device_id+local_key+IP in Homey store and restores on boot",
+      "runtime": ["lib/wifi/LocalCredentialPersist.js", "lib/tuya-local/TuyaLocalDevice.js"],
+      "gate": "check:p2525"
+    },
+    {
+      "id": "LF-NO-2001-CLOUD",
+      "pain": "Error 2001 = device offline when cloud path dies",
+      "ourInvariant": "WiFiConnectionPolicy cloudFallback default false; LocalFirstResolver prefers LAN and refuses cloud when unhealthy",
+      "runtime": ["lib/wifi/WiFiConnectionPolicy.js", "lib/wifi/LocalFirstResolver.js"],
+      "gate": "check:p2525"
+    },
+    {
+      "id": "LF-LAN-KEYS",
+      "pain": "Real local needs deviceId + localKey; cloud-only pairing is fragile",
+      "ourInvariant": "Manual/ad-hoc pair accepts device_id+local_key; cloud key recovery only if cloudFallback explicitly true",
+      "runtime": ["lib/tuya-local/TuyaLocalDriver.js", "lib/tuya-local/TuyaLocalDevice.js"],
+      "gate": "check:p2525"
+    },
+    {
+      "id": "LF-ZIGBEE-MESH",
+      "pain": "Cloud apps cannot control Zigbee without internet/account",
+      "ourInvariant": "drivers/*/ device.js must not require TuyaCloudAPI for Zigbee path",
+      "runtime": ["drivers/**"],
+      "gate": "check:p2525"
+    },
+    {
+      "id": "LF-ENERGY-SCALE",
+      "pain": "Power/kWh readings 10x wrong without scale setting",
+      "ourInvariant": "SmartDivisorManager + power_scale / energy settings on metering drivers",
+      "runtime": ["lib/managers/SmartDivisorManager.js"],
+      "gate": "check:p2525"
+    },
+    {
+      "id": "LF-CURTAIN-CLASS",
+      "pain": "windowcoverings devices misclassed / missing",
+      "ourInvariant": "Sacred couple curtain_motor locks; P2490 stale curtain phantoms stripped from non-cover drivers",
+      "runtime": ["drivers/curtain_motor", "data/user-misattribution-registry.json"],
+      "gate": "check:p2519"
+    }
+  ],
+  "dualApp": "BOTH"
+}
