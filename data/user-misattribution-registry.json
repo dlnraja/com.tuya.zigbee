@@ -5281,7 +5281,7 @@
       ],
       "forbidMode": "couple",
       "doNotLock": true,
-      "notes": "P2509 L99: OCR/forum invent noise (Stefan T154092 padded mfr). NEVER lock — NEED real zb_manufacturer_name interview."
+      "notes": "P2509/P2522: OCR invent `_TZE2841000000_*` — NEVER lock as-is. canonicalizeForumMfr strips digit-pad → `_TZE284_3mzb0sdz` (P2514 curtain_motor). NEED real interview if strip unknown."
     },
     {
       "id": "p2514-zm16b-3mzb0sdz-curtain",

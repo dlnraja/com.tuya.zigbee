@@ -108,20 +108,45 @@ function classifyDualApp(issues, excerpt) {
 /**
  * Forum OCR / user typos → canonical mfr (never invent pid).
  * WHY(P2354 / T156967 Manfred): `_TZ300_kalzta4` is `_TZ3000_kaflzta4` (Moes ERS-10TZBVB-AA).
+ * WHY(P2522 / T154092 Stefan): OCR pad `_TZE2841000000_3MZB0SDZ` → `_TZE284_3MZB0SDZ`
+ * (real ZM16B couple; invent stays doNotLock if strip yields nothing known).
  */
 const FORUM_MFR_TYPO_ALIASES = Object.freeze({
   _tz300_kalzta4: '_TZ3000_kaflzta4',
   _tz3000_kalzta4: '_TZ3000_kaflzta4',
   tz300_kalzta4: '_TZ3000_kaflzta4',
   tz3000_kalzta4: '_TZ3000_kaflzta4',
+  // WHY(P2522): forum OCR dropped the real TZE28C1000000 prefix (Zemismart boiler)
+  _tze28c_rzdkn5rx: '_TZE28C1000000_rzdkn5rx',
+  tze28c_rzdkn5rx: '_TZE28C1000000_rzdkn5rx',
 });
+
+/** Strip Tuya interview/OCR digit-pad between prefix and suffix (`1000000_`).
+ *  Never strip `_TZE28C1000000_*` — that prefix is a real Tuya family (boiler/dimmer).
+ */
+function stripTuyaOcrZeroPad(mfr) {
+  const raw = String(mfr || '').trim();
+  if (!raw) return raw;
+  // _TZE2841000000_3MZB0SDZ → _TZE284_3MZB0SDZ (pad is digits, usually 1000000 — not all ones)
+  const m = raw.match(/^(_TZE(?:200|204|210|284))(\d{5,8})_(.+)$/i);
+  if (m) return `${m[1]}_${m[3]}`;
+  return raw;
+}
 
 function canonicalizeForumMfr(mfr) {
   const raw = String(mfr || '').trim();
   if (!raw) return raw;
-  const key = raw.replace(/^_+/, '').toLowerCase();
-  const withPrefix = raw.startsWith('_') ? raw.toLowerCase() : `_${key}`;
-  return FORUM_MFR_TYPO_ALIASES[withPrefix] || FORUM_MFR_TYPO_ALIASES[key] || raw;
+  const stripped = stripTuyaOcrZeroPad(raw);
+  const key = stripped.replace(/^_+/, '').toLowerCase();
+  const withPrefix = stripped.startsWith('_') ? stripped.toLowerCase() : `_${key}`;
+  const aliased = FORUM_MFR_TYPO_ALIASES[withPrefix] || FORUM_MFR_TYPO_ALIASES[key];
+  if (aliased) return aliased;
+  // Rebuild standard Tuya casing after OCR strip
+  const rebuild = stripped.match(/^_tze(200|204|210|284|28c)_(.+)$/i);
+  if (rebuild) {
+    return `_TZE${rebuild[1].toUpperCase()}_${rebuild[2]}`;
+  }
+  return stripped;
 }
 
 function couplesFromPost(post) {
@@ -173,7 +198,10 @@ function analyzeCouple(mfr, pid, index, truth) {
   }
 
   let verdict = 'INVESTIGATE';
-  if (!np) verdict = 'MISSING_PID';
+  // WHY(P2522): invent/OCR-padded mfrs are never lock targets — alias already
+  // resolved via canonicalizeForumMfr before analyzeCouple is called.
+  if (reg?.doNotLock) verdict = 'DO_NOT_LOCK';
+  else if (!np) verdict = 'MISSING_PID';
   else if (reg && catalogDrivers.length === 1 && catalogDrivers[0] === canonical) verdict = 'LOCKED_OK';
   else if (reg && canonical && !catalogDrivers.includes(canonical)) verdict = 'MISSING_IN_COMPOSE';
   else if (forbiddenHits.length) verdict = 'WRONG_DRIVER_PRESENT';
@@ -192,6 +220,7 @@ function analyzeCouple(mfr, pid, index, truth) {
     registryId: reg?.id || null,
     knownRouteId: route?.id || null,
     deviceTruthDriver: truthDriver,
+    doNotLock: !!reg?.doNotLock,
   };
 }
 
@@ -201,7 +230,12 @@ function processPost(topic, post, index, truth) {
   const coupleAnalysis = couples.map((c) => analyzeCouple(c.mfr, c.pid, index, truth));
 
   let action = 'silent-monitor';
-  if (post.issues?.includes('sos') || post.issues?.includes('battery')) {
+  if (coupleAnalysis.some((c) => c.verdict === 'DO_NOT_LOCK')) {
+    // WHY(P2522): OCR invent — do not open lock-sacred-couple; real alias already LOCKED_OK
+    action = coupleAnalysis.some((c) => ['LOCKED_OK', 'ROUTED_OK', 'SINGLE_DRIVER'].includes(c.verdict))
+      ? 'user-update-repair'
+      : 'reject-invent-fp';
+  } else if (post.issues?.includes('sos') || post.issues?.includes('battery')) {
     action = dual.track === 'BOTH' ? 'code-fix-stable-candidate' : 'master-only-tune';
   } else if (coupleAnalysis.some((c) => ['WRONG_DRIVER_PRESENT', 'MISSING_IN_COMPOSE', 'NOT_IN_CATALOG'].includes(c.verdict))) {
     action = 'lock-sacred-couple';
@@ -350,4 +384,6 @@ module.exports = {
   buildDriverIndex,
   routeFor,
   classifyDualApp,
+  canonicalizeForumMfr,
+  stripTuyaOcrZeroPad,
 };
