@@ -89,6 +89,21 @@ jobs:
       - name: "🛡️ P2138 sacred-couple matrix gate"
         run: node tools/ci/p2138-sacred-couple-matrix-gate.js
 
+      # P2521d: auto-fix-all / sync-compose / enrich can leave pretty mfs_db —
+      # recompact before family gates so check:p2521 Contre quoi stays green.
+      - name: "🗜️ Compact mfs_db before family gates (P2521d)"
+        run: |
+          node -e "
+            const fs=require('fs');
+            const p='data/mfs_db.json';
+            if (!fs.existsSync(p)) process.exit(0);
+            const raw=fs.readFileSync(p,'utf8');
+            const lines=raw.trim().split(/\n/).length;
+            if (lines<=5) { console.log('mfs_db already compact ('+lines+' lines)'); process.exit(0); }
+            fs.writeFileSync(p, JSON.stringify(JSON.parse(raw))+'\n');
+            console.log('compacted mfs_db from '+lines+' lines');
+          "
+
       - name: "🛡️ P244x / P246x / P248x / P249x family gates"
         run: |
           npm run check:p244x
