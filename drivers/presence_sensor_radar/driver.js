@@ -15,8 +15,13 @@ class PresenceSensorRadarDriver extends ZigBeeDriver {
   _registerFlowCards() {
     const conditionCards = [
       {
+        // WHY(P2524): condition must accept alarm_human OR alarm_motion (presence≡motion)
         id: 'presence_sensor_radar_is_present',
-        fn: async (args) => args.device.getCapabilityValue('alarm_motion') === true
+        fn: async (args) => {
+          const d = args.device;
+          return d.getCapabilityValue('alarm_motion') === true
+            || d.getCapabilityValue('alarm_human') === true;
+        }
       },
       {
         id: 'presence_sensor_radar_illuminance_above',
@@ -42,10 +47,10 @@ class PresenceSensorRadarDriver extends ZigBeeDriver {
             if (!args.device) {return false;}
             return fn(args);
           });
-          this.log(`[FLOW] ✅ Condition ${id} registered`);
+          this.log(`[FLOW] Condition ${id} registered`);
         }
       } catch (err) {
-        if (this.developerDebugMode) { this.error(`[FLOW] ⚠️ Condition ${id} registration error: ${err.message}`); };
+        if (this.developerDebugMode) { this.error(`[FLOW] Condition ${id} registration error: ${err.message}`); }
       }
     }
 
