@@ -1599,5 +1599,8 @@
   },
   "5.12.188": {
     "en": "Reliability: enrich anti-regression locks, 3-phase meter RX, sacred couple restore (P2516–P2519)."
+  },
+  "5.12.189": {
+    "en": "Complementary variant enrich locks (no overwrite) + case-variant union. Update Homey Test."
   }
 }

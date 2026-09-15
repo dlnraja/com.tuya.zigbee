@@ -1,0 +1,71 @@
+{
+  "_meta": {
+    "id": "P2520",
+    "title": "Complementary variant enrich — never degrade",
+    "updated": "2026-09-15",
+    "classification": "BOTH",
+    "human": "docs/rules/COMPLEMENTARY_VARIANT_ENRICH.md",
+    "architecture": "docs/architecture/COMPLEMENTARY_ENRICHMENT.md",
+    "gate": "npm run check:p2520",
+    "mergeHelper": "lib/enrichment/ComplementaryMerge.js"
+  },
+  "mandate": {
+    "always": true,
+    "everyPrompt": true,
+    "everyEnrichScript": true,
+    "everyCron": true
+  },
+  "vision": {
+    "enrichmentsAre": [
+      "variants",
+      "additions",
+      "parallel alternatives",
+      "complementary layers"
+    ],
+    "enrichmentsAreNot": [
+      "replacements",
+      "wipes",
+      "capability shrinks",
+      "mfr/pid drops",
+      "settings array replaces",
+      "invented pids as hard locks"
+    ]
+  },
+  "operations": {
+    "manufacturerName": "union_case_aware",
+    "productId": "union_exact_case_aware",
+    "capabilities": "union_append_only",
+    "settings": "append_by_id_never_wipe",
+    "clusters": "union_numeric",
+    "flowCards": "append_by_id_never_delete",
+    "dpMaps": "merge_key_preserve_existing",
+    "registry": "append_cases_never_drop_sacred"
+  },
+  "forbidden": [
+    "compose.zigbee.manufacturerName = [onlyNew]",
+    "compose.capabilities = [shrunk]",
+    "compose.settings = [] then rewrite",
+    "delete mfr because same brand elsewhere",
+    "move couple by deleting from canonical then invent elsewhere",
+    "overwrite curated users.*.devices",
+    "force EF00 onto zcl_only sacred"
+  ],
+  "allowedRemovals": [
+    "forbidden-placement rollback (misattribution registry)",
+    "synthetic hybrid placeholders at prepare-publish only",
+    "explicit human-requested surgical remove of WRONG (mfr+pid) couple"
+  ],
+  "contreQuoi": [
+    "climate re-paint of switches/buttons",
+    "market misroute shrink of irrigation/plug",
+    "settings wipe on metering drivers",
+    "DP1 onoff instead of meter_power on 3ph",
+    "sacred couple drop after fleet enrich"
+  ],
+  "gates": [
+    "check:p2519",
+    "check:p2520",
+    "check:p2494",
+    "check:p2138"
+  ]
+}
