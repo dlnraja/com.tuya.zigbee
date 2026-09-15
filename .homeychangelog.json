@@ -1086,6 +1086,9 @@
     "en": "CRITICAL: sdkVersion fix (Processing failed), Missing Capability Listener (setable:false), timer fallback, battery restore, duplicate method fix, HOBEIAN ZG-301Z, NFKD normalize, 87 fingerprints restored, Polos validator",
     "fr": "CRITIQUE: sdkVersion (Processing failed), Missing Capability Listener, fallback timer, batterie, HOBEIAN, NFKD, 87 fingerprints, Polos"
   },
+  "5.12.195": {
+    "en": "Reliability: BSEED never forced to Tuya DP; P214 wire; Syntax skip-missing gates. Update Homey Test Stable."
+  },
   "5.12.194": {
     "en": "Reliability: Auto-Fix skip missing gates; soft P151 registry audit on Syntax. Update Homey Test Stable."
   },
