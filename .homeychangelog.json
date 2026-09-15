@@ -3329,5 +3329,8 @@
   },
   "9.0.952": {
     "en": "L99: strip doNotLock invent from climate (Fleet anti-bot); harden isForbiddenPlacement. Update Homey Test."
+  },
+  "9.0.954": {
+    "en": "Improved mmWave presence flow triggers and IR flow cards."
   }
 }
