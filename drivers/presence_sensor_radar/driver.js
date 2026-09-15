@@ -15,8 +15,13 @@ class PresenceSensorRadarDriver extends ZigBeeDriver {
   _registerFlowCards() {
     const conditionCards = [
       {
+        // WHY(P2524): condition must accept alarm_human OR alarm_motion (presence≡motion)
         id: 'presence_sensor_radar_is_present',
-        fn: async (args) => args.device.getCapabilityValue('alarm_motion') === true
+        fn: async (args) => {
+          const d = args.device;
+          return d.getCapabilityValue('alarm_motion') === true
+            || d.getCapabilityValue('alarm_human') === true;
+        }
       },
       {
         id: 'presence_sensor_radar_illuminance_above',

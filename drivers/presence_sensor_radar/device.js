@@ -668,8 +668,10 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
       }
 
       if (presence !== null) {
-        this.safeSetCapabilityValue('alarm_human', presence).catch(() => {});
-        return this.safeSetCapabilityValue('alarm_motion', presence).catch(() => {});
+        // WHY(P2524 / diag 74e5cae7): UI painted presence but declared presence_* flow
+        // triggers were never fired (sibling sensor_presence_radar did). Edge-fire only.
+        this._commitPresenceAndFlows(presence);
+        return;
       }
       return;
     }
@@ -679,7 +681,12 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
       const presence = transformPresence(value, mapping.type, config.invertPresence, config.configName);
       if (presence !== null) {
         this.log(`[RADAR] Zone ${mapping.zone} presence: ${presence}`);
-        return this.safeSetCapabilityValue(mapping.cap, presence).catch(() => {});
+        const prev = this.getCapabilityValue(mapping.cap);
+        const p = this.safeSetCapabilityValue(mapping.cap, presence).catch(() => {});
+        if (prev !== presence && presence === true) {
+          this._triggerZonePresenceFlow(mapping.zone);
+        }
+        return p;
       }
       return;
     }
@@ -703,13 +710,11 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
       const inferred = this._ensureInference().updateDistance(distance);
       // WHY(P2509 / Z2M#30785): gkfbdvyx sticks DP1=true while DP9=0m — clear Homey presence
       if (config.clearPresenceOnZeroDistance && Number(distance) <= 0.05) {
-        this.safeSetCapabilityValue('alarm_human', false).catch(() => {});
-        this.safeSetCapabilityValue('alarm_motion', false).catch(() => {});
+        this._commitPresenceAndFlows(false);
       } else if (config.syncPresenceFromDistanceInference && typeof inferred === 'boolean') {
         const painted = this.getCapabilityValue('alarm_motion');
         if (painted !== inferred) {
-          this.safeSetCapabilityValue('alarm_human', inferred).catch(() => {});
-          this.safeSetCapabilityValue('alarm_motion', inferred).catch(() => {});
+          this._commitPresenceAndFlows(inferred);
         }
       }
       // WHY(P2389): still feed inference every frame; only coalesce Homey capability writes
@@ -890,6 +895,45 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
     this._movementClassification = 'none';
 
     this.log('[RADAR] Multi-zone capabilities initialized');
+  }
+
+  /**
+   * WHY(P2524 / diag 74e5cae7): paint alarm_motion+alarm_human AND fire declared
+   * presence_detected / presence_cleared / motion_detected on edge only.
+   * Contre quoi: compose cards exist but device never called getDeviceTriggerCard.
+   */
+  _commitPresenceAndFlows(presence) {
+    const next = !!presence;
+    const prev = this.getCapabilityValue('alarm_motion');
+    this.safeSetCapabilityValue('alarm_human', next).catch(() => {});
+    this.safeSetCapabilityValue('alarm_motion', next).catch(() => {});
+    if (prev !== next) {
+      this._triggerPresenceFlows(next);
+    }
+  }
+
+  _triggerPresenceFlows(detected) {
+    const cardId = detected
+      ? 'presence_sensor_radar_presence_detected'
+      : 'presence_sensor_radar_presence_cleared';
+    try {
+      this.homey.flow.getDeviceTriggerCard(cardId).trigger(this, {}).catch(() => {});
+    } catch (_e) { /* soft */ }
+    if (detected) {
+      try {
+        this.homey.flow.getDeviceTriggerCard('presence_sensor_radar_motion_detected')
+          .trigger(this, {}).catch(() => {});
+      } catch (_e2) { /* soft */ }
+    }
+  }
+
+  _triggerZonePresenceFlow(zone) {
+    const z = Number(zone);
+    if (![1, 2, 3].includes(z)) return;
+    const cardId = `presence_sensor_radar_zone${z}_presence`;
+    try {
+      this.homey.flow.getDeviceTriggerCard(cardId).trigger(this, {}).catch(() => {});
+    } catch (_e) { /* soft */ }
   }
 
   /**

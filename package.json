@@ -1,6 +1,6 @@
 {
   "name": "com.dlnraja.tuya.zigbee",
-  "version": "9.0.952",
+  "version": "9.0.954",
   "description": "Tuya Unified Zigbee - Local-first control with AI automation",
   "main": "app.js",
   "scripts": {
@@ -350,7 +350,7 @@
     "check:p2512": "node --test test/critical/p2512-peter-smartbutton-battery-history.test.js",
     "check:p2513": "node --test test/critical/p2513-salvagr-moes-stop-midpct.test.js",
     "check:p2488": "node --test test/critical/p2488-peter-a5304ce8-smartbutton-battery-keep.test.js",
-    "check:p248x": "npm run check:p2487 && npm run check:p2501 && npm run check:p2488 && npm run check:p2490 && npm run check:p2499 && npm run check:p2502 && npm run check:p2503 && npm run check:p2506 && npm run check:p2507 && npm run check:p2508 && npm run check:p2509 && npm run check:p2510 && npm run check:p2511 && npm run check:p2512 && npm run check:p2513 && npm run check:p2514 && npm run check:p2516 && npm run check:p2517 && npm run check:p2518 && npm run check:p2519 && npm run check:p2520 && npm run check:p2521 && npm run check:p2522 && npm run check:p2523",
+    "check:p248x": "npm run check:p2487 && npm run check:p2501 && npm run check:p2488 && npm run check:p2490 && npm run check:p2499 && npm run check:p2502 && npm run check:p2503 && npm run check:p2506 && npm run check:p2507 && npm run check:p2508 && npm run check:p2509 && npm run check:p2510 && npm run check:p2511 && npm run check:p2512 && npm run check:p2513 && npm run check:p2514 && npm run check:p2516 && npm run check:p2517 && npm run check:p2518 && npm run check:p2519 && npm run check:p2520 && npm run check:p2521 && npm run check:p2522 && npm run check:p2523 && npm run check:p2524",
     "check:p2490": "node --test test/critical/p2490-forum-complementary-failover.test.js",
     "check:p2491": "node tools/ci/ai-context-compress.js --self-test && node --test test/critical/p2491-ai-efficiency-context-compress.test.js",
     "check:p2492": "node --test test/critical/p2492-homey-button-ui-charter.test.js",
@@ -372,7 +372,8 @@
     "check:p2520": "node --test test/critical/p2520-complementary-variant-enrich.test.js && node tools/ci/p2520-complementary-variant-enrich-gate.js",
     "check:p2521": "node --test test/critical/p2521-workflow-ci-heal.test.js",
     "check:p2522": "node --test test/critical/p2522-forum-ocr-invent-resolve.test.js",
-    "check:p2523": "node --test test/critical/p2523-fleet-forbidden-strip.test.js"
+    "check:p2523": "node --test test/critical/p2523-fleet-forbidden-strip.test.js",
+    "check:p2524": "node --test test/critical/p2524-radar-presence-flow-wire.test.js"
   },
   "keywords": [
     "homey",
