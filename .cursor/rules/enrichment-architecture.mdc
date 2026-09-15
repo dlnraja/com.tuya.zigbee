@@ -48,6 +48,7 @@ npm run enrich:profiles
 9. **Megathread guard** — ≤6 couples/post, ≤12 auto devices/user.
 10. **Extend via config** — `phases.json` + models, not spaghetti.
 11. **Complementary resilience (P2224)** — enrichment layers point at resilience domains/glossary; investigate routes symptoms → domain IDs; never delete older layer docs.
+12. **P2520 complementary VARIANT enrich (ALWAYS)** — enrichments are variants/additions, never degradations. Union mfr/pid/caps; append settings by id; use `lib/enrichment/ComplementaryMerge.js`. Gates `check:p2520` + `check:p2519`. Doctrine: `docs/rules/COMPLEMENTARY_VARIANT_ENRICH.md` · always-on rule `complementary-variant-enrich-always.mdc`.
 
 ## Workflows
 

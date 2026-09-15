@@ -18,6 +18,7 @@ const path = require('path');
 const { isForbiddenPlacement } = require('../../lib/pairing/UserMisattributionRegistry');
 const { normalizeSacredCouple, oemCaseVariants } = require('./sacred-couple-pair');
 const { resolveMarketDriver, resolveMultiCatalogSafe, driverExists } = require('./market-driver-infer');
+const { mergeZigbeeIdentity, wouldDegradeCompose } = require('../../lib/enrichment/ComplementaryMerge');
 
 const ROOT = path.resolve(__dirname, '..', '..');
 const INTAKE = path.join(ROOT, '.github', 'state', 'market-couples', 'intake.json');
@@ -50,23 +51,25 @@ function ensureCouple(driver, mfr, pid) {
   const fp = path.join(ROOT, 'drivers', driver, 'driver.compose.json');
   const json = JSON.parse(fs.readFileSync(fp, 'utf8'));
   if (!json.zigbee) json.zigbee = {};
-  json.zigbee.manufacturerName = Array.isArray(json.zigbee.manufacturerName)
-    ? json.zigbee.manufacturerName
-    : (json.zigbee.manufacturerName ? [json.zigbee.manufacturerName] : []);
-  json.zigbee.productId = Array.isArray(json.zigbee.productId)
-    ? json.zigbee.productId
-    : (json.zigbee.productId ? [json.zigbee.productId] : []);
+  const before = JSON.parse(JSON.stringify(json));
+
+  // P2520: union variants only — never replace identity arrays
+  const beforeMfr = (json.zigbee.manufacturerName || []).length;
+  const beforePid = (json.zigbee.productId || []).length;
+  mergeZigbeeIdentity(json.zigbee, {
+    manufacturerName: oemCaseVariants(mfr),
+    productId: pid ? [pid] : [],
+  });
 
   const changes = [];
-  for (const v of oemCaseVariants(mfr)) {
-    if (!json.zigbee.manufacturerName.some((x) => String(x).toLowerCase() === v.toLowerCase())) {
-      json.zigbee.manufacturerName.push(v);
-      changes.push(`mfr:${v}`);
-    }
+  if ((json.zigbee.manufacturerName || []).length > beforeMfr) {
+    changes.push(`mfr:+${(json.zigbee.manufacturerName || []).length - beforeMfr}`);
   }
-  if (pid && !json.zigbee.productId.some((x) => String(x).toLowerCase() === String(pid).toLowerCase())) {
-    json.zigbee.productId.push(pid);
+  if ((json.zigbee.productId || []).length > beforePid) {
     changes.push(`pid:${pid}`);
+  }
+  if (wouldDegradeCompose(before, json)) {
+    return { ok: false, reason: 'p2520-would-degrade' };
   }
   if (changes.length && APPLY) {
     fs.writeFileSync(fp, `${JSON.stringify(json, null, 2)}\n`);

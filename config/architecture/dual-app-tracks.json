@@ -117,6 +117,10 @@
       "tag": "BOTH",
       "note": "Salvagr #533 Stop after 2s idle-skip + skip Homey open/close after mid-%"
     },
+    "p2520_complementary_variant_enrich": {
+      "tag": "BOTH",
+      "note": "Enrich = variants/additions never wipe — ComplementaryMerge + check:p2520 always-on doctrine"
+    },
     "p2514_zm16b_3mzb0sdz_curtain": {
       "tag": "BOTH",
       "note": "Zemismart ZM16B _TZE284_3mzb0sdz+TS0601 rehome ir_blaster→curtain_motor; DP8/9; audit skip doNotLock"
