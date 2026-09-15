@@ -379,5 +379,35 @@
   ],
   "ui": {
     "quickAction": "onoff"
+  },
+  "firmwareUpdates": {
+    "updates": [
+      {
+        "changelog": {
+          "en": "OEM Zigbee firmware v78 (Koenkk zigbee-OTA, SHA512-verified). Install via Homey Device Updates (Settings → Device Updates) on Homey ≥13.2 / Mobile ≥9.10.",
+          "fr": "Firmware Zigbee OEM v78 (Koenkk zigbee-OTA, SHA512 vérifié). Installez via Homey Device Updates (Réglages → Device Updates) — Homey ≥13.2 / Mobile ≥9.10."
+        },
+        "device": {
+          "manufacturerName": [
+            "_TZ3000_cjrngdr3"
+          ],
+          "productId": [
+            "TS0111"
+          ]
+        },
+        "files": [
+          {
+            "fileVersion": 78,
+            "imageType": 54179,
+            "manufacturerCode": 4417,
+            "minHardwareVersion": 27502,
+            "maxHardwareVersion": 20256,
+            "size": 309954,
+            "name": "1686137326-oem_zg_tl8258_plug_OTA_1.0.14.bin",
+            "integrity": "sha256:0ff56922d99113a7fac2b9b4dfc89aab79c5c296d8ade41379881f80ee4cef27"
+          }
+        ]
+      }
+    ]
   }
 }

@@ -143,6 +143,10 @@ function main() {
 
       for (const f of update.files || []) {
         updateCount.files += 1;
+        // WHY(P2508): never ship Koenkk pvvx community replacements as Homey Device Updates
+        if (/pvvx|TS0201W\.zigbee|ZG223Z\.zigbee/i.test(String(f.name || ''))) {
+          add(errors, `${driverId}: pvvx/community OTA image forbidden (${f.name})`);
+        }
         const dest = otaPath(driverId, f.name);
         const legacy = legacyPath(driverId, f.name);
         claimedBins.add(path.normalize(dest));
@@ -194,7 +198,7 @@ function main() {
 
   const report = {
     timestamp: new Date().toISOString(),
-    patch: 'P2359',
+    patch: 'P2508',
     news: ssot._meta?.news || 'https://homey.app/en-fr/news/introducing-device-updates/',
     errors: errors.length,
     warnings: warnings.length,
@@ -221,7 +225,7 @@ function main() {
   if (JSON_MODE) console.log(JSON.stringify(report, null, 2));
   else {
     console.log('═══════════════════════════════════════════════');
-    console.log('  Firmware / Device Updates gate (P194/P2359)');
+    console.log('  Firmware / Device Updates gate (P194/P2359/P2508)');
     console.log('═══════════════════════════════════════════════');
     if (COVERAGE) {
       console.log(`  Coverage: ${report.coverage.coveragePct}% SSOT (${report.coverage.expectedHit.length}/${report.coverage.expectedTotal})`);
