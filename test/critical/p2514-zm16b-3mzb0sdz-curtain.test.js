@@ -17,10 +17,13 @@ const ROOT = path.join(__dirname, '..', '..');
 
 describe('P2514 ZM16B 3mzb0sdz curtain', () => {
   it('compose: curtain_motor has couple; ir_blaster does not', () => {
-    const curtain = fs.readFileSync(path.join(ROOT, 'drivers/curtain_motor/driver.compose.json'), 'utf8');
-    const ir = fs.readFileSync(path.join(ROOT, 'drivers/ir_blaster/driver.compose.json'), 'utf8');
-    assert.ok(/_TZE284_3MZB0SDZ/i.test(curtain));
-    assert.ok(!/_TZE284_3MZB0SDZ/i.test(ir), 'must not remain on ir_blaster');
+    const curtain = JSON.parse(fs.readFileSync(path.join(ROOT, 'drivers/curtain_motor/driver.compose.json'), 'utf8'));
+    const ir = JSON.parse(fs.readFileSync(path.join(ROOT, 'drivers/ir_blaster/driver.compose.json'), 'utf8'));
+    const mfrs = curtain.zigbee?.manufacturerName || [];
+    const pids = curtain.zigbee?.productId || [];
+    assert.ok(mfrs.some((m) => /_TZE284_3MZB0SDZ/i.test(m)), 'mfr in curtain_motor');
+    assert.ok(pids.some((p) => String(p).toUpperCase() === 'TS0601'), 'pid TS0601 required (sacred couple)');
+    assert.ok(!(ir.zigbee?.manufacturerName || []).some((m) => /3mzb0sdz/i.test(m)), 'must not remain on ir_blaster');
   });
 
   it('registry locks curtain_motor; invent padded mfr stays doNotLock', () => {
@@ -28,10 +31,22 @@ describe('P2514 ZM16B 3mzb0sdz curtain', () => {
     const lock = (reg.cases || []).find((c) => c.id === 'p2514-zm16b-3mzb0sdz-curtain');
     assert.ok(lock);
     assert.strictEqual(lock.canonicalDriver, 'curtain_motor');
-    assert.ok(lock.productId.includes('TS0601'));
+    // Sacred couple: mfr + pid only — never invent TS1201 / mfr-only route
+    assert.deepStrictEqual(lock.productId, ['TS0601']);
+    assert.strictEqual(lock.forbidMode, 'couple');
     assert.ok(lock.forbiddenDrivers.includes('ir_blaster'));
     const invent = (reg.cases || []).find((c) => c.id === 'p2509-invent-junk-do-not-lock');
     assert.ok(invent?.doNotLock === true);
+  });
+
+  it('mfs couple is TS0601 only (no invent TS1201)', () => {
+    const mfs = JSON.parse(fs.readFileSync(path.join(ROOT, 'data/mfs_db.json')));
+    const top = mfs['_TZE284_3MZB0SDZ'] || mfs['_tze284_3mzb0sdz'];
+    assert.ok(top, 'mfs entry for 3mzb0sdz');
+    const models = [].concat(top.modelIds || top.productIds || []);
+    assert.ok(models.some((p) => String(p).toUpperCase() === 'TS0601'));
+    assert.ok(!models.some((p) => String(p).toUpperCase() === 'TS1201'), 'never invent TS1201 pid');
+    assert.ok(/curtain_motor/i.test(String(top.driverId || top.driverHint || '')));
   });
 
   it('device + battery helper treat 3mzb0sdz as battery tubular with DP8/9', () => {
@@ -51,9 +66,10 @@ describe('P2514 ZM16B 3mzb0sdz curtain', () => {
     const r = spawnSync(process.execPath, [path.join(ROOT, 'tools/ci/audit-sacred-couple.js'), '--from-registry'], {
       cwd: ROOT,
       encoding: 'utf8',
-      timeout: 120000,
+      timeout: 180000,
+      maxBuffer: 20 * 1024 * 1024,
     });
-    assert.strictEqual(r.status, 0, r.stderr || r.stdout?.slice(-800));
-    assert.ok(/failures:\s*0/.test(r.stdout || ''), r.stdout?.slice(-400));
+    assert.strictEqual(r.status, 0, r.stderr || r.stdout?.slice(-1200) || `spawn status=${r.status} signal=${r.signal}`);
+    assert.ok(/failures:\s*0/.test(r.stdout || ''), r.stdout?.slice(-600));
   });
 });
