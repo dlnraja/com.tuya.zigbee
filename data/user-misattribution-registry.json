@@ -5259,6 +5259,54 @@
       "notes": "P2503: Moes ZTS-EUR-C curtain. Forbid TRV + climate_sensor (current-fps bleed). Do NOT forbid wall_thermostat — strip_pid would gut TS0601 there."
     },
     {
+      "id": "p2509-invent-junk-do-not-lock",
+      "mfr": [
+        "_TZE2841000000_3MZB0SDZ",
+        "_tze2841000000_3mzb0sdz",
+        "_TZE28C100000_RZDKN5RX",
+        "_tze28c100000_rzdkn5rx",
+        "_TZE200_ABC123",
+        "_TZE200_xxxxx"
+      ],
+      "productId": [
+        "TS0601"
+      ],
+      "canonicalDriver": null,
+      "forbiddenDrivers": [
+        "generic_tuya",
+        "zigbee_universal",
+        "climate_sensor",
+        "curtain_motor",
+        "soil_sensor"
+      ],
+      "forbidMode": "couple",
+      "doNotLock": true,
+      "notes": "P2509 L99: OCR/forum invent noise (Stefan T154092 padded mfr). NEVER lock — NEED real zb_manufacturer_name interview."
+    },
+    {
+      "id": "p2509-npj9bug3-soil-zg303z",
+      "mfr": [
+        "_TZE200_npj9bug3",
+        "_TZE200_NPJ9BUG3",
+        "_tze200_npj9bug3",
+        "_TZE284_npj9bug3",
+        "_tze284_npj9bug3"
+      ],
+      "productId": [
+        "TS0601"
+      ],
+      "canonicalDriver": "soil_sensor",
+      "forbiddenDrivers": [
+        "climate_sensor",
+        "presence_sensor_radar",
+        "generic_tuya",
+        "zigbee_universal",
+        "air_quality_co2"
+      ],
+      "forbidMode": "couple",
+      "notes": "P2509: ZHA/Z2M soil (ZG-303Z sibling). Soft forum CK-TLSR pid was invent — productId is TS0601 only."
+    },
+    {
       "id": "p2307-moes-star-feather-upt8lzi0",
       "mfr": [
         "_TZE284_upt8lzi0",
