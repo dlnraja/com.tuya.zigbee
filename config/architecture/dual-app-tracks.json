@@ -8,6 +8,12 @@
     "forumFailoverSsot": "config/architecture/forum-complementary-failover-ssot.json",
     "intelligentIrSsot": "config/architecture/intelligent-ir-ssot.json"
   },
+  "alwaysBothSameSession": {
+    "mandate": "EVERY BOTH reliability change must be surgically ported to stable-v5 in the SAME agent session as master — never leave LTS tip-lag for Peter/GH crashes/sacred couples",
+    "skip": ["MASTER_ONLY features (IR flood P2501, Intelligent IR UX P2487, mega enrich)"],
+    "neverCopy": ["App ID", "version line 9.0↔5.12", "whole trees"],
+    "stableClone": "Documents/homey/stable"
+  },
   "tracks": {
     "master": {
       "branch": "master",
