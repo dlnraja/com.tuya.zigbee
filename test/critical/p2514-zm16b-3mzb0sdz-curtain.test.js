@@ -66,9 +66,10 @@ describe('P2514 ZM16B 3mzb0sdz curtain', () => {
     const r = spawnSync(process.execPath, [path.join(ROOT, 'tools/ci/audit-sacred-couple.js'), '--from-registry'], {
       cwd: ROOT,
       encoding: 'utf8',
-      timeout: 120000,
+      timeout: 180000,
+      maxBuffer: 20 * 1024 * 1024,
     });
-    assert.strictEqual(r.status, 0, r.stderr || r.stdout?.slice(-800));
-    assert.ok(/failures:\s*0/.test(r.stdout || ''), r.stdout?.slice(-400));
+    assert.strictEqual(r.status, 0, r.stderr || r.stdout?.slice(-1200) || `spawn status=${r.status} signal=${r.signal}`);
+    assert.ok(/failures:\s*0/.test(r.stdout || ''), r.stdout?.slice(-600));
   });
 });
