@@ -33,7 +33,7 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 
 | Metric | Value |
 |--------|-------|
-| **App Version** | v9.0.940 |
+| **App Version** | v9.0.941 |
 | **Drivers** | 431 (381 Zigbee + 50 WiFi) |
 | **Unique Fingerprints** | 4,402 |
 | **Pairing Variants** | 17,138 (4 case combos per fingerprint) |
@@ -41,7 +41,7 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 | **Flow Cards** | 5,987 |
 | **Unique Capabilities** | 170 |
 | **Native OTA Drivers** | 8 |
-| **Test Suites** | 319 files |
+| **Test Suites** | 320 files |
 | **SVG Icons** | 731 |
 | **Languages** | EN, FR, NL, DE |
 | **SDK / Homey** | 3 / >= 12.2.0 |
@@ -54,7 +54,7 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 | 1 | `climate_sensor` | 2,106 |
 | 2 | `switch_1gang` | 1,539 |
 | 3 | `presence_sensor_radar` | 821 |
-| 4 | `curtain_motor` | 788 |
+| 4 | `curtain_motor` | 792 |
 | 5 | `radiator_valve` | 599 |
 | 6 | `button_wireless_2` | 570 |
 | 7 | `wall_dimmer_tuya` | 488 |
@@ -102,6 +102,7 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 
 | Version | Changes |
 |---------|---------|
+| **v9.0.941** | Zemismart ZM16B curtain motor support (was IR); publish gate fix; fleet DP/flow coverage enrich. Update Homey Test + re-pair ZM16B if nee… |
 | **v9.0.940** | Moes curtain Stop + mid-position fix; VicHY radar sticky presence; Peter Smartbutton battery History options; garden irrigation TS0101 co… |
 | **v9.0.938** | Smart battery-low alarm (app-owned, not Homey alarm_battery); Smartbutton battery UI treat; OEM Homey Device Updates only (removed unsafe… |
 | **v9.0.934** | P2505: TITAN Buffer SSOT load (HomeyButtonUiCharter) + close deferred dual-app suggestions. |
@@ -113,7 +114,6 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 | **v9.0.925** | Soft-republish Smartbutton battery keep (P2488) after Athom tip hang. Update Test — Peter Smartknop should show % again. |
 | **v9.0.923** | Fixed Smartbutton battery tile stripped by hourly adapter (Peter a5304ce8). Intelligent IR Homey TX remains on 9.0.922+. |
 | **v9.0.922** | Intelligent IR Homey Pro 2023 Pronto TX + Zigbee/WiFi router UX (P2487c). Users: update Test. |
-| **v9.0.921** | Intelligent IR: Zigbee + WiFi + Homey Pro 2023 onboard Pronto TX; virtual remote multi-sender flows and setup wizard. |
 
 <!-- CHANGELOG_END -->
 
