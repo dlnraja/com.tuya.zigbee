@@ -8,6 +8,18 @@
     "forumFailoverSsot": "config/architecture/forum-complementary-failover-ssot.json",
     "intelligentIrSsot": "config/architecture/intelligent-ir-ssot.json"
   },
+  "alwaysBothSameSession": {
+    "mandate": "EVERY BOTH reliability change must be surgically ported to stable-v5 in the SAME agent session as master — never leave LTS tip-lag for Peter/GH crashes/sacred couples",
+    "skip": [
+      "MASTER_ONLY features (IR flood P2501, Intelligent IR UX P2487, mega enrich)"
+    ],
+    "neverCopy": [
+      "App ID",
+      "version line 9.0↔5.12",
+      "whole trees"
+    ],
+    "stableClone": "Documents/homey/stable"
+  },
   "tracks": {
     "master": {
       "branch": "master",
@@ -41,6 +53,18 @@
       "tag": "BOTH",
       "note": "Surgical port P2490–P2496 reliability to stable-v5 — never App ID/version; skip P2487 IR MASTER_ONLY"
     },
+    "p2498_pairing_discovery_ux": {
+      "tag": "BOTH",
+      "note": "Athom Zigbee learnmode + WiFi discovery SSOT; alt-app UX lessons; no Zigbee custom pair invent"
+    },
+    "p2499_peter_smartbutton_battery_ui": {
+      "tag": "BOTH",
+      "note": "button_wireless_1 measure_battery getable must stay true — Homey hid Battery+History (diag 77394256)"
+    },
+    "p2500_homey_capability_ux": {
+      "tag": "BOTH",
+      "note": "T43287 Device Capabilities + Athom getable/Insights SSOT; fleet heal sensor getable; generic capability_changed all devices"
+    },
     "p2496_identity_fields": {
       "tag": "BOTH",
       "note": "Homey productId === Zigbee modelId === pid; productName catalog-only — pairing vocabulary"
@@ -68,6 +92,38 @@
     "p2490_forum_complementary_failover": {
       "tag": "BOTH",
       "note": "MIAMO icka1clh sacred-keep after Athom compact drop; Peter a5304ce8 battery rehydrate; VicHY staleCaps curtains — reliability"
+    },
+    "p2502_fleet_complementary_methods": {
+      "tag": "BOTH",
+      "note": "VicHY/Eduard/MIAMO/Peter/PresentSky method matrix + SMART ADAPT BootBudget defer (Peter OOM complementary)"
+    },
+    "p2503_gh533_5slehgeo_curtain": {
+      "tag": "BOTH",
+      "note": "Moes ZTS-EUR-C 5slehgeo+TS0601 curtain_motor — forbid climate bleed in registry/current-fps"
+    },
+    "p2509_l99_multi_source_treat": {
+      "tag": "BOTH",
+      "note": "gkfbdvyx sticky presence clear (Z2M#30785); invent junk doNotLock; npj9bug3 soil lock — silent L99"
+    },
+    "p2511_vichy_clrdrnya_mtg": {
+      "tag": "BOTH",
+      "note": "VicHY clrdrnya MTG sticky DP1 + tuya_battery_low strip on mains"
+    },
+    "p2512_peter_smartbutton_history": {
+      "tag": "BOTH",
+      "note": "Peter Smartbutton measure_battery getable/insights app.json + boot heal"
+    },
+    "p2513_salvagr_moes_stop_midpct": {
+      "tag": "BOTH",
+      "note": "Salvagr #533 Stop after 2s idle-skip + skip Homey open/close after mid-%"
+    },
+    "p2520_complementary_variant_enrich": {
+      "tag": "BOTH",
+      "note": "Enrich = variants/additions never wipe — ComplementaryMerge + check:p2520 always-on doctrine"
+    },
+    "p2514_zm16b_3mzb0sdz_curtain": {
+      "tag": "BOTH",
+      "note": "Zemismart ZM16B _TZE284_3mzb0sdz+TS0601 rehome ir_blaster→curtain_motor; DP8/9; audit skip doNotLock"
     },
     "p2488_smartbutton_battery_keep": {
       "tag": "BOTH",
@@ -273,6 +329,10 @@
       "tag": "MASTER_ONLY",
       "note": "Homey Pro 2023 ProntoHex TX via HomeyInfraredTx + homey:wireless:ir; learn stays Zigbee/WiFi"
     },
+    "p2501_ir_flood_guard": {
+      "tag": "MASTER_ONLY",
+      "note": "Intelligent IRFloodGuard — dedup/throttle/cap reps/global flood + learn cooldown on all IR TX paths"
+    },
     "p2415_pir_multicap_enrich": {
       "tag": "BOTH",
       "note": "ZG-204ZV TZE200 siblings → presence; strip ZG-204 cartesian from motion; ZS-301Z soil lock; clean radar configs"
@@ -352,6 +412,22 @@
     "p2460_bseed_tx_ysdv91bk": {
       "tag": "BOTH",
       "note": "GH#546 l9brjwau setOn/setOff TX; GH#545 ysdv91bk→wall_switch_1gang_1way; sacred-keep wall 2gang"
+    },
+    "p2505_deferred_suggestions": {
+      "tag": "BOTH",
+      "note": "Close deferred suggestions: P2485 EF00 multi-gang rehome + P2486b launchOnce on stable; TITAN Buffer charter on master"
+    },
+    "p2506_smart_battery_low_alarm": {
+      "tag": "BOTH",
+      "note": "Homey SDK forbids measure_battery+alarm_battery — own tuya_battery_low + hysteresis flows; strip native alarm when % present"
+    },
+    "p2507_peter_battery_ui_diag": {
+      "tag": "BOTH",
+      "note": "Peter 77394256/a5304ce8 — refuse 0% placeholder paint, ZCL 0/253 reject, force getable/insights on Smartbutton"
+    },
+    "p2508_firmware_device_updates_oem": {
+      "tag": "BOTH",
+      "note": "Homey Device Updates fleet — OEM only; refuse Koenkk pvvx; SSOT 8 drivers + softAnnounceNativeOta"
     }
   },
   "ci": {
