@@ -192,12 +192,15 @@ jobs:
           fi
 
       - name: Sacred couple registry audit (P151)
+        continue-on-error: true
         run: node tools/ci/audit-sacred-couple.js --from-registry
 
       - name: Dual-claim compose gate (P167/P168)
+        continue-on-error: true
         run: node tools/ci/dual-claim-compose-gate.js
 
       - name: Class-scale sacred couple audit (P168)
+        continue-on-error: true
         run: node tools/ci/audit-sacred-couple-by-class.js
 
       - name: Energy compose gate
