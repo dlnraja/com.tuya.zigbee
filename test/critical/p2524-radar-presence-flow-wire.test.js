@@ -46,6 +46,11 @@ describe('P2524 radar presence flow wire', () => {
         && !/getDeviceTriggerCard\([^)]+,\s*['\"]trigger['\"]/.test(src),
       'SDK3: getDeviceTriggerCard(id) only — no second trigger arg',
     );
+    // Contre quoi VicHY MTG075: inference/distance paint via safeSet must edge-fire
+    assert.ok(
+      /edgeMotion|prevMotion/.test(src) && src.includes('_triggerPresenceFlows(value)'),
+      'safeSetCapabilityValue must edge-fire presence flows (P2524b)',
+    );
   });
 
   it('is_present condition checks alarm_human OR alarm_motion', () => {

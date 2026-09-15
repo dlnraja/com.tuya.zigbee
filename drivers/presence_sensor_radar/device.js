@@ -166,10 +166,18 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
     if (capability === 'tuya_dp_value' || capability === 'tuya_dp_raw' || capability === 'tuya_dp_string') {
       return false;
     }
+    // WHY(P2524b / VicHY #2239+74e5cae7): MTG075 inference/distance may paint alarm_motion
+    // without _commitPresenceAndFlows — edge-fire declared presence cards on ANY path.
+    const edgeMotion = capability === 'alarm_motion' && typeof value === 'boolean';
+    const prevMotion = edgeMotion ? this.getCapabilityValue('alarm_motion') : undefined;
     const result = await super.safeSetCapabilityValue(capability, value);
-    if (capability === 'alarm_motion' && typeof value === 'boolean' &&
-        typeof this.hasCapability === 'function' && this.hasCapability('alarm_human')) {
-      await super.safeSetCapabilityValue('alarm_human', value).catch(() => {});
+    if (edgeMotion) {
+      if (typeof this.hasCapability === 'function' && this.hasCapability('alarm_human')) {
+        await super.safeSetCapabilityValue('alarm_human', value).catch(() => {});
+      }
+      if (prevMotion !== value) {
+        this._triggerPresenceFlows(value);
+      }
     }
     return result;
   }
@@ -904,12 +912,9 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
    */
   _commitPresenceAndFlows(presence) {
     const next = !!presence;
-    const prev = this.getCapabilityValue('alarm_motion');
+    // Flows edge-fire inside safeSetCapabilityValue(alarm_motion) — avoid double-trigger
     this.safeSetCapabilityValue('alarm_human', next).catch(() => {});
     this.safeSetCapabilityValue('alarm_motion', next).catch(() => {});
-    if (prev !== next) {
-      this._triggerPresenceFlows(next);
-    }
   }
 
   _triggerPresenceFlows(detected) {
