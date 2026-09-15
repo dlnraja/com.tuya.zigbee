@@ -1,4 +1,4 @@
-# 📥 Community Inbox — 2026-09-14 10:37 UTC
+# 📥 Community Inbox — 2026-09-15 10:03 UTC
 
 Généré par `.github/scripts/community-inbox-digest.js` (workflow `community-inbox.yml`).
 
@@ -6,14 +6,14 @@ Généré par `.github/scripts/community-inbox-digest.js` (workflow `community-i
 
 - Issues ouvertes : **3** — 🔴 à traiter : **3**, 🟡 attente utilisateur : 0, 🟢 maintainer actif : 0
 - PRs ouvertes : **0**
-- Forum : **9** post(s) sans réponse du maintainer
+- Forum : **13** post(s) sans réponse du maintainer
 - Messages privés (lecture seule, jamais de réponse) : **20** thread(s), 7 mfr, 5 pid, 7 UUID diag
 
 ## 🔴 Issues à traiter
 
 - [#548](https://github.com/dlnraja/com.tuya.zigbee/issues/548) — Bug report - [Short description] App crashes all the time _(🔴 attente maintainer, maj 2026-09-13)_
 - [#547](https://github.com/dlnraja/com.tuya.zigbee/issues/547) — Tuya Zigbee device Radar Sensor: pairing OK but having no function _(🔴 attente maintainer, maj 2026-09-13)_
-- [#533](https://github.com/dlnraja/com.tuya.zigbee/issues/533) — Device Request - [SMART ZIGBEE CURTAIN SWITCH] - [MOES] _(🔴 escaladé, maj 2026-09-13)_
+- [#533](https://github.com/dlnraja/com.tuya.zigbee/issues/533) — Device Request - [SMART ZIGBEE CURTAIN SWITCH] - [MOES] _(🔴 escaladé, maj 2026-09-15)_
 
 ## 🌍 Forum — posts sans réponse
 
@@ -26,4 +26,8 @@ Généré par `.github/scripts/community-inbox-digest.js` (workflow `community-i
 - **Peter_van_Werkhoven** (2026-09-11) :  Hi Dylan Good evening, after update to your latest app and reading the changelog where you wrote that you’ve changed things to the Smartbut
 - **Peter_van_Werkhoven** (2026-09-12) :  Hi Dylan Good morning and great job again Smartbutton is responding and switching normally now 1, 2 click’s and hold works well switching t
 - **Peter_van_Werkhoven** (2026-09-12) :  Hi Dylan Good afternoon, after the new update app keeps crashing. Diagnostic code 375def7f-d73b-4078-9e87-3ff28e578805 1000046263 1220×2712
+- **PresentSky** (2026-09-14) :  Hi @dlnraja , Not sure if there were changes in the meantime, but after adding the device again today, it works. Thanks! 
+- **Peter_van_Werkhoven** (2026-09-14) :  Hi Dylan, after your updates the app stay’s stable no more crashes. 1000046390 1220×2712 203 KB But still no battery reading from Smartbutt
+- **Peter_van_Werkhoven** (2026-09-14) :  Hi Dylan Good evening, after your last update still no battery reading and History tab on the Smartbutton. Also Deleted it, restarted Homey
+- **Peter_van_Werkhoven** (2026-09-15) :  Hi Dylan Good morning you fixed it again got Battery readings again from Smartbutton only still no History tab but that’s not so important.
 
