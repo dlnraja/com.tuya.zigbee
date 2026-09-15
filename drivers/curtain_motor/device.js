@@ -61,7 +61,8 @@ class CurtainMotorDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedC
       || mfr.includes('nhyj64w2')
       || mfr.includes('127x7wnl')
       || mfr.includes('upt8lzi0')
-      || mfr.includes('i8sdouy0');
+      || mfr.includes('i8sdouy0')
+      || mfr.includes('kq1l5eu5');
   }
 
   // WHY(P2433 / Eduard #2228): DC tubular battery rollers (`_TZE284_fodv6bkr` / `libht6ua`)
@@ -69,6 +70,7 @@ class CurtainMotorDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedC
   // Homey has no native windowCovering (258); all TX/RX via 0xEF00.
   // WHY(P2441 / MIAMO #2229): AM43 solar/battery siblings (`icka1clh` / `zah67ekd`)
   // use the same cover_4 DP family (state/position/reverse) — never shutter driver.
+  // WHY(P2514): Zemismart ZM16B `_TZE284_3mzb0sdz` — ZHA/Z2M cover DP1/8/9/13 (not IR).
   _isBatteryTubularRoller() {
     const mfr = String(
       this.getManufacturerName?.()
@@ -77,7 +79,19 @@ class CurtainMotorDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedC
       || ''
     ).toLowerCase();
     return mfr.includes('fodv6bkr') || mfr.includes('libht6ua')
-      || mfr.includes('icka1clh') || mfr.includes('zah67ekd');
+      || mfr.includes('icka1clh') || mfr.includes('zah67ekd')
+      || mfr.includes('3mzb0sdz');
+  }
+
+  /** WHY(P2514): ZM16B AKE tubular — position report DP8 / set DP9 (not DP2/3). */
+  _isZm16bAkeTubular() {
+    const mfr = String(
+      this.getManufacturerName?.()
+      || this.getSetting?.('zb_manufacturer_name')
+      || this.getData?.()?.manufacturerName
+      || ''
+    ).toLowerCase();
+    return mfr.includes('3mzb0sdz');
   }
 
   // v5.5.322: Extended DP mappings with lux sensor and button support
@@ -93,6 +107,20 @@ class CurtainMotorDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedC
         7: { capability: null, internal: 'backlight', writable: true },
         8: { capability: null, internal: 'reverse', writable: true },
         10: { capability: null, internal: 'open_time', writable: true },
+      };
+    }
+    if (this._isZm16bAkeTubular()) {
+      // Z2M/ZHA ZM16B: DP1 state, DP8 position state, DP9 position set, DP13 battery
+      return {
+        1: {
+          capability: 'windowcoverings_state',
+          transform: (v) => (v === 0 || v === 'open' ? 'up' : v === 2 || v === 'close' ? 'down' : 'idle'),
+        },
+        8: { capability: 'windowcoverings_set', transform: (v) => Number(v) / 100 },
+        9: { capability: 'windowcoverings_set', transform: (v) => Number(v) / 100 },
+        11: { capability: null, internal: 'reverse', writable: true },
+        13: { capability: 'measure_battery', divisor: 1 },
+        16: { capability: null, internal: 'border_limits', writable: true },
       };
     }
     if (this._isBatteryTubularRoller()) {

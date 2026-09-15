@@ -172,6 +172,15 @@ Generated 2026-09-15T08:05:31.976Z from registry (220 cases) × compound DB (509
 - Notes: Eduard_Martirosyan #2228 DC tubular roller blind motor; EF00 Tuya cover DPs
 - **Gaps:** no_sources
 
+### `p2514-zm16b-3mzb0sdz-curtain` → `curtain_motor`
+
+- Couple: `_TZE284_3mzb0sdz` + TS0601 (Zemismart ZM16B tubular)
+- Protocol: tuya_dp
+- Z2M/ZHA: DP1 state, DP8 position report, DP9 position set, DP13 battery, DP11 reverse, DP16 border
+- Never lock OCR invent `_TZE2841000000_3MZB0SDZ` (Stefan T154092) — doNotLock
+- Was mis-homed to `ir_blaster` + invent TS1201 — P2514 rehome BOTH
+- Compose: class=windowcoverings EF00=true batteries=OTHER
+
 ### `vichy-clrdrnya-presence` → `presence_sensor_radar`
 
 - Couple: `_TZE204_clrdrnya` + TS0601
