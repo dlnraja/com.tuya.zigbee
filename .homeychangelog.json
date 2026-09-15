@@ -3338,5 +3338,8 @@
   },
   "9.0.956": {
     "en": "Hardened local-first WiFi credentials after Homey reboot (no cloud re-login)."
+  },
+  "9.0.958": {
+    "en": "Presence radar WHEN cards fire on human presence edges; register remaining flow conditions."
   }
 }
