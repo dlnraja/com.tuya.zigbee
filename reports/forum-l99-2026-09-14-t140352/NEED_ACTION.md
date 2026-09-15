@@ -25,6 +25,7 @@ Processor: `reports/forum-verify-2026-09-14/PROCESS.md`.
 
 | Post | User | Couple | Status | Action |
 |------|------|--------|--------|--------|
+| **#2238** | Peter | `_TZ3000_mrpevh8p`+`TS0041` | tip-lag UI | Update Test **≥9.0.933** (P2499 getable + P2500 UX). Diag `77394256`. |
 | #2237/#2234/#2233/#2230 | Peter | `_TZ3000_mrpevh8p`+`TS0041` Smartbutton | LOCKED | Update Test **≥9.0.923** (P2488 keep-lock). Soft-republish after #3184 PF. |
 | #2235 | Peter | — | tip-lag crashes | Diags `375def7f` / `8278ec79` — P2481/P2484 class; #2237 says stable again |
 | #2236 | PresentSky | `_TZE284_m1cvyneb`+`TS0601` | LOCKED wall_dimmer | **RESOLVED** by user (works after re-add) |
