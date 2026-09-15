@@ -57,12 +57,21 @@ class Button1GangDevice extends ButtonDevice {
     // WHY(P2499 / Peter #2238 @ 9.0.926 diag 77394256): compose once had
     // capabilitiesOptions.measure_battery.getable=false → Homey hid Battery + History
     // even when ZCL painted %. Soft-heal runtime options if SDK exposes setter.
+    // WHY(P2512 / Peter #2233–#2234 diags 8afffc76 / 1e071a86): also force
+    // preventInsights:false every boot — app.json drift had getable:false and
+    // heal only ran on battery ingest (sleepy never wakes → History stays gone).
     try {
-      if (typeof this.setCapabilityOptions === 'function' && this.hasCapability('measure_battery')) {
+      if (typeof this._ensureBatteryCapabilityUi === 'function') {
+        await this._ensureBatteryCapabilityUi().catch(() => {});
+      } else if (typeof this.setCapabilityOptions === 'function' && this.hasCapability('measure_battery')) {
         const cur = (typeof this.getCapabilityOptions === 'function' && this.getCapabilityOptions('measure_battery')) || {};
-        if (cur.getable === false) {
-          await this.setCapabilityOptions('measure_battery', { ...cur, getable: true }).catch(() => {});
-          this.log('[BUTTON_WIRELESS_1] P2499 restored measure_battery getable=true');
+        if (cur.getable === false || cur.preventInsights === true) {
+          await this.setCapabilityOptions('measure_battery', {
+            ...cur,
+            getable: true,
+            preventInsights: false,
+          }).catch(() => {});
+          this.log('[BUTTON_WIRELESS_1] P2499/P2512 restored measure_battery getable/insights');
         }
       }
     } catch (_e) { /* soft */ }

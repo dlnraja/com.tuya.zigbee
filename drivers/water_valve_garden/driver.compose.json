@@ -37,6 +37,7 @@
   },
   "zigbee": {
     "manufacturerName": [
+      "_tz3000_cjfmu5he",
       "_tz3000_hwnphliv",
       "_TZ3000_kz1anoi8",
       "_tz3000_srldgdxz",
@@ -45,8 +46,10 @@
       "_TZE200_htnnfasr",
       "_tze200_7ytb3h8u",
       "_tze204_7ytb3h8u",
+      "_TZ3000_CJFMU5HE",
       "_TZ3000_HWNPHLIV",
       "_TZ3000_KZ1ANOI8",
+      "_TZ3000_MQ4WUJMP",
       "_tz3000_kz1anoi8",
       "_TZ3000_SRLDGDXZ",
       "_TZ3000_OGJPFOYN",
@@ -56,13 +59,24 @@
       "_tze200_htnnfasr",
       "_TZE200_7YTB3H8U",
       "_TZE204_7YTB3H8U",
+      "_TZ3000_cjfmu5he",
       "_TZ3000_hwnphliv",
       "_TZ3000_srldgdxz",
       "_TZ3000_ogjpfoyn",
+      "_TZ3000_mq4wujmp",
       "_TZE200_7ytb3h8u",
       "_TZE204_7ytb3h8u",
-      "_TZ3000_cjfmu5he",
-      "_tz3000_cjfmu5he"
+      "_tz3000_CJFMU5HE",
+      "_tz3000_HWNPHLIV",
+      "_tz3000_KZ1ANOI8",
+      "_tz3000_MQ4WUJMP",
+      "_tz3000_SRLDGDXZ",
+      "_tz3000_OGJPFOYN",
+      "_tz3000_mq4wujmp",
+      "_tze284_7YTB3H8U",
+      "_tze200_HTNNFASR",
+      "_tze200_7YTB3H8U",
+      "_tze204_7YTB3H8U"
     ],
     "productId": [
       "SWV-ZF2",
@@ -72,6 +86,7 @@
       "SWV-ZNE",
       "SWV-ZNU",
       "TS0049",
+      "TS0101",
       "TS0601",
       "TS0601_watervalve"
     ],
@@ -82,6 +97,15 @@
           1,
           6
         ]
+      }
+    },
+    "learnmode": {
+      "image": "{{driverAssetsPath}}/icon.svg",
+      "instruction": {
+        "en": "Put the device in Zigbee pairing mode (usually hold reset/pairing 5 seconds until LED flashes).",
+        "fr": "Mode appairage Zigbee (souvent reset/pair 5 s jusqu'à LED clignotante).",
+        "nl": "Zet het apparaat in Zigbee-pairmodus (meestal reset/pair 5 s tot LED knippert).",
+        "de": "Gerät in Zigbee-Pairingmodus (meist Reset/Pair 5 s bis LED blinkt)."
       }
     }
   },
@@ -105,8 +129,7 @@
   ],
   "images": {
     "small": "/drivers/water_valve_garden/assets/images/small.png",
-    "large": "/drivers/water_valve_garden/assets/images/large.png",
-    "xlarge": "/drivers/water_valve_garden/assets/images/xlarge.png"
+    "large": "/drivers/water_valve_garden/assets/images/large.png"
   },
   "platforms": [
     "local"
@@ -127,22 +150,23 @@
       "id": "tuya_revive",
       "title": {
         "en": "Tuya Revive (device recovery)",
-        "fr": "Tuya Revive (récupération appareil)"
+        "fr": "Tuya Revive (récupération appareil)",
+        "nl": "Tuya Revive (apparaatherstel)",
+        "de": "Tuya Revive (Gerätewiederherstellung)"
       }
     },
     {
       "id": "generate_issue_report",
       "title": {
         "en": "Generate support report (GitHub issue)",
-        "fr": "Générer rapport de support (issue GitHub)"
+        "fr": "Générer rapport de support (issue GitHub)",
+        "nl": "Supportrapport genereren (GitHub issue)",
+        "de": "Supportbericht erstellen (GitHub Issue)"
       }
     }
   ],
   "id": "water_valve_garden",
   "version": "1.0.0",
-  "_pidConflictNotes": [
-    "// PID-CONFLICT-NOTE TS0049 shared with 4 other drivers (cross-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md"
-  ],
   "ui": {
     "quickAction": "onoff"
   }
