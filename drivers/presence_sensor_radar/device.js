@@ -912,17 +912,23 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
    */
   _commitPresenceAndFlows(presence) {
     const next = !!presence;
-    // Flows edge-fire inside safeSetCapabilityValue(alarm_motion) — avoid double-trigger
-    this.safeSetCapabilityValue('alarm_human', next).catch(() => {});
+    // WHY(P2526): set alarm_motion FIRST so edge-fire in safeSet sees prev correctly;
+    // then mirror alarm_human (presence≡motion). Avoid double-trigger.
     this.safeSetCapabilityValue('alarm_motion', next).catch(() => {});
+    this.safeSetCapabilityValue('alarm_human', next).catch(() => {});
   }
 
   _triggerPresenceFlows(detected) {
+    // WHY(P2526 / VicHY 74e5cae7 @ 9.0.945): custom WHEN "Presence detected" must fire
+    // on false→true — native Homey "Motion alarm" works via capability; this card does not.
     const cardId = detected
       ? 'presence_sensor_radar_presence_detected'
       : 'presence_sensor_radar_presence_cleared';
     try {
-      this.homey.flow.getDeviceTriggerCard(cardId).trigger(this, {}).catch(() => {});
+      this.log?.(`[P2526] flow ${cardId} edge=${detected}`);
+      this.homey.flow.getDeviceTriggerCard(cardId).trigger(this, {}).catch((e) => {
+        this.log?.(`[P2526] flow ${cardId} trigger failed: ${e?.message || e}`);
+      });
     } catch (_e) { /* soft */ }
     if (detected) {
       try {
