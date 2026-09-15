@@ -1620,5 +1620,8 @@
   },
   "5.12.0": {
     "en": "v5.12.0: stable-v5 batch sync (drivers, FPs, flows, manifest) from master v9.0.240–v9.0.260."
+  },
+  "5.12.197": {
+    "en": "L99: strip doNotLock invent climate bleed; harden forbidden placement. Update Stable Test."
   }
 }
