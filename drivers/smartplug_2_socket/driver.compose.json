@@ -34,8 +34,8 @@
     }
   },
   "images": {
-    "large": "/{{driverAssetsPath}}/images/large.png",
-    "small": "/{{driverAssetsPath}}/images/small.png"
+    "small": "/drivers/smartplug_2_socket/assets/images/small.png",
+    "large": "/drivers/smartplug_2_socket/assets/images/large.png"
   },
   "zigbee": {
     "productId": [
@@ -88,15 +88,52 @@
       }
     },
     "manufacturerName": [
-      "_hybrid_smartplug_2_socket_needs_device_assignment",
-      "_HYBRID_SMARTPLUG_2_SOCKET_NEEDS_DEVICE_ASSIGNMENT"
+      "_TZ3000_jak16dll",
+      "_tz3000_jak16dll",
+      "_TZ3000_JAK16DLL",
+      "_tz3000_JAK16DLL"
     ]
   },
   "version": "1.0.0",
-  "_pidConflictNotes": [
-    "// PID-CONFLICT-NOTE TS011F shared with 43 other drivers (cross-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md"
-  ],
   "ui": {
     "quickAction": "onoff"
-  }
+  },
+  "settings": [
+    {
+      "id": "power_scale",
+      "type": "dropdown",
+      "label": {
+        "en": "Power Measurement Scale",
+        "fr": "Échelle de puissance"
+      },
+      "value": "1",
+      "values": [
+        {
+          "id": "0.1",
+          "label": {
+            "en": "÷10",
+            "fr": "÷10"
+          }
+        },
+        {
+          "id": "1",
+          "label": {
+            "en": "×1 (Default)",
+            "fr": "×1 (défaut)"
+          }
+        },
+        {
+          "id": "10",
+          "label": {
+            "en": "×10",
+            "fr": "×10"
+          }
+        }
+      ],
+      "hint": {
+        "en": "Use if W/kWh readings are 10× too high or low.",
+        "fr": "Si W/kWh sont ×10 trop hauts ou bas."
+      }
+    }
+  ]
 }

@@ -29,19 +29,55 @@
     }
   },
   "images": {
-    "large": "/{{driverAssetsPath}}/images/large.png",
-    "small": "/{{driverAssetsPath}}/images/small.png"
+    "small": "/drivers/plug/assets/images/small.png",
+    "large": "/drivers/plug/assets/images/large.png"
   },
   "zigbee": {
     "manufacturerName": [
-      "_TZE200_placeholder_plug",
-      "_tze200_placeholder_plug",
-      "_TZ3000_o1jzcxou",
-      "_tz3000_o1jzcxou",
-      "_TZ3000_jcqs2mrv",
       "_tz3000_jcqs2mrv",
+      "_TZ3000_JCQS2MRV",
+      "_TZ3000_jcqs2mrv",
+      "_tz3000_JCQS2MRV",
       "_TZ3000_z1pnpsdo",
-      "_tz3000_z1pnpsdo"
+      "_tz3000_z1pnpsdo",
+      "_TZ3000_Z1PNPSDO",
+      "_tz3000_Z1PNPSDO",
+      "_TZ3000_dpo1ysak",
+      "_tz3000_dpo1ysak",
+      "_TZ3000_DPO1YSAK",
+      "_tz3000_DPO1YSAK",
+      "_TZ3000_rk2yhx0n",
+      "_tz3000_rk2yhx0n",
+      "_TZ3210_qlmnxmac",
+      "_tz3210_qlmnxmac",
+      "_TZ3000_kdi2o9m6",
+      "_TZ3000_ew31dmgx",
+      "_TZ3000_plyvnuf5",
+      "_TZ3000_hyfvrar3",
+      "_TZ3000_cymsnfvf",
+      "_TZ3000_upjrsxh1",
+      "_TZ3000_wamqdr3f",
+      "_tz3000_kdi2o9m6",
+      "_tz3000_ew31dmgx",
+      "_tz3000_plyvnuf5",
+      "_tz3000_hyfvrar3",
+      "_tz3000_cymsnfvf",
+      "_tz3000_upjrsxh1",
+      "_tz3000_wamqdr3f",
+      "_TZ3000_KDI2O9M6",
+      "_tz3000_KDI2O9M6",
+      "_TZ3000_EW31DMGX",
+      "_tz3000_EW31DMGX",
+      "_TZ3000_PLYVNUF5",
+      "_tz3000_PLYVNUF5",
+      "_TZ3000_HYFVRAR3",
+      "_tz3000_HYFVRAR3",
+      "_TZ3000_CYMSNFVF",
+      "_tz3000_CYMSNFVF",
+      "_TZ3000_UPJRSXH1",
+      "_tz3000_UPJRSXH1",
+      "_TZ3000_WAMQDR3F",
+      "_tz3000_WAMQDR3F"
     ],
     "productId": [
       "TS0001",
@@ -73,9 +109,6 @@
   "version": "1.0.0",
   "_notes": [
     "// FIX-EMPTY-MFR-AGGREGATEERROR: 2026-07-12 — placeholder added to prevent server-side build crash"
-  ],
-  "_pidConflictNotes": [
-    "// PID-CONFLICT-NOTE TS011F shared with 43 other drivers (cross-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md"
   ],
   "ui": {
     "quickAction": "onoff"

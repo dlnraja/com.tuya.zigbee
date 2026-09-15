@@ -96,7 +96,7 @@ function note(driverId, msg, mutator) {
   changes.push({ driverId, msg, path: c.path, data: c.data });
 }
 
-// --- Energy meters / plugs with metering caps ---
+// --- Energy meters / plugs with metering caps (explicit + fleet scan) ---
 const ENERGY_DRIVERS = [
   'energy_meter_din',
   'energy_meter_3phase',
@@ -111,6 +111,13 @@ const ENERGY_DRIVERS = [
   'switch_2gang',
   'switch_3gang',
 ];
+
+// WHY(P2518): class-enrich soft gaps (missing_power_scale_setting) — fleet-scan every metering driver
+for (const id of fs.readdirSync(DRIVERS)) {
+  if (!ENERGY_DRIVERS.includes(id) && fs.existsSync(path.join(DRIVERS, id, 'driver.compose.json'))) {
+    ENERGY_DRIVERS.push(id);
+  }
+}
 
 for (const id of ENERGY_DRIVERS) {
   note(id, 'add power_scale (+ bidirectional if exported)', (data) => {

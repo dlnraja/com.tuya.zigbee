@@ -1,6 +1,6 @@
 {
   "name": "com.dlnraja.tuya.zigbee",
-  "version": "5.12.187",
+  "version": "5.12.188",
   "description": "Tuya Unified Zigbee - Local-first control with AI automation",
   "main": "app.js",
   "scripts": {
@@ -188,7 +188,11 @@
     "check:p2513": "node --test test/critical/p2513-salvagr-moes-stop-midpct.test.js",
     "check:p249x": "npm run check:p2490 && npm run check:p2492 && npm run check:p2494 && npm run check:p2496 && npm run check:p2499 && npm run check:p2502 && npm run check:p2503 && npm run check:p2505 && npm run check:p2506 && npm run check:p2507 && npm run check:p2508 && npm run check:p2509 && npm run check:p2511 && npm run check:p2512 && npm run check:p2513",
     "check:publish": "npm run check:p2288 && npm run check:p2490 && npm run check:p2494 && npm run check:p2495 && npm run check:p2496",
-    "check:p2505": "node --test test/critical/p2505-p2485-ef00-multigang-rehome.test.js"
+    "check:p2505": "node --test test/critical/p2505-p2485-ef00-multigang-rehome.test.js",
+    "check:p2517": "node --test test/critical/p2517-market-apply-sacred-rollback.test.js",
+    "check:p2518": "node --test test/critical/p2518-cap-flow-dp-rx-enrich.test.js",
+    "check:p2519": "node --test test/critical/p2519-anti-regression-enrich-overwrite.test.js && node tools/ci/p2519-anti-regression-enrich-gate.js",
+    "check:p2516": "node --test test/critical/p2268-parallel-zha-z2m-gate.test.js"
   },
   "keywords": [
     "homey",

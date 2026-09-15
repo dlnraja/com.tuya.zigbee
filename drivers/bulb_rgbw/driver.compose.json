@@ -18,13 +18,14 @@
   ],
   "energy": {
     "approximation": {
-      "usageConstant": 0.5
+      "usageOn": 12,
+      "usageOff": 0.4
     }
   },
   "zigbee": {
     "manufacturerName": [
       "SONOFF",
-      "_TZ3210_eejm8dcr",
+      "_TZ3210_SROEZL0S",
       "_TZ3210_sroezl0s",
       "_tz3000_bdbb0fon",
       "_tz3000_evag0pvn",
@@ -49,9 +50,8 @@
       "_tzb210_uoiqhjqe",
       "_tzb210_zdvrsts8",
       "sonoff",
-      "_TZ3210_EEJM8DCR",
-      "_tz3210_eejm8dcr",
-      "_TZ3210_SROEZL0S",
+      "_TZ3210_htdm5hvw",
+      "_TZ3210_r3wubmyh",
       "_tz3210_sroezl0s",
       "_TZ3000_BDBB0FON",
       "_TZ3000_EVAG0PVN",
@@ -75,6 +75,10 @@
       "_TZB210_U3RI0968",
       "_TZB210_UOIQHJQE",
       "_TZB210_ZDVRSTS8",
+      "_TZ3210_HTDM5HVW",
+      "_tz3210_htdm5hvw",
+      "_TZ3210_R3WUBMYH",
+      "_tz3210_r3wubmyh",
       "_TZ3000_bdbb0fon",
       "_TZ3000_evag0pvn",
       "_TZ3000_sosdczdl",
@@ -97,12 +101,41 @@
       "_TZB210_u3ri0968",
       "_TZB210_uoiqhjqe",
       "_TZB210_zdvrsts8",
-      "_TZ3210_htdm5hvw",
-      "_tz3210_htdm5hvw",
-      "_TZ3210_r3wubmyh",
-      "_tz3210_r3wubmyh",
+      "_tz3210_SROEZL0S",
+      "_tz3000_BDBB0FON",
+      "_tz3000_EVAG0PVN",
+      "_tz3000_SOSDCZDL",
+      "_tz3000_ZWSZQDPY",
+      "_tz3210_ALPROTO2",
+      "_tz3210_B3KIQ1I0",
+      "_tz3210_DKUL5XIX",
+      "_tz3210_DXRJKPI4",
+      "_tz3210_GS9SHYQA",
+      "_tz3210_HZY4RJZ3",
+      "_tz3210_JAAP6JEB",
+      "_tz3210_LEYZ4RJU",
+      "_tz3210_MJAS4MDS",
+      "_tz3210_QIGBOVCQ",
+      "_tz3210_RWY3HAGT",
+      "_tz3210_S1X06GJA",
+      "_tz3210_WUHEIK5L",
+      "_tz3210_ZFBLRUVV",
+      "_tzb210_NFZRLZ29",
+      "_tzb210_U3RI0968",
+      "_tzb210_UOIQHJQE",
+      "_tzb210_ZDVRSTS8",
+      "_tz3210_HTDM5HVW",
+      "_tz3210_R3WUBMYH",
+      "_TZ3000_xwh1e22x",
+      "_tz3000_xwh1e22x",
+      "_TZ3000_XWH1E22X",
+      "_tz3000_XWH1E22X",
       "_TZ3210_rnj5wxxg",
-      "_tz3210_rnj5wxxg"
+      "_tz3210_rnj5wxxg",
+      "_TZ3210_RNJ5WXXG",
+      "_tz3210_RNJ5WXXG",
+      "_TZ3210_ttkgurpb",
+      "_tz3210_ttkgurpb"
     ],
     "productId": [
       "generic",
@@ -114,11 +147,11 @@
       "Flex RGBW",
       "GL-C-008",
       "GL-B-008Z",
-      "TS1002",
       "FE-GU10-5W",
       "SMD9300",
       "CK-BL702-AL-01(7009_Z102LG03-1)",
-      "TS0601"
+      "TS0601",
+      "TS1002"
     ],
     "endpoints": {
       "1": {
@@ -134,7 +167,7 @@
       }
     },
     "learnmode": {
-      "image": "/drivers/bulb_rgbw/assets/learnmode.svg",
+      "image": "{{driverAssetsPath}}/icon.svg",
       "instruction": {
         "en": "Press and hold the pairing button for 5 seconds until the LED flashes.",
         "fr": "Appuyez et maintenez le bouton d'appairage pendant 5 secondes jusqu'à ce que la LED clignote."
@@ -355,8 +388,7 @@
   ],
   "images": {
     "small": "/drivers/bulb_rgbw/assets/images/small.png",
-    "large": "/drivers/bulb_rgbw/assets/images/large.png",
-    "xlarge": "/drivers/bulb_rgbw/assets/images/xlarge.png"
+    "large": "/drivers/bulb_rgbw/assets/images/large.png"
   },
   "platforms": [
     "local"
@@ -410,25 +442,23 @@
       "id": "tuya_revive",
       "title": {
         "en": "Tuya Revive (device recovery)",
-        "fr": "Tuya Revive (récupération appareil)"
+        "fr": "Tuya Revive (récupération appareil)",
+        "nl": "Tuya Revive (apparaatherstel)",
+        "de": "Tuya Revive (Gerätewiederherstellung)"
       }
     },
     {
       "id": "generate_issue_report",
       "title": {
         "en": "Generate support report (GitHub issue)",
-        "fr": "Générer rapport de support (issue GitHub)"
+        "fr": "Générer rapport de support (issue GitHub)",
+        "nl": "Supportrapport genereren (GitHub issue)",
+        "de": "Supportbericht erstellen (GitHub Issue)"
       }
     }
   ],
   "id": "bulb_rgbw",
   "version": "1.0.0",
-  "_pidConflictNotes": [
-    "// PID-CONFLICT-NOTE TS0505B shared with 19 other drivers (cross-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md",
-    "// PID-CONFLICT-NOTE TS0505A shared with 13 other drivers (cross-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md",
-    "// PID-CONFLICT-NOTE TS0504B shared with 7 other drivers (cross-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md",
-    "// PID-CONFLICT-NOTE TS0504A shared with 3 other drivers (cross-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md"
-  ],
   "ui": {
     "quickAction": "onoff"
   }

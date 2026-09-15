@@ -45,8 +45,6 @@
       }
     },
     "manufacturerName": [
-      "_hybrid_boiler_switch_energy_needs_device_assignment",
-      "_HYBRID_BOILER_SWITCH_ENERGY_NEEDS_DEVICE_ASSIGNMENT",
       "_TZE204_rzdkn5rx",
       "_TZE28C100000_rzdkn5rx",
       "_TZE28C1000000_rzdkn5rx",
@@ -55,13 +53,15 @@
       "_TZE28C100000_RZDKN5RX",
       "_tze28c100000_rzdkn5rx",
       "_TZE28C1000000_RZDKN5RX",
-      "_tze28c1000000_rzdkn5rx"
+      "_tze28c1000000_rzdkn5rx",
+      "_tze204_RZDKN5RX",
+      "_tze28c100000_RZDKN5RX",
+      "_tze28c1000000_RZDKN5RX"
     ]
   },
   "images": {
     "small": "/drivers/boiler_switch_energy/assets/images/small.png",
-    "large": "/drivers/boiler_switch_energy/assets/images/large.png",
-    "xlarge": "/drivers/boiler_switch_energy/assets/images/xlarge.png"
+    "large": "/drivers/boiler_switch_energy/assets/images/large.png"
   },
   "platforms": [
     "local"
@@ -73,5 +73,43 @@
   "version": "1.0.0",
   "ui": {
     "quickAction": "onoff"
-  }
+  },
+  "settings": [
+    {
+      "id": "power_scale",
+      "type": "dropdown",
+      "label": {
+        "en": "Power Measurement Scale",
+        "fr": "Échelle de puissance"
+      },
+      "value": "1",
+      "values": [
+        {
+          "id": "0.1",
+          "label": {
+            "en": "÷10",
+            "fr": "÷10"
+          }
+        },
+        {
+          "id": "1",
+          "label": {
+            "en": "×1 (Default)",
+            "fr": "×1 (défaut)"
+          }
+        },
+        {
+          "id": "10",
+          "label": {
+            "en": "×10",
+            "fr": "×10"
+          }
+        }
+      ],
+      "hint": {
+        "en": "Use if W/kWh readings are 10× too high or low.",
+        "fr": "Si W/kWh sont ×10 trop hauts ou bas."
+      }
+    }
+  ]
 }

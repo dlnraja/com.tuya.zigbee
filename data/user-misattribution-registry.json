@@ -5284,6 +5284,30 @@
       "notes": "P2509 L99: OCR/forum invent noise (Stefan T154092 padded mfr). NEVER lock — NEED real zb_manufacturer_name interview."
     },
     {
+      "id": "p2514-zm16b-3mzb0sdz-curtain",
+      "mfr": [
+        "_TZE284_3MZB0SDZ",
+        "_TZE284_3mzb0sdz",
+        "_tze284_3MZB0SDZ",
+        "_tze284_3mzb0sdz"
+      ],
+      "productId": [
+        "TS0601"
+      ],
+      "canonicalDriver": "curtain_motor",
+      "forbiddenDrivers": [
+        "ir_blaster",
+        "wifi_ir_remote",
+        "blaster_remote",
+        "generic_tuya",
+        "zigbee_universal",
+        "climate_sensor",
+        "soil_sensor"
+      ],
+      "forbidMode": "couple",
+      "notes": "P2514: Zemismart ZM16B tubular (Z2M/ZHA). Real couple is _TZE284_3mzb0sdz+TS0601 — was mis-homed to ir_blaster with invent TS1201. OCR padded _TZE2841000000_* stays doNotLock."
+    },
+    {
       "id": "p2509-npj9bug3-soil-zg303z",
       "mfr": [
         "_TZE200_npj9bug3",
@@ -7008,28 +7032,155 @@
       }
     },
     {
-      "id": "p2514-zm16b-3mzb0sdz-curtain",
+      "id": "p2516-a14rjslz-3phase-meter",
       "mfr": [
-        "_TZE284_3MZB0SDZ",
-        "_TZE284_3mzb0sdz",
-        "_tze284_3MZB0SDZ",
-        "_tze284_3mzb0sdz"
+        "_TZE284_a14rjslz",
+        "_tze284_a14rjslz",
+        "_TZE284_A14RJSLZ"
       ],
       "productId": [
         "TS0601"
       ],
-      "canonicalDriver": "curtain_motor",
+      "canonicalDriver": "energy_meter_3phase",
       "forbiddenDrivers": [
-        "ir_blaster",
-        "wifi_ir_remote",
-        "blaster_remote",
+        "climate_sensor",
+        "soil_sensor",
         "generic_tuya",
         "zigbee_universal",
-        "climate_sensor",
-        "soil_sensor"
+        "din_rail_meter"
       ],
       "forbidMode": "couple",
-      "notes": "P2514 ZM16B BOTH"
+      "notes": "P2516 ZHA/Z2M 3P4W energy meter — infer-enrich wrongly proposed climate; lock couple only"
+    },
+    {
+      "id": "p2517-krwtzhfd-ts004f-not-leak",
+      "mfr": [
+        "_TZ3000_krwtzhfd",
+        "_tz3000_krwtzhfd"
+      ],
+      "productId": [
+        "TS004F"
+      ],
+      "canonicalDriver": null,
+      "forbiddenDrivers": [
+        "water_leak_sensor",
+        "climate_sensor",
+        "soil_sensor",
+        "curtain_motor",
+        "button_wireless_4"
+      ],
+      "forbidMode": "couple",
+      "notes": "P2517 market z2m_desc false-positive (NEO leak on TS004F) — forbid wrong classes; NEED_INTERVIEW before any lock (doNotLock)",
+      "doNotLock": true
+    },
+    {
+      "id": "p2517-t7ugva7q-ts0013-wall-3gang",
+      "mfr": [
+        "_TZ3000_t7ugva7q",
+        "_tz3000_t7ugva7q"
+      ],
+      "productId": [
+        "TS0013",
+        "TS0003"
+      ],
+      "canonicalDriver": "wall_switch_3gang_1way",
+      "forbiddenDrivers": [
+        "switch_3gang",
+        "switch_1gang",
+        "switch_2gang"
+      ],
+      "forbidMode": "couple",
+      "notes": "P2517 Z2M 3-gang no-neutral — wall_switch_3gang_1way doctrine"
+    },
+    {
+      "id": "p2517-l9brjwau-ts0003-wall-3gang",
+      "mfr": [
+        "_TZ3000_l9brjwau",
+        "_tz3000_l9brjwau"
+      ],
+      "productId": [
+        "TS0003"
+      ],
+      "canonicalDriver": "wall_switch_3gang_1way",
+      "forbiddenDrivers": [
+        "switch_2gang",
+        "switch_3gang"
+      ],
+      "forbidMode": "couple",
+      "notes": "P2517 BSEED TS0003 is 3-gang; TS0002 stays wall_switch_2gang_1way (p2455)"
+    },
+    {
+      "id": "p2519-8eazvzo6-not-climate",
+      "mfr": [
+        "_TZE200_8eazvzo6",
+        "_tze200_8eazvzo6",
+        "_TZE204_8eazvzo6",
+        "_tze204_8eazvzo6"
+      ],
+      "productId": [
+        "TS0601"
+      ],
+      "canonicalDriver": "switch_wall_6gang",
+      "forbiddenDrivers": [
+        "climate_sensor",
+        "soil_sensor",
+        "generic_tuya"
+      ],
+      "forbidMode": "couple",
+      "notes": "P2519 — 6-gang wall switch; fleet/case-variant re-painted climate — forbid"
+    },
+    {
+      "id": "p2519-shkxsgis-not-curtain",
+      "mfr": [
+        "_TZE200_shkxsgis",
+        "_tze200_shkxsgis",
+        "_TZE204_shkxsgis",
+        "_tze204_shkxsgis"
+      ],
+      "productId": [
+        "TS0601"
+      ],
+      "canonicalDriver": "wall_switch_4_gang_tuya",
+      "forbiddenDrivers": [
+        "curtain_motor",
+        "climate_sensor"
+      ],
+      "forbidMode": "couple",
+      "notes": "P2519 — fleet dual-claim onto curtain; keep wall 4-gang"
+    },
+    {
+      "id": "p2519-npj9bug3-not-curtain",
+      "mfr": [
+        "_TZE200_npj9bug3",
+        "_tze200_npj9bug3"
+      ],
+      "productId": [
+        "TS0601"
+      ],
+      "canonicalDriver": "soil_sensor",
+      "forbiddenDrivers": [
+        "curtain_motor",
+        "climate_sensor"
+      ],
+      "forbidMode": "couple",
+      "notes": "P2519 — soil couple; curtain enrich dual-claim"
+    },
+    {
+      "id": "p2519-jfw0a4aa-not-curtain",
+      "mfr": [
+        "_TZE200_jfw0a4aa",
+        "_tze200_jfw0a4aa"
+      ],
+      "productId": [
+        "TS0601"
+      ],
+      "canonicalDriver": "vibration_sensor",
+      "forbiddenDrivers": [
+        "curtain_motor",
+        "climate_sensor"
+      ],
+      "forbidMode": "couple",
+      "notes": "P2519 — vibration couple; curtain enrich dual-claim"
     }
   ]
 }

@@ -33,8 +33,8 @@
     }
   },
   "images": {
-    "large": "/{{driverAssetsPath}}/images/large.png",
-    "small": "/{{driverAssetsPath}}/images/small.png"
+    "small": "/drivers/double_power_point/assets/images/small.png",
+    "large": "/drivers/double_power_point/assets/images/large.png"
   },
   "zigbee": {
     "productId": [
@@ -83,22 +83,55 @@
         "en": "Press and hold down on/off switch for aprox 5 seconds until the LED blinks rapidly."
       }
     },
-    "manufacturerName": [
-      "_hybrid_double_power_point_needs_device_assignment",
-      "_HYBRID_DOUBLE_POWER_POINT_NEEDS_DEVICE_ASSIGNMENT"
-    ]
+    "manufacturerName": []
   },
   "version": "1.0.0",
   "metadata": {
     "driver": {
       "catchall": true,
+      "_comment": "WHY: skip pid strip 2026-08-21 — empty manufacturerName; stripping productIds would leave zero fingerprints. Do not invent mfrs.",
       "reason": "Fallback for unmatched devices with PIDs: TS0601, TS011F"
     }
   },
-  "_pidConflictNotes": [
-    "// PID-CONFLICT-NOTE TS011F shared with 43 other drivers (cross-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md"
-  ],
   "ui": {
     "quickAction": "onoff"
-  }
+  },
+  "settings": [
+    {
+      "id": "power_scale",
+      "type": "dropdown",
+      "label": {
+        "en": "Power Measurement Scale",
+        "fr": "Échelle de puissance"
+      },
+      "value": "1",
+      "values": [
+        {
+          "id": "0.1",
+          "label": {
+            "en": "÷10",
+            "fr": "÷10"
+          }
+        },
+        {
+          "id": "1",
+          "label": {
+            "en": "×1 (Default)",
+            "fr": "×1 (défaut)"
+          }
+        },
+        {
+          "id": "10",
+          "label": {
+            "en": "×10",
+            "fr": "×10"
+          }
+        }
+      ],
+      "hint": {
+        "en": "Use if W/kWh readings are 10× too high or low.",
+        "fr": "Si W/kWh sont ×10 trop hauts ou bas."
+      }
+    }
+  ]
 }

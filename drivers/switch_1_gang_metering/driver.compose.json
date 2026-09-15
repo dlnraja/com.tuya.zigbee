@@ -16,7 +16,6 @@
     "meter_power",
     "measure_current",
     "measure_voltage",
-    "measure_battery",
     "button.1"
   ],
   "capabilitiesOptions": {
@@ -31,25 +30,15 @@
       "maintenanceAction": true,
       "getable": false,
       "setable": false
-    },
-    "measure_battery": {
-      "title": {
-        "en": "Battery",
-        "fr": "Batterie",
-        "nl": "Batterij",
-        "de": "Batterie"
-      }
     }
   },
   "images": {
-    "large": "/{{driverAssetsPath}}/images/large.png",
-    "small": "/{{driverAssetsPath}}/images/small.png"
+    "small": "/drivers/switch_1_gang_metering/assets/images/small.png",
+    "large": "/drivers/switch_1_gang_metering/assets/images/large.png"
   },
   "version": "1.0.0",
   "energy": {
-    "batteries": [
-      "CR2032"
-    ]
+    "mains": true
   },
   "zigbee": {
     "productId": [
@@ -94,10 +83,45 @@
       "_generic_switch_1_gang_metering"
     ]
   },
-  "_pidConflictNotes": [
-    "// PID-CONFLICT-NOTE TS004F shared with 19 other drivers (cross-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md"
-  ],
   "ui": {
     "quickAction": "onoff"
-  }
+  },
+  "settings": [
+    {
+      "id": "power_scale",
+      "type": "dropdown",
+      "label": {
+        "en": "Power Measurement Scale",
+        "fr": "Échelle de puissance"
+      },
+      "value": "1",
+      "values": [
+        {
+          "id": "0.1",
+          "label": {
+            "en": "÷10",
+            "fr": "÷10"
+          }
+        },
+        {
+          "id": "1",
+          "label": {
+            "en": "×1 (Default)",
+            "fr": "×1 (défaut)"
+          }
+        },
+        {
+          "id": "10",
+          "label": {
+            "en": "×10",
+            "fr": "×10"
+          }
+        }
+      ],
+      "hint": {
+        "en": "Use if W/kWh readings are 10× too high or low.",
+        "fr": "Si W/kWh sont ×10 trop hauts ou bas."
+      }
+    }
+  ]
 }

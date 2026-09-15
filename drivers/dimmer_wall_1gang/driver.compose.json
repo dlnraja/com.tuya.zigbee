@@ -14,11 +14,6 @@
     "button.1",
     "measure_voltage"
   ],
-  "energy": {
-    "batteries": [
-      "CR2032"
-    ]
-  },
   "zigbee": {
     "productId": [
       "TS0001",
@@ -39,10 +34,11 @@
       "TS110E",
       "TS110F",
       "ZBMINI-DIM",
-      "ZBMINID"
+      "ZBMINID",
+      "TS011F"
     ],
     "learnmode": {
-      "image": "/drivers/dimmer_wall_1gang/assets/learnmode.svg",
+      "image": "{{driverAssetsPath}}/icon.svg",
       "instruction": {
         "en": "Press and hold the pairing button for 5 seconds until the LED flashes.",
         "fr": "Appuyez et maintenez le bouton d'appairage pendant 5 secondes jusqu'à ce que la LED clignote."
@@ -59,21 +55,17 @@
     "manufacturerName": [
       "TS110E",
       "TS110F",
-      "_TYZB01_qezuin6k",
       "_TZ3000_49QCHF10",
       "_TZ3000_49qchf10",
       "_TZ3000_5rpu3r0d",
-      "_TZ3000_7dcddnye",
       "_TZ3000_7hcgjxpc",
       "_TZ3000_bwlvyjwk",
-      "_TZ3000_g1glzzfk",
       "_TZ3000_gb5gaeca",
       "_TZ3000_hurauima",
       "_TZ3000_iivsrikg",
       "_TZ3000_irwuzilv",
       "_TZ3000_j0gtlepx",
       "_TZ3000_j2w1dw29",
-      "_TZ3000_j6adk9id",
       "_TZ3000_juq7i1fr",
       "_TZ3000_nbnmw9nc",
       "_TZ3000_nosnx7im",
@@ -86,38 +78,25 @@
       "_TZ3000_v1srfw9x",
       "_TZ3000_wr6g6olr",
       "_TZ3002_tdf2m4ch",
-      "_TZ3210_09hzmirw",
-      "_TZ3210_c2iwpxf1",
       "_TZ3210_dbilpfqk",
       "_TZ3210_dxroobu3",
       "_TZ3210_frm6149r",
-      "_TZ3210_jtifm80b",
       "_TZ3210_s9lumfhn",
       "_TZ3210_umi6vbsz",
       "_TZ3210_xwqng7ol",
       "_TZ3210_zbabx9wh",
-      "_TZB210_0bkzabht",
-      "_TZB210_ayx58ft5",
-      "_TZB210_eiwanbeb",
       "_TZE200_4mh6tyyo",
       "_TZE204_dcnsggvz",
-      "_TZE204_unsxl4ir",
       "_TZE284_nvodulvi",
-      "_tyzb01_qezuin6k",
       "ts110e",
       "ts110f",
-      "_TYZB01_QEZUIN6K",
       "_tz3000_49qchf10",
       "_TZ3000_5RPU3R0D",
       "_tz3000_5rpu3r0d",
-      "_TZ3000_7DCDDNYE",
-      "_tz3000_7dcddnye",
       "_TZ3000_7HCGJXPC",
       "_tz3000_7hcgjxpc",
       "_TZ3000_BWLVYJWK",
       "_tz3000_bwlvyjwk",
-      "_TZ3000_G1GLZZFK",
-      "_tz3000_g1glzzfk",
       "_TZ3000_GB5GAECA",
       "_tz3000_gb5gaeca",
       "_TZ3000_HURAUIMA",
@@ -130,8 +109,6 @@
       "_tz3000_j0gtlepx",
       "_TZ3000_J2W1DW29",
       "_tz3000_j2w1dw29",
-      "_TZ3000_J6ADK9ID",
-      "_tz3000_j6adk9id",
       "_TZ3000_JUQ7I1FR",
       "_tz3000_juq7i1fr",
       "_TZ3000_NBNMW9NC",
@@ -156,18 +133,12 @@
       "_tz3000_wr6g6olr",
       "_TZ3002_TDF2M4CH",
       "_tz3002_tdf2m4ch",
-      "_TZ3210_09HZMIRW",
-      "_tz3210_09hzmirw",
-      "_TZ3210_C2IWPXF1",
-      "_tz3210_c2iwpxf1",
       "_TZ3210_DBILPFQK",
       "_tz3210_dbilpfqk",
       "_TZ3210_DXROOBU3",
       "_tz3210_dxroobu3",
       "_TZ3210_FRM6149R",
       "_tz3210_frm6149r",
-      "_TZ3210_JTIFM80B",
-      "_tz3210_jtifm80b",
       "_TZ3210_S9LUMFHN",
       "_tz3210_s9lumfhn",
       "_TZ3210_UMI6VBSZ",
@@ -176,20 +147,54 @@
       "_tz3210_xwqng7ol",
       "_TZ3210_ZBABX9WH",
       "_tz3210_zbabx9wh",
-      "_TZB210_0BKZABHT",
-      "_tzb210_0bkzabht",
-      "_TZB210_AYX58FT5",
-      "_tzb210_ayx58ft5",
-      "_TZB210_EIWANBEB",
-      "_tzb210_eiwanbeb",
       "_TZE200_4MH6TYYO",
       "_tze200_4mh6tyyo",
       "_TZE204_DCNSGGVZ",
       "_tze204_dcnsggvz",
-      "_TZE204_UNSXL4IR",
-      "_tze204_unsxl4ir",
       "_TZE284_NVODULVI",
-      "_tze284_nvodulvi"
+      "_tze284_nvodulvi",
+      "_tz3000_49QCHF10",
+      "_tz3000_5RPU3R0D",
+      "_tz3000_7HCGJXPC",
+      "_tz3000_BWLVYJWK",
+      "_tz3000_GB5GAECA",
+      "_tz3000_HURAUIMA",
+      "_tz3000_IIVSRIKG",
+      "_tz3000_IRWUZILV",
+      "_tz3000_J0GTLEPX",
+      "_tz3000_J2W1DW29",
+      "_tz3000_JUQ7I1FR",
+      "_tz3000_NBNMW9NC",
+      "_tz3000_NOSNX7IM",
+      "_tz3000_NXDZIQZC",
+      "_tz3000_QUQAEEW6",
+      "_tz3000_R2FGO9KS",
+      "_tz3000_SFIBAWTR",
+      "_tz3000_TASPDDVQ",
+      "_tz3000_TH6ZQQY6",
+      "_tz3000_V1SRFW9X",
+      "_tz3000_WR6G6OLR",
+      "_tz3002_TDF2M4CH",
+      "_tz3210_DBILPFQK",
+      "_tz3210_DXROOBU3",
+      "_tz3210_FRM6149R",
+      "_tz3210_S9LUMFHN",
+      "_tz3210_UMI6VBSZ",
+      "_tz3210_XWQNG7OL",
+      "_tz3210_ZBABX9WH",
+      "_tze200_4MH6TYYO",
+      "_tze204_DCNSGGVZ",
+      "_tze284_NVODULVI",
+      "_tz3000_j6adk9id",
+      "_TZ3000_J6ADK9ID",
+      "_TZ3000_j6adk9id",
+      "_tz3000_J6ADK9ID",
+      "_tze204_unsxl4ir",
+      "_TZE204_UNSXL4IR",
+      "_TZE204_unsxl4ir",
+      "_tze204_UNSXL4IR",
+      "_TZ3210_pfbzs1an",
+      "_tz3210_pfbzs1an"
     ]
   },
   "settings": [
@@ -445,12 +450,47 @@
           }
         }
       ]
+    },
+    {
+      "id": "power_scale",
+      "type": "dropdown",
+      "label": {
+        "en": "Power Measurement Scale",
+        "fr": "Échelle de puissance"
+      },
+      "value": "1",
+      "values": [
+        {
+          "id": "0.1",
+          "label": {
+            "en": "÷10",
+            "fr": "÷10"
+          }
+        },
+        {
+          "id": "1",
+          "label": {
+            "en": "×1 (Default)",
+            "fr": "×1 (défaut)"
+          }
+        },
+        {
+          "id": "10",
+          "label": {
+            "en": "×10",
+            "fr": "×10"
+          }
+        }
+      ],
+      "hint": {
+        "en": "Use if W/kWh readings are 10× too high or low.",
+        "fr": "Si W/kWh sont ×10 trop hauts ou bas."
+      }
     }
   ],
   "images": {
     "small": "/drivers/dimmer_wall_1gang/assets/images/small.png",
-    "large": "/drivers/dimmer_wall_1gang/assets/images/large.png",
-    "xlarge": "/drivers/dimmer_wall_1gang/assets/images/xlarge.png"
+    "large": "/drivers/dimmer_wall_1gang/assets/images/large.png"
   },
   "platforms": [
     "local"
@@ -515,37 +555,23 @@
       "id": "tuya_revive",
       "title": {
         "en": "Tuya Revive (device recovery)",
-        "fr": "Tuya Revive (récupération appareil)"
+        "fr": "Tuya Revive (récupération appareil)",
+        "nl": "Tuya Revive (apparaatherstel)",
+        "de": "Tuya Revive (Gerätewiederherstellung)"
       }
     },
     {
       "id": "generate_issue_report",
       "title": {
         "en": "Generate support report (GitHub issue)",
-        "fr": "Générer rapport de support (issue GitHub)"
+        "fr": "Générer rapport de support (issue GitHub)",
+        "nl": "Supportrapport genereren (GitHub issue)",
+        "de": "Supportbericht erstellen (GitHub Issue)"
       }
     }
   ],
   "id": "dimmer_wall_1gang",
   "version": "1.0.0",
-  "_pidConflictNotes": [
-    "// PID-CONFLICT-NOTE TS0001 shared with 35 other drivers (cross-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md",
-    "// PID-CONFLICT-NOTE TS0215A shared with 28 other drivers (cross-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md",
-    "// PID-CONFLICT-NOTE TS0002 shared with 27 other drivers (cross-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md",
-    "// PID-CONFLICT-NOTE TS0726 shared with 21 other drivers (cross-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md",
-    "// PID-CONFLICT-NOTE TS0003 shared with 20 other drivers (cross-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md",
-    "// PID-CONFLICT-NOTE TS0505B shared with 19 other drivers (cross-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md",
-    "// PID-CONFLICT-NOTE TS110E shared with 18 other drivers (cross-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md",
-    "// PID-CONFLICT-NOTE TS0013 shared with 15 other drivers (cross-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md",
-    "// PID-CONFLICT-NOTE TS0011 shared with 14 other drivers (cross-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md",
-    "// PID-CONFLICT-NOTE TS0012 shared with 12 other drivers (cross-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md",
-    "// PID-CONFLICT-NOTE TS110F shared with 9 other drivers (cross-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md",
-    "// PID-CONFLICT-NOTE TS0052 shared with 8 other drivers (same-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md",
-    "// PID-CONFLICT-NOTE TS1101 shared with 5 other drivers (same-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md",
-    "// PID-CONFLICT-NOTE TS0601_dim1 shared with 2 other drivers (same-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md",
-    "// PID-CONFLICT-NOTE ZBMINI-DIM shared with 2 other drivers (same-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md",
-    "// PID-CONFLICT-NOTE ZBMINID shared with 2 other drivers (same-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md"
-  ],
   "ui": {
     "quickAction": "onoff"
   }

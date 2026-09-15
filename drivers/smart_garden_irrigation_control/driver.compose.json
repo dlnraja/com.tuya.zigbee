@@ -41,16 +41,27 @@
     ]
   },
   "images": {
-    "small": "/{{driverAssetsPath}}/images/small.png",
-    "large": "/{{driverAssetsPath}}/images/large.png"
+    "small": "/drivers/smart_garden_irrigation_control/assets/images/small.png",
+    "large": "/drivers/smart_garden_irrigation_control/assets/images/large.png"
   },
   "zigbee": {
     "manufacturerName": [
-      "_tz3210_eymunffl",
       "_TZ3210_EYMUNFFL",
+      "_tz3210_eymunffl",
       "_TZ3210_eymunffl",
+      "_tz3210_EYMUNFFL",
       "_TZ3000_mq4wujmp",
-      "_tz3000_mq4wujmp"
+      "_tz3000_mq4wujmp",
+      "_TZ3000_MQ4WUJMP",
+      "_tz3000_MQ4WUJMP",
+      "_TZ3000_cjfmu5he",
+      "_TZ3000_kz1anoi8",
+      "_tz3000_cjfmu5he",
+      "_tz3000_kz1anoi8",
+      "_TZ3000_CJFMU5HE",
+      "_tz3000_CJFMU5HE",
+      "_TZ3000_KZ1ANOI8",
+      "_tz3000_KZ1ANOI8"
     ],
     "productId": [
       "TS0011",
@@ -91,10 +102,6 @@
     }
   },
   "version": "1.0.0",
-  "_pidConflictNotes": [
-    "// PID-CONFLICT-NOTE TS0101 shared with 9 other drivers (cross-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md",
-    "// PID-CONFLICT-NOTE TS0049 shared with 4 other drivers (cross-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md"
-  ],
   "ui": {
     "quickAction": "onoff"
   }

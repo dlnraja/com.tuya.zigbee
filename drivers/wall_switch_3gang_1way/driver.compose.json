@@ -10,20 +10,8 @@
   "capabilities": [
     "onoff",
     "onoff.gang2",
-    "onoff.gang3",
-    "button.1",
-    "button.2",
-    "button.3"
+    "onoff.gang3"
   ],
-  "energy": {
-    "approximation": {
-      "usageOn": 100,
-      "usageOff": 1
-    },
-    "batteries": [
-      "CR2032"
-    ]
-  },
   "platforms": [
     "local"
   ],
@@ -32,8 +20,7 @@
   ],
   "images": {
     "small": "/drivers/wall_switch_3gang_1way/assets/images/small.png",
-    "large": "/drivers/wall_switch_3gang_1way/assets/images/large.png",
-    "xlarge": "/drivers/wall_switch_3gang_1way/assets/images/xlarge.png"
+    "large": "/drivers/wall_switch_3gang_1way/assets/images/large.png"
   },
   "devices": {
     "secondSwitch": {
@@ -100,32 +87,34 @@
       "_TZ3000_OK0GGPK7",
       "_tz3000_OK0GGPK7",
       "_TZ3000_ly9apzky",
-      "_tz3000_ly9apzky"
+      "_tz3000_ly9apzky",
+      "_TZ3000_LY9APZKY",
+      "_tz3000_LY9APZKY",
+      "_TZE200_zo0cfekv",
+      "_TZE200_tzyy0rtq",
+      "_TZE200_rd8cdssd",
+      "_tze200_zo0cfekv",
+      "_tze200_tzyy0rtq",
+      "_tze200_rd8cdssd",
+      "_TZ3000_g9chy2ib",
+      "_tz3000_g9chy2ib",
+      "_TZE200_ZO0CFEKV",
+      "_tze200_ZO0CFEKV",
+      "_TZE200_TZYY0RTQ",
+      "_tze200_TZYY0RTQ",
+      "_TZE200_RD8CDSSD",
+      "_tze200_RD8CDSSD",
+      "_TZ3000_G9CHY2IB",
+      "_tz3000_G9CHY2IB",
+      "_TZ3000_l9brjwau",
+      "_tz3000_l9brjwau",
+      "_TZ3000_t7ugva7q",
+      "_tz3000_t7ugva7q"
     ],
     "productId": [
-      "CK-TLSR8656-SS5-01(7014)",
-      "Excellux",
-      "RH3052",
-      "SM0201",
-      "TH01",
-      "THS317-ET",
       "TS0003",
       "TS0013",
-      "TS0043",
-      "TS0201",
-      "TS0202",
-      "TS0222",
-      "TS0601",
-      "TS1201",
-      "TY0201",
-      "WSDCGQ01LM",
-      "WSDCGQ11LM",
-      "WSDCGQ12LM",
-      "ZG-227Z",
-      "ZG-227ZL",
-      "lumi.sensor_ht",
-      "lumi.sensor_ht.agl02",
-      "lumi.weather"
+      "TS0601"
     ],
     "endpoints": {
       "1": {
@@ -136,7 +125,8 @@
           5,
           6,
           57344,
-          57345
+          57345,
+          61184
         ]
       },
       "2": {
@@ -345,6 +335,79 @@
           ]
         }
       ]
+    },
+    {
+      "type": "group",
+      "label": {
+        "en": "Connected switches",
+        "nl": "Gekoppelde schakelaars",
+        "fr": "Interrupteurs liés",
+        "de": "Verbundene Schalter"
+      },
+      "children": [
+        {
+          "id": "connected_siblings",
+          "type": "label",
+          "label": {
+            "en": "This wall unit",
+            "nl": "Dit wandapparaat",
+            "fr": "Cet interrupteur mural",
+            "de": "Diese Wandeinheit"
+          },
+          "value": "—"
+        },
+        {
+          "id": "traffic_stats",
+          "type": "label",
+          "label": {
+            "en": "Network activity",
+            "nl": "Netwerkactiviteit",
+            "fr": "Activité réseau",
+            "de": "Netzwerkaktivität"
+          },
+          "value": "—"
+        }
+      ]
+    },
+    {
+      "type": "group",
+      "label": {
+        "en": "Pulse / inching",
+        "nl": "Puls / inching",
+        "fr": "Impulsion / inching",
+        "de": "Impuls / Inching"
+      },
+      "children": [
+        {
+          "id": "inching",
+          "type": "checkbox",
+          "label": {
+            "en": "Pulse mode (auto-off)",
+            "nl": "Pulsmodus (automatisch uit)",
+            "fr": "Mode impulsion (extinction auto)",
+            "de": "Impulsmodus (Auto-Aus)"
+          },
+          "hint": {
+            "en": "Change LED and pulse only on the main gang tile. Homey Flows cover timers/countdowns.",
+            "nl": "LED en puls alleen op de hoofdtegel. Timers via Flows.",
+            "fr": "LED et impulsion uniquement sur la tuile principale. Les minuteries passent par les Flows."
+          },
+          "value": false
+        },
+        {
+          "id": "inching_duration",
+          "type": "number",
+          "label": {
+            "en": "Pulse duration (seconds)",
+            "nl": "Pulsduur (seconden)",
+            "fr": "Durée d'impulsion (secondes)",
+            "de": "Impulsdauer (Sekunden)"
+          },
+          "value": 60,
+          "min": 1,
+          "max": 3600
+        }
+      ]
     }
   ],
   "maintenanceActions": [
@@ -360,14 +423,18 @@
       "id": "tuya_revive",
       "title": {
         "en": "Tuya Revive (device recovery)",
-        "fr": "Tuya Revive (récupération appareil)"
+        "fr": "Tuya Revive (récupération appareil)",
+        "nl": "Tuya Revive (apparaatherstel)",
+        "de": "Tuya Revive (Gerätewiederherstellung)"
       }
     },
     {
       "id": "generate_issue_report",
       "title": {
         "en": "Generate support report (GitHub issue)",
-        "fr": "Générer rapport de support (issue GitHub)"
+        "fr": "Générer rapport de support (issue GitHub)",
+        "nl": "Supportrapport genereren (GitHub issue)",
+        "de": "Supportbericht erstellen (GitHub Issue)"
       }
     }
   ],
@@ -410,11 +477,6 @@
       }
     }
   },
-  "_pidConflictNotes": [
-    "// PID-CONFLICT-NOTE TS0003 shared with 20 other drivers (cross-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md",
-    "// PID-CONFLICT-NOTE TS0043 shared with 16 other drivers (cross-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md",
-    "// PID-CONFLICT-NOTE TS0013 shared with 15 other drivers (cross-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md"
-  ],
   "ui": {
     "quickAction": "onoff"
   }

@@ -6,19 +6,11 @@
     "de": "Dimmer Luftreiniger",
     "es": "Atenuador Purificador de Aire"
   },
-  "class": "light",
+  "class": "sensor",
   "capabilities": [
-    "dim",
-    "onoff",
-    "measure_power",
-    "measure_battery",
-    "measure_pm25",
-    "button.1"
+    "measure_power"
   ],
   "energy": {
-    "batteries": [
-      "CR2450"
-    ],
     "mains": true
   },
   "settings": [
@@ -188,7 +180,7 @@
       "type": "dropdown",
       "label": {
         "en": "Energy Optimization Mode",
-        "fr": "Mode Optimisation Ã‰nergétique"
+        "fr": "Mode Optimisation Énergétique"
       },
       "value": "balanced",
       "values": [
@@ -203,20 +195,20 @@
           "id": "balanced",
           "label": {
             "en": "Balanced",
-            "fr": "Ã‰quilibré"
+            "fr": "Équilibré"
           }
         },
         {
           "id": "power_saving",
           "label": {
             "en": "Power Saving (Longer battery)",
-            "fr": "Ã‰conomie d'énergie (Batterie plus longue)"
+            "fr": "Économie d'énergie (Batterie plus longue)"
           }
         }
       ],
       "hint": {
         "en": "Balance between responsiveness and battery life",
-        "fr": "Ã‰quilibre entre réactivité et durée de vie de la batterie"
+        "fr": "Équilibre entre réactivité et durée de vie de la batterie"
       }
     },
     {
@@ -274,6 +266,42 @@
           }
         }
       ]
+    },
+    {
+      "id": "power_scale",
+      "type": "dropdown",
+      "label": {
+        "en": "Power Measurement Scale",
+        "fr": "Échelle de puissance"
+      },
+      "value": "1",
+      "values": [
+        {
+          "id": "0.1",
+          "label": {
+            "en": "÷10",
+            "fr": "÷10"
+          }
+        },
+        {
+          "id": "1",
+          "label": {
+            "en": "×1 (Default)",
+            "fr": "×1 (défaut)"
+          }
+        },
+        {
+          "id": "10",
+          "label": {
+            "en": "×10",
+            "fr": "×10"
+          }
+        }
+      ],
+      "hint": {
+        "en": "Use if W/kWh readings are 10× too high or low.",
+        "fr": "Si W/kWh sont ×10 trop hauts ou bas."
+      }
     }
   ],
   "images": {
@@ -324,7 +352,7 @@
       "id": "ota_check",
       "title": {
         "en": "Check Zigbee OTA Update",
-        "fr": "Vérifier MÃJ OTA",
+        "fr": "Vérifier MàJ OTA",
         "nl": "Controleer op OTA-updates"
       }
     },
@@ -332,14 +360,18 @@
       "id": "tuya_revive",
       "title": {
         "en": "Tuya Revive (device recovery)",
-        "fr": "Tuya Revive (récupération appareil)"
+        "fr": "Tuya Revive (récupération appareil)",
+        "nl": "Tuya Revive (apparaatherstel)",
+        "de": "Tuya Revive (Gerätewiederherstellung)"
       }
     },
     {
       "id": "generate_issue_report",
       "title": {
         "en": "Generate support report (GitHub issue)",
-        "fr": "Générer rapport de support (issue GitHub)"
+        "fr": "Générer rapport de support (issue GitHub)",
+        "nl": "Supportrapport genereren (GitHub issue)",
+        "de": "Supportbericht erstellen (GitHub Issue)"
       }
     }
   ],
@@ -371,11 +403,9 @@
   },
   "metadata": {
     "driver": {
-      "catchall": true,
-      "reason": "Fallback for unmatched devices with PIDs: TS0601"
+      "reason": "Deprecated hybrid — sentinel only, do not pair"
     }
   },
-  "ui": {
-    "quickAction": "onoff"
-  }
+  "ui": {},
+  "deprecated": true
 }
