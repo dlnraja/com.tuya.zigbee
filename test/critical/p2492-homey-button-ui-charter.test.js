@@ -29,6 +29,12 @@ describe('P2492 Homey button UI charter SSOT', () => {
     assert.ok(fs.existsSync(path.join(ROOT, 'lib/utils/HomeyButtonUiCharter.js')));
   });
 
+  it('P2505 TITAN: SSOT load uses Buffer not utf8 string parse', () => {
+    const src = fs.readFileSync(path.join(ROOT, 'lib/utils/HomeyButtonUiCharter.js'), 'utf8');
+    assert.ok(/JSON\.parse\(\s*fs\.readFileSync\(\s*SSOT_PATH\s*\)\s*\)/.test(src), 'Buffer JSON.parse required');
+    assert.ok(!/JSON\.parse\(\s*fs\.readFileSync\(\s*SSOT_PATH\s*,\s*['\"]utf8['\"]\s*\)\s*\)/.test(src));
+  });
+
   it('roles: switch vs scene vs knob', () => {
     assert.strictEqual(resolveUiRole({ driver: { id: 'switch_2gang', manifest: { class: 'socket' } } }), 'switch');
     assert.strictEqual(resolveUiRole({ driver: { id: 'button_wireless_1', manifest: { class: 'button' } } }), 'scene');
