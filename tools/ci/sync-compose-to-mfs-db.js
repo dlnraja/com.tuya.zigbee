@@ -24,6 +24,9 @@ const path = require('path');
 const ROOT = path.join(__dirname, '..', '..');
 const DB_PATH = path.join(ROOT, 'data', 'mfs_db.json');
 const APPLY = process.argv.includes('--apply');
+const {
+  isForbiddenPlacement,
+} = require('../../lib/pairing/UserMisattributionRegistry');
 const META_KEYS = new Set(['_meta', 'sources', 'devices', 'sacredCouples', 'stats', 'driverMapping']);
 
 const SYNTHETIC_RX = /_disabled|_dummy|_generic|_hybrid|_master|placeholder|needs_/i;
@@ -162,6 +165,8 @@ function main() {
     const real = [...claimers].filter(isRealDriver);
     if (real.length !== 1) continue;
     const driverId = real[0];
+    // WHY(P2523): never seed mfs from a forbidden placement (doNotLock invent)
+    if (isForbiddenPlacement(nm, driverId)) continue;
     const existing = findKey(db, nm);
     if (existing) continue;
     const sampleMfr = [...index.driverPids.keys()].find((k) => k.startsWith(`${nm}|`));
@@ -182,10 +187,19 @@ function main() {
     if (entry.multiCouple === true && entry.byPid && typeof entry.byPid === 'object') {
       continue;
     }
+    // WHY(P2523): clear poison driverId on doNotLock invent mfrs
+    if (entry.driverId && isForbiddenPlacement(key, entry.driverId)) {
+      const before = entry.driverId;
+      entry.driverId = null;
+      entry.source = 'p2523-strip-forbidden';
+      changes.push({ action: 'clear_forbidden_driverId', mfr: key, from: before });
+      continue;
+    }
     const claimers = [...(index.byMfr.get(nm) || [])].filter(isRealDriver);
     let curated = entry.driverId;
 
     if (claimers.length === 1 && curated !== claimers[0]) {
+      if (isForbiddenPlacement(key, claimers[0])) continue;
       const before = curated;
       curated = claimers[0];
       entry.driverId = curated;

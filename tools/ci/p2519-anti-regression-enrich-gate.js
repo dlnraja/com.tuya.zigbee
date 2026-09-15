@@ -19,7 +19,7 @@ function hasMfr(driver, re) {
   return (j.zigbee?.manufacturerName || []).some((m) => re.test(String(m)));
 }
 
-// Climate must not host switch/button false paints
+// Climate must not host switch/button false paints (compose + app.json)
 {
   const c = load('drivers/climate_sensor/driver.compose.json');
   if ((c.zigbee.manufacturerName || []).some((m) => /8eazvzo6|krwtzhfd/i.test(m))) {
@@ -27,6 +27,24 @@ function hasMfr(driver, re) {
   }
   if ((c.zigbee.productId || []).some((p) => /^TS004F$/i.test(p))) {
     fails.push('climate_sensor invent productId TS004F');
+  }
+  try {
+    const a = load('app.json');
+    const d = (a.drivers || []).find((x) => x.id === 'climate_sensor');
+    if (d && (d.zigbee?.manufacturerName || []).some((m) => /8eazvzo6|krwtzhfd/i.test(m))) {
+      fails.push('app.json climate_sensor hosts 8eazvzo6/krwtzhfd');
+    }
+    if (d && (d.zigbee?.productId || []).some((p) => /^TS004F$/i.test(p))) {
+      fails.push('app.json climate_sensor invent TS004F');
+    }
+  } catch (_e) { /* soft if app.json absent */ }
+}
+
+// WHY(P2523): doNotLock couple bans must block mfr-only placement
+{
+  const { isForbiddenPlacement } = require('../../lib/pairing/UserMisattributionRegistry');
+  if (!isForbiddenPlacement('_TZ3000_krwtzhfd', 'climate_sensor')) {
+    fails.push('isForbiddenPlacement must block krwtzhfd→climate (doNotLock)');
   }
 }
 
