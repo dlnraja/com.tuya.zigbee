@@ -392,6 +392,18 @@
     "p2505_deferred_suggestions": {
       "tag": "BOTH",
       "note": "Close deferred suggestions: P2485 EF00 multi-gang rehome + P2486b launchOnce on stable; TITAN Buffer charter on master"
+    },
+    "p2506_smart_battery_low_alarm": {
+      "tag": "BOTH",
+      "note": "Homey SDK forbids measure_battery+alarm_battery — own tuya_battery_low + hysteresis flows; strip native alarm when % present"
+    },
+    "p2507_peter_battery_ui_diag": {
+      "tag": "BOTH",
+      "note": "Peter 77394256/a5304ce8 — refuse 0% placeholder paint, ZCL 0/253 reject, force getable/insights on Smartbutton"
+    },
+    "p2508_firmware_device_updates_oem": {
+      "tag": "BOTH",
+      "note": "Homey Device Updates fleet — OEM only; refuse Koenkk pvvx; SSOT 8 drivers + softAnnounceNativeOta"
     }
   },
   "ci": {

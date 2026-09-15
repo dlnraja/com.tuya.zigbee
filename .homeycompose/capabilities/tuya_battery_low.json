@@ -1,0 +1,17 @@
+{
+  "type": "boolean",
+  "title": {
+    "en": "Battery low (app)",
+    "fr": "Batterie faible (app)",
+    "nl": "Batterij laag (app)",
+    "de": "Batterie niedrig (App)"
+  },
+  "hint": {
+    "en": "App-owned low-battery flag derived from measure_battery. Not Homey alarm_battery (SDK forbids both).",
+    "fr": "Alarme batterie propriétaire dérivée de measure_battery. Pas alarm_battery Homey (interdit avec %)."
+  },
+  "getable": true,
+  "setable": false,
+  "uiComponent": "sensor",
+  "insights": true
+}

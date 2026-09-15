@@ -1,0 +1,32 @@
+{
+  "id": "tuya_battery_low_false",
+  "title": {
+    "en": "Battery recovered (app alarm cleared)",
+    "fr": "Batterie rétablie (alarme app effacée)",
+    "nl": "Batterij hersteld (app-alarm gewist)",
+    "de": "Batterie erholt (App-Alarm gelöscht)"
+  },
+  "hint": {
+    "en": "Fires when tuya_battery_low clears after hysteresis above the low threshold.",
+    "fr": "Se déclenche quand tuya_battery_low s'efface après hystérésis au-dessus du seuil."
+  },
+  "args": [
+    {
+      "type": "device",
+      "name": "device",
+      "filter": "capabilities=measure_battery"
+    }
+  ],
+  "tokens": [
+    {
+      "name": "battery_percent",
+      "type": "number",
+      "title": { "en": "Battery %", "fr": "Batterie %" }
+    },
+    {
+      "name": "threshold",
+      "type": "number",
+      "title": { "en": "Low threshold", "fr": "Seuil bas" }
+    }
+  ]
+}
