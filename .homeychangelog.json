@@ -1629,5 +1629,8 @@
   },
   "5.12.199": {
     "en": "Hardened mmWave presence flow triggers for all update paths."
+  },
+  "5.12.200": {
+    "en": "Local WiFi credentials now survive Homey reboot without cloud re-login."
   }
 }
