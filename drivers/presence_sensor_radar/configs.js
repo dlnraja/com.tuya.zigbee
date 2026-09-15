@@ -107,10 +107,19 @@ const SENSOR_CONFIGS = {
     // Presence (DP1) stays immediate; telemetry coalesced in device.js.
     floodCalm: true,
     ultraAggressiveDebounce: true,
+    // WHY(P2511 / VicHY #2222–#2227): after tip update DynCap/poisoned state can stick
+    // alarm_motion forever while DP9 distance collapses — same Contre quoi as P2509 gkfbdvyx.
+    clearPresenceOnZeroDistance: true,
+    syncPresenceFromDistanceInference: true,
     dpThrottleMs: { 9: 2500, 104: 5000 },
     dpMinDelta: { 9: 0.15, 104: 2 },
     dpMap: {
-      1: { cap: 'alarm_motion', type: 'presence_bool' },
+      1: {
+        cap: 'alarm_motion',
+        type: 'presence_bool',
+        useInference: true,
+        unreliable: true,
+      },
       2: { cap: null, setting: 'radar_sensitivity', min: 0, max: 9 },
       3: { cap: null, setting: 'shield_range', divisor: 100, min: 0, max: 8 },
       4: { cap: null, setting: 'detection_range', divisor: 100, min: 0, max: 8 },
@@ -159,6 +168,8 @@ const SENSOR_CONFIGS = {
   },
 
   // TYPE B: 24GHz Ceiling Radar (gkfbdvyx variants)
+  // WHY(P2509 / Z2M#30785 / GH#547): firmware can stick DP1=present with distance=0m.
+  // Mark DP1 unreliable + clear presence when distance collapses (same Contre quoi as P2453 iadro9bf).
   'ZY_M100_CEILING_24G': {
     configName: 'ZY_M100_CEILING_24G',
     sensors: [
@@ -177,12 +188,20 @@ const SENSOR_CONFIGS = {
     suppressBatteryCapability: true,
     invertPresence: false,
     presenceEnumMapping: { 0: false, 1: true, 2: true },
+    clearPresenceOnZeroDistance: true,
+    syncPresenceFromDistanceInference: true,
     motionThrottleEnabled: true,
     motionThrottleMs: 10000,
     motionDebounceMs: 5000,
     ignoreMovementState: true,
     dpMap: {
-      1: { cap: 'alarm_motion', type: 'presence_enum_gkfbdvyx', enumMap: { 0: false, 1: true, 2: true } },
+      1: {
+        cap: 'alarm_motion',
+        type: 'presence_enum_gkfbdvyx',
+        enumMap: { 0: false, 1: true, 2: true },
+        useInference: true,
+        unreliable: true,
+      },
       2: { cap: null, internal: 'move_sensitivity' },
       3: { cap: null, internal: 'detection_distance_min', divisor: 100 },
       4: { cap: null, internal: 'detection_distance_max', divisor: 100 },
@@ -190,7 +209,14 @@ const SENSOR_CONFIGS = {
       101: { cap: null, internal: 'distance_tracking' },
       102: { cap: null, internal: 'presence_sensitivity' },
       103: { cap: 'measure_luminance', type: 'lux_direct' },
-      104: { cap: 'alarm_motion', type: 'presence_enum_gkfbdvyx', enumMap: { 0: false, 1: true, 2: true } },
+      // DP104 is a second presence enum on some firmwares — same sticky Contre quoi
+      104: {
+        cap: 'alarm_motion',
+        type: 'presence_enum_gkfbdvyx',
+        enumMap: { 0: false, 1: true, 2: true },
+        useInference: true,
+        unreliable: true,
+      },
       105: { cap: null, internal: 'fading_time' },
     }
   },

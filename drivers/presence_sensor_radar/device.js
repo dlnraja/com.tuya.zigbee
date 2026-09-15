@@ -139,8 +139,8 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
       this.log(`[RADAR] P2459 refused addCapability(${cap}) (forbidden phantom)`);
       return;
     }
-    if ((cap === 'measure_battery' || cap === 'alarm_battery') && this.mainsPowered) {
-      this.log(`[RADAR] P2459 refused addCapability(${cap}) (mains radar)`);
+    if ((cap === 'measure_battery' || cap === 'alarm_battery' || cap === 'tuya_battery_low') && this.mainsPowered) {
+      this.log(`[RADAR] P2459/P2511 refused addCapability(${cap}) (mains radar)`);
       return;
     }
     if (/^windowcoverings_|^dim$|^target_temperature$|^thermostat_mode$|^tuya_dp_/.test(cap)) {
@@ -160,7 +160,7 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
    */
   async safeSetCapabilityValue(capability, value) {
     // WHY(P2391): mains MTG/clrdrnya must never commit phantom battery or DIY DP caps
-    if (this.mainsPowered && (capability === 'measure_battery' || capability === 'alarm_battery')) {
+    if (this.mainsPowered && (capability === 'measure_battery' || capability === 'alarm_battery' || capability === 'tuya_battery_low')) {
       return false;
     }
     if (capability === 'tuya_dp_value' || capability === 'tuya_dp_raw' || capability === 'tuya_dp_string') {
@@ -252,7 +252,8 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
         'tuya_dp_string',
       ];
       if (this.mainsPowered || config.noBatteryCapability || config.suppressBatteryCapability) {
-        forbidden.push('measure_battery', 'alarm_battery');
+        // WHY(P2511): also refuse P2506 tuya_battery_low — Homey may reinject after tip soak
+        forbidden.push('measure_battery', 'alarm_battery', 'tuya_battery_low');
       }
       this._forbiddenCapabilities = Array.from(new Set([
         ...(this._forbiddenCapabilities || []),
@@ -291,7 +292,8 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
     const mfrNow = (MfrHelper.getManufacturerName(this) || '').toLowerCase();
     const forceMains = this.mainsPowered || MAINS_POWERED_RADARS.has(mfrNow) || /clrdrnya|sbyx0lm6/.test(mfrNow);
     if (forceMains) {
-      phantoms.push('measure_battery', 'alarm_battery');
+      // WHY(P2511 / VicHY): strip native + app-owned battery low after tip update
+      phantoms.push('measure_battery', 'alarm_battery', 'tuya_battery_low');
     }
     for (const cap of phantoms) {
       try {
@@ -427,6 +429,7 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
     const staleCaps = [
       'measure_battery',
       'alarm_battery',
+      'tuya_battery_low',
       'measure_temperature',
       'measure_humidity',
       'windowcoverings_set',
@@ -457,7 +460,7 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
 
     if (this.mainsPowered) {
       // P120 / P2472a: always strip phantom energy/climate caps on mains radars (clrdrnya / MTG075)
-      for (const phantom of ['measure_battery', 'alarm_battery', 'measure_temperature', 'measure_humidity']) {
+      for (const phantom of ['measure_battery', 'alarm_battery', 'tuya_battery_low', 'measure_temperature', 'measure_humidity']) {
         if (this.hasCapability(phantom)) {
           await this.removeCapability(phantom).catch(e => this.log(`[RADAR] Could not strip phantom ${phantom}: ${e.message}`));
         }
@@ -697,7 +700,18 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
       } else {
         distance = value / (mapping.divisor || 100);
       }
-      this._ensureInference().updateDistance(distance);
+      const inferred = this._ensureInference().updateDistance(distance);
+      // WHY(P2509 / Z2M#30785): gkfbdvyx sticks DP1=true while DP9=0m — clear Homey presence
+      if (config.clearPresenceOnZeroDistance && Number(distance) <= 0.05) {
+        this.safeSetCapabilityValue('alarm_human', false).catch(() => {});
+        this.safeSetCapabilityValue('alarm_motion', false).catch(() => {});
+      } else if (config.syncPresenceFromDistanceInference && typeof inferred === 'boolean') {
+        const painted = this.getCapabilityValue('alarm_motion');
+        if (painted !== inferred) {
+          this.safeSetCapabilityValue('alarm_human', inferred).catch(() => {});
+          this.safeSetCapabilityValue('alarm_motion', inferred).catch(() => {});
+        }
+      }
       // WHY(P2389): still feed inference every frame; only coalesce Homey capability writes
       if (this._shouldSkipFloodCalmDp(dpId, distance, config)) {return;}
       return this.safeSetCapabilityValue('measure_luminance.distance', distance).catch(() => {});
