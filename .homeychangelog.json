@@ -3335,5 +3335,8 @@
   },
   "9.0.955": {
     "en": "Hardened mmWave presence flow triggers for all update paths."
+  },
+  "9.0.956": {
+    "en": "Hardened local-first WiFi credentials after Homey reboot (no cloud re-login)."
   }
 }
