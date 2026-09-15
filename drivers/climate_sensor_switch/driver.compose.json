@@ -2,7 +2,6 @@
   "class": "socket",
   "capabilities": [
     "onoff",
-    "measure_battery",
     "measure_power",
     "meter_power",
     "measure_voltage",
@@ -34,22 +33,22 @@
           },
           "hint": {
             "en": "Select the type of device connected to this module. Radiator will invert the ON/OFF logic.",
-            "fr": "Sélectionnez le type d'appareil connecté àce module. Radiateur inversera la logique MARCHE/ARRÃŠT."
+            "fr": "Sélectionnez le type d'appareil connecté àce module. Radiateur inversera la logique MARCHE/ARRÊT."
           },
           "value": "light",
           "values": [
             {
               "id": "light",
               "label": {
-                "en": " Ã‰clairage",
-                "fr": " Ã‰clairage"
+                "en": " Éclairage",
+                "fr": " Éclairage"
               }
             },
             {
               "id": "outdoor_light",
               "label": {
-                "en": " Ã‰clairage extérieur",
-                "fr": " Ã‰clairage extérieur"
+                "en": " Éclairage extérieur",
+                "fr": " Éclairage extérieur"
               }
             },
             {
@@ -139,8 +138,8 @@
             {
               "id": "pool",
               "label": {
-                "en": " Ã‰quipement piscine",
-                "fr": " Ã‰quipement piscine"
+                "en": " Équipement piscine",
+                "fr": " Équipement piscine"
               }
             },
             {
@@ -153,8 +152,8 @@
             {
               "id": "appliance",
               "label": {
-                "en": " Ã‰lectroménager",
-                "fr": " Ã‰lectroménager"
+                "en": " Électroménager",
+                "fr": " Électroménager"
               }
             },
             {
@@ -181,8 +180,8 @@
             {
               "id": "tv",
               "label": {
-                "en": " TV / Ã‰cran",
-                "fr": " TV / Ã‰cran"
+                "en": " TV / Écran",
+                "fr": " TV / Écran"
               }
             },
             {
@@ -217,7 +216,7 @@
           },
           "hint": {
             "en": "Force invert ON/OFF logic regardless of device type (advanced users only)",
-            "fr": "Forcer l'inversion de la logique MARCHE/ARRÃŠT indépendamment du type (utilisateurs avancés uniquement)"
+            "fr": "Forcer l'inversion de la logique MARCHE/ARRÊT indépendamment du type (utilisateurs avancés uniquement)"
           },
           "value": false
         }
@@ -389,7 +388,7 @@
       "type": "dropdown",
       "label": {
         "en": "Energy Optimization Mode",
-        "fr": "Mode Optimisation Ã‰nergétique"
+        "fr": "Mode Optimisation Énergétique"
       },
       "value": "balanced",
       "values": [
@@ -404,20 +403,20 @@
           "id": "balanced",
           "label": {
             "en": "Balanced",
-            "fr": "Ã‰quilibré"
+            "fr": "Équilibré"
           }
         },
         {
           "id": "power_saving",
           "label": {
             "en": "Power Saving (Longer battery)",
-            "fr": "Ã‰conomie d'énergie (Batterie plus longue)"
+            "fr": "Économie d'énergie (Batterie plus longue)"
           }
         }
       ],
       "hint": {
         "en": "Balance between responsiveness and battery life",
-        "fr": "Ã‰quilibre entre réactivité et durée de vie de la batterie"
+        "fr": "Équilibre entre réactivité et durée de vie de la batterie"
       }
     },
     {
@@ -608,6 +607,42 @@
           }
         }
       ]
+    },
+    {
+      "id": "power_scale",
+      "type": "dropdown",
+      "label": {
+        "en": "Power Measurement Scale",
+        "fr": "Échelle de puissance"
+      },
+      "value": "1",
+      "values": [
+        {
+          "id": "0.1",
+          "label": {
+            "en": "÷10",
+            "fr": "÷10"
+          }
+        },
+        {
+          "id": "1",
+          "label": {
+            "en": "×1 (Default)",
+            "fr": "×1 (défaut)"
+          }
+        },
+        {
+          "id": "10",
+          "label": {
+            "en": "×10",
+            "fr": "×10"
+          }
+        }
+      ],
+      "hint": {
+        "en": "Use if W/kWh readings are 10× too high or low.",
+        "fr": "Si W/kWh sont ×10 trop hauts ou bas."
+      }
     }
   ],
   "name": {
@@ -615,19 +650,12 @@
     "nl": "Klimaatsensor Schakelaar",
     "fr": "Interrupteur de Capteur Climatique",
     "de": "Klimasensor Schalter",
-    "es": "Interruptor de Sensor ClimÃ¡tico"
+    "es": "Interruptor de Sensor Climático"
   },
   "platforms": [
     "local"
   ],
   "capabilitiesOptions": {
-    "measure_battery": {
-      "title": {
-        "en": "Battery",
-        "fr": "Batterie"
-      },
-      "preventInsights": false
-    },
     "button.toggle": {
       "title": {
         "en": "toggle"
@@ -669,9 +697,6 @@
     }
   },
   "energy": {
-    "batteries": [
-      "CR2450"
-    ],
     "mains": true
   },
   "pair": [
@@ -698,7 +723,7 @@
       "id": "ota_check",
       "title": {
         "en": "Check Zigbee OTA Update",
-        "fr": "Vérifier MÃJ OTA",
+        "fr": "Vérifier MàJ OTA",
         "nl": "Controleer op OTA-updates"
       }
     },
@@ -706,14 +731,18 @@
       "id": "tuya_revive",
       "title": {
         "en": "Tuya Revive (device recovery)",
-        "fr": "Tuya Revive (récupération appareil)"
+        "fr": "Tuya Revive (récupération appareil)",
+        "nl": "Tuya Revive (apparaatherstel)",
+        "de": "Tuya Revive (Gerätewiederherstellung)"
       }
     },
     {
       "id": "generate_issue_report",
       "title": {
         "en": "Generate support report (GitHub issue)",
-        "fr": "Générer rapport de support (issue GitHub)"
+        "fr": "Générer rapport de support (issue GitHub)",
+        "nl": "Supportrapport genereren (GitHub issue)",
+        "de": "Supportbericht erstellen (GitHub Issue)"
       }
     }
   ],
@@ -741,7 +770,16 @@
     "manufacturerName": [
       "_hybrid_climate_sensor_switch_needs_device_assignment",
       "_HYBRID_CLIMATE_SENSOR_SWITCH_NEEDS_DEVICE_ASSIGNMENT"
-    ]
+    ],
+    "learnmode": {
+      "image": "{{driverAssetsPath}}/icon.svg",
+      "instruction": {
+        "en": "Press and hold the pairing button for 5 seconds until the LED flashes. Keep pressing every 2 seconds during pairing if the device is battery-powered.",
+        "fr": "Maintenez le bouton d'appairage 5 secondes jusqu'à ce que la LED clignote. Sur pile, rappuyez toutes les 2 s pendant l'appairage.",
+        "nl": "Houd de paarknop 5 seconden ingedrukt tot de LED knippert. Bij batterij: druk elke 2 s tijdens het pairen.",
+        "de": "Halten Sie die Kopplungstaste 5 Sekunden, bis die LED blinkt. Bei Batterie alle 2 s während des Pairings drücken."
+      }
+    }
   },
   "ui": {
     "quickAction": "onoff"

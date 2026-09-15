@@ -76,8 +76,14 @@
           "label": {
             "en": "Protocol"
           },
-          "value": "3.3",
+          "value": "auto",
           "values": [
+            {
+              "id": "auto",
+              "label": {
+                "en": "Auto (3.1-3.5)"
+              }
+            },
             {
               "id": "3.1",
               "label": {
@@ -105,12 +111,47 @@
           ]
         }
       ]
+    },
+    {
+      "id": "power_scale",
+      "type": "dropdown",
+      "label": {
+        "en": "Power Measurement Scale",
+        "fr": "Échelle de puissance"
+      },
+      "value": "1",
+      "values": [
+        {
+          "id": "0.1",
+          "label": {
+            "en": "÷10",
+            "fr": "÷10"
+          }
+        },
+        {
+          "id": "1",
+          "label": {
+            "en": "×1 (Default)",
+            "fr": "×1 (défaut)"
+          }
+        },
+        {
+          "id": "10",
+          "label": {
+            "en": "×10",
+            "fr": "×10"
+          }
+        }
+      ],
+      "hint": {
+        "en": "Use if W/kWh readings are 10× too high or low.",
+        "fr": "Si W/kWh sont ×10 trop hauts ou bas."
+      }
     }
   ],
   "images": {
     "small": "/drivers/wifi_plug/assets/images/small.png",
-    "large": "/drivers/wifi_plug/assets/images/large.png",
-    "xlarge": "/drivers/wifi_plug/assets/images/xlarge.png"
+    "large": "/drivers/wifi_plug/assets/images/large.png"
   },
   "platforms": [
     "local"
@@ -123,7 +164,7 @@
       "id": "ota_check",
       "title": {
         "en": "Check Zigbee OTA Update",
-        "fr": "VÃ©rifier MÃ J OTA",
+        "fr": "Vérifier Mà J OTA",
         "nl": "Controleer op OTA-updates"
       }
     },
@@ -131,14 +172,18 @@
       "id": "tuya_revive",
       "title": {
         "en": "Tuya Revive (device recovery)",
-        "fr": "Tuya Revive (rÃ©cupÃ©ration appareil)"
+        "fr": "Tuya Revive (récupération appareil)",
+        "nl": "Tuya Revive (apparaatherstel)",
+        "de": "Tuya Revive (Gerätewiederherstellung)"
       }
     },
     {
       "id": "generate_issue_report",
       "title": {
         "en": "Generate support report (GitHub issue)",
-        "fr": "GÃ©nÃ©rer rapport de support (issue GitHub)"
+        "fr": "Générer rapport de support (issue GitHub)",
+        "nl": "Supportrapport genereren (GitHub issue)",
+        "de": "Supportbericht erstellen (GitHub Issue)"
       }
     }
   ],
