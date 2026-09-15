@@ -35,6 +35,21 @@ describe('P2268 parallel ZHA/Z2M couple corrections', function () {
     assert.ok((meter.zigbee.manufacturerName || []).some((m) => /a14rjslz/i.test(m)));
   });
 
+  // WHY(P2516): infer-enrich mfs_curated re-proposed climate — mfs hint must stay energy_meter_3phase; no invent TS0201
+  it('a14rjslz mfs_db hint is energy_meter_3phase (not climate) and no invent TS0201', () => {
+    const mfs = JSON.parse(read('data/mfs_db.json'));
+    const entry = mfs.devices?.['_tze284_a14rjslz'] || mfs['_tze284_a14rjslz'];
+    assert.ok(entry, 'mfs devices entry for a14rjslz');
+    assert.strictEqual(entry.driverHint, 'energy_meter_3phase');
+    assert.ok(!(entry.modelIds || []).some((m) => /TS0201/i.test(m)), 'no invent TS0201');
+    assert.ok((entry.modelIds || []).some((m) => /TS0601/i.test(m)));
+    const inventCouple = mfs['_tze284_a14rjslz|ts0201'] || mfs.couples?.['_tze284_a14rjslz|ts0201'];
+    assert.ok(!inventCouple, 'no invent a14rjslz|TS0201 couple');
+    const reg = JSON.parse(read('data/user-misattribution-registry.json'));
+    const ids = (reg.cases || []).map((c) => c.id);
+    assert.ok(ids.includes('p2516-a14rjslz-3phase-meter') || ids.includes('p2268-a14rjslz-3phase-not-climate'));
+  });
+
   it('tonrapsk+TS0002 on switch_2gang; UnifiedSwitchBase sends magic packet', () => {
     const sw = JSON.parse(read('drivers/switch_2gang/driver.compose.json'));
     assert.ok((sw.zigbee.manufacturerName || []).some((m) => /tonrapsk/i.test(m)));

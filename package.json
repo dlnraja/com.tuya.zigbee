@@ -1,6 +1,6 @@
 {
   "name": "com.dlnraja.tuya.zigbee",
-  "version": "9.0.942",
+  "version": "9.0.943",
   "description": "Tuya Unified Zigbee - Local-first control with AI automation",
   "main": "app.js",
   "scripts": {
@@ -350,7 +350,7 @@
     "check:p2512": "node --test test/critical/p2512-peter-smartbutton-battery-history.test.js",
     "check:p2513": "node --test test/critical/p2513-salvagr-moes-stop-midpct.test.js",
     "check:p2488": "node --test test/critical/p2488-peter-a5304ce8-smartbutton-battery-keep.test.js",
-    "check:p248x": "npm run check:p2487 && npm run check:p2501 && npm run check:p2488 && npm run check:p2490 && npm run check:p2499 && npm run check:p2502 && npm run check:p2503 && npm run check:p2506 && npm run check:p2507 && npm run check:p2508 && npm run check:p2509 && npm run check:p2510 && npm run check:p2511 && npm run check:p2512 && npm run check:p2513 && npm run check:p2514",
+    "check:p248x": "npm run check:p2487 && npm run check:p2501 && npm run check:p2488 && npm run check:p2490 && npm run check:p2499 && npm run check:p2502 && npm run check:p2503 && npm run check:p2506 && npm run check:p2507 && npm run check:p2508 && npm run check:p2509 && npm run check:p2510 && npm run check:p2511 && npm run check:p2512 && npm run check:p2513 && npm run check:p2514 && npm run check:p2516 && npm run check:p2517 && npm run check:p2518 && npm run check:p2519",
     "check:p2490": "node --test test/critical/p2490-forum-complementary-failover.test.js",
     "check:p2491": "node tools/ci/ai-context-compress.js --self-test && node --test test/critical/p2491-ai-efficiency-context-compress.test.js",
     "check:p2492": "node --test test/critical/p2492-homey-button-ui-charter.test.js",
@@ -364,7 +364,11 @@
     "check:p249x": "npm run check:p2490 && npm run check:p2491 && npm run check:p2492 && npm run check:p2493 && npm run check:p2494 && npm run check:p2495 && npm run check:p2496 && npm run check:p2498 && npm run check:p2499 && npm run check:p2500 && npm run check:p2502",
     "check:publish": "npm run check:p2286 && npm run check:p2287 && npm run check:p2288 && npm run check:p2490 && npm run check:p2502 && npm run check:p2494 && npm run check:p2495 && npm run check:p2496",
     "ai:compress": "node tools/ci/ai-context-compress.js --self-test",
-    "check:p2514": "node --test test/critical/p2514-zm16b-3mzb0sdz-curtain.test.js"
+    "check:p2514": "node --test test/critical/p2514-zm16b-3mzb0sdz-curtain.test.js",
+    "check:p2516": "node --test test/critical/p2268-parallel-zha-z2m-gate.test.js",
+    "check:p2517": "node --test test/critical/p2517-market-apply-sacred-rollback.test.js",
+    "check:p2518": "node --test test/critical/p2518-cap-flow-dp-rx-enrich.test.js",
+    "check:p2519": "node --test test/critical/p2519-anti-regression-enrich-overwrite.test.js && node tools/ci/p2519-anti-regression-enrich-gate.js"
   },
   "keywords": [
     "homey",
