@@ -87,7 +87,7 @@
       "realMfrsAdded": 5,
       "details": "tmp/synthetic-resolution.json + tmp/pruned21-resolution.json"
     },
-    "lastAlignedAt": "2026-09-14T07:01:48.834Z",
+    "lastAlignedAt": "2026-09-15T08:02:50.728Z",
     "alignTool": "align-mfs-db-intelligent@P169",
     "lastSyncedFromCompose": "2026-09-14T07:01:46.334Z",
     "syncComposeTool": "sync-compose-to-mfs-db@P2368"
@@ -48080,7 +48080,7 @@
       ],
       "variants": [],
       "deviceType": "unknown",
-      "driverHint": "ir_remote",
+      "driverHint": "ir_blaster",
       "capabilities": [
         "onoff",
         "onoff.ir_learn",
@@ -48105,7 +48105,7 @@
       ],
       "variants": [],
       "deviceType": "unknown",
-      "driverHint": "ir_remote",
+      "driverHint": "ir_blaster",
       "capabilities": [
         "onoff",
         "onoff.ir_learn",
@@ -48305,7 +48305,7 @@
       ],
       "variants": [],
       "deviceType": "unknown",
-      "driverHint": "ir_remote",
+      "driverHint": "ir_blaster",
       "capabilities": [
         "onoff",
         "onoff.ir_learn",
@@ -55488,7 +55488,7 @@
       ],
       "variants": [],
       "deviceType": "unknown",
-      "driverHint": "ir_remote",
+      "driverHint": "ir_blaster",
       "capabilities": [
         "onoff",
         "onoff.ir_learn",
@@ -55515,7 +55515,7 @@
       ],
       "variants": [],
       "deviceType": "unknown",
-      "driverHint": "ir_remote",
+      "driverHint": "ir_blaster",
       "capabilities": [
         "onoff",
         "onoff.ir_learn",
@@ -55540,7 +55540,7 @@
       ],
       "variants": [],
       "deviceType": "unknown",
-      "driverHint": "ir_remote",
+      "driverHint": "ir_blaster",
       "capabilities": [
         "onoff",
         "onoff.ir_learn",
@@ -126739,19 +126739,9 @@
       "deviceType": "unknown"
     },
     "ir_remote": {
-      "manufacturerIds": [
-        "_tz3290_ot6ewjvmejq5ekhl",
-        "_tz3290_j37rooaxrcdcqo5n",
-        "_tz3290_7v1k4vufotpowp9z",
-        "_tz3290_acv1iuslxi3shaaj",
-        "_tz3290_u9xac5rv",
-        "_tz3290_xjpbcxn92aaxvmlz"
-      ],
-      "modelIds": [
-        "BUTTON",
-        "TS0601"
-      ],
-      "deviceType": "unknown"
+      "manufacturerIds": [],
+      "modelIds": [],
+      "deviceType": "virtual"
     },
     "usb_outlet_advanced": {
       "manufacturerIds": [
@@ -126997,10 +126987,18 @@
         "_tze200_kyfgcyf1",
         "_tze200_owvfni2z",
         "_tze284_3mzb0sdz",
-        "_tze284_la9vhsok"
+        "_tze284_la9vhsok",
+        "_tz3290_ot6ewjvmejq5ekhl",
+        "_tz3290_j37rooaxrcdcqo5n",
+        "_tz3290_7v1k4vufotpowp9z",
+        "_tz3290_acv1iuslxi3shaaj",
+        "_tz3290_u9xac5rv",
+        "_tz3290_xjpbcxn92aaxvmlz"
       ],
       "modelIds": [
-        "TS1201"
+        "TS1201",
+        "BUTTON",
+        "TS0601"
       ],
       "deviceType": "remote"
     },
@@ -128820,7 +128818,7 @@
     "lastSacredCoupleEnrichment": "2026-07-13T23:57:58.590Z",
     "fingerprints": 5710,
     "lastUpdate": "2026-07-14",
-    "lastUpdated": "2026-09-15T05:36:40.852Z",
+    "lastUpdated": "2026-09-15T09:06:59.764Z",
     "totalModelIds": 62784,
     "multiPidMfrs": 3299,
     "variantMfrs": 82,
@@ -199039,8 +199037,8 @@
     "modelIdsCount": 2
   },
   "_TZ3290_ACV1IUSLXI3SHAAJ": {
-    "driverId": "ir_remote",
-    "source": "auto-sync",
+    "driverId": "ir_blaster",
+    "source": "compose-exclusive",
     "modelIds": [
       "TS0601"
     ],
@@ -199057,8 +199055,8 @@
     "modelIdsCount": 1
   },
   "_TZ3290_XJPBCXN92AAXVMLZ": {
-    "driverId": "ir_remote",
-    "source": "auto-sync",
+    "driverId": "ir_blaster",
+    "source": "compose-exclusive",
     "modelIds": [
       "TS0601"
     ],
