@@ -1086,6 +1086,9 @@
     "en": "CRITICAL: sdkVersion fix (Processing failed), Missing Capability Listener (setable:false), timer fallback, battery restore, duplicate method fix, HOBEIAN ZG-301Z, NFKD normalize, 87 fingerprints restored, Polos validator",
     "fr": "CRITIQUE: sdkVersion (Processing failed), Missing Capability Listener, fallback timer, batterie, HOBEIAN, NFKD, 87 fingerprints, Polos"
   },
+  "5.12.193": {
+    "en": "Reliability: strip antibot forbidden FPs; compact mfs + Auto-Fix gate heal. Update Homey Test Stable."
+  },
   "5.12.192": {
     "en": "Reliability: TITAN Buffer load for button UI charter; Auto-Fix p2514 couple-scoped audit. Update Homey Test Stable."
   },
