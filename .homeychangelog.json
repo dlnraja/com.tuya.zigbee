@@ -907,6 +907,9 @@
       ]
     }
   ],
+  "9.0.948": {
+    "en": "CI harden: compact mfs before Auto-Fix gates; sync-compose compact write. Update Homey Test."
+  },
   "9.0.947": {
     "en": "CI harden: Auto-Fix p2514 couple-scoped sacred audit; contact FP strip; publish soak. Update Homey Test."
   },

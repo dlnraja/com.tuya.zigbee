@@ -259,7 +259,8 @@ function main() {
   console.log('byAction:', byAction);
 
   if (APPLY && changes.length) {
-    fs.writeFileSync(DB_PATH, `${JSON.stringify(db, null, 2)}\n`);
+    // WHY(P2521d): compact one-line — pretty mfs_db breaks Auto-Fix p2521 + syntax P169 churn
+    fs.writeFileSync(DB_PATH, `${JSON.stringify(db)}\n`);
     console.log('Written:', DB_PATH);
   } else if (!APPLY && changes.length) {
     console.log('Dry-run — pass --apply to write');
