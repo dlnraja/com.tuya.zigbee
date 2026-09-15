@@ -11,6 +11,7 @@
 
 const fs = require('fs');
 const path = require('path');
+const { appendSettingsById } = require('../../lib/enrichment/ComplementaryMerge');
 
 const ROOT = path.join(__dirname, '..', '..');
 const DRIVERS = path.join(ROOT, 'drivers');
@@ -125,12 +126,14 @@ for (const id of ENERGY_DRIVERS) {
     if (!c.has('measure_power') && !c.has('meter_power')) {return;}
     if (!Array.isArray(data.settings)) {data.settings = [];}
 
-    // Replace wrong battery-centric settings on DIN siblings
+    // P2520: never wipe settings — append measurement group / strip battery noise by id only
     if (id === 'device_din_rail_meter') {
-      const hasBatteryNoise = hasSettingId(data.settings, 'power_source')
-        || hasSettingId(data.settings, 'battery_type');
-      if (hasBatteryNoise || !hasSettingId(data.settings, 'power_scale')) {
-        data.settings = [JSON.parse(JSON.stringify(MEASUREMENT_GROUP))];
+      data.settings = data.settings.filter(
+        (s) => s && s.id !== 'power_source' && s.id !== 'battery_type'
+          && !(s.type === 'group' && /battery/i.test(JSON.stringify(s.label || {})))
+      );
+      if (!hasSettingId(data.settings, 'power_scale')) {
+        data.settings = appendSettingsById(data.settings, [JSON.parse(JSON.stringify(MEASUREMENT_GROUP))]);
       }
       return;
     }
@@ -150,10 +153,10 @@ for (const id of ENERGY_DRIVERS) {
         }
         data.settings.push(g);
       } else {
-        data.settings.push(JSON.parse(JSON.stringify(POWER_SCALE)));
-        if (c.has('meter_power.exported') && !hasSettingId(data.settings, 'bidirectional')) {
-          data.settings.push(JSON.parse(JSON.stringify(BIDIRECTIONAL)));
-        }
+        data.settings = appendSettingsById(data.settings, [
+          JSON.parse(JSON.stringify(POWER_SCALE)),
+          ...(c.has('meter_power.exported') ? [JSON.parse(JSON.stringify(BIDIRECTIONAL))] : []),
+        ]);
       }
     }
   });

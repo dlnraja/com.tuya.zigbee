@@ -987,6 +987,13 @@ the Universal Tuya App ID.
       `npm run check:p2490` (family `check:p248x`).
     - Peter Gmail `a5304ce8` @ 9.0.916: keep-lock alone insufficient when cap already
       stripped — boot rehydrate + adapter `toAdd` when keep-lock.
+13. **P2520 complementary VARIANT enrich (ALWAYS — 2026-09-15):**
+    - Enrichments are **variants/additions**, never degradations (no array wipe/shrink).
+    - Use `lib/enrichment/ComplementaryMerge.js`; SSOT
+      `config/architecture/complementary-variant-enrich-ssot.json`.
+    - Gates: `npm run check:p2520` + `npm run check:p2519` (wired in `check:p248x`).
+    - Doctrine: `docs/rules/COMPLEMENTARY_VARIANT_ENRICH.md` · cursor always-on
+      `complementary-variant-enrich-always.mdc`.
     - Machine SSOT: `config/architecture/forum-complementary-failover-ssot.json`.
     - T140352 harvest: `tools/ci/forum-t140352-recent-harvest.js` — Discourse
       `/t/{id}/{N}.json` is **post_number**, not page offset.

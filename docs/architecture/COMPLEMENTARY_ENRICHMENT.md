@@ -1,6 +1,8 @@
-# Complementary enrichment architecture (P2224 + P2490)
+# Complementary enrichment architecture (P2224 + P2490 + P2520)
 
 > **Policy:** Complete current architectures by **adding** layers, catalogs, and crosswalks inspired by project evolution (v5→v9). Do not collapse or remove working stacks.
+>
+> **P2520 — Variant vision (ALWAYS):** Every enrich is a **variant / addition / parallel alternative**, never a wipe or shrink. Union `manufacturerName` / `productId` / capabilities; append settings by id; merge DP keys preserving existing. Machine SSOT: [`config/architecture/complementary-variant-enrich-ssot.json`](../../config/architecture/complementary-variant-enrich-ssot.json) · human: [`docs/rules/COMPLEMENTARY_VARIANT_ENRICH.md`](../rules/COMPLEMENTARY_VARIANT_ENRICH.md) · helper: [`lib/enrichment/ComplementaryMerge.js`](../../lib/enrichment/ComplementaryMerge.js) · gates: `npm run check:p2520` · `npm run check:p2519`.
 >
 > **Dual-app:** Catalogs apply on **BOTH** tracks for CI. Homey runtime only ships slim libs — see [`CI_VS_HOMEY_RUNTIME.md`](./CI_VS_HOMEY_RUNTIME.md). Never change App ID when back-porting.
 
@@ -82,6 +84,19 @@ Do **not** pick one numbering and delete the others. Use the glossary:
 - `config/enrichment/*`, `config/resilience/*` catalogs, `config/security/*`
 - `tools/ci/silent-enrichment-orchestrator.js`, `project-resilience-orchestrator.js`
 
+## Compose enrich operations (P2520)
+
+| Field | Operation |
+|-------|-----------|
+| `zigbee.manufacturerName` | case-aware **union** |
+| `zigbee.productId` | case-aware **union** (never invent hard lock) |
+| `capabilities` | **union** append |
+| `settings` | **append by id** — never `settings = []` rewrite |
+| flow cards | append by id — never delete declared cards |
+| DP maps | merge keys — existing capability bindings win |
+
+Use `ComplementaryMerge` from enrich scripts. Removals only via misattribution forbid / wrong sacred couple / prepare-publish synthetic prune.
+
 ## Commands
 
 ```bash
@@ -90,6 +105,8 @@ npm run resilience:inventory
 npm run resilience:critical
 npm run resilience:all
 npm run enrich:silent
+npm run check:p2520
+npm run check:p2519
 ```
 
 ## Workflows (systematic)
