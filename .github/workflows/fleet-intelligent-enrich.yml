@@ -139,7 +139,9 @@ jobs:
 
       - name: Sacred + anti-bot gates
         run: |
+          node tools/ci/strip-registry-forbidden-compose.js --apply
           node tools/ci/p2138-sacred-couple-matrix-gate.js
+          node tools/ci/p2519-anti-regression-enrich-gate.js
           node tools/ci/anti-bot-regression-gate.js
           node tools/ci/free-scrape-budget.js --report >> "$GITHUB_STEP_SUMMARY" || true
 
