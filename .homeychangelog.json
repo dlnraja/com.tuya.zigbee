@@ -1,64 +1,4 @@
 {
-  "5.12.186": {
-    "en": "Reliability: Moes curtain Stop + mid-%; VicHY radar; Smartbutton battery UI; irrigation couples. Update Homey Test Stable."
-  },
-  "5.12.185": {
-    "en": "Reliability: smart battery-low alarm; Smartbutton battery UI; OEM Device Updates only (removed unsafe community OTA). Update Homey Test Stable."
-  },
-  "5.12.181": {
-    "en": "Reliability: Smartbutton battery visible again; Moes curtain fingerprint lock; SMART ADAPT defers under low memory."
-  },
-  "5.12.180": {
-    "en": "Reliability backport: Homey button UI charter, sacred-couple/publish path locks, Smartbutton battery keep helpers."
-  },
-  "5.12.157": {
-    "en": "Fixed switch pairing catalogs and Moes curtain fingerprint routing; removed extra button tiles on 4-gang switches."
-  },
-  "5.12.156": {
-    "en": "Fixed 1-button smart knob presses stuck in dimmer mode; scene mode re-applied after identity is known."
-  },
-  "5.12.155": {
-    "en": "Fixed rotary smart knobs (ERS-10): rotation uses command/dimmer mode again; improved knob fingerprints and CI gates."
-  },
-  "5.12.154": {
-    "en": "Forum soft-hypothesis prefers mfs/registry pids over polluted compose junk."
-  },
-  "5.12.153": {
-    "en": "Migrated leftover bare ZigBeeDevice drivers to TuyaZigbeeDevice (P102 Auto-Fix)."
-  },
-  "5.12.152": {
-    "en": "AM43 curtain: multi-pid mfr locks (icka1clh/zah67ekd) on curtain_motor; strip tilt dual-home."
-  },
-  "5.12.151": {
-    "en": "Restored missing switch_1gang OTA firmware for Homey validate."
-  },
-  "5.12.150": {
-    "en": "Restored plug energy monitor OTA firmware asset required by Homey validate."
-  },
-  "5.12.149": {
-    "en": "Restored sacred-couple anti-bot locks; prefer ZCL battery percent on knobs."
-  },
-  "5.12.148": {
-    "en": "Smart knob button presses work when id missing at wake; prefer ZCL battery percent."
-  },
-  "5.12.147": {
-    "en": "Improved 1-button remote consistency; MOES AM43 roller fingerprint on curtain motor."
-  },
-  "5.12.136": {
-    "en": "Added support for Eduard DC tubular roller blind motor (_TZE284_fodv6bkr); fortified WiFi local-first recovery and safe timers; caseless Hobeian/Heobian exotic PIDs and sacred-keep couples."
-  },
-  "5.12.131": {
-    "en": "Hang-proof CI compensate + Athom soft-expect when Test tip healthy; soil EF00 clusters only (reliability)."
-  },
-  "5.12.119": {
-    "en": "Improved wireless button frame handling and calmed presence radar flood alerts (reliability)."
-  },
-  "5.12.117": {
-    "en": "Fixed app crash from foreign/flow Invalid Driver ID (Homey class light and third-party Zigbee tokens)."
-  },
-  "5.12.100": {
-    "en": "Improved wall dimmer control reliability after pairing."
-  },
   "changelog": [
     {
       "version": "5.12.81",
@@ -1146,11 +1086,394 @@
     "en": "CRITICAL: sdkVersion fix (Processing failed), Missing Capability Listener (setable:false), timer fallback, battery restore, duplicate method fix, HOBEIAN ZG-301Z, NFKD normalize, 87 fingerprints restored, Polos validator",
     "fr": "CRITIQUE: sdkVersion (Processing failed), Missing Capability Listener, fallback timer, batterie, HOBEIAN, NFKD, 87 fingerprints, Polos"
   },
-  "5.12.52": {
-    "en": "Stability release: collision triage, energy divisors, tamper coverage, virtual energy estimation, quick actions, flow card crash fixes, battery listeners on buttons, canonical radar settings."
+  "5.12.192": {
+    "en": "Reliability: TITAN Buffer load for button UI charter; Auto-Fix p2514 couple-scoped audit. Update Homey Test Stable."
+  },
+  "5.12.191": {
+    "en": "CI: strip forbidden contact FPs (P2521b)."
+  },
+  "5.12.190": {
+    "en": "CI heal P2521: compact mfs + FP baseline + workflow prune."
+  },
+  "5.12.189": {
+    "en": "Complementary variant enrich locks (no overwrite) + case-variant union. Update Homey Test."
+  },
+  "5.12.188": {
+    "en": "Reliability: enrich anti-regression locks, 3-phase meter RX, sacred couple restore (P2516–P2519)."
+  },
+  "5.12.187": {
+    "en": "ZM16B curtain motor support; sacred-couple audit skip invent junk. Update Stable Test."
+  },
+  "5.12.186": {
+    "en": "Reliability: Moes curtain Stop + mid-%; VicHY radar; Smartbutton battery UI; irrigation couples. Update Homey Test Stable."
+  },
+  "5.12.185": {
+    "en": "Reliability: smart battery-low alarm; Smartbutton battery UI; OEM Device Updates only (removed unsafe community OTA). Update Homey Test Stable."
+  },
+  "5.12.182": {
+    "en": "P2505 BOTH: EF00 4/3-gang couples (hewlydpz/7ytnacie/rkbxtclc) rehomed + launchOnce peer-skip."
+  },
+  "5.12.181": {
+    "en": "Reliability: Smartbutton battery visible again; Moes curtain fingerprint lock; SMART ADAPT defers under low memory."
+  },
+  "5.12.180": {
+    "en": "Reliability backport: Homey button UI charter, sacred-couple/publish path locks, Smartbutton battery keep helpers."
+  },
+  "5.12.179": {
+    "en": "P2484 force republish: EF00 OOM harden + gkfbdvyx sacred-keep (backport)."
+  },
+  "5.12.178": {
+    "en": "P2484: EF00 init OOM harden + sacred-keep gkfbdvyx (backport)."
+  },
+  "5.12.177": {
+    "en": "P2484: EF00 init OOM harden + sacred-keep gkfbdvyx (backport)."
+  },
+  "5.12.176": {
+    "en": "P2484: EF00 init OOM harden + sacred-keep gkfbdvyx (backport)."
+  },
+  "5.12.175": {
+    "en": "Crash harden: never soft-fail own drivers (pirsensor/siren); ceiling mmWave gkfbdvyx mains lock."
+  },
+  "5.12.174": {
+    "en": "Crash harden: preempt soft-fail Homey class driver IDs (motionsensor)."
+  },
+  "5.12.173": {
+    "en": "Crash fix: soft-fail Driver Not Initialized motionsensor."
+  },
+  "5.12.172": {
+    "en": "Moes curtain mid-% position + soft timeout + settings UI."
+  },
+  "5.12.171": {
+    "en": "Mains mmWave radar: DynCap no longer re-injects ZCL battery."
+  },
+  "5.12.170": {
+    "en": "MCU EF00 TX arm before mcuSyncTime/DP + rejoin time re-sync (Moes curtain class)."
+  },
+  "5.12.169": {
+    "en": "Improved EF00-only valve pairing (no forced OnOff cluster) and smarter DP transmit fallback."
+  },
+  "5.12.168": {
+    "en": "Fixed mains presence radar Homey Energy battery warning (compose no longer ships phantom batteries)."
+  },
+  "5.12.167": {
+    "en": "Improved smartbutton reliability (SH-SC07); AM43 curtain EF00-only (P2461)."
+  },
+  "5.12.166": {
+    "en": "Improved presence radar heal after updates; BSEED 2-gang Homey commands use setOn/setOff; BSEED 1-gang ysdv91bk wall switch pairing."
+  },
+  "5.12.165": {
+    "en": "Hardened Athom publish soft-expect docs/tests for tip socket hang up."
+  },
+  "5.12.164": {
+    "en": "Cleaned 4-gang switch UI: relay gangs only — removed redundant button tiles from Homey device view."
+  },
+  "5.12.163": {
+    "en": "Fixed Moes/Tuya wired 2-gang pairing: maps to wall switch with onoff/onoff.gang2 only — no button clutter."
+  },
+  "5.12.162": {
+    "en": "Fixed Moes/Tuya wired 2-gang pairing: maps to wall switch with onoff/onoff.gang2 only — no button clutter."
+  },
+  "5.12.161": {
+    "en": "Fixed Moes/Tuya wired 2-gang pairing: maps to wall switch with onoff/onoff.gang2 only — no button clutter."
+  },
+  "5.12.160": {
+    "en": "Fixed BSEED wired 2-gang pairing: maps to wall switch with onoff/onoff.gang2 only — no battery or button clutter."
+  },
+  "5.12.159": {
+    "en": "CI harden: package-lock integrity gate on Stable publish path."
+  },
+  "5.12.158": {
+    "en": "Fixed 1-btn remote pairing (ja5osu5g / an5rjiwd) and 4-btn wall remotes (5tqxpine); presence radar sticky motion fix."
+  },
+  "5.12.157": {
+    "en": "Fixed switch pairing catalogs and Moes curtain fingerprint routing; removed extra button tiles on 4-gang switches."
+  },
+  "5.12.156": {
+    "en": "Fixed 1-button smart knob presses stuck in dimmer mode; scene mode re-applied after identity is known."
+  },
+  "5.12.155": {
+    "en": "Fixed rotary smart knobs (ERS-10): rotation uses command/dimmer mode again; improved knob fingerprints and CI gates."
+  },
+  "5.12.154": {
+    "en": "Forum soft-hypothesis prefers mfs/registry pids over polluted compose junk."
+  },
+  "5.12.153": {
+    "en": "Migrated leftover bare ZigBeeDevice drivers to TuyaZigbeeDevice (P102 Auto-Fix)."
+  },
+  "5.12.152": {
+    "en": "AM43 curtain: multi-pid mfr locks (icka1clh/zah67ekd) on curtain_motor; strip tilt dual-home."
+  },
+  "5.12.151": {
+    "en": "Restored missing switch_1gang OTA firmware for Homey validate."
+  },
+  "5.12.150": {
+    "en": "Restored plug energy monitor OTA firmware asset required by Homey validate."
+  },
+  "5.12.149": {
+    "en": "Restored sacred-couple anti-bot locks; prefer ZCL battery percent on knobs."
+  },
+  "5.12.148": {
+    "en": "Smart knob button presses work when id missing at wake; prefer ZCL battery percent."
+  },
+  "5.12.147": {
+    "en": "Improved 1-button remote consistency; MOES AM43 roller fingerprint on curtain motor."
+  },
+  "5.12.146": {
+    "en": "Improved Moes curtain EF00 listen, reduced GitHub bot auto noise, Homey match unit mocks."
+  },
+  "5.12.145": {
+    "en": "Removed broken contact-sensor OTA firmware reference that blocked Athom publish validation."
+  },
+  "5.12.144": {
+    "en": "Aligned fingerprint routing for Moes/BSEED ZCL switches after pairing fixes."
+  },
+  "5.12.143": {
+    "en": "Improved pairing for several Tuya ZCL wall switches that Homey previously left as unknown."
+  },
+  "5.12.142": {
+    "en": "HOBEIAN devices now match when Homey reports the brand as product ID or product name, not only manufacturer."
+  },
+  "5.12.141": {
+    "en": "Improved battery roller blind motors (fodv6bkr) open/close/position; expanded HOBEIAN pairing coverage."
+  },
+  "5.12.139": {
+    "en": "Improved battery roller blind motors (fodv6bkr) open/close/position; expanded HOBEIAN pairing coverage."
+  },
+  "5.12.138": {
+    "en": "Forum media deep sweep & misattribution cleansing: cleansed wall_switch_5_gang_tuya stubs, added 25 verified forum Zigbee devices, resolved Athom 17k combo pass2 budget reduction, and passed all mandatory checks."
+  },
+  "5.12.137": {
+    "en": "Fixed BSEED 1-gang switch routing (Issue #540), pruned manifest flow duplicates, and enforced zero flow guidelines warnings."
+  },
+  "5.12.136": {
+    "en": "Added support for Eduard DC tubular roller blind motor (_TZE284_fodv6bkr); fortified WiFi local-first recovery and safe timers; caseless Hobeian/Heobian exotic PIDs and sacred-keep couples."
+  },
+  "5.12.135": {
+    "en": "Universal cluster resolution, caseless driver & flow card compensation, and enhanced battery cluster detection (reliability)."
+  },
+  "5.12.134": {
+    "en": "HOBEIAN full enrich: mmWave ZE/ZK/ZQ/ZX, vibration+contact, tilt, water/vibration alarms."
+  },
+  "5.12.133": {
+    "en": "HOBEIAN sensors: corrected mmWave DP maps and locked motion-sensing switches; fixed wrong climate/vibration pairing."
+  },
+  "5.12.132": {
+    "en": "Fixed mains mmWave radar phantom battery warning after app updates; radar settings DPs no longer misread as humidity."
+  },
+  "5.12.131": {
+    "en": "Hang-proof CI compensate + Athom soft-expect when Test tip healthy; soil EF00 clusters only (reliability)."
+  },
+  "5.12.130": {
+    "en": "Compensate incomplete reports in crons (soft MISSING_PID, no invent pid)."
+  },
+  "5.12.129": {
+    "en": "Homey diag dashboard Athom panel; clear FP collisions for Validate (BOTH)."
+  },
+  "5.12.128": {
+    "en": "CI soft-expect Athom processing_failed; pairing timer gate; diagnostics dashboard soft shell."
+  },
+  "5.12.127": {
+    "en": "PIR/multi-cap: ZG-204ZV presence lock, motion cartesian strip, ZS-301Z soil."
+  },
+  "5.12.126": {
+    "en": "Moes ZTS dual TX + invert, presence DP2 humidity invent skip, SafeCapability harden, WiFi local discovery reliability."
+  },
+  "5.12.125": {
+    "en": "Fixed Moes curtain wall switch stopping too early after open/close from Homey UI."
+  },
+  "5.12.124": {
+    "en": "Fixed garden valve and other flow conditions when Homey lacks getDeviceConditionCard; radar presence value 2 now counts as occupied."
+  },
+  "5.12.123": {
+    "en": "Improved multi-gang Homey button UI sync with physical presses; fan countdown/power-on settings; richer per-gang flow cards (reliability)."
+  },
+  "5.12.122": {
+    "en": "Moes curtain: ignore Homey UI stop that cancels open/close within a few seconds."
+  },
+  "5.12.121": {
+    "en": "Firmware quirk compensate: strip DIY DP caps and phantom mains battery on radar/mains devices."
+  },
+  "5.12.120": {
+    "en": "Reliability: button wrapHandleFrame + presence radar flood calm (backport)."
+  },
+  "5.12.119": {
+    "en": "Improved wireless button frame handling and calmed presence radar flood alerts (reliability)."
+  },
+  "5.12.117": {
+    "en": "Fixed app crash from foreign/flow Invalid Driver ID (Homey class light and third-party Zigbee tokens)."
+  },
+  "5.12.116": {
+    "en": "Improved curtain motors: EF00 RX hardening, timeout-safe position updates, and more verified cover fingerprints."
+  },
+  "5.12.115": {
+    "en": "Exclusive plug routing for TS011F w0qqde0g fingerprints (energy monitor only)."
+  },
+  "5.12.114": {
+    "en": "Aligned plug fingerprint database so TS011F plugs stay off wireless button drivers."
+  },
+  "5.12.113": {
+    "en": "Locked TS011F plug fingerprint routing away from wireless buttons."
+  },
+  "5.12.112": {
+    "en": "Stripped leftover plug fingerprint case-variants from wireless buttons; restored smartplug OTA asset for Homey validate."
+  },
+  "5.12.111": {
+    "en": "Fixed smart plug fingerprint routing so TS011F plugs are not matched as wireless buttons."
+  },
+  "5.12.110": {
+    "en": "Improved MCU time sync and battery cover init; safer dimmer brightness scaling."
+  },
+  "5.12.109": {
+    "en": "Reliability: promote uses uploaded Athom version (P2355); TS004F event mode."
+  },
+  "5.12.108": {
+    "en": "Reliability: promote uses uploaded Athom version (P2355); TS004F event mode."
+  },
+  "5.12.106": {
+    "en": "Improved TS0044 scene remote routing; fixed wall remote driver stealing battery scene switches."
+  },
+  "5.12.105": {
+    "en": "Fixed Moes TS0044 scene remote and soil sensor pairing; hardened wall dimmer TX failure detection."
+  },
+  "5.12.104": {
+    "en": "Improved Moes curtain Cover Controller pairing for Tuya EF00 covers."
+  },
+  "5.12.103": {
+    "en": "Fixed Fingerbot flow card IDs and switch turned-on/off Homey Flow triggers."
+  },
+  "5.12.102": {
+    "en": "Fixed wall dimmer brightness misread as humidity; fixed AC thermostat valve DP poisoning target temperature."
+  },
+  "5.12.101": {
+    "en": "Improved button and scene remote Flow triggers (hold-release, wall 4-gang physical, Tuya DP path)."
+  },
+  "5.12.100": {
+    "en": "Improved wall dimmer control reliability after pairing."
+  },
+  "5.12.99": {
+    "en": "P2303 BOTH: FCU wall_thermostat OFF/setpoint (Adam #532) — DeviceIO TX, FRAG/DP1 bool, mpbki2zm lock"
+  },
+  "5.12.98": {
+    "en": "Reliability: late Zigbee identity re-arms 1-button remote presses; keep battery on sleepy buttons; CO2 sensor couple no longer stolen by climate; radar settings save never blocks Homey UI."
+  },
+  "5.12.97": {
+    "en": "Reliability improvements."
+  },
+  "5.12.95": {
+    "en": "Publish hardening: changelog always shipped; sacred couples preserved under compaction; safer Test uploads."
+  },
+  "5.12.94": {
+    "en": "Reliability: button RX chain (handleFrame) no longer drops physical presses; TS0041 one-button remotes locked to wireless button driver; sleepy remote battery/pairing hardening."
+  },
+  "5.12.93": {
+    "en": "Reliability improvements."
+  },
+  "5.12.92": {
+    "en": "Reliability improvements."
+  },
+  "5.12.91": {
+    "en": "Reliability improvements."
+  },
+  "5.12.90": {
+    "en": "P2242 Peter fleet SOS/IAS/heap hardening; P2243 DIN meter climate phantom block; P2244 scene remote sacred couples."
+  },
+  "5.12.89": {
+    "en": "P139 recovery: fresh Stable draft after 5.12.88 processing_failed; k4ej productId hygiene; IAS leftover skip."
+  },
+  "5.12.88": {
+    "en": "Tuya Unified (Stable) identity (com.dlnraja.tuya.zigbee.stable). Reliability: skip leftover EF00 TX and genPowerCfg bind on IAS-only (TS0207/TS0203/TS0215)."
+  },
+  "5.12.87": {
+    "en": "Fix: computed caps (meter_*) no longer auto-added from device DP reports. Guard routes meter_power to measure_power (native measurement). Prevents phantom kWh in Energy tab."
+  },
+  "5.12.86": {
+    "en": "Reliability: IAS water/contact/repeater disambiguation, compound fingerprint locks, BrightnessScale backport, battery cascade hardening."
+  },
+  "5.12.84": {
+    "en": "Garage openers, dual outlets, Wing contacts and HOBEIAN USB switches keep the correct driver. Curtain motors that ignore position writes use open/stop/close. Battery 100% stays 100%."
+  },
+  "5.12.83": {
+    "en": "Reliability: skip Test overwrite while 9.0 soaks; treat Athom draft as published."
+  },
+  "5.12.82": {
+    "en": "Stability improvements and Homey test publication retry after transient processing failure."
+  },
+  "5.12.81": {
+    "en": "Reliability BOTH: generic_tuya capability crash fix; MTG284 clrdrnya relay DP map.",
+    "fr": "Fiabilite BOTH: crash capability generic_tuya; map relay MTG284 clrdrnya."
+  },
+  "5.12.80": {
+    "en": "P102 Athom republish after processing_failed on 5.12.78/79 (socket hang up). Lower Zigbee combo budget for publish processing.",
+    "fr": "Republication P102 apres processing_failed 5.12.78/79. Budget combos Zigbee reduit pour Athom."
+  },
+  "5.12.79": {
+    "en": "P102 reliability republish after Athom processing_failed on 5.12.78 (socket hang up). Includes ZT08 safe timers + Athom changelog keys.",
+    "fr": "Republication fiabilite P102 apres processing_failed Athom sur 5.12.78. Inclut timers ZT08 + cles changelog Athom."
+  },
+  "5.12.78": {
+    "en": "Reliability BOTH: ZT08 safe time-sync timers; Athom changelog keys so Test publish works (5.12.75-77 crash class).",
+    "fr": "Fiabilite BOTH: timers ZT08 safe; cles changelog Athom pour publier Test (classe crash 5.12.75-77)."
+  },
+  "5.12.77": {
+    "en": "Reliability BOTH: contact/water debounce timers use safeSetTimeout (Peter crash class).",
+    "fr": "Fiabilite BOTH: timers debounce contact/eau via safeSetTimeout."
+  },
+  "5.12.76": {
+    "en": "Reliability BOTH: SOS zoneId 10 + CIE zero-guard + safe timers + battery wake; water_leak_sensor_tuya IAS path.",
+    "fr": "Fiabilite BOTH: SOS zoneId 10 + garde CIE + timers safe; chemin IAS water_leak."
+  },
+  "5.12.75": {
+    "en": "Reliability: guard DCM auditCapabilities + safe IAS timers; stop TS0041 matching door/window sensors.",
+    "fr": "Fiabilite: garde auditCapabilities DCM + timers IAS; TS0041 hors door/window."
+  },
+  "5.12.70": {
+    "en": "Stop publish reinject from stripping TS004F remotes off button_wireless_4."
+  },
+  "5.12.69": {
+    "en": "Hardened Homey compensation timers for CI lifecycle gate."
+  },
+  "5.12.68": {
+    "en": "Improved pairing for ZT08 climate sensor, TS004F remotes, and presence radar fingerprints."
+  },
+  "5.12.67": {
+    "en": "Reliability: improved device wake/handshake recovery and interview compensation."
+  },
+  "5.12.66": {
+    "en": "P102 reliability republish after Athom processing_failed on 5.12.65 (socket hang up)."
+  },
+  "5.12.65": {
+    "en": "P102 reliability backport: DeviceIOFacade + Homey interview compensation + bare ZigBeeDevice inherit migration."
+  },
+  "5.12.64": {
+    "en": "Backport P101: #439 sacred-couple lot2 + getDeviceById/catch harden."
+  },
+  "5.12.63": {
+    "en": "Backport P100 crash harden: flow-card polyfill, read-only error guard, getDiscoveries safe call."
+  },
+  "5.12.62": {
+    "en": "L99 battery normalize + verify fail-closed; retry after Athom socket hang up.",
+    "fr": "L99 batterie normalize + verify fail-closed; retry apres Athom socket hang up."
+  },
+  "5.12.61": {
+    "en": "L99: EnergyJumpGuard wired, Moes 4-btn profile, canonical case variants, CI fail-closed publish promote."
+  },
+  "5.12.60": {
+    "en": "Retry Homey Test after Athom processing_failed on 5.12.59 (socket hang up during concurrent master publish)."
+  },
+  "5.12.59": {
+    "en": "P95: remove generic_tuya collisions for BSEED dimmer (#2133) and 4ch relay (#2131); harden anti-bot/re-inject; APP_ID Test overwrite warning."
+  },
+  "5.12.58": {
+    "en": "Retry Homey Test publish after Athom processing_failed (socket hang up) on 5.12.57; harden verify-test-version fail-closed."
+  },
+  "5.12.57": {
+    "en": "P94: forum fingerprint routing, energy guard, anti-bot re-inject sync (reliability)."
   },
   "5.12.53": {
     "en": "Publish pipeline fixes: firmwareUpdates aligned with compacted Zigbee identifiers (button_wireless_2 OTA), stable promote timeout raised to 25m, version manifests synchronized."
+  },
+  "5.12.52": {
+    "en": "Stability release: collision triage, energy divisors, tamper coverage, virtual energy estimation, quick actions, flow card crash fixes, battery listeners on buttons, canonical radar settings."
   },
   "5.12.48": {
     "en": "Anti-flood protections: RX shedding with IAS exemption, IR send throttle."
@@ -1288,325 +1611,5 @@
   },
   "5.12.0": {
     "en": "v5.12.0: stable-v5 batch sync (drivers, FPs, flows, manifest) from master v9.0.240–v9.0.260."
-  },
-  "5.12.57": {
-    "en": "P94: forum fingerprint routing, energy guard, anti-bot re-inject sync (reliability)."
-  },
-  "5.12.58": {
-    "en": "Retry Homey Test publish after Athom processing_failed (socket hang up) on 5.12.57; harden verify-test-version fail-closed."
-  },
-  "5.12.59": {
-    "en": "P95: remove generic_tuya collisions for BSEED dimmer (#2133) and 4ch relay (#2131); harden anti-bot/re-inject; APP_ID Test overwrite warning."
-  },
-  "5.12.60": {
-    "en": "Retry Homey Test after Athom processing_failed on 5.12.59 (socket hang up during concurrent master publish)."
-  },
-  "5.12.61": {
-    "en": "L99: EnergyJumpGuard wired, Moes 4-btn profile, canonical case variants, CI fail-closed publish promote."
-  },
-  "5.12.62": {
-    "en": "L99 battery normalize + verify fail-closed; retry after Athom socket hang up.",
-    "fr": "L99 batterie normalize + verify fail-closed; retry apres Athom socket hang up."
-  },
-  "5.12.63": {
-    "en": "Backport P100 crash harden: flow-card polyfill, read-only error guard, getDiscoveries safe call."
-  },
-  "5.12.64": {
-    "en": "Backport P101: #439 sacred-couple lot2 + getDeviceById/catch harden."
-  },
-  "5.12.65": {
-    "en": "P102 reliability backport: DeviceIOFacade + Homey interview compensation + bare ZigBeeDevice inherit migration."
-  },
-  "5.12.66": {
-    "en": "P102 reliability republish after Athom processing_failed on 5.12.65 (socket hang up)."
-  },
-  "5.12.67": {
-    "en": "Reliability: improved device wake/handshake recovery and interview compensation."
-  },
-  "5.12.68": {
-    "en": "Improved pairing for ZT08 climate sensor, TS004F remotes, and presence radar fingerprints."
-  },
-  "5.12.69": {
-    "en": "Hardened Homey compensation timers for CI lifecycle gate."
-  },
-  "5.12.70": {
-    "en": "Stop publish reinject from stripping TS004F remotes off button_wireless_4."
-  },
-  "5.12.78": {
-    "en": "Reliability BOTH: ZT08 safe time-sync timers; Athom changelog keys so Test publish works (5.12.75-77 crash class).",
-    "fr": "Fiabilite BOTH: timers ZT08 safe; cles changelog Athom pour publier Test (classe crash 5.12.75-77)."
-  },
-  "5.12.77": {
-    "en": "Reliability BOTH: contact/water debounce timers use safeSetTimeout (Peter crash class).",
-    "fr": "Fiabilite BOTH: timers debounce contact/eau via safeSetTimeout."
-  },
-  "5.12.76": {
-    "en": "Reliability BOTH: SOS zoneId 10 + CIE zero-guard + safe timers + battery wake; water_leak_sensor_tuya IAS path.",
-    "fr": "Fiabilite BOTH: SOS zoneId 10 + garde CIE + timers safe; chemin IAS water_leak."
-  },
-  "5.12.75": {
-    "en": "Reliability: guard DCM auditCapabilities + safe IAS timers; stop TS0041 matching door/window sensors.",
-    "fr": "Fiabilite: garde auditCapabilities DCM + timers IAS; TS0041 hors door/window."
-  },
-  "5.12.79": {
-    "en": "P102 reliability republish after Athom processing_failed on 5.12.78 (socket hang up). Includes ZT08 safe timers + Athom changelog keys.",
-    "fr": "Republication fiabilite P102 apres processing_failed Athom sur 5.12.78. Inclut timers ZT08 + cles changelog Athom."
-  },
-  "5.12.80": {
-    "en": "P102 Athom republish after processing_failed on 5.12.78/79 (socket hang up). Lower Zigbee combo budget for publish processing.",
-    "fr": "Republication P102 apres processing_failed 5.12.78/79. Budget combos Zigbee reduit pour Athom."
-  },
-  "5.12.81": {
-    "en": "Reliability BOTH: generic_tuya capability crash fix; MTG284 clrdrnya relay DP map.",
-    "fr": "Fiabilite BOTH: crash capability generic_tuya; map relay MTG284 clrdrnya."
-  },
-  "5.12.82": {
-    "en": "Stability improvements and Homey test publication retry after transient processing failure."
-  },
-  "5.12.83": {
-    "en": "Reliability: skip Test overwrite while 9.0 soaks; treat Athom draft as published."
-  },
-  "5.12.84": {
-    "en": "Garage openers, dual outlets, Wing contacts and HOBEIAN USB switches keep the correct driver. Curtain motors that ignore position writes use open/stop/close. Battery 100% stays 100%."
-  },
-  "5.12.86": {
-    "en": "Reliability: IAS water/contact/repeater disambiguation, compound fingerprint locks, BrightnessScale backport, battery cascade hardening."
-  },
-  "5.12.87": {
-    "en": "Fix: computed caps (meter_*) no longer auto-added from device DP reports. Guard routes meter_power to measure_power (native measurement). Prevents phantom kWh in Energy tab."
-  },
-  "5.12.88": {
-    "en": "Tuya Unified (Stable) identity (com.dlnraja.tuya.zigbee.stable). Reliability: skip leftover EF00 TX and genPowerCfg bind on IAS-only (TS0207/TS0203/TS0215)."
-  },
-  "5.12.89": {
-    "en": "P139 recovery: fresh Stable draft after 5.12.88 processing_failed; k4ej productId hygiene; IAS leftover skip."
-  },
-  "5.12.90": {
-    "en": "P2242 Peter fleet SOS/IAS/heap hardening; P2243 DIN meter climate phantom block; P2244 scene remote sacred couples."
-  },
-  "5.12.91": {
-    "en": "Reliability improvements."
-  },
-  "5.12.92": {
-    "en": "Reliability improvements."
-  },
-  "5.12.93": {
-    "en": "Reliability improvements."
-  },
-  "5.12.94": {
-    "en": "Reliability: button RX chain (handleFrame) no longer drops physical presses; TS0041 one-button remotes locked to wireless button driver; sleepy remote battery/pairing hardening."
-  },
-  "5.12.95": {
-    "en": "Publish hardening: changelog always shipped; sacred couples preserved under compaction; safer Test uploads."
-  },
-  "5.12.97": {
-    "en": "Reliability improvements."
-  },
-  "5.12.98": {
-    "en": "Reliability: late Zigbee identity re-arms 1-button remote presses; keep battery on sleepy buttons; CO2 sensor couple no longer stolen by climate; radar settings save never blocks Homey UI."
-  },
-  "5.12.99": {
-    "en": "P2303 BOTH: FCU wall_thermostat OFF/setpoint (Adam #532) — DeviceIO TX, FRAG/DP1 bool, mpbki2zm lock"
-  },
-  "5.12.101": {
-    "en": "Improved button and scene remote Flow triggers (hold-release, wall 4-gang physical, Tuya DP path)."
-  },
-  "5.12.102": {
-    "en": "Fixed wall dimmer brightness misread as humidity; fixed AC thermostat valve DP poisoning target temperature."
-  },
-  "5.12.103": {
-    "en": "Fixed Fingerbot flow card IDs and switch turned-on/off Homey Flow triggers."
-  },
-  "5.12.104": {
-    "en": "Improved Moes curtain Cover Controller pairing for Tuya EF00 covers."
-  },
-  "5.12.105": {
-    "en": "Fixed Moes TS0044 scene remote and soil sensor pairing; hardened wall dimmer TX failure detection."
-  },
-  "5.12.106": {
-    "en": "Improved TS0044 scene remote routing; fixed wall remote driver stealing battery scene switches."
-  },
-  "5.12.108": {
-    "en": "Reliability: promote uses uploaded Athom version (P2355); TS004F event mode."
-  },
-  "5.12.109": {
-    "en": "Reliability: promote uses uploaded Athom version (P2355); TS004F event mode."
-  },
-  "5.12.110": {
-    "en": "Improved MCU time sync and battery cover init; safer dimmer brightness scaling."
-  },
-  "5.12.111": {
-    "en": "Fixed smart plug fingerprint routing so TS011F plugs are not matched as wireless buttons."
-  },
-  "5.12.112": {
-    "en": "Stripped leftover plug fingerprint case-variants from wireless buttons; restored smartplug OTA asset for Homey validate."
-  },
-  "5.12.113": {
-    "en": "Locked TS011F plug fingerprint routing away from wireless buttons."
-  },
-  "5.12.114": {
-    "en": "Aligned plug fingerprint database so TS011F plugs stay off wireless button drivers."
-  },
-  "5.12.115": {
-    "en": "Exclusive plug routing for TS011F w0qqde0g fingerprints (energy monitor only)."
-  },
-  "5.12.116": {
-    "en": "Improved curtain motors: EF00 RX hardening, timeout-safe position updates, and more verified cover fingerprints."
-  },
-  "5.12.120": {
-    "en": "Reliability: button wrapHandleFrame + presence radar flood calm (backport)."
-  },
-  "5.12.121": {
-    "en": "Firmware quirk compensate: strip DIY DP caps and phantom mains battery on radar/mains devices."
-  },
-  "5.12.122": {
-    "en": "Moes curtain: ignore Homey UI stop that cancels open/close within a few seconds."
-  },
-  "5.12.123": {
-    "en": "Improved multi-gang Homey button UI sync with physical presses; fan countdown/power-on settings; richer per-gang flow cards (reliability)."
-  },
-  "5.12.124": {
-    "en": "Fixed garden valve and other flow conditions when Homey lacks getDeviceConditionCard; radar presence value 2 now counts as occupied."
-  },
-  "5.12.125": {
-    "en": "Fixed Moes curtain wall switch stopping too early after open/close from Homey UI."
-  },
-  "5.12.126": {
-    "en": "Moes ZTS dual TX + invert, presence DP2 humidity invent skip, SafeCapability harden, WiFi local discovery reliability."
-  },
-  "5.12.127": {
-    "en": "PIR/multi-cap: ZG-204ZV presence lock, motion cartesian strip, ZS-301Z soil."
-  },
-  "5.12.128": {
-    "en": "CI soft-expect Athom processing_failed; pairing timer gate; diagnostics dashboard soft shell."
-  },
-  "5.12.129": {
-    "en": "Homey diag dashboard Athom panel; clear FP collisions for Validate (BOTH)."
-  },
-  "5.12.130": {
-    "en": "Compensate incomplete reports in crons (soft MISSING_PID, no invent pid)."
-  },
-  "5.12.132": {
-    "en": "Fixed mains mmWave radar phantom battery warning after app updates; radar settings DPs no longer misread as humidity."
-  },
-  "5.12.133": {
-    "en": "HOBEIAN sensors: corrected mmWave DP maps and locked motion-sensing switches; fixed wrong climate/vibration pairing."
-  },
-  "5.12.134": {
-    "en": "HOBEIAN full enrich: mmWave ZE/ZK/ZQ/ZX, vibration+contact, tilt, water/vibration alarms."
-  },
-  "5.12.135": {
-    "en": "Universal cluster resolution, caseless driver & flow card compensation, and enhanced battery cluster detection (reliability)."
-  },
-  "5.12.137": {
-    "en": "Fixed BSEED 1-gang switch routing (Issue #540), pruned manifest flow duplicates, and enforced zero flow guidelines warnings."
-  },
-  "5.12.138": {
-    "en": "Forum media deep sweep & misattribution cleansing: cleansed wall_switch_5_gang_tuya stubs, added 25 verified forum Zigbee devices, resolved Athom 17k combo pass2 budget reduction, and passed all mandatory checks."
-  },
-  "5.12.139": {
-    "en": "Improved battery roller blind motors (fodv6bkr) open/close/position; expanded HOBEIAN pairing coverage."
-  },
-  "5.12.141": {
-    "en": "Improved battery roller blind motors (fodv6bkr) open/close/position; expanded HOBEIAN pairing coverage."
-  },
-  "5.12.142": {
-    "en": "HOBEIAN devices now match when Homey reports the brand as product ID or product name, not only manufacturer."
-  },
-  "5.12.143": {
-    "en": "Improved pairing for several Tuya ZCL wall switches that Homey previously left as unknown."
-  },
-  "5.12.144": {
-    "en": "Aligned fingerprint routing for Moes/BSEED ZCL switches after pairing fixes."
-  },
-  "5.12.145": {
-    "en": "Removed broken contact-sensor OTA firmware reference that blocked Athom publish validation."
-  },
-  "5.12.146": {
-    "en": "Improved Moes curtain EF00 listen, reduced GitHub bot auto noise, Homey match unit mocks."
-  },
-  "5.12.158": {
-    "en": "Fixed 1-btn remote pairing (ja5osu5g / an5rjiwd) and 4-btn wall remotes (5tqxpine); presence radar sticky motion fix."
-  },
-  "5.12.159": {
-    "en": "CI harden: package-lock integrity gate on Stable publish path."
-  },
-  "5.12.160": {
-    "en": "Fixed BSEED wired 2-gang pairing: maps to wall switch with onoff/onoff.gang2 only — no battery or button clutter."
-  },
-  "5.12.161": {
-    "en": "Fixed Moes/Tuya wired 2-gang pairing: maps to wall switch with onoff/onoff.gang2 only — no button clutter."
-  },
-  "5.12.162": {
-    "en": "Fixed Moes/Tuya wired 2-gang pairing: maps to wall switch with onoff/onoff.gang2 only — no button clutter."
-  },
-  "5.12.163": {
-    "en": "Fixed Moes/Tuya wired 2-gang pairing: maps to wall switch with onoff/onoff.gang2 only — no button clutter."
-  },
-  "5.12.164": {
-    "en": "Cleaned 4-gang switch UI: relay gangs only — removed redundant button tiles from Homey device view."
-  },
-  "5.12.165": {
-    "en": "Hardened Athom publish soft-expect docs/tests for tip socket hang up."
-  },
-  "5.12.166": {
-    "en": "Improved presence radar heal after updates; BSEED 2-gang Homey commands use setOn/setOff; BSEED 1-gang ysdv91bk wall switch pairing."
-  },
-  "5.12.167": {
-    "en": "Improved smartbutton reliability (SH-SC07); AM43 curtain EF00-only (P2461)."
-  },
-  "5.12.168": {
-    "en": "Fixed mains presence radar Homey Energy battery warning (compose no longer ships phantom batteries)."
-  },
-  "5.12.169": {
-    "en": "Improved EF00-only valve pairing (no forced OnOff cluster) and smarter DP transmit fallback."
-  },
-  "5.12.170": {
-    "en": "MCU EF00 TX arm before mcuSyncTime/DP + rejoin time re-sync (Moes curtain class)."
-  },
-  "5.12.171": {
-    "en": "Mains mmWave radar: DynCap no longer re-injects ZCL battery."
-  },
-  "5.12.172": {
-    "en": "Moes curtain mid-% position + soft timeout + settings UI."
-  },
-  "5.12.173": {
-    "en": "Crash fix: soft-fail Driver Not Initialized motionsensor."
-  },
-  "5.12.174": {
-    "en": "Crash harden: preempt soft-fail Homey class driver IDs (motionsensor)."
-  },
-  "5.12.175": {
-    "en": "Crash harden: never soft-fail own drivers (pirsensor/siren); ceiling mmWave gkfbdvyx mains lock."
-  },
-  "5.12.176": {
-    "en": "P2484: EF00 init OOM harden + sacred-keep gkfbdvyx (backport)."
-  },
-  "5.12.177": {
-    "en": "P2484: EF00 init OOM harden + sacred-keep gkfbdvyx (backport)."
-  },
-  "5.12.178": {
-    "en": "P2484: EF00 init OOM harden + sacred-keep gkfbdvyx (backport)."
-  },
-  "5.12.179": {
-    "en": "P2484 force republish: EF00 OOM harden + gkfbdvyx sacred-keep (backport)."
-  },
-  "5.12.182": {
-    "en": "P2505 BOTH: EF00 4/3-gang couples (hewlydpz/7ytnacie/rkbxtclc) rehomed + launchOnce peer-skip."
-  },
-  "5.12.187": {
-    "en": "ZM16B curtain motor support; sacred-couple audit skip invent junk. Update Stable Test."
-  },
-  "5.12.188": {
-    "en": "Reliability: enrich anti-regression locks, 3-phase meter RX, sacred couple restore (P2516–P2519)."
-  },
-  "5.12.189": {
-    "en": "Complementary variant enrich locks (no overwrite) + case-variant union. Update Homey Test."
-  },
-  "5.12.190": {
-    "en": "CI heal P2521: compact mfs + FP baseline + workflow prune."
-  },
-  "5.12.191": {
-    "en": "CI: strip forbidden contact FPs (P2521b)."
   }
 }

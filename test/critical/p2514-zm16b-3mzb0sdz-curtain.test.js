@@ -62,14 +62,37 @@ describe('P2514 ZM16B 3mzb0sdz curtain', () => {
     assert.ok(cover.includes('_sendTuyaDP(9,'));
   });
 
-  it('audit --from-registry does not fail on doNotLock invent junk', () => {
-    const r = spawnSync(process.execPath, [path.join(ROOT, 'tools/ci/audit-sacred-couple.js'), '--from-registry'], {
-      cwd: ROOT,
-      encoding: 'utf8',
-      timeout: 180000,
-      maxBuffer: 20 * 1024 * 1024,
-    });
-    assert.strictEqual(r.status, 0, r.stderr || r.stdout?.slice(-1200) || `spawn status=${r.status} signal=${r.signal}`);
-    assert.ok(/failures:\s*0/.test(r.stdout || ''), r.stdout?.slice(-600));
+  // WHY(P2521c): Auto-Fix runs check:p248x which embeds p2514. Full
+  // `--from-registry` fleet audit is Unified CI / P151's job — spawning it
+  // here flakes when an unrelated registry case fails and dumps megabytes.
+  // Contre quoi: invent OCR junk must stay doNotLock-skipped AND the real
+  // ZM16B couple must still audit clean (mfr+pid scoped).
+  it('audit couple-scoped: ZM16B locked; invent junk skipped by doNotLock', () => {
+    const reg = JSON.parse(fs.readFileSync(path.join(ROOT, 'data/user-misattribution-registry.json'), 'utf8'));
+    const invent = (reg.cases || []).find((c) => c.id === 'p2509-invent-junk-do-not-lock');
+    assert.ok(invent?.doNotLock === true, 'invent OCR junk must be doNotLock');
+    assert.ok(!invent?.canonicalDriver, 'invent junk must not invent a driver lock');
+
+    const r = spawnSync(
+      process.execPath,
+      [
+        path.join(ROOT, 'tools/ci/audit-sacred-couple.js'),
+        '--mfr=_TZE284_3mzb0sdz',
+        '--pid=TS0601',
+      ],
+      {
+        cwd: ROOT,
+        encoding: 'utf8',
+        timeout: 60000,
+        maxBuffer: 2 * 1024 * 1024,
+      },
+    );
+    assert.strictEqual(
+      r.status,
+      0,
+      r.stderr || r.stdout?.slice(-800) || `spawn status=${r.status} signal=${r.signal}`,
+    );
+    assert.ok(/failures:\s*0/.test(r.stdout || ''), r.stdout?.slice(-400));
+    assert.ok(/curtain_motor/i.test(r.stdout || ''), 'audit must name curtain_motor');
   });
 });
