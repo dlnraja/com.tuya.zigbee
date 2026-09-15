@@ -3308,5 +3308,8 @@
   },
   "9.0.945": {
     "en": "CI heal: compact mfs_db align, FP collision baseline, workflow prune remediation (P2521)."
+  },
+  "9.0.946": {
+    "en": "CI: strip forbidden contact FPs; clearer sacred audit errors (P2521b)."
   }
 }
