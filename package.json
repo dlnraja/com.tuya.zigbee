@@ -1,6 +1,6 @@
 {
   "name": "com.dlnraja.tuya.zigbee",
-  "version": "5.12.182",
+  "version": "5.12.185",
   "description": "Tuya Unified Zigbee - Local-first control with AI automation",
   "main": "app.js",
   "scripts": {
@@ -179,7 +179,10 @@
     "check:p2499": "node --test test/critical/p2499-peter-77394256-smartbutton-battery-ui.test.js",
     "check:p2502": "node --test test/critical/p2502-smart-adapt-bootbudget.test.js",
     "check:p2503": "node --test test/critical/p2503-gh533-5slehgeo-curtain.test.js",
-    "check:p249x": "npm run check:p2490 && npm run check:p2492 && npm run check:p2494 && npm run check:p2496 && npm run check:p2499 && npm run check:p2502 && npm run check:p2503 && npm run check:p2505",
+    "check:p2506": "node --test test/critical/p2506-smart-battery-low-alarm.test.js",
+    "check:p2507": "node --test test/critical/p2507-peter-battery-ui-diag-treat.test.js",
+    "check:p2508": "node --test test/critical/p2508-firmware-device-updates-oem-fleet.test.js && node tools/ci/firmware-updates-gate.js --coverage",
+    "check:p249x": "npm run check:p2490 && npm run check:p2492 && npm run check:p2494 && npm run check:p2496 && npm run check:p2499 && npm run check:p2502 && npm run check:p2503 && npm run check:p2505 && npm run check:p2506 && npm run check:p2507 && npm run check:p2508",
     "check:publish": "npm run check:p2288 && npm run check:p2490 && npm run check:p2494 && npm run check:p2495 && npm run check:p2496",
     "check:p2505": "node --test test/critical/p2505-p2485-ef00-multigang-rehome.test.js"
   },

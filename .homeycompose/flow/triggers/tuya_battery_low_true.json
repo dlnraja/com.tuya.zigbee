@@ -1,0 +1,32 @@
+{
+  "id": "tuya_battery_low_true",
+  "title": {
+    "en": "Battery became low (app alarm)",
+    "fr": "Batterie devenue faible (alarme app)",
+    "nl": "Batterij werd laag (app-alarm)",
+    "de": "Batterie wurde niedrig (App-Alarm)"
+  },
+  "hint": {
+    "en": "Fires when app-owned tuya_battery_low turns true (from measure_battery + threshold). Not Homey alarm_battery.",
+    "fr": "Se déclenche quand tuya_battery_low passe à vrai (mesure % + seuil). Pas alarm_battery Homey."
+  },
+  "args": [
+    {
+      "type": "device",
+      "name": "device",
+      "filter": "capabilities=measure_battery"
+    }
+  ],
+  "tokens": [
+    {
+      "name": "battery_percent",
+      "type": "number",
+      "title": { "en": "Battery %", "fr": "Batterie %" }
+    },
+    {
+      "name": "threshold",
+      "type": "number",
+      "title": { "en": "Low threshold", "fr": "Seuil bas" }
+    }
+  ]
+}

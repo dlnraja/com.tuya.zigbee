@@ -1,12 +1,12 @@
 {
   "_meta": {
     "id": "homey-device-updates",
-    "version": "1.0.0",
-    "patch": "P2359",
+    "version": "1.1.0",
+    "patch": "P2508",
     "track": "BOTH",
     "news": "https://homey.app/en-fr/news/introducing-device-updates/",
     "sdkDocs": "https://apps.developer.homey.app/wireless/zigbee/zigbee-firmware-updates",
-    "policy": "Native Homey Zigbee OTA only — OEM images, SHA-verified, class-tight sacred couples. Never invent pid. Never brick via wide drivers."
+    "policy": "Native Homey Zigbee OTA only — OEM images, SHA-verified, class-tight sacred couples. Never invent pid. Never brick via wide drivers. Never ship Koenkk pvvx community replacements."
   },
   "requirements": {
     "homeyFirmwareMin": "13.2.0",
@@ -43,11 +43,14 @@
     ],
     "excluded": [
       "pvvx",
+      "images/pvvx/",
       "community-replacement",
       "generic_tuya",
       "universal_zigbee",
       "device_generic_tuya_universal",
-      "bulb_rgbw without registry lock"
+      "bulb_rgbw without registry lock",
+      "contact_sensor_wing_pvvx",
+      "soil_sensor_hobeian_pvvx"
     ]
   },
   "tuyaManufacturerCodes": [4417, 4098],
@@ -56,10 +59,9 @@
     "requireOtaMagic": "0x0BEEF11E",
     "classTightProductIds": true,
     "refuseProductIdDefaultInvent": true,
+    "refusePvvxCommunity": true,
     "assetsDir": "assets/firmware",
     "wakeInstructionRequiredFor": [
-      "contact_sensor",
-      "soil_sensor",
       "radiator_valve",
       "thermostatic_radiator_valve"
     ]
@@ -72,18 +74,9 @@
     "wall_curtain_switch",
     "switch_1gang",
     "smartplug",
-    "contact_sensor",
-    "soil_sensor"
+    "plug_energy_monitor"
   ],
   "wakeInstructions": {
-    "contact_sensor": {
-      "en": "Press the reset/pairing button once to wake the contact sensor, then start Device Updates.",
-      "fr": "Appuyez une fois sur le bouton reset/appairage pour réveiller le capteur, puis lancez Device Updates."
-    },
-    "soil_sensor": {
-      "en": "Press the sensor button once to wake it, then start Device Updates.",
-      "fr": "Appuyez une fois sur le bouton du capteur pour le réveiller, puis lancez Device Updates."
-    },
     "radiator_valve": {
       "en": "Wake the radiator valve by pressing the menu button, then start Device Updates.",
       "fr": "Réveillez le thermostat en appuyant sur le bouton menu, puis lancez Device Updates."

@@ -108,5 +108,35 @@
   },
   "_pidConflictNotes": [
     "// PID-CONFLICT-NOTE TS130F shared with 6 other drivers (cross-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md"
-  ]
+  ],
+  "firmwareUpdates": {
+    "updates": [
+      {
+        "changelog": {
+          "en": "OEM Zigbee firmware v71 (Koenkk zigbee-OTA, SHA512-verified). Install via Homey Device Updates (Settings → Device Updates) on Homey ≥13.2 / Mobile ≥9.10.",
+          "fr": "Firmware Zigbee OEM v71 (Koenkk zigbee-OTA, SHA512 vérifié). Installez via Homey Device Updates (Réglages → Device Updates) — Homey ≥13.2 / Mobile ≥9.10."
+        },
+        "device": {
+          "manufacturerName": [
+            "_TZ3000_1dd0d5yi"
+          ],
+          "productId": [
+            "TS130F"
+          ]
+        },
+        "files": [
+          {
+            "fileVersion": 71,
+            "imageType": 5634,
+            "manufacturerCode": 4098,
+            "minHardwareVersion": 25715,
+            "maxHardwareVersion": 24427,
+            "size": 222762,
+            "name": "1662693814-oem_mg21_zg_nh_win_cover_relay_OTA_1.0.7.bin",
+            "integrity": "sha256:d0611939f48a1c6953104d7d2f8752366a45e16da3fe54d082be277bec9e97a5"
+          }
+        ]
+      }
+    ]
+  }
 }
