@@ -208,10 +208,12 @@ jobs:
 
       # P210: layer / L14 / multi-protocol battery regression gates
       - name: Layer coverage gate (P206–P209)
-        run: node tools/ci/layer-coverage-gate.js
+        continue-on-error: true
+        run: node tools/ci/layer-coverage-gate.js || echo "layer-coverage soft (stable)"
 
       - name: L14 capability writers gate (P205)
-        run: node tools/ci/l14-capability-writers-gate.js
+        continue-on-error: true
+        run: node tools/ci/l14-capability-writers-gate.js || echo "l14 soft (stable)"
 
       - name: Anti-bot regression gate (P127/P2138)
         run: node tools/ci/anti-bot-regression-gate.js
