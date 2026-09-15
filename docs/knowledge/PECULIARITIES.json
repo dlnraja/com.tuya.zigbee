@@ -1,20 +1,1005 @@
 {
-  "generatedAt": "2026-09-08T07:29:59.472Z",
+  "generatedAt": "2026-09-15T08:05:31.976Z",
   "doctrine": "Investigate the couple. Never invent a productId. Publish app ≠ post forum.",
   "totals": {
-    "registryCases": 201,
-    "compoundDbKeys": 454,
-    "withCompound": 171,
-    "withZ2m": 92,
-    "withGaps": 90
+    "registryCases": 220,
+    "compoundDbKeys": 509,
+    "withCompound": 190,
+    "withZ2m": 95,
+    "withGaps": 99
   },
   "gapCounts": {
-    "no_sources": 66,
     "no_compound_db_key": 30,
-    "not_in_local_z2m_fps": 34,
-    "compose_pid_mismatch": 5
+    "no_sources": 74,
+    "not_in_local_z2m_fps": 42,
+    "compose_pid_mismatch": 3
   },
   "cases": [
+    {
+      "id": "p2485-rkbxtclc-3gang",
+      "driver": "switch_3gang",
+      "protocol": "tuya_dp",
+      "mfrs": [
+        "_TZE204_rkbxtclc",
+        "_tze204_rkbxtclc"
+      ],
+      "pids": [
+        "TS0601"
+      ],
+      "forbidden": [
+        "dimmer_wall_1gang",
+        "wall_switch_4_gang_tuya",
+        "climate_sensor"
+      ],
+      "notes": "P2485 Z2M TS0601_3gang_rkbxtclc sibling of hewlydpz family; was dimmer_wall_1gang",
+      "sources": [
+        "Z2M:TS0601_3gang_rkbxtclc",
+        "L99:four-threads"
+      ],
+      "retailNames": [],
+      "z2mPids": [
+        "TS0601"
+      ],
+      "z2mHit": true,
+      "compound": [
+        {
+          "key": "_TZE204_rkbxtclc|TS0601",
+          "driver": "switch_3gang",
+          "protocol": "tuya_dp",
+          "dp": null,
+          "notes": "P2485 Z2M TS0601_3gang_rkbxtclc",
+          "powerSource": "mains"
+        }
+      ],
+      "compose": {
+        "exists": true,
+        "class": "socket",
+        "pids": [
+          "01MINIZB",
+          "BASICZBR3",
+          "hobeian",
+          "Hobeian",
+          "HOBEIAN",
+          "JZ-ZB-004",
+          "S26R2ZB",
+          "S31ZB",
+          "TS0001",
+          "TS0001_power",
+          "TS0001_switch",
+          "TS0001_switch_module",
+          "TS0002",
+          "TS0003",
+          "TS0003_power",
+          "TS0003_switch_module",
+          "TS0004",
+          "TS0004_power",
+          "TS0004_switch_module",
+          "TS0011",
+          "TS0012",
+          "TS0013",
+          "TS0014",
+          "TS0040",
+          "TS0041",
+          "TS0043",
+          "TS0044",
+          "TS004F",
+          "TS0101",
+          "TS0111",
+          "TS011F",
+          "TS0215A",
+          "TS0601",
+          "TS0726",
+          "TS1002",
+          "TS110E",
+          "TS130F",
+          "TS4100",
+          "ZBM5-1C-120",
+          "ZBM5-2C-120",
+          "ZBM5-3C-120",
+          "ZBMINI",
+          "ZBMINIL2",
+          "ZBMINIL2-R2",
+          "ZBMINIR",
+          "ZBMINIR2",
+          "ZBMINIR2-R2",
+          "ZG-302Z3"
+        ],
+        "pidMatch": [
+          "TS0601"
+        ],
+        "endpointCount": 3,
+        "hasEf00": false,
+        "hasIas": false,
+        "batteries": [],
+        "capabilities": [
+          "onoff",
+          "onoff.gang2",
+          "onoff.gang3",
+          "measure_power",
+          "meter_power",
+          "power_on_behavior",
+          "button.toggle_1",
+          "button.toggle_2",
+          "button.toggle_3",
+          "button.identify",
+          "button.1",
+          "button.2"
+        ]
+      },
+      "gaps": []
+    },
+    {
+      "id": "p2485-hewlydpz-7ytnacie-4gang",
+      "driver": "wall_switch_4_gang_tuya",
+      "protocol": "tuya_dp",
+      "mfrs": [
+        "_TZE200_hewlydpz",
+        "_tze200_hewlydpz",
+        "_TZE204_hewlydpz",
+        "_tze204_hewlydpz",
+        "_TZE204_7ytnacie",
+        "_tze204_7ytnacie"
+      ],
+      "pids": [
+        "TS0601"
+      ],
+      "forbidden": [
+        "curtain_motor",
+        "sensor_illuminance_presence",
+        "dimmer_wall_1gang",
+        "climate_sensor",
+        "switch_1gang"
+      ],
+      "notes": "P2485 L99 four-thread: Z2M 4-gang EF00 switches misrouted (curtain/illuminance/dimmer). DP1-4 state_l*.",
+      "sources": [
+        "Z2M:TS0601_switch_4_gang_2",
+        "Z2M:TS0601_4gang_7ytnacie",
+        "L99:T26439",
+        "L99:T140352"
+      ],
+      "retailNames": [],
+      "z2mPids": [
+        "TS0601"
+      ],
+      "z2mHit": true,
+      "compound": [
+        {
+          "key": "_TZE200_hewlydpz|TS0601",
+          "driver": "wall_switch_4_gang_tuya",
+          "protocol": "tuya_dp",
+          "dp": null,
+          "notes": "P2485 Z2M Homeetec 4-gang DP1-4 + backlight DP7",
+          "powerSource": "mains"
+        },
+        {
+          "key": "_TZE204_hewlydpz|TS0601",
+          "driver": "wall_switch_4_gang_tuya",
+          "protocol": "tuya_dp",
+          "dp": null,
+          "notes": "P2485 Z2M TS0601_4gang_7ytnacie sibling",
+          "powerSource": "mains"
+        },
+        {
+          "key": "_TZE204_7ytnacie|TS0601",
+          "driver": "wall_switch_4_gang_tuya",
+          "protocol": "tuya_dp",
+          "dp": null,
+          "notes": "P2485 colored backlight 4-gang",
+          "powerSource": "mains"
+        }
+      ],
+      "compose": {
+        "exists": true,
+        "class": "socket",
+        "pids": [
+          "TS0601"
+        ],
+        "pidMatch": [
+          "TS0601"
+        ],
+        "endpointCount": 1,
+        "hasEf00": true,
+        "hasIas": false,
+        "batteries": [],
+        "capabilities": [
+          "onoff",
+          "button.1",
+          "button.2",
+          "button.3",
+          "button.4"
+        ]
+      },
+      "gaps": []
+    },
+    {
+      "id": "p2466-vdfwjopk-ts0219-siren",
+      "driver": "siren",
+      "protocol": "zcl",
+      "mfrs": [
+        "_TZ3000_vdfwjopk",
+        "_tz3000_vdfwjopk"
+      ],
+      "pids": [
+        "TS0219"
+      ],
+      "forbidden": [
+        "handheld_remote_4_buttons",
+        "button_wireless_4",
+        "switch_1gang"
+      ],
+      "notes": "P2466 Johan#1455 Cleverio SA100 / Z2M SA100 — IAS Zone+WD mains siren; flow via startWarning",
+      "sources": [
+        "Johan#1455",
+        "z2m:SA100"
+      ],
+      "retailNames": [],
+      "z2mPids": [],
+      "z2mHit": false,
+      "compound": [
+        {
+          "key": "_TZ3000_vdfwjopk|TS0219",
+          "driver": "siren",
+          "protocol": "zcl",
+          "dp": null,
+          "notes": "P2466 Johan#1455 Cleverio SA100 IAS WD — not handheld_remote",
+          "powerSource": "mains"
+        },
+        {
+          "key": "_tz3000_vdfwjopk|TS0219",
+          "driver": "siren",
+          "protocol": "zcl",
+          "dp": null,
+          "notes": "P2466 Johan#1455",
+          "powerSource": "mains"
+        }
+      ],
+      "compose": {
+        "exists": true,
+        "class": "other",
+        "pids": [
+          "hobeian",
+          "Hobeian",
+          "HOBEIAN",
+          "TS0216",
+          "TS0219",
+          "TS0601",
+          "ZG-229Z"
+        ],
+        "pidMatch": [
+          "TS0219"
+        ],
+        "endpointCount": 1,
+        "hasEf00": false,
+        "hasIas": true,
+        "batteries": [
+          "OTHER",
+          "OTHER"
+        ],
+        "capabilities": [
+          "alarm_motion",
+          "measure_battery",
+          "alarm_generic",
+          "onoff",
+          "button.1"
+        ]
+      },
+      "gaps": []
+    },
+    {
+      "id": "p2465-moes-star-feather-3gang",
+      "driver": "wall_switch_3gang_1way",
+      "protocol": "tuya_dp",
+      "mfrs": [
+        "_TZE200_zo0cfekv",
+        "_tze200_zo0cfekv",
+        "_TZE200_tzyy0rtq",
+        "_tze200_tzyy0rtq",
+        "_TZE200_rd8cdssd",
+        "_tze200_rd8cdssd"
+      ],
+      "pids": [
+        "TS0601"
+      ],
+      "forbidden": [
+        "climate_sensor",
+        "climate_sensor_zt08",
+        "soil_sensor"
+      ],
+      "notes": "Moes Star Feather 3-gang SFL02-Z-3 — was wrongly on climate_sensor. DP24/25/26.",
+      "sources": [
+        "Johan#1457",
+        "Z2M_SFL02-Z-3"
+      ],
+      "retailNames": [],
+      "z2mPids": [],
+      "z2mHit": false,
+      "compound": [
+        {
+          "key": "_TZE200_zo0cfekv|TS0601",
+          "driver": "wall_switch_3gang_1way",
+          "protocol": "tuya_dp",
+          "dp": {
+            "24": "onoff",
+            "25": "onoff.gang2",
+            "26": "onoff.gang3"
+          },
+          "notes": "Moes Star Feather SFL02-Z-3 EU (Johan#1457 / Z2M); forbid climate_sensor",
+          "powerSource": "mains"
+        },
+        {
+          "key": "_TZE200_tzyy0rtq|TS0601",
+          "driver": "wall_switch_3gang_1way",
+          "protocol": "tuya_dp",
+          "dp": {
+            "24": "onoff",
+            "25": "onoff.gang2",
+            "26": "onoff.gang3"
+          },
+          "notes": "Moes Star Feather SFL02-Z-3 US sibling",
+          "powerSource": "mains"
+        },
+        {
+          "key": "_TZE200_rd8cdssd|TS0601",
+          "driver": "wall_switch_3gang_1way",
+          "protocol": "tuya_dp",
+          "dp": {
+            "24": "onoff",
+            "25": "onoff.gang2",
+            "26": "onoff.gang3"
+          },
+          "notes": "Nova Digital / Moes Star Feather 3-gang whiteLabel",
+          "powerSource": "mains"
+        }
+      ],
+      "compose": {
+        "exists": true,
+        "class": "socket",
+        "pids": [
+          "TS0003",
+          "TS0013",
+          "TS0601"
+        ],
+        "pidMatch": [
+          "TS0601"
+        ],
+        "endpointCount": 3,
+        "hasEf00": true,
+        "hasIas": false,
+        "batteries": [],
+        "capabilities": [
+          "onoff",
+          "onoff.gang2",
+          "onoff.gang3"
+        ]
+      },
+      "gaps": []
+    },
+    {
+      "id": "p2464-frankever-1n2zev06-valve",
+      "driver": "water_valve_smart",
+      "protocol": "tuya_dp",
+      "mfrs": [
+        "_TZE200_1n2zev06",
+        "_tze200_1n2zev06"
+      ],
+      "pids": [
+        "TS0601"
+      ],
+      "forbidden": [
+        "thermostat_tuya_dp",
+        "radiator_valve",
+        "wall_thermostat"
+      ],
+      "notes": "FrankEver smart water valve (ZHA#2633 / Z2M FK family). Was mis-locked on thermostat_tuya_dp.",
+      "sources": [
+        "gmail_diag_frankever_2026-09-11",
+        "ZHA#2633",
+        "Z2M_FK-BV05"
+      ],
+      "retailNames": [],
+      "z2mPids": [],
+      "z2mHit": false,
+      "compound": [
+        {
+          "key": "_TZE200_1n2zev06|TS0601",
+          "driver": "water_valve_smart",
+          "protocol": "tuya_dp",
+          "dp": null,
+          "notes": "FrankEver smart water valve (ZHA#2633); forbid thermostat_tuya_dp",
+          "powerSource": "mains"
+        }
+      ],
+      "compose": {
+        "exists": true,
+        "class": "other",
+        "pids": [
+          "TS0601_watervalve",
+          "TS0601",
+          "SWV-ZN",
+          "SWV-ZNE",
+          "SWV-ZFE",
+          "SWV-ZNU",
+          "SWV-ZFU",
+          "SWV-ZF2"
+        ],
+        "pidMatch": [
+          "TS0601"
+        ],
+        "endpointCount": 1,
+        "hasEf00": true,
+        "hasIas": false,
+        "batteries": [
+          "AA"
+        ],
+        "capabilities": [
+          "onoff",
+          "meter_water",
+          "measure_temperature",
+          "alarm_water",
+          "measure_battery",
+          "button.1"
+        ]
+      },
+      "gaps": []
+    },
+    {
+      "id": "p2442-kaflzta4-ts004f-smart-knob",
+      "driver": "smart_knob",
+      "protocol": "zcl",
+      "mfrs": [
+        "_TZ3000_kaflzta4",
+        "_tz3000_kaflzta4"
+      ],
+      "pids": [
+        "TS004F"
+      ],
+      "forbidden": [
+        "button_wireless_1",
+        "button_wireless_4",
+        "scene_switch_4"
+      ],
+      "notes": "Homey diag a342c411 — 1-btn TS004F scene remote on smart_knob; force 0x8004 event even when mfr ABSENT at wake (P2439/P2442).",
+      "sources": [
+        "gmail_diag_a342c411",
+        "Johan#1365",
+        "Z2M_TS004F_event"
+      ],
+      "retailNames": [],
+      "z2mPids": [],
+      "z2mHit": false,
+      "compound": [
+        {
+          "key": "_TZ3000_kaflzta4|TS004F",
+          "driver": "smart_knob",
+          "protocol": "zcl",
+          "dp": null,
+          "notes": "P2439 Johan #1365 / diag a342c411 — 1-endpoint TS004F scene button; force event 0x8004 (not rotary knob)",
+          "powerSource": null
+        }
+      ],
+      "compose": {
+        "exists": true,
+        "class": "button",
+        "pids": [
+          "TS004F",
+          "ERS-10TZBVK-AA",
+          "ZG-101ZD",
+          "ZG-101Z"
+        ],
+        "pidMatch": [
+          "TS004F"
+        ],
+        "endpointCount": 1,
+        "hasEf00": false,
+        "hasIas": false,
+        "batteries": [
+          "CR2032"
+        ],
+        "capabilities": [
+          "button",
+          "button.rotate_left",
+          "button.rotate_right",
+          "dim",
+          "measure_battery",
+          "button.1"
+        ]
+      },
+      "gaps": []
+    },
+    {
+      "id": "p2441-miamo-icka1clh-am43-curtain",
+      "driver": "curtain_motor",
+      "protocol": "tuya_ef00",
+      "mfrs": [
+        "_TZE200_icka1clh",
+        "_tze200_icka1clh",
+        "_TZE200_ICKA1CLH",
+        "_tze200_ICKA1CLH",
+        "_TZE204_icka1clh",
+        "_tze204_icka1clh",
+        "_TZE204_ICKA1CLH",
+        "_TZE200_zah67ekd"
+      ],
+      "pids": [
+        "TS0601",
+        "AM43-0.45/40-ES-EB",
+        "AM43-0.45/40-ES-EZ"
+      ],
+      "forbidden": [
+        "curtain_motor_shutter",
+        "curtain_motor_tilt",
+        "climate_sensor",
+        "soil_sensor",
+        "zigbee_universal",
+        "generic_tuya"
+      ],
+      "notes": "P2445: one mfr → many verified pids (TS0601 + AM43 retail variants). Z2M cover_4. Strip tilt/shutter dual-home. Never invent TS0301/TS0726 for icka1clh.",
+      "sources": [
+        "forum_T140352_2229",
+        "Z2M_20977",
+        "P2441",
+        "P2445"
+      ],
+      "retailNames": [],
+      "z2mPids": [
+        "TS0601"
+      ],
+      "z2mHit": true,
+      "compound": [],
+      "compose": {
+        "exists": true,
+        "class": "windowcoverings",
+        "pids": [
+          "01MINIZB",
+          "AM02",
+          "AM43-0.45/40-ES-EB",
+          "AM43-0.45/40-ES-EZ",
+          "BASICZBR3",
+          "DS421",
+          "DS82",
+          "E1757",
+          "FYRTUR",
+          "KADRILJ",
+          "lumi.curtain",
+          "lumi.curtain.acn002",
+          "lumi.curtain.hagl04",
+          "S26R2ZB",
+          "S31ZB",
+          "TS0001",
+          "TS0001_power",
+          "TS0001_switch",
+          "TS0001_switch_module",
+          "TS000F",
+          "TS0011",
+          "TS0012",
+          "TS0014",
+          "TS0101",
+          "TS0111",
+          "TS011F",
+          "TS0301",
+          "TS0302",
+          "TS030F",
+          "TS0601",
+          "TS0601_generic",
+          "TS0603",
+          "TS0726",
+          "TS110E",
+          "TS130F",
+          "TS4100",
+          "ZBCurtain",
+          "ZBM5-1C-120",
+          "ZBM5-2C-120",
+          "ZBM5-3C-120",
+          "ZBMINI",
+          "ZBMINIL2",
+          "ZBMINIL2-R2",
+          "ZBMINIR",
+          "ZBMINIR2",
+          "ZBMINIR2-R2",
+          "ZG-301Z",
+          "ZG-302Z1"
+        ],
+        "pidMatch": [
+          "TS0601",
+          "AM43-0.45/40-ES-EB",
+          "AM43-0.45/40-ES-EZ"
+        ],
+        "endpointCount": 1,
+        "hasEf00": true,
+        "hasIas": false,
+        "batteries": [
+          "OTHER"
+        ],
+        "capabilities": [
+          "windowcoverings_state",
+          "windowcoverings_set",
+          "windowcoverings_tilt_set",
+          "measure_luminance",
+          "measure_battery",
+          "button",
+          "dim",
+          "button.1"
+        ]
+      },
+      "gaps": [
+        "no_compound_db_key"
+      ]
+    },
+    {
+      "id": "p2456-ptjcjise-ts0002-wall-2gang",
+      "driver": "wall_switch_2gang_1way",
+      "protocol": "zcl",
+      "mfrs": [
+        "_TZ3000_ptjcjise",
+        "_tz3000_ptjcjise"
+      ],
+      "pids": [
+        "TS0002"
+      ],
+      "forbidden": [
+        "switch_2gang",
+        "switch_2_gang",
+        "switch_1gang",
+        "wall_switch_1gang_1way",
+        "button_wireless_1",
+        "button_wireless_2"
+      ],
+      "notes": "migueleap #543 — interview locks TS0002 2-gang EP1/EP2; onoff/onoff.gang2 only. Ignore comment TS0001 invent.",
+      "sources": [],
+      "retailNames": [],
+      "z2mPids": [],
+      "z2mHit": false,
+      "compound": [
+        {
+          "key": "_TZ3000_ptjcjise|TS0002",
+          "driver": "wall_switch_2gang_1way",
+          "protocol": "zcl",
+          "dp": null,
+          "notes": "P2456 GH#543 Moes wired EP1/EP2 — not switch_2gang button clutter",
+          "powerSource": "mains"
+        },
+        {
+          "key": "_tz3000_ptjcjise|TS0002",
+          "driver": "wall_switch_2gang_1way",
+          "protocol": "zcl",
+          "dp": null,
+          "notes": "P2456 GH#543 Moes wired EP1/EP2 — not switch_2gang button clutter",
+          "powerSource": "mains"
+        }
+      ],
+      "compose": {
+        "exists": true,
+        "class": "socket",
+        "pids": [
+          "TS0002",
+          "TS0012",
+          "TS0042"
+        ],
+        "pidMatch": [
+          "TS0002"
+        ],
+        "endpointCount": 2,
+        "hasEf00": false,
+        "hasIas": false,
+        "batteries": [],
+        "capabilities": [
+          "onoff",
+          "onoff.gang2"
+        ]
+      },
+      "gaps": [
+        "no_sources",
+        "not_in_local_z2m_fps"
+      ]
+    },
+    {
+      "id": "p2455-l9brjwau-ts0002-wall-2gang",
+      "driver": "wall_switch_2gang_1way",
+      "protocol": "zcl",
+      "mfrs": [
+        "_TZ3000_l9brjwau",
+        "_tz3000_l9brjwau"
+      ],
+      "pids": [
+        "TS0002"
+      ],
+      "forbidden": [
+        "switch_2gang",
+        "switch_2_gang",
+        "switch_1gang",
+        "wall_switch_1gang_1way",
+        "button_wireless_2"
+      ],
+      "notes": "migueleap #544 — wired BSEED 2-gang; onoff/onoff.gang2 only; no button tiles / secondSwitch",
+      "sources": [],
+      "retailNames": [],
+      "z2mPids": [],
+      "z2mHit": false,
+      "compound": [
+        {
+          "key": "_TZ3000_l9brjwau|TS0002",
+          "driver": "wall_switch_2gang_1way",
+          "protocol": "zcl",
+          "dp": null,
+          "notes": "P2455 GH#544 BSEED wired EP1/EP2 — not switch_2gang button clutter",
+          "powerSource": "mains"
+        },
+        {
+          "key": "_tz3000_l9brjwau|TS0002",
+          "driver": "wall_switch_2gang_1way",
+          "protocol": "zcl",
+          "dp": null,
+          "notes": "P2455 GH#544 BSEED wired EP1/EP2 — not switch_2gang button clutter",
+          "powerSource": "mains"
+        }
+      ],
+      "compose": {
+        "exists": true,
+        "class": "socket",
+        "pids": [
+          "TS0002",
+          "TS0012",
+          "TS0042"
+        ],
+        "pidMatch": [
+          "TS0002"
+        ],
+        "endpointCount": 2,
+        "hasEf00": false,
+        "hasIas": false,
+        "batteries": [],
+        "capabilities": [
+          "onoff",
+          "onoff.gang2"
+        ]
+      },
+      "gaps": [
+        "no_sources",
+        "not_in_local_z2m_fps"
+      ]
+    },
+    {
+      "id": "p2460-ysdv91bk-ts0001-wall-1gang",
+      "driver": "wall_switch_1gang_1way",
+      "protocol": "zcl",
+      "mfrs": [
+        "_TZ3000_ysdv91bk",
+        "_tz3000_ysdv91bk"
+      ],
+      "pids": [
+        "TS0001"
+      ],
+      "forbidden": [
+        "switch_1gang",
+        "wall_switch_2gang_1way",
+        "generic_tuya",
+        "zigbee_universal"
+      ],
+      "notes": "P2460 GH#545 interview clusters [0,3,4,5,6,57344,57345] → wall_switch_1gang_1way (not metering switch_1gang)",
+      "sources": [],
+      "retailNames": [],
+      "z2mPids": [],
+      "z2mHit": false,
+      "compound": [
+        {
+          "key": "_TZ3000_ysdv91bk|TS0001",
+          "driver": "wall_switch_1gang_1way",
+          "protocol": "zcl",
+          "dp": null,
+          "notes": "P2460 GH#545 BSEED 1G ZCL Identify+E000/E001 — not metering switch_1gang",
+          "powerSource": "mains"
+        },
+        {
+          "key": "_tz3000_ysdv91bk|TS0001",
+          "driver": "wall_switch_1gang_1way",
+          "protocol": "zcl",
+          "dp": null,
+          "notes": "P2460 GH#545",
+          "powerSource": "mains"
+        }
+      ],
+      "compose": {
+        "exists": true,
+        "class": "socket",
+        "pids": [
+          "TS0001",
+          "TS0011",
+          "TS0601",
+          "TS011F",
+          "TS0002",
+          "TS0003",
+          "TS0726"
+        ],
+        "pidMatch": [
+          "TS0001"
+        ],
+        "endpointCount": 1,
+        "hasEf00": false,
+        "hasIas": false,
+        "batteries": [],
+        "capabilities": [
+          "onoff"
+        ]
+      },
+      "gaps": [
+        "no_sources",
+        "not_in_local_z2m_fps"
+      ]
+    },
+    {
+      "id": "p2452-enmfaave-ts0004-switch-4gang-no-button-bloat",
+      "driver": "switch_4gang",
+      "protocol": "zcl",
+      "mfrs": [
+        "_TZ3000_enmfaave",
+        "_tz3000_enmfaave"
+      ],
+      "pids": [
+        "TS0004"
+      ],
+      "forbidden": [],
+      "notes": "P2452 GH#541 pairing OK via ZCL endpoints; strip phantom button.* caps",
+      "sources": [],
+      "retailNames": [],
+      "z2mPids": [],
+      "z2mHit": false,
+      "compound": [
+        {
+          "key": "_TZ3000_enmfaave|TS0004",
+          "driver": "switch_4gang",
+          "protocol": "zcl",
+          "dp": null,
+          "notes": "P2435 GH#541 ZCL 4-gang; no EF00 required on compose",
+          "powerSource": "mains"
+        },
+        {
+          "key": "_tz3000_enmfaave|TS0004",
+          "driver": "switch_4gang",
+          "protocol": "zcl",
+          "dp": null,
+          "notes": "P2435 GH#541 ZCL 4-gang; no EF00 required on compose",
+          "powerSource": "mains"
+        }
+      ],
+      "compose": {
+        "exists": true,
+        "class": "socket",
+        "pids": [
+          "01MINIZB",
+          "BASICZBR3",
+          "JZ-ZB-004",
+          "S26R2ZB",
+          "S31ZB",
+          "TS0001",
+          "TS0001_power",
+          "TS0001_switch",
+          "TS0001_switch_module",
+          "TS0002",
+          "TS0003",
+          "TS0004",
+          "TS0004_power",
+          "TS0004_switch_module",
+          "TS000F",
+          "TS0011",
+          "TS0012",
+          "TS0014",
+          "TS0041",
+          "TS0101",
+          "TS0111",
+          "TS011F",
+          "TS0203",
+          "TS0215A",
+          "TS0601",
+          "TS0726",
+          "TS110E",
+          "TS130F",
+          "TS4100",
+          "ZBM5-1C-120",
+          "ZBM5-2C-120",
+          "ZBM5-3C-120",
+          "ZBMINI",
+          "ZBMINIL2",
+          "ZBMINIL2-R2",
+          "ZBMINIR",
+          "ZBMINIR2",
+          "ZBMINIR2-R2",
+          "TS0006"
+        ],
+        "pidMatch": [
+          "TS0004"
+        ],
+        "endpointCount": 4,
+        "hasEf00": false,
+        "hasIas": false,
+        "batteries": [],
+        "capabilities": [
+          "onoff",
+          "onoff.gang2",
+          "onoff.gang3",
+          "onoff.gang4",
+          "measure_power",
+          "power_on_behavior"
+        ]
+      },
+      "gaps": [
+        "no_sources",
+        "not_in_local_z2m_fps"
+      ]
+    },
+    {
+      "id": "p2435-xk5udnd6-ts0012-wall-switch",
+      "driver": "wall_switch_2gang_1way",
+      "protocol": "zcl",
+      "mfrs": [
+        "_TZ3000_xk5udnd6",
+        "_tz3000_xk5udnd6",
+        "_TZ3000_XK5UDND6"
+      ],
+      "pids": [
+        "TS0012"
+      ],
+      "forbidden": [
+        "water_leak_sensor",
+        "water_leak_sensor_tuya",
+        "switch_4gang",
+        "wall_switch_3gang_1way"
+      ],
+      "notes": "P2435 GH#542 — mfs top-level wrongly routed to water_leak_sensor",
+      "sources": [],
+      "retailNames": [],
+      "z2mPids": [],
+      "z2mHit": false,
+      "compound": [
+        {
+          "key": "_TZ3000_xk5udnd6|TS0012",
+          "driver": "wall_switch_2gang_1way",
+          "protocol": "zcl",
+          "dp": null,
+          "notes": "P2435/P2463 GH#542 — relay onoff only; never invent button.N / water_leak",
+          "powerSource": "mains"
+        },
+        {
+          "key": "_tz3000_xk5udnd6|TS0012",
+          "driver": "wall_switch_2gang_1way",
+          "protocol": "zcl",
+          "dp": null,
+          "notes": "P2463 GH#542",
+          "powerSource": "mains"
+        },
+        {
+          "key": "_TZ3000_XK5UDND6|TS0012",
+          "driver": "wall_switch_2gang_1way",
+          "protocol": "zcl",
+          "dp": null,
+          "notes": "P2463 GH#542",
+          "powerSource": "mains"
+        }
+      ],
+      "compose": {
+        "exists": true,
+        "class": "socket",
+        "pids": [
+          "TS0002",
+          "TS0012",
+          "TS0042"
+        ],
+        "pidMatch": [
+          "TS0012"
+        ],
+        "endpointCount": 2,
+        "hasEf00": false,
+        "hasIas": false,
+        "batteries": [],
+        "capabilities": [
+          "onoff",
+          "onoff.gang2"
+        ]
+      },
+      "gaps": [
+        "no_sources",
+        "not_in_local_z2m_fps"
+      ]
+    },
     {
       "id": "eduard-martirosyan-tze284-fodv6bkr-curtain",
       "driver": "curtain_motor",
@@ -318,12 +1303,21 @@
         "exists": true,
         "class": "sensor",
         "pids": [
-          "TS0601",
+          "AY-204ZX",
+          "AY204T",
+          "AY205Z",
+          "AY208Z",
           "CK-BL702-MWS-01",
           "CK-BL702-MWS-01(7016)",
           "CK-TLSR8656-SS5-01(7014)",
           "EDM-1ZBA-EU",
           "Excellux",
+          "hobeian",
+          "Hobeian",
+          "HOBEIAN",
+          "lumi.sensor_ht",
+          "lumi.sensor_ht.agl02",
+          "lumi.weather",
           "MG1_5RZ",
           "RH3052",
           "SM0201",
@@ -335,13 +1329,16 @@
           "TRI-C1ZR",
           "TRI-K1ZR",
           "TS0004",
+          "TS0045",
           "TS004F",
           "TS0201",
           "TS0202",
           "TS0203",
           "TS0215A",
           "TS0222",
+          "TS0225",
           "TS0501B",
+          "TS0601",
           "TS0601_wirelesssw",
           "TS110E",
           "TS1201",
@@ -355,23 +1352,15 @@
           "ZG-204ZK",
           "ZG-204ZL",
           "ZG-204ZM",
+          "ZG-204ZP",
           "ZG-204ZQ",
           "ZG-204ZV",
+          "ZG-204ZX",
           "ZG-205Z",
           "ZG-205ZL",
           "ZG-302ZL",
           "ZG-302ZM",
-          "ZP-301Z",
-          "lumi.sensor_ht",
-          "lumi.sensor_ht.agl02",
-          "lumi.weather",
-          "TS0045",
-          "TS0225",
-          "AY208Z",
-          "AY205Z",
-          "ZG-204ZX",
-          "AY204T",
-          "AY-204ZX"
+          "ZP-301Z"
         ],
         "pidMatch": [
           "TS0601"
@@ -379,14 +1368,7 @@
         "endpointCount": 1,
         "hasEf00": true,
         "hasIas": false,
-        "batteries": [
-          "CR2032",
-          "CR2450",
-          "AAA",
-          "AA",
-          "CR123A",
-          "INTERNAL"
-        ],
+        "batteries": [],
         "capabilities": [
           "alarm_motion",
           "measure_luminance",
@@ -394,12 +1376,12 @@
           "measure_humidity",
           "alarm_human",
           "onoff",
-          "measure_battery",
           "measure_luminance.distance",
           "alarm_motion.zone1",
           "alarm_motion.zone2",
           "alarm_motion.zone3",
-          "measure_luminance.distance.zone1"
+          "measure_luminance.distance.zone1",
+          "measure_luminance.distance.zone2"
         ]
       },
       "gaps": [
@@ -460,27 +1442,30 @@
         "exists": true,
         "class": "sensor",
         "pids": [
+          "_tz3000_eit6l5",
+          "_tz3000_kyb656no",
           "3315-S",
           "3315-Seu",
           "CK-TLSR8656-SS5-01(7019)",
+          "hobeian",
+          "Hobeian",
+          "HOBEIAN",
           "HS1WL",
           "LS21001",
+          "lumi.sensor_wleak.aq1",
+          "q9mpfhw",
+          "RH3001",
           "SJCGQ11LM",
           "SJCGQ12LM",
           "SJCGQ13LM",
           "SNZB-05",
           "SNZB-05P",
           "SQ510A",
+          "TS0201",
           "TS0207",
+          "TS0601",
           "ZG-222Z",
           "ZG-222ZA",
-          "_tz3000_eit6l5",
-          "_tz3000_kyb656no",
-          "lumi.sensor_wleak.aq1",
-          "q9mpfhw",
-          "RH3001",
-          "TS0201",
-          "TS0601",
           "ZG-226Z"
         ],
         "pidMatch": [
@@ -761,17 +1746,21 @@
         "class": "socket",
         "pids": [
           "ZG-305Z",
+          "hobeian",
+          "Hobeian",
+          "HOBEIAN",
           "TS0002",
-          "TS0012",
           "TS0002_power",
           "TS0002_switch_module",
-          "ZG-302Z2",
-          "TS011F",
           "TS0003",
-          "TS0013",
-          "TS0726",
           "TS000F",
-          "TS0601"
+          "TS0012",
+          "TS0013",
+          "TS011F",
+          "TS0601",
+          "TS0726",
+          "ZG-301Z-2CH",
+          "ZG-302Z2"
         ],
         "pidMatch": [
           "TS0002"
@@ -908,31 +1897,45 @@
         "exists": true,
         "class": "sensor",
         "pids": [
-          "TS0601",
           "0x8040",
           "Arteco",
           "BASICZBR3",
-          "BSP-EZ2",
-          "BSP-FZ2",
           "Battery switch, 1 button",
           "Battery switch, 2 buttons",
+          "BSP-EZ2",
+          "BSP-FZ2",
           "CK-TLSR8656-SS5-01(7014)",
           "CS-201Z",
+          "eT093WRG",
+          "eT093WRO",
+          "eTRV0100",
+          "eTRV0101",
+          "eTRV0103",
+          "hobeian",
+          "Hobeian",
+          "HOBEIAN",
+          "lumi.sensor_ht",
+          "lumi.sensor_ht.agl02",
+          "lumi.weather",
           "RH3052",
           "S26R2ZB",
           "S31ZB",
           "S40ZBTPB",
+          "SG502Z",
+          "SGS02Z",
           "SM0201",
           "TH01",
           "THS317-ET",
           "TRV001",
           "TRV003",
+          "TS0001",
           "TS0026",
           "TS0052",
           "TS0105",
           "TS0202",
           "TS0222",
           "TS0224",
+          "TS0601",
           "TS0901",
           "TS1201",
           "WSDCGQ01LM",
@@ -941,18 +1944,7 @@
           "ZBMINI",
           "ZBMINIL2",
           "ZG-303Z",
-          "ZIGSTAR",
-          "eT093WRG",
-          "eT093WRO",
-          "eTRV0100",
-          "eTRV0101",
-          "eTRV0103",
-          "lumi.sensor_ht",
-          "lumi.sensor_ht.agl02",
-          "lumi.weather",
-          "SGS02Z",
-          "SG502Z",
-          "TS0001"
+          "ZIGSTAR"
         ],
         "pidMatch": [
           "TS0601"
@@ -1126,12 +2118,21 @@
         "exists": true,
         "class": "sensor",
         "pids": [
-          "TS0601",
+          "AY-204ZX",
+          "AY204T",
+          "AY205Z",
+          "AY208Z",
           "CK-BL702-MWS-01",
           "CK-BL702-MWS-01(7016)",
           "CK-TLSR8656-SS5-01(7014)",
           "EDM-1ZBA-EU",
           "Excellux",
+          "hobeian",
+          "Hobeian",
+          "HOBEIAN",
+          "lumi.sensor_ht",
+          "lumi.sensor_ht.agl02",
+          "lumi.weather",
           "MG1_5RZ",
           "RH3052",
           "SM0201",
@@ -1143,13 +2144,16 @@
           "TRI-C1ZR",
           "TRI-K1ZR",
           "TS0004",
+          "TS0045",
           "TS004F",
           "TS0201",
           "TS0202",
           "TS0203",
           "TS0215A",
           "TS0222",
+          "TS0225",
           "TS0501B",
+          "TS0601",
           "TS0601_wirelesssw",
           "TS110E",
           "TS1201",
@@ -1163,23 +2167,15 @@
           "ZG-204ZK",
           "ZG-204ZL",
           "ZG-204ZM",
+          "ZG-204ZP",
           "ZG-204ZQ",
           "ZG-204ZV",
+          "ZG-204ZX",
           "ZG-205Z",
           "ZG-205ZL",
           "ZG-302ZL",
           "ZG-302ZM",
-          "ZP-301Z",
-          "lumi.sensor_ht",
-          "lumi.sensor_ht.agl02",
-          "lumi.weather",
-          "TS0045",
-          "TS0225",
-          "AY208Z",
-          "AY205Z",
-          "ZG-204ZX",
-          "AY204T",
-          "AY-204ZX"
+          "ZP-301Z"
         ],
         "pidMatch": [
           "TS0601"
@@ -1187,14 +2183,7 @@
         "endpointCount": 1,
         "hasEf00": true,
         "hasIas": false,
-        "batteries": [
-          "CR2032",
-          "CR2450",
-          "AAA",
-          "AA",
-          "CR123A",
-          "INTERNAL"
-        ],
+        "batteries": [],
         "capabilities": [
           "alarm_motion",
           "measure_luminance",
@@ -1202,12 +2191,12 @@
           "measure_humidity",
           "alarm_human",
           "onoff",
-          "measure_battery",
           "measure_luminance.distance",
           "alarm_motion.zone1",
           "alarm_motion.zone2",
           "alarm_motion.zone3",
-          "measure_luminance.distance.zone1"
+          "measure_luminance.distance.zone1",
+          "measure_luminance.distance.zone2"
         ]
       },
       "gaps": []
@@ -1375,15 +2364,13 @@
           "ZBMINIR",
           "ZBMINIR2",
           "ZBMINIR2-R2",
-          "ZG-301Z",
-          "ZG-302Z1",
           "TS0006"
         ],
         "pidMatch": [
           "TS0004"
         ],
         "endpointCount": 4,
-        "hasEf00": true,
+        "hasEf00": false,
         "hasIas": false,
         "batteries": [],
         "capabilities": [
@@ -1392,13 +2379,7 @@
           "onoff.gang3",
           "onoff.gang4",
           "measure_power",
-          "power_on_behavior",
-          "button.toggle_1",
-          "button.toggle_2",
-          "button.toggle_3",
-          "button.toggle_4",
-          "button.identify",
-          "button.1"
+          "power_on_behavior"
         ]
       },
       "gaps": []
@@ -1912,31 +2893,45 @@
         "exists": true,
         "class": "sensor",
         "pids": [
-          "TS0601",
           "0x8040",
           "Arteco",
           "BASICZBR3",
-          "BSP-EZ2",
-          "BSP-FZ2",
           "Battery switch, 1 button",
           "Battery switch, 2 buttons",
+          "BSP-EZ2",
+          "BSP-FZ2",
           "CK-TLSR8656-SS5-01(7014)",
           "CS-201Z",
+          "eT093WRG",
+          "eT093WRO",
+          "eTRV0100",
+          "eTRV0101",
+          "eTRV0103",
+          "hobeian",
+          "Hobeian",
+          "HOBEIAN",
+          "lumi.sensor_ht",
+          "lumi.sensor_ht.agl02",
+          "lumi.weather",
           "RH3052",
           "S26R2ZB",
           "S31ZB",
           "S40ZBTPB",
+          "SG502Z",
+          "SGS02Z",
           "SM0201",
           "TH01",
           "THS317-ET",
           "TRV001",
           "TRV003",
+          "TS0001",
           "TS0026",
           "TS0052",
           "TS0105",
           "TS0202",
           "TS0222",
           "TS0224",
+          "TS0601",
           "TS0901",
           "TS1201",
           "WSDCGQ01LM",
@@ -1945,18 +2940,7 @@
           "ZBMINI",
           "ZBMINIL2",
           "ZG-303Z",
-          "ZIGSTAR",
-          "eT093WRG",
-          "eT093WRO",
-          "eTRV0100",
-          "eTRV0101",
-          "eTRV0103",
-          "lumi.sensor_ht",
-          "lumi.sensor_ht.agl02",
-          "lumi.weather",
-          "SGS02Z",
-          "SG502Z",
-          "TS0001"
+          "ZIGSTAR"
         ],
         "pidMatch": [
           "ZG-303Z"
@@ -2028,31 +3012,45 @@
         "exists": true,
         "class": "sensor",
         "pids": [
-          "TS0601",
           "0x8040",
           "Arteco",
           "BASICZBR3",
-          "BSP-EZ2",
-          "BSP-FZ2",
           "Battery switch, 1 button",
           "Battery switch, 2 buttons",
+          "BSP-EZ2",
+          "BSP-FZ2",
           "CK-TLSR8656-SS5-01(7014)",
           "CS-201Z",
+          "eT093WRG",
+          "eT093WRO",
+          "eTRV0100",
+          "eTRV0101",
+          "eTRV0103",
+          "hobeian",
+          "Hobeian",
+          "HOBEIAN",
+          "lumi.sensor_ht",
+          "lumi.sensor_ht.agl02",
+          "lumi.weather",
           "RH3052",
           "S26R2ZB",
           "S31ZB",
           "S40ZBTPB",
+          "SG502Z",
+          "SGS02Z",
           "SM0201",
           "TH01",
           "THS317-ET",
           "TRV001",
           "TRV003",
+          "TS0001",
           "TS0026",
           "TS0052",
           "TS0105",
           "TS0202",
           "TS0222",
           "TS0224",
+          "TS0601",
           "TS0901",
           "TS1201",
           "WSDCGQ01LM",
@@ -2061,18 +3059,7 @@
           "ZBMINI",
           "ZBMINIL2",
           "ZG-303Z",
-          "ZIGSTAR",
-          "eT093WRG",
-          "eT093WRO",
-          "eTRV0100",
-          "eTRV0101",
-          "eTRV0103",
-          "lumi.sensor_ht",
-          "lumi.sensor_ht.agl02",
-          "lumi.weather",
-          "SGS02Z",
-          "SG502Z",
-          "TS0001"
+          "ZIGSTAR"
         ],
         "pidMatch": [
           "TS0601",
@@ -2161,6 +3148,12 @@
           "CK-BL702-MWS-01",
           "CK-BL702-MWS-01(7016)",
           "CK-TLSR8656-SS5-01(7014)",
+          "hobeian",
+          "Hobeian",
+          "HOBEIAN",
+          "lumi.sensor_ht",
+          "lumi.sensor_ht.agl02",
+          "lumi.weather",
           "MG1_5RZ",
           "RH3052",
           "S26R2ZB",
@@ -2184,15 +3177,19 @@
           "TS0004",
           "TS0011",
           "TS0101",
+          "TS0201",
           "TS0202",
           "TS0215A",
           "TS0222",
+          "ts0601",
+          "TS0601",
           "TS0601_air_purifier",
           "TS0601_wirelesssw",
           "TS0726",
           "TS110E",
           "TS1201",
           "TS4100",
+          "TY0201",
           "WSDCGQ01LM",
           "WSDCGQ11LM",
           "WSDCGQ12LM",
@@ -2207,14 +3204,7 @@
           "ZBMINIR2-R2",
           "ZG-227Z",
           "ZG-227ZL",
-          "ZP-301Z",
-          "lumi.sensor_ht",
-          "lumi.sensor_ht.agl02",
-          "lumi.weather",
-          "ts0601",
-          "TS0201",
-          "TY0201",
-          "TS0601"
+          "ZP-301Z"
         ],
         "pidMatch": [
           "ZG-227Z",
@@ -2401,12 +3391,21 @@
         "exists": true,
         "class": "sensor",
         "pids": [
-          "TS0601",
+          "AY-204ZX",
+          "AY204T",
+          "AY205Z",
+          "AY208Z",
           "CK-BL702-MWS-01",
           "CK-BL702-MWS-01(7016)",
           "CK-TLSR8656-SS5-01(7014)",
           "EDM-1ZBA-EU",
           "Excellux",
+          "hobeian",
+          "Hobeian",
+          "HOBEIAN",
+          "lumi.sensor_ht",
+          "lumi.sensor_ht.agl02",
+          "lumi.weather",
           "MG1_5RZ",
           "RH3052",
           "SM0201",
@@ -2418,13 +3417,16 @@
           "TRI-C1ZR",
           "TRI-K1ZR",
           "TS0004",
+          "TS0045",
           "TS004F",
           "TS0201",
           "TS0202",
           "TS0203",
           "TS0215A",
           "TS0222",
+          "TS0225",
           "TS0501B",
+          "TS0601",
           "TS0601_wirelesssw",
           "TS110E",
           "TS1201",
@@ -2438,23 +3440,15 @@
           "ZG-204ZK",
           "ZG-204ZL",
           "ZG-204ZM",
+          "ZG-204ZP",
           "ZG-204ZQ",
           "ZG-204ZV",
+          "ZG-204ZX",
           "ZG-205Z",
           "ZG-205ZL",
           "ZG-302ZL",
           "ZG-302ZM",
-          "ZP-301Z",
-          "lumi.sensor_ht",
-          "lumi.sensor_ht.agl02",
-          "lumi.weather",
-          "TS0045",
-          "TS0225",
-          "AY208Z",
-          "AY205Z",
-          "ZG-204ZX",
-          "AY204T",
-          "AY-204ZX"
+          "ZP-301Z"
         ],
         "pidMatch": [
           "ZG-204Z",
@@ -2469,19 +3463,13 @@
           "ZG-205ZL",
           "ZG-302ZM",
           "ZG-302ZL",
-          "ZG-204ZX"
+          "ZG-204ZX",
+          "ZG-204ZP"
         ],
         "endpointCount": 1,
         "hasEf00": true,
         "hasIas": false,
-        "batteries": [
-          "CR2032",
-          "CR2450",
-          "AAA",
-          "AA",
-          "CR123A",
-          "INTERNAL"
-        ],
+        "batteries": [],
         "capabilities": [
           "alarm_motion",
           "measure_luminance",
@@ -2489,12 +3477,12 @@
           "measure_humidity",
           "alarm_human",
           "onoff",
-          "measure_battery",
           "measure_luminance.distance",
           "alarm_motion.zone1",
           "alarm_motion.zone2",
           "alarm_motion.zone3",
-          "measure_luminance.distance.zone1"
+          "measure_luminance.distance.zone1",
+          "measure_luminance.distance.zone2"
         ]
       },
       "gaps": []
@@ -2818,6 +3806,9 @@
         "pids": [
           "01MINIZB",
           "BASICZBR3",
+          "hobeian",
+          "Hobeian",
+          "HOBEIAN",
           "JZ-ZB-004",
           "S26R2ZB",
           "S31ZB",
@@ -2860,8 +3851,6 @@
           "ZBMINIR",
           "ZBMINIR2",
           "ZBMINIR2-R2",
-          "ZG-301Z",
-          "ZG-302Z1",
           "ZG-302Z3"
         ],
         "pidMatch": [
@@ -2918,7 +3907,7 @@
           "driver": "smart_knob",
           "protocol": "zcl",
           "dp": null,
-          "notes": "YSR-MINI-Z scene/dim remote; not mains 1-gang",
+          "notes": "P2448 ZG-101ZD / YSR-MINI-Z rotary; command/dimmer — not mains 1-gang",
           "powerSource": "battery"
         },
         {
@@ -2935,7 +3924,9 @@
         "class": "button",
         "pids": [
           "TS004F",
-          "ERS-10TZBVK-AA"
+          "ERS-10TZBVK-AA",
+          "ZG-101ZD",
+          "ZG-101Z"
         ],
         "pidMatch": [
           "TS004F"
@@ -2948,6 +3939,8 @@
         ],
         "capabilities": [
           "button",
+          "button.rotate_left",
+          "button.rotate_right",
           "dim",
           "measure_battery",
           "button.1"
@@ -3036,11 +4029,12 @@
         "switch_wireless",
         "wall_switch_4_gang"
       ],
-      "notes": "z2m ERS-10TZBVK-AA smart knob (zigbeeModel ZG-101ZD, TS004F, CR2032). Battery rotary remote — never an energy meter, relay board or mains wall switch. power_meter also declares TS004F, so leaving it there is a live dual-claim.",
+      "notes": "z2m ERS-10TZBVK-AA smart knob (zigbeeModel ZG-101ZD, TS004F, CR2032). Battery rotary remote — never an energy meter, relay board or mains wall switch. power_meter also declares TS004F, so leaving it there is a live dual-claim. P2448: force command/dimmer 0x8004 (levelControl rotation); never scene catch-all.",
       "sources": [
         "z2m-herdsman",
         "johan-enrichment",
-        "P190"
+        "P190",
+        "P2448"
       ],
       "retailNames": [],
       "z2mPids": [
@@ -3053,7 +4047,7 @@
           "driver": "smart_knob",
           "protocol": "zcl",
           "dp": null,
-          "notes": "ERS-10TZBVK-AA / ZG-101ZD rotary; never power_meter",
+          "notes": "P2448 ERS-10TZBVK-AA / ZG-101ZD rotary; command/dimmer 0x8004; never power_meter",
           "powerSource": "battery"
         },
         {
@@ -3061,7 +4055,7 @@
           "driver": "smart_knob",
           "protocol": "zcl",
           "dp": null,
-          "notes": null,
+          "notes": "P2448 ERS-10 sibling; command/dimmer",
           "powerSource": "battery"
         }
       ],
@@ -3070,7 +4064,9 @@
         "class": "button",
         "pids": [
           "TS004F",
-          "ERS-10TZBVK-AA"
+          "ERS-10TZBVK-AA",
+          "ZG-101ZD",
+          "ZG-101Z"
         ],
         "pidMatch": [
           "TS004F"
@@ -3083,6 +4079,8 @@
         ],
         "capabilities": [
           "button",
+          "button.rotate_left",
+          "button.rotate_right",
           "dim",
           "measure_battery",
           "button.1"
@@ -3246,33 +4244,36 @@
         "class": "sensor",
         "pids": [
           "TS0203",
-          "ZG-102Z",
-          "ZG-102ZL",
+          "3300-S",
+          "3320-L",
+          "CK-TLSR8656-SS5-01(7003)",
+          "DoorWindow-Sensor-ZB3.0",
           "DS01",
-          "RH3001",
+          "E1603/E1702",
+          "Excellux",
+          "hobeian",
+          "Hobeian",
+          "HOBEIAN",
+          "lumi.magnet.ac01",
+          "lumi.magnet.agl02",
+          "lumi.sensor_magnet",
+          "lumi.sensor_magnet.aq2",
           "MCCGQ01LM",
           "MCCGQ11LM",
           "MCCGQ12LM",
           "MCCGQ14LM",
-          "lumi.sensor_magnet",
-          "lumi.sensor_magnet.aq2",
-          "lumi.magnet.ac01",
-          "lumi.magnet.agl02",
-          "E1603/E1702",
-          "TRADFRI open/close remote",
-          "3300-S",
-          "3320-L",
+          "MCT-340 E",
+          "q9mpfhw",
+          "RH3001",
           "SNZB-04",
           "SNZB-04P",
           "SNZB-04PR2",
-          "CK-TLSR8656-SS5-01(7003)",
           "SNZB-04R2",
+          "TRADFRI open/close remote",
           "TS0021",
-          "DoorWindow-Sensor-ZB3.0",
-          "MCT-340 E",
-          "Excellux",
           "TY0203",
-          "q9mpfhw"
+          "ZG-102Z",
+          "ZG-102ZL"
         ],
         "pidMatch": [
           "TS0203"
@@ -3707,9 +4708,7 @@
         "batteries": [],
         "capabilities": [
           "onoff",
-          "onoff.gang2",
-          "button.1",
-          "button.2"
+          "onoff.gang2"
         ]
       },
       "gaps": []
@@ -3771,9 +4770,7 @@
         "batteries": [],
         "capabilities": [
           "onoff",
-          "onoff.gang2",
-          "button.1",
-          "button.2"
+          "onoff.gang2"
         ]
       },
       "gaps": []
@@ -3835,9 +4832,7 @@
         "batteries": [],
         "capabilities": [
           "onoff",
-          "onoff.gang2",
-          "button.1",
-          "button.2"
+          "onoff.gang2"
         ]
       },
       "gaps": []
@@ -3890,22 +4885,20 @@
         "class": "socket",
         "pids": [
           "TS0003",
-          "TS0013"
+          "TS0013",
+          "TS0601"
         ],
         "pidMatch": [
           "TS0003"
         ],
         "endpointCount": 3,
-        "hasEf00": false,
+        "hasEf00": true,
         "hasIas": false,
         "batteries": [],
         "capabilities": [
           "onoff",
           "onoff.gang2",
-          "onoff.gang3",
-          "button.1",
-          "button.2",
-          "button.3"
+          "onoff.gang3"
         ]
       },
       "gaps": []
@@ -3953,22 +4946,20 @@
         "class": "socket",
         "pids": [
           "TS0003",
-          "TS0013"
+          "TS0013",
+          "TS0601"
         ],
         "pidMatch": [
           "TS0003"
         ],
         "endpointCount": 3,
-        "hasEf00": false,
+        "hasEf00": true,
         "hasIas": false,
         "batteries": [],
         "capabilities": [
           "onoff",
           "onoff.gang2",
-          "onoff.gang3",
-          "button.1",
-          "button.2",
-          "button.3"
+          "onoff.gang3"
         ]
       },
       "gaps": []
@@ -4015,22 +5006,20 @@
         "class": "socket",
         "pids": [
           "TS0003",
-          "TS0013"
+          "TS0013",
+          "TS0601"
         ],
         "pidMatch": [
           "TS0003"
         ],
         "endpointCount": 3,
-        "hasEf00": false,
+        "hasEf00": true,
         "hasIas": false,
         "batteries": [],
         "capabilities": [
           "onoff",
           "onoff.gang2",
-          "onoff.gang3",
-          "button.1",
-          "button.2",
-          "button.3"
+          "onoff.gang3"
         ]
       },
       "gaps": []
@@ -4077,22 +5066,20 @@
         "class": "socket",
         "pids": [
           "TS0003",
-          "TS0013"
+          "TS0013",
+          "TS0601"
         ],
         "pidMatch": [
           "TS0003"
         ],
         "endpointCount": 3,
-        "hasEf00": false,
+        "hasEf00": true,
         "hasIas": false,
         "batteries": [],
         "capabilities": [
           "onoff",
           "onoff.gang2",
-          "onoff.gang3",
-          "button.1",
-          "button.2",
-          "button.3"
+          "onoff.gang3"
         ]
       },
       "gaps": []
@@ -4141,22 +5128,20 @@
         "class": "socket",
         "pids": [
           "TS0003",
-          "TS0013"
+          "TS0013",
+          "TS0601"
         ],
         "pidMatch": [
           "TS0003"
         ],
         "endpointCount": 3,
-        "hasEf00": false,
+        "hasEf00": true,
         "hasIas": false,
         "batteries": [],
         "capabilities": [
           "onoff",
           "onoff.gang2",
-          "onoff.gang3",
-          "button.1",
-          "button.2",
-          "button.3"
+          "onoff.gang3"
         ]
       },
       "gaps": []
@@ -4205,22 +5190,20 @@
         "class": "socket",
         "pids": [
           "TS0003",
-          "TS0013"
+          "TS0013",
+          "TS0601"
         ],
         "pidMatch": [
           "TS0003"
         ],
         "endpointCount": 3,
-        "hasEf00": false,
+        "hasEf00": true,
         "hasIas": false,
         "batteries": [],
         "capabilities": [
           "onoff",
           "onoff.gang2",
-          "onoff.gang3",
-          "button.1",
-          "button.2",
-          "button.3"
+          "onoff.gang3"
         ]
       },
       "gaps": []
@@ -4267,22 +5250,20 @@
         "class": "socket",
         "pids": [
           "TS0003",
-          "TS0013"
+          "TS0013",
+          "TS0601"
         ],
         "pidMatch": [
           "TS0003"
         ],
         "endpointCount": 3,
-        "hasEf00": false,
+        "hasEf00": true,
         "hasIas": false,
         "batteries": [],
         "capabilities": [
           "onoff",
           "onoff.gang2",
-          "onoff.gang3",
-          "button.1",
-          "button.2",
-          "button.3"
+          "onoff.gang3"
         ]
       },
       "gaps": []
@@ -4348,12 +5329,9 @@
         "endpointCount": 1,
         "hasEf00": true,
         "hasIas": false,
-        "batteries": [
-          "CR2032"
-        ],
+        "batteries": [],
         "capabilities": [
           "onoff",
-          "measure_battery",
           "button.1",
           "button.2",
           "button.3",
@@ -4431,12 +5409,9 @@
         "endpointCount": 1,
         "hasEf00": true,
         "hasIas": false,
-        "batteries": [
-          "CR2032"
-        ],
+        "batteries": [],
         "capabilities": [
           "onoff",
-          "measure_battery",
           "button.1",
           "button.2",
           "button.3",
@@ -4782,12 +5757,21 @@
         "exists": true,
         "class": "sensor",
         "pids": [
-          "TS0601",
+          "AY-204ZX",
+          "AY204T",
+          "AY205Z",
+          "AY208Z",
           "CK-BL702-MWS-01",
           "CK-BL702-MWS-01(7016)",
           "CK-TLSR8656-SS5-01(7014)",
           "EDM-1ZBA-EU",
           "Excellux",
+          "hobeian",
+          "Hobeian",
+          "HOBEIAN",
+          "lumi.sensor_ht",
+          "lumi.sensor_ht.agl02",
+          "lumi.weather",
           "MG1_5RZ",
           "RH3052",
           "SM0201",
@@ -4799,13 +5783,16 @@
           "TRI-C1ZR",
           "TRI-K1ZR",
           "TS0004",
+          "TS0045",
           "TS004F",
           "TS0201",
           "TS0202",
           "TS0203",
           "TS0215A",
           "TS0222",
+          "TS0225",
           "TS0501B",
+          "TS0601",
           "TS0601_wirelesssw",
           "TS110E",
           "TS1201",
@@ -4819,23 +5806,15 @@
           "ZG-204ZK",
           "ZG-204ZL",
           "ZG-204ZM",
+          "ZG-204ZP",
           "ZG-204ZQ",
           "ZG-204ZV",
+          "ZG-204ZX",
           "ZG-205Z",
           "ZG-205ZL",
           "ZG-302ZL",
           "ZG-302ZM",
-          "ZP-301Z",
-          "lumi.sensor_ht",
-          "lumi.sensor_ht.agl02",
-          "lumi.weather",
-          "TS0045",
-          "TS0225",
-          "AY208Z",
-          "AY205Z",
-          "ZG-204ZX",
-          "AY204T",
-          "AY-204ZX"
+          "ZP-301Z"
         ],
         "pidMatch": [
           "TS0601"
@@ -4843,14 +5822,7 @@
         "endpointCount": 1,
         "hasEf00": true,
         "hasIas": false,
-        "batteries": [
-          "CR2032",
-          "CR2450",
-          "AAA",
-          "AA",
-          "CR123A",
-          "INTERNAL"
-        ],
+        "batteries": [],
         "capabilities": [
           "alarm_motion",
           "measure_luminance",
@@ -4858,12 +5830,12 @@
           "measure_humidity",
           "alarm_human",
           "onoff",
-          "measure_battery",
           "measure_luminance.distance",
           "alarm_motion.zone1",
           "alarm_motion.zone2",
           "alarm_motion.zone3",
-          "measure_luminance.distance.zone1"
+          "measure_luminance.distance.zone1",
+          "measure_luminance.distance.zone2"
         ]
       },
       "gaps": []
@@ -4982,8 +5954,6 @@
           "ZBMINIR",
           "ZBMINIR2",
           "ZBMINIR2-R2",
-          "ZG-301Z",
-          "ZG-302Z1",
           "lumi.plug.macn01",
           "lumi.plug.maeu01",
           "lumi.plug.mmeu01"
@@ -5179,33 +6149,36 @@
         "class": "sensor",
         "pids": [
           "TS0203",
-          "ZG-102Z",
-          "ZG-102ZL",
+          "3300-S",
+          "3320-L",
+          "CK-TLSR8656-SS5-01(7003)",
+          "DoorWindow-Sensor-ZB3.0",
           "DS01",
-          "RH3001",
+          "E1603/E1702",
+          "Excellux",
+          "hobeian",
+          "Hobeian",
+          "HOBEIAN",
+          "lumi.magnet.ac01",
+          "lumi.magnet.agl02",
+          "lumi.sensor_magnet",
+          "lumi.sensor_magnet.aq2",
           "MCCGQ01LM",
           "MCCGQ11LM",
           "MCCGQ12LM",
           "MCCGQ14LM",
-          "lumi.sensor_magnet",
-          "lumi.sensor_magnet.aq2",
-          "lumi.magnet.ac01",
-          "lumi.magnet.agl02",
-          "E1603/E1702",
-          "TRADFRI open/close remote",
-          "3300-S",
-          "3320-L",
+          "MCT-340 E",
+          "q9mpfhw",
+          "RH3001",
           "SNZB-04",
           "SNZB-04P",
           "SNZB-04PR2",
-          "CK-TLSR8656-SS5-01(7003)",
           "SNZB-04R2",
+          "TRADFRI open/close remote",
           "TS0021",
-          "DoorWindow-Sensor-ZB3.0",
-          "MCT-340 E",
-          "Excellux",
           "TY0203",
-          "q9mpfhw"
+          "ZG-102Z",
+          "ZG-102ZL"
         ],
         "pidMatch": [
           "TS0203"
@@ -5223,6 +6196,140 @@
           "measure_battery",
           "alarm_tamper",
           "measure_luminance",
+          "button.1"
+        ]
+      },
+      "gaps": []
+    },
+    {
+      "id": "p217-wing-zth-climate",
+      "driver": "climate_sensor",
+      "protocol": "zcl",
+      "mfrs": [
+        "Wing",
+        "wing",
+        "WING"
+      ],
+      "pids": [
+        "ZTH11-3.0",
+        "ZTH13-3.0"
+      ],
+      "forbidden": [
+        "contact_sensor",
+        "water_leak_sensor"
+      ],
+      "notes": "Wing climate ZTH siblings — same brand as TS0203 contact; never strip Wing from climate (P2440 prune false-positive).",
+      "sources": [
+        "P217_fork_harvest",
+        "P2440"
+      ],
+      "retailNames": [],
+      "z2mPids": [],
+      "z2mHit": false,
+      "compound": [
+        {
+          "key": "Wing|ZTH11-3.0",
+          "driver": "climate_sensor",
+          "protocol": "zcl",
+          "dp": null,
+          "notes": "Wing ZTH11-3.0 temp/humidity (Johan #1429)",
+          "powerSource": null
+        },
+        {
+          "key": "Wing|ZTH13-3.0",
+          "driver": "climate_sensor",
+          "protocol": "zcl",
+          "dp": null,
+          "notes": "Wing ZTH13-3.0 temp/humidity (Johan #1422)",
+          "powerSource": null
+        }
+      ],
+      "compose": {
+        "exists": true,
+        "class": "sensor",
+        "pids": [
+          "ZTH13-3.0",
+          "ZTH11-3.0",
+          "01MINIZB",
+          "BASICZBR3",
+          "CK-BL702-MWS-01",
+          "CK-BL702-MWS-01(7016)",
+          "CK-TLSR8656-SS5-01(7014)",
+          "hobeian",
+          "Hobeian",
+          "HOBEIAN",
+          "lumi.sensor_ht",
+          "lumi.sensor_ht.agl02",
+          "lumi.weather",
+          "MG1_5RZ",
+          "RH3052",
+          "S26R2ZB",
+          "S31ZB",
+          "SM0201",
+          "SNTZ003",
+          "SNZB-02",
+          "SNZB-02B",
+          "SNZB-02D",
+          "SNZB-02DR2",
+          "SNZB-02LD",
+          "SNZB-02M",
+          "SNZB-02P",
+          "SNZB-02WD",
+          "SZLMR10",
+          "TH01",
+          "THS317-ET",
+          "TS0001_power",
+          "TS0001_switch",
+          "TS0001_switch_module",
+          "TS0004",
+          "TS0011",
+          "TS0101",
+          "TS0201",
+          "TS0202",
+          "TS0215A",
+          "TS0222",
+          "ts0601",
+          "TS0601",
+          "TS0601_air_purifier",
+          "TS0601_wirelesssw",
+          "TS0726",
+          "TS110E",
+          "TS1201",
+          "TS4100",
+          "TY0201",
+          "WSDCGQ01LM",
+          "WSDCGQ11LM",
+          "WSDCGQ12LM",
+          "ZBM5-1C-120",
+          "ZBM5-2C-120",
+          "ZBM5-3C-120",
+          "ZBMINI",
+          "ZBMINIL2",
+          "ZBMINIL2-R2",
+          "ZBMINIR",
+          "ZBMINIR2",
+          "ZBMINIR2-R2",
+          "ZG-227Z",
+          "ZG-227ZL",
+          "ZP-301Z"
+        ],
+        "pidMatch": [
+          "ZTH11-3.0",
+          "ZTH13-3.0"
+        ],
+        "endpointCount": 1,
+        "hasEf00": true,
+        "hasIas": false,
+        "batteries": [
+          "AAA",
+          "CR2032",
+          "CR2450"
+        ],
+        "capabilities": [
+          "measure_temperature",
+          "measure_humidity",
+          "measure_battery",
+          "measure_voltage",
           "button.1"
         ]
       },
@@ -5267,17 +6374,21 @@
         "class": "socket",
         "pids": [
           "ZG-305Z",
+          "hobeian",
+          "Hobeian",
+          "HOBEIAN",
           "TS0002",
-          "TS0012",
           "TS0002_power",
           "TS0002_switch_module",
-          "ZG-302Z2",
-          "TS011F",
           "TS0003",
-          "TS0013",
-          "TS0726",
           "TS000F",
-          "TS0601"
+          "TS0012",
+          "TS0013",
+          "TS011F",
+          "TS0601",
+          "TS0726",
+          "ZG-301Z-2CH",
+          "ZG-302Z2"
         ],
         "pidMatch": [
           "ZG-305Z"
@@ -5493,8 +6604,6 @@
           "ZBMINIR",
           "ZBMINIR2",
           "ZBMINIR2-R2",
-          "ZG-301Z",
-          "ZG-302Z1",
           "lumi.plug.macn01",
           "lumi.plug.maeu01",
           "lumi.plug.mmeu01"
@@ -5641,8 +6750,6 @@
           "ZBMINIR",
           "ZBMINIR2",
           "ZBMINIR2-R2",
-          "ZG-301Z",
-          "ZG-302Z1",
           "lumi.plug.macn01",
           "lumi.plug.maeu01",
           "lumi.plug.mmeu01"
@@ -6130,8 +7237,6 @@
           "ZBMINIR",
           "ZBMINIR2",
           "ZBMINIR2-R2",
-          "ZG-301Z",
-          "ZG-302Z1",
           "lumi.plug.macn01",
           "lumi.plug.maeu01",
           "lumi.plug.mmeu01"
@@ -6316,17 +7421,21 @@
         "class": "socket",
         "pids": [
           "ZG-305Z",
+          "hobeian",
+          "Hobeian",
+          "HOBEIAN",
           "TS0002",
-          "TS0012",
           "TS0002_power",
           "TS0002_switch_module",
-          "ZG-302Z2",
-          "TS011F",
           "TS0003",
-          "TS0013",
-          "TS0726",
           "TS000F",
-          "TS0601"
+          "TS0012",
+          "TS0013",
+          "TS011F",
+          "TS0601",
+          "TS0726",
+          "ZG-301Z-2CH",
+          "ZG-302Z2"
         ],
         "pidMatch": [
           "TS0002"
@@ -6390,17 +7499,21 @@
         "class": "socket",
         "pids": [
           "ZG-305Z",
+          "hobeian",
+          "Hobeian",
+          "HOBEIAN",
           "TS0002",
-          "TS0012",
           "TS0002_power",
           "TS0002_switch_module",
-          "ZG-302Z2",
-          "TS011F",
           "TS0003",
-          "TS0013",
-          "TS0726",
           "TS000F",
-          "TS0601"
+          "TS0012",
+          "TS0013",
+          "TS011F",
+          "TS0601",
+          "TS0726",
+          "ZG-301Z-2CH",
+          "ZG-302Z2"
         ],
         "pidMatch": [
           "TS0726"
@@ -6523,33 +7636,36 @@
         "class": "sensor",
         "pids": [
           "TS0203",
-          "ZG-102Z",
-          "ZG-102ZL",
+          "3300-S",
+          "3320-L",
+          "CK-TLSR8656-SS5-01(7003)",
+          "DoorWindow-Sensor-ZB3.0",
           "DS01",
-          "RH3001",
+          "E1603/E1702",
+          "Excellux",
+          "hobeian",
+          "Hobeian",
+          "HOBEIAN",
+          "lumi.magnet.ac01",
+          "lumi.magnet.agl02",
+          "lumi.sensor_magnet",
+          "lumi.sensor_magnet.aq2",
           "MCCGQ01LM",
           "MCCGQ11LM",
           "MCCGQ12LM",
           "MCCGQ14LM",
-          "lumi.sensor_magnet",
-          "lumi.sensor_magnet.aq2",
-          "lumi.magnet.ac01",
-          "lumi.magnet.agl02",
-          "E1603/E1702",
-          "TRADFRI open/close remote",
-          "3300-S",
-          "3320-L",
+          "MCT-340 E",
+          "q9mpfhw",
+          "RH3001",
           "SNZB-04",
           "SNZB-04P",
           "SNZB-04PR2",
-          "CK-TLSR8656-SS5-01(7003)",
           "SNZB-04R2",
+          "TRADFRI open/close remote",
           "TS0021",
-          "DoorWindow-Sensor-ZB3.0",
-          "MCT-340 E",
-          "Excellux",
           "TY0203",
-          "q9mpfhw"
+          "ZG-102Z",
+          "ZG-102ZL"
         ],
         "pidMatch": [
           "TS0203"
@@ -6752,8 +7868,6 @@
           "ZBMINIR",
           "ZBMINIR2",
           "ZBMINIR2-R2",
-          "ZG-301Z",
-          "ZG-302Z1",
           "lumi.plug.macn01",
           "lumi.plug.maeu01",
           "lumi.plug.mmeu01"
@@ -6888,8 +8002,6 @@
           "ZBMINIR",
           "ZBMINIR2",
           "ZBMINIR2-R2",
-          "ZG-301Z",
-          "ZG-302Z1",
           "lumi.plug.macn01",
           "lumi.plug.maeu01",
           "lumi.plug.mmeu01"
@@ -7133,8 +8245,6 @@
           "ZBMINIR",
           "ZBMINIR2",
           "ZBMINIR2-R2",
-          "ZG-301Z",
-          "ZG-302Z1",
           "lumi.plug.macn01",
           "lumi.plug.maeu01",
           "lumi.plug.mmeu01"
@@ -7196,22 +8306,20 @@
         "class": "socket",
         "pids": [
           "TS0003",
-          "TS0013"
+          "TS0013",
+          "TS0601"
         ],
         "pidMatch": [
           "TS0003"
         ],
         "endpointCount": 3,
-        "hasEf00": false,
+        "hasEf00": true,
         "hasIas": false,
         "batteries": [],
         "capabilities": [
           "onoff",
           "onoff.gang2",
-          "onoff.gang3",
-          "button.1",
-          "button.2",
-          "button.3"
+          "onoff.gang3"
         ]
       },
       "gaps": [
@@ -7359,15 +8467,13 @@
           "ZBMINIR",
           "ZBMINIR2",
           "ZBMINIR2-R2",
-          "ZG-301Z",
-          "ZG-302Z1",
           "TS0006"
         ],
         "pidMatch": [
           "TS0726"
         ],
         "endpointCount": 4,
-        "hasEf00": true,
+        "hasEf00": false,
         "hasIas": false,
         "batteries": [],
         "capabilities": [
@@ -7376,13 +8482,7 @@
           "onoff.gang3",
           "onoff.gang4",
           "measure_power",
-          "power_on_behavior",
-          "button.toggle_1",
-          "button.toggle_2",
-          "button.toggle_3",
-          "button.toggle_4",
-          "button.identify",
-          "button.1"
+          "power_on_behavior"
         ]
       },
       "gaps": [
@@ -7491,6 +8591,12 @@
           "CK-BL702-MWS-01",
           "CK-BL702-MWS-01(7016)",
           "CK-TLSR8656-SS5-01(7014)",
+          "hobeian",
+          "Hobeian",
+          "HOBEIAN",
+          "lumi.sensor_ht",
+          "lumi.sensor_ht.agl02",
+          "lumi.weather",
           "MG1_5RZ",
           "RH3052",
           "S26R2ZB",
@@ -7514,15 +8620,19 @@
           "TS0004",
           "TS0011",
           "TS0101",
+          "TS0201",
           "TS0202",
           "TS0215A",
           "TS0222",
+          "ts0601",
+          "TS0601",
           "TS0601_air_purifier",
           "TS0601_wirelesssw",
           "TS0726",
           "TS110E",
           "TS1201",
           "TS4100",
+          "TY0201",
           "WSDCGQ01LM",
           "WSDCGQ11LM",
           "WSDCGQ12LM",
@@ -7537,14 +8647,7 @@
           "ZBMINIR2-R2",
           "ZG-227Z",
           "ZG-227ZL",
-          "ZP-301Z",
-          "lumi.sensor_ht",
-          "lumi.sensor_ht.agl02",
-          "lumi.weather",
-          "ts0601",
-          "TS0201",
-          "TY0201",
-          "TS0601"
+          "ZP-301Z"
         ],
         "pidMatch": [
           "TS0601"
@@ -7614,6 +8717,9 @@
           "E1812",
           "E2001/E2002",
           "E2123",
+          "hobeian",
+          "Hobeian",
+          "HOBEIAN",
           "lumi.remote.b1acn01",
           "lumi.sensor_switch",
           "lumi.sensor_switch.aq2",
@@ -7637,6 +8743,7 @@
           "WXKG07LM",
           "WXKG11LM",
           "WXKG12LM",
+          "ZG-101ZD",
           "ZG-101ZL"
         ],
         "pidMatch": [
@@ -7646,8 +8753,8 @@
         "hasEf00": true,
         "hasIas": true,
         "batteries": [
-          "CR2032",
-          "CR2450"
+          "CR2450",
+          "CR2032"
         ],
         "capabilities": [
           "button.1",
@@ -7832,8 +8939,6 @@
           "ZBMINIR",
           "ZBMINIR2",
           "ZBMINIR2-R2",
-          "ZG-301Z",
-          "ZG-302Z1",
           "lumi.plug.macn01",
           "lumi.plug.maeu01",
           "lumi.plug.mmeu01"
@@ -7968,8 +9073,6 @@
           "ZBMINIR",
           "ZBMINIR2",
           "ZBMINIR2-R2",
-          "ZG-301Z",
-          "ZG-302Z1",
           "lumi.plug.macn01",
           "lumi.plug.maeu01",
           "lumi.plug.mmeu01"
@@ -8076,8 +9179,6 @@
           "ZBMINIR",
           "ZBMINIR2",
           "ZBMINIR2-R2",
-          "ZG-301Z",
-          "ZG-302Z1",
           "TS1002"
         ],
         "pidMatch": [
@@ -8191,8 +9292,6 @@
           "ZBMINIR",
           "ZBMINIR2",
           "ZBMINIR2-R2",
-          "ZG-301Z",
-          "ZG-302Z1",
           "TS1002"
         ],
         "pidMatch": [
@@ -8257,7 +9356,8 @@
         "class": "button",
         "pids": [
           "TS0044",
-          "TS1002"
+          "TS1002",
+          "ZG-101ZS"
         ],
         "pidMatch": [
           "TS0044"
@@ -8305,13 +9405,23 @@
       "retailNames": [],
       "z2mPids": [],
       "z2mHit": false,
-      "compound": [],
+      "compound": [
+        {
+          "key": "_TZ3000_wkai4ga5|TS0044",
+          "driver": "scene_switch_4",
+          "protocol": "zcl",
+          "dp": null,
+          "notes": "P2328/P2453 Moes/SunBeech TS0044 scene",
+          "powerSource": null
+        }
+      ],
       "compose": {
         "exists": true,
         "class": "button",
         "pids": [
           "TS0044",
-          "TS1002"
+          "TS1002",
+          "ZG-101ZS"
         ],
         "pidMatch": [
           "TS0044"
@@ -8332,7 +9442,6 @@
         ]
       },
       "gaps": [
-        "no_compound_db_key",
         "no_sources",
         "not_in_local_z2m_fps"
       ]
@@ -8418,8 +9527,6 @@
           "ZBMINIR",
           "ZBMINIR2",
           "ZBMINIR2-R2",
-          "ZG-301Z",
-          "ZG-302Z1",
           "TS1002"
         ],
         "pidMatch": [
@@ -8493,7 +9600,8 @@
         "class": "button",
         "pids": [
           "TS0044",
-          "TS1002"
+          "TS1002",
+          "ZG-101ZS"
         ],
         "pidMatch": [
           "TS0044"
@@ -8626,17 +9734,21 @@
         "class": "socket",
         "pids": [
           "ZG-305Z",
+          "hobeian",
+          "Hobeian",
+          "HOBEIAN",
           "TS0002",
-          "TS0012",
           "TS0002_power",
           "TS0002_switch_module",
-          "ZG-302Z2",
-          "TS011F",
           "TS0003",
-          "TS0013",
-          "TS0726",
           "TS000F",
-          "TS0601"
+          "TS0012",
+          "TS0013",
+          "TS011F",
+          "TS0601",
+          "TS0726",
+          "ZG-301Z-2CH",
+          "ZG-302Z2"
         ],
         "pidMatch": [
           "TS0002"
@@ -8770,8 +9882,6 @@
           "ZBMINIR",
           "ZBMINIR2",
           "ZBMINIR2-R2",
-          "ZG-301Z",
-          "ZG-302Z1",
           "lumi.plug.macn01",
           "lumi.plug.maeu01",
           "lumi.plug.mmeu01"
@@ -8832,6 +9942,9 @@
         "pids": [
           "01MINIZB",
           "BASICZBR3",
+          "hobeian",
+          "Hobeian",
+          "HOBEIAN",
           "S26R2ZB",
           "S31ZB",
           "TS0001",
@@ -8839,13 +9952,16 @@
           "TS0001_switch",
           "TS0001_switch_module",
           "TS0003",
+          "TS0004",
           "TS000F",
           "TS0011",
           "TS0012",
           "TS0014",
           "TS0101",
           "TS0111",
+          "TS011F",
           "TS0203",
+          "TS0601",
           "TS0601_generic",
           "TS0601_tempswitch",
           "TS0603",
@@ -8863,10 +9979,7 @@
           "ZBMINIR2",
           "ZBMINIR2-R2",
           "ZG-301Z",
-          "ZG-302Z1",
-          "TS0004",
-          "TS011F",
-          "TS0601"
+          "ZG-302Z1"
         ],
         "pidMatch": [
           "TS0001"
@@ -9022,9 +10135,12 @@
         "exists": true,
         "class": "sensor",
         "pids": [
+          "hobeian",
+          "Hobeian",
+          "HOBEIAN",
+          "TS0207",
           "TS0207_rain",
           "TS0601",
-          "TS0207",
           "ZG-223Z"
         ],
         "pidMatch": [
@@ -9088,27 +10204,30 @@
         "exists": true,
         "class": "sensor",
         "pids": [
+          "_tz3000_eit6l5",
+          "_tz3000_kyb656no",
           "3315-S",
           "3315-Seu",
           "CK-TLSR8656-SS5-01(7019)",
+          "hobeian",
+          "Hobeian",
+          "HOBEIAN",
           "HS1WL",
           "LS21001",
+          "lumi.sensor_wleak.aq1",
+          "q9mpfhw",
+          "RH3001",
           "SJCGQ11LM",
           "SJCGQ12LM",
           "SJCGQ13LM",
           "SNZB-05",
           "SNZB-05P",
           "SQ510A",
+          "TS0201",
           "TS0207",
+          "TS0601",
           "ZG-222Z",
           "ZG-222ZA",
-          "_tz3000_eit6l5",
-          "_tz3000_kyb656no",
-          "lumi.sensor_wleak.aq1",
-          "q9mpfhw",
-          "RH3001",
-          "TS0201",
-          "TS0601",
           "ZG-226Z"
         ],
         "pidMatch": [
@@ -9651,17 +10770,21 @@
         "class": "socket",
         "pids": [
           "ZG-305Z",
+          "hobeian",
+          "Hobeian",
+          "HOBEIAN",
           "TS0002",
-          "TS0012",
           "TS0002_power",
           "TS0002_switch_module",
-          "ZG-302Z2",
-          "TS011F",
           "TS0003",
-          "TS0013",
-          "TS0726",
           "TS000F",
-          "TS0601"
+          "TS0012",
+          "TS0013",
+          "TS011F",
+          "TS0601",
+          "TS0726",
+          "ZG-301Z-2CH",
+          "ZG-302Z2"
         ],
         "pidMatch": [
           "TS0002"
@@ -9780,7 +10903,7 @@
           "driver": "smart_knob",
           "protocol": "zcl",
           "dp": null,
-          "notes": "ZHA#5261 / GitHub#1349 rotary knob — not 4-gang metering",
+          "notes": "P2448 ZHA#5261 rotary — command/dimmer 0x8004; not 4-gang metering",
           "powerSource": "battery"
         }
       ],
@@ -9789,7 +10912,9 @@
         "class": "button",
         "pids": [
           "TS004F",
-          "ERS-10TZBVK-AA"
+          "ERS-10TZBVK-AA",
+          "ZG-101ZD",
+          "ZG-101Z"
         ],
         "pidMatch": [
           "TS004F"
@@ -9802,6 +10927,8 @@
         ],
         "capabilities": [
           "button",
+          "button.rotate_left",
+          "button.rotate_right",
           "dim",
           "measure_battery",
           "button.1"
@@ -10042,10 +11169,10 @@
         "exists": true,
         "class": "remote",
         "pids": [
-          "TS0002",
           "TS0601",
-          "TS0601_repeater",
-          "TS1201"
+          "TS1201",
+          "TS0002",
+          "TS0601_repeater"
         ],
         "pidMatch": [
           "TS0601"
@@ -10307,6 +11434,9 @@
         "pids": [
           "01MINIZB",
           "BASICZBR3",
+          "hobeian",
+          "Hobeian",
+          "HOBEIAN",
           "S26R2ZB",
           "S31ZB",
           "TS0001",
@@ -10314,13 +11444,16 @@
           "TS0001_switch",
           "TS0001_switch_module",
           "TS0003",
+          "TS0004",
           "TS000F",
           "TS0011",
           "TS0012",
           "TS0014",
           "TS0101",
           "TS0111",
+          "TS011F",
           "TS0203",
+          "TS0601",
           "TS0601_generic",
           "TS0601_tempswitch",
           "TS0603",
@@ -10338,10 +11471,7 @@
           "ZBMINIR2",
           "ZBMINIR2-R2",
           "ZG-301Z",
-          "ZG-302Z1",
-          "TS0004",
-          "TS011F",
-          "TS0601"
+          "ZG-302Z1"
         ],
         "pidMatch": [
           "TS000F"
@@ -10531,31 +11661,45 @@
         "exists": true,
         "class": "sensor",
         "pids": [
-          "TS0601",
           "0x8040",
           "Arteco",
           "BASICZBR3",
-          "BSP-EZ2",
-          "BSP-FZ2",
           "Battery switch, 1 button",
           "Battery switch, 2 buttons",
+          "BSP-EZ2",
+          "BSP-FZ2",
           "CK-TLSR8656-SS5-01(7014)",
           "CS-201Z",
+          "eT093WRG",
+          "eT093WRO",
+          "eTRV0100",
+          "eTRV0101",
+          "eTRV0103",
+          "hobeian",
+          "Hobeian",
+          "HOBEIAN",
+          "lumi.sensor_ht",
+          "lumi.sensor_ht.agl02",
+          "lumi.weather",
           "RH3052",
           "S26R2ZB",
           "S31ZB",
           "S40ZBTPB",
+          "SG502Z",
+          "SGS02Z",
           "SM0201",
           "TH01",
           "THS317-ET",
           "TRV001",
           "TRV003",
+          "TS0001",
           "TS0026",
           "TS0052",
           "TS0105",
           "TS0202",
           "TS0222",
           "TS0224",
+          "TS0601",
           "TS0901",
           "TS1201",
           "WSDCGQ01LM",
@@ -10564,18 +11708,7 @@
           "ZBMINI",
           "ZBMINIL2",
           "ZG-303Z",
-          "ZIGSTAR",
-          "eT093WRG",
-          "eT093WRO",
-          "eTRV0100",
-          "eTRV0101",
-          "eTRV0103",
-          "lumi.sensor_ht",
-          "lumi.sensor_ht.agl02",
-          "lumi.weather",
-          "SGS02Z",
-          "SG502Z",
-          "TS0001"
+          "ZIGSTAR"
         ],
         "pidMatch": [
           "TS0601"
@@ -10992,7 +12125,8 @@
         "class": "button",
         "pids": [
           "TS0044",
-          "TS1002"
+          "TS1002",
+          "ZG-101ZS"
         ],
         "pidMatch": [
           "TS1002"
@@ -11459,6 +12593,9 @@
           "E1812",
           "E2001/E2002",
           "E2123",
+          "hobeian",
+          "Hobeian",
+          "HOBEIAN",
           "lumi.remote.b1acn01",
           "lumi.sensor_switch",
           "lumi.sensor_switch.aq2",
@@ -11482,6 +12619,7 @@
           "WXKG07LM",
           "WXKG11LM",
           "WXKG12LM",
+          "ZG-101ZD",
           "ZG-101ZL"
         ],
         "pidMatch": [
@@ -11491,8 +12629,8 @@
         "hasEf00": true,
         "hasIas": true,
         "batteries": [
-          "CR2032",
-          "CR2450"
+          "CR2450",
+          "CR2032"
         ],
         "capabilities": [
           "button.1",
@@ -11557,6 +12695,9 @@
           "E1812",
           "E2001/E2002",
           "E2123",
+          "hobeian",
+          "Hobeian",
+          "HOBEIAN",
           "lumi.remote.b1acn01",
           "lumi.sensor_switch",
           "lumi.sensor_switch.aq2",
@@ -11580,6 +12721,7 @@
           "WXKG07LM",
           "WXKG11LM",
           "WXKG12LM",
+          "ZG-101ZD",
           "ZG-101ZL"
         ],
         "pidMatch": [
@@ -11589,8 +12731,8 @@
         "hasEf00": true,
         "hasIas": true,
         "batteries": [
-          "CR2032",
-          "CR2450"
+          "CR2450",
+          "CR2032"
         ],
         "capabilities": [
           "button.1",
@@ -11651,27 +12793,30 @@
         "exists": true,
         "class": "sensor",
         "pids": [
+          "_tz3000_eit6l5",
+          "_tz3000_kyb656no",
           "3315-S",
           "3315-Seu",
           "CK-TLSR8656-SS5-01(7019)",
+          "hobeian",
+          "Hobeian",
+          "HOBEIAN",
           "HS1WL",
           "LS21001",
+          "lumi.sensor_wleak.aq1",
+          "q9mpfhw",
+          "RH3001",
           "SJCGQ11LM",
           "SJCGQ12LM",
           "SJCGQ13LM",
           "SNZB-05",
           "SNZB-05P",
           "SQ510A",
+          "TS0201",
           "TS0207",
+          "TS0601",
           "ZG-222Z",
           "ZG-222ZA",
-          "_tz3000_eit6l5",
-          "_tz3000_kyb656no",
-          "lumi.sensor_wleak.aq1",
-          "q9mpfhw",
-          "RH3001",
-          "TS0201",
-          "TS0601",
           "ZG-226Z"
         ],
         "pidMatch": [
@@ -11992,8 +13137,6 @@
           "ZBMINIR",
           "ZBMINIR2",
           "ZBMINIR2-R2",
-          "ZG-301Z",
-          "ZG-302Z1",
           "TS1002"
         ],
         "pidMatch": [
@@ -12605,10 +13748,10 @@
         "thermostat_tuya_dp",
         "device_radiator_valve_smart",
         "radiator_valve_zigbee",
-        "generic_tuya",
-        "zigbee_universal"
+        "climate_sensor",
+        "generic_tuya"
       ],
-      "notes": "P2324: Moes ZTS-EUR-C curtain. Expand TRV/generic forbids (coupleMode). Do NOT forbid wall_thermostat — strip_pid would gut TS0601 there.",
+      "notes": "P2503: Moes ZTS-EUR-C curtain. Forbid TRV + climate_sensor (current-fps bleed). Do NOT forbid wall_thermostat — strip_pid would gut TS0601 there.",
       "sources": [],
       "retailNames": [],
       "z2mPids": [],
@@ -12859,7 +14002,8 @@
         "class": "button",
         "pids": [
           "TS0044",
-          "TS1002"
+          "TS1002",
+          "ZG-101ZS"
         ],
         "pidMatch": [
           "TS0044"
@@ -12923,27 +14067,30 @@
         "exists": true,
         "class": "sensor",
         "pids": [
+          "_tz3000_eit6l5",
+          "_tz3000_kyb656no",
           "3315-S",
           "3315-Seu",
           "CK-TLSR8656-SS5-01(7019)",
+          "hobeian",
+          "Hobeian",
+          "HOBEIAN",
           "HS1WL",
           "LS21001",
+          "lumi.sensor_wleak.aq1",
+          "q9mpfhw",
+          "RH3001",
           "SJCGQ11LM",
           "SJCGQ12LM",
           "SJCGQ13LM",
           "SNZB-05",
           "SNZB-05P",
           "SQ510A",
+          "TS0201",
           "TS0207",
+          "TS0601",
           "ZG-222Z",
           "ZG-222ZA",
-          "_tz3000_eit6l5",
-          "_tz3000_kyb656no",
-          "lumi.sensor_wleak.aq1",
-          "q9mpfhw",
-          "RH3001",
-          "TS0201",
-          "TS0601",
           "ZG-226Z"
         ],
         "pidMatch": [
@@ -13058,22 +14205,20 @@
         "class": "socket",
         "pids": [
           "TS0003",
-          "TS0013"
+          "TS0013",
+          "TS0601"
         ],
         "pidMatch": [
           "TS0003"
         ],
         "endpointCount": 3,
-        "hasEf00": false,
+        "hasEf00": true,
         "hasIas": false,
         "batteries": [],
         "capabilities": [
           "onoff",
           "onoff.gang2",
-          "onoff.gang3",
-          "button.1",
-          "button.2",
-          "button.3"
+          "onoff.gang3"
         ]
       },
       "gaps": [
@@ -13153,8 +14298,6 @@
           "ZBMINIR",
           "ZBMINIR2",
           "ZBMINIR2-R2",
-          "ZG-301Z",
-          "ZG-302Z1",
           "TS1002"
         ],
         "pidMatch": [
@@ -13272,6 +14415,9 @@
           "E1812",
           "E2001/E2002",
           "E2123",
+          "hobeian",
+          "Hobeian",
+          "HOBEIAN",
           "lumi.remote.b1acn01",
           "lumi.sensor_switch",
           "lumi.sensor_switch.aq2",
@@ -13295,6 +14441,7 @@
           "WXKG07LM",
           "WXKG11LM",
           "WXKG12LM",
+          "ZG-101ZD",
           "ZG-101ZL"
         ],
         "pidMatch": [
@@ -13304,8 +14451,8 @@
         "hasEf00": true,
         "hasIas": true,
         "batteries": [
-          "CR2032",
-          "CR2450"
+          "CR2450",
+          "CR2032"
         ],
         "capabilities": [
           "button.1",
@@ -13425,8 +14572,6 @@
           "ZBMINIR",
           "ZBMINIR2",
           "ZBMINIR2-R2",
-          "ZG-301Z",
-          "ZG-302Z1",
           "lumi.plug.macn01",
           "lumi.plug.maeu01",
           "lumi.plug.mmeu01"
@@ -13797,31 +14942,45 @@
         "exists": true,
         "class": "sensor",
         "pids": [
-          "TS0601",
           "0x8040",
           "Arteco",
           "BASICZBR3",
-          "BSP-EZ2",
-          "BSP-FZ2",
           "Battery switch, 1 button",
           "Battery switch, 2 buttons",
+          "BSP-EZ2",
+          "BSP-FZ2",
           "CK-TLSR8656-SS5-01(7014)",
           "CS-201Z",
+          "eT093WRG",
+          "eT093WRO",
+          "eTRV0100",
+          "eTRV0101",
+          "eTRV0103",
+          "hobeian",
+          "Hobeian",
+          "HOBEIAN",
+          "lumi.sensor_ht",
+          "lumi.sensor_ht.agl02",
+          "lumi.weather",
           "RH3052",
           "S26R2ZB",
           "S31ZB",
           "S40ZBTPB",
+          "SG502Z",
+          "SGS02Z",
           "SM0201",
           "TH01",
           "THS317-ET",
           "TRV001",
           "TRV003",
+          "TS0001",
           "TS0026",
           "TS0052",
           "TS0105",
           "TS0202",
           "TS0222",
           "TS0224",
+          "TS0601",
           "TS0901",
           "TS1201",
           "WSDCGQ01LM",
@@ -13830,18 +14989,7 @@
           "ZBMINI",
           "ZBMINIL2",
           "ZG-303Z",
-          "ZIGSTAR",
-          "eT093WRG",
-          "eT093WRO",
-          "eTRV0100",
-          "eTRV0101",
-          "eTRV0103",
-          "lumi.sensor_ht",
-          "lumi.sensor_ht.agl02",
-          "lumi.weather",
-          "SGS02Z",
-          "SG502Z",
-          "TS0001"
+          "ZIGSTAR"
         ],
         "pidMatch": [
           "TS0601"
@@ -13933,9 +15081,7 @@
           "ZBMINIL2-R2",
           "ZBMINIR",
           "ZBMINIR2",
-          "ZBMINIR2-R2",
-          "ZG-301Z",
-          "ZG-302Z1"
+          "ZBMINIR2-R2"
         ],
         "pidMatch": [
           "TS0601"
@@ -14136,8 +15282,6 @@
           "ZBMINIR",
           "ZBMINIR2",
           "ZBMINIR2-R2",
-          "ZG-301Z",
-          "ZG-302Z1",
           "TS1002"
         ],
         "pidMatch": [
@@ -14349,9 +15493,12 @@
         "exists": true,
         "class": "sensor",
         "pids": [
+          "hobeian",
+          "Hobeian",
+          "HOBEIAN",
+          "TS0207",
           "TS0207_rain",
           "TS0601",
-          "TS0207",
           "ZG-223Z"
         ],
         "pidMatch": [
@@ -14397,12 +15544,21 @@
         "exists": true,
         "class": "sensor",
         "pids": [
-          "TS0601",
+          "AY-204ZX",
+          "AY204T",
+          "AY205Z",
+          "AY208Z",
           "CK-BL702-MWS-01",
           "CK-BL702-MWS-01(7016)",
           "CK-TLSR8656-SS5-01(7014)",
           "EDM-1ZBA-EU",
           "Excellux",
+          "hobeian",
+          "Hobeian",
+          "HOBEIAN",
+          "lumi.sensor_ht",
+          "lumi.sensor_ht.agl02",
+          "lumi.weather",
           "MG1_5RZ",
           "RH3052",
           "SM0201",
@@ -14414,13 +15570,16 @@
           "TRI-C1ZR",
           "TRI-K1ZR",
           "TS0004",
+          "TS0045",
           "TS004F",
           "TS0201",
           "TS0202",
           "TS0203",
           "TS0215A",
           "TS0222",
+          "TS0225",
           "TS0501B",
+          "TS0601",
           "TS0601_wirelesssw",
           "TS110E",
           "TS1201",
@@ -14434,36 +15593,21 @@
           "ZG-204ZK",
           "ZG-204ZL",
           "ZG-204ZM",
+          "ZG-204ZP",
           "ZG-204ZQ",
           "ZG-204ZV",
+          "ZG-204ZX",
           "ZG-205Z",
           "ZG-205ZL",
           "ZG-302ZL",
           "ZG-302ZM",
-          "ZP-301Z",
-          "lumi.sensor_ht",
-          "lumi.sensor_ht.agl02",
-          "lumi.weather",
-          "TS0045",
-          "TS0225",
-          "AY208Z",
-          "AY205Z",
-          "ZG-204ZX",
-          "AY204T",
-          "AY-204ZX"
+          "ZP-301Z"
         ],
         "pidMatch": [],
         "endpointCount": 1,
         "hasEf00": true,
         "hasIas": false,
-        "batteries": [
-          "CR2032",
-          "CR2450",
-          "AAA",
-          "AA",
-          "CR123A",
-          "INTERNAL"
-        ],
+        "batteries": [],
         "capabilities": [
           "alarm_motion",
           "measure_luminance",
@@ -14471,12 +15615,12 @@
           "measure_humidity",
           "alarm_human",
           "onoff",
-          "measure_battery",
           "measure_luminance.distance",
           "alarm_motion.zone1",
           "alarm_motion.zone2",
           "alarm_motion.zone3",
-          "measure_luminance.distance.zone1"
+          "measure_luminance.distance.zone1",
+          "measure_luminance.distance.zone2"
         ]
       },
       "gaps": [
@@ -14503,31 +15647,45 @@
         "exists": true,
         "class": "sensor",
         "pids": [
-          "TS0601",
           "0x8040",
           "Arteco",
           "BASICZBR3",
-          "BSP-EZ2",
-          "BSP-FZ2",
           "Battery switch, 1 button",
           "Battery switch, 2 buttons",
+          "BSP-EZ2",
+          "BSP-FZ2",
           "CK-TLSR8656-SS5-01(7014)",
           "CS-201Z",
+          "eT093WRG",
+          "eT093WRO",
+          "eTRV0100",
+          "eTRV0101",
+          "eTRV0103",
+          "hobeian",
+          "Hobeian",
+          "HOBEIAN",
+          "lumi.sensor_ht",
+          "lumi.sensor_ht.agl02",
+          "lumi.weather",
           "RH3052",
           "S26R2ZB",
           "S31ZB",
           "S40ZBTPB",
+          "SG502Z",
+          "SGS02Z",
           "SM0201",
           "TH01",
           "THS317-ET",
           "TRV001",
           "TRV003",
+          "TS0001",
           "TS0026",
           "TS0052",
           "TS0105",
           "TS0202",
           "TS0222",
           "TS0224",
+          "TS0601",
           "TS0901",
           "TS1201",
           "WSDCGQ01LM",
@@ -14536,18 +15694,7 @@
           "ZBMINI",
           "ZBMINIL2",
           "ZG-303Z",
-          "ZIGSTAR",
-          "eT093WRG",
-          "eT093WRO",
-          "eTRV0100",
-          "eTRV0101",
-          "eTRV0103",
-          "lumi.sensor_ht",
-          "lumi.sensor_ht.agl02",
-          "lumi.weather",
-          "SGS02Z",
-          "SG502Z",
-          "TS0001"
+          "ZIGSTAR"
         ],
         "pidMatch": [],
         "endpointCount": 1,
@@ -14633,12 +15780,21 @@
         "exists": true,
         "class": "sensor",
         "pids": [
-          "TS0601",
+          "AY-204ZX",
+          "AY204T",
+          "AY205Z",
+          "AY208Z",
           "CK-BL702-MWS-01",
           "CK-BL702-MWS-01(7016)",
           "CK-TLSR8656-SS5-01(7014)",
           "EDM-1ZBA-EU",
           "Excellux",
+          "hobeian",
+          "Hobeian",
+          "HOBEIAN",
+          "lumi.sensor_ht",
+          "lumi.sensor_ht.agl02",
+          "lumi.weather",
           "MG1_5RZ",
           "RH3052",
           "SM0201",
@@ -14650,13 +15806,16 @@
           "TRI-C1ZR",
           "TRI-K1ZR",
           "TS0004",
+          "TS0045",
           "TS004F",
           "TS0201",
           "TS0202",
           "TS0203",
           "TS0215A",
           "TS0222",
+          "TS0225",
           "TS0501B",
+          "TS0601",
           "TS0601_wirelesssw",
           "TS110E",
           "TS1201",
@@ -14670,23 +15829,15 @@
           "ZG-204ZK",
           "ZG-204ZL",
           "ZG-204ZM",
+          "ZG-204ZP",
           "ZG-204ZQ",
           "ZG-204ZV",
+          "ZG-204ZX",
           "ZG-205Z",
           "ZG-205ZL",
           "ZG-302ZL",
           "ZG-302ZM",
-          "ZP-301Z",
-          "lumi.sensor_ht",
-          "lumi.sensor_ht.agl02",
-          "lumi.weather",
-          "TS0045",
-          "TS0225",
-          "AY208Z",
-          "AY205Z",
-          "ZG-204ZX",
-          "AY204T",
-          "AY-204ZX"
+          "ZP-301Z"
         ],
         "pidMatch": [
           "TS0601",
@@ -14696,14 +15847,7 @@
         "endpointCount": 1,
         "hasEf00": true,
         "hasIas": false,
-        "batteries": [
-          "CR2032",
-          "CR2450",
-          "AAA",
-          "AA",
-          "CR123A",
-          "INTERNAL"
-        ],
+        "batteries": [],
         "capabilities": [
           "alarm_motion",
           "measure_luminance",
@@ -14711,12 +15855,12 @@
           "measure_humidity",
           "alarm_human",
           "onoff",
-          "measure_battery",
           "measure_luminance.distance",
           "alarm_motion.zone1",
           "alarm_motion.zone2",
           "alarm_motion.zone3",
-          "measure_luminance.distance.zone1"
+          "measure_luminance.distance.zone1",
+          "measure_luminance.distance.zone2"
         ]
       },
       "gaps": []
@@ -14797,12 +15941,21 @@
         "exists": true,
         "class": "sensor",
         "pids": [
-          "TS0601",
+          "AY-204ZX",
+          "AY204T",
+          "AY205Z",
+          "AY208Z",
           "CK-BL702-MWS-01",
           "CK-BL702-MWS-01(7016)",
           "CK-TLSR8656-SS5-01(7014)",
           "EDM-1ZBA-EU",
           "Excellux",
+          "hobeian",
+          "Hobeian",
+          "HOBEIAN",
+          "lumi.sensor_ht",
+          "lumi.sensor_ht.agl02",
+          "lumi.weather",
           "MG1_5RZ",
           "RH3052",
           "SM0201",
@@ -14814,13 +15967,16 @@
           "TRI-C1ZR",
           "TRI-K1ZR",
           "TS0004",
+          "TS0045",
           "TS004F",
           "TS0201",
           "TS0202",
           "TS0203",
           "TS0215A",
           "TS0222",
+          "TS0225",
           "TS0501B",
+          "TS0601",
           "TS0601_wirelesssw",
           "TS110E",
           "TS1201",
@@ -14834,23 +15990,15 @@
           "ZG-204ZK",
           "ZG-204ZL",
           "ZG-204ZM",
+          "ZG-204ZP",
           "ZG-204ZQ",
           "ZG-204ZV",
+          "ZG-204ZX",
           "ZG-205Z",
           "ZG-205ZL",
           "ZG-302ZL",
           "ZG-302ZM",
-          "ZP-301Z",
-          "lumi.sensor_ht",
-          "lumi.sensor_ht.agl02",
-          "lumi.weather",
-          "TS0045",
-          "TS0225",
-          "AY208Z",
-          "AY205Z",
-          "ZG-204ZX",
-          "AY204T",
-          "AY-204ZX"
+          "ZP-301Z"
         ],
         "pidMatch": [
           "TS0601",
@@ -14861,14 +16009,7 @@
         "endpointCount": 1,
         "hasEf00": true,
         "hasIas": false,
-        "batteries": [
-          "CR2032",
-          "CR2450",
-          "AAA",
-          "AA",
-          "CR123A",
-          "INTERNAL"
-        ],
+        "batteries": [],
         "capabilities": [
           "alarm_motion",
           "measure_luminance",
@@ -14876,12 +16017,12 @@
           "measure_humidity",
           "alarm_human",
           "onoff",
-          "measure_battery",
           "measure_luminance.distance",
           "alarm_motion.zone1",
           "alarm_motion.zone2",
           "alarm_motion.zone3",
-          "measure_luminance.distance.zone1"
+          "measure_luminance.distance.zone1",
+          "measure_luminance.distance.zone2"
         ]
       },
       "gaps": []
@@ -14974,12 +16115,21 @@
         "exists": true,
         "class": "sensor",
         "pids": [
-          "TS0601",
+          "AY-204ZX",
+          "AY204T",
+          "AY205Z",
+          "AY208Z",
           "CK-BL702-MWS-01",
           "CK-BL702-MWS-01(7016)",
           "CK-TLSR8656-SS5-01(7014)",
           "EDM-1ZBA-EU",
           "Excellux",
+          "hobeian",
+          "Hobeian",
+          "HOBEIAN",
+          "lumi.sensor_ht",
+          "lumi.sensor_ht.agl02",
+          "lumi.weather",
           "MG1_5RZ",
           "RH3052",
           "SM0201",
@@ -14991,13 +16141,16 @@
           "TRI-C1ZR",
           "TRI-K1ZR",
           "TS0004",
+          "TS0045",
           "TS004F",
           "TS0201",
           "TS0202",
           "TS0203",
           "TS0215A",
           "TS0222",
+          "TS0225",
           "TS0501B",
+          "TS0601",
           "TS0601_wirelesssw",
           "TS110E",
           "TS1201",
@@ -15011,23 +16164,15 @@
           "ZG-204ZK",
           "ZG-204ZL",
           "ZG-204ZM",
+          "ZG-204ZP",
           "ZG-204ZQ",
           "ZG-204ZV",
+          "ZG-204ZX",
           "ZG-205Z",
           "ZG-205ZL",
           "ZG-302ZL",
           "ZG-302ZM",
-          "ZP-301Z",
-          "lumi.sensor_ht",
-          "lumi.sensor_ht.agl02",
-          "lumi.weather",
-          "TS0045",
-          "TS0225",
-          "AY208Z",
-          "AY205Z",
-          "ZG-204ZX",
-          "AY204T",
-          "AY-204ZX"
+          "ZP-301Z"
         ],
         "pidMatch": [
           "TS0601",
@@ -15036,14 +16181,7 @@
         "endpointCount": 1,
         "hasEf00": true,
         "hasIas": false,
-        "batteries": [
-          "CR2032",
-          "CR2450",
-          "AAA",
-          "AA",
-          "CR123A",
-          "INTERNAL"
-        ],
+        "batteries": [],
         "capabilities": [
           "alarm_motion",
           "measure_luminance",
@@ -15051,12 +16189,12 @@
           "measure_humidity",
           "alarm_human",
           "onoff",
-          "measure_battery",
           "measure_luminance.distance",
           "alarm_motion.zone1",
           "alarm_motion.zone2",
           "alarm_motion.zone3",
-          "measure_luminance.distance.zone1"
+          "measure_luminance.distance.zone1",
+          "measure_luminance.distance.zone2"
         ]
       },
       "gaps": []
@@ -15149,12 +16287,21 @@
         "exists": true,
         "class": "sensor",
         "pids": [
-          "TS0601",
+          "AY-204ZX",
+          "AY204T",
+          "AY205Z",
+          "AY208Z",
           "CK-BL702-MWS-01",
           "CK-BL702-MWS-01(7016)",
           "CK-TLSR8656-SS5-01(7014)",
           "EDM-1ZBA-EU",
           "Excellux",
+          "hobeian",
+          "Hobeian",
+          "HOBEIAN",
+          "lumi.sensor_ht",
+          "lumi.sensor_ht.agl02",
+          "lumi.weather",
           "MG1_5RZ",
           "RH3052",
           "SM0201",
@@ -15166,13 +16313,16 @@
           "TRI-C1ZR",
           "TRI-K1ZR",
           "TS0004",
+          "TS0045",
           "TS004F",
           "TS0201",
           "TS0202",
           "TS0203",
           "TS0215A",
           "TS0222",
+          "TS0225",
           "TS0501B",
+          "TS0601",
           "TS0601_wirelesssw",
           "TS110E",
           "TS1201",
@@ -15186,23 +16336,15 @@
           "ZG-204ZK",
           "ZG-204ZL",
           "ZG-204ZM",
+          "ZG-204ZP",
           "ZG-204ZQ",
           "ZG-204ZV",
+          "ZG-204ZX",
           "ZG-205Z",
           "ZG-205ZL",
           "ZG-302ZL",
           "ZG-302ZM",
-          "ZP-301Z",
-          "lumi.sensor_ht",
-          "lumi.sensor_ht.agl02",
-          "lumi.weather",
-          "TS0045",
-          "TS0225",
-          "AY208Z",
-          "AY205Z",
-          "ZG-204ZX",
-          "AY204T",
-          "AY-204ZX"
+          "ZP-301Z"
         ],
         "pidMatch": [
           "TS0601",
@@ -15211,14 +16353,7 @@
         "endpointCount": 1,
         "hasEf00": true,
         "hasIas": false,
-        "batteries": [
-          "CR2032",
-          "CR2450",
-          "AAA",
-          "AA",
-          "CR123A",
-          "INTERNAL"
-        ],
+        "batteries": [],
         "capabilities": [
           "alarm_motion",
           "measure_luminance",
@@ -15226,12 +16361,12 @@
           "measure_humidity",
           "alarm_human",
           "onoff",
-          "measure_battery",
           "measure_luminance.distance",
           "alarm_motion.zone1",
           "alarm_motion.zone2",
           "alarm_motion.zone3",
-          "measure_luminance.distance.zone1"
+          "measure_luminance.distance.zone1",
+          "measure_luminance.distance.zone2"
         ]
       },
       "gaps": []
@@ -15292,16 +16427,19 @@
         "exists": true,
         "class": "sensor",
         "pids": [
+          "AY02SZ",
+          "CK-BL702-MWS-01(7016)",
+          "hobeian",
+          "Hobeian",
+          "HOBEIAN",
+          "TS011F",
           "TS0209",
           "TS0210",
-          "ZG-102ZM",
           "TS0601",
-          "ZG-103ZL",
+          "ZG-102ZM",
           "ZG-103Z",
-          "TS011F",
-          "CK-BL702-MWS-01(7016)",
-          "ZG-228Z",
-          "AY02SZ"
+          "ZG-103ZL",
+          "ZG-228Z"
         ],
         "pidMatch": [
           "TS0601",
@@ -15372,16 +16510,19 @@
         "exists": true,
         "class": "sensor",
         "pids": [
+          "AY02SZ",
+          "CK-BL702-MWS-01(7016)",
+          "hobeian",
+          "Hobeian",
+          "HOBEIAN",
+          "TS011F",
           "TS0209",
           "TS0210",
-          "ZG-102ZM",
           "TS0601",
-          "ZG-103ZL",
+          "ZG-102ZM",
           "ZG-103Z",
-          "TS011F",
-          "CK-BL702-MWS-01(7016)",
-          "ZG-228Z",
-          "AY02SZ"
+          "ZG-103ZL",
+          "ZG-228Z"
         ],
         "pidMatch": [
           "TS0601",
@@ -15446,27 +16587,30 @@
         "exists": true,
         "class": "sensor",
         "pids": [
+          "_tz3000_eit6l5",
+          "_tz3000_kyb656no",
           "3315-S",
           "3315-Seu",
           "CK-TLSR8656-SS5-01(7019)",
+          "hobeian",
+          "Hobeian",
+          "HOBEIAN",
           "HS1WL",
           "LS21001",
+          "lumi.sensor_wleak.aq1",
+          "q9mpfhw",
+          "RH3001",
           "SJCGQ11LM",
           "SJCGQ12LM",
           "SJCGQ13LM",
           "SNZB-05",
           "SNZB-05P",
           "SQ510A",
+          "TS0201",
           "TS0207",
+          "TS0601",
           "ZG-222Z",
           "ZG-222ZA",
-          "_tz3000_eit6l5",
-          "_tz3000_kyb656no",
-          "lumi.sensor_wleak.aq1",
-          "q9mpfhw",
-          "RH3001",
-          "TS0201",
-          "TS0601",
           "ZG-226Z"
         ],
         "pidMatch": [
@@ -15529,16 +16673,19 @@
         "exists": true,
         "class": "sensor",
         "pids": [
+          "AY02SZ",
+          "CK-BL702-MWS-01(7016)",
+          "hobeian",
+          "Hobeian",
+          "HOBEIAN",
+          "TS011F",
           "TS0209",
           "TS0210",
-          "ZG-102ZM",
           "TS0601",
-          "ZG-103ZL",
+          "ZG-102ZM",
           "ZG-103Z",
-          "TS011F",
-          "CK-BL702-MWS-01(7016)",
-          "ZG-228Z",
-          "AY02SZ"
+          "ZG-103ZL",
+          "ZG-228Z"
         ],
         "pidMatch": [
           "ZG-228Z"
@@ -15615,6 +16762,9 @@
         "pids": [
           "01MINIZB",
           "BASICZBR3",
+          "hobeian",
+          "Hobeian",
+          "HOBEIAN",
           "S26R2ZB",
           "S31ZB",
           "TS0001",
@@ -15622,13 +16772,16 @@
           "TS0001_switch",
           "TS0001_switch_module",
           "TS0003",
+          "TS0004",
           "TS000F",
           "TS0011",
           "TS0012",
           "TS0014",
           "TS0101",
           "TS0111",
+          "TS011F",
           "TS0203",
+          "TS0601",
           "TS0601_generic",
           "TS0601_tempswitch",
           "TS0603",
@@ -15646,10 +16799,7 @@
           "ZBMINIR2",
           "ZBMINIR2-R2",
           "ZG-301Z",
-          "ZG-302Z1",
-          "TS0004",
-          "TS011F",
-          "TS0601"
+          "ZG-302Z1"
         ],
         "pidMatch": [
           "ZG-301Z",
@@ -15726,19 +16876,24 @@
         "class": "socket",
         "pids": [
           "ZG-305Z",
+          "hobeian",
+          "Hobeian",
+          "HOBEIAN",
           "TS0002",
-          "TS0012",
           "TS0002_power",
           "TS0002_switch_module",
-          "ZG-302Z2",
-          "TS011F",
           "TS0003",
-          "TS0013",
-          "TS0726",
           "TS000F",
-          "TS0601"
+          "TS0012",
+          "TS0013",
+          "TS011F",
+          "TS0601",
+          "TS0726",
+          "ZG-301Z-2CH",
+          "ZG-302Z2"
         ],
         "pidMatch": [
+          "ZG-301Z-2CH",
           "ZG-302Z2"
         ],
         "endpointCount": 2,
@@ -15807,6 +16962,9 @@
         "pids": [
           "01MINIZB",
           "BASICZBR3",
+          "hobeian",
+          "Hobeian",
+          "HOBEIAN",
           "JZ-ZB-004",
           "S26R2ZB",
           "S31ZB",
@@ -15849,8 +17007,6 @@
           "ZBMINIR",
           "ZBMINIR2",
           "ZBMINIR2-R2",
-          "ZG-301Z",
-          "ZG-302Z1",
           "ZG-302Z3"
         ],
         "pidMatch": [
@@ -15919,9 +17075,12 @@
         "class": "button",
         "pids": [
           "TS0044",
-          "TS1002"
+          "TS1002",
+          "ZG-101ZS"
         ],
-        "pidMatch": [],
+        "pidMatch": [
+          "ZG-101ZS"
+        ],
         "endpointCount": 4,
         "hasEf00": false,
         "hasIas": false,
@@ -15938,7 +17097,6 @@
         ]
       },
       "gaps": [
-        "compose_pid_mismatch",
         "no_sources"
       ]
     },
@@ -15981,14 +17139,20 @@
         "exists": true,
         "class": "other",
         "pids": [
+          "hobeian",
+          "Hobeian",
+          "HOBEIAN",
           "TS0216",
           "TS0219",
-          "TS0601"
+          "TS0601",
+          "ZG-229Z"
         ],
-        "pidMatch": [],
+        "pidMatch": [
+          "ZG-229Z"
+        ],
         "endpointCount": 1,
         "hasEf00": false,
-        "hasIas": false,
+        "hasIas": true,
         "batteries": [
           "OTHER",
           "OTHER"
@@ -16002,7 +17166,6 @@
         ]
       },
       "gaps": [
-        "compose_pid_mismatch",
         "no_sources"
       ]
     },
@@ -16045,11 +17208,14 @@
         "exists": true,
         "class": "sensor",
         "pids": [
-          "TS0601_gas",
-          "TS0601",
+          "hobeian",
+          "Hobeian",
+          "HOBEIAN",
           "TS0225",
-          "ZG-225Z",
-          "TS0301"
+          "TS0301",
+          "TS0601",
+          "TS0601_gas",
+          "ZG-225Z"
         ],
         "pidMatch": [
           "ZG-225Z"
@@ -16355,9 +17521,7 @@
           "ZBMINIL2-R2",
           "ZBMINIR",
           "ZBMINIR2",
-          "ZBMINIR2-R2",
-          "ZG-301Z",
-          "ZG-302Z1"
+          "ZBMINIR2-R2"
         ],
         "pidMatch": [
           "TS0601"
@@ -16485,15 +17649,13 @@
           "ZBMINIR",
           "ZBMINIR2",
           "ZBMINIR2-R2",
-          "ZG-301Z",
-          "ZG-302Z1",
           "TS0006"
         ],
         "pidMatch": [
           "TS0601"
         ],
         "endpointCount": 4,
-        "hasEf00": true,
+        "hasEf00": false,
         "hasIas": false,
         "batteries": [],
         "capabilities": [
@@ -16502,13 +17664,7 @@
           "onoff.gang3",
           "onoff.gang4",
           "measure_power",
-          "power_on_behavior",
-          "button.toggle_1",
-          "button.toggle_2",
-          "button.toggle_3",
-          "button.toggle_4",
-          "button.identify",
-          "button.1"
+          "power_on_behavior"
         ]
       },
       "gaps": [
@@ -16623,15 +17779,13 @@
           "ZBMINIR",
           "ZBMINIR2",
           "ZBMINIR2-R2",
-          "ZG-301Z",
-          "ZG-302Z1",
           "TS0006"
         ],
         "pidMatch": [
           "TS0601"
         ],
         "endpointCount": 4,
-        "hasEf00": true,
+        "hasEf00": false,
         "hasIas": false,
         "batteries": [],
         "capabilities": [
@@ -16640,13 +17794,7 @@
           "onoff.gang3",
           "onoff.gang4",
           "measure_power",
-          "power_on_behavior",
-          "button.toggle_1",
-          "button.toggle_2",
-          "button.toggle_3",
-          "button.toggle_4",
-          "button.identify",
-          "button.1"
+          "power_on_behavior"
         ]
       },
       "gaps": [
@@ -16706,6 +17854,9 @@
         "pids": [
           "01MINIZB",
           "BASICZBR3",
+          "hobeian",
+          "Hobeian",
+          "HOBEIAN",
           "S26R2ZB",
           "S31ZB",
           "TS0001",
@@ -16713,13 +17864,16 @@
           "TS0001_switch",
           "TS0001_switch_module",
           "TS0003",
+          "TS0004",
           "TS000F",
           "TS0011",
           "TS0012",
           "TS0014",
           "TS0101",
           "TS0111",
+          "TS011F",
           "TS0203",
+          "TS0601",
           "TS0601_generic",
           "TS0601_tempswitch",
           "TS0603",
@@ -16737,10 +17891,7 @@
           "ZBMINIR2",
           "ZBMINIR2-R2",
           "ZG-301Z",
-          "ZG-302Z1",
-          "TS0004",
-          "TS011F",
-          "TS0601"
+          "ZG-302Z1"
         ],
         "pidMatch": [
           "TS0011"
@@ -17011,12 +18162,21 @@
         "exists": true,
         "class": "sensor",
         "pids": [
-          "TS0601",
+          "AY-204ZX",
+          "AY204T",
+          "AY205Z",
+          "AY208Z",
           "CK-BL702-MWS-01",
           "CK-BL702-MWS-01(7016)",
           "CK-TLSR8656-SS5-01(7014)",
           "EDM-1ZBA-EU",
           "Excellux",
+          "hobeian",
+          "Hobeian",
+          "HOBEIAN",
+          "lumi.sensor_ht",
+          "lumi.sensor_ht.agl02",
+          "lumi.weather",
           "MG1_5RZ",
           "RH3052",
           "SM0201",
@@ -17028,13 +18188,16 @@
           "TRI-C1ZR",
           "TRI-K1ZR",
           "TS0004",
+          "TS0045",
           "TS004F",
           "TS0201",
           "TS0202",
           "TS0203",
           "TS0215A",
           "TS0222",
+          "TS0225",
           "TS0501B",
+          "TS0601",
           "TS0601_wirelesssw",
           "TS110E",
           "TS1201",
@@ -17048,23 +18211,15 @@
           "ZG-204ZK",
           "ZG-204ZL",
           "ZG-204ZM",
+          "ZG-204ZP",
           "ZG-204ZQ",
           "ZG-204ZV",
+          "ZG-204ZX",
           "ZG-205Z",
           "ZG-205ZL",
           "ZG-302ZL",
           "ZG-302ZM",
-          "ZP-301Z",
-          "lumi.sensor_ht",
-          "lumi.sensor_ht.agl02",
-          "lumi.weather",
-          "TS0045",
-          "TS0225",
-          "AY208Z",
-          "AY205Z",
-          "ZG-204ZX",
-          "AY204T",
-          "AY-204ZX"
+          "ZP-301Z"
         ],
         "pidMatch": [
           "TS0601"
@@ -17072,14 +18227,7 @@
         "endpointCount": 1,
         "hasEf00": true,
         "hasIas": false,
-        "batteries": [
-          "CR2032",
-          "CR2450",
-          "AAA",
-          "AA",
-          "CR123A",
-          "INTERNAL"
-        ],
+        "batteries": [],
         "capabilities": [
           "alarm_motion",
           "measure_luminance",
@@ -17087,12 +18235,12 @@
           "measure_humidity",
           "alarm_human",
           "onoff",
-          "measure_battery",
           "measure_luminance.distance",
           "alarm_motion.zone1",
           "alarm_motion.zone2",
           "alarm_motion.zone3",
-          "measure_luminance.distance.zone1"
+          "measure_luminance.distance.zone1",
+          "measure_luminance.distance.zone2"
         ]
       },
       "gaps": [
@@ -17161,12 +18309,21 @@
         "exists": true,
         "class": "sensor",
         "pids": [
-          "TS0601",
+          "AY-204ZX",
+          "AY204T",
+          "AY205Z",
+          "AY208Z",
           "CK-BL702-MWS-01",
           "CK-BL702-MWS-01(7016)",
           "CK-TLSR8656-SS5-01(7014)",
           "EDM-1ZBA-EU",
           "Excellux",
+          "hobeian",
+          "Hobeian",
+          "HOBEIAN",
+          "lumi.sensor_ht",
+          "lumi.sensor_ht.agl02",
+          "lumi.weather",
           "MG1_5RZ",
           "RH3052",
           "SM0201",
@@ -17178,13 +18335,16 @@
           "TRI-C1ZR",
           "TRI-K1ZR",
           "TS0004",
+          "TS0045",
           "TS004F",
           "TS0201",
           "TS0202",
           "TS0203",
           "TS0215A",
           "TS0222",
+          "TS0225",
           "TS0501B",
+          "TS0601",
           "TS0601_wirelesssw",
           "TS110E",
           "TS1201",
@@ -17198,23 +18358,15 @@
           "ZG-204ZK",
           "ZG-204ZL",
           "ZG-204ZM",
+          "ZG-204ZP",
           "ZG-204ZQ",
           "ZG-204ZV",
+          "ZG-204ZX",
           "ZG-205Z",
           "ZG-205ZL",
           "ZG-302ZL",
           "ZG-302ZM",
-          "ZP-301Z",
-          "lumi.sensor_ht",
-          "lumi.sensor_ht.agl02",
-          "lumi.weather",
-          "TS0045",
-          "TS0225",
-          "AY208Z",
-          "AY205Z",
-          "ZG-204ZX",
-          "AY204T",
-          "AY-204ZX"
+          "ZP-301Z"
         ],
         "pidMatch": [
           "TS0601"
@@ -17222,14 +18374,7 @@
         "endpointCount": 1,
         "hasEf00": true,
         "hasIas": false,
-        "batteries": [
-          "CR2032",
-          "CR2450",
-          "AAA",
-          "AA",
-          "CR123A",
-          "INTERNAL"
-        ],
+        "batteries": [],
         "capabilities": [
           "alarm_motion",
           "measure_luminance",
@@ -17237,12 +18382,12 @@
           "measure_humidity",
           "alarm_human",
           "onoff",
-          "measure_battery",
           "measure_luminance.distance",
           "alarm_motion.zone1",
           "alarm_motion.zone2",
           "alarm_motion.zone3",
-          "measure_luminance.distance.zone1"
+          "measure_luminance.distance.zone1",
+          "measure_luminance.distance.zone2"
         ]
       },
       "gaps": [
@@ -17312,12 +18457,21 @@
         "exists": true,
         "class": "sensor",
         "pids": [
-          "TS0601",
+          "AY-204ZX",
+          "AY204T",
+          "AY205Z",
+          "AY208Z",
           "CK-BL702-MWS-01",
           "CK-BL702-MWS-01(7016)",
           "CK-TLSR8656-SS5-01(7014)",
           "EDM-1ZBA-EU",
           "Excellux",
+          "hobeian",
+          "Hobeian",
+          "HOBEIAN",
+          "lumi.sensor_ht",
+          "lumi.sensor_ht.agl02",
+          "lumi.weather",
           "MG1_5RZ",
           "RH3052",
           "SM0201",
@@ -17329,13 +18483,16 @@
           "TRI-C1ZR",
           "TRI-K1ZR",
           "TS0004",
+          "TS0045",
           "TS004F",
           "TS0201",
           "TS0202",
           "TS0203",
           "TS0215A",
           "TS0222",
+          "TS0225",
           "TS0501B",
+          "TS0601",
           "TS0601_wirelesssw",
           "TS110E",
           "TS1201",
@@ -17349,23 +18506,15 @@
           "ZG-204ZK",
           "ZG-204ZL",
           "ZG-204ZM",
+          "ZG-204ZP",
           "ZG-204ZQ",
           "ZG-204ZV",
+          "ZG-204ZX",
           "ZG-205Z",
           "ZG-205ZL",
           "ZG-302ZL",
           "ZG-302ZM",
-          "ZP-301Z",
-          "lumi.sensor_ht",
-          "lumi.sensor_ht.agl02",
-          "lumi.weather",
-          "TS0045",
-          "TS0225",
-          "AY208Z",
-          "AY205Z",
-          "ZG-204ZX",
-          "AY204T",
-          "AY-204ZX"
+          "ZP-301Z"
         ],
         "pidMatch": [
           "TS0601"
@@ -17373,14 +18522,7 @@
         "endpointCount": 1,
         "hasEf00": true,
         "hasIas": false,
-        "batteries": [
-          "CR2032",
-          "CR2450",
-          "AAA",
-          "AA",
-          "CR123A",
-          "INTERNAL"
-        ],
+        "batteries": [],
         "capabilities": [
           "alarm_motion",
           "measure_luminance",
@@ -17388,12 +18530,12 @@
           "measure_humidity",
           "alarm_human",
           "onoff",
-          "measure_battery",
           "measure_luminance.distance",
           "alarm_motion.zone1",
           "alarm_motion.zone2",
           "alarm_motion.zone3",
-          "measure_luminance.distance.zone1"
+          "measure_luminance.distance.zone1",
+          "measure_luminance.distance.zone2"
         ]
       },
       "gaps": [
@@ -17580,15 +18722,13 @@
           "ZBMINIR",
           "ZBMINIR2",
           "ZBMINIR2-R2",
-          "ZG-301Z",
-          "ZG-302Z1",
           "TS0006"
         ],
         "pidMatch": [
           "TS0004"
         ],
         "endpointCount": 4,
-        "hasEf00": true,
+        "hasEf00": false,
         "hasIas": false,
         "batteries": [],
         "capabilities": [
@@ -17597,13 +18737,7 @@
           "onoff.gang3",
           "onoff.gang4",
           "measure_power",
-          "power_on_behavior",
-          "button.toggle_1",
-          "button.toggle_2",
-          "button.toggle_3",
-          "button.toggle_4",
-          "button.identify",
-          "button.1"
+          "power_on_behavior"
         ]
       },
       "gaps": [
@@ -17664,17 +18798,21 @@
         "class": "socket",
         "pids": [
           "ZG-305Z",
+          "hobeian",
+          "Hobeian",
+          "HOBEIAN",
           "TS0002",
-          "TS0012",
           "TS0002_power",
           "TS0002_switch_module",
-          "ZG-302Z2",
-          "TS011F",
           "TS0003",
-          "TS0013",
-          "TS0726",
           "TS000F",
-          "TS0601"
+          "TS0012",
+          "TS0013",
+          "TS011F",
+          "TS0601",
+          "TS0726",
+          "ZG-301Z-2CH",
+          "ZG-302Z2"
         ],
         "pidMatch": [
           "TS0002"
@@ -17753,27 +18891,30 @@
         "exists": true,
         "class": "sensor",
         "pids": [
+          "_tz3000_eit6l5",
+          "_tz3000_kyb656no",
           "3315-S",
           "3315-Seu",
           "CK-TLSR8656-SS5-01(7019)",
+          "hobeian",
+          "Hobeian",
+          "HOBEIAN",
           "HS1WL",
           "LS21001",
+          "lumi.sensor_wleak.aq1",
+          "q9mpfhw",
+          "RH3001",
           "SJCGQ11LM",
           "SJCGQ12LM",
           "SJCGQ13LM",
           "SNZB-05",
           "SNZB-05P",
           "SQ510A",
+          "TS0201",
           "TS0207",
+          "TS0601",
           "ZG-222Z",
           "ZG-222ZA",
-          "_tz3000_eit6l5",
-          "_tz3000_kyb656no",
-          "lumi.sensor_wleak.aq1",
-          "q9mpfhw",
-          "RH3001",
-          "TS0201",
-          "TS0601",
           "ZG-226Z"
         ],
         "pidMatch": [
@@ -17947,9 +19088,6 @@
           "ZBMINIR2",
           "ZBMINIR2-R2",
           "ZBT-ColorLight",
-          "ZG-301Z",
-          "ZG-302Z1",
-          "ZG-302Z2",
           "lumi.plug.macn01",
           "lumi.plug.maeu01",
           "lumi.plug.mmeu01",
@@ -18078,9 +19216,7 @@
           "ZBMINIL2-R2",
           "ZBMINIR",
           "ZBMINIR2",
-          "ZBMINIR2-R2",
-          "ZG-301Z",
-          "ZG-302Z1"
+          "ZBMINIR2-R2"
         ],
         "pidMatch": [
           "TS0601"
@@ -18113,6 +19249,7 @@
         "TS0502B"
       ],
       "forbidden": [
+        "bulb_dimmable",
         "switch_1gang",
         "wall_switch_5_gang_tuya"
       ],
@@ -18273,17 +19410,21 @@
         "class": "socket",
         "pids": [
           "ZG-305Z",
+          "hobeian",
+          "Hobeian",
+          "HOBEIAN",
           "TS0002",
-          "TS0012",
           "TS0002_power",
           "TS0002_switch_module",
-          "ZG-302Z2",
-          "TS011F",
           "TS0003",
-          "TS0013",
-          "TS0726",
           "TS000F",
-          "TS0601"
+          "TS0012",
+          "TS0013",
+          "TS011F",
+          "TS0601",
+          "TS0726",
+          "ZG-301Z-2CH",
+          "ZG-302Z2"
         ],
         "pidMatch": [
           "TS0012"
@@ -18505,12 +19646,21 @@
         "exists": true,
         "class": "sensor",
         "pids": [
-          "TS0601",
+          "AY-204ZX",
+          "AY204T",
+          "AY205Z",
+          "AY208Z",
           "CK-BL702-MWS-01",
           "CK-BL702-MWS-01(7016)",
           "CK-TLSR8656-SS5-01(7014)",
           "EDM-1ZBA-EU",
           "Excellux",
+          "hobeian",
+          "Hobeian",
+          "HOBEIAN",
+          "lumi.sensor_ht",
+          "lumi.sensor_ht.agl02",
+          "lumi.weather",
           "MG1_5RZ",
           "RH3052",
           "SM0201",
@@ -18522,13 +19672,16 @@
           "TRI-C1ZR",
           "TRI-K1ZR",
           "TS0004",
+          "TS0045",
           "TS004F",
           "TS0201",
           "TS0202",
           "TS0203",
           "TS0215A",
           "TS0222",
+          "TS0225",
           "TS0501B",
+          "TS0601",
           "TS0601_wirelesssw",
           "TS110E",
           "TS1201",
@@ -18542,23 +19695,15 @@
           "ZG-204ZK",
           "ZG-204ZL",
           "ZG-204ZM",
+          "ZG-204ZP",
           "ZG-204ZQ",
           "ZG-204ZV",
+          "ZG-204ZX",
           "ZG-205Z",
           "ZG-205ZL",
           "ZG-302ZL",
           "ZG-302ZM",
-          "ZP-301Z",
-          "lumi.sensor_ht",
-          "lumi.sensor_ht.agl02",
-          "lumi.weather",
-          "TS0045",
-          "TS0225",
-          "AY208Z",
-          "AY205Z",
-          "ZG-204ZX",
-          "AY204T",
-          "AY-204ZX"
+          "ZP-301Z"
         ],
         "pidMatch": [
           "TS0601"
@@ -18566,14 +19711,7 @@
         "endpointCount": 1,
         "hasEf00": true,
         "hasIas": false,
-        "batteries": [
-          "CR2032",
-          "CR2450",
-          "AAA",
-          "AA",
-          "CR123A",
-          "INTERNAL"
-        ],
+        "batteries": [],
         "capabilities": [
           "alarm_motion",
           "measure_luminance",
@@ -18581,12 +19719,12 @@
           "measure_humidity",
           "alarm_human",
           "onoff",
-          "measure_battery",
           "measure_luminance.distance",
           "alarm_motion.zone1",
           "alarm_motion.zone2",
           "alarm_motion.zone3",
-          "measure_luminance.distance.zone1"
+          "measure_luminance.distance.zone1",
+          "measure_luminance.distance.zone2"
         ]
       },
       "gaps": [
@@ -18662,6 +19800,12 @@
           "CK-BL702-MWS-01",
           "CK-BL702-MWS-01(7016)",
           "CK-TLSR8656-SS5-01(7014)",
+          "hobeian",
+          "Hobeian",
+          "HOBEIAN",
+          "lumi.sensor_ht",
+          "lumi.sensor_ht.agl02",
+          "lumi.weather",
           "MG1_5RZ",
           "RH3052",
           "S26R2ZB",
@@ -18685,15 +19829,19 @@
           "TS0004",
           "TS0011",
           "TS0101",
+          "TS0201",
           "TS0202",
           "TS0215A",
           "TS0222",
+          "ts0601",
+          "TS0601",
           "TS0601_air_purifier",
           "TS0601_wirelesssw",
           "TS0726",
           "TS110E",
           "TS1201",
           "TS4100",
+          "TY0201",
           "WSDCGQ01LM",
           "WSDCGQ11LM",
           "WSDCGQ12LM",
@@ -18708,14 +19856,7 @@
           "ZBMINIR2-R2",
           "ZG-227Z",
           "ZG-227ZL",
-          "ZP-301Z",
-          "lumi.sensor_ht",
-          "lumi.sensor_ht.agl02",
-          "lumi.weather",
-          "ts0601",
-          "TS0201",
-          "TY0201",
-          "TS0601"
+          "ZP-301Z"
         ],
         "pidMatch": [
           "TS0601"
@@ -18739,6 +19880,448 @@
       "gaps": [
         "no_sources"
       ]
+    },
+    {
+      "id": "p2453-ja5osu5g-ts004f-smart-knob",
+      "driver": "smart_knob",
+      "protocol": null,
+      "mfrs": [
+        "_TZ3000_ja5osu5g",
+        "_tz3000_ja5osu5g"
+      ],
+      "pids": [
+        "TS004F"
+      ],
+      "forbidden": [
+        "button_wireless_1",
+        "button_wireless_4"
+      ],
+      "notes": "ZHA/Z2M 1-btn TS004F scene — sibling kaflzta4",
+      "sources": [],
+      "retailNames": [],
+      "z2mPids": [],
+      "z2mHit": false,
+      "compound": [
+        {
+          "key": "_TZ3000_ja5osu5g|TS004F",
+          "driver": "smart_knob",
+          "protocol": "zcl",
+          "dp": null,
+          "notes": "P2453 ZHA/Z2M 1-btn TS004F scene sibling of kaflzta4",
+          "powerSource": null
+        },
+        {
+          "key": "_tz3000_ja5osu5g|TS004F",
+          "driver": "smart_knob",
+          "protocol": "zcl",
+          "dp": null,
+          "notes": "P2453 ZHA/Z2M 1-btn TS004F scene sibling of kaflzta4",
+          "powerSource": null
+        }
+      ],
+      "compose": {
+        "exists": true,
+        "class": "button",
+        "pids": [
+          "TS004F",
+          "ERS-10TZBVK-AA",
+          "ZG-101ZD",
+          "ZG-101Z"
+        ],
+        "pidMatch": [
+          "TS004F"
+        ],
+        "endpointCount": 1,
+        "hasEf00": false,
+        "hasIas": false,
+        "batteries": [
+          "CR2032"
+        ],
+        "capabilities": [
+          "button",
+          "button.rotate_left",
+          "button.rotate_right",
+          "dim",
+          "measure_battery",
+          "button.1"
+        ]
+      },
+      "gaps": [
+        "no_sources",
+        "not_in_local_z2m_fps"
+      ]
+    },
+    {
+      "id": "p2453-an5rjiwd-ts0041-btn1",
+      "driver": "button_wireless_1",
+      "protocol": null,
+      "mfrs": [
+        "_TZ3000_an5rjiwd",
+        "_tz3000_an5rjiwd"
+      ],
+      "pids": [
+        "TS0041"
+      ],
+      "forbidden": [
+        "button_wireless_4",
+        "smart_knob",
+        "switch_1gang"
+      ],
+      "notes": "Johan #1128 / ZHA TS0041 — not 4-gang",
+      "sources": [],
+      "retailNames": [],
+      "z2mPids": [],
+      "z2mHit": false,
+      "compound": [
+        {
+          "key": "_TZ3000_an5rjiwd|TS0041",
+          "driver": "button_wireless_1",
+          "protocol": "zcl",
+          "dp": null,
+          "notes": "P2453 Johan #1128 / ZHA TS0041 1-btn — not button_wireless_4",
+          "powerSource": null
+        },
+        {
+          "key": "_tz3000_an5rjiwd|TS0041",
+          "driver": "button_wireless_1",
+          "protocol": "zcl",
+          "dp": null,
+          "notes": "P2453 Johan #1128 / ZHA TS0041 1-btn — not button_wireless_4",
+          "powerSource": null
+        }
+      ],
+      "compose": {
+        "exists": true,
+        "class": "button",
+        "pids": [
+          "3450-L",
+          "E1524/E1810",
+          "E1743",
+          "E1744",
+          "E1812",
+          "E2001/E2002",
+          "E2123",
+          "hobeian",
+          "Hobeian",
+          "HOBEIAN",
+          "lumi.remote.b1acn01",
+          "lumi.sensor_switch",
+          "lumi.sensor_switch.aq2",
+          "lumi.sensor_switch.aq3",
+          "ROM001",
+          "RWL020",
+          "RWL021",
+          "RWL022",
+          "SNZB-01",
+          "SNZB-01P",
+          "TS0001",
+          "TS0041",
+          "TS0041A",
+          "TS004F",
+          "TS0215A",
+          "TS0601",
+          "WXKG01LM",
+          "WXKG02LM",
+          "WXKG03LM",
+          "WXKG06LM",
+          "WXKG07LM",
+          "WXKG11LM",
+          "WXKG12LM",
+          "ZG-101ZD",
+          "ZG-101ZL"
+        ],
+        "pidMatch": [
+          "TS0041"
+        ],
+        "endpointCount": 1,
+        "hasEf00": true,
+        "hasIas": true,
+        "batteries": [
+          "CR2450",
+          "CR2032"
+        ],
+        "capabilities": [
+          "button.1",
+          "measure_battery"
+        ]
+      },
+      "gaps": [
+        "no_sources",
+        "not_in_local_z2m_fps"
+      ]
+    },
+    {
+      "id": "p2453-5tqxpine-ts0044-scene",
+      "driver": "scene_switch_4",
+      "protocol": null,
+      "mfrs": [
+        "_TZ3000_5tqxpine",
+        "_tz3000_5tqxpine"
+      ],
+      "pids": [
+        "TS0044"
+      ],
+      "forbidden": [
+        "button_wireless_4",
+        "smart_knob"
+      ],
+      "notes": "Z2M iHseno 4-btn wall TS0044",
+      "sources": [],
+      "retailNames": [],
+      "z2mPids": [],
+      "z2mHit": false,
+      "compound": [
+        {
+          "key": "_TZ3000_5tqxpine|TS0044",
+          "driver": "scene_switch_4",
+          "protocol": "zcl",
+          "dp": null,
+          "notes": "P2453 Z2M iHseno 4-btn wall TS0044 — not button_wireless_4",
+          "powerSource": null
+        },
+        {
+          "key": "_tz3000_5tqxpine|TS0044",
+          "driver": "scene_switch_4",
+          "protocol": "zcl",
+          "dp": null,
+          "notes": "P2453 Z2M iHseno 4-btn wall TS0044 — not button_wireless_4",
+          "powerSource": null
+        }
+      ],
+      "compose": {
+        "exists": true,
+        "class": "button",
+        "pids": [
+          "TS0044",
+          "TS1002",
+          "ZG-101ZS"
+        ],
+        "pidMatch": [
+          "TS0044"
+        ],
+        "endpointCount": 4,
+        "hasEf00": false,
+        "hasIas": false,
+        "batteries": [
+          "CR2450",
+          "AAA"
+        ],
+        "capabilities": [
+          "button.1",
+          "button.2",
+          "button.3",
+          "button.4",
+          "measure_battery"
+        ]
+      },
+      "gaps": [
+        "no_sources",
+        "not_in_local_z2m_fps"
+      ]
+    },
+    {
+      "id": "p2468-frankever-wt9agwf3-valve",
+      "driver": "water_valve_smart",
+      "protocol": "tuya_dp",
+      "mfrs": [
+        "_TZE200_wt9agwf3",
+        "_tze200_wt9agwf3"
+      ],
+      "pids": [
+        "TS0601"
+      ],
+      "forbidden": [
+        "thermostat_tuya_dp",
+        "radiator_valve",
+        "wall_thermostat",
+        "device_radiator_valve"
+      ],
+      "notes": "FrankEver FK_V02 (Z2M). P2468 sacred-keep; live Gmail still NEED_INTERVIEW.",
+      "sources": [
+        "Z2M_FK_V02",
+        "P2468"
+      ],
+      "retailNames": [],
+      "z2mPids": [],
+      "z2mHit": false,
+      "compound": [
+        {
+          "key": "_TZE200_wt9agwf3|TS0601",
+          "driver": "water_valve_smart",
+          "protocol": "tuya_dp",
+          "dp": null,
+          "notes": "FrankEver FK-V02 (Johan#1458); forbid valve_irrigation 4-way",
+          "powerSource": "mains"
+        }
+      ],
+      "compose": {
+        "exists": true,
+        "class": "other",
+        "pids": [
+          "TS0601_watervalve",
+          "TS0601",
+          "SWV-ZN",
+          "SWV-ZNE",
+          "SWV-ZFE",
+          "SWV-ZNU",
+          "SWV-ZFU",
+          "SWV-ZF2"
+        ],
+        "pidMatch": [
+          "TS0601"
+        ],
+        "endpointCount": 1,
+        "hasEf00": true,
+        "hasIas": false,
+        "batteries": [
+          "AA"
+        ],
+        "capabilities": [
+          "onoff",
+          "meter_water",
+          "measure_temperature",
+          "alarm_water",
+          "measure_battery",
+          "button.1"
+        ]
+      },
+      "gaps": []
+    },
+    {
+      "id": "p2468-frankever-5uodvhgc-valve",
+      "driver": "water_valve_smart",
+      "protocol": "tuya_dp",
+      "mfrs": [
+        "_TZE200_5uodvhgc",
+        "_tze200_5uodvhgc"
+      ],
+      "pids": [
+        "TS0601"
+      ],
+      "forbidden": [
+        "thermostat_tuya_dp",
+        "radiator_valve",
+        "wall_thermostat",
+        "device_radiator_valve"
+      ],
+      "notes": "FrankEver FK_V02 sibling. P2468.",
+      "sources": [
+        "Z2M_FK_V02",
+        "P2468"
+      ],
+      "retailNames": [],
+      "z2mPids": [],
+      "z2mHit": false,
+      "compound": [
+        {
+          "key": "_TZE200_5uodvhgc|TS0601",
+          "driver": "water_valve_smart",
+          "protocol": "tuya_dp",
+          "dp": null,
+          "notes": "FrankEver FK-V02 sibling",
+          "powerSource": "mains"
+        }
+      ],
+      "compose": {
+        "exists": true,
+        "class": "other",
+        "pids": [
+          "TS0601_watervalve",
+          "TS0601",
+          "SWV-ZN",
+          "SWV-ZNE",
+          "SWV-ZFE",
+          "SWV-ZNU",
+          "SWV-ZFU",
+          "SWV-ZF2"
+        ],
+        "pidMatch": [
+          "TS0601"
+        ],
+        "endpointCount": 1,
+        "hasEf00": true,
+        "hasIas": false,
+        "batteries": [
+          "AA"
+        ],
+        "capabilities": [
+          "onoff",
+          "meter_water",
+          "measure_temperature",
+          "alarm_water",
+          "measure_battery",
+          "button.1"
+        ]
+      },
+      "gaps": []
+    },
+    {
+      "id": "p2468-frankever-nbqnmkee-valve",
+      "driver": "water_valve_smart",
+      "protocol": "tuya_dp",
+      "mfrs": [
+        "_TZE200_nbqnmkee",
+        "_tze200_nbqnmkee"
+      ],
+      "pids": [
+        "TS0601"
+      ],
+      "forbidden": [
+        "thermostat_tuya_dp",
+        "radiator_valve",
+        "wall_thermostat",
+        "device_radiator_valve"
+      ],
+      "notes": "FrankEver FK-BV05 flow meter. P2468.",
+      "sources": [
+        "Z2M_FK-BV05",
+        "P2468"
+      ],
+      "retailNames": [],
+      "z2mPids": [],
+      "z2mHit": false,
+      "compound": [
+        {
+          "key": "_TZE200_nbqnmkee|TS0601",
+          "driver": "water_valve_smart",
+          "protocol": "tuya_dp",
+          "dp": null,
+          "notes": "FrankEver FK-BV05 flow+temp valve (Z2M)",
+          "powerSource": "mains"
+        }
+      ],
+      "compose": {
+        "exists": true,
+        "class": "other",
+        "pids": [
+          "TS0601_watervalve",
+          "TS0601",
+          "SWV-ZN",
+          "SWV-ZNE",
+          "SWV-ZFE",
+          "SWV-ZNU",
+          "SWV-ZFU",
+          "SWV-ZF2"
+        ],
+        "pidMatch": [
+          "TS0601"
+        ],
+        "endpointCount": 1,
+        "hasEf00": true,
+        "hasIas": false,
+        "batteries": [
+          "AA"
+        ],
+        "capabilities": [
+          "onoff",
+          "meter_water",
+          "measure_temperature",
+          "alarm_water",
+          "measure_battery",
+          "button.1"
+        ]
+      },
+      "gaps": []
     }
   ]
 }

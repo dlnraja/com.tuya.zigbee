@@ -4,18 +4,18 @@
 
 [![Version](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fraw.githubusercontent.com%2Fdlnraja%2Fcom.tuya.zigbee%2Fmaster%2Fapp.json&query=%24.version&label=version&color=blue)](https://homey.app/a/com.dlnraja.tuya.zigbee/)
 [![Drivers](https://img.shields.io/badge/drivers-431-brightgreen)](https://homey.app/a/com.dlnraja.tuya.zigbee/)
-[![Fingerprints](https://img.shields.io/badge/fingerprints-4,401%20unique-green)](https://homey.app/a/com.dlnraja.tuya.zigbee/)
+[![Fingerprints](https://img.shields.io/badge/fingerprints-4,402%20unique-green)](https://homey.app/a/com.dlnraja.tuya.zigbee/)
 [![SDK](https://img.shields.io/badge/SDK-3-orange)](https://apps.developer.homey.app/)
 [![License](https://img.shields.io/badge/license-GPL--3.0-green)](LICENSE)
 
-Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, sensors, lights, thermostats, covers, valves — **431 drivers**, **4,401 unique fingerprints**. No cloud required.
+Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, sensors, lights, thermostats, covers, valves — **431 drivers**, **4,402 unique fingerprints**. No cloud required.
 
 **What it does:**
 - Talks to devices on your Homey Zigbee mesh (Tuya DP `0xEF00` and standard ZCL)
 - Case-insensitive fingerprint matching so pairing is reliable across OEM variants
 - Battery curves by chemistry (no linear `%` guesses)
 - Flow cards for physical buttons, sensors, and actuators (EN, FR, NL, DE)
-- Optional native Zigbee OTA for 9 drivers (Homey v13.2.0+)
+- Optional native Zigbee OTA for 8 drivers (Homey v13.2.0+)
 
 ---
 
@@ -33,27 +33,27 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 
 | Metric | Value |
 |--------|-------|
-| **App Version** | v9.0.899 |
+| **App Version** | v9.0.938 |
 | **Drivers** | 431 (381 Zigbee + 50 WiFi) |
-| **Unique Fingerprints** | 4,401 |
-| **Pairing Variants** | 17,046 (4 case combos per fingerprint) |
+| **Unique Fingerprints** | 4,402 |
+| **Pairing Variants** | 17,134 (4 case combos per fingerprint) |
 | **Unique Product IDs** | 592 |
-| **Flow Cards** | 5,970 |
+| **Flow Cards** | 5,987 |
 | **Unique Capabilities** | 170 |
-| **Native OTA Drivers** | 9 |
-| **Test Suites** | 288 files |
+| **Native OTA Drivers** | 8 |
+| **Test Suites** | 314 files |
 | **SVG Icons** | 731 |
 | **Languages** | EN, FR, NL, DE |
 | **SDK / Homey** | 3 / >= 12.2.0 |
-| **Last Updated** | 2026-09-12 |
+| **Last Updated** | 2026-09-15 |
 
 ### Top 20 Drivers by Fingerprint Count
 
 | # | Driver | Fingerprints |
 |---|--------|-------------|
 | 1 | `climate_sensor` | 2,106 |
-| 2 | `switch_1gang` | 1,530 |
-| 3 | `presence_sensor_radar` | 805 |
+| 2 | `switch_1gang` | 1,539 |
+| 3 | `presence_sensor_radar` | 821 |
 | 4 | `curtain_motor` | 788 |
 | 5 | `radiator_valve` | 599 |
 | 6 | `button_wireless_2` | 570 |
@@ -61,10 +61,10 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 | 8 | `generic_tuya` | 414 |
 | 9 | `device_radiator_valve` | 332 |
 | 10 | `switch_4gang` | 292 |
-| 11 | `switch_2gang` | 255 |
+| 11 | `switch_2gang` | 275 |
 | 12 | `contact_sensor` | 228 |
 | 13 | `motion_sensor` | 225 |
-| 14 | `switch_3gang` | 215 |
+| 14 | `switch_3gang` | 223 |
 | 15 | `soil_sensor` | 209 |
 | 16 | `diy_custom_zigbee` | 206 |
 | 17 | `thermostat_tuya_dp` | 188 |
@@ -102,18 +102,18 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 
 | Version | Changes |
 |---------|---------|
-| **v9.0.899** | Athom republish of crash soft-fail + smart knob flow restore (retry after socket hang up). |
-| **v9.0.897** | Restored smart knob rotate/brightness flows; harvest no longer wipes rotary UX (publish unblock). |
-| **v9.0.896** | Crash fix: soft-fail Driver Not Initialized motionsensor (Homey Pro 2026). |
-| **v9.0.894** | Unblock publish: smart_knob flow cards + rkgngb5o CCT couple lock. |
-| **v9.0.893** | Moes curtain mid-% position + soft timeout + settings UI (Salvagr #533). |
-| **v9.0.892** | VicHY mains radar: DynCap/DCM no longer re-injects ZCL battery after tip update. |
-| **v9.0.891** | MCU EF00 TX arm before mcuSyncTime/DP + WiFi Easy Login email/phone + SmartLink QR. |
-| **v9.0.890** | Insoma/FrankEver EF00-only pairing (no OnOff cluster 6) + max raw Zigbee DP fallback. |
-| **v9.0.889** | Fixed mains presence radar Homey Energy battery warning (compose no longer ships phantom batteries). |
-| **v9.0.888** | Fixed Smartbutton battery UI (no more ?) and skipped ZCL battery storm on SH-SC07. |
-| **v9.0.887** | Insoma dual irrigation pairing clusters; FrankEver FK_V02 DPs; VicHY mains radar re-heal. |
-| **v9.0.886** | Moes ZTS curtain: force mains (skip battery wake ping) + EF00-only TX (#533). |
+| **v9.0.938** | Smart battery-low alarm (app-owned, not Homey alarm_battery); Smartbutton battery UI treat; OEM Homey Device Updates only (removed unsafe… |
+| **v9.0.934** | P2505: TITAN Buffer SSOT load (HomeyButtonUiCharter) + close deferred dual-app suggestions. |
+| **v9.0.933** | Moes curtain switch fingerprint lock hardened; Smartbutton battery UI fixes remain. Update Homey Test. |
+| **v9.0.931** | IR anti-spam flood guard; complementary failover for curtains/radar/Smartbutton; SMART ADAPT defers under low memory to reduce app crashe… |
+| **v9.0.930** | Pairing learnmode, Smartbutton battery UI/History, and Homey capability UX heal (getable sensors + any-capability Flow). Silent forum enr… |
+| **v9.0.928** | Improved pairing learnmode guidance; Smartbutton battery shown again in Homey UI and History; capability UX heal so sensors stay readable… |
+| **v9.0.927** | Complementary failover: keep MIAMO AM43 through Athom compact; rehydrate Smartbutton battery when stripped (Peter a5304ce8); strip VicHY … |
+| **v9.0.925** | Soft-republish Smartbutton battery keep (P2488) after Athom tip hang. Update Test — Peter Smartknop should show % again. |
+| **v9.0.923** | Fixed Smartbutton battery tile stripped by hourly adapter (Peter a5304ce8). Intelligent IR Homey TX remains on 9.0.922+. |
+| **v9.0.922** | Intelligent IR Homey Pro 2023 Pronto TX + Zigbee/WiFi router UX (P2487c). Users: update Test. |
+| **v9.0.921** | Intelligent IR: Zigbee + WiFi + Homey Pro 2023 onboard Pronto TX; virtual remote multi-sender flows and setup wizard. |
+| **v9.0.919** | P2487 Intelligent IR: Zigbee+WiFi router, Pronto/HEX paste, wifi_ir flows, shared learn wizard. Peter tip-lag fixed on ≥9.0.918. |
 
 <!-- CHANGELOG_END -->
 

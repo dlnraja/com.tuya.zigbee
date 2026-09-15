@@ -1,6 +1,6 @@
 # Max coverage investigate (P177/P179)
 
-Generated: 2026-09-08T07:27:20.869Z
+Generated: 2026-09-15T08:02:51.249Z
 
 ## Mode
 
@@ -18,19 +18,19 @@ Generated: 2026-09-08T07:27:20.869Z
 
 | Phase | OK | Hard | ms |
 |-------|----|------|----|
-| dual-claim | ✓ | yes | 95 |
-| dual-claim-brands | ✓ | yes | 98 |
-| align-mfs | ✓ | yes | 1270 |
-| sacred-registry | ✓ | yes | 10434 |
-| sacred-class | ✓ | yes | 539 |
-| energy | ✓ | yes | 58 |
-| heap | ✓ | yes | 84 |
-| gmail-patterns | ✓ | yes | 29 |
-| layers | ✓ | yes | 116 |
-| forum-paste | ✓ | yes | 27 |
-| blakadder-dry | ✓ | no | 24 |
-| multi-source | ✓ | yes | 142001 |
-| analyze-diag-locally smoke | ✓ | yes | 38 |
+| dual-claim | ✓ | yes | 98 |
+| dual-claim-brands | ✓ | yes | 100 |
+| align-mfs | ✓ | yes | 1372 |
+| sacred-registry | ✓ | yes | 11728 |
+| sacred-class | ✓ | yes | 552 |
+| energy | ✓ | yes | 62 |
+| heap | ✓ | yes | 86 |
+| gmail-patterns | ✓ | yes | 28 |
+| layers | ✓ | yes | 118 |
+| forum-paste | ✓ | yes | 28 |
+| blakadder-dry | ✓ | no | 27 |
+| multi-source | ✓ | yes | 144649 |
+| analyze-diag-locally smoke | ✓ | yes | 37 |
 
 ## Recommendations
 
