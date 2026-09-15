@@ -183,6 +183,13 @@ jobs:
               exit 1
             fi
           fi
+          # P2521: refuse pretty-printed mfs_db (Homey heap + CI false churn)
+          if head -c 2 data/mfs_db.json | grep -q '{'; then
+            lines=$(wc -l < data/mfs_db.json | tr -d ' ')
+            if [ "$lines" -gt 5 ]; then
+              echo "::warning::mfs_db.json looks pretty-printed ($lines lines) — prefer compact one-line (align --apply writes compact)"
+            fi
+          fi
 
       - name: Sacred couple registry audit (P151)
         run: node tools/ci/audit-sacred-couple.js --from-registry

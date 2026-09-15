@@ -605,7 +605,8 @@ function main() {
   };
 
   if (APPLY && changes.length) {
-    fs.writeFileSync(DB_PATH, `${JSON.stringify(db, null, 2)}\n`);
+    fs.writeFileSync(DB_PATH, `${JSON.stringify(db)}\n`);
+    // WHY(P2520/P169): compact one-line JSON — Homey Buffer parse + avoid CI pretty-print false diffs
   }
 
   const outDir = path.join(ROOT, 'reports');
