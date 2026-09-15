@@ -1,6 +1,6 @@
 {
- "generated": "2026-09-14T09:15:12.707Z",
- "count": 15348,
+ "generated": "2026-09-15T08:02:48.948Z",
+ "count": 15350,
  "reference": {
   "_tze200_qpn5q17m": {
    "driverId": "air_purifier",
@@ -306759,6 +306759,50 @@
     "_tze200_BCUSNQT8"
    ]
   },
+  "_TZE200_j1xl73iw": {
+   "driverId": "curtain_motor",
+   "modelIds": [],
+   "vendor": null,
+   "model": null,
+   "title": null,
+   "category": null,
+   "description": null,
+   "productPage": null,
+   "imageCandidates": [],
+   "batteries": [
+    "OTHER"
+   ],
+   "batteryTypical": "OTHER",
+   "energy": {
+    "nominalW": 8,
+    "standbyW": 0.8
+   },
+   "deviceClass": "windowcoverings",
+   "capabilities": null,
+   "source": null
+  },
+  "_tze200_j1xl73iw": {
+   "driverId": "curtain_motor",
+   "modelIds": [],
+   "vendor": null,
+   "model": null,
+   "title": null,
+   "category": null,
+   "description": null,
+   "productPage": null,
+   "imageCandidates": [],
+   "batteries": [
+    "OTHER"
+   ],
+   "batteryTypical": "OTHER",
+   "energy": {
+    "nominalW": 8,
+    "standbyW": 0.8
+   },
+   "deviceClass": "windowcoverings",
+   "capabilities": null,
+   "source": null
+  },
   "_TZ3000_BS93NPAE": {
    "driverId": "curtain_motor_shutter",
    "modelIds": [],
@@ -339604,6 +339648,52 @@
    "capabilities": null,
    "source": null
   },
+  "_TZ3290_xjpbcxn92aaxvmlz": {
+   "driverId": "ir_blaster",
+   "modelIds": [],
+   "vendor": null,
+   "model": null,
+   "title": null,
+   "category": null,
+   "description": null,
+   "productPage": null,
+   "imageCandidates": [],
+   "batteries": [
+    "CR2450",
+    "CR2032"
+   ],
+   "batteryTypical": "CR2450",
+   "energy": {
+    "nominalW": 2,
+    "standbyW": 0.3
+   },
+   "deviceClass": "remote",
+   "capabilities": null,
+   "source": null
+  },
+  "_TZ3290_acv1iuslxi3shaaj": {
+   "driverId": "ir_blaster",
+   "modelIds": [],
+   "vendor": null,
+   "model": null,
+   "title": null,
+   "category": null,
+   "description": null,
+   "productPage": null,
+   "imageCandidates": [],
+   "batteries": [
+    "CR2450",
+    "CR2032"
+   ],
+   "batteryTypical": "CR2450",
+   "energy": {
+    "nominalW": 2,
+    "standbyW": 0.3
+   },
+   "deviceClass": "remote",
+   "capabilities": null,
+   "source": null
+  },
   "_TZ3290_7V1K4VUFOTPOWP9Z": {
    "driverId": "ir_blaster",
    "modelIds": [
@@ -342133,28 +342223,8 @@
    "capabilities": null,
    "source": null
   },
-  "_tz3290_acv1iuslxi3shaaj": {
-   "driverId": "ir_remote",
-   "modelIds": [],
-   "vendor": null,
-   "model": null,
-   "title": null,
-   "category": null,
-   "description": null,
-   "productPage": null,
-   "imageCandidates": [],
-   "batteries": [],
-   "batteryTypical": null,
-   "energy": {
-    "nominalW": 2,
-    "standbyW": 0.3
-   },
-   "deviceClass": "other",
-   "capabilities": null,
-   "source": null
-  },
   "_tz3290_xjpbcxn92aaxvmlz": {
-   "driverId": "ir_remote",
+   "driverId": "ir_blaster",
    "modelIds": [],
    "vendor": null,
    "model": null,
@@ -342163,18 +342233,21 @@
    "description": null,
    "productPage": null,
    "imageCandidates": [],
-   "batteries": [],
-   "batteryTypical": null,
+   "batteries": [
+    "CR2450",
+    "CR2032"
+   ],
+   "batteryTypical": "CR2450",
    "energy": {
     "nominalW": 2,
     "standbyW": 0.3
    },
-   "deviceClass": "other",
+   "deviceClass": "remote",
    "capabilities": null,
    "source": null
   },
-  "_TZ3290_acv1iuslxi3shaaj": {
-   "driverId": "ir_remote",
+  "_tz3290_acv1iuslxi3shaaj": {
+   "driverId": "ir_blaster",
    "modelIds": [],
    "vendor": null,
    "model": null,
@@ -342183,18 +342256,21 @@
    "description": null,
    "productPage": null,
    "imageCandidates": [],
-   "batteries": [],
-   "batteryTypical": null,
+   "batteries": [
+    "CR2450",
+    "CR2032"
+   ],
+   "batteryTypical": "CR2450",
    "energy": {
     "nominalW": 2,
     "standbyW": 0.3
    },
-   "deviceClass": "other",
+   "deviceClass": "remote",
    "capabilities": null,
    "source": null
   },
-  "_TZ3290_xjpbcxn92aaxvmlz": {
-   "driverId": "ir_remote",
+  "_TZ3290_lidgqyzu": {
+   "driverId": "ir_blaster",
    "modelIds": [],
    "vendor": null,
    "model": null,
@@ -342203,18 +342279,21 @@
    "description": null,
    "productPage": null,
    "imageCandidates": [],
-   "batteries": [],
-   "batteryTypical": null,
+   "batteries": [
+    "CR2450",
+    "CR2032"
+   ],
+   "batteryTypical": "CR2450",
    "energy": {
     "nominalW": 2,
     "standbyW": 0.3
    },
-   "deviceClass": "other",
+   "deviceClass": "remote",
    "capabilities": null,
    "source": null
   },
-  "_tz3290_ACV1IUSLXI3SHAAJ": {
-   "driverId": "ir_remote",
+  "_tz3290_lidgqyzu": {
+   "driverId": "ir_blaster",
    "modelIds": [],
    "vendor": null,
    "model": null,
@@ -342223,33 +342302,16 @@
    "description": null,
    "productPage": null,
    "imageCandidates": [],
-   "batteries": [],
-   "batteryTypical": null,
+   "batteries": [
+    "CR2450",
+    "CR2032"
+   ],
+   "batteryTypical": "CR2450",
    "energy": {
     "nominalW": 2,
     "standbyW": 0.3
    },
-   "deviceClass": "other",
-   "capabilities": null,
-   "source": null
-  },
-  "_tz3290_XJPBCXN92AAXVMLZ": {
-   "driverId": "ir_remote",
-   "modelIds": [],
-   "vendor": null,
-   "model": null,
-   "title": null,
-   "category": null,
-   "description": null,
-   "productPage": null,
-   "imageCandidates": [],
-   "batteries": [],
-   "batteryTypical": null,
-   "energy": {
-    "nominalW": 2,
-    "standbyW": 0.3
-   },
-   "deviceClass": "other",
+   "deviceClass": "remote",
    "capabilities": null,
    "source": null
   },

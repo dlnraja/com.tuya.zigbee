@@ -1,10 +1,10 @@
 {
-  "timestamp": "2026-09-14T10:15:50.885Z",
+  "timestamp": "2026-09-15T08:05:30.044Z",
   "gate": "align-mfs-db-intelligent",
   "apply": false,
   "check": true,
   "changeCount": 0,
-  "skippedCount": 46,
+  "skippedCount": 45,
   "highSeverityCount": 0,
   "byAction": {},
   "changes": [],
@@ -221,11 +221,6 @@
         "plug",
         "smartplug"
       ]
-    },
-    {
-      "reason": "unclaimed_no_compose",
-      "mfr": "_TZE200_J1XL73IW",
-      "curated": "curtain_motor"
     },
     {
       "reason": "pair_conflict_ambiguous",

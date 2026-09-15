@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-09-08T07:27:33.288Z",
+  "timestamp": "2026-09-15T08:03:05.084Z",
   "gate": "audit-sacred-couple-by-class",
   "apply": false,
   "scanned": 431,
@@ -4345,38 +4345,6 @@
       "absurd": false
     },
     {
-      "couple": "_tz3000_dfgbtub0|zg-301z",
-      "mfr": "_tz3000_dfgbtub0",
-      "pid": "zg-301z",
-      "drivers": [
-        "button_wireless_2",
-        "button_wireless_4"
-      ],
-      "classes": [
-        "button"
-      ],
-      "families": [
-        "button"
-      ],
-      "absurd": false
-    },
-    {
-      "couple": "_tz3000_dfgbtub0|zg-302z1",
-      "mfr": "_tz3000_dfgbtub0",
-      "pid": "zg-302z1",
-      "drivers": [
-        "button_wireless_2",
-        "button_wireless_4"
-      ],
-      "classes": [
-        "button"
-      ],
-      "families": [
-        "button"
-      ],
-      "absurd": false
-    },
-    {
       "couple": "_tz3000_dfgbtub0|snzb-01m",
       "mfr": "_tz3000_dfgbtub0",
       "pid": "snzb-01m",
@@ -4905,38 +4873,6 @@
       "absurd": false
     },
     {
-      "couple": "_tz3000_ee8nrt2l|zg-301z",
-      "mfr": "_tz3000_ee8nrt2l",
-      "pid": "zg-301z",
-      "drivers": [
-        "button_wireless_2",
-        "button_wireless_4"
-      ],
-      "classes": [
-        "button"
-      ],
-      "families": [
-        "button"
-      ],
-      "absurd": false
-    },
-    {
-      "couple": "_tz3000_ee8nrt2l|zg-302z1",
-      "mfr": "_tz3000_ee8nrt2l",
-      "pid": "zg-302z1",
-      "drivers": [
-        "button_wireless_2",
-        "button_wireless_4"
-      ],
-      "classes": [
-        "button"
-      ],
-      "families": [
-        "button"
-      ],
-      "absurd": false
-    },
-    {
       "couple": "_tz3000_ee8nrt2l|snzb-01m",
       "mfr": "_tz3000_ee8nrt2l",
       "pid": "snzb-01m",
@@ -4985,6 +4921,22 @@
       "absurd": false
     },
     {
+      "couple": "_tz3000_o4mkahkc|excellux",
+      "mfr": "_tz3000_o4mkahkc",
+      "pid": "excellux",
+      "drivers": [
+        "contact_sensor",
+        "motion_sensor"
+      ],
+      "classes": [
+        "sensor"
+      ],
+      "families": [
+        "sensor"
+      ],
+      "absurd": false
+    },
+    {
       "couple": "_tz3000_rcuyhwe3|ts0203",
       "mfr": "_tz3000_rcuyhwe3",
       "pid": "ts0203",
@@ -5013,38 +4965,6 @@
       ],
       "families": [
         "sensor"
-      ],
-      "absurd": false
-    },
-    {
-      "couple": "_tz3000_o4mkahkc|excellux",
-      "mfr": "_tz3000_o4mkahkc",
-      "pid": "excellux",
-      "drivers": [
-        "contact_sensor",
-        "motion_sensor"
-      ],
-      "classes": [
-        "sensor"
-      ],
-      "families": [
-        "sensor"
-      ],
-      "absurd": false
-    },
-    {
-      "couple": "_tze200_zah67ekd|ts0601",
-      "mfr": "_tze200_zah67ekd",
-      "pid": "ts0601",
-      "drivers": [
-        "curtain_motor",
-        "curtain_motor_tilt"
-      ],
-      "classes": [
-        "windowcoverings"
-      ],
-      "families": [
-        "cover"
       ],
       "absurd": false
     },
@@ -7145,8 +7065,8 @@
       "absurd": false
     },
     {
-      "couple": "_tze200_jsaqgakf|ts0601",
-      "mfr": "_tze200_jsaqgakf",
+      "couple": "_tze200_2pddnnrk|ts0601",
+      "mfr": "_tze200_2pddnnrk",
       "pid": "ts0601",
       "drivers": [
         "rain_sensor",
@@ -7161,8 +7081,8 @@
       "absurd": false
     },
     {
-      "couple": "_tze200_2pddnnrk|ts0601",
-      "mfr": "_tze200_2pddnnrk",
+      "couple": "_tze200_jsaqgakf|ts0601",
+      "mfr": "_tze200_jsaqgakf",
       "pid": "ts0601",
       "drivers": [
         "rain_sensor",
@@ -7515,518 +7435,6 @@
         "sensor"
       ],
       "absurd": false
-    },
-    {
-      "couple": "_tz3000_t7ugva7q|01minizb",
-      "mfr": "_tz3000_t7ugva7q",
-      "pid": "01minizb",
-      "drivers": [
-        "switch_1gang",
-        "switch_3gang"
-      ],
-      "classes": [
-        "socket"
-      ],
-      "families": [
-        "socket"
-      ],
-      "absurd": false
-    },
-    {
-      "couple": "_tz3000_t7ugva7q|basiczbr3",
-      "mfr": "_tz3000_t7ugva7q",
-      "pid": "basiczbr3",
-      "drivers": [
-        "switch_1gang",
-        "switch_3gang"
-      ],
-      "classes": [
-        "socket"
-      ],
-      "families": [
-        "socket"
-      ],
-      "absurd": false
-    },
-    {
-      "couple": "_tz3000_t7ugva7q|s26r2zb",
-      "mfr": "_tz3000_t7ugva7q",
-      "pid": "s26r2zb",
-      "drivers": [
-        "switch_1gang",
-        "switch_3gang"
-      ],
-      "classes": [
-        "socket"
-      ],
-      "families": [
-        "socket"
-      ],
-      "absurd": false
-    },
-    {
-      "couple": "_tz3000_t7ugva7q|s31zb",
-      "mfr": "_tz3000_t7ugva7q",
-      "pid": "s31zb",
-      "drivers": [
-        "switch_1gang",
-        "switch_3gang"
-      ],
-      "classes": [
-        "socket"
-      ],
-      "families": [
-        "socket"
-      ],
-      "absurd": false
-    },
-    {
-      "couple": "_tz3000_t7ugva7q|ts0001",
-      "mfr": "_tz3000_t7ugva7q",
-      "pid": "ts0001",
-      "drivers": [
-        "switch_1gang",
-        "switch_3gang"
-      ],
-      "classes": [
-        "socket"
-      ],
-      "families": [
-        "socket"
-      ],
-      "absurd": false
-    },
-    {
-      "couple": "_tz3000_t7ugva7q|ts0001_power",
-      "mfr": "_tz3000_t7ugva7q",
-      "pid": "ts0001_power",
-      "drivers": [
-        "switch_1gang",
-        "switch_3gang"
-      ],
-      "classes": [
-        "socket"
-      ],
-      "families": [
-        "socket"
-      ],
-      "absurd": false
-    },
-    {
-      "couple": "_tz3000_t7ugva7q|ts0001_switch",
-      "mfr": "_tz3000_t7ugva7q",
-      "pid": "ts0001_switch",
-      "drivers": [
-        "switch_1gang",
-        "switch_3gang"
-      ],
-      "classes": [
-        "socket"
-      ],
-      "families": [
-        "socket"
-      ],
-      "absurd": false
-    },
-    {
-      "couple": "_tz3000_t7ugva7q|ts0001_switch_module",
-      "mfr": "_tz3000_t7ugva7q",
-      "pid": "ts0001_switch_module",
-      "drivers": [
-        "switch_1gang",
-        "switch_3gang"
-      ],
-      "classes": [
-        "socket"
-      ],
-      "families": [
-        "socket"
-      ],
-      "absurd": false
-    },
-    {
-      "couple": "_tz3000_t7ugva7q|ts0003",
-      "mfr": "_tz3000_t7ugva7q",
-      "pid": "ts0003",
-      "drivers": [
-        "switch_1gang",
-        "switch_3gang"
-      ],
-      "classes": [
-        "socket"
-      ],
-      "families": [
-        "socket"
-      ],
-      "absurd": false
-    },
-    {
-      "couple": "_tz3000_t7ugva7q|ts0011",
-      "mfr": "_tz3000_t7ugva7q",
-      "pid": "ts0011",
-      "drivers": [
-        "switch_1gang",
-        "switch_3gang"
-      ],
-      "classes": [
-        "socket"
-      ],
-      "families": [
-        "socket"
-      ],
-      "absurd": false
-    },
-    {
-      "couple": "_tz3000_t7ugva7q|ts0012",
-      "mfr": "_tz3000_t7ugva7q",
-      "pid": "ts0012",
-      "drivers": [
-        "switch_1gang",
-        "switch_3gang"
-      ],
-      "classes": [
-        "socket"
-      ],
-      "families": [
-        "socket"
-      ],
-      "absurd": false
-    },
-    {
-      "couple": "_tz3000_t7ugva7q|ts0014",
-      "mfr": "_tz3000_t7ugva7q",
-      "pid": "ts0014",
-      "drivers": [
-        "switch_1gang",
-        "switch_3gang"
-      ],
-      "classes": [
-        "socket"
-      ],
-      "families": [
-        "socket"
-      ],
-      "absurd": false
-    },
-    {
-      "couple": "_tz3000_t7ugva7q|ts0101",
-      "mfr": "_tz3000_t7ugva7q",
-      "pid": "ts0101",
-      "drivers": [
-        "switch_1gang",
-        "switch_3gang"
-      ],
-      "classes": [
-        "socket"
-      ],
-      "families": [
-        "socket"
-      ],
-      "absurd": false
-    },
-    {
-      "couple": "_tz3000_t7ugva7q|ts0111",
-      "mfr": "_tz3000_t7ugva7q",
-      "pid": "ts0111",
-      "drivers": [
-        "switch_1gang",
-        "switch_3gang"
-      ],
-      "classes": [
-        "socket"
-      ],
-      "families": [
-        "socket"
-      ],
-      "absurd": false
-    },
-    {
-      "couple": "_tz3000_t7ugva7q|ts0726",
-      "mfr": "_tz3000_t7ugva7q",
-      "pid": "ts0726",
-      "drivers": [
-        "switch_1gang",
-        "switch_3gang"
-      ],
-      "classes": [
-        "socket"
-      ],
-      "families": [
-        "socket"
-      ],
-      "absurd": false
-    },
-    {
-      "couple": "_tz3000_t7ugva7q|ts110e",
-      "mfr": "_tz3000_t7ugva7q",
-      "pid": "ts110e",
-      "drivers": [
-        "switch_1gang",
-        "switch_3gang"
-      ],
-      "classes": [
-        "socket"
-      ],
-      "families": [
-        "socket"
-      ],
-      "absurd": false
-    },
-    {
-      "couple": "_tz3000_t7ugva7q|ts130f",
-      "mfr": "_tz3000_t7ugva7q",
-      "pid": "ts130f",
-      "drivers": [
-        "switch_1gang",
-        "switch_3gang"
-      ],
-      "classes": [
-        "socket"
-      ],
-      "families": [
-        "socket"
-      ],
-      "absurd": false
-    },
-    {
-      "couple": "_tz3000_t7ugva7q|ts4100",
-      "mfr": "_tz3000_t7ugva7q",
-      "pid": "ts4100",
-      "drivers": [
-        "switch_1gang",
-        "switch_3gang"
-      ],
-      "classes": [
-        "socket"
-      ],
-      "families": [
-        "socket"
-      ],
-      "absurd": false
-    },
-    {
-      "couple": "_tz3000_t7ugva7q|zbm5-1c-120",
-      "mfr": "_tz3000_t7ugva7q",
-      "pid": "zbm5-1c-120",
-      "drivers": [
-        "switch_1gang",
-        "switch_3gang"
-      ],
-      "classes": [
-        "socket"
-      ],
-      "families": [
-        "socket"
-      ],
-      "absurd": false
-    },
-    {
-      "couple": "_tz3000_t7ugva7q|zbm5-2c-120",
-      "mfr": "_tz3000_t7ugva7q",
-      "pid": "zbm5-2c-120",
-      "drivers": [
-        "switch_1gang",
-        "switch_3gang"
-      ],
-      "classes": [
-        "socket"
-      ],
-      "families": [
-        "socket"
-      ],
-      "absurd": false
-    },
-    {
-      "couple": "_tz3000_t7ugva7q|zbm5-3c-120",
-      "mfr": "_tz3000_t7ugva7q",
-      "pid": "zbm5-3c-120",
-      "drivers": [
-        "switch_1gang",
-        "switch_3gang"
-      ],
-      "classes": [
-        "socket"
-      ],
-      "families": [
-        "socket"
-      ],
-      "absurd": false
-    },
-    {
-      "couple": "_tz3000_t7ugva7q|zbmini",
-      "mfr": "_tz3000_t7ugva7q",
-      "pid": "zbmini",
-      "drivers": [
-        "switch_1gang",
-        "switch_3gang"
-      ],
-      "classes": [
-        "socket"
-      ],
-      "families": [
-        "socket"
-      ],
-      "absurd": false
-    },
-    {
-      "couple": "_tz3000_t7ugva7q|zbminil2",
-      "mfr": "_tz3000_t7ugva7q",
-      "pid": "zbminil2",
-      "drivers": [
-        "switch_1gang",
-        "switch_3gang"
-      ],
-      "classes": [
-        "socket"
-      ],
-      "families": [
-        "socket"
-      ],
-      "absurd": false
-    },
-    {
-      "couple": "_tz3000_t7ugva7q|zbminil2-r2",
-      "mfr": "_tz3000_t7ugva7q",
-      "pid": "zbminil2-r2",
-      "drivers": [
-        "switch_1gang",
-        "switch_3gang"
-      ],
-      "classes": [
-        "socket"
-      ],
-      "families": [
-        "socket"
-      ],
-      "absurd": false
-    },
-    {
-      "couple": "_tz3000_t7ugva7q|zbminir",
-      "mfr": "_tz3000_t7ugva7q",
-      "pid": "zbminir",
-      "drivers": [
-        "switch_1gang",
-        "switch_3gang"
-      ],
-      "classes": [
-        "socket"
-      ],
-      "families": [
-        "socket"
-      ],
-      "absurd": false
-    },
-    {
-      "couple": "_tz3000_t7ugva7q|zbminir2",
-      "mfr": "_tz3000_t7ugva7q",
-      "pid": "zbminir2",
-      "drivers": [
-        "switch_1gang",
-        "switch_3gang"
-      ],
-      "classes": [
-        "socket"
-      ],
-      "families": [
-        "socket"
-      ],
-      "absurd": false
-    },
-    {
-      "couple": "_tz3000_t7ugva7q|zbminir2-r2",
-      "mfr": "_tz3000_t7ugva7q",
-      "pid": "zbminir2-r2",
-      "drivers": [
-        "switch_1gang",
-        "switch_3gang"
-      ],
-      "classes": [
-        "socket"
-      ],
-      "families": [
-        "socket"
-      ],
-      "absurd": false
-    },
-    {
-      "couple": "_tz3000_t7ugva7q|zg-301z",
-      "mfr": "_tz3000_t7ugva7q",
-      "pid": "zg-301z",
-      "drivers": [
-        "switch_1gang",
-        "switch_3gang"
-      ],
-      "classes": [
-        "socket"
-      ],
-      "families": [
-        "socket"
-      ],
-      "absurd": false
-    },
-    {
-      "couple": "_tz3000_t7ugva7q|zg-302z1",
-      "mfr": "_tz3000_t7ugva7q",
-      "pid": "zg-302z1",
-      "drivers": [
-        "switch_1gang",
-        "switch_3gang"
-      ],
-      "classes": [
-        "socket"
-      ],
-      "families": [
-        "socket"
-      ],
-      "absurd": false
-    },
-    {
-      "couple": "_tz3000_t7ugva7q|ts0004",
-      "mfr": "_tz3000_t7ugva7q",
-      "pid": "ts0004",
-      "drivers": [
-        "switch_1gang",
-        "switch_3gang"
-      ],
-      "classes": [
-        "socket"
-      ],
-      "families": [
-        "socket"
-      ],
-      "absurd": false
-    },
-    {
-      "couple": "_tz3000_t7ugva7q|ts011f",
-      "mfr": "_tz3000_t7ugva7q",
-      "pid": "ts011f",
-      "drivers": [
-        "switch_1gang",
-        "switch_3gang"
-      ],
-      "classes": [
-        "socket"
-      ],
-      "families": [
-        "socket"
-      ],
-      "absurd": false
-    },
-    {
-      "couple": "_tz3000_t7ugva7q|ts0601",
-      "mfr": "_tz3000_t7ugva7q",
-      "pid": "ts0601",
-      "drivers": [
-        "switch_1gang",
-        "switch_3gang"
-      ],
-      "classes": [
-        "socket"
-      ],
-      "families": [
-        "socket"
-      ],
-      "absurd": false
     }
   ],
   "energy": [
@@ -8045,7 +7453,7 @@
   "counts": {
     "crossClassAbsurd": 70,
     "crossClassOther": 7,
-    "sameClassDual": 414,
+    "sameClassDual": 377,
     "energyIssues": 1
   }
 }

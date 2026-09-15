@@ -15,32 +15,29 @@
 ## Lookup (do this every prompt)
 
 1. Extract **manufacturerName + productId** from the user / log / forum / PM. Never invent the pid.
-2. Remember: Homey **productId** = Zigbee **Model ID** / `modelId` = internal **pid**. **productName** is catalog-only (not pairing). See `docs/architecture/IDENTITY_FIELDS_SSOT.md` · `npm run check:p2496`.
-3. Grep this folder + `data/user-misattribution-registry.json` + `drivers/*/driver.compose.json` for that couple.
-4. Read `docs/knowledge/device-truth.json` key `drivers.<driverId>` for protocol, batteries, locks, peculiarities.
-5. Cross-check rules: `AI_CONTEXT_MANDATE.md`, `docs/ARCHITECTURE_AI.md`, `docs/rules/WHY_INTERROGATION.md`, `docs/rules/DUAL_APP_VISION.md`, `docs/rules/FORUM_SILENT_HUMANIZE.md`, `.cursorrules`.
-6. **Publish** means Homey App Store (master Test 9.0.x). **Do not post** means no Homey Community / PM replies.
+2. Grep this folder + `data/user-misattribution-registry.json` + `drivers/*/driver.compose.json` for that couple.
+3. Read `docs/knowledge/device-truth.json` key `drivers.<driverId>` for protocol, batteries, locks, peculiarities.
+4. Cross-check rules: `AI_CONTEXT_MANDATE.md`, `docs/ARCHITECTURE_AI.md`, `docs/rules/WHY_INTERROGATION.md`, `docs/rules/DUAL_APP_VISION.md`, `docs/rules/FORUM_SILENT_HUMANIZE.md`, `.cursorrules`.
+5. **Publish** means Homey App Store (master Test 9.0.x). **Do not post** means no Homey Community / PM replies.
 
-Catalog: **431** drivers, **201** locked community cases.
-
-## Live tip / fleet (manual enrich 2026-09-14 — not generated)
-
-| Item | Truth |
-|------|--------|
-| Master tip | **9.0.926** healthy (`#3186`); git **9.0.927+** |
-| Identity | Always **(mfr, pid)** — SSOT `config/architecture/sacred-couple-ssot.json` · `npm run check:p2494` |
-| mfs | One mfr → many modelIds is **NORMAL**; never invent pid |
-| Highest T140352 | **#2237** Peter Smartbutton @ 9.0.916 → tip ≥**9.0.926** (P2488+P2490) |
-| Silent report | `reports/forum-l99-2026-09-14-t140352/FLEET_L99.md` |
-| Publish vs post | Publish = Homey Test; **never** auto-post forum (T157628) |
-| NEED_INTERVIEW | Document expected `zb_manufacturer_name` + `zb_model_id` — no invent |
-
-Regenerate full table: `node tools/ci/build-device-truth.js` then `node tools/ci/investigate-device-peculiarities.js`.
+Catalog: **431** drivers, **220** locked community cases.
 
 ## Locked couples (canonical, 1 by 1)
 
 | Case | Driver | Couple | Forbidden | Protocol |
 |---|---|---|---|---|
+| p2485-rkbxtclc-3gang | `switch_3gang` | `_TZE204_rkbxtclc` + TS0601 | dimmer_wall_1gang, wall_switch_4_gang_tuya, climate_sensor | tuya_dp |
+| p2485-hewlydpz-7ytnacie-4gang | `wall_switch_4_gang_tuya` | `_TZE200_hewlydpz` + TS0601 | curtain_motor, sensor_illuminance_presence, dimmer_wall_1gang, climate_sensor | tuya_dp |
+| p2466-vdfwjopk-ts0219-siren | `siren` | `_TZ3000_vdfwjopk` + TS0219 | handheld_remote_4_buttons, button_wireless_4, switch_1gang | zcl |
+| p2465-moes-star-feather-3gang | `wall_switch_3gang_1way` | `_TZE200_zo0cfekv` + TS0601 | climate_sensor, climate_sensor_zt08, soil_sensor | tuya_dp |
+| p2464-frankever-1n2zev06-valve | `water_valve_smart` | `_TZE200_1n2zev06` + TS0601 | thermostat_tuya_dp, radiator_valve, wall_thermostat | tuya_dp |
+| p2442-kaflzta4-ts004f-smart-knob | `smart_knob` | `_TZ3000_kaflzta4` + TS004F | button_wireless_1, button_wireless_4, scene_switch_4 | zcl |
+| p2441-miamo-icka1clh-am43-curtain | `curtain_motor` | `_TZE200_icka1clh` + TS0601, AM43-0.45/40-ES-EB, AM43-0.45/40-ES-EZ | curtain_motor_shutter, curtain_motor_tilt, climate_sensor, soil_sensor | tuya_ef00 |
+| p2456-ptjcjise-ts0002-wall-2gang | `wall_switch_2gang_1way` | `_TZ3000_ptjcjise` + TS0002 | switch_2gang, switch_2_gang, switch_1gang, wall_switch_1gang_1way | zcl |
+| p2455-l9brjwau-ts0002-wall-2gang | `wall_switch_2gang_1way` | `_TZ3000_l9brjwau` + TS0002 | switch_2gang, switch_2_gang, switch_1gang, wall_switch_1gang_1way | zcl |
+| p2460-ysdv91bk-ts0001-wall-1gang | `wall_switch_1gang_1way` | `_TZ3000_ysdv91bk` + TS0001 | switch_1gang, wall_switch_2gang_1way, generic_tuya, zigbee_universal | zcl |
+| p2452-enmfaave-ts0004-switch-4gang-no-button-bloat | `switch_4gang` | `_TZ3000_enmfaave` + TS0004 |  | zcl |
+| p2435-xk5udnd6-ts0012-wall-switch | `wall_switch_2gang_1way` | `_TZ3000_xk5udnd6` + TS0012 | water_leak_sensor, water_leak_sensor_tuya, switch_4gang, wall_switch_3gang_1way | zcl |
 | eduard-martirosyan-tze284-fodv6bkr-curtain | `curtain_motor` | `_TZE284_fodv6bkr` + TS0601 | climate_sensor, soil_sensor, switch_1gang, generic_tuya | tuya_dp |
 | vichy-clrdrnya-presence | `presence_sensor_radar` | `_TZE204_clrdrnya` + TS0601 | curtain_motor, curtain_motor_shutter, motion_sensor_radar_mmwave, climate_sensor | tuya_ef00 |
 | hobeian-aubess-k4ej3ww2-ias | `water_leak_sensor` | `_TZ3000_k4ej3ww2` + TS0207 | water_leak_sensor_tuya, water_detector, gas_sensor_switch, contact_sensor | ias_zone |
@@ -100,6 +97,7 @@ Regenerate full table: `node tools/ci/build-device-truth.js` then `node tools/ci
 | p217-wfxuhoea-loratap-garage | `garage_door` | `_TZE200_wfxuhoea` + TS0601 | button_wireless_plug, plug_energy_monitor, air_purifier_plug, climate_sensor | tuya_ef00 |
 | p217-k6fvknrr-ts011f-double-outlet | `double_power_point_2` | `_TZ3000_k6fvknrr` + TS011F | switch_1gang, plug_energy_monitor, plug_smart | zcl |
 | p217-wing-ts0203-contact | `contact_sensor` | `Wing` + TS0203 | water_leak_sensor | ias_zone |
+| p217-wing-zth-climate | `climate_sensor` | `Wing` + ZTH11-3.0, ZTH13-3.0 | contact_sensor, water_leak_sensor | zcl |
 | p217-hobeian-zg305z-usb-2gang | `switch_2gang` | `HOBEIAN` + ZG-305Z | button_wireless_2 | zcl |
 | pm-rolp-tz3218-7fiyo3kv-ts000f-switch-temp | `switch_temp_sensor` | `_TZ3218_7fiyo3kv` + TS000F | switch_1gang, switch_1_gang, zigbee_universal, climate_sensor | hybrid |
 | fgwhjm9j-ts011f-metering-plug | `plug_energy_monitor` | `_TZ3210_fgwhjm9j` + TS011F | climate_sensor, button_wireless_plug | zcl |
@@ -237,11 +235,17 @@ Regenerate full table: `node tools/ci/build-device-truth.js` then `node tools/ci
 | p2432-tz3000-3dfewsk1-water-leak | `water_leak_sensor` | `_TZ3000_3dfewsk1` + TS0207 | climate_sensor, motion_sensor | zcl |
 | p2432-tz3000-wkai4ga5-button-2 | `button_wireless_2` | `_TZ3000_wkai4ga5` + TS0042 | scene_switch_4, wall_switch_5_gang_tuya | zcl |
 | p2432-tze204-zenj4lxv-dimmer-2gang | `dimmer_2_gang_tuya` | `_TZE204_zenj4lxv` + TS0601 | switch_2gang, wall_switch_5_gang_tuya, air_purifier | tuya_dp |
-| p2432-tzb210-rkgngb5o-cct | `bulb_tunable_white` | `_TZB210_rkgngb5o` + TS0502B | switch_1gang, wall_switch_5_gang_tuya | zcl |
+| p2432-tzb210-rkgngb5o-cct | `bulb_tunable_white` | `_TZB210_rkgngb5o` + TS0502B | bulb_dimmable, switch_1gang, wall_switch_5_gang_tuya | zcl |
 | p2432-tyzb01-6g8b7at8-switch-2gang | `switch_2gang` | `_TYZB01_6g8b7at8` + TS0012 | switch_1gang, wall_switch_5_gang_tuya | zcl |
 | p2432-tz3210-0zabbfax-bulb-rgb | `light_bulb_rgb` | `_TZ3210_0zabbfax` + TS0503B | switch_1gang, wall_switch_5_gang_tuya | zcl |
 | p2432-tze204-ex3rcdha-presence | `presence_sensor_radar` | `_TZE204_ex3rcdha` + TS0601 | air_purifier, wall_switch_5_gang_tuya | tuya_dp |
 | p2432-tze200-yjjdcqsq-climate | `climate_sensor` | `_TZE200_yjjdcqsq` + TS0601 | air_purifier, wall_switch_5_gang_tuya | tuya_dp |
+| p2453-ja5osu5g-ts004f-smart-knob | `smart_knob` | `_TZ3000_ja5osu5g` + TS004F | button_wireless_1, button_wireless_4 |  |
+| p2453-an5rjiwd-ts0041-btn1 | `button_wireless_1` | `_TZ3000_an5rjiwd` + TS0041 | button_wireless_4, smart_knob, switch_1gang |  |
+| p2453-5tqxpine-ts0044-scene | `scene_switch_4` | `_TZ3000_5tqxpine` + TS0044 | button_wireless_4, smart_knob |  |
+| p2468-frankever-wt9agwf3-valve | `water_valve_smart` | `_TZE200_wt9agwf3` + TS0601 | thermostat_tuya_dp, radiator_valve, wall_thermostat, device_radiator_valve | tuya_dp |
+| p2468-frankever-5uodvhgc-valve | `water_valve_smart` | `_TZE200_5uodvhgc` + TS0601 | thermostat_tuya_dp, radiator_valve, wall_thermostat, device_radiator_valve | tuya_dp |
+| p2468-frankever-nbqnmkee-valve | `water_valve_smart` | `_TZE200_nbqnmkee` + TS0601 | thermostat_tuya_dp, radiator_valve, wall_thermostat, device_radiator_valve | tuya_dp |
 
 ## All drivers (1 by 1)
 
@@ -270,16 +274,16 @@ Regenerate full table: `node tools/ci/build-device-truth.js` then `node tools/ci
 | `bulb_rgb` | light | zcl | E11-G13, E11-G14, E11-G23, Excellux, GL-C-006, LCT001 | unknown | 55 | 1 | Tuya RGBCW downlight; late4marshmellow T89271 #667; Z2M #13579 |
 | `bulb_rgb_led` | light | zcl | TS0505B | unknown | 40 | 0 |  |
 | `bulb_rgb_rgbw` | light | zcl | TS0601 | unknown | 0 | 0 |  |
-| `bulb_rgbw` | light | zcl | generic, TS0504A, TS0504B, TS0505A, TS0505B, Classic A60 RGBW | unknown | 106 | 1 | LEDEPLY SG45-E26 RGB+CCT — not door/motion sensor. |
+| `bulb_rgbw` | light | zcl | generic, TS0504A, TS0504B, TS0505A, TS0505B, Classic A60 RGBW | unknown | 110 | 1 | LEDEPLY SG45-E26 RGB+CCT — not door/motion sensor. |
 | `bulb_rgbw_universal` | other | tuya_ef00 | TS0505B, TS0504B, TS0503B | mains | 20 | 0 |  |
 | `bulb_tunable_white` | light | zcl | Classic A60 TW, E11-N13, E11-N14, E12-N13, E12-N14, GL-B-007Z | unknown | 9 | 1 | radiothieves #662 CCT tunable bulb |
 | `bulb_white` | light | zcl | TS0501, TS0601_strip_adv | unknown | 4 | 0 |  |
 | `button_emergency_sos` | button | tuya_ef00 | ZBPB10BK, TS0218, TS0601, TS0215, TS0215A | CR2032/CR2450 | 108 | 0 | Sleepy IAS: enroll on wake, no boot poll storm, no leftover EF00 TX |
 | `button_wireless` | button | tuya_ef00 | TS0040, SNZB-01, SNZB-01P, SNZB-01M, WB01, WB-01 | CR2032/CR2450 | 14 | 0 |  |
-| `button_wireless_1` | button | zcl | 3450-L, E1524/E1810, E1743, E1744, E1812, E2001/E2002 | CR2032/CR2450 | 103 | 4 | SunBeech T156967 — TS0041 wireless remote, NEVER switch_1gang (processor false ROUTED_OK) |
+| `button_wireless_1` | button | zcl | 3450-L, E1524/E1810, E1743, E1744, E1812, E2001/E2002 | CR2450/CR2032 | 103 | 5 | SunBeech T156967 — TS0041 wireless remote, NEVER switch_1gang (processor false ROUTED_OK) |
 | `button_wireless_2` | button | zcl | 01MINIZB, A11Z, A7Z, BASICZBR3, CK-BL702-SWP-01(7020), E11-G13 | CR2032/CR2450 | 570 | 1 | Rob_G #653 2-gang wireless button TS0042 |
 | `button_wireless_3` | button | zcl | TS0043, TS0013, TS0601, TS0215A | CR2032/CR2450 | 60 | 2 | Battery CR2032 sticky 3-button wall remote. Must not pair as 2-gang. Single/double/long pr |
-| `button_wireless_4` | button | zcl | 01MINIZB, BASICZBR3, Excellux, S26R2ZB, S31ZB, SNZB-01M | CR2032/CR2450/AAA | 144 | 6 | Steampunk soft TS0001 REJECTED — known couple is TS004F only |
+| `button_wireless_4` | button | zcl | 01MINIZB, BASICZBR3, Excellux, S26R2ZB, S31ZB, SNZB-01M | CR2032/CR2450/AAA | 136 | 6 | Steampunk soft TS0001 REJECTED — known couple is TS004F only |
 | `button_wireless_4_ts0041` | button | zcl_sleepy | TS0041 | CR2032/CR2450/AAA | 4 | 0 |  |
 | `button_wireless_6` | button | tuya_ef00 | TS0046, TS0601 | CR2450/AAA | 8 | 0 |  |
 | `button_wireless_8` | button | tuya_ef00 | TS0048 | AAA/CR2450 | 4 | 0 |  |
@@ -293,7 +297,7 @@ Regenerate full table: `node tools/ci/build-device-truth.js` then `node tools/ci
 | `button_wireless_wall` | button | tuya_ef00 | TS0041, TS0042 | CR2450 | 4 | 0 |  |
 | `ceiling_fan` | fan | tuya_ef00 | TS0601_fan, TS0601 | unknown | 20 | 0 |  |
 | `christmas_lights` | light | tuya_ef00 | TS0601, TS0504B | unknown | 8 | 0 |  |
-| `climate_sensor` | sensor | zcl | ZTH13-3.0, ZTH11-3.0, 01MINIZB, BASICZBR3, CK-BL702-MWS-01, CK-BL702-MWS-01(7016) | AAA/CR2032/CR2450 | 2118 | 3 | HOBEIAN ZG-227Z/ZL temp+humidity (Z2M). Pure ZCL msTemperatureMeasurement+msRelativeHumidi |
+| `climate_sensor` | sensor | zcl | ZTH13-3.0, ZTH11-3.0, 01MINIZB, BASICZBR3, CK-BL702-MWS-01, CK-BL702-MWS-01(7016) | AAA/CR2032/CR2450 | 2106 | 4 | HOBEIAN ZG-227Z/ZL temp+humidity (Z2M). Pure ZCL msTemperatureMeasurement+msRelativeHumidi |
 | `climate_sensor_device` | thermostat | zcl_sleepy | TS0601 | AA | 0 | 0 |  |
 | `climate_sensor_dimmer` | light | zcl | TS0601, TS0201, Excellux | mains | 0 | 0 |  |
 | `climate_sensor_energy` | sensor | tuya_ef00 | TS0201, TS0222, TH01, WSDCGQ01LM, WSDCGQ11LM, WSDCGQ12LM | AAA/AAA | 0 | 0 |  |
@@ -304,7 +308,7 @@ Regenerate full table: `node tools/ci/build-device-truth.js` then `node tools/ci
 | `climate_sensor_switch` | socket | zcl | TS0601 | mains | 0 | 0 |  |
 | `climate_sensor_zt08` | sensor | tuya_ef00 | TS0601 | AAA/CR2032/CR2450 | 4 | 1 | ZT08 weather — unix_1970 time sync + DP17 commit (GH #513). |
 | `co_sensor` | sensor | tuya_ef00 | TS0601_co, TS0601 | CR2/CR123A/AAA | 32 | 0 |  |
-| `contact_sensor` | sensor | zcl | TS0203, ZG-102Z, ZG-102ZL, DS01, RH3001, MCCGQ01LM | CR2032/CR1632/AAA | 232 | 3 | Sleepy IAS: enroll on wake, no boot poll storm, no leftover EF00 TX |
+| `contact_sensor` | sensor | zcl | TS0203, 3300-S, 3320-L, CK-TLSR8656-SS5-01(7003), DoorWindow-Sensor-ZB3.0, DS01 | CR2032/CR1632/AAA | 228 | 3 | Sleepy IAS: enroll on wake, no boot poll storm, no leftover EF00 TX |
 | `contact_sensor_curtain` | windowcoverings | zcl_sleepy | TS0601, Excellux | CR2450 | 0 | 0 |  |
 | `contact_sensor_dimmer` | sensor | zcl | TS0601, Excellux | mains | 0 | 0 |  |
 | `contact_sensor_plug` | socket | zcl | TS0601, Excellux | mains | 0 | 0 |  |
@@ -312,9 +316,9 @@ Regenerate full table: `node tools/ci/build-device-truth.js` then `node tools/ci
 | `contact_sensor_zigbee` | sensor | tuya_ef00 | TS0601 | CR2450 | 8 | 1 | ZG-102ZL luminance contact. TS0601 pairs via contact_sensor_zigbee (P126 forbids TS0601 on |
 | `curtain_module` | windowcoverings | zcl | TS130F, TS0726 | mains | 28 | 1 | TS130F curtain module per data/fingerprints.json and Johan enrichment. The lock placement  |
 | `curtain_module_2_gang` | windowcoverings | zcl | TS130F, TS0601, TS0726 | mains | 44 | 0 |  |
-| `curtain_motor` | windowcoverings | tuya_ef00 | 01MINIZB, AM02, AM43-0.45/40-ES-EB, AM43-0.45/40-ES-EZ, BASICZBR3, DS421 | OTHER | 780 | 14 | Eduard_Martirosyan #2228 DC tubular roller blind motor; EF00 Tuya cover DPs |
-| `curtain_motor_shutter` | windowcoverings | tuya_ef00 | CK-TLSR8656-SS5-01(7014), E11-G13, E11-G14, E11-G23, Excellux, GL-C-006 | mains | 88 | 0 |  |
-| `curtain_motor_tilt` | windowcoverings | tuya_ef00 | TS0601_curtain_tilt, TS0601 | OTHER | 36 | 1 | Curtain/tilt motor — never a plug. _TZE200_r0jdjrvi stays on curtain_motor. |
+| `curtain_motor` | windowcoverings | tuya_ef00 | 01MINIZB, AM02, AM43-0.45/40-ES-EB, AM43-0.45/40-ES-EZ, BASICZBR3, DS421 | OTHER | 788 | 15 | P2445: one mfr → many verified pids (TS0601 + AM43 retail variants). Z2M cover_4. Strip ti |
+| `curtain_motor_shutter` | windowcoverings | tuya_ef00 | CK-TLSR8656-SS5-01(7014), E11-G13, E11-G14, E11-G23, Excellux, GL-C-006 | mains | 84 | 0 |  |
+| `curtain_motor_tilt` | windowcoverings | tuya_ef00 | TS0601_curtain_tilt, TS0601 | OTHER | 32 | 1 | Curtain/tilt motor — never a plug. _TZE200_r0jdjrvi stays on curtain_motor. |
 | `curtain_motor_wall` | windowcoverings | tuya_ef00 | TS130F | mains | 28 | 0 |  |
 | `device_air_purifier` | thermostat | zcl | TS0601 | unknown | 0 | 0 |  |
 | `device_air_purifier_din` | sensor | tuya_ef00 | TS0601 | mains | 0 | 0 |  |
@@ -343,7 +347,7 @@ Regenerate full table: `node tools/ci/build-device-truth.js` then `node tools/ci
 | `device_plug_energy_monitor` | socket | zcl | TS0601, TS004F, TS011F | mains | 0 | 0 |  |
 | `device_plug_smart` | socket | tuya_ef00 | CK-TLSR8656-SS5-01(7014), Excellux, RH3052, SM0201, TH01, THS317-ET | mains | 0 | 0 |  |
 | `device_plug_smart_water` | socket | tuya_ef00 | TS0601 | mains | 4 | 0 |  |
-| `device_radiator_valve` | thermostat | tuya_ef00 | TS0601 | AA | 336 | 3 | z2m TRV06 family thermostatic radiator valve. generic_diy is the DIY catch-all (CC2530, PT |
+| `device_radiator_valve` | thermostat | tuya_ef00 | TS0601 | AA | 332 | 3 | z2m TRV06 family thermostatic radiator valve. generic_diy is the DIY catch-all (CC2530, PT |
 | `device_radiator_valve_smart` | thermostat | tuya_ef00 | 0x8040, BASICZBR3, BSP-EZ2, BSP-FZ2, Battery switch, 1 button, Battery switch, 2 buttons | AA | 8 | 0 |  |
 | `device_radiator_valve_thermostat` | thermostat | zcl | TS0601 | mains | 0 | 0 |  |
 | `dimmable_led_strip` | light | tuya_ef00 | TS0011, TS0052, TS0502B, TS0601, TS0601_dim1, TS1101 | unknown | 84 | 0 |  |
@@ -360,7 +364,7 @@ Regenerate full table: `node tools/ci/build-device-truth.js` then `node tools/ci
 | `dimmer_bulb_dimmable` | light | zcl | TS0601, TS0052 | mains | 0 | 0 |  |
 | `dimmer_dual_channel` | light | tuya_ef00 | TS1101, TS0601 | mains | 0 | 0 |  |
 | `dimmer_ts110e` | light | zcl_sleepy | TS0601, TS0505B, TS0215A, TS0002, TS0003, TS0012 | CR2032 | 8 | 0 |  |
-| `dimmer_wall_1gang` | light | tuya_ef00 | TS0001, TS0002, TS0003, TS0011, TS0012, TS0013 | mains | 152 | 0 |  |
+| `dimmer_wall_1gang` | light | tuya_ef00 | TS0001, TS0002, TS0003, TS0011, TS0012, TS0013 | mains | 144 | 0 |  |
 | `dimmer_wall_plug` | socket | zcl | TS0601 | mains | 4 | 0 |  |
 | `dimmer_wall_switch` | socket | zcl | TS0601 | mains | 0 | 0 |  |
 | `dimmer_wall_water` | light | zcl | TS0601 | mains | 0 | 0 |  |
@@ -389,12 +393,12 @@ Regenerate full table: `node tools/ci/build-device-truth.js` then `node tools/ci
 | `garage_door` | garagedoor | tuya_ef00 | TS0601_garage, TS0601 | unknown | 32 | 1 | LoraTap garage opener (JohanBendz #1442). Z2M GARAGE family — not a wireless plug. |
 | `garage_door_opener` | garagedoor | tuya_ef00 | TS0601, TS0603 | unknown | 40 | 0 |  |
 | `gas_detector` | sensor | tuya_ef00 | TS0203, TS0204, TS0225, TS0301, TS0601, TS0601_gas | unknown | 36 | 0 |  |
-| `gas_sensor` | sensor | tuya_ef00 | TS0601_gas, TS0601, TS0225, ZG-225Z, TS0301 | unknown | 16 | 1 | P2430: HOBEIAN gas sensor couple lock. |
+| `gas_sensor` | sensor | tuya_ef00 | hobeian, Hobeian, HOBEIAN, TS0225, TS0301, TS0601 | unknown | 19 | 1 | P2430: HOBEIAN gas sensor couple lock. |
 | `gas_sensor_switch` | socket | tuya_ef00 | 01MINIZB, 3315-S, 3315-Seu, BASICZBR3, CK-TLSR8656-SS5-01(7019), HS1WL | mains | 4 | 0 |  |
 | `gateway_zigbee_bridge` | other | tuya_ef00 | S26R2ZB, S31 Lite zb, S40LITE, S60ZBTPF, S60ZBTPG, TS0101 | CR2032/CR2450/AAA/AA/CR123A | 0 | 0 |  |
 | `generic_diy` | other | zcl | BUTTON, CC2530, CC2531, CC2652, CUSTOM, DIY | unknown | 56 | 0 |  |
 | `generic_tuya` | other | tuya_ef00 | TS0203, TS0601_generic, TS0603 | CR2032/AAA/AA | 414 | 0 |  |
-| `handheld_remote_4_buttons` | remote | zcl_sleepy | SNZB-01M, TS0014, TS0043, TS0044, TS004F, TS0215A | CR2032 | 40 | 0 |  |
+| `handheld_remote_4_buttons` | remote | zcl_sleepy | SNZB-01M, TS0014, TS0043, TS0044, TS004F, TS0215A | CR2032 | 36 | 0 |  |
 | `humidifier` | fan | tuya_ef00 | TS0601_humid, TS0601 | unknown | 20 | 0 |  |
 | `hvac_air_conditioner` | thermostat | tuya_ef00 | TS0601_ac, TS0601 | unknown | 0 | 0 |  |
 | `hvac_controller` | thermostat | tuya_ef00 | TS0601 | unknown | 8 | 0 |  |
@@ -406,9 +410,9 @@ Regenerate full table: `node tools/ci/build-device-truth.js` then `node tools/ci
 | `hybrid_light_windowcoverings` | windowcoverings | tuya_ef00 | TS0601, TS0001, TS0002 | unknown | 0 | 0 |  |
 | `hybrid_sensor_thermostat` | thermostat | tuya_ef00 | 01MINIZB, BASICZBR3, S26R2ZB, S31ZB, TS0001, TS0001_power | AAA/CR2032/CR2450 | 4 | 0 |  |
 | `hybrid_switch_sensor` | socket | tuya_ef00 | TS0601, TS0001, TS0011, TS011F | AAA/CR2032 | 8 | 0 |  |
-| `illuminance_sensor` | sensor | zcl_sleepy | TS0222, ZG-106Z, TS0225, TS0601 | CR2450/CR2032 | 3 | 0 |  |
-| `ir_blaster` | remote | tuya_ef00 | TS0002, TS0601, TS0601_repeater, TS1201 | CR2450/CR2032 | 136 | 1 | Z2M#32756/#32836 Zigbee RF Cloner — soft ir_blaster; no invented RF DPs |
-| `ir_remote` | other | zcl | TS0601 | unknown | 8 | 0 |  |
+| `illuminance_sensor` | sensor | zcl_sleepy | hobeian, Hobeian, HOBEIAN, TS0222, TS0225, TS0601 | CR2450/CR2032 | 3 | 0 |  |
+| `ir_blaster` | remote | tuya_ef00 | TS0601, TS1201, TS0002, TS0601_repeater | CR2450/CR2032 | 148 | 1 | Z2M#32756/#32836 Zigbee RF Cloner — soft ir_blaster; no invented RF DPs |
+| `ir_remote` | other | zcl |  | unknown | 0 | 0 |  |
 | `lcdtemphumidluxsensor` | sensor | zcl | TS0201, TS0222, TS0601, Excellux | AAA/AAA | 24 | 1 | ZHA #862 + Abysim Medium: (1) interview EP1 only (2) temp/humidity on undeclared EP2 (3) n |
 | `lcdtemphumidsensor` | sensor | zcl | TS0201, TS0601_lcd, TS0601, TY0201, Excellux | CR2032/CR2450/AAA | 84 | 2 | HACF #38762 + ZHA #2862: EP1 ZCL temp/humidity (0x0402/0x0405), not Neo qaaysllp EP2/lux.  |
 | `lcdtemphumidsensor_2` | sensor | zcl_sleepy | TS0601, TS0201, Excellux, SM0201 | CR2450 | 4 | 0 |  |
@@ -448,7 +452,7 @@ Regenerate full table: `node tools/ci/build-device-truth.js` then `node tools/ci
 | `power_meter` | sensor | zcl | TS0601_meter, PJ-1203A, TS004F, ts0601 | mains | 56 | 0 |  |
 | `presence_detector` | sensor | zcl |  | unknown | 0 | 0 |  |
 | `presence_sensor_ceiling` | sensor | tuya_ef00 | TS0601_ceiling, TS0601, TS0225, CK-BL702-MWS-01(7016), ZP-301Z, TS110E | unknown | 12 | 0 |  |
-| `presence_sensor_radar` | sensor | tuya_ef00 | TS0601, CK-BL702-MWS-01, CK-BL702-MWS-01(7016), CK-TLSR8656-SS5-01(7014), EDM-1ZBA-EU, Excellux | CR2032/CR2450/AAA/AA/CR123A/INTERNAL | 821 | 13 | VicHY #2224/#2227 MTG075 220V AC ceiling mmWave presence radar. Forbid curtain_motor phant |
+| `presence_sensor_radar` | sensor | tuya_ef00 | AY-204ZX, AY204T, AY205Z, AY208Z, CK-BL702-MWS-01, CK-BL702-MWS-01(7016) | unknown | 821 | 13 | VicHY #2224/#2227 MTG075 220V AC ceiling mmWave presence radar. Forbid curtain_motor phant |
 | `radar_sensor` | sensor | tuya_ef00 | TS0601 | unknown | 8 | 0 |  |
 | `radar_sensor_2` | sensor | tuya_ef00 | TS0601, TS0225, CK-BL702-MWS-01(7016), ZP-301Z, TS110E, TS0004 | unknown | 0 | 0 |  |
 | `radar_sensor_ceiling` | sensor | tuya_ef00 | CK-BL702-MWS-01, CK-BL702-MWS-01(7016), MG1_5RZ, SZLMR10, TS0203, TS0225 | unknown | 0 | 0 |  |
@@ -456,7 +460,7 @@ Regenerate full table: `node tools/ci/build-device-truth.js` then `node tools/ci
 | `radiator_valve` | thermostat | tuya_ef00 | TV01-ZB, TV02-ZB, TRV601, TRV602, SEA801-Zigbee, eTRV0100 | AA | 599 | 0 |  |
 | `radiator_valve_zigbee` | thermostat | tuya_ef00 | TS0601 | CR2450 | 8 | 0 |  |
 | `radiator_wifi_tuya` | thermostat | zcl |  | unknown | 0 | 0 |  |
-| `rain_sensor` | sensor | tuya_ef00 | TS0207_rain, TS0601, TS0207, ZG-223Z | AAA/AA/CR123A | 39 | 2 | Z2M rainwater sensor — alarm_water + rain level, NOT IAS leak. Johan T158754 / forum #1610 |
+| `rain_sensor` | sensor | tuya_ef00 | hobeian, Hobeian, HOBEIAN, TS0207, TS0207_rain, TS0601 | AAA/AA/CR123A | 39 | 2 | Z2M rainwater sensor — alarm_water + rain level, NOT IAS leak. Johan T158754 / forum #1610 |
 | `relay_board_1_channel` | socket | zcl | TS0601, TS0001 | mains | 0 | 0 |  |
 | `relay_board_2_channel` | socket | zcl | TS0002, TS011F | mains | 8 | 0 |  |
 | `relay_board_4_channel` | socket | zcl | TS0004 | mains | 12 | 1 | TBoy #2131 — 4-channel relay board, not a simple switch. |
@@ -485,7 +489,7 @@ Regenerate full table: `node tools/ci/build-device-truth.js` then `node tools/ci
 | `scene_switch_1` | button | tuya_ef00 | TS0601_scene1, TS0601, TS004F, TS0215A | CR2032 | 12 | 0 |  |
 | `scene_switch_2` | button | tuya_ef00 | TS0601_scene2, TS0726, TS0042, TS0601, TS0215A | CR2032/CR2450 | 4 | 0 |  |
 | `scene_switch_3` | button | tuya_ef00 | TS0003, TS0013, TS0043, TS0215A, TS0601, TS0601_scene3 | CR2032/CR2450 | 8 | 0 |  |
-| `scene_switch_4` | button | zcl | TS0044, TS1002 | CR2450/AAA | 44 | 6 | meter91 #2189/#2207 — scene_switch_4 genOnOff 0xFD; diag c40705a1 on 9.0.714 needs Test ≥9 |
+| `scene_switch_4` | button | zcl | TS0044, TS1002, ZG-101ZS | CR2450/AAA | 50 | 7 | meter91 #2189/#2207 — scene_switch_4 genOnOff 0xFD; diag c40705a1 on 9.0.714 needs Test ≥9 |
 | `scene_switch_6` | button | tuya_ef00 | TS0601_scene6 | CR2450/AAA | 4 | 0 |  |
 | `scene_switch_6ch` | remote | tuya_ef00 | TS0601 | CR2032/CR2450/AAA | 0 | 0 |  |
 | `scene_switch_wall` | button | tuya_ef00 | TS0042, TS0043 | CR2032/CR2450 | 48 | 0 |  |
@@ -501,16 +505,16 @@ Regenerate full table: `node tools/ci/build-device-truth.js` then `node tools/ci
 | `sensor_contact_presence` | sensor | tuya_ef00 | DISABLED_SENSOR_CONTACT_PRESENCE | CR2032/CR2450/AAA/AA/CR123A/INTERNAL | 3 | 0 |  |
 | `sensor_contact_rain` | sensor | zcl_sleepy | Excellux, TS0203, TS0601, TY0203, TS0207 | CR2450 | 0 | 0 |  |
 | `sensor_contact_water` | sensor | zcl_sleepy | TS0601, Excellux | CR2032/CR1632/AAA | 0 | 0 |  |
-| `sensor_contact_zigbee` | sensor | tuya_ef00 | 3300-S, 3320-L, CK-TLSR8656-SS5-01(7003), DS01, DoorWindow-Sensor-ZB3.0, E1603/E1702 | unknown | 182 | 0 |  |
-| `sensor_gas_presence` | sensor | tuya_ef00 | TS0601_gas, TS0601, TS0225, ZG-225Z, TS0301 | CR2450 | 44 | 0 |  |
-| `sensor_illuminance_presence` | sensor | tuya_ef00 | CK-BL702-MWS-01(7016), TS0004, TS011F, TS0209, TS0210, TS0222 | CR2032/CR2450/AAA/AA/CR123A/INTERNAL | 56 | 0 |  |
+| `sensor_contact_zigbee` | sensor | tuya_ef00 | 3300-S, 3320-L, CK-TLSR8656-SS5-01(7003), DoorWindow-Sensor-ZB3.0, DS01, E1603/E1702 | unknown | 183 | 0 |  |
+| `sensor_gas_presence` | sensor | tuya_ef00 | TS0601_gas, TS0601, TS0225, TS0301 | CR2450 | 44 | 0 |  |
+| `sensor_illuminance_presence` | sensor | tuya_ef00 | CK-BL702-MWS-01(7016), TS0004, TS011F, TS0209, TS0210, TS0222 | CR2032/CR2450/AAA/AA/CR123A/INTERNAL | 52 | 0 |  |
 | `sensor_lcdtemphumidsensor_soil` | sensor | tuya_ef00 | TS0601, TS0001 | CR2450 | 4 | 0 |  |
 | `sensor_lcdtemphumidsensor_temphumidsensor` | sensor | tuya_ef00 | TS0601_lcd, TS0601, TS0201, TY0201 | CR2450 | 0 | 0 |  |
 | `sensor_motion_presence` | sensor | tuya_ef00 | CK-TLSR8656-SS5-01(7014), Excellux, RH3052, SM0201, TH01, THS317-ET | CR2032/CR2450/AAA/AA/CR123A/INTERNAL | 108 | 0 |  |
 | `sensor_motion_radar` | sensor | tuya_ef00 | TS0601 | CR2032/CR2450/AAA/AA/CR123A | 0 | 0 |  |
 | `sensor_presence_radar` | sensor | tuya_ef00 | TS0203, TS0601, ZG-204ZL, ZG-204ZM, ZG-204ZV, TS0225 | unknown | 4 | 0 |  |
 | `shutter_roller_controller` | windowcoverings | tuya_ef00 | TS0601_shutter, TS0601 | CR2032/CR2450/AAA/AA/CR123A | 0 | 0 |  |
-| `siren` | other | tuya_ef00 | TS0216, TS0219, TS0601 | OTHER/OTHER | 100 | 1 | P2430: HOBEIAN smart siren couple lock. |
+| `siren` | other | zcl | hobeian, Hobeian, HOBEIAN, TS0216, TS0219, TS0601 | OTHER/OTHER | 107 | 2 | P2466 Johan#1455 Cleverio SA100 / Z2M SA100 — IAS Zone+WD mains siren; flow via startWarni |
 | `siren_sirentemphumidsensor` | other | tuya_ef00 | TS0601 | CR123A/CR123A | 16 | 0 |  |
 | `sirentemphumidsensor` | other | tuya_ef00 | TS0601 | CR123A/CR123A | 0 | 0 |  |
 | `slim_motion_sensor` | sensor | zcl_sleepy | TS0202 | AAA/AAA | 4 | 0 |  |
@@ -523,8 +527,8 @@ Regenerate full table: `node tools/ci/build-device-truth.js` then `node tools/ci
 | `smart_heater` | heater | tuya_ef00 | TS0601_heater, TS0601 | mains | 0 | 0 |  |
 | `smart_heater_controller` | heater | tuya_ef00 | TS0601_heatctrl, TS0601 | mains | 8 | 0 |  |
 | `smart_irrigation_valve` | socket | tuya_ef00 | TS0601, TS0202, TS0049 | unknown | 8 | 1 | Z2M irrigation/water valve — TS0202 must not cartesian to motion PIR default (P2231 CI-saf |
-| `smart_knob` | button | zcl | TS004F, ERS-10TZBVK-AA | CR2032 | 32 | 3 | z2m YSR-MINI-Z 2-in-1 dimming/scene remote and TS004F_6_button. Battery remotes, not mains |
-| `smart_knob_rotary` | button | zcl_sleepy | TS004F, ERS-10TZBVK-AA, ZG-101ZD, TS0044, TS0601 | CR2032/CR2450 | 24 | 0 |  |
+| `smart_knob` | button | zcl | TS004F, ERS-10TZBVK-AA, ZG-101ZD, ZG-101Z | CR2032 | 36 | 5 | Homey diag a342c411 — 1-btn TS004F scene remote on smart_knob; force 0x8004 event even whe |
+| `smart_knob_rotary` | button | zcl_sleepy | TS004F, ERS-10TZBVK-AA, TS0044, TS0601, ZG-101ZD, ZG-101Z | CR2032/CR2450 | 24 | 0 |  |
 | `smart_knob_switch` | remote | zcl_sleepy | TS004F, ERS-10TZBVK-AA, TS0601, TS0215A | CR2032 | 4 | 0 |  |
 | `smart_lcd_thermostat` | thermostat | tuya_ef00 | TS0601 | mains | 24 | 0 |  |
 | `smart_motion_sensor` | sensor | zcl_sleepy | TY0202, ts0601 | CR123A | 4 | 0 |  |
@@ -545,7 +549,7 @@ Regenerate full table: `node tools/ci/build-device-truth.js` then `node tools/ci
 | `socket_power_strip_four` | socket | zcl | TS0115, TS0601, TS011F | unknown | 12 | 0 |  |
 | `socket_power_strip_four_three` | socket | zcl | JZ-ZB-004, TS0601, TS011F, TS0115 | unknown | 18 | 1 | 4-outlet + USB strip. Same mfr must not pair as a 2-button remote. Compound lock _TZ3000_c |
 | `socket_power_strip_four_two` | socket | zcl | TS0111, TS0101, TS0601, TS011F, S26R2ZB, S31 Lite zb | unknown | 0 | 0 |  |
-| `soil_sensor` | sensor | tuya_ef00 | TS0601, 0x8040, Arteco, BASICZBR3, BSP-EZ2, BSP-FZ2 | AAA/CR2032/CR2450 | 209 | 6 | nt4pquef+TS0601: DP2 light enum (not moisture), DP3 soil %, DP5 temp/10; do not compose 0x |
+| `soil_sensor` | sensor | tuya_ef00 | 0x8040, Arteco, BASICZBR3, Battery switch, 1 button, Battery switch, 2 buttons, BSP-EZ2 | AAA/CR2032/CR2450 | 209 | 6 | nt4pquef+TS0601: DP2 light enum (not moisture), DP3 soil %, DP5 temp/10; do not compose 0x |
 | `soil_sensor_ec` | sensor | tuya_ef00 | TS0601 | CR2032/AAA | 0 | 0 |  |
 | `soilsensor` | sensor | tuya_ef00 | TS0601 | AA/AA | 4 | 0 |  |
 | `soilsensor_2` | sensor | tuya_ef00 | Arteco, CS-201Z, DISABLED_SOILSENSOR_2, TS0001, TS0601 | AA/AA/AA | 3 | 0 |  |
@@ -553,14 +557,14 @@ Regenerate full table: `node tools/ci/build-device-truth.js` then `node tools/ci
 | `switch` | socket | zcl | TS0601, TS011F, TS0726 | mains | 0 | 0 |  |
 | `switch_1_gang` | socket | zcl_sleepy | TS0003, TS011F, TS0011, TS000F, TS0001, TS0601 | CR2032 | 0 | 0 |  |
 | `switch_1_gang_metering` | socket | zcl | TS0601, TS004F | mains | 0 | 0 |  |
-| `switch_1gang` | socket | zcl | 01MINIZB, BASICZBR3, S26R2ZB, S31ZB, TS0001, TS0001_power | mains | 1548 | 4 | P2320: user asked to carry SergeP/Antek T99614 Nous/SoPhos TS0001 into Universal Tuya. Loc |
+| `switch_1gang` | socket | zcl | 01MINIZB, BASICZBR3, hobeian, Hobeian, HOBEIAN, S26R2ZB | mains | 1539 | 4 | P2320: user asked to carry SergeP/Antek T99614 Nous/SoPhos TS0001 into Universal Tuya. Loc |
 | `switch_2_gang` | socket | zcl_sleepy | TS0003, TS0012, TS0013, TS0002, TS011F | CR2032 | 12 | 0 |  |
 | `switch_2_gang_metering` | socket | zcl | TS0601, TS004F, TS0002 | mains | 0 | 0 |  |
-| `switch_2gang` | socket | zcl | ZG-305Z, TS0002, TS0012, TS0002_power, TS0002_switch_module, ZG-302Z2 | mains | 278 | 9 | Kanbros #2130 — ZCL-only 2-gang; leftover 0xEF00 is not MCU; no metering phantoms. BSEED z |
+| `switch_2gang` | socket | zcl | ZG-305Z, hobeian, Hobeian, HOBEIAN, TS0002, TS0002_power | mains | 275 | 9 | Kanbros #2130 — ZCL-only 2-gang; leftover 0xEF00 is not MCU; no metering phantoms. BSEED z |
 | `switch_3_gang` | socket | zcl_sleepy | TS0003, TS0013 | CR2032 | 4 | 0 |  |
-| `switch_3gang` | socket | tuya_ef00 | 01MINIZB, BASICZBR3, JZ-ZB-004, S26R2ZB, S31ZB, TS0001 | mains | 220 | 2 | z2m MG-ZG03W — 3 gang switch, not a door/window sensor. |
-| `switch_4_gang_metering` | socket | tuya_ef00 | ERS-10TZBVK-AA, TS0004, TS0044, TS0601, ZG-101ZD, TS004F | mains | 24 | 0 |  |
-| `switch_4gang` | socket | zcl | 01MINIZB, BASICZBR3, JZ-ZB-004, S26R2ZB, S31ZB, TS0001 | mains | 292 | 5 | ZHA #2538 ZG-003-RF 4-gang — not 1-gang (P168 class scale). |
+| `switch_3gang` | socket | tuya_ef00 | 01MINIZB, BASICZBR3, hobeian, Hobeian, HOBEIAN, JZ-ZB-004 | mains | 223 | 3 | P2485 Z2M TS0601_3gang_rkbxtclc sibling of hewlydpz family; was dimmer_wall_1gang |
+| `switch_4_gang_metering` | socket | tuya_ef00 | ERS-10TZBVK-AA, TS0004, TS0044, TS0601, TS004F | mains | 24 | 0 |  |
+| `switch_4gang` | socket | zcl | 01MINIZB, BASICZBR3, JZ-ZB-004, S26R2ZB, S31ZB, TS0001 | mains | 292 | 6 | P2452 GH#541 pairing OK via ZCL endpoints; strip phantom button.* caps |
 | `switch_dimmer_1gang` | light | tuya_ef00 | TS0601 | mains | 8 | 0 |  |
 | `switch_plug_1` | socket | tuya_ef00 | TS0601_sp1 | mains | 0 | 0 |  |
 | `switch_plug_2` | socket | tuya_ef00 | TS0122 | mains | 0 | 0 |  |
@@ -578,7 +582,7 @@ Regenerate full table: `node tools/ci/build-device-truth.js` then `node tools/ci
 | `temphumidsensor4` | sensor | tuya_ef00 | TS0601 | AAA/AAA | 0 | 0 |  |
 | `temphumidsensor5` | sensor | tuya_ef00 | TY0201, SNTZ003, CK-TLSR8656-SS5-01(7014), RH3052, TS0201 | CR2032 | 4 | 0 |  |
 | `thermostat_4ch` | thermostat | tuya_ef00 | TS0601_thermo4ch, TS0601 | mains | 4 | 0 |  |
-| `thermostat_tuya_dp` | thermostat | tuya_ef00 | TS0601_thermo, TS0601 | OTHER | 192 | 0 |  |
+| `thermostat_tuya_dp` | thermostat | tuya_ef00 | TS0601_thermo, TS0601 | OTHER | 188 | 0 |  |
 | `thermostatic_radiator_valve` | thermostat | tuya_ef00 | TS0601, 014G2461, 014G2463, PJ-1203A, SEA801-Zigbee, SPZB0001 | AA/AA | 104 | 0 |  |
 | `tunable_bulb_E14` | light | zcl | TS0502A, TS0601, TS0503A | unknown | 40 | 0 |  |
 | `tunable_bulb_E27` | light | zcl | TS0502A | unknown | 4 | 0 |  |
@@ -592,10 +596,10 @@ Regenerate full table: `node tools/ci/build-device-truth.js` then `node tools/ci
 | `usb_dongle_triple` | socket | zcl | TS0111, TS0101, TS0601, S26R2ZB, S31 Lite zb, S40LITE | mains | 164 | 0 |  |
 | `usb_outlet_advanced` | socket | tuya_ef00 | TS0115, TS0601, TS011F, TS0002, TS0121 | mains | 76 | 3 | Z2M DS-1450WN USB/plug switch with power — not TRV or wireless button. |
 | `valve_dual_irrigation` | other | tuya_ef00 | TS0601 | AA | 8 | 1 | Insoma / Tuya 2-way irrigation — onoff.valve_1 + onoff.valve_2. Joep #2082/#2102/#2218. GI |
-| `valve_irrigation` | socket | tuya_ef00 | TS0601_irrigation, TS0601, TS0049 | AA | 92 | 0 |  |
+| `valve_irrigation` | socket | tuya_ef00 | TS0601_irrigation, TS0601, TS0049 | AA | 84 | 0 |  |
 | `valve_single` | other | tuya_ef00 | TS0601_valve, TS0601, TS0001 | AA | 8 | 0 |  |
 | `valvecontroller` | other | zcl_only | TS0111, TS0001, TS011F | unknown | 28 | 0 |  |
-| `vibration_sensor` | sensor | tuya_ef00 | TS0209, TS0210, ZG-102ZM, TS0601, ZG-103ZL, ZG-103Z | CR2032/CR2450 | 123 | 3 | Z2M ZG-102ZM: DP1 vibration, DP101 contact inverse, DP4 battery, DP6 sensitivity. |
+| `vibration_sensor` | sensor | tuya_ef00 | AY02SZ, CK-BL702-MWS-01(7016), hobeian, Hobeian, HOBEIAN, TS011F | CR2032/CR2450 | 123 | 3 | Z2M ZG-102ZM: DP1 vibration, DP101 contact inverse, DP4 battery, DP6 sensitivity. |
 | `wall_curtain_switch` | curtain | zcl | TS0601, TS130F | mains | 32 | 3 | TS130F curtain switch module per Johan enrichment and product-reference (deviceClass windo |
 | `wall_dimmer_1gang_1way` | socket | zcl | TS004F, TS0501B, TRI-C1ZR, TRI-K1ZR, EDM-1ZBA-EU | mains | 4 | 1 | z2m TS0501B_dimmer_2. wall_dimmer_1gang_1way declares TS0501B; wall_dimmer_tuya does not,  |
 | `wall_dimmer_tuya` | light | tuya_ef00 | TS0601, TS0601_dim1, ZBMINI-DIM, ZBMINID, TS110E, TS110F | mains | 488 | 6 | MCU brightness 0–1000 via TuyaBrightnessScale; never write >1000 |
@@ -609,23 +613,23 @@ Regenerate full table: `node tools/ci/build-device-truth.js` then `node tools/ci
 | `wall_socket` | socket | zcl | TS011F | mains | 4 | 0 |  |
 | `wall_switch_1_gang` | socket | zcl_sleepy | TS0001, TS0011, TS0601, TS011F, TS0002, TS0003 | CR2032 | 4 | 0 |  |
 | `wall_switch_1_gang_tuya` | socket | tuya_ef00 | TS0001, TS0011, TS0001_power, TS0001_switch, TS0001_switch_module, TS000F | CR2032 | 0 | 0 |  |
-| `wall_switch_1gang_1way` | socket | zcl | TS0001, TS0011, TS0601, TS011F, TS0002, TS0003 | mains | 24 | 2 | Sub-device tiles; EP1-only backlight/mode; leftover 0xEF00 is zcl_only |
+| `wall_switch_1gang_1way` | socket | zcl | TS0001, TS0011, TS0601, TS011F, TS0002, TS0003 | mains | 32 | 3 | Sub-device tiles; EP1-only backlight/mode; leftover 0xEF00 is zcl_only |
 | `wall_switch_2_gang` | socket | zcl_sleepy | TS0002, TS0012, TS0042 | CR2032 | 8 | 0 |  |
-| `wall_switch_2gang_1way` | socket | zcl | TS0002, TS0012, TS0042 | mains | 20 | 3 | Sub-device tiles; EP1-only backlight/mode; leftover 0xEF00 is zcl_only |
+| `wall_switch_2gang_1way` | socket | zcl | TS0002, TS0012, TS0042 | mains | 28 | 6 | Sub-device tiles; EP1-only backlight/mode; leftover 0xEF00 is zcl_only |
 | `wall_switch_3_gang` | socket | zcl_sleepy | TS0003, TS0013, TS0043 | CR2032 | 16 | 0 |  |
-| `wall_switch_3gang_1way` | socket | zcl | TS0003, TS0013 | mains | 40 | 9 | Sub-device tiles; EP1-only backlight/mode; leftover 0xEF00 is zcl_only |
+| `wall_switch_3gang_1way` | socket | tuya_ef00 | TS0003, TS0013, TS0601 | mains | 52 | 10 | Sub-device tiles; EP1-only backlight/mode; leftover 0xEF00 is zcl_only |
 | `wall_switch_4_gang` | socket | zcl_sleepy | TS0014, TS0004 | CR2032 | 4 | 0 |  |
-| `wall_switch_4_gang_tuya` | socket | tuya_ef00 | TS0601 | CR2032 | 20 | 2 | 4-gang MCU DP1-4. climate_sensor also declares TS0601. |
+| `wall_switch_4_gang_tuya` | socket | tuya_ef00 | TS0601 | mains | 32 | 3 | P2485 L99 four-thread: Z2M 4-gang EF00 switches misrouted (curtain/illuminance/dimmer). DP |
 | `wall_switch_4gang_1way` | socket | zcl | TS0004, TS0014, TS000F, TS0726 | mains | 24 | 1 | Sub-device tiles; EP1-only backlight/mode; leftover 0xEF00 is zcl_only |
 | `wall_switch_5_gang_tuya` | socket | tuya_ef00 | TS0015, TS0601 | CR2032 | 0 | 0 |  |
 | `wall_switch_6_gang_tuya` | socket | tuya_ef00 | TS0601 | CR2032 | 32 | 1 | 6-gang MCU DP1-6 + DP14 power-on. climate_sensor also declares TS0601. |
 | `wall_thermostat` | thermostat | tuya_ef00 | TS0003, TS0601 | mains | 140 | 7 | TYBAC-006 FCU thermostat |
 | `water_detector` | sensor | zcl_sleepy | 3300-S, 3320-L, CK-TLSR8656-SS5-01(7003), DS01, DoorWindow-Sensor-ZB3.0, E1603/E1702 | CR2032 | 4 | 0 |  |
-| `water_leak_sensor` | sensor | ias_zone | 3315-S, 3315-Seu, CK-TLSR8656-SS5-01(7019), HS1WL, LS21001, SJCGQ11LM | CR2032/CR2450/AAA | 78 | 6 | Sleepy IAS: enroll on wake, no boot poll storm, no leftover EF00 TX |
+| `water_leak_sensor` | sensor | ias_zone | _tz3000_eit6l5, _tz3000_kyb656no, 3315-S, 3315-Seu, CK-TLSR8656-SS5-01(7019), hobeian | CR2032/CR2450/AAA | 74 | 6 | Sleepy IAS: enroll on wake, no boot poll storm, no leftover EF00 TX |
 | `water_leak_sensor_tuya` | sensor | tuya_ef00 | q9mpfhw, ZG-222Z, LS21001, _tz3000_eit6l5, _tz3000_kyb656no, lumi.sensor_wleak.aq1 | CR2 | 178 | 0 |  |
 | `water_tank_monitor` | sensor | tuya_ef00 | TS0049, TS0601, TS0601_tank | AAA/AA/CR123A | 40 | 0 |  |
 | `water_valve_garden` | other | tuya_ef00 | SWV-ZF2, SWV-ZFE, SWV-ZFU, SWV-ZN, SWV-ZNE, SWV-ZNU | AA | 36 | 0 |  |
-| `water_valve_smart` | other | tuya_ef00 | TS0601_watervalve, TS0601, SWV-ZN, SWV-ZNE, SWV-ZFE, SWV-ZNU | AA | 72 | 0 |  |
+| `water_valve_smart` | other | tuya_ef00 | TS0601_watervalve, TS0601, SWV-ZN, SWV-ZNE, SWV-ZFE, SWV-ZNU | AA | 84 | 4 | FrankEver smart water valve (ZHA#2633 / Z2M FK family). Was mis-locked on thermostat_tuya_ |
 | `weather_station_outdoor` | sensor | tuya_ef00 | TS0601_weather, TS0601 | AAA/AA | 8 | 0 |  |
 | `wifi_air_purifier` | fan | zcl |  | unknown | 0 | 0 |  |
 | `wifi_air_quality` | sensor | zcl |  | unknown | 0 | 0 |  |
