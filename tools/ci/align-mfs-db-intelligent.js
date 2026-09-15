@@ -312,9 +312,23 @@ function align(db, compose, registry) {
     const { canon, nm, sample } = row;
     const pids = sortedPids(row.pids);
     const multiCanon = (canonByNorm.get(nm)?.size || 0) > 1;
-    if (multiCanon && !isOemMfr(sample)) {
+    if (multiCanon) {
+      // WHY(P2432): Tuya manufacturers can have different canonical drivers for different productIds.
+      // E.g. _TZ3000_wkai4ga5 (TS0044 -> scene_switch_4, TS0042 -> button_wireless_2).
+      // Since mfs_db is manufacturer-keyed, multi-canon entries cannot force a single driverId without conflict.
+      let key = findDbKey(db, nm);
+      if (key) {
+        const entry = ensureEntry(db, key);
+        if (pids.length) {
+          const next = sortedPids([...(entry.modelIds || []), ...pids]);
+          if (JSON.stringify(sortedPids(entry.modelIds)) !== JSON.stringify(next)) {
+            entry.modelIds = next;
+            entry.modelIdsCount = next.length;
+          }
+        }
+      }
       skipped.push({
-        reason: 'registry_bare_brand_multi_canon',
+        reason: isOemMfr(sample) ? 'registry_oem_multi_canon' : 'registry_bare_brand_multi_canon',
         mfr: nm,
         canon,
         caseIds: row.caseIds,
@@ -591,7 +605,8 @@ function main() {
   };
 
   if (APPLY && changes.length) {
-    fs.writeFileSync(DB_PATH, `${JSON.stringify(db, null, 2)}\n`);
+    fs.writeFileSync(DB_PATH, `${JSON.stringify(db)}\n`);
+    // WHY(P2520/P169): compact one-line JSON — Homey Buffer parse + avoid CI pretty-print false diffs
   }
 
   const outDir = path.join(ROOT, 'reports');
