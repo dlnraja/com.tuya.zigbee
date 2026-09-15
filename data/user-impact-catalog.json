@@ -4,7 +4,7 @@
     "updated": "2026-09-15",
     "policy": "Never invent mfr+pid from tile names. Diag UUID + driver + forum text only.",
     "lastSync": "2026-09-15T08:05:20.598Z",
-    "lastInvestigation": "2026-09-10T12:33:55.114Z",
+    "lastInvestigation": "2026-09-15T09:29:12.402Z",
     "p2347": "Gabriel verified-only + A_Tas/Cam/Peter batch",
     "p2388": "Compensate-without-waiting + interview batch curtain/Peter/Cam/A_Tas"
   },
@@ -21,7 +21,12 @@
         2193,
         2202,
         2203,
-        2230
+        2230,
+        2239,
+        2238,
+        2237,
+        2234,
+        2233
       ],
       "diags": [
         {
@@ -267,6 +272,19 @@
           ],
           "userAction": "Update Test ≥9.0.741 / Stable after P2343; re-pair mmWave; use Motion/Static/Distance settings; send Homey diag UUID for live cluster confirm",
           "needDiag": true
+        },
+        {
+          "tile": "Auto T158757 #1",
+          "driver": "motion_sensor_radar_mmwave",
+          "couple": "_TZ3218_T9YNFZ4X+TS0225",
+          "symptoms": [
+            "presence"
+          ],
+          "fixes": [],
+          "userAction": "Already in motion_sensor_radar_mmwave — update Universal Tuya Test + re-pair",
+          "_autoStub": true,
+          "_source": "mfs_db",
+          "_tier": "hardLock"
         }
       ],
       "dualApp": "BOTH",
@@ -1081,7 +1099,24 @@
         30
       ],
       "diags": [],
-      "devices": [],
+      "devices": [
+        {
+          "tile": "Auto T150690 #30",
+          "driver": "button_wireless_4",
+          "couple": "_TZ3000_XABCKQ1V+TS004F",
+          "symptoms": [
+            "battery"
+          ],
+          "fixes": [
+            "SOS battery spike guard",
+            "UnifiedBatteryHandler"
+          ],
+          "userAction": "Already in button_wireless_4 — update Universal Tuya Test + re-pair",
+          "_autoStub": true,
+          "_source": "misattribution-registry",
+          "_tier": "hardLock"
+        }
+      ],
       "_autoStub": true,
       "dualApp": "BOTH"
     },
@@ -1617,7 +1652,21 @@
         669
       ],
       "diags": [],
-      "devices": [],
+      "devices": [
+        {
+          "tile": "Auto T89271 #669",
+          "driver": "din_rail_switch",
+          "couple": "_TZ3000_QEUVNOHG+TS011F",
+          "symptoms": [
+            "cover"
+          ],
+          "fixes": [],
+          "userAction": "Already in din_rail_switch — update Universal Tuya Test + re-pair",
+          "_autoStub": true,
+          "_source": "misattribution-registry",
+          "_tier": "hardLock"
+        }
+      ],
       "_autoStub": true,
       "dualApp": "REVIEW"
     },
@@ -1842,7 +1891,19 @@
         658
       ],
       "diags": [],
-      "devices": [],
+      "devices": [
+        {
+          "tile": "Auto T89271 #658",
+          "driver": "plug_energy_monitor",
+          "couple": "_TZ3000_AMDYMR7L+TS011F",
+          "symptoms": [],
+          "fixes": [],
+          "userAction": "Already in plug_energy_monitor — update Universal Tuya Test + re-pair",
+          "_autoStub": true,
+          "_source": "misattribution-registry",
+          "_tier": "hardLock"
+        }
+      ],
       "_autoStub": true,
       "dualApp": "BOTH"
     },
@@ -2001,6 +2062,19 @@
           "userAction": "Verify compose fingerprint; update Test",
           "_autoStub": true,
           "_source": "processor"
+        },
+        {
+          "tile": "Auto T89271 #644",
+          "driver": "smartplug",
+          "couple": "_TZ3000_NKCOBIES+TS011F",
+          "symptoms": [
+            "unknown"
+          ],
+          "fixes": [],
+          "userAction": "Already in smartplug — update Universal Tuya Test + re-pair",
+          "_autoStub": true,
+          "_source": "misattribution-registry",
+          "_tier": "hardLock"
         }
       ],
       "_autoStub": true,
@@ -2157,7 +2231,19 @@
         641
       ],
       "diags": [],
-      "devices": [],
+      "devices": [
+        {
+          "tile": "Auto T89271 #641",
+          "driver": "din_rail_switch",
+          "couple": "_TZ3000_QEUVNOHG+TS011F",
+          "symptoms": [],
+          "fixes": [],
+          "userAction": "Already in din_rail_switch — update Universal Tuya Test + re-pair",
+          "_autoStub": true,
+          "_source": "misattribution-registry",
+          "_tier": "hardLock"
+        }
+      ],
       "_autoStub": true,
       "dualApp": "REVIEW"
     },
@@ -2209,7 +2295,19 @@
         2169
       ],
       "diags": [],
-      "devices": [],
+      "devices": [
+        {
+          "tile": "Auto T120477 #1",
+          "driver": "rain_sensor",
+          "couple": "_TZ3210_TGVTVDOC+TS0207",
+          "symptoms": [],
+          "fixes": [],
+          "userAction": "Already in rain_sensor — update Universal Tuya Test + re-pair",
+          "_autoStub": true,
+          "_source": "misattribution-registry",
+          "_tier": "hardLock"
+        }
+      ],
       "_autoStub": true,
       "dualApp": "REVIEW"
     },
@@ -2879,7 +2977,21 @@
         16
       ],
       "diags": [],
-      "devices": [],
+      "devices": [
+        {
+          "tile": "Auto T146667 #10",
+          "driver": "soil_sensor",
+          "couple": "_TZE200_NPJ9BUG3+TS0601",
+          "symptoms": [
+            "soil"
+          ],
+          "fixes": [],
+          "userAction": "Already in soil_sensor — update Universal Tuya Test + re-pair",
+          "_autoStub": true,
+          "_source": "misattribution-registry",
+          "_tier": "hardLock"
+        }
+      ],
       "_autoStub": true,
       "dualApp": "BOTH"
     },
@@ -2921,7 +3033,19 @@
         2204
       ],
       "diags": [],
-      "devices": [],
+      "devices": [
+        {
+          "tile": "Auto T140352 #2204",
+          "driver": "air_quality_co2",
+          "couple": "_TZE204_OGKDPGY2+TS0601",
+          "symptoms": [],
+          "fixes": [],
+          "userAction": "Already in air_quality_co2 — update Universal Tuya Test + re-pair",
+          "_autoStub": true,
+          "_source": "misattribution-registry",
+          "_tier": "hardLock"
+        }
+      ],
       "_autoStub": true,
       "dualApp": "REVIEW"
     },
@@ -3031,7 +3155,8 @@
     "Stefan_Persson2": {
       "forumTopic": 154092,
       "posts": [
-        37
+        37,
+        41
       ],
       "diags": [],
       "devices": [],
@@ -3094,6 +3219,17 @@
         }
       ],
       "_autoStub": true
+    },
+    "Rens_Brandwijk": {
+      "forumTopic": 15811,
+      "posts": [
+        325,
+        6
+      ],
+      "diags": [],
+      "devices": [],
+      "_autoStub": true,
+      "investigationNote": "Update Universal Tuya Test to latest soak; re-pair if driver changed"
     }
   },
   "fixCatalog": {

@@ -5284,6 +5284,30 @@
       "notes": "P2509 L99: OCR/forum invent noise (Stefan T154092 padded mfr). NEVER lock — NEED real zb_manufacturer_name interview."
     },
     {
+      "id": "p2514-zm16b-3mzb0sdz-curtain",
+      "mfr": [
+        "_TZE284_3MZB0SDZ",
+        "_TZE284_3mzb0sdz",
+        "_tze284_3MZB0SDZ",
+        "_tze284_3mzb0sdz"
+      ],
+      "productId": [
+        "TS0601"
+      ],
+      "canonicalDriver": "curtain_motor",
+      "forbiddenDrivers": [
+        "ir_blaster",
+        "wifi_ir_remote",
+        "blaster_remote",
+        "generic_tuya",
+        "zigbee_universal",
+        "climate_sensor",
+        "soil_sensor"
+      ],
+      "forbidMode": "couple",
+      "notes": "P2514: Zemismart ZM16B tubular (Z2M/ZHA). Real couple is _TZE284_3mzb0sdz+TS0601 — was mis-homed to ir_blaster with invent TS1201. OCR padded _TZE2841000000_* stays doNotLock."
+    },
+    {
       "id": "p2509-npj9bug3-soil-zg303z",
       "mfr": [
         "_TZE200_npj9bug3",
