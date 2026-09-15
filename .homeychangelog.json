@@ -3305,5 +3305,8 @@
   },
   "9.0.944": {
     "en": "Complementary variant enrich (no overwrite): union fingerprints/settings, anti-regression locks. Update Homey Test."
+  },
+  "9.0.945": {
+    "en": "CI heal: compact mfs_db align, FP collision baseline, workflow prune remediation (P2521)."
   }
 }
