@@ -106,10 +106,21 @@ jobs:
 
       - name: "🛡️ P244x / P246x / P248x / P249x family gates"
         run: |
-          npm run check:p244x
-          npm run check:p246x
-          npm run check:p248x
-          npm run check:p249x
+          # WHY(P2521e): stable-v5 lacks some master-only family scripts (p246x/p248x).
+          # Skip missing npm scripts; hard-fail only when a declared script fails.
+          node <<'NODE'
+          const { spawnSync } = require('child_process');
+          const scripts = require('./package.json').scripts || {};
+          for (const s of ['check:p244x', 'check:p246x', 'check:p248x', 'check:p249x']) {
+            if (!scripts[s]) {
+              console.log(`skip missing ${s}`);
+              continue;
+            }
+            console.log(`run ${s}`);
+            const r = spawnSync('npm', ['run', s], { stdio: 'inherit', shell: true });
+            if (r.status) process.exit(r.status || 1);
+          }
+          NODE
 
       - name: "🛡️ P2495 publish path (soft-expect + sacred-keep + couple)"
         run: npm run check:publish

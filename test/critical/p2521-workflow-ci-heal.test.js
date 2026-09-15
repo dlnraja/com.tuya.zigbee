@@ -56,6 +56,7 @@ describe('P2521 workflow CI heal — compact mfs + collision baseline', () => {
     const yml = fs.readFileSync(path.join(ROOT, '.github/workflows/auto-fix-and-publish.yml'), 'utf8');
     assert.ok(yml.includes('Compact mfs_db before family gates'));
     assert.ok(yml.includes('P2521d'));
+    assert.ok(yml.includes('skip missing') || yml.includes('P2521e'), 'family gates must skip missing npm scripts');
     const compactIdx = yml.indexOf('Compact mfs_db before family gates');
     const gatesIdx = yml.indexOf('P244x / P246x / P248x / P249x family gates');
     assert.ok(compactIdx > 0 && gatesIdx > compactIdx, 'compact step must precede family gates');
