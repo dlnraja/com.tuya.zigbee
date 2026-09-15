@@ -10,8 +10,14 @@
   },
   "alwaysBothSameSession": {
     "mandate": "EVERY BOTH reliability change must be surgically ported to stable-v5 in the SAME agent session as master — never leave LTS tip-lag for Peter/GH crashes/sacred couples",
-    "skip": ["MASTER_ONLY features (IR flood P2501, Intelligent IR UX P2487, mega enrich)"],
-    "neverCopy": ["App ID", "version line 9.0↔5.12", "whole trees"],
+    "skip": [
+      "MASTER_ONLY features (IR flood P2501, Intelligent IR UX P2487, mega enrich)"
+    ],
+    "neverCopy": [
+      "App ID",
+      "version line 9.0↔5.12",
+      "whole trees"
+    ],
     "stableClone": "Documents/homey/stable"
   },
   "tracks": {
@@ -382,6 +388,10 @@
     "p2460_bseed_tx_ysdv91bk": {
       "tag": "BOTH",
       "note": "GH#546 l9brjwau setOn/setOff TX; GH#545 ysdv91bk→wall_switch_1gang_1way; sacred-keep wall 2gang"
+    },
+    "p2505_deferred_suggestions": {
+      "tag": "BOTH",
+      "note": "Close deferred suggestions: P2485 EF00 multi-gang rehome + P2486b launchOnce on stable; TITAN Buffer charter on master"
     }
   },
   "ci": {
