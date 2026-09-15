@@ -3299,5 +3299,8 @@
   },
   "9.0.942": {
     "en": "Fixed wifi IR flow titles blocking publish; Zemismart ZM16B curtain motor + fleet DP coverage. Update Homey Test."
+  },
+  "9.0.943": {
+    "en": "Improved fingerprints, 3-phase meter DP mapping, and anti-regression enrich locks."
   }
 }

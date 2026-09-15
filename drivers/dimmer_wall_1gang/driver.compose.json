@@ -34,7 +34,8 @@
       "TS110E",
       "TS110F",
       "ZBMINI-DIM",
-      "ZBMINID"
+      "ZBMINID",
+      "TS011F"
     ],
     "learnmode": {
       "image": "{{driverAssetsPath}}/icon.svg",
@@ -57,7 +58,6 @@
       "_TZ3000_49QCHF10",
       "_TZ3000_49qchf10",
       "_TZ3000_5rpu3r0d",
-      "_TZ3000_7dcddnye",
       "_TZ3000_7hcgjxpc",
       "_TZ3000_bwlvyjwk",
       "_TZ3000_gb5gaeca",
@@ -93,8 +93,6 @@
       "_tz3000_49qchf10",
       "_TZ3000_5RPU3R0D",
       "_tz3000_5rpu3r0d",
-      "_TZ3000_7DCDDNYE",
-      "_tz3000_7dcddnye",
       "_TZ3000_7HCGJXPC",
       "_tz3000_7hcgjxpc",
       "_TZ3000_BWLVYJWK",
@@ -157,7 +155,6 @@
       "_tze284_nvodulvi",
       "_tz3000_49QCHF10",
       "_tz3000_5RPU3R0D",
-      "_tz3000_7DCDDNYE",
       "_tz3000_7HCGJXPC",
       "_tz3000_BWLVYJWK",
       "_tz3000_GB5GAECA",
@@ -195,7 +192,9 @@
       "_tze204_unsxl4ir",
       "_TZE204_UNSXL4IR",
       "_TZE204_unsxl4ir",
-      "_tze204_UNSXL4IR"
+      "_tze204_UNSXL4IR",
+      "_TZ3210_pfbzs1an",
+      "_tz3210_pfbzs1an"
     ]
   },
   "settings": [
@@ -451,6 +450,42 @@
           }
         }
       ]
+    },
+    {
+      "id": "power_scale",
+      "type": "dropdown",
+      "label": {
+        "en": "Power Measurement Scale",
+        "fr": "Échelle de puissance"
+      },
+      "value": "1",
+      "values": [
+        {
+          "id": "0.1",
+          "label": {
+            "en": "÷10",
+            "fr": "÷10"
+          }
+        },
+        {
+          "id": "1",
+          "label": {
+            "en": "×1 (Default)",
+            "fr": "×1 (défaut)"
+          }
+        },
+        {
+          "id": "10",
+          "label": {
+            "en": "×10",
+            "fr": "×10"
+          }
+        }
+      ],
+      "hint": {
+        "en": "Use if W/kWh readings are 10× too high or low.",
+        "fr": "Si W/kWh sont ×10 trop hauts ou bas."
+      }
     }
   ],
   "images": {

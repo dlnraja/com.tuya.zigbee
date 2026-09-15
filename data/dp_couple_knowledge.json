@@ -11,8 +11,8 @@
       "4": "ENUM",
       "5": "BITMAP"
     },
-    "lastSync": "2026-09-15T09:31:11.280Z",
-    "coupleCount": 196
+    "lastSync": "2026-09-15T12:33:08.773Z",
+    "coupleCount": 198
   },
   "globalDpCollisions": {
     "1": [
@@ -3155,16 +3155,17 @@
       "driver": "energy_meter_3phase",
       "sources": [
         "registry",
-        "auto-seed-p2247"
+        "auto-seed-p2247",
+        "p2518-rx-enrich"
       ],
       "seed": "auto",
       "dps": {
         "1": {
           "name": "energy",
           "direction": "rx",
-          "capability": null,
-          "source": "z2m-soft",
-          "notes": "Soft seed — verify before binding capability"
+          "capability": "meter_power",
+          "source": "driver-dpMappings",
+          "notes": "P2518 — NOT onoff; Z2M ATMS100133Z forward energy"
         },
         "23": {
           "name": "meter_power.exported",
@@ -3175,14 +3176,13 @@
         "24": {
           "name": "total_energy",
           "direction": "rx",
-          "capability": null,
-          "source": "z2m-soft",
-          "notes": "Soft seed — verify before binding capability"
+          "capability": "meter_power",
+          "source": "driver-dpMappings"
         },
         "29": {
-          "name": "measure_power.phase_total",
+          "name": "measure_power",
           "direction": "rx",
-          "capability": "measure_power.phase_total",
+          "capability": "measure_power",
           "source": "driver-dpMappings"
         },
         "30": {
@@ -8260,6 +8260,26 @@
           "source": "driver-dpMappings"
         }
       }
+    },
+    "_TZ3000_t7ugva7q|TS0013": {
+      "caseId": "p2517-t7ugva7q-ts0013-wall-3gang",
+      "driver": "wall_switch_3gang_1way",
+      "sources": [
+        "registry",
+        "auto-seed-p2247"
+      ],
+      "seed": "auto",
+      "dps": {}
+    },
+    "_TZ3000_l9brjwau|TS0003": {
+      "caseId": "p2517-l9brjwau-ts0003-wall-3gang",
+      "driver": "wall_switch_3gang_1way",
+      "sources": [
+        "registry",
+        "auto-seed-p2247"
+      ],
+      "seed": "auto",
+      "dps": {}
     }
   }
 }
