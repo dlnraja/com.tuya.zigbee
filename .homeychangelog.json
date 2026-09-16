@@ -3407,5 +3407,8 @@
   },
   "9.0.982": {
     "en": "Aligned airbox fingerprint routing in mfs_db after air quality lock (no other device changes)."
+  },
+  "9.0.983": {
+    "en": "Intelligent Zigbee 4.0 / Suzi awareness (classifier + diagnostics) without inventing device fingerprints."
   }
 }
