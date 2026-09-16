@@ -91,6 +91,14 @@ describe('P2487 Intelligent IR router', () => {
     }
   });
 
+  // Contre quoi: fleet-enrich orphan-fix re-injected titleFormatted → code-quality red
+  it('flow-fleet-enrich omits titleFormatted drivers (P2487 Contre quoi)', () => {
+    const src = fs.readFileSync(path.join(ROOT, 'tools/ci/flow-fleet-enrich.js'), 'utf8');
+    assert.match(src, /OMIT_TITLEFORMATTED_DRIVERS/);
+    assert.match(src, /wifi_ir_remote/);
+    assert.match(src, /stripTitleFormatted/);
+  });
+
   // Contre quoi: Homey reserves Flow arg name "duration"
   it('wifi_ir_remote start_learn uses timeout_s not duration', () => {
     const p = path.join(ROOT, 'drivers', 'wifi_ir_remote', 'driver.flow.compose.json');
