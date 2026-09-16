@@ -1,6 +1,6 @@
 {
   "name": "com.dlnraja.tuya.zigbee",
-  "version": "5.12.213",
+  "version": "5.12.214",
   "description": "Tuya Unified Zigbee - Local-first control with AI automation",
   "main": "app.js",
   "scripts": {
@@ -212,9 +212,10 @@
     "enrich:coverage:mega:apply": "node tools/ci/p2531-complementary-coverage-mega.js --apply --crawl",
     "check:p2530d": "node --test test/critical/p2530d-wall-dimmer-firmware-mfr.test.js",
     "check:p2532": "node --test test/critical/p2532-dual-case-compose-preserve.test.js",
-    "check:p253x": "npm run check:p2530 && npm run check:p2530d && npm run check:p2531 && npm run check:p2532 && npm run check:p2533 && npm run check:p2534",
+    "check:p253x": "npm run check:p2530 && npm run check:p2530d && npm run check:p2531 && npm run check:p2532 && npm run check:p2533 && npm run check:p2534 && npm run check:p2535",
     "check:p2533": "node --test test/critical/p2533-complementary-merge-helpers.test.js",
-    "check:p2534": "node --test test/critical/p2534-vichy-mtg075-presence-dp1.test.js"
+    "check:p2534": "node --test test/critical/p2534-vichy-mtg075-presence-dp1.test.js",
+    "check:p2535": "node --test test/critical/p2535-forum-all-topics-rkgngb5o-dim.test.js"
   },
   "keywords": [
     "homey",

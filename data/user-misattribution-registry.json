@@ -6803,7 +6803,8 @@
         "wall_switch_5_gang_tuya"
       ],
       "protocol": "zcl",
-      "notes": "radiothieves #662 CCT tunable bulb"
+      "notes": "radiothieves #662 CCT tunable bulb (TS0502B only). Sibling TS0501B → bulb_dimmable (P2535).",
+      "forbidMode": "couple"
     },
     {
       "id": "p2432-tyzb01-6g8b7at8-switch-2gang",
@@ -7181,6 +7182,30 @@
       ],
       "forbidMode": "couple",
       "notes": "P2519 — vibration couple; curtain enrich dual-claim"
+    },
+    {
+      "id": "p2535-tzb210-rkgngb5o-ts0501b-dim",
+      "mfr": [
+        "_TZB210_rkgngb5o",
+        "_tzb210_rkgngb5o",
+        "_TZB210_RKGNGB5O",
+        "_tzb210_RKGNGB5O"
+      ],
+      "productId": [
+        "TS0501B"
+      ],
+      "canonicalDriver": "bulb_dimmable",
+      "forbiddenDrivers": [
+        "bulb_tunable_white",
+        "bulb_rgb",
+        "switch_1gang",
+        "wall_dimmer_tuya",
+        "generic_tuya",
+        "zigbee_universal"
+      ],
+      "forbidMode": "couple",
+      "protocol": "zcl",
+      "notes": "P2535 BOTH backport: radiothieves #662 / Johan#949 WZ1 brightness TS0501B"
     }
   ]
 }
