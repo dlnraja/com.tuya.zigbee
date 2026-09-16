@@ -26,7 +26,6 @@ const SEEDS = [
   { suffix: '127x7wnl', driver: 'curtain_motor', family: 'moes_cover', caps: ['windowcoverings_state', 'windowcoverings_set'] },
   { suffix: 'upt8lzi0', driver: 'curtain_motor', family: 'moes_cover', caps: ['windowcoverings_state', 'windowcoverings_set'] },
   { suffix: 'i8sdouy0', driver: 'curtain_motor', family: 'moes_cover', caps: ['windowcoverings_state', 'windowcoverings_set'] },
-  { suffix: 'kq1l5eu5', driver: 'curtain_motor', family: 'moes_cover', caps: ['windowcoverings_state', 'windowcoverings_set'] },
   { suffix: 'fodv6bkr', driver: 'curtain_motor', family: 'tubular', caps: ['windowcoverings_state', 'windowcoverings_set', 'measure_battery'] },
   { suffix: 'libht6ua', driver: 'curtain_motor', family: 'tubular', caps: ['windowcoverings_state', 'windowcoverings_set', 'measure_battery'] },
   { suffix: 'icka1clh', driver: 'curtain_motor', family: 'am43', caps: ['windowcoverings_state', 'windowcoverings_set', 'measure_battery'] },
