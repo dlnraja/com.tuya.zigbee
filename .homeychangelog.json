@@ -1698,5 +1698,8 @@
   },
   "5.12.223": {
     "en": "Improved complementary Zigbee DP/cluster/raw RX-TX paths (reliability) without replacing working EF00 maps."
+  },
+  "5.12.224": {
+    "en": "Restored complementary air-quality fingerprints and dual-case enrich guards (reliability)."
   }
 }

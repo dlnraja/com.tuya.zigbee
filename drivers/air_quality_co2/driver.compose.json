@@ -63,10 +63,6 @@
     }
   },
   "energy": {
-    "approximation": {
-      "usageOn": 1,
-      "usageOff": 0.5
-    },
     "batteries": [
       "AAA",
       "OTHER"
@@ -77,30 +73,47 @@
       "_TZE200_8IKYD92M",
       "_TZE200_y6rqas8p",
       "_TZE204_8IKYD92M",
+      "_TZE204_isvlaage",
+      "_TZE204_fpwtjlfh",
+      "_TZE204_ra9zfiwr",
       "_tze200_8ikyd92m",
       "_TZE200_Y6RQAS8P",
       "_tze200_y6rqas8p",
       "_tze204_8ikyd92m",
+      "_TZE204_ISVLAAGE",
+      "_tze204_isvlaage",
+      "_TZE204_FPWTJLFH",
+      "_tze204_fpwtjlfh",
+      "_TZE204_RA9ZFIWR",
+      "_tze204_ra9zfiwr",
       "_TZE200_8ikyd92m",
       "_TZE204_8ikyd92m",
-      "_TZE200_ogkdpgy2",
-      "_TZE204_ogkdpgy2",
-      "_tze200_ogkdpgy2",
-      "_tze204_ogkdpgy2",
+      "_tze200_8IKYD92M",
+      "_tze200_Y6RQAS8P",
+      "_tze204_8IKYD92M",
+      "_tze204_ISVLAAGE",
+      "_tze204_FPWTJLFH",
+      "_tze204_RA9ZFIWR",
+      "_TZE204_pkpfn9hc",
+      "_tze204_pkpfn9hc",
       "_TZE200_OGKDPGY2",
       "_TZE204_OGKDPGY2",
+      "_tze200_ogkdpgy2",
+      "_tze204_ogkdpgy2",
+      "_TZE200_ogkdpgy2",
+      "_TZE204_ogkdpgy2",
       "_TZE200_3ejwxpmu",
       "_TZE204_3ejwxpmu",
       "_tze200_3ejwxpmu",
       "_tze204_3ejwxpmu",
-      "_TZE204_pkpfn9hc",
-      "_tze204_pkpfn9hc",
-      "_TZE204_isvlaage",
-      "_tze204_isvlaage",
-      "_TZE204_fpwtjlfh",
-      "_tze204_fpwtjlfh",
-      "_TZE204_ra9zfiwr",
-      "_tze204_ra9zfiwr",
+      "_TZE204_PKPFN9HC",
+      "_tze204_PKPFN9HC",
+      "_tze200_OGKDPGY2",
+      "_tze204_OGKDPGY2",
+      "_TZE200_3EJWXPMU",
+      "_tze200_3EJWXPMU",
+      "_TZE204_3EJWXPMU",
+      "_tze204_3EJWXPMU",
       "_TZE284_8b9zpaav",
       "_tze284_8b9zpaav",
       "_TZE284_8B9ZPAAV",
@@ -108,14 +121,23 @@
       "_TZE284_it9utkro",
       "_tze284_it9utkro",
       "_TZE284_IT9UTKRO",
-      "_tze284_IT9UTKRO"
+      "_tze284_IT9UTKRO",
+      "_TZE200_8ygsuhe1",
+      "_TZE200_yvx5lh6k",
+      "_TZE200_ryfmq5rl",
+      "_TZE200_c2fmom5z",
+      "_TZE200_mja3fuja",
+      "_TZE204_c2fmom5z",
+      "_TZE204_yvx5lh6k",
+      "_TZE204_8ygsuhe1",
+      "_TZE204_ryfmq5rl",
+      "_TZE204_mja3fuja"
     ],
     "productId": [
       "TS0601",
       "RH3052",
       "TS0005",
-      "TS0006",
-      "TS0601_co2"
+      "TS0006"
     ],
     "endpoints": {
       "1": {
@@ -236,8 +258,7 @@
   ],
   "images": {
     "small": "/drivers/air_quality_co2/assets/images/small.png",
-    "large": "/drivers/air_quality_co2/assets/images/large.png",
-    "xlarge": "/drivers/air_quality_co2/assets/images/xlarge.png"
+    "large": "/drivers/air_quality_co2/assets/images/large.png"
   },
   "platforms": [
     "local"
@@ -258,23 +279,21 @@
       "id": "tuya_revive",
       "title": {
         "en": "Tuya Revive (device recovery)",
-        "fr": "Tuya Revive (récupération appareil)"
+        "fr": "Tuya Revive (récupération appareil)",
+        "nl": "Tuya Revive (apparaatherstel)",
+        "de": "Tuya Revive (Gerätewiederherstellung)"
       }
     },
     {
       "id": "generate_issue_report",
       "title": {
         "en": "Generate support report (GitHub issue)",
-        "fr": "Générer rapport de support (issue GitHub)"
+        "fr": "Générer rapport de support (issue GitHub)",
+        "nl": "Supportrapport genereren (GitHub issue)",
+        "de": "Supportbericht erstellen (GitHub Issue)"
       }
     }
   ],
   "id": "air_quality_co2",
-  "version": "1.0.0",
-  "_pidConflictNotes": [
-    "// PID-CONFLICT-NOTE TS0201 shared with 18 other drivers (cross-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md",
-    "// PID-CONFLICT-NOTE TS0222 shared with 9 other drivers (cross-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md",
-    "// PID-CONFLICT-NOTE TY0201 shared with 8 other drivers (same-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md",
-    "// PID-CONFLICT-NOTE RH3052 shared with 7 other drivers (same-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md"
-  ]
+  "version": "1.0.0"
 }
