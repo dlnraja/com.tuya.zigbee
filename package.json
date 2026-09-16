@@ -1,6 +1,6 @@
 {
   "name": "com.dlnraja.tuya.zigbee",
-  "version": "5.12.205",
+  "version": "5.12.206",
   "description": "Tuya Unified Zigbee - Local-first control with AI automation",
   "main": "app.js",
   "scripts": {
@@ -203,7 +203,10 @@
     "check:p2527": "node tools/ci/p2527-untrusted-content-gate.js",
     "security:untrusted": "npm run check:p2527",
     "check:p2529": "node --test test/critical/p2529-deep-functional-enrich.test.js && node tools/ci/p2529-deep-functional-enrich-gate.js",
-    "enrich:functional": "node tools/ci/deep-functional-enrich-pass.js"
+    "enrich:functional": "node tools/ci/deep-functional-enrich-pass.js",
+    "check:p2530": "node --test test/critical/p2530-recent-variant-capability.test.js",
+    "enrich:variants:recent": "node tools/ci/recent-variant-capability-completer.js",
+    "enrich:variants:recent:apply": "node tools/ci/recent-variant-capability-completer.js --apply"
   },
   "keywords": [
     "homey",
