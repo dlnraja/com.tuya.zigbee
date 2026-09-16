@@ -7207,6 +7207,79 @@
       ],
       "forbidMode": "couple",
       "notes": "P2519 — vibration couple; curtain enrich dual-claim"
+    },
+    {
+      "id": "p2538-tze284-8b9zpaav-airbox",
+      "mfr": [
+        "_TZE284_8b9zpaav",
+        "_tze284_8b9zpaav",
+        "_TZE284_8B9ZPAAV",
+        "_tze284_8B9ZPAAV"
+      ],
+      "productId": [
+        "TS0601"
+      ],
+      "canonicalDriver": "air_quality_co2",
+      "forbiddenDrivers": [
+        "climate_sensor",
+        "smart_air_detection_box",
+        "soil_sensor",
+        "zigbee_universal"
+      ],
+      "forbidMode": "couple",
+      "protocol": "tuya_dp",
+      "notes": "P2538 L99 Z2M TS0601_airbox — DP2 CO2 / 18 temp / 19 humidity / 21 VOC / 22 HCHO; was mispaired as climate_sensor",
+      "sources": [
+        "Z2M:TS0601_airbox",
+        "ZHA:#4971",
+        "L99:2026-09-16"
+      ],
+      "tracks": {
+        "master": {
+          "static": true,
+          "dynamic": true
+        },
+        "stable": {
+          "static": true,
+          "dynamic": false
+        }
+      }
+    },
+    {
+      "id": "p2538-tze284-it9utkro-pm25-airbox",
+      "mfr": [
+        "_TZE284_it9utkro",
+        "_tze284_it9utkro",
+        "_TZE284_IT9UTKRO",
+        "_tze284_IT9UTKRO"
+      ],
+      "productId": [
+        "TS0601"
+      ],
+      "canonicalDriver": "air_quality_co2",
+      "forbiddenDrivers": [
+        "climate_sensor",
+        "smart_air_detection_box",
+        "soil_sensor",
+        "zigbee_universal"
+      ],
+      "forbidMode": "couple",
+      "protocol": "tuya_dp",
+      "notes": "P2538 L99 Z2M PM2.5_airbox sibling — same EF00 airbox DP family; forbid climate",
+      "sources": [
+        "Z2M:PM2.5_airbox",
+        "L99:2026-09-16"
+      ],
+      "tracks": {
+        "master": {
+          "static": true,
+          "dynamic": true
+        },
+        "stable": {
+          "static": true,
+          "dynamic": false
+        }
+      }
     }
   ]
 }
