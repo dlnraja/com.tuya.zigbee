@@ -1635,5 +1635,8 @@
   },
   "5.12.201": {
     "en": "Presence radar WHEN cards fire on human presence; remaining flow conditions registered."
+  },
+  "5.12.202": {
+    "en": "Hardened forum and scrape ingest against prompt injection and malicious markup."
   }
 }

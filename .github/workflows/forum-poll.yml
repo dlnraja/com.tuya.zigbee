@@ -12,7 +12,8 @@ on:
     # - 02:00 UTC: mega-crawl (also polls forum)
     # - */4 cron: auto-enrich-closed-loop
     # Dedicated run for redundancy and clearer logs.
-    - cron: '15 2,6,10,14,18,22 * * *'
+    # P2491: 4×/day (was 6) — fewer Discourse/GH API overlaps with L99/auto-enrich
+    - cron: '15 2,8,14,20 * * *'
   workflow_dispatch:
     inputs:
       topic_id:
@@ -40,6 +41,12 @@ defaults:
 
 env:
   NODE_VERSION: '22'
+  AI_FORCE_LOCAL: 'true'
+  AI_ALLOW_REMOTE: 'false'
+  AI_PLAN_MODE: forfait
+  GMAIL_DIAG_AI_MAX: '0'
+  FORUM_AUTO_POST: '0'
+  SHADOW_FORUM: '1'
 
 jobs:
   forum-poll:
@@ -122,6 +129,18 @@ jobs:
           else
             echo "forum-silent-multi-scan.js missing — skip"
           fi
+          # WHY(P2527): neutralize prompt-injection / malicious markup in forum digests before enrich/AI
+          if [ -f tools/ci/untrusted-content-sanitize.js ]; then
+            echo "## 🛡️ Untrusted content sanitize (P2527 — forum digests DATA-only)" >> $GITHUB_STEP_SUMMARY
+            for f in \
+              .github/state/forum/multi-silent-digest.json \
+              .github/state/forum/multi-silent-new-fps.json \
+              .github/state/forum/actionable-processor-report.json
+            do
+              [ -f "$f" ] && node tools/ci/untrusted-content-sanitize.js "$f" || true
+            done
+            npm run check:p2527 || echo "P2527_GATE_WARN"
+          fi
           if [ -f tools/ci/silent-enrichment-orchestrator.js ]; then
             echo "## 🔇 Silent enrichment (forum+sync+investigate need-action, no user wait)" >> $GITHUB_STEP_SUMMARY
             node tools/ci/silent-enrichment-orchestrator.js --phase=forum --skip-scan 2>&1 | tee forum-enrich.log || echo "ENRICH_ORCH_WARN"
@@ -137,9 +156,9 @@ jobs:
           fi
           # WHY(P2418): treat MISSING_PID / incomplete posts without waiting — soft hypotheses only
           if [ -f tools/ci/compensate-incomplete-reports.js ]; then
-            echo "## Compensate incomplete reports (P2419 hang-proof - no invent pid, no forum POST)" >> $GITHUB_STEP_SUMMARY
+            echo "## 🩹 Compensate incomplete reports (P2419 hang-proof — no invent pid, no forum POST)" >> $GITHUB_STEP_SUMMARY
             COMPENSATE_SKIP_INVESTIGATE=1 COMPENSATE_MAX_MS=45000 \
-            node tools/ci/compensate-incomplete-reports.js --apply-safe --skip-investigate 2>&1 | tee compensate-incomplete.log || echo "COMPENSATE_SOFT_WARN"
+              node tools/ci/compensate-incomplete-reports.js --apply-safe --skip-investigate 2>&1 | tee compensate-incomplete.log || echo "COMPENSATE_SOFT_WARN"
             DATE=$(date -u +%F)
             head -n 40 "reports/compensate-$DATE/TREAT.md" >> $GITHUB_STEP_SUMMARY 2>/dev/null || true
           elif [ -f tools/ci/auto-investigate-need-action.js ]; then
