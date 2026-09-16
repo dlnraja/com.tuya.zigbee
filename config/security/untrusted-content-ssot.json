@@ -1,0 +1,36 @@
+{
+  "id": "untrusted-content-ssot",
+  "version": 1,
+  "patch": "P2527",
+  "dualApp": "BOTH",
+  "why": {
+    "pourquoi": "Forum posts, Gmail diags, and scraped HTML are attacker-controlled — must never become agent/CI instructions or executable payloads",
+    "comment": "UntrustedContentGuard strips prompt-injection + XSS + secret exfil patterns; wrap for AI; gate workflows",
+    "pourQui": "CI bots, Cursor agents, forum silent scanners, scrapers",
+    "quand": "Every forum/scrape/Gmail ingest before AI or apply/enrich",
+    "contreQuoi": "Ignore-previous-instructions, tool-call smuggling, script tags, secret dump requests, FORUM_AUTO_POST force"
+  },
+  "policy": {
+    "treatAsDataOnly": true,
+    "neverExecuteScrapedCode": true,
+    "neverHonorForumInstructions": true,
+    "aiWrapperRequired": true,
+    "maxExcerptChars": 4000,
+    "maxAiContextChars": 2500
+  },
+  "sources": [
+    "forum",
+    "gmail",
+    "scrape",
+    "github_issue",
+    "pm",
+    "diag",
+    "rss"
+  ],
+  "runtime": [
+    "lib/security/UntrustedContentGuard.js",
+    "tools/ci/untrusted-content-sanitize.js",
+    "tools/ci/p2527-untrusted-content-gate.js"
+  ],
+  "gates": ["check:p2527", "security:untrusted"]
+}
