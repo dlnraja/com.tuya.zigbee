@@ -1680,5 +1680,8 @@
   },
   "5.12.217": {
     "en": "Fixed nkjintbl complementary bleed; Zigbee RF/MCU guidance without degrade."
+  },
+  "5.12.218": {
+    "en": "Publish unblock: nkjintbl anti-bot (TZE204 on plug only) + Zigbee RF/MCU evolution without degrade."
   }
 }
