@@ -1677,5 +1677,8 @@
   },
   "5.12.216": {
     "en": "Improved Zigbee RF coexistence guidance and Tuya MCU time-sync resilience (no pairing degrade)."
+  },
+  "5.12.217": {
+    "en": "Fixed nkjintbl complementary bleed; Zigbee RF/MCU guidance without degrade."
   }
 }
