@@ -6817,18 +6817,19 @@
       "productId": [
         "TS0501B"
       ],
-      "canonicalDriver": "bulb_dimmable",
+      "canonicalDriver": "led_controller_dimmable",
       "forbiddenDrivers": [
         "bulb_tunable_white",
         "bulb_rgb",
         "switch_1gang",
         "wall_dimmer_tuya",
         "generic_tuya",
-        "zigbee_universal"
+        "zigbee_universal",
+        "bulb_dimmable"
       ],
       "forbidMode": "couple",
       "protocol": "zcl",
-      "notes": "P2535 forum all-topics: radiothieves #662 / Johan#949 / Z2M WZ1 Skydance — brightness-only TS0501B. Same mfr + TS0502B stays CCT (p2432)."
+      "notes": "P2535: radiothieves #662 / Johan#949 / Z2M WZ1 — TS0501B brightness. led_controller_dimmable (no TS0502B Cartesian). Sibling TS0502B CCT = p2432."
     },
     {
       "id": "p2432-tyzb01-6g8b7at8-switch-2gang",

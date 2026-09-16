@@ -3386,5 +3386,11 @@
   },
   "9.0.975": {
     "en": "P2535 forum treat: Skydance/WZ1 _TZB210_rkgngb5o+TS0501B dimmable pairing (sibling TS0502B CCT). Update Homey Test."
+  },
+  "9.0.976": {
+    "en": "P2535 fix: WZ1 rkgngb5o+TS0501B on led_controller_dimmable (avoid CCT Cartesian anti-bot). Update Homey Test."
+  },
+  "9.0.977": {
+    "en": "P2535: WZ1 rkgngb5o+TS0501B on led_controller_dimmable (anti-bot clear). Update Homey Test."
   }
 }

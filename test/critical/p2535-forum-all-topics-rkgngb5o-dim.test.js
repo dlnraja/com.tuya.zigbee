@@ -2,7 +2,8 @@
 
 /**
  * P2535 — Forum all-topics Contre quoi (2026-09-16)
- * - `_TZB210_rkgngb5o`+TS0501B → bulb_dimmable (brightness / WZ1)
+ * - `_TZB210_rkgngb5o`+TS0501B → led_controller_dimmable (brightness / WZ1)
+ *   (not bulb_dimmable — that driver also lists TS0502B → anti-bot Cartesian false hit vs p2432)
  * - Same mfr + TS0502B stays bulb_tunable_white (p2432) — one mfr many pids NORMAL
  * - Do NOT invent Cartesian 4upl1fcj+TS0505B / qd7hej8u+TS0041 from Bo #652
  */
@@ -15,15 +16,21 @@ const path = require('path');
 const ROOT = path.join(__dirname, '..', '..');
 
 describe('P2535 forum all-topics rkgngb5o TS0501B dim', () => {
-  it('compose bulb_dimmable lists rkgngb5o + TS0501B', () => {
+  it('compose led_controller_dimmable lists rkgngb5o + TS0501B (no TS0502B)', () => {
     const compose = JSON.parse(fs.readFileSync(
-      path.join(ROOT, 'drivers/bulb_dimmable/driver.compose.json'),
+      path.join(ROOT, 'drivers/led_controller_dimmable/driver.compose.json'),
       'utf8',
     ));
     const mfrs = compose.zigbee?.manufacturerName || [];
     const pids = compose.zigbee?.productId || [];
     assert.ok(mfrs.some((m) => /_TZB210_rkgngb5o/i.test(m)));
     assert.ok(pids.some((p) => String(p).toUpperCase() === 'TS0501B'));
+    assert.ok(!pids.some((p) => String(p).toUpperCase() === 'TS0502B'), 'no CCT pid on dim driver');
+    const bulb = JSON.parse(fs.readFileSync(
+      path.join(ROOT, 'drivers/bulb_dimmable/driver.compose.json'),
+      'utf8',
+    ));
+    assert.ok(!(bulb.zigbee?.manufacturerName || []).some((m) => /rkgngb5o/i.test(m)));
   });
 
   it('registry locks couple-scoped dim vs CCT sibling', () => {
@@ -34,17 +41,18 @@ describe('P2535 forum all-topics rkgngb5o TS0501B dim', () => {
     const dim = (reg.cases || []).find((c) => c.id === 'p2535-tzb210-rkgngb5o-ts0501b-dim');
     const cct = (reg.cases || []).find((c) => c.id === 'p2432-tzb210-rkgngb5o-cct');
     assert.ok(dim);
-    assert.strictEqual(dim.canonicalDriver, 'bulb_dimmable');
+    assert.strictEqual(dim.canonicalDriver, 'led_controller_dimmable');
     assert.deepStrictEqual(dim.productId, ['TS0501B']);
     assert.ok(dim.forbiddenDrivers.includes('bulb_tunable_white'));
+    assert.ok(dim.forbiddenDrivers.includes('bulb_dimmable'));
     assert.ok(cct);
     assert.strictEqual(cct.canonicalDriver, 'bulb_tunable_white');
     assert.deepStrictEqual(cct.productId, ['TS0502B']);
   });
 
-  it('DeviceFingerprintDB routes TS0501B→bulb_dimmable and TS0502B→CCT', () => {
+  it('DeviceFingerprintDB routes TS0501B→led_controller_dimmable and TS0502B→CCT', () => {
     const src = fs.readFileSync(path.join(ROOT, 'lib/DeviceFingerprintDB.js'), 'utf8');
-    assert.ok(/'_TZB210_rkgngb5o\|TS0501B':\s*\{\s*driver:\s*'bulb_dimmable'/.test(src));
+    assert.ok(/'_TZB210_rkgngb5o\|TS0501B':\s*\{\s*driver:\s*'led_controller_dimmable'/.test(src));
     assert.ok(/'_TZB210_rkgngb5o\|TS0502B':\s*\{\s*driver:\s*'bulb_tunable_white'/.test(src));
   });
 
