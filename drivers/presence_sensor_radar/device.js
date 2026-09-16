@@ -166,10 +166,18 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
     if (capability === 'tuya_dp_value' || capability === 'tuya_dp_raw' || capability === 'tuya_dp_string') {
       return false;
     }
+    // WHY(P2524b / VicHY #2239+74e5cae7): MTG075 inference/distance may paint alarm_motion
+    // without _commitPresenceAndFlows — edge-fire declared presence cards on ANY path.
+    const edgeMotion = capability === 'alarm_motion' && typeof value === 'boolean';
+    const prevMotion = edgeMotion ? this.getCapabilityValue('alarm_motion') : undefined;
     const result = await super.safeSetCapabilityValue(capability, value);
-    if (capability === 'alarm_motion' && typeof value === 'boolean' &&
-        typeof this.hasCapability === 'function' && this.hasCapability('alarm_human')) {
-      await super.safeSetCapabilityValue('alarm_human', value).catch(() => {});
+    if (edgeMotion) {
+      if (typeof this.hasCapability === 'function' && this.hasCapability('alarm_human')) {
+        await super.safeSetCapabilityValue('alarm_human', value).catch(() => {});
+      }
+      if (prevMotion !== value) {
+        this._triggerPresenceFlows(value);
+      }
     }
     return result;
   }
@@ -904,20 +912,23 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
    */
   _commitPresenceAndFlows(presence) {
     const next = !!presence;
-    const prev = this.getCapabilityValue('alarm_motion');
-    this.safeSetCapabilityValue('alarm_human', next).catch(() => {});
+    // WHY(P2526): set alarm_motion FIRST so edge-fire in safeSet sees prev correctly;
+    // then mirror alarm_human (presence≡motion). Avoid double-trigger.
     this.safeSetCapabilityValue('alarm_motion', next).catch(() => {});
-    if (prev !== next) {
-      this._triggerPresenceFlows(next);
-    }
+    this.safeSetCapabilityValue('alarm_human', next).catch(() => {});
   }
 
   _triggerPresenceFlows(detected) {
+    // WHY(P2526 / VicHY 74e5cae7 @ 9.0.945): custom WHEN "Presence detected" must fire
+    // on false→true — native Homey "Motion alarm" works via capability; this card does not.
     const cardId = detected
       ? 'presence_sensor_radar_presence_detected'
       : 'presence_sensor_radar_presence_cleared';
     try {
-      this.homey.flow.getDeviceTriggerCard(cardId).trigger(this, {}).catch(() => {});
+      this.log?.(`[P2526] flow ${cardId} edge=${detected}`);
+      this.homey.flow.getDeviceTriggerCard(cardId).trigger(this, {}).catch((e) => {
+        this.log?.(`[P2526] flow ${cardId} trigger failed: ${e?.message || e}`);
+      });
     } catch (_e) { /* soft */ }
     if (detected) {
       try {

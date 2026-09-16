@@ -1632,5 +1632,8 @@
   },
   "5.12.200": {
     "en": "Local WiFi credentials now survive Homey reboot without cloud re-login."
+  },
+  "5.12.201": {
+    "en": "Presence radar WHEN cards fire on human presence; remaining flow conditions registered."
   }
 }

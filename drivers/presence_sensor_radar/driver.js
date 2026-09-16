@@ -13,10 +13,20 @@ class PresenceSensorRadarDriver extends ZigBeeDriver {
   }
 
   _registerFlowCards() {
+    // WHY(P2526 / VicHY 74e5cae7): register ALL compose conditions — motion_active was
+    // declared but never wired; users confuse native motion WHEN vs custom presence WHEN.
     const conditionCards = [
       {
         // WHY(P2524): condition must accept alarm_human OR alarm_motion (presence≡motion)
         id: 'presence_sensor_radar_is_present',
+        fn: async (args) => {
+          const d = args.device;
+          return d.getCapabilityValue('alarm_motion') === true
+            || d.getCapabilityValue('alarm_human') === true;
+        }
+      },
+      {
+        id: 'presence_sensor_radar_motion_active',
         fn: async (args) => {
           const d = args.device;
           return d.getCapabilityValue('alarm_motion') === true
@@ -35,6 +45,22 @@ class PresenceSensorRadarDriver extends ZigBeeDriver {
         fn: async (args) => {
           const distance = args.device.getCapabilityValue('measure_luminance.distance') || 0;
           return distance <= (args.distance || 300);
+        }
+      },
+      {
+        id: 'presence_sensor_radar_zone_active',
+        fn: async (args) => {
+          const z = String(args.zone || '1');
+          const cap = `alarm_motion.zone${z}`;
+          return args.device.getCapabilityValue(cap) === true;
+        }
+      },
+      {
+        id: 'presence_sensor_radar_movement_is',
+        fn: async (args) => {
+          const want = String(args.classification || 'none');
+          const got = String(args.device.getCapabilityValue('measure_motion.classification') || 'none');
+          return got === want;
         }
       }
     ];
