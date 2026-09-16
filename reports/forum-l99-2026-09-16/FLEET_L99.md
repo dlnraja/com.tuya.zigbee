@@ -41,10 +41,11 @@ Diag locks: VicHY `74e5cae7` · Peter `b8b78521`
 - Warm `presence_sensor_radar_*` trigger cards in driver.onInit
 - Contre quoi: `test/critical/p2534-*.test.js` · update `p2511`
 - gkfbdvyx keeps zero-distance clear (P2509)
+- **P2535** all-topics: `_TZB210_rkgngb5o`+`TS0501B` → `bulb_dimmable` (compose was missing; DB already routed). Sibling TS0502B CCT kept. Cartesian invent Bo #652 skipped.
 
 ## Dual-app
 
-P2534 reliability = **BOTH** → stable-v5 backport.
+P2534 + P2535 reliability = **BOTH** → stable-v5 backport.
 
 ## User (silent — no forum reply)
 
