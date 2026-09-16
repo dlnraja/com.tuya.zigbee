@@ -1,0 +1,1335 @@
+{
+  "generated": "2026-09-16T16:40:31.135Z",
+  "rows": [
+    {
+      "topic": 89271,
+      "post": 652,
+      "user": "Bo_Kjaergaard",
+      "mfr": "_TZ3000_4upl1fcj",
+      "raw": "_TZ3000_4upl1fcj",
+      "pid": "TS0505B",
+      "drivers": [],
+      "ok": false
+    },
+    {
+      "topic": 89271,
+      "post": 652,
+      "user": "Bo_Kjaergaard",
+      "mfr": "_TZ3000_qd7hej8u",
+      "raw": "_TZ3000_qd7hej8u",
+      "pid": "TS0041",
+      "drivers": [],
+      "ok": false
+    },
+    {
+      "topic": 150690,
+      "post": 16,
+      "user": "Relax_swe",
+      "mfr": "_TZ3000_22ugzkme",
+      "raw": "_TZ3000_22ugzkme",
+      "pid": "TS0041",
+      "drivers": [
+        "button_wireless_1"
+      ],
+      "ok": true
+    },
+    {
+      "topic": 89271,
+      "post": 649,
+      "user": "Roy1",
+      "mfr": "_TZ3000_3dfewsk1",
+      "raw": "_TZ3000_3dfewsk1",
+      "pid": "TS0207",
+      "drivers": [
+        "water_leak_sensor"
+      ],
+      "ok": true
+    },
+    {
+      "topic": 89271,
+      "post": 652,
+      "user": "Bo_Kjaergaard",
+      "mfr": "_TZ3000_4upl1fcj",
+      "raw": "_TZ3000_4upl1fcj",
+      "pid": "TS0041",
+      "drivers": [
+        "button_wireless_1"
+      ],
+      "ok": true
+    },
+    {
+      "topic": 89271,
+      "post": 658,
+      "user": "Bram_B",
+      "mfr": "_TZ3000_amdymr7l",
+      "raw": "_TZ3000_amdymr7l",
+      "pid": "TS011F",
+      "drivers": [
+        "plug_energy_monitor"
+      ],
+      "ok": true
+    },
+    {
+      "topic": 26439,
+      "post": 5497,
+      "user": "Kai_Dybvik",
+      "mfr": "_TZ3000_cjfmu5he",
+      "raw": "_TZ3000_cjfmu5he",
+      "pid": "TS0101",
+      "drivers": [
+        "smart_garden_irrigation_control",
+        "water_valve_garden"
+      ],
+      "ok": true
+    },
+    {
+      "topic": 26439,
+      "post": 5497,
+      "user": "Kai_Dybvik",
+      "mfr": "_TZ3000_cjfmu5he",
+      "raw": "_TZ3000_cjfmu5he",
+      "pid": "TS0049",
+      "drivers": [
+        "smart_garden_irrigation_control",
+        "water_valve_garden"
+      ],
+      "ok": true
+    },
+    {
+      "topic": 89271,
+      "post": 657,
+      "user": "Vincent_Lim",
+      "mfr": "_TZ3000_decxrtwa",
+      "raw": "_TZ3000_decxrtwa",
+      "pid": "TS0203",
+      "drivers": [
+        "contact_sensor"
+      ],
+      "ok": true
+    },
+    {
+      "topic": 150690,
+      "post": 33,
+      "user": "Graeme_Hindmarsh",
+      "mfr": "_TZ3000_kfu8zapd",
+      "raw": "_TZ3000_kfu8zapd",
+      "pid": "TS0044",
+      "drivers": [
+        "button_wireless_4"
+      ],
+      "ok": true
+    },
+    {
+      "topic": 150690,
+      "post": 34,
+      "user": "Primordial",
+      "mfr": "_TZ3000_kfu8zapd",
+      "raw": "_TZ3000_kfu8zapd",
+      "pid": null,
+      "drivers": [
+        "button_wireless_4"
+      ],
+      "ok": true
+    },
+    {
+      "topic": 26439,
+      "post": 5497,
+      "user": "Kai_Dybvik",
+      "mfr": "_TZ3000_kz1anoi8",
+      "raw": "_TZ3000_kz1anoi8",
+      "pid": "TS0101",
+      "drivers": [
+        "smart_garden_irrigation_control",
+        "water_valve_garden"
+      ],
+      "ok": true
+    },
+    {
+      "topic": 26439,
+      "post": 5497,
+      "user": "Kai_Dybvik",
+      "mfr": "_TZ3000_kz1anoi8",
+      "raw": "_TZ3000_kz1anoi8",
+      "pid": "TS0049",
+      "drivers": [
+        "smart_garden_irrigation_control",
+        "water_valve_garden"
+      ],
+      "ok": true
+    },
+    {
+      "topic": 26439,
+      "post": 5497,
+      "user": "Kai_Dybvik",
+      "mfr": "_TZ3000_mq4wujmp",
+      "raw": "_TZ3000_mq4wujmp",
+      "pid": "TS0101",
+      "drivers": [
+        "smart_garden_irrigation_control",
+        "water_valve_garden"
+      ],
+      "ok": true
+    },
+    {
+      "topic": 26439,
+      "post": 5497,
+      "user": "Kai_Dybvik",
+      "mfr": "_TZ3000_mq4wujmp",
+      "raw": "_TZ3000_mq4wujmp",
+      "pid": "TS0049",
+      "drivers": [
+        "smart_garden_irrigation_control",
+        "water_valve_garden"
+      ],
+      "ok": true
+    },
+    {
+      "topic": 89271,
+      "post": 652,
+      "user": "Bo_Kjaergaard",
+      "mfr": "_TZ3000_qd7hej8u",
+      "raw": "_TZ3000_qd7hej8u",
+      "pid": "TS0505B",
+      "drivers": [
+        "bulb_rgb"
+      ],
+      "ok": true
+    },
+    {
+      "topic": 89271,
+      "post": 669,
+      "user": "Erwin3",
+      "mfr": "_TZ3000_qeuvnohg",
+      "raw": "_TZ3000_qeuvnohg",
+      "pid": "TS011F",
+      "drivers": [
+        "din_rail_switch"
+      ],
+      "ok": true
+    },
+    {
+      "topic": 89271,
+      "post": 651,
+      "user": "melectro",
+      "mfr": "_TZ3000_upgcbody",
+      "raw": "_TZ3000_upgcbody",
+      "pid": "TS0207",
+      "drivers": [
+        "water_leak_sensor"
+      ],
+      "ok": true
+    },
+    {
+      "topic": 89271,
+      "post": 653,
+      "user": "Rob_G",
+      "mfr": "_TZ3000_wkai4ga5",
+      "raw": "_TZ3000_wkai4ga5",
+      "pid": "TS0044",
+      "drivers": [
+        "scene_switch_4"
+      ],
+      "ok": true
+    },
+    {
+      "topic": 89271,
+      "post": 670,
+      "user": "Trond_Sandland",
+      "mfr": "_TZ3000_wkr3jqmr",
+      "raw": "_TZ3000_wkr3jqmr",
+      "pid": "TS0004",
+      "drivers": [
+        "switch_4gang"
+      ],
+      "ok": true
+    },
+    {
+      "topic": 150690,
+      "post": 28,
+      "user": "SteampunkLolcat",
+      "mfr": "_TZ3000_xabckq1v",
+      "raw": "_TZ3000_xabckq1v",
+      "pid": "TS004F",
+      "drivers": [
+        "button_wireless_4"
+      ],
+      "ok": true
+    },
+    {
+      "topic": 89271,
+      "post": 656,
+      "user": "Mr_D_Forrest",
+      "mfr": "_TZ3000_xr3htd96",
+      "raw": "_TZ3000_xr3htd96",
+      "pid": "TS0201",
+      "drivers": [
+        "temphumidsensor3"
+      ],
+      "ok": true
+    },
+    {
+      "topic": 150690,
+      "post": 33,
+      "user": "Graeme_Hindmarsh",
+      "mfr": "_TZ3000_zgyzgdua",
+      "raw": "_TZ3000_zgyzgdua",
+      "pid": "TS0044",
+      "drivers": [
+        "scene_switch_4"
+      ],
+      "ok": true
+    },
+    {
+      "topic": 89271,
+      "post": 666,
+      "user": "RezaRose",
+      "mfr": "_TZ3210_0zabbfax",
+      "raw": "_TZ3210_0zabbfax",
+      "pid": "TS0503B",
+      "drivers": [
+        "light_bulb_rgb"
+      ],
+      "ok": true
+    },
+    {
+      "topic": 89271,
+      "post": 667,
+      "user": "late4marshmellow",
+      "mfr": "_TZ3210_3lbtuxgp",
+      "raw": "_TZ3210_3lbtuxgp",
+      "pid": "TS0505B",
+      "drivers": [
+        "bulb_rgb"
+      ],
+      "ok": true
+    },
+    {
+      "topic": 26439,
+      "post": 5497,
+      "user": "Kai_Dybvik",
+      "mfr": "_TZ3210_eymunffl",
+      "raw": "_TZ3210_eymunffl",
+      "pid": "TS0101",
+      "drivers": [
+        "smart_garden_irrigation_control"
+      ],
+      "ok": true
+    },
+    {
+      "topic": 26439,
+      "post": 5497,
+      "user": "Kai_Dybvik",
+      "mfr": "_TZ3210_eymunffl",
+      "raw": "_TZ3210_eymunffl",
+      "pid": "TS0049",
+      "drivers": [
+        "smart_garden_irrigation_control"
+      ],
+      "ok": true
+    },
+    {
+      "topic": 89271,
+      "post": 664,
+      "user": "MBrandt",
+      "mfr": "_TZ3210_iystcadi",
+      "raw": "_TZ3210_iystcadi",
+      "pid": "TS0505B",
+      "drivers": [
+        "light_bulb_rgb_led"
+      ],
+      "ok": true
+    },
+    {
+      "topic": 120477,
+      "post": 1,
+      "user": "FKey",
+      "mfr": "_TZ3210_tgvtvdoc",
+      "raw": "_TZ3210_tgvtvdoc",
+      "pid": null,
+      "drivers": [
+        "rain_sensor"
+      ],
+      "ok": true
+    },
+    {
+      "topic": 158757,
+      "post": 1,
+      "user": "A_Tas",
+      "mfr": "_TZ3218_t9ynfz4x",
+      "raw": "_TZ3218_t9ynfz4x",
+      "pid": null,
+      "drivers": [
+        "motion_sensor_radar_mmwave"
+      ],
+      "ok": true
+    },
+    {
+      "topic": 158757,
+      "post": 2,
+      "user": "Gabriel_Pedrosa_Mach",
+      "mfr": "_TZ3218_t9ynfz4x",
+      "raw": "_TZ3218_t9ynfz4x",
+      "pid": "TS0225",
+      "drivers": [
+        "motion_sensor_radar_mmwave"
+      ],
+      "ok": true
+    },
+    {
+      "topic": 89271,
+      "post": 662,
+      "user": "radiothieves",
+      "mfr": "_TZB210_rkgngb5o",
+      "raw": "_TZB210_rkgngb5o",
+      "pid": "TS0502B",
+      "drivers": [
+        "bulb_dimmable",
+        "bulb_tunable_white"
+      ],
+      "ok": true
+    },
+    {
+      "topic": 89271,
+      "post": 662,
+      "user": "radiothieves",
+      "mfr": "_TZB210_rkgngb5o",
+      "raw": "_TZB210_rkgngb5o",
+      "pid": "TS0501B",
+      "drivers": [
+        "bulb_dimmable"
+      ],
+      "ok": true
+    },
+    {
+      "topic": 89271,
+      "post": 650,
+      "user": "melectro",
+      "mfr": "_TZE200_2ekuz3dz",
+      "raw": "_TZE200_2ekuz3dz",
+      "pid": "TS0601",
+      "drivers": [
+        "wall_thermostat"
+      ],
+      "ok": true
+    },
+    {
+      "topic": 89271,
+      "post": 660,
+      "user": "Ferenc_Szasz",
+      "mfr": "_TZE200_3p5ydos3",
+      "raw": "_TZE200_3p5ydos3",
+      "pid": "TS0601",
+      "drivers": [
+        "wall_dimmer_tuya"
+      ],
+      "ok": true
+    },
+    {
+      "topic": 89271,
+      "post": 663,
+      "user": "Janderek",
+      "mfr": "_TZE200_3towulqd",
+      "raw": "_TZE200_3towulqd",
+      "pid": "TS0601",
+      "drivers": [
+        "presence_sensor_radar"
+      ],
+      "ok": true
+    },
+    {
+      "topic": 154092,
+      "post": 29,
+      "user": "Marcelo_Leite",
+      "mfr": "_TZE200_68nvbio9",
+      "raw": "_TZE200_68nvbio9",
+      "pid": "TS0601",
+      "drivers": [
+        "curtain_motor"
+      ],
+      "ok": true
+    },
+    {
+      "topic": 154092,
+      "post": 30,
+      "user": "Henk_Renting",
+      "mfr": "_TZE200_cf1sl3tj",
+      "raw": "_TZE200_cf1sl3tj",
+      "pid": "TS0601",
+      "drivers": [
+        "curtain_motor"
+      ],
+      "ok": true
+    },
+    {
+      "topic": 156967,
+      "post": 69,
+      "user": "Han_Kamminga",
+      "mfr": "_TZE200_cqtamhh5",
+      "raw": "_TZE200_cqtamhh5",
+      "pid": "TS0601",
+      "drivers": [
+        "presence_sensor_radar"
+      ],
+      "ok": true
+    },
+    {
+      "topic": 140352,
+      "post": 2229,
+      "user": "MIAMO_NISU",
+      "mfr": "_TZE200_icka1clh",
+      "raw": "_TZE200_icka1clh",
+      "pid": "TS0601",
+      "drivers": [
+        "curtain_motor"
+      ],
+      "ok": true
+    },
+    {
+      "topic": 154092,
+      "post": 25,
+      "user": "JOSE_ANGEL_RUIZ_JIME",
+      "mfr": "_TZE200_m6lwazh9",
+      "raw": "_TZE200_m6lwazh9",
+      "pid": "TS0601",
+      "drivers": [
+        "curtain_motor"
+      ],
+      "ok": true
+    },
+    {
+      "topic": 89271,
+      "post": 668,
+      "user": "Peter_N",
+      "mfr": "_TZE200_myd45weu",
+      "raw": "_TZE200_myd45weu",
+      "pid": "TS0601",
+      "drivers": [
+        "soil_sensor"
+      ],
+      "ok": true
+    },
+    {
+      "topic": 146667,
+      "post": 10,
+      "user": "Michael_Edholm",
+      "mfr": "_TZE200_npj9bug3",
+      "raw": "_TZE200_npj9bug3",
+      "pid": null,
+      "drivers": [
+        "soil_sensor"
+      ],
+      "ok": true
+    },
+    {
+      "topic": 89271,
+      "post": 671,
+      "user": "Henk_de_Boom",
+      "mfr": "_TZE200_p0gzbqct",
+      "raw": "_TZE200_p0gzbqct",
+      "pid": "TS0601",
+      "drivers": [
+        "wall_dimmer_tuya"
+      ],
+      "ok": true
+    },
+    {
+      "topic": 156967,
+      "post": 62,
+      "user": "Iulian_Baciu",
+      "mfr": "_TZE200_zo0cfekv",
+      "raw": "_TZE200_zo0cfekv",
+      "pid": "TS0601",
+      "drivers": [
+        "wall_switch_3gang_1way"
+      ],
+      "ok": true
+    },
+    {
+      "topic": 156967,
+      "post": 68,
+      "user": "salvagr",
+      "mfr": "_TZE204_5slehgeo",
+      "raw": "_TZE204_5slehgeo",
+      "pid": "TS0601",
+      "drivers": [
+        "curtain_motor"
+      ],
+      "ok": true
+    },
+    {
+      "topic": 140352,
+      "post": 2224,
+      "user": "VicHY",
+      "mfr": "_TZE204_clrdrnya",
+      "raw": "_TZE204_clrdrnya",
+      "pid": "TS0601",
+      "drivers": [
+        "presence_sensor_radar"
+      ],
+      "ok": true
+    },
+    {
+      "topic": 89271,
+      "post": 661,
+      "user": "Anders_Lim",
+      "mfr": "_TZE204_hlx9tnzb",
+      "raw": "_TZE204_hlx9tnzb",
+      "pid": "TS0601",
+      "drivers": [
+        "dimmer_1_gang_tuya"
+      ],
+      "ok": true
+    },
+    {
+      "topic": 89271,
+      "post": 654,
+      "user": "G4nd41f",
+      "mfr": "_TZE204_qasjif9e",
+      "raw": "_TZE204_qasjif9e",
+      "pid": "TS0601",
+      "drivers": [
+        "presence_sensor_radar"
+      ],
+      "ok": true
+    },
+    {
+      "topic": 89271,
+      "post": 659,
+      "user": "Marcel_Visser",
+      "mfr": "_TZE204_sxm7l9xa",
+      "raw": "_TZE204_sxm7l9xa",
+      "pid": "TS0601",
+      "drivers": [
+        "presence_sensor_radar"
+      ],
+      "ok": true
+    },
+    {
+      "topic": 26439,
+      "post": 5491,
+      "user": "Martin_Kliment",
+      "mfr": "_TZE284_aao3yzhs",
+      "raw": "_TZE284_aao3yzhs",
+      "pid": "TS0601",
+      "drivers": [
+        "soil_sensor"
+      ],
+      "ok": true
+    },
+    {
+      "topic": 26439,
+      "post": 5493,
+      "user": "Alejandro_Palladino",
+      "mfr": "_TZE284_debczeci",
+      "raw": "_TZE284_debczeci",
+      "pid": "TS0601",
+      "drivers": [
+        "presence_sensor_radar"
+      ],
+      "ok": true
+    },
+    {
+      "topic": 140352,
+      "post": 2228,
+      "user": "Eduard_Martirosyan",
+      "mfr": "_TZE284_fodv6bkr",
+      "raw": "_TZE284_fodv6bkr",
+      "pid": "TS0601",
+      "drivers": [
+        "curtain_motor"
+      ],
+      "ok": true
+    },
+    {
+      "topic": 140352,
+      "post": 2228,
+      "user": "Eduard_Martirosyan",
+      "mfr": "_TZE284_libht6ua",
+      "raw": "_TZE284_libht6ua",
+      "pid": "TS0601",
+      "drivers": [
+        "curtain_motor"
+      ],
+      "ok": true
+    },
+    {
+      "topic": 26439,
+      "post": 5491,
+      "user": "Martin_Kliment",
+      "mfr": "_TZE284_nt4pquef",
+      "raw": "_TZE284_nt4pquef",
+      "pid": "TS0601",
+      "drivers": [
+        "soil_sensor"
+      ],
+      "ok": true
+    }
+  ],
+  "missing": [
+    {
+      "topic": 89271,
+      "post": 652,
+      "user": "Bo_Kjaergaard",
+      "mfr": "_TZ3000_4upl1fcj",
+      "raw": "_TZ3000_4upl1fcj",
+      "pid": "TS0505B",
+      "drivers": [],
+      "ok": false
+    },
+    {
+      "topic": 89271,
+      "post": 652,
+      "user": "Bo_Kjaergaard",
+      "mfr": "_TZ3000_qd7hej8u",
+      "raw": "_TZ3000_qd7hej8u",
+      "pid": "TS0041",
+      "drivers": [],
+      "ok": false
+    }
+  ],
+  "found": [
+    {
+      "topic": 150690,
+      "post": 16,
+      "user": "Relax_swe",
+      "mfr": "_TZ3000_22ugzkme",
+      "raw": "_TZ3000_22ugzkme",
+      "pid": "TS0041",
+      "drivers": [
+        "button_wireless_1"
+      ],
+      "ok": true
+    },
+    {
+      "topic": 89271,
+      "post": 649,
+      "user": "Roy1",
+      "mfr": "_TZ3000_3dfewsk1",
+      "raw": "_TZ3000_3dfewsk1",
+      "pid": "TS0207",
+      "drivers": [
+        "water_leak_sensor"
+      ],
+      "ok": true
+    },
+    {
+      "topic": 89271,
+      "post": 652,
+      "user": "Bo_Kjaergaard",
+      "mfr": "_TZ3000_4upl1fcj",
+      "raw": "_TZ3000_4upl1fcj",
+      "pid": "TS0041",
+      "drivers": [
+        "button_wireless_1"
+      ],
+      "ok": true
+    },
+    {
+      "topic": 89271,
+      "post": 658,
+      "user": "Bram_B",
+      "mfr": "_TZ3000_amdymr7l",
+      "raw": "_TZ3000_amdymr7l",
+      "pid": "TS011F",
+      "drivers": [
+        "plug_energy_monitor"
+      ],
+      "ok": true
+    },
+    {
+      "topic": 26439,
+      "post": 5497,
+      "user": "Kai_Dybvik",
+      "mfr": "_TZ3000_cjfmu5he",
+      "raw": "_TZ3000_cjfmu5he",
+      "pid": "TS0101",
+      "drivers": [
+        "smart_garden_irrigation_control",
+        "water_valve_garden"
+      ],
+      "ok": true
+    },
+    {
+      "topic": 26439,
+      "post": 5497,
+      "user": "Kai_Dybvik",
+      "mfr": "_TZ3000_cjfmu5he",
+      "raw": "_TZ3000_cjfmu5he",
+      "pid": "TS0049",
+      "drivers": [
+        "smart_garden_irrigation_control",
+        "water_valve_garden"
+      ],
+      "ok": true
+    },
+    {
+      "topic": 89271,
+      "post": 657,
+      "user": "Vincent_Lim",
+      "mfr": "_TZ3000_decxrtwa",
+      "raw": "_TZ3000_decxrtwa",
+      "pid": "TS0203",
+      "drivers": [
+        "contact_sensor"
+      ],
+      "ok": true
+    },
+    {
+      "topic": 150690,
+      "post": 33,
+      "user": "Graeme_Hindmarsh",
+      "mfr": "_TZ3000_kfu8zapd",
+      "raw": "_TZ3000_kfu8zapd",
+      "pid": "TS0044",
+      "drivers": [
+        "button_wireless_4"
+      ],
+      "ok": true
+    },
+    {
+      "topic": 150690,
+      "post": 34,
+      "user": "Primordial",
+      "mfr": "_TZ3000_kfu8zapd",
+      "raw": "_TZ3000_kfu8zapd",
+      "pid": null,
+      "drivers": [
+        "button_wireless_4"
+      ],
+      "ok": true
+    },
+    {
+      "topic": 26439,
+      "post": 5497,
+      "user": "Kai_Dybvik",
+      "mfr": "_TZ3000_kz1anoi8",
+      "raw": "_TZ3000_kz1anoi8",
+      "pid": "TS0101",
+      "drivers": [
+        "smart_garden_irrigation_control",
+        "water_valve_garden"
+      ],
+      "ok": true
+    },
+    {
+      "topic": 26439,
+      "post": 5497,
+      "user": "Kai_Dybvik",
+      "mfr": "_TZ3000_kz1anoi8",
+      "raw": "_TZ3000_kz1anoi8",
+      "pid": "TS0049",
+      "drivers": [
+        "smart_garden_irrigation_control",
+        "water_valve_garden"
+      ],
+      "ok": true
+    },
+    {
+      "topic": 26439,
+      "post": 5497,
+      "user": "Kai_Dybvik",
+      "mfr": "_TZ3000_mq4wujmp",
+      "raw": "_TZ3000_mq4wujmp",
+      "pid": "TS0101",
+      "drivers": [
+        "smart_garden_irrigation_control",
+        "water_valve_garden"
+      ],
+      "ok": true
+    },
+    {
+      "topic": 26439,
+      "post": 5497,
+      "user": "Kai_Dybvik",
+      "mfr": "_TZ3000_mq4wujmp",
+      "raw": "_TZ3000_mq4wujmp",
+      "pid": "TS0049",
+      "drivers": [
+        "smart_garden_irrigation_control",
+        "water_valve_garden"
+      ],
+      "ok": true
+    },
+    {
+      "topic": 89271,
+      "post": 652,
+      "user": "Bo_Kjaergaard",
+      "mfr": "_TZ3000_qd7hej8u",
+      "raw": "_TZ3000_qd7hej8u",
+      "pid": "TS0505B",
+      "drivers": [
+        "bulb_rgb"
+      ],
+      "ok": true
+    },
+    {
+      "topic": 89271,
+      "post": 669,
+      "user": "Erwin3",
+      "mfr": "_TZ3000_qeuvnohg",
+      "raw": "_TZ3000_qeuvnohg",
+      "pid": "TS011F",
+      "drivers": [
+        "din_rail_switch"
+      ],
+      "ok": true
+    },
+    {
+      "topic": 89271,
+      "post": 651,
+      "user": "melectro",
+      "mfr": "_TZ3000_upgcbody",
+      "raw": "_TZ3000_upgcbody",
+      "pid": "TS0207",
+      "drivers": [
+        "water_leak_sensor"
+      ],
+      "ok": true
+    },
+    {
+      "topic": 89271,
+      "post": 653,
+      "user": "Rob_G",
+      "mfr": "_TZ3000_wkai4ga5",
+      "raw": "_TZ3000_wkai4ga5",
+      "pid": "TS0044",
+      "drivers": [
+        "scene_switch_4"
+      ],
+      "ok": true
+    },
+    {
+      "topic": 89271,
+      "post": 670,
+      "user": "Trond_Sandland",
+      "mfr": "_TZ3000_wkr3jqmr",
+      "raw": "_TZ3000_wkr3jqmr",
+      "pid": "TS0004",
+      "drivers": [
+        "switch_4gang"
+      ],
+      "ok": true
+    },
+    {
+      "topic": 150690,
+      "post": 28,
+      "user": "SteampunkLolcat",
+      "mfr": "_TZ3000_xabckq1v",
+      "raw": "_TZ3000_xabckq1v",
+      "pid": "TS004F",
+      "drivers": [
+        "button_wireless_4"
+      ],
+      "ok": true
+    },
+    {
+      "topic": 89271,
+      "post": 656,
+      "user": "Mr_D_Forrest",
+      "mfr": "_TZ3000_xr3htd96",
+      "raw": "_TZ3000_xr3htd96",
+      "pid": "TS0201",
+      "drivers": [
+        "temphumidsensor3"
+      ],
+      "ok": true
+    },
+    {
+      "topic": 150690,
+      "post": 33,
+      "user": "Graeme_Hindmarsh",
+      "mfr": "_TZ3000_zgyzgdua",
+      "raw": "_TZ3000_zgyzgdua",
+      "pid": "TS0044",
+      "drivers": [
+        "scene_switch_4"
+      ],
+      "ok": true
+    },
+    {
+      "topic": 89271,
+      "post": 666,
+      "user": "RezaRose",
+      "mfr": "_TZ3210_0zabbfax",
+      "raw": "_TZ3210_0zabbfax",
+      "pid": "TS0503B",
+      "drivers": [
+        "light_bulb_rgb"
+      ],
+      "ok": true
+    },
+    {
+      "topic": 89271,
+      "post": 667,
+      "user": "late4marshmellow",
+      "mfr": "_TZ3210_3lbtuxgp",
+      "raw": "_TZ3210_3lbtuxgp",
+      "pid": "TS0505B",
+      "drivers": [
+        "bulb_rgb"
+      ],
+      "ok": true
+    },
+    {
+      "topic": 26439,
+      "post": 5497,
+      "user": "Kai_Dybvik",
+      "mfr": "_TZ3210_eymunffl",
+      "raw": "_TZ3210_eymunffl",
+      "pid": "TS0101",
+      "drivers": [
+        "smart_garden_irrigation_control"
+      ],
+      "ok": true
+    },
+    {
+      "topic": 26439,
+      "post": 5497,
+      "user": "Kai_Dybvik",
+      "mfr": "_TZ3210_eymunffl",
+      "raw": "_TZ3210_eymunffl",
+      "pid": "TS0049",
+      "drivers": [
+        "smart_garden_irrigation_control"
+      ],
+      "ok": true
+    },
+    {
+      "topic": 89271,
+      "post": 664,
+      "user": "MBrandt",
+      "mfr": "_TZ3210_iystcadi",
+      "raw": "_TZ3210_iystcadi",
+      "pid": "TS0505B",
+      "drivers": [
+        "light_bulb_rgb_led"
+      ],
+      "ok": true
+    },
+    {
+      "topic": 120477,
+      "post": 1,
+      "user": "FKey",
+      "mfr": "_TZ3210_tgvtvdoc",
+      "raw": "_TZ3210_tgvtvdoc",
+      "pid": null,
+      "drivers": [
+        "rain_sensor"
+      ],
+      "ok": true
+    },
+    {
+      "topic": 158757,
+      "post": 1,
+      "user": "A_Tas",
+      "mfr": "_TZ3218_t9ynfz4x",
+      "raw": "_TZ3218_t9ynfz4x",
+      "pid": null,
+      "drivers": [
+        "motion_sensor_radar_mmwave"
+      ],
+      "ok": true
+    },
+    {
+      "topic": 158757,
+      "post": 2,
+      "user": "Gabriel_Pedrosa_Mach",
+      "mfr": "_TZ3218_t9ynfz4x",
+      "raw": "_TZ3218_t9ynfz4x",
+      "pid": "TS0225",
+      "drivers": [
+        "motion_sensor_radar_mmwave"
+      ],
+      "ok": true
+    },
+    {
+      "topic": 89271,
+      "post": 662,
+      "user": "radiothieves",
+      "mfr": "_TZB210_rkgngb5o",
+      "raw": "_TZB210_rkgngb5o",
+      "pid": "TS0502B",
+      "drivers": [
+        "bulb_dimmable",
+        "bulb_tunable_white"
+      ],
+      "ok": true
+    },
+    {
+      "topic": 89271,
+      "post": 662,
+      "user": "radiothieves",
+      "mfr": "_TZB210_rkgngb5o",
+      "raw": "_TZB210_rkgngb5o",
+      "pid": "TS0501B",
+      "drivers": [
+        "bulb_dimmable"
+      ],
+      "ok": true
+    },
+    {
+      "topic": 89271,
+      "post": 650,
+      "user": "melectro",
+      "mfr": "_TZE200_2ekuz3dz",
+      "raw": "_TZE200_2ekuz3dz",
+      "pid": "TS0601",
+      "drivers": [
+        "wall_thermostat"
+      ],
+      "ok": true
+    },
+    {
+      "topic": 89271,
+      "post": 660,
+      "user": "Ferenc_Szasz",
+      "mfr": "_TZE200_3p5ydos3",
+      "raw": "_TZE200_3p5ydos3",
+      "pid": "TS0601",
+      "drivers": [
+        "wall_dimmer_tuya"
+      ],
+      "ok": true
+    },
+    {
+      "topic": 89271,
+      "post": 663,
+      "user": "Janderek",
+      "mfr": "_TZE200_3towulqd",
+      "raw": "_TZE200_3towulqd",
+      "pid": "TS0601",
+      "drivers": [
+        "presence_sensor_radar"
+      ],
+      "ok": true
+    },
+    {
+      "topic": 154092,
+      "post": 29,
+      "user": "Marcelo_Leite",
+      "mfr": "_TZE200_68nvbio9",
+      "raw": "_TZE200_68nvbio9",
+      "pid": "TS0601",
+      "drivers": [
+        "curtain_motor"
+      ],
+      "ok": true
+    },
+    {
+      "topic": 154092,
+      "post": 30,
+      "user": "Henk_Renting",
+      "mfr": "_TZE200_cf1sl3tj",
+      "raw": "_TZE200_cf1sl3tj",
+      "pid": "TS0601",
+      "drivers": [
+        "curtain_motor"
+      ],
+      "ok": true
+    },
+    {
+      "topic": 156967,
+      "post": 69,
+      "user": "Han_Kamminga",
+      "mfr": "_TZE200_cqtamhh5",
+      "raw": "_TZE200_cqtamhh5",
+      "pid": "TS0601",
+      "drivers": [
+        "presence_sensor_radar"
+      ],
+      "ok": true
+    },
+    {
+      "topic": 140352,
+      "post": 2229,
+      "user": "MIAMO_NISU",
+      "mfr": "_TZE200_icka1clh",
+      "raw": "_TZE200_icka1clh",
+      "pid": "TS0601",
+      "drivers": [
+        "curtain_motor"
+      ],
+      "ok": true
+    },
+    {
+      "topic": 154092,
+      "post": 25,
+      "user": "JOSE_ANGEL_RUIZ_JIME",
+      "mfr": "_TZE200_m6lwazh9",
+      "raw": "_TZE200_m6lwazh9",
+      "pid": "TS0601",
+      "drivers": [
+        "curtain_motor"
+      ],
+      "ok": true
+    },
+    {
+      "topic": 89271,
+      "post": 668,
+      "user": "Peter_N",
+      "mfr": "_TZE200_myd45weu",
+      "raw": "_TZE200_myd45weu",
+      "pid": "TS0601",
+      "drivers": [
+        "soil_sensor"
+      ],
+      "ok": true
+    },
+    {
+      "topic": 146667,
+      "post": 10,
+      "user": "Michael_Edholm",
+      "mfr": "_TZE200_npj9bug3",
+      "raw": "_TZE200_npj9bug3",
+      "pid": null,
+      "drivers": [
+        "soil_sensor"
+      ],
+      "ok": true
+    },
+    {
+      "topic": 89271,
+      "post": 671,
+      "user": "Henk_de_Boom",
+      "mfr": "_TZE200_p0gzbqct",
+      "raw": "_TZE200_p0gzbqct",
+      "pid": "TS0601",
+      "drivers": [
+        "wall_dimmer_tuya"
+      ],
+      "ok": true
+    },
+    {
+      "topic": 156967,
+      "post": 62,
+      "user": "Iulian_Baciu",
+      "mfr": "_TZE200_zo0cfekv",
+      "raw": "_TZE200_zo0cfekv",
+      "pid": "TS0601",
+      "drivers": [
+        "wall_switch_3gang_1way"
+      ],
+      "ok": true
+    },
+    {
+      "topic": 156967,
+      "post": 68,
+      "user": "salvagr",
+      "mfr": "_TZE204_5slehgeo",
+      "raw": "_TZE204_5slehgeo",
+      "pid": "TS0601",
+      "drivers": [
+        "curtain_motor"
+      ],
+      "ok": true
+    },
+    {
+      "topic": 140352,
+      "post": 2224,
+      "user": "VicHY",
+      "mfr": "_TZE204_clrdrnya",
+      "raw": "_TZE204_clrdrnya",
+      "pid": "TS0601",
+      "drivers": [
+        "presence_sensor_radar"
+      ],
+      "ok": true
+    },
+    {
+      "topic": 89271,
+      "post": 661,
+      "user": "Anders_Lim",
+      "mfr": "_TZE204_hlx9tnzb",
+      "raw": "_TZE204_hlx9tnzb",
+      "pid": "TS0601",
+      "drivers": [
+        "dimmer_1_gang_tuya"
+      ],
+      "ok": true
+    },
+    {
+      "topic": 89271,
+      "post": 654,
+      "user": "G4nd41f",
+      "mfr": "_TZE204_qasjif9e",
+      "raw": "_TZE204_qasjif9e",
+      "pid": "TS0601",
+      "drivers": [
+        "presence_sensor_radar"
+      ],
+      "ok": true
+    },
+    {
+      "topic": 89271,
+      "post": 659,
+      "user": "Marcel_Visser",
+      "mfr": "_TZE204_sxm7l9xa",
+      "raw": "_TZE204_sxm7l9xa",
+      "pid": "TS0601",
+      "drivers": [
+        "presence_sensor_radar"
+      ],
+      "ok": true
+    },
+    {
+      "topic": 26439,
+      "post": 5491,
+      "user": "Martin_Kliment",
+      "mfr": "_TZE284_aao3yzhs",
+      "raw": "_TZE284_aao3yzhs",
+      "pid": "TS0601",
+      "drivers": [
+        "soil_sensor"
+      ],
+      "ok": true
+    },
+    {
+      "topic": 26439,
+      "post": 5493,
+      "user": "Alejandro_Palladino",
+      "mfr": "_TZE284_debczeci",
+      "raw": "_TZE284_debczeci",
+      "pid": "TS0601",
+      "drivers": [
+        "presence_sensor_radar"
+      ],
+      "ok": true
+    },
+    {
+      "topic": 140352,
+      "post": 2228,
+      "user": "Eduard_Martirosyan",
+      "mfr": "_TZE284_fodv6bkr",
+      "raw": "_TZE284_fodv6bkr",
+      "pid": "TS0601",
+      "drivers": [
+        "curtain_motor"
+      ],
+      "ok": true
+    },
+    {
+      "topic": 140352,
+      "post": 2228,
+      "user": "Eduard_Martirosyan",
+      "mfr": "_TZE284_libht6ua",
+      "raw": "_TZE284_libht6ua",
+      "pid": "TS0601",
+      "drivers": [
+        "curtain_motor"
+      ],
+      "ok": true
+    },
+    {
+      "topic": 26439,
+      "post": 5491,
+      "user": "Martin_Kliment",
+      "mfr": "_TZE284_nt4pquef",
+      "raw": "_TZE284_nt4pquef",
+      "pid": "TS0601",
+      "drivers": [
+        "soil_sensor"
+      ],
+      "ok": true
+    }
+  ]
+}
