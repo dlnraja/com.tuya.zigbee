@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-16T06:41:12.508Z",
+  "generatedAt": "2026-09-16T17:45:51.933Z",
   "mode": "apply",
   "classFilter": null,
   "neverInventProductId": true,
@@ -7,7 +7,7 @@
     "button": {
       "count": 54,
       "withGaps": 2,
-      "mfrEntries": 1486,
+      "mfrEntries": 1330,
       "flowTriggers": 859,
       "gapSamples": [
         {
@@ -27,7 +27,7 @@
     "socket": {
       "count": 108,
       "withGaps": 11,
-      "mfrEntries": 3880,
+      "mfrEntries": 3617,
       "flowTriggers": 1164,
       "gapSamples": [
         {
@@ -98,7 +98,7 @@
     "sensor": {
       "count": 122,
       "withGaps": 11,
-      "mfrEntries": 5731,
+      "mfrEntries": 5130,
       "flowTriggers": 793,
       "gapSamples": [
         {
@@ -154,7 +154,7 @@
     "light": {
       "count": 53,
       "withGaps": 2,
-      "mfrEntries": 1594,
+      "mfrEntries": 1352,
       "flowTriggers": 260,
       "gapSamples": [
         {
@@ -174,7 +174,7 @@
     "curtain": {
       "count": 9,
       "withGaps": 1,
-      "mfrEntries": 1051,
+      "mfrEntries": 717,
       "flowTriggers": 45,
       "gapSamples": [
         {
@@ -286,7 +286,7 @@
   "totals": {
     "drivers": 431,
     "withGaps": 31,
-    "mfrEntries": 17205,
+    "mfrEntries": 15609,
     "flowTriggers": 3604
   },
   "applyResults": [
@@ -294,7 +294,7 @@
       "phase": "flow-fleet-enrich",
       "ok": true,
       "exitCode": 0,
-      "tail": "    },\\n    {\\n      \\\"driverId\\\": \\\"button_wireless_3\\\",\\n      \\\"triggers\\\": 21\\n    },\\n    {\\n      \\\"driverId\\\": \\\"button_wireless_switch\\\",\\n      \\\"triggers\\\": 20\\n    },\\n    {\\n      \\\"driverId\\\": \\\"handheld_remote_4_buttons\\\",\\n      \\\"triggers\\\": 20\\n    },\\n    {\\n      \\\"driverId\\\": \\\"remote_button_emergency_sos\\\",\\n      \\\"triggers\\\": 20\\n    },\\n    {\\n      \\\"driverId\\\": \\\"remote_button_wireless\\\",\\n      \\\"triggers\\\": 20\\n    }\\n  ]\\n}\"\n    }\n  ],\n  \"topChanges\": [\n    {\n      \"driver\": \"wifi_ir_remote\",\n      \"orphans\": 2,\n      \"triggers\": [],\n      \"actions\": []\n    }\n  ]\n}"
+      "tail": "iggers\\\": 25\\n    },\\n    {\\n      \\\"driverId\\\": \\\"remote_button_wireless_handheld\\\",\\n      \\\"triggers\\\": 25\\n    },\\n    {\\n      \\\"driverId\\\": \\\"button_wireless_3\\\",\\n      \\\"triggers\\\": 21\\n    },\\n    {\\n      \\\"driverId\\\": \\\"button_wireless_switch\\\",\\n      \\\"triggers\\\": 20\\n    },\\n    {\\n      \\\"driverId\\\": \\\"handheld_remote_4_buttons\\\",\\n      \\\"triggers\\\": 20\\n    },\\n    {\\n      \\\"driverId\\\": \\\"remote_button_emergency_sos\\\",\\n      \\\"triggers\\\": 20\\n    },\\n    {\\n      \\\"driverId\\\": \\\"remote_button_wireless\\\",\\n      \\\"triggers\\\": 20\\n    }\\n  ]\\n}\"\n    }\n  ],\n  \"topChanges\": []\n}"
     },
     {
       "phase": "button-flow-harvest",
@@ -330,7 +330,7 @@
       "phase": "curtain-couples",
       "ok": true,
       "exitCode": 0,
-      "tail": "[apply-curtain-couples] candidates=116 toAdd=0 strip_curtain=2\n[apply-curtain-couples] strip curtain_motor: 2 rows (tilt/module/shutter/forbidden)\n  → curtain_module_2_gang: _TZ3000_j1xl73iw\n  → curtain_module_2_gang: _TZ3000_l6iqph4f\n[apply-curtain-couples] APPLIED +0 mfrs, -2 stripped, curtain total=845"
+      "tail": "[apply-curtain-couples] candidates=116 toAdd=0 strip_curtain=2\n[apply-curtain-couples] strip curtain_motor: 2 rows (tilt/module/shutter/forbidden)\n  → curtain_module_2_gang: _TZ3000_j1xl73iw\n  → curtain_module_2_gang: _TZ3000_l6iqph4f\n[apply-curtain-couples] APPLIED +0 mfrs, -2 stripped, curtain total=521"
     },
     {
       "phase": "harden-wifi-local",

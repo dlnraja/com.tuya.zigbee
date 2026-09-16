@@ -253,18 +253,18 @@
     "gangCount": 1,
     "runtimePath": "PhysicalButtonMixin+ZCL OnOff/multistate",
     "sacredCouples": [
+      "_tz3000_mrpevh8p+3450-L",
+      "_tz3000_mrpevh8p+E1524/E1810",
+      "_tz3000_mrpevh8p+E1743",
+      "_tz3000_mrpevh8p+E1744",
+      "_tz3000_4upl1fcj+3450-L",
+      "_tz3000_4upl1fcj+E1524/E1810",
+      "_tz3000_4upl1fcj+E1743",
+      "_tz3000_4upl1fcj+E1744",
       "_tz3000_0cxtpylt+3450-L",
       "_tz3000_0cxtpylt+E1524/E1810",
       "_tz3000_0cxtpylt+E1743",
-      "_tz3000_0cxtpylt+E1744",
-      "_tz3000_0CXTPYLT+3450-L",
-      "_tz3000_0CXTPYLT+E1524/E1810",
-      "_tz3000_0CXTPYLT+E1743",
-      "_tz3000_0CXTPYLT+E1744",
-      "_TZ3000_0cxtpylt+3450-L",
-      "_TZ3000_0cxtpylt+E1524/E1810",
-      "_TZ3000_0cxtpylt+E1743",
-      "_TZ3000_0cxtpylt+E1744"
+      "_tz3000_0cxtpylt+E1744"
     ],
     "buttonCapabilities": [
       "button.1"
@@ -353,8 +353,6 @@
       "E2001/E2002",
       "E2123",
       "hobeian",
-      "Hobeian",
-      "HOBEIAN",
       "lumi.remote.b1acn01",
       "lumi.sensor_switch",
       "lumi.sensor_switch.aq2",
@@ -381,7 +379,7 @@
       "ZG-101ZD",
       "ZG-101ZL"
     ],
-    "mfrCount": 103
+    "mfrCount": 52
   },
   {
     "driverId": "button_wireless_2",
@@ -674,18 +672,18 @@
     "gangCount": 4,
     "runtimePath": "PhysicalButtonMixin+ZCL OnOff/multistate",
     "sacredCouples": [
+      "_TZ3000_xffhmvhv+01MINIZB",
+      "_TZ3000_xffhmvhv+BASICZBR3",
+      "_TZ3000_xffhmvhv+Excellux",
+      "_TZ3000_xffhmvhv+S26R2ZB",
+      "_TZ3000_abrsvsou+01MINIZB",
+      "_TZ3000_abrsvsou+BASICZBR3",
+      "_TZ3000_abrsvsou+Excellux",
+      "_TZ3000_abrsvsou+S26R2ZB",
       "_TZ3000_M9N0O1P2+01MINIZB",
       "_TZ3000_M9N0O1P2+BASICZBR3",
       "_TZ3000_M9N0O1P2+Excellux",
-      "_TZ3000_M9N0O1P2+S26R2ZB",
-      "_TZ3000_U3NV1JWK+01MINIZB",
-      "_TZ3000_U3NV1JWK+BASICZBR3",
-      "_TZ3000_U3NV1JWK+Excellux",
-      "_TZ3000_U3NV1JWK+S26R2ZB",
-      "_TZ3000_URI7OADN+01MINIZB",
-      "_TZ3000_URI7OADN+BASICZBR3",
-      "_TZ3000_URI7OADN+Excellux",
-      "_TZ3000_URI7OADN+S26R2ZB"
+      "_TZ3000_M9N0O1P2+S26R2ZB"
     ],
     "buttonCapabilities": [
       "button.1",
@@ -812,7 +810,7 @@
       "ZBMINIR2-R2",
       "TS1002"
     ],
-    "mfrCount": 136
+    "mfrCount": 71
   },
   {
     "driverId": "button_wireless_4_ts0041",
@@ -4150,6 +4148,9 @@
     "gangCount": 4,
     "runtimePath": "ButtonDevice+PhysicalButtonMixin+0xFD",
     "sacredCouples": [
+      "_tz3000_zgyzgdua+TS0044",
+      "_tz3000_zgyzgdua+TS1002",
+      "_tz3000_zgyzgdua+ZG-101ZS",
       "_tz3000_jckxip3g+TS0044",
       "_tz3000_jckxip3g+TS1002",
       "_tz3000_jckxip3g+ZG-101ZS",
@@ -4158,10 +4159,7 @@
       "_tz3000_kgvamgxs+ZG-101ZS",
       "_tz3000_wkai4ga5+TS0044",
       "_tz3000_wkai4ga5+TS1002",
-      "_tz3000_wkai4ga5+ZG-101ZS",
-      "_tz3000_zgyzgdua+TS0044",
-      "_tz3000_zgyzgdua+TS1002",
-      "_tz3000_zgyzgdua+ZG-101ZS"
+      "_tz3000_wkai4ga5+ZG-101ZS"
     ],
     "buttonCapabilities": [
       "button.1",
@@ -4265,7 +4263,7 @@
       "TS1002",
       "ZG-101ZS"
     ],
-    "mfrCount": 50
+    "mfrCount": 26
   },
   {
     "driverId": "scene_switch_6",
@@ -4625,18 +4623,18 @@
     "gangCount": 1,
     "runtimePath": "ButtonDevice+multistate+knob_rotated",
     "sacredCouples": [
-      "_tz3000_kaflzta4+TS004F",
-      "_tz3000_kaflzta4+ERS-10TZBVK-AA",
-      "_tz3000_kaflzta4+ZG-101ZD",
-      "_tz3000_kaflzta4+ZG-101Z",
-      "_TZ3000_kaflzta4+TS004F",
-      "_TZ3000_kaflzta4+ERS-10TZBVK-AA",
-      "_TZ3000_kaflzta4+ZG-101ZD",
-      "_TZ3000_kaflzta4+ZG-101Z",
-      "_TZ3000_KAFLZTA4+TS004F",
-      "_TZ3000_KAFLZTA4+ERS-10TZBVK-AA",
-      "_TZ3000_KAFLZTA4+ZG-101ZD",
-      "_TZ3000_KAFLZTA4+ZG-101Z"
+      "_TZ3000_uri7ongn+TS004F",
+      "_TZ3000_uri7ongn+ERS-10TZBVK-AA",
+      "_TZ3000_uri7ongn+ZG-101ZD",
+      "_TZ3000_uri7ongn+ZG-101Z",
+      "_TZ3000_ixla93vd+TS004F",
+      "_TZ3000_ixla93vd+ERS-10TZBVK-AA",
+      "_TZ3000_ixla93vd+ZG-101ZD",
+      "_TZ3000_ixla93vd+ZG-101Z",
+      "_tz3000_g9g2xnch+TS004F",
+      "_tz3000_g9g2xnch+ERS-10TZBVK-AA",
+      "_tz3000_g9g2xnch+ZG-101ZD",
+      "_tz3000_g9g2xnch+ZG-101Z"
     ],
     "buttonCapabilities": [
       "button",
@@ -4708,7 +4706,7 @@
       "ZG-101ZD",
       "ZG-101Z"
     ],
-    "mfrCount": 36
+    "mfrCount": 20
   },
   {
     "driverId": "smart_knob_rotary",

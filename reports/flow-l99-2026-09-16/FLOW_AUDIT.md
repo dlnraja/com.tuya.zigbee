@@ -43,7 +43,16 @@ Format Errors: 0
 Drivers scanned: 431
 Cards with args: 643
 Cards with tokens: 1041
-Cards with orphan tokens (declared but not used in args/title): 0
+Cards with orphan tokens (declared but not used in args/title): 7
+
+First 20 issues:
+  - blaster_remote : blaster_remote_ir_remote_code_learned → orphan tokens: ir_code
+  - ir_blaster : ir_blaster_learning_started → orphan tokens: protocol, frequency, duration
+  - ir_blaster : ir_blaster_learning_state_changed → orphan tokens: state, state_code
+  - ir_blaster : ir_blaster_code_learned → orphan tokens: ir_code
+  - ir_blaster : ir_blaster_code_analyzed → orphan tokens: code_name, protocol, frequency, length
+  - wifi_ir_remote : wifi_ir_remote_learning_started → orphan tokens: timeout_s
+  - wifi_ir_remote : wifi_ir_remote_code_learned → orphan tokens: format
 
 ```
 
@@ -51,7 +60,7 @@ Cards with orphan tokens (declared but not used in args/title): 0
 
 ```
 {
-  "generatedAt": "2026-09-16T06:41:40.782Z",
+  "generatedAt": "2026-09-16T17:46:25.074Z",
   "mode": "dry-run",
   "driversTouched": 0,
   "orphanTokensFixed": 0,
@@ -126,10 +135,11 @@ Critical gaps: **0**
 
 ## DP knowledge
 - Knowledge couples: 198
-- Registry couples (Tuya EF00-eligible): 198
-- Covered: 197 (99.5%)
+- Registry couples (Tuya EF00-eligible): 199
+- Covered: 197 (99%)
 - Skipped brand/external soft-watch: 18
 - Uncovered:
+  - _TZB210_rkgngb5o|TS0501B
   - _TZE200_8eazvzo6|TS0601
 
 ## Flow heuristic smoke

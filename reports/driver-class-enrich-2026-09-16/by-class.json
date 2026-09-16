@@ -52,8 +52,8 @@
     {
       "driverId": "button_wireless_1",
       "homeyClass": "button",
-      "mfrCount": 103,
-      "pidCount": 35,
+      "mfrCount": 52,
+      "pidCount": 33,
       "capCount": 2,
       "settingCount": 9,
       "flowTriggers": 11,
@@ -104,7 +104,7 @@
     {
       "driverId": "button_wireless_4",
       "homeyClass": "button",
-      "mfrCount": 136,
+      "mfrCount": 71,
       "pidCount": 45,
       "capCount": 5,
       "settingCount": 13,
@@ -546,7 +546,7 @@
     {
       "driverId": "scene_switch_4",
       "homeyClass": "button",
-      "mfrCount": 50,
+      "mfrCount": 26,
       "pidCount": 3,
       "capCount": 5,
       "settingCount": 2,
@@ -619,7 +619,7 @@
     {
       "driverId": "smart_knob",
       "homeyClass": "button",
-      "mfrCount": 36,
+      "mfrCount": 20,
       "pidCount": 4,
       "capCount": 6,
       "settingCount": 1,
@@ -907,7 +907,7 @@
     {
       "driverId": "device_air_purifier_plug",
       "homeyClass": "socket",
-      "mfrCount": 16,
+      "mfrCount": 12,
       "pidCount": 54,
       "capCount": 8,
       "settingCount": 5,
@@ -1034,7 +1034,7 @@
     {
       "driverId": "din_rail_switch",
       "homeyClass": "socket",
-      "mfrCount": 44,
+      "mfrCount": 22,
       "pidCount": 3,
       "capCount": 6,
       "settingCount": 1,
@@ -1239,7 +1239,7 @@
     {
       "driverId": "plug_energy_monitor",
       "homeyClass": "socket",
-      "mfrCount": 176,
+      "mfrCount": 94,
       "pidCount": 77,
       "capCount": 6,
       "settingCount": 12,
@@ -1600,7 +1600,7 @@
     {
       "driverId": "switch_1gang",
       "homeyClass": "socket",
-      "mfrCount": 1539,
+      "mfrCount": 1537,
       "pidCount": 40,
       "capCount": 9,
       "settingCount": 17,
@@ -1652,8 +1652,8 @@
     {
       "driverId": "switch_2gang",
       "homeyClass": "socket",
-      "mfrCount": 283,
-      "pidCount": 16,
+      "mfrCount": 157,
+      "pidCount": 14,
       "capCount": 12,
       "settingCount": 13,
       "flowTriggers": 12,
@@ -1661,10 +1661,10 @@
       "productIds": [
         "ZG-305Z",
         "hobeian",
-        "Hobeian",
-        "HOBEIAN",
         "TS0002",
-        "TS0002_power"
+        "TS0002_power",
+        "TS0002_switch_module",
+        "TS0003"
       ]
     },
     {
@@ -1874,7 +1874,7 @@
     {
       "driverId": "usb_dongle_triple",
       "homeyClass": "socket",
-      "mfrCount": 164,
+      "mfrCount": 148,
       "pidCount": 9,
       "capCount": 8,
       "settingCount": 4,
@@ -2099,7 +2099,7 @@
     {
       "driverId": "wall_switch_4gang_1way",
       "homeyClass": "socket",
-      "mfrCount": 24,
+      "mfrCount": 13,
       "pidCount": 4,
       "capCount": 8,
       "settingCount": 6,
@@ -2718,7 +2718,7 @@
     {
       "driverId": "climate_sensor",
       "homeyClass": "sensor",
-      "mfrCount": 2098,
+      "mfrCount": 2050,
       "pidCount": 64,
       "capCount": 5,
       "settingCount": 5,
@@ -2883,7 +2883,7 @@
     {
       "driverId": "contact_sensor_zigbee",
       "homeyClass": "sensor",
-      "mfrCount": 8,
+      "mfrCount": 6,
       "pidCount": 1,
       "capCount": 5,
       "settingCount": 11,
@@ -3006,7 +3006,7 @@
     {
       "driverId": "din_rail_meter",
       "homeyClass": "sensor",
-      "mfrCount": 44,
+      "mfrCount": 27,
       "pidCount": 8,
       "capCount": 6,
       "settingCount": 1,
@@ -3544,8 +3544,8 @@
     {
       "driverId": "presence_sensor_radar",
       "homeyClass": "sensor",
-      "mfrCount": 821,
-      "pidCount": 58,
+      "mfrCount": 424,
+      "pidCount": 56,
       "capCount": 14,
       "settingCount": 53,
       "flowTriggers": 13,
@@ -4063,8 +4063,8 @@
     {
       "driverId": "soil_sensor",
       "homeyClass": "sensor",
-      "mfrCount": 209,
-      "pidCount": 48,
+      "mfrCount": 110,
+      "pidCount": 46,
       "capCount": 9,
       "settingCount": 3,
       "flowTriggers": 14,
@@ -4239,7 +4239,7 @@
     {
       "driverId": "vibration_sensor",
       "homeyClass": "sensor",
-      "mfrCount": 123,
+      "mfrCount": 119,
       "pidCount": 13,
       "capCount": 6,
       "settingCount": 1,
@@ -4275,8 +4275,8 @@
     {
       "driverId": "water_leak_sensor",
       "homeyClass": "sensor",
-      "mfrCount": 74,
-      "pidCount": 26,
+      "mfrCount": 40,
+      "pidCount": 24,
       "capCount": 4,
       "settingCount": 10,
       "flowTriggers": 6,
@@ -4731,7 +4731,7 @@
     {
       "driverId": "led_controller_dimmable",
       "homeyClass": "light",
-      "mfrCount": 8,
+      "mfrCount": 10,
       "pidCount": 4,
       "capCount": 3,
       "settingCount": 0,
@@ -5091,7 +5091,7 @@
     {
       "driverId": "wall_dimmer_tuya",
       "homeyClass": "light",
-      "mfrCount": 488,
+      "mfrCount": 244,
       "pidCount": 9,
       "capCount": 3,
       "settingCount": 0,
@@ -5206,7 +5206,7 @@
     {
       "driverId": "curtain_motor",
       "homeyClass": "windowcoverings",
-      "mfrCount": 845,
+      "mfrCount": 521,
       "pidCount": 48,
       "capCount": 8,
       "settingCount": 19,
@@ -5283,7 +5283,7 @@
     {
       "driverId": "wall_curtain_switch",
       "homeyClass": "curtain",
-      "mfrCount": 32,
+      "mfrCount": 22,
       "pidCount": 2,
       "capCount": 3,
       "settingCount": 0,
