@@ -168,8 +168,11 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
     }
     // WHY(P2524b / VicHY #2239+74e5cae7): MTG075 inference/distance may paint alarm_motion
     // without _commitPresenceAndFlows — edge-fire declared presence cards on ANY path.
+    // WHY(P2528): also edge-fire when alarm_human flips alone (UI "human presence" path).
     const edgeMotion = capability === 'alarm_motion' && typeof value === 'boolean';
+    const edgeHuman = capability === 'alarm_human' && typeof value === 'boolean';
     const prevMotion = edgeMotion ? this.getCapabilityValue('alarm_motion') : undefined;
+    const prevHuman = edgeHuman ? this.getCapabilityValue('alarm_human') : undefined;
     const result = await super.safeSetCapabilityValue(capability, value);
     if (edgeMotion) {
       if (typeof this.hasCapability === 'function' && this.hasCapability('alarm_human')) {
@@ -178,6 +181,14 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
       if (prevMotion !== value) {
         this._triggerPresenceFlows(value);
       }
+    } else if (edgeHuman && prevHuman !== value) {
+      if (typeof this.hasCapability === 'function' && this.hasCapability('alarm_motion')) {
+        const curMotion = this.getCapabilityValue('alarm_motion');
+        if (curMotion !== value) {
+          await super.safeSetCapabilityValue('alarm_motion', value).catch(() => {});
+        }
+      }
+      this._triggerPresenceFlows(value);
     }
     return result;
   }
@@ -909,13 +920,11 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
    * WHY(P2524 / diag 74e5cae7): paint alarm_motion+alarm_human AND fire declared
    * presence_detected / presence_cleared / motion_detected on edge only.
    * Contre quoi: compose cards exist but device never called getDeviceTriggerCard.
+   * WHY(P2528): await motion write so edge-fire is not raced by a parallel human set.
    */
   _commitPresenceAndFlows(presence) {
     const next = !!presence;
-    // WHY(P2526): set alarm_motion FIRST so edge-fire in safeSet sees prev correctly;
-    // then mirror alarm_human (presence≡motion). Avoid double-trigger.
-    this.safeSetCapabilityValue('alarm_motion', next).catch(() => {});
-    this.safeSetCapabilityValue('alarm_human', next).catch(() => {});
+    return this.safeSetCapabilityValue('alarm_motion', next).catch(() => {});
   }
 
   _triggerPresenceFlows(detected) {
