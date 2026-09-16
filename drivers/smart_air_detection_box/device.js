@@ -13,13 +13,14 @@ try {
   smartParse = null;
 }
 
-// Data Points for TS0601 (_TZE200_yvx5lh6k)
+// Data Points for TS0601 air_quality_sensor family (_TZE200_yvx5lh6k etc.)
+// WHY(P2541): Z2M legacy tuya_air_quality / airbox — DP21=VOC, DP22=HCHO (was swapped)
 const dataPoints = {
   tsCO2: 2,
   tsTemperature: 18,
   tsHumidity: 19,
-  tsFormaldehyde: 21,
-  tsVOC: 22,
+  tsVOC: 21,
+  tsFormaldehyde: 22,
 };
 
 const dataTypes = {

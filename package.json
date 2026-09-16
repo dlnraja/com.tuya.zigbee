@@ -1,6 +1,6 @@
 {
   "name": "com.dlnraja.tuya.zigbee",
-  "version": "9.0.984",
+  "version": "9.0.985",
   "description": "Tuya Unified Zigbee - Local-first control with AI automation",
   "main": "app.js",
   "scripts": {
@@ -393,8 +393,9 @@
     "check:p2538": "node --test test/critical/p2538-l99-airbox-mesh-flood.test.js",
     "check:p2539": "node --test test/critical/p2539-intelligent-zb40-suzi.test.js",
     "check:p2540": "node --test test/critical/p2540-complementary-dp-cluster-raw.test.js",
+    "check:p2541": "node --test test/critical/p2541-complementary-reinstate-aq.test.js",
     "check:p253x": "npm run check:p2530 && npm run check:p2530d && npm run check:p2531 && npm run check:p2532 && npm run check:p2533 && npm run check:p2534 && npm run check:p2535 && npm run check:p2536 && npm run check:p2537 && npm run check:p2538 && npm run check:p2539",
-    "check:p254x": "npm run check:p2540",
+    "check:p254x": "npm run check:p2540 && npm run check:p2541",
     "enrich:variants:recent": "node tools/ci/recent-variant-capability-completer.js",
     "enrich:variants:recent:apply": "node tools/ci/recent-variant-capability-completer.js --apply",
     "enrich:coverage:mega": "node tools/ci/p2531-complementary-coverage-mega.js",
