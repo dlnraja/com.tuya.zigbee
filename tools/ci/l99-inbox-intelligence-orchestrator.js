@@ -1,5 +1,6 @@
 #!/usr/bin/env node
 'use strict';
+// P2529: deep functional enrich (DP/cluster/flow/RX-TX) — see tools/ci/deep-functional-enrich-pass.js
 
 /**
  * l99-inbox-intelligence-orchestrator.js (P2352)
@@ -130,7 +131,7 @@ async function harvestGithub(cfg) {
           updatedAt: x.updated_at,
           user: x.user && x.user.login,
           htmlUrl: x.html_url,
-          bodySnippet: String(x.body || '').slice(0, 280),
+          bodySnippet: String(x.body || '').slice(0, 4500),
         }));
     }
     if (pRes.status === 200 && Array.isArray(pRes.json)) {

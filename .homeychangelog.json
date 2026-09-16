@@ -1641,5 +1641,8 @@
   },
   "5.12.204": {
     "en": "Hardened radar DP ownership so lux/presence RX and presence flow edges stay correct."
+  },
+  "5.12.205": {
+    "en": "Deep functional enrich in inbox workflows ÔÇö DP, clusters, flows and RX/TX beyond fingerprint locks."
   }
 }
