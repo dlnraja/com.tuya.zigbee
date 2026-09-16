@@ -1,0 +1,103 @@
+{
+  "_meta": {
+    "id": "P2529",
+    "title": "Deep functional enrich — beyond mfr+pid",
+    "updated": "2026-09-16",
+    "classification": "BOTH",
+    "human": "docs/rules/DEEP_FUNCTIONAL_ENRICH.md",
+    "gate": "npm run check:p2529",
+    "pass": "tools/ci/deep-functional-enrich-pass.js",
+    "complements": ["P2520", "P2352", "P2217", "P2518", "P2469"]
+  },
+  "mandate": {
+    "always": true,
+    "everyPrompt": true,
+    "everyInboxCron": true,
+    "everyForumPoll": true,
+    "everyGmailDiag": true,
+    "everyGithubIssue": true
+  },
+  "forbiddenShallowClosures": [
+    "already covered — fingerprint present",
+    "update Test only (without RX/TX/flow audit)",
+    "lock mfr+pid only then stop",
+    "user wrong / false report without diag path",
+    "compose declares card — assume wired"
+  ],
+  "requiredAuditVectors": [
+    {
+      "id": "identity",
+      "label": "Sacred couple mfr+pid (never invent pid)"
+    },
+    {
+      "id": "driver_class",
+      "label": "Driver match vs interview / wrong-class UI"
+    },
+    {
+      "id": "clusters",
+      "label": "Compose + interview clusters (EF00 61184, ZCL, IAS, raw 0xFD/0xFC)"
+    },
+    {
+      "id": "dp_map",
+      "label": "EF00 DP map (cap vs capability ownership, divisors, settings)"
+    },
+    {
+      "id": "rx_path",
+      "label": "RX: EF00 / ZCL / IAS / raw frame → capability commit"
+    },
+    {
+      "id": "tx_path",
+      "label": "TX: settings + capability listeners → DP/ZCL write"
+    },
+    {
+      "id": "flow_compose",
+      "label": "Flow cards declared in driver.flow.compose.json"
+    },
+    {
+      "id": "flow_wire",
+      "label": "Flow cards wired (getDeviceTriggerCard / DeclaredFlowCardAutoWire / registerRunListener)"
+    },
+    {
+      "id": "capabilities",
+      "label": "Capabilities vs phantom / staleCaps / mains battery"
+    },
+    {
+      "id": "contre_quoi",
+      "label": "P2469 critical unit test locking the bug class"
+    }
+  ],
+  "complementary": {
+    "mode": "P2520",
+    "rule": "union/append only — never wipe capabilities, settings, dpMap keys, flow cards, or clusters"
+  },
+  "sources": {
+    "forum": ["forum-silent-multi-scan", "forum-actionable-processor", "auto-investigate-need-action", "forum-media-deep-scan"],
+    "github": ["l99-inbox github harvest", "issues open"],
+    "gmail": ["diag:gmail", "gmail-crash-pattern-gate", "diag-recursive-inbox-automate"],
+    "images": ["forum-media-deep-scan"],
+    "portal": ["dashboard-state-summary soft"]
+  },
+  "workflowHooks": [
+    "l99-inbox-intelligence.yml",
+    "forum-poll.yml",
+    "auto-enrich-closed-loop.yml",
+    "gmail-diagnostics.yml",
+    "fetch-diags.yml",
+    "recurrent-orchestrator.yml",
+    "auto-bot-issue-triage.yml"
+  ],
+  "softCommands": [
+    "node tools/ci/deep-functional-enrich-pass.js",
+    "node tools/ci/coverage-dp-cluster-flow.js --strict",
+    "npm run check:p244x",
+    "npm run check:p2518",
+    "npm run check:p2520",
+    "npm run check:p2528"
+  ],
+  "contreQuoi": [
+    "Inbox cron that only prints lock mfr+pid",
+    "VicHY-class presence WHEN compose-only",
+    "EF00 ownedMap.cap ignored (Unmapped DP after explicit map)",
+    "Shallow tip-lag dismiss without RX/flow audit"
+  ]
+}

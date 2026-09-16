@@ -75,6 +75,20 @@ jobs:
           if [ -n "$ISSUE" ]; then ARGS+=(--issue="$ISSUE"); fi
           node tools/ci/auto-bot-issue-triage.js "${ARGS[@]}"
 
+
+      - name: "P2529 Deep functional enrich (beyond mfr+pid)"
+        if: always()
+        continue-on-error: true
+        timeout-minutes: 8
+        env:
+          FORUM_AUTO_POST: "0"
+          SHADOW_FORUM: "1"
+        run: |
+          if [ -f tools/ci/deep-functional-enrich-pass.js ]; then
+            npm run enrich:functional -- --skip-gates 2>&1 | tee deep-functional-soft.log || echo "P2529_SOFT_WARN"
+            npm run check:p2529 || echo "P2529_GATE_WARN"
+          fi
+
       - name: Commit candidate state
         continue-on-error: true
         if: always() && (inputs.dry_run != true)

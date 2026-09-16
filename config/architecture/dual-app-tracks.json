@@ -441,5 +441,9 @@
       "unified-ci.yml",
       "forum-poll.yml"
     ]
+  },
+  "p2529_deep_functional_enrich": {
+    "tag": "BOTH",
+    "note": "Inbox/cron audit DP/cluster/flow/RX-TX beyond mfr+pid"
   }
 }
