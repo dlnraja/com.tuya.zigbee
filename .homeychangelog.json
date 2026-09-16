@@ -1674,5 +1674,8 @@
   },
   "5.12.215": {
     "en": "P2535: rkgngb5o+TS0501B on led_controller_dimmable (anti-bot Cartesian clear). Update Test."
+  },
+  "5.12.216": {
+    "en": "Improved Zigbee RF coexistence guidance and Tuya MCU time-sync resilience (no pairing degrade)."
   }
 }
