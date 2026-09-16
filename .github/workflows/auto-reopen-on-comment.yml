@@ -125,20 +125,6 @@ jobs:
               labels: ['reopened-by-user']
             });
 
-            // Post a brief acknowledgment
-            await github.rest.issues.createComment({
-              owner: context.repo.owner,
-              repo: context.repo.repo,
-              issue_number: num,
-              body: [
-                `<!-- tuya-reopen-bot -->`,
-                `This ${type} has been **automatically reopened** because @${user} posted a new comment.`,
-                `It will be reviewed in the next automation cycle.`,
-                ``,
-                `> If your device is still not working, please share:`,
-                `> 1. **Device Interview** from [Developer Tools](https://tools.developer.homey.app)`,
-                `> 2. **Diagnostic Report ID** from device settings`,
-              ].join('\n')
-            });
-
-            console.log(`✅ ${type} #${num} reopened, labeled, and acknowledged`);
+            // WHY(P2394): reopen silently — no auto comment (AI-slop / "bot" smell).
+            // Label only; maintainer replies in Dylan voice when needed.
+            console.log(`✅ ${type} #${num} reopened and labeled (no auto-comment)`);

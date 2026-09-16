@@ -1,8 +1,12 @@
+# AI Monthly Audit (TITAN Protocol v2)
+# Triggers: cron: 17 0 1 * * + workflow_dispatch | Secrets: ANTHROPIC_API_KEY,GH_PAT,GOOGLE_AI_KEY,OPENAI_API_KEY
+# Doc header added 2026-07-29 (workflows genealogy enrichment).
+
 name: AI Monthly Audit (TITAN Protocol v2)
 
 on:
   schedule:
-    - cron: '17 0 1 * *'  # 1st of every month at 00:17 UTC (staggered: avoids monthly collision)
+    - cron: '17 0 1 * *'  # 1st of every month at 00:17 UTC (staggered: was 00:00, avoids 3 simultaneous monthly runs)
   workflow_dispatch:
     inputs:
       analysis_depth:
@@ -24,10 +28,22 @@ concurrency:
   group: ai-monthly-audit
   cancel-in-progress: true
 
+defaults:
+  run:
+    shell: bash
+
 env:
   CACHE_FILE: .ai/KNOWLEDGE_CACHE.json
   REPORT_DIR: .ai/audit-reports
   # AI_MODEL defaults to claude-sonnet-4-20250514 if not set in secrets
+  AI_PLAN_MODE: 'forfait'
+  AI_FORCE_LOCAL: 'true'
+  AI_ALLOW_REMOTE: 'false'
+  AI_ALLOW_PAID: 'false'
+  AI_ENSEMBLE: 'false'
+  AI_MAP_REDUCE: 'false'
+  AI_FULL_CONTEXT: 'false'
+  GMAIL_DIAG_AI_MAX: '0'
 
 jobs:
   ai-audit:
@@ -42,13 +58,13 @@ jobs:
       # LAYER 1: Full history checkout
       # ──────────────────────────────────────────────
       - name: Checkout with full history
-        uses: actions/checkout@v5
+        uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # v5.1.0
         with:
           fetch-depth: 0
           token: ${{ secrets.GH_PAT || secrets.GITHUB_TOKEN }}
 
       - name: Setup Node.js 22
-        uses: actions/setup-node@v5
+        uses: actions/setup-node@a0853c24544627f65ddf259abe73b1d18a591444 # v5.0.0
         with:
           node-version: '22'
 
@@ -85,25 +101,30 @@ jobs:
           COMMIT_COUNT=$(git log --since="$SINCE" --oneline 2>/dev/null | wc -l || echo "0")
           echo "commit_count=$COMMIT_COUNT" >> $GITHUB_OUTPUT
 
+          # Safe base revision: HEAD~N may not exist (shallow/purged history)
+          REV="HEAD~${COMMIT_COUNT:-50}"
+          git rev-parse --verify --quiet "$REV^{commit}" >/dev/null 2>&1 || REV="$(git rev-list --max-parents=0 HEAD | head -1)"
+          echo "base_rev=$REV" >> $GITHUB_OUTPUT
+
           # File change stats
-          CHANGED_FILES=$(git diff --name-only "HEAD~${COMMIT_COUNT:-50}" HEAD 2>/dev/null | wc -l || echo "0")
+          CHANGED_FILES=$(git diff --name-only "$REV" HEAD 2>/dev/null | wc -l || echo "0")
           echo "changed_files=$CHANGED_FILES" >> $GITHUB_OUTPUT
 
           # Insertion/deletion stats
-          STATS=$(git diff --stat "HEAD~${COMMIT_COUNT:-50}" HEAD 2>/dev/null | tail -1)
+          STATS=$(git diff --stat "$REV" HEAD 2>/dev/null | tail -1)
           INSERTIONS=$(echo "$STATS" | grep -oP '\d+(?= insertion)' || echo "0")
           DELETIONS=$(echo "$STATS" | grep -oP '\d+(?= deletion)' || echo "0")
           echo "insertions=$INSERTIONS" >> $GITHUB_OUTPUT
           echo "deletions=$DELETIONS" >> $GITHUB_OUTPUT
 
           # Extract unique new URLs from changed files
-          git diff "HEAD~${COMMIT_COUNT:-50}" HEAD -- '*.md' '*.js' '*.json' '*.yml' 2>/dev/null | \
+          git diff "$REV" HEAD -- '*.md' '*.js' '*.json' '*.yml' 2>/dev/null | \
             grep -oP 'https?://[^\s\)\">\x27]+' | sort -u > /tmp/new_urls.txt || true
           NEW_URLS=$(wc -l < /tmp/new_urls.txt)
           echo "new_urls=$NEW_URLS" >> $GITHUB_OUTPUT
 
           # Identify most-changed directories
-          git diff --name-only "HEAD~${COMMIT_COUNT:-50}" HEAD 2>/dev/null | \
+          git diff --name-only "$REV" HEAD 2>/dev/null | \
             awk -F/ '{if(NF>1) print $1"/"$2; else print $1}' | sort | uniq -c | sort -rn | head -10 > /tmp/hot_dirs.txt || true
 
           echo "delta_summary=Commits: $COMMIT_COUNT | Files: $CHANGED_FILES | +$INSERTIONS -$DELETIONS | URLs: $NEW_URLS" >> $GITHUB_OUTPUT
@@ -119,7 +140,7 @@ jobs:
           # Mixin order check
           if [ -f scripts/validation/check-mixin-order.js ]; then
             node scripts/validation/check-mixin-order.js 2>&1 | tail -5 > /tmp/audit-validation/mixin.txt || true
-            MIXIN=$(grep -c "PASSED" /tmp/audit-validation/mixin.txt || echo "0")
+            MIXIN=$(grep -c "PASSED" /tmp/audit-validation/mixin.txt 2>/dev/null || true); MIXIN=${MIXIN:-0}
           else
             MIXIN=-1
             echo "SKIPPED - script not found" > /tmp/audit-validation/mixin.txt
@@ -129,7 +150,7 @@ jobs:
           # WiFi lifecycle check
           if [ -f scripts/validation/check-wifi-lifecycle.js ]; then
             node scripts/validation/check-wifi-lifecycle.js 2>&1 | tail -5 > /tmp/audit-validation/wifi.txt || true
-            WIFI=$(grep -c "PASSED" /tmp/audit-validation/wifi.txt || echo "0")
+            WIFI=$(grep -c "PASSED" /tmp/audit-validation/wifi.txt 2>/dev/null || true); WIFI=${WIFI:-0}
           else
             WIFI=-1
             echo "SKIPPED - script not found" > /tmp/audit-validation/wifi.txt
@@ -139,7 +160,7 @@ jobs:
           # Fingerprint health check
           if [ -f scripts/validation/check-fingerprint-health.js ]; then
             node scripts/validation/check-fingerprint-health.js 2>&1 | tail -5 > /tmp/audit-validation/fingerprint.txt || true
-            FP=$(grep -c "PASSED" /tmp/audit-validation/fingerprint.txt || echo "0")
+            FP=$(grep -c "PASSED" /tmp/audit-validation/fingerprint.txt 2>/dev/null || true); FP=${FP:-0}
           else
             FP=-1
             echo "SKIPPED - script not found" > /tmp/audit-validation/fingerprint.txt
@@ -149,7 +170,7 @@ jobs:
           # Flow card ID uniqueness
           if [ -f scripts/ci/check-flow-ids.js ]; then
             node scripts/ci/check-flow-ids.js 2>&1 | tail -5 > /tmp/audit-validation/flowids.txt || true
-            FLOW=$(grep -c "PASSED" /tmp/audit-validation/flowids.txt || echo "0")
+            FLOW=$(grep -c "PASSED" /tmp/audit-validation/flowids.txt 2>/dev/null || true); FLOW=${FLOW:-0}
           else
             FLOW=-1
             echo "SKIPPED - script not found" > /tmp/audit-validation/flowids.txt
@@ -159,7 +180,7 @@ jobs:
           # Security scan
           if [ -f scripts/ci/security-scanner.js ]; then
             node scripts/ci/security-scanner.js 2>&1 | tail -5 > /tmp/audit-validation/security.txt || true
-            SEC=$(grep -c "PASSED" /tmp/audit-validation/security.txt || echo "0")
+            SEC=$(grep -c "PASSED" /tmp/audit-validation/security.txt 2>/dev/null || true); SEC=${SEC:-0}
           else
             SEC=-1
             echo "SKIPPED - script not found" > /tmp/audit-validation/security.txt
@@ -167,9 +188,9 @@ jobs:
           echo "security_passed=$SEC" >> $GITHUB_OUTPUT
 
           # Syntax check (drivers only, fast)
-          if [ -f scripts/validation/check-syntax-drivers.js ]; then
-            node scripts/validation/check-syntax-drivers.js 2>&1 | tail -5 > /tmp/audit-validation/syntax.txt || true
-            SYNTAX=$(grep -c "PASSED" /tmp/audit-validation/syntax.txt || echo "0")
+          if [ -f scripts/validation/check-driver-health.js ]; then
+            node scripts/validation/check-driver-health.js 2>&1 | tail -5 > /tmp/audit-validation/syntax.txt || true
+            SYNTAX=$(grep -c "PASSED" /tmp/audit-validation/syntax.txt 2>/dev/null || true); SYNTAX=${SYNTAX:-0}
           else
             SYNTAX=-1
             echo "SKIPPED" > /tmp/audit-validation/syntax.txt
@@ -193,7 +214,7 @@ jobs:
           # Fingerprint collision analysis
           if [ -f scripts/validation/check-driver-collisions.js ]; then
             node scripts/validation/check-driver-collisions.js > /tmp/audit-validation/collisions.txt 2>&1 || true
-            COLL=$(grep -c "PASSED" /tmp/audit-validation/collisions.txt || echo "0")
+            COLL=$(grep -c "PASSED" /tmp/audit-validation/collisions.txt 2>/dev/null || true); COLL=${COLL:-0}
             collision_count=$(grep -oP 'COLLISIONS FOUND: \K\d+' /tmp/audit-validation/collisions.txt 2>/dev/null || echo "0")
             echo "collisions_passed=$COLL" >> $GITHUB_OUTPUT
             echo "collision_count=$collision_count" >> $GITHUB_OUTPUT
@@ -238,7 +259,8 @@ jobs:
           TOTAL_PASS=0
           TOTAL_FAIL=0
           for f in /tmp/audit-validation/*.txt; do
-            p=$(grep -c "PASSED" "$f" 2>/dev/null || echo "0")
+            # grep -c prints the count even on exit 1 — swallow the exit code (pipefail)
+            p=$(grep -c "PASSED" "$f" 2>/dev/null || true); p=${p:-0}
             TOTAL_PASS=$((TOTAL_PASS + p))
           done
           echo "total_passed=$TOTAL_PASS" >> $GITHUB_OUTPUT
@@ -374,10 +396,10 @@ jobs:
           ANALYSIS_FILE="/tmp/ai-context/analysis.json"
           echo '{"summary":"Analysis pending","riskScore":0,"confidence":0}' > "$ANALYSIS_FILE"
 
-          # Build context blob for API call
+          # Build context blob for API call (|| true: cat gets SIGPIPE when head closes early)
           CONTEXT=$(cat /tmp/ai-context/knowledge_cache.json /tmp/ai-context/recent_commits.txt \
                     /tmp/ai-context/validation_results.txt /tmp/ai-context/core_rules.md 2>/dev/null | \
-                    head -c 15000)
+                    head -c 15000 || true)
 
           PROMPT=$(cat /tmp/ai-context/prompt.txt)
 
@@ -433,7 +455,7 @@ jobs:
                 "security": "${{ steps.validation.outputs.security_passed }}"
               }
             }
-            FALLBACK
+          FALLBACK
             echo "ai_engine=local-fallback" >> $GITHUB_OUTPUT
           fi
 
@@ -455,7 +477,7 @@ jobs:
           CONF=$(jq -r '.confidence // "N/A"' "$ANALYSIS" 2>/dev/null || echo "N/A")
 
           cat > "$REPORT_FILE" << HEADER
-          # AI Monthly Audit Report — $(date +%B %Y)
+          # AI Monthly Audit Report — $(date '+%B %Y')
           > Generated by TITAN Protocol v2 | Engine: $ENGINE | Risk Score: $RISK | Confidence: $CONF
 
           ## Summary
@@ -586,10 +608,12 @@ jobs:
           # Recent commits
           echo "## Recent Commits (30 days)" >> "$REPORT_FILE"
           echo '```' >> "$REPORT_FILE"
-          git log --since="${{ steps.deltas.outputs.since }}" --oneline --no-merges | head -25 >> "$REPORT_FILE"
+          git log --since="${{ steps.deltas.outputs.since }}" --oneline --no-merges | head -25 >> "$REPORT_FILE" || true
           echo '```' >> "$REPORT_FILE"
 
           echo "Report generated: $REPORT_FILE"
+          echo "yyyymm=$(date +%Y-%m)" >> $GITHUB_OUTPUT
+          echo "monthyear=$(date '+%B %Y')" >> $GITHUB_OUTPUT
 
       # ──────────────────────────────────────────────
       # LAYER 7: Update Knowledge Cache
@@ -811,15 +835,15 @@ jobs:
 
       - name: Create Pull Request
         if: steps.should_pr.outputs.create_pr == 'true'
-        uses: peter-evans/create-pull-request@v6
+        uses: peter-evans/create-pull-request@c5a7806660adbe173f04e3e038b0ccdcd758773c # v6.1.0
         with:
           token: ${{ secrets.GH_PAT || secrets.GITHUB_TOKEN }}
-          commit-message: 'ai: monthly audit $(date +%Y-%m) [skip ci]'
-          branch: ai/monthly-audit-$(date +%Y-%m)
+          commit-message: 'ai: monthly audit ${{ steps.report.outputs.yyyymm }} [skip ci]'
+          branch: ai/monthly-audit-${{ steps.report.outputs.yyyymm }}
           delete-branch: true
-          title: 'AI Monthly Audit - $(date +%B %Y) | Risk: ${{ steps.cache_update.outputs.cache_valid == ''true'' && ''Updated'' || ''Error'' }}'
+          title: 'AI Monthly Audit - ${{ steps.report.outputs.monthyear }} | Risk: ${{ steps.cache_update.outputs.cache_valid == ''true'' && ''Updated'' || ''Error'' }}'
           body: |
-            ## AI Monthly Audit — $(date +%B %Y)
+            ## AI Monthly Audit — ${{ steps.report.outputs.monthyear }}
 
             ### Delta Analysis
             - **Commits (30d)**: ${{ steps.deltas.outputs.commit_count }}
@@ -852,7 +876,6 @@ jobs:
             - `.ai/audit-reports/AUDIT_*.md` — Full audit report
             - `CORE_RULES.md` — New rules appended (if discovered)
 
-            ---
             *Generated by TITAN Protocol v2 — Tuya Unified Zigbee Monthly Audit*
           labels: |
             ai-audit

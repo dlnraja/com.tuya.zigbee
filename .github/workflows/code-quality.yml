@@ -26,7 +26,7 @@ on:
       - '.github/workflows/**'
       - 'package*.json'
   schedule:
-    - cron: '15 3 * * 3'  # Weekly Wednesday (staggered: avoids 03:00 collision)
+    - cron: '20 4 * * 3'  # Weekly Wednesday 04:20, clear of nightly 03:45, self-heal 04:00, and blakadder 04:15
   workflow_dispatch:
 
 permissions:
@@ -39,7 +39,15 @@ concurrency:
   cancel-in-progress: true
 
 env:
-  NODE_VERSION: '20'
+  NODE_VERSION: '22'
+  AI_PLAN_MODE: 'forfait'
+  AI_FORCE_LOCAL: 'true'
+  AI_ALLOW_REMOTE: 'false'
+  AI_ALLOW_PAID: 'false'
+  AI_ENSEMBLE: 'false'
+  AI_MAP_REDUCE: 'false'
+  AI_FULL_CONTEXT: 'false'
+  GMAIL_DIAG_AI_MAX: '0'
 
 defaults:
   run:
@@ -51,7 +59,7 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 2
     steps:
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # v5.1.0
         with:
           fetch-depth: 5
       - name: Verify no upstream writes
@@ -68,12 +76,12 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 15
     steps:
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # v5.1.0
         with:
           fetch-depth: 50
           token: ${{ secrets.GITHUB_TOKEN }}
 
-      - uses: actions/setup-node@v5
+      - uses: actions/setup-node@a0853c24544627f65ddf259abe73b1d18a591444 # v5.0.0
         with:
           node-version: ${{ env.NODE_VERSION }}
           cache: 'npm'
@@ -118,24 +126,39 @@ jobs:
           fi
           echo "✓ All driver.compose.json files valid"
 
+      - name: Anti-bot + P2138 sacred-couple matrix + P244x flow/knob
+        id: sacred
+        run: |
+          node tools/ci/anti-bot-regression-gate.js
+          node tools/ci/p2138-sacred-couple-matrix-gate.js
+          npm run check:p244x
+          npm run check:p246x
+          npm run check:p248x
+          npm run check:p249x
+          npm run check:publish
+
       - name: Driver health check
         id: health
         run: |
-          if [ -f tools/ci/driver-health-check.js ]; then
-            node tools/ci/driver-health-check.js 2>&1 | tail -30 || true
+          if [ -f scripts/validation/check-driver-health.js ]; then
+            node scripts/validation/check-driver-health.js 2>&1 | tail -30 || true
           fi
         continue-on-error: true
 
       - name: Build summary
         if: always()
+        env:
+          # Pass PR ref through env to avoid shell injection from fork branch names
+          PR_HEAD_REF: ${{ github.event.pull_request.head.ref || github.ref_name }}
         run: |
           {
             echo "## 🔍 Code Quality — $(date -u +%Y-%m-%dT%H:%M:%SZ)"
             echo ""
             echo "- Lint: ${{ steps.lint.outcome == 'success' && '✅' || '⚠️' }}"
             echo "- JSON: ${{ steps.json.outcome == 'success' && '✅' || '❌' }}"
+            echo "- Sacred: ${{ steps.sacred.outcome == 'success' && '✅' || '❌' }}"
             echo "- Health: ${{ steps.health.outcome == 'success' && '✅' || '⚠️' }}"
             echo ""
             echo "**Run**: ${{ github.run_id }}"
-            echo "**Trigger**: ${{ github.event_name }} ${{ github.event.pull_request.head.ref || github.ref_name }}"
+            echo "**Trigger**: ${{ github.event_name }} $PR_HEAD_REF"
           } >> $GITHUB_STEP_SUMMARY

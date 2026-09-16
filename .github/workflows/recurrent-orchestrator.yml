@@ -49,6 +49,16 @@ permissions:
 concurrency:
   group: recurrent-orchestrator
   cancel-in-progress: false
+# P2542 forfait / local-first (auto-injected)
+env:
+  AI_PLAN_MODE: 'forfait'
+  AI_FORCE_LOCAL: 'true'
+  AI_ALLOW_REMOTE: 'false'
+  AI_ALLOW_PAID: 'false'
+  AI_ENSEMBLE: 'false'
+  AI_MAP_REDUCE: 'false'
+  AI_FULL_CONTEXT: 'false'
+  GMAIL_DIAG_AI_MAX: '0'
 
 jobs:
   orchestrate:
@@ -64,13 +74,26 @@ jobs:
         with:
           node-version: '22'
 
+      - name: Install deps (local solvers)
+        run: npm ci --prefer-offline --no-audit || npm install --no-audit
+
+      # P2542: local auto-improve before analyzers (zero remote AI)
+      - name: Local auto-improve orchestrator (P2542)
+        continue-on-error: true
+        run: |
+          node tools/ci/ai-plan-guard.js --preflight || true
+          node tools/ci/local-auto-improve-orchestrator.js --quick || true
+
       - name: Run Recurrent Orchestrator
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           ARGS=""
-          if [ "${{ inputs.use_ai }}" = "true" ]; then
+          # P2542: ignore use_ai unless remote explicitly allowed (forfait)
+          if [ "${{ inputs.use_ai }}" = "true" ] && [ "${AI_ALLOW_REMOTE}" = "true" ] && [ "${AI_FORCE_LOCAL}" != "true" ]; then
             ARGS="$ARGS --ai"
+          else
+            echo "AI bonus skipped (forfait / AI_FORCE_LOCAL)"
           fi
           if [ "${{ inputs.quick }}" = "true" ]; then
             ARGS="$ARGS --quick"
@@ -113,30 +136,28 @@ jobs:
             node tools/ci/l99-inbox-intelligence-orchestrator.js --quick --skip-scan || echo "l99-inbox soft warn"
           fi
 
+      - name: "P2529 Deep functional enrich (beyond mfr+pid)"
+        continue-on-error: true
+        timeout-minutes: 8
+        env:
+          FORUM_AUTO_POST: '0'
+          SHADOW_FORUM: '1'
+        run: |
+          if [ -f tools/ci/deep-functional-enrich-pass.js ]; then
+            npm run enrich:functional -- --skip-gates 2>&1 | tee deep-functional-recurrent.log || echo "P2529_SOFT_WARN"
+            npm run check:p2529 || echo "P2529_GATE_WARN"
+          fi
+
       - name: Compensate incomplete reports (P2418)
         continue-on-error: true
         timeout-minutes: 8
         run: |
           if [ -f tools/ci/compensate-incomplete-reports.js ]; then
             COMPENSATE_SKIP_INVESTIGATE=1 COMPENSATE_MAX_MS=45000 \
-            node tools/ci/compensate-incomplete-reports.js --apply-safe --skip-investigate || echo "compensate soft warn"
+              node tools/ci/compensate-incomplete-reports.js --apply-safe --skip-investigate || echo "compensate soft warn"
           fi
           if [ -f tools/ci/auto-investigate-need-action.js ]; then
             node tools/ci/auto-investigate-need-action.js || echo "auto-investigate soft warn"
-          fi
-
-
-      - name: "P2529 Deep functional enrich (beyond mfr+pid)"
-        if: always()
-        continue-on-error: true
-        timeout-minutes: 8
-        env:
-          FORUM_AUTO_POST: "0"
-          SHADOW_FORUM: "1"
-        run: |
-          if [ -f tools/ci/deep-functional-enrich-pass.js ]; then
-            npm run enrich:functional -- --skip-gates 2>&1 | tee deep-functional-soft.log || echo "P2529_SOFT_WARN"
-            npm run check:p2529 || echo "P2529_GATE_WARN"
           fi
 
       - name: Upload Reports

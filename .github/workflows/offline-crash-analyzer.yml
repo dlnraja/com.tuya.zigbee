@@ -1,3 +1,7 @@
+# Offline Crash Analyzer (P31)
+# Triggers: cron: 0 5 * * * + workflow_dispatch | Secrets: GITHUB_TOKEN only
+# Doc header added 2026-07-29 (workflows genealogy enrichment).
+
 defaults:
   run:
     shell: bash
@@ -14,15 +18,26 @@ name: Offline Crash Analyzer (P31)
 # 4. If --ai flag is set and GITHUB_TOKEN is available, also call GH Models API (optional)
 
 on:
-  schedule:
-    # Daily at 05:20 UTC (staggered: avoids 05:00 collision)
-    - cron: '20 5 * * *'
+  # Cron désactivé 2026-08-04 (audit no-op) : doublon des étapes 5 et 6 du
+  # recurrent-orchestrator (03:30 — offline-crash-analyzer + smart-auto-fix).
+  # Artifact jamais téléchargé, 0 commit. Reste lançable via workflow_dispatch.
+  # schedule:
+  #   # Daily at 05:05 UTC (clear of stale.yml at 05:00)
+  #   - cron: '5 5 * * *'
   workflow_dispatch:
     inputs:
       use_ai:
         description: 'Use AI (GitHub Models) for bonus analysis (optional)'
         required: false
         default: 'false'
+
+permissions:
+  contents: read
+  models: read  # optional --ai bonus analysis via GH Models
+
+concurrency:
+  group: offline-crash-analyzer
+  cancel-in-progress: false
 
 jobs:
   analyze:
@@ -31,10 +46,10 @@ jobs:
 
     steps:
       - name: Checkout
-        uses: actions/checkout@v5
+        uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # v5.1.0
 
       - name: Setup Node.js
-        uses: actions/setup-node@v5
+        uses: actions/setup-node@a0853c24544627f65ddf259abe73b1d18a591444 # v5.0.0
         with:
           node-version: '20'
 
@@ -55,7 +70,7 @@ jobs:
           fi
 
       - name: Upload Reports
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@330a01c490aca151604b8cf639adc76d48f6c5d4 # v5.0.0
         with:
           name: crash-analysis-${{ github.run_id }}
           path: |

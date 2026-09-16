@@ -57,11 +57,16 @@ defaults:
 env:
   AI_PLAN_MODE: forfait
   AI_ALLOW_PAID: 'false'
-  AI_GLOBAL_DAILY_CAP: '400'
-  AI_SOFT_STOP_PERCENT: '85'
+  AI_GLOBAL_DAILY_CAP: '80'
+  AI_SOFT_STOP_PERCENT: '60'
+  AI_FORCE_LOCAL: 'true'
+  AI_ALLOW_REMOTE: 'false'
   GMAIL_DIAG_AI_MAX: '0'
   FORUM_AUTO_POST: '0'
   SHADOW_FORUM: '1'
+  AI_ENSEMBLE: 'false'
+  AI_MAP_REDUCE: 'false'
+  AI_FULL_CONTEXT: 'false'
 
 jobs:
   fetch-diags:
@@ -273,6 +278,19 @@ jobs:
         continue-on-error: true
         run: node tools/ci/infer-enrich-from-incomplete.js --dry-run || true
 
+      - name: "P2529 Deep functional enrich (DP/cluster/flow/RX-TX)"
+        if: always()
+        continue-on-error: true
+        timeout-minutes: 8
+        env:
+          FORUM_AUTO_POST: "0"
+          SHADOW_FORUM: "1"
+        run: |
+          if [ -f tools/ci/deep-functional-enrich-pass.js ]; then
+            npm run enrich:functional -- --skip-gates 2>&1 | tee deep-functional-fetch-diags.log || echo "P2529_SOFT_WARN"
+            npm run check:p2529 || echo "P2529_GATE_WARN"
+          fi
+
       # READ-ONLY scan of cloud Smart Life thread (never posts/replies)
       - name: "Forum 146735 READ-ONLY silent scan"
         if: always()
@@ -315,7 +333,7 @@ jobs:
           fi
           if [ -f tools/ci/compensate-incomplete-reports.js ]; then
             COMPENSATE_SKIP_INVESTIGATE=1 COMPENSATE_MAX_MS=45000 \
-            node tools/ci/compensate-incomplete-reports.js --apply-safe --skip-investigate || echo "compensate soft warn"
+              node tools/ci/compensate-incomplete-reports.js --apply-safe --skip-investigate || echo "compensate soft warn"
           fi
           node .github/scripts/privacy-redactor.js \
             .github/state/forum/multi-silent-digest.json \
@@ -338,20 +356,6 @@ jobs:
           node tools/ci/forum-media-deep-scan.js --max=40 --topics=140352,26439,89271 || echo "media scan failed (non-blocking)"
           node .github/scripts/privacy-redactor.js \
             .github/state/forum/forum-media-deep.json || true
-
-
-      - name: "P2529 Deep functional enrich (beyond mfr+pid)"
-        if: always()
-        continue-on-error: true
-        timeout-minutes: 8
-        env:
-          FORUM_AUTO_POST: "0"
-          SHADOW_FORUM: "1"
-        run: |
-          if [ -f tools/ci/deep-functional-enrich-pass.js ]; then
-            npm run enrich:functional -- --skip-gates 2>&1 | tee deep-functional-soft.log || echo "P2529_SOFT_WARN"
-            npm run check:p2529 || echo "P2529_GATE_WARN"
-          fi
 
       - name: Commit and Push changes
         if: always()

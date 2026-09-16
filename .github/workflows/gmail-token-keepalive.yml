@@ -1,3 +1,7 @@
+# Gmail Auth Health Check
+# Triggers: cron: 0 8 * * *,workflow_call,workflow_dispatch | Secrets: GMAIL_APP_PASSWORD,GMAIL_CLIENT_ID,GMAIL_CLIENT_SECRET,GMAIL_EMAIL,GMAIL_REFRESH_TOKEN
+# Doc header added 2026-07-29 (workflows genealogy enrichment).
+
 name: Gmail Auth Health Check
 # <!-- badges:start -->
 # [![Gmail Auth Health Check](https://github.com/dlnraja/com.tuya.zigbee/actions/workflows/gmail-token-keepalive.yml/badge.svg)](https://github.com/dlnraja/com.tuya.zigbee/actions/workflows/gmail-token-keepalive.yml)
@@ -33,6 +37,14 @@ concurrency:
 
 env:
   NODE_VERSION: "22"
+  AI_PLAN_MODE: 'forfait'
+  AI_FORCE_LOCAL: 'true'
+  AI_ALLOW_REMOTE: 'false'
+  AI_ALLOW_PAID: 'false'
+  AI_ENSEMBLE: 'false'
+  AI_MAP_REDUCE: 'false'
+  AI_FULL_CONTEXT: 'false'
+  GMAIL_DIAG_AI_MAX: '0'
 
 defaults:
   run:
@@ -43,10 +55,10 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 5
     steps:
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # v5.1.0
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
-      - uses: actions/setup-node@v5
+      - uses: actions/setup-node@a0853c24544627f65ddf259abe73b1d18a591444 # v5.0.0
         with:
           node-version: ${{ env.NODE_VERSION }}
           cache: npm

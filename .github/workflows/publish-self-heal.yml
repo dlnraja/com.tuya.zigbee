@@ -1,3 +1,11 @@
+# 🩹 Publish Self-Heal
+# Triggers: cron: 0 4,8,12,16,20 * * * + workflow_dispatch | Secrets: GITHUB_TOKEN, HOMEY_PAT
+# Doc header added 2026-07-29 (workflows genealogy enrichment).
+# 2026-07-29: added athom-heal job — detects Athom-side processing_failed
+# builds (>6h old, no newer active build) and re-triggers the publish
+# pipeline, max 1 retry/24h (actions/cache marker). Also fixed permissions:
+# gh run cancel / gh workflow run require actions: write (was read → 403).
+
 name: 🩹 Publish Self-Heal
 
 # Auto-runs periodically to detect stuck/failed publishes and re-trigger them.
@@ -19,8 +27,19 @@ defaults:
 
 
 concurrency:
+  # WHY(P2385): never cancel heal mid-flight; never cancel Auto-Publish mid Athom upload
   group: publish-self-heal
-  cancel-in-progress: true
+  cancel-in-progress: false
+# P2542 forfait / local-first (auto-injected)
+env:
+  AI_PLAN_MODE: 'forfait'
+  AI_FORCE_LOCAL: 'true'
+  AI_ALLOW_REMOTE: 'false'
+  AI_ALLOW_PAID: 'false'
+  AI_ENSEMBLE: 'false'
+  AI_MAP_REDUCE: 'false'
+  AI_FULL_CONTEXT: 'false'
+  GMAIL_DIAG_AI_MAX: '0'
 
 jobs:
   heal:
@@ -29,7 +48,7 @@ jobs:
     timeout-minutes: 10
     steps:
       - name: 📥 Checkout
-        uses: actions/checkout@v5
+        uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # v5.1.0
         with:
           fetch-depth: 1
 
@@ -38,7 +57,7 @@ jobs:
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          # P139/P195: watch master Auto-Publish only. Never cancel/re-run
+          # P139/P193: watch master Auto-Publish only. Never cancel/re-run
           # Publish Stable→Test — shared App ID would overwrite the 9.0.x soak.
           STUCK_RUNS=$(gh run list \
             --workflow "Auto-Publish on Push" \
@@ -50,11 +69,13 @@ jobs:
           echo "stuck_runs=$STUCK_RUNS" >> $GITHUB_OUTPUT
 
       - name: 🛑 Cancel stuck runs
+        # WHY(P2385/P139): only cancel Auto-Publish if stuck >90 min (find-stuck-runs).
+        # Never cancel healthy in-flight Athom drafts — orphans amplify processing_failed.
         if: steps.find.outputs.stuck_runs != 'OK'
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          echo "## 🛑 Cancelling stuck Auto-Publish runs" >> $GITHUB_STEP_SUMMARY
+          echo "## 🛑 Cancelling stuck Auto-Publish runs (>90 min)" >> $GITHUB_STEP_SUMMARY
           for run_id in $(echo "${{ steps.find.outputs.stuck_runs }}" | awk '{print $1}'); do
             echo "- Cancelling $run_id" >> $GITHUB_STEP_SUMMARY
             gh run cancel "$run_id" 2>&1 || true
@@ -66,10 +87,76 @@ jobs:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           echo "## 🔁 Re-triggering Auto-Publish on Push (master)" >> $GITHUB_STEP_SUMMARY
-          echo "P139: never workflow-run Publish Stable→Test from self-heal." >> $GITHUB_STEP_SUMMARY
-          gh workflow run "Auto-Publish on Push" --ref master 2>&1 | tee -a $GITHUB_STEP_SUMMARY
+          echo "P139/P2385: never force_publish from self-heal; never Publish Stable→Test." >> $GITHUB_STEP_SUMMARY
+          gh workflow run "Auto-Publish on Push" --ref master -f force_publish=false 2>&1 | tee -a $GITHUB_STEP_SUMMARY
 
       - name: ✅ All good
         if: steps.find.outputs.stuck_runs == 'OK'
         run: |
           echo "## ✅ No stuck publish runs detected" >> $GITHUB_STEP_SUMMARY
+
+  athom-heal:
+    name: 🩹 Athom processing_failed self-heal
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    # Self-heal must never block or fail the workflow on its own errors.
+    continue-on-error: true
+    steps:
+      - name: 📥 Checkout
+        uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # v5.1.0
+        with:
+          fetch-depth: 1
+
+      - name: 🟢 Setup Node
+        uses: actions/setup-node@a0853c24544627f65ddf259abe73b1d18a591444 # v5.0.0
+        with:
+          node-version: '22'
+          cache: npm
+
+      - name: 📦 Install deps
+        run: |
+          if [ -f package.json ]; then
+            npm ci --prefer-offline --no-audit || npm install --no-audit
+          else
+            echo "No package.json"
+          fi
+
+      - name: ♻️ Restore retry marker (max 1 retry/24h)
+        uses: actions/cache/restore@caa296126883cff596d87d8935842f9db880ef25 # v5.1.0
+        with:
+          path: .github/state/publish-self-heal-retry.txt
+          key: publish-self-heal-retry-${{ github.run_id }}
+          restore-keys: |
+            publish-self-heal-retry-
+
+      - name: 🔍 Probe Athom builds for processing_failed
+        id: probe
+        env:
+          HOMEY_PAT: ${{ secrets.HOMEY_PAT }}
+          SELF_HEAL_MARKER: .github/state/publish-self-heal-retry.txt
+        run: node .github/scripts/athom-processing-failure-retry.js
+
+      - name: 💾 Save retry marker
+        if: steps.probe.outputs.retry == 'true'
+        uses: actions/cache/save@caa296126883cff596d87d8935842f9db880ef25 # v5.1.0
+        with:
+          path: .github/state/publish-self-heal-retry.txt
+          key: publish-self-heal-retry-${{ github.run_id }}
+
+      - name: 🔁 Re-trigger publish pipeline
+        if: steps.probe.outputs.retry == 'true'
+        continue-on-error: true
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          {
+            echo "## 🔁 Self-heal re-trigger"
+            echo ""
+            echo "- Reason: ${{ steps.probe.outputs.reason }}"
+            echo "- Failed build: #${{ steps.probe.outputs.latest_build_id }} v${{ steps.probe.outputs.latest_version }} (${{ steps.probe.outputs.latest_state }}, ${{ steps.probe.outputs.failure_age_hours }}h old)"
+            echo ""
+            echo "P139: Prefer Auto-Publish on Push (master Test soak). Do **not**"
+            echo "run Publish Stable→Test here — shared App ID would overwrite master Test."
+          } >> $GITHUB_STEP_SUMMARY
+          # Shared App ID: only re-trigger master Auto-Publish, never Publish Stable→Test.
+          gh workflow run "Auto-Publish on Push" --ref master 2>&1 | tee -a $GITHUB_STEP_SUMMARY || true

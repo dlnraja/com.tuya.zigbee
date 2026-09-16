@@ -1,3 +1,7 @@
+# Activity Monitor (P30)
+# Triggers: cron: 0 4 * * * + workflow_dispatch | Secrets: GITHUB_TOKEN only
+# Doc header added 2026-07-29 (workflows genealogy enrichment).
+
 defaults:
   run:
     shell: bash
@@ -8,10 +12,25 @@ name: Activity Monitor (P30)
 # Generates a snapshot for analysis and commits the cache.
 
 on:
-  schedule:
-    # Daily at 04:00 UTC (after shadow-mode at 03:00)
-    - cron: '0 4 * * *'
+  # Cron désactivé 2026-08-04 (audit no-op) : sous-ensemble strict du
+  # recurrent-orchestrator (03:30 — étapes 4, 7, 8 : fetch-all-activity,
+  # temporal-monitor, session-start). 0 commit, artifacts jamais téléchargés.
+  # Reste lançable via workflow_dispatch.
+  # schedule:
+  #   # Daily at 04:00 UTC (after shadow-mode at 03:00)
+  #   - cron: '0 4 * * *'
   workflow_dispatch:
+
+# Least privilege: push of the activity snapshot + read-only GH API scans
+permissions:
+  contents: write
+  issues: read
+  pull-requests: read
+  actions: read
+
+concurrency:
+  group: activity-monitor
+  cancel-in-progress: false
 
 jobs:
   fetch-activity:
@@ -20,12 +39,25 @@ jobs:
 
     steps:
       - name: Checkout
-        uses: actions/checkout@v5
+        uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # v5.1.0
 
       - name: Setup Node.js
-        uses: actions/setup-node@v5
+        uses: actions/setup-node@a0853c24544627f65ddf259abe73b1d18a591444 # v5.0.0
         with:
           node-version: '20'
+
+      - name: Restore activity state cache
+        continue-on-error: true
+        uses: actions/cache@caa296126883cff596d87d8935842f9db880ef25 # v5.1.0
+        with:
+          path: |
+            .github/state/activity-snapshot.json
+            .github/state/temporal-monitor-state.json
+            .github/state/temporal-monitor-report.json
+            .github/state/activity-cache.json
+          key: activity-monitor-state-${{ github.run_id }}
+          restore-keys: |
+            activity-monitor-state-
 
       - name: Run Activity Fetcher
         env:
@@ -43,7 +75,7 @@ jobs:
         run: node tools/ci/session-start.js
 
       - name: Upload Activity Snapshot
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@330a01c490aca151604b8cf639adc76d48f6c5d4 # v5.0.0
         with:
           name: activity-snapshot
           path: |
@@ -70,12 +102,5 @@ jobs:
             echo "- Need investigation: $INVESTIGATE" >> $GITHUB_STEP_SUMMARY
           fi
 
-      - name: Commit State Updates
-        run: |
-          git config user.email "p30@homey-mavis.local"
-          git config user.name "Mavis P30"
-          git add -f .github/state/activity-snapshot.json .github/state/temporal-monitor-state.json .github/state/temporal-monitor-report.json .github/state/activity-cache.json 2>/dev/null || true
-          if [ -n "$(git status --porcelain)" ]; then
-            git commit -m "chore(P30): daily activity monitor [skip ci]" || true
-            git push || true
-          fi
+      # State persists via the cache step above (security policy: state files
+      # must never be committed to git — see security-scanner).

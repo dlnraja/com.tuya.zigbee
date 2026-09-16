@@ -1,3 +1,7 @@
+# Deploy Device Finder to GitHub Pages
+# Triggers: cron: 0 9 * * * + push,schedule,workflow_dispatch,workflow_run | Secrets: GITHUB_TOKEN only
+# Doc header added 2026-07-29 (workflows genealogy enrichment).
+
 name: "Deploy Device Finder to GitHub Pages"
 
 # <!-- badges:start -->
@@ -9,15 +13,26 @@ on:
   schedule:
     - cron: '0 9 * * *'  # Daily 09:00 UTC — keep Device Finder updated
   workflow_dispatch:
-  workflow_run:
-    workflows: ["🌌 UNIFIED ENGINE — Daily Galaxy Orchestrator"]
-    types: [completed]
+  # A workflow_run on "UNIFIED ENGINE — Daily Galaxy Orchestrator" used to sit
+  # here, but no workflow carries that name, so the trigger could never fire.
+  # The daily schedule plus the path filter below already cover every case it
+  # was meant to catch.
   push:
     branches: [master, main]
     paths:
       - 'drivers/*/driver.compose.json'
+      - 'app.json'
+      - 'package.json'
+      - '.homeychangelog.json'
+      - 'README.md'
       - '.github/scripts/generate-device-finder.js'
       - '.github/scripts/device-finder-*.js'
+      - '.github/scripts/generate-dashboards-page.js'
+      - '.github/scripts/generate-wifi-page.js'
+      - '.github/scripts/generate-inbox-page.js'
+      - '.github/scripts/generate-readme.js'
+      - '.github/pages-build/**'
+      - '.github/workflows/deploy-pages.yml'
 
 permissions:
   contents: read
@@ -30,6 +45,14 @@ concurrency:
 
 env:
   NODE_VERSION: "22"
+  AI_PLAN_MODE: 'forfait'
+  AI_FORCE_LOCAL: 'true'
+  AI_ALLOW_REMOTE: 'false'
+  AI_ALLOW_PAID: 'false'
+  AI_ENSEMBLE: 'false'
+  AI_MAP_REDUCE: 'false'
+  AI_FULL_CONTEXT: 'false'
+  GMAIL_DIAG_AI_MAX: '0'
 
 defaults:
   run:
@@ -40,8 +63,8 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 10
     steps:
-      - uses: actions/checkout@v5
-      - uses: actions/setup-node@v5
+      - uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # v5.1.0
+      - uses: actions/setup-node@a0853c24544627f65ddf259abe73b1d18a591444 # v5.0.0
         with:
           node-version: ${{ env.NODE_VERSION }}
           cache: npm
@@ -50,6 +73,9 @@ jobs:
       - name: Collect Device Data
         continue-on-error: true
         run: node .github/scripts/device-finder-collect.js
+
+      - name: Export live data feed (P92.77 — app OTA-data)
+        run: node .github/scripts/export-live-data-feed.js
 
       - name: Generate Device Finder
         run: node .github/scripts/generate-device-finder.js

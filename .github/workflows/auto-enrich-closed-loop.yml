@@ -13,7 +13,7 @@ on:
     # - 04:15 UTC: blakadder-fetch
     # - 22:00 UTC Sunday: gmail diagnostics
     # - 30 3 *: nightly audit
-    - cron: '0 */4 * * *'
+    - cron: '0 */6 * * *'
   workflow_dispatch:
     inputs:
       skip_crawl:
@@ -45,16 +45,21 @@ env:
   TUYA_FP_HEURISTIC: '1'
   AI_PLAN_MODE: forfait
   AI_ALLOW_PAID: 'false'
-  AI_GLOBAL_DAILY_CAP: '400'
-  AI_SOFT_STOP_PERCENT: '85'
+  AI_GLOBAL_DAILY_CAP: '80'
+  AI_SOFT_STOP_PERCENT: '60'
+  AI_FORCE_LOCAL: 'true'
+  AI_ALLOW_REMOTE: 'false'
   GMAIL_DIAG_AI_MAX: '0'
   FORUM_AUTO_POST: '0'
   SHADOW_FORUM: '1'
   # P138: Align with Auto-Publish / Auto-Fix (50); prepared dir ~37 MB.
   HOMEY_PUBLISH_MAX_UNCOMPRESSED_MB: "50"
   HOMEY_PUBLISH_SOURCE_MAX_MB: "50"
-  HOMEY_ZIGBEE_MAX_TOTAL_COMBOS: "17000"
+  HOMEY_ZIGBEE_MAX_TOTAL_COMBOS: "20000"
   HOMEY_ZIGBEE_MAX_DRIVER_COMBOS: "10000"
+  AI_ENSEMBLE: 'false'
+  AI_MAP_REDUCE: 'false'
+  AI_FULL_CONTEXT: 'false'
 
 jobs:
   closed-loop:
@@ -313,9 +318,9 @@ jobs:
           fi
           # WHY(P2418): compensate MISSING_PID / incomplete forum+gmail without stalling
           if [ -f tools/ci/compensate-incomplete-reports.js ]; then
-            echo "## Compensate incomplete reports (P2419 hang-proof)" >> $GITHUB_STEP_SUMMARY
+            echo "## 🩹 Compensate incomplete reports (P2419 hang-proof)" >> $GITHUB_STEP_SUMMARY
             COMPENSATE_SKIP_INVESTIGATE=1 COMPENSATE_MAX_MS=45000 \
-            node tools/ci/compensate-incomplete-reports.js --apply-safe --skip-investigate || echo "compensate soft warn"
+              node tools/ci/compensate-incomplete-reports.js --apply-safe --skip-investigate || echo "compensate soft warn"
           fi
           # Settings enrich plan (dry-run — apply only via explicit enrich:settings:apply)
           if [ -f tools/ci/enrich-driver-settings-intelligent.js ]; then
@@ -437,9 +442,13 @@ jobs:
             exit 0
           fi
           node tools/ci/l99-inbox-intelligence-orchestrator.js --quick --skip-scan 2>&1 | tee l99-inbox-enrich.log || echo "L99_INBOX_SOFT_WARN"
+          # WHY(P2529): complementary deep functional — DP/cluster/flow/RX-TX
+          npm run enrich:functional -- --skip-gates 2>&1 | tee deep-functional-enrich.log || echo "P2529_SOFT_WARN"
+          npm run check:p2529 || echo "P2529_GATE_WARN"
           DATE=$(date -u +%F)
           echo "## L99 Inbox Intelligence" >> $GITHUB_STEP_SUMMARY
           head -n 35 "reports/l99-inbox-$DATE/PRIORITY.md" >> $GITHUB_STEP_SUMMARY 2>/dev/null || true
+          head -n 40 "reports/deep-functional-$DATE/FUNCTIONAL_AUDIT.md" >> $GITHUB_STEP_SUMMARY 2>/dev/null || true
 
       - name: 📦 Upload artifacts
         if: always()
@@ -475,18 +484,3 @@ jobs:
             // No PR for scheduled runs - just push to master
             // safe-sync-stable handles the stable-v5 sync separately
             console.log('Loop completed. Changes committed to master.');
-
-
-      - name: "P2529 Deep functional enrich (beyond mfr+pid)"
-        if: always()
-        continue-on-error: true
-        timeout-minutes: 8
-        env:
-          FORUM_AUTO_POST: "0"
-          SHADOW_FORUM: "1"
-        run: |
-          if [ -f tools/ci/deep-functional-enrich-pass.js ]; then
-            npm run enrich:functional -- --skip-gates 2>&1 | tee deep-functional-soft.log || echo "P2529_SOFT_WARN"
-            npm run check:p2529 || echo "P2529_GATE_WARN"
-          fi
-

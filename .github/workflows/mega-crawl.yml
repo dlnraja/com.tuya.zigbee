@@ -4,9 +4,13 @@
 name: 🕷️ Mega Crawler
 
 on:
-  schedule:
-    # Daily at 02:00 UTC (before recurrent-orchestrator at 03:30)
-    - cron: '0 2 * * *'
+  # Cron désactivé 2026-08-04 (audit no-op) : le crawl ne commit rien
+  # (artifacts 7j jamais téléchargés, état perdu à chaque run) et ses sources
+  # sont déjà couvertes avec commits par blakadder-fetch, forum-poll,
+  # gmail-diagnostics et community-inbox. Reste lançable via workflow_dispatch.
+  # schedule:
+  #   # Daily at 02:00 UTC (before recurrent-orchestrator at 03:30)
+  #   - cron: '0 2 * * *'
   workflow_dispatch:
     inputs:
       only:
@@ -46,16 +50,21 @@ jobs:
       GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       GH_PAT: ${{ secrets.GH_PAT }}
       GMAIL_APP_PASSWORD: ${{ secrets.GMAIL_APP_PASSWORD }}
+      # Free reader fallback chain (lib/scraper/reader-fallback.js):
+      # Jina Reader works keyless; FIRECRAWL_API_KEY (optional secret) adds
+      # the Firecrawl tier. SMART_FETCH_READER_FALLBACK=0 disables the chain.
+      FIRECRAWL_API_KEY: ${{ secrets.FIRECRAWL_API_KEY }}
+      SMART_FETCH_READER_FALLBACK: '1'
 
     steps:
       - name: 📥 Checkout
-        uses: actions/checkout@v5
+        uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # v5.1.0
         with:
           fetch-depth: 0
           token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: 📦 Setup Node.js
-        uses: actions/setup-node@v5
+        uses: actions/setup-node@a0853c24544627f65ddf259abe73b1d18a591444 # v5.0.0
         with:
           node-version: ${{ env.NODE_VERSION }}
           cache: npm
@@ -69,7 +78,7 @@ jobs:
       # Subsequent runs use 304 Not Modified for unchanged files → ~1s.
       # P55: also cache the smart-fetch cache (.cache/scraper-cache/)
       - name: 📥 Restore scanner caches
-        uses: actions/cache@v5
+        uses: actions/cache@caa296126883cff596d87d8935842f9db880ef25 # v5.1.0
         with:
           path: |
             .cache/scanner-blobs/
@@ -99,7 +108,7 @@ jobs:
           exit $EXIT
 
       - name: 📦 Upload artifacts
-        uses: actions/upload-artifact@v5
+        uses: actions/upload-artifact@330a01c490aca151604b8cf639adc76d48f6c5d4 # v5.0.0
         if: always()
         with:
           name: mega-crawl-data

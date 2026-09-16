@@ -34,6 +34,9 @@ defaults:
 
 env:
   NODE_VERSION: "22"
+  AI_ENSEMBLE: 'false'
+  AI_MAP_REDUCE: 'false'
+  AI_FULL_CONTEXT: 'false'
 
 jobs:
   maintain:
@@ -42,7 +45,12 @@ jobs:
     timeout-minutes: 30
 
     env:
-      # === AI providers — circular chain (ai-helper.js) ===
+      AI_FORCE_LOCAL: "true"
+      AI_ALLOW_REMOTE: "false"
+      AI_PLAN_MODE: forfait
+      AI_ALLOW_PAID: "false"
+      GMAIL_DIAG_AI_MAX: "0"
+      # === AI providers — circular chain (ai-helper.js) — local-first; keys unused unless AI_ALLOW_REMOTE ===
       GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY || '' }}
       OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY || '' }}
       DEEPSEEK_API_KEY: ${{ secrets.DEEPSEEK_API_KEY || '' }}
@@ -56,12 +64,12 @@ jobs:
 
 
     steps:
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # v5.1.0
         with:
           fetch-depth: 0
           token: ${{ secrets.GH_PAT || secrets.GITHUB_TOKEN }}
 
-      - uses: actions/setup-node@v5
+      - uses: actions/setup-node@a0853c24544627f65ddf259abe73b1d18a591444 # v5.0.0
         with:
           cache: npm
           node-version: ${{ env.NODE_VERSION }}
@@ -200,7 +208,7 @@ jobs:
 
       - name: Upload reports
         if: always()
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@330a01c490aca151604b8cf639adc76d48f6c5d4 # v5.0.0
         with:
           name: driver-maintenance-${{ github.run_number }}
           path: |

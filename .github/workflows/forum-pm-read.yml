@@ -1,0 +1,109 @@
+# Forum PM read-only harvest (T157628)
+# Triggers: cron: 50 7,19 * * * + workflow_dispatch | Secrets: HOMEY_EMAIL, HOMEY_PASSWORD
+# (optional DISCOURSE_API_KEY). NEVER posts. Artifact only.
+# WHY: PMs carry fingerprints / Homey diag UUIDs that public T140352 never shows.
+# HOW: SSO session or Discourse API key → inbox/sent JSON. No POST code path.
+# WHO: CI bot (master). Homey runtime never sees this.
+# WHEN: 07:50 and 19:50 UTC (staggered 30+ min from forum-poll :15 and gmail :00).
+# AGAINST: forum-pm-scanner.js historically drafted replies — this workflow cannot POST.
+
+name: 🔇 Forum PM read-only
+
+on:
+  schedule:
+    # Twice daily, off the :00/:15 herds. Do not collide with forum-poll (2,6,10,14,18,22 :15).
+    - cron: '50 7,19 * * *'
+  workflow_dispatch:
+    inputs:
+      max_threads:
+        description: 'Max private threads to fetch (default 20)'
+        required: false
+        type: string
+        default: '20'
+      dispatch_diag:
+        description: 'Dispatch Tuya Deep Diagnostics for one harvested UUID'
+        required: false
+        type: boolean
+        default: true
+
+permissions:
+  contents: read
+  actions: write
+
+concurrency:
+  group: forum-pm-read
+  cancel-in-progress: true
+
+defaults:
+  run:
+    shell: bash
+
+env:
+  NODE_VERSION: '22'
+  AI_PLAN_MODE: 'forfait'
+  AI_FORCE_LOCAL: 'true'
+  AI_ALLOW_REMOTE: 'false'
+  AI_ALLOW_PAID: 'false'
+  AI_ENSEMBLE: 'false'
+  AI_MAP_REDUCE: 'false'
+  AI_FULL_CONTEXT: 'false'
+  GMAIL_DIAG_AI_MAX: '0'
+
+jobs:
+  harvest:
+    name: Read private messages (no replies)
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # v5.1.0
+
+      - uses: actions/setup-node@a0853c24544627f65ddf259abe73b1d18a591444 # v5.0.0
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: npm
+
+      - name: Install deps
+        run: npm ci --prefer-offline --no-audit || npm install --no-audit
+
+      - name: Harvest inbox (read-only)
+        continue-on-error: true
+        env:
+          HOMEY_EMAIL: ${{ secrets.HOMEY_EMAIL }}
+          HOMEY_PASSWORD: ${{ secrets.HOMEY_PASSWORD }}
+          DISCOURSE_API_KEY: ${{ secrets.DISCOURSE_API_KEY }}
+          DISCOURSE_USERNAME: dlnraja
+          FORUM_USERNAME: dlnraja
+          FORUM_AUTO_POST: '0'
+          DRY_RUN: 'true'
+          FORUM_PM_MAX_THREADS: ${{ inputs.max_threads || '20' }}
+        run: |
+          echo "## 🔇 Forum PM read-only" >> "$GITHUB_STEP_SUMMARY"
+          if [ -z "$HOMEY_EMAIL" ] && [ -z "$DISCOURSE_API_KEY" ]; then
+            echo "No HOMEY_EMAIL or DISCOURSE_API_KEY — skip"
+            exit 0
+          fi
+          node tools/ci/forum-pm-read-only.js
+
+      - name: Dispatch deep-diag for one PM UUID
+        if: always()
+        continue-on-error: true
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          FORUM_AUTO_POST: '0'
+          FORUM_PM_DISPATCH_DIAG: ${{ github.event_name == 'workflow_dispatch' && github.event.inputs.dispatch_diag == 'false' && '0' || '1' }}
+        run: |
+          if [ ! -f tools/ci/forum-dispatch-diag-if-new.js ]; then
+            echo "forum-dispatch-diag-if-new.js missing — skip"
+            exit 0
+          fi
+          node tools/ci/forum-dispatch-diag-if-new.js
+
+      - name: Upload redacted artifact
+        if: always()
+        uses: actions/upload-artifact@330a01c490aca151604b8cf639adc76d48f6c5d4 # v5.0.0
+        with:
+          name: forum-pm-read-only
+          path: .github/state/forum/pm-inbox.json
+          if-no-files-found: warn
+          retention-days: 7
