@@ -3350,5 +3350,8 @@
   },
   "9.0.962": {
     "en": "Hardened radar DP ownership (cap vs capability) so lux/presence RX and presence flow edges stay correct."
+  },
+  "9.0.963": {
+    "en": "Deep functional enrich in all inbox workflows — DP, clusters, flows and RX/TX audited beyond fingerprint locks."
   }
 }

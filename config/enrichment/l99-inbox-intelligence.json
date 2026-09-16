@@ -10,7 +10,7 @@
     "comment": "Orchestrator runs soft phases; workflows cron + forum-poll/auto-enrich hooks",
     "pourQui": "CI bots + maintainers; Homey users via silent code/publish only",
     "quand": "Cron ~every 4h after forum-poll; workflow_dispatch; optional quick mode",
-    "contreQuoi": "Fragmented manual L99 passes; forum AI paste; Cartesian mfs --apply; inventing pids"
+    "contreQuoi": "Fragmented manual L99 passes; forum AI paste; Cartesian mfs --apply; inventing pids; mfr+pid-only shallow closes (P2529)"
   },
   "shadowEnv": {
     "FORUM_AUTO_POST": "0",
@@ -22,9 +22,9 @@
     "GMAIL_DIAG_AI_MAX": "0"
   },
   "phases": {
-    "full": ["guard", "github", "gmail", "forum", "drivers", "prioritize", "docs", "gates"],
-    "quick": ["guard", "github", "forum", "prioritize", "docs", "gates"],
-    "githubOnly": ["guard", "github", "prioritize", "docs"]
+    "full": ["guard", "github", "gmail", "forum", "drivers", "functionalDeep", "prioritize", "docs", "gates"],
+    "quick": ["guard", "github", "forum", "functionalDeep", "prioritize", "docs", "gates"],
+    "githubOnly": ["guard", "github", "functionalDeep", "prioritize", "docs"]
   },
   "scripts": {
     "forumSilent": "tools/ci/forum-silent-multi-scan.js",
@@ -36,7 +36,8 @@
     "alignMfs": "tools/ci/align-mfs-db-intelligent.js",
     "sacredCouple": "tools/ci/p2138-sacred-couple-matrix-gate.js",
     "l99Dual": "tools/ci/l99-dual-app-enrich-gates.js",
-    "silentEnrich": "tools/ci/silent-enrichment-orchestrator.js"
+    "silentEnrich": "tools/ci/silent-enrichment-orchestrator.js",
+    "functionalDeep": "tools/ci/deep-functional-enrich-pass.js"
   },
   "outputs": {
     "stateDir": ".github/state/l99-inbox-intelligence",
@@ -60,6 +61,12 @@
     "forumCodeFix": 75,
     "forumNeedDiag": 40,
     "mfsHighDrift": 85,
-    "openPr": 50
+    "openPr": 50,
+    "functionalDeepGap": 88
+  },
+  "deepFunctional": {
+    "enabled": true,
+    "patch": "P2529",
+    "note": "Never stop at mfr+pid — DP/cluster/flow/RX-TX complementary audit"
   }
 }

@@ -75,6 +75,27 @@ jobs:
           if [ -n "$ISSUE" ]; then ARGS+=(--issue="$ISSUE"); fi
           node tools/ci/auto-bot-issue-triage.js "${ARGS[@]}"
 
+      - name: "P2529 Deep functional enrich (GitHub issues → DP/flow/RX-TX)"
+        continue-on-error: true
+        timeout-minutes: 8
+        env:
+          FORUM_AUTO_POST: '0'
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          if [ -f tools/ci/deep-functional-enrich-pass.js ]; then
+            # Harvest open issues into L99 github cache when possible, then depth-audit
+            if [ -f tools/ci/l99-inbox-intelligence-orchestrator.js ]; then
+              node tools/ci/l99-inbox-intelligence-orchestrator.js --phase=github --skip-scan || echo "l99-github soft warn"
+            fi
+            npm run enrich:functional -- --skip-gates 2>&1 | tee deep-functional-bot-triage.log || echo "P2529_SOFT_WARN"
+            npm run check:p2529 || echo "P2529_GATE_WARN"
+            DATE=$(date -u +%Y-%m-%d)
+            if [ -f "reports/deep-functional-$DATE/FUNCTIONAL_AUDIT.md" ]; then
+              echo "### P2529 functional audit" >> "$GITHUB_STEP_SUMMARY"
+              head -n 40 "reports/deep-functional-$DATE/FUNCTIONAL_AUDIT.md" >> "$GITHUB_STEP_SUMMARY" || true
+            fi
+          fi
+
       - name: Commit candidate state
         continue-on-error: true
         if: always() && (inputs.dry_run != true)

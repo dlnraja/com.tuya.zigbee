@@ -127,6 +127,19 @@ jobs:
             head -n 40 "reports/l99-inbox-$DATE/PRIORITY.md" >> "$GITHUB_STEP_SUMMARY" || true
           fi
 
+      # WHY(P2529): complementary deep functional pass — DP/cluster/flow/RX-TX not mfr+pid only
+      - name: P2529 deep functional enrich (soft)
+        continue-on-error: true
+        timeout-minutes: 8
+        run: |
+          npm run enrich:functional -- --skip-gates 2>&1 | tee deep-functional.log || echo "P2529_SOFT_WARN"
+          npm run check:p2529 || echo "P2529_GATE_WARN"
+          DATE=$(date -u +%F)
+          if [ -f "reports/deep-functional-$DATE/FUNCTIONAL_AUDIT.md" ]; then
+            echo "### P2529 Functional audit (head)" >> "$GITHUB_STEP_SUMMARY"
+            head -n 50 "reports/deep-functional-$DATE/FUNCTIONAL_AUDIT.md" >> "$GITHUB_STEP_SUMMARY" || true
+          fi
+
       - name: Compensate incomplete reports (P2418)
         if: always()
         continue-on-error: true

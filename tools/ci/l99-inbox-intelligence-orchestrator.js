@@ -130,7 +130,8 @@ async function harvestGithub(cfg) {
           updatedAt: x.updated_at,
           user: x.user && x.user.login,
           htmlUrl: x.html_url,
-          bodySnippet: String(x.body || '').slice(0, 280),
+          // WHY(P2529): 280 chars truncates before mfr+pid / DP tables — depth pass needs couple+clusters
+          bodySnippet: String(x.body || '').slice(0, 4500),
         }));
     }
     if (pRes.status === 200 && Array.isArray(pRes.json)) {
@@ -245,7 +246,7 @@ function scoreItems({ github, forum, gmail, mfs, cfg }) {
         source: 'forum',
         id: 'forum-need-action',
         title: `${need} forum posts needAction (shadow processor)`,
-        action: 'enrich:investigate + lock mfr+pid only',
+        action: 'enrich:investigate + deep-functional (DP/cluster/flow/RX-TX, not mfr+pid only)',
         forumReply: 'NEVER',
       });
     }
@@ -284,6 +285,7 @@ function writePriorityMd(reportDir, summary) {
     '',
     'Silent only. **Never** Homey forum POST / PM / AI paste (T157628).',
     'Lock **manufacturerName + productId** only. Never invent pid. Dual-app: BOTH | MASTER_ONLY | STABLE_ONLY.',
+    '**P2529:** also audit DP / clusters / flow wire / RX-TX (not couple-lock only).',
     '',
     `Generated: **${summary.generatedAt}** · Mode: \`${summary.mode}\``,
     '',
@@ -296,6 +298,7 @@ function writePriorityMd(reportDir, summary) {
     `| Forum needAction | ${summary.forum?.totals?.needAction ?? 'n/a'} |`,
     `| Gmail crash state | ${summary.gmail ? 'present' : 'absent'} |`,
     `| mfs high drift | ${summary.mfs?.high ?? 0} |`,
+    `| Deep functional | ${summary.functionalDeep ? 'ran' : 'n/a'} (P2529) |`,
     '',
     '## Priority queue (intelligent)',
     '',
@@ -315,7 +318,8 @@ function writePriorityMd(reportDir, summary) {
     '## Doctrine',
     '',
     '- Publish = Homey App Store Test (Auto-Publish). Do not post = no Community replies.',
-    '- See `docs/architecture/L99_INBOX_INTELLIGENCE.md` + `docs/knowledge/DEVICE_TRUTH.md`.',
+    '- P2529 deep functional: DP / cluster / flow wire / RX-TX — complementary (P2520).',
+    '- See `docs/architecture/L99_INBOX_INTELLIGENCE.md` + `docs/rules/DEEP_FUNCTIONAL_ENRICH.md`.',
     '',
   );
   const fp = path.join(reportDir, 'PRIORITY.md');
@@ -338,13 +342,14 @@ function updateDocsPointer(cfg, summary) {
 | **Comment** | \`npm run inbox:l99\` → \`tools/ci/l99-inbox-intelligence-orchestrator.js\` + GHA \`l99-inbox-intelligence.yml\` |
 | **Pour qui** | CI + maintainers; users only via silent code / Homey Test publish |
 | **Quand** | Cron every 4h (after forum-poll :45), \`workflow_dispatch\`, hooks from forum-poll / auto-enrich |
-| **Contre quoi** | Forum AI paste, inventing productIds, blind \`align-mfs --apply\`, Stable overwrite of master Test |
+| **Contre quoi** | Forum AI paste, inventing productIds, blind \`align-mfs --apply\`, Stable overwrite of master Test, **mfr+pid-only shallow closes (P2529)** |
 
 ## Shadow rules
 
 - \`FORUM_AUTO_POST=0\` · \`SHADOW_FORUM=1\` · \`DISCOURSE_WRITE=0\`
 - Never invent \`productId\`. Sacred couple = manufacturerName + productId.
 - Cartesian multi-gang registry locks are refused (P2351).
+- **P2529:** every item also audits DP / clusters / flow wire / RX-TX (complementary).
 
 ## Latest snapshot
 
@@ -450,6 +455,24 @@ async function main() {
         durationMs: Date.now() - t0,
         mfs: summary.mfs,
         sacredOk: sacred.ok,
+      });
+      continue;
+    }
+
+    if (name === 'functionalDeep') {
+      // WHY(P2529): force DP/cluster/flow/RX-TX audit — never mfr+pid-only inbox
+      const deep = runNode(
+        cfg.scripts.functionalDeep || 'tools/ci/deep-functional-enrich-pass.js',
+        ['--skip-gates'],
+        shadowEnv,
+        120000,
+      );
+      summary.functionalDeep = { ok: deep.ok || deep.skipped, durationMs: deep.durationMs };
+      summary.phases.push({
+        name,
+        ok: deep.ok || deep.skipped,
+        durationMs: Date.now() - t0,
+        note: 'P2529 complementary deep functional (soft)',
       });
       continue;
     }

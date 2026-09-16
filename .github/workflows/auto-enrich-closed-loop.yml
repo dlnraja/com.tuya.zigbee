@@ -439,9 +439,13 @@ jobs:
             exit 0
           fi
           node tools/ci/l99-inbox-intelligence-orchestrator.js --quick --skip-scan 2>&1 | tee l99-inbox-enrich.log || echo "L99_INBOX_SOFT_WARN"
+          # WHY(P2529): complementary deep functional — DP/cluster/flow/RX-TX
+          npm run enrich:functional -- --skip-gates 2>&1 | tee deep-functional-enrich.log || echo "P2529_SOFT_WARN"
+          npm run check:p2529 || echo "P2529_GATE_WARN"
           DATE=$(date -u +%F)
           echo "## L99 Inbox Intelligence" >> $GITHUB_STEP_SUMMARY
           head -n 35 "reports/l99-inbox-$DATE/PRIORITY.md" >> $GITHUB_STEP_SUMMARY 2>/dev/null || true
+          head -n 40 "reports/deep-functional-$DATE/FUNCTIONAL_AUDIT.md" >> $GITHUB_STEP_SUMMARY 2>/dev/null || true
 
       - name: 📦 Upload artifacts
         if: always()

@@ -1,6 +1,6 @@
 # L99 Inbox Intelligence (P2352)
 
-> Auto-maintained pointer. Last run: **2026-09-16T08:54:30.120Z** (`full`).
+> Auto-maintained pointer. Last run: **2026-09-16T11:44:08.339Z** (`githubOnly`).
 
 ## Pourquoi / Comment / Pour qui / Quand / Contre quoi
 
@@ -10,13 +10,14 @@
 | **Comment** | `npm run inbox:l99` → `tools/ci/l99-inbox-intelligence-orchestrator.js` + GHA `l99-inbox-intelligence.yml` |
 | **Pour qui** | CI + maintainers; users only via silent code / Homey Test publish |
 | **Quand** | Cron every 4h (after forum-poll :45), `workflow_dispatch`, hooks from forum-poll / auto-enrich |
-| **Contre quoi** | Forum AI paste, inventing productIds, blind `align-mfs --apply`, Stable overwrite of master Test |
+| **Contre quoi** | Forum AI paste, inventing productIds, blind `align-mfs --apply`, Stable overwrite of master Test, **mfr+pid-only shallow closes (P2529)** |
 
 ## Shadow rules
 
 - `FORUM_AUTO_POST=0` · `SHADOW_FORUM=1` · `DISCOURSE_WRITE=0`
 - Never invent `productId`. Sacred couple = manufacturerName + productId.
 - Cartesian multi-gang registry locks are refused (P2351).
+- **P2529:** every item also audits DP / clusters / flow wire / RX-TX (complementary).
 
 ## Latest snapshot
 
@@ -24,7 +25,7 @@
 |---------|-------|
 | Open issues | 3 |
 | Open PRs | 0 |
-| Forum needAction | 52 |
+| Forum needAction | n/a |
 | Top priority | #533 (90) |
 | Report | `reports/l99-inbox-2026-09-16/PRIORITY.md` |
 
