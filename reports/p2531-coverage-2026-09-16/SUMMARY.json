@@ -1,0 +1,200 @@
+{
+  "id": "P2531",
+  "generatedAt": "2026-09-16T14:24:50.589Z",
+  "mode": "apply",
+  "crawl": true,
+  "phases": [
+    {
+      "label": "forum-silent-scan",
+      "ok": true,
+      "hardOk": true,
+      "exitCode": 0,
+      "durationMs": 39999,
+      "tail": "... ok scanned=80 actionable=8 newFP=0\nTopic 21313 (tuya-cloud)... ok scanned=80 actionable=7 newFP=0\nTopic 156053 (tuya-unknown-gang-switches)... ok scanned=14 actionable=7 newFP=0\nTopic 156792 (tuya-finger-bot)... ok scanned=5 actionable=0 newFP=0\nTopic 149230 (tuya-garage-door)... ok scanned=4 actionable=0 newFP=0\nTopic 155212 (zemismart-energy-meters)... ok scanned=25 actionable=3 newFP=0\nTopic 154092 (zemismart-hello)... ok scanned=44 actionable=11 newFP=1\nTopic 156967 (moes-official)... ok scanned=80 actionable=48 newFP=0\nTopic 150690 (relax-moes-zigbee)... ok scanned=39 actionable=21 newFP=0\nTopic 99614 (nous-energy)... ok scanned=80 actionable=14 newFP=0\nTopic 158754 (tuya-raindetector-pair)... ok scanned=6 actionable=0 newFP=0\nTopic 158757 (moes-presence-settings)... ok scanned=10 actionable=3 newFP=0\nTopic 120477 (rainsensor-solar-tuya)... ok scanned=15 actionable=2 newFP=0\nTopic 146667 (hobeian-zg303z-soil)... ok scanned=25 actionable=12 newFP=0\n\nDigest: C:\\Users\\Dell\\Documents\\homey\\master\\.github\\state\\forum\\multi-silent-digest.json\nNew FPs: C:\\Users\\Dell\\Documents\\homey\\master\\.github\\state\\forum\\multi-silent-new-fps.json (1)\nPolicy: no forum replies from this script."
+    },
+    {
+      "label": "forum-process",
+      "ok": true,
+      "hardOk": true,
+      "exitCode": 0,
+      "durationMs": 3627,
+      "tail": "ort: C:\\Users\\Dell\\Documents\\homey\\master\\reports\\forum-verify-2026-09-16\\PROCESS.md\n\n=== Top actionable (silent enrichment) ===\n T158757 #10 @Gabriel_Pedrosa_Mach | BOTH | code-fix-stable-candidate | dimmer,gang,button,flow,rejoin,timeout,battery\n T158757 #1 @A_Tas | MASTER_ONLY | request-diag-couple | _TZ3218_T9YNFZ4X→MISSING_PID\n T157859 #16 @Pascal_Nohl | BOTH | code-fix-stable-candidate | battery\n T157859 #11 @Pascal_Nohl | BOTH | code-fix-stable-candidate | unavailable,battery\n T156967 #38 @SunBeech | BOTH | code-fix-stable-candidate | battery\n T156967 #26 @SunBeech | BOTH | code-fix-stable-candidate | _TZ3000_4UPL1FCJ+TS0041→LOCKED_OK\n T154092 #19 @Zemismart_Official | BOTH | code-fix-stable-candidate | battery\n T154092 #18 @Michael_Hadjicosta | BOTH | code-fix-stable-candidate | battery\n T154092 #11 @Zemismart_Official | BOTH | reject-invent-fp | _TZE28C100000_RZDKN5RX+TS0601→DO_NOT_LOCK\n T154092 #10 @Michael_Hadjicosta | BOTH | reject-invent-fp | _TZE28C100000_RZDKN5RX+TS0601→DO_NOT_LOCK\n T150690 #34 @Primordial | REVIEW | request-diag-couple | _TZ3000_KFU8ZAPD→MISSING_PID\n T150690 #33 @Graeme_Hindmarsh | BOTH | code-fix-stable-candidate | _TZ3000_KFU8ZAPD+TS0044→LOCKED_OK"
+    },
+    {
+      "label": "forum-media",
+      "ok": true,
+      "hardOk": true,
+      "exitCode": 0,
+      "durationMs": 7152,
+      "tail": "=== Forum MEDIA deep scan (silent) ===\nTopic 140352... ok scanned=40 rich=26\nTopic 26439... ok scanned=40 rich=15\nTopic 89271... ok scanned=40 rich=27\n\nWrote C:\\Users\\Dell\\Documents\\homey\\master\\.github\\state\\forum\\forum-media-deep.json\nGaps (missing mfr in drivers): 0\nMulti-driver collisions mentioned: 12"
+    },
+    {
+      "label": "mega-z2m",
+      "ok": true,
+      "hardOk": true,
+      "exitCode": 0,
+      "durationMs": 23286,
+      "tail": "=== Mega Crawler (P53) ===\nCrawlers to run: 1\n  - z2m · Zigbee2MQTT converters\nMode: PARALLEL (workers=4)\n  [z2m] running... OK (22052ms, 13 lines)\n\n=== SUMMARY ===\nTotal    : 1\nOK       : 1\nSkipped  : 0\nFailed   : 0\nDuration : 22.1s\nReport   : C:\\Users\\Dell\\Documents\\homey\\master\\.github\\state\\mega-crawl\\report.json"
+    },
+    {
+      "label": "mega-zha",
+      "ok": true,
+      "hardOk": false,
+      "exitCode": 1,
+      "durationMs": 181048,
+      "tail": "=== Mega Crawler (P53) ===\nCrawlers to run: 1\n  - zha · ZHA device handlers\nMode: PARALLEL (workers=4)\n  [zha] running... FAILED (180038ms): spawnSync C:\\WINDOWS\\system32\\cmd.exe ETIMEDOUT\n\n=== SUMMARY ===\nTotal    : 1\nOK       : 0\nSkipped  : 0\nFailed   : 1\nDuration : 180.0s\nReport   : C:\\Users\\Dell\\Documents\\homey\\master\\.github\\state\\mega-crawl\\report.json\n\n=== FAILED ===\n  zha: spawnSync C:\\WINDOWS\\system32\\cmd.exe ETIMEDOUT"
+    },
+    {
+      "label": "mega-blakadder",
+      "ok": true,
+      "hardOk": true,
+      "exitCode": 0,
+      "durationMs": 886,
+      "tail": "=== Mega Crawler (P53) ===\nCrawlers to run: 1\n  - blakadder · zigbee.blakadder.com\nMode: PARALLEL (workers=4)\n  [blakadder] running... OK (672ms, 7 lines)\n\n=== SUMMARY ===\nTotal    : 1\nOK       : 1\nSkipped  : 0\nFailed   : 0\nDuration : 0.7s\nReport   : C:\\Users\\Dell\\Documents\\homey\\master\\.github\\state\\mega-crawl\\report.json"
+    },
+    {
+      "label": "mega-deconz",
+      "ok": true,
+      "hardOk": true,
+      "exitCode": 0,
+      "durationMs": 762,
+      "tail": "=== Mega Crawler (P53) ===\nCrawlers to run: 1\n  - deconz · deCONZ device DB\nMode: PARALLEL (workers=4)\n  [deconz] running... OK (462ms, 3 lines)\n\n=== SUMMARY ===\nTotal    : 1\nOK       : 1\nSkipped  : 0\nFailed   : 0\nDuration : 0.5s\nReport   : C:\\Users\\Dell\\Documents\\homey\\master\\.github\\state\\mega-crawl\\report.json"
+    },
+    {
+      "label": "source-diff",
+      "ok": true,
+      "hardOk": true,
+      "exitCode": 0,
+      "durationMs": 11215,
+      "tail": "[source-diff] mode=apply project=3ad5fa901b709cea changed=true\n  skip=3 crawl=6 blocked=false\n  z2m: crawl-stale — TTL expired or hash drift\n  zha: crawl-missing — no state file\n  blakadder: crawl-missing — no state file\n  deconz: crawl-missing — no state file\n  johan: skip-unavailable — secrets missing: GH_PAT\n  forum: skip-unavailable — secrets missing: DISCOURSE_API_KEY\n  gmail: skip-unavailable — secrets missing: GMAIL_EMAIL, GMAIL_APP_PASSWORD\n  cross-ref: run-local — local script stale or forced\n  flow-fleet: run-local — local script stale or forced\n  run z2m: OK\n  run zha: OK\n  run blakadder: OK\n  run deconz: OK\n  run cross-ref: OK\n  run flow-fleet: OK\n  manifest → C:\\Users\\Dell\\Documents\\homey\\master\\.github\\state\\intelligent-source-manifest.json"
+    },
+    {
+      "label": "cross-ref-all",
+      "ok": true,
+      "hardOk": true,
+      "exitCode": 0,
+      "durationMs": 5305,
+      "tail": "TS0601 (driverHint: device_plug_energy)\n  _TZ3000_402vrq2i + TS0601 (driverHint: switch_4_gang_metering)\n  _TZ3000_4ugnzsli + TS0601 (driverHint: sensor_contact_zigbee)\n  _TZ3000_5k5vh43t + TS0601 (driverHint: zigbee_repeater)\n\nMarket-new (external sources, not in driver.compose): 114\n  _TZ1800_akzvkzqq + TS0211 (mfs_db,z2m)\n  _TZ1800_ladpngdx + TS0211 (mfs_db,z2m)\n  _TZ3000_00mk2xzy + TS011F (z2m,interview)\n  _TZ3000_5af5r192 + TS0049 (mfs_db,z2m)\n  _TZ3000_6dwfra5l + SMD9300 (mfs_db,z2m)\n  _TZ3000_85czd6fy + TS0207 (mfs_db,blakadder)\n  _TZ3000_aaifmpuq + TS0002 (z2m)\n  _TZ3000_air9m6af + TS011F (z2m)\n  _TZ3000_bumeauzp + SMD9300 (mfs_db,z2m)\n  _TZ3000_c8bqthpo + TS0207 (mfs_db,z2m)\n  _TZ3000_decxrtwa + TS0041 (gmail-crash)\n  _TZ3000_fa9mlvja + TS0041 (mfs_db,blakadder,z2m)\n  _TZ3000_gazjngjl + TS011F (z2m)\n  _TZ3000_hgm6k8ku + TS0207 (mfs_db,z2m)\n  _TZ3000_huvxrx4i + TS0002 (z2m)\n  _TZ3000_irrmjcgi + TS0002 (z2m)\n  _TZ3000_j0ktmul1 + TS011F (z2m)\n  _TZ3000_j6adk9id + TS0222 (z2m)\n  _TZ3000_ja5osu5g + ZG-101ZE (johan-issue,mfs_db)\n  _TZ3000_ja5osu5g + ZG-103ZL (interview)\n\nSaved summary to .github/state/mfr-pid-cross-ref.json\nSaved all pairs to .github/state/all-mfr-pid-pairs.json"
+    },
+    {
+      "label": "fleet-intelligent",
+      "ok": true,
+      "hardOk": true,
+      "exitCode": 0,
+      "durationMs": 348323,
+      "tail": "y\n[fleet-enrich] ✓ button-flow-harvest-apply\n[fleet-enrich] ▶ case-variants\n[fleet-enrich] ✓ case-variants\n[fleet-enrich] ▶ prune-fp-collision\n[fleet-enrich] ✓ prune-fp-collision\n[fleet-enrich] ▶ re-inject-sacred-strips\n[fleet-enrich] ✓ re-inject-sacred-strips\n[fleet-enrich] ▶ strip-registry-forbidden\n[fleet-enrich] ✓ strip-registry-forbidden\n[fleet-enrich] ▶ master-automation-fix\n[fleet-enrich] ✓ master-automation-fix\n[fleet-enrich] ▶ sync-enrichment-profiles\n[fleet-enrich] ✓ sync-enrichment-profiles\n[fleet-enrich] ▶ sacred-couple-gate\n[fleet-enrich] ✓ sacred-couple-gate\n[fleet-enrich] ▶ p2519-anti-overwrite\n[fleet-enrich] ✓ p2519-anti-overwrite\n[fleet-enrich] ▶ anti-bot-gate\n[fleet-enrich] ✓ anti-bot-gate\n[fleet-enrich] ▶ fp-collision-check\n[fleet-enrich] ✓ fp-collision-check\n[fleet-enrich] ▶ flow-l99\n[fleet-enrich] ✗ flow-l99\n[fleet-enrich] Report → C:\\Users\\Dell\\Documents\\homey\\master\\reports\\fleet-enrich-2026-09-16\n{\n  \"ok\": true,\n  \"baseline\": {\n    \"driverCount\": 431,\n    \"mfrEntries\": 14639,\n    \"pidEntries\": 3019\n  },\n  \"final\": {\n    \"driverCount\": 431,\n    \"mfrEntries\": 15601,\n    \"pidEntries\": 3019\n  },\n  \"delta\": {\n    \"drivers\": 0,\n    \"mfrs\": 962,\n    \"pids\": 0\n  }\n}"
+    },
+    {
+      "label": "multi-source",
+      "ok": true,
+      "hardOk": true,
+      "exitCode": 0,
+      "durationMs": 86574,
+      "tail": "[multi-source] ▶ 5-sacred-lot3\n[multi-source] ✓ 5-sacred-lot3 (12.5s)\n[multi-source] ▶ 6-blakadder-new\n[multi-source] ✓ 6-blakadder-new (0.2s)\n[multi-source] ▶ 6b-market-couples-intake\n[multi-source] ✓ 6b-market-couples-intake (6.5s)\n[multi-source] ▶ 6c-market-couples-apply\n[multi-source] ✓ 6c-market-couples-apply (2.3s)\n[multi-source] ▶ 7-infer-enrich-dry\n[multi-source] ✓ 7-infer-enrich-dry (8.5s)\n[multi-source] ▶ 8-sacred-couple-dry-gate\n[multi-source] ✓ 8-sacred-couple-dry-gate (12.8s)\n[multi-source] ▶ 9-collision-resolve-dry\n[multi-source] ✓ 9-collision-resolve-dry (2.1s)\n[multi-source] ▶ 10-case-variants\n[multi-source] ✓ 10-case-variants (1.0s)\n[multi-source] ▶ 10b-cross-project-reimpl-gate\n[multi-source] ✓ 10b-cross-project-reimpl-gate (0.2s)\n[multi-source] ▶ 10c-dual-claim-compose-gate\n[multi-source] ✓ 10c-dual-claim-compose-gate (0.5s)\n[multi-source] ▶ 10d-align-mfs-db-intelligent-check\n[multi-source] ✓ 10d-align-mfs-db-intelligent-check (5.5s)\n[multi-source] ▶ 11-coverage-snapshot\n[multi-source] ✓ 11-coverage-snapshot (0.2s)\n[multi-source] Report → C:\\Users\\Dell\\Documents\\homey\\master\\.github\\state\\multi-source\\enrich-report.json\n[multi-source] Mode=apply phases=18 ok=true"
+    },
+    {
+      "label": "variants-recent",
+      "ok": true,
+      "hardOk": true,
+      "exitCode": 0,
+      "durationMs": 679,
+      "tail": "[P2530] APPLY → C:\\Users\\Dell\\Documents\\homey\\master\\reports\\variant-complete-2026-09-16\n  touched drivers: curtain_motor, wall_curtain_switch, presence_sensor_radar, wall_dimmer_tuya, valve_dual_irrigation, soil_sensor, din_rail_meter, contact_sensor_zigbee, button_wireless_1, scene_switch_4, smart_knob, button_wireless_4, water_leak_sensor, wall_switch_4gang_1way, plug_energy_monitor, din_rail_switch, switch_2gang, switch_1gang, bed_sensor\n  curtain_motor: seeds=10 capGaps=ok\n  wall_curtain_switch: seeds=1 capGaps=ok\n  presence_sensor_radar: seeds=5 capGaps=ok\n  wall_dimmer_tuya: seeds=1 capGaps=ok\n  valve_dual_irrigation: seeds=1 capGaps=ok\n  soil_sensor: seeds=1 capGaps=ok\n  din_rail_meter: seeds=1 capGaps=ok\n  contact_sensor_zigbee: seeds=1 capGaps=ok\n  button_wireless_1: seeds=2 capGaps=ok\n  scene_switch_4: seeds=1 capGaps=ok\n  smart_knob: seeds=6 capGaps=ok\n  button_wireless_4: seeds=3 capGaps=ok\n  water_leak_sensor: seeds=1 capGaps=ok\n  wall_switch_4gang_1way: seeds=1 capGaps=ok\n  plug_energy_monitor: seeds=2 capGaps=ok\n  din_rail_switch: seeds=1 capGaps=ok\n  switch_2gang: seeds=2 capGaps=ok\n  switch_1gang: seeds=1 capGaps=ok\n  bed_sensor: seeds=1 capGaps=alarm_motion"
+    },
+    {
+      "label": "deep-functional",
+      "ok": true,
+      "hardOk": true,
+      "exitCode": 0,
+      "durationMs": 1255,
+      "tail": "[P2529] deep functional pass\n  rows= 44\n  report= C:\\Users\\Dell\\Documents\\homey\\master\\reports\\deep-functional-2026-09-16\\FUNCTIONAL_AUDIT.md\n  gate gates: ok"
+    },
+    {
+      "label": "case-variants",
+      "ok": true,
+      "hardOk": true,
+      "exitCode": 0,
+      "durationMs": 1093,
+      "tail": "═══════════════════════════════════════════════\n  Ensure Homey case variants (P99)\n  root: C:\\Users\\Dell\\Documents\\homey\\master\n  mode: APPLY\n═══════════════════════════════════════════════\nDrivers needing variants: 19\nVariants to add: 1328\n  · bed_sensor: +6 (was 6 → 12)\n  · button_wireless_1: +26 (was 26 → 52)\n  · button_wireless_4: +37 (was 34 → 71)\n  · contact_sensor_zigbee: +3 (was 3 → 6)\n  · curtain_motor: +268 (was 241 → 509)\n  · din_rail_meter: +14 (was 13 → 27)\n  · din_rail_switch: +11 (was 11 → 22)\n  · plug_energy_monitor: +47 (was 47 → 94)\n  · presence_sensor_radar: +211 (was 211 → 422)\n  · scene_switch_4: +13 (was 13 → 26)\n  · smart_knob: +10 (was 10 → 20)\n  · soil_sensor: +55 (was 55 → 110)\n═══════════════════════════════════════════════"
+    },
+    {
+      "label": "strip-forbidden",
+      "ok": true,
+      "hardOk": true,
+      "exitCode": 0,
+      "durationMs": 73254,
+      "tail": "{\n  \"mode\": \"apply\",\n  \"compose\": [],\n  \"app\": {\n    \"changed\": 0\n  },\n  \"mfs\": {\n    \"scrubbed\": 0\n  }\n}"
+    },
+    {
+      "label": "re-inject-sacred",
+      "ok": true,
+      "hardOk": true,
+      "exitCode": 0,
+      "durationMs": 1823,
+      "tail": "wall_switch_3gang_1way\n  ~ p80-orphan-switch-wireless: skip _TZE200_RJXQSO4A — already claimed by co_sensor\n  ~ p80-orphan-switch-wireless: skip _TZE200_IKVNCLUO — already claimed by presence_sensor_radar\n  ~ p80-orphan-temphumidsensor5: skip _TYZB01_HJSGDKFL — already claimed by lcdtemphumidsensor\n  ~ p80-orphan-valvecontroller: skip _TZ3000_hyarhbyx — already claimed by switch_1gang\n  ~ p80-orphan-valvecontroller: skip _TZ3000_gjrubzje — already claimed by switch_1gang\n  ~ p80-orphan-wall-switch-5-gang-tuya: skip _TZE200_7TDTQGWV — already claimed by switch_1gang\n  ~ p80-orphan-wall-switch-5-gang-tuya: skip _TYZB01_QEQVMVTI — already claimed by switch_1gang\n  ~ p80-orphan-wall-switch-5-gang-tuya: skip _TZ3000_aetquff4 — already claimed by switch_1gang\n  ~ p80-orphan-wall-switch-5-gang-tuya: skip _TZ3000_hafsqare — already claimed by switch_1gang\n  ✅ p217-wing-climate-zth (P217 Johan #1429/#1422: Wing ZTH11/ZTH13 climate — keep pids at top (combo compact)): +0 / -0 from source 'p217-johan-1429'\n  ✅ p2487-tz3290-ir-blaster (P2487: TZ3290 UFO/ZS06 couples belong on ir_blaster (not virtual ir_remote)): +0 / -0 from source 'p2487-intelligent-ir'\n\nApplied: 2/71 manual fixes re-injected"
+    },
+    {
+      "label": "dimmer-fw-sync",
+      "ok": true,
+      "hardOk": true,
+      "exitCode": 0,
+      "durationMs": 273,
+      "tail": "C:\\Users\\Dell\\Documents\\homey\\master firmware mfr= _tz3210_ngqk6jia\nC:\\Users\\Dell\\Documents\\homey\\stable firmware mfr= _tz3210_ngqk6jia"
+    },
+    {
+      "label": "gate-p2138",
+      "ok": true,
+      "hardOk": true,
+      "exitCode": 0,
+      "durationMs": 741,
+      "tail": "0207.driver === null (water vs repeater vs rain)\n  ✅ PRODUCT_ID_DEFAULTS.TS011F.driver === null (plug vs DIN vs strip)\n  ✅ compound _TZ3000_k4ej3ww2+TS0207 → water_leak_sensor\n  ✅ compound _TZ3000_5k5vh43t+TS0207 → zigbee_repeater\n  ✅ compound _TZ3000_okaz9tjs+TS011F → plug_energy_monitor\n  ✅ compound _TZE284_nt4pquef+TS0601 → soil_sensor\n  ✅ compound _TZE284_6ocnqlhn+TS0601 → din_rail_meter\n  ✅ compound _TZ3000_mrpevh8p+TS0041 → button_wireless_1\n  ✅ compound _TZ3000_zgyzgdua+TS0044 → scene_switch_4\n  ✅ compound _TZ3000_kfu8zapd+TS0044 → button_wireless_4\n  ✅ compound _TZ3000_xabckq1v+TS004F → button_wireless_4\n  ✅ compound _TZ3000_4upl1fcj+TS0041 → button_wireless_1\n  ✅ compound _TZ3000_qeuvnohg+TS011F → din_rail_switch\n  ✅ compound HOBEIAN+3315-S → water_leak_sensor\n  ✅ wall_dimmer_tuya compose lists m1cvyneb\n  ✅ wall_dimmer_tuya productId includes TS0601\n  ✅ TuyaBrightnessScale 0.5 ↔ 500\n  ✅ TuyaBrightnessScale clamps to 0–1000\n  ✅ anti-bot mentions m1cvyneb\n  ✅ anti-bot mentions climate_sensor\n  ✅ anti-bot mentions soil_sensor\n  ✅ anti-bot mentions zigbee_universal\n  ✅ anti-bot mentions wall_dimmer\n  ✅ mfs_db has no m1cvyneb|TS0201 invent\n\nPASS: P2138 sacred-couple matrix gate"
+    },
+    {
+      "label": "gate-p2519",
+      "ok": true,
+      "hardOk": true,
+      "exitCode": 0,
+      "durationMs": 368,
+      "tail": "P2519 PASS — enrich append-only / sacred couples intact"
+    },
+    {
+      "label": "gate-p2520",
+      "ok": true,
+      "hardOk": true,
+      "exitCode": 0,
+      "durationMs": 583,
+      "tail": "P2520 PASS — complementary variant enrich doctrine locked"
+    },
+    {
+      "label": "gate-anti-bot",
+      "ok": true,
+      "hardOk": true,
+      "exitCode": 0,
+      "durationMs": 4223,
+      "tail": "-xalsoe3m-bht002-not-trv:zigbee_universal: missing driver zigbee_universal\n  ~ skip registry:p2278-ogx8u5z6-trv-cal-tenths:zigbee_universal: missing driver zigbee_universal\n  ~ skip registry:p2279-1fuxihti-cover-not-climate:zigbee_universal: missing driver zigbee_universal\n  ~ skip registry:p2291-ogkdpgy2-co2-not-climate:zigbee_universal: missing driver zigbee_universal\n  ~ skip registry:p2304-moes-zts-eur-c-curtain:zigbee_universal: missing driver zigbee_universal\n  ~ skip registry:p2304-moes-zts-eur-c-curtain:unknown_zigbee_unit: missing driver unknown_zigbee_unit\n  ~ skip registry:p2509-invent-junk-do-not-lock:zigbee_universal: missing driver zigbee_universal\n  ~ skip registry:p2514-zm16b-3mzb0sdz-curtain:zigbee_universal: missing driver zigbee_universal\n  ~ skip registry:p2509-npj9bug3-soil-zg303z:zigbee_universal: missing driver zigbee_universal\n  ~ skip registry:p2363-curtain-ef00-hybrid-timeout:zigbee_universal: missing driver zigbee_universal\n  ~ skip registry:p2385-lerlink-r32ctezx-fan-switch:zigbee_universal: missing driver zigbee_universal\n  ~ skip registry:p2516-a14rjslz-3phase-meter:zigbee_universal: missing driver zigbee_universal\n  ✅ No known bot regressions detected"
+    },
+    {
+      "label": "check-p2530",
+      "ok": true,
+      "hardOk": true,
+      "exitCode": 0,
+      "durationMs": 1433,
+      "tail": "> com.dlnraja.tuya.zigbee@9.0.969 check:p2530\n> node --test test/critical/p2530-recent-variant-capability.test.js\n\n▶ P2530 recent variant + capability completer\n  ✔ completer script + ComplementaryMerge exist (1.5121ms)\n  ✔ curtain_motor keeps Moes/AM43/tubular OEM families + cover caps (3.5784ms)\n  ✔ presence_sensor_radar keeps gkfbdvyx/clrdrnya OEM + alarm_human (not phantom battery) (1.3188ms)\n  ✔ wall_dimmer_tuya keeps m1cvyneb TZE200/204/284 + onoff/dim (1.6312ms)\n  ✔ TZ3000 recent seeds keep case variants + battery where expected (1.3904ms)\n  ✔ kq1l5eu5 Moes SFC02 stays wall_curtain_switch (not curtain_motor) (2.2538ms)\n  ✔ P2530e fleet seeds: soil/din/leak/4gang/plug/curtain-switch OEM + caps (7.3495ms)\n✔ P2530 recent variant + capability completer (25.8472ms)\nℹ tests 7\nℹ suites 1\nℹ pass 7\nℹ fail 0\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 217.2706"
+    }
+  ],
+  "ok": true,
+  "baseline": {
+    "drivers": 431,
+    "mfrs": 14639,
+    "pids": 3019
+  },
+  "final": {
+    "drivers": 431,
+    "mfrs": 14809,
+    "pids": 3017
+  },
+  "delta": {
+    "drivers": 0,
+    "mfrs": 170,
+    "pids": -2
+  }
+}

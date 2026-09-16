@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-16T13:55:59.460Z",
+  "generatedAt": "2026-09-16T14:36:39.605Z",
   "apply": true,
   "drivers": {
     "curtain_motor": {
@@ -26,7 +26,7 @@
             "_tze284_5slehgeo"
           ],
           "mfrUnionCount": 241,
-          "beforeMfr": 241,
+          "beforeMfr": 521,
           "afterMfr": 241,
           "missingCaps": [],
           "capsAdded": [],
@@ -38,8 +38,11 @@
           "foundInCorpus": [
             "_TZE200_NHYJ64W2",
             "_tze200_nhyj64w2",
+            "_tze204_nhyj64w2",
+            "_tze284_nhyj64w2",
             "_TZE204_nhyj64w2",
-            "_TZE284_nhyj64w2"
+            "_TZE284_nhyj64w2",
+            "_TZE200_nhyj64w2"
           ],
           "oemExpanded": [
             "_TZE200_nhyj64w2",
@@ -62,8 +65,11 @@
           "foundInCorpus": [
             "_TZE200_127X7WNL",
             "_tze200_127x7wnl",
+            "_tze204_127x7wnl",
+            "_tze284_127x7wnl",
             "_TZE204_127x7wnl",
-            "_TZE284_127x7wnl"
+            "_TZE284_127x7wnl",
+            "_TZE200_127x7wnl"
           ],
           "oemExpanded": [
             "_TZE200_127x7wnl",
@@ -86,6 +92,8 @@
           "foundInCorpus": [
             "_tze284_upt8lzi0",
             "_TZE284_upt8lzi0",
+            "_tze204_upt8lzi0",
+            "_tze200_upt8lzi0",
             "_TZE204_upt8lzi0",
             "_TZE200_upt8lzi0"
           ],
@@ -108,6 +116,9 @@
           "suffix": "i8sdouy0",
           "family": "moes_cover",
           "foundInCorpus": [
+            "_tze204_i8sdouy0",
+            "_tze200_i8sdouy0",
+            "_tze284_i8sdouy0",
             "_TZE204_i8sdouy0",
             "_TZE200_i8sdouy0",
             "_TZE284_i8sdouy0"
@@ -135,7 +146,9 @@
             "_TZE200_FODV6BKR",
             "_tze200_fodv6bkr",
             "_TZE284_fodv6bkr",
-            "_TZE204_fodv6bkr"
+            "_tze204_fodv6bkr",
+            "_TZE204_fodv6bkr",
+            "_tze284_fodv6bkr"
           ],
           "oemExpanded": [
             "_TZE200_fodv6bkr",
@@ -160,6 +173,7 @@
             "_TZE284_libht6ua",
             "_tze200_libht6ua",
             "_tze284_libht6ua",
+            "_tze204_libht6ua",
             "_TZE204_libht6ua"
           ],
           "oemExpanded": [
@@ -186,6 +200,7 @@
             "_TZE200_ICKA1CLH",
             "_tze204_icka1clh",
             "_TZE204_icka1clh",
+            "_tze284_icka1clh",
             "_TZE284_icka1clh"
           ],
           "oemExpanded": [
@@ -210,6 +225,8 @@
             "_TZE200_zah67ekd",
             "_tze200_zah67ekd",
             "_TZE200_ZAH67EKD",
+            "_tze204_zah67ekd",
+            "_tze284_zah67ekd",
             "_TZE204_zah67ekd",
             "_TZE284_zah67ekd"
           ],
@@ -234,8 +251,11 @@
           "foundInCorpus": [
             "_TZE284_3MZB0SDZ",
             "_tze284_3mzb0sdz",
+            "_tze204_3mzb0sdz",
+            "_tze200_3mzb0sdz",
             "_TZE204_3mzb0sdz",
-            "_TZE200_3mzb0sdz"
+            "_TZE200_3mzb0sdz",
+            "_TZE284_3mzb0sdz"
           ],
           "oemExpanded": [
             "_TZE200_3mzb0sdz",
@@ -261,8 +281,11 @@
           "family": "moes_sfc02",
           "foundInCorpus": [
             "_TZE284_kq1l5eu5",
+            "_tze204_kq1l5eu5",
+            "_tze200_kq1l5eu5",
+            "_TZE204_kq1l5eu5",
             "_TZE200_kq1l5eu5",
-            "_TZE204_kq1l5eu5"
+            "_tze284_kq1l5eu5"
           ],
           "oemExpanded": [
             "_TZE200_kq1l5eu5",
@@ -273,7 +296,7 @@
             "_tze284_kq1l5eu5"
           ],
           "mfrUnionCount": 10,
-          "beforeMfr": 10,
+          "beforeMfr": 22,
           "afterMfr": 10,
           "missingCaps": [],
           "capsAdded": [],
@@ -293,6 +316,7 @@
             "_TZE204_GKFBDVYX",
             "_tze200_gkfbdvyx",
             "_tze204_gkfbdvyx",
+            "_tze284_gkfbdvyx",
             "_TZE284_gkfbdvyx"
           ],
           "oemExpanded": [
@@ -303,9 +327,9 @@
             "_tze204_gkfbdvyx",
             "_tze284_gkfbdvyx"
           ],
-          "mfrUnionCount": 210,
-          "beforeMfr": 210,
-          "afterMfr": 210,
+          "mfrUnionCount": 211,
+          "beforeMfr": 424,
+          "afterMfr": 211,
           "missingCaps": [],
           "capsAdded": [],
           "skippedNoPresence": false
@@ -331,9 +355,9 @@
             "_tze204_clrdrnya",
             "_tze284_clrdrnya"
           ],
-          "mfrUnionCount": 210,
-          "beforeMfr": 210,
-          "afterMfr": 210,
+          "mfrUnionCount": 211,
+          "beforeMfr": 211,
+          "afterMfr": 211,
           "missingCaps": [],
           "capsAdded": [],
           "skippedNoPresence": false
@@ -346,8 +370,8 @@
             "_TZE284_iadro9bf",
             "_tze204_iadro9bf",
             "_tze284_iadro9bf",
-            "_TZE200_iadro9bf",
-            "_tze200_iadro9bf"
+            "_tze200_iadro9bf",
+            "_TZE200_iadro9bf"
           ],
           "oemExpanded": [
             "_TZE200_iadro9bf",
@@ -357,9 +381,9 @@
             "_tze204_iadro9bf",
             "_tze284_iadro9bf"
           ],
-          "mfrUnionCount": 210,
-          "beforeMfr": 210,
-          "afterMfr": 210,
+          "mfrUnionCount": 211,
+          "beforeMfr": 211,
+          "afterMfr": 211,
           "missingCaps": [],
           "capsAdded": [],
           "skippedNoPresence": false
@@ -375,7 +399,8 @@
             "_tze200_qasjif9e",
             "_tze204_qasjif9e",
             "_tze284_qasjif9e",
-            "_TZE204_QASJIF9E"
+            "_TZE204_QASJIF9E",
+            "_TZE284_qasjif9e"
           ],
           "oemExpanded": [
             "_TZE200_qasjif9e",
@@ -385,9 +410,9 @@
             "_tze204_qasjif9e",
             "_tze284_qasjif9e"
           ],
-          "mfrUnionCount": 210,
-          "beforeMfr": 210,
-          "afterMfr": 210,
+          "mfrUnionCount": 211,
+          "beforeMfr": 211,
+          "afterMfr": 211,
           "missingCaps": [],
           "capsAdded": [],
           "skippedNoPresence": false
@@ -401,7 +426,9 @@
             "_tze204_sxm7l9xa",
             "_tze284_sxm7l9xa",
             "_TZE204_SXM7L9XA",
-            "_TZE200_sxm7l9xa"
+            "_tze200_sxm7l9xa",
+            "_TZE200_sxm7l9xa",
+            "_TZE284_sxm7l9xa"
           ],
           "oemExpanded": [
             "_TZE200_sxm7l9xa",
@@ -411,9 +438,9 @@
             "_tze204_sxm7l9xa",
             "_tze284_sxm7l9xa"
           ],
-          "mfrUnionCount": 210,
-          "beforeMfr": 210,
-          "afterMfr": 210,
+          "mfrUnionCount": 211,
+          "beforeMfr": 211,
+          "afterMfr": 211,
           "missingCaps": [],
           "capsAdded": [],
           "skippedNoPresence": false
@@ -430,7 +457,9 @@
             "_TZE284_M1CVYNEB",
             "_tze284_m1cvyneb",
             "_TZE204_m1cvyneb",
-            "_TZE200_m1cvyneb"
+            "_TZE200_m1cvyneb",
+            "_tze204_m1cvyneb",
+            "_tze200_m1cvyneb"
           ],
           "oemExpanded": [
             "_TZE200_m1cvyneb",
@@ -441,7 +470,7 @@
             "_tze284_m1cvyneb"
           ],
           "mfrUnionCount": 122,
-          "beforeMfr": 122,
+          "beforeMfr": 244,
           "afterMfr": 122,
           "missingCaps": [],
           "capsAdded": [],
@@ -458,6 +487,8 @@
             "_TZE284_fhvpaltk",
             "_TZE284_FHVPALTK",
             "_tze284_fhvpaltk",
+            "_tze204_fhvpaltk",
+            "_tze200_fhvpaltk",
             "_TZE204_fhvpaltk",
             "_TZE200_fhvpaltk"
           ],
@@ -470,7 +501,7 @@
             "_tze284_fhvpaltk"
           ],
           "mfrUnionCount": 4,
-          "beforeMfr": 4,
+          "beforeMfr": 8,
           "afterMfr": 4,
           "missingCaps": [],
           "capsAdded": [],
@@ -487,7 +518,10 @@
             "_TZE284_nt4pquef",
             "_TZE284_NT4PQUEF",
             "_tze284_nt4pquef",
-            "_tze284_NT4PQUEF"
+            "_tze200_nt4pquef",
+            "_tze204_nt4pquef",
+            "_TZE200_nt4pquef",
+            "_TZE204_nt4pquef"
           ],
           "oemExpanded": [
             "_TZE200_nt4pquef",
@@ -498,7 +532,7 @@
             "_tze284_nt4pquef"
           ],
           "mfrUnionCount": 55,
-          "beforeMfr": 209,
+          "beforeMfr": 110,
           "afterMfr": 55,
           "missingCaps": [],
           "capsAdded": [],
@@ -514,8 +548,10 @@
           "foundInCorpus": [
             "_TZE284_6ocnqlhn",
             "_tze284_6ocnqlhn",
-            "_TZE284_6OCNQLHN",
-            "_tze284_6OCNQLHN"
+            "_tze200_6ocnqlhn",
+            "_tze204_6ocnqlhn",
+            "_TZE200_6ocnqlhn",
+            "_TZE204_6ocnqlhn"
           ],
           "oemExpanded": [
             "_TZE200_6ocnqlhn",
@@ -526,7 +562,7 @@
             "_tze284_6ocnqlhn"
           ],
           "mfrUnionCount": 13,
-          "beforeMfr": 44,
+          "beforeMfr": 27,
           "afterMfr": 13,
           "missingCaps": [],
           "capsAdded": [],
@@ -545,6 +581,7 @@
             "_tze200_pay2byax",
             "_TZE200_PAY2BYAX",
             "_tze204_pay2byax",
+            "_tze284_pay2byax",
             "_tze200_PAY2BYAX",
             "_tze204_PAY2BYAX",
             "_TZE204_PAY2BYAX",
@@ -559,7 +596,7 @@
             "_tze284_pay2byax"
           ],
           "mfrUnionCount": 3,
-          "beforeMfr": 3,
+          "beforeMfr": 6,
           "afterMfr": 3,
           "missingCaps": [],
           "capsAdded": [],
@@ -585,7 +622,7 @@
             "_tz3000_MRPEVH8P"
           ],
           "mfrUnionCount": 26,
-          "beforeMfr": 26,
+          "beforeMfr": 52,
           "afterMfr": 26,
           "missingCaps": [],
           "capsAdded": [],
@@ -630,7 +667,7 @@
             "_tz3000_ZGYZGDUA"
           ],
           "mfrUnionCount": 13,
-          "beforeMfr": 13,
+          "beforeMfr": 26,
           "afterMfr": 13,
           "missingCaps": [],
           "capsAdded": [],
@@ -653,9 +690,9 @@
             "_TZ3000_URI7ONGN",
             "_tz3000_URI7ONGN"
           ],
-          "mfrUnionCount": 9,
-          "beforeMfr": 9,
-          "afterMfr": 9,
+          "mfrUnionCount": 10,
+          "beforeMfr": 20,
+          "afterMfr": 10,
           "missingCaps": [],
           "capsAdded": [],
           "skippedNoPresence": false
@@ -673,9 +710,9 @@
             "_TZ3000_IXLA93VD",
             "_tz3000_IXLA93VD"
           ],
-          "mfrUnionCount": 9,
-          "beforeMfr": 9,
-          "afterMfr": 9,
+          "mfrUnionCount": 10,
+          "beforeMfr": 10,
+          "afterMfr": 10,
           "missingCaps": [],
           "capsAdded": [],
           "skippedNoPresence": false
@@ -694,9 +731,9 @@
             "_TZ3000_G9G2XNCH",
             "_tz3000_G9G2XNCH"
           ],
-          "mfrUnionCount": 9,
-          "beforeMfr": 9,
-          "afterMfr": 9,
+          "mfrUnionCount": 10,
+          "beforeMfr": 10,
+          "afterMfr": 10,
           "missingCaps": [],
           "capsAdded": [],
           "skippedNoPresence": false
@@ -714,9 +751,9 @@
             "_TZ3000_402VRQ2I",
             "_tz3000_402VRQ2I"
           ],
-          "mfrUnionCount": 9,
-          "beforeMfr": 9,
-          "afterMfr": 9,
+          "mfrUnionCount": 10,
+          "beforeMfr": 10,
+          "afterMfr": 10,
           "missingCaps": [],
           "capsAdded": [],
           "skippedNoPresence": false
@@ -735,9 +772,9 @@
             "_TZ3000_KAFLZTA4",
             "_tz3000_KAFLZTA4"
           ],
-          "mfrUnionCount": 9,
-          "beforeMfr": 9,
-          "afterMfr": 9,
+          "mfrUnionCount": 10,
+          "beforeMfr": 10,
+          "afterMfr": 10,
           "missingCaps": [],
           "capsAdded": [],
           "skippedNoPresence": false
@@ -755,9 +792,9 @@
             "_TZ3000_JA5OSU5G",
             "_tz3000_JA5OSU5G"
           ],
-          "mfrUnionCount": 9,
-          "beforeMfr": 9,
-          "afterMfr": 9,
+          "mfrUnionCount": 10,
+          "beforeMfr": 10,
+          "afterMfr": 10,
           "missingCaps": [],
           "capsAdded": [],
           "skippedNoPresence": false
@@ -771,9 +808,7 @@
           "family": "nobo",
           "foundInCorpus": [
             "_tz3000_xffhmvhv",
-            "_TZ3000_xffhmvhv",
-            "_TZ3000_XFFHMVHV",
-            "_tz3000_XFFHMVHV"
+            "_TZ3000_xffhmvhv"
           ],
           "oemExpanded": [
             "_TZ3000_xffhmvhv",
@@ -782,7 +817,7 @@
             "_tz3000_XFFHMVHV"
           ],
           "mfrUnionCount": 34,
-          "beforeMfr": 136,
+          "beforeMfr": 71,
           "afterMfr": 34,
           "missingCaps": [],
           "capsAdded": [],
@@ -793,9 +828,7 @@
           "family": "ts004f_4btn",
           "foundInCorpus": [
             "_TZ3000_abrsvsou",
-            "_tz3000_abrsvsou",
-            "_TZ3000_ABRSVSOU",
-            "_tz3000_ABRSVSOU"
+            "_tz3000_abrsvsou"
           ],
           "oemExpanded": [
             "_TZ3000_abrsvsou",
@@ -841,9 +874,7 @@
           "family": "ias_leak",
           "foundInCorpus": [
             "_TZ3000_k4ej3ww2",
-            "_tz3000_k4ej3ww2",
-            "_tz3000_K4EJ3WW2",
-            "_TZ3000_K4EJ3WW2"
+            "_tz3000_k4ej3ww2"
           ],
           "oemExpanded": [
             "_TZ3000_k4ej3ww2",
@@ -852,7 +883,7 @@
             "_tz3000_K4EJ3WW2"
           ],
           "mfrUnionCount": 20,
-          "beforeMfr": 74,
+          "beforeMfr": 40,
           "afterMfr": 20,
           "missingCaps": [],
           "capsAdded": [],
@@ -867,9 +898,7 @@
           "family": "gabriel_4g",
           "foundInCorpus": [
             "_TZ3000_lwthnp7j",
-            "_tz3000_lwthnp7j",
-            "_TZ3000_LWTHNP7J",
-            "_tz3000_LWTHNP7J"
+            "_tz3000_lwthnp7j"
           ],
           "oemExpanded": [
             "_TZ3000_lwthnp7j",
@@ -878,7 +907,7 @@
             "_tz3000_LWTHNP7J"
           ],
           "mfrUnionCount": 6,
-          "beforeMfr": 24,
+          "beforeMfr": 13,
           "afterMfr": 6,
           "missingCaps": [],
           "capsAdded": [],
@@ -893,9 +922,7 @@
           "family": "ts011f",
           "foundInCorpus": [
             "_TZ3000_okaz9tjs",
-            "_tz3000_okaz9tjs",
-            "_TZ3000_OKAZ9TJS",
-            "_tz3000_OKAZ9TJS"
+            "_tz3000_okaz9tjs"
           ],
           "oemExpanded": [
             "_TZ3000_okaz9tjs",
@@ -904,7 +931,7 @@
             "_tz3000_OKAZ9TJS"
           ],
           "mfrUnionCount": 47,
-          "beforeMfr": 176,
+          "beforeMfr": 94,
           "afterMfr": 47,
           "missingCaps": [],
           "capsAdded": [],
@@ -915,9 +942,7 @@
           "family": "ts011f",
           "foundInCorpus": [
             "_tz3210_fgwhjm9j",
-            "_TZ3210_fgwhjm9j",
-            "_TZ3210_FGWHJM9J",
-            "_tz3210_FGWHJM9J"
+            "_TZ3210_fgwhjm9j"
           ],
           "oemExpanded": [
             "_TZ3210_fgwhjm9j",
@@ -941,9 +966,7 @@
           "family": "din_switch",
           "foundInCorpus": [
             "_TZ3000_qeuvnohg",
-            "_tz3000_qeuvnohg",
-            "_TZ3000_QEUVNOHG",
-            "_tz3000_QEUVNOHG"
+            "_tz3000_qeuvnohg"
           ],
           "oemExpanded": [
             "_TZ3000_qeuvnohg",
@@ -952,7 +975,7 @@
             "_tz3000_QEUVNOHG"
           ],
           "mfrUnionCount": 11,
-          "beforeMfr": 44,
+          "beforeMfr": 22,
           "afterMfr": 11,
           "missingCaps": [],
           "capsAdded": [],
@@ -967,9 +990,7 @@
           "family": "bseed_zcl",
           "foundInCorpus": [
             "_TZ3000_w5xztuy7",
-            "_tz3000_w5xztuy7",
-            "_tz3000_W5XZTUY7",
-            "_TZ3000_W5XZTUY7"
+            "_tz3000_w5xztuy7"
           ],
           "oemExpanded": [
             "_TZ3000_w5xztuy7",
@@ -978,10 +999,110 @@
             "_tz3000_W5XZTUY7"
           ],
           "mfrUnionCount": 73,
-          "beforeMfr": 283,
+          "beforeMfr": 157,
           "afterMfr": 73,
           "missingCaps": [],
           "capsAdded": [],
+          "skippedNoPresence": false
+        },
+        {
+          "suffix": "nkjintbl",
+          "family": "somgoms",
+          "foundInCorpus": [
+            "_TZE200_nkjintbl",
+            "_TZE204_nkjintbl",
+            "_tze200_nkjintbl",
+            "_tze204_nkjintbl",
+            "_TZE204_NKJINTBL",
+            "_tze204_NKJINTBL",
+            "_TZE200_NKJINTBL",
+            "_tze200_NKJINTBL"
+          ],
+          "oemExpanded": [
+            "_TZE200_nkjintbl",
+            "_TZE204_nkjintbl",
+            "_TZE284_nkjintbl",
+            "_tze200_nkjintbl",
+            "_tze204_nkjintbl",
+            "_tze284_nkjintbl"
+          ],
+          "mfrUnionCount": 75,
+          "beforeMfr": 73,
+          "afterMfr": 75,
+          "missingCaps": [],
+          "capsAdded": [],
+          "skippedNoPresence": false
+        }
+      ]
+    },
+    "switch_1gang": {
+      "seeds": [
+        {
+          "suffix": "7tdtqgwv",
+          "family": "somgoms",
+          "foundInCorpus": [
+            "_TZE200_7tdtqgwv",
+            "_TZE204_7tdtqgwv",
+            "_TZE200_7TDTQGWV",
+            "_tze200_7tdtqgwv",
+            "_tze204_7tdtqgwv",
+            "_tze200_7TDTQGWV",
+            "_tze204_7TDTQGWV",
+            "_TZE204_7TDTQGWV"
+          ],
+          "oemExpanded": [
+            "_TZE200_7tdtqgwv",
+            "_TZE204_7tdtqgwv",
+            "_TZE284_7tdtqgwv",
+            "_tze200_7tdtqgwv",
+            "_tze204_7tdtqgwv",
+            "_tze284_7tdtqgwv"
+          ],
+          "mfrUnionCount": 389,
+          "beforeMfr": 1535,
+          "afterMfr": 389,
+          "missingCaps": [],
+          "capsAdded": [],
+          "skippedNoPresence": false
+        }
+      ]
+    },
+    "bed_sensor": {
+      "seeds": [
+        {
+          "suffix": "seq9cm6u",
+          "family": "pir_bed",
+          "foundInCorpus": [
+            "_TZE200_seq9cm6u",
+            "_TZE204_seq9cm6u",
+            "_TZE284_seq9cm6u",
+            "_tze200_seq9cm6u",
+            "_tze204_seq9cm6u",
+            "_tze284_seq9cm6u",
+            "_TZE200_SEQ9CM6U",
+            "_TZE204_SEQ9CM6U",
+            "_TZE284_SEQ9CM6U",
+            "_tze204_SEQ9CM6U",
+            "_tze284_SEQ9CM6U",
+            "_tze200_SEQ9CM6U"
+          ],
+          "oemExpanded": [
+            "_TZE200_seq9cm6u",
+            "_TZE204_seq9cm6u",
+            "_TZE284_seq9cm6u",
+            "_tze200_seq9cm6u",
+            "_tze204_seq9cm6u",
+            "_tze284_seq9cm6u"
+          ],
+          "mfrUnionCount": 6,
+          "beforeMfr": 24,
+          "afterMfr": 6,
+          "missingCaps": [
+            "alarm_motion"
+          ],
+          "capsAdded": [
+            "alarm_motion"
+          ],
           "skippedNoPresence": false
         }
       ]

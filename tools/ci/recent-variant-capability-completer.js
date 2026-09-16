@@ -17,7 +17,6 @@ const ROOT = path.resolve(__dirname, '../..');
 const {
   unionStrings,
   unionCapabilities,
-  mergeZigbeeIdentity,
 } = require('../../lib/enrichment/ComplementaryMerge');
 
 const SEEDS = [
@@ -65,7 +64,53 @@ const SEEDS = [
   { suffix: 'fgwhjm9j', driver: 'plug_energy_monitor', family: 'ts011f', prefix: 'TZ3210', caps: ['onoff', 'measure_power', 'meter_power'] },
   { suffix: 'qeuvnohg', driver: 'din_rail_switch', family: 'din_switch', prefix: 'TZ3000', caps: ['onoff'] },
   { suffix: 'w5xztuy7', driver: 'switch_2gang', family: 'bseed_zcl', prefix: 'TZ3000', caps: ['onoff'] },
+  // ZHA PR #4363 / Z2M somgoms TS0601 gang switches — OEM overlays
+  { suffix: '7tdtqgwv', driver: 'switch_1gang', family: 'somgoms', prefix: 'TZE', caps: ['onoff'] },
+  { suffix: 'nkjintbl', driver: 'switch_2gang', family: 'somgoms', prefix: 'TZE', caps: ['onoff'] },
+  { suffix: 'seq9cm6u', driver: 'bed_sensor', family: 'pir_bed', prefix: 'TZE', caps: ['alarm_motion', 'measure_battery'] },
 ];
+
+// WHY(P2531): union SSOT highRiskLocks as complementary seeds (OEM overlays on generics)
+(function absorbSacredSsotSeeds() {
+  try {
+    const ssotPath = path.join(ROOT, 'config/architecture/sacred-couple-ssot.json');
+    if (!fs.existsSync(ssotPath)) return;
+    const ssot = JSON.parse(fs.readFileSync(ssotPath, 'utf8'));
+    const have = new Set(SEEDS.map((s) => `${s.driver}|${String(s.suffix).toLowerCase()}`));
+    for (const lock of ssot.highRiskLocks || []) {
+      const mfr = String(lock.mfr || '');
+      const driver = lock.driver;
+      if (!mfr || !driver) continue;
+      let prefix = 'TZE';
+      let suffix = '';
+      const tze = mfr.match(/^_TZE(?:200|204|284)_([A-Za-z0-9]+)$/i);
+      const tz3 = mfr.match(/^_TZ3000_([A-Za-z0-9]+)$/i);
+      const tz3210 = mfr.match(/^_TZ3210_([A-Za-z0-9]+)$/i);
+      if (tze) {
+        prefix = 'TZE';
+        suffix = tze[1].toLowerCase();
+      } else if (tz3) {
+        prefix = 'TZ3000';
+        suffix = tz3[1].toLowerCase();
+      } else if (tz3210) {
+        prefix = 'TZ3210';
+        suffix = tz3210[1].toLowerCase();
+      } else continue;
+      const key = `${driver}|${suffix}`;
+      if (have.has(key)) continue;
+      have.add(key);
+      SEEDS.push({
+        suffix,
+        driver,
+        family: 'ssot_high_risk',
+        prefix,
+        caps: [],
+      });
+    }
+  } catch (e) {
+    console.warn('[P2530] SSOT seed absorb soft-fail', e.message);
+  }
+}());
 
 // Default prefix TZE for curtain seeds above — patch first block
 for (const s of SEEDS) {
@@ -169,6 +214,20 @@ function dataCaps(compose) {
   return Array.isArray(compose.capabilities) ? compose.capabilities : [];
 }
 
+function appendManufacturerNames(existing, incoming) {
+  // WHY(P2531): Homey compose keeps dual-case forms; do NOT case-collapse the whole list.
+  const out = Array.isArray(existing) ? existing.slice() : [];
+  const seen = new Set(out.map((m) => String(m).toLowerCase()));
+  for (const raw of Array.isArray(incoming) ? incoming : []) {
+    const k = String(raw || '').toLowerCase();
+    if (!k || seen.has(k)) continue;
+    seen.add(k);
+    out.push(String(raw));
+  }
+  return out;
+}
+
+
 function frontPin(names, primary) {
   const list = Array.isArray(names) ? names.slice() : [];
   const want = String(primary).toLowerCase();
@@ -212,10 +271,12 @@ function main() {
     const missingCaps = capabilityGaps(composeData, seed.caps);
 
     if (apply) {
-      composeData.zigbee = mergeZigbeeIdentity(composeData.zigbee || {}, {
-        manufacturerName: mfrUnion,
-        productId: composeData.zigbee?.productId,
-      });
+      const nextMfr = appendManufacturerNames(composeData.zigbee?.manufacturerName || [], withCase);
+      composeData.zigbee = composeData.zigbee || {};
+      composeData.zigbee.manufacturerName = nextMfr;
+      if (Array.isArray(composeData.zigbee.productId)) {
+        composeData.zigbee.productId = unionStrings(composeData.zigbee.productId, composeData.zigbee.productId);
+      }
       if (missingCaps.length) {
         composeData.capabilities = unionCapabilities(composeData.capabilities, missingCaps);
       }
