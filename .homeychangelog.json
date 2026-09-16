@@ -1686,5 +1686,8 @@
   },
   "5.12.219": {
     "en": "Improved air quality pairing for Tuya airbox sensors (reliability) without degrading other devices."
+  },
+  "5.12.220": {
+    "en": "Aligned airbox fingerprint routing in mfs_db (reliability) after air quality lock."
   }
 }
