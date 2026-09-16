@@ -118,4 +118,16 @@ describe('P2530 recent variant + capability completer', () => {
     assert.ok(hasMfr(btn4, /_TZ3000_xffhmvhv/i));
     assert.ok(hasMfr(btn4, /_TZ3000_abrsvsou/i));
   });
+
+  it('completer absorbs sacred-couple SSOT highRiskLocks as seeds (source lock)', () => {
+    const src = fs.readFileSync(path.join(ROOT, 'tools/ci/recent-variant-capability-completer.js'), 'utf8');
+    assert.ok(/absorbSacredSsotSeeds|highRiskLocks/.test(src));
+    assert.ok(/appendIdentityStrings/.test(src));
+  });
+
+  it('BSEED zcl_only w5xztuy7 stays switch_2gang', () => {
+    const c = readJson('drivers/switch_2gang/driver.compose.json');
+    assert.ok(hasMfr(c, /w5xztuy7/i));
+    assert.ok(hasCap(c, 'onoff'));
+  });
 });
