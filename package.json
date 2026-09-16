@@ -1,6 +1,6 @@
 {
   "name": "com.dlnraja.tuya.zigbee",
-  "version": "5.12.222",
+  "version": "5.12.223",
   "description": "Tuya Unified Zigbee - Local-first control with AI automation",
   "main": "app.js",
   "scripts": {
@@ -217,7 +217,8 @@
     "check:p2534": "node --test test/critical/p2534-vichy-mtg075-presence-dp1.test.js",
     "check:p2535": "node --test test/critical/p2535-forum-all-topics-rkgngb5o-dim.test.js",
     "check:p2536": "node --test test/critical/p2536-protocol-selection-brief.test.js",
-    "check:p2537": "node tools/ci/p2537-zigbee-tuya-evolution-gate.js && node --test test/critical/p2537-zigbee-tuya-evolution.test.js"
+    "check:p2537": "node tools/ci/p2537-zigbee-tuya-evolution-gate.js && node --test test/critical/p2537-zigbee-tuya-evolution.test.js",
+    "check:p2540": "node --test test/critical/p2540-complementary-dp-cluster-raw.test.js"
   },
   "keywords": [
     "homey",
