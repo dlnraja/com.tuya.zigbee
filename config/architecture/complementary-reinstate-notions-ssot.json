@@ -1,0 +1,57 @@
+{
+  "id": "complementary-reinstate-notions-ssot",
+  "patch": "P2541",
+  "dualApp": "BOTH",
+  "updated": "2026-09-16",
+  "doctrine": {
+    "complementaryOnly": true,
+    "noInventPid": true,
+    "noWipeManufacturerName": true,
+    "noUnionStringsOnDualCaseArrays": true,
+    "useAppendIdentityStrings": true,
+    "wrongDriverStripOk": true
+  },
+  "notions": [
+    {
+      "id": "complementary-enrich",
+      "rule": "Variants/additions only — never manufacturerName=[] wipe or shrink capabilities/settings",
+      "helper": "lib/enrichment/ComplementaryMerge.js",
+      "gate": "npm run check:p2520"
+    },
+    {
+      "id": "dual-case-identity",
+      "rule": "Homey compose often lists _TZE200_x and _tze200_x — use appendIdentityStrings, NOT unionStrings (collapses case forms)",
+      "helper": "appendIdentityStrings",
+      "contreQuoi": "P2541 aq 52→23 shrink bug"
+    },
+    {
+      "id": "sacred-couple",
+      "rule": "Identity = manufacturerName + productId; strip only wrong-driver same couple",
+      "gate": "npm run check:p2494"
+    },
+    {
+      "id": "rx-tx-alternates",
+      "rule": "EF00 + ZCL + raw + bound + IAS in parallel; RawClusterFallback must listen not map-only",
+      "ssot": "config/architecture/complementary-rx-tx-dp-cluster-ssot.json",
+      "gate": "npm run check:p2540"
+    },
+    {
+      "id": "zigbee40-suzi",
+      "rule": "Awareness + classifier only; never invent Suzi/GP pids or compose tags",
+      "gate": "npm run check:p2539"
+    },
+    {
+      "id": "air-quality-family",
+      "rule": "Z2M TS0601_air_quality_sensor + airbox → air_quality_co2 canonical; reinstate smart_air_detection_box wipe; forbid climate",
+      "couples": [
+        "_TZE200_yvx5lh6k+TS0601",
+        "_TZE284_8b9zpaav+TS0601"
+      ]
+    }
+  ],
+  "reinstatedThisPatch": {
+    "smart_air_detection_box": "manufacturerName was [] — restored Z2M air_quality_sensor family",
+    "air_quality_co2": "union append same family (no shrink)",
+    "climate_sensor": "strip AQ couples only (wrong driver)"
+  }
+}

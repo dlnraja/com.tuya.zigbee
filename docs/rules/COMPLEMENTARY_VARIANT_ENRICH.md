@@ -28,6 +28,21 @@
 7. **Removals only when** forbidden-placement / wrong sacred couple / prepare-publish synthetic prune / explicit human surgical fix.
 8. **Dual-app BOTH** for reliability enrich locks — port surgically same session; never copy App ID/version.
 
+## P2541 reinstruct — dual-case + wipe recovery
+
+Machine SSOT: [`config/architecture/complementary-reinstate-notions-ssot.json`](../../config/architecture/complementary-reinstate-notions-ssot.json) · gate `npm run check:p2541`
+
+| Notion | Rule |
+|--------|------|
+| complementary-enrich | Variants only — never `manufacturerName=[]` wipe |
+| dual-case-identity | Use `appendIdentityStrings`, **not** `unionStrings`, on Homey dual-case mfr arrays |
+| sacred-couple | Strip only wrong-driver same `(mfr,pid)` |
+| rx-tx-alternates | EF00+ZCL+raw parallel (`check:p2540`) |
+| zigbee40-suzi | Classifier only — no invent Suzi/GP pids |
+| air-quality-family | Z2M `TS0601_air_quality_sensor` + airbox → `air_quality_co2`; reinstate `smart_air_detection_box` |
+
+`wouldDegradeCompose` refuses exact dual-case form loss (Contre quoi: aq 52→23 shrink).
+
 ## Agent checklist
 
 ```
