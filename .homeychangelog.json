@@ -3365,5 +3365,8 @@
   },
   "9.0.967": {
     "en": "Synced wall dimmer firmware update manufacturer names with Zigbee fingerprints."
+  },
+  "9.0.969": {
+    "en": "Improved OEM/case variants and capabilities for recent Zigbee couples (covers, radar, dimmer, soil, DIN, buttons, knobs, plugs)."
   }
 }

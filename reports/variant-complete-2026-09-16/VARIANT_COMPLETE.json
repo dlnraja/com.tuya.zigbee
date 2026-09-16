@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-16T12:40:42.206Z",
+  "generatedAt": "2026-09-16T13:55:59.460Z",
   "apply": true,
   "drivers": {
     "curtain_motor": {
@@ -254,6 +254,33 @@
         }
       ]
     },
+    "wall_curtain_switch": {
+      "seeds": [
+        {
+          "suffix": "kq1l5eu5",
+          "family": "moes_sfc02",
+          "foundInCorpus": [
+            "_TZE284_kq1l5eu5",
+            "_TZE200_kq1l5eu5",
+            "_TZE204_kq1l5eu5"
+          ],
+          "oemExpanded": [
+            "_TZE200_kq1l5eu5",
+            "_TZE204_kq1l5eu5",
+            "_TZE284_kq1l5eu5",
+            "_tze200_kq1l5eu5",
+            "_tze204_kq1l5eu5",
+            "_tze284_kq1l5eu5"
+          ],
+          "mfrUnionCount": 10,
+          "beforeMfr": 10,
+          "afterMfr": 10,
+          "missingCaps": [],
+          "capsAdded": [],
+          "skippedNoPresence": false
+        }
+      ]
+    },
     "presence_sensor_radar": {
       "seeds": [
         {
@@ -266,8 +293,7 @@
             "_TZE204_GKFBDVYX",
             "_tze200_gkfbdvyx",
             "_tze204_gkfbdvyx",
-            "_TZE284_gkfbdvyx",
-            "_tze284_gkfbdvyx"
+            "_TZE284_gkfbdvyx"
           ],
           "oemExpanded": [
             "_TZE200_gkfbdvyx",
@@ -278,7 +304,7 @@
             "_tze284_gkfbdvyx"
           ],
           "mfrUnionCount": 210,
-          "beforeMfr": 420,
+          "beforeMfr": 210,
           "afterMfr": 210,
           "missingCaps": [],
           "capsAdded": [],
@@ -349,8 +375,7 @@
             "_tze200_qasjif9e",
             "_tze204_qasjif9e",
             "_tze284_qasjif9e",
-            "_TZE204_QASJIF9E",
-            "_TZE284_qasjif9e"
+            "_TZE204_QASJIF9E"
           ],
           "oemExpanded": [
             "_TZE200_qasjif9e",
@@ -376,9 +401,7 @@
             "_tze204_sxm7l9xa",
             "_tze284_sxm7l9xa",
             "_TZE204_SXM7L9XA",
-            "_TZE200_sxm7l9xa",
-            "_TZE284_sxm7l9xa",
-            "_tze200_sxm7l9xa"
+            "_TZE200_sxm7l9xa"
           ],
           "oemExpanded": [
             "_TZE200_sxm7l9xa",
@@ -407,9 +430,7 @@
             "_TZE284_M1CVYNEB",
             "_tze284_m1cvyneb",
             "_TZE204_m1cvyneb",
-            "_TZE200_m1cvyneb",
-            "_tze204_m1cvyneb",
-            "_tze200_m1cvyneb"
+            "_TZE200_m1cvyneb"
           ],
           "oemExpanded": [
             "_TZE200_m1cvyneb",
@@ -420,8 +441,126 @@
             "_tze284_m1cvyneb"
           ],
           "mfrUnionCount": 122,
-          "beforeMfr": 244,
+          "beforeMfr": 122,
           "afterMfr": 122,
+          "missingCaps": [],
+          "capsAdded": [],
+          "skippedNoPresence": false
+        }
+      ]
+    },
+    "valve_dual_irrigation": {
+      "seeds": [
+        {
+          "suffix": "fhvpaltk",
+          "family": "insoma",
+          "foundInCorpus": [
+            "_TZE284_fhvpaltk",
+            "_TZE284_FHVPALTK",
+            "_tze284_fhvpaltk",
+            "_TZE204_fhvpaltk",
+            "_TZE200_fhvpaltk"
+          ],
+          "oemExpanded": [
+            "_TZE200_fhvpaltk",
+            "_TZE204_fhvpaltk",
+            "_TZE284_fhvpaltk",
+            "_tze200_fhvpaltk",
+            "_tze204_fhvpaltk",
+            "_tze284_fhvpaltk"
+          ],
+          "mfrUnionCount": 4,
+          "beforeMfr": 4,
+          "afterMfr": 4,
+          "missingCaps": [],
+          "capsAdded": [],
+          "skippedNoPresence": false
+        }
+      ]
+    },
+    "soil_sensor": {
+      "seeds": [
+        {
+          "suffix": "nt4pquef",
+          "family": "sgs02",
+          "foundInCorpus": [
+            "_TZE284_nt4pquef",
+            "_TZE284_NT4PQUEF",
+            "_tze284_nt4pquef",
+            "_tze284_NT4PQUEF"
+          ],
+          "oemExpanded": [
+            "_TZE200_nt4pquef",
+            "_TZE204_nt4pquef",
+            "_TZE284_nt4pquef",
+            "_tze200_nt4pquef",
+            "_tze204_nt4pquef",
+            "_tze284_nt4pquef"
+          ],
+          "mfrUnionCount": 55,
+          "beforeMfr": 209,
+          "afterMfr": 55,
+          "missingCaps": [],
+          "capsAdded": [],
+          "skippedNoPresence": false
+        }
+      ]
+    },
+    "din_rail_meter": {
+      "seeds": [
+        {
+          "suffix": "6ocnqlhn",
+          "family": "tongou",
+          "foundInCorpus": [
+            "_TZE284_6ocnqlhn",
+            "_tze284_6ocnqlhn",
+            "_TZE284_6OCNQLHN",
+            "_tze284_6OCNQLHN"
+          ],
+          "oemExpanded": [
+            "_TZE200_6ocnqlhn",
+            "_TZE204_6ocnqlhn",
+            "_TZE284_6ocnqlhn",
+            "_tze200_6ocnqlhn",
+            "_tze204_6ocnqlhn",
+            "_tze284_6ocnqlhn"
+          ],
+          "mfrUnionCount": 13,
+          "beforeMfr": 44,
+          "afterMfr": 13,
+          "missingCaps": [],
+          "capsAdded": [],
+          "skippedNoPresence": false
+        }
+      ]
+    },
+    "contact_sensor_zigbee": {
+      "seeds": [
+        {
+          "suffix": "pay2byax",
+          "family": "contact_ef00",
+          "foundInCorpus": [
+            "_TZE200_pay2byax",
+            "_TZE204_pay2byax",
+            "_tze200_pay2byax",
+            "_TZE200_PAY2BYAX",
+            "_tze204_pay2byax",
+            "_tze200_PAY2BYAX",
+            "_tze204_PAY2BYAX",
+            "_TZE204_PAY2BYAX",
+            "_TZE284_pay2byax"
+          ],
+          "oemExpanded": [
+            "_TZE200_pay2byax",
+            "_TZE204_pay2byax",
+            "_TZE284_pay2byax",
+            "_tze200_pay2byax",
+            "_tze204_pay2byax",
+            "_tze284_pay2byax"
+          ],
+          "mfrUnionCount": 3,
+          "beforeMfr": 3,
+          "afterMfr": 3,
           "missingCaps": [],
           "capsAdded": [],
           "skippedNoPresence": false
@@ -446,39 +585,29 @@
             "_tz3000_MRPEVH8P"
           ],
           "mfrUnionCount": 26,
-          "beforeMfr": 52,
+          "beforeMfr": 26,
           "afterMfr": 26,
           "missingCaps": [],
           "capsAdded": [],
           "skippedNoPresence": false
-        }
-      ]
-    },
-    "valve_dual_irrigation": {
-      "seeds": [
+        },
         {
-          "suffix": "fhvpaltk",
-          "family": "insoma",
+          "suffix": "4upl1fcj",
+          "family": "smartbutton",
           "foundInCorpus": [
-            "_TZE284_fhvpaltk",
-            "_TZE284_FHVPALTK",
-            "_tze284_fhvpaltk",
-            "_TZE204_fhvpaltk",
-            "_TZE200_fhvpaltk",
-            "_tze204_fhvpaltk",
-            "_tze200_fhvpaltk"
+            "_TZ3000_4upl1fcj",
+            "_tz3000_4upl1fcj",
+            "_TZ3000_4UPL1FCJ"
           ],
           "oemExpanded": [
-            "_TZE200_fhvpaltk",
-            "_TZE204_fhvpaltk",
-            "_TZE284_fhvpaltk",
-            "_tze200_fhvpaltk",
-            "_tze204_fhvpaltk",
-            "_tze284_fhvpaltk"
+            "_TZ3000_4upl1fcj",
+            "_tz3000_4upl1fcj",
+            "_TZ3000_4UPL1FCJ",
+            "_tz3000_4UPL1FCJ"
           ],
-          "mfrUnionCount": 4,
-          "beforeMfr": 8,
-          "afterMfr": 4,
+          "mfrUnionCount": 26,
+          "beforeMfr": 26,
+          "afterMfr": 26,
           "missingCaps": [],
           "capsAdded": [],
           "skippedNoPresence": false
@@ -501,7 +630,7 @@
             "_tz3000_ZGYZGDUA"
           ],
           "mfrUnionCount": 13,
-          "beforeMfr": 26,
+          "beforeMfr": 13,
           "afterMfr": 13,
           "missingCaps": [],
           "capsAdded": [],
@@ -525,7 +654,7 @@
             "_tz3000_URI7ONGN"
           ],
           "mfrUnionCount": 9,
-          "beforeMfr": 18,
+          "beforeMfr": 9,
           "afterMfr": 9,
           "missingCaps": [],
           "capsAdded": [],
@@ -571,37 +700,286 @@
           "missingCaps": [],
           "capsAdded": [],
           "skippedNoPresence": false
+        },
+        {
+          "suffix": "402vrq2i",
+          "family": "zg101zd",
+          "foundInCorpus": [
+            "_TZ3000_402vrq2i",
+            "_tz3000_402vrq2i"
+          ],
+          "oemExpanded": [
+            "_TZ3000_402vrq2i",
+            "_tz3000_402vrq2i",
+            "_TZ3000_402VRQ2I",
+            "_tz3000_402VRQ2I"
+          ],
+          "mfrUnionCount": 9,
+          "beforeMfr": 9,
+          "afterMfr": 9,
+          "missingCaps": [],
+          "capsAdded": [],
+          "skippedNoPresence": false
+        },
+        {
+          "suffix": "kaflzta4",
+          "family": "scene_knob",
+          "foundInCorpus": [
+            "_TZ3000_KAFLZTA4",
+            "_TZ3000_kaflzta4",
+            "_tz3000_kaflzta4"
+          ],
+          "oemExpanded": [
+            "_TZ3000_kaflzta4",
+            "_tz3000_kaflzta4",
+            "_TZ3000_KAFLZTA4",
+            "_tz3000_KAFLZTA4"
+          ],
+          "mfrUnionCount": 9,
+          "beforeMfr": 9,
+          "afterMfr": 9,
+          "missingCaps": [],
+          "capsAdded": [],
+          "skippedNoPresence": false
+        },
+        {
+          "suffix": "ja5osu5g",
+          "family": "scene_knob",
+          "foundInCorpus": [
+            "_TZ3000_ja5osu5g",
+            "_tz3000_ja5osu5g"
+          ],
+          "oemExpanded": [
+            "_TZ3000_ja5osu5g",
+            "_tz3000_ja5osu5g",
+            "_TZ3000_JA5OSU5G",
+            "_tz3000_JA5OSU5G"
+          ],
+          "mfrUnionCount": 9,
+          "beforeMfr": 9,
+          "afterMfr": 9,
+          "missingCaps": [],
+          "capsAdded": [],
+          "skippedNoPresence": false
         }
       ]
     },
-    "contact_sensor_zigbee": {
+    "button_wireless_4": {
       "seeds": [
         {
-          "suffix": "pay2byax",
-          "family": "contact_ef00",
+          "suffix": "xffhmvhv",
+          "family": "nobo",
           "foundInCorpus": [
-            "_TZE200_pay2byax",
-            "_TZE204_pay2byax",
-            "_tze200_pay2byax",
-            "_TZE200_PAY2BYAX",
-            "_tze204_pay2byax",
-            "_tze200_PAY2BYAX",
-            "_tze204_PAY2BYAX",
-            "_TZE204_PAY2BYAX",
-            "_TZE284_pay2byax",
-            "_tze284_pay2byax"
+            "_tz3000_xffhmvhv",
+            "_TZ3000_xffhmvhv",
+            "_TZ3000_XFFHMVHV",
+            "_tz3000_XFFHMVHV"
           ],
           "oemExpanded": [
-            "_TZE200_pay2byax",
-            "_TZE204_pay2byax",
-            "_TZE284_pay2byax",
-            "_tze200_pay2byax",
-            "_tze204_pay2byax",
-            "_tze284_pay2byax"
+            "_TZ3000_xffhmvhv",
+            "_tz3000_xffhmvhv",
+            "_TZ3000_XFFHMVHV",
+            "_tz3000_XFFHMVHV"
           ],
-          "mfrUnionCount": 3,
-          "beforeMfr": 6,
-          "afterMfr": 3,
+          "mfrUnionCount": 34,
+          "beforeMfr": 136,
+          "afterMfr": 34,
+          "missingCaps": [],
+          "capsAdded": [],
+          "skippedNoPresence": false
+        },
+        {
+          "suffix": "abrsvsou",
+          "family": "ts004f_4btn",
+          "foundInCorpus": [
+            "_TZ3000_abrsvsou",
+            "_tz3000_abrsvsou",
+            "_TZ3000_ABRSVSOU",
+            "_tz3000_ABRSVSOU"
+          ],
+          "oemExpanded": [
+            "_TZ3000_abrsvsou",
+            "_tz3000_abrsvsou",
+            "_TZ3000_ABRSVSOU",
+            "_tz3000_ABRSVSOU"
+          ],
+          "mfrUnionCount": 34,
+          "beforeMfr": 34,
+          "afterMfr": 34,
+          "missingCaps": [],
+          "capsAdded": [],
+          "skippedNoPresence": false
+        },
+        {
+          "suffix": "kfu8zapd",
+          "family": "ts0044",
+          "foundInCorpus": [
+            "_TZ3000_kfu8zapd",
+            "_TZ3000_KFU8ZAPD",
+            "_tz3000_kfu8zapd",
+            "_tz3000_KFU8ZAPD"
+          ],
+          "oemExpanded": [
+            "_TZ3000_kfu8zapd",
+            "_tz3000_kfu8zapd",
+            "_TZ3000_KFU8ZAPD",
+            "_tz3000_KFU8ZAPD"
+          ],
+          "mfrUnionCount": 34,
+          "beforeMfr": 34,
+          "afterMfr": 34,
+          "missingCaps": [],
+          "capsAdded": [],
+          "skippedNoPresence": false
+        }
+      ]
+    },
+    "water_leak_sensor": {
+      "seeds": [
+        {
+          "suffix": "k4ej3ww2",
+          "family": "ias_leak",
+          "foundInCorpus": [
+            "_TZ3000_k4ej3ww2",
+            "_tz3000_k4ej3ww2",
+            "_tz3000_K4EJ3WW2",
+            "_TZ3000_K4EJ3WW2"
+          ],
+          "oemExpanded": [
+            "_TZ3000_k4ej3ww2",
+            "_tz3000_k4ej3ww2",
+            "_TZ3000_K4EJ3WW2",
+            "_tz3000_K4EJ3WW2"
+          ],
+          "mfrUnionCount": 20,
+          "beforeMfr": 74,
+          "afterMfr": 20,
+          "missingCaps": [],
+          "capsAdded": [],
+          "skippedNoPresence": false
+        }
+      ]
+    },
+    "wall_switch_4gang_1way": {
+      "seeds": [
+        {
+          "suffix": "lwthnp7j",
+          "family": "gabriel_4g",
+          "foundInCorpus": [
+            "_TZ3000_lwthnp7j",
+            "_tz3000_lwthnp7j",
+            "_TZ3000_LWTHNP7J",
+            "_tz3000_LWTHNP7J"
+          ],
+          "oemExpanded": [
+            "_TZ3000_lwthnp7j",
+            "_tz3000_lwthnp7j",
+            "_TZ3000_LWTHNP7J",
+            "_tz3000_LWTHNP7J"
+          ],
+          "mfrUnionCount": 6,
+          "beforeMfr": 24,
+          "afterMfr": 6,
+          "missingCaps": [],
+          "capsAdded": [],
+          "skippedNoPresence": false
+        }
+      ]
+    },
+    "plug_energy_monitor": {
+      "seeds": [
+        {
+          "suffix": "okaz9tjs",
+          "family": "ts011f",
+          "foundInCorpus": [
+            "_TZ3000_okaz9tjs",
+            "_tz3000_okaz9tjs",
+            "_TZ3000_OKAZ9TJS",
+            "_tz3000_OKAZ9TJS"
+          ],
+          "oemExpanded": [
+            "_TZ3000_okaz9tjs",
+            "_tz3000_okaz9tjs",
+            "_TZ3000_OKAZ9TJS",
+            "_tz3000_OKAZ9TJS"
+          ],
+          "mfrUnionCount": 47,
+          "beforeMfr": 176,
+          "afterMfr": 47,
+          "missingCaps": [],
+          "capsAdded": [],
+          "skippedNoPresence": false
+        },
+        {
+          "suffix": "fgwhjm9j",
+          "family": "ts011f",
+          "foundInCorpus": [
+            "_tz3210_fgwhjm9j",
+            "_TZ3210_fgwhjm9j",
+            "_TZ3210_FGWHJM9J",
+            "_tz3210_FGWHJM9J"
+          ],
+          "oemExpanded": [
+            "_TZ3210_fgwhjm9j",
+            "_tz3210_fgwhjm9j",
+            "_TZ3210_FGWHJM9J",
+            "_tz3210_FGWHJM9J"
+          ],
+          "mfrUnionCount": 47,
+          "beforeMfr": 47,
+          "afterMfr": 47,
+          "missingCaps": [],
+          "capsAdded": [],
+          "skippedNoPresence": false
+        }
+      ]
+    },
+    "din_rail_switch": {
+      "seeds": [
+        {
+          "suffix": "qeuvnohg",
+          "family": "din_switch",
+          "foundInCorpus": [
+            "_TZ3000_qeuvnohg",
+            "_tz3000_qeuvnohg",
+            "_TZ3000_QEUVNOHG",
+            "_tz3000_QEUVNOHG"
+          ],
+          "oemExpanded": [
+            "_TZ3000_qeuvnohg",
+            "_tz3000_qeuvnohg",
+            "_TZ3000_QEUVNOHG",
+            "_tz3000_QEUVNOHG"
+          ],
+          "mfrUnionCount": 11,
+          "beforeMfr": 44,
+          "afterMfr": 11,
+          "missingCaps": [],
+          "capsAdded": [],
+          "skippedNoPresence": false
+        }
+      ]
+    },
+    "switch_2gang": {
+      "seeds": [
+        {
+          "suffix": "w5xztuy7",
+          "family": "bseed_zcl",
+          "foundInCorpus": [
+            "_TZ3000_w5xztuy7",
+            "_tz3000_w5xztuy7",
+            "_tz3000_W5XZTUY7",
+            "_TZ3000_W5XZTUY7"
+          ],
+          "oemExpanded": [
+            "_TZ3000_w5xztuy7",
+            "_tz3000_w5xztuy7",
+            "_TZ3000_W5XZTUY7",
+            "_tz3000_W5XZTUY7"
+          ],
+          "mfrUnionCount": 73,
+          "beforeMfr": 283,
+          "afterMfr": 73,
           "missingCaps": [],
           "capsAdded": [],
           "skippedNoPresence": false
