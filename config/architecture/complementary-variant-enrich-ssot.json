@@ -60,8 +60,12 @@
     "market misroute shrink of irrigation/plug",
     "settings wipe on metering drivers",
     "DP1 onoff instead of meter_power on 3ph",
-    "sacred couple drop after fleet enrich"
+    "sacred couple drop after fleet enrich",
+    "shallow mfr+pid-only closes without DP/flow/RX-TX (P2529)"
   ],
+  "related": {
+    "P2529": "config/architecture/deep-functional-enrich-ssot.json"
+  },
   "gates": [
     "check:p2519",
     "check:p2520",

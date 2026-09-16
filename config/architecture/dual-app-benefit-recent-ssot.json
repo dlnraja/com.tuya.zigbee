@@ -1,0 +1,48 @@
+{
+  "_meta": {
+    "id": "P2543-dual-app-benefit-recent",
+    "updated": "2026-09-17",
+    "patch": "P2543",
+    "dualApp": "BOTH",
+    "why": "Every recent reliability advance must benefit master Test AND stable LTS in the same session — complementary union, never App ID/version wipe"
+  },
+  "doctrine": {
+    "classifyFirst": true,
+    "bothSameSession": true,
+    "complementaryOnly": true,
+    "neverCopyAppIdOrVersion": true,
+    "neverShrinkDualCase": true,
+    "masterOnlySkip": ["Intelligent IR UX", "mega feature managers", "Daylight Atmosphere"]
+  },
+  "recentBothPacks": [
+    "P2520 complementary variant enrich",
+    "P2538 airbox AQ lock",
+    "P2539 Zigbee 4.0 / Suzi classifier",
+    "P2540 complementary DP/cluster/raw RX-TX",
+    "P2541–P2541b AQ reinstate + anti-collision",
+    "P2542 local auto-improve + forfait crons"
+  ],
+  "portMasterToStable": [
+    "lib/io/ProtocolFallbackChain.js",
+    "tools/ci/local-intelligent-solver.js",
+    "lib/clusters/RawClusterFallback.js",
+    "lib/layers/ProtocolRxTxChain.js",
+    "lib/features/LocalSelfImproveCatalog.js",
+    "config/architecture/local-auto-improve-ssot.json",
+    "config/security/ai-plan-forfait.json"
+  ],
+  "unionBothWays": [
+    "drivers/air_quality_co2 manufacturerName dual-case forms"
+  ],
+  "orchestrator": "tools/ci/dual-app-benefit-recent.js",
+  "gates": {
+    "npm": "check:p2543",
+    "family": "check:p254x"
+  },
+  "refs": [
+    "docs/rules/DUAL_APP_VISION.md",
+    "config/architecture/dual-app-tracks.json",
+    "docs/architecture/LOCAL_AUTO_IMPROVE_SSOT.md",
+    "docs/rules/COMPLEMENTARY_VARIANT_ENRICH.md"
+  ]
+}
