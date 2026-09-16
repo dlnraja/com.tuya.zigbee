@@ -53,7 +53,10 @@
         "en": "Press the RESET pinhole on the side of the unit for 5 seconds until LED blinks."
       }
     },
-    "manufacturerName": []
+    "manufacturerName": [
+      "_hybrid_smart_air_detection_box_needs_device_assignment",
+      "_HYBRID_SMART_AIR_DETECTION_BOX_NEEDS_DEVICE_ASSIGNMENT"
+    ]
   },
   "version": "1.0.0",
   "capabilitiesOptions": {

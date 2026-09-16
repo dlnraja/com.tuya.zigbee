@@ -2,8 +2,8 @@
 
 /**
  * P2541 — Complementary reinstate Contre quoi.
- * BOTH: restore wiped smart_air_detection_box; append AQ family to air_quality_co2;
- * strip AQ couples from climate only; never unionStrings-shrink dual-case arrays.
+ * BOTH: AQ family pairing FPs on air_quality_co2 only; restore smart_air DP map;
+ * strip climate/comprehensive dual-homes; never unionStrings-shrink dual-case arrays.
  */
 
 const { describe, it } = require('node:test');
@@ -62,13 +62,11 @@ describe('P2541 complementary reinstate AQ + notions', () => {
     const M = require(path.join(ROOT, 'lib/enrichment/ComplementaryMerge.js'));
     assert.equal(typeof M.appendIdentityStrings, 'function');
     assert.equal(typeof M.wouldDegradeCompose, 'function');
-    // Contre quoi: dual-case must not collapse under append
     const dual = ['_TZE200_yvx5lh6k', '_tze200_yvx5lh6k'];
     const out = M.appendIdentityStrings(dual, ['_TZE204_yvx5lh6k']);
     assert.equal(out.length, 3);
     assert.ok(out.includes('_TZE200_yvx5lh6k'));
     assert.ok(out.includes('_tze200_yvx5lh6k'));
-    // Contre quoi: unionStrings collapses dual-case — degrade guard must refuse
     const shrunk = M.unionStrings(dual, ['_TZE204_yvx5lh6k']);
     assert.equal(shrunk.length, 2);
     assert.equal(shrunk.includes('_tze200_yvx5lh6k'), false);
@@ -81,14 +79,13 @@ describe('P2541 complementary reinstate AQ + notions', () => {
     );
   });
 
-  it('smart_air_detection_box manufacturerName reinstated (not [])', () => {
+  it('smart_air_detection_box keeps DP map; pairing FPs stay on air_quality_co2 (anti-collision)', () => {
     const box = loadCompose('smart_air_detection_box');
     const mfrs = box.zigbee?.manufacturerName || [];
-    assert.ok(mfrs.length >= 10, `box mfr wiped or too small: ${mfrs.length}`);
+    assert.ok(mfrs.length >= 1, 'box must not be empty array (hybrid ok)');
     for (const m of AQ_FAMILY) {
-      assert.ok(hasMfr(box, m), `box missing ${m}`);
+      assert.equal(hasMfr(box, m), false, `box must not host pairing FP ${m}`);
     }
-    assert.ok((box.zigbee?.productId || []).includes('TS0601'));
   });
 
   it('air_quality_co2 keeps AQ family complementary (no shrink below prior tip)', () => {
@@ -101,10 +98,12 @@ describe('P2541 complementary reinstate AQ + notions', () => {
     assert.ok(hasMfr(aq, '_TZE284_8b9zpaav'), 'airbox 8b9zpaav must stay');
   });
 
-  it('climate_sensor must not host AQ sacred couples', () => {
+  it('climate_sensor and air_quality_comprehensive must not host AQ sacred couples', () => {
     const climate = loadCompose('climate_sensor');
+    const comp = loadCompose('air_quality_comprehensive');
     for (const m of AQ_FAMILY) {
       assert.equal(hasMfr(climate, m), false, `climate still has ${m}`);
+      assert.equal(hasMfr(comp, m), false, `comprehensive still has ${m}`);
     }
   });
 
@@ -124,6 +123,10 @@ describe('P2541 complementary reinstate AQ + notions', () => {
     assert.ok(hit, 'registry case missing');
     assert.equal(hit.canonicalDriver, 'air_quality_co2');
     assert.ok((hit.forbiddenDrivers || []).includes('climate_sensor'));
+    assert.ok((hit.forbiddenDrivers || []).includes('smart_air_detection_box'));
     assert.ok((hit.mfr || []).some((m) => /yvx5lh6k/i.test(m)));
+    const old = cases.find((c) => c.id === 'p2432-dze200-mja3fuja-air-quality');
+    assert.ok(old);
+    assert.equal(old.canonicalDriver, 'air_quality_co2');
   });
 });

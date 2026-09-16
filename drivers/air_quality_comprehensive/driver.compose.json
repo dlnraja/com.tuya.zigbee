@@ -42,7 +42,6 @@
   "subDevices": [],
   "zigbee": {
     "manufacturerName": [
-      "_TZE200_8ygsuhe1",
       "_tz3000_jr2atpww",
       "_tz3000_kqvb8qa8",
       "_tz3000_krajfo4p",
@@ -50,8 +49,6 @@
       "_tz3000_tx5b5gp3",
       "_tz3000_ya9ekqwp",
       "_tz3000_zhhcsbrz",
-      "_TZE200_8YGSUHE1",
-      "_tze200_8ygsuhe1",
       "_TZ3000_JR2ATPWW",
       "_TZ3000_KQVB8QA8",
       "_TZ3000_KRAJFO4P",
@@ -66,9 +63,13 @@
       "_TZ3000_tx5b5gp3",
       "_TZ3000_ya9ekqwp",
       "_TZ3000_zhhcsbrz",
-      "_TZE200_mja3fuja",
-      "_TZE200_MJA3FUJA",
-      "_tze200_mja3fuja"
+      "_tz3000_JR2ATPWW",
+      "_tz3000_KQVB8QA8",
+      "_tz3000_KRAJFO4P",
+      "_tz3000_M7WTQKFW",
+      "_tz3000_TX5B5GP3",
+      "_tz3000_YA9EKQWP",
+      "_tz3000_ZHHCSBRZ"
     ],
     "productId": [
       "TS0005",
@@ -76,7 +77,7 @@
       "TS0601"
     ],
     "learnmode": {
-      "image": "/drivers/air_quality_comprehensive/assets/learnmode.svg",
+      "image": "{{driverAssetsPath}}/icon.svg",
       "instruction": {
         "en": "Press and hold the pairing button for 5 seconds until the LED flashes.",
         "fr": "Appuyez et maintenez le bouton d'appairage pendant 5 secondes jusqu'à ce que la LED clignote."
@@ -331,8 +332,7 @@
   ],
   "images": {
     "small": "/drivers/air_quality_comprehensive/assets/images/small.png",
-    "large": "/drivers/air_quality_comprehensive/assets/images/large.png",
-    "xlarge": "/drivers/air_quality_comprehensive/assets/images/xlarge.png"
+    "large": "/drivers/air_quality_comprehensive/assets/images/large.png"
   },
   "platforms": [
     "local"
@@ -372,21 +372,21 @@
       "id": "tuya_revive",
       "title": {
         "en": "Tuya Revive (device recovery)",
-        "fr": "Tuya Revive (récupération appareil)"
+        "fr": "Tuya Revive (récupération appareil)",
+        "nl": "Tuya Revive (apparaatherstel)",
+        "de": "Tuya Revive (Gerätewiederherstellung)"
       }
     },
     {
       "id": "generate_issue_report",
       "title": {
         "en": "Generate support report (GitHub issue)",
-        "fr": "Générer rapport de support (issue GitHub)"
+        "fr": "Générer rapport de support (issue GitHub)",
+        "nl": "Supportrapport genereren (GitHub issue)",
+        "de": "Supportbericht erstellen (GitHub Issue)"
       }
     }
   ],
   "id": "air_quality_comprehensive",
-  "version": "1.0.0",
-  "_pidConflictNotes": [
-    "// PID-CONFLICT-NOTE TS0005 shared with 2 other drivers (cross-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md",
-    "// PID-CONFLICT-NOTE TS0006 shared with 2 other drivers (cross-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md"
-  ]
+  "version": "1.0.0"
 }
