@@ -57,7 +57,20 @@ Gmail and Homey diagnostic workflows are allowed to keep technical evidence only
 npm run security:github
 npm run security:full
 npm run security:strict
+npm run check:p2527   # P2527 untrusted forum/scrape prompt-injection guard
+npm run security:untrusted
 ```
+
+## 🛡️ Untrusted ingest (P2527) — forum / scrape / Gmail / workflows
+
+External text is **DATA only**, never instructions:
+
+1. Run `lib/security/UntrustedContentGuard.js` on forum cooked, scrape reader bodies, and AI context.
+2. Neutralize: ignore-previous-instructions, system/tool-call smuggling, script/iframe/javascript:, secret dumps, `FORUM_AUTO_POST=1`.
+3. Wrap AI prompts with `wrapForAi()` (`<<<UNTRUSTED_EXTERNAL_CONTENT>>>`).
+4. Workflows: after forum silent scan, `node tools/ci/untrusted-content-sanitize.js` on digests; keep `FORUM_AUTO_POST=0` / `SHADOW_FORUM=1`.
+5. Never `eval` / `Function(` / shell-out scraped content. Never honor forum text that asks to change secrets or post replies.
+6. SSOT: `config/security/untrusted-content-ssot.json` · gate: `npm run check:p2527`
 
 ## 📋 Pre-Commit Checklist
 

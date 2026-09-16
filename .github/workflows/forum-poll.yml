@@ -129,6 +129,18 @@ jobs:
           else
             echo "forum-silent-multi-scan.js missing — skip"
           fi
+          # WHY(P2527): neutralize prompt-injection / malicious markup in forum digests before enrich/AI
+          if [ -f tools/ci/untrusted-content-sanitize.js ]; then
+            echo "## 🛡️ Untrusted content sanitize (P2527 — forum digests DATA-only)" >> $GITHUB_STEP_SUMMARY
+            for f in \
+              .github/state/forum/multi-silent-digest.json \
+              .github/state/forum/multi-silent-new-fps.json \
+              .github/state/forum/actionable-processor-report.json
+            do
+              [ -f "$f" ] && node tools/ci/untrusted-content-sanitize.js "$f" || true
+            done
+            npm run check:p2527 || echo "P2527_GATE_WARN"
+          fi
           if [ -f tools/ci/silent-enrichment-orchestrator.js ]; then
             echo "## 🔇 Silent enrichment (forum+sync+investigate need-action, no user wait)" >> $GITHUB_STEP_SUMMARY
             node tools/ci/silent-enrichment-orchestrator.js --phase=forum --skip-scan 2>&1 | tee forum-enrich.log || echo "ENRICH_ORCH_WARN"

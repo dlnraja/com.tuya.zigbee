@@ -3341,5 +3341,8 @@
   },
   "9.0.958": {
     "en": "Presence radar WHEN cards fire on human presence edges; register remaining flow conditions."
+  },
+  "9.0.960": {
+    "en": "Hardened forum and scrape ingest against prompt injection and malicious markup."
   }
 }

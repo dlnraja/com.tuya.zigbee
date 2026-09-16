@@ -27,6 +27,7 @@ const fs = require('fs');
 const path = require('path');
 const { SmartFetcher } = require(path.resolve(__dirname, '..', '..', 'lib', 'scraper', 'smart-fetch'));
 const { extractForumSignals } = require('./forum-signal-extract');
+const { sanitizeUntrusted } = require('../../lib/security/UntrustedContentGuard');
 
 const ROOT = path.resolve(__dirname, '..', '..');
 const STATE_DIR = path.join(ROOT, '.github', 'state', 'forum');
@@ -169,7 +170,9 @@ function analyzePosts(posts, localMfrs) {
 
   for (const p of posts) {
     const text = String(p.cooked || p.raw || '');
-    const { mfrs, pids, issues, clusters } = extractForumSignals(text);
+    // WHY(P2527): forum cooked is untrusted — sanitize before heuristics / digest excerpts
+    const guarded = sanitizeUntrusted(text, { source: 'forum', maxChars: 4000 });
+    const { mfrs, pids, issues, clusters } = extractForumSignals(guarded.text || text);
     if (!mfrs.length && !issues.length && !clusters.length) {continue;}
 
     for (const m of mfrs) {
@@ -194,7 +197,8 @@ function analyzePosts(posts, localMfrs) {
         pids,
         issues,
         clusters,
-        excerpt: text.replace(/<[^>]+>/g, ' ').replace(/\s+/g, ' ').trim().slice(0, 220),
+        excerpt: guarded.text.slice(0, 220),
+        _untrusted: { safe: guarded.safe, flags: guarded.flags, policy: guarded.policy },
       });
     }
   }

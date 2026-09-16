@@ -32,6 +32,16 @@ function redact(text) {
   return preserveTechnical(text, value => {
     let s = String(value);
 
+    // WHY(P2527): also neutralize prompt-injection phrases in diagnostic / forum dumps
+    try {
+      const { sanitizeUntrusted } = require('../../lib/security/UntrustedContentGuard');
+      const g = sanitizeUntrusted(s, { source: 'diag', maxChars: 200000 });
+      // Only rewrite when injection/markup flagged — avoid mangling clean diag logs
+      if (g.flags.includes('prompt_injection') || g.flags.includes('malicious_markup')) {
+        s = g.text;
+      }
+    } catch (_e) { /* soft — privacy redactor must not crash */ }
+
     s = s.replace(/[A-Za-z]:\\Users\\[^\\\s,;:]+/gi, '[REDACTED_PATH]');
     s = s.replace(/\/(?:home|Users|root)\/[^\s/,:;]+/gi, '[REDACTED_PATH]');
     s = s.replace(/https?:\/\/[^\s"',)]+(?:diagnostic|crash|log|debug)[^\s"',)]*/gi, '[REDACTED_DIAGNOSTIC_URL]');
