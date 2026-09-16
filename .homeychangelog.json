@@ -3347,5 +3347,8 @@
   },
   "9.0.961": {
     "en": "Fixed Intelligent IR flow cards after fleet-enrich re-inject; keep titleFormatted omitted."
+  },
+  "9.0.962": {
+    "en": "Hardened radar DP ownership (cap vs capability) so lux/presence RX and presence flow edges stay correct."
   }
 }
