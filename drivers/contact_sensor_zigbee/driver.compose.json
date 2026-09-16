@@ -17,11 +17,7 @@
   "energy": {
     "batteries": [
       "CR2450"
-    ],
-    "approximation": {
-      "usageConstant": 0.5
-    },
-    "mains": true
+    ]
   },
   "subDevices": [],
   "settings": [
@@ -191,7 +187,7 @@
       "type": "dropdown",
       "label": {
         "en": "Energy Optimization Mode",
-        "fr": "Mode Optimisation Ã‰nergétique"
+        "fr": "Mode Optimisation Énergétique"
       },
       "value": "balanced",
       "values": [
@@ -206,20 +202,20 @@
           "id": "balanced",
           "label": {
             "en": "Balanced",
-            "fr": "Ã‰quilibré"
+            "fr": "Équilibré"
           }
         },
         {
           "id": "power_saving",
           "label": {
             "en": "Power Saving (Longer battery)",
-            "fr": "Ã‰conomie d'énergie (Batterie plus longue)"
+            "fr": "Économie d'énergie (Batterie plus longue)"
           }
         }
       ],
       "hint": {
         "en": "Balance between responsiveness and battery life",
-        "fr": "Ã‰quilibre entre réactivité et durée de vie de la batterie"
+        "fr": "Équilibre entre réactivité et durée de vie de la batterie"
       }
     },
     {
@@ -240,12 +236,12 @@
       "type": "checkbox",
       "label": {
         "en": "Invert Contact State",
-        "fr": "Inverser Ã‰tat Contact"
+        "fr": "Inverser État Contact"
       },
       "value": false,
       "hint": {
         "en": "Enable if sensor reports OPEN when CLOSED and vice versa",
-        "fr": "Activer si le capteur signale OUVERT quand FERMÃ‰ et vice versa"
+        "fr": "Activer si le capteur signale OUVERT quand FERMÉ et vice versa"
       }
     },
     {
@@ -309,7 +305,7 @@
       "id": "ota_check",
       "title": {
         "en": "Check Zigbee OTA Update",
-        "fr": "Vérifier MÃJ OTA",
+        "fr": "Vérifier MàJ OTA",
         "nl": "Controleer op OTA-updates"
       }
     },
@@ -317,14 +313,18 @@
       "id": "tuya_revive",
       "title": {
         "en": "Tuya Revive (device recovery)",
-        "fr": "Tuya Revive (récupération appareil)"
+        "fr": "Tuya Revive (récupération appareil)",
+        "nl": "Tuya Revive (apparaatherstel)",
+        "de": "Tuya Revive (Gerätewiederherstellung)"
       }
     },
     {
       "id": "generate_issue_report",
       "title": {
         "en": "Generate support report (GitHub issue)",
-        "fr": "Générer rapport de support (issue GitHub)"
+        "fr": "Générer rapport de support (issue GitHub)",
+        "nl": "Supportrapport genereren (GitHub issue)",
+        "de": "Supportbericht erstellen (GitHub Issue)"
       }
     }
   ],
@@ -362,16 +362,17 @@
     },
     "manufacturerName": [
       "_TZE200_pay2byax",
-      "_tze200_pay2byax",
-      "_TZE200_PAY2BYAX",
-      "_tze200_PAY2BYAX",
       "_TZE204_pay2byax",
-      "_tze204_pay2byax",
-      "_TZE204_PAY2BYAX",
-      "_tze204_PAY2BYAX"
-    ]
-  },
-  "_pidConflictNotes": [
-    "// PID-CONFLICT-NOTE Excellux shared with 30 other drivers (cross-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md"
-  ]
+      "_TZE284_pay2byax"
+    ],
+    "learnmode": {
+      "image": "{{driverAssetsPath}}/icon.svg",
+      "instruction": {
+        "en": "Press and hold the pairing button for 5 seconds until the LED flashes. Keep pressing every 2 seconds during pairing if the device is battery-powered.",
+        "fr": "Maintenez le bouton d'appairage 5 secondes jusqu'à ce que la LED clignote. Sur pile, rappuyez toutes les 2 s pendant l'appairage.",
+        "nl": "Houd de paarknop 5 seconden ingedrukt tot de LED knippert. Bij batterij: druk elke 2 s tijdens het pairen.",
+        "de": "Halten Sie die Kopplungstaste 5 Sekunden, bis die LED blinkt. Bei Batterie alle 2 s während des Pairings drücken."
+      }
+    }
+  }
 }
