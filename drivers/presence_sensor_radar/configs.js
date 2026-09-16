@@ -107,10 +107,13 @@ const SENSOR_CONFIGS = {
     // Presence (DP1) stays immediate; telemetry coalesced in device.js.
     floodCalm: true,
     ultraAggressiveDebounce: true,
-    // WHY(P2511 / VicHY #2222–#2227): after tip update DynCap/poisoned state can stick
-    // alarm_motion forever while DP9 distance collapses — same Contre quoi as P2509 gkfbdvyx.
-    clearPresenceOnZeroDistance: true,
-    syncPresenceFromDistanceInference: true,
+    // WHY(P2534 / VicHY #2240 diag 74e5cae7 image): Z2M MTG075 presence = DP1 only.
+    // clearPresenceOnZeroDistance + syncPresenceFromDistanceInference caused bathroom
+    // timeline flip-flop (Presence detected ↔ No presence / motion on↔off) so Homey
+    // WHEN "Presence detected" never stayed edged for flows. Sticky DP1 is handled via
+    // unreliable+inference — not by treating target_distance 0m as absent.
+    clearPresenceOnZeroDistance: false,
+    syncPresenceFromDistanceInference: false,
     dpThrottleMs: { 9: 2500, 104: 5000 },
     dpMinDelta: { 9: 0.15, 104: 2 },
     dpMap: {
