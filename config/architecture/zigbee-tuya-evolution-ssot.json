@@ -2,7 +2,7 @@
   "id": "zigbee-tuya-evolution-ssot",
   "version": "1.0.0",
   "updated": "2026-09-16",
-  "patch": "P2538",
+  "patch": "P2539",
   "dualApp": "BOTH",
   "homeyDefaultRadio": "2.4 GHz IEEE 802.15.4 Zigbee (typical Zigbee 3.0 / PRO stack on Homey Pro)",
   "doctrine": {
@@ -11,7 +11,26 @@
     "complementaryOnly": true,
     "suziNotDropInOnExistingHomey": true,
     "matterNotRadio": true,
-    "noDegradeCompose": true
+    "noDegradeCompose": true,
+    "zigbee40AwarenessOnlyUntilInterview": true
+  },
+  "intelligentIntegration": {
+    "runtimeClassifier": "lib/utils/zigbee-tuya-evolution.js#classifyHomeyRadioCapability",
+    "protocolHook": "lib/protocol/IntelligentProtocolDetect.js#applyIntelligentProtocol",
+    "diagnosticsHook": "lib/diagnostics/DiagnosticAPI.js",
+    "homeyCapabilityToday": {
+      "zigbee24ghz": true,
+      "tuyaEf00Hybrid": true,
+      "suziSubGhz": false,
+      "zigbeeDirectBleOnboarding": false,
+      "matterBridgePlatformLevel": "homey_os_not_this_app"
+    },
+    "rules": [
+      "Classify interview/identity for Suzi / Green Power / Matter — never invent mfr+pid",
+      "Keep ZCL↔EF00 IntelligentProtocolDetect for Tuya 2.4 GHz couples",
+      "Soft-log radio capability; do not change compose clusters for Zigbee 4.0 awareness",
+      "Green Power EP 242: skip bind/reporting via lib/green_power.js (already)"
+    ]
   },
   "zigbeeLineage": [
     {
