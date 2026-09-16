@@ -1,7 +1,7 @@
 {
-  "generatedAt": "2026-09-16T08:54:30.120Z",
+  "generatedAt": "2026-09-16T11:44:08.339Z",
   "date": "2026-09-16",
-  "mode": "full",
+  "mode": "githubOnly",
   "phases": [
     {
       "name": "guard",
@@ -12,86 +12,29 @@
     {
       "name": "github",
       "ok": true,
-      "durationMs": 248
+      "durationMs": 450
     },
     {
-      "name": "gmail",
+      "name": "functionalDeep",
       "ok": true,
-      "durationMs": 209,
-      "details": {
-        "crash": {
-          "ok": true,
-          "skipped": false,
-          "status": 0,
-          "durationMs": 34,
-          "stderr": "",
-          "stdoutTail": "[gmail-crash-pattern-gate] sources=32 hits=0 unknown=0\n  wrote .github/state/gmail-crash-patterns.json\n  verdict: ok\n"
-        },
-        "treat": {
-          "ok": true,
-          "skipped": false,
-          "status": 0,
-          "durationMs": 173,
-          "stderr": "",
-          "stdoutTail": "[automate] inbox total=0 have=30 missing=0 ingested_now=0\n[recursive-treat] sources: 136\n[recursive-treat] wrote /home/runner/work/com.tuya.zigbee/com.tuya.zigbee/reports/diag-recursive-treat-2026-09-16\n{\n  \"generatedAt\": \"2026-09-16T08:54:30.564Z\",\n  \"methodology\": \"f647d35b-style full-body recursive treat — sacred couple never invented; P2246 derive from interview when ABSENT\",\n  \"sourcesScanned\": 136,\n  \"uniqueCases\": 122,\n  \"actionable\": 33,\n  \"derivedFromInterview\": 1,\n  \"signalTally\": {\n    \"scene_mode_unsupported\": 3,\n    \"wrong_driver_hint\": 4,\n    \"athom_socket_hang\": 6,\n    \"athom_processing_failed\": 2,\n    \"wrong_smart_rcbo\": 2,\n    \"flow_guard_spam\": 2,\n    \"processing_failed\": 6,\n    \"scene_0x8004\": 2,\n    \"invalid_flow_card\": 1,\n    \"missing_capability_listener\": 1\n  },\n  \"gmailBodiesPresent\": 30,\n  \"interviews\": 90\n}\n[automate] status → .github/state/diag-recursive-inbox/automate-status.json\n{\n  \"total\": 0,\n  \"have\": 30,\n  \"missing\": 0,\n  \"missingIds\": []\n}\n[automate] actionable= 33 gmailBodies= 30\n"
-        }
-      }
-    },
-    {
-      "name": "forum",
-      "ok": true,
-      "durationMs": 27889,
-      "skipScan": false,
-      "steps": [
-        {
-          "ok": true,
-          "skipped": false
-        },
-        {
-          "ok": true,
-          "skipped": false
-        },
-        {
-          "ok": true,
-          "skipped": false
-        },
-        {
-          "ok": true,
-          "skipped": false
-        }
-      ]
-    },
-    {
-      "name": "drivers",
-      "ok": true,
-      "durationMs": 1580,
-      "mfs": {
-        "high": 0,
-        "changes": 0,
-        "fail": false
-      },
-      "sacredOk": true
+      "durationMs": 1237,
+      "note": "P2529 complementary deep functional (soft)"
     },
     {
       "name": "prioritize",
       "ok": true,
-      "durationMs": 1,
-      "count": 4
+      "durationMs": 2,
+      "count": 3
     },
     {
       "name": "docs",
       "ok": true,
-      "durationMs": 0,
-      "doc": "/home/runner/work/com.tuya.zigbee/com.tuya.zigbee/docs/architecture/L99_INBOX_INTELLIGENCE.md"
-    },
-    {
-      "name": "gates",
-      "ok": true,
-      "durationMs": 2337
+      "durationMs": 1,
+      "doc": "C:\\Users\\Dell\\Documents\\homey\\master\\docs\\architecture\\L99_INBOX_INTELLIGENCE.md"
     }
   ],
   "github": {
-    "harvestedAt": "2026-09-16T08:54:30.368Z",
+    "harvestedAt": "2026-09-16T11:44:08.789Z",
     "repo": "dlnraja/com.tuya.zigbee",
     "auth": "token",
     "error": null,
@@ -117,7 +60,7 @@
         "updatedAt": "2026-09-15T06:42:17Z",
         "user": "salvagr",
         "htmlUrl": "https://github.com/dlnraja/com.tuya.zigbee/issues/533",
-        "bodySnippet": "Thank you for your support.\n\n## 📱 Basic Information\n\n**Brand & Model**: SMART ZIGBEE CURTAIN SWITCH - MOES\n**Purchase Link**: https://es.aliexpress.com/item/1005008356152992.html\n**Power Source**:  Mains\n**Current Status**: pairing with wrong device type. Detected as \"radiator v"
+        "bodySnippet": "Thank you for your support.\n\n## 📱 Basic Information\n\n**Brand & Model**: SMART ZIGBEE CURTAIN SWITCH - MOES\n**Purchase Link**: https://es.aliexpress.com/item/1005008356152992.html\n**Power Source**:  Mains\n**Current Status**: pairing with wrong device type. Detected as \"radiator valve\"\n\n---\n\n## 🔍 Zigbee Fingerprint (MANDATORY)\n\n```json\n  \"ids\": {\n    \"modelId\": \"TS0601\",\n    \"manufacturerName\": \"_TZE204_5slehgeo\"\n  },\n  \"endpoints\": {\n    \"ieeeAddress\": \"a4:c1:38:db:ac:5f:6b:c3\",\n    \"networkAddress\": 60894,\n    \"modelId\": \"TS0601\",\n    \"manufacturerName\": \"_TZE204_5slehgeo\",\n    \"endpointDescriptors\": [\n      {\n        \"status\": \"SUCCESS\",\n        \"nwkAddrOfInterest\": 60894,\n        \"_reserved\": 20,\n        \"endpointId\": 1,\n        \"applicationProfileId\": 260,\n        \"applicationDeviceId\": 81,\n        \"applicationDeviceVersion\": 0,\n        \"_reserved1\": 1,\n        \"inputClusters\": [\n          4,\n          5,\n          61184,\n          0\n        ],\n        \"outputClusters\": [\n          25,\n          10\n        ]\n      },\n      {\n        \"status\": \"SUCCESS\",\n        \"nwkAddrOfInterest\": 60894,\n        \"_reserved\": 10,\n        \"endpointId\": 242,\n        \"applicationProfileId\": 41440,\n        \"applicationDeviceId\": 97,\n        \"applicationDeviceVersion\": 0,\n        \"_reserved1\": 0,\n        \"inputClusters\": [],\n        \"outputClusters\": [\n          33\n        ]\n      }\n    ],\n    \"deviceType\": \"router\",\n    \"receiveWhenIdle\": true,\n    \"capabilities\": {\n      \"alternatePANCoordinator\": false,\n      \"deviceType\": true,\n      \"powerSourceMains\": true,\n      \"receiveWhenIdle\": true,\n      \"security\": false,\n      \"allocateAddress\": true\n    },\n    \"extendedEndpointDescriptors\": {\n      \"1\": {\n        \"clusters\": {\n          \"groups\": {\n            \"attributes\": [\n              {\n                \"acl\": [\n                  \"readable\",\n                  \"reportable\"\n                ],\n                \"id\": 0,\n                \"dataTypeId\": 24,\n                \"name\": \"nameSupport\",\n                \"value\": {\n                  \"type\": \"Buffer\",\n                  \"data\": [\n                    0\n                  ]\n                },\n                \"reportingConfiguration\": {\n                  \"status\": \"NOT_FOUND\",\n                  \"direction\": \"reported\"\n                }\n              },\n              {\n                \"acl\": [\n                  \"readable\",\n                  \"reportable\"\n                ],\n                \"id\": 65533,\n                \"dataTypeId\": 33,\n                \"name\": \"clusterRevision\",\n                \"value\": 2,\n                \"reportingConfiguration\": {\n                  \"status\": \"NOT_FOUND\",\n                  \"direction\": \"reported\"\n                }\n              }\n            ]\n          },\n          \"scenes\": {\n            \"attributes\": [\n              {\n                \"acl\": [\n                  \"readable\",\n                  \"reportable\"\n                ],\n                \"id\": 0,\n                \"dataTypeId\": 32,\n                \"reportingConfiguration\": {\n                  \"status\": \"NOT_FOUND\",\n                  \"direction\": \"reported\"\n                }\n              },\n              {\n                \"acl\": [\n                  \"readable\",\n                  \"reportable\"\n                ],\n                \"id\": 1,\n                \"dataTypeId\": 32,\n                \"reportingConfiguration\": {\n                  \"status\": \"NOT_FOUND\",\n                  \"direction\": \"reported\"\n                }\n              },\n              {\n                \"acl\": [\n                  \"readable\",\n                  \"reportable\"\n                ],\n                \"id\": 2,\n                \"dataTypeId\": 33,\n                \"reportingConfiguration\": {\n                  \"status\": \"NOT_FOUND\",\n                  \"direction\": \"reported\"\n                }\n              },\n              {\n                \"acl\": [\n                  \"readable\",\n                  \"reportable\"\n                ],\n                \"id\": 3,\n                \"dataTypeId\": 16,\n                \"reportingConfiguration\": {\n                  \"status\": \"NOT_FOUND\",\n                  \"direction\": \"reported\"\n                }\n              },\n              {\n                \"acl\": [\n                  \"readable\",\n                  \"reportable\"\n                ],\n                \"id\": 4,\n                \"dataTypeId\": 24,\n                \"reportingConfiguration\": {\n                  \"status\": \"NOT_FOUND\",\n                  \"direction\": \"reported\"\n           "
       },
       {
         "number": 548,
@@ -128,7 +71,7 @@
         "updatedAt": "2026-09-13T07:25:02Z",
         "user": "Wuma68",
         "htmlUrl": "https://github.com/dlnraja/com.tuya.zigbee/issues/548",
-        "bodySnippet": "### Describe the bug\n\n> A clear and concise description of what the bug is.\n\n### To Reproduce\n\nSteps to reproduce the behavior:\n\nRestart it's self all the time!\n\n1. Go to '...'\n2. Click on '....'\n3. Scroll down to '....'\n4. See error\n\n### Expected behavior\n\n> A clear and concise "
+        "bodySnippet": "### Describe the bug\n\n> A clear and concise description of what the bug is.\n\n### To Reproduce\n\nSteps to reproduce the behavior:\n\nRestart it's self all the time!\n\n1. Go to '...'\n2. Click on '....'\n3. Scroll down to '....'\n4. See error\n\n### Expected behavior\n\n> A clear and concise description of what you expected to happen.\n\n### App and Homey version\n\n> * What Homey version are you running? - Early 2003\n> * What version of Homey firmware do you use? - 13.5.0\n> * What version of the Tuya Zigbee App are you using? - 9.0.908\n\n### Screenshots\n\n> If applicable, add screenshots to help explain your problem.\n\n### Additional context\n\nHave done made a report through Homey 97413373-7521-4d6a-bf27-7df0627b8f26\n"
       },
       {
         "number": 547,
@@ -140,79 +83,16 @@
         "updatedAt": "2026-09-13T06:52:25Z",
         "user": "HiepSVG",
         "htmlUrl": "https://github.com/dlnraja/com.tuya.zigbee/issues/547",
-        "bodySnippet": "## 📱 Basic Information\n\n\nhttps://www.aliexpress.com/item/1005007575802295.html\n Tuya WiFi /Zigbee 24G Human Presence Sensor Smart Human Body PIR Sensor Radar Detector Microwave Motion Sensors Home Automation\n---\n\n## 🔍 Zigbee Fingerprint (MANDATORY)\n\nPlease provide this informat"
+        "bodySnippet": "## 📱 Basic Information\n\n\nhttps://www.aliexpress.com/item/1005007575802295.html\n Tuya WiFi /Zigbee 24G Human Presence Sensor Smart Human Body PIR Sensor Radar Detector Microwave Motion Sensors Home Automation\n---\n\n## 🔍 Zigbee Fingerprint (MANDATORY)\n\nPlease provide this information from Homey Developer Tools:\n\n**Manufacturer Name**: `_TZ____`  \n**Model ID**: `TS____`  \n**Endpoints**: `[ ]`  \n**Clusters**: `[ ]`\n\nProperty\tValue\nID\t031ab5cc-e6b0-4155-93f9-c636329c3c91\nName\tZigbee Device\nClass\tsocket\nDriver\thomey:virtualdriverzigbee:driver\nReady\tYes\nAvailable\tNo (This device left the Zigbee network.)\nWarning\tNo\nCustom icon\tNo\n\nData\nKey\tValue\ntoken\t\"031b1cc2-7c18-4a55-ab38-89e95c84e27b\"\n\nSettings\nKey\tValue\nzb_product_id\t\"TS0601\"\nzb_manufacturer_name\t\"_TZE204_gkfbdvyx\"\nzb_receive_when_idle\t\"✓\"\nzb_device_type\t\"router\"\nzb_ieee_address\t\"a4:c1:38:86:ef:fe:6b:3c\"\nzb_sw_build_id\t\"\"\nzb_touchlink_group_ids\t\"\"\nenergy_value_constant\tnull\n\nCapabilities\nThis device has no capabilities.\n\n\nTX 80\nTX error 9 (11%)\nRX 67\n\n\n**Screenshot or fingerprint data**:\n```\nPaste fingerprint here\n```\n\n---\n\n## 📊 TS0601 Data Points (if applicable)\n\nIf your device uses model `TS0601`, please provide DP mappings:\n\n| DP ID | Function | Example Value | Read/Write |\n|-------|----------|---------------|------------|\n| 1     | (e.g., switch) | true/false | RW |\n| 4     | (e.g., battery) | 87 (%) | R |\n| ...   | ... | ... | ... |\n\n---\n\n## 🔗 References\n\n**Zigbee2MQTT**: (link if exists)  \n**Home Assistant/ZHA**: (link if exists)  \n**Other documentation**: (any other helpful links)\n\n---\n\n## ✨ Expected Capabilities\n\nWhat features should work? Check all that apply:\n\n- [ ] On/Off\n- [ ] Brightness/Dim\n- [ ] Temperature\n- [ ] Humidity\n- [ ] Motion detection\n- [ ] Contact sensor\n- [ ] Battery level\n- [ ] Energy monitoring (power, current, voltage)\n- [ ] Other: _________\n\n---\n\n## 📝 Additional Notes\n\nAny other relevant information (e.g., specific modes, known issues, etc.)\n---\nname: \"Device Request (Zigbee Tuya)\"\nabout: \"Request support for a new device (local Zigbee)\"\nlabels: [\"device-request\", \"enhancement\"]\nassignees: []\n---\n\n##  Basic Information\n\n**Brand & Model**: \n**Purchase Link**: \n**Power Source**: [ ] Battery / [ ] Mains\n**Current Status**: [ ] Not pairing / [ ] Pairs but missing features / [ ] Not working at all\n\n---\n\n##  Zigbee Fingerprint (MANDATORY)\n\nPlease provide this information from Homey Developer Tools:\n\n**Manufacturer Name**: `_TZ____`  \n**Model ID**: `TS____`  \n**Endpoints**: `[ ]`  \n**Clusters**: `[ ]`\n\n### How to Get Fingerprint:\n1. Pair device with Homey\n2. Go to Developer Tools  Devices  [Your Device]\n3. Click \"Advanced\" tab\n4. Screenshot OR copy the information above\n\n**Screenshot or fingerprint data**:\n```\nPaste fingerprint here\n```\n\n---\n\n##  TS0601 Data Points (if applicable)\n\nIf your device uses model `TS0601`, please provide DP mappings:\n\n| DP ID | Function | Example Value | Read/Write |\n|-------|----------|---------------|------------|\n| 1     | (e.g., switch) | true/false | RW |\n| 4     | (e.g., battery) | 87 (%) | R |\n| ...   | ... | ... | ... |\n\n---\n\n##  References\n\n**Zigbee2MQTT**: (link if exists)  \n**Home Assistant/ZHA**: (link if exists)  \n**Other documentation**: (any other helpful links)\n\n---\n\n##  Expected Capabilities\n\nWhat features should work? Check all that apply:\n\n- [ ] On/Off\n- [ ] Brightness/Dim\n- [ ] Temperature\n- [ ] Humidity\n- [ ] Motion detection\n- [ ] Contact sensor\n- [ ] Battery level\n- [ ] Energy monitoring (power, current, voltage)\n- [ ] Other: _________\n\n---\n\n##  Additional Notes\n\nAny other relevant information (e.g., specific modes, known issues, etc.)\n"
       }
     ],
     "prs": [],
     "openIssueCount": 3,
     "openPrCount": 0
   },
-  "forum": {
-    "path": "/home/runner/work/com.tuya.zigbee/com.tuya.zigbee/.github/state/forum/actionable-processor-report.json",
-    "totals": {
-      "posts": 216,
-      "withCouples": 77,
-      "needAction": 52,
-      "both": 130,
-      "masterOnly": 15
-    },
-    "posts": 216
-  },
-  "gmail": {
-    "generatedAt": "2026-09-16T08:54:30.395Z",
-    "sourcesScanned": 32,
-    "patternCounts": {
-      "flow_getDeviceActionCard": 0,
-      "readonly_error_assign": 0,
-      "unbound_destroyed": 0,
-      "getDiscoveries_not_fn": 0,
-      "getDeviceById": 0,
-      "catch_on_undefined": 0,
-      "registerRunListenerasync_typo": 0,
-      "settimeout_destroyed": 0,
-      "onDeleted_null": 0,
-      "dcm_auditCapabilities_missing": 0,
-      "capability_ref_undefined": 0,
-      "clusterutils_destroyed_unbound": 0,
-      "heap_oom_live_data": 0,
-      "ERR_IAS_SLEEPY_TIMEOUT": 0,
-      "ERR_DESTROYED_DEVICE_TIMER": 0,
-      "ERR_UNBOUND_DESTROYED": 0,
-      "ERR_CATCH_ON_UNDEFINED": 0,
-      "ERR_CAPABILITY_NOT_FOUND": 0,
-      "ERR_AUDIT_CAPABILITIES": 0,
-      "ERR_ZIGBEE_ROUTE_FULL": 0
-    },
-    "hits": [],
-    "unknownFatals": [],
-    "knownFixed": [
-      "flow_getDeviceActionCard",
-      "readonly_error_assign",
-      "unbound_destroyed",
-      "getDiscoveries_not_fn",
-      "getDeviceById",
-      "catch_on_undefined",
-      "registerRunListenerasync_typo",
-      "settimeout_destroyed",
-      "onDeleted_null",
-      "dcm_auditCapabilities_missing",
-      "capability_ref_undefined",
-      "clusterutils_destroyed_unbound",
-      "heap_oom_live_data",
-      "ERR_IAS_SLEEPY_TIMEOUT",
-      "ERR_DESTROYED_DEVICE_TIMER",
-      "ERR_UNBOUND_DESTROYED",
-      "ERR_CATCH_ON_UNDEFINED",
-      "ERR_AUDIT_CAPABILITIES"
-    ],
-    "watch": [],
-    "verdict": "ok"
-  },
-  "mfs": {
-    "high": 0,
-    "changes": 0,
-    "fail": false
-  },
+  "forum": null,
+  "gmail": null,
+  "mfs": null,
   "priority": [
     {
       "score": 90,
@@ -235,15 +115,6 @@
       "forumReply": "NEVER"
     },
     {
-      "score": 75,
-      "dualApp": "BOTH",
-      "source": "forum",
-      "id": "forum-need-action",
-      "title": "52 forum posts needAction (shadow processor)",
-      "action": "enrich:investigate + lock mfr+pid only",
-      "forumReply": "NEVER"
-    },
-    {
       "score": 70,
       "dualApp": "BOTH",
       "source": "github-issue",
@@ -253,5 +124,9 @@
       "action": "investigate-code-silent",
       "forumReply": "NEVER"
     }
-  ]
+  ],
+  "functionalDeep": {
+    "ok": true,
+    "durationMs": 1236
+  }
 }

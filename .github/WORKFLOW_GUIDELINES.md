@@ -1201,6 +1201,25 @@ Hooks (soft, continue-on-error):
 
 Rules: `FORUM_AUTO_POST=0`, never invent pid, never blind `align-mfs --apply`, commit reports only with `[skip ci]`.
 
+### P2529 — Deep functional enrich (beyond mfr+pid)
+**Mandate:** every forum / GitHub / Gmail / image / portal item must audit **DP · clusters · flow wire · RX/TX** — complementary (P2520), never wipe.
+
+| | |
+|---|---|
+| SSOT | `config/architecture/deep-functional-enrich-ssot.json` |
+| Pass | `tools/ci/deep-functional-enrich-pass.js` → `reports/deep-functional-*/FUNCTIONAL_AUDIT.md` |
+| Gate | `npm run check:p2529` |
+| npm | `npm run enrich:functional` |
+| Docs | `docs/rules/DEEP_FUNCTIONAL_ENRICH.md` · `.cursor/rules/deep-functional-enrich-always.mdc` |
+
+Hooks (soft):
+- `l99-inbox-intelligence.yml` — phase `functionalDeep` + explicit P2529 step
+- `forum-poll.yml` — after investigate
+- `auto-enrich-closed-loop.yml` — after L99 inbox
+- `gmail-diagnostics.yml` — after infer-enrich
+
+Forbidden shallow closes: “fingerprint present”, “update Test only”, “lock couple then stop”, compose-only flow cards.
+
 ### Catalog lock checklist (when adding a sacred couple)
 1. `drivers/*/driver.compose.json` (static Homey match)
 2. `lib/DeviceFingerprintDB.js` compound key `mfr|pid`

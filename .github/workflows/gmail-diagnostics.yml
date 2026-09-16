@@ -197,6 +197,15 @@ jobs:
           node tools/ci/anti-bot-regression-gate.js --strip || true
           node tools/ci/p2138-sacred-couple-matrix-gate.js || true
 
+      # WHY(P2529): after Gmail diags — deep functional audit (soft, complementary)
+      - name: "P2529 deep functional enrich (soft)"
+        if: always()
+        continue-on-error: true
+        timeout-minutes: 6
+        run: |
+          npm run enrich:functional -- --skip-gates 2>&1 | tee deep-functional-gmail.log || echo "P2529_SOFT_WARN"
+          npm run check:p2529 || echo "P2529_GATE_WARN"
+
       - name: "Light Z2M/ZHA sync (best-effort, OOM-safe)"
         if: always()
         continue-on-error: true

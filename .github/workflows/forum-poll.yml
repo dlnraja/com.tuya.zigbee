@@ -164,6 +164,11 @@ jobs:
           elif [ -f tools/ci/auto-investigate-need-action.js ]; then
             node tools/ci/auto-investigate-need-action.js 2>&1 | tee auto-investigate-need-action.log || echo "AUTO_INVESTIGATE_WARN"
           fi
+          # WHY(P2529): deep functional enrich — DP/cluster/flow/RX-TX (not mfr+pid only)
+          if [ -f tools/ci/deep-functional-enrich-pass.js ]; then
+            npm run enrich:functional -- --skip-gates 2>&1 | tee deep-functional-forum.log || echo "P2529_SOFT_WARN"
+            npm run check:p2529 || echo "P2529_GATE_WARN"
+          fi
           if [ -f tools/ci/apply-forum-silent-multi.js ]; then
             node tools/ci/apply-forum-silent-multi.js 2>&1 | tee forum-known-routes.log || echo "KNOWN_ROUTES_SKIP"
           fi
