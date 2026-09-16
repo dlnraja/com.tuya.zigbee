@@ -21,6 +21,7 @@ const {
 } = require('../../lib/enrichment/ComplementaryMerge');
 
 const SEEDS = [
+  // Curtains / covers
   { suffix: '5slehgeo', driver: 'curtain_motor', family: 'moes_cover', caps: ['windowcoverings_state', 'windowcoverings_set'] },
   { suffix: 'nhyj64w2', driver: 'curtain_motor', family: 'moes_cover', caps: ['windowcoverings_state', 'windowcoverings_set'] },
   { suffix: '127x7wnl', driver: 'curtain_motor', family: 'moes_cover', caps: ['windowcoverings_state', 'windowcoverings_set'] },
@@ -31,19 +32,39 @@ const SEEDS = [
   { suffix: 'icka1clh', driver: 'curtain_motor', family: 'am43', caps: ['windowcoverings_state', 'windowcoverings_set', 'measure_battery'] },
   { suffix: 'zah67ekd', driver: 'curtain_motor', family: 'am43', caps: ['windowcoverings_state', 'windowcoverings_set', 'measure_battery'] },
   { suffix: '3mzb0sdz', driver: 'curtain_motor', family: 'zm16b', caps: ['windowcoverings_state', 'windowcoverings_set', 'measure_battery'] },
+  // WHY(P2530b): Moes SFC02 wall curtain switch — never curtain_motor
+  { suffix: 'kq1l5eu5', driver: 'wall_curtain_switch', family: 'moes_sfc02', prefix: 'TZE', caps: ['windowcoverings_state', 'windowcoverings_set'] },
+  // Radar / presence (mains — no measure_battery)
   { suffix: 'gkfbdvyx', driver: 'presence_sensor_radar', family: 'ceiling_24g', prefix: 'TZE', caps: ['alarm_motion', 'alarm_human', 'measure_luminance'] },
   { suffix: 'clrdrnya', driver: 'presence_sensor_radar', family: 'mtg075', prefix: 'TZE', caps: ['alarm_motion', 'alarm_human', 'measure_luminance'] },
   { suffix: 'iadro9bf', driver: 'presence_sensor_radar', family: 'ceiling_24g', prefix: 'TZE', caps: ['alarm_motion', 'alarm_human', 'measure_luminance'] },
   { suffix: 'qasjif9e', driver: 'presence_sensor_radar', family: 'ceiling_24g', prefix: 'TZE', caps: ['alarm_motion', 'alarm_human', 'measure_luminance'] },
   { suffix: 'sxm7l9xa', driver: 'presence_sensor_radar', family: 'ceiling_24g', prefix: 'TZE', caps: ['alarm_motion', 'alarm_human', 'measure_luminance'] },
+  // Dimmer / valves / sensors
   { suffix: 'm1cvyneb', driver: 'wall_dimmer_tuya', family: 'bseed_dimmer', prefix: 'TZE', caps: ['onoff', 'dim'] },
+  { suffix: 'fhvpaltk', driver: 'valve_dual_irrigation', family: 'insoma', prefix: 'TZE', caps: ['onoff.valve_1', 'onoff.valve_2', 'measure_battery'] },
+  { suffix: 'nt4pquef', driver: 'soil_sensor', family: 'sgs02', prefix: 'TZE', caps: ['measure_humidity.soil', 'measure_temperature', 'measure_battery'] },
+  { suffix: '6ocnqlhn', driver: 'din_rail_meter', family: 'tongou', prefix: 'TZE', caps: ['measure_power', 'meter_power', 'measure_voltage', 'measure_current'] },
+  { suffix: 'pay2byax', driver: 'contact_sensor_zigbee', family: 'contact_ef00', prefix: 'TZE', caps: ['alarm_contact', 'measure_battery'] },
+  // TZ3000 buttons / knobs / switches
   { suffix: 'mrpevh8p', driver: 'button_wireless_1', family: 'smartbutton', prefix: 'TZ3000', caps: ['measure_battery'] },
-  { suffix: 'fhvpaltk', driver: 'valve_dual_irrigation', family: 'insoma', prefix: 'TZE', caps: [] },
-  { suffix: 'zgyzgdua', driver: 'scene_switch_4', family: 'ts0044', prefix: 'TZ3000', caps: ['measure_battery'] },
+  { suffix: '4upl1fcj', driver: 'button_wireless_1', family: 'smartbutton', prefix: 'TZ3000', caps: ['measure_battery'] },
+  { suffix: 'zgyzgdua', driver: 'scene_switch_4', family: 'ts0044', prefix: 'TZ3000', caps: ['measure_battery', 'button.1', 'button.2', 'button.3', 'button.4'] },
   { suffix: 'uri7ongn', driver: 'smart_knob', family: 'ers10', prefix: 'TZ3000', caps: ['dim', 'measure_battery'] },
   { suffix: 'ixla93vd', driver: 'smart_knob', family: 'ers10', prefix: 'TZ3000', caps: ['dim', 'measure_battery'] },
   { suffix: 'g9g2xnch', driver: 'smart_knob', family: 'ers10', prefix: 'TZ3000', caps: ['dim', 'measure_battery'] },
-  { suffix: 'pay2byax', driver: 'contact_sensor_zigbee', family: 'contact_ef00', prefix: 'TZE', caps: ['alarm_contact', 'measure_battery'] },
+  { suffix: '402vrq2i', driver: 'smart_knob', family: 'zg101zd', prefix: 'TZ3000', caps: ['dim', 'measure_battery'] },
+  { suffix: 'kaflzta4', driver: 'smart_knob', family: 'scene_knob', prefix: 'TZ3000', caps: ['measure_battery'] },
+  { suffix: 'ja5osu5g', driver: 'smart_knob', family: 'scene_knob', prefix: 'TZ3000', caps: ['measure_battery'] },
+  { suffix: 'xffhmvhv', driver: 'button_wireless_4', family: 'nobo', prefix: 'TZ3000', caps: ['measure_battery', 'button.1', 'button.2', 'button.3', 'button.4'] },
+  { suffix: 'abrsvsou', driver: 'button_wireless_4', family: 'ts004f_4btn', prefix: 'TZ3000', caps: ['measure_battery', 'button.1', 'button.2', 'button.3', 'button.4'] },
+  { suffix: 'kfu8zapd', driver: 'button_wireless_4', family: 'ts0044', prefix: 'TZ3000', caps: ['measure_battery', 'button.1', 'button.2', 'button.3', 'button.4'] },
+  { suffix: 'k4ej3ww2', driver: 'water_leak_sensor', family: 'ias_leak', prefix: 'TZ3000', caps: ['alarm_water', 'measure_battery'] },
+  { suffix: 'lwthnp7j', driver: 'wall_switch_4gang_1way', family: 'gabriel_4g', prefix: 'TZ3000', caps: ['onoff', 'onoff.gang2', 'onoff.gang3', 'onoff.gang4'] },
+  { suffix: 'okaz9tjs', driver: 'plug_energy_monitor', family: 'ts011f', prefix: 'TZ3000', caps: ['onoff', 'measure_power', 'meter_power', 'measure_voltage', 'measure_current'] },
+  { suffix: 'fgwhjm9j', driver: 'plug_energy_monitor', family: 'ts011f', prefix: 'TZ3210', caps: ['onoff', 'measure_power', 'meter_power'] },
+  { suffix: 'qeuvnohg', driver: 'din_rail_switch', family: 'din_switch', prefix: 'TZ3000', caps: ['onoff'] },
+  { suffix: 'w5xztuy7', driver: 'switch_2gang', family: 'bseed_zcl', prefix: 'TZ3000', caps: ['onoff'] },
 ];
 
 // Default prefix TZE for curtain seeds above — patch first block
@@ -82,9 +103,10 @@ function collectCorpus() {
 }
 
 function findSuffixHits(corpus, suffix, prefixKind = 'TZE') {
-  const re = prefixKind === 'TZ3000'
-    ? new RegExp(`_TZ3000_${suffix}`, 'gi')
-    : new RegExp(`_TZE(?:200|204|284)_${suffix}`, 'gi');
+  let re;
+  if (prefixKind === 'TZ3000') re = new RegExp(`_TZ3000_${suffix}`, 'gi');
+  else if (prefixKind === 'TZ3210') re = new RegExp(`_TZ3210_${suffix}`, 'gi');
+  else re = new RegExp(`_TZE(?:200|204|284)_${suffix}`, 'gi');
   const hits = new Set();
   let m;
   while ((m = re.exec(corpus))) hits.add(m[0]);
@@ -106,6 +128,10 @@ function expandOemFamily(suffix, compose, foundInCorpus, prefixKind = 'TZE') {
     out.push(`_TZ3000_${suffix}`, `_tz3000_${suffix}`, `_TZ3000_${suffix.toUpperCase()}`, `_tz3000_${suffix.toUpperCase()}`);
     return out;
   }
+  if (prefixKind === 'TZ3210') {
+    out.push(`_TZ3210_${suffix}`, `_tz3210_${suffix}`, `_TZ3210_${suffix.toUpperCase()}`, `_tz3210_${suffix.toUpperCase()}`);
+    return out;
+  }
   for (const p of ['_TZE200_', '_TZE204_', '_TZE284_']) out.push(`${p}${suffix}`);
   for (const p of ['_tze200_', '_tze204_', '_tze284_']) out.push(`${p}${suffix}`);
   return out;
@@ -122,6 +148,8 @@ function caseForms(mfr) {
       .replace(/_TZE(\d{3})_([A-Za-z0-9]+)$/i, (_, n, suf) => `_TZE${n}_${String(suf).toLowerCase()}`);
   } else if (/^_tz3000_/i.test(s)) {
     canon = s.replace(/^_tz3000_/i, '_TZ3000_').replace(/_TZ3000_([A-Za-z0-9]+)$/i, (_, suf) => `_TZ3000_${String(suf).toLowerCase()}`);
+  } else if (/^_tz3210_/i.test(s)) {
+    canon = s.replace(/^_tz3210_/i, '_TZ3210_').replace(/_TZ3210_([A-Za-z0-9]+)$/i, (_, suf) => `_TZ3210_${String(suf).toLowerCase()}`);
   }
   return unionStrings([], [canon, s, lower, upper]);
 }
@@ -213,13 +241,22 @@ function main() {
   // WHY(P2522/P2530): sacred recent couples stay front-pinned after multi-seed union
   const FRONT = {
     curtain_motor: ['_TZE204_5slehgeo', '_TZE284_5slehgeo', '_TZE200_5slehgeo', '_TZE200_icka1clh', '_TZE284_fodv6bkr'],
+    wall_curtain_switch: ['_TZE284_kq1l5eu5', '_TZE204_kq1l5eu5', '_TZE200_kq1l5eu5'],
     presence_sensor_radar: ['_TZE204_gkfbdvyx', '_TZE200_gkfbdvyx', '_TZE284_gkfbdvyx', '_TZE204_clrdrnya'],
     wall_dimmer_tuya: ['_TZE284_m1cvyneb', '_TZE204_m1cvyneb', '_TZE200_m1cvyneb'],
-    button_wireless_1: ['_TZ3000_mrpevh8p'],
+    button_wireless_1: ['_TZ3000_mrpevh8p', '_TZ3000_4upl1fcj'],
     scene_switch_4: ['_TZ3000_zgyzgdua'],
-    smart_knob: ['_TZ3000_uri7ongn', '_TZ3000_ixla93vd', '_TZ3000_g9g2xnch'],
+    smart_knob: ['_TZ3000_uri7ongn', '_TZ3000_ixla93vd', '_TZ3000_g9g2xnch', '_TZ3000_kaflzta4'],
     contact_sensor_zigbee: ['_TZE200_pay2byax', '_TZE204_pay2byax'],
     valve_dual_irrigation: ['_TZE284_fhvpaltk'],
+    soil_sensor: ['_TZE284_nt4pquef'],
+    din_rail_meter: ['_TZE284_6ocnqlhn'],
+    water_leak_sensor: ['_TZ3000_k4ej3ww2'],
+    wall_switch_4gang_1way: ['_TZ3000_lwthnp7j'],
+    button_wireless_4: ['_TZ3000_xffhmvhv', '_TZ3000_abrsvsou'],
+    plug_energy_monitor: ['_TZ3000_okaz9tjs', '_TZ3210_fgwhjm9j'],
+    din_rail_switch: ['_TZ3000_qeuvnohg'],
+    switch_2gang: ['_TZ3000_w5xztuy7'],
   };
 
   if (apply) {
