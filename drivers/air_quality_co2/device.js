@@ -227,31 +227,82 @@ class AirQualityCO2Device extends SensorBase {
 
   async _setupAirQualityZCL(zclNode) {
     const ep1 = zclNode?.endpoints?.[1];
-    if (!ep1) {return;}
+    if (!ep1?.clusters) {return;}
+
+    // WHY(P2540): complementary ZCL RX alongside EF00 DP — never replace DP map.
+    // Contre quoi: airbox/ZHA siblings that expose 0x040d CO2 / VOC / HCHO / PM2.5 while EF00 also runs.
+    const commit = (cap, value) => {
+      if (value === null || value === undefined || Number.isNaN(value)) {return;}
+      if (!this.hasCapability(cap)) {return;}
+      if (typeof this.confirmInbound === 'function') {
+        this.confirmInbound(cap, value, 'zcl').catch(() => {});
+        return;
+      }
+      this.safeSetCapabilityValue(cap, value, { source: 'zcl' }).catch(() => {});
+    };
+
+    const listenMeasured = (clusterNames, cap, transform) => {
+      for (const name of clusterNames) {
+        const cluster = ep1.clusters[name];
+        if (!cluster) {continue;}
+        try {
+          cluster.on('attr.measuredValue', (v) => {
+            try {
+              commit(cap, transform(v));
+            } catch (_e) { /* never break RX */ }
+          });
+          this.log(`[CO2] ZCL complementary listen ${name} → ${cap}`);
+        } catch (e) {
+          this.log(`[CO2] ZCL listen skip ${name}:`, e.message);
+        }
+      }
+    };
 
     try {
-      const temp = ep1.clusters?.msTemperatureMeasurement;
-      if (temp) {
-        temp.on('attr.measuredValue', (v) => {
+      listenMeasured(
+        ['msTemperatureMeasurement', 'temperatureMeasurement'],
+        'measure_temperature',
+        (v) => {
           const t = parseFloat(v) / 100;
-          if (t >= -40 && t <= 80) {
-            this.safeSetCapabilityValue('measure_temperature', t).catch(() => { });
-          } else {
-            this.log('[CO2] ZCL temp rejected:', t);
-          }
-        });
-      }
-      const hum = ep1.clusters?.msRelativeHumidity;
-      if (hum) {
-        hum.on('attr.measuredValue', (v) => {
+          return (t >= -40 && t <= 80) ? t : null;
+        }
+      );
+      listenMeasured(
+        ['msRelativeHumidity', 'relativeHumidity'],
+        'measure_humidity',
+        (v) => {
           const h = parseFloat(v) / 100;
-          if (h >= 0 && h <= 100) {
-            this.safeSetCapabilityValue('measure_humidity', h).catch(() => { });
-          } else {
-            this.log('[CO2] ZCL hum rejected:', h);
-          }
-        });
-      }
+          return (h >= 0 && h <= 100) ? h : null;
+        }
+      );
+      listenMeasured(
+        ['msCO2', 'carbonDioxideMeasurement', 'msCarbonDioxide'],
+        'measure_co2',
+        (v) => this._validateCO2(parseFloat(v))
+      );
+      listenMeasured(
+        ['pm25Measurement', 'msFineParticle'],
+        'measure_pm25',
+        (v) => {
+          const n = parseFloat(v);
+          return (n >= 0 && n <= 1000) ? n : null;
+        }
+      );
+      listenMeasured(
+        ['vocMeasurement', 'msVOC', 'msVoc'],
+        'measure_voc',
+        (v) => this._trackVOC(parseFloat(v))
+      );
+      listenMeasured(
+        ['formaldehydeMeasurement', 'msFormaldehyde'],
+        'measure_formaldehyde',
+        (v) => {
+          const n = parseFloat(v);
+          // Homey often gets µg/m³ or mg×100 — soft range gate only
+          if (n > 50) {return n / 100;}
+          return (n >= 0 && n <= 50) ? n : null;
+        }
+      );
     } catch (e) {
       this.error('[CO2] ZCL setup error:', e.message);
     }

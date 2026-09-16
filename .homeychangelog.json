@@ -3410,5 +3410,8 @@
   },
   "9.0.983": {
     "en": "Intelligent Zigbee 4.0 / Suzi awareness (classifier + diagnostics) without inventing device fingerprints."
+  },
+  "9.0.984": {
+    "en": "Improved complementary Zigbee DP/cluster/raw RX-TX paths for air quality and sensors without replacing working EF00 maps."
   }
 }
