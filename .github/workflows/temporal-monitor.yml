@@ -1,3 +1,7 @@
+# Temporal Monitor (P29.7)
+# Triggers: cron: 0 6 * * * + workflow_dispatch | Secrets: GITHUB_TOKEN only
+# Doc header added 2026-07-29 (workflows genealogy enrichment).
+
 defaults:
   run:
     shell: bash
@@ -8,10 +12,22 @@ name: Temporal Monitor (P29.7)
 # Generates a report with auto-fix candidates and needs-investigation items.
 
 on:
-  schedule:
-    # Daily at 06:00 UTC
-    - cron: '0 6 * * *'
+  # Cron désactivé 2026-08-04 (audit no-op) : temporal-monitor.js est déjà exécuté
+  # chaque jour par recurrent-orchestrator (03:30, étape 7). Artifact jamais
+  # téléchargé, 0 issue créée. Reste lançable via workflow_dispatch.
+  # schedule:
+  #   # Daily at 06:00 UTC
+  #   - cron: '0 6 * * *'
   workflow_dispatch:
+
+# Least privilege: push of the report + read-only GH issues scan
+permissions:
+  contents: write
+  issues: read
+
+concurrency:
+  group: temporal-monitor
+  cancel-in-progress: false
 
 jobs:
   temporal-monitor:
@@ -20,12 +36,23 @@ jobs:
 
     steps:
       - name: Checkout
-        uses: actions/checkout@v5
+        uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # v5.1.0
 
       - name: Setup Node.js
-        uses: actions/setup-node@v5
+        uses: actions/setup-node@a0853c24544627f65ddf259abe73b1d18a591444 # v5.0.0
         with:
           node-version: '20'
+
+      - name: Restore monitor state cache
+        continue-on-error: true
+        uses: actions/cache@caa296126883cff596d87d8935842f9db880ef25 # v5.1.0
+        with:
+          path: |
+            .github/state/temporal-monitor-state.json
+            .github/state/temporal-monitor-report.json
+          key: temporal-monitor-state-${{ github.run_id }}
+          restore-keys: |
+            temporal-monitor-state-
 
       - name: Run Temporal Monitor
         env:
@@ -33,18 +60,11 @@ jobs:
         run: node tools/ci/temporal-monitor.js
 
       - name: Upload Report
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@330a01c490aca151604b8cf639adc76d48f6c5d4 # v5.0.0
         with:
           name: temporal-monitor-report
           path: .github/state/temporal-monitor-report.json
           retention-days: 30
 
-      - name: Commit State Update
-        run: |
-          if [ -n "$(git status --porcelain .github/state/temporal-monitor-*.json)" ]; then
-            git config user.email "p29.7@homey-mavis.local"
-            git config user.name "Mavis P29.7"
-            git add .github/state/temporal-monitor-state.json .github/state/temporal-monitor-report.json
-            git commit -m "chore(P29.7): temporal monitor daily run [skip ci]" || true
-            git push || true
-          fi
+      # State persists via the cache step above (security policy: state files
+      # must never be committed to git — see security-scanner).

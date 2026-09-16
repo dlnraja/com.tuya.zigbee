@@ -20,12 +20,17 @@ on:
 permissions:
   contents: write
 concurrency:
+  # P139: queue publishes; do not cancel mid Athom processing
   group: publish
   cancel-in-progress: false
 
 env:
   NODE_VERSION: "22"
   NODE_OPTIONS: "--dns-result-order=ipv4first"
+  AI_ALLOW_PAID: 'false'
+  AI_ENSEMBLE: 'false'
+  AI_MAP_REDUCE: 'false'
+  AI_FULL_CONTEXT: 'false'
 
 defaults:
   run:
@@ -51,6 +56,9 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 10
     env:
+      AI_FORCE_LOCAL: "true"
+      AI_ALLOW_REMOTE: "false"
+      AI_PLAN_MODE: forfait
       # === AI providers — circular chain (ai-helper.js) ===
       GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
       OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
@@ -64,8 +72,8 @@ jobs:
       KIMI_API_KEY: ${{ secrets.KIMI_API_KEY || '' }}
 
     steps:
-      - uses: actions/checkout@v5
-      - uses: actions/setup-node@v5
+      - uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # v5.1.0
+      - uses: actions/setup-node@a0853c24544627f65ddf259abe73b1d18a591444 # v5.0.0
         with:
           node-version: ${{ env.NODE_VERSION }}
           cache: npm
@@ -118,11 +126,11 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 15
     steps:
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # v5.1.0
         with:
           fetch-depth: 100
           token: ${{ secrets.GH_PAT || secrets.GITHUB_TOKEN }}
-      - uses: actions/setup-node@v5
+      - uses: actions/setup-node@a0853c24544627f65ddf259abe73b1d18a591444 # v5.0.0
         with:
           node-version: ${{ env.NODE_VERSION }}
           cache: npm
@@ -182,7 +190,9 @@ jobs:
 
       - name: Sync package manifests and .homeycompose version
         if: steps.pat.outputs.ok == 'true'
-        run: node -e "const f=require('fs'),a=require('./app.json'),v=a.version;for(const file of ['package.json','package-lock.json']){if(!f.existsSync(file))continue;const j=JSON.parse(f.readFileSync(file,'utf8'));j.version=v;if(j.packages&&j.packages[''])j.packages[''].version=v;f.writeFileSync(file,JSON.stringify(j,null,2)+'\n');}if(f.existsSync('.homeycompose/app.json')){const hc=JSON.parse(f.readFileSync('.homeycompose/app.json','utf8'));hc.version=v;f.writeFileSync('.homeycompose/app.json',JSON.stringify(hc,null,2)+'\n');}console.log('Synced package manifests and .homeycompose to v'+v);"
+        run: |
+          node tools/ci/sync-root-package-version.js sync
+          node tools/ci/sync-root-package-version.js assert
 
       - name: Update Changelogs for New Version
         if: steps.pat.outputs.ok == 'true'
@@ -229,6 +239,10 @@ jobs:
           git diff --cached --quiet || git commit -m "v${{ steps.bump.outputs.version }}: ${D} drivers, ${F} fingerprints [skip ci]"
           git tag -f "v${{ steps.bump.outputs.version }}"
           BRANCH="${GITHUB_REF_NAME:-master}"
+          # v9.0.378: intégrer les commits concurrents (bots auto-fix) avant de pousser.
+          # -X theirs : en cas de conflit sur les fichiers générés (app.json…),
+          # la version du pipeline fait foi (il régénère tout de toute façon).
+          git pull --rebase -X theirs origin "$BRANCH" || git rebase --abort
           git push origin HEAD:"refs/heads/$BRANCH"
           git push origin -f "v${{ steps.bump.outputs.version }}"
         env:
@@ -353,7 +367,7 @@ jobs:
 
       - name: Upload promote screenshots
         if: always()
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@330a01c490aca151604b8cf639adc76d48f6c5d4 # v5.0.0
         with:
           name: publish-promote-screenshots
           path: screenshots/

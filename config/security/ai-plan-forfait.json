@@ -1,8 +1,8 @@
 {
   "_meta": {
-    "id": "P2227+P2437+P2491",
-    "updated": "2026-09-14",
-    "policy": "Plan forfait inclus only — never exceed included free/subscription quotas; never auto-spend paid overage. Prefer local heuristics. SHADOW forum. Never echo secrets. Cursor: no Grok/cloud Task burn. P2491: slim context + remote OFF by default."
+    "id": "P2227+P2437+P2491+P2542",
+    "updated": "2026-09-16",
+    "policy": "Plan forfait inclus only — never exceed included free/subscription quotas; never auto-spend paid overage. Prefer local heuristics. SHADOW forum. Never echo secrets. Cursor: no Grok/cloud Task burn. P2491: slim context + remote OFF by default. P2542: crons force local-auto-improve; zero remote AI on harvests."
   },
   "mode": "forfait",
   "defaults": {
@@ -14,10 +14,10 @@
     "AI_ENSEMBLE": "false",
     "AI_MAP_REDUCE": "false",
     "AI_OPENROUTER_MODEL_LIST": "false",
-    "AI_GLOBAL_DAILY_CAP": "80",
-    "AI_SOFT_STOP_PERCENT": "60",
+    "AI_GLOBAL_DAILY_CAP": "40",
+    "AI_SOFT_STOP_PERCENT": "50",
     "GMAIL_DIAG_AI_MAX": "0",
-    "AI_MAX_TOKENS_DEFAULT": "800",
+    "AI_MAX_TOKENS_DEFAULT": "600",
     "preferLocalHeuristics": true
   },
   "cursorIde": {
@@ -32,18 +32,18 @@
     "rule": ".cursor/rules/ai-forfait-cursor-limit.mdc"
   },
   "includedDailyCaps": {
-    "gemini": 40,
-    "openrouter": 20,
-    "huggingface": 20,
-    "groq": 20,
-    "cerebras": 5,
-    "together": 10,
-    "nvidia": 10,
-    "mistral": 3,
-    "kimi": 3,
+    "gemini": 15,
+    "openrouter": 10,
+    "huggingface": 10,
+    "groq": 10,
+    "cerebras": 3,
+    "together": 5,
+    "nvidia": 5,
+    "mistral": 2,
+    "kimi": 2,
     "openai": 0,
     "deepseek": 0,
-    "github-models": 5,
+    "github-models": 3,
     "grok": 0,
     "cursor-cloud": 0
   },
@@ -53,6 +53,13 @@
     "smartMap": "config/architecture/project-smart-map.json",
     "lib": "tools/ci/ai-context-compress.js",
     "gate": "npm run check:p2491"
+  },
+  "localAutoImprove": {
+    "ssot": "config/architecture/local-auto-improve-ssot.json",
+    "human": "docs/architecture/LOCAL_AUTO_IMPROVE_SSOT.md",
+    "orchestrator": "tools/ci/local-auto-improve-orchestrator.js",
+    "gate": "npm run check:p2542",
+    "npm": ["improve:local", "improve:local:quick"]
   },
   "security": {
     "neverEchoSecrets": true,

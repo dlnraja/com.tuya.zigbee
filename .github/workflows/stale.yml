@@ -1,3 +1,7 @@
+# Mark Stale Issues & PRs
+# Triggers: cron: 0 5 * * 1 + workflow_dispatch | Secrets: GITHUB_TOKEN only
+# Doc header added 2026-07-29 (workflows genealogy enrichment).
+
 name: "Mark Stale Issues & PRs"
 
 # <!-- badges:start -->
@@ -21,6 +25,16 @@ concurrency:
 defaults:
   run:
     shell: bash
+# P2542 forfait / local-first (auto-injected)
+env:
+  AI_PLAN_MODE: 'forfait'
+  AI_FORCE_LOCAL: 'true'
+  AI_ALLOW_REMOTE: 'false'
+  AI_ALLOW_PAID: 'false'
+  AI_ENSEMBLE: 'false'
+  AI_MAP_REDUCE: 'false'
+  AI_FULL_CONTEXT: 'false'
+  GMAIL_DIAG_AI_MAX: '0'
 
 jobs:
   stale:

@@ -34,6 +34,7 @@
 name: upstream-guard
 
 # P74: defaults.run.shell: bash is REQUIRED by Fleetwood Integrity check
+# to prevent PowerShell failures on Windows runners.
 defaults:
   run:
     shell: bash
@@ -58,6 +59,13 @@ on:
       delete_allowed:
         description: 'Whether DELETE on upstream is allowed'
         value: ${{ jobs.check.outputs.delete_allowed }}
+
+permissions:
+  contents: read
+
+concurrency:
+  group: upstream-guard
+  cancel-in-progress: false
 
 jobs:
   check:

@@ -1,6 +1,6 @@
 {
   "name": "com.dlnraja.tuya.zigbee",
-  "version": "5.12.225",
+  "version": "5.12.226",
   "description": "Tuya Unified Zigbee - Local-first control with AI automation",
   "main": "app.js",
   "scripts": {
@@ -220,7 +220,10 @@
     "check:p2537": "node tools/ci/p2537-zigbee-tuya-evolution-gate.js && node --test test/critical/p2537-zigbee-tuya-evolution.test.js",
     "check:p2540": "node --test test/critical/p2540-complementary-dp-cluster-raw.test.js",
     "check:p2541": "node --test test/critical/p2541-complementary-reinstate-aq.test.js",
-    "check:p254x": "npm run check:p2540 && npm run check:p2541"
+    "check:p254x": "npm run check:p2540 && npm run check:p2541 && npm run check:p2542",
+    "check:p2542": "node --test test/critical/p2542-local-auto-improve.test.js && node tools/ci/p2542-local-auto-improve-gate.js",
+    "improve:local": "node tools/ci/local-auto-improve-orchestrator.js",
+    "improve:local:quick": "node tools/ci/local-auto-improve-orchestrator.js --quick"
   },
   "keywords": [
     "homey",

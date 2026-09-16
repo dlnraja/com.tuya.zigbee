@@ -9,7 +9,8 @@ name: L99 Inbox Intelligence (P2352)
 on:
   schedule:
     # Stagger +30m after forum-poll (02/06/10/14/18/22 :15)
-    - cron: '45 2,6,10,14,18,22 * * *'
+    # P2491: 3×/day (was 6) — stagger after forum-poll 02/08/14/20
+    - cron: '45 3,11,19 * * *'
   workflow_dispatch:
     inputs:
       mode:
@@ -55,8 +56,13 @@ env:
   REPLY_TOPICS: '140352'
   AI_PLAN_MODE: forfait
   AI_ALLOW_PAID: 'false'
+  AI_FORCE_LOCAL: 'true'
+  AI_ALLOW_REMOTE: 'false'
   GMAIL_DIAG_AI_MAX: '0'
   SMART_FETCH_READER_FALLBACK: '1'
+  AI_ENSEMBLE: 'false'
+  AI_MAP_REDUCE: 'false'
+  AI_FULL_CONTEXT: 'false'
 
 jobs:
   inbox-l99:
@@ -124,15 +130,28 @@ jobs:
             head -n 40 "reports/l99-inbox-$DATE/PRIORITY.md" >> "$GITHUB_STEP_SUMMARY" || true
           fi
 
+      # WHY(P2529): complementary deep functional pass — DP/cluster/flow/RX-TX not mfr+pid only
+      - name: P2529 deep functional enrich (soft)
+        continue-on-error: true
+        timeout-minutes: 8
+        run: |
+          npm run enrich:functional -- --skip-gates 2>&1 | tee deep-functional.log || echo "P2529_SOFT_WARN"
+          npm run check:p2529 || echo "P2529_GATE_WARN"
+          DATE=$(date -u +%F)
+          if [ -f "reports/deep-functional-$DATE/FUNCTIONAL_AUDIT.md" ]; then
+            echo "### P2529 Functional audit (head)" >> "$GITHUB_STEP_SUMMARY"
+            head -n 50 "reports/deep-functional-$DATE/FUNCTIONAL_AUDIT.md" >> "$GITHUB_STEP_SUMMARY" || true
+          fi
+
       - name: Compensate incomplete reports (P2418)
         if: always()
         continue-on-error: true
         timeout-minutes: 8
         run: |
-          echo "## Compensate incomplete (P2419 hang-proof - soft, no invent pid)" >> "$GITHUB_STEP_SUMMARY"
+          echo "## Compensate incomplete (P2419 hang-proof — soft, no invent pid)" >> "$GITHUB_STEP_SUMMARY"
           if [ -f tools/ci/compensate-incomplete-reports.js ]; then
             COMPENSATE_SKIP_INVESTIGATE=1 COMPENSATE_MAX_MS=45000 \
-            node tools/ci/compensate-incomplete-reports.js --apply-safe --skip-investigate 2>&1 | tee compensate-p2418.log || echo "compensate soft warn"
+              node tools/ci/compensate-incomplete-reports.js --apply-safe --skip-investigate 2>&1 | tee compensate-p2418.log || echo "compensate soft warn"
             DATE=$(date -u +%F)
             head -n 35 "reports/compensate-$DATE/TREAT.md" >> "$GITHUB_STEP_SUMMARY" 2>/dev/null || true
           fi
@@ -149,20 +168,6 @@ jobs:
             l99-inbox.log
           if-no-files-found: warn
           retention-days: 21
-
-
-      - name: "P2529 Deep functional enrich (beyond mfr+pid)"
-        if: always()
-        continue-on-error: true
-        timeout-minutes: 8
-        env:
-          FORUM_AUTO_POST: "0"
-          SHADOW_FORUM: "1"
-        run: |
-          if [ -f tools/ci/deep-functional-enrich-pass.js ]; then
-            npm run enrich:functional -- --skip-gates 2>&1 | tee deep-functional-soft.log || echo "P2529_SOFT_WARN"
-            npm run check:p2529 || echo "P2529_GATE_WARN"
-          fi
 
       - name: Commit intelligence reports [skip ci]
         if: always() && (github.event_name == 'schedule' || inputs.commit_reports == true || inputs.commit_reports == '')

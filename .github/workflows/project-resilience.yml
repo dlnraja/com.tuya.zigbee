@@ -1,0 +1,191 @@
+# 🛡️ Project Resilience + Feature/Bug Inventory (P2222–P2225)
+# Inventory features + historical bugs → critical-first Homey-gap stacks → full audit.
+# SHADOW forum only. Never POST. Both tracks can run (App ID untouched).
+# Doc: docs/architecture/COMPLEMENTARY_ENRICHMENT.md · config/resilience/critical-gaps.json
+
+name: 🛡️ Project Resilience Inventory
+
+on:
+  schedule:
+    # Daily 05:20 UTC — after forum-poll :15 and enrich */4; before bot-triage 04:45 next cycle
+    - cron: '20 5 * * *'
+  workflow_dispatch:
+    inputs:
+      mode:
+        description: 'inventory | critical | all'
+        required: false
+        type: choice
+        options:
+          - all
+          - critical
+          - inventory
+        default: all
+
+permissions:
+  contents: write
+
+concurrency:
+  group: project-resilience
+  cancel-in-progress: false
+
+defaults:
+  run:
+    shell: bash
+
+env:
+  NODE_VERSION: '22'
+  AI_PLAN_MODE: forfait
+  AI_ALLOW_PAID: 'false'
+  AI_GLOBAL_DAILY_CAP: '80'
+  AI_SOFT_STOP_PERCENT: '60'
+  AI_FORCE_LOCAL: 'true'
+  FORUM_AUTO_POST: '0'
+  SHADOW_FORUM: '1'
+  DISCOURSE_WRITE: '0'
+  # WHY: Fleetwood WFL_REPLY_TOPICS_LEAK rejects empty; SHADOW still blocks POST via FORUM_AUTO_POST=0
+  REPLY_TOPICS: '140352'
+  GMAIL_DIAG_AI_MAX: '0'
+  AI_ALLOW_REMOTE: 'false'
+  AI_ENSEMBLE: 'false'
+  AI_MAP_REDUCE: 'false'
+  AI_FULL_CONTEXT: 'false'
+
+jobs:
+  resilience:
+    name: Inventory + critical-first + audit
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          fetch-depth: 1
+
+      - uses: actions/setup-node@v5
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: npm
+
+      - name: Install deps
+        run: npm ci --prefer-offline --no-audit || npm install --no-audit
+
+      - name: Restore intel scraper cache
+        uses: actions/cache@caa296126883cff596d87d8935842f9db880ef25 # v5.1.0
+        with:
+          path: |
+            .cache/scraper-cache/
+            .cache/scanner-blobs/
+            .cache/scanners/
+          key: ${{ runner.os }}-intel-cache-${{ hashFiles('package-lock.json') }}-${{ github.workflow }}
+          restore-keys: |
+            ${{ runner.os }}-intel-cache-
+
+      - name: "Workflow smoke (YAML + inventory + critical)"
+        continue-on-error: true
+        timeout-minutes: 8
+        run: |
+          if [ -f tools/ci/workflow-smoke-p2226.js ]; then
+            node tools/ci/workflow-smoke-p2226.js || echo "smoke warn"
+          fi
+          node tools/ci/ai-plan-guard.js --preflight || echo "ai plan warn"
+          node tools/ci/ai-quota-report.js || true
+          npm run security-scan || echo "security-scan warn"
+          npm run infra:cache-stats || echo "cache-stats warn"
+          npm run infra:log-smoke || true
+          # WHY(P2438): automated unit tests for harvest + forfait + pairing mocks
+          node --test test/critical/p2435-gh540-544-switch-pairing.test.js || echo "p2435 warn"
+          node --test test/critical/p2436-homey-match-moes-bot-mocks.test.js || echo "p2436 warn"
+          node --test test/critical/p2437-ai-forfait-cursor-hooks.test.js || echo "p2437 warn"
+          node --test test/critical/p2438-multi-source-harvest-ai-limit.test.js || echo "p2438 warn"
+          node tools/ci/local-intelligent-solver.js 533 'Moes _TZE204_5slehgeo TS0601' || true
+
+      - name: "P2225 Inventory features + historical bugs"
+        if: always()
+        continue-on-error: true
+        timeout-minutes: 5
+        run: |
+          if [ ! -f tools/ci/inventory-features-bugs.js ]; then
+            echo "inventory script missing — skip"
+            exit 0
+          fi
+          node tools/ci/inventory-features-bugs.js --write-report
+          echo "### Features + bugs inventory (P2225)" >> "$GITHUB_STEP_SUMMARY"
+          if [ -f "reports/resilience-$(date -u +%F)/INVENTORY.md" ]; then
+            head -n 60 "reports/resilience-$(date -u +%F)/INVENTORY.md" >> "$GITHUB_STEP_SUMMARY" || true
+          fi
+
+      - name: "Critical-first resilience audit"
+        if: ${{ github.event_name == 'schedule' || inputs.mode == 'all' || inputs.mode == 'critical' || inputs.mode == '' }}
+        continue-on-error: true
+        timeout-minutes: 25
+        run: |
+          if [ ! -f tools/ci/project-resilience-orchestrator.js ]; then
+            echo "orchestrator missing — skip"
+            exit 0
+          fi
+          MODE="${{ inputs.mode || 'all' }}"
+          if [ "$MODE" = "inventory" ]; then
+            echo "inventory-only mode"
+            exit 0
+          fi
+          if [ "$MODE" = "critical" ]; then
+            node tools/ci/project-resilience-orchestrator.js --write-report --critical-first --critical-only || echo "critical warn"
+          else
+            # schedule + all: inventory already ran; audit critical-first then remaining
+            node tools/ci/project-resilience-orchestrator.js --write-report --critical-first || echo "resilience warn"
+          fi
+          echo "### Project resilience (P2222–P2225)" >> "$GITHUB_STEP_SUMMARY"
+          if [ -f "reports/resilience-$(date -u +%F)/RESILIENCE.md" ]; then
+            head -n 45 "reports/resilience-$(date -u +%F)/RESILIENCE.md" >> "$GITHUB_STEP_SUMMARY" || true
+          fi
+
+      - name: "P2448/P2449 knob + declared flow gates (soft)"
+        if: ${{ github.event_name == 'schedule' || inputs.mode == 'all' || inputs.mode == 'critical' || inputs.mode == '' }}
+        continue-on-error: true
+        timeout-minutes: 5
+        run: |
+          npm run check:p244x || echo "P244x soft warn"
+          npm run check:p246x || echo "P246x soft warn"
+          npm run check:p248x || echo "P248x soft warn"
+          npm run check:p249x || echo "P249x soft warn"
+
+      - name: "Enrichment gates (SHADOW — soft)"
+        if: ${{ github.event_name == 'schedule' || inputs.mode == 'all' || inputs.mode == '' }}
+        continue-on-error: true
+        timeout-minutes: 12
+        run: |
+          # P2281: past P102–P2266 + recent P2267/P2268 + present harvest softFail
+          if [ -f tools/ci/silent-enrichment-orchestrator.js ]; then
+            node tools/ci/silent-enrichment-orchestrator.js --phase=sync --skip-scan || echo "sync harvest warn"
+            node tools/ci/silent-enrichment-orchestrator.js --phase=gates --skip-scan || echo "gates warn"
+          fi
+          node tools/ci/discovery-lineage-enrich-gate.js || echo "discovery-lineage warn"
+      - name: "L99 dual-app enrich gates (soft)"
+        if: always()
+        continue-on-error: true
+        timeout-minutes: 8
+        run: |
+          if [ ! -f tools/ci/l99-dual-app-enrich-gates.js ]; then
+            echo "l99-dual missing — skip"
+            exit 0
+          fi
+          node tools/ci/l99-dual-app-enrich-gates.js --track=auto || echo "l99-dual soft warn"
+          echo "### L99 dual-app enrich gates" >> "$GITHUB_STEP_SUMMARY"
+          if [ -f "reports/l99-dual-$(date -u +%F)/enrich-gates.json" ]; then
+            node -e "const j=require('./reports/l99-dual-'+new Date().toISOString().slice(0,10)+'/enrich-gates.json'); console.log('track='+j.track+' appId='+(j.appId||'')); (j.results||[]).forEach(r=>console.log((r.ok?'OK':'FAIL')+' ['+r.tag+'] '+r.name))" >> "$GITHUB_STEP_SUMMARY" || true
+          fi
+
+      - name: Commit resilience reports [skip ci]
+        if: always()
+        continue-on-error: true
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git pull --rebase origin "${GITHUB_REF_NAME}" || true
+          git add reports/resilience-*/ reports/l99-dual-*/ .github/state/resilience/ 2>/dev/null || true
+          if git diff --cached --quiet; then
+            echo "No resilience report changes"
+            exit 0
+          fi
+          git commit -m "chore(resilience): inventory + critical-first audit [skip ci]" || exit 0
+          # Verified push (no || true mask) — step continue-on-error handles soft failure
+          git push origin "HEAD:${GITHUB_REF_NAME}"

@@ -1,3 +1,7 @@
+# 🌙 Nightly Audit
+# Triggers: cron: 45 3 * * * + workflow_dispatch | Secrets: GITHUB_TOKEN only
+# Doc header added 2026-07-29 (workflows genealogy enrichment).
+
 name: 🌙 Nightly Audit
 
 # Runs the full P57 audit + smart-data-validator + knowledge-graph daily
@@ -6,7 +10,8 @@ name: 🌙 Nightly Audit
 
 on:
   schedule:
-    # Daily 03:45 UTC, staggered after recurrent-orchestrator
+    # Daily 03:45 UTC, after knowledge-graph sync (staggered 2026-07-29: was
+    # 03:30, collided with recurrent-orchestrator at the exact same cron)
     - cron: '45 3 * * *'
   workflow_dispatch:
 
@@ -20,6 +25,16 @@ defaults:
 concurrency:
   group: nightly-audit
   cancel-in-progress: true
+# P2542 forfait / local-first (auto-injected)
+env:
+  AI_PLAN_MODE: 'forfait'
+  AI_FORCE_LOCAL: 'true'
+  AI_ALLOW_REMOTE: 'false'
+  AI_ALLOW_PAID: 'false'
+  AI_ENSEMBLE: 'false'
+  AI_MAP_REDUCE: 'false'
+  AI_FULL_CONTEXT: 'false'
+  GMAIL_DIAG_AI_MAX: '0'
 
 jobs:
   audit:
@@ -28,12 +43,12 @@ jobs:
     timeout-minutes: 15
     steps:
       - name: 📥 Checkout
-        uses: actions/checkout@v5
+        uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # v5.1.0
         with:
           fetch-depth: 1
 
       - name: 📦 Setup Node
-        uses: actions/setup-node@v5
+        uses: actions/setup-node@a0853c24544627f65ddf259abe73b1d18a591444 # v5.0.0
         with:
           node-version: '22'
           cache: npm
@@ -45,6 +60,11 @@ jobs:
         run: |
           echo "## 🩺 Regression audit (P57)" >> $GITHUB_STEP_SUMMARY
           node tools/ci/audit-regressions.js >> $GITHUB_STEP_SUMMARY 2>&1
+
+      - name: 🛡️ Regression lessons gate (MUST-KEEP fatals)
+        run: |
+          echo "## 🛡️ Regression lessons gate" >> $GITHUB_STEP_SUMMARY
+          node tools/ci/regression-lessons-gate.js >> $GITHUB_STEP_SUMMARY 2>&1
 
       - name: 🌊 Data flooding detection (P57)
         run: |
@@ -83,7 +103,7 @@ jobs:
 
       - name: 💾 Upload audit artifacts
         if: always()
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@330a01c490aca151604b8cf639adc76d48f6c5d4 # v5.0.0
         with:
           name: nightly-audit-${{ github.run_id }}
           path: |

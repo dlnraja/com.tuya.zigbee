@@ -1,3 +1,7 @@
+# Safe Sync master → stable-v5 (P52)
+# Triggers: cron: 25 4 * * * + workflow_dispatch | Secrets: GITHUB_TOKEN only
+# Doc header added 2026-07-29 (workflows genealogy enrichment).
+
 name: Safe Sync master → stable-v5 (P52)
 
 # P74: defaults.run.shell: bash is REQUIRED by Fleetwood Integrity check
@@ -7,12 +11,27 @@ defaults:
 
 on:
   schedule:
-    # Daily at 04:25 UTC (staggered: avoids 04:00 collision)
+    # Daily at 04:25 UTC (after the auto-fix-all bot at 03:00; staggered
+    # 2026-07-29: was 04:00, collided with activity-monitor + publish-self-heal)
     - cron: '25 4 * * *'
   workflow_dispatch:
 
 permissions:
   contents: write
+
+concurrency:
+  group: safe-sync-stable
+  cancel-in-progress: false
+# P2542 forfait / local-first (auto-injected)
+env:
+  AI_PLAN_MODE: 'forfait'
+  AI_FORCE_LOCAL: 'true'
+  AI_ALLOW_REMOTE: 'false'
+  AI_ALLOW_PAID: 'false'
+  AI_ENSEMBLE: 'false'
+  AI_MAP_REDUCE: 'false'
+  AI_FULL_CONTEXT: 'false'
+  GMAIL_DIAG_AI_MAX: '0'
 
 jobs:
   safe-sync:
@@ -22,7 +41,7 @@ jobs:
 
     steps:
       - name: Checkout stable-v5
-        uses: actions/checkout@v5
+        uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # v5.1.0
         with:
           ref: stable-v5
           fetch-depth: 50
@@ -54,15 +73,12 @@ jobs:
 
       - name: Bump stable version
         run: |
-          # Get current version
+          # Get current version (strip any legacy -stable suffix: pre-release
+          # versions are rejected by `homey app validate --level publish`)
           CURRENT=$(node -e "const c=require('./.homeycompose/app.json');console.log(c.version)")
           echo "Current version: $CURRENT"
-          # Bump patch
-          NEW=$(echo $CURRENT | awk -F. '{print $1"."$2"."$3+1"-stable"}')
-          if [ "$NEW" = "$CURRENT" ] || [ "$NEW" = "${CURRENT%-stable}-stable" ]; then
-            # Already has -stable suffix, bump patch
-            NEW=$(echo $CURRENT | sed 's/\([0-9]*\)\.\([0-9]*\)\.\([0-9]*\)\(-stable\)\?$/\1.\2.\3-stable/' | awk -F. '{print $1"."$2"."$3+1"-stable"}')
-          fi
+          # Bump patch — plain semver x.y.z only
+          NEW=$(echo ${CURRENT%-stable} | awk -F. '{print $1"."$2"."$3+1}')
           node -e "
             const fs=require('fs');
             const c=JSON.parse(fs.readFileSync('.homeycompose/app.json','utf8'));

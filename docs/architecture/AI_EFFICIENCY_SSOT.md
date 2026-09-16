@@ -39,11 +39,25 @@ Use `tools/ci/local-intelligent-solver.js` for GH issues / diags / forum couples
 | l99-inbox | `45 3,11,19 * * *` (3×/day) |
 | auto-enrich | `0 */6 * * *` (4×/day) |
 
+## P2542 — Local auto-improve (zero remote AI)
+
+See [`LOCAL_AUTO_IMPROVE_SSOT.md`](./LOCAL_AUTO_IMPROVE_SSOT.md).
+
+- Every cron / AI-touch workflow must set `AI_FORCE_LOCAL=true` + `AI_ALLOW_REMOTE=false` + `GMAIL_DIAG_AI_MAX=0`
+- Orchestrator: `npm run improve:local` (wired in `self-improve.yml` + `recurrent-orchestrator.yml`)
+- Inject helper: `node tools/ci/inject-forfait-env-workflows.js --apply`
+- Gate: `npm run check:p2542`
+- Daily caps tightened (global **40**, soft-stop **50%**) — skip AI before burn
+
+Homey Pro runtime stays zero-cloud: BootBudget, HomeyGapCompensator, ProtocolFallbackChain, RawClusterFallback, SmartDivisorManager, LocalFirstEngine.
+
 ## Gates
 
 ```bash
 npm run check:p2491
+npm run check:p2542
 npm run ai:plan-guard
+npm run improve:local:quick
 node tools/ci/ai-context-compress.js --self-test
 ```
 

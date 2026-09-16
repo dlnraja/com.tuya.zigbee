@@ -192,29 +192,23 @@ jobs:
           fi
 
       - name: Sacred couple registry audit (P151)
-        continue-on-error: true
         run: node tools/ci/audit-sacred-couple.js --from-registry
 
       - name: Dual-claim compose gate (P167/P168)
-        continue-on-error: true
         run: node tools/ci/dual-claim-compose-gate.js
 
       - name: Class-scale sacred couple audit (P168)
-        continue-on-error: true
         run: node tools/ci/audit-sacred-couple-by-class.js
 
       - name: Energy compose gate
-        continue-on-error: true
-        run: node tools/ci/energy-compose-gate.js || echo "energy-compose soft (stable)"
+        run: node tools/ci/energy-compose-gate.js
 
       # P210: layer / L14 / multi-protocol battery regression gates
       - name: Layer coverage gate (P206–P209)
-        continue-on-error: true
-        run: node tools/ci/layer-coverage-gate.js || echo "layer-coverage soft (stable)"
+        run: node tools/ci/layer-coverage-gate.js
 
       - name: L14 capability writers gate (P205)
-        continue-on-error: true
-        run: node tools/ci/l14-capability-writers-gate.js || echo "l14 soft (stable)"
+        run: node tools/ci/l14-capability-writers-gate.js
 
       - name: Anti-bot regression gate (P127/P2138)
         run: node tools/ci/anti-bot-regression-gate.js
@@ -223,67 +217,41 @@ jobs:
         run: node tools/ci/p2138-sacred-couple-matrix-gate.js
 
       - name: P217 fork harvest sacred-couple gate
-        continue-on-error: true
-        run: node tools/ci/p217-fork-harvest-gate.js || echo "p217 soft (stable)"
+        run: node tools/ci/p217-fork-harvest-gate.js
 
       - name: P214 intelligent ZCL/EF00 adaptation gate
         run: node tools/ci/p214-intelligent-protocol-gate.js
 
       - name: P216 ZCL battery half-percent gate
-        continue-on-error: true
-        run: node tools/ci/p216-zcl-battery-half-percent-gate.js || echo "p216 soft (stable)"
+        run: node tools/ci/p216-zcl-battery-half-percent-gate.js
 
       - name: Critical layer + battery tests (P206–P209)
-        continue-on-error: true
         run: |
-          for f in \
-            test/critical/layer-coverage.test.js \
-            test/critical/multi-protocol-battery.test.js \
-            test/critical/layer-signal-fusion.test.js \
-            test/critical/commit-capability.test.js \
-            test/critical/time-cluster-policy.test.js \
-            test/critical/energy-battery-button-flows.test.js
-          do
-            if [ -f "$f" ]; then
-              node --test "$f" || echo "soft fail $f"
-            else
-              echo "skip missing $f"
-            fi
-          done
+          node --test test/critical/layer-coverage.test.js
+          node --test test/critical/multi-protocol-battery.test.js
+          node --test test/critical/layer-signal-fusion.test.js
+          node --test test/critical/commit-capability.test.js
+          node --test test/critical/time-cluster-policy.test.js
+          node --test test/critical/energy-battery-button-flows.test.js
 
       - name: P2138 BSEED dimmer + Poll Control tests
-        continue-on-error: true
         run: |
-          for f in \
-            test/critical/p2138-bseed-wall-dimmer.test.js \
-            test/critical/poll-control-policy.test.js \
-            test/critical/p214-intelligent-protocol-detect.test.js \
-            test/critical/p2435-gh540-544-switch-pairing.test.js \
-            test/critical/p2436-homey-match-moes-bot-mocks.test.js \
-            test/critical/p2437-ai-forfait-cursor-hooks.test.js \
-            test/critical/p2438-multi-source-harvest-ai-limit.test.js \
-            test/critical/p2439-kaflzta4-smart-knob-button.test.js \
-            test/critical/p2452-gh-issue-ssot.test.js \
-            test/critical/p2453-gmail-gh-couple-locks.test.js \
-            test/critical/p2454-package-lock-integrity.test.js
-          do
-            if [ -f "$f" ]; then
-              node --test "$f" || echo "soft fail $f"
-            else
-              echo "skip missing $f"
-            fi
-          done
-          # WHY(P2521f): stable lacks some master-only family scripts — skip missing
-          node -e "
-            const {spawnSync}=require('child_process');
-            const scripts=require('./package.json').scripts||{};
-            for (const s of ['check:p244x','check:p246x','check:p248x','check:p249x','check:publish']) {
-              if (!scripts[s]) { console.log('skip missing', s); continue; }
-              console.log('run', s);
-              const r=spawnSync('npm',['run',s],{stdio:'inherit',shell:true});
-              if (r.status) process.exit(r.status||1);
-            }
-          "
+          node --test test/critical/p2138-bseed-wall-dimmer.test.js
+          node --test test/critical/poll-control-policy.test.js
+          node --test test/critical/p214-intelligent-protocol-detect.test.js
+          node --test test/critical/p2435-gh540-544-switch-pairing.test.js
+          node --test test/critical/p2436-homey-match-moes-bot-mocks.test.js
+          node --test test/critical/p2437-ai-forfait-cursor-hooks.test.js
+          node --test test/critical/p2438-multi-source-harvest-ai-limit.test.js
+          node --test test/critical/p2439-kaflzta4-smart-knob-button.test.js
+          node --test test/critical/p2452-gh-issue-ssot.test.js
+          node --test test/critical/p2453-gmail-gh-couple-locks.test.js
+          node --test test/critical/p2454-package-lock-integrity.test.js
+          npm run check:p244x
+          npm run check:p246x
+          npm run check:p248x
+          npm run check:p249x
+          npm run check:publish
 
       - name: Validate Homey SDK3 compliance
         run: |

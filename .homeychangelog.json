@@ -1704,5 +1704,8 @@
   },
   "5.12.225": {
     "en": "Locked air-quality pairing to one driver and kept complementary DP logic (reliability)."
+  },
+  "5.12.226": {
+    "en": "Hardened cron automations for local-only self-improve and tighter AI plan limits (reliability)."
   }
 }

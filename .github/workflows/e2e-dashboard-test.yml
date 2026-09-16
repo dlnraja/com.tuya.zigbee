@@ -1,3 +1,7 @@
+# e2e-dashboard-test
+# Triggers: cron: 0 7 * * * + workflow_dispatch,workflow_run | Secrets: GITHUB_TOKEN only
+# Doc header added 2026-07-29 (workflows genealogy enrichment).
+
 defaults:
   run:
     shell: bash
@@ -28,6 +32,21 @@ concurrency:
   group: e2e-dashboard-test
   cancel-in-progress: true
 
+permissions:
+  contents: read
+  pull-requests: write
+  actions: read
+# P2542 forfait / local-first (auto-injected)
+env:
+  AI_PLAN_MODE: 'forfait'
+  AI_FORCE_LOCAL: 'true'
+  AI_ALLOW_REMOTE: 'false'
+  AI_ALLOW_PAID: 'false'
+  AI_ENSEMBLE: 'false'
+  AI_MAP_REDUCE: 'false'
+  AI_FULL_CONTEXT: 'false'
+  GMAIL_DIAG_AI_MAX: '0'
+
 jobs:
   test:
     runs-on: ubuntu-latest
@@ -37,18 +56,18 @@ jobs:
       issues: write
       pull-requests: write
     env:
-      NODE_VERSION: '20'
+      NODE_VERSION: '22'
 
     steps:
       - name: Checkout master
-        uses: actions/checkout@v5
+        uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # v5.1.0
         with:
           path: master
           fetch-depth: 5
           token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Setup Node
-        uses: actions/setup-node@v5
+        uses: actions/setup-node@a0853c24544627f65ddf259abe73b1d18a591444 # v5.0.0
         with:
           node-version: ${{ env.NODE_VERSION }}
           cache: 'npm'
@@ -56,7 +75,13 @@ jobs:
 
       - name: Install master deps (cached)
         working-directory: master
-        run: npm ci --prefer-offline --no-audit
+        run: |
+          set -euo pipefail
+          # P2454: fail fast on corrupted lock (cosmiconfig@appVersion) before npm ETARGET
+          if [ -f tools/ci/sync-root-package-version.js ]; then
+            node tools/ci/sync-root-package-version.js assert
+          fi
+          npm ci --prefer-offline --no-audit
         if: hashFiles('master/package-lock.json') != ''
 
       - name: Validate master (AggregateError + process errors)
@@ -64,11 +89,21 @@ jobs:
         working-directory: master
         run: |
           echo "### Master validation ###"
+          if [ -f tools/ci/flow-card-dup-gate.js ]; then
+            node tools/ci/flow-card-dup-gate.js || exit 1
+          fi
           set +e
           OUTPUT=$(npx homey app validate --level publish 2>&1)
           EXIT=$?
           set -e
           echo "$OUTPUT" > /tmp/master-validate.txt
+          # Always show the last lines of the validator output on failure —
+          # without this the failure reason is invisible in CI logs.
+          if [ $EXIT -ne 0 ]; then
+            echo "::group::Validator output (tail)"
+            echo "$OUTPUT" | tail -30
+            echo "::endgroup::"
+          fi
           if [ $EXIT -ne 0 ]; then
             echo "::error::Master validation FAILED (exit $EXIT)"
             # Detect specific errors
@@ -80,88 +115,129 @@ jobs:
             fi
             exit $EXIT
           fi
-          echo "✓ Master validation PASS"
+          echo "Master validation PASS"
 
       - name: Bug hunter (master)
         id: bug-master
         working-directory: master
         run: |
-          if [ -f tools/ci/ci-bug-hunter.js ]; then
-            node tools/ci/ci-bug-hunter.js 2>&1 | tee /tmp/master-bugs.txt || true
+          if [ -f scripts/ci/bug-hunter.js ]; then
+            node scripts/ci/bug-hunter.js 2>&1 | tee /tmp/master-bugs.txt || true
           else
-            echo "(ci-bug-hunter.js not present, skipping)"
+            echo "(bug-hunter.js not present, skipping)"
           fi
 
       - name: Driver health (master)
         id: health-master
         working-directory: master
         run: |
-          if [ -f tools/ci/driver-health-check.js ]; then
-            node tools/ci/driver-health-check.js 2>&1 | tee /tmp/master-health.txt || true
+          if [ -f scripts/validation/check-driver-health.js ]; then
+            node scripts/validation/check-driver-health.js 2>&1 | tee /tmp/master-health.txt || true
           else
-            echo "(driver-health-check.js not present, skipping)"
+            echo "(check-driver-health.js not present, skipping)"
           fi
 
-      - name: Checkout stable (separate repo, use Homey CLI)
+      - name: 'Checkout stable (P75.11 use git worktree to actually fetch stable-v5)'
         id: checkout-stable
         run: |
+          # P75.11: The previous version only did `mkdir -p stable` and left it empty,
+          # which caused the validator to fail with:
+          #   "Could not find a valid Homey App at /path/stable/app.json: ENOENT"
+          # Now we use `git worktree add` to actually check out the stable-v5 branch.
           mkdir -p stable
-          # Stable is in the same monorepo (different branch in some setups)
-          # We use the release manifest instead
-          if [ -f master/stable_app.json ]; then
-            cp master/stable_app.json /tmp/stable_app.json
-            echo "✓ Found stable_app.json"
+          git fetch --depth=1 origin stable-v5:refs/remotes/origin/stable-v5 2>/dev/null || true
+          if git worktree add --detach stable origin/stable-v5 2>/dev/null; then
+            echo "Checked out stable-v5 branch into stable/"
+            echo "STABLE_AVAILABLE=true" >> $GITHUB_OUTPUT
           else
-            echo "::warning::stable_app.json not found in master — using master as proxy"
-            echo "STABLE_AVAILABLE=false" >> $GITHUB_OUTPUT
+            # Fallback: use the saved stable_app.json snapshot from master
+            if [ -f master/backups/stable_app.json ]; then
+              echo "::warning::Could not checkout stable-v5 worktree, using stable_app.json from master"
+              cp master/backups/stable_app.json stable/app.json
+              if [ ! -f stable/package.json ]; then
+                printf '%s' '{"name":"com.dlnraja.tuya.zigbee.stable","version":"5.12.4","main":"app.js"}' > stable/package.json
+              fi
+              echo "STABLE_AVAILABLE=true" >> $GITHUB_OUTPUT
+            else
+              echo "::warning::No stable source available, skipping stable validation"
+              echo "STABLE_AVAILABLE=false" >> $GITHUB_OUTPUT
+            fi
           fi
 
       - name: Validate stable (AggregateError + process errors)
         id: validate-stable
         run: |
-          if [ -d stable ]; then
-            cd stable
-            set +e
-            OUTPUT=$(npx homey app validate --level publish 2>&1)
-            EXIT=$?
-            set -e
-            echo "$OUTPUT" > /tmp/stable-validate.txt
-            if [ $EXIT -ne 0 ]; then
-              echo "::error::Stable validation FAILED (exit $EXIT)"
-              if echo "$OUTPUT" | grep -q "AggregateError"; then
-                echo "STABLE_AGGREGATE_ERROR=true" >> $GITHUB_OUTPUT
-              fi
-              if echo "$OUTPUT" | grep -qE "Error:|TypeError:|RangeError:|SyntaxError:"; then
-                echo "STABLE_PROCESS_ERROR=true" >> $GITHUB_OUTPUT
-              fi
-            else
-              echo "✓ Stable validation PASS"
-            fi
-          else
+          if [ "${{ steps.checkout-stable.outputs.STABLE_AVAILABLE }}" != "true" ]; then
             echo "(stable not available, skipping)"
+            echo "STABLE_VALIDATION=SKIP" >> $GITHUB_OUTPUT
+            exit 0
           fi
+          if [ ! -f stable/app.json ]; then
+            echo "(stable/app.json missing after checkout, skipping)"
+            echo "STABLE_VALIDATION=SKIP" >> $GITHUB_OUTPUT
+            exit 0
+          fi
+          cd stable
+          # WHY(P2483): surface missing driver folders (e.g. air_purifier) before Homey validate
+          if [ -f tools/ci/assert-compose-drivers-exist.js ]; then
+            node tools/ci/assert-compose-drivers-exist.js || true
+          fi
+          set +e
+          OUTPUT=$(npx homey app validate --level publish 2>&1)
+          EXIT=$?
+          set -e
+          echo "$OUTPUT" > /tmp/stable-validate.txt
+          if [ $EXIT -ne 0 ]; then
+            echo "::error::Stable validation FAILED (exit $EXIT)"
+            echo "::group::Stable validator output (tail)"
+            echo "$OUTPUT" | tail -40
+            echo "::endgroup::"
+            echo "STABLE_VALIDATION=FAIL" >> $GITHUB_OUTPUT
+            if echo "$OUTPUT" | grep -q "AggregateError"; then
+              echo "STABLE_AGGREGATE_ERROR=true" >> $GITHUB_OUTPUT
+            fi
+            if echo "$OUTPUT" | grep -qE "Error:|TypeError:|RangeError:|SyntaxError:"; then
+              echo "STABLE_PROCESS_ERROR=true" >> $GITHUB_OUTPUT
+            fi
+            # Soft for Athom flake, but never claim PASS in summary (P2483)
+            exit 0
+          fi
+          echo "Stable validation PASS"
+          echo "STABLE_VALIDATION=PASS" >> $GITHUB_OUTPUT
 
       - name: Build summary
         if: always()
+        env:
+          # Pass trigger ref through env to avoid shell injection from branch names
+          TRIGGER_REF: ${{ github.event.schedule || github.event.workflow_run.head_branch || '' }}
+          STABLE_VAL: ${{ steps.validate-stable.outputs.STABLE_VALIDATION }}
         run: |
           {
-            echo "## 📊 E2E Dashboard Test — $(date -u +%Y-%m-%dT%H:%M:%SZ)"
+            echo "## E2E Dashboard Test - $(date -u +%Y-%m-%dT%H:%M:%SZ)"
             echo ""
             echo "### Master (v9.x)"
-            echo "- Validation: ${{ steps.validate-master.outcome == 'success' && '✅ PASS' || '❌ FAIL' }}"
-            echo "- Bug hunter: ${{ steps.bug-master.outcome == 'success' && '✅ OK' || '⚠️ WARN' }}"
-            echo "- Driver health: ${{ steps.health-master.outcome == 'success' && '✅ OK' || '⚠️ WARN' }}"
+            echo "- Validation: ${{ steps.validate-master.outcome == 'success' && 'PASS' || 'FAIL' }}"
+            echo "- Bug hunter: ${{ steps.bug-master.outcome == 'success' && 'OK' || 'WARN' }}"
+            echo "- Driver health: ${{ steps.health-master.outcome == 'success' && 'OK' || 'WARN' }}"
             echo ""
             echo "### Stable (v5.x)"
-            echo "- Validation: ${{ steps.validate-stable.outcome == 'success' && '✅ PASS' || '❌ FAIL' }}"
+            if [ "${STABLE_VAL}" = "PASS" ]; then
+              echo "- Validation: PASS"
+            elif [ "${STABLE_VAL}" = "FAIL" ]; then
+              echo "- Validation: **FAIL** (see stable-validate artifact)"
+            elif [ "${STABLE_VAL}" = "SKIP" ]; then
+              echo "- Validation: SKIP"
+            else
+              echo "- Validation: ${{ steps.validate-stable.outcome == 'success' && 'UNKNOWN' || 'FAIL' }}"
+            fi
             echo ""
             echo "**Run ID**: ${{ github.run_id }}"
-            echo "**Trigger**: ${{ github.event_name }} ${{ github.event.schedule || github.event.workflow_run.head_branch || '' }}"
+            echo "**Trigger**: ${{ github.event_name }} $TRIGGER_REF"
           } >> $GITHUB_STEP_SUMMARY
 
       - name: Upload test reports
         if: always()
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@330a01c490aca151604b8cf639adc76d48f6c5d4 # v5.0.0
         with:
           name: e2e-dashboard-reports-${{ github.run_id }}
           path: |

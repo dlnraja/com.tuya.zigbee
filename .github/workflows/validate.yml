@@ -35,6 +35,16 @@ concurrency:
 defaults:
   run:
     shell: bash
+# P2542 forfait / local-first (auto-injected)
+env:
+  AI_PLAN_MODE: 'forfait'
+  AI_FORCE_LOCAL: 'true'
+  AI_ALLOW_REMOTE: 'false'
+  AI_ALLOW_PAID: 'false'
+  AI_ENSEMBLE: 'false'
+  AI_MAP_REDUCE: 'false'
+  AI_FULL_CONTEXT: 'false'
+  GMAIL_DIAG_AI_MAX: '0'
 
 jobs:
   validate:
@@ -44,10 +54,10 @@ jobs:
 
     steps:
       - name: 📥 Checkout
-        uses: actions/checkout@v5
+        uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # v5.1.0
 
       - name: 📦 Setup Node.js
-        uses: actions/setup-node@v5
+        uses: actions/setup-node@a0853c24544627f65ddf259abe73b1d18a591444 # v5.0.0
         with:
           node-version: '22'
           cache: npm
@@ -82,6 +92,7 @@ jobs:
         run: |
           node scripts/maintenance/fix-large-images.js
           node scripts/maintenance/optimize-build-images.cjs
+          node scripts/maintenance/optimize-build-svgs.cjs
           node scripts/maintenance/sanitize-manifest.cjs app.json .homeybuild/app.json
 
       - name: 🔍 JS Syntax Check
@@ -98,6 +109,30 @@ jobs:
       - name: 🔍 Fingerprint Collision Check
         run: |
           node .github/scripts/fp-collision-check.js --baseline .github/fingerprint-collision-baseline.json
+
+      - name: 🛡️ Anti-bot regression gate
+        run: node tools/ci/anti-bot-regression-gate.js
+
+      - name: 🛡️ P2138 sacred-couple matrix gate
+        run: node tools/ci/p2138-sacred-couple-matrix-gate.js
+
+      - name: 🛡️ P2448/P2449 knob + declared flow wiring
+        run: npm run check:p244x
+
+      - name: 🛡️ P246x anti-regression family (Moes EF00 / IAS / battery)
+        run: npm run check:p246x
+
+      - name: 🛡️ P2487–P2490 complementary failover family
+        run: npm run check:p248x
+
+      - name: 🛡️ P249x AI efficiency + Homey button UI charter
+        run: npm run check:p249x
+
+      - name: 🛡️ P2495 publish path aggregator
+        run: npm run check:publish
+
+      - name: 🛡️ P217 fork harvest sacred-couple gate
+        run: node tools/ci/p217-fork-harvest-gate.js
 
       - name: 🖼️ Driver Images Pre-Check
         run: |

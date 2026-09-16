@@ -38,9 +38,8 @@ env:
   # P2384: longer Athom API / draft wait (socket hang up mitigation)
   HOMEY_API_TIMEOUT_MS: "120000"
   HOMEY_BUILD_POLL_TIMEOUT_MS: "360000"
-  HOMEY_DRAFT_WAIT_MS: "900000"
-  HOMEY_DRAFT_EARLY_FAIL_MS: "180000"
-  HOMEY_HEALTHY_TEST_PATCH_LAG: "32"
+  HOMEY_DRAFT_WAIT_MS: "600000"
+  HOMEY_HEALTHY_TEST_PATCH_LAG: "8"
   # v5.12.0: 431 drivers × assets still overshoots the 26 MB default.
   # v5.12.4 (P75.1): Bumped 45 → 50 MB to match master after .homeyignore
   # pruning reduces the source directory to ~40 MB. The gzipped tarball
@@ -127,8 +126,6 @@ jobs:
           cache: npm
       - name: Install Dependencies
         run: npm ci --prefer-offline --no-audit || npm install
-      - name: Package-lock integrity gate (P2454)
-        run: node tools/ci/sync-root-package-version.js assert
       - name: Crash regression guard - Homey timer context
         run: npm run check:timer-context
       - name: Regression lessons gate (MUST-KEEP fatals)
@@ -239,6 +236,13 @@ jobs:
         env:
           HOMEY_CHANGELOG: 'Reliability improvements.'
         run: node .github/scripts/ensure-next-changelog.js
+      - name: "🛡️ Stable reliability gates (couple + sacred-keep)"
+        run: |
+          node tools/ci/anti-bot-regression-gate.js
+          node tools/ci/p2138-sacred-couple-matrix-gate.js
+          npm run check:p2288
+          npm run check:p2494
+          npm run check:p2495
       - name: Prepare Publish Directory
         run: npm run prepare-publish
       - name: Publish to Draft
@@ -335,8 +339,12 @@ jobs:
           HOMEY_PAT: ${{ secrets.HOMEY_PAT }}
           APP_ID: ${{ needs.publish.outputs.app_id }}
           HOMEY_EXPECTED_VERSION: ${{ needs.publish.outputs.uploaded_version }}
+          # WHY(P2416): Athom processing_failed must soft-continue (P139) — promote/verify decide.
           HOMEY_DRAFT_SOFT_EXPECT: '1'
           HOMEY_HEALTHY_TEST_PATCH_LAG: '32'
+          # WHY(P2474): socket hang up / slow Athom — wait longer, early soft on hang meta
+          HOMEY_DRAFT_WAIT_MS: '900000'
+          HOMEY_DRAFT_EARLY_FAIL_MS: '180000'
         run: node .github/scripts/wait-athom-draft-ready.js
       - name: Install Puppeteer
         if: steps.soak.outputs.skip != 'true'
