@@ -3398,5 +3398,8 @@
   },
   "9.0.979": {
     "en": "Fixed complementary enrich bleed (nkjintbl) and kept Zigbee RF / MCU evolution guidance without degrading pairing."
+  },
+  "9.0.980": {
+    "en": "Publish unblock: nkjintbl anti-bot (TZE204 on plug only) + Zigbee RF/MCU evolution without degrade."
   }
 }
