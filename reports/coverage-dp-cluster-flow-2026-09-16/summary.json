@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-16T06:41:40.968Z",
+  "generatedAt": "2026-09-16T17:46:25.310Z",
   "patch": "P2247",
   "drivers": {
     "count": 431,
@@ -14,11 +14,12 @@
   },
   "dps": {
     "knowledgeCouples": 198,
-    "registryCouples": 198,
+    "registryCouples": 199,
     "registryCovered": 197,
-    "coveragePct": 99.5,
+    "coveragePct": 99,
     "skippedBrandOrExternal": 18,
     "uncovered": [
+      "_TZB210_rkgngb5o|TS0501B",
       "_TZE200_8eazvzo6|TS0601"
     ]
   },

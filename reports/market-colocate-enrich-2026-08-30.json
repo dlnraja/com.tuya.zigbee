@@ -1,11 +1,24 @@
 {
-  "generatedAt": "2026-09-16T06:40:51.036Z",
+  "generatedAt": "2026-09-16T17:45:27.503Z",
   "mode": "APPLY",
   "policy": "P2319 enrichment-first colocate — never strip other drivers",
   "applied": [],
   "skipped": [
     {
+      "mfr": "_TZE200_wzk0x7fq",
+      "pid": "ZG-102ZM",
+      "reason": "p2520-would-degrade",
+      "driver": "vibration_sensor"
+    },
+    {
       "mfr": "_TZE200_n8dljorx",
+      "pid": "TS0601",
+      "reason": "needs-deep-review",
+      "tier": null,
+      "soft": null
+    },
+    {
+      "mfr": "_TZE200_nkjintbl",
       "pid": "TS0601",
       "reason": "needs-deep-review",
       "tier": null,

@@ -7,8 +7,8 @@ Mode: **apply** | Crawl: **no**
 | Metric | Baseline | Final | Δ |
 |--------|----------|-------|---|
 | Drivers | 431 | 431 | 0 |
-| MFR entries | 17201 | 17201 | 0 |
-| PID entries | 3029 | 3029 | 0 |
+| MFR entries | 15574 | 15605 | 31 |
+| PID entries | 3019 | 3019 | 0 |
 
 ## Phases
 
