@@ -101,6 +101,7 @@
       "_tze204_fqytfmyk",
       "_tze204_fqytfymk",
       "_tze204_myd45weu",
+      "_tze204_qaxkdgyt",
       "_tze204_sh8v7fhd",
       "_tze21c_dohbhb5k",
       "_tze21c_i2ij4rb3",
@@ -132,8 +133,6 @@
       "hobeian",
       "_TZE200_nt4pquef",
       "_TZE204_nt4pquef",
-      "A89G12C",
-      "HOBEIAN",
       "_TZE284_nt4pquef",
       "_TZE200_4bjixefp",
       "_TZE200_4xsypney",
@@ -157,6 +156,7 @@
       "_TZE204_fqytfmyk",
       "_TZE204_fqytfymk",
       "_TZE204_myd45weu",
+      "_TZE204_qaxkdgyt",
       "_TZE204_sh8v7fhd",
       "_TZE21C_dohbhb5k",
       "_TZE21C_i2ij4rb3",
@@ -184,6 +184,8 @@
       "_TZE2841000000_hdml1aav",
       "_TZE2841000000_nhgdf6qr",
       "_TZE2841000000_tgrzpqf4",
+      "A89G12C",
+      "HOBEIAN",
       "_tze200_nt4pquef",
       "_tze204_nt4pquef"
     ],
@@ -241,6 +243,15 @@
           0,
           61184
         ]
+      }
+    },
+    "learnmode": {
+      "image": "{{driverAssetsPath}}/icon.svg",
+      "instruction": {
+        "en": "Press and hold the pairing button for 5 seconds until the LED flashes. Keep pressing every 2 seconds during pairing if the device is battery-powered.",
+        "fr": "Maintenez le bouton d'appairage 5 secondes jusqu'à ce que la LED clignote. Sur pile, rappuyez toutes les 2 s pendant l'appairage.",
+        "nl": "Houd de paarknop 5 seconden ingedrukt tot de LED knippert. Bij batterij: druk elke 2 s tijdens het pairen.",
+        "de": "Halten Sie die Kopplungstaste 5 Sekunden, bis die LED blinkt. Bei Batterie alle 2 s während des Pairings drücken."
       }
     }
   },

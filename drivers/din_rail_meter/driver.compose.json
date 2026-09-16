@@ -125,7 +125,6 @@
     "manufacturerName": [
       "_TZE284_6ocnqlhn",
       "_TZE204_DHOTIAUW",
-      "_TZE284_81YRT3LO",
       "_tze200_davzgqq0",
       "_tze200_ipxszdhv",
       "_tze204_2dpa3fqj",
@@ -140,8 +139,6 @@
       "_tze284_6ocnqlhn",
       "_TZE204_dhotiauw",
       "_tze204_dhotiauw",
-      "_TZE284_81yrt3lo",
-      "_tze284_81yrt3lo",
       "_TZE200_davzgqq0",
       "_TZE200_ipxszdhv",
       "_TZE204_2dpa3fqj",
@@ -155,12 +152,12 @@
       "_tze204_6ocnqlhn"
     ],
     "productId": [
+      "TS0601",
       "SDM01-3Z1",
       "SDM02-2Z1",
       "SPM01-1Z2",
       "SPM02-3Z3",
       "TS0203",
-      "TS0601",
       "TS0601_generic",
       "TS0603"
     ],
@@ -187,8 +184,7 @@
   },
   "images": {
     "small": "/drivers/din_rail_meter/assets/images/small.png",
-    "large": "/drivers/din_rail_meter/assets/images/large.png",
-    "xlarge": "/drivers/din_rail_meter/assets/images/xlarge.png"
+    "large": "/drivers/din_rail_meter/assets/images/large.png"
   },
   "platforms": [
     "local"
@@ -209,14 +205,18 @@
       "id": "tuya_revive",
       "title": {
         "en": "Tuya Revive (device recovery)",
-        "fr": "Tuya Revive (récupération appareil)"
+        "fr": "Tuya Revive (récupération appareil)",
+        "nl": "Tuya Revive (apparaatherstel)",
+        "de": "Tuya Revive (Gerätewiederherstellung)"
       }
     },
     {
       "id": "generate_issue_report",
       "title": {
         "en": "Generate support report (GitHub issue)",
-        "fr": "Générer rapport de support (issue GitHub)"
+        "fr": "Générer rapport de support (issue GitHub)",
+        "nl": "Supportrapport genereren (GitHub issue)",
+        "de": "Supportbericht erstellen (GitHub Issue)"
       }
     }
   ],

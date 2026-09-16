@@ -206,7 +206,10 @@
     "enrich:functional": "node tools/ci/deep-functional-enrich-pass.js",
     "check:p2530": "node --test test/critical/p2530-recent-variant-capability.test.js",
     "enrich:variants:recent": "node tools/ci/recent-variant-capability-completer.js",
-    "enrich:variants:recent:apply": "node tools/ci/recent-variant-capability-completer.js --apply"
+    "enrich:variants:recent:apply": "node tools/ci/recent-variant-capability-completer.js --apply",
+    "check:p2531": "node --test test/critical/p2531-complementary-coverage-mega.test.js",
+    "enrich:coverage:mega": "node tools/ci/p2531-complementary-coverage-mega.js",
+    "enrich:coverage:mega:apply": "node tools/ci/p2531-complementary-coverage-mega.js --apply --crawl"
   },
   "keywords": [
     "homey",
