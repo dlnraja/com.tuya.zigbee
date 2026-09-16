@@ -4,11 +4,11 @@
 
 [![Version](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fraw.githubusercontent.com%2Fdlnraja%2Fcom.tuya.zigbee%2Fmaster%2Fapp.json&query=%24.version&label=version&color=blue)](https://homey.app/a/com.dlnraja.tuya.zigbee/)
 [![Drivers](https://img.shields.io/badge/drivers-431-brightgreen)](https://homey.app/a/com.dlnraja.tuya.zigbee/)
-[![Fingerprints](https://img.shields.io/badge/fingerprints-4,402%20unique-green)](https://homey.app/a/com.dlnraja.tuya.zigbee/)
+[![Fingerprints](https://img.shields.io/badge/fingerprints-4,428%20unique-green)](https://homey.app/a/com.dlnraja.tuya.zigbee/)
 [![SDK](https://img.shields.io/badge/SDK-3-orange)](https://apps.developer.homey.app/)
 [![License](https://img.shields.io/badge/license-GPL--3.0-green)](LICENSE)
 
-Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, sensors, lights, thermostats, covers, valves — **431 drivers**, **4,402 unique fingerprints**. No cloud required.
+Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, sensors, lights, thermostats, covers, valves — **431 drivers**, **4,428 unique fingerprints**. No cloud required.
 
 **What it does:**
 - Talks to devices on your Homey Zigbee mesh (Tuya DP `0xEF00` and standard ZCL)
@@ -33,35 +33,35 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 
 | Metric | Value |
 |--------|-------|
-| **App Version** | v9.0.941 |
+| **App Version** | v9.0.964 |
 | **Drivers** | 431 (381 Zigbee + 50 WiFi) |
-| **Unique Fingerprints** | 4,402 |
-| **Pairing Variants** | 17,138 (4 case combos per fingerprint) |
+| **Unique Fingerprints** | 4,428 |
+| **Pairing Variants** | 16,049 (4 case combos per fingerprint) |
 | **Unique Product IDs** | 592 |
 | **Flow Cards** | 5,987 |
 | **Unique Capabilities** | 170 |
 | **Native OTA Drivers** | 8 |
-| **Test Suites** | 320 files |
+| **Test Suites** | 335 files |
 | **SVG Icons** | 731 |
 | **Languages** | EN, FR, NL, DE |
 | **SDK / Homey** | 3 / >= 12.2.0 |
-| **Last Updated** | 2026-09-15 |
+| **Last Updated** | 2026-09-16 |
 
 ### Top 20 Drivers by Fingerprint Count
 
 | # | Driver | Fingerprints |
 |---|--------|-------------|
-| 1 | `climate_sensor` | 2,106 |
-| 2 | `switch_1gang` | 1,539 |
-| 3 | `presence_sensor_radar` | 821 |
-| 4 | `curtain_motor` | 792 |
-| 5 | `radiator_valve` | 599 |
-| 6 | `button_wireless_2` | 570 |
-| 7 | `wall_dimmer_tuya` | 488 |
-| 8 | `generic_tuya` | 414 |
-| 9 | `device_radiator_valve` | 332 |
-| 10 | `switch_4gang` | 292 |
-| 11 | `switch_2gang` | 275 |
+| 1 | `climate_sensor` | 2,050 |
+| 2 | `switch_1gang` | 1,535 |
+| 3 | `radiator_valve` | 599 |
+| 4 | `button_wireless_2` | 570 |
+| 5 | `curtain_motor` | 515 |
+| 6 | `presence_sensor_radar` | 420 |
+| 7 | `generic_tuya` | 414 |
+| 8 | `device_radiator_valve` | 332 |
+| 9 | `switch_4gang` | 292 |
+| 10 | `switch_2gang` | 283 |
+| 11 | `wall_dimmer_tuya` | 244 |
 | 12 | `contact_sensor` | 228 |
 | 13 | `motion_sensor` | 225 |
 | 14 | `switch_3gang` | 223 |
@@ -70,7 +70,7 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 | 17 | `thermostat_tuya_dp` | 188 |
 | 18 | `sensor_contact_zigbee` | 183 |
 | 19 | `water_leak_sensor_tuya` | 178 |
-| 20 | `plug_energy_monitor` | 170 |
+| 20 | `plug_energy_monitor` | 176 |
 
 ### Drivers by Device Class
 
@@ -102,18 +102,18 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 
 | Version | Changes |
 |---------|---------|
-| **v9.0.941** | Zemismart ZM16B curtain motor support (was IR); publish gate fix; fleet DP/flow coverage enrich. Update Homey Test + re-pair ZM16B if nee… |
-| **v9.0.940** | Moes curtain Stop + mid-position fix; VicHY radar sticky presence; Peter Smartbutton battery History options; garden irrigation TS0101 co… |
-| **v9.0.938** | Smart battery-low alarm (app-owned, not Homey alarm_battery); Smartbutton battery UI treat; OEM Homey Device Updates only (removed unsafe… |
-| **v9.0.934** | P2505: TITAN Buffer SSOT load (HomeyButtonUiCharter) + close deferred dual-app suggestions. |
-| **v9.0.933** | Moes curtain switch fingerprint lock hardened; Smartbutton battery UI fixes remain. Update Homey Test. |
-| **v9.0.931** | IR anti-spam flood guard; complementary failover for curtains/radar/Smartbutton; SMART ADAPT defers under low memory to reduce app crashe… |
-| **v9.0.930** | Pairing learnmode, Smartbutton battery UI/History, and Homey capability UX heal (getable sensors + any-capability Flow). Silent forum enr… |
-| **v9.0.928** | Improved pairing learnmode guidance; Smartbutton battery shown again in Homey UI and History; capability UX heal so sensors stay readable… |
-| **v9.0.927** | Complementary failover: keep MIAMO AM43 through Athom compact; rehydrate Smartbutton battery when stripped (Peter a5304ce8); strip VicHY … |
-| **v9.0.925** | Soft-republish Smartbutton battery keep (P2488) after Athom tip hang. Update Test — Peter Smartknop should show % again. |
-| **v9.0.923** | Fixed Smartbutton battery tile stripped by hourly adapter (Peter a5304ce8). Intelligent IR Homey TX remains on 9.0.922+. |
-| **v9.0.922** | Intelligent IR Homey Pro 2023 Pronto TX + Zigbee/WiFi router UX (P2487c). Users: update Test. |
+| **v9.0.964** | Completed OEM/case variants and capabilities for recent curtain, radar, dimmer and button couples. |
+| **v9.0.963** | Deep functional enrich in all inbox workflows — DP, clusters, flows and RX/TX audited beyond fingerprint locks. |
+| **v9.0.962** | Hardened radar DP ownership (cap vs capability) so lux/presence RX and presence flow edges stay correct. |
+| **v9.0.961** | Fixed Intelligent IR flow cards after fleet-enrich re-inject; keep titleFormatted omitted. |
+| **v9.0.960** | Hardened forum and scrape ingest against prompt injection and malicious markup. |
+| **v9.0.958** | Presence radar WHEN cards fire on human presence edges; register remaining flow conditions. |
+| **v9.0.956** | Hardened local-first WiFi credentials after Homey reboot (no cloud re-login). |
+| **v9.0.955** | Hardened mmWave presence flow triggers for all update paths. |
+| **v9.0.954** | Improved mmWave presence flow triggers and IR flow cards. |
+| **v9.0.952** | L99: strip doNotLock invent from climate (Fleet anti-bot); harden isForbiddenPlacement. Update Homey Test. |
+| **v9.0.951** | Forum fine-resolve: OCR invent pad→ZM16B curtain; radar/curtain sacred front-pin; battery Insights heal. Update Homey Test. |
+| **v9.0.950** | CI: dual-app Syntax harden; BSEED zcl_only Contre quoi. Update Homey Test. |
 
 <!-- CHANGELOG_END -->
 
