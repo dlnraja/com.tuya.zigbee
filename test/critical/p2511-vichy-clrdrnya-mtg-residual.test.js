@@ -17,23 +17,25 @@ const ROOT = path.join(__dirname, '..', '..');
 const IntelligentPresenceInference = require('../../lib/sensors/IntelligentPresenceInference');
 
 describe('P2511 VicHY clrdrnya MTG075 residual', () => {
-  it('MTG075 config: sticky DP1 unreliable + zero-distance clear', () => {
+  it('MTG075 config: sticky DP1 unreliable; presence owned by DP1 (P2534)', () => {
     const { SENSOR_CONFIGS } = require('../../drivers/presence_sensor_radar/configs');
     const cfg = SENSOR_CONFIGS.MTG075_ZB_RL_RELAY;
     assert.ok(cfg);
     assert.equal(cfg.mainsPowered, true);
-    assert.equal(cfg.clearPresenceOnZeroDistance, true);
-    assert.equal(cfg.syncPresenceFromDistanceInference, true);
+    // WHY(P2534): zero-distance clear caused bathroom flip-flop / dead presence WHEN
+    assert.equal(cfg.clearPresenceOnZeroDistance, false);
+    assert.equal(cfg.syncPresenceFromDistanceInference, false);
     assert.equal(cfg.dpMap[1].unreliable, true);
     assert.equal(cfg.dpMap[1].useInference, true);
     assert.ok(cfg.sensors.some((m) => /clrdrnya/i.test(m)));
   });
 
-  it('SensorConfigs + TuyaSensorDatabase mirror MTG sticky flags', () => {
+  it('SensorConfigs + TuyaSensorDatabase mirror MTG DP1 ownership (P2534)', () => {
     const SENSOR_CONFIGS = require('../../lib/data/SensorConfigs');
     const cfg = SENSOR_CONFIGS.MTG075_ZB_RL_RELAY;
     assert.ok(cfg);
-    assert.equal(cfg.clearPresenceOnZeroDistance, true);
+    assert.equal(cfg.clearPresenceOnZeroDistance, false);
+    assert.equal(cfg.syncPresenceFromDistanceInference, false);
     assert.equal(cfg.dpMap[1].unreliable, true);
     const tuyaSrc = fs.readFileSync(path.join(ROOT, 'lib/tuya/TuyaSensorDatabase.js'), 'utf8');
     assert.ok(/MTG075_ZB_RL_RELAY[\s\S]{0,900}unreliable:\s*true/.test(tuyaSrc));
