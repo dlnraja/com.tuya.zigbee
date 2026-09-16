@@ -27,6 +27,15 @@ const OUT_DIR = path.join(ROOT, 'reports', `flow-fleet-enrich-${DATE}`);
 const APPLY = process.argv.includes('--apply');
 const SKIP_SUB = process.argv.includes('--skip-subtools');
 
+// WHY P2487: Athom requires [[device]] in titleFormatted when a device arg exists,
+// but project rule forbids [[device]] (manual device-pick bug). Intelligent IR cards
+// omit titleFormatted entirely — fleet orphan-fix must never re-inject it.
+const OMIT_TITLEFORMATTED_DRIVERS = new Set([
+  'wifi_ir_remote',
+  'blaster_remote',
+  'ir_blaster',
+]);
+
 /** Capability → trigger template + patterns that mean "already covered". */
 const CAPABILITY_TEMPLATES = {
   measure_temperature: {
@@ -386,6 +395,19 @@ function ensureChildLockActions(driverId, flow, caps) {
   return added;
 }
 
+function stripTitleFormatted(flow) {
+  let n = 0;
+  for (const kind of ['triggers', 'conditions', 'actions']) {
+    for (const card of flow[kind] || []) {
+      if (card && card.titleFormatted !== undefined) {
+        delete card.titleFormatted;
+        n += 1;
+      }
+    }
+  }
+  return n;
+}
+
 function processDriverFlow(driverId) {
   const composePath = path.join(DRIVERS, driverId, 'driver.compose.json');
   const flowPath = path.join(DRIVERS, driverId, 'driver.flow.compose.json');
@@ -404,11 +426,17 @@ function processDriverFlow(driverId) {
     orphanFixed: 0,
     triggersAdded: [],
     actionsAdded: [],
+    titleFormattedStripped: 0,
   };
 
-  for (const kind of ['triggers', 'conditions', 'actions']) {
-    for (const card of flow[kind] || []) {
-      if (fixOrphanTokensOnCard(card)) result.orphanFixed += 1;
+  const omitTf = OMIT_TITLEFORMATTED_DRIVERS.has(driverId);
+  if (omitTf) {
+    result.titleFormattedStripped = stripTitleFormatted(flow);
+  } else {
+    for (const kind of ['triggers', 'conditions', 'actions']) {
+      for (const card of flow[kind] || []) {
+        if (fixOrphanTokensOnCard(card)) result.orphanFixed += 1;
+      }
     }
   }
 
@@ -419,21 +447,29 @@ function processDriverFlow(driverId) {
     ...(flow.conditions || []).map((c) => c.id),
   ]);
 
-  for (const cap of compose.capabilities || []) {
-    const tpl = CAPABILITY_TEMPLATES[cap];
-    if (!tpl || hasCapabilityTrigger(driverId, cap, triggerIds)) continue;
-    const card = tpl.trigger(driverId);
-    if (existingIds.has(card.id)) continue;
-    flow.triggers.push(card);
-    triggerIds.push(card.id);
-    existingIds.add(card.id);
-    result.triggersAdded.push(card.id);
+  // Skip capability templates for IR omit drivers — templates always carry titleFormatted.
+  if (!omitTf) {
+    for (const cap of compose.capabilities || []) {
+      const tpl = CAPABILITY_TEMPLATES[cap];
+      if (!tpl || hasCapabilityTrigger(driverId, cap, triggerIds)) continue;
+      const card = tpl.trigger(driverId);
+      if (existingIds.has(card.id)) continue;
+      flow.triggers.push(card);
+      triggerIds.push(card.id);
+      existingIds.add(card.id);
+      result.triggersAdded.push(card.id);
+    }
   }
 
-  const lockAdded = ensureChildLockActions(driverId, flow, compose.capabilities || []);
+  const lockAdded = omitTf
+    ? []
+    : ensureChildLockActions(driverId, flow, compose.capabilities || []);
   result.actionsAdded.push(...lockAdded);
 
-  const dirty = result.orphanFixed > 0 || result.triggersAdded.length > 0 || result.actionsAdded.length > 0;
+  const dirty = result.orphanFixed > 0
+    || result.triggersAdded.length > 0
+    || result.actionsAdded.length > 0
+    || result.titleFormattedStripped > 0;
   if (dirty && APPLY) {
     writeJson(flowPath, flow);
   }

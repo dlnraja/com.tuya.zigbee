@@ -3344,5 +3344,8 @@
   },
   "9.0.960": {
     "en": "Hardened forum and scrape ingest against prompt injection and malicious markup."
+  },
+  "9.0.961": {
+    "en": "Fixed Intelligent IR flow cards after fleet-enrich re-inject; keep titleFormatted omitted."
   }
 }
