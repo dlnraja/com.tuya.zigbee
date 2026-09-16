@@ -1,8 +1,8 @@
-# Zigbee + Tuya evolution SSOT (P2537)
+# Zigbee + Tuya evolution SSOT (P2537 / P2538)
 
 Machine: [`config/architecture/zigbee-tuya-evolution-ssot.json`](../../config/architecture/zigbee-tuya-evolution-ssot.json)  
-Runtime helper: `lib/utils/zigbee-tuya-evolution.js` → `zigbeeTuyaEvolutionBrief()`  
-Gate: `npm run check:p2537`  
+Runtime helper: `lib/utils/zigbee-tuya-evolution.js` → `zigbeeTuyaEvolutionBrief()` / `getDiagnosticsRfBrief()`  
+Gates: `npm run check:p2537` · `npm run check:p2538`  
 Dual-app: **BOTH** (knowledge / Contre quoi — no forum POST).
 
 ## WHY (P215)
@@ -10,10 +10,16 @@ Dual-app: **BOTH** (knowledge / Contre quoi — no forum POST).
 | | |
 |--|--|
 | **Pourquoi** | Articles / CSA news (Zigbee PRO 2023 → 4.0 / Suzi / Direct / Green Power) + Tuya MCU UART/EF00 évoluent ; agents inventent sinon des couples ou confondent Matter/Suzi avec ce app |
-| **Comment** | SSOT JSON + brief helper ; RF guide pointe ici ; MCU time reste `TuyaTimeSyncFormats` |
+| **Comment** | SSOT JSON + brief helper ; RF guide pointe ici ; MCU time reste `TuyaTimeSyncFormats` ; P2538 soft mesh-TX tips + airbox couple lock |
 | **Pour qui** | Homey users (troubleshooting) + CI/agents |
 | **Quand** | Enrich silencieux ; pas de change compose sans interview |
-| **Contre quoi** | Invent pid Suzi/GP ; forcer EF00 ; abandonner plan canaux 2.4 GHz Homey |
+| **Contre quoi** | Invent pid Suzi/GP ; forcer EF00 ; abandonner plan canaux 2.4 GHz Homey ; airbox (`8b9zpaav`/`it9utkro`) mispaired as climate |
+
+## Operational risks (P2538)
+
+- **Tuya TX mesh flood** — aggressive EF00 dataQuery / configureReporting / 0x10 version spam can starve sleepy nodes on Homey Pro. Mitigate via BootBudget, MCUVersionHelper dataQuery-only, soft power_report modes, RF 15/20/25.
+- **Airbox mispair** — `_TZE284_8b9zpaav` / `_TZE284_it9utkro` + `TS0601` → `air_quality_co2` only (Z2M airbox DP map).
+
 
 ## Zigbee lineage (condensé)
 
