@@ -7280,6 +7280,57 @@
           "dynamic": false
         }
       }
+    },
+    {
+      "id": "p2541-tze200-yvx5lh6k-air-quality-reinstate",
+      "mfr": [
+        "_TZE200_yvx5lh6k",
+        "_tze200_yvx5lh6k",
+        "_TZE204_yvx5lh6k",
+        "_tze204_yvx5lh6k",
+        "_TZE200_8ygsuhe1",
+        "_tze200_8ygsuhe1",
+        "_TZE204_8ygsuhe1",
+        "_tze204_8ygsuhe1",
+        "_TZE200_ryfmq5rl",
+        "_tze200_ryfmq5rl",
+        "_TZE204_ryfmq5rl",
+        "_tze204_ryfmq5rl",
+        "_TZE200_c2fmom5z",
+        "_tze200_c2fmom5z",
+        "_TZE204_c2fmom5z",
+        "_tze204_c2fmom5z",
+        "_TZE200_mja3fuja",
+        "_tze200_mja3fuja",
+        "_TZE204_mja3fuja",
+        "_tze204_mja3fuja"
+      ],
+      "productId": [
+        "TS0601"
+      ],
+      "canonicalDriver": "air_quality_co2",
+      "forbiddenDrivers": [
+        "climate_sensor",
+        "soil_sensor",
+        "zigbee_universal"
+      ],
+      "forbidMode": "couple",
+      "protocol": "tuya_dp",
+      "notes": "P2541 reinstate — smart_air_detection_box manufacturerName was wiped []; Z2M TS0601_air_quality_sensor family; complementary on air_quality_co2 + restored box; forbid climate",
+      "sources": [
+        "Z2M:TS0601_air_quality_sensor",
+        "P2541:wipe-reinstate"
+      ],
+      "tracks": {
+        "master": {
+          "static": true,
+          "dynamic": true
+        },
+        "stable": {
+          "static": true,
+          "dynamic": false
+        }
+      }
     }
   ]
 }

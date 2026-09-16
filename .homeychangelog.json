@@ -3413,5 +3413,8 @@
   },
   "9.0.984": {
     "en": "Improved complementary Zigbee DP/cluster/raw RX-TX paths for air quality and sensors without replacing working EF00 maps."
+  },
+  "9.0.985": {
+    "en": "Restored complementary air-quality fingerprints and dual-case enrich guards without shrinking working drivers."
   }
 }

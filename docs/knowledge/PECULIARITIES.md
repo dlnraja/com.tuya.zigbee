@@ -2170,17 +2170,17 @@ Generated 2026-09-15T08:05:31.976Z from registry (220 cases) × compound DB (509
 - Notes: 1-gang light switch TS0011; forbidden from wall_switch_5_gang_tuya
 - **Gaps:** no_sources, not_in_local_z2m_fps
 
-### `p2432-dze200-mja3fuja-air-quality` → `air_quality_comprehensive`
+### `p2432-dze200-mja3fuja-air-quality` → `air_quality_co2`
 
 - Couple: `_TZE200_mja3fuja` + TS0601
 - Protocol: tuya_dp
 - Z2M local pids for mfr: TS0601 ✓ overlap
-- Compound `_TZE200_mja3fuja|TS0601`: tuya_dp DP {"2":"measure_pm25","18":"measure_temperature/10","19":"measure_humidity","21":"measure_voc","22":"measure_co2"} Forum #1379 / #31079 Smart Air House Keeper
-- Compound `_tze200_mja3fuja|TS0601`: tuya_dp DP {"2":"measure_pm25","18":"measure_temperature/10","19":"measure_humidity","21":"measure_voc","22":"measure_co2"} Forum #1379 / #31079 Smart Air House Keeper
-- Compound `_TZE200_MJA3FUJA|TS0601`: tuya_dp DP {"2":"measure_pm25","18":"measure_temperature/10","19":"measure_humidity","21":"measure_voc","22":"measure_co2"} Forum #1379 / #31079 Smart Air House Keeper
+- Compound `_TZE200_mja3fuja|TS0601`: tuya_dp DP {"2":"measure_co2","18":"measure_temperature/10","19":"measure_humidity","21":"measure_voc","22":"measure_formaldehyde"} Z2M TS0601_air_quality_sensor family (P2541 reinstate)
+- Compound `_tze200_mja3fuja|TS0601`: same
+- Compound `_TZE200_MJA3FUJA|TS0601`: same
 - Compose: class=sensor eps=1 EF00=true IAS=false batteries=mains?
-- Notes: Topic 1 #1379 Smart Air House Keeper; forbidden from air_purifier
-- **Gaps:** no_sources
+- Notes: P2541 complementary reinstate — canonical `air_quality_co2` (+ restored `smart_air_detection_box`); forbid climate; was mis-routed to `air_quality_comprehensive`
+- **Gaps:** none (locked)
 
 ### `p2432-dze200-2ekuz3dz-thermostat` → `wall_thermostat`
 
