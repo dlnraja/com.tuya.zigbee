@@ -17,7 +17,7 @@ const rf = require(path.join(ROOT, 'lib', 'utils', 'rf-channel-coexistence.js'))
 describe('P2537 Zigbee + Tuya evolution SSOT', () => {
   it('SSOT JSON has Zigbee 4.0 current + Suzi derivative', () => {
     const ssot = evo.loadEvolutionSsot();
-    assert.equal(ssot.patch, 'P2538');
+    assert.equal(ssot.patch, 'P2539');
     assert.ok(ssot.zigbeeLineage.some((e) => e.id === 'zigbee-3.0'));
     assert.ok(ssot.zigbeeLineage.some((e) => e.id === 'zigbee-pro-2023'));
     const z40 = ssot.zigbeeLineage.find((e) => e.id === 'zigbee-4.0');

@@ -66,7 +66,7 @@ describe('P2538 L99 airbox + mesh flood enrich', () => {
   it('evolution SSOT documents mesh flood risk; diagnostics expose tip', () => {
     const evo = require(path.join(ROOT, 'lib/utils/zigbee-tuya-evolution.js'));
     const ssot = evo.loadEvolutionSsot();
-    assert.equal(ssot.patch, 'P2538');
+    assert.equal(ssot.patch, 'P2539');
     assert.ok((ssot.operationalRisks || []).some((r) => r.id === 'tuya-tx-mesh-flood'));
     assert.ok((ssot.homeyAppImplications || []).some((t) => /mesh|0x10|BootBudget/i.test(t)));
     const brief = evo.getDiagnosticsRfBrief();

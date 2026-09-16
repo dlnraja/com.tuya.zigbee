@@ -1,16 +1,29 @@
-# Zigbee + Tuya evolution SSOT (P2537 / P2538)
+# Zigbee + Tuya evolution SSOT (P2537–P2539)
 
 Machine: [`config/architecture/zigbee-tuya-evolution-ssot.json`](../../config/architecture/zigbee-tuya-evolution-ssot.json)  
-Runtime helper: `lib/utils/zigbee-tuya-evolution.js` → `zigbeeTuyaEvolutionBrief()` / `getDiagnosticsRfBrief()`  
-Gates: `npm run check:p2537` · `npm run check:p2538`  
+Runtime helper: `lib/utils/zigbee-tuya-evolution.js` → `zigbeeTuyaEvolutionBrief()` / `classifyHomeyRadioCapability()` / `getDiagnosticsRfBrief()`  
+Gates: `npm run check:p2537` · `npm run check:p2538` · `npm run check:p2539`  
 Dual-app: **BOTH** (knowledge / Contre quoi — no forum POST).
+
+## Intelligent integration (P2539)
+
+Homey **today** = 2.4 GHz Zigbee + Tuya ZCL/EF00. Zigbee 4.0 / Suzi are **awareness + soft classifier**:
+
+| Capability | Homey Tuya app today |
+|------------|----------------------|
+| Zigbee 2.4 GHz ZCL+EF00 | Yes |
+| Suzi sub-GHz (800/900 MHz) | **No** — needs dual-band bridge hardware |
+| Zigbee Direct BLE onboarding | Hub/stack — not this app’s DP invent |
+| Matter | Homey OS bridge — not Tuya EF00 couples |
+
+Runtime: `applyIntelligentProtocol` attaches `device._radioCapability` via `classifyHomeyRadioCapability` (soft log only — never invent compose fingerprints).
 
 ## WHY (P215)
 
 | | |
 |--|--|
 | **Pourquoi** | Articles / CSA news (Zigbee PRO 2023 → 4.0 / Suzi / Direct / Green Power) + Tuya MCU UART/EF00 évoluent ; agents inventent sinon des couples ou confondent Matter/Suzi avec ce app |
-| **Comment** | SSOT JSON + brief helper ; RF guide pointe ici ; MCU time reste `TuyaTimeSyncFormats` ; P2538 soft mesh-TX tips + airbox couple lock |
+| **Comment** | SSOT JSON + classifier + protocol/diag hooks ; MCU time reste `TuyaTimeSyncFormats` ; P2538 soft mesh-TX tips + airbox couple lock |
 | **Pour qui** | Homey users (troubleshooting) + CI/agents |
 | **Quand** | Enrich silencieux ; pas de change compose sans interview |
 | **Contre quoi** | Invent pid Suzi/GP ; forcer EF00 ; abandonner plan canaux 2.4 GHz Homey ; airbox (`8b9zpaav`/`it9utkro`) mispaired as climate |
