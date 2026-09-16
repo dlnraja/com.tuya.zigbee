@@ -1,4 +1,4 @@
-# 📥 Community Inbox — 2026-09-15 10:03 UTC
+# 📥 Community Inbox — 2026-09-16 09:56 UTC
 
 Généré par `.github/scripts/community-inbox-digest.js` (workflow `community-inbox.yml`).
 
@@ -6,7 +6,7 @@ Généré par `.github/scripts/community-inbox-digest.js` (workflow `community-i
 
 - Issues ouvertes : **3** — 🔴 à traiter : **3**, 🟡 attente utilisateur : 0, 🟢 maintainer actif : 0
 - PRs ouvertes : **0**
-- Forum : **13** post(s) sans réponse du maintainer
+- Forum : **14** post(s) sans réponse du maintainer
 - Messages privés (lecture seule, jamais de réponse) : **20** thread(s), 7 mfr, 5 pid, 7 UUID diag
 
 ## 🔴 Issues à traiter
@@ -30,4 +30,5 @@ Généré par `.github/scripts/community-inbox-digest.js` (workflow `community-i
 - **Peter_van_Werkhoven** (2026-09-14) :  Hi Dylan, after your updates the app stay’s stable no more crashes. 1000046390 1220×2712 203 KB But still no battery reading from Smartbutt
 - **Peter_van_Werkhoven** (2026-09-14) :  Hi Dylan Good evening, after your last update still no battery reading and History tab on the Smartbutton. Also Deleted it, restarted Homey
 - **Peter_van_Werkhoven** (2026-09-15) :  Hi Dylan Good morning you fixed it again got Battery readings again from Smartbutton only still no History tab but that’s not so important.
+- **VicHY** (2026-09-15) :  Thanks @dlnraja for the updates. It seems the relay type doesn’t change on its own anymore as long as I don’t update the app, so I’ve disab
 
