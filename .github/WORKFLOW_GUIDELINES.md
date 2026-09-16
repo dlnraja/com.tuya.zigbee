@@ -195,17 +195,19 @@ env:
   - Scripts: `gmail-auth-cascade.js`, `verify-gmail-setup.js`; `npm run diag:gmail:cascade` / `diag:gmail:verify`
   - Workflows: `fetch-diags.yml`, `gmail-diagnostics.yml` probe cascade before fetch; `GMAIL_ALLOW_LOCAL_FALLBACK=1`
   - Smoke: `npm run workflow:smoke` → `tools/ci/workflow-smoke-p2226.js`
-- **P2227 / P2491 — AI forfait inclus + smart context compress (never exceed included quotas):**
-  - SSOT: `config/security/ai-plan-forfait.json` + `config/security/ai-context-compress-ssot.json` + `config/architecture/project-smart-map.json`
-  - Caps: global daily **80**, soft-stop **60%**, paid providers blocked, `GMAIL_DIAG_AI_MAX=0`
+- **P2227 / P2491 / P2542 — AI forfait inclus + local auto-improve (never exceed included quotas):**
+  - SSOT: `config/security/ai-plan-forfait.json` + `config/security/ai-context-compress-ssot.json` + `config/architecture/project-smart-map.json` + `config/architecture/local-auto-improve-ssot.json`
+  - Caps: global daily **40**, soft-stop **50%**, paid providers blocked, `GMAIL_DIAG_AI_MAX=0`
   - Default: `AI_FORCE_LOCAL=true` + `AI_ALLOW_REMOTE=false` — remote AI opt-in only
   - Context: slim smart-map (~2KB) instead of dumping all `docs/rules` (~54KB) per call; no ensemble / map-reduce / OpenRouter model-list by default
   - Guard: `tools/ci/ai-plan-guard.js` · compress: `tools/ci/ai-context-compress.js` · gate: `npm run check:p2491`
-  - Doc: `docs/architecture/AI_EFFICIENCY_SSOT.md`
+  - **P2542 local auto-improve:** `tools/ci/local-auto-improve-orchestrator.js` · inject: `inject-forfait-env-workflows.js` · gate: `npm run check:p2542`
+  - Commands: `npm run improve:local` · `improve:local:quick` · `ai:plan-guard`
+  - Doc: `docs/architecture/AI_EFFICIENCY_SSOT.md` · `docs/architecture/LOCAL_AUTO_IMPROVE_SSOT.md`
   - Cron density: forum-poll 4×/day, L99 inbox 3×/day, auto-enrich every 6h
   - Prefer `tools/ci/local-intelligent-solver.js` for issue/diag triage
-  - Commands: `npm run ai:plan-guard` · `npm run ai:quota` · `npm run security:plan`
-  - Workflows: `gmail-diagnostics`, `fetch-diags`, `auto-enrich-closed-loop`, `project-resilience`
+  - Homey runtime catalog (zero cloud AI): `lib/features/LocalSelfImproveCatalog.js`
+  - Every cron / AI-touch workflow MUST declare forfait env (auto-injected)
   - Prefer local heuristics when soft/hard stop — never auto-spend overage
 
 - **P2372 — Fleet enrich all driver classes + free scrape (no paid overage, no lockouts):**

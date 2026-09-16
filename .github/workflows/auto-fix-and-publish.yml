@@ -35,6 +35,12 @@ env:
   # P2491: publish bots stay local — no remote AI burn
   AI_FORCE_LOCAL: "true"
   AI_ALLOW_REMOTE: "false"
+  AI_PLAN_MODE: 'forfait'
+  AI_ALLOW_PAID: 'false'
+  AI_ENSEMBLE: 'false'
+  AI_MAP_REDUCE: 'false'
+  AI_FULL_CONTEXT: 'false'
+  GMAIL_DIAG_AI_MAX: '0'
 
 concurrency:
   # Per-branch so master and stable-v5 do not serialize/race on one lock.

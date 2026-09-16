@@ -49,6 +49,16 @@ permissions:
 concurrency:
   group: recurrent-orchestrator
   cancel-in-progress: false
+# P2542 forfait / local-first (auto-injected)
+env:
+  AI_PLAN_MODE: 'forfait'
+  AI_FORCE_LOCAL: 'true'
+  AI_ALLOW_REMOTE: 'false'
+  AI_ALLOW_PAID: 'false'
+  AI_ENSEMBLE: 'false'
+  AI_MAP_REDUCE: 'false'
+  AI_FULL_CONTEXT: 'false'
+  GMAIL_DIAG_AI_MAX: '0'
 
 jobs:
   orchestrate:
@@ -64,13 +74,26 @@ jobs:
         with:
           node-version: '22'
 
+      - name: Install deps (local solvers)
+        run: npm ci --prefer-offline --no-audit || npm install --no-audit
+
+      # P2542: local auto-improve before analyzers (zero remote AI)
+      - name: Local auto-improve orchestrator (P2542)
+        continue-on-error: true
+        run: |
+          node tools/ci/ai-plan-guard.js --preflight || true
+          node tools/ci/local-auto-improve-orchestrator.js --quick || true
+
       - name: Run Recurrent Orchestrator
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           ARGS=""
-          if [ "${{ inputs.use_ai }}" = "true" ]; then
+          # P2542: ignore use_ai unless remote explicitly allowed (forfait)
+          if [ "${{ inputs.use_ai }}" = "true" ] && [ "${AI_ALLOW_REMOTE}" = "true" ] && [ "${AI_FORCE_LOCAL}" != "true" ]; then
             ARGS="$ARGS --ai"
+          else
+            echo "AI bonus skipped (forfait / AI_FORCE_LOCAL)"
           fi
           if [ "${{ inputs.quick }}" = "true" ]; then
             ARGS="$ARGS --quick"

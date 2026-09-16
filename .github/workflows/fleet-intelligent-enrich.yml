@@ -53,6 +53,10 @@ env:
   FIRECRAWL_DAILY_MAX: '3'
   FREE_SCRAPE_BROWSER: '0'
   TUYA_FP_HEURISTIC: '1'
+  AI_ALLOW_REMOTE: 'false'
+  AI_ENSEMBLE: 'false'
+  AI_MAP_REDUCE: 'false'
+  AI_FULL_CONTEXT: 'false'
 
 jobs:
   fleet-enrich:

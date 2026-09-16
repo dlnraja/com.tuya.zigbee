@@ -39,6 +39,10 @@ env:
   AI_FORCE_LOCAL: "true"
   SKIP_AI: "true"
   GMAIL_DIAG_AI_MAX: "0"
+  AI_ALLOW_REMOTE: 'false'
+  AI_ENSEMBLE: 'false'
+  AI_MAP_REDUCE: 'false'
+  AI_FULL_CONTEXT: 'false'
 
 defaults:
   run:

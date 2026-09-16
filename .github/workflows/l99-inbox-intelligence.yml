@@ -60,6 +60,9 @@ env:
   AI_ALLOW_REMOTE: 'false'
   GMAIL_DIAG_AI_MAX: '0'
   SMART_FETCH_READER_FALLBACK: '1'
+  AI_ENSEMBLE: 'false'
+  AI_MAP_REDUCE: 'false'
+  AI_FULL_CONTEXT: 'false'
 
 jobs:
   inbox-l99:

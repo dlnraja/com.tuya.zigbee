@@ -36,6 +36,14 @@ env:
   CACHE_FILE: .ai/KNOWLEDGE_CACHE.json
   REPORT_DIR: .ai/audit-reports
   # AI_MODEL defaults to claude-sonnet-4-20250514 if not set in secrets
+  AI_PLAN_MODE: 'forfait'
+  AI_FORCE_LOCAL: 'true'
+  AI_ALLOW_REMOTE: 'false'
+  AI_ALLOW_PAID: 'false'
+  AI_ENSEMBLE: 'false'
+  AI_MAP_REDUCE: 'false'
+  AI_FULL_CONTEXT: 'false'
+  GMAIL_DIAG_AI_MAX: '0'
 
 jobs:
   ai-audit:
