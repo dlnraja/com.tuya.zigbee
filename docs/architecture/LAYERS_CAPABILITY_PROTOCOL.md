@@ -71,13 +71,15 @@ All protocol entry points are inventoried and cascaded:
 | Path | TX | RX | Notes |
 |------|----|----|--------|
 | `tuya_dp` | ✓ | ✓ | EF00 sendDP / requestDP / query_all |
-| `zcl` | ✓ | ✓ | writeZcl / readZcl / attr reports |
+| `zcl` | ✓ | ✓ | writeZcl / readZcl / attr reports (+ **P2540** AQ complementary clusters) |
 | `tuya_bound` | ✓ | ✓ | 0xE000 / E001 / E002 / ED00 / E004 |
 | `cluster_bound` | ✓ | ✓ | bindCluster + configureReporting |
 | `raw_frame` / `raw_value` | ✓ | ✓ | sendRaw + unhandled frames |
 | `mcu` / `magic` | ✓ | ✓ | MCU version, magic handshake, query_all |
 | `ias` | | ✓ | 0x0500 / 0x0501 zone status |
 | `ui` | ✓ | | Homey UI / virtual |
+
+**P2540 complementary:** SSOT `config/architecture/complementary-rx-tx-dp-cluster-ssot.json` — EF00 + ZCL + raw listen in parallel (union). `RawClusterFallback` must **listen** AQ clusters (CO2/VOC/HCHO/PM2.5), not map-only. Gate: `npm run check:p2540`.
 
 API: `await this.tx({ kind:'dp', dp:1, value:true, capability:'onoff' })` · `await this.rx({ capability, cluster, attrs })` · `this.protocolRxTx.inventory()`.
 
