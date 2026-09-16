@@ -1638,5 +1638,8 @@
   },
   "5.12.202": {
     "en": "Hardened forum and scrape ingest against prompt injection and malicious markup."
+  },
+  "5.12.204": {
+    "en": "Hardened radar DP ownership so lux/presence RX and presence flow edges stay correct."
   }
 }
