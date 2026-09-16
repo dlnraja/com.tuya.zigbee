@@ -3395,5 +3395,8 @@
   },
   "9.0.978": {
     "en": "Improved Zigbee RF coexistence guidance and Tuya MCU time-sync resilience (Zigbee 4.0 / Suzi awareness without degrading pairing)."
+  },
+  "9.0.979": {
+    "en": "Fixed complementary enrich bleed (nkjintbl) and kept Zigbee RF / MCU evolution guidance without degrading pairing."
   }
 }
