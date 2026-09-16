@@ -1695,5 +1695,8 @@
   },
   "5.12.222": {
     "en": "Intelligent Zigbee 4.0 / Suzi awareness (reliability) without inventing device fingerprints."
+  },
+  "5.12.223": {
+    "en": "Improved complementary Zigbee DP/cluster/raw RX-TX paths (reliability) without replacing working EF00 maps."
   }
 }

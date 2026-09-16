@@ -1,0 +1,76 @@
+{
+  "id": "complementary-rx-tx-dp-cluster-ssot",
+  "patch": "P2540",
+  "dualApp": "BOTH",
+  "updated": "2026-09-16",
+  "doctrine": {
+    "complementaryOnly": true,
+    "noInventPid": true,
+    "unionNotReplace": true,
+    "ef00AndZclParallelOk": true,
+    "rawIsLastResortNotOnly": true
+  },
+  "rxOrderCanonical": [
+    "capability_listener",
+    "zcl_attr_report",
+    "tuya_dp_report",
+    "tuya_bound_report",
+    "ias_zone",
+    "raw_frame_parse",
+    "raw_cluster_fallback",
+    "cluster_data_query",
+    "mcu_report",
+    "poll_heuristic"
+  ],
+  "txOrderCanonical": [
+    "wrapper_manager",
+    "sdk3_direct",
+    "cluster_command",
+    "tuya_bound_cluster",
+    "cluster_bind",
+    "quirk_guided",
+    "raw_zcl_frame",
+    "mcu_version_helper",
+    "magic_handshake_retry",
+    "poll_heuristic"
+  ],
+  "protocolPaths": [
+    "tuya_dp",
+    "zcl",
+    "tuya_bound",
+    "cluster_bound",
+    "raw_frame",
+    "raw_value",
+    "mcu",
+    "ias",
+    "magic",
+    "ui"
+  ],
+  "airQualityComplementary": {
+    "driver": "air_quality_co2",
+    "ef00Primary": true,
+    "zclAlternates": [
+      { "clusterNames": ["msCO2", "carbonDioxideMeasurement", "msCarbonDioxide"], "capability": "measure_co2" },
+      { "clusterNames": ["msTemperatureMeasurement", "temperatureMeasurement"], "capability": "measure_temperature" },
+      { "clusterNames": ["msRelativeHumidity", "relativeHumidity"], "capability": "measure_humidity" },
+      { "clusterNames": ["pm25Measurement", "msFineParticle"], "capability": "measure_pm25" },
+      { "clusterNames": ["vocMeasurement", "msVOC", "msVoc"], "capability": "measure_voc" },
+      { "clusterNames": ["formaldehydeMeasurement", "msFormaldehyde"], "capability": "measure_formaldehyde" }
+    ],
+    "rawFallbackMustListen": [
+      "msCO2",
+      "carbonDioxideMeasurement",
+      "pm25Measurement",
+      "formaldehydeMeasurement",
+      "vocMeasurement"
+    ],
+    "notes": "Z2M airbox EF00 + ZHA ZCL sibling yvx5lh6k — HYBRID listen; LayerSignalFusion dedups"
+  },
+  "runtimeModules": {
+    "ProtocolFallbackChain": "lib/io/ProtocolFallbackChain.js",
+    "ProtocolRxTxChain": "lib/layers/ProtocolRxTxChain.js",
+    "RawClusterFallback": "lib/clusters/RawClusterFallback.js",
+    "CapabilityCommandRouter": "lib/zigbee/CapabilityCommandRouter.js",
+    "LayerSignalFusion": "lib/layers/LayerSignalFusion.js"
+  }
+}
