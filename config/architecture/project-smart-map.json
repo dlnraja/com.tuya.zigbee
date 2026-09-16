@@ -82,8 +82,15 @@
     "P2520 complementary variant enrich",
     "P2538–P2540 airbox / ZB4 Suzi / complementary RX-TX",
     "P2541–P2541b AQ reinstate anti-collision",
-    "P2542 local auto-improve + forfait crons"
+    "P2542 local auto-improve + forfait crons",
+    "P2543 dual-app benefit recent advances (BOTH)"
   ],
+  "dualBenefit": {
+    "ssot": "config/architecture/dual-app-benefit-recent-ssot.json",
+    "orchestrator": "tools/ci/dual-app-benefit-recent.js",
+    "gate": "npm run check:p2543",
+    "cmd": "npm run benefit:dual"
+  },
   "complementary": {
     "merge": "lib/enrichment/ComplementaryMerge.js",
     "reinstateSsot": "config/architecture/complementary-reinstate-notions-ssot.json",
