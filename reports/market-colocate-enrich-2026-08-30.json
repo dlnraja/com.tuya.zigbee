@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-15T18:22:50.720Z",
+  "generatedAt": "2026-09-16T06:40:51.036Z",
   "mode": "APPLY",
   "policy": "P2319 enrichment-first colocate — never strip other drivers",
   "applied": [],
@@ -23,6 +23,13 @@
       "pid": "TS0207",
       "reason": "p2520-would-degrade",
       "driver": "water_leak_sensor"
+    },
+    {
+      "mfr": "_TZ3000_fa9mlvja",
+      "pid": "TS0041",
+      "reason": "needs-deep-review",
+      "tier": null,
+      "soft": null
     },
     {
       "mfr": "_TZ3000_jyupj3fw",
