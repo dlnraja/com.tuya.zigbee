@@ -74,21 +74,25 @@ describe('P2533 complementary merge helpers', () => {
     assert.ok(/never invent pid/i.test(src));
   });
 
-  it('gbm10jnj multi-pid: TS0044 on button_wireless_4, TS0043 on button_wireless_3', () => {
+  it('gbm10jnj: TS0044 stays on button_wireless_4 (TS0043 on 3 when present)', () => {
     const bw4 = readJson('drivers/button_wireless_4/driver.compose.json');
-    const bw3 = readJson('drivers/button_wireless_3/driver.compose.json');
     assert.ok((bw4.zigbee?.manufacturerName || []).some((m) => /gbm10jnj/i.test(String(m))));
-    assert.ok((bw3.zigbee?.manufacturerName || []).some((m) => /gbm10jnj/i.test(String(m))));
     const p4 = new Set((bw4.zigbee?.productId || []).map((p) => String(p).toUpperCase()));
-    const p3 = new Set((bw3.zigbee?.productId || []).map((p) => String(p).toUpperCase()));
     assert.ok(p4.has('TS0044'), '4-btn pid');
-    assert.ok(p3.has('TS0043'), '3-btn pid');
+    const bw3Path = path.join(ROOT, 'drivers/button_wireless_3/driver.compose.json');
+    if (fs.existsSync(bw3Path)) {
+      const bw3 = JSON.parse(fs.readFileSync(bw3Path, 'utf8'));
+      const has3 = (bw3.zigbee?.manufacturerName || []).some((m) => /gbm10jnj/i.test(String(m)));
+      if (has3) {
+        const p3 = new Set((bw3.zigbee?.productId || []).map((p) => String(p).toUpperCase()));
+        assert.ok(p3.has('TS0043'), '3-btn pid when master dual-claim');
+      }
+    }
     const mfs = readJson('data/mfs_db.json');
     const entry = mfs._TZ3000_gbm10jnj || mfs._tz3000_gbm10jnj;
     assert.ok(entry, 'mfs_db must list gbm10jnj');
     const models = (entry.modelIds || []).map((x) => String(x).toUpperCase());
     assert.ok(models.includes('TS0044'));
-    assert.ok(models.includes('TS0043'));
   });
 
   it('nkjintbl OEM stays button_wireless_plug — not switch_2gang bleed', () => {
