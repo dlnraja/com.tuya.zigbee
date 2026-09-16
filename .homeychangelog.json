@@ -1659,5 +1659,8 @@
   },
   "5.12.210": {
     "en": "Improved complementary OEM/forum/Z2M coverage overlays for recent Zigbee couples."
+  },
+  "5.12.211": {
+    "en": "Added Contre quoi unit tests for complementary OEM overlays and dual-case compose preserve."
   }
 }
