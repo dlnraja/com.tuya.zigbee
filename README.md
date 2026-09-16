@@ -4,11 +4,11 @@
 
 [![Version](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fraw.githubusercontent.com%2Fdlnraja%2Fcom.tuya.zigbee%2Fmaster%2Fapp.json&query=%24.version&label=version&color=blue)](https://homey.app/a/com.dlnraja.tuya.zigbee/)
 [![Drivers](https://img.shields.io/badge/drivers-431-brightgreen)](https://homey.app/a/com.dlnraja.tuya.zigbee/)
-[![Fingerprints](https://img.shields.io/badge/fingerprints-4,434%20unique-green)](https://homey.app/a/com.dlnraja.tuya.zigbee/)
+[![Fingerprints](https://img.shields.io/badge/fingerprints-4,435%20unique-green)](https://homey.app/a/com.dlnraja.tuya.zigbee/)
 [![SDK](https://img.shields.io/badge/SDK-3-orange)](https://apps.developer.homey.app/)
 [![License](https://img.shields.io/badge/license-GPL--3.0-green)](LICENSE)
 
-Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, sensors, lights, thermostats, covers, valves — **431 drivers**, **4,434 unique fingerprints**. No cloud required.
+Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, sensors, lights, thermostats, covers, valves — **431 drivers**, **4,435 unique fingerprints**. No cloud required.
 
 **What it does:**
 - Talks to devices on your Homey Zigbee mesh (Tuya DP `0xEF00` and standard ZCL)
@@ -33,15 +33,15 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 
 | Metric | Value |
 |--------|-------|
-| **App Version** | v9.0.975 |
+| **App Version** | v9.0.979 |
 | **Drivers** | 431 (381 Zigbee + 50 WiFi) |
-| **Unique Fingerprints** | 4,434 |
-| **Pairing Variants** | 15,574 (4 case combos per fingerprint) |
+| **Unique Fingerprints** | 4,435 |
+| **Pairing Variants** | 15,602 (4 case combos per fingerprint) |
 | **Unique Product IDs** | 592 |
 | **Flow Cards** | 5,987 |
 | **Unique Capabilities** | 170 |
 | **Native OTA Drivers** | 8 |
-| **Test Suites** | 341 files |
+| **Test Suites** | 343 files |
 | **SVG Icons** | 731 |
 | **Languages** | EN, FR, NL, DE |
 | **SDK / Homey** | 3 / >= 12.2.0 |
@@ -55,8 +55,8 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 | 2 | `switch_1gang` | 1,537 |
 | 3 | `radiator_valve` | 599 |
 | 4 | `button_wireless_2` | 570 |
-| 5 | `curtain_motor` | 509 |
-| 6 | `presence_sensor_radar` | 422 |
+| 5 | `curtain_motor` | 521 |
+| 6 | `presence_sensor_radar` | 424 |
 | 7 | `generic_tuya` | 414 |
 | 8 | `device_radiator_valve` | 332 |
 | 9 | `switch_4gang` | 292 |
@@ -68,9 +68,9 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 | 15 | `thermostat_tuya_dp` | 188 |
 | 16 | `sensor_contact_zigbee` | 183 |
 | 17 | `water_leak_sensor_tuya` | 178 |
-| 18 | `bulb_dimmable` | 162 |
-| 19 | `light_bulb_rgb_rgbw` | 148 |
-| 20 | `usb_dongle_triple` | 148 |
+| 18 | `bulb_dimmable` | 160 |
+| 19 | `switch_2gang` | 153 |
+| 20 | `light_bulb_rgb_rgbw` | 148 |
 
 ### Drivers by Device Class
 
@@ -102,6 +102,10 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 
 | Version | Changes |
 |---------|---------|
+| **v9.0.979** | Fixed complementary enrich bleed (nkjintbl) and kept Zigbee RF / MCU evolution guidance without degrading pairing. |
+| **v9.0.978** | Improved Zigbee RF coexistence guidance and Tuya MCU time-sync resilience (Zigbee 4.0 / Suzi awareness without degrading pairing). |
+| **v9.0.977** | P2535: WZ1 rkgngb5o+TS0501B on led_controller_dimmable (anti-bot clear). Update Homey Test. |
+| **v9.0.976** | P2535 fix: WZ1 rkgngb5o+TS0501B on led_controller_dimmable (avoid CCT Cartesian anti-bot). Update Homey Test. |
 | **v9.0.975** | P2535 forum treat: Skydance/WZ1 _TZB210_rkgngb5o+TS0501B dimmable pairing (sibling TS0502B CCT). Update Homey Test. |
 | **v9.0.974** | P2534 VicHY MTG075: presence follows DP1 (Z2M) — stop distance=0 flip-flop killing presence Flow WHEN. |
 | **v9.0.973** | P2533 dual-app Contre quoi: gbm10jnj TS0044 lock soft on button_wireless_3 when absent (stable). |
@@ -110,10 +114,6 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 | **v9.0.970** | Improved OEM/case variants and capabilities for recent Zigbee couples (covers, radar, dimmer, soil, DIN, buttons, knobs, plugs). |
 | **v9.0.969** | Improved OEM/case variants and capabilities for recent Zigbee couples (covers, radar, dimmer, soil, DIN, buttons, knobs, plugs). |
 | **v9.0.967** | Synced wall dimmer firmware update manufacturer names with Zigbee fingerprints. |
-| **v9.0.966** | OEM TZE200/204/284 and case variants completed for recent radar, dimmer, knob and curtain couples. |
-| **v9.0.965** | Completed OEM variants for recent devices; Moes SFC02 kq1l5eu5 locked on wall curtain switch. |
-| **v9.0.964** | Completed OEM/case variants and capabilities for recent curtain, radar, dimmer and button couples. |
-| **v9.0.963** | Deep functional enrich in all inbox workflows — DP, clusters, flows and RX/TX audited beyond fingerprint locks. |
 
 <!-- CHANGELOG_END -->
 
