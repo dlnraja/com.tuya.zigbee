@@ -3374,5 +3374,8 @@
   },
   "9.0.971": {
     "en": "Added missing Contre quoi unit tests for complementary OEM overlays, dual-case compose preserve, and wall dimmer firmware mfr sync."
+  },
+  "9.0.972": {
+    "en": "P2533 Contre quoi tests for complementary merge helpers; strip nkjintbl bleed from switch_2gang; keep dual-case + multi-pid locks."
   }
 }
