@@ -82,4 +82,40 @@ describe('P2530 recent variant + capability completer', () => {
     assert.ok(hasMfr(wall, /_TZE200_kq1l5eu5/i) || hasMfr(wall, /_TZE204_kq1l5eu5/i));
     assert.ok(hasCap(wall, 'windowcoverings_state') || hasCap(wall, 'windowcoverings_set') || hasCap(wall, 'onoff'));
   });
+
+  it('P2530e fleet seeds: soil/din/leak/4gang/plug/curtain-switch OEM + caps', () => {
+    const soil = readJson('drivers/soil_sensor/driver.compose.json');
+    const din = readJson('drivers/din_rail_meter/driver.compose.json');
+    const leak = readJson('drivers/water_leak_sensor/driver.compose.json');
+    const sw4 = readJson('drivers/wall_switch_4gang_1way/driver.compose.json');
+    const plug = readJson('drivers/plug_energy_monitor/driver.compose.json');
+    const valve = readJson('drivers/valve_dual_irrigation/driver.compose.json');
+    const btn4 = readJson('drivers/button_wireless_4/driver.compose.json');
+
+    assert.ok(hasMfr(soil, /_TZE284_nt4pquef/i));
+    assert.ok(hasMfr(soil, /_TZE200_nt4pquef/i) || hasMfr(soil, /_TZE204_nt4pquef/i));
+    assert.ok(hasCap(soil, 'measure_humidity.soil'));
+
+    assert.ok(hasMfr(din, /_TZE284_6ocnqlhn/i));
+    assert.ok(hasMfr(din, /_TZE200_6ocnqlhn/i) || hasMfr(din, /_TZE204_6ocnqlhn/i));
+    assert.ok(hasCap(din, 'measure_power'));
+    assert.ok(hasCap(din, 'meter_power'));
+
+    assert.ok(hasMfr(leak, /_TZ3000_k4ej3ww2/i));
+    assert.ok(hasCap(leak, 'alarm_water'));
+
+    assert.ok(hasMfr(sw4, /_TZ3000_lwthnp7j/i));
+    assert.ok(hasCap(sw4, 'onoff.gang4'));
+
+    assert.ok(hasMfr(plug, /_TZ3000_okaz9tjs/i));
+    assert.ok(hasMfr(plug, /_TZ3210_fgwhjm9j/i));
+    assert.ok(hasCap(plug, 'onoff'));
+
+    assert.ok(hasMfr(valve, /_TZE284_fhvpaltk/i));
+    assert.ok(hasCap(valve, 'onoff.valve_1'));
+    assert.ok(hasCap(valve, 'onoff.valve_2'));
+
+    assert.ok(hasMfr(btn4, /_TZ3000_xffhmvhv/i));
+    assert.ok(hasMfr(btn4, /_TZ3000_abrsvsou/i));
+  });
 });
