@@ -53,6 +53,14 @@ describe('P2530 recent variant + capability completer', () => {
     assert.ok(hasMfr(c, /_TZE200_m1cvyneb/i));
     assert.ok(hasCap(c, 'onoff'));
     assert.ok(hasCap(c, 'dim'));
+    // Homey publish: firmwareUpdates.device.manufacturerName must exist in zigbee list (exact)
+    const fw = c.firmwareUpdates?.updates?.[0]?.device?.manufacturerName || [];
+    for (const m of fw) {
+      assert.ok(
+        (c.zigbee.manufacturerName || []).includes(m),
+        `firmwareUpdates mfr ${m} must be listed in zigbee.manufacturerName`,
+      );
+    }
   });
 
   it('TZ3000 recent seeds keep case variants + battery where expected', () => {
