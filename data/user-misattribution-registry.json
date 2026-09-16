@@ -6595,13 +6595,16 @@
       "productId": [
         "TS0601"
       ],
-      "canonicalDriver": "air_quality_comprehensive",
+      "canonicalDriver": "air_quality_co2",
       "forbiddenDrivers": [
         "air_purifier",
+        "air_quality_comprehensive",
+        "smart_air_detection_box",
+        "climate_sensor",
         "wall_switch_5_gang_tuya"
       ],
       "protocol": "tuya_dp",
-      "notes": "Topic 1 #1379 Smart Air House Keeper; forbidden from air_purifier"
+      "notes": "P2541: Z2M air_quality_sensor family → air_quality_co2 (was air_quality_comprehensive); pairing FPs canonical only"
     },
     {
       "id": "p2432-dze200-2ekuz3dz-thermostat",
@@ -7312,11 +7315,13 @@
       "forbiddenDrivers": [
         "climate_sensor",
         "soil_sensor",
-        "zigbee_universal"
+        "zigbee_universal",
+        "air_quality_comprehensive",
+        "smart_air_detection_box"
       ],
       "forbidMode": "couple",
       "protocol": "tuya_dp",
-      "notes": "P2541 reinstate — smart_air_detection_box manufacturerName was wiped []; Z2M TS0601_air_quality_sensor family; complementary on air_quality_co2 + restored box; forbid climate",
+      "notes": "P2541 reinstate — pairing FPs on air_quality_co2 only; smart_air_detection_box keeps DP device.js (hybrid placeholder); forbid climate/comprehensive",
       "sources": [
         "Z2M:TS0601_air_quality_sensor",
         "P2541:wipe-reinstate"

@@ -50,8 +50,9 @@
     }
   ],
   "reinstatedThisPatch": {
-    "smart_air_detection_box": "manufacturerName was [] — restored Z2M air_quality_sensor family",
-    "air_quality_co2": "union append same family (no shrink)",
-    "climate_sensor": "strip AQ couples only (wrong driver)"
+    "air_quality_co2": "canonical pairing FPs for Z2M air_quality_sensor family (append, no shrink)",
+    "smart_air_detection_box": "device.js DP21/22 Z2M map reinstated; compose uses hybrid placeholder (Homey anti-collision — FPs live on air_quality_co2)",
+    "climate_sensor": "strip AQ couples only (wrong driver)",
+    "air_quality_comprehensive": "strip AQ family bleed (wrong home)"
   }
 }
