@@ -4,11 +4,11 @@
 
 [![Version](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fraw.githubusercontent.com%2Fdlnraja%2Fcom.tuya.zigbee%2Fmaster%2Fapp.json&query=%24.version&label=version&color=blue)](https://homey.app/a/com.dlnraja.tuya.zigbee/)
 [![Drivers](https://img.shields.io/badge/drivers-431-brightgreen)](https://homey.app/a/com.dlnraja.tuya.zigbee/)
-[![Fingerprints](https://img.shields.io/badge/fingerprints-4,428%20unique-green)](https://homey.app/a/com.dlnraja.tuya.zigbee/)
+[![Fingerprints](https://img.shields.io/badge/fingerprints-4,434%20unique-green)](https://homey.app/a/com.dlnraja.tuya.zigbee/)
 [![SDK](https://img.shields.io/badge/SDK-3-orange)](https://apps.developer.homey.app/)
 [![License](https://img.shields.io/badge/license-GPL--3.0-green)](LICENSE)
 
-Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, sensors, lights, thermostats, covers, valves — **431 drivers**, **4,428 unique fingerprints**. No cloud required.
+Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, sensors, lights, thermostats, covers, valves — **431 drivers**, **4,434 unique fingerprints**. No cloud required.
 
 **What it does:**
 - Talks to devices on your Homey Zigbee mesh (Tuya DP `0xEF00` and standard ZCL)
@@ -33,15 +33,15 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 
 | Metric | Value |
 |--------|-------|
-| **App Version** | v9.0.964 |
+| **App Version** | v9.0.975 |
 | **Drivers** | 431 (381 Zigbee + 50 WiFi) |
-| **Unique Fingerprints** | 4,428 |
-| **Pairing Variants** | 16,049 (4 case combos per fingerprint) |
+| **Unique Fingerprints** | 4,434 |
+| **Pairing Variants** | 15,574 (4 case combos per fingerprint) |
 | **Unique Product IDs** | 592 |
 | **Flow Cards** | 5,987 |
 | **Unique Capabilities** | 170 |
 | **Native OTA Drivers** | 8 |
-| **Test Suites** | 335 files |
+| **Test Suites** | 341 files |
 | **SVG Icons** | 731 |
 | **Languages** | EN, FR, NL, DE |
 | **SDK / Homey** | 3 / >= 12.2.0 |
@@ -52,25 +52,25 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 | # | Driver | Fingerprints |
 |---|--------|-------------|
 | 1 | `climate_sensor` | 2,050 |
-| 2 | `switch_1gang` | 1,535 |
+| 2 | `switch_1gang` | 1,537 |
 | 3 | `radiator_valve` | 599 |
 | 4 | `button_wireless_2` | 570 |
-| 5 | `curtain_motor` | 515 |
-| 6 | `presence_sensor_radar` | 420 |
+| 5 | `curtain_motor` | 509 |
+| 6 | `presence_sensor_radar` | 422 |
 | 7 | `generic_tuya` | 414 |
 | 8 | `device_radiator_valve` | 332 |
 | 9 | `switch_4gang` | 292 |
-| 10 | `switch_2gang` | 283 |
-| 11 | `wall_dimmer_tuya` | 244 |
-| 12 | `contact_sensor` | 228 |
-| 13 | `motion_sensor` | 225 |
-| 14 | `switch_3gang` | 223 |
-| 15 | `soil_sensor` | 209 |
-| 16 | `diy_custom_zigbee` | 206 |
-| 17 | `thermostat_tuya_dp` | 188 |
-| 18 | `sensor_contact_zigbee` | 183 |
-| 19 | `water_leak_sensor_tuya` | 178 |
-| 20 | `plug_energy_monitor` | 176 |
+| 10 | `wall_dimmer_tuya` | 244 |
+| 11 | `contact_sensor` | 228 |
+| 12 | `motion_sensor` | 225 |
+| 13 | `switch_3gang` | 223 |
+| 14 | `diy_custom_zigbee` | 206 |
+| 15 | `thermostat_tuya_dp` | 188 |
+| 16 | `sensor_contact_zigbee` | 183 |
+| 17 | `water_leak_sensor_tuya` | 178 |
+| 18 | `bulb_dimmable` | 162 |
+| 19 | `light_bulb_rgb_rgbw` | 148 |
+| 20 | `usb_dongle_triple` | 148 |
 
 ### Drivers by Device Class
 
@@ -102,18 +102,18 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 
 | Version | Changes |
 |---------|---------|
+| **v9.0.975** | P2535 forum treat: Skydance/WZ1 _TZB210_rkgngb5o+TS0501B dimmable pairing (sibling TS0502B CCT). Update Homey Test. |
+| **v9.0.974** | P2534 VicHY MTG075: presence follows DP1 (Z2M) — stop distance=0 flip-flop killing presence Flow WHEN. |
+| **v9.0.973** | P2533 dual-app Contre quoi: gbm10jnj TS0044 lock soft on button_wireless_3 when absent (stable). |
+| **v9.0.972** | P2533 Contre quoi tests for complementary merge helpers; strip nkjintbl bleed from switch_2gang; keep dual-case + multi-pid locks. |
+| **v9.0.971** | Added missing Contre quoi unit tests for complementary OEM overlays, dual-case compose preserve, and wall dimmer firmware mfr sync. |
+| **v9.0.970** | Improved OEM/case variants and capabilities for recent Zigbee couples (covers, radar, dimmer, soil, DIN, buttons, knobs, plugs). |
+| **v9.0.969** | Improved OEM/case variants and capabilities for recent Zigbee couples (covers, radar, dimmer, soil, DIN, buttons, knobs, plugs). |
+| **v9.0.967** | Synced wall dimmer firmware update manufacturer names with Zigbee fingerprints. |
+| **v9.0.966** | OEM TZE200/204/284 and case variants completed for recent radar, dimmer, knob and curtain couples. |
+| **v9.0.965** | Completed OEM variants for recent devices; Moes SFC02 kq1l5eu5 locked on wall curtain switch. |
 | **v9.0.964** | Completed OEM/case variants and capabilities for recent curtain, radar, dimmer and button couples. |
 | **v9.0.963** | Deep functional enrich in all inbox workflows — DP, clusters, flows and RX/TX audited beyond fingerprint locks. |
-| **v9.0.962** | Hardened radar DP ownership (cap vs capability) so lux/presence RX and presence flow edges stay correct. |
-| **v9.0.961** | Fixed Intelligent IR flow cards after fleet-enrich re-inject; keep titleFormatted omitted. |
-| **v9.0.960** | Hardened forum and scrape ingest against prompt injection and malicious markup. |
-| **v9.0.958** | Presence radar WHEN cards fire on human presence edges; register remaining flow conditions. |
-| **v9.0.956** | Hardened local-first WiFi credentials after Homey reboot (no cloud re-login). |
-| **v9.0.955** | Hardened mmWave presence flow triggers for all update paths. |
-| **v9.0.954** | Improved mmWave presence flow triggers and IR flow cards. |
-| **v9.0.952** | L99: strip doNotLock invent from climate (Fleet anti-bot); harden isForbiddenPlacement. Update Homey Test. |
-| **v9.0.951** | Forum fine-resolve: OCR invent pad→ZM16B curtain; radar/curtain sacred front-pin; battery Insights heal. Update Homey Test. |
-| **v9.0.950** | CI: dual-app Syntax harden; BSEED zcl_only Contre quoi. Update Homey Test. |
 
 <!-- CHANGELOG_END -->
 
