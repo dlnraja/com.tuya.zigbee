@@ -47,6 +47,14 @@ env:
   NODE_VERSION: '22'
   SMART_FETCH_READER_FALLBACK: '1'
   FIRECRAWL_DAILY_MAX: '5'
+  AI_PLAN_MODE: 'forfait'
+  AI_FORCE_LOCAL: 'true'
+  AI_ALLOW_REMOTE: 'false'
+  AI_ALLOW_PAID: 'false'
+  AI_ENSEMBLE: 'false'
+  AI_MAP_REDUCE: 'false'
+  AI_FULL_CONTEXT: 'false'
+  GMAIL_DIAG_AI_MAX: '0'
 
 jobs:
   crossref:

@@ -1,0 +1,92 @@
+{
+  "_meta": {
+    "id": "P2542-local-auto-improve",
+    "updated": "2026-09-16",
+    "patch": "P2542",
+    "dualApp": "BOTH",
+    "why": "Max auto-improve without external AI tokens — local heuristics + forfait-hard crons + slim context"
+  },
+  "doctrine": {
+    "noExternalAiByDefault": true,
+    "noPaidOverage": true,
+    "preferLocalHeuristics": true,
+    "shadowForumOnly": true,
+    "complementaryEnrichOnly": true,
+    "neverInventPid": true
+  },
+  "forfait": {
+    "ssot": "config/security/ai-plan-forfait.json",
+    "compress": "config/security/ai-context-compress-ssot.json",
+    "smartMap": "config/architecture/project-smart-map.json",
+    "guard": "npm run ai:plan-guard",
+    "budget": "npm run ai:budget",
+    "gate": "npm run check:p2491",
+    "requiredEnvOnCron": {
+      "AI_FORCE_LOCAL": "true",
+      "AI_ALLOW_REMOTE": "false",
+      "AI_PLAN_MODE": "forfait",
+      "AI_ALLOW_PAID": "false",
+      "AI_ENSEMBLE": "false",
+      "AI_MAP_REDUCE": "false",
+      "AI_FULL_CONTEXT": "false",
+      "GMAIL_DIAG_AI_MAX": "0",
+      "FORUM_AUTO_POST": "0",
+      "SHADOW_FORUM": "1"
+    }
+  },
+  "localPaths": {
+    "orchestrator": "tools/ci/local-auto-improve-orchestrator.js",
+    "solver": "tools/ci/local-intelligent-solver.js",
+    "compress": "tools/ci/ai-context-compress.js",
+    "planGuard": "tools/ci/ai-plan-guard.js",
+    "alignMfs": "tools/ci/align-mfs-db-intelligent.js",
+    "pruneCollisions": "tools/ci/prune-fp-collision-bleed.js",
+    "complementaryMerge": "lib/enrichment/ComplementaryMerge.js",
+    "inboxL99": "tools/ci/l99-inbox-intelligence-orchestrator.js",
+    "silentEnrich": "tools/ci/silent-enrichment-orchestrator.js",
+    "recurrent": "tools/ci/recurrent-orchestrator.js",
+    "selfImproveWorkflow": ".github/workflows/self-improve.yml",
+    "recurrentWorkflow": ".github/workflows/recurrent-orchestrator.yml"
+  },
+  "homeyRuntimeLocal": {
+    "note": "Homey Pro: zero cloud AI — compensate via existing local stacks only",
+    "refs": [
+      "lib/performance/BootBudget.js",
+      "lib/resilience/HomeyGapCompensator.js",
+      "lib/io/ProtocolFallbackChain.js",
+      "lib/layers/ProtocolRxTxChain.js",
+      "lib/clusters/RawClusterFallback.js",
+      "lib/managers/SmartDivisorManager.js",
+      "lib/LocalFirstEngine.js",
+      "lib/utils/HomeyCapabilityUx.js"
+    ]
+  },
+  "cronHints": {
+    "forumPoll": "15 2,8,14,20 * * *",
+    "l99Inbox": "45 3,11,19 * * *",
+    "autoEnrich": "0 */6 * * *",
+    "recurrent": "30 3 * * *",
+    "selfImprove": "53 2 * * 2",
+    "projectResilience": "20 5 * * *",
+    "note": "Stagger harvests — quality over spam; fewer overlapping Discourse/GH API hits"
+  },
+  "recentReliabilityLocks": [
+    "P2520 complementary variant enrich",
+    "P2538–P2540 airbox / ZB4 Suzi / complementary RX-TX",
+    "P2541–P2541b AQ reinstate + anti-collision dual-case",
+    "P2491 AI efficiency / forfait"
+  ],
+  "internalDocs": [
+    "docs/architecture/AI_EFFICIENCY_SSOT.md",
+    "docs/architecture/LOCAL_AUTO_IMPROVE_SSOT.md",
+    "docs/rules/COMPLEMENTARY_VARIANT_ENRICH.md",
+    "docs/architecture/COMPLEMENTARY_ENRICHMENT.md",
+    ".github/WORKFLOW_GUIDELINES.md",
+    "config/architecture/complementary-reinstate-notions-ssot.json",
+    "config/architecture/complementary-rx-tx-dp-cluster-ssot.json"
+  ],
+  "gates": {
+    "npm": "check:p2542",
+    "family": "check:p254x"
+  }
+}

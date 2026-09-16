@@ -64,6 +64,9 @@ env:
   GMAIL_DIAG_AI_MAX: '0'
   FORUM_AUTO_POST: '0'
   SHADOW_FORUM: '1'
+  AI_ENSEMBLE: 'false'
+  AI_MAP_REDUCE: 'false'
+  AI_FULL_CONTEXT: 'false'
 
 jobs:
   fetch-diags:

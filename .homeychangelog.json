@@ -3419,5 +3419,8 @@
   },
   "9.0.986": {
     "en": "Locked air-quality pairing to one driver and kept complementary DP logic without fingerprint collisions."
+  },
+  "9.0.987": {
+    "en": "Hardened cron automations for local-only self-improve and tighter AI plan limits without remote AI spend."
   }
 }

@@ -42,6 +42,10 @@ env:
   GITHUB_RESOLVER_COMMENT: "0"
   FORUM_AUTO_POST: "0"
   SKIP_AI: "true"
+  AI_ALLOW_REMOTE: 'false'
+  AI_ENSEMBLE: 'false'
+  AI_MAP_REDUCE: 'false'
+  AI_FULL_CONTEXT: 'false'
 
 defaults:
   run:

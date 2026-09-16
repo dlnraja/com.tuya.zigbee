@@ -1,13 +1,13 @@
 {
   "_meta": {
     "id": "P2491-project-smart-map",
-    "updated": "2026-09-14",
+    "updated": "2026-09-16",
     "why": "Slim cartography for bots/GHA/agents — pointers not walls. Full docs stay on disk; AI gets this map unless AI_FULL_CONTEXT=1.",
     "classify": "BOTH"
   },
   "tip": {
-    "healthyTest": "9.0.926",
-    "git": "9.0.927+",
+    "healthyTest": "9.0.986",
+    "git": "9.0.986+",
     "p139": "soft-continue on PF tip emails; no spam republish"
   },
   "dualApp": {
@@ -69,10 +69,26 @@
   "aiEfficiency": {
     "ssot": "config/security/ai-plan-forfait.json",
     "compressSsot": "config/security/ai-context-compress-ssot.json",
+    "localAutoImprove": "config/architecture/local-auto-improve-ssot.json",
+    "localAutoImproveDoc": "docs/architecture/LOCAL_AUTO_IMPROVE_SSOT.md",
     "guard": "npm run ai:plan-guard",
     "gate": "npm run check:p2491",
+    "localGate": "npm run check:p2542",
+    "improve": "npm run improve:local",
     "default": "AI_FORCE_LOCAL=true; remote only if AI_ALLOW_REMOTE=true",
     "compressKeep": "always retain mfr+pid / HOBEIAN+ZG-* couples in user text"
+  },
+  "recentPatches": [
+    "P2520 complementary variant enrich",
+    "P2538–P2540 airbox / ZB4 Suzi / complementary RX-TX",
+    "P2541–P2541b AQ reinstate anti-collision",
+    "P2542 local auto-improve + forfait crons"
+  ],
+  "complementary": {
+    "merge": "lib/enrichment/ComplementaryMerge.js",
+    "reinstateSsot": "config/architecture/complementary-reinstate-notions-ssot.json",
+    "rxTxSsot": "config/architecture/complementary-rx-tx-dp-cluster-ssot.json",
+    "gate": "npm run check:p2520"
   },
   "gates": {
     "family": ["check:p244x", "check:p246x", "check:p248x", "check:p249x", "check:l99-dual"],

@@ -27,6 +27,10 @@ concurrency:
 env:
   NODE_VERSION: "22"
   NODE_OPTIONS: "--dns-result-order=ipv4first"
+  AI_ALLOW_PAID: 'false'
+  AI_ENSEMBLE: 'false'
+  AI_MAP_REDUCE: 'false'
+  AI_FULL_CONTEXT: 'false'
 
 defaults:
   run:

@@ -30,6 +30,14 @@ defaults:
 
 env:
   NODE_VERSION: '22'
+  AI_PLAN_MODE: 'forfait'
+  AI_FORCE_LOCAL: 'true'
+  AI_ALLOW_REMOTE: 'false'
+  AI_ALLOW_PAID: 'false'
+  AI_ENSEMBLE: 'false'
+  AI_MAP_REDUCE: 'false'
+  AI_FULL_CONTEXT: 'false'
+  GMAIL_DIAG_AI_MAX: '0'
 
 jobs:
   improve:
@@ -43,28 +51,6 @@ jobs:
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: ▶️ Resume quota-deferred tasks (P92.88)
-        continue-on-error: true
-        run: |
-          echo "## ▶️ Reprise des tâches différées (quota)" >> $GITHUB_STEP_SUMMARY
-          echo '```' >> $GITHUB_STEP_SUMMARY
-          node -e "
-          (async () => {
-            const qr = require('./.github/scripts/quota-resume');
-            let ai = null;
-            try { ai = require('./.github/scripts/ai-helper'); } catch {}
-            const canRun = () => { try { return ai ? ai.budgetAllows('gemini') : false; } catch { return false; } };
-            await qr.processPending(async (task) => {
-              if (task.id === 'ai-dp-extract') {
-                require('child_process').execSync('node .github/scripts/ai-dp-extract.js', { stdio: 'inherit' });
-                return true;
-              }
-              return false;
-            }, canRun);
-          })();
-          " >> $GITHUB_STEP_SUMMARY 2>&1 || true
-          echo '```' >> $GITHUB_STEP_SUMMARY
-
       - name: 📦 Setup Node.js
         uses: actions/setup-node@a0853c24544627f65ddf259abe73b1d18a591444 # v5.0.0
         with:
@@ -73,6 +59,15 @@ jobs:
 
       - name: 📦 Install deps
         run: npm ci --prefer-offline --no-audit || npm install --no-audit
+
+      # P2542: local-only auto-improve (zero remote AI / forfait)
+      - name: 🧠 Local auto-improve orchestrator (P2542)
+        continue-on-error: true
+        run: |
+          node tools/ci/ai-plan-guard.js --preflight || true
+          node tools/ci/local-auto-improve-orchestrator.js || true
+          echo "## P2542 local auto-improve" >> $GITHUB_STEP_SUMMARY
+          echo 'Local heuristics only — AI_FORCE_LOCAL=true / AI_ALLOW_REMOTE=false' >> $GITHUB_STEP_SUMMARY
 
       - name: 🔋 Rebuild product-reference DB
         continue-on-error: true
@@ -134,10 +129,12 @@ jobs:
           node tools/ci/ai-quota-report.js >> $GITHUB_STEP_SUMMARY 2>&1 || true
           echo '```' >> $GITHUB_STEP_SUMMARY
 
-      - name: 🧠 AI DP extraction (500-char truncation, guarded chain)
+      # P2542: remote AI DP extract OFF unless human opts in AI_ALLOW_REMOTE=true
+      - name: 🧠 AI DP extraction (opt-in remote only)
+        if: ${{ env.AI_ALLOW_REMOTE == 'true' && env.AI_FORCE_LOCAL != 'true' }}
         continue-on-error: true
         run: |
-          echo "## 🧠 AI DP extraction" >> $GITHUB_STEP_SUMMARY
+          echo "## 🧠 AI DP extraction (opt-in)" >> $GITHUB_STEP_SUMMARY
           echo '```' >> $GITHUB_STEP_SUMMARY
           node .github/scripts/ai-dp-extract.js >> $GITHUB_STEP_SUMMARY 2>&1 || true
           echo '```' >> $GITHUB_STEP_SUMMARY

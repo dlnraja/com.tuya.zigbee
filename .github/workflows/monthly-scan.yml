@@ -28,6 +28,9 @@ defaults:
 
 env:
   NODE_VERSION: '22'
+  AI_ENSEMBLE: 'false'
+  AI_MAP_REDUCE: 'false'
+  AI_FULL_CONTEXT: 'false'
 
 jobs:
   scan:
