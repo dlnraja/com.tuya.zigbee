@@ -209,7 +209,10 @@
     "enrich:variants:recent:apply": "node tools/ci/recent-variant-capability-completer.js --apply",
     "check:p2531": "node --test test/critical/p2531-complementary-coverage-mega.test.js",
     "enrich:coverage:mega": "node tools/ci/p2531-complementary-coverage-mega.js",
-    "enrich:coverage:mega:apply": "node tools/ci/p2531-complementary-coverage-mega.js --apply --crawl"
+    "enrich:coverage:mega:apply": "node tools/ci/p2531-complementary-coverage-mega.js --apply --crawl",
+    "check:p2530d": "node --test test/critical/p2530d-wall-dimmer-firmware-mfr.test.js",
+    "check:p2532": "node --test test/critical/p2532-dual-case-compose-preserve.test.js",
+    "check:p253x": "npm run check:p2530 && npm run check:p2530d && npm run check:p2531 && npm run check:p2532"
   },
   "keywords": [
     "homey",

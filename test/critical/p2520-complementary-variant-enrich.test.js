@@ -80,6 +80,15 @@ describe('P2520 complementary variant enrich', () => {
     );
   });
 
+  it('appendIdentityStrings preserves dual-case while adding OEM', () => {
+    const out = merge.appendIdentityStrings(
+      ['_TZ3000_l9brjwau', '_tz3000_l9brjwau'],
+      ['_TZE200_oemx', '_tze200_oemx']
+    );
+    assert.equal(out.filter((m) => /l9brjwau/i.test(m)).length, 2);
+    assert.equal(out.filter((m) => /oemx/i.test(m)).length, 1);
+  });
+
   it('COMPLEMENTARY_ENRICHMENT.md references P2520 variant doctrine', () => {
     const md = fs.readFileSync(path.join(ROOT, 'docs/architecture/COMPLEMENTARY_ENRICHMENT.md'), 'utf8');
     assert.ok(/P2520/.test(md));

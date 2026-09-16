@@ -17,6 +17,7 @@ const ROOT = path.resolve(__dirname, '../..');
 const {
   unionStrings,
   unionCapabilities,
+  appendIdentityStrings,
 } = require('../../lib/enrichment/ComplementaryMerge');
 
 const SEEDS = [
@@ -214,19 +215,6 @@ function dataCaps(compose) {
   return Array.isArray(compose.capabilities) ? compose.capabilities : [];
 }
 
-function appendManufacturerNames(existing, incoming) {
-  // WHY(P2531): Homey compose keeps dual-case forms; do NOT case-collapse the whole list.
-  const out = Array.isArray(existing) ? existing.slice() : [];
-  const seen = new Set(out.map((m) => String(m).toLowerCase()));
-  for (const raw of Array.isArray(incoming) ? incoming : []) {
-    const k = String(raw || '').toLowerCase();
-    if (!k || seen.has(k)) continue;
-    seen.add(k);
-    out.push(String(raw));
-  }
-  return out;
-}
-
 
 function frontPin(names, primary) {
   const list = Array.isArray(names) ? names.slice() : [];
@@ -271,12 +259,9 @@ function main() {
     const missingCaps = capabilityGaps(composeData, seed.caps);
 
     if (apply) {
-      const nextMfr = appendManufacturerNames(composeData.zigbee?.manufacturerName || [], withCase);
+      const nextMfr = appendIdentityStrings(composeData.zigbee?.manufacturerName || [], withCase);
       composeData.zigbee = composeData.zigbee || {};
       composeData.zigbee.manufacturerName = nextMfr;
-      if (Array.isArray(composeData.zigbee.productId)) {
-        composeData.zigbee.productId = unionStrings(composeData.zigbee.productId, composeData.zigbee.productId);
-      }
       if (missingCaps.length) {
         composeData.capabilities = unionCapabilities(composeData.capabilities, missingCaps);
       }
