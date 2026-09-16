@@ -2,7 +2,7 @@
   "id": "zigbee-tuya-evolution-ssot",
   "version": "1.0.0",
   "updated": "2026-09-16",
-  "patch": "P2537",
+  "patch": "P2538",
   "dualApp": "BOTH",
   "homeyDefaultRadio": "2.4 GHz IEEE 802.15.4 Zigbee (typical Zigbee 3.0 / PRO stack on Homey Pro)",
   "doctrine": {
@@ -10,7 +10,8 @@
     "noForumPost": true,
     "complementaryOnly": true,
     "suziNotDropInOnExistingHomey": true,
-    "matterNotRadio": true
+    "matterNotRadio": true,
+    "noDegradeCompose": true
   },
   "zigbeeLineage": [
     {
@@ -197,7 +198,39 @@
     "Keep RF coexistence: Wi-Fi 1/6/11 ↔ Zigbee/Thread 15/20/25 @ 20 MHz",
     "Do not invent Suzi / Green Power productIds",
     "Never hardcode a single MCU time format",
-    "Zigbee 4.0 / Suzi awareness ≠ new compose clusters without interview"
+    "Zigbee 4.0 / Suzi awareness ≠ new compose clusters without interview",
+    "Tuya MCU query storms / aggressive power reporting can flood Homey Zigbee mesh — prefer BootBudget + soft reporting modes; never spam 0x10 version polls on sleepy (Z2M #28655)"
+  ],
+  "operationalRisks": [
+    {
+      "id": "tuya-tx-mesh-flood",
+      "severity": "aggressive_reporting_and_mcu_polls",
+      "homeyImpact": "High TX from EF00 dataQuery / configureReporting storms can starve sleepy end-devices and raise LQI drops on Homey Pro",
+      "mitigations": [
+        "BootBudget.shouldTxSleepy / markRadioActivity",
+        "MCUVersionHelper: dataQuery-only — skip 0x10 version spam",
+        "BaseUnifiedDevice power_report modes with minChange",
+        "Prefer Zigbee 15/20/25 when Wi-Fi is 1/6/11 @ 20 MHz"
+      ],
+      "sources": [
+        "community Homey Tuya TX flood reports",
+        "Z2M #28655 mesh flood / pack drain"
+      ]
+    },
+    {
+      "id": "airbox-mispair-climate",
+      "severity": "wrong_driver_class",
+      "homeyImpact": "_TZE284_8b9zpaav / _TZE284_it9utkro + TS0601 are air quality (EF00 airbox) not climate_sensor",
+      "mitigations": [
+        "air_quality_co2 compose lock",
+        "misattribution registry forbid climate_sensor"
+      ],
+      "sources": [
+        "Z2M TS0601_airbox",
+        "Z2M PM2.5_airbox",
+        "ZHA #4971"
+      ]
+    }
   ],
   "enforcedImplications": {
     "rfCoexistence": {
@@ -235,6 +268,9 @@
     "https://www.journaldunet.com/web-tech/dictionnaire-de-l-iot/1440710-zigbee-quel-est-ce-protocole-pour-les-produits-domotiques/",
     "https://developer.tuya.com/en/docs/mcu-standard-protocol/mcusdk-zigbee-uart-protocol?id=Kdg17v4544p37",
     "https://developer.tuya.com/en/docs/iot/tuya-zigbee-universal-docking-access-standard?id=K9ik6zvofpzql",
-    "https://csa-iot.org/fr/all-solutions/suzi/"
+    "https://csa-iot.org/fr/all-solutions/suzi/",
+    "https://www.zigbee2mqtt.io/devices/TS0601_airbox.html",
+    "https://github.com/zigpy/zha-device-handlers/issues/4971",
+    "https://github.com/Koenkk/zigbee-herdsman-converters"
   ]
 }
