@@ -20,10 +20,7 @@
   "energy": {
     "batteries": [
       "CR2032"
-    ],
-    "approximation": {
-      "usageConstant": 0.3
-    }
+    ]
   },
   "subDevices": [],
   "zigbee": {
@@ -47,14 +44,11 @@
       }
     },
     "manufacturerName": [
-      "_TZE200_seq9cm6u",
       "_TZE200_sh11h1f5",
       "_TZE204_seq9cm6u",
       "_TZE204_sh11h1f5",
       "_TZE284_seq9cm6u",
       "_TZE284_sh11h1f5",
-      "_TZE200_SEQ9CM6U",
-      "_tze200_seq9cm6u",
       "_TZE200_SH11H1F5",
       "_tze200_sh11h1f5",
       "_TZE204_SEQ9CM6U",
@@ -64,13 +58,21 @@
       "_TZE284_SEQ9CM6U",
       "_tze284_seq9cm6u",
       "_TZE284_SH11H1F5",
-      "_tze284_sh11h1f5"
+      "_tze284_sh11h1f5",
+      "_TZE200_seq9cm6u",
+      "_tze200_seq9cm6u",
+      "_TZE200_SEQ9CM6U",
+      "_tze200_SH11H1F5",
+      "_tze204_SEQ9CM6U",
+      "_tze204_SH11H1F5",
+      "_tze284_SEQ9CM6U",
+      "_tze284_SH11H1F5",
+      "_tze200_SEQ9CM6U"
     ]
   },
   "images": {
     "small": "/drivers/bed_sensor/assets/images/small.png",
-    "large": "/drivers/bed_sensor/assets/images/large.png",
-    "xlarge": "/drivers/bed_sensor/assets/images/xlarge.png"
+    "large": "/drivers/bed_sensor/assets/images/large.png"
   },
   "platforms": [
     "local"
@@ -91,14 +93,18 @@
       "id": "tuya_revive",
       "title": {
         "en": "Tuya Revive (device recovery)",
-        "fr": "Tuya Revive (récupération appareil)"
+        "fr": "Tuya Revive (récupération appareil)",
+        "nl": "Tuya Revive (apparaatherstel)",
+        "de": "Tuya Revive (Gerätewiederherstellung)"
       }
     },
     {
       "id": "generate_issue_report",
       "title": {
         "en": "Generate support report (GitHub issue)",
-        "fr": "Générer rapport de support (issue GitHub)"
+        "fr": "Générer rapport de support (issue GitHub)",
+        "nl": "Supportrapport genereren (GitHub issue)",
+        "de": "Supportbericht erstellen (GitHub Issue)"
       }
     }
   ],
