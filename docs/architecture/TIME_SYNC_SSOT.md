@@ -26,3 +26,9 @@
 Single hardcoded TUYA_MCU / `{utc,local}`-only TX → LCD/TRV stuck clock / mesh spam after reboot.
 Unconditional 0x10 → battery cover drain.
 `dim * 1000` without clamp → MCU reboot (Z2M #32305).
+
+## Related evolution (P2537)
+
+Zigbee stack lineage + Tuya MCU UART v3.1–v3.5 overview:
+`docs/architecture/ZIGBEE_TUYA_EVOLUTION_SSOT.md` · `lib/utils/zigbee-tuya-evolution.js`.
+Time formats remain owned by `TuyaTimeSyncFormats.js` (this SSOT).

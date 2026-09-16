@@ -48,8 +48,11 @@ Exemple : Thread/Zigbee **15** ≈ 2425 MHz (~2 MHz). Wi‑Fi **1** ≈ 2412 (24
 4. Après un changement de canal Zigbee : tenter **Maintenance → Repair** (garde les flows) avant remove/re-pair
 5. RSSI seul ≠ qualité (bruit, retries, lien asymétrique)
 6. Éloigner Homey des AP Wi‑Fi ; renforcer le mesh (prises/routers secteur)
+7. Ne pas inventer de productId **Suzi** / **Green Power** — extension ≠ couple Homey (interview first)
+8. Zigbee **4.0** / **Suzi** (sub‑GHz) = awareness ; plan Homey reste **2,4 GHz** jusqu’à hardware dual-band
+9. Sync horloge MCU Tuya : `guessFormat` + fallback chain (jamais un seul format figé)
 
-Helper code : `lib/utils/rf-channel-coexistence.js` · guide : `docs/guides/RF_CHANNEL_COEXISTENCE.md`
+Helper code : `lib/utils/rf-channel-coexistence.js` · `lib/utils/zigbee-tuya-evolution.js` · guides : `docs/guides/RF_CHANNEL_COEXISTENCE.md` · `docs/architecture/ZIGBEE_TUYA_EVOLUTION_SSOT.md`
 
 ---
 
@@ -372,8 +375,11 @@ Exemple : Thread/Zigbee **15** ≈ 2425 MHz (~2 MHz). Wi‑Fi **1** ≈ 2412 (24
 4. Après un changement de canal Zigbee : tenter **Maintenance → Repair** (garde les flows) avant remove/re-pair
 5. RSSI seul ≠ qualité (bruit, retries, lien asymétrique)
 6. Éloigner Homey des AP Wi‑Fi ; renforcer le mesh (prises/routers secteur)
+7. Ne pas inventer de productId **Suzi** / **Green Power** — extension ≠ couple Homey (interview first)
+8. Zigbee **4.0** / **Suzi** (sub‑GHz) = awareness ; plan Homey reste **2,4 GHz** jusqu’à hardware dual-band
+9. Sync horloge MCU Tuya : `guessFormat` + fallback chain (jamais un seul format figé)
 
-Helper code : `lib/utils/rf-channel-coexistence.js` · guide : `docs/guides/RF_CHANNEL_COEXISTENCE.md`
+Helper code : `lib/utils/rf-channel-coexistence.js` · `lib/utils/zigbee-tuya-evolution.js` · guides : `docs/guides/RF_CHANNEL_COEXISTENCE.md` · `docs/architecture/ZIGBEE_TUYA_EVOLUTION_SSOT.md`
 
 ---
 
