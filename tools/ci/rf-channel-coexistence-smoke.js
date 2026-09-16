@@ -2,6 +2,7 @@
 'use strict';
 
 const rf = require('../../lib/utils/rf-channel-coexistence');
+const evo = require('../../lib/utils/zigbee-tuya-evolution');
 
 function assert(cond, msg) {
   if (!cond) {throw new Error(msg);}
@@ -24,6 +25,17 @@ assert(rec.preferred.includes(15) && rec.preferred.includes(20) && rec.preferred
 const tips = rf.formatCoexistenceTips();
 assert(tips.some((t) => /≠|different numbering/i.test(t)), 'numbering tip present');
 
+const brief = rf.protocolSelectionBrief();
+assert(brief.zigbee.bandEu === '2.4 GHz' && brief.zwave.bandEu === '868 MHz', 'EU band brief');
+assert(brief.zigbee.approxThroughputKbps === 250, 'Zigbee throughput brief');
+assert(brief.tips.some((t) => /Zigbee 4\.0|Suzi/i.test(t)), '4.0/Suzi tip');
+
+const eBrief = evo.zigbeeTuyaEvolutionBrief();
+assert(eBrief.currentZigbeeId === 'zigbee-4.0', 'current gen 4.0');
+assert(eBrief.suziReplaces24ghz === false, 'Suzi does not replace 2.4');
+
 console.log('rf-channel-coexistence-smoke: OK');
 console.log('  preferred:', rec.preferred.join(','));
 console.log('  avoid:', rec.avoid.join(','));
+console.log('  protocols:', Object.keys(brief).filter((k) => k !== 'tips').join(','));
+console.log('  evolution:', eBrief.currentZigbeeId, 'MCU', eBrief.mcuUartVersions.join(','));

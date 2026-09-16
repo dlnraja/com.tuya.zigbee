@@ -3392,5 +3392,8 @@
   },
   "9.0.977": {
     "en": "P2535: WZ1 rkgngb5o+TS0501B on led_controller_dimmable (anti-bot clear). Update Homey Test."
+  },
+  "9.0.978": {
+    "en": "Improved Zigbee RF coexistence guidance and Tuya MCU time-sync resilience (Zigbee 4.0 / Suzi awareness without degrading pairing)."
   }
 }

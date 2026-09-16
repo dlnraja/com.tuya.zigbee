@@ -1,0 +1,240 @@
+{
+  "id": "zigbee-tuya-evolution-ssot",
+  "version": "1.0.0",
+  "updated": "2026-09-16",
+  "patch": "P2537",
+  "dualApp": "BOTH",
+  "homeyDefaultRadio": "2.4 GHz IEEE 802.15.4 Zigbee (typical Zigbee 3.0 / PRO stack on Homey Pro)",
+  "doctrine": {
+    "noInventPid": true,
+    "noForumPost": true,
+    "complementaryOnly": true,
+    "suziNotDropInOnExistingHomey": true,
+    "matterNotRadio": true
+  },
+  "zigbeeLineage": [
+    {
+      "id": "zigbee-2004",
+      "year": 2004,
+      "status": "historic",
+      "notes": "First public Zigbee spec"
+    },
+    {
+      "id": "zigbee-2006",
+      "year": 2006,
+      "status": "historic",
+      "notes": "Early profiles"
+    },
+    {
+      "id": "zigbee-pro-2007",
+      "year": 2007,
+      "status": "historic_baseline",
+      "notes": "Stochastic mesh; basis of later stacks"
+    },
+    {
+      "id": "zigbee-3.0",
+      "year": 2016,
+      "status": "deployed_majority",
+      "notes": "Profile convergence (HA/ZLL/partial ZSE); unified commissioning; Homey/Tuya fleet baseline"
+    },
+    {
+      "id": "zigbee-pro-2017",
+      "year": 2017,
+      "status": "pro_update",
+      "notes": "Security and routing improvements"
+    },
+    {
+      "id": "zigbee-pro-2023",
+      "year": 2023,
+      "status": "active_evolution",
+      "aka": ["Zigbee PRO R23"],
+      "features": [
+        "Dynamic Link Key",
+        "Device Interview",
+        "Trust Center Swap-Out",
+        "Zigbee Direct (BLE onboarding/control path)",
+        "Hub-centric Works with All Hubs phase 1",
+        "Sub-GHz PHY groundwork EU 800 MHz / NA 900 MHz"
+      ],
+      "notes": "CSA (ex Zigbee Alliance) release Apr 2023"
+    },
+    {
+      "id": "zigbee-4.0",
+      "year": 2025,
+      "status": "current_generation",
+      "announced": "2025-11-18",
+      "stackLabels": ["Zigbee Pro R23.2", "BDB 3.1", "ZCL 8"],
+      "features": [
+        "Stronger security / cryptographic agility",
+        "Device interview + trust-center onboarding",
+        "Batch commissioning",
+        "Smart Energy harmonization / unified network model",
+        "Sub-GHz via Suzi",
+        "Zigbee Direct retained",
+        "Backward compatible with Zigbee 3.0"
+      ],
+      "notes": "Zigbee 3.0 sunset timeline discussed by CSA — fleet still mostly 3.0 until hubs/devices recertify"
+    }
+  ],
+  "derivatives": [
+    {
+      "id": "zigbee-direct",
+      "since": 2023,
+      "kind": "extension",
+      "notes": "Smartphone/BLE path to Zigbee network for commissioning/control; not Homey app DP logic"
+    },
+    {
+      "id": "suzi",
+      "since": 2025,
+      "kind": "sub_ghz_extension",
+      "brand": "Suzi",
+      "bands": { "EU": "800 MHz", "NA": "900 MHz" },
+      "certificationOpen": "2026-09-02",
+      "replaces24ghz": false,
+      "needsDualBandBridge": true,
+      "notes": "Long-range Zigbee network-layer mesh on sub-GHz; complements 2.4 GHz; Homey Pro 2.4 GHz channel plan Contre quoi unchanged until dual-band hardware exists"
+    },
+    {
+      "id": "green-power",
+      "aka": ["ZGP", "ZGPD", "GreenPower"],
+      "kind": "energy_harvesting_profile",
+      "notes": "Batteryless kinetic switches (EnOcean PTM, Friends of Hue, some Tuya/Moes/Linptech K9Z as GreenPower_2). Needs Green Power Proxy/Sink on mains routers — not standard EF00/ZCL couple invent"
+    },
+    {
+      "id": "matter",
+      "kind": "interop_layer",
+      "transports": ["Thread", "Wi-Fi", "Ethernet"],
+      "notes": "CSA Matter ≠ Zigbee radio. Homey may bridge Zigbee→Matter at platform level; this app stays Tuya Zigbee ZCL/EF00"
+    },
+    {
+      "id": "thread",
+      "kind": "alternate_802_15_4_ip_mesh",
+      "notes": "Same 2.4 GHz channel numbering family as Zigbee; not a Tuya EF00 drop-in"
+    }
+  ],
+  "tuyaZigbeeStack": {
+    "radioBaseline": "Zigbee 3.0-class modules on Homey (2.4 GHz)",
+    "overlay": "Tuya private cluster 0xEF00 DP + hybrid ZCL",
+    "manufacturerNamePrefixes": [
+      {
+        "prefix": "_TZ3000_",
+        "typical": "ZCL-leaning switches/plugs/buttons (often TS000x/TS011F/TS004x)",
+        "protocolHint": "zcl_or_hybrid"
+      },
+      {
+        "prefix": "_TZ3210_",
+        "typical": "ZCL/hybrid plugs and sensors",
+        "protocolHint": "zcl_or_hybrid"
+      },
+      {
+        "prefix": "_TZ3218_",
+        "typical": "switch_temp_sensor and related",
+        "protocolHint": "hybrid"
+      },
+      {
+        "prefix": "_TZE200_",
+        "typical": "MCU/DP devices (often TS0601)",
+        "protocolHint": "ef00_mcu"
+      },
+      {
+        "prefix": "_TZE204_",
+        "typical": "MCU/DP sibling generation",
+        "protocolHint": "ef00_mcu"
+      },
+      {
+        "prefix": "_TZE284_",
+        "typical": "Newer MCU/DP generation (dimmers, meters, valves, etc.)",
+        "protocolHint": "ef00_mcu"
+      },
+      {
+        "prefix": "_TZB210_",
+        "typical": "LED/controller family (e.g. dimmable)",
+        "protocolHint": "zcl_light"
+      },
+      {
+        "prefix": "_TZE600_",
+        "typical": "Less common MCU variants — couple-lock only",
+        "protocolHint": "ef00_mcu"
+      }
+    ],
+    "productIdFamilies": [
+      { "pid": "TS0601", "notes": "Canonical Tuya MCU/DP productId — many OEM variants under different mfr" },
+      { "pid": "TS0001", "notes": "1-gang ZCL switch class — mfr varies" },
+      { "pid": "TS0002", "notes": "2-gang" },
+      { "pid": "TS0003", "notes": "3-gang" },
+      { "pid": "TS0004", "notes": "4-gang" },
+      { "pid": "TS0041", "notes": "1-button wireless" },
+      { "pid": "TS0044", "notes": "4-button / scene" },
+      { "pid": "TS004F", "notes": "Knob / multi-button (scene vs command/dimmer — couple-aware)" },
+      { "pid": "TS011F", "notes": "Plug / strip / energy" },
+      { "pid": "TS0201", "notes": "Climate / sensor ZCL often" },
+      { "pid": "TS0207", "notes": "Water leak or repeater — couple-aware" },
+      { "pid": "TS0501B", "notes": "Dimmable LED/light" },
+      { "pid": "TS0502B", "notes": "CCT / dim variants — do not Cartesian-invent onto wrong driver" }
+    ],
+    "mcuUartProtocol": {
+      "frameHeader": "0x55AA",
+      "dpTypes": { "0": "raw", "1": "bool", "2": "value", "3": "string", "4": "enum", "5": "bitmap" },
+      "ef00Cluster": "0xEF00",
+      "versions": [
+        { "id": "v3.1", "timePayload": "8-byte dual UTC/local", "seqRequired": false },
+        { "id": "v3.2", "timePayload": "8-byte", "seqRequired": false },
+        { "id": "v3.3", "timePayload": "10-byte seq+UTC+local", "seqRequired": true },
+        { "id": "v3.4", "timePayload": "10-byte + DP17 commit (e.g. weather)", "seqRequired": true },
+        { "id": "v3.5", "timePayload": "10-byte extended TZ / date-string fallback", "seqRequired": true }
+      ],
+      "runtimeHelper": "lib/tuya/TuyaTimeSyncFormats.js",
+      "moduleFirmwareVersionEncoding": "1-byte x.y.z packed (max 3.3.15) on Tuya UART product info"
+    },
+    "uartModuleSkus": [
+      "mains-powered Zigbee module + MCU",
+      "low-power Zigbee module + MCU",
+      "scene-control Zigbee module variants",
+      "three-tier concentrator (tertiary sub-devices) — rare Homey path"
+    ]
+  },
+  "homeyAppImplications": [
+    "Keep RF coexistence: Wi-Fi 1/6/11 ↔ Zigbee/Thread 15/20/25 @ 20 MHz",
+    "Do not invent Suzi / Green Power productIds",
+    "Never hardcode a single MCU time format",
+    "Zigbee 4.0 / Suzi awareness ≠ new compose clusters without interview"
+  ],
+  "enforcedImplications": {
+    "rfCoexistence": {
+      "wifiPrimary": [1, 6, 11],
+      "zigbeePreferred": [15, 20, 25],
+      "wifiWidthMhz": 20
+    },
+    "forbiddenInventIdentityPatterns": [
+      "(?i)^suzi",
+      "(?i)suzi[_-]",
+      "(?i)^greenpower",
+      "(?i)green[_-]?power",
+      "(?i)^zgpd?$",
+      "(?i)^zg[_-]?power"
+    ],
+    "mcuTimeSync": {
+      "requireGuessFormat": true,
+      "requireFallbackChainMinLen": 2,
+      "engineMustCallGuessFormat": true,
+      "enginePath": "lib/tuya/GlobalTimeSyncEngine.js",
+      "formatsPath": "lib/tuya/TuyaTimeSyncFormats.js"
+    },
+    "composeInterviewGate": {
+      "forbidAwarenessOnlyClusterTags": ["suzi", "sub_ghz", "subghz", "zigbee_direct_phy"],
+      "scanDriversCompose": true,
+      "note": "Awareness docs OK; inventing compose clusters/tags for Suzi/Zigbee4 without interview = FAIL"
+    }
+  },
+  "sourcesSilent": [
+    "https://csa-iot.org/newsroom/the-connectivity-standards-alliance-announces-zigbee-4-0-and-suzi-empowering-the-next-generation-of-secure-interoperable-iot-devices/",
+    "https://csa-iot.org/newsroom/zigbee-4-0-explained-key-features-and-benefits-webinar/",
+    "https://csa-iot.org/newsroom/suzi-product-certification-is-now-open/",
+    "https://www.prnewswire.com/news-releases/zigbee-pro-2023-improves-overall-security-while-simplifying-experience-301795113.html",
+    "https://www.spilma.com/en/guides/zigbee-csa-certification",
+    "https://www.journaldunet.com/web-tech/dictionnaire-de-l-iot/1440710-zigbee-quel-est-ce-protocole-pour-les-produits-domotiques/",
+    "https://developer.tuya.com/en/docs/mcu-standard-protocol/mcusdk-zigbee-uart-protocol?id=Kdg17v4544p37",
+    "https://developer.tuya.com/en/docs/iot/tuya-zigbee-universal-docking-access-standard?id=K9ik6zvofpzql",
+    "https://csa-iot.org/fr/all-solutions/suzi/"
+  ]
+}
