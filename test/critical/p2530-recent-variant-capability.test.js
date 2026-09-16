@@ -65,4 +65,13 @@ describe('P2530 recent variant + capability completer', () => {
     assert.ok(hasMfr(scene, /_TZ3000_zgyzgdua/i));
     assert.ok(hasMfr(knob, /_TZ3000_uri7ongn/i));
   });
+
+  it('kq1l5eu5 Moes SFC02 stays wall_curtain_switch (not curtain_motor)', () => {
+    const motor = readJson('drivers/curtain_motor/driver.compose.json');
+    const wall = readJson('drivers/wall_curtain_switch/driver.compose.json');
+    assert.ok(!hasMfr(motor, /kq1l5eu5/i), 'anti-bot: kq1l5eu5 forbidden on curtain_motor');
+    assert.ok(hasMfr(wall, /_TZE284_kq1l5eu5/i));
+    assert.ok(hasMfr(wall, /_TZE200_kq1l5eu5/i) || hasMfr(wall, /_TZE204_kq1l5eu5/i));
+    assert.ok(hasCap(wall, 'windowcoverings_state') || hasCap(wall, 'windowcoverings_set') || hasCap(wall, 'onoff'));
+  });
 });
