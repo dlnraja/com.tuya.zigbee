@@ -3482,5 +3482,8 @@
   },
   "9.0.1007": {
     "en": "Heal publish gate for Smart provenance energy mixin; keep local learner."
+  },
+  "9.0.1008": {
+    "en": "Publish size-gate prefers prepared app.json; Smart Flow + local energy learner on both tips."
   }
 }

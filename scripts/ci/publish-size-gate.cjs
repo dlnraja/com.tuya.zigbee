@@ -156,7 +156,15 @@ function checkArchive(file) {
 }
 
 function main() {
-  checkJsonUnderLimit('Root app.json', path.join(ROOT, 'app.json'), LIMITS.appJsonMB);
+  // WHY(P2561): prepare-publish compacts tmp/homey-publish-temp/app.json; the
+  // workspace root app.json can still measure ~4.00MB compact and false-fail the
+  // gate. Prefer the prepared publish manifest when present.
+  const preparedApp = process.env.HOMEY_PUBLISH_APPJSON
+    || path.join(os.tmpdir(), 'homey-publish-temp', 'app.json');
+  const rootApp = (preparedApp && fs.existsSync(preparedApp))
+    ? preparedApp
+    : path.join(ROOT, 'app.json');
+  checkJsonUnderLimit('Root app.json', rootApp, LIMITS.appJsonMB);
   checkJsonUnderLimit('Build app.json', path.join(ROOT, '.homeybuild', 'app.json'), LIMITS.appJsonMB);
 
   checkDirUnderLimit(
