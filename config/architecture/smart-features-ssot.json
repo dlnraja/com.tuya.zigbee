@@ -1,21 +1,39 @@
 {
   "_meta": {
-    "version": "1.0.0",
-    "updated": "2026-08-23",
+    "version": "1.1.0",
+    "updated": "2026-09-17",
     "why": "Community smart features — inspired by common Zigbee hub patterns, never commercial product names in UI",
-    "track": "MASTER_ONLY for heavy engines; brand-scrub BOTH for flow titles; see dual-app-tracks.json"
+    "track": "MASTER_ONLY for heavy engines; brand-scrub BOTH for flow titles; see dual-app-tracks.json",
+    "worldMap": "config/architecture/world-zigbee-smart-features-ssot.json"
   },
   "policy": {
     "noCommercialNamesInUi": true,
     "forbiddenUiTokens": [
       "Hue", "Philips", "Signify", "IKEA", "Aqara", "Xiaomi", "Yeelight",
-      "Lutron", "SmartThings", "True Tone", "Ambilight", "Natural Light",
-      "Friends of Hue", "Tradfri", "HomeKit"
+      "Lutron", "SmartThings", "True Tone", "TruTone", "Ambilight", "Natural Light",
+      "Friends of Hue", "Tradfri", "HomeKit", "MotionAware", "SpaceSense", "Adaptive Lighting"
     ],
     "allowedInternal": "Code comments / Zigbee manufacturer catalogs may name vendors for protocol truth",
     "namingVoice": "open-source community — Universal Tuya / dlnraja; short plain English + FR"
   },
   "catalog": [
+    {
+      "id": "soft_daylight_fade",
+      "uiName": { "en": "Soft Daylight Fade", "fr": "Fondu lumière du jour" },
+      "module": "lib/features/SoftDaylightFade.js",
+      "flowIds": ["soft_daylight_fade_start", "soft_daylight_fade_stop"],
+      "role": "Continuous CCT/dim steps toward Daylight Atmosphere (daytime white fade feel)",
+      "replacesConcepts": ["daytime TruTone-like fading", "Adaptive Lighting ramp"]
+    },
+    {
+      "id": "lamp_mesh_occupancy",
+      "uiName": { "en": "Lamp Mesh Occupancy", "fr": "Occupation maillage lampes" },
+      "module": "lib/features/LampMeshOccupancy.js",
+      "hub": "lib/features/SmartGatewayFeatureHub.js",
+      "flowIds": ["lamp_mesh_occupancy_enroll", "lamp_mesh_occupancy_changed"],
+      "role": "Soft LQI/RSSI (+ optional PIR) fusion across mains lights — Homey alternative to proprietary lamp-as-sensor",
+      "feasibility": "partial — no closed PHY parity claim"
+    },
     {
       "id": "daylight_atmosphere",
       "uiName": { "en": "Daylight Atmosphere", "fr": "Atmosphère jour" },

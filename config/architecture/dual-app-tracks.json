@@ -209,6 +209,10 @@
       "tag": "MASTER_ONLY",
       "note": "Circadian / AdaptiveLighting / Path Light / Room Balance — feature engines"
     },
+    "p2563_smart_gateway_features": {
+      "tag": "MASTER_ONLY",
+      "note": "Soft Daylight Fade + Lamp Mesh Occupancy + world Zigbee cartography SSOT — feature engines; brand-scrub titles BOTH-safe"
+    },
     "smart_features_brand_scrub": {
       "tag": "BOTH",
       "note": "UI titles/hints only — no commercial names; safe to mirror on stable compose flow titles"
