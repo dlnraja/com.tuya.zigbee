@@ -1,0 +1,57 @@
+{
+  "id": "telemetry_source_changed",
+  "title": {
+    "en": "Value source changed (measured / estimated / calculated)",
+    "fr": "Source de la valeur changée (mesuré / estimé / calculé)",
+    "nl": "Waardebron gewijzigd (gemeten / geschat / berekend)",
+    "de": "Wertquelle geändert (gemessen / geschätzt / berechnet)"
+  },
+  "hint": {
+    "en": "Fires when a capability switches between real measurement, intelligent estimate, or calculated value",
+    "fr": "Se déclenche quand une capability passe entre mesure réelle, estimation intelligente ou valeur calculée",
+    "nl": "Triggert wanneer een capability wisselt tussen echte meting, intelligente schatting of berekende waarde",
+    "de": "Löst aus, wenn eine Capability zwischen Messung, Schätzung und Berechnung wechselt"
+  },
+  "tokens": [
+    {
+      "name": "capability",
+      "type": "string",
+      "title": {
+        "en": "Capability",
+        "fr": "Capability",
+        "nl": "Capability",
+        "de": "Capability"
+      },
+      "example": "measure_power"
+    },
+    {
+      "name": "previous",
+      "type": "string",
+      "title": {
+        "en": "Previous origin",
+        "fr": "Origine précédente",
+        "nl": "Vorige herkomst",
+        "de": "Vorherige Herkunft"
+      },
+      "example": "estimated"
+    },
+    {
+      "name": "origin",
+      "type": "string",
+      "title": {
+        "en": "New origin",
+        "fr": "Nouvelle origine",
+        "nl": "Nieuwe herkomst",
+        "de": "Neue Herkunft"
+      },
+      "example": "measured"
+    }
+  ],
+  "args": [
+    {
+      "type": "device",
+      "name": "device",
+      "filter": "driver_id!=none"
+    }
+  ]
+}
