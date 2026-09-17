@@ -22,6 +22,18 @@ describe('P2545g L14 SmartBatteryManager', () => {
       'must not invent 100% from alarm-ok estimate');
   });
 
+  it('P216 no blind /2 on Tuya battery hot paths', () => {
+    for (const rel of [
+      'lib/tuya/TuyaUnifiedParser.js',
+      'lib/tuya/DataRecoveryManager.js',
+      'lib/tuya/TuyaSyncManager.js',
+    ]) {
+      const s = fs.readFileSync(path.join(ROOT, rel), 'utf8');
+      assert.ok(s.includes('normalizeZclBatteryPercent'), rel + ' missing normalizeZclBatteryPercent');
+      assert.ok(!/batteryPercentageRemaining\s*\/\s*2/.test(s), rel + ' still blind /2');
+    }
+  });
+
   it('l14-capability-writers-gate.js still locks SmartBatteryManager', () => {
     const gate = fs.readFileSync(GATE, 'utf8');
     assert.ok(gate.includes('SmartBatteryManager.js'));

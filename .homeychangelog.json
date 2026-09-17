@@ -1734,5 +1734,8 @@
   },
   "5.12.235": {
     "en": "Reliability BOTH: SmartBatteryManager L14 safe writers (P205 gate); no invent 100% from alarm."
+  },
+  "5.12.236": {
+    "en": "Reliability BOTH: P216 normalize ZCL battery (no blind /2) on Tuya parsers."
   }
 }
