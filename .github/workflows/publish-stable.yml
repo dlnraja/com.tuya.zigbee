@@ -51,8 +51,10 @@ env:
   # exceeding the default 20,000 limit. 30,000 gives headroom.
   # v5.12.1 (P59 sync): stable has 30,211 combos (more than master due to
   # driver differences over time). 35,000 covers stable with headroom.
-  HOMEY_ZIGBEE_MAX_TOTAL_COMBOS: "17000"
-  HOMEY_ZIGBEE_MAX_DRIVER_COMBOS: "2000"
+  # P2561: align with master — 17k/2k left root app.json compact ~4.00MB and
+  # false-failed publish-size-gate before prepared-temp preference.
+  HOMEY_ZIGBEE_MAX_TOTAL_COMBOS: "14000"
+  HOMEY_ZIGBEE_MAX_DRIVER_COMBOS: "1500"
   HOMEY_ZIGBEE_MAX_CASE_FORMS: "2"
 
 jobs:
