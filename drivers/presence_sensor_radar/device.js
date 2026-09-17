@@ -154,14 +154,17 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
    * WHY(P2548 / VicHY #2241): Homey can flip class to windowcoverings hours after boot
    * even with auto-updates blocked (store/cap restore race). Refuse non-sensor class on
    * mains MTG/clrdrnya — heal path also forces sensor.
+   * WHY(P2555 / VicHY soft-dismiss): ANY curtain/blind/cover class on this driver is poison
+   * — refuse even if mainsPowered flag lags interview.
    */
   async setClass(deviceClass) {
     try {
       const mfr = (MfrHelper.getManufacturerName(this) || '').toLowerCase();
       const forceMains = this.mainsPowered || MAINS_POWERED_RADARS.has(mfr) || /clrdrnya|sbyx0lm6/.test(mfr);
       const next = String(deviceClass || '');
-      if (forceMains && next && next !== 'sensor' && !/^other$/i.test(next)) {
-        this.log(`[RADAR] P2548 refused setClass(${next}) — locked sensor`);
+      const curtainLike = /windowcoverings|curtain|blind|cover|socket|light/i.test(next);
+      if ((forceMains || curtainLike) && next && next !== 'sensor' && !/^other$/i.test(next)) {
+        this.log(`[RADAR] P2548/P2555 refused setClass(${next}) — locked sensor`);
         if (typeof super.setClass === 'function') {
           return super.setClass('sensor');
         }
@@ -247,6 +250,8 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
     // WHY(P2386 / VicHY #2222): Homey may re-apply store caps async after app update —
     // re-heal shortly after boot so "blind mode" does not stick until delete+re-pair.
     this._scheduleRadarPhantomReheal();
+    // WHY(P2555 / VicHY #2240): soft-dismiss "WHEN dead while tile green" → one-shot nudge
+    this._schedulePresenceWhenNudge();
 
     // v5.11.139: Call super.onNodeInit() to initialize TuyaZigbeeDevice base class
     // which provides _safeInvoke and other L14 features
@@ -477,9 +482,8 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
           }
         }, ms);
       }
-      // Periodic: every 2 min while device lives (cleared in onUninit/onDeleted)
-      // WHY(P2548 / VicHY #2241): Homey store restore can flip class without tip update;
-      // 10 min left the tile broken too long — 120s catches curtain UI + dead presence WHEN.
+      // WHY(P2548/P2555 / VicHY #2241): Homey store restore can flip class without tip;
+      // 60s catches curtain UI faster than 120s while soft-dismiss users block updates.
       if (!this._radarPhantomHealInterval && typeof safeSetInterval === 'function') {
         this._radarPhantomHealInterval = safeSetInterval(this, () => {
           const mfr = (MfrHelper.getManufacturerName(this) || '').toLowerCase();
@@ -489,7 +493,7 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
           this._armRadarDynCapGuards();
           this._healRadarPhantomCaps().catch(() => {});
           this._applyRadarCapabilityProfile().catch(() => {});
-        }, 120_000);
+        }, 60_000);
       }
     } catch (_e) {
       try {
@@ -1071,8 +1075,13 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
    * Contre quoi: compose cards exist but device never called getDeviceTriggerCard.
    * WHY(P2528): await motion write so edge-fire is not raced by a parallel human set.
    */
-  _commitPresenceAndFlows(presence) {
+  _commitPresenceAndFlows(presence, opts = {}) {
     const next = !!presence;
+    // WHY(P2555): heal/boot paints must not lock edge-dedupe without firing WHEN —
+    // VicHY #2240 "sensor shows present but Presence detected WHEN dead".
+    if (opts && opts.silent === true) {
+      return this.safeSetCapabilityValue('alarm_motion', next).catch(() => {});
+    }
     // Motion first — safeSet mirrors human + fires presence WHEN on edge.
     return this.safeSetCapabilityValue('alarm_motion', next).catch(() => {});
   }
@@ -1101,6 +1110,36 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
           .trigger(this, {}).catch(() => {});
       } catch (_e2) { /* soft */ }
     }
+  }
+
+  /**
+   * WHY(P2555 / VicHY #2240 soft-dismiss): after tip, presence may already be true
+   * so false→true never happens until leave+re-enter. One-shot nudge fires WHEN once
+   * if UI already shows present — Contre quoi: "I configured Presence detected and
+   * nothing fires while tile is green".
+   */
+  _schedulePresenceWhenNudge() {
+    try {
+      if (typeof this.getStoreValue === 'function'
+          && this.getStoreValue('p2555_presence_when_nudge')) {
+        return;
+      }
+      const { safeSetTimeout } = require('../../lib/utils/safe-timers');
+      safeSetTimeout(this, () => {
+        try {
+          const present = this.getCapabilityValue?.('alarm_human') === true
+            || this.getCapabilityValue?.('alarm_motion') === true;
+          if (!present) return;
+          // Allow edge fire even if dedupe thinks we're already true
+          this._lastPresenceFlowEdge = false;
+          this._triggerPresenceFlows(true);
+          if (typeof this.setStoreValue === 'function') {
+            this.setStoreValue('p2555_presence_when_nudge', 1).catch(() => {});
+          }
+          this.log?.('[RADAR] P2555 one-shot Presence detected WHEN nudge');
+        } catch (_e) { /* soft */ }
+      }, 25_000);
+    } catch (_e2) { /* soft */ }
   }
 
   _triggerZonePresenceFlow(zone) {
