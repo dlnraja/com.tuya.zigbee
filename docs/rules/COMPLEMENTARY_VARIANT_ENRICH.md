@@ -59,4 +59,5 @@ Machine SSOT: [`config/architecture/complementary-reinstate-notions-ssot.json`](
 - P2519 anti-regression overwrite lock
 - P2490 forum complementary failover
 - P2224 complementary enrichment catalogs
+- P2570 Johan complementary completion — [`docs/architecture/JOHAN_COMPLEMENTARY_COMPLETION.md`](../architecture/JOHAN_COMPLEMENTARY_COMPLETION.md)
 - Sacred couple SSOT (P2494) · identity fields (P2496)
