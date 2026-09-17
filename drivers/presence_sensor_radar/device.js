@@ -38,6 +38,7 @@ const MAINS_POWERED_RADARS = new Set([
   // P2482 / GH#547: ZY-M100-24GV3 ceiling radar (gkfbdvyx) — mains, no phantom battery
   '_tze200_gkfbdvyx',
   '_tze204_gkfbdvyx',
+  '_tze284_gkfbdvyx',
   ...MTG_RELAY_RADARS,
 ]);
 
@@ -240,7 +241,7 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
   }
 
   /**
-   * WHY(P2557 / VicHY #2243): Homey can flip class to curtain while tip lags —
+   * WHY(P2559 / VicHY #2243): Homey can flip class to curtain while tip lags —
    * throttle sensor re-lock so presence RX keeps UI on sensor.
    */
   async _nudgeSensorClassLock() {
@@ -249,7 +250,7 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
     this._lastClassNudgeAt = now;
     try {
       const mfrNow = (MfrHelper.getManufacturerName(this) || '').toLowerCase();
-      const forceMains = this.mainsPowered || MAINS_POWERED_RADARS.has(mfrNow) || /clrdrnya|sbyx0lm6/.test(mfrNow);
+      const forceMains = this.mainsPowered || MAINS_POWERED_RADARS.has(mfrNow) || /clrdrnya|sbyx0lm6|gkfbdvyx/.test(mfrNow);
       if (!forceMains || typeof this.getClass !== 'function' || typeof this.setClass !== 'function') {return;}
       const cls = String(this.getClass() || '');
       if (cls && cls !== 'sensor') {
@@ -258,6 +259,26 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
         this.log(`[RADAR] P2557 class nudge sensor (was ${cls})`);
       }
     } catch (_e) { /* soft */ }
+  }
+
+  /**
+   * WHY(P2559 / GH#547 / Z2M): ceiling radars need magic or EF00 stays silent / leaves mesh.
+   */
+  async _ensureRadarMagicHandshake(zclNode) {
+    try {
+      const mfr = (MfrHelper.getManufacturerName(this) || '').toLowerCase();
+      if (!/gkfbdvyx|clrdrnya|sbyx0lm6|laokfqwu/.test(mfr) && this.mainsPowered !== true) {return;}
+      const { sendTuyaMagicPacket } = require('../../lib/zigbee/TuyaMagicPacket');
+      const node = zclNode || this.zclNode;
+      if (!node?.endpoints?.[1] && !node?.endpoints?.[2]) {return;}
+      try { await this.setStoreValue?.('tuya_magic_packet_sent', false); } catch (_e) { /* noop */ }
+      this._tuyaMagicPacketSent = false;
+      const epId = node.endpoints[1] ? 1 : 2;
+      await sendTuyaMagicPacket(this, node, epId, { force: true });
+      this.log('[RADAR] P2559 Tuya magic handshake armed');
+    } catch (err) {
+      this.log(`[RADAR] magic handshake soft-fail: ${err?.message || err}`);
+    }
   }
 
   async onNodeInit({ zclNode }) {
@@ -285,6 +306,9 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
     } catch (err) {
       this.log('[RADAR] Base init error:', err.message);
     }
+
+    // WHY(P2559 / GH#547 gkfbdvyx): MCU may leave network / silent RX without Tuya magic
+    await this._ensureRadarMagicHandshake(zclNode).catch(() => {});
 
     this.log('[RADAR] v8.0.0 Ultimate Initializing...');
 
