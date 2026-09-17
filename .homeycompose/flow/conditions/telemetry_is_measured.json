@@ -1,16 +1,16 @@
 {
-  "id": "telemetry_is_estimated",
+  "id": "telemetry_is_measured",
   "title": {
-    "en": "Value !{{is|is not}} an intelligent estimate",
-    "fr": "Valeur !{{estimée (intelligente)|non estimée}}",
-    "nl": "Waarde !{{is een intelligente schatting|is geen schatting}}",
-    "de": "Wert !{{ist eine intelligente Schätzung|ist keine Schätzung}}"
+    "en": "Value !{{is|is not}} a real measurement",
+    "fr": "Valeur !{{mesurée (réelle)|non mesurée}}",
+    "nl": "Waarde !{{is een echte meting|is geen echte meting}}",
+    "de": "Wert !{{ist eine echte Messung|ist keine echte Messung}}"
   },
   "hint": {
-    "en": "True when the value comes from the smart estimation engine (profile/nominal) — not a real device report and not a derived calculation",
-    "fr": "Vrai quand la valeur vient du moteur d'estimation intelligente (profil/nominal) — ni relevé réel ni calcul dérivé",
-    "nl": "Waar als de waarde uit de slimme schattingsengine komt (profiel/nominaal)",
-    "de": "Wahr, wenn der Wert aus der intelligenten Schätz-Engine stammt (Profil/Nominal)"
+    "en": "True when the capability value comes from a reliable device report (Zigbee/ZCL/EF00), not an estimate or calculation",
+    "fr": "Vrai quand la valeur vient d'un relevé fiable du device (Zigbee/ZCL/EF00), pas d'une estimation ni d'un calcul",
+    "nl": "Waar als de waarde van een betrouwbare apparaatmeting komt, niet van een schatting of berekening",
+    "de": "Wahr, wenn der Wert von einem zuverlässigen Gerätereport stammt, nicht von Schätzung oder Berechnung"
   },
   "args": [
     {

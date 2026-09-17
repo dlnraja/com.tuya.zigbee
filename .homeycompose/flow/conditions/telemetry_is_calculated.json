@@ -1,16 +1,16 @@
 {
-  "id": "telemetry_is_estimated",
+  "id": "telemetry_is_calculated",
   "title": {
-    "en": "Value !{{is|is not}} an intelligent estimate",
-    "fr": "Valeur !{{estimée (intelligente)|non estimée}}",
-    "nl": "Waarde !{{is een intelligente schatting|is geen schatting}}",
-    "de": "Wert !{{ist eine intelligente Schätzung|ist keine Schätzung}}"
+    "en": "Value !{{is|is not}} calculated",
+    "fr": "Valeur !{{calculée|non calculée}}",
+    "nl": "Waarde !{{is berekend|is niet berekend}}",
+    "de": "Wert !{{ist berechnet|ist nicht berechnet}}"
   },
   "hint": {
-    "en": "True when the value comes from the smart estimation engine (profile/nominal) — not a real device report and not a derived calculation",
-    "fr": "Vrai quand la valeur vient du moteur d'estimation intelligente (profil/nominal) — ni relevé réel ni calcul dérivé",
-    "nl": "Waar als de waarde uit de slimme schattingsengine komt (profiel/nominaal)",
-    "de": "Wahr, wenn der Wert aus der intelligenten Schätz-Engine stammt (Profil/Nominal)"
+    "en": "True when the value is derived (e.g. current from P÷V, energy integral) — not a live meter report and not a profile estimate",
+    "fr": "Vrai quand la valeur est dérivée (ex. courant via P÷V, intégrale kWh) — ni relevé live ni estimation de profil",
+    "nl": "Waar als de waarde afgeleid is (bijv. stroom uit P÷V, energie-integraal)",
+    "de": "Wahr, wenn der Wert abgeleitet ist (z. B. Strom aus P÷V, Energieintegral)"
   },
   "args": [
     {

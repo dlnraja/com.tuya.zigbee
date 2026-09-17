@@ -1,0 +1,33 @@
+{
+  "id": "P2556-data-provenance",
+  "version": "1.0.0",
+  "updated": "2026-09-17",
+  "classify": "BOTH",
+  "why": {
+    "pourquoi": "Homey UI + Flows must distinguish measured vs intelligent estimate vs calculated values",
+    "comment": "lib/telemetry/DataProvenance.js stamps store + capability title/units; Flow cards query origin",
+    "pourQui": "Homey users + Flow builders on master Test and stable LTS",
+    "quand": "every energy/battery/sensor capability write via DeviceTelemetryEstimator / SmartEnergyManager",
+    "contreQuoi": "silent estimated power looking like a real meter; flows that assume all values are measured"
+  },
+  "origins": ["measured", "estimated", "calculated"],
+  "legacyAlias": { "direct": "measured" },
+  "ui": {
+    "titleSuffix": "· measured | · estimated | · calculated",
+    "unitsMark": { "measured": "", "estimated": " ≈", "calculated": " ƒ" }
+  },
+  "flows": {
+    "conditions": [
+      "telemetry_is_estimated",
+      "telemetry_is_measured",
+      "telemetry_is_calculated"
+    ],
+    "triggers": ["telemetry_source_changed"]
+  },
+  "runtime": [
+    "lib/telemetry/DataProvenance.js",
+    "lib/utils/DeviceTelemetryEstimator.js",
+    "lib/managers/SmartEnergyManager.js"
+  ],
+  "gate": "npm run check:p2556"
+}

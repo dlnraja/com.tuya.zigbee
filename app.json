@@ -1,7 +1,7 @@
 {
   "_comment": "This file is generated. Please edit .homeycompose/app.json instead.",
   "id": "com.dlnraja.tuya.zigbee",
-  "version": "9.0.1000",
+  "version": "9.0.1001",
   "compatibility": ">=12.2.0",
   "platforms": [
     "local"
@@ -2467,6 +2467,63 @@
             "filter": "capabilities=button.1,capabilities=button,capabilities=onoff,capabilities=button.toggle"
           }
         ]
+      },
+      {
+        "id": "telemetry_source_changed",
+        "title": {
+          "en": "Value source changed (measured / estimated / calculated)",
+          "fr": "Source de la valeur changée (mesuré / estimé / calculé)",
+          "nl": "Waardebron gewijzigd (gemeten / geschat / berekend)",
+          "de": "Wertquelle geändert (gemessen / geschätzt / berechnet)"
+        },
+        "hint": {
+          "en": "Fires when a capability switches between real measurement, intelligent estimate, or calculated value",
+          "fr": "Se déclenche quand une capability passe entre mesure réelle, estimation intelligente ou valeur calculée",
+          "nl": "Triggert wanneer een capability wisselt tussen echte meting, intelligente schatting of berekende waarde",
+          "de": "Löst aus, wenn eine Capability zwischen Messung, Schätzung und Berechnung wechselt"
+        },
+        "tokens": [
+          {
+            "name": "capability",
+            "type": "string",
+            "title": {
+              "en": "Capability",
+              "fr": "Capability",
+              "nl": "Capability",
+              "de": "Capability"
+            },
+            "example": "measure_power"
+          },
+          {
+            "name": "previous",
+            "type": "string",
+            "title": {
+              "en": "Previous origin",
+              "fr": "Origine précédente",
+              "nl": "Vorige herkomst",
+              "de": "Vorherige Herkunft"
+            },
+            "example": "estimated"
+          },
+          {
+            "name": "origin",
+            "type": "string",
+            "title": {
+              "en": "New origin",
+              "fr": "Nouvelle origine",
+              "nl": "Nieuwe herkomst",
+              "de": "Neue Herkunft"
+            },
+            "example": "measured"
+          }
+        ],
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id!=none"
+          }
+        ]
       }
     ],
     "conditions": [
@@ -3486,16 +3543,16 @@
       {
         "id": "telemetry_is_estimated",
         "title": {
-          "en": "Value !{{is|is not}} estimated",
-          "fr": "Valeur !{{estimée|mesurée}}",
-          "nl": "Waarde !{{is geschat|is gemeten}}",
-          "de": "Wert !{{ist geschätzt|ist gemessen}}"
+          "en": "Value !{{is|is not}} an intelligent estimate",
+          "fr": "Valeur !{{estimée (intelligente)|non estimée}}",
+          "nl": "Waarde !{{is een intelligente schatting|is geen schatting}}",
+          "de": "Wert !{{ist eine intelligente Schätzung|ist keine Schätzung}}"
         },
         "hint": {
-          "en": "True when the current value of the selected capability comes from the estimation engine (not a real device report)",
-          "fr": "Vrai quand la valeur actuelle de la capability choisie vient du moteur d'estimation (pas d'un relevé réel du device)",
-          "nl": "Waar als de huidige waarde van de capability uit de schattingsengine komt",
-          "de": "Wahr, wenn der aktuelle Wert der Capability aus der Schätz-Engine stammt"
+          "en": "True when the value comes from the smart estimation engine (profile/nominal) — not a real device report and not a derived calculation",
+          "fr": "Vrai quand la valeur vient du moteur d'estimation intelligente (profil/nominal) — ni relevé réel ni calcul dérivé",
+          "nl": "Waar als de waarde uit de slimme schattingsengine komt (profiel/nominaal)",
+          "de": "Wahr, wenn der Wert aus der intelligenten Schätz-Engine stammt (Profil/Nominal)"
         },
         "args": [
           {
@@ -3716,6 +3773,172 @@
           "fr": "Une pièce !{{est|n'est pas}} occupée",
           "de": "Ein Raum !{{ist|ist nicht}} besetzt"
         }
+      },
+      {
+        "id": "telemetry_is_measured",
+        "title": {
+          "en": "Value !{{is|is not}} a real measurement",
+          "fr": "Valeur !{{mesurée (réelle)|non mesurée}}",
+          "nl": "Waarde !{{is een echte meting|is geen echte meting}}",
+          "de": "Wert !{{ist eine echte Messung|ist keine echte Messung}}"
+        },
+        "hint": {
+          "en": "True when the capability value comes from a reliable device report (Zigbee/ZCL/EF00), not an estimate or calculation",
+          "fr": "Vrai quand la valeur vient d'un relevé fiable du device (Zigbee/ZCL/EF00), pas d'une estimation ni d'un calcul",
+          "nl": "Waar als de waarde van een betrouwbare apparaatmeting komt, niet van een schatting of berekening",
+          "de": "Wahr, wenn der Wert von einem zuverlässigen Gerätereport stammt, nicht von Schätzung oder Berechnung"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id!=none"
+          },
+          {
+            "type": "dropdown",
+            "name": "capability",
+            "title": {
+              "en": "Capability",
+              "fr": "Capability",
+              "nl": "Capability",
+              "de": "Capability"
+            },
+            "values": [
+              {
+                "id": "measure_power",
+                "title": {
+                  "en": "Power (W)",
+                  "fr": "Puissance (W)"
+                }
+              },
+              {
+                "id": "measure_voltage",
+                "title": {
+                  "en": "Voltage (V)",
+                  "fr": "Tension (V)"
+                }
+              },
+              {
+                "id": "measure_current",
+                "title": {
+                  "en": "Current (A)",
+                  "fr": "Courant (A)"
+                }
+              },
+              {
+                "id": "meter_power",
+                "title": {
+                  "en": "Energy (kWh)",
+                  "fr": "Énergie (kWh)"
+                }
+              },
+              {
+                "id": "measure_battery",
+                "title": {
+                  "en": "Battery (%)",
+                  "fr": "Batterie (%)"
+                }
+              },
+              {
+                "id": "measure_temperature",
+                "title": {
+                  "en": "Temperature",
+                  "fr": "Température"
+                }
+              },
+              {
+                "id": "measure_humidity",
+                "title": {
+                  "en": "Humidity",
+                  "fr": "Humidité"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "telemetry_is_calculated",
+        "title": {
+          "en": "Value !{{is|is not}} calculated",
+          "fr": "Valeur !{{calculée|non calculée}}",
+          "nl": "Waarde !{{is berekend|is niet berekend}}",
+          "de": "Wert !{{ist berechnet|ist nicht berechnet}}"
+        },
+        "hint": {
+          "en": "True when the value is derived (e.g. current from P÷V, energy integral) — not a live meter report and not a profile estimate",
+          "fr": "Vrai quand la valeur est dérivée (ex. courant via P÷V, intégrale kWh) — ni relevé live ni estimation de profil",
+          "nl": "Waar als de waarde afgeleid is (bijv. stroom uit P÷V, energie-integraal)",
+          "de": "Wahr, wenn der Wert abgeleitet ist (z. B. Strom aus P÷V, Energieintegral)"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id!=none"
+          },
+          {
+            "type": "dropdown",
+            "name": "capability",
+            "title": {
+              "en": "Capability",
+              "fr": "Capability",
+              "nl": "Capability",
+              "de": "Capability"
+            },
+            "values": [
+              {
+                "id": "measure_power",
+                "title": {
+                  "en": "Power (W)",
+                  "fr": "Puissance (W)"
+                }
+              },
+              {
+                "id": "measure_voltage",
+                "title": {
+                  "en": "Voltage (V)",
+                  "fr": "Tension (V)"
+                }
+              },
+              {
+                "id": "measure_current",
+                "title": {
+                  "en": "Current (A)",
+                  "fr": "Courant (A)"
+                }
+              },
+              {
+                "id": "meter_power",
+                "title": {
+                  "en": "Energy (kWh)",
+                  "fr": "Énergie (kWh)"
+                }
+              },
+              {
+                "id": "measure_battery",
+                "title": {
+                  "en": "Battery (%)",
+                  "fr": "Batterie (%)"
+                }
+              },
+              {
+                "id": "measure_temperature",
+                "title": {
+                  "en": "Temperature",
+                  "fr": "Température"
+                }
+              },
+              {
+                "id": "measure_humidity",
+                "title": {
+                  "en": "Humidity",
+                  "fr": "Humidité"
+                }
+              }
+            ]
+          }
+        ]
       }
     ],
     "actions": [

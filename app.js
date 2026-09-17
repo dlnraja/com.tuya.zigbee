@@ -1207,20 +1207,8 @@ class TuyaUnifiedZigbeeApp extends Homey.App {
         }
       });
 
-    // v9.0.375 — Condition: value is estimated (telemetry origin)
-    this.homey.flow.getConditionCard('telemetry_is_estimated')
-      .registerRunListener(async (args) => {
-        try {
-          const device = args.device;
-          const capability = args.capability;
-          if (!device || !capability) {return false;}
-          const getStore = device.getStoreValue?.bind(device);
-          if (typeof getStore !== 'function') {return false;}
-          return (await getStore(`telemetry_${capability}_source`)) === 'estimated';
-        } catch (err) {
-          return false;
-        }
-      });
+    // P2556 — Provenance conditions: measured | estimated | calculated
+    this._registerTelemetryProvenanceFlowCards();
 
     // Action: Force clear ALL rooms
     this.homey.flow.getActionCard('virtual_presence_force_clear_all')
@@ -1240,6 +1228,53 @@ class TuyaUnifiedZigbeeApp extends Homey.App {
           return false;
         }
       });
+  }
+
+  /**
+   * P2556 — Flow cards that distinguish measured vs intelligent estimate vs calculated.
+   * WHY: users must not treat profile estimates or P÷V derivations as live meter reads.
+   */
+  _registerTelemetryProvenanceFlowCards() {
+    const DataProvenance = require('./lib/telemetry/DataProvenance');
+
+    const originOf = async (device, capability) => {
+      if (!device || !capability) return null;
+      try {
+        return await DataProvenance.readOrigin(device, capability);
+      } catch (_e) {
+        return null;
+      }
+    };
+
+    const registerOriginCondition = (cardId, matchFn) => {
+      try {
+        this.homey.flow.getConditionCard(cardId)
+          .registerRunListener(async (args) => {
+            try {
+              const origin = await originOf(args.device, args.capability);
+              return matchFn(origin);
+            } catch (_err) {
+              return false;
+            }
+          });
+      } catch (err) {
+        this.error(`[P2556] Could not register ${cardId}:`, err.message);
+      }
+    };
+
+    registerOriginCondition('telemetry_is_estimated', (o) => DataProvenance.isEstimated(o));
+    registerOriginCondition('telemetry_is_measured', (o) => DataProvenance.isMeasured(o));
+    registerOriginCondition('telemetry_is_calculated', (o) => DataProvenance.isCalculated(o));
+
+    // Trigger is device-fired from DeviceTelemetryEstimator — register card presence only
+    try {
+      const trigger = this.homey.flow.getDeviceTriggerCard('telemetry_source_changed');
+      if (trigger && typeof trigger.registerRunListener === 'function') {
+        trigger.registerRunListener(async () => true);
+      }
+    } catch (err) {
+      this.error('[P2556] telemetry_source_changed register failed:', err.message);
+    }
   }
 
   async initializeInsights() {
