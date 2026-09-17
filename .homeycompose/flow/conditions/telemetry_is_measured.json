@@ -1,16 +1,16 @@
 {
   "id": "telemetry_is_measured",
   "title": {
-    "en": "Value !{{is|is not}} a real measurement",
-    "fr": "Valeur !{{mesurée (réelle)|non mesurée}}",
-    "nl": "Waarde !{{is een echte meting|is geen echte meting}}",
-    "de": "Wert !{{ist eine echte Messung|ist keine echte Messung}}"
+    "en": "The !{{value is|value is not}} a precise real measurement",
+    "fr": "La valeur !{{est une mesure réelle précise|n'est pas une mesure réelle}}",
+    "nl": "De waarde !{{is een precieze echte meting|is geen echte meting}}",
+    "de": "Der Wert !{{ist eine präzise echte Messung|ist keine echte Messung}}"
   },
   "hint": {
-    "en": "True when the capability value comes from a reliable device report (Zigbee/ZCL/EF00), not an estimate or calculation",
-    "fr": "Vrai quand la valeur vient d'un relevé fiable du device (Zigbee/ZCL/EF00), pas d'une estimation ni d'un calcul",
-    "nl": "Waar als de waarde van een betrouwbare apparaatmeting komt, niet van een schatting of berekening",
-    "de": "Wahr, wenn der Wert von einem zuverlässigen Gerätereport stammt, nicht von Schätzung oder Berechnung"
+    "en": "Live device report (Zigbee/ZCL/EF00) — highest priority. Clean title, no ≈ / ƒ / → mark",
+    "fr": "Relevé live du device (Zigbee/ZCL/EF00) — priorité maximale. Titre propre, sans marque ≈ / ƒ / →",
+    "nl": "Live apparaatmeting — hoogste prioriteit. Schone titel",
+    "de": "Live-Gerätemeldung — höchste Priorität. Sauberer Titel"
   },
   "args": [
     {
@@ -22,40 +22,19 @@
       "type": "dropdown",
       "name": "capability",
       "title": {
-        "en": "Capability",
-        "fr": "Capability",
-        "nl": "Capability",
-        "de": "Capability"
+        "en": "Value",
+        "fr": "Valeur",
+        "nl": "Waarde",
+        "de": "Wert"
       },
       "values": [
-        {
-          "id": "measure_power",
-          "title": { "en": "Power (W)", "fr": "Puissance (W)" }
-        },
-        {
-          "id": "measure_voltage",
-          "title": { "en": "Voltage (V)", "fr": "Tension (V)" }
-        },
-        {
-          "id": "measure_current",
-          "title": { "en": "Current (A)", "fr": "Courant (A)" }
-        },
-        {
-          "id": "meter_power",
-          "title": { "en": "Energy (kWh)", "fr": "Énergie (kWh)" }
-        },
-        {
-          "id": "measure_battery",
-          "title": { "en": "Battery (%)", "fr": "Batterie (%)" }
-        },
-        {
-          "id": "measure_temperature",
-          "title": { "en": "Temperature", "fr": "Température" }
-        },
-        {
-          "id": "measure_humidity",
-          "title": { "en": "Humidity", "fr": "Humidité" }
-        }
+        { "id": "measure_power", "title": { "en": "Power (W)", "fr": "Puissance (W)" } },
+        { "id": "measure_voltage", "title": { "en": "Voltage (V)", "fr": "Tension (V)" } },
+        { "id": "measure_current", "title": { "en": "Current (A)", "fr": "Courant (A)" } },
+        { "id": "meter_power", "title": { "en": "Energy (kWh)", "fr": "Énergie (kWh)" } },
+        { "id": "measure_battery", "title": { "en": "Battery (%)", "fr": "Batterie (%)" } },
+        { "id": "measure_temperature", "title": { "en": "Temperature", "fr": "Température" } },
+        { "id": "measure_humidity", "title": { "en": "Humidity", "fr": "Humidité" } }
       ]
     }
   ]

@@ -1,16 +1,16 @@
 {
   "id": "telemetry_is_estimated",
   "title": {
-    "en": "Value !{{is|is not}} an intelligent estimate",
-    "fr": "Valeur !{{estimée (intelligente)|non estimée}}",
-    "nl": "Waarde !{{is een intelligente schatting|is geen schatting}}",
-    "de": "Wert !{{ist eine intelligente Schätzung|ist keine Schätzung}}"
+    "en": "The !{{value is|value is not}} an intelligent estimate ≈",
+    "fr": "La valeur !{{est une estimation intelligente ≈|n'est pas une estimation}}",
+    "nl": "De waarde !{{is een intelligente schatting ≈|is geen schatting}}",
+    "de": "Der Wert !{{ist eine intelligente Schätzung ≈|ist keine Schätzung}}"
   },
   "hint": {
-    "en": "True when the value comes from the smart estimation engine (profile/nominal) — not a real device report and not a derived calculation",
-    "fr": "Vrai quand la valeur vient du moteur d'estimation intelligente (profil/nominal) — ni relevé réel ni calcul dérivé",
-    "nl": "Waar als de waarde uit de slimme schattingsengine komt (profiel/nominaal)",
-    "de": "Wahr, wenn der Wert aus der intelligenten Schätz-Engine stammt (Profil/Nominal)"
+    "en": "Smart profile/nominal estimate — not a live meter and not a calculation. Device title shows · ≈ estimated",
+    "fr": "Estimation intelligente (profil/nominal) — ni mesure live ni calcul. Titre device : · ≈ estimé",
+    "nl": "Slimme schatting — geen live meting. Titel: · ≈ geschat",
+    "de": "Intelligente Schätzung — keine Live-Messung. Titel: · ≈ geschätzt"
   },
   "args": [
     {
@@ -22,40 +22,19 @@
       "type": "dropdown",
       "name": "capability",
       "title": {
-        "en": "Capability",
-        "fr": "Capability",
-        "nl": "Capability",
-        "de": "Capability"
+        "en": "Value",
+        "fr": "Valeur",
+        "nl": "Waarde",
+        "de": "Wert"
       },
       "values": [
-        {
-          "id": "measure_power",
-          "title": { "en": "Power (W)", "fr": "Puissance (W)" }
-        },
-        {
-          "id": "measure_voltage",
-          "title": { "en": "Voltage (V)", "fr": "Tension (V)" }
-        },
-        {
-          "id": "measure_current",
-          "title": { "en": "Current (A)", "fr": "Courant (A)" }
-        },
-        {
-          "id": "meter_power",
-          "title": { "en": "Energy (kWh)", "fr": "Énergie (kWh)" }
-        },
-        {
-          "id": "measure_battery",
-          "title": { "en": "Battery (%)", "fr": "Batterie (%)" }
-        },
-        {
-          "id": "measure_temperature",
-          "title": { "en": "Temperature", "fr": "Température" }
-        },
-        {
-          "id": "measure_humidity",
-          "title": { "en": "Humidity", "fr": "Humidité" }
-        }
+        { "id": "measure_power", "title": { "en": "Power (W)", "fr": "Puissance (W)" } },
+        { "id": "measure_voltage", "title": { "en": "Voltage (V)", "fr": "Tension (V)" } },
+        { "id": "measure_current", "title": { "en": "Current (A)", "fr": "Courant (A)" } },
+        { "id": "meter_power", "title": { "en": "Energy (kWh)", "fr": "Énergie (kWh)" } },
+        { "id": "measure_battery", "title": { "en": "Battery (%)", "fr": "Batterie (%)" } },
+        { "id": "measure_temperature", "title": { "en": "Temperature", "fr": "Température" } },
+        { "id": "measure_humidity", "title": { "en": "Humidity", "fr": "Humidité" } }
       ]
     }
   ]
