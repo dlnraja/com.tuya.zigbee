@@ -78,6 +78,13 @@ Gate: `node tools/ci/p2542-local-auto-improve-gate.js`
 | RX/TX alternates | `lib/io/ProtocolFallbackChain.js` + `ProtocolRxTxChain` |
 | Raw ZCL listen | `lib/clusters/RawClusterFallback.js` |
 | Divisors | `lib/managers/SmartDivisorManager.js` |
+| Energy habits | `lib/telemetry/LocalSmartEnergyLearner.js` (P2560) |
+
+## Workflow local learn (P2562)
+
+Every GHA workflow gets `LOCAL_SMART_LEARN=true` + `LOCAL_ENERGY_LEARN=true` (inject).  
+CI habit EMA: `tools/ci/LocalWorkflowLearner.js` · CLI `npm run learn:workflow` · gate `npm run check:p2562`.  
+SSOT: [`config/architecture/local-workflow-learn-ssot.json`](../../config/architecture/local-workflow-learn-ssot.json).
 | Offline engine | `lib/LocalFirstEngine.js` |
 
 ## Related
