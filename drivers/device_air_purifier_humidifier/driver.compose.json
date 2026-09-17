@@ -42,6 +42,14 @@
       "min": 30,
       "max": 80,
       "step": 5
+    },
+    "measure_humidity": {
+      "getable": true,
+      "preventInsights": false
+    },
+    "measure_pm25": {
+      "getable": true,
+      "preventInsights": false
     }
   },
   "zigbee": {

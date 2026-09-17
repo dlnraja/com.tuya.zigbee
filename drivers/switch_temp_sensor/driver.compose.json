@@ -18,7 +18,9 @@
         "nl": "Temperatuur",
         "de": "Temperatur",
         "fr": "Température"
-      }
+      },
+      "getable": true,
+      "preventInsights": false
     },
     "measure_humidity": {
       "title": {

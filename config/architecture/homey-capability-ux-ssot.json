@@ -57,7 +57,19 @@
     "getableFalseForbiddenExact": ["measure_battery", "measure_temperature", "measure_humidity", "meter_power"],
     "preventInsights": {
       "forbiddenOn": ["measure_battery", "measure_temperature", "measure_humidity", "meter_power", "measure_power"],
-      "note": "preventInsights hides History; only use for high-churn debug caps"
+      "note": "preventInsights hides History; only use for high-churn debug caps",
+      "intelligentSilence": {
+        "patch": "P2553",
+        "when": [
+          "alarm_motion if alarm_human also present (VicHY dual History)",
+          "measure_luminance.distance* (mmWave flood)"
+        ]
+      },
+      "fleetEnable": {
+        "patch": "P2553",
+        "tool": "tools/ci/p2553-history-fleet-enable.js",
+        "runtime": "healSensorCapabilityGetable"
+      }
     },
     "docsNote": "getable:false is for making onoff/volume_mute stateless — it changes UI + Flow cards. Never apply to sensor readables."
   },

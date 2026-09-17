@@ -318,6 +318,26 @@
       "maintenanceAction": true,
       "getable": false,
       "setable": false
+    },
+    "alarm_co": {
+      "getable": true,
+      "preventInsights": false
+    },
+    "alarm_co2": {
+      "getable": true,
+      "preventInsights": false
+    },
+    "alarm_contact": {
+      "getable": true,
+      "preventInsights": false
+    },
+    "alarm_gas": {
+      "getable": true,
+      "preventInsights": false
+    },
+    "alarm_tamper": {
+      "getable": true,
+      "preventInsights": false
     }
   },
   "maintenanceActions": [

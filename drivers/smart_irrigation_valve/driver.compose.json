@@ -14,7 +14,9 @@
       "title": {
         "en": "Water Flow",
         "fr": "Débit d'Eau"
-      }
+      },
+      "getable": true,
+      "preventInsights": false
     },
     "countdown_remaining": {
       "title": {

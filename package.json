@@ -1,6 +1,6 @@
 {
   "name": "com.dlnraja.tuya.zigbee",
-  "version": "9.0.997",
+  "version": "9.0.998",
   "description": "Tuya Unified Zigbee - Local-first control with AI automation",
   "main": "app.js",
   "scripts": {
@@ -401,10 +401,13 @@
     "check:p2541": "node --test test/critical/p2541-complementary-reinstate-aq.test.js",
     "check:p253x": "npm run check:p2530 && npm run check:p2530d && npm run check:p2531 && npm run check:p2532 && npm run check:p2533 && npm run check:p2534 && npm run check:p2535 && npm run check:p2536 && npm run check:p2537 && npm run check:p2538 && npm run check:p2539",
     "check:p2547": "node --test test/critical/p2547-external-sdk3-inspiration.test.js && node tools/ci/p2547-external-sdk3-inspiration-gate.js",
-    "check:p254x": "npm run check:p2540 && npm run check:p2541 && npm run check:p2542 && npm run check:p2543 && npm run check:p2544 && npm run check:p2546 && npm run check:p2547 && npm run check:p2548 && npm run check:p2550",
+    "check:p254x": "npm run check:p2540 && npm run check:p2541 && npm run check:p2542 && npm run check:p2543 && npm run check:p2544 && npm run check:p2546 && npm run check:p2547 && npm run check:p2548 && npm run check:p2550 && npm run check:p2553",
     "check:p2550": "node --test test/critical/p2550-peter-vichy-history-presence.test.js",
     "check:p2551": "npm run check:p2550",
-    "check:p255x": "npm run check:p2550",
+    "check:p2553": "node --test test/critical/p2553-history-fleet-enable.test.js",
+    "check:p255x": "npm run check:p2550 && npm run check:p2553",
+    "history:fleet": "node tools/ci/p2553-history-fleet-enable.js --dry-run",
+    "history:fleet:apply": "node tools/ci/p2553-history-fleet-enable.js --apply",
     "enrich:variants:recent": "node tools/ci/recent-variant-capability-completer.js",
     "enrich:variants:recent:apply": "node tools/ci/recent-variant-capability-completer.js --apply",
     "enrich:coverage:mega": "node tools/ci/p2531-complementary-coverage-mega.js",

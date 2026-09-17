@@ -24,35 +24,45 @@
         "en": "Power",
         "fr": "Puissance"
       },
-      "units": "W"
+      "units": "W",
+      "getable": true,
+      "preventInsights": false
     },
     "meter_power": {
       "title": {
         "en": "Energy Consumed",
         "fr": "Énergie Consommée"
       },
-      "units": "kWh"
+      "units": "kWh",
+      "getable": true,
+      "preventInsights": false
     },
     "meter_power.exported": {
       "title": {
         "en": "Energy Exported",
         "fr": "Énergie Exportée"
       },
-      "units": "kWh"
+      "units": "kWh",
+      "getable": true,
+      "preventInsights": false
     },
     "measure_voltage": {
       "title": {
         "en": "Voltage",
         "fr": "Tension"
       },
-      "units": "V"
+      "units": "V",
+      "getable": true,
+      "preventInsights": false
     },
     "measure_current": {
       "title": {
         "en": "Current",
         "fr": "Courant"
       },
-      "units": "A"
+      "units": "A",
+      "getable": true,
+      "preventInsights": false
     },
     "button.1": {
       "title": {
@@ -62,6 +72,10 @@
       "maintenanceAction": true,
       "getable": false,
       "setable": false
+    },
+    "measure_pm25": {
+      "getable": true,
+      "preventInsights": false
     }
   },
   "settings": [

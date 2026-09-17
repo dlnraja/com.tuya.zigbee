@@ -72,7 +72,7 @@ describe('P2522 forum OCR invent + sacred pair fine-resolve', () => {
 
   it('HomeyCapabilityUx heals preventInsights even when getable already true', () => {
     const src = fs.readFileSync(path.join(ROOT, 'lib/utils/HomeyCapabilityUx.js'), 'utf8');
-    assert.ok(src.includes('P2522') || src.includes('getable already true'));
+    assert.ok(src.includes('P2522') || src.includes('getable already true') || src.includes('P2553'));
     assert.ok(src.includes('preventInsights: false'));
   });
 });

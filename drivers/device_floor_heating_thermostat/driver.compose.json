@@ -27,7 +27,9 @@
       "title": {
         "en": "Floor Temperature",
         "fr": "Température Sol"
-      }
+      },
+      "getable": true,
+      "preventInsights": false
     },
     "thermostat_mode": {
       "values": [
@@ -59,6 +61,14 @@
       "maintenanceAction": true,
       "getable": false,
       "setable": false
+    },
+    "measure_temperature": {
+      "getable": true,
+      "preventInsights": false
+    },
+    "measure_battery": {
+      "getable": true,
+      "preventInsights": false
     }
   },
   "images": {

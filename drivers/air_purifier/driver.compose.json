@@ -29,7 +29,9 @@
         "en": "PM2.5",
         "fr": "PM2.5"
       },
-      "units": "µg/m³"
+      "units": "µg/m³",
+      "getable": true,
+      "preventInsights": false
     },
     "button.1": {
       "title": {

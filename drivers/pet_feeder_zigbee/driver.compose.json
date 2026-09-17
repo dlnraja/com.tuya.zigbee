@@ -32,7 +32,9 @@
       "title": {
         "en": "Food Empty",
         "fr": "Nourriture Vide"
-      }
+      },
+      "getable": true,
+      "preventInsights": false
     },
     "button.1": {
       "title": {

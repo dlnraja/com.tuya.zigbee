@@ -23,7 +23,9 @@
         "en": "CO2 Level",
         "fr": "Niveau CO2"
       },
-      "units": "ppm"
+      "units": "ppm",
+      "getable": true,
+      "preventInsights": false
     },
     "measure_pm25": {
       "title": {
@@ -49,7 +51,9 @@
       "title": {
         "en": "Air Quality Alert",
         "fr": "Alerte Qualité Air"
-      }
+      },
+      "getable": true,
+      "preventInsights": false
     },
     "button.1": {
       "title": {
@@ -59,6 +63,18 @@
       "maintenanceAction": true,
       "getable": false,
       "setable": false
+    },
+    "measure_temperature": {
+      "getable": true,
+      "preventInsights": false
+    },
+    "measure_humidity": {
+      "getable": true,
+      "preventInsights": false
+    },
+    "measure_power": {
+      "getable": true,
+      "preventInsights": false
     }
   },
   "energy": {
