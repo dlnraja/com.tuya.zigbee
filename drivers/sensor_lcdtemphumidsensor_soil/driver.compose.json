@@ -25,7 +25,9 @@
         "fr": "Humidité du Sol",
         "nl": "Bodemvochtigheid",
         "de": "Bodenfeuchtigkeit"
-      }
+      },
+      "getable": true,
+      "preventInsights": false
     },
     "measure_humidity": {
       "title": {
@@ -33,7 +35,9 @@
         "fr": "Humidité de l'Air",
         "nl": "Luchtvochtigheid",
         "de": "Luftfeuchtigkeit"
-      }
+      },
+      "getable": true,
+      "preventInsights": false
     },
     "alarm_water": {
       "title": {
@@ -41,7 +45,9 @@
         "fr": "Manque d'Eau",
         "nl": "Watertekort",
         "de": "Wassermangel"
-      }
+      },
+      "getable": true,
+      "preventInsights": false
     },
     "measure_ec": {
       "title": {
@@ -67,6 +73,18 @@
       "maintenanceAction": true,
       "getable": false,
       "setable": false
+    },
+    "measure_temperature": {
+      "getable": true,
+      "preventInsights": false
+    },
+    "measure_luminance": {
+      "getable": true,
+      "preventInsights": false
+    },
+    "measure_battery": {
+      "getable": true,
+      "preventInsights": false
     }
   },
   "energy": {

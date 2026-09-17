@@ -150,6 +150,10 @@
       "maintenanceAction": true,
       "getable": false,
       "setable": false
+    },
+    "alarm_contact": {
+      "getable": true,
+      "preventInsights": false
     }
   },
   "discovery": "tuya_wifi"

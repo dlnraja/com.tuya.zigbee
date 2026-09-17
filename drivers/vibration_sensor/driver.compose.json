@@ -216,6 +216,26 @@
       "maintenanceAction": true,
       "getable": false,
       "setable": false
+    },
+    "alarm_vibration": {
+      "getable": true,
+      "preventInsights": false
+    },
+    "measure_temperature": {
+      "getable": true,
+      "preventInsights": false
+    },
+    "measure_battery": {
+      "getable": true,
+      "preventInsights": false
+    },
+    "alarm_tamper": {
+      "getable": true,
+      "preventInsights": false
+    },
+    "alarm_contact": {
+      "getable": true,
+      "preventInsights": false
     }
   },
   "settings": [

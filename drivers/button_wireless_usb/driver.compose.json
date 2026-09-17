@@ -35,31 +35,41 @@
       "title": {
         "en": "Voltage",
         "fr": "Tension"
-      }
+      },
+      "getable": true,
+      "preventInsights": false
     },
     "measure_current": {
       "title": {
         "en": "Current",
         "fr": "Courant"
-      }
+      },
+      "getable": true,
+      "preventInsights": false
     },
     "measure_battery": {
       "title": {
         "en": "Battery",
         "fr": "Batterie"
-      }
+      },
+      "getable": true,
+      "preventInsights": false
     },
     "measure_power": {
       "title": {
         "en": "Power",
         "fr": "Puissance"
-      }
+      },
+      "getable": true,
+      "preventInsights": false
     },
     "meter_power": {
       "title": {
         "en": "Energy",
         "fr": "Ã‰nergie"
-      }
+      },
+      "getable": true,
+      "preventInsights": false
     },
     "button.1": {
       "title": {

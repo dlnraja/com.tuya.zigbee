@@ -318,10 +318,14 @@
         "fr": "Batterie",
         "nl": "Batterij",
         "de": "Batterie"
-      }
+      },
+      "getable": true,
+      "preventInsights": false
     },
     "measure_power": {
-      "approximated": true
+      "approximated": true,
+      "getable": true,
+      "preventInsights": false
     }
   },
   "maintenanceActions": [

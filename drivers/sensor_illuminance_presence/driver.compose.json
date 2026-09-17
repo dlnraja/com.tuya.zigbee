@@ -28,7 +28,9 @@
       },
       "units": {
         "en": "m"
-      }
+      },
+      "getable": true,
+      "preventInsights": true
     },
     "onoff": {
       "title": {
@@ -46,6 +48,30 @@
       "maintenanceAction": true,
       "getable": false,
       "setable": false
+    },
+    "alarm_motion": {
+      "getable": true,
+      "preventInsights": true
+    },
+    "measure_luminance": {
+      "getable": true,
+      "preventInsights": false
+    },
+    "measure_temperature": {
+      "getable": true,
+      "preventInsights": false
+    },
+    "measure_humidity": {
+      "getable": true,
+      "preventInsights": false
+    },
+    "alarm_human": {
+      "getable": true,
+      "preventInsights": false
+    },
+    "measure_battery": {
+      "getable": true,
+      "preventInsights": false
     }
   },
   "subDevices": [],

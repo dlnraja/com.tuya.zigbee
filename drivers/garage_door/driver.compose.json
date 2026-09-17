@@ -27,7 +27,9 @@
       "title": {
         "en": "Door Open",
         "fr": "Porte Ouverte"
-      }
+      },
+      "getable": true,
+      "preventInsights": false
     },
     "button.1": {
       "title": {

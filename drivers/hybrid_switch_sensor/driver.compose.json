@@ -18,13 +18,17 @@
       "title": {
         "en": "Temperature",
         "fr": "Température"
-      }
+      },
+      "getable": true,
+      "preventInsights": false
     },
     "measure_humidity": {
       "title": {
         "en": "Humidity",
         "fr": "Humidité"
-      }
+      },
+      "getable": true,
+      "preventInsights": false
     },
     "button.1": {
       "title": {
@@ -34,6 +38,10 @@
       "maintenanceAction": true,
       "getable": false,
       "setable": false
+    },
+    "measure_battery": {
+      "getable": true,
+      "preventInsights": false
     }
   },
   "energy": {

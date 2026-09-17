@@ -43,6 +43,14 @@
       "maintenanceAction": true,
       "getable": false,
       "setable": false
+    },
+    "measure_luminance": {
+      "getable": true,
+      "preventInsights": false
+    },
+    "alarm_motion": {
+      "getable": true,
+      "preventInsights": false
     }
   },
   "zigbee": {

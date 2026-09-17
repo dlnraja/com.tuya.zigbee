@@ -44,7 +44,9 @@
         "fr": "Aucune présence",
         "de": "Keine Anwesenheit",
         "es": "Sin presencia"
-      }
+      },
+      "getable": true,
+      "preventInsights": false
     },
     "alarm_motion": {
       "title": {
@@ -54,7 +56,8 @@
         "de": "Bewegungsalarm",
         "es": "Alarma de movimiento"
       },
-      "preventInsights": true
+      "preventInsights": true,
+      "getable": true
     },
     "measure_luminance.distance": {
       "title": {
@@ -65,7 +68,9 @@
       },
       "units": {
         "en": "m"
-      }
+      },
+      "getable": true,
+      "preventInsights": true
     },
     "alarm_motion.zone1": {
       "title": {
@@ -73,7 +78,9 @@
         "fr": "Présence Zone 1",
         "nl": "Zone 1 Aanwezigheid",
         "de": "Zone 1 Anwesenheit"
-      }
+      },
+      "getable": true,
+      "preventInsights": true
     },
     "alarm_motion.zone2": {
       "title": {
@@ -81,7 +88,9 @@
         "fr": "Présence Zone 2",
         "nl": "Zone 2 Aanwezigheid",
         "de": "Zone 2 Anwesenheit"
-      }
+      },
+      "getable": true,
+      "preventInsights": true
     },
     "alarm_motion.zone3": {
       "title": {
@@ -89,7 +98,9 @@
         "fr": "Présence Zone 3",
         "nl": "Zone 3 Aanwezigheid",
         "de": "Zone 3 Anwesenheit"
-      }
+      },
+      "getable": true,
+      "preventInsights": true
     },
     "measure_luminance.distance.zone1": {
       "title": {
@@ -100,7 +111,9 @@
       },
       "units": {
         "en": "m"
-      }
+      },
+      "getable": true,
+      "preventInsights": true
     },
     "measure_luminance.distance.zone2": {
       "title": {
@@ -111,7 +124,9 @@
       },
       "units": {
         "en": "m"
-      }
+      },
+      "getable": true,
+      "preventInsights": true
     },
     "measure_luminance.distance.zone3": {
       "title": {
@@ -122,7 +137,9 @@
       },
       "units": {
         "en": "m"
-      }
+      },
+      "getable": true,
+      "preventInsights": true
     },
     "measure_motion.classification": {
       "title": {
@@ -148,6 +165,18 @@
       "maintenanceAction": true,
       "getable": false,
       "setable": false
+    },
+    "measure_luminance": {
+      "getable": true,
+      "preventInsights": false
+    },
+    "measure_temperature": {
+      "getable": true,
+      "preventInsights": false
+    },
+    "measure_humidity": {
+      "getable": true,
+      "preventInsights": false
     }
   },
   "subDevices": [],

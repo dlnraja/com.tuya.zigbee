@@ -19,7 +19,9 @@
       "title": {
         "en": "Outdoor Temperature",
         "fr": "Température extérieure"
-      }
+      },
+      "getable": true,
+      "preventInsights": false
     },
     "button.1": {
       "title": {
@@ -29,6 +31,22 @@
       "maintenanceAction": true,
       "getable": false,
       "setable": false
+    },
+    "measure_humidity": {
+      "getable": true,
+      "preventInsights": false
+    },
+    "measure_pressure": {
+      "getable": true,
+      "preventInsights": false
+    },
+    "measure_luminance": {
+      "getable": true,
+      "preventInsights": false
+    },
+    "measure_battery": {
+      "getable": true,
+      "preventInsights": false
     }
   },
   "energy": {

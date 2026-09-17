@@ -19,13 +19,17 @@
       "title": {
         "en": "Current Temperature",
         "fr": "Température Actuelle"
-      }
+      },
+      "getable": true,
+      "preventInsights": false
     },
     "measure_humidity": {
       "title": {
         "en": "Current Humidity",
         "fr": "Humidité Actuelle"
-      }
+      },
+      "getable": true,
+      "preventInsights": false
     },
     "target_temperature": {
       "title": {
@@ -44,6 +48,10 @@
       "maintenanceAction": true,
       "getable": false,
       "setable": false
+    },
+    "measure_battery": {
+      "getable": true,
+      "preventInsights": false
     }
   },
   "energy": {

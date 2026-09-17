@@ -38,7 +38,9 @@
         "fr": "Alerte Niveau Bas",
         "nl": "Laag Niveau Alarm",
         "de": "Niedrigstand Alarm"
-      }
+      },
+      "getable": true,
+      "preventInsights": false
     },
     "alarm_water_high": {
       "title": {
@@ -46,7 +48,9 @@
         "fr": "Alerte Niveau Haut",
         "nl": "Hoog Niveau Alarm",
         "de": "Hochstand Alarm"
-      }
+      },
+      "getable": true,
+      "preventInsights": false
     },
     "alarm_water": {
       "title": {
@@ -54,7 +58,9 @@
         "fr": "Alerte Niveau",
         "nl": "Niveau Alarm",
         "de": "Standmeldung"
-      }
+      },
+      "getable": true,
+      "preventInsights": false
     },
     "button.1": {
       "title": {
@@ -64,6 +70,10 @@
       "maintenanceAction": true,
       "getable": false,
       "setable": false
+    },
+    "measure_battery": {
+      "getable": true,
+      "preventInsights": false
     }
   },
   "platforms": [

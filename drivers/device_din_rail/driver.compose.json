@@ -336,7 +336,45 @@
       "setable": false
     },
     "measure_power": {
-      "approximated": true
+      "approximated": true,
+      "getable": true,
+      "preventInsights": false
+    },
+    "alarm_motion": {
+      "getable": true,
+      "preventInsights": false
+    },
+    "alarm_contact": {
+      "getable": true,
+      "preventInsights": false
+    },
+    "measure_battery": {
+      "getable": true,
+      "preventInsights": false
+    },
+    "alarm_generic": {
+      "getable": true,
+      "preventInsights": false
+    },
+    "alarm_tamper": {
+      "getable": true,
+      "preventInsights": false
+    },
+    "meter_power": {
+      "getable": true,
+      "preventInsights": false
+    },
+    "measure_voltage": {
+      "getable": true,
+      "preventInsights": false
+    },
+    "measure_current": {
+      "getable": true,
+      "preventInsights": false
+    },
+    "meter_power.exported": {
+      "getable": true,
+      "preventInsights": false
     }
   },
   "maintenanceActions": [

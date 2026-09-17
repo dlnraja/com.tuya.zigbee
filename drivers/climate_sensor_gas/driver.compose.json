@@ -21,7 +21,9 @@
       "title": {
         "en": "Gas Alarm",
         "fr": "Alarme Gaz"
-      }
+      },
+      "getable": true,
+      "preventInsights": false
     },
     "button.1": {
       "title": {
@@ -31,6 +33,26 @@
       "maintenanceAction": true,
       "getable": false,
       "setable": false
+    },
+    "alarm_co": {
+      "getable": true,
+      "preventInsights": false
+    },
+    "alarm_co2": {
+      "getable": true,
+      "preventInsights": false
+    },
+    "alarm_gas": {
+      "getable": true,
+      "preventInsights": false
+    },
+    "measure_temperature": {
+      "getable": true,
+      "preventInsights": false
+    },
+    "measure_humidity": {
+      "getable": true,
+      "preventInsights": false
     }
   },
   "energy": {

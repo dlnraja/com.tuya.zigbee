@@ -30,7 +30,9 @@
       "title": {
         "en": "Food Low",
         "fr": "Niveau Bas"
-      }
+      },
+      "getable": true,
+      "preventInsights": false
     },
     "button.1": {
       "title": {

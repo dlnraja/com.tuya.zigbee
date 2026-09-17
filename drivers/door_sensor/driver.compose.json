@@ -25,13 +25,17 @@
       "title": {
         "en": "Contact alarm",
         "fr": "Alarme de contact"
-      }
+      },
+      "getable": true,
+      "preventInsights": false
     },
     "measure_battery": {
       "title": {
         "en": "Battery",
         "fr": "Batterie"
-      }
+      },
+      "getable": true,
+      "preventInsights": false
     }
   },
   "energy": {

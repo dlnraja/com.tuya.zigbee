@@ -22,7 +22,9 @@
     "alarm_motion": {
       "title": {
         "en": "Motion Detected"
-      }
+      },
+      "getable": true,
+      "preventInsights": false
     },
     "button.1": {
       "title": {

@@ -19,7 +19,9 @@
         "nl": "Kamer Bezet",
         "fr": "Pièce Occupée",
         "de": "Raum Besetzt"
-      }
+      },
+      "getable": true,
+      "preventInsights": false
     },
     "measure_presence_confidence": {
       "title": {

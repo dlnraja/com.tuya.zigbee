@@ -16,13 +16,17 @@
       "title": {
         "en": "Total Energy",
         "fr": "Énergie Totale"
-      }
+      },
+      "getable": true,
+      "preventInsights": false
     },
     "measure_power": {
       "title": {
         "en": "Current Power",
         "fr": "Puissance Actuelle"
-      }
+      },
+      "getable": true,
+      "preventInsights": false
     },
     "button.1": {
       "title": {
@@ -32,6 +36,14 @@
       "maintenanceAction": true,
       "getable": false,
       "setable": false
+    },
+    "measure_temperature": {
+      "getable": true,
+      "preventInsights": false
+    },
+    "alarm_battery": {
+      "getable": true,
+      "preventInsights": false
     }
   },
   "zigbee": {

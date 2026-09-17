@@ -30,35 +30,45 @@
         "en": "Total Power",
         "fr": "Puissance Totale"
       },
-      "units": "W"
+      "units": "W",
+      "getable": true,
+      "preventInsights": false
     },
     "measure_power.phase1": {
       "title": {
         "en": "Phase 1",
         "fr": "Phase 1"
       },
-      "units": "W"
+      "units": "W",
+      "getable": true,
+      "preventInsights": false
     },
     "measure_power.phase2": {
       "title": {
         "en": "Phase 2",
         "fr": "Phase 2"
       },
-      "units": "W"
+      "units": "W",
+      "getable": true,
+      "preventInsights": false
     },
     "measure_power.phase3": {
       "title": {
         "en": "Phase 3",
         "fr": "Phase 3"
       },
-      "units": "W"
+      "units": "W",
+      "getable": true,
+      "preventInsights": false
     },
     "meter_power": {
       "title": {
         "en": "Energy",
         "fr": "Énergie"
       },
-      "units": "kWh"
+      "units": "kWh",
+      "getable": true,
+      "preventInsights": false
     },
     "measure_frequency": {
       "title": {
@@ -78,7 +88,9 @@
         "en": "Current B",
         "fr": "Courant B"
       },
-      "units": "A"
+      "units": "A",
+      "getable": true,
+      "preventInsights": false
     },
     "button.1": {
       "title": {
@@ -88,6 +100,14 @@
       "maintenanceAction": true,
       "getable": false,
       "setable": false
+    },
+    "measure_current": {
+      "getable": true,
+      "preventInsights": false
+    },
+    "measure_voltage": {
+      "getable": true,
+      "preventInsights": false
     }
   },
   "settings": [

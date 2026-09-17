@@ -79,7 +79,21 @@
         "fr": "Humidite du Sol",
         "nl": "Bodemvochtigheid",
         "de": "Bodenfeuchtigkeit"
-      }
+      },
+      "getable": true,
+      "preventInsights": false
+    },
+    "measure_temperature": {
+      "getable": true,
+      "preventInsights": false
+    },
+    "measure_humidity": {
+      "getable": true,
+      "preventInsights": false
+    },
+    "measure_battery": {
+      "getable": true,
+      "preventInsights": false
     }
   }
 }

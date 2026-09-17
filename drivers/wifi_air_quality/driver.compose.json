@@ -152,6 +152,22 @@
       "maintenanceAction": true,
       "getable": false,
       "setable": false
+    },
+    "measure_co2": {
+      "getable": true,
+      "preventInsights": false
+    },
+    "measure_temperature": {
+      "getable": true,
+      "preventInsights": false
+    },
+    "measure_humidity": {
+      "getable": true,
+      "preventInsights": false
+    },
+    "measure_pm25": {
+      "getable": true,
+      "preventInsights": false
     }
   },
   "discovery": "tuya_wifi"

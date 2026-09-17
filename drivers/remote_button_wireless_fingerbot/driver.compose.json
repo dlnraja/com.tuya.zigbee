@@ -624,7 +624,8 @@
         "en": "Battery",
         "fr": "Batterie"
       },
-      "preventInsights": false
+      "preventInsights": false,
+      "getable": true
     },
     "button.toggle": {
       "title": {
@@ -664,7 +665,21 @@
       "getable": false
     },
     "measure_power": {
-      "approximated": true
+      "approximated": true,
+      "getable": true,
+      "preventInsights": false
+    },
+    "meter_power": {
+      "getable": true,
+      "preventInsights": false
+    },
+    "measure_voltage": {
+      "getable": true,
+      "preventInsights": false
+    },
+    "measure_current": {
+      "getable": true,
+      "preventInsights": false
     }
   },
   "metadata": {

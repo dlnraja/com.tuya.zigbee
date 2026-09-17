@@ -22,7 +22,9 @@
       "title": {
         "en": "Current Temperature",
         "fr": "Température Actuelle"
-      }
+      },
+      "getable": true,
+      "preventInsights": false
     },
     "target_temperature": {
       "title": {
@@ -47,6 +49,22 @@
       "maintenanceAction": true,
       "getable": false,
       "setable": false
+    },
+    "measure_power": {
+      "getable": true,
+      "preventInsights": false
+    },
+    "meter_power": {
+      "getable": true,
+      "preventInsights": false
+    },
+    "measure_voltage": {
+      "getable": true,
+      "preventInsights": false
+    },
+    "measure_current": {
+      "getable": true,
+      "preventInsights": false
     }
   },
   "zigbee": {
