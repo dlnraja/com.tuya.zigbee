@@ -171,7 +171,7 @@ function harvestCouples() {
   return [...couples.values()];
 }
 
-function applyToDriver(driverId, mfrs, pids) {
+function applyToDriver(driverId, mfrs, pids, byMfr) {
   const fp = path.join(ROOT, 'drivers', driverId, 'driver.compose.json');
   const before = JSON.parse(fs.readFileSync(fp, 'utf8'));
   const after = JSON.parse(JSON.stringify(before));
@@ -179,8 +179,15 @@ function applyToDriver(driverId, mfrs, pids) {
   const forms = [];
   for (const m of mfrs) {
     forms.push(...dualCaseForms(m));
-    // Complementary OEM MCU siblings (TZE200/204/284) — same tail only
-    if (/_TZE(200|204|284)_/i.test(m)) forms.push(...oemSiblings(m));
+    // OEM siblings only if not already locked on another driver
+    if (/_TZE(200|204|284)_/i.test(m)) {
+      for (const sib of oemSiblings(m)) {
+        const hits = byMfr.get(String(sib).toLowerCase()) || [];
+        const other = hits.filter((h) => h.driverId !== driverId);
+        if (other.length) continue; // Contre quoi: cross-driver bleed
+        forms.push(sib);
+      }
+    }
   }
   after.zigbee.manufacturerName = appendExactIdentityForms(after.zigbee.manufacturerName, forms);
   after.zigbee.productId = appendExactIdentityForms(after.zigbee.productId, pids);
@@ -232,7 +239,7 @@ function main() {
   }
 
   for (const [driverId, bucket] of byDriver) {
-    const r = applyToDriver(driverId, [...bucket.mfrs], [...bucket.pids]);
+    const r = applyToDriver(driverId, [...bucket.mfrs], [...bucket.pids], byMfr);
     applied.push({
       driverId,
       mfrCount: bucket.mfrs.size,
@@ -252,7 +259,7 @@ function main() {
       seenMfr.add(k);
       const hits = byMfr.get(k) || [];
       for (const h of hits) {
-        const r = applyToDriver(h.driverId, [m], []);
+        const r = applyToDriver(h.driverId, [m], [], byMfr);
         if (r.changed) caseBoost += 1;
       }
     }
