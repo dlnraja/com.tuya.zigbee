@@ -1,37 +1,10 @@
 {
   "title": "[APP][Pro] Universal TUYA Zigbee Device App - test",
-  "highest": 2238,
+  "highest": 2241,
   "harvested": 39,
-  "needFrom": 2199,
-  "generated": "2026-09-15T00:44:47.239Z",
+  "needFrom": 2202,
+  "generated": "2026-09-17T05:29:12.250Z",
   "posts": [
-    {
-      "n": 2199,
-      "id": 772078,
-      "user": "A_Tas",
-      "created": "2026-08-25T22:33:35.479Z",
-      "images": [],
-      "text": "First of all, thank you for your great work with the app. I have the latest trial version. Thanks to these, the Moes presence detector was able to connect ZSS-LP-HP02-MS to the manufacturer ID: _TZ3218_t9ynfz4x. Unfortunately, there is always an error message when saving patamers, such as sensitivity, etc. Do you have a solution for this? I use the current Homey Pro mini and the sensor is connected to Zigbee. Thank you in advance and many greetings from Germany. Kadir",
-      "links": []
-    },
-    {
-      "n": 2200,
-      "id": 772079,
-      "user": "dlnraja",
-      "created": "2026-08-25T22:44:45.573Z",
-      "images": [],
-      "text": "you",
-      "links": []
-    },
-    {
-      "n": 2201,
-      "id": 772087,
-      "user": "dlnraja",
-      "created": "2026-08-25T23:47:50.614Z",
-      "images": [],
-      "text": "A_Tas ( #2199 ) : update ≥9.0.651, retester Motion/Static Sensitivity. meter91 ( #2189 ) : update + re-pair → scene_switch_4 . Toni ( #2191 ) : update + re-pair → din_rail_meter . Peter ( #2190 ) : re-pair smartbutton (bouton maintenu) + send diag with device info couple. ( pid + mfs) Gabriel ( #2188 ) : xonfirm pid TS0004 via diag interview. please do all these and let me know",
-      "links": []
-    },
     {
       "n": 2202,
       "id": 772137,
@@ -514,6 +487,49 @@
         "https://us1.discourse-cdn.com/flex025/uploads/athom/optimized/3X/7/6/760b32b476ef666d760e70be4f957ad411b040f9_2_336x750.jpeg",
         "https://us1.discourse-cdn.com/flex025/uploads/athom/optimized/3X/7/6/760b32b476ef666d760e70be4f957ad411b040f9_2_448x1000.jpeg"
       ]
+    },
+    {
+      "n": 2239,
+      "id": 778919,
+      "user": "Peter_van_Werkhoven",
+      "created": "2026-09-15T06:24:05.060Z",
+      "images": [
+        "https://us1.discourse-cdn.com/flex025/uploads/athom/original/3X/e/b/ebaaaef921cc517c2a2a60196a9ba920cf557b0c.jpeg"
+      ],
+      "text": "Hi Dylan Good morning you fixed it again got Battery readings again from Smartbutton only still no History tab but that’s not so important. Diagnostic code b8b78521-047e-4e3d-a5f7-6489a564377b 1000046416 1220×2712 82.5 KB Thanks a lot for all the fixes and have a beautiful day, best regards Peter.",
+      "links": [
+        "https://us1.discourse-cdn.com/flex025/uploads/athom/original/3X/e/b/ebaaaef921cc517c2a2a60196a9ba920cf557b0c.jpeg",
+        "https://us1.discourse-cdn.com/flex025/uploads/athom/optimized/3X/e/b/ebaaaef921cc517c2a2a60196a9ba920cf557b0c_2_224x500.jpeg",
+        "https://us1.discourse-cdn.com/flex025/uploads/athom/optimized/3X/e/b/ebaaaef921cc517c2a2a60196a9ba920cf557b0c_2_224x500.jpeg,",
+        "https://us1.discourse-cdn.com/flex025/uploads/athom/optimized/3X/e/b/ebaaaef921cc517c2a2a60196a9ba920cf557b0c_2_336x750.jpeg",
+        "https://us1.discourse-cdn.com/flex025/uploads/athom/optimized/3X/e/b/ebaaaef921cc517c2a2a60196a9ba920cf557b0c_2_448x1000.jpeg"
+      ]
+    },
+    {
+      "n": 2240,
+      "id": 779205,
+      "user": "VicHY",
+      "created": "2026-09-15T20:29:01.515Z",
+      "images": [
+        "https://us1.discourse-cdn.com/flex025/uploads/athom/original/3X/b/1/b1dd7b74fd1ed2e04a1b1635ead1a5add03c0553.jpeg"
+      ],
+      "text": "Thanks @dlnraja for the updates. It seems the relay type doesn’t change on its own anymore as long as I don’t update the app, so I’ve disabled automatic updates. But, when I configure flows, if I try to trigger a flow upon detecting human presence, the trigger doesn’t fire, even though the sensor does indicate that it detects human presence. My impression is that it isn’t interpreting the presence correctly and passing that information to the “presence detected” card. 124820 1080×2352 183 KB 74e5cae7-dcf6-467d-a019-16e47fc49967",
+      "links": [
+        "https://us1.discourse-cdn.com/flex025/uploads/athom/original/3X/b/1/b1dd7b74fd1ed2e04a1b1635ead1a5add03c0553.jpeg",
+        "https://us1.discourse-cdn.com/flex025/uploads/athom/optimized/3X/b/1/b1dd7b74fd1ed2e04a1b1635ead1a5add03c0553_2_229x499.jpeg",
+        "https://us1.discourse-cdn.com/flex025/uploads/athom/optimized/3X/b/1/b1dd7b74fd1ed2e04a1b1635ead1a5add03c0553_2_229x499.jpeg,",
+        "https://us1.discourse-cdn.com/flex025/uploads/athom/optimized/3X/b/1/b1dd7b74fd1ed2e04a1b1635ead1a5add03c0553_2_343x748.jpeg",
+        "https://us1.discourse-cdn.com/flex025/uploads/athom/optimized/3X/b/1/b1dd7b74fd1ed2e04a1b1635ead1a5add03c0553_2_458x998.jpeg"
+      ]
+    },
+    {
+      "n": 2241,
+      "id": 779544,
+      "user": "VicHY",
+      "created": "2026-09-16T21:14:17.654Z",
+      "images": [],
+      "text": "Hi @dlnraja , even though I have updates blocked, the sensor has changed type again and stopped working. It stopped working right around the time a new version was released, even though the app on my Homey hasn’t actually updated… Thanks a lot; let me know if you need me to provide any details. Regards.",
+      "links": []
     }
   ]
 }

@@ -1,15 +1,6 @@
-# T140352 live harvest 2026-09-15T00:44:47.239Z
+# T140352 live harvest 2026-09-17T05:29:12.250Z
 
-Highest **#2238** · posts **#2199–#2238** (39) · silent only · never invent pid
-
-## #2199 @A_Tas
-First of all, thank you for your great work with the app. I have the latest trial version. Thanks to these, the Moes presence detector was able to connect ZSS-LP-HP02-MS to the manufacturer ID: _TZ3218_t9ynfz4x. Unfortunately, there is always an error message when saving patamers, such as sensitivity, etc. Do you have a solution for this? I use the current Homey Pro mini and the sensor is connected to Zigbee. Thank you in advance and many greetings from Germany. Kadir
-
-## #2200 @dlnraja
-you
-
-## #2201 @dlnraja
-A_Tas ( #2199 ) : update ≥9.0.651, retester Motion/Static Sensitivity. meter91 ( #2189 ) : update + re-pair → scene_switch_4 . Toni ( #2191 ) : update + re-pair → din_rail_meter . Peter ( #2190 ) : re-pair smartbutton (bouton maintenu) + send diag with device info couple. ( pid + mfs) Gabriel ( #2188 ) : xonfirm pid TS0004 via diag interview. please do all these and let me know
+Highest **#2241** · posts **#2202–#2241** (39) · silent only · never invent pid
 
 ## #2202 @Peter_van_Werkhoven
 Hi Dylan good morning I’ve installed the latest version this morning 9.0.661 and I see that the Waterdetector sensor is not connected anymore it says that device is not there because of wrong driver, I was so pleased before that it was finally working after months of trying 1000041404 1220×2712 113 KB 1000041406 1220×2712 194 KB I also repaired the Smartbutton again but still no response to Homey and his flow. 1000041405 1220×2712 194 KB Diagnostic code 95a7c6e5-969f-4469-be5d-c96b7cb42b60 Good luck,thanks and best regards Peter.
@@ -168,13 +159,28 @@ Hi Dylan Good evening, after your last update still no battery reading and Histo
   - https://us1.discourse-cdn.com/flex025/uploads/athom/original/3X/7/6/760b32b476ef666d760e70be4f957ad411b040f9.jpeg
 - links: https://us1.discourse-cdn.com/flex025/uploads/athom/original/3X/4/8/480d684325ccf1584f9128740fed90f7b4562e4f.jpeg | https://us1.discourse-cdn.com/flex025/uploads/athom/optimized/3X/4/8/480d684325ccf1584f9128740fed90f7b4562e4f_2_224x500.jpeg | https://us1.discourse-cdn.com/flex025/uploads/athom/optimized/3X/4/8/480d684325ccf1584f9128740fed90f7b4562e4f_2_224x500.jpeg, | https://us1.discourse-cdn.com/flex025/uploads/athom/optimized/3X/4/8/480d684325ccf1584f9128740fed90f7b4562e4f_2_336x750.jpeg | https://us1.discourse-cdn.com/flex025/uploads/athom/optimized/3X/4/8/480d684325ccf1584f9128740fed90f7b4562e4f_2_448x1000.jpeg | https://us1.discourse-cdn.com/flex025/uploads/athom/original/3X/7/6/760b32b476ef666d760e70be4f957ad411b040f9.jpeg | https://us1.discourse-cdn.com/flex025/uploads/athom/optimized/3X/7/6/760b32b476ef666d760e70be4f957ad411b040f9_2_224x500.jpeg | https://us1.discourse-cdn.com/flex025/uploads/athom/optimized/3X/7/6/760b32b476ef666d760e70be4f957ad411b040f9_2_224x500.jpeg, | https://us1.discourse-cdn.com/flex025/uploads/athom/optimized/3X/7/6/760b32b476ef666d760e70be4f957ad411b040f9_2_336x750.jpeg | https://us1.discourse-cdn.com/flex025/uploads/athom/optimized/3X/7/6/760b32b476ef666d760e70be4f957ad411b040f9_2_448x1000.jpeg
 
+## #2239 @Peter_van_Werkhoven
+Hi Dylan Good morning you fixed it again got Battery readings again from Smartbutton only still no History tab but that’s not so important. Diagnostic code b8b78521-047e-4e3d-a5f7-6489a564377b 1000046416 1220×2712 82.5 KB Thanks a lot for all the fixes and have a beautiful day, best regards Peter.
+- images (1):
+  - https://us1.discourse-cdn.com/flex025/uploads/athom/original/3X/e/b/ebaaaef921cc517c2a2a60196a9ba920cf557b0c.jpeg
+- links: https://us1.discourse-cdn.com/flex025/uploads/athom/original/3X/e/b/ebaaaef921cc517c2a2a60196a9ba920cf557b0c.jpeg | https://us1.discourse-cdn.com/flex025/uploads/athom/optimized/3X/e/b/ebaaaef921cc517c2a2a60196a9ba920cf557b0c_2_224x500.jpeg | https://us1.discourse-cdn.com/flex025/uploads/athom/optimized/3X/e/b/ebaaaef921cc517c2a2a60196a9ba920cf557b0c_2_224x500.jpeg, | https://us1.discourse-cdn.com/flex025/uploads/athom/optimized/3X/e/b/ebaaaef921cc517c2a2a60196a9ba920cf557b0c_2_336x750.jpeg | https://us1.discourse-cdn.com/flex025/uploads/athom/optimized/3X/e/b/ebaaaef921cc517c2a2a60196a9ba920cf557b0c_2_448x1000.jpeg
+
+## #2240 @VicHY
+Thanks @dlnraja for the updates. It seems the relay type doesn’t change on its own anymore as long as I don’t update the app, so I’ve disabled automatic updates. But, when I configure flows, if I try to trigger a flow upon detecting human presence, the trigger doesn’t fire, even though the sensor does indicate that it detects human presence. My impression is that it isn’t interpreting the presence correctly and passing that information to the “presence detected” card. 124820 1080×2352 183 KB 74e5cae7-dcf6-467d-a019-16e47fc49967
+- images (1):
+  - https://us1.discourse-cdn.com/flex025/uploads/athom/original/3X/b/1/b1dd7b74fd1ed2e04a1b1635ead1a5add03c0553.jpeg
+- links: https://us1.discourse-cdn.com/flex025/uploads/athom/original/3X/b/1/b1dd7b74fd1ed2e04a1b1635ead1a5add03c0553.jpeg | https://us1.discourse-cdn.com/flex025/uploads/athom/optimized/3X/b/1/b1dd7b74fd1ed2e04a1b1635ead1a5add03c0553_2_229x499.jpeg | https://us1.discourse-cdn.com/flex025/uploads/athom/optimized/3X/b/1/b1dd7b74fd1ed2e04a1b1635ead1a5add03c0553_2_229x499.jpeg, | https://us1.discourse-cdn.com/flex025/uploads/athom/optimized/3X/b/1/b1dd7b74fd1ed2e04a1b1635ead1a5add03c0553_2_343x748.jpeg | https://us1.discourse-cdn.com/flex025/uploads/athom/optimized/3X/b/1/b1dd7b74fd1ed2e04a1b1635ead1a5add03c0553_2_458x998.jpeg
+
+## #2241 @VicHY
+Hi @dlnraja , even though I have updates blocked, the sensor has changed type again and stopped working. It stopped working right around the time a new version was released, even though the app on my Homey hasn’t actually updated… Thanks a lot; let me know if you need me to provide any details. Regards.
+
 ## URL hosts (recent window)
 ```json
 {
-  "us1.discourse-cdn.com": 106,
+  "us1.discourse-cdn.com": 116,
   "github.com": 3,
   "www.bseed.com": 1
 }
 ```
 
-## Image count: 22
+## Image count: 24
