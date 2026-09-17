@@ -1,14 +1,14 @@
 {
-  "id": "P2558-elegant-provenance-ux",
-  "version": "1.1.0",
+  "id": "P2560-smart-flow-local-learner",
+  "version": "1.0.0",
   "updated": "2026-09-17",
   "classify": "BOTH",
   "why": {
-    "pourquoi": "Prioritize precise real measurements; label estimate/calc/predict elegantly in titles + flows",
-    "comment": "DataProvenance priority + ≈/ƒ/→ marks; flow cards measured/estimated/calculated/predicted/not_measured",
-    "pourQui": "Homey UI + Smart Flow builders (BOTH)",
-    "quand": "every tracked capability write",
-    "contreQuoi": "estimate looking like meter; estimate overwriting measured"
+    "pourquoi": "Elegant Smart Flow provenance cards + local habit/power learning (dim/color/on-time/EMA/bias) without cloud AI",
+    "comment": "LocalSmartEnergyLearner + DeviceTelemetryEstimator wire; ≈/ƒ/→ flow titles + quality_label token",
+    "pourQui": "Homey Flow builders + energy Insights (BOTH)",
+    "quand": "every energy tick + measured power while ON + provenance change",
+    "contreQuoi": "flat nominal-only estimates; soft data looking like live meters"
   },
   "origins": ["measured", "calculated", "estimated", "predicted"],
   "priority": { "measured": 100, "calculated": 70, "estimated": 40, "predicted": 20 },
@@ -26,7 +26,20 @@
       "telemetry_is_predicted",
       "telemetry_is_not_measured"
     ],
-    "triggers": ["telemetry_source_changed"]
+    "triggers": ["telemetry_source_changed"],
+    "triggerTokens": ["capability", "previous", "origin", "quality_label"]
   },
-  "gate": "npm run check:p2558"
+  "learner": "LocalSmartEnergyLearner",
+  "learnerInputs": [
+    "usage_on_ms",
+    "usage_off_ms",
+    "dim",
+    "light_mode",
+    "measured_power_ema",
+    "estimate_bias",
+    "energy-consumption-reference",
+    "nominal_power_settings"
+  ],
+  "related": ["P2556", "P2558", "P2560"],
+  "gate": "npm run check:p2560"
 }

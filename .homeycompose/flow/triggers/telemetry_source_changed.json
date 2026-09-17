@@ -1,16 +1,16 @@
 {
   "id": "telemetry_source_changed",
   "title": {
-    "en": "Value quality changed (measured / ≈ estimated / ƒ calculated / → predicted)",
-    "fr": "Qualité de la valeur changée (mesuré / ≈ estimé / ƒ calculé / → prévu)",
-    "nl": "Waardekwaliteit gewijzigd (gemeten / ≈ geschat / ƒ berekend / → voorspeld)",
-    "de": "Wertqualität geändert (gemessen / ≈ geschätzt / ƒ berechnet / → prognostiziert)"
+    "en": "Smart · value quality changed (live / ≈ / ƒ / →)",
+    "fr": "Smart · qualité de la valeur changée (live / ≈ / ƒ / →)",
+    "nl": "Smart · waardekwaliteit gewijzigd (live / ≈ / ƒ / →)",
+    "de": "Smart · Wertqualität geändert (live / ≈ / ƒ / →)"
   },
   "hint": {
-    "en": "Fires when a capability switches between real measurement and smart estimate, calculation or prediction",
-    "fr": "Se déclenche quand une capability passe entre mesure réelle et estimation, calcul ou prédiction intelligente",
-    "nl": "Triggert bij wissel tussen echte meting en schatting/berekening/voorspelling",
-    "de": "Löst aus beim Wechsel zwischen Messung und Schätzung/Berechnung/Prognose"
+    "en": "Fires when a capability switches between live measurement, intelligent estimate, calculation or local prediction",
+    "fr": "Quand une capability passe entre mesure live, estimation intelligente, calcul ou prédiction locale",
+    "nl": "Bij wissel tussen live meting, schatting, berekening of lokale voorspelling",
+    "de": "Beim Wechsel zwischen Live-Messung, Schätzung, Berechnung oder lokaler Prognose"
   },
   "tokens": [
     {
@@ -30,6 +30,17 @@
       "type": "string",
       "title": { "en": "New quality", "fr": "Nouvelle qualité", "nl": "Nieuwe kwaliteit", "de": "Neue Qualität" },
       "example": "measured"
+    },
+    {
+      "name": "quality_label",
+      "type": "string",
+      "title": {
+        "en": "Quality label (human)",
+        "fr": "Libellé qualité (lisible)",
+        "nl": "Kwaliteitslabel",
+        "de": "Qualitätslabel"
+      },
+      "example": "real measurement"
     }
   ],
   "args": [

@@ -1,16 +1,16 @@
 {
   "id": "telemetry_is_measured",
   "title": {
-    "en": "The !{{value is|value is not}} a precise real measurement",
-    "fr": "La valeur !{{est une mesure réelle précise|n'est pas une mesure réelle}}",
-    "nl": "De waarde !{{is een precieze echte meting|is geen echte meting}}",
-    "de": "Der Wert !{{ist eine präzise echte Messung|ist keine echte Messung}}"
+    "en": "Smart · !{{value is|value is not}} a precise live measurement",
+    "fr": "Smart · la valeur !{{est|n'est pas}} une mesure live précise",
+    "nl": "Smart · de waarde !{{is|is geen}} precieze live meting",
+    "de": "Smart · der Wert !{{ist|ist keine}} präzise Live-Messung"
   },
   "hint": {
-    "en": "Live device report (Zigbee/ZCL/EF00) — highest priority. Clean title, no ≈ / ƒ / → mark",
-    "fr": "Relevé live du device (Zigbee/ZCL/EF00) — priorité maximale. Titre propre, sans marque ≈ / ƒ / →",
-    "nl": "Live apparaatmeting — hoogste prioriteit. Schone titel",
-    "de": "Live-Gerätemeldung — höchste Priorität. Sauberer Titel"
+    "en": "Highest trust — Zigbee/ZCL/EF00 live report. Device title stays clean (no ≈ / ƒ / →).",
+    "fr": "Confiance max — relevé live Zigbee/ZCL/EF00. Titre device propre (sans ≈ / ƒ / →).",
+    "nl": "Hoogste betrouwbaarheid — live Zigbee-rapport. Schone titel.",
+    "de": "Höchstes Vertrauen — Live-Zigbee-Meldung. Sauberer Titel."
   },
   "args": [
     {
@@ -28,13 +28,13 @@
         "de": "Wert"
       },
       "values": [
-        { "id": "measure_power", "title": { "en": "Power (W)", "fr": "Puissance (W)" } },
-        { "id": "measure_voltage", "title": { "en": "Voltage (V)", "fr": "Tension (V)" } },
-        { "id": "measure_current", "title": { "en": "Current (A)", "fr": "Courant (A)" } },
-        { "id": "meter_power", "title": { "en": "Energy (kWh)", "fr": "Énergie (kWh)" } },
-        { "id": "measure_battery", "title": { "en": "Battery (%)", "fr": "Batterie (%)" } },
-        { "id": "measure_temperature", "title": { "en": "Temperature", "fr": "Température" } },
-        { "id": "measure_humidity", "title": { "en": "Humidity", "fr": "Humidité" } }
+        { "id": "measure_power", "title": { "en": "Power (W)", "fr": "Puissance (W)", "nl": "Vermogen (W)", "de": "Leistung (W)" } },
+        { "id": "measure_voltage", "title": { "en": "Voltage (V)", "fr": "Tension (V)", "nl": "Spanning (V)", "de": "Spannung (V)" } },
+        { "id": "measure_current", "title": { "en": "Current (A)", "fr": "Courant (A)", "nl": "Stroom (A)", "de": "Strom (A)" } },
+        { "id": "meter_power", "title": { "en": "Energy (kWh)", "fr": "Énergie (kWh)", "nl": "Energie (kWh)", "de": "Energie (kWh)" } },
+        { "id": "measure_battery", "title": { "en": "Battery (%)", "fr": "Batterie (%)", "nl": "Batterij (%)", "de": "Batterie (%)" } },
+        { "id": "measure_temperature", "title": { "en": "Temperature", "fr": "Température", "nl": "Temperatuur", "de": "Temperatur" } },
+        { "id": "measure_humidity", "title": { "en": "Humidity", "fr": "Humidité", "nl": "Vochtigheid", "de": "Feuchtigkeit" } }
       ]
     }
   ]
