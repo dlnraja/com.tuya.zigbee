@@ -1,6 +1,6 @@
 {
   "name": "com.dlnraja.tuya.zigbee",
-  "version": "5.12.239",
+  "version": "5.12.240",
   "description": "Tuya Unified Zigbee - Local-first control with AI automation",
   "main": "app.js",
   "scripts": {
@@ -231,7 +231,8 @@
     "check:p2544": "node --test test/critical/p2544-complementary-coverage-max-ota.test.js",
     "check:p246x": "node --test test/critical/p2460-bseed-tx-ysdv91bk.test.js test/critical/p2461-peter-2230-smartbutton-am43.test.js test/critical/p2467-moes-ef00-initialize.test.js test/critical/p2468-joep-frankever-vichy.test.js test/critical/p2472a-vichy-compose-no-battery-energy.test.js test/critical/p2473-ef00-only-interview-max-fallback.test.js test/critical/p2480-motionsensor-driver-not-initialized.test.js",
     "check:p248x": "npm run check:p2480 && npm run check:p2481 && npm run check:p2484 && npm run check:p2490",
-    "check:p2545g": "node --test test/critical/p2545g-l14-smart-battery.test.js"
+    "check:p2545g": "node --test test/critical/p2545g-l14-smart-battery.test.js",
+    "check:p2546": "node --test test/critical/p2546-vichy-radar-periodic-heal.test.js"
   },
   "keywords": [
     "homey",
