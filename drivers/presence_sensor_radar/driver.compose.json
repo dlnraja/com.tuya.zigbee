@@ -23,6 +23,39 @@
     "button.1"
   ],
   "capabilitiesOptions": {
+    "alarm_human": {
+      "title": {
+        "en": "Human presence",
+        "nl": "Menselijke aanwezigheid",
+        "fr": "Présence humaine",
+        "de": "Menschliche Anwesenheit",
+        "es": "Presencia humana"
+      },
+      "insightsTitleTrue": {
+        "en": "Presence detected",
+        "nl": "Aanwezigheid gedetecteerd",
+        "fr": "Présence détectée",
+        "de": "Anwesenheit erkannt",
+        "es": "Presencia detectada"
+      },
+      "insightsTitleFalse": {
+        "en": "No presence",
+        "nl": "Geen aanwezigheid",
+        "fr": "Aucune présence",
+        "de": "Keine Anwesenheit",
+        "es": "Sin presencia"
+      }
+    },
+    "alarm_motion": {
+      "title": {
+        "en": "Motion alarm",
+        "nl": "Bewegingsalarm",
+        "fr": "Alarme de mouvement",
+        "de": "Bewegungsalarm",
+        "es": "Alarma de movimiento"
+      },
+      "preventInsights": true
+    },
     "measure_luminance.distance": {
       "title": {
         "en": "Detection Distance",
