@@ -1749,5 +1749,8 @@
   },
   "5.12.240": {
     "en": "Reliability BOTH: VicHY radar periodic curtain/class heal + presence flow edge (P2546)."
+  },
+  "5.12.241": {
+    "en": "Improved Zigbee init safety and battery reporting (SDK3 P216)."
   }
 }
