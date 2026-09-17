@@ -1,0 +1,32 @@
+{
+  "id": "welcome_home_soft_enroll",
+  "title": {
+    "en": "Welcome Home Soft — lights on zone occupy",
+    "fr": "Welcome Home Soft — lumières à l'occupation"
+  },
+  "hint": {
+    "en": "When Lamp Mesh zone becomes occupied, soft-fade welcome lights on",
+    "fr": "Quand la zone maillage est occupée, fondu d'accueil"
+  },
+  "args": [
+    {
+      "type": "text",
+      "name": "zone",
+      "title": { "en": "Zone id", "fr": "Id zone" },
+      "value": "home"
+    },
+    {
+      "type": "device",
+      "name": "light_a",
+      "filter": "capabilities=onoff",
+      "title": { "en": "Welcome light A", "fr": "Lumière accueil A" }
+    },
+    {
+      "type": "device",
+      "name": "light_b",
+      "filter": "capabilities=onoff",
+      "title": { "en": "Welcome light B (optional)", "fr": "Lumière accueil B (option)" },
+      "optional": true
+    }
+  ]
+}

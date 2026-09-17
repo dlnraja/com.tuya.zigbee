@@ -1,0 +1,28 @@
+{
+  "id": "mirror_light_sync_enroll",
+  "title": {
+    "en": "Mirror Light Sync — master to followers",
+    "fr": "Mirror Light Sync — maître vers suiveurs"
+  },
+  "args": [
+    {
+      "type": "device",
+      "name": "master",
+      "filter": "capabilities=onoff",
+      "title": { "en": "Master light", "fr": "Lumière maître" }
+    },
+    {
+      "type": "device",
+      "name": "follower_a",
+      "filter": "capabilities=onoff",
+      "title": { "en": "Follower A", "fr": "Suiveur A" }
+    },
+    {
+      "type": "device",
+      "name": "follower_b",
+      "filter": "capabilities=onoff",
+      "title": { "en": "Follower B (optional)", "fr": "Suiveur B (option)" },
+      "optional": true
+    }
+  ]
+}

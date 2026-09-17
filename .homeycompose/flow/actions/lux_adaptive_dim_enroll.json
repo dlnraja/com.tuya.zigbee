@@ -1,0 +1,26 @@
+{
+  "id": "lux_adaptive_dim_enroll",
+  "title": {
+    "en": "Enroll Lux Adaptive Dim",
+    "fr": "Inscrire Lux Adaptive Dim"
+  },
+  "hint": {
+    "en": "Soft-dim light from room lux (illuminance-aware lighting)",
+    "fr": "Ajuste la luminosité selon le lux pièce"
+  },
+  "args": [
+    {
+      "type": "device",
+      "name": "light",
+      "filter": "capabilities=dim",
+      "title": { "en": "Light", "fr": "Lumière" }
+    },
+    {
+      "type": "device",
+      "name": "lux_sensor",
+      "filter": "capabilities=measure_luminance",
+      "title": { "en": "Lux sensor (optional)", "fr": "Capteur lux (option)" },
+      "optional": true
+    }
+  ]
+}

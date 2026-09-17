@@ -1,92 +1,136 @@
 {
   "id": "P2563-world-zigbee-smart-features",
-  "version": "2.0.0",
+  "version": "3.0.0",
   "updated": "2026-09-17",
   "classify": "MASTER_ONLY",
   "policy": {
     "brandingFreeUi": true,
     "forbiddenUiTokens": [
       "Hue", "Philips", "Signify", "MotionAware", "True Tone", "TruTone",
-      "Ambilight", "SpaceSense", "WiZ", "Lutron", "HomeKit", "Adaptive Lighting"
+      "Ambilight", "SpaceSense", "WiZ", "Lutron", "HomeKit", "Adaptive Lighting",
+      "Dirigera", "TRÅDFRI", "Tradfri", "Aqara", "SmartThings", "Xiaomi", "Yeelight"
     ],
-    "note": "Catalog maps commercial concepts → generic Universal Tuya reimplementations. P2564 = full Homey-feasible."
+    "note": "Maps commercial hub concepts → Universal Tuya unbranded reimplementations. P2565 = multi-vendor wave."
   },
   "markets": {
     "eu_uk": ["Signify Hue Bridge/Pro", "IKEA Dirigera", "Aqara Hub M3", "Homey Pro", "deCONZ"],
-    "na": ["Hue Bridge/Pro", "SmartThings", "Hubitat", "Home Assistant Z2M/ZHA"],
+    "na": ["Hue Bridge/Pro", "SmartThings", "Hubitat", "Lutron", "Home Assistant Z2M/ZHA"],
     "apac": ["Aqara", "Tuya hubs", "Xiaomi", "Samsung SmartThings"],
     "open": ["Zigbee2MQTT", "ZHA", "deCONZ", "Zigbee Alliance Ambient Sensing (CSA)"]
   },
   "gatewayConcepts": [
     {
       "commercial": "Bridge Pro MotionAware / WiZ SpaceSense",
+      "vendors": ["Signify", "WiZ"],
       "genericId": "lamp_mesh_occupancy",
       "uiName": { "en": "Lamp Mesh Occupancy", "fr": "Occupation maillage lampes" },
       "feasibilityOnHomey": "full_soft",
-      "how": "Per-light RSSI/LQI baseline disturbance + cross-mesh variance + activity proxies + optional PIR + AdvancedPresenceEngine fusion. Not closed-PHY parity.",
-      "module": "lib/features/LampMeshOccupancy.js",
-      "flowIds": [
-        "lamp_mesh_occupancy_enroll",
-        "lamp_mesh_occupancy_auto_enroll",
-        "lamp_mesh_occupancy_enroll_sensor",
-        "lamp_mesh_occupancy_changed",
-        "lamp_mesh_zone_is_occupied"
-      ]
+      "module": "lib/features/LampMeshOccupancy.js"
     },
     {
-      "commercial": "Apple Adaptive Lighting / daytime white fade / TruTone-like",
+      "commercial": "Apple Adaptive Lighting / daytime white fade",
+      "vendors": ["Apple", "Signify"],
       "genericId": "soft_daylight_fade",
       "uiName": { "en": "Soft Daylight Fade", "fr": "Fondu lumière du jour" },
       "feasibilityOnHomey": "full",
-      "how": "One-shot fade + continuous Soft Daylight Auto + Dawn/Dusk shared ease engine",
-      "module": "lib/features/SoftDaylightFade.js",
-      "flowIds": [
-        "soft_daylight_fade_start",
-        "soft_daylight_fade_stop",
-        "soft_daylight_fade_enable_auto",
-        "soft_daylight_fade_disable_auto"
-      ]
+      "module": "lib/features/SoftDaylightFade.js"
+    },
+    {
+      "commercial": "IKEA Tradfri/Dirigera remote→light binding",
+      "vendors": ["IKEA"],
+      "genericId": "soft_device_link",
+      "uiName": { "en": "Soft Device Link", "fr": "Soft Device Link" },
+      "feasibilityOnHomey": "full_soft",
+      "how": "App-level capability edge → lights (not Zigbee ZDO bind)",
+      "module": "lib/features/SoftDeviceLink.js",
+      "flowIds": ["soft_device_link_enroll"]
+    },
+    {
+      "commercial": "Aqara motion + illuminance lighting",
+      "vendors": ["Aqara", "Xiaomi"],
+      "genericId": "lux_adaptive_dim",
+      "uiName": { "en": "Lux Adaptive Dim", "fr": "Lux Adaptive Dim" },
+      "feasibilityOnHomey": "full",
+      "module": "lib/features/LuxAdaptiveDim.js",
+      "flowIds": ["lux_adaptive_dim_enroll"]
+    },
+    {
+      "commercial": "SmartThings / HA master–follower mirror",
+      "vendors": ["SmartThings", "Home Assistant"],
+      "genericId": "mirror_light_sync",
+      "uiName": { "en": "Mirror Light Sync", "fr": "Mirror Light Sync" },
+      "feasibilityOnHomey": "full",
+      "module": "lib/features/MirrorLightSync.js",
+      "flowIds": ["mirror_light_sync_enroll"]
+    },
+    {
+      "commercial": "SmartThings arrival / Aqara welcome lighting",
+      "vendors": ["SmartThings", "Aqara"],
+      "genericId": "welcome_home_soft",
+      "uiName": { "en": "Welcome Home Soft", "fr": "Welcome Home Soft" },
+      "feasibilityOnHomey": "full",
+      "module": "lib/features/WelcomeHomeSoft.js",
+      "flowIds": ["welcome_home_soft_enroll"]
+    },
+    {
+      "commercial": "Aqara absence → energy-saving mode",
+      "vendors": ["Aqara"],
+      "genericId": "absence_energy_soft",
+      "uiName": { "en": "Absence Energy Soft", "fr": "Absence Energy Soft" },
+      "feasibilityOnHomey": "full",
+      "module": "lib/features/AbsenceEnergySoft.js",
+      "flowIds": ["absence_energy_soft_enroll"]
+    },
+    {
+      "commercial": "Lutron / ST leave-home staggered off",
+      "vendors": ["Lutron", "SmartThings"],
+      "genericId": "staggered_leave_off",
+      "uiName": { "en": "Staggered Leave Off", "fr": "Extinction décalée" },
+      "feasibilityOnHomey": "full",
+      "module": "lib/features/StaggeredLeaveOff.js",
+      "flowIds": ["staggered_leave_off"]
     },
     {
       "commercial": "Solar / circadian automations",
       "genericId": "daylight_atmosphere",
-      "uiName": { "en": "Daylight Atmosphere", "fr": "Atmosphère jour" },
       "feasibilityOnHomey": "full",
       "module": "lib/features/DaylightAtmosphere.js"
     },
     {
       "commercial": "Motion → hallway scenes",
       "genericId": "path_light",
-      "uiName": { "en": "Path Light", "fr": "Lumière de passage" },
       "feasibilityOnHomey": "full",
       "flowIds": ["hue_motion_lighting"]
     },
     {
       "commercial": "Wake-up / go-to-sleep ramps",
       "genericId": "dawn_dusk",
-      "uiName": { "en": "Dawn Ramp / Dusk Fade", "fr": "Aube / Crépuscule" },
       "feasibilityOnHomey": "full",
-      "flowIds": ["hue_wakeup", "hue_sleep"],
       "module": "lib/features/SoftDaylightFade.js"
     },
     {
-      "commercial": "Away presence simulation",
+      "commercial": "Away presence simulation / vacation",
+      "vendors": ["SmartThings", "Hubitat", "WiZ"],
       "genericId": "lived_in_shuffle",
       "feasibilityOnHomey": "full",
       "module": "lib/managers/PresenceSimulationManager.js"
     },
     {
+      "commercial": "Hubitat / ST location modes",
+      "vendors": ["Hubitat", "SmartThings"],
+      "genericId": "house_mode",
+      "feasibilityOnHomey": "full",
+      "module": "lib/managers/HomeModeManager.js"
+    },
+    {
       "commercial": "Entertainment / Screen Sync RGB flood",
       "genericId": "soft_ambient_sync",
-      "uiName": { "en": "Soft Ambient Sync", "fr": "Soft Ambient Sync" },
       "feasibilityOnHomey": "full_soft",
-      "how": "Rate-limited soft color fade max 4 lights / ≥2s — BootBudget-safe alternative to RGB flood (video stream remains forbidden)",
       "module": "lib/features/SoftAmbientSync.js",
-      "flowIds": ["soft_ambient_sync_apply", "soft_ambient_sync_stop"],
       "forbid": "continuous video/screen RGB flood"
     },
     {
-      "commercial": "SpatialAware room-mapped scenes",
+      "commercial": "SpatialAware / walk-path cascade",
       "genericId": "room_cascade",
       "feasibilityOnHomey": "full_soft",
       "module": "lib/managers/MotionCascadeManager.js"
@@ -97,9 +141,16 @@
     "softDaylightFade": "lib/features/SoftDaylightFade.js",
     "lampMeshOccupancy": "lib/features/LampMeshOccupancy.js",
     "softAmbientSync": "lib/features/SoftAmbientSync.js",
+    "softDeviceLink": "lib/features/SoftDeviceLink.js",
+    "luxAdaptiveDim": "lib/features/LuxAdaptiveDim.js",
+    "mirrorLightSync": "lib/features/MirrorLightSync.js",
+    "welcomeHomeSoft": "lib/features/WelcomeHomeSoft.js",
+    "absenceEnergySoft": "lib/features/AbsenceEnergySoft.js",
+    "staggeredLeaveOff": "lib/features/StaggeredLeaveOff.js",
     "daylightAtmosphere": "lib/features/DaylightAtmosphere.js",
-    "advancedPresence": "lib/presence/AdvancedPresenceEngine.js",
-    "meshPresenceDetector": "lib/detectors/MotionAwarePresenceDetector.js"
+    "homeMode": "lib/managers/HomeModeManager.js",
+    "livedInShuffle": "lib/managers/PresenceSimulationManager.js",
+    "roomCascade": "lib/managers/MotionCascadeManager.js"
   },
-  "gates": { "npm": "check:p2564" }
+  "gates": { "npm": "check:p2565" }
 }
