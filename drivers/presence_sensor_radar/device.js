@@ -182,6 +182,7 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
         this._triggerPresenceFlows(value);
       }
     } else if (edgeHuman && prevHuman !== value) {
+      // Mirror motion so Homey "Motion alarm" stays in sync with human presence UI
       if (typeof this.hasCapability === 'function' && this.hasCapability('alarm_motion')) {
         const curMotion = this.getCapabilityValue('alarm_motion');
         if (curMotion !== value) {
@@ -324,11 +325,15 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
     }
     try {
       // Homey UI "blind/curtain" often tracks class drift after DynCap poison
+      // WHY(P2546 / VicHY #2241): even without app update Homey may flip class asynchronously —
+      // force sensor for known mains MTG whenever heal runs (not only curtain-looking class).
       if (typeof this.getClass === 'function' && typeof this.setClass === 'function') {
         const cls = String(this.getClass() || '');
-        if (/windowcoverings|curtain|blind|cover/i.test(cls)) {
-          await this.setClass('sensor').catch(() => {});
-          this.log(`[RADAR] P2386 restored class sensor (was ${cls})`);
+        if (forceMains || /windowcoverings|curtain|blind|cover/i.test(cls)) {
+          if (cls !== 'sensor') {
+            await this.setClass('sensor').catch(() => {});
+            this.log(`[RADAR] P2386/P2546 restored class sensor (was ${cls || 'empty'})`);
+          }
         }
       }
     } catch (_e) { /* soft */ }
@@ -355,10 +360,12 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
 
   /**
    * WHY(P2386): re-heal after app updates when Homey restores capabilities asynchronously.
+   * WHY(P2546 / VicHY #2241): Homey can flip class/caps hours later WITHOUT tip update —
+   * keep a slow periodic heal for mains MTG/clrdrnya (Contre quoi curtain UI recurrence).
    */
   _scheduleRadarPhantomReheal() {
     try {
-      const { safeSetTimeout } = require('../../lib/utils/safe-timers');
+      const { safeSetTimeout, safeSetInterval } = require('../../lib/utils/safe-timers');
       // WHY(P2420 / VicHY #2227): Homey restores energy.batteries + curtain caps within
       // seconds of an app update — 2s/5s catch the race before user sees phantom UI.
       // WHY(P2468 / VicHY #2232): Homey can re-apply Energy minutes after tip update.
@@ -368,21 +375,45 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
         safeSetTimeout(this, () => {
           this._armRadarDynCapGuards();
           this._healRadarPhantomCaps().catch(() => {});
-          // WHY(P2459): also re-apply profile when mfr known as mains even if getter raced
           const mfr = (MfrHelper.getManufacturerName(this) || '').toLowerCase();
           if (this.mainsPowered || MAINS_POWERED_RADARS.has(mfr) || /clrdrnya|sbyx0lm6/.test(mfr)) {
             this._applyRadarCapabilityProfile().catch(() => {});
           }
         }, ms);
       }
+      // Periodic: every 10 min while device lives (cleared in onUninit/onDeleted)
+      if (!this._radarPhantomHealInterval && typeof safeSetInterval === 'function') {
+        this._radarPhantomHealInterval = safeSetInterval(this, () => {
+          const mfr = (MfrHelper.getManufacturerName(this) || '').toLowerCase();
+          if (!(this.mainsPowered || MAINS_POWERED_RADARS.has(mfr) || /clrdrnya|sbyx0lm6/.test(mfr))) {
+            return;
+          }
+          this._armRadarDynCapGuards();
+          this._healRadarPhantomCaps().catch(() => {});
+          this._applyRadarCapabilityProfile().catch(() => {});
+        }, 600_000);
+      }
     } catch (_e) {
-      // Fallback without safe-timers
       try {
         this.homey.setTimeout(() => {
           this._healRadarPhantomCaps().catch(() => {});
         }, 5_000);
       } catch (__e) { /* soft */ }
     }
+  }
+
+  _clearRadarPhantomHealInterval() {
+    try {
+      if (this._radarPhantomHealInterval) {
+        const { safeClearInterval } = require('../../lib/utils/safe-timers');
+        if (typeof safeClearInterval === 'function') {
+          safeClearInterval(this, this._radarPhantomHealInterval);
+        } else {
+          clearInterval(this._radarPhantomHealInterval);
+        }
+        this._radarPhantomHealInterval = null;
+      }
+    } catch (_e) { /* soft */ }
   }
 
   async onSettings({ oldSettings, newSettings, changedKeys }) {
@@ -924,22 +955,27 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
    */
   _commitPresenceAndFlows(presence) {
     const next = !!presence;
+    // Motion first — safeSet mirrors human + fires presence WHEN on edge.
     return this.safeSetCapabilityValue('alarm_motion', next).catch(() => {});
   }
 
   _triggerPresenceFlows(detected) {
     // WHY(P2526 / VicHY 74e5cae7 @ 9.0.945): custom WHEN "Presence detected" must fire
     // on false→true — native Homey "Motion alarm" works via capability; this card does not.
-    const cardId = detected
+    // WHY(P2546): dedupe identical edges so boot/heal re-paints do not spam flows.
+    const next = !!detected;
+    if (this._lastPresenceFlowEdge === next) return;
+    this._lastPresenceFlowEdge = next;
+    const cardId = next
       ? 'presence_sensor_radar_presence_detected'
       : 'presence_sensor_radar_presence_cleared';
     try {
-      this.log?.(`[P2526] flow ${cardId} edge=${detected}`);
+      this.log?.(`[P2526/P2546] flow ${cardId} edge=${next}`);
       this.homey.flow.getDeviceTriggerCard(cardId).trigger(this, {}).catch((e) => {
         this.log?.(`[P2526] flow ${cardId} trigger failed: ${e?.message || e}`);
       });
     } catch (_e) { /* soft */ }
-    if (detected) {
+    if (next) {
       try {
         this.homey.flow.getDeviceTriggerCard('presence_sensor_radar_motion_detected')
           .trigger(this, {}).catch(() => {});
@@ -984,11 +1020,13 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
 
   onUninit() {
     if (this._pollingInterval) {this.homey.clearInterval(this._pollingInterval);}
+    this._clearRadarPhantomHealInterval();
     if (super.onUninit) {super.onUninit();}
   }
 
   onDeleted() {
     this.log('[RADAR] Device deleted');
+    this._clearRadarPhantomHealInterval();
     if (super.onDeleted) {super.onDeleted();}
   }
 }
