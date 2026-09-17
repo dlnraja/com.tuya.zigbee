@@ -3,8 +3,8 @@
 Branding-free Homey reimplementations of Zigbee hub smart features from Signify, IKEA, Aqara, SmartThings, Lutron, WiZ, Xiaomi — **never** those names in UI.
 
 **Machine SSOT:** [`config/architecture/world-zigbee-smart-features-ssot.json`](../../config/architecture/world-zigbee-smart-features-ssot.json)  
-**Gates:** `check:p2563` · `check:p2564` · `check:p2565`  
-**Classify:** `MASTER_ONLY`
+**Gates:** `check:p2563` · `check:p2564` · `check:p2565` · `check:p2566` · `check:p2567`  
+**200-vector catalog:** [`config/architecture/world-smart-features-200-ssot.json`](../../config/architecture/world-smart-features-200-ssot.json) · runner `SoftRecipeRunner` · flow `soft_feature_enable`
 
 ## Multi-vendor map (internal → UI)
 

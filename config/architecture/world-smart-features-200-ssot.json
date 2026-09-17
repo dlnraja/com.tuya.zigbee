@@ -1,0 +1,3247 @@
+{
+  "id": "P2567-world-smart-features-200",
+  "version": "1.0.0",
+  "updated": "2026-09-17",
+  "classify": "MASTER_ONLY",
+  "policy": {
+    "brandingFreeUi": true,
+    "forbiddenUiTokens": [
+      "Hue",
+      "Philips",
+      "Signify",
+      "IKEA",
+      "Aqara",
+      "Lutron",
+      "SmartThings",
+      "Xiaomi",
+      "WiZ",
+      "Dirigera",
+      "Tradfri",
+      "Ambilight",
+      "MotionAware",
+      "TruTone"
+    ],
+    "note": "200 unbranded vectors — wired modules + declarative recipes via SoftRecipeRunner"
+  },
+  "count": 200,
+  "vectors": [
+    {
+      "id": "soft_white_follow",
+      "family": "light",
+      "uiName": {
+        "en": "Soft White Follow",
+        "fr": "Soft White Follow"
+      },
+      "role": "CCT follow solar curve",
+      "feasibility": "full",
+      "mapsToModuleOrGeneric": "soft_daylight_fade",
+      "status": "wired",
+      "recipe": {
+        "type": "alias",
+        "target": "soft_daylight_fade"
+      }
+    },
+    {
+      "id": "soft_dim_ramp",
+      "family": "light",
+      "uiName": {
+        "en": "Soft Dim Ramp",
+        "fr": "Soft Dim Ramp"
+      },
+      "role": "Ease dim up/down",
+      "feasibility": "full",
+      "mapsToModuleOrGeneric": "soft_daylight_fade",
+      "status": "wired",
+      "recipe": {
+        "type": "alias",
+        "target": "soft_daylight_fade"
+      }
+    },
+    {
+      "id": "soft_color_pulse",
+      "family": "light",
+      "uiName": {
+        "en": "Soft Color Pulse",
+        "fr": "Soft Color Pulse"
+      },
+      "role": "Rate-limited hue pulse",
+      "feasibility": "full_soft",
+      "mapsToModuleOrGeneric": "soft_ambient_sync",
+      "status": "wired",
+      "recipe": {
+        "type": "alias",
+        "target": "soft_ambient_sync"
+      }
+    },
+    {
+      "id": "scene_slot_cycle",
+      "family": "light",
+      "uiName": {
+        "en": "Scene Slot Cycle",
+        "fr": "Scene Slot Cycle"
+      },
+      "role": "Cycle captured looks",
+      "feasibility": "full",
+      "mapsToModuleOrGeneric": "scene_slots",
+      "status": "wired",
+      "recipe": {
+        "type": "alias",
+        "target": "scene_slots"
+      }
+    },
+    {
+      "id": "group_soft_on",
+      "family": "light",
+      "uiName": {
+        "en": "Group Soft On",
+        "fr": "Group Soft On"
+      },
+      "role": "Staggered group on",
+      "feasibility": "full",
+      "mapsToModuleOrGeneric": "staggered_leave_off",
+      "status": "wired",
+      "recipe": {
+        "type": "alias",
+        "target": "staggered_leave_off"
+      }
+    },
+    {
+      "id": "group_soft_off",
+      "family": "light",
+      "uiName": {
+        "en": "Group Soft Off",
+        "fr": "Group Soft Off"
+      },
+      "role": "Staggered group off",
+      "feasibility": "full",
+      "mapsToModuleOrGeneric": "staggered_leave_off",
+      "status": "wired",
+      "recipe": {
+        "type": "alias",
+        "target": "staggered_leave_off"
+      }
+    },
+    {
+      "id": "mirror_master",
+      "family": "light",
+      "uiName": {
+        "en": "Mirror Master",
+        "fr": "Mirror Master"
+      },
+      "role": "Master→followers",
+      "feasibility": "full",
+      "mapsToModuleOrGeneric": "mirror_light_sync",
+      "status": "wired",
+      "recipe": {
+        "type": "alias",
+        "target": "mirror_light_sync"
+      }
+    },
+    {
+      "id": "lux_raise",
+      "family": "light",
+      "uiName": {
+        "en": "Lux Raise Dim",
+        "fr": "Lux Raise Dim"
+      },
+      "role": "Darker room → brighter",
+      "feasibility": "full",
+      "mapsToModuleOrGeneric": "lux_adaptive_dim",
+      "status": "wired",
+      "recipe": {
+        "type": "alias",
+        "target": "lux_adaptive_dim"
+      }
+    },
+    {
+      "id": "lux_lower",
+      "family": "light",
+      "uiName": {
+        "en": "Lux Lower Dim",
+        "fr": "Lux Lower Dim"
+      },
+      "role": "Brighter room → dimmer",
+      "feasibility": "full",
+      "mapsToModuleOrGeneric": "lux_adaptive_dim",
+      "status": "wired",
+      "recipe": {
+        "type": "alias",
+        "target": "lux_adaptive_dim"
+      }
+    },
+    {
+      "id": "night_cap_dim",
+      "family": "light",
+      "uiName": {
+        "en": "Night Cap Dim",
+        "fr": "Night Cap Dim"
+      },
+      "role": "Cap max dim at night",
+      "feasibility": "full",
+      "mapsToModuleOrGeneric": "night_path_bias",
+      "status": "wired",
+      "recipe": {
+        "type": "alias",
+        "target": "night_path_bias"
+      }
+    },
+    {
+      "id": "dawn_wake",
+      "family": "light",
+      "uiName": {
+        "en": "Dawn Wake",
+        "fr": "Dawn Wake"
+      },
+      "role": "Wake ramp",
+      "feasibility": "full",
+      "mapsToModuleOrGeneric": "dawn_dusk",
+      "status": "wired",
+      "recipe": {
+        "type": "alias",
+        "target": "dawn_dusk"
+      }
+    },
+    {
+      "id": "dusk_sleep",
+      "family": "light",
+      "uiName": {
+        "en": "Dusk Sleep",
+        "fr": "Dusk Sleep"
+      },
+      "role": "Sleep fade",
+      "feasibility": "full",
+      "mapsToModuleOrGeneric": "dawn_dusk",
+      "status": "wired",
+      "recipe": {
+        "type": "alias",
+        "target": "dawn_dusk"
+      }
+    },
+    {
+      "id": "path_motion",
+      "family": "light",
+      "uiName": {
+        "en": "Path Motion Light",
+        "fr": "Path Motion Light"
+      },
+      "role": "Motion path",
+      "feasibility": "full",
+      "mapsToModuleOrGeneric": "path_light",
+      "status": "wired",
+      "recipe": {
+        "type": "alias",
+        "target": "path_light"
+      }
+    },
+    {
+      "id": "idle_off",
+      "family": "light",
+      "uiName": {
+        "en": "Idle Off Soft",
+        "fr": "Idle Off Soft"
+      },
+      "role": "Idle auto-off",
+      "feasibility": "full",
+      "mapsToModuleOrGeneric": "idle_auto_off_soft",
+      "status": "wired",
+      "recipe": {
+        "type": "alias",
+        "target": "idle_auto_off_soft"
+      }
+    },
+    {
+      "id": "peak_shed_dim",
+      "family": "light",
+      "uiName": {
+        "en": "Peak Shed Dim",
+        "fr": "Peak Shed Dim"
+      },
+      "role": "Load shed dim",
+      "feasibility": "full",
+      "mapsToModuleOrGeneric": "peak_load_soft_shed",
+      "status": "wired",
+      "recipe": {
+        "type": "alias",
+        "target": "peak_load_soft_shed"
+      }
+    },
+    {
+      "id": "welcome_fade",
+      "family": "light",
+      "uiName": {
+        "en": "Welcome Fade",
+        "fr": "Welcome Fade"
+      },
+      "role": "Arrival soft-on",
+      "feasibility": "full",
+      "mapsToModuleOrGeneric": "welcome_home_soft",
+      "status": "wired",
+      "recipe": {
+        "type": "alias",
+        "target": "welcome_home_soft"
+      }
+    },
+    {
+      "id": "absence_dim",
+      "family": "light",
+      "uiName": {
+        "en": "Absence Dim",
+        "fr": "Absence Dim"
+      },
+      "role": "Clear zone eco",
+      "feasibility": "full",
+      "mapsToModuleOrGeneric": "absence_energy_soft",
+      "status": "wired",
+      "recipe": {
+        "type": "alias",
+        "target": "absence_energy_soft"
+      }
+    },
+    {
+      "id": "entry_contact",
+      "family": "light",
+      "uiName": {
+        "en": "Entry Contact Light",
+        "fr": "Entry Contact Light"
+      },
+      "role": "Door→light",
+      "feasibility": "full",
+      "mapsToModuleOrGeneric": "contact_entry_soft",
+      "status": "wired",
+      "recipe": {
+        "type": "alias",
+        "target": "contact_entry_soft"
+      }
+    },
+    {
+      "id": "device_link_toggle",
+      "family": "light",
+      "uiName": {
+        "en": "Device Link Toggle",
+        "fr": "Device Link Toggle"
+      },
+      "role": "Remote soft bind",
+      "feasibility": "full_soft",
+      "mapsToModuleOrGeneric": "soft_device_link",
+      "status": "wired",
+      "recipe": {
+        "type": "alias",
+        "target": "soft_device_link"
+      }
+    },
+    {
+      "id": "quiet_skip",
+      "family": "light",
+      "uiName": {
+        "en": "Quiet Skip Light",
+        "fr": "Quiet Skip Light"
+      },
+      "role": "Skip in quiet hours",
+      "feasibility": "full",
+      "mapsToModuleOrGeneric": "quiet_hours",
+      "status": "wired",
+      "recipe": {
+        "type": "alias",
+        "target": "quiet_hours"
+      }
+    },
+    {
+      "id": "mesh_occupancy",
+      "family": "presence",
+      "uiName": {
+        "en": "Mesh Occupancy",
+        "fr": "Mesh Occupancy"
+      },
+      "role": "Lamp mesh soft",
+      "feasibility": "full_soft",
+      "mapsToModuleOrGeneric": "lamp_mesh_occupancy",
+      "status": "wired",
+      "recipe": {
+        "type": "alias",
+        "target": "lamp_mesh_occupancy"
+      }
+    },
+    {
+      "id": "mesh_auto_enroll",
+      "family": "presence",
+      "uiName": {
+        "en": "Mesh Auto Enroll",
+        "fr": "Mesh Auto Enroll"
+      },
+      "role": "Auto mains lights",
+      "feasibility": "full_soft",
+      "mapsToModuleOrGeneric": "lamp_mesh_occupancy",
+      "status": "wired",
+      "recipe": {
+        "type": "alias",
+        "target": "lamp_mesh_occupancy"
+      }
+    },
+    {
+      "id": "pir_boost",
+      "family": "presence",
+      "uiName": {
+        "en": "PIR Boost Occupancy",
+        "fr": "PIR Boost Occupancy"
+      },
+      "role": "PIR into mesh",
+      "feasibility": "full_soft",
+      "mapsToModuleOrGeneric": "lamp_mesh_occupancy",
+      "status": "wired",
+      "recipe": {
+        "type": "alias",
+        "target": "lamp_mesh_occupancy"
+      }
+    },
+    {
+      "id": "lived_in",
+      "family": "presence",
+      "uiName": {
+        "en": "Lived-In Shuffle",
+        "fr": "Lived-In Shuffle"
+      },
+      "role": "Away simulation",
+      "feasibility": "full",
+      "mapsToModuleOrGeneric": "lived_in_shuffle",
+      "status": "wired",
+      "recipe": {
+        "type": "alias",
+        "target": "lived_in_shuffle"
+      }
+    },
+    {
+      "id": "lived_in_evening",
+      "family": "presence",
+      "uiName": {
+        "en": "Lived-In Evening",
+        "fr": "Lived-In Evening"
+      },
+      "role": "Evening window only",
+      "feasibility": "full",
+      "mapsToModuleOrGeneric": "lived_in_shuffle",
+      "status": "wired",
+      "recipe": {
+        "type": "alias",
+        "target": "lived_in_shuffle"
+      }
+    },
+    {
+      "id": "room_cascade",
+      "family": "presence",
+      "uiName": {
+        "en": "Room Cascade",
+        "fr": "Room Cascade"
+      },
+      "role": "Walk-path cascade",
+      "feasibility": "full_soft",
+      "mapsToModuleOrGeneric": "room_cascade",
+      "status": "wired",
+      "recipe": {
+        "type": "alias",
+        "target": "room_cascade"
+      }
+    },
+    {
+      "id": "house_mode_day",
+      "family": "presence",
+      "uiName": {
+        "en": "House Mode Day",
+        "fr": "House Mode Day"
+      },
+      "role": "Day mode",
+      "feasibility": "full",
+      "mapsToModuleOrGeneric": "house_mode",
+      "status": "wired",
+      "recipe": {
+        "type": "alias",
+        "target": "house_mode"
+      }
+    },
+    {
+      "id": "house_mode_evening",
+      "family": "presence",
+      "uiName": {
+        "en": "House Mode Evening",
+        "fr": "House Mode Evening"
+      },
+      "role": "Evening mode",
+      "feasibility": "full",
+      "mapsToModuleOrGeneric": "house_mode",
+      "status": "wired",
+      "recipe": {
+        "type": "alias",
+        "target": "house_mode"
+      }
+    },
+    {
+      "id": "house_mode_night",
+      "family": "presence",
+      "uiName": {
+        "en": "House Mode Night",
+        "fr": "House Mode Night"
+      },
+      "role": "Night mode",
+      "feasibility": "full",
+      "mapsToModuleOrGeneric": "house_mode",
+      "status": "wired",
+      "recipe": {
+        "type": "alias",
+        "target": "house_mode"
+      }
+    },
+    {
+      "id": "house_mode_away",
+      "family": "presence",
+      "uiName": {
+        "en": "House Mode Away",
+        "fr": "House Mode Away"
+      },
+      "role": "Away mode",
+      "feasibility": "full",
+      "mapsToModuleOrGeneric": "house_mode",
+      "status": "wired",
+      "recipe": {
+        "type": "alias",
+        "target": "house_mode"
+      }
+    },
+    {
+      "id": "shade_dusk_close",
+      "family": "cover",
+      "uiName": {
+        "en": "Shade Dusk Close",
+        "fr": "Shade Dusk Close"
+      },
+      "role": "Close at dusk",
+      "feasibility": "full",
+      "mapsToModuleOrGeneric": "shade_daylight_soft",
+      "status": "wired",
+      "recipe": {
+        "type": "alias",
+        "target": "shade_daylight_soft"
+      }
+    },
+    {
+      "id": "shade_dawn_open",
+      "family": "cover",
+      "uiName": {
+        "en": "Shade Dawn Open",
+        "fr": "Shade Dawn Open"
+      },
+      "role": "Open at dawn",
+      "feasibility": "full",
+      "mapsToModuleOrGeneric": "shade_daylight_soft",
+      "status": "wired",
+      "recipe": {
+        "type": "alias",
+        "target": "shade_daylight_soft"
+      }
+    },
+    {
+      "id": "cover_setpoint",
+      "family": "cover",
+      "uiName": {
+        "en": "Cover Setpoint",
+        "fr": "Cover Setpoint"
+      },
+      "role": "Precise position",
+      "feasibility": "full",
+      "mapsToModuleOrGeneric": "cover_setpoint",
+      "status": "wired",
+      "recipe": {
+        "type": "alias",
+        "target": "cover_setpoint"
+      }
+    },
+    {
+      "id": "eco_on_absence",
+      "family": "climate",
+      "uiName": {
+        "en": "Eco On Absence",
+        "fr": "Eco On Absence"
+      },
+      "role": "Absence→eco",
+      "feasibility": "full",
+      "mapsToModuleOrGeneric": "absence_energy_soft",
+      "status": "wired",
+      "recipe": {
+        "type": "alias",
+        "target": "absence_energy_soft"
+      }
+    },
+    {
+      "id": "sensor_pause",
+      "family": "sensor",
+      "uiName": {
+        "en": "Sensor Pause",
+        "fr": "Sensor Pause"
+      },
+      "role": "Mute triggers",
+      "feasibility": "full",
+      "mapsToModuleOrGeneric": "sensor_pause",
+      "status": "wired",
+      "recipe": {
+        "type": "alias",
+        "target": "sensor_pause"
+      }
+    },
+    {
+      "id": "leak_all_off",
+      "family": "sensor",
+      "uiName": {
+        "en": "Leak Soft All Off",
+        "fr": "Leak Soft All Off"
+      },
+      "role": "Leak→stagger off",
+      "feasibility": "full_soft",
+      "mapsToModuleOrGeneric": "staggered_leave_off",
+      "status": "wired",
+      "recipe": {
+        "type": "alias",
+        "target": "staggered_leave_off"
+      }
+    },
+    {
+      "id": "smoke_all_off",
+      "family": "sensor",
+      "uiName": {
+        "en": "Smoke Soft Alert Off",
+        "fr": "Smoke Soft Alert Off"
+      },
+      "role": "Smoke→stagger off",
+      "feasibility": "full_soft",
+      "mapsToModuleOrGeneric": "staggered_leave_off",
+      "status": "wired",
+      "recipe": {
+        "type": "alias",
+        "target": "staggered_leave_off"
+      }
+    },
+    {
+      "id": "peak_shed",
+      "family": "energy",
+      "uiName": {
+        "en": "Peak Soft Shed",
+        "fr": "Peak Soft Shed"
+      },
+      "role": "Power threshold dim",
+      "feasibility": "full",
+      "mapsToModuleOrGeneric": "peak_load_soft_shed",
+      "status": "wired",
+      "recipe": {
+        "type": "alias",
+        "target": "peak_load_soft_shed"
+      }
+    },
+    {
+      "id": "standby_nudge",
+      "family": "energy",
+      "uiName": {
+        "en": "Standby Nudge Off",
+        "fr": "Standby Nudge Off"
+      },
+      "role": "Idle off plugs soft",
+      "feasibility": "full_soft",
+      "mapsToModuleOrGeneric": "idle_auto_off_soft",
+      "status": "wired",
+      "recipe": {
+        "type": "alias",
+        "target": "idle_auto_off_soft"
+      }
+    },
+    {
+      "id": "path_light_hall",
+      "family": "light",
+      "uiName": {
+        "en": "Path Light hall",
+        "fr": "Path Light hall"
+      },
+      "role": "Motion path lighting for hall",
+      "feasibility": "full",
+      "status": "recipe",
+      "recipe": {
+        "type": "path_light",
+        "zone": "hall",
+        "dim": 0.55,
+        "timeoutMin": 5
+      }
+    },
+    {
+      "id": "welcome_hall",
+      "family": "presence",
+      "uiName": {
+        "en": "Welcome hall",
+        "fr": "Welcome hall"
+      },
+      "role": "Welcome soft-on for hall zone",
+      "feasibility": "full",
+      "status": "recipe",
+      "recipe": {
+        "type": "welcome",
+        "zone": "hall",
+        "fadeMinutes": 2
+      }
+    },
+    {
+      "id": "absence_eco_hall",
+      "family": "energy",
+      "uiName": {
+        "en": "Absence Eco hall",
+        "fr": "Absence Eco hall"
+      },
+      "role": "Eco dim when hall clears",
+      "feasibility": "full",
+      "status": "recipe",
+      "recipe": {
+        "type": "absence_eco",
+        "zone": "hall",
+        "mode": "dim",
+        "dimTo": 0.15
+      }
+    },
+    {
+      "id": "mesh_zone_hall",
+      "family": "presence",
+      "uiName": {
+        "en": "Mesh Zone hall",
+        "fr": "Mesh Zone hall"
+      },
+      "role": "Lamp mesh occupancy zone hall",
+      "feasibility": "full_soft",
+      "status": "recipe",
+      "recipe": {
+        "type": "mesh_zone",
+        "zone": "hall"
+      }
+    },
+    {
+      "id": "quiet_hall_night",
+      "family": "light",
+      "uiName": {
+        "en": "Quiet hall Night",
+        "fr": "Quiet hall Night"
+      },
+      "role": "Quiet hours gate for hall",
+      "feasibility": "full",
+      "status": "recipe",
+      "recipe": {
+        "type": "quiet_gate",
+        "start": "22:00",
+        "end": "07:00",
+        "zone": "hall"
+      }
+    },
+    {
+      "id": "path_light_kitchen",
+      "family": "light",
+      "uiName": {
+        "en": "Path Light kitchen",
+        "fr": "Path Light kitchen"
+      },
+      "role": "Motion path lighting for kitchen",
+      "feasibility": "full",
+      "status": "recipe",
+      "recipe": {
+        "type": "path_light",
+        "zone": "kitchen",
+        "dim": 0.55,
+        "timeoutMin": 5
+      }
+    },
+    {
+      "id": "welcome_kitchen",
+      "family": "presence",
+      "uiName": {
+        "en": "Welcome kitchen",
+        "fr": "Welcome kitchen"
+      },
+      "role": "Welcome soft-on for kitchen zone",
+      "feasibility": "full",
+      "status": "recipe",
+      "recipe": {
+        "type": "welcome",
+        "zone": "kitchen",
+        "fadeMinutes": 2
+      }
+    },
+    {
+      "id": "absence_eco_kitchen",
+      "family": "energy",
+      "uiName": {
+        "en": "Absence Eco kitchen",
+        "fr": "Absence Eco kitchen"
+      },
+      "role": "Eco dim when kitchen clears",
+      "feasibility": "full",
+      "status": "recipe",
+      "recipe": {
+        "type": "absence_eco",
+        "zone": "kitchen",
+        "mode": "dim",
+        "dimTo": 0.15
+      }
+    },
+    {
+      "id": "mesh_zone_kitchen",
+      "family": "presence",
+      "uiName": {
+        "en": "Mesh Zone kitchen",
+        "fr": "Mesh Zone kitchen"
+      },
+      "role": "Lamp mesh occupancy zone kitchen",
+      "feasibility": "full_soft",
+      "status": "recipe",
+      "recipe": {
+        "type": "mesh_zone",
+        "zone": "kitchen"
+      }
+    },
+    {
+      "id": "quiet_kitchen_night",
+      "family": "light",
+      "uiName": {
+        "en": "Quiet kitchen Night",
+        "fr": "Quiet kitchen Night"
+      },
+      "role": "Quiet hours gate for kitchen",
+      "feasibility": "full",
+      "status": "recipe",
+      "recipe": {
+        "type": "quiet_gate",
+        "start": "22:00",
+        "end": "07:00",
+        "zone": "kitchen"
+      }
+    },
+    {
+      "id": "path_light_living",
+      "family": "light",
+      "uiName": {
+        "en": "Path Light living",
+        "fr": "Path Light living"
+      },
+      "role": "Motion path lighting for living",
+      "feasibility": "full",
+      "status": "recipe",
+      "recipe": {
+        "type": "path_light",
+        "zone": "living",
+        "dim": 0.55,
+        "timeoutMin": 5
+      }
+    },
+    {
+      "id": "welcome_living",
+      "family": "presence",
+      "uiName": {
+        "en": "Welcome living",
+        "fr": "Welcome living"
+      },
+      "role": "Welcome soft-on for living zone",
+      "feasibility": "full",
+      "status": "recipe",
+      "recipe": {
+        "type": "welcome",
+        "zone": "living",
+        "fadeMinutes": 2
+      }
+    },
+    {
+      "id": "absence_eco_living",
+      "family": "energy",
+      "uiName": {
+        "en": "Absence Eco living",
+        "fr": "Absence Eco living"
+      },
+      "role": "Eco dim when living clears",
+      "feasibility": "full",
+      "status": "recipe",
+      "recipe": {
+        "type": "absence_eco",
+        "zone": "living",
+        "mode": "dim",
+        "dimTo": 0.15
+      }
+    },
+    {
+      "id": "mesh_zone_living",
+      "family": "presence",
+      "uiName": {
+        "en": "Mesh Zone living",
+        "fr": "Mesh Zone living"
+      },
+      "role": "Lamp mesh occupancy zone living",
+      "feasibility": "full_soft",
+      "status": "recipe",
+      "recipe": {
+        "type": "mesh_zone",
+        "zone": "living"
+      }
+    },
+    {
+      "id": "quiet_living_night",
+      "family": "light",
+      "uiName": {
+        "en": "Quiet living Night",
+        "fr": "Quiet living Night"
+      },
+      "role": "Quiet hours gate for living",
+      "feasibility": "full",
+      "status": "recipe",
+      "recipe": {
+        "type": "quiet_gate",
+        "start": "22:00",
+        "end": "07:00",
+        "zone": "living"
+      }
+    },
+    {
+      "id": "path_light_bedroom",
+      "family": "light",
+      "uiName": {
+        "en": "Path Light bedroom",
+        "fr": "Path Light bedroom"
+      },
+      "role": "Motion path lighting for bedroom",
+      "feasibility": "full",
+      "status": "recipe",
+      "recipe": {
+        "type": "path_light",
+        "zone": "bedroom",
+        "dim": 0.55,
+        "timeoutMin": 5
+      }
+    },
+    {
+      "id": "welcome_bedroom",
+      "family": "presence",
+      "uiName": {
+        "en": "Welcome bedroom",
+        "fr": "Welcome bedroom"
+      },
+      "role": "Welcome soft-on for bedroom zone",
+      "feasibility": "full",
+      "status": "recipe",
+      "recipe": {
+        "type": "welcome",
+        "zone": "bedroom",
+        "fadeMinutes": 2
+      }
+    },
+    {
+      "id": "absence_eco_bedroom",
+      "family": "energy",
+      "uiName": {
+        "en": "Absence Eco bedroom",
+        "fr": "Absence Eco bedroom"
+      },
+      "role": "Eco dim when bedroom clears",
+      "feasibility": "full",
+      "status": "recipe",
+      "recipe": {
+        "type": "absence_eco",
+        "zone": "bedroom",
+        "mode": "dim",
+        "dimTo": 0.15
+      }
+    },
+    {
+      "id": "mesh_zone_bedroom",
+      "family": "presence",
+      "uiName": {
+        "en": "Mesh Zone bedroom",
+        "fr": "Mesh Zone bedroom"
+      },
+      "role": "Lamp mesh occupancy zone bedroom",
+      "feasibility": "full_soft",
+      "status": "recipe",
+      "recipe": {
+        "type": "mesh_zone",
+        "zone": "bedroom"
+      }
+    },
+    {
+      "id": "quiet_bedroom_night",
+      "family": "light",
+      "uiName": {
+        "en": "Quiet bedroom Night",
+        "fr": "Quiet bedroom Night"
+      },
+      "role": "Quiet hours gate for bedroom",
+      "feasibility": "full",
+      "status": "recipe",
+      "recipe": {
+        "type": "quiet_gate",
+        "start": "22:00",
+        "end": "07:00",
+        "zone": "bedroom"
+      }
+    },
+    {
+      "id": "path_light_bath",
+      "family": "light",
+      "uiName": {
+        "en": "Path Light bath",
+        "fr": "Path Light bath"
+      },
+      "role": "Motion path lighting for bath",
+      "feasibility": "full",
+      "status": "recipe",
+      "recipe": {
+        "type": "path_light",
+        "zone": "bath",
+        "dim": 0.55,
+        "timeoutMin": 5
+      }
+    },
+    {
+      "id": "welcome_bath",
+      "family": "presence",
+      "uiName": {
+        "en": "Welcome bath",
+        "fr": "Welcome bath"
+      },
+      "role": "Welcome soft-on for bath zone",
+      "feasibility": "full",
+      "status": "recipe",
+      "recipe": {
+        "type": "welcome",
+        "zone": "bath",
+        "fadeMinutes": 2
+      }
+    },
+    {
+      "id": "absence_eco_bath",
+      "family": "energy",
+      "uiName": {
+        "en": "Absence Eco bath",
+        "fr": "Absence Eco bath"
+      },
+      "role": "Eco dim when bath clears",
+      "feasibility": "full",
+      "status": "recipe",
+      "recipe": {
+        "type": "absence_eco",
+        "zone": "bath",
+        "mode": "dim",
+        "dimTo": 0.15
+      }
+    },
+    {
+      "id": "mesh_zone_bath",
+      "family": "presence",
+      "uiName": {
+        "en": "Mesh Zone bath",
+        "fr": "Mesh Zone bath"
+      },
+      "role": "Lamp mesh occupancy zone bath",
+      "feasibility": "full_soft",
+      "status": "recipe",
+      "recipe": {
+        "type": "mesh_zone",
+        "zone": "bath"
+      }
+    },
+    {
+      "id": "quiet_bath_night",
+      "family": "light",
+      "uiName": {
+        "en": "Quiet bath Night",
+        "fr": "Quiet bath Night"
+      },
+      "role": "Quiet hours gate for bath",
+      "feasibility": "full",
+      "status": "recipe",
+      "recipe": {
+        "type": "quiet_gate",
+        "start": "22:00",
+        "end": "07:00",
+        "zone": "bath"
+      }
+    },
+    {
+      "id": "path_light_office",
+      "family": "light",
+      "uiName": {
+        "en": "Path Light office",
+        "fr": "Path Light office"
+      },
+      "role": "Motion path lighting for office",
+      "feasibility": "full",
+      "status": "recipe",
+      "recipe": {
+        "type": "path_light",
+        "zone": "office",
+        "dim": 0.55,
+        "timeoutMin": 5
+      }
+    },
+    {
+      "id": "welcome_office",
+      "family": "presence",
+      "uiName": {
+        "en": "Welcome office",
+        "fr": "Welcome office"
+      },
+      "role": "Welcome soft-on for office zone",
+      "feasibility": "full",
+      "status": "recipe",
+      "recipe": {
+        "type": "welcome",
+        "zone": "office",
+        "fadeMinutes": 2
+      }
+    },
+    {
+      "id": "absence_eco_office",
+      "family": "energy",
+      "uiName": {
+        "en": "Absence Eco office",
+        "fr": "Absence Eco office"
+      },
+      "role": "Eco dim when office clears",
+      "feasibility": "full",
+      "status": "recipe",
+      "recipe": {
+        "type": "absence_eco",
+        "zone": "office",
+        "mode": "dim",
+        "dimTo": 0.15
+      }
+    },
+    {
+      "id": "mesh_zone_office",
+      "family": "presence",
+      "uiName": {
+        "en": "Mesh Zone office",
+        "fr": "Mesh Zone office"
+      },
+      "role": "Lamp mesh occupancy zone office",
+      "feasibility": "full_soft",
+      "status": "recipe",
+      "recipe": {
+        "type": "mesh_zone",
+        "zone": "office"
+      }
+    },
+    {
+      "id": "quiet_office_night",
+      "family": "light",
+      "uiName": {
+        "en": "Quiet office Night",
+        "fr": "Quiet office Night"
+      },
+      "role": "Quiet hours gate for office",
+      "feasibility": "full",
+      "status": "recipe",
+      "recipe": {
+        "type": "quiet_gate",
+        "start": "22:00",
+        "end": "07:00",
+        "zone": "office"
+      }
+    },
+    {
+      "id": "path_light_garage",
+      "family": "light",
+      "uiName": {
+        "en": "Path Light garage",
+        "fr": "Path Light garage"
+      },
+      "role": "Motion path lighting for garage",
+      "feasibility": "full",
+      "status": "recipe",
+      "recipe": {
+        "type": "path_light",
+        "zone": "garage",
+        "dim": 0.55,
+        "timeoutMin": 5
+      }
+    },
+    {
+      "id": "welcome_garage",
+      "family": "presence",
+      "uiName": {
+        "en": "Welcome garage",
+        "fr": "Welcome garage"
+      },
+      "role": "Welcome soft-on for garage zone",
+      "feasibility": "full",
+      "status": "recipe",
+      "recipe": {
+        "type": "welcome",
+        "zone": "garage",
+        "fadeMinutes": 2
+      }
+    },
+    {
+      "id": "absence_eco_garage",
+      "family": "energy",
+      "uiName": {
+        "en": "Absence Eco garage",
+        "fr": "Absence Eco garage"
+      },
+      "role": "Eco dim when garage clears",
+      "feasibility": "full",
+      "status": "recipe",
+      "recipe": {
+        "type": "absence_eco",
+        "zone": "garage",
+        "mode": "dim",
+        "dimTo": 0.15
+      }
+    },
+    {
+      "id": "mesh_zone_garage",
+      "family": "presence",
+      "uiName": {
+        "en": "Mesh Zone garage",
+        "fr": "Mesh Zone garage"
+      },
+      "role": "Lamp mesh occupancy zone garage",
+      "feasibility": "full_soft",
+      "status": "recipe",
+      "recipe": {
+        "type": "mesh_zone",
+        "zone": "garage"
+      }
+    },
+    {
+      "id": "quiet_garage_night",
+      "family": "light",
+      "uiName": {
+        "en": "Quiet garage Night",
+        "fr": "Quiet garage Night"
+      },
+      "role": "Quiet hours gate for garage",
+      "feasibility": "full",
+      "status": "recipe",
+      "recipe": {
+        "type": "quiet_gate",
+        "start": "22:00",
+        "end": "07:00",
+        "zone": "garage"
+      }
+    },
+    {
+      "id": "path_light_garden",
+      "family": "light",
+      "uiName": {
+        "en": "Path Light garden",
+        "fr": "Path Light garden"
+      },
+      "role": "Motion path lighting for garden",
+      "feasibility": "full",
+      "status": "recipe",
+      "recipe": {
+        "type": "path_light",
+        "zone": "garden",
+        "dim": 0.55,
+        "timeoutMin": 5
+      }
+    },
+    {
+      "id": "welcome_garden",
+      "family": "presence",
+      "uiName": {
+        "en": "Welcome garden",
+        "fr": "Welcome garden"
+      },
+      "role": "Welcome soft-on for garden zone",
+      "feasibility": "full",
+      "status": "recipe",
+      "recipe": {
+        "type": "welcome",
+        "zone": "garden",
+        "fadeMinutes": 2
+      }
+    },
+    {
+      "id": "absence_eco_garden",
+      "family": "energy",
+      "uiName": {
+        "en": "Absence Eco garden",
+        "fr": "Absence Eco garden"
+      },
+      "role": "Eco dim when garden clears",
+      "feasibility": "full",
+      "status": "recipe",
+      "recipe": {
+        "type": "absence_eco",
+        "zone": "garden",
+        "mode": "dim",
+        "dimTo": 0.15
+      }
+    },
+    {
+      "id": "mesh_zone_garden",
+      "family": "presence",
+      "uiName": {
+        "en": "Mesh Zone garden",
+        "fr": "Mesh Zone garden"
+      },
+      "role": "Lamp mesh occupancy zone garden",
+      "feasibility": "full_soft",
+      "status": "recipe",
+      "recipe": {
+        "type": "mesh_zone",
+        "zone": "garden"
+      }
+    },
+    {
+      "id": "quiet_garden_night",
+      "family": "light",
+      "uiName": {
+        "en": "Quiet garden Night",
+        "fr": "Quiet garden Night"
+      },
+      "role": "Quiet hours gate for garden",
+      "feasibility": "full",
+      "status": "recipe",
+      "recipe": {
+        "type": "quiet_gate",
+        "start": "22:00",
+        "end": "07:00",
+        "zone": "garden"
+      }
+    },
+    {
+      "id": "path_light_nursery",
+      "family": "light",
+      "uiName": {
+        "en": "Path Light nursery",
+        "fr": "Path Light nursery"
+      },
+      "role": "Motion path lighting for nursery",
+      "feasibility": "full",
+      "status": "recipe",
+      "recipe": {
+        "type": "path_light",
+        "zone": "nursery",
+        "dim": 0.55,
+        "timeoutMin": 5
+      }
+    },
+    {
+      "id": "welcome_nursery",
+      "family": "presence",
+      "uiName": {
+        "en": "Welcome nursery",
+        "fr": "Welcome nursery"
+      },
+      "role": "Welcome soft-on for nursery zone",
+      "feasibility": "full",
+      "status": "recipe",
+      "recipe": {
+        "type": "welcome",
+        "zone": "nursery",
+        "fadeMinutes": 2
+      }
+    },
+    {
+      "id": "absence_eco_nursery",
+      "family": "energy",
+      "uiName": {
+        "en": "Absence Eco nursery",
+        "fr": "Absence Eco nursery"
+      },
+      "role": "Eco dim when nursery clears",
+      "feasibility": "full",
+      "status": "recipe",
+      "recipe": {
+        "type": "absence_eco",
+        "zone": "nursery",
+        "mode": "dim",
+        "dimTo": 0.15
+      }
+    },
+    {
+      "id": "mesh_zone_nursery",
+      "family": "presence",
+      "uiName": {
+        "en": "Mesh Zone nursery",
+        "fr": "Mesh Zone nursery"
+      },
+      "role": "Lamp mesh occupancy zone nursery",
+      "feasibility": "full_soft",
+      "status": "recipe",
+      "recipe": {
+        "type": "mesh_zone",
+        "zone": "nursery"
+      }
+    },
+    {
+      "id": "quiet_nursery_night",
+      "family": "light",
+      "uiName": {
+        "en": "Quiet nursery Night",
+        "fr": "Quiet nursery Night"
+      },
+      "role": "Quiet hours gate for nursery",
+      "feasibility": "full",
+      "status": "recipe",
+      "recipe": {
+        "type": "quiet_gate",
+        "start": "22:00",
+        "end": "07:00",
+        "zone": "nursery"
+      }
+    },
+    {
+      "id": "path_light_stairs",
+      "family": "light",
+      "uiName": {
+        "en": "Path Light stairs",
+        "fr": "Path Light stairs"
+      },
+      "role": "Motion path lighting for stairs",
+      "feasibility": "full",
+      "status": "recipe",
+      "recipe": {
+        "type": "path_light",
+        "zone": "stairs",
+        "dim": 0.55,
+        "timeoutMin": 5
+      }
+    },
+    {
+      "id": "welcome_stairs",
+      "family": "presence",
+      "uiName": {
+        "en": "Welcome stairs",
+        "fr": "Welcome stairs"
+      },
+      "role": "Welcome soft-on for stairs zone",
+      "feasibility": "full",
+      "status": "recipe",
+      "recipe": {
+        "type": "welcome",
+        "zone": "stairs",
+        "fadeMinutes": 2
+      }
+    },
+    {
+      "id": "absence_eco_stairs",
+      "family": "energy",
+      "uiName": {
+        "en": "Absence Eco stairs",
+        "fr": "Absence Eco stairs"
+      },
+      "role": "Eco dim when stairs clears",
+      "feasibility": "full",
+      "status": "recipe",
+      "recipe": {
+        "type": "absence_eco",
+        "zone": "stairs",
+        "mode": "dim",
+        "dimTo": 0.15
+      }
+    },
+    {
+      "id": "mesh_zone_stairs",
+      "family": "presence",
+      "uiName": {
+        "en": "Mesh Zone stairs",
+        "fr": "Mesh Zone stairs"
+      },
+      "role": "Lamp mesh occupancy zone stairs",
+      "feasibility": "full_soft",
+      "status": "recipe",
+      "recipe": {
+        "type": "mesh_zone",
+        "zone": "stairs"
+      }
+    },
+    {
+      "id": "quiet_stairs_night",
+      "family": "light",
+      "uiName": {
+        "en": "Quiet stairs Night",
+        "fr": "Quiet stairs Night"
+      },
+      "role": "Quiet hours gate for stairs",
+      "feasibility": "full",
+      "status": "recipe",
+      "recipe": {
+        "type": "quiet_gate",
+        "start": "22:00",
+        "end": "07:00",
+        "zone": "stairs"
+      }
+    },
+    {
+      "id": "lived_in_morning",
+      "family": "presence",
+      "uiName": {
+        "en": "Lived-In morning",
+        "fr": "Lived-In morning"
+      },
+      "role": "Presence simulation window morning",
+      "feasibility": "full",
+      "status": "recipe",
+      "recipe": {
+        "type": "lived_in_window",
+        "window": "morning",
+        "startHour": 6,
+        "endHour": 9
+      }
+    },
+    {
+      "id": "soft_daylight_morning",
+      "family": "light",
+      "uiName": {
+        "en": "Soft Daylight morning",
+        "fr": "Soft Daylight morning"
+      },
+      "role": "Soft daylight fade bias morning",
+      "feasibility": "full",
+      "status": "recipe",
+      "recipe": {
+        "type": "soft_daylight",
+        "window": "morning",
+        "minutes": 10
+      }
+    },
+    {
+      "id": "lived_in_midday",
+      "family": "presence",
+      "uiName": {
+        "en": "Lived-In midday",
+        "fr": "Lived-In midday"
+      },
+      "role": "Presence simulation window midday",
+      "feasibility": "full",
+      "status": "recipe",
+      "recipe": {
+        "type": "lived_in_window",
+        "window": "midday",
+        "startHour": 11,
+        "endHour": 14
+      }
+    },
+    {
+      "id": "soft_daylight_midday",
+      "family": "light",
+      "uiName": {
+        "en": "Soft Daylight midday",
+        "fr": "Soft Daylight midday"
+      },
+      "role": "Soft daylight fade bias midday",
+      "feasibility": "full",
+      "status": "recipe",
+      "recipe": {
+        "type": "soft_daylight",
+        "window": "midday",
+        "minutes": 10
+      }
+    },
+    {
+      "id": "soft_daylight_evening",
+      "family": "light",
+      "uiName": {
+        "en": "Soft Daylight evening",
+        "fr": "Soft Daylight evening"
+      },
+      "role": "Soft daylight fade bias evening",
+      "feasibility": "full",
+      "status": "recipe",
+      "recipe": {
+        "type": "soft_daylight",
+        "window": "evening",
+        "minutes": 10
+      }
+    },
+    {
+      "id": "lived_in_night",
+      "family": "presence",
+      "uiName": {
+        "en": "Lived-In night",
+        "fr": "Lived-In night"
+      },
+      "role": "Presence simulation window night",
+      "feasibility": "full",
+      "status": "recipe",
+      "recipe": {
+        "type": "lived_in_window",
+        "window": "night",
+        "startHour": 22,
+        "endHour": 6
+      }
+    },
+    {
+      "id": "soft_daylight_night",
+      "family": "light",
+      "uiName": {
+        "en": "Soft Daylight night",
+        "fr": "Soft Daylight night"
+      },
+      "role": "Soft daylight fade bias night",
+      "feasibility": "full",
+      "status": "recipe",
+      "recipe": {
+        "type": "soft_daylight",
+        "window": "night",
+        "minutes": 20
+      }
+    },
+    {
+      "id": "lived_in_weekend",
+      "family": "presence",
+      "uiName": {
+        "en": "Lived-In weekend",
+        "fr": "Lived-In weekend"
+      },
+      "role": "Presence simulation window weekend",
+      "feasibility": "full",
+      "status": "recipe",
+      "recipe": {
+        "type": "lived_in_window",
+        "window": "weekend",
+        "startHour": 10,
+        "endHour": 20
+      }
+    },
+    {
+      "id": "soft_daylight_weekend",
+      "family": "light",
+      "uiName": {
+        "en": "Soft Daylight weekend",
+        "fr": "Soft Daylight weekend"
+      },
+      "role": "Soft daylight fade bias weekend",
+      "feasibility": "full",
+      "status": "recipe",
+      "recipe": {
+        "type": "soft_daylight",
+        "window": "weekend",
+        "minutes": 10
+      }
+    },
+    {
+      "id": "lux_gate_below_50",
+      "family": "light",
+      "uiName": {
+        "en": "Lux Gate < 50",
+        "fr": "Lux Gate < 50"
+      },
+      "role": "Only act when lux below 50",
+      "feasibility": "full",
+      "status": "recipe",
+      "recipe": {
+        "type": "lux_gate",
+        "op": "lt",
+        "lux": 50
+      }
+    },
+    {
+      "id": "lux_gate_above_50",
+      "family": "light",
+      "uiName": {
+        "en": "Lux Gate > 50",
+        "fr": "Lux Gate > 50"
+      },
+      "role": "Only act when lux above 50",
+      "feasibility": "full",
+      "status": "recipe",
+      "recipe": {
+        "type": "lux_gate",
+        "op": "gt",
+        "lux": 50
+      }
+    },
+    {
+      "id": "lux_gate_below_100",
+      "family": "light",
+      "uiName": {
+        "en": "Lux Gate < 100",
+        "fr": "Lux Gate < 100"
+      },
+      "role": "Only act when lux below 100",
+      "feasibility": "full",
+      "status": "recipe",
+      "recipe": {
+        "type": "lux_gate",
+        "op": "lt",
+        "lux": 100
+      }
+    },
+    {
+      "id": "lux_gate_above_100",
+      "family": "light",
+      "uiName": {
+        "en": "Lux Gate > 100",
+        "fr": "Lux Gate > 100"
+      },
+      "role": "Only act when lux above 100",
+      "feasibility": "full",
+      "status": "recipe",
+      "recipe": {
+        "type": "lux_gate",
+        "op": "gt",
+        "lux": 100
+      }
+    },
+    {
+      "id": "lux_gate_below_200",
+      "family": "light",
+      "uiName": {
+        "en": "Lux Gate < 200",
+        "fr": "Lux Gate < 200"
+      },
+      "role": "Only act when lux below 200",
+      "feasibility": "full",
+      "status": "recipe",
+      "recipe": {
+        "type": "lux_gate",
+        "op": "lt",
+        "lux": 200
+      }
+    },
+    {
+      "id": "lux_gate_above_200",
+      "family": "light",
+      "uiName": {
+        "en": "Lux Gate > 200",
+        "fr": "Lux Gate > 200"
+      },
+      "role": "Only act when lux above 200",
+      "feasibility": "full",
+      "status": "recipe",
+      "recipe": {
+        "type": "lux_gate",
+        "op": "gt",
+        "lux": 200
+      }
+    },
+    {
+      "id": "lux_gate_below_400",
+      "family": "light",
+      "uiName": {
+        "en": "Lux Gate < 400",
+        "fr": "Lux Gate < 400"
+      },
+      "role": "Only act when lux below 400",
+      "feasibility": "full",
+      "status": "recipe",
+      "recipe": {
+        "type": "lux_gate",
+        "op": "lt",
+        "lux": 400
+      }
+    },
+    {
+      "id": "lux_gate_above_400",
+      "family": "light",
+      "uiName": {
+        "en": "Lux Gate > 400",
+        "fr": "Lux Gate > 400"
+      },
+      "role": "Only act when lux above 400",
+      "feasibility": "full",
+      "status": "recipe",
+      "recipe": {
+        "type": "lux_gate",
+        "op": "gt",
+        "lux": 400
+      }
+    },
+    {
+      "id": "lux_gate_below_800",
+      "family": "light",
+      "uiName": {
+        "en": "Lux Gate < 800",
+        "fr": "Lux Gate < 800"
+      },
+      "role": "Only act when lux below 800",
+      "feasibility": "full",
+      "status": "recipe",
+      "recipe": {
+        "type": "lux_gate",
+        "op": "lt",
+        "lux": 800
+      }
+    },
+    {
+      "id": "lux_gate_above_800",
+      "family": "light",
+      "uiName": {
+        "en": "Lux Gate > 800",
+        "fr": "Lux Gate > 800"
+      },
+      "role": "Only act when lux above 800",
+      "feasibility": "full",
+      "status": "recipe",
+      "recipe": {
+        "type": "lux_gate",
+        "op": "gt",
+        "lux": 800
+      }
+    },
+    {
+      "id": "soft_link_mode_toggle",
+      "family": "light",
+      "uiName": {
+        "en": "Soft Link toggle",
+        "fr": "Soft Link toggle"
+      },
+      "role": "Soft device link mode toggle",
+      "feasibility": "full_soft",
+      "status": "recipe",
+      "recipe": {
+        "type": "device_link",
+        "mode": "toggle"
+      }
+    },
+    {
+      "id": "soft_link_mode_on",
+      "family": "light",
+      "uiName": {
+        "en": "Soft Link on",
+        "fr": "Soft Link on"
+      },
+      "role": "Soft device link mode on",
+      "feasibility": "full_soft",
+      "status": "recipe",
+      "recipe": {
+        "type": "device_link",
+        "mode": "on"
+      }
+    },
+    {
+      "id": "soft_link_mode_off",
+      "family": "light",
+      "uiName": {
+        "en": "Soft Link off",
+        "fr": "Soft Link off"
+      },
+      "role": "Soft device link mode off",
+      "feasibility": "full_soft",
+      "status": "recipe",
+      "recipe": {
+        "type": "device_link",
+        "mode": "off"
+      }
+    },
+    {
+      "id": "soft_link_mode_follow",
+      "family": "light",
+      "uiName": {
+        "en": "Soft Link follow",
+        "fr": "Soft Link follow"
+      },
+      "role": "Soft device link mode follow",
+      "feasibility": "full_soft",
+      "status": "recipe",
+      "recipe": {
+        "type": "device_link",
+        "mode": "follow"
+      }
+    },
+    {
+      "id": "soft_link_mode_dim",
+      "family": "light",
+      "uiName": {
+        "en": "Soft Link dim",
+        "fr": "Soft Link dim"
+      },
+      "role": "Soft device link mode dim",
+      "feasibility": "full_soft",
+      "status": "recipe",
+      "recipe": {
+        "type": "device_link",
+        "mode": "dim"
+      }
+    },
+    {
+      "id": "peak_shed_1000w",
+      "family": "energy",
+      "uiName": {
+        "en": "Peak Shed 1000W",
+        "fr": "Peak Shed 1000W"
+      },
+      "role": "Dim lights when power ≥ 1000W",
+      "feasibility": "full",
+      "status": "recipe",
+      "recipe": {
+        "type": "peak_shed",
+        "thresholdW": 1000,
+        "dimTo": 0.35
+      }
+    },
+    {
+      "id": "peak_shed_1500w",
+      "family": "energy",
+      "uiName": {
+        "en": "Peak Shed 1500W",
+        "fr": "Peak Shed 1500W"
+      },
+      "role": "Dim lights when power ≥ 1500W",
+      "feasibility": "full",
+      "status": "recipe",
+      "recipe": {
+        "type": "peak_shed",
+        "thresholdW": 1500,
+        "dimTo": 0.35
+      }
+    },
+    {
+      "id": "peak_shed_2000w",
+      "family": "energy",
+      "uiName": {
+        "en": "Peak Shed 2000W",
+        "fr": "Peak Shed 2000W"
+      },
+      "role": "Dim lights when power ≥ 2000W",
+      "feasibility": "full",
+      "status": "recipe",
+      "recipe": {
+        "type": "peak_shed",
+        "thresholdW": 2000,
+        "dimTo": 0.35
+      }
+    },
+    {
+      "id": "peak_shed_2500w",
+      "family": "energy",
+      "uiName": {
+        "en": "Peak Shed 2500W",
+        "fr": "Peak Shed 2500W"
+      },
+      "role": "Dim lights when power ≥ 2500W",
+      "feasibility": "full",
+      "status": "recipe",
+      "recipe": {
+        "type": "peak_shed",
+        "thresholdW": 2500,
+        "dimTo": 0.35
+      }
+    },
+    {
+      "id": "peak_shed_3000w",
+      "family": "energy",
+      "uiName": {
+        "en": "Peak Shed 3000W",
+        "fr": "Peak Shed 3000W"
+      },
+      "role": "Dim lights when power ≥ 3000W",
+      "feasibility": "full",
+      "status": "recipe",
+      "recipe": {
+        "type": "peak_shed",
+        "thresholdW": 3000,
+        "dimTo": 0.35
+      }
+    },
+    {
+      "id": "peak_shed_4000w",
+      "family": "energy",
+      "uiName": {
+        "en": "Peak Shed 4000W",
+        "fr": "Peak Shed 4000W"
+      },
+      "role": "Dim lights when power ≥ 4000W",
+      "feasibility": "full",
+      "status": "recipe",
+      "recipe": {
+        "type": "peak_shed",
+        "thresholdW": 4000,
+        "dimTo": 0.35
+      }
+    },
+    {
+      "id": "peak_shed_5000w",
+      "family": "energy",
+      "uiName": {
+        "en": "Peak Shed 5000W",
+        "fr": "Peak Shed 5000W"
+      },
+      "role": "Dim lights when power ≥ 5000W",
+      "feasibility": "full",
+      "status": "recipe",
+      "recipe": {
+        "type": "peak_shed",
+        "thresholdW": 5000,
+        "dimTo": 0.35
+      }
+    },
+    {
+      "id": "peak_shed_6000w",
+      "family": "energy",
+      "uiName": {
+        "en": "Peak Shed 6000W",
+        "fr": "Peak Shed 6000W"
+      },
+      "role": "Dim lights when power ≥ 6000W",
+      "feasibility": "full",
+      "status": "recipe",
+      "recipe": {
+        "type": "peak_shed",
+        "thresholdW": 6000,
+        "dimTo": 0.35
+      }
+    },
+    {
+      "id": "idle_off_5m",
+      "family": "light",
+      "uiName": {
+        "en": "Idle Off 5m",
+        "fr": "Idle Off 5m"
+      },
+      "role": "Auto-off after 5 idle minutes",
+      "feasibility": "full",
+      "status": "recipe",
+      "recipe": {
+        "type": "idle_off",
+        "idleMinutes": 5
+      }
+    },
+    {
+      "id": "idle_off_10m",
+      "family": "light",
+      "uiName": {
+        "en": "Idle Off 10m",
+        "fr": "Idle Off 10m"
+      },
+      "role": "Auto-off after 10 idle minutes",
+      "feasibility": "full",
+      "status": "recipe",
+      "recipe": {
+        "type": "idle_off",
+        "idleMinutes": 10
+      }
+    },
+    {
+      "id": "idle_off_15m",
+      "family": "light",
+      "uiName": {
+        "en": "Idle Off 15m",
+        "fr": "Idle Off 15m"
+      },
+      "role": "Auto-off after 15 idle minutes",
+      "feasibility": "full",
+      "status": "recipe",
+      "recipe": {
+        "type": "idle_off",
+        "idleMinutes": 15
+      }
+    },
+    {
+      "id": "idle_off_20m",
+      "family": "light",
+      "uiName": {
+        "en": "Idle Off 20m",
+        "fr": "Idle Off 20m"
+      },
+      "role": "Auto-off after 20 idle minutes",
+      "feasibility": "full",
+      "status": "recipe",
+      "recipe": {
+        "type": "idle_off",
+        "idleMinutes": 20
+      }
+    },
+    {
+      "id": "idle_off_30m",
+      "family": "light",
+      "uiName": {
+        "en": "Idle Off 30m",
+        "fr": "Idle Off 30m"
+      },
+      "role": "Auto-off after 30 idle minutes",
+      "feasibility": "full",
+      "status": "recipe",
+      "recipe": {
+        "type": "idle_off",
+        "idleMinutes": 30
+      }
+    },
+    {
+      "id": "idle_off_45m",
+      "family": "light",
+      "uiName": {
+        "en": "Idle Off 45m",
+        "fr": "Idle Off 45m"
+      },
+      "role": "Auto-off after 45 idle minutes",
+      "feasibility": "full",
+      "status": "recipe",
+      "recipe": {
+        "type": "idle_off",
+        "idleMinutes": 45
+      }
+    },
+    {
+      "id": "idle_off_60m",
+      "family": "light",
+      "uiName": {
+        "en": "Idle Off 60m",
+        "fr": "Idle Off 60m"
+      },
+      "role": "Auto-off after 60 idle minutes",
+      "feasibility": "full",
+      "status": "recipe",
+      "recipe": {
+        "type": "idle_off",
+        "idleMinutes": 60
+      }
+    },
+    {
+      "id": "idle_off_90m",
+      "family": "light",
+      "uiName": {
+        "en": "Idle Off 90m",
+        "fr": "Idle Off 90m"
+      },
+      "role": "Auto-off after 90 idle minutes",
+      "feasibility": "full",
+      "status": "recipe",
+      "recipe": {
+        "type": "idle_off",
+        "idleMinutes": 90
+      }
+    },
+    {
+      "id": "idle_off_120m",
+      "family": "light",
+      "uiName": {
+        "en": "Idle Off 120m",
+        "fr": "Idle Off 120m"
+      },
+      "role": "Auto-off after 120 idle minutes",
+      "feasibility": "full",
+      "status": "recipe",
+      "recipe": {
+        "type": "idle_off",
+        "idleMinutes": 120
+      }
+    },
+    {
+      "id": "shade_elev_m6",
+      "family": "cover",
+      "uiName": {
+        "en": "Shade Elev -6°",
+        "fr": "Shade Elev -6°"
+      },
+      "role": "Shade phase around elevation -6",
+      "feasibility": "full",
+      "status": "recipe",
+      "recipe": {
+        "type": "shade_elev",
+        "duskElev": -9,
+        "dawnElev": -3
+      }
+    },
+    {
+      "id": "shade_elev_m3",
+      "family": "cover",
+      "uiName": {
+        "en": "Shade Elev -3°",
+        "fr": "Shade Elev -3°"
+      },
+      "role": "Shade phase around elevation -3",
+      "feasibility": "full",
+      "status": "recipe",
+      "recipe": {
+        "type": "shade_elev",
+        "duskElev": -6,
+        "dawnElev": 0
+      }
+    },
+    {
+      "id": "shade_elev_p0",
+      "family": "cover",
+      "uiName": {
+        "en": "Shade Elev 0°",
+        "fr": "Shade Elev 0°"
+      },
+      "role": "Shade phase around elevation 0",
+      "feasibility": "full",
+      "status": "recipe",
+      "recipe": {
+        "type": "shade_elev",
+        "duskElev": -3,
+        "dawnElev": 3
+      }
+    },
+    {
+      "id": "shade_elev_p3",
+      "family": "cover",
+      "uiName": {
+        "en": "Shade Elev 3°",
+        "fr": "Shade Elev 3°"
+      },
+      "role": "Shade phase around elevation 3",
+      "feasibility": "full",
+      "status": "recipe",
+      "recipe": {
+        "type": "shade_elev",
+        "duskElev": 0,
+        "dawnElev": 6
+      }
+    },
+    {
+      "id": "shade_elev_p6",
+      "family": "cover",
+      "uiName": {
+        "en": "Shade Elev 6°",
+        "fr": "Shade Elev 6°"
+      },
+      "role": "Shade phase around elevation 6",
+      "feasibility": "full",
+      "status": "recipe",
+      "recipe": {
+        "type": "shade_elev",
+        "duskElev": 3,
+        "dawnElev": 9
+      }
+    },
+    {
+      "id": "shade_elev_p12",
+      "family": "cover",
+      "uiName": {
+        "en": "Shade Elev 12°",
+        "fr": "Shade Elev 12°"
+      },
+      "role": "Shade phase around elevation 12",
+      "feasibility": "full",
+      "status": "recipe",
+      "recipe": {
+        "type": "shade_elev",
+        "duskElev": 9,
+        "dawnElev": 15
+      }
+    },
+    {
+      "id": "night_bias_20",
+      "family": "light",
+      "uiName": {
+        "en": "Night Bias 20%",
+        "fr": "Night Bias 20%"
+      },
+      "role": "Night path dim factor 0.2",
+      "feasibility": "full",
+      "status": "recipe",
+      "recipe": {
+        "type": "night_bias",
+        "nightFactor": 0.2
+      }
+    },
+    {
+      "id": "night_bias_25",
+      "family": "light",
+      "uiName": {
+        "en": "Night Bias 25%",
+        "fr": "Night Bias 25%"
+      },
+      "role": "Night path dim factor 0.25",
+      "feasibility": "full",
+      "status": "recipe",
+      "recipe": {
+        "type": "night_bias",
+        "nightFactor": 0.25
+      }
+    },
+    {
+      "id": "night_bias_30",
+      "family": "light",
+      "uiName": {
+        "en": "Night Bias 30%",
+        "fr": "Night Bias 30%"
+      },
+      "role": "Night path dim factor 0.3",
+      "feasibility": "full",
+      "status": "recipe",
+      "recipe": {
+        "type": "night_bias",
+        "nightFactor": 0.3
+      }
+    },
+    {
+      "id": "night_bias_35",
+      "family": "light",
+      "uiName": {
+        "en": "Night Bias 35%",
+        "fr": "Night Bias 35%"
+      },
+      "role": "Night path dim factor 0.35",
+      "feasibility": "full",
+      "status": "recipe",
+      "recipe": {
+        "type": "night_bias",
+        "nightFactor": 0.35
+      }
+    },
+    {
+      "id": "night_bias_40",
+      "family": "light",
+      "uiName": {
+        "en": "Night Bias 40%",
+        "fr": "Night Bias 40%"
+      },
+      "role": "Night path dim factor 0.4",
+      "feasibility": "full",
+      "status": "recipe",
+      "recipe": {
+        "type": "night_bias",
+        "nightFactor": 0.4
+      }
+    },
+    {
+      "id": "night_bias_50",
+      "family": "light",
+      "uiName": {
+        "en": "Night Bias 50%",
+        "fr": "Night Bias 50%"
+      },
+      "role": "Night path dim factor 0.5",
+      "feasibility": "full",
+      "status": "recipe",
+      "recipe": {
+        "type": "night_bias",
+        "nightFactor": 0.5
+      }
+    },
+    {
+      "id": "night_bias_60",
+      "family": "light",
+      "uiName": {
+        "en": "Night Bias 60%",
+        "fr": "Night Bias 60%"
+      },
+      "role": "Night path dim factor 0.6",
+      "feasibility": "full",
+      "status": "recipe",
+      "recipe": {
+        "type": "night_bias",
+        "nightFactor": 0.6
+      }
+    },
+    {
+      "id": "ambient_hue_0",
+      "family": "light",
+      "uiName": {
+        "en": "Ambient Tint 0",
+        "fr": "Ambient Tint 0"
+      },
+      "role": "Soft ambient sync tint 0",
+      "feasibility": "full_soft",
+      "status": "recipe",
+      "recipe": {
+        "type": "ambient",
+        "hue": 0,
+        "saturation": 0.5,
+        "dim": 0.4
+      }
+    },
+    {
+      "id": "ambient_hue_5",
+      "family": "light",
+      "uiName": {
+        "en": "Ambient Tint 5",
+        "fr": "Ambient Tint 5"
+      },
+      "role": "Soft ambient sync tint 0.05",
+      "feasibility": "full_soft",
+      "status": "recipe",
+      "recipe": {
+        "type": "ambient",
+        "hue": 0.05,
+        "saturation": 0.5,
+        "dim": 0.4
+      }
+    },
+    {
+      "id": "ambient_hue_8",
+      "family": "light",
+      "uiName": {
+        "en": "Ambient Tint 8",
+        "fr": "Ambient Tint 8"
+      },
+      "role": "Soft ambient sync tint 0.08",
+      "feasibility": "full_soft",
+      "status": "recipe",
+      "recipe": {
+        "type": "ambient",
+        "hue": 0.08,
+        "saturation": 0.5,
+        "dim": 0.4
+      }
+    },
+    {
+      "id": "ambient_hue_12",
+      "family": "light",
+      "uiName": {
+        "en": "Ambient Tint 12",
+        "fr": "Ambient Tint 12"
+      },
+      "role": "Soft ambient sync tint 0.12",
+      "feasibility": "full_soft",
+      "status": "recipe",
+      "recipe": {
+        "type": "ambient",
+        "hue": 0.12,
+        "saturation": 0.5,
+        "dim": 0.4
+      }
+    },
+    {
+      "id": "ambient_hue_20",
+      "family": "light",
+      "uiName": {
+        "en": "Ambient Tint 20",
+        "fr": "Ambient Tint 20"
+      },
+      "role": "Soft ambient sync tint 0.2",
+      "feasibility": "full_soft",
+      "status": "recipe",
+      "recipe": {
+        "type": "ambient",
+        "hue": 0.2,
+        "saturation": 0.5,
+        "dim": 0.4
+      }
+    },
+    {
+      "id": "ambient_hue_33",
+      "family": "light",
+      "uiName": {
+        "en": "Ambient Tint 33",
+        "fr": "Ambient Tint 33"
+      },
+      "role": "Soft ambient sync tint 0.33",
+      "feasibility": "full_soft",
+      "status": "recipe",
+      "recipe": {
+        "type": "ambient",
+        "hue": 0.33,
+        "saturation": 0.5,
+        "dim": 0.4
+      }
+    },
+    {
+      "id": "ambient_hue_45",
+      "family": "light",
+      "uiName": {
+        "en": "Ambient Tint 45",
+        "fr": "Ambient Tint 45"
+      },
+      "role": "Soft ambient sync tint 0.45",
+      "feasibility": "full_soft",
+      "status": "recipe",
+      "recipe": {
+        "type": "ambient",
+        "hue": 0.45,
+        "saturation": 0.5,
+        "dim": 0.4
+      }
+    },
+    {
+      "id": "ambient_hue_55",
+      "family": "light",
+      "uiName": {
+        "en": "Ambient Tint 55",
+        "fr": "Ambient Tint 55"
+      },
+      "role": "Soft ambient sync tint 0.55",
+      "feasibility": "full_soft",
+      "status": "recipe",
+      "recipe": {
+        "type": "ambient",
+        "hue": 0.55,
+        "saturation": 0.5,
+        "dim": 0.4
+      }
+    },
+    {
+      "id": "ambient_hue_66",
+      "family": "light",
+      "uiName": {
+        "en": "Ambient Tint 66",
+        "fr": "Ambient Tint 66"
+      },
+      "role": "Soft ambient sync tint 0.66",
+      "feasibility": "full_soft",
+      "status": "recipe",
+      "recipe": {
+        "type": "ambient",
+        "hue": 0.66,
+        "saturation": 0.5,
+        "dim": 0.4
+      }
+    },
+    {
+      "id": "ambient_hue_75",
+      "family": "light",
+      "uiName": {
+        "en": "Ambient Tint 75",
+        "fr": "Ambient Tint 75"
+      },
+      "role": "Soft ambient sync tint 0.75",
+      "feasibility": "full_soft",
+      "status": "recipe",
+      "recipe": {
+        "type": "ambient",
+        "hue": 0.75,
+        "saturation": 0.5,
+        "dim": 0.4
+      }
+    },
+    {
+      "id": "ambient_hue_85",
+      "family": "light",
+      "uiName": {
+        "en": "Ambient Tint 85",
+        "fr": "Ambient Tint 85"
+      },
+      "role": "Soft ambient sync tint 0.85",
+      "feasibility": "full_soft",
+      "status": "recipe",
+      "recipe": {
+        "type": "ambient",
+        "hue": 0.85,
+        "saturation": 0.5,
+        "dim": 0.4
+      }
+    },
+    {
+      "id": "ambient_hue_95",
+      "family": "light",
+      "uiName": {
+        "en": "Ambient Tint 95",
+        "fr": "Ambient Tint 95"
+      },
+      "role": "Soft ambient sync tint 0.95",
+      "feasibility": "full_soft",
+      "status": "recipe",
+      "recipe": {
+        "type": "ambient",
+        "hue": 0.95,
+        "saturation": 0.5,
+        "dim": 0.4
+      }
+    },
+    {
+      "id": "leave_stagger_50ms",
+      "family": "light",
+      "uiName": {
+        "en": "Leave Stagger 50ms",
+        "fr": "Leave Stagger 50ms"
+      },
+      "role": "Staggered leave-off 50ms",
+      "feasibility": "full",
+      "status": "recipe",
+      "recipe": {
+        "type": "stagger_leave",
+        "staggerMs": 50
+      }
+    },
+    {
+      "id": "leave_stagger_100ms",
+      "family": "light",
+      "uiName": {
+        "en": "Leave Stagger 100ms",
+        "fr": "Leave Stagger 100ms"
+      },
+      "role": "Staggered leave-off 100ms",
+      "feasibility": "full",
+      "status": "recipe",
+      "recipe": {
+        "type": "stagger_leave",
+        "staggerMs": 100
+      }
+    },
+    {
+      "id": "leave_stagger_150ms",
+      "family": "light",
+      "uiName": {
+        "en": "Leave Stagger 150ms",
+        "fr": "Leave Stagger 150ms"
+      },
+      "role": "Staggered leave-off 150ms",
+      "feasibility": "full",
+      "status": "recipe",
+      "recipe": {
+        "type": "stagger_leave",
+        "staggerMs": 150
+      }
+    },
+    {
+      "id": "leave_stagger_180ms",
+      "family": "light",
+      "uiName": {
+        "en": "Leave Stagger 180ms",
+        "fr": "Leave Stagger 180ms"
+      },
+      "role": "Staggered leave-off 180ms",
+      "feasibility": "full",
+      "status": "recipe",
+      "recipe": {
+        "type": "stagger_leave",
+        "staggerMs": 180
+      }
+    },
+    {
+      "id": "leave_stagger_250ms",
+      "family": "light",
+      "uiName": {
+        "en": "Leave Stagger 250ms",
+        "fr": "Leave Stagger 250ms"
+      },
+      "role": "Staggered leave-off 250ms",
+      "feasibility": "full",
+      "status": "recipe",
+      "recipe": {
+        "type": "stagger_leave",
+        "staggerMs": 250
+      }
+    },
+    {
+      "id": "leave_stagger_350ms",
+      "family": "light",
+      "uiName": {
+        "en": "Leave Stagger 350ms",
+        "fr": "Leave Stagger 350ms"
+      },
+      "role": "Staggered leave-off 350ms",
+      "feasibility": "full",
+      "status": "recipe",
+      "recipe": {
+        "type": "stagger_leave",
+        "staggerMs": 350
+      }
+    },
+    {
+      "id": "leave_stagger_500ms",
+      "family": "light",
+      "uiName": {
+        "en": "Leave Stagger 500ms",
+        "fr": "Leave Stagger 500ms"
+      },
+      "role": "Staggered leave-off 500ms",
+      "feasibility": "full",
+      "status": "recipe",
+      "recipe": {
+        "type": "stagger_leave",
+        "staggerMs": 500
+      }
+    },
+    {
+      "id": "leave_stagger_750ms",
+      "family": "light",
+      "uiName": {
+        "en": "Leave Stagger 750ms",
+        "fr": "Leave Stagger 750ms"
+      },
+      "role": "Staggered leave-off 750ms",
+      "feasibility": "full",
+      "status": "recipe",
+      "recipe": {
+        "type": "stagger_leave",
+        "staggerMs": 750
+      }
+    },
+    {
+      "id": "leave_stagger_1000ms",
+      "family": "light",
+      "uiName": {
+        "en": "Leave Stagger 1000ms",
+        "fr": "Leave Stagger 1000ms"
+      },
+      "role": "Staggered leave-off 1000ms",
+      "feasibility": "full",
+      "status": "recipe",
+      "recipe": {
+        "type": "stagger_leave",
+        "staggerMs": 1000
+      }
+    },
+    {
+      "id": "contact_entry_entry",
+      "family": "light",
+      "uiName": {
+        "en": "Contact Entry entry",
+        "fr": "Contact Entry entry"
+      },
+      "role": "Door contact soft lights entry",
+      "feasibility": "full",
+      "status": "recipe",
+      "recipe": {
+        "type": "contact_entry",
+        "zone": "entry",
+        "quietStart": "23:00",
+        "quietEnd": "06:00"
+      }
+    },
+    {
+      "id": "contact_entry_backdoor",
+      "family": "light",
+      "uiName": {
+        "en": "Contact Entry backdoor",
+        "fr": "Contact Entry backdoor"
+      },
+      "role": "Door contact soft lights backdoor",
+      "feasibility": "full",
+      "status": "recipe",
+      "recipe": {
+        "type": "contact_entry",
+        "zone": "backdoor",
+        "quietStart": "23:00",
+        "quietEnd": "06:00"
+      }
+    },
+    {
+      "id": "contact_entry_garage_door",
+      "family": "light",
+      "uiName": {
+        "en": "Contact Entry garage_door",
+        "fr": "Contact Entry garage_door"
+      },
+      "role": "Door contact soft lights garage_door",
+      "feasibility": "full",
+      "status": "recipe",
+      "recipe": {
+        "type": "contact_entry",
+        "zone": "garage_door",
+        "quietStart": "23:00",
+        "quietEnd": "06:00"
+      }
+    },
+    {
+      "id": "contact_entry_patio",
+      "family": "light",
+      "uiName": {
+        "en": "Contact Entry patio",
+        "fr": "Contact Entry patio"
+      },
+      "role": "Door contact soft lights patio",
+      "feasibility": "full",
+      "status": "recipe",
+      "recipe": {
+        "type": "contact_entry",
+        "zone": "patio",
+        "quietStart": "23:00",
+        "quietEnd": "06:00"
+      }
+    },
+    {
+      "id": "mode_day_all_off",
+      "family": "presence",
+      "uiName": {
+        "en": "Mode day all_off",
+        "fr": "Mode day all_off"
+      },
+      "role": "When house mode day → all_off",
+      "feasibility": "full_soft",
+      "status": "recipe",
+      "recipe": {
+        "type": "house_mode_hook",
+        "mode": "day",
+        "action": "all_off"
+      }
+    },
+    {
+      "id": "mode_day_path_dim",
+      "family": "presence",
+      "uiName": {
+        "en": "Mode day path_dim",
+        "fr": "Mode day path_dim"
+      },
+      "role": "When house mode day → path_dim",
+      "feasibility": "full_soft",
+      "status": "recipe",
+      "recipe": {
+        "type": "house_mode_hook",
+        "mode": "day",
+        "action": "path_dim"
+      }
+    },
+    {
+      "id": "mode_day_lived_in",
+      "family": "presence",
+      "uiName": {
+        "en": "Mode day lived_in",
+        "fr": "Mode day lived_in"
+      },
+      "role": "When house mode day → lived_in",
+      "feasibility": "full_soft",
+      "status": "recipe",
+      "recipe": {
+        "type": "house_mode_hook",
+        "mode": "day",
+        "action": "lived_in"
+      }
+    },
+    {
+      "id": "mode_day_quiet",
+      "family": "presence",
+      "uiName": {
+        "en": "Mode day quiet",
+        "fr": "Mode day quiet"
+      },
+      "role": "When house mode day → quiet",
+      "feasibility": "full_soft",
+      "status": "recipe",
+      "recipe": {
+        "type": "house_mode_hook",
+        "mode": "day",
+        "action": "quiet"
+      }
+    },
+    {
+      "id": "mode_evening_all_off",
+      "family": "presence",
+      "uiName": {
+        "en": "Mode evening all_off",
+        "fr": "Mode evening all_off"
+      },
+      "role": "When house mode evening → all_off",
+      "feasibility": "full_soft",
+      "status": "recipe",
+      "recipe": {
+        "type": "house_mode_hook",
+        "mode": "evening",
+        "action": "all_off"
+      }
+    },
+    {
+      "id": "mode_evening_path_dim",
+      "family": "presence",
+      "uiName": {
+        "en": "Mode evening path_dim",
+        "fr": "Mode evening path_dim"
+      },
+      "role": "When house mode evening → path_dim",
+      "feasibility": "full_soft",
+      "status": "recipe",
+      "recipe": {
+        "type": "house_mode_hook",
+        "mode": "evening",
+        "action": "path_dim"
+      }
+    },
+    {
+      "id": "mode_evening_lived_in",
+      "family": "presence",
+      "uiName": {
+        "en": "Mode evening lived_in",
+        "fr": "Mode evening lived_in"
+      },
+      "role": "When house mode evening → lived_in",
+      "feasibility": "full_soft",
+      "status": "recipe",
+      "recipe": {
+        "type": "house_mode_hook",
+        "mode": "evening",
+        "action": "lived_in"
+      }
+    },
+    {
+      "id": "mode_evening_quiet",
+      "family": "presence",
+      "uiName": {
+        "en": "Mode evening quiet",
+        "fr": "Mode evening quiet"
+      },
+      "role": "When house mode evening → quiet",
+      "feasibility": "full_soft",
+      "status": "recipe",
+      "recipe": {
+        "type": "house_mode_hook",
+        "mode": "evening",
+        "action": "quiet"
+      }
+    },
+    {
+      "id": "mode_night_all_off",
+      "family": "presence",
+      "uiName": {
+        "en": "Mode night all_off",
+        "fr": "Mode night all_off"
+      },
+      "role": "When house mode night → all_off",
+      "feasibility": "full_soft",
+      "status": "recipe",
+      "recipe": {
+        "type": "house_mode_hook",
+        "mode": "night",
+        "action": "all_off"
+      }
+    },
+    {
+      "id": "mode_night_path_dim",
+      "family": "presence",
+      "uiName": {
+        "en": "Mode night path_dim",
+        "fr": "Mode night path_dim"
+      },
+      "role": "When house mode night → path_dim",
+      "feasibility": "full_soft",
+      "status": "recipe",
+      "recipe": {
+        "type": "house_mode_hook",
+        "mode": "night",
+        "action": "path_dim"
+      }
+    },
+    {
+      "id": "mode_night_lived_in",
+      "family": "presence",
+      "uiName": {
+        "en": "Mode night lived_in",
+        "fr": "Mode night lived_in"
+      },
+      "role": "When house mode night → lived_in",
+      "feasibility": "full_soft",
+      "status": "recipe",
+      "recipe": {
+        "type": "house_mode_hook",
+        "mode": "night",
+        "action": "lived_in"
+      }
+    },
+    {
+      "id": "mode_night_quiet",
+      "family": "presence",
+      "uiName": {
+        "en": "Mode night quiet",
+        "fr": "Mode night quiet"
+      },
+      "role": "When house mode night → quiet",
+      "feasibility": "full_soft",
+      "status": "recipe",
+      "recipe": {
+        "type": "house_mode_hook",
+        "mode": "night",
+        "action": "quiet"
+      }
+    },
+    {
+      "id": "mode_away_all_off",
+      "family": "presence",
+      "uiName": {
+        "en": "Mode away all_off",
+        "fr": "Mode away all_off"
+      },
+      "role": "When house mode away → all_off",
+      "feasibility": "full_soft",
+      "status": "recipe",
+      "recipe": {
+        "type": "house_mode_hook",
+        "mode": "away",
+        "action": "all_off"
+      }
+    },
+    {
+      "id": "mode_away_path_dim",
+      "family": "presence",
+      "uiName": {
+        "en": "Mode away path_dim",
+        "fr": "Mode away path_dim"
+      },
+      "role": "When house mode away → path_dim",
+      "feasibility": "full_soft",
+      "status": "recipe",
+      "recipe": {
+        "type": "house_mode_hook",
+        "mode": "away",
+        "action": "path_dim"
+      }
+    },
+    {
+      "id": "mode_away_lived_in",
+      "family": "presence",
+      "uiName": {
+        "en": "Mode away lived_in",
+        "fr": "Mode away lived_in"
+      },
+      "role": "When house mode away → lived_in",
+      "feasibility": "full_soft",
+      "status": "recipe",
+      "recipe": {
+        "type": "house_mode_hook",
+        "mode": "away",
+        "action": "lived_in"
+      }
+    },
+    {
+      "id": "mode_away_quiet",
+      "family": "presence",
+      "uiName": {
+        "en": "Mode away quiet",
+        "fr": "Mode away quiet"
+      },
+      "role": "When house mode away → quiet",
+      "feasibility": "full_soft",
+      "status": "recipe",
+      "recipe": {
+        "type": "house_mode_hook",
+        "mode": "away",
+        "action": "quiet"
+      }
+    },
+    {
+      "id": "soft_auto_001",
+      "family": "generic",
+      "uiName": {
+        "en": "Soft Auto 1",
+        "fr": "Soft Auto 1"
+      },
+      "role": "Declarative soft automation slot 1",
+      "feasibility": "full_soft",
+      "status": "recipe",
+      "recipe": {
+        "type": "generic_slot",
+        "slot": 1,
+        "pattern": "threshold"
+      }
+    },
+    {
+      "id": "soft_auto_002",
+      "family": "generic",
+      "uiName": {
+        "en": "Soft Auto 2",
+        "fr": "Soft Auto 2"
+      },
+      "role": "Declarative soft automation slot 2",
+      "feasibility": "full_soft",
+      "status": "recipe",
+      "recipe": {
+        "type": "generic_slot",
+        "slot": 2,
+        "pattern": "solar"
+      }
+    },
+    {
+      "id": "soft_auto_003",
+      "family": "generic",
+      "uiName": {
+        "en": "Soft Auto 3",
+        "fr": "Soft Auto 3"
+      },
+      "role": "Declarative soft automation slot 3",
+      "feasibility": "full_soft",
+      "status": "recipe",
+      "recipe": {
+        "type": "generic_slot",
+        "slot": 3,
+        "pattern": "quiet"
+      }
+    },
+    {
+      "id": "soft_auto_004",
+      "family": "generic",
+      "uiName": {
+        "en": "Soft Auto 4",
+        "fr": "Soft Auto 4"
+      },
+      "role": "Declarative soft automation slot 4",
+      "feasibility": "full_soft",
+      "status": "recipe",
+      "recipe": {
+        "type": "generic_slot",
+        "slot": 4,
+        "pattern": "idle"
+      }
+    },
+    {
+      "id": "soft_auto_005",
+      "family": "generic",
+      "uiName": {
+        "en": "Soft Auto 5",
+        "fr": "Soft Auto 5"
+      },
+      "role": "Declarative soft automation slot 5",
+      "feasibility": "full_soft",
+      "status": "recipe",
+      "recipe": {
+        "type": "generic_slot",
+        "slot": 5,
+        "pattern": "edge_on"
+      }
+    },
+    {
+      "id": "soft_auto_006",
+      "family": "generic",
+      "uiName": {
+        "en": "Soft Auto 6",
+        "fr": "Soft Auto 6"
+      },
+      "role": "Declarative soft automation slot 6",
+      "feasibility": "full_soft",
+      "status": "recipe",
+      "recipe": {
+        "type": "generic_slot",
+        "slot": 6,
+        "pattern": "threshold"
+      }
+    },
+    {
+      "id": "soft_auto_007",
+      "family": "generic",
+      "uiName": {
+        "en": "Soft Auto 7",
+        "fr": "Soft Auto 7"
+      },
+      "role": "Declarative soft automation slot 7",
+      "feasibility": "full_soft",
+      "status": "recipe",
+      "recipe": {
+        "type": "generic_slot",
+        "slot": 7,
+        "pattern": "solar"
+      }
+    },
+    {
+      "id": "soft_auto_008",
+      "family": "generic",
+      "uiName": {
+        "en": "Soft Auto 8",
+        "fr": "Soft Auto 8"
+      },
+      "role": "Declarative soft automation slot 8",
+      "feasibility": "full_soft",
+      "status": "recipe",
+      "recipe": {
+        "type": "generic_slot",
+        "slot": 8,
+        "pattern": "quiet"
+      }
+    },
+    {
+      "id": "soft_auto_009",
+      "family": "generic",
+      "uiName": {
+        "en": "Soft Auto 9",
+        "fr": "Soft Auto 9"
+      },
+      "role": "Declarative soft automation slot 9",
+      "feasibility": "full_soft",
+      "status": "recipe",
+      "recipe": {
+        "type": "generic_slot",
+        "slot": 9,
+        "pattern": "idle"
+      }
+    },
+    {
+      "id": "soft_auto_010",
+      "family": "generic",
+      "uiName": {
+        "en": "Soft Auto 10",
+        "fr": "Soft Auto 10"
+      },
+      "role": "Declarative soft automation slot 10",
+      "feasibility": "full_soft",
+      "status": "recipe",
+      "recipe": {
+        "type": "generic_slot",
+        "slot": 10,
+        "pattern": "edge_on"
+      }
+    },
+    {
+      "id": "soft_auto_011",
+      "family": "generic",
+      "uiName": {
+        "en": "Soft Auto 11",
+        "fr": "Soft Auto 11"
+      },
+      "role": "Declarative soft automation slot 11",
+      "feasibility": "full_soft",
+      "status": "recipe",
+      "recipe": {
+        "type": "generic_slot",
+        "slot": 11,
+        "pattern": "threshold"
+      }
+    },
+    {
+      "id": "soft_auto_012",
+      "family": "generic",
+      "uiName": {
+        "en": "Soft Auto 12",
+        "fr": "Soft Auto 12"
+      },
+      "role": "Declarative soft automation slot 12",
+      "feasibility": "full_soft",
+      "status": "recipe",
+      "recipe": {
+        "type": "generic_slot",
+        "slot": 12,
+        "pattern": "solar"
+      }
+    },
+    {
+      "id": "soft_auto_013",
+      "family": "generic",
+      "uiName": {
+        "en": "Soft Auto 13",
+        "fr": "Soft Auto 13"
+      },
+      "role": "Declarative soft automation slot 13",
+      "feasibility": "full_soft",
+      "status": "recipe",
+      "recipe": {
+        "type": "generic_slot",
+        "slot": 13,
+        "pattern": "quiet"
+      }
+    },
+    {
+      "id": "soft_auto_014",
+      "family": "generic",
+      "uiName": {
+        "en": "Soft Auto 14",
+        "fr": "Soft Auto 14"
+      },
+      "role": "Declarative soft automation slot 14",
+      "feasibility": "full_soft",
+      "status": "recipe",
+      "recipe": {
+        "type": "generic_slot",
+        "slot": 14,
+        "pattern": "idle"
+      }
+    },
+    {
+      "id": "soft_auto_015",
+      "family": "generic",
+      "uiName": {
+        "en": "Soft Auto 15",
+        "fr": "Soft Auto 15"
+      },
+      "role": "Declarative soft automation slot 15",
+      "feasibility": "full_soft",
+      "status": "recipe",
+      "recipe": {
+        "type": "generic_slot",
+        "slot": 15,
+        "pattern": "edge_on"
+      }
+    },
+    {
+      "id": "soft_auto_016",
+      "family": "generic",
+      "uiName": {
+        "en": "Soft Auto 16",
+        "fr": "Soft Auto 16"
+      },
+      "role": "Declarative soft automation slot 16",
+      "feasibility": "full_soft",
+      "status": "recipe",
+      "recipe": {
+        "type": "generic_slot",
+        "slot": 16,
+        "pattern": "threshold"
+      }
+    }
+  ],
+  "gates": {
+    "npm": "check:p2567"
+  },
+  "runtime": {
+    "catalog": "lib/features/SoftFeatureCatalog.js",
+    "runner": "lib/features/SoftRecipeRunner.js",
+    "hub": "lib/features/SmartGatewayFeatureHub.js"
+  }
+}

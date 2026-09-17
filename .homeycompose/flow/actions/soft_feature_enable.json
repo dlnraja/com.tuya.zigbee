@@ -1,0 +1,19 @@
+{
+  "id": "soft_feature_enable",
+  "title": {
+    "en": "Enable Soft Feature by id",
+    "fr": "Activer Soft Feature par id"
+  },
+  "hint": {
+    "en": "Enables one of 200 unbranded catalog vectors (P2567 SoftRecipeRunner)",
+    "fr": "Active un des 200 vecteurs du catalogue unbranded (P2567)"
+  },
+  "args": [
+    {
+      "type": "text",
+      "name": "feature_id",
+      "title": { "en": "Feature id", "fr": "Id feature" },
+      "value": "path_light_hall"
+    }
+  ]
+}
