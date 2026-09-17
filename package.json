@@ -1,6 +1,6 @@
 {
   "name": "com.dlnraja.tuya.zigbee",
-  "version": "5.12.256",
+  "version": "5.12.257",
   "description": "Tuya Unified Zigbee - Local-first control with AI automation",
   "main": "app.js",
   "scripts": {
@@ -248,7 +248,11 @@
     "check:p2558": "node --test test/critical/p2558-elegant-provenance-ux.test.js",
     "check:p2559": "node --test test/critical/p2559-fine-forum-github-treat.test.js",
     "check:p2560": "node --test test/critical/p2560-smart-flow-local-learner.test.js",
-    "check:p2561": "node --test test/critical/p2561-publish-size-prepared-temp.test.js"
+    "check:p2561": "node --test test/critical/p2561-publish-size-prepared-temp.test.js",
+    "check:p2562": "node --test test/critical/p2562-local-workflow-learn.test.js && node tools/ci/p2562-local-workflow-learn-gate.js",
+    "learn:workflow": "node tools/ci/local-workflow-learn.js",
+    "learn:workflow:snapshot": "node tools/ci/local-workflow-learn.js --snapshot",
+    "improve:forfait-inject": "node tools/ci/inject-forfait-env-workflows.js --apply"
   },
   "keywords": [
     "homey",

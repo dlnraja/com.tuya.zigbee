@@ -2,11 +2,12 @@
 'use strict';
 
 /**
- * P2542 — Inject forfait / local-first env into cron + AI-touching workflows.
+ * P2562 — Inject forfait + local-learn env into ALL workflows (not only cron/AI).
  * Complementary: merges into existing top-level env; never wipes other keys.
  *
  *   node tools/ci/inject-forfait-env-workflows.js --dry-run
  *   node tools/ci/inject-forfait-env-workflows.js --apply
+ *   node tools/ci/inject-forfait-env-workflows.js --apply --all
  */
 
 const fs = require('fs');
@@ -15,6 +16,7 @@ const path = require('path');
 const ROOT = path.resolve(__dirname, '..', '..');
 const WF = path.join(ROOT, '.github', 'workflows');
 const APPLY = process.argv.includes('--apply');
+const ALL = process.argv.includes('--all') || true; // P2562 default: every workflow
 
 const INJECT = {
   AI_PLAN_MODE: 'forfait',
@@ -25,6 +27,9 @@ const INJECT = {
   AI_MAP_REDUCE: 'false',
   AI_FULL_CONTEXT: 'false',
   GMAIL_DIAG_AI_MAX: '0',
+  // P2562 — local habit learning (energy + CI workflows)
+  LOCAL_SMART_LEARN: 'true',
+  LOCAL_ENERGY_LEARN: 'true',
 };
 
 function hasSchedule(yml) {
@@ -42,6 +47,7 @@ function missingKeys(yml) {
 }
 
 function needsInject(yml) {
+  if (ALL) return missingKeys(yml).length > 0;
   const cron = hasSchedule(yml);
   const aiTouch = /ai-helper|callAI|OPENAI_API|OPENROUTER|GEMINI_API|ai-dp-extract/i.test(yml);
   if (!cron && !aiTouch) return false;
@@ -63,7 +69,6 @@ function ensureTopLevelEnv(yml) {
   if (envMatch) {
     let body = envMatch[1] || '';
     for (const k of miss) {
-      // remove wrong/old assignment of same key in top-level env body
       body = body.replace(new RegExp(`^[ \\t]*${k}\\s*:.*\\n`, 'm'), '');
       body += `  ${k}: '${INJECT[k]}'\n`;
     }
@@ -71,7 +76,7 @@ function ensureTopLevelEnv(yml) {
     return `${head.replace(/^env:\s*\n((?:[ \t]+.+\n)*)/m, newEnv)}${tail}`;
   }
 
-  return `${head.replace(/\s*$/, '\n')}# P2542 forfait / local-first (auto-injected)\nenv:\n${addLines.join('\n')}\n\n${tail}`;
+  return `${head.replace(/\s*$/, '\n')}# P2562 forfait + local-smart-learn (all workflows)\nenv:\n${addLines.join('\n')}\n\n${tail}`;
 }
 
 function main() {
@@ -86,8 +91,8 @@ function main() {
     changed.push({ file: f, added: missingKeys(yml) });
     if (APPLY) fs.writeFileSync(p, next);
   }
-  console.log(`inject-forfait-env: ${APPLY ? 'APPLIED' : 'dry-run'} changed=${changed.length}`);
-  for (const c of changed.slice(0, 50)) {
+  console.log(`inject-forfait-env: ${APPLY ? 'APPLIED' : 'dry-run'} all=${ALL} changed=${changed.length}/${files.length}`);
+  for (const c of changed.slice(0, 80)) {
     console.log(`  - ${c.file} (+${c.added.join(',')})`);
   }
 }

@@ -37,6 +37,8 @@ function runNode(rel, args = [], { soft = true } = {}) {
       AI_MAP_REDUCE: 'false',
       AI_FULL_CONTEXT: 'false',
       GMAIL_DIAG_AI_MAX: '0',
+      LOCAL_SMART_LEARN: 'true',
+      LOCAL_ENERGY_LEARN: 'true',
       FORUM_AUTO_POST: '0',
       SHADOW_FORUM: '1',
     },
@@ -60,6 +62,16 @@ function main() {
     { rel: 'tools/ci/ai-plan-guard.js', args: ['--preflight'], soft: true },
     { rel: 'tools/ci/ai-context-compress.js', args: ['--self-test'], soft: false },
     { rel: 'tools/ci/local-intelligent-solver.js', args: [], soft: true },
+    // P2562: local habit learn for workflows (observe this orchestrator run)
+    {
+      rel: 'tools/ci/local-workflow-learn.js',
+      args: [
+        '--observe=local-auto-improve-orchestrator',
+        '--ok=1',
+        `--ms=${QUICK ? 60000 : 180000}`,
+      ],
+      soft: true,
+    },
     { rel: 'tools/ci/prune-fp-collision-bleed.js', args: ['--check'], soft: true },
     {
       rel: 'tools/ci/align-mfs-db-intelligent.js',
