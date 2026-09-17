@@ -25,7 +25,9 @@
       "title": {
         "en": "Trip Alarm",
         "fr": "Alarme Déclenchement"
-      }
+      },
+      "getable": true,
+      "preventInsights": false
     },
     "button.1": {
       "title": {
@@ -35,6 +37,22 @@
       "maintenanceAction": true,
       "getable": false,
       "setable": false
+    },
+    "measure_power": {
+      "getable": true,
+      "preventInsights": false
+    },
+    "meter_power": {
+      "getable": true,
+      "preventInsights": false
+    },
+    "measure_current": {
+      "getable": true,
+      "preventInsights": false
+    },
+    "measure_voltage": {
+      "getable": true,
+      "preventInsights": false
     }
   },
   "zigbee": {

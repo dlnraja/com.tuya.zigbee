@@ -349,6 +349,14 @@
       "maintenanceAction": true,
       "getable": false,
       "setable": false
+    },
+    "measure_temperature": {
+      "getable": true,
+      "preventInsights": false
+    },
+    "measure_pm25": {
+      "getable": true,
+      "preventInsights": false
     }
   },
   "ui": {

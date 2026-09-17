@@ -159,6 +159,14 @@
       "maintenanceAction": true,
       "getable": false,
       "setable": false
+    },
+    "alarm_generic": {
+      "getable": true,
+      "preventInsights": false
+    },
+    "alarm_motion": {
+      "getable": true,
+      "preventInsights": false
     }
   },
   "discovery": "tuya_wifi"

@@ -40,6 +40,10 @@
       "getable": false,
       "setable": false,
       "maintenanceAction": true
+    },
+    "measure_battery": {
+      "getable": true,
+      "preventInsights": false
     }
   },
   "zigbee": {

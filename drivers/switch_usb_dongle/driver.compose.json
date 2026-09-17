@@ -180,13 +180,17 @@
       "title": {
         "en": "Power Consumption",
         "fr": "Consommation électrique"
-      }
+      },
+      "getable": true,
+      "preventInsights": false
     },
     "meter_power": {
       "title": {
         "en": "Cumulative Energy",
         "fr": "Énergie cumulée"
-      }
+      },
+      "getable": true,
+      "preventInsights": false
     },
     "button.1": {
       "title": {

@@ -411,7 +411,21 @@
       "setable": false
     },
     "measure_power": {
-      "approximated": true
+      "approximated": true,
+      "getable": true,
+      "preventInsights": false
+    },
+    "alarm_contact": {
+      "getable": true,
+      "preventInsights": false
+    },
+    "alarm_tamper": {
+      "getable": true,
+      "preventInsights": false
+    },
+    "measure_luminance": {
+      "getable": true,
+      "preventInsights": false
     }
   },
   "ui": {

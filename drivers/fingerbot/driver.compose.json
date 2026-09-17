@@ -219,6 +219,10 @@
       "setable": false,
       "maintenanceAction": true,
       "getable": false
+    },
+    "measure_battery": {
+      "getable": true,
+      "preventInsights": false
     }
   },
   "ui": {

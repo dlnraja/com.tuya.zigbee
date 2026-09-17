@@ -34,6 +34,12 @@ Docs: [Capabilities](https://apps.developer.homey.app/the-basics/devices/capabil
 - Scene remotes: `button.N` → `getable: false` + charter titles (P2492) — OK.
 - Same device `measure_battery` → **must stay getable** (P2499) — Homey shows Battery + History.
 
+## P2553 — Intelligent History fleet
+
+- **Enable** History on priority sensor readables (`measure_battery`, climate, energy, alarms…) via compose + boot heal.
+- **Silence** Insights only when intelligent: `alarm_motion` if `alarm_human` exists (VicHY dual spam); `measure_luminance.distance*` (mmWave flood).
+- Tool: `npm run history:fleet` / `history:fleet:apply` · gate `npm run check:p2553`.
+
 ## Dual-app
 
 Classify **BOTH** (UI/Insights reliability). No Stable→Test publish spam.

@@ -94,6 +94,22 @@
       "maintenanceAction": true,
       "getable": false,
       "setable": false
+    },
+    "measure_temperature": {
+      "getable": true,
+      "preventInsights": false
+    },
+    "measure_temperature.ch2": {
+      "getable": true,
+      "preventInsights": false
+    },
+    "measure_temperature.ch3": {
+      "getable": true,
+      "preventInsights": false
+    },
+    "measure_temperature.ch4": {
+      "getable": true,
+      "preventInsights": false
     }
   },
   "maintenanceActions": [

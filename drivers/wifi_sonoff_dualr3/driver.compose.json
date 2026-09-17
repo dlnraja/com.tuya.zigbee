@@ -143,6 +143,18 @@
       "maintenanceAction": true,
       "getable": false,
       "setable": false
+    },
+    "measure_power": {
+      "getable": true,
+      "preventInsights": false
+    },
+    "measure_voltage": {
+      "getable": true,
+      "preventInsights": false
+    },
+    "measure_current": {
+      "getable": true,
+      "preventInsights": false
     }
   },
   "images": {

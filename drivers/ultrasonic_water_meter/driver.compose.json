@@ -15,7 +15,9 @@
       "title": {
         "en": "Current Flow",
         "fr": "Débit Actuel"
-      }
+      },
+      "getable": true,
+      "preventInsights": false
     },
     "meter_water": {
       "title": {
@@ -31,6 +33,10 @@
       "maintenanceAction": true,
       "getable": false,
       "setable": false
+    },
+    "alarm_battery": {
+      "getable": true,
+      "preventInsights": false
     }
   },
   "zigbee": {

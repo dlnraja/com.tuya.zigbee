@@ -29,17 +29,23 @@
     "alarm_water_low": {
       "title": {
         "en": "Low Level Alert"
-      }
+      },
+      "getable": true,
+      "preventInsights": false
     },
     "alarm_water_high": {
       "title": {
         "en": "High Level Alert"
-      }
+      },
+      "getable": true,
+      "preventInsights": false
     },
     "alarm_water": {
       "title": {
         "en": "Level Alert"
-      }
+      },
+      "getable": true,
+      "preventInsights": false
     },
     "button.1": {
       "title": {

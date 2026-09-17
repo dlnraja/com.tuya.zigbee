@@ -243,6 +243,18 @@
       "maintenanceAction": true,
       "getable": false,
       "setable": false
+    },
+    "alarm_motion": {
+      "getable": true,
+      "preventInsights": false
+    },
+    "alarm_generic": {
+      "getable": true,
+      "preventInsights": false
+    },
+    "measure_pm25": {
+      "getable": true,
+      "preventInsights": false
     }
   },
   "maintenanceActions": [

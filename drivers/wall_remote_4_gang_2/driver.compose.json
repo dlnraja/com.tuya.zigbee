@@ -170,7 +170,9 @@
         "fr": "Batterie",
         "nl": "Batterij",
         "de": "Batterie"
-      }
+      },
+      "getable": true,
+      "preventInsights": false
     }
   },
   "version": "1.0.0",

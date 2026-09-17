@@ -34,13 +34,17 @@
       "title": {
         "en": "Power",
         "fr": "Puissance"
-      }
+      },
+      "getable": true,
+      "preventInsights": false
     },
     "meter_power": {
       "title": {
         "en": "Energy",
         "fr": "Énergie"
-      }
+      },
+      "getable": true,
+      "preventInsights": false
     },
     "button.1": {
       "title": {
@@ -57,6 +61,14 @@
       "setable": false,
       "maintenanceAction": true,
       "getable": false
+    },
+    "measure_voltage": {
+      "getable": true,
+      "preventInsights": false
+    },
+    "measure_current": {
+      "getable": true,
+      "preventInsights": false
     }
   },
   "energy": {
