@@ -1,16 +1,16 @@
 {
-  "id": "telemetry_is_measured",
+  "id": "telemetry_is_predicted",
   "title": {
-    "en": "The !{{value is|value is not}} a precise real measurement",
-    "fr": "La valeur !{{est une mesure réelle précise|n'est pas une mesure réelle}}",
-    "nl": "De waarde !{{is een precieze echte meting|is geen echte meting}}",
-    "de": "Der Wert !{{ist eine präzise echte Messung|ist keine echte Messung}}"
+    "en": "The !{{value is|value is not}} a smart prediction →",
+    "fr": "La valeur !{{est une prédiction intelligente →|n'est pas une prédiction}}",
+    "nl": "De waarde !{{is een slimme voorspelling →|is geen voorspelling}}",
+    "de": "Der Wert !{{ist eine intelligente Prognose →|ist keine Prognose}}"
   },
   "hint": {
-    "en": "Live device report (Zigbee/ZCL/EF00) — highest priority. Clean title, no ≈ / ƒ / → mark",
-    "fr": "Relevé live du device (Zigbee/ZCL/EF00) — priorité maximale. Titre propre, sans marque ≈ / ƒ / →",
-    "nl": "Live apparaatmeting — hoogste prioriteit. Schone titel",
-    "de": "Live-Gerätemeldung — höchste Priorität. Sauberer Titel"
+    "en": "Forward projection (e.g. battery drain since last real report). Title shows · → predicted",
+    "fr": "Projection (ex. décharge batterie depuis le dernier relevé réel). Titre : · → prévu",
+    "nl": "Projectie (bijv. batterijdrain). Titel: · → voorspeld",
+    "de": "Prognose (z. B. Batterieentladung). Titel: · → prognostiziert"
   },
   "args": [
     {

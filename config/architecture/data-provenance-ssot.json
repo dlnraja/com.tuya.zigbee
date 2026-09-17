@@ -1,33 +1,32 @@
 {
-  "id": "P2556-data-provenance",
-  "version": "1.0.0",
+  "id": "P2558-elegant-provenance-ux",
+  "version": "1.1.0",
   "updated": "2026-09-17",
   "classify": "BOTH",
   "why": {
-    "pourquoi": "Homey UI + Flows must distinguish measured vs intelligent estimate vs calculated values",
-    "comment": "lib/telemetry/DataProvenance.js stamps store + capability title/units; Flow cards query origin",
-    "pourQui": "Homey users + Flow builders on master Test and stable LTS",
-    "quand": "every energy/battery/sensor capability write via DeviceTelemetryEstimator / SmartEnergyManager",
-    "contreQuoi": "silent estimated power looking like a real meter; flows that assume all values are measured"
+    "pourquoi": "Prioritize precise real measurements; label estimate/calc/predict elegantly in titles + flows",
+    "comment": "DataProvenance priority + ≈/ƒ/→ marks; flow cards measured/estimated/calculated/predicted/not_measured",
+    "pourQui": "Homey UI + Smart Flow builders (BOTH)",
+    "quand": "every tracked capability write",
+    "contreQuoi": "estimate looking like meter; estimate overwriting measured"
   },
-  "origins": ["measured", "estimated", "calculated"],
-  "legacyAlias": { "direct": "measured" },
+  "origins": ["measured", "calculated", "estimated", "predicted"],
+  "priority": { "measured": 100, "calculated": 70, "estimated": 40, "predicted": 20 },
   "ui": {
-    "titleSuffix": "· measured | · estimated | · calculated",
-    "unitsMark": { "measured": "", "estimated": " ≈", "calculated": " ƒ" }
+    "measured": "clean title (no mark)",
+    "estimated": "· ≈ estimated / · ≈ estimé",
+    "calculated": "· ƒ calculated / · ƒ calculé",
+    "predicted": "· → predicted / · → prévu"
   },
   "flows": {
     "conditions": [
-      "telemetry_is_estimated",
       "telemetry_is_measured",
-      "telemetry_is_calculated"
+      "telemetry_is_estimated",
+      "telemetry_is_calculated",
+      "telemetry_is_predicted",
+      "telemetry_is_not_measured"
     ],
     "triggers": ["telemetry_source_changed"]
   },
-  "runtime": [
-    "lib/telemetry/DataProvenance.js",
-    "lib/utils/DeviceTelemetryEstimator.js",
-    "lib/managers/SmartEnergyManager.js"
-  ],
-  "gate": "npm run check:p2556"
+  "gate": "npm run check:p2558"
 }

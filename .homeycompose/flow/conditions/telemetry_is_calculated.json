@@ -1,16 +1,16 @@
 {
   "id": "telemetry_is_calculated",
   "title": {
-    "en": "Value !{{is|is not}} calculated",
-    "fr": "Valeur !{{calculée|non calculée}}",
-    "nl": "Waarde !{{is berekend|is niet berekend}}",
-    "de": "Wert !{{ist berechnet|ist nicht berechnet}}"
+    "en": "The !{{value is|value is not}} a complete calculation ƒ",
+    "fr": "La valeur !{{est un calcul complet ƒ|n'est pas un calcul}}",
+    "nl": "De waarde !{{is een volledige berekening ƒ|is geen berekening}}",
+    "de": "Der Wert !{{ist eine vollständige Berechnung ƒ|ist keine Berechnung}}"
   },
   "hint": {
-    "en": "True when the value is derived (e.g. current from P÷V, energy integral) — not a live meter report and not a profile estimate",
-    "fr": "Vrai quand la valeur est dérivée (ex. courant via P÷V, intégrale kWh) — ni relevé live ni estimation de profil",
-    "nl": "Waar als de waarde afgeleid is (bijv. stroom uit P÷V, energie-integraal)",
-    "de": "Wahr, wenn der Wert abgeleitet ist (z. B. Strom aus P÷V, Energieintegral)"
+    "en": "Derived completely from other values (e.g. I = P÷V, kWh integral). Title shows · ƒ calculated",
+    "fr": "Dérivée complètement d'autres valeurs (ex. I = P÷V, intégrale kWh). Titre : · ƒ calculé",
+    "nl": "Volledig afgeleid (bijv. I = P÷V). Titel: · ƒ berekend",
+    "de": "Vollständig abgeleitet (z. B. I = P÷V). Titel: · ƒ berechnet"
   },
   "args": [
     {
@@ -22,40 +22,19 @@
       "type": "dropdown",
       "name": "capability",
       "title": {
-        "en": "Capability",
-        "fr": "Capability",
-        "nl": "Capability",
-        "de": "Capability"
+        "en": "Value",
+        "fr": "Valeur",
+        "nl": "Waarde",
+        "de": "Wert"
       },
       "values": [
-        {
-          "id": "measure_power",
-          "title": { "en": "Power (W)", "fr": "Puissance (W)" }
-        },
-        {
-          "id": "measure_voltage",
-          "title": { "en": "Voltage (V)", "fr": "Tension (V)" }
-        },
-        {
-          "id": "measure_current",
-          "title": { "en": "Current (A)", "fr": "Courant (A)" }
-        },
-        {
-          "id": "meter_power",
-          "title": { "en": "Energy (kWh)", "fr": "Énergie (kWh)" }
-        },
-        {
-          "id": "measure_battery",
-          "title": { "en": "Battery (%)", "fr": "Batterie (%)" }
-        },
-        {
-          "id": "measure_temperature",
-          "title": { "en": "Temperature", "fr": "Température" }
-        },
-        {
-          "id": "measure_humidity",
-          "title": { "en": "Humidity", "fr": "Humidité" }
-        }
+        { "id": "measure_power", "title": { "en": "Power (W)", "fr": "Puissance (W)" } },
+        { "id": "measure_voltage", "title": { "en": "Voltage (V)", "fr": "Tension (V)" } },
+        { "id": "measure_current", "title": { "en": "Current (A)", "fr": "Courant (A)" } },
+        { "id": "meter_power", "title": { "en": "Energy (kWh)", "fr": "Énergie (kWh)" } },
+        { "id": "measure_battery", "title": { "en": "Battery (%)", "fr": "Batterie (%)" } },
+        { "id": "measure_temperature", "title": { "en": "Temperature", "fr": "Température" } },
+        { "id": "measure_humidity", "title": { "en": "Humidity", "fr": "Humidité" } }
       ]
     }
   ]
