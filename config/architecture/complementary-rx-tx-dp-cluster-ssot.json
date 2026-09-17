@@ -1,14 +1,15 @@
 {
   "id": "complementary-rx-tx-dp-cluster-ssot",
-  "patch": "P2540",
+  "patch": "P2544",
   "dualApp": "BOTH",
-  "updated": "2026-09-16",
+  "updated": "2026-09-17",
   "doctrine": {
     "complementaryOnly": true,
     "noInventPid": true,
     "unionNotReplace": true,
     "ef00AndZclParallelOk": true,
-    "rawIsLastResortNotOnly": true
+    "rawIsLastResortNotOnly": true,
+    "wrappersBeyondHomeyLibs": true
   },
   "rxOrderCanonical": [
     "capability_listener",
@@ -20,7 +21,10 @@
     "raw_cluster_fallback",
     "cluster_data_query",
     "mcu_report",
-    "poll_heuristic"
+    "flow_trigger",
+    "energy_report",
+    "poll_heuristic",
+    "antispam_filter"
   ],
   "txOrderCanonical": [
     "wrapper_manager",
@@ -28,10 +32,13 @@
     "cluster_command",
     "tuya_bound_cluster",
     "cluster_bind",
+    "capability_command_router",
     "quirk_guided",
     "raw_zcl_frame",
     "mcu_version_helper",
     "magic_handshake_retry",
+    "flow_action",
+    "ota_firmware",
     "poll_heuristic"
   ],
   "protocolPaths": [
@@ -44,7 +51,13 @@
     "mcu",
     "ias",
     "magic",
-    "ui"
+    "ui",
+    "flow",
+    "energy",
+    "poll",
+    "capability_router",
+    "antispam",
+    "ota"
   ],
   "airQualityComplementary": {
     "driver": "air_quality_co2",
@@ -71,6 +84,14 @@
     "ProtocolRxTxChain": "lib/layers/ProtocolRxTxChain.js",
     "RawClusterFallback": "lib/clusters/RawClusterFallback.js",
     "CapabilityCommandRouter": "lib/zigbee/CapabilityCommandRouter.js",
-    "LayerSignalFusion": "lib/layers/LayerSignalFusion.js"
-  }
+    "LayerSignalFusion": "lib/layers/LayerSignalFusion.js",
+    "ComplementaryCoverageCatalog": "lib/catalog/ComplementaryCoverageCatalog.js",
+    "OTARepository": "lib/ota/OTARepository.js",
+    "UniversalEnergyHandler": "lib/energy/UniversalEnergyHandler.js",
+    "DeclaredFlowCardAutoWire": "lib/flow/DeclaredFlowCardAutoWire.js"
+  },
+  "relatedSsot": [
+    "config/architecture/complementary-coverage-max-ssot.json",
+    "config/architecture/homey-device-updates.json"
+  ]
 }
