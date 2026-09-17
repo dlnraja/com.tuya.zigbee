@@ -42,10 +42,13 @@ describe('P2435 — GH #540–#544 switch pairing endpoints + sacred couples', (
   });
 
   it('ptjcjise+TS0002 lives on wall_switch_2gang_1way, not switch_1gang/switch_2gang', () => {
+    // P2545j: align Contre quoi with sacred couple (was wrongly asserting switch_2gang)
+    const wall = readCompose('wall_switch_2gang_1way');
     const g2 = readCompose('switch_2gang');
     const g1 = readCompose('switch_1gang');
-    assert.ok(g2.zigbee.manufacturerName.some((m) => /ptjcjise/i.test(m)));
-    assert.ok(g2.zigbee.productId.includes('TS0002'));
+    assert.ok(wall.zigbee.manufacturerName.some((m) => /ptjcjise/i.test(m)));
+    assert.ok(wall.zigbee.productId.includes('TS0002'));
+    assert.ok(!g2.zigbee.manufacturerName.some((m) => /ptjcjise/i.test(m)));
     assert.ok(!g1.zigbee.manufacturerName.some((m) => /ptjcjise/i.test(m)));
   });
 
