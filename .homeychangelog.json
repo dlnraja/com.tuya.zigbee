@@ -1713,5 +1713,8 @@
   },
   "5.12.228": {
     "en": "Improved complementary I/O coverage (RX/TX/flow/energy/OTA) and multi-source OEM firmware indexes."
+  },
+  "5.12.229": {
+    "en": "Aligned forfait unit tests with live daily AI cap (40)."
   }
 }
