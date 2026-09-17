@@ -1,6 +1,6 @@
 {
   "id": "P2563-world-zigbee-smart-features",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "updated": "2026-09-17",
   "classify": "MASTER_ONLY",
   "policy": {
@@ -9,7 +9,7 @@
       "Hue", "Philips", "Signify", "MotionAware", "True Tone", "TruTone",
       "Ambilight", "SpaceSense", "WiZ", "Lutron", "HomeKit", "Adaptive Lighting"
     ],
-    "note": "Catalog maps commercial concepts → generic Universal Tuya reimplementations"
+    "note": "Catalog maps commercial concepts → generic Universal Tuya reimplementations. P2564 = full Homey-feasible."
   },
   "markets": {
     "eu_uk": ["Signify Hue Bridge/Pro", "IKEA Dirigera", "Aqara Hub M3", "Homey Pro", "deCONZ"],
@@ -22,18 +22,30 @@
       "commercial": "Bridge Pro MotionAware / WiZ SpaceSense",
       "genericId": "lamp_mesh_occupancy",
       "uiName": { "en": "Lamp Mesh Occupancy", "fr": "Occupation maillage lampes" },
-      "feasibilityOnHomey": "partial",
-      "how": "Fuse LQI/RSSI variance across ≥2–3 mains lights + optional PIR; Homey lacks Hue PHY firmware — soft RF sensing",
+      "feasibilityOnHomey": "full_soft",
+      "how": "Per-light RSSI/LQI baseline disturbance + cross-mesh variance + activity proxies + optional PIR + AdvancedPresenceEngine fusion. Not closed-PHY parity.",
       "module": "lib/features/LampMeshOccupancy.js",
-      "alternatives": ["PIR IAS", "mmWave Zigbee sensors", "AdvancedPresenceEngine fusion"]
+      "flowIds": [
+        "lamp_mesh_occupancy_enroll",
+        "lamp_mesh_occupancy_auto_enroll",
+        "lamp_mesh_occupancy_enroll_sensor",
+        "lamp_mesh_occupancy_changed",
+        "lamp_mesh_zone_is_occupied"
+      ]
     },
     {
       "commercial": "Apple Adaptive Lighting / daytime white fade / TruTone-like",
       "genericId": "soft_daylight_fade",
       "uiName": { "en": "Soft Daylight Fade", "fr": "Fondu lumière du jour" },
       "feasibilityOnHomey": "full",
-      "how": "DaylightAtmosphere SSOT + continuous soft steps toward target CCT/dim",
-      "module": "lib/features/SoftDaylightFade.js"
+      "how": "One-shot fade + continuous Soft Daylight Auto + Dawn/Dusk shared ease engine",
+      "module": "lib/features/SoftDaylightFade.js",
+      "flowIds": [
+        "soft_daylight_fade_start",
+        "soft_daylight_fade_stop",
+        "soft_daylight_fade_enable_auto",
+        "soft_daylight_fade_disable_auto"
+      ]
     },
     {
       "commercial": "Solar / circadian automations",
@@ -54,7 +66,8 @@
       "genericId": "dawn_dusk",
       "uiName": { "en": "Dawn Ramp / Dusk Fade", "fr": "Aube / Crépuscule" },
       "feasibilityOnHomey": "full",
-      "flowIds": ["hue_wakeup", "hue_sleep"]
+      "flowIds": ["hue_wakeup", "hue_sleep"],
+      "module": "lib/features/SoftDaylightFade.js"
     },
     {
       "commercial": "Away presence simulation",
@@ -64,14 +77,18 @@
     },
     {
       "commercial": "Entertainment / Screen Sync RGB flood",
-      "genericId": "entertainment_stream",
-      "feasibilityOnHomey": "skip",
-      "how": "Forbidden — BootBudget / mesh flood risk (smart-features-ssot memory.forbid)"
+      "genericId": "soft_ambient_sync",
+      "uiName": { "en": "Soft Ambient Sync", "fr": "Soft Ambient Sync" },
+      "feasibilityOnHomey": "full_soft",
+      "how": "Rate-limited soft color fade max 4 lights / ≥2s — BootBudget-safe alternative to RGB flood (video stream remains forbidden)",
+      "module": "lib/features/SoftAmbientSync.js",
+      "flowIds": ["soft_ambient_sync_apply", "soft_ambient_sync_stop"],
+      "forbid": "continuous video/screen RGB flood"
     },
     {
       "commercial": "SpatialAware room-mapped scenes",
       "genericId": "room_cascade",
-      "feasibilityOnHomey": "partial",
+      "feasibilityOnHomey": "full_soft",
       "module": "lib/managers/MotionCascadeManager.js"
     }
   ],
@@ -79,9 +96,10 @@
     "hub": "lib/features/SmartGatewayFeatureHub.js",
     "softDaylightFade": "lib/features/SoftDaylightFade.js",
     "lampMeshOccupancy": "lib/features/LampMeshOccupancy.js",
+    "softAmbientSync": "lib/features/SoftAmbientSync.js",
     "daylightAtmosphere": "lib/features/DaylightAtmosphere.js",
     "advancedPresence": "lib/presence/AdvancedPresenceEngine.js",
     "meshPresenceDetector": "lib/detectors/MotionAwarePresenceDetector.js"
   },
-  "gates": { "npm": "check:p2563" }
+  "gates": { "npm": "check:p2564" }
 }

@@ -1,0 +1,27 @@
+{
+  "id": "lamp_mesh_occupancy_auto_enroll",
+  "title": {
+    "en": "Auto-enroll mains lights in Lamp Mesh zone",
+    "fr": "Auto-inscrire lampes secteur dans zone Occupation maillage"
+  },
+  "hint": {
+    "en": "Scans Homey for mains lights and enrolls up to N into a mesh occupancy zone",
+    "fr": "Scanne les lampes secteur Homey et les inscrit (max N) dans une zone"
+  },
+  "args": [
+    {
+      "type": "text",
+      "name": "zone",
+      "title": { "en": "Zone id", "fr": "Id zone" },
+      "value": "home"
+    },
+    {
+      "type": "number",
+      "name": "max_lights",
+      "title": { "en": "Max lights", "fr": "Max lampes" },
+      "min": 2,
+      "max": 12,
+      "value": 6
+    }
+  ]
+}

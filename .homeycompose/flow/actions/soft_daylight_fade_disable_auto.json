@@ -1,0 +1,15 @@
+{
+  "id": "soft_daylight_fade_disable_auto",
+  "title": {
+    "en": "Disable Soft Daylight Auto",
+    "fr": "Désactiver Soft Daylight Auto"
+  },
+  "args": [
+    {
+      "type": "device",
+      "name": "light",
+      "filter": "capabilities=onoff|capabilities=dim|capabilities=light_temperature|capabilities=light_color_temp",
+      "title": { "en": "Light", "fr": "Lumière" }
+    }
+  ]
+}

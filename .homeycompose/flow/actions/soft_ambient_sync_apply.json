@@ -1,0 +1,60 @@
+{
+  "id": "soft_ambient_sync_apply",
+  "title": {
+    "en": "Soft Ambient Sync — apply color",
+    "fr": "Soft Ambient Sync — appliquer couleur"
+  },
+  "hint": {
+    "en": "Rate-limited soft color fade on up to 4 lights (safe Entertainment alternative — no RGB flood)",
+    "fr": "Fondu couleur doux limité (max 4 lampes) — alternative Entertainment sans flood RGB"
+  },
+  "args": [
+    {
+      "type": "device",
+      "name": "light_a",
+      "filter": "capabilities=light_hue|capabilities=light_saturation",
+      "title": { "en": "Light A", "fr": "Lumière A" }
+    },
+    {
+      "type": "device",
+      "name": "light_b",
+      "filter": "capabilities=light_hue|capabilities=light_saturation",
+      "title": { "en": "Light B (optional)", "fr": "Lumière B (option)" },
+      "optional": true
+    },
+    {
+      "type": "device",
+      "name": "light_c",
+      "filter": "capabilities=light_hue|capabilities=light_saturation",
+      "title": { "en": "Light C (optional)", "fr": "Lumière C (option)" },
+      "optional": true
+    },
+    {
+      "type": "number",
+      "name": "hue",
+      "title": { "en": "Hue (0–1)", "fr": "Teinte (0–1)" },
+      "min": 0,
+      "max": 1,
+      "step": 0.01,
+      "value": 0.08
+    },
+    {
+      "type": "number",
+      "name": "saturation",
+      "title": { "en": "Saturation (0–1)", "fr": "Saturation (0–1)" },
+      "min": 0,
+      "max": 1,
+      "step": 0.01,
+      "value": 0.55
+    },
+    {
+      "type": "number",
+      "name": "dim",
+      "title": { "en": "Brightness (0–1)", "fr": "Luminosité (0–1)" },
+      "min": 0.05,
+      "max": 1,
+      "step": 0.01,
+      "value": 0.45
+    }
+  ]
+}

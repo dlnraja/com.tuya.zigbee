@@ -1,0 +1,28 @@
+{
+  "id": "soft_daylight_fade_enable_auto",
+  "title": {
+    "en": "Enable Soft Daylight Auto",
+    "fr": "Activer Soft Daylight Auto"
+  },
+  "hint": {
+    "en": "Continuously follows Daylight Atmosphere with soft CCT/dim steps (full Adaptive-Lighting feel)",
+    "fr": "Suit en continu Atmosphère jour avec fondu CCT/luminosité doux"
+  },
+  "args": [
+    {
+      "type": "device",
+      "name": "light",
+      "filter": "capabilities=onoff|capabilities=dim|capabilities=light_temperature|capabilities=light_color_temp",
+      "title": { "en": "Light", "fr": "Lumière" }
+    },
+    {
+      "type": "number",
+      "name": "interval_minutes",
+      "title": { "en": "Recheck every (min)", "fr": "Recalcul toutes (min)" },
+      "min": 2,
+      "max": 30,
+      "step": 1,
+      "value": 5
+    }
+  ]
+}
