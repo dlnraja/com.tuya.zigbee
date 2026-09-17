@@ -1758,5 +1758,8 @@
   },
   "5.12.243": {
     "en": "Presence radar: lock sensor class, faster heal if Homey flips type without app update."
+  },
+  "5.12.244": {
+    "en": "P2550/P2551: Smartbutton battery Insights History recycle; radar History dedupe + presence WHEN harden."
   }
 }
