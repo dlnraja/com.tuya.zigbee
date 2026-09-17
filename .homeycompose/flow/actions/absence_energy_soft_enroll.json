@@ -1,0 +1,41 @@
+{
+  "id": "absence_energy_soft_enroll",
+  "title": {
+    "en": "Absence Energy Soft — eco when zone clears",
+    "fr": "Absence Energy Soft — éco quand zone libre"
+  },
+  "hint": {
+    "en": "When Lamp Mesh zone clears, dim or off enrolled devices (presence energy-save)",
+    "fr": "Quand la zone se libère, assombrit ou éteint (économie présence)"
+  },
+  "args": [
+    {
+      "type": "text",
+      "name": "zone",
+      "title": { "en": "Zone id", "fr": "Id zone" },
+      "value": "home"
+    },
+    {
+      "type": "device",
+      "name": "device_a",
+      "filter": "capabilities=onoff|capabilities=dim",
+      "title": { "en": "Device A", "fr": "Appareil A" }
+    },
+    {
+      "type": "device",
+      "name": "device_b",
+      "filter": "capabilities=onoff|capabilities=dim",
+      "title": { "en": "Device B (optional)", "fr": "Appareil B (option)" },
+      "optional": true
+    },
+    {
+      "type": "dropdown",
+      "name": "mode",
+      "title": { "en": "Action", "fr": "Action" },
+      "values": [
+        { "id": "dim", "label": { "en": "Soft dim", "fr": "Assombrir" } },
+        { "id": "off", "label": { "en": "Turn off", "fr": "Éteindre" } }
+      ]
+    }
+  ]
+}

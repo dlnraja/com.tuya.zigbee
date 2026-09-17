@@ -54,6 +54,54 @@
       "role": "BootBudget-safe rate-limited color fade (≤4 lights) — Entertainment alternative without RGB flood"
     },
     {
+      "id": "soft_device_link",
+      "uiName": { "en": "Soft Device Link", "fr": "Soft Device Link" },
+      "module": "lib/features/SoftDeviceLink.js",
+      "flowIds": ["soft_device_link_enroll"],
+      "role": "App-level remote/sensor → lights (soft binding feel)",
+      "feasibility": "full_soft"
+    },
+    {
+      "id": "lux_adaptive_dim",
+      "uiName": { "en": "Lux Adaptive Dim", "fr": "Lux Adaptive Dim" },
+      "module": "lib/features/LuxAdaptiveDim.js",
+      "flowIds": ["lux_adaptive_dim_enroll"],
+      "role": "Dim from room lux (Aqara illuminance lighting feel)",
+      "feasibility": "full"
+    },
+    {
+      "id": "mirror_light_sync",
+      "uiName": { "en": "Mirror Light Sync", "fr": "Mirror Light Sync" },
+      "module": "lib/features/MirrorLightSync.js",
+      "flowIds": ["mirror_light_sync_enroll"],
+      "role": "Master→follower light sync",
+      "feasibility": "full"
+    },
+    {
+      "id": "welcome_home_soft",
+      "uiName": { "en": "Welcome Home Soft", "fr": "Welcome Home Soft" },
+      "module": "lib/features/WelcomeHomeSoft.js",
+      "flowIds": ["welcome_home_soft_enroll"],
+      "role": "Soft-on welcome lights when Lamp Mesh zone occupies",
+      "feasibility": "full"
+    },
+    {
+      "id": "absence_energy_soft",
+      "uiName": { "en": "Absence Energy Soft", "fr": "Absence Energy Soft" },
+      "module": "lib/features/AbsenceEnergySoft.js",
+      "flowIds": ["absence_energy_soft_enroll"],
+      "role": "Dim/off when zone clears (presence energy-save)",
+      "feasibility": "full"
+    },
+    {
+      "id": "staggered_leave_off",
+      "uiName": { "en": "Staggered Leave Off", "fr": "Extinction décalée" },
+      "module": "lib/features/StaggeredLeaveOff.js",
+      "flowIds": ["staggered_leave_off"],
+      "role": "Mesh-friendly staggered all-off on leave",
+      "feasibility": "full"
+    },
+    {
       "id": "daylight_atmosphere",
       "uiName": { "en": "Daylight Atmosphere", "fr": "Atmosphère jour" },
       "module": "lib/features/DaylightAtmosphere.js",
@@ -140,6 +188,7 @@
   "memory": {
     "boot": "deferred via BootBudget — same as CircadianEngine",
     "forbid": "No continuous entertainment RGB / screen-capture stream flood; Soft Ambient Sync (rate-limited ≤4 lights) is the allowed full_soft alternative",
-    "p2564": "Soft Daylight Auto + Lamp Mesh full_soft fusion + Soft Ambient Sync"
+    "p2564": "Soft Daylight Auto + Lamp Mesh full_soft fusion + Soft Ambient Sync",
+    "p2565": "Multi-vendor unbranded: Soft Device Link, Lux Adaptive Dim, Mirror, Welcome, Absence Energy, Staggered Leave"
   }
 }

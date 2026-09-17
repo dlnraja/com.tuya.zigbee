@@ -1,0 +1,43 @@
+{
+  "id": "soft_device_link_enroll",
+  "title": {
+    "en": "Soft Device Link — link source to lights",
+    "fr": "Soft Device Link — lier source aux lumières"
+  },
+  "hint": {
+    "en": "App-level remote/sensor → lights (soft binding feel — not Zigbee ZDO bind)",
+    "fr": "Lien app télécommande/capteur → lumières (binding soft — pas ZDO Zigbee)"
+  },
+  "args": [
+    {
+      "type": "device",
+      "name": "source",
+      "filter": "capabilities=onoff|capabilities=alarm_motion|capabilities=alarm_generic|capabilities=button",
+      "title": { "en": "Source (remote / sensor)", "fr": "Source (télécommande / capteur)" }
+    },
+    {
+      "type": "device",
+      "name": "light_a",
+      "filter": "capabilities=onoff",
+      "title": { "en": "Light A", "fr": "Lumière A" }
+    },
+    {
+      "type": "device",
+      "name": "light_b",
+      "filter": "capabilities=onoff",
+      "title": { "en": "Light B (optional)", "fr": "Lumière B (option)" },
+      "optional": true
+    },
+    {
+      "type": "dropdown",
+      "name": "mode",
+      "title": { "en": "Mode", "fr": "Mode" },
+      "values": [
+        { "id": "toggle", "label": { "en": "Toggle", "fr": "Basculer" } },
+        { "id": "on", "label": { "en": "On on trigger", "fr": "Allumer" } },
+        { "id": "off", "label": { "en": "Off on trigger", "fr": "Éteindre" } },
+        { "id": "follow", "label": { "en": "Follow source", "fr": "Suivre source" } }
+      ]
+    }
+  ]
+}

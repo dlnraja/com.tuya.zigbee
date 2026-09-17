@@ -217,6 +217,10 @@
       "tag": "MASTER_ONLY",
       "note": "Soft Daylight Auto + Lamp Mesh full_soft fusion + Soft Ambient Sync (rate-limited Entertainment alternative)"
     },
+    "p2565_multi_vendor_gateway": {
+      "tag": "MASTER_ONLY",
+      "note": "IKEA/Aqara/ST/Lutron unbranded: Soft Device Link, Lux Adaptive Dim, Mirror, Welcome Home, Absence Energy, Staggered Leave"
+    },
     "smart_features_brand_scrub": {
       "tag": "BOTH",
       "note": "UI titles/hints only — no commercial names; safe to mirror on stable compose flow titles"

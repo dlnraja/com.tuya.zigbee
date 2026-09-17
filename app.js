@@ -1280,6 +1280,87 @@ class TuyaUnifiedZigbeeApp extends Homey.App {
     soft(() => {
       this.homey.flow.getTriggerCard('lamp_mesh_occupancy_changed');
     });
+
+    // ── P2565 — multi-vendor unbranded gateway features ─────────────────────
+    soft(() => {
+      this.homey.flow.getActionCard('soft_device_link_enroll')
+        .registerRunListener(async (args) => {
+          if (!args.source || !args.light_a) return false;
+          const res = this._ensureSmartGatewayHub().enrollDeviceLink({
+            source: args.source,
+            targets: [args.light_a, args.light_b].filter(Boolean),
+            mode: args.mode || 'toggle',
+          });
+          this.log(`[SOFT-LINK] ${res?.linkId} targets=${res?.targets}`);
+          return !!res;
+        });
+    });
+
+    soft(() => {
+      this.homey.flow.getActionCard('lux_adaptive_dim_enroll')
+        .registerRunListener(async (args) => {
+          if (!args.light) return false;
+          const res = this._ensureSmartGatewayHub().enrollLuxAdaptive(
+            args.light,
+            args.lux_sensor || null,
+          );
+          this.log(`[LUX-DIM] enrolled ${args.light.getName?.()}`);
+          return !!res;
+        });
+    });
+
+    soft(() => {
+      this.homey.flow.getActionCard('mirror_light_sync_enroll')
+        .registerRunListener(async (args) => {
+          if (!args.master || !args.follower_a) return false;
+          const res = this._ensureSmartGatewayHub().enrollMirror(
+            args.master,
+            [args.follower_a, args.follower_b].filter(Boolean),
+          );
+          this.log(`[MIRROR] followers=${res?.followers}`);
+          return !!res;
+        });
+    });
+
+    soft(() => {
+      this.homey.flow.getActionCard('welcome_home_soft_enroll')
+        .registerRunListener(async (args) => {
+          const lights = [args.light_a, args.light_b].filter(Boolean);
+          if (!lights.length) return false;
+          const res = this._ensureSmartGatewayHub().enrollWelcome(
+            String(args.zone || 'home'),
+            lights,
+          );
+          this.log(`[WELCOME-HOME] zone=${res.zoneId} lights=${res.lights}`);
+          return res.lights > 0;
+        });
+    });
+
+    soft(() => {
+      this.homey.flow.getActionCard('absence_energy_soft_enroll')
+        .registerRunListener(async (args) => {
+          const devices = [args.device_a, args.device_b].filter(Boolean);
+          if (!devices.length) return false;
+          const res = this._ensureSmartGatewayHub().enrollAbsence(
+            String(args.zone || 'home'),
+            devices,
+            { mode: args.mode || 'dim' },
+          );
+          this.log(`[ABSENCE-ENERGY] zone=${res.zoneId} devices=${res.devices}`);
+          return res.devices > 0;
+        });
+    });
+
+    soft(() => {
+      this.homey.flow.getActionCard('staggered_leave_off')
+        .registerRunListener(async (args) => {
+          const res = this._ensureSmartGatewayHub().staggeredLeaveOff(null, {
+            staggerMs: Number(args.stagger_ms) || 180,
+          });
+          this.log(`[LEAVE-OFF] scheduled=${res.scheduled} stagger=${res.staggerMs}ms`);
+          return res.scheduled > 0;
+        });
+    });
   }
 
   // ═══════════════════════════════════════════════════════════════════════════

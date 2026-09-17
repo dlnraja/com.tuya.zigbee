@@ -1,0 +1,22 @@
+{
+  "id": "staggered_leave_off",
+  "title": {
+    "en": "Staggered Leave Off",
+    "fr": "Extinction décalée (départ)"
+  },
+  "hint": {
+    "en": "Turns lights off with staggered delay — mesh-friendly leave-home (avoids Zigbee storm)",
+    "fr": "Éteint les lumières en décalé — départ maison sans storm Zigbee"
+  },
+  "args": [
+    {
+      "type": "number",
+      "name": "stagger_ms",
+      "title": { "en": "Stagger (ms)", "fr": "Décalage (ms)" },
+      "min": 50,
+      "max": 2000,
+      "step": 50,
+      "value": 180
+    }
+  ]
+}
