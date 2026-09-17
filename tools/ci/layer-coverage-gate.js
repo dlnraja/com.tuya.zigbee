@@ -1,10 +1,9 @@
 'use strict';
 
 /**
- * P206 — layer coverage gate (STABLE dual-app aware)
- * Reliability LTS must not hard-fail on MASTER_ONLY modules that are
- * intentionally absent (DeviceAvailabilityManager, PowerClusterPolicy, etc.).
- * Exit 0 = OK, 1 = regression on present BOTH paths.
+ * P206 — layer coverage gate
+ * Ensures orphan / stub bases inherit TuyaZigbeeDevice and bootstrap exists.
+ * Exit 0 = OK, 1 = regression.
  */
 
 const fs = require('fs');
@@ -12,16 +11,8 @@ const path = require('path');
 
 const ROOT = path.join(__dirname, '..', '..');
 
-function exists(rel) {
-  return fs.existsSync(path.join(ROOT, rel));
-}
-
 function read(rel) {
   return fs.readFileSync(path.join(ROOT, rel), 'utf8');
-}
-
-function readIf(rel) {
-  return exists(rel) ? read(rel) : null;
 }
 
 const checks = [];
@@ -30,305 +21,297 @@ function must(label, ok, detail = '') {
   checks.push({ label, ok: !!ok, detail });
 }
 
-function mustPresent(label, rel, predicate) {
-  if (!exists(rel)) {
-    must(`${label} [MASTER_ONLY/absent soft-skip]`, true, rel);
-    return;
-  }
-  must(label, predicate(read(rel)), rel);
-}
+must(
+  'UniversalLayerBootstrap exists',
+  fs.existsSync(path.join(ROOT, 'lib/layers/UniversalLayerBootstrap.js')),
+);
 
-must('UniversalLayerBootstrap exists', exists('lib/layers/UniversalLayerBootstrap.js'));
-
-mustPresent(
+must(
   'TuyaZigbeeDevice calls bootstrapUniversalLayers',
-  'lib/tuya/TuyaZigbeeDevice.js',
-  (s) => /bootstrapUniversalLayers/.test(s),
+  /bootstrapUniversalLayers/.test(read('lib/tuya/TuyaZigbeeDevice.js')),
 );
 
-mustPresent(
+must(
   'TuyaZigBeeLightDevice extends TuyaZigbeeDevice',
-  'lib/TuyaZigBeeLightDevice.js',
-  // LTS lag: ZigBeeDevice base until light inheritance BOTH backport
-  (s) => /extends (TuyaZigbeeDevice|ZigBeeDevice)/.test(s),
+  /class TuyaZigBeeLightDevice extends TuyaZigbeeDevice/.test(read('lib/TuyaZigBeeLightDevice.js')),
 );
 
-mustPresent(
+must(
   'lib/tuya/TuyaSpecificClusterDevice extends TuyaZigbeeDevice',
-  'lib/tuya/TuyaSpecificClusterDevice.js',
-  (s) => /extends TuyaZigbeeDevice/.test(s),
+  /class TuyaSpecificClusterDevice extends TuyaZigbeeDevice/.test(read('lib/tuya/TuyaSpecificClusterDevice.js')),
 );
 
-mustPresent(
+must(
   'lib/TuyaSpecificClusterDevice extends TuyaZigbeeDevice',
-  'lib/TuyaSpecificClusterDevice.js',
-  (s) => /extends TuyaZigbeeDevice/.test(s),
+  /class TuyaSpecificClusterDevice extends TuyaZigbeeDevice/.test(read('lib/TuyaSpecificClusterDevice.js')),
 );
 
-mustPresent(
+must(
   'generic_diy extends TuyaZigbeeDevice',
-  'drivers/generic_diy/device.js',
-  (s) => /extends TuyaZigbeeDevice|UnifiedSwitchBase|ZigBeeDevice/.test(s),
+  /class GenericDIYDevice extends TuyaZigbeeDevice/.test(read('drivers/generic_diy/device.js')),
 );
 
-mustPresent(
+must(
   'ir_blaster extends TuyaZigbeeDevice',
-  'drivers/ir_blaster/device.js',
-  (s) => /extends TuyaZigbeeDevice|ZigBeeDevice|Unified/.test(s),
+  /class IrBlasterDevice extends TuyaZigbeeDevice/.test(read('drivers/ir_blaster/device.js')),
 );
 
-mustPresent(
+must(
   'orphan GlobalTimeSyncEngine re-exports tuya/',
-  'lib/tuya/GlobalTimeSyncEngine.js',
-  (s) => /module\.exports|GlobalTimeSync/.test(s),
+  /require\(['"]\.\/tuya\/GlobalTimeSyncEngine['"]\)/.test(read('lib/GlobalTimeSyncEngine.js')),
 );
 
-mustPresent(
+must(
   'tuya TSC prefers safeSetCapabilityValue',
-  'lib/tuya/TuyaSpecificClusterDevice.js',
-  (s) => /safeSetCapabilityValue/.test(s),
+  /safeSetCapabilityValue/.test(read('lib/tuya/TuyaSpecificClusterDevice.js')),
 );
 
-must('CrossLayerRedundancy exists', exists('lib/layers/CrossLayerRedundancy.js'));
+must(
+  'CrossLayerRedundancy exists',
+  fs.existsSync(path.join(ROOT, 'lib/layers/CrossLayerRedundancy.js')),
+);
 
-mustPresent(
+must(
   'UniversalLayerBootstrap attaches CrossLayerRedundancy',
-  'lib/layers/UniversalLayerBootstrap.js',
-  (s) => /CrossLayerRedundancy/.test(s),
+  /attachCrossLayerRedundancy/.test(read('lib/layers/UniversalLayerBootstrap.js')),
 );
 
-mustPresent(
+must(
   'CrossLayer exposes confirmInbound/confirmOutbound',
-  'lib/layers/CrossLayerRedundancy.js',
-  (s) => /confirmInbound/.test(s) && /confirmOutbound/.test(s),
+  /confirmInbound/.test(read('lib/layers/CrossLayerRedundancy.js'))
+    && /confirmOutbound/.test(read('lib/layers/CrossLayerRedundancy.js')),
 );
 
-mustPresent(
+must(
   'safeSetCapabilityValue accepts meta.source',
-  'lib/tuya/TuyaZigbeeDevice.js',
-  (s) => /safeSetCapabilityValue/.test(s),
+  /meta\.source/.test(read('lib/tuya/TuyaZigbeeDevice.js')),
 );
 
-must('ProtocolRxTxChain exists', exists('lib/layers/ProtocolRxTxChain.js'));
+must(
+  'ProtocolRxTxChain exists',
+  fs.existsSync(path.join(ROOT, 'lib/layers/ProtocolRxTxChain.js')),
+);
 
-mustPresent(
+must(
   'UniversalLayerBootstrap attaches ProtocolRxTxChain',
-  'lib/layers/UniversalLayerBootstrap.js',
-  (s) => /ProtocolRxTxChain/.test(s),
+  /attachProtocolRxTxChain/.test(read('lib/layers/UniversalLayerBootstrap.js')),
 );
 
-mustPresent(
+must(
   'PFC includes tuya_bound + ias strategies',
-  'lib/io/ProtocolFallbackChain.js',
-  (s) => /tuya_bound/.test(s) && /ias_zone/.test(s),
+  /tuya_bound_cluster/.test(read('lib/io/ProtocolFallbackChain.js'))
+    && /ias_zone/.test(read('lib/io/ProtocolFallbackChain.js')),
 );
 
-mustPresent(
+must(
   'Raw frame notes protocolRxTx',
-  'lib/layers/ProtocolRxTxChain.js',
-  (s) => /raw_frame|PROTOCOL_PATHS/.test(s),
+  /protocolRxTx\?\.noteRx/.test(read('lib/tuya/TuyaZigbeeDevice.js')),
 );
 
-must('MultiProtocolBatteryPercent exists', exists('lib/battery/MultiProtocolBatteryPercent.js'));
+must(
+  'MultiProtocolBatteryPercent exists',
+  fs.existsSync(path.join(ROOT, 'lib/battery/MultiProtocolBatteryPercent.js')),
+);
 
-mustPresent(
+must(
   'SmartBatteryManager routes measure_battery via MultiProtocol',
-  'lib/managers/SmartBatteryManager.js',
-  (s) => /MultiProtocol|measure_battery/.test(s),
+  /MultiProtocolBatteryPercent/.test(read('lib/managers/SmartBatteryManager.js')),
 );
 
-mustPresent(
+must(
   'CrossLayer attaches multi-protocol battery',
-  'lib/layers/CrossLayerRedundancy.js',
-  (s) => /battery|MultiProtocol/.test(s),
+  /attachMultiProtocolBattery/.test(read('lib/layers/CrossLayerRedundancy.js')),
 );
 
-must('LayerSignalFusion exists', exists('lib/layers/LayerSignalFusion.js'));
+must(
+  'LayerSignalFusion exists',
+  fs.existsSync(path.join(ROOT, 'lib/layers/LayerSignalFusion.js')),
+);
 
-mustPresent(
+must(
   'confirmInbound uses LayerSignalFusion',
-  'lib/layers/CrossLayerRedundancy.js',
-  (s) => /LayerSignalFusion|confirmInbound/.test(s),
+  /LayerSignalFusion/.test(read('lib/layers/CrossLayerRedundancy.js')),
 );
 
-mustPresent(
+must(
   'safeSetCapabilityValue gates meta.source via fusion',
-  'lib/tuya/TuyaZigbeeDevice.js',
-  (s) => /safeSetCapabilityValue/.test(s),
+  /LayerSignalFusion/.test(read('lib/tuya/TuyaZigbeeDevice.js')),
 );
 
-must('commitCapability funnel exists', exists('lib/layers/commitCapability.js'));
+must(
+  'commitCapability funnel exists',
+  fs.existsSync(path.join(ROOT, 'lib/layers/commitCapability.js')),
+);
 
-mustPresent(
+must(
   'TuyaEF00Manager uses commitCapability',
-  'lib/tuya/TuyaEF00Manager.js',
-  (s) => /commitCapability/.test(s),
+  /commitCapabilityCatch/.test(read('lib/tuya/TuyaEF00Manager.js')),
 );
 
-mustPresent(
+must(
   'IASZoneManager uses commitCapability',
-  'lib/managers/IASZoneManager.js',
-  (s) => /commitCapability|safeSetCapabilityValue|setCapabilityValue|zoneStatus/.test(s),
+  /commitCapabilityCatch/.test(read('lib/managers/IASZoneManager.js')),
 );
 
-mustPresent(
+must(
   'IASZoneManager does not invent 15% battery',
-  'lib/managers/IASZoneManager.js',
-  (s) => !(/measure_battery[^\n]{0,40}15/.test(s) && /invent|default.*15/.test(s)),
+  !/Battery set to 15%/.test(read('lib/managers/IASZoneManager.js')),
 );
 
-mustPresent(
+must(
   'TuyaDeviceMixin does not invent 100% battery',
-  'lib/mixins/TuyaDeviceMixin.js',
-  (s) => !/Setting default battery \(100%\)/.test(s)
-    && !/setCapabilityValue\(\s*['\"]measure_battery['\"]\s*,\s*100\s*\)/.test(s),
+  !/Setting default battery \(100%\)/.test(read('lib/mixins/TuyaDeviceMixin.js')),
 );
 
-mustPresent(
+must(
   'TuyaEF00Manager does not invent 100% battery on DP timeout',
-  'lib/tuya/TuyaEF00Manager.js',
-  (s) => !/timeout[^\n]{0,80}measure_battery[^\n]{0,20}100/.test(s),
+  !/setCapabilityValue\?\.\('measure_battery', 100\)/.test(read('lib/tuya/TuyaEF00Manager.js')),
 );
 
-mustPresent(
+must(
   'UnifiedBatteryHandler does not invent 50% default',
-  'lib/battery/UnifiedBatteryHandler.js',
-  (s) => !/defaultPercent\s*=\s*50|invent.*50/.test(s),
+  !/using marked 50% estimate/.test(read('lib/battery/UnifiedBatteryHandler.js')),
 );
 
-mustPresent(
+must(
   'battery-reporting-manager writes via _writeBatteryPercent',
-  'lib/battery/battery-reporting-manager.js',
-  (s) => /_writeBatteryPercent|safeSetCapabilityValue/.test(s),
+  /_writeBatteryPercent/.test(read('lib/utils/battery-reporting-manager.js'))
+    && !/setCapabilityValue\('measure_battery'/.test(read('lib/utils/battery-reporting-manager.js')),
 );
 
-mustPresent(
+must(
   'battery-reporting-manager does not blindly divide ZCL by 2',
-  'lib/battery/battery-reporting-manager.js',
-  (s) => /normalizeZclBatteryPercent|smartDivisor|\/\s*2/.test(s) ? /normalizeZclBatteryPercent|smart/.test(s) : true,
+  !/Math\.min\(100, Math\.max\(0, (?:value|battery\.batteryPercentageRemaining) \/ 2\)\)/.test(
+    read('lib/utils/battery-reporting-manager.js')
+  ),
 );
 
-mustPresent(
+must(
   'battery-reader does not invent 100% battery',
-  'lib/utils/battery-reader.js',
-  (s) => !/return\s+100/.test(s) || /normalize/.test(s),
+  !/fallback_100/.test(read('lib/utils/battery-reader.js'))
+    && !/new_device_assumption/.test(read('lib/utils/battery-reader.js')),
 );
 
-mustPresent(
+must(
   'TimeClusterPolicy exists',
-  'lib/zigbee/TimeClusterPolicy.js',
-  () => true,
+  fs.existsSync(path.join(ROOT, 'lib/zigbee/TimeClusterPolicy.js')),
 );
 
-mustPresent(
+must(
   'TuyaTimeSync respects TimeClusterPolicy',
-  'lib/tuya/TuyaTimeSync.js',
-  (s) => /TimeClusterPolicy|time/.test(s),
+  /TimeClusterPolicy/.test(read('lib/tuya/TuyaTimeSync.js')),
 );
 
-mustPresent(
+must(
+  // P2557/P2560: provenance uses origin var `o` but default remains estimated
   'VirtualEnergyMeterMixin marks estimated source',
-  'lib/mixins/VirtualEnergyMeterMixin.js',
-  (s) => /estimated|source/.test(s),
+  /origin = 'estimated'/.test(read('lib/mixins/VirtualEnergyMeterMixin.js'))
+    && /source:\s*o/.test(read('lib/mixins/VirtualEnergyMeterMixin.js')),
 );
 
-mustPresent(
+must(
   'VirtualButtonMixin commits UI via commitCapability',
-  'lib/mixins/VirtualButtonMixin.js',
-  (s) => /commitCapability|safeSetCapabilityValue/.test(s),
+  /commitCapability/.test(read('lib/mixins/VirtualButtonMixin.js')),
 );
 
-must('ReconnectBurstCoalescer exists', exists('lib/layers/ReconnectBurstCoalescer.js'));
+must(
+  'ReconnectBurstCoalescer exists',
+  fs.existsSync(path.join(ROOT, 'lib/layers/ReconnectBurstCoalescer.js')),
+);
 
-mustPresent(
+must(
   'UnifiedSwitchBase isolates onoff endpoints',
-  'lib/devices/UnifiedSwitchBase.js',
-  (s) => /endpoint|onoff/.test(s),
+  /capabilityForOnOffEndpoint/.test(read('lib/devices/UnifiedSwitchBase.js')),
 );
 
-mustPresent(
+must(
   'CapabilityCommandRouter skips DP race on gang>=2',
-  'lib/zigbee/CapabilityCommandRouter.js',
-  (s) => /gang|DP|parallel/.test(s),
+  /endpointId > 1/.test(read('lib/zigbee/CapabilityCommandRouter.js'))
+    && /skipDp/.test(read('lib/zigbee/CapabilityCommandRouter.js')),
 );
 
-mustPresent(
+must(
   'PhysicalButtonMixin skips group 0 on multi-gang relays',
-  'lib/mixins/PhysicalButtonMixin.js',
-  (s) => /group|gang/.test(s),
+  /groupsCluster && !isMultiGangRelay/.test(read('lib/mixins/PhysicalButtonMixin.js')),
 );
 
-mustPresent(
+must(
   'Tuya magic packet is not skipped after app restart',
-  'lib/tuya/MagicPacketRegistry.js',
-  (s) => /magic|handshake/.test(s),
+  /Do NOT skip on a persisted store/.test(read('lib/zigbee/TuyaMagicPacket.js'))
+    && /force: true/.test(read('lib/devices/UnifiedSwitchBase.js')),
 );
 
-mustPresent(
+must(
   'PhysicalButtonMixin announce rebinds all gangs and calls super',
-  'lib/mixins/PhysicalButtonMixin.js',
-  (s) => /announce|rebind|super/.test(s),
+  /super\.onEndDeviceAnnounce/.test(read('lib/mixins/PhysicalButtonMixin.js'))
+    && /Math\.max\(Number\(this\.gangCount\)/.test(read('lib/mixins/PhysicalButtonMixin.js')),
 );
 
-mustPresent(
+must(
   'Interview classifier ignores Green Power EP242',
-  'lib/utils/interviewEndpoints.js',
-  (s) => /242|GREEN_POWER/.test(s),
+  fs.existsSync(path.join(ROOT, 'lib/utils/interviewEndpoints.js'))
+    && /GREEN_POWER_ENDPOINT = 242/.test(read('lib/utils/interviewEndpoints.js')),
 );
 
-mustPresent(
+must(
   'ZclClusterLexicon covers Time and PowerCfg',
-  'lib/zigbee/ZclClusterLexicon.js',
-  (s) => /0x000A/.test(s) && /0x0001/.test(s),
+  /0x000A/.test(read('lib/zigbee/ZclClusterLexicon.js'))
+    && /0x0001/.test(read('lib/zigbee/ZclClusterLexicon.js')),
 );
 
-must('ZclSwitchConfigPolicy prefers Homey settings over ZCL dump', exists('lib/zigbee/ZclSwitchConfigPolicy.js'));
+must(
+  'ZclSwitchConfigPolicy prefers Homey settings over ZCL dump',
+  fs.existsSync(path.join(ROOT, 'lib/zigbee/ZclSwitchConfigPolicy.js')),
+);
 
-mustPresent(
+must(
   'DeviceOperatingMode skips 0x8004 on TS0041/42/43 endpoint remotes',
-  'lib/zigbee/DeviceOperatingMode.js',
-  (s) => /endpoint_remote/.test(s) && /writeSceneAttr:\s*false/.test(s),
+  fs.existsSync(path.join(ROOT, 'lib/zigbee/DeviceOperatingMode.js'))
+    && /endpoint_remote/.test(read('lib/zigbee/DeviceOperatingMode.js'))
+    && /writeSceneAttr: false/.test(read('lib/zigbee/DeviceOperatingMode.js')),
 );
 
-mustPresent(
+must(
   'Power-cut rejoin fires a flow trigger independent of unavailable timeout',
-  'lib/flow/FeatureFlowCards.js',
-  (s) => /device_rejoined/.test(s),
+  /device_rejoined/.test(read('lib/flow/FeatureFlowCards.js'))
+    && /noteBootDump/.test(read('lib/managers/DeviceAvailabilityManager.js')),
 );
 
-mustPresent(
+must(
   'PowerClusterPolicy exists',
-  'lib/zigbee/PowerClusterPolicy.js',
-  () => true,
+  fs.existsSync(path.join(ROOT, 'lib/zigbee/PowerClusterPolicy.js')),
 );
 
-must('PollControlPolicy exists', exists('lib/zigbee/PollControlPolicy.js'));
+must(
+  'PollControlPolicy exists',
+  fs.existsSync(path.join(ROOT, 'lib/zigbee/PollControlPolicy.js')),
+);
 
-mustPresent(
+must(
   'DeviceIOFacade skips pollControl bind on sleepy',
-  'lib/io/DeviceIOFacade.js',
-  (s) => /PollControlPolicy/.test(s) || /pollControl/.test(s),
+  /PollControlPolicy/.test(read('lib/io/DeviceIOFacade.js'))
+    && /skip pollControl/.test(read('lib/io/DeviceIOFacade.js')),
 );
 
-mustPresent(
+must(
   'Availability restores last_seen after restart',
-  'lib/managers/DeviceAvailabilityManager.js',
-  (s) => /avail_last_seen_ts/.test(s) && /BOOT_GRACE_MS/.test(s),
+  /avail_last_seen_ts/.test(read('lib/managers/DeviceAvailabilityManager.js'))
+    && /BOOT_GRACE_MS/.test(read('lib/managers/DeviceAvailabilityManager.js')),
 );
 
-mustPresent(
+must(
   'TuyaZigbeeDevice onUninit tears down via _destroyDevice',
-  'lib/tuya/TuyaZigbeeDevice.js',
-  (s) => /async onUninit\(/.test(s) && /_destroyDevice\(/.test(s),
+  /async onUninit\(/.test(read('lib/tuya/TuyaZigbeeDevice.js'))
+    && /_destroyDevice\(/.test(read('lib/tuya/TuyaZigbeeDevice.js')),
 );
 
-mustPresent(
+must(
   'UnifiedSwitchBase tears down on onUninit not only onDeleted',
-  'lib/devices/UnifiedSwitchBase.js',
-  (s) => /async onUninit\(/.test(s) && /_teardownSwitchResources/.test(s),
+  /async onUninit\(/.test(read('lib/devices/UnifiedSwitchBase.js'))
+    && /_teardownSwitchResources/.test(read('lib/devices/UnifiedSwitchBase.js')),
 );
 
-const failed = checks.filter((c) => !c.ok);
+const failed = checks.filter(c => !c.ok);
 const json = process.argv.includes('--json');
 
 if (json) {
@@ -336,15 +319,13 @@ if (json) {
     ok: failed.length === 0,
     passed: checks.length - failed.length,
     failed: failed.length,
-    total: checks.length,
-    failures: failed,
-  }, null, 2));
-  process.stdout.write('\n');
+    checks,
+  }, null, 2) + '\n');
 } else {
   for (const c of checks) {
-    console.log(`${c.ok ? 'PASS' : 'FAIL'}  ${c.label}${c.detail ? ` (${c.detail})` : ''}`);
+    console.log(`${c.ok ? 'PASS' : 'FAIL'}  ${c.label}${c.detail ? ` — ${c.detail}` : ''}`);
   }
-  console.log(`\n${failed.length ? 'FAILED' : 'OK'} ${failed.length}/${checks.length}`);
+  console.log(failed.length === 0 ? `\nOK (${checks.length} checks)` : `\nFAILED ${failed.length}/${checks.length}`);
 }
 
-process.exit(failed.length ? 1 : 0);
+process.exit(failed.length === 0 ? 0 : 1);
