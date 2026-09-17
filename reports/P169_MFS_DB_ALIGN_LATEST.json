@@ -1,10 +1,10 @@
 {
-  "timestamp": "2026-09-16T19:53:39.906Z",
+  "timestamp": "2026-09-17T01:31:16.743Z",
   "gate": "align-mfs-db-intelligent",
   "apply": false,
   "check": true,
   "changeCount": 0,
-  "skippedCount": 64,
+  "skippedCount": 62,
   "highSeverityCount": 0,
   "byAction": {},
   "changes": [],
@@ -197,18 +197,18 @@
     },
     {
       "reason": "registry_oem_multi_canon",
-      "mfr": "_tz3000_l9brjwau",
-      "canon": "wall_switch_3gang_1way",
-      "caseIds": [
-        "p2517-l9brjwau-ts0003-wall-3gang"
-      ]
-    },
-    {
-      "reason": "registry_oem_multi_canon",
       "mfr": "_tzb210_rkgngb5o",
       "canon": "led_controller_dimmable",
       "caseIds": [
         "p2535-tzb210-rkgngb5o-ts0501b-dim"
+      ]
+    },
+    {
+      "reason": "registry_oem_multi_canon",
+      "mfr": "_tz3000_l9brjwau",
+      "canon": "wall_switch_3gang_1way",
+      "caseIds": [
+        "p2517-l9brjwau-ts0003-wall-3gang"
       ]
     },
     {
@@ -303,79 +303,6 @@
       "reason": "unclaimed_no_compose",
       "mfr": "_TYST11_ps5v5jor",
       "curated": "device_radiator_valve"
-    },
-    {
-      "reason": "pair_conflict_ambiguous",
-      "mfr": "_tze200_7eue9vhc",
-      "curated": "device_air_purifier_plug",
-      "foreign": [
-        "curtain_motor",
-        "curtain_motor_tilt"
-      ],
-      "modelIds": [
-        "0X8040",
-        "BASICZBR3",
-        "BATTERY SWITCH, 1 BUTTON",
-        "BATTERY SWITCH, 2 BUTTONS",
-        "BSP-EZ2",
-        "BSP-FZ2",
-        "CC2530",
-        "CC2531",
-        "CC2652",
-        "CUSTOM",
-        "DIY",
-        "EFEKTA",
-        "ESP32",
-        "ET093WRG",
-        "ET093WRO",
-        "ETRV0100",
-        "ETRV0101",
-        "ETRV0103",
-        "MAKER",
-        "PJ-1203A",
-        "PTVO",
-        "RELAY",
-        "ROUTER",
-        "S26R2ZB",
-        "S31ZB",
-        "S40ZBTPB",
-        "SENSOR",
-        "SNZB-01",
-        "SNZB-01P",
-        "SNZB-02",
-        "SNZB-02P",
-        "SNZB-03",
-        "SNZB-03P",
-        "SNZB-04",
-        "SNZB-04P",
-        "SNZB-06P",
-        "SNZB-09P",
-        "TRV001",
-        "TRV003",
-        "TS0026",
-        "TS0041A",
-        "TS0044",
-        "TS004F",
-        "TS0052",
-        "TS0105",
-        "TS011F",
-        "TS0224",
-        "TS0601",
-        "TS0601_METER",
-        "TS0901",
-        "ZBMINI",
-        "ZBMINIL2",
-        "ZIGSTAR"
-      ]
-    },
-    {
-      "reason": "unclaimed_multi",
-      "mfr": "_tze200_7eue9vhc",
-      "curated": "device_air_purifier_plug",
-      "claimers": [
-        "curtain_motor",
-        "curtain_motor_tilt"
-      ]
     },
     {
       "reason": "unclaimed_no_compose",
