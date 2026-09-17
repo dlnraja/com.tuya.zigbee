@@ -1,6 +1,6 @@
 {
   "name": "com.dlnraja.tuya.zigbee",
-  "version": "9.0.1012",
+  "version": "9.0.1013",
   "description": "Tuya Unified Zigbee - Local-first control with AI automation",
   "main": "app.js",
   "scripts": {
@@ -427,10 +427,11 @@
     "check:p2562": "node --test test/critical/p2562-local-workflow-learn.test.js && node tools/ci/p2562-local-workflow-learn-gate.js",
     "check:p2563": "node --test test/critical/p2563-smart-gateway-features.test.js",
     "check:p2564": "node --test test/critical/p2564-smart-gateway-full.test.js",
-    "check:p256x": "npm run check:p2560 && npm run check:p2561 && npm run check:p2562 && npm run check:p2563 && npm run check:p2564 && npm run check:p2565",
+    "check:p256x": "npm run check:p2560 && npm run check:p2561 && npm run check:p2562 && npm run check:p2563 && npm run check:p2564 && npm run check:p2565 && npm run check:p2566",
     "learn:workflow": "node tools/ci/local-workflow-learn.js",
     "learn:workflow:snapshot": "node tools/ci/local-workflow-learn.js --snapshot",
-    "check:p2565": "node --test test/critical/p2565-multi-vendor-gateway.test.js"
+    "check:p2565": "node --test test/critical/p2565-multi-vendor-gateway.test.js",
+    "check:p2566": "node --test test/critical/p2566-improvement-vectors.test.js"
   },
   "keywords": [
     "homey",

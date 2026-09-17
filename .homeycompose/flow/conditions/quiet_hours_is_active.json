@@ -1,0 +1,21 @@
+{
+  "id": "quiet_hours_is_active",
+  "title": {
+    "en": "Quiet Hours are active",
+    "fr": "Heures calmes actives"
+  },
+  "args": [
+    {
+      "type": "text",
+      "name": "quiet_start",
+      "title": { "en": "Start (HH:MM)", "fr": "Début (HH:MM)" },
+      "value": "22:00"
+    },
+    {
+      "type": "text",
+      "name": "quiet_end",
+      "title": { "en": "End (HH:MM)", "fr": "Fin (HH:MM)" },
+      "value": "07:00"
+    }
+  ]
+}

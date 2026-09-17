@@ -1,0 +1,19 @@
+{
+  "id": "shade_daylight_soft_enroll",
+  "title": {
+    "en": "Shade Daylight Soft — solar open/close",
+    "fr": "Shade Daylight Soft — ouvrir/fermer au soleil"
+  },
+  "hint": {
+    "en": "Closes cover at dusk and opens at dawn from solar elevation",
+    "fr": "Ferme le volet au crépuscule et ouvre à l'aube (élévation solaire)"
+  },
+  "args": [
+    {
+      "type": "device",
+      "name": "cover",
+      "filter": "capabilities=windowcoverings_set|capabilities=windowcoverings_state",
+      "title": { "en": "Cover / shade", "fr": "Volet / store" }
+    }
+  ]
+}

@@ -1,0 +1,37 @@
+{
+  "id": "peak_load_soft_shed_enroll",
+  "title": {
+    "en": "Peak Load Soft Shed — dim on high power",
+    "fr": "Peak Load Soft Shed — assombrir si puissance haute"
+  },
+  "args": [
+    {
+      "type": "device",
+      "name": "meter",
+      "filter": "capabilities=measure_power",
+      "title": { "en": "Power meter", "fr": "Compteur puissance" }
+    },
+    {
+      "type": "device",
+      "name": "light_a",
+      "filter": "capabilities=dim",
+      "title": { "en": "Light A", "fr": "Lumière A" }
+    },
+    {
+      "type": "device",
+      "name": "light_b",
+      "filter": "capabilities=dim",
+      "title": { "en": "Light B (optional)", "fr": "Lumière B (option)" },
+      "optional": true
+    },
+    {
+      "type": "number",
+      "name": "threshold_w",
+      "title": { "en": "Threshold (W)", "fr": "Seuil (W)" },
+      "min": 200,
+      "max": 15000,
+      "step": 100,
+      "value": 2500
+    }
+  ]
+}

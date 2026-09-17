@@ -1,0 +1,12 @@
+{
+  "id": "night_path_is_active",
+  "title": {
+    "en": "Night Path bias is active",
+    "fr": "Biais Night Path actif"
+  },
+  "hint": {
+    "en": "True when House Mode is night or sun is below horizon",
+    "fr": "Vrai si mode maison nuit ou soleil sous l'horizon"
+  },
+  "args": []
+}

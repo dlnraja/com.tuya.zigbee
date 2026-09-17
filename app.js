@@ -912,11 +912,8 @@ class TuyaUnifiedZigbeeApp extends Homey.App {
         if (!sensor || !light) {return false;}
 
         if (quiet_start && quiet_end && /^\d{1,2}:\d{2}$/.test(quiet_start) && /^\d{1,2}:\d{2}$/.test(quiet_end)) {
-          const toMin = (s) => { const [h, m] = s.split(':').map(Number); return h * 60 + m; };
-          const now = new Date().getHours() * 60 + new Date().getMinutes();
-          const qs = toMin(quiet_start), qe = toMin(quiet_end);
-          const inQuiet = qs <= qe ? (now >= qs && now < qe) : (now >= qs || now < qe);
-          if (inQuiet) {
+          const QuietHoursGuard = require('./lib/features/QuietHoursGuard');
+          if (QuietHoursGuard.isInQuietHours(quiet_start, quiet_end)) {
             this.log(`[PATH-LIGHT] skipped: quiet hours ${quiet_start}-${quiet_end}`);
             return false;
           }
@@ -941,13 +938,15 @@ class TuyaUnifiedZigbeeApp extends Homey.App {
         }
 
         const curve = this._hueCircadianCurve(new Date(), typeof lux === 'number' ? lux : null);
-        const dim = Math.max(1, Math.min(100, brightness)) / 100;
+        const NightPathBias = require('./lib/features/NightPathBias');
+        let dim = Math.max(1, Math.min(100, brightness)) / 100;
+        dim = NightPathBias.applyNightBias(dim, this);
         await this._hueSetLight(light, {
           onoff: true,
           dim,
           temperature: curve.temperature,
         });
-        this.log(`[PATH-LIGHT] ${light.getName?.()} ON ${brightness}% CT=${curve.temperature}`);
+        this.log(`[PATH-LIGHT] ${light.getName?.()} ON ${Math.round(dim * 100)}% CT=${curve.temperature}`);
 
         this.homey.clearTimeout?.(light._hueMotionTimer);
         light._hueMotionTimer = this.homey.setTimeout(async () => {
@@ -1359,6 +1358,75 @@ class TuyaUnifiedZigbeeApp extends Homey.App {
           });
           this.log(`[LEAVE-OFF] scheduled=${res.scheduled} stagger=${res.staggerMs}ms`);
           return res.scheduled > 0;
+        });
+    });
+
+    // ── P2566 — more improvement vectors ────────────────────────────────────
+    soft(() => {
+      this.homey.flow.getConditionCard('quiet_hours_is_active')
+        .registerRunListener(async (args) => {
+          return this._ensureSmartGatewayHub().isInQuietHours(
+            args.quiet_start || '22:00',
+            args.quiet_end || '07:00',
+          );
+        });
+    });
+
+    soft(() => {
+      this.homey.flow.getConditionCard('night_path_is_active')
+        .registerRunListener(async () => {
+          const NightPathBias = require('./lib/features/NightPathBias');
+          return NightPathBias.isNightMode(this);
+        });
+    });
+
+    soft(() => {
+      this.homey.flow.getActionCard('contact_entry_soft_enroll')
+        .registerRunListener(async (args) => {
+          if (!args.contact || !args.light_a) return false;
+          const res = this._ensureSmartGatewayHub().enrollContactEntry(
+            args.contact,
+            [args.light_a, args.light_b].filter(Boolean),
+            { quietStart: args.quiet_start || null, quietEnd: args.quiet_end || null },
+          );
+          this.log(`[CONTACT-ENTRY] lights=${res?.lights}`);
+          return !!res;
+        });
+    });
+
+    soft(() => {
+      this.homey.flow.getActionCard('shade_daylight_soft_enroll')
+        .registerRunListener(async (args) => {
+          if (!args.cover) return false;
+          const ok = this._ensureSmartGatewayHub().enrollShadeDaylight(args.cover);
+          this.log(`[SHADE-DAYLIGHT] enrolled ${args.cover.getName?.()}`);
+          return !!ok;
+        });
+    });
+
+    soft(() => {
+      this.homey.flow.getActionCard('peak_load_soft_shed_enroll')
+        .registerRunListener(async (args) => {
+          if (!args.meter || !args.light_a) return false;
+          const res = this._ensureSmartGatewayHub().enrollPeakShed(
+            args.meter,
+            [args.light_a, args.light_b].filter(Boolean),
+            { thresholdW: Number(args.threshold_w) || 2500 },
+          );
+          this.log(`[PEAK-SHED] lights=${res.lights} thr=${res.thresholdW}W`);
+          return res.lights > 0;
+        });
+    });
+
+    soft(() => {
+      this.homey.flow.getActionCard('idle_auto_off_soft_enroll')
+        .registerRunListener(async (args) => {
+          if (!args.light) return false;
+          const res = this._ensureSmartGatewayHub().enrollIdleAutoOff(args.light, {
+            idleMinutes: Number(args.idle_minutes) || 30,
+          });
+          this.log(`[IDLE-AUTO-OFF] ${args.light.getName?.()} ${res?.idleMinutes}m`);
+          return !!res;
         });
     });
   }
