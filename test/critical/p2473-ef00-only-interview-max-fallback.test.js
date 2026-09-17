@@ -15,7 +15,9 @@ const ROOT = path.join(__dirname, '..', '..');
 const {
   TUYA_EF00_ONLY_CLUSTERS,
   isEf00OnlyInterviewShape,
+  isEf00OnlyCompatibleInterview,
   composeForbidsOnOffCluster,
+  composeCompatibleWithEf00Interview,
   isKnownEf00OnlyManufacturer,
   forcePureTuyaDp,
   sendEf00DpMaxFallback,
@@ -33,6 +35,23 @@ describe('P2473 EF00-only interview + max RX/TX fallback', () => {
     assert.ok(!isEf00OnlyInterviewShape([0, 4, 5, 6, 61184]));
     assert.ok(composeForbidsOnOffCluster([0, 4, 5, 61184]));
     assert.ok(!composeForbidsOnOffCluster([0, 4, 5, 6, 61184]));
+  });
+
+  it('P2573 soft-compatible accepts ED00 extras / lean radar; rejects OnOff', () => {
+    // Michaelp #2244 live interview
+    assert.ok(isEf00OnlyCompatibleInterview([4, 5, 61184, 0, 60672]));
+    assert.ok(isEf00OnlyCompatibleInterview([0, 4, 5, 61184]));
+    assert.ok(isEf00OnlyCompatibleInterview([0, 61184])); // VicHY lean radar compose
+    assert.ok(!isEf00OnlyCompatibleInterview([0, 4, 5, 6, 61184]));
+    assert.ok(!isEf00OnlyInterviewShape([4, 5, 61184, 0, 60672]), 'exact shape still strict');
+    assert.ok(composeCompatibleWithEf00Interview(
+      [0, 4, 5, 61184],
+      [4, 5, 61184, 0, 60672],
+    ));
+    assert.ok(!composeCompatibleWithEf00Interview(
+      [0, 4, 5, 6, 61184],
+      [4, 5, 61184, 0, 60672],
+    ));
   });
 
   it('valve_dual_irrigation compose+app match Joep interview (no cluster 6)', () => {

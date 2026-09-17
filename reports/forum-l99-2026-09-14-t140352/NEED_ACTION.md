@@ -63,3 +63,7 @@ discourse-cdn (screenshots), github.com/dlnraja#531 (Elliot CO2), bseed.com (Pre
 
 ## P2546 (2026-09-17 silent)
 - **#2240/#2241** VicHY clrdrnya: periodic 10min phantom/class heal; presence WHEN edge dedupe. Tip ≥**9.0.991**. Update Test + restart app; re-pair only if still curtain UI.
+## P2569 (2026-09-17 silent)
+- **#2244** Michaelp `_TZE284_ogx8u5z6`+`TS0601` ZG253 TRV: Homey Unknown because compose required OnOff `6` while interview is `[0,4,5,61184,60672]`. Fixed clusters + sacred-keep + **P2573** soft-compatible EF00 (ED00 extras OK). Tip ≥**9.0.1025** → remove + re-pair as Radiator Valve TRV.
+- **#2243** VicHY clrdrnya @ 9.0.992: tip-lag vs heal; **P2573** forcePureTuyaDp on radar. Update Test ≥**9.0.1025** + restart; re-pair only if still curtain UI.
+- Peter #2239 battery OK on tip. No forum POST.
