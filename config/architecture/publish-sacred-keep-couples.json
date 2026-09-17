@@ -3,6 +3,18 @@
   "why": "Budget truncation can drop observed mfrs from broad drivers (button_wireless_1 had 31→2 pids). Sacred locks stay pin-first.",
   "couples": [
     {
+      "mfr": "_TZE284_ogx8u5z6",
+      "pid": "TS0601",
+      "driverId": "device_radiator_valve",
+      "note": "P2569 Michaelp #2244 ZG253 TRV — EF00-only interview; was Unknown while compose required OnOff 6"
+    },
+    {
+      "mfr": "_TZE204_ogx8u5z6",
+      "pid": "TS0601",
+      "driverId": "device_radiator_valve",
+      "note": "P2569 ogx8u5z6 TZE204 sibling (Z2M#25199 me167)"
+    },
+    {
       "mfr": "_TZE284_fodv6bkr",
       "pid": "TS0601",
       "driverId": "curtain_motor",
