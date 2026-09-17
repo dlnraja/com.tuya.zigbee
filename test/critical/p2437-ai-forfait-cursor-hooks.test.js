@@ -31,10 +31,10 @@ const {
 } = require('../mocks/cursor-ai-forfait');
 
 describe('P2437 — forfait SSOT (live config)', () => {
-  it('global cap is 80 and soft-stop 60 (P2491 tighter forfait)', () => {
+  it('global cap is 40 and soft-stop 50 (P2542 tighter forfait)', () => {
     const cfg = loadLiveForfaitCfg();
-    assert.strictEqual(String(cfg.defaults.AI_GLOBAL_DAILY_CAP), '80');
-    assert.strictEqual(String(cfg.defaults.AI_SOFT_STOP_PERCENT), '60');
+    assert.strictEqual(String(cfg.defaults.AI_GLOBAL_DAILY_CAP), '40');
+    assert.strictEqual(String(cfg.defaults.AI_SOFT_STOP_PERCENT), '50');
     assert.strictEqual(cfg.defaults.AI_ALLOW_PAID, 'false');
     assert.strictEqual(cfg.defaults.AI_FORCE_LOCAL, 'true');
     assert.strictEqual(cfg.defaults.AI_ALLOW_REMOTE, 'false');
@@ -174,12 +174,12 @@ describe('P2437 — forbiddenModel helper', () => {
 });
 
 describe('P2437 — ai-plan-guard buildReport', () => {
-  it('reports globalCap 80 from forfait defaults (P2491)', () => {
+  it('reports globalCap 40 from forfait defaults (P2542)', () => {
     const prev = process.env.AI_GLOBAL_DAILY_CAP;
     delete process.env.AI_GLOBAL_DAILY_CAP;
     try {
       const report = buildReport();
-      assert.strictEqual(report.globalCap, 80);
+      assert.strictEqual(report.globalCap, 40);
       assert.strictEqual(report.mode, 'forfait');
       assert.strictEqual(report.allowPaid, false);
       const grok = report.providers.find((p) => p.name === 'grok');
