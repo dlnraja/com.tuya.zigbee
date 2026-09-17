@@ -3434,5 +3434,8 @@
   },
   "9.0.991": {
     "en": "P2546 VicHY radar: periodic curtain/class heal + presence flow edge dedupe (forum #2240/#2241)."
+  },
+  "9.0.992": {
+    "en": "Improved Zigbee init safety and battery reporting. Expanded SDK3 and community app references."
   }
 }

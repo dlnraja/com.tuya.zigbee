@@ -1,0 +1,199 @@
+{
+  "_meta": {
+    "id": "external-app-sdk3-inspiration-ssot",
+    "patch": "P2547",
+    "updated": "2026-09-17",
+    "dualApp": "BOTH",
+    "why": "Mine sibling Homey Zigbee/Tuya GitHub apps + official SDK3 docs into durable refs/rules — complementary only, never invent pid, never forum POST."
+  },
+  "doctrine": {
+    "complementaryOnly": true,
+    "noInventPid": true,
+    "noForumPost": true,
+    "silentEnrich": true,
+    "publishWhenAsked": true,
+    "attribution": "Implement silently; changelogs stay generic (improved/added support) — no external-app name drops in Homey Community"
+  },
+  "officialSdk3": {
+    "base": "https://apps.developer.homey.app",
+    "preferMarkdown": true,
+    "markdownHint": "Append .md to doc URLs for machine-readable pages",
+    "pages": [
+      {
+        "id": "zigbee",
+        "url": "https://apps.developer.homey.app/wireless/zigbee",
+        "md": "https://apps.developer.homey.app/wireless/zigbee.md"
+      },
+      {
+        "id": "capabilities",
+        "url": "https://apps.developer.homey.app/the-basics/devices/capabilities",
+        "md": "https://apps.developer.homey.app/the-basics/devices/capabilities.md"
+      },
+      {
+        "id": "upgrade-zigbee",
+        "url": "https://apps.developer.homey.app/upgrade-guides/upgrading-to-sdk-v3/upgrading-zigbee",
+        "md": "https://apps.developer.homey.app/upgrade-guides/upgrading-to-sdk-v3/upgrading-zigbee.md"
+      },
+      {
+        "id": "zigbeedriver-api",
+        "url": "https://athombv.github.io/node-homey-zigbeedriver/ZigBeeDevice.html"
+      }
+    ],
+    "rules": [
+      {
+        "id": "defer-zcl-on-init",
+        "text": "Avoid initiating node communication in onInit/onNodeInit — defer + always catch promises",
+        "runtime": ["lib/utils/Sdk3ZclSafe.js", "lib/performance/BootBudget.js", "lib/devices/UnifiedSensorBase.js"]
+      },
+      {
+        "id": "catch-zcl-promises",
+        "text": "Unhandled ZCL promises in onNodeInit can stall init (zigbeedriver <2.1.4 unavailable; >=2.1.4 may skip finish)",
+        "runtime": ["lib/utils/Sdk3ZclSafe.js#catchZcl"]
+      },
+      {
+        "id": "capability-catch",
+        "text": "setCapabilityValue(...).catch(this.error) — prefer safeSetCapabilityValue (L14)",
+        "runtime": ["lib/utils/Sdk3ZclSafe.js#setCapabilityCaught", "lib/tuya/TuyaZigbeeDevice.js"]
+      },
+      {
+        "id": "identity-mfr-pid",
+        "text": "Compose Zigbee identity = manufacturerName + productId only (drop deviceId/profileId)",
+        "gates": ["npm run check:p2494", "npm run check:p2496"]
+      },
+      {
+        "id": "onEndDeviceAnnounce",
+        "text": "Sleepy wake path replaces node.on('online') — use onEndDeviceAnnounce for battery/bind heal",
+        "runtime": ["lib/devices/UnifiedSensorBase.js", "lib/battery/BatteryMasterEngine.js"]
+      },
+      {
+        "id": "isFirstInit",
+        "text": "Heavy first-pair binds/reporting only inside isFirstInit() when possible",
+        "runtime": ["lib/managers/IASZoneEnhanced.js"]
+      },
+      {
+        "id": "flow-getDeviceTriggerCard",
+        "text": "SDK3: getDeviceTriggerCard(id) one arg only — never (id,'trigger')",
+        "gates": ["npm run check:p2449"]
+      },
+      {
+        "id": "groups-pro2023",
+        "text": "Homey Pro 2023–2026 listens group ID 0 + Touchlink getGroups only — do not assume all-group RX",
+        "docs": ["docs/architecture/EXTERNAL_APP_SDK3_INSPIRATION_SSOT.md"]
+      },
+      {
+        "id": "no-meshdriver",
+        "text": "homey-meshdriver / onMeshInit / registerAttrReportListener are deprecated — use homey-zigbeedriver + configureAttributeReporting / boundCluster",
+        "deps": ["homey-zigbeedriver@2.2.17", "zigbee-clusters"]
+      },
+      {
+        "id": "p216-battery",
+        "text": "Never blind ZCL batteryPercentageRemaining /2 — use normalizeZclBatteryPercent",
+        "runtime": ["lib/battery/zcl-percent.js", "lib/utils/data-collector.js"]
+      }
+    ],
+    "syncScript": ".github/scripts/sync-sdk3-docs.js",
+    "referenceState": ".github/state/sdk3-reference.json"
+  },
+  "externalApps": [
+    {
+      "id": "johan-tuya-zigbee",
+      "repo": "JohanBendz/com.tuya.zigbee",
+      "role": "upstream community Tuya Zigbee — FP requests + issue couples",
+      "mine": ["issues", "driver.compose fingerprints", "learnmode wording"],
+      "tools": ["tools/ci/johan-dump.js", "tools/ci/johan-enrichment.js"],
+      "policy": "Silent enrich only — never copy App ID / never paste Johan into forum replies"
+    },
+    {
+      "id": "johan-lidl",
+      "repo": "JohanBendz/com.lidl",
+      "role": "Lidl white-label Tuya fleet",
+      "mine": ["mfr+pid couples", "driver class hints"]
+    },
+    {
+      "id": "johan-hue-zigbee",
+      "repo": "JohanBendz/com.philips.hue.zigbee",
+      "role": "Mature ZigBeeLightDevice / boundCluster patterns",
+      "mine": ["onNodeInit registerCapability", "colorControl", "levelControl"]
+    },
+    {
+      "id": "drenso-tuya-cloud",
+      "repo": "Drenso/com.tuya2",
+      "role": "Tuya cloud Homey app — flow UX inspiration (local Zigbee parallels)",
+      "mine": ["generic DP status triggers", "send command actions", "online/offline recover order"],
+      "ourParity": {
+        "triggers": ["tuya_dp_received", "tuya_dp_threshold_crossed"],
+        "actions": ["tuya_dp_send", "tuya_dp_send_typed"],
+        "docs": ["docs/TUYA_CLOUD_APP_INSPIRATION.md"]
+      }
+    },
+    {
+      "id": "athom-ikea-tradfri",
+      "repo": "athombv/com.ikea.tradfri",
+      "role": "Official SDK3 + zigbeedriver migration example (Athom docs)",
+      "mine": ["registerCapability", "configureAttributeReporting", "ZigBeeLightDevice"]
+    },
+    {
+      "id": "athom-homey-zigbeedriver",
+      "repo": "athombv/node-homey-zigbeedriver",
+      "role": "Library we depend on — track deprecations",
+      "mine": ["ZigBeeDevice API", "isFirstInit", "onEndDeviceAnnounce"]
+    },
+    {
+      "id": "styrahem-sonoff-zigbee",
+      "repo": "StyraHem/Homey.Sonoff.Zigbee",
+      "role": "Peer Zigbee app patterns",
+      "mine": ["SED handling", "driver.compose endpoints"]
+    },
+    {
+      "id": "dlnraja-canonical",
+      "repo": "dlnraja/com.tuya.zigbee",
+      "role": "This app (master/stable dual-track)",
+      "mine": ["sacred couples", "L14", "BootBudget"]
+    }
+  ],
+  "johanOpenIssuesCoverage2026_09_17": {
+    "note": "Cross-ref open Johan device requests — all verified couples already locked (no invent)",
+    "covered": [
+      { "issue": 1465, "couple": "_TZE204_gkfbdvyx+TS0601", "driver": "presence_sensor_radar" },
+      { "issue": 1463, "couple": "_TZ3000_b4awzgct+TS0041", "driver": "button_wireless_1" },
+      { "issue": 1458, "couple": "_TZE200_wt9agwf3+TS0601", "driver": "water_valve_smart" },
+      { "issue": 1457, "couple": "_TZE200_zo0cfekv+TS0601", "driver": "wall_switch_3gang_1way" },
+      { "issue": 1455, "couple": "_TZ3000_vdfwjopk+TS0219", "driver": "siren" },
+      { "issue": 1452, "couple": "_TZ3210_ddigca5n+TS011F", "driver": "plug_energy_monitor" },
+      { "issue": 1451, "couple": "_TZE204_ogkdpgy2+TS0601", "driver": "air_quality_co2" },
+      { "issue": 1448, "couple": "_TZE284_hodyryli+TS0601", "driver": "climate_sensor_zt08" },
+      { "issue": 1447, "couple": "_TZE204_cvub6xbb+TS0601", "driver": "wall_thermostat" },
+      { "issue": 1444, "couple": "_TZE284_6ocnqlhn+TS0601", "driver": "din_rail_meter" },
+      { "issue": 1445, "couple": "_TZE284_9ern5sfh+TS0601", "driver": "climate_sensor" },
+      { "issue": 1443, "couple": "_TZE204_mpbki2zm+TS0601", "driver": "wall_thermostat" }
+    ]
+  },
+  "appliedThisPass": [
+    {
+      "id": "p216-data-collector",
+      "file": "lib/utils/data-collector.js",
+      "change": "Replace blind value/2 with normalizeZclBatteryPercent + setCapabilityCaught"
+    },
+    {
+      "id": "sdk3-zcl-safe",
+      "file": "lib/utils/Sdk3ZclSafe.js",
+      "change": "Shared catchZcl / scheduleDeferredInit / setCapabilityCaught"
+    },
+    {
+      "id": "docs-rules-gate",
+      "files": [
+        "docs/architecture/EXTERNAL_APP_SDK3_INSPIRATION_SSOT.md",
+        ".cursor/rules/sdk3-external-inspiration-always.mdc",
+        "tools/ci/p2547-external-sdk3-inspiration-gate.js"
+      ]
+    }
+  ],
+  "paths": {
+    "ssot": "config/architecture/external-app-sdk3-inspiration-ssot.json",
+    "human": "docs/architecture/EXTERNAL_APP_SDK3_INSPIRATION_SSOT.md",
+    "runtime": "lib/utils/Sdk3ZclSafe.js",
+    "gate": "tools/ci/p2547-external-sdk3-inspiration-gate.js",
+    "test": "test/critical/p2547-external-sdk3-inspiration.test.js",
+    "npm": "check:p2547"
+  }
+}

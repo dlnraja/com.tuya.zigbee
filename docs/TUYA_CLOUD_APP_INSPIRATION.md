@@ -54,7 +54,7 @@ Actions to **send any Tuya command** to any DP:
 
 | Flow Card | Our App | Status |
 |-----------|---------|--------|
-| Receive Tuya Status (Boolean/Number/String/JSON) | ❌ | **TO ADD** |
+| Receive Tuya Status (Boolean/Number/String/JSON) | ✅ `tuya_dp_received` (+ typed/threshold) | **P2547 parity** |
 | Button pressed/clicked/double-clicked with switch selector | ✅ | Have |
 | Button knob turned (clockwise/counterclockwise) | ❌ | TO ADD |
 | Camera crying child detected | ❌ | N/A (cloud only) |
@@ -83,7 +83,7 @@ Actions to **send any Tuya command** to any DP:
 
 | Flow Card | Our App | Status |
 |-----------|---------|--------|
-| Send Tuya Command (generic DP) | ❌ | **TO ADD** |
+| Send Tuya Command (generic DP) | ✅ `tuya_dp_send` / `tuya_dp_send_typed` | **P2547 parity** |
 | Camera motion/sound/pet detection switch | ❌ | N/A |
 | Camera night mode | ❌ | N/A |
 | Camera PTZ control | ❌ | N/A |

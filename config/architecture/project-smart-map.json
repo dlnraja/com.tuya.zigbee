@@ -6,8 +6,8 @@
     "classify": "BOTH"
   },
   "tip": {
-    "healthyTest": "9.0.986",
-    "git": "9.0.986+",
+    "healthyTest": "9.0.991",
+    "git": "9.0.992+",
     "p139": "soft-continue on PF tip emails; no spam republish"
   },
   "dualApp": {
@@ -79,12 +79,19 @@
     "compressKeep": "always retain mfr+pid / HOBEIAN+ZG-* couples in user text"
   },
   "recentPatches": [
+    "P2547 external Homey apps + SDK3 inspiration SSOT (P216 collector)",
+    "P2546 VicHY radar periodic heal",
     "P2520 complementary variant enrich",
-    "P2538–P2540 airbox / ZB4 Suzi / complementary RX-TX",
-    "P2541–P2541b AQ reinstate anti-collision",
     "P2542 local auto-improve + forfait crons",
     "P2543 dual-app benefit recent advances (BOTH)"
   ],
+  "externalInspiration": {
+    "ssot": "config/architecture/external-app-sdk3-inspiration-ssot.json",
+    "human": "docs/architecture/EXTERNAL_APP_SDK3_INSPIRATION_SSOT.md",
+    "runtime": "lib/utils/Sdk3ZclSafe.js",
+    "gate": "npm run check:p2547",
+    "sdk3Sync": ".github/scripts/sync-sdk3-docs.js"
+  },
   "dualBenefit": {
     "ssot": "config/architecture/dual-app-benefit-recent-ssot.json",
     "orchestrator": "tools/ci/dual-app-benefit-recent.js",
@@ -149,6 +156,7 @@
     ".cursor/rules/device-truth.mdc",
     ".cursor/rules/ai-forfait-cursor-limit.mdc",
     ".cursor/rules/why-interrogation.mdc",
+    ".cursor/rules/sdk3-external-inspiration-always.mdc",
     ".github/WORKFLOW_GUIDELINES.md"
   ],
   "localSolver": "tools/ci/local-intelligent-solver.js",
