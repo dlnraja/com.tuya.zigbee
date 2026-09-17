@@ -100,6 +100,11 @@ class RadiatorValveDevice extends PhysicalButtonMixin(VirtualButtonMixin(Unified
 
   async onNodeInit({ zclNode }) {
     await super.onNodeInit({ zclNode });
+    // WHY(P2569 / Michaelp #2244): ogx8u5z6 interview is EF00-only — force pure Tuya DP path
+    try {
+      const { forcePureTuyaDp } = require('../../lib/zigbee/Ef00OnlyInterview');
+      forcePureTuyaDp(this);
+    } catch (_e) { /* soft */ }
     // --- Homey Time Sync for TRV / LCD/Thermostat devices ---
     // Syncs the device clock with the Homey box time every 6 hours.
     // Uses ZCL Time Cluster (0x000A) or Tuya EF00 DP 0x24 as fallback.
