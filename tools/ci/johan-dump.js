@@ -50,8 +50,8 @@ const NO_AUTH = args.includes('--no-auth');
 const headers = { 'User-Agent': 'Mavis-Dump', 'Accept': 'application/vnd.github+json' };
 if (TOKEN && !NO_AUTH) headers['Authorization'] = 'Bearer ' + TOKEN;
 
-const MFR_REGEX = /_T[YZ](?:E200|E2[E2]8[0-9]|ZB\d{2}|Z3000|Z3210)[_-][A-Za-z0-9]+/g;
-const PID_REGEX = /TS\d{4}[A-Z]?/g;
+const MFR_REGEX = /_T[YZ](?:E200|E204|E284|E28[0-9A-Z]*|ZB\d{2}|Z3000|Z3002|Z3210|Z3218|ST11)[_-][A-Za-z0-9]+/gi;
+const PID_REGEX = /\bTS\d{4}[A-Z]?\b|\bZG-[0-9A-Z]+\b/gi;
 
 function api(path) {
   return new Promise((resolve, reject) => {
@@ -97,55 +97,69 @@ function isRecent(date, since) {
 }
 
 function extractDevices(text) {
-  const mfrs = [...new Set((text.match(MFR_REGEX) || []).map(m => m.toUpperCase()))];
-  const pids = [...new Set((text.match(PID_REGEX) || []))];
+  const mfrs = [...new Set((String(text || '').match(MFR_REGEX) || []).map((m) => m.trim()))];
+  const pids = [...new Set((String(text || '').match(PID_REGEX) || []).map((p) => p.toUpperCase()))];
   return { mfrs, pids };
 }
 
 async function fetchIssues(state) {
   console.log('\n=== ISSUES ===');
+  // WHY P2572: GitHub REST uses page= not after= — broken cursor left dump at ~167 of 665+ open.
   const all = [];
   const states = ['open', 'closed'];
+  const maxPages = Number(process.env.JOHAN_ISSUE_MAX_PAGES || 40); // 40*100 = 4000/state
   for (const st of states) {
-    // Cursor-based pagination (GH API changed)
-    let cursor = null;
-    let pages = 0;
-    while (pages < 20) { // safety limit
-      const params = new URLSearchParams({ state: st, per_page: '100' });
-      if (cursor) params.set('after', cursor);
+    for (let page = 1; page <= maxPages; page++) {
+      const params = new URLSearchParams({
+        state: st,
+        per_page: '100',
+        page: String(page),
+        sort: 'updated',
+        direction: 'desc',
+      });
       const r = await api(`/repos/${REPO}/issues?${params}`);
-      if (r.status !== 200) { console.log('  status=' + r.status + ' for ' + st); break; }
+      if (r.status !== 200) {
+        console.log(`  status=${r.status} for ${st} page=${page}`);
+        break;
+      }
       if (!Array.isArray(r.body) || r.body.length === 0) break;
-      const issues = r.body.filter(i => !i.pull_request);
+      const issues = r.body.filter((i) => !i.pull_request);
       all.push(...issues);
-      pages++;
-      // Get next cursor from Link header
-      const link = r.body._link || '';
-      // Cursor is the last item's id (we'll just increment by fetching more)
-      if (issues.length < 100) break;
-      // The Link header would be in a different way; use last id as cursor
-      // But this endpoint doesn't support since_id cursor, so just keep going
-      cursor = issues[issues.length - 1].id;
-      await sleep(800);
-      if (INCREMENTAL && state.lastIssue && all.length && all[all.length - 1].number <= state.lastIssue) break;
+      console.log(`  ${st} page=${page} +${issues.length} (total ${all.length}) rate=${r.rate}`);
+      if (r.body.length < 100) break;
+      if (INCREMENTAL && state.lastIssue) {
+        const oldest = Math.min(...r.body.map((i) => i.number));
+        if (oldest <= state.lastIssue) break;
+      }
+      await sleep(400);
     }
   }
-  console.log('  Fetched: ' + all.length + ' issues');
-  return all;
+  // Dedupe by number (open+closed overlap unlikely but safe)
+  const byNum = new Map();
+  for (const i of all) byNum.set(i.number, i);
+  const deduped = [...byNum.values()];
+  console.log('  Fetched: ' + deduped.length + ' issues (deduped)');
+  return deduped;
 }
 
 async function fetchComments(issueNumbers) {
   console.log('\n=== COMMENTS ===');
+  // Cap comment fan-out: prefer issues that already have mfr/pid in title/body,
+  // or set JOHAN_COMMENT_MAX (default 120 most-recent open device requests).
+  const maxComments = Number(process.env.JOHAN_COMMENT_MAX || 120);
+  const nums = issueNumbers.slice(0, maxComments);
+  console.log(`  Comment depth: ${nums.length}/${issueNumbers.length} (JOHAN_COMMENT_MAX=${maxComments})`);
   const all = [];
-  for (const num of issueNumbers) {
-    for (let page = 1; page <= 5; page++) {
+  for (const num of nums) {
+    for (let page = 1; page <= 3; page++) {
       const r = await api(`/repos/${REPO}/issues/${num}/comments?per_page=100&page=${page}`);
       if (r.status !== 200) break;
       if (!Array.isArray(r.body)) break;
-      all.push(...r.body.map(c => ({ ...c, issue_number: num })));
+      all.push(...r.body.map((c) => ({ ...c, issue_number: num })));
       if (r.body.length < 100) break;
-      await sleep(500);
+      await sleep(250);
     }
+    await sleep(150);
   }
   console.log('  Fetched: ' + all.length + ' comments');
   return all;
@@ -154,18 +168,28 @@ async function fetchComments(issueNumbers) {
 async function fetchPRs(state) {
   console.log('\n=== PRS ===');
   const all = [];
-  for (let page = 1; page <= 5; page++) {
-    const params = new URLSearchParams({ state: 'all', per_page: '100', page: String(page), sort: 'updated', direction: 'desc' });
+  const maxPages = Number(process.env.JOHAN_PR_MAX_PAGES || 20);
+  for (let page = 1; page <= maxPages; page++) {
+    const params = new URLSearchParams({
+      state: 'all',
+      per_page: '100',
+      page: String(page),
+      sort: 'updated',
+      direction: 'desc',
+    });
     const r = await api(`/repos/${REPO}/pulls?${params}`);
     if (r.status !== 200) break;
+    if (!Array.isArray(r.body) || r.body.length === 0) break;
     if (INCREMENTAL && state.lastPR && r.body.length) {
-      const lastNum = state.lastPR;
-      const newOnes = r.body.filter(p => p.number > lastNum);
-      if (newOnes.length < r.body.length) { all.push(...newOnes); break; }
+      const newOnes = r.body.filter((p) => p.number > state.lastPR);
+      all.push(...newOnes);
+      if (newOnes.length < r.body.length) break;
+    } else {
+      all.push(...r.body);
     }
-    all.push(...r.body);
+    console.log(`  prs page=${page} +${r.body.length} (total ${all.length})`);
     if (r.body.length < 100) break;
-    await sleep(800);
+    await sleep(400);
   }
   console.log('  Fetched: ' + all.length + ' PRs');
   return all;
@@ -206,6 +230,18 @@ async function main() {
       existing.mfrs = [...new Set([...existing.mfrs, ...d.mfrs])];
       existing.pids = [...new Set([...existing.pids, ...d.pids])];
       devices.set(c.issue_number, existing);
+    }
+  }
+  for (const p of prs) {
+    const text = `${p.title || ''} ${p.body || ''}`;
+    const d = extractDevices(text);
+    if (d.mfrs.length || d.pids.length) {
+      devices.set(`pr-${p.number}`, {
+        issue: `PR#${p.number}`,
+        title: String(p.title || '').substring(0, 80),
+        state: p.state,
+        ...d,
+      });
     }
   }
   const devicesArr = [...devices.values()];

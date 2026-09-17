@@ -1,0 +1,4391 @@
+{
+  "id": "P2572",
+  "mode": "apply",
+  "generatedAt": "2026-09-17T20:27:32.351Z",
+  "harvested": 672,
+  "alreadyCovered": 315,
+  "driversTouched": 48,
+  "applied": [
+    {
+      "driverId": "water_valve_smart",
+      "mfrCount": 3,
+      "pidCount": 1,
+      "confidence": "high",
+      "ok": true,
+      "changed": true,
+      "addedMfr": 2,
+      "addedPid": 0
+    },
+    {
+      "driverId": "wall_switch_3gang_1way",
+      "mfrCount": 1,
+      "pidCount": 1,
+      "confidence": "high",
+      "ok": true,
+      "changed": false
+    },
+    {
+      "driverId": "din_rail_meter",
+      "mfrCount": 2,
+      "pidCount": 1,
+      "confidence": "high",
+      "ok": true,
+      "changed": true,
+      "addedMfr": 6,
+      "addedPid": 0
+    },
+    {
+      "driverId": "air_quality_co2",
+      "mfrCount": 6,
+      "pidCount": 2,
+      "confidence": "high",
+      "ok": true,
+      "changed": true,
+      "addedMfr": 18,
+      "addedPid": 1
+    },
+    {
+      "driverId": "climate_sensor",
+      "mfrCount": 33,
+      "pidCount": 9,
+      "confidence": "high",
+      "ok": true,
+      "changed": true,
+      "addedMfr": 62,
+      "addedPid": 0
+    },
+    {
+      "driverId": "climate_sensor_zt08",
+      "mfrCount": 1,
+      "pidCount": 1,
+      "confidence": "high",
+      "ok": true,
+      "changed": true,
+      "addedMfr": 2,
+      "addedPid": 0
+    },
+    {
+      "driverId": "wall_thermostat",
+      "mfrCount": 9,
+      "pidCount": 2,
+      "confidence": "high",
+      "ok": true,
+      "changed": true,
+      "addedMfr": 15,
+      "addedPid": 0
+    },
+    {
+      "driverId": "presence_sensor_radar",
+      "mfrCount": 41,
+      "pidCount": 11,
+      "confidence": "high",
+      "ok": true,
+      "changed": true,
+      "addedMfr": 136,
+      "addedPid": 2
+    },
+    {
+      "driverId": "garage_door",
+      "mfrCount": 1,
+      "pidCount": 1,
+      "confidence": "high",
+      "ok": true,
+      "changed": false
+    },
+    {
+      "driverId": "curtain_motor",
+      "mfrCount": 29,
+      "pidCount": 1,
+      "confidence": "high",
+      "ok": true,
+      "changed": true,
+      "addedMfr": 89,
+      "addedPid": 0
+    },
+    {
+      "driverId": "valve_dual_irrigation",
+      "mfrCount": 1,
+      "pidCount": 1,
+      "confidence": "high",
+      "ok": true,
+      "changed": true,
+      "addedMfr": 2,
+      "addedPid": 0
+    },
+    {
+      "driverId": "wall_dimmer_tuya",
+      "mfrCount": 9,
+      "pidCount": 7,
+      "confidence": "high",
+      "ok": true,
+      "changed": true,
+      "addedMfr": 27,
+      "addedPid": 5
+    },
+    {
+      "driverId": "contact_sensor",
+      "mfrCount": 3,
+      "pidCount": 2,
+      "confidence": "high",
+      "ok": true,
+      "changed": true,
+      "addedMfr": 7,
+      "addedPid": 1
+    },
+    {
+      "driverId": "contact_sensor_zigbee",
+      "mfrCount": 1,
+      "pidCount": 1,
+      "confidence": "high",
+      "ok": true,
+      "changed": true,
+      "addedMfr": 1,
+      "addedPid": 0
+    },
+    {
+      "driverId": "lcdtemphumidsensor",
+      "mfrCount": 7,
+      "pidCount": 3,
+      "confidence": "high",
+      "ok": true,
+      "changed": true,
+      "addedMfr": 8,
+      "addedPid": 1
+    },
+    {
+      "driverId": "dimmer_2_gang_tuya",
+      "mfrCount": 6,
+      "pidCount": 1,
+      "confidence": "high",
+      "ok": true,
+      "changed": true,
+      "addedMfr": 10,
+      "addedPid": 0
+    },
+    {
+      "driverId": "soil_sensor",
+      "mfrCount": 12,
+      "pidCount": 2,
+      "confidence": "high",
+      "ok": true,
+      "changed": true,
+      "addedMfr": 24,
+      "addedPid": 0
+    },
+    {
+      "driverId": "thermostatic_radiator_valve",
+      "mfrCount": 4,
+      "pidCount": 1,
+      "confidence": "high",
+      "ok": true,
+      "changed": true,
+      "addedMfr": 4,
+      "addedPid": 0
+    },
+    {
+      "driverId": "lcdtemphumidsensor_3",
+      "mfrCount": 2,
+      "pidCount": 1,
+      "confidence": "high",
+      "ok": true,
+      "changed": false
+    },
+    {
+      "driverId": "vibration_sensor",
+      "mfrCount": 1,
+      "pidCount": 1,
+      "confidence": "high",
+      "ok": true,
+      "changed": true,
+      "addedMfr": 2,
+      "addedPid": 0
+    },
+    {
+      "driverId": "curtain_motor_tilt",
+      "mfrCount": 3,
+      "pidCount": 1,
+      "confidence": "high",
+      "ok": true,
+      "changed": true,
+      "addedMfr": 4,
+      "addedPid": 0
+    },
+    {
+      "driverId": "power_clamp_meter",
+      "mfrCount": 2,
+      "pidCount": 1,
+      "confidence": "high",
+      "ok": true,
+      "changed": false
+    },
+    {
+      "driverId": "co_sensor",
+      "mfrCount": 2,
+      "pidCount": 1,
+      "confidence": "high",
+      "ok": true,
+      "changed": false
+    },
+    {
+      "driverId": "temphumidsensor2",
+      "mfrCount": 2,
+      "pidCount": 2,
+      "confidence": "high",
+      "ok": true,
+      "changed": true,
+      "addedMfr": 3,
+      "addedPid": 0
+    },
+    {
+      "driverId": "motion_sensor",
+      "mfrCount": 4,
+      "pidCount": 2,
+      "confidence": "high",
+      "ok": true,
+      "changed": true,
+      "addedMfr": 16,
+      "addedPid": 0
+    },
+    {
+      "driverId": "siren",
+      "mfrCount": 4,
+      "pidCount": 2,
+      "confidence": "high",
+      "ok": true,
+      "changed": true,
+      "addedMfr": 6,
+      "addedPid": 0
+    },
+    {
+      "driverId": "switch_1gang",
+      "mfrCount": 5,
+      "pidCount": 2,
+      "confidence": "high",
+      "ok": true,
+      "changed": true,
+      "addedMfr": 12,
+      "addedPid": 0
+    },
+    {
+      "driverId": "device_radiator_valve",
+      "mfrCount": 8,
+      "pidCount": 1,
+      "confidence": "high",
+      "ok": true,
+      "changed": true,
+      "addedMfr": 14,
+      "addedPid": 0
+    },
+    {
+      "driverId": "sensor_contact_zigbee",
+      "mfrCount": 2,
+      "pidCount": 1,
+      "confidence": "high",
+      "ok": true,
+      "changed": false
+    },
+    {
+      "driverId": "gas_detector",
+      "mfrCount": 2,
+      "pidCount": 2,
+      "confidence": "high",
+      "ok": true,
+      "changed": true,
+      "addedMfr": 4,
+      "addedPid": 0
+    },
+    {
+      "driverId": "sensor_gas_presence",
+      "mfrCount": 1,
+      "pidCount": 1,
+      "confidence": "high",
+      "ok": true,
+      "changed": true,
+      "addedMfr": 2,
+      "addedPid": 0
+    },
+    {
+      "driverId": "dimmer_1_gang_tuya",
+      "mfrCount": 6,
+      "pidCount": 3,
+      "confidence": "high",
+      "ok": true,
+      "changed": true,
+      "addedMfr": 11,
+      "addedPid": 0
+    },
+    {
+      "driverId": "valve_irrigation",
+      "mfrCount": 4,
+      "pidCount": 1,
+      "confidence": "high",
+      "ok": true,
+      "changed": true,
+      "addedMfr": 10,
+      "addedPid": 0
+    },
+    {
+      "driverId": "smoke_sensor2",
+      "mfrCount": 6,
+      "pidCount": 2,
+      "confidence": "high",
+      "ok": true,
+      "changed": true,
+      "addedMfr": 10,
+      "addedPid": 0
+    },
+    {
+      "driverId": "gas_sensor",
+      "mfrCount": 2,
+      "pidCount": 1,
+      "confidence": "high",
+      "ok": true,
+      "changed": true,
+      "addedMfr": 4,
+      "addedPid": 0
+    },
+    {
+      "driverId": "plug_energy_monitor",
+      "mfrCount": 1,
+      "pidCount": 1,
+      "confidence": "high",
+      "ok": true,
+      "changed": true,
+      "addedMfr": 5,
+      "addedPid": 0
+    },
+    {
+      "driverId": "fan_controller",
+      "mfrCount": 1,
+      "pidCount": 1,
+      "confidence": "high",
+      "ok": true,
+      "changed": true,
+      "addedMfr": 2,
+      "addedPid": 0
+    },
+    {
+      "driverId": "smart_lcd_thermostat",
+      "mfrCount": 2,
+      "pidCount": 1,
+      "confidence": "high",
+      "ok": true,
+      "changed": true,
+      "addedMfr": 4,
+      "addedPid": 0
+    },
+    {
+      "driverId": "presence_sensor_ceiling",
+      "mfrCount": 1,
+      "pidCount": 1,
+      "confidence": "high",
+      "ok": true,
+      "changed": true,
+      "addedMfr": 4,
+      "addedPid": 0
+    },
+    {
+      "driverId": "lcdtemphumidluxsensor",
+      "mfrCount": 2,
+      "pidCount": 1,
+      "confidence": "high",
+      "ok": true,
+      "changed": false
+    },
+    {
+      "driverId": "smoke_sensor",
+      "mfrCount": 1,
+      "pidCount": 1,
+      "confidence": "high",
+      "ok": true,
+      "changed": true,
+      "addedMfr": 4,
+      "addedPid": 0
+    },
+    {
+      "driverId": "rain_sensor",
+      "mfrCount": 1,
+      "pidCount": 2,
+      "confidence": "high",
+      "ok": true,
+      "changed": false
+    },
+    {
+      "driverId": "switch_4gang",
+      "mfrCount": 1,
+      "pidCount": 1,
+      "confidence": "high",
+      "ok": true,
+      "changed": false
+    },
+    {
+      "driverId": "bed_sensor",
+      "mfrCount": 1,
+      "pidCount": 1,
+      "confidence": "high",
+      "ok": true,
+      "changed": false
+    },
+    {
+      "driverId": "light_sensor_outdoor",
+      "mfrCount": 1,
+      "pidCount": 1,
+      "confidence": "high",
+      "ok": true,
+      "changed": false
+    },
+    {
+      "driverId": "radiator_valve",
+      "mfrCount": 1,
+      "pidCount": 1,
+      "confidence": "high",
+      "ok": true,
+      "changed": true,
+      "addedMfr": 2,
+      "addedPid": 0
+    },
+    {
+      "driverId": "curtain_motor_shutter",
+      "mfrCount": 1,
+      "pidCount": 1,
+      "confidence": "high",
+      "ok": true,
+      "changed": true,
+      "addedMfr": 4,
+      "addedPid": 0
+    },
+    {
+      "driverId": "dimmer_wall_1gang",
+      "mfrCount": 2,
+      "pidCount": 1,
+      "confidence": "high",
+      "ok": true,
+      "changed": true,
+      "addedMfr": 4,
+      "addedPid": 0
+    },
+    {
+      "driverId": "remote_dimmer",
+      "mfrCount": 1,
+      "pidCount": 1,
+      "confidence": "high",
+      "ok": true,
+      "changed": false
+    },
+    {
+      "driverId": "valve_single",
+      "mfrCount": 1,
+      "pidCount": 1,
+      "confidence": "high",
+      "ok": true,
+      "changed": true,
+      "addedMfr": 4,
+      "addedPid": 0
+    },
+    {
+      "driverId": "switch_wireless",
+      "mfrCount": 3,
+      "pidCount": 1,
+      "confidence": "high",
+      "ok": true,
+      "changed": true,
+      "addedMfr": 8,
+      "addedPid": 0
+    },
+    {
+      "driverId": "water_valve_garden",
+      "mfrCount": 1,
+      "pidCount": 1,
+      "confidence": "high",
+      "ok": true,
+      "changed": true,
+      "addedMfr": 2,
+      "addedPid": 0
+    },
+    {
+      "driverId": "button_wireless_plug",
+      "mfrCount": 1,
+      "pidCount": 3,
+      "confidence": "high",
+      "ok": true,
+      "changed": false
+    },
+    {
+      "driverId": "switch_2gang",
+      "mfrCount": 3,
+      "pidCount": 3,
+      "confidence": "low",
+      "ok": true,
+      "changed": true,
+      "addedMfr": 12,
+      "addedPid": 1
+    },
+    {
+      "driverId": "water_tank_monitor",
+      "mfrCount": 1,
+      "pidCount": 1,
+      "confidence": "high",
+      "ok": true,
+      "changed": false
+    },
+    {
+      "driverId": "pir_sensor_2",
+      "mfrCount": 3,
+      "pidCount": 2,
+      "confidence": "high",
+      "ok": true,
+      "changed": false
+    },
+    {
+      "driverId": "wall_switch_6_gang_tuya",
+      "mfrCount": 1,
+      "pidCount": 1,
+      "confidence": "high",
+      "ok": true,
+      "changed": false
+    },
+    {
+      "driverId": "wall_switch_4_gang_tuya",
+      "mfrCount": 1,
+      "pidCount": 1,
+      "confidence": "high",
+      "ok": true,
+      "changed": false
+    },
+    {
+      "driverId": "socket_power_strip_four_three",
+      "mfrCount": 1,
+      "pidCount": 1,
+      "confidence": "high",
+      "ok": true,
+      "changed": true,
+      "addedMfr": 2,
+      "addedPid": 0
+    },
+    {
+      "driverId": "smoke_sensor3",
+      "mfrCount": 1,
+      "pidCount": 1,
+      "confidence": "high",
+      "ok": true,
+      "changed": false
+    },
+    {
+      "driverId": "button_wireless_2",
+      "mfrCount": 5,
+      "pidCount": 6,
+      "confidence": "high",
+      "ok": true,
+      "changed": false
+    },
+    {
+      "driverId": "switch_3gang",
+      "mfrCount": 4,
+      "pidCount": 4,
+      "confidence": "low",
+      "ok": true,
+      "changed": true,
+      "addedMfr": 9,
+      "addedPid": 0
+    },
+    {
+      "driverId": "water_leak_sensor",
+      "mfrCount": 2,
+      "pidCount": 2,
+      "confidence": "high",
+      "ok": true,
+      "changed": true,
+      "addedMfr": 7,
+      "addedPid": 0
+    },
+    {
+      "driverId": "plug_smart",
+      "mfrCount": 1,
+      "pidCount": 1,
+      "confidence": "high",
+      "ok": true,
+      "changed": false
+    },
+    {
+      "driverId": "smartplug",
+      "mfrCount": 1,
+      "pidCount": 1,
+      "confidence": "high",
+      "ok": true,
+      "changed": false
+    },
+    {
+      "driverId": "siren_sirentemphumidsensor",
+      "mfrCount": 1,
+      "pidCount": 1,
+      "confidence": "high",
+      "ok": true,
+      "changed": true,
+      "addedMfr": 4,
+      "addedPid": 0
+    },
+    {
+      "driverId": "water_leak_sensor_tuya",
+      "mfrCount": 1,
+      "pidCount": 1,
+      "confidence": "high",
+      "ok": true,
+      "changed": true,
+      "addedMfr": 2,
+      "addedPid": 0
+    },
+    {
+      "driverId": "thermostat_tuya_dp",
+      "mfrCount": 2,
+      "pidCount": 1,
+      "confidence": "high",
+      "ok": true,
+      "changed": true,
+      "addedMfr": 6,
+      "addedPid": 0
+    },
+    {
+      "driverId": "smoke_detector_advanced",
+      "mfrCount": 1,
+      "pidCount": 1,
+      "confidence": "high",
+      "ok": true,
+      "changed": true,
+      "addedMfr": 2,
+      "addedPid": 0
+    },
+    {
+      "driverId": "socket_power_strip_four",
+      "mfrCount": 1,
+      "pidCount": 1,
+      "confidence": "high",
+      "ok": true,
+      "changed": false
+    },
+    {
+      "driverId": "sensor_motion_presence",
+      "mfrCount": 1,
+      "pidCount": 1,
+      "confidence": "high",
+      "ok": true,
+      "changed": false
+    },
+    {
+      "driverId": "switch_2_gang",
+      "mfrCount": 1,
+      "pidCount": 1,
+      "confidence": "high",
+      "ok": true,
+      "changed": false
+    },
+    {
+      "driverId": "ceiling_fan",
+      "mfrCount": 1,
+      "pidCount": 1,
+      "confidence": "high",
+      "ok": true,
+      "changed": false
+    },
+    {
+      "driverId": "valvecontroller",
+      "mfrCount": 2,
+      "pidCount": 2,
+      "confidence": "high",
+      "ok": true,
+      "changed": false
+    },
+    {
+      "driverId": "lcdtemphumidsensor_2",
+      "mfrCount": 1,
+      "pidCount": 2,
+      "confidence": "high",
+      "ok": true,
+      "changed": false
+    }
+  ],
+  "skipped": [
+    {
+      "mfr": "_TZE200_KB5NOETO",
+      "pid": "ZG-204ZS",
+      "sources": [
+        "johan-device:1064",
+        "johan-issue#1064"
+      ],
+      "texts": [
+        "Device Request - [Device name] - [Tuya] / [ZG-204ZS / ZG-204ZM]",
+        "Device Request - [Device name] - [Tuya] / [ZG-204ZS / ZG-204ZM]"
+      ],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TYZB01_0APS0H1R",
+      "pid": "TS0212",
+      "sources": [
+        "johan-device:977",
+        "johan-issue#977"
+      ],
+      "texts": [
+        "Device Request - [Alecto SMARTCOA10] - [_TYZB01_0aps0h1r] / [TS0212]",
+        "Device Request - [Alecto SMARTCOA10] - [_TYZB01_0aps0h1r] / [TS0212]",
+        "Device Request - [Alecto SMARTCOA10] - [_TYZB01_0aps0h1r] / [TS0212]"
+      ],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TYZB01_4LWQWYQN",
+      "pid": "TS0013",
+      "sources": [
+        "johan-device:1330",
+        "johan-issue#1330"
+      ],
+      "texts": [
+        "Device Request - [Device name] - [manufacturerName] / [modelId]",
+        "Device Request - [Device name] - [manufacturerName] / [modelId]"
+      ],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TZE200_NKJINTBL",
+      "pid": "TS0601",
+      "sources": [
+        "johan-device:46",
+        "johan-issue#46"
+      ],
+      "texts": [
+        "2 Way Switch - TS0601 - (Tuya cluster)",
+        "2 Way Switch - TS0601 - (Tuya cluster)"
+      ],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TZE284_RCCXOX8P",
+      "pid": "TS0044",
+      "sources": [
+        "johan-device:1335",
+        "johan-issue#1335"
+      ],
+      "texts": [
+        "📦 dlnraja Fork v5.5.518: Major Improvements Available for Merge",
+        "📦 dlnraja Fork v5.5.518: Major Improvements Available for Merge"
+      ],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TZE200_MYD45WEU",
+      "pid": "TS0044",
+      "sources": [
+        "johan-device:1335",
+        "johan-issue#1335"
+      ],
+      "texts": [
+        "📦 dlnraja Fork v5.5.518: Major Improvements Available for Merge",
+        "📦 dlnraja Fork v5.5.518: Major Improvements Available for Merge"
+      ],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TZE284_AAO3YZHS",
+      "pid": "TS0044",
+      "sources": [
+        "johan-device:1335",
+        "johan-issue#1335"
+      ],
+      "texts": [
+        "📦 dlnraja Fork v5.5.518: Major Improvements Available for Merge",
+        "📦 dlnraja Fork v5.5.518: Major Improvements Available for Merge"
+      ],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TYZB01_DR6SDUKA",
+      "pid": "TS0203",
+      "sources": [
+        "johan-device:887",
+        "johan-issue#887"
+      ],
+      "texts": [
+        "Device Request - Tesla Devices",
+        "Device Request - Tesla Devices"
+      ],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TZE200_pay2byax",
+      "pid": "TS0041",
+      "sources": [
+        "johan-pr#1253"
+      ],
+      "texts": [
+        "Added 3 new devices"
+      ],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TZE200_bjawzodf",
+      "pid": "TS0001",
+      "sources": [
+        "t26439#4646"
+      ],
+      "texts": [],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TZE200_bjawzodf",
+      "pid": "TS0044",
+      "sources": [
+        "t26439#4646"
+      ],
+      "texts": [],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TZE200_bjawzodf",
+      "pid": "TS0505B",
+      "sources": [
+        "t26439#4646"
+      ],
+      "texts": [],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TZE200_qq9mpfhw",
+      "pid": "TS0202",
+      "sources": [
+        "t26439#4117"
+      ],
+      "texts": [],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TZE200_qq9mpfhw",
+      "pid": "TS0203",
+      "sources": [
+        "t26439#4117"
+      ],
+      "texts": [],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TZE200_qq9mpfhw",
+      "pid": "TS0121",
+      "sources": [
+        "t26439#4117"
+      ],
+      "texts": [],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TZE200_qq9mpfhw",
+      "pid": "TS0003",
+      "sources": [
+        "t26439#4117"
+      ],
+      "texts": [],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TZE200_qq9mpfhw",
+      "pid": "TS0012",
+      "sources": [
+        "t26439#4117"
+      ],
+      "texts": [],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TZE200_qq9mpfhw",
+      "pid": "TS0002",
+      "sources": [
+        "t26439#4117"
+      ],
+      "texts": [],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TZE200_myd45weu",
+      "pid": "TS0203",
+      "sources": [
+        "t26439#4117"
+      ],
+      "texts": [],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TZE200_myd45weu",
+      "pid": "TS0121",
+      "sources": [
+        "t26439#4117"
+      ],
+      "texts": [],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TZE200_myd45weu",
+      "pid": "TS0003",
+      "sources": [
+        "t26439#4117"
+      ],
+      "texts": [],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TZE200_myd45weu",
+      "pid": "TS0012",
+      "sources": [
+        "t26439#4117"
+      ],
+      "texts": [],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TZE200_myd45weu",
+      "pid": "TS0002",
+      "sources": [
+        "t26439#4117"
+      ],
+      "texts": [],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TZE200_ga1maeof",
+      "pid": "TS0202",
+      "sources": [
+        "t26439#4117"
+      ],
+      "texts": [],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TZE200_ga1maeof",
+      "pid": "TS0203",
+      "sources": [
+        "t26439#4117"
+      ],
+      "texts": [],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TZE200_ga1maeof",
+      "pid": "TS0121",
+      "sources": [
+        "t26439#4117"
+      ],
+      "texts": [],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TZE200_ga1maeof",
+      "pid": "TS0003",
+      "sources": [
+        "t26439#4117"
+      ],
+      "texts": [],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TZE200_ga1maeof",
+      "pid": "TS0012",
+      "sources": [
+        "t26439#4117"
+      ],
+      "texts": [],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TZE200_ga1maeof",
+      "pid": "TS0002",
+      "sources": [
+        "t26439#4117"
+      ],
+      "texts": [],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TZE200_ztc6ggyl",
+      "pid": "TS0121",
+      "sources": [
+        "t26439#4117"
+      ],
+      "texts": [],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TZE200_ztc6ggyl",
+      "pid": "TS0003",
+      "sources": [
+        "t26439#4117"
+      ],
+      "texts": [],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TZE200_ztc6ggyl",
+      "pid": "TS0012",
+      "sources": [
+        "t26439#4117"
+      ],
+      "texts": [],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TZE200_ztc6ggyl",
+      "pid": "TS0002",
+      "sources": [
+        "t26439#4117"
+      ],
+      "texts": [],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TZE204_ztc6ggyl",
+      "pid": "TS0121",
+      "sources": [
+        "t26439#4117"
+      ],
+      "texts": [],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TZE204_ztc6ggyl",
+      "pid": "TS0003",
+      "sources": [
+        "t26439#4117"
+      ],
+      "texts": [],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TZE204_ztc6ggyl",
+      "pid": "TS0012",
+      "sources": [
+        "t26439#4117"
+      ],
+      "texts": [],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TZE204_ztc6ggyl",
+      "pid": "TS0002",
+      "sources": [
+        "t26439#4117"
+      ],
+      "texts": [],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TZE200_la2c2uo9",
+      "pid": "TS0202",
+      "sources": [
+        "t26439#4646"
+      ],
+      "texts": [],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TZE200_la2c2uo9",
+      "pid": "TS0044",
+      "sources": [
+        "t26439#4646"
+      ],
+      "texts": [],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TZE200_3p5ydos3",
+      "pid": "TS0202",
+      "sources": [
+        "t26439#4117"
+      ],
+      "texts": [],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TZE200_3p5ydos3",
+      "pid": "TS0203",
+      "sources": [
+        "t26439#4117"
+      ],
+      "texts": [],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TZE200_3p5ydos3",
+      "pid": "TS0121",
+      "sources": [
+        "t26439#4117"
+      ],
+      "texts": [],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TZE200_3p5ydos3",
+      "pid": "TS0003",
+      "sources": [
+        "t26439#4117"
+      ],
+      "texts": [],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TZE200_3p5ydos3",
+      "pid": "TS0012",
+      "sources": [
+        "t26439#4117"
+      ],
+      "texts": [],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TZE200_3p5ydos3",
+      "pid": "TS0002",
+      "sources": [
+        "t26439#4117"
+      ],
+      "texts": [],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TZE200_aoclfnxz",
+      "pid": "TS0202",
+      "sources": [
+        "t26439#4117"
+      ],
+      "texts": [],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TZE200_aoclfnxz",
+      "pid": "TS0203",
+      "sources": [
+        "t26439#4117"
+      ],
+      "texts": [],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TZE200_aoclfnxz",
+      "pid": "TS0121",
+      "sources": [
+        "t26439#4117"
+      ],
+      "texts": [],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TZE200_aoclfnxz",
+      "pid": "TS0012",
+      "sources": [
+        "t26439#4117"
+      ],
+      "texts": [],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TZE200_aoclfnxz",
+      "pid": "TS0002",
+      "sources": [
+        "t26439#4117"
+      ],
+      "texts": [],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TZE200_d0yu2xgi",
+      "pid": "TS0202",
+      "sources": [
+        "t26439#4117"
+      ],
+      "texts": [],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TZE200_d0yu2xgi",
+      "pid": "TS0203",
+      "sources": [
+        "t26439#4117"
+      ],
+      "texts": [],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TZE200_d0yu2xgi",
+      "pid": "TS0121",
+      "sources": [
+        "t26439#4117"
+      ],
+      "texts": [],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TZE200_d0yu2xgi",
+      "pid": "TS0003",
+      "sources": [
+        "t26439#4117"
+      ],
+      "texts": [],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TZE200_d0yu2xgi",
+      "pid": "TS0012",
+      "sources": [
+        "t26439#4117"
+      ],
+      "texts": [],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TZE200_d0yu2xgi",
+      "pid": "TS0002",
+      "sources": [
+        "t26439#4117"
+      ],
+      "texts": [],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TZE200_a8sdabtg",
+      "pid": "TS0222",
+      "sources": [
+        "t26439#1"
+      ],
+      "texts": [],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TZE200_a8sdabtg",
+      "pid": "TS0202",
+      "sources": [
+        "t26439#1"
+      ],
+      "texts": [],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TZE200_a8sdabtg",
+      "pid": "TS0203",
+      "sources": [
+        "t26439#1"
+      ],
+      "texts": [],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TZE200_a8sdabtg",
+      "pid": "TS0207",
+      "sources": [
+        "t26439#1"
+      ],
+      "texts": [],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TZE200_a8sdabtg",
+      "pid": "TS0205",
+      "sources": [
+        "t26439#1"
+      ],
+      "texts": [],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TZE200_a8sdabtg",
+      "pid": "TS0225",
+      "sources": [
+        "t26439#1"
+      ],
+      "texts": [],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TZE200_a8sdabtg",
+      "pid": "TS0121",
+      "sources": [
+        "t26439#1"
+      ],
+      "texts": [],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TZE200_a8sdabtg",
+      "pid": "TS0101",
+      "sources": [
+        "t26439#1"
+      ],
+      "texts": [],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TZE200_a8sdabtg",
+      "pid": "TS0115",
+      "sources": [
+        "t26439#1"
+      ],
+      "texts": [],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TZE200_a8sdabtg",
+      "pid": "TS0003",
+      "sources": [
+        "t26439#1"
+      ],
+      "texts": [],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TZE200_a8sdabtg",
+      "pid": "TS0011",
+      "sources": [
+        "t26439#1"
+      ],
+      "texts": [],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TZE200_a8sdabtg",
+      "pid": "TS0001",
+      "sources": [
+        "t26439#1"
+      ],
+      "texts": [],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TZE200_a8sdabtg",
+      "pid": "TS0012",
+      "sources": [
+        "t26439#1"
+      ],
+      "texts": [],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TZE200_a8sdabtg",
+      "pid": "TS0002",
+      "sources": [
+        "t26439#1"
+      ],
+      "texts": [],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TZE200_a8sdabtg",
+      "pid": "TS0013",
+      "sources": [
+        "t26439#1"
+      ],
+      "texts": [],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TZE200_a8sdabtg",
+      "pid": "TS0052",
+      "sources": [
+        "t26439#1"
+      ],
+      "texts": [],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TZE200_a8sdabtg",
+      "pid": "TS1101",
+      "sources": [
+        "t26439#1"
+      ],
+      "texts": [],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TZE200_a8sdabtg",
+      "pid": "TS0042",
+      "sources": [
+        "t26439#1"
+      ],
+      "texts": [],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TZE200_a8sdabtg",
+      "pid": "TS0043",
+      "sources": [
+        "t26439#1"
+      ],
+      "texts": [],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TZE200_a8sdabtg",
+      "pid": "TS0014",
+      "sources": [
+        "t26439#1"
+      ],
+      "texts": [],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TZE200_a8sdabtg",
+      "pid": "TS0044",
+      "sources": [
+        "t26439#1"
+      ],
+      "texts": [],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TZE200_a8sdabtg",
+      "pid": "TS0502B",
+      "sources": [
+        "t26439#1"
+      ],
+      "texts": [],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TZE200_a8sdabtg",
+      "pid": "TS0505A",
+      "sources": [
+        "t26439#1"
+      ],
+      "texts": [],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TZE200_a8sdabtg",
+      "pid": "TS0505B",
+      "sources": [
+        "t26439#1"
+      ],
+      "texts": [],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TZE200_a8sdabtg",
+      "pid": "TS0505",
+      "sources": [
+        "t26439#1"
+      ],
+      "texts": [],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TZE200_a8sdabtg",
+      "pid": "TS0503A",
+      "sources": [
+        "t26439#1"
+      ],
+      "texts": [],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TZE200_a8sdabtg",
+      "pid": "TS0503B",
+      "sources": [
+        "t26439#1"
+      ],
+      "texts": [],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TZE200_a8sdabtg",
+      "pid": "TS0504B",
+      "sources": [
+        "t26439#1"
+      ],
+      "texts": [],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TZE200_a8sdabtg",
+      "pid": "TS0502A",
+      "sources": [
+        "t26439#1"
+      ],
+      "texts": [],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TZE200_a8sdabtg",
+      "pid": "TS0041",
+      "sources": [
+        "t26439#1"
+      ],
+      "texts": [],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TZE200_a8sdabtg",
+      "pid": "TS0046",
+      "sources": [
+        "t26439#1"
+      ],
+      "texts": [],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TZE200_a8sdabtg",
+      "pid": "TS0215A",
+      "sources": [
+        "t26439#1"
+      ],
+      "texts": [],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TZE200_a8sdabtg",
+      "pid": "TS0111",
+      "sources": [
+        "t26439#1"
+      ],
+      "texts": [],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TZE200_a8sdabtg",
+      "pid": "TS0049",
+      "sources": [
+        "t26439#1"
+      ],
+      "texts": [],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TZE200_a8sdabtg",
+      "pid": "TS0004",
+      "sources": [
+        "t26439#1"
+      ],
+      "texts": [],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TZE200_9yapgbuv",
+      "pid": "TS0203",
+      "sources": [
+        "t26439#1"
+      ],
+      "texts": [],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TZE200_9yapgbuv",
+      "pid": "TS0207",
+      "sources": [
+        "t26439#1"
+      ],
+      "texts": [],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TZE200_9yapgbuv",
+      "pid": "TS0205",
+      "sources": [
+        "t26439#1"
+      ],
+      "texts": [],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TZE200_9yapgbuv",
+      "pid": "TS0225",
+      "sources": [
+        "t26439#1"
+      ],
+      "texts": [],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TZE200_9yapgbuv",
+      "pid": "TS0121",
+      "sources": [
+        "t26439#1"
+      ],
+      "texts": [],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TZE200_9yapgbuv",
+      "pid": "TS0115",
+      "sources": [
+        "t26439#1"
+      ],
+      "texts": [],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TZE200_9yapgbuv",
+      "pid": "TS0003",
+      "sources": [
+        "t26439#1"
+      ],
+      "texts": [],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TZE200_9yapgbuv",
+      "pid": "TS0001",
+      "sources": [
+        "t26439#1"
+      ],
+      "texts": [],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TZE200_9yapgbuv",
+      "pid": "TS0012",
+      "sources": [
+        "t26439#1"
+      ],
+      "texts": [],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TZE200_9yapgbuv",
+      "pid": "TS0002",
+      "sources": [
+        "t26439#1"
+      ],
+      "texts": [],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TZE200_9yapgbuv",
+      "pid": "TS0013",
+      "sources": [
+        "t26439#1"
+      ],
+      "texts": [],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TZE200_9yapgbuv",
+      "pid": "TS0052",
+      "sources": [
+        "t26439#1"
+      ],
+      "texts": [],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TZE200_9yapgbuv",
+      "pid": "TS1101",
+      "sources": [
+        "t26439#1"
+      ],
+      "texts": [],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TZE200_9yapgbuv",
+      "pid": "TS0042",
+      "sources": [
+        "t26439#1"
+      ],
+      "texts": [],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TZE200_9yapgbuv",
+      "pid": "TS0043",
+      "sources": [
+        "t26439#1"
+      ],
+      "texts": [],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TZE200_9yapgbuv",
+      "pid": "TS0014",
+      "sources": [
+        "t26439#1"
+      ],
+      "texts": [],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TZE200_9yapgbuv",
+      "pid": "TS0044",
+      "sources": [
+        "t26439#1"
+      ],
+      "texts": [],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TZE200_9yapgbuv",
+      "pid": "TS0502B",
+      "sources": [
+        "t26439#1"
+      ],
+      "texts": [],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TZE200_9yapgbuv",
+      "pid": "TS0505A",
+      "sources": [
+        "t26439#1"
+      ],
+      "texts": [],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TZE200_9yapgbuv",
+      "pid": "TS0505B",
+      "sources": [
+        "t26439#1"
+      ],
+      "texts": [],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TZE200_9yapgbuv",
+      "pid": "TS0505",
+      "sources": [
+        "t26439#1"
+      ],
+      "texts": [],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TZE200_9yapgbuv",
+      "pid": "TS0503A",
+      "sources": [
+        "t26439#1"
+      ],
+      "texts": [],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TZE200_9yapgbuv",
+      "pid": "TS0503B",
+      "sources": [
+        "t26439#1"
+      ],
+      "texts": [],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TZE200_9yapgbuv",
+      "pid": "TS0504B",
+      "sources": [
+        "t26439#1"
+      ],
+      "texts": [],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TZE200_9yapgbuv",
+      "pid": "TS0502A",
+      "sources": [
+        "t26439#1"
+      ],
+      "texts": [],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TZE200_9yapgbuv",
+      "pid": "TS0041",
+      "sources": [
+        "t26439#1"
+      ],
+      "texts": [],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TZE200_9yapgbuv",
+      "pid": "TS0046",
+      "sources": [
+        "t26439#1"
+      ],
+      "texts": [],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TZE200_9yapgbuv",
+      "pid": "TS0111",
+      "sources": [
+        "t26439#1"
+      ],
+      "texts": [],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TZE200_9yapgbuv",
+      "pid": "TS0049",
+      "sources": [
+        "t26439#1"
+      ],
+      "texts": [],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TZE200_yjjdcqsq",
+      "pid": "TS0203",
+      "sources": [
+        "t26439#1"
+      ],
+      "texts": [],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TZE200_yjjdcqsq",
+      "pid": "TS0207",
+      "sources": [
+        "t26439#1"
+      ],
+      "texts": [],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TZE200_yjjdcqsq",
+      "pid": "TS0205",
+      "sources": [
+        "t26439#1"
+      ],
+      "texts": [],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TZE200_yjjdcqsq",
+      "pid": "TS0225",
+      "sources": [
+        "t26439#1"
+      ],
+      "texts": [],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TZE200_yjjdcqsq",
+      "pid": "TS0121",
+      "sources": [
+        "t26439#1"
+      ],
+      "texts": [],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TZE200_yjjdcqsq",
+      "pid": "TS0115",
+      "sources": [
+        "t26439#1"
+      ],
+      "texts": [],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TZE200_yjjdcqsq",
+      "pid": "TS0003",
+      "sources": [
+        "t26439#1"
+      ],
+      "texts": [],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TZE200_yjjdcqsq",
+      "pid": "TS0001",
+      "sources": [
+        "t26439#1"
+      ],
+      "texts": [],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TZE200_yjjdcqsq",
+      "pid": "TS0012",
+      "sources": [
+        "t26439#1"
+      ],
+      "texts": [],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TZE200_yjjdcqsq",
+      "pid": "TS0002",
+      "sources": [
+        "t26439#1"
+      ],
+      "texts": [],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TZE200_yjjdcqsq",
+      "pid": "TS0013",
+      "sources": [
+        "t26439#1"
+      ],
+      "texts": [],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TZE200_yjjdcqsq",
+      "pid": "TS0052",
+      "sources": [
+        "t26439#1"
+      ],
+      "texts": [],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TZE200_yjjdcqsq",
+      "pid": "TS1101",
+      "sources": [
+        "t26439#1"
+      ],
+      "texts": [],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TZE200_yjjdcqsq",
+      "pid": "TS0042",
+      "sources": [
+        "t26439#1"
+      ],
+      "texts": [],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TZE200_yjjdcqsq",
+      "pid": "TS0043",
+      "sources": [
+        "t26439#1"
+      ],
+      "texts": [],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TZE200_yjjdcqsq",
+      "pid": "TS0014",
+      "sources": [
+        "t26439#1"
+      ],
+      "texts": [],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TZE200_yjjdcqsq",
+      "pid": "TS0044",
+      "sources": [
+        "t26439#1"
+      ],
+      "texts": [],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TZE200_yjjdcqsq",
+      "pid": "TS0502B",
+      "sources": [
+        "t26439#1"
+      ],
+      "texts": [],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TZE200_yjjdcqsq",
+      "pid": "TS0505A",
+      "sources": [
+        "t26439#1"
+      ],
+      "texts": [],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TZE200_yjjdcqsq",
+      "pid": "TS0505B",
+      "sources": [
+        "t26439#1"
+      ],
+      "texts": [],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TZE200_yjjdcqsq",
+      "pid": "TS0505",
+      "sources": [
+        "t26439#1"
+      ],
+      "texts": [],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TZE200_yjjdcqsq",
+      "pid": "TS0503A",
+      "sources": [
+        "t26439#1"
+      ],
+      "texts": [],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TZE200_yjjdcqsq",
+      "pid": "TS0503B",
+      "sources": [
+        "t26439#1"
+      ],
+      "texts": [],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TZE200_yjjdcqsq",
+      "pid": "TS0504B",
+      "sources": [
+        "t26439#1"
+      ],
+      "texts": [],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TZE200_yjjdcqsq",
+      "pid": "TS0502A",
+      "sources": [
+        "t26439#1"
+      ],
+      "texts": [],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TZE200_yjjdcqsq",
+      "pid": "TS0041",
+      "sources": [
+        "t26439#1"
+      ],
+      "texts": [],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TZE200_yjjdcqsq",
+      "pid": "TS0046",
+      "sources": [
+        "t26439#1"
+      ],
+      "texts": [],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TZE200_yjjdcqsq",
+      "pid": "TS0111",
+      "sources": [
+        "t26439#1"
+      ],
+      "texts": [],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TZE200_yjjdcqsq",
+      "pid": "TS0049",
+      "sources": [
+        "t26439#1"
+      ],
+      "texts": [],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TZE200_utkemkbs",
+      "pid": "TS0203",
+      "sources": [
+        "t26439#1"
+      ],
+      "texts": [],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TZE200_utkemkbs",
+      "pid": "TS0207",
+      "sources": [
+        "t26439#1"
+      ],
+      "texts": [],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TZE200_utkemkbs",
+      "pid": "TS0205",
+      "sources": [
+        "t26439#1"
+      ],
+      "texts": [],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TZE200_utkemkbs",
+      "pid": "TS0225",
+      "sources": [
+        "t26439#1"
+      ],
+      "texts": [],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TZE200_utkemkbs",
+      "pid": "TS0121",
+      "sources": [
+        "t26439#1"
+      ],
+      "texts": [],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TZE200_utkemkbs",
+      "pid": "TS0115",
+      "sources": [
+        "t26439#1"
+      ],
+      "texts": [],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TZE200_utkemkbs",
+      "pid": "TS0003",
+      "sources": [
+        "t26439#1"
+      ],
+      "texts": [],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TZE200_utkemkbs",
+      "pid": "TS0001",
+      "sources": [
+        "t26439#1"
+      ],
+      "texts": [],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TZE200_utkemkbs",
+      "pid": "TS0012",
+      "sources": [
+        "t26439#1"
+      ],
+      "texts": [],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TZE200_utkemkbs",
+      "pid": "TS0002",
+      "sources": [
+        "t26439#1"
+      ],
+      "texts": [],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TZE200_utkemkbs",
+      "pid": "TS0013",
+      "sources": [
+        "t26439#1"
+      ],
+      "texts": [],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TZE200_utkemkbs",
+      "pid": "TS0052",
+      "sources": [
+        "t26439#1"
+      ],
+      "texts": [],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TZE200_utkemkbs",
+      "pid": "TS1101",
+      "sources": [
+        "t26439#1"
+      ],
+      "texts": [],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TZE200_utkemkbs",
+      "pid": "TS0042",
+      "sources": [
+        "t26439#1"
+      ],
+      "texts": [],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TZE200_utkemkbs",
+      "pid": "TS0043",
+      "sources": [
+        "t26439#1"
+      ],
+      "texts": [],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TZE200_utkemkbs",
+      "pid": "TS0014",
+      "sources": [
+        "t26439#1"
+      ],
+      "texts": [],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TZE200_utkemkbs",
+      "pid": "TS0044",
+      "sources": [
+        "t26439#1"
+      ],
+      "texts": [],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TZE200_utkemkbs",
+      "pid": "TS0502B",
+      "sources": [
+        "t26439#1"
+      ],
+      "texts": [],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TZE200_utkemkbs",
+      "pid": "TS0505A",
+      "sources": [
+        "t26439#1"
+      ],
+      "texts": [],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TZE200_utkemkbs",
+      "pid": "TS0505B",
+      "sources": [
+        "t26439#1"
+      ],
+      "texts": [],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TZE200_utkemkbs",
+      "pid": "TS0505",
+      "sources": [
+        "t26439#1"
+      ],
+      "texts": [],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TZE200_utkemkbs",
+      "pid": "TS0503A",
+      "sources": [
+        "t26439#1"
+      ],
+      "texts": [],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TZE200_utkemkbs",
+      "pid": "TS0503B",
+      "sources": [
+        "t26439#1"
+      ],
+      "texts": [],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TZE200_utkemkbs",
+      "pid": "TS0504B",
+      "sources": [
+        "t26439#1"
+      ],
+      "texts": [],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TZE200_utkemkbs",
+      "pid": "TS0502A",
+      "sources": [
+        "t26439#1"
+      ],
+      "texts": [],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TZE200_utkemkbs",
+      "pid": "TS0041",
+      "sources": [
+        "t26439#1"
+      ],
+      "texts": [],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TZE200_utkemkbs",
+      "pid": "TS0046",
+      "sources": [
+        "t26439#1"
+      ],
+      "texts": [],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TZE200_utkemkbs",
+      "pid": "TS0111",
+      "sources": [
+        "t26439#1"
+      ],
+      "texts": [],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TZE200_utkemkbs",
+      "pid": "TS0049",
+      "sources": [
+        "t26439#1"
+      ],
+      "texts": [],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TYZB01_a476raq2",
+      "pid": "TS0222",
+      "sources": [
+        "t26439#1"
+      ],
+      "texts": [],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TYZB01_a476raq2",
+      "pid": "TS0202",
+      "sources": [
+        "t26439#1"
+      ],
+      "texts": [],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TYZB01_a476raq2",
+      "pid": "TS0203",
+      "sources": [
+        "t26439#1"
+      ],
+      "texts": [],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TYZB01_a476raq2",
+      "pid": "TS0207",
+      "sources": [
+        "t26439#1"
+      ],
+      "texts": [],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TYZB01_a476raq2",
+      "pid": "TS0205",
+      "sources": [
+        "t26439#1"
+      ],
+      "texts": [],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TYZB01_a476raq2",
+      "pid": "TS0225",
+      "sources": [
+        "t26439#1"
+      ],
+      "texts": [],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TYZB01_a476raq2",
+      "pid": "TS0121",
+      "sources": [
+        "t26439#1"
+      ],
+      "texts": [],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TYZB01_a476raq2",
+      "pid": "TS0101",
+      "sources": [
+        "t26439#1"
+      ],
+      "texts": [],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TYZB01_a476raq2",
+      "pid": "TS0115",
+      "sources": [
+        "t26439#1"
+      ],
+      "texts": [],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TYZB01_a476raq2",
+      "pid": "TS0003",
+      "sources": [
+        "t26439#1"
+      ],
+      "texts": [],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TYZB01_a476raq2",
+      "pid": "TS0011",
+      "sources": [
+        "t26439#1"
+      ],
+      "texts": [],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TYZB01_a476raq2",
+      "pid": "TS0001",
+      "sources": [
+        "t26439#1"
+      ],
+      "texts": [],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TYZB01_a476raq2",
+      "pid": "TS0012",
+      "sources": [
+        "t26439#1"
+      ],
+      "texts": [],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TYZB01_a476raq2",
+      "pid": "TS0002",
+      "sources": [
+        "t26439#1"
+      ],
+      "texts": [],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TYZB01_a476raq2",
+      "pid": "TS0013",
+      "sources": [
+        "t26439#1"
+      ],
+      "texts": [],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TYZB01_a476raq2",
+      "pid": "TS0052",
+      "sources": [
+        "t26439#1"
+      ],
+      "texts": [],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TYZB01_a476raq2",
+      "pid": "TS1101",
+      "sources": [
+        "t26439#1"
+      ],
+      "texts": [],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TYZB01_a476raq2",
+      "pid": "TS0042",
+      "sources": [
+        "t26439#1"
+      ],
+      "texts": [],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TYZB01_a476raq2",
+      "pid": "TS0043",
+      "sources": [
+        "t26439#1"
+      ],
+      "texts": [],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TYZB01_a476raq2",
+      "pid": "TS0014",
+      "sources": [
+        "t26439#1"
+      ],
+      "texts": [],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TYZB01_a476raq2",
+      "pid": "TS0044",
+      "sources": [
+        "t26439#1"
+      ],
+      "texts": [],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TYZB01_a476raq2",
+      "pid": "TS0502B",
+      "sources": [
+        "t26439#1"
+      ],
+      "texts": [],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TYZB01_a476raq2",
+      "pid": "TS0505A",
+      "sources": [
+        "t26439#1"
+      ],
+      "texts": [],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TYZB01_a476raq2",
+      "pid": "TS0505B",
+      "sources": [
+        "t26439#1"
+      ],
+      "texts": [],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TYZB01_a476raq2",
+      "pid": "TS0505",
+      "sources": [
+        "t26439#1"
+      ],
+      "texts": [],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TYZB01_a476raq2",
+      "pid": "TS0503A",
+      "sources": [
+        "t26439#1"
+      ],
+      "texts": [],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TYZB01_a476raq2",
+      "pid": "TS0503B",
+      "sources": [
+        "t26439#1"
+      ],
+      "texts": [],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TYZB01_a476raq2",
+      "pid": "TS0504B",
+      "sources": [
+        "t26439#1"
+      ],
+      "texts": [],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TYZB01_a476raq2",
+      "pid": "TS0502A",
+      "sources": [
+        "t26439#1"
+      ],
+      "texts": [],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TYZB01_a476raq2",
+      "pid": "TS0041",
+      "sources": [
+        "t26439#1"
+      ],
+      "texts": [],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TYZB01_a476raq2",
+      "pid": "TS0046",
+      "sources": [
+        "t26439#1"
+      ],
+      "texts": [],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TYZB01_a476raq2",
+      "pid": "TS0215A",
+      "sources": [
+        "t26439#1"
+      ],
+      "texts": [],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TYZB01_a476raq2",
+      "pid": "TS0111",
+      "sources": [
+        "t26439#1"
+      ],
+      "texts": [],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TYZB01_a476raq2",
+      "pid": "TS0049",
+      "sources": [
+        "t26439#1"
+      ],
+      "texts": [],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TYZB01_a476raq2",
+      "pid": "TS0004",
+      "sources": [
+        "t26439#1"
+      ],
+      "texts": [],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TYZB01_hjsgdkfl",
+      "pid": "TS0222",
+      "sources": [
+        "t26439#1"
+      ],
+      "texts": [],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TYZB01_hjsgdkfl",
+      "pid": "TS0202",
+      "sources": [
+        "t26439#1"
+      ],
+      "texts": [],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TYZB01_hjsgdkfl",
+      "pid": "TS0203",
+      "sources": [
+        "t26439#1"
+      ],
+      "texts": [],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TYZB01_hjsgdkfl",
+      "pid": "TS0207",
+      "sources": [
+        "t26439#1"
+      ],
+      "texts": [],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TYZB01_hjsgdkfl",
+      "pid": "TS0205",
+      "sources": [
+        "t26439#1"
+      ],
+      "texts": [],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TYZB01_hjsgdkfl",
+      "pid": "TS0225",
+      "sources": [
+        "t26439#1"
+      ],
+      "texts": [],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TYZB01_hjsgdkfl",
+      "pid": "TS0121",
+      "sources": [
+        "t26439#1"
+      ],
+      "texts": [],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TYZB01_hjsgdkfl",
+      "pid": "TS0101",
+      "sources": [
+        "t26439#1"
+      ],
+      "texts": [],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TYZB01_hjsgdkfl",
+      "pid": "TS0115",
+      "sources": [
+        "t26439#1"
+      ],
+      "texts": [],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TYZB01_hjsgdkfl",
+      "pid": "TS0003",
+      "sources": [
+        "t26439#1"
+      ],
+      "texts": [],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TYZB01_hjsgdkfl",
+      "pid": "TS0011",
+      "sources": [
+        "t26439#1"
+      ],
+      "texts": [],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TYZB01_hjsgdkfl",
+      "pid": "TS0001",
+      "sources": [
+        "t26439#1"
+      ],
+      "texts": [],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TYZB01_hjsgdkfl",
+      "pid": "TS0012",
+      "sources": [
+        "t26439#1"
+      ],
+      "texts": [],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TYZB01_hjsgdkfl",
+      "pid": "TS0002",
+      "sources": [
+        "t26439#1"
+      ],
+      "texts": [],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TYZB01_hjsgdkfl",
+      "pid": "TS0013",
+      "sources": [
+        "t26439#1"
+      ],
+      "texts": [],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TYZB01_hjsgdkfl",
+      "pid": "TS0052",
+      "sources": [
+        "t26439#1"
+      ],
+      "texts": [],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TYZB01_hjsgdkfl",
+      "pid": "TS1101",
+      "sources": [
+        "t26439#1"
+      ],
+      "texts": [],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TYZB01_hjsgdkfl",
+      "pid": "TS0042",
+      "sources": [
+        "t26439#1"
+      ],
+      "texts": [],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TYZB01_hjsgdkfl",
+      "pid": "TS0043",
+      "sources": [
+        "t26439#1"
+      ],
+      "texts": [],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TYZB01_hjsgdkfl",
+      "pid": "TS0014",
+      "sources": [
+        "t26439#1"
+      ],
+      "texts": [],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TYZB01_hjsgdkfl",
+      "pid": "TS0044",
+      "sources": [
+        "t26439#1"
+      ],
+      "texts": [],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TYZB01_hjsgdkfl",
+      "pid": "TS0502B",
+      "sources": [
+        "t26439#1"
+      ],
+      "texts": [],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TYZB01_hjsgdkfl",
+      "pid": "TS0505A",
+      "sources": [
+        "t26439#1"
+      ],
+      "texts": [],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TYZB01_hjsgdkfl",
+      "pid": "TS0505B",
+      "sources": [
+        "t26439#1"
+      ],
+      "texts": [],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TYZB01_hjsgdkfl",
+      "pid": "TS0505",
+      "sources": [
+        "t26439#1"
+      ],
+      "texts": [],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TYZB01_hjsgdkfl",
+      "pid": "TS0503A",
+      "sources": [
+        "t26439#1"
+      ],
+      "texts": [],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TYZB01_hjsgdkfl",
+      "pid": "TS0503B",
+      "sources": [
+        "t26439#1"
+      ],
+      "texts": [],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TYZB01_hjsgdkfl",
+      "pid": "TS0504B",
+      "sources": [
+        "t26439#1"
+      ],
+      "texts": [],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TYZB01_hjsgdkfl",
+      "pid": "TS0502A",
+      "sources": [
+        "t26439#1"
+      ],
+      "texts": [],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TYZB01_hjsgdkfl",
+      "pid": "TS0041",
+      "sources": [
+        "t26439#1"
+      ],
+      "texts": [],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TYZB01_hjsgdkfl",
+      "pid": "TS0046",
+      "sources": [
+        "t26439#1"
+      ],
+      "texts": [],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TYZB01_hjsgdkfl",
+      "pid": "TS0215A",
+      "sources": [
+        "t26439#1"
+      ],
+      "texts": [],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TYZB01_hjsgdkfl",
+      "pid": "TS0111",
+      "sources": [
+        "t26439#1"
+      ],
+      "texts": [],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TYZB01_hjsgdkfl",
+      "pid": "TS0049",
+      "sources": [
+        "t26439#1"
+      ],
+      "texts": [],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TYZB01_hjsgdkfl",
+      "pid": "TS0004",
+      "sources": [
+        "t26439#1"
+      ],
+      "texts": [],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TYZB01_iuepbmpv",
+      "pid": "TS0201",
+      "sources": [
+        "t26439#1"
+      ],
+      "texts": [],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TYZB01_iuepbmpv",
+      "pid": "TS0601",
+      "sources": [
+        "t26439#1"
+      ],
+      "texts": [],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TYZB01_iuepbmpv",
+      "pid": "TS0222",
+      "sources": [
+        "t26439#1"
+      ],
+      "texts": [],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TYZB01_iuepbmpv",
+      "pid": "TS0202",
+      "sources": [
+        "t26439#1"
+      ],
+      "texts": [],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TYZB01_iuepbmpv",
+      "pid": "TS0203",
+      "sources": [
+        "t26439#1"
+      ],
+      "texts": [],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TYZB01_iuepbmpv",
+      "pid": "TS0207",
+      "sources": [
+        "t26439#1"
+      ],
+      "texts": [],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TYZB01_iuepbmpv",
+      "pid": "TS0205",
+      "sources": [
+        "t26439#1"
+      ],
+      "texts": [],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TYZB01_iuepbmpv",
+      "pid": "TS0225",
+      "sources": [
+        "t26439#1"
+      ],
+      "texts": [],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TYZB01_iuepbmpv",
+      "pid": "TS0101",
+      "sources": [
+        "t26439#1"
+      ],
+      "texts": [],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TYZB01_iuepbmpv",
+      "pid": "TS0115",
+      "sources": [
+        "t26439#1"
+      ],
+      "texts": [],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TYZB01_iuepbmpv",
+      "pid": "TS0003",
+      "sources": [
+        "t26439#1"
+      ],
+      "texts": [],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TYZB01_iuepbmpv",
+      "pid": "TS0011",
+      "sources": [
+        "t26439#1"
+      ],
+      "texts": [],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TYZB01_iuepbmpv",
+      "pid": "TS0001",
+      "sources": [
+        "t26439#1"
+      ],
+      "texts": [],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TYZB01_iuepbmpv",
+      "pid": "TS0012",
+      "sources": [
+        "t26439#1"
+      ],
+      "texts": [],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TYZB01_iuepbmpv",
+      "pid": "TS0002",
+      "sources": [
+        "t26439#1"
+      ],
+      "texts": [],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TYZB01_iuepbmpv",
+      "pid": "TS0013",
+      "sources": [
+        "t26439#1"
+      ],
+      "texts": [],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TYZB01_iuepbmpv",
+      "pid": "TS0052",
+      "sources": [
+        "t26439#1"
+      ],
+      "texts": [],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TYZB01_iuepbmpv",
+      "pid": "TS1101",
+      "sources": [
+        "t26439#1"
+      ],
+      "texts": [],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TYZB01_iuepbmpv",
+      "pid": "TS0042",
+      "sources": [
+        "t26439#1"
+      ],
+      "texts": [],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TYZB01_iuepbmpv",
+      "pid": "TS0043",
+      "sources": [
+        "t26439#1"
+      ],
+      "texts": [],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TYZB01_iuepbmpv",
+      "pid": "TS0014",
+      "sources": [
+        "t26439#1"
+      ],
+      "texts": [],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TYZB01_iuepbmpv",
+      "pid": "TS0044",
+      "sources": [
+        "t26439#1"
+      ],
+      "texts": [],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TYZB01_iuepbmpv",
+      "pid": "TS0502B",
+      "sources": [
+        "t26439#1"
+      ],
+      "texts": [],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TYZB01_iuepbmpv",
+      "pid": "TS0505A",
+      "sources": [
+        "t26439#1"
+      ],
+      "texts": [],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TYZB01_iuepbmpv",
+      "pid": "TS0505B",
+      "sources": [
+        "t26439#1"
+      ],
+      "texts": [],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TYZB01_iuepbmpv",
+      "pid": "TS0505",
+      "sources": [
+        "t26439#1"
+      ],
+      "texts": [],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TYZB01_iuepbmpv",
+      "pid": "TS0503A",
+      "sources": [
+        "t26439#1"
+      ],
+      "texts": [],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TYZB01_iuepbmpv",
+      "pid": "TS0503B",
+      "sources": [
+        "t26439#1"
+      ],
+      "texts": [],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TYZB01_iuepbmpv",
+      "pid": "TS0504B",
+      "sources": [
+        "t26439#1"
+      ],
+      "texts": [],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TYZB01_iuepbmpv",
+      "pid": "TS0502A",
+      "sources": [
+        "t26439#1"
+      ],
+      "texts": [],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TYZB01_iuepbmpv",
+      "pid": "TS0041",
+      "sources": [
+        "t26439#1"
+      ],
+      "texts": [],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TYZB01_iuepbmpv",
+      "pid": "TS0046",
+      "sources": [
+        "t26439#1"
+      ],
+      "texts": [],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TYZB01_iuepbmpv",
+      "pid": "TS0215A",
+      "sources": [
+        "t26439#1"
+      ],
+      "texts": [],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TYZB01_iuepbmpv",
+      "pid": "TS0111",
+      "sources": [
+        "t26439#1"
+      ],
+      "texts": [],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TYZB01_iuepbmpv",
+      "pid": "TS0049",
+      "sources": [
+        "t26439#1"
+      ],
+      "texts": [],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TYZB01_iuepbmpv",
+      "pid": "TS0004",
+      "sources": [
+        "t26439#1"
+      ],
+      "texts": [],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TYZB01_cbiezpds",
+      "pid": "TS0222",
+      "sources": [
+        "t26439#1"
+      ],
+      "texts": [],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TYZB01_cbiezpds",
+      "pid": "TS0202",
+      "sources": [
+        "t26439#1"
+      ],
+      "texts": [],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TYZB01_cbiezpds",
+      "pid": "TS0203",
+      "sources": [
+        "t26439#1"
+      ],
+      "texts": [],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TYZB01_cbiezpds",
+      "pid": "TS0207",
+      "sources": [
+        "t26439#1"
+      ],
+      "texts": [],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TYZB01_cbiezpds",
+      "pid": "TS0205",
+      "sources": [
+        "t26439#1"
+      ],
+      "texts": [],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TYZB01_cbiezpds",
+      "pid": "TS0225",
+      "sources": [
+        "t26439#1"
+      ],
+      "texts": [],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TYZB01_cbiezpds",
+      "pid": "TS0121",
+      "sources": [
+        "t26439#1"
+      ],
+      "texts": [],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TYZB01_cbiezpds",
+      "pid": "TS0101",
+      "sources": [
+        "t26439#1"
+      ],
+      "texts": [],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TYZB01_cbiezpds",
+      "pid": "TS0115",
+      "sources": [
+        "t26439#1"
+      ],
+      "texts": [],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TYZB01_cbiezpds",
+      "pid": "TS0003",
+      "sources": [
+        "t26439#1"
+      ],
+      "texts": [],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TYZB01_cbiezpds",
+      "pid": "TS0011",
+      "sources": [
+        "t26439#1"
+      ],
+      "texts": [],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TYZB01_cbiezpds",
+      "pid": "TS0001",
+      "sources": [
+        "t26439#1"
+      ],
+      "texts": [],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TYZB01_cbiezpds",
+      "pid": "TS0012",
+      "sources": [
+        "t26439#1"
+      ],
+      "texts": [],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TYZB01_cbiezpds",
+      "pid": "TS0002",
+      "sources": [
+        "t26439#1"
+      ],
+      "texts": [],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TYZB01_cbiezpds",
+      "pid": "TS0013",
+      "sources": [
+        "t26439#1"
+      ],
+      "texts": [],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TYZB01_cbiezpds",
+      "pid": "TS0052",
+      "sources": [
+        "t26439#1"
+      ],
+      "texts": [],
+      "reason": "unresolved"
+    }
+  ],
+  "skippedTotal": 334,
+  "needInterview": [
+    {
+      "mfr": "_TZE200_KB5NOETO",
+      "pid": "ZG-204ZS",
+      "sources": [
+        "johan-device:1064",
+        "johan-issue#1064"
+      ],
+      "texts": [
+        "Device Request - [Device name] - [Tuya] / [ZG-204ZS / ZG-204ZM]",
+        "Device Request - [Device name] - [Tuya] / [ZG-204ZS / ZG-204ZM]"
+      ],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TYZB01_0APS0H1R",
+      "pid": "TS0212",
+      "sources": [
+        "johan-device:977",
+        "johan-issue#977"
+      ],
+      "texts": [
+        "Device Request - [Alecto SMARTCOA10] - [_TYZB01_0aps0h1r] / [TS0212]",
+        "Device Request - [Alecto SMARTCOA10] - [_TYZB01_0aps0h1r] / [TS0212]",
+        "Device Request - [Alecto SMARTCOA10] - [_TYZB01_0aps0h1r] / [TS0212]"
+      ],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TYZB01_4LWQWYQN",
+      "pid": "TS0013",
+      "sources": [
+        "johan-device:1330",
+        "johan-issue#1330"
+      ],
+      "texts": [
+        "Device Request - [Device name] - [manufacturerName] / [modelId]",
+        "Device Request - [Device name] - [manufacturerName] / [modelId]"
+      ],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TZE200_NKJINTBL",
+      "pid": "TS0601",
+      "sources": [
+        "johan-device:46",
+        "johan-issue#46"
+      ],
+      "texts": [
+        "2 Way Switch - TS0601 - (Tuya cluster)",
+        "2 Way Switch - TS0601 - (Tuya cluster)"
+      ],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TZE284_RCCXOX8P",
+      "pid": "TS0044",
+      "sources": [
+        "johan-device:1335",
+        "johan-issue#1335"
+      ],
+      "texts": [
+        "📦 dlnraja Fork v5.5.518: Major Improvements Available for Merge",
+        "📦 dlnraja Fork v5.5.518: Major Improvements Available for Merge"
+      ],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TZE200_MYD45WEU",
+      "pid": "TS0044",
+      "sources": [
+        "johan-device:1335",
+        "johan-issue#1335"
+      ],
+      "texts": [
+        "📦 dlnraja Fork v5.5.518: Major Improvements Available for Merge",
+        "📦 dlnraja Fork v5.5.518: Major Improvements Available for Merge"
+      ],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TZE284_AAO3YZHS",
+      "pid": "TS0044",
+      "sources": [
+        "johan-device:1335",
+        "johan-issue#1335"
+      ],
+      "texts": [
+        "📦 dlnraja Fork v5.5.518: Major Improvements Available for Merge",
+        "📦 dlnraja Fork v5.5.518: Major Improvements Available for Merge"
+      ],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TYZB01_DR6SDUKA",
+      "pid": "TS0203",
+      "sources": [
+        "johan-device:887",
+        "johan-issue#887"
+      ],
+      "texts": [
+        "Device Request - Tesla Devices",
+        "Device Request - Tesla Devices"
+      ],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TZE200_pay2byax",
+      "pid": "TS0041",
+      "sources": [
+        "johan-pr#1253"
+      ],
+      "texts": [
+        "Added 3 new devices"
+      ],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TZE200_bjawzodf",
+      "pid": "TS0001",
+      "sources": [
+        "t26439#4646"
+      ],
+      "texts": [],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TZE200_bjawzodf",
+      "pid": "TS0044",
+      "sources": [
+        "t26439#4646"
+      ],
+      "texts": [],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TZE200_bjawzodf",
+      "pid": "TS0505B",
+      "sources": [
+        "t26439#4646"
+      ],
+      "texts": [],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TZE200_qq9mpfhw",
+      "pid": "TS0202",
+      "sources": [
+        "t26439#4117"
+      ],
+      "texts": [],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TZE200_qq9mpfhw",
+      "pid": "TS0203",
+      "sources": [
+        "t26439#4117"
+      ],
+      "texts": [],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TZE200_qq9mpfhw",
+      "pid": "TS0121",
+      "sources": [
+        "t26439#4117"
+      ],
+      "texts": [],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TZE200_qq9mpfhw",
+      "pid": "TS0003",
+      "sources": [
+        "t26439#4117"
+      ],
+      "texts": [],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TZE200_qq9mpfhw",
+      "pid": "TS0012",
+      "sources": [
+        "t26439#4117"
+      ],
+      "texts": [],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TZE200_qq9mpfhw",
+      "pid": "TS0002",
+      "sources": [
+        "t26439#4117"
+      ],
+      "texts": [],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TZE200_myd45weu",
+      "pid": "TS0203",
+      "sources": [
+        "t26439#4117"
+      ],
+      "texts": [],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TZE200_myd45weu",
+      "pid": "TS0121",
+      "sources": [
+        "t26439#4117"
+      ],
+      "texts": [],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TZE200_myd45weu",
+      "pid": "TS0003",
+      "sources": [
+        "t26439#4117"
+      ],
+      "texts": [],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TZE200_myd45weu",
+      "pid": "TS0012",
+      "sources": [
+        "t26439#4117"
+      ],
+      "texts": [],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TZE200_myd45weu",
+      "pid": "TS0002",
+      "sources": [
+        "t26439#4117"
+      ],
+      "texts": [],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TZE200_ga1maeof",
+      "pid": "TS0202",
+      "sources": [
+        "t26439#4117"
+      ],
+      "texts": [],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TZE200_ga1maeof",
+      "pid": "TS0203",
+      "sources": [
+        "t26439#4117"
+      ],
+      "texts": [],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TZE200_ga1maeof",
+      "pid": "TS0121",
+      "sources": [
+        "t26439#4117"
+      ],
+      "texts": [],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TZE200_ga1maeof",
+      "pid": "TS0003",
+      "sources": [
+        "t26439#4117"
+      ],
+      "texts": [],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TZE200_ga1maeof",
+      "pid": "TS0012",
+      "sources": [
+        "t26439#4117"
+      ],
+      "texts": [],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TZE200_ga1maeof",
+      "pid": "TS0002",
+      "sources": [
+        "t26439#4117"
+      ],
+      "texts": [],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TZE200_ztc6ggyl",
+      "pid": "TS0121",
+      "sources": [
+        "t26439#4117"
+      ],
+      "texts": [],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TZE200_ztc6ggyl",
+      "pid": "TS0003",
+      "sources": [
+        "t26439#4117"
+      ],
+      "texts": [],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TZE200_ztc6ggyl",
+      "pid": "TS0012",
+      "sources": [
+        "t26439#4117"
+      ],
+      "texts": [],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TZE200_ztc6ggyl",
+      "pid": "TS0002",
+      "sources": [
+        "t26439#4117"
+      ],
+      "texts": [],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TZE204_ztc6ggyl",
+      "pid": "TS0121",
+      "sources": [
+        "t26439#4117"
+      ],
+      "texts": [],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TZE204_ztc6ggyl",
+      "pid": "TS0003",
+      "sources": [
+        "t26439#4117"
+      ],
+      "texts": [],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TZE204_ztc6ggyl",
+      "pid": "TS0012",
+      "sources": [
+        "t26439#4117"
+      ],
+      "texts": [],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TZE204_ztc6ggyl",
+      "pid": "TS0002",
+      "sources": [
+        "t26439#4117"
+      ],
+      "texts": [],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TZE200_la2c2uo9",
+      "pid": "TS0202",
+      "sources": [
+        "t26439#4646"
+      ],
+      "texts": [],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TZE200_la2c2uo9",
+      "pid": "TS0044",
+      "sources": [
+        "t26439#4646"
+      ],
+      "texts": [],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TZE200_3p5ydos3",
+      "pid": "TS0202",
+      "sources": [
+        "t26439#4117"
+      ],
+      "texts": [],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TZE200_3p5ydos3",
+      "pid": "TS0203",
+      "sources": [
+        "t26439#4117"
+      ],
+      "texts": [],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TZE200_3p5ydos3",
+      "pid": "TS0121",
+      "sources": [
+        "t26439#4117"
+      ],
+      "texts": [],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TZE200_3p5ydos3",
+      "pid": "TS0003",
+      "sources": [
+        "t26439#4117"
+      ],
+      "texts": [],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TZE200_3p5ydos3",
+      "pid": "TS0012",
+      "sources": [
+        "t26439#4117"
+      ],
+      "texts": [],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TZE200_3p5ydos3",
+      "pid": "TS0002",
+      "sources": [
+        "t26439#4117"
+      ],
+      "texts": [],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TZE200_aoclfnxz",
+      "pid": "TS0202",
+      "sources": [
+        "t26439#4117"
+      ],
+      "texts": [],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TZE200_aoclfnxz",
+      "pid": "TS0203",
+      "sources": [
+        "t26439#4117"
+      ],
+      "texts": [],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TZE200_aoclfnxz",
+      "pid": "TS0121",
+      "sources": [
+        "t26439#4117"
+      ],
+      "texts": [],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TZE200_aoclfnxz",
+      "pid": "TS0012",
+      "sources": [
+        "t26439#4117"
+      ],
+      "texts": [],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TZE200_aoclfnxz",
+      "pid": "TS0002",
+      "sources": [
+        "t26439#4117"
+      ],
+      "texts": [],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TZE200_d0yu2xgi",
+      "pid": "TS0202",
+      "sources": [
+        "t26439#4117"
+      ],
+      "texts": [],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TZE200_d0yu2xgi",
+      "pid": "TS0203",
+      "sources": [
+        "t26439#4117"
+      ],
+      "texts": [],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TZE200_d0yu2xgi",
+      "pid": "TS0121",
+      "sources": [
+        "t26439#4117"
+      ],
+      "texts": [],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TZE200_d0yu2xgi",
+      "pid": "TS0003",
+      "sources": [
+        "t26439#4117"
+      ],
+      "texts": [],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TZE200_d0yu2xgi",
+      "pid": "TS0012",
+      "sources": [
+        "t26439#4117"
+      ],
+      "texts": [],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TZE200_d0yu2xgi",
+      "pid": "TS0002",
+      "sources": [
+        "t26439#4117"
+      ],
+      "texts": [],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TZE200_a8sdabtg",
+      "pid": "TS0222",
+      "sources": [
+        "t26439#1"
+      ],
+      "texts": [],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TZE200_a8sdabtg",
+      "pid": "TS0202",
+      "sources": [
+        "t26439#1"
+      ],
+      "texts": [],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TZE200_a8sdabtg",
+      "pid": "TS0203",
+      "sources": [
+        "t26439#1"
+      ],
+      "texts": [],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TZE200_a8sdabtg",
+      "pid": "TS0207",
+      "sources": [
+        "t26439#1"
+      ],
+      "texts": [],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TZE200_a8sdabtg",
+      "pid": "TS0205",
+      "sources": [
+        "t26439#1"
+      ],
+      "texts": [],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TZE200_a8sdabtg",
+      "pid": "TS0225",
+      "sources": [
+        "t26439#1"
+      ],
+      "texts": [],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TZE200_a8sdabtg",
+      "pid": "TS0121",
+      "sources": [
+        "t26439#1"
+      ],
+      "texts": [],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TZE200_a8sdabtg",
+      "pid": "TS0101",
+      "sources": [
+        "t26439#1"
+      ],
+      "texts": [],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TZE200_a8sdabtg",
+      "pid": "TS0115",
+      "sources": [
+        "t26439#1"
+      ],
+      "texts": [],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TZE200_a8sdabtg",
+      "pid": "TS0003",
+      "sources": [
+        "t26439#1"
+      ],
+      "texts": [],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TZE200_a8sdabtg",
+      "pid": "TS0011",
+      "sources": [
+        "t26439#1"
+      ],
+      "texts": [],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TZE200_a8sdabtg",
+      "pid": "TS0001",
+      "sources": [
+        "t26439#1"
+      ],
+      "texts": [],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TZE200_a8sdabtg",
+      "pid": "TS0012",
+      "sources": [
+        "t26439#1"
+      ],
+      "texts": [],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TZE200_a8sdabtg",
+      "pid": "TS0002",
+      "sources": [
+        "t26439#1"
+      ],
+      "texts": [],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TZE200_a8sdabtg",
+      "pid": "TS0013",
+      "sources": [
+        "t26439#1"
+      ],
+      "texts": [],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TZE200_a8sdabtg",
+      "pid": "TS0052",
+      "sources": [
+        "t26439#1"
+      ],
+      "texts": [],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TZE200_a8sdabtg",
+      "pid": "TS1101",
+      "sources": [
+        "t26439#1"
+      ],
+      "texts": [],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TZE200_a8sdabtg",
+      "pid": "TS0042",
+      "sources": [
+        "t26439#1"
+      ],
+      "texts": [],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TZE200_a8sdabtg",
+      "pid": "TS0043",
+      "sources": [
+        "t26439#1"
+      ],
+      "texts": [],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TZE200_a8sdabtg",
+      "pid": "TS0014",
+      "sources": [
+        "t26439#1"
+      ],
+      "texts": [],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TZE200_a8sdabtg",
+      "pid": "TS0044",
+      "sources": [
+        "t26439#1"
+      ],
+      "texts": [],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TZE200_a8sdabtg",
+      "pid": "TS0502B",
+      "sources": [
+        "t26439#1"
+      ],
+      "texts": [],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TZE200_a8sdabtg",
+      "pid": "TS0505A",
+      "sources": [
+        "t26439#1"
+      ],
+      "texts": [],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TZE200_a8sdabtg",
+      "pid": "TS0505B",
+      "sources": [
+        "t26439#1"
+      ],
+      "texts": [],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TZE200_a8sdabtg",
+      "pid": "TS0505",
+      "sources": [
+        "t26439#1"
+      ],
+      "texts": [],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TZE200_a8sdabtg",
+      "pid": "TS0503A",
+      "sources": [
+        "t26439#1"
+      ],
+      "texts": [],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TZE200_a8sdabtg",
+      "pid": "TS0503B",
+      "sources": [
+        "t26439#1"
+      ],
+      "texts": [],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TZE200_a8sdabtg",
+      "pid": "TS0504B",
+      "sources": [
+        "t26439#1"
+      ],
+      "texts": [],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TZE200_a8sdabtg",
+      "pid": "TS0502A",
+      "sources": [
+        "t26439#1"
+      ],
+      "texts": [],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TZE200_a8sdabtg",
+      "pid": "TS0041",
+      "sources": [
+        "t26439#1"
+      ],
+      "texts": [],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TZE200_a8sdabtg",
+      "pid": "TS0046",
+      "sources": [
+        "t26439#1"
+      ],
+      "texts": [],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TZE200_a8sdabtg",
+      "pid": "TS0215A",
+      "sources": [
+        "t26439#1"
+      ],
+      "texts": [],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TZE200_a8sdabtg",
+      "pid": "TS0111",
+      "sources": [
+        "t26439#1"
+      ],
+      "texts": [],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TZE200_a8sdabtg",
+      "pid": "TS0049",
+      "sources": [
+        "t26439#1"
+      ],
+      "texts": [],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TZE200_a8sdabtg",
+      "pid": "TS0004",
+      "sources": [
+        "t26439#1"
+      ],
+      "texts": [],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TZE200_9yapgbuv",
+      "pid": "TS0203",
+      "sources": [
+        "t26439#1"
+      ],
+      "texts": [],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TZE200_9yapgbuv",
+      "pid": "TS0207",
+      "sources": [
+        "t26439#1"
+      ],
+      "texts": [],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TZE200_9yapgbuv",
+      "pid": "TS0205",
+      "sources": [
+        "t26439#1"
+      ],
+      "texts": [],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TZE200_9yapgbuv",
+      "pid": "TS0225",
+      "sources": [
+        "t26439#1"
+      ],
+      "texts": [],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TZE200_9yapgbuv",
+      "pid": "TS0121",
+      "sources": [
+        "t26439#1"
+      ],
+      "texts": [],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TZE200_9yapgbuv",
+      "pid": "TS0115",
+      "sources": [
+        "t26439#1"
+      ],
+      "texts": [],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TZE200_9yapgbuv",
+      "pid": "TS0003",
+      "sources": [
+        "t26439#1"
+      ],
+      "texts": [],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TZE200_9yapgbuv",
+      "pid": "TS0001",
+      "sources": [
+        "t26439#1"
+      ],
+      "texts": [],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TZE200_9yapgbuv",
+      "pid": "TS0012",
+      "sources": [
+        "t26439#1"
+      ],
+      "texts": [],
+      "reason": "unresolved"
+    }
+  ],
+  "needInterviewTotal": 334,
+  "policy": {
+    "targetApp": "com.dlnraja.tuya.zigbee",
+    "notJohanRepo": true,
+    "forumPost": false,
+    "complementaryOnly": true,
+    "neverInventPid": true,
+    "refuseTs0601Generic": true,
+    "dualApp": "BOTH"
+  }
+}
