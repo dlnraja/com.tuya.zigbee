@@ -1,12 +1,14 @@
 {
   "_meta": {
     "id": "homey-device-updates",
-    "version": "1.1.0",
-    "patch": "P2508",
+    "version": "1.2.0",
+    "patch": "P2544",
     "track": "BOTH",
     "news": "https://homey.app/en-fr/news/introducing-device-updates/",
     "sdkDocs": "https://apps.developer.homey.app/wireless/zigbee/zigbee-firmware-updates",
-    "policy": "Native Homey Zigbee OTA only — OEM images, SHA-verified, class-tight sacred couples. Never invent pid. Never brick via wide drivers. Never ship Koenkk pvvx community replacements."
+    "z2mOta": "https://www.zigbee2mqtt.io/guide/usage/ota_updates.html",
+    "tuyaXiaomiOta": "https://www.zigbee2mqtt.io/advanced/more/tuya_xiaomi_ota_url.html",
+    "policy": "Native Homey Zigbee OTA only — OEM images, SHA-verified, class-tight sacred couples. Never invent pid. Never brick via wide drivers. Never ship community replacement FW (pvvx/doctor64/rococo)."
   },
   "requirements": {
     "homeyFirmwareMin": "13.2.0",
@@ -24,6 +26,23 @@
       "verify": "sha512",
       "oemOnly": true
     },
+    "complementaryIndexes": [
+      {
+        "id": "koenkk-downgrade",
+        "url": "https://raw.githubusercontent.com/Koenkk/zigbee-OTA/master/index1.json",
+        "role": "downgrade archive (runtime OTARepository)"
+      },
+      {
+        "id": "fairecasoimeme-zigbee-ota",
+        "url": "https://raw.githubusercontent.com/fairecasoimeme/zigbee-OTA/master/index.json",
+        "role": "OEM mirror complementary"
+      },
+      {
+        "id": "zigpy-ota-z2m-stable",
+        "url": "https://raw.githubusercontent.com/zigpy/zigpy-ota/release/files/stable/z2m_v1_ota.json",
+        "role": "ZHA/Z2M-aligned OEM index (Koenkk-format) — L99 P2544"
+      }
+    ],
     "secondary": [
       {
         "id": "mfs_db",
@@ -41,6 +60,23 @@
         "role": "sacred couple subset check (mfr+pid ⊆ zigbee lists)"
       }
     ],
+    "researchOnlyNeverShip": [
+      {
+        "id": "doctor64-tuyaZigbee",
+        "url": "https://github.com/doctor64/tuyaZigbee",
+        "why": "community replacement FW — brick/OTA-lock risk"
+      },
+      {
+        "id": "rococo88-tuya-zigbee-switch",
+        "url": "https://github.com/Rococo88/tuya-zigbee-switch",
+        "why": "custom Telink switch FW"
+      },
+      {
+        "id": "pvvx-ZigbeeTLc",
+        "url": "https://github.com/pvvx/ZigbeeTLc",
+        "why": "community TH sensor replacement"
+      }
+    ],
     "excluded": [
       "pvvx",
       "images/pvvx/",
@@ -50,7 +86,10 @@
       "device_generic_tuya_universal",
       "bulb_rgbw without registry lock",
       "contact_sensor_wing_pvvx",
-      "soil_sensor_hobeian_pvvx"
+      "soil_sensor_hobeian_pvvx",
+      "doctor64",
+      "rococo88",
+      "tuyaZigbee custom"
     ]
   },
   "tuyaManufacturerCodes": [4417, 4098],
@@ -60,6 +99,7 @@
     "classTightProductIds": true,
     "refuseProductIdDefaultInvent": true,
     "refusePvvxCommunity": true,
+    "refuseCommunityReplacementFw": true,
     "assetsDir": "assets/firmware",
     "wakeInstructionRequiredFor": [
       "radiator_valve",
@@ -86,10 +126,17 @@
       "fr": "Réveillez le thermostat en appuyant sur le bouton menu, puis lancez Device Updates."
     }
   },
+  "l99Docs": [
+    "https://github.com/Koenkk/zigbee-OTA",
+    "https://github.com/zigpy/zigpy-ota",
+    "https://github.com/foXaCe/zha-firmware",
+    "https://www.zigbee2mqtt.io/guide/usage/ota_updates.html",
+    "https://apps.developer.homey.app/wireless/zigbee/zigbee-firmware-updates"
+  ],
   "ci": {
     "gate": "tools/ci/firmware-updates-gate.js",
     "build": "tools/ci/build-firmware-updates.js",
     "verify": "tools/ci/verify-homey-device-updates.js",
-    "npm": ["check:firmware", "firmware:verify", "firmware:build"]
+    "npm": ["check:firmware", "firmware:verify", "firmware:build", "check:p2544"]
   }
 }

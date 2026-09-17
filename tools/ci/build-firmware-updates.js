@@ -236,7 +236,37 @@ function tightProductIds(entry, driverPids, fileName, img) {
 async function main() {
   const ssot = loadSsot();
   const indexUrl = ssot.sources?.primary?.url || INDEX_URL;
-  const index = JSON.parse(await get(indexUrl));
+  let index = JSON.parse(await get(indexUrl));
+  // P2544: merge complementary OEM-safe indexes (union by mfrCode+imageType+fileVersion+url)
+  const complementary = Array.isArray(ssot.sources?.complementaryIndexes)
+    ? ssot.sources.complementaryIndexes
+    : [];
+  const seen = new Set(
+    (Array.isArray(index) ? index : []).map(
+      (img) => `${img.manufacturerCode}|${img.imageType}|${img.fileVersion}|${img.url}`
+    )
+  );
+  for (const src of complementary) {
+    if (!src?.url || /downgrade|index1/i.test(src.id || '') || /index1\.json/.test(src.url)) {
+      // Downgrade archive is runtime-only; do not merge into Homey native upgrade assets
+      continue;
+    }
+    try {
+      const extra = JSON.parse(await get(src.url));
+      if (!Array.isArray(extra)) continue;
+      let added = 0;
+      for (const img of extra) {
+        const key = `${img.manufacturerCode}|${img.imageType}|${img.fileVersion}|${img.url}`;
+        if (seen.has(key)) continue;
+        seen.add(key);
+        index.push(img);
+        added += 1;
+      }
+      console.log(`[firmware-updates] complementary ${src.id}: +${added} unique image(s)`);
+    } catch (err) {
+      console.warn(`[firmware-updates] complementary skip ${src.id}: ${err.message}`);
+    }
+  }
   const db = JSON.parse(fs.readFileSync(path.join(ROOT, 'data', 'mfs_db.json'), 'utf8'));
   const dbLower = new Map(Object.keys(db).map((k) => [k.toLowerCase(), k]));
   const drivers = loadDriverIndex();
@@ -258,8 +288,9 @@ async function main() {
   const report = {
     generated: new Date().toISOString(),
     apply: APPLY,
-    patch: 'P2508',
+    patch: 'P2544',
     source: indexUrl,
+    complementary: complementary.map((s) => s.id),
     drivers: [],
     skipped: [],
   };

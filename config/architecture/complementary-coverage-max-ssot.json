@@ -1,0 +1,131 @@
+{
+  "_meta": {
+    "id": "complementary-coverage-max-ssot",
+    "patch": "P2544",
+    "dualApp": "BOTH",
+    "updated": "2026-09-17",
+    "why": "Max complementary coverage of I/O wrappers beyond Homey native Zigbee/Tuya libs — RX/TX/raw/flow/DP/cluster/energy/OTA/antispam — polymorphic + heuristic + auto-adaptable"
+  },
+  "doctrine": {
+    "complementaryOnly": true,
+    "noInventPid": true,
+    "unionNotReplace": true,
+    "parallelAlternatesOk": true,
+    "homeyNativeFirstThenCascade": true,
+    "neverShipCommunityReplacementFw": true
+  },
+  "ioDomains": {
+    "rx": ["capability_listener", "zcl_attr_report", "tuya_dp_report", "tuya_bound_report", "ias_zone", "raw_frame_parse", "raw_cluster_fallback", "cluster_data_query", "mcu_report", "flow_trigger", "poll_heuristic"],
+    "tx": ["wrapper_manager", "sdk3_direct", "cluster_command", "tuya_bound_cluster", "cluster_bind", "quirk_guided", "raw_zcl_frame", "mcu_version_helper", "magic_handshake_retry", "capability_command_router", "flow_action", "poll_heuristic"],
+    "wrappersBeyondHomeyLibs": [
+      "DeviceIOFacade",
+      "HomeyCompensationLayer",
+      "ProtocolFallbackChain",
+      "ProtocolRxTxChain",
+      "CapabilityCommandRouter",
+      "RawClusterFallback",
+      "IntelligentProtocolDetect",
+      "CommunicationPathFinder",
+      "UniversalClusterBinder",
+      "ActuatorFlowHelper",
+      "DeclaredFlowCardAutoWire",
+      "UniversalEnergyHandler",
+      "VirtualTelemetryCompensationEngine",
+      "FirmwareQuirkCompensator",
+      "OTAUpdateManager"
+    ]
+  },
+  "antispamAntiflood": {
+    "primaryWritePath": "safeSetCapabilityValue (L14 SanityFilter + throttle)",
+    "modules": [
+      "lib/TuyaZigbeeDevice.js",
+      "lib/battery/BatteryCore.js#antiFloodCheck",
+      "lib/dynamic/VirtualTelemetryCompensationEngine.js",
+      "lib/groups/DeviceGroupManager.js#_commandThrottle",
+      "lib/managers/IntelligentDataManager.js"
+    ],
+    "rules": [
+      "Never bypass safeSetCapabilityValue for normal telemetry",
+      "EMA/ROC filter spikes",
+      "Capability cooldowns for UI adaptation",
+      "Group command throttle"
+    ]
+  },
+  "polymorphicCapabilities": {
+    "controlCascade": ["zcl_named", "zcl_raw_id", "tuya_dp", "custom_runner"],
+    "router": "lib/zigbee/CapabilityCommandRouter.js",
+    "energy": "lib/energy/UniversalEnergyHandler.js",
+    "note": "One capability → many protocol methods; first success remembered"
+  },
+  "otaFirmware": {
+    "ssot": "config/architecture/homey-device-updates.json",
+    "runtime": ["lib/ota/OTARepository.js", "lib/ota/OTAUpdateManager.js", "lib/ota/TuyaXiaomiOTAProvider.js"],
+    "build": "tools/ci/build-firmware-updates.js",
+    "indexesOemSafe": [
+      {
+        "id": "koenkk-zigbee-ota",
+        "url": "https://raw.githubusercontent.com/Koenkk/zigbee-OTA/master/index.json",
+        "role": "primary OEM mirror"
+      },
+      {
+        "id": "koenkk-downgrade",
+        "url": "https://raw.githubusercontent.com/Koenkk/zigbee-OTA/master/index1.json",
+        "role": "downgrade archive"
+      },
+      {
+        "id": "fairecasoimeme-zigbee-ota",
+        "url": "https://raw.githubusercontent.com/fairecasoimeme/zigbee-OTA/master/index.json",
+        "role": "complementary OEM mirror"
+      },
+      {
+        "id": "zigpy-ota-z2m-stable",
+        "url": "https://raw.githubusercontent.com/zigpy/zigpy-ota/release/files/stable/z2m_v1_ota.json",
+        "role": "complementary ZHA/Z2M-aligned index (Koenkk-format)"
+      }
+    ],
+    "researchOnlyNeverShip": [
+      {
+        "id": "doctor64-tuyaZigbee",
+        "url": "https://github.com/doctor64/tuyaZigbee",
+        "why": "community replacement FW — brick/OTA-lock risk"
+      },
+      {
+        "id": "rococo88-tuya-zigbee-switch",
+        "url": "https://github.com/Rococo88/tuya-zigbee-switch",
+        "why": "custom Telink switch FW — not OEM Homey Device Updates"
+      },
+      {
+        "id": "pvvx-ZigbeeTLc",
+        "url": "https://github.com/pvvx/ZigbeeTLc",
+        "why": "community TH sensor replacement — excluded from native firmwareUpdates"
+      }
+    ],
+    "docs": [
+      "https://www.zigbee2mqtt.io/guide/usage/ota_updates.html",
+      "https://www.zigbee2mqtt.io/advanced/more/tuya_xiaomi_ota_url.html",
+      "https://apps.developer.homey.app/wireless/zigbee/zigbee-firmware-updates",
+      "https://homey.app/en-fr/news/introducing-device-updates/",
+      "https://github.com/Koenkk/zigbee-OTA",
+      "https://github.com/zigpy/zigpy-ota",
+      "https://github.com/foXaCe/zha-firmware"
+    ],
+    "safety": {
+      "oemOnlyForHomeyNative": true,
+      "requireSha512": true,
+      "requireMagic": "0x0BEEF11E",
+      "refusePvvx": true,
+      "classTightCouples": true
+    }
+  },
+  "runtimeCatalog": "lib/catalog/ComplementaryCoverageCatalog.js",
+  "relatedSsot": [
+    "config/architecture/complementary-rx-tx-dp-cluster-ssot.json",
+    "config/architecture/homey-device-updates.json",
+    "config/architecture/local-auto-improve-ssot.json"
+  ],
+  "gates": {
+    "npm": "check:p2544",
+    "family": "check:p254x",
+    "firmware": "check:p2508"
+  }
+}
