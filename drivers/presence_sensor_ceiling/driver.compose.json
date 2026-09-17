@@ -37,17 +37,23 @@
     "alarm_motion.zone1": {
       "title": {
         "en": "Zone 1 Presence"
-      }
+      },
+      "getable": true,
+      "preventInsights": false
     },
     "alarm_motion.zone2": {
       "title": {
         "en": "Zone 2 Presence"
-      }
+      },
+      "getable": true,
+      "preventInsights": false
     },
     "alarm_motion.zone3": {
       "title": {
         "en": "Zone 3 Presence"
-      }
+      },
+      "getable": true,
+      "preventInsights": false
     },
     "measure_luminance.distance.zone1": {
       "title": {
@@ -55,7 +61,9 @@
       },
       "units": {
         "en": "m"
-      }
+      },
+      "getable": true,
+      "preventInsights": true
     },
     "measure_luminance.distance.zone2": {
       "title": {
@@ -63,7 +71,9 @@
       },
       "units": {
         "en": "m"
-      }
+      },
+      "getable": true,
+      "preventInsights": true
     },
     "measure_luminance.distance.zone3": {
       "title": {
@@ -71,7 +81,9 @@
       },
       "units": {
         "en": "m"
-      }
+      },
+      "getable": true,
+      "preventInsights": true
     },
     "measure_motion.classification": {
       "title": {
@@ -86,6 +98,18 @@
       "maintenanceAction": true,
       "getable": false,
       "setable": false
+    },
+    "alarm_motion": {
+      "getable": true,
+      "preventInsights": false
+    },
+    "measure_luminance": {
+      "getable": true,
+      "preventInsights": false
+    },
+    "measure_luminance.distance": {
+      "getable": true,
+      "preventInsights": true
     }
   },
   "subDevices": [],

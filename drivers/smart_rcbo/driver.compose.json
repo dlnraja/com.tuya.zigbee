@@ -91,6 +91,30 @@
       "maintenanceAction": true,
       "getable": false,
       "setable": false
+    },
+    "alarm_generic": {
+      "getable": true,
+      "preventInsights": false
+    },
+    "measure_power": {
+      "getable": true,
+      "preventInsights": false
+    },
+    "meter_power": {
+      "getable": true,
+      "preventInsights": false
+    },
+    "measure_current": {
+      "getable": true,
+      "preventInsights": false
+    },
+    "measure_voltage": {
+      "getable": true,
+      "preventInsights": false
+    },
+    "measure_battery": {
+      "getable": true,
+      "preventInsights": false
     }
   },
   "ui": {

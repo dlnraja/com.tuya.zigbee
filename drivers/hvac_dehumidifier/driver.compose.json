@@ -55,7 +55,21 @@
       "setable": false
     },
     "measure_power": {
-      "approximated": true
+      "approximated": true,
+      "getable": true,
+      "preventInsights": false
+    },
+    "measure_humidity": {
+      "getable": true,
+      "preventInsights": false
+    },
+    "measure_temperature": {
+      "getable": true,
+      "preventInsights": false
+    },
+    "alarm_water": {
+      "getable": true,
+      "preventInsights": false
     }
   },
   "energy": {},

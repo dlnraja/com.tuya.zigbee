@@ -27,19 +27,25 @@
         "en": "PM2.5",
         "fr": "PM2.5"
       },
-      "units": "ug/m3"
+      "units": "ug/m3",
+      "getable": true,
+      "preventInsights": false
     },
     "measure_temperature": {
       "title": {
         "en": "Temperature",
         "fr": "Température"
-      }
+      },
+      "getable": true,
+      "preventInsights": false
     },
     "measure_humidity": {
       "title": {
         "en": "Humidity",
         "fr": "Humidité"
-      }
+      },
+      "getable": true,
+      "preventInsights": false
     },
     "button.1": {
       "title": {
@@ -49,6 +55,10 @@
       "maintenanceAction": true,
       "getable": false,
       "setable": false
+    },
+    "measure_battery": {
+      "getable": true,
+      "preventInsights": false
     }
   },
   "energy": {

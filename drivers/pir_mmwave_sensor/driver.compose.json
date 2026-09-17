@@ -74,6 +74,18 @@
       "maintenanceAction": true,
       "getable": false,
       "setable": false
+    },
+    "alarm_motion": {
+      "getable": true,
+      "preventInsights": false
+    },
+    "measure_battery": {
+      "getable": true,
+      "preventInsights": false
+    },
+    "measure_luminance": {
+      "getable": true,
+      "preventInsights": false
     }
   },
   "_pidConflictNotes": [

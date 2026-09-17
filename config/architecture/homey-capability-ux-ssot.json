@@ -1,0 +1,119 @@
+{
+  "_meta": {
+    "id": "P2500-homey-capability-ux-ssot",
+    "updated": "2026-09-14",
+    "classify": "BOTH",
+    "why": "Lock Athom capabilityOptions + Device Capabilities (T43287) UX lessons so Homey UI/Insights/Flows stay coherent — Contre quoi Peter getable:false battery hide"
+  },
+  "sources": {
+    "athom": [
+      "https://apps.developer.homey.app/the-basics/devices/capabilities",
+      "https://apps.developer.homey.app/the-basics/devices"
+    ],
+    "forumSilentReadOnly": [
+      {
+        "id": 43287,
+        "title": "Device Capabilities — Enhance the capabilities of devices",
+        "replyAllowed": false,
+        "takeaways": [
+          "Listen to any capability change → generic Flow trigger",
+          "Insights / N-minutes-ago history for sensors",
+          "Do not invent phantom caps (AVD crash under parallel field spam)",
+          "Energy/meter subtypes (e.g. meter_power.charged) only when class supports"
+        ]
+      },
+      {
+        "id": 140352,
+        "title": "Universal Tuya Zigbee Test",
+        "replyAllowed": false,
+        "takeaways": [
+          "Peter Smartbutton: measure_battery must stay getable + present",
+          "Button tiles ≠ sensor tiles — charter P2492"
+        ]
+      },
+      {
+        "id": 146735,
+        "title": "Johan Bendz Tuya Zigbee",
+        "replyAllowed": false,
+        "takeaways": ["Cross-ref FP/capabilities; silent enrich only"]
+      },
+      {
+        "id": 157859,
+        "title": "RF coexistence education",
+        "replyAllowed": false,
+        "takeaways": ["Channel numbering ≠ Wi-Fi — not capability UX but pairing reliability"]
+      }
+    ],
+    "relatedInternal": [
+      "P2492 HomeyButtonUiCharter",
+      "P2499 Peter battery getable",
+      "P2488/P2490 battery keep+rehydrate",
+      "FeatureFlowCards capability_value_changed_generic + historical value"
+    ]
+  },
+  "athomRules": {
+    "getableFalseAllowedFor": ["onoff_stateless_mute_pattern", "button_maintenance_tiles"],
+    "getableFalseForbiddenPrefixes": ["measure_", "meter_", "alarm_"],
+    "getableFalseForbiddenExact": ["measure_battery", "measure_temperature", "measure_humidity", "meter_power"],
+    "preventInsights": {
+      "forbiddenOn": ["measure_battery", "measure_temperature", "measure_humidity", "meter_power", "measure_power"],
+      "note": "preventInsights hides History; only use for high-churn debug caps",
+      "intelligentSilence": {
+        "patch": "P2553",
+        "when": [
+          "alarm_motion if alarm_human also present (VicHY dual History)",
+          "measure_luminance.distance* (mmWave flood)"
+        ]
+      },
+      "fleetEnable": {
+        "patch": "P2553",
+        "tool": "tools/ci/p2553-history-fleet-enable.js",
+        "runtime": "healSensorCapabilityGetable"
+      }
+    },
+    "docsNote": "getable:false is for making onoff/volume_mute stateless — it changes UI + Flow cards. Never apply to sensor readables."
+  },
+  "deviceCapabilitiesLessons": {
+    "genericCapabilityChanged": {
+      "ourCard": "capability_value_changed_generic",
+      "deviceFilter": "none — all app devices (not capabilities=onoff)",
+      "runtime": "lib/flow/FeatureFlowCards.js → triggerCapabilityChanged"
+    },
+    "historicalValue": {
+      "ourCard": "capability_historical_value",
+      "note": "DC-style N minutes ago via Insights + in-memory ring"
+    },
+    "antiPhantom": {
+      "note": "Never DynCap-add climate/curtain phantoms; VicHY staleCaps strip",
+      "classify": "BOTH for strip/heal; MASTER_ONLY for mega AVD-like managers"
+    },
+    "updateCadence": {
+      "note": "Serial/soft BootBudget — DC crash reports from parallel AVD field spam",
+      "runtime": "BootBudget / L14 anti-flood / safeSetCapabilityValue"
+    }
+  },
+  "buttonVsSensor": {
+    "buttonDotN": {
+      "getable": false,
+      "setable": false,
+      "maintenanceAction": "role-dependent (P2492)",
+      "ok": true
+    },
+    "measure_battery": {
+      "getable": true,
+      "setable": false,
+      "preventInsights": false,
+      "ok": true
+    }
+  },
+  "runtime": {
+    "helper": "lib/utils/HomeyCapabilityUx.js",
+    "healOnBoot": "healSensorCapabilityGetable(device) after P2492 charter",
+    "wire": "lib/tuya/TuyaZigbeeDevice.js _registerButtonCapabilityListeners"
+  },
+  "gates": {
+    "check": "npm run check:p2500",
+    "family": "check:p249x",
+    "related": ["check:p2492", "check:p2499"]
+  }
+}

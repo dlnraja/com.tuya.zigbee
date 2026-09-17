@@ -17,13 +17,17 @@
       "title": {
         "en": "Luminance",
         "fr": "Luminosité"
-      }
+      },
+      "getable": true,
+      "preventInsights": false
     },
     "alarm_motion": {
       "title": {
         "en": "Motion Detected",
         "fr": "Mouvement Détecté"
-      }
+      },
+      "getable": true,
+      "preventInsights": false
     },
     "button.1": {
       "title": {
@@ -33,6 +37,10 @@
       "maintenanceAction": true,
       "getable": false,
       "setable": false
+    },
+    "measure_temperature": {
+      "getable": true,
+      "preventInsights": false
     }
   },
   "energy": {

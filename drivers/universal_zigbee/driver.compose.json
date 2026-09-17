@@ -64,6 +64,50 @@
       "maintenanceAction": true,
       "getable": false,
       "setable": false
+    },
+    "measure_temperature": {
+      "getable": true,
+      "preventInsights": false
+    },
+    "measure_humidity": {
+      "getable": true,
+      "preventInsights": false
+    },
+    "measure_luminance": {
+      "getable": true,
+      "preventInsights": false
+    },
+    "alarm_motion": {
+      "getable": true,
+      "preventInsights": false
+    },
+    "alarm_contact": {
+      "getable": true,
+      "preventInsights": false
+    },
+    "alarm_water": {
+      "getable": true,
+      "preventInsights": false
+    },
+    "measure_battery": {
+      "getable": true,
+      "preventInsights": false
+    },
+    "measure_power": {
+      "getable": true,
+      "preventInsights": false
+    },
+    "measure_voltage": {
+      "getable": true,
+      "preventInsights": false
+    },
+    "measure_current": {
+      "getable": true,
+      "preventInsights": false
+    },
+    "meter_power": {
+      "getable": true,
+      "preventInsights": false
     }
   },
   "platforms": [

@@ -18,14 +18,18 @@
       "title": {
         "en": "Raining",
         "fr": "Pluie"
-      }
+      },
+      "getable": true,
+      "preventInsights": false
     },
     "measure_humidity": {
       "title": {
         "en": "Rain Level",
         "fr": "Niveau pluie"
       },
-      "units": "%"
+      "units": "%",
+      "getable": true,
+      "preventInsights": false
     },
     "button.1": {
       "title": {
@@ -35,6 +39,14 @@
       "maintenanceAction": true,
       "getable": false,
       "setable": false
+    },
+    "measure_luminance": {
+      "getable": true,
+      "preventInsights": false
+    },
+    "measure_battery": {
+      "getable": true,
+      "preventInsights": false
     }
   },
   "energy": {

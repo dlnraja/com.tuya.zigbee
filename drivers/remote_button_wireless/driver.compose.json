@@ -52,7 +52,9 @@
         "no": "Batteri",
         "es": "Batería",
         "da": "Batteri"
-      }
+      },
+      "getable": true,
+      "preventInsights": false
     }
   },
   "energy": {

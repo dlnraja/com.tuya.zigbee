@@ -72,7 +72,9 @@
       "title": {
         "en": "Battery",
         "fr": "Batterie"
-      }
+      },
+      "getable": true,
+      "preventInsights": false
     }
   },
   "energy": {

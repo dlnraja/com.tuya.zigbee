@@ -157,6 +157,18 @@
       "maintenanceAction": true,
       "getable": false,
       "setable": false
+    },
+    "measure_battery": {
+      "getable": true,
+      "preventInsights": false
+    },
+    "alarm_generic": {
+      "getable": true,
+      "preventInsights": false
+    },
+    "alarm_contact": {
+      "getable": true,
+      "preventInsights": false
     }
   },
   "discovery": "tuya_wifi"

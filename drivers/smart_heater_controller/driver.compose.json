@@ -28,7 +28,9 @@
         "fr": "Protection Surchauffe",
         "nl": "Oververhitting Bescherming",
         "de": "Überhitzungsschutz"
-      }
+      },
+      "getable": true,
+      "preventInsights": false
     },
     "button.1": {
       "title": {
@@ -38,6 +40,18 @@
       "maintenanceAction": true,
       "getable": false,
       "setable": false
+    },
+    "measure_temperature": {
+      "getable": true,
+      "preventInsights": false
+    },
+    "measure_power": {
+      "getable": true,
+      "preventInsights": false
+    },
+    "meter_power": {
+      "getable": true,
+      "preventInsights": false
     }
   },
   "platforms": [

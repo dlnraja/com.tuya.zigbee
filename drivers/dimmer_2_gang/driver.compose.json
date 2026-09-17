@@ -38,7 +38,9 @@
         "fr": "Batterie",
         "nl": "Batterij",
         "de": "Batterie"
-      }
+      },
+      "getable": true,
+      "preventInsights": false
     },
     "button.2": {
       "title": {

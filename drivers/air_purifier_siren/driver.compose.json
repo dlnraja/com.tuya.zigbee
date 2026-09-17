@@ -32,6 +32,34 @@
       "maintenanceAction": true,
       "getable": false,
       "setable": false
+    },
+    "measure_temperature": {
+      "getable": true,
+      "preventInsights": false
+    },
+    "measure_humidity": {
+      "getable": true,
+      "preventInsights": false
+    },
+    "alarm_siren": {
+      "getable": true,
+      "preventInsights": false
+    },
+    "alarm_motion": {
+      "getable": true,
+      "preventInsights": false
+    },
+    "measure_battery": {
+      "getable": true,
+      "preventInsights": false
+    },
+    "alarm_generic": {
+      "getable": true,
+      "preventInsights": false
+    },
+    "measure_pm25": {
+      "getable": true,
+      "preventInsights": false
     }
   },
   "energy": {

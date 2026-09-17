@@ -21,7 +21,9 @@
   ],
   "capabilitiesOptions": {
     "measure_power": {
-      "approximated": true
+      "approximated": true,
+      "getable": true,
+      "preventInsights": false
     },
     "button.1": {
       "title": {
@@ -40,6 +42,18 @@
       "maintenanceAction": true,
       "getable": false,
       "setable": false
+    },
+    "meter_power": {
+      "getable": true,
+      "preventInsights": false
+    },
+    "measure_current": {
+      "getable": true,
+      "preventInsights": false
+    },
+    "measure_voltage": {
+      "getable": true,
+      "preventInsights": false
     }
   },
   "images": {

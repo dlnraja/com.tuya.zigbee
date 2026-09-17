@@ -28,7 +28,9 @@
         "en": "PM2.5",
         "fr": "PM2.5"
       },
-      "units": "Âµg/mÂ³"
+      "units": "Âµg/mÂ³",
+      "getable": true,
+      "preventInsights": false
     },
     "button.1": {
       "title": {
@@ -38,6 +40,18 @@
       "maintenanceAction": true,
       "getable": false,
       "setable": false
+    },
+    "measure_battery": {
+      "getable": true,
+      "preventInsights": false
+    },
+    "measure_luminance": {
+      "getable": true,
+      "preventInsights": false
+    },
+    "alarm_motion": {
+      "getable": true,
+      "preventInsights": false
     }
   },
   "zigbee": {

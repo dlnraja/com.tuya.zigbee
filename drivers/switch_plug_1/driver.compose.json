@@ -298,7 +298,17 @@
         "fr": "Batterie",
         "nl": "Batterij",
         "de": "Batterie"
-      }
+      },
+      "getable": true,
+      "preventInsights": false
+    },
+    "measure_power": {
+      "getable": true,
+      "preventInsights": false
+    },
+    "meter_power": {
+      "getable": true,
+      "preventInsights": false
     }
   },
   "ui": {

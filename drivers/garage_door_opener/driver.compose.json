@@ -30,7 +30,9 @@
         "de": "Türsensor",
         "pl": "Czujnik otwarcia (kontaktron)"
       },
-      "uiQuickAction": false
+      "uiQuickAction": false,
+      "getable": true,
+      "preventInsights": false
     },
     "button.1": {
       "title": {

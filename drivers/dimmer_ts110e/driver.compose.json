@@ -41,7 +41,9 @@
         "fr": "Batterie",
         "nl": "Batterij",
         "de": "Batterie"
-      }
+      },
+      "getable": true,
+      "preventInsights": false
     }
   },
   "images": {

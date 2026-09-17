@@ -665,7 +665,8 @@
         "en": "Battery",
         "fr": "Batterie"
       },
-      "preventInsights": false
+      "preventInsights": false,
+      "getable": true
     },
     "button.toggle": {
       "title": {
@@ -693,7 +694,41 @@
       "setable": false
     },
     "measure_power": {
-      "approximated": true
+      "approximated": true,
+      "getable": true,
+      "preventInsights": false
+    },
+    "meter_power": {
+      "getable": true,
+      "preventInsights": false
+    },
+    "measure_voltage": {
+      "getable": true,
+      "preventInsights": false
+    },
+    "measure_current": {
+      "getable": true,
+      "preventInsights": false
+    },
+    "alarm_motion": {
+      "getable": true,
+      "preventInsights": false
+    },
+    "measure_luminance": {
+      "getable": true,
+      "preventInsights": false
+    },
+    "measure_temperature": {
+      "getable": true,
+      "preventInsights": false
+    },
+    "measure_humidity": {
+      "getable": true,
+      "preventInsights": false
+    },
+    "alarm_tamper": {
+      "getable": true,
+      "preventInsights": false
     }
   },
   "metadata": {

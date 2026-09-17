@@ -34,6 +34,14 @@
       "maintenanceAction": true,
       "getable": false,
       "setable": false
+    },
+    "alarm_smoke": {
+      "getable": true,
+      "preventInsights": false
+    },
+    "measure_battery": {
+      "getable": true,
+      "preventInsights": false
     }
   },
   "zigbee": {

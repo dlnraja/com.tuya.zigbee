@@ -117,6 +117,14 @@
       "maintenanceAction": true,
       "getable": false,
       "setable": false
+    },
+    "alarm_tamper": {
+      "getable": true,
+      "preventInsights": false
+    },
+    "measure_battery": {
+      "getable": true,
+      "preventInsights": false
     }
   }
 }

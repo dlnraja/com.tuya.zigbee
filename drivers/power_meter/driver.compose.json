@@ -19,14 +19,18 @@
         "en": "Power",
         "fr": "Puissance"
       },
-      "units": "W"
+      "units": "W",
+      "getable": true,
+      "preventInsights": false
     },
     "meter_power": {
       "title": {
         "en": "Energy",
         "fr": "Énergie"
       },
-      "units": "kWh"
+      "units": "kWh",
+      "getable": true,
+      "preventInsights": false
     },
     "button.1": {
       "title": {
@@ -36,6 +40,14 @@
       "maintenanceAction": true,
       "getable": false,
       "setable": false
+    },
+    "measure_voltage": {
+      "getable": true,
+      "preventInsights": false
+    },
+    "measure_current": {
+      "getable": true,
+      "preventInsights": false
     }
   },
   "settings": [

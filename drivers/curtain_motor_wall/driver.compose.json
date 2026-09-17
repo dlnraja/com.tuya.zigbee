@@ -48,6 +48,10 @@
       "maintenanceAction": true,
       "getable": false,
       "setable": false
+    },
+    "measure_luminance": {
+      "getable": true,
+      "preventInsights": false
     }
   },
   "platforms": [
