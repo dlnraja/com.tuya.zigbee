@@ -34,6 +34,13 @@ env:
   # P2491: publish bots stay local — no remote AI burn
   AI_FORCE_LOCAL: "true"
   AI_ALLOW_REMOTE: "false"
+  AI_PLAN_MODE: 'forfait'
+  AI_ALLOW_PAID: 'false'
+  AI_ENSEMBLE: 'false'
+  AI_MAP_REDUCE: 'false'
+  AI_FULL_CONTEXT: 'false'
+  LOCAL_SMART_LEARN: 'true'
+  LOCAL_ENERGY_LEARN: 'true'
 
 defaults:
   run:
