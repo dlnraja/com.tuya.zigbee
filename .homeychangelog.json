@@ -3437,5 +3437,8 @@
   },
   "9.0.992": {
     "en": "Improved Zigbee init safety and battery reporting. Expanded SDK3 and community app references."
+  },
+  "9.0.993": {
+    "en": "Hardened SDK3 deferred init helper (no bare timers)."
   }
 }
