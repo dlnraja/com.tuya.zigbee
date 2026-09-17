@@ -1,0 +1,21 @@
+{
+  "id": "lamp_mesh_occupancy_enroll_sensor",
+  "title": {
+    "en": "Add PIR/occupancy sensor to Lamp Mesh zone",
+    "fr": "Ajouter capteur PIR/occupation à zone maillage"
+  },
+  "args": [
+    {
+      "type": "text",
+      "name": "zone",
+      "title": { "en": "Zone id", "fr": "Id zone" },
+      "value": "living"
+    },
+    {
+      "type": "device",
+      "name": "sensor",
+      "filter": "capabilities=alarm_motion|capabilities=alarm_generic",
+      "title": { "en": "Motion / presence sensor", "fr": "Capteur mouvement / présence" }
+    }
+  ]
+}

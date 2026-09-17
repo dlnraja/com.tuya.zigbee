@@ -88,6 +88,8 @@ describe('P2563 branding-free cartography + wiring', () => {
     assert.ok(ids.includes('soft_daylight_fade'));
     assert.ok(ids.includes('lamp_mesh_occupancy'));
     assert.ok(ssot.homeyImplementations.hub.includes('SmartGatewayFeatureHub'));
+    const lamp = ssot.gatewayConcepts.find((c) => c.genericId === 'lamp_mesh_occupancy');
+    assert.ok(lamp.feasibilityOnHomey === 'full_soft' || lamp.feasibilityOnHomey === 'full');
   });
 
   it('flow compose cards are branding-free and exist', () => {

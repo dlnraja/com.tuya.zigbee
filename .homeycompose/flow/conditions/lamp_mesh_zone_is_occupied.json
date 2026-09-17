@@ -1,0 +1,15 @@
+{
+  "id": "lamp_mesh_zone_is_occupied",
+  "title": {
+    "en": "Lamp Mesh zone is occupied",
+    "fr": "Zone Occupation maillage est occupée"
+  },
+  "args": [
+    {
+      "type": "text",
+      "name": "zone",
+      "title": { "en": "Zone id", "fr": "Id zone" },
+      "value": "living"
+    }
+  ]
+}

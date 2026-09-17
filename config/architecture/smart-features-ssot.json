@@ -21,8 +21,14 @@
       "id": "soft_daylight_fade",
       "uiName": { "en": "Soft Daylight Fade", "fr": "Fondu lumière du jour" },
       "module": "lib/features/SoftDaylightFade.js",
-      "flowIds": ["soft_daylight_fade_start", "soft_daylight_fade_stop"],
-      "role": "Continuous CCT/dim steps toward Daylight Atmosphere (daytime white fade feel)",
+      "flowIds": [
+        "soft_daylight_fade_start",
+        "soft_daylight_fade_stop",
+        "soft_daylight_fade_enable_auto",
+        "soft_daylight_fade_disable_auto"
+      ],
+      "role": "Full Adaptive-Lighting feel — one-shot fade + continuous Soft Daylight Auto",
+      "feasibility": "full",
       "replacesConcepts": ["daytime TruTone-like fading", "Adaptive Lighting ramp"]
     },
     {
@@ -30,9 +36,22 @@
       "uiName": { "en": "Lamp Mesh Occupancy", "fr": "Occupation maillage lampes" },
       "module": "lib/features/LampMeshOccupancy.js",
       "hub": "lib/features/SmartGatewayFeatureHub.js",
-      "flowIds": ["lamp_mesh_occupancy_enroll", "lamp_mesh_occupancy_changed"],
-      "role": "Soft LQI/RSSI (+ optional PIR) fusion across mains lights — Homey alternative to proprietary lamp-as-sensor",
-      "feasibility": "partial — no closed PHY parity claim"
+      "flowIds": [
+        "lamp_mesh_occupancy_enroll",
+        "lamp_mesh_occupancy_auto_enroll",
+        "lamp_mesh_occupancy_enroll_sensor",
+        "lamp_mesh_occupancy_changed",
+        "lamp_mesh_zone_is_occupied"
+      ],
+      "role": "Full soft stack: baseline RSSI/LQI + mesh variance + activity + PIR + presence fusion",
+      "feasibility": "full_soft — Homey max; not closed PHY parity"
+    },
+    {
+      "id": "soft_ambient_sync",
+      "uiName": { "en": "Soft Ambient Sync", "fr": "Soft Ambient Sync" },
+      "module": "lib/features/SoftAmbientSync.js",
+      "flowIds": ["soft_ambient_sync_apply", "soft_ambient_sync_stop"],
+      "role": "BootBudget-safe rate-limited color fade (≤4 lights) — Entertainment alternative without RGB flood"
     },
     {
       "id": "daylight_atmosphere",
@@ -120,6 +139,7 @@
   },
   "memory": {
     "boot": "deferred via BootBudget — same as CircadianEngine",
-    "forbid": "No entertainment RGB stream flood; no second circadian timer per stack"
+    "forbid": "No continuous entertainment RGB / screen-capture stream flood; Soft Ambient Sync (rate-limited ≤4 lights) is the allowed full_soft alternative",
+    "p2564": "Soft Daylight Auto + Lamp Mesh full_soft fusion + Soft Ambient Sync"
   }
 }

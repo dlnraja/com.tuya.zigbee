@@ -969,56 +969,30 @@ class TuyaUnifiedZigbeeApp extends Homey.App {
         return true;
       });
 
-    // ── Dawn Ramp ───────────────────────────────────────────────────────────
+    // ── Dawn Ramp (P2564 — SoftDaylightFade full ease engine) ───────────────
     this.homey.flow.getActionCard('hue_wakeup')
       .registerRunListener(async (args) => {
         const { light, ramp_minutes: duration = 15, target = 100 } = args;
         if (!light) {return false;}
-        const steps = Math.max(5, Math.min(30, duration));
-        const stepMs = (duration * 60 * 1000) / steps;
+        const SoftDaylightFade = require('./lib/features/SoftDaylightFade');
         const targetDim = Math.max(10, Math.min(100, target)) / 100;
-        this.homey.clearInterval?.(light._hueWakeupTimer);
-        let step = 0;
-        const startCurve = this._hueCircadianCurve();
-        await this._hueSetLight(light, { onoff: true, dim: 0.01, temperature: Math.min(1, startCurve.temperature + 0.15) });
-        light._hueWakeupTimer = this.homey.setInterval(async () => {
-          step++;
-          const dim = Math.min(targetDim, 0.01 + (targetDim - 0.01) * (step / steps));
-          const t = this._hueCircadianCurve().temperature;
-          await this._hueSetLight(light, { dim: Math.round(dim * 100) / 100, temperature: t });
-          if (step >= steps) {
-            this.homey.clearInterval?.(light._hueWakeupTimer);
-            light._hueWakeupTimer = null;
-            this.log(`[DAWN-RAMP] done ${light.getName?.()}: ${targetDim * 100}%`);
-          }
-        }, stepMs);
-        this.log(`[DAWN-RAMP] start ${light.getName?.()}: ${steps} steps`);
+        SoftDaylightFade.startDawnRamp(this, light, {
+          minutes: Math.max(1, Number(duration) || 15),
+          targetDim,
+        });
+        this.log(`[DAWN-RAMP] start ${light.getName?.()} → ${Math.round(targetDim * 100)}%`);
         return true;
       });
 
-    // ── Dusk Fade ───────────────────────────────────────────────────────────
+    // ── Dusk Fade (P2564 — SoftDaylightFade) ────────────────────────────────
     this.homey.flow.getActionCard('hue_sleep')
       .registerRunListener(async (args) => {
         const { light, ramp_minutes: duration = 15 } = args;
         if (!light) {return false;}
-        const current = light.getCapabilityValue?.('dim');
-        const startDim = typeof current === 'number' && current > 0 ? current : 1;
-        const steps = Math.max(5, Math.min(30, duration));
-        const stepMs = (duration * 60 * 1000) / steps;
-        this.homey.clearInterval?.(light._hueWakeupTimer);
-        let step = 0;
-        light._hueWakeupTimer = this.homey.setInterval(async () => {
-          step++;
-          const dim = Math.max(0.01, startDim * (1 - step / steps));
-          const warm = Math.min(1, this._hueCircadianCurve().temperature + 0.2 * (step / steps));
-          await this._hueSetLight(light, { dim: Math.round(dim * 100) / 100, temperature: warm });
-          if (step >= steps) {
-            this.homey.clearInterval?.(light._hueWakeupTimer);
-            light._hueWakeupTimer = null;
-            await this._hueSetLight(light, { onoff: false });
-            this.log(`[DUSK-FADE] done ${light.getName?.()}: OFF`);
-          }
-        }, stepMs);
+        const SoftDaylightFade = require('./lib/features/SoftDaylightFade');
+        SoftDaylightFade.startDuskFade(this, light, {
+          minutes: Math.max(1, Number(duration) || 15),
+        });
         this.log(`[DUSK-FADE] start ${light.getName?.()}`);
         return true;
       });
@@ -1178,41 +1152,64 @@ class TuyaUnifiedZigbeeApp extends Homey.App {
   }
 
   /**
-   * P2563 — Soft Daylight Fade / Lamp Mesh Occupancy flow cards.
-   * WHY: gateway-class smart features without commercial UI names.
+   * P2563/P2564 — Soft Daylight / Lamp Mesh / Soft Ambient Sync flow cards.
+   * WHY: full Homey-feasible gateway smart features without commercial UI names.
    */
+  _ensureSmartGatewayHub() {
+    if (this.smartGatewayHub) return this.smartGatewayHub;
+    const SmartGatewayFeatureHub = require('./lib/features/SmartGatewayFeatureHub');
+    this.smartGatewayHub = new SmartGatewayFeatureHub(this).start();
+    return this.smartGatewayHub;
+  }
+
   _registerSmartGatewayFlowCards() {
-    try {
+    const soft = (fn) => {
+      try { fn(); } catch (err) { this.error?.('[SmartGateway] card wire:', err.message); }
+    };
+
+    soft(() => {
       this.homey.flow.getActionCard('soft_daylight_fade_start')
         .registerRunListener(async (args) => {
           const light = args.light;
           if (!light) return false;
           const minutes = Math.max(5, Math.min(120, Number(args.minutes) || 30));
-          if (!this.smartGatewayHub) {
-            const SmartGatewayFeatureHub = require('./lib/features/SmartGatewayFeatureHub');
-            this.smartGatewayHub = new SmartGatewayFeatureHub(this).start();
-          }
-          const plan = this.smartGatewayHub.startSoftDaylightFade(light, { minutes });
+          const plan = this._ensureSmartGatewayHub().startSoftDaylightFade(light, { minutes });
           this.log(`[SOFT-DAYLIGHT] ${light.getName?.()} fade ${minutes}min steps=${plan?.steps?.length || 0}`);
           return !!plan;
         });
-    } catch (err) {
-      this.error?.('[SOFT-DAYLIGHT] start card missing:', err.message);
-    }
+    });
 
-    try {
+    soft(() => {
       this.homey.flow.getActionCard('soft_daylight_fade_stop')
         .registerRunListener(async (args) => {
-          const light = args.light;
-          if (!light) return false;
-          this.smartGatewayHub?.stopSoftDaylightFade?.(light);
+          if (!args.light) return false;
+          this.smartGatewayHub?.stopSoftDaylightFade?.(args.light);
           return true;
         });
-    } catch (err) {
-      this.error?.('[SOFT-DAYLIGHT] stop card missing:', err.message);
-    }
+    });
 
-    try {
+    soft(() => {
+      this.homey.flow.getActionCard('soft_daylight_fade_enable_auto')
+        .registerRunListener(async (args) => {
+          if (!args.light) return false;
+          const ok = this._ensureSmartGatewayHub().enableSoftDaylightAuto(args.light, {
+            intervalMinutes: Number(args.interval_minutes) || 5,
+          });
+          this.log(`[SOFT-DAYLIGHT] auto ON ${args.light.getName?.()}`);
+          return !!ok;
+        });
+    });
+
+    soft(() => {
+      this.homey.flow.getActionCard('soft_daylight_fade_disable_auto')
+        .registerRunListener(async (args) => {
+          if (!args.light) return false;
+          this._ensureSmartGatewayHub().disableSoftDaylightAuto(args.light);
+          return true;
+        });
+    });
+
+    soft(() => {
       this.homey.flow.getActionCard('lamp_mesh_occupancy_enroll')
         .registerRunListener(async (args) => {
           const zone = String(args.zone || 'living').slice(0, 64);
@@ -1221,22 +1218,68 @@ class TuyaUnifiedZigbeeApp extends Homey.App {
             this.log('[LAMP-MESH] need ≥2 lights');
             return false;
           }
-          if (!this.smartGatewayHub) {
-            const SmartGatewayFeatureHub = require('./lib/features/SmartGatewayFeatureHub');
-            this.smartGatewayHub = new SmartGatewayFeatureHub(this).start();
-          }
-          const res = this.smartGatewayHub.enrollMeshZone(zone, lights);
+          const res = this._ensureSmartGatewayHub().enrollMeshZone(zone, lights);
           this.log(`[LAMP-MESH] enrolled zone=${res.zoneId} lights=${res.lightCount}`);
           return res.lightCount >= 2;
         });
-    } catch (err) {
-      this.error?.('[LAMP-MESH] enroll card missing:', err.message);
-    }
+    });
 
-    // Trigger lamp_mesh_occupancy_changed is fired from SmartGatewayFeatureHub
-    try {
+    soft(() => {
+      this.homey.flow.getActionCard('lamp_mesh_occupancy_auto_enroll')
+        .registerRunListener(async (args) => {
+          const zone = String(args.zone || 'home').slice(0, 64);
+          const res = this._ensureSmartGatewayHub().autoEnrollMesh(zone, {
+            max: Number(args.max_lights) || 6,
+          });
+          this.log(`[LAMP-MESH] auto-enroll zone=${res.zoneId} lights=${res.lightCount}`);
+          return res.lightCount >= 2;
+        });
+    });
+
+    soft(() => {
+      this.homey.flow.getActionCard('lamp_mesh_occupancy_enroll_sensor')
+        .registerRunListener(async (args) => {
+          if (!args.sensor) return false;
+          const zone = String(args.zone || 'living').slice(0, 64);
+          const res = this._ensureSmartGatewayHub().enrollMeshSensors(zone, [args.sensor]);
+          this.log(`[LAMP-MESH] sensor → zone=${res.zoneId}`);
+          return true;
+        });
+    });
+
+    soft(() => {
+      this.homey.flow.getConditionCard('lamp_mesh_zone_is_occupied')
+        .registerRunListener(async (args) => {
+          const zone = String(args.zone || 'living').slice(0, 64);
+          return this._ensureSmartGatewayHub().isMeshOccupied(zone);
+        });
+    });
+
+    soft(() => {
+      this.homey.flow.getActionCard('soft_ambient_sync_apply')
+        .registerRunListener(async (args) => {
+          const lights = [args.light_a, args.light_b, args.light_c].filter(Boolean);
+          const res = this._ensureSmartGatewayHub().applySoftAmbient(lights, {
+            hue: Number(args.hue),
+            saturation: Number(args.saturation),
+            dim: Number(args.dim),
+          });
+          this.log(`[SOFT-AMBIENT] applied=${res.applied} skip=${res.skipped || 'none'}`);
+          return res.applied > 0;
+        });
+    });
+
+    soft(() => {
+      this.homey.flow.getActionCard('soft_ambient_sync_stop')
+        .registerRunListener(async () => {
+          this.smartGatewayHub?.stopSoftAmbient?.();
+          return true;
+        });
+    });
+
+    soft(() => {
       this.homey.flow.getTriggerCard('lamp_mesh_occupancy_changed');
-    } catch (_e) { /* soft — composed at publish */ }
+    });
   }
 
   // ═══════════════════════════════════════════════════════════════════════════
