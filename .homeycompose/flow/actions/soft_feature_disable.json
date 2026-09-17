@@ -1,0 +1,19 @@
+{
+  "id": "soft_feature_disable",
+  "title": {
+    "en": "Disable Soft Feature by id",
+    "fr": "Désactiver Soft Feature par id"
+  },
+  "hint": {
+    "en": "Disables a previously enabled Soft Feature catalog vector",
+    "fr": "Désactive un vecteur Soft Feature déjà activé"
+  },
+  "args": [
+    {
+      "type": "text",
+      "name": "feature_id",
+      "title": { "en": "Feature id", "fr": "Id feature" },
+      "value": "path_light_hall"
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "id": "soft_feature_enable_all",
+  "title": {
+    "en": "Enable all Soft Features (register)",
+    "fr": "Activer toutes Soft Features (registre)"
+  },
+  "hint": {
+    "en": "Registers all 200 Soft Feature vectors without mass device TX",
+    "fr": "Enregistre les 200 vecteurs sans TX massif"
+  },
+  "args": []
+}

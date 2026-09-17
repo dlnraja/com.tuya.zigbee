@@ -1,0 +1,27 @@
+{
+  "id": "soft_feature_enable_family",
+  "title": {
+    "en": "Enable Soft Feature family",
+    "fr": "Activer famille Soft Feature"
+  },
+  "hint": {
+    "en": "Registers all catalog vectors of one family (light, presence, energy, cover, sensor, climate, generic)",
+    "fr": "Enregistre tous les vecteurs d'une famille"
+  },
+  "args": [
+    {
+      "type": "dropdown",
+      "name": "family",
+      "title": { "en": "Family", "fr": "Famille" },
+      "values": [
+        { "id": "light", "label": { "en": "Light", "fr": "Lumière" } },
+        { "id": "presence", "label": { "en": "Presence", "fr": "Présence" } },
+        { "id": "energy", "label": { "en": "Energy", "fr": "Énergie" } },
+        { "id": "cover", "label": { "en": "Cover", "fr": "Volet" } },
+        { "id": "sensor", "label": { "en": "Sensor", "fr": "Capteur" } },
+        { "id": "climate", "label": { "en": "Climate", "fr": "Climat" } },
+        { "id": "generic", "label": { "en": "Generic", "fr": "Générique" } }
+      ]
+    }
+  ]
+}
