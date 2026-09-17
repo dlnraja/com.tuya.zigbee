@@ -126,7 +126,22 @@ function loadAppFlowIds() {
 }
 
 function loadAppFlowIdsByPrefix(driverId) {
-  const app = readJson(path.join(ROOT, 'app.json'));
+  // WHY(P2554): Homey SDK3 merges driver.flow.compose.json at `homey app compose`
+  // into .homeybuild/app.json — root app.json only keeps app-level cards.
+  // Contre quoi: harvest flagged every button driver as app_json_drift (false positive).
+  const candidates = [
+    path.join(ROOT, '.homeybuild', 'app.json'),
+    path.join(ROOT, 'app.json'),
+  ];
+  let app = null;
+  for (const p of candidates) {
+    if (!fs.existsSync(p)) continue;
+    try {
+      app = readJson(p);
+      if ((app.flow?.triggers || []).length > 100 || p.includes('.homeybuild')) break;
+    } catch { /* next */ }
+  }
+  if (!app) return new Set();
   const prefix = `${driverId}_`;
   const ids = new Set();
   for (const kind of ['triggers', 'conditions', 'actions']) {
@@ -235,7 +250,17 @@ function harvestDriver(driverId) {
   }
 
   if (missingInApp.length > 0 && triggers.length > 0) {
-    issues.push({ type: 'app_json_drift', severity: 'high', count: missingInApp.length, sample: missingInApp.slice(0, 5) });
+    // WHY(P2554): Homey merges driver.flow.compose at publish into .homeybuild.
+    // Leftover misses vs last local build = stale compose / Athom compact — not a
+    // runtime button bug (Z2M/ZHA first-press is magic+0xFD, not app.json).
+    // Contre quoi: harvest drowning NEED_ACTION in false-high app_json_drift.
+    issues.push({
+      type: 'app_json_drift',
+      severity: 'info',
+      count: missingInApp.length,
+      sample: missingInApp.slice(0, 5),
+      note: 'compose cards absent from last .homeybuild/root app.json — Auto-Publish regenerates; runtime FlowCardHeuristics still resolves',
+    });
   }
 
   return {
