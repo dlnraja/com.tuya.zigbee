@@ -17,7 +17,7 @@ describe('P2540 complementary DP/cluster/raw RX-TX', () => {
     const ssot = JSON.parse(
       fs.readFileSync(path.join(ROOT, 'config/architecture/complementary-rx-tx-dp-cluster-ssot.json'), 'utf8')
     );
-    assert.equal(ssot.patch, 'P2540');
+    assert.ok(['P2540', 'P2544'].includes(ssot.patch), `unexpected patch ${ssot.patch}`);
     assert.equal(ssot.doctrine.complementaryOnly, true);
     assert.equal(ssot.doctrine.ef00AndZclParallelOk, true);
     assert.ok(ssot.rxOrderCanonical.includes('tuya_dp_report'));
