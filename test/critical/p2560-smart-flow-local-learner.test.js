@@ -134,4 +134,11 @@ describe('P2560 Smart Flow cards + wire', () => {
     assert.ok(String(ssot.id || '').includes('P2560') || ssot.learner === 'LocalSmartEnergyLearner'
       || (ssot.related && ssot.related.includes('P2560')));
   });
+
+  it('layer-coverage gate accepts provenance-aware VirtualEnergyMeterMixin', () => {
+    const gate = fs.readFileSync(path.join(ROOT, 'tools/ci/layer-coverage-gate.js'), 'utf8');
+    assert.match(gate, /origin = 'estimated'/);
+    assert.match(gate, /source:\\s\*o/);
+    assert.ok(!/VirtualEnergyMeterMixin marks estimated source',\s*\/source: 'estimated'\//.test(gate));
+  });
 });

@@ -203,8 +203,10 @@ must(
 );
 
 must(
+  // P2557/P2560: provenance uses origin var `o` but default remains estimated
   'VirtualEnergyMeterMixin marks estimated source',
-  /source: 'estimated'/.test(read('lib/mixins/VirtualEnergyMeterMixin.js')),
+  /origin = 'estimated'/.test(read('lib/mixins/VirtualEnergyMeterMixin.js'))
+    && /source:\s*o/.test(read('lib/mixins/VirtualEnergyMeterMixin.js')),
 );
 
 must(
