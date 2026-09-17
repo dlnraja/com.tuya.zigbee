@@ -206,6 +206,11 @@ class wall_dimmer_tuya extends TuyaSpecificClusterDevice {
     if (typeof this._ensureTuyaIo === 'function') {
       await this._ensureTuyaIo(this.zclNode, { light: true });
     }
+    // WHY(P2557 / PresentSky #2206): MCU ignores EF00 until magic — arm once per session + after fail
+    if (!this._dimmerMagicArmedThisSession) {
+      await this._ensureDimmerMagicHandshake(this.zclNode).catch(() => {});
+      this._dimmerMagicArmedThisSession = true;
+    }
 
     const attempt = async () => writeCapabilityWithFallbacks(this, capability, value, {
       forceDp: true,
@@ -273,11 +278,11 @@ class wall_dimmer_tuya extends TuyaSpecificClusterDevice {
         r = { ok: false, error: err };
       }
       if (r?.ok) {break;}
-      // Re-heal + re-magic between retries (hollow IEEE after re-pair)
+      // Re-heal + re-magic between retries (hollow IEEE after re-pair / PresentSky dead UI)
       await healZigbeeNodeIdentity(this, { force: true }).catch(() => {});
-      if (i === 0) {
-        await this._ensureDimmerMagicHandshake(this.zclNode).catch(() => {});
-      }
+      this._dimmerMagicArmedThisSession = false;
+      await this._ensureDimmerMagicHandshake(this.zclNode).catch(() => {});
+      this._dimmerMagicArmedThisSession = true;
     }
 
     if (!r.ok) {
