@@ -1,7 +1,7 @@
 {
   "_comment": "This file is generated. Please edit .homeycompose/app.json instead.",
   "id": "com.dlnraja.tuya.zigbee",
-  "version": "9.0.1014",
+  "version": "9.0.1015",
   "compatibility": ">=12.2.0",
   "platforms": [
     "local"
@@ -835,8 +835,8 @@
           "fr": "Toute valeur de capacité changée"
         },
         "hint": {
-          "en": "Triggers when any capability on any device changes value. Inspired by Device Capabilities app.",
-          "nl": "Activeert wanneer een capaciteitswaarde op een apparaat wijzigt. Geinspireerd door Device Capabilities app."
+          "en": "Triggers when any capability on any device changes. Inspired by Device Capabilities (silent enrich).",
+          "nl": "Activeert wanneer een capaciteitswaarde op een apparaat wijzigt."
         },
         "tokens": [
           {
@@ -871,7 +871,12 @@
           {
             "type": "device",
             "name": "device",
-            "filter": "capabilities=onoff"
+            "title": {
+              "en": "Device",
+              "nl": "Apparaat",
+              "de": "Gerät",
+              "fr": "Appareil"
+            }
           }
         ]
       },
@@ -1360,6 +1365,55 @@
             "type": "device",
             "name": "device",
             "filter": "driver_id=smart_knob,capabilities=dim"
+          }
+        ]
+      },
+      {
+        "id": "lamp_mesh_occupancy_changed",
+        "title": {
+          "en": "Lamp Mesh Occupancy changed",
+          "fr": "Occupation maillage lampes changée"
+        },
+        "hint": {
+          "en": "Fires when soft mesh occupancy estimate flips occupied/clear for a zone",
+          "fr": "Quand l'estimation d'occupation soft passe occupied/clear pour une zone"
+        },
+        "tokens": [
+          {
+            "name": "zone",
+            "type": "string",
+            "title": {
+              "en": "Zone",
+              "fr": "Zone"
+            },
+            "example": "living"
+          },
+          {
+            "name": "occupied",
+            "type": "boolean",
+            "title": {
+              "en": "Occupied",
+              "fr": "Occupé"
+            },
+            "example": true
+          },
+          {
+            "name": "score",
+            "type": "number",
+            "title": {
+              "en": "Confidence",
+              "fr": "Confiance"
+            },
+            "example": 0.55
+          },
+          {
+            "name": "source",
+            "type": "string",
+            "title": {
+              "en": "Source",
+              "fr": "Source"
+            },
+            "example": "mesh_soft"
           }
         ]
       },
@@ -2058,6 +2112,74 @@
         }
       },
       {
+        "id": "telemetry_source_changed",
+        "title": {
+          "en": "Smart · value quality changed (live / ≈ / ƒ / →)",
+          "fr": "Smart · qualité de la valeur changée (live / ≈ / ƒ / →)",
+          "nl": "Smart · waardekwaliteit gewijzigd (live / ≈ / ƒ / →)",
+          "de": "Smart · Wertqualität geändert (live / ≈ / ƒ / →)"
+        },
+        "hint": {
+          "en": "Fires when a capability switches between live measurement, intelligent estimate, calculation or local prediction",
+          "fr": "Quand une capability passe entre mesure live, estimation intelligente, calcul ou prédiction locale",
+          "nl": "Bij wissel tussen live meting, schatting, berekening of lokale voorspelling",
+          "de": "Beim Wechsel zwischen Live-Messung, Schätzung, Berechnung oder lokaler Prognose"
+        },
+        "tokens": [
+          {
+            "name": "capability",
+            "type": "string",
+            "title": {
+              "en": "Capability",
+              "fr": "Capability",
+              "nl": "Capability",
+              "de": "Capability"
+            },
+            "example": "measure_power"
+          },
+          {
+            "name": "previous",
+            "type": "string",
+            "title": {
+              "en": "Previous quality",
+              "fr": "Qualité précédente",
+              "nl": "Vorige kwaliteit",
+              "de": "Vorherige Qualität"
+            },
+            "example": "estimated"
+          },
+          {
+            "name": "origin",
+            "type": "string",
+            "title": {
+              "en": "New quality",
+              "fr": "Nouvelle qualité",
+              "nl": "Nieuwe kwaliteit",
+              "de": "Neue Qualität"
+            },
+            "example": "measured"
+          },
+          {
+            "name": "quality_label",
+            "type": "string",
+            "title": {
+              "en": "Quality label (human)",
+              "fr": "Libellé qualité (lisible)",
+              "nl": "Kwaliteitslabel",
+              "de": "Qualitätslabel"
+            },
+            "example": "real measurement"
+          }
+        ],
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id!=none"
+          }
+        ]
+      },
+      {
         "id": "transition_completed",
         "title": {
           "en": "Transition completed"
@@ -2108,6 +2230,82 @@
               "en": "Capability"
             },
             "example": "dim"
+          }
+        ]
+      },
+      {
+        "id": "tuya_battery_low_false",
+        "title": {
+          "en": "Battery recovered (app alarm cleared)",
+          "fr": "Batterie rétablie (alarme app effacée)",
+          "nl": "Batterij hersteld (app-alarm gewist)",
+          "de": "Batterie erholt (App-Alarm gelöscht)"
+        },
+        "hint": {
+          "en": "Fires when tuya_battery_low clears after hysteresis above the low threshold.",
+          "fr": "Se déclenche quand tuya_battery_low s'efface après hystérésis au-dessus du seuil."
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "capabilities=measure_battery"
+          }
+        ],
+        "tokens": [
+          {
+            "name": "battery_percent",
+            "type": "number",
+            "title": {
+              "en": "Battery %",
+              "fr": "Batterie %"
+            }
+          },
+          {
+            "name": "threshold",
+            "type": "number",
+            "title": {
+              "en": "Low threshold",
+              "fr": "Seuil bas"
+            }
+          }
+        ]
+      },
+      {
+        "id": "tuya_battery_low_true",
+        "title": {
+          "en": "Battery became low (app alarm)",
+          "fr": "Batterie devenue faible (alarme app)",
+          "nl": "Batterij werd laag (app-alarm)",
+          "de": "Batterie wurde niedrig (App-Alarm)"
+        },
+        "hint": {
+          "en": "Fires when app-owned tuya_battery_low turns true (from measure_battery + threshold). Not Homey alarm_battery.",
+          "fr": "Se déclenche quand tuya_battery_low passe à vrai (mesure % + seuil). Pas alarm_battery Homey."
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "capabilities=measure_battery"
+          }
+        ],
+        "tokens": [
+          {
+            "name": "battery_percent",
+            "type": "number",
+            "title": {
+              "en": "Battery %",
+              "fr": "Batterie %"
+            }
+          },
+          {
+            "name": "threshold",
+            "type": "number",
+            "title": {
+              "en": "Low threshold",
+              "fr": "Seuil bas"
+            }
           }
         ]
       },
@@ -2465,74 +2663,6 @@
             "type": "device",
             "name": "device",
             "filter": "capabilities=button.1,capabilities=button,capabilities=onoff,capabilities=button.toggle"
-          }
-        ]
-      },
-      {
-        "id": "telemetry_source_changed",
-        "title": {
-          "en": "Smart · value quality changed (live / ≈ / ƒ / →)",
-          "fr": "Smart · qualité de la valeur changée (live / ≈ / ƒ / →)",
-          "nl": "Smart · waardekwaliteit gewijzigd (live / ≈ / ƒ / →)",
-          "de": "Smart · Wertqualität geändert (live / ≈ / ƒ / →)"
-        },
-        "hint": {
-          "en": "Fires when a capability switches between live measurement, intelligent estimate, calculation or local prediction",
-          "fr": "Quand une capability passe entre mesure live, estimation intelligente, calcul ou prédiction locale",
-          "nl": "Bij wissel tussen live meting, schatting, berekening of lokale voorspelling",
-          "de": "Beim Wechsel zwischen Live-Messung, Schätzung, Berechnung oder lokaler Prognose"
-        },
-        "tokens": [
-          {
-            "name": "capability",
-            "type": "string",
-            "title": {
-              "en": "Capability",
-              "fr": "Capability",
-              "nl": "Capability",
-              "de": "Capability"
-            },
-            "example": "measure_power"
-          },
-          {
-            "name": "previous",
-            "type": "string",
-            "title": {
-              "en": "Previous quality",
-              "fr": "Qualité précédente",
-              "nl": "Vorige kwaliteit",
-              "de": "Vorherige Qualität"
-            },
-            "example": "estimated"
-          },
-          {
-            "name": "origin",
-            "type": "string",
-            "title": {
-              "en": "New quality",
-              "fr": "Nouvelle qualité",
-              "nl": "Nieuwe kwaliteit",
-              "de": "Neue Qualität"
-            },
-            "example": "measured"
-          },
-          {
-            "name": "quality_label",
-            "type": "string",
-            "title": {
-              "en": "Quality label (human)",
-              "fr": "Libellé qualité (lisible)",
-              "nl": "Kwaliteitslabel",
-              "de": "Qualitätslabel"
-            },
-            "example": "real measurement"
-          }
-        ],
-        "args": [
-          {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id!=none"
           }
         ]
       }
@@ -3146,6 +3276,24 @@
         }
       },
       {
+        "id": "lamp_mesh_zone_is_occupied",
+        "title": {
+          "en": "Lamp Mesh zone is occupied",
+          "fr": "Zone Occupation maillage est occupée"
+        },
+        "args": [
+          {
+            "type": "text",
+            "name": "zone",
+            "title": {
+              "en": "Zone id",
+              "fr": "Id zone"
+            },
+            "value": "living"
+          }
+        ]
+      },
+      {
         "id": "network_health_good",
         "title": {
           "en": "Network health good"
@@ -3210,6 +3358,18 @@
         "titleFormatted": {
           "en": "Network health good [[min_coverage]] [[max_orphaned]]"
         }
+      },
+      {
+        "id": "night_path_is_active",
+        "title": {
+          "en": "Night Path bias is active",
+          "fr": "Biais Night Path actif"
+        },
+        "hint": {
+          "en": "True when House Mode is night or sun is below horizon",
+          "fr": "Vrai si mode maison nuit ou soleil sous l'horizon"
+        },
+        "args": []
       },
       {
         "id": "ota_has_update",
@@ -3303,6 +3463,33 @@
         ]
       },
       {
+        "id": "quiet_hours_is_active",
+        "title": {
+          "en": "Quiet Hours are active",
+          "fr": "Heures calmes actives"
+        },
+        "args": [
+          {
+            "type": "text",
+            "name": "quiet_start",
+            "title": {
+              "en": "Start (HH:MM)",
+              "fr": "Début (HH:MM)"
+            },
+            "value": "22:00"
+          },
+          {
+            "type": "text",
+            "name": "quiet_end",
+            "title": {
+              "en": "End (HH:MM)",
+              "fr": "Fin (HH:MM)"
+            },
+            "value": "07:00"
+          }
+        ]
+      },
+      {
         "id": "schedule_is_active",
         "title": {
           "en": "Schedule is active"
@@ -3355,6 +3542,48 @@
             "name": "device",
             "type": "device",
             "filter": "capabilities=alarm_motion|alarm_human|alarm_presence"
+          }
+        ]
+      },
+      {
+        "id": "soft_feature_count_is",
+        "title": {
+          "en": "Soft Feature catalog has at least N vectors",
+          "fr": "Le catalogue Soft Feature a au moins N vecteurs"
+        },
+        "args": [
+          {
+            "type": "number",
+            "name": "min",
+            "title": {
+              "en": "Minimum count",
+              "fr": "Minimum"
+            },
+            "min": 1,
+            "max": 500,
+            "value": 200
+          }
+        ]
+      },
+      {
+        "id": "soft_feature_is_enabled",
+        "title": {
+          "en": "Soft Feature !{{is|is not}} enabled",
+          "fr": "Soft Feature !{{est|n'est pas}} activé"
+        },
+        "hint": {
+          "en": "True when the Soft Feature id was enabled via SoftRecipeRunner",
+          "fr": "Vrai si l'id Soft Feature a été activé"
+        },
+        "args": [
+          {
+            "type": "text",
+            "name": "feature_id",
+            "title": {
+              "en": "Feature id",
+              "fr": "Id feature"
+            },
+            "value": "path_light_hall"
           }
         ]
       },
@@ -3552,6 +3781,103 @@
         }
       },
       {
+        "id": "telemetry_is_calculated",
+        "title": {
+          "en": "Smart · !{{value is|value is not}} a complete calculation ƒ",
+          "fr": "Smart · la valeur !{{est|n'est pas}} un calcul complet ƒ",
+          "nl": "Smart · de waarde !{{is|is geen}} volledige berekening ƒ",
+          "de": "Smart · der Wert !{{ist|ist keine}} vollständige Berechnung ƒ"
+        },
+        "hint": {
+          "en": "Derived from other values (I = P÷V, kWh integral of power × time). Title: · ƒ calculated",
+          "fr": "Dérivée d'autres valeurs (I = P÷V, intégrale kWh = P × temps). Titre : · ƒ calculé",
+          "nl": "Afgeleid van andere waarden (I = P÷V, kWh-integraal). Titel: · ƒ berekend",
+          "de": "Abgeleitet (I = P÷V, kWh-Integral). Titel: · ƒ berechnet"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id!=none"
+          },
+          {
+            "type": "dropdown",
+            "name": "capability",
+            "title": {
+              "en": "Value",
+              "fr": "Valeur",
+              "nl": "Waarde",
+              "de": "Wert"
+            },
+            "values": [
+              {
+                "id": "measure_power",
+                "title": {
+                  "en": "Power (W)",
+                  "fr": "Puissance (W)",
+                  "nl": "Vermogen (W)",
+                  "de": "Leistung (W)"
+                }
+              },
+              {
+                "id": "measure_voltage",
+                "title": {
+                  "en": "Voltage (V)",
+                  "fr": "Tension (V)",
+                  "nl": "Spanning (V)",
+                  "de": "Spannung (V)"
+                }
+              },
+              {
+                "id": "measure_current",
+                "title": {
+                  "en": "Current (A)",
+                  "fr": "Courant (A)",
+                  "nl": "Stroom (A)",
+                  "de": "Strom (A)"
+                }
+              },
+              {
+                "id": "meter_power",
+                "title": {
+                  "en": "Energy (kWh)",
+                  "fr": "Énergie (kWh)",
+                  "nl": "Energie (kWh)",
+                  "de": "Energie (kWh)"
+                }
+              },
+              {
+                "id": "measure_battery",
+                "title": {
+                  "en": "Battery (%)",
+                  "fr": "Batterie (%)",
+                  "nl": "Batterij (%)",
+                  "de": "Batterie (%)"
+                }
+              },
+              {
+                "id": "measure_temperature",
+                "title": {
+                  "en": "Temperature",
+                  "fr": "Température",
+                  "nl": "Temperatuur",
+                  "de": "Temperatur"
+                }
+              },
+              {
+                "id": "measure_humidity",
+                "title": {
+                  "en": "Humidity",
+                  "fr": "Humidité",
+                  "nl": "Vochtigheid",
+                  "de": "Feuchtigkeit"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
         "id": "telemetry_is_estimated",
         "title": {
           "en": "Smart · !{{value is|value is not}} an intelligent estimate ≈",
@@ -3647,157 +3973,6 @@
             ]
           }
         ]
-      },
-      {
-        "id": "transition_in_progress",
-        "title": {
-          "en": "Transition in progress"
-        },
-        "hint": {
-          "en": "Checks if any smooth transition is currently running on the device"
-        },
-        "args": [
-          {
-            "name": "device",
-            "type": "device",
-            "filter": "capabilities=onoff|dim"
-          }
-        ],
-        "tokens": [
-          {
-            "name": "active_count",
-            "type": "number",
-            "title": {
-              "en": "Active transition count"
-            }
-          }
-        ]
-      },
-      {
-        "id": "tuya_dp_equals",
-        "title": {
-          "en": "Tuya DP [[dp]] equals [[value]]",
-          "fr": "DP Tuya [[dp]] égal à [[value]]"
-        },
-        "hint": {
-          "en": "Check if a raw Tuya datapoint has a specific value",
-          "fr": "Vérifie si un datapoint Tuya brut a une valeur spécifique"
-        },
-        "args": [
-          {
-            "type": "device",
-            "name": "device",
-            "filter": "capabilities=tuya_data_report|onoff"
-          },
-          {
-            "name": "dp",
-            "type": "number",
-            "title": {
-              "en": "DP Number",
-              "fr": "Numéro DP"
-            },
-            "min": 1,
-            "max": 255
-          },
-          {
-            "name": "value",
-            "type": "text",
-            "title": {
-              "en": "Value",
-              "fr": "Valeur"
-            }
-          }
-        ]
-      },
-      {
-        "id": "tuya_dp_type_is",
-        "title": {
-          "en": "DP type is...",
-          "fr": "Type DP est..."
-        },
-        "args": [
-          {
-            "type": "device",
-            "name": "device",
-            "filter": "capabilities=tuya_dp_value|onoff"
-          },
-          {
-            "name": "dp",
-            "type": "number",
-            "title": {
-              "en": "DP Number"
-            },
-            "min": 1,
-            "max": 255
-          },
-          {
-            "name": "dp_type",
-            "type": "dropdown",
-            "title": {
-              "en": "Expected Type"
-            },
-            "values": [
-              {
-                "id": "raw",
-                "title": {
-                  "en": "Raw"
-                }
-              },
-              {
-                "id": "bool",
-                "title": {
-                  "en": "Bool"
-                }
-              },
-              {
-                "id": "value",
-                "title": {
-                  "en": "Value"
-                }
-              },
-              {
-                "id": "string",
-                "title": {
-                  "en": "String"
-                }
-              },
-              {
-                "id": "enum",
-                "title": {
-                  "en": "Enum"
-                }
-              },
-              {
-                "id": "bitmap",
-                "title": {
-                  "en": "Bitmap"
-                }
-              }
-            ]
-          }
-        ]
-      },
-      {
-        "id": "virtual_presence_any_room_occupied",
-        "title": {
-          "en": "Any room !{{is|is not}} occupied",
-          "nl": "Een kamer !{{is|is niet}} bezet",
-          "fr": "Une pièce !{{est|n'est pas}} occupée",
-          "de": "Ein Raum !{{ist|ist nicht}} besetzt"
-        },
-        "hint": {
-          "en": "Check if any Virtual Presence Detector in the app considers its room occupied",
-          "nl": "Controleer of een virtuele aanwezigheidsdetector de kamer als bezet beschouwt",
-          "fr": "Vérifier si un détecteur de présence virtuel considère la pièce comme occupée",
-          "de": "Prüfen, ob ein virtueller Anwesenheitssensor seinen Raum als besetzt betrachtet"
-        },
-        "args": [],
-        "titleFormatted": {
-          "en": "Any room !{{is|is not}} occupied",
-          "nl": "Een kamer !{{is|is niet}} bezet",
-          "fr": "Une pièce !{{est|n'est pas}} occupée",
-          "de": "Ein Raum !{{ist|ist nicht}} besetzt"
-        }
       },
       {
         "id": "telemetry_is_measured",
@@ -3897,18 +4072,18 @@
         ]
       },
       {
-        "id": "telemetry_is_calculated",
+        "id": "telemetry_is_not_measured",
         "title": {
-          "en": "Smart · !{{value is|value is not}} a complete calculation ƒ",
-          "fr": "Smart · la valeur !{{est|n'est pas}} un calcul complet ƒ",
-          "nl": "Smart · de waarde !{{is|is geen}} volledige berekening ƒ",
-          "de": "Smart · der Wert !{{ist|ist keine}} vollständige Berechnung ƒ"
+          "en": "Smart · !{{value is|value is not}} soft (≈ estimated / ƒ calculated / → predicted)",
+          "fr": "Smart · la valeur !{{est soft|est une mesure réelle}} (≈ estimé / ƒ calculé / → prévu)",
+          "nl": "Smart · de waarde !{{is soft|is een echte meting}} (≈ / ƒ / →)",
+          "de": "Smart · der Wert !{{ist soft|ist eine echte Messung}} (≈ / ƒ / →)"
         },
         "hint": {
-          "en": "Derived from other values (I = P÷V, kWh integral of power × time). Title: · ƒ calculated",
-          "fr": "Dérivée d'autres valeurs (I = P÷V, intégrale kWh = P × temps). Titre : · ƒ calculé",
-          "nl": "Afgeleid van andere waarden (I = P÷V, kWh-integraal). Titel: · ƒ berekend",
-          "de": "Abgeleitet (I = P÷V, kWh-Integral). Titel: · ƒ berechnet"
+          "en": "True when the value is NOT a precise live measurement — use before acting on soft energy/battery data",
+          "fr": "Vrai si ce n'est PAS une mesure live — utile avant d'agir sur énergie/batterie soft",
+          "nl": "Waar als het géén live meting is — vóór actie op soft energie/batterij",
+          "de": "Wahr, wenn keine Live-Messung — vor Aktionen auf Soft-Energie/Batterie"
         },
         "args": [
           {
@@ -4091,104 +4266,243 @@
         ]
       },
       {
-        "id": "telemetry_is_not_measured",
+        "id": "transition_in_progress",
         "title": {
-          "en": "Smart · !{{value is|value is not}} soft (≈ estimated / ƒ calculated / → predicted)",
-          "fr": "Smart · la valeur !{{est soft|est une mesure réelle}} (≈ estimé / ƒ calculé / → prévu)",
-          "nl": "Smart · de waarde !{{is soft|is een echte meting}} (≈ / ƒ / →)",
-          "de": "Smart · der Wert !{{ist soft|ist eine echte Messung}} (≈ / ƒ / →)"
+          "en": "Transition in progress"
         },
         "hint": {
-          "en": "True when the value is NOT a precise live measurement — use before acting on soft energy/battery data",
-          "fr": "Vrai si ce n'est PAS une mesure live — utile avant d'agir sur énergie/batterie soft",
-          "nl": "Waar als het géén live meting is — vóór actie op soft energie/batterij",
-          "de": "Wahr, wenn keine Live-Messung — vor Aktionen auf Soft-Energie/Batterie"
+          "en": "Checks if any smooth transition is currently running on the device"
+        },
+        "args": [
+          {
+            "name": "device",
+            "type": "device",
+            "filter": "capabilities=onoff|dim"
+          }
+        ],
+        "tokens": [
+          {
+            "name": "active_count",
+            "type": "number",
+            "title": {
+              "en": "Active transition count"
+            }
+          }
+        ]
+      },
+      {
+        "id": "tuya_battery_is_low",
+        "title": {
+          "en": "Battery !{{is|is not}} low (app)",
+          "fr": "Batterie !{{est|n'est pas}} faible (app)",
+          "nl": "Batterij !{{is|is niet}} laag (app)",
+          "de": "Batterie !{{ist|ist nicht}} niedrig (App)"
+        },
+        "hint": {
+          "en": "Checks app-owned tuya_battery_low (derived from measure_battery). Never uses Homey alarm_battery.",
+          "fr": "Vérifie tuya_battery_low (dérivé de measure_battery). N'utilise jamais alarm_battery Homey."
+        },
+        "args": [
+          {
+            "name": "device",
+            "type": "device",
+            "filter": "capabilities=measure_battery"
+          }
+        ]
+      },
+      {
+        "id": "tuya_dp_equals",
+        "title": {
+          "en": "Tuya DP [[dp]] equals [[value]]",
+          "fr": "DP Tuya [[dp]] égal à [[value]]"
+        },
+        "hint": {
+          "en": "Check if a raw Tuya datapoint has a specific value",
+          "fr": "Vérifie si un datapoint Tuya brut a une valeur spécifique"
         },
         "args": [
           {
             "type": "device",
             "name": "device",
-            "filter": "driver_id!=none"
+            "filter": "capabilities=tuya_data_report|onoff"
           },
           {
-            "type": "dropdown",
-            "name": "capability",
+            "name": "dp",
+            "type": "number",
+            "title": {
+              "en": "DP Number",
+              "fr": "Numéro DP"
+            },
+            "min": 1,
+            "max": 255
+          },
+          {
+            "name": "value",
+            "type": "text",
             "title": {
               "en": "Value",
-              "fr": "Valeur",
-              "nl": "Waarde",
-              "de": "Wert"
+              "fr": "Valeur"
+            }
+          }
+        ]
+      },
+      {
+        "id": "tuya_dp_type_is",
+        "title": {
+          "en": "DP type is...",
+          "fr": "Type DP est..."
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "capabilities=tuya_dp_value|onoff"
+          },
+          {
+            "name": "dp",
+            "type": "number",
+            "title": {
+              "en": "DP Number"
+            },
+            "min": 1,
+            "max": 255
+          },
+          {
+            "name": "dp_type",
+            "type": "dropdown",
+            "title": {
+              "en": "Expected Type"
             },
             "values": [
               {
-                "id": "measure_power",
+                "id": "raw",
                 "title": {
-                  "en": "Power (W)",
-                  "fr": "Puissance (W)",
-                  "nl": "Vermogen (W)",
-                  "de": "Leistung (W)"
+                  "en": "Raw"
                 }
               },
               {
-                "id": "measure_voltage",
+                "id": "bool",
                 "title": {
-                  "en": "Voltage (V)",
-                  "fr": "Tension (V)",
-                  "nl": "Spanning (V)",
-                  "de": "Spannung (V)"
+                  "en": "Bool"
                 }
               },
               {
-                "id": "measure_current",
+                "id": "value",
                 "title": {
-                  "en": "Current (A)",
-                  "fr": "Courant (A)",
-                  "nl": "Stroom (A)",
-                  "de": "Strom (A)"
+                  "en": "Value"
                 }
               },
               {
-                "id": "meter_power",
+                "id": "string",
                 "title": {
-                  "en": "Energy (kWh)",
-                  "fr": "Énergie (kWh)",
-                  "nl": "Energie (kWh)",
-                  "de": "Energie (kWh)"
+                  "en": "String"
                 }
               },
               {
-                "id": "measure_battery",
+                "id": "enum",
                 "title": {
-                  "en": "Battery (%)",
-                  "fr": "Batterie (%)",
-                  "nl": "Batterij (%)",
-                  "de": "Batterie (%)"
+                  "en": "Enum"
                 }
               },
               {
-                "id": "measure_temperature",
+                "id": "bitmap",
                 "title": {
-                  "en": "Temperature",
-                  "fr": "Température",
-                  "nl": "Temperatuur",
-                  "de": "Temperatur"
-                }
-              },
-              {
-                "id": "measure_humidity",
-                "title": {
-                  "en": "Humidity",
-                  "fr": "Humidité",
-                  "nl": "Vochtigheid",
-                  "de": "Feuchtigkeit"
+                  "en": "Bitmap"
                 }
               }
             ]
           }
         ]
+      },
+      {
+        "id": "virtual_presence_any_room_occupied",
+        "title": {
+          "en": "Any room !{{is|is not}} occupied",
+          "nl": "Een kamer !{{is|is niet}} bezet",
+          "fr": "Une pièce !{{est|n'est pas}} occupée",
+          "de": "Ein Raum !{{ist|ist nicht}} besetzt"
+        },
+        "hint": {
+          "en": "Check if any Virtual Presence Detector in the app considers its room occupied",
+          "nl": "Controleer of een virtuele aanwezigheidsdetector de kamer als bezet beschouwt",
+          "fr": "Vérifier si un détecteur de présence virtuel considère la pièce comme occupée",
+          "de": "Prüfen, ob ein virtueller Anwesenheitssensor seinen Raum als besetzt betrachtet"
+        },
+        "args": [],
+        "titleFormatted": {
+          "en": "Any room !{{is|is not}} occupied",
+          "nl": "Een kamer !{{is|is niet}} bezet",
+          "fr": "Une pièce !{{est|n'est pas}} occupée",
+          "de": "Ein Raum !{{ist|ist nicht}} besetzt"
+        }
       }
     ],
     "actions": [
+      {
+        "id": "absence_energy_soft_enroll",
+        "title": {
+          "en": "Absence Energy Soft — eco when zone clears",
+          "fr": "Absence Energy Soft — éco quand zone libre"
+        },
+        "hint": {
+          "en": "When Lamp Mesh zone clears, dim or off enrolled devices (presence energy-save)",
+          "fr": "Quand la zone se libère, assombrit ou éteint (économie présence)"
+        },
+        "args": [
+          {
+            "type": "text",
+            "name": "zone",
+            "title": {
+              "en": "Zone id",
+              "fr": "Id zone"
+            },
+            "value": "home"
+          },
+          {
+            "type": "device",
+            "name": "device_a",
+            "filter": "capabilities=onoff|capabilities=dim",
+            "title": {
+              "en": "Device A",
+              "fr": "Appareil A"
+            }
+          },
+          {
+            "type": "device",
+            "name": "device_b",
+            "filter": "capabilities=onoff|capabilities=dim",
+            "title": {
+              "en": "Device B (optional)",
+              "fr": "Appareil B (option)"
+            },
+            "optional": true
+          },
+          {
+            "type": "dropdown",
+            "name": "mode",
+            "title": {
+              "en": "Action",
+              "fr": "Action"
+            },
+            "values": [
+              {
+                "id": "dim",
+                "label": {
+                  "en": "Soft dim",
+                  "fr": "Assombrir"
+                }
+              },
+              {
+                "id": "off",
+                "label": {
+                  "en": "Turn off",
+                  "fr": "Éteindre"
+                }
+              }
+            ]
+          }
+        ]
+      },
       {
         "id": "calibrate_battery_reading",
         "title": {
@@ -4458,6 +4772,61 @@
             "title": {
               "en": "Condition set evaluated"
             }
+          }
+        ]
+      },
+      {
+        "id": "contact_entry_soft_enroll",
+        "title": {
+          "en": "Contact Entry Soft — door opens lights",
+          "fr": "Contact Entry Soft — porte → lumières"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "contact",
+            "filter": "capabilities=alarm_contact|capabilities=alarm_generic",
+            "title": {
+              "en": "Contact / door",
+              "fr": "Contact / porte"
+            }
+          },
+          {
+            "type": "device",
+            "name": "light_a",
+            "filter": "capabilities=onoff",
+            "title": {
+              "en": "Light A",
+              "fr": "Lumière A"
+            }
+          },
+          {
+            "type": "device",
+            "name": "light_b",
+            "filter": "capabilities=onoff",
+            "title": {
+              "en": "Light B (optional)",
+              "fr": "Lumière B (option)"
+            },
+            "optional": true
+          },
+          {
+            "type": "text",
+            "name": "quiet_start",
+            "title": {
+              "en": "Quiet start (optional)",
+              "fr": "Début calme (option)"
+            },
+            "optional": true
+          },
+          {
+            "type": "text",
+            "name": "quiet_end",
+            "title": {
+              "en": "Quiet end (optional)",
+              "fr": "Fin calme (option)"
+            },
+            "optional": true
           }
         ]
       },
@@ -5294,6 +5663,149 @@
         }
       },
       {
+        "id": "idle_auto_off_soft_enroll",
+        "title": {
+          "en": "Idle Auto-Off Soft",
+          "fr": "Idle Auto-Off Soft"
+        },
+        "hint": {
+          "en": "Turns light off after idle minutes without change",
+          "fr": "Éteint la lumière après N minutes sans changement"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "light",
+            "filter": "capabilities=onoff",
+            "title": {
+              "en": "Light",
+              "fr": "Lumière"
+            }
+          },
+          {
+            "type": "number",
+            "name": "idle_minutes",
+            "title": {
+              "en": "Idle minutes",
+              "fr": "Minutes d'inactivité"
+            },
+            "min": 1,
+            "max": 240,
+            "value": 30
+          }
+        ]
+      },
+      {
+        "id": "lamp_mesh_occupancy_auto_enroll",
+        "title": {
+          "en": "Auto-enroll mains lights in Lamp Mesh zone",
+          "fr": "Auto-inscrire lampes secteur dans zone Occupation maillage"
+        },
+        "hint": {
+          "en": "Scans Homey for mains lights and enrolls up to N into a mesh occupancy zone",
+          "fr": "Scanne les lampes secteur Homey et les inscrit (max N) dans une zone"
+        },
+        "args": [
+          {
+            "type": "text",
+            "name": "zone",
+            "title": {
+              "en": "Zone id",
+              "fr": "Id zone"
+            },
+            "value": "home"
+          },
+          {
+            "type": "number",
+            "name": "max_lights",
+            "title": {
+              "en": "Max lights",
+              "fr": "Max lampes"
+            },
+            "min": 2,
+            "max": 12,
+            "value": 6
+          }
+        ]
+      },
+      {
+        "id": "lamp_mesh_occupancy_enroll",
+        "title": {
+          "en": "Enroll lights in Lamp Mesh Occupancy zone",
+          "fr": "Inscrire des lumières dans une zone Occupation maillage"
+        },
+        "hint": {
+          "en": "Soft RF/link-quality fusion across lights (+ optional PIR). Homey alternative to proprietary lamp-as-sensor hubs — not vendor-parity.",
+          "fr": "Fusion douce qualité de lien entre lampes (+ PIR optionnel). Alternative Homey — pas de parité constructeur."
+        },
+        "args": [
+          {
+            "type": "text",
+            "name": "zone",
+            "title": {
+              "en": "Zone id",
+              "fr": "Id zone"
+            },
+            "value": "living"
+          },
+          {
+            "type": "device",
+            "name": "light_a",
+            "filter": "capabilities=onoff",
+            "title": {
+              "en": "Light A (mains)",
+              "fr": "Lumière A"
+            }
+          },
+          {
+            "type": "device",
+            "name": "light_b",
+            "filter": "capabilities=onoff",
+            "title": {
+              "en": "Light B (mains)",
+              "fr": "Lumière B"
+            }
+          },
+          {
+            "type": "device",
+            "name": "light_c",
+            "filter": "capabilities=onoff",
+            "title": {
+              "en": "Light C (optional)",
+              "fr": "Lumière C (option)"
+            },
+            "optional": true
+          }
+        ]
+      },
+      {
+        "id": "lamp_mesh_occupancy_enroll_sensor",
+        "title": {
+          "en": "Add PIR/occupancy sensor to Lamp Mesh zone",
+          "fr": "Ajouter capteur PIR/occupation à zone maillage"
+        },
+        "args": [
+          {
+            "type": "text",
+            "name": "zone",
+            "title": {
+              "en": "Zone id",
+              "fr": "Id zone"
+            },
+            "value": "living"
+          },
+          {
+            "type": "device",
+            "name": "sensor",
+            "filter": "capabilities=alarm_motion|capabilities=alarm_generic",
+            "title": {
+              "en": "Motion / presence sensor",
+              "fr": "Capteur mouvement / présence"
+            }
+          }
+        ]
+      },
+      {
         "id": "light_alert_blink",
         "title": {
           "en": "Blink light alert",
@@ -5366,6 +5878,75 @@
             "max": 60,
             "step": 1,
             "value": 2
+          }
+        ]
+      },
+      {
+        "id": "lux_adaptive_dim_enroll",
+        "title": {
+          "en": "Enroll Lux Adaptive Dim",
+          "fr": "Inscrire Lux Adaptive Dim"
+        },
+        "hint": {
+          "en": "Soft-dim light from room lux (illuminance-aware lighting)",
+          "fr": "Ajuste la luminosité selon le lux pièce"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "light",
+            "filter": "capabilities=dim",
+            "title": {
+              "en": "Light",
+              "fr": "Lumière"
+            }
+          },
+          {
+            "type": "device",
+            "name": "lux_sensor",
+            "filter": "capabilities=measure_luminance",
+            "title": {
+              "en": "Lux sensor (optional)",
+              "fr": "Capteur lux (option)"
+            },
+            "optional": true
+          }
+        ]
+      },
+      {
+        "id": "mirror_light_sync_enroll",
+        "title": {
+          "en": "Mirror Light Sync — master to followers",
+          "fr": "Mirror Light Sync — maître vers suiveurs"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "master",
+            "filter": "capabilities=onoff",
+            "title": {
+              "en": "Master light",
+              "fr": "Lumière maître"
+            }
+          },
+          {
+            "type": "device",
+            "name": "follower_a",
+            "filter": "capabilities=onoff",
+            "title": {
+              "en": "Follower A",
+              "fr": "Suiveur A"
+            }
+          },
+          {
+            "type": "device",
+            "name": "follower_b",
+            "filter": "capabilities=onoff",
+            "title": {
+              "en": "Follower B (optional)",
+              "fr": "Suiveur B (option)"
+            },
+            "optional": true
           }
         ]
       },
@@ -5579,6 +6160,55 @@
         }
       },
       {
+        "id": "peak_load_soft_shed_enroll",
+        "title": {
+          "en": "Peak Load Soft Shed — dim on high power",
+          "fr": "Peak Load Soft Shed — assombrir si puissance haute"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "meter",
+            "filter": "capabilities=measure_power",
+            "title": {
+              "en": "Power meter",
+              "fr": "Compteur puissance"
+            }
+          },
+          {
+            "type": "device",
+            "name": "light_a",
+            "filter": "capabilities=dim",
+            "title": {
+              "en": "Light A",
+              "fr": "Lumière A"
+            }
+          },
+          {
+            "type": "device",
+            "name": "light_b",
+            "filter": "capabilities=dim",
+            "title": {
+              "en": "Light B (optional)",
+              "fr": "Lumière B (option)"
+            },
+            "optional": true
+          },
+          {
+            "type": "number",
+            "name": "threshold_w",
+            "title": {
+              "en": "Threshold (W)",
+              "fr": "Seuil (W)"
+            },
+            "min": 200,
+            "max": 15000,
+            "step": 100,
+            "value": 2500
+          }
+        ]
+      },
+      {
         "id": "presence_force_in_zone",
         "title": {
           "en": "Force presence in zone"
@@ -5719,7 +6349,12 @@
               "fr": "Appareil énergie"
             }
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "Reset energy meter on [[device]]",
+          "fr": "Réinitialiser le compteur sur [[device]]",
+          "sv": "Återställ energimätaren på [[device]]"
+        }
       },
       {
         "id": "scene_apply",
@@ -6054,6 +6689,427 @@
         }
       },
       {
+        "id": "shade_daylight_soft_enroll",
+        "title": {
+          "en": "Shade Daylight Soft — solar open/close",
+          "fr": "Shade Daylight Soft — ouvrir/fermer au soleil"
+        },
+        "hint": {
+          "en": "Closes cover at dusk and opens at dawn from solar elevation",
+          "fr": "Ferme le volet au crépuscule et ouvre à l'aube (élévation solaire)"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "cover",
+            "filter": "capabilities=windowcoverings_set|capabilities=windowcoverings_state",
+            "title": {
+              "en": "Cover / shade",
+              "fr": "Volet / store"
+            }
+          }
+        ]
+      },
+      {
+        "id": "soft_ambient_sync_apply",
+        "title": {
+          "en": "Soft Ambient Sync — apply color",
+          "fr": "Soft Ambient Sync — appliquer couleur"
+        },
+        "hint": {
+          "en": "Rate-limited soft color fade on up to 4 lights (safe Entertainment alternative — no RGB flood)",
+          "fr": "Fondu couleur doux limité (max 4 lampes) — alternative Entertainment sans flood RGB"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "light_a",
+            "filter": "capabilities=light_hue|capabilities=light_saturation",
+            "title": {
+              "en": "Light A",
+              "fr": "Lumière A"
+            }
+          },
+          {
+            "type": "device",
+            "name": "light_b",
+            "filter": "capabilities=light_hue|capabilities=light_saturation",
+            "title": {
+              "en": "Light B (optional)",
+              "fr": "Lumière B (option)"
+            },
+            "optional": true
+          },
+          {
+            "type": "device",
+            "name": "light_c",
+            "filter": "capabilities=light_hue|capabilities=light_saturation",
+            "title": {
+              "en": "Light C (optional)",
+              "fr": "Lumière C (option)"
+            },
+            "optional": true
+          },
+          {
+            "type": "number",
+            "name": "hue",
+            "title": {
+              "en": "Hue (0–1)",
+              "fr": "Teinte (0–1)"
+            },
+            "min": 0,
+            "max": 1,
+            "step": 0.01,
+            "value": 0.08
+          },
+          {
+            "type": "number",
+            "name": "saturation",
+            "title": {
+              "en": "Saturation (0–1)",
+              "fr": "Saturation (0–1)"
+            },
+            "min": 0,
+            "max": 1,
+            "step": 0.01,
+            "value": 0.55
+          },
+          {
+            "type": "number",
+            "name": "dim",
+            "title": {
+              "en": "Brightness (0–1)",
+              "fr": "Luminosité (0–1)"
+            },
+            "min": 0.05,
+            "max": 1,
+            "step": 0.01,
+            "value": 0.45
+          }
+        ]
+      },
+      {
+        "id": "soft_ambient_sync_stop",
+        "title": {
+          "en": "Stop Soft Ambient Sync",
+          "fr": "Arrêter Soft Ambient Sync"
+        },
+        "args": []
+      },
+      {
+        "id": "soft_daylight_fade_disable_auto",
+        "title": {
+          "en": "Disable Soft Daylight Auto",
+          "fr": "Désactiver Soft Daylight Auto"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "light",
+            "filter": "capabilities=onoff|capabilities=dim|capabilities=light_temperature|capabilities=light_color_temp",
+            "title": {
+              "en": "Light",
+              "fr": "Lumière"
+            }
+          }
+        ]
+      },
+      {
+        "id": "soft_daylight_fade_enable_auto",
+        "title": {
+          "en": "Enable Soft Daylight Auto",
+          "fr": "Activer Soft Daylight Auto"
+        },
+        "hint": {
+          "en": "Continuously follows Daylight Atmosphere with soft CCT/dim steps (full Adaptive-Lighting feel)",
+          "fr": "Suit en continu Atmosphère jour avec fondu CCT/luminosité doux"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "light",
+            "filter": "capabilities=onoff|capabilities=dim|capabilities=light_temperature|capabilities=light_color_temp",
+            "title": {
+              "en": "Light",
+              "fr": "Lumière"
+            }
+          },
+          {
+            "type": "number",
+            "name": "interval_minutes",
+            "title": {
+              "en": "Recheck every (min)",
+              "fr": "Recalcul toutes (min)"
+            },
+            "min": 2,
+            "max": 30,
+            "step": 1,
+            "value": 5
+          }
+        ]
+      },
+      {
+        "id": "soft_daylight_fade_start",
+        "title": {
+          "en": "Start Soft Daylight Fade",
+          "fr": "Démarrer le fondu lumière du jour",
+          "nl": "Start zachte daglicht-fade",
+          "de": "Sanften Tageslicht-Fade starten"
+        },
+        "hint": {
+          "en": "Gradually moves white/brightness toward Daylight Atmosphere (solar + Room Balance) — branding-free",
+          "fr": "Amène progressivement blanc/luminosité vers Atmosphère jour (solaire + Room Balance)"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "light",
+            "filter": "capabilities=onoff|capabilities=dim|capabilities=light_temperature|capabilities=light_color_temp",
+            "title": {
+              "en": "Light",
+              "fr": "Lumière"
+            }
+          },
+          {
+            "type": "number",
+            "name": "minutes",
+            "title": {
+              "en": "Duration (min)",
+              "fr": "Durée (min)"
+            },
+            "min": 5,
+            "max": 120,
+            "step": 5,
+            "value": 30
+          }
+        ]
+      },
+      {
+        "id": "soft_daylight_fade_stop",
+        "title": {
+          "en": "Stop Soft Daylight Fade",
+          "fr": "Arrêter le fondu lumière du jour"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "light",
+            "filter": "capabilities=onoff|capabilities=dim|capabilities=light_temperature|capabilities=light_color_temp",
+            "title": {
+              "en": "Light",
+              "fr": "Lumière"
+            }
+          }
+        ]
+      },
+      {
+        "id": "soft_device_link_enroll",
+        "title": {
+          "en": "Soft Device Link — link source to lights",
+          "fr": "Soft Device Link — lier source aux lumières"
+        },
+        "hint": {
+          "en": "App-level remote/sensor → lights (soft binding feel — not Zigbee ZDO bind)",
+          "fr": "Lien app télécommande/capteur → lumières (binding soft — pas ZDO Zigbee)"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "source",
+            "filter": "capabilities=onoff|capabilities=alarm_motion|capabilities=alarm_generic|capabilities=button",
+            "title": {
+              "en": "Source (remote / sensor)",
+              "fr": "Source (télécommande / capteur)"
+            }
+          },
+          {
+            "type": "device",
+            "name": "light_a",
+            "filter": "capabilities=onoff",
+            "title": {
+              "en": "Light A",
+              "fr": "Lumière A"
+            }
+          },
+          {
+            "type": "device",
+            "name": "light_b",
+            "filter": "capabilities=onoff",
+            "title": {
+              "en": "Light B (optional)",
+              "fr": "Lumière B (option)"
+            },
+            "optional": true
+          },
+          {
+            "type": "dropdown",
+            "name": "mode",
+            "title": {
+              "en": "Mode",
+              "fr": "Mode"
+            },
+            "values": [
+              {
+                "id": "toggle",
+                "label": {
+                  "en": "Toggle",
+                  "fr": "Basculer"
+                }
+              },
+              {
+                "id": "on",
+                "label": {
+                  "en": "On on trigger",
+                  "fr": "Allumer"
+                }
+              },
+              {
+                "id": "off",
+                "label": {
+                  "en": "Off on trigger",
+                  "fr": "Éteindre"
+                }
+              },
+              {
+                "id": "follow",
+                "label": {
+                  "en": "Follow source",
+                  "fr": "Suivre source"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "soft_feature_disable",
+        "title": {
+          "en": "Disable Soft Feature by id",
+          "fr": "Désactiver Soft Feature par id"
+        },
+        "hint": {
+          "en": "Disables a previously enabled Soft Feature catalog vector",
+          "fr": "Désactive un vecteur Soft Feature déjà activé"
+        },
+        "args": [
+          {
+            "type": "text",
+            "name": "feature_id",
+            "title": {
+              "en": "Feature id",
+              "fr": "Id feature"
+            },
+            "value": "path_light_hall"
+          }
+        ]
+      },
+      {
+        "id": "soft_feature_enable",
+        "title": {
+          "en": "Enable Soft Feature by id",
+          "fr": "Activer Soft Feature par id"
+        },
+        "hint": {
+          "en": "Enables one of 200 unbranded catalog vectors (P2567 SoftRecipeRunner)",
+          "fr": "Active un des 200 vecteurs du catalogue unbranded (P2567)"
+        },
+        "args": [
+          {
+            "type": "text",
+            "name": "feature_id",
+            "title": {
+              "en": "Feature id",
+              "fr": "Id feature"
+            },
+            "value": "path_light_hall"
+          }
+        ]
+      },
+      {
+        "id": "soft_feature_enable_all",
+        "title": {
+          "en": "Enable all Soft Features (register)",
+          "fr": "Activer toutes Soft Features (registre)"
+        },
+        "hint": {
+          "en": "Registers all 200 Soft Feature vectors without mass device TX",
+          "fr": "Enregistre les 200 vecteurs sans TX massif"
+        },
+        "args": []
+      },
+      {
+        "id": "soft_feature_enable_family",
+        "title": {
+          "en": "Enable Soft Feature family",
+          "fr": "Activer famille Soft Feature"
+        },
+        "hint": {
+          "en": "Registers all catalog vectors of one family (light, presence, energy, cover, sensor, climate, generic)",
+          "fr": "Enregistre tous les vecteurs d'une famille"
+        },
+        "args": [
+          {
+            "type": "dropdown",
+            "name": "family",
+            "title": {
+              "en": "Family",
+              "fr": "Famille"
+            },
+            "values": [
+              {
+                "id": "light",
+                "label": {
+                  "en": "Light",
+                  "fr": "Lumière"
+                }
+              },
+              {
+                "id": "presence",
+                "label": {
+                  "en": "Presence",
+                  "fr": "Présence"
+                }
+              },
+              {
+                "id": "energy",
+                "label": {
+                  "en": "Energy",
+                  "fr": "Énergie"
+                }
+              },
+              {
+                "id": "cover",
+                "label": {
+                  "en": "Cover",
+                  "fr": "Volet"
+                }
+              },
+              {
+                "id": "sensor",
+                "label": {
+                  "en": "Sensor",
+                  "fr": "Capteur"
+                }
+              },
+              {
+                "id": "climate",
+                "label": {
+                  "en": "Climate",
+                  "fr": "Climat"
+                }
+              },
+              {
+                "id": "generic",
+                "label": {
+                  "en": "Generic",
+                  "fr": "Générique"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
         "id": "solar_set_adaptive_lighting",
         "title": {
           "en": "Set adaptive lighting mode"
@@ -6132,6 +7188,31 @@
         "titleFormatted": {
           "en": "Set adaptive lighting mode [[mode]] [[transition_seconds]]"
         }
+      },
+      {
+        "id": "staggered_leave_off",
+        "title": {
+          "en": "Staggered Leave Off",
+          "fr": "Extinction décalée (départ)"
+        },
+        "hint": {
+          "en": "Turns lights off with staggered delay — mesh-friendly leave-home (avoids Zigbee storm)",
+          "fr": "Éteint les lumières en décalé — départ maison sans storm Zigbee"
+        },
+        "args": [
+          {
+            "type": "number",
+            "name": "stagger_ms",
+            "title": {
+              "en": "Stagger (ms)",
+              "fr": "Décalage (ms)"
+            },
+            "min": 50,
+            "max": 2000,
+            "step": 50,
+            "value": 180
+          }
+        ]
       },
       {
         "id": "start_effect",
@@ -6894,6 +7975,47 @@
             "max": 8,
             "step": 1,
             "value": 1
+          }
+        ]
+      },
+      {
+        "id": "welcome_home_soft_enroll",
+        "title": {
+          "en": "Welcome Home Soft — lights on zone occupy",
+          "fr": "Welcome Home Soft — lumières à l'occupation"
+        },
+        "hint": {
+          "en": "When Lamp Mesh zone becomes occupied, soft-fade welcome lights on",
+          "fr": "Quand la zone maillage est occupée, fondu d'accueil"
+        },
+        "args": [
+          {
+            "type": "text",
+            "name": "zone",
+            "title": {
+              "en": "Zone id",
+              "fr": "Id zone"
+            },
+            "value": "home"
+          },
+          {
+            "type": "device",
+            "name": "light_a",
+            "filter": "capabilities=onoff",
+            "title": {
+              "en": "Welcome light A",
+              "fr": "Lumière accueil A"
+            }
+          },
+          {
+            "type": "device",
+            "name": "light_b",
+            "filter": "capabilities=onoff",
+            "title": {
+              "en": "Welcome light B (optional)",
+              "fr": "Lumière accueil B (option)"
+            },
+            "optional": true
           }
         ]
       },

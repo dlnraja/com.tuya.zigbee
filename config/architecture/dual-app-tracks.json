@@ -498,6 +498,10 @@
     "p2567_smart_features_200": {
       "tag": "MASTER_ONLY",
       "note": "200-vector SoftFeatureCatalog + SoftRecipeRunner declarative recipes"
+    },
+    "p2568_soft_features_finalize": {
+      "tag": "MASTER_ONLY",
+      "note": "Finalize all 200 Soft Feature vectors — alias resolve, recipe handlers, enableAll/family/disable flows"
     }
   }
 }

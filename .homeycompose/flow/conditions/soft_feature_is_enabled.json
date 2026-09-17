@@ -1,0 +1,19 @@
+{
+  "id": "soft_feature_is_enabled",
+  "title": {
+    "en": "Soft Feature !{{is|is not}} enabled",
+    "fr": "Soft Feature !{{est|n'est pas}} activé"
+  },
+  "hint": {
+    "en": "True when the Soft Feature id was enabled via SoftRecipeRunner",
+    "fr": "Vrai si l'id Soft Feature a été activé"
+  },
+  "args": [
+    {
+      "type": "text",
+      "name": "feature_id",
+      "title": { "en": "Feature id", "fr": "Id feature" },
+      "value": "path_light_hall"
+    }
+  ]
+}

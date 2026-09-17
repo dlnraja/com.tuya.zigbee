@@ -1430,15 +1430,46 @@ class TuyaUnifiedZigbeeApp extends Homey.App {
         });
     });
 
-    // ── P2567 — 200-vector Soft Feature catalog ─────────────────────────────
+    // ── P2567/P2568 — 200-vector Soft Feature catalog (finalize end-to-end) ─
     soft(() => {
       this.homey.flow.getActionCard('soft_feature_enable')
         .registerRunListener(async (args) => {
           const id = String(args.feature_id || '').trim();
           if (!id) return false;
           const res = this._ensureSmartGatewayHub().enableSoftFeature(id, {});
-          this.log(`[SOFT-FEATURE] enable ${id} ok=${res.ok}`);
+          this.log(`[SOFT-FEATURE] enable ${id} ok=${res.ok} type=${res.type || '?'}`);
           return !!res.ok;
+        });
+    });
+
+    soft(() => {
+      this.homey.flow.getActionCard('soft_feature_disable')
+        .registerRunListener(async (args) => {
+          const id = String(args.feature_id || '').trim();
+          if (!id) return false;
+          const ok = this._ensureSmartGatewayHub().disableSoftFeature(id);
+          this.log(`[SOFT-FEATURE] disable ${id} ok=${ok}`);
+          return ok;
+        });
+    });
+
+    soft(() => {
+      this.homey.flow.getActionCard('soft_feature_enable_family')
+        .registerRunListener(async (args) => {
+          const family = String(args.family || '').trim();
+          if (!family) return false;
+          const res = this._ensureSmartGatewayHub().enableSoftFeatureFamily(family, {}, { apply: false });
+          this.log(`[SOFT-FEATURE] family ${family} enabled=${res.enabled}/${res.total}`);
+          return !!res.ok && res.enabled > 0;
+        });
+    });
+
+    soft(() => {
+      this.homey.flow.getActionCard('soft_feature_enable_all')
+        .registerRunListener(async () => {
+          const res = this._ensureSmartGatewayHub().enableAllSoftFeatures({}, { apply: false });
+          this.log(`[SOFT-FEATURE] enableAll ${res.enabled}/${res.total}`);
+          return !!res.ok && res.enabled >= 200;
         });
     });
 
@@ -1447,6 +1478,15 @@ class TuyaUnifiedZigbeeApp extends Homey.App {
         .registerRunListener(async (args) => {
           const min = Math.max(1, Number(args.min) || 200);
           return this._ensureSmartGatewayHub().softFeatureCount() >= min;
+        });
+    });
+
+    soft(() => {
+      this.homey.flow.getConditionCard('soft_feature_is_enabled')
+        .registerRunListener(async (args) => {
+          const id = String(args.feature_id || '').trim();
+          if (!id) return false;
+          return this._ensureSmartGatewayHub().isSoftFeatureEnabled(id);
         });
     });
   }

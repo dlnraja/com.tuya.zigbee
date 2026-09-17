@@ -1,6 +1,6 @@
 {
   "id": "P2567-world-smart-features-200",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "updated": "2026-09-17",
   "classify": "MASTER_ONLY",
   "policy": {
@@ -21,7 +21,7 @@
       "MotionAware",
       "TruTone"
     ],
-    "note": "200 unbranded vectors — wired modules + declarative recipes via SoftRecipeRunner"
+    "note": "200 unbranded vectors — SoftRecipeRunner resolves aliases + all recipe types end-to-end (P2568)"
   },
   "count": 200,
   "vectors": [
@@ -3237,11 +3237,13 @@
     }
   ],
   "gates": {
-    "npm": "check:p2567"
+    "npm": "check:p2567 && check:p2568"
   },
   "runtime": {
     "catalog": "lib/features/SoftFeatureCatalog.js",
     "runner": "lib/features/SoftRecipeRunner.js",
-    "hub": "lib/features/SmartGatewayFeatureHub.js"
-  }
+    "hub": "lib/features/SmartGatewayFeatureHub.js",
+    "finalize": "P2568 SoftRecipeRunner MODULE_ALIASES + enableAll"
+  },
+  "finalize": "P2568"
 }
