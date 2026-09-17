@@ -176,7 +176,7 @@ const SENSOR_CONFIGS = {
   'ZY_M100_CEILING_24G': {
     configName: 'ZY_M100_CEILING_24G',
     sensors: [
-      '_TZE200_gkfbdvyx', '_TZE204_gkfbdvyx',
+      '_TZE200_gkfbdvyx', '_TZE204_gkfbdvyx', '_TZE284_gkfbdvyx',
       '_TZE204_laokfqwu',
     ],
     battery: false,

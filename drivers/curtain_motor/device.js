@@ -164,6 +164,26 @@ class CurtainMotorDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedC
 
   get gangCount() { return 1; }
 
+  /**
+   * WHY(P2559): Z2M configureMagicPacket for TS0601 cover MCU (ZTS-EUR-C / AM43).
+   * Without it Homey can ACK while MCU ignores open/stop/close (UNSUPPORTED_CLUSTER).
+   */
+  async _ensureCoverMagicHandshake(zclNode) {
+    try {
+      const { sendTuyaMagicPacket } = require('../../lib/zigbee/TuyaMagicPacket');
+      const node = zclNode || this.zclNode;
+      if (!node?.endpoints?.[1] && !node?.endpoints?.[2]) {return;}
+      try { await this.setStoreValue?.('tuya_magic_packet_sent', false); } catch (_e) { /* noop */ }
+      try { await this.unsetStoreValue?.('tuya_magic_packet_sent'); } catch (_e) { /* noop */ }
+      this._tuyaMagicPacketSent = false;
+      const epId = node.endpoints[1] ? 1 : 2;
+      await sendTuyaMagicPacket(this, node, epId, { force: true });
+      this.log('[CURTAIN] P2559 Tuya magic handshake armed');
+    } catch (err) {
+      this.log(`[CURTAIN] magic handshake soft-fail: ${err?.message || err}`);
+    }
+  }
+
   async onNodeInit({ zclNode }) {
     // WHY(P2296): Homey SDK — never both measure_battery + alarm_battery;
     // battery covers (ZM16EL) KEEP measure_battery; mains covers strip both.
@@ -188,6 +208,11 @@ class CurtainMotorDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedC
     // WHY(P2412 / #533): Z2M ZTS-EUR-C uses forceTimeUpdates — MCU may ignore motor
     // commands until time is synced (Homey ACK still succeeds on empty MCU action).
     // WHY(P2467): actually SEND mcuSyncTime (prior tip only logged + called missing helpers).
+    // WHY(P2559 / Z2M configureMagicPacket): Moes ZTS + AM43 need magic before EF00 TX
+    // (forum Eduard UNSUPPORTED_CLUSTER + #533 salvagr Unknown Zigbee TX silence).
+    if (this._isMoesZtsEurC() || this._isBatteryTubularRoller()) {
+      await this._ensureCoverMagicHandshake(zclNode).catch(() => {});
+    }
     if (this._isMoesZtsEurC()) {
       this._invertedPosition = true;
       try {
