@@ -1,0 +1,37 @@
+{
+  "id": "P2562-local-workflow-learn",
+  "version": "1.0.0",
+  "updated": "2026-09-17",
+  "classify": "BOTH",
+  "why": {
+    "pourquoi": "Extend Homey LocalSmartEnergyLearner habits to ALL GitHub Actions workflows — local EMA of success/duration, soft heal hints, zero cloud AI",
+    "comment": "LocalWorkflowLearner + inject LOCAL_SMART_LEARN on every yml + improve:local observe step",
+    "pourQui": "CI bots + Dylan (BOTH)",
+    "quand": "every workflow run / improve:local / inject --apply",
+    "contreQuoi": "remote AI triage; workflows without forfait/local-learn env; no CI habit memory"
+  },
+  "runtimeHomey": {
+    "learner": "lib/telemetry/LocalSmartEnergyLearner.js",
+    "wire": "lib/utils/DeviceTelemetryEstimator.js",
+    "flows": ["telemetry_is_estimated", "telemetry_is_predicted", "telemetry_source_changed"]
+  },
+  "ciWorkflows": {
+    "learner": "tools/ci/LocalWorkflowLearner.js",
+    "cli": "tools/ci/local-workflow-learn.js",
+    "inject": "tools/ci/inject-forfait-env-workflows.js --apply",
+    "orchestrator": "tools/ci/local-auto-improve-orchestrator.js",
+    "state": "reports/local-workflow-learn/STATE.json",
+    "requiredEnv": {
+      "AI_FORCE_LOCAL": "true",
+      "AI_ALLOW_REMOTE": "false",
+      "LOCAL_SMART_LEARN": "true",
+      "LOCAL_ENERGY_LEARN": "true",
+      "GMAIL_DIAG_AI_MAX": "0"
+    }
+  },
+  "related": ["P2542", "P2491", "P2560", "P2562"],
+  "gates": {
+    "npm": "check:p2562",
+    "script": "tools/ci/p2562-local-workflow-learn-gate.js"
+  }
+}

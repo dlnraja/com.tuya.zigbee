@@ -51,11 +51,19 @@ env:
   # exceeding the default 20,000 limit. 30,000 gives headroom.
   # v5.12.1 (P59 sync): stable has 30,211 combos (more than master due to
   # driver differences over time). 35,000 covers stable with headroom.
-  # P2561: align with master — 17k/2k left root app.json compact ~4.00MB and
-  # false-failed publish-size-gate before prepared-temp preference.
+  # P2561: master-aligned caps (17000/2000 left root compact ~4.00MB → false-fail)
   HOMEY_ZIGBEE_MAX_TOTAL_COMBOS: "14000"
   HOMEY_ZIGBEE_MAX_DRIVER_COMBOS: "1500"
   HOMEY_ZIGBEE_MAX_CASE_FORMS: "2"
+  AI_PLAN_MODE: 'forfait'
+  AI_FORCE_LOCAL: 'true'
+  AI_ALLOW_REMOTE: 'false'
+  AI_ALLOW_PAID: 'false'
+  AI_ENSEMBLE: 'false'
+  AI_MAP_REDUCE: 'false'
+  AI_FULL_CONTEXT: 'false'
+  LOCAL_SMART_LEARN: 'true'
+  LOCAL_ENERGY_LEARN: 'true'
 
 jobs:
   # WHY(P2400): bare workflow_dispatch while push-publish already ran for this SHA

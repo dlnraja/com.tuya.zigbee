@@ -37,6 +37,8 @@ env:
   AI_ENSEMBLE: 'false'
   AI_MAP_REDUCE: 'false'
   AI_FULL_CONTEXT: 'false'
+  LOCAL_SMART_LEARN: 'true'
+  LOCAL_ENERGY_LEARN: 'true'
 
 jobs:
   maintain:

@@ -57,9 +57,18 @@
       "lib/layers/ProtocolRxTxChain.js",
       "lib/clusters/RawClusterFallback.js",
       "lib/managers/SmartDivisorManager.js",
+      "lib/telemetry/LocalSmartEnergyLearner.js",
       "lib/LocalFirstEngine.js",
       "lib/utils/HomeyCapabilityUx.js"
     ]
+  },
+  "workflowLocalLearn": {
+    "patch": "P2562",
+    "ssot": "config/architecture/local-workflow-learn-ssot.json",
+    "learner": "tools/ci/LocalWorkflowLearner.js",
+    "cli": "tools/ci/local-workflow-learn.js",
+    "gate": "npm run check:p2562",
+    "injectAllWorkflows": true
   },
   "cronHints": {
     "forumPoll": "15 2,8,14,20 * * *",

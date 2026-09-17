@@ -48,6 +48,8 @@ env:
   AI_MAP_REDUCE: 'false'
   AI_FULL_CONTEXT: 'false'
   GMAIL_DIAG_AI_MAX: '0'
+  LOCAL_SMART_LEARN: 'true'
+  LOCAL_ENERGY_LEARN: 'true'
 
 defaults:
   run:
