@@ -4,11 +4,11 @@
 
 [![Version](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fraw.githubusercontent.com%2Fdlnraja%2Fcom.tuya.zigbee%2Fmaster%2Fapp.json&query=%24.version&label=version&color=blue)](https://homey.app/a/com.dlnraja.tuya.zigbee/)
 [![Drivers](https://img.shields.io/badge/drivers-431-brightgreen)](https://homey.app/a/com.dlnraja.tuya.zigbee/)
-[![Fingerprints](https://img.shields.io/badge/fingerprints-4,435%20unique-green)](https://homey.app/a/com.dlnraja.tuya.zigbee/)
+[![Fingerprints](https://img.shields.io/badge/fingerprints-4,679%20unique-green)](https://homey.app/a/com.dlnraja.tuya.zigbee/)
 [![SDK](https://img.shields.io/badge/SDK-3-orange)](https://apps.developer.homey.app/)
 [![License](https://img.shields.io/badge/license-GPL--3.0-green)](LICENSE)
 
-Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, sensors, lights, thermostats, covers, valves — **431 drivers**, **4,435 unique fingerprints**. No cloud required.
+Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, sensors, lights, thermostats, covers, valves — **431 drivers**, **4,679 unique fingerprints**. No cloud required.
 
 **What it does:**
 - Talks to devices on your Homey Zigbee mesh (Tuya DP `0xEF00` and standard ZCL)
@@ -33,44 +33,44 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 
 | Metric | Value |
 |--------|-------|
-| **App Version** | v9.0.979 |
+| **App Version** | v9.0.1022 |
 | **Drivers** | 431 (381 Zigbee + 50 WiFi) |
-| **Unique Fingerprints** | 4,435 |
-| **Pairing Variants** | 15,602 (4 case combos per fingerprint) |
-| **Unique Product IDs** | 592 |
-| **Flow Cards** | 5,987 |
+| **Unique Fingerprints** | 4,679 |
+| **Pairing Variants** | 16,452 (4 case combos per fingerprint) |
+| **Unique Product IDs** | 594 |
+| **Flow Cards** | 6,021 |
 | **Unique Capabilities** | 170 |
 | **Native OTA Drivers** | 8 |
-| **Test Suites** | 343 files |
+| **Test Suites** | 374 files |
 | **SVG Icons** | 731 |
 | **Languages** | EN, FR, NL, DE |
 | **SDK / Homey** | 3 / >= 12.2.0 |
-| **Last Updated** | 2026-09-16 |
+| **Last Updated** | 2026-09-17 |
 
 ### Top 20 Drivers by Fingerprint Count
 
 | # | Driver | Fingerprints |
 |---|--------|-------------|
-| 1 | `climate_sensor` | 2,050 |
-| 2 | `switch_1gang` | 1,537 |
-| 3 | `radiator_valve` | 599 |
-| 4 | `button_wireless_2` | 570 |
-| 5 | `curtain_motor` | 521 |
-| 6 | `presence_sensor_radar` | 424 |
+| 1 | `climate_sensor` | 2,120 |
+| 2 | `switch_1gang` | 1,547 |
+| 3 | `curtain_motor` | 661 |
+| 4 | `presence_sensor_radar` | 613 |
+| 5 | `radiator_valve` | 602 |
+| 6 | `button_wireless_2` | 570 |
 | 7 | `generic_tuya` | 414 |
-| 8 | `device_radiator_valve` | 332 |
-| 9 | `switch_4gang` | 292 |
-| 10 | `wall_dimmer_tuya` | 244 |
-| 11 | `contact_sensor` | 228 |
-| 12 | `motion_sensor` | 225 |
-| 13 | `switch_3gang` | 223 |
+| 8 | `device_radiator_valve` | 356 |
+| 9 | `wall_dimmer_tuya` | 299 |
+| 10 | `switch_4gang` | 292 |
+| 11 | `motion_sensor` | 245 |
+| 12 | `switch_3gang` | 219 |
+| 13 | `contact_sensor` | 213 |
 | 14 | `diy_custom_zigbee` | 206 |
-| 15 | `thermostat_tuya_dp` | 188 |
+| 15 | `thermostat_tuya_dp` | 197 |
 | 16 | `sensor_contact_zigbee` | 183 |
-| 17 | `water_leak_sensor_tuya` | 178 |
-| 18 | `bulb_dimmable` | 160 |
-| 19 | `switch_2gang` | 153 |
-| 20 | `light_bulb_rgb_rgbw` | 148 |
+| 17 | `water_leak_sensor_tuya` | 181 |
+| 18 | `wall_thermostat` | 170 |
+| 19 | `switch_2gang` | 167 |
+| 20 | `soil_sensor` | 165 |
 
 ### Drivers by Device Class
 
@@ -102,18 +102,18 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 
 | Version | Changes |
 |---------|---------|
-| **v9.0.979** | Fixed complementary enrich bleed (nkjintbl) and kept Zigbee RF / MCU evolution guidance without degrading pairing. |
-| **v9.0.978** | Improved Zigbee RF coexistence guidance and Tuya MCU time-sync resilience (Zigbee 4.0 / Suzi awareness without degrading pairing). |
-| **v9.0.977** | P2535: WZ1 rkgngb5o+TS0501B on led_controller_dimmable (anti-bot clear). Update Homey Test. |
-| **v9.0.976** | P2535 fix: WZ1 rkgngb5o+TS0501B on led_controller_dimmable (avoid CCT Cartesian anti-bot). Update Homey Test. |
-| **v9.0.975** | P2535 forum treat: Skydance/WZ1 _TZB210_rkgngb5o+TS0501B dimmable pairing (sibling TS0502B CCT). Update Homey Test. |
-| **v9.0.974** | P2534 VicHY MTG075: presence follows DP1 (Z2M) — stop distance=0 flip-flop killing presence Flow WHEN. |
-| **v9.0.973** | P2533 dual-app Contre quoi: gbm10jnj TS0044 lock soft on button_wireless_3 when absent (stable). |
-| **v9.0.972** | P2533 Contre quoi tests for complementary merge helpers; strip nkjintbl bleed from switch_2gang; keep dual-case + multi-pid locks. |
-| **v9.0.971** | Added missing Contre quoi unit tests for complementary OEM overlays, dual-case compose preserve, and wall dimmer firmware mfr sync. |
-| **v9.0.970** | Improved OEM/case variants and capabilities for recent Zigbee couples (covers, radar, dimmer, soil, DIN, buttons, knobs, plugs). |
-| **v9.0.969** | Improved OEM/case variants and capabilities for recent Zigbee couples (covers, radar, dimmer, soil, DIN, buttons, knobs, plugs). |
-| **v9.0.967** | Synced wall dimmer firmware update manufacturer names with Zigbee fingerprints. |
+| **v9.0.1022** | Johan issues/PRs mega complementary coverage (radar/valve/CO2/plug/button/3gang) + dump pagination fix. |
+| **v9.0.1020** | P2571 mfs_db align after T26439 locks (c8ipbljq/tgeqdjgk/vvmbj46n). |
+| **v9.0.1019** | T26439 tip harvest: Hejhome 6-gang + knob dimmer + LCD TH locks; soil/radar/bed/lux couples reinforced. |
+| **v9.0.1018** | Johan complementary enrich + FP collision prune (OEM sibling bleed fixed). |
+| **v9.0.1017** | Complementary device coverage enrich (OEM/case variants) + Johan DP libraries retained; TRV/radar/curtain locks intact. |
+| **v9.0.1016** | Forum fixes: ZG253 TRV ogx8u5z6 EF00 pairing (no OnOff cluster), sacred-keep; VicHY radar heal on tip. |
+| **v9.0.1015** | Soft Feature 200 vectors finalized end-to-end (alias resolve, path/welcome/mode recipes, enable-all flows). |
+| **v9.0.1014** | 200 unbranded Soft Feature vectors catalog + SoftRecipeRunner (path/welcome/lux/peak/idle/ambient recipes). |
+| **v9.0.1013** | More unbranded smart vectors: Quiet Hours, Contact Entry, Shade Daylight, Peak Load Soft Shed, Idle Auto-Off, Night Path bias. |
+| **v9.0.1012** | Multi-vendor unbranded gateway features: Soft Device Link, Lux Adaptive Dim, Mirror Sync, Welcome Home, Absence Energy, Staggered Leave Off. |
+| **v9.0.1011** | Full Soft Daylight Auto, Lamp Mesh Occupancy fusion, Soft Ambient Sync (BootBudget-safe Entertainment alternative). |
+| **v9.0.1010** | Soft Daylight Fade and Lamp Mesh Occupancy — branding-free gateway smart features; world Zigbee cartography. |
 
 <!-- CHANGELOG_END -->
 
