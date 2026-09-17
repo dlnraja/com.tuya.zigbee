@@ -1,4 +1,4 @@
-# Johan Bendz complementary completion (P2570)
+# Johan Bendz complementary completion (P2570 / P2572)
 
 Johan announced stepping back from [JohanBendz/com.tuya.zigbee](https://github.com/JohanBendz/com.tuya.zigbee) maintenance. This app **does not replace** his store listing — we **silently complete** useful fingerprints / DP libraries / case variants as **complementary enrichments** (P2520).
 
@@ -15,11 +15,16 @@ Johan announced stepping back from [JohanBendz/com.tuya.zigbee](https://github.c
 ## Commands
 
 ```bash
-node tools/ci/johan-dump.js --incremental
-node tools/ci/p2570-johan-complementary-enrich.js          # dry-run
-node tools/ci/p2570-johan-complementary-enrich.js --apply
+# Full dump (fixed page= pagination — open issues ~665+)
+node tools/ci/johan-dump.js
+node tools/ci/p2572-johan-mega-complementary.js          # dry-run
+node tools/ci/p2572-johan-mega-complementary.js --apply
+npm run check:p2572
 npm run check:p2570
 npm run check:p2520
+# After large apply:
+node tools/ci/prune-fp-collision-bleed.js --apply
+node tools/ci/align-mfs-db-intelligent.js --apply
 ```
 
 ## Runtime already retained from Johan
