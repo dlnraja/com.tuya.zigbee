@@ -1731,5 +1731,8 @@
   },
   "5.12.234": {
     "en": "Fix remaining sacred-couple audit pairs (curtain + 3gang)."
+  },
+  "5.12.235": {
+    "en": "Reliability BOTH: SmartBatteryManager L14 safe writers (P205 gate); no invent 100% from alarm."
   }
 }
