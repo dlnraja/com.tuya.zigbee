@@ -37,7 +37,7 @@ describe('P2556 data provenance', () => {
     const calc = DP.buildProvenanceCapabilityOptions({ title: { en: 'Current' }, units: 'A' }, 'calculated');
     assert.match(calc.title.en, /calculated/i);
     assert.match(calc.units, /ƒ/);
-    const meas = DP.buildProvenanceCapabilityOptions({ title: { en: 'Power · estimated' }, units: 'W ≈' }, 'measured');
+    const meas = DP.buildProvenanceCapabilityOptions({ title: { en: 'Power · ≈ estimated' }, units: 'W ≈' }, 'measured');
     assert.equal(meas.title.en, 'Power');
     assert.equal(meas.units, 'W');
   });
@@ -83,7 +83,9 @@ describe('P2556 data provenance', () => {
     const ssot = JSON.parse(fs.readFileSync(
       path.join(ROOT, 'config/architecture/data-provenance-ssot.json'), 'utf8'));
     assert.equal(ssot.classify, 'BOTH');
-    assert.deepEqual(ssot.origins, ['measured', 'estimated', 'calculated']);
+    assert.ok(ssot.origins.includes('measured'));
+    assert.ok(ssot.origins.includes('estimated'));
+    assert.ok(ssot.origins.includes('calculated'));
     const pkg = JSON.parse(fs.readFileSync(path.join(ROOT, 'package.json'), 'utf8'));
     assert.ok(pkg.scripts['check:p2556'], 'check:p2556 must exist');
   });

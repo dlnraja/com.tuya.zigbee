@@ -1265,6 +1265,8 @@ class TuyaUnifiedZigbeeApp extends Homey.App {
     registerOriginCondition('telemetry_is_estimated', (o) => DataProvenance.isEstimated(o));
     registerOriginCondition('telemetry_is_measured', (o) => DataProvenance.isMeasured(o));
     registerOriginCondition('telemetry_is_calculated', (o) => DataProvenance.isCalculated(o));
+    registerOriginCondition('telemetry_is_predicted', (o) => DataProvenance.isPredicted(o));
+    registerOriginCondition('telemetry_is_not_measured', (o) => DataProvenance.isNonMeasured(o));
 
     // Trigger is device-fired from DeviceTelemetryEstimator — register card presence only
     try {

@@ -1,0 +1,41 @@
+{
+  "id": "telemetry_is_not_measured",
+  "title": {
+    "en": "The !{{value is|value is not}} estimated, calculated or predicted",
+    "fr": "La valeur !{{est estimée, calculée ou prédite|est une mesure réelle}}",
+    "nl": "De waarde !{{is geschat, berekend of voorspeld|is een echte meting}}",
+    "de": "Der Wert !{{ist geschätzt, berechnet oder prognostiziert|ist eine echte Messung}}"
+  },
+  "hint": {
+    "en": "Smart Flow helper: true when the value is NOT a precise live measurement (≈ / ƒ / →)",
+    "fr": "Helper Smart Flow : vrai si ce n'est PAS une mesure live précise (≈ / ƒ / →)",
+    "nl": "Smart Flow helper: waar als het géén live meting is",
+    "de": "Smart-Flow-Helfer: wahr, wenn keine Live-Messung"
+  },
+  "args": [
+    {
+      "type": "device",
+      "name": "device",
+      "filter": "driver_id!=none"
+    },
+    {
+      "type": "dropdown",
+      "name": "capability",
+      "title": {
+        "en": "Value",
+        "fr": "Valeur",
+        "nl": "Waarde",
+        "de": "Wert"
+      },
+      "values": [
+        { "id": "measure_power", "title": { "en": "Power (W)", "fr": "Puissance (W)" } },
+        { "id": "measure_voltage", "title": { "en": "Voltage (V)", "fr": "Tension (V)" } },
+        { "id": "measure_current", "title": { "en": "Current (A)", "fr": "Courant (A)" } },
+        { "id": "meter_power", "title": { "en": "Energy (kWh)", "fr": "Énergie (kWh)" } },
+        { "id": "measure_battery", "title": { "en": "Battery (%)", "fr": "Batterie (%)" } },
+        { "id": "measure_temperature", "title": { "en": "Temperature", "fr": "Température" } },
+        { "id": "measure_humidity", "title": { "en": "Humidity", "fr": "Humidité" } }
+      ]
+    }
+  ]
+}

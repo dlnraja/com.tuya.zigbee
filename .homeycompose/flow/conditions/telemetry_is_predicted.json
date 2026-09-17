@@ -1,0 +1,41 @@
+{
+  "id": "telemetry_is_predicted",
+  "title": {
+    "en": "The !{{value is|value is not}} a smart prediction →",
+    "fr": "La valeur !{{est une prédiction intelligente →|n'est pas une prédiction}}",
+    "nl": "De waarde !{{is een slimme voorspelling →|is geen voorspelling}}",
+    "de": "Der Wert !{{ist eine intelligente Prognose →|ist keine Prognose}}"
+  },
+  "hint": {
+    "en": "Forward projection (e.g. battery drain since last real report). Title shows · → predicted",
+    "fr": "Projection (ex. décharge batterie depuis le dernier relevé réel). Titre : · → prévu",
+    "nl": "Projectie (bijv. batterijdrain). Titel: · → voorspeld",
+    "de": "Prognose (z. B. Batterieentladung). Titel: · → prognostiziert"
+  },
+  "args": [
+    {
+      "type": "device",
+      "name": "device",
+      "filter": "driver_id!=none"
+    },
+    {
+      "type": "dropdown",
+      "name": "capability",
+      "title": {
+        "en": "Value",
+        "fr": "Valeur",
+        "nl": "Waarde",
+        "de": "Wert"
+      },
+      "values": [
+        { "id": "measure_power", "title": { "en": "Power (W)", "fr": "Puissance (W)" } },
+        { "id": "measure_voltage", "title": { "en": "Voltage (V)", "fr": "Tension (V)" } },
+        { "id": "measure_current", "title": { "en": "Current (A)", "fr": "Courant (A)" } },
+        { "id": "meter_power", "title": { "en": "Energy (kWh)", "fr": "Énergie (kWh)" } },
+        { "id": "measure_battery", "title": { "en": "Battery (%)", "fr": "Batterie (%)" } },
+        { "id": "measure_temperature", "title": { "en": "Temperature", "fr": "Température" } },
+        { "id": "measure_humidity", "title": { "en": "Humidity", "fr": "Humidité" } }
+      ]
+    }
+  ]
+}
