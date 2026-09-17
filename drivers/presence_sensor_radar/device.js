@@ -215,6 +215,10 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
     const prevMotion = edgeMotion ? this.getCapabilityValue('alarm_motion') : undefined;
     const prevHuman = edgeHuman ? this.getCapabilityValue('alarm_human') : undefined;
     const result = await super.safeSetCapabilityValue(capability, value);
+    if (edgeMotion || edgeHuman) {
+      // WHY(P2557 / VicHY #2243): tip-lag 9.0.992 still flips to curtain — re-lock on presence edges
+      this._nudgeSensorClassLock().catch(() => {});
+    }
     if (edgeMotion) {
       if (typeof this.hasCapability === 'function' && this.hasCapability('alarm_human')) {
         await super.safeSetCapabilityValue('alarm_human', value).catch(() => {});
@@ -233,6 +237,27 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
       this._triggerPresenceFlows(value);
     }
     return result;
+  }
+
+  /**
+   * WHY(P2557 / VicHY #2243): Homey can flip class to curtain while tip lags —
+   * throttle sensor re-lock so presence RX keeps UI on sensor.
+   */
+  async _nudgeSensorClassLock() {
+    const now = Date.now();
+    if (this._lastClassNudgeAt && (now - this._lastClassNudgeAt) < 15_000) {return;}
+    this._lastClassNudgeAt = now;
+    try {
+      const mfrNow = (MfrHelper.getManufacturerName(this) || '').toLowerCase();
+      const forceMains = this.mainsPowered || MAINS_POWERED_RADARS.has(mfrNow) || /clrdrnya|sbyx0lm6/.test(mfrNow);
+      if (!forceMains || typeof this.getClass !== 'function' || typeof this.setClass !== 'function') {return;}
+      const cls = String(this.getClass() || '');
+      if (cls && cls !== 'sensor') {
+        await this.setClass('sensor').catch(() => {});
+        await this._healRadarPhantomCaps().catch(() => {});
+        this.log(`[RADAR] P2557 class nudge sensor (was ${cls})`);
+      }
+    } catch (_e) { /* soft */ }
   }
 
   async onNodeInit({ zclNode }) {
