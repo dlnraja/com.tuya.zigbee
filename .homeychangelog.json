@@ -1737,5 +1737,8 @@
   },
   "5.12.236": {
     "en": "Reliability BOTH: P216 normalize ZCL battery (no blind /2) on Tuya parsers."
+  },
+  "5.12.237": {
+    "en": "CI dual-app: soft-skip missing MASTER_ONLY critical tests on stable syntax-check."
   }
 }

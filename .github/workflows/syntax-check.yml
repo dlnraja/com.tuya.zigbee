@@ -226,27 +226,46 @@ jobs:
         run: node tools/ci/p216-zcl-battery-half-percent-gate.js
 
       - name: Critical layer + battery tests (P206–P209)
+        # P2545i dual-app: soft-skip missing MASTER_ONLY critical tests on stable LTS
         run: |
-          node --test test/critical/layer-coverage.test.js
-          node --test test/critical/multi-protocol-battery.test.js
-          node --test test/critical/layer-signal-fusion.test.js
-          node --test test/critical/commit-capability.test.js
-          node --test test/critical/time-cluster-policy.test.js
-          node --test test/critical/energy-battery-button-flows.test.js
+          set -e
+          for f in \
+            test/critical/layer-coverage.test.js \
+            test/critical/multi-protocol-battery.test.js \
+            test/critical/layer-signal-fusion.test.js \
+            test/critical/commit-capability.test.js \
+            test/critical/time-cluster-policy.test.js \
+            test/critical/energy-battery-button-flows.test.js
+          do
+            if [ -f "$f" ]; then
+              node --test "$f"
+            else
+              echo "SKIP (absent on this track): $f"
+            fi
+          done
 
       - name: P2138 BSEED dimmer + Poll Control tests
         run: |
-          node --test test/critical/p2138-bseed-wall-dimmer.test.js
-          node --test test/critical/poll-control-policy.test.js
-          node --test test/critical/p214-intelligent-protocol-detect.test.js
-          node --test test/critical/p2435-gh540-544-switch-pairing.test.js
-          node --test test/critical/p2436-homey-match-moes-bot-mocks.test.js
-          node --test test/critical/p2437-ai-forfait-cursor-hooks.test.js
-          node --test test/critical/p2438-multi-source-harvest-ai-limit.test.js
-          node --test test/critical/p2439-kaflzta4-smart-knob-button.test.js
-          node --test test/critical/p2452-gh-issue-ssot.test.js
-          node --test test/critical/p2453-gmail-gh-couple-locks.test.js
-          node --test test/critical/p2454-package-lock-integrity.test.js
+          set -e
+          for f in \
+            test/critical/p2138-bseed-wall-dimmer.test.js \
+            test/critical/poll-control-policy.test.js \
+            test/critical/p214-intelligent-protocol-detect.test.js \
+            test/critical/p2435-gh540-544-switch-pairing.test.js \
+            test/critical/p2436-homey-match-moes-bot-mocks.test.js \
+            test/critical/p2437-ai-forfait-cursor-hooks.test.js \
+            test/critical/p2438-multi-source-harvest-ai-limit.test.js \
+            test/critical/p2439-kaflzta4-smart-knob-button.test.js \
+            test/critical/p2452-gh-issue-ssot.test.js \
+            test/critical/p2453-gmail-gh-couple-locks.test.js \
+            test/critical/p2454-package-lock-integrity.test.js
+          do
+            if [ -f "$f" ]; then
+              node --test "$f"
+            else
+              echo "SKIP (absent on this track): $f"
+            fi
+          done
           npm run check:p244x
           npm run check:p246x
           npm run check:p248x
