@@ -1,15 +1,15 @@
 # Project Status
 
-> Auto-generated on 2026-09-16
+> Auto-generated on 2026-09-17
 
 ## Overview
 
 | Metric | Value |
 |--------|-------|
-| Version | v9.0.979 |
+| Version | v9.0.1022 |
 | Drivers | 431 |
-| Fingerprints | 15,602 |
-| Last Updated | 2026-09-16 |
+| Fingerprints | 16,452 |
+| Last Updated | 2026-09-17 |
 
 ## Drivers by Category
 
