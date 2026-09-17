@@ -245,6 +245,7 @@ jobs:
           done
 
       - name: P2138 BSEED dimmer + Poll Control tests
+        # P2545k dual-app: LTS reliability subset only — skip MASTER_ONLY forfait/AI IDE tests
         run: |
           set -e
           for f in \
@@ -253,12 +254,12 @@ jobs:
             test/critical/p214-intelligent-protocol-detect.test.js \
             test/critical/p2435-gh540-544-switch-pairing.test.js \
             test/critical/p2436-homey-match-moes-bot-mocks.test.js \
-            test/critical/p2437-ai-forfait-cursor-hooks.test.js \
-            test/critical/p2438-multi-source-harvest-ai-limit.test.js \
             test/critical/p2439-kaflzta4-smart-knob-button.test.js \
             test/critical/p2452-gh-issue-ssot.test.js \
             test/critical/p2453-gmail-gh-couple-locks.test.js \
-            test/critical/p2454-package-lock-integrity.test.js
+            test/critical/p2454-package-lock-integrity.test.js \
+            test/critical/p2545g-l14-smart-battery.test.js \
+            test/critical/p2545i-syntax-soft-skip.test.js
           do
             if [ -f "$f" ]; then
               node --test "$f"
@@ -266,11 +267,16 @@ jobs:
               echo "SKIP (absent on this track): $f"
             fi
           done
+          # MASTER_ONLY skipped on purpose: p2437/p2438 Cursor forfait hooks (not Homey LTS runtime)
+          echo "SKIP MASTER_ONLY: p2437-ai-forfait + p2438 multi-source AI (stable LTS)"
           npm run check:p244x
           npm run check:p246x
           npm run check:p248x
-          npm run check:p249x
           npm run check:publish
+          # check:p249x is mega master soak — run publish-critical subset only on stable
+          npm run check:p2490
+          npm run check:p2494
+          npm run check:p2496
 
       - name: Validate Homey SDK3 compliance
         run: |
