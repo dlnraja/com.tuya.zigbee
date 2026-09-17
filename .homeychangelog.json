@@ -3440,5 +3440,8 @@
   },
   "9.0.993": {
     "en": "Hardened SDK3 deferred init helper (no bare timers)."
+  },
+  "9.0.994": {
+    "en": "Removed wrong OEM fingerprint bleed onto 2-gang switch driver."
   }
 }
