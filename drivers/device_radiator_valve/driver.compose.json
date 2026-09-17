@@ -1,8 +1,8 @@
 {
   "name": {
-    "en": "Device Radiator Valve",
+    "en": "Radiator Valve TRV",
     "nl": "Radiatorkraan",
-    "fr": "Vanne de radiateur",
+    "fr": "Vanne de radiateur TRV",
     "de": "Heizkörperventil",
     "es": "Válvula de radiador"
   },
@@ -40,7 +40,9 @@
       "1": {
         "clusters": [
           0,
-          6
+          4,
+          5,
+          61184
         ]
       }
     },
