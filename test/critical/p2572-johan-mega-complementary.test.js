@@ -47,4 +47,11 @@ describe('P2572 Johan mega complementary OUR app', () => {
     assert.equal(hasCouple('wall_dimmer_tuya', 'm1cvyneb', 'TS0601'), true);
     assert.equal(hasCouple('wall_switch_6_gang_tuya', 'c8ipbljq', 'TS0601'), true);
   });
+
+  it('contact_sensor never claims TS0601 (P126); pay2byax ZG path retained', () => {
+    const z = JSON.parse(fs.readFileSync(path.join(ROOT, 'drivers/contact_sensor/driver.compose.json'), 'utf8')).zigbee || {};
+    assert.equal((z.productId || []).some((p) => String(p).toUpperCase() === 'TS0601'), false);
+    assert.ok((z.manufacturerName || []).some((m) => /pay2byax/i.test(m)));
+    assert.equal(hasCouple('contact_sensor_zigbee', 'pay2byax', 'TS0601'), true);
+  });
 });
