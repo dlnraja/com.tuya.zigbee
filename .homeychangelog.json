@@ -1719,5 +1719,8 @@
   },
   "5.12.230": {
     "en": "CI heal: mfs_db align + wire check:p246x/p248x reliability gates."
+  },
+  "5.12.231": {
+    "en": "Stable CI: p246x reliability subset only (LTS helpers present)."
   }
 }
