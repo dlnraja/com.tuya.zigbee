@@ -18,6 +18,8 @@ const ROOT = path.join(__dirname, '..', '..');
 const {
   TUYA_EF00_ONLY_CLUSTERS,
   composeForbidsOnOffCluster,
+  composeCompatibleWithEf00Interview,
+  isEf00OnlyCompatibleInterview,
   isKnownEf00OnlyManufacturer,
 } = require(path.join(ROOT, 'lib/zigbee/Ef00OnlyInterview.js'));
 
@@ -57,11 +59,13 @@ describe('P2569 Michaelp ogx8u5z6 TRV EF00 pair', () => {
   });
 
   it('Michaelp interview shape is EF00-compatible (no OnOff)', () => {
-    // Live #2244 interview clusters
+    // Live #2244 interview clusters (± proprietary 0xED00)
     const interview = [4, 5, 61184, 0, 60672];
     assert.ok(!interview.includes(6));
     for (const need of TUYA_EF00_ONLY_CLUSTERS) {
       assert.ok(interview.includes(need), `interview missing ${need}`);
     }
+    assert.ok(isEf00OnlyCompatibleInterview(interview));
+    assert.ok(composeCompatibleWithEf00Interview(TUYA_EF00_ONLY_CLUSTERS, interview));
   });
 });

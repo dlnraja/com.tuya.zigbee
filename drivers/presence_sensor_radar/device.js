@@ -285,6 +285,12 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
     // WHY(VicHY #2227 / P2431): Arm DynCap guards and heal phantom curtain/battery caps FIRST
     // before super.onNodeInit can trigger any background adaptation or restore stale store caps.
     this._armRadarDynCapGuards();
+    // WHY(P2573 / VicHY #2243): clrdrnya/gkfbdvyx interview is EF00-only ([0,61184]) —
+    // force pure Tuya DP before Hybrid/ZCL can prefer hollow OnOff.
+    try {
+      const { forcePureTuyaDp } = require('../../lib/zigbee/Ef00OnlyInterview');
+      forcePureTuyaDp(this);
+    } catch (_e) { /* soft */ }
     try {
       const earlyCfg = this._getRadarConfig();
       this._radarFloodCalm = !!(earlyCfg && (earlyCfg.floodCalm || earlyCfg.mainsPowered));
