@@ -1,6 +1,6 @@
 {
   "name": "com.dlnraja.tuya.zigbee",
-  "version": "5.12.243",
+  "version": "5.12.244",
   "description": "Tuya Unified Zigbee - Local-first control with AI automation",
   "main": "app.js",
   "scripts": {
@@ -220,7 +220,7 @@
     "check:p2537": "node tools/ci/p2537-zigbee-tuya-evolution-gate.js && node --test test/critical/p2537-zigbee-tuya-evolution.test.js",
     "check:p2540": "node --test test/critical/p2540-complementary-dp-cluster-raw.test.js",
     "check:p2541": "node --test test/critical/p2541-complementary-reinstate-aq.test.js",
-    "check:p254x": "npm run check:p2540 && npm run check:p2541 && npm run check:p2542 && npm run check:p2543 && npm run check:p2544 && npm run check:p2545g && npm run check:p2547 && npm run check:p2548",
+    "check:p254x": "npm run check:p2540 && npm run check:p2541 && npm run check:p2542 && npm run check:p2543 && npm run check:p2544 && npm run check:p2545g && npm run check:p2547 && npm run check:p2548 && npm run check:p2550",
     "check:p2542": "node --test test/critical/p2542-local-auto-improve.test.js && node tools/ci/p2542-local-auto-improve-gate.js",
     "improve:local": "node tools/ci/local-auto-improve-orchestrator.js",
     "improve:local:quick": "node tools/ci/local-auto-improve-orchestrator.js --quick",
@@ -234,7 +234,10 @@
     "check:p2545g": "node --test test/critical/p2545g-l14-smart-battery.test.js",
     "check:p2546": "node --test test/critical/p2546-vichy-radar-periodic-heal.test.js",
     "check:p2547": "node --test test/critical/p2547-external-sdk3-inspiration.test.js && node tools/ci/p2547-external-sdk3-inspiration-gate.js",
-    "check:p2548": "node --test test/critical/p2548-vichy-radar-class-lock-no-update.test.js"
+    "check:p2548": "node --test test/critical/p2548-vichy-radar-class-lock-no-update.test.js",
+    "check:p2550": "node --test test/critical/p2550-peter-vichy-history-presence.test.js",
+    "check:p2551": "npm run check:p2550",
+    "check:p255x": "npm run check:p2550"
   },
   "keywords": [
     "homey",

@@ -60,6 +60,7 @@ class Button1GangDevice extends ButtonDevice {
     // WHY(P2512 / Peter #2233–#2234 diags 8afffc76 / 1e071a86): also force
     // preventInsights:false every boot — app.json drift had getable:false and
     // heal only ran on battery ingest (sleepy never wakes → History stays gone).
+    // WHY(P2550 / Peter #2239 b8b78521): % OK but History empty → recycle Insights log.
     try {
       if (typeof this._ensureBatteryCapabilityUi === 'function') {
         await this._ensureBatteryCapabilityUi().catch(() => {});
@@ -70,6 +71,7 @@ class Button1GangDevice extends ButtonDevice {
             ...cur,
             getable: true,
             preventInsights: false,
+            units: cur.units || '%',
           }).catch(() => {});
           this.log('[BUTTON_WIRELESS_1] P2499/P2512 restored measure_battery getable/insights');
         }

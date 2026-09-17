@@ -241,6 +241,9 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
       this._radarFloodCalm = !!(earlyCfg && (earlyCfg.floodCalm || earlyCfg.mainsPowered));
     } catch (_e) { this._radarFloodCalm = true; /* driver is radar */ }
     await this._healRadarPhantomCaps();
+    // WHY(P2551 / VicHY #2240 screenshot): dual History (Presence + Alarma movimiento)
+    // — silence motion insights; keep alarm_human Presence titles for the timeline.
+    await this._healPresenceHistoryUx().catch(() => {});
     // WHY(P2386 / VicHY #2222): Homey may re-apply store caps async after app update —
     // re-heal shortly after boot so "blind mode" does not stick until delete+re-pair.
     this._scheduleRadarPhantomReheal();
@@ -327,6 +330,61 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
     } catch (e) {
       this.log('[RADAR] P2379 dyn-cap guards skipped:', e.message);
     }
+  }
+
+  /**
+   * WHY(P2551 / VicHY #2240 image Presencia baño): History logged BOTH
+   * "Presence detected" (alarm_human) AND "Alarma de movimiento" (alarm_motion).
+   * Silence motion insights; keep human-presence titles. Capability WHEN still works.
+   * Also ensure alarm_human exists so Presence WHEN / is_present stay coherent.
+   */
+  async _healPresenceHistoryUx() {
+    try {
+      if (typeof this.hasCapability === 'function' && !this.hasCapability('alarm_human')
+          && typeof this.addCapability === 'function') {
+        await this.addCapability('alarm_human').catch(() => {});
+      }
+      if (typeof this.setCapabilityOptions !== 'function') return;
+      if (this.hasCapability?.('alarm_motion')) {
+        const curM = (typeof this.getCapabilityOptions === 'function'
+          && this.getCapabilityOptions('alarm_motion')) || {};
+        if (curM.preventInsights !== true) {
+          await this.setCapabilityOptions('alarm_motion', {
+            ...curM,
+            preventInsights: true,
+            title: curM.title || {
+              en: 'Motion alarm', nl: 'Bewegingsalarm', fr: 'Alarme de mouvement',
+              de: 'Bewegungsalarm', es: 'Alarma de movimiento',
+            },
+          }).catch(() => {});
+          this.log('[RADAR] P2551 alarm_motion preventInsights (dedupe History)');
+        }
+      }
+      if (this.hasCapability?.('alarm_human')) {
+        const curH = (typeof this.getCapabilityOptions === 'function'
+          && this.getCapabilityOptions('alarm_human')) || {};
+        if (!curH.insightsTitleTrue || curH.preventInsights === true) {
+          await this.setCapabilityOptions('alarm_human', {
+            ...curH,
+            preventInsights: false,
+            getable: true,
+            title: curH.title || {
+              en: 'Human presence', nl: 'Menselijke aanwezigheid',
+              fr: 'Présence humaine', de: 'Menschliche Anwesenheit', es: 'Presencia humana',
+            },
+            insightsTitleTrue: curH.insightsTitleTrue || {
+              en: 'Presence detected', nl: 'Aanwezigheid gedetecteerd',
+              fr: 'Présence détectée', de: 'Anwesenheit erkannt', es: 'Presencia detectada',
+            },
+            insightsTitleFalse: curH.insightsTitleFalse || {
+              en: 'No presence', nl: 'Geen aanwezigheid',
+              fr: 'Aucune présence', de: 'Keine Anwesenheit', es: 'Sin presencia',
+            },
+          }).catch(() => {});
+          this.log('[RADAR] P2551 alarm_human Insights titles restored');
+        }
+      }
+    } catch (_e) { /* soft */ }
   }
 
   /**
@@ -1023,6 +1081,8 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
     // WHY(P2526 / VicHY 74e5cae7 @ 9.0.945): custom WHEN "Presence detected" must fire
     // on false→true — native Homey "Motion alarm" works via capability; this card does not.
     // WHY(P2546): dedupe identical edges so boot/heal re-paints do not spam flows.
+    // WHY(P2551 / VicHY #2240): History dual spam fixed via alarm_motion.preventInsights
+    // (compose + runtime heal); this edge still drives the declared WHEN cards.
     const next = !!detected;
     if (this._lastPresenceFlowEdge === next) return;
     this._lastPresenceFlowEdge = next;
@@ -1030,7 +1090,7 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
       ? 'presence_sensor_radar_presence_detected'
       : 'presence_sensor_radar_presence_cleared';
     try {
-      this.log?.(`[P2526/P2546] flow ${cardId} edge=${next}`);
+      this.log?.(`[P2526/P2546/P2551] flow ${cardId} edge=${next}`);
       this.homey.flow.getDeviceTriggerCard(cardId).trigger(this, {}).catch((e) => {
         this.log?.(`[P2526] flow ${cardId} trigger failed: ${e?.message || e}`);
       });
