@@ -151,6 +151,44 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
   }
 
   /**
+   * WHY(P2548 / VicHY #2241): Homey can flip class to windowcoverings hours after boot
+   * even with auto-updates blocked (store/cap restore race). Refuse non-sensor class on
+   * mains MTG/clrdrnya — heal path also forces sensor.
+   */
+  async setClass(deviceClass) {
+    try {
+      const mfr = (MfrHelper.getManufacturerName(this) || '').toLowerCase();
+      const forceMains = this.mainsPowered || MAINS_POWERED_RADARS.has(mfr) || /clrdrnya|sbyx0lm6/.test(mfr);
+      const next = String(deviceClass || '');
+      if (forceMains && next && next !== 'sensor' && !/^other$/i.test(next)) {
+        this.log(`[RADAR] P2548 refused setClass(${next}) — locked sensor`);
+        if (typeof super.setClass === 'function') {
+          return super.setClass('sensor');
+        }
+        return;
+      }
+    } catch (_e) { /* soft */ }
+    if (typeof super.setClass === 'function') {
+      return super.setClass(deviceClass);
+    }
+  }
+
+  /**
+   * WHY(P2548): never let Homey/adapters strip presence caps — "type flip" often
+   * coincides with silent remove of alarm_motion → presence WHEN stops (#2240).
+   */
+  async removeCapability(capability) {
+    const cap = String(capability || '');
+    if (/^alarm_motion|^alarm_human$|^alarm_presence$|^button\.1$/.test(cap)) {
+      this.log(`[RADAR] P2548 refused removeCapability(${cap}) (presence lock)`);
+      return;
+    }
+    if (typeof super.removeCapability === 'function') {
+      return super.removeCapability(capability);
+    }
+  }
+
+  /**
    * v8.0.1: Keep alarm_human (presence) in sync with alarm_motion.
    * Forum bug (ka8l86iu): the device exposes motion but never presence.
    * Root cause: ZCL occupancy (0x0406) updates in the base class only feed
@@ -381,7 +419,9 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
           }
         }, ms);
       }
-      // Periodic: every 10 min while device lives (cleared in onUninit/onDeleted)
+      // Periodic: every 2 min while device lives (cleared in onUninit/onDeleted)
+      // WHY(P2548 / VicHY #2241): Homey store restore can flip class without tip update;
+      // 10 min left the tile broken too long — 120s catches curtain UI + dead presence WHEN.
       if (!this._radarPhantomHealInterval && typeof safeSetInterval === 'function') {
         this._radarPhantomHealInterval = safeSetInterval(this, () => {
           const mfr = (MfrHelper.getManufacturerName(this) || '').toLowerCase();
@@ -391,7 +431,7 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
           this._armRadarDynCapGuards();
           this._healRadarPhantomCaps().catch(() => {});
           this._applyRadarCapabilityProfile().catch(() => {});
-        }, 600_000);
+        }, 120_000);
       }
     } catch (_e) {
       try {
@@ -412,6 +452,26 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
           clearInterval(this._radarPhantomHealInterval);
         }
         this._radarPhantomHealInterval = null;
+      }
+    } catch (_e) { /* soft */ }
+  }
+
+  /**
+   * WHY(P2548 / VicHY #2241): Zigbee remesh / parent change around App Store publishes
+   * can wake the node and Homey may restore stale curtain caps — heal on announce.
+   */
+  async onEndDeviceAnnounce() {
+    try {
+      if (typeof super.onEndDeviceAnnounce === 'function') {
+        await super.onEndDeviceAnnounce();
+      }
+    } catch (_e) { /* soft */ }
+    try {
+      this._armRadarDynCapGuards();
+      await this._healRadarPhantomCaps();
+      const mfr = (MfrHelper.getManufacturerName(this) || '').toLowerCase();
+      if (this.mainsPowered || MAINS_POWERED_RADARS.has(mfr) || /clrdrnya|sbyx0lm6/.test(mfr)) {
+        await this._applyRadarCapabilityProfile().catch(() => {});
       }
     } catch (_e) { /* soft */ }
   }

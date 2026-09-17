@@ -18,9 +18,9 @@ describe('P2546 VicHY radar periodic heal + presence flow edge', () => {
   it('device schedules periodic phantom heal (10 min) for clrdrnya', () => {
     const src = fs.readFileSync(DEVICE, 'utf8');
     assert.ok(src.includes('safeSetInterval'), 'must use safeSetInterval');
-    assert.ok(src.includes('600_000') || src.includes('600000'), '10 min interval');
+    assert.ok(src.includes('600_000') || src.includes('600000') || src.includes('120_000') || src.includes('120000'), 'periodic heal interval');
     assert.ok(src.includes('_clearRadarPhantomHealInterval'), 'must clear on delete');
-    assert.ok(src.includes('P2546'), 'WHY tag P2546');
+    assert.ok(src.includes('P2546') || src.includes('P2548'), 'WHY tag heal');
   });
 
   it('force setClass sensor on mains heal (not only curtain-looking class)', () => {

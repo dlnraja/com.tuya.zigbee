@@ -3443,5 +3443,8 @@
   },
   "9.0.994": {
     "en": "Removed wrong OEM fingerprint bleed onto 2-gang switch driver."
+  },
+  "9.0.995": {
+    "en": "Presence radar: lock sensor class, faster heal if Homey flips type without app update."
   }
 }
