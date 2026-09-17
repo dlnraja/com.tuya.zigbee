@@ -1752,5 +1752,8 @@
   },
   "5.12.241": {
     "en": "Improved Zigbee init safety and battery reporting (SDK3 P216)."
+  },
+  "5.12.242": {
+    "en": "Hardened SDK3 deferred init helper (no bare timers) + battery normalize."
   }
 }
