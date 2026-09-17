@@ -1,0 +1,40 @@
+{
+  "id": "contact_entry_soft_enroll",
+  "title": {
+    "en": "Contact Entry Soft — door opens lights",
+    "fr": "Contact Entry Soft — porte → lumières"
+  },
+  "args": [
+    {
+      "type": "device",
+      "name": "contact",
+      "filter": "capabilities=alarm_contact|capabilities=alarm_generic",
+      "title": { "en": "Contact / door", "fr": "Contact / porte" }
+    },
+    {
+      "type": "device",
+      "name": "light_a",
+      "filter": "capabilities=onoff",
+      "title": { "en": "Light A", "fr": "Lumière A" }
+    },
+    {
+      "type": "device",
+      "name": "light_b",
+      "filter": "capabilities=onoff",
+      "title": { "en": "Light B (optional)", "fr": "Lumière B (option)" },
+      "optional": true
+    },
+    {
+      "type": "text",
+      "name": "quiet_start",
+      "title": { "en": "Quiet start (optional)", "fr": "Début calme (option)" },
+      "optional": true
+    },
+    {
+      "type": "text",
+      "name": "quiet_end",
+      "title": { "en": "Quiet end (optional)", "fr": "Fin calme (option)" },
+      "optional": true
+    }
+  ]
+}

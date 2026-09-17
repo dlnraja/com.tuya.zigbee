@@ -1,94 +1,190 @@
 {
   "id": "P2563-world-zigbee-smart-features",
-  "version": "3.0.0",
+  "version": "4.0.0",
   "updated": "2026-09-17",
   "classify": "MASTER_ONLY",
   "policy": {
     "brandingFreeUi": true,
     "forbiddenUiTokens": [
-      "Hue", "Philips", "Signify", "MotionAware", "True Tone", "TruTone",
-      "Ambilight", "SpaceSense", "WiZ", "Lutron", "HomeKit", "Adaptive Lighting",
-      "Dirigera", "TRÅDFRI", "Tradfri", "Aqara", "SmartThings", "Xiaomi", "Yeelight"
+      "Hue",
+      "Philips",
+      "Signify",
+      "MotionAware",
+      "True Tone",
+      "TruTone",
+      "Ambilight",
+      "SpaceSense",
+      "WiZ",
+      "Lutron",
+      "HomeKit",
+      "Adaptive Lighting",
+      "Dirigera",
+      "TRÅDFRI",
+      "Tradfri",
+      "Aqara",
+      "SmartThings",
+      "Xiaomi",
+      "Yeelight"
     ],
     "note": "Maps commercial hub concepts → Universal Tuya unbranded reimplementations. P2565 = multi-vendor wave."
   },
   "markets": {
-    "eu_uk": ["Signify Hue Bridge/Pro", "IKEA Dirigera", "Aqara Hub M3", "Homey Pro", "deCONZ"],
-    "na": ["Hue Bridge/Pro", "SmartThings", "Hubitat", "Lutron", "Home Assistant Z2M/ZHA"],
-    "apac": ["Aqara", "Tuya hubs", "Xiaomi", "Samsung SmartThings"],
-    "open": ["Zigbee2MQTT", "ZHA", "deCONZ", "Zigbee Alliance Ambient Sensing (CSA)"]
+    "eu_uk": [
+      "Signify Hue Bridge/Pro",
+      "IKEA Dirigera",
+      "Aqara Hub M3",
+      "Homey Pro",
+      "deCONZ"
+    ],
+    "na": [
+      "Hue Bridge/Pro",
+      "SmartThings",
+      "Hubitat",
+      "Lutron",
+      "Home Assistant Z2M/ZHA"
+    ],
+    "apac": [
+      "Aqara",
+      "Tuya hubs",
+      "Xiaomi",
+      "Samsung SmartThings"
+    ],
+    "open": [
+      "Zigbee2MQTT",
+      "ZHA",
+      "deCONZ",
+      "Zigbee Alliance Ambient Sensing (CSA)"
+    ]
   },
   "gatewayConcepts": [
     {
       "commercial": "Bridge Pro MotionAware / WiZ SpaceSense",
-      "vendors": ["Signify", "WiZ"],
+      "vendors": [
+        "Signify",
+        "WiZ"
+      ],
       "genericId": "lamp_mesh_occupancy",
-      "uiName": { "en": "Lamp Mesh Occupancy", "fr": "Occupation maillage lampes" },
+      "uiName": {
+        "en": "Lamp Mesh Occupancy",
+        "fr": "Occupation maillage lampes"
+      },
       "feasibilityOnHomey": "full_soft",
       "module": "lib/features/LampMeshOccupancy.js"
     },
     {
       "commercial": "Apple Adaptive Lighting / daytime white fade",
-      "vendors": ["Apple", "Signify"],
+      "vendors": [
+        "Apple",
+        "Signify"
+      ],
       "genericId": "soft_daylight_fade",
-      "uiName": { "en": "Soft Daylight Fade", "fr": "Fondu lumière du jour" },
+      "uiName": {
+        "en": "Soft Daylight Fade",
+        "fr": "Fondu lumière du jour"
+      },
       "feasibilityOnHomey": "full",
       "module": "lib/features/SoftDaylightFade.js"
     },
     {
       "commercial": "IKEA Tradfri/Dirigera remote→light binding",
-      "vendors": ["IKEA"],
+      "vendors": [
+        "IKEA"
+      ],
       "genericId": "soft_device_link",
-      "uiName": { "en": "Soft Device Link", "fr": "Soft Device Link" },
+      "uiName": {
+        "en": "Soft Device Link",
+        "fr": "Soft Device Link"
+      },
       "feasibilityOnHomey": "full_soft",
       "how": "App-level capability edge → lights (not Zigbee ZDO bind)",
       "module": "lib/features/SoftDeviceLink.js",
-      "flowIds": ["soft_device_link_enroll"]
+      "flowIds": [
+        "soft_device_link_enroll"
+      ]
     },
     {
       "commercial": "Aqara motion + illuminance lighting",
-      "vendors": ["Aqara", "Xiaomi"],
+      "vendors": [
+        "Aqara",
+        "Xiaomi"
+      ],
       "genericId": "lux_adaptive_dim",
-      "uiName": { "en": "Lux Adaptive Dim", "fr": "Lux Adaptive Dim" },
+      "uiName": {
+        "en": "Lux Adaptive Dim",
+        "fr": "Lux Adaptive Dim"
+      },
       "feasibilityOnHomey": "full",
       "module": "lib/features/LuxAdaptiveDim.js",
-      "flowIds": ["lux_adaptive_dim_enroll"]
+      "flowIds": [
+        "lux_adaptive_dim_enroll"
+      ]
     },
     {
       "commercial": "SmartThings / HA master–follower mirror",
-      "vendors": ["SmartThings", "Home Assistant"],
+      "vendors": [
+        "SmartThings",
+        "Home Assistant"
+      ],
       "genericId": "mirror_light_sync",
-      "uiName": { "en": "Mirror Light Sync", "fr": "Mirror Light Sync" },
+      "uiName": {
+        "en": "Mirror Light Sync",
+        "fr": "Mirror Light Sync"
+      },
       "feasibilityOnHomey": "full",
       "module": "lib/features/MirrorLightSync.js",
-      "flowIds": ["mirror_light_sync_enroll"]
+      "flowIds": [
+        "mirror_light_sync_enroll"
+      ]
     },
     {
       "commercial": "SmartThings arrival / Aqara welcome lighting",
-      "vendors": ["SmartThings", "Aqara"],
+      "vendors": [
+        "SmartThings",
+        "Aqara"
+      ],
       "genericId": "welcome_home_soft",
-      "uiName": { "en": "Welcome Home Soft", "fr": "Welcome Home Soft" },
+      "uiName": {
+        "en": "Welcome Home Soft",
+        "fr": "Welcome Home Soft"
+      },
       "feasibilityOnHomey": "full",
       "module": "lib/features/WelcomeHomeSoft.js",
-      "flowIds": ["welcome_home_soft_enroll"]
+      "flowIds": [
+        "welcome_home_soft_enroll"
+      ]
     },
     {
       "commercial": "Aqara absence → energy-saving mode",
-      "vendors": ["Aqara"],
+      "vendors": [
+        "Aqara"
+      ],
       "genericId": "absence_energy_soft",
-      "uiName": { "en": "Absence Energy Soft", "fr": "Absence Energy Soft" },
+      "uiName": {
+        "en": "Absence Energy Soft",
+        "fr": "Absence Energy Soft"
+      },
       "feasibilityOnHomey": "full",
       "module": "lib/features/AbsenceEnergySoft.js",
-      "flowIds": ["absence_energy_soft_enroll"]
+      "flowIds": [
+        "absence_energy_soft_enroll"
+      ]
     },
     {
       "commercial": "Lutron / ST leave-home staggered off",
-      "vendors": ["Lutron", "SmartThings"],
+      "vendors": [
+        "Lutron",
+        "SmartThings"
+      ],
       "genericId": "staggered_leave_off",
-      "uiName": { "en": "Staggered Leave Off", "fr": "Extinction décalée" },
+      "uiName": {
+        "en": "Staggered Leave Off",
+        "fr": "Extinction décalée"
+      },
       "feasibilityOnHomey": "full",
       "module": "lib/features/StaggeredLeaveOff.js",
-      "flowIds": ["staggered_leave_off"]
+      "flowIds": [
+        "staggered_leave_off"
+      ]
     },
     {
       "commercial": "Solar / circadian automations",
@@ -100,7 +196,9 @@
       "commercial": "Motion → hallway scenes",
       "genericId": "path_light",
       "feasibilityOnHomey": "full",
-      "flowIds": ["hue_motion_lighting"]
+      "flowIds": [
+        "hue_motion_lighting"
+      ]
     },
     {
       "commercial": "Wake-up / go-to-sleep ramps",
@@ -110,14 +208,21 @@
     },
     {
       "commercial": "Away presence simulation / vacation",
-      "vendors": ["SmartThings", "Hubitat", "WiZ"],
+      "vendors": [
+        "SmartThings",
+        "Hubitat",
+        "WiZ"
+      ],
       "genericId": "lived_in_shuffle",
       "feasibilityOnHomey": "full",
       "module": "lib/managers/PresenceSimulationManager.js"
     },
     {
       "commercial": "Hubitat / ST location modes",
-      "vendors": ["Hubitat", "SmartThings"],
+      "vendors": [
+        "Hubitat",
+        "SmartThings"
+      ],
       "genericId": "house_mode",
       "feasibilityOnHomey": "full",
       "module": "lib/managers/HomeModeManager.js"
@@ -134,6 +239,106 @@
       "genericId": "room_cascade",
       "feasibilityOnHomey": "full_soft",
       "module": "lib/managers/MotionCascadeManager.js"
+    },
+    {
+      "commercial": "Quiet hours / do-not-disturb lighting",
+      "vendors": [
+        "Aqara",
+        "Lutron"
+      ],
+      "genericId": "quiet_hours",
+      "uiName": {
+        "en": "Quiet Hours",
+        "fr": "Heures calmes"
+      },
+      "feasibilityOnHomey": "full",
+      "module": "lib/features/QuietHoursGuard.js",
+      "flowIds": [
+        "quiet_hours_is_active"
+      ]
+    },
+    {
+      "commercial": "Door/contact entry lighting",
+      "vendors": [
+        "SmartThings",
+        "Lutron"
+      ],
+      "genericId": "contact_entry_soft",
+      "uiName": {
+        "en": "Contact Entry Soft",
+        "fr": "Contact Entry Soft"
+      },
+      "feasibilityOnHomey": "full",
+      "module": "lib/features/ContactEntrySoft.js",
+      "flowIds": [
+        "contact_entry_soft_enroll"
+      ]
+    },
+    {
+      "commercial": "Sunset Tracker / solar shades",
+      "vendors": [
+        "Lutron"
+      ],
+      "genericId": "shade_daylight_soft",
+      "uiName": {
+        "en": "Shade Daylight Soft",
+        "fr": "Shade Daylight Soft"
+      },
+      "feasibilityOnHomey": "full",
+      "module": "lib/features/ShadeDaylightSoft.js",
+      "flowIds": [
+        "shade_daylight_soft_enroll"
+      ]
+    },
+    {
+      "commercial": "Peak load shed / energy soft dim",
+      "vendors": [
+        "SmartThings",
+        "Hubitat"
+      ],
+      "genericId": "peak_load_soft_shed",
+      "uiName": {
+        "en": "Peak Load Soft Shed",
+        "fr": "Peak Load Soft Shed"
+      },
+      "feasibilityOnHomey": "full",
+      "module": "lib/features/PeakLoadSoftShed.js",
+      "flowIds": [
+        "peak_load_soft_shed_enroll"
+      ]
+    },
+    {
+      "commercial": "Auto-Off Timer",
+      "vendors": [
+        "Lutron"
+      ],
+      "genericId": "idle_auto_off_soft",
+      "uiName": {
+        "en": "Idle Auto-Off Soft",
+        "fr": "Idle Auto-Off Soft"
+      },
+      "feasibilityOnHomey": "full",
+      "module": "lib/features/IdleAutoOffSoft.js",
+      "flowIds": [
+        "idle_auto_off_soft_enroll"
+      ]
+    },
+    {
+      "commercial": "Night path / night light dim bias",
+      "vendors": [
+        "Xiaomi",
+        "Aqara"
+      ],
+      "genericId": "night_path_bias",
+      "uiName": {
+        "en": "Night Path Bias",
+        "fr": "Night Path Bias"
+      },
+      "feasibilityOnHomey": "full",
+      "module": "lib/features/NightPathBias.js",
+      "flowIds": [
+        "night_path_is_active"
+      ]
     }
   ],
   "homeyImplementations": {
@@ -150,7 +355,15 @@
     "daylightAtmosphere": "lib/features/DaylightAtmosphere.js",
     "homeMode": "lib/managers/HomeModeManager.js",
     "livedInShuffle": "lib/managers/PresenceSimulationManager.js",
-    "roomCascade": "lib/managers/MotionCascadeManager.js"
+    "roomCascade": "lib/managers/MotionCascadeManager.js",
+    "quietHours": "lib/features/QuietHoursGuard.js",
+    "contactEntrySoft": "lib/features/ContactEntrySoft.js",
+    "shadeDaylightSoft": "lib/features/ShadeDaylightSoft.js",
+    "peakLoadSoftShed": "lib/features/PeakLoadSoftShed.js",
+    "idleAutoOffSoft": "lib/features/IdleAutoOffSoft.js",
+    "nightPathBias": "lib/features/NightPathBias.js"
   },
-  "gates": { "npm": "check:p2565" }
+  "gates": {
+    "npm": "check:p2566"
+  }
 }

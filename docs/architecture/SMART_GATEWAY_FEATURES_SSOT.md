@@ -18,6 +18,12 @@ Branding-free Homey reimplementations of Zigbee hub smart features from Signify,
 | ST arrival / Aqara welcome | Welcome Home Soft |
 | Aqara absence energy-save | Absence Energy Soft |
 | Lutron/ST leave-home | Staggered Leave Off |
+| Quiet hours / DND | Quiet Hours |
+| Door/contact entry | Contact Entry Soft |
+| Sunset Tracker shades | Shade Daylight Soft |
+| Peak load shed | Peak Load Soft Shed |
+| Auto-Off Timer | Idle Auto-Off Soft |
+| Night path dim | Night Path Bias |
 | Entertainment RGB flood | Soft Ambient Sync (rate-limited) |
 | Hubitat/ST modes | House Mode |
 | Vacation / away shuffle | Lived-In Shuffle |

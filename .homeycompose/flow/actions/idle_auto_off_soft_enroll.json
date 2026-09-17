@@ -1,0 +1,27 @@
+{
+  "id": "idle_auto_off_soft_enroll",
+  "title": {
+    "en": "Idle Auto-Off Soft",
+    "fr": "Idle Auto-Off Soft"
+  },
+  "hint": {
+    "en": "Turns light off after idle minutes without change",
+    "fr": "Éteint la lumière après N minutes sans changement"
+  },
+  "args": [
+    {
+      "type": "device",
+      "name": "light",
+      "filter": "capabilities=onoff",
+      "title": { "en": "Light", "fr": "Lumière" }
+    },
+    {
+      "type": "number",
+      "name": "idle_minutes",
+      "title": { "en": "Idle minutes", "fr": "Minutes d'inactivité" },
+      "min": 1,
+      "max": 240,
+      "value": 30
+    }
+  ]
+}
