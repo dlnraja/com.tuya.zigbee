@@ -1429,6 +1429,26 @@ class TuyaUnifiedZigbeeApp extends Homey.App {
           return !!res;
         });
     });
+
+    // ── P2567 — 200-vector Soft Feature catalog ─────────────────────────────
+    soft(() => {
+      this.homey.flow.getActionCard('soft_feature_enable')
+        .registerRunListener(async (args) => {
+          const id = String(args.feature_id || '').trim();
+          if (!id) return false;
+          const res = this._ensureSmartGatewayHub().enableSoftFeature(id, {});
+          this.log(`[SOFT-FEATURE] enable ${id} ok=${res.ok}`);
+          return !!res.ok;
+        });
+    });
+
+    soft(() => {
+      this.homey.flow.getConditionCard('soft_feature_count_is')
+        .registerRunListener(async (args) => {
+          const min = Math.max(1, Number(args.min) || 200);
+          return this._ensureSmartGatewayHub().softFeatureCount() >= min;
+        });
+    });
   }
 
   // ═══════════════════════════════════════════════════════════════════════════

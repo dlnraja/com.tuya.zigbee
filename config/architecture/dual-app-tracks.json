@@ -494,6 +494,10 @@
     "p2566_improvement_vectors": {
       "tag": "MASTER_ONLY",
       "note": "Quiet Hours, Contact Entry, Shade Daylight, Peak Shed, Idle Auto-Off, Night Path bias"
+    },
+    "p2567_smart_features_200": {
+      "tag": "MASTER_ONLY",
+      "note": "200-vector SoftFeatureCatalog + SoftRecipeRunner declarative recipes"
     }
   }
 }
