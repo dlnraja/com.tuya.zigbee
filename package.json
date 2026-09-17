@@ -1,6 +1,6 @@
 {
   "name": "com.dlnraja.tuya.zigbee",
-  "version": "5.12.251",
+  "version": "5.12.252",
   "description": "Tuya Unified Zigbee - Local-first control with AI automation",
   "main": "app.js",
   "scripts": {
@@ -237,7 +237,7 @@
     "check:p2548": "node --test test/critical/p2548-vichy-radar-class-lock-no-update.test.js",
     "check:p2550": "node --test test/critical/p2550-peter-vichy-history-presence.test.js",
     "check:p2551": "npm run check:p2550",
-    "check:p255x": "npm run check:p2550 && npm run check:p2553 && npm run check:p2554 && npm run check:p2555 && npm run check:p2556 && npm run check:p2557 && npm run check:p2558",
+    "check:p255x": "npm run check:p2550 && npm run check:p2553 && npm run check:p2554 && npm run check:p2555 && npm run check:p2556 && npm run check:p2557 && npm run check:p2558 && npm run check:p2559",
     "check:p2553": "node --test test/critical/p2553-history-fleet-enable.test.js",
     "history:fleet": "node tools/ci/p2553-history-fleet-enable.js --dry-run",
     "history:fleet:apply": "node tools/ci/p2553-history-fleet-enable.js --apply",
@@ -245,7 +245,8 @@
     "check:p2555": "node --test test/critical/p2555-forum-soft-dismiss-still-treat.test.js",
     "check:p2556": "node --test test/critical/p2556-data-provenance.test.js",
     "check:p2557": "node --test test/critical/p2557-improve-all-provenance-forum.test.js",
-    "check:p2558": "node --test test/critical/p2558-elegant-provenance-ux.test.js"
+    "check:p2558": "node --test test/critical/p2558-elegant-provenance-ux.test.js",
+    "check:p2559": "node --test test/critical/p2559-fine-forum-github-treat.test.js"
   },
   "keywords": [
     "homey",
