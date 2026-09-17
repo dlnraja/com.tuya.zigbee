@@ -1,7 +1,7 @@
 {
   "_comment": "This file is generated. Please edit .homeycompose/app.json instead.",
   "id": "com.dlnraja.tuya.zigbee",
-  "version": "9.0.995",
+  "version": "9.0.996",
   "compatibility": ">=12.2.0",
   "platforms": [
     "local"
@@ -12089,10 +12089,12 @@
           "title": {
             "en": "Button 1",
             "fr": "Bouton 1"
-          }
+          },
+          "getable": false,
+          "setable": false,
+          "maintenanceAction": true
         },
         "measure_battery": {
-          "getable": true,
           "title": {
             "en": "Battery",
             "fr": "Batterie",
@@ -12104,6 +12106,8 @@
             "es": "Batería",
             "da": "Batteri"
           },
+          "units": "%",
+          "getable": true,
           "preventInsights": false
         }
       },
@@ -52683,7 +52687,43 @@
           "title": {
             "en": "Button 1",
             "fr": "Bouton 1"
+          },
+          "maintenanceAction": true,
+          "getable": false,
+          "setable": false
+        },
+        "alarm_human": {
+          "title": {
+            "en": "Human presence",
+            "nl": "Menselijke aanwezigheid",
+            "fr": "Présence humaine",
+            "de": "Menschliche Anwesenheit",
+            "es": "Presencia humana"
+          },
+          "insightsTitleTrue": {
+            "en": "Presence detected",
+            "nl": "Aanwezigheid gedetecteerd",
+            "fr": "Présence détectée",
+            "de": "Anwesenheit erkannt",
+            "es": "Presencia detectada"
+          },
+          "insightsTitleFalse": {
+            "en": "No presence",
+            "nl": "Geen aanwezigheid",
+            "fr": "Aucune présence",
+            "de": "Keine Anwesenheit",
+            "es": "Sin presencia"
           }
+        },
+        "alarm_motion": {
+          "title": {
+            "en": "Motion alarm",
+            "nl": "Bewegingsalarm",
+            "fr": "Alarme de mouvement",
+            "de": "Bewegungsalarm",
+            "es": "Alarma de movimiento"
+          },
+          "preventInsights": true
         }
       },
       "subDevices": [],
