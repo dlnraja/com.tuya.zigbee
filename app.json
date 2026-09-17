@@ -1,7 +1,7 @@
 {
   "_comment": "This file is generated. Please edit .homeycompose/app.json instead.",
   "id": "com.dlnraja.tuya.zigbee",
-  "version": "9.0.1004",
+  "version": "9.0.1005",
   "compatibility": ">=12.2.0",
   "platforms": [
     "local"
@@ -2471,16 +2471,16 @@
       {
         "id": "telemetry_source_changed",
         "title": {
-          "en": "Value quality changed (measured / ≈ estimated / ƒ calculated / → predicted)",
-          "fr": "Qualité de la valeur changée (mesuré / ≈ estimé / ƒ calculé / → prévu)",
-          "nl": "Waardekwaliteit gewijzigd (gemeten / ≈ geschat / ƒ berekend / → voorspeld)",
-          "de": "Wertqualität geändert (gemessen / ≈ geschätzt / ƒ berechnet / → prognostiziert)"
+          "en": "Smart · value quality changed (live / ≈ / ƒ / →)",
+          "fr": "Smart · qualité de la valeur changée (live / ≈ / ƒ / →)",
+          "nl": "Smart · waardekwaliteit gewijzigd (live / ≈ / ƒ / →)",
+          "de": "Smart · Wertqualität geändert (live / ≈ / ƒ / →)"
         },
         "hint": {
-          "en": "Fires when a capability switches between real measurement and smart estimate, calculation or prediction",
-          "fr": "Se déclenche quand une capability passe entre mesure réelle et estimation, calcul ou prédiction intelligente",
-          "nl": "Triggert bij wissel tussen echte meting en schatting/berekening/voorspelling",
-          "de": "Löst aus beim Wechsel zwischen Messung und Schätzung/Berechnung/Prognose"
+          "en": "Fires when a capability switches between live measurement, intelligent estimate, calculation or local prediction",
+          "fr": "Quand une capability passe entre mesure live, estimation intelligente, calcul ou prédiction locale",
+          "nl": "Bij wissel tussen live meting, schatting, berekening of lokale voorspelling",
+          "de": "Beim Wechsel zwischen Live-Messung, Schätzung, Berechnung oder lokaler Prognose"
         },
         "tokens": [
           {
@@ -2515,6 +2515,17 @@
               "de": "Neue Qualität"
             },
             "example": "measured"
+          },
+          {
+            "name": "quality_label",
+            "type": "string",
+            "title": {
+              "en": "Quality label (human)",
+              "fr": "Libellé qualité (lisible)",
+              "nl": "Kwaliteitslabel",
+              "de": "Qualitätslabel"
+            },
+            "example": "real measurement"
           }
         ],
         "args": [
@@ -3543,16 +3554,16 @@
       {
         "id": "telemetry_is_estimated",
         "title": {
-          "en": "The !{{value is|value is not}} an intelligent estimate ≈",
-          "fr": "La valeur !{{est une estimation intelligente ≈|n'est pas une estimation}}",
-          "nl": "De waarde !{{is een intelligente schatting ≈|is geen schatting}}",
-          "de": "Der Wert !{{ist eine intelligente Schätzung ≈|ist keine Schätzung}}"
+          "en": "Smart · !{{value is|value is not}} an intelligent estimate ≈",
+          "fr": "Smart · la valeur !{{est|n'est pas}} une estimation intelligente ≈",
+          "nl": "Smart · de waarde !{{is|is geen}} intelligente schatting ≈",
+          "de": "Smart · der Wert !{{ist|ist keine}} intelligente Schätzung ≈"
         },
         "hint": {
-          "en": "Smart profile/nominal estimate — not a live meter and not a calculation. Device title shows · ≈ estimated",
-          "fr": "Estimation intelligente (profil/nominal) — ni mesure live ni calcul. Titre device : · ≈ estimé",
-          "nl": "Slimme schatting — geen live meting. Titel: · ≈ geschat",
-          "de": "Intelligente Schätzung — keine Live-Messung. Titel: · ≈ geschätzt"
+          "en": "Local habit + manufacturer/driver profile (dim/color/on-time). Not a live meter. Title: · ≈ estimated",
+          "fr": "Habitudes locales + profil fabricant/driver (dim/couleur/temps ON). Pas un compteur live. Titre : · ≈ estimé",
+          "nl": "Lokale gewoonten + fabrikantprofiel (dim/kleur/aan-tijd). Geen live meter. Titel: · ≈ geschat",
+          "de": "Lokale Gewohnheiten + Herstellerprofil (Dim/Farbe/Einschaltzeit). Kein Live-Zähler. Titel: · ≈ geschätzt"
         },
         "args": [
           {
@@ -3574,49 +3585,63 @@
                 "id": "measure_power",
                 "title": {
                   "en": "Power (W)",
-                  "fr": "Puissance (W)"
+                  "fr": "Puissance (W)",
+                  "nl": "Vermogen (W)",
+                  "de": "Leistung (W)"
                 }
               },
               {
                 "id": "measure_voltage",
                 "title": {
                   "en": "Voltage (V)",
-                  "fr": "Tension (V)"
+                  "fr": "Tension (V)",
+                  "nl": "Spanning (V)",
+                  "de": "Spannung (V)"
                 }
               },
               {
                 "id": "measure_current",
                 "title": {
                   "en": "Current (A)",
-                  "fr": "Courant (A)"
+                  "fr": "Courant (A)",
+                  "nl": "Stroom (A)",
+                  "de": "Strom (A)"
                 }
               },
               {
                 "id": "meter_power",
                 "title": {
                   "en": "Energy (kWh)",
-                  "fr": "Énergie (kWh)"
+                  "fr": "Énergie (kWh)",
+                  "nl": "Energie (kWh)",
+                  "de": "Energie (kWh)"
                 }
               },
               {
                 "id": "measure_battery",
                 "title": {
                   "en": "Battery (%)",
-                  "fr": "Batterie (%)"
+                  "fr": "Batterie (%)",
+                  "nl": "Batterij (%)",
+                  "de": "Batterie (%)"
                 }
               },
               {
                 "id": "measure_temperature",
                 "title": {
                   "en": "Temperature",
-                  "fr": "Température"
+                  "fr": "Température",
+                  "nl": "Temperatuur",
+                  "de": "Temperatur"
                 }
               },
               {
                 "id": "measure_humidity",
                 "title": {
                   "en": "Humidity",
-                  "fr": "Humidité"
+                  "fr": "Humidité",
+                  "nl": "Vochtigheid",
+                  "de": "Feuchtigkeit"
                 }
               }
             ]
@@ -3777,16 +3802,16 @@
       {
         "id": "telemetry_is_measured",
         "title": {
-          "en": "The !{{value is|value is not}} a precise real measurement",
-          "fr": "La valeur !{{est une mesure réelle précise|n'est pas une mesure réelle}}",
-          "nl": "De waarde !{{is een precieze echte meting|is geen echte meting}}",
-          "de": "Der Wert !{{ist eine präzise echte Messung|ist keine echte Messung}}"
+          "en": "Smart · !{{value is|value is not}} a precise live measurement",
+          "fr": "Smart · la valeur !{{est|n'est pas}} une mesure live précise",
+          "nl": "Smart · de waarde !{{is|is geen}} precieze live meting",
+          "de": "Smart · der Wert !{{ist|ist keine}} präzise Live-Messung"
         },
         "hint": {
-          "en": "Live device report (Zigbee/ZCL/EF00) — highest priority. Clean title, no ≈ / ƒ / → mark",
-          "fr": "Relevé live du device (Zigbee/ZCL/EF00) — priorité maximale. Titre propre, sans marque ≈ / ƒ / →",
-          "nl": "Live apparaatmeting — hoogste prioriteit. Schone titel",
-          "de": "Live-Gerätemeldung — höchste Priorität. Sauberer Titel"
+          "en": "Highest trust — Zigbee/ZCL/EF00 live report. Device title stays clean (no ≈ / ƒ / →).",
+          "fr": "Confiance max — relevé live Zigbee/ZCL/EF00. Titre device propre (sans ≈ / ƒ / →).",
+          "nl": "Hoogste betrouwbaarheid — live Zigbee-rapport. Schone titel.",
+          "de": "Höchstes Vertrauen — Live-Zigbee-Meldung. Sauberer Titel."
         },
         "args": [
           {
@@ -3808,49 +3833,63 @@
                 "id": "measure_power",
                 "title": {
                   "en": "Power (W)",
-                  "fr": "Puissance (W)"
+                  "fr": "Puissance (W)",
+                  "nl": "Vermogen (W)",
+                  "de": "Leistung (W)"
                 }
               },
               {
                 "id": "measure_voltage",
                 "title": {
                   "en": "Voltage (V)",
-                  "fr": "Tension (V)"
+                  "fr": "Tension (V)",
+                  "nl": "Spanning (V)",
+                  "de": "Spannung (V)"
                 }
               },
               {
                 "id": "measure_current",
                 "title": {
                   "en": "Current (A)",
-                  "fr": "Courant (A)"
+                  "fr": "Courant (A)",
+                  "nl": "Stroom (A)",
+                  "de": "Strom (A)"
                 }
               },
               {
                 "id": "meter_power",
                 "title": {
                   "en": "Energy (kWh)",
-                  "fr": "Énergie (kWh)"
+                  "fr": "Énergie (kWh)",
+                  "nl": "Energie (kWh)",
+                  "de": "Energie (kWh)"
                 }
               },
               {
                 "id": "measure_battery",
                 "title": {
                   "en": "Battery (%)",
-                  "fr": "Batterie (%)"
+                  "fr": "Batterie (%)",
+                  "nl": "Batterij (%)",
+                  "de": "Batterie (%)"
                 }
               },
               {
                 "id": "measure_temperature",
                 "title": {
                   "en": "Temperature",
-                  "fr": "Température"
+                  "fr": "Température",
+                  "nl": "Temperatuur",
+                  "de": "Temperatur"
                 }
               },
               {
                 "id": "measure_humidity",
                 "title": {
                   "en": "Humidity",
-                  "fr": "Humidité"
+                  "fr": "Humidité",
+                  "nl": "Vochtigheid",
+                  "de": "Feuchtigkeit"
                 }
               }
             ]
@@ -3860,16 +3899,16 @@
       {
         "id": "telemetry_is_calculated",
         "title": {
-          "en": "The !{{value is|value is not}} a complete calculation ƒ",
-          "fr": "La valeur !{{est un calcul complet ƒ|n'est pas un calcul}}",
-          "nl": "De waarde !{{is een volledige berekening ƒ|is geen berekening}}",
-          "de": "Der Wert !{{ist eine vollständige Berechnung ƒ|ist keine Berechnung}}"
+          "en": "Smart · !{{value is|value is not}} a complete calculation ƒ",
+          "fr": "Smart · la valeur !{{est|n'est pas}} un calcul complet ƒ",
+          "nl": "Smart · de waarde !{{is|is geen}} volledige berekening ƒ",
+          "de": "Smart · der Wert !{{ist|ist keine}} vollständige Berechnung ƒ"
         },
         "hint": {
-          "en": "Derived completely from other values (e.g. I = P÷V, kWh integral). Title shows · ƒ calculated",
-          "fr": "Dérivée complètement d'autres valeurs (ex. I = P÷V, intégrale kWh). Titre : · ƒ calculé",
-          "nl": "Volledig afgeleid (bijv. I = P÷V). Titel: · ƒ berekend",
-          "de": "Vollständig abgeleitet (z. B. I = P÷V). Titel: · ƒ berechnet"
+          "en": "Derived from other values (I = P÷V, kWh integral of power × time). Title: · ƒ calculated",
+          "fr": "Dérivée d'autres valeurs (I = P÷V, intégrale kWh = P × temps). Titre : · ƒ calculé",
+          "nl": "Afgeleid van andere waarden (I = P÷V, kWh-integraal). Titel: · ƒ berekend",
+          "de": "Abgeleitet (I = P÷V, kWh-Integral). Titel: · ƒ berechnet"
         },
         "args": [
           {
@@ -3891,49 +3930,63 @@
                 "id": "measure_power",
                 "title": {
                   "en": "Power (W)",
-                  "fr": "Puissance (W)"
+                  "fr": "Puissance (W)",
+                  "nl": "Vermogen (W)",
+                  "de": "Leistung (W)"
                 }
               },
               {
                 "id": "measure_voltage",
                 "title": {
                   "en": "Voltage (V)",
-                  "fr": "Tension (V)"
+                  "fr": "Tension (V)",
+                  "nl": "Spanning (V)",
+                  "de": "Spannung (V)"
                 }
               },
               {
                 "id": "measure_current",
                 "title": {
                   "en": "Current (A)",
-                  "fr": "Courant (A)"
+                  "fr": "Courant (A)",
+                  "nl": "Stroom (A)",
+                  "de": "Strom (A)"
                 }
               },
               {
                 "id": "meter_power",
                 "title": {
                   "en": "Energy (kWh)",
-                  "fr": "Énergie (kWh)"
+                  "fr": "Énergie (kWh)",
+                  "nl": "Energie (kWh)",
+                  "de": "Energie (kWh)"
                 }
               },
               {
                 "id": "measure_battery",
                 "title": {
                   "en": "Battery (%)",
-                  "fr": "Batterie (%)"
+                  "fr": "Batterie (%)",
+                  "nl": "Batterij (%)",
+                  "de": "Batterie (%)"
                 }
               },
               {
                 "id": "measure_temperature",
                 "title": {
                   "en": "Temperature",
-                  "fr": "Température"
+                  "fr": "Température",
+                  "nl": "Temperatuur",
+                  "de": "Temperatur"
                 }
               },
               {
                 "id": "measure_humidity",
                 "title": {
                   "en": "Humidity",
-                  "fr": "Humidité"
+                  "fr": "Humidité",
+                  "nl": "Vochtigheid",
+                  "de": "Feuchtigkeit"
                 }
               }
             ]
@@ -3943,16 +3996,16 @@
       {
         "id": "telemetry_is_predicted",
         "title": {
-          "en": "The !{{value is|value is not}} a smart prediction →",
-          "fr": "La valeur !{{est une prédiction intelligente →|n'est pas une prédiction}}",
-          "nl": "De waarde !{{is een slimme voorspelling →|is geen voorspelling}}",
-          "de": "Der Wert !{{ist eine intelligente Prognose →|ist keine Prognose}}"
+          "en": "Smart · !{{value is|value is not}} a local prediction →",
+          "fr": "Smart · la valeur !{{est|n'est pas}} une prédiction locale →",
+          "nl": "Smart · de waarde !{{is|is geen}} lokale voorspelling →",
+          "de": "Smart · der Wert !{{ist|ist keine}} lokale Prognose →"
         },
         "hint": {
-          "en": "Forward projection (e.g. battery drain since last real report). Title shows · → predicted",
-          "fr": "Projection (ex. décharge batterie depuis le dernier relevé réel). Titre : · → prévu",
-          "nl": "Projectie (bijv. batterijdrain). Titel: · → voorspeld",
-          "de": "Prognose (z. B. Batterieentladung). Titel: · → prognostiziert"
+          "en": "On-device forecast from habits (on/off duty, learned W) — no cloud AI. Title: · → predicted",
+          "fr": "Prévision on-device depuis habitudes (duty ON/OFF, W appris) — pas d'IA cloud. Titre : · → prévu",
+          "nl": "On-device voorspelling uit gewoonten — geen cloud-AI. Titel: · → voorspeld",
+          "de": "On-Device-Prognose aus Gewohnheiten — keine Cloud-KI. Titel: · → prognostiziert"
         },
         "args": [
           {
@@ -3974,49 +4027,63 @@
                 "id": "measure_power",
                 "title": {
                   "en": "Power (W)",
-                  "fr": "Puissance (W)"
+                  "fr": "Puissance (W)",
+                  "nl": "Vermogen (W)",
+                  "de": "Leistung (W)"
                 }
               },
               {
                 "id": "measure_voltage",
                 "title": {
                   "en": "Voltage (V)",
-                  "fr": "Tension (V)"
+                  "fr": "Tension (V)",
+                  "nl": "Spanning (V)",
+                  "de": "Spannung (V)"
                 }
               },
               {
                 "id": "measure_current",
                 "title": {
                   "en": "Current (A)",
-                  "fr": "Courant (A)"
+                  "fr": "Courant (A)",
+                  "nl": "Stroom (A)",
+                  "de": "Strom (A)"
                 }
               },
               {
                 "id": "meter_power",
                 "title": {
                   "en": "Energy (kWh)",
-                  "fr": "Énergie (kWh)"
+                  "fr": "Énergie (kWh)",
+                  "nl": "Energie (kWh)",
+                  "de": "Energie (kWh)"
                 }
               },
               {
                 "id": "measure_battery",
                 "title": {
                   "en": "Battery (%)",
-                  "fr": "Batterie (%)"
+                  "fr": "Batterie (%)",
+                  "nl": "Batterij (%)",
+                  "de": "Batterie (%)"
                 }
               },
               {
                 "id": "measure_temperature",
                 "title": {
                   "en": "Temperature",
-                  "fr": "Température"
+                  "fr": "Température",
+                  "nl": "Temperatuur",
+                  "de": "Temperatur"
                 }
               },
               {
                 "id": "measure_humidity",
                 "title": {
                   "en": "Humidity",
-                  "fr": "Humidité"
+                  "fr": "Humidité",
+                  "nl": "Vochtigheid",
+                  "de": "Feuchtigkeit"
                 }
               }
             ]
@@ -4026,16 +4093,16 @@
       {
         "id": "telemetry_is_not_measured",
         "title": {
-          "en": "The !{{value is|value is not}} estimated, calculated or predicted",
-          "fr": "La valeur !{{est estimée, calculée ou prédite|est une mesure réelle}}",
-          "nl": "De waarde !{{is geschat, berekend of voorspeld|is een echte meting}}",
-          "de": "Der Wert !{{ist geschätzt, berechnet oder prognostiziert|ist eine echte Messung}}"
+          "en": "Smart · !{{value is|value is not}} soft (≈ estimated / ƒ calculated / → predicted)",
+          "fr": "Smart · la valeur !{{est soft|est une mesure réelle}} (≈ estimé / ƒ calculé / → prévu)",
+          "nl": "Smart · de waarde !{{is soft|is een echte meting}} (≈ / ƒ / →)",
+          "de": "Smart · der Wert !{{ist soft|ist eine echte Messung}} (≈ / ƒ / →)"
         },
         "hint": {
-          "en": "Smart Flow helper: true when the value is NOT a precise live measurement (≈ / ƒ / →)",
-          "fr": "Helper Smart Flow : vrai si ce n'est PAS une mesure live précise (≈ / ƒ / →)",
-          "nl": "Smart Flow helper: waar als het géén live meting is",
-          "de": "Smart-Flow-Helfer: wahr, wenn keine Live-Messung"
+          "en": "True when the value is NOT a precise live measurement — use before acting on soft energy/battery data",
+          "fr": "Vrai si ce n'est PAS une mesure live — utile avant d'agir sur énergie/batterie soft",
+          "nl": "Waar als het géén live meting is — vóór actie op soft energie/batterij",
+          "de": "Wahr, wenn keine Live-Messung — vor Aktionen auf Soft-Energie/Batterie"
         },
         "args": [
           {
@@ -4057,49 +4124,63 @@
                 "id": "measure_power",
                 "title": {
                   "en": "Power (W)",
-                  "fr": "Puissance (W)"
+                  "fr": "Puissance (W)",
+                  "nl": "Vermogen (W)",
+                  "de": "Leistung (W)"
                 }
               },
               {
                 "id": "measure_voltage",
                 "title": {
                   "en": "Voltage (V)",
-                  "fr": "Tension (V)"
+                  "fr": "Tension (V)",
+                  "nl": "Spanning (V)",
+                  "de": "Spannung (V)"
                 }
               },
               {
                 "id": "measure_current",
                 "title": {
                   "en": "Current (A)",
-                  "fr": "Courant (A)"
+                  "fr": "Courant (A)",
+                  "nl": "Stroom (A)",
+                  "de": "Strom (A)"
                 }
               },
               {
                 "id": "meter_power",
                 "title": {
                   "en": "Energy (kWh)",
-                  "fr": "Énergie (kWh)"
+                  "fr": "Énergie (kWh)",
+                  "nl": "Energie (kWh)",
+                  "de": "Energie (kWh)"
                 }
               },
               {
                 "id": "measure_battery",
                 "title": {
                   "en": "Battery (%)",
-                  "fr": "Batterie (%)"
+                  "fr": "Batterie (%)",
+                  "nl": "Batterij (%)",
+                  "de": "Batterie (%)"
                 }
               },
               {
                 "id": "measure_temperature",
                 "title": {
                   "en": "Temperature",
-                  "fr": "Température"
+                  "fr": "Température",
+                  "nl": "Temperatuur",
+                  "de": "Temperatur"
                 }
               },
               {
                 "id": "measure_humidity",
                 "title": {
                   "en": "Humidity",
-                  "fr": "Humidité"
+                  "fr": "Humidité",
+                  "nl": "Vochtigheid",
+                  "de": "Feuchtigkeit"
                 }
               }
             ]

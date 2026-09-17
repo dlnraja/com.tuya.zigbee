@@ -1,16 +1,16 @@
 {
   "id": "telemetry_is_not_measured",
   "title": {
-    "en": "The !{{value is|value is not}} estimated, calculated or predicted",
-    "fr": "La valeur !{{est estimée, calculée ou prédite|est une mesure réelle}}",
-    "nl": "De waarde !{{is geschat, berekend of voorspeld|is een echte meting}}",
-    "de": "Der Wert !{{ist geschätzt, berechnet oder prognostiziert|ist eine echte Messung}}"
+    "en": "Smart · !{{value is|value is not}} soft (≈ estimated / ƒ calculated / → predicted)",
+    "fr": "Smart · la valeur !{{est soft|est une mesure réelle}} (≈ estimé / ƒ calculé / → prévu)",
+    "nl": "Smart · de waarde !{{is soft|is een echte meting}} (≈ / ƒ / →)",
+    "de": "Smart · der Wert !{{ist soft|ist eine echte Messung}} (≈ / ƒ / →)"
   },
   "hint": {
-    "en": "Smart Flow helper: true when the value is NOT a precise live measurement (≈ / ƒ / →)",
-    "fr": "Helper Smart Flow : vrai si ce n'est PAS une mesure live précise (≈ / ƒ / →)",
-    "nl": "Smart Flow helper: waar als het géén live meting is",
-    "de": "Smart-Flow-Helfer: wahr, wenn keine Live-Messung"
+    "en": "True when the value is NOT a precise live measurement — use before acting on soft energy/battery data",
+    "fr": "Vrai si ce n'est PAS une mesure live — utile avant d'agir sur énergie/batterie soft",
+    "nl": "Waar als het géén live meting is — vóór actie op soft energie/batterij",
+    "de": "Wahr, wenn keine Live-Messung — vor Aktionen auf Soft-Energie/Batterie"
   },
   "args": [
     {
@@ -28,13 +28,13 @@
         "de": "Wert"
       },
       "values": [
-        { "id": "measure_power", "title": { "en": "Power (W)", "fr": "Puissance (W)" } },
-        { "id": "measure_voltage", "title": { "en": "Voltage (V)", "fr": "Tension (V)" } },
-        { "id": "measure_current", "title": { "en": "Current (A)", "fr": "Courant (A)" } },
-        { "id": "meter_power", "title": { "en": "Energy (kWh)", "fr": "Énergie (kWh)" } },
-        { "id": "measure_battery", "title": { "en": "Battery (%)", "fr": "Batterie (%)" } },
-        { "id": "measure_temperature", "title": { "en": "Temperature", "fr": "Température" } },
-        { "id": "measure_humidity", "title": { "en": "Humidity", "fr": "Humidité" } }
+        { "id": "measure_power", "title": { "en": "Power (W)", "fr": "Puissance (W)", "nl": "Vermogen (W)", "de": "Leistung (W)" } },
+        { "id": "measure_voltage", "title": { "en": "Voltage (V)", "fr": "Tension (V)", "nl": "Spanning (V)", "de": "Spannung (V)" } },
+        { "id": "measure_current", "title": { "en": "Current (A)", "fr": "Courant (A)", "nl": "Stroom (A)", "de": "Strom (A)" } },
+        { "id": "meter_power", "title": { "en": "Energy (kWh)", "fr": "Énergie (kWh)", "nl": "Energie (kWh)", "de": "Energie (kWh)" } },
+        { "id": "measure_battery", "title": { "en": "Battery (%)", "fr": "Batterie (%)", "nl": "Batterij (%)", "de": "Batterie (%)" } },
+        { "id": "measure_temperature", "title": { "en": "Temperature", "fr": "Température", "nl": "Temperatuur", "de": "Temperatur" } },
+        { "id": "measure_humidity", "title": { "en": "Humidity", "fr": "Humidité", "nl": "Vochtigheid", "de": "Feuchtigkeit" } }
       ]
     }
   ]
