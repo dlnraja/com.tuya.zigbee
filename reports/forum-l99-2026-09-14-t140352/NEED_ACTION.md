@@ -59,3 +59,7 @@ discourse-cdn (screenshots), github.com/dlnraja#531 (Elliot CO2), bseed.com (Pre
 - `npm run check:p2488` — adapter must not strip `measure_battery` on `button_*`
 - `npm run check:p2472a` / p246x — mains radar no phantom battery
 - `npm run check:p2473` — EF00-only interview no OnOff 6
+
+
+## P2546 (2026-09-17 silent)
+- **#2240/#2241** VicHY clrdrnya: periodic 10min phantom/class heal; presence WHEN edge dedupe. Tip ≥**9.0.991**. Update Test + restart app; re-pair only if still curtain UI.
