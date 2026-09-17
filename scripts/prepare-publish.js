@@ -598,6 +598,9 @@ try {
     } catch (syncErr) {
       console.warn('[P2471] Could not sync .homeybuild/app.json:', syncErr.message);
     }
+
+    // WHY(P2561): point size-gate at compacted publish app.json (not fat root).
+    process.env.HOMEY_PUBLISH_APPJSON = destAppJson;
   }
 
   // 5b) Remove publish-only caches that are not required for runtime startup.

@@ -1,6 +1,6 @@
 {
   "name": "com.dlnraja.tuya.zigbee",
-  "version": "9.0.1007",
+  "version": "9.0.1008",
   "description": "Tuya Unified Zigbee - Local-first control with AI automation",
   "main": "app.js",
   "scripts": {
@@ -422,7 +422,8 @@
     "benefit:dual": "node tools/ci/dual-app-benefit-recent.js",
     "check:p2546": "node --test test/critical/p2546-vichy-radar-periodic-heal.test.js",
     "check:p2548": "node --test test/critical/p2548-vichy-radar-class-lock-no-update.test.js",
-    "check:p2560": "node --test test/critical/p2560-smart-flow-local-learner.test.js"
+    "check:p2560": "node --test test/critical/p2560-smart-flow-local-learner.test.js",
+    "check:p2561": "node --test test/critical/p2561-publish-size-prepared-temp.test.js"
   },
   "keywords": [
     "homey",
