@@ -502,6 +502,10 @@
     "p2568_soft_features_finalize": {
       "tag": "MASTER_ONLY",
       "note": "Finalize all 200 Soft Feature vectors — alias resolve, recipe handlers, enableAll/family/disable flows"
+    },
+    "p2569_michaelp_ogx8u5z6_trv": {
+      "tag": "BOTH",
+      "note": "Forum #2244 ZG253 TRV ogx8u5z6+TS0601 EF00-only compose (no OnOff 6) + sacred-keep"
     }
   }
 }

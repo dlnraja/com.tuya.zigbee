@@ -4519,11 +4519,12 @@
       ],
       "forbidMode": "couple",
       "protocol": "tuya_dp",
-      "notes": "P2278 me167 profile + DP47 cal ÷10 (ZHA#4124 / Z2M#25199 user firmware); other ME167 stay whole °C",
+      "notes": "P2278 me167 + DP47 cal ÷10; P2569 Michaelp #2244 ZG253 TZE284 — compose EF00-only [0,4,5,61184] (Homey Unknown when OnOff 6 required)",
       "sources": [
         "zha-device-handlers#4124",
         "zigbee2mqtt#25199",
-        "P2278"
+        "P2278",
+        "forum-140352#2244"
       ],
       "tracks": {
         "master": {
