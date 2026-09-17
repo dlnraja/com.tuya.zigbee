@@ -752,6 +752,18 @@ class TuyaUnifiedZigbeeApp extends Homey.App {
       this.featureFlowCards.setMotionCascadeManager(this.motionCascadeManager);
       this.featureFlowCards.setHomeModeManager(this.homeModeManager);
       this.featureFlowCards.registerAll();
+
+      // P2563 — Soft Daylight Fade + Lamp Mesh Occupancy hub (MASTER_ONLY)
+      if (allowHeavy) {
+        try {
+          const SmartGatewayFeatureHub = require('./lib/features/SmartGatewayFeatureHub');
+          this.smartGatewayHub = new SmartGatewayFeatureHub(this).start();
+          this.log('[SmartGateway] Soft Daylight Fade + Lamp Mesh Occupancy ready');
+        } catch (hubErr) {
+          this.error('[SmartGateway] hub failed (non-critical):', hubErr.message);
+        }
+      }
+
       this.log('✅ Feature modules and flow cards initialized (deferred)');
       try { BootBudget.maybeGc(); } catch (_e) { /* best-effort */ }
       await this._scanForPhantomDevices();
@@ -1160,6 +1172,71 @@ class TuyaUnifiedZigbeeApp extends Homey.App {
         this.log(`[ALL-OFF] ${count} lights`);
         return true;
       });
+
+    // ── P2563 Soft Daylight Fade + Lamp Mesh Occupancy (branding-free) ──────
+    this._registerSmartGatewayFlowCards();
+  }
+
+  /**
+   * P2563 — Soft Daylight Fade / Lamp Mesh Occupancy flow cards.
+   * WHY: gateway-class smart features without commercial UI names.
+   */
+  _registerSmartGatewayFlowCards() {
+    try {
+      this.homey.flow.getActionCard('soft_daylight_fade_start')
+        .registerRunListener(async (args) => {
+          const light = args.light;
+          if (!light) return false;
+          const minutes = Math.max(5, Math.min(120, Number(args.minutes) || 30));
+          if (!this.smartGatewayHub) {
+            const SmartGatewayFeatureHub = require('./lib/features/SmartGatewayFeatureHub');
+            this.smartGatewayHub = new SmartGatewayFeatureHub(this).start();
+          }
+          const plan = this.smartGatewayHub.startSoftDaylightFade(light, { minutes });
+          this.log(`[SOFT-DAYLIGHT] ${light.getName?.()} fade ${minutes}min steps=${plan?.steps?.length || 0}`);
+          return !!plan;
+        });
+    } catch (err) {
+      this.error?.('[SOFT-DAYLIGHT] start card missing:', err.message);
+    }
+
+    try {
+      this.homey.flow.getActionCard('soft_daylight_fade_stop')
+        .registerRunListener(async (args) => {
+          const light = args.light;
+          if (!light) return false;
+          this.smartGatewayHub?.stopSoftDaylightFade?.(light);
+          return true;
+        });
+    } catch (err) {
+      this.error?.('[SOFT-DAYLIGHT] stop card missing:', err.message);
+    }
+
+    try {
+      this.homey.flow.getActionCard('lamp_mesh_occupancy_enroll')
+        .registerRunListener(async (args) => {
+          const zone = String(args.zone || 'living').slice(0, 64);
+          const lights = [args.light_a, args.light_b, args.light_c].filter(Boolean);
+          if (lights.length < 2) {
+            this.log('[LAMP-MESH] need ≥2 lights');
+            return false;
+          }
+          if (!this.smartGatewayHub) {
+            const SmartGatewayFeatureHub = require('./lib/features/SmartGatewayFeatureHub');
+            this.smartGatewayHub = new SmartGatewayFeatureHub(this).start();
+          }
+          const res = this.smartGatewayHub.enrollMeshZone(zone, lights);
+          this.log(`[LAMP-MESH] enrolled zone=${res.zoneId} lights=${res.lightCount}`);
+          return res.lightCount >= 2;
+        });
+    } catch (err) {
+      this.error?.('[LAMP-MESH] enroll card missing:', err.message);
+    }
+
+    // Trigger lamp_mesh_occupancy_changed is fired from SmartGatewayFeatureHub
+    try {
+      this.homey.flow.getTriggerCard('lamp_mesh_occupancy_changed');
+    } catch (_e) { /* soft — composed at publish */ }
   }
 
   // ═══════════════════════════════════════════════════════════════════════════
@@ -1340,6 +1417,8 @@ class TuyaUnifiedZigbeeApp extends Homey.App {
     this.dpRegistry = null;
 
     // v9.1.0: Cleanup feature flow cards and modules
+    try { if (this.smartGatewayHub?.stop) { this.smartGatewayHub.stop(); } } catch (e) {}
+    this.smartGatewayHub = null;
     try { if (this.featureFlowCards?.destroy) { this.featureFlowCards.destroy(); } } catch (e) {}
     try { if (this.solarElevation?.destroy) { this.solarElevation.destroy(); } } catch (e) {}
     try { if (this.transitionEngine?.destroy) { this.transitionEngine.destroy(); } } catch (e) {}

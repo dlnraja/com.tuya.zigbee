@@ -1,0 +1,87 @@
+{
+  "id": "P2563-world-zigbee-smart-features",
+  "version": "1.0.0",
+  "updated": "2026-09-17",
+  "classify": "MASTER_ONLY",
+  "policy": {
+    "brandingFreeUi": true,
+    "forbiddenUiTokens": [
+      "Hue", "Philips", "Signify", "MotionAware", "True Tone", "TruTone",
+      "Ambilight", "SpaceSense", "WiZ", "Lutron", "HomeKit", "Adaptive Lighting"
+    ],
+    "note": "Catalog maps commercial concepts → generic Universal Tuya reimplementations"
+  },
+  "markets": {
+    "eu_uk": ["Signify Hue Bridge/Pro", "IKEA Dirigera", "Aqara Hub M3", "Homey Pro", "deCONZ"],
+    "na": ["Hue Bridge/Pro", "SmartThings", "Hubitat", "Home Assistant Z2M/ZHA"],
+    "apac": ["Aqara", "Tuya hubs", "Xiaomi", "Samsung SmartThings"],
+    "open": ["Zigbee2MQTT", "ZHA", "deCONZ", "Zigbee Alliance Ambient Sensing (CSA)"]
+  },
+  "gatewayConcepts": [
+    {
+      "commercial": "Bridge Pro MotionAware / WiZ SpaceSense",
+      "genericId": "lamp_mesh_occupancy",
+      "uiName": { "en": "Lamp Mesh Occupancy", "fr": "Occupation maillage lampes" },
+      "feasibilityOnHomey": "partial",
+      "how": "Fuse LQI/RSSI variance across ≥2–3 mains lights + optional PIR; Homey lacks Hue PHY firmware — soft RF sensing",
+      "module": "lib/features/LampMeshOccupancy.js",
+      "alternatives": ["PIR IAS", "mmWave Zigbee sensors", "AdvancedPresenceEngine fusion"]
+    },
+    {
+      "commercial": "Apple Adaptive Lighting / daytime white fade / TruTone-like",
+      "genericId": "soft_daylight_fade",
+      "uiName": { "en": "Soft Daylight Fade", "fr": "Fondu lumière du jour" },
+      "feasibilityOnHomey": "full",
+      "how": "DaylightAtmosphere SSOT + continuous soft steps toward target CCT/dim",
+      "module": "lib/features/SoftDaylightFade.js"
+    },
+    {
+      "commercial": "Solar / circadian automations",
+      "genericId": "daylight_atmosphere",
+      "uiName": { "en": "Daylight Atmosphere", "fr": "Atmosphère jour" },
+      "feasibilityOnHomey": "full",
+      "module": "lib/features/DaylightAtmosphere.js"
+    },
+    {
+      "commercial": "Motion → hallway scenes",
+      "genericId": "path_light",
+      "uiName": { "en": "Path Light", "fr": "Lumière de passage" },
+      "feasibilityOnHomey": "full",
+      "flowIds": ["hue_motion_lighting"]
+    },
+    {
+      "commercial": "Wake-up / go-to-sleep ramps",
+      "genericId": "dawn_dusk",
+      "uiName": { "en": "Dawn Ramp / Dusk Fade", "fr": "Aube / Crépuscule" },
+      "feasibilityOnHomey": "full",
+      "flowIds": ["hue_wakeup", "hue_sleep"]
+    },
+    {
+      "commercial": "Away presence simulation",
+      "genericId": "lived_in_shuffle",
+      "feasibilityOnHomey": "full",
+      "module": "lib/managers/PresenceSimulationManager.js"
+    },
+    {
+      "commercial": "Entertainment / Screen Sync RGB flood",
+      "genericId": "entertainment_stream",
+      "feasibilityOnHomey": "skip",
+      "how": "Forbidden — BootBudget / mesh flood risk (smart-features-ssot memory.forbid)"
+    },
+    {
+      "commercial": "SpatialAware room-mapped scenes",
+      "genericId": "room_cascade",
+      "feasibilityOnHomey": "partial",
+      "module": "lib/managers/MotionCascadeManager.js"
+    }
+  ],
+  "homeyImplementations": {
+    "hub": "lib/features/SmartGatewayFeatureHub.js",
+    "softDaylightFade": "lib/features/SoftDaylightFade.js",
+    "lampMeshOccupancy": "lib/features/LampMeshOccupancy.js",
+    "daylightAtmosphere": "lib/features/DaylightAtmosphere.js",
+    "advancedPresence": "lib/presence/AdvancedPresenceEngine.js",
+    "meshPresenceDetector": "lib/detectors/MotionAwarePresenceDetector.js"
+  },
+  "gates": { "npm": "check:p2563" }
+}

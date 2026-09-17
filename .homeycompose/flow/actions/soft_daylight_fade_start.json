@@ -1,0 +1,30 @@
+{
+  "id": "soft_daylight_fade_start",
+  "title": {
+    "en": "Start Soft Daylight Fade",
+    "fr": "Démarrer le fondu lumière du jour",
+    "nl": "Start zachte daglicht-fade",
+    "de": "Sanften Tageslicht-Fade starten"
+  },
+  "hint": {
+    "en": "Gradually moves white/brightness toward Daylight Atmosphere (solar + Room Balance) — branding-free",
+    "fr": "Amène progressivement blanc/luminosité vers Atmosphère jour (solaire + Room Balance)"
+  },
+  "args": [
+    {
+      "type": "device",
+      "name": "light",
+      "filter": "capabilities=onoff|capabilities=dim|capabilities=light_temperature|capabilities=light_color_temp",
+      "title": { "en": "Light", "fr": "Lumière" }
+    },
+    {
+      "type": "number",
+      "name": "minutes",
+      "title": { "en": "Duration (min)", "fr": "Durée (min)" },
+      "min": 5,
+      "max": 120,
+      "step": 5,
+      "value": 30
+    }
+  ]
+}

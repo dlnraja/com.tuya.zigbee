@@ -1,0 +1,38 @@
+{
+  "id": "lamp_mesh_occupancy_enroll",
+  "title": {
+    "en": "Enroll lights in Lamp Mesh Occupancy zone",
+    "fr": "Inscrire des lumières dans une zone Occupation maillage"
+  },
+  "hint": {
+    "en": "Soft RF/link-quality fusion across lights (+ optional PIR). Homey alternative to proprietary lamp-as-sensor hubs — not vendor-parity.",
+    "fr": "Fusion douce qualité de lien entre lampes (+ PIR optionnel). Alternative Homey — pas de parité constructeur."
+  },
+  "args": [
+    {
+      "type": "text",
+      "name": "zone",
+      "title": { "en": "Zone id", "fr": "Id zone" },
+      "value": "living"
+    },
+    {
+      "type": "device",
+      "name": "light_a",
+      "filter": "capabilities=onoff",
+      "title": { "en": "Light A (mains)", "fr": "Lumière A" }
+    },
+    {
+      "type": "device",
+      "name": "light_b",
+      "filter": "capabilities=onoff",
+      "title": { "en": "Light B (mains)", "fr": "Lumière B" }
+    },
+    {
+      "type": "device",
+      "name": "light_c",
+      "filter": "capabilities=onoff",
+      "title": { "en": "Light C (optional)", "fr": "Lumière C (option)" },
+      "optional": true
+    }
+  ]
+}

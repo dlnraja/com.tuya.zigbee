@@ -1,0 +1,15 @@
+{
+  "id": "soft_daylight_fade_stop",
+  "title": {
+    "en": "Stop Soft Daylight Fade",
+    "fr": "Arrêter le fondu lumière du jour"
+  },
+  "args": [
+    {
+      "type": "device",
+      "name": "light",
+      "filter": "capabilities=onoff|capabilities=dim|capabilities=light_temperature|capabilities=light_color_temp",
+      "title": { "en": "Light", "fr": "Lumière" }
+    }
+  ]
+}
