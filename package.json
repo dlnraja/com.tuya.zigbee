@@ -1,6 +1,6 @@
 {
   "name": "com.dlnraja.tuya.zigbee",
-  "version": "9.0.999",
+  "version": "9.0.1000",
   "description": "Tuya Unified Zigbee - Local-first control with AI automation",
   "main": "app.js",
   "scripts": {
@@ -406,7 +406,8 @@
     "check:p2551": "npm run check:p2550",
     "check:p2553": "node --test test/critical/p2553-history-fleet-enable.test.js",
     "check:p2554": "node --test test/critical/p2554-button-fleet-first-press.test.js",
-    "check:p255x": "npm run check:p2550 && npm run check:p2553 && npm run check:p2554",
+    "check:p2555": "node --test test/critical/p2555-forum-soft-dismiss-still-treat.test.js",
+    "check:p255x": "npm run check:p2550 && npm run check:p2553 && npm run check:p2554 && npm run check:p2555",
     "history:fleet": "node tools/ci/p2553-history-fleet-enable.js --dry-run",
     "history:fleet:apply": "node tools/ci/p2553-history-fleet-enable.js --apply",
     "enrich:variants:recent": "node tools/ci/recent-variant-capability-completer.js",
