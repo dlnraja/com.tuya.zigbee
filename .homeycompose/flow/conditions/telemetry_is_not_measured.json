@@ -1,16 +1,16 @@
 {
-  "id": "telemetry_is_measured",
+  "id": "telemetry_is_not_measured",
   "title": {
-    "en": "The !{{value is|value is not}} a precise real measurement",
-    "fr": "La valeur !{{est une mesure réelle précise|n'est pas une mesure réelle}}",
-    "nl": "De waarde !{{is een precieze echte meting|is geen echte meting}}",
-    "de": "Der Wert !{{ist eine präzise echte Messung|ist keine echte Messung}}"
+    "en": "The !{{value is|value is not}} estimated, calculated or predicted",
+    "fr": "La valeur !{{est estimée, calculée ou prédite|est une mesure réelle}}",
+    "nl": "De waarde !{{is geschat, berekend of voorspeld|is een echte meting}}",
+    "de": "Der Wert !{{ist geschätzt, berechnet oder prognostiziert|ist eine echte Messung}}"
   },
   "hint": {
-    "en": "Live device report (Zigbee/ZCL/EF00) — highest priority. Clean title, no ≈ / ƒ / → mark",
-    "fr": "Relevé live du device (Zigbee/ZCL/EF00) — priorité maximale. Titre propre, sans marque ≈ / ƒ / →",
-    "nl": "Live apparaatmeting — hoogste prioriteit. Schone titel",
-    "de": "Live-Gerätemeldung — höchste Priorität. Sauberer Titel"
+    "en": "Smart Flow helper: true when the value is NOT a precise live measurement (≈ / ƒ / →)",
+    "fr": "Helper Smart Flow : vrai si ce n'est PAS une mesure live précise (≈ / ƒ / →)",
+    "nl": "Smart Flow helper: waar als het géén live meting is",
+    "de": "Smart-Flow-Helfer: wahr, wenn keine Live-Messung"
   },
   "args": [
     {

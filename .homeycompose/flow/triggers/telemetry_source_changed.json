@@ -1,49 +1,34 @@
 {
   "id": "telemetry_source_changed",
   "title": {
-    "en": "Value source changed (measured / estimated / calculated)",
-    "fr": "Source de la valeur changée (mesuré / estimé / calculé)",
-    "nl": "Waardebron gewijzigd (gemeten / geschat / berekend)",
-    "de": "Wertquelle geändert (gemessen / geschätzt / berechnet)"
+    "en": "Value quality changed (measured / ≈ estimated / ƒ calculated / → predicted)",
+    "fr": "Qualité de la valeur changée (mesuré / ≈ estimé / ƒ calculé / → prévu)",
+    "nl": "Waardekwaliteit gewijzigd (gemeten / ≈ geschat / ƒ berekend / → voorspeld)",
+    "de": "Wertqualität geändert (gemessen / ≈ geschätzt / ƒ berechnet / → prognostiziert)"
   },
   "hint": {
-    "en": "Fires when a capability switches between real measurement, intelligent estimate, or calculated value",
-    "fr": "Se déclenche quand une capability passe entre mesure réelle, estimation intelligente ou valeur calculée",
-    "nl": "Triggert wanneer een capability wisselt tussen echte meting, intelligente schatting of berekende waarde",
-    "de": "Löst aus, wenn eine Capability zwischen Messung, Schätzung und Berechnung wechselt"
+    "en": "Fires when a capability switches between real measurement and smart estimate, calculation or prediction",
+    "fr": "Se déclenche quand une capability passe entre mesure réelle et estimation, calcul ou prédiction intelligente",
+    "nl": "Triggert bij wissel tussen echte meting en schatting/berekening/voorspelling",
+    "de": "Löst aus beim Wechsel zwischen Messung und Schätzung/Berechnung/Prognose"
   },
   "tokens": [
     {
       "name": "capability",
       "type": "string",
-      "title": {
-        "en": "Capability",
-        "fr": "Capability",
-        "nl": "Capability",
-        "de": "Capability"
-      },
+      "title": { "en": "Capability", "fr": "Capability", "nl": "Capability", "de": "Capability" },
       "example": "measure_power"
     },
     {
       "name": "previous",
       "type": "string",
-      "title": {
-        "en": "Previous origin",
-        "fr": "Origine précédente",
-        "nl": "Vorige herkomst",
-        "de": "Vorherige Herkunft"
-      },
+      "title": { "en": "Previous quality", "fr": "Qualité précédente", "nl": "Vorige kwaliteit", "de": "Vorherige Qualität" },
       "example": "estimated"
     },
     {
       "name": "origin",
       "type": "string",
-      "title": {
-        "en": "New origin",
-        "fr": "Nouvelle origine",
-        "nl": "Nieuwe herkomst",
-        "de": "Neue Herkunft"
-      },
+      "title": { "en": "New quality", "fr": "Nouvelle qualité", "nl": "Nieuwe kwaliteit", "de": "Neue Qualität" },
       "example": "measured"
     }
   ],
