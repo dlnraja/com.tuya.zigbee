@@ -7337,6 +7337,123 @@
           "dynamic": false
         }
       }
+    },
+    {
+      "id": "p2571-hejhome-c8ipbljq-6gang",
+      "mfr": [
+        "_TZE284_c8ipbljq",
+        "_tze284_c8ipbljq",
+        "_TZE204_c8ipbljq",
+        "_tze204_c8ipbljq",
+        "_TZE200_c8ipbljq",
+        "_tze200_c8ipbljq"
+      ],
+      "productId": [
+        "TS0601"
+      ],
+      "canonicalDriver": "wall_switch_6_gang_tuya",
+      "forbiddenDrivers": [
+        "switch_3gang",
+        "switch_1gang",
+        "switch_4gang",
+        "wall_switch_4_gang_tuya",
+        "zigbee_universal"
+      ],
+      "forbidMode": "couple",
+      "protocol": "tuya_dp",
+      "notes": "Hejhome Pika 3/6 gang EF00 — same mfr+pid; 6-gang driver is superset. T26439 #5388 P2571.",
+      "sources": [
+        "forum-26439-5388",
+        "P2571"
+      ],
+      "tracks": {
+        "master": {
+          "static": true,
+          "dynamic": true
+        },
+        "stable": {
+          "static": true,
+          "dynamic": false
+        }
+      }
+    },
+    {
+      "id": "p2571-tgeqdjgk-knob-dimmer",
+      "mfr": [
+        "_TZE284_tgeqdjgk",
+        "_tze284_tgeqdjgk",
+        "_TZE200_tgeqdjgk",
+        "_tze200_tgeqdjgk",
+        "_TZE204_tgeqdjgk",
+        "_tze204_tgeqdjgk"
+      ],
+      "productId": [
+        "TS0601"
+      ],
+      "canonicalDriver": "wall_dimmer_tuya",
+      "forbiddenDrivers": [
+        "switch_1gang",
+        "switch_2gang",
+        "switch_3gang",
+        "smart_knob",
+        "zigbee_universal"
+      ],
+      "forbidMode": "couple",
+      "protocol": "tuya_dp",
+      "notes": "TS0601 knob dimmer (Z2M TS0601_knob_dimmer_switch). Not ZCL 1gang. T26439 #5396 P2571.",
+      "sources": [
+        "forum-26439-5396",
+        "z2m-30955",
+        "P2571"
+      ],
+      "tracks": {
+        "master": {
+          "static": true,
+          "dynamic": true
+        },
+        "stable": {
+          "static": true,
+          "dynamic": false
+        }
+      }
+    },
+    {
+      "id": "p2571-vvmbj46n-lcd-th",
+      "mfr": [
+        "_TZE200_vvmbj46n",
+        "_tze200_vvmbj46n",
+        "_TZE204_vvmbj46n",
+        "_tze204_vvmbj46n",
+        "_TZE284_vvmbj46n",
+        "_tze284_vvmbj46n"
+      ],
+      "productId": [
+        "TS0601"
+      ],
+      "canonicalDriver": "lcdtemphumidsensor",
+      "forbiddenDrivers": [
+        "lcdtemphumidsensor_3",
+        "climate_sensor",
+        "zigbee_universal"
+      ],
+      "forbidMode": "couple",
+      "protocol": "tuya_dp",
+      "notes": "TH05Z LCD temp/humidity — single driver to avoid FP collision. T26439 #5420 P2571.",
+      "sources": [
+        "forum-26439-5420",
+        "z2m-19731",
+        "P2571"
+      ],
+      "tracks": {
+        "master": {
+          "static": true,
+          "dynamic": true
+        },
+        "stable": {
+          "static": true,
+          "dynamic": false
+        }
+      }
     }
   ]
 }
