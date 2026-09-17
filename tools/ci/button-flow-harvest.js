@@ -126,7 +126,22 @@ function loadAppFlowIds() {
 }
 
 function loadAppFlowIdsByPrefix(driverId) {
-  const app = readJson(path.join(ROOT, 'app.json'));
+  // WHY(P2554): Homey SDK3 merges driver.flow.compose.json at `homey app compose`
+  // into .homeybuild/app.json — root app.json only keeps app-level cards.
+  // Contre quoi: harvest flagged every button driver as app_json_drift (false positive).
+  const candidates = [
+    path.join(ROOT, '.homeybuild', 'app.json'),
+    path.join(ROOT, 'app.json'),
+  ];
+  let app = null;
+  for (const p of candidates) {
+    if (!fs.existsSync(p)) continue;
+    try {
+      app = readJson(p);
+      if ((app.flow?.triggers || []).length > 100 || p.includes('.homeybuild')) break;
+    } catch { /* next */ }
+  }
+  if (!app) return new Set();
   const prefix = `${driverId}_`;
   const ids = new Set();
   for (const kind of ['triggers', 'conditions', 'actions']) {
@@ -235,7 +250,17 @@ function harvestDriver(driverId) {
   }
 
   if (missingInApp.length > 0 && triggers.length > 0) {
-    issues.push({ type: 'app_json_drift', severity: 'high', count: missingInApp.length, sample: missingInApp.slice(0, 5) });
+    // WHY(P2554): Homey merges driver.flow.compose at publish into .homeybuild.
+    // Leftover misses vs last local build = stale compose / Athom compact — not a
+    // runtime button bug (Z2M/ZHA first-press is magic+0xFD, not app.json).
+    // Contre quoi: harvest drowning NEED_ACTION in false-high app_json_drift.
+    issues.push({
+      type: 'app_json_drift',
+      severity: 'info',
+      count: missingInApp.length,
+      sample: missingInApp.slice(0, 5),
+      note: 'compose cards absent from last .homeybuild/root app.json — Auto-Publish regenerates; runtime FlowCardHeuristics still resolves',
+    });
   }
 
   return {
@@ -262,11 +287,53 @@ function harvestDriver(driverId) {
 function applyFixes() {
   const fixes = [];
 
-  // smart_knob — 1-gang ButtonDevice parity
+  // WHY(P2480b / P2479 / P2448): never REPLACE smart_knob flows with button_wireless_1 —
+  // that wipe kills rotate/brightness UX and blocks Auto-Publish (fleet-enrich P2372).
+  // Merge 1-gang button parity INTO existing flow; ensure rotary UX from smart_knob_switch.
   const bw1 = readJson(path.join(DRIVERS_DIR, 'button_wireless_1/driver.flow.compose.json'));
-  const skFlow = JSON.parse(JSON.stringify(bw1).replace(/button_wireless_1/g, 'smart_knob'));
-  writeJson(path.join(DRIVERS_DIR, 'smart_knob/driver.flow.compose.json'), skFlow);
-  fixes.push({ driver: 'smart_knob', triggers: skFlow.triggers.length });
+  const skPath = path.join(DRIVERS_DIR, 'smart_knob/driver.flow.compose.json');
+  const skFlow = fs.existsSync(skPath)
+    ? readJson(skPath)
+    : { triggers: [], conditions: [], actions: [] };
+  skFlow.triggers = skFlow.triggers || [];
+  skFlow.conditions = skFlow.conditions || [];
+  skFlow.actions = skFlow.actions || [];
+  const fromBw1 = JSON.parse(JSON.stringify(bw1).replace(/button_wireless_1/g, 'smart_knob'));
+  for (const kind of ['triggers', 'conditions', 'actions']) {
+    const have = new Set((skFlow[kind] || []).map((c) => c.id));
+    for (const card of fromBw1[kind] || []) {
+      if (!have.has(card.id)) {
+        skFlow[kind].push(card);
+        have.add(card.id);
+      }
+    }
+  }
+  const swPath = path.join(DRIVERS_DIR, 'smart_knob_switch/driver.flow.compose.json');
+  if (fs.existsSync(swPath)) {
+    const sw = readJson(swPath);
+    const need = [
+      ['triggers', 'smart_knob_rotate_left'],
+      ['triggers', 'smart_knob_rotate_right'],
+      ['triggers', 'smart_knob_press_and_rotate_left'],
+      ['triggers', 'smart_knob_press_and_rotate_right'],
+      ['triggers', 'smart_knob_brightness_changed'],
+      ['triggers', 'smart_knob_scene_recall'],
+      ['conditions', 'smart_knob_brightness_above'],
+      ['actions', 'smart_knob_set_brightness'],
+    ];
+    for (const [kind, id] of need) {
+      const have = new Set((skFlow[kind] || []).map((c) => c.id));
+      if (have.has(id)) continue;
+      const srcId = id.replace(/^smart_knob_/, 'smart_knob_switch_');
+      const src = (sw[kind] || []).find((c) => c.id === srcId);
+      if (!src) continue;
+      const clone = JSON.parse(JSON.stringify(src));
+      clone.id = id;
+      skFlow[kind].push(clone);
+    }
+  }
+  writeJson(skPath, skFlow);
+  fixes.push({ driver: 'smart_knob', triggers: skFlow.triggers.length, merge: true });
 
   // scene_switch_6ch — full 6gang parity from scene_switch_6
   const ss6 = fs.readFileSync(path.join(DRIVERS_DIR, 'scene_switch_6/driver.flow.compose.json'), 'utf8')
