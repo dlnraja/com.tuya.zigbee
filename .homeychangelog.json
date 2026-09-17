@@ -1755,5 +1755,8 @@
   },
   "5.12.242": {
     "en": "Hardened SDK3 deferred init helper (no bare timers) + battery normalize."
+  },
+  "5.12.243": {
+    "en": "Presence radar: lock sensor class, faster heal if Homey flips type without app update."
   }
 }
