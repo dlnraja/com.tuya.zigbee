@@ -3,6 +3,17 @@
 // v5.11.185: Suppress punycode DEP0040 deprecation from transitive deps
 require('./lib/suppress-punycode');
 
+const Homey = require('homey');
+
+// WHY(P2306/P2351/P2373): Homey flow serializer can embed foreign driver URIs
+// (Hue ZG9101SAC_HP, virtualdriverzigbee) OR Homey class names (`light`).
+// ManagerDrivers.getDriver throws "Invalid Driver ID" and crashes the whole
+// app process (Gmail 9.0.730/743/746). Soft-fail so flow deserialize continues.
+// Install AFTER Homey require so ManagerDrivers.prototype exists when available.
+try {
+  require('./lib/utils/safe-get-driver-patch').installFromHomeyModule();
+} catch (_) { /* best-effort */ }
+
 // v5.8.25: Patch color-space module to fix Homey sandbox require('./rgb') error
 try {
   const colorShim = require('./lib/shims/color-space-shim');
@@ -16,28 +27,25 @@ try {
 const { EventEmitter } = require('events');
 EventEmitter.defaultMaxListeners = 50;
 
-const Homey = require('homey');
-
-// WHY(P2306/P2351/P2373): Homey flow serializer can embed foreign driver URIs
-// (Hue ZG9101SAC_HP, virtualdriverzigbee) OR Homey class names (`light`).
-// Soft-fail so flow deserialize continues (Gmail crash Invalid Driver ID: light).
-try {
-  require('./lib/utils/safe-get-driver-patch').installFromHomeyModule();
-} catch (_e) { /* best-effort */ }
-
 require('./lib/drivers/ZigBeeDriverFlowCardPatch');
 const { registerCustomClusters } = require('./lib/zigbee/registerClusters');
 const FlowCardManager = require('./lib/flow/FlowCardManager');
 const UniversalFlowCardLoader = require('./lib/flow/UniversalFlowCardLoader');
 const FeatureFlowCards = require('./lib/flow/FeatureFlowCards');
-// v9.0.241-stable (P58 sync): install safeSetCapabilityValue + smartCap globally
+
+// v9.0.240 (P58): Install safeSetCapabilityValue + smartCap mixin globally on
+// every ZigBeeDevice subclass (Universal, Tuya, Light, Specific, ...).
+// Doing it at app-load ensures the method is on the prototype before any driver
+// instance is constructed.
 try {
   const { ZigBeeDevice } = require('homey-zigbeedriver');
   const { installSafeCapabilityMixin } = require('./lib/utils/SafeCapability');
   const SmartCapability = require('./lib/data/SmartCapability');
   installSafeCapabilityMixin(ZigBeeDevice);
   SmartCapability.installSmartCapMixin(ZigBeeDevice);
-} catch (e) { /* best-effort */ }
+} catch (e) {
+  // Best-effort — mixin is additive, missing it is non-fatal
+}
 
 // v9.0.249 (P59): Install getManufacturerName() globally on ZigBeeDevice.
 // Forum crash reference (topic 140352):
@@ -118,6 +126,7 @@ const UserFriendlyErrors = require('./lib/errors/UserFriendlyErrors');
 const { TestFramework } = require('./lib/testing');
 const ConfigSchemaValidator = require('./lib/validation/ConfigSchemaValidator');
 const CentralizedDPRegistry = require('./lib/registry/CentralizedDPRegistry');
+const BootBudget = require('./lib/performance/BootBudget');
 
 class TuyaUnifiedZigbeeApp extends Homey.App {
   _flowCardsRegistered = false;
@@ -162,19 +171,26 @@ class TuyaUnifiedZigbeeApp extends Homey.App {
   networkTopologyCollector = null;
 
   async onInit() {
+    this.homey.__tuyaApp = this;
     this.initializeSettings();
 
     // P2351/P2373: re-bind soft getDriver on the live ManagerDrivers instance
+    // (prototype patch at module load may miss Homey's runtime instance).
     try {
       const { installSafeGetDriver } = require('./lib/utils/safe-get-driver-patch');
-      const logFn = (this.error && this.error.bind(this)) || (this.log && this.log.bind(this));
+      const logFn = this.error?.bind(this) || this.log?.bind(this);
       installSafeGetDriver(this.homey.drivers, logFn, { force: true });
       installSafeGetDriver(Object.getPrototypeOf(this.homey.drivers), logFn, { force: true });
-    } catch (_e) { /* best-effort */ }
+    } catch (_) { /* best-effort */ }
 
-    // P100 / P2398: wrap OR polyfill flow-card getters. Prefer sibling alias when
-    // getDeviceConditionCard / getDeviceActionCard are missing (SDK3), mark noops,
-    // log missing once — BaseZigBeeDriver skips __flowGuardNoop (2b0b4e4f).
+    // v10.2.1 / P2398 crash guard: wrap OR polyfill flow-card getters so a
+    // missing card id OR an SDK without getDeviceActionCard/ConditionCard
+    // cannot kill a driver's onInit.
+    // WHY (P2398): Homey SDK3 often lacks getDeviceConditionCard /
+    // getDeviceActionCard. Old polyfill returned a silent noop that still
+    // looked like a real card — BaseZigBeeDriver then never fell through to
+    // getConditionCard/getActionCard (meter91 2b0b4e4f / water_valve_garden
+    // FLOW-GUARD spam on 9.0.743). Prefer sibling alias; mark true noops.
     try {
       const flow = this.homey.flow;
       const noopCard = {
@@ -207,6 +223,7 @@ class TuyaUnifiedZigbeeApp extends Homey.App {
           }
           const altName = sibling[m];
           const alt = altName && flow[altName];
+          // Prefer real sibling (unwrap guarded alias) when Device* is absent.
           if (typeof alt === 'function' && !alt.__flowGuardNoopFn) {
             try {
               const raw = alt.__crashGuarded && typeof alt.__flowGuardOrig === 'function'
@@ -255,12 +272,7 @@ class TuyaUnifiedZigbeeApp extends Homey.App {
     this.log('✅ CapabilityManager initialized');
 
     this.identificationDatabase = new DeviceIdentificationDatabase(this.homey);
-    try {
-      await this.identificationDatabase.buildDatabase();
-      this.log('✅ Intelligent Device Identification Database built');
-    } catch (err) {
-      this.error('⚠️ Device ID Database build failed (non-critical):', err.message);
-    }
+    this.log(`⏭️ ID database deferred (${BootBudget.heapUsedMb()} MB heap) — devices start first`);
 
     try {
       registerCustomClusters(this);
@@ -287,22 +299,23 @@ class TuyaUnifiedZigbeeApp extends Homey.App {
 
     try {
       this.analytics = new AdvancedAnalytics(this.homey);
-      await this.analytics.initialize();
-      this.log('✅ Advanced Analytics initialized');
+      this.log('⏭️ Analytics insights deferred (boot budget)');
     } catch (err) {
       this.error('⚠️ Analytics failed (non-critical):', err.message);
     }
 
     try {
       this.discovery = new SmartDeviceDiscovery(this.homey);
-      await this.discovery.initialize();
-      this.log('✅ Smart Device Discovery initialized');
+      this.log('⏭️ Smart discovery deferred (boot budget)');
     } catch (err) {
       this.error('⚠️ Discovery failed (non-critical):', err.message);
     }
 
     try {
-      this.optimizer = new PerformanceOptimizer({ maxCacheSize: 1000, maxCacheMemory: 10 * 1024 * 1024 });
+      this.optimizer = new PerformanceOptimizer({
+        maxCacheSize: BootBudget.adaptiveCacheSize(),
+        maxCacheMemory: BootBudget.adaptiveCacheMemory(),
+      });
       this.log('✅ Performance Optimizer initialized');
     } catch (err) { this.error('⚠️ Optimizer failed:', err.message); }
 
@@ -333,14 +346,7 @@ class TuyaUnifiedZigbeeApp extends Homey.App {
 
     try {
       this.otaManager = new OTAUpdateManager(this.homey);
-      this.log('✅ OTA Update Manager initialized');
-      // Idea #42: Start automatic Z2M OTA firmware update discovery (6h interval)
-      try {
-        this.otaManager.startAutoDiscovery(6 * 60 * 60 * 1000);
-        this.log('✅ OTA Auto-Discovery started (6h interval)');
-      } catch (e) {
-        this.log('⚠️ OTA Auto-Discovery failed to start (non-critical):', e.message);
-      }
+      this.log('✅ OTA Update Manager initialized (auto-discovery deferred)');
     } catch (err) { this.error('⚠️ OTA Manager failed:', err.message); }
 
     try {
@@ -354,33 +360,9 @@ class TuyaUnifiedZigbeeApp extends Homey.App {
 
     try {
       this._tuyaUDPDiscovery = new TuyaUDPDiscovery({ log: this.log.bind(this) });
-
-      const updateDeviceIP = async (info) => {
-        try {
-          const drivers = Object.values(this.homey.drivers.getDrivers());
-          for (const driver of drivers) {
-            const devices = driver.getDevices() || [];
-            for (const device of devices) {
-              const settings = device.getSettings();
-              if (settings && settings.device_id === info.deviceId) {
-                if (settings.ip_address !== info.ip) {
-                  this.log(`🔄 [SMART-HEAL] IP change: ${settings.ip_address} -> ${info.ip}`);
-                  await device.setSettings({ ip_address: info.ip }).catch(e => this.error('[SMART-HEAL] Settings update failed', e));
-                }
-              }
-            }
-          }
-        } catch (err) {
-          this.error('[SMART-HEAL] Error updating IP:', err.message);
-        }
-      };
-
-      this._tuyaUDPDiscovery.on('device-updated', updateDeviceIP);
-      this._tuyaUDPDiscovery.on('device-found', updateDeviceIP);
-      await this._tuyaUDPDiscovery.start();
-      this.log('✅ Tuya WiFi UDP Discovery started (ports 6666/6667/6668)');
+      this.log('⏭️ Tuya WiFi UDP discovery deferred (Zigbee devices start first)');
     } catch (err) {
-      this.log('⚠️ Tuya UDP Discovery failed (non-critical):', err.message);
+      this.log('⚠️ Tuya UDP Discovery init failed (non-critical):', err.message);
     }
 
     try {
@@ -403,51 +385,6 @@ class TuyaUnifiedZigbeeApp extends Homey.App {
       this.log('✅ L12-L14 Architectural Layers initialized');
     } catch (err) {
       this.error('❌ Failed to initialize architectural layers:', err.message);
-    }
-
-    // v9.1.0: Initialize new feature modules (Ideas #41, #44, #86, #87, #96, #98, #99)
-    try {
-      this.groupManager = new DeviceGroupManager(this.homey);
-      await this.groupManager.initialize();
-      this.log('✅ Device Group Manager initialized (Idea #41)');
-    } catch (err) {
-      this.error('⚠️ GroupManager failed (non-critical):', err.message);
-    }
-
-    try {
-      this.healthDashboard = new DeviceHealthDashboard(this.homey, this.healthMonitor);
-      this.log('✅ Device Health Dashboard initialized (Idea #44)');
-    } catch (err) {
-      this.error('⚠️ HealthDashboard failed (non-critical):', err.message);
-    }
-
-    try {
-      this.pairingWizard = new AutoDetectionPairingWizard(this.homey);
-      this.log('✅ Auto-Detection Pairing Wizard initialized (Idea #86)');
-    } catch (err) {
-      this.error('⚠️ PairingWizard failed (non-critical):', err.message);
-    }
-
-    try {
-      this.errorTranslator = new UserFriendlyErrors();
-      this.log('✅ User-Friendly Error Translator initialized (Idea #87)');
-    } catch (err) {
-      this.error('⚠️ ErrorTranslator failed (non-critical):', err.message);
-    }
-
-    try {
-      this.configValidator = new ConfigSchemaValidator();
-      this.log('✅ Config Schema Validator initialized (Idea #98)');
-    } catch (err) {
-      this.error('⚠️ ConfigValidator failed (non-critical):', err.message);
-    }
-
-    try {
-      this.dpRegistry = new CentralizedDPRegistry();
-      const stats = this.dpRegistry.getStats();
-      this.log(`✅ Centralized DP Registry initialized (Idea #99): ${stats.totalDPs} DPs, ${Object.keys(stats.byDeviceType).length} device types`);
-    } catch (err) {
-      this.error('⚠️ DPRegistry failed (non-critical):', err.message);
     }
 
     try {
@@ -485,55 +422,319 @@ class TuyaUnifiedZigbeeApp extends Homey.App {
     }
 
     try {
-      await this.initializeInsights();
-    } catch (err) { this.error('⚠️ Insights failed:', err.message); }
-
-    // v9.1.0: Virtual Presence Detection System (no dedicated sensor required)
-    try {
       this._registerPresenceFlowCards();
       this.log('✅ Virtual Presence Detection flow cards registered');
     } catch (err) {
       this.error('⚠️ Presence flow cards failed (non-critical):', err.message);
     }
 
-    // v5.12.38: Hue-style smart features (motion lighting, circadian, wake-up)
     try {
-      this._registerHueStyleFlowCards();
-      this.log('✅ Hue-style flow cards registered');
+      this._registerCommunitySmartFlowCards();
+      this.log('✅ Community smart flow cards registered');
+    } catch (err) {
+      this.error('⚠️ Community smart flow cards failed (non-critical):', err.message);
+    }
+
+    try {
       this._registerOtaFlowCards();
       this.log('✅ OTA flow cards registered');
     } catch (err) {
-      this.error('⚠️ Hue-style flow cards failed (non-critical):', err.message);
+      this.error('⚠️ OTA flow cards failed (non-critical):', err.message);
     }
 
-    // v9.1.0: Initialize feature modules and register their flow cards
+    // WHY: Peter #2183 — 93.8 MB + greyed Flows. Let sleepy devices finish
+    // onNodeInit before MASTER_ONLY engines, UDP, and catalog scans.
+    this._scheduleDeferredMasterFeatures();
+
+    this.log(`✅ Tuya Unified Zigbee App initialized (${BootBudget.heapUsedMb()} MB heap)`);
+    this._clearMigrationQueue();
+  }
+
+  _scheduleDeferredMasterFeatures() {
+    if (this._heavyInitTimer || this._heavyInitStarted) {return;}
+    const delay = BootBudget.DEFER_MS;
+    this.log(`⏭️ Heavy features in ${Math.round(delay / 1000)}s (boot budget)`);
     try {
+      this._heavyInitTimer = this.homey.setTimeout(() => {
+        this._heavyInitTimer = null;
+        this._initDeferredMasterFeatures().catch((err) => {
+          this.error('⚠️ Deferred features failed (non-critical):', err.message);
+        });
+      }, delay);
+    } catch (err) {
+      this.error('⚠️ Could not schedule deferred features:', err.message);
+    }
+  }
+
+  _scheduleDeferredMasterFeaturesRetry() {
+    if (this._heavyRetryScheduled || this._destroyed) {return;}
+    this._heavyRetryScheduled = true;
+    const delay = BootBudget.RETRY_MS;
+    this.log(`⏭️ Heavy features retry in ${Math.round(delay / 1000)}s (heap still high)`);
+    try {
+      this._heavyRetryTimer = this.homey.setTimeout(() => {
+        this._heavyRetryTimer = null;
+        this._initDeferredMasterFeatures({ retry: true }).catch((err) => {
+          this.error('⚠️ Deferred features retry failed (non-critical):', err.message);
+        });
+      }, delay);
+    } catch (err) {
+      this.log('⚠️ Could not schedule heavy-feature retry:', err.message);
+    }
+  }
+
+  async _initDeferredMasterFeatures(opts = {}) {
+    if (this._destroyed) {return;}
+    const retry = opts.retry === true;
+    if (this._heavyInitStarted && !retry) {return;}
+    this._heavyInitStarted = true;
+    const allowHeavy = BootBudget.shouldStartHeavyFeatures();
+    this.log(`[BOOT-BUDGET] deferred pass heap=${BootBudget.heapUsedMb()} MB heavy=${allowHeavy} retry=${retry}`);
+
+    if (!allowHeavy && !retry) {
+      this._scheduleDeferredMasterFeaturesRetry();
+    }
+
+    if (allowHeavy) {
+      try {
+        await this.identificationDatabase?.buildDatabase?.();
+        this.log('✅ Intelligent Device Identification Database built');
+      } catch (err) {
+        this.error('⚠️ Device ID Database build failed (non-critical):', err.message);
+      }
+
+      try {
+        await this.analytics?.initialize?.();
+        this.log('✅ Advanced Analytics initialized');
+      } catch (err) {
+        this.error('⚠️ Analytics failed (non-critical):', err.message);
+      }
+
+      try {
+        await this.discovery?.initialize?.();
+        this.log('✅ Smart Device Discovery initialized');
+      } catch (err) {
+        this.error('⚠️ Discovery failed (non-critical):', err.message);
+      }
+
+      try {
+        this.otaManager?.startAutoDiscovery?.(6 * 60 * 60 * 1000);
+        this.log('✅ OTA Auto-Discovery started (6h interval)');
+      } catch (e) {
+        this.log('⚠️ OTA Auto-Discovery failed to start (non-critical):', e.message);
+      }
+
+      try {
+        this.groupManager = new DeviceGroupManager(this.homey);
+        await this.groupManager.initialize();
+        this.log('✅ Device Group Manager initialized');
+      } catch (err) {
+        this.error('⚠️ GroupManager failed (non-critical):', err.message);
+      }
+
+      try {
+        this.healthDashboard = new DeviceHealthDashboard(this.homey, this.healthMonitor);
+        this.log('✅ Device Health Dashboard initialized');
+      } catch (err) {
+        this.error('⚠️ HealthDashboard failed (non-critical):', err.message);
+      }
+
+      try {
+        this.pairingWizard = new AutoDetectionPairingWizard(this.homey);
+        this.errorTranslator = new UserFriendlyErrors();
+        this.configValidator = new ConfigSchemaValidator();
+        this.dpRegistry = new CentralizedDPRegistry();
+      } catch (err) {
+        this.error('⚠️ Pairing/DP helpers failed (non-critical):', err.message);
+      }
+
+      try {
+        await this.initializeInsights();
+      } catch (err) { this.error('⚠️ Insights failed:', err.message); }
+
+      try {
+        if (this._tuyaUDPDiscovery && typeof this._tuyaUDPDiscovery.start === 'function') {
+          const updateDeviceIP = async (info) => {
+            try {
+              const drivers = Object.values(this.homey.drivers.getDrivers());
+              for (const driver of drivers) {
+                const devices = driver.getDevices() || [];
+                for (const device of devices) {
+                  const settings = device.getSettings();
+                  if (settings && settings.device_id === info.deviceId) {
+                    const currentIp = settings.ip || settings.ip_address || settings.device_ip;
+                    if (currentIp !== info.ip) {
+                      this.log(`🔄 [SMART-HEAL] IP change: ${currentIp || '—'} -> ${info.ip}`);
+                      await device.setSettings({ ip: info.ip, ip_address: info.ip }).catch((e) => this.error('[SMART-HEAL] Settings update failed', e));
+                    }
+                  }
+                }
+              }
+            } catch (err) {
+              this.error('[SMART-HEAL] Error updating IP:', err.message);
+            }
+          };
+          this._tuyaUDPDiscovery.on('device-updated', updateDeviceIP);
+          this._tuyaUDPDiscovery.on('device-found', updateDeviceIP);
+          await this._tuyaUDPDiscovery.start();
+          this.log('✅ Tuya WiFi UDP Discovery started (ports 6666/6667/6668/7000)');
+        }
+      } catch (err) {
+        this.log('⚠️ Tuya UDP Discovery failed (non-critical):', err.message);
+      }
+    } else {
+      this.log('⏭️ Skipping catalog/UDP/analytics — heap still high');
+    }
+
+    try {
+      if (retry && this.featureFlowCards) {
+        if (allowHeavy) {
+          try { this.scheduleManager?.start?.(); } catch (_e) { /* already started */ }
+          try { this.predictiveHealthEngine?.start?.(); } catch (_e) { /* already started */ }
+          try { this.homeModeManager?.start?.(); } catch (_e) { /* already started */ }
+          try { this.solarElevation?.startObserving?.(); } catch (_e) { /* already started */ }
+          if (this.availabilityManager && !this._availabilityStarted) {
+            for (const driver of Object.values(this.homey.drivers.getDrivers())) {
+              for (const device of driver.getDevices()) {
+                this.availabilityManager.registerDevice(device);
+              }
+            }
+            this.availabilityManager.start();
+            this._availabilityStarted = true;
+          }
+          if (!this.liveDataUpdater) {
+            try {
+              const LiveDataUpdater = require('./lib/dynamic/LiveDataUpdater');
+              this.liveDataUpdater = new LiveDataUpdater(this.homey, this.log.bind(this));
+              await this.liveDataUpdater.start();
+              const FingerprintMatcher = require('./lib/utils/fingerprint-matcher');
+              FingerprintMatcher.setOverlayProvider(() => this.liveDataUpdater?.getOverlay?.() || null);
+              this.log('✅ LiveDataUpdater started (retry pass)');
+            } catch (err) {
+              this.log('⚠️ LiveDataUpdater retry skipped:', err.message);
+            }
+          }
+          this.log('✅ Deferred feature engines started (retry, heap recovered)');
+        }
+        await this._scanForPhantomDevices();
+        return;
+      }
+
       this.solarElevation = new SolarElevation({ homey: this.homey, logger: this.log.bind(this) });
-      this.transitionEngine = new TransitionEngine();
+      this.transitionEngine = new TransitionEngine({ homey: this.homey });
       this.energyHistoryStore = new EnergyHistoryStore(this.homey);
-      await this.energyHistoryStore.initialize();
+      if (allowHeavy) {
+        await this.energyHistoryStore.initialize();
+      }
       this.tariffCalculator = new TariffCalculator({ logger: this.log.bind(this) });
       this.scheduleManager = new ScheduleManager(this.homey);
-      this.scheduleManager.start();
+      if (allowHeavy) {this.scheduleManager.start();}
       this.conditionEngine = new ConditionEngine(this.homey);
       this.predictiveHealthEngine = new PredictiveHealthEngine(this.homey);
-      this.predictiveHealthEngine.start();
+      if (allowHeavy) {this.predictiveHealthEngine.start();}
 
-      // v5.12.50 (backport P92.77): live data updates from our gh-pages feed
-      try {
-        const LiveDataUpdater = require('./lib/dynamic/LiveDataUpdater');
-        this.liveDataUpdater = new LiveDataUpdater(this.homey, this.log.bind(this));
-        await this.liveDataUpdater.start();
-        const FingerprintMatcher = require('./lib/utils/fingerprint-matcher');
-        FingerprintMatcher.setOverlayProvider(() => this.liveDataUpdater?.getOverlay?.() || null);
-        this.log('✅ LiveDataUpdater started (gh-pages feed, 24h cycle)');
-      } catch (err) {
-        this.error('⚠️ LiveDataUpdater failed (non-critical, local data only):', err.message);
+      if (allowHeavy) {
+        try {
+          const LiveDataUpdater = require('./lib/dynamic/LiveDataUpdater');
+          this.liveDataUpdater = new LiveDataUpdater(this.homey, this.log.bind(this));
+          await this.liveDataUpdater.start();
+          const FingerprintMatcher = require('./lib/utils/fingerprint-matcher');
+          FingerprintMatcher.setOverlayProvider(() => this.liveDataUpdater?.getOverlay?.() || null);
+          this.log('✅ LiveDataUpdater started (gh-pages feed, 24h cycle)');
+        } catch (err) {
+          this.error('⚠️ LiveDataUpdater failed (non-critical, local data only):', err.message);
+        }
+      } else {
+        this.log('⏭️ LiveDataUpdater skipped (heap budget)');
       }
-      this.networkTopologyCollector = new NetworkTopologyCollector(this.homey);
-      this.solarElevation.startObserving();
 
-      // Register feature flow cards
+      if (retry && this.featureFlowCards) {
+        if (allowHeavy) {
+          try { this.scheduleManager?.start?.(); } catch (_e) { /* already started */ }
+          try { this.predictiveHealthEngine?.start?.(); } catch (_e) { /* already started */ }
+          try { this.homeModeManager?.start?.(); } catch (_e) { /* already started */ }
+          try { this.solarElevation?.startObserving?.(); } catch (_e) { /* already started */ }
+          if (this.availabilityManager && !this._availabilityStarted) {
+            for (const driver of Object.values(this.homey.drivers.getDrivers())) {
+              for (const device of driver.getDevices()) {
+                this.availabilityManager.registerDevice(device);
+              }
+            }
+            this.availabilityManager.start();
+            this._availabilityStarted = true;
+          }
+          if (!this.liveDataUpdater) {
+            try {
+              const LiveDataUpdater = require('./lib/dynamic/LiveDataUpdater');
+              this.liveDataUpdater = new LiveDataUpdater(this.homey, this.log.bind(this));
+              await this.liveDataUpdater.start();
+              const FingerprintMatcher = require('./lib/utils/fingerprint-matcher');
+              FingerprintMatcher.setOverlayProvider(() => this.liveDataUpdater?.getOverlay?.() || null);
+              this.log('✅ LiveDataUpdater started (retry pass)');
+            } catch (err) {
+              this.log('⚠️ LiveDataUpdater retry skipped:', err.message);
+            }
+          }
+          this.log('✅ Deferred feature engines started (retry, heap recovered)');
+        }
+        await this._scanForPhantomDevices();
+        return;
+      }
+
+      this.networkTopologyCollector = new NetworkTopologyCollector(this.homey);
+      if (allowHeavy && this.solarElevation.startObserving) {
+        this.solarElevation.startObserving();
+      }
+
+      const DeviceAvailabilityManager = require('./lib/managers/DeviceAvailabilityManager');
+      this.availabilityManager = new DeviceAvailabilityManager(this.homey, {
+        logger: (...a) => this.log(...a),
+      });
+      if (allowHeavy) {
+        for (const driver of Object.values(this.homey.drivers.getDrivers())) {
+          for (const device of driver.getDevices()) {
+            this.availabilityManager.registerDevice(device);
+          }
+        }
+        this.availabilityManager.start();
+        this._availabilityStarted = true;
+      } else {
+        this.log('⏭️ Availability scan skipped (heap budget) — retry later');
+      }
+      this.homey.on('device.create', (device) => this.availabilityManager.registerDevice(device));
+
+      const SensorSuppressionManager = require('./lib/managers/SensorSuppressionManager');
+      this.sensorSuppressionManager = new SensorSuppressionManager(this.homey, {
+        logger: (...a) => this.log(...a),
+      });
+
+      const PresenceSimulationManager = require('./lib/managers/PresenceSimulationManager');
+      this.presenceSimulationManager = new PresenceSimulationManager(this.homey, {
+        logger: (...a) => this.log(...a),
+      });
+
+      const FeatureFallbackRouter = require('./lib/managers/FeatureFallbackRouter');
+      this.featureFallbackRouter = new FeatureFallbackRouter(this.homey, {
+        logger: (...a) => this.log(...a),
+      });
+
+      const CircadianEngine = require('./lib/managers/CircadianEngine');
+      this.circadianEngine = new CircadianEngine(this.homey, {
+        solarElevation: this.solarElevation,
+        logger: (...a) => this.log(...a),
+      });
+      const MotionCascadeManager = require('./lib/managers/MotionCascadeManager');
+      this.motionCascadeManager = new MotionCascadeManager(this.homey, {
+        logger: (...a) => this.log(...a),
+      });
+
+      const HomeModeManager = require('./lib/managers/HomeModeManager');
+      this.homeModeManager = new HomeModeManager(this.homey, {
+        solarElevation: this.solarElevation,
+        logger: (...a) => this.log(...a),
+      });
+      if (allowHeavy) {this.homeModeManager.start();}
+
       this.featureFlowCards = new FeatureFlowCards(this.homey);
       this.featureFlowCards.setSolarElevation(this.solarElevation);
       this.featureFlowCards.setTransitionEngine(this.transitionEngine);
@@ -543,15 +744,20 @@ class TuyaUnifiedZigbeeApp extends Homey.App {
       this.featureFlowCards.setConditionEngine(this.conditionEngine);
       this.featureFlowCards.setPredictiveHealthEngine(this.predictiveHealthEngine);
       this.featureFlowCards.setNetworkTopologyCollector(this.networkTopologyCollector);
+      this.featureFlowCards.setAvailabilityManager(this.availabilityManager);
+      this.featureFlowCards.setSensorSuppressionManager(this.sensorSuppressionManager);
+      this.featureFlowCards.setPresenceSimulationManager(this.presenceSimulationManager);
+      this.featureFlowCards.setFeatureFallbackRouter(this.featureFallbackRouter);
+      this.featureFlowCards.setCircadianEngine(this.circadianEngine);
+      this.featureFlowCards.setMotionCascadeManager(this.motionCascadeManager);
+      this.featureFlowCards.setHomeModeManager(this.homeModeManager);
       this.featureFlowCards.registerAll();
-      this.log('✅ Feature modules and flow cards initialized');
+      this.log('✅ Feature modules and flow cards initialized (deferred)');
+      try { BootBudget.maybeGc(); } catch (_e) { /* best-effort */ }
+      await this._scanForPhantomDevices();
     } catch (err) {
       this.error('⚠️ Feature modules failed (non-critical):', err.message);
     }
-
-    this.log('✅ Tuya Unified Zigbee App has been initialized');
-    this._scanForPhantomDevices();
-    this._clearMigrationQueue();
   }
 
   async _clearMigrationQueue() {
@@ -642,8 +848,9 @@ class TuyaUnifiedZigbeeApp extends Homey.App {
   getDPRegistry() { return this.dpRegistry; }
 
   // ═══════════════════════════════════════════════════════════════════════════
-  // v5.12.38: HUE-STYLE SMART FEATURES (backport 9.0.376)
-  // Motion-activated lighting, circadian curve, wake-up sunrise simulation.
+  // Community smart features (Daylight Atmosphere / Path Light / Dawn / Dusk)
+  // Flow card IDs keep legacy hue_* keys so existing Homey flows do not break.
+  // UI titles are brand-free — see config/architecture/smart-features-ssot.json
   // ═══════════════════════════════════════════════════════════════════════════
 
   async _hueSetLight(light, { onoff, dim, temperature } = {}) {
@@ -655,62 +862,59 @@ class TuyaUnifiedZigbeeApp extends Homey.App {
     };
     if (onoff !== undefined) {await set('onoff', onoff);}
     if (dim !== undefined) {await set('dim', dim);}
-    if (temperature !== undefined) {await set('light_temperature', temperature);}
-  }
-
-  _hueCircadianCurve(date = new Date()) {
-    // light_temperature Homey: 0 = froid (6500K), 1 = chaud (2200K)
-    // v5.12.48 (backport P92.68): delegate to REAL solar elevation when
-    // available; time buckets stay as fallback.
-    const solar = this.solarElevation;
-    if (solar && typeof solar.getElevation === 'function') {
-      try {
-        const elev = solar.getElevation(date);
-        if (typeof elev === 'number' && Number.isFinite(elev)) {
-          const clamp01 = (x) => Math.max(0, Math.min(1, x));
-          const dayness = clamp01((elev + 6) / 36);
-          return {
-            dim: Math.round((0.1 + dayness * 0.9) * 100) / 100,
-            temperature: Math.round((1.0 - dayness * 0.85) * 100) / 100
-          };
-        }
-      } catch { /* fall through to time buckets */ }
+    if (temperature !== undefined) {
+      if (light.hasCapability?.('light_temperature')) {await set('light_temperature', temperature);}
+      else if (light.hasCapability?.('light_color_temp')) {await set('light_color_temp', temperature);}
     }
-    const h = date.getHours() + date.getMinutes() / 60;
-    if (h < 5) {return { dim: 0.1, temperature: 1.0 };}
-    if (h < 7) {return { dim: 0.3, temperature: 0.85 };}
-    if (h < 9) {return { dim: 0.6, temperature: 0.6 };}
-    if (h < 12) {return { dim: 0.9, temperature: 0.3 };}
-    if (h < 15) {return { dim: 1.0, temperature: 0.15 };}
-    if (h < 18) {return { dim: 0.85, temperature: 0.35 };}
-    if (h < 20) {return { dim: 0.6, temperature: 0.65 };}
-    if (h < 22) {return { dim: 0.35, temperature: 0.9 };}
-    return { dim: 0.15, temperature: 1.0 };
   }
 
+  _hueCircadianCurve(date = new Date(), lux = null) {
+    try {
+      const DaylightAtmosphere = require('./lib/features/DaylightAtmosphere');
+      const curve = DaylightAtmosphere.compute({
+        date,
+        solar: this.solarElevation,
+        lux,
+      });
+      return { dim: curve.dim, temperature: curve.temperature, kelvin: curve.kelvin, source: curve.source };
+    } catch {
+      const h = date.getHours() + date.getMinutes() / 60;
+      if (h < 5) {return { dim: 0.1, temperature: 1.0 };}
+      if (h < 8) {return { dim: 0.3, temperature: 0.75 };}
+      if (h < 17) {return { dim: 1.0, temperature: 0.15 };}
+      if (h < 21) {return { dim: 0.5, temperature: 0.7 };}
+      return { dim: 0.2, temperature: 0.95 };
+    }
+  }
+
+  /** @deprecated alias — use _registerCommunitySmartFlowCards */
   _registerHueStyleFlowCards() {
-    // ── Éclairage activé par mouvement ───────────────────────────────────────
+    return this._registerCommunitySmartFlowCards();
+  }
+
+  _registerCommunitySmartFlowCards() {
+    // ── Path Light (motion) ─────────────────────────────────────────────────
     this.homey.flow.getActionCard('hue_motion_lighting')
       .registerRunListener(async (args) => {
         const { motion_sensor: sensor, light, brightness = 80, timeout = 5, lux_threshold = 0, quiet_start, quiet_end } = args;
         if (!sensor || !light) {return false;}
 
-        // Fenêtre heures calmes (DND) : "22:00"-"07:00" traverse minuit
         if (quiet_start && quiet_end && /^\d{1,2}:\d{2}$/.test(quiet_start) && /^\d{1,2}:\d{2}$/.test(quiet_end)) {
           const toMin = (s) => { const [h, m] = s.split(':').map(Number); return h * 60 + m; };
           const now = new Date().getHours() * 60 + new Date().getMinutes();
           const qs = toMin(quiet_start), qe = toMin(quiet_end);
           const inQuiet = qs <= qe ? (now >= qs && now < qe) : (now >= qs || now < qe);
           if (inQuiet) {
-            this.log(`[HUE] Motion ignoré: heures calmes ${quiet_start}-${quiet_end}`);
+            this.log(`[PATH-LIGHT] skipped: quiet hours ${quiet_start}-${quiet_end}`);
             return false;
           }
         }
 
-        if (lux_threshold > 0 && sensor.hasCapability?.('measure_luminance')) {
-          const lux = sensor.getCapabilityValue?.('measure_luminance');
-          if (typeof lux === 'number' && lux >= lux_threshold) {
-            this.log(`[HUE] Motion ignoré: lux ${lux} >= ${lux_threshold}`);
+        let lux = null;
+        if (sensor.hasCapability?.('measure_luminance')) {
+          lux = sensor.getCapabilityValue?.('measure_luminance');
+          if (lux_threshold > 0 && typeof lux === 'number' && lux >= lux_threshold) {
+            this.log(`[PATH-LIGHT] skipped: lux ${lux} >= ${lux_threshold}`);
             return false;
           }
         }
@@ -719,29 +923,41 @@ class TuyaUnifiedZigbeeApp extends Homey.App {
           if (motion === false) {return false;}
         }
 
-        await this._hueSetLight(light, { onoff: true, dim: Math.max(1, Math.min(100, brightness)) / 100 });
-        this.log(`[HUE] Motion lighting: ${light.getName?.()} ON à ${brightness}%`);
+        // Seed Room Balance lux for Solar Sync on this light
+        if (typeof lux === 'number') {
+          light.setStoreValue?.('room_balance_lux', lux).catch(() => {});
+        }
+
+        const curve = this._hueCircadianCurve(new Date(), typeof lux === 'number' ? lux : null);
+        const dim = Math.max(1, Math.min(100, brightness)) / 100;
+        await this._hueSetLight(light, {
+          onoff: true,
+          dim,
+          temperature: curve.temperature,
+        });
+        this.log(`[PATH-LIGHT] ${light.getName?.()} ON ${brightness}% CT=${curve.temperature}`);
 
         this.homey.clearTimeout?.(light._hueMotionTimer);
         light._hueMotionTimer = this.homey.setTimeout(async () => {
           await this._hueSetLight(light, { onoff: false });
-          this.log(`[HUE] Motion lighting: ${light.getName?.()} OFF après ${timeout} min`);
+          this.log(`[PATH-LIGHT] ${light.getName?.()} OFF after ${timeout} min`);
         }, Math.max(1, timeout) * 60 * 1000);
         return true;
       });
 
-    // ── Éclairage circadien ──────────────────────────────────────────────────
+    // ── Solar Sync apply (legacy id hue_circadian_apply) ─────────────────────
     this.homey.flow.getActionCard('hue_circadian_apply')
       .registerRunListener(async (args) => {
         const { light } = args;
         if (!light) {return false;}
-        const curve = this._hueCircadianCurve();
+        const lux = light.getStoreValue?.('room_balance_lux');
+        const curve = this._hueCircadianCurve(new Date(), typeof lux === 'number' ? lux : null);
         await this._hueSetLight(light, { onoff: true, dim: curve.dim, temperature: curve.temperature });
-        this.log(`[HUE] Circadien appliqué à ${light.getName?.()}: dim=${curve.dim} temp=${curve.temperature}`);
+        this.log(`[SOLAR-SYNC] ${light.getName?.()}: dim=${curve.dim} temp=${curve.temperature} (${curve.source || 'ssot'})`);
         return true;
       });
 
-    // ── Routine réveil (simulation d'aube) ───────────────────────────────────
+    // ── Dawn Ramp ───────────────────────────────────────────────────────────
     this.homey.flow.getActionCard('hue_wakeup')
       .registerRunListener(async (args) => {
         const { light, ramp_minutes: duration = 15, target = 100 } = args;
@@ -751,22 +967,24 @@ class TuyaUnifiedZigbeeApp extends Homey.App {
         const targetDim = Math.max(10, Math.min(100, target)) / 100;
         this.homey.clearInterval?.(light._hueWakeupTimer);
         let step = 0;
-        await this._hueSetLight(light, { onoff: true, dim: 0.01 });
+        const startCurve = this._hueCircadianCurve();
+        await this._hueSetLight(light, { onoff: true, dim: 0.01, temperature: Math.min(1, startCurve.temperature + 0.15) });
         light._hueWakeupTimer = this.homey.setInterval(async () => {
           step++;
           const dim = Math.min(targetDim, 0.01 + (targetDim - 0.01) * (step / steps));
-          await this._hueSetLight(light, { dim: Math.round(dim * 100) / 100 });
+          const t = this._hueCircadianCurve().temperature;
+          await this._hueSetLight(light, { dim: Math.round(dim * 100) / 100, temperature: t });
           if (step >= steps) {
             this.homey.clearInterval?.(light._hueWakeupTimer);
             light._hueWakeupTimer = null;
-            this.log(`[HUE] Réveil terminé sur ${light.getName?.()}: ${targetDim * 100}%`);
+            this.log(`[DAWN-RAMP] done ${light.getName?.()}: ${targetDim * 100}%`);
           }
         }, stepMs);
-        this.log(`[HUE] Réveil démarré sur ${light.getName?.()}: ${steps} pas × ${Math.round(stepMs / 1000)}s`);
+        this.log(`[DAWN-RAMP] start ${light.getName?.()}: ${steps} steps`);
         return true;
       });
 
-    // ── Routine coucher (simulation de crépuscule) ───────────────────────────
+    // ── Dusk Fade ───────────────────────────────────────────────────────────
     this.homey.flow.getActionCard('hue_sleep')
       .registerRunListener(async (args) => {
         const { light, ramp_minutes: duration = 15 } = args;
@@ -780,19 +998,20 @@ class TuyaUnifiedZigbeeApp extends Homey.App {
         light._hueWakeupTimer = this.homey.setInterval(async () => {
           step++;
           const dim = Math.max(0.01, startDim * (1 - step / steps));
-          await this._hueSetLight(light, { dim: Math.round(dim * 100) / 100 });
+          const warm = Math.min(1, this._hueCircadianCurve().temperature + 0.2 * (step / steps));
+          await this._hueSetLight(light, { dim: Math.round(dim * 100) / 100, temperature: warm });
           if (step >= steps) {
             this.homey.clearInterval?.(light._hueWakeupTimer);
             light._hueWakeupTimer = null;
             await this._hueSetLight(light, { onoff: false });
-            this.log(`[HUE] Coucher terminé sur ${light.getName?.()}: OFF`);
+            this.log(`[DUSK-FADE] done ${light.getName?.()}: OFF`);
           }
         }, stepMs);
-        this.log(`[HUE] Coucher démarré sur ${light.getName?.()}: ${steps} pas × ${Math.round(stepMs / 1000)}s`);
+        this.log(`[DUSK-FADE] start ${light.getName?.()}`);
         return true;
       });
 
-    // ── Scènes : capture / application (style Hue) ───────────────────────────
+    // ── Scene Slots ─────────────────────────────────────────────────────────
     this.homey.flow.getActionCard('scene_capture')
       .registerRunListener(async (args) => {
         const { light, slot = 1 } = args;
@@ -800,11 +1019,12 @@ class TuyaUnifiedZigbeeApp extends Homey.App {
         const scene = {
           onoff: light.getCapabilityValue?.('onoff'),
           dim: light.getCapabilityValue?.('dim'),
-          temperature: light.getCapabilityValue?.('light_temperature'),
+          temperature: light.getCapabilityValue?.('light_temperature')
+            ?? light.getCapabilityValue?.('light_color_temp'),
           capturedAt: Date.now(),
         };
         await light.setStoreValue?.(`hue_scene_${slot}`, scene).catch(() => {});
-        this.log(`[HUE] Scène ${slot} capturée pour ${light.getName?.()}: ${JSON.stringify(scene)}`);
+        this.log(`[SCENE-SLOT] captured ${slot} for ${light.getName?.()}`);
         return true;
       });
 
@@ -814,7 +1034,7 @@ class TuyaUnifiedZigbeeApp extends Homey.App {
         if (!light) {return false;}
         const scene = await light.getStoreValue?.(`hue_scene_${slot}`);
         if (!scene) {
-          this.log(`[HUE] Slot ${slot} vide pour ${light.getName?.()}`);
+          this.log(`[SCENE-SLOT] empty slot ${slot} for ${light.getName?.()}`);
           return false;
         }
         await this._hueSetLight(light, {
@@ -822,11 +1042,11 @@ class TuyaUnifiedZigbeeApp extends Homey.App {
           dim: scene.dim,
           temperature: scene.temperature,
         });
-        this.log(`[HUE] Scène ${slot} appliquée à ${light.getName?.()}`);
+        this.log(`[SCENE-SLOT] applied ${slot} to ${light.getName?.()}`);
         return true;
       });
 
-    // ── Fondu vers un niveau (style Lutron) ──────────────────────────────────
+    // ── Soft Fade ───────────────────────────────────────────────────────────
     this.homey.flow.getActionCard('dim_to_level')
       .registerRunListener(async (args) => {
         const { light, target = 50, ramp_minutes: duration = 5 } = args;
@@ -851,13 +1071,13 @@ class TuyaUnifiedZigbeeApp extends Homey.App {
             this.homey.clearInterval?.(light._hueWakeupTimer);
             light._hueWakeupTimer = null;
             if (targetDim === 0) {await this._hueSetLight(light, { onoff: false });}
-            this.log(`[HUE] Fondu terminé sur ${light.getName?.()}: ${targetDim * 100}%`);
+            this.log(`[SOFT-FADE] done ${light.getName?.()}: ${targetDim * 100}%`);
           }
         }, stepMs);
         return true;
       });
 
-    // ── Cycle de scènes (style bouton raccourci IKEA) ────────────────────────
+    // ── Next Scene Slot ─────────────────────────────────────────────────────
     this.homey.flow.getActionCard('scene_cycle')
       .registerRunListener(async (args) => {
         const { light, slots = 3 } = args;
@@ -868,7 +1088,7 @@ class TuyaUnifiedZigbeeApp extends Homey.App {
         const scene = await light.getStoreValue?.(`hue_scene_${next}`);
         await light.setStoreValue?.('hue_scene_cycle_pos', next).catch(() => {});
         if (!scene) {
-          this.log(`[HUE] Cycle: slot ${next} vide pour ${light.getName?.()}`);
+          this.log(`[SCENE-SLOT] cycle empty ${next} for ${light.getName?.()}`);
           return false;
         }
         await this._hueSetLight(light, {
@@ -876,11 +1096,11 @@ class TuyaUnifiedZigbeeApp extends Homey.App {
           dim: scene.dim,
           temperature: scene.temperature,
         });
-        this.log(`[HUE] Cycle: scène ${next}/${count} appliquée à ${light.getName?.()}`);
+        this.log(`[SCENE-SLOT] cycle ${next}/${count} → ${light.getName?.()}`);
         return true;
       });
 
-    // ── Volets : position précise (style stores IKEA) ────────────────────────
+    // ── Cover Setpoint ──────────────────────────────────────────────────────
     this.homey.flow.getActionCard('cover_set_position')
       .registerRunListener(async (args) => {
         const { cover, position = 50 } = args;
@@ -890,30 +1110,28 @@ class TuyaUnifiedZigbeeApp extends Homey.App {
         if (cover.hasCapability?.('windowcoverings_set')) {
           if (set) {await set('windowcoverings_set', target).catch(() => {});}
           else {await cover.setCapabilityValue?.('windowcoverings_set', target).catch(() => {});}
-          this.log(`[HUE] Volet ${cover.getName?.()} → ${position}%`);
+          this.log(`[COVER] ${cover.getName?.()} → ${position}%`);
           return true;
         }
-        this.log(`[HUE] ${cover.getName?.()} n'a pas windowcoverings_set`);
+        this.log(`[COVER] ${cover.getName?.()} missing windowcoverings_set`);
         return false;
       });
 
-    // ── Calibration fins de course (Tuya DP16, Quoya/Dooya) ────────────────
+    // ── Curtain limit calibration (Tuya DP16) ───────────────────────────────
     this.homey.flow.getActionCard('cover_limit_calibration')
       .registerRunListener(async (args) => {
         const { cover, command } = args;
         if (!cover || !command) {return false;}
-        // z2m/Tuya convention: DP16 enum border — 0=up, 1=down, 2=up_delete,
-        // 3=down_delete, 4=remove_top_bottom
         const DP16 = { set_upper: 0, set_lower: 1, delete_upper: 2, delete_lower: 3, remove_all: 4 };
         const value = DP16[command];
         if (value === undefined) {return false;}
         try {
           if (typeof cover._sendTuyaDP === 'function') {
             await cover._sendTuyaDP(16, value, 'enum');
-            this.log(`[CURTAIN] DP16 limit calibration '${command}' (${value}) envoyé à ${cover.getName?.()}`);
+            this.log(`[CURTAIN] DP16 '${command}' (${value}) → ${cover.getName?.()}`);
             return true;
           }
-          this.log(`[CURTAIN] ${cover.getName?.()} ne supporte pas _sendTuyaDP`);
+          this.log(`[CURTAIN] ${cover.getName?.()} no _sendTuyaDP`);
           return false;
         } catch (err) {
           this.error('[CURTAIN] DP16 failed:', err.message);
@@ -921,7 +1139,7 @@ class TuyaUnifiedZigbeeApp extends Homey.App {
         }
       });
 
-    // ── Tout éteindre (style bouton "All Off" de l'app Hue) ──────────────────
+    // ── All Lights Off ──────────────────────────────────────────────────────
     this.homey.flow.getActionCard('hue_all_off')
       .registerRunListener(async () => {
         let count = 0;
@@ -937,15 +1155,15 @@ class TuyaUnifiedZigbeeApp extends Homey.App {
             }
           }
         } catch (err) {
-          this.error('[HUE] all_off error:', err.message);
+          this.error('[ALL-OFF] error:', err.message);
         }
-        this.log(`[HUE] Tout éteint: ${count} lumières`);
+        this.log(`[ALL-OFF] ${count} lights`);
         return true;
       });
   }
 
   // ═══════════════════════════════════════════════════════════════════════════
-  // v5.12.43: OTA flow cards (condition + manual discovery action)
+  // v9.0.378: OTA flow cards (condition + manual discovery action)
   // ═══════════════════════════════════════════════════════════════════════════
   _registerOtaFlowCards() {
     this.homey.flow.getConditionCard('ota_has_update')
@@ -989,20 +1207,10 @@ class TuyaUnifiedZigbeeApp extends Homey.App {
         }
       });
 
-    // v5.12.37 — Condition: value is estimated (telemetry origin)
-    this.homey.flow.getConditionCard('telemetry_is_estimated')
-      .registerRunListener(async (args) => {
-        try {
-          const device = args.device;
-          const capability = args.capability;
-          if (!device || !capability) {return false;}
-          const getStore = device.getStoreValue?.bind(device);
-          if (typeof getStore !== 'function') {return false;}
-          return (await getStore(`telemetry_${capability}_source`)) === 'estimated';
-        } catch (err) {
-          return false;
-        }
-      });
+    // P2556 — Provenance conditions: measured | estimated | calculated
+    this._registerTelemetryProvenanceFlowCards();
+
+    // Action: Force clear ALL rooms
     this.homey.flow.getActionCard('virtual_presence_force_clear_all')
       .registerRunListener(async () => {
         try {
@@ -1020,6 +1228,53 @@ class TuyaUnifiedZigbeeApp extends Homey.App {
           return false;
         }
       });
+  }
+
+  /**
+   * P2556 — Flow cards that distinguish measured vs intelligent estimate vs calculated.
+   * WHY: users must not treat profile estimates or P÷V derivations as live meter reads.
+   */
+  _registerTelemetryProvenanceFlowCards() {
+    const DataProvenance = require('./lib/telemetry/DataProvenance');
+
+    const originOf = async (device, capability) => {
+      if (!device || !capability) return null;
+      try {
+        return await DataProvenance.readOrigin(device, capability);
+      } catch (_e) {
+        return null;
+      }
+    };
+
+    const registerOriginCondition = (cardId, matchFn) => {
+      try {
+        this.homey.flow.getConditionCard(cardId)
+          .registerRunListener(async (args) => {
+            try {
+              const origin = await originOf(args.device, args.capability);
+              return matchFn(origin);
+            } catch (_err) {
+              return false;
+            }
+          });
+      } catch (err) {
+        this.error(`[P2556] Could not register ${cardId}:`, err.message);
+      }
+    };
+
+    registerOriginCondition('telemetry_is_estimated', (o) => DataProvenance.isEstimated(o));
+    registerOriginCondition('telemetry_is_measured', (o) => DataProvenance.isMeasured(o));
+    registerOriginCondition('telemetry_is_calculated', (o) => DataProvenance.isCalculated(o));
+
+    // Trigger is device-fired from DeviceTelemetryEstimator — register card presence only
+    try {
+      const trigger = this.homey.flow.getDeviceTriggerCard('telemetry_source_changed');
+      if (trigger && typeof trigger.registerRunListener === 'function') {
+        trigger.registerRunListener(async () => true);
+      }
+    } catch (err) {
+      this.error('[P2556] telemetry_source_changed register failed:', err.message);
+    }
   }
 
   async initializeInsights() {
@@ -1053,6 +1308,21 @@ class TuyaUnifiedZigbeeApp extends Homey.App {
   async onUninit() {
     this._destroyed = true;
     this.log('⚠️ App uninitializing...');
+    try {
+      if (this._heavyInitTimer) {
+        this.homey.clearTimeout(this._heavyInitTimer);
+        this._heavyInitTimer = null;
+      }
+    } catch (e) {}
+    // WHY(P2321): tear down availability first (sync flag) so device onUninit
+    // cannot race store writes after app teardown — HomeSuite idea, MIT reimpl.
+    try {
+      if (this.availabilityManager?.destroy) {
+        this.availabilityManager.destroy();
+      }
+      this.availabilityManager = null;
+      this._availabilityStarted = false;
+    } catch (e) {}
     try { if (this._tuyaUDPDiscovery) { await this._tuyaUDPDiscovery.stop(); this._tuyaUDPDiscovery = null; } } catch (e) {}
     try { if (this.analytics?.destroy) { this.analytics.destroy(); this.analytics = null; } } catch (e) {}
     try { if (this.healthMonitor?.destroy) { this.healthMonitor.destroy(); this.healthMonitor = null; } } catch (e) {}
@@ -1086,6 +1356,7 @@ class TuyaUnifiedZigbeeApp extends Homey.App {
     this.conditionEngine = null;
     this.predictiveHealthEngine = null;
     this.networkTopologyCollector = null;
+    try { this.homey.__tuyaApp = null; } catch (e) {}
 
     this.flowCardManager = null;
     this.capabilityManager = null;

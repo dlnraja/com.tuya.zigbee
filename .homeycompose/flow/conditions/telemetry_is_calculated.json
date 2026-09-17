@@ -1,0 +1,62 @@
+{
+  "id": "telemetry_is_calculated",
+  "title": {
+    "en": "Value !{{is|is not}} calculated",
+    "fr": "Valeur !{{calculée|non calculée}}",
+    "nl": "Waarde !{{is berekend|is niet berekend}}",
+    "de": "Wert !{{ist berechnet|ist nicht berechnet}}"
+  },
+  "hint": {
+    "en": "True when the value is derived (e.g. current from P÷V, energy integral) — not a live meter report and not a profile estimate",
+    "fr": "Vrai quand la valeur est dérivée (ex. courant via P÷V, intégrale kWh) — ni relevé live ni estimation de profil",
+    "nl": "Waar als de waarde afgeleid is (bijv. stroom uit P÷V, energie-integraal)",
+    "de": "Wahr, wenn der Wert abgeleitet ist (z. B. Strom aus P÷V, Energieintegral)"
+  },
+  "args": [
+    {
+      "type": "device",
+      "name": "device",
+      "filter": "driver_id!=none"
+    },
+    {
+      "type": "dropdown",
+      "name": "capability",
+      "title": {
+        "en": "Capability",
+        "fr": "Capability",
+        "nl": "Capability",
+        "de": "Capability"
+      },
+      "values": [
+        {
+          "id": "measure_power",
+          "title": { "en": "Power (W)", "fr": "Puissance (W)" }
+        },
+        {
+          "id": "measure_voltage",
+          "title": { "en": "Voltage (V)", "fr": "Tension (V)" }
+        },
+        {
+          "id": "measure_current",
+          "title": { "en": "Current (A)", "fr": "Courant (A)" }
+        },
+        {
+          "id": "meter_power",
+          "title": { "en": "Energy (kWh)", "fr": "Énergie (kWh)" }
+        },
+        {
+          "id": "measure_battery",
+          "title": { "en": "Battery (%)", "fr": "Batterie (%)" }
+        },
+        {
+          "id": "measure_temperature",
+          "title": { "en": "Temperature", "fr": "Température" }
+        },
+        {
+          "id": "measure_humidity",
+          "title": { "en": "Humidity", "fr": "Humidité" }
+        }
+      ]
+    }
+  ]
+}
