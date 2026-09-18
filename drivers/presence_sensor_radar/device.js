@@ -304,6 +304,16 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
       const epId = node.endpoints[1] ? 1 : 2;
       await sendTuyaMagicPacket(this, node, epId, { force: true });
       this.log('[RADAR] P2559 Tuya magic handshake armed');
+      // WHY(P2583 / GH#547): first handshake can race interview — one delayed retry only
+      if (!this._radarMagicRetryScheduled) {
+        this._radarMagicRetryScheduled = true;
+        try {
+          const { safeSetTimeout } = require('../../lib/utils/safe-timers');
+          safeSetTimeout(this, () => {
+            this._ensureRadarMagicHandshake(node).catch(() => {});
+          }, 5000);
+        } catch (_e) { /* soft */ }
+      }
     } catch (err) {
       this.log(`[RADAR] magic handshake soft-fail: ${err?.message || err}`);
     }
@@ -845,6 +855,12 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
     if (mapping.enumMap && Object.prototype.hasOwnProperty.call(mapping.enumMap, value)) {
       return mapping.enumMap[value];
     }
+    // WHY(P2583 / GH#547): Z2M ÷100 vs ZHA ×0.1 for near/far range DPs
+    if (mapping.radarRangeScale) {
+      const { normalizeRadarRangeMeters } = require('../../lib/tuya/TuyaRadarRangeScale');
+      const m = normalizeRadarRangeMeters(value, { maxMeters: mapping.maxMeters || 12 });
+      return m != null ? m : value;
+    }
     if (mapping.divisor && typeof value === 'number') {
       return value / mapping.divisor;
     }
@@ -854,6 +870,10 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
   _toRadarDPValue(value, mapping = {}) {
     if (mapping.reverseEnumMap && Object.prototype.hasOwnProperty.call(mapping.reverseEnumMap, value)) {
       return mapping.reverseEnumMap[value];
+    }
+    if (mapping.radarRangeScale) {
+      const { toRadarRangeTuyaValue } = require('../../lib/tuya/TuyaRadarRangeScale');
+      return toRadarRangeTuyaValue(value, { maxMeters: mapping.maxMeters || 12 });
     }
     if (mapping.divisor && typeof value === 'number') {
       // WHY(P2580 / Z2M#32561 MTG275): detection_range TX must be unsigned scaled int
@@ -1167,11 +1187,13 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
       return;
     }
 
-    // 3. Periodic polling (60s)
+    // 3. Periodic polling (config.pollIntervalMs or 60s)
+    const pollMs = Number(this._getRadarConfig()?.pollIntervalMs) > 0
+      ? Number(this._getRadarConfig().pollIntervalMs) : 60000;
     this._pollingInterval = this.homey.setInterval(() => {
       if (this._destroyed) { return; }
       this._requestDPRefresh(zclNode);
-    }, 60000);
+    }, pollMs);
   }
 
   /**

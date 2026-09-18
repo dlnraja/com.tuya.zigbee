@@ -291,6 +291,12 @@
       "note": "P2484 gkfbdvyx TZE200 sibling (Z2M same fingerprint group)"
     },
     {
+      "mfr": "_TZE284_gkfbdvyx",
+      "pid": "TS0601",
+      "driverId": "presence_sensor_radar",
+      "note": "P2583 gkfbdvyx TZE284 sibling sacred-keep (GH#547)"
+    },
+    {
       "mfr": "HOBEIAN",
       "pid": "ZG-204ZL",
       "driverId": "presence_sensor_radar",

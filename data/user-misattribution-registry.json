@@ -5286,6 +5286,32 @@
       "notes": "P2503: Moes ZTS-EUR-C curtain. Forbid TRV + climate_sensor (current-fps bleed). Do NOT forbid wall_thermostat — strip_pid would gut TS0601 there."
     },
     {
+      "id": "p2583-gkfbdvyx-radar-not-socket",
+      "mfr": [
+        "_TZE204_gkfbdvyx",
+        "_TZE200_gkfbdvyx",
+        "_TZE284_gkfbdvyx",
+        "_tze204_gkfbdvyx",
+        "_tze200_gkfbdvyx",
+        "_tze284_gkfbdvyx"
+      ],
+      "productId": ["TS0601"],
+      "canonicalDriver": "presence_sensor_radar",
+      "forbiddenDrivers": [
+        "curtain_motor",
+        "device_radiator_valve",
+        "radiator_valve",
+        "socket",
+        "smartplug",
+        "generic_tuya",
+        "zigbee_universal",
+        "unknown_zigbee_unit"
+      ],
+      "forbidMode": "couple",
+      "source": "github-547-HiepSVG + Z2M ZY-M100-24G",
+      "notes": "P2583: paired as Homey virtualdriverzigbee with 0 caps — lock presence_sensor_radar only."
+    },
+    {
       "id": "p2509-invent-junk-do-not-lock",
       "mfr": [
         "_TZE2841000000_3MZB0SDZ",
