@@ -193,15 +193,27 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
     }
     // WHY(P2575 / VicHY #2247): tip update stripped relay onoff on MTG075 — never drop it
     // when config.hasRelay / known clrdrnya family (bathroom switch tile disappeared).
+    // WHY(P2581 / diag 8d9d0199): fail-closed — empty mfr+cfg after tip MUST NOT allow strip.
     if (cap === 'onoff') {
       try {
         const cfg = this._getRadarConfig?.() || {};
         const mfr = (MfrHelper.getManufacturerName(this) || '').toLowerCase();
-        if (cfg.hasRelay || /clrdrnya|sbyx0lm6/.test(mfr)) {
-          this.log('[RADAR] P2575 refused removeCapability(onoff) (MTG relay lock)');
+        const composeOn = Array.isArray(this.driver?.manifest?.capabilities)
+          && this.driver.manifest.capabilities.includes('onoff');
+        const keepRelay = cfg.hasRelay === true
+          || this.mainsPowered === true
+          || composeOn
+          || /clrdrnya|sbyx0lm6|dtzziy1e|pfayrzcw|iaeejhvf|mtoaryre/.test(mfr)
+          || this.getStoreValue?.('radar_has_relay') === true;
+        // Only allow strip when we KNOW this radar has no relay (battery HOBEIAN etc.)
+        if (keepRelay || cfg.hasRelay !== false) {
+          this.log('[RADAR] P2581 refused removeCapability(onoff) (MTG relay lock)');
           return;
         }
-      } catch (_e) { /* soft */ }
+      } catch (_e) {
+        this.log('[RADAR] P2581 refused removeCapability(onoff) (fail-closed)');
+        return;
+      }
     }
     if (typeof super.removeCapability === 'function') {
       return super.removeCapability(capability);
@@ -329,6 +341,9 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
         } catch (_e) { /* soft */ }
       }, 20_000);
     } catch (_e2) { /* soft */ }
+    // WHY(P2581 / VicHY #2247 8d9d0199): soft-clear only ran on DP9 RX — floodCalm +
+    // needsPolling:false left sticky presence forever in empty bathrooms. Watchdog.
+    this._armStickyPresenceWatchdog();
 
     // v5.11.139: Call super.onNodeInit() to initialize TuyaZigbeeDevice base class
     // which provides _safeInvoke and other L14 features
@@ -743,13 +758,23 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
       'measure_luminance.distance.zone3',
       'measure_motion.classification',
     ];
-    // Only strip onoff when this radar has no relay (battery HOBEIAN etc.)
+    // WHY(P2581 / VicHY #2247 8d9d0199): NEVER push onoff into staleCaps when mfr/config
+    // is still empty after tip update — that race deleted the bathroom relay button.
+    // Only strip when we positively know hasRelay===false (battery radars).
     try {
       const cfg = this._getRadarConfig() || {};
-      if (!cfg.hasRelay) staleCaps.push('onoff');
-    } catch (_e) {
-      staleCaps.push('onoff');
-    }
+      const mfr = (MfrHelper.getManufacturerName(this) || '').toLowerCase();
+      const composeOn = Array.isArray(this.driver?.manifest?.capabilities)
+        && this.driver.manifest.capabilities.includes('onoff');
+      const keepRelay = cfg.hasRelay === true
+        || this.mainsPowered === true
+        || composeOn
+        || /clrdrnya|sbyx0lm6|dtzziy1e|pfayrzcw|iaeejhvf|mtoaryre/.test(mfr);
+      if (cfg.hasRelay === true || keepRelay) {
+        try { this.setStoreValue?.('radar_has_relay', true).catch(() => {}); } catch (_e) { /* soft */ }
+      }
+      if (cfg.hasRelay === false && !keepRelay) staleCaps.push('onoff');
+    } catch (_e) { /* soft — do not push onoff */ }
 
     for (const cap of requiredCaps) {
       if (!this.hasCapability(cap)) {
@@ -1183,6 +1208,48 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
     } catch (e) {
       this.error('[RADAR] DP refresh failed:', e.message);
     }
+  }
+
+  /**
+   * WHY(P2581 / VicHY #2247 diag 8d9d0199): soft-clear was only invoked from DP9 handler.
+   * MTG floodCalm throttles distance + needsPolling:false → sticky Sí forever in empty
+   * bathrooms. Tick every ~15s using last distance / absent telemetry.
+   */
+  _armStickyPresenceWatchdog() {
+    try {
+      if (this._presenceWatchdogArmed) return;
+      const config = this._getRadarConfig() || {};
+      if (!(config.antiFalsePositive || config.hasRelay || config.floodCalm)) return;
+      const { safeSetInterval } = require('../../lib/utils/safe-timers');
+      const period = Number(config.stickyPresenceWatchdogMs) > 0
+        ? Number(config.stickyPresenceWatchdogMs) : 15_000;
+      this._presenceWatchdogArmed = true;
+      safeSetInterval(this, () => {
+        try {
+          if (this._destroyed) return;
+          const cfg = this._getRadarConfig() || config;
+          this._ensureRelayOnoffCapability().catch(() => {});
+          const present = this.getCapabilityValue?.('alarm_motion') === true
+            || this.getCapabilityValue?.('alarm_human') === true;
+          if (!present) return;
+          const d = Number(this._lastDistanceM);
+          const now = Date.now();
+          const age = this._lastDistanceAt ? (now - this._lastDistanceAt) : Infinity;
+          if (Number.isFinite(d)) {
+            this._softClearStuckPresenceOnZeroDistance(d, cfg);
+            return;
+          }
+          // No usable distance for ≥90s while still "present" → clear + unlock occupied
+          if (age >= 90_000) {
+            this.log('[RADAR] P2581 soft-clear (watchdog: no distance corroboration)');
+            this._armStickyDp1Ignore(cfg);
+            this._healForcedOccupiedSensorMode(cfg);
+            this._commitPresenceAndFlows(false);
+          }
+        } catch (_e) { /* soft */ }
+      }, period);
+      this.log(`[RADAR] P2581 sticky-presence watchdog armed (${period}ms)`);
+    } catch (_e) { /* soft */ }
   }
 
   /**

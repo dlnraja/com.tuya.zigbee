@@ -117,6 +117,10 @@
       "tag": "BOTH",
       "note": "Transpose Z2M/ZHA/herdsman: motor_direction strings, Tongou Hz scale, MTG unsigned range, dqy15zxy curtain, heat DP7/8"
     },
+    "p2581_vichy_8d9d0199_relay_watchdog": {
+      "tag": "BOTH",
+      "note": "VicHY #2247/8d9d0199: fail-closed onoff relay lock + sticky presence watchdog (needsPolling false)"
+    },
     "p2512_peter_smartbutton_history": {
       "tag": "BOTH",
       "note": "Peter Smartbutton measure_battery getable/insights app.json + boot heal"
