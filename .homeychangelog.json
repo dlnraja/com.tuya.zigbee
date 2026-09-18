@@ -3632,5 +3632,8 @@
   },
   "9.0.1068": {
     "en": "ZG253 TRV ogx8u5z6: fix setpoint TX (Homey datapoint args) + EF00 DP refresh after pair. Update Test + Repair TRV."
+  },
+  "9.0.1074": {
+    "en": "Improved ceiling radar distance tracking and presence when lux works but distance stayed empty; TRV data query hardening stays in tip."
   }
 }

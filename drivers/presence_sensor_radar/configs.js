@@ -241,6 +241,11 @@ const SENSOR_CONFIGS = {
     hasRelay: false,
     // WHY(P2595): lux updates prove life when DP9 silent — paint presence from lux rate
     syncPresenceFromLuxInference: true,
+    // WHY(P2597 / Z2M ZY-M100-24GV3 find_switch): DP101 OFF → lux OK, distance forever null
+    enableFindSwitchOnBoot: true,
+    // WHY(P2597): ambient lux floods are small deltas — lower rate gate for lux→presence
+    luxPresenceRateThreshold: 3,
+    luxPresenceMinAbsDelta: 8,
     dpMap: {
       1: {
         cap: 'alarm_motion',
@@ -256,7 +261,13 @@ const SENSOR_CONFIGS = {
       // WHY(P2595 / Z2M ZY-M100-24GV3): DP9 distance = ÷10 (not smartDivisor → /100 miss)
       9: { cap: 'measure_luminance.distance', divisor: 10 },
       10: { cap: 'measure_luminance', type: 'lux_direct' },
-      101: { cap: null, internal: 'distance_tracking' },
+      // WHY(P2597 / Z2M DP101 find_switch): distance tracking — auto ON after pair
+      101: {
+        cap: null,
+        internal: 'distance_tracking',
+        type: 'bool',
+        autoEnableFindSwitch: true,
+      },
       102: { cap: null, internal: 'presence_sensitivity' },
       103: { cap: 'measure_luminance', type: 'lux_direct' },
       // DP104 is a second presence enum on some firmwares — same sticky Contre quoi

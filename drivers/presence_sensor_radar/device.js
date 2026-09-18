@@ -412,9 +412,22 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
     // Initialize v8 components
     this._inference = new IntelligentPresenceInference(this);
     this._discovery = new IntelligentDPAutoDiscovery(this);
+    // WHY(P2597 / GH#550): lower lux→presence gates for ceiling 24G (ambient flood)
+    try {
+      const cfg0 = this._getRadarConfig() || {};
+      if (typeof this._inference.applyRadarConfigTuning === 'function') {
+        this._inference.applyRadarConfigTuning(cfg0);
+      }
+    } catch (_eTune) { /* soft */ }
 
     await this._applyRadarCapabilityProfile();
     this._registerRadarCapabilityListeners();
+    // WHY(P2597): Homey may keep compose onoff until strip — soft listener stops
+    // "Missing capability Listener: onoff" on no-relay ceiling tiles (GH#550).
+    this._registerPhantomRelaySoftListeners();
+
+    // WHY(P2597 / Z2M find_switch): enable DP101 so DP9 distance starts reporting
+    this._scheduleCeilingFindSwitchEnable('boot');
 
     // Idea #21: Initialize multi-zone capabilities if config supports it
     await this._initMultiZoneCapabilities();
@@ -811,7 +824,83 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
       } catch (_e) { /* soft per-DP */ }
     }
     this.log(`[RADAR] P2589 restored ${sentCount}/${entries.length} settings DPs (${reason})`);
+    // WHY(P2597): settings restore must also re-arm find_switch (MCU amnesia)
+    try { await this._ensureCeilingFindSwitchOn(`${reason}-findswitch`); } catch (_eFs) { /* soft */ }
     return sentCount;
+  }
+
+  /**
+   * WHY(P2597 / Z2M ZY-M100-24GV3 + GH#550): DP101 find_switch OFF → illuminance keeps
+   * flooding while target_distance stays null forever. Auto-ON after pair / restore.
+   */
+  _scheduleCeilingFindSwitchEnable(reason = 'boot') {
+    try {
+      const config = this._getRadarConfig() || {};
+      if (!config.enableFindSwitchOnBoot && !config.dpMap?.[101]?.autoEnableFindSwitch) return;
+      const { safeSetTimeout } = require('../../lib/utils/safe-timers');
+      const delays = reason === 'boot' ? [8_000, 22_000] : [2_000, 14_000];
+      for (const ms of delays) {
+        safeSetTimeout(this, () => {
+          this._ensureCeilingFindSwitchOn(reason).catch(() => {});
+        }, ms);
+      }
+    } catch (_e) { /* soft */ }
+  }
+
+  async _ensureCeilingFindSwitchOn(reason = 'boot') {
+    const config = this._getRadarConfig() || {};
+    const map101 = config.dpMap?.[101];
+    if (!config.enableFindSwitchOnBoot && !map101?.autoEnableFindSwitch) return false;
+    const mfr = (MfrHelper.getManufacturerName(this) || '').toLowerCase();
+    const isCeilingFamily = /gkfbdvyx|ya4ft0w4|laokfqwu/.test(mfr)
+      || config.configName === 'ZY_M100_CEILING_24G'
+      || config.enableFindSwitchOnBoot === true;
+    if (!isCeilingFamily) return false;
+    const now = Date.now();
+    if (this._lastFindSwitchOnAt && (now - this._lastFindSwitchOnAt) < 20_000) return false;
+    this._lastFindSwitchOnAt = now;
+    this.log(`[RADAR] P2597 enabling DP101 find_switch (${reason})`);
+    const ok = await this._sendRadarDP(101, true, 'bool');
+    // Soft query presence + distance after tracking is armed
+    try {
+      const { safeSetTimeout } = require('../../lib/utils/safe-timers');
+      safeSetTimeout(this, () => {
+        try {
+          const mgr = this.tuyaEF00Manager;
+          if (mgr && typeof mgr.requestDP === 'function') {
+            mgr.requestDP(1, { force: true }).catch(() => {});
+            mgr.requestDP(9, { force: true }).catch(() => {});
+            mgr.requestDP(103, { force: true }).catch(() => {});
+          }
+        } catch (_eQ) { /* soft */ }
+      }, 1_500);
+    } catch (_e2) { /* soft */ }
+    return !!ok;
+  }
+
+  /**
+   * WHY(P2597 / GH#550): compose still lists onoff/button.1 for relay MTG siblings.
+   * Ceiling no-relay tiles get Missing capability Listener until strip lands — soft
+   * no-op listeners prevent UI errors without driving a phantom relay.
+   */
+  _registerPhantomRelaySoftListeners() {
+    try {
+      const cfg = this._getRadarConfig() || {};
+      const mfr = String(this.getSetting?.('zb_manufacturer_name') || '').toLowerCase();
+      const noRelay = cfg.hasRelay === false || /gkfbdvyx|laokfqwu|ya4ft0w4/.test(mfr);
+      if (!noRelay) return;
+      if (this.hasCapability('onoff') && !this._phantomOnoffListener) {
+        this._phantomOnoffListener = true;
+        this.registerCapabilityListener('onoff', async () => {
+          this.log('[RADAR] P2597 ignore phantom Channel 1 (no relay)');
+          return true;
+        });
+      }
+      if (this.hasCapability('button.1') && !this._phantomButtonListener) {
+        this._phantomButtonListener = true;
+        this.registerCapabilityListener('button.1', async () => true);
+      }
+    } catch (_e) { /* soft */ }
   }
 
   /**
@@ -1063,6 +1152,16 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
     if (mapping.reverseEnumMap && Object.prototype.hasOwnProperty.call(mapping.reverseEnumMap, value)) {
       return mapping.reverseEnumMap[value];
     }
+    // WHY(P2597 / Z2M#24831): 24G MTG detection_range <2.5m → unstable / dead radar
+    try {
+      const cfg = this._getRadarConfig?.() || {};
+      const minM = Number(cfg.mtg24gMinDetectionRangeM);
+      const setting = mapping.setting || '';
+      if (minM > 0 && setting === 'detection_range' && typeof value === 'number' && value < minM) {
+        this.log(`[RADAR] P2597 clamp detection_range ${value}→${minM}m (24G min)`);
+        value = minM;
+      }
+    } catch (_eClamp) { /* soft */ }
     if (mapping.radarRangeScale) {
       const { toRadarRangeTuyaValue } = require('../../lib/tuya/TuyaRadarRangeScale');
       return toRadarRangeTuyaValue(value, { maxMeters: mapping.maxMeters || 12 });
