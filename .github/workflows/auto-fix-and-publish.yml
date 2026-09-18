@@ -119,7 +119,7 @@ jobs:
           node <<'NODE'
           const { spawnSync } = require('child_process');
           const scripts = require('./package.json').scripts || {};
-          for (const s of ['check:p244x', 'check:p246x', 'check:p248x', 'check:p249x']) {
+          for (const s of ['check:p244x', 'check:p246x', 'check:p248x', 'check:p249x', 'check:p257x']) {
             if (!scripts[s]) {
               console.log(`skip missing ${s}`);
               continue;

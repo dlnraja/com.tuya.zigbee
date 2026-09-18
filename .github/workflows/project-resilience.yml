@@ -149,6 +149,7 @@ jobs:
           npm run check:p246x || echo "P246x soft warn"
           npm run check:p248x || echo "P248x soft warn"
           npm run check:p249x || echo "P249x soft warn"
+          npm run check:p257x || echo "P257x soft warn"
 
       - name: "Enrichment gates (SHADOW — soft)"
         if: ${{ github.event_name == 'schedule' || inputs.mode == 'all' || inputs.mode == '' }}

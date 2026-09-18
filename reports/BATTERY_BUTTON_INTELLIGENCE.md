@@ -1,9 +1,9 @@
 # Battery / Button Intelligence Gate
 
-Generated: 2026-09-15T08:05:30.465Z
+Generated: 2026-09-18T05:14:10.708Z
 
 - Errors: **0**
-- Warnings: **42**
+- Warnings: **43**
 
 | Rule | Severity | File | Line | Detail |
 |------|----------|------|------|--------|
@@ -16,8 +16,8 @@ Generated: 2026-09-15T08:05:30.465Z
 | B5 | warn | `lib/devices/BaseUnifiedDevice.js` | 3780 | batteryVoltage scaled by a hardcoded unit divisor — remotes reporting mV read ten times too high; use normalizeZclBatteryVoltagePercent |
 | B5 | warn | `lib/devices/BaseUnifiedDevice.js` | 4513 | batteryVoltage scaled by a hardcoded unit divisor — remotes reporting mV read ten times too high; use normalizeZclBatteryVoltagePercent |
 | B5 | warn | `lib/devices/BaseUnifiedDevice.js` | 4968 | batteryVoltage scaled by a hardcoded unit divisor — remotes reporting mV read ten times too high; use normalizeZclBatteryVoltagePercent |
-| B5 | warn | `lib/devices/UnifiedSensorBase.js` | 1422 | batteryVoltage scaled by a hardcoded unit divisor — remotes reporting mV read ten times too high; use normalizeZclBatteryVoltagePercent |
-| B5 | warn | `lib/devices/UnifiedSensorBase.js` | 4679 | batteryVoltage scaled by a hardcoded unit divisor — remotes reporting mV read ten times too high; use normalizeZclBatteryVoltagePercent |
+| B5 | warn | `lib/devices/UnifiedSensorBase.js` | 1425 | batteryVoltage scaled by a hardcoded unit divisor — remotes reporting mV read ten times too high; use normalizeZclBatteryVoltagePercent |
+| B5 | warn | `lib/devices/UnifiedSensorBase.js` | 4682 | batteryVoltage scaled by a hardcoded unit divisor — remotes reporting mV read ten times too high; use normalizeZclBatteryVoltagePercent |
 | B5 | warn | `lib/diagnostics/HealthCheck.js` | 151 | batteryVoltage scaled by a hardcoded unit divisor — remotes reporting mV read ten times too high; use normalizeZclBatteryVoltagePercent |
 | B5 | warn | `lib/tuya/DataRecoveryManager.js` | 484 | batteryVoltage scaled by a hardcoded unit divisor — remotes reporting mV read ten times too high; use normalizeZclBatteryVoltagePercent |
 | B5 | warn | `lib/tuya/TuyaSyncManager.js` | 234 | batteryVoltage scaled by a hardcoded unit divisor — remotes reporting mV read ten times too high; use normalizeZclBatteryVoltagePercent |
@@ -28,8 +28,9 @@ Generated: 2026-09-15T08:05:30.465Z
 | F1 | warn | `drivers/curtain_motor/driver.compose.json` | - | marketing model names used as productId (ZG-301Z, ZG-302Z1) — the hardware reports TS0601/TS02xx, so these entries never match; real couples are in data/marketing-model-alias-registry.json |
 | F1 | warn | `drivers/gas_sensor/driver.compose.json` | - | marketing model names used as productId (ZG-225Z) — the hardware reports TS0601/TS02xx, so these entries never match; real couples are in data/marketing-model-alias-registry.json |
 | F1 | warn | `drivers/illuminance_sensor/driver.compose.json` | - | marketing model names used as productId (ZG-106Z) — the hardware reports TS0601/TS02xx, so these entries never match; real couples are in data/marketing-model-alias-registry.json |
+| F1 | warn | `drivers/lcdtemphumidsensor/driver.compose.json` | - | marketing model names used as productId (ZG-227Z) — the hardware reports TS0601/TS02xx, so these entries never match; real couples are in data/marketing-model-alias-registry.json |
 | C2 | warn | `drivers/motion_sensor/device.js` | - | motion_sensor adds "measure_battery" at runtime but the manifest does not declare it — Homey has no title, unit or energy metadata for it |
-| F1 | warn | `drivers/presence_sensor_radar/driver.compose.json` | - | marketing model names used as productId (ZG-204Z, ZG-204ZE, ZG-204ZH, ZG-204ZK, ZG-204ZL, ZG-204ZM, ZG-204ZP, ZG-204ZQ, ZG-204ZV, ZG-204ZX, ZG-205Z, ZG-205ZL, ZG-302ZL, ZG-302ZM) — the hardware reports TS0601/TS02xx, so these entries never match; real couples are in data/marketing-model-alias-registry.json |
+| F1 | warn | `drivers/presence_sensor_radar/driver.compose.json` | - | marketing model names used as productId (ZG-204Z, ZG-204ZE, ZG-204ZH, ZG-204ZK, ZG-204ZL, ZG-204ZM, ZG-204ZP, ZG-204ZQ, ZG-204ZV, ZG-204ZX, ZG-205Z, ZG-205ZL, ZG-302ZL, ZG-302ZM, ZG-222Z, ZG-205W) — the hardware reports TS0601/TS02xx, so these entries never match; real couples are in data/marketing-model-alias-registry.json |
 | F1 | warn | `drivers/rain_sensor/driver.compose.json` | - | marketing model names used as productId (ZG-223Z) — the hardware reports TS0601/TS02xx, so these entries never match; real couples are in data/marketing-model-alias-registry.json |
 | F1 | warn | `drivers/scene_switch_4/driver.compose.json` | - | marketing model names used as productId (ZG-101ZS) — the hardware reports TS0601/TS02xx, so these entries never match; real couples are in data/marketing-model-alias-registry.json |
 | C2 | warn | `drivers/sensor_contact_motion/device.js` | - | sensor_contact_motion adds "measure_battery" at runtime but the manifest does not declare it — Homey has no title, unit or energy metadata for it |
@@ -39,7 +40,7 @@ Generated: 2026-09-15T08:05:30.465Z
 | C2 | warn | `drivers/sensor_presence_radar/device.js` | - | sensor_presence_radar adds "measure_battery" at runtime but the manifest does not declare it — Homey has no title, unit or energy metadata for it |
 | F1 | warn | `drivers/sensor_presence_radar/driver.compose.json` | - | marketing model names used as productId (ZG-204ZL, ZG-204ZM, ZG-204ZV) — the hardware reports TS0601/TS02xx, so these entries never match; real couples are in data/marketing-model-alias-registry.json |
 | F1 | warn | `drivers/siren/driver.compose.json` | - | marketing model names used as productId (ZG-229Z) — the hardware reports TS0601/TS02xx, so these entries never match; real couples are in data/marketing-model-alias-registry.json |
-| F1 | warn | `drivers/smart_knob/driver.compose.json` | - | marketing model names used as productId (ZG-101ZD, ZG-101Z) — the hardware reports TS0601/TS02xx, so these entries never match; real couples are in data/marketing-model-alias-registry.json |
+| F1 | warn | `drivers/smart_knob/driver.compose.json` | - | marketing model names used as productId (ZG-101ZD, ZG-101Z, ZG-101ZE) — the hardware reports TS0601/TS02xx, so these entries never match; real couples are in data/marketing-model-alias-registry.json |
 | F1 | warn | `drivers/smart_knob_rotary/driver.compose.json` | - | marketing model names used as productId (ZG-101ZD, ZG-101Z) — the hardware reports TS0601/TS02xx, so these entries never match; real couples are in data/marketing-model-alias-registry.json |
 | F1 | warn | `drivers/soil_sensor/driver.compose.json` | - | marketing model names used as productId (ZG-303Z) — the hardware reports TS0601/TS02xx, so these entries never match; real couples are in data/marketing-model-alias-registry.json |
 | F1 | warn | `drivers/switch_1gang/driver.compose.json` | - | marketing model names used as productId (ZG-301Z, ZG-302Z1) — the hardware reports TS0601/TS02xx, so these entries never match; real couples are in data/marketing-model-alias-registry.json |

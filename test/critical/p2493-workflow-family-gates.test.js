@@ -9,7 +9,7 @@
  * - Comment: assert workflow YAML + npm scripts for the hard set
  * - Pour qui: GHA bots + Homey Test publish path
  * - Quand: every PR / push / publish validate
- * - Contre quoi: silent tip regressions (Moes EF00, AI burn, button UI charter)
+ * - Contre quoi: silent tip regressions (Moes EF00, AI burn, button UI charter, VicHY P257x)
  */
 
 const { describe, it } = require('node:test');
@@ -31,7 +31,7 @@ const HARD = [
 
 const SOFT = ['project-resilience.yml'];
 
-const FAMILIES = ['check:p244x', 'check:p246x', 'check:p248x', 'check:p249x'];
+const FAMILIES = ['check:p244x', 'check:p246x', 'check:p248x', 'check:p249x', 'check:p257x'];
 
 function read(rel) {
   return fs.readFileSync(path.join(ROOT, rel), 'utf8');
@@ -46,7 +46,7 @@ describe('P2493 workflow family gate wiring', () => {
     assert.ok(pkg.scripts['check:p2493'], 'missing check:p2493');
   });
 
-  it('hard workflows wire all four families', () => {
+  it('hard workflows wire all five families', () => {
     for (const f of HARD) {
       const t = fs.readFileSync(path.join(WF, f), 'utf8');
       for (const gate of FAMILIES) {
