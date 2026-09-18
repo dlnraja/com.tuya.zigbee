@@ -152,6 +152,7 @@ jobs:
           npm run check:p257x
           npm run check:p2580
           npm run check:p2581
+          npm run check:p2582
 
       - name: P2286–P2288 + P2495 publish path aggregator
         run: npm run check:publish

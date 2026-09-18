@@ -1224,7 +1224,8 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
       const period = Number(config.stickyPresenceWatchdogMs) > 0
         ? Number(config.stickyPresenceWatchdogMs) : 15_000;
       this._presenceWatchdogArmed = true;
-      safeSetInterval(this, () => {
+      // WHY(P2582 / OCR): store handle — safeSetInterval does not auto-clear on delete.
+      this._presenceWatchdogTimer = safeSetInterval(this, () => {
         try {
           if (this._destroyed) return;
           const cfg = this._getRadarConfig() || config;
@@ -1234,12 +1235,15 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
           if (!present) return;
           const d = Number(this._lastDistanceM);
           const now = Date.now();
-          const age = this._lastDistanceAt ? (now - this._lastDistanceAt) : Infinity;
+          // WHY(P2582 / OCR): never treat "never received DP9" as age=Infinity —
+          // that cleared bathroom presence on first tick for distance-less paths.
+          if (!this._lastDistanceAt) return;
+          const age = now - this._lastDistanceAt;
           if (Number.isFinite(d)) {
             this._softClearStuckPresenceOnZeroDistance(d, cfg);
             return;
           }
-          // No usable distance for ≥90s while still "present" → clear + unlock occupied
+          // Had distance once, then silent ≥90s while still "present" → clear
           if (age >= 90_000) {
             this.log('[RADAR] P2581 soft-clear (watchdog: no distance corroboration)');
             this._armStickyDp1Ignore(cfg);
@@ -1250,6 +1254,17 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
       }, period);
       this.log(`[RADAR] P2581 sticky-presence watchdog armed (${period}ms)`);
     } catch (_e) { /* soft */ }
+  }
+
+  _clearStickyPresenceWatchdog() {
+    try {
+      if (this._presenceWatchdogTimer) {
+        const { safeClearInterval } = require('../../lib/utils/safe-timers');
+        safeClearInterval(this, this._presenceWatchdogTimer);
+      }
+    } catch (_e) { /* soft */ }
+    this._presenceWatchdogTimer = null;
+    this._presenceWatchdogArmed = false;
   }
 
   /**
@@ -1641,12 +1656,14 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
   onUninit() {
     if (this._pollingInterval) {this.homey.clearInterval(this._pollingInterval);}
     this._clearRadarPhantomHealInterval();
+    this._clearStickyPresenceWatchdog();
     if (super.onUninit) {super.onUninit();}
   }
 
   onDeleted() {
     this.log('[RADAR] Device deleted');
     this._clearRadarPhantomHealInterval();
+    this._clearStickyPresenceWatchdog();
     if (super.onDeleted) {super.onDeleted();}
   }
 }

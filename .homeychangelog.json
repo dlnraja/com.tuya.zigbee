@@ -1,4 +1,7 @@
 {
+  "9.0.1047": {
+    "en": "OCR review: fix bathroom radar watchdog false-clear + timer leak; add Alibaba OpenCodeReview project rules. Update Homey Test."
+  },
   "9.0.1045": {
     "en": "CI: align mfs_db after curtain FP move so VicHY radar tip 9.0.1044 can publish. Update Homey Test (8d9d0199)."
   },

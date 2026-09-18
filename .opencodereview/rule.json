@@ -1,0 +1,35 @@
+{
+  "rules": [
+    {
+      "path": "drivers/**/*.{js,json}",
+      "merge_system_rule": true,
+      "rule": "#### Homey Tuya Zigbee — driver sacred couple\n- Never invent productId / modelId; identity is manufacturerName + productId only.\n- Settings keys: zb_manufacturer_name + zb_model_id (never camelCase zb_modelId).\n- Capability updates MUST go through safeSetCapabilityValue (L14).\n- Virtual buttons: never raw setCapabilityValue('button'); use safe path / markAppCommand.\n- Batteries: ban linear (V-2.5)/0.5; use SmartBatteryManager / non-linear profiles.\n- Mains devices: get mainsPowered() { return true; } and never phantom measure_battery.\n- Backlight settings are strings off|normal|inverted only.\n- EF00 brightness MCU 0–1000 via TuyaBrightnessScale — never write >1000.\n- Timers: use lib/utils/safe-timers (safeSetTimeout/Interval); clear on onDeleted/onUninit.\n- Flow cards: getDeviceTriggerCard(id) one arg only (SDK3); declare⇒wire for scene_recall/set_brightness/rotate.\n- Contre quoi: every behavior fix needs test/critical/pNNNN-*.test.js."
+    },
+    {
+      "path": "lib/**/*.{js,mjs,cjs}",
+      "merge_system_rule": true,
+      "rule": "#### Homey runtime lib\n- Prefer Buffer JSON.parse for large DB loads (heap OOM on Homey Pro 64MB).\n- IntelligentProtocolDetect: never force EF00 TX on sacred zcl_only BSEED couples.\n- IAS sleepy: enroll on wake; skip leftover EF00 TX (shouldSkipIasOnlyEf00Tx).\n- Dual-app: classify BOTH|MASTER_ONLY|STABLE_ONLY before feature vs reliability.\n- Null-safe cluster access; no ==/!=; no eval/Function string timers.\n- Intervals/timeouts must be clearable; check _destroyed before device I/O."
+    },
+    {
+      "path": ".github/workflows/*.{yml,yaml}",
+      "merge_system_rule": true,
+      "rule": "#### GHA Homey project\n- Top-level permissions + concurrency + defaults.run.shell=bash + timeout-minutes.\n- Node jobs: checkout → setup-node → npm ci.\n- No secret echo; guard missing secrets; continue-on-error for optional secrets.\n- Never pull_request_target untrusted checkout without hardening.\n- AI forfait: AI_FORCE_LOCAL=true, AI_ALLOW_REMOTE=false unless explicitly paid.\n- Forum: SHADOW only — never auto POST to Homey Community."
+    },
+    {
+      "path": "tools/ci/**/*.js",
+      "merge_system_rule": true,
+      "rule": "#### CI tools\n- Silent enrich only; never invent mfr+pid.\n- Complementary variant enrich (P2520): union/append, never wipe compose.\n- Report-only semantic linters must not auto-modify driver sources."
+    }
+  ],
+  "exclude": [
+    "**/node_modules/**",
+    "**/.homeybuild/**",
+    "**/app.json",
+    "**/data/mfs_db.json",
+    "**/reports/**",
+    "**/*.png",
+    "**/*.jpg",
+    "**/*.svg",
+    "**/assets/**"
+  ]
+}
