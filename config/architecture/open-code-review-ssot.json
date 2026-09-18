@@ -1,0 +1,22 @@
+{
+  "_meta": {
+    "id": "P2582",
+    "title": "Alibaba Open Code Review integration",
+    "updated": "2026-09-18",
+    "track": "MASTER_ONLY",
+    "why": "Deterministic file selection + Homey-tuned rules; Cursor delegation avoids paid OCR LLM under forfait"
+  },
+  "cli": "@alibaba-group/open-code-review",
+  "projectRules": ".opencodereview/rule.json",
+  "preferMode": "delegate",
+  "forbidRemoteLlmDefault": true,
+  "npm": {
+    "review:ocr": "delegate preview last 30 commits",
+    "review:ocr:rules": "delegate rule for critical paths",
+    "check:p2582": "Contre quoi gate for OCR wiring + radar watchdog OCR fixes"
+  },
+  "cursorPlugin": "~/.cursor/plugins/local/open-code-review",
+  "docs": "docs/architecture/OPEN_CODE_REVIEW.md",
+  "workflow": ".github/workflows/open-code-review.yml",
+  "excludeHeavy": ["app.json", "data/mfs_db.json", "reports/**"]
+}
