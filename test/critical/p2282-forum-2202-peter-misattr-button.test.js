@@ -45,6 +45,17 @@ describe('P2282 forum #2202 Peter water MISATTR + Smartbutton', () => {
     assert.strictEqual(lookup('HOBEIAN', ''), null);
   });
 
+  // Contre quoi(P2590d): Z2M enrich left productId as string → lookup threw .map is not a function
+  it('lookup tolerates string productId in registry cases (P2590d)', () => {
+    const src = read('lib/pairing/UserMisattributionRegistry.js');
+    assert(src.includes('Array.isArray(rawPid)') || src.includes('Array.isArray(rawPid)'));
+    assert(src.includes('pidList'));
+    const { invalidate } = require('../../lib/pairing/UserMisattributionRegistry');
+    invalidate();
+    assert.doesNotThrow(() => lookup('HOBEIAN', null));
+    assert.doesNotThrow(() => lookup('_TZE200_o4mkahkc', 'TS0202'));
+  });
+
   it('_warnIfMisattributedDriver clears stale MISATTR unavailable (P2289)', () => {
     const src = read('lib/tuya/TuyaZigbeeDevice.js');
     assert(src.includes('cleared stale unavailable'));

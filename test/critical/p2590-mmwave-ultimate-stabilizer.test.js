@@ -40,6 +40,7 @@ describe('P2590 mmWave Ultimate Stabilizer', () => {
     const src = fs.readFileSync(DEVICE, 'utf8');
     assert.ok(src.includes('_pushAllRadarSettingsToDevice'));
     assert.ok(src.includes('clearStuckPresence'));
+    assert.ok(!/(?<![\w.$])setTimeout\s*\(/.test(src), 'no bare setTimeout in radar device (TITAN)');
     const flow = JSON.parse(fs.readFileSync(FLOW, 'utf8'));
     const clear = (flow.actions || []).find((a) => a.id === 'presence_sensor_radar_clear_presence');
     assert.ok(clear, 'clear presence action');

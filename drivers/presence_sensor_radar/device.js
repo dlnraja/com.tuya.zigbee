@@ -748,13 +748,10 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
         const dpType = this._getRadarDPType(dpConfig);
         const ok = await this._sendRadarDP(parseInt(dpId, 10), tx, dpType);
         if (ok) sentCount += 1;
+        // WHY(P2590c): spacing between EF00 writes — safeSetTimeout only (no bare fallback; TITAN gate)
         await new Promise((resolve) => {
-          try {
-            const { safeSetTimeout } = require('../../lib/utils/safe-timers');
-            safeSetTimeout(this, resolve, 90);
-          } catch (_e) {
-            setTimeout(resolve, 90);
-          }
+          const { safeSetTimeout } = require('../../lib/utils/safe-timers');
+          safeSetTimeout(this, resolve, 90);
         });
       } catch (_e) { /* soft per-DP */ }
     }

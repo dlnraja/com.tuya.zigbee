@@ -7539,7 +7539,9 @@
     {
       "id": "z2m-o4mkahkc-ts0202-motion",
       "manufacturerName": "_TZ3000_o4mkahkc",
-      "productId": "TS0202",
+      "productId": [
+        "TS0202"
+      ],
       "canonicalDriver": "motion_sensor",
       "forbidDrivers": [
         "contact_sensor",
@@ -7555,7 +7557,9 @@
     {
       "id": "z2m-ksz749x8-ts0601-climate",
       "manufacturerName": "_TZE284_ksz749x8",
-      "productId": "TS0601",
+      "productId": [
+        "TS0601"
+      ],
       "canonicalDriver": "climate_sensor",
       "forbidDrivers": [
         "button_wireless_2",
@@ -7571,7 +7575,9 @@
     {
       "id": "z2m-ksz749x8-tze204-ts0601-climate",
       "manufacturerName": "_TZE204_ksz749x8",
-      "productId": "TS0601",
+      "productId": [
+        "TS0601"
+      ],
       "canonicalDriver": "climate_sensor",
       "forbidDrivers": [
         "button_wireless_2",
