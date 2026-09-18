@@ -66,6 +66,21 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
   }
 
   /**
+   * WHY(P2600 / GH#550): ceiling EF00 radars must active-query DP1/9/101 —
+   * UnifiedSensorBase skips periodic DataQuery when mainsPowered, and native
+   * tuya.dataQuery alone left distance "-" while lux flooded.
+   */
+  get forceActiveTuyaMode() {
+    try {
+      const cfg = this._getRadarConfig() || {};
+      if (cfg.enableFindSwitchOnBoot || cfg.forceActiveTuyaMode) return true;
+      const mfr = (MfrHelper.getManufacturerName(this) || '').toLowerCase();
+      if (/gkfbdvyx|ya4ft0w4|laokfqwu|clrdrnya|sbyx0lm6/.test(mfr)) return true;
+    } catch (_e) { /* soft */ }
+    return false;
+  }
+
+  /**
    * WHY(P2379): override UnifiedSensorBase climate defaults — radar owns config.dpMap
    * (sensitivity/range/delay DPs must show as driver-owned to DynCap).
    */
@@ -949,22 +964,62 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
     if (this._lastFindSwitchOnAt && (now - this._lastFindSwitchOnAt) < 20_000) return false;
     this._lastFindSwitchOnAt = now;
     this.log(`[RADAR] P2597 enabling DP101 find_switch (${reason})`);
-    const ok = await this._sendRadarDP(101, true, 'bool');
+    // WHY(P2600): prefer EF00 manager (same Contre quoi as TRV P2593 Buffer path)
+    let ok = false;
+    try {
+      if (this.tuyaEF00Manager && typeof this.tuyaEF00Manager.sendDP === 'function') {
+        ok = !!(await this.tuyaEF00Manager.sendDP(101, true, 'bool'));
+      }
+    } catch (_eMgr) { /* soft */ }
+    if (!ok) ok = !!(await this._sendRadarDP(101, true, 'bool'));
     // Soft query presence + distance after tracking is armed
     try {
       const { safeSetTimeout } = require('../../lib/utils/safe-timers');
       safeSetTimeout(this, () => {
-        try {
-          const mgr = this.tuyaEF00Manager;
-          if (mgr && typeof mgr.requestDP === 'function') {
-            mgr.requestDP(1, { force: true }).catch(() => {});
-            mgr.requestDP(9, { force: true }).catch(() => {});
-            mgr.requestDP(103, { force: true }).catch(() => {});
-          }
-        } catch (_eQ) { /* soft */ }
+        this._queryCeilingPresenceDps('post-findswitch').catch(() => {});
       }, 1_500);
     } catch (_e2) { /* soft */ }
     return !!ok;
+  }
+
+  /**
+   * WHY(P2600 / GH#550 OCR): lux floods every 1–2s while DP9 stays "-" —
+   * re-arm find_switch + EF00 requestDP (not Homey-native dataQuery alone).
+   */
+  _nudgeCeilingDistanceArmFromLux() {
+    try {
+      const cfg = this._getRadarConfig() || {};
+      if (!cfg.enableFindSwitchOnBoot && !cfg.syncPresenceFromLuxInference) return;
+      if (this._distanceSeenOnce) return;
+      const now = Date.now();
+      if (this._lastLuxDistanceNudgeAt && (now - this._lastLuxDistanceNudgeAt) < 12_000) return;
+      this._lastLuxDistanceNudgeAt = now;
+      this._ensureCeilingFindSwitchOn('lux-nudge').catch(() => {});
+      this._queryCeilingPresenceDps('lux-nudge').catch(() => {});
+    } catch (_e) { /* soft */ }
+  }
+
+  async _queryCeilingPresenceDps(reason = 'boot') {
+    try {
+      const mgr = this.tuyaEF00Manager;
+      const dps = [1, 9, 101, 103, 104];
+      if (mgr && typeof mgr.requestDPs === 'function') {
+        this.log(`[RADAR] P2600 requestDPs [${dps.join(',')}] (${reason})`);
+        await mgr.requestDPs(dps).catch(() => {});
+        return true;
+      }
+      if (mgr && typeof mgr.requestDP === 'function') {
+        for (const dp of dps) {
+          await mgr.requestDP(dp, { force: true }).catch(() => {});
+        }
+        return true;
+      }
+      if (typeof this.tuyaDataQuery === 'function') {
+        await this.tuyaDataQuery(dps, { logPrefix: '[RADAR-P2600]', delayBetweenQueries: 40 }).catch(() => {});
+        return true;
+      }
+    } catch (_e) { /* soft */ }
+    return false;
   }
 
   /**
@@ -1399,6 +1454,13 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
         presence = transformPresence(value, mapping.type, config.invertPresence, config.configName);
       }
 
+      // WHY(P2600 / ZHA DP104 motion_state): none/clear must not wipe lux/DP1 presence
+      // while find_switch warms and DP9 is still "-".
+      if (mapping.ignorePresenceClear === true && (presence === false || presence === 0)) {
+        this.log(`[RADAR] P2600 ignore presence clear from DP${dpId} (motion_state)`);
+        return;
+      }
+
       // Integrate with inference engine if needed
       // WHY(P2453): pass unreliable so sticky DP1 cannot pin alarm_motion forever
       // WHY(P2584): under Occupied+smart, DP1 is firmware-forced true — treat as unreliable
@@ -1458,6 +1520,8 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
     if (mapping.cap === 'measure_luminance.distance') {
       let distance = this._coerceDistanceMeters(value, mapping);
       if (distance == null) return;
+      this._distanceSeenOnce = true;
+      this._lastDistanceM = distance;
       this._noteDistanceSample(distance);
       const inferred = this._ensureInference().updateDistance(distance);
       // WHY(P2509 / Z2M#30785): gkfbdvyx sticks DP1=true while DP9=0m — clear Homey presence
@@ -1508,6 +1572,8 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
       } else if (mapping.divisor) {lux = value / mapping.divisor;}
 
       const luxInferred = this._ensureInference().updateLux(lux);
+      // WHY(P2600 / GH#550): lux stream alive while DP9 never seen → re-arm find_switch
+      this._nudgeCeilingDistanceArmFromLux();
       // WHY(P2584): lux step still corroborates entry while Occupied forces DP1
       if (this._smartPresenceUnderOccupiedActive(config) && !this.getCapabilityValue('alarm_motion')) {
         if (this._distanceCorroboratesPresence()
@@ -1517,6 +1583,7 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
         }
       }
       // WHY(P2595 / GH#550): gkfbdvyx lux floods while DP9 null — paint presence from lux rate
+      // WHY(P2600): also accept lux-cadence soft present while find_switch warms
       if (config.syncPresenceFromLuxInference && typeof luxInferred === 'boolean') {
         const painted = this.getCapabilityValue('alarm_motion');
         if (painted !== luxInferred) {
@@ -1644,6 +1711,13 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
 
   async _requestDPRefresh(zclNode) {
     try {
+      // WHY(P2600 / GH#550): EF00 targeted query first — native dataQuery alone
+      // left presence/distance dead while lux (DP103) kept streaming.
+      const cfg = this._getRadarConfig() || {};
+      if (cfg.enableFindSwitchOnBoot || this.forceActiveTuyaMode) {
+        const ok = await this._queryCeilingPresenceDps('poll');
+        if (ok) return;
+      }
       const ep1 = zclNode?.endpoints?.[1];
       const tuya = ep1?.clusters?.tuya || ep1?.clusters?.[61184];
       if (tuya?.dataQuery) {
@@ -2057,6 +2131,13 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
       }
       this.log('[RADAR] P2577 drop sticky DP1 true (empty bathroom / no entry motion)');
       return null;
+    }
+
+    // WHY(P2600 / GH#550 OCR): DP9 never received (find_switch OFF) ≠ empty room.
+    // Anti-FP must not refuse presence while distance tracking is still cold.
+    if (!this._distanceSeenOnce && (config.enableFindSwitchOnBoot || config.syncPresenceFromLuxInference)) {
+      this._pendingPresenceTrueSince = 0;
+      return true;
     }
 
     // Optional rising-edge confirm when distance looks empty (0 / NaN) — avoid instant FP
