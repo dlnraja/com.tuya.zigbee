@@ -24,9 +24,16 @@
 | 112 | block_time | Re-detect delay after clear (s/10); ~10s works well |
 | 115 | sensor | `on`/`off`/`occupied`/`unoccupied` — **occupied = permanent presence** |
 
-## Known bugs / Contre quoi (P2579)
+## Known bugs / Contre quoi (P2579 / P2587)
 
-1. **sensor=occupied** forces presence forever (Z2M docs) → soft-clear heals DP115→`on`
+**Two separate VicHY problems (do not conflate):**
+
+1. **Homey Rideau/Curtain type flip** (#2242/#2246) — platform cache restores stale `windowcoverings_*` / class. App heal + tip ≥9.0.995; if still Curtain → delete + re-pair as **Presence Sensor Radar**. Not caused by Occupied mode.
+2. **Sticky bathroom presence** — lux/distance still move but Homey never edges off. Causes: VMC/fan micro-motion, long Departure delay, firmware Occupied (DP115), wall reflection. Soft-clear + micro-jitter (P2587) + lower sensitivity / delay.
+
+Other Contre quoi:
+
+1. **sensor=occupied** forces presence forever (Z2M docs) → soft-clear heals DP115→`on` (unless smart overlay keeps Occupied)
 2. **Sticky DP1** empty bathroom + wall reflection → antiFalsePositive + soft-clear + sticky-ignore
 3. **Distance UI `0 [object Object]`** → units must be string `"m"`
 4. **Phantom curtain / missing relay** after tip → heal class + `_ensureRelayOnoffCapability`
@@ -36,4 +43,4 @@
 
 ## Bathroom tuning (VicHY)
 
-Prefer: Sensor mode **On**; Departure delay ≥30s; Block time ~5–10s; Detection range ≥2.5m (24G); raise Shield range to exclude walls; lower Radar/Entry sensitivity if still sticky.
+Prefer: Sensor mode **On**; Departure delay **15–45s** (not minutes); Block time ~5–10s; Detection range ≥2.5m (24G); raise Shield range to exclude walls; lower Radar/Entry sensitivity if sticky. Check extract fan (VMC) — MTG075 sees blades through plastic.

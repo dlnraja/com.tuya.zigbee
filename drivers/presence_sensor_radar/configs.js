@@ -89,6 +89,11 @@ const SENSOR_CONFIGS = {
       '_TZE204_pfayrzcw', '_TZE284_4qznlkbu',
       '_TZE200_clrdrnya', '_TZE200_sbyx0lm6',
       '_TZE284_clrdrnya', // compose FP family; avoid DEFAULT DP fallback
+      // WHY(P2587): Z2M often lists dtzziy1e as MTG075-ZB-RL — same relay family as VicHY clrdrnya
+      '_TZE200_dtzziy1e', '_TZE284_dtzziy1e',
+      '_TZE200_iaeejhvf', '_TZE284_iaeejhvf',
+      '_TZE200_pfayrzcw', '_TZE284_pfayrzcw',
+      '_TZE284_sbyx0lm6',
     ],
     battery: false,
     mainsPowered: true,
@@ -128,6 +133,10 @@ const SENSOR_CONFIGS = {
     softClearZeroDistanceMs: 30000,
     softClearStableDistanceMs: 30000,
     softClearIgnoreStickyDp1Ms: 90000,
+    // WHY(P2587): VMC / shower-glass micro-jitter (span ≤0.45m for ≥90s) → soft-clear
+    softClearMicroJitterMs: 90000,
+    softClearMicroJitterWindowMs: 120000,
+    softClearMicroJitterMaxSpanM: 0.45,
     // WHY(P2581): bathroom watchdog ticks soft-clear without waiting for throttled DP9
     stickyPresenceWatchdogMs: 15000,
     presenceConfirmMs: 3000,

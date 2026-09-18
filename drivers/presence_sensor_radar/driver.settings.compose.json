@@ -26,9 +26,9 @@
     "type": "number",
     "label": { "en": "Departure delay", "fr": "Délai de départ", "nl": "Vertrekvertraging" },
     "hint": {
-      "en": "Seconds after target leaves before clear. Manufacturer recommends ≥15s (lower causes false clears).",
-      "fr": "Secondes après départ avant clear. Fabricant recommande ≥15s (plus bas → faux négatifs).",
-      "nl": "Seconden na vertrek voor clear. Fabrikant adviseert ≥15s."
+      "en": "Seconds after target leaves before clear (0–1500+). Too high looks like a frozen sensor. Bathroom + VMC: try 15–45s and lower Radar/Entry sensitivity.",
+      "fr": "Secondes après départ avant clear (0–1500+). Trop haut = capteur « gelé ». Salle de bain + VMC: essayer 15–45s et baisser sensibilité Radar/Entrée.",
+      "nl": "Seconden na vertrek voor clear. Te hoog lijkt bevroren. Badkamer + ventilator: 15–45s en lagere gevoeligheid."
     },
     "value": 30,
     "min": 0,
@@ -57,9 +57,9 @@
     "type": "dropdown",
     "label": { "en": "Sensor mode", "fr": "Mode capteur", "nl": "Sensormodus" },
     "hint": {
-      "en": "On = normal radar. Occupied forces firmware presence ON forever — with Smart presence under Occupied, Homey still tracks real presence from distance/lux. Unoccupied forces clear.",
-      "fr": "Marche = radar normal. Occupé force la présence firmware à ON — avec Présence smart sous Occupé, Homey suit encore la vraie présence via distance/lux. Inoccupé force l’absence.",
-      "nl": "Aan = normale radar. Bezet forceert firmware-aanwezigheid permanent — met Slimme aanwezigheid onder Bezet volgt Homey nog echte aanwezigheid via afstand/lux."
+      "en": "On = normal radar. Occupied forces firmware presence ON forever — with Smart presence under Occupied, Homey still tracks real presence from distance/lux. Unoccupied forces clear. Bathroom freeze with lux/distance still moving is usually sticky presence (VMC/fan) or long Departure delay — not the Homey Curtain type bug.",
+      "fr": "Marche = radar normal. Occupé force la présence firmware à ON — avec Présence smart sous Occupé, Homey suit encore la vraie présence via distance/lux. Inoccupé force l’absence. Gel salle de bain avec lux/distance qui bougent = souvent présence collante (VMC) ou délai de départ trop long — pas le bug Homey « Rideau ».",
+      "nl": "Aan = normale radar. Bezet forceert firmware-aanwezigheid permanent — met Slimme aanwezigheid onder Bezet volgt Homey nog echte aanwezigheid via afstand/lux. Onbezet forceert afwezig. Badkamer-freeze met lux/afstand die nog beweegt is meestal sticky presence (ventilator) of te lange vertrekvertraging — niet de Homey Gordijn-typebug."
     },
     "value": "on",
     "values": [
@@ -98,5 +98,14 @@
       "nl": "Zet sensormodus terug naar Aan na soft-clear. Uit = houd Bezet en gebruik slimme overlay."
     },
     "value": false
+  },
+  {
+    "id": "homey_curtain_flip_help",
+    "type": "label",
+    "label": {
+      "en": "If Homey shows Curtain/Rideau: update Test (≥9.0.995), restart the app 2–3 min. If still Curtain → remove device and re-pair as Presence Sensor Radar. Separate from sticky bathroom presence (VMC / Departure delay).",
+      "fr": "Si Homey affiche Rideau: Test (≥9.0.995), redémarrer l’app 2–3 min. Si toujours Rideau → supprimer et ré-associer en Presence Sensor Radar. Distinct du gel salle de bain (VMC / délai de départ).",
+      "nl": "Als Homey Gordijn toont: Test (≥9.0.995), app 2–3 min herstarten. Nog steeds Gordijn → verwijderen en opnieuw koppelen als Presence Sensor Radar. Los van sticky badkamer-presence (ventilator / vertrekvertraging)."
+    }
   }
 ]

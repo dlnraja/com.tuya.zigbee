@@ -451,7 +451,35 @@
       ],
       "forbidMode": "couple",
       "protocol": "tuya_ef00",
-      "notes": "VicHY #2224/#2227 MTG075 220V AC ceiling mmWave presence radar. Forbid curtain_motor phantom flip."
+      "notes": "VicHY #2224/#2227/#2242/#2246 MTG075 220V AC ceiling mmWave. Dual Contre quoi: (1) Homey Rideau class/cap cache flip → heal + re-pair Presence Sensor Radar; (2) bathroom sticky presence (VMC/fan, departure delay, Occupied firmware) — not the same bug. Forbid curtain_motor phantom flip."
+    },
+    {
+      "id": "mtg075-dtzziy1e-presence",
+      "mfr": [
+        "_TZE204_dtzziy1e",
+        "_tze204_dtzziy1e",
+        "_TZE204_DTZZIY1E",
+        "_TZE200_dtzziy1e",
+        "_tze200_dtzziy1e",
+        "_TZE200_DTZZIY1E",
+        "_TZE284_dtzziy1e",
+        "_tze284_dtzziy1e",
+        "_TZE284_DTZZIY1E"
+      ],
+      "productId": [
+        "TS0601"
+      ],
+      "canonicalDriver": "presence_sensor_radar",
+      "forbiddenDrivers": [
+        "curtain_motor",
+        "curtain_motor_shutter",
+        "climate_sensor",
+        "zigbee_universal",
+        "generic_tuya"
+      ],
+      "forbidMode": "couple",
+      "protocol": "tuya_ef00",
+      "notes": "P2587 Z2M MTG075-ZB-RL often dtzziy1e+TS0601 — same relay radar family as VicHY clrdrnya. Never curtain."
     },
     {
       "id": "hobeian-aubess-k4ej3ww2-ias",
