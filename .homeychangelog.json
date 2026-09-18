@@ -1,4 +1,7 @@
 {
+  "9.0.1030": {
+    "en": "Presence radar: trust presence DP, keep sensor on/off, clear sticky empty-room detections. Update Homey Test and restart the app on both units."
+  },
   "changelog": [
     {
       "version": "9.0.497",
