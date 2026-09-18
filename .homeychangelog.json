@@ -3644,5 +3644,8 @@
   },
   "9.0.1080": {
     "en": "Radar/TRV residual: mains EF00 periodic query, gkfbdvyx DP9 /10 SSOT, soft Channel listener before init. Update Homey Test + Repair presence radars and radiator valves."
+  },
+  "9.0.1082": {
+    "en": "Presence radar: slim compose (no phantom zones/temp on tip), announce re-arms distance tracking, CRQ3 DP9 fix. Update Homey Test + Repair radars/TRVs."
   }
 }
