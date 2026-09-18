@@ -1,4 +1,7 @@
 {
+  "9.0.1056": {
+    "en": "Homey RAM: smarter RSS/heap budget + safer lazy JSON loading; fix fingerprint routing after Z2M enrich. Update Homey Test."
+  },
   "9.0.1055": {
     "en": "Z2M/herdsman complementary: more verified mfr+pid couples (climate, dimmer, motion, SOS, switches, plugs, curtain) + misroute locks. Update Homey Test."
   },
