@@ -1,4 +1,10 @@
 {
+  "9.0.1062": {
+    "en": "Publish fix: Clear presence Flow card titleFormatted; mmWave stabilizer ready for VicHY tip soak. Update Homey Test and Repair sensors if stuck Occupied."
+  },
+  "9.0.1061": {
+    "en": "mmWave stabilizer: tighter distance/lux anti-spam, survival watchdog auto-clears stuck Occupied after departure delay, settings restore + Clear presence. Update Homey Test."
+  },
   "9.0.1060": {
     "en": "Presence radar: re-push sensitivity/delay after MCU reboot; Clear presence Flow action + settings; ghost-presence hints. Update Homey Test."
   },

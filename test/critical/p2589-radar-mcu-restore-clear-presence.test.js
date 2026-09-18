@@ -34,6 +34,7 @@ describe('P2589 radar MCU restore + clear presence', () => {
     const clear = actions.find((a) => a.id === 'presence_sensor_radar_clear_presence');
     assert.ok(clear, 'clear action in compose');
     assert.ok((clear.args || []).some((a) => a.type === 'device'), 'device arg');
+    assert.match(String(clear.titleFormatted?.en || ''), /\[\[device\]\]/, 'Athom titleFormatted needs [[device]]');
 
     const driverSrc = fs.readFileSync(DRIVER, 'utf8');
     assert.ok(driverSrc.includes('presence_sensor_radar_clear_presence'));

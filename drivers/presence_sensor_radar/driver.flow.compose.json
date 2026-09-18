@@ -452,10 +452,10 @@
         "de": "Anwesenheit löschen (Wartung)"
       },
       "titleFormatted": {
-        "en": "Clear presence (maintenance)",
-        "nl": "Presence wissen (onderhoud)",
-        "fr": "Effacer la présence (maintenance)",
-        "de": "Anwesenheit löschen (Wartung)"
+        "en": "Clear presence on [[device]] (maintenance)",
+        "nl": "Presence wissen op [[device]] (onderhoud)",
+        "fr": "Effacer la présence sur [[device]] (maintenance)",
+        "de": "Anwesenheit auf [[device]] löschen (Wartung)"
       },
       "hint": {
         "en": "Force Homey presence OFF when the radar is stuck Occupied (ghost presence / MCU). Does not require unplugging.",
