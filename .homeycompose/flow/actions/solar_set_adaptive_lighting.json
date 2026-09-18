@@ -1,10 +1,10 @@
 {
   "id": "solar_set_adaptive_lighting",
   "title": {
-    "en": "Set adaptive lighting mode"
+    "en": "Set Solar Sync mode"
   },
   "hint": {
-    "en": "Sets the adaptive lighting mode based on current solar position"
+    "en": "Sets the Solar Sync white-temperature mode from current sun elevation"
   },
   "args": [
     {
@@ -75,6 +75,6 @@
     }
   ],
   "titleFormatted": {
-    "en": "Set adaptive lighting mode [[mode]] [[transition_seconds]]"
+    "en": "Set Solar Sync mode [[mode]] [[transition_seconds]]"
   }
 }

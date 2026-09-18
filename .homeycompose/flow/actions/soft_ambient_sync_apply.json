@@ -32,7 +32,7 @@
     {
       "type": "number",
       "name": "hue",
-      "title": { "en": "Hue (0–1)", "fr": "Teinte (0–1)" },
+      "title": { "en": "Tint (0–1)", "fr": "Teinte (0–1)" },
       "min": 0,
       "max": 1,
       "step": 0.01,
