@@ -222,7 +222,7 @@ class RadiatorValveDevice extends PhysicalButtonMixin(VirtualButtonMixin(Unified
     // Setup ZCL thermostat (parent doesn't do this)
     await this._setupThermostatCluster(zclNode);
 
-    // Register onoff/mode listeners (parent only handles target_temperature)
+    // Register onoff/mode listeners AFTER identity (me167 needs DP4 not DP3)
     this._setupTRVListeners();
 
     // WHY(P2593 / Michaelp #2253): caps stay null until first EF00 report — nudge query

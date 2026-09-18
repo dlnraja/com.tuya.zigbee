@@ -79,7 +79,11 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
 
   get sensorCapabilities() {
     const config = this._getRadarConfig();
-    const caps = new Set(['alarm_motion', 'alarm_human', 'button.1']);
+    const mfr = (MfrHelper.getManufacturerName(this) || '').toLowerCase();
+    const noRelayCeiling = config.hasRelay === false
+      || /gkfbdvyx|laokfqwu|ya4ft0w4/.test(mfr);
+    const caps = new Set(['alarm_motion', 'alarm_human']);
+    if (!noRelayCeiling) caps.add('button.1');
     const noBattery = this.mainsPowered
       || config.noBatteryCapability
       || config.suppressBatteryCapability
@@ -92,6 +96,7 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
       if (capability === 'measure_temperature' && config.noTemperature) {return;}
       if (capability === 'measure_humidity' && config.noHumidity) {return;}
       if (capability === 'onoff' && !config.hasRelay) {return;}
+      if ((capability === 'button.1' || capability === 'button') && noRelayCeiling) {return;}
       caps.add(capability);
     };
 
@@ -192,29 +197,51 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
     // WHY(P2577 / VicHY #2247 screenshot): lock ONLY primary presence caps.
     // /^alarm_motion/ also matched alarm_motion.zoneN → MTG075 could never strip
     // phantom multi-zone tiles (shown as "-" in bathroom UI).
-    if (cap === 'alarm_motion' || cap === 'alarm_human' || cap === 'alarm_presence'
-        || cap === 'button.1') {
+    if (cap === 'alarm_motion' || cap === 'alarm_human' || cap === 'alarm_presence') {
       this.log(`[RADAR] P2548 refused removeCapability(${cap}) (presence lock)`);
       return;
+    }
+    // WHY(P2595 / GH#550): allow strip of phantom Button 1 on no-relay ceiling radars
+    if (cap === 'button.1' || cap === 'button') {
+      try {
+        const cfg = this._getRadarConfig?.() || {};
+        const mfr = (MfrHelper.getManufacturerName(this) || '').toLowerCase();
+        const noRelayCeiling = cfg.hasRelay === false
+          || /gkfbdvyx|laokfqwu|ya4ft0w4/.test(mfr);
+        if (noRelayCeiling) {
+          // fall through to super.removeCapability
+        } else {
+          this.log(`[RADAR] P2548 refused removeCapability(${cap}) (presence lock)`);
+          return;
+        }
+      } catch (_e) {
+        this.log(`[RADAR] P2548 refused removeCapability(${cap}) (presence lock)`);
+        return;
+      }
     }
     // WHY(P2575 / VicHY #2247): tip update stripped relay onoff on MTG075 — never drop it
     // when config.hasRelay / known clrdrnya family (bathroom switch tile disappeared).
     // WHY(P2581 / diag 8d9d0199): fail-closed — empty mfr+cfg after tip MUST NOT allow strip.
+    // WHY(P2595 / GH#550): gkfbdvyx/ya4ft0w4 ceiling — ALLOW strip (no relay; Missing Listener).
     if (cap === 'onoff') {
       try {
         const cfg = this._getRadarConfig?.() || {};
         const mfr = (MfrHelper.getManufacturerName(this) || '').toLowerCase();
-        const composeOn = Array.isArray(this.driver?.manifest?.capabilities)
-          && this.driver.manifest.capabilities.includes('onoff');
-        const keepRelay = cfg.hasRelay === true
-          || this.mainsPowered === true
-          || composeOn
-          || MTG_RELAY_MFR_RE.test(mfr)
-          || this.getStoreValue?.('radar_has_relay') === true;
-        // Only allow strip when we KNOW this radar has no relay (battery HOBEIAN etc.)
-        if (keepRelay || cfg.hasRelay !== false) {
-          this.log('[RADAR] P2581 refused removeCapability(onoff) (MTG relay lock)');
-          return;
+        const noRelayCeiling = cfg.hasRelay === false
+          || /gkfbdvyx|laokfqwu|ya4ft0w4/.test(mfr);
+        if (noRelayCeiling) {
+          // allow strip
+        } else {
+          const composeOn = Array.isArray(this.driver?.manifest?.capabilities)
+            && this.driver.manifest.capabilities.includes('onoff');
+          const keepRelay = cfg.hasRelay === true
+            || MTG_RELAY_MFR_RE.test(mfr)
+            || this.getStoreValue?.('radar_has_relay') === true
+            || (composeOn && cfg.hasRelay !== false);
+          if (keepRelay || cfg.hasRelay !== false) {
+            this.log('[RADAR] P2581 refused removeCapability(onoff) (MTG relay lock)');
+            return;
+          }
         }
       } catch (_e) {
         this.log('[RADAR] P2581 refused removeCapability(onoff) (fail-closed)');
@@ -929,20 +956,26 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
     ];
     // WHY(P2581 / VicHY #2247 8d9d0199): NEVER push onoff into staleCaps when mfr/config
     // is still empty after tip update — that race deleted the bathroom relay button.
-    // Only strip when we positively know hasRelay===false (battery radars).
+    // WHY(P2595 / GH#550 gkfbdvyx): mainsPowered alone must NOT keep Channel 1 —
+    // ceiling 24G has no relay; keepRelay only for hasRelay / MTG family / compose relay.
     try {
       const cfg = this._getRadarConfig() || {};
       const mfr = (MfrHelper.getManufacturerName(this) || '').toLowerCase();
+      const noRelayCeiling = cfg.hasRelay === false
+        || /gkfbdvyx|laokfqwu|ya4ft0w4/.test(mfr);
       const composeOn = Array.isArray(this.driver?.manifest?.capabilities)
         && this.driver.manifest.capabilities.includes('onoff');
-      const keepRelay = cfg.hasRelay === true
-        || this.mainsPowered === true
-        || composeOn
-        || MTG_RELAY_MFR_RE.test(mfr);
-      if (cfg.hasRelay === true || keepRelay) {
+      const keepRelay = !noRelayCeiling && (
+        cfg.hasRelay === true
+        || MTG_RELAY_MFR_RE.test(mfr)
+        || (composeOn && cfg.hasRelay !== false && !/gkfbdvyx|laokfqwu|ya4ft0w4/.test(mfr))
+      );
+      if (keepRelay) {
         try { this.setStoreValue?.('radar_has_relay', true).catch(() => {}); } catch (_e) { /* soft */ }
       }
-      if (cfg.hasRelay === false && !keepRelay) staleCaps.push('onoff');
+      if (!keepRelay) {
+        staleCaps.push('onoff', 'button.1', 'button');
+      }
     } catch (_e) { /* soft — do not push onoff */ }
 
     for (const cap of requiredCaps) {
@@ -1291,6 +1324,13 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
             || (luxInferred === true && this._distanceCorroboratesPresence())) {
           this.log('[RADAR] P2584 smart presence=true (lux corroboration under Occupied)');
           this._commitPresenceAndFlows(true);
+        }
+      }
+      // WHY(P2595 / GH#550): gkfbdvyx lux floods while DP9 null — paint presence from lux rate
+      if (config.syncPresenceFromLuxInference && typeof luxInferred === 'boolean') {
+        const painted = this.getCapabilityValue('alarm_motion');
+        if (painted !== luxInferred) {
+          this._commitPresenceAndFlows(luxInferred);
         }
       }
       if (this._shouldSkipFloodCalmDp(dpId, lux, config)) {return;}
