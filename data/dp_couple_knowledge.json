@@ -1,7 +1,7 @@
 {
   "_meta": {
     "version": "1.0.0",
-    "updated": "2026-09-15",
+    "updated": "2026-09-18",
     "doctrine": "Lock interpretation by sacred couple (mfr+pid). Same DP number ≠ same meaning.",
     "tuyaTypes": {
       "0": "RAW / byte_array — requires explicit layout parser; never auto-map to humidity",
@@ -11,8 +11,8 @@
       "4": "ENUM",
       "5": "BITMAP"
     },
-    "lastSync": "2026-09-17T06:42:15.252Z",
-    "coupleCount": 198
+    "lastSync": "2026-09-18T19:41:46.700Z",
+    "coupleCount": 209
   },
   "globalDpCollisions": {
     "1": [
@@ -3410,6 +3410,18 @@
           "capability": "child_lock",
           "source": "driver-dpMappings"
         },
+        "13": {
+          "name": "measure_battery",
+          "direction": "rx",
+          "capability": "measure_battery",
+          "source": "driver-dpMappings"
+        },
+        "15": {
+          "name": "measure_battery",
+          "direction": "rx",
+          "capability": "measure_battery",
+          "source": "driver-dpMappings"
+        },
         "35": {
           "name": "alarm_battery",
           "direction": "rx",
@@ -3430,6 +3442,18 @@
         },
         "47": {
           "name": "dp_47",
+          "direction": "rx",
+          "capability": null,
+          "source": "driver-dpMappings"
+        },
+        "101": {
+          "name": "dp_101",
+          "direction": "rx",
+          "capability": null,
+          "source": "driver-dpMappings"
+        },
+        "102": {
+          "name": "dp_102",
           "direction": "rx",
           "capability": null,
           "source": "driver-dpMappings"
@@ -4266,6 +4290,18 @@
           "capability": "child_lock",
           "source": "driver-dpMappings"
         },
+        "13": {
+          "name": "measure_battery",
+          "direction": "rx",
+          "capability": "measure_battery",
+          "source": "driver-dpMappings"
+        },
+        "15": {
+          "name": "measure_battery",
+          "direction": "rx",
+          "capability": "measure_battery",
+          "source": "driver-dpMappings"
+        },
         "28": {
           "name": "schedule_monday",
           "direction": "rx",
@@ -4345,6 +4381,12 @@
           "capability": null,
           "source": "z2m-soft",
           "notes": "Soft seed — verify before binding capability"
+        },
+        "102": {
+          "name": "dp_102",
+          "direction": "rx",
+          "capability": null,
+          "source": "driver-dpMappings"
         }
       }
     },
@@ -8280,6 +8322,673 @@
       ],
       "seed": "auto",
       "dps": {}
+    },
+    "_TZE204_dqy15zxy|TS0601": {
+      "caseId": "novadigital-dqy15zxy-curtain",
+      "driver": "curtain_motor",
+      "sources": [
+        "registry",
+        "auto-seed-p2247"
+      ],
+      "seed": "auto",
+      "dps": {
+        "1": {
+          "name": "windowcoverings_state",
+          "direction": "rx",
+          "capability": "windowcoverings_state",
+          "source": "driver-dpMappings"
+        }
+      }
+    },
+    "_TZE204_dtzziy1e|TS0601": {
+      "caseId": "mtg075-dtzziy1e-presence",
+      "driver": "presence_sensor_radar",
+      "sources": [
+        "registry",
+        "auto-seed-p2247"
+      ],
+      "seed": "auto",
+      "dps": {
+        "1": {
+          "name": "presence",
+          "direction": "rx",
+          "capability": null,
+          "source": "z2m-soft",
+          "notes": "Soft seed — verify before binding capability"
+        },
+        "2": {
+          "name": "radar_sensitivity",
+          "direction": "rx",
+          "capability": null,
+          "source": "z2m-soft",
+          "notes": "Soft seed — verify before binding capability"
+        },
+        "3": {
+          "name": "shield_range",
+          "direction": "rx",
+          "capability": null,
+          "source": "z2m-soft",
+          "notes": "Soft seed — verify before binding capability"
+        },
+        "4": {
+          "name": "detection_range",
+          "direction": "rx",
+          "capability": null,
+          "source": "z2m-soft",
+          "notes": "Soft seed — verify before binding capability"
+        },
+        "6": {
+          "name": "equipment_status",
+          "direction": "rx",
+          "capability": null,
+          "source": "z2m-soft",
+          "notes": "Soft seed — verify before binding capability"
+        },
+        "9": {
+          "name": "target_distance",
+          "direction": "rx",
+          "capability": null,
+          "source": "z2m-soft",
+          "notes": "Soft seed — verify before binding capability"
+        },
+        "101": {
+          "name": "entry_filter_time",
+          "direction": "rx",
+          "capability": null,
+          "source": "z2m-soft",
+          "notes": "Soft seed — verify before binding capability"
+        },
+        "102": {
+          "name": "departure_delay",
+          "direction": "rx",
+          "capability": null,
+          "source": "z2m-soft",
+          "notes": "Soft seed — verify before binding capability"
+        },
+        "103": {
+          "name": "cline",
+          "direction": "rx",
+          "capability": null,
+          "source": "z2m-soft",
+          "notes": "Soft seed — verify before binding capability"
+        },
+        "104": {
+          "name": "illuminance",
+          "direction": "rx",
+          "capability": null,
+          "source": "z2m-soft",
+          "notes": "Soft seed — verify before binding capability"
+        },
+        "105": {
+          "name": "entry_sensitivity",
+          "direction": "rx",
+          "capability": null,
+          "source": "z2m-soft",
+          "notes": "Soft seed — verify before binding capability"
+        },
+        "106": {
+          "name": "entry_distance_indentation",
+          "direction": "rx",
+          "capability": null,
+          "source": "z2m-soft",
+          "notes": "Soft seed — verify before binding capability"
+        },
+        "107": {
+          "name": "breaker_mode",
+          "direction": "rx",
+          "capability": null,
+          "source": "z2m-soft",
+          "notes": "Soft seed — verify before binding capability"
+        },
+        "108": {
+          "name": "breaker_status",
+          "direction": "rx",
+          "capability": null,
+          "source": "z2m-soft",
+          "notes": "Soft seed — verify before binding capability"
+        },
+        "109": {
+          "name": "status_indication",
+          "direction": "rx",
+          "capability": null,
+          "source": "z2m-soft",
+          "notes": "Soft seed — verify before binding capability"
+        },
+        "110": {
+          "name": "illuminance_threshold",
+          "direction": "rx",
+          "capability": null,
+          "source": "z2m-soft",
+          "notes": "Soft seed — verify before binding capability"
+        },
+        "111": {
+          "name": "breaker_polarity",
+          "direction": "rx",
+          "capability": null,
+          "source": "z2m-soft",
+          "notes": "Soft seed — verify before binding capability"
+        },
+        "112": {
+          "name": "block_time",
+          "direction": "rx",
+          "capability": null,
+          "source": "z2m-soft",
+          "notes": "Soft seed — verify before binding capability"
+        },
+        "113": {
+          "name": "parameter_setting_result",
+          "direction": "rx",
+          "capability": null,
+          "source": "z2m-soft",
+          "notes": "Soft seed — verify before binding capability"
+        },
+        "114": {
+          "name": "factory_parameters",
+          "direction": "rx",
+          "capability": null,
+          "source": "z2m-soft",
+          "notes": "Soft seed — verify before binding capability"
+        },
+        "115": {
+          "name": "sensor",
+          "direction": "rx",
+          "capability": null,
+          "source": "z2m-soft",
+          "notes": "Soft seed — verify before binding capability"
+        }
+      }
+    },
+    "_TZE204_gkfbdvyx|TS0601": {
+      "caseId": "p2583-gkfbdvyx-radar-not-socket",
+      "driver": "presence_sensor_radar",
+      "sources": [
+        "registry",
+        "auto-seed-p2247"
+      ],
+      "seed": "auto",
+      "dps": {
+        "2": {
+          "name": "move_sensitivity",
+          "direction": "rx",
+          "capability": null,
+          "source": "z2m-soft",
+          "notes": "Soft seed — verify before binding capability"
+        },
+        "3": {
+          "name": "detection_distance_min",
+          "direction": "rx",
+          "capability": null,
+          "source": "z2m-soft",
+          "notes": "Soft seed — verify before binding capability"
+        },
+        "4": {
+          "name": "detection_distance_max",
+          "direction": "rx",
+          "capability": null,
+          "source": "z2m-soft",
+          "notes": "Soft seed — verify before binding capability"
+        },
+        "9": {
+          "name": "distance",
+          "direction": "rx",
+          "capability": null,
+          "source": "z2m-soft",
+          "notes": "Soft seed — verify before binding capability"
+        },
+        "101": {
+          "name": "find_switch",
+          "direction": "rx",
+          "capability": null,
+          "source": "z2m-soft",
+          "notes": "Soft seed — verify before binding capability"
+        },
+        "102": {
+          "name": "presence_sensitivity",
+          "direction": "rx",
+          "capability": null,
+          "source": "z2m-soft",
+          "notes": "Soft seed — verify before binding capability"
+        },
+        "103": {
+          "name": "illuminance",
+          "direction": "rx",
+          "capability": null,
+          "source": "z2m-soft",
+          "notes": "Soft seed — verify before binding capability"
+        },
+        "105": {
+          "name": "presence_timeout",
+          "direction": "rx",
+          "capability": null,
+          "source": "z2m-soft",
+          "notes": "Soft seed — verify before binding capability"
+        }
+      }
+    },
+    "_TZB210_rkgngb5o|TS0501B": {
+      "caseId": "p2535-tzb210-rkgngb5o-ts0501b-dim",
+      "driver": "led_controller_dimmable",
+      "sources": [
+        "registry",
+        "auto-seed-p2247"
+      ],
+      "seed": "auto",
+      "dps": {}
+    },
+    "_TZE200_8eazvzo6|TS0601": {
+      "caseId": "p2519-8eazvzo6-not-climate",
+      "driver": "switch_wall_6gang",
+      "sources": [
+        "registry",
+        "auto-seed-p2247"
+      ],
+      "seed": "auto",
+      "dps": {
+        "1": {
+          "name": "state_l1",
+          "direction": "rx",
+          "capability": null,
+          "source": "z2m-soft",
+          "notes": "Soft seed — verify before binding capability"
+        },
+        "2": {
+          "name": "state_l2",
+          "direction": "rx",
+          "capability": null,
+          "source": "z2m-soft",
+          "notes": "Soft seed — verify before binding capability"
+        },
+        "3": {
+          "name": "state_l3",
+          "direction": "rx",
+          "capability": null,
+          "source": "z2m-soft",
+          "notes": "Soft seed — verify before binding capability"
+        },
+        "4": {
+          "name": "state_l4",
+          "direction": "rx",
+          "capability": null,
+          "source": "z2m-soft",
+          "notes": "Soft seed — verify before binding capability"
+        },
+        "5": {
+          "name": "state_l5",
+          "direction": "rx",
+          "capability": null,
+          "source": "z2m-soft",
+          "notes": "Soft seed — verify before binding capability"
+        },
+        "6": {
+          "name": "state_l6",
+          "direction": "rx",
+          "capability": null,
+          "source": "z2m-soft",
+          "notes": "Soft seed — verify before binding capability"
+        },
+        "21": {
+          "name": "current",
+          "direction": "rx",
+          "capability": null,
+          "source": "z2m-soft",
+          "notes": "Soft seed — verify before binding capability"
+        },
+        "22": {
+          "name": "power",
+          "direction": "rx",
+          "capability": null,
+          "source": "z2m-soft",
+          "notes": "Soft seed — verify before binding capability"
+        },
+        "23": {
+          "name": "voltage",
+          "direction": "rx",
+          "capability": null,
+          "source": "z2m-soft",
+          "notes": "Soft seed — verify before binding capability"
+        }
+      }
+    },
+    "_TZE284_8b9zpaav|TS0601": {
+      "caseId": "p2538-tze284-8b9zpaav-airbox",
+      "driver": "air_quality_co2",
+      "sources": [
+        "registry",
+        "auto-seed-p2247"
+      ],
+      "seed": "auto",
+      "dps": {
+        "2": {
+          "name": "measure_co2",
+          "direction": "rx",
+          "capability": "measure_co2",
+          "source": "driver-dpMappings"
+        },
+        "18": {
+          "name": "temperature",
+          "direction": "rx",
+          "capability": null,
+          "source": "z2m-soft",
+          "notes": "Soft seed — verify before binding capability"
+        },
+        "19": {
+          "name": "humidity",
+          "direction": "rx",
+          "capability": null,
+          "source": "z2m-soft",
+          "notes": "Soft seed — verify before binding capability"
+        },
+        "21": {
+          "name": "voc",
+          "direction": "rx",
+          "capability": null,
+          "source": "z2m-soft",
+          "notes": "Soft seed — verify before binding capability"
+        },
+        "22": {
+          "name": "formaldehyd",
+          "direction": "rx",
+          "capability": null,
+          "source": "z2m-soft",
+          "notes": "Soft seed — verify before binding capability"
+        }
+      }
+    },
+    "_TZE284_it9utkro|TS0601": {
+      "caseId": "p2538-tze284-it9utkro-pm25-airbox",
+      "driver": "air_quality_co2",
+      "sources": [
+        "registry",
+        "auto-seed-p2247"
+      ],
+      "seed": "auto",
+      "dps": {
+        "2": {
+          "name": "measure_co2",
+          "direction": "rx",
+          "capability": "measure_co2",
+          "source": "driver-dpMappings"
+        },
+        "18": {
+          "name": "temperature",
+          "direction": "rx",
+          "capability": null,
+          "source": "z2m-soft",
+          "notes": "Soft seed — verify before binding capability"
+        },
+        "19": {
+          "name": "humidity",
+          "direction": "rx",
+          "capability": null,
+          "source": "z2m-soft",
+          "notes": "Soft seed — verify before binding capability"
+        },
+        "20": {
+          "name": "co2",
+          "direction": "rx",
+          "capability": null,
+          "source": "z2m-soft",
+          "notes": "Soft seed — verify before binding capability"
+        },
+        "21": {
+          "name": "voc",
+          "direction": "rx",
+          "capability": null,
+          "source": "z2m-soft",
+          "notes": "Soft seed — verify before binding capability"
+        },
+        "22": {
+          "name": "formaldehyd",
+          "direction": "rx",
+          "capability": null,
+          "source": "z2m-soft",
+          "notes": "Soft seed — verify before binding capability"
+        }
+      }
+    },
+    "_TZE200_yvx5lh6k|TS0601": {
+      "caseId": "p2541-tze200-yvx5lh6k-air-quality-reinstate",
+      "driver": "air_quality_co2",
+      "sources": [
+        "registry",
+        "auto-seed-p2247"
+      ],
+      "seed": "auto",
+      "dps": {
+        "2": {
+          "name": "measure_co2",
+          "direction": "rx",
+          "capability": "measure_co2",
+          "source": "driver-dpMappings"
+        }
+      }
+    },
+    "_TZE284_c8ipbljq|TS0601": {
+      "caseId": "p2571-hejhome-c8ipbljq-6gang",
+      "driver": "wall_switch_6_gang_tuya",
+      "sources": [
+        "registry",
+        "auto-seed-p2247"
+      ],
+      "seed": "auto",
+      "dps": {}
+    },
+    "_TZE284_tgeqdjgk|TS0601": {
+      "caseId": "p2571-tgeqdjgk-knob-dimmer",
+      "driver": "wall_dimmer_tuya",
+      "sources": [
+        "registry",
+        "auto-seed-p2247"
+      ],
+      "seed": "auto",
+      "dps": {
+        "102": {
+          "name": "state",
+          "direction": "rx",
+          "capability": null,
+          "source": "z2m-soft",
+          "notes": "Soft seed — verify before binding capability"
+        },
+        "103": {
+          "name": "brightness",
+          "direction": "rx",
+          "capability": null,
+          "source": "z2m-soft",
+          "notes": "Soft seed — verify before binding capability"
+        },
+        "105": {
+          "name": "adjustment_mode",
+          "direction": "rx",
+          "capability": null,
+          "source": "z2m-soft",
+          "notes": "Soft seed — verify before binding capability"
+        },
+        "106": {
+          "name": "power_on_behavior",
+          "direction": "rx",
+          "capability": null,
+          "source": "z2m-soft",
+          "notes": "Soft seed — verify before binding capability"
+        },
+        "107": {
+          "name": "color_temp",
+          "direction": "rx",
+          "capability": null,
+          "source": "z2m-soft",
+          "notes": "Soft seed — verify before binding capability"
+        },
+        "111": {
+          "name": "action",
+          "direction": "rx",
+          "capability": null,
+          "source": "z2m-soft",
+          "notes": "Soft seed — verify before binding capability"
+        },
+        "112": {
+          "name": "action",
+          "direction": "rx",
+          "capability": null,
+          "source": "z2m-soft",
+          "notes": "Soft seed — verify before binding capability"
+        },
+        "121": {
+          "name": "state_l1",
+          "direction": "rx",
+          "capability": null,
+          "source": "z2m-soft",
+          "notes": "Soft seed — verify before binding capability"
+        },
+        "122": {
+          "name": "state_l2",
+          "direction": "rx",
+          "capability": null,
+          "source": "z2m-soft",
+          "notes": "Soft seed — verify before binding capability"
+        },
+        "131": {
+          "name": "switch_mode_l1",
+          "direction": "rx",
+          "capability": null,
+          "source": "z2m-soft",
+          "notes": "Soft seed — verify before binding capability"
+        },
+        "132": {
+          "name": "switch_mode_l2",
+          "direction": "rx",
+          "capability": null,
+          "source": "z2m-soft",
+          "notes": "Soft seed — verify before binding capability"
+        },
+        "141": {
+          "name": "mode",
+          "direction": "rx",
+          "capability": null,
+          "source": "z2m-soft",
+          "notes": "Soft seed — verify before binding capability"
+        }
+      }
+    },
+    "_TZE200_vvmbj46n|TS0601": {
+      "caseId": "p2571-vvmbj46n-lcd-th",
+      "driver": "lcdtemphumidsensor",
+      "sources": [
+        "registry",
+        "auto-seed-p2247"
+      ],
+      "seed": "auto",
+      "dps": {
+        "1": {
+          "name": "measure_temperature",
+          "direction": "rx",
+          "capability": "measure_temperature",
+          "source": "driver-dpMappings"
+        },
+        "2": {
+          "name": "measure_humidity",
+          "direction": "rx",
+          "capability": "measure_humidity",
+          "source": "driver-dpMappings"
+        },
+        "3": {
+          "name": "measure_battery",
+          "direction": "rx",
+          "capability": "measure_battery",
+          "source": "driver-dpMappings"
+        },
+        "4": {
+          "name": "measure_battery",
+          "direction": "rx",
+          "capability": "measure_battery",
+          "source": "driver-dpMappings"
+        },
+        "9": {
+          "name": "temperature_unit",
+          "direction": "rx",
+          "capability": null,
+          "source": "z2m-soft",
+          "notes": "Soft seed — verify before binding capability"
+        },
+        "10": {
+          "name": "max_temperature_alarm",
+          "direction": "rx",
+          "capability": null,
+          "source": "z2m-soft",
+          "notes": "Soft seed — verify before binding capability"
+        },
+        "11": {
+          "name": "min_temperature_alarm",
+          "direction": "rx",
+          "capability": null,
+          "source": "z2m-soft",
+          "notes": "Soft seed — verify before binding capability"
+        },
+        "12": {
+          "name": "max_humidity_alarm",
+          "direction": "rx",
+          "capability": null,
+          "source": "z2m-soft",
+          "notes": "Soft seed — verify before binding capability"
+        },
+        "13": {
+          "name": "min_humidity_alarm",
+          "direction": "rx",
+          "capability": null,
+          "source": "z2m-soft",
+          "notes": "Soft seed — verify before binding capability"
+        },
+        "14": {
+          "name": "temperature_alarm",
+          "direction": "rx",
+          "capability": null,
+          "source": "z2m-soft",
+          "notes": "Soft seed — verify before binding capability"
+        },
+        "15": {
+          "name": "measure_battery",
+          "direction": "rx",
+          "capability": "measure_battery",
+          "source": "driver-dpMappings"
+        },
+        "17": {
+          "name": "temperature_periodic_report",
+          "direction": "rx",
+          "capability": null,
+          "source": "z2m-soft",
+          "notes": "Soft seed — verify before binding capability"
+        },
+        "18": {
+          "name": "measure_temperature",
+          "direction": "rx",
+          "capability": "measure_temperature",
+          "source": "driver-dpMappings"
+        },
+        "19": {
+          "name": "temperature_sensitivity",
+          "direction": "rx",
+          "capability": null,
+          "source": "z2m-soft",
+          "notes": "Soft seed — verify before binding capability"
+        },
+        "20": {
+          "name": "humidity_sensitivity",
+          "direction": "rx",
+          "capability": null,
+          "source": "z2m-soft",
+          "notes": "Soft seed — verify before binding capability"
+        },
+        "101": {
+          "name": "measure_temperature",
+          "direction": "rx",
+          "capability": "measure_temperature",
+          "source": "driver-dpMappings"
+        },
+        "102": {
+          "name": "measure_humidity",
+          "direction": "rx",
+          "capability": "measure_humidity",
+          "source": "driver-dpMappings"
+        }
+      }
     }
   }
 }

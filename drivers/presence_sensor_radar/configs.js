@@ -270,13 +270,14 @@ const SENSOR_CONFIGS = {
       },
       102: { cap: null, internal: 'presence_sensitivity' },
       103: { cap: 'measure_luminance', type: 'lux_direct' },
-      // DP104 is a second presence enum on some firmwares — same sticky Contre quoi
+      // WHY(P2600 / ZHA): DP104 = motion_state — ignore clear so none≠wipe presence while DP9 cold
       104: {
         cap: 'alarm_motion',
         type: 'presence_enum_gkfbdvyx',
         enumMap: { 0: false, 1: true, 2: true },
         useInference: true,
         unreliable: true,
+        ignorePresenceClear: true,
       },
       105: { cap: null, internal: 'fading_time' },
     }
