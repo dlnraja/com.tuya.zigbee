@@ -149,6 +149,24 @@ jobs:
           fi
         continue-on-error: true
 
+      - name: Alibaba OCR intelligent (P2592 free soft)
+        if: always()
+        continue-on-error: true
+        timeout-minutes: 8
+        env:
+          OCR_INSTALL: '1'
+          OCR_FROM: 'HEAD~40'
+          OCR_TO: 'HEAD'
+          AI_FORCE_LOCAL: 'true'
+          AI_ALLOW_PAID: 'false'
+        run: |
+          if [ ! -f tools/ci/ocr-intelligent-cron.js ]; then
+            echo "ocr-intelligent-cron missing — skip"
+            exit 0
+          fi
+          npm install -g @alibaba-group/open-code-review 2>/dev/null || true
+          node tools/ci/ocr-intelligent-cron.js || echo "OCR_SOFT_WARN"
+
       - name: Build summary
         if: always()
         env:

@@ -1,20 +1,40 @@
-# P2582 — Alibaba Open Code Review (Homey Universal Tuya)
-# WHY: deterministic review file selection + Homey rules; forfait → delegate only (no OCR LLM by default).
-# MASTER_ONLY tooling. workflow_dispatch — never cron spam.
+# P2582 / P2592 — Alibaba Open Code Review (Homey Universal Tuya)
+# WHY: free deterministic file selection + Homey rules; forfait → delegate only (no OCR LLM).
+# Intelligent cron: skip when no drivers/lib/workflows/tools/ci changes.
+# Soft-hooks: code-quality, project-resilience, recurrent-orchestrator, auto-enrich, forum-poll.
 
 name: Open Code Review
 
 on:
+  schedule:
+    # Mon + Thu 05:50 UTC — after project-resilience 05:20; before bot-triage herd
+    - cron: '50 5 * * 1,4'
+  pull_request:
+    paths:
+      - 'drivers/**'
+      - 'lib/**'
+      - '.github/workflows/**'
+      - 'tools/ci/**'
+      - '.opencodereview/**'
+      - 'config/architecture/open-code-review-ssot.json'
   workflow_dispatch:
     inputs:
       from_ref:
-        description: 'git from ref (default HEAD~30)'
+        description: 'git from ref (default HEAD~40)'
         required: false
-        default: 'HEAD~30'
+        default: 'HEAD~40'
       to_ref:
         description: 'git to ref'
         required: false
         default: 'HEAD'
+      force:
+        description: 'Run even if no interesting path changes'
+        required: false
+        default: 'false'
+        type: choice
+        options:
+          - 'false'
+          - 'true'
       full_llm_review:
         description: 'Run ocr review with LLM if OCR_LLM_AUTH_TOKEN set (default false)'
         required: false
@@ -23,12 +43,26 @@ on:
         options:
           - 'false'
           - 'true'
+  workflow_call:
+    inputs:
+      from_ref:
+        required: false
+        type: string
+        default: 'HEAD~40'
+      to_ref:
+        required: false
+        type: string
+        default: 'HEAD'
+      force:
+        required: false
+        type: boolean
+        default: false
 
 permissions:
   contents: read
 
 concurrency:
-  group: open-code-review-${{ github.ref }}
+  group: open-code-review-${{ github.workflow }}-${{ github.ref }}
   cancel-in-progress: true
 
 defaults:
@@ -37,7 +71,7 @@ defaults:
 
 jobs:
   ocr-delegate:
-    name: OCR delegate preview (forfait-safe)
+    name: OCR intelligent (forfait-safe)
     runs-on: ubuntu-latest
     timeout-minutes: 20
     env:
@@ -45,34 +79,30 @@ jobs:
       AI_ALLOW_REMOTE: 'false'
       AI_PLAN_MODE: forfait
       AI_ALLOW_PAID: 'false'
+      OCR_INSTALL: '1'
+      OCR_FROM: ${{ inputs.from_ref || github.event.inputs.from_ref || 'HEAD~40' }}
+      OCR_TO: ${{ inputs.to_ref || github.event.inputs.to_ref || 'HEAD' }}
+      OCR_FORCE: ${{ (inputs.force == true || github.event.inputs.force == 'true') && '1' || '0' }}
     steps:
       - uses: actions/checkout@v5
         with:
-          fetch-depth: 40
+          fetch-depth: 50
 
       - uses: actions/setup-node@v5
         with:
           node-version: '22'
 
-      - name: Install Open Code Review CLI
-        run: npm install -g @alibaba-group/open-code-review
-
       - name: Contre quoi gate P2582
         run: npm run check:p2582
 
-      - name: Delegate preview JSON
-        run: |
-          mkdir -p reports
-          FROM_REF='${{ inputs.from_ref }}'
-          TO_REF='${{ inputs.to_ref }}'
-          ocr delegate preview --from "$FROM_REF" --to "$TO_REF" --format json \
-            --rule .opencodereview/rule.json \
-            > reports/ocr-delegate-preview.json || true
-          test -s reports/ocr-delegate-preview.json
-          node -e "const p=require('./reports/ocr-delegate-preview.json'); console.log('reviewable', p.reviewable_count, 'excluded', p.excluded_count);"
+      - name: Install Open Code Review CLI (free)
+        run: npm install -g @alibaba-group/open-code-review
+
+      - name: Intelligent OCR delegate preview
+        run: node tools/ci/ocr-intelligent-cron.js
 
       - name: Optional full LLM review
-        if: ${{ inputs.full_llm_review == 'true' }}
+        if: ${{ github.event_name == 'workflow_dispatch' && github.event.inputs.full_llm_review == 'true' }}
         continue-on-error: true
         env:
           OCR_LLM_AUTH_TOKEN: ${{ secrets.OCR_LLM_AUTH_TOKEN }}
@@ -83,14 +113,17 @@ jobs:
             echo "OCR_LLM_AUTH_TOKEN unset — skip full review (forfait default)"
             exit 0
           fi
-          ocr review --from '${{ inputs.from_ref }}' --to '${{ inputs.to_ref }}' \
+          mkdir -p reports
+          ocr review --from "${OCR_FROM}" --to "${OCR_TO}" \
             --rule .opencodereview/rule.json \
             --format json --output reports/ocr-review.json || true
 
       - name: Upload OCR artifacts
         uses: actions/upload-artifact@v4
         with:
-          name: ocr-delegate-${{ github.run_id }}
-          path: reports/ocr-*.json
+          name: ocr-intelligent-${{ github.run_id }}
+          path: |
+            reports/ocr-*.json
+            reports/ocr-intelligent-*/**
           if-no-files-found: warn
           retention-days: 14

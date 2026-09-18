@@ -170,11 +170,32 @@ jobs:
             node tools/ci/auto-investigate-need-action.js || echo "auto-investigate soft warn"
           fi
 
+      - name: Alibaba OCR intelligent (P2592 free soft)
+        if: always()
+        continue-on-error: true
+        timeout-minutes: 8
+        env:
+          OCR_INSTALL: '1'
+          OCR_FROM: 'HEAD~40'
+          OCR_TO: 'HEAD'
+          AI_FORCE_LOCAL: 'true'
+          AI_ALLOW_PAID: 'false'
+        run: |
+          if [ ! -f tools/ci/ocr-intelligent-cron.js ]; then
+            echo "ocr-intelligent-cron missing — skip"
+            exit 0
+          fi
+          npm install -g @alibaba-group/open-code-review 2>/dev/null || true
+          node tools/ci/ocr-intelligent-cron.js || echo "OCR_SOFT_WARN"
+
       - name: Upload Reports
+        if: always()
+        continue-on-error: true
         uses: actions/upload-artifact@330a01c490aca151604b8cf639adc76d48f6c5d4 # v5.0.0
         with:
           name: orchestrator-reports-${{ github.run_id }}
           path: |
+            reports/ocr-intelligent-*/
             .github/state/recurrent-orchestrator-report.json
             .github/state/variant-matrix.json
             .github/state/battery-cartography.json

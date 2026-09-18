@@ -1,18 +1,35 @@
 {
   "_meta": {
-    "id": "P2582",
-    "title": "Alibaba Open Code Review integration",
+    "id": "P2582/P2592",
+    "title": "Alibaba Open Code Review integration (free + intelligent cron)",
     "updated": "2026-09-18",
     "track": "MASTER_ONLY",
-    "why": "Deterministic file selection + Homey-tuned rules; Cursor delegation avoids paid OCR LLM under forfait"
+    "why": "Deterministic file selection + Homey-tuned rules; Cursor/GHA delegation avoids paid OCR LLM under forfait; intelligent skip when no drivers/lib/workflows changes"
   },
   "cli": "@alibaba-group/open-code-review",
   "projectRules": ".opencodereview/rule.json",
   "preferMode": "delegate",
   "forbidRemoteLlmDefault": true,
+  "schedule": {
+    "cron": "50 5 * * 1,4",
+    "note": "Mon+Thu 05:50 UTC after project-resilience 05:20"
+  },
+  "intelligent": {
+    "script": "tools/ci/ocr-intelligent-cron.js",
+    "interestingPaths": ["drivers/", "lib/", ".github/workflows/", "tools/ci/", ".opencodereview/"],
+    "excludeHeavy": ["app.json", "data/mfs_db.json", "reports/**"],
+    "softHooks": [
+      "code-quality.yml",
+      "project-resilience.yml",
+      "recurrent-orchestrator.yml",
+      "auto-enrich-closed-loop.yml",
+      "forum-poll.yml"
+    ]
+  },
   "npm": {
-    "review:ocr": "delegate preview last 30 commits",
+    "review:ocr": "delegate preview last commits",
     "review:ocr:rules": "delegate rule for critical paths",
+    "review:ocr:intelligent": "smart skip + free delegate (cron/hooks)",
     "check:p2582": "Contre quoi gate for OCR wiring + radar watchdog OCR fixes"
   },
   "cursorPlugin": "~/.cursor/plugins/local/open-code-review",
