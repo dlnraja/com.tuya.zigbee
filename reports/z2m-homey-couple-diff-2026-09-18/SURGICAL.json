@@ -1,0 +1,314 @@
+{
+  "generated": "2026-09-18T10:28:24.025Z",
+  "mode": "apply",
+  "couples": 25,
+  "wrote": 25,
+  "results": [
+    {
+      "mfr": "_TZE284_ksz749x8",
+      "pid": "TS0601",
+      "driver": "climate_sensor",
+      "ref": "Z2M ZTH02/TH",
+      "result": {
+        "ok": true,
+        "changed": true,
+        "addedMfr": 2,
+        "addedPid": 0
+      }
+    },
+    {
+      "mfr": "_TZE204_ksz749x8",
+      "pid": "TS0601",
+      "driver": "climate_sensor",
+      "ref": "Z2M ZTH02/TH sibling",
+      "result": {
+        "ok": true,
+        "changed": true,
+        "addedMfr": 2,
+        "addedPid": 0
+      }
+    },
+    {
+      "mfr": "_TZE2841000000_qf5mzewi",
+      "pid": "TS0601",
+      "driver": "climate_sensor",
+      "ref": "Z2M ONENUO TH05Z batch",
+      "result": {
+        "ok": true,
+        "changed": true,
+        "addedMfr": 2,
+        "addedPid": 0
+      }
+    },
+    {
+      "mfr": "_TZE284_da26abzz",
+      "pid": "TS0601",
+      "driver": "wall_dimmer_tuya",
+      "ref": "Z2M MG-DIM02Z",
+      "result": {
+        "ok": true,
+        "changed": true,
+        "addedMfr": 2,
+        "addedPid": 0
+      }
+    },
+    {
+      "mfr": "_TZ3000_nxdziqzc",
+      "pid": "TS0215A",
+      "driver": "button_emergency_sos",
+      "ref": "Z2M TS0215A_sos",
+      "result": {
+        "ok": true,
+        "changed": true,
+        "addedMfr": 2,
+        "addedPid": 0
+      }
+    },
+    {
+      "mfr": "_TZ3000_irwuzilv",
+      "pid": "TS0215A",
+      "driver": "button_emergency_sos",
+      "ref": "Z2M TS0215A_sos",
+      "result": {
+        "ok": true,
+        "changed": true,
+        "addedMfr": 2,
+        "addedPid": 0
+      }
+    },
+    {
+      "mfr": "_TZ3000_gjiggmio",
+      "pid": "TS0215A",
+      "driver": "button_emergency_sos",
+      "ref": "Z2M TS0215A_sos",
+      "result": {
+        "ok": true,
+        "changed": true,
+        "addedMfr": 2,
+        "addedPid": 0
+      }
+    },
+    {
+      "mfr": "_TZ3000_o4mkahkc",
+      "pid": "TS0202",
+      "driver": "motion_sensor",
+      "ref": "Z2M IH012-RT02",
+      "result": {
+        "ok": true,
+        "changed": true,
+        "addedMfr": 2,
+        "addedPid": 0
+      }
+    },
+    {
+      "mfr": "_TZ3000_aaifmpuq",
+      "pid": "TS0002",
+      "driver": "switch_2gang",
+      "ref": "Z2M TS0002_power",
+      "result": {
+        "ok": true,
+        "changed": true,
+        "addedMfr": 2,
+        "addedPid": 0
+      }
+    },
+    {
+      "mfr": "_TZ3000_irrmjcgi",
+      "pid": "TS0002",
+      "driver": "switch_2gang",
+      "ref": "Z2M TS0002_power",
+      "result": {
+        "ok": true,
+        "changed": true,
+        "addedMfr": 2,
+        "addedPid": 0
+      }
+    },
+    {
+      "mfr": "_TZ3000_huvxrx4i",
+      "pid": "TS0002",
+      "driver": "switch_2gang",
+      "ref": "Z2M TS0002_power",
+      "result": {
+        "ok": true,
+        "changed": true,
+        "addedMfr": 2,
+        "addedPid": 0
+      }
+    },
+    {
+      "mfr": "_TZ3000_pxfjrzyj",
+      "pid": "TS0002",
+      "driver": "switch_2gang",
+      "ref": "Z2M TS0002_power",
+      "result": {
+        "ok": true,
+        "changed": true,
+        "addedMfr": 2,
+        "addedPid": 0
+      }
+    },
+    {
+      "mfr": "_TZ3000_5gey1ohx",
+      "pid": "TS0002",
+      "driver": "switch_2gang",
+      "ref": "Z2M TS0002_limited",
+      "result": {
+        "ok": true,
+        "changed": true,
+        "addedMfr": 2,
+        "addedPid": 0
+      }
+    },
+    {
+      "mfr": "_TZ3000_mufwv0ry",
+      "pid": "TS0002",
+      "driver": "switch_2gang",
+      "ref": "Z2M TS0002_limited",
+      "result": {
+        "ok": true,
+        "changed": true,
+        "addedMfr": 2,
+        "addedPid": 0
+      }
+    },
+    {
+      "mfr": "_TZ3000_54hjn4vs",
+      "pid": "TS0002",
+      "driver": "switch_2gang",
+      "ref": "Z2M TS0002_limited",
+      "result": {
+        "ok": true,
+        "changed": true,
+        "addedMfr": 2,
+        "addedPid": 0
+      }
+    },
+    {
+      "mfr": "_TZ3000_in5qxhtt",
+      "pid": "TS0002",
+      "driver": "switch_2gang",
+      "ref": "Z2M TS0002_limited",
+      "result": {
+        "ok": true,
+        "changed": true,
+        "addedMfr": 2,
+        "addedPid": 0
+      }
+    },
+    {
+      "mfr": "_TZ3000_ogpla3lh",
+      "pid": "TS0002",
+      "driver": "switch_2gang",
+      "ref": "Z2M TS0002_limited",
+      "result": {
+        "ok": true,
+        "changed": true,
+        "addedMfr": 2,
+        "addedPid": 0
+      }
+    },
+    {
+      "mfr": "_TZ3000_i9w5mehz",
+      "pid": "TS0002",
+      "driver": "switch_2gang",
+      "ref": "Z2M TS0002_limited",
+      "result": {
+        "ok": true,
+        "changed": true,
+        "addedMfr": 2,
+        "addedPid": 0
+      }
+    },
+    {
+      "mfr": "_TZ3000_zojh9vz7",
+      "pid": "TS0001",
+      "driver": "switch_1gang",
+      "ref": "Z2M TS0001_power",
+      "result": {
+        "ok": true,
+        "changed": true,
+        "addedMfr": 2,
+        "addedPid": 0
+      }
+    },
+    {
+      "mfr": "_TZ3000_gsat0axs",
+      "pid": "TS0001",
+      "driver": "switch_1gang",
+      "ref": "Z2M TS0001_power",
+      "result": {
+        "ok": true,
+        "changed": true,
+        "addedMfr": 2,
+        "addedPid": 0
+      }
+    },
+    {
+      "mfr": "_TZ3000_8nyaanzb",
+      "pid": "TS011F",
+      "driver": "plug_energy_monitor",
+      "ref": "Z2M TS011F_2_gang_wall",
+      "result": {
+        "ok": true,
+        "changed": true,
+        "addedMfr": 2,
+        "addedPid": 0
+      }
+    },
+    {
+      "mfr": "_TZ3000_iy2c3n6p",
+      "pid": "TS011F",
+      "driver": "plug_energy_monitor",
+      "ref": "Z2M TS011F_2_gang_wall",
+      "result": {
+        "ok": true,
+        "changed": true,
+        "addedMfr": 2,
+        "addedPid": 0
+      }
+    },
+    {
+      "mfr": "_TZ3008_tary5dvv",
+      "pid": "TS011F",
+      "driver": "plug_energy_monitor",
+      "ref": "Z2M TS011F_plug_1",
+      "result": {
+        "ok": true,
+        "changed": true,
+        "addedMfr": 2,
+        "addedPid": 0
+      }
+    },
+    {
+      "mfr": "_TZ3210_iooniers",
+      "pid": "TS011F",
+      "driver": "plug_energy_monitor",
+      "ref": "Z2M TS011F_plug_1",
+      "result": {
+        "ok": true,
+        "changed": true,
+        "addedMfr": 2,
+        "addedPid": 0
+      }
+    },
+    {
+      "mfr": "_TZE210_xgzzuerd",
+      "pid": "TS0301",
+      "driver": "curtain_motor",
+      "ref": "Z2M TS0301_cover_2",
+      "result": {
+        "ok": true,
+        "changed": true,
+        "addedMfr": 2,
+        "addedPid": 0
+      }
+    }
+  ],
+  "radarConfig": {
+    "changed": false
+  },
+  "misattribution": {
+    "changed": true
+  }
+}
