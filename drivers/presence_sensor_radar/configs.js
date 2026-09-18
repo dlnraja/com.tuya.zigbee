@@ -110,6 +110,7 @@ const SENSOR_CONFIGS = {
     invertPresence: false,
     // WHY(P2389): VicHY/clrdrnya firmware floods DP9 distance + DP104 lux (~196 msg/min, Z2M#14742).
     // Presence (DP1) stays immediate; telemetry coalesced in device.js.
+    // WHY(P2589): same Contre quoi as Z2M debounce — miss clear frame when mesh saturated.
     floodCalm: true,
     ultraAggressiveDebounce: true,
     // WHY(P2534 / VicHY #2240 diag 74e5cae7 image): Z2M MTG075 presence = DP1 only.

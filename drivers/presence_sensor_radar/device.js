@@ -362,6 +362,9 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
     // needsPolling:false left sticky presence forever in empty bathrooms. Watchdog.
     this._armStickyPresenceWatchdog();
 
+    // WHY(P2589): after EF00 ready, restore sensitivity/delay — MCU may have zeroed them
+    this._scheduleRadarSettingsRestore('boot');
+
     // v5.11.139: Call super.onNodeInit() to initialize TuyaZigbeeDevice base class
     // which provides _safeInvoke and other L14 features
     try {
@@ -696,8 +699,82 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
       const mfr = (MfrHelper.getManufacturerName(this) || '').toLowerCase();
       if (this.mainsPowered || MAINS_POWERED_RADARS.has(mfr) || MTG_RELAY_MFR_RE.test(mfr)) {
         await this._applyRadarCapabilityProfile().catch(() => {});
+        // WHY(P2589): MCU amnesia zeros sensitivity/delay after power blip — re-push Homey settings
+        this._scheduleRadarSettingsRestore('announce');
       }
     } catch (_e) { /* soft */ }
+  }
+
+  /**
+   * WHY(P2589): Tuya mmWave MCU often resets DP sensitivity/delay to 0 after reboot/power blip
+   * (same Contre quoi as Hubitat auto-restore). Re-push Homey settings → EF00 DPs.
+   * Throttled — announce storms must not flood the mesh.
+   */
+  _scheduleRadarSettingsRestore(reason = 'boot') {
+    try {
+      const now = Date.now();
+      if (this._lastSettingsRestoreAt && (now - this._lastSettingsRestoreAt) < 25_000) {
+        return;
+      }
+      this._lastSettingsRestoreAt = now;
+      const { safeSetTimeout } = require('../../lib/utils/safe-timers');
+      const delay = reason === 'announce' ? 2_500 : 8_000;
+      safeSetTimeout(this, () => {
+        this._pushAllRadarSettingsToDevice(reason).catch(() => {});
+      }, delay);
+      // Second pass — first TX can race EF00 not ready after announce
+      safeSetTimeout(this, () => {
+        this._pushAllRadarSettingsToDevice(`${reason}-retry`).catch(() => {});
+      }, delay + 12_000);
+    } catch (_e) { /* soft */ }
+  }
+
+  /**
+   * Push every Homey setting that maps to a Tuya DP (sensitivity, range, delay, …).
+   * Contre quoi: MCU amnesia leaves radar at 0 → looks frozen / never detects.
+   */
+  async _pushAllRadarSettingsToDevice(reason = 'restore') {
+    const config = this._getRadarConfig() || {};
+    if (!config.dpMap) return 0;
+    let sentCount = 0;
+    const entries = Object.entries(config.dpMap).filter(([, m]) => m && m.setting);
+    for (const [dpId, dpConfig] of entries) {
+      try {
+        if (this._destroyed) break;
+        let value;
+        try { value = this.getSetting(dpConfig.setting); } catch (_e) { continue; }
+        if (value === undefined || value === null) continue;
+        const tx = this._toRadarDPValue(value, dpConfig);
+        const dpType = this._getRadarDPType(dpConfig);
+        const ok = await this._sendRadarDP(parseInt(dpId, 10), tx, dpType);
+        if (ok) sentCount += 1;
+        await new Promise((resolve) => {
+          try {
+            const { safeSetTimeout } = require('../../lib/utils/safe-timers');
+            safeSetTimeout(this, resolve, 90);
+          } catch (_e) {
+            setTimeout(resolve, 90);
+          }
+        });
+      } catch (_e) { /* soft per-DP */ }
+    }
+    this.log(`[RADAR] P2589 restored ${sentCount}/${entries.length} settings DPs (${reason})`);
+    return sentCount;
+  }
+
+  /**
+   * WHY(P2589): manual / Flow clear when ghost presence or MCU stuck Occupied —
+   * paint Homey absent + arm sticky-DP1 ignore (do not wait for unplug).
+   */
+  async clearStuckPresence(opts = {}) {
+    const config = this._getRadarConfig() || {};
+    const source = opts.source || 'manual';
+    this.log(`[RADAR] P2589 clearStuckPresence (${source})`);
+    try { this._armStickyDp1Ignore(config); } catch (_e) { /* soft */ }
+    try { this._healForcedOccupiedSensorMode(config); } catch (_e2) { /* soft */ }
+    this._lastPresenceFlowEdge = true;
+    await this._commitPresenceAndFlows(false);
+    return true;
   }
 
   async onSettings({ oldSettings, newSettings, changedKeys }) {
@@ -711,6 +788,7 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
     const config = this._getRadarConfig() || {};
     if (config.dpMap) {
       for (const key of changedKeys || []) {
+        if (key === 'clear_presence_now') continue;
         const dpId = Object.keys(config.dpMap).find((id) => config.dpMap[id].setting === key);
         if (!dpId) continue;
         let value = newSettings[key];
@@ -723,6 +801,14 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
           this.error(`[RADAR] Failed syncing ${key} to DP${dpId}`);
         }
       }
+    }
+
+    // WHY(P2589): maintenance checkbox — clear stuck presence without unplug
+    if ((changedKeys || []).includes('clear_presence_now') && newSettings.clear_presence_now === true) {
+      await this.clearStuckPresence({ source: 'settings' }).catch(() => {});
+      try {
+        await this.setSettings({ clear_presence_now: false });
+      } catch (_e) { /* soft */ }
     }
 
     // Settings writes touch DP2/3/102 — never let DynCap reinvent curtain from those values
