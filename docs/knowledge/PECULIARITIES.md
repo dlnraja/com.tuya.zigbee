@@ -2427,3 +2427,9 @@ Generated 2026-09-15T08:05:31.976Z from registry (220 cases) × compound DB (509
 
 Regenerate: `node tools/ci/investigate-device-peculiarities.js`
 
+
+
+### P2580 — Z2M/ZHA complementary transpose (2026-09-18)
+
+- Couples/fixes: _TZE204_dqy15zxy+TS0601 → curtain_motor (Z2M#32851; was switch_2gang); motor_direction string RX (herdsman#13207); Tongou DP32 dual Hz (herdsman#12993); MTG detection_range unsigned TX/RX (Z2M#32561); jt50ea5d heat DP7/DP8 (herdsman#13184).
+- Silent enrich only — no forum POST.

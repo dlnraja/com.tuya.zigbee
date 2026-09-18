@@ -14,6 +14,21 @@ class UltrasonicHeatMeterDevice extends PhysicalButtonMixin(VirtualButtonMixin(U
   get mainsPowered() { return false; }
 
   get dpMappings() {
+    // WHY(P2580 / Z2M herdsman#13184 + ZHA reports): jt50ea5d heat meter uses
+    // DP7=metering switch (bool), DP8=cumulative heat — not the generic 1–5 map.
+    const mfr = String(this.getSetting?.('zb_manufacturer_name') || '').toLowerCase();
+    if (mfr.includes('jt50ea5d')) {
+      return {
+        ...super.dpMappings,
+        7: { capability: null, internal: 'metering_switch', type: 'bool' },
+        8: { capability: 'meter_power', smartDivisor: true },
+        1: { capability: null, internal: 'legacy_energy' },
+        2: { capability: null, internal: 'legacy_power' },
+        3: { capability: 'measure_temperature', smartDivisor: true },
+        4: { internal: true, type: 'return_temperature', smartDivisor: true },
+        5: { capability: 'alarm_battery', transform: (v) => v < 20 },
+      };
+    }
     return {
       ...super.dpMappings,
       1: { capability: 'meter_power' },
