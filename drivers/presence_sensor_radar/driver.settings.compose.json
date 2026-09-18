@@ -3,6 +3,11 @@
     "id": "radar_sensitivity",
     "type": "number",
     "label": { "en": "Radar sensitivity", "fr": "Sensibilité radar", "nl": "Radargevoeligheid" },
+    "hint": {
+      "en": "0–9. Default 7–9 often causes ghost presence (fan/towel/micro-move never clears). Bathroom: try 2–4.",
+      "fr": "0–9. Défaut 7–9 → fausses présences (VMC/serviette). Salle de bain: essayer 2–4.",
+      "nl": "0–9. Standaard 7–9 geeft vaak ghost presence. Badkamer: probeer 2–4."
+    },
     "value": 7,
     "min": 0,
     "max": 9
@@ -12,9 +17,9 @@
     "type": "number",
     "label": { "en": "Detection range", "fr": "Portée de détection", "nl": "Detectiebereik" },
     "hint": {
-      "en": "Meters. For 24G MTG075/MTG235 avoid below ~2.5m (unstable).",
-      "fr": "Mètres. Sur 24G MTG075/MTG235 éviter <~2,5 m (instable).",
-      "nl": "Meters. Bij 24G MTG075/MTG235 liever niet onder ~2,5 m."
+      "en": "Meters. Avoid too high (sees through drywall into hallway). 24G MTG075/MTG235: avoid below ~2.5m (unstable).",
+      "fr": "Mètres. Trop haut = voit à travers le placo/couloir. 24G MTG075/MTG235: éviter <~2,5 m (instable).",
+      "nl": "Meters. Te hoog = door muren heen. 24G MTG075/MTG235: liever niet onder ~2,5 m."
     },
     "value": 6,
     "min": 0,
@@ -26,9 +31,9 @@
     "type": "number",
     "label": { "en": "Departure delay", "fr": "Délai de départ", "nl": "Vertrekvertraging" },
     "hint": {
-      "en": "Seconds after target leaves before clear (0–1500+). Too high looks like a frozen sensor. Bathroom + VMC: try 15–45s and lower Radar/Entry sensitivity.",
-      "fr": "Secondes après départ avant clear (0–1500+). Trop haut = capteur « gelé ». Salle de bain + VMC: essayer 15–45s et baisser sensibilité Radar/Entrée.",
-      "nl": "Seconden na vertrek voor clear. Te hoog lijkt bevroren. Badkamer + ventilator: 15–45s en lagere gevoeligheid."
+      "en": "Seconds after leave before clear. Too high looks frozen. Ghost presence: try 5–15s for test, then 15–45s. Also lower Radar sensitivity.",
+      "fr": "Secondes après départ avant clear. Trop haut = gelé. Fausse présence: tester 5–15s puis 15–45s. Baisser aussi la sensibilité radar.",
+      "nl": "Seconden na vertrek. Te hoog lijkt bevroren. Ghost presence: test 5–15s, daarna 15–45s. Verlaag ook radargevoeligheid."
     },
     "value": 30,
     "min": 0,
@@ -106,6 +111,15 @@
       "en": "If Homey shows Curtain/Rideau: update Test (≥9.0.995), restart the app 2–3 min. If still Curtain → remove device and re-pair as Presence Sensor Radar. Separate from sticky bathroom presence (VMC / Departure delay).",
       "fr": "Si Homey affiche Rideau: Test (≥9.0.995), redémarrer l’app 2–3 min. Si toujours Rideau → supprimer et ré-associer en Presence Sensor Radar. Distinct du gel salle de bain (VMC / délai de départ).",
       "nl": "Als Homey Gordijn toont: Test (≥9.0.995), app 2–3 min herstarten. Nog steeds Gordijn → verwijderen en opnieuw koppelen als Presence Sensor Radar. Los van sticky badkamer-presence (ventilator / vertrekvertraging)."
+    }
+  },
+  {
+    "id": "mtg_mcu_freeze_help",
+    "type": "label",
+    "label": {
+      "en": "If lux/distance still update but presence never changes: try unplug mains 2–3 min (MCU partial freeze). Also lower sensitivity 2–4 — default 7–9 often never clears in bathrooms.",
+      "fr": "Si lux/distance bougent mais la présence ne change plus: couper le 220V 2–3 min (MCU partiellement figé). Baisser aussi sensibilité 2–4 — défaut 7–9 ne clear souvent jamais en salle de bain.",
+      "nl": "Als lux/afstand nog updaten maar presence vastzit: 2–3 min stekker eruit (MCU freeze). Verlaag ook gevoeligheid naar 2–4."
     }
   }
 ]

@@ -43,4 +43,4 @@ Other Contre quoi:
 
 ## Bathroom tuning (VicHY)
 
-Prefer: Sensor mode **On**; Departure delay **15–45s** (not minutes); Block time ~5–10s; Detection range ≥2.5m (24G); raise Shield range to exclude walls; lower Radar/Entry sensitivity if sticky. Check extract fan (VMC) — MTG075 sees blades through plastic.
+Prefer: Sensor mode **On**; Radar sensitivity **2–4** in bathrooms (7–9 = ghost presence); Departure delay test **5–15s** then **15–45s**; Block time ~5–10s; Detection range ≥2.5m (24G) but not so high it sees the hallway through drywall; raise Shield range to exclude walls. Check extract fan / vibrating mount / PVC water pipes. If lux moves but presence never changes → unplug mains 2–3 min (MCU partial freeze).

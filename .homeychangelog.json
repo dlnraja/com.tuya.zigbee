@@ -1,4 +1,7 @@
 {
+  "9.0.1059": {
+    "en": "Presence radar settings hints: ghost presence sensitivity 2–4, MCU power-cycle if lux moves but presence stuck, through-wall range. Update Homey Test."
+  },
   "9.0.1058": {
     "en": "CI: align mfs_db after MTG075 dtzziy1e lock so the VicHY Curtain-heal tip can publish. Update Homey Test; restart 2–3 min; if still Curtain → remove + re-pair as Presence Sensor Radar."
   },
