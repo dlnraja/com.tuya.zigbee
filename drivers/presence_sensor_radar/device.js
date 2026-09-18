@@ -855,6 +855,12 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
         // WHY(P2589): MCU amnesia zeros sensitivity/delay after power blip — re-push Homey settings
         this._scheduleRadarSettingsRestore('announce');
       }
+      // WHY(P2602 / GH#550): remesh/announce — re-arm find_switch + EF00 query (distance cold)
+      try {
+        this._registerPhantomRelaySoftListeners();
+        this._scheduleCeilingFindSwitchEnable('announce');
+        this._queryCeilingPresenceDps('announce').catch(() => {});
+      } catch (_eFs) { /* soft */ }
     } catch (_e) { /* soft */ }
   }
 

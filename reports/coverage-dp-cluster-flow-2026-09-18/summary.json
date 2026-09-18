@@ -1,11 +1,11 @@
 {
-  "generatedAt": "2026-09-18T05:24:30.643Z",
+  "generatedAt": "2026-09-18T20:17:31.447Z",
   "patch": "P2247",
   "drivers": {
     "count": 431,
     "withFlowCompose": 431,
     "withoutFlowCompose": [],
-    "flowCardEntries": 5851
+    "flowCardEntries": 5852
   },
   "clusters": {
     "composeUnique": 35,
@@ -13,21 +13,12 @@
     "missingFromLexicon": []
   },
   "dps": {
-    "knowledgeCouples": 198,
-    "registryCouples": 205,
-    "registryCovered": 197,
-    "coveragePct": 96.1,
+    "knowledgeCouples": 209,
+    "registryCouples": 208,
+    "registryCovered": 208,
+    "coveragePct": 100,
     "skippedBrandOrExternal": 18,
-    "uncovered": [
-      "_TZB210_rkgngb5o|TS0501B",
-      "_TZE200_8eazvzo6|TS0601",
-      "_TZE284_8b9zpaav|TS0601",
-      "_TZE284_it9utkro|TS0601",
-      "_TZE200_yvx5lh6k|TS0601",
-      "_TZE284_c8ipbljq|TS0601",
-      "_TZE284_tgeqdjgk|TS0601",
-      "_TZE200_vvmbj46n|TS0601"
-    ]
+    "uncovered": []
   },
   "flowSmoke": {
     "undeclaredReturnsNull": true,

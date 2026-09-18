@@ -9,18 +9,9 @@
   "capabilities": [
     "alarm_motion",
     "measure_luminance",
-    "measure_temperature",
-    "measure_humidity",
     "alarm_human",
     "onoff",
-    "measure_luminance.distance",
-    "alarm_motion.zone1",
-    "alarm_motion.zone2",
-    "alarm_motion.zone3",
-    "measure_luminance.distance.zone1",
-    "measure_luminance.distance.zone2",
-    "measure_luminance.distance.zone3",
-    "button.1"
+    "measure_luminance.distance"
   ],
   "capabilitiesOptions": {
     "alarm_human": {
