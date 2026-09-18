@@ -212,6 +212,9 @@ class RadiatorValveDevice extends PhysicalButtonMixin(VirtualButtonMixin(Unified
     // Register onoff/mode listeners (parent only handles target_temperature)
     this._setupTRVListeners();
 
+    // WHY(P2593 / Michaelp #2253): caps stay null until first EF00 report — nudge query
+    this._scheduleTrvDpRefresh();
+
     // v5.11.105: SONOFF TRVZB ZCL features (child_lock, open_window, frost_protection, valve)
     await this._setupSonoffTRVZB(zclNode);
 
@@ -253,6 +256,26 @@ class RadiatorValveDevice extends PhysicalButtonMixin(VirtualButtonMixin(Unified
     this._appCommandPending = true;
     safeClearTimeout(this, this._appCommandTimeout);
     this._appCommandTimeout = safeSetTimeout(this, () => { if (this._destroyed) {return;} this._appCommandPending = false; }, 2000);
+  }
+
+  /**
+   * WHY(P2593): after pair/tip, EF00 sleepy TRVs may not push DPs until queried.
+   */
+  _scheduleTrvDpRefresh() {
+    try {
+      safeSetTimeout(this, () => {
+        if (this._destroyed) return;
+        const mgr = this.tuyaEF00Manager;
+        if (!mgr || typeof mgr.requestDP !== 'function') return;
+        const dps = this.dpProfile === 'me167'
+          ? [2, 3, 4, 5, 7, 35]
+          : [1, 2, 3, 4, 13, 15];
+        this.log(`[TRV] P2593 refresh DPs ${dps.join(',')}`);
+        for (const id of dps) {
+          try { mgr.requestDP(id).catch(() => {}); } catch (_e) { /* soft */ }
+        }
+      }, 5_000);
+    } catch (_e) { /* soft */ }
   }
 
   async _setupThermostatCluster(zclNode) {
@@ -298,16 +321,34 @@ class RadiatorValveDevice extends PhysicalButtonMixin(VirtualButtonMixin(Unified
     if (this.hasCapability('target_temperature')) {
       this.registerCapabilityListener('target_temperature', async (v) => {
         const dp = profile === 'me167' ? 4 : 3;
-        await this._sendTuyaDP(dp,Math.round(safeMultiply(v, 10, 10), "value"));
+        // WHY(P2593 / Michaelp #2253): tenths °C as Tuya value DP (4-byte)
+        await this._sendTuyaDP(dp, Math.round(safeMultiply(Number(v), 10)), 'value');
       });
     }
   }
 
-  async _sendTuyaDP(dp, value, type) {
-    const tuya = this.zclNode?.endpoints?.[1]?.clusters?.tuya;
-    if (tuya?.datapoint) {
-      this.log(`[TRV] Sending DP${dp} = ${value} (${type})`);
-      await tuya.datapoint({ dp, value, type } );
+  /**
+   * WHY(P2593 / Michaelp #2253): Homey zigbee-clusters rejects legacy
+   * args with value/type keys → "unexpected property".
+   * Prefer TuyaEF00Manager / UniversalDriverInit (datatype + Buffer data).
+   */
+  async _sendTuyaDP(dp, value, type = 'value') {
+    const typeName = type || 'value';
+    this.log(`[TRV] Sending DP${dp} = ${value} (${typeName})`);
+    try {
+      if (this.tuyaEF00Manager && typeof this.tuyaEF00Manager.sendDP === 'function') {
+        const ok = await this.tuyaEF00Manager.sendDP(dp, value, typeName);
+        if (ok) return true;
+      }
+      if (this.io && typeof this.io.sendDP === 'function') {
+        const ok = await this.io.sendDP(dp, value, { type: typeName });
+        if (ok) return true;
+      }
+      const { sendTuyaDP } = require('../../lib/helpers/UniversalDriverInit');
+      return !!(await sendTuyaDP(this, dp, value, typeName));
+    } catch (err) {
+      this.error(`[TRV] DP${dp} TX failed:`, err?.message || err);
+      throw err;
     }
   }
 

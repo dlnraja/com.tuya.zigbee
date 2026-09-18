@@ -3620,5 +3620,8 @@
   },
   "9.0.1028": {
     "en": "VicHY #2247 diag 8d9d0199: trust DP1, restore relay onoff, soft-clear stagnant bathroom presence; fix publish gate p2511."
+  },
+  "9.0.1068": {
+    "en": "ZG253 TRV ogx8u5z6: fix setpoint TX (Homey datapoint args) + EF00 DP refresh after pair. Update Test + Repair TRV."
   }
 }
