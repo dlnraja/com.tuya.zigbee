@@ -1,4 +1,7 @@
 {
+  "9.0.1069": {
+    "en": "TRV empty values fix: EF00 RX attach for thermostats (ogx8u5z6 me167 maps + battery DPs). Update Homey Test + Repair radiator valve; wait ~10s for temps."
+  },
   "9.0.1066": {
     "en": "mmWave Software Shield API: forceClearPresence / triggerPresenceWatchdog / restoreTuyaParameters; ZG-204 lux anti-spam + survival watchdog; boot restore ~12s. Update Homey Test."
   },
