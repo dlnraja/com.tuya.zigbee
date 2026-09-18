@@ -4,11 +4,11 @@
 
 [![Version](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fraw.githubusercontent.com%2Fdlnraja%2Fcom.tuya.zigbee%2Fmaster%2Fapp.json&query=%24.version&label=version&color=blue)](https://homey.app/a/com.dlnraja.tuya.zigbee/)
 [![Drivers](https://img.shields.io/badge/drivers-431-brightgreen)](https://homey.app/a/com.dlnraja.tuya.zigbee/)
-[![Fingerprints](https://img.shields.io/badge/fingerprints-4,679%20unique-green)](https://homey.app/a/com.dlnraja.tuya.zigbee/)
+[![Fingerprints](https://img.shields.io/badge/fingerprints-4,688%20unique-green)](https://homey.app/a/com.dlnraja.tuya.zigbee/)
 [![SDK](https://img.shields.io/badge/SDK-3-orange)](https://apps.developer.homey.app/)
 [![License](https://img.shields.io/badge/license-GPL--3.0-green)](LICENSE)
 
-Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, sensors, lights, thermostats, covers, valves — **431 drivers**, **4,679 unique fingerprints**. No cloud required.
+Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, sensors, lights, thermostats, covers, valves — **431 drivers**, **4,688 unique fingerprints**. No cloud required.
 
 **What it does:**
 - Talks to devices on your Homey Zigbee mesh (Tuya DP `0xEF00` and standard ZCL)
@@ -33,15 +33,15 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 
 | Metric | Value |
 |--------|-------|
-| **App Version** | v9.0.1038 |
+| **App Version** | v9.0.1084 |
 | **Drivers** | 431 (381 Zigbee + 50 WiFi) |
-| **Unique Fingerprints** | 4,679 |
-| **Pairing Variants** | 16,456 (4 case combos per fingerprint) |
+| **Unique Fingerprints** | 4,688 |
+| **Pairing Variants** | 16,440 (4 case combos per fingerprint) |
 | **Unique Product IDs** | 594 |
-| **Flow Cards** | 6,021 |
+| **Flow Cards** | 6,022 |
 | **Unique Capabilities** | 170 |
 | **Native OTA Drivers** | 8 |
-| **Test Suites** | 379 files |
+| **Test Suites** | 400 files |
 | **SVG Icons** | 731 |
 | **Languages** | EN, FR, NL, DE |
 | **SDK / Homey** | 3 / >= 12.2.0 |
@@ -51,25 +51,25 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 
 | # | Driver | Fingerprints |
 |---|--------|-------------|
-| 1 | `climate_sensor` | 2,120 |
-| 2 | `switch_1gang` | 1,547 |
-| 3 | `curtain_motor` | 661 |
-| 4 | `presence_sensor_radar` | 613 |
+| 1 | `climate_sensor` | 2,126 |
+| 2 | `switch_1gang` | 1,511 |
+| 3 | `curtain_motor` | 669 |
+| 4 | `presence_sensor_radar` | 615 |
 | 5 | `radiator_valve` | 602 |
-| 6 | `button_wireless_2` | 570 |
+| 6 | `button_wireless_2` | 566 |
 | 7 | `generic_tuya` | 414 |
 | 8 | `device_radiator_valve` | 356 |
-| 9 | `wall_dimmer_tuya` | 299 |
+| 9 | `wall_dimmer_tuya` | 301 |
 | 10 | `switch_4gang` | 292 |
-| 11 | `motion_sensor` | 245 |
+| 11 | `motion_sensor` | 247 |
 | 12 | `switch_3gang` | 219 |
-| 13 | `contact_sensor` | 217 |
+| 13 | `contact_sensor` | 213 |
 | 14 | `diy_custom_zigbee` | 206 |
 | 15 | `thermostat_tuya_dp` | 197 |
-| 16 | `sensor_contact_zigbee` | 183 |
-| 17 | `water_leak_sensor_tuya` | 181 |
-| 18 | `wall_thermostat` | 170 |
-| 19 | `switch_2gang` | 167 |
+| 16 | `switch_2gang` | 185 |
+| 17 | `sensor_contact_zigbee` | 183 |
+| 18 | `water_leak_sensor_tuya` | 181 |
+| 19 | `wall_thermostat` | 170 |
 | 20 | `soil_sensor` | 165 |
 
 ### Drivers by Device Class
@@ -102,18 +102,18 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 
 | Version | Changes |
 |---------|---------|
-| **v9.0.1038** | Presence radar MTG075/MTG235: unlock forced-occupied mode, smarter empty-room clear, clearer bathroom settings. Update Homey Test and res… |
-| **v9.0.1036** | CI: brand-scrub Solar Sync flow titles; wire radar anti-FP gates. Update Homey Test. |
-| **v9.0.1034** | CI: wire VicHY radar anti-FP gates into all hard workflows. Presence bathroom false-positive harden. Update Homey Test. |
-| **v9.0.1032** | Presence radar: fewer bathroom false positives, fix distance display, restore relay switch. Update Homey Test and restart the app on both… |
-| **v9.0.1030** | Presence radar: trust presence DP, keep sensor on/off, clear sticky empty-room detections. Update Homey Test and restart the app on both … |
-| **v9.0.1028** | VicHY #2247 diag 8d9d0199: trust DP1, restore relay onoff, soft-clear stagnant bathroom presence; fix publish gate p2511. |
-| **v9.0.1027** | VicHY MTG075: trust DP1 presence, keep relay onoff, soft-clear sticky empty-room presence; EF00 incomplete interview cascade. |
-| **v9.0.1026** | Incomplete Homey interview: intelligent DP/ZCL/raw RX-TX cascade (EF00-only + parallelDiscover). |
-| **v9.0.1025** | EF00-only pairing with ED00 extras (no OnOff 6); VicHY clrdrnya pure Tuya DP reinforce; ZG253 TRV #2244. |
-| **v9.0.1023** | P2572 publish fix: contact_sensor P126 no TS0601 + pay2byax ZG path; Johan mega coverage. |
-| **v9.0.1022** | Johan issues/PRs mega complementary coverage (radar/valve/CO2/plug/button/3gang) + dump pagination fix. |
-| **v9.0.1020** | P2571 mfs_db align after T26439 locks (c8ipbljq/tgeqdjgk/vvmbj46n). |
+| **v9.0.1084** | Presence radar: no phantom Channel on ceiling (gkfbdvyx); presence as quick action; MTG relay still gets Channel. Also slim compose + dis… |
+| **v9.0.1082** | Presence radar: slim compose (no phantom zones/temp on tip), announce re-arms distance tracking, CRQ3 DP9 fix. Update Homey Test + Repair… |
+| **v9.0.1080** | Radar/TRV residual: mains EF00 periodic query, gkfbdvyx DP9 /10 SSOT, soft Channel listener before init. Update Homey Test + Repair prese… |
+| **v9.0.1078** | Improved MTG075 bathroom radar tiles — distance units and phantom zone/temp/battery cleanup after tip update. |
+| **v9.0.1076** | Improved ZG253 / me167 TRV temperature scale and wake refresh so empty caps and setpoint errors clear after update. |
+| **v9.0.1074** | Improved ceiling radar distance tracking and presence when lux works but distance stayed empty; TRV data query hardening stays in tip. |
+| **v9.0.1072** | TRV empty values: force EF00 DP queries after pair (battery passive was skipping 0/10). Update Test + Repair radiator valve. |
+| **v9.0.1071** | 24G ceiling radar gkfbdvyx: presence/distance + strip phantom Channel/Button; lux corroboration. Update Homey Test + Repair radar. |
+| **v9.0.1069** | TRV empty values fix: EF00 RX attach for thermostats (ogx8u5z6 me167 maps + battery DPs). Update Homey Test + Repair radiator valve; wait… |
+| **v9.0.1068** | ZG253 TRV ogx8u5z6: fix setpoint TX (Homey datapoint args) + EF00 DP refresh after pair. Update Test + Repair TRV. |
+| **v9.0.1066** | mmWave Software Shield API: forceClearPresence / triggerPresenceWatchdog / restoreTuyaParameters; ZG-204 lux anti-spam + survival watchdo… |
+| **v9.0.1065** | Presence radar Software Shield tip (anti-spam, survival watchdog, MCU restore, Clear presence). Update Homey Test. |
 
 <!-- CHANGELOG_END -->
 
