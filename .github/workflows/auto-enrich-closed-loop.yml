@@ -452,6 +452,24 @@ jobs:
           head -n 35 "reports/l99-inbox-$DATE/PRIORITY.md" >> $GITHUB_STEP_SUMMARY 2>/dev/null || true
           head -n 40 "reports/deep-functional-$DATE/FUNCTIONAL_AUDIT.md" >> $GITHUB_STEP_SUMMARY 2>/dev/null || true
 
+      - name: "Alibaba OCR intelligent (P2592 free soft)"
+        if: always()
+        continue-on-error: true
+        timeout-minutes: 8
+        env:
+          OCR_INSTALL: '1'
+          OCR_FROM: 'HEAD~40'
+          OCR_TO: 'HEAD'
+          AI_FORCE_LOCAL: 'true'
+          AI_ALLOW_PAID: 'false'
+        run: |
+          if [ ! -f tools/ci/ocr-intelligent-cron.js ]; then
+            echo "ocr-intelligent-cron missing — skip"
+            exit 0
+          fi
+          npm install -g @alibaba-group/open-code-review 2>/dev/null || true
+          node tools/ci/ocr-intelligent-cron.js || echo "OCR_SOFT_WARN"
+
       - name: 📦 Upload artifacts
         if: always()
         uses: actions/upload-artifact@330a01c490aca151604b8cf639adc76d48f6c5d4 # v5.0.0
@@ -466,6 +484,7 @@ jobs:
             .github/state/forum/
             .github/state/l99-inbox-intelligence/
             reports/l99-inbox-*/
+            reports/ocr-intelligent-*/
             auto-enrich.log
             l99-inbox-enrich.log
           if-no-files-found: warn

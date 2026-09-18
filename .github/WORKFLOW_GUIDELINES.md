@@ -1293,6 +1293,25 @@ npm run enrich:investigate             # auto-investigate-need-action (no user w
 
 ---
 
+## N3. Alibaba Open Code Review — free + intelligent (P2582 / P2592)
+
+**Gratuit / forfait:** `ocr delegate preview` only — **never** default `ocr review` LLM.
+CLI: `@alibaba-group/open-code-review` · rules: `.opencodereview/rule.json`
+
+```bash
+npm run review:ocr:intelligent   # skip if no drivers/lib/workflows/tools/ci changes
+npm run check:p2582
+```
+
+| Trigger | Schedule / hook |
+|---------|-----------------|
+| Dedicated | `open-code-review.yml` cron `50 5 * * 1,4` (Mon+Thu 05:50 UTC) + PR paths + dispatch |
+| Soft | `code-quality`, `project-resilience`, `recurrent-orchestrator`, `auto-enrich-closed-loop`, `forum-poll` (`continue-on-error`) |
+
+SSOT: `config/architecture/open-code-review-ssot.json` · doc: `docs/architecture/OPEN_CODE_REVIEW.md`
+
+---
+
 ## O. GitHub elementary security & data-leak hygiene (P2206)
 
 ### Always

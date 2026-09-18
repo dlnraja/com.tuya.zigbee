@@ -178,6 +178,24 @@ jobs:
             node -e "const j=require('./reports/l99-dual-'+new Date().toISOString().slice(0,10)+'/enrich-gates.json'); console.log('track='+j.track+' appId='+(j.appId||'')); (j.results||[]).forEach(r=>console.log((r.ok?'OK':'FAIL')+' ['+r.tag+'] '+r.name))" >> "$GITHUB_STEP_SUMMARY" || true
           fi
 
+      - name: "Alibaba OCR intelligent (P2592 free soft)"
+        if: always()
+        continue-on-error: true
+        timeout-minutes: 8
+        env:
+          OCR_INSTALL: '1'
+          OCR_FROM: 'HEAD~40'
+          OCR_TO: 'HEAD'
+          AI_FORCE_LOCAL: 'true'
+          AI_ALLOW_PAID: 'false'
+        run: |
+          if [ ! -f tools/ci/ocr-intelligent-cron.js ]; then
+            echo "ocr-intelligent-cron missing — skip"
+            exit 0
+          fi
+          npm install -g @alibaba-group/open-code-review 2>/dev/null || true
+          node tools/ci/ocr-intelligent-cron.js || echo "OCR_SOFT_WARN"
+
       - name: Commit resilience reports [skip ci]
         if: always()
         continue-on-error: true
@@ -185,7 +203,7 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git pull --rebase origin "${GITHUB_REF_NAME}" || true
-          git add reports/resilience-*/ reports/l99-dual-*/ .github/state/resilience/ 2>/dev/null || true
+          git add reports/resilience-*/ reports/l99-dual-*/ reports/ocr-intelligent-*/ .github/state/resilience/ 2>/dev/null || true
           if git diff --cached --quiet; then
             echo "No resilience report changes"
             exit 0

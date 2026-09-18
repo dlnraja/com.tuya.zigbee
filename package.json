@@ -456,6 +456,7 @@
     "check:p2582": "node --test test/critical/p2582-open-code-review-watchdog.test.js",
     "review:ocr": "node tools/ci/ocr-delegate-preview.js",
     "review:ocr:rules": "node tools/ci/ocr-delegate-rules.js",
+    "review:ocr:intelligent": "node tools/ci/ocr-intelligent-cron.js",
     "check:p2583": "node --test test/critical/p2583-l99-gh-radar-range.test.js",
     "check:p2584": "node --test test/critical/p2584-mtg075-smart-presence-occupied.test.js",
     "check:p2585": "node --test test/critical/p2585-z2m-herdsman-couple-enrich.test.js",
