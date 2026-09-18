@@ -64,7 +64,8 @@ class DinRailMeterDevice extends UnifiedPlugBase {
       13: { capability: null, internal: 'tongou_test1' },
       15: { capability: null, internal: 'leakage_current' },
       16: { capability: null, internal: 'switch_state' },
-      32: { capability: null, internal: 'ac_frequency', divisor: 100 },
+      // WHY(P2580 / Z2M#12993): DP32 mixes centihertz + truncated Hz — see TongouAcFrequency
+      32: { capability: null, internal: 'ac_frequency', transform: 'tongou_ac_frequency' },
       50: { capability: null, internal: 'power_factor', divisor: 100 },
       108: { capability: null, internal: 'control_mode' },
       125: { capability: 'measure_power', divisor: 8.2 },
@@ -77,7 +78,27 @@ class DinRailMeterDevice extends UnifiedPlugBase {
       this._handleTongouDp6(rawValue);
       return;
     }
+    if (this._isTongouToqSysJzt() && Number(dpId) === 32) {
+      this._handleTongouAcFrequency(rawValue);
+      return;
+    }
     return super._handleDP(dpId, rawValue);
+  }
+
+  /**
+   * WHY(P2580 / Z2M herdsman#12993): ac_frequency DP32 dual scale.
+   */
+  _handleTongouAcFrequency(rawValue) {
+    try {
+      const { normalizeTongouAcFrequency } = require('../../lib/tuya/TongouAcFrequency');
+      const hz = normalizeTongouAcFrequency(rawValue);
+      if (hz == null) return;
+      this.setStoreValue?.('ac_frequency_hz', hz).catch(() => {});
+      if (this.hasCapability('measure_frequency')) {
+        this.safeSetCapabilityValue('measure_frequency', hz).catch(() => {});
+      }
+      this.log(`[TONGOU-JZT] ac_frequency=${hz} Hz (raw=${rawValue})`);
+    } catch (_e) { /* soft */ }
   }
 
   /**

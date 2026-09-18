@@ -831,6 +831,14 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
       return mapping.reverseEnumMap[value];
     }
     if (mapping.divisor && typeof value === 'number') {
+      // WHY(P2580 / Z2M#32561 MTG275): detection_range TX must be unsigned scaled int
+      const { toTuyaScaledUint } = require('../../lib/tuya/TuyaUnsignedValue');
+      const setting = mapping.setting || '';
+      const isRange = /range|distance|shield|detection/i.test(setting);
+      if (isRange || mapping.unsignedScaled) {
+        const max = Number(mapping.max) > 0 ? Math.round(Number(mapping.max) * mapping.divisor) : 800;
+        return toTuyaScaledUint(value, mapping.divisor, { min: 0, max });
+      }
       return Math.round(value * mapping.divisor);
     }
     return value;
@@ -1314,10 +1322,12 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
         const n = Number(parsed);
         return Number.isFinite(n) ? n : null;
       }
-      const n = Number(raw);
-      if (!Number.isFinite(n)) return null;
+      // WHY(P2580 / Z2M#32561): coerce signed VALUE garbage → uint32 before /divisor
+      const { asUnsignedTuyaValue } = require('../../lib/tuya/TuyaUnsignedValue');
+      const u = asUnsignedTuyaValue(raw);
+      if (u == null) return null;
       const div = Number(mapping.divisor) > 0 ? Number(mapping.divisor) : 100;
-      return n / div;
+      return u / div;
     } catch (_e) {
       return null;
     }

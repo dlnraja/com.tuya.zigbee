@@ -453,7 +453,9 @@ class CurtainMotorDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedC
       const val = v !== 0;
       if (this.getSetting?.('moes_backlight') !== val) {updates.moes_backlight = val;}
     } else if (dp === 8) {
-      const val = v === 0 ? 'forward' : 'back';
+      // WHY(P2580 / Z2M#13207): MCU may report string "back"/"forward" not only 0/1
+      const { normalizeMotorDirection } = require('../../lib/tuya/TuyaMotorDirection');
+      const val = normalizeMotorDirection(Number.isFinite(v) ? v : value);
       if (this.getSetting?.('moes_motor_direction') !== val) {updates.moes_motor_direction = val;}
     } else if (dp === 10) {
       const val = Math.max(10, Math.min(180, v));
@@ -502,9 +504,12 @@ class CurtainMotorDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedC
       if (typeof on === 'boolean') {await send(7, on ? 1 : 0, 'bool');}
     }
     if (!changedKeys || keys.includes('moes_motor_direction') || keys.includes('reverse_direction')) {
-      const dir = this.getSetting('moes_motor_direction')
-        || (this.getSetting('reverse_direction') ? 'back' : 'forward');
-      await send(8, dir === 'back' ? 1 : 0, 'enum');
+      const { normalizeMotorDirection, toMotorDirectionEnum } = require('../../lib/tuya/TuyaMotorDirection');
+      const dir = normalizeMotorDirection(
+        this.getSetting('moes_motor_direction')
+        || (this.getSetting('reverse_direction') ? 'back' : 'forward'),
+      );
+      await send(8, toMotorDirectionEnum(dir), 'enum');
     }
     if (!changedKeys || keys.includes('moes_calibration_seconds') || keys.includes('open_time')) {
       const sec = parseInt(this.getSetting('moes_calibration_seconds') ?? this.getSetting('open_time') ?? 0, 10);
