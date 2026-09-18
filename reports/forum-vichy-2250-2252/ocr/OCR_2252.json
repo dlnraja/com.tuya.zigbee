@@ -1,0 +1,25 @@
+{
+  "post": 2252,
+  "user": "VicHY",
+  "couple": { "mfr": "_TZE204_clrdrnya", "pid": "TS0601" },
+  "tipReported": "9.0.1053",
+  "image": "ocr/2252-device.png",
+  "ocr": {
+    "alarm_motion": "Sí",
+    "measure_luminance": "10 lx",
+    "alarm_human": "Sí",
+    "measure_luminance.distance": "0 [object Object]",
+    "zones": "dash",
+    "measure_temperature": "dash",
+    "battery_low": "No"
+  },
+  "bugs": [
+    "distance_units_object",
+    "phantom_zone_caps",
+    "phantom_temperature",
+    "phantom_battery_low",
+    "sticky_presence"
+  ],
+  "patch": "P2599",
+  "silent": true
+}
