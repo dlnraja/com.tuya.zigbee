@@ -47,12 +47,13 @@ class RadiatorValveDevice extends PhysicalButtonMixin(VirtualButtonMixin(Unified
 
     if (this.dpProfile === 'me167') {
       // Profile B: AVATTO ME167/TRV06 / thermostat_3 DP mapping
-      // v5.5.921: FORUM FIX (ManuelKugler #1223) - Added alarm_battery for DP35
+      // WHY(P2598 / Z2M#25199 / Michaelp #2253): DP4/5 are always ÷10 — never smartDivisor
+      // (auto-detect can leave raw tenths as °C → looks empty/wrong after pair).
       return {
         2: { capability: 'thermostat_mode', transform: (v) => ({ 0: 'auto', 1: 'heat', 2: 'off' }[v] ?? 'heat') },
         3: { internal: true, type: 'running_state', transform: (v) => v === 0 ? 'heat' : 'idle' },
-        4: { capability: 'target_temperature', smartDivisor: true },
-        5: { capability: 'measure_temperature', smartDivisor: true },
+        4: { capability: 'target_temperature', divisor: 10 },
+        5: { capability: 'measure_temperature', divisor: 10 },
         7: { capability: 'child_lock', transform: (v) => v === true || v === 1 },
         // Complementary battery DPs (Z2M thermostat_3 variants) — keep alarm on 35
         13: { capability: 'measure_battery', divisor: 1 },
@@ -62,6 +63,9 @@ class RadiatorValveDevice extends PhysicalButtonMixin(VirtualButtonMixin(Unified
         39: { internal: true, type: 'anti_scaling', writable: true },
         // WHY P2278: ogx8u5z6 stores tenths (ZHA#4124); other ME167 = whole °C (Z2M raw)
         47: { internal: true, type: 'temp_calibration', writable: true, divisor: calDivisor, setting: 'temperature_calibration' },
+        // WHY(P2598 / Z2M#25199 IoT): eco complementary — do not wipe existing maps
+        101: { internal: true, type: 'eco_mode', writable: true },
+        102: { internal: true, type: 'eco_temp', divisor: 10, writable: true },
       };
     }
     // Profile A: Standard TRV DP mapping (MOES, etc.)
@@ -307,6 +311,21 @@ class RadiatorValveDevice extends PhysicalButtonMixin(VirtualButtonMixin(Unified
     } catch (_e) { /* soft */ }
   }
 
+  /**
+   * WHY(P2598 / Michaelp #2253): sleepy me167 wakes briefly — re-query sacred DPs on announce.
+   */
+  async onEndDeviceAnnounce() {
+    try {
+      if (typeof super.onEndDeviceAnnounce === 'function') {
+        await super.onEndDeviceAnnounce();
+      }
+    } catch (_e) { /* soft */ }
+    try {
+      this.log('[TRV] P2598 endDeviceAnnounce → DP refresh');
+      this._scheduleTrvDpRefresh();
+    } catch (_e2) { /* soft */ }
+  }
+
   async _setupThermostatCluster(zclNode) {
     const ep1 = zclNode?.endpoints?.[1];
     if (!ep1 ) {return;}
@@ -324,11 +343,13 @@ class RadiatorValveDevice extends PhysicalButtonMixin(VirtualButtonMixin(Unified
   }
 
   _setupTRVListeners() {
-    const profile = this.dpProfile;
+    // WHY(P2598 / Michaelp #2253): never close over a stale profile — read live dpProfile
+    // each TX so late identity (empty mfr at first tick) cannot lock standard DP3 forever.
 
     // On/Off - NOT handled by parent (standard profile only)
-    if (this.hasCapability('onoff') && profile === 'standard') {
+    if (this.hasCapability('onoff')) {
       this.registerCapabilityListener('onoff', async (v) => {
+        if (this.dpProfile !== 'standard') return;
         await this._sendTuyaDP(1, v, 'bool');
       });
     }
@@ -336,7 +357,7 @@ class RadiatorValveDevice extends PhysicalButtonMixin(VirtualButtonMixin(Unified
     // Mode - different mapping per profile
     if (this.hasCapability('thermostat_mode')) {
       this.registerCapabilityListener('thermostat_mode', async (v) => {
-        if (profile === 'me167') {
+        if (this.dpProfile === 'me167') {
           // ME167: 0=auto, 1=heat, 2=off
           await this._sendTuyaDP(2, { 'auto': 0, 'heat': 1, 'off': 2 }[v] ?? 1, 'enum');
         } else {
@@ -349,7 +370,7 @@ class RadiatorValveDevice extends PhysicalButtonMixin(VirtualButtonMixin(Unified
     // Target temperature - different DP per profile
     if (this.hasCapability('target_temperature')) {
       this.registerCapabilityListener('target_temperature', async (v) => {
-        const dp = profile === 'me167' ? 4 : 3;
+        const dp = this.dpProfile === 'me167' ? 4 : 3;
         // WHY(P2593 / Michaelp #2253): tenths °C as Tuya value DP (4-byte)
         await this._sendTuyaDP(dp, Math.round(safeMultiply(Number(v), 10)), 'value');
       });

@@ -1,6 +1,6 @@
 {
   "name": "com.dlnraja.tuya.zigbee",
-  "version": "9.0.1074",
+  "version": "9.0.1076",
   "description": "Tuya Unified Zigbee - Local-first control with AI automation",
   "main": "app.js",
   "scripts": {
@@ -452,7 +452,7 @@
     "check:p2579": "node --test test/critical/p2579-mtg075-deep-harden.test.js",
     "check:p2580": "node --test test/critical/p2580-z2m-zha-complementary-transpose.test.js",
     "check:p258x": "npm run check:p2580 && npm run check:p2581 && npm run check:p2582 && npm run check:p2583 && npm run check:p2584 && npm run check:p2585 && npm run check:p2586 && npm run check:p2587 && npm run check:p2589 && npm run check:p2590",
-    "check:p259x": "npm run check:p2590 && npm run check:p2593 && npm run check:p2594 && npm run check:p2595 && npm run check:p2596 && npm run check:p2597",
+    "check:p259x": "npm run check:p2590 && npm run check:p2593 && npm run check:p2594 && npm run check:p2595 && npm run check:p2596 && npm run check:p2597 && npm run check:p2598",
     "check:p2581": "node --test test/critical/p2581-vichy-8d9d0199-relay-watchdog.test.js",
     "check:p2582": "node --test test/critical/p2582-open-code-review-watchdog.test.js",
     "review:ocr": "node tools/ci/ocr-delegate-preview.js",
@@ -469,7 +469,8 @@
     "check:p2594": "node --test test/critical/p2594-trv-empty-caps-ef00-rx.test.js",
     "check:p2595": "node --test test/critical/p2595-gkfbdvyx-presence-lux-phantom.test.js",
     "check:p2596": "node --test test/critical/p2596-trv-data-query-force.test.js",
-    "check:p2597": "node --test test/critical/p2597-gkfbdvyx-find-switch-distance.test.js"
+    "check:p2597": "node --test test/critical/p2597-gkfbdvyx-find-switch-distance.test.js",
+    "check:p2598": "node --test test/critical/p2598-michaelp-2253-me167-divisor-live-profile.test.js"
   },
   "keywords": [
     "homey",

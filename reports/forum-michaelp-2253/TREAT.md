@@ -1,28 +1,25 @@
-# Forum T140352 Michaelp #2253 — ZG253 TRV (silent)
+# Forum T140352 Michaelp #2253 — ZG253 TRV (silent L99)
 
-**Couple:** `_TZE284_ogx8u5z6` + `TS0601` → `device_radiator_valve` (me167 / thermostat_3)
+**Couple:** `_TZE284_ogx8u5z6` + `TS0601` → `device_radiator_valve` (me167 / thermostat_3)  
+**Post:** [#2253](https://community.homey.app/t/app-pro-universal-tuya-zigbee-device-app-test/140352/2253) · diag `6eabd9c4` · tip reported **9.0.1055**
 
-## Symptom @ 9.0.1055
-- Pairing OK as radiator TRV (P2569 EF00-only)
-- Caps empty/null (temp, battery, mode) — **all values disappeared**
+## Symptom
+- Pairing OK as radiator TRV (after P2569)
+- Caps empty/null (target/measure temp, battery, mode)
 - Setpoint → `tuya.datapoint: value is an unexpected property`
-- Diag: `6eabd9c4-cd9c-4090-ba8d-3937d35de7ca`
-- Interview EF00 present
+- Interview has EF00 `61184`
 
-## Root cause
-1. **TX (P2593):** `_sendTuyaDP` called Homey cluster with `{ dp, value, type }` — zigbee-clusters expects `datatype` + Buffer `data`.
-2. **RX (P2594):** `UnifiedThermostatBase` skips `TuyaZigbeeDevice` super.onNodeInit → `tuyaEF00Manager` never created → `_setupTuyaDPMode` no-op → `dpReport` never hooked → all caps stay null. Same Contre quoi as Cover P2363/P2467.
-3. **Maps:** ManufacturerVariationManager could wipe me167 sacred DP maps; smart TRV `dpProfile` missed `ogx8u5z6` / self-includesCI bug.
+## Root cause stack (verified)
+1. **TX P2593:** Homey cluster rejects `{value,type}` — need datatype+Buffer via EF00Manager
+2. **RX P2594:** UnifiedThermostatBase skipped EF00 attach → no dpReport → all null
+3. **Query P2596:** battery+passive skipped DATA-QUERY 0/10
+4. **P2598 residual (this pass):** me167 DP4/5 used `smartDivisor` (Z2M#25199 = ÷10 fixed); TX listeners closed over stale `profile`; sleepy wake needed re-query
 
-## Fix
-- **P2593** tip ≥9.0.1068: EF00Manager / UniversalDriverInit TX + soft DP refresh
-- **P2594** tip ≥9.0.1069: `attachPrimary` + `launchOnce` + cluster fallback; me167 maps win; re-lock after identity; complementary battery DP13/15; smart TRV aligned
+## Fix tip
+- ≥**9.0.1068** P2593 · ≥**9.0.1069/1070** P2594 · ≥**9.0.1072** P2596 · ≥**9.0.1076** P2598
 
-## User action
-Update Universal Tuya Test ≥**9.0.1069** → Repair TRV → wait ~10s for temps/battery → try setpoint again.
+## User action (no forum POST)
+Update Universal Tuya Test **≥9.0.1076** → Device **Repair** (or wake TRV) → wait ~10s → set setpoint again.
 
 ## Dual-app
-BOTH (reliability TX+RX)
-
-## Forum
-Silent only (T157628) — no auto-POST.
+BOTH reliability. Silent only (T157628).

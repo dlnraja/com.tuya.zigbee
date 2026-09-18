@@ -41,21 +41,24 @@ class RadiatorValveDevice extends PhysicalButtonMixin(VirtualButtonMixin(Unified
   }
 
   get dpMappings() {
+    const mfr = String(this.getSetting('zb_manufacturer_name') || this.getStoreValue('manufacturerName') || '');
+    const calDivisor = /ogx8u5z6/i.test(mfr) ? 10 : 1;
     if (this.dpProfile === 'me167') {
-      // Profile B: AVATTO ME167/TRV06 DP mapping
-      // v5.5.921: FORUM FIX (ManuelKugler #1223) - Added alarm_battery for DP35
+      // WHY(P2598 / Z2M#25199 / Michaelp #2253): DP4/5 locked ÷10 — not smartDivisor
       return {
         2: { capability: 'thermostat_mode', transform: (v) => ({ 0: 'auto', 1: 'heat', 2: 'off' }[v] ?? 'heat') },
         3: { internal: true, type: 'running_state', transform: (v) => v === 0 ? 'heat' : 'idle' },
-        4: { capability: 'target_temperature', smartDivisor: true },
-        5: { capability: 'measure_temperature', smartDivisor: true },
+        4: { capability: 'target_temperature', divisor: 10 },
+        5: { capability: 'measure_temperature', divisor: 10 },
         7: { capability: 'child_lock', transform: (v) => v === true || v === 1 },
         13: { capability: 'measure_battery', divisor: 1 },
         15: { capability: 'measure_battery', divisor: 1 },
         35: { capability: 'alarm_battery', transform: (v) => v === 1 },
         36: { capability: 'frost_protection', transform: (v) => v === true || v === 1 },
         39: { internal: true, type: 'anti_scaling', writable: true },
-        47: { internal: true, type: 'temp_calibration', writable: true }
+        47: { internal: true, type: 'temp_calibration', writable: true, divisor: calDivisor, setting: 'temperature_calibration' },
+        101: { internal: true, type: 'eco_mode', writable: true },
+        102: { internal: true, type: 'eco_temp', divisor: 10, writable: true },
       };
     }
     // Profile A: Standard TRV DP mapping (MOES, etc.)
@@ -276,32 +279,28 @@ class RadiatorValveDevice extends PhysicalButtonMixin(VirtualButtonMixin(Unified
   }
 
   _setupTRVListeners() {
-    const profile = this.dpProfile;
+    // WHY(P2598 / Michaelp #2253): live dpProfile each TX — never close over stale profile
 
-    // On/Off - NOT handled by parent (standard profile only)
-    if (this.hasCapability('onoff') && profile === 'standard') {
+    if (this.hasCapability('onoff')) {
       this.registerCapabilityListener('onoff', async (v) => {
+        if (this.dpProfile !== 'standard') return;
         await this._sendTuyaDP(1, v, 'bool');
       });
     }
 
-    // Mode - different mapping per profile
     if (this.hasCapability('thermostat_mode')) {
       this.registerCapabilityListener('thermostat_mode', async (v) => {
-        if (profile === 'me167') {
-          // ME167: 0=auto, 1=heat, 2=off
+        if (this.dpProfile === 'me167') {
           await this._sendTuyaDP(2, { auto: 0, heat: 1, off: 2 }[v] ?? 1, 'enum');
         } else {
-          // Standard: 0=heat, 1=auto, 2=off
           await this._sendTuyaDP(2, { heat: 0, auto: 1, off: 2 }[v] ?? 0, 'enum');
         }
       });
     }
 
-    // Target temperature - different DP per profile
     if (this.hasCapability('target_temperature')) {
       this.registerCapabilityListener('target_temperature', async (v) => {
-        const dp = profile === 'me167' ? 4 : 3;
+        const dp = this.dpProfile === 'me167' ? 4 : 3;
         await this._sendTuyaDP(dp, Math.round(safeMultiply(Number(v), 10)), 'value');
       });
     }

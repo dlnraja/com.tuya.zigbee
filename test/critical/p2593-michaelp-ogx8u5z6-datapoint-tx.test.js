@@ -41,7 +41,8 @@ describe('P2593 Michaelp ogx8u5z6 TRV datapoint TX', () => {
 
   it('me167 setpoint still uses DP4 for ogx8u5z6 family', () => {
     const src = fs.readFileSync(DEVICE, 'utf8');
-    assert.match(src, /profile === 'me167'\s*\?\s*4\s*:\s*3/);
+    // P2598: live this.dpProfile (was closed-over profile ===)
+    assert.match(src, /(?:profile|this\.dpProfile)\s*===\s*'me167'\s*\?\s*4\s*:\s*3/);
     assert.ok(src.includes('ogx8u5z6'));
   });
 });
