@@ -1,4 +1,10 @@
 {
+  "9.0.1058": {
+    "en": "CI: align mfs_db after MTG075 dtzziy1e lock so the VicHY Curtain-heal tip can publish. Update Homey Test; restart 2–3 min; if still Curtain → remove + re-pair as Presence Sensor Radar."
+  },
+  "9.0.1057": {
+    "en": "Presence radar: heal Homey Curtain type flip faster; bathroom sticky presence soft-clear for VMC/fan micro-motion; MTG075 dtzziy1e family lock. Update Homey Test, restart app 2–3 min; re-pair as Presence Sensor Radar if still Curtain."
+  },
   "9.0.1056": {
     "en": "Homey RAM: smarter RSS/heap budget + safer lazy JSON loading; fix fingerprint routing after Z2M enrich. Update Homey Test."
   },
