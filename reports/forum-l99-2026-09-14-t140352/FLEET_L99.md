@@ -1,9 +1,6 @@
-# T140352 live harvest 2026-09-18T03:33:57.080Z
+# T140352 live harvest 2026-09-18T04:34:41.901Z
 
-Highest **#2247** · posts **#2208–#2247** (39) · silent only · never invent pid
-
-## #2208 @VicHY
-Hello i cannot connect a presence sensor _TZE204_clrdrnya El Diagnostic ID is 4217d5e3-c845-4f0b-a351-5e5a59295cbb Thanks
+Highest **#2248** · posts **#2209–#2248** (39) · silent only · never invent pid
 
 ## #2209 @Cam
 Hi there @dlnraja Just checking in after a few months of devices not working and trying to add them again. My smart button and motion sensor aren’t detecting/passing through any data through my flows. I know the motion sensors are working because I can see the red light flash when movement occurs near it but they just don’t respond to flows, regardless of how many ways I try (same for button too). I’ve also tried adding them as several different devices to see if that helps, sadly it does not. You had them working once upon a time but I suspect one the updates along the way boned them again. Thanks for your time. Cam
@@ -171,6 +168,9 @@ Hi again @dlnraja photo_2026-09-17 22.35.38 587×1280 62.4 KB photo_2026-09-17 2
   - https://us1.discourse-cdn.com/flex025/uploads/athom/original/3X/c/8/c882d40c95fa364f646c0b273275f20ee827ff38.jpeg
   - https://us1.discourse-cdn.com/flex025/uploads/athom/original/3X/d/c/dcb1cc04bb41fc25c9f093d2d4882f0321626701.jpeg
 - links: https://us1.discourse-cdn.com/flex025/uploads/athom/original/3X/5/6/560716849979c9e63ec39a90a786b7a7e41b8fca.jpeg | https://us1.discourse-cdn.com/flex025/uploads/athom/optimized/3X/5/6/560716849979c9e63ec39a90a786b7a7e41b8fca_2_229x500.jpeg | https://us1.discourse-cdn.com/flex025/uploads/athom/optimized/3X/5/6/560716849979c9e63ec39a90a786b7a7e41b8fca_2_229x500.jpeg, | https://us1.discourse-cdn.com/flex025/uploads/athom/optimized/3X/5/6/560716849979c9e63ec39a90a786b7a7e41b8fca_2_343x750.jpeg | https://us1.discourse-cdn.com/flex025/uploads/athom/optimized/3X/5/6/560716849979c9e63ec39a90a786b7a7e41b8fca_2_458x1000.jpeg | https://us1.discourse-cdn.com/flex025/uploads/athom/original/3X/c/8/c882d40c95fa364f646c0b273275f20ee827ff38.jpeg | https://us1.discourse-cdn.com/flex025/uploads/athom/optimized/3X/c/8/c882d40c95fa364f646c0b273275f20ee827ff38_2_229x500.jpeg | https://us1.discourse-cdn.com/flex025/uploads/athom/optimized/3X/c/8/c882d40c95fa364f646c0b273275f20ee827ff38_2_229x500.jpeg, | https://us1.discourse-cdn.com/flex025/uploads/athom/optimized/3X/c/8/c882d40c95fa364f646c0b273275f20ee827ff38_2_343x750.jpeg | https://us1.discourse-cdn.com/flex025/uploads/athom/optimized/3X/c/8/c882d40c95fa364f646c0b273275f20ee827ff38_2_458x1000.jpeg
+
+## #2248 @dlnraja
+might be updated this morning please try again updated
 
 ## URL hosts (recent window)
 ```json

@@ -252,6 +252,7 @@ jobs:
           npm run check:p246x || echo "P246x soft warn"
           npm run check:p248x || echo "P248x soft warn"
           npm run check:p249x || echo "P249x soft warn"
+          npm run check:p257x || echo "P257x soft warn"
           npm run check:publish || echo "check:publish soft warn"
 
       - name: Commit state (apply only)

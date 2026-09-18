@@ -132,6 +132,9 @@ jobs:
       - name: P249x AI efficiency + Homey button UI + couple SSOT
         run: npm run check:p249x
 
+      - name: P257x VicHY radar / EF00 / anti-FP family
+        run: npm run check:p257x
+
       - name: P2286–P2288 + P2495 publish path aggregator
         run: npm run check:publish
 
