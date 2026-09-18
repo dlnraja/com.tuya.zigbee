@@ -1564,7 +1564,7 @@ Generated 2026-09-15T08:05:31.976Z from registry (220 cases) × compound DB (509
 - Compound `_TZE204_ogx8u5z6|TS0601`: tuya_dp  P2278 me167/thermostat_3 DPs + cal DP47 /10 (ZHA#4124)
 - Compound `_TZE284_ogx8u5z6|TS0601`: tuya_dp  P2278 sibling ogx8u5z6
 - Compose: class=thermostat eps=1 EF00=false IAS=false batteries=AA
-- Notes: P2278 me167 profile + DP47 cal ÷10 (ZHA#4124 / Z2M#25199 user firmware); other ME167 stay whole °C. **P2569** Michaelp #2244 ZG253 TZE284 EF00-only compose. **P2593 #2253:** setpoint TX must not use `datapoint({value,type})` — Homey rejects as unexpected property; use EF00Manager/UniversalDriverInit; tip ≥9.0.1068 + Repair.
+- Notes: P2278 me167 profile + DP47 cal ÷10 (ZHA#4124 / Z2M#25199 user firmware); other ME167 stay whole °C. **P2569** Michaelp #2244 ZG253 TZE284 EF00-only compose. **P2593 #2253:** setpoint TX must not use `datapoint({value,type})` — Homey rejects as unexpected property; use EF00Manager/UniversalDriverInit. **P2594/P2596:** EF00 attach + force query. **P2598:** me167 DP4/5 locked ÷10 (not smartDivisor) + live profile TX + announce refresh — tip ≥**9.0.1076** + Repair.
 - Sources: zha-device-handlers#4124, zigbee2mqtt#25199, P2278
 
 ### `p2279-1fuxihti-cover-not-climate` → `curtain_motor`

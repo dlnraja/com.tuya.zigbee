@@ -3635,5 +3635,8 @@
   },
   "9.0.1074": {
     "en": "Improved ceiling radar distance tracking and presence when lux works but distance stayed empty; TRV data query hardening stays in tip."
+  },
+  "9.0.1076": {
+    "en": "Improved ZG253 / me167 TRV temperature scale and wake refresh so empty caps and setpoint errors clear after update."
   }
 }
