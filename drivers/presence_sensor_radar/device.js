@@ -362,7 +362,8 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
     // needsPolling:false left sticky presence forever in empty bathrooms. Watchdog.
     this._armStickyPresenceWatchdog();
 
-    // WHY(P2589): after EF00 ready, restore sensitivity/delay — MCU may have zeroed them
+    // WHY(P2589/P2591 Software Shield Module 3): after EF00 ready, restore sensitivity/delay
+    // (MCU amnesia → zeros). Boot delay ~12s matches Hubitat-style post-init restore.
     this._scheduleRadarSettingsRestore('boot');
 
     // v5.11.139: Call super.onNodeInit() to initialize TuyaZigbeeDevice base class
@@ -372,6 +373,9 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
     } catch (err) {
       this.log('[RADAR] Base init error:', err.message);
     }
+
+    // WHY(P2591): also hook raw Zigbee announce (complementary to onEndDeviceAnnounce)
+    this._hookRadarNodeAnnounce(zclNode);
 
     // WHY(P2559 / GH#547 gkfbdvyx): MCU may leave network / silent RX without Tuya magic
     await this._ensureRadarMagicHandshake(zclNode).catch(() => {});
@@ -706,9 +710,27 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
   }
 
   /**
-   * WHY(P2589): Tuya mmWave MCU often resets DP sensitivity/delay to 0 after reboot/power blip
-   * (same Contre quoi as Hubitat auto-restore). Re-push Homey settings → EF00 DPs.
-   * Throttled — announce storms must not flood the mesh.
+   * WHY(P2591 Software Shield): complementary to Homey onEndDeviceAnnounce —
+   * some stacks emit node 'announce' / 'endDeviceAnnounce' on the ZCL node.
+   */
+  _hookRadarNodeAnnounce(zclNode) {
+    try {
+      if (this._radarAnnounceHooked) return;
+      const node = zclNode || this.zclNode || this.node;
+      if (!node || typeof node.on !== 'function') return;
+      this._radarAnnounceHooked = true;
+      const onAnnounce = () => {
+        try { this._scheduleRadarSettingsRestore('node-announce'); } catch (_e) { /* soft */ }
+      };
+      try { node.on('announce', onAnnounce); } catch (_e1) { /* soft */ }
+      try { node.on('endDeviceAnnounce', onAnnounce); } catch (_e2) { /* soft */ }
+    } catch (_e) { /* soft */ }
+  }
+
+  /**
+   * WHY(P2589/P2591 Module 3 Auto-Restore): Tuya mmWave MCU often resets DP
+   * sensitivity/delay to 0 after reboot/power blip (Hubitat Contre quoi).
+   * Re-push Homey settings → EF00 DPs. Throttled — announce storms must not flood mesh.
    */
   _scheduleRadarSettingsRestore(reason = 'boot') {
     try {
@@ -718,7 +740,8 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
       }
       this._lastSettingsRestoreAt = now;
       const { safeSetTimeout } = require('../../lib/utils/safe-timers');
-      const delay = reason === 'announce' ? 2_500 : 8_000;
+      // boot: 12s post-init (prompt 10–15s); announce: sooner so MCU gets settings fast
+      const delay = (reason === 'announce' || reason === 'node-announce') ? 2_500 : 12_000;
       safeSetTimeout(this, () => {
         this._pushAllRadarSettingsToDevice(reason).catch(() => {});
       }, delay);
@@ -730,9 +753,14 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
   }
 
   /**
+   * Prompt API Module 3 — restoreTuyaParameters()
    * Push every Homey setting that maps to a Tuya DP (sensitivity, range, delay, …).
    * Contre quoi: MCU amnesia leaves radar at 0 → looks frozen / never detects.
    */
+  async restoreTuyaParameters(reason = 'manual') {
+    return this._pushAllRadarSettingsToDevice(reason);
+  }
+
   async _pushAllRadarSettingsToDevice(reason = 'restore') {
     const config = this._getRadarConfig() || {};
     if (!config.dpMap) return 0;
@@ -760,8 +788,8 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
   }
 
   /**
-   * WHY(P2589): manual / Flow clear when ghost presence or MCU stuck Occupied —
-   * paint Homey absent + arm sticky-DP1 ignore (do not wait for unplug).
+   * WHY(P2589/P2591 Module 4 Clear Presence): manual / Flow clear when ghost presence
+   * or MCU stuck Occupied — paint Homey absent + arm sticky-DP1 ignore (no unplug).
    */
   async clearStuckPresence(opts = {}) {
     const config = this._getRadarConfig() || {};
@@ -773,6 +801,14 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
     this._lastPresenceFlowEdge = true;
     await this._commitPresenceAndFlows(false);
     return true;
+  }
+
+  /**
+   * Prompt API Module 4 — forceClearPresence()
+   * Cancels survival watchdog and forces alarm_motion = false (ZHA-style Clear Presence).
+   */
+  async forceClearPresence() {
+    return this.clearStuckPresence({ source: 'forceClearPresence' });
   }
 
   async onSettings({ oldSettings, newSettings, changedKeys }) {
@@ -1889,8 +1925,16 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
   }
 
   /**
-   * WHY(P2590 Ultimate Stabilizer Module 2): if clear frame is lost in Zigbee flood or
-   * MCU freezes Occupied, force Homey absent after departure_delay + margin.
+   * Prompt API Module 2 — triggerPresenceWatchdog()
+   * Rearm Z2M-style occupancy_timeout: departure_delay + network margin.
+   */
+  triggerPresenceWatchdog() {
+    return this._nudgeSurvivalWatchdog('presence');
+  }
+
+  /**
+   * WHY(P2590/P2591 Software Shield Module 2 Survival Watchdog): if clear frame is lost
+   * in Zigbee flood or MCU freezes Occupied, force Homey absent after departure_delay + margin.
    * Contre quoi: NEVER paint presence=true from distance alone (P2534 bathroom flip-flop).
    * Only rearm while already Occupied / after DP1 true.
    */
@@ -1925,7 +1969,8 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
           const still = this.getCapabilityValue?.('alarm_motion') === true
             || this.getCapabilityValue?.('alarm_human') === true;
           if (!still) return;
-          this.log(`[RADAR] P2590 survival watchdog expired (${reason}) → force clear`);
+          // Prompt log + P2590 tag (Z2M occupancy_timeout Contre quoi)
+          this.log(`[WATCHDOG] Timeout expiré, forçage de l'état libre (${reason})`);
           this.clearStuckPresence({ source: 'survival-watchdog' }).catch(() => {});
         } catch (_e) { /* soft */ }
       }, waitMs);

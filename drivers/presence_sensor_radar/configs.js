@@ -406,6 +406,12 @@ const SENSOR_CONFIGS = {
     noTemperature: true,
     noHumidity: true,
     noIasMotion: true,
+    // WHY(P2591 Software Shield): ZG-204 lux spam same Contre quoi as MTG075 (Module 1+2)
+    floodCalm: true,
+    survivalWatchdog: true,
+    survivalWatchdogMarginSec: 5,
+    dpThrottleMs: { 106: 10000 },
+    dpMinDelta: { 106: 5 },
     writableDPs: [2, 4, 102, 107, 122, 123],
     dpMap: {
       1: { cap: 'alarm_motion', type: 'presence_bool' },
@@ -435,6 +441,12 @@ const SENSOR_CONFIGS = {
     noTemperature: false,
     noHumidity: false,
     noIasMotion: true,
+    // WHY(P2591 Software Shield): lux throttle + survival watchdog (Module 1+2)
+    floodCalm: true,
+    survivalWatchdog: true,
+    survivalWatchdogMarginSec: 5,
+    dpThrottleMs: { 106: 10000 },
+    dpMinDelta: { 106: 5 },
     writableDPs: [2, 4, 102, 104, 105, 107, 108, 109, 112, 123],
     dpMap: {
       1: { cap: 'alarm_motion', type: 'presence_bool' },
