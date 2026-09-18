@@ -43,10 +43,14 @@ describe('P2581 VicHY 8d9d0199 relay lock + presence watchdog', () => {
     assert.strictEqual(cfg.hasRelay, true);
   });
 
-  it('compose keeps onoff for presence_sensor_radar', () => {
+  it('MTG relay onoff via options + device profile (not default compose)', () => {
     const compose = JSON.parse(fs.readFileSync(
       path.join(ROOT, 'drivers/presence_sensor_radar/driver.compose.json'), 'utf8'));
-    assert.ok((compose.capabilities || []).includes('onoff'));
+    // WHY(P2603): ceiling no Channel — onoff omitted from capabilities; options + addCapability for MTG
+    assert.ok(!(compose.capabilities || []).includes('onoff'));
+    assert.ok(compose.capabilitiesOptions?.onoff);
+    const device = fs.readFileSync(path.join(ROOT, 'drivers/presence_sensor_radar/device.js'), 'utf8');
+    assert.ok(device.includes("requiredCaps.add('onoff')"));
   });
 
   it('auto-publish compacts mfs before p248x (P2521d)', () => {
