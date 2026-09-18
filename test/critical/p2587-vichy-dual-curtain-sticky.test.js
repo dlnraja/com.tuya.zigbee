@@ -47,8 +47,13 @@ describe('P2587 VicHY dual curtain + sticky bathroom', () => {
     const help = settings.find((s) => s.id === 'homey_curtain_flip_help');
     assert.ok(help && help.type === 'label', 'help label');
     assert.match(help.label.en, /Curtain|Rideau|re-pair/i);
+    const mcu = settings.find((s) => s.id === 'mtg_mcu_freeze_help');
+    assert.ok(mcu && mcu.type === 'label', 'MCU freeze help');
+    assert.match(mcu.label.en, /unplug|MCU|sensitivity/i);
+    const sens = settings.find((s) => s.id === 'radar_sensitivity');
+    assert.match(sens.hint.en, /ghost|2–4|2-4/i);
     const dep = settings.find((s) => s.id === 'departure_delay');
-    assert.match(dep.hint.en, /VMC|bathroom|frozen/i);
+    assert.match(dep.hint.en, /Ghost|5–15|sensitivity/i);
   });
 
   it('clrdrnya and dtzziy1e never in curtain_motor compose', () => {
