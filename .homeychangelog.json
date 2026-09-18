@@ -3647,5 +3647,8 @@
   },
   "9.0.1082": {
     "en": "Presence radar: slim compose (no phantom zones/temp on tip), announce re-arms distance tracking, CRQ3 DP9 fix. Update Homey Test + Repair radars/TRVs."
+  },
+  "9.0.1084": {
+    "en": "Presence radar: no phantom Channel on ceiling (gkfbdvyx); presence as quick action; MTG relay still gets Channel. Also slim compose + distance tracking. Update Homey Test + Repair radars/TRVs."
   }
 }

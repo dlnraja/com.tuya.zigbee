@@ -26,16 +26,18 @@ describe('P2602 intelligent radar deepen', () => {
     assert.ok(caps.includes('alarm_motion'));
     assert.ok(caps.includes('alarm_human'));
     assert.ok(caps.includes('measure_luminance.distance'));
-    assert.ok(caps.includes('onoff')); // MTG relay still declared; ceiling strips at runtime
+    // WHY(P2603): onoff removed from compose — MTG adds via profile; ceiling no Channel
+    assert.ok(!caps.includes('onoff'));
     assert.ok(!caps.includes('alarm_motion.zone1'));
     assert.ok(!caps.includes('measure_luminance.distance.zone1'));
     assert.ok(!caps.includes('measure_temperature'));
     assert.ok(!caps.includes('measure_humidity'));
     assert.ok(!caps.includes('button.1'));
-    // Options kept so multi-zone addCapability keeps titles
+    // Options kept so multi-zone / MTG addCapability keeps titles
     const opts = JSON.parse(fs.readFileSync(COMPOSE, 'utf8')).capabilitiesOptions || {};
     assert.ok(opts['alarm_motion.zone1']);
     assert.ok(opts['measure_luminance.distance']);
+    assert.ok(opts.onoff);
   });
 
   it('announce re-arms find_switch + EF00 query', () => {
