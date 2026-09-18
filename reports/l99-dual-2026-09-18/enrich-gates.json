@@ -1,8 +1,8 @@
 {
-  "at": "2026-09-18T05:24:39.169Z",
+  "at": "2026-09-18T09:50:40.775Z",
   "track": "master",
   "appId": "com.dlnraja.tuya.zigbee",
-  "hard": true,
+  "hard": false,
   "results": [
     {
       "tag": "BOTH",
@@ -41,7 +41,7 @@
       "ok": true,
       "skipped": false,
       "name": "test/critical/l99-energy-jump-divisor.test.js",
-      "detail": "ℹ skipped 0 | ℹ todo 0 | ℹ duration_ms 3094.84",
+      "detail": "# skipped 0 | # todo 0 | # duration_ms 30.251863",
       "status": 0
     },
     {
@@ -49,7 +49,7 @@
       "ok": true,
       "skipped": false,
       "name": "test/critical/l99-daylight-atmosphere.test.js",
-      "detail": "ℹ skipped 0 | ℹ todo 0 | ℹ duration_ms 586.0033",
+      "detail": "# skipped 0 | # todo 0 | # duration_ms 29.17373",
       "status": 0
     },
     {
@@ -57,7 +57,7 @@
       "ok": true,
       "skipped": false,
       "name": "test/hue-smart-features.test.js",
-      "detail": "ℹ skipped 0 | ℹ todo 0 | ℹ duration_ms 734.8096",
+      "detail": "# skipped 0 | # todo 0 | # duration_ms 70.523762",
       "status": 0
     },
     {
@@ -129,6 +129,18 @@
     "p2511_vichy_clrdrnya_mtg": {
       "tag": "BOTH",
       "note": "VicHY clrdrnya MTG sticky DP1 + tuya_battery_low strip on mains"
+    },
+    "p2579_mtg075_deep_harden": {
+      "tag": "BOTH",
+      "note": "MTG075/MTG235: heal DP115 occupied→on; quantized distance soft-clear; merged onSettings; bathroom settings hints"
+    },
+    "p2580_z2m_zha_complementary_transpose": {
+      "tag": "BOTH",
+      "note": "Transpose Z2M/ZHA/herdsman: motor_direction strings, Tongou Hz scale, MTG unsigned range, dqy15zxy curtain, heat DP7/8"
+    },
+    "p2581_vichy_8d9d0199_relay_watchdog": {
+      "tag": "BOTH",
+      "note": "VicHY #2247/8d9d0199: fail-closed onoff relay lock + sticky presence watchdog (needsPolling false)"
     },
     "p2512_peter_smartbutton_history": {
       "tag": "BOTH",
