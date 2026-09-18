@@ -48,7 +48,9 @@ describe('P2379 presence radar no curtain DynCap', () => {
     assert.equal(compose.class, 'sensor');
     const m = compose.zigbee?.manufacturerName || [];
     assert.ok(m.some((x) => /clrdrnya/i.test(x)));
-    assert.ok((compose.capabilities || []).includes('onoff'));
+    // WHY(P2603): onoff not in default compose; MTG still restored via device profile
+    assert.ok(!(compose.capabilities || []).includes('onoff'));
+    assert.ok(compose.capabilitiesOptions?.onoff);
     assert.ok(!(compose.capabilities || []).includes('windowcoverings_set'));
   });
 });
