@@ -769,7 +769,8 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
   async clearStuckPresence(opts = {}) {
     const config = this._getRadarConfig() || {};
     const source = opts.source || 'manual';
-    this.log(`[RADAR] P2589 clearStuckPresence (${source})`);
+    this.log(`[RADAR] P2589/P2590 clearStuckPresence (${source})`);
+    this._clearSurvivalWatchdog();
     try { this._armStickyDp1Ignore(config); } catch (_e) { /* soft */ }
     try { this._healForcedOccupiedSensorMode(config); } catch (_e2) { /* soft */ }
     this._lastPresenceFlowEdge = true;
@@ -1090,8 +1091,10 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
   }
 
   /**
-   * WHY(P2389): coalesce chatty telemetry DPs (distance/lux) without delaying presence (DP1).
-   * Firmware still TX on air — this only protects Homey CPU/flows/UI.
+   * WHY(P2389/P2590 Module 1 Anti-Spam): coalesce chatty telemetry DPs (distance/lux)
+   * without delaying presence (DP1). Firmware still TX on air — this only protects
+   * Homey CPU/flows/UI and reduces missed clear frames on saturated mesh.
+   * Spec: distance Δ>0.1m OR ≥5s; lux Δ>5 OR ≥10s (MTG075_ZB_RL_RELAY defaults).
    * @returns {boolean} true = skip capability commit
    */
   _shouldSkipFloodCalmDp(dpId, numericValue, config) {
@@ -1221,6 +1224,8 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
       this._softClearStuckPresenceOnZeroDistance(distance, config);
       // WHY(P2389): still feed inference every frame; only coalesce Homey capability writes
       if (this._shouldSkipFloodCalmDp(dpId, distance, config)) {return;}
+      // WHY(P2590 Module 2): meaningful distance while Occupied = sign of life → rearm
+      this._nudgeSurvivalWatchdog('distance');
       return this.safeSetCapabilityValue('measure_luminance.distance', distance).catch(() => {});
     }
 
@@ -1256,6 +1261,7 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
         }
       }
       if (this._shouldSkipFloodCalmDp(dpId, lux, config)) {return;}
+      this._nudgeSurvivalWatchdog('lux');
       return this.safeSetCapabilityValue('measure_luminance', lux).catch(() => {});
     }
 
@@ -1875,8 +1881,72 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
     if (opts && opts.silent === true) {
       return this.safeSetCapabilityValue('alarm_motion', next).catch(() => {});
     }
+    // WHY(P2590 Module 2 Survival Watchdog): rearm on present; cancel on clear
+    if (next) {
+      this._nudgeSurvivalWatchdog('presence');
+    } else {
+      this._clearSurvivalWatchdog();
+    }
     // Motion first — safeSet mirrors human + fires presence WHEN on edge.
     return this.safeSetCapabilityValue('alarm_motion', next).catch(() => {});
+  }
+
+  /**
+   * WHY(P2590 Ultimate Stabilizer Module 2): if clear frame is lost in Zigbee flood or
+   * MCU freezes Occupied, force Homey absent after departure_delay + margin.
+   * Contre quoi: NEVER paint presence=true from distance alone (P2534 bathroom flip-flop).
+   * Only rearm while already Occupied / after DP1 true.
+   */
+  _nudgeSurvivalWatchdog(reason = 'life') {
+    try {
+      const config = this._getRadarConfig() || {};
+      if (config.survivalWatchdog === false) return;
+      if (!(config.floodCalm || config.antiFalsePositive || config.hasRelay || config.survivalWatchdog === true)) {
+        return;
+      }
+      // Optional user opt-out
+      try {
+        if (this.getSetting?.('survival_watchdog') === false) return;
+      } catch (_e) { /* soft */ }
+
+      const present = this.getCapabilityValue?.('alarm_motion') === true
+        || this.getCapabilityValue?.('alarm_human') === true
+        || reason === 'presence';
+      if (!present && reason !== 'presence') return;
+
+      this._clearSurvivalWatchdog();
+      const { safeSetTimeout } = require('../../lib/utils/safe-timers');
+      let keepSec = Number(this.getSetting?.('departure_delay'));
+      if (!Number.isFinite(keepSec) || keepSec < 0) keepSec = 30;
+      const margin = Number(config.survivalWatchdogMarginSec) >= 0
+        ? Number(config.survivalWatchdogMarginSec) : 5;
+      // Cap absurd delays so a 1500s firmware delay does not block soft-clear forever
+      const waitMs = Math.min((keepSec + margin) * 1000, 180_000);
+      this._survivalWatchdogTimer = safeSetTimeout(this, () => {
+        this._survivalWatchdogTimer = null;
+        try {
+          const still = this.getCapabilityValue?.('alarm_motion') === true
+            || this.getCapabilityValue?.('alarm_human') === true;
+          if (!still) return;
+          this.log(`[RADAR] P2590 survival watchdog expired (${reason}) → force clear`);
+          this.clearStuckPresence({ source: 'survival-watchdog' }).catch(() => {});
+        } catch (_e) { /* soft */ }
+      }, waitMs);
+    } catch (_e) { /* soft */ }
+  }
+
+  _clearSurvivalWatchdog() {
+    try {
+      if (this._survivalWatchdogTimer) {
+        const { safeClearTimeout } = require('../../lib/utils/safe-timers');
+        if (typeof safeClearTimeout === 'function') {
+          safeClearTimeout(this, this._survivalWatchdogTimer);
+        } else {
+          clearTimeout(this._survivalWatchdogTimer);
+        }
+      }
+    } catch (_e) { /* soft */ }
+    this._survivalWatchdogTimer = null;
   }
 
   _triggerPresenceFlows(detected) {
@@ -1953,6 +2023,7 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
     if (this._pollingInterval) {this.homey.clearInterval(this._pollingInterval);}
     this._clearRadarPhantomHealInterval();
     this._clearStickyPresenceWatchdog();
+    this._clearSurvivalWatchdog();
     if (super.onUninit) {super.onUninit();}
   }
 
@@ -1960,6 +2031,7 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
     this.log('[RADAR] Device deleted');
     this._clearRadarPhantomHealInterval();
     this._clearStickyPresenceWatchdog();
+    this._clearSurvivalWatchdog();
     if (super.onDeleted) {super.onDeleted();}
   }
 }

@@ -140,9 +140,14 @@ const SENSOR_CONFIGS = {
     softClearMicroJitterMaxSpanM: 0.45,
     // WHY(P2581): bathroom watchdog ticks soft-clear without waiting for throttled DP9
     stickyPresenceWatchdogMs: 15000,
+    // WHY(P2590 Ultimate Stabilizer Module 2): miss clear frame → force absent after
+    // departure_delay + margin (never paint presence true from distance alone).
+    survivalWatchdog: true,
+    survivalWatchdogMarginSec: 5,
     presenceConfirmMs: 3000,
-    dpThrottleMs: { 9: 2500, 104: 5000 },
-    dpMinDelta: { 9: 0.15, 104: 2 },
+    // WHY(P2590 Module 1): distance Δ>10cm OR 5s; lux Δ>5 OR 10s
+    dpThrottleMs: { 9: 5000, 104: 10000 },
+    dpMinDelta: { 9: 0.1, 104: 5 },
     dpMap: {
       1: {
         cap: 'alarm_motion',
