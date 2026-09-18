@@ -114,6 +114,7 @@ const SENSOR_CONFIGS = {
     // unreliable+inference — not by treating target_distance 0m as absent.
     clearPresenceOnZeroDistance: false,
     syncPresenceFromDistanceInference: false,
+    softClearZeroDistanceMs: 90000,
     dpThrottleMs: { 9: 2500, 104: 5000 },
     dpMinDelta: { 9: 0.15, 104: 2 },
     dpMap: {
@@ -121,7 +122,10 @@ const SENSOR_CONFIGS = {
         cap: 'alarm_motion',
         type: 'presence_bool',
         useInference: true,
-        unreliable: true,
+        // WHY(P2575 / VicHY #2246/#2247): MTG075 presence = DP1 only (Z2M / P2534).
+        // unreliable:true + floodCalm DP9 throttle ignored real presence OR locked
+        // false positives via reflection distance — trust DP1 clears/sets.
+        unreliable: false,
       },
       2: { cap: null, setting: 'radar_sensitivity', min: 0, max: 9 },
       3: { cap: null, setting: 'shield_range', divisor: 100, min: 0, max: 8 },

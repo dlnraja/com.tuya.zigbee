@@ -1,34 +1,6 @@
-# T140352 live harvest 2026-09-17T05:29:12.250Z
+# T140352 live harvest 2026-09-18T03:33:57.080Z
 
-Highest **#2241** · posts **#2202–#2241** (39) · silent only · never invent pid
-
-## #2202 @Peter_van_Werkhoven
-Hi Dylan good morning I’ve installed the latest version this morning 9.0.661 and I see that the Waterdetector sensor is not connected anymore it says that device is not there because of wrong driver, I was so pleased before that it was finally working after months of trying 1000041404 1220×2712 113 KB 1000041406 1220×2712 194 KB I also repaired the Smartbutton again but still no response to Homey and his flow. 1000041405 1220×2712 194 KB Diagnostic code 95a7c6e5-969f-4469-be5d-c96b7cb42b60 Good luck,thanks and best regards Peter.
-- images (3):
-  - https://us1.discourse-cdn.com/flex025/uploads/athom/original/3X/d/8/d86ca7e8a6aa0d74a44ef5f1f468459192b7901a.jpeg
-  - https://us1.discourse-cdn.com/flex025/uploads/athom/original/3X/3/5/35c0b4ef8f3de925fb885428e5eb48adf0dd86c2.jpeg
-  - https://us1.discourse-cdn.com/flex025/uploads/athom/original/3X/1/2/12f5ed8da41dab83474a539e3236025541652c69.jpeg
-- links: https://us1.discourse-cdn.com/flex025/uploads/athom/original/3X/d/8/d86ca7e8a6aa0d74a44ef5f1f468459192b7901a.jpeg | https://us1.discourse-cdn.com/flex025/uploads/athom/optimized/3X/d/8/d86ca7e8a6aa0d74a44ef5f1f468459192b7901a_2_224x500.jpeg | https://us1.discourse-cdn.com/flex025/uploads/athom/optimized/3X/d/8/d86ca7e8a6aa0d74a44ef5f1f468459192b7901a_2_224x500.jpeg, | https://us1.discourse-cdn.com/flex025/uploads/athom/optimized/3X/d/8/d86ca7e8a6aa0d74a44ef5f1f468459192b7901a_2_336x750.jpeg | https://us1.discourse-cdn.com/flex025/uploads/athom/optimized/3X/d/8/d86ca7e8a6aa0d74a44ef5f1f468459192b7901a_2_448x1000.jpeg | https://us1.discourse-cdn.com/flex025/uploads/athom/original/3X/3/5/35c0b4ef8f3de925fb885428e5eb48adf0dd86c2.jpeg | https://us1.discourse-cdn.com/flex025/uploads/athom/optimized/3X/3/5/35c0b4ef8f3de925fb885428e5eb48adf0dd86c2_2_224x500.jpeg | https://us1.discourse-cdn.com/flex025/uploads/athom/optimized/3X/3/5/35c0b4ef8f3de925fb885428e5eb48adf0dd86c2_2_224x500.jpeg, | https://us1.discourse-cdn.com/flex025/uploads/athom/optimized/3X/3/5/35c0b4ef8f3de925fb885428e5eb48adf0dd86c2_2_336x750.jpeg | https://us1.discourse-cdn.com/flex025/uploads/athom/optimized/3X/3/5/35c0b4ef8f3de925fb885428e5eb48adf0dd86c2_2_448x1000.jpeg
-
-## #2203 @Peter_van_Werkhoven
-Hi Dylan Good morning it’s me again, Despite the wrong driver message when opening the Waterdetector it’s still working normal and triggering the flow so receiving messages when it touches water. 1000045253 1220×2712 122 KB And tried to repair Smartbutton again but still no response in Homey. Diagnostic code 4b1a0dc9-9fba-4e9b-a85c-66498ab80bc1 Thanks and good luck and have a nice day Peter.
-- images (1):
-  - https://us1.discourse-cdn.com/flex025/uploads/athom/original/3X/0/2/02974502402d7a2e9964422c7ffa07d2326b38c8.jpeg
-- links: https://us1.discourse-cdn.com/flex025/uploads/athom/original/3X/0/2/02974502402d7a2e9964422c7ffa07d2326b38c8.jpeg | https://us1.discourse-cdn.com/flex025/uploads/athom/optimized/3X/0/2/02974502402d7a2e9964422c7ffa07d2326b38c8_2_224x500.jpeg | https://us1.discourse-cdn.com/flex025/uploads/athom/optimized/3X/0/2/02974502402d7a2e9964422c7ffa07d2326b38c8_2_224x500.jpeg, | https://us1.discourse-cdn.com/flex025/uploads/athom/optimized/3X/0/2/02974502402d7a2e9964422c7ffa07d2326b38c8_2_336x750.jpeg | https://us1.discourse-cdn.com/flex025/uploads/athom/optimized/3X/0/2/02974502402d7a2e9964422c7ffa07d2326b38c8_2_448x1000.jpeg
-
-## #2204 @Elliot_Hallais
-Hi Dylan, first thanks for your good work it helps a lot! I just opened an issue for a CO2 sensor I just bought (seems its only a misclassification, but it might be more as when i add it to my homey it says I have no app that match the device) : [Bug] _TZE204_ogkdpgy2 (CO2 sensor) misclassified under climate_sensor instead of air_quality_co2 · Issue #531 · dlnraja/com.tuya.zigbee · GitHub
-- links: https://github.com/dlnraja/com.tuya.zigbee/issues/531
-
-## #2205 @dlnraja
-okay i will check
-
-## #2206 @PresentSky
-Hi @dlnraja , Thanks for looking into this. I have removed and re-added the device after your update. The device is now correctly recognized as a wall dimmer, however, none of the controls in the app work (on/off, dimming, etc.). Could you please check again? Diagnostic ID: 60959c24-a0e6-4159-8cf1-12f9ba5df612 Interview data: see below. Manufacturer ID: _TZE284_m1cvyneb Product ID: TS0601 Link: https://www.bseed.com/products/click-series-diy-part-customized-free-combinations-smart-zigbee-switch-socket-insert-white-color-crystal-glass-panel-copy?variant=46308951130267 "ids": { "modelId": "TS0601", "manufacturerName": "_TZE284_m1cvyneb" }, "endpoints": { "ieeeAddress": "a4:c1:38:d8:d7:89:0d:43", "networkAddress": 53677, "modelId": "TS0601", "manufacturerName": "_TZE284_m1cvyneb", "endpointDescriptors": [ { "status": "SUCCESS", "nwkAddrOfInterest": 53677, "_reserved": 22, "endpointId": 1, "
-- links: https://www.bseed.com/products/click-series-diy-part-customized-free-combinations-smart-zigbee-switch-socket-insert-white-color-crystal-glass-panel-copy?variant=46308951130267
-
-## #2207 @meter91
-Hi @dlnraja , thank you for your reply. I tried adding the switch but it isn’t recognised and adds as unknown zigbee device. I tried all relevant 4-button switches and remotes but it works for all the same. Don’t know what relevant information i could give from my side at this point. Made a diag report with code c40705a1-9b08-444b-868f-c5a14ca4d2b2
+Highest **#2247** · posts **#2208–#2247** (39) · silent only · never invent pid
 
 ## #2208 @VicHY
 Hello i cannot connect a presence sensor _TZE204_clrdrnya El Diagnostic ID is 4217d5e3-c845-4f0b-a351-5e5a59295cbb Thanks
@@ -174,12 +146,37 @@ Thanks @dlnraja for the updates. It seems the relay type doesn’t change on its
 ## #2241 @VicHY
 Hi @dlnraja , even though I have updates blocked, the sensor has changed type again and stopped working. It stopped working right around the time a new version was released, even though the app on my Homey hasn’t actually updated… Thanks a lot; let me know if you need me to provide any details. Regards.
 
+## #2242 @dlnraja
+Hi @VicHY , Homey can flip that radar to “curtain” even when the app doesn’t update (old caps come back from Homey’s store). Blocking updates left you without the heal. Please unlock updates once, install Test ≥ 9.0.995, then restart the app. Wait 2–3 minutes — if it’s still curtain, remove + re-pair as Presence Sensor Radar. If it comes back, send diagnostic + the app version shown on the device. Thanks.
+
+## #2243 @VicHY
+Hi @dlnraja I have created the diags logs using the latest available version (9.0.992). The code is b84526bg-ec5b-45a3-b9e8-23f197401089. I am not at home right now; I will try testing it this afternoon when I get back. Thanks for the quick response and the assistance.
+
+## #2244 @Michaelp
+Hi @dlnraja I’m trying to add a Tuya Zigbee thermostatic radiator valve to Universal Tuya Zigbee on Homey Pro. Device: ZG253 thermostatic radiator valve Model ID: TS0601 Manufacturer: _TZE284_ogx8u5z6 The device pairs successfully with Homey but Universal Tuya adds it as an unknown/generic Zigbee device. The Homey interview confirms the Tuya 0xEF00 cluster. Another _TZE284 TS0601 radiator valve ( _TZE284_ne4pikwm ) already appears to be supported by the TRV driver, so I’m hoping this variant can be mapped to the same or a similar driver. I can provide any additional diagnostic/logs needed. Thanks! Device interview: “ids”: { “modelId”: “TS0601”, “manufacturerName”: “_TZE284_ogx8u5z6” }, “endpoints”: { “ieeeAddress”: “a4:c1:38:1b:8c:68:e6:51”, “networkAddress”: 40213, “modelId”: “TS0601”, “manufacturerName”: “_TZE284_ogx8u5z6”, “endpointDescriptors”: [ { “status”: “SUCCESS”, “nwkAddrOfInte
+
+## #2245 @SunBeech
+Please consider using the following to increase readability of your post: Preformatted text option to keep the output in the original format and presented in a scrollable window. This reduces the length of your post. Hide details option, to collapse/hide the entire interview output. Clicking the collapsed item will show the interview output again. IMG_2409 1227×730 70.1 KB
+- images (1):
+  - https://us1.discourse-cdn.com/flex025/uploads/athom/original/3X/1/d/1d3cc59a178f2865efd31e5f5e19e85550e4c2f5.jpeg
+- links: https://us1.discourse-cdn.com/flex025/uploads/athom/original/3X/1/d/1d3cc59a178f2865efd31e5f5e19e85550e4c2f5.jpeg | https://us1.discourse-cdn.com/flex025/uploads/athom/optimized/3X/1/d/1d3cc59a178f2865efd31e5f5e19e85550e4c2f5_2_517x307.jpeg | https://us1.discourse-cdn.com/flex025/uploads/athom/optimized/3X/1/d/1d3cc59a178f2865efd31e5f5e19e85550e4c2f5_2_517x307.jpeg, | https://us1.discourse-cdn.com/flex025/uploads/athom/optimized/3X/1/d/1d3cc59a178f2865efd31e5f5e19e85550e4c2f5_2_775x460.jpeg | https://us1.discourse-cdn.com/flex025/uploads/athom/optimized/3X/1/d/1d3cc59a178f2865efd31e5f5e19e85550e4c2f5_2_1034x614.jpeg
+
+## #2246 @VicHY
+Hi @dlnraja , I tried deleting the app and installing a new version (9.0.1016). I re-added the devices and noticed that they are now recognized with some additional data. Initially, it seems to detect presence, motion, brightness, and detection distance. Shortly after, however, it stops detecting presence and motion; while brightness and distance readings might change slightly if you enter the bathroom or turn on a light, the variation is minimal and doesn’t seem to reflect reality. For the time being, at least, it appears the sensor isn’t updating, and the type is switching to “curtain.” The code is: 546914c2-3bb9-442e-87bd-bdc0a5777 Thank you so much
+
+## #2247 @VicHY
+Hi again @dlnraja photo_2026-09-17 22.35.38 587×1280 62.4 KB photo_2026-09-17 22.35.51 587×1280 78.9 KB photo_2026-09-17 22.35.27 587×1280 65.7 KB , the sensor has updated and is now performing worse. I have them installed in two bathrooms, but only one has updated (the one that had been synchronized the longest). The button to turn the sensor on or off has disappeared, as you can see in the images showing both units. I am also attaching an image showing the data it captures. It constantly detects presence and motion, even when no one is there. The code is: 8d9d0199-4da0-47c8-9788-6af5a827dff4. Thanks again.
+- images (3):
+  - https://us1.discourse-cdn.com/flex025/uploads/athom/original/3X/5/6/560716849979c9e63ec39a90a786b7a7e41b8fca.jpeg
+  - https://us1.discourse-cdn.com/flex025/uploads/athom/original/3X/c/8/c882d40c95fa364f646c0b273275f20ee827ff38.jpeg
+  - https://us1.discourse-cdn.com/flex025/uploads/athom/original/3X/d/c/dcb1cc04bb41fc25c9f093d2d4882f0321626701.jpeg
+- links: https://us1.discourse-cdn.com/flex025/uploads/athom/original/3X/5/6/560716849979c9e63ec39a90a786b7a7e41b8fca.jpeg | https://us1.discourse-cdn.com/flex025/uploads/athom/optimized/3X/5/6/560716849979c9e63ec39a90a786b7a7e41b8fca_2_229x500.jpeg | https://us1.discourse-cdn.com/flex025/uploads/athom/optimized/3X/5/6/560716849979c9e63ec39a90a786b7a7e41b8fca_2_229x500.jpeg, | https://us1.discourse-cdn.com/flex025/uploads/athom/optimized/3X/5/6/560716849979c9e63ec39a90a786b7a7e41b8fca_2_343x750.jpeg | https://us1.discourse-cdn.com/flex025/uploads/athom/optimized/3X/5/6/560716849979c9e63ec39a90a786b7a7e41b8fca_2_458x1000.jpeg | https://us1.discourse-cdn.com/flex025/uploads/athom/original/3X/c/8/c882d40c95fa364f646c0b273275f20ee827ff38.jpeg | https://us1.discourse-cdn.com/flex025/uploads/athom/optimized/3X/c/8/c882d40c95fa364f646c0b273275f20ee827ff38_2_229x500.jpeg | https://us1.discourse-cdn.com/flex025/uploads/athom/optimized/3X/c/8/c882d40c95fa364f646c0b273275f20ee827ff38_2_229x500.jpeg, | https://us1.discourse-cdn.com/flex025/uploads/athom/optimized/3X/c/8/c882d40c95fa364f646c0b273275f20ee827ff38_2_343x750.jpeg | https://us1.discourse-cdn.com/flex025/uploads/athom/optimized/3X/c/8/c882d40c95fa364f646c0b273275f20ee827ff38_2_458x1000.jpeg
+
 ## URL hosts (recent window)
 ```json
 {
-  "us1.discourse-cdn.com": 116,
-  "github.com": 3,
-  "www.bseed.com": 1
+  "github.com": 2,
+  "us1.discourse-cdn.com": 116
 }
 ```
 
