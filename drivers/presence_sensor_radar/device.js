@@ -371,6 +371,8 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
     // WHY(P2551 / VicHY #2240 screenshot): dual History (Presence + Alarma movimiento)
     // — silence motion insights; keep alarm_human Presence titles for the timeline.
     await this._healPresenceHistoryUx().catch(() => {});
+    // WHY(P2599 / VicHY #2252 OCR): arm tile sanitize even if early mfr empty (heal retries)
+    try { this._armMtgTileSanitizeBurst(); } catch (_eArm) { /* soft */ }
     // WHY(P2386 / VicHY #2222): Homey may re-apply store caps async after app update —
     // re-heal shortly after boot so "blind mode" does not stick until delete+re-pair.
     this._scheduleRadarPhantomReheal();
@@ -526,20 +528,10 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
       }
       // WHY(P2577 / VicHY #2247): units must be string "m" — object {"en":"m"} renders
       // Homey UI as "0 [object Object]" and breaks soft-clear readability.
+      // WHY(P2599 / VicHY #2252 OCR): tip 9.0.1053 still showed object units after update —
+      // ALWAYS force string "m" (not only when typeof !== string).
       if (this.hasCapability?.('measure_luminance.distance')) {
-        const curD = (typeof this.getCapabilityOptions === 'function'
-          && this.getCapabilityOptions('measure_luminance.distance')) || {};
-        if (curD.units != null && typeof curD.units !== 'string') {
-          await this.setCapabilityOptions('measure_luminance.distance', {
-            ...curD,
-            units: 'm',
-            title: curD.title || {
-              en: 'Detection Distance', fr: 'Distance de Détection',
-              nl: 'Detectieafstand', de: 'Erkennungsdistanz',
-            },
-          }).catch(() => {});
-          this.log('[RADAR] P2577 distance units coerced to string "m"');
-        }
+        await this._ensureDistanceUnitsString('boot-heal').catch(() => {});
       }
       if (this.hasCapability?.('alarm_human')) {
         const curH = (typeof this.getCapabilityOptions === 'function'
@@ -590,7 +582,21 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
     const forceMains = this.mainsPowered || MAINS_POWERED_RADARS.has(mfrNow) || MTG_RELAY_MFR_RE.test(mfrNow);
     if (forceMains) {
       // WHY(P2511 / VicHY): strip native + app-owned battery low after tip update
-      phantoms.push('measure_battery', 'alarm_battery', 'tuya_battery_low');
+      // WHY(P2599 / VicHY #2252 OCR): Temperatura + Battery low still on tile @ 9.0.1053
+      phantoms.push(
+        'measure_battery',
+        'alarm_battery',
+        'tuya_battery_low',
+        'measure_temperature',
+        'measure_humidity',
+        'alarm_motion.zone1',
+        'alarm_motion.zone2',
+        'alarm_motion.zone3',
+        'measure_luminance.distance.zone1',
+        'measure_luminance.distance.zone2',
+        'measure_luminance.distance.zone3',
+        'measure_motion.classification',
+      );
     }
     let flippedFromCurtain = false;
     for (const cap of phantoms) {
@@ -644,7 +650,90 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
       if (flippedFromCurtain) {
         this._armCurtainFlipBurstHeal();
       }
+      // WHY(P2599 / VicHY #2252 OCR): tip bump re-injects compose zones/temp — burst strip
+      this._armMtgTileSanitizeBurst();
     }
+  }
+
+  /**
+   * WHY(P2599 / VicHY #2252 OCR screenshot): after tip update Homey re-applies compose
+   * zone/temp/battery tiles (shown as "-" / Battery low) and distance units object
+   * ("0 [object Object]") for minutes — burst sanitize without requiring Rideau flip.
+   */
+  _armMtgTileSanitizeBurst() {
+    try {
+      if (this._mtgTileSanitizeArmed) return;
+      this._mtgTileSanitizeArmed = true;
+      const { safeSetTimeout } = require('../../lib/utils/safe-timers');
+      const bursts = [5_000, 15_000, 45_000, 120_000];
+      for (const ms of bursts) {
+        safeSetTimeout(this, () => {
+          this._healPresenceHistoryUx().catch(() => {});
+          this._healRadarPhantomCaps().catch(() => {});
+          this._applyRadarCapabilityProfile().catch(() => {});
+          this._sanitizeCorruptDistanceTile().catch(() => {});
+        }, ms);
+      }
+      safeSetTimeout(this, () => { this._mtgTileSanitizeArmed = false; }, 150_000);
+      this.log('[RADAR] P2599 MTG tile sanitize burst armed');
+    } catch (_e) { /* soft */ }
+  }
+
+  /**
+   * WHY(P2599 / VicHY #2252 OCR): force distance units string + repair corrupt value.
+   */
+  async _ensureDistanceUnitsString(reason = 'heal') {
+    try {
+      if (!this.hasCapability?.('measure_luminance.distance')) return false;
+      if (typeof this.setCapabilityOptions !== 'function') return false;
+      const curD = (typeof this.getCapabilityOptions === 'function'
+        && this.getCapabilityOptions('measure_luminance.distance')) || {};
+      if (curD.units === 'm' && typeof curD.units === 'string') {
+        // still re-assert if Homey keeps object in store — only skip when exact
+      }
+      if (curD.units !== 'm') {
+        await this.setCapabilityOptions('measure_luminance.distance', {
+          ...curD,
+          units: 'm',
+          title: curD.title || {
+            en: 'Detection Distance', fr: 'Distance de Détection',
+            nl: 'Detectieafstand', de: 'Erkennungsdistanz', es: 'Distancia de detección',
+          },
+          preventInsights: true,
+          getable: true,
+        }).catch(() => {});
+        this.log(`[RADAR] P2599 distance units → "m" (${reason})`);
+      }
+      return true;
+    } catch (_e) {
+      return false;
+    }
+  }
+
+  /**
+   * WHY(P2599): if Homey already painted "0 [object Object]", rewrite numeric meters.
+   */
+  async _sanitizeCorruptDistanceTile() {
+    try {
+      if (!this.hasCapability?.('measure_luminance.distance')) return;
+      await this._ensureDistanceUnitsString('sanitize');
+      const raw = this.getCapabilityValue?.('measure_luminance.distance');
+      const asStr = String(raw);
+      if (raw != null && typeof raw === 'object') {
+        const n = this._coerceDistanceMeters(raw, { divisor: 100 });
+        if (n != null) {
+          await this.safeSetCapabilityValue('measure_luminance.distance', n).catch(() => {});
+          this.log(`[RADAR] P2599 distance object→${n}m`);
+        }
+        return;
+      }
+      if (asStr.includes('[object Object]')) {
+        const n = Number(this._lastDistanceM);
+        const fallback = Number.isFinite(n) ? n : 0;
+        await this.safeSetCapabilityValue('measure_luminance.distance', fallback).catch(() => {});
+        this.log(`[RADAR] P2599 distance corrupt string→${fallback}m`);
+      }
+    } catch (_e) { /* soft */ }
   }
 
   /**
@@ -1391,6 +1480,8 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
       if (this._shouldSkipFloodCalmDp(dpId, distance, config)) {return;}
       // WHY(P2590 Module 2): meaningful distance while Occupied = sign of life → rearm
       this._nudgeSurvivalWatchdog('distance');
+      // WHY(P2599 / VicHY #2252 OCR): keep units string on every paint
+      this._ensureDistanceUnitsString('dp9').catch(() => {});
       return this.safeSetCapabilityValue('measure_luminance.distance', distance).catch(() => {});
     }
 

@@ -48,7 +48,12 @@ describe('P2577 VicHY MTG075 anti false-positive', () => {
     assert.ok(src.includes('_gatePresenceAgainstFalsePositive'));
     assert.ok(src.includes('_coerceDistanceMeters'));
     assert.ok(src.includes('_armStickyDp1Ignore'));
-    assert.ok(src.includes('P2577 distance units coerced'));
+    // P2599 moved coerce into _ensureDistanceUnitsString (still Contre quoi units object)
+    assert.ok(
+      src.includes('P2577 distance units coerced')
+      || src.includes('_ensureDistanceUnitsString')
+      || src.includes('distance units → "m"'),
+    );
     assert.ok(src.includes("cap === 'alarm_motion'"));
     assert.ok(!src.includes('/^alarm_motion|^alarm_human$|^alarm_presence$|^button\\.1$/'));
   });

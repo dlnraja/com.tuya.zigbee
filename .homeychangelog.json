@@ -3638,5 +3638,8 @@
   },
   "9.0.1076": {
     "en": "Improved ZG253 / me167 TRV temperature scale and wake refresh so empty caps and setpoint errors clear after update."
+  },
+  "9.0.1078": {
+    "en": "Improved MTG075 bathroom radar tiles — distance units and phantom zone/temp/battery cleanup after tip update."
   }
 }
