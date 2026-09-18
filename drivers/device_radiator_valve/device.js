@@ -108,6 +108,14 @@ class RadiatorValveDevice extends PhysicalButtonMixin(VirtualButtonMixin(Unified
       const { forcePureTuyaDp } = require('../../lib/zigbee/Ef00OnlyInterview');
       forcePureTuyaDp(this);
     } catch (_e) { /* soft */ }
+    // WHY(P2596): seed identity BEFORE thermostat init so me167 maps + pid settings exist
+    try {
+      const { ensureManufacturerSettings } = require('../../lib/helpers/ManufacturerNameHelper');
+      await ensureManufacturerSettings(this, zclNode);
+      this.forceActiveTuyaMode = true;
+      this._trvInitAt = Date.now();
+      this._deviceInitTime = this._trvInitAt;
+    } catch (_e) { /* soft */ }
     await super.onNodeInit({ zclNode });
     // --- Homey Time Sync for TRV / LCD/Thermostat devices ---
     // Syncs the device clock with the Homey box time every 6 hours.
@@ -276,16 +284,24 @@ class RadiatorValveDevice extends PhysicalButtonMixin(VirtualButtonMixin(Unified
    */
   _scheduleTrvDpRefresh() {
     try {
+      this.forceActiveTuyaMode = true;
+      this._trvInitAt = this._trvInitAt || Date.now();
+      this._deviceInitTime = this._deviceInitTime || this._trvInitAt;
       safeSetTimeout(this, () => {
         if (this._destroyed) return;
-        const mgr = this.tuyaEF00Manager;
-        if (!mgr || typeof mgr.requestDP !== 'function') return;
         const dps = this.dpProfile === 'me167'
           ? [2, 3, 4, 5, 7, 13, 15, 35]
           : [1, 2, 3, 4, 13, 15];
-        this.log(`[TRV] P2593 refresh DPs ${dps.join(',')}`);
-        for (const id of dps) {
-          try { mgr.requestDP(id).catch(() => {}); } catch (_e) { /* soft */ }
+        this.log(`[TRV] P2596 refresh DPs ${dps.join(',')}`);
+        try {
+          const { tuyaDataQuery } = require('../../lib/tuya/TuyaDataQuery');
+          tuyaDataQuery(this, dps, { logPrefix: '[TRV-REFRESH]', force: true }).catch(() => {});
+        } catch (_e) {
+          const mgr = this.tuyaEF00Manager;
+          if (!mgr || typeof mgr.requestDP !== 'function') return;
+          for (const id of dps) {
+            try { mgr.requestDP(id, { force: true }).catch(() => {}); } catch (_e2) { /* soft */ }
+          }
         }
       }, 5_000);
     } catch (_e) { /* soft */ }
