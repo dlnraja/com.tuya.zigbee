@@ -136,5 +136,20 @@
       "nl": "Forceer Homey-presence UIT zonder stekker. Ook als Flow-actie."
     },
     "value": false
+  },
+  {
+    "id": "survival_watchdog",
+    "type": "checkbox",
+    "label": {
+      "en": "Survival watchdog (auto-clear stuck Occupied)",
+      "fr": "Watchdog de survie (auto-clear Occupé coincé)",
+      "nl": "Survival watchdog (auto-clear vast Occupied)"
+    },
+    "hint": {
+      "en": "If no clear frame arrives within Departure delay + 5s, Homey forces presence OFF. Recommended ON for chatty mmWave sensors.",
+      "fr": "Si aucune trame clear n’arrive dans Délai de départ + 5s, Homey force la présence à OFF. Recommandé ON.",
+      "nl": "Als geen clear-frame binnen Vertrekvertraging + 5s komt, forceert Homey presence UIT. Aanbevolen AAN."
+    },
+    "value": true
   }
 ]
