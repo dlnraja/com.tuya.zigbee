@@ -524,6 +524,7 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
         mgr._discoveredDPs.clear();
       }
     } catch (_e) { /* soft */ }
+    await this._ensureRelayOnoffCapability().catch(() => {});
   }
 
   /**
@@ -1121,33 +1122,77 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
   }
 
   /**
-   * WHY(P2575 / VicHY #2247): sustained distance≈0 while alarm_motion stuck true —
-   * clear after soft window (bathroom false positive). Instant zero must NOT clear
-   * (P2534 flip-flop Contre quoi).
+   * WHY(P2575/P2576 / VicHY #2247 diag 8d9d0199 @ 9.0.1021):
+   * Bathroom walls keep a non-zero stagnant distance → zero-only clear never fires.
+   * Soft-clear when (a) distance≈0 for softClearZeroDistanceMs OR (b) distance stable
+   * within 0.2m for softClearStableDistanceMs while presence stuck true.
    */
   _softClearStuckPresenceOnZeroDistance(distance, config) {
     try {
       if (!(config?.floodCalm || config?.hasRelay)) return;
-      if (config.clearPresenceOnZeroDistance) return; // hard path already owns this
+      if (config.clearPresenceOnZeroDistance) return;
       const d = Number(distance);
       const now = Date.now();
-      if (!Number.isFinite(d) || d > 0.15) {
+      if (!Number.isFinite(d)) return;
+
+      const present = this.getCapabilityValue?.('alarm_motion') === true
+        || this.getCapabilityValue?.('alarm_human') === true;
+      if (!present) {
         this._zeroDistSinceMs = 0;
+        this._stableDistSinceMs = 0;
+        this._stableDistAnchor = null;
         return;
       }
-      if (!this._zeroDistSinceMs) this._zeroDistSinceMs = now;
-      const holdMs = Number(config.softClearZeroDistanceMs) > 0
-        ? Number(config.softClearZeroDistanceMs)
-        : 90_000;
-      if (now - this._zeroDistSinceMs < holdMs) return;
-      if (this.getCapabilityValue?.('alarm_motion') !== true
-        && this.getCapabilityValue?.('alarm_human') !== true) {
+
+      // (a) near-zero hold
+      if (d <= 0.15) {
+        if (!this._zeroDistSinceMs) this._zeroDistSinceMs = now;
+        const zeroHold = Number(config.softClearZeroDistanceMs) > 0
+          ? Number(config.softClearZeroDistanceMs) : 90_000;
+        if (now - this._zeroDistSinceMs >= zeroHold) {
+          this.log(`[RADAR] P2576 soft-clear (zero-distance≈${d}m for ${zeroHold}ms)`);
+          this._zeroDistSinceMs = 0;
+          this._stableDistSinceMs = 0;
+          this._commitPresenceAndFlows(false);
+          return;
+        }
+      } else {
         this._zeroDistSinceMs = 0;
+      }
+
+      // (b) stagnant reflection (bathroom wall) — Contre quoi constant false presence
+      const anchor = this._stableDistAnchor;
+      if (anchor == null || Math.abs(d - anchor) > 0.2) {
+        this._stableDistAnchor = d;
+        this._stableDistSinceMs = now;
         return;
       }
-      this.log(`[RADAR] P2575 soft-clear stuck presence (distance≈${d}m for ${holdMs}ms)`);
-      this._zeroDistSinceMs = 0;
-      this._commitPresenceAndFlows(false);
+      if (!this._stableDistSinceMs) this._stableDistSinceMs = now;
+      const stableHold = Number(config.softClearStableDistanceMs) > 0
+        ? Number(config.softClearStableDistanceMs) : 120_000;
+      if (now - this._stableDistSinceMs >= stableHold) {
+        this.log(`[RADAR] P2576 soft-clear (stagnant distance≈${d}m for ${stableHold}ms)`);
+        this._stableDistSinceMs = 0;
+        this._stableDistAnchor = null;
+        this._commitPresenceAndFlows(false);
+      }
+    } catch (_e) { /* soft */ }
+  }
+
+  /**
+   * WHY(P2576 / VicHY #2247): tip update dropped relay tile — re-add onoff + listener.
+   */
+  async _ensureRelayOnoffCapability() {
+    try {
+      const cfg = this._getRadarConfig() || {};
+      const mfr = (MfrHelper.getManufacturerName(this) || '').toLowerCase();
+      if (!(cfg.hasRelay || /clrdrnya|sbyx0lm6/.test(mfr))) return;
+      if (typeof this.hasCapability === 'function' && !this.hasCapability('onoff')) {
+        await this.addCapability('onoff').catch(() => {});
+        this.log('[RADAR] P2576 restored missing onoff (MTG relay)');
+      }
+      this._radarRelayListenerRegistered = false;
+      this._registerRadarCapabilityListeners();
     } catch (_e) { /* soft */ }
   }
 
