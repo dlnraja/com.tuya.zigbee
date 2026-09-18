@@ -196,7 +196,7 @@ Generated 2026-09-15T08:05:31.976Z from registry (220 cases) × compound DB (509
 - Compound `_tze284_clrdrnya|TS0601`: tuya_dp  VicHY #2224/#2227 MTG075 mmWave radar 220V
 - Compound `_TZE284_CLRDRNYA|TS0601`: tuya_dp  VicHY #2224/#2227 MTG075 mmWave radar 220V
 - Compose: class=sensor eps=1 EF00=true IAS=false batteries=mains?
-- Notes: VicHY #2224/#2227 MTG075 220V AC ceiling mmWave presence radar. Forbid curtain_motor phantom flip. **P2579:** Z2M sensor=occupied forces permanent presence (heal DP115→on on soft-clear); distance often quantized; 24G detection_range avoid &lt;2.5m; departure_delay ≥15s.
+- Notes: VicHY #2224/#2227 MTG075 220V AC ceiling mmWave presence radar. Forbid curtain_motor phantom flip. **P2579:** Z2M sensor=occupied forces permanent presence (heal DP115→on on soft-clear); distance often quantized; 24G detection_range avoid &lt;2.5m; departure_delay ≥15s. **P2584:** Smart presence while Occupied — Homey drives alarm_motion from distance/lux; DP1 ignored; Occupied firmware kept unless auto_unlock_occupied_on_empty.
 - **Gaps:** no_sources
 
 ### `hobeian-aubess-k4ej3ww2-ias` → `water_leak_sensor`
@@ -293,7 +293,7 @@ Generated 2026-09-15T08:05:31.976Z from registry (220 cases) × compound DB (509
 - Compound `_TZE200_clrdrnya|TS0601`: tuya_dp  TZE200 sibling; Z2M discussion#25712 lost-support reminder — keep compound lock
 - Compound `_tze200_clrdrnya|TS0601`: tuya_dp  VicHY #2224/#2227 MTG075 mmWave radar 220V
 - Compose: class=sensor eps=1 EF00=true IAS=false batteries=mains?
-- Notes: MTG235-ZB-RL mmWave + relay — presence_sensor_radar only (GH#420, Z2M#18677 sbyx0lm6 family). Mains. Never climate or PIR motion. **P2579:** occupied sensor mode heals on soft-clear; quantized distance soft-clear; bathroom anti-FP (see couple profile).
+- Notes: MTG235-ZB-RL mmWave + relay — presence_sensor_radar only (GH#420, Z2M#18677 sbyx0lm6 family). Mains. Never climate or PIR motion. **P2579:** occupied sensor mode heals on soft-clear; quantized distance soft-clear; bathroom anti-FP (see couple profile). **P2584:** smart overlay under Occupied (distance/lux → Homey presence).
 - Sources: forum-140352, github#420, P139, P204, z2m#18677
 
 ### `valve-dual-fhvpaltk` → `valve_dual_irrigation`

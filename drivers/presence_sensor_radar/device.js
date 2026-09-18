@@ -1019,13 +1019,25 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
 
       // Integrate with inference engine if needed
       // WHY(P2453): pass unreliable so sticky DP1 cannot pin alarm_motion forever
+      // WHY(P2584): under Occupied+smart, DP1 is firmware-forced true — treat as unreliable
+      const occupiedSmart = this._smartPresenceUnderOccupiedActive(config);
+      const dp1Unreliable = !!mapping.unreliable || occupiedSmart;
       if (mapping.useInference) {
-        presence = inference.updatePresenceDP(value, { unreliable: !!mapping.unreliable });
+        presence = inference.updatePresenceDP(value, { unreliable: dp1Unreliable });
       } else {
-        inference.updatePresenceDP(value, { unreliable: !!mapping.unreliable });
+        inference.updatePresenceDP(value, { unreliable: dp1Unreliable });
       }
 
+      try { this.setStoreValue?.('radar_fw_presence', !!presence).catch(() => {}); } catch (_e) { /* soft */ }
+
       if (presence !== null) {
+        // WHY(P2584): Occupied forces DP1=true forever — Homey presence owned by distance/lux
+        if (occupiedSmart && (presence === true || presence === 1 || presence === 2)) {
+          if (!this._distanceCorroboratesPresence()) {
+            this.log('[RADAR] P2584 drop forced DP1 true (Occupied — wait distance/lux)');
+            return;
+          }
+        }
         // WHY(P2577 / VicHY #2247 photos): bathroom sticky DP1 re-paints true after soft-clear.
         // Gate true through anti-FP; clears stay immediate.
         presence = this._gatePresenceAgainstFalsePositive(presence, config);
@@ -1074,6 +1086,9 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
         if (painted !== inferred) {
           this._commitPresenceAndFlows(inferred);
         }
+      } else {
+        // WHY(P2584): Occupied mode — DP1 useless; paint Homey presence from distance motion
+        this._applySmartPresenceUnderOccupied(distance, inferred, config);
       }
       // WHY(P2575 / VicHY #2247 bathroom): DP1 can stick true while empty room distance≈0.
       // Soft clear after sustained zero distance (default 90s) — does not fight P2534
@@ -1106,7 +1121,15 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
         lux = smartParse(value, dpId, { capability: 'measure_luminance' });
       } else if (mapping.divisor) {lux = value / mapping.divisor;}
 
-      this._ensureInference().updateLux(lux);
+      const luxInferred = this._ensureInference().updateLux(lux);
+      // WHY(P2584): lux step still corroborates entry while Occupied forces DP1
+      if (this._smartPresenceUnderOccupiedActive(config) && !this.getCapabilityValue('alarm_motion')) {
+        if (this._distanceCorroboratesPresence()
+            || (luxInferred === true && this._distanceCorroboratesPresence())) {
+          this.log('[RADAR] P2584 smart presence=true (lux corroboration under Occupied)');
+          this._commitPresenceAndFlows(true);
+        }
+      }
       if (this._shouldSkipFloodCalmDp(dpId, lux, config)) {return;}
       return this.safeSetCapabilityValue('measure_luminance', lux).catch(() => {});
     }
@@ -1148,6 +1171,11 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
         // WHY(P2579 / Z2M): occupied locks presence forever — note for soft-clear heal
         if (converted === 'occupied' || converted === 2 || converted === '2') {
           this.log('[RADAR] P2579 DP115 sensor_mode=occupied (forces permanent presence)');
+          // WHY(P2584): arm sticky-DP1 ignore so Homey presence switches to distance/lux overlay
+          if (this._smartPresenceUnderOccupiedActive(config)) {
+            this._armStickyDp1Ignore(config);
+            this.log('[RADAR] P2584 Occupied+smart: Homey presence from distance/lux (DP1 ignored)');
+          }
         }
       }
       if (mapping.setting && this.getSetting?.(mapping.setting) !== undefined) {
@@ -1373,6 +1401,7 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
   /**
    * WHY(P2579 / Z2M MTG075-ZB-RL sensor enum): occupied keeps presence ON forever.
    * Soft-clear evidence that room is empty → unlock firmware by writing DP115=on.
+   * WHY(P2584): when smart overlay is ON, keep Occupied unless user opts into auto-unlock.
    */
   _healForcedOccupiedSensorMode(config) {
     try {
@@ -1381,6 +1410,16 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
         ?? this.getSetting?.('sensor_mode')
         ?? this.getStoreValue?.('radar_sensor_mode');
       if (mode !== 'occupied' && mode !== 2 && mode !== '2') return;
+
+      // WHY(P2584): Occupied+smart → Homey already soft-cleared; keep firmware mode
+      if (config?.smartPresenceWhileOccupied) {
+        const unlock = this.getSetting?.('auto_unlock_occupied_on_empty');
+        if (!(unlock === true || unlock === 'true' || unlock === 1 || unlock === '1')) {
+          this.log('[RADAR] P2584 keep Occupied (smart overlay — no DP115 unlock)');
+          return;
+        }
+      }
+
       this.log('[RADAR] P2579 heal DP115 occupied→on (Z2M: occupied forces permanent presence)');
       this._radarSensorMode = 'on';
       try { this.setSettings?.({ sensor_mode: 'on' }).catch(() => {}); } catch (_e) { /* soft */ }
@@ -1390,6 +1429,67 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
       const raw = mapping.reverseEnumMap?.on ?? 0;
       this._sendRadarDP(115, raw, this._getRadarDPType(mapping)).catch(() => {});
     } catch (_e) { /* soft */ }
+  }
+
+  /**
+   * WHY(P2584 / VicHY MTG075 Occupied): firmware DP1 stuck true; Homey presence from telemetry.
+   */
+  _isOccupiedSensorMode() {
+    const mode = this._radarSensorMode
+      ?? this.getSetting?.('sensor_mode')
+      ?? this.getStoreValue?.('radar_sensor_mode');
+    return mode === 'occupied' || mode === 2 || mode === '2';
+  }
+
+  _smartPresenceUnderOccupiedActive(config) {
+    try {
+      if (!config?.smartPresenceWhileOccupied) return false;
+      const s = this.getSetting?.('smart_presence_while_occupied');
+      // default ON when setting not yet in Homey store (first tip after pair)
+      if (s === false || s === 'false' || s === 0 || s === '0') return false;
+      return this._isOccupiedSensorMode();
+    } catch (_e) {
+      return false;
+    }
+  }
+
+  /**
+   * WHY(P2584): rising-edge Homey presence from distance while Occupied keeps DP115.
+   * Soft-clear path still owns clears — never flip-flop on every floodCalm DP9 frame.
+   */
+  _applySmartPresenceUnderOccupied(distance, inferred, config) {
+    try {
+      if (!this._smartPresenceUnderOccupiedActive(config)) return false;
+      const painted = this.getCapabilityValue?.('alarm_motion') === true
+        || this.getCapabilityValue?.('alarm_human') === true;
+      const d = Number(distance);
+      try {
+        this.setStoreValue?.('radar_smart_presence_source', 'distance').catch(() => {});
+      } catch (_e) { /* soft */ }
+
+      // Entry: distance motion or lux corroboration → paint present
+      if (this._distanceCorroboratesPresence()) {
+        if (!painted) {
+          this.log(`[RADAR] P2584 smart presence=true (distance motion under Occupied, d≈${d}m)`);
+          this._ignoreStickyDp1Until = 0;
+          this._commitPresenceAndFlows(true);
+        }
+        return true;
+      }
+
+      // Fresh non-empty target after ignore window + inference agrees
+      if (Number.isFinite(d) && d > 0.35 && inferred === true && !painted) {
+        const now = Date.now();
+        const ignoreActive = this._ignoreStickyDp1Until && now < this._ignoreStickyDp1Until;
+        if (!ignoreActive) {
+          this.log(`[RADAR] P2584 smart presence=true (inferred distance under Occupied, d≈${d}m)`);
+          this._commitPresenceAndFlows(true);
+        }
+      }
+      return true;
+    } catch (_e) {
+      return false;
+    }
   }
 
   /**

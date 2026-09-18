@@ -118,8 +118,11 @@ const SENSOR_CONFIGS = {
     // Soft-clear empty room, then ignore sticky DP1 true until entry corroboration.
     antiFalsePositive: true,
     // WHY(P2579 / Z2M MTG075-ZB-RL docs + #18677): sensor=occupied forces permanent
-    // presence; soft-clear must unlock DP115→on. 24G min range ~2.5m; departure≥15s.
+    // presence. Soft-clear may unlock DP115→on only when auto_unlock is on.
     healForcedOccupiedOnSoftClear: true,
+    // WHY(P2584): keep DP115=occupied if user wants it, but drive Homey presence from
+    // distance/lux/relay telemetry (DP1 is forced true forever under occupied — untrustworthy).
+    smartPresenceWhileOccupied: true,
     quantizedDistanceSoftClear: true,
     mtg24gMinDetectionRangeM: 2.5,
     softClearZeroDistanceMs: 30000,
