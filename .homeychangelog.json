@@ -1,4 +1,7 @@
 {
+  "9.0.1045": {
+    "en": "CI: align mfs_db after curtain FP move so VicHY radar tip 9.0.1044 can publish. Update Homey Test (8d9d0199)."
+  },
   "9.0.1044": {
     "en": "Bathroom radar MTG075: keep relay on/off after tip update, clear sticky empty-room presence faster. Update Homey Test and restart both sensors. Diag 8d9d0199."
   },
