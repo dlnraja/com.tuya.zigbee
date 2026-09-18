@@ -1,4 +1,7 @@
 {
+  "9.0.1049": {
+    "en": "Republish after Athom processing_failed on 9.0.1048: OCR radar watchdog fix + OpenCodeReview wiring. Update Homey Test."
+  },
   "9.0.1047": {
     "en": "OCR review: fix bathroom radar watchdog false-clear + timer leak; add Alibaba OpenCodeReview project rules. Update Homey Test."
   },
