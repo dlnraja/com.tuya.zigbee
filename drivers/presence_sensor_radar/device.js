@@ -22,8 +22,14 @@ const MTG_RELAY_RADARS = [
   '_tze284_4qznlkbu',
   '_tze200_clrdrnya',
   '_tze200_sbyx0lm6',
+  '_tze200_dtzziy1e',
   '_tze284_clrdrnya',
+  '_tze284_dtzziy1e',
+  '_tze284_sbyx0lm6',
 ];
+
+// WHY(P2587): MTG075 family (VicHY clrdrnya + Z2M dtzziy1e siblings) — one regex for heal/relay.
+const MTG_RELAY_MFR_RE = /clrdrnya|sbyx0lm6|dtzziy1e|iaeejhvf|mtoaryre|pfayrzcw|mp902om5|4qznlkbu/;
 
 const MAINS_POWERED_RADARS = new Set([
   '_tze200_lyetpprm',
@@ -161,7 +167,7 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
   async setClass(deviceClass) {
     try {
       const mfr = (MfrHelper.getManufacturerName(this) || '').toLowerCase();
-      const forceMains = this.mainsPowered || MAINS_POWERED_RADARS.has(mfr) || /clrdrnya|sbyx0lm6/.test(mfr);
+      const forceMains = this.mainsPowered || MAINS_POWERED_RADARS.has(mfr) || MTG_RELAY_MFR_RE.test(mfr);
       const next = String(deviceClass || '');
       const curtainLike = /windowcoverings|curtain|blind|cover|socket|light/i.test(next);
       if ((forceMains || curtainLike) && next && next !== 'sensor' && !/^other$/i.test(next)) {
@@ -203,7 +209,7 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
         const keepRelay = cfg.hasRelay === true
           || this.mainsPowered === true
           || composeOn
-          || /clrdrnya|sbyx0lm6|dtzziy1e|pfayrzcw|iaeejhvf|mtoaryre/.test(mfr)
+          || MTG_RELAY_MFR_RE.test(mfr)
           || this.getStoreValue?.('radar_has_relay') === true;
         // Only allow strip when we KNOW this radar has no relay (battery HOBEIAN etc.)
         if (keepRelay || cfg.hasRelay !== false) {
@@ -278,7 +284,8 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
     this._lastClassNudgeAt = now;
     try {
       const mfrNow = (MfrHelper.getManufacturerName(this) || '').toLowerCase();
-      const forceMains = this.mainsPowered || MAINS_POWERED_RADARS.has(mfrNow) || /clrdrnya|sbyx0lm6|gkfbdvyx/.test(mfrNow);
+      const forceMains = this.mainsPowered || MAINS_POWERED_RADARS.has(mfrNow)
+        || MTG_RELAY_MFR_RE.test(mfrNow) || /gkfbdvyx/.test(mfrNow);
       if (!forceMains || typeof this.getClass !== 'function' || typeof this.setClass !== 'function') {return;}
       const cls = String(this.getClass() || '');
       if (cls && cls !== 'sensor') {
@@ -295,7 +302,7 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
   async _ensureRadarMagicHandshake(zclNode) {
     try {
       const mfr = (MfrHelper.getManufacturerName(this) || '').toLowerCase();
-      if (!/gkfbdvyx|clrdrnya|sbyx0lm6|laokfqwu/.test(mfr) && this.mainsPowered !== true) {return;}
+      if (!(/gkfbdvyx|laokfqwu/.test(mfr) || MTG_RELAY_MFR_RE.test(mfr)) && this.mainsPowered !== true) {return;}
       const { sendTuyaMagicPacket } = require('../../lib/zigbee/TuyaMagicPacket');
       const node = zclNode || this.zclNode;
       if (!node?.endpoints?.[1] && !node?.endpoints?.[2]) {return;}
@@ -533,11 +540,12 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
     ];
     // WHY(P2459): treat known MTG/clrdrnya mfr as mains even if config cache still DEFAULT
     const mfrNow = (MfrHelper.getManufacturerName(this) || '').toLowerCase();
-    const forceMains = this.mainsPowered || MAINS_POWERED_RADARS.has(mfrNow) || /clrdrnya|sbyx0lm6/.test(mfrNow);
+    const forceMains = this.mainsPowered || MAINS_POWERED_RADARS.has(mfrNow) || MTG_RELAY_MFR_RE.test(mfrNow);
     if (forceMains) {
       // WHY(P2511 / VicHY): strip native + app-owned battery low after tip update
       phantoms.push('measure_battery', 'alarm_battery', 'tuya_battery_low');
     }
+    let flippedFromCurtain = false;
     for (const cap of phantoms) {
       try {
         if (typeof this.hasCapability === 'function' && this.hasCapability(cap)) {
@@ -550,12 +558,14 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
       // Homey UI "blind/curtain" often tracks class drift after DynCap poison
       // WHY(P2546 / VicHY #2241): even without app update Homey may flip class asynchronously —
       // force sensor for known mains MTG whenever heal runs (not only curtain-looking class).
+      // WHY(P2587 / VicHY #2242/#2246): Rideau type-flip is Homey cache — not Occupied mode.
       if (typeof this.getClass === 'function' && typeof this.setClass === 'function') {
         const cls = String(this.getClass() || '');
         if (forceMains || /windowcoverings|curtain|blind|cover/i.test(cls)) {
           if (cls !== 'sensor') {
+            flippedFromCurtain = /windowcoverings|curtain|blind|cover/i.test(cls);
             await this.setClass('sensor').catch(() => {});
-            this.log(`[RADAR] P2386/P2546 restored class sensor (was ${cls || 'empty'})`);
+            this.log(`[RADAR] P2386/P2546/P2587 restored class sensor (was ${cls || 'empty'})`);
           }
         }
       }
@@ -580,6 +590,35 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
       }
     } catch (_e) { /* soft */ }
     await this._ensureRelayOnoffCapability().catch(() => {});
+    // WHY(P2587): after Rideau heal, immediately re-add presence core caps (Homey may have
+    // stripped alarm_motion while class was windowcoverings — presence UI looks "frozen").
+    if (forceMains) {
+      await this._applyRadarCapabilityProfile().catch(() => {});
+      if (flippedFromCurtain) {
+        this._armCurtainFlipBurstHeal();
+      }
+    }
+  }
+
+  /**
+   * WHY(P2587 / VicHY #2242/#2246): Homey cache can re-poison class/caps for minutes after
+   * tip/restart — burst re-heal so Rideau does not stick until delete+re-pair.
+   */
+  _armCurtainFlipBurstHeal() {
+    try {
+      if (this._curtainFlipBurstArmed) return;
+      this._curtainFlipBurstArmed = true;
+      const { safeSetTimeout } = require('../../lib/utils/safe-timers');
+      const bursts = [10_000, 20_000, 30_000, 45_000, 90_000, 180_000];
+      for (const ms of bursts) {
+        safeSetTimeout(this, () => {
+          this._armRadarDynCapGuards();
+          this._healRadarPhantomCaps().catch(() => {});
+        }, ms);
+      }
+      safeSetTimeout(this, () => { this._curtainFlipBurstArmed = false; }, 200_000);
+      this.log('[RADAR] P2587 curtain-flip burst heal armed');
+    } catch (_e) { /* soft */ }
   }
 
   /**
@@ -600,7 +639,7 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
           this._armRadarDynCapGuards();
           this._healRadarPhantomCaps().catch(() => {});
           const mfr = (MfrHelper.getManufacturerName(this) || '').toLowerCase();
-          if (this.mainsPowered || MAINS_POWERED_RADARS.has(mfr) || /clrdrnya|sbyx0lm6/.test(mfr)) {
+          if (this.mainsPowered || MAINS_POWERED_RADARS.has(mfr) || MTG_RELAY_MFR_RE.test(mfr)) {
             this._applyRadarCapabilityProfile().catch(() => {});
           }
         }, ms);
@@ -610,7 +649,7 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
       if (!this._radarPhantomHealInterval && typeof safeSetInterval === 'function') {
         this._radarPhantomHealInterval = safeSetInterval(this, () => {
           const mfr = (MfrHelper.getManufacturerName(this) || '').toLowerCase();
-          if (!(this.mainsPowered || MAINS_POWERED_RADARS.has(mfr) || /clrdrnya|sbyx0lm6/.test(mfr))) {
+          if (!(this.mainsPowered || MAINS_POWERED_RADARS.has(mfr) || MTG_RELAY_MFR_RE.test(mfr))) {
             return;
           }
           this._armRadarDynCapGuards();
@@ -655,7 +694,7 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
       this._armRadarDynCapGuards();
       await this._healRadarPhantomCaps();
       const mfr = (MfrHelper.getManufacturerName(this) || '').toLowerCase();
-      if (this.mainsPowered || MAINS_POWERED_RADARS.has(mfr) || /clrdrnya|sbyx0lm6/.test(mfr)) {
+      if (this.mainsPowered || MAINS_POWERED_RADARS.has(mfr) || MTG_RELAY_MFR_RE.test(mfr)) {
         await this._applyRadarCapabilityProfile().catch(() => {});
       }
     } catch (_e) { /* soft */ }
@@ -743,7 +782,7 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
     try {
       const cfg = this._getRadarConfig() || {};
       const mfr = (MfrHelper.getManufacturerName(this) || '').toLowerCase();
-      if (cfg.hasRelay || /clrdrnya|sbyx0lm6/.test(mfr)) {
+      if (cfg.hasRelay || MTG_RELAY_MFR_RE.test(mfr)) {
         requiredCaps.add('onoff');
       }
     } catch (_e) { /* soft */ }
@@ -779,7 +818,7 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
       const keepRelay = cfg.hasRelay === true
         || this.mainsPowered === true
         || composeOn
-        || /clrdrnya|sbyx0lm6|dtzziy1e|pfayrzcw|iaeejhvf|mtoaryre/.test(mfr);
+        || MTG_RELAY_MFR_RE.test(mfr);
       if (cfg.hasRelay === true || keepRelay) {
         try { this.setStoreValue?.('radar_has_relay', true).catch(() => {}); } catch (_e) { /* soft */ }
       }
@@ -1324,6 +1363,8 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
    * within 0.2m for softClearStableDistanceMs while presence stuck true.
    * WHY(P2577): after soft-clear arm sticky-DP1 ignore until distance/lux corroborates
    * re-entry — Contre quoi firmware re-paints DP1=true every second in empty bathroom.
+   * WHY(P2587): (c) bathroom VMC / shower glass — distance jitters slightly so stagnant
+   * anchor never holds; micro-jitter soft-clear when span stays tiny for a long window.
    */
   _softClearStuckPresenceOnZeroDistance(distance, config) {
     try {
@@ -1340,6 +1381,7 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
         this._stableDistSinceMs = 0;
         this._stableDistAnchor = null;
         this._quantizedStagnantSinceMs = 0;
+        this._jitterSamples = null;
         return;
       }
 
@@ -1352,6 +1394,7 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
           this.log(`[RADAR] P2577 soft-clear (zero-distance≈${d}m for ${zeroHold}ms)`);
           this._zeroDistSinceMs = 0;
           this._stableDistSinceMs = 0;
+          this._jitterSamples = null;
           this._armStickyDp1Ignore(config);
           this._healForcedOccupiedSensorMode(config);
           this._commitPresenceAndFlows(false);
@@ -1359,6 +1402,11 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
         }
       } else {
         this._zeroDistSinceMs = 0;
+      }
+
+      // (c) WHY(P2587): VMC / fan micro-motion — lux+distance still update, DP1 stuck true
+      if (this._trySoftClearMicroJitter(d, now, config)) {
+        return;
       }
 
       // (b) stagnant reflection (bathroom wall) — Contre quoi constant false presence
@@ -1375,6 +1423,7 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
           if (now - this._quantizedStagnantSinceMs >= stableHoldQ) {
             this.log('[RADAR] P2579 soft-clear (quantized distance stagnation)');
             this._quantizedStagnantSinceMs = 0;
+            this._jitterSamples = null;
             this._armStickyDp1Ignore(config);
             this._healForcedOccupiedSensorMode(config);
             this._commitPresenceAndFlows(false);
@@ -1391,11 +1440,50 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
         this.log(`[RADAR] P2577 soft-clear (stagnant distance≈${d}m for ${stableHold}ms)`);
         this._stableDistSinceMs = 0;
         this._stableDistAnchor = null;
+        this._jitterSamples = null;
         this._armStickyDp1Ignore(config);
         this._healForcedOccupiedSensorMode(config);
         this._commitPresenceAndFlows(false);
       }
     } catch (_e) { /* soft */ }
+  }
+
+  /**
+   * WHY(P2587): bathroom extract fan / vibrating glass resets the 0.2m stagnant anchor
+   * forever while presence stays true. If rolling distance span stays ≤ maxSpan for
+   * softClearMicroJitterMs → treat as empty-room micro-motion and soft-clear.
+   * Contre quoi: lux/distance still tick, Homey WHEN never edges off.
+   * @returns {boolean} true if soft-clear fired
+   */
+  _trySoftClearMicroJitter(distance, now, config) {
+    try {
+      if (!config?.antiFalsePositive && !config?.hasRelay) return false;
+      const windowMs = Number(config.softClearMicroJitterWindowMs) > 0
+        ? Number(config.softClearMicroJitterWindowMs) : 120_000;
+      const holdMs = Number(config.softClearMicroJitterMs) > 0
+        ? Number(config.softClearMicroJitterMs) : 90_000;
+      const maxSpan = Number(config.softClearMicroJitterMaxSpanM) > 0
+        ? Number(config.softClearMicroJitterMaxSpanM) : 0.45;
+      if (!Array.isArray(this._jitterSamples)) this._jitterSamples = [];
+      this._jitterSamples.push({ t: now, d: distance });
+      this._jitterSamples = this._jitterSamples.filter((s) => now - s.t <= windowMs);
+      if (this._jitterSamples.length < 6) return false;
+      const oldest = this._jitterSamples[0].t;
+      if (now - oldest < holdMs) return false;
+      const vals = this._jitterSamples.map((s) => s.d);
+      const span = Math.max(...vals) - Math.min(...vals);
+      if (!(span > 0.02 && span <= maxSpan)) return false;
+      this.log(`[RADAR] P2587 soft-clear (VMC/micro-jitter span≈${span.toFixed(2)}m for ${holdMs}ms)`);
+      this._jitterSamples = null;
+      this._stableDistSinceMs = 0;
+      this._stableDistAnchor = null;
+      this._armStickyDp1Ignore(config);
+      this._healForcedOccupiedSensorMode(config);
+      this._commitPresenceAndFlows(false);
+      return true;
+    } catch (_e) {
+      return false;
+    }
   }
 
   /**
@@ -1642,7 +1730,7 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
     try {
       const cfg = this._getRadarConfig() || {};
       const mfr = (MfrHelper.getManufacturerName(this) || '').toLowerCase();
-      if (!(cfg.hasRelay || /clrdrnya|sbyx0lm6/.test(mfr))) return;
+      if (!(cfg.hasRelay || MTG_RELAY_MFR_RE.test(mfr))) return;
       if (typeof this.hasCapability === 'function' && !this.hasCapability('onoff')) {
         await this.addCapability('onoff').catch(() => {});
         this.log('[RADAR] P2576 restored missing onoff (MTG relay)');
