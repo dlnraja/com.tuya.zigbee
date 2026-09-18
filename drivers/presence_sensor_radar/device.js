@@ -406,6 +406,11 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
     // needsPolling:false left sticky presence forever in empty bathrooms. Watchdog.
     this._armStickyPresenceWatchdog();
 
+    // WHY(P2597): Homey may keep compose onoff until strip — soft listener stops
+    // "Missing capability Listener: onoff" on no-relay ceiling tiles (GH#550).
+    // WHY(P2601): register BEFORE super so UI tap during long base init cannot 500.
+    this._registerPhantomRelaySoftListeners();
+
     // WHY(P2589/P2591 Software Shield Module 3): after EF00 ready, restore sensitivity/delay
     // (MCU amnesia → zeros). Boot delay ~12s matches Hubitat-style post-init restore.
     this._scheduleRadarSettingsRestore('boot');
