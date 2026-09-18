@@ -24,8 +24,9 @@ describe('P2575 VicHY MTG075 presence + relay lock', () => {
     assert.strictEqual(cfg.hasRelay, true);
     assert.strictEqual(cfg.floodCalm, true);
     assert.strictEqual(cfg.dpMap[1].unreliable, false);
-    assert.ok(cfg.softClearZeroDistanceMs >= 60000);
-    assert.ok(cfg.softClearStableDistanceMs >= 60000);
+    assert.ok(cfg.softClearZeroDistanceMs >= 30000);
+    assert.ok(cfg.softClearStableDistanceMs >= 30000);
+    assert.strictEqual(cfg.antiFalsePositive, true);
   });
 
   it('device.js locks relay onoff + soft-clear sticky presence', () => {

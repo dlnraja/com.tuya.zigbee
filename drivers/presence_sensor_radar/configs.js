@@ -114,8 +114,13 @@ const SENSOR_CONFIGS = {
     // unreliable+inference — not by treating target_distance 0m as absent.
     clearPresenceOnZeroDistance: false,
     syncPresenceFromDistanceInference: false,
-    softClearZeroDistanceMs: 90000,
-    softClearStableDistanceMs: 120000,
+    // WHY(P2577 / VicHY #2247 screenshots): sticky Sí + distance "0 [object Object]".
+    // Soft-clear empty room, then ignore sticky DP1 true until entry corroboration.
+    antiFalsePositive: true,
+    softClearZeroDistanceMs: 45000,
+    softClearStableDistanceMs: 60000,
+    softClearIgnoreStickyDp1Ms: 90000,
+    presenceConfirmMs: 3000,
     dpThrottleMs: { 9: 2500, 104: 5000 },
     dpMinDelta: { 9: 0.15, 104: 2 },
     dpMap: {
@@ -126,6 +131,7 @@ const SENSOR_CONFIGS = {
         // WHY(P2575 / VicHY #2246/#2247): MTG075 presence = DP1 only (Z2M / P2534).
         // unreliable:true + floodCalm DP9 throttle ignored real presence OR locked
         // false positives via reflection distance — trust DP1 clears/sets.
+        // P2577 gates sticky true via antiFalsePositive (not unreliable).
         unreliable: false,
       },
       2: { cap: null, setting: 'radar_sensitivity', min: 0, max: 9 },
