@@ -1,0 +1,676 @@
+{
+  "generated": "2026-09-18T10:21:51.137Z",
+  "z2mCouples": 1259,
+  "covered": 1185,
+  "z2mOnly": 74,
+  "applySafeCount": 0,
+  "applySafe": [],
+  "review": [
+    {
+      "mfr": "_TZE284_da26abzz",
+      "pid": "TS0601",
+      "via": "fingerprint()",
+      "exposes": [],
+      "looksPid": true,
+      "guessDriver": null,
+      "applySafe": false
+    },
+    {
+      "mfr": "_TZE284_ksz749x8",
+      "pid": "TS0601",
+      "via": "fingerprint()",
+      "exposes": [],
+      "looksPid": true,
+      "guessDriver": null,
+      "applySafe": false
+    },
+    {
+      "mfr": "_TZE2841000000_qf5mzewi",
+      "pid": "TS0601",
+      "via": "fingerprint()",
+      "exposes": [],
+      "looksPid": true,
+      "guessDriver": null,
+      "applySafe": false
+    },
+    {
+      "mfr": "_TZE204_dak2k10o",
+      "pid": "TS0601",
+      "via": "fingerprint()",
+      "exposes": [],
+      "looksPid": true,
+      "guessDriver": null,
+      "applySafe": false
+    },
+    {
+      "mfr": "_TZE28C1000000_chbyv06x",
+      "pid": "TS0601",
+      "via": "fingerprint()",
+      "exposes": [],
+      "looksPid": true,
+      "guessDriver": null,
+      "applySafe": false
+    },
+    {
+      "mfr": "_TZ3000_rgpqqmbj",
+      "pid": "TS011F",
+      "via": "fingerprint()",
+      "exposes": [],
+      "looksPid": true,
+      "guessDriver": null,
+      "applySafe": false
+    },
+    {
+      "mfr": "_TZ3000_8nyaanzb",
+      "pid": "TS011F",
+      "via": "fingerprint()",
+      "exposes": [],
+      "looksPid": true,
+      "guessDriver": null,
+      "applySafe": false
+    },
+    {
+      "mfr": "_TZ3000_iy2c3n6p",
+      "pid": "TS011F",
+      "via": "fingerprint()",
+      "exposes": [],
+      "looksPid": true,
+      "guessDriver": null,
+      "applySafe": false
+    },
+    {
+      "mfr": "_TZ3000_hktqahrq",
+      "pid": "WHD02",
+      "via": "fingerprint()",
+      "exposes": [],
+      "looksPid": false,
+      "guessDriver": null,
+      "applySafe": false
+    },
+    {
+      "mfr": "_TZ3000_o4mkahkc",
+      "pid": "TS0202",
+      "via": "fingerprint()",
+      "exposes": [],
+      "looksPid": true,
+      "guessDriver": null,
+      "applySafe": false
+    },
+    {
+      "mfr": "_TYZB01_7yidyqxd",
+      "pid": "TS0108",
+      "via": "fingerprint()",
+      "exposes": [],
+      "looksPid": true,
+      "guessDriver": null,
+      "applySafe": false
+    },
+    {
+      "mfr": "_TZE28C1000000_68utemio",
+      "pid": "TS0601",
+      "via": "fingerprint()",
+      "exposes": [],
+      "looksPid": true,
+      "guessDriver": null,
+      "applySafe": false
+    },
+    {
+      "mfr": "_TZE210_xgzzuerd",
+      "pid": "TS0301",
+      "via": "fingerprint()",
+      "exposes": [],
+      "looksPid": true,
+      "guessDriver": null,
+      "applySafe": false
+    },
+    {
+      "mfr": "_TZE284_znkkcauq",
+      "pid": "TS0601",
+      "via": "fingerprint()",
+      "exposes": [],
+      "looksPid": true,
+      "guessDriver": null,
+      "applySafe": false
+    },
+    {
+      "mfr": "_TZE200_nkjintbl",
+      "pid": "TS0601",
+      "via": "fingerprint()",
+      "exposes": [],
+      "looksPid": true,
+      "guessDriver": null,
+      "applySafe": false
+    },
+    {
+      "mfr": "_TZ3000_nxdziqzc",
+      "pid": "TS0215A",
+      "via": "fingerprint()",
+      "exposes": [],
+      "looksPid": true,
+      "guessDriver": null,
+      "applySafe": false
+    },
+    {
+      "mfr": "_TZ3000_irwuzilv",
+      "pid": "TS0215A",
+      "via": "fingerprint()",
+      "exposes": [],
+      "looksPid": true,
+      "guessDriver": null,
+      "applySafe": false
+    },
+    {
+      "mfr": "_TZ3000_gjiggmio",
+      "pid": "TS0215A",
+      "via": "fingerprint()",
+      "exposes": [],
+      "looksPid": true,
+      "guessDriver": null,
+      "applySafe": false
+    },
+    {
+      "mfr": "_TZ3000_zojh9vz7",
+      "pid": "TS0001",
+      "via": "fingerprint()",
+      "exposes": [],
+      "looksPid": true,
+      "guessDriver": null,
+      "applySafe": false
+    },
+    {
+      "mfr": "_TZ3000_gsat0axs",
+      "pid": "TS0001",
+      "via": "fingerprint()",
+      "exposes": [],
+      "looksPid": true,
+      "guessDriver": null,
+      "applySafe": false
+    },
+    {
+      "mfr": "_TZ3000_aaifmpuq",
+      "pid": "TS0002",
+      "via": "fingerprint()",
+      "exposes": [],
+      "looksPid": true,
+      "guessDriver": null,
+      "applySafe": false
+    },
+    {
+      "mfr": "_TZ3000_irrmjcgi",
+      "pid": "TS0002",
+      "via": "fingerprint()",
+      "exposes": [],
+      "looksPid": true,
+      "guessDriver": null,
+      "applySafe": false
+    },
+    {
+      "mfr": "_TZ3000_huvxrx4i",
+      "pid": "TS0002",
+      "via": "fingerprint()",
+      "exposes": [],
+      "looksPid": true,
+      "guessDriver": null,
+      "applySafe": false
+    },
+    {
+      "mfr": "_TZ3000_pxfjrzyj",
+      "pid": "TS0002",
+      "via": "fingerprint()",
+      "exposes": [],
+      "looksPid": true,
+      "guessDriver": null,
+      "applySafe": false
+    },
+    {
+      "mfr": "_TZ3000_5gey1ohx",
+      "pid": "TS0002",
+      "via": "fingerprint()",
+      "exposes": [],
+      "looksPid": true,
+      "guessDriver": null,
+      "applySafe": false
+    },
+    {
+      "mfr": "_TZ3000_mufwv0ry",
+      "pid": "TS0002",
+      "via": "fingerprint()",
+      "exposes": [],
+      "looksPid": true,
+      "guessDriver": null,
+      "applySafe": false
+    },
+    {
+      "mfr": "_TZ3000_54hjn4vs",
+      "pid": "TS0002",
+      "via": "fingerprint()",
+      "exposes": [],
+      "looksPid": true,
+      "guessDriver": null,
+      "applySafe": false
+    },
+    {
+      "mfr": "_TZ3000_in5qxhtt",
+      "pid": "TS0002",
+      "via": "fingerprint()",
+      "exposes": [],
+      "looksPid": true,
+      "guessDriver": null,
+      "applySafe": false
+    },
+    {
+      "mfr": "_TZ3000_ogpla3lh",
+      "pid": "TS0002",
+      "via": "fingerprint()",
+      "exposes": [],
+      "looksPid": true,
+      "guessDriver": null,
+      "applySafe": false
+    },
+    {
+      "mfr": "_TZ3000_i9w5mehz",
+      "pid": "TS0002",
+      "via": "fingerprint()",
+      "exposes": [],
+      "looksPid": true,
+      "guessDriver": null,
+      "applySafe": false
+    },
+    {
+      "mfr": "_TZ3000_bu47m8pv",
+      "pid": "TS0003",
+      "via": "fingerprint()",
+      "exposes": [],
+      "looksPid": true,
+      "guessDriver": null,
+      "applySafe": false
+    },
+    {
+      "mfr": "_TZE28C1000000_vosmoqsg",
+      "pid": "TS0601",
+      "via": "fingerprint()",
+      "exposes": [],
+      "looksPid": true,
+      "guessDriver": null,
+      "applySafe": false
+    },
+    {
+      "mfr": "_TZE28C1000000_ewn672ef",
+      "pid": "TS0601",
+      "via": "fingerprint()",
+      "exposes": [],
+      "looksPid": true,
+      "guessDriver": null,
+      "applySafe": false
+    },
+    {
+      "mfr": "_TZE28C1000000_jlbsptkl",
+      "pid": "TS0601",
+      "via": "fingerprint()",
+      "exposes": [],
+      "looksPid": true,
+      "guessDriver": null,
+      "applySafe": false
+    },
+    {
+      "mfr": "_TZE28C1000000_jaunkx9g",
+      "pid": "TS0601",
+      "via": "fingerprint()",
+      "exposes": [],
+      "looksPid": true,
+      "guessDriver": null,
+      "applySafe": false
+    },
+    {
+      "mfr": "_TZE28C1000000_usmqzgdm",
+      "pid": "TS0601",
+      "via": "fingerprint()",
+      "exposes": [],
+      "looksPid": true,
+      "guessDriver": null,
+      "applySafe": false
+    },
+    {
+      "mfr": "_TZE2841000000_2gi1hy8s",
+      "pid": "TS0601",
+      "via": "fingerprint()",
+      "exposes": [],
+      "looksPid": true,
+      "guessDriver": null,
+      "applySafe": false
+    },
+    {
+      "mfr": "_TZ3008_tary5dvv",
+      "pid": "TS011F",
+      "via": "fingerprint()",
+      "exposes": [],
+      "looksPid": true,
+      "guessDriver": null,
+      "applySafe": false
+    },
+    {
+      "mfr": "_TZ3210_iooniers",
+      "pid": "TS011F",
+      "via": "fingerprint()",
+      "exposes": [],
+      "looksPid": true,
+      "guessDriver": null,
+      "applySafe": false
+    },
+    {
+      "mfr": "_TZ3008_iooniers",
+      "pid": "TS011F",
+      "via": "fingerprint()",
+      "exposes": [],
+      "looksPid": true,
+      "guessDriver": null,
+      "applySafe": false
+    },
+    {
+      "mfr": "_TZ3008_xvfd3nkp",
+      "pid": "TS011F",
+      "via": "fingerprint()",
+      "exposes": [],
+      "looksPid": true,
+      "guessDriver": null,
+      "applySafe": false
+    },
+    {
+      "mfr": "_TZ3008_qziabvzj",
+      "pid": "TS011F",
+      "via": "fingerprint()",
+      "exposes": [],
+      "looksPid": true,
+      "guessDriver": null,
+      "applySafe": false
+    },
+    {
+      "mfr": "_TZ3000_v1pdxuqq",
+      "pid": "TS011F",
+      "via": "fingerprint()",
+      "exposes": [],
+      "looksPid": true,
+      "guessDriver": null,
+      "applySafe": false
+    },
+    {
+      "mfr": "_TZ3000_8a833yls",
+      "pid": "TS011F",
+      "via": "fingerprint()",
+      "exposes": [],
+      "looksPid": true,
+      "guessDriver": null,
+      "applySafe": false
+    },
+    {
+      "mfr": "_TZ3000_nzkqcvvs",
+      "pid": "TS011F",
+      "via": "fingerprint()",
+      "exposes": [],
+      "looksPid": true,
+      "guessDriver": null,
+      "applySafe": false
+    },
+    {
+      "mfr": "_TZ3000_rtcrrvia",
+      "pid": "TS011F",
+      "via": "fingerprint()",
+      "exposes": [],
+      "looksPid": true,
+      "guessDriver": null,
+      "applySafe": false
+    },
+    {
+      "mfr": "_TZ3000_ysiog9xi",
+      "pid": "TS011F",
+      "via": "fingerprint()",
+      "exposes": [],
+      "looksPid": true,
+      "guessDriver": null,
+      "applySafe": false
+    },
+    {
+      "mfr": "_TZ3000_o1jzcxou",
+      "pid": "TS011F",
+      "via": "fingerprint()",
+      "exposes": [],
+      "looksPid": true,
+      "guessDriver": null,
+      "applySafe": false
+    },
+    {
+      "mfr": "_TZ3210_nhqka112",
+      "pid": "TS011F",
+      "via": "fingerprint()",
+      "exposes": [],
+      "looksPid": true,
+      "guessDriver": null,
+      "applySafe": false
+    },
+    {
+      "mfr": "_TZE2841000000_rccxox8p",
+      "pid": "TS0601",
+      "via": "fingerprint()",
+      "exposes": [],
+      "looksPid": true,
+      "guessDriver": null,
+      "applySafe": false
+    },
+    {
+      "mfr": "_TZE2841000000_6ycgarab",
+      "pid": "TS0601",
+      "via": "fingerprint()",
+      "exposes": [],
+      "looksPid": true,
+      "guessDriver": null,
+      "applySafe": false
+    },
+    {
+      "mfr": "_TYZB01_4mdqxxnn",
+      "pid": "TS0222",
+      "via": "fingerprint()",
+      "exposes": [],
+      "looksPid": true,
+      "guessDriver": null,
+      "applySafe": false
+    },
+    {
+      "mfr": "_TYZB01_m6ec2pgj",
+      "pid": "TS0222",
+      "via": "fingerprint()",
+      "exposes": [],
+      "looksPid": true,
+      "guessDriver": null,
+      "applySafe": false
+    },
+    {
+      "mfr": "_TZ3000_j6adk9id",
+      "pid": "TS0222",
+      "via": "fingerprint()",
+      "exposes": [],
+      "looksPid": true,
+      "guessDriver": null,
+      "applySafe": false
+    },
+    {
+      "mfr": "_TZ3290_rlkmy85q4pzoxobl",
+      "pid": "TS1201",
+      "via": "fingerprint()",
+      "exposes": [],
+      "looksPid": true,
+      "guessDriver": null,
+      "applySafe": false
+    },
+    {
+      "mfr": "_TZ3290_yac64inudpovoaba",
+      "pid": "TS1201",
+      "via": "fingerprint()",
+      "exposes": [],
+      "looksPid": true,
+      "guessDriver": null,
+      "applySafe": false
+    },
+    {
+      "mfr": "_TZ3290_uc8lwbi2",
+      "pid": "TS1201",
+      "via": "fingerprint()",
+      "exposes": [],
+      "looksPid": true,
+      "guessDriver": null,
+      "applySafe": false
+    },
+    {
+      "mfr": "_TZ3290_8xzb2ghn",
+      "pid": "TS1201",
+      "via": "fingerprint()",
+      "exposes": [],
+      "looksPid": true,
+      "guessDriver": null,
+      "applySafe": false
+    },
+    {
+      "mfr": "_TZE200_qoy0ekbd",
+      "pid": "TS0601",
+      "via": "fingerprint()",
+      "exposes": [],
+      "looksPid": true,
+      "guessDriver": null,
+      "applySafe": false
+    },
+    {
+      "mfr": "_TZE200_n8dljorx",
+      "pid": "TS0601",
+      "via": "fingerprint()",
+      "exposes": [],
+      "looksPid": true,
+      "guessDriver": null,
+      "applySafe": false
+    },
+    {
+      "mfr": "_TZE2841000000_bw4ayyeh",
+      "pid": "TS0601",
+      "via": "fingerprint()",
+      "exposes": [],
+      "looksPid": true,
+      "guessDriver": null,
+      "applySafe": false
+    },
+    {
+      "mfr": "_TZ3210_o235agwx",
+      "pid": "TS110E",
+      "via": "fingerprint()",
+      "exposes": [],
+      "looksPid": true,
+      "guessDriver": null,
+      "applySafe": false
+    },
+    {
+      "mfr": "_TZE28C1000000_z5jz7wpo",
+      "pid": "TS0601",
+      "via": "fingerprint()",
+      "exposes": [],
+      "looksPid": true,
+      "guessDriver": null,
+      "applySafe": false
+    },
+    {
+      "mfr": "_TZ3000_fa9mlvja",
+      "pid": "TS0041",
+      "via": "fingerprint()",
+      "exposes": [],
+      "looksPid": true,
+      "guessDriver": null,
+      "applySafe": false
+    },
+    {
+      "mfr": "_TZ3000_3o7r0mno",
+      "pid": "TS011F",
+      "via": "fingerprint()",
+      "exposes": [],
+      "looksPid": true,
+      "guessDriver": null,
+      "applySafe": false
+    },
+    {
+      "mfr": "_TZ3000_bbebkwjk",
+      "pid": "TS0001",
+      "via": "fingerprint()",
+      "exposes": [],
+      "looksPid": true,
+      "guessDriver": null,
+      "applySafe": false
+    },
+    {
+      "mfr": "_TZE20C1000000_p3g8xiug",
+      "pid": "TS0601",
+      "via": "fingerprint()",
+      "exposes": [],
+      "looksPid": true,
+      "guessDriver": null,
+      "applySafe": false
+    },
+    {
+      "mfr": "_TZ3000_rqbjepe8",
+      "pid": "TS011F",
+      "via": "fingerprint()",
+      "exposes": [],
+      "looksPid": true,
+      "guessDriver": null,
+      "applySafe": false
+    },
+    {
+      "mfr": "_TZE284_lyqazpe6",
+      "pid": "TS0601",
+      "via": "fingerprint()",
+      "exposes": [],
+      "looksPid": true,
+      "guessDriver": null,
+      "applySafe": false
+    },
+    {
+      "mfr": "_TZE204_lyqazpe6",
+      "pid": "TS0601",
+      "via": "fingerprint()",
+      "exposes": [],
+      "looksPid": true,
+      "guessDriver": null,
+      "applySafe": false
+    },
+    {
+      "mfr": "_TZE20C_tjz9ad5g",
+      "pid": "TS0601",
+      "via": "fingerprint()",
+      "exposes": [],
+      "looksPid": true,
+      "guessDriver": null,
+      "applySafe": false
+    },
+    {
+      "mfr": "_TZE284_n41i9jyt",
+      "pid": "TS0601",
+      "via": "fingerprint()",
+      "exposes": [],
+      "looksPid": true,
+      "guessDriver": null,
+      "applySafe": false
+    },
+    {
+      "mfr": "_TZE284_d4h8j2n6",
+      "pid": "ZP-301Z",
+      "via": "fingerprint()",
+      "exposes": [],
+      "looksPid": false,
+      "guessDriver": null,
+      "applySafe": false
+    },
+    {
+      "mfr": "_TZE200_qcasmfan",
+      "pid": "TS0601",
+      "via": "fingerprint()",
+      "exposes": [],
+      "looksPid": true,
+      "guessDriver": null,
+      "applySafe": false
+    }
+  ]
+}

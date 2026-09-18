@@ -1,0 +1,1094 @@
+{
+  "generated": "2026-09-18T10:23:15.113Z",
+  "mode": "dry-run",
+  "dump": "C:\\Users\\Dell\\.cursor\\projects\\c-Users-Dell-Documents-homey-master\\agent-tools\\e6ee55a0-e612-466c-bd21-448433558292.txt",
+  "totals": {
+    "z2mParsed": 1248,
+    "missing": 74,
+    "applySafe": 48,
+    "soft": 6,
+    "skip": 20
+  },
+  "applied": [
+    {
+      "mfr": "_TZE284_da26abzz",
+      "pid": "TS0601",
+      "model": "MG-DIM02Z",
+      "desc": "Zigbee dimmer module with power monitoring",
+      "via": "fingerprint()",
+      "driver": "wall_dimmer_tuya",
+      "conf": 0.85,
+      "key": "_tze284_da26abzz|TS0601",
+      "result": {
+        "ok": true,
+        "driverId": "wall_dimmer_tuya",
+        "addedMfr": -162,
+        "addedPid": 0,
+        "wrote": false
+      }
+    },
+    {
+      "mfr": "_TZE28C1000000_chbyv06x",
+      "pid": "TS0601",
+      "model": "TS0601_gas_sensor_2",
+      "desc": "Gas sensor",
+      "via": "fingerprint()",
+      "driver": "gas_sensor",
+      "conf": 0.9,
+      "key": "_tze28c1000000_chbyv06x|TS0601",
+      "result": {
+        "ok": true,
+        "driverId": "gas_sensor",
+        "addedMfr": -17,
+        "addedPid": -2,
+        "wrote": false
+      }
+    },
+    {
+      "mfr": "_TZ3000_rgpqqmbj",
+      "pid": "TS011F",
+      "model": "TS011F_2_gang_wall",
+      "desc": "2 gang wall outlet",
+      "via": "fingerprint()",
+      "driver": "plug_energy_monitor",
+      "conf": 0.9,
+      "key": "_tz3000_rgpqqmbj|TS011F",
+      "result": {
+        "ok": true,
+        "driverId": "plug_energy_monitor",
+        "addedMfr": -51,
+        "addedPid": 0,
+        "wrote": false
+      }
+    },
+    {
+      "mfr": "_TZ3000_8nyaanzb",
+      "pid": "TS011F",
+      "model": "TS011F_2_gang_wall",
+      "desc": "2 gang wall outlet",
+      "via": "fingerprint()",
+      "driver": "plug_energy_monitor",
+      "conf": 0.9,
+      "key": "_tz3000_8nyaanzb|TS011F",
+      "result": {
+        "ok": true,
+        "driverId": "plug_energy_monitor",
+        "addedMfr": -51,
+        "addedPid": 0,
+        "wrote": false
+      }
+    },
+    {
+      "mfr": "_TZ3000_iy2c3n6p",
+      "pid": "TS011F",
+      "model": "TS011F_2_gang_wall",
+      "desc": "2 gang wall outlet",
+      "via": "fingerprint()",
+      "driver": "plug_energy_monitor",
+      "conf": 0.9,
+      "key": "_tz3000_iy2c3n6p|TS011F",
+      "result": {
+        "ok": true,
+        "driverId": "plug_energy_monitor",
+        "addedMfr": -51,
+        "addedPid": 0,
+        "wrote": false
+      }
+    },
+    {
+      "mfr": "_TZ3000_o4mkahkc",
+      "pid": "TS0202",
+      "model": "IH012-RT02",
+      "desc": "Motion sensor",
+      "via": "fingerprint()",
+      "driver": "motion_sensor",
+      "conf": 0.85,
+      "key": "_tz3000_o4mkahkc|TS0202",
+      "result": {
+        "ok": true,
+        "driverId": "motion_sensor",
+        "addedMfr": -178,
+        "addedPid": 0,
+        "wrote": false
+      }
+    },
+    {
+      "mfr": "_TZE28C1000000_68utemio",
+      "pid": "TS0601",
+      "model": "TS0601_dimmer_1_gang_1",
+      "desc": "1 gang smart dimmer",
+      "via": "fingerprint()",
+      "driver": "wall_dimmer_tuya",
+      "conf": 0.85,
+      "key": "_tze28c1000000_68utemio|TS0601",
+      "result": {
+        "ok": true,
+        "driverId": "wall_dimmer_tuya",
+        "addedMfr": -162,
+        "addedPid": 0,
+        "wrote": false
+      }
+    },
+    {
+      "mfr": "_TZE210_xgzzuerd",
+      "pid": "TS0301",
+      "model": "TS0301_cover_2",
+      "desc": "Cover motor",
+      "via": "fingerprint()",
+      "driver": "curtain_motor",
+      "conf": 0.95,
+      "key": "_tze210_xgzzuerd|TS0301",
+      "result": {
+        "ok": true,
+        "driverId": "curtain_motor",
+        "addedMfr": -387,
+        "addedPid": 0,
+        "wrote": false
+      }
+    },
+    {
+      "mfr": "_TZ3000_nxdziqzc",
+      "pid": "TS0215A",
+      "model": "TS0215A_sos",
+      "desc": "SOS button",
+      "via": "fingerprint()",
+      "driver": "button_emergency_sos",
+      "conf": 0.85,
+      "key": "_tz3000_nxdziqzc|TS0215A",
+      "result": {
+        "ok": true,
+        "driverId": "button_emergency_sos",
+        "addedMfr": -80,
+        "addedPid": 0,
+        "wrote": false
+      }
+    },
+    {
+      "mfr": "_TZ3000_irwuzilv",
+      "pid": "TS0215A",
+      "model": "TS0215A_sos",
+      "desc": "SOS button",
+      "via": "fingerprint()",
+      "driver": "button_emergency_sos",
+      "conf": 0.85,
+      "key": "_tz3000_irwuzilv|TS0215A",
+      "result": {
+        "ok": true,
+        "driverId": "button_emergency_sos",
+        "addedMfr": -80,
+        "addedPid": 0,
+        "wrote": false
+      }
+    },
+    {
+      "mfr": "_TZ3000_gjiggmio",
+      "pid": "TS0215A",
+      "model": "TS0215A_sos",
+      "desc": "SOS button",
+      "via": "fingerprint()",
+      "driver": "button_emergency_sos",
+      "conf": 0.85,
+      "key": "_tz3000_gjiggmio|TS0215A",
+      "result": {
+        "ok": true,
+        "driverId": "button_emergency_sos",
+        "addedMfr": -80,
+        "addedPid": 0,
+        "wrote": false
+      }
+    },
+    {
+      "mfr": "_TZ3000_zojh9vz7",
+      "pid": "TS0001",
+      "model": "TS0001_power",
+      "desc": "Switch with power monitoring",
+      "via": "fingerprint()",
+      "driver": "switch_1gang",
+      "conf": 0.8,
+      "key": "_tz3000_zojh9vz7|TS0001",
+      "result": {
+        "ok": true,
+        "driverId": "switch_1gang",
+        "addedMfr": -1153,
+        "addedPid": -2,
+        "wrote": false
+      }
+    },
+    {
+      "mfr": "_TZ3000_gsat0axs",
+      "pid": "TS0001",
+      "model": "TS0001_power",
+      "desc": "Switch with power monitoring",
+      "via": "fingerprint()",
+      "driver": "switch_1gang",
+      "conf": 0.8,
+      "key": "_tz3000_gsat0axs|TS0001",
+      "result": {
+        "ok": true,
+        "driverId": "switch_1gang",
+        "addedMfr": -1153,
+        "addedPid": -2,
+        "wrote": false
+      }
+    },
+    {
+      "mfr": "_TZ3000_aaifmpuq",
+      "pid": "TS0002",
+      "model": "TS0002_power",
+      "desc": "2 gang switch with power monitoring",
+      "via": "fingerprint()",
+      "driver": "switch_2gang",
+      "conf": 0.8,
+      "key": "_tz3000_aaifmpuq|TS0002",
+      "result": {
+        "ok": true,
+        "driverId": "switch_2gang",
+        "addedMfr": -90,
+        "addedPid": 0,
+        "wrote": false
+      }
+    },
+    {
+      "mfr": "_TZ3000_irrmjcgi",
+      "pid": "TS0002",
+      "model": "TS0002_power",
+      "desc": "2 gang switch with power monitoring",
+      "via": "fingerprint()",
+      "driver": "switch_2gang",
+      "conf": 0.8,
+      "key": "_tz3000_irrmjcgi|TS0002",
+      "result": {
+        "ok": true,
+        "driverId": "switch_2gang",
+        "addedMfr": -90,
+        "addedPid": 0,
+        "wrote": false
+      }
+    },
+    {
+      "mfr": "_TZ3000_huvxrx4i",
+      "pid": "TS0002",
+      "model": "TS0002_power",
+      "desc": "2 gang switch with power monitoring",
+      "via": "fingerprint()",
+      "driver": "switch_2gang",
+      "conf": 0.8,
+      "key": "_tz3000_huvxrx4i|TS0002",
+      "result": {
+        "ok": true,
+        "driverId": "switch_2gang",
+        "addedMfr": -90,
+        "addedPid": 0,
+        "wrote": false
+      }
+    },
+    {
+      "mfr": "_TZ3000_pxfjrzyj",
+      "pid": "TS0002",
+      "model": "TS0002_power",
+      "desc": "2 gang switch with power monitoring",
+      "via": "fingerprint()",
+      "driver": "switch_2gang",
+      "conf": 0.8,
+      "key": "_tz3000_pxfjrzyj|TS0002",
+      "result": {
+        "ok": true,
+        "driverId": "switch_2gang",
+        "addedMfr": -90,
+        "addedPid": 0,
+        "wrote": false
+      }
+    },
+    {
+      "mfr": "_TZ3000_5gey1ohx",
+      "pid": "TS0002",
+      "model": "TS0002_limited",
+      "desc": "2 gang switch module",
+      "via": "fingerprint()",
+      "driver": "switch_2gang",
+      "conf": 0.8,
+      "key": "_tz3000_5gey1ohx|TS0002",
+      "result": {
+        "ok": true,
+        "driverId": "switch_2gang",
+        "addedMfr": -90,
+        "addedPid": 0,
+        "wrote": false
+      }
+    },
+    {
+      "mfr": "_TZ3000_mufwv0ry",
+      "pid": "TS0002",
+      "model": "TS0002_limited",
+      "desc": "2 gang switch module",
+      "via": "fingerprint()",
+      "driver": "switch_2gang",
+      "conf": 0.8,
+      "key": "_tz3000_mufwv0ry|TS0002",
+      "result": {
+        "ok": true,
+        "driverId": "switch_2gang",
+        "addedMfr": -90,
+        "addedPid": 0,
+        "wrote": false
+      }
+    },
+    {
+      "mfr": "_TZ3000_54hjn4vs",
+      "pid": "TS0002",
+      "model": "TS0002_limited",
+      "desc": "2 gang switch module",
+      "via": "fingerprint()",
+      "driver": "switch_2gang",
+      "conf": 0.8,
+      "key": "_tz3000_54hjn4vs|TS0002",
+      "result": {
+        "ok": true,
+        "driverId": "switch_2gang",
+        "addedMfr": -90,
+        "addedPid": 0,
+        "wrote": false
+      }
+    },
+    {
+      "mfr": "_TZ3000_in5qxhtt",
+      "pid": "TS0002",
+      "model": "TS0002_limited",
+      "desc": "2 gang switch module",
+      "via": "fingerprint()",
+      "driver": "switch_2gang",
+      "conf": 0.8,
+      "key": "_tz3000_in5qxhtt|TS0002",
+      "result": {
+        "ok": true,
+        "driverId": "switch_2gang",
+        "addedMfr": -90,
+        "addedPid": 0,
+        "wrote": false
+      }
+    },
+    {
+      "mfr": "_TZ3000_ogpla3lh",
+      "pid": "TS0002",
+      "model": "TS0002_limited",
+      "desc": "2 gang switch module",
+      "via": "fingerprint()",
+      "driver": "switch_2gang",
+      "conf": 0.8,
+      "key": "_tz3000_ogpla3lh|TS0002",
+      "result": {
+        "ok": true,
+        "driverId": "switch_2gang",
+        "addedMfr": -90,
+        "addedPid": 0,
+        "wrote": false
+      }
+    },
+    {
+      "mfr": "_TZ3000_i9w5mehz",
+      "pid": "TS0002",
+      "model": "TS0002_limited",
+      "desc": "2 gang switch module",
+      "via": "fingerprint()",
+      "driver": "switch_2gang",
+      "conf": 0.8,
+      "key": "_tz3000_i9w5mehz|TS0002",
+      "result": {
+        "ok": true,
+        "driverId": "switch_2gang",
+        "addedMfr": -90,
+        "addedPid": 0,
+        "wrote": false
+      }
+    },
+    {
+      "mfr": "_TZE28C1000000_vosmoqsg",
+      "pid": "TS0601",
+      "model": "ZF24Pro",
+      "desc": "Tuya Temperature & Humidity Human Presence Sensor",
+      "via": "fingerprint()",
+      "driver": "presence_sensor_radar",
+      "conf": 0.95,
+      "key": "_tze28c1000000_vosmoqsg|TS0601",
+      "result": {
+        "ok": true,
+        "driverId": "presence_sensor_radar",
+        "addedMfr": -360,
+        "addedPid": 0,
+        "wrote": false
+      }
+    },
+    {
+      "mfr": "_TZE28C1000000_ewn672ef",
+      "pid": "TS0601",
+      "model": "ZF24Pro",
+      "desc": "Tuya Temperature & Humidity Human Presence Sensor",
+      "via": "fingerprint()",
+      "driver": "presence_sensor_radar",
+      "conf": 0.95,
+      "key": "_tze28c1000000_ewn672ef|TS0601",
+      "result": {
+        "ok": true,
+        "driverId": "presence_sensor_radar",
+        "addedMfr": -360,
+        "addedPid": 0,
+        "wrote": false
+      }
+    },
+    {
+      "mfr": "_TZE28C1000000_jaunkx9g",
+      "pid": "TS0601",
+      "model": "_TZE28C1000000_jaunkx9g",
+      "desc": "Human presence sensor 2-gang smart switch",
+      "via": "fingerprint()",
+      "driver": "presence_sensor_radar",
+      "conf": 0.95,
+      "key": "_tze28c1000000_jaunkx9g|TS0601",
+      "result": {
+        "ok": true,
+        "driverId": "presence_sensor_radar",
+        "addedMfr": -360,
+        "addedPid": 0,
+        "wrote": false
+      }
+    },
+    {
+      "mfr": "_TZE28C1000000_usmqzgdm",
+      "pid": "TS0601",
+      "model": "_TZE28C1000000_usmqzgdm",
+      "desc": "Human presence sensor 3-gang smart switch",
+      "via": "fingerprint()",
+      "driver": "presence_sensor_radar",
+      "conf": 0.95,
+      "key": "_tze28c1000000_usmqzgdm|TS0601",
+      "result": {
+        "ok": true,
+        "driverId": "presence_sensor_radar",
+        "addedMfr": -360,
+        "addedPid": 0,
+        "wrote": false
+      }
+    },
+    {
+      "mfr": "_TZE2841000000_2gi1hy8s",
+      "pid": "TS0601",
+      "model": "MB60L-ZG-ZT-TY",
+      "desc": "Smart blinds motor",
+      "via": "fingerprint()",
+      "driver": "curtain_motor",
+      "conf": 0.95,
+      "key": "_tze2841000000_2gi1hy8s|TS0601",
+      "result": {
+        "ok": true,
+        "driverId": "curtain_motor",
+        "addedMfr": -387,
+        "addedPid": 0,
+        "wrote": false
+      }
+    },
+    {
+      "mfr": "_TZ3008_tary5dvv",
+      "pid": "TS011F",
+      "model": "TS011F_plug_1",
+      "desc": "Smart plug (with power monitoring)",
+      "via": "fingerprint()",
+      "driver": "plug_energy_monitor",
+      "conf": 0.9,
+      "key": "_tz3008_tary5dvv|TS011F",
+      "result": {
+        "ok": true,
+        "driverId": "plug_energy_monitor",
+        "addedMfr": -51,
+        "addedPid": 0,
+        "wrote": false
+      }
+    },
+    {
+      "mfr": "_TZ3210_iooniers",
+      "pid": "TS011F",
+      "model": "TS011F_plug_1",
+      "desc": "Smart plug (with power monitoring)",
+      "via": "fingerprint()",
+      "driver": "plug_energy_monitor",
+      "conf": 0.9,
+      "key": "_tz3210_iooniers|TS011F",
+      "result": {
+        "ok": true,
+        "driverId": "plug_energy_monitor",
+        "addedMfr": -51,
+        "addedPid": 0,
+        "wrote": false
+      }
+    },
+    {
+      "mfr": "_TZ3008_iooniers",
+      "pid": "TS011F",
+      "model": "TS011F_plug_1",
+      "desc": "Smart plug (with power monitoring)",
+      "via": "fingerprint()",
+      "driver": "plug_energy_monitor",
+      "conf": 0.9,
+      "key": "_tz3008_iooniers|TS011F",
+      "result": {
+        "ok": true,
+        "driverId": "plug_energy_monitor",
+        "addedMfr": -51,
+        "addedPid": 0,
+        "wrote": false
+      }
+    },
+    {
+      "mfr": "_TZ3008_xvfd3nkp",
+      "pid": "TS011F",
+      "model": "TS011F_plug_1",
+      "desc": "Smart plug (with power monitoring)",
+      "via": "fingerprint()",
+      "driver": "plug_energy_monitor",
+      "conf": 0.9,
+      "key": "_tz3008_xvfd3nkp|TS011F",
+      "result": {
+        "ok": true,
+        "driverId": "plug_energy_monitor",
+        "addedMfr": -51,
+        "addedPid": 0,
+        "wrote": false
+      }
+    },
+    {
+      "mfr": "_TZ3008_qziabvzj",
+      "pid": "TS011F",
+      "model": "TS011F_plug_1",
+      "desc": "Smart plug (with power monitoring)",
+      "via": "fingerprint()",
+      "driver": "plug_energy_monitor",
+      "conf": 0.9,
+      "key": "_tz3008_qziabvzj|TS011F",
+      "result": {
+        "ok": true,
+        "driverId": "plug_energy_monitor",
+        "addedMfr": -51,
+        "addedPid": 0,
+        "wrote": false
+      }
+    },
+    {
+      "mfr": "_TZ3000_v1pdxuqq",
+      "pid": "TS011F",
+      "model": "TS011F_plug_2",
+      "desc": "Smart plug (without power monitoring)",
+      "via": "fingerprint()",
+      "driver": "plug_energy_monitor",
+      "conf": 0.9,
+      "key": "_tz3000_v1pdxuqq|TS011F",
+      "result": {
+        "ok": true,
+        "driverId": "plug_energy_monitor",
+        "addedMfr": -51,
+        "addedPid": 0,
+        "wrote": false
+      }
+    },
+    {
+      "mfr": "_TZ3000_8a833yls",
+      "pid": "TS011F",
+      "model": "TS011F_plug_2",
+      "desc": "Smart plug (without power monitoring)",
+      "via": "fingerprint()",
+      "driver": "plug_energy_monitor",
+      "conf": 0.9,
+      "key": "_tz3000_8a833yls|TS011F",
+      "result": {
+        "ok": true,
+        "driverId": "plug_energy_monitor",
+        "addedMfr": -51,
+        "addedPid": 0,
+        "wrote": false
+      }
+    },
+    {
+      "mfr": "_TZ3000_nzkqcvvs",
+      "pid": "TS011F",
+      "model": "TS011F_plug_2",
+      "desc": "Smart plug (without power monitoring)",
+      "via": "fingerprint()",
+      "driver": "plug_energy_monitor",
+      "conf": 0.9,
+      "key": "_tz3000_nzkqcvvs|TS011F",
+      "result": {
+        "ok": true,
+        "driverId": "plug_energy_monitor",
+        "addedMfr": -51,
+        "addedPid": 0,
+        "wrote": false
+      }
+    },
+    {
+      "mfr": "_TZ3000_rtcrrvia",
+      "pid": "TS011F",
+      "model": "TS011F_plug_2",
+      "desc": "Smart plug (without power monitoring)",
+      "via": "fingerprint()",
+      "driver": "plug_energy_monitor",
+      "conf": 0.9,
+      "key": "_tz3000_rtcrrvia|TS011F",
+      "result": {
+        "ok": true,
+        "driverId": "plug_energy_monitor",
+        "addedMfr": -51,
+        "addedPid": 0,
+        "wrote": false
+      }
+    },
+    {
+      "mfr": "_TZ3000_ysiog9xi",
+      "pid": "TS011F",
+      "model": "TS011F_plug_2",
+      "desc": "Smart plug (without power monitoring)",
+      "via": "fingerprint()",
+      "driver": "plug_energy_monitor",
+      "conf": 0.9,
+      "key": "_tz3000_ysiog9xi|TS011F",
+      "result": {
+        "ok": true,
+        "driverId": "plug_energy_monitor",
+        "addedMfr": -51,
+        "addedPid": 0,
+        "wrote": false
+      }
+    },
+    {
+      "mfr": "_TZ3000_o1jzcxou",
+      "pid": "TS011F",
+      "model": "TS011F_plug_2",
+      "desc": "Smart plug (without power monitoring)",
+      "via": "fingerprint()",
+      "driver": "plug_energy_monitor",
+      "conf": 0.9,
+      "key": "_tz3000_o1jzcxou|TS011F",
+      "result": {
+        "ok": true,
+        "driverId": "plug_energy_monitor",
+        "addedMfr": -51,
+        "addedPid": 0,
+        "wrote": false
+      }
+    },
+    {
+      "mfr": "_TZ3210_nhqka112",
+      "pid": "TS011F",
+      "model": "TS011F_plug_2",
+      "desc": "Smart plug (without power monitoring)",
+      "via": "fingerprint()",
+      "driver": "plug_energy_monitor",
+      "conf": 0.9,
+      "key": "_tz3210_nhqka112|TS011F",
+      "result": {
+        "ok": true,
+        "driverId": "plug_energy_monitor",
+        "addedMfr": -51,
+        "addedPid": 0,
+        "wrote": false
+      }
+    },
+    {
+      "mfr": "_TZE2841000000_rccxox8p",
+      "pid": "TS0601",
+      "model": "PA-44Z",
+      "desc": "Photoelectric smoke detector",
+      "via": "fingerprint()",
+      "driver": "smoke_sensor",
+      "conf": 0.9,
+      "key": "_tze2841000000_rccxox8p|TS0601",
+      "result": {
+        "ok": true,
+        "driverId": "smoke_sensor",
+        "addedMfr": -18,
+        "addedPid": 0,
+        "wrote": false
+      }
+    },
+    {
+      "mfr": "_TZE2841000000_6ycgarab",
+      "pid": "TS0601",
+      "model": "TS0601_smoke_co",
+      "desc": "Dual smoke CO sensor",
+      "via": "fingerprint()",
+      "driver": "smoke_sensor",
+      "conf": 0.9,
+      "key": "_tze2841000000_6ycgarab|TS0601",
+      "result": {
+        "ok": true,
+        "driverId": "smoke_sensor",
+        "addedMfr": -18,
+        "addedPid": 0,
+        "wrote": false
+      }
+    },
+    {
+      "mfr": "_TZE200_n8dljorx",
+      "pid": "TS0601",
+      "model": "ZG-102Z",
+      "desc": "Door sensor",
+      "via": "fingerprint()",
+      "driver": "contact_sensor",
+      "conf": 0.85,
+      "key": "_tze200_n8dljorx|TS0601",
+      "result": {
+        "ok": true,
+        "driverId": "contact_sensor",
+        "addedMfr": -157,
+        "addedPid": -1,
+        "wrote": false
+      }
+    },
+    {
+      "mfr": "_TZE2841000000_bw4ayyeh",
+      "pid": "TS0601",
+      "model": "ZD24_Presence_Sensor",
+      "desc": "PIR 24GHz human presence sensor",
+      "via": "fingerprint()",
+      "driver": "presence_sensor_radar",
+      "conf": 0.95,
+      "key": "_tze2841000000_bw4ayyeh|TS0601",
+      "result": {
+        "ok": true,
+        "driverId": "presence_sensor_radar",
+        "addedMfr": -360,
+        "addedPid": 0,
+        "wrote": false
+      }
+    },
+    {
+      "mfr": "_TZ3210_o235agwx",
+      "pid": "TS110E",
+      "model": "TS110E_1gang_2",
+      "desc": "1 channel dimmer",
+      "via": "fingerprint()",
+      "driver": "wall_dimmer_tuya",
+      "conf": 0.85,
+      "key": "_tz3210_o235agwx|TS110E",
+      "result": {
+        "ok": true,
+        "driverId": "wall_dimmer_tuya",
+        "addedMfr": -162,
+        "addedPid": 0,
+        "wrote": false
+      }
+    },
+    {
+      "mfr": "_TZ3000_bbebkwjk",
+      "pid": "TS0001",
+      "model": "TS0001_switch_1_gang",
+      "desc": "1-Gang switch with backlight",
+      "via": "fingerprint()",
+      "driver": "switch_1gang",
+      "conf": 0.8,
+      "key": "_tz3000_bbebkwjk|TS0001",
+      "result": {
+        "ok": true,
+        "driverId": "switch_1gang",
+        "addedMfr": -1153,
+        "addedPid": -2,
+        "wrote": false
+      }
+    },
+    {
+      "mfr": "_TZ3000_rqbjepe8",
+      "pid": "TS011F",
+      "model": "TS011F_4",
+      "desc": "2 gang plug",
+      "via": "fingerprint()",
+      "driver": "plug_energy_monitor",
+      "conf": 0.9,
+      "key": "_tz3000_rqbjepe8|TS011F",
+      "result": {
+        "ok": true,
+        "driverId": "plug_energy_monitor",
+        "addedMfr": -51,
+        "addedPid": 0,
+        "wrote": false
+      }
+    },
+    {
+      "mfr": "_TZE200_qcasmfan",
+      "pid": "TS0601",
+      "model": "GSKS-ZB",
+      "desc": "Smoke sensor",
+      "via": "fingerprint()",
+      "driver": "smoke_sensor",
+      "conf": 0.9,
+      "key": "_tze200_qcasmfan|TS0601",
+      "result": {
+        "ok": true,
+        "driverId": "smoke_sensor",
+        "addedMfr": -18,
+        "addedPid": 0,
+        "wrote": false
+      }
+    }
+  ],
+  "softSample": [
+    {
+      "mfr": "_TZE284_ksz749x8",
+      "pid": "TS0601",
+      "model": "TS0601_temperature_humidity_sensor_2",
+      "desc": "Temperature and humidity sensor",
+      "via": "fingerprint()",
+      "driver": "climate_sensor",
+      "conf": 0.75,
+      "key": "_tze284_ksz749x8|TS0601"
+    },
+    {
+      "mfr": "_TZE2841000000_qf5mzewi",
+      "pid": "TS0601",
+      "model": "ZTH05Z",
+      "desc": "Temperature and humidity sensor",
+      "via": "fingerprint()",
+      "driver": "climate_sensor",
+      "conf": 0.75,
+      "key": "_tze2841000000_qf5mzewi|TS0601"
+    },
+    {
+      "mfr": "_TZ3000_bu47m8pv",
+      "pid": "TS0003",
+      "model": "TS0003_switch_module_2",
+      "desc": "3 gang switch module",
+      "via": "fingerprint()",
+      "driver": "wall_switch_3gang_1way",
+      "conf": 0.7,
+      "key": "_tz3000_bu47m8pv|TS0003"
+    },
+    {
+      "mfr": "_TZE200_qoy0ekbd",
+      "pid": "TS0601",
+      "model": "ZG-227ZL",
+      "desc": "Temperature & humidity LCD sensor",
+      "via": "fingerprint()",
+      "driver": "climate_sensor",
+      "conf": 0.75,
+      "key": "_tze200_qoy0ekbd|TS0601"
+    },
+    {
+      "mfr": "_TZ3000_fa9mlvja",
+      "pid": "TS0041",
+      "model": "IH-K663",
+      "desc": "Smart button",
+      "via": "fingerprint()",
+      "driver": "button_wireless_4",
+      "conf": 0.75,
+      "key": "_tz3000_fa9mlvja|TS0041"
+    },
+    {
+      "mfr": "_TZ3000_3o7r0mno",
+      "pid": "TS011F",
+      "model": "TS011F_with_threshold",
+      "desc": "Din rail switch with power monitoring and threshold settings",
+      "via": "fingerprint()",
+      "driver": "plug_energy_monitor",
+      "conf": 0.55,
+      "key": "_tz3000_3o7r0mno|TS011F"
+    }
+  ],
+  "skipSample": [
+    {
+      "mfr": "_TZE204_dak2k10o",
+      "pid": "TS0601",
+      "model": "TS0601_air_quality_sensor_2",
+      "desc": "Air quality sensor",
+      "via": "fingerprint()",
+      "driver": null,
+      "conf": 0,
+      "key": "_tze204_dak2k10o|TS0601"
+    },
+    {
+      "mfr": "_TZ3000_hktqahrq",
+      "pid": "WHD02",
+      "model": "TS0202",
+      "desc": "Motion sensor",
+      "via": "fingerprint()",
+      "driver": null,
+      "conf": 0,
+      "key": "_tz3000_hktqahrq|WHD02"
+    },
+    {
+      "mfr": "_TYZB01_7yidyqxd",
+      "pid": "TS0108",
+      "model": "TS0108",
+      "desc": "Socket with 2 USB",
+      "via": "fingerprint()",
+      "driver": null,
+      "conf": 0,
+      "key": "_tyzb01_7yidyqxd|TS0108"
+    },
+    {
+      "mfr": "_TZE284_znkkcauq",
+      "pid": "TS0601",
+      "model": "TS0601_switch_6_gang",
+      "desc": "6 gang switch",
+      "via": "fingerprint()",
+      "driver": null,
+      "conf": 0,
+      "key": "_tze284_znkkcauq|TS0601"
+    },
+    {
+      "mfr": "_TZE200_nkjintbl",
+      "pid": "TS0601",
+      "model": "TS0601_switch_2_gang",
+      "desc": "2 gang switch",
+      "via": "fingerprint()",
+      "driver": null,
+      "conf": 0,
+      "key": "_tze200_nkjintbl|TS0601"
+    },
+    {
+      "mfr": "_TZE28C1000000_jlbsptkl",
+      "pid": "TS0601",
+      "model": "_TZE28C1000000_jlbsptkl",
+      "desc": "Human sresence sensor 1-gang smart switch",
+      "via": "fingerprint()",
+      "driver": null,
+      "conf": 0,
+      "key": "_tze28c1000000_jlbsptkl|TS0601"
+    },
+    {
+      "mfr": "_TYZB01_4mdqxxnn",
+      "pid": "TS0222",
+      "model": "TS0222",
+      "desc": "Light intensity sensor",
+      "via": "fingerprint()",
+      "driver": null,
+      "conf": 0,
+      "key": "_tyzb01_4mdqxxnn|TS0222"
+    },
+    {
+      "mfr": "_TYZB01_m6ec2pgj",
+      "pid": "TS0222",
+      "model": "TS0222",
+      "desc": "Light intensity sensor",
+      "via": "fingerprint()",
+      "driver": null,
+      "conf": 0,
+      "key": "_tyzb01_m6ec2pgj|TS0222"
+    },
+    {
+      "mfr": "_TZ3000_j6adk9id",
+      "pid": "TS0222",
+      "model": "TS0222_solar_light",
+      "desc": "Solar light sensor",
+      "via": "fingerprint()",
+      "driver": null,
+      "conf": 0,
+      "key": "_tz3000_j6adk9id|TS0222"
+    },
+    {
+      "mfr": "_TZ3290_rlkmy85q4pzoxobl",
+      "pid": "TS1201",
+      "model": "",
+      "desc": "Universal smart IR remote control",
+      "via": "fingerprint()",
+      "driver": null,
+      "conf": 0,
+      "key": "_tz3290_rlkmy85q4pzoxobl|TS1201"
+    },
+    {
+      "mfr": "_TZ3290_yac64inudpovoaba",
+      "pid": "TS1201",
+      "model": "",
+      "desc": "Universal smart IR remote control",
+      "via": "fingerprint()",
+      "driver": null,
+      "conf": 0,
+      "key": "_tz3290_yac64inudpovoaba|TS1201"
+    },
+    {
+      "mfr": "_TZ3290_uc8lwbi2",
+      "pid": "TS1201",
+      "model": "",
+      "desc": "Universal smart IR remote control",
+      "via": "fingerprint()",
+      "driver": null,
+      "conf": 0,
+      "key": "_tz3290_uc8lwbi2|TS1201"
+    },
+    {
+      "mfr": "_TZ3290_8xzb2ghn",
+      "pid": "TS1201",
+      "model": "",
+      "desc": "Universal smart IR remote control",
+      "via": "fingerprint()",
+      "driver": null,
+      "conf": 0,
+      "key": "_tz3290_8xzb2ghn|TS1201"
+    },
+    {
+      "mfr": "_TZE28C1000000_z5jz7wpo",
+      "pid": "TS0601",
+      "model": "TS0601_fan_switch",
+      "desc": "Fan switch",
+      "via": "fingerprint()",
+      "driver": null,
+      "conf": 0,
+      "key": "_tze28c1000000_z5jz7wpo|TS0601"
+    },
+    {
+      "mfr": "_TZE20C1000000_p3g8xiug",
+      "pid": "TS0601",
+      "model": "TS0601_3ch_bidirectional_meter",
+      "desc": "3-channel bidirectional smart energy meter with relay",
+      "via": "fingerprint()",
+      "driver": null,
+      "conf": 0,
+      "key": "_tze20c1000000_p3g8xiug|TS0601"
+    },
+    {
+      "mfr": "_TZE284_lyqazpe6",
+      "pid": "TS0601",
+      "model": "TOQCB2-80",
+      "desc": "Smart circuit breaker",
+      "via": "fingerprint()",
+      "driver": null,
+      "conf": 0,
+      "key": "_tze284_lyqazpe6|TS0601"
+    },
+    {
+      "mfr": "_TZE204_lyqazpe6",
+      "pid": "TS0601",
+      "model": "TOQCB2-80",
+      "desc": "Smart circuit breaker",
+      "via": "fingerprint()",
+      "driver": null,
+      "conf": 0,
+      "key": "_tze204_lyqazpe6|TS0601"
+    },
+    {
+      "mfr": "_TZE20C_tjz9ad5g",
+      "pid": "TS0601",
+      "model": "MG-BJQ002",
+      "desc": "Plug-in smart siren alarm with RGB night light",
+      "via": "fingerprint()",
+      "driver": null,
+      "conf": 0,
+      "key": "_tze20c_tjz9ad5g|TS0601"
+    },
+    {
+      "mfr": "_TZE284_n41i9jyt",
+      "pid": "TS0601",
+      "model": "GX03",
+      "desc": "GIEX 2-zone watering timer",
+      "via": "fingerprint()",
+      "driver": null,
+      "conf": 0,
+      "key": "_tze284_n41i9jyt|TS0601"
+    },
+    {
+      "mfr": "_TZE284_d4h8j2n6",
+      "pid": "ZP-301Z",
+      "model": "ZP-301Z",
+      "desc": "PIR motion sensor light with night light function",
+      "via": "fingerprint()",
+      "driver": null,
+      "conf": 0,
+      "key": "_tze284_d4h8j2n6|ZP-301Z"
+    }
+  ]
+}
