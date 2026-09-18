@@ -34,6 +34,8 @@ const OMIT_TITLEFORMATTED_DRIVERS = new Set([
   'wifi_ir_remote',
   'blaster_remote',
   'ir_blaster',
+  // P2590c Clear presence action — same Athom vs [[device]] catch-22 as IR
+  'presence_sensor_radar',
 ]);
 
 /** Capability → trigger template + patterns that mean "already covered". */

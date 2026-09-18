@@ -241,7 +241,10 @@ function checkAntiPatternRules() {
       : 'clean',
   });
 
-  // Flow card titleFormatted [[device]] ban — only compose flow files
+  // Flow card titleFormatted [[device]] ban — TRIGGERS only (P2590c).
+  // Actions with a device arg: omit titleFormatted (wifi_ir / Clear presence),
+  // or Athom requires [[device]] while this gate forbids it — catch-22.
+  // enforce-rules.js + syntax-check.yml match: triggers fail, actions omit TF.
   const titleHits = [];
   const driversAbs = path.join(ROOT, 'drivers');
   if (fs.existsSync(driversAbs)) {
@@ -250,13 +253,19 @@ function checkAntiPatternRules() {
       const rel = path.join('drivers', ent.name, 'driver.flow.compose.json').replace(/\\/g, '/');
       const text = readText(rel);
       if (!text) continue;
-      if (text.includes('[[device]]') && /titleFormatted/.test(text)) titleHits.push(rel);
+      let flow;
+      try { flow = JSON.parse(text); } catch (_) { continue; }
+      for (const t of flow.triggers || []) {
+        if (t.titleFormatted && JSON.stringify(t.titleFormatted).includes('[[device]]')) {
+          titleHits.push(`${rel}#${t.id}`);
+        }
+      }
     }
   }
   results.push({
     id: 'flow-titleformatted-device',
     severity: 'fatal',
-    title: 'No titleFormatted with [[device]] in driver.flow.compose.json',
+    title: 'No titleFormatted with [[device]] in Flow TRIGGERS',
     era: 'flow manual-select bug',
     ok: titleHits.length === 0,
     detail: titleHits.length ? titleHits.slice(0, 8).join('; ') : 'clean',

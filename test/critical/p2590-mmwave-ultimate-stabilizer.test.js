@@ -41,7 +41,9 @@ describe('P2590 mmWave Ultimate Stabilizer', () => {
     assert.ok(src.includes('_pushAllRadarSettingsToDevice'));
     assert.ok(src.includes('clearStuckPresence'));
     const flow = JSON.parse(fs.readFileSync(FLOW, 'utf8'));
-    assert.ok((flow.actions || []).some((a) => a.id === 'presence_sensor_radar_clear_presence'));
+    const clear = (flow.actions || []).find((a) => a.id === 'presence_sensor_radar_clear_presence');
+    assert.ok(clear, 'clear presence action');
+    assert.equal(clear.titleFormatted, undefined, 'P2590c omit titleFormatted');
     const settings = JSON.parse(fs.readFileSync(SETTINGS, 'utf8'));
     assert.ok(settings.some((s) => s.id === 'survival_watchdog'));
     assert.ok(settings.some((s) => s.id === 'clear_presence_now'));
