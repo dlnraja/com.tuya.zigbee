@@ -41,8 +41,13 @@ describe('P2511 VicHY clrdrnya MTG075 residual', () => {
     assert.equal(cfg.syncPresenceFromDistanceInference, false);
     assert.equal(cfg.dpMap[1].unreliable, false);
     const tuyaSrc = fs.readFileSync(path.join(ROOT, 'lib/tuya/TuyaSensorDatabase.js'), 'utf8');
-    assert.ok(/MTG075_ZB_RL_RELAY[\s\S]{0,1200}unreliable:\s*false/.test(tuyaSrc));
-    assert.ok(tuyaSrc.includes('clearPresenceOnZeroDistance'));
+    const mtgIdx = tuyaSrc.indexOf("'MTG075_ZB_RL_RELAY'");
+    assert.ok(mtgIdx >= 0);
+    // WHY(P2579): P2577/P2579 flags sit above dpMap — keep window large enough for Contre quoi
+    const mtgBlock = tuyaSrc.slice(mtgIdx, mtgIdx + 2800);
+    assert.ok(/unreliable:\s*false/.test(mtgBlock));
+    assert.ok(mtgBlock.includes('clearPresenceOnZeroDistance'));
+    assert.ok(mtgBlock.includes('healForcedOccupiedOnSoftClear'));
   });
 
   it('distance≈0 clears sticky presence when unreliable (gkfbdvyx Contre quoi)', () => {
