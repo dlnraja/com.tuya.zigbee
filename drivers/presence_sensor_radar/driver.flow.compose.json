@@ -442,5 +442,34 @@
       }
     }
   ],
-  "actions": []
+  "actions": [
+    {
+      "id": "presence_sensor_radar_clear_presence",
+      "title": {
+        "en": "Clear presence (maintenance)",
+        "nl": "Presence wissen (onderhoud)",
+        "fr": "Effacer la présence (maintenance)",
+        "de": "Anwesenheit löschen (Wartung)"
+      },
+      "titleFormatted": {
+        "en": "Clear presence (maintenance)",
+        "nl": "Presence wissen (onderhoud)",
+        "fr": "Effacer la présence (maintenance)",
+        "de": "Anwesenheit löschen (Wartung)"
+      },
+      "hint": {
+        "en": "Force Homey presence OFF when the radar is stuck Occupied (ghost presence / MCU). Does not require unplugging.",
+        "nl": "Forceer Homey-presence UIT bij vastzittende Occupied (ghost / MCU).",
+        "fr": "Force la présence Homey à OFF si le radar reste Occupé (fantôme / MCU). Sans débrancher.",
+        "de": "Homey-Anwesenheit auf AUS setzen bei hängendem Occupied."
+      },
+      "args": [
+        {
+          "type": "device",
+          "name": "device",
+          "filter": "driver_id=presence_sensor_radar"
+        }
+      ]
+    }
+  ]
 }

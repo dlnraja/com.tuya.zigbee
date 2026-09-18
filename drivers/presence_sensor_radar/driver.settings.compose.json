@@ -121,5 +121,20 @@
       "fr": "Si lux/distance bougent mais la présence ne change plus: couper le 220V 2–3 min (MCU partiellement figé). Baisser aussi sensibilité 2–4 — défaut 7–9 ne clear souvent jamais en salle de bain.",
       "nl": "Als lux/afstand nog updaten maar presence vastzit: 2–3 min stekker eruit (MCU freeze). Verlaag ook gevoeligheid naar 2–4."
     }
+  },
+  {
+    "id": "clear_presence_now",
+    "type": "checkbox",
+    "label": {
+      "en": "Clear presence now (maintenance)",
+      "fr": "Effacer la présence maintenant (maintenance)",
+      "nl": "Presence nu wissen (onderhoud)"
+    },
+    "hint": {
+      "en": "Force Homey presence OFF without unplugging. Use when ghost presence stuck. Also available as a Flow action.",
+      "fr": "Force la présence Homey à OFF sans débrancher. Pour présence fantôme coincée. Aussi en carte Flow.",
+      "nl": "Forceer Homey-presence UIT zonder stekker. Ook als Flow-actie."
+    },
+    "value": false
   }
 ]

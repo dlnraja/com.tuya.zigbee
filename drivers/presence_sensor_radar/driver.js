@@ -93,6 +93,24 @@ class PresenceSensorRadarDriver extends ZigBeeDriver {
       }
     }
 
+    // WHY(P2589): Flow action — clear stuck Occupied without unplug (same Contre quoi as ZHA refresh)
+    try {
+      const clearCard = this.homey.flow.getActionCard('presence_sensor_radar_clear_presence');
+      if (clearCard) {
+        clearCard.registerRunListener(async (args) => {
+          const d = args.device;
+          if (!d || typeof d.clearStuckPresence !== 'function') return false;
+          await d.clearStuckPresence({ source: 'flow' });
+          return true;
+        });
+        this.log('[FLOW] Action presence_sensor_radar_clear_presence registered');
+      }
+    } catch (err) {
+      if (this.developerDebugMode) {
+        this.error(`[FLOW] clear_presence registration error: ${err.message}`);
+      }
+    }
+
     this.log('[FLOW] Presence sensor radar flow cards registered');
   }
 }
