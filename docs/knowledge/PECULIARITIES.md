@@ -196,7 +196,7 @@ Generated 2026-09-15T08:05:31.976Z from registry (220 cases) × compound DB (509
 - Compound `_tze284_clrdrnya|TS0601`: tuya_dp  VicHY #2224/#2227 MTG075 mmWave radar 220V
 - Compound `_TZE284_CLRDRNYA|TS0601`: tuya_dp  VicHY #2224/#2227 MTG075 mmWave radar 220V
 - Compose: class=sensor eps=1 EF00=true IAS=false batteries=mains?
-- Notes: VicHY #2224/#2227 MTG075 220V AC ceiling mmWave presence radar. Forbid curtain_motor phantom flip. **P2579:** Z2M sensor=occupied forces permanent presence (heal DP115→on on soft-clear); distance often quantized; 24G detection_range avoid &lt;2.5m; departure_delay ≥15s. **P2584:** Smart presence while Occupied — Homey drives alarm_motion from distance/lux; DP1 ignored; Occupied firmware kept unless auto_unlock_occupied_on_empty.
+- Notes: VicHY #2224/#2227 MTG075 220V AC ceiling mmWave presence radar. Forbid curtain_motor phantom flip. **P2579:** Z2M sensor=occupied forces permanent presence (heal DP115→on on soft-clear); distance often quantized; 24G detection_range avoid &lt;2.5m; departure_delay ≥15s. **P2584:** Smart presence while Occupied — Homey drives alarm_motion from distance/lux; DP1 ignored; Occupied firmware kept unless auto_unlock_occupied_on_empty. **Forum #2250 (2026-09-18):** @ 9.0.1037 Repair fixed Curtain flip + lux/distance (was 1–2 lux / wrong metres); settings Sensitivity 5 / Range 3 m / Departure 20 s / Entry 6 / Illum 50; empty bathroom fan+AC off OK after double Repair. **#2252:** tip 9.0.1053 regress — stuck Occupied + bad lux/distance again → needs tip ≥**9.0.1066** Software Shield (anti-spam + survival watchdog + MCU restore + Clear presence) then Repair.
 - **Gaps:** no_sources
 
 ### `hobeian-aubess-k4ej3ww2-ias` → `water_leak_sensor`
@@ -1564,7 +1564,7 @@ Generated 2026-09-15T08:05:31.976Z from registry (220 cases) × compound DB (509
 - Compound `_TZE204_ogx8u5z6|TS0601`: tuya_dp  P2278 me167/thermostat_3 DPs + cal DP47 /10 (ZHA#4124)
 - Compound `_TZE284_ogx8u5z6|TS0601`: tuya_dp  P2278 sibling ogx8u5z6
 - Compose: class=thermostat eps=1 EF00=false IAS=false batteries=AA
-- Notes: P2278 me167 profile + DP47 cal ÷10 (ZHA#4124 / Z2M#25199 user firmware); other ME167 stay whole °C
+- Notes: P2278 me167 profile + DP47 cal ÷10 (ZHA#4124 / Z2M#25199 user firmware); other ME167 stay whole °C. **P2569** Michaelp #2244 ZG253 TZE284 EF00-only compose. **P2593 #2253:** setpoint TX must not use `datapoint({value,type})` — Homey rejects as unexpected property; use EF00Manager/UniversalDriverInit; tip ≥9.0.1068 + Repair.
 - Sources: zha-device-handlers#4124, zigbee2mqtt#25199, P2278
 
 ### `p2279-1fuxihti-cover-not-climate` → `curtain_motor`

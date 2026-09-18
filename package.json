@@ -1,6 +1,6 @@
 {
   "name": "com.dlnraja.tuya.zigbee",
-  "version": "9.0.1066",
+  "version": "9.0.1068",
   "description": "Tuya Unified Zigbee - Local-first control with AI automation",
   "main": "app.js",
   "scripts": {
@@ -463,7 +463,8 @@
     "check:p2586": "node --test test/critical/p2586-homey-ram-lazy-dynamic.test.js",
     "check:p2587": "node --test test/critical/p2587-vichy-dual-curtain-sticky.test.js",
     "check:p2589": "node --test test/critical/p2589-radar-mcu-restore-clear-presence.test.js",
-    "check:p2590": "node --test test/critical/p2590-mmwave-ultimate-stabilizer.test.js"
+    "check:p2590": "node --test test/critical/p2590-mmwave-ultimate-stabilizer.test.js",
+    "check:p2593": "node --test test/critical/p2593-michaelp-ogx8u5z6-datapoint-tx.test.js"
   },
   "keywords": [
     "homey",

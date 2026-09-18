@@ -268,16 +268,31 @@ class RadiatorValveDevice extends PhysicalButtonMixin(VirtualButtonMixin(Unified
     if (this.hasCapability('target_temperature')) {
       this.registerCapabilityListener('target_temperature', async (v) => {
         const dp = profile === 'me167' ? 4 : 3;
-        await this._sendTuyaDP(dp, safeMultiply(Math.round(v), 10), 'value');
+        await this._sendTuyaDP(dp, Math.round(safeMultiply(Number(v), 10)), 'value');
       });
     }
   }
 
-  async _sendTuyaDP(dp, value, type) {
-    const tuya = this.zclNode?.endpoints?.[1]?.clusters?.tuya;
-    if (tuya?.datapoint) {
-      this.log(`[TRV] Sending DP${dp} = ${value} (${type})`);
-      await tuya.datapoint({ dp, value, type } );
+  /**
+   * WHY(P2593 / Michaelp #2253): never pass {value,type} to cluster.datapoint
+   */
+  async _sendTuyaDP(dp, value, type = 'value') {
+    const typeName = type || 'value';
+    this.log(`[TRV] Sending DP${dp} = ${value} (${typeName})`);
+    try {
+      if (this.tuyaEF00Manager && typeof this.tuyaEF00Manager.sendDP === 'function') {
+        const ok = await this.tuyaEF00Manager.sendDP(dp, value, typeName);
+        if (ok) return true;
+      }
+      if (this.io && typeof this.io.sendDP === 'function') {
+        const ok = await this.io.sendDP(dp, value, { type: typeName });
+        if (ok) return true;
+      }
+      const { sendTuyaDP } = require('../../lib/helpers/UniversalDriverInit');
+      return !!(await sendTuyaDP(this, dp, value, typeName));
+    } catch (err) {
+      this.error(`[TRV] DP${dp} TX failed:`, err?.message || err);
+      throw err;
     }
   }
 
