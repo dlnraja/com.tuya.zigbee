@@ -1835,9 +1835,9 @@
         "nl": "Sensormodus"
       },
       "hint": {
-        "en": "Use On for normal presence. Occupied forces permanent presence (common bathroom false-positive). Unoccupied forces clear.",
-        "fr": "Utilisez Marche pour la présence normale. Occupé force la présence permanente (faux positifs salles de bain). Inoccupé force l’absence.",
-        "nl": "Gebruik Aan voor normale aanwezigheid. Bezet forceert permanente aanwezigheid (vaak vals positief in badkamers)."
+        "en": "On = normal radar. Occupied forces firmware presence ON forever — with Smart presence under Occupied, Homey still tracks real presence from distance/lux. Unoccupied forces clear.",
+        "fr": "Marche = radar normal. Occupé force la présence firmware à ON — avec Présence smart sous Occupé, Homey suit encore la vraie présence via distance/lux. Inoccupé force l’absence.",
+        "nl": "Aan = normale radar. Bezet forceert firmware-aanwezigheid permanent — met Slimme aanwezigheid onder Bezet volgt Homey nog echte aanwezigheid via afstand/lux."
       },
       "value": "on",
       "values": [
@@ -1860,9 +1860,9 @@
         {
           "id": "occupied",
           "label": {
-            "en": "Occupied (force present — avoid)",
-            "fr": "Occupé (force présent — à éviter)",
-            "nl": "Bezet (forceert aanwezig — vermijden)"
+            "en": "Occupied (firmware force — smart overlay OK)",
+            "fr": "Occupé (force firmware — overlay smart OK)",
+            "nl": "Bezet (firmware-force — slimme overlay OK)"
           }
         },
         {
@@ -1874,6 +1874,36 @@
           }
         }
       ]
+    },
+    {
+      "id": "smart_presence_while_occupied",
+      "type": "checkbox",
+      "label": {
+        "en": "Smart presence while Occupied",
+        "fr": "Présence smart sous Occupé",
+        "nl": "Slimme aanwezigheid bij Bezet"
+      },
+      "hint": {
+        "en": "When Sensor mode is Occupied, ignore forced DP1 and drive Homey presence from distance/lux. Distance, lux, relay and settings keep updating. Recommended ON.",
+        "fr": "Si le mode est Occupé, ignore DP1 forcé et pilote la présence Homey via distance/lux. Distance, lux, relais et réglages continuent. Recommandé ON.",
+        "nl": "Bij sensormodus Bezet: negeer geforceerde DP1 en stuur Homey-aanwezigheid via afstand/lux. Aanbevolen AAN."
+      },
+      "value": true
+    },
+    {
+      "id": "auto_unlock_occupied_on_empty",
+      "type": "checkbox",
+      "label": {
+        "en": "Auto-unlock Occupied when room empty",
+        "fr": "Déverrouiller Occupé si pièce vide",
+        "nl": "Bezet automatisch ontgrendelen bij lege kamer"
+      },
+      "hint": {
+        "en": "Write Sensor mode back to On after soft-clear (empty room). Off = keep Occupied firmware mode and rely on smart overlay.",
+        "fr": "Repasse le mode capteur sur Marche après soft-clear (pièce vide). Off = garde Occupé et s’appuie sur l’overlay smart.",
+        "nl": "Zet sensormodus terug naar Aan na soft-clear. Uit = houd Bezet en gebruik slimme overlay."
+      },
+      "value": false
     },
     {
       "id": "motion_false_detection",
