@@ -33,19 +33,19 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 
 | Metric | Value |
 |--------|-------|
-| **App Version** | v9.0.1022 |
+| **App Version** | v9.0.1027 |
 | **Drivers** | 431 (381 Zigbee + 50 WiFi) |
 | **Unique Fingerprints** | 4,679 |
-| **Pairing Variants** | 16,452 (4 case combos per fingerprint) |
+| **Pairing Variants** | 16,456 (4 case combos per fingerprint) |
 | **Unique Product IDs** | 594 |
 | **Flow Cards** | 6,021 |
 | **Unique Capabilities** | 170 |
 | **Native OTA Drivers** | 8 |
-| **Test Suites** | 374 files |
+| **Test Suites** | 377 files |
 | **SVG Icons** | 731 |
 | **Languages** | EN, FR, NL, DE |
 | **SDK / Homey** | 3 / >= 12.2.0 |
-| **Last Updated** | 2026-09-17 |
+| **Last Updated** | 2026-09-18 |
 
 ### Top 20 Drivers by Fingerprint Count
 
@@ -63,7 +63,7 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 | 10 | `switch_4gang` | 292 |
 | 11 | `motion_sensor` | 245 |
 | 12 | `switch_3gang` | 219 |
-| 13 | `contact_sensor` | 213 |
+| 13 | `contact_sensor` | 217 |
 | 14 | `diy_custom_zigbee` | 206 |
 | 15 | `thermostat_tuya_dp` | 197 |
 | 16 | `sensor_contact_zigbee` | 183 |
@@ -102,6 +102,10 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 
 | Version | Changes |
 |---------|---------|
+| **v9.0.1027** | VicHY MTG075: trust DP1 presence, keep relay onoff, soft-clear sticky empty-room presence; EF00 incomplete interview cascade. |
+| **v9.0.1026** | Incomplete Homey interview: intelligent DP/ZCL/raw RX-TX cascade (EF00-only + parallelDiscover). |
+| **v9.0.1025** | EF00-only pairing with ED00 extras (no OnOff 6); VicHY clrdrnya pure Tuya DP reinforce; ZG253 TRV #2244. |
+| **v9.0.1023** | P2572 publish fix: contact_sensor P126 no TS0601 + pay2byax ZG path; Johan mega coverage. |
 | **v9.0.1022** | Johan issues/PRs mega complementary coverage (radar/valve/CO2/plug/button/3gang) + dump pagination fix. |
 | **v9.0.1020** | P2571 mfs_db align after T26439 locks (c8ipbljq/tgeqdjgk/vvmbj46n). |
 | **v9.0.1019** | T26439 tip harvest: Hejhome 6-gang + knob dimmer + LCD TH locks; soil/radar/bed/lux couples reinforced. |
@@ -110,10 +114,6 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 | **v9.0.1016** | Forum fixes: ZG253 TRV ogx8u5z6 EF00 pairing (no OnOff cluster), sacred-keep; VicHY radar heal on tip. |
 | **v9.0.1015** | Soft Feature 200 vectors finalized end-to-end (alias resolve, path/welcome/mode recipes, enable-all flows). |
 | **v9.0.1014** | 200 unbranded Soft Feature vectors catalog + SoftRecipeRunner (path/welcome/lux/peak/idle/ambient recipes). |
-| **v9.0.1013** | More unbranded smart vectors: Quiet Hours, Contact Entry, Shade Daylight, Peak Load Soft Shed, Idle Auto-Off, Night Path bias. |
-| **v9.0.1012** | Multi-vendor unbranded gateway features: Soft Device Link, Lux Adaptive Dim, Mirror Sync, Welcome Home, Absence Energy, Staggered Leave Off. |
-| **v9.0.1011** | Full Soft Daylight Auto, Lamp Mesh Occupancy fusion, Soft Ambient Sync (BootBudget-safe Entertainment alternative). |
-| **v9.0.1010** | Soft Daylight Fade and Lamp Mesh Occupancy — branding-free gateway smart features; world Zigbee cartography. |
 
 <!-- CHANGELOG_END -->
 
