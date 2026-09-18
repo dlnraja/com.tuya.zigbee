@@ -1,4 +1,7 @@
 {
+  "9.0.1064": {
+    "en": "Presence radar: safe EF00 restore pacing (no bare timers); misattribution lookup tolerates string productId from enrich. Update Homey Test for stabilizer tip."
+  },
   "9.0.1063": {
     "en": "Publish unblock: Clear presence Flow uses title-only (no [[device]] catch-22). mmWave stabilizer (anti-spam, survival watchdog, MCU restore) ships to Test. Update Homey Test; use Clear presence if Occupied sticks."
   },
