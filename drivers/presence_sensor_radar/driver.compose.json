@@ -10,7 +10,6 @@
     "alarm_motion",
     "measure_luminance",
     "alarm_human",
-    "onoff",
     "measure_luminance.distance"
   ],
   "capabilitiesOptions": {
@@ -2003,6 +2002,6 @@
   "id": "presence_sensor_radar",
   "version": "1.0.0",
   "ui": {
-    "quickAction": "onoff"
+    "quickAction": "alarm_human"
   }
 }
