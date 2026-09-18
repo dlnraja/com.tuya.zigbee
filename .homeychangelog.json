@@ -1,4 +1,10 @@
 {
+  "9.0.1066": {
+    "en": "mmWave Software Shield API: forceClearPresence / triggerPresenceWatchdog / restoreTuyaParameters; ZG-204 lux anti-spam + survival watchdog; boot restore ~12s. Update Homey Test."
+  },
+  "9.0.1065": {
+    "en": "Presence radar Software Shield tip (anti-spam, survival watchdog, MCU restore, Clear presence). Update Homey Test."
+  },
   "9.0.1064": {
     "en": "Presence radar: safe EF00 restore pacing (no bare timers); misattribution lookup tolerates string productId from enrich. Update Homey Test for stabilizer tip."
   },
