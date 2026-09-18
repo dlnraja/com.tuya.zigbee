@@ -187,6 +187,18 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
       this.log(`[RADAR] P2548 refused removeCapability(${cap}) (presence lock)`);
       return;
     }
+    // WHY(P2575 / VicHY #2247): tip update stripped relay onoff on MTG075 — never drop it
+    // when config.hasRelay / known clrdrnya family (bathroom switch tile disappeared).
+    if (cap === 'onoff') {
+      try {
+        const cfg = this._getRadarConfig?.() || {};
+        const mfr = (MfrHelper.getManufacturerName(this) || '').toLowerCase();
+        if (cfg.hasRelay || /clrdrnya|sbyx0lm6/.test(mfr)) {
+          this.log('[RADAR] P2575 refused removeCapability(onoff) (MTG relay lock)');
+          return;
+        }
+      } catch (_e) { /* soft */ }
+    }
     if (typeof super.removeCapability === 'function') {
       return super.removeCapability(capability);
     }
@@ -651,6 +663,15 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
 
   async _applyRadarCapabilityProfile() {
     const requiredCaps = new Set(this.sensorCapabilities);
+    // WHY(P2575 / VicHY #2247): always keep relay onoff on required set for MTG family
+    // even if dpMap race left sensorCapabilities without it for one tick.
+    try {
+      const cfg = this._getRadarConfig() || {};
+      const mfr = (MfrHelper.getManufacturerName(this) || '').toLowerCase();
+      if (cfg.hasRelay || /clrdrnya|sbyx0lm6/.test(mfr)) {
+        requiredCaps.add('onoff');
+      }
+    } catch (_e) { /* soft */ }
     // WHY(P2490 / VicHY complementary): also list curtain phantoms in staleCaps so
     // profile apply strips them even if _healRadarPhantomCaps races / store DynCap lags.
     const staleCaps = [
@@ -663,7 +684,7 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
       'windowcoverings_state',
       'windowcoverings_tilt_set',
       'dim',
-      'onoff',
+      // WHY(P2575): do NOT list onoff here — requiredCaps gate already protects hasRelay
       'alarm_motion.zone1',
       'alarm_motion.zone2',
       'alarm_motion.zone3',
@@ -672,6 +693,13 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
       'measure_luminance.distance.zone3',
       'measure_motion.classification',
     ];
+    // Only strip onoff when this radar has no relay (battery HOBEIAN etc.)
+    try {
+      const cfg = this._getRadarConfig() || {};
+      if (!cfg.hasRelay) staleCaps.push('onoff');
+    } catch (_e) {
+      staleCaps.push('onoff');
+    }
 
     for (const cap of requiredCaps) {
       if (!this.hasCapability(cap)) {
@@ -944,6 +972,10 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
           this._commitPresenceAndFlows(inferred);
         }
       }
+      // WHY(P2575 / VicHY #2247 bathroom): DP1 can stick true while empty room distance≈0.
+      // Soft clear after sustained zero distance (default 90s) — does not fight P2534
+      // instantaneous flip-flop (needs sustained empty, not single DP9=0 frame).
+      this._softClearStuckPresenceOnZeroDistance(distance, config);
       // WHY(P2389): still feed inference every frame; only coalesce Homey capability writes
       if (this._shouldSkipFloodCalmDp(dpId, distance, config)) {return;}
       return this.safeSetCapabilityValue('measure_luminance.distance', distance).catch(() => {});
@@ -1086,6 +1118,37 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
     } catch (e) {
       this.error('[RADAR] DP refresh failed:', e.message);
     }
+  }
+
+  /**
+   * WHY(P2575 / VicHY #2247): sustained distance≈0 while alarm_motion stuck true —
+   * clear after soft window (bathroom false positive). Instant zero must NOT clear
+   * (P2534 flip-flop Contre quoi).
+   */
+  _softClearStuckPresenceOnZeroDistance(distance, config) {
+    try {
+      if (!(config?.floodCalm || config?.hasRelay)) return;
+      if (config.clearPresenceOnZeroDistance) return; // hard path already owns this
+      const d = Number(distance);
+      const now = Date.now();
+      if (!Number.isFinite(d) || d > 0.15) {
+        this._zeroDistSinceMs = 0;
+        return;
+      }
+      if (!this._zeroDistSinceMs) this._zeroDistSinceMs = now;
+      const holdMs = Number(config.softClearZeroDistanceMs) > 0
+        ? Number(config.softClearZeroDistanceMs)
+        : 90_000;
+      if (now - this._zeroDistSinceMs < holdMs) return;
+      if (this.getCapabilityValue?.('alarm_motion') !== true
+        && this.getCapabilityValue?.('alarm_human') !== true) {
+        this._zeroDistSinceMs = 0;
+        return;
+      }
+      this.log(`[RADAR] P2575 soft-clear stuck presence (distance≈${d}m for ${holdMs}ms)`);
+      this._zeroDistSinceMs = 0;
+      this._commitPresenceAndFlows(false);
+    } catch (_e) { /* soft */ }
   }
 
   /**

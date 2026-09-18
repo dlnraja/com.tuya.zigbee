@@ -3533,5 +3533,8 @@
   },
   "9.0.1026": {
     "en": "Incomplete Homey interview: intelligent DP/ZCL/raw RX-TX cascade (EF00-only + parallelDiscover)."
+  },
+  "9.0.1027": {
+    "en": "VicHY MTG075: trust DP1 presence, keep relay onoff, soft-clear sticky empty-room presence; EF00 incomplete interview cascade."
   }
 }
