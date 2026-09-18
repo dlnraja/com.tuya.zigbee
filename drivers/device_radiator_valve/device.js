@@ -54,6 +54,9 @@ class RadiatorValveDevice extends PhysicalButtonMixin(VirtualButtonMixin(Unified
         4: { capability: 'target_temperature', smartDivisor: true },
         5: { capability: 'measure_temperature', smartDivisor: true },
         7: { capability: 'child_lock', transform: (v) => v === true || v === 1 },
+        // Complementary battery DPs (Z2M thermostat_3 variants) — keep alarm on 35
+        13: { capability: 'measure_battery', divisor: 1 },
+        15: { capability: 'measure_battery', divisor: 1 },
         35: { capability: 'alarm_battery', transform: (v) => v === 1 },
         36: { capability: 'frost_protection', transform: (v) => v === true || v === 1 },
         39: { internal: true, type: 'anti_scaling', writable: true },
@@ -196,6 +199,16 @@ class RadiatorValveDevice extends PhysicalButtonMixin(VirtualButtonMixin(Unified
       this.log('[TRV-P2326] misroute check skipped:', e?.message || e);
     }
 
+    // WHY(P2594): after mfr settings filled, lock me167 maps + re-arm EF00 RX
+    // (super thermostat init may have run with empty mfr → wrong/empty dynamic maps)
+    try {
+      if (this.dpProfile === 'me167') {
+        this._dynamicDpMappings = { ...(this._dynamicDpMappings || {}), ...this.dpMappings };
+        this.log('[TRV] P2594 me167 DP maps re-locked after identity');
+      }
+      await this._setupTuyaDPMode?.();
+    } catch (_e) { /* soft */ }
+
     // Store manufacturerName for profile detection
     try {
       const mfr = this.getStoreValue('manufacturerName') || zclNode?.endpoints?.[1]?.clusters?.basic?.attributes?.manufacturerName?.value;
@@ -268,7 +281,7 @@ class RadiatorValveDevice extends PhysicalButtonMixin(VirtualButtonMixin(Unified
         const mgr = this.tuyaEF00Manager;
         if (!mgr || typeof mgr.requestDP !== 'function') return;
         const dps = this.dpProfile === 'me167'
-          ? [2, 3, 4, 5, 7, 35]
+          ? [2, 3, 4, 5, 7, 13, 15, 35]
           : [1, 2, 3, 4, 13, 15];
         this.log(`[TRV] P2593 refresh DPs ${dps.join(',')}`);
         for (const id of dps) {
