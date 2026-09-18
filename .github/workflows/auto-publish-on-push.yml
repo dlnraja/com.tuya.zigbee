@@ -126,6 +126,21 @@ jobs:
       - name: P246x anti-regression family
         run: npm run check:p246x
 
+      - name: Compact mfs_db before family gates (P2521d)
+        run: |
+          node -e "
+          const fs=require('fs');
+          const p='data/mfs_db.json';
+          const raw=fs.readFileSync(p,'utf8');
+          const lines=raw.trim().split(/\n/).length;
+          if (lines > 5) {
+            fs.writeFileSync(p, JSON.stringify(JSON.parse(raw)) + '\n');
+            console.log('P2521d recompacted mfs_db from', lines, 'lines');
+          } else {
+            console.log('P2521d mfs_db already compact');
+          }
+          "
+
       - name: P2487–P2490 IR + Smartbutton + complementary failover
         run: npm run check:p248x
 
@@ -133,8 +148,10 @@ jobs:
         run: npm run check:p249x
 
       - name: P257x VicHY radar / EF00 / anti-FP family
-        run: npm run check:p257x
+        run: |
+          npm run check:p257x
           npm run check:p2580
+          npm run check:p2581
 
       - name: P2286–P2288 + P2495 publish path aggregator
         run: npm run check:publish

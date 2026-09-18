@@ -1,6 +1,6 @@
 {
   "name": "com.dlnraja.tuya.zigbee",
-  "version": "9.0.1043",
+  "version": "9.0.1044",
   "description": "Tuya Unified Zigbee - Local-first control with AI automation",
   "main": "app.js",
   "scripts": {
@@ -451,7 +451,8 @@
     "check:p2577": "node --test test/critical/p2577-vichy-presence-anti-fp.test.js",
     "check:p2579": "node --test test/critical/p2579-mtg075-deep-harden.test.js",
     "check:p2580": "node --test test/critical/p2580-z2m-zha-complementary-transpose.test.js",
-    "check:p258x": "npm run check:p2580"
+    "check:p258x": "npm run check:p2580 && npm run check:p2581",
+    "check:p2581": "node --test test/critical/p2581-vichy-8d9d0199-relay-watchdog.test.js"
   },
   "keywords": [
     "homey",

@@ -122,9 +122,11 @@ const SENSOR_CONFIGS = {
     healForcedOccupiedOnSoftClear: true,
     quantizedDistanceSoftClear: true,
     mtg24gMinDetectionRangeM: 2.5,
-    softClearZeroDistanceMs: 45000,
-    softClearStableDistanceMs: 60000,
+    softClearZeroDistanceMs: 30000,
+    softClearStableDistanceMs: 30000,
     softClearIgnoreStickyDp1Ms: 90000,
+    // WHY(P2581): bathroom watchdog ticks soft-clear without waiting for throttled DP9
+    stickyPresenceWatchdogMs: 15000,
     presenceConfirmMs: 3000,
     dpThrottleMs: { 9: 2500, 104: 5000 },
     dpMinDelta: { 9: 0.15, 104: 2 },

@@ -34,7 +34,11 @@ describe('P2575 VicHY MTG075 presence + relay lock', () => {
       path.join(ROOT, 'drivers/presence_sensor_radar/device.js'),
       'utf8',
     );
-    assert.ok(src.includes('P2575 refused removeCapability(onoff)'));
+    assert.ok(
+      src.includes('P2575 refused removeCapability(onoff)')
+      || src.includes('P2581 refused removeCapability(onoff)'),
+      'relay onoff remove lock',
+    );
     assert.ok(src.includes('_softClearStuckPresenceOnZeroDistance'));
     assert.ok(src.includes('_ensureRelayOnoffCapability'));
     assert.ok(src.includes('requiredCaps.add(\'onoff\')') || src.includes('requiredCaps.add("onoff")'));
