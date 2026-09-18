@@ -29,7 +29,7 @@ describe('P2511 VicHY clrdrnya MTG075 residual', () => {
     // WHY(P2575/#2247): unreliable:true + floodCalm ignored presence / locked false positives
     assert.equal(cfg.dpMap[1].unreliable, false);
     assert.equal(cfg.dpMap[1].useInference, true);
-    assert.ok(cfg.softClearStableDistanceMs >= 60000);
+    assert.ok(cfg.softClearStableDistanceMs >= 30000);
     assert.ok(cfg.sensors.some((m) => /clrdrnya/i.test(m)));
   });
 

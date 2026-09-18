@@ -66,9 +66,7 @@
         "nl": "Detectieafstand",
         "de": "Erkennungsdistanz"
       },
-      "units": {
-        "en": "m"
-      },
+      "units": "m",
       "getable": true,
       "preventInsights": true
     },
@@ -109,9 +107,7 @@
         "nl": "Zone 1 Afstand",
         "de": "Zone 1 Distanz"
       },
-      "units": {
-        "en": "m"
-      },
+      "units": "m",
       "getable": true,
       "preventInsights": true
     },
@@ -122,9 +118,7 @@
         "nl": "Zone 2 Afstand",
         "de": "Zone 2 Distanz"
       },
-      "units": {
-        "en": "m"
-      },
+      "units": "m",
       "getable": true,
       "preventInsights": true
     },
@@ -135,9 +129,7 @@
         "nl": "Zone 3 Afstand",
         "de": "Zone 3 Distanz"
       },
-      "units": {
-        "en": "m"
-      },
+      "units": "m",
       "getable": true,
       "preventInsights": true
     },

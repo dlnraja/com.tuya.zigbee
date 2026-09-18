@@ -183,7 +183,11 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
    */
   async removeCapability(capability) {
     const cap = String(capability || '');
-    if (/^alarm_motion|^alarm_human$|^alarm_presence$|^button\.1$/.test(cap)) {
+    // WHY(P2577 / VicHY #2247 screenshot): lock ONLY primary presence caps.
+    // /^alarm_motion/ also matched alarm_motion.zoneN → MTG075 could never strip
+    // phantom multi-zone tiles (shown as "-" in bathroom UI).
+    if (cap === 'alarm_motion' || cap === 'alarm_human' || cap === 'alarm_presence'
+        || cap === 'button.1') {
       this.log(`[RADAR] P2548 refused removeCapability(${cap}) (presence lock)`);
       return;
     }
@@ -430,6 +434,23 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
             },
           }).catch(() => {});
           this.log('[RADAR] P2551 alarm_motion preventInsights (dedupe History)');
+        }
+      }
+      // WHY(P2577 / VicHY #2247): units must be string "m" — object {"en":"m"} renders
+      // Homey UI as "0 [object Object]" and breaks soft-clear readability.
+      if (this.hasCapability?.('measure_luminance.distance')) {
+        const curD = (typeof this.getCapabilityOptions === 'function'
+          && this.getCapabilityOptions('measure_luminance.distance')) || {};
+        if (curD.units != null && typeof curD.units !== 'string') {
+          await this.setCapabilityOptions('measure_luminance.distance', {
+            ...curD,
+            units: 'm',
+            title: curD.title || {
+              en: 'Detection Distance', fr: 'Distance de Détection',
+              nl: 'Detectieafstand', de: 'Erkennungsdistanz',
+            },
+          }).catch(() => {});
+          this.log('[RADAR] P2577 distance units coerced to string "m"');
         }
       }
       if (this.hasCapability?.('alarm_human')) {
@@ -924,6 +945,10 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
       }
 
       if (presence !== null) {
+        // WHY(P2577 / VicHY #2247 photos): bathroom sticky DP1 re-paints true after soft-clear.
+        // Gate true through anti-FP; clears stay immediate.
+        presence = this._gatePresenceAgainstFalsePositive(presence, config);
+        if (presence === null) return;
         // WHY(P2524 / diag 74e5cae7): UI painted presence but declared presence_* flow
         // triggers were never fired (sibling sensor_presence_radar did). Edge-fire only.
         this._commitPresenceAndFlows(presence);
@@ -956,13 +981,9 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
 
     // B. Handle distance DPs (feed inference)
     if (mapping.cap === 'measure_luminance.distance') {
-      let distance;
-      if (mapping.smartDivisor === true) {
-        const { smartParse } = require('../../lib/managers/SmartDivisorManager');
-        distance = smartParse(value, dpId, { capability: 'measure_luminance.distance' });
-      } else {
-        distance = value / (mapping.divisor || 100);
-      }
+      let distance = this._coerceDistanceMeters(value, mapping);
+      if (distance == null) return;
+      this._noteDistanceSample(distance);
       const inferred = this._ensureInference().updateDistance(distance);
       // WHY(P2509 / Z2M#30785): gkfbdvyx sticks DP1=true while DP9=0m — clear Homey presence
       if (config.clearPresenceOnZeroDistance && Number(distance) <= 0.05) {
@@ -1126,10 +1147,12 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
    * Bathroom walls keep a non-zero stagnant distance → zero-only clear never fires.
    * Soft-clear when (a) distance≈0 for softClearZeroDistanceMs OR (b) distance stable
    * within 0.2m for softClearStableDistanceMs while presence stuck true.
+   * WHY(P2577): after soft-clear arm sticky-DP1 ignore until distance/lux corroborates
+   * re-entry — Contre quoi firmware re-paints DP1=true every second in empty bathroom.
    */
   _softClearStuckPresenceOnZeroDistance(distance, config) {
     try {
-      if (!(config?.floodCalm || config?.hasRelay)) return;
+      if (!(config?.floodCalm || config?.hasRelay || config?.antiFalsePositive)) return;
       if (config.clearPresenceOnZeroDistance) return;
       const d = Number(distance);
       const now = Date.now();
@@ -1148,11 +1171,12 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
       if (d <= 0.15) {
         if (!this._zeroDistSinceMs) this._zeroDistSinceMs = now;
         const zeroHold = Number(config.softClearZeroDistanceMs) > 0
-          ? Number(config.softClearZeroDistanceMs) : 90_000;
+          ? Number(config.softClearZeroDistanceMs) : 45_000;
         if (now - this._zeroDistSinceMs >= zeroHold) {
-          this.log(`[RADAR] P2576 soft-clear (zero-distance≈${d}m for ${zeroHold}ms)`);
+          this.log(`[RADAR] P2577 soft-clear (zero-distance≈${d}m for ${zeroHold}ms)`);
           this._zeroDistSinceMs = 0;
           this._stableDistSinceMs = 0;
+          this._armStickyDp1Ignore(config);
           this._commitPresenceAndFlows(false);
           return;
         }
@@ -1169,14 +1193,141 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
       }
       if (!this._stableDistSinceMs) this._stableDistSinceMs = now;
       const stableHold = Number(config.softClearStableDistanceMs) > 0
-        ? Number(config.softClearStableDistanceMs) : 120_000;
+        ? Number(config.softClearStableDistanceMs) : 60_000;
       if (now - this._stableDistSinceMs >= stableHold) {
-        this.log(`[RADAR] P2576 soft-clear (stagnant distance≈${d}m for ${stableHold}ms)`);
+        this.log(`[RADAR] P2577 soft-clear (stagnant distance≈${d}m for ${stableHold}ms)`);
         this._stableDistSinceMs = 0;
         this._stableDistAnchor = null;
+        this._armStickyDp1Ignore(config);
         this._commitPresenceAndFlows(false);
       }
     } catch (_e) { /* soft */ }
+  }
+
+  /**
+   * WHY(P2577 / VicHY #2247 photo "0 [object Object]" + sticky Sí):
+   * Coerce DP9 / smartParse into a finite meters number — never setCapability(object).
+   */
+  _coerceDistanceMeters(value, mapping = {}) {
+    try {
+      let raw = value;
+      if (raw != null && typeof raw === 'object' && !Buffer.isBuffer(raw)) {
+        raw = raw.value ?? raw.data ?? raw.v ?? raw.distance ?? null;
+      }
+      if (Buffer.isBuffer(raw)) {
+        raw = raw.length >= 4 ? raw.readUInt32BE(0) : raw[0];
+      }
+      if (mapping.smartDivisor === true) {
+        const { smartParse } = require('../../lib/managers/SmartDivisorManager');
+        const parsed = smartParse(raw, mapping.dpId || 9, { capability: 'measure_luminance.distance' });
+        const n = Number(parsed);
+        return Number.isFinite(n) ? n : null;
+      }
+      const n = Number(raw);
+      if (!Number.isFinite(n)) return null;
+      const div = Number(mapping.divisor) > 0 ? Number(mapping.divisor) : 100;
+      return n / div;
+    } catch (_e) {
+      return null;
+    }
+  }
+
+  _noteDistanceSample(distance) {
+    const d = Number(distance);
+    if (!Number.isFinite(d)) return;
+    const now = Date.now();
+    if (!Array.isArray(this._distanceSamples)) this._distanceSamples = [];
+    this._distanceSamples.push({ d, t: now });
+    if (this._distanceSamples.length > 12) this._distanceSamples.shift();
+    this._lastDistanceM = d;
+    this._lastDistanceAt = now;
+  }
+
+  _armStickyDp1Ignore(config) {
+    const hold = Number(config?.softClearIgnoreStickyDp1Ms) > 0
+      ? Number(config.softClearIgnoreStickyDp1Ms) : 90_000;
+    this._ignoreStickyDp1Until = Date.now() + hold;
+    this.log(`[RADAR] P2577 ignore sticky DP1 true for ${hold}ms (need entry corroboration)`);
+  }
+
+  /**
+   * Entry corroboration: distance jumped or lux changed recently → real person.
+   * Static mmWave standing still is OK once already present (gate only blocks re-assert).
+   */
+  _distanceCorroboratesPresence() {
+    try {
+      const now = Date.now();
+      const samples = Array.isArray(this._distanceSamples) ? this._distanceSamples : [];
+      const recent = samples.filter((s) => now - s.t < 15_000);
+      if (recent.length >= 2) {
+        let min = recent[0].d;
+        let max = recent[0].d;
+        for (const s of recent) {
+          if (s.d < min) min = s.d;
+          if (s.d > max) max = s.d;
+        }
+        if (max - min >= 0.25) return true;
+      }
+      const d = Number(this._lastDistanceM);
+      if (Number.isFinite(d) && d > 0.35
+          && this._lastDistanceAt && (now - this._lastDistanceAt) < 10_000) {
+        // Fresh non-zero target after a soft-clear is enough for bathroom entry
+        if (this._ignoreStickyDp1Until && now < this._ignoreStickyDp1Until) {
+          return d > 0.35;
+        }
+      }
+      const inf = this._inference;
+      if (inf?.state?.luxChangeRate > 8) return true;
+      return false;
+    } catch (_e) {
+      return false;
+    }
+  }
+
+  /**
+   * WHY(P2577): asymmetric anti-FP for MTG075 bathrooms.
+   * - false → always accept (immediate clear)
+   * - true during sticky-ignore → require corroboration
+   * - true otherwise → accept (static presence OK)
+   * Returns null to drop the frame (keep current Homey state).
+   */
+  _gatePresenceAgainstFalsePositive(presence, config) {
+    if (!config?.antiFalsePositive) return presence;
+    if (presence === false || presence === 0) {
+      this._pendingPresenceTrueSince = 0;
+      return false;
+    }
+    if (presence !== true && presence !== 1 && presence !== 2) return presence;
+
+    const now = Date.now();
+    if (this._ignoreStickyDp1Until && now < this._ignoreStickyDp1Until) {
+      if (this._distanceCorroboratesPresence()) {
+        this._ignoreStickyDp1Until = 0;
+        this._pendingPresenceTrueSince = 0;
+        this.log('[RADAR] P2577 sticky ignore lifted (entry corroborated)');
+        return true;
+      }
+      this.log('[RADAR] P2577 drop sticky DP1 true (empty bathroom / no entry motion)');
+      return null;
+    }
+
+    // Optional rising-edge confirm when distance looks empty (0 / NaN) — avoid instant FP
+    const d = Number(this._lastDistanceM);
+    const distLooksEmpty = !Number.isFinite(d) || d <= 0.15;
+    if (distLooksEmpty && !this._distanceCorroboratesPresence()) {
+      if (!this._pendingPresenceTrueSince) this._pendingPresenceTrueSince = now;
+      const need = Number(config.presenceConfirmMs) > 0 ? Number(config.presenceConfirmMs) : 3000;
+      if (now - this._pendingPresenceTrueSince < need) {
+        return null;
+      }
+      // Sustained DP1 with distance≈0 → treat as sticky FP, arm ignore instead of paint
+      this._pendingPresenceTrueSince = 0;
+      this._armStickyDp1Ignore(config);
+      this.log('[RADAR] P2577 refuse sustained DP1 true @ distance≈0');
+      return false;
+    }
+    this._pendingPresenceTrueSince = 0;
+    return true;
   }
 
   /**

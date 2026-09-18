@@ -66,5 +66,5 @@ discourse-cdn (screenshots), github.com/dlnraja#531 (Elliot CO2), bseed.com (Pre
 ## P2569 (2026-09-17 silent)
 - **#2244** Michaelp `_TZE284_ogx8u5z6`+`TS0601` ZG253 TRV: Homey Unknown because compose required OnOff `6` while interview is `[0,4,5,61184,60672]`. Fixed clusters + sacred-keep + **P2573** soft-compatible EF00 (ED00 extras OK). Tip ≥**9.0.1025** → remove + re-pair as Radiator Valve TRV.
 - **#2243** VicHY clrdrnya @ 9.0.992: tip-lag vs heal; **P2573** forcePureTuyaDp on radar. Update Test ≥**9.0.1025** + restart; re-pair only if still curtain UI.
-- **#2246/#2247** VicHY @ **9.0.1016–1021** (diag **8d9d0199**): presence stalls / curtain flip / relay onoff gone / sticky true — **P2575/P2576** trust DP1 + restore onoff + soft-clear stagnant bathroom distance. Tip ≥**9.0.1028** → update Test + restart app (both bathrooms). Re-pair only if class still curtain.
+- **#2246/#2247** VicHY @ **9.0.1016–1021** (diag **8d9d0199**): sticky Sí presence + missing relay onoff + distance UI `0 [object Object]` + phantom zones. **P2575–P2577**: trust DP1 clears, soft-clear empty bathroom, **antiFalsePositive** sticky-ignore until entry distance jump, units=`"m"`, unlock zone strip, restore onoff. Tip ≥**9.0.1032** — update Test + restart **both** bathrooms. Re-pair only if class still curtain. No forum POST.
 - Peter #2239 battery OK on tip. No forum POST.

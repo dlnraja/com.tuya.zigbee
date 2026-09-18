@@ -1,4 +1,7 @@
 {
+  "9.0.1032": {
+    "en": "Presence radar: fewer bathroom false positives, fix distance display, restore relay switch. Update Homey Test and restart the app on both sensors."
+  },
   "9.0.1030": {
     "en": "Presence radar: trust presence DP, keep sensor on/off, clear sticky empty-room detections. Update Homey Test and restart the app on both units."
   },

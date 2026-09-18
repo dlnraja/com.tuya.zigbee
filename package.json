@@ -1,6 +1,6 @@
 {
   "name": "com.dlnraja.tuya.zigbee",
-  "version": "9.0.1030",
+  "version": "9.0.1032",
   "description": "Tuya Unified Zigbee - Local-first control with AI automation",
   "main": "app.js",
   "scripts": {
@@ -441,13 +441,14 @@
     "check:p2573": "node --test test/critical/p2573-ef00-only-compatible-vichy.test.js",
     "check:p2574": "node --test test/critical/p2574-incomplete-interview-intelligent-rxtx.test.js",
     "check:p2575": "node --test test/critical/p2575-vichy-mtg075-presence-relay.test.js",
-    "check:p257x": "npm run check:p2570 && npm run check:p2571 && npm run check:p2572 && npm run check:p2573 && npm run check:p2574 && npm run check:p2575",
+    "check:p257x": "npm run check:p2570 && npm run check:p2571 && npm run check:p2572 && npm run check:p2573 && npm run check:p2574 && npm run check:p2575 && npm run check:p2577",
     "enrich:johan": "node tools/ci/johan-dump.js --incremental && node tools/ci/p2570-johan-complementary-enrich.js",
     "enrich:johan:apply": "node tools/ci/p2570-johan-complementary-enrich.js --apply",
     "enrich:johan:mega": "node tools/ci/johan-dump.js && node tools/ci/p2572-johan-mega-complementary.js",
     "enrich:johan:mega:apply": "node tools/ci/p2572-johan-mega-complementary.js --apply",
     "enrich:t26439": "node tools/ci/p2571-t26439-deep-harvest.js && node tools/ci/p2571-t26439-complementary-enrich.js",
-    "enrich:t26439:apply": "node tools/ci/p2571-t26439-complementary-enrich.js --apply"
+    "enrich:t26439:apply": "node tools/ci/p2571-t26439-complementary-enrich.js --apply",
+    "check:p2577": "node --test test/critical/p2577-vichy-presence-anti-fp.test.js"
   },
   "keywords": [
     "homey",
