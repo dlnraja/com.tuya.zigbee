@@ -2,7 +2,7 @@
   {
     "id": "radar_sensitivity",
     "type": "number",
-    "label": { "en": "Radar sensitivity", "fr": "Sensibilité radar" },
+    "label": { "en": "Radar sensitivity", "fr": "Sensibilité radar", "nl": "Radargevoeligheid" },
     "value": 7,
     "min": 0,
     "max": 9
@@ -10,26 +10,35 @@
   {
     "id": "detection_range",
     "type": "number",
-    "label": { "en": "Detection range", "fr": "Portée de détection" },
-    "hint": { "en": "Meters (device stores cm/100)" },
+    "label": { "en": "Detection range", "fr": "Portée de détection", "nl": "Detectiebereik" },
+    "hint": {
+      "en": "Meters. For 24G MTG075/MTG235 avoid below ~2.5m (unstable).",
+      "fr": "Mètres. Sur 24G MTG075/MTG235 éviter <~2,5 m (instable).",
+      "nl": "Meters. Bij 24G MTG075/MTG235 liever niet onder ~2,5 m."
+    },
     "value": 6,
     "min": 0,
     "max": 8,
-    "units": { "en": "m" }
+    "units": "m"
   },
   {
     "id": "departure_delay",
     "type": "number",
-    "label": { "en": "Departure delay", "fr": "Délai de départ" },
+    "label": { "en": "Departure delay", "fr": "Délai de départ", "nl": "Vertrekvertraging" },
+    "hint": {
+      "en": "Seconds after target leaves before clear. Manufacturer recommends ≥15s (lower causes false clears).",
+      "fr": "Secondes après départ avant clear. Fabricant recommande ≥15s (plus bas → faux négatifs).",
+      "nl": "Seconden na vertrek voor clear. Fabrikant adviseert ≥15s."
+    },
     "value": 30,
     "min": 0,
     "max": 3600,
-    "units": { "en": "s" }
+    "units": "s"
   },
   {
     "id": "entry_sensitivity",
     "type": "number",
-    "label": { "en": "Entry sensitivity", "fr": "Sensibilité d'entrée" },
+    "label": { "en": "Entry sensitivity", "fr": "Sensibilité d'entrée", "nl": "Toegangsgevoeligheid" },
     "value": 7,
     "min": 0,
     "max": 9
@@ -37,10 +46,27 @@
   {
     "id": "illuminance_threshold",
     "type": "number",
-    "label": { "en": "Illuminance threshold", "fr": "Seuil d'éclairement" },
+    "label": { "en": "Illuminance threshold", "fr": "Seuil d'éclairement", "nl": "Verlichtingsdrempel" },
     "value": 50,
     "min": 0,
     "max": 420,
-    "units": { "en": "lux" }
+    "units": "lux"
+  },
+  {
+    "id": "sensor_mode",
+    "type": "dropdown",
+    "label": { "en": "Sensor mode", "fr": "Mode capteur", "nl": "Sensormodus" },
+    "hint": {
+      "en": "Use On for normal presence. Occupied forces permanent presence (common bathroom false-positive). Unoccupied forces clear.",
+      "fr": "Utilisez Marche pour la présence normale. Occupé force la présence permanente (faux positifs salles de bain). Inoccupé force l’absence.",
+      "nl": "Gebruik Aan voor normale aanwezigheid. Bezet forceert permanente aanwezigheid (vaak vals positief in badkamers)."
+    },
+    "value": "on",
+    "values": [
+      { "id": "on", "label": { "en": "On (normal)", "fr": "Marche (normal)", "nl": "Aan (normaal)" } },
+      { "id": "off", "label": { "en": "Off", "fr": "Arrêt", "nl": "Uit" } },
+      { "id": "occupied", "label": { "en": "Occupied (force present — avoid)", "fr": "Occupé (force présent — à éviter)", "nl": "Bezet (forceert aanwezig — vermijden)" } },
+      { "id": "unoccupied", "label": { "en": "Unoccupied (force clear)", "fr": "Inoccupé (force absent)", "nl": "Onbezet (forceert afwezig)" } }
+    ]
   }
 ]

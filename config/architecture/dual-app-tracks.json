@@ -109,6 +109,10 @@
       "tag": "BOTH",
       "note": "VicHY clrdrnya MTG sticky DP1 + tuya_battery_low strip on mains"
     },
+    "p2579_mtg075_deep_harden": {
+      "tag": "BOTH",
+      "note": "MTG075/MTG235: heal DP115 occupied→on; quantized distance soft-clear; merged onSettings; bathroom settings hints"
+    },
     "p2512_peter_smartbutton_history": {
       "tag": "BOTH",
       "note": "Peter Smartbutton measure_battery getable/insights app.json + boot heal"
