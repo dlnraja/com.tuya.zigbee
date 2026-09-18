@@ -117,6 +117,11 @@ const SENSOR_CONFIGS = {
     // WHY(P2577 / VicHY #2247 screenshots): sticky Sí + distance "0 [object Object]".
     // Soft-clear empty room, then ignore sticky DP1 true until entry corroboration.
     antiFalsePositive: true,
+    // WHY(P2579 / Z2M MTG075-ZB-RL docs + #18677): sensor=occupied forces permanent
+    // presence; soft-clear must unlock DP115→on. 24G min range ~2.5m; departure≥15s.
+    healForcedOccupiedOnSoftClear: true,
+    quantizedDistanceSoftClear: true,
+    mtg24gMinDetectionRangeM: 2.5,
     softClearZeroDistanceMs: 45000,
     softClearStableDistanceMs: 60000,
     softClearIgnoreStickyDp1Ms: 90000,

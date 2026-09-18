@@ -320,6 +320,15 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
     this._scheduleRadarPhantomReheal();
     // WHY(P2555 / VicHY #2240): soft-dismiss "WHEN dead while tile green" → one-shot nudge
     this._schedulePresenceWhenNudge();
+    // WHY(P2579 / Z2M): if Homey store still has sensor_mode=occupied after tip, unlock soon
+    try {
+      const { safeSetTimeout } = require('../../lib/utils/safe-timers');
+      safeSetTimeout(this, () => {
+        try {
+          this._healForcedOccupiedSensorMode(this._getRadarConfig() || {});
+        } catch (_e) { /* soft */ }
+      }, 20_000);
+    } catch (_e2) { /* soft */ }
 
     // v5.11.139: Call super.onNodeInit() to initialize TuyaZigbeeDevice base class
     // which provides _safeInvoke and other L14 features
@@ -628,11 +637,30 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
   }
 
   async onSettings({ oldSettings, newSettings, changedKeys }) {
+    // WHY(P2579): single onSettings — prior duplicate method left DynCap heal unreachable.
     try {
       if (typeof super.onSettings === 'function') {
         await super.onSettings({ oldSettings, newSettings, changedKeys });
       }
     } catch (_e) { /* soft */ }
+
+    const config = this._getRadarConfig() || {};
+    if (config.dpMap) {
+      for (const key of changedKeys || []) {
+        const dpId = Object.keys(config.dpMap).find((id) => config.dpMap[id].setting === key);
+        if (!dpId) continue;
+        let value = newSettings[key];
+        const dpConfig = config.dpMap[dpId];
+        value = this._toRadarDPValue(value, dpConfig);
+        const dpType = this._getRadarDPType(dpConfig);
+        this.log(`[RADAR] Syncing ${key} → DP${dpId} value=${value}`);
+        const sent = await this._sendRadarDP(parseInt(dpId, 10), value, dpType);
+        if (!sent) {
+          this.error(`[RADAR] Failed syncing ${key} to DP${dpId}`);
+        }
+      }
+    }
+
     // Settings writes touch DP2/3/102 — never let DynCap reinvent curtain from those values
     this._armRadarDynCapGuards();
     await this._healRadarPhantomCaps();
@@ -1062,6 +1090,13 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
       const key = mapping.setting || mapping.internal;
       const converted = this._convertRadarSettingValue(value, mapping);
       this.setStoreValue(`radar_${key}`, converted).catch(() => {});
+      if (mapping.setting === 'sensor_mode') {
+        this._radarSensorMode = converted;
+        // WHY(P2579 / Z2M): occupied locks presence forever — note for soft-clear heal
+        if (converted === 'occupied' || converted === 2 || converted === '2') {
+          this.log('[RADAR] P2579 DP115 sensor_mode=occupied (forces permanent presence)');
+        }
+      }
       if (mapping.setting && this.getSetting?.(mapping.setting) !== undefined) {
         this.setSettings({ [mapping.setting]: converted }).catch(() => {});
       }
@@ -1164,6 +1199,7 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
         this._zeroDistSinceMs = 0;
         this._stableDistSinceMs = 0;
         this._stableDistAnchor = null;
+        this._quantizedStagnantSinceMs = 0;
         return;
       }
 
@@ -1177,6 +1213,7 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
           this._zeroDistSinceMs = 0;
           this._stableDistSinceMs = 0;
           this._armStickyDp1Ignore(config);
+          this._healForcedOccupiedSensorMode(config);
           this._commitPresenceAndFlows(false);
           return;
         }
@@ -1189,6 +1226,22 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
       if (anchor == null || Math.abs(d - anchor) > 0.2) {
         this._stableDistAnchor = d;
         this._stableDistSinceMs = now;
+        // WHY(P2579 / Z2M#18677): MTG distance often jumps 0↔~2.8m with no intermediates —
+        // still count quantized stagnation below.
+        if (config.quantizedDistanceSoftClear && this._isQuantizedDistanceStagnant(now)) {
+          const stableHoldQ = Number(config.softClearStableDistanceMs) > 0
+            ? Number(config.softClearStableDistanceMs) : 60_000;
+          if (!this._quantizedStagnantSinceMs) this._quantizedStagnantSinceMs = now;
+          if (now - this._quantizedStagnantSinceMs >= stableHoldQ) {
+            this.log('[RADAR] P2579 soft-clear (quantized distance stagnation)');
+            this._quantizedStagnantSinceMs = 0;
+            this._armStickyDp1Ignore(config);
+            this._healForcedOccupiedSensorMode(config);
+            this._commitPresenceAndFlows(false);
+          }
+        } else {
+          this._quantizedStagnantSinceMs = 0;
+        }
         return;
       }
       if (!this._stableDistSinceMs) this._stableDistSinceMs = now;
@@ -1199,9 +1252,47 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
         this._stableDistSinceMs = 0;
         this._stableDistAnchor = null;
         this._armStickyDp1Ignore(config);
+        this._healForcedOccupiedSensorMode(config);
         this._commitPresenceAndFlows(false);
       }
     } catch (_e) { /* soft */ }
+  }
+
+  /**
+   * WHY(P2579 / Z2M MTG075-ZB-RL sensor enum): occupied keeps presence ON forever.
+   * Soft-clear evidence that room is empty → unlock firmware by writing DP115=on.
+   */
+  _healForcedOccupiedSensorMode(config) {
+    try {
+      if (!(config?.healForcedOccupiedOnSoftClear || config?.antiFalsePositive)) return;
+      const mode = this._radarSensorMode
+        ?? this.getSetting?.('sensor_mode')
+        ?? this.getStoreValue?.('radar_sensor_mode');
+      if (mode !== 'occupied' && mode !== 2 && mode !== '2') return;
+      this.log('[RADAR] P2579 heal DP115 occupied→on (Z2M: occupied forces permanent presence)');
+      this._radarSensorMode = 'on';
+      try { this.setSettings?.({ sensor_mode: 'on' }).catch(() => {}); } catch (_e) { /* soft */ }
+      try { this.setStoreValue?.('radar_sensor_mode', 'on').catch(() => {}); } catch (_e2) { /* soft */ }
+      const mapping = config.dpMap?.[115] || config.dpMap?.['115'];
+      if (!mapping) return;
+      const raw = mapping.reverseEnumMap?.on ?? 0;
+      this._sendRadarDP(115, raw, this._getRadarDPType(mapping)).catch(() => {});
+    } catch (_e) { /* soft */ }
+  }
+
+  /**
+   * WHY(P2579 / Z2M#18677): target_distance often only reports a few discrete meters.
+   * ≤2 quantized bins over recent samples ⇒ reflection / empty-room spam.
+   */
+  _isQuantizedDistanceStagnant(now = Date.now()) {
+    try {
+      const samples = (this._distanceSamples || []).filter((s) => now - s.t < 90_000);
+      if (samples.length < 4) return false;
+      const bins = new Set(samples.map((s) => Math.round(Number(s.d) * 4) / 4));
+      return bins.size <= 2;
+    } catch (_e) {
+      return false;
+    }
   }
 
   /**
@@ -1466,30 +1557,9 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
   }
 
   /**
-   * Handle settings changes
+   * Handle settings changes — see merged onSettings above (P2579).
+   * Kept no-op guard removed; class had two onSettings and the second overwrote the first.
    */
-  async onSettings({ oldSettings, newSettings, changedKeys }) {
-    if (super.onSettings) {await super.onSettings({ oldSettings, newSettings, changedKeys });}
-    
-    const config = this._getRadarConfig();
-    if (!config.dpMap) {return;}
-
-    for (const key of changedKeys) {
-      const dpId = Object.keys(config.dpMap).find(id => config.dpMap[id].setting === key);
-      if (dpId) {
-        let value = newSettings[key];
-        const dpConfig = config.dpMap[dpId];
-        value = this._toRadarDPValue(value, dpConfig);
-        const dpType = this._getRadarDPType(dpConfig);
-        
-        this.log(`[RADAR] Syncing ${key} → DP${dpId} value=${value}`);
-        const sent = await this._sendRadarDP(parseInt(dpId, 10), value, dpType);
-        if (!sent) {
-          this.error(`[RADAR] Failed syncing ${key} to DP${dpId}`);
-        }
-      }
-    }
-  }
 
   onUninit() {
     if (this._pollingInterval) {this.homey.clearInterval(this._pollingInterval);}

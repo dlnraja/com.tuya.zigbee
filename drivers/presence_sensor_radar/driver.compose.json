@@ -1687,7 +1687,12 @@
         "fr": "Délai de départ",
         "nl": "Vertrekvertraging"
       },
-      "value": 0
+      "hint": {
+        "en": "Seconds after target leaves before clear. Manufacturer recommends ≥15s (lower causes false clears).",
+        "fr": "Secondes après départ avant clear. Fabricant recommande ≥15s (plus bas → faux négatifs).",
+        "nl": "Seconden na vertrek voor clear. Fabrikant adviseert ≥15s."
+      },
+      "value": 30
     },
     {
       "id": "entry_sensitivity",
@@ -1828,14 +1833,19 @@
         "fr": "Mode capteur",
         "nl": "Sensormodus"
       },
+      "hint": {
+        "en": "Use On for normal presence. Occupied forces permanent presence (common bathroom false-positive). Unoccupied forces clear.",
+        "fr": "Utilisez Marche pour la présence normale. Occupé force la présence permanente (faux positifs salles de bain). Inoccupé force l’absence.",
+        "nl": "Gebruik Aan voor normale aanwezigheid. Bezet forceert permanente aanwezigheid (vaak vals positief in badkamers)."
+      },
       "value": "on",
       "values": [
         {
           "id": "on",
           "label": {
-            "en": "On",
-            "fr": "Marche",
-            "nl": "Aan"
+            "en": "On (normal)",
+            "fr": "Marche (normal)",
+            "nl": "Aan (normaal)"
           }
         },
         {
@@ -1849,17 +1859,17 @@
         {
           "id": "occupied",
           "label": {
-            "en": "Occupied",
-            "fr": "Occupé",
-            "nl": "Bezet"
+            "en": "Occupied (force present — avoid)",
+            "fr": "Occupé (force présent — à éviter)",
+            "nl": "Bezet (forceert aanwezig — vermijden)"
           }
         },
         {
           "id": "unoccupied",
           "label": {
-            "en": "Unoccupied",
-            "fr": "Inoccupé",
-            "nl": "Onbezet"
+            "en": "Unoccupied (force clear)",
+            "fr": "Inoccupé (force absent)",
+            "nl": "Onbezet (forceert leeg)"
           }
         }
       ]
