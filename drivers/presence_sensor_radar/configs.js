@@ -203,7 +203,9 @@ const SENSOR_CONFIGS = {
     hasIlluminance: true,
     noTemperature: true,
     noHumidity: true,
-    needsPolling: false,
+    needsPolling: true,
+    // WHY(P2583 / GH#547): device left mesh / silent RX — soft DataQuery every 2 min
+    pollIntervalMs: 120000,
     ultraAggressiveDebounce: true,
     disableBatteryReporting: true,
     suppressBatteryCapability: true,
@@ -215,6 +217,7 @@ const SENSOR_CONFIGS = {
     motionThrottleMs: 10000,
     motionDebounceMs: 5000,
     ignoreMovementState: true,
+    forceTimeUpdates: true,
     dpMap: {
       1: {
         cap: 'alarm_motion',
@@ -224,8 +227,9 @@ const SENSOR_CONFIGS = {
         unreliable: true,
       },
       2: { cap: null, internal: 'move_sensitivity' },
-      3: { cap: null, internal: 'detection_distance_min', divisor: 100 },
-      4: { cap: null, internal: 'detection_distance_max', divisor: 100 },
+      // WHY(P2583): Z2M ÷100 vs ZHA ×0.1 — dual-scale via TuyaRadarRangeScale
+      3: { cap: null, internal: 'detection_distance_min', radarRangeScale: true, maxMeters: 12 },
+      4: { cap: null, internal: 'detection_distance_max', radarRangeScale: true, maxMeters: 12 },
       9: { cap: 'measure_luminance.distance', smartDivisor: true },
       101: { cap: null, internal: 'distance_tracking' },
       102: { cap: null, internal: 'presence_sensitivity' },
