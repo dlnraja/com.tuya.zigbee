@@ -33,7 +33,7 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 
 | Metric | Value |
 |--------|-------|
-| **App Version** | v9.0.1027 |
+| **App Version** | v9.0.1038 |
 | **Drivers** | 431 (381 Zigbee + 50 WiFi) |
 | **Unique Fingerprints** | 4,679 |
 | **Pairing Variants** | 16,456 (4 case combos per fingerprint) |
@@ -41,7 +41,7 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 | **Flow Cards** | 6,021 |
 | **Unique Capabilities** | 170 |
 | **Native OTA Drivers** | 8 |
-| **Test Suites** | 377 files |
+| **Test Suites** | 379 files |
 | **SVG Icons** | 731 |
 | **Languages** | EN, FR, NL, DE |
 | **SDK / Homey** | 3 / >= 12.2.0 |
@@ -102,18 +102,18 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 
 | Version | Changes |
 |---------|---------|
+| **v9.0.1038** | Presence radar MTG075/MTG235: unlock forced-occupied mode, smarter empty-room clear, clearer bathroom settings. Update Homey Test and res… |
+| **v9.0.1036** | CI: brand-scrub Solar Sync flow titles; wire radar anti-FP gates. Update Homey Test. |
+| **v9.0.1034** | CI: wire VicHY radar anti-FP gates into all hard workflows. Presence bathroom false-positive harden. Update Homey Test. |
+| **v9.0.1032** | Presence radar: fewer bathroom false positives, fix distance display, restore relay switch. Update Homey Test and restart the app on both… |
+| **v9.0.1030** | Presence radar: trust presence DP, keep sensor on/off, clear sticky empty-room detections. Update Homey Test and restart the app on both … |
+| **v9.0.1028** | VicHY #2247 diag 8d9d0199: trust DP1, restore relay onoff, soft-clear stagnant bathroom presence; fix publish gate p2511. |
 | **v9.0.1027** | VicHY MTG075: trust DP1 presence, keep relay onoff, soft-clear sticky empty-room presence; EF00 incomplete interview cascade. |
 | **v9.0.1026** | Incomplete Homey interview: intelligent DP/ZCL/raw RX-TX cascade (EF00-only + parallelDiscover). |
 | **v9.0.1025** | EF00-only pairing with ED00 extras (no OnOff 6); VicHY clrdrnya pure Tuya DP reinforce; ZG253 TRV #2244. |
 | **v9.0.1023** | P2572 publish fix: contact_sensor P126 no TS0601 + pay2byax ZG path; Johan mega coverage. |
 | **v9.0.1022** | Johan issues/PRs mega complementary coverage (radar/valve/CO2/plug/button/3gang) + dump pagination fix. |
 | **v9.0.1020** | P2571 mfs_db align after T26439 locks (c8ipbljq/tgeqdjgk/vvmbj46n). |
-| **v9.0.1019** | T26439 tip harvest: Hejhome 6-gang + knob dimmer + LCD TH locks; soil/radar/bed/lux couples reinforced. |
-| **v9.0.1018** | Johan complementary enrich + FP collision prune (OEM sibling bleed fixed). |
-| **v9.0.1017** | Complementary device coverage enrich (OEM/case variants) + Johan DP libraries retained; TRV/radar/curtain locks intact. |
-| **v9.0.1016** | Forum fixes: ZG253 TRV ogx8u5z6 EF00 pairing (no OnOff cluster), sacred-keep; VicHY radar heal on tip. |
-| **v9.0.1015** | Soft Feature 200 vectors finalized end-to-end (alias resolve, path/welcome/mode recipes, enable-all flows). |
-| **v9.0.1014** | 200 unbranded Soft Feature vectors catalog + SoftRecipeRunner (path/welcome/lux/peak/idle/ambient recipes). |
 
 <!-- CHANGELOG_END -->
 
