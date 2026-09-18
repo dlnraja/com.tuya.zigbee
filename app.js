@@ -264,6 +264,9 @@ class TuyaUnifiedZigbeeApp extends Homey.App {
     }
     this._flowCardsRegistered = true;
 
+    // WHY(P2586): enable RSS gates only inside Homey app process (not unit-test hosts)
+    try { process.env.BOOTBUDGET_LIVE_RSS = '1'; } catch (_e) { /* soft */ }
+
     this.log('Tuya Unified Zigbee App is initializing...');
     this.log(`📊 Mode: ${this.developerDebugMode ? 'DEVELOPER (verbose)' : 'PRODUCTION (minimal logs)'}`);
     this.log(`🤖 Smart-Adapt: ${this.experimentalSmartAdapt ? 'EXPERIMENTAL (modifies)' : 'READ-ONLY (safe)'}`);
@@ -446,7 +449,7 @@ class TuyaUnifiedZigbeeApp extends Homey.App {
     // onNodeInit before MASTER_ONLY engines, UDP, and catalog scans.
     this._scheduleDeferredMasterFeatures();
 
-    this.log(`✅ Tuya Unified Zigbee App initialized (${BootBudget.heapUsedMb()} MB heap)`);
+    this.log(`✅ Tuya Unified Zigbee App initialized (${BootBudget.heapUsedMb()} MB heap / ${BootBudget.rssUsedMb()} MB rss)`);
     this._clearMigrationQueue();
   }
 
@@ -489,7 +492,11 @@ class TuyaUnifiedZigbeeApp extends Homey.App {
     if (this._heavyInitStarted && !retry) {return;}
     this._heavyInitStarted = true;
     const allowHeavy = BootBudget.shouldStartHeavyFeatures();
-    this.log(`[BOOT-BUDGET] deferred pass heap=${BootBudget.heapUsedMb()} MB heavy=${allowHeavy} retry=${retry}`);
+    this.log(`[BOOT-BUDGET] deferred pass heap=${BootBudget.heapUsedMb()} MB rss=${BootBudget.rssUsedMb()} MB heavy=${allowHeavy} retry=${retry}`);
+    try {
+      const Lazy = require('./lib/performance/IntelligentLazyLoad');
+      Lazy.trimLazyCacheUnderPressure();
+    } catch (_e) { /* soft */ }
 
     if (!allowHeavy && !retry) {
       this._scheduleDeferredMasterFeaturesRetry();
