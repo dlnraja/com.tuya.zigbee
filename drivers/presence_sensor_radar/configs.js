@@ -115,6 +115,7 @@ const SENSOR_CONFIGS = {
     clearPresenceOnZeroDistance: false,
     syncPresenceFromDistanceInference: false,
     softClearZeroDistanceMs: 90000,
+    softClearStableDistanceMs: 120000,
     dpThrottleMs: { 9: 2500, 104: 5000 },
     dpMinDelta: { 9: 0.15, 104: 2 },
     dpMap: {

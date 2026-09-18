@@ -3536,5 +3536,8 @@
   },
   "9.0.1027": {
     "en": "VicHY MTG075: trust DP1 presence, keep relay onoff, soft-clear sticky empty-room presence; EF00 incomplete interview cascade."
+  },
+  "9.0.1028": {
+    "en": "VicHY #2247 diag 8d9d0199: trust DP1, restore relay onoff, soft-clear stagnant bathroom presence; fix publish gate p2511."
   }
 }

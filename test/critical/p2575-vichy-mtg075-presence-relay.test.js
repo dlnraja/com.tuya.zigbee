@@ -25,6 +25,7 @@ describe('P2575 VicHY MTG075 presence + relay lock', () => {
     assert.strictEqual(cfg.floodCalm, true);
     assert.strictEqual(cfg.dpMap[1].unreliable, false);
     assert.ok(cfg.softClearZeroDistanceMs >= 60000);
+    assert.ok(cfg.softClearStableDistanceMs >= 60000);
   });
 
   it('device.js locks relay onoff + soft-clear sticky presence', () => {
@@ -34,8 +35,10 @@ describe('P2575 VicHY MTG075 presence + relay lock', () => {
     );
     assert.ok(src.includes('P2575 refused removeCapability(onoff)'));
     assert.ok(src.includes('_softClearStuckPresenceOnZeroDistance'));
+    assert.ok(src.includes('_ensureRelayOnoffCapability'));
     assert.ok(src.includes('requiredCaps.add(\'onoff\')') || src.includes('requiredCaps.add("onoff")'));
     assert.ok(src.includes('forcePureTuyaDp'));
+    assert.ok(src.includes('stagnant distance'));
   });
 
   it('compose stays EF00 lean without OnOff cluster / battery', () => {
