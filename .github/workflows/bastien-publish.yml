@@ -92,6 +92,24 @@ jobs:
       - name: Contre quoi P2606
         run: npm run check:p2606
 
+      - name: Homey app build
+        run: |
+          set -euo pipefail
+          npx homey app build
+          node -e "
+            const fs=require('fs');
+            const id='com.dlnraja.tuya.zigbee.bastien';
+            for (const f of ['app.json','.homeybuild/app.json']) {
+              if (!fs.existsSync(f)) continue;
+              const j=JSON.parse(fs.readFileSync(f,'utf8'));
+              if (j.id !== id) {
+                console.error('BAD id after build', f, j.id);
+                process.exit(1);
+              }
+              console.log('build_ok', f, j.id, j.version);
+            }
+          "
+
       - name: Prepare Publish Directory
         run: npm run prepare-publish
 
