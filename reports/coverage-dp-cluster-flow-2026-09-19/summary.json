@@ -1,0 +1,30 @@
+{
+  "generatedAt": "2026-09-19T06:36:49.966Z",
+  "patch": "P2247",
+  "drivers": {
+    "count": 431,
+    "withFlowCompose": 431,
+    "withoutFlowCompose": [],
+    "flowCardEntries": 5852
+  },
+  "clusters": {
+    "composeUnique": 35,
+    "lexiconSize": 44,
+    "missingFromLexicon": []
+  },
+  "dps": {
+    "knowledgeCouples": 209,
+    "registryCouples": 208,
+    "registryCovered": 208,
+    "coveragePct": 100,
+    "skippedBrandOrExternal": 18,
+    "uncovered": []
+  },
+  "flowSmoke": {
+    "undeclaredReturnsNull": true,
+    "remoteResolves": true,
+    "sceneResolves": true,
+    "capabilityResolves": true
+  },
+  "critical": []
+}
