@@ -1,3 +1,3 @@
-Unified Smart Home Engine ermoeglicht lokale Steuerung fuer viele Tuya Zigbee-, eWeLink-, SmartThings- und kompatible Smart-Home-Geraete auf Homey Pro. Schalter, Sensoren, Steckdosen, Thermostate, Lampen, Abdeckungen, Schlösser und Energiegeraete werden lokal verarbeitet, wenn die jeweilige Hardware dies unterstuetzt.
+Zigbee Bastien ist eine private Homey Pro App fuer ein einzelnes Haus. Lokale Tuya-Zigbee-Steuerung auf Bastiens Homey, ohne die oeffentlichen Universal-Tuya- oder Stable-Slots zu teilen.
 
-Die App kombiniert einen grossen Treiberkatalog mit adaptiver Fingerabdruckerkennung, Tuya-DP- und ZCL-Auswertung, Flow-Ausloesern fuer Tasten und Fernbedienungen, Batterieschaetzungen und selbstheilenden Geraetekarten. In den App-Einstellungen gibt es eine einklappbare Zigbee-Spinnennetz-Karte der gekoppelten Geraete. Dadurch bleiben viele generische oder umbenannte Geraete ohne Cloudkonto fuer unterstuetzte lokale Geraete nutzbar.
+Erkenntnisse aus diesem Haus koennen upstream nach Universal Tuya und Stable. Oeffentliche Apps dumpfen keine Wholesale-Features in diese private Spur.
