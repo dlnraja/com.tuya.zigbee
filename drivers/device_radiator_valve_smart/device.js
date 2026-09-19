@@ -1,7 +1,6 @@
 'use strict';
 
 const { safeSetTimeout, safeClearTimeout } = require('../../lib/utils/safe-timers');
-const { includesCI } = require('../../lib/utils/CaseInsensitiveMatcher');
 const { safeDivide, safeMultiply, safeParse } = require('../../lib/utils/tuyaUtils.js');
 
 const UnifiedThermostatBase = require('../../lib/devices/UnifiedThermostatBase');
@@ -29,33 +28,37 @@ class RadiatorValveDevice extends PhysicalButtonMixin(VirtualButtonMixin(Unified
    * Profile B (ME167): _TZE284_o3x45p96, _TZE284_p3dbf6qs, _TZE200_p3dbf6qs, etc.
    */
   get dpProfile() {
-    const mfr = this.getSetting('zb_manufacturer_name') || this.getStoreValue('manufacturerName') || '';
-    const me167Ids = [
-      '_TZE284_o3x45p96', '_tze284_o3x45p96',
-      '_TZE284_p3dbf6qs', '_tze284_p3dbf6qs',
-      '_TZE200_p3dbf6qs', '_tze200_p3dbf6qs',
-      '_TZE284_rv6iuyxb', '_tze284_rv6iuyxb',
-      '_TZE284_c6wv4xyo', '_tze284_c6wv4xyo',
-      '_TZE284_hvaxb2tc', '_tze284_hvaxb2tc',
-      '_TZE204_o3x45p96', '_tze204_o3x45p96'
+    // WHY(P2594): match device_radiator_valve — tail match + ogx8u5z6 (not self-includesCI bug)
+    const mfr = String(
+      this.getSetting('zb_manufacturer_name')
+      || this.getStoreValue('manufacturerName')
+      || '',
+    ).toLowerCase();
+    const me167Tails = [
+      'o3x45p96', 'p3dbf6qs', 'rv6iuyxb', 'c6wv4xyo', 'hvaxb2tc', 'ogx8u5z6',
     ];
-    return me167Ids.some(id => includesCI(me167Ids, id)) ? 'me167' : 'standard';
+    return me167Tails.some((t) => mfr.includes(t)) ? 'me167' : 'standard';
   }
 
   get dpMappings() {
+    const mfr = String(this.getSetting('zb_manufacturer_name') || this.getStoreValue('manufacturerName') || '');
+    const calDivisor = /ogx8u5z6/i.test(mfr) ? 10 : 1;
     if (this.dpProfile === 'me167') {
-      // Profile B: AVATTO ME167/TRV06 DP mapping
-      // v5.5.921: FORUM FIX (ManuelKugler #1223) - Added alarm_battery for DP35
+      // WHY(P2598 / Z2M#25199 / Michaelp #2253): DP4/5 locked ÷10 — not smartDivisor
       return {
         2: { capability: 'thermostat_mode', transform: (v) => ({ 0: 'auto', 1: 'heat', 2: 'off' }[v] ?? 'heat') },
         3: { internal: true, type: 'running_state', transform: (v) => v === 0 ? 'heat' : 'idle' },
-        4: { capability: 'target_temperature', smartDivisor: true },
-        5: { capability: 'measure_temperature', smartDivisor: true },
+        4: { capability: 'target_temperature', divisor: 10 },
+        5: { capability: 'measure_temperature', divisor: 10 },
         7: { capability: 'child_lock', transform: (v) => v === true || v === 1 },
+        13: { capability: 'measure_battery', divisor: 1 },
+        15: { capability: 'measure_battery', divisor: 1 },
         35: { capability: 'alarm_battery', transform: (v) => v === 1 },
         36: { capability: 'frost_protection', transform: (v) => v === true || v === 1 },
         39: { internal: true, type: 'anti_scaling', writable: true },
-        47: { internal: true, type: 'temp_calibration', writable: true }
+        47: { internal: true, type: 'temp_calibration', writable: true, divisor: calDivisor, setting: 'temperature_calibration' },
+        101: { internal: true, type: 'eco_mode', writable: true },
+        102: { internal: true, type: 'eco_temp', divisor: 10, writable: true },
       };
     }
     // Profile A: Standard TRV DP mapping (MOES, etc.)
@@ -96,6 +99,10 @@ class RadiatorValveDevice extends PhysicalButtonMixin(VirtualButtonMixin(Unified
   }
 
   async onNodeInit({ zclNode }) {
+    try {
+      const { forcePureTuyaDp } = require('../../lib/zigbee/Ef00OnlyInterview');
+      forcePureTuyaDp(this);
+    } catch (_e) { /* soft */ }
     await super.onNodeInit({ zclNode });
     // --- Homey Time Sync for TRV / LCD/Thermostat devices ---
     // Syncs the device clock with the Homey box time every 6 hours.
@@ -106,7 +113,7 @@ class RadiatorValveDevice extends PhysicalButtonMixin(VirtualButtonMixin(Unified
       
       // Initial sync after 10 seconds (let device settle)
       this.homey.setTimeout(async () => {
-        if (this._destroyed) return;
+        if (this._destroyed) {return;}
         try {
           const result = await this._timeSync.sync({ force: true });
           if (result.success) {
@@ -122,7 +129,7 @@ class RadiatorValveDevice extends PhysicalButtonMixin(VirtualButtonMixin(Unified
       
       // Periodic sync every 6 hours
       this._timeSyncInterval = this.homey.setInterval(async () => {
-        if (this._destroyed) return;
+        if (this._destroyed) {return;}
         try {
           const result = await this._timeSync.sync();
           if (!result.success && result.reason === 'no_rtc') {
@@ -176,11 +183,21 @@ class RadiatorValveDevice extends PhysicalButtonMixin(VirtualButtonMixin(Unified
       }
     } catch (e) { /* ignore */ }
 
+    // WHY(P2594): re-lock me167 maps + re-arm EF00 after identity (empty caps Contre quoi)
+    try {
+      if (this.dpProfile === 'me167') {
+        this._dynamicDpMappings = { ...(this._dynamicDpMappings || {}), ...this.dpMappings };
+      }
+      await this._setupTuyaDPMode?.();
+    } catch (_e) { /* soft */ }
+
     // Setup ZCL thermostat (parent doesn't do this)
     await this._setupThermostatCluster(zclNode);
 
     // Register onoff/mode listeners (parent only handles target_temperature)
     this._setupTRVListeners();
+
+    this._scheduleTrvDpRefresh();
 
     // v5.11.105: SONOFF TRVZB ZCL features (child_lock, open_window, frost_protection, valve)
     await this._setupSonoffTRVZB(zclNode);
@@ -222,7 +239,27 @@ class RadiatorValveDevice extends PhysicalButtonMixin(VirtualButtonMixin(Unified
   _markAppCommand() {
     this._appCommandPending = true;
     safeClearTimeout(this, this._appCommandTimeout);
-    this._appCommandTimeout = safeSetTimeout(this, () => { if (this._destroyed) return; this._appCommandPending = false; }, 2000);
+    this._appCommandTimeout = safeSetTimeout(this, () => { if (this._destroyed) {return;} this._appCommandPending = false; }, 2000);
+  }
+
+  /**
+   * WHY(P2593/P2594): after pair/tip, EF00 sleepy TRVs may not push DPs until queried.
+   */
+  _scheduleTrvDpRefresh() {
+    try {
+      safeSetTimeout(this, () => {
+        if (this._destroyed) return;
+        const mgr = this.tuyaEF00Manager;
+        if (!mgr || typeof mgr.requestDP !== 'function') return;
+        const dps = this.dpProfile === 'me167'
+          ? [2, 3, 4, 5, 7, 13, 15, 35]
+          : [1, 2, 3, 4, 13, 15];
+        this.log(`[TRV] P2594 refresh DPs ${dps.join(',')}`);
+        for (const id of dps) {
+          try { mgr.requestDP(id).catch(() => {}); } catch (_e) { /* soft */ }
+        }
+      }, 5_000);
+    } catch (_e) { /* soft */ }
   }
 
   async _setupThermostatCluster(zclNode) {
@@ -242,42 +279,53 @@ class RadiatorValveDevice extends PhysicalButtonMixin(VirtualButtonMixin(Unified
   }
 
   _setupTRVListeners() {
-    const profile = this.dpProfile;
+    // WHY(P2598 / Michaelp #2253): live dpProfile each TX — never close over stale profile
 
-    // On/Off - NOT handled by parent (standard profile only)
-    if (this.hasCapability('onoff') && profile === 'standard') {
+    if (this.hasCapability('onoff')) {
       this.registerCapabilityListener('onoff', async (v) => {
+        if (this.dpProfile !== 'standard') return;
         await this._sendTuyaDP(1, v, 'bool');
       });
     }
 
-    // Mode - different mapping per profile
     if (this.hasCapability('thermostat_mode')) {
       this.registerCapabilityListener('thermostat_mode', async (v) => {
-        if (profile === 'me167') {
-          // ME167: 0=auto, 1=heat, 2=off
+        if (this.dpProfile === 'me167') {
           await this._sendTuyaDP(2, { auto: 0, heat: 1, off: 2 }[v] ?? 1, 'enum');
         } else {
-          // Standard: 0=heat, 1=auto, 2=off
           await this._sendTuyaDP(2, { heat: 0, auto: 1, off: 2 }[v] ?? 0, 'enum');
         }
       });
     }
 
-    // Target temperature - different DP per profile
     if (this.hasCapability('target_temperature')) {
       this.registerCapabilityListener('target_temperature', async (v) => {
-        const dp = profile === 'me167' ? 4 : 3;
-        await this._sendTuyaDP(dp, safeMultiply(Math.round(v), 10), 'value');
+        const dp = this.dpProfile === 'me167' ? 4 : 3;
+        await this._sendTuyaDP(dp, Math.round(safeMultiply(Number(v), 10)), 'value');
       });
     }
   }
 
-  async _sendTuyaDP(dp, value, type) {
-    const tuya = this.zclNode?.endpoints?.[1]?.clusters?.tuya;
-    if (tuya?.datapoint) {
-      this.log(`[TRV] Sending DP${dp} = ${value} (${type})`);
-      await tuya.datapoint({ dp, value, type } );
+  /**
+   * WHY(P2593 / Michaelp #2253): never pass {value,type} to cluster.datapoint
+   */
+  async _sendTuyaDP(dp, value, type = 'value') {
+    const typeName = type || 'value';
+    this.log(`[TRV] Sending DP${dp} = ${value} (${typeName})`);
+    try {
+      if (this.tuyaEF00Manager && typeof this.tuyaEF00Manager.sendDP === 'function') {
+        const ok = await this.tuyaEF00Manager.sendDP(dp, value, typeName);
+        if (ok) return true;
+      }
+      if (this.io && typeof this.io.sendDP === 'function') {
+        const ok = await this.io.sendDP(dp, value, { type: typeName });
+        if (ok) return true;
+      }
+      const { sendTuyaDP } = require('../../lib/helpers/UniversalDriverInit');
+      return !!(await sendTuyaDP(this, dp, value, typeName));
+    } catch (err) {
+      this.error(`[TRV] DP${dp} TX failed:`, err?.message || err);
+      throw err;
     }
   }
 
