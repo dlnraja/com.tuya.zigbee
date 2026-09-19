@@ -331,6 +331,22 @@ jobs:
         if: always()
         run: node tools/ci/p2138-sacred-couple-matrix-gate.js
 
+      - name: P2607 Bastien → master soft promote (AUTO_SAFE)
+        if: always()
+        continue-on-error: true
+        timeout-minutes: 8
+        run: |
+          set -euo pipefail
+          if [ ! -f tools/ci/bastien-promote-upstream.js ]; then
+            echo "bastien-promote missing — skip"
+            exit 0
+          fi
+          git fetch origin bastien-home:bastien-home 2>/dev/null || git fetch origin bastien-home || true
+          # Soft = dry-run; cron Bastien Promote Upstream does apply+commit
+          npm run bastien:promote || echo "BASTIEN_PROMOTE_SOFT_WARN"
+          echo "## P2607 Bastien promote scan (soft)" >> "$GITHUB_STEP_SUMMARY"
+          head -n 30 reports/bastien-promote-latest.json >> "$GITHUB_STEP_SUMMARY" 2>/dev/null || true
+
       - name: 📦 Upload artifacts
         if: always()
         uses: actions/upload-artifact@330a01c490aca151604b8cf639adc76d48f6c5d4 # v5.0.0
@@ -345,6 +361,7 @@ jobs:
             forum-actionable-processor.log
             market-couples-soft.log
             reports/forum-verify-*/
+            reports/bastien-promote-latest.json
             .github/state/inbox-diag-harvest/
           if-no-files-found: warn
           retention-days: 7

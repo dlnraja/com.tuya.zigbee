@@ -24,9 +24,23 @@
     "promotesTo": ["master", "stable-v5"],
     "neverPullWholesaleFrom": ["master", "stable-v5"],
     "allowSelectiveCherryPickFromMaster": true,
+    "autonomous": true,
+    "schedule": ["20 6 * * *", "20 18 * * *"],
+    "autoSafe": [
+      "driver.compose.json complementary merge",
+      "misattribution registry additive cases",
+      "sacred-keep couple union",
+      "critical Contre quoi tests",
+      "docs/knowledge",
+      "BOTH reliability lib/*"
+    ],
     "promoteScript": "tools/ci/bastien-promote-upstream.js",
     "workflow": ".github/workflows/bastien-promote-upstream.yml",
-    "note": "Live house learnings (sacred couples, DP maps, crash guards) promote upstream surgically. Public apps never dump features into Bastien wholesale."
+    "hooks": [
+      ".github/workflows/auto-enrich-closed-loop.yml",
+      ".github/workflows/forum-poll.yml"
+    ],
+    "note": "Live house learnings promote upstream surgically on cron + enrich/forum soft hooks. Public apps never dump features into Bastien wholesale. Identity never copied."
   },
   "identityNeverCopy": [
     "appId",
@@ -37,6 +51,7 @@
   "devicesInventory": [],
   "notes": [
     "On-site: pair each device, lock manufacturerName+productId, fix RX/TX on bastien-home first.",
-    "After soak → npm run bastien:promote -- --dry-run then --apply (master). BOTH reliability → stable surgical."
+    "P2607: cron + enrich/forum hooks auto-apply AUTO_SAFE Bastien→master; BOTH reliability → stable-v5.",
+    "device.js overwrites stay manual-review (except brand-new drivers)."
   ]
 }

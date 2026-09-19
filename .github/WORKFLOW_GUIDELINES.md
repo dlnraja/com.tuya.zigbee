@@ -1063,9 +1063,17 @@ catches invent regressions anti-bot alone might miss (wrong-PID catalog force).
 | Present | P2271–P2279 | Polarity / strip / curtain / smoke / meter / TRV cal / cover+USB |
 | Present | P2280–P2281 | Dual-app inconsistency sweep + workflow lineage SSOT |
 | Present | P2448–P2449 | Rotary command/dimmer + declared flow auto-wire (BOTH) |
+| Present | P2606–P2607 | Zigbee Bastien private app + autonomous Bastien→master/stable promote |
 
-- Extra gates: `npm run check:p2278` · `npm run check:p2279` · `npm run check:discovery-lineage` · `npm run check:p244x`.
-- Dual-app: P227x couple unsteals + TRV cal TX/RX + **P2448/P2449** = **BOTH**. PathFinder / Daylight / mega feature managers = **MASTER_ONLY**.
+- Extra gates: `npm run check:p2278` · `npm run check:p2279` · `npm run check:discovery-lineage` · `npm run check:p244x` · `npm run check:p260x-bastien`.
+- Dual-app: P227x couple unsteals + TRV cal TX/RX + **P2448/P2449** = **BOTH**. PathFinder / Daylight / mega feature managers = **MASTER_ONLY**. **P2607 Bastien promote AUTO_SAFE → master; BOTH reliability → stable**.
+
+### P2607 — Bastien autonomous promote (2026-09-19)
+- Workflow: `bastien-promote-upstream.yml` cron `20 6,18 * * *` — `--apply --commit` + stable BOTH job.
+- Soft scans (dry-run only): `auto-enrich-closed-loop.yml`, `forum-poll.yml`.
+- Script: `tools/ci/bastien-promote-upstream.js` — complementary compose/registry/sacred-keep; never identity; never reverse wholesale.
+- Gates: `npm run check:p2606` · `npm run check:p2607` · `npm run check:p260x-bastien`.
+- Doctrine: `docs/rules/BASTIEN_HOUSE_APP.md` · SSOT: `config/architecture/bastien-house-ssot.json`.
 
 ### P2201 — Homey cartesian / contact TS0601 (2026-08-20)
 - Never put **TS0601** on `contact_sensor` compose (pairs with every mfr → climate collisions).

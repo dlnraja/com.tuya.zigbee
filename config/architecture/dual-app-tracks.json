@@ -65,6 +65,10 @@
       "tag": "MASTER_ONLY",
       "note": "Private Zigbee Bastien house app + one-way promote bastien→master/stable — never reverse wholesale; never share App ID"
     },
+    "p2607_bastien_autonomous_promote": {
+      "tag": "BOTH",
+      "note": "Autonomous Bastien→master AUTO_SAFE + BOTH reliability → stable-v5 on cron/enrich/forum hooks"
+    },
     "p2497_stable_both_backport": {
       "tag": "BOTH",
       "note": "Surgical port P2490–P2496 reliability to stable-v5 — never App ID/version; skip P2487 IR MASTER_ONLY"
