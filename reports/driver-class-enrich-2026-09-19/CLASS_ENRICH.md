@@ -5,7 +5,7 @@ Mode: **apply**
 | Class | Drivers | Gaps | MFRs | Flow triggers |
 |-------|--------:|-----:|-----:|--------------:|
 | sensor | 122 | 10 | 5587 | 793 |
-| socket | 108 | 11 | 3665 | 1164 |
+| socket | 108 | 11 | 3645 | 1164 |
 | button | 54 | 2 | 1340 | 859 |
 | light | 53 | 2 | 1410 | 260 |
 | thermostat | 31 | 0 | 1728 | 178 |
@@ -22,6 +22,6 @@ Mode: **apply**
 | ir | 1 | 0 | 144 | 6 |
 | windowcoverings | 1 | 0 | 2 | 6 |
 
-**Totals:** 431 drivers · 16452 MFR entries · 30 with soft gaps
+**Totals:** 431 drivers · 16432 MFR entries · 30 with soft gaps
 
 Doctrine: never invent productId · never degrade coverage · free scrape + forfait AI only.

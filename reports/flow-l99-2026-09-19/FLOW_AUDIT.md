@@ -65,7 +65,7 @@ First 20 issues:
 
 ```
 {
-  "generatedAt": "2026-09-19T06:36:49.724Z",
+  "generatedAt": "2026-09-19T16:48:38.200Z",
   "mode": "dry-run",
   "driversTouched": 0,
   "orphanTokensFixed": 0,
