@@ -1,21 +1,21 @@
 {
-  "id": "com.dlnraja.tuya.zigbee",
-  "version": "9.0.1091",
+  "id": "com.dlnraja.tuya.zigbee.bastien",
+  "version": "1.0.0",
   "compatibility": ">=12.2.0",
   "platforms": [
     "local"
   ],
   "name": {
-    "en": "Universal Tuya",
-    "nl": "Universal Tuya",
-    "de": "Universal Tuya",
-    "fr": "Universal Tuya"
+    "en": "Zigbee Bastien",
+    "fr": "Zigbee Bastien",
+    "nl": "Zigbee Bastien",
+    "de": "Zigbee Bastien"
   },
   "description": {
-    "en": "Local Zigbee control for Tuya devices on Homey Pro — switches, sensors, lights, thermostats and covers.",
-    "nl": "Lokale Zigbee-bediening voor Tuya-apparaten op Homey Pro.",
-    "de": "Lokale Zigbee-Steuerung fuer Tuya-Geraete auf Homey Pro.",
-    "fr": "Controle Zigbee local pour appareils Tuya sur Homey Pro."
+    "en": "Private Zigbee house app for Bastien — local Homey Pro only. Learnings promote upstream to Universal Tuya / Stable (never the reverse wholesale).",
+    "fr": "App Zigbee privee maison Bastien — Homey Pro local uniquement. Les apprentissages remontent vers Universal Tuya / Stable (jamais linverse en masse).",
+    "nl": "Prive Zigbee huis-app voor Bastien — alleen lokale Homey Pro.",
+    "de": "Private Zigbee-Haus-App fuer Bastien — nur lokale Homey Pro."
   },
   "tags": {
     "en": [

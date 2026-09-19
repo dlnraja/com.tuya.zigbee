@@ -1,7 +1,7 @@
 {
-  "name": "com.dlnraja.tuya.zigbee",
-  "version": "9.0.1091",
-  "description": "Tuya Unified Zigbee - Local-first control with AI automation",
+  "name": "com.dlnraja.tuya.zigbee.bastien",
+  "version": "1.0.0",
+  "description": "Private Zigbee house app for Bastien — local Homey Pro only. Learnings promote upstream to Universal Tuya / Stable (never the reverse wholesale).",
   "main": "app.js",
   "scripts": {
     "build": "homey app build",
@@ -475,7 +475,9 @@
     "check:p2600": "node --test test/critical/p2600-gkfbdvyx-550-lux-distance-residual.test.js",
     "check:p2601": "node --test test/critical/p2601-mains-forceactive-dp9-ssot.test.js",
     "check:p2602": "node --test test/critical/p2602-radar-compose-slim-announce.test.js",
-    "check:p2603": "node --test test/critical/p2603-radar-no-compose-onoff.test.js"
+    "check:p2603": "node --test test/critical/p2603-radar-no-compose-onoff.test.js",
+    "check:p2606": "node --test test/critical/p2606-bastien-house-track.test.js",
+    "bastien:promote": "node tools/ci/bastien-promote-upstream.js"
   },
   "keywords": [
     "homey",
