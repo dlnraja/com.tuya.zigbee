@@ -1,6 +1,6 @@
 {
   "name": "com.dlnraja.tuya.zigbee.bastien",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Private Zigbee house app for Bastien — local Homey Pro only. Learnings promote upstream to Universal Tuya / Stable (never the reverse wholesale).",
   "main": "app.js",
   "scripts": {
@@ -477,7 +477,8 @@
     "check:p2602": "node --test test/critical/p2602-radar-compose-slim-announce.test.js",
     "check:p2603": "node --test test/critical/p2603-radar-no-compose-onoff.test.js",
     "check:p2606": "node --test test/critical/p2606-bastien-house-track.test.js",
-    "bastien:promote": "node tools/ci/bastien-promote-upstream.js"
+    "bastien:promote": "node tools/ci/bastien-promote-upstream.js",
+    "check:p2608": "node --test test/critical/p2608-wall-scene-remote-hybrid.test.js"
   },
   "keywords": [
     "homey",
