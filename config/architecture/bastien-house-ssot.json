@@ -21,12 +21,46 @@
   },
   "enrichment": {
     "direction": "bastien_to_public_only",
-    "promotesTo": ["master", "stable-v5"],
-    "neverPullWholesaleFrom": ["master", "stable-v5"],
+    "promotesTo": [
+      "master",
+      "stable-v5"
+    ],
+    "neverPullWholesaleFrom": [
+      "master",
+      "stable-v5"
+    ],
     "allowSelectiveCherryPickFromMaster": true,
+    "autonomous": true,
+    "schedule": [
+      "20 6 * * *",
+      "20 18 * * *"
+    ],
+    "autoSafe": [
+      "driver.compose.json complementary merge",
+      "misattribution registry additive cases",
+      "sacred-keep couple union",
+      "critical Contre quoi tests",
+      "docs/knowledge",
+      "BOTH reliability lib/*"
+    ],
     "promoteScript": "tools/ci/bastien-promote-upstream.js",
     "workflow": ".github/workflows/bastien-promote-upstream.yml",
-    "note": "Live house learnings (sacred couples, DP maps, crash guards) promote upstream surgically. Public apps never dump features into Bastien wholesale."
+    "hooks": [
+      ".github/workflows/auto-enrich-closed-loop.yml",
+      ".github/workflows/forum-poll.yml"
+    ],
+    "note": "Live house learnings promote upstream surgically on cron + enrich/forum soft hooks. Public apps never dump features into Bastien wholesale. Identity never copied.",
+    "lastExternalPass": {
+      "at": "2026-09-19T22:50:53.331Z",
+      "patch": "P2610",
+      "note": "inventory+tk3s5tyg rehome; collision-safe"
+    },
+    "externalSources": [
+      "Z2M",
+      "JohanBendz README",
+      "community-sync fingerprints",
+      "forum silent caches"
+    ]
   },
   "identityNeverCopy": [
     "appId",
@@ -34,9 +68,395 @@
     ".homeycompose/app.json id/version/name",
     "package.json name/version"
   ],
-  "devicesInventory": [],
+  "devicesInventory": [
+    {
+      "mfr": "_TZ3000_tk3s5tyg",
+      "pid": "TS0041",
+      "driver": "button_wireless_1",
+      "source": "Z2M#8072",
+      "status": "verified-candidate",
+      "enrichedAt": "2026-09-19"
+    },
+    {
+      "mfr": "_TZ3000_4upl1fcj",
+      "pid": "TS0041",
+      "driver": "button_wireless_1",
+      "source": "Z2M#18035",
+      "status": "verified-candidate",
+      "enrichedAt": "2026-09-19"
+    },
+    {
+      "mfr": "_TZ3000_fkp5zyho",
+      "pid": "TS0041",
+      "driver": "button_wireless_1",
+      "source": "Johan",
+      "status": "verified-candidate",
+      "enrichedAt": "2026-09-19"
+    },
+    {
+      "mfr": "_TZ3000_axpdxqgu",
+      "pid": "TS0041",
+      "driver": "button_wireless_1",
+      "source": "Johan",
+      "status": "verified-candidate",
+      "enrichedAt": "2026-09-19"
+    },
+    {
+      "mfr": "_TZ3000_peszejy7",
+      "pid": "TS0041",
+      "driver": "button_wireless_1",
+      "source": "Johan",
+      "status": "verified-candidate",
+      "enrichedAt": "2026-09-19"
+    },
+    {
+      "mfr": "_TZ3000_pzui3skt",
+      "pid": "TS0041",
+      "driver": "button_wireless_1",
+      "source": "Johan",
+      "status": "verified-candidate",
+      "enrichedAt": "2026-09-19"
+    },
+    {
+      "mfr": "_TZ3000_f97vq5mn",
+      "pid": "TS0041",
+      "driver": "button_wireless_1",
+      "source": "Johan",
+      "status": "verified-candidate",
+      "enrichedAt": "2026-09-19"
+    },
+    {
+      "mfr": "_TZ3000_fa9mlvja",
+      "pid": "TS0041",
+      "driver": "button_wireless_1",
+      "source": "Johan",
+      "status": "verified-candidate",
+      "enrichedAt": "2026-09-19"
+    },
+    {
+      "mfr": "_TZ3000_itb0omhv",
+      "pid": "TS0041",
+      "driver": "button_wireless_1",
+      "source": "Johan",
+      "status": "verified-candidate",
+      "enrichedAt": "2026-09-19"
+    },
+    {
+      "mfr": "_TZ3000_8rppvwda",
+      "pid": "TS0041",
+      "driver": "button_wireless_1",
+      "source": "Johan",
+      "status": "verified-candidate",
+      "enrichedAt": "2026-09-19"
+    },
+    {
+      "mfr": "_TZ3000_q68478x7",
+      "pid": "TS0041",
+      "driver": "button_wireless_1",
+      "source": "Johan",
+      "status": "verified-candidate",
+      "enrichedAt": "2026-09-19"
+    },
+    {
+      "mfr": "_TZ3000_yj6k7vfo",
+      "pid": "TS0041",
+      "driver": "button_wireless_4_ts0041",
+      "source": "dedicated alias",
+      "status": "verified-candidate",
+      "enrichedAt": "2026-09-19"
+    },
+    {
+      "mfr": "_TZ3000_qgwcxxws",
+      "pid": "TS0041",
+      "driver": "button_wireless_1",
+      "source": "community-sync",
+      "status": "verified-candidate",
+      "enrichedAt": "2026-09-19"
+    },
+    {
+      "mfr": "_TYZB02_keyjqthh",
+      "pid": "TS0041",
+      "driver": "button_wireless_1",
+      "source": "Johan",
+      "status": "verified-candidate",
+      "enrichedAt": "2026-09-19"
+    },
+    {
+      "mfr": "_TZ3000_owgcnkrh",
+      "pid": "TS0042",
+      "driver": "button_wireless_2",
+      "source": "Johan",
+      "status": "verified-candidate",
+      "enrichedAt": "2026-09-19"
+    },
+    {
+      "mfr": "_TZ3000_oikiyf3b",
+      "pid": "TS0042",
+      "driver": "button_wireless_2",
+      "source": "Johan",
+      "status": "verified-candidate",
+      "enrichedAt": "2026-09-19"
+    },
+    {
+      "mfr": "_TZ3000_dfgbtub0",
+      "pid": "TS0042",
+      "driver": "button_wireless_2",
+      "source": "Z2M#18035",
+      "status": "verified-candidate",
+      "enrichedAt": "2026-09-19"
+    },
+    {
+      "mfr": "_TZ3000_h1c2eamp",
+      "pid": "TS0042",
+      "driver": "button_wireless_2",
+      "source": "Johan",
+      "status": "verified-candidate",
+      "enrichedAt": "2026-09-19"
+    },
+    {
+      "mfr": "_TZ3000_5e235jpa",
+      "pid": "TS0042",
+      "driver": "button_wireless_2",
+      "source": "Johan",
+      "status": "verified-candidate",
+      "enrichedAt": "2026-09-19"
+    },
+    {
+      "mfr": "_TZ3000_fkvaniuu",
+      "pid": "TS0042",
+      "driver": "button_wireless_2",
+      "source": "Johan",
+      "status": "verified-candidate",
+      "enrichedAt": "2026-09-19"
+    },
+    {
+      "mfr": "_TYZB02_keyjhapk",
+      "pid": "TS0042",
+      "driver": "button_wireless_2",
+      "source": "Johan",
+      "status": "verified-candidate",
+      "enrichedAt": "2026-09-19"
+    },
+    {
+      "mfr": "_TZ3400_keyjhapk",
+      "pid": "TS0042",
+      "driver": "button_wireless_2",
+      "source": "Johan",
+      "status": "verified-candidate",
+      "enrichedAt": "2026-09-19"
+    },
+    {
+      "mfr": "_TZ3000_a7ouggvs",
+      "pid": "TS0043",
+      "driver": "button_wireless_3",
+      "source": "Z2M/Johan Zemismart",
+      "status": "verified-candidate",
+      "enrichedAt": "2026-09-19"
+    },
+    {
+      "mfr": "_TZ3000_qzjcsmar",
+      "pid": "TS0043",
+      "driver": "button_wireless_3",
+      "source": "Johan",
+      "status": "verified-candidate",
+      "enrichedAt": "2026-09-19"
+    },
+    {
+      "mfr": "_TZ3000_rrjr1q0u",
+      "pid": "TS0043",
+      "driver": "button_wireless_3",
+      "source": "Johan",
+      "status": "verified-candidate",
+      "enrichedAt": "2026-09-19"
+    },
+    {
+      "mfr": "_TZ3000_w8jwkczz",
+      "pid": "TS0043",
+      "driver": "wall_remote_3_gang",
+      "source": "Johan MOES",
+      "status": "verified-candidate",
+      "enrichedAt": "2026-09-19"
+    },
+    {
+      "mfr": "_TZ3000_gbm10jnj",
+      "pid": "TS0043",
+      "driver": "button_wireless_3",
+      "source": "Johan MOES",
+      "status": "verified-candidate",
+      "enrichedAt": "2026-09-19"
+    },
+    {
+      "mfr": "_TZ3000_yw5tvzsk",
+      "pid": "TS0043",
+      "driver": "button_wireless_3",
+      "source": "Johan",
+      "status": "verified-candidate",
+      "enrichedAt": "2026-09-19"
+    },
+    {
+      "mfr": "_TZ3000_sj7jbgks",
+      "pid": "TS0043",
+      "driver": "button_wireless_3",
+      "source": "Johan",
+      "status": "verified-candidate",
+      "enrichedAt": "2026-09-19"
+    },
+    {
+      "mfr": "_TYZB02_key8kk7r",
+      "pid": "TS0043",
+      "driver": "button_wireless_3",
+      "source": "Johan",
+      "status": "verified-candidate",
+      "enrichedAt": "2026-09-19"
+    },
+    {
+      "mfr": "_TZ3000_bi6lpsew",
+      "pid": "TS0043",
+      "driver": "button_wireless_3",
+      "source": "Z2M",
+      "status": "verified-candidate",
+      "enrichedAt": "2026-09-19"
+    },
+    {
+      "mfr": "_TZ3000_1kmurvlx",
+      "pid": "TS0043",
+      "driver": "button_wireless_3",
+      "source": "Z2M",
+      "status": "verified-candidate",
+      "enrichedAt": "2026-09-19"
+    },
+    {
+      "mfr": "_TZ3000_vp6clf9d",
+      "pid": "TS0044",
+      "driver": "scene_switch_4",
+      "source": "Johan/registry",
+      "status": "verified-candidate",
+      "enrichedAt": "2026-09-19"
+    },
+    {
+      "mfr": "_TZ3000_wkai4ga5",
+      "pid": "TS0044",
+      "driver": "button_wireless_4",
+      "source": "Z2M#18035",
+      "status": "verified-candidate",
+      "enrichedAt": "2026-09-19"
+    },
+    {
+      "mfr": "_TZ3000_ufhtxr59",
+      "pid": "TS0044",
+      "driver": "scene_switch_4",
+      "source": "Johan/registry",
+      "status": "verified-candidate",
+      "enrichedAt": "2026-09-19"
+    },
+    {
+      "mfr": "_TZ3000_ee8nrt2l",
+      "pid": "TS0044",
+      "driver": "button_wireless_4",
+      "source": "Johan",
+      "status": "verified-candidate",
+      "enrichedAt": "2026-09-19"
+    },
+    {
+      "mfr": "_TZ3000_a4xycprs",
+      "pid": "TS0044",
+      "driver": "button_wireless_4",
+      "source": "Johan MOES",
+      "status": "verified-candidate",
+      "enrichedAt": "2026-09-19"
+    },
+    {
+      "mfr": "_TZ3000_jcspr0tp",
+      "pid": "TS0044",
+      "driver": "button_wireless_4",
+      "source": "Johan",
+      "status": "verified-candidate",
+      "enrichedAt": "2026-09-19"
+    },
+    {
+      "mfr": "_TZ3000_zgyzgdua",
+      "pid": "TS0044",
+      "driver": "scene_switch_4",
+      "source": "sacred meter91",
+      "status": "verified-candidate",
+      "enrichedAt": "2026-09-19"
+    },
+    {
+      "mfr": "_TZ3000_xabckq1v",
+      "pid": "TS004F",
+      "driver": "button_wireless_4",
+      "source": "Z2M/forum",
+      "status": "verified-candidate",
+      "enrichedAt": "2026-09-19"
+    },
+    {
+      "mfr": "_TZ3000_nuombroo",
+      "pid": "TS004F",
+      "driver": "button_wireless_4",
+      "source": "Johan",
+      "status": "verified-candidate",
+      "enrichedAt": "2026-09-19"
+    },
+    {
+      "mfr": "_TZ3000_czuyt8lz",
+      "pid": "TS004F",
+      "driver": "button_wireless_4",
+      "source": "Johan",
+      "status": "verified-candidate",
+      "enrichedAt": "2026-09-19"
+    },
+    {
+      "mfr": "_TZ3000_0ht8dnxj",
+      "pid": "TS004F",
+      "driver": "button_wireless_4",
+      "source": "Johan",
+      "status": "verified-candidate",
+      "enrichedAt": "2026-09-19"
+    },
+    {
+      "mfr": "_TZ3000_b3mgfu0d",
+      "pid": "TS004F",
+      "driver": "button_wireless_4",
+      "source": "Johan",
+      "status": "verified-candidate",
+      "enrichedAt": "2026-09-19"
+    },
+    {
+      "mfr": "_TZ3000_11pg3ima",
+      "pid": "TS004F",
+      "driver": "button_wireless_4",
+      "source": "Johan",
+      "status": "verified-candidate",
+      "enrichedAt": "2026-09-19"
+    },
+    {
+      "mfr": "_TZ3000_et7afzxz",
+      "pid": "TS004F",
+      "driver": "button_wireless_4",
+      "source": "Johan",
+      "status": "verified-candidate",
+      "enrichedAt": "2026-09-19"
+    },
+    {
+      "mfr": "_TZ3000_abrsvsou",
+      "pid": "TS004F",
+      "driver": "button_wireless_4",
+      "source": "P2448 stay 4-btn",
+      "status": "verified-candidate",
+      "enrichedAt": "2026-09-19"
+    },
+    {
+      "mfr": "_TZ3000_4fjiwweb",
+      "pid": "TS004F",
+      "driver": "button_wireless_4",
+      "source": "P2448 stay 4-btn",
+      "status": "verified-candidate",
+      "enrichedAt": "2026-09-19"
+    }
+  ],
   "notes": [
     "On-site: pair each device, lock manufacturerName+productId, fix RX/TX on bastien-home first.",
-    "After soak → npm run bastien:promote -- --dry-run then --apply (master). BOTH reliability → stable surgical."
+    "P2607: cron + enrich/forum hooks auto-apply AUTO_SAFE Bastien→master; BOTH reliability → stable-v5.",
+    "device.js overwrites stay manual-review (except brand-new drivers)."
   ]
 }
