@@ -5,9 +5,8 @@
  *
  * Contre quoi:
  * - Anti-FP treats DP9-never-seen as empty bathroom → blocks presence
- * - DP104 motion_state clear wipes lux/DP1 presence while find_switch warms
- * - Native tuya.dataQuery alone — need EF00 requestDPs + forceActiveTuyaMode
  * - Lux cadence (tiny deltas) must soft-present while distance cold
+ * - Native tuya.dataQuery alone — need EF00 requestDPs + forceActiveTuyaMode
  * Dual-app: BOTH
  */
 
@@ -20,7 +19,6 @@ const ROOT = path.join(__dirname, '..', '..');
 const DEVICE = path.join(ROOT, 'drivers/presence_sensor_radar/device.js');
 const CONFIGS = path.join(ROOT, 'drivers/presence_sensor_radar/configs.js');
 const INFER = path.join(ROOT, 'lib/sensors/IntelligentPresenceInference.js');
-const DB = path.join(ROOT, 'lib/tuya/TuyaSensorDatabase.js');
 
 describe('P2600 gkfbdvyx #550 lux/distance residual', () => {
   it('forceActiveTuyaMode + EF00 requestDPs + lux nudge', () => {
@@ -30,7 +28,6 @@ describe('P2600 gkfbdvyx #550 lux/distance residual', () => {
     assert.ok(src.includes('_nudgeCeilingDistanceArmFromLux'));
     assert.ok(src.includes('_distanceSeenOnce'));
     assert.ok(src.includes('P2600'));
-    assert.ok(src.includes('ignorePresenceClear'));
   });
 
   it('anti-FP allows presence while distance never seen', () => {
@@ -39,13 +36,13 @@ describe('P2600 gkfbdvyx #550 lux/distance residual', () => {
     assert.ok(src.includes('!this._distanceSeenOnce'));
   });
 
-  it('ceiling DP104 ignorePresenceClear', () => {
+  it('ceiling V3 lux DP103 + distance ÷10 (P2604 supersedes DP104 presence)', () => {
     const cfg = fs.readFileSync(CONFIGS, 'utf8');
     const idx = cfg.indexOf('ZY_M100_CEILING_24G');
-    const block = cfg.slice(idx, idx + 3500);
-    assert.match(block, /104:\s*\{[\s\S]*?ignorePresenceClear:\s*true/);
-    const db = fs.readFileSync(DB, 'utf8');
-    assert.ok(db.includes('ignorePresenceClear: true'));
+    const block = cfg.slice(idx, idx + 4000);
+    assert.ok(block.includes("103: { cap: 'measure_luminance', type: 'lux_direct' }"));
+    assert.ok(block.includes("9: { cap: 'measure_luminance.distance', divisor: 10 }"));
+    assert.ok(block.includes("104: { cap: null, internal: 'motion_state_v2_compat' }"));
   });
 
   it('inference lux cadence soft-present (P2600)', () => {

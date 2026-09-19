@@ -617,6 +617,10 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
         'measure_luminance.distance.zone3',
         'measure_motion.classification',
       );
+      // WHY(P2604 / GH#550): no-relay ceiling — strip Button 1 reinject after re-pair
+      if (/gkfbdvyx|laokfqwu|ya4ft0w4/.test(mfrNow)) {
+        phantoms.push('button.1', 'button', 'onoff');
+      }
     }
     let flippedFromCurtain = false;
     for (const cap of phantoms) {
@@ -972,7 +976,10 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
       || config.enableFindSwitchOnBoot === true;
     if (!isCeilingFamily) return false;
     const now = Date.now();
-    if (this._lastFindSwitchOnAt && (now - this._lastFindSwitchOnAt) < 20_000) return false;
+    if (this._lastFindSwitchOnAt && (now - this._lastFindSwitchOnAt) < 20_000) {
+      // WHY(P2604): allow immediate re-arm when distance stuck at 0 after re-pair
+      if (!/stuck|repair|announce|lux-stuck/.test(String(reason || ''))) return false;
+    }
     this._lastFindSwitchOnAt = now;
     this.log(`[RADAR] P2597 enabling DP101 find_switch (${reason})`);
     // WHY(P2600): prefer EF00 manager (same Contre quoi as TRV P2593 Buffer path)
@@ -996,24 +1003,32 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
   /**
    * WHY(P2600 / GH#550 OCR): lux floods every 1–2s while DP9 stays "-" —
    * re-arm find_switch + EF00 requestDP (not Homey-native dataQuery alone).
+   * WHY(P2604 / GH#550 re-pair): once DP9 paints 0m, `_distanceSeenOnce` blocked
+   * forever re-arm → distance stuck 0 + lux goes quiet. Keep nudging while ≤0.05m.
    */
   _nudgeCeilingDistanceArmFromLux() {
     try {
       const cfg = this._getRadarConfig() || {};
       if (!cfg.enableFindSwitchOnBoot && !cfg.syncPresenceFromLuxInference) return;
-      if (this._distanceSeenOnce) return;
+      const dist = Number(this._lastDistanceM);
+      const stuckZero = this._distanceSeenOnce
+        && Number.isFinite(dist)
+        && dist <= 0.05;
+      if (this._distanceSeenOnce && !stuckZero) return;
       const now = Date.now();
-      if (this._lastLuxDistanceNudgeAt && (now - this._lastLuxDistanceNudgeAt) < 12_000) return;
+      const throttleMs = stuckZero ? 45_000 : 12_000;
+      if (this._lastLuxDistanceNudgeAt && (now - this._lastLuxDistanceNudgeAt) < throttleMs) return;
       this._lastLuxDistanceNudgeAt = now;
-      this._ensureCeilingFindSwitchOn('lux-nudge').catch(() => {});
-      this._queryCeilingPresenceDps('lux-nudge').catch(() => {});
+      this._ensureCeilingFindSwitchOn(stuckZero ? 'lux-stuck-zero' : 'lux-nudge').catch(() => {});
+      this._queryCeilingPresenceDps(stuckZero ? 'lux-stuck-zero' : 'lux-nudge').catch(() => {});
     } catch (_e) { /* soft */ }
   }
 
   async _queryCeilingPresenceDps(reason = 'boot') {
     try {
       const mgr = this.tuyaEF00Manager;
-      const dps = [1, 9, 101, 103, 104];
+      // WHY(P2604): V3 lux = DP103; keep 9/101 for find_switch + distance
+      const dps = [1, 9, 101, 103];
       if (mgr && typeof mgr.requestDPs === 'function') {
         this.log(`[RADAR] P2600 requestDPs [${dps.join(',')}] (${reason})`);
         await mgr.requestDPs(dps).catch(() => {});

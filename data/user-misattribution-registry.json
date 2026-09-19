@@ -1616,10 +1616,13 @@
       "canonicalDriver": "wall_curtain_switch",
       "forbiddenDrivers": [
         "curtain_motor_shutter",
-        "curtain_module"
+        "curtain_module",
+        "smart_knob",
+        "smart_knob_rotary",
+        "smart_knob_switch"
       ],
       "protocol": "zcl",
-      "notes": "Johan enrichment gives TS130F for all four (Moes MS-108ZR family, plus LoraTap and Nous rebrands). curtain_motor_shutter does not even declare TS130F, so the placement can never match; its 50-entry productId list has accumulated Hue bulbs, Xiaomi weather sensors and temperature sensors and should not grow further.",
+      "notes": "Johan enrichment gives TS130F for all four (Moes MS-108ZR family, plus LoraTap and Nous rebrands). GH#552: never smart_knob; never curtain_module (P191). wall_curtain_switch clusters must include WindowCovering 258 + OnOff 6 for Homey match.",
       "sources": [
         "z2m-herdsman",
         "johan-enrichment",

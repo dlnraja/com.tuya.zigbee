@@ -3653,5 +3653,8 @@
   },
   "9.0.1085": {
     "en": "Presence radar: no phantom Channel on ceiling radars; presence quick action; MTG relay Channel via runtime. Update Homey Test + Repair."
+  },
+  "9.0.1087": {
+    "en": "Radar distance re-arm after re-pair; TS0043 scene remote pairing; TS130F curtain switch match. Update Homey Test + Repair."
   }
 }

@@ -260,6 +260,7 @@ const SENSOR_CONFIGS = {
       4: { cap: null, internal: 'detection_distance_max', radarRangeScale: true, maxMeters: 12 },
       // WHY(P2595 / Z2M ZY-M100-24GV3): DP9 distance = ÷10 (not smartDivisor → /100 miss)
       9: { cap: 'measure_luminance.distance', divisor: 10 },
+      // WHY(P2604 / Z2M V3): illuminance is DP103 raw — DP10 kept as soft sibling only
       10: { cap: 'measure_luminance', type: 'lux_direct' },
       // WHY(P2597 / Z2M DP101 find_switch): distance tracking — auto ON after pair
       101: {
@@ -270,15 +271,9 @@ const SENSOR_CONFIGS = {
       },
       102: { cap: null, internal: 'presence_sensitivity' },
       103: { cap: 'measure_luminance', type: 'lux_direct' },
-      // WHY(P2600 / ZHA): DP104 = motion_state — ignore clear so none≠wipe presence while DP9 cold
-      104: {
-        cap: 'alarm_motion',
-        type: 'presence_enum_gkfbdvyx',
-        enumMap: { 0: false, 1: true, 2: true },
-        useInference: true,
-        unreliable: true,
-        ignorePresenceClear: true,
-      },
+      // WHY(P2604 / Z2M ZY-M100-24GV3): V3 has NO DP104 presence — do not map as alarm_motion
+      // (V2 used 104; mapping it on gkfbdvyx caused silent lux/distance races after re-pair).
+      104: { cap: null, internal: 'motion_state_v2_compat' },
       105: { cap: null, internal: 'fading_time' },
     }
   },
