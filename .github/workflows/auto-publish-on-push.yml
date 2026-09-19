@@ -144,6 +144,9 @@ jobs:
       - name: P2487–P2490 IR + Smartbutton + complementary failover
         run: npm run check:p248x
 
+      - name: P260x Bastien + wall remote hybrid fleet
+        run: npm run check:p260x
+
       - name: P249x AI efficiency + Homey button UI + couple SSOT
         run: npm run check:p249x
 

@@ -89,8 +89,11 @@ jobs:
       - name: Install
         run: npm ci --prefer-offline --no-audit || npm install --no-audit
 
-      - name: Contre quoi P2606
-        run: npm run check:p2606
+      - name: Contre quoi P2606 + P260x wall remotes
+        run: |
+          npm run check:p2606
+          npm run check:p2608 || true
+          npm run check:p2609 || true
 
       - name: Homey app build
         run: |
