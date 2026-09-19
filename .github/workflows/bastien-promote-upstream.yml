@@ -1,71 +1,116 @@
-# Bastien House → Public tracks promote (P2606)
-# One-way only: bastien-home learnings → master report (never reverse wholesale).
-# Never publishes Bastien App ID onto Universal Tuya / Stable slots.
+# Bastien House → Public tracks autonomous promote (P2606 / P2607)
+# One-way only: bastien-home learnings → master → BOTH reliability → stable-v5.
+# Never copies App ID / version. Never reverse wholesale.
 
 name: Bastien Promote Upstream
 
 on:
   schedule:
-    # Stagger: 07:40 UTC — after forum PM harvest window
-    - cron: '40 7 * * 2,5'
+    # Daily 06:20 UTC — after forum PM (05:50) / before enrich peak
+    - cron: '20 6 * * *'
+    # Mid-day soak catch-up
+    - cron: '20 18 * * *'
   workflow_dispatch:
     inputs:
       apply:
-        description: 'Write apply report (still no identity copy)'
+        description: 'Apply AUTO_SAFE merges (default true on schedule)'
         required: false
-        default: 'false'
+        default: 'true'
         type: choice
         options:
-          - 'false'
           - 'true'
+          - 'false'
+      commit:
+        description: 'Commit + push master (and stable BOTH when possible)'
+        required: false
+        default: 'true'
+        type: choice
+        options:
+          - 'true'
+          - 'false'
+      stable:
+        description: 'Also surgical BOTH → stable-v5'
+        required: false
+        default: 'true'
+        type: choice
+        options:
+          - 'true'
+          - 'false'
 
 permissions:
-  contents: read
+  contents: write
+  actions: read
 
 concurrency:
   group: bastien-promote-upstream
-  cancel-in-progress: true
+  cancel-in-progress: false
 
 defaults:
   run:
     shell: bash
 
+env:
+  NODE_VERSION: '22'
+  AI_PLAN_MODE: forfait
+  AI_FORCE_LOCAL: 'true'
+  AI_ALLOW_REMOTE: 'false'
+  AI_ALLOW_PAID: 'false'
+  BASTIEN_PROMOTE_MAX: '48'
+
 jobs:
-  promote-dry:
-    name: Bastien → master promote scan
+  promote-master:
+    name: Bastien → master (autonomous)
     runs-on: ubuntu-latest
-    timeout-minutes: 20
+    timeout-minutes: 25
+    outputs:
+      applied: ${{ steps.promote.outputs.applied }}
     steps:
       - name: Checkout master
         uses: actions/checkout@v5
         with:
           fetch-depth: 0
           ref: master
+          token: ${{ secrets.GH_PAT || secrets.GITHUB_TOKEN }}
 
       - name: Fetch bastien-home
-        continue-on-error: true
         run: |
-          git fetch origin bastien-home:bastien-home || git fetch origin bastien-home || true
+          set -euo pipefail
+          git fetch origin bastien-home:bastien-home || git fetch origin bastien-home
+          git rev-parse origin/bastien-home
           git branch -a | head -40
 
       - name: Setup Node
         uses: actions/setup-node@v5
         with:
-          node-version: '22'
+          node-version: ${{ env.NODE_VERSION }}
+          cache: npm
 
       - name: Install
         run: npm ci --prefer-offline --no-audit || npm install --no-audit
 
-      - name: Contre quoi P2606
-        run: npm run check:p2606
-
-      - name: Promote scan
+      - name: Contre quoi P2606 + P2607 + P2609
         run: |
-          if [ "${{ github.event.inputs.apply }}" = "true" ]; then
-            node tools/ci/bastien-promote-upstream.js --apply
-          else
-            node tools/ci/bastien-promote-upstream.js
-          fi
+          npm run check:p2606
+          npm run check:p2607
+          npm run check:p2609 || npm run check:p2608 || true
+
+      - name: Autonomous promote
+        id: promote
+        env:
+          APPLY_IN: ${{ github.event_name == 'schedule' && 'true' || github.event.inputs.apply || 'true' }}
+          COMMIT_IN: ${{ github.event_name == 'schedule' && 'true' || github.event.inputs.commit || 'true' }}
+        run: |
+          set -euo pipefail
+          ARGS=()
+          if [ "$APPLY_IN" = "true" ]; then ARGS+=(--apply); fi
+          if [ "$COMMIT_IN" = "true" ] && [ "$APPLY_IN" = "true" ]; then ARGS+=(--commit); fi
+          echo "Running: node tools/ci/bastien-promote-upstream.js ${ARGS[*]:-}"
+          node tools/ci/bastien-promote-upstream.js ${ARGS[@]+"${ARGS[@]}"}
+          APPLIED=$(node -p "try{require('./reports/bastien-promote-latest.json').appliedCount||0}catch(e){0}")
+          echo "applied=$APPLIED" >> "$GITHUB_OUTPUT"
+          echo "## Bastien → master promote" >> "$GITHUB_STEP_SUMMARY"
+          echo "- Applied: $APPLIED" >> "$GITHUB_STEP_SUMMARY"
+          head -n 80 reports/bastien-promote-latest.json >> "$GITHUB_STEP_SUMMARY" || true
 
       - name: Upload report
         if: always()
@@ -74,3 +119,74 @@ jobs:
           name: bastien-promote-report
           path: reports/bastien-promote-latest.json
           if-no-files-found: warn
+
+  promote-stable-both:
+    name: Bastien BOTH → stable-v5
+    needs: promote-master
+    # Schedule always; dispatch unless explicitly stable=false
+    if: |
+      always() && (
+        github.event_name == 'schedule' ||
+        github.event.inputs.stable != 'false'
+      )
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - name: Checkout master (promote script + report)
+        uses: actions/checkout@v5
+        with:
+          fetch-depth: 0
+          ref: master
+          path: master
+          token: ${{ secrets.GH_PAT || secrets.GITHUB_TOKEN }}
+
+      - name: Checkout stable-v5
+        uses: actions/checkout@v5
+        with:
+          fetch-depth: 0
+          ref: stable-v5
+          path: stable
+          token: ${{ secrets.GH_PAT || secrets.GITHUB_TOKEN }}
+
+      - name: Fetch bastien-home
+        working-directory: master
+        run: |
+          git fetch origin bastien-home:bastien-home || git fetch origin bastien-home
+          git rev-parse origin/bastien-home
+
+      - name: Setup Node
+        uses: actions/setup-node@v5
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: npm
+          cache-dependency-path: master/package-lock.json
+
+      - name: Install (master tools)
+        working-directory: master
+        run: npm ci --prefer-offline --no-audit || npm install --no-audit
+
+      - name: Apply BOTH reliability onto stable
+        env:
+          STABLE_ROOT: ${{ github.workspace }}/stable
+          APPLY_IN: ${{ github.event_name == 'schedule' && 'true' || github.event.inputs.apply || 'true' }}
+          COMMIT_IN: ${{ github.event_name == 'schedule' && 'true' || github.event.inputs.commit || 'true' }}
+        working-directory: master
+        run: |
+          set -euo pipefail
+          if [ "$APPLY_IN" != "true" ]; then
+            echo "apply=false — stable skip"
+            exit 0
+          fi
+          ARGS=(--apply --stable)
+          if [ "$COMMIT_IN" = "true" ]; then ARGS+=(--commit); fi
+          node tools/ci/bastien-promote-upstream.js "${ARGS[@]}"
+          echo "## Bastien BOTH → stable" >> "$GITHUB_STEP_SUMMARY"
+          node -p "JSON.stringify({stableAppliedCount:require('./reports/bastien-promote-latest.json').stableAppliedCount,errors:require('./reports/bastien-promote-latest.json').errors},null,2)" >> "$GITHUB_STEP_SUMMARY" || true
+
+      - name: Guard stable App ID intact
+        working-directory: stable
+        run: |
+          set -euo pipefail
+          AID=$(node -p "require('./app.json').id")
+          test "$AID" = "com.dlnraja.tuya.zigbee.stable"
+          echo "OK stable App ID=$AID"

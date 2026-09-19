@@ -26,13 +26,6 @@ class Button3GangDevice extends ButtonDevice {
       await installWallSceneRemoteHybrid(this, zclNode, {
         maxButtons: 3,
         tag: 'BUTTON_WIRELESS_3',
-        onPress: async (btn, press) => {
-          if (typeof this.triggerButtonPress === 'function') {
-            await this.triggerButtonPress(btn, press, 1, { source: 'wall-hybrid-3' });
-          } else if (typeof this._triggerPhysicalFlow === 'function') {
-            await this._triggerPhysicalFlow(btn, press);
-          }
-        },
       });
     } catch (e) {
       this.log('[BUTTON_WIRELESS_3] hybrid soft-fail:', e.message);
