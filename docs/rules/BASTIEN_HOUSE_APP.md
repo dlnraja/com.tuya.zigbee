@@ -32,13 +32,38 @@ Bastien box (live) ──promote surgical──► master ──BOTH reliability
 | Selective cherry-pick from master onto Bastien for a device Bastien owns | Dump master features / mega enrich / IR UX wholesale into Bastien |
 | BOTH reliability master → stable after soak | Auto-Publish Bastien onto Universal Tuya Test slot |
 
+## Athom « Create a Homey App »
+
+Si le portail Athom affiche *Create a Homey App* / `homey app publish`, l’App ID
+`com.dlnraja.tuya.zigbee.bastien` **n’existe pas encore** côté store — c’est normal
+au premier jour.
+
+**Créer l’app Athom (une fois) :**
+
+1. Depuis le clone `Documents/homey/bastien` (branche `bastien-home`), **ou**
+2. GitHub Actions → workflow **Publish Zigbee Bastien** → `workflow_dispatch`
+   (`force_publish=true`) — publie **uniquement** `com.dlnraja.tuya.zigbee.bastien`.
+
+```bash
+# Local (PC Dylan, Homey CLI installé)
+cd Documents/homey/bastien
+npm ci
+homey login
+homey app publish
+# puis sur la box Bastien: installer le canal Test de cette App ID
+# https://homey.app/a/com.dlnraja.tuya.zigbee.bastien/test/
+```
+
+Ne jamais lancer ce publish depuis `master` / `stable-v5` (mauvais App ID).
+
 ## On-site install (chez Bastien)
 
-1. Homey Pro neuve + `homey login` / developer.
-2. Clone `Documents/homey/bastien` (branch `bastien-home`).
-3. `npm ci` puis `homey app install` (sideload) — **pas** le slot Test Universal.
-4. Pour chaque device: noter `zb_manufacturer_name` + `zb_model_id`, pair, valider RX/TX/flows.
-5. Fixes ici d’abord → `npm run bastien:promote -- --dry-run` → `--apply` sur master quand soak OK.
+1. Homey Pro neuve + compte developer Dylan (ou Bastien avec droits).
+2. Installer **Zigbee Bastien** Test (`com.dlnraja.tuya.zigbee.bastien`) — **pas** Universal Tuya / Stable.
+   Alternatif sideload: clone `Documents/homey/bastien` → `npm ci` → `homey app install`.
+3. Pour chaque device: noter `zb_manufacturer_name` + `zb_model_id`, pair, valider RX/TX/flows.
+4. Fixes sur `bastien-home` d’abord → `npm run bastien:promote -- --dry-run` → `--apply` (master) quand soak OK.
+5. BOTH reliability → backport chirurgical `stable-v5`.
 
 ## Commands
 
@@ -48,7 +73,9 @@ npm run check:p2606
 npm run bastien:promote -- --dry-run
 npm run bastien:promote -- --apply   # surgical only; human review
 
-# From bastien clone
+# From bastien clone — first Athom create OR update
+homey app publish
+# Daily on-site iterate
 homey app install
 ```
 

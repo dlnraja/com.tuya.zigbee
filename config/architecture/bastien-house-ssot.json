@@ -13,8 +13,11 @@
   "cloneHint": "Documents/homey/bastien",
   "versionLine": "1.0.x",
   "install": {
-    "mode": "homey_cli_sideload_or_private_test",
-    "note": "Prefer `homey app install` on Bastien Pro box. NEVER publish onto Universal Tuya or Stable Test slots."
+    "mode": "athom_first_publish_then_test_or_sideload",
+    "storeUrlTest": "https://homey.app/a/com.dlnraja.tuya.zigbee.bastien/test/",
+    "firstCreate": "If Athom shows Create a Homey App → run Publish Zigbee Bastien workflow or `homey app publish` from bastien clone",
+    "publishWorkflow": ".github/workflows/bastien-publish.yml",
+    "note": "First Athom create uses App ID com.dlnraja.tuya.zigbee.bastien only. Prefer Test channel or `homey app install` on Bastien Pro. NEVER publish onto Universal Tuya or Stable Test slots."
   },
   "enrichment": {
     "direction": "bastien_to_public_only",
