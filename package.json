@@ -1,6 +1,6 @@
 {
   "name": "com.dlnraja.tuya.zigbee.bastien",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Private Zigbee house app for Bastien — local Homey Pro only. Learnings promote upstream to Universal Tuya / Stable (never the reverse wholesale).",
   "main": "app.js",
   "scripts": {
@@ -480,7 +480,10 @@
     "bastien:promote": "node tools/ci/bastien-promote-upstream.js",
     "check:p2608": "node --test test/critical/p2608-wall-scene-remote-hybrid.test.js",
     "check:p2609": "node --test test/critical/p2609-wall-remote-hybrid-fleet.test.js",
-    "check:p260x": "npm run check:p2606 && npm run check:p2607 && npm run check:p2608 && npm run check:p2609"
+    "check:p260x": "npm run check:p2606 && npm run check:p2607 && npm run check:p2608 && npm run check:p2609 && npm run check:p2610",
+    "check:p2610": "node --test test/critical/p2610-bastien-external-multi-enrich.test.js",
+    "enrich:bastien:external": "node tools/ci/p2610-bastien-external-multi-enrich.js",
+    "enrich:bastien:external:apply": "node tools/ci/p2610-bastien-external-multi-enrich.js --apply"
   },
   "keywords": [
     "homey",
