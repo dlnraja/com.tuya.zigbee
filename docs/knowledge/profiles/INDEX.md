@@ -1,6 +1,6 @@
 # Enrichment profiles index
 
-Generated: 2026-09-17T06:41:17 · manifest `config/enrichment/manifest.json`
+Generated: 2026-09-19T06:35:47 · manifest `config/enrichment/manifest.json`
 
 ## Users
 
@@ -57,6 +57,8 @@ Generated: 2026-09-17T06:41:17 · manifest `config/enrichment/manifest.json`
 | `_TZE204_mpbki2zm+TS0601` | wall_thermostat | 22 | [profile](couples/_TZE204_mpbki2zm_TS0601.md) |
 | `_TZE284_6ocnqlhn+TS0601` | din_rail_meter | 21 | [profile](couples/_TZE284_6ocnqlhn_TS0601.md) |
 | `_TZE204_clrdrnya+TS0601` | presence_sensor_radar | 21 | [profile](couples/_TZE204_clrdrnya_TS0601.md) |
+| `_TZE204_dtzziy1e+TS0601` | presence_sensor_radar | 21 | [profile](couples/_TZE204_dtzziy1e_TS0601.md) |
+| `_TZE204_ogx8u5z6+TS0601` | device_radiator_valve | 20 | [profile](couples/_TZE204_ogx8u5z6_TS0601.md) |
 | `_TZE200_7upwjcca+TS0601` | curtain_motor | 19 | [profile](couples/_TZE200_7upwjcca_TS0601.md) |
 | `_TZE204_guvc7pdy+TS0601` | curtain_motor | 19 | [profile](couples/_TZE204_guvc7pdy_TS0601.md) |
 | `_TZE284_hdml1aav+TS0601` | soil_sensor | 19 | [profile](couples/_TZE284_hdml1aav_TS0601.md) |
@@ -68,7 +70,7 @@ Generated: 2026-09-17T06:41:17 · manifest `config/enrichment/manifest.json`
 | `_TZE210_m6lwazh9+TS0301` | curtain_motor | 19 | [profile](couples/_TZE210_m6lwazh9_TS0301.md) |
 | `_TZE200_m6lwazh9+TS0601` | curtain_motor | 19 | [profile](couples/_TZE200_m6lwazh9_TS0601.md) |
 | `_TZE204_rkbxtclc+TS0601` | switch_3gang | 18 | [profile](couples/_TZE204_rkbxtclc_TS0601.md) |
-| `_TZE204_ogx8u5z6+TS0601` | device_radiator_valve | 17 | [profile](couples/_TZE204_ogx8u5z6_TS0601.md) |
+| `_TZE200_vvmbj46n+TS0601` | lcdtemphumidsensor | 17 | [profile](couples/_TZE200_vvmbj46n_TS0601.md) |
 | `_TZE204_mvtclclq+TS0601` | usb_outlet_advanced | 16 | [profile](couples/_TZE204_mvtclclq_TS0601.md) |
 | `_TZE200_vuqzj1ej+TS0601` | presence_sensor_radar | 16 | [profile](couples/_TZE200_vuqzj1ej_TS0601.md) |
 | `_TZ3000_k4ej3ww2+TS0207` | water_leak_sensor | 15 | [profile](couples/_TZ3000_k4ej3ww2_TS0207.md) |
@@ -80,18 +82,20 @@ Generated: 2026-09-17T06:41:17 · manifest `config/enrichment/manifest.json`
 | `_TZ3210_iystcadi+TS0505B` | light_bulb_rgb_led | 13 | [profile](couples/_TZ3210_iystcadi_TS0505B.md) |
 | `_TZE200_wqashyqo+TS0601` | soil_sensor | 13 | [profile](couples/_TZE200_wqashyqo_TS0601.md) |
 | `_TZ3210_3lbtuxgp+TS0505B` | bulb_rgb | 13 | [profile](couples/_TZ3210_3lbtuxgp_TS0505B.md) |
+| `_TZE284_fqm2sfpe+TS0601` | device_radiator_valve | 13 | [profile](couples/_TZE284_fqm2sfpe_TS0601.md) |
 | `_TZ3210_0zabbfax+TS0503B` | light_bulb_rgb | 13 | [profile](couples/_TZ3210_0zabbfax_TS0503B.md) |
 | `_TZE200_kccdzaeo+TS0601` | presence_sensor_radar | 12 | [profile](couples/_TZE200_kccdzaeo_TS0601.md) |
+| `_TZE284_tgeqdjgk+TS0601` | wall_dimmer_tuya | 12 | [profile](couples/_TZE284_tgeqdjgk_TS0601.md) |
 | `_TZ3210_jaap6jeb+TS0505B` | bulb_rgbw | 11 | [profile](couples/_TZ3210_jaap6jeb_TS0505B.md) |
 | `_TZE200_2aaelwxk+TS0601` | presence_sensor_radar | 10 | [profile](couples/_TZE200_2aaelwxk_TS0601.md) |
 | `_TZE200_khzbklyh+TS0601` | presence_sensor_radar | 10 | [profile](couples/_TZE200_khzbklyh_TS0601.md) |
 | `_TZE204_r0jdjrvi+TS0601` | curtain_motor_tilt | 9 | [profile](couples/_TZE204_r0jdjrvi_TS0601.md) |
-| `_TZE284_fqm2sfpe+TS0601` | device_radiator_valve | 9 | [profile](couples/_TZE284_fqm2sfpe_TS0601.md) |
 | `_TZE200_icka1clh+TS0601` | curtain_motor | 9 | [profile](couples/_TZE200_icka1clh_TS0601.md) |
 | `_TZE284_fhvpaltk+TS0601` | valve_dual_irrigation | 9 | [profile](couples/_TZE284_fhvpaltk_TS0601.md) |
 | `_TZ3210_tgvtvdoc+TS0207` | rain_sensor | 9 | [profile](couples/_TZ3210_tgvtvdoc_TS0207.md) |
 | `_TZE204_qasjif9e+TS0601` | presence_sensor_radar | 9 | [profile](couples/_TZE204_qasjif9e_TS0601.md) |
 | `_TZE204_ex3rcdha+TS0601` | presence_sensor_radar | 9 | [profile](couples/_TZE204_ex3rcdha_TS0601.md) |
+| `_TZE200_8eazvzo6+TS0601` | switch_wall_6gang | 9 | [profile](couples/_TZE200_8eazvzo6_TS0601.md) |
 | `_TZE284_m1cvyneb+TS0601` | wall_dimmer_tuya | 8 | [profile](couples/_TZE284_m1cvyneb_TS0601.md) |
 | `_TZE200_itp8dt7f+TS0601` | wall_dimmer_tuya | 8 | [profile](couples/_TZE200_itp8dt7f_TS0601.md) |
 | `_TZ3000_bjawzodf+TS0201` | lcdtemphumidsensor | 8 | [profile](couples/_TZ3000_bjawzodf_TS0201.md) |
@@ -100,6 +104,7 @@ Generated: 2026-09-17T06:41:17 · manifest `config/enrichment/manifest.json`
 | `_TZE200_dfxkcots+TS0601` | wall_dimmer_tuya | 8 | [profile](couples/_TZE200_dfxkcots_TS0601.md) |
 | `_TZE204_sxm7l9xa+TS0601` | presence_sensor_radar | 8 | [profile](couples/_TZE204_sxm7l9xa_TS0601.md) |
 | `_TZE200_3p5ydos3+TS0601` | wall_dimmer_tuya | 8 | [profile](couples/_TZE200_3p5ydos3_TS0601.md) |
+| `_TZE204_gkfbdvyx+TS0601` | presence_sensor_radar | 8 | [profile](couples/_TZE204_gkfbdvyx_TS0601.md) |
 | `_TZ3210_vbfp8eyv+TS011F` | din_rail_switch | 7 | [profile](couples/_TZ3210_vbfp8eyv_TS011F.md) |
 | `_TZE200_2imwyigp+TS0601` | switch_3gang | 7 | [profile](couples/_TZE200_2imwyigp_TS0601.md) |
 | `_TZ3000_qeuvnohg+TS011F` | din_rail_switch | 7 | [profile](couples/_TZ3000_qeuvnohg_TS011F.md) |
@@ -115,11 +120,13 @@ Generated: 2026-09-17T06:41:17 · manifest `config/enrichment/manifest.json`
 | `_TZE284_lq0ffndf+TS0601` | usb_outlet_advanced | 6 | [profile](couples/_TZE284_lq0ffndf_TS0601.md) |
 | `_TZE284_rccxox8p+TS0601` | smoke_sensor2 | 6 | [profile](couples/_TZE284_rccxox8p_TS0601.md) |
 | `_TZE284_3MZB0SDZ+TS0601` | curtain_motor | 6 | [profile](couples/_TZE284_3MZB0SDZ_TS0601.md) |
+| `_TZE284_it9utkro+TS0601` | air_quality_co2 | 6 | [profile](couples/_TZE284_it9utkro_TS0601.md) |
 | `_TZE284_hodyryli+TS0601` | climate_sensor_zt08 | 5 | [profile](couples/_TZE284_hodyryli_TS0601.md) |
 | `_TZE200_hewlydpz+TS0601` | wall_switch_4_gang_tuya | 5 | [profile](couples/_TZE200_hewlydpz_TS0601.md) |
 | `_TZE200_p0gzbqct+TS0601` | wall_dimmer_tuya | 5 | [profile](couples/_TZE200_p0gzbqct_TS0601.md) |
 | `_TZE200_mja3fuja+TS0601` | air_quality_comprehensive | 5 | [profile](couples/_TZE200_mja3fuja_TS0601.md) |
 | `_TZE200_yjjdcqsq+TS0601` | climate_sensor | 5 | [profile](couples/_TZE200_yjjdcqsq_TS0601.md) |
+| `_TZE284_8b9zpaav+TS0601` | air_quality_co2 | 5 | [profile](couples/_TZE284_8b9zpaav_TS0601.md) |
 | `_TZE204_aagrxlbd+TS0601` | wall_switch_4_gang_tuya | 4 | [profile](couples/_TZE204_aagrxlbd_TS0601.md) |
 | `_TZE200_pay2byax+TS0601` | contact_sensor_zigbee | 4 | [profile](couples/_TZE200_pay2byax_TS0601.md) |
 | `_TZE204_pkpfn9hc+TS0601` | air_quality_co2 | 4 | [profile](couples/_TZE204_pkpfn9hc_TS0601.md) |
@@ -152,6 +159,8 @@ Generated: 2026-09-17T06:41:17 · manifest `config/enrichment/manifest.json`
 | `_TZE284_upt8lzi0+TS0601` | curtain_motor | 1 | [profile](couples/_TZE284_upt8lzi0_TS0601.md) |
 | `_TZE204_a2jcoyuk+TS0601` | curtain_motor | 1 | [profile](couples/_TZE204_a2jcoyuk_TS0601.md) |
 | `_TZE200_uj3f4wr5+TS0601` | curtain_motor | 1 | [profile](couples/_TZE200_uj3f4wr5_TS0601.md) |
+| `_TZE204_dqy15zxy+TS0601` | curtain_motor | 1 | [profile](couples/_TZE204_dqy15zxy_TS0601.md) |
+| `_TZE200_yvx5lh6k+TS0601` | air_quality_co2 | 1 | [profile](couples/_TZE200_yvx5lh6k_TS0601.md) |
 | `_TZ3210_imaccztn+TS0004` | relay_board_4_channel | 0 | [profile](couples/_TZ3210_imaccztn_TS0004.md) |
 | `_TZ3000_w5xztuy7+TS0002` | switch_2gang | 0 | [profile](couples/_TZ3000_w5xztuy7_TS0002.md) |
 | `_TZ3000_wkr3jqmr+TS0004` | switch_4gang | 0 | [profile](couples/_TZ3000_wkr3jqmr_TS0004.md) |
@@ -249,6 +258,8 @@ Generated: 2026-09-17T06:41:17 · manifest `config/enrichment/manifest.json`
 | `_TZ3000_5tqxpine+TS0044` | scene_switch_4 | 0 | [profile](couples/_TZ3000_5tqxpine_TS0044.md) |
 | `_TZ3000_t7ugva7q+TS0013` | wall_switch_3gang_1way | 0 | [profile](couples/_TZ3000_t7ugva7q_TS0013.md) |
 | `_TZ3000_l9brjwau+TS0003` | wall_switch_3gang_1way | 0 | [profile](couples/_TZ3000_l9brjwau_TS0003.md) |
+| `_TZB210_rkgngb5o+TS0501B` | led_controller_dimmable | 0 | [profile](couples/_TZB210_rkgngb5o_TS0501B.md) |
+| `_TZE284_c8ipbljq+TS0601` | wall_switch_6_gang_tuya | 0 | [profile](couples/_TZE284_c8ipbljq_TS0601.md) |
 
 Regenerate: `npm run enrich:profiles`
 

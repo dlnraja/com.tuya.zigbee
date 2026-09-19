@@ -14,10 +14,14 @@
 | 4 | target_temperature | — | rx | target_temperature |
 | 5 | measure_temperature | — | rx | measure_temperature |
 | 7 | child_lock | — | rx | child_lock |
+| 13 | measure_battery | — | rx | measure_battery |
+| 15 | measure_battery | — | rx | measure_battery |
 | 35 | alarm_battery | — | rx | alarm_battery |
 | 36 | frost_protection | — | rx | frost_protection |
 | 39 | dp_39 | — | rx | — |
 | 47 | dp_47 | — | rx | — |
+| 101 | dp_101 | — | rx | — |
+| 102 | dp_102 | — | rx | — |
 
 ---
 See `docs/guides/DP_INTERPRETATION.md`

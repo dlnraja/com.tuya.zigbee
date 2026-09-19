@@ -1,8 +1,8 @@
-# Couple profile — `_TZE204_clrdrnya+TS0601`
+# Couple profile — `_TZE204_dtzziy1e+TS0601`
 
 
 - Driver: **presence_sensor_radar**
-- Case: presence-radar-clrdrnya
+- Case: mtg075-dtzziy1e-presence
 - Sources: registry; auto-seed-p2247
 
 ## DPs

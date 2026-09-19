@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-17T06:39:03.400Z",
+  "generatedAt": "2026-09-19T06:33:27.488Z",
   "mode": "APPLY",
   "policy": "P2319 enrichment-first colocate — never strip other drivers",
   "applied": [],
@@ -9,6 +9,12 @@
       "pid": "ZG-102ZM",
       "reason": "p2520-would-degrade",
       "driver": "vibration_sensor"
+    },
+    {
+      "mfr": "_TZ3000_o4mkahkc",
+      "pid": "TS0203",
+      "reason": "p2520-would-degrade",
+      "driver": "contact_sensor"
     },
     {
       "mfr": "_TZE200_n8dljorx",

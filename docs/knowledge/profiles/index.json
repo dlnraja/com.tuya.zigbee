@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-17T06:41:17.712Z",
+  "generatedAt": "2026-09-19T06:35:47.343Z",
   "users": [
     {
       "username": "SunBeech",
@@ -858,6 +858,20 @@
       "file": "couples/_TZE204_clrdrnya_TS0601.md"
     },
     {
+      "couple": "_TZE204_dtzziy1e|TS0601",
+      "driver": "presence_sensor_radar",
+      "autoStub": false,
+      "dpCount": 21,
+      "file": "couples/_TZE204_dtzziy1e_TS0601.md"
+    },
+    {
+      "couple": "_TZE204_ogx8u5z6|TS0601",
+      "driver": "device_radiator_valve",
+      "autoStub": false,
+      "dpCount": 20,
+      "file": "couples/_TZE204_ogx8u5z6_TS0601.md"
+    },
+    {
       "couple": "_TZE200_7upwjcca|TS0601",
       "driver": "curtain_motor",
       "autoStub": false,
@@ -935,11 +949,11 @@
       "file": "couples/_TZE204_rkbxtclc_TS0601.md"
     },
     {
-      "couple": "_TZE204_ogx8u5z6|TS0601",
-      "driver": "device_radiator_valve",
+      "couple": "_TZE200_vvmbj46n|TS0601",
+      "driver": "lcdtemphumidsensor",
       "autoStub": false,
       "dpCount": 17,
-      "file": "couples/_TZE204_ogx8u5z6_TS0601.md"
+      "file": "couples/_TZE200_vvmbj46n_TS0601.md"
     },
     {
       "couple": "_TZE204_mvtclclq|TS0601",
@@ -1019,6 +1033,13 @@
       "file": "couples/_TZ3210_3lbtuxgp_TS0505B.md"
     },
     {
+      "couple": "_TZE284_fqm2sfpe|TS0601",
+      "driver": "device_radiator_valve",
+      "autoStub": false,
+      "dpCount": 13,
+      "file": "couples/_TZE284_fqm2sfpe_TS0601.md"
+    },
+    {
       "couple": "_TZ3210_0zabbfax|TS0503B",
       "driver": "light_bulb_rgb",
       "autoStub": false,
@@ -1031,6 +1052,13 @@
       "autoStub": false,
       "dpCount": 12,
       "file": "couples/_TZE200_kccdzaeo_TS0601.md"
+    },
+    {
+      "couple": "_TZE284_tgeqdjgk|TS0601",
+      "driver": "wall_dimmer_tuya",
+      "autoStub": false,
+      "dpCount": 12,
+      "file": "couples/_TZE284_tgeqdjgk_TS0601.md"
     },
     {
       "couple": "_TZ3210_jaap6jeb|TS0505B",
@@ -1059,13 +1087,6 @@
       "autoStub": false,
       "dpCount": 9,
       "file": "couples/_TZE204_r0jdjrvi_TS0601.md"
-    },
-    {
-      "couple": "_TZE284_fqm2sfpe|TS0601",
-      "driver": "device_radiator_valve",
-      "autoStub": false,
-      "dpCount": 9,
-      "file": "couples/_TZE284_fqm2sfpe_TS0601.md"
     },
     {
       "couple": "_TZE200_icka1clh|TS0601",
@@ -1101,6 +1122,13 @@
       "autoStub": false,
       "dpCount": 9,
       "file": "couples/_TZE204_ex3rcdha_TS0601.md"
+    },
+    {
+      "couple": "_TZE200_8eazvzo6|TS0601",
+      "driver": "switch_wall_6gang",
+      "autoStub": false,
+      "dpCount": 9,
+      "file": "couples/_TZE200_8eazvzo6_TS0601.md"
     },
     {
       "couple": "_TZE284_m1cvyneb|TS0601",
@@ -1157,6 +1185,13 @@
       "autoStub": false,
       "dpCount": 8,
       "file": "couples/_TZE200_3p5ydos3_TS0601.md"
+    },
+    {
+      "couple": "_TZE204_gkfbdvyx|TS0601",
+      "driver": "presence_sensor_radar",
+      "autoStub": false,
+      "dpCount": 8,
+      "file": "couples/_TZE204_gkfbdvyx_TS0601.md"
     },
     {
       "couple": "_TZ3210_vbfp8eyv|TS011F",
@@ -1264,6 +1299,13 @@
       "file": "couples/_TZE284_3MZB0SDZ_TS0601.md"
     },
     {
+      "couple": "_TZE284_it9utkro|TS0601",
+      "driver": "air_quality_co2",
+      "autoStub": false,
+      "dpCount": 6,
+      "file": "couples/_TZE284_it9utkro_TS0601.md"
+    },
+    {
       "couple": "_TZE284_hodyryli|TS0601",
       "driver": "climate_sensor_zt08",
       "autoStub": false,
@@ -1297,6 +1339,13 @@
       "autoStub": false,
       "dpCount": 5,
       "file": "couples/_TZE200_yjjdcqsq_TS0601.md"
+    },
+    {
+      "couple": "_TZE284_8b9zpaav|TS0601",
+      "driver": "air_quality_co2",
+      "autoStub": false,
+      "dpCount": 5,
+      "file": "couples/_TZE284_8b9zpaav_TS0601.md"
     },
     {
       "couple": "_TZE204_aagrxlbd|TS0601",
@@ -1521,6 +1570,20 @@
       "autoStub": false,
       "dpCount": 1,
       "file": "couples/_TZE200_uj3f4wr5_TS0601.md"
+    },
+    {
+      "couple": "_TZE204_dqy15zxy|TS0601",
+      "driver": "curtain_motor",
+      "autoStub": false,
+      "dpCount": 1,
+      "file": "couples/_TZE204_dqy15zxy_TS0601.md"
+    },
+    {
+      "couple": "_TZE200_yvx5lh6k|TS0601",
+      "driver": "air_quality_co2",
+      "autoStub": false,
+      "dpCount": 1,
+      "file": "couples/_TZE200_yvx5lh6k_TS0601.md"
     },
     {
       "couple": "_TZ3210_imaccztn|TS0004",
@@ -2200,6 +2263,20 @@
       "autoStub": false,
       "dpCount": 0,
       "file": "couples/_TZ3000_l9brjwau_TS0003.md"
+    },
+    {
+      "couple": "_TZB210_rkgngb5o|TS0501B",
+      "driver": "led_controller_dimmable",
+      "autoStub": false,
+      "dpCount": 0,
+      "file": "couples/_TZB210_rkgngb5o_TS0501B.md"
+    },
+    {
+      "couple": "_TZE284_c8ipbljq|TS0601",
+      "driver": "wall_switch_6_gang_tuya",
+      "autoStub": false,
+      "dpCount": 0,
+      "file": "couples/_TZE284_c8ipbljq_TS0601.md"
     }
   ],
   "processorTotals": null,
