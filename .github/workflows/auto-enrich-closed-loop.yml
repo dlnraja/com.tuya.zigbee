@@ -482,9 +482,12 @@ jobs:
           fi
           git fetch origin bastien-home:bastien-home 2>/dev/null || git fetch origin bastien-home || true
           # Soft hook = dry-run report only; dedicated Bastien Promote Upstream cron applies+commits
+          npm run enrich:bastien:external || echo "BASTIEN_EXTERNAL_SOFT_WARN"
           npm run bastien:promote || echo "BASTIEN_PROMOTE_SOFT_WARN"
           echo "## P2607 Bastien promote scan (soft)" >> "$GITHUB_STEP_SUMMARY"
           head -n 40 reports/bastien-promote-latest.json >> "$GITHUB_STEP_SUMMARY" 2>/dev/null || true
+          echo "## P2610 Bastien external enrich (soft)" >> "$GITHUB_STEP_SUMMARY"
+          head -n 30 reports/bastien-external-enrich-*/REPORT.json >> "$GITHUB_STEP_SUMMARY" 2>/dev/null || true
 
       - name: 📦 Upload artifacts
         if: always()
