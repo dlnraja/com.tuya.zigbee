@@ -77,14 +77,19 @@ describe('P2609 wall/scene remote hybrid fleet (1–6 btn)', () => {
     assert.ok(mfrs.some((m) => /a7ouggvs/i.test(m)), 'Zemismart sticky stays on 3-btn');
   });
 
-  it('npm check:p2609 wired; auto-publish runs p260x family', () => {
+  it('npm check:p2609 wired; publish workflows run p260x family', () => {
     const pkg = JSON.parse(fs.readFileSync(path.join(ROOT, 'package.json'), 'utf8'));
     assert.ok(pkg.scripts['check:p2609']);
     assert.ok(pkg.scripts['check:p260x']);
-    const yml = fs.readFileSync(
-      path.join(ROOT, '.github/workflows/auto-publish-on-push.yml'),
-      'utf8',
-    );
-    assert.ok(yml.includes('check:p260x') || yml.includes('check:p2609'));
+    const paths = [
+      '.github/workflows/auto-publish-on-push.yml',
+      '.github/workflows/bastien-publish.yml',
+      '.github/workflows/bastien-promote-upstream.yml',
+    ];
+    const blob = paths
+      .filter((p) => fs.existsSync(path.join(ROOT, p)))
+      .map((p) => fs.readFileSync(path.join(ROOT, p), 'utf8'))
+      .join('\n');
+    assert.ok(blob.includes('check:p260x') || blob.includes('check:p2609'));
   });
 });
