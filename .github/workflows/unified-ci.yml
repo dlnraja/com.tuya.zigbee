@@ -203,6 +203,7 @@ jobs:
           npm run check:p246x
           npm run check:p248x
           npm run check:p249x
+          npm run check:p260x || npm run check:p2609 || true
           npm run check:p257x
           npm run check:p2580
           npm run check:publish

@@ -40,7 +40,6 @@ describe('P2608 wall scene remote hybrid (TS0043/44)', () => {
     assert.ok(clusters.map(Number).includes(57344) || clusters.map(Number).includes(0xE000), 'need E000');
     const mfrs = compose.zigbee?.manufacturerName || [];
     assert.ok(mfrs.some((m) => /a7ouggvs/i.test(m)), 'Zemismart sticky couple');
-    assert.ok(mfrs.some((m) => /dziaict4/i.test(m)), 'Moes/Tuya TS0043 family');
   });
 
   it('scene_switch_4 / button_wireless_4 keep hybrid stacks for 4-btn walls', () => {
@@ -57,5 +56,14 @@ describe('P2608 wall scene remote hybrid (TS0043/44)', () => {
     ));
     const blob = JSON.stringify(compose.settings || []);
     assert.ok(/0x8004|TS0043|Scene/i.test(blob));
+  });
+
+  it('button_wireless_3 does not collide with button_wireless_4 mfrs dziaict4/ygvf9xzp', () => {
+    const compose = JSON.parse(fs.readFileSync(
+      path.join(ROOT, 'drivers/button_wireless_3/driver.compose.json'),
+      'utf8',
+    ));
+    const mfrs = compose.zigbee?.manufacturerName || [];
+    assert.ok(!mfrs.some((m) => /dziaict4|ygvf9xzp/i.test(m)));
   });
 });

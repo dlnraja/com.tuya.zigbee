@@ -1,20 +1,32 @@
 'use strict';
 
 const ButtonDevice = require('../../lib/devices/ButtonDevice');
+const { installWallSceneRemoteHybrid } = require('../../lib/devices/WallSceneRemoteHybridInit');
 
 /**
- * SceneSwitch6Device - v10.0.0 Universal Standard
- * Automatically adapts and registers physical & virtual button events
- * Inherits all features from ButtonDevice base class
+ * SceneSwitch6Device — 6-btn scene switch/remote
+ * P2609: hybrid RX fleet
  */
 class SceneSwitch6Device extends ButtonDevice {
 
   async onNodeInit({ zclNode }) {
     this.buttonCount = 6;
-    
-    await Promise.resolve().then(() => super.onNodeInit({ zclNode })).catch(err => this.error('[INIT] Error:', err.message));
-    
-    this.log('[SCENE_SWITCH_6] 🔘 v10.0.0 initialized via ButtonDevice');
+    this.gangCount = 6;
+
+    await Promise.resolve()
+      .then(() => super.onNodeInit({ zclNode }))
+      .catch((err) => this.error('[INIT] Error:', err.message));
+
+    try {
+      await installWallSceneRemoteHybrid(this, zclNode, {
+        maxButtons: 6,
+        tag: 'SCENE_SWITCH_6',
+      });
+    } catch (e) {
+      this.log('[SCENE_SWITCH_6] hybrid soft-fail:', e.message);
+    }
+
+    this.log('[SCENE_SWITCH_6] hybrid ready');
   }
 
 }

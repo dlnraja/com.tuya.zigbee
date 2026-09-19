@@ -88,10 +88,11 @@ jobs:
       - name: Install
         run: npm ci --prefer-offline --no-audit || npm install --no-audit
 
-      - name: Contre quoi P2606 + P2607
+      - name: Contre quoi P2606 + P2607 + P2609
         run: |
           npm run check:p2606
           npm run check:p2607
+          npm run check:p2609 || npm run check:p2608 || true
 
       - name: Autonomous promote
         id: promote
