@@ -47,18 +47,25 @@ class RadiatorValveDevice extends PhysicalButtonMixin(VirtualButtonMixin(Unified
 
     if (this.dpProfile === 'me167') {
       // Profile B: AVATTO ME167/TRV06 / thermostat_3 DP mapping
-      // v5.5.921: FORUM FIX (ManuelKugler #1223) - Added alarm_battery for DP35
+      // WHY(P2598 / Z2M#25199 / Michaelp #2253): DP4/5 are always ÷10 — never smartDivisor
+      // (auto-detect can leave raw tenths as °C → looks empty/wrong after pair).
       return {
         2: { capability: 'thermostat_mode', transform: (v) => ({ 0: 'auto', 1: 'heat', 2: 'off' }[v] ?? 'heat') },
         3: { internal: true, type: 'running_state', transform: (v) => v === 0 ? 'heat' : 'idle' },
-        4: { capability: 'target_temperature', smartDivisor: true },
-        5: { capability: 'measure_temperature', smartDivisor: true },
+        4: { capability: 'target_temperature', divisor: 10 },
+        5: { capability: 'measure_temperature', divisor: 10 },
         7: { capability: 'child_lock', transform: (v) => v === true || v === 1 },
+        // Complementary battery DPs (Z2M thermostat_3 variants) — keep alarm on 35
+        13: { capability: 'measure_battery', divisor: 1 },
+        15: { capability: 'measure_battery', divisor: 1 },
         35: { capability: 'alarm_battery', transform: (v) => v === 1 },
         36: { capability: 'frost_protection', transform: (v) => v === true || v === 1 },
         39: { internal: true, type: 'anti_scaling', writable: true },
         // WHY P2278: ogx8u5z6 stores tenths (ZHA#4124); other ME167 = whole °C (Z2M raw)
         47: { internal: true, type: 'temp_calibration', writable: true, divisor: calDivisor, setting: 'temperature_calibration' },
+        // WHY(P2598 / Z2M#25199 IoT): eco complementary — do not wipe existing maps
+        101: { internal: true, type: 'eco_mode', writable: true },
+        102: { internal: true, type: 'eco_temp', divisor: 10, writable: true },
       };
     }
     // Profile A: Standard TRV DP mapping (MOES, etc.)
@@ -99,12 +106,21 @@ class RadiatorValveDevice extends PhysicalButtonMixin(VirtualButtonMixin(Unified
   }
 
   async onNodeInit({ zclNode }) {
-    await super.onNodeInit({ zclNode });
-    // WHY(P2569 / Michaelp #2244): ogx8u5z6 interview is EF00-only � force pure Tuya DP path
+    // WHY(P2569/P2573 / Michaelp #2244): ogx8u5z6 interview is EF00-only
+    // ([0,4,5,61184] ± 0xED00) — force pure Tuya DP BEFORE Hybrid base init.
     try {
       const { forcePureTuyaDp } = require('../../lib/zigbee/Ef00OnlyInterview');
       forcePureTuyaDp(this);
     } catch (_e) { /* soft */ }
+    // WHY(P2596): seed identity BEFORE thermostat init so me167 maps + pid settings exist
+    try {
+      const { ensureManufacturerSettings } = require('../../lib/helpers/ManufacturerNameHelper');
+      await ensureManufacturerSettings(this, zclNode);
+      this.forceActiveTuyaMode = true;
+      this._trvInitAt = Date.now();
+      this._deviceInitTime = this._trvInitAt;
+    } catch (_e) { /* soft */ }
+    await super.onNodeInit({ zclNode });
     // --- Homey Time Sync for TRV / LCD/Thermostat devices ---
     // Syncs the device clock with the Homey box time every 6 hours.
     // Uses ZCL Time Cluster (0x000A) or Tuya EF00 DP 0x24 as fallback.
@@ -195,6 +211,16 @@ class RadiatorValveDevice extends PhysicalButtonMixin(VirtualButtonMixin(Unified
       this.log('[TRV-P2326] misroute check skipped:', e?.message || e);
     }
 
+    // WHY(P2594): after mfr settings filled, lock me167 maps + re-arm EF00 RX
+    // (super thermostat init may have run with empty mfr → wrong/empty dynamic maps)
+    try {
+      if (this.dpProfile === 'me167') {
+        this._dynamicDpMappings = { ...(this._dynamicDpMappings || {}), ...this.dpMappings };
+        this.log('[TRV] P2594 me167 DP maps re-locked after identity');
+      }
+      await this._setupTuyaDPMode?.();
+    } catch (_e) { /* soft */ }
+
     // Store manufacturerName for profile detection
     try {
       const mfr = this.getStoreValue('manufacturerName') || zclNode?.endpoints?.[1]?.clusters?.basic?.attributes?.manufacturerName?.value;
@@ -208,8 +234,11 @@ class RadiatorValveDevice extends PhysicalButtonMixin(VirtualButtonMixin(Unified
     // Setup ZCL thermostat (parent doesn't do this)
     await this._setupThermostatCluster(zclNode);
 
-    // Register onoff/mode listeners (parent only handles target_temperature)
+    // Register onoff/mode listeners AFTER identity (me167 needs DP4 not DP3)
     this._setupTRVListeners();
+
+    // WHY(P2593 / Michaelp #2253): caps stay null until first EF00 report — nudge query
+    this._scheduleTrvDpRefresh();
 
     // v5.11.105: SONOFF TRVZB ZCL features (child_lock, open_window, frost_protection, valve)
     await this._setupSonoffTRVZB(zclNode);
@@ -254,6 +283,49 @@ class RadiatorValveDevice extends PhysicalButtonMixin(VirtualButtonMixin(Unified
     this._appCommandTimeout = safeSetTimeout(this, () => { if (this._destroyed) {return;} this._appCommandPending = false; }, 2000);
   }
 
+  /**
+   * WHY(P2593): after pair/tip, EF00 sleepy TRVs may not push DPs until queried.
+   */
+  _scheduleTrvDpRefresh() {
+    try {
+      this.forceActiveTuyaMode = true;
+      this._trvInitAt = this._trvInitAt || Date.now();
+      this._deviceInitTime = this._deviceInitTime || this._trvInitAt;
+      safeSetTimeout(this, () => {
+        if (this._destroyed) return;
+        const dps = this.dpProfile === 'me167'
+          ? [2, 3, 4, 5, 7, 13, 15, 35]
+          : [1, 2, 3, 4, 13, 15];
+        this.log(`[TRV] P2596 refresh DPs ${dps.join(',')}`);
+        try {
+          const { tuyaDataQuery } = require('../../lib/tuya/TuyaDataQuery');
+          tuyaDataQuery(this, dps, { logPrefix: '[TRV-REFRESH]', force: true }).catch(() => {});
+        } catch (_e) {
+          const mgr = this.tuyaEF00Manager;
+          if (!mgr || typeof mgr.requestDP !== 'function') return;
+          for (const id of dps) {
+            try { mgr.requestDP(id, { force: true }).catch(() => {}); } catch (_e2) { /* soft */ }
+          }
+        }
+      }, 5_000);
+    } catch (_e) { /* soft */ }
+  }
+
+  /**
+   * WHY(P2598 / Michaelp #2253): sleepy me167 wakes briefly — re-query sacred DPs on announce.
+   */
+  async onEndDeviceAnnounce() {
+    try {
+      if (typeof super.onEndDeviceAnnounce === 'function') {
+        await super.onEndDeviceAnnounce();
+      }
+    } catch (_e) { /* soft */ }
+    try {
+      this.log('[TRV] P2598 endDeviceAnnounce → DP refresh');
+      this._scheduleTrvDpRefresh();
+    } catch (_e2) { /* soft */ }
+  }
+
   async _setupThermostatCluster(zclNode) {
     const ep1 = zclNode?.endpoints?.[1];
     if (!ep1 ) {return;}
@@ -271,11 +343,13 @@ class RadiatorValveDevice extends PhysicalButtonMixin(VirtualButtonMixin(Unified
   }
 
   _setupTRVListeners() {
-    const profile = this.dpProfile;
+    // WHY(P2598 / Michaelp #2253): never close over a stale profile — read live dpProfile
+    // each TX so late identity (empty mfr at first tick) cannot lock standard DP3 forever.
 
     // On/Off - NOT handled by parent (standard profile only)
-    if (this.hasCapability('onoff') && profile === 'standard') {
+    if (this.hasCapability('onoff')) {
       this.registerCapabilityListener('onoff', async (v) => {
+        if (this.dpProfile !== 'standard') return;
         await this._sendTuyaDP(1, v, 'bool');
       });
     }
@@ -283,7 +357,7 @@ class RadiatorValveDevice extends PhysicalButtonMixin(VirtualButtonMixin(Unified
     // Mode - different mapping per profile
     if (this.hasCapability('thermostat_mode')) {
       this.registerCapabilityListener('thermostat_mode', async (v) => {
-        if (profile === 'me167') {
+        if (this.dpProfile === 'me167') {
           // ME167: 0=auto, 1=heat, 2=off
           await this._sendTuyaDP(2, { 'auto': 0, 'heat': 1, 'off': 2 }[v] ?? 1, 'enum');
         } else {
@@ -296,17 +370,35 @@ class RadiatorValveDevice extends PhysicalButtonMixin(VirtualButtonMixin(Unified
     // Target temperature - different DP per profile
     if (this.hasCapability('target_temperature')) {
       this.registerCapabilityListener('target_temperature', async (v) => {
-        const dp = profile === 'me167' ? 4 : 3;
-        await this._sendTuyaDP(dp,Math.round(safeMultiply(v, 10, 10), "value"));
+        const dp = this.dpProfile === 'me167' ? 4 : 3;
+        // WHY(P2593 / Michaelp #2253): tenths °C as Tuya value DP (4-byte)
+        await this._sendTuyaDP(dp, Math.round(safeMultiply(Number(v), 10)), 'value');
       });
     }
   }
 
-  async _sendTuyaDP(dp, value, type) {
-    const tuya = this.zclNode?.endpoints?.[1]?.clusters?.tuya;
-    if (tuya?.datapoint) {
-      this.log(`[TRV] Sending DP${dp} = ${value} (${type})`);
-      await tuya.datapoint({ dp, value, type } );
+  /**
+   * WHY(P2593 / Michaelp #2253): Homey zigbee-clusters rejects legacy
+   * args with value/type keys → "unexpected property".
+   * Prefer TuyaEF00Manager / UniversalDriverInit (datatype + Buffer data).
+   */
+  async _sendTuyaDP(dp, value, type = 'value') {
+    const typeName = type || 'value';
+    this.log(`[TRV] Sending DP${dp} = ${value} (${typeName})`);
+    try {
+      if (this.tuyaEF00Manager && typeof this.tuyaEF00Manager.sendDP === 'function') {
+        const ok = await this.tuyaEF00Manager.sendDP(dp, value, typeName);
+        if (ok) return true;
+      }
+      if (this.io && typeof this.io.sendDP === 'function') {
+        const ok = await this.io.sendDP(dp, value, { type: typeName });
+        if (ok) return true;
+      }
+      const { sendTuyaDP } = require('../../lib/helpers/UniversalDriverInit');
+      return !!(await sendTuyaDP(this, dp, value, typeName));
+    } catch (err) {
+      this.error(`[TRV] DP${dp} TX failed:`, err?.message || err);
+      throw err;
     }
   }
 

@@ -1,6 +1,6 @@
 {
   "name": "com.dlnraja.tuya.zigbee",
-  "version": "5.12.258",
+  "version": "5.12.261",
   "description": "Tuya Unified Zigbee - Local-first control with AI automation",
   "main": "app.js",
   "scripts": {
@@ -253,7 +253,12 @@
     "learn:workflow": "node tools/ci/local-workflow-learn.js",
     "learn:workflow:snapshot": "node tools/ci/local-workflow-learn.js --snapshot",
     "improve:forfait-inject": "node tools/ci/inject-forfait-env-workflows.js --apply",
-    "check:p2569": "node --test test/critical/p2569-michaelp-ogx8u5z6-trv-ef00.test.js"
+    "check:p2569": "node --test test/critical/p2569-michaelp-ogx8u5z6-trv-ef00.test.js",
+    "check:p2593": "node --test test/critical/p2593-michaelp-ogx8u5z6-datapoint-tx.test.js",
+    "check:p2594": "node --test test/critical/p2594-trv-empty-caps-ef00-rx.test.js",
+    "check:p2596": "node --test test/critical/p2596-trv-data-query-force.test.js",
+    "check:p2598": "node --test test/critical/p2598-michaelp-2253-me167-divisor-live-profile.test.js",
+    "check:p259x-trv": "npm run check:p2569 && npm run check:p2593 && npm run check:p2594 && npm run check:p2596 && npm run check:p2598"
   },
   "keywords": [
     "homey",
