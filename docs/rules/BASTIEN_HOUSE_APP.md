@@ -20,7 +20,7 @@ Triple tracks: [`config/architecture/dual-app-tracks.json`](../../config/archite
 ## Enrichment direction (hard rule)
 
 ```
-Bastien box (live) ──promote surgical──► master ──BOTH reliability──► stable-v5
+Bastien box (live) ──AUTO promote (P2607)──► master ──BOTH reliability──► stable-v5
          ▲                                      │
          └── selective cherry-pick ONLY ─────────┘
               (device he needs — never wholesale)
@@ -28,9 +28,17 @@ Bastien box (live) ──promote surgical──► master ──BOTH reliability
 
 | Allowed | Forbidden |
 |---------|-----------|
-| Promote sacred couple / DP / crash guard from Bastien → master | Copy Bastien App ID / version onto master or stable |
-| Selective cherry-pick from master onto Bastien for a device Bastien owns | Dump master features / mega enrich / IR UX wholesale into Bastien |
-| BOTH reliability master → stable after soak | Auto-Publish Bastien onto Universal Tuya Test slot |
+| Cron + enrich/forum hooks: AUTO_SAFE Bastien → master | Copy Bastien App ID / version onto master or stable |
+| Complementary compose / sacred-keep / registry / Contre quoi tests | Dump master features / mega enrich / IR UX wholesale into Bastien |
+| BOTH reliability lib + compose → stable after master | Auto-Publish Bastien onto Universal Tuya Test slot |
+| Selective cherry-pick from master onto Bastien for a device Bastien owns | Overwrite existing `device.js` without human review |
+
+### Autonomous schedule (P2607)
+
+- Workflow **Bastien Promote Upstream**: `06:20` + `18:20` UTC daily (`--apply --commit`, stable BOTH).
+- Soft hooks: `auto-enrich-closed-loop.yml`, `forum-poll.yml` → `npm run bastien:promote:apply` (continue-on-error).
+- AUTO_SAFE = complementary `driver.compose.json`, misattribution cases, sacred-keep couples, `test/critical`, `docs/knowledge`, BOTH `lib/{tuya,zigbee,io,…}`.
+- Manual review = existing `device.js` rewrites, mega `mfs_db`, non-allowlisted paths.
 
 ## Athom « Create a Homey App »
 
@@ -70,8 +78,10 @@ Ne jamais lancer ce publish depuis `master` / `stable-v5` (mauvais App ID).
 ```bash
 # From master clone
 npm run check:p2606
-npm run bastien:promote -- --dry-run
-npm run bastien:promote -- --apply   # surgical only; human review
+npm run check:p2607
+npm run bastien:promote              # dry-run report
+npm run bastien:promote:apply        # write AUTO_SAFE into working tree
+npm run bastien:promote:auto         # apply + commit + stable BOTH (CI)
 
 # From bastien clone — first Athom create OR update
 homey app publish
