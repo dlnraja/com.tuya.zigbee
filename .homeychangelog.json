@@ -1809,5 +1809,8 @@
   },
   "5.12.261": {
     "en": "ZG253 TRV: fix empty caps + setpoint TX (Homey datapoint args). Update + Repair radiator valve."
+  },
+  "5.12.262": {
+    "en": "Wall/scene remotes 1-6 btn hybrid RX (battery+mains). Update Stable Test; Repair remotes if presses miss."
   }
 }

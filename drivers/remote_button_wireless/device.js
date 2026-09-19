@@ -1,20 +1,32 @@
 'use strict';
 
 const ButtonDevice = require('../../lib/devices/ButtonDevice');
+const { installWallSceneRemoteHybrid } = require('../../lib/devices/WallSceneRemoteHybridInit');
 
 /**
- * RemoteButtonWirelessDevice - v10.0.0 Universal Standard
- * Automatically adapts and registers physical & virtual button events
- * Inherits all features from ButtonDevice base class
+ * RemoteButtonWirelessDevice — multi-btn wireless remote (TS0043 class default)
+ * P2609: hybrid RX fleet
  */
 class RemoteButtonWirelessDevice extends ButtonDevice {
 
   async onNodeInit({ zclNode }) {
     this.buttonCount = 3;
-    
-    await Promise.resolve().then(() => super.onNodeInit({ zclNode })).catch(err => this.error('[INIT] Error:', err.message));
-    
-    this.log('[REMOTE_BUTTON_WIRELESS] 🔘 v10.0.0 initialized via ButtonDevice');
+    this.gangCount = 3;
+
+    await Promise.resolve()
+      .then(() => super.onNodeInit({ zclNode }))
+      .catch((err) => this.error('[INIT] Error:', err.message));
+
+    try {
+      await installWallSceneRemoteHybrid(this, zclNode, {
+        maxButtons: 3,
+        tag: 'REMOTE_BUTTON_WIRELESS',
+      });
+    } catch (e) {
+      this.log('[REMOTE_BUTTON_WIRELESS] hybrid soft-fail:', e.message);
+    }
+
+    this.log('[REMOTE_BUTTON_WIRELESS] hybrid ready');
   }
 
 }

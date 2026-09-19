@@ -1,35 +1,35 @@
 'use strict';
 
 const ButtonDevice = require('../../lib/devices/ButtonDevice');
+const { installWallSceneRemoteHybrid } = require('../../lib/devices/WallSceneRemoteHybridInit');
 
 /**
- * Button2GangDevice - v10.0.0 Universal Standard
- * Automatically adapts and registers physical & virtual button events
- * Inherits all features from ButtonDevice base class
+ * Button2GangDevice — TS0042 / 2-btn wall scene remote (battery or USB)
+ * P2609: full hybrid RX (ZCL + OnOff 0xFD + E000 + EF00 + raw)
  */
 class Button2GangDevice extends ButtonDevice {
 
   async onNodeInit({ zclNode }) {
     this.buttonCount = 2;
-    
+    this.gangCount = 2;
+
     await Promise.resolve()
       .then(() => super.onNodeInit({ zclNode }))
       .catch((err) => {
-        try { this.log('[INIT] Error: ' + (err && err.message)); } catch (_e) { /* ignore */ }
+        try { this.log(`[INIT] Error: ${err && err.message}`); } catch (_e) { /* ignore */ }
       });
 
-    // WHY(P2387): E000 raw gap-fill without orphaning PhysicalButtonMixin 0xFD chain
+    // WHY(P2609): E000-only was incomplete — AliExpress 2-btn stickies use 0xFD + EF00 too
     try {
-      const { installE000RawInterceptor } = require('../../lib/utils/ButtonE000RawInterceptor');
-      installE000RawInterceptor(this, zclNode, {
-        tag: 'button-wireless-2-raw',
-        maxButton: 2,
-        logPrefix: 'BUTTON2-RAW',
-        pressContext: 'BTN2-RAW',
+      await installWallSceneRemoteHybrid(this, zclNode, {
+        maxButtons: 2,
+        tag: 'BUTTON_WIRELESS_2',
       });
-    } catch (_e) { /* soft */ }
-    
-    this.log('[BUTTON_WIRELESS_2] 🔘 v10.0.0 initialized via ButtonDevice');
+    } catch (e) {
+      this.log('[BUTTON_WIRELESS_2] hybrid soft-fail:', e.message);
+    }
+
+    this.log('[BUTTON_WIRELESS_2] hybrid wall remote ready (TS0042 class)');
   }
 
 }

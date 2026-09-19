@@ -1,10 +1,12 @@
 'use strict';
 
 const ButtonDevice = require('../../lib/devices/ButtonDevice');
+const { installWallSceneRemoteHybrid } = require('../../lib/devices/WallSceneRemoteHybridInit');
 
 /**
  * Button1GangDevice — TS0041 / SH-SC07 class (incl. _TZ3000_mrpevh8p).
  * WHY(P2285): force buttonCount=1 before Physical mixin (interview has phantom EP2–4).
+ * P2609: hybrid RX gap-fill (0xFD/E000/EF00/raw) — still collapse phantom EPs to btn1.
  */
 class Button1GangDevice extends ButtonDevice {
 
@@ -33,6 +35,16 @@ class Button1GangDevice extends ButtonDevice {
       const { sendTuyaMagicPacket } = require('../../lib/zigbee/TuyaMagicPacket');
       sendTuyaMagicPacket(this, zclNode, 1, { force: true }).catch(() => {});
     } catch (_e) { /* soft */ }
+
+    // WHY(P2609): 1-btn wall stickies also need multi-path RX; maxButtons=1 keeps SH-SC07 collapse
+    try {
+      await installWallSceneRemoteHybrid(this, zclNode, {
+        maxButtons: 1,
+        tag: 'BUTTON_WIRELESS_1',
+      });
+    } catch (e) {
+      this.log('[BUTTON_WIRELESS_1] hybrid soft-fail:', e.message);
+    }
 
     // WHY(P2470 / Peter 8afffc76): Homey showed CR2032 because compose listed it first;
     // SH-SC07 is CR2450 (Z2M). Lock energy so Insights/battery UI stay correct after re-pair.
