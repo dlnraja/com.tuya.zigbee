@@ -3662,5 +3662,8 @@
   },
   "9.0.1089": {
     "en": "Radar distance re-arm; TS0043 pairing; TS130F curtain; nkjintbl plug lock. Update Homey Test + Repair."
+  },
+  "9.0.1090": {
+    "en": "Publish unblock: nkjintbl TZE204 plug-only (anti-bot). Radar/button/curtain residuals from GH#550-552 stay on tip."
   }
 }

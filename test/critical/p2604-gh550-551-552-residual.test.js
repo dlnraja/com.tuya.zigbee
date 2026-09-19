@@ -89,4 +89,17 @@ describe('P2604 GH#550/#551/#552 residual', () => {
     assert.ok(raw.includes('"smart_knob"'));
     assert.ok(raw.includes('curtain_module'));
   });
+
+  it('nkjintbl: TZE204 plug-only (anti-bot p102) — Contre quoi Auto-Publish', () => {
+    const plug = JSON.parse(
+      fs.readFileSync(path.join(ROOT, 'drivers/button_wireless_plug/driver.compose.json'), 'utf8'),
+    );
+    const mfrs = (plug.zigbee?.manufacturerName || []).map((m) => String(m).toLowerCase());
+    assert.ok(mfrs.includes('_tze204_nkjintbl'));
+    assert.ok(!mfrs.includes('_tze200_nkjintbl'));
+    assert.ok(!mfrs.includes('_tze284_nkjintbl'));
+    const antibot = fs.readFileSync(path.join(ROOT, 'tools/ci/anti-bot-regression-gate.js'), 'utf8');
+    assert.ok(antibot.includes("id: 'p102-din-not-btn-plug'"));
+    assert.ok(antibot.includes("'_TZE200_nkjintbl'"));
+  });
 });

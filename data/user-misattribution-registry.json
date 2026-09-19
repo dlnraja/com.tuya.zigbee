@@ -5,12 +5,10 @@
     {
       "id": "p2604-nkjintbl-button-plug-not-switch2gang",
       "mfr": [
-        "_TZE200_nkjintbl",
-        "_tze200_nkjintbl",
         "_TZE204_nkjintbl",
         "_tze204_nkjintbl",
-        "_TZE284_nkjintbl",
-        "_tze284_nkjintbl"
+        "_TZE204_NKJINTBL",
+        "_tze204_NKJINTBL"
       ],
       "productId": [
         "TS0601"
@@ -24,7 +22,30 @@
       ],
       "forbidMode": "couple",
       "protocol": "tuya_ef00",
-      "notes": "P2604/P2533: fleet sibling expand bled TZE200_nkjintbl onto switch_2gang. Keep button_wireless_plug."
+      "notes": "P2604/P2537c: only TZE204_nkjintbl on button_wireless_plug. TZE200 forbidden by anti-bot p102-din-not-btn-plug; never bleed nkjintbl onto switch_*."
+    },
+    {
+      "id": "p2605-nkjintbl-tze200-not-switch2gang-not-btn-plug",
+      "mfr": [
+        "_TZE200_nkjintbl",
+        "_tze200_nkjintbl",
+        "_TZE284_nkjintbl",
+        "_tze284_nkjintbl"
+      ],
+      "productId": [
+        "TS0601"
+      ],
+      "canonicalDriver": null,
+      "forbiddenDrivers": [
+        "button_wireless_plug",
+        "switch_2gang",
+        "switch_1gang",
+        "switch_3gang",
+        "switch_4gang"
+      ],
+      "forbidMode": "couple",
+      "protocol": "tuya_ef00",
+      "notes": "P2605: TZE200/284 nkjintbl ambiguous (Z2M multi-gang vs DIN anti-bot). Forbid plug+switch bleed until interview locks couple — do not invent pid/driver."
     },
     {
       "id": "novadigital-dqy15zxy-curtain",
