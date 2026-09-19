@@ -1,18 +1,14 @@
 'use strict';
 
 const ButtonDevice = require('../../lib/devices/ButtonDevice');
+const { installWallSceneRemoteHybrid } = require('../../lib/devices/WallSceneRemoteHybridInit');
 
 /**
- * WallRemote1GangDevice - v10.0.0 Universal Standard
- * Automatically adapts and registers physical & virtual button events
- * Inherits all features from ButtonDevice base class
+ * WallRemote1GangDevice — 1-btn wall scene remote (battery/mains)
+ * P2609: hybrid RX fleet
  */
 class WallRemote1GangDevice extends ButtonDevice {
 
-  /**
-   * v9.7.4: _setGangOnOff for switch_multi_gang flow card compatibility.
-   * Button devices have no onoff capability — triggers button press flow instead.
-   */
   async _setGangOnOff(gang, value) {
     this.log(`[FLOW] _setGangOnOff: gang=${gang} value=${value} (button device, triggering press)`);
     await this.triggerButtonPress(gang || 1, 'single', 1, { source: 'virtual' });
@@ -20,10 +16,22 @@ class WallRemote1GangDevice extends ButtonDevice {
 
   async onNodeInit({ zclNode }) {
     this.buttonCount = 1;
+    this.gangCount = 1;
 
-    await Promise.resolve().then(() => super.onNodeInit({ zclNode })).catch(err => this.error('[INIT] Error:', err.message));
+    await Promise.resolve()
+      .then(() => super.onNodeInit({ zclNode }))
+      .catch((err) => this.error('[INIT] Error:', err.message));
 
-    this.log('[WALL_REMOTE_1_GANG] 🔘 v10.0.0 initialized via ButtonDevice');
+    try {
+      await installWallSceneRemoteHybrid(this, zclNode, {
+        maxButtons: 1,
+        tag: 'WALL_REMOTE_1',
+      });
+    } catch (e) {
+      this.log('[WALL_REMOTE_1_GANG] hybrid soft-fail:', e.message);
+    }
+
+    this.log('[WALL_REMOTE_1_GANG] hybrid ready');
   }
 
 }
