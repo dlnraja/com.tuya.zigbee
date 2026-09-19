@@ -50,7 +50,7 @@
       "versionLine": "1.0.x",
       "purpose": "Private house-only Homey Pro for Bastien — live install/soak; promote learnings upstream surgically",
       "cloneHint": "Documents/homey/bastien",
-      "publish": "Sideload / private only — NEVER Universal Tuya or Stable Test slots",
+      "publish": "Publish Zigbee Bastien workflow / homey app publish — App ID .bastien only; NEVER Universal or Stable slots",
       "enrichment": "bastien_to_public_only"
     }
   },

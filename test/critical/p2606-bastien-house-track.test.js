@@ -54,6 +54,7 @@ describe('P2606 Bastien house track', () => {
     assert.ok(fs.existsSync(path.join(ROOT, 'docs/rules/BASTIEN_HOUSE_APP.md')));
     const md = fs.readFileSync(path.join(ROOT, 'docs/rules/BASTIEN_HOUSE_APP.md'), 'utf8');
     assert.ok(/bastien_to_public_only|one-way|jamais/i.test(md));
+    assert.ok(/Create a Homey App|homey app publish/i.test(md));
     const yml = fs.readFileSync(
       path.join(ROOT, '.github/workflows/bastien-promote-upstream.yml'),
       'utf8',
@@ -62,5 +63,22 @@ describe('P2606 Bastien house track', () => {
     assert.ok(yml.includes('shell: bash'));
     assert.ok(yml.includes('bastien-promote-upstream'));
     assert.ok(!/pull_request_target/.test(yml));
+  });
+
+  it('Bastien publish workflow locks private App ID only', () => {
+    const yml = fs.readFileSync(
+      path.join(ROOT, '.github/workflows/bastien-publish.yml'),
+      'utf8',
+    );
+    assert.ok(yml.includes('EXPECTED_APP_ID: \'com.dlnraja.tuya.zigbee.bastien\''));
+    assert.ok(yml.includes('ref: bastien-home'));
+    assert.ok(yml.includes('shell: bash'));
+    assert.ok(yml.includes('Guard Bastien App ID only'));
+    assert.ok(/never use public App IDs|zigbee\.stable/i.test(yml));
+    assert.ok(!/pull_request_target/.test(yml));
+    const ssot = JSON.parse(
+      fs.readFileSync(path.join(ROOT, 'config/architecture/bastien-house-ssot.json'), 'utf8'),
+    );
+    assert.ok(String(ssot.install?.publishWorkflow || '').includes('bastien-publish.yml'));
   });
 });

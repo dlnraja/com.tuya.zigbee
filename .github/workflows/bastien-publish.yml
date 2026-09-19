@@ -1,0 +1,162 @@
+# Publish Zigbee Bastien (private house App ID only) — P2606
+# Creates / updates Athom app com.dlnraja.tuya.zigbee.bastien
+# NEVER retargets Universal Tuya or Stable App IDs.
+# Default: workflow_dispatch only (first create + on-site install). Push optional.
+
+name: Publish Zigbee Bastien
+
+on:
+  workflow_dispatch:
+    inputs:
+      force_publish:
+        description: 'Force Athom createBuild even if soft-expect would skip'
+        type: boolean
+        default: true
+  push:
+    branches:
+      - bastien-home
+    paths:
+      - '.homeycompose/app.json'
+      - 'app.json'
+      - 'package.json'
+      - 'drivers/**'
+      - 'lib/**'
+      - '.homeychangelog.json'
+
+permissions:
+  contents: read
+  actions: read
+
+concurrency:
+  group: publish-bastien-home
+  cancel-in-progress: false
+
+defaults:
+  run:
+    shell: bash
+
+env:
+  NODE_VERSION: '22'
+  EXPECTED_APP_ID: 'com.dlnraja.tuya.zigbee.bastien'
+  HOMEY_API_TIMEOUT_MS: '120000'
+  HOMEY_BUILD_POLL_TIMEOUT_MS: '360000'
+  HOMEY_DRAFT_WAIT_MS: '600000'
+  HOMEY_PUBLISH_FINAL_MAX_MB: '50'
+  HOMEY_PUBLISH_MAX_UNCOMPRESSED_MB: '50'
+  HOMEY_PUBLISH_SOURCE_MAX_MB: '50'
+  HOMEY_ZIGBEE_MAX_TOTAL_COMBOS: '14000'
+  HOMEY_ZIGBEE_MAX_DRIVER_COMBOS: '1500'
+  HOMEY_ZIGBEE_MAX_CASE_FORMS: '2'
+  AI_PLAN_MODE: forfait
+  AI_FORCE_LOCAL: 'true'
+  AI_ALLOW_REMOTE: 'false'
+  AI_ALLOW_PAID: 'false'
+
+jobs:
+  publish-bastien:
+    name: Publish Bastien house app
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - name: Checkout bastien-home
+        uses: actions/checkout@v5
+        with:
+          ref: bastien-home
+          fetch-depth: 1
+
+      - name: Guard Bastien App ID only
+        run: |
+          set -euo pipefail
+          AID=$(node -p "require('./app.json').id")
+          VID=$(node -p "require('./app.json').version")
+          echo "app_id=$AID version=$VID"
+          if [ "$AID" != "$EXPECTED_APP_ID" ]; then
+            echo "::error::Refusing publish — app.json id=$AID expected $EXPECTED_APP_ID"
+            exit 1
+          fi
+          if [ "$AID" = "com.dlnraja.tuya.zigbee" ] || [ "$AID" = "com.dlnraja.tuya.zigbee.stable" ]; then
+            echo "::error::Bastien publish must never use public App IDs"
+            exit 1
+          fi
+          echo "OK Bastien App ID locked"
+
+      - name: Setup Node
+        uses: actions/setup-node@v5
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: npm
+
+      - name: Install
+        run: npm ci --prefer-offline --no-audit || npm install --no-audit
+
+      - name: Contre quoi P2606
+        run: npm run check:p2606
+
+      - name: Prepare Publish Directory
+        run: npm run prepare-publish
+
+      - name: Publish Bastien draft → Test
+        env:
+          HOMEY_PAT: ${{ secrets.HOMEY_PAT }}
+          HOMEY_FORCE_PUBLISH: ${{ github.event.inputs.force_publish == true && '1' || '0' }}
+        run: |
+          set -euo pipefail
+          if [ -z "${HOMEY_PAT:-}" ]; then
+            echo "::error::HOMEY_PAT secret missing — cannot create Athom app"
+            exit 1
+          fi
+          PUBLISH_DIR="${HOMEY_PUBLISH_DIR:-$(node -p "require('path').join(require('os').tmpdir(), 'homey-publish-temp')")}"
+          if [ ! -d "$PUBLISH_DIR" ]; then
+            echo "::error::Prepared publish directory missing: $PUBLISH_DIR"
+            exit 1
+          fi
+          # Re-lock identity inside prepared dir (prepare-publish must not retarget)
+          node -e "
+            const fs=require('fs'); const path=require('path');
+            const id='com.dlnraja.tuya.zigbee.bastien';
+            for (const f of ['app.json','.homeycompose/app.json'].map(r=>path.join(process.env.PUBLISH_DIR||'$PUBLISH_DIR',r))) {
+              if (!fs.existsSync(f)) continue;
+              const j=JSON.parse(fs.readFileSync(f,'utf8'));
+              if (j.id !== id) { console.error('BAD id in', f, j.id); process.exit(1); }
+              console.log('locked', f, j.id, j.version);
+            }
+          "
+          cd "$PUBLISH_DIR"
+          if [ -f package-lock.json ] || [ -f npm-shrinkwrap.json ]; then
+            npm ci --omit=dev --ignore-scripts --no-audit --no-fund || true
+          fi
+          run_homey_cli_publish() {
+            if [ -x "$GITHUB_WORKSPACE/node_modules/.bin/homey" ]; then
+              HOMEY_HEADLESS=1 HOMEY_PAT="$HOMEY_PAT" "$GITHUB_WORKSPACE/node_modules/.bin/homey" app publish --path "$PUBLISH_DIR"
+            else
+              HOMEY_HEADLESS=1 HOMEY_PAT="$HOMEY_PAT" npx homey app publish --path "$PUBLISH_DIR"
+            fi
+          }
+          set +e
+          if [ "${HOMEY_FORCE_PUBLISH:-0}" = "1" ] && [ -f "$GITHUB_WORKSPACE/scripts/direct-api-publish.js" ]; then
+            echo "::notice::Bastien first/forced publish via direct Athom API"
+            publish_output=$(HOMEY_PAT="$HOMEY_PAT" HOMEY_API_TIMEOUT_MS="${HOMEY_API_TIMEOUT_MS:-120000}" node "$GITHUB_WORKSPACE/scripts/direct-api-publish.js" --path "$PUBLISH_DIR" --channel test --force 2>&1)
+            publish_status=$?
+          else
+            publish_output=$(run_homey_cli_publish 2>&1)
+            publish_status=$?
+            if [ "$publish_status" -ne 0 ] && [ -f "$GITHUB_WORKSPACE/scripts/direct-api-publish.js" ]; then
+              echo "::warning::CLI publish failed — retrying direct Athom API"
+              fallback_output=$(HOMEY_PAT="$HOMEY_PAT" node "$GITHUB_WORKSPACE/scripts/direct-api-publish.js" --path "$PUBLISH_DIR" --channel test --force 2>&1)
+              publish_output="$(printf '%s\n%s' "$publish_output" "$fallback_output")"
+              publish_status=$?
+            fi
+          fi
+          set -e
+          printf '%s\n' "$publish_output"
+          if [ "$publish_status" -ne 0 ]; then
+            if printf '%s\n' "$publish_output" | grep -Eiq 'already been published|currently in review|Create a Homey App'; then
+              echo "::notice::Athom may need first-create — check developer portal for $EXPECTED_APP_ID"
+            fi
+            exit "$publish_status"
+          fi
+          echo "Bastien draft publish completed"
+          echo "## Zigbee Bastien published" >> "$GITHUB_STEP_SUMMARY"
+          echo "- App ID: \`$EXPECTED_APP_ID\`" >> "$GITHUB_STEP_SUMMARY"
+          echo "- [Test install](https://homey.app/a/$EXPECTED_APP_ID/test/)" >> "$GITHUB_STEP_SUMMARY"
+          echo "- Install on Bastien Pro: update Test channel or \`homey app install\` from clone" >> "$GITHUB_STEP_SUMMARY"
