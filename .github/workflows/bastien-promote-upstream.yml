@@ -1,0 +1,76 @@
+# Bastien House → Public tracks promote (P2606)
+# One-way only: bastien-home learnings → master report (never reverse wholesale).
+# Never publishes Bastien App ID onto Universal Tuya / Stable slots.
+
+name: Bastien Promote Upstream
+
+on:
+  schedule:
+    # Stagger: 07:40 UTC — after forum PM harvest window
+    - cron: '40 7 * * 2,5'
+  workflow_dispatch:
+    inputs:
+      apply:
+        description: 'Write apply report (still no identity copy)'
+        required: false
+        default: 'false'
+        type: choice
+        options:
+          - 'false'
+          - 'true'
+
+permissions:
+  contents: read
+
+concurrency:
+  group: bastien-promote-upstream
+  cancel-in-progress: true
+
+defaults:
+  run:
+    shell: bash
+
+jobs:
+  promote-dry:
+    name: Bastien → master promote scan
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - name: Checkout master
+        uses: actions/checkout@v5
+        with:
+          fetch-depth: 0
+          ref: master
+
+      - name: Fetch bastien-home
+        continue-on-error: true
+        run: |
+          git fetch origin bastien-home:bastien-home || git fetch origin bastien-home || true
+          git branch -a | head -40
+
+      - name: Setup Node
+        uses: actions/setup-node@v5
+        with:
+          node-version: '22'
+
+      - name: Install
+        run: npm ci --prefer-offline --no-audit || npm install --no-audit
+
+      - name: Contre quoi P2606
+        run: npm run check:p2606
+
+      - name: Promote scan
+        run: |
+          if [ "${{ github.event.inputs.apply }}" = "true" ]; then
+            node tools/ci/bastien-promote-upstream.js --apply
+          else
+            node tools/ci/bastien-promote-upstream.js
+          fi
+
+      - name: Upload report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: bastien-promote-report
+          path: reports/bastien-promote-latest.json
+          if-no-files-found: warn

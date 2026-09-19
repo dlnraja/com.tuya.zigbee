@@ -1,0 +1,39 @@
+{
+  "_meta": {
+    "version": "1.0.0",
+    "created": "2026-09-19",
+    "why": "Exclusive Homey Pro box for Bastien house — install/pair/fix on-site only",
+    "doctrine": "docs/rules/BASTIEN_HOUSE_APP.md"
+  },
+  "owner": "Bastien",
+  "purpose": "house_private",
+  "appId": "com.dlnraja.tuya.zigbee.bastien",
+  "storeName": "Zigbee Bastien",
+  "branch": "bastien-home",
+  "cloneHint": "Documents/homey/bastien",
+  "versionLine": "1.0.x",
+  "install": {
+    "mode": "homey_cli_sideload_or_private_test",
+    "note": "Prefer `homey app install` on Bastien Pro box. NEVER publish onto Universal Tuya or Stable Test slots."
+  },
+  "enrichment": {
+    "direction": "bastien_to_public_only",
+    "promotesTo": ["master", "stable-v5"],
+    "neverPullWholesaleFrom": ["master", "stable-v5"],
+    "allowSelectiveCherryPickFromMaster": true,
+    "promoteScript": "tools/ci/bastien-promote-upstream.js",
+    "workflow": ".github/workflows/bastien-promote-upstream.yml",
+    "note": "Live house learnings (sacred couples, DP maps, crash guards) promote upstream surgically. Public apps never dump features into Bastien wholesale."
+  },
+  "identityNeverCopy": [
+    "appId",
+    "version",
+    ".homeycompose/app.json id/version/name",
+    "package.json name/version"
+  ],
+  "devicesInventory": [],
+  "notes": [
+    "On-site: pair each device, lock manufacturerName+productId, fix RX/TX on bastien-home first.",
+    "After soak → npm run bastien:promote -- --dry-run then --apply (master). BOTH reliability → stable surgical."
+  ]
+}

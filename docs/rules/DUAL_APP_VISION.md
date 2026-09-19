@@ -1,19 +1,20 @@
-# Dual-App Vision — master vs stable-v5
+# Dual-App Vision — master vs stable-v5 (+ Bastien house)
 
-> **NEVER full copy-paste between branches.** Enrich both tracks according to PURPOSE.
+> **NEVER full copy-paste between branches.** Enrich tracks according to PURPOSE.
 
-Two Homey apps / tracks, one monorepo — **distinct Athom App IDs** (2026-08-21+):
+Three Homey apps / tracks, one monorepo — **distinct Athom App IDs**:
 
-| | **master** (preview / Test) | **stable-v5** (production) |
-|---|---|---|
-| **Branch** | `master` | `stable-v5` |
-| **Athom App ID** | `com.dlnraja.tuya.zigbee` | `com.dlnraja.tuya.zigbee.stable` |
-| **Store name** | Universal Tuya | Tuya Unified (Stable) |
-| **Goal** | Innovation + soak new fixes | Zero crashes, zero surprises |
-| **Users** | Early adopters, forum power users | Everyday reliability |
-| **Version line** | `9.0.x` (bot bump) | `5.12.x` — keep distinct |
-| **What lands** | Features + reliability | **Reliability only** (after soak on master) |
-| **Canonical clone** | `Documents\homey\master` | `Documents\homey\stable` |
+| | **master** (preview / Test) | **stable-v5** (production) | **bastien-home** (private house) |
+|---|---|---|---|
+| **Branch** | `master` | `stable-v5` | `bastien-home` |
+| **Athom App ID** | `com.dlnraja.tuya.zigbee` | `com.dlnraja.tuya.zigbee.stable` | `com.dlnraja.tuya.zigbee.bastien` |
+| **Store name** | Universal Tuya | Tuya Unified (Stable) | Zigbee Bastien |
+| **Goal** | Innovation + soak | Zero crashes LTS | Maison Bastien only |
+| **Users** | Forum / Test | Everyday reliability | Bastien Homey Pro only |
+| **Version line** | `9.0.x` | `5.12.x` | `1.0.x` |
+| **Canonical clone** | `Documents\homey\master` | `Documents\homey\stable` | `Documents\homey\bastien` |
+
+> **Bastien enrichment is one-way:** house learnings → master → (BOTH) stable. Never wholesale master→Bastien. Full doctrine: [`BASTIEN_HOUSE_APP.md`](BASTIEN_HOUSE_APP.md).
 
 > App Store IDs and versions must **never** be overwritten when syncing. Protect `.homeycompose/app.json` / `package.json` / `app.json` identity fields on each track.
 >

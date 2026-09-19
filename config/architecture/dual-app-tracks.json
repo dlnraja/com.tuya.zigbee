@@ -1,9 +1,11 @@
 {
   "_meta": {
-    "version": "1.3.0",
-    "updated": "2026-09-14",
-    "why": "Two Athom apps — never blur App ID / version / purpose. Classify every change.",
+    "version": "1.4.0",
+    "updated": "2026-09-19",
+    "why": "Three Athom apps — never blur App ID / version / purpose. Classify every change. Bastien house is private → promotes upstream only.",
     "doctrine": "docs/rules/DUAL_APP_VISION.md",
+    "bastienDoctrine": "docs/rules/BASTIEN_HOUSE_APP.md",
+    "bastienSsot": "config/architecture/bastien-house-ssot.json",
     "publishSsot": "config/architecture/publish-ssot.json",
     "forumFailoverSsot": "config/architecture/forum-complementary-failover-ssot.json",
     "intelligentIrSsot": "config/architecture/intelligent-ir-ssot.json"
@@ -40,6 +42,16 @@
       "purpose": "Reliability LTS only — no feature managers unless human-promoted",
       "cloneHint": "Documents/homey/stable",
       "publish": "Publish Stable → Test (APP_ID=.stable only); P139 no spam republish"
+    },
+    "bastien": {
+      "branch": "bastien-home",
+      "appId": "com.dlnraja.tuya.zigbee.bastien",
+      "storeName": "Zigbee Bastien",
+      "versionLine": "1.0.x",
+      "purpose": "Private house-only Homey Pro for Bastien — live install/soak; promote learnings upstream surgically",
+      "cloneHint": "Documents/homey/bastien",
+      "publish": "Sideload / private only — NEVER Universal Tuya or Stable Test slots",
+      "enrichment": "bastien_to_public_only"
     }
   },
   "identityNeverCopy": [
@@ -49,6 +61,10 @@
     "store changelog identity"
   ],
   "l99RecentClassification": {
+    "p2606_bastien_house_track": {
+      "tag": "MASTER_ONLY",
+      "note": "Private Zigbee Bastien house app + one-way promote bastien→master/stable — never reverse wholesale; never share App ID"
+    },
     "p2497_stable_both_backport": {
       "tag": "BOTH",
       "note": "Surgical port P2490–P2496 reliability to stable-v5 — never App ID/version; skip P2487 IR MASTER_ONLY"
