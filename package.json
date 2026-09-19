@@ -1,6 +1,6 @@
 {
   "name": "com.dlnraja.tuya.zigbee",
-  "version": "9.0.1092",
+  "version": "9.0.1093",
   "description": "Tuya Unified Zigbee - Local-first control with AI automation",
   "main": "app.js",
   "scripts": {
@@ -366,7 +366,8 @@
     "check:p2496": "node --test test/critical/p2496-identity-fields-pid-productid-productname.test.js",
     "check:p2606": "node --test test/critical/p2606-bastien-house-track.test.js",
     "check:p2607": "node --test test/critical/p2607-bastien-autonomous-promote.test.js",
-    "check:p260x-bastien": "npm run check:p2606 && npm run check:p2607",
+    "check:p2608": "node --test test/critical/p2608-wall-scene-remote-hybrid.test.js",
+    "check:p260x-bastien": "npm run check:p2606 && npm run check:p2607 && npm run check:p2608",
     "bastien:promote": "node tools/ci/bastien-promote-upstream.js",
     "bastien:promote:apply": "node tools/ci/bastien-promote-upstream.js --apply",
     "bastien:promote:auto": "node tools/ci/bastien-promote-upstream.js --apply --commit --stable",
