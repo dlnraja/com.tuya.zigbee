@@ -666,6 +666,40 @@
           "rx": "0xFD+E000",
           "noEf00": true
         }
+      },
+      {
+        "nwk": null,
+        "name": "Zigbee inconnu / module 4-gang",
+        "role": "router_or_end",
+        "mfr": "_TZ3000_ltt60asa",
+        "pid": "TS0004",
+        "driver": "switch_4gang",
+        "status": "NEED_REPAIR_FROM_UNKNOWN",
+        "note": "P2634 Z2M TS0004_switch_module / SML-04Z — tip ≥1.0.20 then remove+re-pair",
+        "siblings": [
+          "_TZ3000_mmkbptmx",
+          "_TZ3000_liygxtcq"
+        ],
+        "clustersHint": {
+          "ep1": [
+            0,
+            3,
+            4,
+            5,
+            6,
+            57344,
+            57345,
+            1794,
+            2820
+          ],
+          "ep2to4": [
+            4,
+            5,
+            6,
+            57344,
+            57345
+          ]
+        }
       }
     ]
   },
@@ -686,5 +720,55 @@
     "couple": "_TZ3000_adndolvx+TS0041",
     "driver": "button_wireless_1",
     "note": "HA phantom 4EP firmware — collapse to btn1"
+  },
+  "p2634": {
+    "couple": "_TZ3000_ltt60asa+TS0004",
+    "siblings": [
+      "_TZ3000_mmkbptmx",
+      "_TZ3000_liygxtcq"
+    ],
+    "driver": "switch_4gang",
+    "z2m": "TS0004_switch_module",
+    "zha": "Switch_4G_Metering",
+    "tipNote": "1.0.20+ — was Zigbee unknown; E000/E001 + metering EP1 + heal",
+    "rePairRequired": true,
+    "forbid": [
+      "wall_switch_4gang_1way",
+      "switch_1gang",
+      "zigbee_universal"
+    ]
+  },
+  "p2635": {
+    "scope": "switches + buttons + actuators Flow",
+    "tipNote": "1.0.21+ — Homey SDK3 state from tokens; no !!args.device on triggers; SwitchActuatorFlowAutoWire",
+    "files": [
+      "lib/flow/FlowCardDeviceResolve.js",
+      "lib/flow/SwitchActuatorFlowAutoWire.js",
+      "lib/flow/FlowCardHeuristics.js",
+      "lib/mixins/PhysicalButtonMixin.js",
+      "lib/FlowCardHelper.js",
+      "lib/flow/DeclaredFlowCardAutoWire.js"
+    ],
+    "contreQuoi": "empty state + button dropdown = all/none Flows"
+  },
+  "todayEnrichment2026_09_20": {
+    "mode": "complementary_P2520",
+    "patches": [
+      "P2628",
+      "P2629",
+      "P2630",
+      "P2631",
+      "P2632",
+      "P2633",
+      "P2634",
+      "P2635"
+    ],
+    "tip": "1.0.21",
+    "userActions": [
+      "Update Bastien Test tip ≥1.0.21",
+      "Re-pair unknown Zigbee if _TZ3000_ltt60asa+TS0004 → 4-Gang Switch",
+      "Re-test button/switch Flows (dropdown Button N)",
+      "Kitchen ZG-301Z: switch_mode=state if still auto-off"
+    ]
   }
 }

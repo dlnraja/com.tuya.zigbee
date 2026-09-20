@@ -2254,6 +2254,14 @@ Generated 2026-09-15T08:05:31.976Z from registry (220 cases) × compound DB (509
 - Notes: Melectro #646 4-gang switch TS0004
 - **Gaps:** no_sources
 
+### `p2634-tz3000-ltt60asa-ts0004-switch-4gang` → `switch_4gang`
+
+- Couple: `_TZ3000_ltt60asa` + TS0004 (siblings `_TZ3000_mmkbptmx`, `_TZ3000_liygxtcq`)
+- Z2M: `TS0004_switch_module` / Blakadder SML-04Z; ZHA `Switch_4G_Metering`
+- Protocol: ZCL OnOff EP1–4 + E000/E001 switchType + optional metering EP1 (0x0702/0x0B04)
+- Contre quoi: Homey “Zigbee unknown” until FP locked; forbid `wall_switch_4gang_1way` / 1–3 gang steal
+- Heal: `lib/tuya/Ts0004SwitchModuleHeal.js` (magic + bind + switch_mode + metering caps)
+
 ### `p2432-tz3000-ruxexjfz-switch-2gang` → `switch_2gang`
 
 - Couple: `_TZ3000_ruxexjfz` + TS0002

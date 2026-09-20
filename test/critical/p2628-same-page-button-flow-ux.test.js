@@ -14,12 +14,15 @@ const path = require('path');
 const ROOT = path.join(__dirname, '..', '..');
 
 describe('P2628 same-page button Flow UX', () => {
-  it('FlowCardHelper allows device triggers without args.device', () => {
+  it('FlowCardHelper allows device triggers without args.device; requires button match when filtered', () => {
     const { shouldRunForDeviceAndButton } = require('../../lib/FlowCardHelper');
     assert.equal(shouldRunForDeviceAndButton({}, { button: '1' }), true);
     assert.equal(shouldRunForDeviceAndButton({ button: '1' }, { button: '1' }), true);
     assert.equal(shouldRunForDeviceAndButton({ button: '2' }, { button: '1' }), false);
     assert.equal(shouldRunForDeviceAndButton({ button: '3' }, { button: '3' }), true);
+    // WHY(P2635): empty state must NOT match a selected button (would fire all Flows)
+    assert.equal(shouldRunForDeviceAndButton({ button: '1' }, {}), false);
+    assert.equal(shouldRunForDeviceAndButton({ button: { id: '2' } }, { button: '2' }), true);
   });
 
   it('button_wireless_3 main cards have Button 1-3 dropdown on one page', () => {

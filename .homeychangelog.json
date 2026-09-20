@@ -1,4 +1,8 @@
 {
+  "1.0.21": {
+    "en": "4-gang module _TZ3000_ltt60asa+TS0004 (was Zigbee unknown); switch/button Flow fixes (Homey state match). Update Bastien Test + re-pair unknown module.",
+    "fr": "Module 4-gang _TZ3000_ltt60asa+TS0004 (était Zigbee inconnu); correctifs Flows interrupteurs/boutons. Maj Test Bastien + re-appairer le module."
+  },
   "9.0.1072": {
     "en": "TRV empty values: force EF00 DP queries after pair (battery passive was skipping 0/10). Update Test + Repair radiator valve."
   },
