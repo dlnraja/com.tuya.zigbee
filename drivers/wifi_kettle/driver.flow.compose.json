@@ -1,0 +1,43 @@
+{
+  "triggers": [
+    {
+      "id": "wifi_kettle_turned_on",
+      "title": {
+        "en": "Kettle turned on",
+        "fr": "Kettle allumé(e)"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Kettle turned on",
+        "fr": "Kettle allumé(e)"
+      }
+    },
+    {
+      "id": "wifi_kettle_turned_off",
+      "title": {
+        "en": "Kettle turned off",
+        "fr": "Kettle éteint(e)"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Kettle turned off",
+        "fr": "Kettle éteint(e)"
+      }
+    }
+  ],
+  "conditions": [
+    {
+      "id": "wifi_kettle_is_on",
+      "title": {
+        "en": "Kettle is on",
+        "fr": "Kettle est allumé(e)"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Kettle is on",
+        "fr": "Kettle est allumé(e)"
+      }
+    }
+  ],
+  "actions": []
+}

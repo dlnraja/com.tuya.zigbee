@@ -1,0 +1,43 @@
+{
+  "triggers": [
+    {
+      "id": "wifi_ev_charger_turned_on",
+      "title": {
+        "en": "EV charger turned on",
+        "fr": "EV charger allumé(e)"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "EV charger turned on",
+        "fr": "EV charger allumé(e)"
+      }
+    },
+    {
+      "id": "wifi_ev_charger_turned_off",
+      "title": {
+        "en": "EV charger turned off",
+        "fr": "EV charger éteint(e)"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "EV charger turned off",
+        "fr": "EV charger éteint(e)"
+      }
+    }
+  ],
+  "conditions": [
+    {
+      "id": "wifi_ev_charger_is_on",
+      "title": {
+        "en": "EV charger is on",
+        "fr": "EV charger est allumé(e)"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "EV charger is on",
+        "fr": "EV charger est allumé(e)"
+      }
+    }
+  ],
+  "actions": []
+}
