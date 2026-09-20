@@ -27,14 +27,19 @@ class ClimateSensorDevice extends UnifiedSensorBase {
 
     // WHY(P2250): HOBEIAN ZG-227Z/ZL is pure ZCL climate — brand also owns soil/presence
     // couples; log couple so diags never confuse with ZG-303Z / ZG-204*.
+    // WHY(P2622): eWeLink+CK-TLSR8656-SS5-01(7014) is ZCL sleepy TH (not virtual socket).
     try {
       const mfr = this._manufacturerName();
       const pid = this.getSetting?.('zb_model_id')
+        || this.getSetting?.('zb_product_id')
         || this.getStoreValue?.('modelId')
         || this.getData?.()?.productId
         || '';
       if (containsCI(mfr, 'HOBEIAN') || /ZG-227/i.test(String(pid))) {
         this.log(`[CLIMATE-HOBEIAN] couple mfr=${mfr || '?'} pid=${pid || '?'} (ZCL temp/humidity; hybrid wrappers still active)`);
+      }
+      if (containsCI(mfr, 'eWeLink') || /CK-TLSR8656-SS5-0[12]\(7014\)/i.test(String(pid))) {
+        this.log(`[CLIMATE-EWELINK] couple mfr=${mfr || '?'} pid=${pid || '?'} (ZCL 0x0402/0x0405/0x0001 sleepy; never socket)`);
       }
     } catch (_e) { /* non-fatal */ }
 
