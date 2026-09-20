@@ -275,5 +275,6 @@
   ],
   "id": "wifi_water_tank_monitor",
   "version": "1.0.0",
-  "discovery": "tuya_wifi"
+  "discovery": "tuya_wifi",
+  "zigbee": {}
 }
