@@ -112,7 +112,8 @@ describe('P2641 tuyalocal complementary (phase-JSON + stale-data + credits)', ()
     const credits = require('../../lib/data/SourceCredits');
     assert.ok(credits.SOURCES.TUYA_LOCAL_ANDIWIRZ);
     assert.ok(credits.SOURCES.TUYA_LOCAL_ANDIWIRZ.repository.includes('andiwirz/com.tuyalocal'));
-    assert.ok(credits.SOURCES.TUYA_LOCAL_ANDIWIRZ.website.includes('154077'));
+    assert.ok(credits.SOURCES.TUYA_LOCAL_ANDIWIRZ.website.includes('com.tuyalocal'));
+    assert.ok(String(credits.SOURCES.TUYA_LOCAL_ANDIWIRZ.forum || '').includes('154077'));
     assert.equal(credits.SOURCES.TUYA_LOCAL_ANDIWIRZ.license, 'MIT');
     assert.ok(
       (credits.COMMUNITY_CONTRIBUTORS || []).some((c) => c.github === 'andiwirz'),
