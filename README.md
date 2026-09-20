@@ -33,15 +33,15 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 
 | Metric | Value |
 |--------|-------|
-| **App Version** | v9.0.1130 |
+| **App Version** | v9.0.1131 |
 | **Drivers** | 434 (381 Zigbee + 53 WiFi) |
 | **Unique Fingerprints** | 4,693 |
-| **Pairing Variants** | 16,442 (4 case combos per fingerprint) |
-| **Unique Product IDs** | 596 |
+| **Pairing Variants** | 16,438 (4 case combos per fingerprint) |
+| **Unique Product IDs** | 597 |
 | **Flow Cards** | 6,055 |
 | **Unique Capabilities** | 170 |
 | **Native OTA Drivers** | 8 |
-| **Test Suites** | 429 files |
+| **Test Suites** | 430 files |
 | **SVG Icons** | 734 |
 | **Languages** | EN, FR, NL, DE |
 | **SDK / Homey** | 3 / >= 12.2.0 |
@@ -52,7 +52,7 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 | # | Driver | Fingerprints |
 |---|--------|-------------|
 | 1 | `climate_sensor` | 2,126 |
-| 2 | `switch_1gang` | 1,511 |
+| 2 | `switch_1gang` | 1,507 |
 | 3 | `curtain_motor` | 669 |
 | 4 | `presence_sensor_radar` | 615 |
 | 5 | `radiator_valve` | 602 |
@@ -103,6 +103,7 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 
 | Version | Changes |
 |---------|---------|
+| **v9.0.1131** | Improved 4-gang switch pairing (TS0004) and LCD climate fingerprint; button/actuator Flow reliability. |
 | **v9.0.1130** | 2-btn remote _TZ3000_dzwgk7e2+TS0042 (was unrecognized; phantom EP3/4 ignored). Update Homey Test + re-pair. |
 | **v9.0.1129** | Bastien benefit: 4-gang _TZ3000_ltt60asa+TS0004 (was Zigbee unknown) + switch/button Flow state fixes. Update Homey Test; re-pair unknown… |
 | **v9.0.1126** | Improved HOBEIAN wall module auto-off and TS0041 phantom-endpoint remotes. Update then restart app / re-pair if needed. |
@@ -114,7 +115,6 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 | **v9.0.1120** | Fixed Zigbee fingerprint sync so battery remotes pair to the correct drivers and flows fire. Update then remove+re-pair affected remotes. |
 | **v9.0.1119** | Improved 3-button wireless remote UX (_TZ3000_vsxvaj9i TS0043): Button 1-3 visible in device UI. Update then remove+re-pair if buttons we… |
 | **v9.0.1118** | Fixed 1-button remote crash and flow cards (_TZ3000_axpdxqgu TS0041). Re-pair if flows were broken. |
-| **v9.0.1117** | Improved eWeLink CK-TLSR8656 climate sensor pairing (temperature, humidity, battery). |
 
 <!-- CHANGELOG_END -->
 
