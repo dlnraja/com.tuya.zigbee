@@ -7786,7 +7786,11 @@
       "id": "p2633-adndolvx-ts0041-phantom-ep-firmware",
       "manufacturerName": [
         "_TZ3000_adndolvx",
-        "_tz3000_adndolvx"
+        "_tz3000_adndolvx",
+        "_TZ3000_itb0omhv",
+        "_tz3000_itb0omhv",
+        "_TZ3000_x7mej5oc",
+        "_tz3000_x7mej5oc"
       ],
       "productId": [
         "TS0041"
@@ -7798,10 +7802,12 @@
         "switch_1gang"
       ],
       "forbidMode": "couple",
-      "notes": "HA T455202: Chinese TS0041 often ships TS0044 4-EP firmware. Collapse phantom EP2-4 to button 1; RX 0xFD; never treat as 4-gang.",
+      "notes": "HA T455202 + Medium chinese TS0041 + ZHA#1557: OEM ships TS0044 4-EP firmware on physical 1-btn. Collapse EP2-4→btn1; RX 0xFD; never button_wireless_4. Siblings itb0omhv/x7mej5oc.",
       "enrichedAt": "2026-09-20",
       "sources": [
-        "https://community.home-assistant.io/t/switch-ts0041-by-tz3000-adndolvx-not-working/455202"
+        "https://community.home-assistant.io/t/switch-ts0041-by-tz3000-adndolvx-not-working/455202",
+        "https://medium.com/@edwarddubilyer/chinese-ts0041-1-bang-zigbee-scene-switch-on-zha-troubleshooting-dd75a90a485f",
+        "https://github.com/zigpy/zha-device-handlers/issues/1557"
       ]
     },
     {
@@ -7896,6 +7902,30 @@
       ],
       "forbidMode": "couple",
       "notes": "P2638 full cross-ref. Event-only remote (no onoff load). Contre quoi: sticky action capability / inventing 3 gangs from UI name.",
+      "enrichedAt": "2026-09-20"
+    },
+    {
+      "id": "p2639-ts0041-phantom-ep-siblings",
+      "manufacturerName": [
+        "_TZ3000_adndolvx",
+        "_tz3000_adndolvx",
+        "_TZ3000_itb0omhv",
+        "_tz3000_itb0omhv",
+        "_TZ3000_x7mej5oc",
+        "_tz3000_x7mej5oc"
+      ],
+      "productId": [
+        "TS0041"
+      ],
+      "canonicalDriver": "button_wireless_1",
+      "forbidDrivers": [
+        "button_wireless_4",
+        "scene_switch_4",
+        "remote_button_wireless_wall",
+        "switch_1gang"
+      ],
+      "forbidMode": "couple",
+      "notes": "P2639: phantom 4-EP firmware class. Contre quoi: pairing as 4-gang / inventing onoff switches.",
       "enrichedAt": "2026-09-20"
     }
   ],
