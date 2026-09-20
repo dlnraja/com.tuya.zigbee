@@ -3703,5 +3703,8 @@
   },
   "1.0.10": {
     "en": "Fixed app settings blank infinite loading so Homey diagnostic reports can be sent. Mesh/WiFi scans are now optional."
+  },
+  "1.0.11": {
+    "en": "Fixed remote button crash (CI is not defined), flow cards, and moved _TZ3000_axpdxqgu TS0041 to Wireless Button 1. Update then remove+re-pair the button."
   }
 }
