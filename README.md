@@ -4,11 +4,11 @@
 
 [![Version](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fraw.githubusercontent.com%2Fdlnraja%2Fcom.tuya.zigbee%2Fmaster%2Fapp.json&query=%24.version&label=version&color=blue)](https://homey.app/a/com.dlnraja.tuya.zigbee/)
 [![Drivers](https://img.shields.io/badge/drivers-434-brightgreen)](https://homey.app/a/com.dlnraja.tuya.zigbee/)
-[![Fingerprints](https://img.shields.io/badge/fingerprints-4,693%20unique-green)](https://homey.app/a/com.dlnraja.tuya.zigbee/)
+[![Fingerprints](https://img.shields.io/badge/fingerprints-4,694%20unique-green)](https://homey.app/a/com.dlnraja.tuya.zigbee/)
 [![SDK](https://img.shields.io/badge/SDK-3-orange)](https://apps.developer.homey.app/)
 [![License](https://img.shields.io/badge/license-GPL--3.0-green)](LICENSE)
 
-Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, sensors, lights, thermostats, covers, valves — **434 drivers**, **4,693 unique fingerprints**. No cloud required.
+Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, sensors, lights, thermostats, covers, valves — **434 drivers**, **4,694 unique fingerprints**. No cloud required.
 
 **What it does:**
 - Talks to devices on your Homey Zigbee mesh (Tuya DP `0xEF00` and standard ZCL)
@@ -33,11 +33,11 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 
 | Metric | Value |
 |--------|-------|
-| **App Version** | v9.0.1132 |
+| **App Version** | v9.0.1133 |
 | **Drivers** | 434 (381 Zigbee + 53 WiFi) |
-| **Unique Fingerprints** | 4,693 |
-| **Pairing Variants** | 16,438 (4 case combos per fingerprint) |
-| **Unique Product IDs** | 597 |
+| **Unique Fingerprints** | 4,694 |
+| **Pairing Variants** | 16,434 (4 case combos per fingerprint) |
+| **Unique Product IDs** | 598 |
 | **Flow Cards** | 6,055 |
 | **Unique Capabilities** | 170 |
 | **Native OTA Drivers** | 8 |
@@ -52,7 +52,7 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 | # | Driver | Fingerprints |
 |---|--------|-------------|
 | 1 | `climate_sensor` | 2,126 |
-| 2 | `switch_1gang` | 1,507 |
+| 2 | `switch_1gang` | 1,503 |
 | 3 | `curtain_motor` | 669 |
 | 4 | `presence_sensor_radar` | 615 |
 | 5 | `radiator_valve` | 602 |
@@ -103,6 +103,7 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 
 | Version | Changes |
 |---------|---------|
+| **v9.0.1133** | Improved Chinese TS0041 remotes with phantom 4-endpoint firmware (single/double/hold Flows). |
 | **v9.0.1132** | Improved Moes Star Ring / TS0041 wireless button (Flows single/double/hold, battery). |
 | **v9.0.1131** | Improved 4-gang switch pairing (TS0004) and LCD climate fingerprint; button/actuator Flow reliability. |
 | **v9.0.1130** | 2-btn remote _TZ3000_dzwgk7e2+TS0042 (was unrecognized; phantom EP3/4 ignored). Update Homey Test + re-pair. |
@@ -114,7 +115,6 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 | **v9.0.1122** | Improved multi-button remote Flow UX (Button 1-N on one card) and fixed silent button Flows. Update then recreate Flows if needed. |
 | **v9.0.1121** | Improved wireless button flow card matching (1-button numbered cards). Update then re-pair remotes if flows were silent. |
 | **v9.0.1120** | Fixed Zigbee fingerprint sync so battery remotes pair to the correct drivers and flows fire. Update then remove+re-pair affected remotes. |
-| **v9.0.1119** | Improved 3-button wireless remote UX (_TZ3000_vsxvaj9i TS0043): Button 1-3 visible in device UI. Update then remove+re-pair if buttons we… |
 
 <!-- CHANGELOG_END -->
 
