@@ -103,11 +103,18 @@ for (const drvName of driverDirs) {
   // capabilities are physical events or maintenance helpers, not voice commands.
   if (composeCaps.some(c => c.startsWith('button.'))) {
     const opts = compose.capabilitiesOptions || {};
+    // WHY(P2614): class:button may use device-view (false) or Maintenance (true);
+    // other classes must keep button.N in Maintenance.
+    const sceneRemoteClass = compose.class === 'button';
     for (const c of composeCaps) {
       if (!c.startsWith('button.')) continue;
       const o = opts[c] || {};
-      if (o.getable !== false || o.setable !== false || o.maintenanceAction !== true) {
-        fail(`${drvName}: button "${c}" must be getable:false + setable:false + maintenanceAction:true`);
+      const maintOk = sceneRemoteClass
+        ? (o.maintenanceAction === true || o.maintenanceAction === false)
+        : o.maintenanceAction === true;
+      if (o.getable !== false || o.setable !== false || !maintOk) {
+        fail(`${drvName}: button "${c}" must be getable:false + setable:false`
+          + (sceneRemoteClass ? ' + maintenanceAction boolean' : ' + maintenanceAction:true'));
       }
     }
   }

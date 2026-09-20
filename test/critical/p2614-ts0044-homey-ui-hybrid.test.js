@@ -153,4 +153,13 @@ describe('P2614 charter stale heal + SSOT couples', () => {
     const pkg = JSON.parse(fs.readFileSync(path.join(ROOT, 'package.json'), 'utf8'));
     assert.ok(pkg.scripts['check:p2614']);
   });
+
+  it('voice-safety gate allows class:button device-view (getable/setable still false)', () => {
+    const src = fs.readFileSync(
+      path.join(ROOT, 'scripts/validation/check-google-assistant-voice-safety.js'),
+      'utf8',
+    );
+    assert.ok(src.includes("compose.class === 'button'") || src.includes('class === "button"'));
+    assert.ok(src.includes('sceneRemoteClass') || src.includes('P2614'));
+  });
 });
