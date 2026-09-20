@@ -53,6 +53,7 @@ Do not invent a LED capability or write backlight DPs on these remotes.
 | Couple | Driver | Source |
 |--------|--------|--------|
 | `_TZ3000_a7ouggvs` + **TS0043** | `button_wireless_3` | DEVICE_TRUTH zemismart-ts0043 |
+| `_TZ3000_vsxvaj9i` + **TS0043** | `button_wireless_3` | Bastien flat 3-btn enddevice — P2625 UX button.1–3 |
 | `_TZ3400_key8kk7r` + **TS0043** | `button_wireless_3` | Blakadder ZM-ZS-3 |
 | `_TZ3000_bczr4e10` + **TS0043** | `button_wireless_3` | INT-170 |
 | `_TZ3000_zgyzgdua` + **TS0044** | `scene_switch_4` | meter91 / INT-015 Moes |

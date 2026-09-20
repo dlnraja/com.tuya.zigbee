@@ -3746,5 +3746,8 @@
   },
   "9.0.1118": {
     "en": "Fixed 1-button remote crash and flow cards (_TZ3000_axpdxqgu TS0041). Re-pair if flows were broken."
+  },
+  "9.0.1119": {
+    "en": "Improved 3-button wireless remote UX (_TZ3000_vsxvaj9i TS0043): Button 1-3 visible in device UI. Update then remove+re-pair if buttons were missing."
   }
 }
