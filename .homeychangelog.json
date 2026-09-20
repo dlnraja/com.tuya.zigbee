@@ -3706,5 +3706,8 @@
   },
   "1.0.11": {
     "en": "Fixed remote button crash (CI is not defined), flow cards, and moved _TZ3000_axpdxqgu TS0041 to Wireless Button 1. Update then remove+re-pair the button."
+  },
+  "1.0.12": {
+    "en": "3-button flat battery remote _TZ3000_vsxvaj9i TS0043: buttons now visible in device UI (Button 1-3), flows and Zigbee clusters locked. Update then remove+re-pair the remote."
   }
 }
