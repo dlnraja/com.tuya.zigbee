@@ -73,8 +73,14 @@
           "label": {
             "en": "Protocol"
           },
-          "value": "3.3",
+          "value": "auto",
           "values": [
+            {
+              "id": "auto",
+              "label": {
+                "en": "Auto (3.1-3.5)"
+              }
+            },
             {
               "id": "3.1",
               "label": {
@@ -100,14 +106,53 @@
               }
             }
           ]
+        },
+        {
+          "id": "command_gap_ms",
+          "type": "number",
+          "label": {
+            "en": "Command Gap (ms)",
+            "fr": "Écart entre commandes (ms)",
+            "nl": "Opdracht-interval (ms)",
+            "de": "Befehlsabstand (ms)"
+          },
+          "value": 100,
+          "min": 0,
+          "max": 10000,
+          "units": {
+            "en": "ms"
+          },
+          "hint": {
+            "en": "Minimum gap between two LAN commands. Helps firmware that silently drops rapid SETs (protocol 3.4/3.5).",
+            "fr": "Délai minimum entre deux commandes LAN. Évite les SET perdus sur protocole 3.4/3.5."
+          }
+        },
+        {
+          "id": "offline_grace_seconds",
+          "type": "number",
+          "label": {
+            "en": "Offline Grace (seconds)",
+            "fr": "Délai hors-ligne (s)",
+            "nl": "Offline-grace (s)",
+            "de": "Offline-Karenz (s)"
+          },
+          "value": 60,
+          "min": 0,
+          "max": 600,
+          "units": {
+            "en": "s"
+          },
+          "hint": {
+            "en": "Delay before marking unavailable / firing disconnect flows after a brief TCP drop (pet feeders, dehumidifiers).",
+            "fr": "Délai avant indisponible / flux déconnecté après une brève coupure TCP (pet feeders, déshumidificateurs)."
+          }
         }
       ]
     }
   ],
   "images": {
     "small": "/drivers/wifi_cover/assets/images/small.png",
-    "large": "/drivers/wifi_cover/assets/images/large.png",
-    "xlarge": "/drivers/wifi_cover/assets/images/xlarge.png"
+    "large": "/drivers/wifi_cover/assets/images/large.png"
   },
   "platforms": [
     "local"
@@ -120,7 +165,7 @@
       "id": "ota_check",
       "title": {
         "en": "Check Zigbee OTA Update",
-        "fr": "VÃ©rifier MÃ J OTA",
+        "fr": "Vérifier Mà J OTA",
         "nl": "Controleer op OTA-updates"
       }
     },
@@ -128,14 +173,18 @@
       "id": "tuya_revive",
       "title": {
         "en": "Tuya Revive (device recovery)",
-        "fr": "Tuya Revive (rÃ©cupÃ©ration appareil)"
+        "fr": "Tuya Revive (récupération appareil)",
+        "nl": "Tuya Revive (apparaatherstel)",
+        "de": "Tuya Revive (Gerätewiederherstellung)"
       }
     },
     {
       "id": "generate_issue_report",
       "title": {
         "en": "Generate support report (GitHub issue)",
-        "fr": "GÃ©nÃ©rer rapport de support (issue GitHub)"
+        "fr": "Générer rapport de support (issue GitHub)",
+        "nl": "Supportrapport genereren (GitHub issue)",
+        "de": "Supportbericht erstellen (GitHub Issue)"
       }
     }
   ],
