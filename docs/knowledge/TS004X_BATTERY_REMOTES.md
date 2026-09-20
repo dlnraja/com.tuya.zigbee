@@ -134,3 +134,8 @@ Pairing: hold bottom-left (TS0044) or left button ~10s. Fresh CR2032.
 | RX | OnOff mfr **0xFD** per EP1–3 + E000/raw parallel |
 | TX forbid | genOnOff **0x8004**, EF00 writes, battery configure storm |
 
+
+
+## Bastien live — `_TZ3000_axpdxqgu`+TS0041 (P2630)
+
+EP1 only `[0,1,6]` / out `[25,10]`. No E000/EF00. Battery ZCL 200→100%. RX 0xFD. Driver `button_wireless_1`. Re-pair after tip.

@@ -3721,5 +3721,8 @@
   },
   "1.0.16": {
     "en": "TS0043 _TZ3000_vsxvaj9i: locked interview clusters (OnOff+E000, no EF00), battery EP1, 0xFD RX. Update then remove+re-pair the 3-button remote."
+  },
+  "1.0.17": {
+    "en": "TS0041 _TZ3000_axpdxqgu: locked interview clusters [0,1,6], fixed Flow cards (no args.device gate), 0xFD RX. Update then remove+re-pair the 1-button remote."
   }
 }
