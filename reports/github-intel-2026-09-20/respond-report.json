@@ -1,0 +1,52 @@
+{
+  "generatedAt": "2026-09-20T10:18:02.100Z",
+  "appVersion": "9.0.1104",
+  "dryRun": true,
+  "actions": [
+    {
+      "type": "issue",
+      "number": 552,
+      "couples": [
+        {
+          "mfr": "_TZ3000_e3vhyirx",
+          "pid": "TS130F",
+          "status": "locked",
+          "driver": "wall_curtain_switch",
+          "note": "compose → wall_curtain_switch"
+        }
+      ],
+      "skipped": false,
+      "preview": "<!-- tuya-intel-github-respond -->\nQuick check on #552 (app Test tip **v9.0.1104**).\n\nWhat I found:\n- `_TZ3000_e3vhyirx+TS130F` → locked (**wall_curtain_switch**) — compose → wall_curtain_switch\n\nIf you are on an older Test build: update **Universal Tuya** Test to the latest, the"
+    },
+    {
+      "type": "issue",
+      "number": 551,
+      "couples": [
+        {
+          "mfr": "_TZ3000_famkxci2",
+          "pid": "TS0043",
+          "status": "locked",
+          "driver": "button_wireless_3",
+          "note": "compose → button_wireless_3"
+        }
+      ],
+      "skipped": false,
+      "preview": "<!-- tuya-intel-github-respond -->\nQuick check on #551 (app Test tip **v9.0.1104**).\n\nWhat I found:\n- `_TZ3000_famkxci2+TS0043` → locked (**button_wireless_3**) — compose → button_wireless_3\n\nIf you are on an older Test build: update **Universal Tuya** Test to the latest, then re"
+    },
+    {
+      "type": "issue",
+      "number": 550,
+      "couples": [
+        {
+          "mfr": "_TZE204_gkfbdvyx",
+          "pid": "TS0601",
+          "status": "locked",
+          "driver": "presence_sensor_radar",
+          "note": "compose → presence_sensor_radar"
+        }
+      ],
+      "skipped": false,
+      "preview": "<!-- tuya-intel-github-respond -->\nQuick check on #550 (app Test tip **v9.0.1104**).\n\nWhat I found:\n- `_TZE204_gkfbdvyx+TS0601` → locked (**presence_sensor_radar**) — compose → presence_sensor_radar\n\nIf you are on an older Test build: update **Universal Tuya** Test to the latest,"
+    }
+  ]
+}
