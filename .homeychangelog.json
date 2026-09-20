@@ -1857,5 +1857,8 @@
   },
   "5.12.277": {
     "en": "WiFi LAN reliability: offline grace + command gap + protocol auto-order (backport). Update Homey Test."
+  },
+  "5.12.278": {
+    "en": "Strip empty zigbee from WiFi compose (validator) + LAN reliability. Update Homey Test."
   }
 }
