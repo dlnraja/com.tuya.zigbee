@@ -32,9 +32,8 @@ function processDriver(driverDir) {
 
   const opts = content.capabilitiesOptions || {};
   let changed = false;
-  // WHY(P2614): do not force Maintenance on class:button — device-view is valid.
-  // Non-button classes still get maintenanceAction:true.
-  const forceMaintTrue = content.class !== 'button';
+  // WHY(P2614/P2615): do not force Maintenance on class:button|remote — device-view is valid.
+  const forceMaintTrue = content.class !== 'button' && content.class !== 'remote';
 
   for (const capId of caps) {
     if (!capId.startsWith('button.')) continue;

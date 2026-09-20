@@ -105,7 +105,7 @@ for (const drvName of driverDirs) {
     const opts = compose.capabilitiesOptions || {};
     // WHY(P2614): class:button may use device-view (false) or Maintenance (true);
     // other classes must keep button.N in Maintenance.
-    const sceneRemoteClass = compose.class === 'button';
+    const sceneRemoteClass = compose.class === 'button' || compose.class === 'remote';
     for (const c of composeCaps) {
       if (!c.startsWith('button.')) continue;
       const o = opts[c] || {};
