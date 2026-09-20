@@ -1,0 +1,1187 @@
+{
+  "generatedAt": "2026-09-20T10:17:41.104Z",
+  "rows": [
+    {
+      "source": "github",
+      "id": "#550",
+      "title": "Bug report - [Short description]",
+      "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/550",
+      "dualApp": "BOTH",
+      "couple": {
+        "mfr": "_TZE204_gkfbdvyx",
+        "pid": "TS0601"
+      },
+      "driverId": "presence_sensor_radar",
+      "depth": {
+        "driverId": "presence_sensor_radar",
+        "compose": true,
+        "deviceJs": true,
+        "flowCompose": true,
+        "clusters": [
+          0,
+          61184
+        ],
+        "hasEf00": true,
+        "dpMapHints": true,
+        "flowCardCount": 20,
+        "flowWireHints": true,
+        "notes": [
+          "compose clusters=[0,61184]",
+          "device has DP/RX map path",
+          "device has flow wire hints",
+          "flow cards=20"
+        ],
+        "ok": true
+      },
+      "requiredVectors": [
+        "identity",
+        "driver_class",
+        "clusters",
+        "dp_map",
+        "rx_path",
+        "tx_path",
+        "flow_compose",
+        "flow_wire",
+        "capabilities",
+        "contre_quoi"
+      ],
+      "priorityVectors": [
+        "flow_wire",
+        "dp_map",
+        "rx_path",
+        "tx_path",
+        "driver_class"
+      ],
+      "action": "depth-ok presence_sensor_radar: compose clusters=[0,61184]; device has DP/RX map path; device has flow wire hints — complementary only",
+      "forumReply": "NEVER"
+    },
+    {
+      "source": "github",
+      "id": "#552",
+      "title": "Bug report - Reassign TS130F (_TZ3000_e3vhyirx) from smart_knob to curtain_module driver",
+      "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/552",
+      "dualApp": "BOTH",
+      "couple": {
+        "mfr": "_TZ3000_e3vhyirx",
+        "pid": "TS130F"
+      },
+      "driverId": "wall_curtain_switch",
+      "depth": {
+        "driverId": "wall_curtain_switch",
+        "compose": true,
+        "deviceJs": true,
+        "flowCompose": true,
+        "clusters": [
+          0,
+          3,
+          4,
+          5,
+          6,
+          258
+        ],
+        "hasEf00": false,
+        "dpMapHints": false,
+        "flowCardCount": 3,
+        "flowWireHints": false,
+        "notes": [
+          "compose clusters=[0,3,4,5,6,258]",
+          "WARN: no dpMappings/EF00 hints in device.js",
+          "flow cards=3"
+        ],
+        "ok": true
+      },
+      "requiredVectors": [
+        "identity",
+        "driver_class",
+        "clusters",
+        "dp_map",
+        "rx_path",
+        "tx_path",
+        "flow_compose",
+        "flow_wire",
+        "capabilities",
+        "contre_quoi"
+      ],
+      "priorityVectors": [
+        "flow_wire",
+        "rx_path",
+        "driver_class"
+      ],
+      "action": "depth-ok wall_curtain_switch: compose clusters=[0,3,4,5,6,258]; WARN: no dpMappings/EF00 hints in device.js; flow cards=3 — complementary only",
+      "forumReply": "NEVER"
+    },
+    {
+      "source": "github",
+      "id": "#551",
+      "title": "Bug report - TS0043 (_TZ3000_famkxci2) detected as Generic Zigbee Device instead of button_wireless_3",
+      "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/551",
+      "dualApp": "BOTH",
+      "couple": {
+        "mfr": "_TZ3000_famkxci2",
+        "pid": "TS0043"
+      },
+      "driverId": "button_wireless_3",
+      "depth": {
+        "driverId": "button_wireless_3",
+        "compose": true,
+        "deviceJs": true,
+        "flowCompose": true,
+        "clusters": [
+          0,
+          1,
+          3,
+          4,
+          5,
+          6,
+          18,
+          57344,
+          0,
+          1,
+          4,
+          5,
+          6,
+          18,
+          57344,
+          0,
+          1,
+          4,
+          5,
+          6,
+          18,
+          57344,
+          0,
+          1,
+          4,
+          5,
+          6,
+          18,
+          57344
+        ],
+        "hasEf00": false,
+        "dpMapHints": true,
+        "flowCardCount": 21,
+        "flowWireHints": false,
+        "notes": [
+          "compose clusters=[0,1,3,4,5,6,18,57344]",
+          "device has DP/RX map path",
+          "flow cards=21"
+        ],
+        "ok": true
+      },
+      "requiredVectors": [
+        "identity",
+        "driver_class",
+        "clusters",
+        "dp_map",
+        "rx_path",
+        "tx_path",
+        "flow_compose",
+        "flow_wire",
+        "capabilities",
+        "contre_quoi"
+      ],
+      "priorityVectors": [
+        "flow_wire",
+        "dp_map",
+        "clusters",
+        "rx_path",
+        "driver_class"
+      ],
+      "action": "depth-ok button_wireless_3: compose clusters=[0,1,3,4,5,6,18,57344]; device has DP/RX map path; flow cards=21 — complementary only",
+      "forumReply": "NEVER"
+    },
+    {
+      "source": "forum",
+      "id": "T158757 #10",
+      "title": "Gabriel_Pedrosa_Mach",
+      "dualApp": "BOTH",
+      "requiredVectors": [
+        "identity",
+        "driver_class",
+        "clusters",
+        "dp_map",
+        "rx_path",
+        "tx_path",
+        "flow_compose",
+        "flow_wire",
+        "capabilities",
+        "contre_quoi"
+      ],
+      "priorityVectors": [
+        "flow_wire",
+        "rx_path",
+        "tx_path",
+        "driver_class"
+      ],
+      "action": "deep-functional: code-fix-stable-candidate",
+      "forumReply": "NEVER"
+    },
+    {
+      "source": "forum",
+      "id": "T158757 #1",
+      "title": "A_Tas",
+      "dualApp": "MASTER_ONLY",
+      "requiredVectors": [
+        "identity",
+        "driver_class",
+        "clusters",
+        "dp_map",
+        "rx_path",
+        "tx_path",
+        "flow_compose",
+        "flow_wire",
+        "capabilities",
+        "contre_quoi"
+      ],
+      "priorityVectors": [
+        "driver_class"
+      ],
+      "action": "deep-functional: request-diag-couple",
+      "forumReply": "NEVER"
+    },
+    {
+      "source": "forum",
+      "id": "T157859 #16",
+      "title": "Pascal_Nohl",
+      "dualApp": "BOTH",
+      "requiredVectors": [
+        "identity",
+        "driver_class",
+        "clusters",
+        "dp_map",
+        "rx_path",
+        "tx_path",
+        "flow_compose",
+        "flow_wire",
+        "capabilities",
+        "contre_quoi"
+      ],
+      "priorityVectors": [
+        "rx_path",
+        "driver_class"
+      ],
+      "action": "deep-functional: code-fix-stable-candidate",
+      "forumReply": "NEVER"
+    },
+    {
+      "source": "forum",
+      "id": "T157859 #11",
+      "title": "Pascal_Nohl",
+      "dualApp": "BOTH",
+      "requiredVectors": [
+        "identity",
+        "driver_class",
+        "clusters",
+        "dp_map",
+        "rx_path",
+        "tx_path",
+        "flow_compose",
+        "flow_wire",
+        "capabilities",
+        "contre_quoi"
+      ],
+      "priorityVectors": [
+        "rx_path",
+        "driver_class"
+      ],
+      "action": "deep-functional: code-fix-stable-candidate",
+      "forumReply": "NEVER"
+    },
+    {
+      "source": "forum",
+      "id": "T156967 #18",
+      "title": "SunBeech",
+      "dualApp": "BOTH",
+      "requiredVectors": [
+        "identity",
+        "driver_class",
+        "clusters",
+        "dp_map",
+        "rx_path",
+        "tx_path",
+        "flow_compose",
+        "flow_wire",
+        "capabilities",
+        "contre_quoi"
+      ],
+      "priorityVectors": [
+        "rx_path",
+        "driver_class"
+      ],
+      "action": "deep-functional: code-fix-stable-candidate",
+      "forumReply": "NEVER"
+    },
+    {
+      "source": "forum",
+      "id": "T154092 #41",
+      "title": "Stefan_Persson2",
+      "dualApp": "BOTH",
+      "requiredVectors": [
+        "identity",
+        "driver_class",
+        "clusters",
+        "dp_map",
+        "rx_path",
+        "tx_path",
+        "flow_compose",
+        "flow_wire",
+        "capabilities",
+        "contre_quoi"
+      ],
+      "priorityVectors": [
+        "rx_path",
+        "flow_wire",
+        "dp_map"
+      ],
+      "action": "deep-functional-audit after couple lock (DP/cluster/flow/RX-TX)",
+      "forumReply": "NEVER"
+    },
+    {
+      "source": "forum",
+      "id": "T154092 #37",
+      "title": "Stefan_Persson2",
+      "dualApp": "REVIEW",
+      "requiredVectors": [
+        "identity",
+        "driver_class",
+        "clusters",
+        "dp_map",
+        "rx_path",
+        "tx_path",
+        "flow_compose",
+        "flow_wire",
+        "capabilities",
+        "contre_quoi"
+      ],
+      "priorityVectors": [
+        "rx_path",
+        "flow_wire",
+        "dp_map"
+      ],
+      "action": "deep-functional-audit after couple lock (DP/cluster/flow/RX-TX)",
+      "forumReply": "NEVER"
+    },
+    {
+      "source": "forum",
+      "id": "T154092 #19",
+      "title": "Zemismart_Official",
+      "dualApp": "BOTH",
+      "requiredVectors": [
+        "identity",
+        "driver_class",
+        "clusters",
+        "dp_map",
+        "rx_path",
+        "tx_path",
+        "flow_compose",
+        "flow_wire",
+        "capabilities",
+        "contre_quoi"
+      ],
+      "priorityVectors": [
+        "rx_path",
+        "driver_class"
+      ],
+      "action": "deep-functional: code-fix-stable-candidate",
+      "forumReply": "NEVER"
+    },
+    {
+      "source": "forum",
+      "id": "T154092 #18",
+      "title": "Michael_Hadjicosta",
+      "dualApp": "BOTH",
+      "requiredVectors": [
+        "identity",
+        "driver_class",
+        "clusters",
+        "dp_map",
+        "rx_path",
+        "tx_path",
+        "flow_compose",
+        "flow_wire",
+        "capabilities",
+        "contre_quoi"
+      ],
+      "priorityVectors": [
+        "rx_path",
+        "driver_class"
+      ],
+      "action": "deep-functional: code-fix-stable-candidate",
+      "forumReply": "NEVER"
+    },
+    {
+      "source": "forum",
+      "id": "T150690 #34",
+      "title": "Primordial",
+      "dualApp": "REVIEW",
+      "requiredVectors": [
+        "identity",
+        "driver_class",
+        "clusters",
+        "dp_map",
+        "rx_path",
+        "tx_path",
+        "flow_compose",
+        "flow_wire",
+        "capabilities",
+        "contre_quoi"
+      ],
+      "priorityVectors": [
+        "driver_class"
+      ],
+      "action": "deep-functional: request-diag-couple",
+      "forumReply": "NEVER"
+    },
+    {
+      "source": "forum",
+      "id": "T150690 #33",
+      "title": "Graeme_Hindmarsh",
+      "dualApp": "BOTH",
+      "requiredVectors": [
+        "identity",
+        "driver_class",
+        "clusters",
+        "dp_map",
+        "rx_path",
+        "tx_path",
+        "flow_compose",
+        "flow_wire",
+        "capabilities",
+        "contre_quoi"
+      ],
+      "priorityVectors": [
+        "flow_wire",
+        "clusters",
+        "rx_path",
+        "driver_class"
+      ],
+      "action": "deep-functional: code-fix-stable-candidate",
+      "forumReply": "NEVER"
+    },
+    {
+      "source": "forum",
+      "id": "T150690 #30",
+      "title": "SteampunkLolcat",
+      "dualApp": "BOTH",
+      "requiredVectors": [
+        "identity",
+        "driver_class",
+        "clusters",
+        "dp_map",
+        "rx_path",
+        "tx_path",
+        "flow_compose",
+        "flow_wire",
+        "capabilities",
+        "contre_quoi"
+      ],
+      "priorityVectors": [
+        "rx_path",
+        "driver_class"
+      ],
+      "action": "deep-functional: code-fix-stable-candidate",
+      "forumReply": "NEVER"
+    },
+    {
+      "source": "forum",
+      "id": "T150690 #28",
+      "title": "SteampunkLolcat",
+      "dualApp": "BOTH",
+      "requiredVectors": [
+        "identity",
+        "driver_class",
+        "clusters",
+        "dp_map",
+        "rx_path",
+        "tx_path",
+        "flow_compose",
+        "flow_wire",
+        "capabilities",
+        "contre_quoi"
+      ],
+      "priorityVectors": [
+        "driver_class"
+      ],
+      "action": "deep-functional: request-diag-couple",
+      "forumReply": "NEVER"
+    },
+    {
+      "source": "forum",
+      "id": "T150690 #12",
+      "title": "Chris_M",
+      "dualApp": "BOTH",
+      "requiredVectors": [
+        "identity",
+        "driver_class",
+        "clusters",
+        "dp_map",
+        "rx_path",
+        "tx_path",
+        "flow_compose",
+        "flow_wire",
+        "capabilities",
+        "contre_quoi"
+      ],
+      "priorityVectors": [
+        "rx_path",
+        "driver_class"
+      ],
+      "action": "deep-functional: code-fix-stable-candidate",
+      "forumReply": "NEVER"
+    },
+    {
+      "source": "forum",
+      "id": "T150690 #11",
+      "title": "MLong",
+      "dualApp": "BOTH",
+      "requiredVectors": [
+        "identity",
+        "driver_class",
+        "clusters",
+        "dp_map",
+        "rx_path",
+        "tx_path",
+        "flow_compose",
+        "flow_wire",
+        "capabilities",
+        "contre_quoi"
+      ],
+      "priorityVectors": [
+        "rx_path",
+        "driver_class"
+      ],
+      "action": "deep-functional: code-fix-stable-candidate",
+      "forumReply": "NEVER"
+    },
+    {
+      "source": "forum",
+      "id": "T150690 #10",
+      "title": "Relax_swe",
+      "dualApp": "BOTH",
+      "requiredVectors": [
+        "identity",
+        "driver_class",
+        "clusters",
+        "dp_map",
+        "rx_path",
+        "tx_path",
+        "flow_compose",
+        "flow_wire",
+        "capabilities",
+        "contre_quoi"
+      ],
+      "priorityVectors": [
+        "rx_path",
+        "driver_class"
+      ],
+      "action": "deep-functional: code-fix-stable-candidate",
+      "forumReply": "NEVER"
+    },
+    {
+      "source": "forum",
+      "id": "T150690 #5",
+      "title": "MLong",
+      "dualApp": "BOTH",
+      "requiredVectors": [
+        "identity",
+        "driver_class",
+        "clusters",
+        "dp_map",
+        "rx_path",
+        "tx_path",
+        "flow_compose",
+        "flow_wire",
+        "capabilities",
+        "contre_quoi"
+      ],
+      "priorityVectors": [
+        "rx_path",
+        "driver_class"
+      ],
+      "action": "deep-functional: code-fix-stable-candidate",
+      "forumReply": "NEVER"
+    },
+    {
+      "source": "forum",
+      "id": "T150690 #1",
+      "title": "Relax_swe",
+      "dualApp": "BOTH",
+      "requiredVectors": [
+        "identity",
+        "driver_class",
+        "clusters",
+        "dp_map",
+        "rx_path",
+        "tx_path",
+        "flow_compose",
+        "flow_wire",
+        "capabilities",
+        "contre_quoi"
+      ],
+      "priorityVectors": [
+        "driver_class"
+      ],
+      "action": "deep-functional-audit after couple lock (DP/cluster/flow/RX-TX)",
+      "forumReply": "NEVER"
+    },
+    {
+      "source": "forum",
+      "id": "T146667 #15",
+      "title": "dlnraja",
+      "dualApp": "BOTH",
+      "requiredVectors": [
+        "identity",
+        "driver_class",
+        "clusters",
+        "dp_map",
+        "rx_path",
+        "tx_path",
+        "flow_compose",
+        "flow_wire",
+        "capabilities",
+        "contre_quoi"
+      ],
+      "priorityVectors": [
+        "flow_wire",
+        "rx_path",
+        "driver_class"
+      ],
+      "action": "deep-functional: code-fix-stable-candidate",
+      "forumReply": "NEVER"
+    },
+    {
+      "source": "forum",
+      "id": "T146667 #14",
+      "title": "dlnraja",
+      "dualApp": "BOTH",
+      "requiredVectors": [
+        "identity",
+        "driver_class",
+        "clusters",
+        "dp_map",
+        "rx_path",
+        "tx_path",
+        "flow_compose",
+        "flow_wire",
+        "capabilities",
+        "contre_quoi"
+      ],
+      "priorityVectors": [
+        "flow_wire",
+        "rx_path",
+        "driver_class"
+      ],
+      "action": "deep-functional: code-fix-stable-candidate",
+      "forumReply": "NEVER"
+    },
+    {
+      "source": "forum",
+      "id": "T146667 #10",
+      "title": "Michael_Edholm",
+      "dualApp": "BOTH",
+      "requiredVectors": [
+        "identity",
+        "driver_class",
+        "clusters",
+        "dp_map",
+        "rx_path",
+        "tx_path",
+        "flow_compose",
+        "flow_wire",
+        "capabilities",
+        "contre_quoi"
+      ],
+      "priorityVectors": [
+        "driver_class"
+      ],
+      "action": "deep-functional: request-diag-couple",
+      "forumReply": "NEVER"
+    },
+    {
+      "source": "forum",
+      "id": "T140352 #2239",
+      "title": "Peter_van_Werkhoven",
+      "dualApp": "BOTH",
+      "requiredVectors": [
+        "identity",
+        "driver_class",
+        "clusters",
+        "dp_map",
+        "rx_path",
+        "tx_path",
+        "flow_compose",
+        "flow_wire",
+        "capabilities",
+        "contre_quoi"
+      ],
+      "priorityVectors": [
+        "rx_path",
+        "driver_class"
+      ],
+      "action": "deep-functional: code-fix-stable-candidate",
+      "forumReply": "NEVER"
+    },
+    {
+      "source": "forum",
+      "id": "T140352 #2238",
+      "title": "Peter_van_Werkhoven",
+      "dualApp": "BOTH",
+      "requiredVectors": [
+        "identity",
+        "driver_class",
+        "clusters",
+        "dp_map",
+        "rx_path",
+        "tx_path",
+        "flow_compose",
+        "flow_wire",
+        "capabilities",
+        "contre_quoi"
+      ],
+      "priorityVectors": [
+        "rx_path",
+        "driver_class"
+      ],
+      "action": "deep-functional: code-fix-stable-candidate",
+      "forumReply": "NEVER"
+    },
+    {
+      "source": "forum",
+      "id": "T140352 #2237",
+      "title": "Peter_van_Werkhoven",
+      "dualApp": "BOTH",
+      "requiredVectors": [
+        "identity",
+        "driver_class",
+        "clusters",
+        "dp_map",
+        "rx_path",
+        "tx_path",
+        "flow_compose",
+        "flow_wire",
+        "capabilities",
+        "contre_quoi"
+      ],
+      "priorityVectors": [
+        "rx_path",
+        "driver_class"
+      ],
+      "action": "deep-functional: code-fix-stable-candidate",
+      "forumReply": "NEVER"
+    },
+    {
+      "source": "forum",
+      "id": "T140352 #2234",
+      "title": "Peter_van_Werkhoven",
+      "dualApp": "BOTH",
+      "requiredVectors": [
+        "identity",
+        "driver_class",
+        "clusters",
+        "dp_map",
+        "rx_path",
+        "tx_path",
+        "flow_compose",
+        "flow_wire",
+        "capabilities",
+        "contre_quoi"
+      ],
+      "priorityVectors": [
+        "rx_path",
+        "driver_class"
+      ],
+      "action": "deep-functional: code-fix-stable-candidate",
+      "forumReply": "NEVER"
+    },
+    {
+      "source": "forum",
+      "id": "T140352 #2233",
+      "title": "Peter_van_Werkhoven",
+      "dualApp": "BOTH",
+      "requiredVectors": [
+        "identity",
+        "driver_class",
+        "clusters",
+        "dp_map",
+        "rx_path",
+        "tx_path",
+        "flow_compose",
+        "flow_wire",
+        "capabilities",
+        "contre_quoi"
+      ],
+      "priorityVectors": [
+        "rx_path",
+        "driver_class"
+      ],
+      "action": "deep-functional: code-fix-stable-candidate",
+      "forumReply": "NEVER"
+    },
+    {
+      "source": "forum",
+      "id": "T140352 #2230",
+      "title": "Peter_van_Werkhoven",
+      "dualApp": "BOTH",
+      "requiredVectors": [
+        "identity",
+        "driver_class",
+        "clusters",
+        "dp_map",
+        "rx_path",
+        "tx_path",
+        "flow_compose",
+        "flow_wire",
+        "capabilities",
+        "contre_quoi"
+      ],
+      "priorityVectors": [
+        "rx_path",
+        "driver_class"
+      ],
+      "action": "deep-functional: code-fix-stable-candidate",
+      "forumReply": "NEVER"
+    },
+    {
+      "source": "forum",
+      "id": "T140352 #2228",
+      "title": "Eduard_Martirosyan",
+      "dualApp": "BOTH",
+      "requiredVectors": [
+        "identity",
+        "driver_class",
+        "clusters",
+        "dp_map",
+        "rx_path",
+        "tx_path",
+        "flow_compose",
+        "flow_wire",
+        "capabilities",
+        "contre_quoi"
+      ],
+      "priorityVectors": [
+        "clusters",
+        "rx_path",
+        "driver_class"
+      ],
+      "action": "deep-functional: code-fix-stable-candidate",
+      "forumReply": "NEVER"
+    },
+    {
+      "source": "forum",
+      "id": "T140352 #2227",
+      "title": "VicHY",
+      "dualApp": "BOTH",
+      "requiredVectors": [
+        "identity",
+        "driver_class",
+        "clusters",
+        "dp_map",
+        "rx_path",
+        "tx_path",
+        "flow_compose",
+        "flow_wire",
+        "capabilities",
+        "contre_quoi"
+      ],
+      "priorityVectors": [
+        "rx_path",
+        "driver_class"
+      ],
+      "action": "deep-functional: code-fix-stable-candidate",
+      "forumReply": "NEVER"
+    },
+    {
+      "source": "forum",
+      "id": "T140352 #2208",
+      "title": "VicHY",
+      "dualApp": "MASTER_ONLY",
+      "requiredVectors": [
+        "identity",
+        "driver_class",
+        "clusters",
+        "dp_map",
+        "rx_path",
+        "tx_path",
+        "flow_compose",
+        "flow_wire",
+        "capabilities",
+        "contre_quoi"
+      ],
+      "priorityVectors": [
+        "driver_class"
+      ],
+      "action": "deep-functional: request-diag-couple",
+      "forumReply": "NEVER"
+    },
+    {
+      "source": "forum",
+      "id": "T140352 #2204",
+      "title": "Elliot_Hallais",
+      "dualApp": "REVIEW",
+      "requiredVectors": [
+        "identity",
+        "driver_class",
+        "clusters",
+        "dp_map",
+        "rx_path",
+        "tx_path",
+        "flow_compose",
+        "flow_wire",
+        "capabilities",
+        "contre_quoi"
+      ],
+      "priorityVectors": [
+        "driver_class"
+      ],
+      "action": "deep-functional: request-diag-couple",
+      "forumReply": "NEVER"
+    },
+    {
+      "source": "forum",
+      "id": "T140352 #2199",
+      "title": "A_Tas",
+      "dualApp": "MASTER_ONLY",
+      "requiredVectors": [
+        "identity",
+        "driver_class",
+        "clusters",
+        "dp_map",
+        "rx_path",
+        "tx_path",
+        "flow_compose",
+        "flow_wire",
+        "capabilities",
+        "contre_quoi"
+      ],
+      "priorityVectors": [
+        "driver_class"
+      ],
+      "action": "deep-functional: request-diag-couple",
+      "forumReply": "NEVER"
+    },
+    {
+      "source": "forum",
+      "id": "T140352 #1",
+      "title": "dlnraja",
+      "dualApp": "BOTH",
+      "requiredVectors": [
+        "identity",
+        "driver_class",
+        "clusters",
+        "dp_map",
+        "rx_path",
+        "tx_path",
+        "flow_compose",
+        "flow_wire",
+        "capabilities",
+        "contre_quoi"
+      ],
+      "priorityVectors": [
+        "flow_wire",
+        "rx_path",
+        "driver_class"
+      ],
+      "action": "deep-functional: code-fix-stable-candidate",
+      "forumReply": "NEVER"
+    },
+    {
+      "source": "forum",
+      "id": "T120477 #1",
+      "title": "FKey",
+      "dualApp": "REVIEW",
+      "requiredVectors": [
+        "identity",
+        "driver_class",
+        "clusters",
+        "dp_map",
+        "rx_path",
+        "tx_path",
+        "flow_compose",
+        "flow_wire",
+        "capabilities",
+        "contre_quoi"
+      ],
+      "priorityVectors": [
+        "driver_class"
+      ],
+      "action": "deep-functional: request-diag-couple",
+      "forumReply": "NEVER"
+    },
+    {
+      "source": "forum",
+      "id": "T89271 #669",
+      "title": "Erwin3",
+      "dualApp": "REVIEW",
+      "requiredVectors": [
+        "identity",
+        "driver_class",
+        "clusters",
+        "dp_map",
+        "rx_path",
+        "tx_path",
+        "flow_compose",
+        "flow_wire",
+        "capabilities",
+        "contre_quoi"
+      ],
+      "priorityVectors": [
+        "driver_class"
+      ],
+      "action": "deep-functional: request-diag-couple",
+      "forumReply": "NEVER"
+    },
+    {
+      "source": "forum",
+      "id": "T89271 #668",
+      "title": "Peter_N",
+      "dualApp": "BOTH",
+      "requiredVectors": [
+        "identity",
+        "driver_class",
+        "clusters",
+        "dp_map",
+        "rx_path",
+        "tx_path",
+        "flow_compose",
+        "flow_wire",
+        "capabilities",
+        "contre_quoi"
+      ],
+      "priorityVectors": [
+        "rx_path",
+        "driver_class"
+      ],
+      "action": "deep-functional: code-fix-stable-candidate",
+      "forumReply": "NEVER"
+    },
+    {
+      "source": "forum",
+      "id": "T89271 #665",
+      "title": "Johan_Rossouw",
+      "dualApp": "BOTH",
+      "requiredVectors": [
+        "identity",
+        "driver_class",
+        "clusters",
+        "dp_map",
+        "rx_path",
+        "tx_path",
+        "flow_compose",
+        "flow_wire",
+        "capabilities",
+        "contre_quoi"
+      ],
+      "priorityVectors": [
+        "rx_path",
+        "driver_class"
+      ],
+      "action": "deep-functional: code-fix-stable-candidate",
+      "forumReply": "NEVER"
+    },
+    {
+      "source": "forum",
+      "id": "T89271 #658",
+      "title": "Bram_B",
+      "dualApp": "BOTH",
+      "requiredVectors": [
+        "identity",
+        "driver_class",
+        "clusters",
+        "dp_map",
+        "rx_path",
+        "tx_path",
+        "flow_compose",
+        "flow_wire",
+        "capabilities",
+        "contre_quoi"
+      ],
+      "priorityVectors": [
+        "driver_class"
+      ],
+      "action": "deep-functional: request-diag-couple",
+      "forumReply": "NEVER"
+    },
+    {
+      "source": "forum",
+      "id": "T89271 #657",
+      "title": "Vincent_Lim",
+      "dualApp": "BOTH",
+      "requiredVectors": [
+        "identity",
+        "driver_class",
+        "clusters",
+        "dp_map",
+        "rx_path",
+        "tx_path",
+        "flow_compose",
+        "flow_wire",
+        "capabilities",
+        "contre_quoi"
+      ],
+      "priorityVectors": [
+        "rx_path",
+        "driver_class"
+      ],
+      "action": "deep-functional: code-fix-stable-candidate",
+      "forumReply": "NEVER"
+    },
+    {
+      "source": "forum",
+      "id": "T89271 #656",
+      "title": "Mr_D_Forrest",
+      "dualApp": "BOTH",
+      "requiredVectors": [
+        "identity",
+        "driver_class",
+        "clusters",
+        "dp_map",
+        "rx_path",
+        "tx_path",
+        "flow_compose",
+        "flow_wire",
+        "capabilities",
+        "contre_quoi"
+      ],
+      "priorityVectors": [
+        "rx_path",
+        "driver_class"
+      ],
+      "action": "deep-functional: code-fix-stable-candidate",
+      "forumReply": "NEVER"
+    },
+    {
+      "source": "gmail",
+      "id": "gmail-diags",
+      "title": "Diagnostic / crash harvest",
+      "dualApp": "BOTH",
+      "requiredVectors": [
+        "identity",
+        "driver_class",
+        "clusters",
+        "dp_map",
+        "rx_path",
+        "tx_path",
+        "flow_compose",
+        "flow_wire",
+        "capabilities",
+        "contre_quoi"
+      ],
+      "priorityVectors": [
+        "rx_path",
+        "dp_map",
+        "flow_wire",
+        "contre_quoi"
+      ],
+      "action": "trace stack → driver RX/TX → Contre quoi test",
+      "forumReply": "NEVER"
+    }
+  ],
+  "gateResults": [
+    {
+      "label": "gates",
+      "ok": true,
+      "durationMs": 0,
+      "skipped": true
+    }
+  ]
+}

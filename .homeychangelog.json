@@ -3725,5 +3725,8 @@
   },
   "9.0.1110": {
     "en": "Fix WiFi compose (strip empty zigbee) + TS004x hybrid restore + LAN reliability. Update Homey Test."
+  },
+  "9.0.1111": {
+    "en": "Fleet commit: inbox/L99 reports + WiFi/TS004x reliability ship. Update Homey Test."
   }
 }
