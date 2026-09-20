@@ -31,6 +31,12 @@
 | 114 | factory_parameters | — | rx | — |
 | 115 | sensor | — | rx | — |
 
+## Known bugs (P2579 / VicHY MTG075 / MTG235)
+
+- Z2M **sensor=occupied** can force permanent presence — heal DP115→on on soft-clear (`healForcedOccupiedOnSoftClear`).
+- Target **distance** often **quantized** (e.g. ~2.8 m steps) — soft-clear when distance idle (`quantizedDistanceSoftClear`).
+- Retail: VicHY **MTG075** / **MTG235**-ZB-RL mmWave+relay; 220V AC; never curtain phantom.
+
 ---
 See `docs/guides/DP_INTERPRETATION.md`
 
