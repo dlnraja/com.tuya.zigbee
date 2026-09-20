@@ -3740,5 +3740,8 @@
   },
   "9.0.1116": {
     "en": "Athom force republish: WiFi heat pump / kettle / EV dedicated drivers + Fix It settings. Update Homey Test."
+  },
+  "9.0.1117": {
+    "en": "Improved eWeLink CK-TLSR8656 climate sensor pairing (temperature, humidity, battery)."
   }
 }
