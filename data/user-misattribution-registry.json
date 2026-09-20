@@ -7633,6 +7633,293 @@
       "sources": [
         "z2m"
       ]
+    },
+    {
+      "id": "p2622-ewelink-ck-tlsr-th-not-virtual-socket",
+      "mfr": [
+        "eWeLink",
+        "ewelink",
+        "EWELINK"
+      ],
+      "productId": [
+        "CK-TLSR8656-SS5-01(7014)",
+        "CK-TLSR8656-SS5-02(7014)"
+      ],
+      "canonicalDriver": "climate_sensor",
+      "forbiddenDrivers": [
+        "button_wireless_plug",
+        "device_plug_smart",
+        "curtain_motor_shutter",
+        "presence_sensor_radar",
+        "soil_sensor",
+        "doorwindowsensor_4",
+        "sensor_motion_presence",
+        "climate_sensor_energy",
+        "temphumidsensor",
+        "temphumidsensor5",
+        "sensor_climate_temphumidsensor"
+      ],
+      "forbidMode": "couple",
+      "protocol": "zcl_sleepy",
+      "notes": "P2622: Homey interview eWeLink+CK-TLSR8656-SS5-01(7014) is ZCL TH+battery (Hubitat clusters 0/1/3/4/32/1026/1029/FC11). Was pairing as virtualdriverzigbee socket because climate_sensor had pid without eWeLink mfr. Never invent pid; SS5-02(7014) sibling TH."
+    },
+    {
+      "id": "p2624-axpdxqgu-ts0041-button-wireless-1-not-remote-wall",
+      "mfr": [
+        "_TZ3000_axpdxqgu",
+        "_tz3000_axpdxqgu",
+        "_TZ3000_AXPDXQGU",
+        "_tz3000_AXPDXQGU"
+      ],
+      "productId": [
+        "TS0041"
+      ],
+      "canonicalDriver": "button_wireless_1",
+      "forbiddenDrivers": [
+        "remote_button_wireless_wall",
+        "smart_knob",
+        "button_wireless_4",
+        "scene_switch_4"
+      ],
+      "forbidMode": "couple",
+      "protocol": "zcl_0xfd",
+      "notes": "P2624/e8d98608: Z2M wireless 1-button. Was remote_button_wireless_wall + CI crash + hashed flow IDs + invalid button_scene_recall. Tip re-pair to button_wireless_1."
+    },
+    {
+      "id": "p2625-vsxvaj9i-ts0043-button-wireless-3",
+      "mfr": [
+        "_TZ3000_vsxvaj9i",
+        "_tz3000_vsxvaj9i",
+        "_TZ3000_VSXVAJ9I",
+        "_tz3000_VSXVAJ9I"
+      ],
+      "productId": [
+        "TS0043"
+      ],
+      "canonicalDriver": "button_wireless_3",
+      "forbiddenDrivers": [
+        "remote_button_wireless_wall",
+        "button_wireless_1",
+        "button_wireless_2",
+        "button_wireless_4",
+        "handheld_remote_4_buttons",
+        "wall_remote_3_gang",
+        "scene_switch_3",
+        "smart_knob",
+        "climate_sensor",
+        "switch_3gang"
+      ],
+      "forbidMode": "couple",
+      "protocol": "zcl_0xfd",
+      "notes": "P2625: flat CR2032 3-btn enddevice. UX needs button.1-3 in device view (maintenanceAction false). Hybrid OnOff 0xFD multi-EP. Re-pair after tip."
+    },
+    {
+      "id": "p2630-axpdxqgu-ts0041-interview-clusters",
+      "manufacturerName": [
+        "_TZ3000_axpdxqgu",
+        "_tz3000_axpdxqgu"
+      ],
+      "productId": [
+        "TS0041"
+      ],
+      "canonicalDriver": "button_wireless_1",
+      "forbidDrivers": [
+        "remote_button_wireless_wall",
+        "switch_1gang",
+        "virtualdriverzigbee"
+      ],
+      "forbidMode": "couple",
+      "notes": "P2630/P2638: EP1 [0,1,6] no EF00/E000; ZCL batt 200; RX 0xFD 0/1/2=single/double/hold; never 0x8004; skip battery reporting (Z2M#8072/ZHA NoBind). Z2M#25720=HA action sensor disabled — Homey Flow event triggers. ZHA gist remote_button_*_press. Moes Star Ring CR2032. UI 3ch misleading.",
+      "enrichedAt": "2026-09-20",
+      "sources": [
+        "Z2M#25720",
+        "Z2M-TS0041",
+        "ZHA-ts0041.py-0041TO",
+        "gist-compujunk",
+        "SmartHomeScene-Moes-Star-Ring",
+        "XiaomiGateway3-0xFD",
+        "Bastien-interview"
+      ],
+      "battery": "CR2032"
+    },
+    {
+      "id": "p2631-ewelink-7014-climate-only-mesh",
+      "manufacturerName": [
+        "eWeLink",
+        "ewelink",
+        "EWELINK"
+      ],
+      "productId": [
+        "CK-TLSR8656-SS5-01(7014)",
+        "CK-TLSR8656-SS5-02(7014)"
+      ],
+      "canonicalDriver": "climate_sensor",
+      "forbidDrivers": [
+        "button_wireless_1",
+        "button_wireless",
+        "button_wireless_plug",
+        "remote_button_wireless_wall",
+        "device_plug_smart",
+        "curtain_motor_shutter",
+        "presence_sensor_radar",
+        "soil_sensor",
+        "doorwindowsensor_4",
+        "sensor_motion_presence",
+        "sensor_climate_temphumidsensor",
+        "temphumidsensor",
+        "temphumidsensor5",
+        "climate_sensor_energy",
+        "virtualdriverzigbee"
+      ],
+      "forbidMode": "couple",
+      "notes": "P2631 Bastien mesh: 7014 is Z2M TH sensor. Prune PID-only bleed. Re-pair from Appareil Zigbee.",
+      "enrichedAt": "2026-09-20"
+    },
+    {
+      "id": "p2633-adndolvx-ts0041-phantom-ep-firmware",
+      "manufacturerName": [
+        "_TZ3000_adndolvx",
+        "_tz3000_adndolvx",
+        "_TZ3000_itb0omhv",
+        "_tz3000_itb0omhv",
+        "_TZ3000_x7mej5oc",
+        "_tz3000_x7mej5oc"
+      ],
+      "productId": [
+        "TS0041"
+      ],
+      "canonicalDriver": "button_wireless_1",
+      "forbidDrivers": [
+        "button_wireless_4",
+        "remote_button_wireless_wall",
+        "switch_1gang"
+      ],
+      "forbidMode": "couple",
+      "notes": "HA T455202 + Medium chinese TS0041 + ZHA#1557: OEM ships TS0044 4-EP firmware on physical 1-btn. Collapse EP2-4→btn1; RX 0xFD; never button_wireless_4. Siblings itb0omhv/x7mej5oc.",
+      "enrichedAt": "2026-09-20",
+      "sources": [
+        "https://community.home-assistant.io/t/switch-ts0041-by-tz3000-adndolvx-not-working/455202",
+        "https://medium.com/@edwarddubilyer/chinese-ts0041-1-bang-zigbee-scene-switch-on-zha-troubleshooting-dd75a90a485f",
+        "https://github.com/zigpy/zha-device-handlers/issues/1557"
+      ]
+    },
+    {
+      "id": "p2632-hobeian-zg301z-countdown-auto-off",
+      "manufacturerName": [
+        "HOBEIAN",
+        "hobeian",
+        "Hobeian"
+      ],
+      "productId": [
+        "ZG-301Z"
+      ],
+      "canonicalDriver": "switch_1gang",
+      "forbidDrivers": [
+        "curtain_motor",
+        "button_wireless_1"
+      ],
+      "forbidMode": "couple",
+      "notes": "P2632 Bastien kitchen light: Z2M WHD02 onOffCountdown+switchType. Clear onTime; force switch_type=state (not momentary).",
+      "enrichedAt": "2026-09-20"
+    },
+    {
+      "id": "p2634-tz3000-ltt60asa-ts0004-switch-4gang",
+      "mfr": [
+        "_TZ3000_ltt60asa",
+        "_TZ3000_LTT60ASA",
+        "_tz3000_ltt60asa",
+        "_tz3000_LTT60ASA",
+        "_TZ3000_liygxtcq",
+        "_TZ3000_LIYGXTCQ",
+        "_tz3000_liygxtcq",
+        "_tz3000_LIYGXTCQ"
+      ],
+      "productId": [
+        "TS0004",
+        "TS0004_switch_module"
+      ],
+      "canonicalDriver": "switch_4gang",
+      "forbiddenDrivers": [
+        "switch_1gang",
+        "switch_2gang",
+        "switch_3gang",
+        "wall_switch_4gang_1way",
+        "wall_switch_5_gang_tuya",
+        "zigbee_universal",
+        "generic_tuya"
+      ],
+      "forbidMode": "couple",
+      "protocol": "zcl",
+      "notes": "P2634 Z2M TS0004_switch_module / ZHA Switch_4G_Metering — SML-04Z family with mmkbptmx. Homey unknown until locked on switch_4gang."
+    },
+    {
+      "id": "p2636-tz3000-dzwgk7e2-ts0042-button-2",
+      "mfr": [
+        "_TZ3000_dzwgk7e2",
+        "_TZ3000_DZWGK7E2",
+        "_tz3000_dzwgk7e2",
+        "_tz3000_DZWGK7E2"
+      ],
+      "productId": [
+        "TS0042"
+      ],
+      "canonicalDriver": "button_wireless_2",
+      "forbiddenDrivers": [
+        "button_wireless_1",
+        "button_wireless_4",
+        "scene_switch_4",
+        "switch_2gang",
+        "zigbee_universal",
+        "generic_tuya"
+      ],
+      "forbidMode": "couple",
+      "protocol": "zcl_0xFD",
+      "notes": "P2636 Bastien interview: sleepy 2-btn TS0042 with phantom EP3/4 OnOff; battery 200=100%; no EF00. Z2M TS0042 1_/2_ single|double|hold."
+    },
+    {
+      "id": "p2638-axpdxqgu-z2m25720-zha-crossref",
+      "manufacturerName": [
+        "_TZ3000_axpdxqgu",
+        "_tz3000_axpdxqgu"
+      ],
+      "productId": [
+        "TS0041"
+      ],
+      "canonicalDriver": "button_wireless_1",
+      "forbidDrivers": [
+        "switch_1gang",
+        "remote_button_wireless_wall",
+        "button_wireless_3",
+        "button_wireless_4",
+        "scene_switch_4"
+      ],
+      "forbidMode": "couple",
+      "notes": "P2638 full cross-ref. Event-only remote (no onoff load). Contre quoi: sticky action capability / inventing 3 gangs from UI name.",
+      "enrichedAt": "2026-09-20"
+    },
+    {
+      "id": "p2639-ts0041-phantom-ep-siblings",
+      "manufacturerName": [
+        "_TZ3000_adndolvx",
+        "_tz3000_adndolvx",
+        "_TZ3000_itb0omhv",
+        "_tz3000_itb0omhv",
+        "_TZ3000_x7mej5oc",
+        "_tz3000_x7mej5oc"
+      ],
+      "productId": [
+        "TS0041"
+      ],
+      "canonicalDriver": "button_wireless_1",
+      "forbidDrivers": [
+        "button_wireless_4",
+        "scene_switch_4",
+        "remote_button_wireless_wall",
+        "switch_1gang"
+      ],
+      "forbidMode": "couple",
+      "notes": "P2639: phantom 4-EP firmware class. Contre quoi: pairing as 4-gang / inventing onoff switches.",
+      "enrichedAt": "2026-09-20"
     }
   ],
   "entries": {
