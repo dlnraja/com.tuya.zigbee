@@ -1,6 +1,6 @@
 {
   "name": "com.dlnraja.tuya.zigbee",
-  "version": "9.0.1117",
+  "version": "9.0.1118",
   "description": "Tuya Unified Zigbee - Local-first control with AI automation",
   "main": "app.js",
   "scripts": {
@@ -498,7 +498,8 @@
     "check:p2602": "node --test test/critical/p2602-radar-compose-slim-announce.test.js",
     "check:p2603": "node --test test/critical/p2603-radar-no-compose-onoff.test.js",
     "check:p2621": "node --test test/critical/p2621-wifi-heat-pump-ev-kettle-fixit.test.js",
-    "check:p2622": "node --test test/critical/p2622-ewelink-ck-tlsr-climate.test.js"
+    "check:p2622": "node --test test/critical/p2622-ewelink-ck-tlsr-climate.test.js",
+    "check:p2624": "node --test test/critical/p2624-e8d98608-axpdxqgu-remote-wall.test.js"
   },
   "keywords": [
     "homey",
