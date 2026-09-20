@@ -1,4 +1,17 @@
 {
+  "9.0.1134": {
+    "en": "TS0043 _TZ3000_famkxci2 stays Wireless Button 3 (no Generic Zigbee). Curtain TS130F e3vhyirx wall switch lock. Ceiling radar presence clear safer. Update Homey Test; remove+re-pair remotes that landed Generic.",
+    "fr": "TS0043 _TZ3000_famkxci2 reste Bouton 3 (pas Zigbee generique). Verrou rideau TS130F e3vhyirx. Radar plafond presence plus stable. Maj Test Homey; supprimer+re-appairer si Generique."
+  },
+  "9.0.1133": {
+    "en": "Improved Chinese TS0041 remotes with phantom 4-endpoint firmware (single/double/hold Flows)."
+  },
+  "9.0.1132": {
+    "en": "Improved Moes Star Ring / TS0041 wireless button (Flows single/double/hold, battery)."
+  },
+  "9.0.1131": {
+    "en": "Improved 4-gang switch pairing (TS0004) and LCD climate fingerprint; button/actuator Flow reliability."
+  },
   "9.0.1130": {
     "en": "2-btn remote _TZ3000_dzwgk7e2+TS0042 (was unrecognized; phantom EP3/4 ignored). Update Homey Test + re-pair.",
     "fr": "Télécommande 2 boutons _TZ3000_dzwgk7e2+TS0042. Maj Test Homey + re-appairer."
@@ -6,6 +19,144 @@
   "9.0.1129": {
     "en": "Bastien benefit: 4-gang _TZ3000_ltt60asa+TS0004 (was Zigbee unknown) + switch/button Flow state fixes. Update Homey Test; re-pair unknown 4-gang module.",
     "fr": "Bénéfice Bastien: module 4-gang _TZ3000_ltt60asa+TS0004 + correctifs Flows. Maj Test Homey; re-appairer le module inconnu."
+  },
+  "9.0.1126": {
+    "en": "Improved HOBEIAN wall module auto-off and TS0041 phantom-endpoint remotes. Update then restart app / re-pair if needed."
+  },
+  "9.0.1125": {
+    "en": "Improved eWeLink TH sensor pairing and wireless button naming. Update then re-pair if needed."
+  },
+  "9.0.1124": {
+    "en": "Improved TS0041 1-button remote from live interview (clusters OnOff only, Flow cards). Update then re-pair."
+  },
+  "9.0.1123": {
+    "en": "Improved TS0043 3-button remote from live interview (clusters E000/OnOff, no EF00). Update then re-pair."
+  },
+  "9.0.1122": {
+    "en": "Improved multi-button remote Flow UX (Button 1-N on one card) and fixed silent button Flows. Update then recreate Flows if needed."
+  },
+  "9.0.1121": {
+    "en": "Improved wireless button flow card matching (1-button numbered cards). Update then re-pair remotes if flows were silent."
+  },
+  "9.0.1120": {
+    "en": "Fixed Zigbee fingerprint sync so battery remotes pair to the correct drivers and flows fire. Update then remove+re-pair affected remotes."
+  },
+  "9.0.1119": {
+    "en": "Improved 3-button wireless remote UX (_TZ3000_vsxvaj9i TS0043): Button 1-3 visible in device UI. Update then remove+re-pair if buttons were missing."
+  },
+  "9.0.1118": {
+    "en": "Fixed 1-button remote crash and flow cards (_TZ3000_axpdxqgu TS0041). Re-pair if flows were broken."
+  },
+  "9.0.1117": {
+    "en": "Improved eWeLink CK-TLSR8656 climate sensor pairing (temperature, humidity, battery)."
+  },
+  "9.0.1116": {
+    "en": "Athom force republish: WiFi heat pump / kettle / EV dedicated drivers + Fix It settings. Update Homey Test."
+  },
+  "9.0.1115": {
+    "en": "Athom republish after processing_failed: WiFi heat pump / kettle / EV + Fix It. Update Homey Test."
+  },
+  "9.0.1114": {
+    "en": "WiFi heat pump / kettle / EV flow cards + Fix It (follow-up to 9.0.1113). Update Homey Test."
+  },
+  "9.0.1113": {
+    "en": "WiFi dedicated heat pump, smart kettle and EV charger drivers plus Fix It checks in App Settings (local-key / protocol preview, redacted support bundle). Update Test and add devices under the new WiFi drivers."
+  },
+  "9.0.1111": {
+    "en": "Fleet commit: inbox/L99 reports + WiFi/TS004x reliability ship. Update Homey Test."
+  },
+  "9.0.1110": {
+    "en": "Fix WiFi compose (strip empty zigbee) + TS004x hybrid restore + LAN reliability. Update Homey Test."
+  },
+  "9.0.1109": {
+    "en": "Restore TS004x hybrid after Bastien promote wipe; WiFi LAN reliability + draft-to-test fleet. Update Homey Test."
+  },
+  "9.0.1108": {
+    "en": "WiFi LAN reliability (offline grace, command gap, protocol order) + draft-to-test fleet for 3 apps. Update Homey Test. (Athom republish after #3308 hang)"
+  },
+  "9.0.1107": {
+    "en": "WiFi LAN reliability from Tuya Local: offline grace, command gap, protocol auto-order. Update Homey Test for WiFi devices."
+  },
+  "9.0.1106": {
+    "en": "Ceiling radar gkfbdvyx: lux DP103-only (no DP10 junk), skip discovery phantoms after Repair. Update Test + remove/re-add radar."
+  },
+  "9.0.1105": {
+    "en": "Ceiling radar gkfbdvyx: prefer DP103 lux, longer phantom strip after tip update. Update Homey Test + Repair radar."
+  },
+  "9.0.1104": {
+    "en": "Improved TS0043/TS0044 scene remote press detection with complementary fallback paths."
+  },
+  "9.0.1103": {
+    "en": "TS0043 wall_remote class:remote device-view charter + voice gate. Update Test."
+  },
+  "9.0.1102": {
+    "en": "TS0043 scene remotes: Button 1-3 in device view + hybrid RX. Update Test + re-pair if tiles were only under Maintenance."
+  },
+  "9.0.1101": {
+    "en": "TS0044 UI hybrid + voice gate + MTG075 couple profile lock. Update Test."
+  },
+  "9.0.1100": {
+    "en": "Voice-safety aligns with TS0044 Button N device view (class:button). Update Test."
+  },
+  "9.0.1099": {
+    "en": "TS0044 scene remotes: Button 1-4 in device view + hybrid RX (0xFD/E000/EF00). Update Test + re-pair if tiles were only under Maintenance."
+  },
+  "9.0.1098": {
+    "en": "Prune remote mfs bleed to sacred mfr+pid couples. Update Test."
+  },
+  "9.0.1097": {
+    "en": "Lock Moes ZT-YK remotes as sacred mfr+pid couples in mfs. Update Test."
+  },
+  "9.0.1096": {
+    "en": "Dual-app layer gate + Moes ZT-YK remotes. Update Test."
+  },
+  "9.0.1095": {
+    "en": "Bastien external enrich (Z2M/Johan) outbound inventory + Zemismart TS0041 rehome from smoke. Update Test."
+  },
+  "9.0.1094": {
+    "en": "Wall/scene remotes 1–6 btn: hybrid RX fleet (battery + mains). Update Test; Repair remotes if presses miss."
+  },
+  "9.0.1093": {
+    "en": "Wall 3-btn remotes (TS0043): hybrid ZCL/0xFD/E000/EF00/raw RX. Update Test."
+  },
+  "9.0.1092": {
+    "en": "ZG253 TRV (_TZE284_ogx8u5z6): empty caps + setpoint TX fix. Update Test + Repair valve."
+  },
+  "9.0.1091": {
+    "en": "Restored MTG075 couple profile (Occupied/quantized docs) so Auto-Publish Contre quoi stays green."
+  },
+  "9.0.1090": {
+    "en": "Publish unblock: nkjintbl TZE204 plug-only (anti-bot). Radar/button/curtain residuals from GH#550-552 stay on tip."
+  },
+  "9.0.1089": {
+    "en": "Radar distance re-arm; TS0043 pairing; TS130F curtain; nkjintbl plug lock. Update Homey Test + Repair."
+  },
+  "9.0.1088": {
+    "en": "Radar distance re-arm; TS0043 pairing; TS130F curtain match; stop nkjintbl bleed to 2-gang. Update Test + Repair."
+  },
+  "9.0.1087": {
+    "en": "Radar distance re-arm after re-pair; TS0043 scene remote pairing; TS130F curtain switch match. Update Homey Test + Repair."
+  },
+  "9.0.1085": {
+    "en": "Presence radar: no phantom Channel on ceiling radars; presence quick action; MTG relay Channel via runtime. Update Homey Test + Repair."
+  },
+  "9.0.1084": {
+    "en": "Presence radar: no phantom Channel on ceiling (gkfbdvyx); presence as quick action; MTG relay still gets Channel. Also slim compose + distance tracking. Update Homey Test + Repair radars/TRVs."
+  },
+  "9.0.1082": {
+    "en": "Presence radar: slim compose (no phantom zones/temp on tip), announce re-arms distance tracking, CRQ3 DP9 fix. Update Homey Test + Repair radars/TRVs."
+  },
+  "9.0.1080": {
+    "en": "Radar/TRV residual: mains EF00 periodic query, gkfbdvyx DP9 /10 SSOT, soft Channel listener before init. Update Homey Test + Repair presence radars and radiator valves."
+  },
+  "9.0.1078": {
+    "en": "Improved MTG075 bathroom radar tiles — distance units and phantom zone/temp/battery cleanup after tip update."
+  },
+  "9.0.1076": {
+    "en": "Improved ZG253 / me167 TRV temperature scale and wake refresh so empty caps and setpoint errors clear after update."
+  },
+  "9.0.1074": {
+    "en": "Improved ceiling radar distance tracking and presence when lux works but distance stayed empty; TRV data query hardening stays in tip."
   },
   "9.0.1072": {
     "en": "TRV empty values: force EF00 DP queries after pair (battery passive was skipping 0/10). Update Test + Repair radiator valve."
@@ -15,6 +166,9 @@
   },
   "9.0.1069": {
     "en": "TRV empty values fix: EF00 RX attach for thermostats (ogx8u5z6 me167 maps + battery DPs). Update Homey Test + Repair radiator valve; wait ~10s for temps."
+  },
+  "9.0.1068": {
+    "en": "ZG253 TRV ogx8u5z6: fix setpoint TX (Homey datapoint args) + EF00 DP refresh after pair. Update Test + Repair TRV."
   },
   "9.0.1066": {
     "en": "mmWave Software Shield API: forceClearPresence / triggerPresenceWatchdog / restoreTuyaParameters; ZG-204 lux anti-spam + survival watchdog; boot restore ~12s. Update Homey Test."
@@ -97,914 +251,219 @@
   "9.0.1030": {
     "en": "Presence radar: trust presence DP, keep sensor on/off, clear sticky empty-room detections. Update Homey Test and restart the app on both units."
   },
-  "changelog": [
-    {
-      "version": "9.0.497",
-      "date": "2026-08-14",
-      "channel": "test",
-      "en": "Hardened TS004F remote routing against publish re-inject bot; remotes stay on 4-button driver.",
-      "fr": "Routage remotes TS004F renforce contre le re-inject bot a la publication; restent sur driver 4 boutons."
-    },
-    {
-      "version": "9.0.496",
-      "date": "2026-08-14",
-      "channel": "test",
-      "en": "Restored Moes/Lidl TS004F remotes to 4-button driver; migrated IR remote and CT clamp off bare ZigBeeDevice; battery unknown until first report.",
-      "fr": "Remotes TS004F Moes/Lidl restaures sur driver 4 boutons; IR remote et pince CT migres hors ZigBeeDevice nu; batterie inconnue jusqu au premier rapport."
-    },
-    {
-      "version": "9.0.478",
-      "date": "2026-08-11",
-      "channel": "test",
-      "en": "Crash-safe error handlers; rain/contact/soil/gas fingerprint rehomes; settings device-list timeout.",
-      "fr": "Handlers erreur anti-crash; rehomes empreintes pluie/contact/sol/gaz; timeout liste appareils settings."
-    },
-    {
-      "version": "9.0.477",
-      "date": "2026-08-11",
-      "channel": "test",
-      "en": "Crash-safe error handlers; rain/contact/soil/gas fingerprint rehomes; settings device-list timeout.",
-      "fr": "Handlers erreur anti-crash; rehomes empreintes pluie/contact/sol/gaz; timeout liste appareils settings."
-    },
-    {
-      "version": "9.0.476",
-      "date": "2026-08-11",
-      "channel": "test",
-      "en": "Improved cross-project reimpl: quirk battery DPs, IAS siren I/O, energy jump guard on all bases, sleepy wake battery probe.",
-      "fr": "Reimpl multi-projets amelioree: DPs batterie quirks, I/O sirene IAS, garde saut energie sur toutes bases, probe batterie au reveil."
-    },
-    {
-      "version": "9.0.475",
-      "date": "2026-08-11",
-      "channel": "test",
-      "en": "Fixed ghost button flows and phantom battery Energy tiles; no more fake battery percentages on mains devices.",
-      "fr": "Correction flux boutons fantomes et tuiles Energie batterie fantome; plus de faux pourcentages batterie sur appareils secteur."
-    },
-    {
-      "version": "9.0.474",
-      "date": "2026-08-11",
-      "channel": "test",
-      "en": "Multi-source enrich automation; reinforced curtain/gas/dimmer/radar/thermostat fingerprints; stronger DeviceIO RX/TX fallbacks.",
-      "fr": "Automatisation enrichissement multi-sources; empreintes rideau/gaz/dimmer/radar/thermostat renforcees; fallbacks DeviceIO RX/TX plus robustes."
-    },
-    {
-      "version": "9.0.473",
-      "date": "2026-08-11",
-      "channel": "test",
-      "en": "Multi-source enrich automation; reinforced curtain/gas/dimmer/radar/thermostat fingerprints; stronger DeviceIO RX/TX fallbacks.",
-      "fr": "Automatisation enrichissement multi-sources; empreintes rideau/gaz/dimmer/radar/thermostat renforcees; fallbacks DeviceIO RX/TX plus robustes."
-    },
-    {
-      "version": "9.0.472",
-      "date": "2026-08-11",
-      "channel": "test",
-      "en": "Smoke sensors on DeviceIO/IAS path; stronger Tuya cluster compensation; publish+diag monitoring relaunched.",
-      "fr": "Detecteurs fumee sur chemin DeviceIO/IAS; compensation cluster Tuya renforcee; publish+diag relances."
-    },
-    {
-      "version": "9.0.471",
-      "date": "2026-08-11",
-      "channel": "test",
-      "en": "Resumed backlog: collision baseline refresh, dual-valve button, airbox smartParse, Tuya DP dimmer routing, enrich forum thread scan.",
-      "fr": "Reprise backlog: baseline collisions, bouton valve dual, airbox smartParse, dimmer DP Tuya, scan forum enrich."
-    },
-    {
-      "version": "9.0.470",
-      "date": "2026-08-11",
-      "channel": "test",
-      "en": "Workflow hardening: unique flow card gate, safer timers, forum inbox bridge, CI npm install gaps filled.",
-      "fr": "Durcissement workflows: gate flow cards uniques, timers plus surs, pont forum→inbox, npm install CI complete."
-    },
-    {
-      "version": "9.0.469",
-      "date": "2026-08-11",
-      "channel": "test",
-      "en": "Workflow hardening: unique flow card gate, safer timers, forum inbox bridge, CI npm install gaps filled.",
-      "fr": "Durcissement workflows: gate flow cards uniques, timers plus surs, pont forum→inbox, npm install CI complete."
-    },
-    {
-      "version": "9.0.468",
-      "date": "2026-08-11",
-      "channel": "test",
-      "en": "Improved Tuya MCU time sync and battery DP routing; corrected mispaired climate fingerprints; safer temperature scaling fallback.",
-      "fr": "Sync horloge MCU Tuya et routage batterie ameliores; empreintes climate mal appariees corrigees; fallback temperature plus sur."
-    },
-    {
-      "version": "9.0.467",
-      "date": "2026-08-11",
-      "channel": "test",
-      "en": "Improved Tuya MCU time sync and battery DP routing; corrected mispaired climate fingerprints; safer temperature scaling fallback.",
-      "fr": "Sync horloge MCU Tuya et routage batterie ameliores; empreintes climate mal appariees corrigees; fallback temperature plus sur."
-    },
-    {
-      "version": "9.0.466",
-      "date": "2026-08-11",
-      "channel": "test",
-      "en": "Historical enrich: safer Tuya dimmer I/O, RF coexistence CI gate, silent multi-FP reinforce, architecture docs updated.",
-      "fr": "Enrichissement historique: I/O dimmer Tuya plus sur, gate RF en CI, reinforce FP silencieux, docs architecture a jour."
-    },
-    {
-      "version": "9.0.464",
-      "date": "2026-08-11",
-      "channel": "test",
-      "en": "Improved contact sensor flows and status; legacy Tuya I/O resilience; RF Zigbee/Wi-Fi coexistence guidance; silent community scan + anti AI-paste automations.",
-      "fr": "Flows contact et statut ameliores; resilience I/O Tuya legacy; coexistence RF Zigbee/Wi-Fi; scan silencieux + anti-collage IA."
-    },
-    {
-      "version": "9.0.463",
-      "date": "2026-08-11",
-      "channel": "test",
-      "en": "Improved contact sensor flows and status; legacy Tuya I/O resilience; RF Zigbee/Wi-Fi coexistence guidance; silent community scan + anti AI-paste automations.",
-      "fr": "Flows contact et statut ameliores; resilience I/O Tuya legacy; coexistence RF Zigbee/Wi-Fi; scan silencieux + anti-collage IA."
-    },
-    {
-      "version": "9.0.462",
-      "date": "2026-08-11",
-      "channel": "test",
-      "en": "Integral cross-version enrich: SmartDivisor in EF00, IASZoneEnhanced+L14, sleepy passive force, MCUFormatDatabase negotiate.",
-      "fr": "Enrichissement transversal versions: SmartDivisor EF00, IASZoneEnhanced+L14, passive sleepy force, MCUFormatDatabase."
-    },
-    {
-      "version": "9.0.461",
-      "date": "2026-08-11",
-      "channel": "test",
-      "en": "Integral cross-version enrich: SmartDivisor in EF00, IASZoneEnhanced+L14, sleepy passive force, MCUFormatDatabase negotiate.",
-      "fr": "Enrichissement transversal versions: SmartDivisor EF00, IASZoneEnhanced+L14, passive sleepy force, MCUFormatDatabase."
-    },
-    {
-      "version": "9.0.460",
-      "date": "2026-08-11",
-      "channel": "test",
-      "en": "Max multi-method I/O coverage: DP/ZCL/IAS/raw fallbacks, quirk-guided init for more device families, expanded magic packet profiles.",
-      "fr": "Couverture I/O multi-methodes max: fallbacks DP/ZCL/IAS/raw, init quirk elargi, profils magic packet etendus."
-    },
-    {
-      "version": "9.0.459",
-      "date": "2026-08-11",
-      "channel": "test",
-      "en": "Max multi-method I/O coverage: DP/ZCL/IAS/raw fallbacks, quirk-guided init for more device families, expanded magic packet profiles.",
-      "fr": "Couverture I/O multi-methodes max: fallbacks DP/ZCL/IAS/raw, init quirk elargi, profils magic packet etendus."
-    },
-    {
-      "version": "9.0.458",
-      "date": "2026-08-11",
-      "channel": "test",
-      "en": "Historical restore: MCU magic packet registry, EventDedup on capability updates, flow runListener guards, safe-timers on button mixins.",
-      "fr": "Restauration historique: registre magic MCU, EventDedup sur capabilities, garde runListener Flow, safe-timers mixins boutons."
-    },
-    {
-      "version": "9.0.456",
-      "date": "2026-08-11",
-      "channel": "test",
-      "en": "Universal flow-card heuristics, driver-mapping repair, DeviceIO on legacy Tuya/light bases, WiFi I/O channel, missing flow compose for 4 drivers.",
-      "fr": "Heuristiques Flow universelles, mapping drivers réparé, DeviceIO sur bases Tuya/light legacy, canal WiFi I/O, compose Flow manquant pour 4 drivers."
-    },
-    {
-      "version": "9.0.455",
-      "date": "2026-08-11",
-      "channel": "test",
-      "en": "Improved device wake/handshake and interview recovery; added contact sensor fingerprints from incomplete-source cross-check.",
-      "fr": "Amélioration handshake/wake device et récupération interview; empreintes contact depuis cross-check sources incomplètes."
-    },
-    {
-      "version": "9.0.453",
-      "date": "2026-08-11",
-      "channel": "test",
-      "en": "P102 I/O facade publish fix: irrigation Flow cards use implicit device args (Homey validate).",
-      "fr": "P102 facade I/O: correction Flow irrigation (args device implicites) pour validation Homey."
-    },
-    {
-      "version": "9.0.388",
-      "date": "2026-07-31",
-      "channel": "test",
-      "en": "Central destroyed guards on capability ops, linear battery formulas eliminated.",
-      "fr": "Gardes destroyed centrales sur les opérations capabilities, formules batterie linéaires éliminées."
-    },
-    {
-      "version": "9.0.387",
-      "date": "2026-07-31",
-      "channel": "test",
-      "en": "Flow DP send hardening + typed handler with per-type validation.",
-      "fr": "Blindage des envois DP par flow + handler typé avec validation par type."
-    },
-    {
-      "version": "9.0.386",
-      "date": "2026-07-31",
-      "channel": "test",
-      "en": "Full forum topic scan (2039 posts with images/links) + digest, sqcn0y re-added (purge), version alignment.",
-      "fr": "Scan complet du topic forum (2039 posts avec images/liens) + digest, sqcn0y ré-ajouté (purge), alignement version."
-    },
-    {
-      "version": "9.0.385",
-      "date": "2026-07-31",
-      "channel": "test",
-      "en": "OTA hardening: SHA512 verified before flashing, header validation, download timeout + size cap, index schema validation.",
-      "fr": "Blindage OTA : SHA512 vérifié avant flash, validation du header, timeout + limite de taille, validation du schéma de l'index."
-    },
-    {
-      "version": "9.0.384",
-      "date": "2026-07-31",
-      "channel": "test",
-      "en": "Dashboards: navigation fixed (hub/finder/inbox links), precise fingerprint metric, version alignment.",
-      "fr": "Dashboards : navigation corrigée (liens hub/finder/inbox), métrique empreintes précise, alignement version."
-    },
-    {
-      "version": "9.0.383",
-      "date": "2026-07-31",
-      "channel": "test",
-      "en": "51 critical ESLint errors fixed (phantom modules, this-less calls, missing super(), duplicate keys, dead switch cases).",
-      "fr": "51 erreurs ESLint critiques corrigées (modules fantômes, appels sans this, super() manquant, clés dupliquées, cases morts)."
-    },
-    {
-      "version": "9.0.382",
-      "date": "2026-07-30",
-      "channel": "test",
-      "en": "Key-version changelog format (required by headless homey publish), OTA guidance, Hue batch 4.",
-      "fr": "Format clé-version du changelog (requis par homey publish headless), guidance OTA, batch Hue 4."
-    },
-    {
-      "version": "9.0.381",
-      "date": "2026-07-30",
-      "channel": "test",
-      "en": "Changelog backticks stripped (publish extractor fix), publish-size bundle excludes product-reference, version alignment.",
-      "fr": "Backticks du changelog retirés (fix extracteur publish), exclusion product-reference du bundle, alignement version."
-    },
-    {
-      "version": "9.0.380",
-      "date": "2026-07-30",
-      "channel": "test",
-      "en": "OTA flash guidance in notifications, Hue batch 4 (cover_set_position, hue_all_off).",
-      "fr": "Guidance flash dans les notifications OTA, batch Hue 4 (cover_set_position, hue_all_off)."
-    },
-    {
-      "version": "9.0.379",
-      "date": "2026-07-30",
-      "channel": "test",
-      "en": "OTA real firmware version via swBuildId, Hue batch 3 (dim_to_level, scene_cycle), publish -X theirs.",
-      "fr": "OTA version réelle via swBuildId, batch Hue 3 (dim_to_level, scene_cycle), publish -X theirs."
-    },
-    {
-      "version": "9.0.378",
-      "date": "2026-07-30",
-      "channel": "test",
-      "en": "OTA overhaul (Tuya MCU fallback, manufacturerName matching, notifications + 3 flow cards), Hue batch 2 (sleep, scenes, DND window), publish race fix.",
-      "fr": "Refonte OTA (fallback MCU Tuya, matching par fabricant, notifications + 3 cards), batch Hue 2 (coucher, scènes, fenêtre DND), fix course publish."
-    },
-    {
-      "version": "9.0.377",
-      "date": "2026-07-30",
-      "channel": "test",
-      "en": "Temperature compensation inversion fixed (cold inflated battery estimates) + 10 battery profile tests + 9 button press-type tests.",
-      "fr": "Inversion de la compensation température corrigée (le froid gonflait les estimations batterie) + 10 tests profils batterie + 9 tests boutons."
-    },
-    {
-      "version": "9.0.376",
-      "date": "2026-07-30",
-      "channel": "test",
-      "en": "Hue-style smart features: motion-activated lighting (lux guard, auto-off), circadian curve application, wake-up sunrise ramp — as flow action cards.",
-      "fr": "Smart features style Hue : éclairage sur mouvement (garde lux, auto-off), courbe circadienne, rampe réveil — en cartes de flow."
-    },
-    {
-      "version": "9.0.375",
-      "date": "2026-07-30",
-      "channel": "test",
-      "en": "Product reference DB (9027 fingerprints: vendor/model/battery/energy/variants), energy consumption reference for the telemetry estimator, telemetry_is_estimated flow condition, mfs_db gap fix.",
-      "fr": "Base de référence produits (9027 empreintes : vendor/modèle/batterie/énergie/variants), référence de consommation pour l'estimateur, condition de flow telemetry_is_estimated, fix gap mfs_db."
-    },
-    {
-      "version": "9.0.373",
-      "date": "2026-07-30",
-      "channel": "test",
-      "en": "Case-variant completeness (4950 fingerprints, unknown device prevention) + publish compactor counts case groups (0 observed purged).",
-      "fr": "Complétude des casses (4950 empreintes, anti unknown device) + compacteur par groupes de casse (0 purge observée)."
-    },
-    {
-      "version": "9.0.371",
-      "date": "2026-07-30",
-      "channel": "test",
-      "en": "10 drivers fixed at load time (bot-corrupted imports), ZCL measuredValue parsed spec-exactly, new smoke/syntax/dead-module audits.",
-      "fr": "10 drivers corrigés au chargement (imports corrompus par un bot), measuredValue ZCL parsé selon la spec, nouveaux audits smoke/syntaxe/modules morts."
-    },
-    {
-      "version": "9.0.369",
-      "date": "2026-07-30",
-      "channel": "test",
-      "en": "Humidity scaling heuristic (magnitude-based: raw 65/650/6500 all read 65%), temperature rejects impossible values, 33 new parser tests, DeviceFingerprintDB test suite.",
-      "fr": "Heuristique humidité par magnitude (65/650/6500 lus 65%), rejet des températures impossibles, 33 nouveaux tests parsers, suite DeviceFingerprintDB."
-    },
-    {
-      "version": "9.0.359",
-      "date": "2026-07-29",
-      "en": "fix: ghost drivers pruned from publish, climate probe DP38, resolve-collisions case fix, security untracking"
-    },
-    {
-      "version": "9.0.333",
-      "date": "2026-07-23",
-      "channel": "master",
-      "en": "P82: TuyaNormalizer v10.0.0 ULTIMATE - single source of truth for case-insensitive matching (NFKD + accents + emojis + multi-PID + variants + scoring). Fixes issue #513 (climate_sensor _TZE284_hodyryli). 1760 mfr case-mismatches audited, 370 mfrs enriched with case variants. lib/Util.js + CaseInsensitiveMatcher + PermissiveMatchingEngine refactored as backward-compat shims."
-    },
-    {
-      "version": "9.0.332",
-      "date": "2026-07-22",
-      "channel": "master",
-      "en": "P80.6: re-inject P80/P80.5 mfrs after auto-publish bot revert. 10 new manual fixes added to re-inject-manual-fixes.js. generic_tuya: 462 -> 1126 FPs. 0 new Sacred Couple collisions."
-    },
-    {
-      "version": "9.0.331",
-      "date": "2026-07-22",
-      "channel": "master",
-      "en": "P80.5: enrich-orphan-drivers.js v7 variants-aware, +147 mfrs to 3 more orphan drivers (led_controller_rgb, relay_board_4_channel, switch_usb_dongle), 0 new collisions"
-    },
-    {
-      "version": "9.0.330",
-      "date": "2026-07-22",
-      "channel": "master",
-      "en": "P80: +685 issue #439 FPs to generic_tuya, +135 mfrs to 7 orphan drivers (PR #512), enrich-orphan-drivers.js v4 cross-orphan safe"
-    },
-    {
-      "version": "9.0.53",
-      "en": "CRITICAL: sdkVersion fix (Processing failed), Missing Capability Listener (setable:false), timer fallback, battery restore, duplicate method fix, HOBEIAN ZG-301Z, NFKD normalize, 87 fingerprints restored, Polos validator",
-      "fr": "CRITIQUE: sdkVersion (Processing failed), Missing Capability Listener, fallback timer, batterie, HOBEIAN, NFKD, 87 fingerprints, Polos"
-    },
-    {
-      "version": "9.0.45",
-      "date": "2026-06-18",
-      "summary": "Documentation Finalizer v8.0 - Forum analysis, multi-manufacturer rules, device additions",
-      "changes": [
-        {
-          "type": "feat",
-          "description": "KNOWLEDGE_CACHE.json v8.0: Added forum findings section, multi-manufacturer rules, forum-based device addition workflow"
-        },
-        {
-          "type": "feat",
-          "description": "CORE_RULES.md v5.0: Added R59-R61 (forum/multi-manufacturer rules) + FM1-FM3 (forum & multi-manufacturer rules)"
-        },
-        {
-          "type": "fix",
-          "description": "Forum analysis fixes - fingerbot collision revert, driver compose improvements"
-        },
-        {
-          "type": "fix",
-          "description": "Forum issues #2091 #5472 - device routing and flow card integrity fixes"
-        },
-        {
-          "type": "chore",
-          "description": "Updated project statistics: 430 drivers, 533 lib files, 565 scripts, 334 docs"
-        },
-        {
-          "type": "chore",
-          "description": "Added 3 new enrichment rules: R59-R61 for forum-based device additions"
-        },
-        {
-          "type": "chore",
-          "description": "Added 3 new forum/multi-manufacturer rules: FM1-FM3"
-        },
-        {
-          "type": "chore",
-          "description": "Updated git history with latest commits and key decisions"
-        }
-      ]
-    },
-    {
-      "version": "9.0.44",
-      "date": "2026-06-18",
-      "summary": "Documentation v7.0 - KNOWLEDGE_CACHE v7.0, CORE_RULES v4.0 (R1-R58), 4 new docs, 42 modules documented",
-      "changes": [
-        {
-          "type": "feat",
-          "description": "KNOWLEDGE_CACHE.json v7.0: 42 modules documented, R1-R58 rules, presence/battery health/features module coverage"
-        },
-        {
-          "type": "feat",
-          "description": "CORE_RULES.md v4.0: Added R43-R58 enrichment rules (presence, battery health, groups, features, energy)"
-        },
-        {
-          "type": "feat",
-          "description": "docs/ARCHITECTURE.md: Comprehensive architecture overview with 11-layer pipeline, class hierarchy, protocols"
-        },
-        {
-          "type": "feat",
-          "description": "docs/MODULES.md: Complete documentation of 42 modules across 10 categories"
-        },
-        {
-          "type": "feat",
-          "description": "docs/WORKFLOWS.md: All 40 GitHub Actions workflows documented with schedules and purposes"
-        },
-        {
-          "type": "feat",
-          "description": "docs/SCRIPTS.md: All 93 scripts documented with categories and usage"
-        },
-        {
-          "type": "chore",
-          "description": "Updated project statistics: 429 drivers, 4304 FPs, 4138 flow cards, 156 capabilities"
-        },
-        {
-          "type": "chore",
-          "description": "Added 16 new rules: R43-R58 for advanced feature modules"
-        },
-        {
-          "type": "chore",
-          "description": "Added 2 new anti-patterns: AP13 (deprecated HybridSwitchBase), AP14 (missing positionInvert)"
-        },
-        {
-          "type": "chore",
-          "description": "Updated CREDITS.md with new module sources and Homey Community Forum"
-        }
-      ]
-    },
-    {
-      "version": "9.0.43",
-      "date": "2026-06-17",
-      "summary": "TITAN V5 GOD-MODE Final - Image conformity, documentation enrichment, R1-R42 + CP1-CP10 + IC1-IC4",
-      "changes": [
-        {
-          "type": "feat",
-          "description": "KNOWLEDGE_CACHE.json v6.0: All 10 modules documented, R1-R42 rules, CP1-CP10 crash prevention, IC1-IC4 image conformity"
-        },
-        {
-          "type": "feat",
-          "description": "CORE_RULES.md v3.0: Added IC1-IC4 image conformity rules (SVG 960x960 viewBox, no gradients, no rasters)"
-        },
-        {
-          "type": "feat",
-          "description": "TITAN_FINAL_REPORT.md: Comprehensive final report with all phases, modules, fixes, and conformities"
-        },
-        {
-          "type": "feat",
-          "description": "CREDITS.md: Added athombv/homey-vectors-public, Joolee/Homey-SVG-Icons, Homey Community Forum"
-        },
-        {
-          "type": "chore",
-          "description": "Image conformity audit: 430/430 drivers with SVG icons, app icon compliant (100x100, no gradients, no rasters)"
-        },
-        {
-          "type": "chore",
-          "description": "All 10 TITAN modules verified: CircuitBreaker, ValueConverterRegistry, CapabilityMapCache, BatchCapabilityUpdater, DPCache, safeLogger, ConnectionStateTracker, RetryWithBackoff, CrashPrevention, ErrorClassifier"
-        }
-      ]
-    },
-    {
-      "version": "9.0.42",
-      "date": "2026-06-17",
-      "summary": "CrashPrevention utilities - Comprehensive crash prevention for all async operations",
-      "changes": [
-        {
-          "type": "feat",
-          "description": "CrashPrevention.js: Comprehensive crash prevention utilities (safeAsync, safePromise, guardDestroyed, guardHomey, safeTimeout, safeInterval, safeCleanup, safeSetCapability, safeTriggerFlow, safeSendCommand, withRetry)"
-        },
-        {
-          "type": "feat",
-          "description": "CORE_RULES.md updated with R42: CrashPrevention Utilities rule"
-        },
-        {
-          "type": "feat",
-          "description": "CORE_RULES.md updated with CP1-CP10: Crash Prevention Rules section"
-        },
-        {
-          "type": "feat",
-          "description": "CORE_RULES.md updated with Crash Pattern Analysis Summary section"
-        },
-        {
-          "type": "fix",
-          "description": "Identified 7 crash patterns: .then() without .catch() (59), empty catch handlers (968), unsafe setCapabilityValue (87), missing _destroyed guard (45+), missing super.onDeleted() (20+), raw setTimeout/setInterval (100+), unhandled promise rejections (14)"
-        }
-      ]
-    },
-    {
-      "version": "9.0.41",
-      "date": "2026-06-17",
-      "summary": "TITAN Protocol V5 - ConnectionStateTracker, CORE_RULES R37-R41, documentation enrichment",
-      "changes": [
-        {
-          "type": "feat",
-          "description": "ConnectionStateTracker: WiFi connection state tracking with history, uptime stats, and state persistence"
-        },
-        {
-          "type": "feat",
-          "description": "CORE_RULES.md updated with R37-R41: ConnectionStateTracker, RetryWithBackoff, ConnectionState Persistence, Connection Uptime Monitoring, ErrorClassifier Integration"
-        },
-        {
-          "type": "chore",
-          "description": "KNOWLEDGE_CACHE.json updated to v5.1 with new module references and known issues"
-        },
-        {
-          "type": "chore",
-          "description": "All violations verified clean: raw setCapabilityValue=0, console.log in drivers=0, raw setTimeout/setInterval=0"
-        }
-      ]
-    },
-    {
-      "version": "9.0.40",
-      "date": "2026-06-16",
-      "summary": "TITAN Protocol v2 - Massive audit, 159 driver fixes, WiFi base class hardening",
-      "changes": [
-        {
-          "type": "feat",
-          "description": "TITAN Protocol v2: 7-agent parallel audit system (Investigator, Auditor, Architect, Automator + 3 verification agents)"
-        },
-        {
-          "type": "feat",
-          "description": "CircuitBreaker module for TuyaCloudAPI fault tolerance"
-        },
-        {
-          "type": "feat",
-          "description": "CircuitBreaker integrated into TuyaCloudAPI._request() - 5 failures = open, 30s reset"
-        },
-        {
-          "type": "feat",
-          "description": "ValueConverterRegistry: Centralized DP value converters (Z2M-inspired pattern)"
-        },
-        {
-          "type": "feat",
-          "description": "CapabilityMapCache: capabilityMap caching in onInit() to reduce GC pressure"
-        },
-        {
-          "type": "feat",
-          "description": "BatchCapabilityUpdater: Batch capability updates with 50ms window to reduce UI overhead"
-        },
-        {
-          "type": "feat",
-          "description": "DPCache: Per-device DP value cache for offline fallback (5min TTL, LRU eviction)"
-        },
-        {
-          "type": "feat",
-          "description": "safeLogger: Safe logger utility replacing console.log fallbacks in lib/ utilities"
-        },
-        {
-          "type": "feat",
-          "description": "ErrorClassifier: Added isRetryable(), getRetryDelay(), withRetry() for automatic retry with exponential backoff"
-        },
-        {
-          "type": "feat",
-          "description": "TuyaLocalClient: Offline command queuing - commands queued when disconnected, flushed on reconnect (5min expiry)"
-        },
-        {
-          "type": "feat",
-          "description": "TuyaLocalClient: Connection state tracking via 'connection-state' event (disconnected/connecting/connected/reconnecting)"
-        },
-        {
-          "type": "feat",
-          "description": "TuyaLocalDevice: Offline mode - continues operating with cached state, queues commands for retry"
-        },
-        {
-          "type": "feat",
-          "description": "ai-monthly-audit.yml: Enhanced with AI-powered deep analysis (Claude/OpenAI/Gemini)"
-        },
-        {
-          "type": "feat",
-          "description": "KNOWLEDGE_CACHE.json v2.0: Comprehensive project knowledge base with 667 URLs"
-        },
-        {
-          "type": "feat",
-          "description": "Virtual presence detection + battery health intelligence"
-        },
-        {
-          "type": "feat",
-          "description": "7 new hybrid drivers (fan_sensor, garage_door_sensor, heater_thermostat, etc.)"
-        },
-        {
-          "type": "fix",
-          "description": "CRITICAL: TuyaLocalDevice.onDeleted() now calls super.onDeleted() - fixes TCP leak for ALL 29 WiFi drivers"
-        },
-        {
-          "type": "fix",
-          "description": "CRITICAL: EweLinkLocalDevice.onDeleted() now calls super.onDeleted() - fixes TCP leak for ALL eWeLink drivers"
-        },
-        {
-          "type": "fix",
-          "description": "CRITICAL: 159 driver files batch-fixed from raw setCapabilityValue to safeSetCapabilityValue"
-        },
-        {
-          "type": "fix",
-          "description": "FIXED: TuyaLocalDevice._onData() raw setCapabilityValue replaced with safeSetCapabilityValue"
-        },
-        {
-          "type": "fix",
-          "description": "FIXED: console.log fallback patterns in TuyaTimeSync, TuyaDataQuery, TuyaGatewayEmulator, DataRecoveryManager replaced with safeLogger"
-        },
-        {
-          "type": "fix",
-          "description": "Forum issues #2091 #5472 + protection scripts + flow card integrity"
-        },
-        {
-          "type": "fix",
-          "description": "Comprehensive button evolution + stable-v5 port + regression fixes"
-        },
-        {
-          "type": "fix",
-          "description": "Comprehensive quality sweep - 607 files, zero violations"
-        },
-        {
-          "type": "fix",
-          "description": "GitHub issues #388 #383 #420 #417 + fingerprint additions"
-        },
-        {
-          "type": "chore",
-          "description": "CORE_RULES.md updated to v2.0 with R19-R31 enrichment rules"
-        },
-        {
-          "type": "chore",
-          "description": "KNOWLEDGE_CACHE.json restructured with architecture, bugs, and external references"
-        },
-        {
-          "type": "chore",
-          "description": "28 redundant GitHub Actions workflows archived to .archive/workflows-disabled/ (66 → 36 active)"
-        },
-        {
-          "type": "fix",
-          "description": "77 drivers fixed with super.onDeleted() + _destroyed guard (resource leak prevention)"
-        },
-        {
-          "type": "feat",
-          "description": "CapabilityMapCache integrated into BaseUnifiedDevice, TuyaZigbeeDevice, TuyaLocalDevice (WeakMap-based)"
-        },
-        {
-          "type": "feat",
-          "description": "ValueConverterRegistry extended to 11 drivers (44 inline transforms replaced with boolean()/enumMap())"
-        },
-        {
-          "type": "chore",
-          "description": "22 orphaned lib/ files deleted (~135 KB dead code removed)"
-        },
-        {
-          "type": "chore",
-          "description": "20 dead scripts deleted (571 → 551 scripts)"
-        },
-        {
-          "type": "chore",
-          "description": "tuya-dp-engine deleted (unused converter system, -63 KB)"
-        },
-        {
-          "type": "fix",
-          "description": "16 console.log violations fixed in lib/ files"
-        },
-        {
-          "type": "fix",
-          "description": "BaseUnifiedDevice:2955 fixed to use safeSetCapabilityValue"
-        },
-        {
-          "type": "feat",
-          "description": "3 new validation scripts: check-destroyed-guard.js, check-super-ondeleted.js, check-circuit-breaker.js"
-        }
-      ]
-    },
-    {
-      "version": "9.0.39",
-      "date": "2026-06-16",
-      "summary": "420 drivers, 2403 FPs, forum issue fixes",
-      "changes": [
-        {
-          "type": "fix",
-          "description": "Forum issues #2091 #5472 + protection scripts + flow card integrity"
-        }
-      ]
-    },
-    {
-      "version": "9.0.38",
-      "date": "2026-06-16",
-      "summary": "Version bump + changelog update",
-      "changes": [
-        {
-          "type": "chore",
-          "description": "bump version to v9.0.38, update changelog"
-        }
-      ]
-    },
-    {
-      "version": "9.0.37",
-      "date": "2026-06-16",
-      "summary": "412 drivers, 2398 FPs, button evolution + quality sweep",
-      "changes": [
-        {
-          "type": "fix",
-          "description": "Comprehensive button evolution + stable-v5 port + regression fixes"
-        },
-        {
-          "type": "fix",
-          "description": "Comprehensive quality sweep - 607 files, zero violations"
-        }
-      ]
-    },
-    {
-      "version": "9.0.36",
-      "date": "2026-06-16",
-      "summary": "419 drivers, 7 new hybrid drivers, pipeline hardening",
-      "changes": [
-        {
-          "type": "feat",
-          "description": "7 new hybrid drivers: fan_sensor, garage_door_sensor, heater_thermostat, light_sensor, light_windowcoverings, sensor_thermostat, switch_sensor"
-        },
-        {
-          "type": "fix",
-          "description": "Pipeline hardening across all layers"
-        }
-      ]
-    },
-    {
-      "version": "9.0.35",
-      "date": "2026-06-15",
-      "summary": "412 drivers, 2365 FPs, GitHub issues resolved + enrichment",
-      "changes": [
-        {
-          "type": "fix",
-          "description": "GitHub issues #388 (rain sensor misclassification), #383 (bed sensor), #420 (MMWave radar), #417 (fingerprint additions)"
-        },
-        {
-          "type": "chore",
-          "description": "Enrichment v9.0.34: 2362 FPs cross-referenced Z2M/ZHA"
-        },
-        {
-          "type": "chore",
-          "description": "API discovery v9.0.34 2026-06: IoT/Zigbee endpoint scan"
-        },
-        {
-          "type": "chore",
-          "description": "Sync enrich from Z2M/ZHA/deCONZ external sources"
-        }
-      ]
-    },
-    {
-      "version": "9.0.34",
-      "date": "2026-06-15",
-      "summary": "412 drivers, 2362 FPs, forum processing + enrichment",
-      "changes": [
-        {
-          "type": "fix",
-          "description": "Forum posts processed - 8 device routing fixes + 4 fingerprint additions"
-        }
-      ]
-    },
-    {
-      "version": "9.0.33",
-      "date": "2026-06-15",
-      "summary": "412 drivers, 2366 FPs, diagnostic fix + issue resolution",
-      "changes": [
-        {
-          "type": "fix",
-          "description": "diagnostic-report.js orphaned counting now recognizes manufacturerName+productId"
-        },
-        {
-          "type": "chore",
-          "description": "Resolved issues + patterns update"
-        }
-      ]
-    },
-    {
-      "version": "9.0.32",
-      "date": "2026-06-09",
-      "summary": "412 drivers, 2366 FPs, empty arrays fixed",
-      "changes": [
-        {
-          "type": "fix",
-          "description": "Fix last empty manufacturerName array (button_wireless_fingerbot)"
-        },
-        {
-          "type": "fix",
-          "description": "Fix 74 remaining empty manufacturerName arrays (AggregateError root cause)"
-        }
-      ]
-    },
-    {
-      "version": "9.0.31",
-      "date": "2026-06-08",
-      "summary": "412 drivers, 2366 FPs, YAML + validation + workflow fixes",
-      "changes": [
-        {
-          "type": "fix",
-          "description": "YAML workflows improved + tests pass"
-        },
-        {
-          "type": "fix",
-          "description": "82 missing driver.js + 13 console.log fixes + 8 YAML workflow fixes"
-        }
-      ]
-    },
-    {
-      "version": "9.0.30",
-      "date": "2026-06-07",
-      "summary": "412 drivers, 2366 FPs, workflow corrections",
-      "changes": [
-        {
-          "type": "fix",
-          "description": "YAML workflows improved based on actual function understanding"
-        },
-        {
-          "type": "fix",
-          "description": "4 YAML workflows corrected based on actual function"
-        }
-      ]
-    },
-    {
-      "version": "9.0.29",
-      "date": "2026-06-06",
-      "summary": "412 drivers, 2367 FPs, workflow + driver fixes",
-      "changes": [
-        {
-          "type": "fix",
-          "description": "4 YAML workflows corrected based on actual function"
-        }
-      ]
-    },
-    {
-      "version": "9.0.28",
-      "date": "2026-06-05",
-      "summary": "412 drivers, 2388 FPs, missing code + driver.js fixes",
-      "changes": [
-        {
-          "type": "fix",
-          "description": "82 missing driver.js + 13 console.log fixes + 8 YAML workflow fixes"
-        }
-      ]
-    },
-    {
-      "version": "9.0.27",
-      "date": "2026-06-04",
-      "summary": "412 drivers, 2388 FPs, audit link fixes",
-      "changes": [
-        {
-          "type": "fix",
-          "description": "Audit links + fix 10 broken references in PROJECT_INDEX.md"
-        }
-      ]
-    },
-    {
-      "version": "9.0.26",
-      "date": "2026-06-03",
-      "summary": "412 drivers, 2426 FPs, AI skills implementation",
-      "changes": [
-        {
-          "type": "feat",
-          "description": "Implement AI skills + CLAUDE.md + AI_RULES.md + ARCHITECTURE update"
-        }
-      ]
-    },
-    {
-      "version": "9.0.25",
-      "date": "2026-06-02",
-      "summary": "412 drivers, 2433 FPs, Ponytail minimalism",
-      "changes": [
-        {
-          "type": "feat",
-          "description": "Ponytail minimalism + bug fixes + code quality improvements"
-        }
-      ]
-    },
-    {
-      "version": "9.0.24",
-      "date": "2026-06-01",
-      "summary": "412 drivers, 2444 FPs, missing code completion",
-      "changes": [
-        {
-          "type": "fix",
-          "description": "Complete all missing code + 53 empty manufacturerName arrays + 9 TODO items"
-        }
-      ]
-    },
-    {
-      "version": "9.0.23",
-      "date": "2026-05-31",
-      "summary": "412 drivers, 2472 FPs, case sensitivity + collision fixes",
-      "changes": [
-        {
-          "type": "fix",
-          "description": "HOBEIAN/SONOFF/IKEA case sensitivity + SNZB-06P collision + PROJECT_INDEX update"
-        }
-      ]
-    },
-    {
-      "version": "9.0.22",
-      "date": "2026-05-30",
-      "summary": "412 drivers, 2520 FPs, water leak sensor fix",
-      "changes": [
-        {
-          "type": "fix",
-          "description": "Add HOBEIAN to water_leak_sensor for ZG-222Z (Peter #2090)"
-        }
-      ]
-    },
-    {
-      "version": "9.0.21",
-      "date": "2026-05-29",
-      "summary": "412 drivers, 2558 FPs, Peter's devices + security",
-      "changes": [
-        {
-          "type": "fix",
-          "description": "Peter's devices + SOS fingerprint + LCD collision + security check"
-        }
-      ]
-    },
-    {
-      "version": "9.0.389",
-      "date": "2026-07-31",
-      "summary": "Self-improve weekly orchestrator + autonomous loop doc",
-      "changes": [
-        {
-          "type": "feature",
-          "description": "Weekly self-improve workflow chaining existing tools (product-reference, case fixer, docs index, script registry) gated by npm test"
-        }
-      ]
-    }
-  ],
+  "9.0.1028": {
+    "en": "VicHY #2247 diag 8d9d0199: trust DP1, restore relay onoff, soft-clear stagnant bathroom presence; fix publish gate p2511."
+  },
+  "9.0.1027": {
+    "en": "VicHY MTG075: trust DP1 presence, keep relay onoff, soft-clear sticky empty-room presence; EF00 incomplete interview cascade."
+  },
+  "9.0.1026": {
+    "en": "Incomplete Homey interview: intelligent DP/ZCL/raw RX-TX cascade (EF00-only + parallelDiscover)."
+  },
+  "9.0.1025": {
+    "en": "EF00-only pairing with ED00 extras (no OnOff 6); VicHY clrdrnya pure Tuya DP reinforce; ZG253 TRV #2244."
+  },
+  "9.0.1023": {
+    "en": "P2572 publish fix: contact_sensor P126 no TS0601 + pay2byax ZG path; Johan mega coverage."
+  },
+  "9.0.1022": {
+    "en": "Johan issues/PRs mega complementary coverage (radar/valve/CO2/plug/button/3gang) + dump pagination fix."
+  },
+  "9.0.1020": {
+    "en": "P2571 mfs_db align after T26439 locks (c8ipbljq/tgeqdjgk/vvmbj46n)."
+  },
+  "9.0.1019": {
+    "en": "T26439 tip harvest: Hejhome 6-gang + knob dimmer + LCD TH locks; soil/radar/bed/lux couples reinforced."
+  },
+  "9.0.1018": {
+    "en": "Johan complementary enrich + FP collision prune (OEM sibling bleed fixed)."
+  },
+  "9.0.1017": {
+    "en": "Complementary device coverage enrich (OEM/case variants) + Johan DP libraries retained; TRV/radar/curtain locks intact."
+  },
+  "9.0.1016": {
+    "en": "Forum fixes: ZG253 TRV ogx8u5z6 EF00 pairing (no OnOff cluster), sacred-keep; VicHY radar heal on tip."
+  },
+  "9.0.1015": {
+    "en": "Soft Feature 200 vectors finalized end-to-end (alias resolve, path/welcome/mode recipes, enable-all flows)."
+  },
+  "9.0.1014": {
+    "en": "200 unbranded Soft Feature vectors catalog + SoftRecipeRunner (path/welcome/lux/peak/idle/ambient recipes)."
+  },
+  "9.0.1013": {
+    "en": "More unbranded smart vectors: Quiet Hours, Contact Entry, Shade Daylight, Peak Load Soft Shed, Idle Auto-Off, Night Path bias."
+  },
+  "9.0.1012": {
+    "en": "Multi-vendor unbranded gateway features: Soft Device Link, Lux Adaptive Dim, Mirror Sync, Welcome Home, Absence Energy, Staggered Leave Off."
+  },
+  "9.0.1011": {
+    "en": "Full Soft Daylight Auto, Lamp Mesh Occupancy fusion, Soft Ambient Sync (BootBudget-safe Entertainment alternative)."
+  },
+  "9.0.1010": {
+    "en": "Soft Daylight Fade and Lamp Mesh Occupancy — branding-free gateway smart features; world Zigbee cartography."
+  },
+  "9.0.1009": {
+    "en": "Local smart learning for all workflows (CI habits + energy); forfait env on every GHA yml."
+  },
+  "9.0.1008": {
+    "en": "Publish size-gate prefers prepared app.json; Smart Flow + local energy learner on both tips."
+  },
+  "9.0.1007": {
+    "en": "Heal publish gate for Smart provenance energy mixin; keep local learner."
+  },
+  "9.0.1006": {
+    "en": "Keep ceiling radar gkfbdvyx front-pinned for pairing; Smart Flow learner tip."
+  },
+  "9.0.1005": {
+    "en": "Smart Flow provenance cards + local energy learning (habits, dim/color, measured vs estimate)."
+  },
+  "9.0.1004": {
+    "en": "Fine treat: Moes ZTS/AM43 + ceiling radar magic handshake; front-pin #533/#547 couples for pairing."
+  },
+  "9.0.1003": {
+    "en": "Elegant measured-first values: clean titles for real metrics; ≈ estimated, ƒ calculated, → predicted in UI and Smart Flows."
+  },
+  "9.0.1002": {
+    "en": "Fleet provenance keeps estimate/calculated labels; radar class nudge; wall dimmer magic TX heal."
+  },
+  "9.0.1001": {
+    "en": "Distinguish measured vs intelligent estimate vs calculated values in UI and Flow cards."
+  },
+  "9.0.1000": {
+    "en": "Smartbutton History + presence WHEN/class heal even when reports say fine."
+  },
+  "9.0.999": {
+    "en": "Wireless buttons: first-press after sleep (Z2M/ZHA magic), TS0046 cascade, Moes remotes skip broken scene mode."
+  },
+  "9.0.998": {
+    "en": "P2553: intelligent History/Insights on across sensor drivers (battery, climate, energy, alarms); silence mmWave distance + twin motion spam."
+  },
+  "9.0.997": {
+    "en": "P2550/P2551 dual-app: Smartbutton Insights History recycle + radar History/presence harden (BOTH)."
+  },
+  "9.0.996": {
+    "en": "P2550/P2551: Smartbutton battery Insights History recycle (Peter #2239); radar History dedupe + presence WHEN harden (VicHY #2240)."
+  },
+  "9.0.995": {
+    "en": "Presence radar: lock sensor class, faster heal if Homey flips type without app update."
+  },
+  "9.0.994": {
+    "en": "Removed wrong OEM fingerprint bleed onto 2-gang switch driver."
+  },
+  "9.0.993": {
+    "en": "Hardened SDK3 deferred init helper (no bare timers)."
+  },
+  "9.0.992": {
+    "en": "Improved Zigbee init safety and battery reporting. Expanded SDK3 and community app references."
+  },
+  "9.0.991": {
+    "en": "P2546 VicHY radar: periodic curtain/class heal + presence flow edge dedupe (forum #2240/#2241)."
+  },
+  "9.0.990": {
+    "en": "Aligned forfait unit tests with live daily AI cap (40)."
+  },
+  "9.0.989": {
+    "en": "Improved complementary I/O coverage (RX/TX/flow/energy/OTA) and multi-source OEM firmware indexes."
+  },
+  "9.0.988": {
+    "en": "Shared recent reliability advances across both apps (protocol fallbacks, air quality dual-case, local auto-improve)."
+  },
+  "9.0.987": {
+    "en": "Hardened cron automations for local-only self-improve and tighter AI plan limits without remote AI spend."
+  },
+  "9.0.986": {
+    "en": "Locked air-quality pairing to one driver and kept complementary DP logic without fingerprint collisions."
+  },
+  "9.0.985": {
+    "en": "Restored complementary air-quality fingerprints and dual-case enrich guards without shrinking working drivers."
+  },
+  "9.0.984": {
+    "en": "Improved complementary Zigbee DP/cluster/raw RX-TX paths for air quality and sensors without replacing working EF00 maps."
+  },
+  "9.0.983": {
+    "en": "Intelligent Zigbee 4.0 / Suzi awareness (classifier + diagnostics) without inventing device fingerprints."
+  },
+  "9.0.982": {
+    "en": "Aligned airbox fingerprint routing in mfs_db after air quality lock (no other device changes)."
+  },
+  "9.0.981": {
+    "en": "Improved air quality pairing for Tuya airbox sensors and Zigbee mesh guidance without degrading other devices."
+  },
+  "9.0.980": {
+    "en": "Publish unblock: nkjintbl anti-bot (TZE204 on plug only) + Zigbee RF/MCU evolution without degrade."
+  },
+  "9.0.979": {
+    "en": "Fixed complementary enrich bleed (nkjintbl) and kept Zigbee RF / MCU evolution guidance without degrading pairing."
+  },
+  "9.0.978": {
+    "en": "Improved Zigbee RF coexistence guidance and Tuya MCU time-sync resilience (Zigbee 4.0 / Suzi awareness without degrading pairing)."
+  },
+  "9.0.977": {
+    "en": "P2535: WZ1 rkgngb5o+TS0501B on led_controller_dimmable (anti-bot clear). Update Homey Test."
+  },
+  "9.0.976": {
+    "en": "P2535 fix: WZ1 rkgngb5o+TS0501B on led_controller_dimmable (avoid CCT Cartesian anti-bot). Update Homey Test."
+  },
+  "9.0.975": {
+    "en": "P2535 forum treat: Skydance/WZ1 _TZB210_rkgngb5o+TS0501B dimmable pairing (sibling TS0502B CCT). Update Homey Test."
+  },
+  "9.0.974": {
+    "en": "P2534 VicHY MTG075: presence follows DP1 (Z2M) — stop distance=0 flip-flop killing presence Flow WHEN."
+  },
+  "9.0.973": {
+    "en": "P2533 dual-app Contre quoi: gbm10jnj TS0044 lock soft on button_wireless_3 when absent (stable)."
+  },
+  "9.0.972": {
+    "en": "P2533 Contre quoi tests for complementary merge helpers; strip nkjintbl bleed from switch_2gang; keep dual-case + multi-pid locks."
+  },
+  "9.0.971": {
+    "en": "Added missing Contre quoi unit tests for complementary OEM overlays, dual-case compose preserve, and wall dimmer firmware mfr sync."
+  },
+  "9.0.970": {
+    "en": "Improved OEM/case variants and capabilities for recent Zigbee couples (covers, radar, dimmer, soil, DIN, buttons, knobs, plugs)."
+  },
+  "9.0.969": {
+    "en": "Improved OEM/case variants and capabilities for recent Zigbee couples (covers, radar, dimmer, soil, DIN, buttons, knobs, plugs)."
+  },
+  "9.0.967": {
+    "en": "Synced wall dimmer firmware update manufacturer names with Zigbee fingerprints."
+  },
+  "9.0.966": {
+    "en": "OEM TZE200/204/284 and case variants completed for recent radar, dimmer, knob and curtain couples."
+  },
+  "9.0.965": {
+    "en": "Completed OEM variants for recent devices; Moes SFC02 kq1l5eu5 locked on wall curtain switch."
+  },
+  "9.0.964": {
+    "en": "Completed OEM/case variants and capabilities for recent curtain, radar, dimmer and button couples."
+  },
+  "9.0.963": {
+    "en": "Deep functional enrich in all inbox workflows — DP, clusters, flows and RX/TX audited beyond fingerprint locks."
+  },
+  "9.0.962": {
+    "en": "Hardened radar DP ownership (cap vs capability) so lux/presence RX and presence flow edges stay correct."
+  },
+  "9.0.961": {
+    "en": "Fixed Intelligent IR flow cards after fleet-enrich re-inject; keep titleFormatted omitted."
+  },
+  "9.0.960": {
+    "en": "Hardened forum and scrape ingest against prompt injection and malicious markup."
+  },
+  "9.0.958": {
+    "en": "Presence radar WHEN cards fire on human presence edges; register remaining flow conditions."
+  },
+  "9.0.956": {
+    "en": "Hardened local-first WiFi credentials after Homey reboot (no cloud re-login)."
+  },
+  "9.0.955": {
+    "en": "Hardened mmWave presence flow triggers for all update paths."
+  },
+  "9.0.954": {
+    "en": "Improved mmWave presence flow triggers and IR flow cards."
+  },
+  "9.0.952": {
+    "en": "L99: strip doNotLock invent from climate (Fleet anti-bot); harden isForbiddenPlacement. Update Homey Test."
+  },
   "9.0.951": {
     "en": "Forum fine-resolve: OCR invent pad→ZM16B curtain; radar/curtain sacred front-pin; battery Insights heal. Update Homey Test."
   },
@@ -3425,367 +2884,912 @@
   "5.12.0": {
     "en": "v5.12.0: stable-v5 batch sync (drivers, FPs, flows, manifest) from master v9.0.240–v9.0.260."
   },
-  "9.0.952": {
-    "en": "L99: strip doNotLock invent from climate (Fleet anti-bot); harden isForbiddenPlacement. Update Homey Test."
-  },
-  "9.0.954": {
-    "en": "Improved mmWave presence flow triggers and IR flow cards."
-  },
-  "9.0.955": {
-    "en": "Hardened mmWave presence flow triggers for all update paths."
-  },
-  "9.0.956": {
-    "en": "Hardened local-first WiFi credentials after Homey reboot (no cloud re-login)."
-  },
-  "9.0.958": {
-    "en": "Presence radar WHEN cards fire on human presence edges; register remaining flow conditions."
-  },
-  "9.0.960": {
-    "en": "Hardened forum and scrape ingest against prompt injection and malicious markup."
-  },
-  "9.0.961": {
-    "en": "Fixed Intelligent IR flow cards after fleet-enrich re-inject; keep titleFormatted omitted."
-  },
-  "9.0.962": {
-    "en": "Hardened radar DP ownership (cap vs capability) so lux/presence RX and presence flow edges stay correct."
-  },
-  "9.0.963": {
-    "en": "Deep functional enrich in all inbox workflows — DP, clusters, flows and RX/TX audited beyond fingerprint locks."
-  },
-  "9.0.964": {
-    "en": "Completed OEM/case variants and capabilities for recent curtain, radar, dimmer and button couples."
-  },
-  "9.0.965": {
-    "en": "Completed OEM variants for recent devices; Moes SFC02 kq1l5eu5 locked on wall curtain switch."
-  },
-  "9.0.966": {
-    "en": "OEM TZE200/204/284 and case variants completed for recent radar, dimmer, knob and curtain couples."
-  },
-  "9.0.967": {
-    "en": "Synced wall dimmer firmware update manufacturer names with Zigbee fingerprints."
-  },
-  "9.0.969": {
-    "en": "Improved OEM/case variants and capabilities for recent Zigbee couples (covers, radar, dimmer, soil, DIN, buttons, knobs, plugs)."
-  },
-  "9.0.970": {
-    "en": "Improved OEM/case variants and capabilities for recent Zigbee couples (covers, radar, dimmer, soil, DIN, buttons, knobs, plugs)."
-  },
-  "9.0.971": {
-    "en": "Added missing Contre quoi unit tests for complementary OEM overlays, dual-case compose preserve, and wall dimmer firmware mfr sync."
-  },
-  "9.0.972": {
-    "en": "P2533 Contre quoi tests for complementary merge helpers; strip nkjintbl bleed from switch_2gang; keep dual-case + multi-pid locks."
-  },
-  "9.0.973": {
-    "en": "P2533 dual-app Contre quoi: gbm10jnj TS0044 lock soft on button_wireless_3 when absent (stable)."
-  },
-  "9.0.974": {
-    "en": "P2534 VicHY MTG075: presence follows DP1 (Z2M) — stop distance=0 flip-flop killing presence Flow WHEN."
-  },
-  "9.0.975": {
-    "en": "P2535 forum treat: Skydance/WZ1 _TZB210_rkgngb5o+TS0501B dimmable pairing (sibling TS0502B CCT). Update Homey Test."
-  },
-  "9.0.976": {
-    "en": "P2535 fix: WZ1 rkgngb5o+TS0501B on led_controller_dimmable (avoid CCT Cartesian anti-bot). Update Homey Test."
-  },
-  "9.0.977": {
-    "en": "P2535: WZ1 rkgngb5o+TS0501B on led_controller_dimmable (anti-bot clear). Update Homey Test."
-  },
-  "9.0.978": {
-    "en": "Improved Zigbee RF coexistence guidance and Tuya MCU time-sync resilience (Zigbee 4.0 / Suzi awareness without degrading pairing)."
-  },
-  "9.0.979": {
-    "en": "Fixed complementary enrich bleed (nkjintbl) and kept Zigbee RF / MCU evolution guidance without degrading pairing."
-  },
-  "9.0.980": {
-    "en": "Publish unblock: nkjintbl anti-bot (TZE204 on plug only) + Zigbee RF/MCU evolution without degrade."
-  },
-  "9.0.981": {
-    "en": "Improved air quality pairing for Tuya airbox sensors and Zigbee mesh guidance without degrading other devices."
-  },
-  "9.0.982": {
-    "en": "Aligned airbox fingerprint routing in mfs_db after air quality lock (no other device changes)."
-  },
-  "9.0.983": {
-    "en": "Intelligent Zigbee 4.0 / Suzi awareness (classifier + diagnostics) without inventing device fingerprints."
-  },
-  "9.0.984": {
-    "en": "Improved complementary Zigbee DP/cluster/raw RX-TX paths for air quality and sensors without replacing working EF00 maps."
-  },
-  "9.0.985": {
-    "en": "Restored complementary air-quality fingerprints and dual-case enrich guards without shrinking working drivers."
-  },
-  "9.0.986": {
-    "en": "Locked air-quality pairing to one driver and kept complementary DP logic without fingerprint collisions."
-  },
-  "9.0.987": {
-    "en": "Hardened cron automations for local-only self-improve and tighter AI plan limits without remote AI spend."
-  },
-  "9.0.988": {
-    "en": "Shared recent reliability advances across both apps (protocol fallbacks, air quality dual-case, local auto-improve)."
-  },
-  "9.0.989": {
-    "en": "Improved complementary I/O coverage (RX/TX/flow/energy/OTA) and multi-source OEM firmware indexes."
-  },
-  "9.0.990": {
-    "en": "Aligned forfait unit tests with live daily AI cap (40)."
-  },
-  "9.0.991": {
-    "en": "P2546 VicHY radar: periodic curtain/class heal + presence flow edge dedupe (forum #2240/#2241)."
-  },
-  "9.0.992": {
-    "en": "Improved Zigbee init safety and battery reporting. Expanded SDK3 and community app references."
-  },
-  "9.0.993": {
-    "en": "Hardened SDK3 deferred init helper (no bare timers)."
-  },
-  "9.0.994": {
-    "en": "Removed wrong OEM fingerprint bleed onto 2-gang switch driver."
-  },
-  "9.0.995": {
-    "en": "Presence radar: lock sensor class, faster heal if Homey flips type without app update."
-  },
-  "9.0.996": {
-    "en": "P2550/P2551: Smartbutton battery Insights History recycle (Peter #2239); radar History dedupe + presence WHEN harden (VicHY #2240)."
-  },
-  "9.0.997": {
-    "en": "P2550/P2551 dual-app: Smartbutton Insights History recycle + radar History/presence harden (BOTH)."
-  },
-  "9.0.998": {
-    "en": "P2553: intelligent History/Insights on across sensor drivers (battery, climate, energy, alarms); silence mmWave distance + twin motion spam."
-  },
-  "9.0.999": {
-    "en": "Wireless buttons: first-press after sleep (Z2M/ZHA magic), TS0046 cascade, Moes remotes skip broken scene mode."
-  },
-  "9.0.1000": {
-    "en": "Smartbutton History + presence WHEN/class heal even when reports say fine."
-  },
-  "9.0.1001": {
-    "en": "Distinguish measured vs intelligent estimate vs calculated values in UI and Flow cards."
-  },
-  "9.0.1002": {
-    "en": "Fleet provenance keeps estimate/calculated labels; radar class nudge; wall dimmer magic TX heal."
-  },
-  "9.0.1003": {
-    "en": "Elegant measured-first values: clean titles for real metrics; ≈ estimated, ƒ calculated, → predicted in UI and Smart Flows."
-  },
-  "9.0.1004": {
-    "en": "Fine treat: Moes ZTS/AM43 + ceiling radar magic handshake; front-pin #533/#547 couples for pairing."
-  },
-  "9.0.1005": {
-    "en": "Smart Flow provenance cards + local energy learning (habits, dim/color, measured vs estimate)."
-  },
-  "9.0.1006": {
-    "en": "Keep ceiling radar gkfbdvyx front-pinned for pairing; Smart Flow learner tip."
-  },
-  "9.0.1007": {
-    "en": "Heal publish gate for Smart provenance energy mixin; keep local learner."
-  },
-  "9.0.1008": {
-    "en": "Publish size-gate prefers prepared app.json; Smart Flow + local energy learner on both tips."
-  },
-  "9.0.1009": {
-    "en": "Local smart learning for all workflows (CI habits + energy); forfait env on every GHA yml."
-  },
-  "9.0.1010": {
-    "en": "Soft Daylight Fade and Lamp Mesh Occupancy — branding-free gateway smart features; world Zigbee cartography."
-  },
-  "9.0.1011": {
-    "en": "Full Soft Daylight Auto, Lamp Mesh Occupancy fusion, Soft Ambient Sync (BootBudget-safe Entertainment alternative)."
-  },
-  "9.0.1012": {
-    "en": "Multi-vendor unbranded gateway features: Soft Device Link, Lux Adaptive Dim, Mirror Sync, Welcome Home, Absence Energy, Staggered Leave Off."
-  },
-  "9.0.1013": {
-    "en": "More unbranded smart vectors: Quiet Hours, Contact Entry, Shade Daylight, Peak Load Soft Shed, Idle Auto-Off, Night Path bias."
-  },
-  "9.0.1014": {
-    "en": "200 unbranded Soft Feature vectors catalog + SoftRecipeRunner (path/welcome/lux/peak/idle/ambient recipes)."
-  },
-  "9.0.1015": {
-    "en": "Soft Feature 200 vectors finalized end-to-end (alias resolve, path/welcome/mode recipes, enable-all flows)."
-  },
-  "9.0.1016": {
-    "en": "Forum fixes: ZG253 TRV ogx8u5z6 EF00 pairing (no OnOff cluster), sacred-keep; VicHY radar heal on tip."
-  },
-  "9.0.1017": {
-    "en": "Complementary device coverage enrich (OEM/case variants) + Johan DP libraries retained; TRV/radar/curtain locks intact."
-  },
-  "9.0.1018": {
-    "en": "Johan complementary enrich + FP collision prune (OEM sibling bleed fixed)."
-  },
-  "9.0.1019": {
-    "en": "T26439 tip harvest: Hejhome 6-gang + knob dimmer + LCD TH locks; soil/radar/bed/lux couples reinforced."
-  },
-  "9.0.1020": {
-    "en": "P2571 mfs_db align after T26439 locks (c8ipbljq/tgeqdjgk/vvmbj46n)."
-  },
-  "9.0.1022": {
-    "en": "Johan issues/PRs mega complementary coverage (radar/valve/CO2/plug/button/3gang) + dump pagination fix."
-  },
-  "9.0.1023": {
-    "en": "P2572 publish fix: contact_sensor P126 no TS0601 + pay2byax ZG path; Johan mega coverage."
-  },
-  "9.0.1025": {
-    "en": "EF00-only pairing with ED00 extras (no OnOff 6); VicHY clrdrnya pure Tuya DP reinforce; ZG253 TRV #2244."
-  },
-  "9.0.1026": {
-    "en": "Incomplete Homey interview: intelligent DP/ZCL/raw RX-TX cascade (EF00-only + parallelDiscover)."
-  },
-  "9.0.1027": {
-    "en": "VicHY MTG075: trust DP1 presence, keep relay onoff, soft-clear sticky empty-room presence; EF00 incomplete interview cascade."
-  },
-  "9.0.1028": {
-    "en": "VicHY #2247 diag 8d9d0199: trust DP1, restore relay onoff, soft-clear stagnant bathroom presence; fix publish gate p2511."
-  },
-  "9.0.1068": {
-    "en": "ZG253 TRV ogx8u5z6: fix setpoint TX (Homey datapoint args) + EF00 DP refresh after pair. Update Test + Repair TRV."
-  },
-  "9.0.1074": {
-    "en": "Improved ceiling radar distance tracking and presence when lux works but distance stayed empty; TRV data query hardening stays in tip."
-  },
-  "9.0.1076": {
-    "en": "Improved ZG253 / me167 TRV temperature scale and wake refresh so empty caps and setpoint errors clear after update."
-  },
-  "9.0.1078": {
-    "en": "Improved MTG075 bathroom radar tiles — distance units and phantom zone/temp/battery cleanup after tip update."
-  },
-  "9.0.1080": {
-    "en": "Radar/TRV residual: mains EF00 periodic query, gkfbdvyx DP9 /10 SSOT, soft Channel listener before init. Update Homey Test + Repair presence radars and radiator valves."
-  },
-  "9.0.1082": {
-    "en": "Presence radar: slim compose (no phantom zones/temp on tip), announce re-arms distance tracking, CRQ3 DP9 fix. Update Homey Test + Repair radars/TRVs."
-  },
-  "9.0.1084": {
-    "en": "Presence radar: no phantom Channel on ceiling (gkfbdvyx); presence as quick action; MTG relay still gets Channel. Also slim compose + distance tracking. Update Homey Test + Repair radars/TRVs."
-  },
-  "9.0.1085": {
-    "en": "Presence radar: no phantom Channel on ceiling radars; presence quick action; MTG relay Channel via runtime. Update Homey Test + Repair."
-  },
-  "9.0.1087": {
-    "en": "Radar distance re-arm after re-pair; TS0043 scene remote pairing; TS130F curtain switch match. Update Homey Test + Repair."
-  },
-  "9.0.1088": {
-    "en": "Radar distance re-arm; TS0043 pairing; TS130F curtain match; stop nkjintbl bleed to 2-gang. Update Test + Repair."
-  },
-  "9.0.1089": {
-    "en": "Radar distance re-arm; TS0043 pairing; TS130F curtain; nkjintbl plug lock. Update Homey Test + Repair."
-  },
-  "9.0.1090": {
-    "en": "Publish unblock: nkjintbl TZE204 plug-only (anti-bot). Radar/button/curtain residuals from GH#550-552 stay on tip."
-  },
-  "9.0.1091": {
-    "en": "Restored MTG075 couple profile (Occupied/quantized docs) so Auto-Publish Contre quoi stays green."
-  },
-  "9.0.1092": {
-    "en": "ZG253 TRV (_TZE284_ogx8u5z6): empty caps + setpoint TX fix. Update Test + Repair valve."
-  },
-  "9.0.1093": {
-    "en": "Wall 3-btn remotes (TS0043): hybrid ZCL/0xFD/E000/EF00/raw RX. Update Test."
-  },
-  "9.0.1094": {
-    "en": "Wall/scene remotes 1–6 btn: hybrid RX fleet (battery + mains). Update Test; Repair remotes if presses miss."
-  },
-  "9.0.1095": {
-    "en": "Bastien external enrich (Z2M/Johan) outbound inventory + Zemismart TS0041 rehome from smoke. Update Test."
-  },
-  "9.0.1096": {
-    "en": "Dual-app layer gate + Moes ZT-YK remotes. Update Test."
-  },
-  "9.0.1097": {
-    "en": "Lock Moes ZT-YK remotes as sacred mfr+pid couples in mfs. Update Test."
-  },
-  "9.0.1098": {
-    "en": "Prune remote mfs bleed to sacred mfr+pid couples. Update Test."
-  },
-  "9.0.1099": {
-    "en": "TS0044 scene remotes: Button 1-4 in device view + hybrid RX (0xFD/E000/EF00). Update Test + re-pair if tiles were only under Maintenance."
-  },
-  "9.0.1100": {
-    "en": "Voice-safety aligns with TS0044 Button N device view (class:button). Update Test."
-  },
-  "9.0.1101": {
-    "en": "TS0044 UI hybrid + voice gate + MTG075 couple profile lock. Update Test."
-  },
-  "9.0.1102": {
-    "en": "TS0043 scene remotes: Button 1-3 in device view + hybrid RX. Update Test + re-pair if tiles were only under Maintenance."
-  },
-  "9.0.1103": {
-    "en": "TS0043 wall_remote class:remote device-view charter + voice gate. Update Test."
-  },
-  "9.0.1104": {
-    "en": "Improved TS0043/TS0044 scene remote press detection with complementary fallback paths."
-  },
-  "9.0.1105": {
-    "en": "Ceiling radar gkfbdvyx: prefer DP103 lux, longer phantom strip after tip update. Update Homey Test + Repair radar."
-  },
-  "9.0.1106": {
-    "en": "Ceiling radar gkfbdvyx: lux DP103-only (no DP10 junk), skip discovery phantoms after Repair. Update Test + remove/re-add radar."
-  },
-  "9.0.1107": {
-    "en": "WiFi LAN reliability from Tuya Local: offline grace, command gap, protocol auto-order. Update Homey Test for WiFi devices."
-  },
-  "9.0.1108": {
-    "en": "WiFi LAN reliability (offline grace, command gap, protocol order) + draft-to-test fleet for 3 apps. Update Homey Test. (Athom republish after #3308 hang)"
-  },
-  "9.0.1109": {
-    "en": "Restore TS004x hybrid after Bastien promote wipe; WiFi LAN reliability + draft-to-test fleet. Update Homey Test."
-  },
-  "9.0.1110": {
-    "en": "Fix WiFi compose (strip empty zigbee) + TS004x hybrid restore + LAN reliability. Update Homey Test."
-  },
-  "9.0.1111": {
-    "en": "Fleet commit: inbox/L99 reports + WiFi/TS004x reliability ship. Update Homey Test."
-  },
-  "9.0.1113": {
-    "en": "WiFi dedicated heat pump, smart kettle and EV charger drivers plus Fix It checks in App Settings (local-key / protocol preview, redacted support bundle). Update Test and add devices under the new WiFi drivers."
-  },
-  "9.0.1114": {
-    "en": "WiFi heat pump / kettle / EV flow cards + Fix It (follow-up to 9.0.1113). Update Homey Test."
-  },
-  "9.0.1115": {
-    "en": "Athom republish after processing_failed: WiFi heat pump / kettle / EV + Fix It. Update Homey Test."
-  },
-  "9.0.1116": {
-    "en": "Athom force republish: WiFi heat pump / kettle / EV dedicated drivers + Fix It settings. Update Homey Test."
-  },
-  "9.0.1117": {
-    "en": "Improved eWeLink CK-TLSR8656 climate sensor pairing (temperature, humidity, battery)."
-  },
-  "9.0.1118": {
-    "en": "Fixed 1-button remote crash and flow cards (_TZ3000_axpdxqgu TS0041). Re-pair if flows were broken."
-  },
-  "9.0.1119": {
-    "en": "Improved 3-button wireless remote UX (_TZ3000_vsxvaj9i TS0043): Button 1-3 visible in device UI. Update then remove+re-pair if buttons were missing."
-  },
-  "9.0.1120": {
-    "en": "Fixed Zigbee fingerprint sync so battery remotes pair to the correct drivers and flows fire. Update then remove+re-pair affected remotes."
-  },
-  "9.0.1121": {
-    "en": "Improved wireless button flow card matching (1-button numbered cards). Update then re-pair remotes if flows were silent."
-  },
-  "9.0.1122": {
-    "en": "Improved multi-button remote Flow UX (Button 1-N on one card) and fixed silent button Flows. Update then recreate Flows if needed."
-  },
-  "9.0.1123": {
-    "en": "Improved TS0043 3-button remote from live interview (clusters E000/OnOff, no EF00). Update then re-pair."
-  },
-  "9.0.1124": {
-    "en": "Improved TS0041 1-button remote from live interview (clusters OnOff only, Flow cards). Update then re-pair."
-  },
-  "9.0.1125": {
-    "en": "Improved eWeLink TH sensor pairing and wireless button naming. Update then re-pair if needed."
-  },
-  "9.0.1126": {
-    "en": "Improved HOBEIAN wall module auto-off and TS0041 phantom-endpoint remotes. Update then restart app / re-pair if needed."
-  },
-  "9.0.1131": {
-    "en": "Improved 4-gang switch pairing (TS0004) and LCD climate fingerprint; button/actuator Flow reliability."
-  },
-  "9.0.1132": {
-    "en": "Improved Moes Star Ring / TS0041 wireless button (Flows single/double/hold, battery)."
-  },
-  "9.0.1133": {
-    "en": "Improved Chinese TS0041 remotes with phantom 4-endpoint firmware (single/double/hold Flows)."
-  }
+  "changelog": [
+    {
+      "version": "9.0.497",
+      "date": "2026-08-14",
+      "channel": "test",
+      "en": "Hardened TS004F remote routing against publish re-inject bot; remotes stay on 4-button driver.",
+      "fr": "Routage remotes TS004F renforce contre le re-inject bot a la publication; restent sur driver 4 boutons."
+    },
+    {
+      "version": "9.0.496",
+      "date": "2026-08-14",
+      "channel": "test",
+      "en": "Restored Moes/Lidl TS004F remotes to 4-button driver; migrated IR remote and CT clamp off bare ZigBeeDevice; battery unknown until first report.",
+      "fr": "Remotes TS004F Moes/Lidl restaures sur driver 4 boutons; IR remote et pince CT migres hors ZigBeeDevice nu; batterie inconnue jusqu au premier rapport."
+    },
+    {
+      "version": "9.0.478",
+      "date": "2026-08-11",
+      "channel": "test",
+      "en": "Crash-safe error handlers; rain/contact/soil/gas fingerprint rehomes; settings device-list timeout.",
+      "fr": "Handlers erreur anti-crash; rehomes empreintes pluie/contact/sol/gaz; timeout liste appareils settings."
+    },
+    {
+      "version": "9.0.477",
+      "date": "2026-08-11",
+      "channel": "test",
+      "en": "Crash-safe error handlers; rain/contact/soil/gas fingerprint rehomes; settings device-list timeout.",
+      "fr": "Handlers erreur anti-crash; rehomes empreintes pluie/contact/sol/gaz; timeout liste appareils settings."
+    },
+    {
+      "version": "9.0.476",
+      "date": "2026-08-11",
+      "channel": "test",
+      "en": "Improved cross-project reimpl: quirk battery DPs, IAS siren I/O, energy jump guard on all bases, sleepy wake battery probe.",
+      "fr": "Reimpl multi-projets amelioree: DPs batterie quirks, I/O sirene IAS, garde saut energie sur toutes bases, probe batterie au reveil."
+    },
+    {
+      "version": "9.0.475",
+      "date": "2026-08-11",
+      "channel": "test",
+      "en": "Fixed ghost button flows and phantom battery Energy tiles; no more fake battery percentages on mains devices.",
+      "fr": "Correction flux boutons fantomes et tuiles Energie batterie fantome; plus de faux pourcentages batterie sur appareils secteur."
+    },
+    {
+      "version": "9.0.474",
+      "date": "2026-08-11",
+      "channel": "test",
+      "en": "Multi-source enrich automation; reinforced curtain/gas/dimmer/radar/thermostat fingerprints; stronger DeviceIO RX/TX fallbacks.",
+      "fr": "Automatisation enrichissement multi-sources; empreintes rideau/gaz/dimmer/radar/thermostat renforcees; fallbacks DeviceIO RX/TX plus robustes."
+    },
+    {
+      "version": "9.0.473",
+      "date": "2026-08-11",
+      "channel": "test",
+      "en": "Multi-source enrich automation; reinforced curtain/gas/dimmer/radar/thermostat fingerprints; stronger DeviceIO RX/TX fallbacks.",
+      "fr": "Automatisation enrichissement multi-sources; empreintes rideau/gaz/dimmer/radar/thermostat renforcees; fallbacks DeviceIO RX/TX plus robustes."
+    },
+    {
+      "version": "9.0.472",
+      "date": "2026-08-11",
+      "channel": "test",
+      "en": "Smoke sensors on DeviceIO/IAS path; stronger Tuya cluster compensation; publish+diag monitoring relaunched.",
+      "fr": "Detecteurs fumee sur chemin DeviceIO/IAS; compensation cluster Tuya renforcee; publish+diag relances."
+    },
+    {
+      "version": "9.0.471",
+      "date": "2026-08-11",
+      "channel": "test",
+      "en": "Resumed backlog: collision baseline refresh, dual-valve button, airbox smartParse, Tuya DP dimmer routing, enrich forum thread scan.",
+      "fr": "Reprise backlog: baseline collisions, bouton valve dual, airbox smartParse, dimmer DP Tuya, scan forum enrich."
+    },
+    {
+      "version": "9.0.470",
+      "date": "2026-08-11",
+      "channel": "test",
+      "en": "Workflow hardening: unique flow card gate, safer timers, forum inbox bridge, CI npm install gaps filled.",
+      "fr": "Durcissement workflows: gate flow cards uniques, timers plus surs, pont forum→inbox, npm install CI complete."
+    },
+    {
+      "version": "9.0.469",
+      "date": "2026-08-11",
+      "channel": "test",
+      "en": "Workflow hardening: unique flow card gate, safer timers, forum inbox bridge, CI npm install gaps filled.",
+      "fr": "Durcissement workflows: gate flow cards uniques, timers plus surs, pont forum→inbox, npm install CI complete."
+    },
+    {
+      "version": "9.0.468",
+      "date": "2026-08-11",
+      "channel": "test",
+      "en": "Improved Tuya MCU time sync and battery DP routing; corrected mispaired climate fingerprints; safer temperature scaling fallback.",
+      "fr": "Sync horloge MCU Tuya et routage batterie ameliores; empreintes climate mal appariees corrigees; fallback temperature plus sur."
+    },
+    {
+      "version": "9.0.467",
+      "date": "2026-08-11",
+      "channel": "test",
+      "en": "Improved Tuya MCU time sync and battery DP routing; corrected mispaired climate fingerprints; safer temperature scaling fallback.",
+      "fr": "Sync horloge MCU Tuya et routage batterie ameliores; empreintes climate mal appariees corrigees; fallback temperature plus sur."
+    },
+    {
+      "version": "9.0.466",
+      "date": "2026-08-11",
+      "channel": "test",
+      "en": "Historical enrich: safer Tuya dimmer I/O, RF coexistence CI gate, silent multi-FP reinforce, architecture docs updated.",
+      "fr": "Enrichissement historique: I/O dimmer Tuya plus sur, gate RF en CI, reinforce FP silencieux, docs architecture a jour."
+    },
+    {
+      "version": "9.0.464",
+      "date": "2026-08-11",
+      "channel": "test",
+      "en": "Improved contact sensor flows and status; legacy Tuya I/O resilience; RF Zigbee/Wi-Fi coexistence guidance; silent community scan + anti AI-paste automations.",
+      "fr": "Flows contact et statut ameliores; resilience I/O Tuya legacy; coexistence RF Zigbee/Wi-Fi; scan silencieux + anti-collage IA."
+    },
+    {
+      "version": "9.0.463",
+      "date": "2026-08-11",
+      "channel": "test",
+      "en": "Improved contact sensor flows and status; legacy Tuya I/O resilience; RF Zigbee/Wi-Fi coexistence guidance; silent community scan + anti AI-paste automations.",
+      "fr": "Flows contact et statut ameliores; resilience I/O Tuya legacy; coexistence RF Zigbee/Wi-Fi; scan silencieux + anti-collage IA."
+    },
+    {
+      "version": "9.0.462",
+      "date": "2026-08-11",
+      "channel": "test",
+      "en": "Integral cross-version enrich: SmartDivisor in EF00, IASZoneEnhanced+L14, sleepy passive force, MCUFormatDatabase negotiate.",
+      "fr": "Enrichissement transversal versions: SmartDivisor EF00, IASZoneEnhanced+L14, passive sleepy force, MCUFormatDatabase."
+    },
+    {
+      "version": "9.0.461",
+      "date": "2026-08-11",
+      "channel": "test",
+      "en": "Integral cross-version enrich: SmartDivisor in EF00, IASZoneEnhanced+L14, sleepy passive force, MCUFormatDatabase negotiate.",
+      "fr": "Enrichissement transversal versions: SmartDivisor EF00, IASZoneEnhanced+L14, passive sleepy force, MCUFormatDatabase."
+    },
+    {
+      "version": "9.0.460",
+      "date": "2026-08-11",
+      "channel": "test",
+      "en": "Max multi-method I/O coverage: DP/ZCL/IAS/raw fallbacks, quirk-guided init for more device families, expanded magic packet profiles.",
+      "fr": "Couverture I/O multi-methodes max: fallbacks DP/ZCL/IAS/raw, init quirk elargi, profils magic packet etendus."
+    },
+    {
+      "version": "9.0.459",
+      "date": "2026-08-11",
+      "channel": "test",
+      "en": "Max multi-method I/O coverage: DP/ZCL/IAS/raw fallbacks, quirk-guided init for more device families, expanded magic packet profiles.",
+      "fr": "Couverture I/O multi-methodes max: fallbacks DP/ZCL/IAS/raw, init quirk elargi, profils magic packet etendus."
+    },
+    {
+      "version": "9.0.458",
+      "date": "2026-08-11",
+      "channel": "test",
+      "en": "Historical restore: MCU magic packet registry, EventDedup on capability updates, flow runListener guards, safe-timers on button mixins.",
+      "fr": "Restauration historique: registre magic MCU, EventDedup sur capabilities, garde runListener Flow, safe-timers mixins boutons."
+    },
+    {
+      "version": "9.0.456",
+      "date": "2026-08-11",
+      "channel": "test",
+      "en": "Universal flow-card heuristics, driver-mapping repair, DeviceIO on legacy Tuya/light bases, WiFi I/O channel, missing flow compose for 4 drivers.",
+      "fr": "Heuristiques Flow universelles, mapping drivers réparé, DeviceIO sur bases Tuya/light legacy, canal WiFi I/O, compose Flow manquant pour 4 drivers."
+    },
+    {
+      "version": "9.0.455",
+      "date": "2026-08-11",
+      "channel": "test",
+      "en": "Improved device wake/handshake and interview recovery; added contact sensor fingerprints from incomplete-source cross-check.",
+      "fr": "Amélioration handshake/wake device et récupération interview; empreintes contact depuis cross-check sources incomplètes."
+    },
+    {
+      "version": "9.0.453",
+      "date": "2026-08-11",
+      "channel": "test",
+      "en": "P102 I/O facade publish fix: irrigation Flow cards use implicit device args (Homey validate).",
+      "fr": "P102 facade I/O: correction Flow irrigation (args device implicites) pour validation Homey."
+    },
+    {
+      "version": "9.0.388",
+      "date": "2026-07-31",
+      "channel": "test",
+      "en": "Central destroyed guards on capability ops, linear battery formulas eliminated.",
+      "fr": "Gardes destroyed centrales sur les opérations capabilities, formules batterie linéaires éliminées."
+    },
+    {
+      "version": "9.0.387",
+      "date": "2026-07-31",
+      "channel": "test",
+      "en": "Flow DP send hardening + typed handler with per-type validation.",
+      "fr": "Blindage des envois DP par flow + handler typé avec validation par type."
+    },
+    {
+      "version": "9.0.386",
+      "date": "2026-07-31",
+      "channel": "test",
+      "en": "Full forum topic scan (2039 posts with images/links) + digest, sqcn0y re-added (purge), version alignment.",
+      "fr": "Scan complet du topic forum (2039 posts avec images/liens) + digest, sqcn0y ré-ajouté (purge), alignement version."
+    },
+    {
+      "version": "9.0.385",
+      "date": "2026-07-31",
+      "channel": "test",
+      "en": "OTA hardening: SHA512 verified before flashing, header validation, download timeout + size cap, index schema validation.",
+      "fr": "Blindage OTA : SHA512 vérifié avant flash, validation du header, timeout + limite de taille, validation du schéma de l'index."
+    },
+    {
+      "version": "9.0.384",
+      "date": "2026-07-31",
+      "channel": "test",
+      "en": "Dashboards: navigation fixed (hub/finder/inbox links), precise fingerprint metric, version alignment.",
+      "fr": "Dashboards : navigation corrigée (liens hub/finder/inbox), métrique empreintes précise, alignement version."
+    },
+    {
+      "version": "9.0.383",
+      "date": "2026-07-31",
+      "channel": "test",
+      "en": "51 critical ESLint errors fixed (phantom modules, this-less calls, missing super(), duplicate keys, dead switch cases).",
+      "fr": "51 erreurs ESLint critiques corrigées (modules fantômes, appels sans this, super() manquant, clés dupliquées, cases morts)."
+    },
+    {
+      "version": "9.0.382",
+      "date": "2026-07-30",
+      "channel": "test",
+      "en": "Key-version changelog format (required by headless homey publish), OTA guidance, Hue batch 4.",
+      "fr": "Format clé-version du changelog (requis par homey publish headless), guidance OTA, batch Hue 4."
+    },
+    {
+      "version": "9.0.381",
+      "date": "2026-07-30",
+      "channel": "test",
+      "en": "Changelog backticks stripped (publish extractor fix), publish-size bundle excludes product-reference, version alignment.",
+      "fr": "Backticks du changelog retirés (fix extracteur publish), exclusion product-reference du bundle, alignement version."
+    },
+    {
+      "version": "9.0.380",
+      "date": "2026-07-30",
+      "channel": "test",
+      "en": "OTA flash guidance in notifications, Hue batch 4 (cover_set_position, hue_all_off).",
+      "fr": "Guidance flash dans les notifications OTA, batch Hue 4 (cover_set_position, hue_all_off)."
+    },
+    {
+      "version": "9.0.379",
+      "date": "2026-07-30",
+      "channel": "test",
+      "en": "OTA real firmware version via swBuildId, Hue batch 3 (dim_to_level, scene_cycle), publish -X theirs.",
+      "fr": "OTA version réelle via swBuildId, batch Hue 3 (dim_to_level, scene_cycle), publish -X theirs."
+    },
+    {
+      "version": "9.0.378",
+      "date": "2026-07-30",
+      "channel": "test",
+      "en": "OTA overhaul (Tuya MCU fallback, manufacturerName matching, notifications + 3 flow cards), Hue batch 2 (sleep, scenes, DND window), publish race fix.",
+      "fr": "Refonte OTA (fallback MCU Tuya, matching par fabricant, notifications + 3 cards), batch Hue 2 (coucher, scènes, fenêtre DND), fix course publish."
+    },
+    {
+      "version": "9.0.377",
+      "date": "2026-07-30",
+      "channel": "test",
+      "en": "Temperature compensation inversion fixed (cold inflated battery estimates) + 10 battery profile tests + 9 button press-type tests.",
+      "fr": "Inversion de la compensation température corrigée (le froid gonflait les estimations batterie) + 10 tests profils batterie + 9 tests boutons."
+    },
+    {
+      "version": "9.0.376",
+      "date": "2026-07-30",
+      "channel": "test",
+      "en": "Hue-style smart features: motion-activated lighting (lux guard, auto-off), circadian curve application, wake-up sunrise ramp — as flow action cards.",
+      "fr": "Smart features style Hue : éclairage sur mouvement (garde lux, auto-off), courbe circadienne, rampe réveil — en cartes de flow."
+    },
+    {
+      "version": "9.0.375",
+      "date": "2026-07-30",
+      "channel": "test",
+      "en": "Product reference DB (9027 fingerprints: vendor/model/battery/energy/variants), energy consumption reference for the telemetry estimator, telemetry_is_estimated flow condition, mfs_db gap fix.",
+      "fr": "Base de référence produits (9027 empreintes : vendor/modèle/batterie/énergie/variants), référence de consommation pour l'estimateur, condition de flow telemetry_is_estimated, fix gap mfs_db."
+    },
+    {
+      "version": "9.0.373",
+      "date": "2026-07-30",
+      "channel": "test",
+      "en": "Case-variant completeness (4950 fingerprints, unknown device prevention) + publish compactor counts case groups (0 observed purged).",
+      "fr": "Complétude des casses (4950 empreintes, anti unknown device) + compacteur par groupes de casse (0 purge observée)."
+    },
+    {
+      "version": "9.0.371",
+      "date": "2026-07-30",
+      "channel": "test",
+      "en": "10 drivers fixed at load time (bot-corrupted imports), ZCL measuredValue parsed spec-exactly, new smoke/syntax/dead-module audits.",
+      "fr": "10 drivers corrigés au chargement (imports corrompus par un bot), measuredValue ZCL parsé selon la spec, nouveaux audits smoke/syntaxe/modules morts."
+    },
+    {
+      "version": "9.0.369",
+      "date": "2026-07-30",
+      "channel": "test",
+      "en": "Humidity scaling heuristic (magnitude-based: raw 65/650/6500 all read 65%), temperature rejects impossible values, 33 new parser tests, DeviceFingerprintDB test suite.",
+      "fr": "Heuristique humidité par magnitude (65/650/6500 lus 65%), rejet des températures impossibles, 33 nouveaux tests parsers, suite DeviceFingerprintDB."
+    },
+    {
+      "version": "9.0.359",
+      "date": "2026-07-29",
+      "en": "fix: ghost drivers pruned from publish, climate probe DP38, resolve-collisions case fix, security untracking"
+    },
+    {
+      "version": "9.0.333",
+      "date": "2026-07-23",
+      "channel": "master",
+      "en": "P82: TuyaNormalizer v10.0.0 ULTIMATE - single source of truth for case-insensitive matching (NFKD + accents + emojis + multi-PID + variants + scoring). Fixes issue #513 (climate_sensor _TZE284_hodyryli). 1760 mfr case-mismatches audited, 370 mfrs enriched with case variants. lib/Util.js + CaseInsensitiveMatcher + PermissiveMatchingEngine refactored as backward-compat shims."
+    },
+    {
+      "version": "9.0.332",
+      "date": "2026-07-22",
+      "channel": "master",
+      "en": "P80.6: re-inject P80/P80.5 mfrs after auto-publish bot revert. 10 new manual fixes added to re-inject-manual-fixes.js. generic_tuya: 462 -> 1126 FPs. 0 new Sacred Couple collisions."
+    },
+    {
+      "version": "9.0.331",
+      "date": "2026-07-22",
+      "channel": "master",
+      "en": "P80.5: enrich-orphan-drivers.js v7 variants-aware, +147 mfrs to 3 more orphan drivers (led_controller_rgb, relay_board_4_channel, switch_usb_dongle), 0 new collisions"
+    },
+    {
+      "version": "9.0.330",
+      "date": "2026-07-22",
+      "channel": "master",
+      "en": "P80: +685 issue #439 FPs to generic_tuya, +135 mfrs to 7 orphan drivers (PR #512), enrich-orphan-drivers.js v4 cross-orphan safe"
+    },
+    {
+      "version": "9.0.53",
+      "en": "CRITICAL: sdkVersion fix (Processing failed), Missing Capability Listener (setable:false), timer fallback, battery restore, duplicate method fix, HOBEIAN ZG-301Z, NFKD normalize, 87 fingerprints restored, Polos validator",
+      "fr": "CRITIQUE: sdkVersion (Processing failed), Missing Capability Listener, fallback timer, batterie, HOBEIAN, NFKD, 87 fingerprints, Polos"
+    },
+    {
+      "version": "9.0.45",
+      "date": "2026-06-18",
+      "summary": "Documentation Finalizer v8.0 - Forum analysis, multi-manufacturer rules, device additions",
+      "changes": [
+        {
+          "type": "feat",
+          "description": "KNOWLEDGE_CACHE.json v8.0: Added forum findings section, multi-manufacturer rules, forum-based device addition workflow"
+        },
+        {
+          "type": "feat",
+          "description": "CORE_RULES.md v5.0: Added R59-R61 (forum/multi-manufacturer rules) + FM1-FM3 (forum & multi-manufacturer rules)"
+        },
+        {
+          "type": "fix",
+          "description": "Forum analysis fixes - fingerbot collision revert, driver compose improvements"
+        },
+        {
+          "type": "fix",
+          "description": "Forum issues #2091 #5472 - device routing and flow card integrity fixes"
+        },
+        {
+          "type": "chore",
+          "description": "Updated project statistics: 430 drivers, 533 lib files, 565 scripts, 334 docs"
+        },
+        {
+          "type": "chore",
+          "description": "Added 3 new enrichment rules: R59-R61 for forum-based device additions"
+        },
+        {
+          "type": "chore",
+          "description": "Added 3 new forum/multi-manufacturer rules: FM1-FM3"
+        },
+        {
+          "type": "chore",
+          "description": "Updated git history with latest commits and key decisions"
+        }
+      ]
+    },
+    {
+      "version": "9.0.44",
+      "date": "2026-06-18",
+      "summary": "Documentation v7.0 - KNOWLEDGE_CACHE v7.0, CORE_RULES v4.0 (R1-R58), 4 new docs, 42 modules documented",
+      "changes": [
+        {
+          "type": "feat",
+          "description": "KNOWLEDGE_CACHE.json v7.0: 42 modules documented, R1-R58 rules, presence/battery health/features module coverage"
+        },
+        {
+          "type": "feat",
+          "description": "CORE_RULES.md v4.0: Added R43-R58 enrichment rules (presence, battery health, groups, features, energy)"
+        },
+        {
+          "type": "feat",
+          "description": "docs/ARCHITECTURE.md: Comprehensive architecture overview with 11-layer pipeline, class hierarchy, protocols"
+        },
+        {
+          "type": "feat",
+          "description": "docs/MODULES.md: Complete documentation of 42 modules across 10 categories"
+        },
+        {
+          "type": "feat",
+          "description": "docs/WORKFLOWS.md: All 40 GitHub Actions workflows documented with schedules and purposes"
+        },
+        {
+          "type": "feat",
+          "description": "docs/SCRIPTS.md: All 93 scripts documented with categories and usage"
+        },
+        {
+          "type": "chore",
+          "description": "Updated project statistics: 429 drivers, 4304 FPs, 4138 flow cards, 156 capabilities"
+        },
+        {
+          "type": "chore",
+          "description": "Added 16 new rules: R43-R58 for advanced feature modules"
+        },
+        {
+          "type": "chore",
+          "description": "Added 2 new anti-patterns: AP13 (deprecated HybridSwitchBase), AP14 (missing positionInvert)"
+        },
+        {
+          "type": "chore",
+          "description": "Updated CREDITS.md with new module sources and Homey Community Forum"
+        }
+      ]
+    },
+    {
+      "version": "9.0.43",
+      "date": "2026-06-17",
+      "summary": "TITAN V5 GOD-MODE Final - Image conformity, documentation enrichment, R1-R42 + CP1-CP10 + IC1-IC4",
+      "changes": [
+        {
+          "type": "feat",
+          "description": "KNOWLEDGE_CACHE.json v6.0: All 10 modules documented, R1-R42 rules, CP1-CP10 crash prevention, IC1-IC4 image conformity"
+        },
+        {
+          "type": "feat",
+          "description": "CORE_RULES.md v3.0: Added IC1-IC4 image conformity rules (SVG 960x960 viewBox, no gradients, no rasters)"
+        },
+        {
+          "type": "feat",
+          "description": "TITAN_FINAL_REPORT.md: Comprehensive final report with all phases, modules, fixes, and conformities"
+        },
+        {
+          "type": "feat",
+          "description": "CREDITS.md: Added athombv/homey-vectors-public, Joolee/Homey-SVG-Icons, Homey Community Forum"
+        },
+        {
+          "type": "chore",
+          "description": "Image conformity audit: 430/430 drivers with SVG icons, app icon compliant (100x100, no gradients, no rasters)"
+        },
+        {
+          "type": "chore",
+          "description": "All 10 TITAN modules verified: CircuitBreaker, ValueConverterRegistry, CapabilityMapCache, BatchCapabilityUpdater, DPCache, safeLogger, ConnectionStateTracker, RetryWithBackoff, CrashPrevention, ErrorClassifier"
+        }
+      ]
+    },
+    {
+      "version": "9.0.42",
+      "date": "2026-06-17",
+      "summary": "CrashPrevention utilities - Comprehensive crash prevention for all async operations",
+      "changes": [
+        {
+          "type": "feat",
+          "description": "CrashPrevention.js: Comprehensive crash prevention utilities (safeAsync, safePromise, guardDestroyed, guardHomey, safeTimeout, safeInterval, safeCleanup, safeSetCapability, safeTriggerFlow, safeSendCommand, withRetry)"
+        },
+        {
+          "type": "feat",
+          "description": "CORE_RULES.md updated with R42: CrashPrevention Utilities rule"
+        },
+        {
+          "type": "feat",
+          "description": "CORE_RULES.md updated with CP1-CP10: Crash Prevention Rules section"
+        },
+        {
+          "type": "feat",
+          "description": "CORE_RULES.md updated with Crash Pattern Analysis Summary section"
+        },
+        {
+          "type": "fix",
+          "description": "Identified 7 crash patterns: .then() without .catch() (59), empty catch handlers (968), unsafe setCapabilityValue (87), missing _destroyed guard (45+), missing super.onDeleted() (20+), raw setTimeout/setInterval (100+), unhandled promise rejections (14)"
+        }
+      ]
+    },
+    {
+      "version": "9.0.41",
+      "date": "2026-06-17",
+      "summary": "TITAN Protocol V5 - ConnectionStateTracker, CORE_RULES R37-R41, documentation enrichment",
+      "changes": [
+        {
+          "type": "feat",
+          "description": "ConnectionStateTracker: WiFi connection state tracking with history, uptime stats, and state persistence"
+        },
+        {
+          "type": "feat",
+          "description": "CORE_RULES.md updated with R37-R41: ConnectionStateTracker, RetryWithBackoff, ConnectionState Persistence, Connection Uptime Monitoring, ErrorClassifier Integration"
+        },
+        {
+          "type": "chore",
+          "description": "KNOWLEDGE_CACHE.json updated to v5.1 with new module references and known issues"
+        },
+        {
+          "type": "chore",
+          "description": "All violations verified clean: raw setCapabilityValue=0, console.log in drivers=0, raw setTimeout/setInterval=0"
+        }
+      ]
+    },
+    {
+      "version": "9.0.40",
+      "date": "2026-06-16",
+      "summary": "TITAN Protocol v2 - Massive audit, 159 driver fixes, WiFi base class hardening",
+      "changes": [
+        {
+          "type": "feat",
+          "description": "TITAN Protocol v2: 7-agent parallel audit system (Investigator, Auditor, Architect, Automator + 3 verification agents)"
+        },
+        {
+          "type": "feat",
+          "description": "CircuitBreaker module for TuyaCloudAPI fault tolerance"
+        },
+        {
+          "type": "feat",
+          "description": "CircuitBreaker integrated into TuyaCloudAPI._request() - 5 failures = open, 30s reset"
+        },
+        {
+          "type": "feat",
+          "description": "ValueConverterRegistry: Centralized DP value converters (Z2M-inspired pattern)"
+        },
+        {
+          "type": "feat",
+          "description": "CapabilityMapCache: capabilityMap caching in onInit() to reduce GC pressure"
+        },
+        {
+          "type": "feat",
+          "description": "BatchCapabilityUpdater: Batch capability updates with 50ms window to reduce UI overhead"
+        },
+        {
+          "type": "feat",
+          "description": "DPCache: Per-device DP value cache for offline fallback (5min TTL, LRU eviction)"
+        },
+        {
+          "type": "feat",
+          "description": "safeLogger: Safe logger utility replacing console.log fallbacks in lib/ utilities"
+        },
+        {
+          "type": "feat",
+          "description": "ErrorClassifier: Added isRetryable(), getRetryDelay(), withRetry() for automatic retry with exponential backoff"
+        },
+        {
+          "type": "feat",
+          "description": "TuyaLocalClient: Offline command queuing - commands queued when disconnected, flushed on reconnect (5min expiry)"
+        },
+        {
+          "type": "feat",
+          "description": "TuyaLocalClient: Connection state tracking via 'connection-state' event (disconnected/connecting/connected/reconnecting)"
+        },
+        {
+          "type": "feat",
+          "description": "TuyaLocalDevice: Offline mode - continues operating with cached state, queues commands for retry"
+        },
+        {
+          "type": "feat",
+          "description": "ai-monthly-audit.yml: Enhanced with AI-powered deep analysis (Claude/OpenAI/Gemini)"
+        },
+        {
+          "type": "feat",
+          "description": "KNOWLEDGE_CACHE.json v2.0: Comprehensive project knowledge base with 667 URLs"
+        },
+        {
+          "type": "feat",
+          "description": "Virtual presence detection + battery health intelligence"
+        },
+        {
+          "type": "feat",
+          "description": "7 new hybrid drivers (fan_sensor, garage_door_sensor, heater_thermostat, etc.)"
+        },
+        {
+          "type": "fix",
+          "description": "CRITICAL: TuyaLocalDevice.onDeleted() now calls super.onDeleted() - fixes TCP leak for ALL 29 WiFi drivers"
+        },
+        {
+          "type": "fix",
+          "description": "CRITICAL: EweLinkLocalDevice.onDeleted() now calls super.onDeleted() - fixes TCP leak for ALL eWeLink drivers"
+        },
+        {
+          "type": "fix",
+          "description": "CRITICAL: 159 driver files batch-fixed from raw setCapabilityValue to safeSetCapabilityValue"
+        },
+        {
+          "type": "fix",
+          "description": "FIXED: TuyaLocalDevice._onData() raw setCapabilityValue replaced with safeSetCapabilityValue"
+        },
+        {
+          "type": "fix",
+          "description": "FIXED: console.log fallback patterns in TuyaTimeSync, TuyaDataQuery, TuyaGatewayEmulator, DataRecoveryManager replaced with safeLogger"
+        },
+        {
+          "type": "fix",
+          "description": "Forum issues #2091 #5472 + protection scripts + flow card integrity"
+        },
+        {
+          "type": "fix",
+          "description": "Comprehensive button evolution + stable-v5 port + regression fixes"
+        },
+        {
+          "type": "fix",
+          "description": "Comprehensive quality sweep - 607 files, zero violations"
+        },
+        {
+          "type": "fix",
+          "description": "GitHub issues #388 #383 #420 #417 + fingerprint additions"
+        },
+        {
+          "type": "chore",
+          "description": "CORE_RULES.md updated to v2.0 with R19-R31 enrichment rules"
+        },
+        {
+          "type": "chore",
+          "description": "KNOWLEDGE_CACHE.json restructured with architecture, bugs, and external references"
+        },
+        {
+          "type": "chore",
+          "description": "28 redundant GitHub Actions workflows archived to .archive/workflows-disabled/ (66 → 36 active)"
+        },
+        {
+          "type": "fix",
+          "description": "77 drivers fixed with super.onDeleted() + _destroyed guard (resource leak prevention)"
+        },
+        {
+          "type": "feat",
+          "description": "CapabilityMapCache integrated into BaseUnifiedDevice, TuyaZigbeeDevice, TuyaLocalDevice (WeakMap-based)"
+        },
+        {
+          "type": "feat",
+          "description": "ValueConverterRegistry extended to 11 drivers (44 inline transforms replaced with boolean()/enumMap())"
+        },
+        {
+          "type": "chore",
+          "description": "22 orphaned lib/ files deleted (~135 KB dead code removed)"
+        },
+        {
+          "type": "chore",
+          "description": "20 dead scripts deleted (571 → 551 scripts)"
+        },
+        {
+          "type": "chore",
+          "description": "tuya-dp-engine deleted (unused converter system, -63 KB)"
+        },
+        {
+          "type": "fix",
+          "description": "16 console.log violations fixed in lib/ files"
+        },
+        {
+          "type": "fix",
+          "description": "BaseUnifiedDevice:2955 fixed to use safeSetCapabilityValue"
+        },
+        {
+          "type": "feat",
+          "description": "3 new validation scripts: check-destroyed-guard.js, check-super-ondeleted.js, check-circuit-breaker.js"
+        }
+      ]
+    },
+    {
+      "version": "9.0.39",
+      "date": "2026-06-16",
+      "summary": "420 drivers, 2403 FPs, forum issue fixes",
+      "changes": [
+        {
+          "type": "fix",
+          "description": "Forum issues #2091 #5472 + protection scripts + flow card integrity"
+        }
+      ]
+    },
+    {
+      "version": "9.0.38",
+      "date": "2026-06-16",
+      "summary": "Version bump + changelog update",
+      "changes": [
+        {
+          "type": "chore",
+          "description": "bump version to v9.0.38, update changelog"
+        }
+      ]
+    },
+    {
+      "version": "9.0.37",
+      "date": "2026-06-16",
+      "summary": "412 drivers, 2398 FPs, button evolution + quality sweep",
+      "changes": [
+        {
+          "type": "fix",
+          "description": "Comprehensive button evolution + stable-v5 port + regression fixes"
+        },
+        {
+          "type": "fix",
+          "description": "Comprehensive quality sweep - 607 files, zero violations"
+        }
+      ]
+    },
+    {
+      "version": "9.0.36",
+      "date": "2026-06-16",
+      "summary": "419 drivers, 7 new hybrid drivers, pipeline hardening",
+      "changes": [
+        {
+          "type": "feat",
+          "description": "7 new hybrid drivers: fan_sensor, garage_door_sensor, heater_thermostat, light_sensor, light_windowcoverings, sensor_thermostat, switch_sensor"
+        },
+        {
+          "type": "fix",
+          "description": "Pipeline hardening across all layers"
+        }
+      ]
+    },
+    {
+      "version": "9.0.35",
+      "date": "2026-06-15",
+      "summary": "412 drivers, 2365 FPs, GitHub issues resolved + enrichment",
+      "changes": [
+        {
+          "type": "fix",
+          "description": "GitHub issues #388 (rain sensor misclassification), #383 (bed sensor), #420 (MMWave radar), #417 (fingerprint additions)"
+        },
+        {
+          "type": "chore",
+          "description": "Enrichment v9.0.34: 2362 FPs cross-referenced Z2M/ZHA"
+        },
+        {
+          "type": "chore",
+          "description": "API discovery v9.0.34 2026-06: IoT/Zigbee endpoint scan"
+        },
+        {
+          "type": "chore",
+          "description": "Sync enrich from Z2M/ZHA/deCONZ external sources"
+        }
+      ]
+    },
+    {
+      "version": "9.0.34",
+      "date": "2026-06-15",
+      "summary": "412 drivers, 2362 FPs, forum processing + enrichment",
+      "changes": [
+        {
+          "type": "fix",
+          "description": "Forum posts processed - 8 device routing fixes + 4 fingerprint additions"
+        }
+      ]
+    },
+    {
+      "version": "9.0.33",
+      "date": "2026-06-15",
+      "summary": "412 drivers, 2366 FPs, diagnostic fix + issue resolution",
+      "changes": [
+        {
+          "type": "fix",
+          "description": "diagnostic-report.js orphaned counting now recognizes manufacturerName+productId"
+        },
+        {
+          "type": "chore",
+          "description": "Resolved issues + patterns update"
+        }
+      ]
+    },
+    {
+      "version": "9.0.32",
+      "date": "2026-06-09",
+      "summary": "412 drivers, 2366 FPs, empty arrays fixed",
+      "changes": [
+        {
+          "type": "fix",
+          "description": "Fix last empty manufacturerName array (button_wireless_fingerbot)"
+        },
+        {
+          "type": "fix",
+          "description": "Fix 74 remaining empty manufacturerName arrays (AggregateError root cause)"
+        }
+      ]
+    },
+    {
+      "version": "9.0.31",
+      "date": "2026-06-08",
+      "summary": "412 drivers, 2366 FPs, YAML + validation + workflow fixes",
+      "changes": [
+        {
+          "type": "fix",
+          "description": "YAML workflows improved + tests pass"
+        },
+        {
+          "type": "fix",
+          "description": "82 missing driver.js + 13 console.log fixes + 8 YAML workflow fixes"
+        }
+      ]
+    },
+    {
+      "version": "9.0.30",
+      "date": "2026-06-07",
+      "summary": "412 drivers, 2366 FPs, workflow corrections",
+      "changes": [
+        {
+          "type": "fix",
+          "description": "YAML workflows improved based on actual function understanding"
+        },
+        {
+          "type": "fix",
+          "description": "4 YAML workflows corrected based on actual function"
+        }
+      ]
+    },
+    {
+      "version": "9.0.29",
+      "date": "2026-06-06",
+      "summary": "412 drivers, 2367 FPs, workflow + driver fixes",
+      "changes": [
+        {
+          "type": "fix",
+          "description": "4 YAML workflows corrected based on actual function"
+        }
+      ]
+    },
+    {
+      "version": "9.0.28",
+      "date": "2026-06-05",
+      "summary": "412 drivers, 2388 FPs, missing code + driver.js fixes",
+      "changes": [
+        {
+          "type": "fix",
+          "description": "82 missing driver.js + 13 console.log fixes + 8 YAML workflow fixes"
+        }
+      ]
+    },
+    {
+      "version": "9.0.27",
+      "date": "2026-06-04",
+      "summary": "412 drivers, 2388 FPs, audit link fixes",
+      "changes": [
+        {
+          "type": "fix",
+          "description": "Audit links + fix 10 broken references in PROJECT_INDEX.md"
+        }
+      ]
+    },
+    {
+      "version": "9.0.26",
+      "date": "2026-06-03",
+      "summary": "412 drivers, 2426 FPs, AI skills implementation",
+      "changes": [
+        {
+          "type": "feat",
+          "description": "Implement AI skills + CLAUDE.md + AI_RULES.md + ARCHITECTURE update"
+        }
+      ]
+    },
+    {
+      "version": "9.0.25",
+      "date": "2026-06-02",
+      "summary": "412 drivers, 2433 FPs, Ponytail minimalism",
+      "changes": [
+        {
+          "type": "feat",
+          "description": "Ponytail minimalism + bug fixes + code quality improvements"
+        }
+      ]
+    },
+    {
+      "version": "9.0.24",
+      "date": "2026-06-01",
+      "summary": "412 drivers, 2444 FPs, missing code completion",
+      "changes": [
+        {
+          "type": "fix",
+          "description": "Complete all missing code + 53 empty manufacturerName arrays + 9 TODO items"
+        }
+      ]
+    },
+    {
+      "version": "9.0.23",
+      "date": "2026-05-31",
+      "summary": "412 drivers, 2472 FPs, case sensitivity + collision fixes",
+      "changes": [
+        {
+          "type": "fix",
+          "description": "HOBEIAN/SONOFF/IKEA case sensitivity + SNZB-06P collision + PROJECT_INDEX update"
+        }
+      ]
+    },
+    {
+      "version": "9.0.22",
+      "date": "2026-05-30",
+      "summary": "412 drivers, 2520 FPs, water leak sensor fix",
+      "changes": [
+        {
+          "type": "fix",
+          "description": "Add HOBEIAN to water_leak_sensor for ZG-222Z (Peter #2090)"
+        }
+      ]
+    },
+    {
+      "version": "9.0.21",
+      "date": "2026-05-29",
+      "summary": "412 drivers, 2558 FPs, Peter's devices + security",
+      "changes": [
+        {
+          "type": "fix",
+          "description": "Peter's devices + SOS fingerprint + LCD collision + security check"
+        }
+      ]
+    },
+    {
+      "version": "9.0.389",
+      "date": "2026-07-31",
+      "summary": "Self-improve weekly orchestrator + autonomous loop doc",
+      "changes": [
+        {
+          "type": "feature",
+          "description": "Weekly self-improve workflow chaining existing tools (product-reference, case fixer, docs index, script registry) gated by npm test"
+        }
+      ]
+    }
+  ]
 }

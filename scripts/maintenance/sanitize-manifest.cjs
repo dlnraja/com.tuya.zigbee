@@ -121,7 +121,11 @@ function normalizeFlowCardIds(manifest) {
     const seen = seenPerType[type];
     for (const card of cards) {
       if (!card || typeof card.id !== 'string') continue;
-      if (FLOW_ID_RE.test(card.id) && card.id.length <= FLOW_ID_MAX) {
+      // WHY(P2640 / CI FLOW_CARD_DUPLICATE_ID): hashed stubs (…_d_59d9b) and
+      // long ids that sanitize to the same hash both pass length≤50 — must
+      // rename the second hit, not silently keep a duplicate id.
+      const validShape = FLOW_ID_RE.test(card.id) && card.id.length <= FLOW_ID_MAX;
+      if (validShape && !seen.has(card.id)) {
         seen.add(card.id);
         continue;
       }
@@ -136,8 +140,10 @@ function normalizeFlowCardIds(manifest) {
         candidate = base.slice(0, FLOW_ID_MAX - 3) + '_' + (n++);
       }
       seen.add(candidate);
-      card.id = candidate;
-      renamed++;
+      if (candidate !== card.id) {
+        card.id = candidate;
+        renamed++;
+      }
     }
   }
   return renamed;

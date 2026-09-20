@@ -297,6 +297,18 @@
       "note": "P2583 gkfbdvyx TZE284 sibling sacred-keep (GH#547)"
     },
     {
+      "mfr": "_TZ3000_famkxci2",
+      "pid": "TS0043",
+      "driverId": "button_wireless_3",
+      "note": "P2640 GH#551 — compact/budget near 17k can drop FP → Generic Zigbee (interview EP1 [0,1,6,57344])"
+    },
+    {
+      "mfr": "_TZ3000_e3vhyirx",
+      "pid": "TS130F",
+      "driverId": "wall_curtain_switch",
+      "note": "P2640 GH#552 — LoraTap/Moes SC500ZB curtain wall switch (not smart_knob)"
+    },
+    {
       "mfr": "HOBEIAN",
       "pid": "ZG-204ZL",
       "driverId": "presence_sensor_radar",
