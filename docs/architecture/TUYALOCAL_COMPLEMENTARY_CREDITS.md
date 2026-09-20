@@ -1,15 +1,20 @@
-# Complementary enrich from andiwirz/com.tuyalocal (P2619 / P2621 / P2641)
+# Complementary enrich from andiwirz/com.tuyalocal (P2619 / P2621 / P2641 / P2642)
 
 **Doctrine:** P2520 complementary variant enrich — **UNION / append / fallback**, never wipe working Zigbee or WiFi drivers.
+
+**Full Homey peer catalog (Live/Test tips + GitHubs):** [`COMPLEMENTARY_HOMEY_APPS.md`](./COMPLEMENTARY_HOMEY_APPS.md) · SSOT `config/architecture/complementary-homey-apps-ssot.json` (P2643)
 
 ## Credits (mandatory)
 
 | Source | Author | License | Links |
 |--------|--------|---------|-------|
-| **Tuya Local** Homey app | Andi Wirz (@andiwirz) + Claude | MIT | [github.com/andiwirz/com.tuyalocal](https://github.com/andiwirz/com.tuyalocal) · [Homey Test](https://homey.app/fr-fr/app/com.tuyalocal/Tuya-Local/test/) |
+| **Tuya Local** Homey app | Andi Wirz (@andiwirz) + Claude | MIT | [GitHub](https://github.com/andiwirz/com.tuyalocal) · [Store Live](https://homey.app/a/com.tuyalocal/) · [Store Test](https://homey.app/fr-fr/app/com.tuyalocal/Tuya-Local/test/) |
 | Homey Community thread | Community + Andi | — | [T154077 — App Pro: Tuya Local](https://community.homey.app/t/app-pro-tuya-local/154077) |
+| Athom tip (probe) | — | — | Live **1.0.232** · Test **1.0.237** |
 
-Runtime attribution: `lib/data/SourceCredits.js` → `TUYA_LOCAL_ANDIWIRZ`.
+Also credit peers in the catalog: Johan `com.tuya.zigbee` Live **0.2.76**, Drenso `com.tuya2`, Heine `com.tuya.cloud`, Device Capabilities, HA make-all/tuya-local, Z2M/ZHA/Blakadder.
+
+Runtime attribution: `lib/data/SourceCredits.js` → `TUYA_LOCAL_ANDIWIRZ` (+ `JOHAN_TUYA_ZIGBEE`, …).
 
 We **do not** copy their app wholesale. We re-implement ideas into our `lib/tuya-local/*` + `drivers/wifi_*` stack so Universal Tuya / Stable / Bastien stay independent App IDs.
 

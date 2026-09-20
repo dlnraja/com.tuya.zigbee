@@ -1,0 +1,237 @@
+{
+  "_meta": {
+    "id": "complementary-homey-apps-ssot",
+    "patch": "P2643",
+    "updated": "2026-09-21",
+    "dualApp": "MASTER_ONLY",
+    "why": "Cite Homey Store Live/Test tips + GitHub branches for complementary enrich peers — UNION ideas only, never wholesale copy, never invent pid, never forum POST",
+    "probedAt": "2026-09-20T22:40:00Z",
+    "probeSource": "AthomAppsAPI getApp + searchApps (local HOMEY_PAT_APPS)",
+    "doctrine": [
+      "docs/rules/COMPLEMENTARY_VARIANT_ENRICH.md",
+      "docs/architecture/TUYALOCAL_COMPLEMENTARY_CREDITS.md",
+      "docs/architecture/COMPLEMENTARY_HOMEY_APPS.md"
+    ]
+  },
+  "rules": {
+    "complementaryOnly": true,
+    "noInventPid": true,
+    "noForumPost": true,
+    "noWholesaleCopy": true,
+    "changelogPublic": "generic (improved/added support) — credit full names only in SourceCredits + this SSOT + internal docs",
+    "ownAppsCanMention": true
+  },
+  "ourTracks": [
+    {
+      "id": "universal-master",
+      "appId": "com.dlnraja.tuya.zigbee",
+      "storeName": "Universal Tuya",
+      "github": "https://github.com/dlnraja/com.tuya.zigbee",
+      "branch": "master",
+      "versionLine": "9.0.x",
+      "homeyLive": null,
+      "homeyTest": "9.0.1117",
+      "homeyTestBuildId": 3313,
+      "gitTipNote": "local tip may lead Athom Test (e.g. 9.0.1135)",
+      "storeLive": "https://homey.app/a/com.dlnraja.tuya.zigbee/",
+      "storeTest": "https://homey.app/a/com.dlnraja.tuya.zigbee/test/",
+      "forum": "https://community.homey.app/t/app-pro-universal-tuya-zigbee-device-app-test/140352",
+      "role": "own_preview_soak",
+      "enrichFrom": "peers below — Zigbee + WiFi LAN ideas"
+    },
+    {
+      "id": "universal-stable",
+      "appId": "com.dlnraja.tuya.zigbee.stable",
+      "storeName": "Tuya Unified (Stable)",
+      "github": "https://github.com/dlnraja/com.tuya.zigbee",
+      "branch": "stable-v5",
+      "versionLine": "5.12.x",
+      "homeyLive": null,
+      "homeyTest": "5.12.281",
+      "homeyTestBuildId": 204,
+      "storeLive": "https://homey.app/a/com.dlnraja.tuya.zigbee.stable/",
+      "storeTest": "https://homey.app/a/com.dlnraja.tuya.zigbee.stable/test/",
+      "role": "own_lts_reliability",
+      "enrichFrom": "BOTH reliability only from master"
+    },
+    {
+      "id": "bastien-house",
+      "appId": "com.dlnraja.tuya.zigbee.bastien",
+      "storeName": "Zigbee Bastien",
+      "github": "https://github.com/dlnraja/com.tuya.zigbee",
+      "branch": "bastien-home",
+      "versionLine": "1.0.x",
+      "homeyLive": null,
+      "homeyTest": "1.0.14",
+      "homeyTestBuildId": 17,
+      "storeTest": "https://homey.app/a/com.dlnraja.tuya.zigbee.bastien/test/",
+      "role": "own_private_house",
+      "enrichFrom": "promotes upstream only; WiFi tuyalocal ideas only if Bastien gains WiFi path"
+    }
+  ],
+  "homeyPeers": [
+    {
+      "id": "tuyalocal",
+      "appId": "com.tuyalocal",
+      "storeName": "Tuya Local",
+      "author": "Andi Wirz (@andiwirz)",
+      "license": "MIT",
+      "github": "https://github.com/andiwirz/com.tuyalocal",
+      "defaultBranch": "main",
+      "homeyLive": "1.0.232",
+      "homeyTest": "1.0.237",
+      "homeyLiveBuildId": 169,
+      "homeyTestBuildId": 174,
+      "storeLive": "https://homey.app/a/com.tuyalocal/",
+      "storeTest": "https://homey.app/fr-fr/app/com.tuyalocal/Tuya-Local/test/",
+      "forum": "https://community.homey.app/t/app-pro-tuya-local/154077",
+      "protocol": "WiFi/LAN Tuya (no Zigbee)",
+      "complementaryUse": [
+        "protocol cascade 3.3→3.4→3.1→3.5→3.2",
+        "command gap / offline grace / stale-data watchdog",
+        "fire-and-forget SET",
+        "category DP maps (qccdz EV, ywbj smoke, hjjcy AQI…)",
+        "EV phase-JSON + charge-history",
+        "Fix-It / Cloud Lookup UX ideas"
+      ],
+      "ourLanding": [
+        "lib/tuya-local/*",
+        "drivers/wifi_*",
+        "docs/architecture/TUYALOCAL_COMPLEMENTARY_CREDITS.md",
+        "SourceCredits.TUYA_LOCAL_ANDIWIRZ"
+      ],
+      "trackHint": "MASTER_ONLY WiFi drivers; BOTH LAN client reliability"
+    },
+    {
+      "id": "johan-tuya-zigbee",
+      "appId": "com.tuya.zigbee",
+      "storeName": "Tuya Zigbee",
+      "author": "Johan Bendz / Bortbytt Software",
+      "license": "MIT",
+      "github": "https://github.com/JohanBendz/com.tuya.zigbee",
+      "defaultBranch": "SDK3",
+      "homeyLive": "0.2.76",
+      "homeyTest": null,
+      "homeyLiveBuildId": 126,
+      "storeLive": "https://homey.app/a/com.tuya.zigbee/Tuya-Zigbee/",
+      "forum": "https://community.homey.app/t/tuya-zigbee-app/26439",
+      "protocol": "Zigbee (Homey native pair)",
+      "complementaryUse": [
+        "driver class taxonomy",
+        "fingerprint / issue harvest",
+        "SDK3 migration patterns"
+      ],
+      "ourLanding": [
+        "tools/ci/johan-dump.js",
+        "TuyaDataPointsJohan",
+        "config/architecture/external-app-sdk3-inspiration-ssot.json"
+      ],
+      "trackHint": "BOTH for reliability FP harvest; MASTER_ONLY for feature managers"
+    },
+    {
+      "id": "drenso-tuya2",
+      "appId": "com.tuya2",
+      "storeName": "Tuya",
+      "author": "Drenso V.O.F.",
+      "github": null,
+      "homeyLive": "1.5.8",
+      "homeyTest": null,
+      "storeLive": "https://homey.app/a/com.tuya2/",
+      "protocol": "Tuya cloud / hybrid (peer)",
+      "complementaryUse": [
+        "cloud credential UX patterns (observe only)",
+        "pairing flow hygiene"
+      ],
+      "ourLanding": ["lib/wifi/LocalFirstResolver.js (contrast local-first)"],
+      "trackHint": "MASTER_ONLY observational — we stay local-first"
+    },
+    {
+      "id": "tuya-cloud-heine",
+      "appId": "com.tuya.cloud",
+      "storeName": "Tuya cloud",
+      "author": "Jurgen Heine",
+      "homeyLive": "1.1.23",
+      "homeyTest": "1.1.26",
+      "storeLive": "https://homey.app/a/com.tuya.cloud/",
+      "storeTest": "https://homey.app/a/com.tuya.cloud/test/",
+      "protocol": "Tuya cloud API",
+      "complementaryUse": ["optional cloud key recovery contrast — never default"],
+      "trackHint": "MASTER_ONLY — local-first policy stays"
+    },
+    {
+      "id": "device-capabilities",
+      "appId": "nl.qluster-it.DeviceCapabilities",
+      "storeName": "Device Capabilities",
+      "author": "Arie J. Godschalk",
+      "homeyLive": "2.17.3",
+      "homeyTest": null,
+      "storeLive": "https://homey.app/a/nl.qluster-it.DeviceCapabilities/",
+      "protocol": "Homey capability / flow companion",
+      "complementaryUse": [
+        "capability_changed flow patterns",
+        "advanced capability UX"
+      ],
+      "ourLanding": ["lib/flow/* capability change triggers"],
+      "trackHint": "MASTER_ONLY inspiration"
+    },
+    {
+      "id": "official-tuya-private",
+      "appId": "com.tuya",
+      "storeName": "Tuya (official)",
+      "author": "Tuya Inc.",
+      "homeyLive": "1.4.2",
+      "homeyTest": null,
+      "private": true,
+      "storeLive": "https://homey.app/a/com.tuya/",
+      "protocol": "Official Tuya cloud",
+      "complementaryUse": ["do not copy — private/official; know it exists for user confusion"],
+      "trackHint": "reference only"
+    }
+  ],
+  "externalNonHomey": [
+    {
+      "id": "ha-tuya-local",
+      "name": "tuya-local (Home Assistant)",
+      "github": "https://github.com/make-all/tuya-local",
+      "license": "MIT",
+      "complementaryUse": ["EV charger YAML DP layouts", "device category catalogs"],
+      "ourLanding": ["WiFiDPRegistry PRODUCT_DP_HINTS", "wifi_ev_charger"]
+    },
+    {
+      "id": "tinytuya",
+      "name": "TinyTuya",
+      "github": "https://github.com/jasonacox/tinytuya",
+      "license": "MIT",
+      "complementaryUse": ["LAN protocol retry / discovery heuristics"]
+    },
+    {
+      "id": "z2m",
+      "name": "Zigbee2MQTT",
+      "github": "https://github.com/Koenkk/zigbee2mqtt",
+      "complementaryUse": ["mfr+pid couples", "DP maps", "converters"]
+    },
+    {
+      "id": "zha",
+      "name": "ZHA Device Handlers",
+      "github": "https://github.com/zigpy/zha-device-handlers",
+      "complementaryUse": ["quirks", "cluster oddities"]
+    },
+    {
+      "id": "blakadder",
+      "name": "Blakadder Zigbee DB",
+      "github": "https://github.com/blakadder/zigbee",
+      "website": "https://zigbee.blakadder.com",
+      "complementaryUse": ["rebrand / fingerprint cross-ref"]
+    }
+  ],
+  "athomTipSnapshot": {
+    "com.tuyalocal": { "live": "1.0.232", "test": "1.0.237" },
+    "com.tuya.zigbee": { "live": "0.2.76", "test": null },
+    "com.dlnraja.tuya.zigbee": { "live": null, "test": "9.0.1117" },
+    "com.dlnraja.tuya.zigbee.stable": { "live": null, "test": "5.12.281" },
+    "com.dlnraja.tuya.zigbee.bastien": { "live": null, "test": "1.0.14" },
+    "com.tuya2": { "live": "1.5.8", "test": null },
+    "com.tuya.cloud": { "live": "1.1.23", "test": "1.1.26" },
+    "nl.qluster-it.DeviceCapabilities": { "live": "2.17.3", "test": null }
+  }
+}
