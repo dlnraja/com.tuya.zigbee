@@ -13,8 +13,11 @@ const { containsCI } = require('../../lib/utils/CaseInsensitiveMatcher');
  *   EP1 only: basic(0)+power(1)+onOff(6); out ota(25)+time(10)
  *   NO E000(57344) / NO EF00(61184) — never force EF00 TX; never write 0x8004
  *   ZCL batteryPercentageRemaining=200 → 100% (batteryVoltage=30 → 3.0V)
- *   RX: OnOff mfr 0xFD (single/double/hold) + raw + magic 0xFFDE
- *   Z2M: tuya.fz.on_off_action; ZHA: TuyaSmartRemote0041TO
+ *   RX: OnOff mfr 0xFD (0/1/2 = single/double/hold) + raw + magic 0xFFDE
+ *   Z2M: tuya.fz.on_off_action + configureMagicPacket; ZHA: TuyaSmartRemote0041TO
+ * P2638 cross-ref: Z2M#25720 (HA legacy_action_sensor — Homey uses Flow triggers, not sticky action),
+ *   ZHA gist compujunk remote_button_*_press, SmartHomeScene Moes Star Ring CR2032,
+ *   XiaomiGateway3 APS 0xFD00 → button_single. UI "3ch" ≠ productId — still 1 btn.
  */
 class Button1GangDevice extends ButtonDevice {
 
@@ -105,6 +108,10 @@ class Button1GangDevice extends ButtonDevice {
       if (/mrpevh8p|5bpeda8u|b4awzgct/i.test(mfr) && typeof this.setEnergy === 'function') {
         await this.setEnergy({ batteries: ['CR2450'] }).catch(() => {});
         this.log('[BUTTON_WIRELESS_1] P2470 energy lock CR2450 (SH-SC07)');
+      } else if (/axpdxqgu|filhl5b7/i.test(mfr) && typeof this.setEnergy === 'function') {
+        // WHY(P2638): Moes Star Ring / ZT-YK01 class — CR2032 (SmartHomeScene); not CR2450 SH-SC07
+        await this.setEnergy({ batteries: ['CR2032'] }).catch(() => {});
+        this.log('[BUTTON_WIRELESS_1] P2638 energy lock CR2032 (Moes Star Ring / axpdxqgu)');
       }
     } catch (_e) { /* soft */ }
 
