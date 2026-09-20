@@ -1,11 +1,12 @@
 {
   "_meta": {
     "id": "P2492-homey-button-ui-charter",
-    "updated": "2026-09-14",
-    "why": "Coherent physical↔virtual Homey UI/UX — Homey charter: onoff primary on switches; button tiles for scene remotes; maintenanceAction for secondary press tiles; no phantom onoff on class:button. Role follows sacred couple class, not brand/mfs alone.",
+    "updated": "2026-09-20",
+    "why": "Coherent physical↔virtual Homey UI/UX — Homey charter: onoff primary on switches; button tiles for scene remotes; maintenanceAction for secondary press tiles; no phantom onoff on class:button. Role follows sacred couple class, not brand/mfs alone. P2614: TS0044 4-btn remotes must keep Button N in device view (compose maintenanceAction:false) + hybrid RX.",
     "humanDoc": "docs/BIDIRECTIONAL_BUTTONS.md",
     "coupleSsot": "config/architecture/sacred-couple-ssot.json",
-    "classify": "BOTH"
+    "classify": "BOTH",
+    "p2614": "TS0044 UI+RX stack — scene_switch_4 / button_wireless_4"
   },
   "identityRule": {
     "resolveRoleBy": "driver class + couple (mfr+pid), never brand-only",
@@ -21,7 +22,37 @@
         "couple": "_TZ3000_zgyzgdua+TS0044",
         "driver": "scene_switch_4",
         "role": "scene",
-        "ui": "Button 1–4 device view; 0xFD physical"
+        "ui": "Button 1–4 device view; genOnOff 0xFD physical; never 0x8004"
+      },
+      {
+        "couple": "_TZ3000_wkai4ga5+TS0044",
+        "driver": "scene_switch_4",
+        "role": "scene",
+        "ui": "Button 1–4 device view; hybrid 0xFD/E000/EF00"
+      },
+      {
+        "couple": "_TZ3000_xffhmvhv+TS004F",
+        "driver": "button_wireless_4",
+        "role": "scene",
+        "ui": "Nobø 4-btn; Button N device view; LevelControl+0xFD"
+      },
+      {
+        "couple": "_TZ3000_u3nv1jwk+TS0044",
+        "driver": "button_wireless_4",
+        "role": "scene",
+        "ui": "E000 + OnOff 0xFD; Button N device view"
+      },
+      {
+        "couple": "_TZ3000_abrsvsou+TS004F",
+        "driver": "button_wireless_4",
+        "role": "scene",
+        "ui": "4-endpoint scene — not smart_knob KNOB_MFR"
+      },
+      {
+        "couple": "_TZ3000_4fjiwweb+TS004F",
+        "driver": "button_wireless_4",
+        "role": "scene",
+        "ui": "4-endpoint scene — not rotary"
       },
       {
         "couple": "_TZ3000_uri7ongn+TS004F",
