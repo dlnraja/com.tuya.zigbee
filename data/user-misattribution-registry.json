@@ -7662,6 +7662,28 @@
       "forbidMode": "couple",
       "protocol": "zcl_sleepy",
       "notes": "P2622 BOTH: eWeLink+CK-TLSR8656-SS5-01(7014) ZCL TH — never virtual socket / plug."
+    },
+    {
+      "id": "p2624-axpdxqgu-ts0041-button-wireless-1-not-remote-wall",
+      "mfr": [
+        "_TZ3000_axpdxqgu",
+        "_tz3000_axpdxqgu",
+        "_TZ3000_AXPDXQGU",
+        "_tz3000_AXPDXQGU"
+      ],
+      "productId": [
+        "TS0041"
+      ],
+      "canonicalDriver": "button_wireless_1",
+      "forbiddenDrivers": [
+        "remote_button_wireless_wall",
+        "smart_knob",
+        "button_wireless_4",
+        "scene_switch_4"
+      ],
+      "forbidMode": "couple",
+      "protocol": "zcl_0xfd",
+      "notes": "P2624 BOTH e8d98608"
     }
   ],
   "entries": {

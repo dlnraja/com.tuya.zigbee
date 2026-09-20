@@ -3743,5 +3743,8 @@
   },
   "9.0.1117": {
     "en": "Improved eWeLink CK-TLSR8656 climate sensor pairing (temperature, humidity, battery)."
+  },
+  "9.0.1118": {
+    "en": "Fixed 1-button remote crash and flow cards (_TZ3000_axpdxqgu TS0041). Re-pair if flows were broken."
   }
 }
