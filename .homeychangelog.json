@@ -1866,5 +1866,8 @@
   },
   "5.12.280": {
     "en": "Reliability: removed misattributed Zigbee couples from wrong switch/LCD drivers; kept curtain/6-gang/dimmer/LCD canonical locks."
+  },
+  "5.12.281": {
+    "en": "Athom republish after #202 processing_failed; same reliability couple prune as 5.12.280. Update Homey Test."
   }
 }
