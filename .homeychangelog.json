@@ -3755,5 +3755,8 @@
   },
   "9.0.1121": {
     "en": "Improved wireless button flow card matching (1-button numbered cards). Update then re-pair remotes if flows were silent."
+  },
+  "9.0.1122": {
+    "en": "Improved multi-button remote Flow UX (Button 1-N on one card) and fixed silent button Flows. Update then recreate Flows if needed."
   }
 }
