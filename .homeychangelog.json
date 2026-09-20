@@ -1842,5 +1842,8 @@
   },
   "5.12.272": {
     "en": "Voice-safety aligns with TS0044 Button N device view. Update Test."
+  },
+  "5.12.273": {
+    "en": "TS0043 scene remotes: Button 1-3 in device view + hybrid RX. Update Test + re-pair if tiles were only under Maintenance."
   }
 }

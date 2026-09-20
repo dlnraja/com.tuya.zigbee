@@ -25,7 +25,7 @@
       },
       "getable": false,
       "setable": false,
-      "maintenanceAction": true
+      "maintenanceAction": false
     },
     "button.2": {
       "title": {
@@ -34,7 +34,7 @@
       },
       "getable": false,
       "setable": false,
-      "maintenanceAction": true
+      "maintenanceAction": false
     },
     "button.3": {
       "title": {
@@ -43,7 +43,7 @@
       },
       "getable": false,
       "setable": false,
-      "maintenanceAction": true
+      "maintenanceAction": false
     },
     "measure_battery": {
       "title": {
@@ -69,48 +69,70 @@
   },
   "zigbee": {
     "manufacturerName": [
+      "_TZ3000_1KMURVLX",
+      "_TZ3000_1kmurvlx",
+      "_TZ3000_A7OUGGVS",
       "_TZ3000_BCZR4E10",
+      "_TZ3000_FAMKXCI2",
+      "_TZ3000_GBM10JNJ",
       "_TZ3000_I5J6K7L8",
       "_TZ3000_MJWG6A52",
       "_TZ3000_MUTFMN4U",
       "_TZ3000_NGSPH3OJ",
+      "_TZ3000_QZJCSMAR",
       "_TZ3000_UYJMM0ET",
-      "_tz3000_famkxci2",
-      "_TZ3000_FAMKXCI2",
-      "_tz3000_bczr4e10",
-      "_tz3000_i5j6k7l8",
-      "_tz3000_mjwg6a52",
-      "_tz3000_mutfmn4u",
-      "_tz3000_ngsph3oj",
-      "_tz3000_uyjmm0et",
+      "_TZ3000_a7ouggvs",
       "_TZ3000_bczr4e10",
+      "_TZ3000_bi6lpsew",
+      "_TZ3000_famkxci2",
+      "_TZ3000_gbm10jnj",
       "_TZ3000_i5j6k7l8",
+      "_TZ3000_key8kk7r",
       "_TZ3000_mjwg6a52",
       "_TZ3000_mutfmn4u",
       "_TZ3000_ngsph3oj",
+      "_TZ3000_qzjcsmar",
+      "_TZ3000_sj7jbgks",
       "_TZ3000_uyjmm0et",
-      "_TZ3000_famkxci2",
+      "_TZ3000_w3c7ouru",
+      "_tz3000_1KMURVLX",
+      "_tz3000_1kmurvlx",
       "_tz3000_BCZR4E10",
+      "_tz3000_FAMKXCI2",
+      "_tz3000_GBM10JNJ",
       "_tz3000_I5J6K7L8",
       "_tz3000_MJWG6A52",
       "_tz3000_MUTFMN4U",
       "_tz3000_NGSPH3OJ",
       "_tz3000_UYJMM0ET",
-      "_tz3000_FAMKXCI2",
-      "_TZ3000_1kmurvlx",
-      "_tz3000_1kmurvlx",
-      "_TZ3000_1KMURVLX",
-      "_tz3000_1KMURVLX",
-      "_TZ3000_a7ouggvs",
       "_tz3000_a7ouggvs",
-      "_TZ3000_qzjcsmar",
-      "_tz3000_qzjcsmar",
-      "_TZ3000_key8kk7r",
+      "_tz3000_bczr4e10",
+      "_tz3000_bi6lpsew",
+      "_tz3000_famkxci2",
+      "_tz3000_gbm10jnj",
+      "_tz3000_i5j6k7l8",
       "_tz3000_key8kk7r",
-      "_TZ3000_w3c7ouru",
+      "_tz3000_mjwg6a52",
+      "_tz3000_mutfmn4u",
+      "_tz3000_ngsph3oj",
+      "_tz3000_qzjcsmar",
+      "_tz3000_sj7jbgks",
+      "_tz3000_uyjmm0et",
       "_tz3000_w3c7ouru",
-      "_TZ3000_bi6lpsew",
-      "_tz3000_bi6lpsew"
+      "_tz3000_A7OUGGVS",
+      "_tz3000_QZJCSMAR",
+      "_TZ3000_BI6LPSEW",
+      "_tz3000_BI6LPSEW",
+      "_TZ3000_KEY8KK7R",
+      "_tz3000_KEY8KK7R",
+      "_TZ3000_SJ7JBGKS",
+      "_tz3000_SJ7JBGKS",
+      "_TZ3000_W3C7OURU",
+      "_tz3000_W3C7OURU",
+      "_TZ3000_odzooszq",
+      "_tz3000_odzooszq",
+      "_TYZB01_befsuv3y",
+      "_tyzb01_befsuv3y"
     ],
     "productId": [
       "TS0043",
@@ -119,7 +141,7 @@
       "TS0215A"
     ],
     "learnmode": {
-      "image": "/drivers/button_wireless_3/assets/learnmode.svg",
+      "image": "{{driverAssetsPath}}/icon.svg",
       "instruction": {
         "en": "Press and hold any button for 5 seconds until the LED blinks rapidly",
         "fr": "Appuyez et maintenez n'importe quel bouton pendant 5 secondes jusqu'à ce que la LED clignote rapidement",
@@ -142,10 +164,7 @@
           5,
           6,
           18,
-          57344,
-          1280,
-          1281,
-          61184
+          57344
         ],
         "bindings": [
           6
@@ -194,8 +213,7 @@
   },
   "images": {
     "small": "/drivers/button_wireless_3/assets/images/small.png",
-    "large": "/drivers/button_wireless_3/assets/images/large.png",
-    "xlarge": "/drivers/button_wireless_3/assets/images/xlarge.png"
+    "large": "/drivers/button_wireless_3/assets/images/large.png"
   },
   "platforms": [
     "local"
@@ -459,8 +477,8 @@
         "de": "Betriebsart"
       },
       "hint": {
-        "en": "Scene Mode (default) allows single/double/long press for TS0041/TS0042/TS0043/TS0044/TS004F. Dimmer Mode only supports single press. Auto tries to detect and switch automatically.",
-        "fr": "Le mode Scène (par défaut) permet les appuis simples/doubles/longs pour TS0041/TS0042/TS0043/TS0044/TS004F. Le mode Variateur ne supporte que l'appui simple. Auto tente de détecter et basculer automatiquement."
+        "en": "TS0043 stays in Scene (multi-press). Homey does NOT write genOnOff 0x8004 on TS0041–44 (only some TS004F). Blue LED = pairing/network blink only — not Homey-controllable. Dimmer Mode is for TS004F command mode.",
+        "fr": "TS0043 reste en Mode Scène (multi-clics). Homey n’écrit PAS genOnOff 0x8004 sur TS0041–44 (seulement certains TS004F). LED bleue = flash appairage/réseau uniquement — non contrôlable Homey. Mode Variateur = TS004F command mode."
       },
       "value": "scene",
       "values": [
