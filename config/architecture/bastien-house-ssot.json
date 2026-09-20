@@ -610,8 +610,8 @@
         "mfr": "_TZ3000_axpdxqgu",
         "pid": "TS0041",
         "driver": "button_wireless_1",
-        "status": "OK_RENAME",
-        "note": "TS0041 = 1 bouton (nom UI “3ch” trompeur) — tip ≥1.0.17"
+        "status": "OK_VERIFY_FLOWS",
+        "note": "Moes Star Ring TS0041 1-btn (UI 3ch trompeur). P2638 Z2M#25720/ZHA: Flows single/double/long; CR2032; tip≥1.0.24"
       },
       {
         "nwk": 4,
