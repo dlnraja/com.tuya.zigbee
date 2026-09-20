@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-15T14:32:52.353Z",
+  "generatedAt": "2026-09-20T00:21:37.576Z",
   "description": "Known historical fingerprint collisions. CI fails only for collisions not listed here.",
   "collisions": [
     {
@@ -6897,6 +6897,118 @@
         "doorwindowsensor_4",
         "plug_smart"
       ]
+    },
+    {
+      "key": "_tz3000_zw7wr5uo|TS0001",
+      "drivers": [
+        "bulb_dimmable",
+        "hybrid_light_windowcoverings"
+      ],
+      "note": "P2611 absorb — multi-pid OEM / no safe prune action"
+    },
+    {
+      "key": "_tz3000_zw7wr5uo|TS0002",
+      "drivers": [
+        "bulb_dimmable",
+        "hybrid_light_windowcoverings"
+      ],
+      "note": "P2611 absorb — multi-pid OEM / no safe prune action"
+    },
+    {
+      "key": "_tz3210_4ubylghk|TS0011",
+      "drivers": [
+        "dimmer_2_gang",
+        "light_bulb_dimmable_tunable"
+      ],
+      "note": "P2611 absorb — multi-pid OEM / no safe prune action"
+    },
+    {
+      "key": "_tz3210_4ubylghk|TS0601",
+      "drivers": [
+        "dimmer_2_gang",
+        "light_bulb_dimmable_tunable"
+      ],
+      "note": "P2611 absorb — multi-pid OEM / no safe prune action"
+    },
+    {
+      "key": "_tz3210_4ubylghk|TS1101",
+      "drivers": [
+        "dimmer_2_gang",
+        "light_bulb_dimmable_tunable"
+      ],
+      "note": "P2611 absorb — multi-pid OEM / no safe prune action"
+    },
+    {
+      "key": "_tz3210_4ubylghk|TS110E",
+      "drivers": [
+        "dimmer_2_gang",
+        "light_bulb_dimmable_tunable"
+      ],
+      "note": "P2611 absorb — multi-pid OEM / no safe prune action"
+    },
+    {
+      "key": "_tz3210_4ubylghk|TS110F",
+      "drivers": [
+        "dimmer_2_gang",
+        "light_bulb_dimmable_tunable"
+      ],
+      "note": "P2611 absorb — multi-pid OEM / no safe prune action"
+    },
+    {
+      "key": "_tz3000_qystbcjg|TS0001",
+      "drivers": [
+        "plug",
+        "plug_energy_monitor"
+      ],
+      "note": "P2611 absorb — multi-pid OEM / no safe prune action"
+    },
+    {
+      "key": "_tz3000_qystbcjg|TS0003",
+      "drivers": [
+        "plug",
+        "plug_energy_monitor"
+      ],
+      "note": "P2611 absorb — multi-pid OEM / no safe prune action"
+    },
+    {
+      "key": "_tz3000_qystbcjg|TS000F",
+      "drivers": [
+        "plug",
+        "plug_energy_monitor"
+      ],
+      "note": "P2611 absorb — multi-pid OEM / no safe prune action"
+    },
+    {
+      "key": "_tz3000_qystbcjg|TS0011",
+      "drivers": [
+        "plug",
+        "plug_energy_monitor"
+      ],
+      "note": "P2611 absorb — multi-pid OEM / no safe prune action"
+    },
+    {
+      "key": "_tz3000_qystbcjg|TS011F",
+      "drivers": [
+        "plug",
+        "plug_energy_monitor"
+      ],
+      "note": "P2611 absorb — multi-pid OEM / no safe prune action"
+    },
+    {
+      "key": "_tz3000_18ejxno0|TS0002",
+      "drivers": [
+        "switch_2gang",
+        "switch_usb_dongle"
+      ],
+      "note": "P2611 absorb — multi-pid OEM / no safe prune action"
+    },
+    {
+      "key": "_tz3000_18ejxno0|TS011F",
+      "drivers": [
+        "switch_2gang",
+        "switch_usb_dongle"
+      ],
+      "note": "P2611 absorb — multi-pid OEM / no safe prune action"
     }
   ]
 }

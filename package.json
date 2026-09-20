@@ -1,6 +1,6 @@
 {
   "name": "com.dlnraja.tuya.zigbee",
-  "version": "5.12.264",
+  "version": "5.12.265",
   "description": "Tuya Unified Zigbee - Local-first control with AI automation",
   "main": "app.js",
   "scripts": {
@@ -263,6 +263,7 @@
     "check:p2609": "node --test test/critical/p2609-wall-remote-hybrid-fleet.test.js",
     "check:p260x": "npm run check:p2608 && npm run check:p2609",
     "check:p2610": "node --test test/critical/p2610-bastien-external-multi-enrich.test.js",
+    "check:p2611": "node --test test/critical/p2611-dual-app-layer-gate-adaptive.test.js",
     "enrich:bastien:external": "node tools/ci/p2610-bastien-external-multi-enrich.js"
   },
   "keywords": [
