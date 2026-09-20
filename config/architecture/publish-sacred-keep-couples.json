@@ -871,6 +871,18 @@
       "pid": "TS0601",
       "driverId": "switch_3gang",
       "note": "P2485 Z2M TS0601_3gang_rkbxtclc; was dimmer_wall_1gang"
+    },
+    {
+      "mfr": "_TZ3000_ltt60asa",
+      "pid": "TS0004",
+      "driverId": "switch_4gang",
+      "note": "P2634 SML-04Z / Z2M TS0004_switch_module"
+    },
+    {
+      "mfr": "_TZ3000_liygxtcq",
+      "pid": "TS0004",
+      "driverId": "switch_4gang",
+      "note": "P2634 Z2M sibling of ltt60asa"
     }
   ]
 }

@@ -6840,7 +6840,10 @@
       "canonicalDriver": "switch_4gang",
       "forbiddenDrivers": [
         "switch_1gang",
-        "wall_switch_5_gang_tuya"
+        "wall_switch_5_gang_tuya",
+        "wall_switch_4gang_1way",
+        "zigbee_universal",
+        "generic_tuya"
       ],
       "protocol": "zcl",
       "notes": "Melectro #646 4-gang switch TS0004"
@@ -7809,6 +7812,36 @@
       "forbidMode": "couple",
       "notes": "P2632 Bastien kitchen light: Z2M WHD02 onOffCountdown+switchType. Clear onTime; force switch_type=state (not momentary).",
       "enrichedAt": "2026-09-20"
+    },
+    {
+      "id": "p2634-tz3000-ltt60asa-ts0004-switch-4gang",
+      "mfr": [
+        "_TZ3000_ltt60asa",
+        "_TZ3000_LTT60ASA",
+        "_tz3000_ltt60asa",
+        "_tz3000_LTT60ASA",
+        "_TZ3000_liygxtcq",
+        "_TZ3000_LIYGXTCQ",
+        "_tz3000_liygxtcq",
+        "_tz3000_LIYGXTCQ"
+      ],
+      "productId": [
+        "TS0004",
+        "TS0004_switch_module"
+      ],
+      "canonicalDriver": "switch_4gang",
+      "forbiddenDrivers": [
+        "switch_1gang",
+        "switch_2gang",
+        "switch_3gang",
+        "wall_switch_4gang_1way",
+        "wall_switch_5_gang_tuya",
+        "zigbee_universal",
+        "generic_tuya"
+      ],
+      "forbidMode": "couple",
+      "protocol": "zcl",
+      "notes": "P2634 Z2M TS0004_switch_module / ZHA Switch_4G_Metering — SML-04Z family with mmkbptmx. Homey unknown until locked on switch_4gang."
     }
   ],
   "entries": {

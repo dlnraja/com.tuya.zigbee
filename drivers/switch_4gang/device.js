@@ -12,10 +12,12 @@ try {
 }
 
 const { includesCI } = require('../../lib/utils/CaseInsensitiveMatcher');
+const { healTs0004SwitchModule } = require('../../lib/tuya/Ts0004SwitchModuleHeal');
 
 /**
  * 4-GANG SWITCH - v5.9.23
  * WHY(P2395/B10): no Physical/Virtual double-wrap — already on TuyaZigbeeDevice.
+ * WHY(P2634): _TZ3000_ltt60asa/mmkbptmx/liygxtcq + TS0004 — Z2M switch_module L99 heal.
  */
 
 // P141: _TYZB01_bagt1e4o + TS0014 — Oz Smart Things 4-gang; EndDevice, ZCL OnOff only.
@@ -108,6 +110,10 @@ class Switch4GangDevice extends BaseClass {
       await super.onNodeInit({ zclNode });
       await this._stripPhantomButtonCaps(); // again after base may soft-add
       await this.initPhysicalButtonDetection(zclNode);
+      // WHY(P2634): SML-04Z family — magic + EP1–4 bind + E001 switch_type + metering
+      await healTs0004SwitchModule(this, zclNode).catch((e) => {
+        this.log(`[P2634] heal soft-fail: ${e && e.message}`);
+      });
       // WHY(P2457): no virtual button tiles on wired relay UI
       this.log('[SWITCH-4G] Initialized (relay caps only)');
     } catch (err) {
@@ -225,7 +231,7 @@ class Switch4GangDevice extends BaseClass {
             try {
               const card = this.homey.flow.getDeviceTriggerCard(flowId);
               if (card) {
-                await card.trigger(this, { gang: epNum, state: value }, {}).catch(() => {});
+                await card.trigger(this, { gang: epNum, button: String(epNum), state: value }, { gang: String(epNum), button: String(epNum) }).catch(() => {});
                 this.log(`[BSEED-4G] ✅ Physical G${epNum} ${value ? 'ON' : 'OFF'}`);
               }
             } catch (e) { }
@@ -236,7 +242,7 @@ class Switch4GangDevice extends BaseClass {
             try {
               const card = this.homey.flow.getDeviceTriggerCard(sceneId);
               if (card) {
-                await card.trigger(this, { action: value ? 'on' : 'off' }, {}).catch(() => {});
+                await card.trigger(this, { action: value ? 'on' : 'off', gang: epNum, button: String(epNum) }, { gang: String(epNum), button: String(epNum), action: value ? 'on' : 'off' }).catch(() => {});
                 this.log(`[BSEED-4G] ✅ Scene G${epNum} ${value ? 'on' : 'off'}`);
               }
             } catch (e) { }
