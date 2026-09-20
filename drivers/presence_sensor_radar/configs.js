@@ -89,6 +89,11 @@ const SENSOR_CONFIGS = {
       '_TZE204_pfayrzcw', '_TZE284_4qznlkbu',
       '_TZE200_clrdrnya', '_TZE200_sbyx0lm6',
       '_TZE284_clrdrnya', // compose FP family; avoid DEFAULT DP fallback
+      // WHY(P2587): Z2M often lists dtzziy1e as MTG075-ZB-RL — same relay family as VicHY clrdrnya
+      '_TZE200_dtzziy1e', '_TZE284_dtzziy1e',
+      '_TZE200_iaeejhvf', '_TZE284_iaeejhvf',
+      '_TZE200_pfayrzcw', '_TZE284_pfayrzcw',
+      '_TZE284_sbyx0lm6',
     ],
     battery: false,
     mainsPowered: true,
@@ -105,6 +110,7 @@ const SENSOR_CONFIGS = {
     invertPresence: false,
     // WHY(P2389): VicHY/clrdrnya firmware floods DP9 distance + DP104 lux (~196 msg/min, Z2M#14742).
     // Presence (DP1) stays immediate; telemetry coalesced in device.js.
+    // WHY(P2589): same Contre quoi as Z2M debounce — miss clear frame when mesh saturated.
     floodCalm: true,
     ultraAggressiveDebounce: true,
     // WHY(P2534 / VicHY #2240 diag 74e5cae7 image): Z2M MTG075 presence = DP1 only.
@@ -114,14 +120,44 @@ const SENSOR_CONFIGS = {
     // unreliable+inference — not by treating target_distance 0m as absent.
     clearPresenceOnZeroDistance: false,
     syncPresenceFromDistanceInference: false,
-    dpThrottleMs: { 9: 2500, 104: 5000 },
-    dpMinDelta: { 9: 0.15, 104: 2 },
+    // WHY(P2577 / VicHY #2247 screenshots): sticky Sí + distance "0 [object Object]".
+    // Soft-clear empty room, then ignore sticky DP1 true until entry corroboration.
+    antiFalsePositive: true,
+    // WHY(P2579 / Z2M MTG075-ZB-RL docs + #18677): sensor=occupied forces permanent
+    // presence. Soft-clear may unlock DP115→on only when auto_unlock is on.
+    healForcedOccupiedOnSoftClear: true,
+    // WHY(P2584): keep DP115=occupied if user wants it, but drive Homey presence from
+    // distance/lux/relay telemetry (DP1 is forced true forever under occupied — untrustworthy).
+    smartPresenceWhileOccupied: true,
+    quantizedDistanceSoftClear: true,
+    mtg24gMinDetectionRangeM: 2.5,
+    softClearZeroDistanceMs: 30000,
+    softClearStableDistanceMs: 30000,
+    softClearIgnoreStickyDp1Ms: 90000,
+    // WHY(P2587): VMC / shower-glass micro-jitter (span ≤0.45m for ≥90s) → soft-clear
+    softClearMicroJitterMs: 90000,
+    softClearMicroJitterWindowMs: 120000,
+    softClearMicroJitterMaxSpanM: 0.45,
+    // WHY(P2581): bathroom watchdog ticks soft-clear without waiting for throttled DP9
+    stickyPresenceWatchdogMs: 15000,
+    // WHY(P2590 Ultimate Stabilizer Module 2): miss clear frame → force absent after
+    // departure_delay + margin (never paint presence true from distance alone).
+    survivalWatchdog: true,
+    survivalWatchdogMarginSec: 5,
+    presenceConfirmMs: 3000,
+    // WHY(P2590 Module 1): distance Δ>10cm OR 5s; lux Δ>5 OR 10s
+    dpThrottleMs: { 9: 5000, 104: 10000 },
+    dpMinDelta: { 9: 0.1, 104: 5 },
     dpMap: {
       1: {
         cap: 'alarm_motion',
         type: 'presence_bool',
         useInference: true,
-        unreliable: true,
+        // WHY(P2575 / VicHY #2246/#2247): MTG075 presence = DP1 only (Z2M / P2534).
+        // unreliable:true + floodCalm DP9 throttle ignored real presence OR locked
+        // false positives via reflection distance — trust DP1 clears/sets.
+        // P2577 gates sticky true via antiFalsePositive (not unreliable).
+        unreliable: false,
       },
       2: { cap: null, setting: 'radar_sensitivity', min: 0, max: 9 },
       3: { cap: null, setting: 'shield_range', divisor: 100, min: 0, max: 8 },
@@ -177,6 +213,7 @@ const SENSOR_CONFIGS = {
     configName: 'ZY_M100_CEILING_24G',
     sensors: [
       '_TZE200_gkfbdvyx', '_TZE204_gkfbdvyx', '_TZE284_gkfbdvyx',
+      '_TZE204_ya4ft0w4', '_TZE200_ya4ft0w4', // WHY(P2585): Z2M ZY-M100-24GV3 sibling fingerprint
       '_TZE204_laokfqwu',
     ],
     battery: false,
@@ -185,7 +222,9 @@ const SENSOR_CONFIGS = {
     hasIlluminance: true,
     noTemperature: true,
     noHumidity: true,
-    needsPolling: false,
+    needsPolling: true,
+    // WHY(P2583 / GH#547): device left mesh / silent RX — soft DataQuery every 2 min
+    pollIntervalMs: 120000,
     ultraAggressiveDebounce: true,
     disableBatteryReporting: true,
     suppressBatteryCapability: true,
@@ -197,6 +236,16 @@ const SENSOR_CONFIGS = {
     motionThrottleMs: 10000,
     motionDebounceMs: 5000,
     ignoreMovementState: true,
+    forceTimeUpdates: true,
+    // WHY(P2595 / GH#550): no relay — DynCap must strip Channel 1 / Button 1
+    hasRelay: false,
+    // WHY(P2595): lux updates prove life when DP9 silent — paint presence from lux rate
+    syncPresenceFromLuxInference: true,
+    // WHY(P2597 / Z2M ZY-M100-24GV3 find_switch): DP101 OFF → lux OK, distance forever null
+    enableFindSwitchOnBoot: true,
+    // WHY(P2597): ambient lux floods are small deltas — lower rate gate for lux→presence
+    luxPresenceRateThreshold: 3,
+    luxPresenceMinAbsDelta: 8,
     dpMap: {
       1: {
         cap: 'alarm_motion',
@@ -206,20 +255,26 @@ const SENSOR_CONFIGS = {
         unreliable: true,
       },
       2: { cap: null, internal: 'move_sensitivity' },
-      3: { cap: null, internal: 'detection_distance_min', divisor: 100 },
-      4: { cap: null, internal: 'detection_distance_max', divisor: 100 },
-      9: { cap: 'measure_luminance.distance', smartDivisor: true },
-      101: { cap: null, internal: 'distance_tracking' },
+      // WHY(P2583): Z2M ÷100 vs ZHA ×0.1 — dual-scale via TuyaRadarRangeScale
+      3: { cap: null, internal: 'detection_distance_min', radarRangeScale: true, maxMeters: 12 },
+      4: { cap: null, internal: 'detection_distance_max', radarRangeScale: true, maxMeters: 12 },
+      // WHY(P2595 / Z2M ZY-M100-24GV3): DP9 distance = ÷10 (not smartDivisor → /100 miss)
+      9: { cap: 'measure_luminance.distance', divisor: 10 },
+      // WHY(P2618 / GH#550 Gmail): V3 illuminance is DP103 ONLY (Z2M).
+      // Mapping DP10 as lux_direct painted junk (lux=1) and killed real DP103 updates.
+      10: { cap: null, internal: 'illuminance_v2_compat' },
+      // WHY(P2597 / Z2M DP101 find_switch): distance tracking — auto ON after pair
+      101: {
+        cap: null,
+        internal: 'distance_tracking',
+        type: 'bool',
+        autoEnableFindSwitch: true,
+      },
       102: { cap: null, internal: 'presence_sensitivity' },
       103: { cap: 'measure_luminance', type: 'lux_direct' },
-      // DP104 is a second presence enum on some firmwares — same sticky Contre quoi
-      104: {
-        cap: 'alarm_motion',
-        type: 'presence_enum_gkfbdvyx',
-        enumMap: { 0: false, 1: true, 2: true },
-        useInference: true,
-        unreliable: true,
-      },
+      // WHY(P2604 / Z2M ZY-M100-24GV3): V3 has NO DP104 presence — do not map as alarm_motion
+      // (V2 used 104; mapping it on gkfbdvyx caused silent lux/distance races after re-pair).
+      104: { cap: null, internal: 'motion_state_v2_compat' },
       105: { cap: null, internal: 'fading_time' },
     }
   },
@@ -365,6 +420,12 @@ const SENSOR_CONFIGS = {
     noTemperature: true,
     noHumidity: true,
     noIasMotion: true,
+    // WHY(P2591 Software Shield): ZG-204 lux spam same Contre quoi as MTG075 (Module 1+2)
+    floodCalm: true,
+    survivalWatchdog: true,
+    survivalWatchdogMarginSec: 5,
+    dpThrottleMs: { 106: 10000 },
+    dpMinDelta: { 106: 5 },
     writableDPs: [2, 4, 102, 107, 122, 123],
     dpMap: {
       1: { cap: 'alarm_motion', type: 'presence_bool' },
@@ -394,6 +455,12 @@ const SENSOR_CONFIGS = {
     noTemperature: false,
     noHumidity: false,
     noIasMotion: true,
+    // WHY(P2591 Software Shield): lux throttle + survival watchdog (Module 1+2)
+    floodCalm: true,
+    survivalWatchdog: true,
+    survivalWatchdogMarginSec: 5,
+    dpThrottleMs: { 106: 10000 },
+    dpMinDelta: { 106: 5 },
     writableDPs: [2, 4, 102, 104, 105, 107, 108, 109, 112, 123],
     dpMap: {
       1: { cap: 'alarm_motion', type: 'presence_bool' },
