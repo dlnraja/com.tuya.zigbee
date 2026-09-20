@@ -5,7 +5,7 @@ const { installWallSceneRemoteHybrid } = require('../../lib/devices/WallSceneRem
 
 /**
  * SceneSwitch3Device — 3-btn scene remote (TS0043 class)
- * P2609: hybrid RX fleet
+ * P2609: hybrid RX fleet · P2615: Homey Button 1–3 device view (not Maintenance)
  */
 class SceneSwitch3Device extends ButtonDevice {
 
@@ -17,6 +17,7 @@ class SceneSwitch3Device extends ButtonDevice {
       .then(() => super.onNodeInit({ zclNode }))
       .catch((err) => this.error('[INIT] Error:', err.message));
 
+    // WHY(P2615): hybrid RX — Homey gap-fill for genOnOff 0xFD / E000 / EF00 / raw
     try {
       await installWallSceneRemoteHybrid(this, zclNode, {
         maxButtons: 3,
@@ -26,7 +27,7 @@ class SceneSwitch3Device extends ButtonDevice {
       this.log('[SCENE_SWITCH_3] hybrid soft-fail:', e.message);
     }
 
-    this.log('[SCENE_SWITCH_3] hybrid ready');
+    this.log('[SCENE_SWITCH_3] P2615 hybrid RX; TX: no 0x8004 on TS0043; UI: Button N device view');
   }
 
 }

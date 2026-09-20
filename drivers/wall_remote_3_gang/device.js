@@ -5,7 +5,7 @@ const { installWallSceneRemoteHybrid } = require('../../lib/devices/WallSceneRem
 
 /**
  * WallRemote3GangDevice — 3-btn wall scene remote (TS0043 class)
- * P2609: hybrid RX fleet
+ * P2609: hybrid RX fleet · P2615: Homey Button 1–3 device view
  */
 class WallRemote3GangDevice extends ButtonDevice {
 

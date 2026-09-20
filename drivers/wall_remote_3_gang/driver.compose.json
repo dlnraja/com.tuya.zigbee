@@ -21,9 +21,8 @@
     "measure_battery"
   ],
   "images": {
-    "large": "/drivers/wall_remote_3_gang/assets/images/large.png",
     "small": "/drivers/wall_remote_3_gang/assets/images/small.png",
-    "xlarge": "/drivers/wall_remote_3_gang/assets/images/xlarge.png"
+    "large": "/drivers/wall_remote_3_gang/assets/images/large.png"
   },
   "energy": {
     "batteries": [
@@ -61,7 +60,8 @@
     "manufacturerName": [
       "_tz3000_w8jwkczz",
       "_TZ3000_W8JWKCZZ",
-      "_TZ3000_w8jwkczz"
+      "_TZ3000_w8jwkczz",
+      "_tz3000_W8JWKCZZ"
     ]
   },
   "settings": [
@@ -115,14 +115,18 @@
       "id": "tuya_revive",
       "title": {
         "en": "Tuya Revive (device recovery)",
-        "fr": "Tuya Revive (récupération appareil)"
+        "fr": "Tuya Revive (récupération appareil)",
+        "nl": "Tuya Revive (apparaatherstel)",
+        "de": "Tuya Revive (Gerätewiederherstellung)"
       }
     },
     {
       "id": "generate_issue_report",
       "title": {
         "en": "Generate support report (GitHub issue)",
-        "fr": "Générer rapport de support (issue GitHub)"
+        "fr": "Générer rapport de support (issue GitHub)",
+        "nl": "Supportrapport genereren (GitHub issue)",
+        "de": "Supportbericht erstellen (GitHub Issue)"
       }
     }
   ],
@@ -135,7 +139,7 @@
         "de": "Taste 1"
       },
       "setable": false,
-      "maintenanceAction": true,
+      "maintenanceAction": false,
       "getable": false
     },
     "button.2": {
@@ -146,7 +150,7 @@
         "de": "Taste 2"
       },
       "setable": false,
-      "maintenanceAction": true,
+      "maintenanceAction": false,
       "getable": false
     },
     "button.3": {
@@ -157,7 +161,7 @@
         "de": "Taste 3"
       },
       "setable": false,
-      "maintenanceAction": true,
+      "maintenanceAction": false,
       "getable": false
     },
     "measure_battery": {
@@ -171,8 +175,5 @@
       "preventInsights": false
     }
   },
-  "version": "1.0.0",
-  "_pidConflictNotes": [
-    "// PID-CONFLICT-NOTE TS0043 shared with 16 other drivers (cross-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md"
-  ]
+  "version": "1.0.0"
 }

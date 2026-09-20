@@ -6,8 +6,9 @@ const { installWallSceneRemoteHybrid } = require('../../lib/devices/WallSceneRem
 /**
  * Button3GangDevice — battery wall scene remote (TS0043 / Zemismart / Moes / Lonsonho)
  *
- * P2608: full hybrid RX (ZCL + OnOff 0xFD + E000 + EF00 DP + raw) — same class as
- * scene_switch_4 / button_wireless_4. Never write genOnOff 0x8004 on TS0043.
+ * P2608: full hybrid RX (ZCL + OnOff 0xFD + E000 + EF00 DP + raw).
+ * P2615: Homey Button 1–3 device view (maintenanceAction false).
+ * Never write genOnOff 0x8004 on TS0043. Sacred: _TZ3000_a7ouggvs+TS0043.
  */
 class Button3GangDevice extends ButtonDevice {
 
@@ -21,7 +22,7 @@ class Button3GangDevice extends ButtonDevice {
         try { this.log(`[INIT] Error: ${err && err.message}`); } catch (_e) { /* ignore */ }
       });
 
-    // WHY(P2608): Bastien house priority — stick-on 3-btn wall remotes need multi-path RX
+    // WHY(P2608/P2615): stick-on 3-btn wall remotes — multi-path RX + Homey UI pulse
     try {
       await installWallSceneRemoteHybrid(this, zclNode, {
         maxButtons: 3,
@@ -31,7 +32,7 @@ class Button3GangDevice extends ButtonDevice {
       this.log('[BUTTON_WIRELESS_3] hybrid soft-fail:', e.message);
     }
 
-    this.log('[BUTTON_WIRELESS_3] hybrid wall remote ready (TS0043 class)');
+    this.log('[BUTTON_WIRELESS_3] P2615 hybrid ready (TS0043); UI: Button N device view');
   }
 
 }
