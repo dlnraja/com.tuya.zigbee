@@ -235,5 +235,25 @@ module.exports = {
       homey.error('[FlowRepair API] Replacement failed:', err);
       throw new Error(`Device replacement failed: ${err.message}`);
     }
-  }
+  },
+
+  /**
+   * P2621 MASTER_ONLY — WiFi Fix-It inventory + redacted support bundle.
+   * Inspired by com.tuyalocal Fix It (local keys / protocol / support bundle).
+   */
+  async getWifiFixIt({ homey }) {
+    let WifiFixIt;
+    try {
+      WifiFixIt = require('./lib/wifi/WifiFixIt');
+    } catch (err) {
+      homey.error('[WifiFixIt] module missing:', err);
+      throw new Error('WiFi Fix-It module unavailable');
+    }
+    try {
+      return WifiFixIt.runFixItChecks(homey, {});
+    } catch (err) {
+      homey.error('[WifiFixIt] failed:', err);
+      throw new Error(`WiFi Fix-It failed: ${err.message}`);
+    }
+  },
 };
