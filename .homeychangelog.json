@@ -3716,5 +3716,8 @@
   },
   "9.0.1107": {
     "en": "WiFi LAN reliability from Tuya Local: offline grace, command gap, protocol auto-order. Update Homey Test for WiFi devices."
+  },
+  "9.0.1108": {
+    "en": "WiFi LAN reliability (offline grace, command gap, protocol order) + draft-to-test fleet for 3 apps. Update Homey Test. (Athom republish after #3308 hang)"
   }
 }
