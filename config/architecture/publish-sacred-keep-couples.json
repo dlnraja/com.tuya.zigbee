@@ -889,6 +889,12 @@
       "pid": "TS0042",
       "driverId": "button_wireless_2",
       "note": "P2636 Bastien 2-btn scene remote (phantom 4EP FW)"
+    },
+    {
+      "mfr": "_TZE284_vvmbj46n",
+      "pid": "TS0601",
+      "driverId": "lcdtemphumidsensor",
+      "note": "P2637 Bastien Unknown Node LCD TH clock"
     }
   ]
 }
