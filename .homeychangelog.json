@@ -3761,5 +3761,8 @@
   },
   "9.0.1123": {
     "en": "Improved TS0043 3-button remote from live interview (clusters E000/OnOff, no EF00). Update then re-pair."
+  },
+  "9.0.1124": {
+    "en": "Improved TS0041 1-button remote from live interview (clusters OnOff only, Flow cards). Update then re-pair."
   }
 }

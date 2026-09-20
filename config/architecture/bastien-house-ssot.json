@@ -97,11 +97,30 @@
       "mfr": "_TZ3000_axpdxqgu",
       "pid": "TS0041",
       "driver": "button_wireless_1",
-      "source": "live-house-diag-e8d98608",
+      "source": "live-homey-interview-P2630",
       "status": "live-house",
       "enrichedAt": "2026-09-20",
-      "note": "Was remote_button_wireless_wall — re-pair required for flows",
-      "ieee": "7c:c6:b6:ff:fe:a3:e1:58"
+      "note": "P2630 interview lock — update tip then remove+re-pair",
+      "ieee": "7c:c6:b6:ff:fe:a3:e1:58",
+      "interview": {
+        "ep1Clusters": [
+          0,
+          1,
+          6
+        ],
+        "ep1Out": [
+          25,
+          10
+        ],
+        "noEf00": true,
+        "noE000": true,
+        "batteryZcl200": true,
+        "rx": "onOff_0xFD",
+        "forbidTx": [
+          "0x8004",
+          "EF00"
+        ]
+      }
     },
     {
       "mfr": "_TZ3000_peszejy7",
@@ -533,5 +552,10 @@
   "externalAppsNote": {
     "somfy_tahoma": "Blinds via com.somfy.tahoma — not Bastien; flows: Bastien button → Somfy windowcoverings_*",
     "nodon_fil_pilote": "Radiators via com.nodon.app SIN-4-FP-21 — not Bastien"
+  },
+  "p2630": {
+    "couple": "_TZ3000_axpdxqgu+TS0041",
+    "driver": "button_wireless_1",
+    "tipNote": "1.0.17+ interview clusters + flow args.device fix"
   }
 }
