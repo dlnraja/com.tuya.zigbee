@@ -51,6 +51,8 @@ describe('P2615 hybrid fleet wiring', () => {
       const src = fs.readFileSync(path.join(ROOT, `drivers/${driverId}/device.js`), 'utf8');
       assert.ok(src.includes('installWallSceneRemoteHybrid'));
       assert.ok(src.includes(`maxButtons: ${n}`) || src.includes(`maxButtons:${n}`));
+      // P2616: complementary dedicated must stay (P2520)
+      assert.ok(src.includes('installTs004xDedicatedComplement'), `${driverId} missing dedicated complement`);
     });
   }
 });

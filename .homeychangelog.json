@@ -1845,5 +1845,8 @@
   },
   "5.12.273": {
     "en": "TS0043 scene remotes: Button 1-3 in device view + hybrid RX. Update Test + re-pair if tiles were only under Maintenance."
+  },
+  "5.12.274": {
+    "en": "Improved TS0043/TS0044 scene remote press detection with complementary fallback paths."
   }
 }
