@@ -4,6 +4,10 @@
  * P206 — layer coverage gate
  * Ensures orphan / stub bases inherit TuyaZigbeeDevice and bootstrap exists.
  * Exit 0 = OK, 1 = regression.
+ *
+ * P2611: dual-app adaptive — soft-skip absent MASTER_ONLY files and structural
+ * MASTER_ONLY assertions on stable-v5 / bastien tracks (LTS keeps ZigBeeDevice
+ * bases). BOTH reliability locks (no invent battery, no blind ZCL /2) always run.
  */
 
 const fs = require('fs');
@@ -11,14 +15,52 @@ const path = require('path');
 
 const ROOT = path.join(__dirname, '..', '..');
 
-function read(rel) {
-  return fs.readFileSync(path.join(ROOT, rel), 'utf8');
+function read(rel, opts = {}) {
+  // WHY(P2611): stable-v5 omits MASTER_ONLY managers (DeviceAvailability etc.)
+  // Soft-empty so layer gate adapts to track layout instead of ENOENT crash.
+  const abs = path.join(ROOT, rel);
+  if (!fs.existsSync(abs)) {
+    if (opts.required) throw new Error(`missing required ${rel}`);
+    return '';
+  }
+  return fs.readFileSync(abs, 'utf8');
 }
 
 const checks = [];
 
 function must(label, ok, detail = '') {
   checks.push({ label, ok: !!ok, detail });
+}
+
+/** P2611 dual-app soft-read — MASTER_ONLY files may be absent on stable-v5 */
+function mustIfPresent(label, rel, testFn) {
+  const abs = path.join(ROOT, rel);
+  if (!fs.existsSync(abs)) {
+    must(`${label} (skipped — absent on this track)`, true, rel);
+    return;
+  }
+  must(label, testFn(read(rel)));
+}
+
+/** P2611 track-aware — structural MASTER_ONLY assertions skip on stable/bastien */
+function trackKind() {
+  try {
+    const id = String(JSON.parse(fs.readFileSync(path.join(ROOT, 'app.json'), 'utf8')).id || '');
+    if (id.endsWith('.stable')) return 'stable';
+    if (id.endsWith('.bastien')) return 'bastien';
+    return 'master';
+  } catch (_e) {
+    return 'master';
+  }
+}
+
+function mustMasterOnly(label, ok, detail = '') {
+  const t = trackKind();
+  if (t !== 'master') {
+    must(`${label} (skipped — MASTER_ONLY on ${t})`, true, detail);
+    return;
+  }
+  must(label, ok, detail);
 }
 
 must(
@@ -31,7 +73,7 @@ must(
   /bootstrapUniversalLayers/.test(read('lib/tuya/TuyaZigbeeDevice.js')),
 );
 
-must(
+mustMasterOnly(
   'TuyaZigBeeLightDevice extends TuyaZigbeeDevice',
   /class TuyaZigBeeLightDevice extends TuyaZigbeeDevice/.test(read('lib/TuyaZigBeeLightDevice.js')),
 );
@@ -46,17 +88,17 @@ must(
   /class TuyaSpecificClusterDevice extends TuyaZigbeeDevice/.test(read('lib/TuyaSpecificClusterDevice.js')),
 );
 
-must(
+mustMasterOnly(
   'generic_diy extends TuyaZigbeeDevice',
   /class GenericDIYDevice extends TuyaZigbeeDevice/.test(read('drivers/generic_diy/device.js')),
 );
 
-must(
+mustMasterOnly(
   'ir_blaster extends TuyaZigbeeDevice',
   /class IrBlasterDevice extends TuyaZigbeeDevice/.test(read('drivers/ir_blaster/device.js')),
 );
 
-must(
+mustMasterOnly(
   'orphan GlobalTimeSyncEngine re-exports tuya/',
   /require\(['"]\.\/tuya\/GlobalTimeSyncEngine['"]\)/.test(read('lib/GlobalTimeSyncEngine.js')),
 );
@@ -148,7 +190,7 @@ must(
   /commitCapabilityCatch/.test(read('lib/tuya/TuyaEF00Manager.js')),
 );
 
-must(
+mustMasterOnly(
   'IASZoneManager uses commitCapability',
   /commitCapabilityCatch/.test(read('lib/managers/IASZoneManager.js')),
 );
@@ -192,12 +234,12 @@ must(
     && !/new_device_assumption/.test(read('lib/utils/battery-reader.js')),
 );
 
-must(
+mustMasterOnly(
   'TimeClusterPolicy exists',
   fs.existsSync(path.join(ROOT, 'lib/zigbee/TimeClusterPolicy.js')),
 );
 
-must(
+mustMasterOnly(
   'TuyaTimeSync respects TimeClusterPolicy',
   /TimeClusterPolicy/.test(read('lib/tuya/TuyaTimeSync.js')),
 );
@@ -271,13 +313,14 @@ must(
     && /writeSceneAttr: false/.test(read('lib/zigbee/DeviceOperatingMode.js')),
 );
 
-must(
+mustIfPresent(
   'Power-cut rejoin fires a flow trigger independent of unavailable timeout',
-  /device_rejoined/.test(read('lib/flow/FeatureFlowCards.js'))
+  'lib/managers/DeviceAvailabilityManager.js',
+  () => /device_rejoined/.test(read('lib/flow/FeatureFlowCards.js'))
     && /noteBootDump/.test(read('lib/managers/DeviceAvailabilityManager.js')),
 );
 
-must(
+mustMasterOnly(
   'PowerClusterPolicy exists',
   fs.existsSync(path.join(ROOT, 'lib/zigbee/PowerClusterPolicy.js')),
 );
@@ -293,9 +336,10 @@ must(
     && /skip pollControl/.test(read('lib/io/DeviceIOFacade.js')),
 );
 
-must(
+mustIfPresent(
   'Availability restores last_seen after restart',
-  /avail_last_seen_ts/.test(read('lib/managers/DeviceAvailabilityManager.js'))
+  'lib/managers/DeviceAvailabilityManager.js',
+  () => /avail_last_seen_ts/.test(read('lib/managers/DeviceAvailabilityManager.js'))
     && /BOOT_GRACE_MS/.test(read('lib/managers/DeviceAvailabilityManager.js')),
 );
 
