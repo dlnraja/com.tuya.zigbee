@@ -32,21 +32,25 @@ function processDriver(driverDir) {
 
   const opts = content.capabilitiesOptions || {};
   let changed = false;
+  // WHY(P2614): do not force Maintenance on class:button — device-view is valid.
+  // Non-button classes still get maintenanceAction:true.
+  const forceMaintTrue = content.class !== 'button';
 
   for (const capId of caps) {
     if (!capId.startsWith('button.')) continue;
     if (!opts[capId]) opts[capId] = {};
-    // FIX : setable doit être false (event/maintenance-only), pas true
     if (opts[capId].setable !== false) {
       opts[capId].setable = false;
       changed = true;
     }
-    // FIX : maintenanceAction true (cache le widget non-fonctionnel)
-    if (!opts[capId].maintenanceAction) {
+    if (forceMaintTrue && opts[capId].maintenanceAction !== true) {
       opts[capId].maintenanceAction = true;
       changed = true;
     }
-    // FIX : getable false (pas d'état lisible)
+    if (!forceMaintTrue && opts[capId].maintenanceAction == null) {
+      opts[capId].maintenanceAction = false;
+      changed = true;
+    }
     if (opts[capId].getable !== false) {
       opts[capId].getable = false;
       changed = true;
@@ -66,7 +70,8 @@ function processDriver(driverDir) {
       try { JSON.parse(fs.readFileSync(composePath, 'utf8')); }
       catch (e) { console.error(`❌ Corruption: ${path.basename(driverDir)}`); return; }
       fixed++;
-      console.log(`✅ ${path.basename(driverDir)}: button caps → getable:false + setable:false + maintenanceAction:true`);
+      console.log(`✅ ${path.basename(driverDir)}: button caps → getable:false + setable:false`
+        + (forceMaintTrue ? ' + maintenanceAction:true' : ' (class:button device-view OK)'));
     } else {
       console.log(`🔍 ${path.basename(driverDir)}: needs fix (dry-run)`);
     }
