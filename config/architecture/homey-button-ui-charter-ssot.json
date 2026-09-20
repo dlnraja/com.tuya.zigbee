@@ -90,6 +90,12 @@
         "driver": "switch_2gang",
         "role": "switch",
         "ui": "same switch charter; do not treat HOBEIAN as scene brand"
+      },
+      {
+        "couple": "_TZ3000_vsxvaj9i+TS0043",
+        "driver": "button_wireless_3",
+        "role": "scene",
+        "ui": "Button 1-3 in device view; maintenanceAction false; 0xFD multi-EP"
       }
     ]
   },
