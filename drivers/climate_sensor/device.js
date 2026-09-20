@@ -7,10 +7,33 @@ const { containsCI } = require('../../lib/utils/CaseInsensitiveMatcher');
 const BATTERY_STATE_ENUM = { 0: 10, 1: 50, 2: 100 };
 
 /**
- * Climate Sensor Device - v8.0.0 MODERNIZED
+ * Climate Sensor Device - v8.0.0 MODERNIZED + P2631 Bastien eWeLink TH
  * High-precision temperature and humidity tracking with psychrometric validation.
  */
 class ClimateSensorDevice extends UnifiedSensorBase {
+
+  /**
+   * WHY(P2631): Bastien eWeLink CK-TLSR8656-SS5-01(7014) is ZCL TH only
+   * (clusters 0/1/3/4/32/1026/1029/FC11) — never EF00 TX, never phantom button.
+   */
+  getDeviceProfile() {
+    const base = (typeof super.getDeviceProfile === 'function' && super.getDeviceProfile()) || {};
+    let mfr = '';
+    let pid = '';
+    try {
+      mfr = this._manufacturerName?.() || this.getSetting?.('zb_manufacturer_name') || '';
+      pid = this.getSetting?.('zb_model_id') || this.getData?.()?.productId || '';
+    } catch (_e) { /* soft */ }
+    const eweTh = /ewelink/i.test(String(mfr)) || /CK-TLSR8656-SS5-0[12]\(7014\)/i.test(String(pid));
+    if (!eweTh) return base;
+    return Object.assign({}, base, {
+      noEf00: true,
+      skipEf00Tx: true,
+      protocol: 'zcl_th',
+      zclClusters: [0, 1, 3, 4, 32, 1026, 1029, 64529],
+      stripPhantomButton: true,
+    });
+  }
 
   async onNodeInit({ zclNode }) {
     this.log('[CLIMATE] 🚀 v8.0.0 Modernizing...');
@@ -40,6 +63,15 @@ class ClimateSensorDevice extends UnifiedSensorBase {
       }
       if (containsCI(mfr, 'eWeLink') || /CK-TLSR8656-SS5-0[12]\(7014\)/i.test(String(pid))) {
         this.log(`[CLIMATE-EWELINK] couple mfr=${mfr || '?'} pid=${pid || '?'} (ZCL 0x0402/0x0405/0x0001 sleepy; never socket)`);
+        // WHY(P2631): compose historically had button.1 — strip on eWeLink TH
+        try {
+          if (this.hasCapability?.('button.1')) {
+            await this.removeCapability('button.1').catch(() => {});
+            this.log('[CLIMATE-EWELINK] P2631 strip phantom button.1');
+          }
+          this._skipEf00Tx = true;
+          this._noEf00 = true;
+        } catch (_e2) { /* soft */ }
       }
     } catch (_e) { /* non-fatal */ }
 
