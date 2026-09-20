@@ -1,6 +1,6 @@
 {
   "name": "com.dlnraja.tuya.zigbee",
-  "version": "9.0.1122",
+  "version": "9.0.1123",
   "description": "Tuya Unified Zigbee - Local-first control with AI automation",
   "main": "app.js",
   "scripts": {
@@ -503,7 +503,8 @@
     "check:p2625": "node --test test/critical/p2625-vsxvaj9i-ts0043-button-ux.test.js",
     "check:p2626": "node --test test/critical/p2626-appjson-fingerprint-sync.test.js",
     "check:p2627": "node --test test/critical/p2627-bastien-house-max-benefit.test.js",
-    "check:p2628": "node --test test/critical/p2628-same-page-button-flow-ux.test.js"
+    "check:p2628": "node --test test/critical/p2628-same-page-button-flow-ux.test.js",
+    "check:p2629": "node --test test/critical/p2629-vsxvaj9i-interview-clusters.test.js"
   },
   "keywords": [
     "homey",

@@ -3758,5 +3758,8 @@
   },
   "9.0.1122": {
     "en": "Improved multi-button remote Flow UX (Button 1-N on one card) and fixed silent button Flows. Update then recreate Flows if needed."
+  },
+  "9.0.1123": {
+    "en": "Improved TS0043 3-button remote from live interview (clusters E000/OnOff, no EF00). Update then re-pair."
   }
 }
