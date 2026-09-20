@@ -544,6 +544,15 @@
       "enrichedAt": "2026-09-20",
       "protocol": "zcl_th",
       "noEf00": true
+    },
+    {
+      "mfr": "HOBEIAN",
+      "pid": "ZG-301Z",
+      "driver": "switch_1gang",
+      "source": "live-bastien-kitchen-light",
+      "status": "live-house",
+      "note": "Eclairage table cuisine — P2632 auto-off heal",
+      "enrichedAt": "2026-09-20"
     }
   ],
   "notes": [
@@ -666,5 +675,16 @@
       "_TZ3000_axpdxqgu+TS0041",
       "eWeLink+CK-TLSR8656-SS5-01(7014)"
     ]
+  },
+  "p2632": {
+    "couple": "HOBEIAN+ZG-301Z",
+    "driver": "switch_1gang",
+    "issue": "auto-off ~5s",
+    "fix": "clear onTime + switch_type=state"
+  },
+  "p2633": {
+    "couple": "_TZ3000_adndolvx+TS0041",
+    "driver": "button_wireless_1",
+    "note": "HA phantom 4EP firmware — collapse to btn1"
   }
 }
