@@ -7336,6 +7336,303 @@
           "dynamic": false
         }
       }
+    },
+    {
+      "id": "p2604-nkjintbl-button-plug-not-switch2gang",
+      "mfr": [
+        "_TZE204_nkjintbl",
+        "_tze204_nkjintbl",
+        "_TZE204_NKJINTBL",
+        "_tze204_NKJINTBL"
+      ],
+      "productId": [
+        "TS0601"
+      ],
+      "canonicalDriver": "button_wireless_plug",
+      "forbiddenDrivers": [
+        "switch_2gang",
+        "switch_1gang",
+        "switch_3gang",
+        "switch_4gang"
+      ],
+      "forbidMode": "couple",
+      "protocol": "tuya_ef00",
+      "notes": "P2604/P2537c: only TZE204_nkjintbl on button_wireless_plug. TZE200 forbidden by anti-bot p102-din-not-btn-plug; never bleed nkjintbl onto switch_*."
+    },
+    {
+      "id": "p2605-nkjintbl-tze200-not-switch2gang-not-btn-plug",
+      "mfr": [
+        "_TZE200_nkjintbl",
+        "_tze200_nkjintbl",
+        "_TZE284_nkjintbl",
+        "_tze284_nkjintbl"
+      ],
+      "productId": [
+        "TS0601"
+      ],
+      "canonicalDriver": null,
+      "forbiddenDrivers": [
+        "button_wireless_plug",
+        "switch_2gang",
+        "switch_1gang",
+        "switch_3gang",
+        "switch_4gang"
+      ],
+      "forbidMode": "couple",
+      "protocol": "tuya_ef00",
+      "notes": "P2605: TZE200/284 nkjintbl ambiguous (Z2M multi-gang vs DIN anti-bot). Forbid plug+switch bleed until interview locks couple — do not invent pid/driver."
+    },
+    {
+      "id": "novadigital-dqy15zxy-curtain",
+      "mfr": [
+        "_TZE204_dqy15zxy",
+        "_tze204_dqy15zxy",
+        "_TZE200_dqy15zxy",
+        "_tze200_dqy15zxy",
+        "_TZE284_dqy15zxy",
+        "_tze284_dqy15zxy"
+      ],
+      "productId": [
+        "TS0601"
+      ],
+      "canonicalDriver": "curtain_motor",
+      "forbiddenDrivers": [
+        "switch_2gang",
+        "switch_1gang",
+        "switch_3gang",
+        "zigbee_universal",
+        "generic_tuya",
+        "climate_sensor"
+      ],
+      "forbidMode": "couple",
+      "protocol": "tuya_ef00",
+      "notes": "P2580 Z2M#32851 NovaDigital ZBCMR-01/ZCMR-1 tubular blind. Was wrongly in switch_2gang."
+    },
+    {
+      "id": "mtg075-dtzziy1e-presence",
+      "mfr": [
+        "_TZE204_dtzziy1e",
+        "_tze204_dtzziy1e",
+        "_TZE204_DTZZIY1E",
+        "_TZE200_dtzziy1e",
+        "_tze200_dtzziy1e",
+        "_TZE200_DTZZIY1E",
+        "_TZE284_dtzziy1e",
+        "_tze284_dtzziy1e",
+        "_TZE284_DTZZIY1E"
+      ],
+      "productId": [
+        "TS0601"
+      ],
+      "canonicalDriver": "presence_sensor_radar",
+      "forbiddenDrivers": [
+        "curtain_motor",
+        "curtain_motor_shutter",
+        "climate_sensor",
+        "zigbee_universal",
+        "generic_tuya"
+      ],
+      "forbidMode": "couple",
+      "protocol": "tuya_ef00",
+      "notes": "P2587 Z2M MTG075-ZB-RL often dtzziy1e+TS0601 — same relay radar family as VicHY clrdrnya. Never curtain."
+    },
+    {
+      "id": "p2583-gkfbdvyx-radar-not-socket",
+      "mfr": [
+        "_TZE204_gkfbdvyx",
+        "_TZE200_gkfbdvyx",
+        "_TZE284_gkfbdvyx",
+        "_tze204_gkfbdvyx",
+        "_tze200_gkfbdvyx",
+        "_tze284_gkfbdvyx"
+      ],
+      "productId": [
+        "TS0601"
+      ],
+      "canonicalDriver": "presence_sensor_radar",
+      "forbiddenDrivers": [
+        "curtain_motor",
+        "device_radiator_valve",
+        "radiator_valve",
+        "smartplug",
+        "generic_tuya",
+        "zigbee_universal",
+        "unknown_zigbee_unit"
+      ],
+      "forbidMode": "couple",
+      "source": "github-547-HiepSVG + Z2M ZY-M100-24G",
+      "notes": "P2583: paired as Homey virtualdriverzigbee with 0 caps — lock presence_sensor_radar only."
+    },
+    {
+      "id": "p2571-hejhome-c8ipbljq-6gang",
+      "mfr": [
+        "_TZE284_c8ipbljq",
+        "_tze284_c8ipbljq",
+        "_TZE204_c8ipbljq",
+        "_tze204_c8ipbljq",
+        "_TZE200_c8ipbljq",
+        "_tze200_c8ipbljq"
+      ],
+      "productId": [
+        "TS0601"
+      ],
+      "canonicalDriver": "wall_switch_6_gang_tuya",
+      "forbiddenDrivers": [
+        "switch_3gang",
+        "switch_1gang",
+        "switch_4gang",
+        "wall_switch_4_gang_tuya",
+        "zigbee_universal"
+      ],
+      "forbidMode": "couple",
+      "protocol": "tuya_dp",
+      "notes": "Hejhome Pika 3/6 gang EF00 — same mfr+pid; 6-gang driver is superset. T26439 #5388 P2571.",
+      "sources": [
+        "forum-26439-5388",
+        "P2571"
+      ],
+      "tracks": {
+        "master": {
+          "static": true,
+          "dynamic": true
+        },
+        "stable": {
+          "static": true,
+          "dynamic": false
+        }
+      }
+    },
+    {
+      "id": "p2571-tgeqdjgk-knob-dimmer",
+      "mfr": [
+        "_TZE284_tgeqdjgk",
+        "_tze284_tgeqdjgk",
+        "_TZE200_tgeqdjgk",
+        "_tze200_tgeqdjgk",
+        "_TZE204_tgeqdjgk",
+        "_tze204_tgeqdjgk"
+      ],
+      "productId": [
+        "TS0601"
+      ],
+      "canonicalDriver": "wall_dimmer_tuya",
+      "forbiddenDrivers": [
+        "switch_1gang",
+        "switch_2gang",
+        "switch_3gang",
+        "smart_knob",
+        "zigbee_universal"
+      ],
+      "forbidMode": "couple",
+      "protocol": "tuya_dp",
+      "notes": "TS0601 knob dimmer (Z2M TS0601_knob_dimmer_switch). Not ZCL 1gang. T26439 #5396 P2571.",
+      "sources": [
+        "forum-26439-5396",
+        "z2m-30955",
+        "P2571"
+      ],
+      "tracks": {
+        "master": {
+          "static": true,
+          "dynamic": true
+        },
+        "stable": {
+          "static": true,
+          "dynamic": false
+        }
+      }
+    },
+    {
+      "id": "p2571-vvmbj46n-lcd-th",
+      "mfr": [
+        "_TZE200_vvmbj46n",
+        "_tze200_vvmbj46n",
+        "_TZE204_vvmbj46n",
+        "_tze204_vvmbj46n",
+        "_TZE284_vvmbj46n",
+        "_tze284_vvmbj46n"
+      ],
+      "productId": [
+        "TS0601"
+      ],
+      "canonicalDriver": "lcdtemphumidsensor",
+      "forbiddenDrivers": [
+        "lcdtemphumidsensor_3",
+        "climate_sensor",
+        "zigbee_universal"
+      ],
+      "forbidMode": "couple",
+      "protocol": "tuya_dp",
+      "notes": "TH05Z LCD temp/humidity — single driver to avoid FP collision. T26439 #5420 P2571.",
+      "sources": [
+        "forum-26439-5420",
+        "z2m-19731",
+        "P2571"
+      ],
+      "tracks": {
+        "master": {
+          "static": true,
+          "dynamic": true
+        },
+        "stable": {
+          "static": true,
+          "dynamic": false
+        }
+      }
+    },
+    {
+      "id": "z2m-o4mkahkc-ts0202-motion",
+      "manufacturerName": "_TZ3000_o4mkahkc",
+      "productId": [
+        "TS0202"
+      ],
+      "canonicalDriver": "motion_sensor",
+      "forbidDrivers": [
+        "contact_sensor",
+        "climate_sensor"
+      ],
+      "forbidMode": "couple",
+      "reason": "P2585 Z2M IH012-RT02 motion — not contact (TS0202)",
+      "sources": [
+        "z2m",
+        "blakadder"
+      ]
+    },
+    {
+      "id": "z2m-ksz749x8-ts0601-climate",
+      "manufacturerName": "_TZE284_ksz749x8",
+      "productId": [
+        "TS0601"
+      ],
+      "canonicalDriver": "climate_sensor",
+      "forbidDrivers": [
+        "button_wireless_2",
+        "button_wireless_1",
+        "button_wireless_4"
+      ],
+      "forbidMode": "couple",
+      "reason": "P2585 Z2M temperature_humidity_sensor_2 — not wireless button",
+      "sources": [
+        "z2m"
+      ]
+    },
+    {
+      "id": "z2m-ksz749x8-tze204-ts0601-climate",
+      "manufacturerName": "_TZE204_ksz749x8",
+      "productId": [
+        "TS0601"
+      ],
+      "canonicalDriver": "climate_sensor",
+      "forbidDrivers": [
+        "button_wireless_2",
+        "button_wireless_1",
+        "button_wireless_4"
+      ],
+      "forbidMode": "couple",
+      "reason": "P2585 Z2M TH sibling — not wireless button",
+      "sources": [
+        "z2m"
+      ]
     }
   ],
   "entries": {
