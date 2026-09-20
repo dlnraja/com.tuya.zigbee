@@ -3692,5 +3692,8 @@
   },
   "9.0.1099": {
     "en": "TS0044 scene remotes: Button 1-4 in device view + hybrid RX (0xFD/E000/EF00). Update Test + re-pair if tiles were only under Maintenance."
+  },
+  "9.0.1100": {
+    "en": "Voice-safety aligns with TS0044 Button N device view (class:button). Update Test."
   }
 }
