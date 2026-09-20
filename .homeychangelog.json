@@ -1876,5 +1876,8 @@
   },
   "5.12.283": {
     "en": "Improved local LAN reliability (stale-data watchdog, fire-and-forget)."
+  },
+  "5.12.284": {
+    "en": "Improved local LAN reliability; fixed WiFi driver manifests for publish validation."
   }
 }
