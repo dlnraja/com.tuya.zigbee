@@ -3727,5 +3727,8 @@
   },
   "1.0.18": {
     "en": "Bastien mesh: eWeLink CK-TLSR TH→climate_sensor (not generic), cleared wrong 7014 fingerprints, clearer TS0041/TS0043 names. Update then remove+re-pair: 1-btn remote, eWeLink TH, verify 3-btn flows."
+  },
+  "1.0.19": {
+    "en": "Kitchen HOBEIAN ZG-301Z: clear auto-off countdown + force switch type State. TS0041 phantom-EP remotes (adndolvx). Update; for the light open settings → Clear countdown / Switch type=State, or restart app."
   }
 }

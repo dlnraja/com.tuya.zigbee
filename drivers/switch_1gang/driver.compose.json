@@ -2263,6 +2263,55 @@
         "en": "Use if W/kWh readings are 10× too high or low.",
         "fr": "Si W/kWh sont ×10 trop hauts ou bas."
       }
+    },
+    {
+      "id": "switch_mode",
+      "type": "dropdown",
+      "label": {
+        "en": "External switch type",
+        "fr": "Type interrupteur externe"
+      },
+      "hint": {
+        "en": "For HOBEIAN ZG-301Z lighting use State (stay on). Momentary pulses then off.",
+        "fr": "Pour ZG-301Z éclairage: State (reste allumé). Momentary = pulse puis off."
+      },
+      "value": "state",
+      "values": [
+        {
+          "id": "toggle",
+          "label": {
+            "en": "Toggle",
+            "fr": "Toggle"
+          }
+        },
+        {
+          "id": "state",
+          "label": {
+            "en": "State (recommended for lights)",
+            "fr": "State (recommandé éclairage)"
+          }
+        },
+        {
+          "id": "momentary",
+          "label": {
+            "en": "Momentary (pulse)",
+            "fr": "Momentary (impulsion)"
+          }
+        }
+      ]
+    },
+    {
+      "id": "clear_countdown",
+      "type": "checkbox",
+      "label": {
+        "en": "Clear auto-off countdown now",
+        "fr": "Effacer le minuteur auto-off maintenant"
+      },
+      "hint": {
+        "en": "Clears leftover onTime/countdown that turns the light off after a few seconds.",
+        "fr": "Efface le onTime/countdown qui éteint la lumière après quelques secondes."
+      },
+      "value": false
     }
   ],
   "name": {

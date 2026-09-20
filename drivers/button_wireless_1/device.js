@@ -51,16 +51,21 @@ class Button1GangDevice extends ButtonDevice {
         || zclNode?.modelId
         || this.getData?.()?.productId
         || '';
-      if (containsCI(mfr, 'axpdxqgu') || (/TS0041/i.test(String(pid)) && !/TS004F/i.test(String(pid)))) {
+      // WHY(P2633 / HA T455202 adndolvx): Chinese TS0041 often ships TS0044 4-EP firmware —
+      // collapse phantom EP2–4; RX OnOff 0xFD; never treat as 4-gang / never 0x8004.
+      if (containsCI(mfr, 'axpdxqgu') || containsCI(mfr, 'adndolvx')
+        || (/TS0041/i.test(String(pid)) && !/TS004F/i.test(String(pid)))) {
         this._bastienTs0041Interview = {
-          mfr: containsCI(mfr, 'axpdxqgu') ? '_TZ3000_axpdxqgu' : String(mfr),
+          mfr: containsCI(mfr, 'axpdxqgu') ? '_TZ3000_axpdxqgu'
+            : (containsCI(mfr, 'adndolvx') ? '_TZ3000_adndolvx' : String(mfr)),
           pid: 'TS0041',
           clustersEp1: [0, 1, 6],
           noEf00: true,
           noE000: true,
-          ieeeHint: '7c:c6:b6:ff:fe:a3:e1:58',
+          phantomEpFirmware: true,
+          ieeeHint: containsCI(mfr, 'axpdxqgu') ? '7c:c6:b6:ff:fe:a3:e1:58' : undefined,
         };
-        this.log('[P2630] TS0041 sticky interview profile (0xFD only, battery EP1, no EF00/E000)');
+        this.log('[P2630/P2633] TS0041 sticky (0xFD, battery EP1, collapse phantom EPs, no EF00)');
       }
     } catch (_e) { /* soft */ }
 

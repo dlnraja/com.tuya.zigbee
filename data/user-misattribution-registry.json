@@ -7768,6 +7768,47 @@
       "forbidMode": "couple",
       "notes": "P2631 Bastien mesh: 7014 is Z2M TH sensor. Prune PID-only bleed. Re-pair from Appareil Zigbee.",
       "enrichedAt": "2026-09-20"
+    },
+    {
+      "id": "p2633-adndolvx-ts0041-phantom-ep-firmware",
+      "manufacturerName": [
+        "_TZ3000_adndolvx",
+        "_tz3000_adndolvx"
+      ],
+      "productId": [
+        "TS0041"
+      ],
+      "canonicalDriver": "button_wireless_1",
+      "forbidDrivers": [
+        "button_wireless_4",
+        "remote_button_wireless_wall",
+        "switch_1gang"
+      ],
+      "forbidMode": "couple",
+      "notes": "HA T455202: Chinese TS0041 often ships TS0044 4-EP firmware. Collapse phantom EP2-4 to button 1; RX 0xFD; never treat as 4-gang.",
+      "enrichedAt": "2026-09-20",
+      "sources": [
+        "https://community.home-assistant.io/t/switch-ts0041-by-tz3000-adndolvx-not-working/455202"
+      ]
+    },
+    {
+      "id": "p2632-hobeian-zg301z-countdown-auto-off",
+      "manufacturerName": [
+        "HOBEIAN",
+        "hobeian",
+        "Hobeian"
+      ],
+      "productId": [
+        "ZG-301Z"
+      ],
+      "canonicalDriver": "switch_1gang",
+      "forbidDrivers": [
+        "curtain_motor",
+        "button_wireless_1"
+      ],
+      "forbidMode": "couple",
+      "notes": "P2632 Bastien kitchen light: Z2M WHD02 onOffCountdown+switchType. Clear onTime; force switch_type=state (not momentary).",
+      "enrichedAt": "2026-09-20"
     }
   ],
   "entries": {
