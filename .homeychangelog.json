@@ -3718,5 +3718,8 @@
   },
   "1.0.15": {
     "en": "Flow UX: all buttons of a multi-button remote/wall share one Flow page (dropdown Button 1-N). Fixed Flows that never started. Update then recreate button Flows."
+  },
+  "1.0.16": {
+    "en": "TS0043 _TZ3000_vsxvaj9i: locked interview clusters (OnOff+E000, no EF00), battery EP1, 0xFD RX. Update then remove+re-pair the 3-button remote."
   }
 }
