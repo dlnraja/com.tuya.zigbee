@@ -1,6 +1,6 @@
 {
   "name": "com.dlnraja.tuya.zigbee",
-  "version": "9.0.1111",
+  "version": "9.0.1113",
   "description": "Tuya Unified Zigbee - Local-first control with AI automation",
   "main": "app.js",
   "scripts": {
@@ -378,7 +378,7 @@
     "check:p2617": "node --test test/critical/p2617-gkfbdvyx-550-tip-regress.test.js",
     "check:p2619": "node --test test/critical/p2619-tuyalocal-complementary-wifi.test.js",
     "check:p2620": "node --test test/critical/p2620-draft-to-test-fleet.test.js",
-    "check:p260x": "npm run check:p2606 && npm run check:p2607 && npm run check:p2608 && npm run check:p2609 && npm run check:p2610 && npm run check:p2614 && npm run check:p2615 && npm run check:p2616 && npm run check:p2617 && npm run check:p2619 && npm run check:p2620",
+    "check:p260x": "npm run check:p2606 && npm run check:p2607 && npm run check:p2608 && npm run check:p2609 && npm run check:p2610 && npm run check:p2614 && npm run check:p2615 && npm run check:p2616 && npm run check:p2617 && npm run check:p2619 && npm run check:p2620 && npm run check:p2621",
     "check:p260x-bastien": "npm run check:p260x",
     "enrich:bastien:external": "node tools/ci/p2610-bastien-external-multi-enrich.js",
     "enrich:bastien:external:apply": "node tools/ci/p2610-bastien-external-multi-enrich.js --apply",
@@ -496,7 +496,8 @@
     "check:p2600": "node --test test/critical/p2600-gkfbdvyx-550-lux-distance-residual.test.js",
     "check:p2601": "node --test test/critical/p2601-mains-forceactive-dp9-ssot.test.js",
     "check:p2602": "node --test test/critical/p2602-radar-compose-slim-announce.test.js",
-    "check:p2603": "node --test test/critical/p2603-radar-no-compose-onoff.test.js"
+    "check:p2603": "node --test test/critical/p2603-radar-no-compose-onoff.test.js",
+    "check:p2621": "node --test test/critical/p2621-wifi-heat-pump-ev-kettle-fixit.test.js"
   },
   "keywords": [
     "homey",

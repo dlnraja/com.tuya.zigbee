@@ -25,4 +25,7 @@ Source: [Homey Tuya Local](https://homey.app/fr-fr/app/com.tuyalocal/Tuya-Local/
 `npm run check:p2619`
 
 ## Not copied (intentionally)
-Fix-It UI, support-bundle tab, SafeTuyAPI fork, full heat_pump/EV drivers (larger MASTER_ONLY feature follow-up).
+SafeTuyAPI fork, full heat_pump DP auto-detect UI from tuyalocal.
+
+## Follow-up shipped (P2621)
+Dedicated `wifi_heat_pump` / `wifi_kettle` / `wifi_ev_charger` + App Settings **Fix It** tab (redacted support bundle). See `P2621.md`. Gate: `npm run check:p2621`.

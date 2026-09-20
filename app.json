@@ -1,7 +1,7 @@
 {
   "_comment": "This file is generated. Please edit .homeycompose/app.json instead.",
   "id": "com.dlnraja.tuya.zigbee",
-  "version": "9.0.1111",
+  "version": "9.0.1113",
   "compatibility": ">=12.2.0",
   "platforms": [
     "local"
@@ -113,6 +113,10 @@
     "getWifiLanMap": {
       "method": "GET",
       "path": "/wifi-lan-map"
+    },
+    "getWifiFixIt": {
+      "method": "GET",
+      "path": "/wifi-fix-it"
     }
   },
   "flow": {
@@ -106802,6 +106806,658 @@
         }
       },
       "settings": []
+    },
+    {
+      "id": "wifi_heat_pump",
+      "name": {
+        "en": "WiFi Heat Pump (Tuya Local)",
+        "fr": "Pompe à chaleur WiFi (Tuya Local)",
+        "nl": "WiFi Warmtepomp (Tuya Lokaal)",
+        "de": "WiFi Wärmepumpe (Tuya Lokal)"
+      },
+      "class": "heater",
+      "capabilities": [
+        "onoff",
+        "target_temperature",
+        "measure_temperature",
+        "alarm_generic",
+        "button.1"
+      ],
+      "capabilitiesOptions": {
+        "target_temperature": {
+          "min": 5,
+          "max": 45,
+          "step": 1
+        },
+        "button.1": {
+          "title": {
+            "en": "Button 1",
+            "fr": "Bouton 1"
+          },
+          "maintenanceAction": true,
+          "getable": false,
+          "setable": false
+        }
+      },
+      "pair": [
+        {
+          "id": "configure",
+          "navigation": {
+            "next": "list_devices"
+          }
+        },
+        {
+          "id": "list_devices",
+          "template": "list_devices",
+          "navigation": {
+            "prev": "configure"
+          }
+        },
+        {
+          "id": "add_devices",
+          "template": "add_devices"
+        }
+      ],
+      "repair": [
+        {
+          "id": "configure"
+        }
+      ],
+      "settings": [
+        {
+          "type": "group",
+          "label": {
+            "en": "Tuya Local Connection"
+          },
+          "children": [
+            {
+              "id": "device_id",
+              "type": "text",
+              "label": {
+                "en": "Device ID"
+              },
+              "hint": {
+                "en": "Tuya device ID (from Tuya IoT platform)"
+              },
+              "value": ""
+            },
+            {
+              "id": "local_key",
+              "type": "text",
+              "label": {
+                "en": "Local Key"
+              },
+              "hint": {
+                "en": "AES local key (from Tuya IoT platform)"
+              },
+              "value": ""
+            },
+            {
+              "id": "ip",
+              "type": "text",
+              "label": {
+                "en": "IP Address"
+              },
+              "hint": {
+                "en": "Device LAN IP (optional, auto-discovered if empty)"
+              },
+              "value": ""
+            },
+            {
+              "id": "protocol_version",
+              "type": "dropdown",
+              "label": {
+                "en": "Protocol Version"
+              },
+              "hint": {
+                "en": "Tuya protocol version"
+              },
+              "value": "auto",
+              "values": [
+                {
+                  "id": "auto",
+                  "label": {
+                    "en": "Auto (3.1-3.5)"
+                  }
+                },
+                {
+                  "id": "3.1",
+                  "label": {
+                    "en": "3.1"
+                  }
+                },
+                {
+                  "id": "3.3",
+                  "label": {
+                    "en": "3.3 (most common)"
+                  }
+                },
+                {
+                  "id": "3.4",
+                  "label": {
+                    "en": "3.4"
+                  }
+                },
+                {
+                  "id": "3.5",
+                  "label": {
+                    "en": "3.5"
+                  }
+                }
+              ]
+            },
+            {
+              "id": "command_gap_ms",
+              "type": "number",
+              "label": {
+                "en": "Command Gap (ms)",
+                "fr": "Écart entre commandes (ms)",
+                "nl": "Opdracht-interval (ms)",
+                "de": "Befehlsabstand (ms)"
+              },
+              "value": 100,
+              "min": 0,
+              "max": 10000,
+              "units": {
+                "en": "ms"
+              },
+              "hint": {
+                "en": "Minimum gap between two LAN commands. Helps firmware that silently drops rapid SETs (protocol 3.4/3.5).",
+                "fr": "Délai minimum entre deux commandes LAN. Évite les SET perdus sur protocole 3.4/3.5."
+              }
+            },
+            {
+              "id": "offline_grace_seconds",
+              "type": "number",
+              "label": {
+                "en": "Offline Grace (seconds)",
+                "fr": "Délai hors-ligne (s)",
+                "nl": "Offline-grace (s)",
+                "de": "Offline-Karenz (s)"
+              },
+              "value": 60,
+              "min": 0,
+              "max": 600,
+              "units": {
+                "en": "s"
+              },
+              "hint": {
+                "en": "Delay before marking unavailable / firing disconnect flows after a brief TCP drop (pet feeders, dehumidifiers).",
+                "fr": "Délai avant indisponible / flux déconnecté après une brève coupure TCP (pet feeders, déshumidificateurs)."
+              }
+            }
+          ]
+        }
+      ],
+      "platforms": [
+        "local"
+      ],
+      "connectivity": [
+        "lan"
+      ],
+      "maintenanceActions": [
+        {
+          "id": "tuya_revive",
+          "title": {
+            "en": "Tuya Revive (device recovery)",
+            "fr": "Tuya Revive (récupération appareil)",
+            "nl": "Tuya Revive (apparaatherstel)",
+            "de": "Tuya Revive (Gerätewiederherstellung)"
+          }
+        },
+        {
+          "id": "generate_issue_report",
+          "title": {
+            "en": "Generate support report (GitHub issue)",
+            "fr": "Générer rapport de support (issue GitHub)",
+            "nl": "Supportrapport genereren (GitHub issue)",
+            "de": "Supportbericht erstellen (GitHub Issue)"
+          }
+        }
+      ],
+      "version": "1.0.0",
+      "ui": {
+        "quickAction": "onoff"
+      },
+      "discovery": "tuya_wifi",
+      "images": {
+        "small": "/drivers/wifi_heat_pump/assets/images/small.png",
+        "large": "/drivers/wifi_heat_pump/assets/images/large.png"
+      }
+    },
+    {
+      "id": "wifi_kettle",
+      "name": {
+        "en": "WiFi Smart Kettle (Tuya Local)",
+        "fr": "Bouilloire WiFi (Tuya Local)",
+        "nl": "WiFi Waterkoker (Tuya Lokaal)",
+        "de": "WiFi Wasserkocher (Tuya Lokal)"
+      },
+      "class": "kettle",
+      "capabilities": [
+        "onoff",
+        "target_temperature",
+        "measure_temperature",
+        "alarm_generic",
+        "button.1"
+      ],
+      "capabilitiesOptions": {
+        "target_temperature": {
+          "min": 40,
+          "max": 100,
+          "step": 1
+        },
+        "button.1": {
+          "title": {
+            "en": "Button 1",
+            "fr": "Bouton 1"
+          },
+          "maintenanceAction": true,
+          "getable": false,
+          "setable": false
+        }
+      },
+      "pair": [
+        {
+          "id": "configure",
+          "navigation": {
+            "next": "list_devices"
+          }
+        },
+        {
+          "id": "list_devices",
+          "template": "list_devices",
+          "navigation": {
+            "prev": "configure"
+          }
+        },
+        {
+          "id": "add_devices",
+          "template": "add_devices"
+        }
+      ],
+      "repair": [
+        {
+          "id": "configure"
+        }
+      ],
+      "settings": [
+        {
+          "type": "group",
+          "label": {
+            "en": "Tuya Local Connection"
+          },
+          "children": [
+            {
+              "id": "device_id",
+              "type": "text",
+              "label": {
+                "en": "Device ID"
+              },
+              "hint": {
+                "en": "Tuya device ID (from Tuya IoT platform)"
+              },
+              "value": ""
+            },
+            {
+              "id": "local_key",
+              "type": "text",
+              "label": {
+                "en": "Local Key"
+              },
+              "hint": {
+                "en": "AES local key (from Tuya IoT platform)"
+              },
+              "value": ""
+            },
+            {
+              "id": "ip",
+              "type": "text",
+              "label": {
+                "en": "IP Address"
+              },
+              "hint": {
+                "en": "Device LAN IP (optional, auto-discovered if empty)"
+              },
+              "value": ""
+            },
+            {
+              "id": "protocol_version",
+              "type": "dropdown",
+              "label": {
+                "en": "Protocol Version"
+              },
+              "hint": {
+                "en": "Tuya protocol version"
+              },
+              "value": "auto",
+              "values": [
+                {
+                  "id": "auto",
+                  "label": {
+                    "en": "Auto (3.1-3.5)"
+                  }
+                },
+                {
+                  "id": "3.1",
+                  "label": {
+                    "en": "3.1"
+                  }
+                },
+                {
+                  "id": "3.3",
+                  "label": {
+                    "en": "3.3 (most common)"
+                  }
+                },
+                {
+                  "id": "3.4",
+                  "label": {
+                    "en": "3.4"
+                  }
+                },
+                {
+                  "id": "3.5",
+                  "label": {
+                    "en": "3.5"
+                  }
+                }
+              ]
+            },
+            {
+              "id": "command_gap_ms",
+              "type": "number",
+              "label": {
+                "en": "Command Gap (ms)",
+                "fr": "Écart entre commandes (ms)",
+                "nl": "Opdracht-interval (ms)",
+                "de": "Befehlsabstand (ms)"
+              },
+              "value": 100,
+              "min": 0,
+              "max": 10000,
+              "units": {
+                "en": "ms"
+              },
+              "hint": {
+                "en": "Minimum gap between two LAN commands. Helps firmware that silently drops rapid SETs (protocol 3.4/3.5).",
+                "fr": "Délai minimum entre deux commandes LAN. Évite les SET perdus sur protocole 3.4/3.5."
+              }
+            },
+            {
+              "id": "offline_grace_seconds",
+              "type": "number",
+              "label": {
+                "en": "Offline Grace (seconds)",
+                "fr": "Délai hors-ligne (s)",
+                "nl": "Offline-grace (s)",
+                "de": "Offline-Karenz (s)"
+              },
+              "value": 60,
+              "min": 0,
+              "max": 600,
+              "units": {
+                "en": "s"
+              },
+              "hint": {
+                "en": "Delay before marking unavailable / firing disconnect flows after a brief TCP drop (pet feeders, dehumidifiers).",
+                "fr": "Délai avant indisponible / flux déconnecté après une brève coupure TCP (pet feeders, déshumidificateurs)."
+              }
+            }
+          ]
+        }
+      ],
+      "platforms": [
+        "local"
+      ],
+      "connectivity": [
+        "lan"
+      ],
+      "maintenanceActions": [
+        {
+          "id": "tuya_revive",
+          "title": {
+            "en": "Tuya Revive (device recovery)",
+            "fr": "Tuya Revive (récupération appareil)",
+            "nl": "Tuya Revive (apparaatherstel)",
+            "de": "Tuya Revive (Gerätewiederherstellung)"
+          }
+        },
+        {
+          "id": "generate_issue_report",
+          "title": {
+            "en": "Generate support report (GitHub issue)",
+            "fr": "Générer rapport de support (issue GitHub)",
+            "nl": "Supportrapport genereren (GitHub issue)",
+            "de": "Supportbericht erstellen (GitHub Issue)"
+          }
+        }
+      ],
+      "version": "1.0.0",
+      "ui": {
+        "quickAction": "onoff"
+      },
+      "discovery": "tuya_wifi",
+      "images": {
+        "small": "/drivers/wifi_kettle/assets/images/small.png",
+        "large": "/drivers/wifi_kettle/assets/images/large.png"
+      }
+    },
+    {
+      "id": "wifi_ev_charger",
+      "name": {
+        "en": "WiFi EV Charger (Tuya Local)",
+        "fr": "Borne EV WiFi (Tuya Local)",
+        "nl": "WiFi EV-lader (Tuya Lokaal)",
+        "de": "WiFi EV-Ladegerät (Tuya Lokal)"
+      },
+      "class": "other",
+      "capabilities": [
+        "onoff",
+        "measure_power",
+        "meter_power",
+        "measure_current",
+        "measure_voltage",
+        "measure_temperature",
+        "alarm_generic",
+        "button.1"
+      ],
+      "capabilitiesOptions": {
+        "button.1": {
+          "title": {
+            "en": "Button 1",
+            "fr": "Bouton 1"
+          },
+          "maintenanceAction": true,
+          "getable": false,
+          "setable": false
+        }
+      },
+      "pair": [
+        {
+          "id": "configure",
+          "navigation": {
+            "next": "list_devices"
+          }
+        },
+        {
+          "id": "list_devices",
+          "template": "list_devices",
+          "navigation": {
+            "prev": "configure"
+          }
+        },
+        {
+          "id": "add_devices",
+          "template": "add_devices"
+        }
+      ],
+      "repair": [
+        {
+          "id": "configure"
+        }
+      ],
+      "settings": [
+        {
+          "type": "group",
+          "label": {
+            "en": "Tuya Local Connection"
+          },
+          "children": [
+            {
+              "id": "device_id",
+              "type": "text",
+              "label": {
+                "en": "Device ID"
+              },
+              "hint": {
+                "en": "Tuya device ID (from Tuya IoT platform)"
+              },
+              "value": ""
+            },
+            {
+              "id": "local_key",
+              "type": "text",
+              "label": {
+                "en": "Local Key"
+              },
+              "hint": {
+                "en": "AES local key (from Tuya IoT platform)"
+              },
+              "value": ""
+            },
+            {
+              "id": "ip",
+              "type": "text",
+              "label": {
+                "en": "IP Address"
+              },
+              "hint": {
+                "en": "Device LAN IP (optional, auto-discovered if empty)"
+              },
+              "value": ""
+            },
+            {
+              "id": "protocol_version",
+              "type": "dropdown",
+              "label": {
+                "en": "Protocol Version"
+              },
+              "hint": {
+                "en": "Tuya protocol version"
+              },
+              "value": "auto",
+              "values": [
+                {
+                  "id": "auto",
+                  "label": {
+                    "en": "Auto (3.1-3.5)"
+                  }
+                },
+                {
+                  "id": "3.1",
+                  "label": {
+                    "en": "3.1"
+                  }
+                },
+                {
+                  "id": "3.3",
+                  "label": {
+                    "en": "3.3 (most common)"
+                  }
+                },
+                {
+                  "id": "3.4",
+                  "label": {
+                    "en": "3.4"
+                  }
+                },
+                {
+                  "id": "3.5",
+                  "label": {
+                    "en": "3.5"
+                  }
+                }
+              ]
+            },
+            {
+              "id": "command_gap_ms",
+              "type": "number",
+              "label": {
+                "en": "Command Gap (ms)",
+                "fr": "Écart entre commandes (ms)",
+                "nl": "Opdracht-interval (ms)",
+                "de": "Befehlsabstand (ms)"
+              },
+              "value": 100,
+              "min": 0,
+              "max": 10000,
+              "units": {
+                "en": "ms"
+              },
+              "hint": {
+                "en": "Minimum gap between two LAN commands. Helps firmware that silently drops rapid SETs (protocol 3.4/3.5).",
+                "fr": "Délai minimum entre deux commandes LAN. Évite les SET perdus sur protocole 3.4/3.5."
+              }
+            },
+            {
+              "id": "offline_grace_seconds",
+              "type": "number",
+              "label": {
+                "en": "Offline Grace (seconds)",
+                "fr": "Délai hors-ligne (s)",
+                "nl": "Offline-grace (s)",
+                "de": "Offline-Karenz (s)"
+              },
+              "value": 60,
+              "min": 0,
+              "max": 600,
+              "units": {
+                "en": "s"
+              },
+              "hint": {
+                "en": "Delay before marking unavailable / firing disconnect flows after a brief TCP drop (pet feeders, dehumidifiers).",
+                "fr": "Délai avant indisponible / flux déconnecté après une brève coupure TCP (pet feeders, déshumidificateurs)."
+              }
+            }
+          ]
+        }
+      ],
+      "platforms": [
+        "local"
+      ],
+      "connectivity": [
+        "lan"
+      ],
+      "maintenanceActions": [
+        {
+          "id": "tuya_revive",
+          "title": {
+            "en": "Tuya Revive (device recovery)",
+            "fr": "Tuya Revive (récupération appareil)",
+            "nl": "Tuya Revive (apparaatherstel)",
+            "de": "Tuya Revive (Gerätewiederherstellung)"
+          }
+        },
+        {
+          "id": "generate_issue_report",
+          "title": {
+            "en": "Generate support report (GitHub issue)",
+            "fr": "Générer rapport de support (issue GitHub)",
+            "nl": "Supportrapport genereren (GitHub issue)",
+            "de": "Supportbericht erstellen (GitHub Issue)"
+          }
+        }
+      ],
+      "version": "1.0.0",
+      "ui": {
+        "quickAction": "onoff"
+      },
+      "discovery": "tuya_wifi",
+      "images": {
+        "small": "/drivers/wifi_ev_charger/assets/images/small.png",
+        "large": "/drivers/wifi_ev_charger/assets/images/large.png"
+      }
     }
   ],
   "capabilities": {

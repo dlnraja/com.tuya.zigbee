@@ -419,6 +419,22 @@
     </table>
   </div>
 
+  <div class="card" id="wifi-fixit-card">
+    <h3>WiFi Fix It</h3>
+    <p style="font-size:11px;color:#666">
+      Inspired by Tuya Local (com.tuyalocal): check paired WiFi LAN devices for missing local keys,
+      locked protocol versions on unavailable devices, and export a <strong>redacted</strong> support bundle
+      (keys never in full — safe for GitHub issues). Preview only — nothing is written until you Repair a device.
+    </p>
+    <div class="mesh-toolbar">
+      <button class="btn" type="button" id="btn-wifi-fixit-run">Run checks</button>
+      <button class="btn btn-c" type="button" id="btn-wifi-fixit-bundle">Create support bundle</button>
+    </div>
+    <div class="mesh-msg" id="wifi-fixit-msg"></div>
+    <div class="mesh-stats" id="wifi-fixit-stats"></div>
+    <pre id="wifi-fixit-out" style="font-size:10px;max-height:220px;overflow:auto;background:#f7f7f7;padding:8px;border-radius:6px;display:none;"></pre>
+  </div>
+
   <div class="card">
     <h3>WiFi SmartLink (QR)</h3>
     <p style="font-size:11px;color:#666">
@@ -675,6 +691,44 @@
       });
     }
 
+    var _lastWifiFixIt = null;
+    function runWifiFixIt(showBundle) {
+      if (!Homey || typeof Homey.api !== 'function') {
+        var m0 = document.getElementById('wifi-fixit-msg');
+        if (m0) { m0.textContent = 'Homey API not ready'; m0.className = 'mesh-msg err'; }
+        return;
+      }
+      var msg = document.getElementById('wifi-fixit-msg');
+      var stats = document.getElementById('wifi-fixit-stats');
+      var out = document.getElementById('wifi-fixit-out');
+      if (msg) { msg.textContent = 'Running Fix It checks…'; msg.className = 'mesh-msg'; }
+      Homey.api('GET', '/wifi-fix-it', {}, function (err, data) {
+        if (err) {
+          if (msg) { msg.textContent = (err.message || String(err)); msg.className = 'mesh-msg err'; }
+          return;
+        }
+        _lastWifiFixIt = data;
+        var findings = (data && data.findings) || [];
+        var devices = (data && data.devices) || [];
+        if (stats) {
+          stats.innerHTML =
+            '<span class="mesh-chip"><b>' + devices.length + '</b> WiFi devices</span>' +
+            '<span class="mesh-chip"><b>' + findings.length + '</b> findings</span>';
+        }
+        if (msg) {
+          msg.textContent = findings.length
+            ? ('Found ' + findings.length + ' item(s) — preview only, use Repair on the device to apply.')
+            : 'No issues detected on paired Tuya WiFi drivers.';
+          msg.className = 'mesh-msg';
+        }
+        if (out) {
+          var payload = showBundle ? (data && data.bundle) : { findings: findings, devices: devices };
+          out.style.display = 'block';
+          out.textContent = JSON.stringify(payload, null, 2);
+        }
+      });
+    }
+
     function setToggle(key, val) {
       if (!Homey) return;
       Homey.set(key, val, function(e) {
@@ -837,6 +891,14 @@
       if (btnWifiLan) {
         btnWifiLan.addEventListener('click', function () { refreshWifiLanMap(); });
         setTimeout(function () { refreshWifiLanMap(); }, 400);
+      }
+      var btnFixIt = document.getElementById('btn-wifi-fixit-run');
+      if (btnFixIt) {
+        btnFixIt.addEventListener('click', function () { runWifiFixIt(false); });
+      }
+      var btnBundle = document.getElementById('btn-wifi-fixit-bundle');
+      if (btnBundle) {
+        btnBundle.addEventListener('click', function () { runWifiFixIt(true); });
       }
       
       Homey.get('smartthings_client_id', function(e, v) { if (v) document.getElementById('st-cid').value = v; });
