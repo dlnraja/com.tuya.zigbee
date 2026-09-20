@@ -7637,6 +7637,35 @@
       "sources": [
         "z2m"
       ]
+    },
+    {
+      "id": "p2622-ewelink-ck-tlsr-th-not-virtual-socket",
+      "mfr": [
+        "eWeLink",
+        "ewelink",
+        "EWELINK"
+      ],
+      "productId": [
+        "CK-TLSR8656-SS5-01(7014)",
+        "CK-TLSR8656-SS5-02(7014)"
+      ],
+      "canonicalDriver": "climate_sensor",
+      "forbiddenDrivers": [
+        "button_wireless_plug",
+        "device_plug_smart",
+        "curtain_motor_shutter",
+        "presence_sensor_radar",
+        "soil_sensor",
+        "doorwindowsensor_4",
+        "sensor_motion_presence",
+        "climate_sensor_energy",
+        "temphumidsensor",
+        "temphumidsensor5",
+        "sensor_climate_temphumidsensor"
+      ],
+      "forbidMode": "couple",
+      "protocol": "zcl_sleepy",
+      "notes": "P2622: Homey interview eWeLink+CK-TLSR8656-SS5-01(7014) is ZCL TH+battery (Hubitat clusters 0/1/3/4/32/1026/1029/FC11). Was pairing as virtualdriverzigbee socket because climate_sensor had pid without eWeLink mfr. Never invent pid; SS5-02(7014) sibling TH."
     }
   ],
   "entries": {

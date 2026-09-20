@@ -3697,5 +3697,8 @@
   },
   "1.0.8": {
     "en": "Draft-to-test fleet sync + house profile refresh. Update Bastien Test."
+  },
+  "1.0.9": {
+    "en": "Added eWeLink CK-TLSR8656-SS5-01(7014) climate sensor support (temperature, humidity, battery). Re-pair if it was added as a generic Zigbee device."
   }
 }
