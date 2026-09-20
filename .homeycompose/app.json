@@ -1,6 +1,6 @@
 {
   "id": "com.dlnraja.tuya.zigbee",
-  "version": "9.0.1132",
+  "version": "9.0.1133",
   "compatibility": ">=12.2.0",
   "platforms": [
     "local"
@@ -119,6 +119,6 @@
     }
   },
   "changelog": {
-    "en": "Improved Moes Star Ring / TS0041 wireless button (Flows single/double/hold, battery)."
+    "en": "Improved Chinese TS0041 remotes with phantom 4-endpoint firmware (single/double/hold Flows)."
   }
 }
