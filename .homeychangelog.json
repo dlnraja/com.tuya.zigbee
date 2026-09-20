@@ -1821,5 +1821,8 @@
   },
   "5.12.265": {
     "en": "Stable: dual-app layer gate + IAS/battery reliability + Moes YK. Update Stable Test."
+  },
+  "5.12.266": {
+    "en": "Stable: syntax soft-skip missing MASTER_ONLY critical tests (P2611b). Update Stable Test."
   }
 }
