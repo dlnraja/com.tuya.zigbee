@@ -33,19 +33,19 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 
 | Metric | Value |
 |--------|-------|
-| **App Version** | v9.0.1089 |
+| **App Version** | v9.0.1099 |
 | **Drivers** | 431 (381 Zigbee + 50 WiFi) |
 | **Unique Fingerprints** | 4,691 |
-| **Pairing Variants** | 16,430 (4 case combos per fingerprint) |
+| **Pairing Variants** | 16,426 (4 case combos per fingerprint) |
 | **Unique Product IDs** | 594 |
 | **Flow Cards** | 6,022 |
 | **Unique Capabilities** | 170 |
 | **Native OTA Drivers** | 8 |
-| **Test Suites** | 401 files |
+| **Test Suites** | 410 files |
 | **SVG Icons** | 731 |
 | **Languages** | EN, FR, NL, DE |
 | **SDK / Homey** | 3 / >= 12.2.0 |
-| **Last Updated** | 2026-09-19 |
+| **Last Updated** | 2026-09-20 |
 
 ### Top 20 Drivers by Fingerprint Count
 
@@ -63,7 +63,7 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 | 10 | `switch_4gang` | 292 |
 | 11 | `motion_sensor` | 247 |
 | 12 | `switch_3gang` | 219 |
-| 13 | `contact_sensor` | 213 |
+| 13 | `contact_sensor` | 215 |
 | 14 | `diy_custom_zigbee` | 206 |
 | 15 | `thermostat_tuya_dp` | 197 |
 | 16 | `switch_2gang` | 185 |
@@ -102,18 +102,18 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 
 | Version | Changes |
 |---------|---------|
+| **v9.0.1099** | TS0044 scene remotes: Button 1-4 in device view + hybrid RX (0xFD/E000/EF00). Update Test + re-pair if tiles were only under Maintenance. |
+| **v9.0.1098** | Prune remote mfs bleed to sacred mfr+pid couples. Update Test. |
+| **v9.0.1097** | Lock Moes ZT-YK remotes as sacred mfr+pid couples in mfs. Update Test. |
+| **v9.0.1096** | Dual-app layer gate + Moes ZT-YK remotes. Update Test. |
+| **v9.0.1095** | Bastien external enrich (Z2M/Johan) outbound inventory + Zemismart TS0041 rehome from smoke. Update Test. |
+| **v9.0.1094** | Wall/scene remotes 1–6 btn: hybrid RX fleet (battery + mains). Update Test; Repair remotes if presses miss. |
+| **v9.0.1093** | Wall 3-btn remotes (TS0043): hybrid ZCL/0xFD/E000/EF00/raw RX. Update Test. |
+| **v9.0.1092** | ZG253 TRV (_TZE284_ogx8u5z6): empty caps + setpoint TX fix. Update Test + Repair valve. |
+| **v9.0.1091** | Restored MTG075 couple profile (Occupied/quantized docs) so Auto-Publish Contre quoi stays green. |
+| **v9.0.1090** | Publish unblock: nkjintbl TZE204 plug-only (anti-bot). Radar/button/curtain residuals from GH#550-552 stay on tip. |
 | **v9.0.1089** | Radar distance re-arm; TS0043 pairing; TS130F curtain; nkjintbl plug lock. Update Homey Test + Repair. |
 | **v9.0.1088** | Radar distance re-arm; TS0043 pairing; TS130F curtain match; stop nkjintbl bleed to 2-gang. Update Test + Repair. |
-| **v9.0.1087** | Radar distance re-arm after re-pair; TS0043 scene remote pairing; TS130F curtain switch match. Update Homey Test + Repair. |
-| **v9.0.1085** | Presence radar: no phantom Channel on ceiling radars; presence quick action; MTG relay Channel via runtime. Update Homey Test + Repair. |
-| **v9.0.1084** | Presence radar: no phantom Channel on ceiling (gkfbdvyx); presence as quick action; MTG relay still gets Channel. Also slim compose + dis… |
-| **v9.0.1082** | Presence radar: slim compose (no phantom zones/temp on tip), announce re-arms distance tracking, CRQ3 DP9 fix. Update Homey Test + Repair… |
-| **v9.0.1080** | Radar/TRV residual: mains EF00 periodic query, gkfbdvyx DP9 /10 SSOT, soft Channel listener before init. Update Homey Test + Repair prese… |
-| **v9.0.1078** | Improved MTG075 bathroom radar tiles — distance units and phantom zone/temp/battery cleanup after tip update. |
-| **v9.0.1076** | Improved ZG253 / me167 TRV temperature scale and wake refresh so empty caps and setpoint errors clear after update. |
-| **v9.0.1074** | Improved ceiling radar distance tracking and presence when lux works but distance stayed empty; TRV data query hardening stays in tip. |
-| **v9.0.1072** | TRV empty values: force EF00 DP queries after pair (battery passive was skipping 0/10). Update Test + Repair radiator valve. |
-| **v9.0.1071** | 24G ceiling radar gkfbdvyx: presence/distance + strip phantom Channel/Button; lux corroboration. Update Homey Test + Repair radar. |
 
 <!-- CHANGELOG_END -->
 
