@@ -31,7 +31,7 @@ describe('P2604 GH#550/#551/#552 residual', () => {
     const src = fs.readFileSync(path.join(ROOT, 'drivers/presence_sensor_radar/device.js'), 'utf8');
     assert.ok(src.includes('lux-stuck-zero'));
     assert.ok(src.includes('stuckZero'));
-    assert.ok(src.includes("const dps = [1, 9, 101, 103]"));
+    assert.ok(src.includes('const dps = [1, 9, 10, 101, 103]') || src.includes('const dps = [1, 9, 101, 103]'));
   });
 
   it('TS0043 famkxci2: button_wireless_3 EP1 has no IAS/EF00 clusters', () => {

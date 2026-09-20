@@ -1564,12 +1564,18 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
       let distance = this._coerceDistanceMeters(value, mapping);
       if (distance == null) return;
       this._distanceSeenOnce = true;
+      // WHY(P2640): meaningful = tracking actually ranged (>0.3m) — not cold 0m frames
+      if (Number(distance) > 0.3) this._distanceSeenMeaningful = true;
       this._lastDistanceM = distance;
       this._noteDistanceSample(distance);
       const inferred = this._ensureInference().updateDistance(distance);
       // WHY(P2509 / Z2M#30785): gkfbdvyx sticks DP1=true while DP9=0m — clear Homey presence
+      // WHY(P2640 / GH#550): never zero-clear until a meaningful distance was seen —
+      // find_switch OFF paints DP9=0 forever and would wipe lux/DP1 presence.
       if (config.clearPresenceOnZeroDistance && Number(distance) <= 0.05) {
-        this._commitPresenceAndFlows(false);
+        if (this._distanceSeenMeaningful === true) {
+          this._commitPresenceAndFlows(false);
+        }
       } else if (config.syncPresenceFromDistanceInference && typeof inferred === 'boolean') {
         const painted = this.getCapabilityValue('alarm_motion');
         if (painted !== inferred) {
