@@ -1,0 +1,178 @@
+# P2620 — Draft→Test fleet for all 3 Athom apps (Universal / Stable / Bastien)
+# WHY: One dispatch promotes every independent App ID without sharing slots.
+# Contre quoi: forgetting bastien-home or stable-v5 after tip publish.
+name: Draft to Test Fleet (3 apps)
+
+on:
+  workflow_dispatch:
+    inputs:
+      include_master:
+        description: "Promote Universal Tuya (master)"
+        type: boolean
+        default: true
+      include_stable:
+        description: "Promote Tuya Unified Stable (stable-v5)"
+        type: boolean
+        default: true
+      include_bastien:
+        description: "Promote Zigbee Bastien (bastien-home)"
+        type: boolean
+        default: true
+  # Soft cron: catch orphan drafts left after Athom createBuild
+  schedule:
+    - cron: "20 3,11,19 * * *"
+
+permissions:
+  contents: read
+  actions: write
+
+concurrency:
+  group: draft-to-test-fleet
+  cancel-in-progress: false
+
+defaults:
+  run:
+    shell: bash
+
+env:
+  AI_PLAN_MODE: forfait
+  AI_FORCE_LOCAL: "true"
+  AI_ALLOW_REMOTE: "false"
+  AI_ALLOW_PAID: "false"
+  FORUM_AUTO_POST: "0"
+  SHADOW_FORUM: "1"
+
+jobs:
+  matrix-prep:
+    name: Build promote matrix
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    outputs:
+      matrix: ${{ steps.set.outputs.matrix }}
+    steps:
+      - id: set
+        run: |
+          set -euo pipefail
+          if [ "${{ github.event_name }}" = "schedule" ]; then
+            INC_M=true; INC_S=true; INC_B=true
+          else
+            INC_M="${{ inputs.include_master }}"
+            INC_S="${{ inputs.include_stable }}"
+            INC_B="${{ inputs.include_bastien }}"
+          fi
+          items="["
+          first=1
+          add() {
+            local branch="$1" app="$2" label="$3"
+            if [ "$first" -eq 1 ]; then first=0; else items+=","; fi
+            items+=$(printf '{"branch":"%s","app_id":"%s","label":"%s"}' "$branch" "$app" "$label")
+          }
+          [ "$INC_M" = "true" ] && add "master" "com.dlnraja.tuya.zigbee" "Universal"
+          [ "$INC_S" = "true" ] && add "stable-v5" "com.dlnraja.tuya.zigbee.stable" "Stable"
+          [ "$INC_B" = "true" ] && add "bastien-home" "com.dlnraja.tuya.zigbee.bastien" "Bastien"
+          items+="]"
+          echo "matrix=$items" >> "$GITHUB_OUTPUT"
+          echo "Fleet matrix: $items"
+
+  promote:
+    name: Draft→Test ${{ matrix.label }}
+    needs: matrix-prep
+    if: needs.matrix-prep.outputs.matrix != '[]' && needs.matrix-prep.outputs.matrix != ''
+    strategy:
+      fail-fast: false
+      max-parallel: 3
+      matrix:
+        include: ${{ fromJson(needs.matrix-prep.outputs.matrix) }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # v5.1.0
+        with:
+          ref: ${{ matrix.branch }}
+          submodules: false
+
+      - uses: actions/setup-node@a0853c24544627f65ddf259abe73b1d18a591444 # v5.0.0
+        with:
+          node-version: "22"
+          cache: npm
+
+      - run: npm ci --prefer-offline --no-audit || npm install
+
+      - name: Install Puppeteer Dependencies
+        continue-on-error: true
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y --no-install-recommends \
+            libgbm-dev libnss3 libatk1.0-0 libatk-bridge2.0-0 \
+            libcups2 libdrm2 libxkbcommon0 libxcomposite1 \
+            libxdamage1 libxrandr2 libpango-1.0-0 libcairo2 \
+            libxshmfence1 2>/dev/null || echo "Apt failed, proceeding anyway"
+
+      - name: Install promotion tools
+        continue-on-error: true
+        run: npm install puppeteer athom-api --no-save
+
+      - name: Shared App ID soak guard (stable only)
+        id: soak
+        if: matrix.branch == 'stable-v5'
+        env:
+          HOMEY_PAT: ${{ secrets.HOMEY_PAT }}
+        run: node .github/scripts/refuse-stable-test-overwrite.js
+
+      - name: "Tier 1: Promote via Browser (Puppeteer)"
+        id: promote_puppeteer
+        if: steps.soak.outputs.skip != 'true'
+        continue-on-error: true
+        timeout-minutes: 8
+        env:
+          HOMEY_EMAIL: ${{ secrets.HOMEY_EMAIL }}
+          HOMEY_PASSWORD: ${{ secrets.HOMEY_PASSWORD }}
+          DRY_RUN: "false"
+          TARGET_APP_ID: ${{ matrix.app_id }}
+          FORUM_AUTO_POST: "0"
+        run: node .github/scripts/auto-promote-puppeteer.js
+
+      - name: "Tier 2: Promote via OAuth (headless)"
+        if: steps.soak.outputs.skip != 'true' && steps.promote_puppeteer.outcome != 'success'
+        id: promote_oauth
+        continue-on-error: true
+        timeout-minutes: 5
+        env:
+          HOMEY_EMAIL: ${{ secrets.HOMEY_EMAIL }}
+          HOMEY_PASSWORD: ${{ secrets.HOMEY_PASSWORD }}
+          ATHOM_CLIENT_ID: ${{ secrets.ATHOM_CLIENT_ID }}
+          ATHOM_CLIENT_SECRET: ${{ secrets.ATHOM_CLIENT_SECRET }}
+          TARGET_APP_ID: ${{ matrix.app_id }}
+        run: node .github/scripts/auto-promote-oauth.js
+
+      - name: "Tier 3: Promote via API (PAT fallback)"
+        if: steps.soak.outputs.skip != 'true' && steps.promote_puppeteer.outcome != 'success' && steps.promote_oauth.outcome != 'success'
+        id: promote_api
+        continue-on-error: true
+        env:
+          HOMEY_PAT: ${{ secrets.HOMEY_PAT }}
+          TARGET_APP_ID: ${{ matrix.app_id }}
+        run: node .github/scripts/auto-publish-draft.js
+
+      - name: Verify draft promotion result
+        if: steps.soak.outputs.skip != 'true'
+        env:
+          HOMEY_PAT: ${{ secrets.HOMEY_PAT }}
+          TARGET_APP_ID: ${{ matrix.app_id }}
+        run: |
+          if [ "${{ steps.promote_puppeteer.outcome }}" != "success" ] && \
+             [ "${{ steps.promote_oauth.outcome }}" != "success" ] && \
+             [ "${{ steps.promote_api.outcome }}" != "success" ]; then
+            echo "::warning::All tiers non-success for ${{ matrix.app_id }}; verifying channel state."
+          fi
+          node .github/scripts/verify-test-version.js || true
+
+      - name: Summary
+        if: always()
+        run: |
+          echo "## ${{ matrix.label }} (${{ matrix.app_id }})" >> "$GITHUB_STEP_SUMMARY"
+          echo "- Branch: \`${{ matrix.branch }}\`" >> "$GITHUB_STEP_SUMMARY"
+          echo "- Puppeteer: ${{ steps.promote_puppeteer.outcome }}" >> "$GITHUB_STEP_SUMMARY"
+          echo "- OAuth: ${{ steps.promote_oauth.outcome }}" >> "$GITHUB_STEP_SUMMARY"
+          echo "- API: ${{ steps.promote_api.outcome }}" >> "$GITHUB_STEP_SUMMARY"
+          echo "- Test URL: https://homey.app/a/${{ matrix.app_id }}/test/" >> "$GITHUB_STEP_SUMMARY"

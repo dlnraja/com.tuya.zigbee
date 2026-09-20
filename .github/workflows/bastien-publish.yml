@@ -181,3 +181,43 @@ jobs:
           echo "- App ID: \`$EXPECTED_APP_ID\`" >> "$GITHUB_STEP_SUMMARY"
           echo "- [Test install](https://homey.app/a/$EXPECTED_APP_ID/test/)" >> "$GITHUB_STEP_SUMMARY"
           echo "- Install on Bastien Pro: update Test channel or \`homey app install\` from clone" >> "$GITHUB_STEP_SUMMARY"
+
+      # P2620: always attempt draft→test after createBuild (same tiers as fleet)
+      - name: Install promotion tools
+        continue-on-error: true
+        run: |
+          sudo apt-get update -qq || true
+          sudo apt-get install -y --no-install-recommends \
+            libgbm-dev libnss3 libatk1.0-0 libatk-bridge2.0-0 \
+            libcups2 libdrm2 libxkbcommon0 libxcomposite1 \
+            libxdamage1 libxrandr2 libpango-1.0-0 libcairo2 \
+            libxshmfence1 2>/dev/null || true
+          npm install puppeteer athom-api --no-save
+
+      - name: "Bastien Tier 1: Promote draft→test (Puppeteer)"
+        id: promote_puppeteer
+        continue-on-error: true
+        timeout-minutes: 8
+        env:
+          HOMEY_EMAIL: ${{ secrets.HOMEY_EMAIL }}
+          HOMEY_PASSWORD: ${{ secrets.HOMEY_PASSWORD }}
+          DRY_RUN: "false"
+          TARGET_APP_ID: ${{ env.EXPECTED_APP_ID }}
+          FORUM_AUTO_POST: "0"
+        run: node .github/scripts/auto-promote-puppeteer.js
+
+      - name: "Bastien Tier 2: Promote via API"
+        id: promote_api
+        if: steps.promote_puppeteer.outcome != 'success'
+        continue-on-error: true
+        env:
+          HOMEY_PAT: ${{ secrets.HOMEY_PAT }}
+          TARGET_APP_ID: ${{ env.EXPECTED_APP_ID }}
+        run: node .github/scripts/auto-publish-draft.js
+
+      - name: Verify Bastien Test channel
+        continue-on-error: true
+        env:
+          HOMEY_PAT: ${{ secrets.HOMEY_PAT }}
+          TARGET_APP_ID: ${{ env.EXPECTED_APP_ID }}
+        run: node .github/scripts/verify-test-version.js || true
