@@ -32,17 +32,268 @@
           "example": "1"
         }
       ],
-      "args": [],
+      "args": [
+        {
+          "name": "button",
+          "type": "dropdown",
+          "title": {
+            "en": "Button",
+            "fr": "Bouton",
+            "nl": "Knop",
+            "de": "Taste"
+          },
+          "values": [
+            {
+              "id": "1",
+              "title": {
+                "en": "Button 1",
+                "fr": "Bouton 1",
+                "nl": "Knop 1",
+                "de": "Taste 1"
+              }
+            },
+            {
+              "id": "2",
+              "title": {
+                "en": "Button 2",
+                "fr": "Bouton 2",
+                "nl": "Knop 2",
+                "de": "Taste 2"
+              }
+            },
+            {
+              "id": "3",
+              "title": {
+                "en": "Button 3",
+                "fr": "Bouton 3",
+                "nl": "Knop 3",
+                "de": "Taste 3"
+              }
+            }
+          ]
+        }
+      ],
       "titleFormatted": {
-        "en": "Button pressed ({button})",
-        "fr": "Bouton appuyé ({button})",
-        "nl": "Knop ingedrukt ({button})",
-        "de": "Taste gedrückt ({button})",
-        "it": "Pulsante premuto ({button})",
-        "sv": "Knapp tryckt ({button})",
-        "no": "Knapp trykket ({button})",
-        "es": "Botón presionado ({button})",
-        "da": "Knap trykket ({button})"
+        "en": "Button pressed [[button]]",
+        "fr": "Bouton appuyé [[button]]",
+        "nl": "Button pressed [[button]]",
+        "de": "Button pressed [[button]]"
+      }
+    },
+    {
+      "id": "remote_button_wireless_button_3gang_button_multi_press",
+      "title": {
+        "en": "Button multi-pressed",
+        "fr": "Bouton multi-cliqué",
+        "nl": "Button multi-pressed",
+        "de": "Button multi-pressed"
+      },
+      "args": [
+        {
+          "name": "button",
+          "type": "dropdown",
+          "title": {
+            "en": "Button",
+            "fr": "Bouton",
+            "nl": "Knop",
+            "de": "Taste"
+          },
+          "values": [
+            {
+              "id": "1",
+              "title": {
+                "en": "Button 1",
+                "fr": "Bouton 1",
+                "nl": "Knop 1",
+                "de": "Taste 1"
+              }
+            },
+            {
+              "id": "2",
+              "title": {
+                "en": "Button 2",
+                "fr": "Bouton 2",
+                "nl": "Knop 2",
+                "de": "Taste 2"
+              }
+            },
+            {
+              "id": "3",
+              "title": {
+                "en": "Button 3",
+                "fr": "Bouton 3",
+                "nl": "Knop 3",
+                "de": "Taste 3"
+              }
+            }
+          ]
+        }
+      ],
+      "tokens": [
+        {
+          "name": "button",
+          "type": "string",
+          "title": {
+            "en": "Button",
+            "fr": "Bouton",
+            "nl": "Knop",
+            "de": "Taste"
+          },
+          "example": "1"
+        },
+        {
+          "name": "count",
+          "type": "number",
+          "title": {
+            "en": "Count",
+            "fr": "Nombre"
+          },
+          "example": 3
+        }
+      ],
+      "titleFormatted": {
+        "en": "Button multi-pressed [[button]]",
+        "fr": "Bouton multi-cliqué [[button]]",
+        "nl": "Button multi-pressed [[button]]",
+        "de": "Button multi-pressed [[button]]"
+      }
+    },
+    {
+      "id": "remote_button_wireless_button_3gang_button_long_press",
+      "title": {
+        "en": "Button long-pressed",
+        "fr": "Bouton pressé longtemps",
+        "nl": "Button long-pressed",
+        "de": "Button long-pressed"
+      },
+      "args": [
+        {
+          "name": "button",
+          "type": "dropdown",
+          "title": {
+            "en": "Button",
+            "fr": "Bouton",
+            "nl": "Knop",
+            "de": "Taste"
+          },
+          "values": [
+            {
+              "id": "1",
+              "title": {
+                "en": "Button 1",
+                "fr": "Bouton 1",
+                "nl": "Knop 1",
+                "de": "Taste 1"
+              }
+            },
+            {
+              "id": "2",
+              "title": {
+                "en": "Button 2",
+                "fr": "Bouton 2",
+                "nl": "Knop 2",
+                "de": "Taste 2"
+              }
+            },
+            {
+              "id": "3",
+              "title": {
+                "en": "Button 3",
+                "fr": "Bouton 3",
+                "nl": "Knop 3",
+                "de": "Taste 3"
+              }
+            }
+          ]
+        }
+      ],
+      "tokens": [
+        {
+          "name": "button",
+          "type": "string",
+          "title": {
+            "en": "Button",
+            "fr": "Bouton",
+            "nl": "Knop",
+            "de": "Taste"
+          },
+          "example": "1"
+        }
+      ],
+      "titleFormatted": {
+        "en": "Button long-pressed [[button]]",
+        "fr": "Bouton pressé longtemps [[button]]",
+        "nl": "Button long-pressed [[button]]",
+        "de": "Button long-pressed [[button]]"
+      }
+    },
+    {
+      "id": "remote_button_wireless_button_3gang_button_double_press",
+      "title": {
+        "en": "Button double-pressed",
+        "fr": "Bouton double-cliqué",
+        "nl": "Button double-pressed",
+        "de": "Button double-pressed"
+      },
+      "args": [
+        {
+          "name": "button",
+          "type": "dropdown",
+          "title": {
+            "en": "Button",
+            "fr": "Bouton",
+            "nl": "Knop",
+            "de": "Taste"
+          },
+          "values": [
+            {
+              "id": "1",
+              "title": {
+                "en": "Button 1",
+                "fr": "Bouton 1",
+                "nl": "Knop 1",
+                "de": "Taste 1"
+              }
+            },
+            {
+              "id": "2",
+              "title": {
+                "en": "Button 2",
+                "fr": "Bouton 2",
+                "nl": "Knop 2",
+                "de": "Taste 2"
+              }
+            },
+            {
+              "id": "3",
+              "title": {
+                "en": "Button 3",
+                "fr": "Bouton 3",
+                "nl": "Knop 3",
+                "de": "Taste 3"
+              }
+            }
+          ]
+        }
+      ],
+      "tokens": [
+        {
+          "name": "button",
+          "type": "string",
+          "title": {
+            "en": "Button",
+            "fr": "Bouton",
+            "nl": "Knop",
+            "de": "Taste"
+          },
+          "example": "1"
+        }
+      ],
+      "titleFormatted": {
+        "en": "Button double-pressed [[button]]",
+        "fr": "Bouton double-cliqué [[button]]",
+        "nl": "Button double-pressed [[button]]",
+        "de": "Button double-pressed [[button]]"
       }
     },
     {

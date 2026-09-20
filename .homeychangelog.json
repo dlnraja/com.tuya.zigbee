@@ -3715,5 +3715,8 @@
   },
   "1.0.14": {
     "en": "Bastien house: fixed fingerprint sync + button flow cards (1-btn numbered, 3-btn, climate). Update to 1.0.14 then REMOVE and re-add the 1-button, 3-button remotes and eWeLink climate sensor. Recreate flows on the new devices."
+  },
+  "1.0.15": {
+    "en": "Flow UX: all buttons of a multi-button remote/wall share one Flow page (dropdown Button 1-N). Fixed Flows that never started. Update then recreate button Flows."
   }
 }
