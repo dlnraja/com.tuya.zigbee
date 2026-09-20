@@ -3719,5 +3719,8 @@
   },
   "9.0.1108": {
     "en": "WiFi LAN reliability (offline grace, command gap, protocol order) + draft-to-test fleet for 3 apps. Update Homey Test. (Athom republish after #3308 hang)"
+  },
+  "9.0.1109": {
+    "en": "Restore TS004x hybrid after Bastien promote wipe; WiFi LAN reliability + draft-to-test fleet. Update Homey Test."
   }
 }
