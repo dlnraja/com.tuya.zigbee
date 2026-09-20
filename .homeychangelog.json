@@ -3747,5 +3747,8 @@
   },
   "1.0.25": {
     "en": "TS0041 Chinese remotes: collapse phantom 4-EP firmware (HA T455202 class). Flows 1-btn."
+  },
+  "1.0.26": {
+    "en": "Improved local LAN reliability (stale-data watchdog, fire-and-forget)."
   }
 }
