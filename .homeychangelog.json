@@ -1,4 +1,8 @@
 {
+  "9.0.1129": {
+    "en": "Bastien benefit: 4-gang _TZ3000_ltt60asa+TS0004 (was Zigbee unknown) + switch/button Flow state fixes. Update Homey Test; re-pair unknown 4-gang module.",
+    "fr": "Bénéfice Bastien: module 4-gang _TZ3000_ltt60asa+TS0004 + correctifs Flows. Maj Test Homey; re-appairer le module inconnu."
+  },
   "9.0.1072": {
     "en": "TRV empty values: force EF00 DP queries after pair (battery passive was skipping 0/10). Update Test + Repair radiator valve."
   },
