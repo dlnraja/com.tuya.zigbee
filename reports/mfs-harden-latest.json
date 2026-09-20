@@ -1,12 +1,12 @@
 {
-  "generatedAt": "2026-09-19T16:48:09.326Z",
+  "generatedAt": "2026-09-20T06:58:07.988Z",
   "mode": "APPLY",
   "phases": [
     {
       "name": "mfs-db-dedupe",
       "ok": true,
       "exit": 0,
-      "tail": "[mfs-db-dedupe] OK — aucun doublon de casse (4686 clés)\n"
+      "tail": "[mfs-db-dedupe] OK — aucun doublon de casse (4689 clés)\n"
     },
     {
       "name": "sync-compose-to-mfs-db",
@@ -24,7 +24,7 @@
       "name": "align-mfs-db-intelligent",
       "ok": true,
       "exit": 0,
-      "tail": "enrich_only p2317-etufnltx-ts1002-foria  \n  registry_enrich_only p2347-gabriel-zemismart-cartesian-doc-only  \n  registry_empty_mfr p2415-zg204zv-tze200-presence  \n  registry_empty_mfr p2415-zs301z-soil  \n  registry_driver_missing p2517-krwtzhfd-ts004f-not-leak  \n  registry_empty_mfr z2m-o4mkahkc-ts0202-motion  \n  registry_empty_mfr z2m-ksz749x8-ts0601-climate  \n  registry_empty_mfr z2m-ksz749x8-tze204-ts0601-climate  \n  registry_oem_multi_canon _tz3000_l9brjwau  \n  registry_bare_brand_multi_canon hobeian  \n  registry_bare_brand_multi_canon hobeian  \n  registry_bare_brand_multi_canon hobeian  \n"
+      "tail": "ly p2317-g9chy2ib-ts0003-3gang  \n  registry_enrich_only p2317-etufnltx-ts1002-foria  \n  registry_enrich_only p2347-gabriel-zemismart-cartesian-doc-only  \n  registry_empty_mfr p2415-zg204zv-tze200-presence  \n  registry_empty_mfr p2415-zs301z-soil  \n  registry_driver_missing p2517-krwtzhfd-ts004f-not-leak  \n  registry_empty_mfr z2m-o4mkahkc-ts0202-motion  \n  registry_empty_mfr z2m-ksz749x8-ts0601-climate  \n  registry_empty_mfr z2m-ksz749x8-tze204-ts0601-climate  \n  registry_oem_multi_canon _tz3000_l9brjwau  \n  registry_bare_brand_multi_canon hobeian  \n  registry_bare_brand_multi_canon hobeian  \n"
     },
     {
       "name": "compose-mfsdb-class-guard",
@@ -42,7 +42,7 @@
       "name": "p2368-mfs-test",
       "ok": true,
       "exit": 0,
-      "tail": "    duration_ms: 43.326938\n      type: 'test'\n      ...\n    # Subtest: no case-duplicate mfr keys\n    ok 5 - no case-duplicate mfr keys\n      ---\n      duration_ms: 46.495129\n      type: 'test'\n      ...\n    # Subtest: UdpDiscoveryKeys SSOT exists (wifi unrelated sanity)\n    ok 6 - UdpDiscoveryKeys SSOT exists (wifi unrelated sanity)\n      ---\n      duration_ms: 0.164596\n      type: 'test'\n      ...\n    1..6\nok 1 - P2368 mfs_db hardening\n  ---\n  duration_ms: 452.505561\n  type: 'suite'\n  ...\n1..1\n# tests 6\n# suites 1\n# pass 6\n# fail 0\n# cancelled 0\n# skipped 0\n# todo 0\n# duration_ms 499.655647\n"
+      "tail": "    duration_ms: 51.474122\n      type: 'test'\n      ...\n    # Subtest: no case-duplicate mfr keys\n    ok 5 - no case-duplicate mfr keys\n      ---\n      duration_ms: 52.923784\n      type: 'test'\n      ...\n    # Subtest: UdpDiscoveryKeys SSOT exists (wifi unrelated sanity)\n    ok 6 - UdpDiscoveryKeys SSOT exists (wifi unrelated sanity)\n      ---\n      duration_ms: 0.250799\n      type: 'test'\n      ...\n    1..6\nok 1 - P2368 mfs_db hardening\n  ---\n  duration_ms: 540.613674\n  type: 'suite'\n  ...\n1..1\n# tests 6\n# suites 1\n# pass 6\n# fail 0\n# cancelled 0\n# skipped 0\n# todo 0\n# duration_ms 611.503185\n"
     }
   ],
   "pass": true

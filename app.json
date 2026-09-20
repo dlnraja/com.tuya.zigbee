@@ -13919,7 +13919,9 @@
           "_TZ3000_B4AWZGCT",
           "_TZ3000_5BPEDA8U",
           "_TZ3000_MRPEVH8P",
-          "_TZ3000_4UPL1FCJ"
+          "_TZ3000_4UPL1FCJ",
+          "_TZ3000_tk3s5tyg",
+          "_tz3000_tk3s5tyg"
         ],
         "productId": [
           "3450-L",
@@ -15518,7 +15520,11 @@
           "_TZ3000_SJ7JBGKS",
           "_tz3000_SJ7JBGKS",
           "_TZ3000_W3C7OURU",
-          "_tz3000_W3C7OURU"
+          "_tz3000_W3C7OURU",
+          "_TZ3000_odzooszq",
+          "_tz3000_odzooszq",
+          "_TYZB01_befsuv3y",
+          "_tyzb01_befsuv3y"
         ],
         "productId": [
           "TS0043",
@@ -15550,10 +15556,7 @@
               5,
               6,
               18,
-              57344,
-              1280,
-              1281,
-              61184
+              57344
             ],
             "bindings": [
               6
@@ -23591,12 +23594,12 @@
           "_tze200_pay2byax",
           "_TZE204_pay2byax",
           "_tze204_pay2byax",
-          "_TZE200_vrcfo4i0",
-          "_tze200_vrcfo4i0",
           "_TZE204_2imwyigp",
           "_tze204_2imwyigp",
           "_TZE200_u6x1zyv2",
-          "_tze200_u6x1zyv2"
+          "_tze200_u6x1zyv2",
+          "_TZE200_vrcfo4i0",
+          "_tze200_vrcfo4i0"
         ]
       },
       "settings": [
@@ -74185,16 +74188,12 @@
           "lumi.sensor_smoke"
         ],
         "manufacturerName": [
-          "_TZ3000_TK3S5TYG",
           "_TZ3000_d0yu2xgi",
-          "_TZ3000_tk3s5tyg",
-          "_tz3000_tk3s5tyg",
           "_TZ3000_D0YU2XGI",
           "_tz3000_d0yu2xgi",
           "_TZE200_ntcy3xu1",
           "_tze200_ntcy3xu1",
           "_TZE200_NTCY3XU1",
-          "_tz3000_TK3S5TYG",
           "_tz3000_D0YU2XGI",
           "_tze200_NTCY3XU1",
           "_TZE284_NTCY3XU1",
@@ -77922,7 +77921,9 @@
           "_TZ3000_zojh9vz7",
           "_tz3000_zojh9vz7",
           "_TZ3000_gsat0axs",
-          "_tz3000_gsat0axs"
+          "_tz3000_gsat0axs",
+          "_TZE200_nkjintbl",
+          "_tze200_nkjintbl"
         ],
         "endpoints": {
           "1": {
@@ -79077,11 +79078,7 @@
           "_TZ3000_ogpla3lh",
           "_tz3000_ogpla3lh",
           "_TZ3000_i9w5mehz",
-          "_tz3000_i9w5mehz",
-          "_TZE200_nkjintbl",
-          "_tze200_nkjintbl",
-          "_TZE200_NKJINTBL",
-          "_tze200_NKJINTBL"
+          "_tz3000_i9w5mehz"
         ],
         "endpoints": {
           "1": {
@@ -91201,9 +91198,15 @@
           "1": {
             "clusters": [
               0,
+              3,
               4,
               5,
+              6,
               258
+            ],
+            "bindings": [
+              258,
+              6
             ]
           }
         },

@@ -1,10 +1,10 @@
 {
-  "timestamp": "2026-09-19T16:48:08.270Z",
+  "timestamp": "2026-09-20T06:58:06.683Z",
   "gate": "align-mfs-db-intelligent",
   "apply": true,
   "check": false,
   "changeCount": 4,
-  "skippedCount": 55,
+  "skippedCount": 56,
   "highSeverityCount": 4,
   "byAction": {
     "registry_force": 4
@@ -138,6 +138,11 @@
     }
   ],
   "skipped": [
+    {
+      "reason": "registry_driver_missing",
+      "caseId": "p2605-nkjintbl-tze200-not-switch2gang-not-btn-plug",
+      "canon": null
+    },
     {
       "reason": "registry_driver_missing",
       "caseId": "p2509-invent-junk-do-not-lock",
