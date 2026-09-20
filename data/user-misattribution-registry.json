@@ -7844,6 +7844,34 @@
       "note": "Bastien flat 3-btn battery remote — UX button.1-3 + 0xFD",
       "source": "p2625-user-report",
       "updated": "2026-09-20"
+    },
+    "p2629-tz3000_vsxvaj9i-ts0043-interview": {
+      "id": "p2629-tz3000_vsxvaj9i-ts0043-interview",
+      "manufacturerName": "_TZ3000_vsxvaj9i",
+      "productId": "TS0043",
+      "canonicalDriver": "button_wireless_3",
+      "forbidMode": "couple",
+      "forbidDrivers": [
+        "virtualdriverzigbee",
+        "remote_button_wireless_wall",
+        "button_wireless_1",
+        "button_wireless_4",
+        "switch_3gang",
+        "scene_switch_3"
+      ],
+      "interview": {
+        "clustersEp1": [
+          0,
+          1,
+          6,
+          57344
+        ],
+        "noEf00": true,
+        "ieee": "a4:c1:38:f6:3d:2d:c9:79"
+      },
+      "note": "P2629 live interview — ZCL 0xFD/E000 sticky 3-btn, battery EP1",
+      "source": "bastien-homey-interview",
+      "updated": "2026-09-20"
     }
   }
 }

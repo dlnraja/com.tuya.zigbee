@@ -459,11 +459,60 @@
       "mfr": "_TZ3000_vsxvaj9i",
       "pid": "TS0043",
       "driver": "button_wireless_3",
-      "source": "live-house-user-report",
+      "source": "live-interview-2026-09-20",
       "status": "live-house",
       "note": "Was virtualdriverzigbee socket — re-pair to 3-Button Wireless Controller",
       "ieee": "a4:c1:38:f6:3d:2d:c9:79",
-      "enrichedAt": "2026-09-20"
+      "enrichedAt": "2026-09-20",
+      "interview": {
+        "deviceType": "enddevice",
+        "receiveWhenIdle": false,
+        "ep1": {
+          "in": [
+            0,
+            1,
+            6,
+            57344
+          ],
+          "out": [
+            25,
+            10
+          ]
+        },
+        "ep2": {
+          "in": [
+            1,
+            6
+          ]
+        },
+        "ep3": {
+          "in": [
+            1,
+            6
+          ]
+        },
+        "ep4": {
+          "in": [
+            1,
+            6
+          ],
+          "note": "phantom"
+        },
+        "noEf00": true,
+        "batteryEp": 1,
+        "batteryPctRaw": 200,
+        "batteryVoltageRaw": 30,
+        "appVersion": 68,
+        "rx": [
+          "onOff_0xFD",
+          "E000",
+          "raw"
+        ],
+        "txForbid": [
+          "0x8004",
+          "EF00"
+        ]
+      }
     },
     {
       "mfr": "eWeLink",

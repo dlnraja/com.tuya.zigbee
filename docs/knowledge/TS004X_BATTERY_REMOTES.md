@@ -53,7 +53,7 @@ Do not invent a LED capability or write backlight DPs on these remotes.
 | Couple | Driver | Source |
 |--------|--------|--------|
 | `_TZ3000_a7ouggvs` + **TS0043** | `button_wireless_3` | DEVICE_TRUTH zemismart-ts0043 |
-| `_TZ3000_vsxvaj9i` + **TS0043** | `button_wireless_3` | Bastien flat 3-btn enddevice — P2625 UX button.1–3 |
+| `_TZ3000_vsxvaj9i` + **TS0043** | `button_wireless_3` | Bastien live interview P2629 — 0xFD/E000, no EF00 |
 | `_TZ3400_key8kk7r` + **TS0043** | `button_wireless_3` | Blakadder ZM-ZS-3 |
 | `_TZ3000_bczr4e10` + **TS0043** | `button_wireless_3` | INT-170 |
 | `_TZ3000_zgyzgdua` + **TS0044** | `scene_switch_4` | meter91 / INT-015 Moes |
@@ -119,3 +119,18 @@ Pairing: hold bottom-left (TS0044) or left button ~10s. Fresh CR2032.
 - Glue Peter SOS/contact mfrs onto TS004x.
 - Force EF00 TX on pure ZCL remotes.
 - Teach 0x8004 for TS0044 in docs (TS004F only).
+
+## Live interview — `_TZ3000_vsxvaj9i`+TS0043 (P2629 Bastien)
+
+| Field | Value |
+|-------|--------|
+| IEEE | `a4:c1:38:f6:3d:2d:c9:79` |
+| Type | enddevice, receiveWhenIdle=false (sleepy) |
+| EP1 in | basic(0), power(1), onOff(6), **E000(57344)** |
+| EP1 out | ota(25), time(10) |
+| EP2–4 in | onOff(6), power(1) — phantom battery 0 |
+| EF00 | **absent** — no DP path |
+| Battery | EP1 `batteryPercentageRemaining=200` → 100%; voltage 30 (=3.0 V) |
+| RX | OnOff mfr **0xFD** per EP1–3 + E000/raw parallel |
+| TX forbid | genOnOff **0x8004**, EF00 writes, battery configure storm |
+
