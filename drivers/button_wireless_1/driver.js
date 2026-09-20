@@ -1,90 +1,51 @@
 'use strict';
 
 const BaseZigBeeDriver = require('../../lib/drivers/BaseZigBeeDriver');
+const { shouldRunForDeviceAndButton } = require('../../lib/FlowCardHelper');
 
 /**
- * v10.0.1: Button 1-Gang Driver for button_wireless_1
- * Fixes: undefined batteryCard, duplicate _flowCardsRegistered, missing flow cards in compose
- *
- * CRITICAL: Flow card IDs MUST match driver.flow.compose.json exactly!
+ * Button 1-Gang Driver — flow IDs must match driver.flow.compose.json
+ * WHY(P2630): never require args.device on device triggers (Homey omits it).
  */
 class Button1GangDriver extends BaseZigBeeDriver {
 
   async onInit() {
     await super.onInit();
-    if (this._flowCardsRegistered) {return;}
+    if (this._flowCardsRegistered) return;
     this._flowCardsRegistered = true;
 
-    this.log('Button1GangDriver v10.0.1 initialized');
+    this.log('Button1GangDriver P2630 initialized');
     this._registerFlowCards();
   }
 
   _registerFlowCards() {
-    // Main triggers with button token
     const mainTriggers = [
       'button_wireless_1_button_1gang_button_pressed',
       'button_wireless_1_button_1gang_button_double_press',
       'button_wireless_1_button_1gang_button_long_press',
-      'button_wireless_1_button_1gang_button_multi_press'
+      'button_wireless_1_button_1gang_button_multi_press',
     ];
-
-    for (const triggerId of mainTriggers) {
-      try {
-        const card = this._getFlowCard(triggerId, 'trigger');
-        if (card) {
-          card.registerRunListener(async (args, state) => {
-            if (!args.device) {
-              this.error(`[FLOW] Device not found for ${triggerId}`);
-              return false;
-            }
-            return true;
-          });
-          this.log(`[FLOW] Registered: ${triggerId}`);
-        }
-      } catch (e) {
-        this.log(`[FLOW] ${triggerId} not available: ${e.message}`);
-      }
-    }
-
-    // Button 1 specific triggers (no token needed)
     const button1Triggers = [
       'button_wireless_1_button_1gang_button_1_pressed',
       'button_wireless_1_button_1gang_button_1_double',
       'button_wireless_1_button_1gang_button_1_long',
       'button_wireless_1_button_1gang_button_1_triple',
-      'button_wireless_1_button_1gang_button_1_release'
+      'button_wireless_1_button_1gang_button_1_release',
+    ];
+    const extras = [
+      'button_wireless_1_battery_low',
+      'button_wireless_1_button_1gang_button_scene_recall',
     ];
 
-    for (const triggerId of button1Triggers) {
+    for (const triggerId of [...mainTriggers, ...button1Triggers, ...extras]) {
       try {
         const card = this._getFlowCard(triggerId, 'trigger');
-        if (card) {
-          card.registerRunListener(async (args, state) => {
-            if (!args.device) {
-              this.error(`[FLOW] Device not found for ${triggerId}`);
-              return false;
-            }
-            return true;
-          });
-          this.log(`[FLOW] Registered: ${triggerId}`);
-        }
+        if (!card) continue;
+        card.registerRunListener(async (args = {}, state = {}) => shouldRunForDeviceAndButton(args, state));
+        this.log(`[FLOW] Registered: ${triggerId}`);
       } catch (e) {
         this.log(`[FLOW] ${triggerId} not available: ${e.message}`);
       }
-    }
-
-    // Battery trigger
-    try {
-      const batteryCard = this._getFlowCard('button_wireless_1_battery_low', 'trigger');
-      if (batteryCard) {
-        batteryCard.registerRunListener(async (args, state) => {
-          if (!args.device) {return false;}
-          return true;
-        });
-        this.log('[FLOW] Registered: button_wireless_1_battery_low');
-      }
-    } catch (e) {
-      // Optional
     }
   }
 }
