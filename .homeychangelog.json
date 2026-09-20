@@ -3722,5 +3722,8 @@
   },
   "9.0.1109": {
     "en": "Restore TS004x hybrid after Bastien promote wipe; WiFi LAN reliability + draft-to-test fleet. Update Homey Test."
+  },
+  "9.0.1110": {
+    "en": "Fix WiFi compose (strip empty zigbee) + TS004x hybrid restore + LAN reliability. Update Homey Test."
   }
 }
