@@ -2,9 +2,26 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>Universal Tuya Settings</title>
+  <title>Zigbee Bastien Settings</title>
   <script type="text/javascript" src="/homey.js" data-origin="settings"></script>
-  <script src="zigbee-map.js"></script>
+  <!--
+    P2623: Homey shows a blank infinite loader until Homey.ready().
+    Define onHomeyReady BEFORE any heavy script so a zigbee-map / DOM failure
+    cannot trap the settings WebView forever. Full UI boots via __tuyaSettingsBoot.
+  -->
+  <script>
+    function onHomeyReady(homey) {
+      try { window.__homeySettings = homey; } catch (e0) {}
+      try { homey.ready(); } catch (e1) {}
+      try {
+        if (typeof window.__tuyaSettingsBoot === 'function') {
+          setTimeout(function () {
+            try { window.__tuyaSettingsBoot(homey); } catch (e2) { console.error('settings boot', e2); }
+          }, 0);
+        }
+      } catch (e3) {}
+    }
+  </script>
   <style>
     body {
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
@@ -307,16 +324,28 @@
   </style>
 </head>
 <body>
-  <h1>Universal Tuya Zigbee + WiFi</h1>
-  <p>Local Zigbee + WiFi on Homey Pro. Settings include a retractable mesh spider map.</p>
+  <h1>Zigbee Bastien</h1>
+  <p>Local Zigbee + WiFi on Homey Pro. Open diagnostics from the app menu (see below).</p>
+
+  <div class="card" id="diag-card" style="border-color:#86efac;background:#f0fdf4;">
+    <b>Send diagnostic logs (Homey)</b>
+    <p style="font-size:12px;color:#166534;margin:8px 0 0 0;">
+      Settings must load first. Then: <b>Homey → Apps → Zigbee Bastien → ⋮ (three dots) → Send diagnostic report</b>.
+      Enable <i>Developer debug mode</i> below before sending if you can. Paste the UUID to Dylan.
+    </p>
+  </div>
 
   <div class="card">
     <b>Links</b><br>
-    <a href="https://github.com/dlnraja/com.tuya.zigbee/issues" target="_blank">Report Issue</a> |
-    <a href="https://community.homey.app/t/app-pro-universal-tuya-zigbee-device-app-test/140352" target="_blank">Forum</a>
+    <a href="https://github.com/dlnraja/com.tuya.zigbee/issues" target="_blank">Report Issue</a>
   </div>
 
-  <div class="card mesh-card" id="mesh-card">
+  <div class="card">
+    <button class="btn btn-c" type="button" id="btn-show-mesh">Show Zigbee mesh map</button>
+    <span style="font-size:11px;color:#64748b;margin-left:8px;">Optional — skipped on open to avoid blank loader.</span>
+  </div>
+
+  <div class="card mesh-card" id="mesh-card" style="display:none;">
     <h3>Zigbee mesh — spider map</h3>
     <p style="font-size:11px;color:#64748b;margin-bottom:8px;">
       Retractable toile d’araignée of <b>this app’s</b> paired devices (Homey in the center).
@@ -525,10 +554,19 @@
     <b>Tip:</b> If a device doesn't work, remove it, factory reset (hold button 5-10s), then re-pair close to Homey.
   </div>
 
+  <!-- Loaded AFTER ready-stub so a map parse error cannot block Homey.ready() -->
+  <script src="zigbee-map.js"></script>
   <script>
     var Homey = null;
     var tuyaSecretConfigured = false;
     var smartThingsSecretConfigured = false;
+    var __settingsBooted = false;
+
+    function el(id) { return document.getElementById(id); }
+    function enableBtn(id) {
+      var n = el(id);
+      if (n) n.disabled = false;
+    }
 
     function show(id, t) {
       var e = document.getElementById(id);
@@ -570,13 +608,14 @@
 
     function updateSTSecretStatus(has) {
       smartThingsSecretConfigured = !!has;
-      var el = document.getElementById('st-sec-status');
+      var node = el('st-sec-status');
+      if (!node) return;
       if (has) {
-        el.textContent = 'Secret is configured';
-        el.className = 'ss on';
+        node.textContent = 'Secret is configured';
+        node.className = 'ss on';
       } else {
-        el.textContent = 'No secret saved';
-        el.className = 'ss';
+        node.textContent = 'No secret saved';
+        node.className = 'ss';
       }
     }
 
@@ -692,13 +731,14 @@
 
     function updateSecretStatus(has) {
       tuyaSecretConfigured = !!has;
-      var el = document.getElementById('sec-status');
+      var s = el('sec-status');
+      if (!s) return;
       if (has) {
-        el.textContent = 'Secret is configured';
-        el.className = 'ss on';
+        s.textContent = 'Secret is configured';
+        s.className = 'ss on';
       } else {
-        el.textContent = 'No secret saved';
-        el.className = 'ss';
+        s.textContent = 'No secret saved';
+        s.className = 'ss';
       }
     }
 
@@ -708,19 +748,19 @@
     function populateDevices() {
       if (!Homey) return;
 
-      var oldSel = document.getElementById('device-old');
-      var newSel = document.getElementById('device-new');
+      var oldSel = el('device-old');
+      var newSel = el('device-new');
       if (oldSel) oldSel.innerHTML = '<option value="">Loading devices…</option>';
       if (newSel) newSel.innerHTML = '<option value="">Loading devices…</option>';
 
-      // P117: timeout so settings never spin forever (#380 / forum empty page)
+      // P117/P2623: timeout so settings never spin forever
       var settled = false;
       var timer = setTimeout(function() {
         if (settled) return;
         settled = true;
         if (oldSel) oldSel.innerHTML = '<option value="">Timeout loading devices</option>';
         if (newSel) newSel.innerHTML = '<option value="">Timeout loading devices</option>';
-      }, 12000);
+      }, 8000);
 
       Homey.api('GET', '/devices', {}, function(err, devices) {
         if (settled) return;
@@ -728,16 +768,16 @@
         clearTimeout(timer);
         if (err) {
           console.error('Failed to get devices:', err);
-          oldSel.innerHTML = '<option value="">Error loading devices</option>';
-          newSel.innerHTML = '<option value="">Error loading devices</option>';
+          if (oldSel) oldSel.innerHTML = '<option value="">Error loading devices</option>';
+          if (newSel) newSel.innerHTML = '<option value="">Error loading devices</option>';
           return;
         }
 
         activeDevicesList = devices || [];
         
         if (activeDevicesList.length === 0) {
-          oldSel.innerHTML = '<option value="">No devices found</option>';
-          newSel.innerHTML = '<option value="">No devices found</option>';
+          if (oldSel) oldSel.innerHTML = '<option value="">No devices found</option>';
+          if (newSel) newSel.innerHTML = '<option value="">No devices found</option>';
           return;
         }
 
@@ -750,17 +790,18 @@
           newHtml += '<option value="' + d.id + '">' + label + '</option>';
         });
 
-        oldSel.innerHTML = oldHtml;
-        newSel.innerHTML = newHtml;
+        if (oldSel) oldSel.innerHTML = oldHtml;
+        if (newSel) newSel.innerHTML = newHtml;
         
-        document.getElementById('btn-repair').disabled = false;
+        enableBtn('btn-repair');
       });
     }
 
     function executeFlowRepair() {
-      var oldId = document.getElementById('device-old').value;
-      var newId = document.getElementById('device-new').value;
-      var resultBox = document.getElementById('repair-result');
+      var oldId = el('device-old') && el('device-old').value;
+      var newId = el('device-new') && el('device-new').value;
+      var resultBox = el('repair-result');
+      if (!resultBox) return;
       
       if (!oldId || !newId) {
         resultBox.textContent = 'Please select both an old device and a new replacement device.';
@@ -776,17 +817,18 @@
         return;
       }
 
-      // UI Loading States
-      document.getElementById('btn-repair').disabled = true;
-      document.getElementById('repair-spinner').style.display = 'inline-block';
-      document.getElementById('btn-text').textContent = 'Repairing flows...';
+      var btnRepair = el('btn-repair');
+      var spinner = el('repair-spinner');
+      var btnText = el('btn-text');
+      if (btnRepair) btnRepair.disabled = true;
+      if (spinner) spinner.style.display = 'inline-block';
+      if (btnText) btnText.textContent = 'Repairing flows...';
       resultBox.style.display = 'none';
 
       Homey.api('POST', '/replace', { oldId: oldId, newId: newId }, function(err, res) {
-        // Restore UI States
-        document.getElementById('btn-repair').disabled = false;
-        document.getElementById('repair-spinner').style.display = 'none';
-        document.getElementById('btn-text').textContent = 'Replace Device in Flows';
+        if (btnRepair) btnRepair.disabled = false;
+        if (spinner) spinner.style.display = 'none';
+        if (btnText) btnText.textContent = 'Replace Device in Flows';
 
         if (err) {
           resultBox.textContent = 'Error: ' + (err.message || err);
@@ -801,8 +843,6 @@
                                 '• Advanced Flows updated: <strong>' + res.advancedFlowsUpdated + '</strong>';
           resultBox.className = 'repair-result-box success';
           resultBox.style.display = 'block';
-          
-          // Refresh selection list
           populateDevices();
         } else {
           resultBox.textContent = 'Unexpected response from server.';
@@ -812,42 +852,69 @@
       });
     }
 
-    function onHomeyReady(homey) {
-      try { Homey = homey; } catch (x) {}
-      try { Homey.ready(); } catch (x) {}
-      
-      document.getElementById('btn-save').disabled = false;
-      document.getElementById('btn-clear').disabled = false;
-      document.getElementById('btn-save-st').disabled = false;
-      document.getElementById('btn-clear-st').disabled = false;
-      
-      Homey.get('tuya_cloud_access_id', function(e, v) { if (v) document.getElementById('aid').value = v; });
-      Homey.get('tuya_cloud_access_secret', function(e, v) { updateSecretStatus(!!v); });
-      Homey.get('tuya_cloud_region', function(e, v) { if (v) document.getElementById('reg').value = v; });
-      Homey.get('tuya_cloud_auto_region', function(e, v) {
-        var el = document.getElementById('auto-reg');
-        if (el) el.checked = (v === undefined || v === null || v === '' || v === true || v === '1');
-      });
-      Homey.get('wifi_default_cloud_fallback', function(e, v) {
-        var el = document.getElementById('wifi-cloud-fallback');
-        if (el) el.checked = !!v;
-      });
+    /**
+     * P2623: heavy UI boot AFTER Homey.ready() (see head stub).
+     * Contre quoi: blank infinite loader when mesh/WiFi auto-scan freezes WebView.
+     */
+    window.__tuyaSettingsBoot = function (homey) {
+      if (__settingsBooted) return;
+      __settingsBooted = true;
+      try { Homey = homey || window.__homeySettings; } catch (x) {}
+      if (!Homey) return;
 
-      var btnWifiLan = document.getElementById('btn-wifi-lan-refresh');
+      enableBtn('btn-save');
+      enableBtn('btn-clear');
+      enableBtn('btn-save-st');
+      enableBtn('btn-clear-st');
+
+      try {
+        Homey.get('tuya_cloud_access_id', function(e, v) { if (v && el('aid')) el('aid').value = v; });
+        Homey.get('tuya_cloud_access_secret', function(e, v) { updateSecretStatus(!!v); });
+        Homey.get('tuya_cloud_region', function(e, v) { if (v && el('reg')) el('reg').value = v; });
+        Homey.get('tuya_cloud_auto_region', function(e, v) {
+          var auto = el('auto-reg');
+          if (auto) auto.checked = (v === undefined || v === null || v === '' || v === true || v === '1');
+        });
+        Homey.get('wifi_default_cloud_fallback', function(e, v) {
+          var w = el('wifi-cloud-fallback');
+          if (w) w.checked = !!v;
+        });
+        Homey.get('smartthings_client_id', function(e, v) { if (v && el('st-cid')) el('st-cid').value = v; });
+        Homey.get('smartthings_client_secret', function(e, v) { updateSTSecretStatus(!!v); });
+        Homey.get('developer_debug_mode', function(e, v) { if (el('dbg')) el('dbg').checked = !!v; });
+        Homey.get('issue_report_endpoint', function(e, v) { if (v && el('ire')) el('ire').value = v; });
+        Homey.get('experimental_smart_adapt', function(e, v) { if (el('sa')) el('sa').checked = !!v; });
+      } catch (eGet) { console.error('settings get', eGet); }
+
+      var btnWifiLan = el('btn-wifi-lan-refresh');
       if (btnWifiLan) {
         btnWifiLan.addEventListener('click', function () { refreshWifiLanMap(); });
-        setTimeout(function () { refreshWifiLanMap(); }, 400);
+        // P2623: do NOT auto-scan LAN/TCP on open — freezes Homey settings WebView
       }
-      
-      Homey.get('smartthings_client_id', function(e, v) { if (v) document.getElementById('st-cid').value = v; });
-      Homey.get('smartthings_client_secret', function(e, v) { updateSTSecretStatus(!!v); });
-      Homey.get('developer_debug_mode', function(e, v) { document.getElementById('dbg').checked = !!v; });
-      Homey.get('issue_report_endpoint', function(e, v) { if (v) document.getElementById('ire').value = v; });
-      Homey.get('experimental_smart_adapt', function(e, v) { document.getElementById('sa').checked = !!v; });
-      
-      // Load and populate devices
-      populateDevices();
-      try { if (window.TuyaZigbeeMap) window.TuyaZigbeeMap.init(Homey); } catch (x) {}
+
+      var btnShowMesh = el('btn-show-mesh');
+      if (btnShowMesh) {
+        btnShowMesh.addEventListener('click', function () {
+          var card = el('mesh-card');
+          if (card) card.style.display = '';
+          btnShowMesh.style.display = 'none';
+          try {
+            if (window.TuyaZigbeeMap && typeof window.TuyaZigbeeMap.init === 'function') {
+              window.TuyaZigbeeMap.init(Homey);
+            }
+          } catch (x) { console.error('mesh init', x); }
+        });
+      }
+
+      // Defer device list — non-blocking
+      setTimeout(function () {
+        try { populateDevices(); } catch (x) { console.error('populateDevices', x); }
+      }, 50);
+    };
+
+    // If Homey called ready before this script finished parsing, finish boot now
+    if (window.__homeySettings) {
+      try { window.__tuyaSettingsBoot(window.__homeySettings); } catch (e) {}
     }
   </script>
 </body>
