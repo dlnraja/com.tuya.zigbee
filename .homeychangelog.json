@@ -3704,5 +3704,8 @@
   },
   "9.0.1103": {
     "en": "TS0043 wall_remote class:remote device-view charter + voice gate. Update Test."
+  },
+  "9.0.1104": {
+    "en": "Improved TS0043/TS0044 scene remote press detection with complementary fallback paths."
   }
 }

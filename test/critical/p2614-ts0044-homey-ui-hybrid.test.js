@@ -64,6 +64,9 @@ describe('P2614 hybrid fleet wiring', () => {
         src.includes('maxButtons: 4') || src.includes('maxButtons:4'),
         `${driverId} wrong maxButtons`,
       );
+      // P2616: hybrid must not wipe dedicated stacks
+      assert.ok(src.includes('_setupE000Detection'), `${driverId} lost dedicated E000`);
+      assert.ok(src.includes('_setupRawFrameInterceptor'), `${driverId} lost dedicated raw`);
       assert.ok(!/never.*0x8004|no 0x8004|writeSceneAttr:\s*false/i.test(src) || true);
     }
   });
