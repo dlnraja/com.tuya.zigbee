@@ -3752,5 +3752,8 @@
   },
   "9.0.1120": {
     "en": "Fixed Zigbee fingerprint sync so battery remotes pair to the correct drivers and flows fire. Update then remove+re-pair affected remotes."
+  },
+  "9.0.1121": {
+    "en": "Improved wireless button flow card matching (1-button numbered cards). Update then re-pair remotes if flows were silent."
   }
 }
