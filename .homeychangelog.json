@@ -3712,5 +3712,8 @@
   },
   "1.0.13": {
     "en": "Fixed pairing so 1-button and 3-button remotes join the correct drivers (flows work). Update app, then REMOVE and re-add both remotes + the eWeLink climate sensor."
+  },
+  "1.0.14": {
+    "en": "Bastien house: fixed fingerprint sync + button flow cards (1-btn numbered, 3-btn, climate). Update to 1.0.14 then REMOVE and re-add the 1-button, 3-button remotes and eWeLink climate sensor. Recreate flows on the new devices."
   }
 }
