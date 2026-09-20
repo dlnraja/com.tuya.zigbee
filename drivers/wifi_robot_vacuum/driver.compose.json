@@ -252,6 +252,46 @@
               }
             }
           ]
+        },
+        {
+          "id": "command_gap_ms",
+          "type": "number",
+          "label": {
+            "en": "Command Gap (ms)",
+            "fr": "Écart entre commandes (ms)",
+            "nl": "Opdracht-interval (ms)",
+            "de": "Befehlsabstand (ms)"
+          },
+          "value": 100,
+          "min": 0,
+          "max": 10000,
+          "units": {
+            "en": "ms"
+          },
+          "hint": {
+            "en": "Minimum gap between two LAN commands. Helps firmware that silently drops rapid SETs (protocol 3.4/3.5).",
+            "fr": "Délai minimum entre deux commandes LAN. Évite les SET perdus sur protocole 3.4/3.5."
+          }
+        },
+        {
+          "id": "offline_grace_seconds",
+          "type": "number",
+          "label": {
+            "en": "Offline Grace (seconds)",
+            "fr": "Délai hors-ligne (s)",
+            "nl": "Offline-grace (s)",
+            "de": "Offline-Karenz (s)"
+          },
+          "value": 60,
+          "min": 0,
+          "max": 600,
+          "units": {
+            "en": "s"
+          },
+          "hint": {
+            "en": "Delay before marking unavailable / firing disconnect flows after a brief TCP drop (pet feeders, dehumidifiers).",
+            "fr": "Délai avant indisponible / flux déconnecté après une brève coupure TCP (pet feeders, déshumidificateurs)."
+          }
         }
       ]
     },
