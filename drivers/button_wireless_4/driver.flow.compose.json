@@ -21,11 +21,63 @@
           "example": "1"
         }
       ],
-      "args": [],
+      "args": [
+        {
+          "name": "button",
+          "type": "dropdown",
+          "title": {
+            "en": "Button",
+            "fr": "Bouton",
+            "nl": "Knop",
+            "de": "Taste"
+          },
+          "values": [
+            {
+              "id": "1",
+              "title": {
+                "en": "Button 1",
+                "fr": "Bouton 1",
+                "nl": "Knop 1",
+                "de": "Taste 1"
+              }
+            },
+            {
+              "id": "2",
+              "title": {
+                "en": "Button 2",
+                "fr": "Bouton 2",
+                "nl": "Knop 2",
+                "de": "Taste 2"
+              }
+            },
+            {
+              "id": "3",
+              "title": {
+                "en": "Button 3",
+                "fr": "Bouton 3",
+                "nl": "Knop 3",
+                "de": "Taste 3"
+              }
+            },
+            {
+              "id": "4",
+              "title": {
+                "en": "Button 4",
+                "fr": "Bouton 4",
+                "nl": "Knop 4",
+                "de": "Taste 4"
+              }
+            }
+          ]
+        }
+      ],
       "titleFormatted": {
-        "en": "A button was pressed ({button})",
-        "fr": "Un bouton a été appuyé ({button})"
-      }
+        "en": "Button pressed [[button]]",
+        "fr": "Bouton appuyé [[button]]",
+        "nl": "Button pressed [[button]]",
+        "de": "Button pressed [[button]]"
+      },
+      "highlight": true
     },
     {
       "id": "button_wireless_4_button_4gang_button_double_press",
@@ -48,10 +100,61 @@
           "example": "1"
         }
       ],
-      "args": [],
+      "args": [
+        {
+          "name": "button",
+          "type": "dropdown",
+          "title": {
+            "en": "Button",
+            "fr": "Bouton",
+            "nl": "Knop",
+            "de": "Taste"
+          },
+          "values": [
+            {
+              "id": "1",
+              "title": {
+                "en": "Button 1",
+                "fr": "Bouton 1",
+                "nl": "Knop 1",
+                "de": "Taste 1"
+              }
+            },
+            {
+              "id": "2",
+              "title": {
+                "en": "Button 2",
+                "fr": "Bouton 2",
+                "nl": "Knop 2",
+                "de": "Taste 2"
+              }
+            },
+            {
+              "id": "3",
+              "title": {
+                "en": "Button 3",
+                "fr": "Bouton 3",
+                "nl": "Knop 3",
+                "de": "Taste 3"
+              }
+            },
+            {
+              "id": "4",
+              "title": {
+                "en": "Button 4",
+                "fr": "Bouton 4",
+                "nl": "Knop 4",
+                "de": "Taste 4"
+              }
+            }
+          ]
+        }
+      ],
       "titleFormatted": {
-        "en": "A button was double-pressed ({button})",
-        "fr": "Un bouton a été double-cliqué ({button})"
+        "en": "Button double-pressed [[button]]",
+        "fr": "Bouton double-cliqué [[button]]",
+        "nl": "Button double-pressed [[button]]",
+        "de": "Button double-pressed [[button]]"
       }
     },
     {
@@ -75,10 +178,61 @@
           "example": "1"
         }
       ],
-      "args": [],
+      "args": [
+        {
+          "name": "button",
+          "type": "dropdown",
+          "title": {
+            "en": "Button",
+            "fr": "Bouton",
+            "nl": "Knop",
+            "de": "Taste"
+          },
+          "values": [
+            {
+              "id": "1",
+              "title": {
+                "en": "Button 1",
+                "fr": "Bouton 1",
+                "nl": "Knop 1",
+                "de": "Taste 1"
+              }
+            },
+            {
+              "id": "2",
+              "title": {
+                "en": "Button 2",
+                "fr": "Bouton 2",
+                "nl": "Knop 2",
+                "de": "Taste 2"
+              }
+            },
+            {
+              "id": "3",
+              "title": {
+                "en": "Button 3",
+                "fr": "Bouton 3",
+                "nl": "Knop 3",
+                "de": "Taste 3"
+              }
+            },
+            {
+              "id": "4",
+              "title": {
+                "en": "Button 4",
+                "fr": "Bouton 4",
+                "nl": "Knop 4",
+                "de": "Taste 4"
+              }
+            }
+          ]
+        }
+      ],
       "titleFormatted": {
-        "en": "A button was long-pressed ({button})",
-        "fr": "Un bouton a été appuyé longtemps ({button})"
+        "en": "Button long-pressed [[button]]",
+        "fr": "Bouton pressé longtemps [[button]]",
+        "nl": "Button long-pressed [[button]]",
+        "de": "Button long-pressed [[button]]"
       }
     },
     {
@@ -111,10 +265,61 @@
           "example": 3
         }
       ],
-      "args": [],
+      "args": [
+        {
+          "name": "button",
+          "type": "dropdown",
+          "title": {
+            "en": "Button",
+            "fr": "Bouton",
+            "nl": "Knop",
+            "de": "Taste"
+          },
+          "values": [
+            {
+              "id": "1",
+              "title": {
+                "en": "Button 1",
+                "fr": "Bouton 1",
+                "nl": "Knop 1",
+                "de": "Taste 1"
+              }
+            },
+            {
+              "id": "2",
+              "title": {
+                "en": "Button 2",
+                "fr": "Bouton 2",
+                "nl": "Knop 2",
+                "de": "Taste 2"
+              }
+            },
+            {
+              "id": "3",
+              "title": {
+                "en": "Button 3",
+                "fr": "Bouton 3",
+                "nl": "Knop 3",
+                "de": "Taste 3"
+              }
+            },
+            {
+              "id": "4",
+              "title": {
+                "en": "Button 4",
+                "fr": "Bouton 4",
+                "nl": "Knop 4",
+                "de": "Taste 4"
+              }
+            }
+          ]
+        }
+      ],
       "titleFormatted": {
-        "en": "A button was multi-pressed ({button}) ({count})",
-        "fr": "Un bouton a été multi-cliqué ({button}) ({count})"
+        "en": "Button multi-pressed [[button]]",
+        "fr": "Bouton multi-cliqué [[button]]",
+        "nl": "Button multi-pressed [[button]]",
+        "de": "Button multi-pressed [[button]]"
       }
     },
     {
