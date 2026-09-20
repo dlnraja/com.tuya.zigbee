@@ -33,15 +33,15 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 
 | Metric | Value |
 |--------|-------|
-| **App Version** | v9.0.1133 |
+| **App Version** | v9.0.1134 |
 | **Drivers** | 434 (381 Zigbee + 53 WiFi) |
 | **Unique Fingerprints** | 4,694 |
 | **Pairing Variants** | 16,434 (4 case combos per fingerprint) |
 | **Unique Product IDs** | 598 |
-| **Flow Cards** | 6,055 |
+| **Flow Cards** | 6,052 |
 | **Unique Capabilities** | 170 |
 | **Native OTA Drivers** | 8 |
-| **Test Suites** | 431 files |
+| **Test Suites** | 432 files |
 | **SVG Icons** | 734 |
 | **Languages** | EN, FR, NL, DE |
 | **SDK / Homey** | 3 / >= 12.2.0 |
@@ -103,6 +103,7 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 
 | Version | Changes |
 |---------|---------|
+| **v9.0.1134** | TS0043 _TZ3000_famkxci2 stays Wireless Button 3 (no Generic Zigbee). Curtain TS130F e3vhyirx wall switch lock. Ceiling radar presence cle… |
 | **v9.0.1133** | Improved Chinese TS0041 remotes with phantom 4-endpoint firmware (single/double/hold Flows). |
 | **v9.0.1132** | Improved Moes Star Ring / TS0041 wireless button (Flows single/double/hold, battery). |
 | **v9.0.1131** | Improved 4-gang switch pairing (TS0004) and LCD climate fingerprint; button/actuator Flow reliability. |
@@ -114,7 +115,6 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 | **v9.0.1123** | Improved TS0043 3-button remote from live interview (clusters E000/OnOff, no EF00). Update then re-pair. |
 | **v9.0.1122** | Improved multi-button remote Flow UX (Button 1-N on one card) and fixed silent button Flows. Update then recreate Flows if needed. |
 | **v9.0.1121** | Improved wireless button flow card matching (1-button numbered cards). Update then re-pair remotes if flows were silent. |
-| **v9.0.1120** | Fixed Zigbee fingerprint sync so battery remotes pair to the correct drivers and flows fire. Update then remove+re-pair affected remotes. |
 
 <!-- CHANGELOG_END -->
 
