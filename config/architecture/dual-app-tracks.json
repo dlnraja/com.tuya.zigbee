@@ -562,6 +562,10 @@
     "p2642_tuyalocal_fire_and_forget_lan": {
       "tag": "BOTH",
       "note": "TuyaLocalClient fire-and-forget SET (3.4/3.5 / pulse) — LAN reliability"
+    },
+    "p2643_complementary_homey_apps_catalog": {
+      "tag": "MASTER_ONLY",
+      "note": "SSOT + docs catalog of Homey Live/Test peers (tuyalocal, Johan, Drenso, Heine) + SourceCredits — cite/credit only"
     }
   }
 }
