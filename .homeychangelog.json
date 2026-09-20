@@ -1830,5 +1830,8 @@
   },
   "5.12.268": {
     "en": "Stable: track-adaptive critical test runner (skip MASTER_ONLY deps). Update Stable Test."
+  },
+  "5.12.269": {
+    "en": "Stable: sacred mfr+pid couple locks for Moes ZT-YK remotes. Update Stable Test."
   }
 }

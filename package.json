@@ -1,6 +1,6 @@
 {
   "name": "com.dlnraja.tuya.zigbee",
-  "version": "5.12.268",
+  "version": "5.12.269",
   "description": "Tuya Unified Zigbee - Local-first control with AI automation",
   "main": "app.js",
   "scripts": {
@@ -264,6 +264,7 @@
     "check:p260x": "npm run check:p2608 && npm run check:p2609",
     "check:p2610": "node --test test/critical/p2610-bastien-external-multi-enrich.test.js",
     "check:p2611": "node --test test/critical/p2611-dual-app-layer-gate-adaptive.test.js",
+    "check:p2612": "node --test test/critical/p2612-sacred-couple-pid-mfs.test.js",
     "enrich:bastien:external": "node tools/ci/p2610-bastien-external-multi-enrich.js"
   },
   "keywords": [
