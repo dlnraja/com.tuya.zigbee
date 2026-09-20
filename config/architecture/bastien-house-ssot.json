@@ -51,9 +51,9 @@
     ],
     "note": "Live house learnings promote upstream surgically on cron + enrich/forum soft hooks. Public apps never dump features into Bastien wholesale. Identity never copied.",
     "lastExternalPass": {
-      "at": "2026-09-19T22:50:53.331Z",
-      "patch": "P2610",
-      "note": "inventory+tk3s5tyg rehome; collision-safe"
+      "at": "2026-09-20T16:29:46.010Z",
+      "patch": "P2627",
+      "note": "live inventory + flow heuristics + publish sync-appjson"
     },
     "externalSources": [
       "Z2M",
@@ -97,9 +97,11 @@
       "mfr": "_TZ3000_axpdxqgu",
       "pid": "TS0041",
       "driver": "button_wireless_1",
-      "source": "Johan",
-      "status": "verified-candidate",
-      "enrichedAt": "2026-09-19"
+      "source": "live-house-diag-e8d98608",
+      "status": "live-house",
+      "enrichedAt": "2026-09-20",
+      "note": "Was remote_button_wireless_wall — re-pair required for flows",
+      "ieee": "7c:c6:b6:ff:fe:a3:e1:58"
     },
     {
       "mfr": "_TZ3000_peszejy7",
@@ -452,11 +454,35 @@
       "source": "P2448 stay 4-btn",
       "status": "verified-candidate",
       "enrichedAt": "2026-09-19"
+    },
+    {
+      "mfr": "_TZ3000_vsxvaj9i",
+      "pid": "TS0043",
+      "driver": "button_wireless_3",
+      "source": "live-house-user-report",
+      "status": "live-house",
+      "note": "Was virtualdriverzigbee socket — re-pair to 3-Button Wireless Controller",
+      "ieee": "a4:c1:38:f6:3d:2d:c9:79",
+      "enrichedAt": "2026-09-20"
+    },
+    {
+      "mfr": "eWeLink",
+      "pid": "CK-TLSR8656-SS5-01(7014)",
+      "driver": "climate_sensor",
+      "source": "live-house-interview",
+      "status": "live-house",
+      "note": "Was virtualdriverzigbee — re-pair to climate_sensor",
+      "ieee": "a4:c1:38:09:4f:ff:ff:ff",
+      "enrichedAt": "2026-09-20"
     }
   ],
   "notes": [
     "On-site: pair each device, lock manufacturerName+productId, fix RX/TX on bastien-home first.",
     "P2607: cron + enrich/forum hooks auto-apply AUTO_SAFE Bastien→master; BOTH reliability → stable-v5.",
     "device.js overwrites stay manual-review (except brand-new drivers)."
-  ]
+  ],
+  "externalAppsNote": {
+    "somfy_tahoma": "Blinds via com.somfy.tahoma — not Bastien; flows: Bastien button → Somfy windowcoverings_*",
+    "nodon_fil_pilote": "Radiators via com.nodon.app SIN-4-FP-21 — not Bastien"
+  }
 }

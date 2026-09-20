@@ -148,7 +148,7 @@
       "image": "{{driverAssetsPath}}/icon.svg",
       "instruction": {
         "en": "Press and hold any button for 5 seconds until the LED blinks rapidly",
-        "fr": "Appuyez et maintenez n'importe quel bouton pendant 5 secondes jusqu'à ce que la LED clignote rapidement",
+        "fr": "Maintenez n'importe quel bouton 5 s jusqu'à clignotement LED. Doit apparaître comme « Contrôleur 3 boutons » (pas Prise Zigbee). Puis créez les flows Bouton 1/2/3.",
         "nl": "Houd een willekeurige knop 5 seconden ingedrukt totdat de LED snel knippert",
         "de": "Halten Sie eine beliebige Taste 5 Sekunden lang gedrückt, bis die LED schnell blinkt",
         "it": "Tenere premuto qualsiasi pulsante per 5 secondi finché il LED lampeggia rapidamente",
