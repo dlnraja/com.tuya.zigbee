@@ -570,8 +570,10 @@
     "tipNote": "1.0.17+ interview clusters + flow args.device fix"
   },
   "liveMesh": {
-    "capturedAt": "2026-09-20",
-    "source": "Homey Zigbee nodes table",
+    "capturedAt": "2026-09-20T21:55:00+02:00",
+    "source": "Homey Developer Tools → Zigbee → Nodes (Bastien)",
+    "channel": 20,
+    "panId": "1C41",
     "nodes": [
       {
         "nwk": 0,
@@ -589,8 +591,7 @@
         "role": "router",
         "mfr": "NodOn",
         "pid": "SIN-4-FP-21",
-        "app": "EXTERNAL_com.nodon",
-        "note": "Fil pilote — never absorb into Bastien"
+        "app": "EXTERNAL_com.nodon"
       },
       {
         "nwk": 2,
@@ -603,114 +604,185 @@
       },
       {
         "nwk": 3,
-        "name": "Bouton mural sans fil à distance",
+        "name": "Bouton mural 3ch",
         "ieee": "7c:c6:b6:ff:fe:a3:e1:58",
         "role": "enddevice",
         "mfr": "_TZ3000_axpdxqgu",
         "pid": "TS0041",
         "driver": "button_wireless_1",
-        "status": "STALE_NAME_NEED_REPAIR",
-        "note": "UI name still remote_wall until remove+re-pair on tip ≥1.0.17",
-        "interview": {
-          "ep1": [
-            0,
-            1,
-            6
-          ],
-          "out": [
-            25,
-            10
-          ],
-          "rx": "0xFD",
-          "noEf00": true
-        }
+        "status": "OK_RENAME",
+        "note": "TS0041 = 1 bouton (nom UI “3ch” trompeur) — tip ≥1.0.17"
       },
       {
         "nwk": 4,
-        "name": "Appareil Zigbee",
+        "name": "salon/cuisine",
         "ieee": "a4:c1:38:09:4f:ff:ff:ff",
         "role": "enddevice",
         "mfr": "eWeLink",
         "pid": "CK-TLSR8656-SS5-01(7014)",
         "driver": "climate_sensor",
-        "status": "NEED_REPAIR_FROM_GENERIC",
-        "note": "Z2M TH sensor (not 7000 button). Was generic Appareil Zigbee — prune PID bleed + re-pair",
-        "z2m": "temperature+humidity+battery+voltage",
-        "clusters": [
-          0,
-          1,
-          3,
-          4,
-          32,
-          1026,
-          1029,
-          64529
-        ]
+        "status": "OK",
+        "note": "TH eWeLink 7014 (pas bouton 7000)"
       },
       {
         "nwk": 5,
-        "name": "3 bouton 1",
-        "ieee": "a4:c1:38:f6:3d:2d:c9:79",
+        "name": "Eclairage salle de bain",
+        "ieee": "a4:c1:38:36:fc:67:c7:fd",
+        "role": "router",
+        "mfr": "HOBEIAN",
+        "pid": "ZG-301Z",
+        "driver": "switch_1gang",
+        "status": "OK_P2632",
+        "note": "switch_mode=state si auto-off ~5s"
+      },
+      {
+        "nwk": 6,
+        "name": "Eclairage cuisine",
+        "ieee": "a4:c1:38:4a:7d:ee:5a:50",
+        "role": "router",
+        "mfr": "HOBEIAN",
+        "pid": "ZG-301Z",
+        "driver": "switch_1gang",
+        "status": "OK_P2632"
+      },
+      {
+        "nwk": 7,
+        "name": "Dressing",
+        "ieee": "a4:c1:38:5d:32:e1:74:f9",
+        "role": "router",
+        "mfr": "HOBEIAN",
+        "pid": "ZG-301Z",
+        "driver": "switch_1gang",
+        "status": "OK_P2632"
+      },
+      {
+        "nwk": 8,
+        "name": "Interrupteur table cuisine",
+        "ieee": "a4:c1:38:75:40:80:00:b7",
+        "role": "router",
+        "mfr": "HOBEIAN",
+        "pid": "ZG-301Z",
+        "driver": "switch_1gang",
+        "status": "OK_P2632"
+      },
+      {
+        "nwk": 9,
+        "name": "Sous sol",
+        "ieee": "a4:c1:38:a0:cf:8c:0f:7a",
         "role": "enddevice",
-        "mfr": "_TZ3000_vsxvaj9i",
-        "pid": "TS0043",
-        "driver": "button_wireless_3",
-        "status": "OK_VERIFY_FLOWS",
-        "interview": {
-          "ep1": [
-            0,
-            1,
-            6,
-            57344
-          ],
-          "rx": "0xFD+E000",
-          "noEf00": true
-        }
+        "mfr": "_TZ3000_fllyghyj",
+        "pid": "SNZB-02",
+        "driver": "climate_sensor",
+        "status": "OK"
       },
       {
-        "nwk": null,
-        "name": "Zigbee inconnu / module 4-gang",
-        "role": "router_or_end",
-        "mfr": "_TZ3000_ltt60asa",
-        "pid": "TS0004",
-        "driver": "switch_4gang",
-        "status": "NEED_REPAIR_FROM_UNKNOWN",
-        "note": "P2634 Z2M TS0004_switch_module / SML-04Z — tip ≥1.0.20 then remove+re-pair",
-        "siblings": [
-          "_TZ3000_mmkbptmx",
-          "_TZ3000_liygxtcq"
-        ],
-        "clustersHint": {
-          "ep1": [
-            0,
-            3,
-            4,
-            5,
-            6,
-            57344,
-            57345,
-            1794,
-            2820
-          ],
-          "ep2to4": [
-            4,
-            5,
-            6,
-            57344,
-            57345
-          ]
-        }
+        "nwk": 10,
+        "name": "Unknown Node",
+        "ieee": "a4:c1:38:ac:ed:30:d7:a5",
+        "role": "enddevice",
+        "mfr": "_TZE284_vvmbj46n",
+        "pid": "TS0601",
+        "driver": "lcdtemphumidsensor",
+        "status": "NEED_REPAIR",
+        "note": "P2637 LCD TH+clock — FP déjà en tip; remove+re-pair après maj ≥1.0.23",
+        "z2m": "nous_lcd_temperature_humidity_sensor"
       },
       {
-        "name": "Remote 2 boutons (était non reconnu)",
+        "nwk": 11,
+        "name": "Chambre principal",
+        "ieee": "a4:c1:38:ae:80:88:4c:e2",
+        "role": "router",
+        "mfr": "HOBEIAN",
+        "pid": "ZG-301Z",
+        "driver": "switch_1gang",
+        "status": "OK_P2632"
+      },
+      {
+        "nwk": 12,
+        "name": "chambre principal",
+        "ieee": "a4:c1:38:b2:2c:24:81:b1",
+        "role": "enddevice",
+        "mfr": "_TZ3000_fllyghyj",
+        "pid": "SNZB-02",
+        "driver": "climate_sensor",
+        "status": "OK"
+      },
+      {
+        "nwk": 13,
+        "name": "couloir haut",
+        "ieee": "a4:c1:38:b9:0f:aa:b7:f2",
+        "role": "router",
+        "mfr": "HOBEIAN",
+        "pid": "ZG-301Z",
+        "driver": "switch_1gang",
+        "status": "OK_P2632"
+      },
+      {
+        "nwk": 14,
+        "name": "Appareil Zigbee",
         "ieee": "a4:c1:38:bb:8f:37:ee:17",
-        "nwk": 3091,
         "role": "enddevice",
         "mfr": "_TZ3000_dzwgk7e2",
         "pid": "TS0042",
         "driver": "button_wireless_2",
-        "status": "NEED_REPAIR_FROM_UNKNOWN",
-        "note": "P2636 phantom EP3/4 — tip ≥1.0.22 then remove+re-pair"
+        "status": "NEED_REPAIR",
+        "note": "P2636 — tip ≥1.0.22 puis remove+re-pair → 2 boutons"
+      },
+      {
+        "nwk": 15,
+        "name": "Salle de bain",
+        "ieee": "a4:c1:38:c1:17:76:42:f4",
+        "role": "enddevice",
+        "mfr": "_TZ3000_fllyghyj",
+        "pid": "SNZB-02",
+        "driver": "climate_sensor",
+        "status": "OK"
+      },
+      {
+        "nwk": 16,
+        "name": "Eclairage bas couloir",
+        "ieee": "a4:c1:38:df:c0:e6:90:2a",
+        "role": "router",
+        "mfr": "HOBEIAN",
+        "pid": "ZG-301Z",
+        "driver": "switch_1gang",
+        "status": "OK_P2632"
+      },
+      {
+        "nwk": 17,
+        "name": "Chambre Ami",
+        "ieee": "a4:c1:38:e1:01:b7:f1:a4",
+        "role": "router",
+        "mfr": "HOBEIAN",
+        "pid": "ZG-301Z",
+        "driver": "switch_1gang",
+        "status": "OK_P2632"
+      },
+      {
+        "nwk": 18,
+        "name": "Unknown Node",
+        "ieee": "a4:c1:38:f6:3d:2d:c9:79",
+        "role": "enddevice",
+        "mfr": null,
+        "pid": null,
+        "expected": {
+          "mfr": "_TZ3000_vsxvaj9i",
+          "pid": "TS0043",
+          "driver": "button_wireless_3"
+        },
+        "status": "OFFLINE_OR_BROKEN_INTERVIEW",
+        "note": "Ancien 3-bouton vsxvaj9i — wake/re-pair près Homey"
+      },
+      {
+        "nwk": 19,
+        "name": "Eclairage salon",
+        "ieee": "a4:c1:38:f7:14:92:cb:c8",
+        "role": "router",
+        "mfr": "_TZ3000_ltt60asa",
+        "pid": "TS0004",
+        "driver": "switch_4gang",
+        "status": "OK_VERIFY_4GANG",
+        "note": "P2634/P2637 — doit être 4-gang (pas 1-gang). Re-pair si 1 canal seulement"
       }
     ]
   },
@@ -798,5 +870,16 @@
       "noEf00": true
     },
     "rePairRequired": true
+  },
+  "p2637": {
+    "tipNote": "1.0.23+ mesh inventory evening — strip ltt from switch_1gang; LCD vvmbj re-pair; dzwgk7e2 re-pair",
+    "actions": [
+      "Update Bastien ≥1.0.23",
+      "Node10 vvmbj46n+TS0601 → remove+re-pair as LCD Temp/Humidity",
+      "Node14 dzwgk7e2+TS0042 → remove+re-pair as Button Wireless 2",
+      "Node18 wake/re-pair 3-btn vsxvaj9i",
+      "Node19 verify 4 channels on Eclairage salon",
+      "ZG-301Z lights: switch_mode=state if auto-off"
+    ]
   }
 }
