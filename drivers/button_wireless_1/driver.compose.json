@@ -1,7 +1,7 @@
 {
   "name": {
-    "en": "1-Buttons Wireless Controller",
-    "fr": "1-Boutons Contrôleur Sans Fil",
+    "en": "Wireless Button 1 (TS0041)",
+    "fr": "Bouton sans fil 1 (TS0041)",
     "nl": "1-Knoppen Draadloze Controller",
     "de": "1-Tasten Drahtlos-Controller",
     "it": "1-Pulsanti Controller Wireless",
@@ -162,8 +162,8 @@
     "learnmode": {
       "image": "{{driverAssetsPath}}/icon.svg",
       "instruction": {
-        "en": "Press and hold any button for 5 seconds until the LED blinks rapidly",
-        "fr": "Maintenez le bouton 5–10 s jusqu'à clignotement LED. Doit apparaître comme bouton 1 gang Bastien (pas « mural à distance »). Puis créez le flow Bouton appuyé.",
+        "en": "Hold 5–10s until LED blinks. Must appear as Wireless Button 1 (TS0041) — NOT remote wall. Then Flow → Button pressed.",
+        "fr": "Maintenez 5–10 s jusqu'au clignotement LED. Doit apparaître comme « Bouton sans fil 1 (TS0041) » — PAS « mural à distance ». Puis Flow → Bouton appuyé.",
         "nl": "Appuyez et maintenez n'importe quel bouton pendant 5 secondes jusqu'à ce que la LED clignote rapidement",
         "de": "Appuyez et maintenez n'importe quel bouton pendant 5 secondes jusqu'à ce que la LED clignote rapidement",
         "it": "Appuyez et maintenez n'importe quel bouton pendant 5 secondes jusqu'à ce que la LED clignote rapidement",

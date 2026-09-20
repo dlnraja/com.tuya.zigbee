@@ -3724,5 +3724,8 @@
   },
   "1.0.17": {
     "en": "TS0041 _TZ3000_axpdxqgu: locked interview clusters [0,1,6], fixed Flow cards (no args.device gate), 0xFD RX. Update then remove+re-pair the 1-button remote."
+  },
+  "1.0.18": {
+    "en": "Bastien mesh: eWeLink CK-TLSR TH→climate_sensor (not generic), cleared wrong 7014 fingerprints, clearer TS0041/TS0043 names. Update then remove+re-pair: 1-btn remote, eWeLink TH, verify 3-btn flows."
   }
 }
