@@ -222,6 +222,5 @@
   "ui": {
     "quickAction": "onoff"
   },
-  "discovery": "tuya_wifi",
-  "zigbee": {}
+  "discovery": "tuya_wifi"
 }

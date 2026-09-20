@@ -1860,5 +1860,8 @@
   },
   "5.12.278": {
     "en": "Strip empty zigbee from WiFi compose (validator) + LAN reliability. Update Homey Test."
+  },
+  "5.12.279": {
+    "en": "Remove empty zigbee blocks from WiFi drivers (Homey validator). Update Homey Test."
   }
 }
