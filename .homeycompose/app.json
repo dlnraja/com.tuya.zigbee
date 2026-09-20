@@ -1,6 +1,6 @@
 {
   "id": "com.dlnraja.tuya.zigbee.bastien",
-  "version": "1.0.22",
+  "version": "1.0.23",
   "compatibility": ">=12.2.0",
   "platforms": [
     "local"
@@ -113,5 +113,8 @@
       "method": "GET",
       "path": "/wifi-lan-map"
     }
+  },
+  "changelog": {
+    "en": "Mesh inventory sync: lock LCD Unknown (_TZE284_vvmbj46n), keep 4-gang salon (_TZ3000_ltt60asa), TS0042 2-btn. Re-pair Unknown LCD + Appareil Zigbee if still wrong driver."
   }
 }
