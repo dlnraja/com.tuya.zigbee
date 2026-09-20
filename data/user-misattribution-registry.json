@@ -7638,5 +7638,115 @@
         "z2m"
       ]
     }
-  ]
+  ],
+  "entries": {
+    "p2612-tz3000_filhl5b7-ts0041": {
+      "id": "p2612-tz3000_filhl5b7-ts0041",
+      "manufacturerName": "_TZ3000_filhl5b7",
+      "productId": "TS0041",
+      "canonicalDriver": "button_wireless_1",
+      "forbidMode": "couple",
+      "forbidDrivers": [
+        "smoke_sensor",
+        "water_leak_sensor",
+        "climate_sensor",
+        "smart_knob",
+        "button_wireless_4",
+        "scene_switch_4"
+      ],
+      "note": "Moes ZT-YK01 herdsman #12194",
+      "source": "p2612-sacred-couple-lock",
+      "updated": "2026-09-20"
+    },
+    "p2612-tz3000_cllghx1k-ts0042": {
+      "id": "p2612-tz3000_cllghx1k-ts0042",
+      "manufacturerName": "_TZ3000_cllghx1k",
+      "productId": "TS0042",
+      "canonicalDriver": "button_wireless_2",
+      "forbidMode": "couple",
+      "forbidDrivers": [
+        "smoke_sensor",
+        "water_leak_sensor",
+        "climate_sensor",
+        "smart_knob",
+        "button_wireless_4",
+        "scene_switch_4"
+      ],
+      "note": "Moes ZT-YK02 herdsman #12194",
+      "source": "p2612-sacred-couple-lock",
+      "updated": "2026-09-20"
+    },
+    "p2612-tz3000_1kmurvlx-ts0043": {
+      "id": "p2612-tz3000_1kmurvlx-ts0043",
+      "manufacturerName": "_TZ3000_1kmurvlx",
+      "productId": "TS0043",
+      "canonicalDriver": "button_wireless_3",
+      "forbidMode": "couple",
+      "forbidDrivers": [
+        "smoke_sensor",
+        "water_leak_sensor",
+        "climate_sensor",
+        "smart_knob",
+        "button_wireless_4",
+        "scene_switch_4"
+      ],
+      "note": "Moes ZT-YK03 herdsman #12194",
+      "source": "p2612-sacred-couple-lock",
+      "updated": "2026-09-20"
+    },
+    "p2612-tz3000_bi6lpsew-ts0043": {
+      "id": "p2612-tz3000_bi6lpsew-ts0043",
+      "manufacturerName": "_TZ3000_bi6lpsew",
+      "productId": "TS0043",
+      "canonicalDriver": "button_wireless_3",
+      "forbidMode": "couple",
+      "forbidDrivers": [
+        "smoke_sensor",
+        "water_leak_sensor",
+        "climate_sensor",
+        "smart_knob",
+        "button_wireless_4",
+        "scene_switch_4"
+      ],
+      "note": "Moes ZT-YK03 sibling",
+      "source": "p2612-sacred-couple-lock",
+      "updated": "2026-09-20"
+    },
+    "p2612-tz3000_tk3s5tyg-ts0041": {
+      "id": "p2612-tz3000_tk3s5tyg-ts0041",
+      "manufacturerName": "_TZ3000_tk3s5tyg",
+      "productId": "TS0041",
+      "canonicalDriver": "button_wireless_1",
+      "forbidMode": "couple",
+      "forbidDrivers": [
+        "smoke_sensor",
+        "water_leak_sensor",
+        "climate_sensor",
+        "smart_knob",
+        "button_wireless_4",
+        "scene_switch_4"
+      ],
+      "note": "P2610 rehome smoke→1btn; not TZ3400",
+      "source": "p2612-sacred-couple-lock",
+      "updated": "2026-09-20"
+    },
+    "p2612-tz3400_tk3s5tyg-ts0041": {
+      "id": "p2612-tz3400_tk3s5tyg-ts0041",
+      "manufacturerName": "_TZ3400_tk3s5tyg",
+      "productId": "TS0041",
+      "canonicalDriver": "wall_remote_1_gang",
+      "forbidMode": "couple",
+      "forbidDrivers": [
+        "smoke_sensor",
+        "water_leak_sensor",
+        "climate_sensor",
+        "smart_knob",
+        "button_wireless_4",
+        "scene_switch_4"
+      ],
+      "note": "TZ3400 sibling — separate couple from TZ3000",
+      "source": "p2612-sacred-couple-lock",
+      "updated": "2026-09-20"
+    }
+  }
 }
