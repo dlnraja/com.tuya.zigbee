@@ -24,7 +24,9 @@ const FLEET = [
   ['scene_switch_1', 1],
   ['scene_switch_2', 2],
   ['scene_switch_3', 3],
+  ['scene_switch_4', 4],
   ['scene_switch_6', 6],
+  ['button_wireless_4', 4],
   ['remote_button_wireless', 3],
   ['remote_button_wireless_handheld', 4],
 ];
@@ -44,11 +46,12 @@ describe('P2609 wall/scene remote hybrid fleet (1–6 btn)', () => {
     });
   }
 
-  it('button_wireless_4 / scene_switch_4 keep dedicated hybrid stacks', () => {
+  it('button_wireless_4 / scene_switch_4 use fleet hybrid (P2614) + LevelControl on wireless', () => {
     const b4 = fs.readFileSync(path.join(ROOT, 'drivers/button_wireless_4/device.js'), 'utf8');
     const s4 = fs.readFileSync(path.join(ROOT, 'drivers/scene_switch_4/device.js'), 'utf8');
-    assert.ok(/E000|_setupTuyaDP|_setupRawFrame/i.test(b4));
-    assert.ok(/0xFD|OnOffBound|_setupTuyaDP|_setupRawFrame/i.test(s4));
+    assert.ok(b4.includes('installWallSceneRemoteHybrid'));
+    assert.ok(s4.includes('installWallSceneRemoteHybrid'));
+    assert.ok(/_setupLevelControlDetection|levelControl/i.test(b4));
   });
 
   it('npm check:p2609 wired', () => {

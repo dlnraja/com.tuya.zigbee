@@ -1836,5 +1836,8 @@
   },
   "5.12.270": {
     "en": "Stable: prune remote mfs bleed to sacred mfr+pid couples. Update Stable Test."
+  },
+  "5.12.271": {
+    "en": "TS0044 scene remotes: Button 1-4 in device view + hybrid RX. Update Test + re-pair if tiles were only under Maintenance."
   }
 }
