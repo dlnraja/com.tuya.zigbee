@@ -1848,5 +1848,8 @@
   },
   "5.12.274": {
     "en": "Improved TS0043/TS0044 scene remote press detection with complementary fallback paths."
+  },
+  "5.12.275": {
+    "en": "Ceiling radar gkfbdvyx: prefer DP103 lux, longer phantom strip after tip update. Update Homey Test + Repair radar."
   }
 }
