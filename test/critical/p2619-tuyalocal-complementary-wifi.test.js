@@ -59,11 +59,14 @@ describe('P2619 com.tuyalocal complementary WiFi enrich', () => {
   it('WiFiDPRegistry UNION includes tuyalocal categories (rs/qccdz/ywbj smoke/sj water)', () => {
     const { CATEGORY_DP_HINTS } = require('../../lib/tuya-local/WiFiDPRegistry');
     assert.equal(CATEGORY_DP_HINTS.rs[1].capability, 'onoff');
-    assert.equal(CATEGORY_DP_HINTS.qccdz[1].capability, 'onoff');
+    // P2641: qccdz switch is DP18; DP1 is lifetime energy (UNION, not wipe)
+    assert.equal(CATEGORY_DP_HINTS.qccdz[18].capability, 'onoff');
+    assert.equal(CATEGORY_DP_HINTS.qccdz[1].capability, 'meter_power');
     assert.equal(CATEGORY_DP_HINTS.bh[1].capability, 'onoff');
     assert.equal(CATEGORY_DP_HINTS.ywbj[1].capability, 'alarm_smoke');
     assert.equal(CATEGORY_DP_HINTS.sj[1].capability, 'alarm_water');
     assert.equal(CATEGORY_DP_HINTS.zndb[1].capability, 'measure_power');
+    assert.equal(CATEGORY_DP_HINTS.zndb[19].capability, 'measure_power');
   });
 
   it('core Tuya wifi_pet_feeder compose has offline_grace + command_gap (append-only)', () => {
