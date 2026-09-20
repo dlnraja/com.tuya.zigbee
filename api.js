@@ -11,22 +11,47 @@ module.exports = {
 
       for (const driverId of Object.keys(driverList)) {
         const driver = driverList[driverId];
-        const devices = driver.getDevices();
-        for (const device of Object.values(devices)) {
+        let devices;
+        try {
+          devices = driver.getDevices();
+        } catch (_e) {
+          continue;
+        }
+        for (const device of Object.values(devices || {})) {
+          let zoneName = '';
+          try {
+            const z = typeof device.getZone === 'function' ? device.getZone() : null;
+            if (z && typeof z.getName === 'function') zoneName = z.getName() || '';
+            else if (typeof z === 'string') zoneName = z;
+          } catch (_z) { /* zone optional — never block settings */ }
+          let name = '';
+          let id = '';
+          let dId = driverId;
+          let dUri = '';
+          try { id = device.getId(); } catch (_i) { continue; }
+          try { name = device.getName() || id; } catch (_n) { name = id; }
+          try {
+            const d = device.getDriver && device.getDriver();
+            if (d) {
+              dId = (d.getId && d.getId()) || driverId;
+              dUri = (d.getUri && d.getUri()) || '';
+            }
+          } catch (_d) { /* soft */ }
           allDevices.push({
-            id: device.getId(),
-            name: device.getName(),
-            zoneName: device.getZone()?.getName() || '',
-            driverId: device.getDriver().getId() || '',
-            driverUri: device.getDriver().getUri() || ''
+            id,
+            name,
+            zoneName,
+            driverId: dId,
+            driverUri: dUri,
           });
         }
       }
 
-      return allDevices.sort((a, b) => a.name.localeCompare(b.name));
+      return allDevices.sort((a, b) => String(a.name).localeCompare(String(b.name)));
     } catch (err) {
       homey.error('[FlowRepair API] Failed to fetch devices:', err);
-      throw new Error(`Failed to retrieve devices: ${err.message}`);
+      // P2623: never throw hard — empty list keeps settings UI usable
+      return [];
     }
   },
 
@@ -43,7 +68,7 @@ module.exports = {
       ZigbeeMeshMap = require('./lib/features/ZigbeeMeshMap');
     } catch (err) {
       homey.error('[ZigbeeMeshMap] module missing:', err);
-      throw new Error('Zigbee map module unavailable');
+      return { nodes: [], edges: [], stats: {}, note: 'Zigbee map module unavailable', coordinatorId: 'homey' };
     }
     try {
       const app = homey.__tuyaApp;
@@ -56,7 +81,7 @@ module.exports = {
       return snapshot;
     } catch (err) {
       homey.error('[ZigbeeMeshMap] snapshot failed:', err);
-      throw new Error(`Zigbee map failed: ${err.message}`);
+      return { nodes: [], edges: [], stats: {}, note: `Zigbee map failed: ${err.message}`, coordinatorId: 'homey' };
     }
   },
 
@@ -66,23 +91,29 @@ module.exports = {
    * WHO: Homey Pro user (local-first). Cloud not used.
    * WHEN: Settings refresh or pair lan_discover.
    */
-  async getWifiLanMap({ homey }) {
+  async getWifiLanMap({ homey, query }) {
     let hub;
     try {
       hub = require('./lib/discovery/AutonomousAdvertisingDiscovery');
     } catch (err) {
       homey.error('[WifiLanMap] module missing:', err);
-      throw new Error('WiFi LAN map module unavailable');
+      return { devices: [], stats: { total: 0 }, note: 'WiFi LAN map module unavailable' };
     }
     try {
       const app = homey.__tuyaApp || homey.app;
       const udp = app && app._tuyaUDPDiscovery;
+      // P2623: light probe only on settings open path — TCP deep scan freezes Homey WebView
+      const deep = query && (query.deep === '1' || query.deep === true || query.deep === 'true');
       if (udp && typeof hub.burstWifiProbe === 'function') {
-        await hub.burstWifiProbe(udp, { durationMs: 4000 }).catch(() => {});
-        await new Promise((r) => setTimeout(r, 1000));
+        await hub.burstWifiProbe(udp, { durationMs: deep ? 4000 : 1200 }).catch(() => {});
+        await new Promise((r) => setTimeout(r, deep ? 1000 : 200));
       }
       const snap = hub.buildWifiLanSnapshot(homey, { udpDiscovery: udp });
-      // P2411: optional TCP force (settings "deep scan")
+      if (!deep) {
+        snap.note = (snap.note || 'LAN UDP snapshot') + ' (light scan — use deep=1 for TCP/6668)';
+        return snap;
+      }
+      // P2411: optional TCP force (settings deep scan only)
       try {
         const { forceScanTcp6668 } = require('./lib/tuya-local/TuyaTcpForceScan');
         const tcp = await forceScanTcp6668({
@@ -116,7 +147,7 @@ module.exports = {
       return snap;
     } catch (err) {
       homey.error('[WifiLanMap] snapshot failed:', err);
-      throw new Error(`WiFi LAN map failed: ${err.message}`);
+      return { devices: [], stats: { total: 0 }, note: `WiFi LAN map failed: ${err.message}` };
     }
   },
 

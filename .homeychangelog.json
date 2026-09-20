@@ -3700,5 +3700,8 @@
   },
   "1.0.9": {
     "en": "Added eWeLink CK-TLSR8656-SS5-01(7014) climate sensor support (temperature, humidity, battery). Re-pair if it was added as a generic Zigbee device."
+  },
+  "1.0.10": {
+    "en": "Fixed app settings blank infinite loading so Homey diagnostic reports can be sent. Mesh/WiFi scans are now optional."
   }
 }
