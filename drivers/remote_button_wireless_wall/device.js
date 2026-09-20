@@ -12,6 +12,7 @@ let UnifiedBatteryHandler = null;
 try { UnifiedBatteryHandler = require('../../lib/battery/UnifiedBatteryHandler'); } catch (e) { /* optional */ }
 const { estimate3VLithiumBattery } = require('../../lib/utils/BatteryCurveFallback');
 const { resolve: resolvePressType, PRESS_MAP } = require('../../lib/utils/TuyaPressTypeMap');
+const { containsCI } = require('../../lib/utils/CaseInsensitiveMatcher');
 
 // v5.5.733: HOBEIAN ZG-101ZL FIX - Import OnOffBoundCluster for outputCluster command reception
 let OnOffBoundCluster = null;
@@ -844,9 +845,10 @@ class Button1GangDevice extends ButtonDevice {
     const modelId = this.getSetting?.('zb_model_id') || this.getData()?.modelId || '';
     const manufacturerName = this.getSetting?.('zb_manufacturer_name') || this.getData()?.manufacturerName || '';
     
+    // WHY(P2624/e8d98608): CI was never imported → ReferenceError killed onNodeInit
     // Only setup for TS004F Smart Knob devices
-    const isSmartKnob = CI.containsCI(modelId, 'TS004F') || 
-                        CI.containsCI(manufacturerName, 'gwkzibhs' );
+    const isSmartKnob = containsCI(modelId, 'TS004F')
+      || containsCI(manufacturerName, 'gwkzibhs');
     
     if (!isSmartKnob) {
       this.log('[BUTTON1-LEVEL] Not a Smart Knob device, skipping levelControl setup');
