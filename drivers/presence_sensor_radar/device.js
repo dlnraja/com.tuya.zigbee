@@ -689,7 +689,13 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
       if (this._mtgTileSanitizeArmed) return;
       this._mtgTileSanitizeArmed = true;
       const { safeSetTimeout } = require('../../lib/utils/safe-timers');
-      const bursts = [5_000, 15_000, 45_000, 120_000];
+      // WHY(P2617 / GH#550 @ 9.0.1097): tip bump re-injects Button/zones/temp/battery for
+      // minutes — extend burst so gkfbdvyx ceiling stays clean after Homey compose heal.
+      const mfrNow = (MfrHelper.getManufacturerName(this) || '').toLowerCase();
+      const ceiling = /gkfbdvyx|laokfqwu|ya4ft0w4/.test(mfrNow);
+      const bursts = ceiling
+        ? [3_000, 8_000, 20_000, 45_000, 90_000, 180_000, 300_000, 600_000]
+        : [5_000, 15_000, 45_000, 120_000];
       for (const ms of bursts) {
         safeSetTimeout(this, () => {
           this._healPresenceHistoryUx().catch(() => {});
@@ -1011,9 +1017,10 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
       const cfg = this._getRadarConfig() || {};
       if (!cfg.enableFindSwitchOnBoot && !cfg.syncPresenceFromLuxInference) return;
       const dist = Number(this._lastDistanceM);
+      // WHY(P2617 / GH#550): treat sub-0.3m sticky as cold (OCR showed 0.2m while room occupied)
       const stuckZero = this._distanceSeenOnce
         && Number.isFinite(dist)
-        && dist <= 0.05;
+        && dist <= 0.3;
       if (this._distanceSeenOnce && !stuckZero) return;
       const now = Date.now();
       const throttleMs = stuckZero ? 45_000 : 12_000;
@@ -1028,7 +1035,8 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
     try {
       const mgr = this.tuyaEF00Manager;
       // WHY(P2604): V3 lux = DP103; keep 9/101 for find_switch + distance
-      const dps = [1, 9, 101, 103];
+      // WHY(P2617 / GH#550): also nudge DP10 (soft sibling) when lux goes quiet after tip bump
+      const dps = [1, 9, 10, 101, 103];
       if (mgr && typeof mgr.requestDPs === 'function') {
         this.log(`[RADAR] P2600 requestDPs [${dps.join(',')}] (${reason})`);
         await mgr.requestDPs(dps).catch(() => {});
@@ -1597,6 +1605,21 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
         lux = smartParse(value, dpId, { capability: 'measure_luminance' });
       } else if (mapping.divisor) {lux = value / mapping.divisor;}
 
+      // WHY(P2617 / GH#550 @ 9.0.1097): DP10 junk (lux=1) must not overwrite fresh DP103.
+      // Prefer V3 illuminance; keep DP10 only when DP103 has been quiet ≥45s.
+      const nowLux = Date.now();
+      if (Number(dpId) === 103) {
+        this._lastDp103LuxAt = nowLux;
+        this._lastDp103Lux = lux;
+      } else if (Number(dpId) === 10) {
+        const recent103 = this._lastDp103LuxAt && (nowLux - this._lastDp103LuxAt) < 45_000;
+        if (recent103) {
+          this.log(`[RADAR] P2617 skip DP10 lux=${lux} (DP103 preferred)`);
+          this._nudgeCeilingDistanceArmFromLux();
+          return;
+        }
+      }
+
       const luxInferred = this._ensureInference().updateLux(lux);
       // WHY(P2600 / GH#550): lux stream alive while DP9 never seen → re-arm find_switch
       this._nudgeCeilingDistanceArmFromLux();
@@ -1610,10 +1633,15 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
       }
       // WHY(P2595 / GH#550): gkfbdvyx lux floods while DP9 null — paint presence from lux rate
       // WHY(P2600): also accept lux-cadence soft present while find_switch warms
+      // WHY(P2617): never lux-force absent while distance still indicates someone
       if (config.syncPresenceFromLuxInference && typeof luxInferred === 'boolean') {
         const painted = this.getCapabilityValue('alarm_motion');
         if (painted !== luxInferred) {
-          this._commitPresenceAndFlows(luxInferred);
+          if (luxInferred === false && this._distanceCorroboratesPresence()) {
+            this.log('[RADAR] P2617 keep presence (distance corroborates; lux quiet)');
+          } else {
+            this._commitPresenceAndFlows(luxInferred);
+          }
         }
       }
       if (this._shouldSkipFloodCalmDp(dpId, lux, config)) {return;}
