@@ -10,9 +10,9 @@
  *
  * Voice safety for button.* is getable:false + setable:false (never a command
  * surface). maintenanceAction:
- *   - class !== button (switches): must be true (Maintenance only — P2492)
- *   - class === button (scene remotes): true OR false allowed
- *     false = Homey device-view Button N (P2614 TS0044); true = legacy Maintenance
+ *   - switches / other classes: must be true (Maintenance only — P2492)
+ *   - class === button|remote (scene remotes / wall remotes): true OR false allowed
+ *     false = Homey device-view Button N (P2614 TS0044 / P2615 TS0043)
  */
 
 const fs = require('fs');
@@ -52,7 +52,7 @@ for (const entry of fs.readdirSync(DRIVERS_DIR, { withFileTypes: true })) {
     ? compose.capabilitiesOptions
     : {};
 
-  const sceneRemoteClass = compose.class === 'button';
+  const sceneRemoteClass = compose.class === 'button' || compose.class === 'remote';
 
   for (const capabilityId of capabilities) {
     if (!String(capabilityId).startsWith('button.')) continue;
@@ -66,16 +66,16 @@ for (const entry of fs.readdirSync(DRIVERS_DIR, { withFileTypes: true })) {
       violations.push(`${driverName}: ${capabilityId}.setable must be false`);
     }
     if (sceneRemoteClass) {
-      // P2614: allow device-view (false) or legacy Maintenance (true)
+      // P2614/P2615: allow device-view (false) or legacy Maintenance (true)
       if (capabilityOptions.maintenanceAction !== true
           && capabilityOptions.maintenanceAction !== false) {
         violations.push(
-          `${driverName}: ${capabilityId}.maintenanceAction must be boolean (class:button)`,
+          `${driverName}: ${capabilityId}.maintenanceAction must be boolean (class:${compose.class})`,
         );
       }
     } else if (capabilityOptions.maintenanceAction !== true) {
       violations.push(
-        `${driverName}: ${capabilityId}.maintenanceAction must be true (non-button class)`,
+        `${driverName}: ${capabilityId}.maintenanceAction must be true (non-scene class)`,
       );
     }
   }
@@ -97,4 +97,4 @@ if (violations.length > 0) {
   process.exit(1);
 }
 
-console.log('OK: button.* event-only (getable/setable false); class:button may use device-view.');
+console.log('OK: button.* event-only (getable/setable false); class:button|remote may use device-view.');

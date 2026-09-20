@@ -6,7 +6,8 @@
     "humanDoc": "docs/BIDIRECTIONAL_BUTTONS.md",
     "coupleSsot": "config/architecture/sacred-couple-ssot.json",
     "classify": "BOTH",
-    "p2614": "TS0044 UI+RX stack — scene_switch_4 / button_wireless_4"
+    "p2614": "TS0044 UI+RX stack — scene_switch_4 / button_wireless_4",
+    "p2615": "TS0043 UI+RX stack — scene_switch_3 / button_wireless_3 / wall_remote_3_gang"
   },
   "identityRule": {
     "resolveRoleBy": "driver class + couple (mfr+pid), never brand-only",
@@ -17,6 +18,18 @@
         "driver": "button_wireless_1",
         "role": "scene",
         "ui": "Button 1 in device view; measure_battery keep+rehydrate"
+      },
+      {
+        "couple": "_TZ3000_a7ouggvs+TS0043",
+        "driver": "button_wireless_3",
+        "role": "scene",
+        "ui": "Zemismart 3-btn sticky; Button 1–3 device view; 0xFD; never 0x8004"
+      },
+      {
+        "couple": "_TZ3000_bczr4e10+TS0043",
+        "driver": "button_wireless_3",
+        "role": "scene",
+        "ui": "3-endpoint scene remote; hybrid RX"
       },
       {
         "couple": "_TZ3000_zgyzgdua+TS0044",
