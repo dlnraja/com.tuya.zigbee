@@ -1873,5 +1873,8 @@
   "5.12.282": {
     "en": "Reliability: TS0043 famkxci2 stays Wireless Button 3; TS130F e3vhyirx curtain wall switch lock; ceiling radar presence clear safer. Update Homey Test Stable + re-pair if Generic.",
     "fr": "Fiabilite: TS0043 famkxci2 Bouton 3; TS130F e3vhyirx rideau mural; radar plafond presence. Maj Test Stable + re-appairer si Generique."
+  },
+  "5.12.283": {
+    "en": "Improved local LAN reliability (stale-data watchdog, fire-and-forget)."
   }
 }
