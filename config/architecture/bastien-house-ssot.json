@@ -700,6 +700,17 @@
             57345
           ]
         }
+      },
+      {
+        "name": "Remote 2 boutons (était non reconnu)",
+        "ieee": "a4:c1:38:bb:8f:37:ee:17",
+        "nwk": 3091,
+        "role": "enddevice",
+        "mfr": "_TZ3000_dzwgk7e2",
+        "pid": "TS0042",
+        "driver": "button_wireless_2",
+        "status": "NEED_REPAIR_FROM_UNKNOWN",
+        "note": "P2636 phantom EP3/4 — tip ≥1.0.22 then remove+re-pair"
       }
     ]
   },
@@ -770,5 +781,22 @@
       "Re-test button/switch Flows (dropdown Button N)",
       "Kitchen ZG-301Z: switch_mode=state if still auto-off"
     ]
+  },
+  "p2636": {
+    "couple": "_TZ3000_dzwgk7e2+TS0042",
+    "driver": "button_wireless_2",
+    "tipNote": "1.0.22+ — was unrecognized; phantom EP3/4 ignored; 0xFD RX",
+    "interview": {
+      "ep1": [
+        0,
+        1,
+        6,
+        57344
+      ],
+      "ep2to4_onOff": true,
+      "battery": 200,
+      "noEf00": true
+    },
+    "rePairRequired": true
   }
 }

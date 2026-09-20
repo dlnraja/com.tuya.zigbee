@@ -1,7 +1,7 @@
 {
   "_comment": "This file is generated. Please edit .homeycompose/app.json instead.",
   "id": "com.dlnraja.tuya.zigbee.bastien",
-  "version": "1.0.21",
+  "version": "1.0.22",
   "compatibility": ">=12.2.0",
   "platforms": [
     "local"
@@ -14933,7 +14933,11 @@
           "_tz3000_T8HZPGND",
           "_TZ3000_2PUTQRMW",
           "_tz3000_2PUTQRMW",
-          "_tz3000_WKAI4GA5"
+          "_tz3000_WKAI4GA5",
+          "_TZ3000_dzwgk7e2",
+          "_TZ3000_DZWGK7E2",
+          "_tz3000_dzwgk7e2",
+          "_tz3000_DZWGK7E2"
         ],
         "productId": [
           "01MINIZB",
