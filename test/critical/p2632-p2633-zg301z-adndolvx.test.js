@@ -70,6 +70,28 @@ describe('P2633 adndolvx+TS0041 phantom EP firmware (HA)', () => {
     assert.ok(src.includes('P2633'));
   });
 
+  it('P2639 mixin sticky adndolvx + siblings itb0omhv/x7mej5oc (HA T455202)', () => {
+    const src = fs.readFileSync(path.join(ROOT, 'lib/mixins/PhysicalButtonMixin.js'), 'utf8');
+    assert.ok(src.includes("'_TZ3000_adndolvx'"));
+    assert.ok(src.includes("'_TZ3000_itb0omhv'"));
+    assert.ok(src.includes("'_TZ3000_x7mej5oc'"));
+    assert.ok(/'_TZ3000_adndolvx':\s*\{[\s\S]*?phantomEpFirmware:\s*true/.test(src));
+    assert.ok(/'_TZ3000_adndolvx':\s*\{[\s\S]*?mapAllEndpointsToButton1:\s*true/.test(src));
+    assert.ok(/'_TZ3000_adndolvx':\s*\{[\s\S]*?buttonCount:\s*1/.test(src));
+    const c = JSON.parse(fs.readFileSync(
+      path.join(ROOT, 'drivers/button_wireless_1/driver.compose.json'),
+      'utf8',
+    ));
+    assert.ok((c.zigbee.manufacturerName || []).some((x) => /itb0omhv/i.test(String(x))));
+    assert.ok((c.zigbee.manufacturerName || []).some((x) => /x7mej5oc/i.test(String(x))));
+    // Contre quoi: must not be stolen by 4-gang button driver
+    const b4 = JSON.parse(fs.readFileSync(
+      path.join(ROOT, 'drivers/button_wireless_4/driver.compose.json'),
+      'utf8',
+    ));
+    assert.ok(!(b4.zigbee.manufacturerName || []).some((x) => /adndolvx/i.test(String(x))));
+  });
+
   it('npm scripts wired', () => {
     const pkg = JSON.parse(fs.readFileSync(path.join(ROOT, 'package.json'), 'utf8'));
     assert.ok(pkg.scripts['check:p2632'] || pkg.scripts['check:p263x']);

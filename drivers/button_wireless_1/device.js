@@ -54,21 +54,27 @@ class Button1GangDevice extends ButtonDevice {
         || zclNode?.modelId
         || this.getData?.()?.productId
         || '';
-      // WHY(P2633 / HA T455202 adndolvx): Chinese TS0041 often ships TS0044 4-EP firmware —
+      // WHY(P2633/P2639 / HA T455202): Chinese TS0041 often ships TS0044 4-EP firmware —
       // collapse phantom EP2–4; RX OnOff 0xFD; never treat as 4-gang / never 0x8004.
-      if (containsCI(mfr, 'axpdxqgu') || containsCI(mfr, 'adndolvx')
+      // Siblings: adndolvx, itb0omhv (T455202), x7mej5oc (ZHA#1557). axpdxqgu = clean 1-EP interview.
+      const phantomClass = containsCI(mfr, 'adndolvx') || containsCI(mfr, 'itb0omhv')
+        || containsCI(mfr, 'x7mej5oc');
+      if (containsCI(mfr, 'axpdxqgu') || phantomClass
         || (/TS0041/i.test(String(pid)) && !/TS004F/i.test(String(pid)))) {
+        const lockedMfr = containsCI(mfr, 'axpdxqgu') ? '_TZ3000_axpdxqgu'
+          : (containsCI(mfr, 'adndolvx') ? '_TZ3000_adndolvx'
+            : (containsCI(mfr, 'itb0omhv') ? '_TZ3000_itb0omhv'
+              : (containsCI(mfr, 'x7mej5oc') ? '_TZ3000_x7mej5oc' : String(mfr))));
         this._bastienTs0041Interview = {
-          mfr: containsCI(mfr, 'axpdxqgu') ? '_TZ3000_axpdxqgu'
-            : (containsCI(mfr, 'adndolvx') ? '_TZ3000_adndolvx' : String(mfr)),
+          mfr: lockedMfr,
           pid: 'TS0041',
-          clustersEp1: [0, 1, 6],
+          clustersEp1: phantomClass ? [0, 1, 6, 57344] : [0, 1, 6],
           noEf00: true,
-          noE000: true,
+          noE000: !phantomClass,
           phantomEpFirmware: true,
           ieeeHint: containsCI(mfr, 'axpdxqgu') ? '7c:c6:b6:ff:fe:a3:e1:58' : undefined,
         };
-        this.log('[P2630/P2633] TS0041 sticky (0xFD, battery EP1, collapse phantom EPs, no EF00)');
+        this.log(`[P2630/P2633/P2639] TS0041 sticky (${lockedMfr}; 0xFD; collapse phantom EPs; no EF00)`);
       }
     } catch (_e) { /* soft */ }
 
