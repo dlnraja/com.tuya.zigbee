@@ -1,6 +1,6 @@
 {
   "name": "com.dlnraja.tuya.zigbee",
-  "version": "9.0.1106",
+  "version": "9.0.1107",
   "description": "Tuya Unified Zigbee - Local-first control with AI automation",
   "main": "app.js",
   "scripts": {
@@ -376,7 +376,9 @@
     "check:p2615": "node --test test/critical/p2615-ts0043-homey-ui-hybrid.test.js",
     "check:p2616": "node --test test/critical/p2616-ts004x-complementary-restore.test.js",
     "check:p2617": "node --test test/critical/p2617-gkfbdvyx-550-tip-regress.test.js",
-    "check:p260x": "npm run check:p2606 && npm run check:p2607 && npm run check:p2608 && npm run check:p2609 && npm run check:p2610 && npm run check:p2614 && npm run check:p2615 && npm run check:p2616 && npm run check:p2617",
+    "check:p2619": "node --test test/critical/p2619-tuyalocal-complementary-wifi.test.js",
+    "check:p2620": "node --test test/critical/p2620-draft-to-test-fleet.test.js",
+    "check:p260x": "npm run check:p2606 && npm run check:p2607 && npm run check:p2608 && npm run check:p2609 && npm run check:p2610 && npm run check:p2614 && npm run check:p2615 && npm run check:p2616 && npm run check:p2617 && npm run check:p2619 && npm run check:p2620",
     "check:p260x-bastien": "npm run check:p260x",
     "enrich:bastien:external": "node tools/ci/p2610-bastien-external-multi-enrich.js",
     "enrich:bastien:external:apply": "node tools/ci/p2610-bastien-external-multi-enrich.js --apply",
