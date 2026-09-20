@@ -139,3 +139,10 @@ Pairing: hold bottom-left (TS0044) or left button ~10s. Fresh CR2032.
 ## Bastien live — `_TZ3000_axpdxqgu`+TS0041 (P2630)
 
 EP1 only `[0,1,6]` / out `[25,10]`. No E000/EF00. Battery ZCL 200→100%. RX 0xFD. Driver `button_wireless_1`. Re-pair after tip.
+
+## P2633 — Phantom 4-EP firmware on TS0041 (HA T455202)
+
+Some Chinese 1-button remotes (`_TZ3000_adndolvx`+TS0041 etc.) ship **TS0044 4-endpoint firmware**.
+ZHA shows 4 dead switches; real presses are OnOff **0xFD** on EP1 only.
+
+Homey: `button_wireless_1` with `collapsePhantomEndpoints` + `mapAllEndpointsToButton1` — never pair as 4-gang.

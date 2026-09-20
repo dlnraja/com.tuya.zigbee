@@ -1,21 +1,19 @@
 'use strict';
 const UnifiedSwitchBase = require('../../lib/devices/UnifiedSwitchBase');
 const { setupSonoffEwelink, handleSonoffEwlSettings } = require('../../lib/mixins/SonoffEwelinkMixin');
+const {
+  isHobeianZg301z,
+  healHobeianZg301z,
+  forceSwitchTypeState,
+  clearOnTimeCountdown,
+} = require('../../lib/tuya/HobeianZg301zHeal');
 
 /**
- * 
- *       1-GANG SWITCH - v5.5.940 SIMPLIFIED (PR #118 rollback)                 
- * 
- *   Uses UnifiedSwitchBase which provides:                                       
- *   - dpMappings for DP 1-8 (gang switches) + DP 14-15 (settings)              
- *   - _setupTuyaDPMode() + _setupZCLMode()                                      
- *   - _registerCapabilityListeners() for all gangs                              
- *   - ProtocolAutoOptimizer for automatic detection                             
- *                                                                                
- *   NOTE: BSEED devices should use wall_switch_1gang_1way driver instead       
- *   (PR #118 by packetninja/Attilla)
- *   v10.3.0 FIX (B10/P2395): no Physical/Virtual double-wrap — already on TuyaZigbeeDevice.
- * 
+ * 1-GANG SWITCH - v5.5.940 + P2632 HOBEIAN ZG-301Z
+ *
+ * Uses UnifiedSwitchBase (DP + ZCL).
+ * NOTE: BSEED → wall_switch_1gang_1way.
+ * P2632: HOBEIAN+ZG-301Z kitchen light auto-off ~5s → clear onTime + force switch_type=state.
  */
 class Switch1GangDevice extends UnifiedSwitchBase {
 
@@ -30,9 +28,13 @@ class Switch1GangDevice extends UnifiedSwitchBase {
 
   /**
    * EXTEND parent dpMappings with energy monitoring DPs
+   * (skipped at runtime for HOBEIAN ZG-301Z — no electrical clusters)
    */
   get dpMappings() {
     const parentMappings = Object.getPrototypeOf(Object.getPrototypeOf(this)).dpMappings || {};
+    if (isHobeianZg301z(this)) {
+      return { ...parentMappings };
+    }
     return {
       ...parentMappings,
       17: { capability: 'measure_current', smartDivisor: true, unit: 'A' },
@@ -43,56 +45,80 @@ class Switch1GangDevice extends UnifiedSwitchBase {
   }
 
   async onNodeInit({ zclNode }) {
-    // --- Attribute Reporting Configuration (auto-generated) ---
-    try {
-      await this.configureAttributeReporting([
-        {
-          cluster: 'genPowerCfg',
-          attributeName: 'batteryPercentageRemaining',
-          minInterval: 3600,
-          maxInterval: 43200,
-          minChange: 2,
-        },
-        {
-          cluster: 'haElectricalMeasurement',
-          attributeName: 'activePower',
-          minInterval: 10,
-          maxInterval: 300,
-          minChange: 5,
-        },
-        {
-          cluster: 'haElectricalMeasurement',
-          attributeName: 'rmsVoltage',
-          minInterval: 30,
-          maxInterval: 600,
-          minChange: 1,
-        },
-        {
-          cluster: 'haElectricalMeasurement',
-          attributeName: 'rmsCurrent',
-          minInterval: 30,
-          maxInterval: 600,
-          minChange: 10,
-        }
-      ]);
-      this.log('Attribute reporting configured successfully');
-    } catch (err) {
-      this.log('Attribute reporting config failed (device may not support it):', err.message);
+    const hobeian301 = isHobeianZg301z(this);
+
+    // WHY(P2632): ZG-301Z has no genPowerCfg / electrical — reporting cfg storms wake/noise
+    if (!hobeian301) {
+      try {
+        await this.configureAttributeReporting([
+          {
+            cluster: 'genPowerCfg',
+            attributeName: 'batteryPercentageRemaining',
+            minInterval: 3600,
+            maxInterval: 43200,
+            minChange: 2,
+          },
+          {
+            cluster: 'haElectricalMeasurement',
+            attributeName: 'activePower',
+            minInterval: 10,
+            maxInterval: 300,
+            minChange: 5,
+          },
+          {
+            cluster: 'haElectricalMeasurement',
+            attributeName: 'rmsVoltage',
+            minInterval: 30,
+            maxInterval: 600,
+            minChange: 1,
+          },
+          {
+            cluster: 'haElectricalMeasurement',
+            attributeName: 'rmsCurrent',
+            minInterval: 30,
+            maxInterval: 600,
+            minChange: 10,
+          }
+        ]);
+        this.log('Attribute reporting configured successfully');
+      } catch (err) {
+        this.log('Attribute reporting config failed (device may not support it):', err.message);
+      }
     }
 
-    // v5.8.95: Removed redundant _markAppCommand + broken _handleTuyaDatapoint wrapper.
-    // UnifiedSwitchBase._setGangOnOff() now calls PhysicalButtonMixin.markAppCommand() centrally.
     await super.onNodeInit({ zclNode });
-    // v8.4.2: SINGLE call to initPhysicalButtonDetection (was called twice causing double-initialization crash)
     await this.initPhysicalButtonDetection(zclNode);
     await this.initVirtualButtons();
     await setupSonoffEwelink(this, zclNode);
-    this.log('[SWITCH-1G] v5.11.106 - Bidirectional physical+virtual button detection ready');
+
+    // WHY(P2632): Bastien « Eclairage table cuisine » — clear countdown + force state
+    try {
+      await healHobeianZg301z(this, zclNode);
+    } catch (e) {
+      this.log('[P2632] heal soft-fail:', e.message);
+    }
+
+    this.log('[SWITCH-1G] ready' + (hobeian301 ? ' (P2632 HOBEIAN ZG-301Z)' : ''));
   }
+
   async onSettings({ oldSettings, newSettings, changedKeys }) {
     await super.onSettings({ oldSettings, newSettings, changedKeys });
     for (const k of changedKeys) {
       await handleSonoffEwlSettings(this, k, newSettings[k]);
+      if (k === 'switch_mode' && isHobeianZg301z(this)) {
+        const v = newSettings[k];
+        if (v === 'state' || v === 'toggle') {
+          await forceSwitchTypeState(this);
+          if (v === 'toggle') {
+            try { await this._writeE001Attribute?.('switchMode', 0); } catch (_e) { /* soft */ }
+          }
+        }
+        await clearOnTimeCountdown(this);
+      }
+      if (k === 'clear_countdown' && newSettings[k]) {
+        await clearOnTimeCountdown(this);
+        await this.setSettings({ clear_countdown: false }).catch(() => {});
+      }
     }
   }
 

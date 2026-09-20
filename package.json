@@ -1,6 +1,6 @@
 {
   "name": "com.dlnraja.tuya.zigbee.bastien",
-  "version": "1.0.18",
+  "version": "1.0.19",
   "description": "Private Zigbee house app for Bastien — local Homey Pro only. Learnings promote upstream to Universal Tuya / Stable (never the reverse wholesale).",
   "main": "app.js",
   "scripts": {
@@ -497,7 +497,9 @@
     "check:p2628": "node --test test/critical/p2628-same-page-button-flow-ux.test.js",
     "check:p2629": "node --test test/critical/p2629-vsxvaj9i-interview-clusters.test.js",
     "check:p2630": "node --test test/critical/p2630-axpdxqgu-interview-clusters.test.js",
-    "check:p2631": "node --test test/critical/p2631-bastien-mesh-complete.test.js"
+    "check:p2631": "node --test test/critical/p2631-bastien-mesh-complete.test.js",
+    "check:p2632": "node --test test/critical/p2632-p2633-zg301z-adndolvx.test.js",
+    "check:p263x": "npm run check:p2630 && npm run check:p2631 && npm run check:p2632"
   },
   "keywords": [
     "homey",
