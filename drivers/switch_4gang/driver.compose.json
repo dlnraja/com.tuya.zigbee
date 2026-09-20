@@ -56,7 +56,12 @@
           0,
           4,
           5,
-          6
+          6,
+          3,
+          57344,
+          57345,
+          1794,
+          2820
         ],
         "bindings": [
           6
@@ -66,7 +71,11 @@
         "clusters": [
           4,
           5,
-          6
+          6,
+          0,
+          3,
+          57344,
+          57345
         ],
         "bindings": [
           6
@@ -76,7 +85,11 @@
         "clusters": [
           4,
           5,
-          6
+          6,
+          0,
+          3,
+          57344,
+          57345
         ],
         "bindings": [
           6
@@ -86,7 +99,11 @@
         "clusters": [
           4,
           5,
-          6
+          6,
+          0,
+          3,
+          57344,
+          57345
         ],
         "bindings": [
           6
@@ -391,7 +408,15 @@
       "_tze284_WKVFB2LD",
       "_tze200_AQNAZJ70",
       "_tze200_MEXISFIK",
-      "_tz3000_MMKBPTMX"
+      "_tz3000_MMKBPTMX",
+      "_TZ3000_ltt60asa",
+      "_TZ3000_LTT60ASA",
+      "_tz3000_ltt60asa",
+      "_tz3000_LTT60ASA",
+      "_TZ3000_liygxtcq",
+      "_TZ3000_LIYGXTCQ",
+      "_tz3000_liygxtcq",
+      "_tz3000_LIYGXTCQ"
     ]
   },
   "images": {
@@ -964,6 +989,42 @@
         "en": "Use if W/kWh readings are 10× too high or low.",
         "fr": "Si W/kWh sont ×10 trop hauts ou bas."
       }
+    },
+    {
+      "id": "switch_mode",
+      "type": "dropdown",
+      "label": {
+        "en": "External switch type",
+        "fr": "Type interrupteur externe"
+      },
+      "hint": {
+        "en": "Wired switch behind the module (E001). State = stays on; Momentary = pulse.",
+        "fr": "Interrupteur filaire (E001). State = reste allumé; Momentary = impulsion."
+      },
+      "value": "state",
+      "values": [
+        {
+          "id": "toggle",
+          "label": {
+            "en": "Toggle",
+            "fr": "Toggle"
+          }
+        },
+        {
+          "id": "state",
+          "label": {
+            "en": "State (recommended)",
+            "fr": "State (recommandé)"
+          }
+        },
+        {
+          "id": "momentary",
+          "label": {
+            "en": "Momentary (pulse)",
+            "fr": "Momentary (impulsion)"
+          }
+        }
+      ]
     }
   ],
   "name": {
