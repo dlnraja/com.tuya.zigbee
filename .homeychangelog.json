@@ -1854,5 +1854,8 @@
   },
   "5.12.276": {
     "en": "Ceiling radar gkfbdvyx: lux DP103-only (no DP10 junk), skip discovery phantoms after Repair. Update Test + remove/re-add radar."
+  },
+  "5.12.277": {
+    "en": "WiFi LAN reliability: offline grace + command gap + protocol auto-order (backport). Update Homey Test."
   }
 }
