@@ -895,6 +895,18 @@
       "pid": "TS0601",
       "driverId": "lcdtemphumidsensor",
       "note": "P2637 Bastien Unknown Node LCD TH clock"
+    },
+    {
+      "mfr": "_TZ3000_famkxci2",
+      "pid": "TS0043",
+      "driverId": "button_wireless_3",
+      "note": "P2640 GH#551 sacred-keep BOTH"
+    },
+    {
+      "mfr": "_TZ3000_e3vhyirx",
+      "pid": "TS130F",
+      "driverId": "wall_curtain_switch",
+      "note": "P2640 GH#552 sacred-keep BOTH"
     }
   ]
 }
