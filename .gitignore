@@ -293,3 +293,7 @@ reports/myskills-cv/
 
 # P2562 local workflow habit state (CI learn — not Homey bundle)
 reports/local-workflow-learn/STATE.json
+
+# Local Homey PATs (never commit)
+.github/state/homey-secrets.local.json
+*.local.json

@@ -1,4 +1,8 @@
 {
+  "9.0.1135": {
+    "en": "WiFi EV: phase-JSON + proven charge-history kWh (no e/d guess). LAN stale-data reconnect + fire-and-forget SET. Credits Tuya Local (andiwirz). Update Homey Test.",
+    "fr": "EV WiFi: JSON phases + historique charge (kWh prouve). Reconnexion LAN stale + fire-and-forget. Credits Tuya Local (andiwirz). Maj Test Homey."
+  },
   "9.0.1134": {
     "en": "TS0043 _TZ3000_famkxci2 stays Wireless Button 3 (no Generic Zigbee). Curtain TS130F e3vhyirx wall switch lock. Ceiling radar presence clear safer. Update Homey Test; remove+re-pair remotes that landed Generic.",
     "fr": "TS0043 _TZ3000_famkxci2 reste Bouton 3 (pas Zigbee generique). Verrou rideau TS130F e3vhyirx. Radar plafond presence plus stable. Maj Test Homey; supprimer+re-appairer si Generique."

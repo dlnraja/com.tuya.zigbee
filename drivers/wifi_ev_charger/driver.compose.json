@@ -174,6 +174,65 @@
             "en": "Delay before marking unavailable / firing disconnect flows after a brief TCP drop (pet feeders, dehumidifiers).",
             "fr": "Délai avant indisponible / flux déconnecté après une brève coupure TCP (pet feeders, déshumidificateurs)."
           }
+        },
+        {
+          "id": "dp_phase_json",
+          "type": "number",
+          "label": {
+            "en": "DP Phase JSON (0=auto/off)",
+            "fr": "DP Phase JSON (0=auto/off)",
+            "de": "DP Phase-JSON (0=auto/aus)"
+          },
+          "value": 0,
+          "min": 0,
+          "max": 255,
+          "hint": {
+            "en": "P2641: chargers that send L1/L2/L3 as one JSON DP (often 102). Leave 0 to auto-detect when value looks like phase JSON.",
+            "fr": "Bornes qui envoient L1/L2/L3 en un seul DP JSON (souvent 102). 0 = auto-détection."
+          }
+        },
+        {
+          "id": "json_session_field",
+          "type": "dropdown",
+          "label": {
+            "en": "JSON session energy field",
+            "fr": "Champ énergie session JSON"
+          },
+          "value": "none",
+          "values": [
+            { "id": "none", "label": { "en": "None (prefer charge history)" } },
+            { "id": "e", "label": { "en": "Field e" } },
+            { "id": "d", "label": { "en": "Field d" } }
+          ],
+          "hint": {
+            "en": "P2642: prefer DP Charge History for proven kWh. Do not invent from ambiguous phase-JSON e/d."
+          }
+        },
+        {
+          "id": "dp_charge_history",
+          "type": "number",
+          "label": {
+            "en": "DP Charge History (0=auto-detect)",
+            "fr": "DP Historique charge (0=auto)"
+          },
+          "value": 0,
+          "min": 0,
+          "max": 255,
+          "hint": {
+            "en": "Completed charge record JSON (c=kWh×10, d=seconds). Proven session energy — tuyalocal 1.0.237."
+          }
+        },
+        {
+          "id": "fire_and_forget",
+          "type": "checkbox",
+          "label": {
+            "en": "Fire and Forget",
+            "fr": "Envoi sans accusé"
+          },
+          "value": false,
+          "hint": {
+            "en": "Do not wait for SET acknowledgement (protocol 3.4/3.5)."
+          }
         }
       ]
     }

@@ -546,6 +546,22 @@
     "p2621_wifi_heat_pump_ev_kettle_fixit": {
       "tag": "MASTER_ONLY",
       "note": "Dedicated wifi_heat_pump / wifi_kettle / wifi_ev_charger + settings Fix-It (com.tuyalocal inspired); WiFiDPRegistry UNION"
+    },
+    "p2641_tuyalocal_phase_json_wifi": {
+      "tag": "MASTER_ONLY",
+      "note": "EvChargerPhaseJson + wifi_ev_charger DP102 JSON + WiFiDPRegistry qccdz/hjjcy/wnykq UNION + SourceCredits andiwirz"
+    },
+    "p2641_tuyalocal_stale_data_lan": {
+      "tag": "BOTH",
+      "note": "TuyaLocalClient stale-data watchdog (HB alive / DPS dead) — LAN reliability from com.tuyalocal 1.0.190+"
+    },
+    "p2642_tuyalocal_charge_history_fof": {
+      "tag": "MASTER_ONLY",
+      "note": "EvChargerChargeHistory + fire_and_forget SET + OEM work_state map (Homey Store Test com.tuyalocal 1.0.237)"
+    },
+    "p2642_tuyalocal_fire_and_forget_lan": {
+      "tag": "BOTH",
+      "note": "TuyaLocalClient fire-and-forget SET (3.4/3.5 / pulse) — LAN reliability"
     }
   }
 }
