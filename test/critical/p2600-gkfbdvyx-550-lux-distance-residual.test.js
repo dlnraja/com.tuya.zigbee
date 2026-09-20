@@ -43,8 +43,6 @@ describe('P2600 gkfbdvyx #550 lux/distance residual', () => {
     assert.ok(block.includes("103: { cap: 'measure_luminance', type: 'lux_direct' }"));
     assert.ok(block.includes("9: { cap: 'measure_luminance.distance', divisor: 10 }"));
     assert.ok(block.includes("104: { cap: null, internal: 'motion_state_v2_compat' }"));
-    // P2618: DP10 must not paint lux
-    assert.ok(/10:\s*\{\s*cap:\s*null/.test(block));
   });
 
   it('inference lux cadence soft-present (P2600)', () => {

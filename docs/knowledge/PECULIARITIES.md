@@ -593,7 +593,6 @@ Generated 2026-09-15T08:05:31.976Z from registry (220 cases) × compound DB (509
 - Compound `_TZ3000_qzjcsmar|TS0043`: zcl
 - Compose: class=button eps=4 EF00=true IAS=true batteries=CR2032/CR2450
 - Notes: Battery CR2032 sticky 3-button wall remote. Must not pair as 2-gang. Single/double/long press via PhysicalButtonMixin.
-- **P2615 (2026-09-20):** compose `maintenanceAction:false` (Button 1–3 device view); hybrid 0xFD/E000/EF00; never 0x8004; tip ≥9.0.1102
 - Sources: z2m, forum-140352-2168, aliexpress-3055457170131038
 
 ### `zemismart-ts0001-tb25-1` → `wall_switch_1gang_1way`
@@ -1187,7 +1186,6 @@ Generated 2026-09-15T08:05:31.976Z from registry (220 cases) × compound DB (509
 - Compound `_TZ3000_zgyzgdua|TS0044`: zcl  Moes XH-SY-04Z physical press genOnOff 0xFD; skip 0x8004. Update Test + re-pair.
 - Compose: class=button eps=4 EF00=false IAS=false batteries=CR2450/AAA
 - Notes: meter91 #2189/#2207 — scene_switch_4 genOnOff 0xFD; diag c40705a1 on 9.0.714 needs Test ≥9.0.734 + re-pair
-- **P2614 (2026-09-20):** compose `maintenanceAction:false` (Button 1–4 device view, not Maintenance); `installWallSceneRemoteHybrid` (0xFD/E000/EF00/raw); never 0x8004; tip ≥9.0.1099
 - **Gaps:** no_sources, not_in_local_z2m_fps
 
 ### `p2328-wkai4ga5-ts0044-scene` → `scene_switch_4`
@@ -1208,7 +1206,6 @@ Generated 2026-09-15T08:05:31.976Z from registry (220 cases) × compound DB (509
 - Compound `_TZ3000_xffhmvhv|TS004F`: zcl  Nobø SWS-IZ — skip 0x8004; OnOff 0xFD path. Update Test + re-pair.
 - Compose: class=button eps=4 EF00=false IAS=false batteries=CR2032/CR2450/AAA
 - Notes: Nobø SWS-IZ (Z2M #12768); diag 9cbf9eb6 — skip 0x8004 write (firmware rejects); 0xFD/hybrid RX
-- **P2614 (2026-09-20):** Button N device view (`maintenanceAction:false`); fleet hybrid + LevelControl; tip ≥9.0.1099
 - **Gaps:** no_sources, not_in_local_z2m_fps
 
 ### `p2328-ts0044-remotes-not-wall-switch` → `scene_switch_4`
