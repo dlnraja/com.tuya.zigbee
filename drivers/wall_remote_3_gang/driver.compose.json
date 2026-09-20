@@ -139,7 +139,7 @@
         "de": "Taste 1"
       },
       "setable": false,
-      "maintenanceAction": true,
+      "maintenanceAction": false,
       "getable": false
     },
     "button.2": {
@@ -150,7 +150,7 @@
         "de": "Taste 2"
       },
       "setable": false,
-      "maintenanceAction": true,
+      "maintenanceAction": false,
       "getable": false
     },
     "button.3": {
@@ -161,7 +161,7 @@
         "de": "Taste 3"
       },
       "setable": false,
-      "maintenanceAction": true,
+      "maintenanceAction": false,
       "getable": false
     },
     "measure_battery": {

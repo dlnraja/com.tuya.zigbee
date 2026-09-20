@@ -21,7 +21,7 @@
       },
       "getable": false,
       "setable": false,
-      "maintenanceAction": true
+      "maintenanceAction": false
     },
     "button.2": {
       "title": {
@@ -30,7 +30,7 @@
       },
       "getable": false,
       "setable": false,
-      "maintenanceAction": true
+      "maintenanceAction": false
     },
     "button.3": {
       "title": {
@@ -39,7 +39,7 @@
       },
       "getable": false,
       "setable": false,
-      "maintenanceAction": true
+      "maintenanceAction": false
     },
     "measure_battery": {
       "getable": true,

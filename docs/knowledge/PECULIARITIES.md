@@ -593,6 +593,7 @@ Generated 2026-09-15T08:05:31.976Z from registry (220 cases) × compound DB (509
 - Compound `_TZ3000_qzjcsmar|TS0043`: zcl
 - Compose: class=button eps=4 EF00=true IAS=true batteries=CR2032/CR2450
 - Notes: Battery CR2032 sticky 3-button wall remote. Must not pair as 2-gang. Single/double/long press via PhysicalButtonMixin.
+- **P2615 (2026-09-20):** compose `maintenanceAction:false` (Button 1–3 device view); hybrid 0xFD/E000/EF00; never 0x8004; tip ≥9.0.1102
 - Sources: z2m, forum-140352-2168, aliexpress-3055457170131038
 
 ### `zemismart-ts0001-tb25-1` → `wall_switch_1gang_1way`
