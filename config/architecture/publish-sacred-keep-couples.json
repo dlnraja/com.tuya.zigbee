@@ -865,6 +865,36 @@
       "pid": "TS0601",
       "driverId": "switch_3gang",
       "note": "P2485 Z2M TS0601_3gang_rkbxtclc; was dimmer_wall_1gang"
+    },
+    {
+      "mfr": "_TZE284_gkfbdvyx",
+      "pid": "TS0601",
+      "driverId": "presence_sensor_radar",
+      "note": "P2583 gkfbdvyx TZE284 sibling sacred-keep (GH#547)"
+    },
+    {
+      "mfr": "_TZ3000_ltt60asa",
+      "pid": "TS0004",
+      "driverId": "switch_4gang",
+      "note": "P2634 SML-04Z / Z2M TS0004_switch_module"
+    },
+    {
+      "mfr": "_TZ3000_liygxtcq",
+      "pid": "TS0004",
+      "driverId": "switch_4gang",
+      "note": "P2634 Z2M sibling of ltt60asa"
+    },
+    {
+      "mfr": "_TZ3000_dzwgk7e2",
+      "pid": "TS0042",
+      "driverId": "button_wireless_2",
+      "note": "P2636 Bastien 2-btn scene remote (phantom 4EP FW)"
+    },
+    {
+      "mfr": "_TZE284_vvmbj46n",
+      "pid": "TS0601",
+      "driverId": "lcdtemphumidsensor",
+      "note": "P2637 Bastien Unknown Node LCD TH clock"
     }
   ]
 }

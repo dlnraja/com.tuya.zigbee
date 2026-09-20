@@ -56,7 +56,12 @@
           0,
           4,
           5,
-          6
+          6,
+          3,
+          57344,
+          57345,
+          1794,
+          2820
         ],
         "bindings": [
           6
@@ -393,7 +398,15 @@
       "_tze200_MEXISFIK",
       "_tz3000_MMKBPTMX",
       "lellki",
-      "LELLKI"
+      "LELLKI",
+      "_TZ3000_ltt60asa",
+      "_TZ3000_LTT60ASA",
+      "_tz3000_ltt60asa",
+      "_tz3000_LTT60ASA",
+      "_TZ3000_liygxtcq",
+      "_TZ3000_LIYGXTCQ",
+      "_tz3000_liygxtcq",
+      "_tz3000_LIYGXTCQ"
     ]
   },
   "images": {
@@ -927,6 +940,78 @@
           "hint": {
             "en": "Strings only: off / normal / inverted.",
             "fr": "Chaînes uniquement : off / normal / inverted."
+          }
+        }
+      ]
+    },
+    {
+      "id": "power_scale",
+      "type": "dropdown",
+      "label": {
+        "en": "Power Measurement Scale",
+        "fr": "Échelle de puissance"
+      },
+      "value": "1",
+      "values": [
+        {
+          "id": "0.1",
+          "label": {
+            "en": "÷10",
+            "fr": "÷10"
+          }
+        },
+        {
+          "id": "1",
+          "label": {
+            "en": "×1 (Default)",
+            "fr": "×1 (défaut)"
+          }
+        },
+        {
+          "id": "10",
+          "label": {
+            "en": "×10",
+            "fr": "×10"
+          }
+        }
+      ],
+      "hint": {
+        "en": "Use if W/kWh readings are 10× too high or low.",
+        "fr": "Si W/kWh sont ×10 trop hauts ou bas."
+      }
+    },
+    {
+      "id": "switch_mode",
+      "type": "dropdown",
+      "label": {
+        "en": "External switch type",
+        "fr": "Type interrupteur externe"
+      },
+      "hint": {
+        "en": "Wired switch behind the module (E001). State = stays on; Momentary = pulse.",
+        "fr": "Interrupteur filaire (E001). State = reste allumé; Momentary = impulsion."
+      },
+      "value": "state",
+      "values": [
+        {
+          "id": "toggle",
+          "label": {
+            "en": "Toggle",
+            "fr": "Toggle"
+          }
+        },
+        {
+          "id": "state",
+          "label": {
+            "en": "State (recommended)",
+            "fr": "State (recommandé)"
+          }
+        },
+        {
+          "id": "momentary",
+          "label": {
+            "en": "Momentary (pulse)",
+            "fr": "Momentary (impulsion)"
           }
         }
       ]
