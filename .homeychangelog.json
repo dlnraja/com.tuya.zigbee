@@ -3749,5 +3749,8 @@
   },
   "9.0.1119": {
     "en": "Improved 3-button wireless remote UX (_TZ3000_vsxvaj9i TS0043): Button 1-3 visible in device UI. Update then remove+re-pair if buttons were missing."
+  },
+  "9.0.1120": {
+    "en": "Fixed Zigbee fingerprint sync so battery remotes pair to the correct drivers and flows fire. Update then remove+re-pair affected remotes."
   }
 }
