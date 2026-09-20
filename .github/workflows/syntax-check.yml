@@ -238,9 +238,9 @@ jobs:
         run: node tools/ci/p216-zcl-battery-half-percent-gate.js
 
       - name: Critical layer + battery tests (P206–P209)
-        # P2611: soft-skip missing files so stable/bastien tracks don't fail on MASTER_ONLY suites
+        # P2611: track-adaptive runner — skip missing / MASTER_ONLY deps
         run: |
-          for f in \
+          node tools/ci/run-critical-tests-track-adaptive.js \
             test/critical/layer-coverage.test.js \
             test/critical/multi-protocol-battery.test.js \
             test/critical/layer-signal-fusion.test.js \
@@ -248,18 +248,10 @@ jobs:
             test/critical/time-cluster-policy.test.js \
             test/critical/energy-battery-button-flows.test.js \
             test/critical/p2611-dual-app-layer-gate-adaptive.test.js
-          do
-            if [ -f "$f" ]; then
-              echo "RUN $f"
-              node --test "$f"
-            else
-              echo "SKIP missing $f (track-adaptive)"
-            fi
-          done
 
       - name: P2138 BSEED dimmer + Poll Control tests
         run: |
-          for f in \
+          node tools/ci/run-critical-tests-track-adaptive.js \
             test/critical/p2138-bseed-wall-dimmer.test.js \
             test/critical/poll-control-policy.test.js \
             test/critical/p214-intelligent-protocol-detect.test.js \
@@ -271,20 +263,12 @@ jobs:
             test/critical/p2452-gh-issue-ssot.test.js \
             test/critical/p2453-gmail-gh-couple-locks.test.js \
             test/critical/p2454-package-lock-integrity.test.js
-          do
-            if [ -f "$f" ]; then
-              echo "RUN $f"
-              node --test "$f"
-            else
-              echo "SKIP missing $f (track-adaptive)"
-            fi
-          done
-          npm run check:p244x || true
-          npm run check:p246x || true
-          npm run check:p248x || true
-          npm run check:p249x || true
-          npm run check:publish || true
-          if npm run check:p2611 --silent 2>/dev/null; then npm run check:p2611; fi
+          if npm run | grep -q 'check:p244x'; then npm run check:p244x; fi
+          if npm run | grep -q 'check:p246x'; then npm run check:p246x; fi
+          if npm run | grep -q 'check:p248x'; then npm run check:p248x; fi
+          if npm run | grep -q 'check:p249x'; then npm run check:p249x; fi
+          if npm run | grep -q 'check:publish'; then npm run check:publish; fi
+          if npm run | grep -q 'check:p2611'; then npm run check:p2611; fi
 
       - name: Validate Homey SDK3 compliance
         run: |

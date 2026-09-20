@@ -1827,5 +1827,8 @@
   },
   "5.12.267": {
     "en": "Stable: fix syntax-check.yml UTF-8 + soft-skip MASTER_ONLY tests. Update Stable Test."
+  },
+  "5.12.268": {
+    "en": "Stable: track-adaptive critical test runner (skip MASTER_ONLY deps). Update Stable Test."
   }
 }
