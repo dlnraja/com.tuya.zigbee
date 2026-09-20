@@ -44,6 +44,19 @@ describe('P2617 gkfbdvyx #550 tip-regress lux/distance', () => {
     assert.ok(src.includes('P2617'));
   });
 
+  it('P2618: DP10 not lux + skip discovery on ceiling', () => {
+    const cfg = fs.readFileSync(
+      path.join(ROOT, 'drivers/presence_sensor_radar/configs.js'),
+      'utf8',
+    );
+    const idx = cfg.indexOf('ZY_M100_CEILING_24G');
+    const block = cfg.slice(idx, idx + 4500);
+    assert.ok(/10:\s*\{\s*cap:\s*null/.test(block), 'DP10 must be null (not lux)');
+    assert.ok(block.includes("103: { cap: 'measure_luminance'"));
+    const src = fs.readFileSync(DEVICE, 'utf8');
+    assert.ok(src.includes('P2618 skip auto-discovery'));
+  });
+
   it('npm check:p2617 wired', () => {
     const pkg = JSON.parse(fs.readFileSync(path.join(ROOT, 'package.json'), 'utf8'));
     assert.ok(pkg.scripts['check:p2617']);

@@ -3710,5 +3710,8 @@
   },
   "9.0.1105": {
     "en": "Ceiling radar gkfbdvyx: prefer DP103 lux, longer phantom strip after tip update. Update Homey Test + Repair radar."
+  },
+  "9.0.1106": {
+    "en": "Ceiling radar gkfbdvyx: lux DP103-only (no DP10 junk), skip discovery phantoms after Repair. Update Test + remove/re-add radar."
   }
 }

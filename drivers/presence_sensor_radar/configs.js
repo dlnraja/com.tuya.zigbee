@@ -260,8 +260,9 @@ const SENSOR_CONFIGS = {
       4: { cap: null, internal: 'detection_distance_max', radarRangeScale: true, maxMeters: 12 },
       // WHY(P2595 / Z2M ZY-M100-24GV3): DP9 distance = ÷10 (not smartDivisor → /100 miss)
       9: { cap: 'measure_luminance.distance', divisor: 10 },
-      // WHY(P2604 / Z2M V3): illuminance is DP103 raw — DP10 kept as soft sibling only
-      10: { cap: 'measure_luminance', type: 'lux_direct' },
+      // WHY(P2618 / GH#550 Gmail): V3 illuminance is DP103 ONLY (Z2M).
+      // Mapping DP10 as lux_direct painted junk (lux=1) and killed real DP103 updates.
+      10: { cap: null, internal: 'illuminance_v2_compat' },
       // WHY(P2597 / Z2M DP101 find_switch): distance tracking — auto ON after pair
       101: {
         cap: null,

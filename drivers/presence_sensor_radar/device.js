@@ -1419,6 +1419,15 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
     }
 
     // 2. Fallback: Intelligent Auto-Discovery
+    // WHY(P2618 / GH#550 Gmail Repair): discovery invents battery/zones/temp on ceiling
+    // V3 (OCR: Battery 7%, Button 1, Zone 1–3) — skip for gkfbdvyx family.
+    try {
+      const mfr = String(this.getSetting?.('zb_manufacturer_name') || '').toLowerCase();
+      if (/gkfbdvyx|ya4ft0w4|laokfqwu/.test(mfr) || (config && config.hasRelay === false && config.enableFindSwitchOnBoot)) {
+        this.log(`[RADAR] P2618 skip auto-discovery DP${dpId}=${value} (ceiling V3)`);
+        return;
+      }
+    } catch (_e) { /* soft */ }
     const discovery = this._ensureDiscovery();
     const discovered = discovery.analyzeDP(dp, value);
     if (discovered && discovered.confidence >= 60) {
@@ -2145,12 +2154,18 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
         if (max - min >= 0.25) return true;
       }
       const d = Number(this._lastDistanceM);
-      if (Number.isFinite(d) && d > 0.35
+      // WHY(P2618 / GH#550): OCR @ 9.0.1097 showed distance 0.2m while person nearby —
+      // treat fresh target >0.15m as entry corroboration (was 0.35 → missed).
+      if (Number.isFinite(d) && d > 0.15
           && this._lastDistanceAt && (now - this._lastDistanceAt) < 10_000) {
-        // Fresh non-zero target after a soft-clear is enough for bathroom entry
         if (this._ignoreStickyDp1Until && now < this._ignoreStickyDp1Until) {
-          return d > 0.35;
+          return d > 0.15;
         }
+        // Ceiling V3: any fresh non-zero target while painted absent → corroborate
+        try {
+          const mfr = String(this.getSetting?.('zb_manufacturer_name') || '').toLowerCase();
+          if (/gkfbdvyx|ya4ft0w4|laokfqwu/.test(mfr) && d > 0.15) return true;
+        } catch (_e2) { /* soft */ }
       }
       const inf = this._inference;
       if (inf?.state?.luxChangeRate > 8) return true;
