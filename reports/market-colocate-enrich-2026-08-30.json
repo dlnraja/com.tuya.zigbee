@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-19T16:47:47.592Z",
+  "generatedAt": "2026-09-20T06:55:26.373Z",
   "mode": "APPLY",
   "policy": "P2319 enrichment-first colocate — never strip other drivers",
   "applied": [],
@@ -18,6 +18,13 @@
     },
     {
       "mfr": "_TZE200_n8dljorx",
+      "pid": "TS0601",
+      "reason": "needs-deep-review",
+      "tier": null,
+      "soft": null
+    },
+    {
+      "mfr": "_TZE200_nkjintbl",
       "pid": "TS0601",
       "reason": "needs-deep-review",
       "tier": null,
