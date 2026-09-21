@@ -33,15 +33,15 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 
 | Metric | Value |
 |--------|-------|
-| **App Version** | v9.0.1145 |
+| **App Version** | v9.0.1147 |
 | **Drivers** | 434 (381 Zigbee + 53 WiFi) |
 | **Unique Fingerprints** | 4,694 |
-| **Pairing Variants** | 16,428 (4 case combos per fingerprint) |
+| **Pairing Variants** | 16,432 (4 case combos per fingerprint) |
 | **Unique Product IDs** | 598 |
-| **Flow Cards** | 6,052 |
+| **Flow Cards** | 6,057 |
 | **Unique Capabilities** | 170 |
 | **Native OTA Drivers** | 8 |
-| **Test Suites** | 438 files |
+| **Test Suites** | 440 files |
 | **SVG Icons** | 734 |
 | **Languages** | EN, FR, NL, DE |
 | **SDK / Homey** | 3 / >= 12.2.0 |
@@ -52,7 +52,7 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 | # | Driver | Fingerprints |
 |---|--------|-------------|
 | 1 | `climate_sensor` | 2,129 |
-| 2 | `switch_1gang` | 1,499 |
+| 2 | `switch_1gang` | 1,503 |
 | 3 | `curtain_motor` | 669 |
 | 4 | `presence_sensor_radar` | 615 |
 | 5 | `radiator_valve` | 602 |
@@ -103,6 +103,8 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 
 | Version | Changes |
 |---------|---------|
+| **v9.0.1147** | P2650: radar range scale module soft-require (fixes crash if missing); MTG075 occupied/quantized docs. Update Homey Test. |
+| **v9.0.1146** | P2646/P2647: sleepy SSOT + Tuya Local Test complementary. P2470 publish-gate log lock. |
 | **v9.0.1145** | P2645: sleepy remotes skip battery configure on pair; quiet Time 0x000A logs. |
 | **v9.0.1144** | P2644b: wall remote TS0041-only — stop 3ch remotes pairing as 1-button (Bastien 4d4e1684). |
 | **v9.0.1143** | P2644: fix switch flow card IDs + remote CI crash (Bastien diags). |
@@ -113,8 +115,6 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 | **v9.0.1138** | Improved WiFi LAN reliability and wall remote Homey UI sync. |
 | **v9.0.1137** | Improved WiFi LAN reliability and fingerprint database alignment. |
 | **v9.0.1136** | Improved WiFi LAN reliability and fingerprint routing. |
-| **v9.0.1135** | WiFi EV: phase-JSON + proven charge-history kWh (no e/d guess). LAN stale-data reconnect + fire-and-forget SET. Credits Tuya Local (andiw… |
-| **v9.0.1134** | TS0043 _TZ3000_famkxci2 stays Wireless Button 3 (no Generic Zigbee). Curtain TS130F e3vhyirx wall switch lock. Ceiling radar presence cle… |
 
 <!-- CHANGELOG_END -->
 
