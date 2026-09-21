@@ -3794,5 +3794,9 @@
   "1.0.39": {
     "en": "Fix battery wall remotes (TS0043): presses reach Flows again; pair as Wireless Button 3 not Homey Zigbee; rebuild Flows with Button pressed → light. Update app then remove+re-add sticky.",
     "fr": "Correctif telecommandes murales a piles (TS0043): les appuis repartent vers les Flows; appairer en Bouton sans fil 3 pas Homey Zigbee; recreer Flows Bouton appuye → lumiere. Maj app puis retirer+re-ajouter le stick."
+  },
+  "1.0.40": {
+    "en": "Mesh calm deepen: stop HOBEIAN modules flooding Zigbee (~5k msgs). Update+restart app. Re-pair Virtual remotes/sensors under Bastien drivers. Remove Unknown Nodes.",
+    "fr": "Calme mesh renforce: arrete le flood Zigbee des modules HOBEIAN (~5k msgs). Maj+redemarrer app. Re-appairer Virtual sous Bastien. Retirer les Unknown Nodes."
   }
 }

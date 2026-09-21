@@ -96,7 +96,8 @@
     "learnmode": {
       "image": "{{driverAssetsPath}}/icon.svg",
       "instruction": {
-        "en": "Turn the switch on/off 3 times quickly"
+        "en": "4-gang switch (_TZ3000_ltt60asa+TS0004…): pick Zigbee Bastien → 4-gang Switch — NOT Homey Zigbee. Toggle any gang 3× quickly.",
+        "fr": "Interrupteur 4 voies (_TZ3000_ltt60asa+TS0004…): Zigbee Bastien → Interrupteur 4 voies — PAS Homey Zigbee. Basculez 3× rapidement."
       }
     },
     "manufacturerName": [
