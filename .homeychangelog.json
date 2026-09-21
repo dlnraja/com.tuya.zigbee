@@ -1903,5 +1903,8 @@
   },
   "5.12.292": {
     "en": "P2651: drop empty wifi zigbee stubs (publish validate). P2650 TuyaRadarRangeScale crash fix."
+  },
+  "5.12.293": {
+    "en": "P2634: remove liygxtcq+TS0004 from switch_1gang (anti-bot). P2650 radar module + P2651 wifi stubs."
   }
 }
