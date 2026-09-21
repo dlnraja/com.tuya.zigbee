@@ -3834,5 +3834,8 @@
   },
   "9.0.1148": {
     "en": "P2651: drop empty wifi zigbee stubs + Buffer JSON load (publish validate). P2650 radar scale soft-require."
+  },
+  "9.0.1149": {
+    "en": "P2634: keep liygxtcq+TS0004 on switch_4gang only (anti-bot). Radar crash + wifi zigbee stubs."
   }
 }
