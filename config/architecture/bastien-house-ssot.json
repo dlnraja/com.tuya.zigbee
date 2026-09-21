@@ -953,10 +953,27 @@
     ],
     "contreQuoi": "battery cfg storm while SED asleep → mute buttons"
   },
+  "p2659": {
+    "diags": ["4c0d232b"],
+    "appVersion": "1.0.34",
+    "userMessage": "Bouton trois channel ne fonctionne sur aucun channel; app clic une fois puis erreur",
+    "tipNote": "1.0.35+ — String(value) on sub_capability_changed; no invent switch_1gang_*_scene",
+    "files": [
+      "lib/flow/UniversalFlowCardLoader.js",
+      "lib/mixins/PhysicalButtonMixin.js",
+      "lib/flow/FlowCardHeuristics.js"
+    ],
+    "userActions": [
+      "Update Bastien Test ≥1.0.35",
+      "Node18 / 3-btn: remove+re-pair as Bouton sans fil 3 with wake-taps (still if silent)",
+      "App onoff should no longer spam Expected string but got boolean"
+    ],
+    "contreQuoi": "sub_capability_changed boolean token + FLOW-GUARD switch_1gang_gang1_scene invent"
+  },
   "todayEnrichment2026_09_21": {
     "mode": "complementary_P2520",
-    "patches": ["P2644", "P2645"],
-    "tip": "1.0.30",
+    "patches": ["P2644", "P2645", "P2659"],
+    "tip": "1.0.35",
     "ssotDocs": [
       "config/architecture/sleepy-remote-pairing-ssot.json",
       "docs/architecture/SLEEPY_REMOTE_PAIRING_SSOT.md",
@@ -964,9 +981,9 @@
       "docs/architecture/PAIRING_DISCOVERY_SSOT.md"
     ],
     "userActions": [
-      "Update Bastien Test tip ≥1.0.30",
+      "Update Bastien Test tip ≥1.0.35",
       "Node18 / 3-btn: remove+re-pair button_wireless_3 with wake-taps",
-      "Confirm switch_1gang Flows use turned_on|off (no FLOW-GUARD invent)"
+      "Confirm no FLOW-GUARD switch_1gang_*_scene / sub_capability boolean spam"
     ]
   }
 }
