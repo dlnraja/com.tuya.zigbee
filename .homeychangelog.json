@@ -3768,5 +3768,8 @@
   },
   "1.0.32": {
     "en": "P2650: radar range soft-require (align crash harden). Keep tapping sleepy remotes during pair."
+  },
+  "1.0.33": {
+    "en": "P2652/P2634: 4-gang ZCL-safe pairing + liygxtcq only on switch_4gang. Update Bastien Test; re-pair 4-gang if needed."
   }
 }
