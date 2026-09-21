@@ -166,9 +166,11 @@ function resolveConflict(conflict, drivers) {
 
   // Rule 1.4: hard sacred-couple owners (always win vs climate catch-all)
   // PresentSky / wall 6-gang: _TZE200_8eazvzo6 must stay on switch_wall_6gang.
+  // P2631: eWeLink CK-TLSR8656-SS5-0x(7014) TH sensor → climate_sensor (not mini switch).
   const HARD_OWNERS = {
     '_tze200_8eazvzo6': 'switch_wall_6gang',
     '_tze204_8eazvzo6': 'switch_wall_6gang',
+    'ewelink': 'climate_sensor',
   };
   const hardOwner = HARD_OWNERS[String(mfr).toLowerCase()];
   if (hardOwner && drvNames.includes(hardOwner)) {
