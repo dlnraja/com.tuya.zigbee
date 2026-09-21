@@ -3831,5 +3831,8 @@
   },
   "9.0.1147": {
     "en": "P2650: radar range scale module soft-require (fixes crash if missing); MTG075 occupied/quantized docs. Update Homey Test."
+  },
+  "9.0.1148": {
+    "en": "P2651: drop empty wifi zigbee stubs + Buffer JSON load (publish validate). P2650 radar scale soft-require."
   }
 }
