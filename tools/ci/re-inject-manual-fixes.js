@@ -863,6 +863,27 @@ const MANUAL_FIXES = [
     addAtTop: true,
     source: 'p2487-intelligent-ir',
   },
+
+  // WHY(P2631): eWeLink CK-TLSR8656-SS5-0x(7014) is ZCL TH — conflict resolver must not
+  // strip eWeLink from climate_sensor in favor of module_mini_switch.
+  {
+    id: 'p2631-ewelink-7014-climate',
+    file: 'drivers/climate_sensor/driver.compose.json',
+    description: 'P2631 Bastien eWeLink 7014 TH → climate_sensor',
+    match: () => true,
+    addIfMissing: ['eWeLink', 'ewelink', 'EWELINK'],
+    addProductIds: ['CK-TLSR8656-SS5-01(7014)', 'CK-TLSR8656-SS5-02(7014)'],
+    addAtTop: true,
+    source: 'p2631-ewelink-climate',
+  },
+  {
+    id: 'p2631-ewelink-strip-mini-switch',
+    file: 'drivers/module_mini_switch/driver.compose.json',
+    description: 'P2631: eWeLink TH must not claim module_mini_switch',
+    match: (mfrs) => Array.isArray(mfrs) && mfrs.some((m) => /ewelink/i.test(String(m))),
+    removeIfPresent: ['eWeLink', 'ewelink', 'EWELINK'],
+    source: 'p2631-ewelink-climate',
+  },
 ];
 
 /** P2487: virtual IR remote must never keep a Zigbee block (Homey endpoints gate). */
