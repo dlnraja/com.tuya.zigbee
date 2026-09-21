@@ -1894,5 +1894,11 @@
   },
   "5.12.289": {
     "en": "P2470: battery-skip log lock so publish gate stays green."
+  },
+  "5.12.290": {
+    "en": "Publish tip soak (build #211)."
+  },
+  "5.12.291": {
+    "en": "P2650: ship TuyaRadarRangeScale + soft-require (crash mail: Cannot find module on radar settings). Update Stable Test."
   }
 }
