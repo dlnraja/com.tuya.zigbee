@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-21T07:06:35.868Z",
+  "generatedAt": "2026-09-21T18:57:17.985Z",
   "outDir": "/home/runner/work/com.tuya.zigbee/com.tuya.zigbee/reports/flow-l99-2026-09-21",
   "steps": [
     {
@@ -34,8 +34,8 @@
     },
     {
       "label": "dp-cluster-flow-coverage",
-      "ok": false,
-      "status": 1
+      "ok": true,
+      "status": 0
     },
     {
       "label": "button-flow-harvest",
@@ -43,5 +43,5 @@
       "status": 0
     }
   ],
-  "failCount": 1
+  "failCount": 0
 }

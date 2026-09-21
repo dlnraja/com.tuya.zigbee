@@ -8,7 +8,7 @@ Mode: **apply** | Crawl: **no**
 |--------|----------|-------|---|
 | Drivers | 434 | 434 | 0 |
 | MFR entries | 16428 | 16430 | 2 |
-| PID entries | 3018 | 3019 | 1 |
+| PID entries | 3019 | 3019 | 0 |
 
 ## Phases
 
@@ -41,6 +41,6 @@ Mode: **apply** | Crawl: **no**
 - p2519-anti-overwrite: OK
 - anti-bot-gate: OK
 - fp-collision-check: OK
-- flow-l99: FAIL
+- flow-l99: OK
 
 ✅ Coverage maintained or enriched

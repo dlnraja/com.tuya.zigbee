@@ -3,7 +3,7 @@
 | Metric | Value |
 |--------|------:|
 | Button-related drivers | 52 |
-| Total trigger cards | 877 |
+| Total trigger cards | 846 |
 | Drivers with issues | 0 |
 
 ## Top drivers by trigger count

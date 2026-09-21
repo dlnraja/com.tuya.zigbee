@@ -1,18 +1,17 @@
 # DP × Cluster × Flow coverage — 2026-09-21
 
-Critical gaps: **1**
+Critical gaps: **0**
 
 ## Drivers / Flow
 - Drivers: 434
 - With flow.compose: 434
 - Without: none
-- Flow card entries (compose): 5889
+- Flow card entries (compose): 5814
 
 ## Clusters
 - Compose unique: 36
-- Lexicon size: 44
-- Missing from lexicon: 1
-  - 0xFC11 (64529)
+- Lexicon size: 45
+- Missing from lexicon: 0
 
 ## DP knowledge
 - Knowledge couples: 209
