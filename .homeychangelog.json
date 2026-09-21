@@ -3813,5 +3813,8 @@
   },
   "9.0.1141": {
     "en": "Improved WiFi LAN reliability and eWeLink climate pairing."
+  },
+  "9.0.1142": {
+    "en": "Fixed app settings blank infinite loader (Homey.ready before mesh/WiFi scan)."
   }
 }
