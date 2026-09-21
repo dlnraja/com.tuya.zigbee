@@ -147,8 +147,8 @@
     "learnmode": {
       "image": "{{driverAssetsPath}}/icon.svg",
       "instruction": {
-        "en": "Press and hold any button for 5 seconds until the LED blinks rapidly",
-        "fr": "Maintenez n'importe quel bouton 5 s jusqu'à clignotement LED. Doit apparaître comme « Contrôleur 3 boutons » (pas Prise Zigbee). Puis créez les flows Bouton 1/2/3.",
+        "en": "Press and hold any button 5–10s until LED blinks. During the WHOLE pairing, tap a button every 2–3 seconds so the remote stays awake (sleepy remotes otherwise fail interview).",
+        "fr": "Maintenez un bouton 5–10 s jusqu’au clignotement. Pendant TOUT l’appairage, appuyez brièvement toutes les 2–3 s pour empêcher la mise en veille. Doit apparaître comme « Bouton sans fil 3 » (pas Remote wall / Prise).",
         "nl": "Houd een willekeurige knop 5 seconden ingedrukt totdat de LED snel knippert",
         "de": "Halten Sie eine beliebige Taste 5 Sekunden lang gedrückt, bis die LED schnell blinkt",
         "it": "Tenere premuto qualsiasi pulsante per 5 secondi finché il LED lampeggia rapidamente",
