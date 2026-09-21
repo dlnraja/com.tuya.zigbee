@@ -1891,5 +1891,8 @@
   },
   "5.12.288": {
     "en": "P2645: sleepy remotes skip battery configure on pair; quiet Time 0x000A logs."
+  },
+  "5.12.289": {
+    "en": "P2470: battery-skip log lock so publish gate stays green."
   }
 }
