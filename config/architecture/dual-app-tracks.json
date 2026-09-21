@@ -566,6 +566,22 @@
     "p2643_complementary_homey_apps_catalog": {
       "tag": "MASTER_ONLY",
       "note": "SSOT + docs catalog of Homey Live/Test peers (tuyalocal, Johan, Drenso, Heine) + SourceCredits — cite/credit only"
+    },
+    "p2644_bastien_flow_wall_routing": {
+      "tag": "BOTH",
+      "note": "switch_1gang turned_* heuristics (no double gang invent) + remote_button_wireless_wall TS0041-only — reliability"
+    },
+    "p2645_sleepy_remote_pairing": {
+      "tag": "BOTH",
+      "note": "Skip battery configureReporting on SED remotes + quiet 0x000A + wake-during-pair SSOT — reliability; never strip measure_battery"
+    },
+    "p2646_bastien_homey_box_platform": {
+      "tag": "MASTER_ONLY",
+      "note": "Bastien house SSOT homeyBox lock (hostname/LAN/bootId/Node24) — private inventory; enables local API path"
+    },
+    "p2647_tuyalocal_store_test_complementary": {
+      "tag": "MASTER_ONLY",
+      "note": "Homey Store Test com.tuyalocal 1.0.237 — Fix It LAN ports + Cloud Lookup UX + AQI/EV flows UNION (no Zigbee invent)"
     }
   }
 }

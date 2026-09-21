@@ -454,8 +454,10 @@
   <div class="card" id="wifi-fixit-card">
     <h3>WiFi Fix It</h3>
     <p style="font-size:11px;color:#666">
-      Check paired WiFi LAN devices for missing local keys and locked protocol versions.
+      Check paired WiFi LAN devices for missing local keys, locked protocol versions, and
+      <strong>LAN ports 6668/6667</strong> (Open vs Both closed — Matter/cloud-only / deep-sleep).
       Export a <strong>redacted</strong> support bundle (keys never in full). Preview only until you Repair.
+      Inspired by <a href="https://homey.app/fr-fr/app/com.tuyalocal/Tuya-Local/test/" target="_blank" rel="noopener">Tuya Local Test</a> (Andi Wirz).
     </p>
     <div class="mesh-toolbar">
       <button class="btn" type="button" id="btn-wifi-fixit-run">Run checks</button>
@@ -475,8 +477,15 @@
   </div>
 
   <div class="card">
-    <h3>WiFi Cloud Credentials</h3>
-    <p style="font-size:11px;color:#666">Save your Tuya IoT / SmartLife credentials here. They will be pre-filled when pairing WiFi devices (local_key). After pair, devices stay on LAN. Easy Login accepts email or phone.</p>
+    <h3>WiFi Cloud Lookup</h3>
+    <p style="font-size:11px;color:#666">
+      Save Tuya IoT / SmartLife credentials below (Cloud Lookup). They pre-fill pairing and improve DP names
+      (<code>envhumid</code>, <code>work_state</code>, …) vs guessing from raw values alone.
+      After pair, devices stay on <strong>LAN</strong>. Easy Login accepts email or phone.
+      If lookup used to work and now fails with <em>subscription expired</em>, extend the free IoT Core trial on
+      <a href="https://iot.tuya.com" target="_blank" rel="noopener">iot.tuya.com</a> (Cloud → Cloud Services → IoT Core → Extend Trial — pick 6 months).
+      Mode / fan tokens are <strong>case-sensitive</strong> — copy verbatim from the DP specification.
+    </p>
     
     <div class="row font-group">
       <div class="fg">
