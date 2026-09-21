@@ -147,8 +147,8 @@
     "learnmode": {
       "image": "{{driverAssetsPath}}/icon.svg",
       "instruction": {
-        "en": "IMPORTANT: pick Zigbee Bastien → Wireless Button 3 — NOT Homey Zigbee / « Appareil Zigbee ». Hold any button 5–10s until LED blinks; tap every 2–3s while pairing. Energy « Always on » / current dashes = wrong Homey Virtual driver (re-pair).",
-        "fr": "IMPORTANT: choisir Zigbee Bastien → Bouton sans fil 3 — PAS Homey Zigbee / « Appareil Zigbee ». Maintenez 5–10 s puis appuyez toutes les 2–3 s. Les tirets Énergie (Toujours en marche / courant) = mauvais driver Homey générique (supprimer + re-appairer).",
+        "en": "IMPORTANT: pick Zigbee Bastien → Wireless Button 3 — NOT Homey Zigbee / « Appareil Zigbee ». Hold any button 5–10s until LED blinks; tap every 2–3s while pairing. Then rebuild Flows with trigger « Button pressed » (Button 1/2/3) → light On — NOT « Turned on » / onoff. Energy dashes = wrong Virtual driver.",
+        "fr": "IMPORTANT: Zigbee Bastien → Bouton sans fil 3 — PAS Homey Zigbee / « Appareil Zigbee ». Maintenez 5–10 s puis appuyez toutes les 2–3 s. Recreez les Flows: declencheur « Bouton appuye » (Bouton 1/2/3) → allumer — PAS « Allume » / onoff. Tirets Energie = mauvais driver Virtual.",
         "nl": "Houd een willekeurige knop 5 seconden ingedrukt totdat de LED snel knippert",
         "de": "Halten Sie eine beliebige Taste 5 Sekunden lang gedrückt, bis die LED schnell blinkt",
         "it": "Tenere premuto qualsiasi pulsante per 5 secondi finché il LED lampeggia rapidamente",
