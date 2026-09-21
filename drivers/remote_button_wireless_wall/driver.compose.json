@@ -81,15 +81,15 @@
     "learnmode": {
       "image": "{{driverAssetsPath}}/icon.svg",
       "instruction": {
-        "en": "Press and hold any button for 5 seconds until the LED blinks rapidly",
-        "fr": "Maintenez le bouton 5–10 s jusqu'à ce que la LED clignote. Après maj app, retirez et ré-ajoutez si les flows ne partent pas.",
-        "nl": "Appuyez et maintenez n'importe quel bouton pendant 5 secondes jusqu'à ce que la LED clignote rapidement",
-        "de": "Appuyez et maintenez n'importe quel bouton pendant 5 secondes jusqu'à ce que la LED clignote rapidement",
-        "it": "Appuyez et maintenez n'importe quel bouton pendant 5 secondes jusqu'à ce que la LED clignote rapidement",
-        "sv": "Appuyez et maintenez n'importe quel bouton pendant 5 secondes jusqu'à ce que la LED clignote rapidement",
-        "no": "Appuyez et maintenez n'importe quel bouton pendant 5 secondes jusqu'à ce que la LED clignote rapidement",
-        "es": "Appuyez et maintenez n'importe quel bouton pendant 5 secondes jusqu'à ce que la LED clignote rapidement",
-        "da": "Appuyez et maintenez n'importe quel bouton pendant 5 secondes jusqu'à ce que la LED clignote rapidement"
+        "en": "1-button wall remote only (TS0041). For 3-button TS0043 stickies (_TZ3000_vsxvaj9i…): remove device and pair as Wireless Button 3 — never Homey Zigbee generic. Hold any button 5–10s until LED blinks.",
+        "fr": "Telecommande murale 1 bouton (TS0041) uniquement. Pour stick 3 boutons TS0043 (_TZ3000_vsxvaj9i…): retirez et ajoutez en Bouton sans fil 3 — jamais Homey Zigbee generique. Maintenez 5–10 s jusqu'au clignotement LED.",
+        "nl": "Press and hold any button for 5 seconds until the LED blinks rapidly",
+        "de": "Press and hold any button for 5 seconds until the LED blinks rapidly",
+        "it": "Press and hold any button for 5 seconds until the LED blinks rapidly",
+        "sv": "Press and hold any button for 5 seconds until the LED blinks rapidly",
+        "no": "Press and hold any button for 5 seconds until the LED blinks rapidly",
+        "es": "Press and hold any button for 5 seconds until the LED blinks rapidly",
+        "da": "Press and hold any button for 5 seconds until the LED blinks rapidly"
       }
     }
   },
