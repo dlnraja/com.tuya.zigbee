@@ -1307,10 +1307,17 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
       return mapping.enumMap[value];
     }
     // WHY(P2583 / GH#547): Z2M ÷100 vs ZHA ×0.1 for near/far range DPs
+    // WHY(P2650): soft-require — crash mail stable Cannot find module TuyaRadarRangeScale
     if (mapping.radarRangeScale) {
-      const { normalizeRadarRangeMeters } = require('../../lib/tuya/TuyaRadarRangeScale');
-      const m = normalizeRadarRangeMeters(value, { maxMeters: mapping.maxMeters || 12 });
-      return m != null ? m : value;
+      try {
+        const { normalizeRadarRangeMeters } = require('../../lib/tuya/TuyaRadarRangeScale');
+        const m = normalizeRadarRangeMeters(value, { maxMeters: mapping.maxMeters || 12 });
+        return m != null ? m : value;
+      } catch (err) {
+        this.error?.('[RADAR] TuyaRadarRangeScale missing/soft-fail:', err?.message || err);
+        if (mapping.divisor && typeof value === 'number') return value / mapping.divisor;
+        return value;
+      }
     }
     if (mapping.divisor && typeof value === 'number') {
       return value / mapping.divisor;
@@ -1333,8 +1340,15 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
       }
     } catch (_eClamp) { /* soft */ }
     if (mapping.radarRangeScale) {
-      const { toRadarRangeTuyaValue } = require('../../lib/tuya/TuyaRadarRangeScale');
-      return toRadarRangeTuyaValue(value, { maxMeters: mapping.maxMeters || 12 });
+      // WHY(P2650): soft-require — missing module must not crash Homey on settings TX
+      try {
+        const { toRadarRangeTuyaValue } = require('../../lib/tuya/TuyaRadarRangeScale');
+        return toRadarRangeTuyaValue(value, { maxMeters: mapping.maxMeters || 12 });
+      } catch (_eScale) {
+        this.error?.('[RADAR] TuyaRadarRangeScale missing — fallback divisor TX');
+        const div = Number(mapping.divisor) > 0 ? Number(mapping.divisor) : 100;
+        return Math.round(Number(value) * div);
+      }
     }
     if (mapping.divisor && typeof value === 'number') {
       // WHY(P2580 / Z2M#32561 MTG275): detection_range TX must be unsigned scaled int

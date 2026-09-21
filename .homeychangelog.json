@@ -3765,5 +3765,8 @@
   },
   "1.0.31": {
     "en": "P2470: battery-skip log lock so publish gate stays green."
+  },
+  "1.0.32": {
+    "en": "P2650: radar range soft-require (align crash harden). Keep tapping sleepy remotes during pair."
   }
 }
