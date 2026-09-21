@@ -1020,5 +1020,16 @@
       "NodOn",
       "Somfy"
     ]
+  },
+  "meshFloodCalm": {
+    "patch": "P2663",
+    "tipMin": "1.0.38",
+    "note": "Heal HOBEIAN before electrical reporting; disable leftover minInterval:10; Machado-style jitter",
+    "virtualRePair": [
+      "_TZ3000_vsxvaj9i",
+      "_TZ3000_ltt60asa",
+      "_TZ3000_fllyghyj",
+      "eWeLink"
+    ]
   }
 }
