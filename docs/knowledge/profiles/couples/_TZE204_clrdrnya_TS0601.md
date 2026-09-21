@@ -4,6 +4,17 @@
 - Retail / Z2M: **MTG075-ZB-RL** family + whiteLabel **MTG235-ZB-RL** (24G Wenzhi / WZ-235)
 - Case: presence-radar-clrdrnya / vichy-clrdrnya-presence
 - Sources: Z2M device page MTG075-ZB-RL; Z2M#18677; Z2M#24831; discussion#25712; SmartHomeScene review; VicHY #2222–#2247
+- Retail: **MTG075-ZB-RL** / sibling **MTG235-ZB-RL** (mains mmWave + relay)
+- Case: presence-radar-clrdrnya
+- Sources: registry; Z2M#18677; VicHY bathrooms; auto-seed-p2247
+
+## Known bugs (P2579 / P2584)
+
+- **sensor_mode=`occupied` (DP115)** forces permanent presence — heal to `on` on soft-clear; optional auto-unlock setting.
+- **target_distance** often **quantized** (jumps 0↔~2.8 m) — soft-clear when stagnant.
+- 24G **detection_range** avoid &lt;2.5 m (unstable / dead radar).
+- Departure delay hint ≥15 s; bathroom anti-FP settings.
+- Smart presence under Occupied: Homey may drive `alarm_motion` from distance/lux while firmware stays Occupied.
 
 ## Sacred couple
 `manufacturerName=_TZE204_clrdrnya` (+ TZE200/TZE284 siblings) + `productId=TS0601` → `presence_sensor_radar` only. Never curtain/climate/PIR.
@@ -44,3 +55,29 @@ Other Contre quoi:
 ## Bathroom tuning (VicHY)
 
 Prefer: Sensor mode **On**; Radar sensitivity **2–4** in bathrooms (7–9 = ghost presence); Departure delay test **5–15s** then **15–45s**; Block time ~5–10s; Detection range ≥2.5m (24G) but not so high it sees the hallway through drywall; raise Shield range to exclude walls. Check extract fan / vibrating mount / PVC water pipes. If lux moves but presence never changes → unplug mains 2–3 min (MCU partial freeze) **or** Flow/settings **Clear presence**. **P2589:** app re-pushes sensitivity/delay on announce (MCU amnesia → 0). **P2590 Stabilizer:** anti-spam distance/lux + survival watchdog (departure_delay+5s force clear) + Clear presence + settings restore.
+| DP | Name | Type | Direction | Capability |
+|---:|---|---|---|
+| 1 | presence | — | rx | alarm_motion |
+| 2 | radar_sensitivity | — | rx | — |
+| 3 | shield_range | — | rx | — |
+| 4 | detection_range | — | rx | — |
+| 6 | equipment_status | — | rx | — |
+| 9 | target_distance | — | rx | measure_distance |
+| 101 | entry_filter_time | — | rx | — |
+| 102 | departure_delay | — | rx | — |
+| 103 | cline | — | rx | — |
+| 104 | illuminance | — | rx | measure_luminance |
+| 105 | entry_sensitivity | — | rx | — |
+| 106 | entry_distance_indentation | — | rx | — |
+| 107 | breaker_mode | — | rx | — |
+| 108 | breaker_status | — | rx | — |
+| 109 | status_indication | — | rx | — |
+| 110 | illuminance_threshold | — | rx | — |
+| 111 | breaker_polarity | — | rx | — |
+| 112 | block_time | — | rx | — |
+| 113 | parameter_setting_result | — | rx | — |
+| 114 | factory_parameters | — | rx | — |
+| 115 | sensor_mode | enum | rx/tx | (occupied = permanent presence) |
+
+---
+See `docs/guides/DP_INTERPRETATION.md`
