@@ -201,5 +201,6 @@
       "setable": false
     }
   },
-  "discovery": "tuya_wifi"
+  "discovery": "tuya_wifi",
+  "zigbee": {}
 }
