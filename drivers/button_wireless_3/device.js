@@ -30,6 +30,7 @@ class Button3GangDevice extends ButtonDevice {
       protocol: 'zcl_0xfd_e000',
       maxButtons: 3,
       zcl200IsPercent: true,
+      skipBatteryReporting: true,
     });
   }
 
