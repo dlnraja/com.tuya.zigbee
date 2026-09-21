@@ -274,7 +274,8 @@
     "check:p2619": "node --test test/critical/p2619-tuyalocal-complementary-wifi.test.js",
     "check:p2620": "node --test test/critical/p2620-draft-to-test-fleet.test.js",
     "check:p2640": "node --test test/critical/p2640-gh551-552-550-treat.test.js",
-    "check:p2659": "node --test test/critical/p2659-bastien-4c0d232b-subcap-scene.test.js"
+    "check:p2659": "node --test test/critical/p2659-bastien-4c0d232b-subcap-scene.test.js",
+    "check:p2660": "node tools/ci/p2660-local-first-doctrine-gate.js"
   },
   "keywords": [
     "homey",
