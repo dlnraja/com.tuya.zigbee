@@ -1,0 +1,97 @@
+{
+  "_meta": {
+    "id": "P2660-local-first-ssot",
+    "updated": "2026-09-21",
+    "classify": "BOTH",
+    "why": "All Homey apps in this project (Universal, Stable, Bastien house) are local-first by default — Zigbee mesh + WiFi LAN before any cloud. Cloud is optional pairing/key export only, never control path of record.",
+    "human": "docs/architecture/LOCAL_FIRST_SSOT.md",
+    "wifiHuman": "docs/WIFI_LOCAL_FIRST_ARCHITECTURE.md",
+    "t146735": "config/architecture/t146735-local-first-lessons.json",
+    "gate": "npm run check:p2660",
+    "relatedGates": ["check:p2525", "check:wifi-local", "check:p2407", "check:p2491"]
+  },
+  "mandate": {
+    "priorityOrder": [
+      "homey_zigbee_mesh",
+      "wifi_lan_tuyapi",
+      "wifi_hub_gw_cid_fallback",
+      "cloud_pairing_or_key_export_only"
+    ],
+    "never": [
+      "Require Tuya cloud account for Zigbee RX/TX",
+      "Default cloudFallback=true on WiFi",
+      "Cloud re-login after Homey reboot for day-to-day control",
+      "Homey runtime paid/remote AI for device control",
+      "Force Zigbee end-devices through WiFi hub LAN when Homey mesh works"
+    ],
+    "apps": {
+      "com.dlnraja.tuya.zigbee": "Universal — local Zigbee + optional WiFi LAN",
+      "com.dlnraja.tuya.zigbee.stable": "Stable — same local-first reliability",
+      "com.dlnraja.tuya.zigbee.bastien": "Bastien house — local Zigbee only on Bastien Pro"
+    }
+  },
+  "layers": {
+    "zigbee": {
+      "path": "Homey Pro coordinator ↔ device (ZCL / EF00) — zero Tuya cloud",
+      "runtime": ["drivers/**/device.js", "lib/tuya/", "lib/devices/", "lib/mixins/"],
+      "invariant": "No TuyaCloudAPI / openapi.tuya* required for Zigbee onNodeInit / capability TX"
+    },
+    "wifiLan": {
+      "path": "Homey ↔ device TCP 6668 + UDP discovery; device_id + local_key in settings/store",
+      "runtime": [
+        "lib/wifi/LocalFirstResolver.js",
+        "lib/wifi/WiFiConnectionPolicy.js",
+        "lib/wifi/LocalCredentialPersist.js",
+        "lib/tuya-local/TuyaLocalDevice.js",
+        "lib/tuya-local/TuyaZigbeeBridge.js"
+      ],
+      "defaults": {
+        "strategy": "local_first",
+        "cloudFallback": false,
+        "cloudMirroring": false,
+        "localDiscovery": true
+      }
+    },
+    "cloudOptional": {
+      "allowedFor": ["one-shot local_key export", "Smart Life QR pair assist", "explicit user cloudFallback=true"],
+      "forbiddenFor": ["steady-state capability updates", "flow automation", "battery poll", "reboot recovery"]
+    },
+    "homeyRuntimeAi": {
+      "policy": "zero cloud AI on Homey box — LocalSelfImproveCatalog / LocalFirstEngine only",
+      "ssot": "config/architecture/local-auto-improve-ssot.json"
+    }
+  },
+  "controlPathDoctrine": {
+    "source": "lib/tuya-local/TuyaZigbeeBridge.js CONTROL_PATH_DOCTRINE",
+    "zigbeeEndDeviceHomey": "Primary — pair to Homey Zigbee, no local_key",
+    "wifiLan": "Primary for WiFi SKUs — tuyapi + local_key",
+    "zigbeeBehindTuyaHub": "Fallback only — gwID + cid, limited LAN sessions"
+  },
+  "ossPeersLocalFirst": [
+    "TinyTuya",
+    "TuyAPI",
+    "make-all/tuya-local",
+    "hass-localtuya",
+    "localtuya",
+    "tuya-mqtt",
+    "com.tuyalocal"
+  ],
+  "cloudContrastOnly": [
+    "com.tuya.cloud",
+    "com.tuya2",
+    "official Smart Life cloud"
+  ],
+  "agentChecklist": [
+    "Prefer Homey Zigbee mesh over hub LAN for Zigbee SKUs",
+    "WiFi: persist device_id+local_key; cloudFallback stays false unless user opts in",
+    "Never invent cloud-required pairing for Zigbee",
+    "Cite OSS LAN peers as data sources — control stays local",
+    "Homey runtime: no remote AI for device IO"
+  ],
+  "contreQuoi": [
+    "Defaulting WiFi to cloud",
+    "Zigbee drivers requiring openapi.tuya",
+    "Dropping LocalFirstResolver / WiFiConnectionPolicy defaults",
+    "Removing check:p2525 / check:p2660 / check:wifi-local"
+  ]
+}

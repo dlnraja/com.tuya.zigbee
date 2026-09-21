@@ -596,6 +596,10 @@
       "tag": "BOTH",
       "skipBastien": true,
       "note": "TitleSanitizer/SmartDiscovery setName guard (diag crash) + OSS LAN scanners in auto-enrich — reliability BOTH; Bastien skip catalog"
+    },
+    "p2660_local_first_doctrine": {
+      "tag": "BOTH",
+      "note": "Unified local-first SSOT — Zigbee mesh + WiFi LAN before cloud; Homey runtime zero cloud AI; gate check:p2660"
     }
   }
 }

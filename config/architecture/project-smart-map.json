@@ -85,15 +85,26 @@
     "default": "AI_FORCE_LOCAL=true; remote only if AI_ALLOW_REMOTE=true",
     "compressKeep": "always retain mfr+pid / HOBEIAN+ZG-* couples in user text"
   },
+  "localFirst": {
+    "ssot": "config/architecture/local-first-ssot.json",
+    "human": "docs/architecture/LOCAL_FIRST_SSOT.md",
+    "wifiHuman": "docs/WIFI_LOCAL_FIRST_ARCHITECTURE.md",
+    "t146735": "config/architecture/t146735-local-first-lessons.json",
+    "rule": ".cursor/rules/local-first-always.mdc",
+    "priority": ["homey_zigbee_mesh", "wifi_lan_tuyapi", "wifi_hub_gw_cid_fallback", "cloud_pairing_or_key_export_only"],
+    "defaults": { "strategy": "local_first", "cloudFallback": false },
+    "gate": "npm run check:p2660",
+    "related": ["check:p2525", "check:wifi-local"]
+  },
   "recentPatches": [
+    "P2660 local-first doctrine SSOT (BOTH — Zigbee mesh + WiFi LAN before cloud)",
+    "P2659 Bastien 4c0d232b subcap string + no scene invent",
     "P2645 sleepy remote pairing SSOT + skipBattCfg + quiet 0x000A (BOTH)",
     "P2644 Bastien flow ID + wall TS0041-only (BOTH)",
     "P2643 complementary Homey apps catalog",
     "P2547 external Homey apps + SDK3 inspiration SSOT (P216 collector)",
     "P2546 VicHY radar periodic heal",
-    "P2520 complementary variant enrich",
-    "P2542 local auto-improve + forfait crons",
-    "P2543 dual-app benefit recent advances (BOTH)"
+    "P2520 complementary variant enrich"
   ],
   "externalInspiration": {
     "ssot": "config/architecture/external-app-sdk3-inspiration-ssot.json",
