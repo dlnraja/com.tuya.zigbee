@@ -124,6 +124,8 @@
   }
 
   function renderStats() {
+    var box = $('mesh-stats');
+    if (!box) return;
     var st = (snapshot && snapshot.stats) || {};
     var chips = [
       ['Devices', st.total || 0],
@@ -140,7 +142,7 @@
     for (var i = 0; i < chips.length; i++) {
       html += '<span class="mesh-chip"><b>' + chips[i][1] + '</b> ' + chips[i][0] + '</span>';
     }
-    $('mesh-stats').innerHTML = html;
+    box.innerHTML = html;
   }
 
   function renderDetail(n) {
@@ -297,21 +299,22 @@
       return;
     }
     setMsg('Loading mesh snapshot…');
-    $('btn-mesh-refresh').disabled = true;
+    var btn = $('btn-mesh-refresh');
+    if (btn) btn.disabled = true;
     if (loadTimer) clearTimeout(loadTimer);
     var settled = false;
     loadTimer = setTimeout(function () {
       if (settled) return;
       settled = true;
-      $('btn-mesh-refresh').disabled = false;
+      if (btn) btn.disabled = false;
       setMsg('Timeout loading Zigbee map', true);
-    }, 12000);
+    }, 8000);
 
     HomeyRef.api('GET', '/zigbee-map', {}, function (err, data) {
       if (settled) return;
       settled = true;
       clearTimeout(loadTimer);
-      $('btn-mesh-refresh').disabled = false;
+      if (btn) btn.disabled = false;
       if (err) {
         setMsg((err.message || err) + '', true);
         return;
@@ -320,10 +323,10 @@
       collapsed = {};
       selectedId = snapshot.coordinatorId || 'homey';
       view = { x: 0, y: 0, k: 1 };
-      renderStats();
-      renderSvg();
-      renderDetail(nodeById(selectedId));
-      renderAvail(snapshot.availability);
+      try { renderStats(); } catch (e1) {}
+      try { renderSvg(); } catch (e2) {}
+      try { renderDetail(nodeById(selectedId)); } catch (e3) {}
+      try { renderAvail(snapshot.availability); } catch (e4) {}
       setMsg((snapshot.note || '') + (snapshot.inferred ? '  Links may be inferred.' : ''));
     });
   }
@@ -364,19 +367,28 @@
     var card = $('mesh-card');
     if (!card) return;
     card.classList.toggle('mesh-fs');
-    $('btn-mesh-fs').textContent = card.classList.contains('mesh-fs') ? 'Exit' : 'Full';
+    var bfs = $('btn-mesh-fs');
+    if (bfs) bfs.textContent = card.classList.contains('mesh-fs') ? 'Exit' : 'Full';
   }
 
+  var __mapInited = false;
   function init(homey) {
     HomeyRef = homey;
-    bindPanZoom();
-    $('btn-mesh-refresh').addEventListener('click', loadMap);
-    $('btn-mesh-expand').addEventListener('click', expandAll);
-    $('btn-mesh-fold').addEventListener('click', foldLeaves);
-    $('btn-mesh-retract').addEventListener('click', foldAll);
-    $('btn-mesh-fs').addEventListener('click', toggleFs);
-    loadMap();
+    if (__mapInited) return;
+    __mapInited = true;
+    try { bindPanZoom(); } catch (e0) {}
+    function safeClick(id, fn) {
+      var n = $(id);
+      if (n) n.addEventListener('click', fn);
+    }
+    safeClick('btn-mesh-refresh', loadMap);
+    safeClick('btn-mesh-expand', expandAll);
+    safeClick('btn-mesh-fold', foldLeaves);
+    safeClick('btn-mesh-retract', foldAll);
+    safeClick('btn-mesh-fs', toggleFs);
+    // P2623: no auto loadMap — user taps Refresh
+    setMsg('Tap Refresh to load the mesh map.');
   }
 
   global.TuyaZigbeeMap = { init: init, load: loadMap };
-})(window);
+})(typeof window !== 'undefined' ? window : this);
