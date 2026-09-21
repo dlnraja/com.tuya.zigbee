@@ -3775,5 +3775,8 @@
   "1.0.34": {
     "en": "P2654: remove truncated duplicate Flow card IDs (Athom unique-id). P2652 4-gang pairing. Update Bastien Test.",
     "fr": "P2654: IDs Flow tronques en double retires. P2652 4-gang. Maj Test Bastien."
+  },
+  "1.0.35": {
+    "en": "Fixed flow token string + undeclared scene invent (P2659 Bastien diag)."
   }
 }
