@@ -25,6 +25,23 @@ class Switch1GangDevice extends UnifiedSwitchBase {
 
   get gangCount() { return 1; }
 
+  /**
+   * WHY(P2665): HOBEIAN ZG-301Z exposes unused 0xEF00 — never queryAll / EF00 TX.
+   */
+  getDeviceProfile() {
+    const base = (typeof super.getDeviceProfile === 'function' && super.getDeviceProfile()) || {};
+    if (isHobeianZg301z(this)) {
+      return Object.assign({}, base, {
+        noEf00Tx: true,
+        noEf00: true,
+        mainsPowered: true,
+        skipBatteryReporting: true,
+        protocol: 'zcl_onoff',
+      });
+    }
+    return base;
+  }
+
   get sceneMode() { return this.getSetting('scene_mode') || 'auto'; }
 
   async setSceneMode(mode) {
