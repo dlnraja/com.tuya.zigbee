@@ -142,7 +142,9 @@
         "cloud credential UX patterns (observe only)",
         "pairing flow hygiene"
       ],
-      "ourLanding": ["lib/wifi/LocalFirstResolver.js (contrast local-first)"],
+      "ourLanding": [
+        "lib/wifi/LocalFirstResolver.js (contrast local-first)"
+      ],
       "trackHint": "MASTER_ONLY observational — we stay local-first"
     },
     {
@@ -155,7 +157,9 @@
       "storeLive": "https://homey.app/a/com.tuya.cloud/",
       "storeTest": "https://homey.app/a/com.tuya.cloud/test/",
       "protocol": "Tuya cloud API",
-      "complementaryUse": ["optional cloud key recovery contrast — never default"],
+      "complementaryUse": [
+        "optional cloud key recovery contrast — never default"
+      ],
       "trackHint": "MASTER_ONLY — local-first policy stays"
     },
     {
@@ -171,7 +175,9 @@
         "capability_changed flow patterns",
         "advanced capability UX"
       ],
-      "ourLanding": ["lib/flow/* capability change triggers"],
+      "ourLanding": [
+        "lib/flow/* capability change triggers"
+      ],
       "trackHint": "MASTER_ONLY inspiration"
     },
     {
@@ -184,7 +190,9 @@
       "private": true,
       "storeLive": "https://homey.app/a/com.tuya/",
       "protocol": "Official Tuya cloud",
-      "complementaryUse": ["do not copy — private/official; know it exists for user confusion"],
+      "complementaryUse": [
+        "do not copy — private/official; know it exists for user confusion"
+      ],
       "trackHint": "reference only"
     }
   ],
@@ -194,44 +202,86 @@
       "name": "tuya-local (Home Assistant)",
       "github": "https://github.com/make-all/tuya-local",
       "license": "MIT",
-      "complementaryUse": ["EV charger YAML DP layouts", "device category catalogs"],
-      "ourLanding": ["WiFiDPRegistry PRODUCT_DP_HINTS", "wifi_ev_charger"]
+      "complementaryUse": [
+        "EV charger YAML DP layouts",
+        "device category catalogs"
+      ],
+      "ourLanding": [
+        "WiFiDPRegistry PRODUCT_DP_HINTS",
+        "wifi_ev_charger"
+      ]
     },
     {
       "id": "tinytuya",
       "name": "TinyTuya",
       "github": "https://github.com/jasonacox/tinytuya",
       "license": "MIT",
-      "complementaryUse": ["LAN protocol retry / discovery heuristics"]
+      "complementaryUse": [
+        "LAN protocol retry / discovery heuristics"
+      ]
     },
     {
       "id": "z2m",
       "name": "Zigbee2MQTT",
       "github": "https://github.com/Koenkk/zigbee2mqtt",
-      "complementaryUse": ["mfr+pid couples", "DP maps", "converters"]
+      "complementaryUse": [
+        "mfr+pid couples",
+        "DP maps",
+        "converters"
+      ]
     },
     {
       "id": "zha",
       "name": "ZHA Device Handlers",
       "github": "https://github.com/zigpy/zha-device-handlers",
-      "complementaryUse": ["quirks", "cluster oddities"]
+      "complementaryUse": [
+        "quirks",
+        "cluster oddities"
+      ]
     },
     {
       "id": "blakadder",
       "name": "Blakadder Zigbee DB",
       "github": "https://github.com/blakadder/zigbee",
       "website": "https://zigbee.blakadder.com",
-      "complementaryUse": ["rebrand / fingerprint cross-ref"]
+      "complementaryUse": [
+        "rebrand / fingerprint cross-ref"
+      ]
     }
   ],
   "athomTipSnapshot": {
-    "com.tuyalocal": { "live": "1.0.232", "test": "1.0.237" },
-    "com.tuya.zigbee": { "live": "0.2.76", "test": null },
-    "com.dlnraja.tuya.zigbee": { "live": null, "test": "9.0.1117" },
-    "com.dlnraja.tuya.zigbee.stable": { "live": null, "test": "5.12.281" },
-    "com.dlnraja.tuya.zigbee.bastien": { "live": null, "test": "1.0.14" },
-    "com.tuya2": { "live": "1.5.8", "test": null },
-    "com.tuya.cloud": { "live": "1.1.23", "test": "1.1.26" },
-    "nl.qluster-it.DeviceCapabilities": { "live": "2.17.3", "test": null }
-  }
+    "com.tuyalocal": {
+      "live": "1.0.232",
+      "test": "1.0.237"
+    },
+    "com.tuya.zigbee": {
+      "live": "0.2.76",
+      "test": null
+    },
+    "com.dlnraja.tuya.zigbee": {
+      "live": null,
+      "test": "9.0.1117"
+    },
+    "com.dlnraja.tuya.zigbee.stable": {
+      "live": null,
+      "test": "5.12.281"
+    },
+    "com.dlnraja.tuya.zigbee.bastien": {
+      "live": null,
+      "test": "1.0.14"
+    },
+    "com.tuya2": {
+      "live": "1.5.8",
+      "test": null
+    },
+    "com.tuya.cloud": {
+      "live": "1.1.23",
+      "test": "1.1.26"
+    },
+    "nl.qluster-it.DeviceCapabilities": {
+      "live": "2.17.3",
+      "test": null
+    }
+  },
+  "probedAt": "2026-09-21T00:25:00Z"
 }
