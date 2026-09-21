@@ -925,7 +925,10 @@
     ]
   },
   "p2644": {
-    "diags": ["e8d98608", "4d4e1684"],
+    "diags": [
+      "e8d98608",
+      "4d4e1684"
+    ],
     "tipNote": "1.0.30+ — FLOW-GUARD switch_1gang_turned_* (no double gang invent); wall remote TS0041-only",
     "files": [
       "lib/flow/FlowCardHeuristics.js",
@@ -934,7 +937,9 @@
     "contreQuoi": "switch_1gang_1gang_turned_on|off invent + TS0043 stolen by wall 1-btn"
   },
   "p2645": {
-    "diags": ["4d4e1684"],
+    "diags": [
+      "4d4e1684"
+    ],
     "ssot": "config/architecture/sleepy-remote-pairing-ssot.json",
     "human": "docs/architecture/SLEEPY_REMOTE_PAIRING_SSOT.md",
     "tipNote": "1.0.30+ — skip battery configureReporting on sleepy remotes; quiet Time 0x000A; wake-tap during pair",
@@ -954,7 +959,9 @@
     "contreQuoi": "battery cfg storm while SED asleep → mute buttons"
   },
   "p2659": {
-    "diags": ["4c0d232b"],
+    "diags": [
+      "4c0d232b"
+    ],
     "appVersion": "1.0.34",
     "userMessage": "Bouton trois channel ne fonctionne sur aucun channel; app clic une fois puis erreur",
     "tipNote": "1.0.35+ — String(value) on sub_capability_changed; no invent switch_1gang_*_scene",
@@ -972,7 +979,11 @@
   },
   "todayEnrichment2026_09_21": {
     "mode": "complementary_P2520",
-    "patches": ["P2644", "P2645", "P2659"],
+    "patches": [
+      "P2644",
+      "P2645",
+      "P2659"
+    ],
     "tip": "1.0.35",
     "ssotDocs": [
       "config/architecture/sleepy-remote-pairing-ssot.json",
@@ -984,6 +995,30 @@
       "Update Bastien Test tip ≥1.0.35",
       "Node18 / 3-btn: remove+re-pair button_wireless_3 with wake-taps",
       "Confirm no FLOW-GUARD switch_1gang_*_scene / sub_capability boolean spam"
+    ]
+  },
+  "lastTreat": {
+    "at": "2026-09-21T21:10:00Z",
+    "tipGit": "1.0.37",
+    "tipAthomNote": "Build #42 testing (~1.0.36); 1.0.37 publishing",
+    "boxInstalled": "1.0.34",
+    "patches": [
+      "P2659",
+      "P2660",
+      "P2661",
+      "P2662"
+    ],
+    "mustUpdate": true,
+    "rePairVirtual": [
+      "Appareil Zigbee vsxvaj9i+TS0043",
+      "Eclairage salon ltt60asa+TS0004",
+      "Sous sol fllyghyj+SNZB-02",
+      "chambre principal fllyghyj+SNZB-02",
+      "salon/cuisine eWeLink 7014"
+    ],
+    "keepOfficial": [
+      "NodOn",
+      "Somfy"
     ]
   }
 }
