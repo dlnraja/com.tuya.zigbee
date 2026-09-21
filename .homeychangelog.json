@@ -1888,5 +1888,8 @@
   },
   "5.12.287": {
     "en": "P2644b: wall remote TS0041-only — stop 3ch remotes pairing as 1-button (Bastien 4d4e1684)."
+  },
+  "5.12.288": {
+    "en": "P2645: sleepy remotes skip battery configure on pair; quiet Time 0x000A logs."
   }
 }

@@ -1,7 +1,7 @@
 {
   "name": {
-    "en": "3-Button Wireless Controller",
-    "fr": "Contrôleur Sans Fil 3 Boutons",
+    "en": "Wireless Button 3 (TS0043)",
+    "fr": "Bouton sans fil 3 (TS0043)",
     "nl": "3-Knops Draadloze Controller",
     "de": "3-Tasten Drahtlos-Controller",
     "it": "Controller Wireless 3 Pulsanti",
@@ -147,8 +147,8 @@
     "learnmode": {
       "image": "{{driverAssetsPath}}/icon.svg",
       "instruction": {
-        "en": "Press and hold any button for 5 seconds until the LED blinks rapidly",
-        "fr": "Appuyez et maintenez n'importe quel bouton pendant 5 secondes jusqu'à ce que la LED clignote rapidement",
+        "en": "Press and hold any button 5–10s until LED blinks. During the WHOLE pairing, tap a button every 2–3 seconds so the remote stays awake (sleepy remotes otherwise fail interview).",
+        "fr": "Maintenez un bouton 5–10 s jusqu’au clignotement. Pendant TOUT l’appairage, appuyez brièvement toutes les 2–3 s pour empêcher la mise en veille. Doit apparaître comme « Bouton sans fil 3 » (pas Remote wall / Prise).",
         "nl": "Houd een willekeurige knop 5 seconden ingedrukt totdat de LED snel knippert",
         "de": "Halten Sie eine beliebige Taste 5 Sekunden lang gedrückt, bis die LED schnell blinkt",
         "it": "Tenere premuto qualsiasi pulsante per 5 secondi finché il LED lampeggia rapidamente",
@@ -172,13 +172,8 @@
       },
       "2": {
         "clusters": [
-          0,
           1,
-          4,
-          5,
-          6,
-          18,
-          57344
+          6
         ],
         "bindings": [
           6
@@ -186,13 +181,8 @@
       },
       "3": {
         "clusters": [
-          0,
           1,
-          4,
-          5,
-          6,
-          18,
-          57344
+          6
         ],
         "bindings": [
           6
@@ -200,13 +190,8 @@
       },
       "4": {
         "clusters": [
-          0,
           1,
-          4,
-          5,
-          6,
-          18,
-          57344
+          6
         ]
       }
     }
