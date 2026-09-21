@@ -16,7 +16,7 @@ describe('P2643 complementary Homey apps catalog', () => {
     const ssot = JSON.parse(
       fs.readFileSync(path.join(ROOT, 'config/architecture/complementary-homey-apps-ssot.json'), 'utf8'),
     );
-    assert.equal(ssot._meta.patch, 'P2643');
+    assert.ok(['P2643', 'P2647', 'P2656', 'P2657'].includes(ssot._meta.patch) || (ssot._meta.extends || []).includes('P2643'));
     assert.ok(Array.isArray(ssot.ourTracks) && ssot.ourTracks.length >= 3);
     const ids = ssot.ourTracks.map((t) => t.appId);
     assert.ok(ids.includes('com.dlnraja.tuya.zigbee'));

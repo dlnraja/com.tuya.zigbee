@@ -1,3 +1,45 @@
+# Credits & thanks
+
+This project stands on a lot of community and open-source work. We re-implement ideas into **Universal Tuya** (`com.dlnraja.tuya.zigbee`) and **Tuya Unified Stable** (`com.dlnraja.tuya.zigbee.stable`) as **complementary enrichments** — we do not wholesale-copy other apps, and we never invent Zigbee `productId` values.
+
+Machine credits: [`lib/data/SourceCredits.js`](../lib/data/SourceCredits.js)  
+Catalogs: [`docs/architecture/HOMEY_STORE_PEERS_ENRICH.md`](architecture/HOMEY_STORE_PEERS_ENRICH.md) · [`COMPLEMENTARY_HOMEY_APPS.md`](architecture/COMPLEMENTARY_HOMEY_APPS.md) · [`OSS_LAN_TUYA_ENRICH.md`](architecture/OSS_LAN_TUYA_ENRICH.md)
+
+## Homey peer apps — thank you
+
+| Who | App | Why we thank them |
+|-----|-----|-------------------|
+| **Johan Bendz** (+ Martijn Aben, Jurgen Heine, Morris Haid) | [Tuya Zigbee](https://homey.app/a/com.tuya.zigbee/) · [Lidl Smart Home](https://homey.app/a/com.lidl/) | Foundational Homey Tuya Zigbee + Lidl/Silvercrest fork |
+| **Andi Wirz** | [Tuya Local](https://homey.app/a/com.tuyalocal/) | Modern Homey WiFi/LAN Tuya reference |
+| **Jurgen Heine** | [Tuya cloud](https://homey.app/a/com.tuya.cloud/) | Cloud bridge when LAN is impossible |
+| **Drenso** | [Tuya](https://homey.app/a/com.tuya2/) | Homey↔Smart Life cloud path (contrast / lessons) |
+| **Rens Brandwijk** | `nl.rebtor.tuya` | Early Homey TuyAPI local control |
+| **Andras Heszegi** | [SMART+ Wifi](https://homey.app/a/com.heszi.ledvance-wifi/) | Ledvance WiFi local Homey patterns |
+| **Arie J. Godschalk** | Device Capabilities | Capability / flow companion patterns |
+
+## Open-source projects — thank you
+
+| Project | Maintainer(s) | Role for us |
+|---------|---------------|-------------|
+| [TuyAPI](https://github.com/codetheweb/tuyapi) | Max Isom | Node LAN runtime |
+| [TinyTuya](https://github.com/jasonacox/tinytuya) | Jason Cox | Protocol / discovery encyclopedia |
+| [tuya-local](https://github.com/make-all/tuya-local) | make-all | HA LAN + hub `node_id` |
+| [hass-localtuya](https://github.com/xZetsubou/hass-localtuya) | xZetsubou | Gateway sub-device patterns |
+| [Zigbee2MQTT](https://github.com/Koenkk/zigbee2mqtt) | Koen Kanters et al. | Couples + converters |
+| [ZHA quirks](https://github.com/zigpy/zha-device-handlers) | zigpy community | Cluster / interview quirks |
+| [Blakadder](https://zigbee.blakadder.com) | Blakadder | Device database |
+| [tuyadump](https://github.com/py60800/tuyadump) | py60800 | Proof that hub `cid` ≠ cloud id |
+
+## Users & reporters
+
+Forum and GitHub reporters who shared interviews, diagnostics, and `(manufacturerName, productId)` pairs — you make the sacred-couple locks possible. We fix in code/CI silently; we do not paste unchecked AI onto the Homey Community (community mandate [T157628](https://community.homey.app/t/157628)).
+
+## License note
+
+Peer Homey apps and OSS projects keep their own licenses (often MIT). Our app is GPL-3.0. Credits here are **attribution and thanks**, not a claim that we ship their code verbatim.
+
+---
+
 # Credits & Contributors
 
 > Auto-generated from fork scanning and PR analysis.
