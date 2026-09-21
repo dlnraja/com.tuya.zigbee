@@ -16,7 +16,9 @@ const ROOT = path.join(__dirname, '..', '..');
 describe('P2645 sleepy remote pairing / time cluster', () => {
   it('BaseUnifiedDevice forces skip battery cfg for button drivers + getOnStart false', () => {
     const src = fs.readFileSync(path.join(ROOT, 'lib/devices/BaseUnifiedDevice.js'), 'utf8');
-    assert.ok(src.includes('P2470/P2645'));
+    assert.ok(src.includes('P2470'));
+    assert.ok(src.includes('P2645'));
+    assert.ok(src.includes('P2470 skip battery configureAttributeReporting'));
     assert.ok(src.includes('getOnStart: false'));
     assert.ok(src.includes('getOnOnline: false'));
     assert.ok(src.includes('isSleepyRemote'));

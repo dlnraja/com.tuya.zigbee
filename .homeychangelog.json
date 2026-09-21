@@ -3762,5 +3762,8 @@
   },
   "1.0.30": {
     "en": "P2645: sleepy remotes skip battery configure on pair; quiet Time 0x000A logs. Keep tapping during pair."
+  },
+  "1.0.31": {
+    "en": "P2470: battery-skip log lock so publish gate stays green."
   }
 }
