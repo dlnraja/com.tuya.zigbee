@@ -3861,5 +3861,8 @@
   },
   "9.0.1161": {
     "en": "Fixed device rename crash; credited OSS LAN sources in CI enrich."
+  },
+  "9.0.1163": {
+    "en": "Fixed Bastien diag flow token + undeclared scene invent (P2659)."
   }
 }
