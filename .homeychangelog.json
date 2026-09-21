@@ -3750,5 +3750,8 @@
   },
   "1.0.26": {
     "en": "Improved local LAN reliability (stale-data watchdog, fire-and-forget)."
+  },
+  "1.0.27": {
+    "en": "Fixed app settings blank infinite loader (Homey.ready before mesh/WiFi scan)."
   }
 }
