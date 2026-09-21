@@ -3778,5 +3778,9 @@
   },
   "1.0.35": {
     "en": "Fixed flow token string + undeclared scene invent (P2659 Bastien diag)."
+  },
+  "1.0.36": {
+    "en": "Must update: lock mesh couples (TS0043 remote, TS0004 4gang, SNZB-02 climate) — remove Homey Virtual Zigbee tiles + re-pair under Zigbee Bastien. Flow/RX quiet fixes (P2659/P2661).",
+    "fr": "Maj obligatoire: couples mesh (telecommande TS0043, 4-gang TS0004, SNZB-02) — supprimer les tuiles Zigbee Homey generique + re-appairer sous Zigbee Bastien. Correctifs flow/RX (P2659/P2661)."
   }
 }

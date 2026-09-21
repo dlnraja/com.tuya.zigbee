@@ -30,7 +30,11 @@
   "zigbee": {
     "productId": [
       "SNTZ003",
-      "TS0201"
+      "TS0201",
+      "SNZB-02",
+      "SNZB-02B",
+      "SNZB-02D",
+      "SNZB-02P"
     ],
     "endpoints": {
       "1": {
