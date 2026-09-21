@@ -1882,5 +1882,8 @@
   },
   "5.12.285": {
     "en": "Fixed app settings blank infinite loader (Homey.ready before mesh/WiFi scan)."
+  },
+  "5.12.286": {
+    "en": "P2644: fix switch flow card IDs + remote CI crash (Bastien diags)."
   }
 }
