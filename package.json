@@ -505,7 +505,8 @@
     "check:p2636": "node --test test/critical/p2636-dzwgk7e2-ts0042-button-2.test.js",
     "check:p2637": "node --test test/critical/p2637-bastien-mesh-evening.test.js",
     "check:p2638": "node --test test/critical/p2638-axpdxqgu-z2m25720-zha.test.js",
-    "check:p2659": "node --test test/critical/p2659-bastien-4c0d232b-subcap-scene.test.js"
+    "check:p2659": "node --test test/critical/p2659-bastien-4c0d232b-subcap-scene.test.js",
+    "check:p2660": "node tools/ci/p2660-local-first-doctrine-gate.js"
   },
   "keywords": [
     "homey",
