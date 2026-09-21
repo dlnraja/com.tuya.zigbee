@@ -1,31 +1,54 @@
-# Bastien diags treat — 2026-09-21 (P2659)
+# Bastien treat — 2026-09-21 evening (P2661)
 
-## Latest reports (Gmail)
+## Photo / mesh (Developer Tools Zigbee)
 
-| Log ID | When (UTC) | App | Symptom |
-|--------|------------|-----|---------|
-| **4c0d232b** | 2026-09-21 18:18 | bastien **1.0.34** | 3ch buttons dead; app click once then UI/error |
-| 4d4e1684 | 2026-09-20 21:25 | 1.0.14 | 3ch dead (prior — P2644/P2645) |
-| e8d98608 | 2026-09-20 13:31 | 1.0.7 | wrong device + CI.containsCI (prior — P2644) |
+Screenshot confirms **Appareil Zigbee** advanced settings:
 
-Homey: Pro Early 2023 / v13.5.0 · Bastien LAN `192.168.1.15` still unreachable this session.
+| Field | Value |
+|-------|--------|
+| Manufacturer | `_TZ3000_vsxvaj9i` |
+| Product ID | `TS0043` |
+| Type | enddevice |
+| IEEE | `a4:c1:38:f6:3d:2d:c9:79` |
 
-## Root causes (4c0d232b)
+Driver on box: **Homey Virtual Zigbee** (`homey:virtualdriverzigbee:driver`) — **not** Zigbee Bastien.
 
-1. **`sub_capability_changed`** — compose token `value` is **string**; runtime passed **boolean** → Homey `Expected string but got boolean` on every onoff change (UI/app error after one click).
-2. **FLOW-GUARD invent** — `switch_1gang_gang1_scene` / `switch_1gang_1gang_gang1_scene` probed though not declared (P2381 driver-prefix fallback).
-3. **3ch remote** — still no `button_wireless_3` RX in stdout (recurring NEED_REPAIR: remove + re-pair as Bouton sans fil 3 with wake-taps; couple `_TZ3000_vsxvaj9i`+`TS0043`).
+## Live Homey dump (cloud API + mesh paste)
 
-## Fixes shipped (BOTH + Bastien house)
+App installed: **Zigbee Bastien 1.0.34** (tip Athom build #40 = newer; box not updated).
 
-- `lib/flow/UniversalFlowCardLoader.js` — `String(value)` / `String(capability)`
-- `lib/mixins/PhysicalButtonMixin.js` — scene cards only if **declared**
-- `lib/flow/FlowCardHeuristics.js` — refuse undeclared `*_gangN_scene` probe
-- Gate: `npm run check:p2659`
-- Tip: master **9.0.1163** · Bastien **1.0.35**
+| Device | Mesh couple | Wrong driver | Target Bastien driver |
+|--------|-------------|--------------|------------------------|
+| Appareil Zigbee | `_TZ3000_vsxvaj9i`+`TS0043` | Homey Virtual | `button_wireless_3` |
+| Eclairage salon | `_TZ3000_ltt60asa`+`TS0004` | Homey Virtual | `switch_4gang` |
+| Sous sol / chambre principal | `_TZ3000_fllyghyj`+`SNZB-02` | Homey Virtual | `climate_sensor` / `temphumidsensor3` |
+| salon/cuisine | eWeLink `CK-TLSR8656-SS5-01(7014)` | Homey Virtual | `climate_sensor` |
+| 8× HOBEIAN lights | `HOBEIAN`+`ZG-301Z` | Bastien `switch_1gang` | OK (keep) |
+| NodOn radiators | SIN-4-FP-21 | NodOn app | OK (official) |
+| Somfy volets | Tahoma | Somfy app | OK (official) |
 
-## User actions (Bastien box)
+## Gmail diags (same tip-lag)
 
-1. Update Zigbee Bastien Test ≥ **1.0.35**
-2. Remove 3-channel remote → re-pair **Bouton sans fil 3** near Homey, tap every 2–3s
-3. Confirm app onoff no longer errors after first toggle
+| Log ID | Build | Note |
+|--------|-------|------|
+| 4c0d232b | #37 | 3ch dead + UI error (P2659) |
+| 52ef684a | #37 | latest |
+| be119f76 | #37 | latest |
+
+## Code shipped (1.0.36)
+
+- P2659 already on tip 1.0.35 (string subcap + no undeclared scene invent)
+- P2661: Time/OTA quiet — do not inflate RX-SHED
+- P2520 union: `_TZ3000_fllyghyj`+`SNZB-02` on `climate_sensor`; `SNZB-02` on `temphumidsensor3`
+- Gate: `npm run check:p2661`
+
+## User actions (no Homey Virtual)
+
+1. Update **Zigbee Bastien** Test ≥ **1.0.36**
+2. Remove Virtual tiles: Appareil Zigbee, Eclairage salon, Sous sol, chambre principal (sensor), salon/cuisine
+3. Re-pair each under **Zigbee Bastien** only (wake-tap remotes every 2–3s)
+4. Keep NodOn / Somfy / HOBEIAN Bastien switches as-is
+
+## Dual-app
+
+Bastien house-only. Reliability mirrors (P2659/P2661 RX quiet / fllyghyj couple) already on master where applicable.

@@ -532,7 +532,9 @@
     "check:p2650": "node --test test/critical/p2650-radar-range-scale-ship.test.js",
     "check:p2651": "node --test test/critical/p2651-wifi-empty-zigbee-stubs.test.js",
     "check:p2653": "node --test test/critical/p2653-buttondevice-try-catch.test.js",
-    "check:p2654": "node --test test/critical/p2654-flow-no-truncated-hash-ids.test.js"
+    "check:p2654": "node --test test/critical/p2654-flow-no-truncated-hash-ids.test.js",
+    "check:p2661": "node --test test/critical/p2661-*.test.js",
+    "check:p2662": "node --test test/critical/p2662-hobeian-blank-pid-heal.test.js"
   },
   "keywords": [
     "homey",
