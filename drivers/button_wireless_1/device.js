@@ -38,6 +38,7 @@ class Button1GangDevice extends ButtonDevice {
       zcl200IsPercent: true,
       collapsePhantomEndpoints: true,
       mapAllEndpointsToButton1: true,
+      skipBatteryReporting: true,
     });
   }
 

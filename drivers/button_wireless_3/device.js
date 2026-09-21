@@ -2,6 +2,7 @@
 
 const ButtonDevice = require('../../lib/devices/ButtonDevice');
 const { installWallSceneRemoteHybrid } = require('../../lib/devices/WallSceneRemoteHybridInit');
+const { installTs004xDedicatedComplement } = require('../../lib/devices/Ts004xDedicatedComplement');
 const { containsCI } = require('../../lib/utils/CaseInsensitiveMatcher');
 
 /**
@@ -29,6 +30,7 @@ class Button3GangDevice extends ButtonDevice {
       protocol: 'zcl_0xfd_e000',
       maxButtons: 3,
       zcl200IsPercent: true,
+      skipBatteryReporting: true,
     });
   }
 
@@ -75,7 +77,18 @@ class Button3GangDevice extends ButtonDevice {
       this.log('[BUTTON_WIRELESS_3] hybrid soft-fail:', e.message);
     }
 
-    this.log('[BUTTON_WIRELESS_3] hybrid wall remote ready (TS0043 class / P2629)');
+    // WHY(P2616 complementary): dedicated LevelControl + parseZclHeader — never wipe hybrid
+    try {
+      await installTs004xDedicatedComplement(this, zclNode, {
+        maxButtons: 3,
+        tag: 'BUTTON_WIRELESS_3',
+        enableLevelControl: true,
+      });
+    } catch (e) {
+      this.log('[BUTTON_WIRELESS_3] dedicated complement soft-fail:', e.message);
+    }
+
+    this.log('[BUTTON_WIRELESS_3] hybrid UNION dedicated (TS0043 class / P2629)');
   }
 
 }
