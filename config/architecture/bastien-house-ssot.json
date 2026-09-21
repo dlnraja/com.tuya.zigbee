@@ -51,6 +51,16 @@
     ],
     "note": "Live house learnings promote upstream surgically on cron + enrich/forum soft hooks. Public apps never dump features into Bastien wholesale. Identity never copied.",
     "lastExternalPass": {
+      "at": "2026-09-21T03:08:00.000Z",
+      "patch": "P2646",
+      "note": "homeyBox platform lock (hostname/IP/bootId/Node24) + P2645 sleepy tip ≥1.0.30"
+    },
+    "priorExternalPass": {
+      "at": "2026-09-21T02:30:00.000Z",
+      "patch": "P2645",
+      "note": "sleepy remote skipBattCfg + wake-during-pair + quiet 0x000A; wall TS0041-only; flow P2644; tip ≥1.0.30"
+    },
+    "priorExternalPassP2627": {
       "at": "2026-09-20T16:29:46.010Z",
       "patch": "P2627",
       "note": "live inventory + flow heuristics + publish sync-appjson"
@@ -68,6 +78,38 @@
     ".homeycompose/app.json id/version/name",
     "package.json name/version"
   ],
+  "homeyBox": {
+    "capturedAt": "2026-09-21T00:56:00+02:00",
+    "source": "Homey system settings paste (user)",
+    "hostname": "homey-65d495eb252c3ef65c879247.local",
+    "athomHomeyId": "65d495eb252c3ef65c879247",
+    "bootId": "3474816d-9d37-4099-b93a-d3d33934df85",
+    "uptimeHoursApprox": 5,
+    "timezone": "Europe/Paris",
+    "devMode": false,
+    "nodejs": "v24.19.0",
+    "memory": {
+      "usedMb": 759.11,
+      "totalGb": 1.99,
+      "note": "healthy — not OOM pressure (~38% used)"
+    },
+    "cpuLoadPercent": {
+      "1m": 11,
+      "5m": 10.25,
+      "15m": 7
+    },
+    "wifi": {
+      "connected": true,
+      "ssid": "Livebox-4690",
+      "mac": "90:13:DA:AB:A3:E4",
+      "ipv4": "192.168.1.15"
+    },
+    "ethernet": {
+      "connected": false
+    },
+    "lanApiHint": "HomeyAPI.createLocalAPI possible at http://192.168.1.15 or hostname .local when on same LAN",
+    "healthVerdict": "OK — Wi-Fi up, CPU low, RAM fine, DevMode off; proceed tip ≥1.0.30 + sleepy wake-re-pair"
+  },
   "devicesInventory": [
     {
       "mfr": "_TZ3000_tk3s5tyg",
@@ -771,7 +813,7 @@
           "driver": "button_wireless_3"
         },
         "status": "OFFLINE_OR_BROKEN_INTERVIEW",
-        "note": "Ancien 3-bouton vsxvaj9i — wake/re-pair près Homey"
+        "note": "Ancien 3-bouton vsxvaj9i — P2645: tip ≥1.0.30, remove+re-pair as button_wireless_3, wake-tap 2–3s pendant tout l'appairage"
       },
       {
         "nwk": 19,
@@ -880,6 +922,68 @@
       "Node18 wake/re-pair 3-btn vsxvaj9i",
       "Node19 verify 4 channels on Eclairage salon",
       "ZG-301Z lights: switch_mode=state if auto-off"
+    ]
+  },
+  "p2644": {
+    "diags": ["e8d98608", "4d4e1684"],
+    "tipNote": "1.0.30+ — FLOW-GUARD switch_1gang_turned_* (no double gang invent); wall remote TS0041-only",
+    "files": [
+      "lib/flow/FlowCardHeuristics.js",
+      "drivers/remote_button_wireless_wall/driver.compose.json"
+    ],
+    "contreQuoi": "switch_1gang_1gang_turned_on|off invent + TS0043 stolen by wall 1-btn"
+  },
+  "p2645": {
+    "diags": ["4d4e1684"],
+    "ssot": "config/architecture/sleepy-remote-pairing-ssot.json",
+    "human": "docs/architecture/SLEEPY_REMOTE_PAIRING_SSOT.md",
+    "tipNote": "1.0.30+ — skip battery configureReporting on sleepy remotes; quiet Time 0x000A; wake-tap during pair",
+    "userActions": [
+      "Update Bastien Test ≥1.0.30",
+      "Remove 3ch remote",
+      "Re-pair near Homey as Bouton sans fil 3",
+      "Tap a button every 2–3s until add completes"
+    ],
+    "runtime": [
+      "lib/devices/BaseUnifiedDevice.js",
+      "lib/tuya/TuyaZigbeeDevice.js",
+      "lib/mixins/PhysicalButtonMixin.js",
+      "drivers/button_wireless_1/device.js",
+      "drivers/button_wireless_3/device.js"
+    ],
+    "contreQuoi": "battery cfg storm while SED asleep → mute buttons"
+  },
+  "p2659": {
+    "diags": ["4c0d232b"],
+    "appVersion": "1.0.34",
+    "userMessage": "Bouton trois channel ne fonctionne sur aucun channel; app clic une fois puis erreur",
+    "tipNote": "1.0.35+ — String(value) on sub_capability_changed; no invent switch_1gang_*_scene",
+    "files": [
+      "lib/flow/UniversalFlowCardLoader.js",
+      "lib/mixins/PhysicalButtonMixin.js",
+      "lib/flow/FlowCardHeuristics.js"
+    ],
+    "userActions": [
+      "Update Bastien Test ≥1.0.35",
+      "Node18 / 3-btn: remove+re-pair as Bouton sans fil 3 with wake-taps (still if silent)",
+      "App onoff should no longer spam Expected string but got boolean"
+    ],
+    "contreQuoi": "sub_capability_changed boolean token + FLOW-GUARD switch_1gang_gang1_scene invent"
+  },
+  "todayEnrichment2026_09_21": {
+    "mode": "complementary_P2520",
+    "patches": ["P2644", "P2645", "P2659"],
+    "tip": "1.0.35",
+    "ssotDocs": [
+      "config/architecture/sleepy-remote-pairing-ssot.json",
+      "docs/architecture/SLEEPY_REMOTE_PAIRING_SSOT.md",
+      "docs/architecture/BATTERY_SSOT.md",
+      "docs/architecture/PAIRING_DISCOVERY_SSOT.md"
+    ],
+    "userActions": [
+      "Update Bastien Test tip ≥1.0.35",
+      "Node18 / 3-btn: remove+re-pair button_wireless_3 with wake-taps",
+      "Confirm no FLOW-GUARD switch_1gang_*_scene / sub_capability boolean spam"
     ]
   }
 }
