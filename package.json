@@ -534,7 +534,8 @@
     "check:p2653": "node --test test/critical/p2653-buttondevice-try-catch.test.js",
     "check:p2654": "node --test test/critical/p2654-flow-no-truncated-hash-ids.test.js",
     "check:p2661": "node --test test/critical/p2661-*.test.js",
-    "check:p2662": "node --test test/critical/p2662-hobeian-blank-pid-heal.test.js"
+    "check:p2662": "node --test test/critical/p2662-hobeian-blank-pid-heal.test.js",
+    "check:p2663": "node --test test/critical/p2663-mesh-flood-calm.test.js"
   },
   "keywords": [
     "homey",

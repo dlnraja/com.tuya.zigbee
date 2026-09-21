@@ -7,13 +7,19 @@ const {
   forceSwitchTypeState,
   clearOnTimeCountdown,
 } = require('../../lib/tuya/HobeianZg301zHeal');
+const {
+  shouldSkipElectricalReporting,
+  buildCalmElectricalReportingConfigs,
+  configureReportingSoft,
+} = require('../../lib/zigbee/MeshFloodCalm');
 
 /**
- * 1-GANG SWITCH - v5.5.940 + P2632 HOBEIAN ZG-301Z
+ * 1-GANG SWITCH - v5.5.940 + P2632/P2662/P2663 HOBEIAN ZG-301Z
  *
  * Uses UnifiedSwitchBase (DP + ZCL).
  * NOTE: BSEED → wall_switch_1gang_1way.
  * P2632: HOBEIAN+ZG-301Z kitchen light auto-off ~5s → clear onTime + force switch_type=state.
+ * P2663: heal BEFORE reporting; calm electrical intervals (mesh flood).
  */
 class Switch1GangDevice extends UnifiedSwitchBase {
 
@@ -45,45 +51,28 @@ class Switch1GangDevice extends UnifiedSwitchBase {
   }
 
   async onNodeInit({ zclNode }) {
-    const hobeian301 = isHobeianZg301z(this);
+    // WHY(P2663): resolve HOBEIAN + disable leftover electrical reports BEFORE any
+    // configureAttributeReporting — blank pid on 1.0.34 flooded the mesh (~4k msgs).
+    try {
+      await healHobeianZg301z(this, zclNode);
+    } catch (e) {
+      this.log('[P2632] heal soft-fail:', e.message);
+    }
 
-    // WHY(P2632): ZG-301Z has no genPowerCfg / electrical — reporting cfg storms wake/noise
+    const hobeian301 = isHobeianZg301z(this) || shouldSkipElectricalReporting(this);
+
     if (!hobeian301) {
       try {
-        await this.configureAttributeReporting([
-          {
-            cluster: 'genPowerCfg',
-            attributeName: 'batteryPercentageRemaining',
-            minInterval: 3600,
-            maxInterval: 43200,
-            minChange: 2,
-          },
-          {
-            cluster: 'haElectricalMeasurement',
-            attributeName: 'activePower',
-            minInterval: 10,
-            maxInterval: 300,
-            minChange: 5,
-          },
-          {
-            cluster: 'haElectricalMeasurement',
-            attributeName: 'rmsVoltage',
-            minInterval: 30,
-            maxInterval: 600,
-            minChange: 1,
-          },
-          {
-            cluster: 'haElectricalMeasurement',
-            attributeName: 'rmsCurrent',
-            minInterval: 30,
-            maxInterval: 600,
-            minChange: 10,
-          }
-        ]);
-        this.log('Attribute reporting configured successfully');
+        const ok = await configureReportingSoft(
+          this,
+          buildCalmElectricalReportingConfigs({ withBattery: true, withJitter: true }),
+        );
+        if (ok) this.log('[P2663] calm electrical reporting configured (jittered)');
       } catch (err) {
         this.log('Attribute reporting config failed (device may not support it):', err.message);
       }
+    } else {
+      this.log('[P2663] skip electrical reporting (HOBEIAN / no electrical cluster)');
     }
 
     await super.onNodeInit({ zclNode });
@@ -91,14 +80,14 @@ class Switch1GangDevice extends UnifiedSwitchBase {
     await this.initVirtualButtons();
     await setupSonoffEwelink(this, zclNode);
 
-    // WHY(P2632): Bastien « Eclairage table cuisine » — clear countdown + force state
+    // Re-heal after super (settings/mfr may have been filled by base)
     try {
       await healHobeianZg301z(this, zclNode);
     } catch (e) {
-      this.log('[P2632] heal soft-fail:', e.message);
+      this.log('[P2632] post-super heal soft-fail:', e.message);
     }
 
-    this.log('[SWITCH-1G] ready' + (hobeian301 ? ' (P2632 HOBEIAN ZG-301Z)' : ''));
+    this.log('[SWITCH-1G] ready' + (hobeian301 ? ' (P2632/P2663 HOBEIAN ZG-301Z mesh-calm)' : ''));
   }
 
   async onSettings({ oldSettings, newSettings, changedKeys }) {
