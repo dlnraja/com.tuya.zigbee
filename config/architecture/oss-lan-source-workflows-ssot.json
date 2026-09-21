@@ -13,7 +13,10 @@
     "complementaryOnly": true,
     "noInventPid": true,
     "noForumPost": true,
-    "skipBastienUnlessHouseDevices": true
+    "skipBastienUnlessHouseDevices": true,
+    "localFirst": true,
+    "localFirstSsot": "config/architecture/local-first-ssot.json",
+    "localFirstNote": "OSS peers feed LAN/DP data — control stays Homey Zigbee mesh or WiFi LAN (P2660)"
   },
   "dataSources": [
     { "id": "tinytuya", "scanner": "scripts/scanners/tinytuya-scanner.js", "npm": "tinytuya", "credit": "TINYTUYA" },
