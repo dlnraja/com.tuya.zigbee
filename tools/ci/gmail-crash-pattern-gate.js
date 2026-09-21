@@ -134,6 +134,13 @@ const KNOWN_PATTERNS_EMBEDDED = [
     fix: 'TitleSanitizer + SmartDeviceDiscovery: typeof device.setName === function before rename (P2658)',
     status: 'fixed_p2658',
   },
+  {
+    id: 'sub_capability_value_not_string',
+    severity: 'warn',
+    re: /sub_capability_changed.*Expected string but got boolean|triggerSubCapabilityChanged error:.*Expected string but got boolean/i,
+    fix: 'UniversalFlowCardLoader.triggerSubCapabilityChanged: String(value) (P2659 / Bastien 4c0d232b)',
+    status: 'fixed_p2659',
+  },
 ];
 
 function loadExternalPatterns() {
