@@ -1,0 +1,37 @@
+{
+  "at": "2026-09-21T00:56:00+02:00",
+  "primary": "bastien",
+  "kind": "homey_system_settings_paste",
+  "platform": {
+    "hostname": "homey-65d495eb252c3ef65c879247.local",
+    "athomHomeyId": "65d495eb252c3ef65c879247",
+    "bootId": "3474816d-9d37-4099-b93a-d3d33934df85",
+    "uptimeHoursApprox": 5,
+    "timezone": "Europe/Paris",
+    "devMode": false,
+    "nodejs": "v24.19.0",
+    "memoryUsedMb": 759.11,
+    "memoryTotalGb": 1.99,
+    "cpu1m": 11,
+    "cpu5m": 10.25,
+    "cpu15m": 7,
+    "wifi": {
+      "connected": true,
+      "ssid": "Livebox-4690",
+      "mac": "90:13:DA:AB:A3:E4",
+      "ipv4": "192.168.1.15"
+    },
+    "ethernetConnected": false
+  },
+  "healthVerdict": "OK",
+  "notes": [
+    "RAM/CPU healthy — mute buttons not caused by Homey OOM",
+    "LAN IP known for createLocalAPI when on Livebox-4690",
+    "Continue P2645: Bastien app tip ≥1.0.30 + wake-tap re-pair 3ch"
+  ],
+  "ssot": "config/architecture/bastien-house-ssot.json → homeyBox",
+  "nextNeeded": [
+    "Confirm Bastien Test tip ≥1.0.30 installed on this box",
+    "Re-pair TS0043 3-btn with wake taps (node18 / vsxvaj9i path)"
+  ]
+}

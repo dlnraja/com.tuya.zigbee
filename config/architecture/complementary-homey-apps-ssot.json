@@ -1,16 +1,18 @@
 {
   "_meta": {
     "id": "complementary-homey-apps-ssot",
-    "patch": "P2643",
+    "patch": "P2647",
     "updated": "2026-09-21",
     "dualApp": "MASTER_ONLY",
     "why": "Cite Homey Store Live/Test tips + GitHub branches for complementary enrich peers — UNION ideas only, never wholesale copy, never invent pid, never forum POST",
-    "probedAt": "2026-09-20T22:40:00Z",
-    "probeSource": "AthomAppsAPI getApp + searchApps (local HOMEY_PAT_APPS)",
+    "probedAt": "2026-09-21T03:20:00Z",
+    "probeSource": "Homey Store Test page scrape + com.tuyalocal tip 1.0.237 (P2647)",
     "doctrine": [
       "docs/rules/COMPLEMENTARY_VARIANT_ENRICH.md",
       "docs/architecture/TUYALOCAL_COMPLEMENTARY_CREDITS.md",
-      "docs/architecture/COMPLEMENTARY_HOMEY_APPS.md"
+      "docs/architecture/COMPLEMENTARY_HOMEY_APPS.md",
+      "docs/architecture/SLEEPY_REMOTE_PAIRING_SSOT.md",
+      "config/architecture/tuyalocal-store-test-complementary-ssot.json"
     ]
   },
   "rules": {
@@ -30,9 +32,9 @@
       "branch": "master",
       "versionLine": "9.0.x",
       "homeyLive": null,
-      "homeyTest": "9.0.1117",
+      "homeyTest": "9.0.1145",
       "homeyTestBuildId": 3313,
-      "gitTipNote": "local tip may lead Athom Test (e.g. 9.0.1135)",
+      "gitTipNote": "P2645 sleepy remotes + SSOT docs complementary enrich",
       "storeLive": "https://homey.app/a/com.dlnraja.tuya.zigbee/",
       "storeTest": "https://homey.app/a/com.dlnraja.tuya.zigbee/test/",
       "forum": "https://community.homey.app/t/app-pro-universal-tuya-zigbee-device-app-test/140352",
@@ -47,7 +49,7 @@
       "branch": "stable-v5",
       "versionLine": "5.12.x",
       "homeyLive": null,
-      "homeyTest": "5.12.281",
+      "homeyTest": "5.12.288",
       "homeyTestBuildId": 204,
       "storeLive": "https://homey.app/a/com.dlnraja.tuya.zigbee.stable/",
       "storeTest": "https://homey.app/a/com.dlnraja.tuya.zigbee.stable/test/",
@@ -62,7 +64,7 @@
       "branch": "bastien-home",
       "versionLine": "1.0.x",
       "homeyLive": null,
-      "homeyTest": "1.0.14",
+      "homeyTest": "1.0.30",
       "homeyTestBuildId": 17,
       "storeTest": "https://homey.app/a/com.dlnraja.tuya.zigbee.bastien/test/",
       "role": "own_private_house",
@@ -92,7 +94,9 @@
         "fire-and-forget SET",
         "category DP maps (qccdz EV, ywbj smoke, hjjcy AQI…)",
         "EV phase-JSON + charge-history",
-        "Fix-It / Cloud Lookup UX ideas"
+        "Fix-It / Cloud Lookup UX ideas",
+        "P2647 LAN Open vs Both closed (6668/6667)",
+        "P2647 AQI level-changed + PM0.3 threshold + EV session finished"
       ],
       "ourLanding": [
         "lib/tuya-local/*",

@@ -81,4 +81,18 @@ describe('P2606 Bastien house track', () => {
     );
     assert.ok(String(ssot.install?.publishWorkflow || '').includes('bastien-publish.yml'));
   });
+
+  it('homeyBox platform lock (P2646) — LAN identity without degrading privacy doctrine', () => {
+    const ssot = JSON.parse(
+      fs.readFileSync(path.join(ROOT, 'config/architecture/bastien-house-ssot.json'), 'utf8'),
+    );
+    assert.ok(ssot.homeyBox, 'homeyBox required');
+    assert.equal(ssot.homeyBox.athomHomeyId, '65d495eb252c3ef65c879247');
+    assert.equal(ssot.homeyBox.hostname, 'homey-65d495eb252c3ef65c879247.local');
+    assert.equal(ssot.homeyBox.devMode, false);
+    assert.equal(ssot.homeyBox.wifi.ipv4, '192.168.1.15');
+    assert.match(ssot.homeyBox.nodejs, /^v24\./);
+    assert.ok(ssot.homeyBox.healthVerdict);
+    assert.ok(fs.existsSync(path.join(ROOT, 'reports/bastien-homey-live-2026-09-21/platform.json')));
+  });
 });

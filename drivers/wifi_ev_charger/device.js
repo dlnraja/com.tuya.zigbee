@@ -133,12 +133,23 @@ class WiFiEvChargerDevice extends TuyaLocalDevice {
       await this.safeSetCapabilityValue('meter_power', Math.round(rec.kwh * 100) / 100);
     }
     if (!shouldApplyChargeHistory(rec, this._lastChargeHistoryId) && !first) return;
+    const isNewSession = !first;
     this._lastChargeHistoryId = rec.id;
     try { await this.setStoreValue('lastHistoryId', rec.id); } catch (_e) { /* soft */ }
     const dur = rec.seconds == null
       ? ''
       : `, ${Math.floor(rec.seconds / 3600)}h ${Math.floor((rec.seconds % 3600) / 60)}m`;
     this.log(`[WIFI-EV] Charge history: ${Math.round(rec.kwh * 100) / 100} kWh${dur}${first ? ' (seed)' : ''}`);
+    // P2647: tuyalocal "Charging session finished" — only on proven new history id
+    if (isNewSession && Number.isFinite(rec.kwh) && rec.kwh > 0) {
+      try {
+        await this.triggerFlowCard('wifi_ev_charger_session_finished', {
+          kwh: Math.round(rec.kwh * 100) / 100,
+          seconds: Number.isFinite(rec.seconds) ? rec.seconds : 0,
+          session_id: String(rec.id || ''),
+        });
+      } catch (_e) { /* soft */ }
+    }
   }
 
   async _applyPhaseJson(block) {

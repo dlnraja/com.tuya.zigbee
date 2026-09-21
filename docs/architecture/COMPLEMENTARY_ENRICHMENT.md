@@ -22,9 +22,9 @@ Fleet method matrix: [`config/architecture/fleet-complementary-methods-ssot.json
 | EF00 force / soft-create | Eduard / MIAMO curtain_motor |
 | EF00 init idempotent | Peter crashes `375def7f`/`8278ec79` = **heap OOM + MaxListeners** (P2484) — tip ≥9.0.914 |
 | SMART ADAPT BootBudget | P2502 defer under heap critical (complements P2484) |
-| Tip soft-expect | Healthy tip while Athom PF on other builds — no spam |
-| Tip-lag triage | Crash @ 9.0.895/908 = tip-lag; prefer tip ≥9.0.930 |
-| User re-pair | PresentSky `m1cvyneb` — **RESOLVED** after re-add |
+| Tip soft-expect / tip-lag | Crash @ old tip = tip-lag |
+| User re-pair + wake-tap | Bastien sleepy remotes (P2645) |
+| Homey box identity | Lock hostname / LAN IP / bootId in bastien-house-ssot `homeyBox` (P2646) — house-private only |
 
 | User | Couple | Stack |
 |------|--------|-------|
@@ -33,9 +33,33 @@ Fleet method matrix: [`config/architecture/fleet-complementary-methods-ssot.json
 | MIAMO | `icka1clh`+TS0601 | EF00 AM43 + P2490 keep (compact gap) |
 | Peter | `mrpevh8p`+TS0041 | battery P2470/P2488/P2490/P2499 + crash P2484/P2502 |
 | PresentSky | `m1cvyneb`+TS0601 | P2138 dimmer — resolved re-add |
+| Bastien (house) | TS004x remotes live | P2645 skipBattCfg + wake-pair + P2644 flow/wall |
 
 Reports: `reports/forum-l99-2026-09-14-t140352/COMPLEMENTARY_FAILOVER.md` · `reports/gmail-diag-2026-09-14/TREAT_LIVE.md`  
 Gates: `npm run check:p2490` · `npm run check:p2502` · `npm run check:p248x`
+
+## P2645 — Sleepy remote pairing SSOT (2026-09-21)
+
+Machine: [`config/architecture/sleepy-remote-pairing-ssot.json`](../../config/architecture/sleepy-remote-pairing-ssot.json)  
+Human: [`SLEEPY_REMOTE_PAIRING_SSOT.md`](./SLEEPY_REMOTE_PAIRING_SSOT.md)
+
+**Complementary completeness (no degrade):** code skipBattCfg **and** wake-tap UX **and** keep/rehydrate battery (P2470/P2488/P2490). Quiet Time `0x000A`. Wall 1-btn = TS0041 only. SSOT docs enrich = UNION into pairing / battery / bastien / fleet / smart-map — never wipe prior patches.
+
+Gate: `npm run check:p2645` · tips ≥9.0.1145 / Bastien ≥1.0.30 / Stable ≥5.12.288
+
+## P2646 — Bastien Homey box platform (2026-09-21)
+
+House-private lock in [`bastien-house-ssot.json`](../../config/architecture/bastien-house-ssot.json) → `homeyBox` + [`reports/bastien-homey-live-2026-09-21/platform.json`](../../reports/bastien-homey-live-2026-09-21/platform.json).
+
+| Field | Value (paste) |
+|-------|----------------|
+| Athom Homey ID | `65d495eb252c3ef65c879247` |
+| Hostname | `homey-65d495eb252c3ef65c879247.local` |
+| LAN | `192.168.1.15` @ Livebox-4690 (Wi‑Fi) |
+| Node | v24.19.0 · DevMode off |
+| Health | RAM ~759 MB / 1.99 GB · CPU low → mute buttons ≠ Homey OOM |
+
+Gate: `npm run check:p2606` (homeyBox Contre quoi)
 
 ## Evolution eras → live SSOT
 

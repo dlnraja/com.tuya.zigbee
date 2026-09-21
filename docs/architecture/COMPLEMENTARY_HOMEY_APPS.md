@@ -10,9 +10,9 @@ Runtime: `lib/data/SourceCredits.js`
 
 | Track | App ID | Branch | Line | Homey Test (Athom probe) | Store |
 |-------|--------|--------|------|--------------------------|-------|
-| Universal preview | `com.dlnraja.tuya.zigbee` | `master` | 9.0.x | **9.0.1117** (#3313) — git tip may lead | [Live](https://homey.app/a/com.dlnraja.tuya.zigbee/) · [Test](https://homey.app/a/com.dlnraja.tuya.zigbee/test/) |
-| Unified LTS | `com.dlnraja.tuya.zigbee.stable` | `stable-v5` | 5.12.x | **5.12.281** (#204) | [Live](https://homey.app/a/com.dlnraja.tuya.zigbee.stable/) · [Test](https://homey.app/a/com.dlnraja.tuya.zigbee.stable/test/) |
-| Bastien house | `com.dlnraja.tuya.zigbee.bastien` | `bastien-home` | 1.0.x | **1.0.14** (#17) | [Test](https://homey.app/a/com.dlnraja.tuya.zigbee.bastien/test/) |
+| Universal preview | `com.dlnraja.tuya.zigbee` | `master` | 9.0.x | **9.0.1145** (git tip; Autopublish may trail) | [Live](https://homey.app/a/com.dlnraja.tuya.zigbee/) · [Test](https://homey.app/a/com.dlnraja.tuya.zigbee/test/) |
+| Unified LTS | `com.dlnraja.tuya.zigbee.stable` | `stable-v5` | 5.12.x | **5.12.288** | [Live](https://homey.app/a/com.dlnraja.tuya.zigbee.stable/) · [Test](https://homey.app/a/com.dlnraja.tuya.zigbee.stable/test/) |
+| Bastien house | `com.dlnraja.tuya.zigbee.bastien` | `bastien-home` | 1.0.x | **1.0.30** | [Test](https://homey.app/a/com.dlnraja.tuya.zigbee.bastien/test/) |
 
 GitHub (shared repo, different branches): [dlnraja/com.tuya.zigbee](https://github.com/dlnraja/com.tuya.zigbee)  
 Forum (Universal Test): [T140352](https://community.homey.app/t/app-pro-universal-tuya-zigbee-device-app-test/140352)
@@ -35,7 +35,7 @@ Forum Johan: [T26439](https://community.homey.app/t/tuya-zigbee-app/26439) (READ
 
 | Peer | Complementary ideas | Our landing | Dual-app |
 |------|---------------------|-------------|----------|
-| **Tuya Local** | LAN protocol, DP maps, EV JSON/history, Fix-It, fire-and-forget | `lib/tuya-local/*`, `wifi_*` | WiFi MASTER_ONLY · LAN BOTH |
+| **Tuya Local** | LAN protocol, DP maps, EV JSON/history, Fix-It, Cloud Lookup, LAN port Open/closed, AQI/EV flows (P2647) | `lib/tuya-local/*`, `wifi_*`, `WifiFixIt` | WiFi MASTER_ONLY · LAN BOTH |
 | **Johan Tuya Zigbee** | FP/issues, driver taxonomy, SDK3 | `johan-dump`, sacred couples | BOTH reliability |
 | **Drenso / Heine cloud** | Contrast only — we stay local-first | `LocalFirstResolver` | MASTER_ONLY observe |
 | **Device Capabilities** | capability_changed UX | `lib/flow` | MASTER_ONLY |
@@ -56,6 +56,7 @@ Forum Johan: [T26439](https://community.homey.app/t/tuya-zigbee-app/26439) (READ
 - Never invent pid from WiFi category codes
 - Never publish Stable onto Universal Test slot
 - Athom tip probe dates in SSOT `_meta.probedAt` — re-run when publishing
+- Sleepy remotes: see [`SLEEPY_REMOTE_PAIRING_SSOT.md`](./SLEEPY_REMOTE_PAIRING_SSOT.md) — tip Bastien ≥1.0.30 (P2645)
 
 ## Refresh tip versions
 

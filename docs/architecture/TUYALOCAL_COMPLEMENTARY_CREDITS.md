@@ -1,4 +1,4 @@
-# Complementary enrich from andiwirz/com.tuyalocal (P2619 / P2621 / P2641 / P2642)
+# Complementary enrich from andiwirz/com.tuyalocal (P2619 / P2621 / P2641 / P2642 / P2647)
 
 **Doctrine:** P2520 complementary variant enrich — **UNION / append / fallback**, never wipe working Zigbee or WiFi drivers.
 
@@ -33,22 +33,28 @@ We **do not** copy their app wholesale. We re-implement ideas into our `lib/tuya
 | Charge history proven session kWh (not e/d guess) | `EvChargerChargeHistory.js` P2642 | MASTER_ONLY |
 | Fire-and-forget SET (3.4/3.5 / pulse) | `wifiLanReliabilitySettings` + `TuyaLocalClient` P2642 | BOTH |
 | OEM work_state IDLE/WORKING/… | `mapEvChargerWorkState` P2642 | MASTER_ONLY |
+| Fix It LAN Open vs Both closed (6668/6667) | `WifiFixIt.probeLanPorts` P2647 | MASTER_ONLY |
+| Cloud Lookup UX + case-sensitive mode tokens | settings + `OemEnumTokens` P2647 | MASTER_ONLY |
+| AQI level-changed + PM0.3 threshold | `wifi_air_quality` flows P2647 | MASTER_ONLY |
+| EV session finished flow | `wifi_ev_charger_session_finished` P2647 | MASTER_ONLY |
 
 ## Dual-app / Bastien
 
-- **MASTER_ONLY:** new WiFi drivers, Fix-It UI, EV phase JSON, category catalog growth.
+- **MASTER_ONLY:** new WiFi drivers, Fix-It UI, EV phase JSON, category catalog growth, P2647 store-test flows/UX.
 - **BOTH:** LAN client reliability (command gap, offline grace, stale-data reconnect) when present on Stable WiFi subset.
 - **Bastien:** Zigbee mesh app — only if a future Bastien WiFi path exists; default **no** Bastien change for tuyalocal WiFi enrich.
 
 ## Contre quoi
 
-- `npm run check:p2619` / `check:p2621` / `check:p2641` / `check:p2642`
+- `npm run check:p2619` / `check:p2621` / `check:p2641` / `check:p2642` / `check:p2647`
+- Machine SSOT: `config/architecture/tuyalocal-store-test-complementary-ssot.json`
 - Never invent Zigbee `productId` from WiFi category codes.
 - Never overwrite explicit `dpMappings` in a driver (registry fills **gaps only**).
 - Never invent EV session kWh from ambiguous phase-JSON `e`/`d` (prefer charge history).
 
 ## Ref snapshot
 
-Local shallow clone (dev only, not shipped): `Documents/homey/com.tuyalocal-ref` (tip **1.0.237**)  
-Homey Store Test: https://homey.app/fr-fr/app/com.tuyalocal/Tuya-Local/test/  
-Prior extract: `reports/tuyalocal-ref-2026-09-20/`
+Local shallow clone (dev only, not shipped): `Documents/homey/com.tuyalocal-ref`  
+Homey Store Test: https://homey.app/fr-fr/app/com.tuyalocal/Tuya-Local/test/ (**1.0.237**)  
+Prior extract: `reports/tuyalocal-ref-2026-09-20/`  
+Store scrape: `reports/tuyalocal-store-test-2026-09-21/`

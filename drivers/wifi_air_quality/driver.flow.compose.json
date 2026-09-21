@@ -83,6 +83,66 @@
         "en": "Humidity changed to {humidity}%",
         "fr": "Humidité {humidity}%"
       }
+    },
+    {
+      "id": "wifi_air_quality_level_changed",
+      "title": {
+        "en": "Air quality level changed",
+        "fr": "Niveau de qualité d'air modifié"
+      },
+      "hint": {
+        "en": "Fires when the overall verdict step changes — not on every measurement (P2647 / tuyalocal).",
+        "fr": "Se déclenche quand le verdict global change — pas à chaque mesure (P2647)."
+      },
+      "tokens": [
+        {
+          "name": "level",
+          "type": "string",
+          "title": { "en": "Level", "fr": "Niveau" },
+          "example": "moderate"
+        },
+        {
+          "name": "previous_level",
+          "type": "string",
+          "title": { "en": "Previous level", "fr": "Niveau précédent" },
+          "example": "good"
+        }
+      ],
+      "args": [],
+      "titleFormatted": {
+        "en": "Air quality level changed to {level} (from {previous_level})",
+        "fr": "Qualité d'air {level} (depuis {previous_level})"
+      }
+    },
+    {
+      "id": "wifi_air_quality_pm03_above",
+      "title": {
+        "en": "PM0.3 rose above …",
+        "fr": "PM0.3 a dépassé …"
+      },
+      "hint": {
+        "en": "Threshold cross only — Homey has no native PM0.3 card (P2647 / tuyalocal).",
+        "fr": "Uniquement au franchissement — Homey n'a pas de carte PM0.3 native (P2647)."
+      },
+      "tokens": [
+        {
+          "name": "pm03",
+          "type": "number",
+          "title": { "en": "PM0.3 (µg/m³)", "fr": "PM0.3 (µg/m³)" }
+        }
+      ],
+      "args": [
+        {
+          "name": "threshold",
+          "type": "number",
+          "title": { "en": "PM0.3 (µg/m³)", "fr": "PM0.3 (µg/m³)" },
+          "placeholder": { "en": "1000", "fr": "1000" }
+        }
+      ],
+      "titleFormatted": {
+        "en": "PM0.3 rose above [[threshold]] µg/m³",
+        "fr": "PM0.3 a dépassé [[threshold]] µg/m³"
+      }
     }
   ],
   "conditions": [],

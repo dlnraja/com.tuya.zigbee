@@ -250,7 +250,7 @@ module.exports = {
       throw new Error('WiFi Fix-It module unavailable');
     }
     try {
-      return WifiFixIt.runFixItChecks(homey, {});
+      return await WifiFixIt.runFixItChecks(homey, {});
     } catch (err) {
       homey.error('[WifiFixIt] failed:', err);
       throw new Error(`WiFi Fix-It failed: ${err.message}`);
