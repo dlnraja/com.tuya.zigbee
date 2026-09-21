@@ -1,6 +1,6 @@
 {
   "name": "com.dlnraja.tuya.zigbee",
-  "version": "9.0.1163",
+  "version": "9.0.1164",
   "description": "Tuya Unified Zigbee - Local-first control with AI automation",
   "main": "app.js",
   "scripts": {
@@ -518,7 +518,7 @@
     "check:p2641": "node --test test/critical/p2641-tuyalocal-phase-json-stale-credits.test.js",
     "check:p2642": "node --test test/critical/p2642-tuyalocal-charge-history-fof.test.js",
     "check:p2643": "node --test test/critical/p2643-complementary-homey-apps-catalog.test.js",
-    "check:p263x": "npm run check:p2630 && npm run check:p2631 && npm run check:p2632 && npm run check:p2634 && npm run check:p2635 && npm run check:p2636 && npm run check:p2637 && npm run check:p2638 && npm run check:p2640 && npm run check:p2641 && npm run check:p2642 && npm run check:p2643 && npm run check:p2644 && npm run check:p2645 && npm run check:p2647 && npm run check:p2656 && npm run check:p2657 && npm run check:p2658 && npm run check:p2659",
+    "check:p263x": "npm run check:p2630 && npm run check:p2631 && npm run check:p2632 && npm run check:p2634 && npm run check:p2635 && npm run check:p2636 && npm run check:p2637 && npm run check:p2638 && npm run check:p2640 && npm run check:p2641 && npm run check:p2642 && npm run check:p2643 && npm run check:p2644 && npm run check:p2645 && npm run check:p2647 && npm run check:p2656 && npm run check:p2657 && npm run check:p2658 && npm run check:p2659 && npm run check:p2660",
     "check:p2639": "node --test test/critical/p2639-*.test.js",
     "check:p2644": "node --test test/critical/p2644-bastien-e8d98608-4d4e1684.test.js",
     "check:p2645": "node --test test/critical/p2645-sleepy-remote-battery-time.test.js",
@@ -527,6 +527,7 @@
     "check:p2657": "node --test test/critical/p2657-homey-store-peers-enrich.test.js",
     "check:p2658": "node --test test/critical/p2658-titlesanitizer-setname-oss-sources.test.js",
     "check:p2659": "node --test test/critical/p2659-bastien-4c0d232b-subcap-scene.test.js",
+    "check:p2660": "node tools/ci/p2660-local-first-doctrine-gate.js",
     "probe:homey-peers": "node tools/ci/homey-store-peer-probe.js",
     "check:p2650": "node --test test/critical/p2650-radar-range-scale-ship.test.js",
     "check:p2651": "node --test test/critical/p2651-wifi-empty-zigbee-stubs.test.js",

@@ -3864,5 +3864,8 @@
   },
   "9.0.1163": {
     "en": "Fixed Bastien diag flow token + undeclared scene invent (P2659)."
+  },
+  "9.0.1164": {
+    "en": "Local-first doctrine lock for all apps (Zigbee mesh + WiFi LAN before cloud)."
   }
 }

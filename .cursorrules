@@ -8,6 +8,8 @@
 >
 > **MANDATORY THIRD STEP:** Read [docs/ARCHITECTURE_AI.md](docs/ARCHITECTURE_AI.md) — 3 AI layers: IDE Locale, GitHub Actions, Homey Runtime (SDK3, zero cloud).
 >
+> **LOCAL-FIRST (P2660 ALWAYS):** Homey Zigbee mesh → WiFi LAN → hub cid fallback → cloud only if user opts in. SSOT [config/architecture/local-first-ssot.json](config/architecture/local-first-ssot.json) · [docs/architecture/LOCAL_FIRST_SSOT.md](docs/architecture/LOCAL_FIRST_SSOT.md) · gate `npm run check:p2660`. Rule: `.cursor/rules/local-first-always.mdc`.
+>
 > **MANDATORY FOURTH STEP:** Read [docs/knowledge/DEVICE_TRUTH.md](docs/knowledge/DEVICE_TRUTH.md) then look up the driver in [docs/knowledge/device-truth.json](docs/knowledge/device-truth.json). Lock manufacturerName + productId. **Publish** = Homey app; **do not post** = no forum/PM replies.
 
 ## CRITICAL FIRST STEPS
