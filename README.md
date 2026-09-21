@@ -33,26 +33,26 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 
 | Metric | Value |
 |--------|-------|
-| **App Version** | v9.0.1135 |
+| **App Version** | v9.0.1145 |
 | **Drivers** | 434 (381 Zigbee + 53 WiFi) |
 | **Unique Fingerprints** | 4,694 |
-| **Pairing Variants** | 16,434 (4 case combos per fingerprint) |
+| **Pairing Variants** | 16,428 (4 case combos per fingerprint) |
 | **Unique Product IDs** | 598 |
 | **Flow Cards** | 6,052 |
 | **Unique Capabilities** | 170 |
 | **Native OTA Drivers** | 8 |
-| **Test Suites** | 435 files |
+| **Test Suites** | 438 files |
 | **SVG Icons** | 734 |
 | **Languages** | EN, FR, NL, DE |
 | **SDK / Homey** | 3 / >= 12.2.0 |
-| **Last Updated** | 2026-09-20 |
+| **Last Updated** | 2026-09-21 |
 
 ### Top 20 Drivers by Fingerprint Count
 
 | # | Driver | Fingerprints |
 |---|--------|-------------|
-| 1 | `climate_sensor` | 2,126 |
-| 2 | `switch_1gang` | 1,503 |
+| 1 | `climate_sensor` | 2,129 |
+| 2 | `switch_1gang` | 1,499 |
 | 3 | `curtain_motor` | 669 |
 | 4 | `presence_sensor_radar` | 615 |
 | 5 | `radiator_valve` | 602 |
@@ -103,18 +103,18 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 
 | Version | Changes |
 |---------|---------|
+| **v9.0.1145** | P2645: sleepy remotes skip battery configure on pair; quiet Time 0x000A logs. |
+| **v9.0.1144** | P2644b: wall remote TS0041-only — stop 3ch remotes pairing as 1-button (Bastien 4d4e1684). |
+| **v9.0.1143** | P2644: fix switch flow card IDs + remote CI crash (Bastien diags). |
+| **v9.0.1142** | Fixed app settings blank infinite loader (Homey.ready before mesh/WiFi scan). |
+| **v9.0.1141** | Improved WiFi LAN reliability and eWeLink climate pairing. |
+| **v9.0.1140** | Improved WiFi LAN reliability and climate sensor pairing. |
+| **v9.0.1139** | Improved WiFi LAN reliability and wall remote hybrid RX. |
+| **v9.0.1138** | Improved WiFi LAN reliability and wall remote Homey UI sync. |
+| **v9.0.1137** | Improved WiFi LAN reliability and fingerprint database alignment. |
+| **v9.0.1136** | Improved WiFi LAN reliability and fingerprint routing. |
 | **v9.0.1135** | WiFi EV: phase-JSON + proven charge-history kWh (no e/d guess). LAN stale-data reconnect + fire-and-forget SET. Credits Tuya Local (andiw… |
 | **v9.0.1134** | TS0043 _TZ3000_famkxci2 stays Wireless Button 3 (no Generic Zigbee). Curtain TS130F e3vhyirx wall switch lock. Ceiling radar presence cle… |
-| **v9.0.1133** | Improved Chinese TS0041 remotes with phantom 4-endpoint firmware (single/double/hold Flows). |
-| **v9.0.1132** | Improved Moes Star Ring / TS0041 wireless button (Flows single/double/hold, battery). |
-| **v9.0.1131** | Improved 4-gang switch pairing (TS0004) and LCD climate fingerprint; button/actuator Flow reliability. |
-| **v9.0.1130** | 2-btn remote _TZ3000_dzwgk7e2+TS0042 (was unrecognized; phantom EP3/4 ignored). Update Homey Test + re-pair. |
-| **v9.0.1129** | Bastien benefit: 4-gang _TZ3000_ltt60asa+TS0004 (was Zigbee unknown) + switch/button Flow state fixes. Update Homey Test; re-pair unknown… |
-| **v9.0.1126** | Improved HOBEIAN wall module auto-off and TS0041 phantom-endpoint remotes. Update then restart app / re-pair if needed. |
-| **v9.0.1125** | Improved eWeLink TH sensor pairing and wireless button naming. Update then re-pair if needed. |
-| **v9.0.1124** | Improved TS0041 1-button remote from live interview (clusters OnOff only, Flow cards). Update then re-pair. |
-| **v9.0.1123** | Improved TS0043 3-button remote from live interview (clusters E000/OnOff, no EF00). Update then re-pair. |
-| **v9.0.1122** | Improved multi-button remote Flow UX (Button 1-N on one card) and fixed silent button Flows. Update then recreate Flows if needed. |
 
 <!-- CHANGELOG_END -->
 
