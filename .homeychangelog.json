@@ -3786,5 +3786,9 @@
   "1.0.37": {
     "en": "Smarter warning fix: HOBEIAN ZG-301Z heal even when Homey leaves model blank (strips phantom Energy/power). TS0043 pairing text: never Homey Virtual. Update + Repair lights; re-pair 3-btn under Bastien.",
     "fr": "Correctifs warnings: heal HOBEIAN ZG-301Z meme si modele Homey vide (retire Energie/power fantomes). Texte appairage TS0043: jamais Homey generique. Maj + Repair eclairages; re-appairer telecommande 3 sous Bastien."
+  },
+  "1.0.38": {
+    "en": "Zigbee mesh calm: stop aggressive power reporting on HOBEIAN wall modules that flooded the network. Update app then restart; re-pair any Homey Virtual Zigbee tiles under Bastien.",
+    "fr": "Calme du mesh Zigbee: arrete le reporting electrique agressif sur les modules HOBEIAN qui saturaient le reseau. Maj app puis redemarrer; re-appairer les tuiles Homey Zigbee generiques sous Bastien."
   }
 }
