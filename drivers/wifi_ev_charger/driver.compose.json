@@ -200,9 +200,24 @@
           },
           "value": "none",
           "values": [
-            { "id": "none", "label": { "en": "None (prefer charge history)" } },
-            { "id": "e", "label": { "en": "Field e" } },
-            { "id": "d", "label": { "en": "Field d" } }
+            {
+              "id": "none",
+              "label": {
+                "en": "None (prefer charge history)"
+              }
+            },
+            {
+              "id": "e",
+              "label": {
+                "en": "Field e"
+              }
+            },
+            {
+              "id": "d",
+              "label": {
+                "en": "Field d"
+              }
+            }
           ],
           "hint": {
             "en": "P2642: prefer DP Charge History for proven kWh. Do not invent from ambiguous phase-JSON e/d."
@@ -235,6 +250,42 @@
           }
         }
       ]
+    },
+    {
+      "id": "power_scale",
+      "type": "dropdown",
+      "label": {
+        "en": "Power Measurement Scale",
+        "fr": "Échelle de puissance"
+      },
+      "value": "1",
+      "values": [
+        {
+          "id": "0.1",
+          "label": {
+            "en": "÷10",
+            "fr": "÷10"
+          }
+        },
+        {
+          "id": "1",
+          "label": {
+            "en": "×1 (Default)",
+            "fr": "×1 (défaut)"
+          }
+        },
+        {
+          "id": "10",
+          "label": {
+            "en": "×10",
+            "fr": "×10"
+          }
+        }
+      ],
+      "hint": {
+        "en": "Use if W/kWh readings are 10× too high or low.",
+        "fr": "Si W/kWh sont ×10 trop hauts ou bas."
+      }
     }
   ],
   "platforms": [

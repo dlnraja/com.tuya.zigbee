@@ -327,10 +327,15 @@
         }
       ],
       "titleFormatted": {
-        "en": "Button multi-pressed [[button]]",
-        "fr": "Bouton multi-cliqué [[button]]",
-        "nl": "Button multi-pressed [[button]]",
-        "de": "Button multi-pressed [[button]]"
+        "en": "Button multi-pressed [[button]] ({count})",
+        "fr": "Bouton multi-cliqué [[button]] ({count})",
+        "nl": "Button multi-pressed [[button]] ({count})",
+        "de": "Button multi-pressed [[button]] ({count})",
+        "it": "Pulsante premuto più volte ({count})",
+        "sv": "Knapp flertryck ({count})",
+        "no": "Knapp flertrykk ({count})",
+        "es": "Botón presionado múltiple ({count})",
+        "da": "Knap flertrykket ({count})"
       }
     },
     {
