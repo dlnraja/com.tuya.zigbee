@@ -3825,5 +3825,8 @@
   },
   "9.0.1145": {
     "en": "P2645: sleepy remotes skip battery configure on pair; quiet Time 0x000A logs."
+  },
+  "9.0.1146": {
+    "en": "P2646/P2647: sleepy SSOT + Tuya Local Test complementary. P2470 publish-gate log lock."
   }
 }

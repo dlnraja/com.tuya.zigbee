@@ -23,15 +23,18 @@ describe('P2502 fleet complementary failover methods', () => {
     'utf8',
   ));
 
-  it('SSOT covers all five fleet users + method stack', () => {
+  it('SSOT covers core five fleet users + Bastien complementary + method stack', () => {
     for (const u of ['VicHY', 'Eduard_Martirosyan', 'MIAMO_NISU', 'Peter_van_Werkhoven', 'PresentSky']) {
       assert.ok(ssot.users[u], `missing user ${u}`);
       assert.ok(Array.isArray(ssot.users[u].complementary) && ssot.users[u].complementary.length >= 1);
       assert.ok(Array.isArray(ssot.users[u].alternatives));
       assert.ok(Array.isArray(ssot.users[u].fallback));
     }
+    assert.ok(ssot.users.Bastien_house, 'Bastien house complementary (P2645)');
+    assert.ok(ssot.users.Bastien_house.primary.some((s) => /P2645|skipBatt/i.test(s)));
     assert.ok(ssot.methodStackOrder.includes('ef00_oom_idempotent'));
     assert.ok(ssot.methodStackOrder.includes('sacred_keep_compact'));
+    assert.ok(ssot.methodStackOrder.includes('sleepy_skip_batt_cfg_wake_pair'));
   });
 
   it('Peter crash diags classified as heap_oom_maxlisteners → P2484 tip-lag', () => {

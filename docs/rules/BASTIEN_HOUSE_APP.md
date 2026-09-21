@@ -73,6 +73,14 @@ Ne jamais lancer ce publish depuis `master` / `stable-v5` (mauvais App ID).
 4. Fixes sur `bastien-home` d’abord → `npm run bastien:promote -- --dry-run` → `--apply` (master) quand soak OK.
 5. BOTH reliability → backport chirurgical `stable-v5`.
 
+### Homey box platform (P2646)
+
+Live lock in SSOT `homeyBox` (house-private — never forum-paste MAC/IP):
+
+- Hostname / Athom ID: `homey-65d495eb252c3ef65c879247.local`
+- LAN Wi‑Fi: `192.168.1.15` @ Livebox-4690 → local API when on same LAN
+- Health snapshot 2026-09-21: Node v24, DevMode off, RAM/CPU OK
+
 ## Commands
 
 ```bash

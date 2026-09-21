@@ -1,6 +1,6 @@
 {
   "name": "com.dlnraja.tuya.zigbee",
-  "version": "9.0.1145",
+  "version": "9.0.1146",
   "description": "Tuya Unified Zigbee - Local-first control with AI automation",
   "main": "app.js",
   "scripts": {
@@ -518,10 +518,11 @@
     "check:p2641": "node --test test/critical/p2641-tuyalocal-phase-json-stale-credits.test.js",
     "check:p2642": "node --test test/critical/p2642-tuyalocal-charge-history-fof.test.js",
     "check:p2643": "node --test test/critical/p2643-complementary-homey-apps-catalog.test.js",
-    "check:p263x": "npm run check:p2630 && npm run check:p2631 && npm run check:p2632 && npm run check:p2634 && npm run check:p2635 && npm run check:p2636 && npm run check:p2637 && npm run check:p2638 && npm run check:p2640 && npm run check:p2641 && npm run check:p2642 && npm run check:p2643 && npm run check:p2644 && npm run check:p2645",
+    "check:p263x": "npm run check:p2630 && npm run check:p2631 && npm run check:p2632 && npm run check:p2634 && npm run check:p2635 && npm run check:p2636 && npm run check:p2637 && npm run check:p2638 && npm run check:p2640 && npm run check:p2641 && npm run check:p2642 && npm run check:p2643 && npm run check:p2644 && npm run check:p2645 && npm run check:p2647",
     "check:p2639": "node --test test/critical/p2639-*.test.js",
     "check:p2644": "node --test test/critical/p2644-bastien-e8d98608-4d4e1684.test.js",
-    "check:p2645": "node --test test/critical/p2645-sleepy-remote-battery-time.test.js"
+    "check:p2645": "node --test test/critical/p2645-sleepy-remote-battery-time.test.js",
+    "check:p2647": "node --test test/critical/p2647-tuyalocal-store-test-complementary.test.js"
   },
   "keywords": [
     "homey",

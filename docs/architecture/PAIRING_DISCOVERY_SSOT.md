@@ -51,8 +51,18 @@ Interview Model ID in Zigbee tools = compose **`productId`** (see P2496).
 Helper: `lib/pairing/LearnmodeTemplates.js`  
 Priority prefixes listed in the machine SSOT must keep `zigbee.learnmode`.
 
+## Sleepy remotes (P2645 complementary)
+
+TS004x battery remotes often sleep during Homey configureReporting → `Impossible de joindre` + mute buttons.
+
+- **Code:** skip battery configureReporting / getOnStart on button drivers — see [`SLEEPY_REMOTE_PAIRING_SSOT.md`](./SLEEPY_REMOTE_PAIRING_SSOT.md)
+- **UX:** wake-tap every 2–3 s for the whole pair window (Homey still owns Zigbee UI)
+- **Routing:** wall 1-btn = TS0041 only; 3-ch = `button_wireless_3` (not wall)
+
 ## Contre quoi
 - Custom Zigbee pair wizards that fight Athom
 - Missing learnmode on high-traffic drivers
 - Inventing `productId` / using `productName` for match
 - WiFi asking for IP when discovery exists
+- Battery configureReporting storms on sleepy remotes (P2645)
+- `remote_button_wireless_wall` claiming TS0042/43/44

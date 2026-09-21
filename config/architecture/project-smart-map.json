@@ -6,8 +6,10 @@
     "classify": "BOTH"
   },
   "tip": {
-    "healthyTest": "9.0.1073",
-    "git": "9.0.1074+",
+    "healthyTest": "9.0.1145",
+    "git": "9.0.1145+",
+    "bastien": "1.0.30+",
+    "stable": "5.12.288+",
     "p139": "soft-continue on PF tip emails; no spam republish"
   },
   "dualApp": {
@@ -38,10 +40,15 @@
   "pairing": {
     "ssot": "config/architecture/pairing-discovery-ssot.json",
     "human": "docs/architecture/PAIRING_DISCOVERY_SSOT.md",
+    "sleepyRemoteSsot": "config/architecture/sleepy-remote-pairing-ssot.json",
+    "sleepyRemoteHuman": "docs/architecture/SLEEPY_REMOTE_PAIRING_SSOT.md",
+    "batteryHuman": "docs/architecture/BATTERY_SSOT.md",
     "learnmode": "lib/pairing/LearnmodeTemplates.js",
     "zigbee": "Homey-owned UI — learnmode only; no custom pair views",
     "wifi": "Homey discovery + list_devices/add_devices + TuyaLocal maxDiscover",
-    "gate": "npm run check:p2498"
+    "sleepyNote": "SED remotes: skipBattCfg + wake-tap 2–3s (P2645)",
+    "gate": "npm run check:p2498",
+    "sleepyGate": "npm run check:p2645"
   },
   "truth": [
     "docs/knowledge/DEVICE_TRUTH.md",
@@ -79,6 +86,9 @@
     "compressKeep": "always retain mfr+pid / HOBEIAN+ZG-* couples in user text"
   },
   "recentPatches": [
+    "P2645 sleepy remote pairing SSOT + skipBattCfg + quiet 0x000A (BOTH)",
+    "P2644 Bastien flow ID + wall TS0041-only (BOTH)",
+    "P2643 complementary Homey apps catalog",
     "P2547 external Homey apps + SDK3 inspiration SSOT (P216 collector)",
     "P2546 VicHY radar periodic heal",
     "P2520 complementary variant enrich",
@@ -102,6 +112,9 @@
     "merge": "lib/enrichment/ComplementaryMerge.js",
     "reinstateSsot": "config/architecture/complementary-reinstate-notions-ssot.json",
     "rxTxSsot": "config/architecture/complementary-rx-tx-dp-cluster-ssot.json",
+    "homeyAppsSsot": "config/architecture/complementary-homey-apps-ssot.json",
+    "variantSsot": "config/architecture/complementary-variant-enrich-ssot.json",
+    "fleetMethodsSsot": "config/architecture/fleet-complementary-methods-ssot.json",
     "gate": "npm run check:p2520"
   },
   "gates": {

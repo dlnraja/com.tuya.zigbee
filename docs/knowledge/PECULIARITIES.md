@@ -5,6 +5,7 @@ Generated 2026-09-15T08:05:31.976Z from registry (220 cases) × compound DB (509
 ## Class notes (always)
 
 - Sleepy IAS (SOS / water / contact): enroll on wake, skip boot CIE poll, no leftover EF00 TX.
+- Sleepy remotes (TS004x `button_wireless_*`): skip battery configureReporting / getOnStart at pair (P2645); wake-tap every 2–3s during Homey learnmode; quiet Time 0x000A L0. Skip ≠ strip `measure_battery` (P2488/P2490).
 - Pid TS0207 is shared: k4ej3ww2 = IAS water (Z2M IH-K665); 5k5vh43t family = mains repeater. Default driver is null.
 - Pid TS011F is shared: metering plug (okaz9tjs poll fw 1.0.5), double outlet, DIN, USB wall, strip.
 - MCU dimmer brightness is 0–1000 (TuyaBrightnessScale). Never write >1000 (Z2M #32305).
@@ -2440,4 +2441,13 @@ Regenerate: `node tools/ci/investigate-device-peculiarities.js`
 ### P2580 — Z2M/ZHA complementary transpose (2026-09-18)
 
 - Couples/fixes: _TZE204_dqy15zxy+TS0601 → curtain_motor (Z2M#32851; was switch_2gang); motor_direction string RX (herdsman#13207); Tongou DP32 dual Hz (herdsman#12993); MTG detection_range unsigned TX/RX (Z2M#32561); jt50ea5d heat DP7/DP8 (herdsman#13184).
+- Silent enrich only — no forum POST.
+
+### P2645 — Sleepy remote pairing (Bastien 4d4e1684) (2026-09-21)
+
+- Class: TS004x SED remotes — battery configureReporting timeout → mute buttons.
+- Runtime: `BaseUnifiedDevice` skipBattCfg; `skipBatteryReporting` on button_wireless_1/3; quiet 0x000A/0x0019; wall compose TS0041-only (P2644b).
+- UX complementary: wake-tap 2–3s during entire Homey pair window.
+- SSOT: `config/architecture/sleepy-remote-pairing-ssot.json` · `docs/architecture/SLEEPY_REMOTE_PAIRING_SSOT.md`
+- Gate: `npm run check:p2645` · tip Bastien ≥1.0.30 / Universal ≥9.0.1145 / Stable ≥5.12.288
 - Silent enrich only — no forum POST.

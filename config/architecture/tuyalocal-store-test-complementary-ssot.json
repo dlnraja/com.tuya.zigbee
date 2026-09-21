@@ -1,0 +1,71 @@
+{
+  "_meta": {
+    "id": "P2647-tuyalocal-store-test-complementary",
+    "updated": "2026-09-21",
+    "classify": "MASTER_ONLY",
+    "why": "Complementary enrich from Homey Store Test com.tuyalocal 1.0.237 — UNION ideas only, never wholesale copy, never invent Zigbee pid, never forum POST",
+    "storeTest": "https://homey.app/fr-fr/app/com.tuyalocal/Tuya-Local/test/",
+    "github": "https://github.com/andiwirz/com.tuyalocal",
+    "tipProbed": "1.0.237",
+    "human": "docs/architecture/TUYALOCAL_COMPLEMENTARY_CREDITS.md",
+    "catalog": "config/architecture/complementary-homey-apps-ssot.json",
+    "gate": "npm run check:p2647"
+  },
+  "mandate": {
+    "complementaryOnly": true,
+    "unionNotReplace": true,
+    "noInventPid": true,
+    "noForumPost": true,
+    "creditAuthor": "Andi Wirz (@andiwirz) — MIT"
+  },
+  "alreadyAbsorbed": [
+    "P2619 protocol order + offline grace + command gap",
+    "P2621 heat_pump/kettle/ev + Fix It tab",
+    "P2641 stale-data watchdog + EV phase JSON",
+    "P2642 charge history + fire-and-forget + work_state map",
+    "P2643 peer catalog"
+  ],
+  "p2647ComplementaryFromStoreTest": [
+    {
+      "idea": "Fix It LAN Open vs Both closed (TCP 6668/6667)",
+      "landing": "lib/wifi/WifiFixIt.js probeLanPorts + checkLanPorts",
+      "note": "Matter/cloud-only / deep-sleep / BT-gateway — not always a key typo"
+    },
+    {
+      "idea": "Cloud Lookup UX + IoT Core trial extend + case-sensitive mode tokens",
+      "landing": "settings Cloud Lookup copy + lib/tuya-local/OemEnumTokens.js"
+    },
+    {
+      "idea": "Air quality level changed (verdict step) + PM0.3 threshold cross",
+      "landing": "wifi_air_quality flows + device computeAirQualityLevel / crossedAbove"
+    },
+    {
+      "idea": "EV Charging session finished flow",
+      "landing": "wifi_ev_charger_session_finished from proven charge-history"
+    },
+    {
+      "idea": "Generic DP changed",
+      "landing": "already wifi_generic_dp_changed — keep (no wipe)"
+    }
+  ],
+  "notCopied": [
+    "SafeTuyAPI fork",
+    "Full bilingual 15k-word settings wall",
+    "Wholesale driver HTML pair wizards",
+    "Zigbee invent from WiFi categories"
+  ],
+  "contreQuoi": [
+    "Fix It without LAN port probe regresses P2647",
+    "toLowerCase OEM mode tokens causing snap-back",
+    "Invent session kWh from phase JSON e/d",
+    "Wipe wifi_generic_dp_changed",
+    "Strip prior P2619–P2642 reliability settings"
+  ],
+  "gates": [
+    "npm run check:p2647",
+    "npm run check:p2641",
+    "npm run check:p2642",
+    "npm run check:p2621",
+    "npm run check:p2520"
+  ]
+}
