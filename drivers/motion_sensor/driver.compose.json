@@ -282,7 +282,6 @@
       "CK-TLSR8656-SS5-01(7002)",
       "E1525/E1745",
       "E1745",
-      "Excellux",
       "IH012-RT01",
       "MG1_5RZ",
       "MS01",
@@ -308,8 +307,7 @@
       "lumi.motion.ac02",
       "lumi.motion.agl04",
       "lumi.sensor_motion",
-      "lumi.sensor_motion.aq2",
-      "TS0201"
+      "lumi.sensor_motion.aq2"
     ],
     "learnmode": {
       "image": "{{driverAssetsPath}}/icon.svg",
