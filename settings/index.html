@@ -4,6 +4,25 @@
   <meta charset="utf-8">
   <title>Tuya Unified Settings</title>
   <script type="text/javascript" src="/homey.js" data-origin="settings"></script>
+  <!--
+    P2623: Homey blank infinite loader until Homey.ready().
+    Call ready() first; defer UI via __tuyaSettingsBoot.
+  -->
+  <script>
+    function onHomeyReady(homey) {
+      try { window.__homeySettings = homey; } catch (e0) {}
+      try { homey.ready(); } catch (e1) {}
+      try {
+        if (typeof window.__tuyaSettingsBoot === 'function') {
+          setTimeout(function () {
+            try { window.__tuyaSettingsBoot(homey); } catch (e2) { console.error('settings boot', e2); }
+          }, 0);
+        }
+      } catch (e3) {}
+    }
+    try { window.onHomeyReady = onHomeyReady; } catch (e4) {}
+  </script>
+
   <style>
     body {
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
@@ -610,27 +629,32 @@
       });
     }
 
-    function onHomeyReady(homey) {
-      try { Homey = homey; } catch (x) {}
-      try { Homey.ready(); } catch (x) {}
-      
-      document.getElementById('btn-save').disabled = false;
-      document.getElementById('btn-clear').disabled = false;
-      document.getElementById('btn-save-st').disabled = false;
-      document.getElementById('btn-clear-st').disabled = false;
-      
-      Homey.get('tuya_cloud_access_id', function(e, v) { if (v) document.getElementById('aid').value = v; });
-      Homey.get('tuya_cloud_access_secret', function(e, v) { updateSecretStatus(!!v); });
-      Homey.get('tuya_cloud_region', function(e, v) { if (v) document.getElementById('reg').value = v; });
-      
-      Homey.get('smartthings_client_id', function(e, v) { if (v) document.getElementById('st-cid').value = v; });
-      Homey.get('smartthings_client_secret', function(e, v) { updateSTSecretStatus(!!v); });
-      Homey.get('developer_debug_mode', function(e, v) { document.getElementById('dbg').checked = !!v; });
-      Homey.get('issue_report_endpoint', function(e, v) { if (v) document.getElementById('ire').value = v; });
-      Homey.get('experimental_smart_adapt', function(e, v) { document.getElementById('sa').checked = !!v; });
-      
-      // Load and populate devices
-      populateDevices();
+    var __settingsBooted = false;
+    window.__tuyaSettingsBoot = function (homey) {
+      if (__settingsBooted) return;
+      __settingsBooted = true;
+      try { Homey = homey || window.__homeySettings; } catch (x) {}
+      if (!Homey) return;
+      try {
+        var bs = document.getElementById('btn-save'); if (bs) bs.disabled = false;
+        var bc = document.getElementById('btn-clear'); if (bc) bc.disabled = false;
+        var bss = document.getElementById('btn-save-st'); if (bss) bss.disabled = false;
+        var bcs = document.getElementById('btn-clear-st'); if (bcs) bcs.disabled = false;
+      } catch (eBtn) {}
+      try {
+        Homey.get('tuya_cloud_access_id', function(e, v) { if (v) document.getElementById('aid').value = v; });
+        Homey.get('tuya_cloud_access_secret', function(e, v) { updateSecretStatus(!!v); });
+        Homey.get('tuya_cloud_region', function(e, v) { if (v) document.getElementById('reg').value = v; });
+        Homey.get('smartthings_client_id', function(e, v) { if (v) document.getElementById('st-cid').value = v; });
+        Homey.get('smartthings_client_secret', function(e, v) { updateSTSecretStatus(!!v); });
+        Homey.get('developer_debug_mode', function(e, v) { var d = document.getElementById('dbg'); if (d) d.checked = !!v; });
+        Homey.get('issue_report_endpoint', function(e, v) { if (v) document.getElementById('ire').value = v; });
+        Homey.get('experimental_smart_adapt', function(e, v) { var sa = document.getElementById('sa'); if (sa) sa.checked = !!v; });
+      } catch (eGet) { console.error(eGet); }
+      setTimeout(function () { try { populateDevices(); } catch (x) {} }, 50);
+    };
+    if (window.__homeySettings) {
+      try { window.__tuyaSettingsBoot(window.__homeySettings); } catch (e) {}
     }
   </script>
 </body>
