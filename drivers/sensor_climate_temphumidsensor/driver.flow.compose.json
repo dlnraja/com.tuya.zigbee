@@ -60,30 +60,6 @@
       }
     },
     {
-      "id": "sensor_climate_temphumidsensor_temperature_a_5d351",
-      "title": {
-        "en": "Temperature too high",
-        "fr": "Température trop haute"
-      },
-      "args": [],
-      "titleFormatted": {
-        "en": "Temperature too high",
-        "fr": "Température trop haute"
-      }
-    },
-    {
-      "id": "sensor_climate_temphumidsensor_temperature_a_41c3a",
-      "title": {
-        "en": "Temperature too low",
-        "fr": "Température trop basse"
-      },
-      "args": [],
-      "titleFormatted": {
-        "en": "Temperature too low",
-        "fr": "Température trop basse"
-      }
-    },
-    {
       "id": "sensor_climate_temphumidsensor_humidity_alarm_high",
       "title": {
         "en": "Humidity too high",

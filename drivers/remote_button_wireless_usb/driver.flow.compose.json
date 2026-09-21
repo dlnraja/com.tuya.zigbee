@@ -1,91 +1,6 @@
 {
-  "actions": [
-    {
-      "id": "remote_button_wireless_usb_button_wireless_u_5c2cf",
-      "title": {
-        "en": "Turn on"
-      },
-      "args": [],
-      "titleFormatted": {
-        "en": "Turn on"
-      }
-    },
-    {
-      "id": "remote_button_wireless_usb_button_wireless_u_da36c",
-      "title": {
-        "en": "Turn off"
-      },
-      "args": [],
-      "titleFormatted": {
-        "en": "Turn off"
-      }
-    },
-    {
-      "id": "remote_button_wireless_usb_button_wireless_u_1d257",
-      "title": {
-        "en": "Toggle",
-        "fr": "Basculer",
-        "nl": "Wisselen",
-        "de": "Umschalten"
-      },
-      "args": [],
-      "titleFormatted": {
-        "en": "Toggle",
-        "fr": "Basculer",
-        "nl": "Wisselen",
-        "de": "Umschalten"
-      }
-    }
-  ],
+  "actions": [],
   "triggers": [
-    {
-      "id": "remote_button_wireless_usb_button_wireless_u_53adf",
-      "title": {
-        "en": "Turned on",
-        "fr": "Allumé",
-        "nl": "Aangezet",
-        "de": "Eingeschaltet"
-      },
-      "args": [],
-      "titleFormatted": {
-        "en": "Turned on",
-        "fr": "Allumé",
-        "nl": "Aangezet",
-        "de": "Eingeschaltet"
-      }
-    },
-    {
-      "id": "remote_button_wireless_usb_button_wireless_u_82732",
-      "title": {
-        "en": "Turned off",
-        "fr": "Éteint",
-        "nl": "Uitgezet",
-        "de": "Ausgeschaltet"
-      },
-      "args": [],
-      "titleFormatted": {
-        "en": "Turned off",
-        "fr": "Éteint",
-        "nl": "Uitgezet",
-        "de": "Ausgeschaltet"
-      }
-    },
-    {
-      "id": "remote_button_wireless_usb_button_wireless_u_dbb38",
-      "title": {
-        "en": "Power changed",
-        "fr": "Puissance changée",
-        "nl": "Vermogen gewijzigd",
-        "de": "Leistung geändert"
-      },
-      "args": [],
-      "titleFormatted": {
-        "en": "Power changed",
-        "fr": "Puissance changée",
-        "nl": "Vermogen gewijzigd",
-        "de": "Leistung geändert"
-      }
-    },
     {
       "id": "remote_button_wireless_usb_physical_on",
       "title": {
@@ -195,22 +110,5 @@
       }
     }
   ],
-  "conditions": [
-    {
-      "id": "remote_button_wireless_usb_button_wireless_u_1f6f2",
-      "title": {
-        "en": "Is !{{on|off}}",
-        "fr": "Est !{{allumé|éteint}}",
-        "nl": "Is !{{aan|uit}}",
-        "de": "Ist !{{ein|aus}}"
-      },
-      "args": [],
-      "titleFormatted": {
-        "en": "Is !{{on|off}}",
-        "fr": "Est !{{allumé|éteint}}",
-        "nl": "Is !{{aan|uit}}",
-        "de": "Ist !{{ein|aus}}"
-      }
-    }
-  ]
+  "conditions": []
 }
