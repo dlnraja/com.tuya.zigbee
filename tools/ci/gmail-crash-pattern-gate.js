@@ -127,6 +127,20 @@ const KNOWN_PATTERNS_EMBEDDED = [
     fix: 'LiveDataUpdater: cap overlay (1500), store ≤180KB, manifest version check before segments, heap skip (P148)',
     status: 'fixed_p148',
   },
+  {
+    id: 'setName_not_fn',
+    severity: 'fatal',
+    re: /device\.setName is not a function|setName is not a function/i,
+    fix: 'TitleSanitizer + SmartDeviceDiscovery: typeof device.setName === function before rename (P2658)',
+    status: 'fixed_p2658',
+  },
+  {
+    id: 'sub_capability_value_not_string',
+    severity: 'warn',
+    re: /sub_capability_changed.*Expected string but got boolean|triggerSubCapabilityChanged error:.*Expected string but got boolean/i,
+    fix: 'UniversalFlowCardLoader.triggerSubCapabilityChanged: String(value) (P2659 / Bastien 4c0d232b)',
+    status: 'fixed_p2659',
+  },
 ];
 
 function loadExternalPatterns() {
