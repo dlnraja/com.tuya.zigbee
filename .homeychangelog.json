@@ -3828,5 +3828,8 @@
   },
   "9.0.1146": {
     "en": "P2646/P2647: sleepy SSOT + Tuya Local Test complementary. P2470 publish-gate log lock."
+  },
+  "9.0.1147": {
+    "en": "P2650: radar range scale module soft-require (fixes crash if missing); MTG075 occupied/quantized docs. Update Homey Test."
   }
 }
