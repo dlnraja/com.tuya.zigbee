@@ -1,0 +1,46 @@
+{
+  "_meta": {
+    "id": "P2658-oss-lan-source-workflows",
+    "updated": "2026-09-21",
+    "classify": "MASTER_ONLY",
+    "why": "Use TinyTuya / TuyAPI / HA localtuya / tuya-mqtt / Z2M / tuyalocal peers as complementary data sources in CI — feed scanners + peer probe into enrich algos without wipe",
+    "human": "docs/architecture/OSS_LAN_TUYA_ENRICH.md",
+    "credits": "docs/CREDITS.md",
+    "gate": "npm run check:p2658",
+    "workflow": ".github/workflows/oss-lan-source-enrich.yml"
+  },
+  "mandate": {
+    "complementaryOnly": true,
+    "noInventPid": true,
+    "noForumPost": true,
+    "skipBastienUnlessHouseDevices": true
+  },
+  "dataSources": [
+    { "id": "tinytuya", "scanner": "scripts/scanners/tinytuya-scanner.js", "npm": "tinytuya", "credit": "TINYTUYA" },
+    { "id": "ha-tuya-local", "scanner": "scripts/scanners/tuya-local-scanner.js", "credit": "HA_TUYA_LOCAL" },
+    { "id": "tuyapi", "runtime": "tuyapi", "credit": "TUYAPI" },
+    { "id": "tuyapi-cli", "docsOnly": true, "credit": "TUYAPI_CLI" },
+    { "id": "hass-localtuya-xzet", "docsOnly": true, "credit": "HASS_LOCALTUYA_XZET" },
+    { "id": "localtuya-rospo", "docsOnly": true, "credit": "LOCALTUYA_ROSPO" },
+    { "id": "tuya-mqtt-lehan", "docsOnly": true, "credit": "TUYA_MQTT_LEHAN" },
+    { "id": "tuyadump", "docsOnly": true, "credit": "TUYADUMP" },
+    { "id": "gotuya", "docsOnly": true, "credit": "GOTUYA" },
+    { "id": "tuya-local-key", "docsOnly": true, "credit": "TUYA_LOCAL_KEY_VINEET" },
+    { "id": "sharing-sdk", "docsOnly": true, "credit": "TUYA_DEVICE_SHARING_SDK" },
+    { "id": "com-tuyalocal", "probe": "homey-store-peer-probe", "credit": "TUYA_LOCAL_ANDIWIRZ" },
+    { "id": "z2m", "crawler": "z2m", "credit": "ZIGBEE2MQTT" }
+  ],
+  "ciSteps": [
+    "node scripts/scanners/tinytuya-scanner.js",
+    "node scripts/scanners/tuya-local-scanner.js",
+    "npm run probe:homey-peers",
+    "npm run check:p2656",
+    "npm run check:p2657",
+    "npm run check:p2658"
+  ],
+  "contreQuoi": [
+    "Drop OSS credits from CREDITS/SourceCredits",
+    "Call device.setName without typeof guard",
+    "Remove tinytuya/tuya-local from mega-crawl / oss-lan-source-enrich"
+  ]
+}

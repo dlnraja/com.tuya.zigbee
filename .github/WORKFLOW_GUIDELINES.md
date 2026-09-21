@@ -1353,7 +1353,7 @@ node .github/scripts/privacy-redactor.js <files...>
 
 `unified-ci.yml` runs security-scanner + `github-security-elementary-gate.js` (hard fail).
 
-## Q. Homey Store peer probe (P2657)
+## Q. Homey Store peer probe (P2657) + OSS LAN sources (P2658)
 
 Weekly read-only Athom catalog of Zigbee/Tuya/WiFi/SmartLife peers for complementary enrich.
 
@@ -1364,6 +1364,13 @@ Weekly read-only Athom catalog of Zigbee/Tuya/WiFi/SmartLife peers for complemen
 - **Never** forum POST to peer topics (T26439 / T154077 / T146735 / T21313 / T15811)
 - Dual-app: **MASTER_ONLY** · **skip Bastien** for catalog-only
 - Related: P2656 OSS LAN (`check:p2656`, `OSS_LAN_TUYA_ENRICH.md`)
+
+### P2658 — TinyTuya / HA tuya-local as CI data sources
+- Workflow: `oss-lan-source-enrich.yml` (Tue/Fri 05:55 UTC) + soft step in `auto-enrich-closed-loop.yml`
+- Scanners: `scripts/scanners/tinytuya-scanner.js`, `tuya-local-scanner.js` → `data/scanners/`
+- Credits locked: TinyTuya, TuyAPI(+CLI), make-all/tuya-local, hass-localtuya, localtuya, tuya-mqtt, tuyadump, GoTuya, Z2M, tuya-local-key, sharing-sdk, com.tuyalocal
+- Crash fix: `TitleSanitizer` / `SmartDeviceDiscovery` guard `setName` (diag `1e071a86`) — **BOTH** reliability
+- Gate: `npm run check:p2658`
 
 ## P. Untrusted content / prompt-injection (P2527)
 
