@@ -3843,5 +3843,9 @@
   },
   "9.0.1151": {
     "en": "Actually ship button_wireless_3 multi-press titleFormatted [[button]] (Athom publish)."
+  },
+  "9.0.1153": {
+    "en": "P2652: 4-gang switch pairing restored (ZCL-safe endpoints; no required metering). Update Homey Test; re-pair if 4-gang failed match.",
+    "fr": "P2652: appairage interrupteur 4-gang restaure (endpoints ZCL). Maj Test Homey; re-appairer si echec."
   }
 }
