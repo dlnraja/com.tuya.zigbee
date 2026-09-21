@@ -1900,5 +1900,8 @@
   },
   "5.12.291": {
     "en": "P2650: ship TuyaRadarRangeScale + soft-require (crash mail: Cannot find module on radar settings). Update Stable Test."
+  },
+  "5.12.292": {
+    "en": "P2651: drop empty wifi zigbee stubs (publish validate). P2650 TuyaRadarRangeScale crash fix."
   }
 }
