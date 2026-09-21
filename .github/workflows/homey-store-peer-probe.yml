@@ -1,0 +1,69 @@
+# P2657 — Homey Store peer probe (read-only Athom API)
+# Catalog Zigbee/Tuya/WiFi peers for complementary enrich. Never forum POST.
+name: Homey Store Peer Probe
+
+on:
+  schedule:
+    # Weekly Sunday 05:40 UTC (staggered from blakadder / forum-poll)
+    - cron: '40 5 * * 0'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: homey-store-peer-probe
+  cancel-in-progress: false
+
+defaults:
+  run:
+    shell: bash
+
+env:
+  NODE_VERSION: '22'
+  AI_PLAN_MODE: 'forfait'
+  AI_FORCE_LOCAL: 'true'
+  AI_ALLOW_REMOTE: 'false'
+  AI_ALLOW_PAID: 'false'
+
+jobs:
+  probe:
+    name: Probe Athom peers
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+
+      - name: Probe Homey Store peers
+        run: node tools/ci/homey-store-peer-probe.js
+
+      - name: Contre quoi gate
+        run: npm run check:p2657
+
+      - name: Upload report
+        uses: actions/upload-artifact@v4
+        with:
+          name: homey-store-peers-report
+          path: reports/homey-store-peers-*/
+          if-no-files-found: warn
+          retention-days: 14
+
+      - name: Commit report if changed
+        continue-on-error: true
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add reports/homey-store-peers-*/SUMMARY.md reports/homey-store-peers-*/athom-probe-wide.json || true
+          if git diff --staged --quiet; then
+            echo "No report changes"
+            exit 0
+          fi
+          git pull --rebase origin master || true
+          git commit -m "chore(P2657): refresh Homey Store peer probe [skip ci]"
+          git push origin HEAD:master || true

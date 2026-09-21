@@ -1,0 +1,217 @@
+{
+  "_meta": {
+    "id": "P2656-oss-lan-tuya-enrich",
+    "updated": "2026-09-21",
+    "classify": "MASTER_ONLY",
+    "why": "Complementary enrich from open-source LAN WiFi + Tuya-hub Zigbee projects — UNION ideas only, never wholesale copy, never invent Zigbee productId, never forum POST",
+    "human": "docs/architecture/OSS_LAN_TUYA_ENRICH.md",
+    "catalog": "config/architecture/complementary-homey-apps-ssot.json",
+    "report": "reports/oss-lan-tuya-2026-09-21/GAP_MAP.md",
+    "gate": "npm run check:p2656"
+  },
+  "mandate": {
+    "complementaryOnly": true,
+    "unionNotReplace": true,
+    "noInventPid": true,
+    "noForumPost": true,
+    "preferHomeyZigbeeCoordinator": true
+  },
+  "sourcesInvestigated": [
+    {
+      "id": "tinytuya",
+      "github": "https://github.com/jasonacox/tinytuya",
+      "license": "MIT",
+      "ideas": [
+        "UDP 6666/6667/7000 discovery + solicitation 0x25",
+        "protocol 3.1–3.5 LAN TCP",
+        "local_key normalize ascii16/hex32",
+        "wizard devices.json"
+      ],
+      "landing": [
+        "lib/tuya-local/UdpDiscoveryKeys.js",
+        "lib/tuya-local/TuyaUDPDiscovery.js",
+        "lib/wifi/WifiFixIt.js LAN notes"
+      ]
+    },
+    {
+      "id": "ha-tuya-local",
+      "github": "https://github.com/make-all/tuya-local",
+      "license": "MIT",
+      "ideas": [
+        "hub sub-device node_id + hub local_key",
+        "1–3 concurrent LAN sessions per hub soft limit",
+        "category DP YAML catalogs"
+      ],
+      "landing": [
+        "lib/tuya-local/TuyaZigbeeBridge.js",
+        "WiFiDPRegistry"
+      ]
+    },
+    {
+      "id": "hass-localtuya-xzet",
+      "github": "https://github.com/xZetsubou/hass-localtuya",
+      "license": "MIT",
+      "ideas": [
+        "sub-devices behind gateway (Zigbee/BLE)",
+        "protocol 3.5",
+        "cloud only for onboarding keys"
+      ],
+      "landing": [
+        "TuyaZigbeeBridge cid path",
+        "TuyaSmartLifeAuth QR / IoT keys"
+      ]
+    },
+    {
+      "id": "localtuya-rospo",
+      "github": "https://github.com/rospogrigio/localtuya",
+      "license": "MIT",
+      "ideas": [
+        "historical LAN DP mapping UX",
+        "contrast with device-sharing cloud API"
+      ],
+      "landing": [
+        "docs only — observe"
+      ]
+    },
+    {
+      "id": "tuya-mqtt-lehan",
+      "github": "https://github.com/lehanspb/tuya-mqtt",
+      "license": "MIT",
+      "ideas": [
+        "gatewayName/subDeviceName MQTT topic layout",
+        "cid for Zigbee behind hub"
+      ],
+      "landing": [
+        "TuyaZigbeeBridge.resolveSubDeviceCid"
+      ]
+    },
+    {
+      "id": "tuya-local-key-vineet",
+      "github": "https://github.com/vineetchoudhary/tuya-local-key",
+      "license": "MIT",
+      "ideas": [
+        "QR Smart Life login without IoT developer account",
+        "export local keys / IPs"
+      ],
+      "landing": [
+        "TuyaSmartLifeAuth QR path (already)",
+        "SourceCredits"
+      ]
+    },
+    {
+      "id": "tuya-device-sharing-sdk",
+      "github": "https://github.com/tuya/tuya-device-sharing-sdk",
+      "license": "MIT",
+      "ideas": [
+        "official sharing API for keys — cloud for credentials only"
+      ],
+      "landing": [
+        "TuyaSmartLifeAuth"
+      ]
+    },
+    {
+      "id": "com-tuyalocal",
+      "github": "https://github.com/andiwirz/com.tuyalocal",
+      "license": "MIT",
+      "ideas": [
+        "already absorbed P2619–P2647"
+      ],
+      "landing": [
+        "lib/tuya-local/*",
+        "wifi_*"
+      ]
+    },
+    {
+      "id": "tuyapi",
+      "github": "https://github.com/codetheweb/tuyapi",
+      "license": "MIT",
+      "ideas": [
+        "Node LAN TCP 6668 runtime",
+        "gwID + cid for hub children",
+        "issueRefreshOnConnect"
+      ],
+      "landing": [
+        "TuyaLocalClient",
+        "TuyaZigbeeBridge.buildGatewayTuyApiOptions"
+      ]
+    },
+    {
+      "id": "tuyapi-cli",
+      "github": "https://github.com/TuyaAPI/cli",
+      "license": "MIT",
+      "ideas": [
+        "tuya-cli wizard for local_key export"
+      ],
+      "landing": [
+        "WifiFixIt notes",
+        "lib/tuya-local/README.md"
+      ]
+    },
+    {
+      "id": "tuyadump",
+      "github": "https://github.com/py60800/tuyadump",
+      "license": "MIT",
+      "ideas": [
+        "cid ≠ cloud deviceId (sniff lesson from localtuya PR#318)"
+      ],
+      "landing": [
+        "resolveSubDeviceCid",
+        "SourceCredits"
+      ]
+    },
+    {
+      "id": "gotuya",
+      "github": "https://github.com/Binozo/GoTuya",
+      "license": "MIT",
+      "ideas": [
+        "IP + deviceId + localKey triad (protocol 3.3)"
+      ],
+      "landing": [
+        "docs only — observe"
+      ]
+    },
+    {
+      "id": "zigbee2mqtt-zha-path",
+      "github": "https://github.com/Koenkk/zigbee2mqtt",
+      "license": "GPL-3.0",
+      "ideas": [
+        "Tuya Zigbee end-devices need no local_key when on a local coordinator",
+        "Prefer Homey Zigbee over Tuya WiFi hub for end-devices"
+      ],
+      "landing": [
+        "CONTROL_PATH_DOCTRINE",
+        "WifiFixIt LAN notes",
+        "existing Z2M converters / sacred couples"
+      ]
+    }
+  ],
+  "notCopied": [
+    "Wholesale HA YAML device trees",
+    "SafeTuyAPI / Python runtime",
+    "MQTT broker bridge as Homey default",
+    "GoTuya Go runtime",
+    "Invent Zigbee productId from WiFi category",
+    "Force Tuya hub over Homey Zigbee coordinator"
+  ],
+  "runtimeEnriched": [
+    "TuyaZigbeeBridge GATEWAY_CATEGORIES union + parent_id/gateway_id",
+    "resolveSubDeviceCid node_id-first",
+    "TYPICAL_HUB_LAN_CONNECTION_LIMIT soft warn",
+    "buildGatewayTuyApiOptions gwID+id hub parent",
+    "CONTROL_PATH_DOCTRINE (Homey Zigbee vs WiFi LAN vs hub cid)",
+    "WifiFixIt UDP 7000 + hub Zigbee + no-key Zigbee + wizard re-key notes"
+  ],
+  "contreQuoi": [
+    "Wipe GATEWAY_CATEGORIES down to wg-only",
+    "Prefer cloud device id over node_id for cid",
+    "Omit gwID on hub TuyAPI connect",
+    "Remove UDP 7000 discovery note from Fix It",
+    "Invent productId for hub children",
+    "Force hub path over Homey Zigbee coordinator"
+  ],
+  "gates": [
+    "npm run check:p2656",
+    "npm run check:p2643",
+    "npm run check:p2520"
+  ]
+}

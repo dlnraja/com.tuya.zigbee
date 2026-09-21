@@ -1,18 +1,24 @@
 {
   "_meta": {
     "id": "complementary-homey-apps-ssot",
-    "patch": "P2647",
+    "patch": "P2657",
+    "extends": ["P2643", "P2647", "P2656"],
     "updated": "2026-09-21",
     "dualApp": "MASTER_ONLY",
-    "why": "Cite Homey Store Live/Test tips + GitHub branches for complementary enrich peers — UNION ideas only, never wholesale copy, never invent pid, never forum POST",
-    "probedAt": "2026-09-21T03:20:00Z",
-    "probeSource": "Homey Store Test page scrape + com.tuyalocal tip 1.0.237 (P2647)",
+    "why": "Cite Homey Store Live/Test tips + GitHub + forums + OSS LAN/Zigbee peers for complementary enrich — UNION ideas only, never wholesale copy, never invent pid, never forum POST",
+    "probedAt": "2026-09-21T16:21:19Z",
+    "probeSource": "P2657 apps-api.athom.com wide peer probe + P2656 OSS LAN",
     "doctrine": [
       "docs/rules/COMPLEMENTARY_VARIANT_ENRICH.md",
       "docs/architecture/TUYALOCAL_COMPLEMENTARY_CREDITS.md",
       "docs/architecture/COMPLEMENTARY_HOMEY_APPS.md",
+      "docs/architecture/OSS_LAN_TUYA_ENRICH.md",
+      "docs/architecture/HOMEY_STORE_PEERS_ENRICH.md",
+      "docs/CREDITS.md",
       "docs/architecture/SLEEPY_REMOTE_PAIRING_SSOT.md",
-      "config/architecture/tuyalocal-store-test-complementary-ssot.json"
+      "config/architecture/tuyalocal-store-test-complementary-ssot.json",
+      "config/architecture/oss-lan-tuya-enrich-ssot.json",
+      "config/architecture/homey-store-peers-ssot.json"
     ]
   },
   "rules": {
@@ -208,11 +214,13 @@
       "license": "MIT",
       "complementaryUse": [
         "EV charger YAML DP layouts",
-        "device category catalogs"
+        "device category catalogs",
+        "hub node_id + LAN session limits (P2656)"
       ],
       "ourLanding": [
         "WiFiDPRegistry PRODUCT_DP_HINTS",
-        "wifi_ev_charger"
+        "wifi_ev_charger",
+        "TuyaZigbeeBridge"
       ]
     },
     {
@@ -221,7 +229,145 @@
       "github": "https://github.com/jasonacox/tinytuya",
       "license": "MIT",
       "complementaryUse": [
-        "LAN protocol retry / discovery heuristics"
+        "LAN protocol retry / discovery heuristics",
+        "UDP 6666/6667/7000 + solicitation 0x25",
+        "local_key ascii16/hex32 normalize"
+      ],
+      "ourLanding": [
+        "UdpDiscoveryKeys",
+        "TuyaUDPDiscovery",
+        "WifiFixIt LAN notes"
+      ]
+    },
+    {
+      "id": "hass-localtuya-xzet",
+      "name": "LocalTuya (xZetsubou fork)",
+      "github": "https://github.com/xZetsubou/hass-localtuya",
+      "license": "MIT",
+      "complementaryUse": [
+        "sub-devices behind Tuya gateway",
+        "protocol 3.5",
+        "cloud for keys only"
+      ],
+      "ourLanding": [
+        "TuyaZigbeeBridge",
+        "TuyaSmartLifeAuth"
+      ]
+    },
+    {
+      "id": "tuya-mqtt-lehan",
+      "name": "tuya-mqtt (lehanspb)",
+      "github": "https://github.com/lehanspb/tuya-mqtt",
+      "license": "MIT",
+      "complementaryUse": [
+        "gateway/sub-device cid topic layout"
+      ],
+      "ourLanding": [
+        "TuyaZigbeeBridge.resolveSubDeviceCid"
+      ]
+    },
+    {
+      "id": "tuya-local-key-vineet",
+      "name": "tuya-local-key",
+      "github": "https://github.com/vineetchoudhary/tuya-local-key",
+      "license": "MIT",
+      "complementaryUse": [
+        "QR Smart Life local-key export without IoT developer account"
+      ],
+      "ourLanding": [
+        "TuyaSmartLifeAuth QR path",
+        "SourceCredits"
+      ]
+    },
+    {
+      "id": "tuyapi",
+      "name": "TuyAPI",
+      "github": "https://github.com/codetheweb/tuyapi",
+      "license": "MIT",
+      "complementaryUse": [
+        "Node LAN TCP runtime",
+        "gwID + cid hub children"
+      ],
+      "ourLanding": [
+        "TuyaLocalClient",
+        "TuyaZigbeeBridge.buildGatewayTuyApiOptions"
+      ]
+    },
+    {
+      "id": "tuyapi-cli",
+      "name": "@tuyapi/cli",
+      "github": "https://github.com/TuyaAPI/cli",
+      "license": "MIT",
+      "complementaryUse": [
+        "tuya-cli wizard local_key export"
+      ],
+      "ourLanding": [
+        "WifiFixIt notes",
+        "lib/tuya-local/README.md"
+      ]
+    },
+    {
+      "id": "tuyadump",
+      "name": "tuyadump",
+      "github": "https://github.com/py60800/tuyadump",
+      "license": "MIT",
+      "complementaryUse": [
+        "cid discovery lesson (cid ≠ cloud deviceId)"
+      ],
+      "ourLanding": [
+        "resolveSubDeviceCid",
+        "SourceCredits"
+      ]
+    },
+    {
+      "id": "gotuya",
+      "name": "GoTuya",
+      "github": "https://github.com/Binozo/GoTuya",
+      "license": "MIT",
+      "complementaryUse": [
+        "IP + deviceId + localKey triad (observe)"
+      ],
+      "ourLanding": [
+        "docs/architecture/OSS_LAN_TUYA_ENRICH.md"
+      ]
+    },
+    {
+      "id": "zigbee2mqtt-zha-path",
+      "name": "Zigbee2MQTT / ZHA path doctrine",
+      "github": "https://github.com/Koenkk/zigbee2mqtt",
+      "license": "GPL-3.0",
+      "complementaryUse": [
+        "Tuya Zigbee on local coordinator — no local_key",
+        "Prefer Homey Zigbee over Tuya WiFi hub"
+      ],
+      "ourLanding": [
+        "CONTROL_PATH_DOCTRINE",
+        "WifiFixIt",
+        "existing Z2M converter / sacred-couple gates"
+      ]
+    },
+    {
+      "id": "tuya-device-sharing-sdk",
+      "name": "Tuya Device Sharing SDK",
+      "github": "https://github.com/tuya/tuya-device-sharing-sdk",
+      "license": "MIT",
+      "complementaryUse": [
+        "official sharing API for credentials (cloud keys only)"
+      ],
+      "ourLanding": [
+        "TuyaSmartLifeAuth"
+      ]
+    },
+    {
+      "id": "localtuya-rospo",
+      "name": "localtuya (rospogrigio)",
+      "github": "https://github.com/rospogrigio/localtuya",
+      "license": "MIT",
+      "complementaryUse": [
+        "historical LAN DP mapping UX (observe)"
+      ],
+      "ourLanding": [
+        "docs/architecture/OSS_LAN_TUYA_ENRICH.md"
       ]
     },
     {
