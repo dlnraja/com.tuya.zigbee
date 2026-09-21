@@ -33,7 +33,7 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 
 | Metric | Value |
 |--------|-------|
-| **App Version** | v9.0.1147 |
+| **App Version** | v9.0.1148 |
 | **Drivers** | 434 (381 Zigbee + 53 WiFi) |
 | **Unique Fingerprints** | 4,694 |
 | **Pairing Variants** | 16,432 (4 case combos per fingerprint) |
@@ -41,7 +41,7 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 | **Flow Cards** | 6,057 |
 | **Unique Capabilities** | 170 |
 | **Native OTA Drivers** | 8 |
-| **Test Suites** | 440 files |
+| **Test Suites** | 441 files |
 | **SVG Icons** | 734 |
 | **Languages** | EN, FR, NL, DE |
 | **SDK / Homey** | 3 / >= 12.2.0 |
@@ -103,6 +103,7 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 
 | Version | Changes |
 |---------|---------|
+| **v9.0.1148** | P2651: drop empty wifi zigbee stubs + Buffer JSON load (publish validate). P2650 radar scale soft-require. |
 | **v9.0.1147** | P2650: radar range scale module soft-require (fixes crash if missing); MTG075 occupied/quantized docs. Update Homey Test. |
 | **v9.0.1146** | P2646/P2647: sleepy SSOT + Tuya Local Test complementary. P2470 publish-gate log lock. |
 | **v9.0.1145** | P2645: sleepy remotes skip battery configure on pair; quiet Time 0x000A logs. |
@@ -114,7 +115,6 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 | **v9.0.1139** | Improved WiFi LAN reliability and wall remote hybrid RX. |
 | **v9.0.1138** | Improved WiFi LAN reliability and wall remote Homey UI sync. |
 | **v9.0.1137** | Improved WiFi LAN reliability and fingerprint database alignment. |
-| **v9.0.1136** | Improved WiFi LAN reliability and fingerprint routing. |
 
 <!-- CHANGELOG_END -->
 
