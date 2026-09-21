@@ -3798,5 +3798,8 @@
   "1.0.40": {
     "en": "Mesh calm deepen: stop HOBEIAN modules flooding Zigbee (~5k msgs). Update+restart app. Re-pair Virtual remotes/sensors under Bastien drivers. Remove Unknown Nodes.",
     "fr": "Calme mesh renforce: arrete le flood Zigbee des modules HOBEIAN (~5k msgs). Maj+redemarrer app. Re-appairer Virtual sous Bastien. Retirer les Unknown Nodes."
+  },
+  "1.0.41": {
+    "en": "P2666: lock Bastien climate couples (fllyghyj/eWeLink TH) to climate_sensor; prune FP bleed so SNZB-02 and CK-TLSR 7014 pair correctly."
   }
 }
