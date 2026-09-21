@@ -1,0 +1,247 @@
+{
+  "_meta": {
+    "id": "P2657-homey-store-peers-enrich",
+    "updated": "2026-09-21",
+    "classify": "MASTER_ONLY",
+    "bothSubset": "reliability credits/docs only — no Bastien",
+    "why": "Catalog Homey Store Zigbee/Tuya/WiFi/SmartLife peers + OSS alts; credit/thank; complementary enrich into our apps without wipe",
+    "human": "docs/architecture/HOMEY_STORE_PEERS_ENRICH.md",
+    "credits": "docs/CREDITS.md",
+    "painMap": "reports/homey-store-peers-2026-09-21/PAIN_MAP.md",
+    "probe": "npm run probe:homey-peers",
+    "gate": "npm run check:p2657",
+    "skipBastien": true
+  },
+  "mandate": {
+    "complementaryOnly": true,
+    "unionNotReplace": true,
+    "noInventPid": true,
+    "noForumPost": true,
+    "noWholesaleCopy": true,
+    "skipBastienUnlessHouseDevices": true,
+    "thankPeersFinely": true
+  },
+  "probeApi": "https://apps-api.athom.com/api/v1",
+  "probedAt": "2026-09-21T16:21:19Z",
+  "homeyPeers": [
+    {
+      "id": "johan-tuya-zigbee",
+      "appId": "com.tuya.zigbee",
+      "name": "Tuya Zigbee",
+      "author": "Johan Bendz / Bortbytt Software",
+      "license": "MIT",
+      "github": "https://github.com/JohanBendz/com.tuya.zigbee",
+      "defaultBranch": "SDK3",
+      "forumTopicId": 26439,
+      "forum": "https://community.homey.app/t/app-pro-tuya-zigbee-app/26439",
+      "storeLive": "https://homey.app/a/com.tuya.zigbee/",
+      "homeyLive": "0.2.76",
+      "homeyTest": null,
+      "protocol": "Zigbee local",
+      "complementaryUse": ["FP taxonomy", "white-label brands", "SDK3 drivers", "device request patterns"],
+      "thanks": "Johan Bendz, Martijn Aben, Jurgen Heine, Morris Haid — foundational Homey Tuya Zigbee work"
+    },
+    {
+      "id": "lidl-smart-home",
+      "appId": "com.lidl",
+      "name": "Lidl Smart Home",
+      "author": "Johan Bendz / Bortbytt Software",
+      "license": "MIT",
+      "github": "https://github.com/JohanBendz/com.lidl",
+      "defaultBranch": "SDK3",
+      "forumTopicId": 26439,
+      "forum": "https://community.homey.app/t/app-pro-tuya-zigbee-app/26439",
+      "storeLive": "https://homey.app/a/com.lidl/",
+      "homeyLive": "0.2.5",
+      "homeyTest": null,
+      "protocol": "Zigbee (Lidl/Silvercrest/Livarno subset of Tuya)",
+      "complementaryUse": ["Silvercrest/Livarno couples", "power-strip multi-outlet interview lesson"],
+      "thanks": "Johan Bendz — Lidl brand fork keeps retail SKUs discoverable"
+    },
+    {
+      "id": "tuyalocal",
+      "appId": "com.tuyalocal",
+      "name": "Tuya Local",
+      "author": "Andi Wirz",
+      "license": "MIT",
+      "github": "https://github.com/andiwirz/com.tuyalocal",
+      "defaultBranch": "main",
+      "forumTopicId": 154077,
+      "forum": "https://community.homey.app/t/app-pro-tuya-local/154077",
+      "storeLive": "https://homey.app/a/com.tuyalocal/",
+      "storeTest": "https://homey.app/a/com.tuyalocal/test/",
+      "homeyLive": "1.0.232",
+      "homeyTest": "1.0.237",
+      "protocol": "WiFi/LAN Tuya (no Zigbee)",
+      "complementaryUse": ["protocol cascade", "Fix It", "Cloud Lookup", "DP category maps", "EV/AQI"],
+      "thanks": "Andi Wirz — modern Homey LAN Tuya reference"
+    },
+    {
+      "id": "tuya-cloud-heine",
+      "appId": "com.tuya.cloud",
+      "name": "Tuya cloud",
+      "author": "Jurgen Heine",
+      "github": "https://github.com/jurgenheine/com.tuya.cloud",
+      "forumTopicId": 21313,
+      "forum": "https://community.homey.app/t/app-pro-tuya-cloud-this-app-allows-you-to-connect-homey-to-the-tuya-cloud/21313",
+      "storeLive": "https://homey.app/a/com.tuya.cloud/",
+      "storeTest": "https://homey.app/a/com.tuya.cloud/test/",
+      "homeyLive": "1.1.23",
+      "homeyTest": "1.1.26",
+      "protocol": "Tuya cloud API",
+      "complementaryUse": ["contrast local-first", "raw capability flow patterns"],
+      "thanks": "Jurgen Heine — long-running cloud bridge for WiFi when LAN is impossible"
+    },
+    {
+      "id": "tuya2-drenso",
+      "appId": "com.tuya2",
+      "name": "Tuya (Drenso)",
+      "author": "Drenso V.O.F.",
+      "github": "https://github.com/Drenso/com.tuya2",
+      "forumTopicId": 146735,
+      "forum": "https://community.homey.app/t/146735",
+      "storeLive": "https://homey.app/a/com.tuya2/",
+      "homeyLive": "1.5.8",
+      "homeyTest": null,
+      "protocol": "Cloud / Smart Life bridge (historical Athom partnership path)",
+      "complementaryUse": ["observe only — API revocation lesson", "user confusion vs local Zigbee"],
+      "thanks": "Drenso — Homey↔Tuya cloud path documentation"
+    },
+    {
+      "id": "official-tuya",
+      "appId": "com.tuya",
+      "name": "Tuya (official)",
+      "author": "Tuya Inc.",
+      "github": "https://github.com/athombv/com.tuya",
+      "private": true,
+      "storeLive": "https://homey.app/a/com.tuya/",
+      "homeyLive": "1.4.2",
+      "protocol": "Official cloud",
+      "complementaryUse": ["reference only — do not copy"],
+      "thanks": "Know it exists so users are not confused with community apps"
+    },
+    {
+      "id": "rebtor-tuya",
+      "appId": "nl.rebtor.tuya",
+      "name": "Tuya (rebtor / TuyAPI Homey)",
+      "author": "Rens Brandwijk",
+      "forumTopicId": 15811,
+      "forum": "https://community.homey.app/t/15811",
+      "private": true,
+      "storeLive": "https://homey.app/a/nl.rebtor.tuya/",
+      "homeyLive": "3.1.1",
+      "protocol": "WiFi LAN via TuyAPI (legacy)",
+      "complementaryUse": ["single TCP session lesson", "power-strip multi-socket caps", "tuyapi Homey patterns"],
+      "thanks": "Rens Brandwijk — early Homey TuyAPI local control"
+    },
+    {
+      "id": "heszegi-ledvance-wifi",
+      "appId": "com.heszi.ledvance-wifi",
+      "name": "SMART+ Wifi",
+      "author": "Andras Heszegi",
+      "github": "https://github.com/heszegi/com.heszi.ledvance-wifi",
+      "storeLive": "https://homey.app/a/com.heszi.ledvance-wifi/",
+      "homeyLive": "1.1.1",
+      "protocol": "WiFi LAN (Ledvance/OSRAM Tuya-family)",
+      "complementaryUse": ["tuyapi Homey pairing patterns"],
+      "thanks": "Andras Heszegi — Ledvance WiFi local Homey app"
+    },
+    {
+      "id": "philips-hue-zigbee-johan",
+      "appId": "com.philips.hue.zigbee",
+      "name": "Philips Hue without bridge",
+      "author": "Johan Bendz / Bortbytt",
+      "github": "https://github.com/JohanBendz/com.philips.hue.zigbee",
+      "storeLive": "https://homey.app/a/com.philips.hue.zigbee/",
+      "homeyLive": "2.1.0",
+      "homeyTest": "2.1.1",
+      "protocol": "Zigbee (non-Tuya peer — ZCL patterns)",
+      "complementaryUse": ["observe ZCL light patterns"],
+      "thanks": "Johan Bendz — Zigbee-without-bridge craft"
+    },
+    {
+      "id": "device-capabilities",
+      "appId": "nl.qluster-it.DeviceCapabilities",
+      "name": "Device Capabilities",
+      "author": "Arie J. Godschalk",
+      "storeLive": "https://homey.app/a/nl.qluster-it.DeviceCapabilities/",
+      "homeyLive": "2.17.3",
+      "protocol": "Homey capability / flow companion",
+      "complementaryUse": ["capability_changed flows"],
+      "thanks": "Arie J. Godschalk — advanced capability UX for Homey"
+    }
+  ],
+  "externalOss": [
+    {
+      "id": "zigbee2mqtt",
+      "github": "https://github.com/Koenkk/zigbee2mqtt",
+      "converters": "https://github.com/Koenkk/zigbee-herdsman-converters",
+      "thanks": "Koen Kanters & contributors — device couples + DP maps"
+    },
+    {
+      "id": "zha",
+      "github": "https://github.com/zigpy/zha-device-handlers",
+      "thanks": "zigpy / ZHA quirk authors — interview + cluster quirks"
+    },
+    {
+      "id": "home-assistant-tuya",
+      "github": "https://github.com/home-assistant/core/tree/dev/homeassistant/components/tuya",
+      "thanks": "HA core Tuya integration maintainers — cloud DP schemas (observe)"
+    },
+    {
+      "id": "ha-tuya-local",
+      "github": "https://github.com/make-all/tuya-local",
+      "thanks": "make-all — LAN DP YAML + hub cid"
+    },
+    {
+      "id": "tinytuya",
+      "github": "https://github.com/jasonacox/tinytuya",
+      "thanks": "Jason Cox — LAN protocol encyclopedia"
+    },
+    {
+      "id": "tuyapi",
+      "github": "https://github.com/codetheweb/tuyapi",
+      "thanks": "Max Isom — Node LAN runtime we depend on"
+    },
+    {
+      "id": "blakadder",
+      "url": "https://zigbee.blakadder.com",
+      "thanks": "Blakadder device database"
+    }
+  ],
+  "forumTopicsReadOnly": [
+    { "id": 140352, "role": "our_universal_test", "mayReplyIfExplicit": true },
+    { "id": 26439, "role": "johan_tuya_zigbee_lidl", "scanOnly": true },
+    { "id": 154077, "role": "tuyalocal", "scanOnly": true },
+    { "id": 21313, "role": "tuya_cloud_heine", "scanOnly": true },
+    { "id": 146735, "role": "drenso_tuya2", "scanOnly": true },
+    { "id": 15811, "role": "rebtor_tuya", "scanOnly": true },
+    { "id": 157628, "role": "anti_ai_paste", "scanOnly": true },
+    { "id": 147343, "role": "howto_recognize_tuya", "scanOnly": true }
+  ],
+  "painThemesAbsorbed": [
+    "local_key rotates after re-pair → Fix It / Cloud Lookup / wizard notes",
+    "BLE / Matter / cloud-only SKUs → LAN_LIMITATION_NOTES",
+    "Zigbee needs no local_key on Homey coordinator → CONTROL_PATH_DOCTRINE",
+    "Hub cid ≠ cloud id → resolveSubDeviceCid",
+    "One TCP session per WiFi device (close phone app) → WifiFixIt note",
+    "Multi-outlet power strip needs interview / multi-EP → socket_power_strip drivers",
+    "Unknown device → report mfr+pid only, never invent",
+    "Official/Drenso cloud API fragility → stay local-first"
+  ],
+  "runtimeLandings": [
+    "lib/wifi/WifiFixIt.js",
+    "lib/tuya-local/TuyaZigbeeBridge.js",
+    "lib/data/SourceCredits.js",
+    "docs/CREDITS.md",
+    "config/architecture/complementary-homey-apps-ssot.json"
+  ],
+  "contreQuoi": [
+    "Drop peer catalog / CREDITS thanks",
+    "Forum auto-POST to peer topics",
+    "Wipe LAN notes or path doctrine",
+    "Publish Bastien for peer-catalog-only changes",
+    "Invent productId from peer app driver lists"
+  ],
+  "gates": ["npm run check:p2657", "npm run check:p2656", "npm run check:p2643", "npm run check:p2520"]
+}

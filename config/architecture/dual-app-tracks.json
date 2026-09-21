@@ -582,6 +582,15 @@
     "p2647_tuyalocal_store_test_complementary": {
       "tag": "MASTER_ONLY",
       "note": "Homey Store Test com.tuyalocal 1.0.237 — Fix It LAN ports + Cloud Lookup UX + AQI/EV flows UNION (no Zigbee invent)"
+    },
+    "p2656_oss_lan_tuya_enrich": {
+      "tag": "MASTER_ONLY",
+      "note": "OSS LAN WiFi + Tuya-hub Zigbee cid enrich (TinyTuya/tuyapi/HA/tuya-mqtt/Z2M path doctrine) — UNION only; prefer Homey Zigbee coordinator"
+    },
+    "p2657_homey_store_peers_enrich": {
+      "tag": "MASTER_ONLY",
+      "skipBastien": true,
+      "note": "Homey Store Zigbee/Tuya/WiFi/SmartLife peer catalog + CREDITS + pain map + peer probe workflow — complementary; skip Bastien"
     }
   }
 }
