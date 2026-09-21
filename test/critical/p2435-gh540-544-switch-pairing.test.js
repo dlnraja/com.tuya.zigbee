@@ -16,14 +16,18 @@ describe('P2435 — GH #540–#544 switch pairing endpoints + sacred couples', (
   it('switch_4gang endpoints are ZCL-safe (no required EF00 61184)', () => {
     const c = readCompose('switch_4gang');
     const ep1 = c.zigbee.endpoints['1'];
-    assert.ok(ep1.clusters.includes(0) && ep1.clusters.includes(6));
+    // WHY(P2435/P2652): Homey match fails if driver requires Identify/meter/E000 absent on plain TS0004
+    assert.deepStrictEqual(ep1.clusters, [0, 4, 5, 6]);
     assert.ok(!ep1.clusters.includes(61184), 'EF00 must not be required for ZCL TS0004 pairing');
+    assert.ok(!ep1.clusters.includes(1794) && !ep1.clusters.includes(2820), 'metering must not be required');
+    assert.ok(!ep1.clusters.includes(57344) && !ep1.clusters.includes(57345), 'Tuya E000/E001 must not be required');
     assert.deepStrictEqual(ep1.bindings, [6]);
     for (const ep of ['2', '3', '4']) {
       assert.deepStrictEqual(c.zigbee.endpoints[ep].clusters, [4, 5, 6]);
       assert.deepStrictEqual(c.zigbee.endpoints[ep].bindings, [6]);
     }
     assert.ok(c.zigbee.manufacturerName.some((m) => /enmfaave/i.test(m)));
+    assert.ok(c.zigbee.manufacturerName.some((m) => /liygxtcq/i.test(m)), 'P2634 liygxtcq+TS0004 stays on switch_4gang');
     assert.ok(c.zigbee.productId.includes('TS0004'));
   });
 
@@ -42,7 +46,6 @@ describe('P2435 — GH #540–#544 switch pairing endpoints + sacred couples', (
   });
 
   it('ptjcjise+TS0002 lives on wall_switch_2gang_1way, not switch_1gang/switch_2gang', () => {
-    // P2545j: align Contre quoi with sacred couple (was wrongly asserting switch_2gang)
     const wall = readCompose('wall_switch_2gang_1way');
     const g2 = readCompose('switch_2gang');
     const g1 = readCompose('switch_1gang');
@@ -58,7 +61,11 @@ describe('P2435 — GH #540–#544 switch pairing endpoints + sacred couples', (
     assert.deepStrictEqual(g2.zigbee.endpoints['2'].clusters, [4, 5, 6]);
     const g1 = readCompose('switch_1gang');
     assert.deepStrictEqual(g1.zigbee.endpoints['1'].clusters, [0, 4, 5, 6]);
-    assert.ok(g1.zigbee.manufacturerName.some((m) => /blhvsaqf/i.test(m)));
+    // WHY P2462: BSEED blhvsaqf lives on wall_switch_1gang_1way (not metering switch_1gang)
+    assert.ok(!g1.zigbee.manufacturerName.some((m) => /blhvsaqf/i.test(m)));
+    const wall1 = readCompose('wall_switch_1gang_1way');
+    assert.ok(wall1.zigbee.manufacturerName.some((m) => /blhvsaqf/i.test(m)));
+    assert.ok(wall1.zigbee.productId.includes('TS0001'));
   });
 
   it('DeviceFingerprintDB routes P2435 couples', () => {
@@ -67,7 +74,8 @@ describe('P2435 — GH #540–#544 switch pairing endpoints + sacred couples', (
     assert.strictEqual(FINGERPRINT_DB['_TZ3000_xk5udnd6|TS0012'].driver, 'wall_switch_2gang_1way');
     assert.strictEqual(FINGERPRINT_DB['_TZ3000_ptjcjise|TS0002'].driver, 'wall_switch_2gang_1way');
     assert.strictEqual(FINGERPRINT_DB['_TZ3000_l9brjwau|TS0002'].driver, 'wall_switch_2gang_1way');
-    assert.strictEqual(FINGERPRINT_DB['_TZ3000_blhvsaqf|TS0001'].driver, 'switch_1gang');
+    // P2462 GH#540 — BSEED 1G ZCL wall, not switch_1gang
+    assert.strictEqual(FINGERPRINT_DB['_TZ3000_blhvsaqf|TS0001'].driver, 'wall_switch_1gang_1way');
   });
 
   it('mfs_db top-level xk5udnd6 is not water_leak_sensor', () => {
