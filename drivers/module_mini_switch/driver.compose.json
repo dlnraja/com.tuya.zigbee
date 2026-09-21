@@ -42,7 +42,11 @@
       "_TZ3000_dkgxjjn1",
       "_TZ3000_hswqnljz",
       "_TZ3000_jd3u8dkz",
-      "_TZ3000_tqlv4uj4"
+      "_TZ3000_tqlv4uj4",
+      "_tz3000_DKGXJJN1",
+      "_tz3000_HSWQNLJZ",
+      "_tz3000_JD3U8DKZ",
+      "_tz3000_TQLV4UJ4"
     ],
     "productId": [
       "ZBMINI",
@@ -425,6 +429,42 @@
       ],
       "hint": {
         "en": "External switch trigger mode"
+      }
+    },
+    {
+      "id": "power_scale",
+      "type": "dropdown",
+      "label": {
+        "en": "Power Measurement Scale",
+        "fr": "Échelle de puissance"
+      },
+      "value": "1",
+      "values": [
+        {
+          "id": "0.1",
+          "label": {
+            "en": "÷10",
+            "fr": "÷10"
+          }
+        },
+        {
+          "id": "1",
+          "label": {
+            "en": "×1 (Default)",
+            "fr": "×1 (défaut)"
+          }
+        },
+        {
+          "id": "10",
+          "label": {
+            "en": "×10",
+            "fr": "×10"
+          }
+        }
+      ],
+      "hint": {
+        "en": "Use if W/kWh readings are 10× too high or low.",
+        "fr": "Si W/kWh sont ×10 trop hauts ou bas."
       }
     }
   ],
