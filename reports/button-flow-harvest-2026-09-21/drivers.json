@@ -1155,7 +1155,7 @@
     ],
     "triggerCount": 16,
     "conditionCount": 1,
-    "actionCount": 9,
+    "actionCount": 3,
     "triggerIds": [
       "button_wireless_fingerbot_switch_1gang_turned_on",
       "button_wireless_fingerbot_switch_1gang_turned_off",
@@ -2681,7 +2681,7 @@
       "button.2",
       "button.3"
     ],
-    "triggerCount": 20,
+    "triggerCount": 8,
     "conditionCount": 0,
     "actionCount": 0,
     "triggerIds": [
@@ -2689,21 +2689,9 @@
       "remote_button_wireless_button_3gang_button_multi_press",
       "remote_button_wireless_button_3gang_button_long_press",
       "remote_button_wireless_button_3gang_button_double_press",
-      "remote_button_wireless_button_3gang_button_1_cf25e",
-      "remote_button_wireless_button_3gang_button_2_d44b8",
-      "remote_button_wireless_button_3gang_button_3_1a1f3",
-      "remote_button_wireless_button_3gang_button_1_eeafc",
-      "remote_button_wireless_button_3gang_button_2_a071a",
-      "remote_button_wireless_button_3gang_button_3_b1b55",
       "remote_button_wireless_button_3gang_button_1_long",
       "remote_button_wireless_button_3gang_button_2_long",
       "remote_button_wireless_button_3gang_button_3_long",
-      "remote_button_wireless_button_3gang_button_1_f78a6",
-      "remote_button_wireless_button_3gang_button_2_30051",
-      "remote_button_wireless_button_3gang_button_3_dfe2a",
-      "remote_button_wireless_button_3gang_button_1_47bce",
-      "remote_button_wireless_button_3gang_button_2_7ccec",
-      "remote_button_wireless_button_3gang_button_3_edd75",
       "remote_button_wireless_battery_low"
     ],
     "missingInAppJson": [
@@ -2711,37 +2699,154 @@
       "remote_button_wireless_button_3gang_button_multi_press",
       "remote_button_wireless_button_3gang_button_long_press",
       "remote_button_wireless_button_3gang_button_double_press",
-      "remote_button_wireless_button_3gang_button_1_cf25e",
-      "remote_button_wireless_button_3gang_button_2_d44b8",
-      "remote_button_wireless_button_3gang_button_3_1a1f3",
-      "remote_button_wireless_button_3gang_button_1_eeafc",
-      "remote_button_wireless_button_3gang_button_2_a071a",
-      "remote_button_wireless_button_3gang_button_3_b1b55",
       "remote_button_wireless_button_3gang_button_1_long",
       "remote_button_wireless_button_3gang_button_2_long",
       "remote_button_wireless_button_3gang_button_3_long",
-      "remote_button_wireless_button_3gang_button_1_f78a6",
-      "remote_button_wireless_button_3gang_button_2_30051",
-      "remote_button_wireless_button_3gang_button_3_dfe2a",
-      "remote_button_wireless_button_3gang_button_1_47bce",
-      "remote_button_wireless_button_3gang_button_2_7ccec",
-      "remote_button_wireless_button_3gang_button_3_edd75",
       "remote_button_wireless_battery_low"
     ],
     "heuristicResolvable": true,
     "heuristicGaps": [],
-    "heuristicFalsePositives": [],
+    "heuristicFalsePositives": [
+      {
+        "gang": 1,
+        "pressType": "hold",
+        "tried": [
+          "remote_button_wireless_button_3gang_hold",
+          "REMOTE_BUTTON_WIRELESS_BUTTON_3GANG_HOLD",
+          "remote_button_wireless_button_3gang_button_hold",
+          "REMOTE_BUTTON_WIRELESS_BUTTON_3GANG_BUTTON_HOLD"
+        ]
+      },
+      {
+        "gang": 1,
+        "pressType": "triple",
+        "tried": [
+          "remote_button_wireless_button_3gang_triple",
+          "REMOTE_BUTTON_WIRELESS_BUTTON_3GANG_TRIPLE",
+          "remote_button_wireless_button_3gang_button_triple",
+          "REMOTE_BUTTON_WIRELESS_BUTTON_3GANG_BUTTON_TRIPLE"
+        ]
+      },
+      {
+        "gang": 1,
+        "pressType": "release",
+        "tried": [
+          "remote_button_wireless_button_3gang_release",
+          "REMOTE_BUTTON_WIRELESS_BUTTON_3GANG_RELEASE",
+          "remote_button_wireless_button_3gang_button_release",
+          "REMOTE_BUTTON_WIRELESS_BUTTON_3GANG_BUTTON_RELEASE"
+        ]
+      },
+      {
+        "gang": 2,
+        "pressType": "hold",
+        "tried": [
+          "remote_button_wireless_button_3gang_hold",
+          "REMOTE_BUTTON_WIRELESS_BUTTON_3GANG_HOLD",
+          "remote_button_wireless_button_3gang_button_hold",
+          "REMOTE_BUTTON_WIRELESS_BUTTON_3GANG_BUTTON_HOLD"
+        ]
+      },
+      {
+        "gang": 2,
+        "pressType": "triple",
+        "tried": [
+          "remote_button_wireless_button_3gang_triple",
+          "REMOTE_BUTTON_WIRELESS_BUTTON_3GANG_TRIPLE",
+          "remote_button_wireless_button_3gang_button_triple",
+          "REMOTE_BUTTON_WIRELESS_BUTTON_3GANG_BUTTON_TRIPLE"
+        ]
+      },
+      {
+        "gang": 2,
+        "pressType": "release",
+        "tried": [
+          "remote_button_wireless_button_3gang_release",
+          "REMOTE_BUTTON_WIRELESS_BUTTON_3GANG_RELEASE",
+          "remote_button_wireless_button_3gang_button_release",
+          "REMOTE_BUTTON_WIRELESS_BUTTON_3GANG_BUTTON_RELEASE"
+        ]
+      },
+      {
+        "gang": 3,
+        "pressType": "hold",
+        "tried": [
+          "remote_button_wireless_button_3gang_hold",
+          "REMOTE_BUTTON_WIRELESS_BUTTON_3GANG_HOLD",
+          "remote_button_wireless_button_3gang_button_hold",
+          "REMOTE_BUTTON_WIRELESS_BUTTON_3GANG_BUTTON_HOLD"
+        ]
+      },
+      {
+        "gang": 3,
+        "pressType": "triple",
+        "tried": [
+          "remote_button_wireless_button_3gang_triple",
+          "REMOTE_BUTTON_WIRELESS_BUTTON_3GANG_TRIPLE",
+          "remote_button_wireless_button_3gang_button_triple",
+          "REMOTE_BUTTON_WIRELESS_BUTTON_3GANG_BUTTON_TRIPLE"
+        ]
+      },
+      {
+        "gang": 3,
+        "pressType": "release",
+        "tried": [
+          "remote_button_wireless_button_3gang_release",
+          "REMOTE_BUTTON_WIRELESS_BUTTON_3GANG_RELEASE",
+          "remote_button_wireless_button_3gang_button_release",
+          "REMOTE_BUTTON_WIRELESS_BUTTON_3GANG_BUTTON_RELEASE"
+        ]
+      }
+    ],
     "issues": [
+      {
+        "type": "heuristic_false_positive",
+        "severity": "info",
+        "count": 9,
+        "sample": [
+          {
+            "gang": 1,
+            "pressType": "hold",
+            "tried": [
+              "remote_button_wireless_button_3gang_hold",
+              "REMOTE_BUTTON_WIRELESS_BUTTON_3GANG_HOLD",
+              "remote_button_wireless_button_3gang_button_hold",
+              "REMOTE_BUTTON_WIRELESS_BUTTON_3GANG_BUTTON_HOLD"
+            ]
+          },
+          {
+            "gang": 1,
+            "pressType": "triple",
+            "tried": [
+              "remote_button_wireless_button_3gang_triple",
+              "REMOTE_BUTTON_WIRELESS_BUTTON_3GANG_TRIPLE",
+              "remote_button_wireless_button_3gang_button_triple",
+              "REMOTE_BUTTON_WIRELESS_BUTTON_3GANG_BUTTON_TRIPLE"
+            ]
+          },
+          {
+            "gang": 1,
+            "pressType": "release",
+            "tried": [
+              "remote_button_wireless_button_3gang_release",
+              "REMOTE_BUTTON_WIRELESS_BUTTON_3GANG_RELEASE",
+              "remote_button_wireless_button_3gang_button_release",
+              "REMOTE_BUTTON_WIRELESS_BUTTON_3GANG_BUTTON_RELEASE"
+            ]
+          }
+        ],
+        "reason": "Ngang cards declared — CI tries generic patterns first; runtime resolves"
+      },
       {
         "type": "app_json_drift",
         "severity": "info",
-        "count": 20,
+        "count": 8,
         "sample": [
           "remote_button_wireless_button_3gang_button_pressed",
           "remote_button_wireless_button_3gang_button_multi_press",
           "remote_button_wireless_button_3gang_button_long_press",
           "remote_button_wireless_button_3gang_button_double_press",
-          "remote_button_wireless_button_3gang_button_1_cf25e"
+          "remote_button_wireless_button_3gang_button_1_long"
         ],
         "note": "compose cards absent from last .homeybuild/root app.json — Auto-Publish regenerates; runtime FlowCardHeuristics still resolves"
       }
@@ -3433,13 +3538,10 @@
       "button.1",
       "button.2"
     ],
-    "triggerCount": 9,
-    "conditionCount": 1,
-    "actionCount": 3,
+    "triggerCount": 6,
+    "conditionCount": 0,
+    "actionCount": 0,
     "triggerIds": [
-      "remote_button_wireless_usb_button_wireless_u_53adf",
-      "remote_button_wireless_usb_button_wireless_u_82732",
-      "remote_button_wireless_usb_button_wireless_u_dbb38",
       "remote_button_wireless_usb_physical_on",
       "remote_button_wireless_usb_physical_off",
       "remote_button_wireless_usb_measure_power_changed",
@@ -3448,9 +3550,6 @@
       "remote_button_wireless_usb_current_changed"
     ],
     "missingInAppJson": [
-      "remote_button_wireless_usb_button_wireless_u_53adf",
-      "remote_button_wireless_usb_button_wireless_u_82732",
-      "remote_button_wireless_usb_button_wireless_u_dbb38",
       "remote_button_wireless_usb_physical_on",
       "remote_button_wireless_usb_physical_off",
       "remote_button_wireless_usb_measure_power_changed",
@@ -3534,13 +3633,13 @@
       {
         "type": "app_json_drift",
         "severity": "info",
-        "count": 9,
+        "count": 6,
         "sample": [
-          "remote_button_wireless_usb_button_wireless_u_53adf",
-          "remote_button_wireless_usb_button_wireless_u_82732",
-          "remote_button_wireless_usb_button_wireless_u_dbb38",
           "remote_button_wireless_usb_physical_on",
-          "remote_button_wireless_usb_physical_off"
+          "remote_button_wireless_usb_physical_off",
+          "remote_button_wireless_usb_measure_power_changed",
+          "remote_button_wireless_usb_meter_power_changed",
+          "remote_button_wireless_usb_voltage_changed"
         ],
         "note": "compose cards absent from last .homeybuild/root app.json — Auto-Publish regenerates; runtime FlowCardHeuristics still resolves"
       }
@@ -5142,52 +5241,20 @@
       "button.3",
       "button.4"
     ],
-    "triggerCount": 20,
+    "triggerCount": 4,
     "conditionCount": 0,
     "actionCount": 0,
     "triggerIds": [
-      "smart_remote_4_buttons_button_4gang_button_1_efa4c",
-      "smart_remote_4_buttons_button_4gang_button_1_b36a2",
       "smart_remote_4_buttons_button_4gang_button_1_long",
-      "smart_remote_4_buttons_button_4gang_button_1_710b8",
-      "smart_remote_4_buttons_button_4gang_button_1_2f398",
-      "smart_remote_4_buttons_button_4gang_button_2_c1a07",
-      "smart_remote_4_buttons_button_4gang_button_2_9ee30",
       "smart_remote_4_buttons_button_4gang_button_2_long",
-      "smart_remote_4_buttons_button_4gang_button_2_117ae",
-      "smart_remote_4_buttons_button_4gang_button_2_c9350",
-      "smart_remote_4_buttons_button_4gang_button_3_23151",
-      "smart_remote_4_buttons_button_4gang_button_3_06acd",
       "smart_remote_4_buttons_button_4gang_button_3_long",
-      "smart_remote_4_buttons_button_4gang_button_3_dab7c",
-      "smart_remote_4_buttons_button_4gang_button_3_0a45a",
-      "smart_remote_4_buttons_button_4gang_button_4_20c9b",
-      "smart_remote_4_buttons_button_4gang_button_4_a5f90",
-      "smart_remote_4_buttons_button_4gang_button_4_long",
-      "smart_remote_4_buttons_button_4gang_button_4_36531",
-      "smart_remote_4_buttons_button_4gang_button_4_2bf26"
+      "smart_remote_4_buttons_button_4gang_button_4_long"
     ],
     "missingInAppJson": [
-      "smart_remote_4_buttons_button_4gang_button_1_efa4c",
-      "smart_remote_4_buttons_button_4gang_button_1_b36a2",
       "smart_remote_4_buttons_button_4gang_button_1_long",
-      "smart_remote_4_buttons_button_4gang_button_1_710b8",
-      "smart_remote_4_buttons_button_4gang_button_1_2f398",
-      "smart_remote_4_buttons_button_4gang_button_2_c1a07",
-      "smart_remote_4_buttons_button_4gang_button_2_9ee30",
       "smart_remote_4_buttons_button_4gang_button_2_long",
-      "smart_remote_4_buttons_button_4gang_button_2_117ae",
-      "smart_remote_4_buttons_button_4gang_button_2_c9350",
-      "smart_remote_4_buttons_button_4gang_button_3_23151",
-      "smart_remote_4_buttons_button_4gang_button_3_06acd",
       "smart_remote_4_buttons_button_4gang_button_3_long",
-      "smart_remote_4_buttons_button_4gang_button_3_dab7c",
-      "smart_remote_4_buttons_button_4gang_button_3_0a45a",
-      "smart_remote_4_buttons_button_4gang_button_4_20c9b",
-      "smart_remote_4_buttons_button_4gang_button_4_a5f90",
-      "smart_remote_4_buttons_button_4gang_button_4_long",
-      "smart_remote_4_buttons_button_4gang_button_4_36531",
-      "smart_remote_4_buttons_button_4gang_button_4_2bf26"
+      "smart_remote_4_buttons_button_4gang_button_4_long"
     ],
     "heuristicResolvable": true,
     "heuristicGaps": [],
@@ -5196,13 +5263,12 @@
       {
         "type": "app_json_drift",
         "severity": "info",
-        "count": 20,
+        "count": 4,
         "sample": [
-          "smart_remote_4_buttons_button_4gang_button_1_efa4c",
-          "smart_remote_4_buttons_button_4gang_button_1_b36a2",
           "smart_remote_4_buttons_button_4gang_button_1_long",
-          "smart_remote_4_buttons_button_4gang_button_1_710b8",
-          "smart_remote_4_buttons_button_4gang_button_1_2f398"
+          "smart_remote_4_buttons_button_4gang_button_2_long",
+          "smart_remote_4_buttons_button_4gang_button_3_long",
+          "smart_remote_4_buttons_button_4gang_button_4_long"
         ],
         "note": "compose cards absent from last .homeybuild/root app.json — Auto-Publish regenerates; runtime FlowCardHeuristics still resolves"
       }

@@ -1,6 +1,6 @@
 # Button Flow Harvest — NEED_ACTION
 
-Generated: 2026-09-21T07:06:35.855Z
+Generated: 2026-09-21T18:57:17.973Z
 
 ## Exempt (not button-flow scope)
 
@@ -18,6 +18,7 @@ CI harvest tries generic patterns first; `FlowCardHeuristics` + `ButtonDevice` r
 - `button_wireless_switch` (socket) — 6 CI-only misses; socket hybrid — runtime PhysicalButtonMixin + switch_1gang/physical_on
 - `button_wireless_usb` (socket) — 12 CI-only misses; Ngang cards declared — CI tries generic patterns first; runtime resolves
 - `button_wireless_valve` (socket) — 12 CI-only misses; Ngang cards declared — CI tries generic patterns first; runtime resolves
+- `remote_button_wireless` (button) — 9 CI-only misses; Ngang cards declared — CI tries generic patterns first; runtime resolves
 - `remote_button_wireless_fingerbot` (socket) — 3 CI-only misses; socket hybrid — runtime PhysicalButtonMixin + switch_1gang/physical_on
 - `remote_button_wireless_plug` (socket) — 3 CI-only misses; socket hybrid — runtime PhysicalButtonMixin + switch_1gang/physical_on
 - `remote_button_wireless_scene` (button) — 12 CI-only misses; hashed Ngang cards — runtime ButtonDevice/FlowCardHeuristics resolves
