@@ -7927,6 +7927,26 @@
       "forbidMode": "couple",
       "notes": "P2639: phantom 4-EP firmware class. Contre quoi: pairing as 4-gang / inventing onoff switches.",
       "enrichedAt": "2026-09-20"
+    },
+    {
+      "id": "p2644-4d4e1684-ts0043-not-wall-remote",
+      "manufacturerName": [
+        "_TZ3000_vsxvaj9i",
+        "_tz3000_vsxvaj9i"
+      ],
+      "productId": [
+        "TS0043"
+      ],
+      "correctDriver": "button_wireless_3",
+      "forbidDrivers": [
+        "remote_button_wireless_wall",
+        "switch_1gang",
+        "switch_3gang",
+        "wall_switch_3gang_1way"
+      ],
+      "notes": "P2644/4d4e1684: Bastien 3ch silent in diag while tip 1.0.14. Wall remote had TS0043 pid but only button.1 — prune wall to TS0041. Re-pair as button_wireless_3.",
+      "source": "gmail-diag-4d4e1684",
+      "dualApp": "BOTH"
     }
   ],
   "entries": {

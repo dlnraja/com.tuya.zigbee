@@ -73,4 +73,20 @@ describe('P2644 Bastien e8d98608 / 4d4e1684', () => {
     assert.ok((bw3.zigbee.manufacturerName || []).some((m) => /vsxvaj9i/i.test(m)));
     assert.ok((bw3.zigbee.productId || []).includes('TS0043'));
   });
+
+  it('remote_button_wireless_wall is 1-btn only (no TS0043 steal — Bastien 4d4e1684)', () => {
+    const wall = JSON.parse(fs.readFileSync(
+      path.join(ROOT, 'drivers/remote_button_wireless_wall/driver.compose.json'),
+      'utf8',
+    ));
+    const pids = wall.zigbee.productId || [];
+    assert.ok(pids.includes('TS0041'));
+    assert.ok(!pids.includes('TS0043'), 'wall must not claim TS0043 (3ch)');
+    assert.ok(!pids.includes('TS0042'));
+    assert.ok(!pids.includes('TS0044'));
+    const caps = wall.capabilities || [];
+    assert.ok(caps.includes('button.1'));
+    assert.ok(!caps.includes('button.2'));
+    assert.ok(!caps.includes('button.3'));
+  });
 });

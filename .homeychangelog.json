@@ -3819,5 +3819,8 @@
   },
   "9.0.1143": {
     "en": "P2644: fix switch flow card IDs + remote CI crash (Bastien diags)."
+  },
+  "9.0.1144": {
+    "en": "P2644b: wall remote TS0041-only — stop 3ch remotes pairing as 1-button (Bastien 4d4e1684)."
   }
 }
