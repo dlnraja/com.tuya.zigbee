@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-21T07:05:55.007Z",
+  "generatedAt": "2026-09-21T18:56:36.077Z",
   "mode": "apply",
   "classFilter": null,
   "neverInventProductId": true,
@@ -8,7 +8,7 @@
       "count": 54,
       "withGaps": 2,
       "mfrEntries": 1356,
-      "flowTriggers": 880,
+      "flowTriggers": 849,
       "gapSamples": [
         {
           "id": "smart_remote_1_button_2",
@@ -99,7 +99,7 @@
       "count": 122,
       "withGaps": 10,
       "mfrEntries": 5583,
-      "flowTriggers": 793,
+      "flowTriggers": 782,
       "gapSamples": [
         {
           "id": "device_air_purifier_din",
@@ -155,7 +155,7 @@
       "count": 53,
       "withGaps": 2,
       "mfrEntries": 1410,
-      "flowTriggers": 260,
+      "flowTriggers": 257,
       "gapSamples": [
         {
           "id": "dimmer_dual_channel",
@@ -189,7 +189,7 @@
       "count": 31,
       "withGaps": 0,
       "mfrEntries": 1728,
-      "flowTriggers": 178,
+      "flowTriggers": 177,
       "gapSamples": []
     },
     "meter": {
@@ -244,7 +244,7 @@
       "count": 9,
       "withGaps": 0,
       "mfrEntries": 0,
-      "flowTriggers": 22,
+      "flowTriggers": 25,
       "gapSamples": []
     },
     "garagedoor": {
@@ -279,7 +279,7 @@
       "count": 13,
       "withGaps": 0,
       "mfrEntries": 924,
-      "flowTriggers": 89,
+      "flowTriggers": 83,
       "gapSamples": []
     }
   },
@@ -287,14 +287,14 @@
     "drivers": 434,
     "withGaps": 30,
     "mfrEntries": 16434,
-    "flowTriggers": 3631
+    "flowTriggers": 3582
   },
   "applyResults": [
     {
       "phase": "flow-fleet-enrich",
       "ok": true,
       "exitCode": 0,
-      "tail": "[\n        \"wifi_ev_charger_measure_power_changed\",\n        \"wifi_ev_charger_meter_power_changed\",\n        \"wifi_ev_charger_current_changed\",\n        \"wifi_ev_charger_voltage_changed\",\n        \"wifi_ev_charger_temperature_changed\"\n      ],\n      \"actions\": []\n    },\n    {\n      \"driver\": \"wifi_heat_pump\",\n      \"orphans\": 0,\n      \"triggers\": [\n        \"wifi_heat_pump_target_temperature_changed\"\n      ],\n      \"actions\": []\n    },\n    {\n      \"driver\": \"wifi_kettle\",\n      \"orphans\": 0,\n      \"triggers\": [\n        \"wifi_kettle_target_temperature_changed\"\n      ],\n      \"actions\": []\n    }\n  ]\n}"
+      "tail": "   }\n  ],\n  \"topChanges\": [\n    {\n      \"driver\": \"button_wireless_3\",\n      \"orphans\": 1,\n      \"triggers\": [],\n      \"actions\": []\n    },\n    {\n      \"driver\": \"wifi_air_quality\",\n      \"orphans\": 1,\n      \"triggers\": [],\n      \"actions\": []\n    },\n    {\n      \"driver\": \"wifi_ev_charger\",\n      \"orphans\": 1,\n      \"triggers\": [\n        \"wifi_ev_charger_measure_power_changed\",\n        \"wifi_ev_charger_meter_power_changed\",\n        \"wifi_ev_charger_current_changed\",\n        \"wifi_ev_charger_voltage_changed\",\n        \"wifi_ev_charger_temperature_changed\"\n      ],\n      \"actions\": []\n    }\n  ]\n}"
     },
     {
       "phase": "button-flow-harvest",
@@ -330,7 +330,7 @@
       "phase": "curtain-couples",
       "ok": true,
       "exitCode": 0,
-      "tail": "[apply-curtain-couples] candidates=153 toAdd=4 strip_curtain=2\n  + _TZE200_jfw0a4aa (EPJ-ZB) [live-z2m-crawl]\n  + _TZE200_npj9bug3 (M515EGBZTN) [live-z2m-crawl]\n  + _TZE200_shkxsgis (ZM25TQ) [live-z2m-crawl]\n  + _TZE204_shkxsgis (ZM25TQ) [live-z2m-crawl]\n[apply-curtain-couples] strip curtain_motor: 2 rows (tilt/module/shutter/forbidden)\n  → curtain_module_2_gang: _TZ3000_j1xl73iw\n  → curtain_module_2_gang: _TZ3000_l6iqph4f\n[apply-curtain-couples] APPLIED +4 mfrs, -2 stripped, curtain total=673"
+      "tail": "[apply-curtain-couples] candidates=116 toAdd=0 strip_curtain=2\n[apply-curtain-couples] strip curtain_motor: 2 rows (tilt/module/shutter/forbidden)\n  → curtain_module_2_gang: _TZ3000_j1xl73iw\n  → curtain_module_2_gang: _TZ3000_l6iqph4f\n[apply-curtain-couples] APPLIED +0 mfrs, -2 stripped, curtain total=669"
     },
     {
       "phase": "harden-wifi-local",

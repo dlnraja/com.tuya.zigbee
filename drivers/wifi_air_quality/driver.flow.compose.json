@@ -98,13 +98,19 @@
         {
           "name": "level",
           "type": "string",
-          "title": { "en": "Level", "fr": "Niveau" },
+          "title": {
+            "en": "Level",
+            "fr": "Niveau"
+          },
           "example": "moderate"
         },
         {
           "name": "previous_level",
           "type": "string",
-          "title": { "en": "Previous level", "fr": "Niveau précédent" },
+          "title": {
+            "en": "Previous level",
+            "fr": "Niveau précédent"
+          },
           "example": "good"
         }
       ],
@@ -128,20 +134,29 @@
         {
           "name": "pm03",
           "type": "number",
-          "title": { "en": "PM0.3 (µg/m³)", "fr": "PM0.3 (µg/m³)" }
+          "title": {
+            "en": "PM0.3 (µg/m³)",
+            "fr": "PM0.3 (µg/m³)"
+          }
         }
       ],
       "args": [
         {
           "name": "threshold",
           "type": "number",
-          "title": { "en": "PM0.3 (µg/m³)", "fr": "PM0.3 (µg/m³)" },
-          "placeholder": { "en": "1000", "fr": "1000" }
+          "title": {
+            "en": "PM0.3 (µg/m³)",
+            "fr": "PM0.3 (µg/m³)"
+          },
+          "placeholder": {
+            "en": "1000",
+            "fr": "1000"
+          }
         }
       ],
       "titleFormatted": {
-        "en": "PM0.3 rose above [[threshold]] µg/m³",
-        "fr": "PM0.3 a dépassé [[threshold]] µg/m³"
+        "en": "PM0.3 rose above [[threshold]] µg/m³ ({pm03})",
+        "fr": "PM0.3 a dépassé [[threshold]] µg/m³ ({pm03})"
       }
     }
   ],

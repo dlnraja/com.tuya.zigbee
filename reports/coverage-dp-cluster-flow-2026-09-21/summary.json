@@ -1,22 +1,16 @@
 {
-  "generatedAt": "2026-09-21T07:06:34.411Z",
+  "generatedAt": "2026-09-21T18:57:16.523Z",
   "patch": "P2247",
   "drivers": {
     "count": 434,
     "withFlowCompose": 434,
     "withoutFlowCompose": [],
-    "flowCardEntries": 5889
+    "flowCardEntries": 5814
   },
   "clusters": {
     "composeUnique": 36,
-    "lexiconSize": 44,
-    "missingFromLexicon": [
-      {
-        "id": 64529,
-        "hex": "0xFC11",
-        "lookup": "UNK_fc11"
-      }
-    ]
+    "lexiconSize": 45,
+    "missingFromLexicon": []
   },
   "dps": {
     "knowledgeCouples": 209,
@@ -38,7 +32,5 @@
     "sceneResolves": true,
     "capabilityResolves": true
   },
-  "critical": [
-    "1 compose clusters missing from lexicon"
-  ]
+  "critical": []
 }

@@ -1,6 +1,6 @@
 # Flow + L99 audit — 2026-09-21
 
-Failing steps: **1** / 8
+Failing steps: **0** / 8
 
 | Step | OK |
 |------|----|
@@ -10,7 +10,7 @@ Failing steps: **1** / 8
 | flow-fleet-enrich | yes |
 | appjson-flow-dedupe | yes |
 | voice-safety | yes |
-| dp-cluster-flow-coverage | NO |
+| dp-cluster-flow-coverage | yes |
 | button-flow-harvest | yes |
 
 ## Notes
@@ -22,7 +22,7 @@ Failing steps: **1** / 8
 ### flow-dups
 
 ```
-Flow card ID uniqueness OK (6059 compose ids)
+Flow card ID uniqueness OK (5984 compose ids)
 
 ```
 
@@ -41,8 +41,8 @@ Format Errors: 0
 ```
 === FLOW CARD COHERENCE AUDIT ===
 Drivers scanned: 434
-Cards with args: 688
-Cards with tokens: 1069
+Cards with args: 675
+Cards with tokens: 1064
 Cards with orphan tokens (declared but not used in args/title): 12
 
 First 20 issues:
@@ -65,7 +65,7 @@ First 20 issues:
 
 ```
 {
-  "generatedAt": "2026-09-21T07:06:34.159Z",
+  "generatedAt": "2026-09-21T18:57:16.273Z",
   "mode": "dry-run",
   "driversTouched": 0,
   "orphanTokensFixed": 0,
@@ -125,19 +125,18 @@ OK: button.* event-only (getable/setable false); class:button|remote may use dev
 ```
 # DP × Cluster × Flow coverage — 2026-09-21
 
-Critical gaps: **1**
+Critical gaps: **0**
 
 ## Drivers / Flow
 - Drivers: 434
 - With flow.compose: 434
 - Without: none
-- Flow card entries (compose): 5889
+- Flow card entries (compose): 5814
 
 ## Clusters
 - Compose unique: 36
-- Lexicon size: 44
-- Missing from lexicon: 1
-  - 0xFC11 (64529)
+- Lexicon size: 45
+- Missing from lexicon: 0
 
 ## DP knowledge
 - Knowledge couples: 209

@@ -1,17 +1,17 @@
 {
-  "generatedAt": "2026-09-21T07:06:35.853Z",
+  "generatedAt": "2026-09-21T18:57:17.971Z",
   "driverCount": 52,
   "exemptIrDrivers": [
     "ir_remote",
     "wifi_ir_remote"
   ],
-  "totalTriggers": 877,
-  "totalConditions": 18,
-  "totalActions": 54,
+  "totalTriggers": 846,
+  "totalConditions": 17,
+  "totalActions": 45,
   "driversWithIssues": 0,
   "highSeverityIssues": 0,
   "heuristicMissDrivers": 0,
-  "heuristicFalsePositiveDrivers": 14,
+  "heuristicFalsePositiveDrivers": 15,
   "appJsonDriftDrivers": 52,
   "appLevelButtonTriggers": [
     "button_pressed",
