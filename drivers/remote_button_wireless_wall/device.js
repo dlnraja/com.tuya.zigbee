@@ -90,14 +90,44 @@ class Button1GangDevice extends ButtonDevice {
     // Set button count BEFORE calling super
     this.buttonCount = 1;
 
+    // WHY(P2664 / Bastien e8d98608+4c0d232b): 3-btn TS0043 sometimes lands here or
+    // Homey Virtual. Soft-detect multi EP onOff → arm hybrid so flows get btn1–3.
+    try {
+      const eps = Object.keys(zclNode?.endpoints || {})
+        .map((k) => Number(k))
+        .filter((n) => Number.isFinite(n) && n >= 1);
+      const onOffEps = eps.filter((ep) => {
+        const c = zclNode.endpoints[ep]?.clusters;
+        return !!(c?.onOff || c?.[6] || c?.genOnOff);
+      });
+      const mfr = String(this.getSetting?.('zb_manufacturer_name') || zclNode?.manufacturerName || '');
+      const pid = String(this.getSetting?.('zb_model_id') || zclNode?.modelId || '');
+      if (onOffEps.length >= 3 || /TS0043/i.test(pid) || containsCI(mfr, 'vsxvaj9i')) {
+        this.buttonCount = Math.min(4, Math.max(3, onOffEps.length));
+        this.log(`[P2664] multi-btn sticky detected (eps=${onOffEps.join(',')}) — soft buttonCount=${this.buttonCount}; prefer re-pair as button_wireless_3`);
+        this._p2664MultiSticky = true;
+      }
+    } catch (_e) { /* soft */ }
+
     // Log available endpoints for debugging
     const availableEndpoints = Object.keys(zclNode?.endpoints || {});this.log(`[BUTTON1]  Available endpoints: ${availableEndpoints.join(', ')}`);
 
     // Initialize ButtonDevice (handles basic button detection + battery)
     await Promise.resolve().then(() => super.onNodeInit({ zclNode })).catch(err => this.error('[INIT] Error:', err.message));
 
-    // v5.5.715: HOBEIAN FIX - Explicit onOff binding for command reception
-    // The device sends onOff commands (outputCluster 6) which need binding
+    // WHY(P2664): gap-fill 0xFD/E000 on all EPs when multi sticky landed on 1-gang driver
+    if (this._p2664MultiSticky) {
+      try {
+        const { installWallSceneRemoteHybrid } = require('../../lib/devices/WallSceneRemoteHybridInit');
+        await installWallSceneRemoteHybrid(this, zclNode, {
+          maxButtons: this.buttonCount,
+          tag: 'REMOTE_WALL_P2664',
+          skipEf00Tx: true,
+        });
+      } catch (e) {
+        this.log('[P2664] hybrid soft-fail:', e.message);
+      }
+    }
     await this._setupOnOffBinding(zclNode);
 
     // v5.5.823: TS004F Smart Knob FIX (GitHub #113) - LevelControl for rotary dimmer
