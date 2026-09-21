@@ -427,6 +427,19 @@ jobs:
           fi
           timeout 200 npm run sync:z2m-zha:light || echo "z2m/zha light sync skipped/failed (non-blocking)"
 
+      - name: "📡 OSS LAN sources soft (P2658 TinyTuya / tuya-local / peers)"
+        if: always() && inputs.skip_crawl != true
+        continue-on-error: true
+        timeout-minutes: 10
+        env:
+          GH_PAT: ${{ secrets.GH_PAT || secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          node scripts/scanners/tinytuya-scanner.js || echo "tinytuya soft-skip"
+          node scripts/scanners/tuya-local-scanner.js || echo "tuya-local soft-skip"
+          npm run probe:homey-peers || echo "peer-probe soft-skip"
+          npm run check:p2658 || echo "p2658 soft-warn"
+
       - name: "🧠 L99 Inbox Intelligence (P2352 — SHADOW soft)"
         if: always()
         continue-on-error: true

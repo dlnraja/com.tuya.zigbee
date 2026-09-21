@@ -591,6 +591,11 @@
       "tag": "MASTER_ONLY",
       "skipBastien": true,
       "note": "Homey Store Zigbee/Tuya/WiFi/SmartLife peer catalog + CREDITS + pain map + peer probe workflow — complementary; skip Bastien"
+    },
+    "p2658_titlesanitizer_oss_sources": {
+      "tag": "BOTH",
+      "skipBastien": true,
+      "note": "TitleSanitizer/SmartDiscovery setName guard (diag crash) + OSS LAN scanners in auto-enrich — reliability BOTH; Bastien skip catalog"
     }
   }
 }

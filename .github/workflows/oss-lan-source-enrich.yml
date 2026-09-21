@@ -1,0 +1,93 @@
+# P2658 — OSS LAN source enrich (TinyTuya / HA tuya-local / Homey peers)
+# Feeds complementary scanners + peer probe into data/ for algos. Never forum POST.
+name: OSS LAN Source Enrich
+
+on:
+  schedule:
+    # Tue/Fri 05:55 UTC — clear of Sunday peer-probe and blakadder 04:15
+    - cron: '55 5 * * 2,5'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: oss-lan-source-enrich
+  cancel-in-progress: false
+
+defaults:
+  run:
+    shell: bash
+
+env:
+  NODE_VERSION: '22'
+  AI_PLAN_MODE: 'forfait'
+  AI_FORCE_LOCAL: 'true'
+  AI_ALLOW_REMOTE: 'false'
+  AI_ALLOW_PAID: 'false'
+
+jobs:
+  enrich:
+    name: Scan OSS LAN sources
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+
+      - name: npm ci (prefer) / npm install
+        run: |
+          if [ -f package-lock.json ]; then npm ci --ignore-scripts; else npm install --ignore-scripts; fi
+
+      - name: TinyTuya scanner (complementary data)
+        continue-on-error: true
+        env:
+          GH_PAT: ${{ secrets.GH_PAT || secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: node scripts/scanners/tinytuya-scanner.js || echo "tinytuya soft-skip"
+
+      - name: HA tuya-local scanner (complementary data)
+        continue-on-error: true
+        env:
+          GH_PAT: ${{ secrets.GH_PAT || secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: node scripts/scanners/tuya-local-scanner.js || echo "tuya-local soft-skip"
+
+      - name: Homey Store peer probe
+        continue-on-error: true
+        run: npm run probe:homey-peers || echo "peer-probe soft-skip"
+
+      - name: Contre quoi gates
+        run: |
+          npm run check:p2656
+          npm run check:p2657
+          npm run check:p2658
+
+      - name: Upload scanner artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: oss-lan-source-data
+          path: |
+            data/scanners/
+            reports/homey-store-peers-*/
+          if-no-files-found: warn
+          retention-days: 14
+
+      - name: Commit scanner outputs if changed
+        continue-on-error: true
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/scanners/*.json reports/homey-store-peers-*/SUMMARY.md reports/homey-store-peers-*/athom-probe-wide.json 2>/dev/null || true
+          if git diff --staged --quiet; then
+            echo "No scanner data changes"
+            exit 0
+          fi
+          git pull --rebase origin master || true
+          git commit -m "chore(P2658): refresh TinyTuya/tuya-local/peer probe data [skip ci]"
+          git push origin HEAD:master || true

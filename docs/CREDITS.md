@@ -29,6 +29,12 @@ Catalogs: [`docs/architecture/HOMEY_STORE_PEERS_ENRICH.md`](architecture/HOMEY_S
 | [ZHA quirks](https://github.com/zigpy/zha-device-handlers) | zigpy community | Cluster / interview quirks |
 | [Blakadder](https://zigbee.blakadder.com) | Blakadder | Device database |
 | [tuyadump](https://github.com/py60800/tuyadump) | py60800 | Proof that hub `cid` ≠ cloud id |
+| [tuya-mqtt](https://github.com/lehanspb/tuya-mqtt) | lehanspb | Hub/sub-device `cid` MQTT layout |
+| [localtuya](https://github.com/rospogrigio/localtuya) | rospogrigio | Historical HA LAN DP UX / hub gwID+cid |
+| [GoTuya](https://github.com/Binozo/GoTuya) | Binozo | LAN IP+id+key triad (observe) |
+| [tuya-local-key](https://github.com/vineetchoudhary/tuya-local-key) | Vineet Choudhary | QR Smart Life key export |
+| [tuya-device-sharing-sdk](https://github.com/tuya/tuya-device-sharing-sdk) | Tuya Inc. | Official sharing API (credentials only) |
+| [TuyAPI CLI](https://github.com/TuyaAPI/cli) | Max Isom | `tuya-cli wizard` local_key export |
 
 ## Users & reporters
 

@@ -127,6 +127,13 @@ const KNOWN_PATTERNS_EMBEDDED = [
     fix: 'LiveDataUpdater: cap overlay (1500), store ≤180KB, manifest version check before segments, heap skip (P148)',
     status: 'fixed_p148',
   },
+  {
+    id: 'setName_not_fn',
+    severity: 'fatal',
+    re: /device\.setName is not a function|setName is not a function/i,
+    fix: 'TitleSanitizer + SmartDeviceDiscovery: typeof device.setName === function before rename (P2658)',
+    status: 'fixed_p2658',
+  },
 ];
 
 function loadExternalPatterns() {
