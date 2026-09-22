@@ -25,6 +25,7 @@ const DRIVERS_DIR = path.join(ROOT, 'drivers');
 const APPLY = process.argv.includes('--apply');
 const CHECK = process.argv.includes('--check');
 const JSON_MODE = process.argv.includes('--json');
+const UPDATE_BASELINE = process.argv.includes('--update-baseline');
 
 const EXEMPT_DRIVERS = new Set([
   'universal_fallback', 'tuya_dummy_device', 'generic_tuya', 'generic_diy',
@@ -36,7 +37,16 @@ const WIDE_CLAIM = new Set([
   'tuya_dummy_device', 'device_generic_diy_universal', 'device_generic_tuya',
 ]);
 
-function norm(s) { return String(s || '').trim().toLowerCase(); }
+/**
+ * WHY(P2677): Athom compose keeps exact `heobian` typo form, but collision keys
+ * must treat it as `hobeian` (same brand). Do NOT use full TuyaNormalizer here —
+ * that would reshuffle sacred Tuya prefix keys vs historical baseline.
+ */
+function norm(s) {
+  let x = String(s || '').trim().toLowerCase();
+  if (x === 'heobian') return 'hobeian';
+  return x;
+}
 
 function collisionId(c) {
   return `${c.key} -> ${[...new Set(c.drivers)].sort().join(',')}`;
@@ -277,6 +287,17 @@ function main() {
       console.log(`  [${a.source}] ${a.mfr} keep=${a.canonical} strip=${a.strippedFrom} (${a.collisionCount} keys)`);
     }
     if (actions.length > 40) console.log(`  ... +${actions.length - 40} more`);
+  }
+
+  if (UPDATE_BASELINE) {
+    const out = {
+      generatedAt: new Date().toISOString(),
+      note: 'P2677 refresh — heobian≡hobeian collision keys; Athom brand case forms',
+      collisions: all.map((c) => ({ key: c.key, drivers: c.drivers })),
+    };
+    fs.writeFileSync(BASELINE, `${JSON.stringify(out, null, 2)}\n`);
+    console.log(`Updated baseline: ${all.length} collisions → ${BASELINE}`);
+    process.exit(0);
   }
 
   if (CHECK && remainingNew > 0) {
