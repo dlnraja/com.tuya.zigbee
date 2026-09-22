@@ -1,0 +1,122 @@
+{
+  "_meta": {
+    "id": "P2645-sleepy-remote-pairing-ssot",
+    "updated": "2026-09-21",
+    "classify": "BOTH",
+    "why": "Sleepy TS004x remotes fail pair when Homey storms powerConfiguration configureReporting while SED asleep — mute buttons + 'Impossible de joindre'. Complementary fix: skip batt cfg + wake-during-pair UX + quiet Time 0x000A L0 spam. Never degrade battery keep/rehydrate (P2470/P2488/P2490).",
+    "human": "docs/architecture/SLEEPY_REMOTE_PAIRING_SSOT.md",
+    "relatedHuman": [
+      "docs/architecture/BATTERY_SSOT.md",
+      "docs/architecture/PAIRING_DISCOVERY_SSOT.md",
+      "docs/architecture/COMPLEMENTARY_ENRICHMENT.md"
+    ],
+    "diags": ["4d4e1684", "e8d98608"],
+    "gate": "npm run check:p2645",
+    "family": "check:p263x"
+  },
+  "mandate": {
+    "complementaryOnly": true,
+    "noInventPid": true,
+    "noForumPost": true,
+    "unionNotReplace": true,
+    "neverStripMeasureBatteryOnButtons": true
+  },
+  "symptom": {
+    "stderr": "Impossible de joindre l'appareil. Est-il allumé ?",
+    "cluster": "powerConfiguration (0x0001)",
+    "userVisible": "buttons mute / flows dead after pair",
+    "rootCause": "SED sleeps mid-configureReporting + incomplete interview bindings"
+  },
+  "driverRouting": {
+    "TS0041": ["button_wireless_1", "remote_button_wireless_wall"],
+    "TS0042": ["button_wireless_2"],
+    "TS0043": ["button_wireless_3", "wall_remote_3_gang"],
+    "TS0044": ["button_wireless_4", "scene_switch_4"],
+    "forbid": {
+      "remote_button_wireless_wall": {
+        "productIdMustBe": ["TS0041"],
+        "mustNotClaim": ["TS0042", "TS0043", "TS0044"],
+        "why": "P2644b — 1-cap wall remote must not steal multi-btn couples"
+      }
+    }
+  },
+  "runtime": {
+    "skipBatteryConfigureReporting": {
+      "when": [
+        "profile.skipBatteryReporting",
+        "profile.noEf00Tx",
+        "isSleepyRemote",
+        "isButtonDriver (button_*/remote_*/scene_switch_*)"
+      ],
+      "registerOpts": {
+        "getOnStart": false,
+        "getOnOnline": false,
+        "reportOpts": "omit when skipBattCfg"
+      },
+      "modules": [
+        "lib/devices/BaseUnifiedDevice.js",
+        "drivers/button_wireless_1/device.js",
+        "drivers/button_wireless_3/device.js",
+        "lib/mixins/PhysicalButtonMixin.js"
+      ],
+      "keepComplementary": [
+        "P2470 passive DataQuery / no ZCL storm",
+        "P2488 IntelligentDeviceAdapter must not strip measure_battery on button_*",
+        "P2490 rehydrate measure_battery",
+        "P2499 getable heal"
+      ]
+    },
+    "quietUnhandledClusters": {
+      "clusters": ["0x000a", "0x0019"],
+      "names": ["time", "ota"],
+      "module": "lib/tuya/TuyaZigbeeDevice.js",
+      "why": "Tuya SED time sync + OTA chatter — normal; do not spam L0 diags"
+    },
+    "flowHeuristics": {
+      "patch": "P2644",
+      "module": "lib/flow/FlowCardHeuristics.js",
+      "contreQuoi": "switch_1gang must prefer switch_1gang_turned_on|off — never invent switch_1gang_1gang_turned_*"
+    }
+  },
+  "userUx": {
+    "wakeDuringPair": {
+      "fr": "Pendant toute la durée de l'appairage, appuyer brièvement sur un bouton toutes les 2–3 s",
+      "en": "During the entire pairing window, briefly press a button every 2–3 seconds",
+      "why": "Keeps SED awake until Homey finishes bind/config — complementary to code skipBattCfg"
+    },
+    "rePairSteps": [
+      "Update app tip (Bastien ≥1.0.30 / Universal ≥9.0.1145 / Stable ≥5.12.288)",
+      "Remove device from Homey",
+      "Pair near Homey Pro",
+      "Pick correct gang driver (Bouton sans fil 3 for TS0043 — not wall 1-btn)",
+      "Wake-tap every 2–3s until add completes"
+    ]
+  },
+  "tipsMin": {
+    "master": "9.0.1145",
+    "bastien": "1.0.30",
+    "stable": "5.12.288"
+  },
+  "contreQuoi": [
+    "battery configureReporting / getOnStart true on sleepy button drivers",
+    "remote_button_wireless_wall claiming TS0043",
+    "L0 spam for cluster 0x000A / 0x0019",
+    "FLOW-GUARD invent switch_1gang_1gang_turned_*",
+    "stripping measure_battery from button_* (regress P2488)",
+    "forum auto-reply / invent pid to close Bastien ticket"
+  ],
+  "gates": [
+    "npm run check:p2645",
+    "npm run check:p2644",
+    "npm run check:p2470",
+    "npm run check:p2488",
+    "npm run check:p2520"
+  ],
+  "relatedSsot": [
+    "config/architecture/pairing-discovery-ssot.json",
+    "config/architecture/bastien-house-ssot.json",
+    "config/architecture/fleet-complementary-methods-ssot.json",
+    "config/architecture/homey-button-ui-charter-ssot.json",
+    "config/architecture/complementary-variant-enrich-ssot.json"
+  ]
+}

@@ -51,9 +51,9 @@
     ],
     "note": "Live house learnings promote upstream surgically on cron + enrich/forum soft hooks. Public apps never dump features into Bastien wholesale. Identity never copied.",
     "lastExternalPass": {
-      "at": "2026-09-21T03:08:00.000Z",
-      "patch": "P2646",
-      "note": "homeyBox platform lock (hostname/IP/bootId/Node24) + P2645 sleepy tip ≥1.0.30"
+      "at": "2026-09-22T12:13:46.289Z",
+      "patch": "P2673",
+      "note": "Bastien-first intelligent energy boot + complementary master cherry-pick (UI/flow/SSOT/HOBEIAN union) tip ≥1.0.52"
     },
     "priorExternalPass": {
       "at": "2026-09-21T02:30:00.000Z",
@@ -70,6 +70,13 @@
       "JohanBendz README",
       "community-sync fingerprints",
       "forum silent caches"
+    ],
+    "bastienFirstIntelligent": [
+      "IntelligentEnergyAdapter",
+      "SmartEnergyManager",
+      "HomeyButtonUiCharter",
+      "DeclaredFlowCardAutoWire",
+      "HOBEIAN exact case"
     ]
   },
   "identityNeverCopy": [
