@@ -1,6 +1,6 @@
 {
   "name": "com.dlnraja.tuya.zigbee.bastien",
-  "version": "1.0.57",
+  "version": "1.0.58",
   "description": "Private Zigbee house app for Bastien — local Homey Pro only. Learnings promote upstream to Universal Tuya / Stable (never the reverse wholesale).",
   "main": "app.js",
   "scripts": {
@@ -521,7 +521,9 @@
     "check:p2672": "node --test test/critical/p2672-intelligent-energy-adapter.test.js",
     "check:p2673": "node --test test/critical/p2673-bastien-intelligent-max-benefit.test.js",
     "check:p2676": "node --test test/critical/p2676-zigbeedriver-boot-harden.test.js",
-    "check:p2651": "node --test test/critical/p2651-wifi-empty-zigbee-stubs.test.js"
+    "check:p2651": "node --test test/critical/p2651-wifi-empty-zigbee-stubs.test.js",
+    "check:p2678": "node tools/ci/build-fingerprint-shards.js --check && node --test test/critical/p2678-dynamic-jsonparse-shards.test.js",
+    "build:fp-shards": "node tools/ci/build-fingerprint-shards.js"
   },
   "keywords": [
     "homey",
