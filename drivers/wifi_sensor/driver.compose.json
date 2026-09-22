@@ -219,9 +219,5 @@
       "preventInsights": false
     }
   },
-  "discovery": "tuya_wifi",
-  "zigbee": {
-    "manufacturerName": [],
-    "productId": []
-  }
+  "discovery": "tuya_wifi"
 }
