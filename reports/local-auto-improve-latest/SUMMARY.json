@@ -1,0 +1,88 @@
+{
+  "patch": "P2542",
+  "mode": "local-only",
+  "quick": false,
+  "apply": false,
+  "ok": false,
+  "hardOk": true,
+  "results": [
+    {
+      "ok": true,
+      "skipped": false,
+      "rel": "tools/ci/ai-plan-guard.js",
+      "status": 0,
+      "outTail": "global: 0/40 (0%)\nsoftStop: false | hardStop: false | preferLocal: true\n  openai: 0/0 (0%) [PAID-BLOCK]\n  deepseek: 0/0 (0%) [PAID-BLOCK]\n  grok: 0/0 (0%) [PAID-BLOCK]\n  cursor-cloud: 0/0 (0%) [PAID-BLOCK]\nstate: /home/runner/work/com.tuya.zigbee/com.tuya.zigbee/.github/state/ai-plan-guard.json\n"
+    },
+    {
+      "ok": true,
+      "skipped": false,
+      "rel": "tools/ci/ai-context-compress.js",
+      "status": 0,
+      "outTail": "P2491 ai-context-compress self-test OK\n{\"userChars\":853,\"sysChars\":2018,\"remoteDefault\":false,\"ensembleDefault\":false}\n"
+    },
+    {
+      "ok": true,
+      "skipped": false,
+      "rel": "tools/ci/local-intelligent-solver.js",
+      "status": 0,
+      "outTail": "  \"needsRepair\": false,\n  \"primaryDriver\": null,\n  \"findings\": [],\n  \"summary\": \"NEED_INTERVIEW — no mfr+pid couple locked\",\n  \"canAutoCodeFix\": false,\n  \"shouldCallAI\": false\n}\n"
+    },
+    {
+      "ok": true,
+      "skipped": false,
+      "rel": "tools/ci/local-workflow-learn.js",
+      "status": 0,
+      "outTail": "      \"failStreak\": 0,\n      \"lastOk\": true,\n      \"lastAt\": 1790063888816,\n      \"lastConclusion\": \"success\"\n    }\n  }\n}\n"
+    },
+    {
+      "ok": false,
+      "skipped": false,
+      "rel": "tools/ci/prune-fp-collision-bleed.js",
+      "status": 1,
+      "outTail": "prune-fp-collision-bleed: new=128 actions=0 dry-run\n"
+    },
+    {
+      "ok": false,
+      "skipped": false,
+      "rel": "tools/ci/align-mfs-db-intelligent.js",
+      "status": 1,
+      "outTail": "  registry_driver_missing p2517-krwtzhfd-ts004f-not-leak  \n  registry_empty_mfr z2m-o4mkahkc-ts0202-motion  \n  registry_empty_mfr z2m-ksz749x8-ts0601-climate  \n  registry_empty_mfr z2m-ksz749x8-tze204-ts0601-climate  \n  registry_empty_mfr p2630-axpdxqgu-ts0041-interview-clusters  \n  registry_empty_mfr p2631-ewelink-7014-climate-only-mesh  \n  registry_empty_mfr p2633-adndolvx-ts0041-phantom-ep-firmware  \n"
+    },
+    {
+      "ok": true,
+      "skipped": false,
+      "rel": "tools/ci/p2520-complementary-variant-enrich-gate.js",
+      "status": 0,
+      "outTail": "P2520 PASS — complementary variant enrich doctrine locked\n"
+    },
+    {
+      "ok": true,
+      "skipped": false,
+      "rel": "tools/ci/l99-dual-app-enrich-gates.js",
+      "status": 0,
+      "outTail": "[BOTH] OK tools/ci/adaptive-double-division-gate.js — [adaptive-double-division-gate] hits=2 hardHits=0 mode=soft |   (soft) lib/devices/BaseUnifiedDevice.js: AdaptiveDataParser + local divisor/smartDivisor in same file |   (soft) lib/tuya/TuyaEF00Manager.js: AdaptiveDataParser + local divisor\n[BOTH] FAIL scripts/validation/check-energy-divisor.js —    AdaptiveDataParser: false |  | 💡 Fix: Add smartDivisor: true or explicit divisor to energy DPs\n[BOTH] OK tools/ci/smart-features-brand-scrub-gate.js — smart-features-brand-scrub-gate: OK (no commercial UI tokens in .homeycompose/flow)\n[BOTH] OK test/critical/l99-energy-jump-divisor.test.js — # skipped 0 | # todo 0 | # duration_ms 42.970942\n[MASTER_ONLY] OK test/critical/l99-daylight-atmosphere.test.js — # skipped 0 | # todo 0 | # duration_ms 40.131849\n[MASTER_ONLY] OK test/hue-smart-features.test.js — # skipped 0 | # todo 0 | # duration_ms 97.438588\n[MASTER_ONLY] OK tools/ci/flow-l99-orchestrator.js —   ], |   \"failCount\": 0 | }\n"
+    },
+    {
+      "ok": true,
+      "skipped": false,
+      "rel": "tools/ci/case-variant-fixer.js",
+      "status": 0,
+      "outTail": "[case-variant-fixer] mode=DRY-RUN | drivers concernés: 67 | variantes à ajouter: 4488 | placeholders ignorés: 5\n"
+    },
+    {
+      "ok": true,
+      "skipped": false,
+      "rel": "tools/ci/discovery-lineage-enrich-gate.js",
+      "status": 0,
+      "outTail": "  ✅ validate.yml hard P2138\n  ✅ syntax-check.yml hard P2138\n  ✅ code-quality.yml hard P2138\n  ✅ auto-publish-on-push.yml hard P2138\n  ✅ WORKFLOW_GUIDELINES discovery lineage\n\nPASS: discovery-lineage enrich gate\n"
+    },
+    {
+      "ok": true,
+      "skipped": false,
+      "rel": "tools/ci/battery-button-intelligence-gate.js",
+      "status": 0,
+      "outTail": "[battery-button-gate] errors=0 warnings=44\n  B5: 14\n  F1: 24\n  C2: 6\n[battery-button-gate] report: reports/BATTERY_BUTTON_INTELLIGENCE.md\n"
+    }
+  ],
+  "ts": "2026-09-22T07:58:13.792Z"
+}

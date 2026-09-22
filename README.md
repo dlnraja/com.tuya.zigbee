@@ -33,15 +33,15 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 
 | Metric | Value |
 |--------|-------|
-| **App Version** | v9.0.1164 |
+| **App Version** | v9.0.1166 |
 | **Drivers** | 434 (381 Zigbee + 53 WiFi) |
 | **Unique Fingerprints** | 4,696 |
-| **Pairing Variants** | 14,248 (4 case combos per fingerprint) |
-| **Unique Product IDs** | 600 |
-| **Flow Cards** | 5,986 |
+| **Pairing Variants** | 18,400 (4 case combos per fingerprint) |
+| **Unique Product IDs** | 612 |
+| **Flow Cards** | 5,989 |
 | **Unique Capabilities** | 170 |
 | **Native OTA Drivers** | 8 |
-| **Test Suites** | 459 files |
+| **Test Suites** | 460 files |
 | **SVG Icons** | 734 |
 | **Languages** | EN, FR, NL, DE |
 | **SDK / Homey** | 3 / >= 12.2.0 |
@@ -51,26 +51,26 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 
 | # | Driver | Fingerprints |
 |---|--------|-------------|
-| 1 | `climate_sensor` | 1,130 |
-| 2 | `switch_1gang` | 772 |
-| 3 | `curtain_motor` | 669 |
-| 4 | `presence_sensor_radar` | 615 |
-| 5 | `radiator_valve` | 602 |
-| 6 | `generic_tuya` | 414 |
-| 7 | `device_radiator_valve` | 356 |
-| 8 | `wall_dimmer_tuya` | 301 |
-| 9 | `button_wireless_2` | 289 |
-| 10 | `motion_sensor` | 247 |
-| 11 | `switch_3gang` | 219 |
-| 12 | `contact_sensor` | 215 |
-| 13 | `diy_custom_zigbee` | 206 |
-| 14 | `thermostat_tuya_dp` | 197 |
-| 15 | `switch_2gang` | 185 |
-| 16 | `sensor_contact_zigbee` | 183 |
-| 17 | `water_leak_sensor_tuya` | 181 |
-| 18 | `wall_thermostat` | 170 |
-| 19 | `soil_sensor` | 165 |
-| 20 | `bulb_dimmable` | 160 |
+| 1 | `climate_sensor` | 2,173 |
+| 2 | `switch_1gang` | 1,512 |
+| 3 | `curtain_motor` | 1,113 |
+| 4 | `presence_sensor_radar` | 1,007 |
+| 5 | `radiator_valve` | 603 |
+| 6 | `button_wireless_2` | 568 |
+| 7 | `wall_dimmer_tuya` | 548 |
+| 8 | `generic_tuya` | 414 |
+| 9 | `device_radiator_valve` | 364 |
+| 10 | `switch_2gang` | 337 |
+| 11 | `switch_4gang` | 300 |
+| 12 | `soil_sensor` | 275 |
+| 13 | `motion_sensor` | 257 |
+| 14 | `contact_sensor` | 224 |
+| 15 | `switch_3gang` | 221 |
+| 16 | `diy_custom_zigbee` | 206 |
+| 17 | `plug_energy_monitor` | 206 |
+| 18 | `thermostat_tuya_dp` | 200 |
+| 19 | `sensor_contact_zigbee` | 185 |
+| 20 | `water_leak_sensor_tuya` | 182 |
 
 ### Drivers by Device Class
 
@@ -103,6 +103,8 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 
 | Version | Changes |
 |---------|---------|
+| **v9.0.1166** | HOBEIAN fleet recognition: exact case forms + Z2M pids (ZG-301Z-3CH/MOTO/IR01/210Z/climate siblings). |
+| **v9.0.1165** | HOBEIAN fleet recognition: exact case forms + Z2M pids (ZG-301Z-3CH/MOTO/IR01/210Z/climate siblings). |
 | **v9.0.1164** | Local-first doctrine lock for all apps (Zigbee mesh + WiFi LAN before cloud). |
 | **v9.0.1163** | Fixed Bastien diag flow token + undeclared scene invent (P2659). |
 | **v9.0.1161** | Fixed device rename crash; credited OSS LAN sources in CI enrich. |
@@ -113,8 +115,6 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 | **v9.0.1151** | Actually ship button_wireless_3 multi-press titleFormatted [[button]] (Athom publish). |
 | **v9.0.1150** | Fix button_wireless_3 multi-press titleFormatted.it (Athom publish). Radar crash harden + wifi stubs. |
 | **v9.0.1149** | P2634: keep liygxtcq+TS0004 on switch_4gang only (anti-bot). Radar crash + wifi zigbee stubs. |
-| **v9.0.1148** | P2651: drop empty wifi zigbee stubs + Buffer JSON load (publish validate). P2650 radar scale soft-require. |
-| **v9.0.1147** | P2650: radar range scale module soft-require (fixes crash if missing); MTG075 occupied/quantized docs. Update Homey Test. |
 
 <!-- CHANGELOG_END -->
 
