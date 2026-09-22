@@ -1,7 +1,7 @@
 {
   "_comment": "This file is generated. Please edit .homeycompose/app.json instead.",
   "id": "com.dlnraja.tuya.zigbee",
-  "version": "9.0.1190",
+  "version": "9.0.1191",
   "compatibility": ">=12.2.0",
   "platforms": [
     "local"
@@ -20102,10 +20102,10 @@
         "learnmode": {
           "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
-            "en": "Zigbee Bastien → Wireless Button 1 (TS0041 / _TZ3000_axpdxqgu). NOT Homey Zigbee / Appareil Zigbee. If Developer Tools shows Unknown Node ieee 7c:c6:b6:… — remove it first, then pair here (wake-tap every 2s).",
-            "fr": "Zigbee Bastien → Bouton sans fil 1 (TS0041 / _TZ3000_axpdxqgu). PAS Homey Zigbee / Appareil Zigbee. Si Outils Dev = Unknown Node ieee 7c:c6:b6:… — supprimez-le puis appairer ici (tap toutes les 2 s).",
-            "nl": "Houd 5–10s tot LED knippert. Wireless Button 1 — niet Homey Zigbee. Bij Unknown Node eerst verwijderen.",
-            "de": "5–10s halten bis LED blinkt. Wireless Button 1 — nicht Homey Zigbee. Unknown Node zuerst entfernen."
+            "en": "IMPORTANT: Zigbee Bastien / Universal → Wireless Button 1 (TS0041) — NOT Homey Zigbee. Remove any Unknown Node first. Hold 5–10s until LED blinks; tap every 2s while pairing. After pair: Homey Flow → When this device → « Button 1 pressed » / « Bouton 1 appuyé » (or « Button pressed »). Zigbee Developer Tools channels do nothing on scene remotes.",
+            "fr": "IMPORTANT: Zigbee Bastien / Universal → Bouton sans fil 1 (TS0041) — PAS Homey Zigbee. Supprimez tout nœud Inconnu d'abord. Maintenez 5–10 s puis appuyez toutes les 2 s. Après: Flow Homey → Quand cet appareil → « Bouton 1 appuyé » (ou « Bouton appuyé »). Les canaux Zigbee des outils développeur ne marchent PAS (télécommande scène).",
+            "nl": "Wireless Button 1 (TS0041) — niet Homey Zigbee. Unknown Node eerst verwijderen. Flow: Knop 1 ingedrukt.",
+            "de": "Wireless Button 1 (TS0041) — nicht Homey Zigbee. Unknown Node zuerst entfernen. Flow: Taste 1 gedrückt."
           }
         }
       },
