@@ -141,7 +141,29 @@
       "_TZE200_kzm5w4iz",
       "_tze200_kzm5w4iz",
       "_TZ3000_gjiggmio",
-      "_tz3000_gjiggmio"
+      "_tz3000_gjiggmio",
+      "_tyzb01_TRQOESC6",
+      "_tz3000_8XZ0PYQY",
+      "_tz3000_C0GF6XD7",
+      "_tz3000_CDSO6BJW",
+      "_tz3000_FYWHZH9U",
+      "_tz3000_GNWGNWVQ",
+      "_tz3000_GRATY6SJ",
+      "_tz3000_IMKWGFWH",
+      "_tz3000_IS27VZCO",
+      "_tz3000_N0H1DR7U",
+      "_tz3000_QJHWTNKF",
+      "_tz3000_RMHKDZ0L",
+      "_tz3000_ZPJUQNCO",
+      "_tze200_0BLE7OW3",
+      "_tze284_3QHGNDV6",
+      "_tz3000_0DUMFK2Z",
+      "_TZE200_KZM5W4IZ",
+      "_tze200_KZM5W4IZ",
+      "_TZ3000_nxdziqzc",
+      "_tz3000_nxdziqzc",
+      "_TZ3000_irwuzilv",
+      "_tz3000_irwuzilv"
     ],
     "productId": [
       "ZBPB10BK",
@@ -466,6 +488,70 @@
         "en": "Sync device time with Homey",
         "fr": "Synchroniser l'heure du device avec Homey"
       }
+    },
+    {
+      "type": "group",
+      "label": {
+        "en": "Alarm polarity",
+        "fr": "Polarité alarme",
+        "nl": "Alarm polariteit"
+      },
+      "children": [
+        {
+          "id": "alarm_polarity",
+          "type": "dropdown",
+          "label": {
+            "en": "Signal polarity",
+            "fr": "Polarité du signal",
+            "nl": "Signaalpolariteit"
+          },
+          "value": "auto",
+          "values": [
+            {
+              "id": "auto",
+              "label": {
+                "en": "Auto (lists + smart learn)",
+                "fr": "Auto (listes + apprentissage)",
+                "nl": "Auto (lijsten + slim leren)"
+              }
+            },
+            {
+              "id": "normal",
+              "label": {
+                "en": "Normal (alarm bit = press)",
+                "fr": "Normal (bit alarme = appui)",
+                "nl": "Normaal (alarmbit = druk)"
+              }
+            },
+            {
+              "id": "inverted",
+              "label": {
+                "en": "Inverted (flip press signal)",
+                "fr": "Inversé (inverser l’appui)",
+                "nl": "Omgekeerd (druksignaal omdraaien)"
+              }
+            }
+          ],
+          "hint": {
+            "en": "Auto: curated normal/inverted SOS lists + smart timing (sticky idle vs short press). Choose Inverted to force reverse; Normal to force no flip.",
+            "fr": "Auto: listes SOS normal/inversé + timing intelligent (idle collé vs appui court). Inversé force l’inversion; Normal force aucun flip."
+          }
+        },
+        {
+          "id": "invert_sos",
+          "type": "checkbox",
+          "label": {
+            "en": "Invert SOS signal (XOR toggle)",
+            "fr": "Inverser signal SOS (bascule XOR)",
+            "nl": "SOS-signaal omkeren (XOR)"
+          },
+          "value": false,
+          "hint": {
+            "en": "Toggles against Auto list default. Prefer Signal polarity = Inverted for a hard flip.",
+            "fr": "Bascule XOR sur Auto. Préférer Polarité = Inversé pour forcer."
+          }
+        }
+      ]
     }
   ],
   "images": {
