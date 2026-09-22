@@ -164,35 +164,50 @@ function mergeComposeComplementary(masterObj, bastienObj) {
 
   const after = JSON.parse(JSON.stringify(masterObj || {}));
   const b = bastienObj || {};
-  after.zigbee = after.zigbee && typeof after.zigbee === 'object' ? after.zigbee : {};
   const bz = b.zigbee && typeof b.zigbee === 'object' ? b.zigbee : {};
+  // WHY(P2651): never invent `zigbee: {}` on WiFi/LAN compose — Athom publish
+  // validate requires manufacturerName/productId/endpoints whenever zigbee exists.
+  const bastienHasZigbeeContent = Boolean(
+    (Array.isArray(bz.manufacturerName) && bz.manufacturerName.length)
+    || (Array.isArray(bz.productId) && bz.productId.length)
+    || Array.isArray(bz.endpoints?.[1]?.clusters)
+    || Array.isArray(bz.endpoints?.['1']?.clusters)
+    || (bz.endpoints && typeof bz.endpoints === 'object' && Object.keys(bz.endpoints).length),
+  );
+  const masterHasZigbee = Boolean(
+    after.zigbee && typeof after.zigbee === 'object' && Object.keys(after.zigbee).length,
+  );
 
-  if (bz.manufacturerName) {
-    after.zigbee.manufacturerName = appendExactIdentityForms(
-      after.zigbee.manufacturerName,
-      bz.manufacturerName,
-    );
-  }
-  if (bz.productId) {
-    after.zigbee.productId = appendExactIdentityForms(after.zigbee.productId, bz.productId);
-  }
-  // Clusters: union numeric ids — never drop master's
-  if (Array.isArray(bz.endpoints?.[1]?.clusters) || Array.isArray(bz.endpoints?.['1']?.clusters)) {
-    after.zigbee.endpoints = after.zigbee.endpoints || {};
-    const epKey = after.zigbee.endpoints['1'] ? '1' : (after.zigbee.endpoints[1] ? 1 : '1');
-    after.zigbee.endpoints[epKey] = after.zigbee.endpoints[epKey] || {};
-    const cur = after.zigbee.endpoints[epKey].clusters || [];
-    const inc = (bz.endpoints?.['1'] || bz.endpoints?.[1] || {}).clusters || [];
-    const seen = new Set(cur.map(Number));
-    const out = cur.slice();
-    for (const c of inc) {
-      const n = Number(c);
-      if (!seen.has(n)) {
-        seen.add(n);
-        out.push(c);
-      }
+  if (masterHasZigbee || bastienHasZigbeeContent) {
+    after.zigbee = after.zigbee && typeof after.zigbee === 'object' ? after.zigbee : {};
+
+    if (bz.manufacturerName) {
+      after.zigbee.manufacturerName = appendExactIdentityForms(
+        after.zigbee.manufacturerName,
+        bz.manufacturerName,
+      );
     }
-    after.zigbee.endpoints[epKey].clusters = out;
+    if (bz.productId) {
+      after.zigbee.productId = appendExactIdentityForms(after.zigbee.productId, bz.productId);
+    }
+    // Clusters: union numeric ids — never drop master's
+    if (Array.isArray(bz.endpoints?.[1]?.clusters) || Array.isArray(bz.endpoints?.['1']?.clusters)) {
+      after.zigbee.endpoints = after.zigbee.endpoints || {};
+      const epKey = after.zigbee.endpoints['1'] ? '1' : (after.zigbee.endpoints[1] ? 1 : '1');
+      after.zigbee.endpoints[epKey] = after.zigbee.endpoints[epKey] || {};
+      const cur = after.zigbee.endpoints[epKey].clusters || [];
+      const inc = (bz.endpoints?.['1'] || bz.endpoints?.[1] || {}).clusters || [];
+      const seen = new Set(cur.map(Number));
+      const out = cur.slice();
+      for (const c of inc) {
+        const n = Number(c);
+        if (!seen.has(n)) {
+          seen.add(n);
+          out.push(c);
+        }
+      }
+      after.zigbee.endpoints[epKey].clusters = out;
+    }
   }
 
   if (b.capabilities) {
@@ -200,6 +215,11 @@ function mergeComposeComplementary(masterObj, bastienObj) {
   }
   if (b.settings) {
     after.settings = appendSettingsById(after.settings, b.settings);
+  }
+
+  // Contre quoi (P2651): empty stub after merge → delete (WiFi LAN)
+  if (after.zigbee && typeof after.zigbee === 'object' && Object.keys(after.zigbee).length === 0) {
+    delete after.zigbee;
   }
 
   if (wouldDegradeCompose(masterObj, after)) {
