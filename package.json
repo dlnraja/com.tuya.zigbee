@@ -538,7 +538,8 @@
     "check:p2663": "node --test test/critical/p2663-mesh-flood-calm.test.js",
     "check:p2664": "node --test test/critical/p2664-bastien-remote-flow-heal.test.js",
     "check:p2665": "node --test test/critical/p2665-bastien-mesh-deepen-calm.test.js",
-    "check:p2666": "node --test test/critical/p2666-bastien-climate-couples.test.js"
+    "check:p2666": "node --test test/critical/p2666-bastien-climate-couples.test.js",
+    "check:p2667": "node --test test/critical/p2667-bastien-unknown-recognize.test.js"
   },
   "keywords": [
     "homey",
