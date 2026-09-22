@@ -33,15 +33,15 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 
 | Metric | Value |
 |--------|-------|
-| **App Version** | v9.0.1167 |
+| **App Version** | v9.0.1172 |
 | **Drivers** | 434 (381 Zigbee + 53 WiFi) |
 | **Unique Fingerprints** | 4,696 |
-| **Pairing Variants** | 18,378 (4 case combos per fingerprint) |
+| **Pairing Variants** | 18,380 (4 case combos per fingerprint) |
 | **Unique Product IDs** | 612 |
 | **Flow Cards** | 5,989 |
 | **Unique Capabilities** | 170 |
 | **Native OTA Drivers** | 8 |
-| **Test Suites** | 460 files |
+| **Test Suites** | 461 files |
 | **SVG Icons** | 734 |
 | **Languages** | EN, FR, NL, DE |
 | **SDK / Homey** | 3 / >= 12.2.0 |
@@ -103,6 +103,10 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 
 | Version | Changes |
 |---------|---------|
+| **v9.0.1172** | Intelligent dynamic energy adapts per device (P2672). |
+| **v9.0.1171** | Intelligent dynamic energy: metered/approximate/battery adapts per device (P2672). |
+| **v9.0.1170** | HOBEIAN recognition + Homey battery guideline (no measure+alarm dual). |
+| **v9.0.1168** | HOBEIAN recognition + publish gates (p2517/p2579); exact case forms retained. |
 | **v9.0.1167** | HOBEIAN recognition: exact case forms + Z2M pids; protect heobian from collision prune. |
 | **v9.0.1166** | HOBEIAN fleet recognition: exact case forms + Z2M pids (ZG-301Z-3CH/MOTO/IR01/210Z/climate siblings). |
 | **v9.0.1165** | HOBEIAN fleet recognition: exact case forms + Z2M pids (ZG-301Z-3CH/MOTO/IR01/210Z/climate siblings). |
@@ -111,10 +115,6 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 | **v9.0.1161** | Fixed device rename crash; credited OSS LAN sources in CI enrich. |
 | **v9.0.1159** | Improved complementary peer credits and WiFi LAN Fix It notes. |
 | **v9.0.1157** | P2655: lexicon 0xFC11 eWeLink climate calibration (L99). Update Homey Test. |
-| **v9.0.1155** | P2653/P2654: ButtonDevice try/catch + remove truncated Flow card ID duplicates (Athom unique-id). Update Homey Test. |
-| **v9.0.1153** | P2652: 4-gang switch pairing restored (ZCL-safe endpoints; no required metering). Update Homey Test; re-pair if 4-gang failed match. |
-| **v9.0.1151** | Actually ship button_wireless_3 multi-press titleFormatted [[button]] (Athom publish). |
-| **v9.0.1150** | Fix button_wireless_3 multi-press titleFormatted.it (Athom publish). Radar crash harden + wifi stubs. |
 
 <!-- CHANGELOG_END -->
 
