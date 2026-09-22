@@ -13602,8 +13602,18 @@
         "water_leak_sensor"
       ],
       "note": "P2666 intentional multi-home residual after Bastien climate lock"
+    },
+    {
+      "key": "ewelink|TS0601",
+      "drivers": [
+        "button_wireless",
+        "climate_sensor",
+        "motion_sensor",
+        "water_leak_sensor"
+      ],
+      "note": "P2666d eWeLink brand multi-device + climate TS0601 restore"
     }
   ],
-  "updatedAt": "2026-09-21T23:39:19.079Z",
-  "updatedBy": "p2666-bastien-mesh"
+  "updatedAt": "2026-09-22T00:02:09.541Z",
+  "updatedBy": "p2666d"
 }
