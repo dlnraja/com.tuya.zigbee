@@ -1,4 +1,8 @@
 {
+  "1.0.55": {
+    "en": "Critical: lights/relays boot after MODULE_NOT_FOUND harden (P2676). Update Bastien Test and restart.",
+    "fr": "Critique: demarrage lumieres/relais apres correctif MODULE_NOT_FOUND (P2676). Maj Bastien Test et redemarrer."
+  },
   "1.0.54": {
     "en": "Boot fix: app no longer crashes when Zigbee driver module load fails (lights/relays dead). Update Bastien Test and restart app.",
     "fr": "Correctif demarrage: l app ne plante plus si le module Zigbee manque (lumieres/relais morts). Maj Bastien Test et redemarrer l app."
