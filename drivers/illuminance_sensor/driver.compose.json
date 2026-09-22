@@ -26,7 +26,14 @@
       "TS0222",
       "TS0225",
       "TS0601",
-      "ZG-106Z"
+      "ZG-106Z",
+      "ts0222",
+      "Ts0222",
+      "ts0225",
+      "Ts0225",
+      "ts0601",
+      "Ts0601",
+      "zg-106z"
     ],
     "endpoints": {
       "1": {
@@ -48,7 +55,9 @@
       "_HYBRID_ILLUMINANCE_SENSOR_NEEDS_DEVICE_ASSIGNMENT",
       "hobeian",
       "Hobeian",
-      "HOBEIAN"
+      "HOBEIAN",
+      "heobian",
+      "Heobian"
     ]
   },
   "icon": "/drivers/illuminance_sensor/assets/icon.svg",
