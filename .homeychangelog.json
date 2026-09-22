@@ -1925,5 +1925,8 @@
   },
   "5.12.299": {
     "en": "Remove misattributed fllyghyj from temphumidsensor3 (P2666) + WiFi empty zigbee publish fix."
+  },
+  "5.12.300": {
+    "en": "Dynamic fingerprint shards + Buffer JSON.parse (OOM harden P2678)."
   }
 }
