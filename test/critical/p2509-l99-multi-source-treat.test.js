@@ -25,7 +25,10 @@ describe('P2509 L99 multi-source treat', () => {
     assert.strictEqual(cfg.syncPresenceFromDistanceInference, true);
     assert.strictEqual(cfg.dpMap[1].unreliable, true);
     assert.strictEqual(cfg.dpMap[1].useInference, true);
-    assert.strictEqual(cfg.dpMap[104].unreliable, true);
+    // WHY(P2604 / Z2M V3): DP104 is NOT presence on gkfbdvyx — internal compat only
+    assert.strictEqual(cfg.dpMap[104].cap, null);
+    assert.strictEqual(cfg.dpMap[9].divisor, 10);
+    assert.strictEqual(cfg.dpMap[103].cap, 'measure_luminance');
     const deviceSrc = fs.readFileSync(path.join(ROOT, 'drivers/presence_sensor_radar/device.js'), 'utf8');
     assert.ok(deviceSrc.includes('clearPresenceOnZeroDistance'), 'device paints clear on zero distance');
   });
