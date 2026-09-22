@@ -58,4 +58,19 @@ describe('P2673 Bastien intelligent max benefit', () => {
     const pkg = JSON.parse(fs.readFileSync(path.join(ROOT, 'package.json'), 'utf8'));
     assert.ok(pkg.scripts['check:p2673']);
   });
+
+  it('WiFi drivers do not carry stub zigbee without endpoints', () => {
+    const driversDir = path.join(ROOT, 'drivers');
+    for (const id of fs.readdirSync(driversDir)) {
+      if (!id.startsWith('wifi_')) continue;
+      const f = path.join(driversDir, id, 'driver.compose.json');
+      if (!fs.existsSync(f)) continue;
+      const j = JSON.parse(fs.readFileSync(f, 'utf8'));
+      if (!j.zigbee) continue;
+      assert.ok(
+        j.zigbee.endpoints && Object.keys(j.zigbee.endpoints).length > 0,
+        `${id} has zigbee without endpoints`,
+      );
+    }
+  });
 });
