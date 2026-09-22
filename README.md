@@ -33,10 +33,10 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 
 | Metric | Value |
 |--------|-------|
-| **App Version** | v9.0.1166 |
+| **App Version** | v9.0.1167 |
 | **Drivers** | 434 (381 Zigbee + 53 WiFi) |
 | **Unique Fingerprints** | 4,696 |
-| **Pairing Variants** | 18,400 (4 case combos per fingerprint) |
+| **Pairing Variants** | 18,378 (4 case combos per fingerprint) |
 | **Unique Product IDs** | 612 |
 | **Flow Cards** | 5,989 |
 | **Unique Capabilities** | 170 |
@@ -51,25 +51,25 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 
 | # | Driver | Fingerprints |
 |---|--------|-------------|
-| 1 | `climate_sensor` | 2,173 |
-| 2 | `switch_1gang` | 1,512 |
-| 3 | `curtain_motor` | 1,113 |
-| 4 | `presence_sensor_radar` | 1,007 |
+| 1 | `climate_sensor` | 2,171 |
+| 2 | `switch_1gang` | 1,515 |
+| 3 | `curtain_motor` | 1,114 |
+| 4 | `presence_sensor_radar` | 1,008 |
 | 5 | `radiator_valve` | 603 |
 | 6 | `button_wireless_2` | 568 |
 | 7 | `wall_dimmer_tuya` | 548 |
 | 8 | `generic_tuya` | 414 |
 | 9 | `device_radiator_valve` | 364 |
-| 10 | `switch_2gang` | 337 |
+| 10 | `switch_2gang` | 335 |
 | 11 | `switch_4gang` | 300 |
-| 12 | `soil_sensor` | 275 |
+| 12 | `soil_sensor` | 273 |
 | 13 | `motion_sensor` | 257 |
-| 14 | `contact_sensor` | 224 |
-| 15 | `switch_3gang` | 221 |
+| 14 | `contact_sensor` | 222 |
+| 15 | `switch_3gang` | 219 |
 | 16 | `diy_custom_zigbee` | 206 |
 | 17 | `plug_energy_monitor` | 206 |
 | 18 | `thermostat_tuya_dp` | 200 |
-| 19 | `sensor_contact_zigbee` | 185 |
+| 19 | `sensor_contact_zigbee` | 183 |
 | 20 | `water_leak_sensor_tuya` | 182 |
 
 ### Drivers by Device Class
@@ -103,6 +103,7 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 
 | Version | Changes |
 |---------|---------|
+| **v9.0.1167** | HOBEIAN recognition: exact case forms + Z2M pids; protect heobian from collision prune. |
 | **v9.0.1166** | HOBEIAN fleet recognition: exact case forms + Z2M pids (ZG-301Z-3CH/MOTO/IR01/210Z/climate siblings). |
 | **v9.0.1165** | HOBEIAN fleet recognition: exact case forms + Z2M pids (ZG-301Z-3CH/MOTO/IR01/210Z/climate siblings). |
 | **v9.0.1164** | Local-first doctrine lock for all apps (Zigbee mesh + WiFi LAN before cloud). |
@@ -114,7 +115,6 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 | **v9.0.1153** | P2652: 4-gang switch pairing restored (ZCL-safe endpoints; no required metering). Update Homey Test; re-pair if 4-gang failed match. |
 | **v9.0.1151** | Actually ship button_wireless_3 multi-press titleFormatted [[button]] (Athom publish). |
 | **v9.0.1150** | Fix button_wireless_3 multi-press titleFormatted.it (Athom publish). Radar crash harden + wifi stubs. |
-| **v9.0.1149** | P2634: keep liygxtcq+TS0004 on switch_4gang only (anti-bot). Radar crash + wifi zigbee stubs. |
 
 <!-- CHANGELOG_END -->
 
