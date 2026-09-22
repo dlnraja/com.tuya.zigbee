@@ -1922,5 +1922,8 @@
   },
   "5.12.298": {
     "en": "Fixed WiFi publish validate (drop empty zigbee stubs) + HOBEIAN caseless Athom forms."
+  },
+  "5.12.299": {
+    "en": "Remove misattributed fllyghyj from temphumidsensor3 (P2666) + WiFi empty zigbee publish fix."
   }
 }
