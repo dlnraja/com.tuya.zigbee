@@ -27,7 +27,15 @@ try {
 const { EventEmitter } = require('events');
 EventEmitter.defaultMaxListeners = 50;
 
-require('./lib/drivers/ZigBeeDriverFlowCardPatch');
+// WHY(P2676 / Bastien cb3c0c87): never hard-require this patch — MODULE_NOT_FOUND
+// of homey-zigbeedriver aborted the whole app → zero lights/relays.
+try {
+  require('./lib/drivers/ZigBeeDriverFlowCardPatch');
+} catch (e) {
+  try {
+    console.error('[BOOT] ZigBeeDriverFlowCardPatch soft-skip:', e && e.message);
+  } catch (_e) { /* soft */ }
+}
 const { registerCustomClusters } = require('./lib/zigbee/registerClusters');
 const FlowCardManager = require('./lib/flow/FlowCardManager');
 const UniversalFlowCardLoader = require('./lib/flow/UniversalFlowCardLoader');
