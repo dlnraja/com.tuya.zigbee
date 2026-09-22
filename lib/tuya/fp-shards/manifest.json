@@ -1,0 +1,919 @@
+{
+  "version": 1,
+  "patch": "P2678",
+  "generatedAt": "2026-09-22T18:34:56.833Z",
+  "source": "lib/tuya/fingerprints.json",
+  "sourceBytes": 929248,
+  "keyCount": 5780,
+  "shardCount": 227,
+  "shards": {
+    "HOBEIAN": {
+      "keys": 2,
+      "bytes": 346
+    },
+    "OTHER_3": {
+      "keys": 2,
+      "bytes": 326
+    },
+    "OTHER_A": {
+      "keys": 31,
+      "bytes": 5087
+    },
+    "OTHER_B": {
+      "keys": 27,
+      "bytes": 4508
+    },
+    "OTHER_C": {
+      "keys": 42,
+      "bytes": 7316
+    },
+    "OTHER_D": {
+      "keys": 45,
+      "bytes": 7920
+    },
+    "OTHER_E": {
+      "keys": 76,
+      "bytes": 13035
+    },
+    "OTHER_F": {
+      "keys": 12,
+      "bytes": 1950
+    },
+    "OTHER_G": {
+      "keys": 64,
+      "bytes": 12310
+    },
+    "OTHER_H": {
+      "keys": 201,
+      "bytes": 43822
+    },
+    "OTHER_I": {
+      "keys": 18,
+      "bytes": 3044
+    },
+    "OTHER_J": {
+      "keys": 10,
+      "bytes": 1684
+    },
+    "OTHER_K": {
+      "keys": 12,
+      "bytes": 1918
+    },
+    "OTHER_L": {
+      "keys": 54,
+      "bytes": 9259
+    },
+    "OTHER_M": {
+      "keys": 40,
+      "bytes": 7283
+    },
+    "OTHER_N": {
+      "keys": 32,
+      "bytes": 5398
+    },
+    "OTHER_O": {
+      "keys": 8,
+      "bytes": 1374
+    },
+    "OTHER_P": {
+      "keys": 27,
+      "bytes": 4683
+    },
+    "OTHER_R": {
+      "keys": 27,
+      "bytes": 4509
+    },
+    "OTHER_S": {
+      "keys": 80,
+      "bytes": 13550
+    },
+    "OTHER_T": {
+      "keys": 397,
+      "bytes": 63073
+    },
+    "OTHER_U": {
+      "keys": 6,
+      "bytes": 960
+    },
+    "OTHER_V": {
+      "keys": 7,
+      "bytes": 1156
+    },
+    "OTHER_W": {
+      "keys": 14,
+      "bytes": 2306
+    },
+    "OTHER_X": {
+      "keys": 5,
+      "bytes": 862
+    },
+    "OTHER_Y": {
+      "keys": 8,
+      "bytes": 1288
+    },
+    "OTHER_Z": {
+      "keys": 59,
+      "bytes": 10489
+    },
+    "TZ1800": {
+      "keys": 6,
+      "bytes": 936
+    },
+    "TZ2000": {
+      "keys": 6,
+      "bytes": 1070
+    },
+    "TZ300": {
+      "keys": 6,
+      "bytes": 1022
+    },
+    "TZ3000_0": {
+      "keys": 22,
+      "bytes": 3331
+    },
+    "TZ3000_1": {
+      "keys": 23,
+      "bytes": 3945
+    },
+    "TZ3000_2": {
+      "keys": 28,
+      "bytes": 4530
+    },
+    "TZ3000_3": {
+      "keys": 17,
+      "bytes": 2776
+    },
+    "TZ3000_4": {
+      "keys": 39,
+      "bytes": 5735
+    },
+    "TZ3000_5": {
+      "keys": 39,
+      "bytes": 6042
+    },
+    "TZ3000_6": {
+      "keys": 18,
+      "bytes": 2657
+    },
+    "TZ3000_7": {
+      "keys": 22,
+      "bytes": 3216
+    },
+    "TZ3000_8": {
+      "keys": 33,
+      "bytes": 4998
+    },
+    "TZ3000_9": {
+      "keys": 20,
+      "bytes": 3194
+    },
+    "TZ3000_a": {
+      "keys": 68,
+      "bytes": 10613
+    },
+    "TZ3000_b": {
+      "keys": 66,
+      "bytes": 10215
+    },
+    "TZ3000_c": {
+      "keys": 54,
+      "bytes": 8565
+    },
+    "TZ3000_d": {
+      "keys": 44,
+      "bytes": 7043
+    },
+    "TZ3000_e": {
+      "keys": 53,
+      "bytes": 8238
+    },
+    "TZ3000_f": {
+      "keys": 51,
+      "bytes": 8432
+    },
+    "TZ3000_g": {
+      "keys": 53,
+      "bytes": 7868
+    },
+    "TZ3000_h": {
+      "keys": 69,
+      "bytes": 10950
+    },
+    "TZ3000_i": {
+      "keys": 59,
+      "bytes": 9143
+    },
+    "TZ3000_j": {
+      "keys": 56,
+      "bytes": 8741
+    },
+    "TZ3000_k": {
+      "keys": 74,
+      "bytes": 12153
+    },
+    "TZ3000_l": {
+      "keys": 54,
+      "bytes": 8122
+    },
+    "TZ3000_m": {
+      "keys": 68,
+      "bytes": 10365
+    },
+    "TZ3000_n": {
+      "keys": 47,
+      "bytes": 7122
+    },
+    "TZ3000_o": {
+      "keys": 54,
+      "bytes": 8466
+    },
+    "TZ3000_p": {
+      "keys": 51,
+      "bytes": 7903
+    },
+    "TZ3000_q": {
+      "keys": 67,
+      "bytes": 10201
+    },
+    "TZ3000_r": {
+      "keys": 60,
+      "bytes": 9245
+    },
+    "TZ3000_s": {
+      "keys": 41,
+      "bytes": 6531
+    },
+    "TZ3000_t": {
+      "keys": 58,
+      "bytes": 8868
+    },
+    "TZ3000_u": {
+      "keys": 46,
+      "bytes": 7293
+    },
+    "TZ3000_v": {
+      "keys": 42,
+      "bytes": 6879
+    },
+    "TZ3000_w": {
+      "keys": 60,
+      "bytes": 9294
+    },
+    "TZ3000_x": {
+      "keys": 31,
+      "bytes": 5002
+    },
+    "TZ3000_y": {
+      "keys": 45,
+      "bytes": 7206
+    },
+    "TZ3000_z": {
+      "keys": 47,
+      "bytes": 7360
+    },
+    "TZ3002": {
+      "keys": 57,
+      "bytes": 8496
+    },
+    "TZ3008": {
+      "keys": 1,
+      "bytes": 170
+    },
+    "TZ302": {
+      "keys": 1,
+      "bytes": 171
+    },
+    "TZ3040": {
+      "keys": 10,
+      "bytes": 1336
+    },
+    "TZ321": {
+      "keys": 6,
+      "bytes": 939
+    },
+    "TZ3210_0": {
+      "keys": 9,
+      "bytes": 1482
+    },
+    "TZ3210_1": {
+      "keys": 2,
+      "bytes": 350
+    },
+    "TZ3210_2": {
+      "keys": 7,
+      "bytes": 1110
+    },
+    "TZ3210_3": {
+      "keys": 4,
+      "bytes": 593
+    },
+    "TZ3210_4": {
+      "keys": 6,
+      "bytes": 950
+    },
+    "TZ3210_5": {
+      "keys": 4,
+      "bytes": 649
+    },
+    "TZ3210_6": {
+      "keys": 3,
+      "bytes": 524
+    },
+    "TZ3210_7": {
+      "keys": 6,
+      "bytes": 928
+    },
+    "TZ3210_8": {
+      "keys": 2,
+      "bytes": 295
+    },
+    "TZ3210_9": {
+      "keys": 4,
+      "bytes": 723
+    },
+    "TZ3210_a": {
+      "keys": 10,
+      "bytes": 1712
+    },
+    "TZ3210_b": {
+      "keys": 7,
+      "bytes": 1171
+    },
+    "TZ3210_c": {
+      "keys": 14,
+      "bytes": 2180
+    },
+    "TZ3210_d": {
+      "keys": 17,
+      "bytes": 2434
+    },
+    "TZ3210_e": {
+      "keys": 9,
+      "bytes": 1417
+    },
+    "TZ3210_f": {
+      "keys": 10,
+      "bytes": 1759
+    },
+    "TZ3210_g": {
+      "keys": 3,
+      "bytes": 465
+    },
+    "TZ3210_h": {
+      "keys": 14,
+      "bytes": 2302
+    },
+    "TZ3210_i": {
+      "keys": 14,
+      "bytes": 2222
+    },
+    "TZ3210_j": {
+      "keys": 16,
+      "bytes": 2269
+    },
+    "TZ3210_k": {
+      "keys": 5,
+      "bytes": 866
+    },
+    "TZ3210_l": {
+      "keys": 8,
+      "bytes": 1346
+    },
+    "TZ3210_m": {
+      "keys": 8,
+      "bytes": 1290
+    },
+    "TZ3210_n": {
+      "keys": 8,
+      "bytes": 1165
+    },
+    "TZ3210_o": {
+      "keys": 9,
+      "bytes": 1468
+    },
+    "TZ3210_p": {
+      "keys": 11,
+      "bytes": 1672
+    },
+    "TZ3210_q": {
+      "keys": 3,
+      "bytes": 525
+    },
+    "TZ3210_r": {
+      "keys": 13,
+      "bytes": 2026
+    },
+    "TZ3210_s": {
+      "keys": 17,
+      "bytes": 2665
+    },
+    "TZ3210_t": {
+      "keys": 10,
+      "bytes": 1661
+    },
+    "TZ3210_u": {
+      "keys": 5,
+      "bytes": 713
+    },
+    "TZ3210_v": {
+      "keys": 4,
+      "bytes": 638
+    },
+    "TZ3210_w": {
+      "keys": 13,
+      "bytes": 2125
+    },
+    "TZ3210_x": {
+      "keys": 6,
+      "bytes": 786
+    },
+    "TZ3210_y": {
+      "keys": 5,
+      "bytes": 824
+    },
+    "TZ3210_z": {
+      "keys": 17,
+      "bytes": 2791
+    },
+    "TZ3218": {
+      "keys": 10,
+      "bytes": 1647
+    },
+    "TZ3290": {
+      "keys": 46,
+      "bytes": 7312
+    },
+    "TZ3300": {
+      "keys": 1,
+      "bytes": 173
+    },
+    "TZ3400": {
+      "keys": 6,
+      "bytes": 1092
+    },
+    "TZ6210": {
+      "keys": 1,
+      "bytes": 176
+    },
+    "TZE200_0": {
+      "keys": 18,
+      "bytes": 2641
+    },
+    "TZE200_1": {
+      "keys": 15,
+      "bytes": 2373
+    },
+    "TZE200_2": {
+      "keys": 24,
+      "bytes": 3446
+    },
+    "TZE200_3": {
+      "keys": 16,
+      "bytes": 2294
+    },
+    "TZE200_4": {
+      "keys": 18,
+      "bytes": 2612
+    },
+    "TZE200_5": {
+      "keys": 20,
+      "bytes": 2991
+    },
+    "TZE200_6": {
+      "keys": 10,
+      "bytes": 1501
+    },
+    "TZE200_7": {
+      "keys": 25,
+      "bytes": 3867
+    },
+    "TZE200_8": {
+      "keys": 29,
+      "bytes": 4388
+    },
+    "TZE200_9": {
+      "keys": 23,
+      "bytes": 3376
+    },
+    "TZE200_a": {
+      "keys": 44,
+      "bytes": 7333
+    },
+    "TZE200_b": {
+      "keys": 38,
+      "bytes": 5650
+    },
+    "TZE200_c": {
+      "keys": 37,
+      "bytes": 5819
+    },
+    "TZE200_d": {
+      "keys": 50,
+      "bytes": 7647
+    },
+    "TZE200_e": {
+      "keys": 35,
+      "bytes": 5312
+    },
+    "TZE200_f": {
+      "keys": 28,
+      "bytes": 4298
+    },
+    "TZE200_g": {
+      "keys": 35,
+      "bytes": 5218
+    },
+    "TZE200_h": {
+      "keys": 36,
+      "bytes": 5129
+    },
+    "TZE200_i": {
+      "keys": 28,
+      "bytes": 4422
+    },
+    "TZE200_j": {
+      "keys": 25,
+      "bytes": 3894
+    },
+    "TZE200_k": {
+      "keys": 35,
+      "bytes": 5252
+    },
+    "TZE200_l": {
+      "keys": 33,
+      "bytes": 4758
+    },
+    "TZE200_m": {
+      "keys": 38,
+      "bytes": 6237
+    },
+    "TZE200_n": {
+      "keys": 51,
+      "bytes": 8507
+    },
+    "TZE200_o": {
+      "keys": 23,
+      "bytes": 3471
+    },
+    "TZE200_p": {
+      "keys": 39,
+      "bytes": 6134
+    },
+    "TZE200_q": {
+      "keys": 24,
+      "bytes": 3619
+    },
+    "TZE200_r": {
+      "keys": 38,
+      "bytes": 5494
+    },
+    "TZE200_s": {
+      "keys": 38,
+      "bytes": 5944
+    },
+    "TZE200_t": {
+      "keys": 22,
+      "bytes": 3326
+    },
+    "TZE200_u": {
+      "keys": 24,
+      "bytes": 4014
+    },
+    "TZE200_v": {
+      "keys": 40,
+      "bytes": 5932
+    },
+    "TZE200_w": {
+      "keys": 46,
+      "bytes": 6776
+    },
+    "TZE200_x": {
+      "keys": 23,
+      "bytes": 3538
+    },
+    "TZE200_y": {
+      "keys": 48,
+      "bytes": 7295
+    },
+    "TZE200_z": {
+      "keys": 41,
+      "bytes": 6331
+    },
+    "TZE201": {
+      "keys": 1,
+      "bytes": 117
+    },
+    "TZE202": {
+      "keys": 1,
+      "bytes": 117
+    },
+    "TZE203": {
+      "keys": 1,
+      "bytes": 117
+    },
+    "TZE204_0": {
+      "keys": 6,
+      "bytes": 847
+    },
+    "TZE204_1": {
+      "keys": 8,
+      "bytes": 1269
+    },
+    "TZE204_2": {
+      "keys": 15,
+      "bytes": 2361
+    },
+    "TZE204_3": {
+      "keys": 12,
+      "bytes": 1855
+    },
+    "TZE204_4": {
+      "keys": 10,
+      "bytes": 1517
+    },
+    "TZE204_5": {
+      "keys": 13,
+      "bytes": 1956
+    },
+    "TZE204_6": {
+      "keys": 12,
+      "bytes": 1736
+    },
+    "TZE204_7": {
+      "keys": 17,
+      "bytes": 2547
+    },
+    "TZE204_8": {
+      "keys": 9,
+      "bytes": 1272
+    },
+    "TZE204_9": {
+      "keys": 10,
+      "bytes": 1510
+    },
+    "TZE204_a": {
+      "keys": 34,
+      "bytes": 5061
+    },
+    "TZE204_b": {
+      "keys": 19,
+      "bytes": 2966
+    },
+    "TZE204_c": {
+      "keys": 23,
+      "bytes": 3683
+    },
+    "TZE204_d": {
+      "keys": 36,
+      "bytes": 5348
+    },
+    "TZE204_e": {
+      "keys": 22,
+      "bytes": 3447
+    },
+    "TZE204_f": {
+      "keys": 20,
+      "bytes": 3177
+    },
+    "TZE204_g": {
+      "keys": 27,
+      "bytes": 4188
+    },
+    "TZE204_h": {
+      "keys": 14,
+      "bytes": 2283
+    },
+    "TZE204_i": {
+      "keys": 18,
+      "bytes": 2756
+    },
+    "TZE204_j": {
+      "keys": 10,
+      "bytes": 1599
+    },
+    "TZE204_k": {
+      "keys": 21,
+      "bytes": 3269
+    },
+    "TZE204_l": {
+      "keys": 32,
+      "bytes": 4905
+    },
+    "TZE204_m": {
+      "keys": 33,
+      "bytes": 4939
+    },
+    "TZE204_n": {
+      "keys": 28,
+      "bytes": 4526
+    },
+    "TZE204_o": {
+      "keys": 19,
+      "bytes": 2732
+    },
+    "TZE204_p": {
+      "keys": 18,
+      "bytes": 3107
+    },
+    "TZE204_q": {
+      "keys": 29,
+      "bytes": 4450
+    },
+    "TZE204_r": {
+      "keys": 23,
+      "bytes": 3837
+    },
+    "TZE204_s": {
+      "keys": 27,
+      "bytes": 4489
+    },
+    "TZE204_t": {
+      "keys": 19,
+      "bytes": 2844
+    },
+    "TZE204_u": {
+      "keys": 18,
+      "bytes": 2756
+    },
+    "TZE204_v": {
+      "keys": 16,
+      "bytes": 2334
+    },
+    "TZE204_w": {
+      "keys": 24,
+      "bytes": 3905
+    },
+    "TZE204_x": {
+      "keys": 23,
+      "bytes": 3743
+    },
+    "TZE204_y": {
+      "keys": 18,
+      "bytes": 2902
+    },
+    "TZE204_z": {
+      "keys": 33,
+      "bytes": 5107
+    },
+    "TZE210": {
+      "keys": 2,
+      "bytes": 405
+    },
+    "TZE283": {
+      "keys": 1,
+      "bytes": 176
+    },
+    "TZE284_0": {
+      "keys": 11,
+      "bytes": 1676
+    },
+    "TZE284_1": {
+      "keys": 14,
+      "bytes": 2228
+    },
+    "TZE284_2": {
+      "keys": 9,
+      "bytes": 1449
+    },
+    "TZE284_3": {
+      "keys": 11,
+      "bytes": 1692
+    },
+    "TZE284_4": {
+      "keys": 14,
+      "bytes": 2146
+    },
+    "TZE284_5": {
+      "keys": 8,
+      "bytes": 1196
+    },
+    "TZE284_6": {
+      "keys": 13,
+      "bytes": 1952
+    },
+    "TZE284_7": {
+      "keys": 8,
+      "bytes": 1286
+    },
+    "TZE284_8": {
+      "keys": 10,
+      "bytes": 1695
+    },
+    "TZE284_9": {
+      "keys": 10,
+      "bytes": 1724
+    },
+    "TZE284_a": {
+      "keys": 38,
+      "bytes": 6160
+    },
+    "TZE284_b": {
+      "keys": 7,
+      "bytes": 1035
+    },
+    "TZE284_c": {
+      "keys": 16,
+      "bytes": 2529
+    },
+    "TZE284_d": {
+      "keys": 17,
+      "bytes": 2493
+    },
+    "TZE284_e": {
+      "keys": 9,
+      "bytes": 1853
+    },
+    "TZE284_f": {
+      "keys": 15,
+      "bytes": 2770
+    },
+    "TZE284_g": {
+      "keys": 13,
+      "bytes": 2045
+    },
+    "TZE284_h": {
+      "keys": 13,
+      "bytes": 3015
+    },
+    "TZE284_i": {
+      "keys": 14,
+      "bytes": 2509
+    },
+    "TZE284_j": {
+      "keys": 1,
+      "bytes": 225
+    },
+    "TZE284_k": {
+      "keys": 17,
+      "bytes": 2580
+    },
+    "TZE284_l": {
+      "keys": 13,
+      "bytes": 1986
+    },
+    "TZE284_m": {
+      "keys": 17,
+      "bytes": 3124
+    },
+    "TZE284_n": {
+      "keys": 27,
+      "bytes": 4821
+    },
+    "TZE284_o": {
+      "keys": 9,
+      "bytes": 1893
+    },
+    "TZE284_p": {
+      "keys": 10,
+      "bytes": 1999
+    },
+    "TZE284_q": {
+      "keys": 10,
+      "bytes": 1473
+    },
+    "TZE284_r": {
+      "keys": 16,
+      "bytes": 2546
+    },
+    "TZE284_s": {
+      "keys": 11,
+      "bytes": 1795
+    },
+    "TZE284_t": {
+      "keys": 14,
+      "bytes": 2555
+    },
+    "TZE284_u": {
+      "keys": 10,
+      "bytes": 1395
+    },
+    "TZE284_v": {
+      "keys": 16,
+      "bytes": 2709
+    },
+    "TZE284_w": {
+      "keys": 15,
+      "bytes": 2683
+    },
+    "TZE284_x": {
+      "keys": 11,
+      "bytes": 1662
+    },
+    "TZE284_y": {
+      "keys": 10,
+      "bytes": 1540
+    },
+    "TZE284_z": {
+      "keys": 24,
+      "bytes": 3772
+    },
+    "TZE600": {
+      "keys": 2,
+      "bytes": 283
+    },
+    "TZE608": {
+      "keys": 13,
+      "bytes": 1879
+    }
+  }
+}
