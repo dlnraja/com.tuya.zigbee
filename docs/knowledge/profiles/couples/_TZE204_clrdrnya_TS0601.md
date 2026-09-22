@@ -31,6 +31,12 @@
 | 114 | factory_parameters | — | rx | — |
 | 115 | sensor | — | rx | — |
 
+## Known bugs (P2579)
+
+- **MTG075 / MTG235** VicHY ceiling mmWave (Z2M sensor=`occupied` forces sticky presence) — heal DP115→on on soft-clear.
+- Distance often **quantized** (~2.8 m steps); departure_delay ≥15s; detection_range avoid &lt;2.5m.
+- Homey Rideau/curtain class flip → re-pair as Presence Sensor Radar (never curtain_motor).
+
 ---
 See `docs/guides/DP_INTERPRETATION.md`
 
