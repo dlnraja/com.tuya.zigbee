@@ -3819,5 +3819,8 @@
   },
   "1.0.47": {
     "en": "Deep Bastien enrich: HOBEIAN countdown+switch_type, WHD02, electrical 4-gang, climate/button alarm_battery."
+  },
+  "1.0.48": {
+    "en": "Fix TS0041 pair lock + P2670 deep enrich (countdown, WHD02, alarm_battery)."
   }
 }
