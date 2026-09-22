@@ -3940,5 +3940,8 @@
   },
   "9.0.1191": {
     "en": "TS0041 sticky: pair Wireless Button 1 (not Homey Unknown), Flow Bouton 1 appuye. Update + re-pair remotes."
+  },
+  "9.0.1192": {
+    "en": "Sleepy remotes (TS0041): lower battery TX — no powerCfg storm on wake, magic cooldown. Update Test."
   }
 }
