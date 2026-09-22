@@ -33,15 +33,15 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 
 | Metric | Value |
 |--------|-------|
-| **App Version** | v9.0.1172 |
+| **App Version** | v9.0.1177 |
 | **Drivers** | 434 (381 Zigbee + 53 WiFi) |
 | **Unique Fingerprints** | 4,696 |
-| **Pairing Variants** | 18,380 (4 case combos per fingerprint) |
+| **Pairing Variants** | 18,378 (4 case combos per fingerprint) |
 | **Unique Product IDs** | 612 |
 | **Flow Cards** | 5,989 |
 | **Unique Capabilities** | 170 |
 | **Native OTA Drivers** | 8 |
-| **Test Suites** | 461 files |
+| **Test Suites** | 464 files |
 | **SVG Icons** | 734 |
 | **Languages** | EN, FR, NL, DE |
 | **SDK / Homey** | 3 / >= 12.2.0 |
@@ -103,6 +103,10 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 
 | Version | Changes |
 |---------|---------|
+| **v9.0.1177** | Boot harden: JsonParse OOM under device storm (P2674) + soft-require zigbeedriver (P2676). Update Test. |
+| **v9.0.1176** | Publish tip: drop dual alarm_battery; intelligent energy + HOBEIAN locks. |
+| **v9.0.1174** | Publish tip: intelligent energy + HOBEIAN ZG-302Z1 switch-only (no curtain bleed). |
+| **v9.0.1173** | Publish tip: intelligent energy + sacred 7dcddnye dimmer lock (P2672/P2517). |
 | **v9.0.1172** | Intelligent dynamic energy adapts per device (P2672). |
 | **v9.0.1171** | Intelligent dynamic energy: metered/approximate/battery adapts per device (P2672). |
 | **v9.0.1170** | HOBEIAN recognition + Homey battery guideline (no measure+alarm dual). |
@@ -111,10 +115,6 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 | **v9.0.1166** | HOBEIAN fleet recognition: exact case forms + Z2M pids (ZG-301Z-3CH/MOTO/IR01/210Z/climate siblings). |
 | **v9.0.1165** | HOBEIAN fleet recognition: exact case forms + Z2M pids (ZG-301Z-3CH/MOTO/IR01/210Z/climate siblings). |
 | **v9.0.1164** | Local-first doctrine lock for all apps (Zigbee mesh + WiFi LAN before cloud). |
-| **v9.0.1163** | Fixed Bastien diag flow token + undeclared scene invent (P2659). |
-| **v9.0.1161** | Fixed device rename crash; credited OSS LAN sources in CI enrich. |
-| **v9.0.1159** | Improved complementary peer credits and WiFi LAN Fix It notes. |
-| **v9.0.1157** | P2655: lexicon 0xFC11 eWeLink climate calibration (L99). Update Homey Test. |
 
 <!-- CHANGELOG_END -->
 
