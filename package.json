@@ -1,6 +1,6 @@
 {
   "name": "com.dlnraja.tuya.zigbee",
-  "version": "9.0.1182",
+  "version": "9.0.1183",
   "description": "Tuya Unified Zigbee - Local-first control with AI automation",
   "main": "app.js",
   "scripts": {
@@ -554,6 +554,8 @@
     "check:p2678": "node tools/ci/build-fingerprint-shards.js --check && node --test test/critical/p2678-dynamic-jsonparse-shards.test.js",
     "check:p2679": "node --test test/critical/p2679-kfu8-wkai-sacred-couples.test.js",
     "check:p2680": "node --test test/critical/p2680-remotes-lights-sensors-fleet.test.js",
+    "check:p2681": "node --test test/critical/p2681-bootstrap-ghost-flows-dzwgk7e2.test.js",
+    "check:p268x": "npm run check:p2680 && npm run check:p2681",
     "build:fp-shards": "node tools/ci/build-fingerprint-shards.js"
   },
   "keywords": [
