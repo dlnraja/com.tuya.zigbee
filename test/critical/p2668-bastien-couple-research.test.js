@@ -19,7 +19,7 @@ describe('P2668 Bastien complementary couple research patches', () => {
     assert.ok(src.includes('usageConstant'));
   });
 
-  it('switch_1gang learnmode mentions Bastien + HOBEIAN + ≥1.0.43', () => {
+  it('switch_1gang learnmode mentions Bastien + HOBEIAN + ≥1.0.44', () => {
     const j = JSON.parse(fs.readFileSync(
       path.join(ROOT, 'drivers/switch_1gang/driver.compose.json'),
       'utf8',
@@ -27,7 +27,7 @@ describe('P2668 Bastien complementary couple research patches', () => {
     const en = j.zigbee?.learnmode?.instruction?.en || '';
     assert.ok(/Zigbee Bastien/i.test(en));
     assert.ok(/HOBEIAN|ZG-301Z/i.test(en));
-    assert.ok(/1\.0\.43/.test(en));
+    assert.ok(/1\.0\.4[34]/.test(en));
   });
 
   it('lcdtemphumidsensor has anti-Virtual learnmode', () => {
