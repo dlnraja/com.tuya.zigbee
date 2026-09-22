@@ -3828,5 +3828,8 @@
   },
   "1.0.50": {
     "en": "HOBEIAN recognition fix: exact HOBEIAN/heobian case forms + missing Z2M pids (3CH/MOTO/IR/210Z). Update + Repair."
+  },
+  "1.0.51": {
+    "en": "Intelligent dynamic energy: metered/approximate/battery adapts per device (P2672)."
   }
 }
