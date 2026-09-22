@@ -33,15 +33,15 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 
 | Metric | Value |
 |--------|-------|
-| **App Version** | v9.0.1177 |
+| **App Version** | v9.0.1185 |
 | **Drivers** | 434 (381 Zigbee + 53 WiFi) |
 | **Unique Fingerprints** | 4,696 |
-| **Pairing Variants** | 18,378 (4 case combos per fingerprint) |
-| **Unique Product IDs** | 612 |
+| **Pairing Variants** | 18,807 (4 case combos per fingerprint) |
+| **Unique Product IDs** | 932 |
 | **Flow Cards** | 5,989 |
 | **Unique Capabilities** | 170 |
 | **Native OTA Drivers** | 8 |
-| **Test Suites** | 464 files |
+| **Test Suites** | 471 files |
 | **SVG Icons** | 734 |
 | **Languages** | EN, FR, NL, DE |
 | **SDK / Homey** | 3 / >= 12.2.0 |
@@ -51,26 +51,26 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 
 | # | Driver | Fingerprints |
 |---|--------|-------------|
-| 1 | `climate_sensor` | 2,171 |
-| 2 | `switch_1gang` | 1,515 |
+| 1 | `climate_sensor` | 2,179 |
+| 2 | `switch_1gang` | 1,519 |
 | 3 | `curtain_motor` | 1,114 |
-| 4 | `presence_sensor_radar` | 1,008 |
-| 5 | `radiator_valve` | 603 |
-| 6 | `button_wireless_2` | 568 |
-| 7 | `wall_dimmer_tuya` | 548 |
-| 8 | `generic_tuya` | 414 |
+| 4 | `presence_sensor_radar` | 1,011 |
+| 5 | `radiator_valve` | 609 |
+| 6 | `generic_tuya` | 581 |
+| 7 | `button_wireless_2` | 570 |
+| 8 | `wall_dimmer_tuya` | 548 |
 | 9 | `device_radiator_valve` | 364 |
-| 10 | `switch_2gang` | 335 |
-| 11 | `switch_4gang` | 300 |
-| 12 | `soil_sensor` | 273 |
-| 13 | `motion_sensor` | 257 |
-| 14 | `contact_sensor` | 222 |
-| 15 | `switch_3gang` | 219 |
-| 16 | `diy_custom_zigbee` | 206 |
-| 17 | `plug_energy_monitor` | 206 |
+| 10 | `switch_2gang` | 337 |
+| 11 | `diy_custom_zigbee` | 306 |
+| 12 | `switch_4gang` | 300 |
+| 13 | `soil_sensor` | 276 |
+| 14 | `motion_sensor` | 267 |
+| 15 | `contact_sensor` | 237 |
+| 16 | `switch_3gang` | 221 |
+| 17 | `plug_energy_monitor` | 208 |
 | 18 | `thermostat_tuya_dp` | 200 |
-| 19 | `sensor_contact_zigbee` | 183 |
-| 20 | `water_leak_sensor_tuya` | 182 |
+| 19 | `sensor_contact_zigbee` | 187 |
+| 20 | `water_leak_sensor_tuya` | 185 |
 
 ### Drivers by Device Class
 
@@ -103,18 +103,18 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 
 | Version | Changes |
 |---------|---------|
+| **v9.0.1185** | TS0043 vsxvaj9i + TS0042 sticky: Flow Button pressed (not Zigbee channels), snappier 2-btn. Update + re-pair remotes. |
+| **v9.0.1184** | Mesh calm: onOff report floor 1s + skip sleepy group-join (diag burst). Update Test. |
+| **v9.0.1183** | Fix random Homey Flows from switch bootstrap reports + TS0042 sticky button profile. Update Test. |
+| **v9.0.1182** | Dynamic fingerprint shards + Buffer JSON.parse (OOM harden). |
+| **v9.0.1181** | P2677b: HOBEIAN caseless on all tracks + collision baseline (heobian=hobeian). |
+| **v9.0.1180** | HOBEIAN case-insensitive everywhere (Athom forms + OCR heobian) + Z2M pids 3CH/MOTO/210Z/climate siblings (P2677). |
+| **v9.0.1178** | P2519: strip false climate host of 8eazvzo6 from app.json (publish gate). Keep P2674/P2676 boot harden. |
 | **v9.0.1177** | Boot harden: JsonParse OOM under device storm (P2674) + soft-require zigbeedriver (P2676). Update Test. |
 | **v9.0.1176** | Publish tip: drop dual alarm_battery; intelligent energy + HOBEIAN locks. |
 | **v9.0.1174** | Publish tip: intelligent energy + HOBEIAN ZG-302Z1 switch-only (no curtain bleed). |
 | **v9.0.1173** | Publish tip: intelligent energy + sacred 7dcddnye dimmer lock (P2672/P2517). |
 | **v9.0.1172** | Intelligent dynamic energy adapts per device (P2672). |
-| **v9.0.1171** | Intelligent dynamic energy: metered/approximate/battery adapts per device (P2672). |
-| **v9.0.1170** | HOBEIAN recognition + Homey battery guideline (no measure+alarm dual). |
-| **v9.0.1168** | HOBEIAN recognition + publish gates (p2517/p2579); exact case forms retained. |
-| **v9.0.1167** | HOBEIAN recognition: exact case forms + Z2M pids; protect heobian from collision prune. |
-| **v9.0.1166** | HOBEIAN fleet recognition: exact case forms + Z2M pids (ZG-301Z-3CH/MOTO/IR01/210Z/climate siblings). |
-| **v9.0.1165** | HOBEIAN fleet recognition: exact case forms + Z2M pids (ZG-301Z-3CH/MOTO/IR01/210Z/climate siblings). |
-| **v9.0.1164** | Local-first doctrine lock for all apps (Zigbee mesh + WiFi LAN before cloud). |
 
 <!-- CHANGELOG_END -->
 
