@@ -1928,5 +1928,8 @@
   },
   "5.12.300": {
     "en": "Dynamic fingerprint shards + Buffer JSON.parse (OOM harden P2678)."
+  },
+  "5.12.301": {
+    "en": "Fix random physical Flows on switch bootstrap + TS0042 sticky profile (P2681)."
   }
 }

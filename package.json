@@ -1,6 +1,6 @@
 {
   "name": "com.dlnraja.tuya.zigbee",
-  "version": "5.12.300",
+  "version": "5.12.301",
   "description": "Tuya Unified Zigbee - Local-first control with AI automation",
   "main": "app.js",
   "scripts": {
@@ -281,7 +281,8 @@
     "check:p2677": "node --test test/critical/p2677-hobeian-caseless-intelligent.test.js",
     "check:p2651": "node --test test/critical/p2651-wifi-empty-zigbee-stubs.test.js",
     "check:p2678": "node tools/ci/build-fingerprint-shards.js --check && node --test test/critical/p2678-dynamic-jsonparse-shards.test.js",
-    "build:fp-shards": "node tools/ci/build-fingerprint-shards.js"
+    "build:fp-shards": "node tools/ci/build-fingerprint-shards.js",
+    "check:p2681": "node --test test/critical/p2681-bootstrap-ghost-flows-dzwgk7e2.test.js"
   },
   "keywords": [
     "homey",
