@@ -1909,5 +1909,8 @@
   },
   "5.12.294": {
     "en": "P2652: 4-gang switch pairing restored (ZCL-safe endpoints; no required metering). Update Stable Test; re-pair if needed."
+  },
+  "5.12.295": {
+    "en": "HOBEIAN fleet recognition: exact case forms + Z2M pids (3CH/MOTO/IR/210Z); drop ZG-222Z from radar."
   }
 }
