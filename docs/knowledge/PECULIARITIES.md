@@ -2433,14 +2433,6 @@ Generated 2026-09-15T08:05:31.976Z from registry (220 cases) × compound DB (509
 - Notes: FrankEver FK-BV05 flow meter. P2468.
 - Sources: Z2M_FK-BV05, P2468
 
-
-
-### P2681 — bootstrap ghost physical flows + dzwgk7e2 (2026-09-22)
-
-- Couple: `_TZ3000_dzwgk7e2` + TS0042 → `button_wireless_2` (hybrid 0xFD, debounce 1200)
-- Contre quoi: Bastien 8f0915fa / f37e8a91 — null→false PHYSICAL flooded switch_1gang_physical_* (random Flows); BaseUnifiedDevice shadowed mixin profile
-- Gate: `npm run check:p2681`. Silent only.
-
 Regenerate: `node tools/ci/investigate-device-peculiarities.js`
 
 
