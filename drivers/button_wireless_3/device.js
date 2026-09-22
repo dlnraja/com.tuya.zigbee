@@ -23,14 +23,24 @@ class Button3GangDevice extends ButtonDevice {
   getDeviceProfile() {
     const base = (typeof super.getDeviceProfile === 'function' && super.getDeviceProfile()) || {};
     return Object.assign({}, base, {
+      brand: base.brand || 'Tuya',
       batteryEpOnly: 1,
       writeSceneAttr: false,
+      skip8004: true,
       usesE000: true,
       noEf00: true,
+      noEf00Tx: true,
       protocol: 'zcl_0xfd_e000',
+      productId: base.productId || 'TS0043',
+      buttonCount: 3,
       maxButtons: 3,
+      debounceMs: Math.min(Number(base.debounceMs) || 400, 400),
+      crossPathDedupMs: Math.min(Number(base.crossPathDedupMs) || 650, 650),
+      collapsePhantomEndpoints: true,
+      sceneSwitch: true,
       zcl200IsPercent: true,
       skipBatteryReporting: true,
+      source: base.source || 'P2683_button_wireless_3',
     });
   }
 
