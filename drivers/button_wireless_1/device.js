@@ -123,10 +123,25 @@ class Button1GangDevice extends ButtonDevice {
     } catch (_e) { /* soft */ }
 
     try {
+      // WHY(P2684): Unknown/wrong-driver re-pair sometimes leaves no button.1 → Homey Flow
+      // hides « Bouton 1 appuyé » (device filter driver_id=button_wireless_1 only).
+      if (!this.hasCapability('button.1') && typeof this.addCapability === 'function') {
+        await this.addCapability('button.1').catch(() => {});
+        this.log('[BUTTON_WIRELESS_1] P2684 rehydrate button.1 for Flow UX');
+      }
       if (!this.hasCapability('measure_battery') && typeof this.addCapability === 'function') {
         await this.addCapability('measure_battery').catch(() => {});
         this.log('[BUTTON_WIRELESS_1] P2490 rehydrate measure_battery after strip');
       }
+      // WHY(P2684 / Homey guidelines): never keep alarm_battery alongside measure_battery
+      if (this.hasCapability('alarm_battery') && typeof this.removeCapability === 'function') {
+        await this.removeCapability('alarm_battery').catch(() => {});
+      }
+    } catch (_e) { /* soft */ }
+
+    try {
+      const { applyHomeyButtonUiCharter } = require('../../lib/utils/HomeyButtonUiCharter');
+      await applyHomeyButtonUiCharter(this);
     } catch (_e) { /* soft */ }
 
     try {
@@ -146,7 +161,7 @@ class Button1GangDevice extends ButtonDevice {
       }
     } catch (_e) { /* soft */ }
 
-    this.log('[BUTTON_WIRELESS_1] P2630 ready (TS0041 0xFD / battery EP1 / no EF00)');
+    this.log('[BUTTON_WIRELESS_1] P2630/P2684 ready (TS0041 0xFD / Flow Bouton 1)');
   }
 
 }
