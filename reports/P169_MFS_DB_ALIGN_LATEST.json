@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-09-22T09:36:16.273Z",
+  "timestamp": "2026-09-22T19:07:42.348Z",
   "gate": "align-mfs-db-intelligent",
   "apply": false,
   "check": true,
@@ -509,11 +509,24 @@
       "mfr": "Heobian",
       "curated": "multi",
       "claimers": [
+        "button_wireless_1",
+        "climate_sensor",
+        "contact_sensor",
         "curtain_motor",
         "gas_sensor",
+        "illuminance_sensor",
+        "ir_blaster",
         "presence_sensor_radar",
+        "rain_sensor",
         "scene_switch_4",
-        "siren"
+        "sensor_contact_zigbee",
+        "siren",
+        "soil_sensor",
+        "switch_1gang",
+        "switch_2gang",
+        "switch_3gang",
+        "vibration_sensor",
+        "water_leak_sensor"
       ]
     },
     {
@@ -521,11 +534,24 @@
       "mfr": "heobian",
       "curated": "multi",
       "claimers": [
+        "button_wireless_1",
+        "climate_sensor",
+        "contact_sensor",
         "curtain_motor",
         "gas_sensor",
+        "illuminance_sensor",
+        "ir_blaster",
         "presence_sensor_radar",
+        "rain_sensor",
         "scene_switch_4",
-        "siren"
+        "sensor_contact_zigbee",
+        "siren",
+        "soil_sensor",
+        "switch_1gang",
+        "switch_2gang",
+        "switch_3gang",
+        "vibration_sensor",
+        "water_leak_sensor"
       ]
     }
   ],
