@@ -6,195 +6,195 @@
 
 ## 🔋 Battery (6)
 
-- [🔋 UnifiedBatteryHandler Analysis - v5.3.15](./BATTERY_ANALYSIS.md) — _2026-09-15_
-- [Battery System Audit (P53/P54)](./BATTERY_AUDIT.md) — _2026-09-15_
-- [BATTERY_MANAGER_ANALYSIS.md](./BATTERY_MANAGER_ANALYSIS.md) — _2026-09-15_
-- [P28 — Battery Cartography + UniversalBatteryFallback + button_mode default = scene](./P28_BATTERY_CARTOGRAPHY_2026-07-13.md) — _2026-09-15_
-- [P77 / P78 / P79 — Battery & Button Cartography + Mega-Crawler Resilience](./P77_P78_P79_BATTERY_BUTTON_REFRESH.md) — _2026-09-15_
-- [Battery, Energy, and Button Version Audit - 2026-07-05](./VERSION_HISTORY_BATTERY_BUTTON_AUDIT_2026-07-05.md) — _2026-09-15_
+- [🔋 UnifiedBatteryHandler Analysis - v5.3.15](./BATTERY_ANALYSIS.md) — _2026-09-22_
+- [Battery System Audit (P53/P54)](./BATTERY_AUDIT.md) — _2026-09-22_
+- [BATTERY_MANAGER_ANALYSIS.md](./BATTERY_MANAGER_ANALYSIS.md) — _2026-09-22_
+- [P28 — Battery Cartography + UniversalBatteryFallback + button_mode default = scene](./P28_BATTERY_CARTOGRAPHY_2026-07-13.md) — _2026-09-22_
+- [P77 / P78 / P79 — Battery & Button Cartography + Mega-Crawler Resilience](./P77_P78_P79_BATTERY_BUTTON_REFRESH.md) — _2026-09-22_
+- [Battery, Energy, and Button Version Audit - 2026-07-05](./VERSION_HISTORY_BATTERY_BUTTON_AUDIT_2026-07-05.md) — _2026-09-22_
 
 ## 🔘 Buttons & flows (9)
 
-- [Bidirectional Button System - Implementation Guide](./BIDIRECTIONAL_BUTTONS.md) — _2026-09-15_
-- [Button Capability Guide - Tuya Unified Zigbee App](./BUTTON_CAPABILITY_GUIDE.md) — _2026-09-15_
-- [🚀 Continuous Flow Report — 2026-07-12 15:50](./CONTINUOUS_FLOW_REPORT_2026-07-12.md) — _2026-09-15_
-- [Flow Card Argument Types Reference](./FLOW_CARD_ARGUMENT_TYPES.md) — _2026-09-15_
-- [P92.64 — Boutons : matrice croisée de toutes les implémentations & versions gagnantes](./P92_64_BUTTON_CROSS_MATRIX.md) — _2026-09-15_
-- [P9 Workflow Consolidation Report](./P9_WORKFLOW_CONSOLIDATION_2026-07-12.md) — _2026-09-15_
-- [Physical Button Investigation - Complete Analysis](./PHYSICAL_BUTTON_ANALYSIS.md) — _2026-09-15_
-- [Rules for Physical & Virtual Button Logic (v1.1.0)](./RULES_PHYSICAL_BUTTONS.md) — _2026-09-15_
-- [Workflow Documentation](./WORKFLOWS.md) — _2026-09-15_
+- [Bidirectional Button System - Implementation Guide](./BIDIRECTIONAL_BUTTONS.md) — _2026-09-22_
+- [Button Capability Guide - Tuya Unified Zigbee App](./BUTTON_CAPABILITY_GUIDE.md) — _2026-09-22_
+- [🚀 Continuous Flow Report — 2026-07-12 15:50](./CONTINUOUS_FLOW_REPORT_2026-07-12.md) — _2026-09-22_
+- [Flow Card Argument Types Reference](./FLOW_CARD_ARGUMENT_TYPES.md) — _2026-09-22_
+- [P92.64 — Boutons : matrice croisée de toutes les implémentations & versions gagnantes](./P92_64_BUTTON_CROSS_MATRIX.md) — _2026-09-22_
+- [P9 Workflow Consolidation Report](./P9_WORKFLOW_CONSOLIDATION_2026-07-12.md) — _2026-09-22_
+- [Physical Button Investigation - Complete Analysis](./PHYSICAL_BUTTON_ANALYSIS.md) — _2026-09-22_
+- [Rules for Physical & Virtual Button Logic (v1.1.0)](./RULES_PHYSICAL_BUTTONS.md) — _2026-09-22_
+- [Workflow Documentation](./WORKFLOWS.md) — _2026-09-22_
 
 ## 📡 Zigbee / pairing / IAS (6)
 
-- [🔧 APPLY ZIGBEE RETRY FIX - Instructions](./APPLY_ZIGBEE_RETRY_FIX.md) — _2026-09-15_
-- [Zigbee Cluster ↔ Brand Matrix](./CLUSTER_BRAND_MATRIX.md) — _2026-09-15_
-- [DP_MAPPING_REFERENCE.md - Tuya Data Point Mapping Reference](./DP_MAPPING_REFERENCE.md) — _2026-09-15_
-- [🌍 Zigbee Brands Database](./ZIGBEE-BRANDS.md) — _2026-09-15_
-- [Zigbee Proprietary Overlays Guide - v5.7.50](./ZIGBEE_OVERLAYS_GUIDE.md) — _2026-09-15_
-- [🔧 Guide de Dépannage Zigbee - Tuya Unified Zigbee](./ZIGBEE_TROUBLESHOOTING_GUIDE.md) — _2026-09-15_
+- [🔧 APPLY ZIGBEE RETRY FIX - Instructions](./APPLY_ZIGBEE_RETRY_FIX.md) — _2026-09-22_
+- [Zigbee Cluster ↔ Brand Matrix](./CLUSTER_BRAND_MATRIX.md) — _2026-09-22_
+- [DP_MAPPING_REFERENCE.md - Tuya Data Point Mapping Reference](./DP_MAPPING_REFERENCE.md) — _2026-09-22_
+- [🌍 Zigbee Brands Database](./ZIGBEE-BRANDS.md) — _2026-09-22_
+- [Zigbee Proprietary Overlays Guide - v5.7.50](./ZIGBEE_OVERLAYS_GUIDE.md) — _2026-09-22_
+- [🔧 Guide de Dépannage Zigbee - Tuya Unified Zigbee](./ZIGBEE_TROUBLESHOOTING_GUIDE.md) — _2026-09-22_
 
 ## 🌍 Forum & community (12)
 
-- [🌍 Forum Hub](./FORUM_HUB.md) — _2026-09-15_
-- [Forum Issues Analysis - Comprehensive Report](./FORUM_ISSUES_ANALYSIS.md) — _2026-09-15_
-- [📋 FORUM & ISSUES CHRONOLOGY — Tuya Unified Zigbee](./FORUM_ISSUES_CHRONOLOGY.md) — _2026-09-15_
-- [📋 Forum Issues Consolidated - Master Reference](./FORUM_ISSUES_CONSOLIDATED.md) — _2026-09-15_
-- [Forum Response Templates](./FORUM_RESPONSES.md) — _2026-09-15_
-- [FORUM_TEASER_V7.md](./FORUM_TEASER_V7.md) — _2026-09-15_
-- [[APP PRO] Universal Tuya Zigbee - v7.2.0 "The Autonomous Awakening"](./FORUM_UPDATE_EN_v7.2.md) — _2026-09-15_
-- [[APP PRO] Universal Tuya Zigbee - v7.2.0 "The Autonomous Awakening"](./FORUM_UPDATE_v7.2.md) — _2026-09-15_
-- [P22 — Forum Cross-Reference + Gap Fixes (2026-07-13)](./P22_FORUM_FIXES_2026-07-13.md) — _2026-09-15_
-- [P85 — Forum #2114 Door/Window Sensor Fix (HOBEIAN ZG-227Z)](./P85_FORUM_2114_DOOR_WINDOW.md) — _2026-09-15_
-- [P87 — Forum-Driven mfr Mapping Fixes](./P87_FORUM_DRIVEN_MFR_MAPPING.md) — _2026-09-15_
-- [forum_post_draft.md](./forum_post_draft.md) — _2026-09-15_
+- [🌍 Forum Hub](./FORUM_HUB.md) — _2026-09-22_
+- [Forum Issues Analysis - Comprehensive Report](./FORUM_ISSUES_ANALYSIS.md) — _2026-09-22_
+- [📋 FORUM & ISSUES CHRONOLOGY — Tuya Unified Zigbee](./FORUM_ISSUES_CHRONOLOGY.md) — _2026-09-22_
+- [📋 Forum Issues Consolidated - Master Reference](./FORUM_ISSUES_CONSOLIDATED.md) — _2026-09-22_
+- [Forum Response Templates](./FORUM_RESPONSES.md) — _2026-09-22_
+- [FORUM_TEASER_V7.md](./FORUM_TEASER_V7.md) — _2026-09-22_
+- [[APP PRO] Universal Tuya Zigbee - v7.2.0 "The Autonomous Awakening"](./FORUM_UPDATE_EN_v7.2.md) — _2026-09-22_
+- [[APP PRO] Universal Tuya Zigbee - v7.2.0 "The Autonomous Awakening"](./FORUM_UPDATE_v7.2.md) — _2026-09-22_
+- [P22 — Forum Cross-Reference + Gap Fixes (2026-07-13)](./P22_FORUM_FIXES_2026-07-13.md) — _2026-09-22_
+- [P85 — Forum #2114 Door/Window Sensor Fix (HOBEIAN ZG-227Z)](./P85_FORUM_2114_DOOR_WINDOW.md) — _2026-09-22_
+- [P87 — Forum-Driven mfr Mapping Fixes](./P87_FORUM_DRIVEN_MFR_MAPPING.md) — _2026-09-22_
+- [forum_post_draft.md](./forum_post_draft.md) — _2026-09-22_
 
 ## 🐙 GitHub (8)
 
-- [🐙 GitHub Hub](./GITHUB_HUB.md) — _2026-09-15_
-- [📊 GitHub Issues & PR Analysis — Re-dump 2026-05-26](./GITHUB_ISSUES_PR_ANALYSIS.md) — _2026-09-15_
-- [GH Full Responses — dlnraja v5.9.23 (12 open, 0 replied)](./GITHUB_RESPONSES_FULL.md) — _2026-09-15_
-- [Responses v5.11.15](./GITHUB_RESPONSES_v5.11.15.md) — _2026-09-15_
-- [GitHub Responses v5.11.16 — Feb 19, 2026](./GITHUB_RESPONSES_v5.11.16.md) — _2026-09-15_
-- [GH Responses v5.8.88 — 12 open, 0 replied yet](./GITHUB_RESPONSES_v5.8.88.md) — _2026-09-15_
-- [GitHub Secrets Inventory + AI Bonus Layer (P36)](./GITHUB_SECRETS_AI.md) — _2026-09-15_
-- [P14 — GitHub Activity Processing (2026-07-13)](./P14_GITHUB_ACTIVITY_2026-07-13.md) — _2026-09-15_
+- [🐙 GitHub Hub](./GITHUB_HUB.md) — _2026-09-22_
+- [📊 GitHub Issues & PR Analysis — Re-dump 2026-05-26](./GITHUB_ISSUES_PR_ANALYSIS.md) — _2026-09-22_
+- [GH Full Responses — dlnraja v5.9.23 (12 open, 0 replied)](./GITHUB_RESPONSES_FULL.md) — _2026-09-22_
+- [Responses v5.11.15](./GITHUB_RESPONSES_v5.11.15.md) — _2026-09-22_
+- [GitHub Responses v5.11.16 — Feb 19, 2026](./GITHUB_RESPONSES_v5.11.16.md) — _2026-09-22_
+- [GH Responses v5.8.88 — 12 open, 0 replied yet](./GITHUB_RESPONSES_v5.8.88.md) — _2026-09-22_
+- [GitHub Secrets Inventory + AI Bonus Layer (P36)](./GITHUB_SECRETS_AI.md) — _2026-09-22_
+- [P14 — GitHub Activity Processing (2026-07-13)](./P14_GITHUB_ACTIVITY_2026-07-13.md) — _2026-09-22_
 
 ## 🤖 AI / automation (8)
 
-- [PROTOCOLE "ANTIGRAVITY" : MASTER SPECIFICATION v7.0](./ANTIGRAVITY_V7_MASTER_SPEC.md) — _2026-09-15_
-- [🏷️ Système Auto-Tag](./AUTO_TAG_SYSTEM.md) — _2026-09-15_
-- [🤖 Intelligent Automation Systems - v6.0](./INTELLIGENT_AUTOMATION.md) — _2026-09-15_
-- [P10 Security & Automation Report](./P10_SECURITY_AUTOMATION_2026-07-12.md) — _2026-09-15_
-- [P37 — Multi-Channel Architecture + Autonomous Verification (2026-07-14)](./P37_MULTICHANNEL_AUTONOMOUS_2026-07-14.md) — _2026-09-15_
-- [P83 — Dynamic DB Orchestrator + Cross-Reference Pipeline](./P83_DYNAMIC_DB_ORCHESTRATOR.md) — _2026-09-15_
-- [P8 Continuous Autonomous Enrichment Report](./P8_CONTINUOUS_AUTONOMOUS_2026-07-12.md) — _2026-09-15_
-- [🤖 SYSTÈME D'AUTOMATISATION COMPLÈTE](./README_AUTOMATION.md) — _2026-09-15_
+- [PROTOCOLE "ANTIGRAVITY" : MASTER SPECIFICATION v7.0](./ANTIGRAVITY_V7_MASTER_SPEC.md) — _2026-09-22_
+- [🏷️ Système Auto-Tag](./AUTO_TAG_SYSTEM.md) — _2026-09-22_
+- [🤖 Intelligent Automation Systems - v6.0](./INTELLIGENT_AUTOMATION.md) — _2026-09-22_
+- [P10 Security & Automation Report](./P10_SECURITY_AUTOMATION_2026-07-12.md) — _2026-09-22_
+- [P37 — Multi-Channel Architecture + Autonomous Verification (2026-07-14)](./P37_MULTICHANNEL_AUTONOMOUS_2026-07-14.md) — _2026-09-22_
+- [P83 — Dynamic DB Orchestrator + Cross-Reference Pipeline](./P83_DYNAMIC_DB_ORCHESTRATOR.md) — _2026-09-22_
+- [P8 Continuous Autonomous Enrichment Report](./P8_CONTINUOUS_AUTONOMOUS_2026-07-12.md) — _2026-09-22_
+- [🤖 SYSTÈME D'AUTOMATISATION COMPLÈTE](./README_AUTOMATION.md) — _2026-09-22_
 
 ## 📱 Devices & drivers (7)
 
-- [🏭 Zigbee Brands & Manufacturers Database](./BRANDS.md) — _2026-09-15_
-- [Device Support Matrix](./DEVICE_MATRIX.md) — _2026-09-15_
-- [DEVICE_SPECIFIC_ISSUES.md - Device-Specific Known Issues](./DEVICE_SPECIFIC_ISSUES.md) — _2026-09-15_
-- [Driver Mapping Policy](./DRIVER_MAPPING_POLICY.md) — _2026-09-15_
-- [Manufacturer Device Quirks](./MANUFACTURER_DEVICE_QUIRKS.md) — _2026-09-15_
-- [P80 — Issue #439 Auto-Scan + PR #512 Orphan Drivers](./P80_ISSUE_439_ORPHAN_DRIVERS.md) — _2026-09-15_
-- [Probabilistic Local Device Detection - 2026-07-05](./PROBABILISTIC_LOCAL_DEVICE_DETECTION.md) — _2026-09-15_
+- [🏭 Zigbee Brands & Manufacturers Database](./BRANDS.md) — _2026-09-22_
+- [Device Support Matrix](./DEVICE_MATRIX.md) — _2026-09-22_
+- [DEVICE_SPECIFIC_ISSUES.md - Device-Specific Known Issues](./DEVICE_SPECIFIC_ISSUES.md) — _2026-09-22_
+- [Driver Mapping Policy](./DRIVER_MAPPING_POLICY.md) — _2026-09-22_
+- [Manufacturer Device Quirks](./MANUFACTURER_DEVICE_QUIRKS.md) — _2026-09-22_
+- [P80 — Issue #439 Auto-Scan + PR #512 Orphan Drivers](./P80_ISSUE_439_ORPHAN_DRIVERS.md) — _2026-09-22_
+- [Probabilistic Local Device Detection - 2026-07-05](./PROBABILISTIC_LOCAL_DEVICE_DETECTION.md) — _2026-09-22_
 
 ## 🏗️ Architecture & rules (13)
 
-- [Anti-Zigbee-Generic Checklist](./ANTI_GENERIC_CHECKLIST.md) — _2026-09-15_
-- [Tuya Unified Architectural Rules (v7.5.31)](./ARCHITECTURAL_RULES.md) — _2026-09-15_
-- [Architecture Overview](./ARCHITECTURE.md) — _2026-09-15_
-- [🧠 Architecture AI — 3 Couches Distinguées](./ARCHITECTURE_AI.md) — _2026-09-15_
-- [Athom Official Best Practices](./ATHOM_BEST_PRACTICES.md) — _2026-09-15_
-- [500+ Best Practices, Bug Fixes & Enrichments](./BEST_PRACTICES_500.md) — _2026-09-15_
-- [Branching strategy — master vs stable-v5 (P51)](./BRANCHING_STRATEGY.md) — _2026-09-15_
-- [Contributing Guide](./CONTRIBUTING.md) — _2026-09-15_
-- [Contributing — Développement](./CONTRIBUTING_DEV.md) — _2026-09-15_
-- [Homey SDK Best Practices](./HOMEY_SDK_BEST_PRACTICES.md) — _2026-09-15_
-- [P21 — Sacred Couple Cross-Reference (2026-07-13)](./P21_SACRED_COUPLES_2026-07-13.md) — _2026-09-15_
-- [P76 — Deep Architectural Coverage Tool + False-Positive Fixes](./P76_DEEP_ARCHITECTURAL_COVERAGE.md) — _2026-09-15_
-- [WiFi Local-First Architecture — Complete Visual Reference](./WIFI_LOCAL_FIRST_ARCHITECTURE.md) — _2026-09-15_
+- [Anti-Zigbee-Generic Checklist](./ANTI_GENERIC_CHECKLIST.md) — _2026-09-22_
+- [Tuya Unified Architectural Rules (v7.5.31)](./ARCHITECTURAL_RULES.md) — _2026-09-22_
+- [Architecture Overview](./ARCHITECTURE.md) — _2026-09-22_
+- [🧠 Architecture AI — 3 Couches Distinguées](./ARCHITECTURE_AI.md) — _2026-09-22_
+- [Athom Official Best Practices](./ATHOM_BEST_PRACTICES.md) — _2026-09-22_
+- [500+ Best Practices, Bug Fixes & Enrichments](./BEST_PRACTICES_500.md) — _2026-09-22_
+- [Branching strategy — master vs stable-v5 (P51)](./BRANCHING_STRATEGY.md) — _2026-09-22_
+- [Contributing Guide](./CONTRIBUTING.md) — _2026-09-22_
+- [Contributing — Développement](./CONTRIBUTING_DEV.md) — _2026-09-22_
+- [Homey SDK Best Practices](./HOMEY_SDK_BEST_PRACTICES.md) — _2026-09-22_
+- [P21 — Sacred Couple Cross-Reference (2026-07-13)](./P21_SACRED_COUPLES_2026-07-13.md) — _2026-09-22_
+- [P76 — Deep Architectural Coverage Tool + False-Positive Fixes](./P76_DEEP_ARCHITECTURAL_COVERAGE.md) — _2026-09-22_
+- [WiFi Local-First Architecture — Complete Visual Reference](./WIFI_LOCAL_FIRST_ARCHITECTURE.md) — _2026-09-22_
 
 ## 📊 Reports & audits (21)
 
-- [🔧 Comprehensive Fix Report — 2026-07-12 11:30](./AGGREGATE_ERROR_FIX_REPORT_2026-07-12.md) — _2026-09-15_
-- [🤖 AI Tool Behavior Synthesis — 2026-07-12](./AI_BEHAVIOR_SYNTHESIS_2026-07-12.md) — _2026-09-15_
-- [🔍 Rapport d'Analyse Globale — Universal Tuya Zigbee v8.5.0](./ANALYSIS_REPORT_v8.5.0.md) — _2026-09-15_
-- [📊 Dashboard JS Diagnostic Report — 2026-07-12 12:00](./DASHBOARD_DIAG_REPORT_2026-07-12.md) — _2026-09-15_
-- [🔍 Analyse des apps Homey Tuya/Zigbee — import intelligent des bonnes pratiques](./EXTERNAL_APPS_ANALYSIS.md) — _2026-09-15_
-- [🌐 GLOBAL INVESTIGATION PLAN — Phoenix Sovereign AI Framework](./GLOBAL_INVESTIGATION_PLAN.md) — _2026-09-15_
-- [🔧 Gmail Diagnostics + Cross-Reference + Fix Report](./GMAIL_FIX_REPORT_2026-07-10.md) — _2026-09-15_
-- [🔍 MEGA-INVESTIGATION 2026-07-10 — Tuya Unified Zigbee (Dual-App)](./INVESTIGATION_2026-07-10.md) — _2026-09-15_
-- [🔬 Investigation D — Other Surfaces (2026-07-10)](./INVESTIGATION_D_OTHER_SURFACES_2026-07-10.md) — _2026-09-15_
-- [📊 Rapport d'Audit + Enrichissement Master — Référence Croisée](./MASTER_ENRICHMENT_REPORT.md) — _2026-09-15_
-- [✅ MFR Integration Report — 2026-07-12 19:55](./MFR_INTEGRATION_REPORT_2026-07-12.md) — _2026-09-15_
-- [Monthly Tuya Zigbee Report - 2026-06](./MONTHLY_REPORT.md) — _2026-09-15_
-- [P15.1 — Comprehensive Email Analysis (2026-07-13)](./P15.1_COMPREHENSIVE_EMAIL_ANALYSIS.md) — _2026-09-15_
-- [P89 — Case-Insensitive Coverage Audit](./P89_CASE_INSENSITIVE_AUDIT.md) — _2026-09-15_
-- [Regression Analysis — v5.11.x Series](./REGRESSION_ANALYSIS_v5.11.md) — _2026-09-15_
-- [Shadow Mode Enforcement & Maintenance Stabilization Report (v7.4.5)](./SHADOW_MODE_REMEDIATION_REPORT.md) — _2026-09-15_
-- [🌡️ Vision Temporo-Situationnelle — Tuya Unified Zigbee](./TEMPORAL_SITUATIONAL_ANALYSIS.md) — _2026-09-15_
-- [🛠️ TOOLS REPORT — Session 2026-07-10 (Mavis investigation)](./TOOLS_REPORT_2026-07-10.md) — _2026-09-15_
-- [Z2M / Hubitat / Fork Analysis - Improvements for Tuya Unified Zigbee](./Z2M_IMPROVEMENTS_ANALYSIS.md) — _2026-09-15_
-- [Z2M Integration Feasibility Analysis for Homey](./Z2M_INTEGRATION_ANALYSIS.md) — _2026-09-15_
-- [ZHA & Z2M Quirks Analysis for Tuya Unified Zigbee](./ZHA_Z2M_QUIRKS_ANALYSIS.md) — _2026-09-15_
+- [🔧 Comprehensive Fix Report — 2026-07-12 11:30](./AGGREGATE_ERROR_FIX_REPORT_2026-07-12.md) — _2026-09-22_
+- [🤖 AI Tool Behavior Synthesis — 2026-07-12](./AI_BEHAVIOR_SYNTHESIS_2026-07-12.md) — _2026-09-22_
+- [🔍 Rapport d'Analyse Globale — Universal Tuya Zigbee v8.5.0](./ANALYSIS_REPORT_v8.5.0.md) — _2026-09-22_
+- [📊 Dashboard JS Diagnostic Report — 2026-07-12 12:00](./DASHBOARD_DIAG_REPORT_2026-07-12.md) — _2026-09-22_
+- [🔍 Analyse des apps Homey Tuya/Zigbee — import intelligent des bonnes pratiques](./EXTERNAL_APPS_ANALYSIS.md) — _2026-09-22_
+- [🌐 GLOBAL INVESTIGATION PLAN — Phoenix Sovereign AI Framework](./GLOBAL_INVESTIGATION_PLAN.md) — _2026-09-22_
+- [🔧 Gmail Diagnostics + Cross-Reference + Fix Report](./GMAIL_FIX_REPORT_2026-07-10.md) — _2026-09-22_
+- [🔍 MEGA-INVESTIGATION 2026-07-10 — Tuya Unified Zigbee (Dual-App)](./INVESTIGATION_2026-07-10.md) — _2026-09-22_
+- [🔬 Investigation D — Other Surfaces (2026-07-10)](./INVESTIGATION_D_OTHER_SURFACES_2026-07-10.md) — _2026-09-22_
+- [📊 Rapport d'Audit + Enrichissement Master — Référence Croisée](./MASTER_ENRICHMENT_REPORT.md) — _2026-09-22_
+- [✅ MFR Integration Report — 2026-07-12 19:55](./MFR_INTEGRATION_REPORT_2026-07-12.md) — _2026-09-22_
+- [Monthly Tuya Zigbee Report - 2026-06](./MONTHLY_REPORT.md) — _2026-09-22_
+- [P15.1 — Comprehensive Email Analysis (2026-07-13)](./P15.1_COMPREHENSIVE_EMAIL_ANALYSIS.md) — _2026-09-22_
+- [P89 — Case-Insensitive Coverage Audit](./P89_CASE_INSENSITIVE_AUDIT.md) — _2026-09-22_
+- [Regression Analysis — v5.11.x Series](./REGRESSION_ANALYSIS_v5.11.md) — _2026-09-22_
+- [Shadow Mode Enforcement & Maintenance Stabilization Report (v7.4.5)](./SHADOW_MODE_REMEDIATION_REPORT.md) — _2026-09-22_
+- [🌡️ Vision Temporo-Situationnelle — Tuya Unified Zigbee](./TEMPORAL_SITUATIONAL_ANALYSIS.md) — _2026-09-22_
+- [🛠️ TOOLS REPORT — Session 2026-07-10 (Mavis investigation)](./TOOLS_REPORT_2026-07-10.md) — _2026-09-22_
+- [Z2M / Hubitat / Fork Analysis - Improvements for Tuya Unified Zigbee](./Z2M_IMPROVEMENTS_ANALYSIS.md) — _2026-09-22_
+- [Z2M Integration Feasibility Analysis for Homey](./Z2M_INTEGRATION_ANALYSIS.md) — _2026-09-22_
+- [ZHA & Z2M Quirks Analysis for Tuya Unified Zigbee](./ZHA_Z2M_QUIRKS_ANALYSIS.md) — _2026-09-22_
 
 ## 📋 P-series (fix journals) (24)
 
-- [P10 FINAL — Security, Automation, Johan Cleanup](./P10_FINAL_2026-07-12.md) — _2026-09-15_
-- [P10 Johan Comments Cleanup Report](./P10_JOHAN_COMMENTS_CLEANUP_2026-07-12.md) — _2026-09-15_
-- [P11 — Carte Blanche & Execution](./P11_CARTE_BLANCHE_2026-07-12.md) — _2026-09-15_
-- [P13 — Email Recovery & Processing](./P13_EMAIL_RECOVERY_2026-07-13.md) — _2026-09-15_
-- [P15 — Deep Email Processing (2026-07-13)](./P15_DEEP_EMAIL_PROCESSING_2026-07-13.md) — _2026-09-15_
-- [P16 — Gmail Recovery Action Plan (2026-07-13)](./P16_GMAIL_RECOVERY_ACTION_PLAN.md) — _2026-09-15_
-- [P17 — Multi-Source Recovery (2026-07-13)](./P17_MULTI_SOURCE_RECOVERY.md) — _2026-09-15_
-- [P18 — Gmail Recovery SUCCESS (2026-07-13)](./P18_GMAIL_RECOVERY_SUCCESS.md) — _2026-09-15_
-- [P19 — Improvements Based on 551 Fresh Emails (2026-07-13)](./P19_IMPROVEMENTS_2026-07-13.md) — _2026-09-15_
-- [P24 — Multi-Source Driver Intelligence (2026-07-13)](./P24_MULTI_SOURCE_INTELLIGENCE_2026-07-13.md) — _2026-09-15_
-- [P25 — Dashboard + Publish Fix (2026-07-13)](./P25_DASHBOARD_PUBLISH_FIX_2026-07-13.md) — _2026-09-15_
-- [P26.6 — Temporal Cross-Reference (2026-07-13)](./P26.6_TEMPORAL_CROSS_REF_2026-07-13.md) — _2026-09-15_
-- [🎯 Sprint P2 Report — 241 PID Conflicts Resolution](./P2_PID_CONFLICT_RESOLUTION_2026-07-12.md) — _2026-09-15_
-- [P37 → P44 — 10 Rounds of Improvement (2026-07-14)](./P37_P44_10_ROUNDS_2026-07-14.md) — _2026-09-15_
-- [P38 — Targeted Improvements (FPs + Orchestrator Integration) (2026-07-14)](./P38_TARGETED_IMPROVEMENTS_2026-07-14.md) — _2026-09-15_
-- [P52 — Safe Sync Strategy (master → stable-v5) (2026-07-14)](./P52_SAFE_SYNC_STRATEGY_2026-07-14.md) — _2026-09-15_
-- [P58 — SafeCapability + BatteryCore v2 Bridge](./P58_SAFE_CAPABILITY.md) — _2026-09-15_
-- [P7 Door Sensor Creation Report](./P7_DOOR_SENSOR_CREATION_2026-07-12.md) — _2026-09-15_
-- [P82 — ULTIMATE Case-Insensitive Normalization](./P82_CASE_INSENSITIVE_NORMALIZATION.md) — _2026-09-15_
-- [P84 — Gmail FPs Sync (catch master↔stable gap)](./P84_GMAIL_FPS_SYNC.md) — _2026-09-15_
-- [P88 — Cross-Source mfr & DP Fixes (forum + Z2M + mfs_db)](./P88_CROSS_SOURCE_MFR_DP_FIXES.md) — _2026-09-15_
-- [P90 — Bot Regression Removal (auto-fix-all)](./P90_BOT_REGRESSION_REMOVAL.md) — _2026-09-15_
-- [P91 — TuyaNormalizer Full Propagation + master/stable Differenciation](./P91_TUYA_NORMALIZER_FULL_PROPAGATION.md) — _2026-09-15_
-- [P92.70 — Homey 2026 : OTA Zigbee natif + écosystème (Matter, HP2026, Bridges)](./P92_70_HOMEY_2026_OTA_NATIVE.md) — _2026-09-15_
+- [P10 FINAL — Security, Automation, Johan Cleanup](./P10_FINAL_2026-07-12.md) — _2026-09-22_
+- [P10 Johan Comments Cleanup Report](./P10_JOHAN_COMMENTS_CLEANUP_2026-07-12.md) — _2026-09-22_
+- [P11 — Carte Blanche & Execution](./P11_CARTE_BLANCHE_2026-07-12.md) — _2026-09-22_
+- [P13 — Email Recovery & Processing](./P13_EMAIL_RECOVERY_2026-07-13.md) — _2026-09-22_
+- [P15 — Deep Email Processing (2026-07-13)](./P15_DEEP_EMAIL_PROCESSING_2026-07-13.md) — _2026-09-22_
+- [P16 — Gmail Recovery Action Plan (2026-07-13)](./P16_GMAIL_RECOVERY_ACTION_PLAN.md) — _2026-09-22_
+- [P17 — Multi-Source Recovery (2026-07-13)](./P17_MULTI_SOURCE_RECOVERY.md) — _2026-09-22_
+- [P18 — Gmail Recovery SUCCESS (2026-07-13)](./P18_GMAIL_RECOVERY_SUCCESS.md) — _2026-09-22_
+- [P19 — Improvements Based on 551 Fresh Emails (2026-07-13)](./P19_IMPROVEMENTS_2026-07-13.md) — _2026-09-22_
+- [P24 — Multi-Source Driver Intelligence (2026-07-13)](./P24_MULTI_SOURCE_INTELLIGENCE_2026-07-13.md) — _2026-09-22_
+- [P25 — Dashboard + Publish Fix (2026-07-13)](./P25_DASHBOARD_PUBLISH_FIX_2026-07-13.md) — _2026-09-22_
+- [P26.6 — Temporal Cross-Reference (2026-07-13)](./P26.6_TEMPORAL_CROSS_REF_2026-07-13.md) — _2026-09-22_
+- [🎯 Sprint P2 Report — 241 PID Conflicts Resolution](./P2_PID_CONFLICT_RESOLUTION_2026-07-12.md) — _2026-09-22_
+- [P37 → P44 — 10 Rounds of Improvement (2026-07-14)](./P37_P44_10_ROUNDS_2026-07-14.md) — _2026-09-22_
+- [P38 — Targeted Improvements (FPs + Orchestrator Integration) (2026-07-14)](./P38_TARGETED_IMPROVEMENTS_2026-07-14.md) — _2026-09-22_
+- [P52 — Safe Sync Strategy (master → stable-v5) (2026-07-14)](./P52_SAFE_SYNC_STRATEGY_2026-07-14.md) — _2026-09-22_
+- [P58 — SafeCapability + BatteryCore v2 Bridge](./P58_SAFE_CAPABILITY.md) — _2026-09-22_
+- [P7 Door Sensor Creation Report](./P7_DOOR_SENSOR_CREATION_2026-07-12.md) — _2026-09-22_
+- [P82 — ULTIMATE Case-Insensitive Normalization](./P82_CASE_INSENSITIVE_NORMALIZATION.md) — _2026-09-22_
+- [P84 — Gmail FPs Sync (catch master↔stable gap)](./P84_GMAIL_FPS_SYNC.md) — _2026-09-22_
+- [P88 — Cross-Source mfr & DP Fixes (forum + Z2M + mfs_db)](./P88_CROSS_SOURCE_MFR_DP_FIXES.md) — _2026-09-22_
+- [P90 — Bot Regression Removal (auto-fix-all)](./P90_BOT_REGRESSION_REMOVAL.md) — _2026-09-22_
+- [P91 — TuyaNormalizer Full Propagation + master/stable Differenciation](./P91_TUYA_NORMALIZER_FULL_PROPAGATION.md) — _2026-09-22_
+- [P92.70 — Homey 2026 : OTA Zigbee natif + écosystème (Matter, HP2026, Bridges)](./P92_70_HOMEY_2026_OTA_NATIVE.md) — _2026-09-22_
 
 ## 📄 Divers (45)
 
-- [📅 CHRONOLOGICAL EVOLUTION — Tuya Unified Zigbee](./CHRONOLOGICAL_EVOLUTION.md) — _2026-09-15_
-- [Credits & Contributors](./CREDITS.md) — _2026-09-15_
-- [Tuya Unified Zigbee - Developer Notes](./DEV_NOTES.md) — _2026-09-15_
-- [🌌 Universal Tuya Engine Stabilization - Final Handover](./HANDOVER_v7.4.11.md) — _2026-09-15_
-- [🚀 Homey App Store - Déploiement Automatique via GitHub Actions](./HOMEY_DEPLOYMENT.md) — _2026-09-15_
-- [Homey Developer Portal — Cartography (2026-08-05)](./HOMEY_DEV_PORTAL_MAP.md) — _2026-09-15_
-- [✅ HOMEY_PAT Configuré](./HOMEY_PAT_CONFIGURED.md) — _2026-09-15_
-- [🎯 Programme d'amélioration — 500+ items](./IMPROVEMENT_PROGRAM.md) — _2026-09-15_
-- [GitHub Issue Responses - dlnraja/com.tuya.zigbee](./ISSUE_RESPONSES.md) — _2026-09-15_
-- [📊 PR/Issues/Forums/Emails/Dashboard — Diagnostic 2026-07-12 19:45](./JOHAN_DASHBOARD_DIAG_2026-07-12.md) — _2026-09-15_
-- [KNOWN_ISSUES.md - Known Issues & Limitations](./KNOWN_ISSUES.md) — _2026-09-15_
-- [LLM Project Reference](./LLM_REFERENCE.md) — _2026-09-15_
-- [Guide: Extraction de la Local Key Tuya (Mode Hors-Ligne)](./LOCAL_KEY_EXTRACTION.md) — _2026-09-15_
-- [Manufacturer Identification Methods](./MANUFACTURER_IDENTIFICATION.md) — _2026-09-15_
-- [ManufacturerName Research Analysis v5.5.424](./MANUFACTURER_RESEARCH_v5.5.424.md) — _2026-09-15_
-- [📚 Référence Définitive : Évolution Complète des Boutons, Batterie et Architecture](./MASTER_EVOLUTION_REFERENCE.md) — _2026-09-15_
-- [📚 MASTER REFERENCE — Tuya Unified Zigbee (Référence Complète)](./MASTER_REFERENCE.md) — _2026-09-15_
-- [🎯 MASTER_TODO — Plan d'action consolidé 2026-07-10](./MASTER_TODO.md) — _2026-09-15_
-- [MEGA PROMPT WINDSURF AI - Tuya Unified Zigbee](./MEGA_PROMPT_WINDSURF.md) — _2026-09-15_
-- [Module Documentation](./MODULES.md) — _2026-09-15_
-- [Multi-DP Parser Documentation](./MULTI_DP_PARSER.md) — _2026-09-15_
-- [OAuth/API Key Migration Summary (v5.11.125+)](./OAUTH_MIGRATION.md) — _2026-09-15_
-- [PositionInvert Pattern for Cover/Curtain Devices](./POSITION_INVERT_PATTERN.md) — _2026-09-15_
-- [📜 Historique d'Évolution Complète — Tuya Unified Zigbee](./PROJECT_EVOLUTION_HISTORY.md) — _2026-09-15_
-- [Project Status](./PROJECT_STATUS.md) — _2026-09-15_
-- [Non-Standard Protocols & Tuya MCU Deep Dive](./PROTOCOLS_NON_STANDARD.md) — _2026-09-15_
-- [📦 Homey App Publishing Guide](./PUBLISHING_GUIDE.md) — _2026-09-15_
-- [🚀 Automated Publishing via GitHub Actions](./PUBLISH_SETUP.md) — _2026-09-15_
-- [RADAR_FIX.md](./RADAR_FIX.md) — _2026-09-15_
-- [RAW_MODE.md - Raw Data Mode & Debug Reference](./RAW_MODE.md) — _2026-09-15_
-- [Scene Mode Enhancement - v6.0](./SCENE_MODE_RESEARCH.md) — _2026-09-15_
-- [Script Documentation](./SCRIPTS.md) — _2026-09-15_
-- [📚 Index des scripts exécutés — 2026-07-27](./SCRIPT_INDEX_2026-07-27.md) — _2026-09-15_
-- [SDK v3 HOOKS - Diagramme Exact](./SDK3_HOOKS.md) — _2026-09-15_
-- [🚀 SETUP GITHUB ACTIONS - Instructions Complètes](./SETUP_INSTRUCTIONS.md) — _2026-09-15_
-- [🛠️ SHADOW MODE V2.0 — Réécrit pour utiliser l'infrastructure existante](./SHADOW_MODE_V2_UPGRADE.md) — _2026-09-15_
-- [SmartCapability Pattern — P57 Guide](./SMART_CAPABILITY.md) — _2026-09-15_
-- [Time Sync - Technical Documentation](./TIME_SYNC_TECHNICAL.md) — _2026-09-15_
-- [Tuya Cloud App (com.tuya2) - Feature Analysis & Inspiration](./TUYA_CLOUD_APP_INSPIRATION.md) — _2026-09-15_
-- [Tuya Zigbee Time Synchronization Protocol](./TUYA_TIME_SYNC_PROTOCOL.md) — _2026-09-15_
-- [Universal Time Sync Guide - v5.7.50](./UNIVERSAL_TIME_SYNC_GUIDE.md) — _2026-09-15_
-- [User Experience Tracker - Tuya Unified Zigbee](./USER_EXPERIENCE_TRACKER.md) — _2026-09-15_
-- [v6.0 Comprehensive Update Summary](./V6_COMPREHENSIVE_UPDATE.md) — _2026-09-15_
-- [Working Versions Reference](./WORKING_VERSIONS_REFERENCE.md) — _2026-09-15_
-- [Release Notes - v7.0.22 (MAX Local Pro)](./v7_RELEASE_NOTES.md) — _2026-09-15_
+- [📅 CHRONOLOGICAL EVOLUTION — Tuya Unified Zigbee](./CHRONOLOGICAL_EVOLUTION.md) — _2026-09-22_
+- [Credits & thanks](./CREDITS.md) — _2026-09-22_
+- [Tuya Unified Zigbee - Developer Notes](./DEV_NOTES.md) — _2026-09-22_
+- [🌌 Universal Tuya Engine Stabilization - Final Handover](./HANDOVER_v7.4.11.md) — _2026-09-22_
+- [🚀 Homey App Store - Déploiement Automatique via GitHub Actions](./HOMEY_DEPLOYMENT.md) — _2026-09-22_
+- [Homey Developer Portal — Cartography (2026-08-05)](./HOMEY_DEV_PORTAL_MAP.md) — _2026-09-22_
+- [✅ HOMEY_PAT Configuré](./HOMEY_PAT_CONFIGURED.md) — _2026-09-22_
+- [🎯 Programme d'amélioration — 500+ items](./IMPROVEMENT_PROGRAM.md) — _2026-09-22_
+- [GitHub Issue Responses - dlnraja/com.tuya.zigbee](./ISSUE_RESPONSES.md) — _2026-09-22_
+- [📊 PR/Issues/Forums/Emails/Dashboard — Diagnostic 2026-07-12 19:45](./JOHAN_DASHBOARD_DIAG_2026-07-12.md) — _2026-09-22_
+- [KNOWN_ISSUES.md - Known Issues & Limitations](./KNOWN_ISSUES.md) — _2026-09-22_
+- [LLM Project Reference](./LLM_REFERENCE.md) — _2026-09-22_
+- [Guide: Extraction de la Local Key Tuya (Mode Hors-Ligne)](./LOCAL_KEY_EXTRACTION.md) — _2026-09-22_
+- [Manufacturer Identification Methods](./MANUFACTURER_IDENTIFICATION.md) — _2026-09-22_
+- [ManufacturerName Research Analysis v5.5.424](./MANUFACTURER_RESEARCH_v5.5.424.md) — _2026-09-22_
+- [📚 Référence Définitive : Évolution Complète des Boutons, Batterie et Architecture](./MASTER_EVOLUTION_REFERENCE.md) — _2026-09-22_
+- [📚 MASTER REFERENCE — Tuya Unified Zigbee (Référence Complète)](./MASTER_REFERENCE.md) — _2026-09-22_
+- [🎯 MASTER_TODO — Plan d'action consolidé 2026-07-10](./MASTER_TODO.md) — _2026-09-22_
+- [MEGA PROMPT WINDSURF AI - Tuya Unified Zigbee](./MEGA_PROMPT_WINDSURF.md) — _2026-09-22_
+- [Module Documentation](./MODULES.md) — _2026-09-22_
+- [Multi-DP Parser Documentation](./MULTI_DP_PARSER.md) — _2026-09-22_
+- [OAuth/API Key Migration Summary (v5.11.125+)](./OAUTH_MIGRATION.md) — _2026-09-22_
+- [PositionInvert Pattern for Cover/Curtain Devices](./POSITION_INVERT_PATTERN.md) — _2026-09-22_
+- [📜 Historique d'Évolution Complète — Tuya Unified Zigbee](./PROJECT_EVOLUTION_HISTORY.md) — _2026-09-22_
+- [Project Status](./PROJECT_STATUS.md) — _2026-09-22_
+- [Non-Standard Protocols & Tuya MCU Deep Dive](./PROTOCOLS_NON_STANDARD.md) — _2026-09-22_
+- [📦 Homey App Publishing Guide](./PUBLISHING_GUIDE.md) — _2026-09-22_
+- [🚀 Automated Publishing via GitHub Actions](./PUBLISH_SETUP.md) — _2026-09-22_
+- [RADAR_FIX.md](./RADAR_FIX.md) — _2026-09-22_
+- [RAW_MODE.md - Raw Data Mode & Debug Reference](./RAW_MODE.md) — _2026-09-22_
+- [Scene Mode Enhancement - v6.0](./SCENE_MODE_RESEARCH.md) — _2026-09-22_
+- [Script Documentation](./SCRIPTS.md) — _2026-09-22_
+- [📚 Index des scripts exécutés — 2026-07-27](./SCRIPT_INDEX_2026-07-27.md) — _2026-09-22_
+- [SDK v3 HOOKS - Diagramme Exact](./SDK3_HOOKS.md) — _2026-09-22_
+- [🚀 SETUP GITHUB ACTIONS - Instructions Complètes](./SETUP_INSTRUCTIONS.md) — _2026-09-22_
+- [🛠️ SHADOW MODE V2.0 — Réécrit pour utiliser l'infrastructure existante](./SHADOW_MODE_V2_UPGRADE.md) — _2026-09-22_
+- [SmartCapability Pattern — P57 Guide](./SMART_CAPABILITY.md) — _2026-09-22_
+- [Time Sync - Technical Documentation](./TIME_SYNC_TECHNICAL.md) — _2026-09-22_
+- [Tuya Cloud App (com.tuya2) - Feature Analysis & Inspiration](./TUYA_CLOUD_APP_INSPIRATION.md) — _2026-09-22_
+- [Tuya Zigbee Time Synchronization Protocol](./TUYA_TIME_SYNC_PROTOCOL.md) — _2026-09-22_
+- [Universal Time Sync Guide - v5.7.50](./UNIVERSAL_TIME_SYNC_GUIDE.md) — _2026-09-22_
+- [User Experience Tracker - Tuya Unified Zigbee](./USER_EXPERIENCE_TRACKER.md) — _2026-09-22_
+- [v6.0 Comprehensive Update Summary](./V6_COMPREHENSIVE_UPDATE.md) — _2026-09-22_
+- [Working Versions Reference](./WORKING_VERSIONS_REFERENCE.md) — _2026-09-22_
+- [Release Notes - v7.0.22 (MAX Local Pro)](./v7_RELEASE_NOTES.md) — _2026-09-22_
 
 ## 🗄️ Candidats à l'archivage (non référencés, > 60 jours)
 
