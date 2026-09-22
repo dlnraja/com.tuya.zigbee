@@ -1,36 +1,53 @@
 {
-  "at": "2026-09-22T00:53:00Z",
-  "source": "Bastien Developer Tools Zigbee (user paste) — networkKey REDACTED forever",
+  "at": "2026-09-22T00:11:00Z",
+  "source": "Bastien Developer Tools Zigbee + SSOT interview map — networkKey REDACTED",
   "channel": 20,
   "panId": "1C41",
   "extPanId": "cf:e2:71:bd:ea:75:bf:eb",
   "coordinatorIeee": "b0:c7:de:ff:fe:56:51:0b",
   "firmware": "9.1.0-0",
   "securityNote": "Never commit Homey Zigbee networkKey. Rotate if pasted in chat.",
-  "nodes": [
-    { "name": "Radiateur Salon", "mfr": "NodOn", "pid": "SIN-4-FP-21", "type": "router", "tx": 1208, "rx": 1212, "ok": true },
-    { "name": "Radiateur Cuisine", "mfr": "NodOn", "pid": "SIN-4-FP-21", "type": "router", "tx": 1314, "rx": 1318, "ok": true },
-    { "name": "Unknown Node", "ieee": "7c:c6:b6:ff:fe:a3:e1:58", "type": "unknown", "tx": 0, "rx": 6, "action": "remove dead node" },
-    { "name": "salon/cuisine", "mfr": "eWeLink", "pid": "CK-TLSR8656-SS5-01(7014)", "type": "enddevice", "tx": 12, "txErr": 4, "driverWanted": "climate_sensor", "virtual": true },
-    { "name": "Eclairage salle de bain", "mfr": "HOBEIAN", "pid": "ZG-301Z", "type": "router", "tx": 5223, "rx": 5329, "clusters": [0,3,4,5,6,1,7,57346,61184,60928,57344], "flood": true },
-    { "name": "Eclairage cuisine", "mfr": "HOBEIAN", "pid": "ZG-301Z", "type": "router", "tx": 5227, "rx": 5353, "flood": true },
-    { "name": "Dressing", "mfr": "HOBEIAN", "pid": "ZG-301Z", "type": "router", "tx": 5217, "rx": 5321, "flood": true },
-    { "name": "Interrupteur table cuisine", "mfr": "HOBEIAN", "pid": "ZG-301Z", "type": "router", "tx": 5233, "rx": 5359, "flood": true },
-    { "name": "Sous sol", "mfr": "_TZ3000_fllyghyj", "pid": "SNZB-02", "type": "enddevice", "tx": 66, "txErr": 20, "driverWanted": "climate_sensor", "virtual": true },
-    { "name": "Chambre principal", "mfr": "HOBEIAN", "pid": "ZG-301Z", "type": "router", "tx": 5218, "rx": 5312, "flood": true },
-    { "name": "chambre principal", "mfr": "_TZ3000_fllyghyj", "pid": "SNZB-02", "type": "enddevice", "tx": 68, "txErr": 24, "driverWanted": "climate_sensor", "virtual": true },
-    { "name": "couloir haut", "mfr": "HOBEIAN", "pid": "ZG-301Z", "type": "router", "tx": 5221, "rx": 5337, "flood": true },
-    { "name": "Unknown Node", "ieee": "a4:c1:38:bb:8f:37:ee:17", "type": "unknown", "tx": 0, "rx": 64, "action": "remove dead node" },
-    { "name": "Eclairage bas couloir", "mfr": "HOBEIAN", "pid": "ZG-301Z", "type": "router", "tx": 5225, "rx": 5335, "flood": true },
-    { "name": "Chambre Ami", "mfr": "HOBEIAN", "pid": "ZG-301Z", "type": "router", "tx": 5217, "rx": 5322, "flood": true },
-    { "name": "Appareil Zigbee", "mfr": "_TZ3000_vsxvaj9i", "pid": "TS0043", "type": "enddevice", "tx": 154, "txErr": 18, "driverWanted": "button_wireless_3", "virtual": true, "eps": 4 },
-    { "name": "Eclairage salon", "mfr": "_TZ3000_ltt60asa", "pid": "TS0004", "type": "router", "tx": 31, "rx": 332, "driverWanted": "switch_4gang", "virtual": true, "eps": 4 }
+  "unknownNodesRecognized": [
+    {
+      "ieee": "7c:c6:b6:ff:fe:a3:e1:58",
+      "devToolsLabel": "Unknown Node",
+      "mfr": "_TZ3000_axpdxqgu",
+      "pid": "TS0041",
+      "driver": "button_wireless_1",
+      "patch": "P2630/P2667",
+      "action": "Remove Unknown → Zigbee Bastien → Wireless Button 1"
+    },
+    {
+      "ieee": "a4:c1:38:bb:8f:37:ee:17",
+      "devToolsLabel": "Unknown Node",
+      "mfr": "_TZ3000_dzwgk7e2",
+      "pid": "TS0042",
+      "driver": "button_wireless_2",
+      "patch": "P2636/P2667",
+      "action": "Remove Unknown → Zigbee Bastien → Wireless Button 2"
+    }
   ],
-  "patches": ["P2663", "P2664", "P2665"],
+  "virtualRePair": [
+    { "name": "Appareil Zigbee", "mfr": "_TZ3000_vsxvaj9i", "pid": "TS0043", "driver": "button_wireless_3" },
+    { "name": "Eclairage salon", "mfr": "_TZ3000_ltt60asa", "pid": "TS0004", "driver": "switch_4gang" },
+    { "name": "Sous sol / chambre principal", "mfr": "_TZ3000_fllyghyj", "pid": "SNZB-02", "driver": "climate_sensor" },
+    { "name": "salon/cuisine", "mfr": "eWeLink", "pid": "CK-TLSR8656-SS5-01(7014)", "driver": "climate_sensor" }
+  ],
+  "hobeian": {
+    "count": 8,
+    "pid": "ZG-301Z",
+    "driver": "switch_1gang",
+    "floodTxApprox": 5200,
+    "whenBroken": "tip ≤1.0.34 blank zb_model_id + electrical reporting minInterval 10 + class socket Energy warnings",
+    "whenWorks": "tip ≥1.0.40 heal fills ZG-301Z, strip power caps, calm mesh, switch_type=state; ≥1.0.42 setClass(light)",
+    "z2m": "exposes switch/countdown/power_on_behavior/switch_type — no metering"
+  },
+  "patches": ["P2663", "P2664", "P2665", "P2666", "P2667"],
   "userActions": [
-    "Update Bastien app ≥1.0.40 then restart app (rewrites HOBEIAN reporting)",
-    "Remove 2× Unknown Node",
-    "Re-pair Virtual: vsxvaj9i→button_wireless_3, ltt60asa→switch_4gang, fllyghyj→climate_sensor, eWeLink→climate_sensor",
-    "Rebuild Flows: Button pressed → lights (not onoff_true)"
+    "Update Bastien app ≥1.0.42 then restart",
+    "Remove 2× Unknown Node then re-pair under Bastien button_wireless_1 / button_wireless_2",
+    "Re-pair 5 Virtual tiles under Bastien drivers",
+    "HOBEIAN lights: Repair or restart so heal runs (pid fill + light class + mesh calm)",
+    "Rebuild Flows: Button pressed → lights"
   ]
 }
