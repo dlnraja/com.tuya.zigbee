@@ -3,16 +3,34 @@
   "why": "Budget truncation can drop observed mfrs from broad drivers (button_wireless_1 had 31→2 pids). Sacred locks stay pin-first.",
   "couples": [
     {
-      "mfr": "_TZE204_ogx8u5z6",
+      "mfr": "_TZE200_p3dbf6qs",
+      "pid": "TS0601",
+      "driverId": "radiator_valve",
+      "note": "P2686 Gmail 9a2f232b AVATTO TRV06_1b/ME167 — Unknown on tip-lag; Z2M TRV06_1b"
+    },
+    {
+      "mfr": "_TZE204_p3dbf6qs",
+      "pid": "TS0601",
+      "driverId": "radiator_valve",
+      "note": "P2686 p3dbf6qs TZE204 sibling sacred-keep"
+    },
+    {
+      "mfr": "_TZE284_p3dbf6qs",
       "pid": "TS0601",
       "driverId": "device_radiator_valve",
-      "note": "P2569 ogx8u5z6 TZE204 sibling"
+      "note": "P2686 p3dbf6qs TZE284 ME167 sibling (compose device_radiator_valve)"
     },
     {
       "mfr": "_TZE284_ogx8u5z6",
       "pid": "TS0601",
       "driverId": "device_radiator_valve",
-      "note": "P2569 Michaelp #2244 ZG253 TRV EF00-only"
+      "note": "P2569 Michaelp #2244 ZG253 TRV — EF00-only interview; was Unknown while compose required OnOff 6"
+    },
+    {
+      "mfr": "_TZE204_ogx8u5z6",
+      "pid": "TS0601",
+      "driverId": "device_radiator_valve",
+      "note": "P2569 ogx8u5z6 TZE204 sibling (Z2M#25199 me167)"
     },
     {
       "mfr": "_TZE284_fodv6bkr",
@@ -289,6 +307,24 @@
       "pid": "TS0601",
       "driverId": "presence_sensor_radar",
       "note": "P2484 gkfbdvyx TZE200 sibling (Z2M same fingerprint group)"
+    },
+    {
+      "mfr": "_TZE284_gkfbdvyx",
+      "pid": "TS0601",
+      "driverId": "presence_sensor_radar",
+      "note": "P2583 gkfbdvyx TZE284 sibling sacred-keep (GH#547)"
+    },
+    {
+      "mfr": "_TZ3000_famkxci2",
+      "pid": "TS0043",
+      "driverId": "button_wireless_3",
+      "note": "P2640 GH#551 — compact/budget near 17k can drop FP → Generic Zigbee (interview EP1 [0,1,6,57344])"
+    },
+    {
+      "mfr": "_TZ3000_e3vhyirx",
+      "pid": "TS130F",
+      "driverId": "wall_curtain_switch",
+      "note": "P2640 GH#552 — LoraTap/Moes SC500ZB curtain wall switch (not smart_knob)"
     },
     {
       "mfr": "HOBEIAN",
@@ -867,12 +903,6 @@
       "note": "P2485 Z2M TS0601_3gang_rkbxtclc; was dimmer_wall_1gang"
     },
     {
-      "mfr": "_TZE284_gkfbdvyx",
-      "pid": "TS0601",
-      "driverId": "presence_sensor_radar",
-      "note": "P2583 gkfbdvyx TZE284 sibling sacred-keep (GH#547)"
-    },
-    {
       "mfr": "_TZ3000_ltt60asa",
       "pid": "TS0004",
       "driverId": "switch_4gang",
@@ -895,18 +925,6 @@
       "pid": "TS0601",
       "driverId": "lcdtemphumidsensor",
       "note": "P2637 Bastien Unknown Node LCD TH clock"
-    },
-    {
-      "mfr": "_TZ3000_famkxci2",
-      "pid": "TS0043",
-      "driverId": "button_wireless_3",
-      "note": "P2640 GH#551 sacred-keep BOTH"
-    },
-    {
-      "mfr": "_TZ3000_e3vhyirx",
-      "pid": "TS130F",
-      "driverId": "wall_curtain_switch",
-      "note": "P2640 GH#552 sacred-keep BOTH"
     }
   ]
 }
