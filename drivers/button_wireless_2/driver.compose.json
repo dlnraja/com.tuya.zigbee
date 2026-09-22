@@ -766,8 +766,8 @@
     "learnmode": {
       "image": "{{driverAssetsPath}}/icon.svg",
       "instruction": {
-        "en": "Zigbee Bastien → Wireless Button 2 (TS0042 / _TZ3000_dzwgk7e2). NOT Homey Zigbee. If Unknown Node ieee a4:c1:38:bb:8f:… — remove then pair here; wake-tap every 2s. Flows: Button pressed → lights.",
-        "fr": "Zigbee Bastien → Bouton sans fil 2 (TS0042 / _TZ3000_dzwgk7e2). PAS Homey Zigbee. Si Unknown Node ieee a4:c1:38:bb:8f:… — supprimer puis appairer; tap toutes les 2 s. Flows: Bouton appuyé → lumières.",
+        "en": "Zigbee Bastien → Wireless Button 2 (TS0042). NOT Homey Zigbee. Wake-tap every 2s while pairing. Homey Flow: Button pressed → lamp — NOT Developer Tools Zigbee channels. Update tip then re-pair if presses were dead/slow.",
+        "fr": "Zigbee Bastien → Bouton sans fil 2 (TS0042). PAS Homey Zigbee. Tap toutes les 2 s a l'appairage. Flow: Bouton appuye → lampe — PAS les canaux Zigbee des outils developpeur. Maj tip puis re-appairer si lent/mort.",
         "nl": "Houd enige knop 5s tot LED knippert. Wireless Button 2 — niet Homey Zigbee / Appareil Zigbee.",
         "de": "Beliebige Taste 5s halten bis LED blinkt. Wireless Button 2 — nicht Homey Zigbee."
       }
