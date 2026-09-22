@@ -3919,5 +3919,8 @@
   },
   "9.0.1183": {
     "en": "Fix random Homey Flows from switch bootstrap reports + TS0042 sticky button profile. Update Test."
+  },
+  "9.0.1184": {
+    "en": "Mesh calm: onOff report floor 1s + skip sleepy group-join (diag burst). Update Test."
   }
 }
