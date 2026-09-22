@@ -1,4 +1,8 @@
 {
+  "1.0.54": {
+    "en": "Boot fix: app no longer crashes when Zigbee driver module load fails (lights/relays dead). Update Bastien Test and restart app.",
+    "fr": "Correctif demarrage: l app ne plante plus si le module Zigbee manque (lumieres/relais morts). Maj Bastien Test et redemarrer l app."
+  },
   "1.0.22": {
     "en": "2-btn remote _TZ3000_dzwgk7e2+TS0042 (was unrecognized; phantom EP3/4 ignored). Update Bastien Test + re-pair.",
     "fr": "Télécommande 2 boutons _TZ3000_dzwgk7e2+TS0042 (non reconnue). Maj Test Bastien + re-appairer."
