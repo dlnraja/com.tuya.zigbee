@@ -1,0 +1,1796 @@
+{
+  "generatedAt": "2026-09-22T10:24:14.993Z",
+  "patch": "P2657",
+  "api": "https://apps-api.athom.com/api/v1",
+  "searchHits": {
+    "tuya": [
+      {
+        "id": "nl.philips.hue",
+        "name": "Philips Hue",
+        "liveVersion": "7.3.14",
+        "testVersion": null
+      },
+      {
+        "id": "com.sonos",
+        "name": "Sonos",
+        "liveVersion": "6.7.8",
+        "testVersion": null
+      },
+      {
+        "id": "com.spotify",
+        "name": "Spotify",
+        "liveVersion": "5.3.0",
+        "testVersion": null
+      },
+      {
+        "id": "com.xiaomi-mi",
+        "name": "Aqara",
+        "liveVersion": "1.16.3",
+        "testVersion": null
+      },
+      {
+        "id": "com.ikea.tradfri",
+        "name": "IKEA Home Smart",
+        "liveVersion": "2.10.4",
+        "testVersion": null
+      },
+      {
+        "id": "com.athom.homeyscript",
+        "name": "HomeyScript",
+        "liveVersion": "3.6.3",
+        "testVersion": null
+      },
+      {
+        "id": "com.fibaro",
+        "name": "Fibaro",
+        "liveVersion": "3.8.18",
+        "testVersion": null
+      },
+      {
+        "id": "com.google.chromecast",
+        "name": "Google Chromecast",
+        "liveVersion": "6.1.5",
+        "testVersion": null
+      },
+      {
+        "id": "cloud.shelly",
+        "name": "Shelly (Legacy)",
+        "liveVersion": "3.65.1",
+        "testVersion": null
+      },
+      {
+        "id": "com.arjankranenburg.virtual",
+        "name": "Virtual Devices",
+        "liveVersion": "1.4.1",
+        "testVersion": null
+      }
+    ],
+    "zigbee": [
+      {
+        "id": "nl.philips.hue",
+        "name": "Philips Hue",
+        "liveVersion": "7.3.14",
+        "testVersion": null
+      },
+      {
+        "id": "com.sonos",
+        "name": "Sonos",
+        "liveVersion": "6.7.8",
+        "testVersion": null
+      },
+      {
+        "id": "com.spotify",
+        "name": "Spotify",
+        "liveVersion": "5.3.0",
+        "testVersion": null
+      },
+      {
+        "id": "com.xiaomi-mi",
+        "name": "Aqara",
+        "liveVersion": "1.16.3",
+        "testVersion": null
+      },
+      {
+        "id": "com.ikea.tradfri",
+        "name": "IKEA Home Smart",
+        "liveVersion": "2.10.4",
+        "testVersion": null
+      },
+      {
+        "id": "com.athom.homeyscript",
+        "name": "HomeyScript",
+        "liveVersion": "3.6.3",
+        "testVersion": null
+      },
+      {
+        "id": "com.fibaro",
+        "name": "Fibaro",
+        "liveVersion": "3.8.18",
+        "testVersion": null
+      },
+      {
+        "id": "com.google.chromecast",
+        "name": "Google Chromecast",
+        "liveVersion": "6.1.5",
+        "testVersion": null
+      },
+      {
+        "id": "cloud.shelly",
+        "name": "Shelly (Legacy)",
+        "liveVersion": "3.65.1",
+        "testVersion": null
+      },
+      {
+        "id": "com.arjankranenburg.virtual",
+        "name": "Virtual Devices",
+        "liveVersion": "1.4.1",
+        "testVersion": null
+      }
+    ],
+    "smartlife": [
+      {
+        "id": "nl.philips.hue",
+        "name": "Philips Hue",
+        "liveVersion": "7.3.14",
+        "testVersion": null
+      },
+      {
+        "id": "com.sonos",
+        "name": "Sonos",
+        "liveVersion": "6.7.8",
+        "testVersion": null
+      },
+      {
+        "id": "com.spotify",
+        "name": "Spotify",
+        "liveVersion": "5.3.0",
+        "testVersion": null
+      },
+      {
+        "id": "com.xiaomi-mi",
+        "name": "Aqara",
+        "liveVersion": "1.16.3",
+        "testVersion": null
+      },
+      {
+        "id": "com.ikea.tradfri",
+        "name": "IKEA Home Smart",
+        "liveVersion": "2.10.4",
+        "testVersion": null
+      },
+      {
+        "id": "com.athom.homeyscript",
+        "name": "HomeyScript",
+        "liveVersion": "3.6.3",
+        "testVersion": null
+      },
+      {
+        "id": "com.fibaro",
+        "name": "Fibaro",
+        "liveVersion": "3.8.18",
+        "testVersion": null
+      },
+      {
+        "id": "com.google.chromecast",
+        "name": "Google Chromecast",
+        "liveVersion": "6.1.5",
+        "testVersion": null
+      },
+      {
+        "id": "cloud.shelly",
+        "name": "Shelly (Legacy)",
+        "liveVersion": "3.65.1",
+        "testVersion": null
+      },
+      {
+        "id": "com.arjankranenburg.virtual",
+        "name": "Virtual Devices",
+        "liveVersion": "1.4.1",
+        "testVersion": null
+      }
+    ],
+    "lidl": [
+      {
+        "id": "nl.philips.hue",
+        "name": "Philips Hue",
+        "liveVersion": "7.3.14",
+        "testVersion": null
+      },
+      {
+        "id": "com.sonos",
+        "name": "Sonos",
+        "liveVersion": "6.7.8",
+        "testVersion": null
+      },
+      {
+        "id": "com.spotify",
+        "name": "Spotify",
+        "liveVersion": "5.3.0",
+        "testVersion": null
+      },
+      {
+        "id": "com.xiaomi-mi",
+        "name": "Aqara",
+        "liveVersion": "1.16.3",
+        "testVersion": null
+      },
+      {
+        "id": "com.ikea.tradfri",
+        "name": "IKEA Home Smart",
+        "liveVersion": "2.10.4",
+        "testVersion": null
+      },
+      {
+        "id": "com.athom.homeyscript",
+        "name": "HomeyScript",
+        "liveVersion": "3.6.3",
+        "testVersion": null
+      },
+      {
+        "id": "com.fibaro",
+        "name": "Fibaro",
+        "liveVersion": "3.8.18",
+        "testVersion": null
+      },
+      {
+        "id": "com.google.chromecast",
+        "name": "Google Chromecast",
+        "liveVersion": "6.1.5",
+        "testVersion": null
+      },
+      {
+        "id": "cloud.shelly",
+        "name": "Shelly (Legacy)",
+        "liveVersion": "3.65.1",
+        "testVersion": null
+      },
+      {
+        "id": "com.arjankranenburg.virtual",
+        "name": "Virtual Devices",
+        "liveVersion": "1.4.1",
+        "testVersion": null
+      }
+    ],
+    "silvercrest": [
+      {
+        "id": "nl.philips.hue",
+        "name": "Philips Hue",
+        "liveVersion": "7.3.14",
+        "testVersion": null
+      },
+      {
+        "id": "com.sonos",
+        "name": "Sonos",
+        "liveVersion": "6.7.8",
+        "testVersion": null
+      },
+      {
+        "id": "com.spotify",
+        "name": "Spotify",
+        "liveVersion": "5.3.0",
+        "testVersion": null
+      },
+      {
+        "id": "com.xiaomi-mi",
+        "name": "Aqara",
+        "liveVersion": "1.16.3",
+        "testVersion": null
+      },
+      {
+        "id": "com.ikea.tradfri",
+        "name": "IKEA Home Smart",
+        "liveVersion": "2.10.4",
+        "testVersion": null
+      },
+      {
+        "id": "com.athom.homeyscript",
+        "name": "HomeyScript",
+        "liveVersion": "3.6.3",
+        "testVersion": null
+      },
+      {
+        "id": "com.fibaro",
+        "name": "Fibaro",
+        "liveVersion": "3.8.18",
+        "testVersion": null
+      },
+      {
+        "id": "com.google.chromecast",
+        "name": "Google Chromecast",
+        "liveVersion": "6.1.5",
+        "testVersion": null
+      },
+      {
+        "id": "cloud.shelly",
+        "name": "Shelly (Legacy)",
+        "liveVersion": "3.65.1",
+        "testVersion": null
+      },
+      {
+        "id": "com.arjankranenburg.virtual",
+        "name": "Virtual Devices",
+        "liveVersion": "1.4.1",
+        "testVersion": null
+      }
+    ],
+    "zemismart": [
+      {
+        "id": "nl.philips.hue",
+        "name": "Philips Hue",
+        "liveVersion": "7.3.14",
+        "testVersion": null
+      },
+      {
+        "id": "com.sonos",
+        "name": "Sonos",
+        "liveVersion": "6.7.8",
+        "testVersion": null
+      },
+      {
+        "id": "com.spotify",
+        "name": "Spotify",
+        "liveVersion": "5.3.0",
+        "testVersion": null
+      },
+      {
+        "id": "com.xiaomi-mi",
+        "name": "Aqara",
+        "liveVersion": "1.16.3",
+        "testVersion": null
+      },
+      {
+        "id": "com.ikea.tradfri",
+        "name": "IKEA Home Smart",
+        "liveVersion": "2.10.4",
+        "testVersion": null
+      },
+      {
+        "id": "com.athom.homeyscript",
+        "name": "HomeyScript",
+        "liveVersion": "3.6.3",
+        "testVersion": null
+      },
+      {
+        "id": "com.fibaro",
+        "name": "Fibaro",
+        "liveVersion": "3.8.18",
+        "testVersion": null
+      },
+      {
+        "id": "com.google.chromecast",
+        "name": "Google Chromecast",
+        "liveVersion": "6.1.5",
+        "testVersion": null
+      },
+      {
+        "id": "cloud.shelly",
+        "name": "Shelly (Legacy)",
+        "liveVersion": "3.65.1",
+        "testVersion": null
+      },
+      {
+        "id": "com.arjankranenburg.virtual",
+        "name": "Virtual Devices",
+        "liveVersion": "1.4.1",
+        "testVersion": null
+      }
+    ],
+    "moes": [
+      {
+        "id": "nl.philips.hue",
+        "name": "Philips Hue",
+        "liveVersion": "7.3.14",
+        "testVersion": null
+      },
+      {
+        "id": "com.sonos",
+        "name": "Sonos",
+        "liveVersion": "6.7.8",
+        "testVersion": null
+      },
+      {
+        "id": "com.spotify",
+        "name": "Spotify",
+        "liveVersion": "5.3.0",
+        "testVersion": null
+      },
+      {
+        "id": "com.xiaomi-mi",
+        "name": "Aqara",
+        "liveVersion": "1.16.3",
+        "testVersion": null
+      },
+      {
+        "id": "com.ikea.tradfri",
+        "name": "IKEA Home Smart",
+        "liveVersion": "2.10.4",
+        "testVersion": null
+      },
+      {
+        "id": "com.athom.homeyscript",
+        "name": "HomeyScript",
+        "liveVersion": "3.6.3",
+        "testVersion": null
+      },
+      {
+        "id": "com.fibaro",
+        "name": "Fibaro",
+        "liveVersion": "3.8.18",
+        "testVersion": null
+      },
+      {
+        "id": "com.google.chromecast",
+        "name": "Google Chromecast",
+        "liveVersion": "6.1.5",
+        "testVersion": null
+      },
+      {
+        "id": "cloud.shelly",
+        "name": "Shelly (Legacy)",
+        "liveVersion": "3.65.1",
+        "testVersion": null
+      },
+      {
+        "id": "com.arjankranenburg.virtual",
+        "name": "Virtual Devices",
+        "liveVersion": "1.4.1",
+        "testVersion": null
+      }
+    ],
+    "nous": [
+      {
+        "id": "nl.philips.hue",
+        "name": "Philips Hue",
+        "liveVersion": "7.3.14",
+        "testVersion": null
+      },
+      {
+        "id": "com.sonos",
+        "name": "Sonos",
+        "liveVersion": "6.7.8",
+        "testVersion": null
+      },
+      {
+        "id": "com.spotify",
+        "name": "Spotify",
+        "liveVersion": "5.3.0",
+        "testVersion": null
+      },
+      {
+        "id": "com.xiaomi-mi",
+        "name": "Aqara",
+        "liveVersion": "1.16.3",
+        "testVersion": null
+      },
+      {
+        "id": "com.ikea.tradfri",
+        "name": "IKEA Home Smart",
+        "liveVersion": "2.10.4",
+        "testVersion": null
+      },
+      {
+        "id": "com.athom.homeyscript",
+        "name": "HomeyScript",
+        "liveVersion": "3.6.3",
+        "testVersion": null
+      },
+      {
+        "id": "com.fibaro",
+        "name": "Fibaro",
+        "liveVersion": "3.8.18",
+        "testVersion": null
+      },
+      {
+        "id": "com.google.chromecast",
+        "name": "Google Chromecast",
+        "liveVersion": "6.1.5",
+        "testVersion": null
+      },
+      {
+        "id": "cloud.shelly",
+        "name": "Shelly (Legacy)",
+        "liveVersion": "3.65.1",
+        "testVersion": null
+      },
+      {
+        "id": "com.arjankranenburg.virtual",
+        "name": "Virtual Devices",
+        "liveVersion": "1.4.1",
+        "testVersion": null
+      }
+    ],
+    "aqara": [
+      {
+        "id": "nl.philips.hue",
+        "name": "Philips Hue",
+        "liveVersion": "7.3.14",
+        "testVersion": null
+      },
+      {
+        "id": "com.sonos",
+        "name": "Sonos",
+        "liveVersion": "6.7.8",
+        "testVersion": null
+      },
+      {
+        "id": "com.spotify",
+        "name": "Spotify",
+        "liveVersion": "5.3.0",
+        "testVersion": null
+      },
+      {
+        "id": "com.xiaomi-mi",
+        "name": "Aqara",
+        "liveVersion": "1.16.3",
+        "testVersion": null
+      },
+      {
+        "id": "com.ikea.tradfri",
+        "name": "IKEA Home Smart",
+        "liveVersion": "2.10.4",
+        "testVersion": null
+      },
+      {
+        "id": "com.athom.homeyscript",
+        "name": "HomeyScript",
+        "liveVersion": "3.6.3",
+        "testVersion": null
+      },
+      {
+        "id": "com.fibaro",
+        "name": "Fibaro",
+        "liveVersion": "3.8.18",
+        "testVersion": null
+      },
+      {
+        "id": "com.google.chromecast",
+        "name": "Google Chromecast",
+        "liveVersion": "6.1.5",
+        "testVersion": null
+      },
+      {
+        "id": "cloud.shelly",
+        "name": "Shelly (Legacy)",
+        "liveVersion": "3.65.1",
+        "testVersion": null
+      },
+      {
+        "id": "com.arjankranenburg.virtual",
+        "name": "Virtual Devices",
+        "liveVersion": "1.4.1",
+        "testVersion": null
+      }
+    ],
+    "sonoff": [
+      {
+        "id": "nl.philips.hue",
+        "name": "Philips Hue",
+        "liveVersion": "7.3.14",
+        "testVersion": null
+      },
+      {
+        "id": "com.sonos",
+        "name": "Sonos",
+        "liveVersion": "6.7.8",
+        "testVersion": null
+      },
+      {
+        "id": "com.spotify",
+        "name": "Spotify",
+        "liveVersion": "5.3.0",
+        "testVersion": null
+      },
+      {
+        "id": "com.xiaomi-mi",
+        "name": "Aqara",
+        "liveVersion": "1.16.3",
+        "testVersion": null
+      },
+      {
+        "id": "com.ikea.tradfri",
+        "name": "IKEA Home Smart",
+        "liveVersion": "2.10.4",
+        "testVersion": null
+      },
+      {
+        "id": "com.athom.homeyscript",
+        "name": "HomeyScript",
+        "liveVersion": "3.6.3",
+        "testVersion": null
+      },
+      {
+        "id": "com.fibaro",
+        "name": "Fibaro",
+        "liveVersion": "3.8.18",
+        "testVersion": null
+      },
+      {
+        "id": "com.google.chromecast",
+        "name": "Google Chromecast",
+        "liveVersion": "6.1.5",
+        "testVersion": null
+      },
+      {
+        "id": "cloud.shelly",
+        "name": "Shelly (Legacy)",
+        "liveVersion": "3.65.1",
+        "testVersion": null
+      },
+      {
+        "id": "com.arjankranenburg.virtual",
+        "name": "Virtual Devices",
+        "liveVersion": "1.4.1",
+        "testVersion": null
+      }
+    ],
+    "ewelink": [
+      {
+        "id": "nl.philips.hue",
+        "name": "Philips Hue",
+        "liveVersion": "7.3.14",
+        "testVersion": null
+      },
+      {
+        "id": "com.sonos",
+        "name": "Sonos",
+        "liveVersion": "6.7.8",
+        "testVersion": null
+      },
+      {
+        "id": "com.spotify",
+        "name": "Spotify",
+        "liveVersion": "5.3.0",
+        "testVersion": null
+      },
+      {
+        "id": "com.xiaomi-mi",
+        "name": "Aqara",
+        "liveVersion": "1.16.3",
+        "testVersion": null
+      },
+      {
+        "id": "com.ikea.tradfri",
+        "name": "IKEA Home Smart",
+        "liveVersion": "2.10.4",
+        "testVersion": null
+      },
+      {
+        "id": "com.athom.homeyscript",
+        "name": "HomeyScript",
+        "liveVersion": "3.6.3",
+        "testVersion": null
+      },
+      {
+        "id": "com.fibaro",
+        "name": "Fibaro",
+        "liveVersion": "3.8.18",
+        "testVersion": null
+      },
+      {
+        "id": "com.google.chromecast",
+        "name": "Google Chromecast",
+        "liveVersion": "6.1.5",
+        "testVersion": null
+      },
+      {
+        "id": "cloud.shelly",
+        "name": "Shelly (Legacy)",
+        "liveVersion": "3.65.1",
+        "testVersion": null
+      },
+      {
+        "id": "com.arjankranenburg.virtual",
+        "name": "Virtual Devices",
+        "liveVersion": "1.4.1",
+        "testVersion": null
+      }
+    ],
+    "matter": [
+      {
+        "id": "nl.philips.hue",
+        "name": "Philips Hue",
+        "liveVersion": "7.3.14",
+        "testVersion": null
+      },
+      {
+        "id": "com.sonos",
+        "name": "Sonos",
+        "liveVersion": "6.7.8",
+        "testVersion": null
+      },
+      {
+        "id": "com.spotify",
+        "name": "Spotify",
+        "liveVersion": "5.3.0",
+        "testVersion": null
+      },
+      {
+        "id": "com.xiaomi-mi",
+        "name": "Aqara",
+        "liveVersion": "1.16.3",
+        "testVersion": null
+      },
+      {
+        "id": "com.ikea.tradfri",
+        "name": "IKEA Home Smart",
+        "liveVersion": "2.10.4",
+        "testVersion": null
+      },
+      {
+        "id": "com.athom.homeyscript",
+        "name": "HomeyScript",
+        "liveVersion": "3.6.3",
+        "testVersion": null
+      },
+      {
+        "id": "com.fibaro",
+        "name": "Fibaro",
+        "liveVersion": "3.8.18",
+        "testVersion": null
+      },
+      {
+        "id": "com.google.chromecast",
+        "name": "Google Chromecast",
+        "liveVersion": "6.1.5",
+        "testVersion": null
+      },
+      {
+        "id": "cloud.shelly",
+        "name": "Shelly (Legacy)",
+        "liveVersion": "3.65.1",
+        "testVersion": null
+      },
+      {
+        "id": "com.arjankranenburg.virtual",
+        "name": "Virtual Devices",
+        "liveVersion": "1.4.1",
+        "testVersion": null
+      }
+    ],
+    "infrared": [
+      {
+        "id": "nl.philips.hue",
+        "name": "Philips Hue",
+        "liveVersion": "7.3.14",
+        "testVersion": null
+      },
+      {
+        "id": "com.sonos",
+        "name": "Sonos",
+        "liveVersion": "6.7.8",
+        "testVersion": null
+      },
+      {
+        "id": "com.spotify",
+        "name": "Spotify",
+        "liveVersion": "5.3.0",
+        "testVersion": null
+      },
+      {
+        "id": "com.xiaomi-mi",
+        "name": "Aqara",
+        "liveVersion": "1.16.3",
+        "testVersion": null
+      },
+      {
+        "id": "com.ikea.tradfri",
+        "name": "IKEA Home Smart",
+        "liveVersion": "2.10.4",
+        "testVersion": null
+      },
+      {
+        "id": "com.athom.homeyscript",
+        "name": "HomeyScript",
+        "liveVersion": "3.6.3",
+        "testVersion": null
+      },
+      {
+        "id": "com.fibaro",
+        "name": "Fibaro",
+        "liveVersion": "3.8.18",
+        "testVersion": null
+      },
+      {
+        "id": "com.google.chromecast",
+        "name": "Google Chromecast",
+        "liveVersion": "6.1.5",
+        "testVersion": null
+      },
+      {
+        "id": "cloud.shelly",
+        "name": "Shelly (Legacy)",
+        "liveVersion": "3.65.1",
+        "testVersion": null
+      },
+      {
+        "id": "com.arjankranenburg.virtual",
+        "name": "Virtual Devices",
+        "liveVersion": "1.4.1",
+        "testVersion": null
+      }
+    ],
+    "tuyalocal": [
+      {
+        "id": "nl.philips.hue",
+        "name": "Philips Hue",
+        "liveVersion": "7.3.14",
+        "testVersion": null
+      },
+      {
+        "id": "com.sonos",
+        "name": "Sonos",
+        "liveVersion": "6.7.8",
+        "testVersion": null
+      },
+      {
+        "id": "com.spotify",
+        "name": "Spotify",
+        "liveVersion": "5.3.0",
+        "testVersion": null
+      },
+      {
+        "id": "com.xiaomi-mi",
+        "name": "Aqara",
+        "liveVersion": "1.16.3",
+        "testVersion": null
+      },
+      {
+        "id": "com.ikea.tradfri",
+        "name": "IKEA Home Smart",
+        "liveVersion": "2.10.4",
+        "testVersion": null
+      },
+      {
+        "id": "com.athom.homeyscript",
+        "name": "HomeyScript",
+        "liveVersion": "3.6.3",
+        "testVersion": null
+      },
+      {
+        "id": "com.fibaro",
+        "name": "Fibaro",
+        "liveVersion": "3.8.18",
+        "testVersion": null
+      },
+      {
+        "id": "com.google.chromecast",
+        "name": "Google Chromecast",
+        "liveVersion": "6.1.5",
+        "testVersion": null
+      },
+      {
+        "id": "cloud.shelly",
+        "name": "Shelly (Legacy)",
+        "liveVersion": "3.65.1",
+        "testVersion": null
+      },
+      {
+        "id": "com.arjankranenburg.virtual",
+        "name": "Virtual Devices",
+        "liveVersion": "1.4.1",
+        "testVersion": null
+      }
+    ],
+    "local tuya": [
+      {
+        "id": "nl.philips.hue",
+        "name": "Philips Hue",
+        "liveVersion": "7.3.14",
+        "testVersion": null
+      },
+      {
+        "id": "com.sonos",
+        "name": "Sonos",
+        "liveVersion": "6.7.8",
+        "testVersion": null
+      },
+      {
+        "id": "com.spotify",
+        "name": "Spotify",
+        "liveVersion": "5.3.0",
+        "testVersion": null
+      },
+      {
+        "id": "com.xiaomi-mi",
+        "name": "Aqara",
+        "liveVersion": "1.16.3",
+        "testVersion": null
+      },
+      {
+        "id": "com.ikea.tradfri",
+        "name": "IKEA Home Smart",
+        "liveVersion": "2.10.4",
+        "testVersion": null
+      },
+      {
+        "id": "com.athom.homeyscript",
+        "name": "HomeyScript",
+        "liveVersion": "3.6.3",
+        "testVersion": null
+      },
+      {
+        "id": "com.fibaro",
+        "name": "Fibaro",
+        "liveVersion": "3.8.18",
+        "testVersion": null
+      },
+      {
+        "id": "com.google.chromecast",
+        "name": "Google Chromecast",
+        "liveVersion": "6.1.5",
+        "testVersion": null
+      },
+      {
+        "id": "cloud.shelly",
+        "name": "Shelly (Legacy)",
+        "liveVersion": "3.65.1",
+        "testVersion": null
+      },
+      {
+        "id": "com.arjankranenburg.virtual",
+        "name": "Virtual Devices",
+        "liveVersion": "1.4.1",
+        "testVersion": null
+      }
+    ],
+    "cloud tuya": [
+      {
+        "id": "nl.philips.hue",
+        "name": "Philips Hue",
+        "liveVersion": "7.3.14",
+        "testVersion": null
+      },
+      {
+        "id": "com.sonos",
+        "name": "Sonos",
+        "liveVersion": "6.7.8",
+        "testVersion": null
+      },
+      {
+        "id": "com.spotify",
+        "name": "Spotify",
+        "liveVersion": "5.3.0",
+        "testVersion": null
+      },
+      {
+        "id": "com.xiaomi-mi",
+        "name": "Aqara",
+        "liveVersion": "1.16.3",
+        "testVersion": null
+      },
+      {
+        "id": "com.ikea.tradfri",
+        "name": "IKEA Home Smart",
+        "liveVersion": "2.10.4",
+        "testVersion": null
+      },
+      {
+        "id": "com.athom.homeyscript",
+        "name": "HomeyScript",
+        "liveVersion": "3.6.3",
+        "testVersion": null
+      },
+      {
+        "id": "com.fibaro",
+        "name": "Fibaro",
+        "liveVersion": "3.8.18",
+        "testVersion": null
+      },
+      {
+        "id": "com.google.chromecast",
+        "name": "Google Chromecast",
+        "liveVersion": "6.1.5",
+        "testVersion": null
+      },
+      {
+        "id": "cloud.shelly",
+        "name": "Shelly (Legacy)",
+        "liveVersion": "3.65.1",
+        "testVersion": null
+      },
+      {
+        "id": "com.arjankranenburg.virtual",
+        "name": "Virtual Devices",
+        "liveVersion": "1.4.1",
+        "testVersion": null
+      }
+    ]
+  },
+  "probes": [
+    {
+      "appId": "cloud.shelly",
+      "ok": true,
+      "liveVersion": "3.65.1",
+      "testVersion": null,
+      "liveBuildId": 365,
+      "testBuildId": null,
+      "name": "Shelly (Legacy)",
+      "author": "Allterco Robotics",
+      "private": false,
+      "category": "appliances",
+      "homepage": "https://shelly.cloud/",
+      "support": "mailto:homey-shelly@drenso.nl",
+      "source": "https://github.com/Drenso/cloud.shelly",
+      "bugs": null,
+      "rating": 4.651162790697675
+    },
+    {
+      "appId": "com.DevelcoProducts",
+      "ok": true,
+      "liveVersion": "2.1.0",
+      "testVersion": null,
+      "liveBuildId": 14,
+      "testBuildId": null,
+      "name": "Develco Products",
+      "author": "Develco Products A/S",
+      "private": false,
+      "category": "appliances",
+      "homepage": "https://www.develcoproducts.com/products/",
+      "support": "mailto:homey@develcoproducts.com",
+      "source": null,
+      "bugs": null,
+      "rating": 1
+    },
+    {
+      "appId": "com.Idinio",
+      "ok": true,
+      "liveVersion": "0.1.2",
+      "testVersion": "0.1.4",
+      "liveBuildId": 10,
+      "testBuildId": 11,
+      "name": "idinio",
+      "author": "Johan Bendz",
+      "private": false,
+      "category": "lights",
+      "homepage": null,
+      "support": null,
+      "source": null,
+      "bugs": null,
+      "rating": 4.4
+    },
+    {
+      "appId": "com.LSES861",
+      "ok": true,
+      "liveVersion": "1.1.6",
+      "testVersion": null,
+      "liveBuildId": 11,
+      "testBuildId": null,
+      "name": "LS Control",
+      "author": "Níco Bray",
+      "private": false,
+      "category": "climate",
+      "homepage": null,
+      "support": null,
+      "source": null,
+      "bugs": null,
+      "rating": null
+    },
+    {
+      "appId": "com.Meian.zigbee",
+      "ok": true,
+      "liveVersion": "0.1.4",
+      "testVersion": null,
+      "liveBuildId": 2,
+      "testBuildId": null,
+      "name": "Meian",
+      "author": "Wim Van der Velden",
+      "private": false,
+      "category": "lights",
+      "homepage": null,
+      "support": "mailto:nedlevw@gmail.com",
+      "source": "https://github.com/WJGvdVelden/MeianSiren",
+      "bugs": "https://github.com/WJGvdVelden/MeianSiren/issues",
+      "rating": null
+    },
+    {
+      "appId": "com.arjankranenburg.virtual",
+      "ok": true,
+      "liveVersion": "1.4.1",
+      "testVersion": null,
+      "liveBuildId": 24,
+      "testBuildId": null,
+      "name": "Virtual Devices",
+      "author": "Arie J. Godschalk",
+      "private": false,
+      "category": "tools",
+      "homepage": null,
+      "support": null,
+      "source": "https://bitbucket.org/QlusterIT/nl.qluster-it.virtualdevices/",
+      "bugs": "https://bitbucket.org/QlusterIT/nl.qluster-it.virtualdevices/issues",
+      "rating": 4.538461538461538
+    },
+    {
+      "appId": "com.arteco",
+      "ok": true,
+      "liveVersion": "1.0.0",
+      "testVersion": "1.0.1",
+      "liveBuildId": 1,
+      "testBuildId": 2,
+      "name": "Arteco",
+      "author": "Philip Østli",
+      "private": false,
+      "category": "climate",
+      "homepage": "https://github.com/philipostli/com.arteco",
+      "support": "https://github.com/philipostli/com.arteco/issues",
+      "source": "https://github.com/philipostli/com.arteco",
+      "bugs": null,
+      "rating": null
+    },
+    {
+      "appId": "com.athom.homeyduino",
+      "ok": true,
+      "liveVersion": "3.1.6",
+      "testVersion": null,
+      "liveBuildId": 14,
+      "testBuildId": null,
+      "name": "Homeyduino",
+      "author": "Athom B.V.",
+      "private": false,
+      "category": "tools",
+      "homepage": "https://github.com/athombv/com.athom.homeyduino",
+      "support": "https://homey.app/support/",
+      "source": null,
+      "bugs": null,
+      "rating": 3.823529411764706
+    },
+    {
+      "appId": "com.athom.homeyscript",
+      "ok": true,
+      "liveVersion": "3.6.3",
+      "testVersion": null,
+      "liveBuildId": 23,
+      "testBuildId": null,
+      "name": "HomeyScript",
+      "author": "Athom B.V.",
+      "private": false,
+      "category": "tools",
+      "homepage": "https://my.homey.app/scripts",
+      "support": "https://homey.app/support/",
+      "source": "https://github.com/athombv/com.athom.homeyscript",
+      "bugs": null,
+      "rating": 4.111111111111111
+    },
+    {
+      "appId": "com.athombv.homeybridge",
+      "ok": false,
+      "status": 404,
+      "error": "app_not_found"
+    },
+    {
+      "appId": "com.athombv.matter",
+      "ok": false,
+      "status": 404,
+      "error": "app_not_found"
+    },
+    {
+      "appId": "com.broadlink",
+      "ok": true,
+      "liveVersion": "3.1.73",
+      "testVersion": null,
+      "liveBuildId": 76,
+      "testBuildId": null,
+      "name": "Broadlink",
+      "author": "Bretislav Kubesa",
+      "private": false,
+      "category": "appliances",
+      "homepage": null,
+      "support": null,
+      "source": "https://github.com/shaarkys/com.broadlink",
+      "bugs": "https://github.com/shaarkys/com.broadlink/issues",
+      "rating": 2.8555555555555556
+    },
+    {
+      "appId": "com.danfoss",
+      "ok": true,
+      "liveVersion": "2.6.3",
+      "testVersion": null,
+      "liveBuildId": 18,
+      "testBuildId": null,
+      "name": "Danfoss",
+      "author": "Athom B.V.",
+      "private": false,
+      "category": "climate",
+      "homepage": null,
+      "support": "https://support.athom.com/hc/en-us/requests/new",
+      "source": null,
+      "bugs": null,
+      "rating": 3.1
+    },
+    {
+      "appId": "com.dlnraja.tuya.zigbee",
+      "ok": true,
+      "liveVersion": null,
+      "testVersion": "9.0.1165",
+      "liveBuildId": null,
+      "testBuildId": 3325,
+      "name": "Universal Tuya",
+      "author": "Dylan Rajasekaram",
+      "private": false,
+      "category": "appliances",
+      "homepage": "https://community.homey.app/t/app-pro-universal-tuya-zigbee-device-app-test/140352",
+      "support": "mailto:dlnraja@gmail.com",
+      "source": "https://github.com/dlnraja/com.tuya.zigbee",
+      "bugs": "https://github.com/dlnraja/com.tuya.zigbee/issues",
+      "rating": null
+    },
+    {
+      "appId": "com.dlnraja.tuya.zigbee.stable",
+      "ok": true,
+      "liveVersion": null,
+      "testVersion": "5.12.294",
+      "liveBuildId": null,
+      "testBuildId": 213,
+      "name": "Tuya Unified (Stable)",
+      "author": "Dylan Rajasekaram",
+      "private": false,
+      "category": "appliances",
+      "homepage": "https://community.homey.app/t/app-pro-universal-tuya-zigbee-device-app-test/140352",
+      "support": "mailto:dlnraja@gmail.com",
+      "source": "https://github.com/dlnraja/com.tuya.zigbee",
+      "bugs": "https://github.com/dlnraja/com.tuya.zigbee/issues",
+      "rating": null
+    },
+    {
+      "appId": "com.eurotronic",
+      "ok": false,
+      "status": 404,
+      "error": "app_not_found"
+    },
+    {
+      "appId": "com.ewelink",
+      "ok": false,
+      "status": 404,
+      "error": "app_not_found"
+    },
+    {
+      "appId": "com.fibaro",
+      "ok": true,
+      "liveVersion": "3.8.18",
+      "testVersion": null,
+      "liveBuildId": 112,
+      "testBuildId": null,
+      "name": "Fibaro",
+      "author": "Athom B.V.",
+      "private": false,
+      "category": "appliances",
+      "homepage": null,
+      "support": "https://homey.app/support/",
+      "source": null,
+      "bugs": null,
+      "rating": 2.824104234527687
+    },
+    {
+      "appId": "com.frient",
+      "ok": true,
+      "liveVersion": "2.8.1",
+      "testVersion": "3.0.0",
+      "liveBuildId": 44,
+      "testBuildId": 45,
+      "name": "frient",
+      "author": "frient A/S",
+      "private": false,
+      "category": "appliances",
+      "homepage": "https://www.frient.com/products/",
+      "support": "mailto:homey@frient.com",
+      "source": null,
+      "bugs": null,
+      "rating": 3.2058823529411766
+    },
+    {
+      "appId": "com.google.chromecast",
+      "ok": true,
+      "liveVersion": "6.1.5",
+      "testVersion": null,
+      "liveBuildId": 22,
+      "testBuildId": null,
+      "name": "Google Chromecast",
+      "author": "Athom B.V.",
+      "private": false,
+      "category": "video",
+      "homepage": null,
+      "support": "https://homey.app/support",
+      "source": null,
+      "bugs": null,
+      "rating": 2.1818181818181817
+    },
+    {
+      "appId": "com.govee",
+      "ok": false,
+      "status": 404,
+      "error": "app_not_found"
+    },
+    {
+      "appId": "com.hejhome.iot",
+      "ok": true,
+      "liveVersion": "1.1.17",
+      "testVersion": null,
+      "liveBuildId": 22,
+      "testBuildId": null,
+      "name": "Hejhome",
+      "author": "GOQUAL Inc.",
+      "private": false,
+      "category": "appliances",
+      "homepage": "https://hej.life",
+      "support": "mailto:service@goqual.com",
+      "source": null,
+      "bugs": null,
+      "rating": null
+    },
+    {
+      "appId": "com.heszi.ledvance-wifi",
+      "ok": true,
+      "liveVersion": "1.1.1",
+      "testVersion": null,
+      "liveBuildId": 14,
+      "testBuildId": null,
+      "name": "SMART+ Wifi",
+      "author": "Andras Heszegi",
+      "private": false,
+      "category": "lights",
+      "homepage": "https://heszi.com",
+      "support": null,
+      "source": "https://github.com/heszegi/com.heszi.ledvance-wifi",
+      "bugs": "https://github.com/heszegi/com.heszi.ledvance-wifi/issues",
+      "rating": null
+    },
+    {
+      "appId": "com.homeyduino",
+      "ok": false,
+      "status": 404,
+      "error": "app_not_found"
+    },
+    {
+      "appId": "com.ht.dlab",
+      "ok": true,
+      "liveVersion": "2.4.7",
+      "testVersion": null,
+      "liveBuildId": 35,
+      "testBuildId": null,
+      "name": "HT Bridge",
+      "author": "HT Access",
+      "private": false,
+      "category": "appliances",
+      "homepage": null,
+      "support": "mailto:shkim@htaccess.co.kr",
+      "source": null,
+      "bugs": null,
+      "rating": null
+    },
+    {
+      "appId": "com.hyundaiht.cloud",
+      "ok": true,
+      "liveVersion": "1.0.5",
+      "testVersion": null,
+      "liveBuildId": 6,
+      "testBuildId": null,
+      "name": "HT Cloud",
+      "author": "hyundai HT",
+      "private": false,
+      "category": "appliances",
+      "homepage": null,
+      "support": "mailto:techaccount@hyundaiht.co.kr",
+      "source": null,
+      "bugs": null,
+      "rating": null
+    },
+    {
+      "appId": "com.ikea.tradfri",
+      "ok": true,
+      "liveVersion": "2.10.4",
+      "testVersion": "2.11.0",
+      "liveBuildId": 116,
+      "testBuildId": 117,
+      "name": "IKEA Home Smart",
+      "author": "Athom B.V.",
+      "private": false,
+      "category": "lights",
+      "homepage": null,
+      "support": "https://homey.app/support/",
+      "source": null,
+      "bugs": null,
+      "rating": 3.171511627906977
+    },
+    {
+      "appId": "com.innr",
+      "ok": true,
+      "liveVersion": "2.1.57",
+      "testVersion": null,
+      "liveBuildId": 94,
+      "testBuildId": null,
+      "name": "INNR",
+      "author": "INNR BV",
+      "private": false,
+      "category": "lights",
+      "homepage": "https://www.innr.com",
+      "support": "mailto:homey@innr.com",
+      "source": null,
+      "bugs": null,
+      "rating": 3.6818181818181817
+    },
+    {
+      "appId": "com.johanbendz.aqara",
+      "ok": false,
+      "status": 404,
+      "error": "app_not_found"
+    },
+    {
+      "appId": "com.ledvance",
+      "ok": false,
+      "status": 404,
+      "error": "app_not_found"
+    },
+    {
+      "appId": "com.lidl",
+      "ok": true,
+      "liveVersion": "0.2.5",
+      "testVersion": null,
+      "liveBuildId": 17,
+      "testBuildId": null,
+      "name": "Lidl Smart Home",
+      "author": "Bortbytt Software",
+      "private": false,
+      "category": "lights",
+      "homepage": null,
+      "support": "mailto:homey@bortbytt.se",
+      "source": "https://github.com/JohanBendz/com.lidl",
+      "bugs": "https://github.com/JohanBendz/com.lidl/issues",
+      "rating": 3.369565217391304
+    },
+    {
+      "appId": "com.nedis",
+      "ok": false,
+      "status": 404,
+      "error": "app_not_found"
+    },
+    {
+      "appId": "com.neo",
+      "ok": true,
+      "liveVersion": "3.0.17",
+      "testVersion": null,
+      "liveBuildId": 41,
+      "testBuildId": null,
+      "name": "NEO Coolcam Z-Wave",
+      "author": "Marco Ruiter",
+      "private": false,
+      "category": "appliances",
+      "homepage": null,
+      "support": "mailto:mruiter@eslaan24.nl",
+      "source": null,
+      "bugs": "https://github.com/mruiter/com.neo/issues",
+      "rating": 4.1525423728813555
+    },
+    {
+      "appId": "com.oskarirauta.owon",
+      "ok": true,
+      "liveVersion": "1.0.1",
+      "testVersion": null,
+      "liveBuildId": 2,
+      "testBuildId": null,
+      "name": "OWON",
+      "author": "Oskari Rauta",
+      "private": false,
+      "category": "climate",
+      "homepage": null,
+      "support": null,
+      "source": "https://github.com/oskarirauta/homey-owon-driver",
+      "bugs": "https://github.com/oskarirauta/homey-owon-driver/issues",
+      "rating": null
+    },
+    {
+      "appId": "com.osram",
+      "ok": false,
+      "status": 404,
+      "error": "app_not_found"
+    },
+    {
+      "appId": "com.philips.hue.zigbee",
+      "ok": true,
+      "liveVersion": "2.1.0",
+      "testVersion": "2.1.1",
+      "liveBuildId": 62,
+      "testBuildId": 63,
+      "name": "Philips Hue, without the bridge",
+      "author": "Bortbytt Software",
+      "private": false,
+      "category": "lights",
+      "homepage": null,
+      "support": "https://github.com/JohanBendz/com.philips.hue.zigbee/issues",
+      "source": "https://github.com/JohanBendz/com.philips.hue.zigbee",
+      "bugs": "https://github.com/JohanBendz/com.philips.hue.zigbee/issues",
+      "rating": 3.670967741935484
+    },
+    {
+      "appId": "com.samsung.smartthings",
+      "ok": false,
+      "status": 404,
+      "error": "app_not_found"
+    },
+    {
+      "appId": "com.shelly",
+      "ok": false,
+      "status": 404,
+      "error": "app_not_found"
+    },
+    {
+      "appId": "com.smartthings",
+      "ok": true,
+      "liveVersion": "4.0.1",
+      "testVersion": null,
+      "liveBuildId": 41,
+      "testBuildId": null,
+      "name": "Samsung SmartThings",
+      "author": "Athom B.V.",
+      "private": false,
+      "category": "appliances",
+      "homepage": null,
+      "support": "https://homey.app/support",
+      "source": "https://github.com/athombv/com.smartthings",
+      "bugs": null,
+      "rating": 1.5
+    },
+    {
+      "appId": "com.sonoff",
+      "ok": false,
+      "status": 404,
+      "error": "app_not_found"
+    },
+    {
+      "appId": "com.sonos",
+      "ok": true,
+      "liveVersion": "6.7.8",
+      "testVersion": null,
+      "liveBuildId": 54,
+      "testBuildId": null,
+      "name": "Sonos",
+      "author": "Athom B.V.",
+      "private": false,
+      "category": "music",
+      "homepage": null,
+      "support": "https://homey.app/support",
+      "source": null,
+      "bugs": null,
+      "rating": 2.84375
+    },
+    {
+      "appId": "com.spotify",
+      "ok": true,
+      "liveVersion": "5.3.0",
+      "testVersion": null,
+      "liveBuildId": 9,
+      "testBuildId": null,
+      "name": "Spotify",
+      "author": "Athom B.V.",
+      "private": false,
+      "category": "music",
+      "homepage": null,
+      "support": "https://homey.app/support",
+      "source": null,
+      "bugs": null,
+      "rating": 2.2222222222222223
+    },
+    {
+      "appId": "com.switchbot",
+      "ok": true,
+      "liveVersion": "2.0.87",
+      "testVersion": "2.0.94",
+      "liveBuildId": 192,
+      "testBuildId": 199,
+      "name": "SwitchBot",
+      "author": "SwitchBot",
+      "private": false,
+      "category": "appliances",
+      "homepage": "https://www.switch-bot.com/",
+      "support": "https://github.com/AdyRock/com.switchbot/issues",
+      "source": "https://github.com/AdyRock/com.switchbot",
+      "bugs": "https://github.com/AdyRock/com.switchbot/issues",
+      "rating": 3.7037037037037037
+    },
+    {
+      "appId": "com.szwest",
+      "ok": true,
+      "liveVersion": "1.0.1",
+      "testVersion": null,
+      "liveBuildId": 2,
+      "testBuildId": null,
+      "name": "MeRGBW",
+      "author": "Sven Serlier",
+      "private": false,
+      "category": "lights",
+      "homepage": null,
+      "support": null,
+      "source": "https://github.com/smarthomesven/homey-mergbw",
+      "bugs": "https://github.com/smarthomesven/homey-mergbw/issues",
+      "rating": null
+    },
+    {
+      "appId": "com.tuya",
+      "ok": true,
+      "liveVersion": "1.4.2",
+      "testVersion": null,
+      "liveBuildId": 29,
+      "testBuildId": null,
+      "name": "Tuya",
+      "author": "Tuya Inc.",
+      "private": true,
+      "category": "appliances",
+      "homepage": null,
+      "support": "https://homey.app/support",
+      "source": "https://github.com/athombv/com.tuya",
+      "bugs": null,
+      "rating": null
+    },
+    {
+      "appId": "com.tuya.cloud",
+      "ok": true,
+      "liveVersion": "1.1.23",
+      "testVersion": "1.1.26",
+      "liveBuildId": 54,
+      "testBuildId": 57,
+      "name": "Tuya cloud",
+      "author": "Jurgen Heine",
+      "private": false,
+      "category": "lights",
+      "homepage": "https://github.com/jurgenheine/com.tuya.cloud/blob/master/README.md",
+      "support": null,
+      "source": "https://github.com/jurgenheine/com.tuya.cloud",
+      "bugs": "https://github.com/jurgenheine/com.tuya.cloud/issues",
+      "rating": 3.323529411764706
+    },
+    {
+      "appId": "com.tuya.zigbee",
+      "ok": true,
+      "liveVersion": "0.2.76",
+      "testVersion": null,
+      "liveBuildId": 126,
+      "testBuildId": null,
+      "name": "Tuya Zigbee",
+      "author": "Bortbytt Software",
+      "private": false,
+      "category": "lights",
+      "homepage": null,
+      "support": "mailto:johan_bendz@hotmail.com",
+      "source": "https://github.com/JohanBendz/com.tuya.zigbee",
+      "bugs": "https://github.com/JohanBendz/com.tuya.zigbee/issues",
+      "rating": 3.0714285714285716
+    },
+    {
+      "appId": "com.tuya2",
+      "ok": true,
+      "liveVersion": "1.5.8",
+      "testVersion": null,
+      "liveBuildId": 32,
+      "testBuildId": null,
+      "name": "Tuya",
+      "author": "Drenso V.O.F.",
+      "private": false,
+      "category": "appliances",
+      "homepage": null,
+      "support": "mailto:homey-tuya@drenso.nl",
+      "source": "https://github.com/Drenso/com.tuya2",
+      "bugs": null,
+      "rating": null
+    },
+    {
+      "appId": "com.tuyalocal",
+      "ok": true,
+      "liveVersion": "1.0.237",
+      "testVersion": null,
+      "liveBuildId": 174,
+      "testBuildId": null,
+      "name": "Tuya Local",
+      "author": "Andi W.",
+      "private": false,
+      "category": "appliances",
+      "homepage": null,
+      "support": null,
+      "source": "https://github.com/andiwirz/com.tuyalocal",
+      "bugs": "https://github.com/andiwirz/com.tuyalocal/issues",
+      "rating": null
+    },
+    {
+      "appId": "com.xiaomi-mi",
+      "ok": true,
+      "liveVersion": "1.16.3",
+      "testVersion": null,
+      "liveBuildId": 68,
+      "testBuildId": null,
+      "name": "Aqara",
+      "author": "Lumi Technology Co., Ltd.",
+      "private": false,
+      "category": "lights",
+      "homepage": null,
+      "support": "https://community.athom.com/t/156",
+      "source": null,
+      "bugs": null,
+      "rating": 4.2492012779552715
+    },
+    {
+      "appId": "de.vevor.weatherstation",
+      "ok": true,
+      "liveVersion": "2.0.4",
+      "testVersion": null,
+      "liveBuildId": 12,
+      "testBuildId": null,
+      "name": "Vevor Weather Station",
+      "author": "René Hanebuth",
+      "private": false,
+      "category": "climate",
+      "homepage": "https://github.com/rhanebuth1-creator/homey-vevor-weatherstation",
+      "support": "https://github.com/rhanebuth1-creator/homey-vevor-weatherstation/issues",
+      "source": null,
+      "bugs": "https://github.com/rhanebuth1-creator/homey-vevor-weatherstation/issues",
+      "rating": null
+    },
+    {
+      "appId": "nl.philips.hue",
+      "ok": true,
+      "liveVersion": "7.3.14",
+      "testVersion": "7.3.16",
+      "liveBuildId": 123,
+      "testBuildId": 125,
+      "name": "Philips Hue",
+      "author": "Athom B.V.",
+      "private": false,
+      "category": "lights",
+      "homepage": null,
+      "support": "https://homey.app/support",
+      "source": null,
+      "bugs": null,
+      "rating": 2.300215982721382
+    },
+    {
+      "appId": "nl.qluster-it.DeviceCapabilities",
+      "ok": true,
+      "liveVersion": "2.17.3",
+      "testVersion": null,
+      "liveBuildId": 384,
+      "testBuildId": null,
+      "name": "Device Capabilities",
+      "author": "Arie J. Godschalk",
+      "private": false,
+      "category": "tools",
+      "homepage": null,
+      "support": null,
+      "source": "https://bitbucket.org/QlusterIT/nl.qluster-it.devicecapabilities/",
+      "bugs": "https://bitbucket.org/QlusterIT/nl.qluster-it.devicecapabilities/issues",
+      "rating": 5
+    },
+    {
+      "appId": "nl.rebtor.tuya",
+      "ok": true,
+      "liveVersion": "3.1.1",
+      "testVersion": null,
+      "liveBuildId": 24,
+      "testBuildId": null,
+      "name": "Tuya",
+      "author": "Rens Brandwijk",
+      "private": true,
+      "category": "lights",
+      "homepage": null,
+      "support": null,
+      "source": null,
+      "bugs": null,
+      "rating": 1.8
+    },
+    {
+      "appId": "no.enertek.app",
+      "ok": true,
+      "liveVersion": "1.0.2",
+      "testVersion": null,
+      "liveBuildId": 3,
+      "testBuildId": null,
+      "name": "Enertek",
+      "author": "Mateusz Sybilla",
+      "private": false,
+      "category": "lights",
+      "homepage": null,
+      "support": "mailto:post@enertek.no",
+      "source": null,
+      "bugs": null,
+      "rating": null
+    }
+  ],
+  "okCount": 42,
+  "failCount": 13,
+  "tuyaRelatedCount": 16
+}
