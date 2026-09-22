@@ -56,8 +56,8 @@
     "learnmode": {
       "image": "{{driverAssetsPath}}/icon.svg",
       "instruction": {
-        "en": "Zigbee Bastien → 1-gang Switch. HOBEIAN ZG-301Z / WHD02: toggle 3×. Update ≥1.0.47 then Repair (countdown+switch_type+light class+mesh calm). NOT Homey Zigbee.",
-        "fr": "Zigbee Bastien → Interrupteur 1 voie. HOBEIAN ZG-301Z / WHD02: 3× on/off. Update ≥1.0.47 puis Réparer (countdown+switch_type+class light+mesh). PAS Homey Zigbee.",
+        "en": "Zigbee Bastien → 1-gang Switch. HOBEIAN ZG-301Z / WHD02: toggle 3×. Update ≥1.0.49 then Repair (countdown+switch_type+light class+mesh calm). NOT Homey Zigbee.",
+        "fr": "Zigbee Bastien → Interrupteur 1 voie. HOBEIAN ZG-301Z / WHD02: 3× on/off. Update ≥1.0.49 puis Réparer (countdown+switch_type+class light+mesh). PAS Homey Zigbee.",
         "nl": "Zigbee Bastien → 1-gang. HOBEIAN: 3× schakelen. Na update ≥1.0.44: Repair.",
         "de": "Zigbee Bastien → 1-fach. HOBEIAN: 3× schalten. Nach Update ≥1.0.44: Repair."
       }
@@ -445,7 +445,10 @@
       "_TZE284_GBAGOILO",
       "_TZ3000_zojh9vz7",
       "_TZ3000_gsat0axs",
-      "heobian"
+      "heobian",
+      "_TZ3000_x3ewpzyr",
+      "HOBEIAN",
+      "Hobeian"
     ],
     "endpoints": {
       "1": {
