@@ -1,13 +1,13 @@
 {
-  "timestamp": "2026-09-21T18:56:34.262Z",
+  "timestamp": "2026-09-22T06:47:16.500Z",
   "gate": "align-mfs-db-intelligent",
   "apply": true,
   "check": false,
-  "changeCount": 4,
+  "changeCount": 6,
   "skippedCount": 63,
-  "highSeverityCount": 4,
+  "highSeverityCount": 6,
   "byAction": {
-    "registry_force": 4
+    "registry_force": 6
   },
   "changes": [
     {
@@ -135,6 +135,47 @@
         ]
       },
       "caseId": "hobeian-zg102zm-vibration-contact"
+    },
+    {
+      "severity": "high",
+      "action": "registry_force",
+      "mfr": "_TZ3000_ltt60asa",
+      "from": {
+        "driverId": "switch_4gang",
+        "modelIds": [
+          "SML-04Z",
+          "TS0004",
+          "TS0004_switch_module"
+        ]
+      },
+      "to": {
+        "driverId": "switch_4gang",
+        "modelIds": [
+          "TS0004",
+          "TS0004_switch_module"
+        ]
+      },
+      "caseId": "p2634-tz3000-ltt60asa-ts0004-switch-4gang"
+    },
+    {
+      "severity": "high",
+      "action": "registry_force",
+      "mfr": "_TZ3000_liygxtcq",
+      "from": {
+        "driverId": "switch_4gang",
+        "modelIds": [
+          "TS0004",
+          "TS0004_switch_module"
+        ]
+      },
+      "to": {
+        "driverId": "switch_4gang",
+        "modelIds": [
+          "TS0004",
+          "TS0004_switch_module"
+        ]
+      },
+      "caseId": "p2634-tz3000-ltt60asa-ts0004-switch-4gang"
     }
   ],
   "skipped": [
@@ -638,6 +679,8 @@
     "registry drift _TZE204_r0jdjrvi → curtain_motor_tilt",
     "registry drift _TZE200_pay2byax → contact_sensor_zigbee",
     "registry drift _TZE204_pay2byax → contact_sensor_zigbee",
-    "registry drift _TZE200_wzk0x7fq → vibration_sensor"
+    "registry drift _TZE200_wzk0x7fq → vibration_sensor",
+    "registry drift _TZ3000_ltt60asa → switch_4gang",
+    "registry drift _TZ3000_liygxtcq → switch_4gang"
   ]
 }
