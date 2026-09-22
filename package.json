@@ -1,6 +1,6 @@
 {
   "name": "com.dlnraja.tuya.zigbee.bastien",
-  "version": "1.0.43",
+  "version": "1.0.44",
   "description": "Private Zigbee house app for Bastien — local Homey Pro only. Learnings promote upstream to Universal Tuya / Stable (never the reverse wholesale).",
   "main": "app.js",
   "scripts": {
@@ -513,7 +513,8 @@
     "check:p2664": "node --test test/critical/p2664-bastien-remote-flow-heal.test.js",
     "check:p2665": "node --test test/critical/p2665-bastien-mesh-deepen-calm.test.js",
     "check:p2666": "node --test test/critical/p2666-bastien-climate-couples.test.js",
-    "check:p2667": "node --test test/critical/p2667-bastien-unknown-recognize.test.js"
+    "check:p2667": "node --test test/critical/p2667-bastien-unknown-recognize.test.js",
+    "check:p2668": "node --test test/critical/p2668-bastien-couple-research.test.js"
   },
   "keywords": [
     "homey",

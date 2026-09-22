@@ -39,15 +39,15 @@
     "driver": "switch_1gang",
     "floodTxApprox": 5200,
     "whenBroken": "tip ≤1.0.34 blank zb_model_id + electrical reporting minInterval 10 + class socket Energy warnings",
-    "whenWorks": "tip ≥1.0.40 heal fills ZG-301Z, strip power caps, calm mesh, switch_type=state; ≥1.0.42 setClass(light)",
+    "whenWorks": "tip ≥1.0.40 heal fills ZG-301Z, strip power caps, calm mesh, switch_type=state; ≥1.0.42 setClass(light); ≥1.0.44 setEnergy approx (Z2M no metering)",
     "z2m": "exposes switch/countdown/power_on_behavior/switch_type — no metering"
   },
-  "patches": ["P2663", "P2664", "P2665", "P2666", "P2667"],
   "userActions": [
-    "Update Bastien app ≥1.0.42 then restart",
-    "Remove 2× Unknown Node then re-pair under Bastien button_wireless_1 / button_wireless_2",
-    "Re-pair 5 Virtual tiles under Bastien drivers",
-    "HOBEIAN lights: Repair or restart so heal runs (pid fill + light class + mesh calm)",
-    "Rebuild Flows: Button pressed → lights"
-  ]
+    "BLOCKING: Apps → Zigbee Bastien → Update ≥1.0.44 → restart",
+    "Repair all 8× HOBEIAN lights (pid fill + light class + energy approx + mesh calm)",
+    "Delete 5 Homey Virtual tiles → re-pair ONLY under Zigbee Bastien",
+    "Remove 2× Unknown Node → button_wireless_1 (axpdxqgu) + button_wireless_2 (dzwgk7e2)",
+    "Rebuild Flows: Button pressed → lights (not Virtual onoff)"
+  ],
+  "patches": ["P2663", "P2664", "P2665", "P2666", "P2667", "P2668"]
 }
