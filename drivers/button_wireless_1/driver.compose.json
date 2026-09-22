@@ -1,7 +1,7 @@
 {
   "name": {
-    "en": "1-Buttons Wireless Controller",
-    "fr": "1-Boutons Contrôleur Sans Fil",
+    "en": "Wireless Button 1 (TS0041)",
+    "fr": "Bouton sans fil 1 (TS0041)",
     "nl": "1-Knoppen Draadloze Controller",
     "de": "1-Tasten Drahtlos-Controller",
     "it": "1-Pulsanti Controller Wireless",
@@ -13,8 +13,7 @@
   "class": "button",
   "capabilities": [
     "button.1",
-    "measure_battery",
-    "alarm_battery"
+    "measure_battery"
   ],
   "capabilitiesOptions": {
     "button.1": {
@@ -24,7 +23,7 @@
       },
       "getable": false,
       "setable": false,
-      "maintenanceAction": true
+      "maintenanceAction": false
     },
     "measure_battery": {
       "title": {
@@ -77,6 +76,10 @@
       "_tz3400_keyjqthh",
       "hobeian",
       "_TZ3000_an5rjiwd",
+      "_TZ3000_tk3s5tyg",
+      "_TZ3000_axpdxqgu",
+      "_TZ3000_itb0omhv",
+      "_TZ3000_x7mej5oc",
       "_TZ3000_mrpevh8p",
       "_TZ3000_4upl1fcj",
       "_TZ3000_0cxtpylt",
@@ -103,26 +106,14 @@
       "_TZ3400_keyjqthh",
       "HOBEIAN",
       "_tz3000_an5rjiwd",
-      "_TZ3000_tk3s5tyg",
       "_tz3000_tk3s5tyg",
-      "_TZ3000_B4AWZGCT",
-      "_TZ3000_5BPEDA8U",
-      "_TZ3000_MRPEVH8P",
-      "_TZ3000_4UPL1FCJ",
-      "_TZ3000_axpdxqgu",
       "_tz3000_axpdxqgu",
-      "_TZ3000_AXPDXQGU",
-      "_tz3000_AXPDXQGU",
-      "_TZ3000_ADNDOLVX",
-      "_tz3000_ADNDOLVX",
-      "_TZ3000_itb0omhv",
       "_tz3000_itb0omhv",
-      "_TZ3000_x7mej5oc",
       "_tz3000_x7mej5oc",
       "Hobeian",
-      "heobian",
-      "Heobian",
+      "_TZ3000_MRPEVH8P",
       "_tz3000_MRPEVH8P",
+      "_TZ3000_4UPL1FCJ",
       "_tz3000_4UPL1FCJ",
       "_TZ3000_0CXTPYLT",
       "_tz3000_0CXTPYLT",
@@ -130,13 +121,17 @@
       "_tz3000_22UGZKME",
       "_TZ3000_4A3L0X0T",
       "_tz3000_4A3L0X0T",
+      "_TZ3000_5BPEDA8U",
       "_tz3000_5BPEDA8U",
       "_TZ3000_6KM7DJCM",
       "_tz3000_6KM7DJCM",
       "_TZ3000_A7B8C9D0",
       "_tz3000_A7B8C9D0",
+      "_TZ3000_ADNDOLVX",
+      "_tz3000_ADNDOLVX",
       "_TZ3000_ARFWFGRE",
       "_tz3000_ARFWFGRE",
+      "_TZ3000_B4AWZGCT",
       "_tz3000_B4AWZGCT",
       "_TZ3000_BSVQRUX3",
       "_tz3000_BSVQRUX3",
@@ -168,10 +163,14 @@
       "_tz3000_AN5RJIWD",
       "_TZ3000_TK3S5TYG",
       "_tz3000_TK3S5TYG",
+      "_TZ3000_AXPDXQGU",
+      "_tz3000_AXPDXQGU",
       "_TZ3000_ITB0OMHV",
       "_tz3000_ITB0OMHV",
       "_TZ3000_X7MEJ5OC",
-      "_tz3000_X7MEJ5OC"
+      "_tz3000_X7MEJ5OC",
+      "heobian",
+      "Heobian"
     ],
     "productId": [
       "3450-L",
@@ -207,7 +206,6 @@
       "WXKG12LM",
       "ZG-101ZD",
       "ZG-101ZL",
-      "ts0041",
       "3450-l",
       "e1743",
       "e1744",
@@ -221,10 +219,17 @@
       "snzb-01",
       "snzb-01p",
       "ts0001",
+      "Ts0001",
+      "ts0041",
+      "Ts0041",
       "ts0041a",
+      "Ts0041a",
       "ts004f",
+      "Ts004f",
       "ts0215a",
+      "Ts0215a",
       "ts0601",
+      "Ts0601",
       "wxkg01lm",
       "wxkg02lm",
       "wxkg03lm",
@@ -240,30 +245,20 @@
         "clusters": [
           0,
           1,
-          3,
-          4,
-          5,
-          6,
-          18,
-          1280,
-          1281,
-          57344,
-          61184
+          6
+        ],
+        "bindings": [
+          6
         ]
       }
     },
     "learnmode": {
       "image": "{{driverAssetsPath}}/icon.svg",
       "instruction": {
-        "en": "Press and hold any button for 5 seconds until the LED blinks rapidly",
-        "fr": "Appuyez et maintenez n'importe quel bouton pendant 5 secondes jusqu'à ce que la LED clignote rapidement",
-        "nl": "Appuyez et maintenez n'importe quel bouton pendant 5 secondes jusqu'à ce que la LED clignote rapidement",
-        "de": "Appuyez et maintenez n'importe quel bouton pendant 5 secondes jusqu'à ce que la LED clignote rapidement",
-        "it": "Appuyez et maintenez n'importe quel bouton pendant 5 secondes jusqu'à ce que la LED clignote rapidement",
-        "sv": "Appuyez et maintenez n'importe quel bouton pendant 5 secondes jusqu'à ce que la LED clignote rapidement",
-        "no": "Appuyez et maintenez n'importe quel bouton pendant 5 secondes jusqu'à ce que la LED clignote rapidement",
-        "es": "Appuyez et maintenez n'importe quel bouton pendant 5 secondes jusqu'à ce que la LED clignote rapidement",
-        "da": "Appuyez et maintenez n'importe quel bouton pendant 5 secondes jusqu'à ce que la LED clignote rapidement"
+        "en": "IMPORTANT: Zigbee Bastien / Universal → Wireless Button 1 (TS0041) — NOT Homey Zigbee. Remove any Unknown Node first. Hold 5–10s until LED blinks; tap every 2s while pairing. After pair: Homey Flow → When this device → « Button 1 pressed » / « Bouton 1 appuyé » (or « Button pressed »). Zigbee Developer Tools channels do nothing on scene remotes.",
+        "fr": "IMPORTANT: Zigbee Bastien / Universal → Bouton sans fil 1 (TS0041) — PAS Homey Zigbee. Supprimez tout nœud Inconnu d'abord. Maintenez 5–10 s puis appuyez toutes les 2 s. Après: Flow Homey → Quand cet appareil → « Bouton 1 appuyé » (ou « Bouton appuyé »). Les canaux Zigbee des outils développeur ne marchent PAS (télécommande scène).",
+        "nl": "Wireless Button 1 (TS0041) — niet Homey Zigbee. Unknown Node eerst verwijderen. Flow: Knop 1 ingedrukt.",
+        "de": "Wireless Button 1 (TS0041) — nicht Homey Zigbee. Unknown Node zuerst entfernen. Flow: Taste 1 gedrückt."
       }
     }
   },

@@ -1,7 +1,7 @@
 {
   "_comment": "Generated from .homeycompose/app.json. STABLE channel — only bug fixes applied.",
   "id": "com.dlnraja.tuya.zigbee.stable",
-  "version": "5.12.304",
+  "version": "5.12.305",
   "compatibility": ">=12.2.0",
   "platforms": [
     "local"
@@ -11531,15 +11531,10 @@
         "learnmode": {
           "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
-            "en": "Press and hold any button for 5 seconds until the LED blinks rapidly",
-            "fr": "Appuyez et maintenez n'importe quel bouton pendant 5 secondes jusqu'à ce que la LED clignote rapidement",
-            "nl": "Appuyez et maintenez n'importe quel bouton pendant 5 secondes jusqu'à ce que la LED clignote rapidement",
-            "de": "Appuyez et maintenez n'importe quel bouton pendant 5 secondes jusqu'à ce que la LED clignote rapidement",
-            "it": "Appuyez et maintenez n'importe quel bouton pendant 5 secondes jusqu'à ce que la LED clignote rapidement",
-            "sv": "Appuyez et maintenez n'importe quel bouton pendant 5 secondes jusqu'à ce que la LED clignote rapidement",
-            "no": "Appuyez et maintenez n'importe quel bouton pendant 5 secondes jusqu'à ce que la LED clignote rapidement",
-            "es": "Appuyez et maintenez n'importe quel bouton pendant 5 secondes jusqu'à ce que la LED clignote rapidement",
-            "da": "Appuyez et maintenez n'importe quel bouton pendant 5 secondes jusqu'à ce que la LED clignote rapidement"
+            "en": "IMPORTANT: Zigbee Bastien / Universal → Wireless Button 1 (TS0041) — NOT Homey Zigbee. Remove any Unknown Node first. Hold 5–10s until LED blinks; tap every 2s while pairing. After pair: Homey Flow → When this device → « Button 1 pressed » / « Bouton 1 appuyé » (or « Button pressed »). Zigbee Developer Tools channels do nothing on scene remotes.",
+            "fr": "IMPORTANT: Zigbee Bastien / Universal → Bouton sans fil 1 (TS0041) — PAS Homey Zigbee. Supprimez tout nœud Inconnu d'abord. Maintenez 5–10 s puis appuyez toutes les 2 s. Après: Flow Homey → Quand cet appareil → « Bouton 1 appuyé » (ou « Bouton appuyé »). Les canaux Zigbee des outils développeur ne marchent PAS (télécommande scène).",
+            "nl": "Wireless Button 1 (TS0041) — niet Homey Zigbee. Unknown Node eerst verwijderen. Flow: Knop 1 ingedrukt.",
+            "de": "Wireless Button 1 (TS0041) — nicht Homey Zigbee. Unknown Node zuerst entfernen. Flow: Taste 1 gedrückt."
           }
         }
       },
