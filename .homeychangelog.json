@@ -3931,5 +3931,8 @@
   },
   "9.0.1187": {
     "en": "P2683 Bastien sticky remotes (Flow Button pressed) + collision prune for publish. Update Test + re-pair remotes under Wireless Button 2/3."
+  },
+  "9.0.1188": {
+    "en": "P2683 collision baseline refresh for Auto-Publish. Bastien remotes: update + re-pair Wireless Button 2/3, use Flow Button pressed."
   }
 }
