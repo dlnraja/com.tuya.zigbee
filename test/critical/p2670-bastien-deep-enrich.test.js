@@ -59,16 +59,18 @@ describe('P2670 Bastien deep enrich coverage', () => {
     assert.ok(mfr.some((m) => /mmkbptmx/i.test(m)));
   });
 
-  it('climate + buttons gain alarm_battery and Bastien pids', () => {
+  it('climate + buttons keep measure_battery (not dual alarm) + Bastien pids', () => {
+    // WHY(P2671d): Homey BATTERY_CAPABILITY_CONFLICT — never measure + alarm together.
     const climate = compose('climate_sensor');
-    assert.ok((climate.capabilities || []).includes('alarm_battery'));
+    assert.ok((climate.capabilities || []).includes('measure_battery'));
+    assert.ok(!(climate.capabilities || []).includes('alarm_battery'));
     assert.ok((climate.zigbee.productId || []).includes('SNZB-02'));
     assert.ok((climate.zigbee.productId || []).some((p) => /7014/.test(p)));
 
     for (const id of ['button_wireless_1', 'button_wireless_2', 'button_wireless_3']) {
       const c = compose(id);
-      assert.ok((c.capabilities || []).includes('alarm_battery'), id);
       assert.ok((c.capabilities || []).includes('measure_battery'), id);
+      assert.ok(!(c.capabilities || []).includes('alarm_battery'), id);
     }
   });
 

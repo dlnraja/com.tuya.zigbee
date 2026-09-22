@@ -151,7 +151,10 @@ function limitCaseForms(manufacturers, maxForms = DEFAULT_MAX_CASE_FORMS) {
     const lower = variants.find((v) => v === v.toLowerCase());
     const upper = variants.find((v) => v === v.toUpperCase());
     const first = variants[0];
-    for (const v of [first, lower, upper, ...variants]) {
+    // WHY(P2671): brand interviews (HOBEIAN) report UPPERCASE — prefer upper then lower.
+    const brandish = upper && lower && !String(first).startsWith('_');
+    const order = brandish ? [upper, lower, first, ...variants] : [first, lower, upper, ...variants];
+    for (const v of order) {
       if (!v || preferred.includes(v)) continue;
       preferred.push(v);
       if (preferred.length >= limit) break;
