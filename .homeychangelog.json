@@ -3876,5 +3876,8 @@
   },
   "9.0.1167": {
     "en": "HOBEIAN recognition: exact case forms + Z2M pids; protect heobian from collision prune."
+  },
+  "9.0.1168": {
+    "en": "Fix publish gate: 7dcddnye dimmer lock vs p2517; HOBEIAN recognition retained."
   }
 }

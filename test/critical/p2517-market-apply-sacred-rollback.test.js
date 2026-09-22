@@ -35,9 +35,13 @@ describe('P2517 market-apply sacred-couple rollback', () => {
     assert.ok((wall.zigbee.manufacturerName || []).some((m) => /l9brjwau/i.test(m)));
   });
 
-  it('7dcddnye not on dimmer_wall; pfbzs1an not on climate', () => {
+  it('7dcddnye on dimmer_wall only; pfbzs1an not on climate', () => {
+    // WHY(P2238/P2671b): 7dcddnye sacred couple is dimmer_wall_1gang — not bulb_dimmable.
+    // p2517 old wording said "not on dimmer" after a bad market-apply; Contre quoi is bleed onto bulb.
     const dim = JSON.parse(read('drivers/dimmer_wall_1gang/driver.compose.json'));
-    assert.ok(!(dim.zigbee.manufacturerName || []).some((m) => /7dcddnye/i.test(m)));
+    assert.ok((dim.zigbee.manufacturerName || []).some((m) => /7dcddnye/i.test(m)));
+    const bulb = JSON.parse(read('drivers/bulb_dimmable/driver.compose.json'));
+    assert.ok(!(bulb.zigbee.manufacturerName || []).some((m) => /7dcddnye/i.test(m)));
     const climate = JSON.parse(read('drivers/climate_sensor/driver.compose.json'));
     assert.ok(!(climate.zigbee.manufacturerName || []).some((m) => /pfbzs1an/i.test(m)));
   });
