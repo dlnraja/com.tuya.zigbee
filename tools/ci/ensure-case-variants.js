@@ -93,7 +93,11 @@ function main() {
 
     let pidDelta = 0;
     let nextPids = j.zigbee.productId;
-    if (Array.isArray(j.zigbee.productId) && (hasHobeian || j.zigbee.productId.some((p) => /^ZG-|^AY|^WHD/i.test(String(p))))) {
+    // WHY(P2677b): do NOT auto-expand productId UPPER/lower fleet-wide — cartesian
+    // collisions explode (HOBEIAN×TS0601 across 16 drivers). Explicit Z2M lower
+    // forms stay in p2671-hobeian-fleet-enrich.js FLEET only.
+    const expandPids = process.argv.includes('--expand-pids');
+    if (expandPids && Array.isArray(j.zigbee.productId) && (hasHobeian || j.zigbee.productId.some((p) => /^ZG-|^AY|^WHD/i.test(String(p))))) {
       const exp = expandProductIds(j.zigbee.productId);
       pidDelta = exp.added;
       nextPids = exp.list;
