@@ -28,6 +28,16 @@ describe('P2670 Bastien deep enrich coverage', () => {
     assert.ok(settings.includes('hobeian_mesh_calm'));
   });
 
+  it('firmwareUpdates OTA mfr exact-match zigbee.manufacturerName (Homey validate)', () => {
+    const c = compose('switch_1gang');
+    const mfr = c.zigbee.manufacturerName || [];
+    for (const u of (c.firmwareUpdates && c.firmwareUpdates.updates) || []) {
+      for (const n of (u.device && u.device.manufacturerName) || []) {
+        assert.ok(mfr.includes(n), `missing exact OTA mfr ${n}`);
+      }
+    }
+  });
+
   it('Hobeian countdown is ZCL not EF00', () => {
     const src = fs.readFileSync(path.join(ROOT, 'lib/tuya/HobeianZg301zHeal.js'), 'utf8');
     assert.ok(src.includes('setHobeianCountdown'));
