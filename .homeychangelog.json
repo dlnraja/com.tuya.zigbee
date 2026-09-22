@@ -1,4 +1,8 @@
 {
+  "9.0.1178": {
+    "en": "P2519: strip false climate host of 8eazvzo6 from app.json (publish gate). Keep P2674/P2676 boot harden.",
+    "fr": "P2519: retire 8eazvzo6 du climate app.json. Garde P2674/P2676."
+  },
   "9.0.1177": {
     "en": "Boot harden: JsonParse OOM under device storm (P2674) + soft-require zigbeedriver (P2676). Update Test.",
     "fr": "Durcissement demarrage: OOM JsonParse (P2674) + soft-require zigbeedriver (P2676). Maj Test."
