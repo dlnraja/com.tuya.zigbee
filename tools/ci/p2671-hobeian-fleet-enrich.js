@@ -24,12 +24,14 @@ const {
   appendExactIdentityForms,
   appendIdentityStrings,
 } = require('../../lib/enrichment/ComplementaryMerge');
+const { brandAthomForms } = require('../../lib/utils/TuyaNormalizer');
 
 const APPLY = process.argv.includes('--apply');
 const rootArg = process.argv.find((a) => a.startsWith('--root='));
 const ROOT = rootArg ? rootArg.slice('--root='.length) : process.cwd();
 
-const HOBEIAN_FORMS = ['HOBEIAN', 'Hobeian', 'hobeian', 'heobian', 'Heobian'];
+// WHY(P2677): SSOT brand Athom forms from TuyaNormalizer (Title + OCR typos)
+const HOBEIAN_FORMS = brandAthomForms('HOBEIAN') || ['HOBEIAN', 'Hobeian', 'hobeian', 'heobian', 'Heobian'];
 
 /** Sacred (mfr forms, pids) → driver — Z2M herdsman 2026-09 verified */
 const FLEET = {

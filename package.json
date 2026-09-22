@@ -1,6 +1,6 @@
 {
   "name": "com.dlnraja.tuya.zigbee",
-  "version": "9.0.1178",
+  "version": "9.0.1180",
   "description": "Tuya Unified Zigbee - Local-first control with AI automation",
   "main": "app.js",
   "scripts": {
@@ -547,9 +547,10 @@
     "check:p2672": "node --test test/critical/p2672-intelligent-energy-adapter.test.js",
     "check:p2674": "node --test test/critical/p2674-boot-jsonparse-oom-harden.test.js",
     "check:p2675": "node tools/ci/p2675-curated-fingerprint-sacred-enrich.js --check && node --test test/critical/p2675-curated-fingerprint-coverage.test.js",
-    "check:p267x": "npm run check:p2672 && npm run check:p2674 && npm run check:p2675 && npm run check:p2676",
+    "check:p267x": "npm run check:p2672 && npm run check:p2674 && npm run check:p2675 && npm run check:p2676 && npm run check:p2677",
     "enrich:p2675": "node tools/ci/p2675-curated-fingerprint-sacred-enrich.js --apply",
-    "check:p2676": "node --test test/critical/p2676-zigbeedriver-boot-harden.test.js"
+    "check:p2676": "node --test test/critical/p2676-zigbeedriver-boot-harden.test.js",
+    "check:p2677": "node --test test/critical/p2677-hobeian-caseless-intelligent.test.js"
   },
   "keywords": [
     "homey",
