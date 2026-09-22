@@ -13,7 +13,8 @@
   "class": "button",
   "capabilities": [
     "button.1",
-    "measure_battery"
+    "measure_battery",
+    "alarm_battery"
   ],
   "capabilitiesOptions": {
     "button.1": {
@@ -40,6 +41,12 @@
       "units": "%",
       "getable": true,
       "preventInsights": false
+    },
+    "alarm_battery": {
+      "title": {
+        "en": "Low battery",
+        "fr": "Batterie faible"
+      }
     }
   },
   "energy": {
@@ -76,48 +83,10 @@
       "_tz3400_keyjqthh",
       "hobeian",
       "_TZ3000_an5rjiwd",
-      "_TZ3000_mrpevh8p",
-      "_TZ3000_4upl1fcj",
-      "_TZ3000_0cxtpylt",
-      "_TZ3000_22ugzkme",
-      "_TZ3000_4a3l0x0t",
-      "_TZ3000_5bpeda8u",
-      "_TZ3000_6km7djcm",
-      "_TZ3000_a7b8c9d0",
-      "_TZ3000_adndolvx",
-      "_TZ3000_arfwfgre",
-      "_TZ3000_b4awzgct",
-      "_TZ3000_bsvqrux3",
-      "_TZ3000_bv1czkkn",
-      "_TZ3000_ebar5p3z",
-      "_TZ3000_ee9s2k4d",
-      "_TZ3000_filhl5b7",
-      "_TZ3000_ke_x0oo3",
-      "_TZ3000_kxaow5ki",
-      "_TZ3000_q68478x7",
-      "_TZ3000_wqcbzbae",
-      "_TZ3000_xkwalgne",
-      "_TZ3000_ztrfrcsu",
-      "_TZ3210_amleyeej",
-      "_TZ3400_keyjqthh",
-      "HOBEIAN",
-      "_tz3000_an5rjiwd",
-      "_TZ3000_B4AWZGCT",
-      "_TZ3000_5BPEDA8U",
-      "_TZ3000_MRPEVH8P",
-      "_TZ3000_4UPL1FCJ",
       "_TZ3000_tk3s5tyg",
       "_TZ3000_axpdxqgu",
-      "_tz3000_axpdxqgu",
-      "_TZ3000_AXPDXQGU",
-      "_tz3000_AXPDXQGU",
-      "_TZ3000_ADNDOLVX",
-      "_tz3000_ADNDOLVX",
-      "_tz3000_tk3s5tyg",
       "_TZ3000_itb0omhv",
-      "_tz3000_itb0omhv",
-      "_TZ3000_x7mej5oc",
-      "_tz3000_x7mej5oc"
+      "_TZ3000_x7mej5oc"
     ],
     "productId": [
       "3450-L",
@@ -140,7 +109,6 @@
       "SNZB-01P",
       "TS0001",
       "ts0041",
-      "TS0041",
       "TS0041A",
       "TS004F",
       "TS0215A",

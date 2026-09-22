@@ -6,6 +6,7 @@ const {
   healHobeianZg301z,
   forceSwitchTypeState,
   clearOnTimeCountdown,
+  setHobeianCountdown,
 } = require('../../lib/tuya/HobeianZg301zHeal');
 const {
   shouldSkipElectricalReporting,
@@ -107,23 +108,34 @@ class Switch1GangDevice extends UnifiedSwitchBase {
     this.log('[SWITCH-1G] ready' + (hobeian301 ? ' (P2632/P2663 HOBEIAN ZG-301Z mesh-calm)' : ''));
   }
 
+  /**
+   * WHY(P2670): HOBEIAN ZG-301Z countdown is ZCL — never EF00 DP7 (noEf00Tx).
+   */
+  async setCountdown(gang, seconds) {
+    if (isHobeianZg301z(this)) {
+      return setHobeianCountdown(this, seconds);
+    }
+    return super.setCountdown(gang, seconds);
+  }
+
   async onSettings({ oldSettings, newSettings, changedKeys }) {
     await super.onSettings({ oldSettings, newSettings, changedKeys });
     for (const k of changedKeys) {
       await handleSonoffEwlSettings(this, k, newSettings[k]);
       if (k === 'switch_mode' && isHobeianZg301z(this)) {
-        const v = newSettings[k];
-        if (v === 'state' || v === 'toggle') {
-          await forceSwitchTypeState(this);
-          if (v === 'toggle') {
-            try { await this._writeE001Attribute?.('switchMode', 0); } catch (_e) { /* soft */ }
-          }
-        }
+        await forceSwitchTypeState(this, newSettings[k] || 'state');
         await clearOnTimeCountdown(this);
+      }
+      if (k === 'countdown_seconds' && isHobeianZg301z(this)) {
+        await setHobeianCountdown(this, newSettings[k]);
+      }
+      if (k === 'hobeian_mesh_calm' && newSettings[k]) {
+        await healHobeianZg301z(this, this.zclNode).catch(() => {});
+        await this.setSettings({ hobeian_mesh_calm: false }).catch(() => {});
       }
       if (k === 'clear_countdown' && newSettings[k]) {
         await clearOnTimeCountdown(this);
-        await this.setSettings({ clear_countdown: false }).catch(() => {});
+        await this.setSettings({ clear_countdown: false, countdown_seconds: 0 }).catch(() => {});
       }
     }
   }
