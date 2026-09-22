@@ -1,6 +1,6 @@
 {
   "name": "com.dlnraja.tuya.zigbee",
-  "version": "9.0.1192",
+  "version": "9.0.1193",
   "description": "Tuya Unified Zigbee - Local-first control with AI automation",
   "main": "app.js",
   "scripts": {
@@ -559,7 +559,8 @@
     "check:p2683": "node --test test/critical/p2683-bastien-vsxvaj9i-dzwgk7e2-ux.test.js",
     "check:p2684": "node --test test/critical/p2684-bastien-ts0041-flow-ux.test.js",
     "check:p2685": "node --test test/critical/p2685-sleepy-remote-battery-conso.test.js",
-    "check:p268x": "npm run check:p2680 && npm run check:p2681 && npm run check:p2682 && npm run check:p2683 && npm run check:p2684 && npm run check:p2685",
+    "check:p2686": "node --test test/critical/p2686-diag-l99-hold-release-trv.test.js",
+    "check:p268x": "npm run check:p2680 && npm run check:p2681 && npm run check:p2682 && npm run check:p2683 && npm run check:p2684 && npm run check:p2685 && npm run check:p2686",
     "build:fp-shards": "node tools/ci/build-fingerprint-shards.js"
   },
   "keywords": [
