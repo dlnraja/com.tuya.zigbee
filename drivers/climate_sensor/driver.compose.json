@@ -11,7 +11,8 @@
     "measure_humidity",
     "measure_battery",
     "measure_voltage",
-    "button.1"
+    "button.1",
+    "alarm_battery"
   ],
   "energy": {
     "batteries": [
