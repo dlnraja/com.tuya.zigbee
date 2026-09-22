@@ -24,10 +24,11 @@
     {
       "mfr": "_TZ3000_kfu8zapd",
       "pid": "TS0044",
-      "driver": "scene_switch_4",
+      "driver": "button_wireless_4",
       "confidence": 98,
       "applySafe": true,
-      "sources": ["forum T150690", "LOCKED_OK"],
+      "sources": ["forum T150690", "p2236 misattribution", "sacred-keep"],
+      "note": "Moes 4-btn — NEVER scene_switch_4 (forbid p2236)",
       "expectedInterview": ["zb_manufacturer_name", "zb_model_id"]
     },
     {
@@ -51,11 +52,11 @@
     {
       "mfr": "_TZ3000_wkai4ga5",
       "pid": "TS0044",
-      "driver": "button_wireless_4",
+      "driver": "scene_switch_4",
       "confidence": 95,
       "applySafe": true,
-      "sources": ["forum interview TS0044", "LOCKED_OK"],
-      "note": "TS0042 sibling NOT invent — NEED_INTERVIEW if user only has TS0042 claim",
+      "sources": ["p2328 misattribution", "sacred-keep P2353 SunBeech"],
+      "note": "TS0044 scene — NEVER button_wireless_4; TS0042 sibling → button_wireless_2 only with interview",
       "expectedInterview": ["zb_manufacturer_name", "zb_model_id"]
     }
   ]
