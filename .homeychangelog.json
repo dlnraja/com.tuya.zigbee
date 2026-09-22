@@ -3822,5 +3822,8 @@
   },
   "1.0.48": {
     "en": "Fix TS0041 pair lock + P2670 deep enrich (countdown, WHD02, alarm_battery)."
+  },
+  "1.0.49": {
+    "en": "Publish fix: OTA manufacturerName exact case + P2670 deep enrich (HOBEIAN countdown/WHD02)."
   }
 }
