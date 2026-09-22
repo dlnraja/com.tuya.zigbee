@@ -3916,5 +3916,8 @@
   },
   "9.0.1182": {
     "en": "Dynamic fingerprint shards + Buffer JSON.parse (OOM harden)."
+  },
+  "9.0.1183": {
+    "en": "Fix random Homey Flows from switch bootstrap reports + TS0042 sticky button profile. Update Test."
   }
 }
