@@ -3913,5 +3913,8 @@
   },
   "9.0.1176": {
     "en": "Publish tip: drop dual alarm_battery; intelligent energy + HOBEIAN locks."
+  },
+  "9.0.1182": {
+    "en": "Dynamic fingerprint shards + Buffer JSON.parse (OOM harden)."
   }
 }
