@@ -11,7 +11,8 @@
     "measure_humidity",
     "measure_battery",
     "measure_voltage",
-    "button.1"
+    "button.1",
+    "alarm_battery"
   ],
   "energy": {
     "batteries": [
@@ -2169,7 +2170,8 @@
       "ewelink",
       "EWELINK",
       "heobian",
-      "Heobian"
+      "Heobian",
+      "_TZ3000_fllyghyj"
     ],
     "productId": [
       "ZTH13-3.0",
@@ -2238,7 +2240,8 @@
       "ZP-301Z",
       "CK-TLSR8656-SS5-02(7014)",
       "ZG-227ZH",
-      "ZG-227ZP"
+      "ZG-227ZP",
+      "RHK08"
     ],
     "endpoints": {
       "1": {

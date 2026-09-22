@@ -7920,6 +7920,55 @@
       "forbidMode": "couple",
       "notes": "P2639: phantom 4-EP firmware class. Contre quoi: pairing as 4-gang / inventing onoff switches.",
       "enrichedAt": "2026-09-20"
+    },
+    {
+      "id": "p2644-4d4e1684-ts0043-not-wall-remote",
+      "manufacturerName": [
+        "_TZ3000_vsxvaj9i",
+        "_tz3000_vsxvaj9i"
+      ],
+      "productId": [
+        "TS0043"
+      ],
+      "correctDriver": "button_wireless_3",
+      "forbidDrivers": [
+        "remote_button_wireless_wall",
+        "switch_1gang",
+        "switch_3gang",
+        "wall_switch_3gang_1way"
+      ],
+      "notes": "P2644/4d4e1684: Bastien 3ch silent in diag while tip 1.0.14. Wall remote had TS0043 pid but only button.1 — prune wall to TS0041. Re-pair as button_wireless_3.",
+      "source": "gmail-diag-4d4e1684",
+      "dualApp": "BOTH"
+    },
+    {
+      "id": "p2666-tz3000-fllyghyj-snzb02-climate-sensor",
+      "mfr": [
+        "_TZ3000_fllyghyj",
+        "_tz3000_fllyghyj",
+        "_TZ3000_FLLYGHYJ"
+      ],
+      "productId": [
+        "SNZB-02",
+        "SNZB-02B",
+        "SNZB-02D",
+        "SNZB-02P",
+        "SNZB-02M",
+        "SNZB-02LD",
+        "SNZB-02DR2",
+        "SNZB-02WD",
+        "TS0201",
+        "SNTZ003"
+      ],
+      "canonicalDriver": "climate_sensor",
+      "forbiddenDrivers": [
+        "temphumidsensor3",
+        "sensor_climate_temphumidsensor",
+        "climate_sensor_energy",
+        "generic_diy",
+        "radiator_valve"
+      ],
+      "notes": "P2666 Bastien live: _TZ3000_fllyghyj+SNZB-02 must pair climate_sensor not temphumidsensor3 / Homey Virtual"
     }
   ],
   "entries": {
