@@ -677,6 +677,11 @@ try {
           delete d.zigbee.productId;
           stripped++;
         }
+        // WHY(P2651): empty `zigbee: {}` fails Athom publish validate on WiFi drivers
+        if (typeof d.zigbee === 'object' && Object.keys(d.zigbee).length === 0) {
+          delete d.zigbee;
+          stripped++;
+        }
       }
     }
     if (stripped > 0) {

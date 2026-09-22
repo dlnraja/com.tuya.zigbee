@@ -1919,5 +1919,8 @@
   },
   "5.12.296": {
     "en": "Intelligent dynamic energy: metered/approximate/battery adapts per device (P2672)."
+  },
+  "5.12.298": {
+    "en": "Fixed WiFi publish validate (drop empty zigbee stubs) + HOBEIAN caseless Athom forms."
   }
 }
