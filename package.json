@@ -553,6 +553,7 @@
     "check:p2677": "node --test test/critical/p2677-hobeian-caseless-intelligent.test.js",
     "check:p2678": "node tools/ci/build-fingerprint-shards.js --check && node --test test/critical/p2678-dynamic-jsonparse-shards.test.js",
     "check:p2679": "node --test test/critical/p2679-kfu8-wkai-sacred-couples.test.js",
+    "check:p2680": "node --test test/critical/p2680-remotes-lights-sensors-fleet.test.js",
     "build:fp-shards": "node tools/ci/build-fingerprint-shards.js"
   },
   "keywords": [
