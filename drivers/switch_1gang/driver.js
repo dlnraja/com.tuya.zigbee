@@ -106,6 +106,72 @@ async onInit() {
     } catch (err) { if (this.developerDebugMode) { this.error(`Action switch_1gang_set_countdown: ${err.message}`); } }
 
     try {
+      const card = this.homey.flow.getActionCard('switch_1gang_set_switch_type');
+      if (card) {
+        card.registerRunListener(async (args) => {
+          if (!args.device) return false;
+          const { forceSwitchTypeState, isHobeianZg301z } = require('../../lib/tuya/HobeianZg301zHeal');
+          const type = args.type || 'state';
+          await args.device.setSettings?.({ switch_mode: type }).catch(() => {});
+          if (isHobeianZg301z(args.device) || typeof forceSwitchTypeState === 'function') {
+            await forceSwitchTypeState(args.device, type).catch(() => {});
+          }
+          return true;
+        });
+      }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Action switch_1gang_set_switch_type: ${err.message}`); } }
+
+    try {
+      const card = this.homey.flow.getActionCard('switch_1gang_clear_countdown');
+      if (card) {
+        card.registerRunListener(async (args) => {
+          if (!args.device) return false;
+          const { clearOnTimeCountdown, setHobeianCountdown, isHobeianZg301z } = require('../../lib/tuya/HobeianZg301zHeal');
+          if (isHobeianZg301z(args.device)) {
+            await setHobeianCountdown(args.device, 0).catch(() => {});
+          } else {
+            await clearOnTimeCountdown(args.device).catch(() => {});
+          }
+          await args.device.setSettings?.({ countdown_seconds: 0 }).catch(() => {});
+          return true;
+        });
+      }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Action switch_1gang_clear_countdown: ${err.message}`); } }
+
+    try {
+      const card = this.homey.flow.getActionCard('switch_1gang_set_switch_type');
+      if (card) {
+        card.registerRunListener(async (args) => {
+          if (!args.device) return false;
+          const { forceSwitchTypeState, isHobeianZg301z } = require('../../lib/tuya/HobeianZg301zHeal');
+          const type = args.type || 'state';
+          await args.device.setSettings?.({ switch_mode: type }).catch(() => {});
+          if (isHobeianZg301z(args.device) || typeof forceSwitchTypeState === 'function') {
+            await forceSwitchTypeState(args.device, type).catch(() => {});
+          }
+          return true;
+        });
+      }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Action switch_1gang_set_switch_type: ${err.message}`); } }
+
+    try {
+      const card = this.homey.flow.getActionCard('switch_1gang_clear_countdown');
+      if (card) {
+        card.registerRunListener(async (args) => {
+          if (!args.device) return false;
+          const { clearOnTimeCountdown, setHobeianCountdown, isHobeianZg301z } = require('../../lib/tuya/HobeianZg301zHeal');
+          if (isHobeianZg301z(args.device)) {
+            await setHobeianCountdown(args.device, 0).catch(() => {});
+          } else {
+            await clearOnTimeCountdown(args.device).catch(() => {});
+          }
+          await args.device.setSettings?.({ countdown_seconds: 0 }).catch(() => {});
+          return true;
+        });
+      }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Action switch_1gang_clear_countdown: ${err.message}`); } }
+
+    try {
       const card = this.homey.flow.getActionCard('switch_1gang_set_child_lock');
       if (card) {
         card.registerRunListener(async (args) => {
