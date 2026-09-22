@@ -1,10 +1,10 @@
 {
-  "timestamp": "2026-09-17T01:31:16.743Z",
+  "timestamp": "2026-09-22T19:18:14.939Z",
   "gate": "align-mfs-db-intelligent",
   "apply": false,
   "check": true,
   "changeCount": 0,
-  "skippedCount": 62,
+  "skippedCount": 140,
   "highSeverityCount": 0,
   "byAction": {},
   "changes": [],
@@ -48,6 +48,60 @@
       "reason": "registry_driver_missing",
       "caseId": "p2517-krwtzhfd-ts004f-not-leak",
       "canon": null
+    },
+    {
+      "reason": "registry_driver_missing",
+      "caseId": "p2605-nkjintbl-tze200-not-switch2gang-not-btn-plug",
+      "canon": null
+    },
+    {
+      "reason": "registry_empty_mfr",
+      "caseId": "z2m-o4mkahkc-ts0202-motion",
+      "canon": "motion_sensor"
+    },
+    {
+      "reason": "registry_empty_mfr",
+      "caseId": "z2m-ksz749x8-ts0601-climate",
+      "canon": "climate_sensor"
+    },
+    {
+      "reason": "registry_empty_mfr",
+      "caseId": "z2m-ksz749x8-tze204-ts0601-climate",
+      "canon": "climate_sensor"
+    },
+    {
+      "reason": "registry_empty_mfr",
+      "caseId": "p2630-axpdxqgu-ts0041-interview-clusters",
+      "canon": "button_wireless_1"
+    },
+    {
+      "reason": "registry_empty_mfr",
+      "caseId": "p2631-ewelink-7014-climate-only-mesh",
+      "canon": "climate_sensor"
+    },
+    {
+      "reason": "registry_empty_mfr",
+      "caseId": "p2633-adndolvx-ts0041-phantom-ep-firmware",
+      "canon": "button_wireless_1"
+    },
+    {
+      "reason": "registry_empty_mfr",
+      "caseId": "p2632-hobeian-zg301z-countdown-auto-off",
+      "canon": "switch_1gang"
+    },
+    {
+      "reason": "registry_empty_mfr",
+      "caseId": "p2638-axpdxqgu-z2m25720-zha-crossref",
+      "canon": "button_wireless_1"
+    },
+    {
+      "reason": "registry_empty_mfr",
+      "caseId": "p2639-ts0041-phantom-ep-siblings",
+      "canon": "button_wireless_1"
+    },
+    {
+      "reason": "registry_empty_mfr",
+      "caseId": "p2644-4d4e1684-ts0043-not-wall-remote"
     },
     {
       "reason": "registry_oem_multi_canon",
@@ -266,11 +320,6 @@
     },
     {
       "reason": "unclaimed_no_compose",
-      "mfr": "_TYZB01_A476RAQ2",
-      "curated": "lcdtemphumidsensor"
-    },
-    {
-      "reason": "unclaimed_no_compose",
       "mfr": "_TYZB01_CBIEZPDS",
       "curated": "lcdtemphumidsensor_2"
     },
@@ -283,26 +332,6 @@
       "reason": "unclaimed_no_compose",
       "mfr": "_TYZB01_KVWJUJY9",
       "curated": "lcdtemphumidluxsensor"
-    },
-    {
-      "reason": "unclaimed_no_compose",
-      "mfr": "_TZE200_DV8ABRRZ",
-      "curated": "device_radiator_valve"
-    },
-    {
-      "reason": "unclaimed_no_compose",
-      "mfr": "_TZE200_RTRMFADK",
-      "curated": "device_radiator_valve"
-    },
-    {
-      "reason": "unclaimed_no_compose",
-      "mfr": "_TYST11_czk78ptr",
-      "curated": "device_radiator_valve"
-    },
-    {
-      "reason": "unclaimed_no_compose",
-      "mfr": "_TYST11_ps5v5jor",
-      "curated": "device_radiator_valve"
     },
     {
       "reason": "unclaimed_no_compose",
@@ -324,7 +353,8 @@
       "curated": "doorwindowsensor",
       "claimers": [
         "contact_sensor",
-        "hybrid_fan_sensor"
+        "hybrid_fan_sensor",
+        "temphumidsensor"
       ]
     },
     {
@@ -333,7 +363,8 @@
       "curated": "doorwindowsensor",
       "claimers": [
         "contact_sensor",
-        "hybrid_fan_sensor"
+        "hybrid_fan_sensor",
+        "temphumidsensor"
       ]
     },
     {
@@ -381,6 +412,32 @@
     },
     {
       "reason": "pair_conflict_ambiguous",
+      "mfr": "_TZ3000_iystcadi",
+      "curated": "led_controller_cct",
+      "foreign": [
+        "led_controller_dimmable",
+        "led_controller_rgb"
+      ],
+      "modelIds": [
+        "TRI-C1ZR",
+        "TRI-K1ZR",
+        "TS0501B",
+        "TS0503",
+        "TS0504",
+        "TS0601_led"
+      ]
+    },
+    {
+      "reason": "unclaimed_multi",
+      "mfr": "_TZ3000_iystcadi",
+      "curated": "led_controller_cct",
+      "claimers": [
+        "led_controller_dimmable",
+        "led_controller_rgb"
+      ]
+    },
+    {
+      "reason": "pair_conflict_ambiguous",
       "mfr": "_tz3210_4ubylghk",
       "curated": "rgb_led_strip",
       "foreign": [
@@ -413,18 +470,18 @@
     },
     {
       "reason": "unclaimed_no_compose",
-      "mfr": "_TYZB02_KEYJQTHH",
-      "curated": "smart_button_switch"
-    },
-    {
-      "reason": "unclaimed_no_compose",
       "mfr": "_TZE204_pisltm67",
       "curated": "light_sensor_outdoor"
     },
     {
       "reason": "unclaimed_no_compose",
-      "mfr": "_tz3210_raqjcxo5",
-      "curated": "bulb_rgb"
+      "mfr": "_tz3000_8nyaanzb",
+      "curated": "plug_energy_monitor"
+    },
+    {
+      "reason": "unclaimed_no_compose",
+      "mfr": "_tz3000_iy2c3n6p",
+      "curated": "plug_energy_monitor"
     },
     {
       "reason": "unclaimed_no_compose",
@@ -450,6 +507,56 @@
       "reason": "unclaimed_no_compose",
       "mfr": "---_tze200_3towulqd---",
       "curated": "motion_sensor_2"
+    },
+    {
+      "reason": "unclaimed_no_compose",
+      "mfr": "_tze204_aaeasoll",
+      "curated": "light_sensor_outdoor"
+    },
+    {
+      "reason": "unclaimed_no_compose",
+      "mfr": "_tze200_aaeasoll",
+      "curated": "light_sensor_outdoor"
+    },
+    {
+      "reason": "unclaimed_no_compose",
+      "mfr": "_tze204_f91miyhj",
+      "curated": "plug_energy_monitor"
+    },
+    {
+      "reason": "unclaimed_no_compose",
+      "mfr": "_tze284_f91miyhj",
+      "curated": "plug_energy_monitor"
+    },
+    {
+      "reason": "unclaimed_no_compose",
+      "mfr": "_tz3008_tary5dvv",
+      "curated": "plug_energy_monitor"
+    },
+    {
+      "reason": "unclaimed_no_compose",
+      "mfr": "_tz3210_iooniers",
+      "curated": "plug_energy_monitor"
+    },
+    {
+      "reason": "unclaimed_no_compose",
+      "mfr": "_tze200_yensya2c",
+      "curated": "presence_sensor_ceiling"
+    },
+    {
+      "reason": "unclaimed_no_compose",
+      "mfr": "_tze284_yensya2c",
+      "curated": "presence_sensor_ceiling"
+    },
+    {
+      "reason": "unclaimed_no_compose",
+      "mfr": "_tze204_ne4pikwm",
+      "curated": "radiator_valve"
+    },
+    {
+      "reason": "unclaimed_no_compose",
+      "mfr": "_tze284_yojqa8xn",
+      "curated": "sensor_gas_presence"
     }
   ],
   "highSeverity": []
