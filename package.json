@@ -1,6 +1,6 @@
 {
   "name": "com.dlnraja.tuya.zigbee",
-  "version": "9.0.1170",
+  "version": "9.0.1171",
   "description": "Tuya Unified Zigbee - Local-first control with AI automation",
   "main": "app.js",
   "scripts": {
@@ -543,7 +543,8 @@
     "check:p2668": "node --test test/critical/p2668-bastien-couple-research.test.js",
     "check:p2669": "node --test test/critical/p2669-bastien-user-action-checklist.test.js",
     "check:p2670": "node --test test/critical/p2670-bastien-deep-enrich.test.js",
-    "check:p2671": "node --test test/critical/p2671-hobeian-fleet-recognition.test.js"
+    "check:p2671": "node --test test/critical/p2671-hobeian-fleet-recognition.test.js",
+    "check:p2672": "node --test test/critical/p2672-intelligent-energy-adapter.test.js"
   },
   "keywords": [
     "homey",
