@@ -3852,5 +3852,8 @@
   },
   "1.0.57": {
     "en": "HOBEIAN caseless collision harden + prevent empty WiFi zigbee stubs on promote."
+  },
+  "1.0.58": {
+    "en": "Dynamic fingerprint shards + Buffer JSON.parse (OOM harden P2678)."
   }
 }
