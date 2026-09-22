@@ -60,6 +60,26 @@ describe('P2669 Bastien user action checklist', () => {
     assert.ok(out.includes('Warnings : 0'), out);
   });
 
+  it('live Bastien couples present in mfs_db (case forms)', () => {
+    const mfs = JSON.parse(fs.readFileSync(path.join(ROOT, 'data/mfs_db.json'), 'utf8'));
+    const need = [
+      ['HOBEIAN', 'ZG-301Z'],
+      ['Hobeian', 'ZG-301Z'],
+      ['_TZ3000_fllyghyj', 'SNZB-02'],
+      ['eWeLink', 'CK-TLSR8656-SS5-01(7014)'],
+      ['_TZ3000_vsxvaj9i', 'TS0043'],
+      ['_TZ3000_ltt60asa', 'TS0004'],
+      ['_TZ3000_axpdxqgu', 'TS0041'],
+      ['_TZ3000_dzwgk7e2', 'TS0042'],
+    ];
+    for (const [mfr, pid] of need) {
+      const entry = mfs[mfr] || Object.entries(mfs).find(([k]) => k.toLowerCase() === mfr.toLowerCase())?.[1];
+      assert.ok(entry, `mfs missing ${mfr}`);
+      const models = entry.modelIds || [];
+      assert.ok(models.some((p) => String(p).toLowerCase() === pid.toLowerCase()), `${mfr} missing pid ${pid}`);
+    }
+  });
+
   it('npm check:p2669 wired', () => {
     const pkg = JSON.parse(fs.readFileSync(path.join(ROOT, 'package.json'), 'utf8'));
     assert.ok(pkg.scripts['check:p2669']);
