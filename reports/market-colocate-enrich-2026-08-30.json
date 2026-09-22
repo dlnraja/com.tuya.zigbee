@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-21T18:56:09.870Z",
+  "generatedAt": "2026-09-22T06:46:45.906Z",
   "mode": "APPLY",
   "policy": "P2319 enrichment-first colocate — never strip other drivers",
   "applied": [],
@@ -62,6 +62,13 @@
       "pid": "TS0207",
       "reason": "p2520-would-degrade",
       "driver": "water_leak_sensor"
+    },
+    {
+      "mfr": "_TZ3000_lbtpiody",
+      "pid": "TS0201",
+      "reason": "not-confident",
+      "tier": "heuristic_pid",
+      "soft": "climate_sensor"
     },
     {
       "mfr": "_TZ3000_lfa05ajd",
