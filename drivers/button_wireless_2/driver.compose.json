@@ -759,15 +759,10 @@
     "learnmode": {
       "image": "{{driverAssetsPath}}/icon.svg",
       "instruction": {
-        "en": "Press and hold any button for 5 seconds until the LED blinks rapidly",
-        "fr": "Appuyez et maintenez n'importe quel bouton pendant 5 secondes jusqu'à ce que la LED clignote rapidement",
-        "nl": "Appuyez et maintenez n'importe quel bouton pendant 5 secondes jusqu'à ce que la LED clignote rapidement",
-        "de": "Appuyez et maintenez n'importe quel bouton pendant 5 secondes jusqu'à ce que la LED clignote rapidement",
-        "it": "Appuyez et maintenez n'importe quel bouton pendant 5 secondes jusqu'à ce que la LED clignote rapidement",
-        "sv": "Appuyez et maintenez n'importe quel bouton pendant 5 secondes jusqu'à ce que la LED clignote rapidement",
-        "no": "Appuyez et maintenez n'importe quel bouton pendant 5 secondes jusqu'à ce que la LED clignote rapidement",
-        "es": "Appuyez et maintenez n'importe quel bouton pendant 5 secondes jusqu'à ce que la LED clignote rapidement",
-        "da": "Appuyez et maintenez n'importe quel bouton pendant 5 secondes jusqu'à ce que la LED clignote rapidement"
+        "en": "Zigbee Bastien → Wireless Button 2 (TS0042 / _TZ3000_dzwgk7e2). NOT Homey Zigbee. If Unknown Node ieee a4:c1:38:bb:8f:… — remove then pair here; wake-tap every 2s. Flows: Button pressed → lights.",
+        "fr": "Zigbee Bastien → Bouton sans fil 2 (TS0042 / _TZ3000_dzwgk7e2). PAS Homey Zigbee. Si Unknown Node ieee a4:c1:38:bb:8f:… — supprimer puis appairer; tap toutes les 2 s. Flows: Bouton appuyé → lumières.",
+        "nl": "Houd enige knop 5s tot LED knippert. Wireless Button 2 — niet Homey Zigbee / Appareil Zigbee.",
+        "de": "Beliebige Taste 5s halten bis LED blinkt. Wireless Button 2 — nicht Homey Zigbee."
       }
     }
   },
