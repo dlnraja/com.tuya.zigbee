@@ -3870,5 +3870,8 @@
   },
   "1.0.63": {
     "en": "TS0041 battery: less wake TX (pile). Update + re-pair remotes if tip-lag."
+  },
+  "1.0.64": {
+    "en": "Improved scene remote press latency and radiator valve pairing."
   }
 }
