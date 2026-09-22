@@ -419,6 +419,62 @@
       "titleFormatted": {
         "en": "Set power-on behavior [[behavior]]"
       }
+    },
+    {
+      "id": "switch_1gang_set_switch_type",
+      "title": {
+        "en": "Set external switch type",
+        "fr": "Définir type interrupteur externe"
+      },
+      "titleFormatted": {
+        "en": "Set switch type to [[type]]",
+        "fr": "Type interrupteur = [[type]]"
+      },
+      "args": [
+        {
+          "name": "type",
+          "type": "dropdown",
+          "title": {
+            "en": "Type",
+            "fr": "Type"
+          },
+          "values": [
+            {
+              "id": "toggle",
+              "title": {
+                "en": "Toggle",
+                "fr": "Toggle"
+              }
+            },
+            {
+              "id": "state",
+              "title": {
+                "en": "State (lights)",
+                "fr": "State (lumières)"
+              }
+            },
+            {
+              "id": "momentary",
+              "title": {
+                "en": "Momentary",
+                "fr": "Momentary"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "switch_1gang_clear_countdown",
+      "title": {
+        "en": "Clear countdown timer",
+        "fr": "Effacer le minuteur"
+      },
+      "titleFormatted": {
+        "en": "Clear countdown timer",
+        "fr": "Effacer le minuteur"
+      },
+      "args": []
     }
   ]
 }

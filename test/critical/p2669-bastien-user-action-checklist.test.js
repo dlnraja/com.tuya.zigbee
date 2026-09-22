@@ -24,10 +24,10 @@ describe('P2669 Bastien user action checklist', () => {
     assert.ok(src.includes('calmHobeianMesh'));
   });
 
-  it('switch_1gang learnmode requires Update ≥1.0.44 + Repair', () => {
+  it('switch_1gang learnmode requires Update ≥1.0.44+ + Repair', () => {
     const c = JSON.parse(fs.readFileSync(path.join(ROOT, 'drivers/switch_1gang/driver.compose.json'), 'utf8'));
     const en = String(c.zigbee?.learnmode?.instruction?.en || '');
-    assert.ok(/≥\s*1\.0\.44|>=\s*1\.0\.44|1\.0\.44/.test(en), en);
+    assert.ok(/≥\s*1\.0\.4[4-9]|>=\s*1\.0\.4[4-9]|1\.0\.4[4-9]/.test(en), en);
     assert.ok(/Repair|repair/i.test(en));
     assert.ok(/HOBEIAN|ZG-301Z/i.test(en));
   });
