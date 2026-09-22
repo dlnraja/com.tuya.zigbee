@@ -3855,5 +3855,8 @@
   },
   "1.0.58": {
     "en": "Dynamic fingerprint shards + Buffer JSON.parse (OOM harden P2678)."
+  },
+  "1.0.59": {
+    "en": "Fix random Flows from switch bootstrap + TS0042 sticky buttons (P2681). Update Test."
   }
 }
