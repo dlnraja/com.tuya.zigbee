@@ -4,11 +4,11 @@
 
 [![Version](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fraw.githubusercontent.com%2Fdlnraja%2Fcom.tuya.zigbee%2Fmaster%2Fapp.json&query=%24.version&label=version&color=blue)](https://homey.app/a/com.dlnraja.tuya.zigbee/)
 [![Drivers](https://img.shields.io/badge/drivers-434-brightgreen)](https://homey.app/a/com.dlnraja.tuya.zigbee/)
-[![Fingerprints](https://img.shields.io/badge/fingerprints-4,694%20unique-green)](https://homey.app/a/com.dlnraja.tuya.zigbee/)
+[![Fingerprints](https://img.shields.io/badge/fingerprints-4,696%20unique-green)](https://homey.app/a/com.dlnraja.tuya.zigbee/)
 [![SDK](https://img.shields.io/badge/SDK-3-orange)](https://apps.developer.homey.app/)
 [![License](https://img.shields.io/badge/license-GPL--3.0-green)](LICENSE)
 
-Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, sensors, lights, thermostats, covers, valves — **434 drivers**, **4,694 unique fingerprints**. No cloud required.
+Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, sensors, lights, thermostats, covers, valves — **434 drivers**, **4,696 unique fingerprints**. No cloud required.
 
 **What it does:**
 - Talks to devices on your Homey Zigbee mesh (Tuya DP `0xEF00` and standard ZCL)
@@ -33,44 +33,44 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 
 | Metric | Value |
 |--------|-------|
-| **App Version** | v9.0.1148 |
+| **App Version** | v9.0.1164 |
 | **Drivers** | 434 (381 Zigbee + 53 WiFi) |
-| **Unique Fingerprints** | 4,694 |
-| **Pairing Variants** | 16,432 (4 case combos per fingerprint) |
-| **Unique Product IDs** | 598 |
-| **Flow Cards** | 6,057 |
+| **Unique Fingerprints** | 4,696 |
+| **Pairing Variants** | 14,248 (4 case combos per fingerprint) |
+| **Unique Product IDs** | 600 |
+| **Flow Cards** | 5,986 |
 | **Unique Capabilities** | 170 |
 | **Native OTA Drivers** | 8 |
-| **Test Suites** | 441 files |
+| **Test Suites** | 459 files |
 | **SVG Icons** | 734 |
 | **Languages** | EN, FR, NL, DE |
 | **SDK / Homey** | 3 / >= 12.2.0 |
-| **Last Updated** | 2026-09-21 |
+| **Last Updated** | 2026-09-22 |
 
 ### Top 20 Drivers by Fingerprint Count
 
 | # | Driver | Fingerprints |
 |---|--------|-------------|
-| 1 | `climate_sensor` | 2,129 |
-| 2 | `switch_1gang` | 1,503 |
+| 1 | `climate_sensor` | 1,130 |
+| 2 | `switch_1gang` | 772 |
 | 3 | `curtain_motor` | 669 |
 | 4 | `presence_sensor_radar` | 615 |
 | 5 | `radiator_valve` | 602 |
-| 6 | `button_wireless_2` | 570 |
-| 7 | `generic_tuya` | 414 |
-| 8 | `device_radiator_valve` | 356 |
-| 9 | `wall_dimmer_tuya` | 301 |
-| 10 | `switch_4gang` | 300 |
-| 11 | `motion_sensor` | 247 |
-| 12 | `switch_3gang` | 219 |
-| 13 | `contact_sensor` | 210 |
-| 14 | `diy_custom_zigbee` | 206 |
-| 15 | `thermostat_tuya_dp` | 197 |
-| 16 | `switch_2gang` | 185 |
-| 17 | `sensor_contact_zigbee` | 183 |
-| 18 | `water_leak_sensor_tuya` | 181 |
-| 19 | `wall_thermostat` | 170 |
-| 20 | `soil_sensor` | 165 |
+| 6 | `generic_tuya` | 414 |
+| 7 | `device_radiator_valve` | 356 |
+| 8 | `wall_dimmer_tuya` | 301 |
+| 9 | `button_wireless_2` | 289 |
+| 10 | `motion_sensor` | 247 |
+| 11 | `switch_3gang` | 219 |
+| 12 | `contact_sensor` | 215 |
+| 13 | `diy_custom_zigbee` | 206 |
+| 14 | `thermostat_tuya_dp` | 197 |
+| 15 | `switch_2gang` | 185 |
+| 16 | `sensor_contact_zigbee` | 183 |
+| 17 | `water_leak_sensor_tuya` | 181 |
+| 18 | `wall_thermostat` | 170 |
+| 19 | `soil_sensor` | 165 |
+| 20 | `bulb_dimmable` | 160 |
 
 ### Drivers by Device Class
 
@@ -103,18 +103,18 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 
 | Version | Changes |
 |---------|---------|
+| **v9.0.1164** | Local-first doctrine lock for all apps (Zigbee mesh + WiFi LAN before cloud). |
+| **v9.0.1163** | Fixed Bastien diag flow token + undeclared scene invent (P2659). |
+| **v9.0.1161** | Fixed device rename crash; credited OSS LAN sources in CI enrich. |
+| **v9.0.1159** | Improved complementary peer credits and WiFi LAN Fix It notes. |
+| **v9.0.1157** | P2655: lexicon 0xFC11 eWeLink climate calibration (L99). Update Homey Test. |
+| **v9.0.1155** | P2653/P2654: ButtonDevice try/catch + remove truncated Flow card ID duplicates (Athom unique-id). Update Homey Test. |
+| **v9.0.1153** | P2652: 4-gang switch pairing restored (ZCL-safe endpoints; no required metering). Update Homey Test; re-pair if 4-gang failed match. |
+| **v9.0.1151** | Actually ship button_wireless_3 multi-press titleFormatted [[button]] (Athom publish). |
+| **v9.0.1150** | Fix button_wireless_3 multi-press titleFormatted.it (Athom publish). Radar crash harden + wifi stubs. |
+| **v9.0.1149** | P2634: keep liygxtcq+TS0004 on switch_4gang only (anti-bot). Radar crash + wifi zigbee stubs. |
 | **v9.0.1148** | P2651: drop empty wifi zigbee stubs + Buffer JSON load (publish validate). P2650 radar scale soft-require. |
 | **v9.0.1147** | P2650: radar range scale module soft-require (fixes crash if missing); MTG075 occupied/quantized docs. Update Homey Test. |
-| **v9.0.1146** | P2646/P2647: sleepy SSOT + Tuya Local Test complementary. P2470 publish-gate log lock. |
-| **v9.0.1145** | P2645: sleepy remotes skip battery configure on pair; quiet Time 0x000A logs. |
-| **v9.0.1144** | P2644b: wall remote TS0041-only — stop 3ch remotes pairing as 1-button (Bastien 4d4e1684). |
-| **v9.0.1143** | P2644: fix switch flow card IDs + remote CI crash (Bastien diags). |
-| **v9.0.1142** | Fixed app settings blank infinite loader (Homey.ready before mesh/WiFi scan). |
-| **v9.0.1141** | Improved WiFi LAN reliability and eWeLink climate pairing. |
-| **v9.0.1140** | Improved WiFi LAN reliability and climate sensor pairing. |
-| **v9.0.1139** | Improved WiFi LAN reliability and wall remote hybrid RX. |
-| **v9.0.1138** | Improved WiFi LAN reliability and wall remote Homey UI sync. |
-| **v9.0.1137** | Improved WiFi LAN reliability and fingerprint database alignment. |
 
 <!-- CHANGELOG_END -->
 
