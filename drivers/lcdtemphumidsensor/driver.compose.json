@@ -26,7 +26,8 @@
       "TS0601",
       "TY0201",
       "Excellux",
-      "ZG-227Z"
+      "ZG-227Z",
+      "ts0601"
     ],
     "endpoints": {
       "1": {
@@ -136,7 +137,16 @@
       "_TZE284_A8SDABTG",
       "_tze284_a8sdabtg",
       "_TZE284_a8sdabtg"
-    ]
+    ],
+    "learnmode": {
+      "image": "{{driverAssetsPath}}/icon.svg",
+      "instruction": {
+        "en": "Zigbee Bastien → LCD Temp/Humidity (_TZE284_vvmbj46n+TS0601…). NOT Homey Zigbee. Hold pair 5s; battery: tap every 2s while pairing.",
+        "fr": "Zigbee Bastien → Capteur LCD TH (_TZE284_vvmbj46n+TS0601…). PAS Homey Zigbee. Maintenez 5 s; pile: tap toutes les 2 s.",
+        "nl": "Zigbee Bastien → LCD TH. Niet Homey Zigbee. 5s vasthouden; batterij elke 2s tikken.",
+        "de": "Zigbee Bastien → LCD TH. Nicht Homey Zigbee. 5s halten; Batterie alle 2s tippen."
+      }
+    }
   },
   "images": {
     "small": "/drivers/lcdtemphumidsensor/assets/images/small.png",

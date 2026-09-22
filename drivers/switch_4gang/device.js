@@ -114,6 +114,22 @@ class Switch4GangDevice extends BaseClass {
       await healTs0004SwitchModule(this, zclNode).catch((e) => {
         this.log(`[P2634] heal soft-fail: ${e && e.message}`);
       });
+      // WHY(P2668 / Bastien Virtual→Bastien): salon 4-gang used as lighting (ZHA quirk family).
+      // Prefer light class so Homey Energy does not treat it as a metered socket tile.
+      try {
+        const mfr = String(
+          this.getSetting?.('zb_manufacturer_name')
+          || this.getData?.()?.manufacturerName
+          || '',
+        );
+        if (/ltt60asa|mmkbptmx|liygxtcq/i.test(mfr) && typeof this.setClass === 'function') {
+          const cls = String(this.getClass?.() || '');
+          if (cls === 'socket') {
+            await this.setClass('light').catch(() => {});
+            this.log('[P2668] setClass(light) for TS0004 lighting switch');
+          }
+        }
+      } catch (_e) { /* soft */ }
       // WHY(P2457): no virtual button tiles on wired relay UI
       this.log('[SWITCH-4G] Initialized (relay caps only)');
     } catch (err) {
