@@ -431,6 +431,25 @@ try {
   }
     console.log('Mandatory manifests present: app.json, package.json, .homeychangelog.json');
 
+  // WHY(P2676 / Bastien diag cb3c0c87): refuse publish without runtime zigbee driver dep.
+  // Contre quoi: MODULE_NOT_FOUND → app crash → zero lights/relays.
+  {
+    const pkgPath = path.join(destDir, 'package.json');
+    const pkg = JSON.parse(fs.readFileSync(pkgPath, 'utf8'));
+    const deps = { ...(pkg.dependencies || {}), ...(pkg.optionalDependencies || {}) };
+    if (!deps['homey-zigbeedriver']) {
+      console.error('FATAL(P2676): package.json missing dependency homey-zigbeedriver');
+      process.exit(1);
+    }
+    const zigPath = path.join(destDir, 'node_modules', 'homey-zigbeedriver');
+    if (!fs.existsSync(zigPath)) {
+      console.error('FATAL(P2676): node_modules/homey-zigbeedriver missing in publish payload');
+      console.error('Run: npm ci && npm run build && npm run prepare-publish');
+      process.exit(1);
+    }
+    console.log('P2676 OK: homey-zigbeedriver present in package.json + node_modules');
+  }
+
   // 4) Refuse stale build output before any upload. A previous local
   // .homeybuild can otherwise publish an older version than source app.json.
   try {

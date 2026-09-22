@@ -213,8 +213,9 @@ const SENSOR_CONFIGS = {
     configName: 'ZY_M100_CEILING_24G',
     sensors: [
       '_TZE200_gkfbdvyx', '_TZE204_gkfbdvyx', '_TZE284_gkfbdvyx',
-      '_TZE204_ya4ft0w4', '_TZE200_ya4ft0w4', // WHY(P2585): Z2M ZY-M100-24GV3 sibling fingerprint
-      '_TZE204_laokfqwu',
+      // WHY(P2675): max sibling variants — Z2M ZY-M100-24GV3 TZE200/204/284
+      '_TZE204_ya4ft0w4', '_TZE200_ya4ft0w4', '_TZE284_ya4ft0w4',
+      '_TZE204_laokfqwu', '_TZE200_laokfqwu', '_TZE284_laokfqwu',
     ],
     battery: false,
     mainsPowered: true,

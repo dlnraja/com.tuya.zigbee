@@ -1,4 +1,8 @@
 {
+  "9.0.1177": {
+    "en": "Boot harden: JsonParse OOM under device storm (P2674) + soft-require zigbeedriver (P2676). Update Test.",
+    "fr": "Durcissement demarrage: OOM JsonParse (P2674) + soft-require zigbeedriver (P2676). Maj Test."
+  },
   "9.0.1135": {
     "en": "WiFi EV: phase-JSON + proven charge-history kWh (no e/d guess). LAN stale-data reconnect + fire-and-forget SET. Credits Tuya Local (andiwirz). Update Homey Test.",
     "fr": "EV WiFi: JSON phases + historique charge (kWh prouve). Reconnexion LAN stale + fire-and-forget. Credits Tuya Local (andiwirz). Maj Test Homey."
