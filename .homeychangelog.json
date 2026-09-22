@@ -3858,5 +3858,8 @@
   },
   "1.0.59": {
     "en": "Fix random Flows from switch bootstrap + TS0042 sticky buttons (P2681). Update Test."
+  },
+  "1.0.60": {
+    "en": "Mesh calm: onOff report floor + no sleepy group-join spam (P2682)."
   }
 }
