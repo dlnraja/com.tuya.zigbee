@@ -78,7 +78,7 @@ for (const dir of driverDirs) {
 // Determine which driver to remove from
 // P217: same brands live on several drivers via disjoint productIds. Stripping the
 // brand from switch_2gang (HOBEIAN ZG-305Z) broke Auto-Publish anti-bot.
-const PID_DISAMBIGUATED_BRANDS = new Set(['hobeian', 'wing']);
+const PID_DISAMBIGUATED_BRANDS = new Set(['hobeian', 'heobian', 'wing']);
 
 const PRIMARY_DRIVERS = [
   'switch_2gang', 'button_wireless_plug', 'button_wireless_2', 'climate_sensor',
