@@ -1,0 +1,58 @@
+{
+  "_meta": {
+    "version": "1.1.0",
+    "updated": "2026-09-22",
+    "why": "L99 — one energy compensation stack; Homey 64MB; no parallel invent",
+    "track": "BOTH for runtime energy SSOT; CI reports MASTER_ONLY; see dual-app-tracks.json",
+    "p2672": "IntelligentEnergyAdapter is the fleet entry — dynamic mode per device before SmartEnergy audit"
+  },
+  "priority": [
+    "IntelligentEnergyAdapter_profile",
+    "measured_dp_or_zcl",
+    "SmartDivisorManager",
+    "EnergyJumpGuard",
+    "SmartEnergyManager_audit",
+    "VirtualEnergyMeterMixin_estimate",
+    "HomeyGapCompensator_soft_only"
+  ],
+  "roles": {
+    "IntelligentEnergyAdapter": "P2672 — resolve metered|approximate|battery|mains_sensor from clusters+driver+couple; setEnergy + strip phantoms; skip ZCL energy bind when approximate.",
+    "SmartDivisorManager": "SSOT for DP/ZCL scale (KNOWN_DIVISORS + LEARNED + range detect). Buffer JSON elsewhere; never hardcode /100 twice.",
+    "EnergyJumpGuard": "Defensive meter_power jump filter; sticky factor; syncs rememberLearnedDivisor when _energyParseMeta set.",
+    "SmartEnergyManager": "5-min real vs estimated audit; never overwrite direct with estimated; boots IntelligentEnergyAdapter first.",
+    "VirtualEnergyMeterMixin": "Nominal-power estimates after audit silence; mainsPowered; no energy.approximation+meter compose.",
+    "HomeyGapCompensator": "Soft ensure/notes only — never adds measure_power/meter_power phantoms.",
+    "UniversalEnergyHandler": "Owned by SmartEnergyManager after audit promote; skipped when adapter.skipZclEnergyBind."
+  },
+  "modes": {
+    "metered": "Real electricalMeasurement/metering or plug/socket driver — keep measure_* caps",
+    "approximate": "Mains lighting/switch without meter (HOBEIAN ZG-301Z etc.) — strip power caps + setEnergy(approximation)",
+    "battery": "Sensors/remotes — setEnergy(batteries) + strip phantom power",
+    "mains_sensor": "Mains radar/presence — approximation, no battery phantoms",
+    "unknown": "Soft no-op; SmartEnergy audit decides"
+  },
+  "forbidden": [
+    "energy.approximation + measure_power/meter_power in same compose",
+    "linear battery (V-2.5)/0.5",
+    "new parallel energy manager",
+    "eager mfs_db at boot for energy refine",
+    "estimate overwrite of telemetry_*_source=direct"
+  ],
+  "gates": [
+    "tools/ci/energy-compose-gate.js",
+    "tools/ci/adaptive-double-division-gate.js",
+    "scripts/validation/check-energy-divisor.js",
+    "npm run check:p2672"
+  ],
+  "softDeprecated": {
+    "VirtualEnergyEstimator": "Prefer VirtualEnergyMeterMixin",
+    "VirtualTelemetryCompensationEngine": "Prefer SmartEnergy + mixin",
+    "DynamicEnergyManager": "Prefer SmartEnergyManager + IntelligentEnergyAdapter"
+  },
+  "defaults": {
+    "meter_power": 100,
+    "measure_voltage": 10,
+    "measure_current": 1000,
+    "measure_power": 10
+  }
+}
