@@ -1,0 +1,53 @@
+{
+  "at": "2026-09-22T00:11:00Z",
+  "source": "Bastien Developer Tools Zigbee + SSOT interview map — networkKey REDACTED",
+  "channel": 20,
+  "panId": "1C41",
+  "extPanId": "cf:e2:71:bd:ea:75:bf:eb",
+  "coordinatorIeee": "b0:c7:de:ff:fe:56:51:0b",
+  "firmware": "9.1.0-0",
+  "securityNote": "Never commit Homey Zigbee networkKey. Rotate if pasted in chat.",
+  "unknownNodesRecognized": [
+    {
+      "ieee": "7c:c6:b6:ff:fe:a3:e1:58",
+      "devToolsLabel": "Unknown Node",
+      "mfr": "_TZ3000_axpdxqgu",
+      "pid": "TS0041",
+      "driver": "button_wireless_1",
+      "patch": "P2630/P2667",
+      "action": "Remove Unknown → Zigbee Bastien → Wireless Button 1"
+    },
+    {
+      "ieee": "a4:c1:38:bb:8f:37:ee:17",
+      "devToolsLabel": "Unknown Node",
+      "mfr": "_TZ3000_dzwgk7e2",
+      "pid": "TS0042",
+      "driver": "button_wireless_2",
+      "patch": "P2636/P2667",
+      "action": "Remove Unknown → Zigbee Bastien → Wireless Button 2"
+    }
+  ],
+  "virtualRePair": [
+    { "name": "Appareil Zigbee", "mfr": "_TZ3000_vsxvaj9i", "pid": "TS0043", "driver": "button_wireless_3" },
+    { "name": "Eclairage salon", "mfr": "_TZ3000_ltt60asa", "pid": "TS0004", "driver": "switch_4gang" },
+    { "name": "Sous sol / chambre principal", "mfr": "_TZ3000_fllyghyj", "pid": "SNZB-02", "driver": "climate_sensor" },
+    { "name": "salon/cuisine", "mfr": "eWeLink", "pid": "CK-TLSR8656-SS5-01(7014)", "driver": "climate_sensor" }
+  ],
+  "hobeian": {
+    "count": 8,
+    "pid": "ZG-301Z",
+    "driver": "switch_1gang",
+    "floodTxApprox": 5200,
+    "whenBroken": "tip ≤1.0.34 blank zb_model_id + electrical reporting minInterval 10 + class socket Energy warnings",
+    "whenWorks": "tip ≥1.0.40 heal fills ZG-301Z, strip power caps, calm mesh, switch_type=state; ≥1.0.42 setClass(light)",
+    "z2m": "exposes switch/countdown/power_on_behavior/switch_type — no metering"
+  },
+  "patches": ["P2663", "P2664", "P2665", "P2666", "P2667"],
+  "userActions": [
+    "Update Bastien app ≥1.0.42 then restart",
+    "Remove 2× Unknown Node then re-pair under Bastien button_wireless_1 / button_wireless_2",
+    "Re-pair 5 Virtual tiles under Bastien drivers",
+    "HOBEIAN lights: Repair or restart so heal runs (pid fill + light class + mesh calm)",
+    "Rebuild Flows: Button pressed → lights"
+  ]
+}
