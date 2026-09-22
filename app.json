@@ -1,7 +1,7 @@
 {
   "_comment": "This file is generated. Please edit .homeycompose/app.json instead.",
   "id": "com.dlnraja.tuya.zigbee",
-  "version": "9.0.1184",
+  "version": "9.0.1185",
   "compatibility": ">=12.2.0",
   "platforms": [
     "local"
@@ -21178,8 +21178,8 @@
         "learnmode": {
           "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
-            "en": "Zigbee Bastien → Wireless Button 2 (TS0042 / _TZ3000_dzwgk7e2). NOT Homey Zigbee. If Unknown Node ieee a4:c1:38:bb:8f:… — remove then pair here; wake-tap every 2s. Flows: Button pressed → lights.",
-            "fr": "Zigbee Bastien → Bouton sans fil 2 (TS0042 / _TZ3000_dzwgk7e2). PAS Homey Zigbee. Si Unknown Node ieee a4:c1:38:bb:8f:… — supprimer puis appairer; tap toutes les 2 s. Flows: Bouton appuyé → lumières.",
+            "en": "Zigbee Bastien → Wireless Button 2 (TS0042). NOT Homey Zigbee. Wake-tap every 2s while pairing. Homey Flow: Button pressed → lamp — NOT Developer Tools Zigbee channels. Update tip then re-pair if presses were dead/slow.",
+            "fr": "Zigbee Bastien → Bouton sans fil 2 (TS0042). PAS Homey Zigbee. Tap toutes les 2 s a l'appairage. Flow: Bouton appuye → lampe — PAS les canaux Zigbee des outils developpeur. Maj tip puis re-appairer si lent/mort.",
             "nl": "Houd enige knop 5s tot LED knippert. Wireless Button 2 — niet Homey Zigbee / Appareil Zigbee.",
             "de": "Beliebige Taste 5s halten bis LED blinkt. Wireless Button 2 — nicht Homey Zigbee."
           }
@@ -21666,8 +21666,8 @@
         "learnmode": {
           "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
-            "en": "IMPORTANT: pick Zigbee Bastien → Wireless Button 3 — NOT Homey Zigbee / « Appareil Zigbee ». Hold any button 5–10s until LED blinks; tap every 2–3s while pairing. Then rebuild Flows with trigger « Button pressed » (Button 1/2/3) → light On — NOT « Turned on » / onoff. Energy dashes = wrong Virtual driver.",
-            "fr": "IMPORTANT: Zigbee Bastien → Bouton sans fil 3 — PAS Homey Zigbee / « Appareil Zigbee ». Maintenez 5–10 s puis appuyez toutes les 2–3 s. Recreez les Flows: declencheur « Bouton appuye » (Bouton 1/2/3) → allumer — PAS « Allume » / onoff. Tirets Energie = mauvais driver Virtual.",
+            "en": "IMPORTANT: pick Zigbee Bastien → Wireless Button 3 — NOT Homey Zigbee. Hold any button 5–10s until LED blinks; tap every 2–3s while pairing. Use Homey Flow trigger « Button pressed » (Button 1/2/3) → light — NOT Developer Tools Zigbee channels/commands (scene remotes have no bindable OnOff). Never write 0x8004.",
+            "fr": "IMPORTANT: Zigbee Bastien → Bouton sans fil 3 — PAS Homey Zigbee. Maintenez 5–10 s puis appuyez toutes les 2–3 s. Flow Homey: declencheur « Bouton appuye » (Bouton 1/2/3) → lampe — PAS les canaux/commandes Zigbee des outils developpeur (telecommande scene = pas de OnOff bindable). Ne jamais ecrire 0x8004.",
             "nl": "Houd een willekeurige knop 5 seconden ingedrukt totdat de LED snel knippert",
             "de": "Halten Sie eine beliebige Taste 5 Sekunden lang gedrückt, bis die LED schnell blinkt",
             "it": "Tenere premuto qualsiasi pulsante per 5 secondi finché il LED lampeggia rapidamente",
