@@ -1,11 +1,11 @@
 {
-  "timestamp": "2026-09-22T08:01:07.358Z",
+  "timestamp": "2026-09-22T09:36:16.273Z",
   "gate": "align-mfs-db-intelligent",
   "apply": false,
   "check": true,
   "changeCount": 0,
-  "skippedCount": 64,
-  "highSeverityCount": 1,
+  "skippedCount": 65,
+  "highSeverityCount": 0,
   "byAction": {},
   "changes": [],
   "skipped": [
@@ -505,32 +505,29 @@
       ]
     },
     {
-      "reason": "orphan_ambiguous",
+      "reason": "brand_multi_intentional",
+      "mfr": "Heobian",
+      "curated": "multi",
+      "claimers": [
+        "curtain_motor",
+        "gas_sensor",
+        "presence_sensor_radar",
+        "scene_switch_4",
+        "siren"
+      ]
+    },
+    {
+      "reason": "brand_multi_intentional",
       "mfr": "heobian",
       "curated": "multi",
       "claimers": [
-        "button_wireless_1",
-        "climate_sensor",
-        "contact_sensor",
         "curtain_motor",
         "gas_sensor",
-        "illuminance_sensor",
-        "ir_blaster",
         "presence_sensor_radar",
-        "rain_sensor",
         "scene_switch_4",
-        "sensor_contact_zigbee",
-        "siren",
-        "soil_sensor",
-        "switch_1gang",
-        "switch_2gang",
-        "switch_3gang",
-        "vibration_sensor",
-        "water_leak_sensor"
+        "siren"
       ]
     }
   ],
-  "highSeverity": [
-    "orphan ambiguous heobian"
-  ]
+  "highSeverity": []
 }
