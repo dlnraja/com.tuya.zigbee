@@ -1931,5 +1931,8 @@
   },
   "5.12.301": {
     "en": "Fix random physical Flows on switch bootstrap + TS0042 sticky profile (P2681)."
+  },
+  "5.12.302": {
+    "en": "Mesh calm onOff 1s floor + skip sleepy group-join (P2682)."
   }
 }
