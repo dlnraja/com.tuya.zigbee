@@ -93,7 +93,7 @@ class Button1GangDevice extends ButtonDevice {
       }
     } catch (_e) { /* soft */ }
 
-    // WHY(P2316/P2630): Z2M configureMagicPacket — genBasic 0xFFDE=0x13 ASAP
+    // WHY(P2316/P2630/P2685): magic once — cooldown inside TuyaMagicPacket (no force storm)
     try {
       const { sendTuyaMagicPacket } = require('../../lib/zigbee/TuyaMagicPacket');
       sendTuyaMagicPacket(this, zclNode, 1, { force: true }).catch(() => {});
