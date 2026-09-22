@@ -1,13 +1,13 @@
 {
   "_meta": {
     "id": "P2502-fleet-complementary-methods",
-    "updated": "2026-09-15",
+    "updated": "2026-09-21",
     "classify": "BOTH",
-    "why": "Stack ALL failover/fallback/alternative/complementary methods for T140352 VicHY/Eduard/MIAMO/Peter/PresentSky — never stop at first fix; never invent pid; never forum POST",
+    "why": "Stack ALL failover/fallback/alternative/complementary methods for T140352 VicHY/Eduard/MIAMO/Peter/PresentSky/Bastien — never stop at first fix; never invent pid; never forum POST",
     "parent": "config/architecture/forum-complementary-failover-ssot.json",
     "doctrine": "docs/architecture/COMPLEMENTARY_ENRICHMENT.md"
   },
-  "tipMin": "9.0.930",
+  "tipMin": "9.0.1145",
   "users": {
     "VicHY": {
       "posts": ["2026-09-02", "2026-09-12ish"],
@@ -113,6 +113,31 @@
       ],
       "alternatives": ["remove+re-pair (Homey cannot hot-swap driver)"],
       "fallback": ["TuyaBrightnessScale clamp"]
+    },
+    "Bastien_house": {
+      "posts": ["live diags e8d98608", "4d4e1684"],
+      "houseSsot": "config/architecture/bastien-house-ssot.json",
+      "sleepySsot": "config/architecture/sleepy-remote-pairing-ssot.json",
+      "primary": ["P2645 skipBattCfg + wake-during-pair", "P2644 flow ID + wall TS0041-only"],
+      "complementary": [
+        "P2470/P2488/P2490 battery keep+rehydrate (do not strip)",
+        "quiet Time 0x000A / OTA 0x0019 L0",
+        "button_wireless_3 for TS0043 — never remote_button_wireless_wall",
+        "tip Bastien ≥1.0.30 / Universal ≥9.0.1145 / Stable ≥5.12.288"
+      ],
+      "alternatives": [
+        "Remove+re-pair near Homey Pro",
+        "Tap button every 2–3s for entire pair window"
+      ],
+      "fallback": [
+        "PhysicalButtonMixin unknown skipBatteryReporting",
+        "BaseUnifiedDevice isSleepyRemote / isButtonDriver"
+      ],
+      "box": {
+        "athomHomeyId": "65d495eb252c3ef65c879247",
+        "lan": "192.168.1.15",
+        "patch": "P2646"
+      }
     }
   },
   "methodStackOrder": [
@@ -121,11 +146,12 @@
     "runtime_rx_tx_fix",
     "adapter_dyn_cap_heal",
     "battery_keep_rehydrate_getable",
+    "sleepy_skip_batt_cfg_wake_pair",
     "ef00_oom_idempotent",
     "foreign_driver_preempt",
     "boot_budget_heap",
     "tip_soft_expect",
     "user_update_tip_repair"
   ],
-  "gates": ["check:p2502", "check:p2490", "check:p2484", "check:p2488", "check:p2499", "check:p2481"]
+  "gates": ["check:p2502", "check:p2490", "check:p2484", "check:p2488", "check:p2499", "check:p2481", "check:p2644", "check:p2645"]
 }

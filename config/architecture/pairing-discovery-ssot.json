@@ -1,9 +1,10 @@
 {
   "_meta": {
     "id": "P2498-pairing-discovery-ssot",
-    "updated": "2026-09-14",
+    "updated": "2026-09-21",
     "classify": "BOTH",
-    "why": "Lock Homey Athom pairing rules + alt-app discovery UX so we improve ours without inventing Zigbee custom pair flows Athom forbids"
+    "why": "Lock Homey Athom pairing rules + alt-app discovery UX so we improve ours without inventing Zigbee custom pair flows Athom forbids",
+    "complementaryEnrich": ["P2645 sleepy-remote-pairing-ssot — wake-during-pair + skipBattCfg"]
   },
   "athomOfficial": {
     "docs": [
@@ -26,7 +27,14 @@
         "pid": "zb_model_id"
       },
       "bindingsAtPair": "compose zigbee.endpoints[].bindings → Homey bind during pair",
-      "sleepyNote": "SEDs stay awake briefly after pair — avoid boot TX storms; wake-rebind later"
+      "sleepyNote": "SEDs stay awake briefly after pair — avoid boot TX storms; wake-rebind later",
+      "sleepyRemoteComplementary": {
+        "ssot": "config/architecture/sleepy-remote-pairing-ssot.json",
+        "human": "docs/architecture/SLEEPY_REMOTE_PAIRING_SSOT.md",
+        "wakeDuringPair": "brief button press every 2–3s for entire learnmode window",
+        "codeSkip": "skip powerConfiguration configureReporting + getOnStart on button/sleepy drivers (P2645)",
+        "stderrHint": "Impossible de joindre = SED asleep mid-config — not 'device broken'"
+      }
     },
     "wifiLan": {
       "preferredDiscovery": ["mdns-sd", "ssdp", "mac"],

@@ -2,12 +2,13 @@
   "_meta": {
     "id": "P2520",
     "title": "Complementary variant enrich — never degrade",
-    "updated": "2026-09-15",
+    "updated": "2026-09-21",
     "classification": "BOTH",
     "human": "docs/rules/COMPLEMENTARY_VARIANT_ENRICH.md",
     "architecture": "docs/architecture/COMPLEMENTARY_ENRICHMENT.md",
     "gate": "npm run check:p2520",
-    "mergeHelper": "lib/enrichment/ComplementaryMerge.js"
+    "mergeHelper": "lib/enrichment/ComplementaryMerge.js",
+    "completenessNote": "SSOT docs enrich = UNION append (P2645 sleepy pairing + battery + pairing discovery) — never wipe prior patches"
   },
   "mandate": {
     "always": true,
@@ -61,15 +62,21 @@
     "settings wipe on metering drivers",
     "DP1 onoff instead of meter_power on 3ph",
     "sacred couple drop after fleet enrich",
-    "shallow mfr+pid-only closes without DP/flow/RX-TX (P2529)"
+    "shallow mfr+pid-only closes without DP/flow/RX-TX (P2529)",
+    "SSOT doc wipe that drops sleepy-remote / battery / pairing complementary layers (P2645)",
+    "battery configureReporting re-enabled on SED remotes (degrades P2645)"
   ],
   "related": {
-    "P2529": "config/architecture/deep-functional-enrich-ssot.json"
+    "P2529": "config/architecture/deep-functional-enrich-ssot.json",
+    "P2645": "config/architecture/sleepy-remote-pairing-ssot.json",
+    "P2498": "config/architecture/pairing-discovery-ssot.json",
+    "P2502": "config/architecture/fleet-complementary-methods-ssot.json"
   },
   "gates": [
     "check:p2519",
     "check:p2520",
     "check:p2494",
-    "check:p2138"
+    "check:p2138",
+    "check:p2645"
   ]
 }
