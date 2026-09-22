@@ -31,6 +31,30 @@ function saveCompose(fp, j) {
   fs.writeFileSync(fp, `${JSON.stringify(j, null, 2)}\n`);
 }
 
+function forceCanonicalPids(zigbee, canonicals) {
+  const pids = Array.isArray(zigbee.productId) ? zigbee.productId.slice() : [];
+  for (const want of canonicals) {
+    const lower = String(want).toLowerCase();
+    // Drop case-collapsed lowercase duplicate of the same pid
+    for (let i = pids.length - 1; i >= 0; i--) {
+      if (String(pids[i]).toLowerCase() === lower && pids[i] !== want) pids.splice(i, 1);
+    }
+    if (!pids.includes(want)) pids.unshift(want);
+  }
+  zigbee.productId = pids;
+}
+
+/** Homey validate: firmwareUpdates.device.manufacturerName must exact-match zigbee.manufacturerName */
+function preserveFirmwareUpdateMfrs(j) {
+  const mfr = Array.isArray(j.zigbee?.manufacturerName) ? j.zigbee.manufacturerName : [];
+  for (const u of (j.firmwareUpdates && j.firmwareUpdates.updates) || []) {
+    for (const n of (u.device && u.device.manufacturerName) || []) {
+      if (n && !mfr.includes(n)) mfr.push(n);
+    }
+  }
+  if (j.zigbee) j.zigbee.manufacturerName = mfr;
+}
+
 function enrichSwitch1gang() {
   const { fp, j } = loadCompose('switch_1gang');
   j.zigbee = j.zigbee || {};
@@ -38,6 +62,7 @@ function enrichSwitch1gang() {
     manufacturerName: ['HOBEIAN', 'Hobeian', 'hobeian', 'heobian', 'Heobian'],
     productId: ['ZG-301Z', 'zg-301z', 'WHD02', 'whd02', 'ZG-302Z1'],
   });
+  preserveFirmwareUpdateMfrs(j);
   // Keep generic 1-gang caps; HOBEIAN heal strips phantom power at runtime.
   j.capabilities = unionCapabilities(j.capabilities, [
     'onoff',
@@ -73,8 +98,8 @@ function enrichSwitch1gang() {
   ]);
   if (j.zigbee.learnmode?.instruction) {
     const lm = j.zigbee.learnmode.instruction;
-    lm.en = 'Zigbee Bastien → 1-gang Switch. HOBEIAN ZG-301Z / WHD02: toggle 3×. Update ≥1.0.47 then Repair (countdown+switch_type+light class+mesh calm). NOT Homey Zigbee.';
-    lm.fr = 'Zigbee Bastien → Interrupteur 1 voie. HOBEIAN ZG-301Z / WHD02: 3× on/off. Update ≥1.0.47 puis Réparer (countdown+switch_type+class light+mesh). PAS Homey Zigbee.';
+    lm.en = 'Zigbee Bastien → 1-gang Switch. HOBEIAN ZG-301Z / WHD02: toggle 3×. Update ≥1.0.49 then Repair (countdown+switch_type+light class+mesh calm). NOT Homey Zigbee.';
+    lm.fr = 'Zigbee Bastien → Interrupteur 1 voie. HOBEIAN ZG-301Z / WHD02: 3× on/off. Update ≥1.0.49 puis Réparer (countdown+switch_type+class light+mesh). PAS Homey Zigbee.';
   }
   saveCompose(fp, j);
   console.log('OK switch_1gang');
@@ -154,6 +179,9 @@ function enrichButtons() {
       manufacturerName: extra.mfrs,
       productId: extra.pids,
     });
+    if (id === 'button_wireless_1') forceCanonicalPids(j.zigbee, ['TS0041']);
+    if (id === 'button_wireless_2') forceCanonicalPids(j.zigbee, ['TS0042']);
+    if (id === 'button_wireless_3') forceCanonicalPids(j.zigbee, ['TS0043']);
     j.capabilities = unionCapabilities(j.capabilities, extra.caps);
     if (!j.energy) j.energy = {};
     j.energy.batteries = appendIdentityStrings(j.energy.batteries || [], ['CR2032', 'CR2450']);
