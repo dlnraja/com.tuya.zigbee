@@ -2,6 +2,7 @@
 
 const ButtonDevice = require('../../lib/devices/ButtonDevice');
 const { installWallSceneRemoteHybrid } = require('../../lib/devices/WallSceneRemoteHybridInit');
+const { installTs004xDedicatedComplement } = require('../../lib/devices/Ts004xDedicatedComplement');
 const { containsCI } = require('../../lib/utils/CaseInsensitiveMatcher');
 
 /**
@@ -9,6 +10,7 @@ const { containsCI } = require('../../lib/utils/CaseInsensitiveMatcher');
  * P2609: full hybrid RX (ZCL + OnOff 0xFD + E000 + EF00 + raw)
  * P2636: _TZ3000_dzwgk7e2 + TS0042 — interview may show 4 EPs (TS0044 phantom FW);
  *        keep buttonCount=2; hybrid ignores EP3/4 (never map to btn1).
+ * P2683: snappy debounce + dedicated complement (Bastien lamp latency / ghost toggle).
  */
 class Button2GangDevice extends ButtonDevice {
 
@@ -30,14 +32,16 @@ class Button2GangDevice extends ButtonDevice {
       protocol: 'hybrid',
       productId: 'TS0042',
       buttonCount: 2,
-      debounceMs: Math.max(Number(base.debounceMs) || 0, 1200),
-      crossPathDedupMs: Math.max(Number(base.crossPathDedupMs) || 0, 1200),
+      // WHY(P2683): snappy lamp Flows — 400ms (was 1200 "super lent")
+      debounceMs: 400,
+      crossPathDedupMs: 650,
       skip8004: true,
       writeSceneAttr: false,
       sceneSwitch: true,
       usesE000: true,
       noEf00Tx: true,
-      source: base.source || 'P2681_button_wireless_2_ts0042',
+      collapsePhantomEndpoints: true,
+      source: base.source || 'P2683_button_wireless_2_ts0042',
     });
   }
 
@@ -97,8 +101,19 @@ class Button2GangDevice extends ButtonDevice {
       this.log('[BUTTON_WIRELESS_2] hybrid soft-fail:', e.message);
     }
 
+    // WHY(P2683 complementary): LevelControl + parseZclHeader — union with hybrid
+    try {
+      await installTs004xDedicatedComplement(this, zclNode, {
+        maxButtons: 2,
+        tag: 'BUTTON_WIRELESS_2',
+        enableLevelControl: true,
+      });
+    } catch (e) {
+      this.log('[BUTTON_WIRELESS_2] dedicated complement soft-fail:', e.message);
+    }
+
     await this._stripPhantomButtonCapsBeyond2();
-    this.log('[BUTTON_WIRELESS_2] hybrid wall remote ready (TS0042 class)');
+    this.log('[BUTTON_WIRELESS_2] hybrid UNION dedicated (TS0042 / P2683 snappy)');
   }
 
 }
