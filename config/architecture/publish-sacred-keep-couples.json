@@ -3,6 +3,24 @@
   "why": "Budget truncation can drop observed mfrs from broad drivers (button_wireless_1 had 31→2 pids). Sacred locks stay pin-first.",
   "couples": [
     {
+      "mfr": "_TZE200_p3dbf6qs",
+      "pid": "TS0601",
+      "driverId": "radiator_valve",
+      "note": "P2686 Gmail 9a2f232b AVATTO TRV06_1b/ME167 — Unknown on tip-lag; Z2M TRV06_1b"
+    },
+    {
+      "mfr": "_TZE204_p3dbf6qs",
+      "pid": "TS0601",
+      "driverId": "radiator_valve",
+      "note": "P2686 p3dbf6qs TZE204 sibling sacred-keep"
+    },
+    {
+      "mfr": "_TZE284_p3dbf6qs",
+      "pid": "TS0601",
+      "driverId": "device_radiator_valve",
+      "note": "P2686 p3dbf6qs TZE284 ME167 sibling (compose device_radiator_valve)"
+    },
+    {
       "mfr": "_TZE284_ogx8u5z6",
       "pid": "TS0601",
       "driverId": "device_radiator_valve",
@@ -295,6 +313,18 @@
       "pid": "TS0601",
       "driverId": "presence_sensor_radar",
       "note": "P2583 gkfbdvyx TZE284 sibling sacred-keep (GH#547)"
+    },
+    {
+      "mfr": "_TZ3000_famkxci2",
+      "pid": "TS0043",
+      "driverId": "button_wireless_3",
+      "note": "P2640 GH#551 — compact/budget near 17k can drop FP → Generic Zigbee (interview EP1 [0,1,6,57344])"
+    },
+    {
+      "mfr": "_TZ3000_e3vhyirx",
+      "pid": "TS130F",
+      "driverId": "wall_curtain_switch",
+      "note": "P2640 GH#552 — LoraTap/Moes SC500ZB curtain wall switch (not smart_knob)"
     },
     {
       "mfr": "HOBEIAN",
