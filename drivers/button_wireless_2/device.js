@@ -12,6 +12,35 @@ const { containsCI } = require('../../lib/utils/CaseInsensitiveMatcher');
  */
 class Button2GangDevice extends ButtonDevice {
 
+  /**
+   * WHY(P2681 / Bastien 8f0915fa+f37e8a91): force hybrid timing for TS0042 stickies
+   * even when BaseUnifiedDevice._deviceProfile would otherwise shadow mixin.
+   */
+  getDeviceProfile(overrides = null) {
+    const base = (typeof super.getDeviceProfile === 'function' && super.getDeviceProfile(overrides)) || {};
+    const sticky = this._isDzwgk7e2Phantom4Ep() || /^TS0042$/i.test(String(
+      overrides?.zb_model_id
+      || this.getSetting?.('zb_model_id')
+      || this.getData?.()?.productId
+      || '',
+    ));
+    if (!sticky) return base;
+    return Object.assign({}, base, {
+      brand: base.brand || 'Tuya',
+      protocol: 'hybrid',
+      productId: 'TS0042',
+      buttonCount: 2,
+      debounceMs: Math.max(Number(base.debounceMs) || 0, 1200),
+      crossPathDedupMs: Math.max(Number(base.crossPathDedupMs) || 0, 1200),
+      skip8004: true,
+      writeSceneAttr: false,
+      sceneSwitch: true,
+      usesE000: true,
+      noEf00Tx: true,
+      source: base.source || 'P2681_button_wireless_2_ts0042',
+    });
+  }
+
   _isDzwgk7e2Phantom4Ep() {
     try {
       const mfr = String(
