@@ -540,7 +540,8 @@
     "check:p2665": "node --test test/critical/p2665-bastien-mesh-deepen-calm.test.js",
     "check:p2666": "node --test test/critical/p2666-bastien-climate-couples.test.js",
     "check:p2667": "node --test test/critical/p2667-bastien-unknown-recognize.test.js",
-    "check:p2668": "node --test test/critical/p2668-bastien-couple-research.test.js"
+    "check:p2668": "node --test test/critical/p2668-bastien-couple-research.test.js",
+    "check:p2669": "node --test test/critical/p2669-bastien-user-action-checklist.test.js"
   },
   "keywords": [
     "homey",
