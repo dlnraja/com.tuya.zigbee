@@ -29,7 +29,13 @@
       "TS0301",
       "TS0601",
       "TS0601_gas",
-      "ZG-225Z"
+      "ZG-225Z",
+      "ts0225",
+      "ts0301",
+      "ts0601",
+      "ts0601_gas",
+      "TS0601_GAS",
+      "zg-225z"
     ],
     "learnmode": {
       "image": "{{driverAssetsPath}}/icon.svg",
@@ -73,7 +79,10 @@
       "_tze204_vrcfo4i0",
       "_tze284_vrcfo4i0",
       "_TZE204_vrcfo4i0",
-      "_TZE284_vrcfo4i0"
+      "_TZE284_vrcfo4i0",
+      "_tze204_VRCFO4I0",
+      "_tze284_VRCFO4I0",
+      "HEOBIAN"
     ]
   },
   "settings": [
