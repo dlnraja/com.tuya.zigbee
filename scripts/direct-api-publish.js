@@ -40,7 +40,28 @@ const API_TIMEOUT_MS = Number(process.env.HOMEY_API_TIMEOUT_MS || 120000);
 const BUILD_POLL_TIMEOUT_MS = Number(process.env.HOMEY_BUILD_POLL_TIMEOUT_MS || 360000);
 const BUILD_POLL_INTERVAL_MS = Number(process.env.HOMEY_BUILD_POLL_INTERVAL_MS || 5000);
 const REPO_ROOT = path.resolve(__dirname, '..');
-const MODULE_PATHS = [APP_ROOT, REPO_ROOT, process.cwd()];
+// WHY(P2672 publish): Homey CLI is often global-only on Windows; prefer local then global npm root.
+function globalNpmRoot() {
+  try {
+    const { execFileSync } = require('child_process');
+    const out = execFileSync(process.platform === 'win32' ? 'npm.cmd' : 'npm', ['root', '-g'], {
+      encoding: 'utf8',
+      shell: process.platform === 'win32',
+    });
+    return String(out).trim();
+  } catch (_e) {
+    // Fallback common Windows global path
+    try {
+      return path.join(process.env.APPDATA || '', 'npm', 'node_modules');
+    } catch (_e2) {
+      return '';
+    }
+  }
+}
+const GLOBAL_NPM = globalNpmRoot();
+// Contre quoi: prepare-publish temp often ships a stub node_modules/homey without AthomAppsAPI —
+// never resolve Homey CLI packages from APP_ROOT (publish payload).
+const MODULE_PATHS = [REPO_ROOT, process.cwd(), GLOBAL_NPM].filter(Boolean);
 
 function resolveModule(id, extraPaths = []) {
   return require.resolve(id, { paths: [...extraPaths, ...MODULE_PATHS] });
@@ -62,9 +83,13 @@ function requireAthomApi() {
   throw new Error(`Cannot load Homey AthomApi (${errors.join(' | ')})`);
 }
 const AthomApi = requireAthomApi();
-const AthomAppsAPI = require(resolveModule('homey-api/lib/AthomAppsAPI', [homeyPackageRoot]));
-const tar = require(resolveModule('tar-fs', [homeyPackageRoot]));
-const fetch = require(resolveModule('node-fetch', [homeyPackageRoot]));
+const AthomAppsAPI = require(resolveModule('homey-api/lib/AthomAppsAPI', [
+  homeyPackageRoot,
+  path.join(homeyPackageRoot, 'node_modules'),
+  GLOBAL_NPM,
+]));
+const tar = require(resolveModule('tar-fs', [homeyPackageRoot, path.join(homeyPackageRoot, 'node_modules')]));
+const fetch = require(resolveModule('node-fetch', [homeyPackageRoot, path.join(homeyPackageRoot, 'node_modules')]));
 
 const STATE = {
   PENDING: 'pending',
