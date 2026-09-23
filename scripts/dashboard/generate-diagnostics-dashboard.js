@@ -230,7 +230,9 @@ function main() {
   if (!report) {
     // WHY(P2416): Pages / e2e must not hard-fail when Gmail state is absent —
     // publish an empty triage shell so dashboards.html still links a live page.
-    console.warn('[diagnostics-dashboard] Missing report — writing empty shell:', REPORT);
+    // WHY(P2698): soft empty shell — use stdout (not warn) so Windows CI / PowerShell
+    // does not treat missing Gmail state as a hard failure while HTML still ships.
+    console.log('[diagnostics-dashboard] Missing report — writing empty shell:', REPORT);
     const emptyHtml = T.buildPage({
       title: 'Diagnostics Dashboard',
       subtitle: 'Gmail triage — no diagnostics-report.json yet (run npm run diag:gmail)',
