@@ -3946,5 +3946,13 @@
   },
   "9.0.1193": {
     "en": "Improved scene remote press latency and radiator valve pairing."
+  },
+  "9.0.1194": {
+    "en": "Flow cards: list device actions and recent interactions on any app device. Update Test.",
+    "fr": "Cartes Flow: lister actions et interactions recentes sur tout appareil. Maj Test."
+  },
+  "9.0.1195": {
+    "en": "Smarter battery % for coin cells and rechargeables — precise when low, without draining CR2032 or flooding the mesh. Update Test.",
+    "fr": "Batterie plus precise (piles/accus) sans vider les CR2032 ni saturer le mesh. Maj Test."
   }
 }
