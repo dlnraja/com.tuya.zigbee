@@ -102,4 +102,12 @@ describe('P2699 non-native DP/cluster complementary never mandatory', () => {
     assert.match(mixin, /P2699/);
     assert.doesNotMatch(mixin, /throw new Error\('Tuya cluster not available'\)/);
   });
+
+  it('Bastien TS0043 live couple soft-arms complementary E000 (never EF00 mandatory)', () => {
+    const src = fs.readFileSync(path.join(ROOT, 'drivers/button_wireless_3/device.js'), 'utf8');
+    assert.match(src, /softArmComplementaryIo/);
+    assert.match(src, /noEf00/);
+    assert.match(src, /57344|E000/);
+    assert.match(src, /skipEf00Tx:\s*true/);
+  });
 });
