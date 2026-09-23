@@ -1027,14 +1027,19 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
         && Number.isFinite(dist)
         && dist <= 0.3;
       const streamsCold = this._ceilingStreamsAreCold();
-      if (this._distanceSeenOnce && !stuckZero && !streamsCold) return;
+      // WHY(P2705 / GH#550 HiepSVG @ 9.0.1207): distance can tick while lux stays dead —
+      // still re-arm find_switch + request DP103 (old AND gate skipped forever).
+      const luxCold = this._ceilingLuxIsCold();
+      if (this._distanceSeenOnce && !stuckZero && !streamsCold && !luxCold) return;
       const now = Date.now();
-      const throttleMs = (stuckZero || streamsCold) ? 45_000 : 12_000;
+      const throttleMs = (stuckZero || streamsCold || luxCold) ? 45_000 : 12_000;
       if (this._lastLuxDistanceNudgeAt && (now - this._lastLuxDistanceNudgeAt) < throttleMs) return;
       this._lastLuxDistanceNudgeAt = now;
-      const reason = streamsCold
-        ? (String(reasonHint || '').includes('cold') ? reasonHint : 'cold-stream')
-        : (stuckZero ? 'lux-stuck-zero' : reasonHint);
+      const reason = luxCold && !streamsCold
+        ? (String(reasonHint || '').includes('lux') ? reasonHint : 'lux-cold')
+        : (streamsCold
+          ? (String(reasonHint || '').includes('cold') ? reasonHint : 'cold-stream')
+          : (stuckZero ? 'lux-stuck-zero' : reasonHint));
       this._ensureCeilingFindSwitchOn(reason).catch(() => {});
       this._queryCeilingPresenceDps(reason).catch(() => {});
     } catch (_e) { /* soft */ }
@@ -1044,22 +1049,35 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
    * WHY(P2690 / GH#550 @ 9.0.1145): alarms still update (DP1) while lux last-changed
    * hours ago and distance stuck at 0 — find_switch OFF / DP103 silent.
    * Contre quoi: lux-only nudge never runs when illuminance RX is dead.
+   * WHY(P2705): split lux vs distance — HiepSVG lux dead while distance still moves.
    */
-  _ceilingStreamsAreCold(now = Date.now()) {
+  _ceilingLuxIsCold(now = Date.now()) {
     try {
       const cfg = this._getRadarConfig() || {};
       if (!cfg.enableFindSwitchOnBoot) return false;
       const luxAt = this._lastLuxPaintAt || this._lastDp103LuxAt || 0;
-      const distAt = this._lastDistancePaintAt || 0;
-      const luxCold = !luxAt || (now - luxAt) > 90_000;
-      const dist = Number(this._lastDistanceM);
-      const distCold = !distAt
-        || (now - distAt) > 90_000
-        || (Number.isFinite(dist) && dist <= 0.3);
-      return luxCold && distCold;
+      return !luxAt || (now - luxAt) > 90_000;
     } catch (_e) {
       return false;
     }
+  }
+
+  _ceilingDistanceIsCold(now = Date.now()) {
+    try {
+      const cfg = this._getRadarConfig() || {};
+      if (!cfg.enableFindSwitchOnBoot) return false;
+      const distAt = this._lastDistancePaintAt || 0;
+      const dist = Number(this._lastDistanceM);
+      return !distAt
+        || (now - distAt) > 90_000
+        || (Number.isFinite(dist) && dist <= 0.3);
+    } catch (_e) {
+      return false;
+    }
+  }
+
+  _ceilingStreamsAreCold(now = Date.now()) {
+    return this._ceilingLuxIsCold(now) && this._ceilingDistanceIsCold(now);
   }
 
   _armCeilingColdStreamWatchdog() {
@@ -1072,9 +1090,12 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
       this._ceilingColdWatchArmed = true;
       this._ceilingColdWatchTimer = safeSetInterval(this, () => {
         if (this._destroyed) return;
-        if (!this._ceilingStreamsAreCold()) return;
-        this.log('[RADAR] P2690 cold-stream watchdog → re-arm find_switch + requestDPs');
-        this._nudgeCeilingDistanceArmFromLux('cold-watchdog');
+        // WHY(P2705): lux-only cold still needs DP103 re-query
+        if (!this._ceilingStreamsAreCold() && !this._ceilingLuxIsCold()) return;
+        this.log('[RADAR] P2690/P2705 cold-stream watchdog → re-arm find_switch + requestDPs');
+        this._nudgeCeilingDistanceArmFromLux(
+          this._ceilingStreamsAreCold() ? 'cold-watchdog' : 'lux-cold-watchdog',
+        );
       }, 60_000);
     } catch (_e) { /* soft */ }
   }
@@ -1853,8 +1874,11 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
       // when lux+distance are cold, force find_switch ON then requestDPs.
       const cfg = this._getRadarConfig() || {};
       if (cfg.enableFindSwitchOnBoot || this.forceActiveTuyaMode) {
-        if (this._ceilingStreamsAreCold()) {
-          this._nudgeCeilingDistanceArmFromLux('poll-cold');
+        // WHY(P2705): lux-only cold → still re-arm (distance may still tick)
+        if (this._ceilingStreamsAreCold() || this._ceilingLuxIsCold()) {
+          this._nudgeCeilingDistanceArmFromLux(
+            this._ceilingStreamsAreCold() ? 'poll-cold' : 'poll-lux-cold',
+          );
           return;
         }
         const ok = await this._queryCeilingPresenceDps('poll');
@@ -1879,7 +1903,9 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
     try {
       if (this._presenceWatchdogArmed) return;
       const config = this._getRadarConfig() || {};
-      if (!(config.antiFalsePositive || config.hasRelay || config.floodCalm)) return;
+      // WHY(P2705 / GH#550 HiepSVG): ceiling gkfbdvyx had no floodCalm/relay → sticky hung
+      if (!(config.antiFalsePositive || config.hasRelay || config.floodCalm
+        || config.enableFindSwitchOnBoot || config.survivalWatchdog === true)) return;
       const { safeSetInterval } = require('../../lib/utils/safe-timers');
       const period = Number(config.stickyPresenceWatchdogMs) > 0
         ? Number(config.stickyPresenceWatchdogMs) : 15_000;
@@ -2401,7 +2427,8 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
     try {
       const config = this._getRadarConfig() || {};
       if (config.survivalWatchdog === false) return;
-      if (!(config.floodCalm || config.antiFalsePositive || config.hasRelay || config.survivalWatchdog === true)) {
+      if (!(config.floodCalm || config.antiFalsePositive || config.hasRelay
+        || config.survivalWatchdog === true || config.enableFindSwitchOnBoot)) {
         return;
       }
       // Optional user opt-out
