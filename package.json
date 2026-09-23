@@ -1,6 +1,6 @@
 {
   "name": "com.dlnraja.tuya.zigbee",
-  "version": "5.12.310",
+  "version": "5.12.311",
   "description": "Tuya Unified Zigbee - Local-first control with AI automation",
   "main": "app.js",
   "scripts": {
@@ -289,7 +289,9 @@
     "check:p2685": "node --test test/critical/p2685-sleepy-remote-battery-conso.test.js",
     "check:p2686": "node --test test/critical/p2686-diag-l99-hold-release-trv.test.js",
     "check:p2689": "node --test test/critical/p2689-smart-battery-adaptive-precision.test.js",
-    "check:p2690": "node --test test/critical/p2690-gkfbdvyx-550-cold-stream.test.js"
+    "check:p2690": "node --test test/critical/p2690-gkfbdvyx-550-cold-stream.test.js",
+    "check:p2691": "node --test test/critical/p2691-sleepy-remote-battery-drain.test.js",
+    "check:p2692": "node --test test/critical/p2692-publish-heal-energy.test.js"
   },
   "keywords": [
     "homey",
