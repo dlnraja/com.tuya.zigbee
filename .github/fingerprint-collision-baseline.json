@@ -1,6 +1,7 @@
 {
-  "generatedAt": "2026-09-23T03:21:18.468Z",
-  "note": "P2677 refresh — heobian≡hobeian collision keys; Athom brand case forms",
+  "version": 1,
+  "generatedAt": "2026-09-23T11:19:09.478Z",
+  "description": "Known historical fingerprint collisions. CI fails only for collisions not listed here.",
   "collisions": [
     {
       "key": "_tz3000_5iixzdo7|TS0301",
@@ -3202,20 +3203,6 @@
       ]
     },
     {
-      "key": "_tze204_amp6tsvy|hobeian",
-      "drivers": [
-        "switch_1gang",
-        "switch_2gang"
-      ]
-    },
-    {
-      "key": "_tze204_amp6tsvy|HOBEIAN",
-      "drivers": [
-        "switch_1gang",
-        "switch_2gang"
-      ]
-    },
-    {
       "key": "_tze204_amp6tsvy|ts0003",
       "drivers": [
         "switch_1gang",
@@ -3468,20 +3455,6 @@
       ]
     },
     {
-      "key": "_tze204_vrcfo4i0|hobeian",
-      "drivers": [
-        "gas_sensor",
-        "presence_sensor_radar"
-      ]
-    },
-    {
-      "key": "_tze204_vrcfo4i0|HOBEIAN",
-      "drivers": [
-        "gas_sensor",
-        "presence_sensor_radar"
-      ]
-    },
-    {
       "key": "_tze204_vrcfo4i0|ts0225",
       "drivers": [
         "gas_sensor",
@@ -3626,20 +3599,6 @@
       "drivers": [
         "lcdtemphumidsensor",
         "temphumidsensor2"
-      ]
-    },
-    {
-      "key": "_tze284_amp6tsvy|hobeian",
-      "drivers": [
-        "switch_1gang",
-        "switch_2gang"
-      ]
-    },
-    {
-      "key": "_tze284_amp6tsvy|HOBEIAN",
-      "drivers": [
-        "switch_1gang",
-        "switch_2gang"
       ]
     },
     {
@@ -3930,20 +3889,6 @@
       ]
     },
     {
-      "key": "_tze284_vrcfo4i0|hobeian",
-      "drivers": [
-        "gas_sensor",
-        "presence_sensor_radar"
-      ]
-    },
-    {
-      "key": "_tze284_vrcfo4i0|HOBEIAN",
-      "drivers": [
-        "gas_sensor",
-        "presence_sensor_radar"
-      ]
-    },
-    {
       "key": "_tze284_vrcfo4i0|ts0225",
       "drivers": [
         "gas_sensor",
@@ -4048,6 +3993,13 @@
       ]
     },
     {
+      "key": "heobian|CK-BL702-MWS-01(7016)",
+      "drivers": [
+        "presence_sensor_radar",
+        "vibration_sensor"
+      ]
+    },
+    {
       "key": "heobian|CK-TLSR8656-SS5-01(7003)",
       "drivers": [
         "contact_sensor",
@@ -4101,46 +4053,6 @@
       "drivers": [
         "presence_sensor_radar",
         "sensor_contact_zigbee"
-      ]
-    },
-    {
-      "key": "heobian|hobeian",
-      "drivers": [
-        "button_wireless_1",
-        "gas_sensor",
-        "presence_sensor_radar",
-        "rain_sensor",
-        "sensor_contact_zigbee",
-        "siren",
-        "soil_sensor",
-        "switch_1gang",
-        "switch_2gang",
-        "switch_3gang"
-      ]
-    },
-    {
-      "key": "heobian|HOBEIAN",
-      "drivers": [
-        "button_wireless_1",
-        "gas_sensor",
-        "presence_sensor_radar",
-        "rain_sensor",
-        "sensor_contact_zigbee",
-        "siren",
-        "soil_sensor",
-        "switch_1gang",
-        "switch_2gang",
-        "switch_3gang"
-      ]
-    },
-    {
-      "key": "heobian|Hobeian",
-      "drivers": [
-        "gas_sensor",
-        "rain_sensor",
-        "sensor_contact_zigbee",
-        "siren",
-        "switch_3gang"
       ]
     },
     {
@@ -4913,7 +4825,8 @@
         "curtain_motor",
         "switch_1gang",
         "switch_2gang",
-        "switch_3gang"
+        "switch_3gang",
+        "vibration_sensor"
       ]
     },
     {
@@ -4922,7 +4835,8 @@
         "curtain_motor",
         "switch_1gang",
         "switch_2gang",
-        "switch_3gang"
+        "switch_3gang",
+        "vibration_sensor"
       ]
     },
     {
@@ -4931,7 +4845,8 @@
         "curtain_motor",
         "switch_1gang",
         "switch_2gang",
-        "switch_3gang"
+        "switch_3gang",
+        "vibration_sensor"
       ]
     },
     {
@@ -5052,6 +4967,7 @@
       "key": "heobian|ts0222",
       "drivers": [
         "climate_sensor",
+        "illuminance_sensor",
         "presence_sensor_radar",
         "soil_sensor"
       ]
@@ -5060,6 +4976,7 @@
       "key": "heobian|Ts0222",
       "drivers": [
         "climate_sensor",
+        "illuminance_sensor",
         "presence_sensor_radar",
         "soil_sensor"
       ]
@@ -5068,6 +4985,7 @@
       "key": "heobian|TS0222",
       "drivers": [
         "climate_sensor",
+        "illuminance_sensor",
         "presence_sensor_radar",
         "soil_sensor"
       ]
@@ -5076,6 +4994,7 @@
       "key": "heobian|ts0225",
       "drivers": [
         "gas_sensor",
+        "illuminance_sensor",
         "presence_sensor_radar"
       ]
     },
@@ -5083,6 +5002,7 @@
       "key": "heobian|Ts0225",
       "drivers": [
         "gas_sensor",
+        "illuminance_sensor",
         "presence_sensor_radar"
       ]
     },
@@ -5090,6 +5010,7 @@
       "key": "heobian|TS0225",
       "drivers": [
         "gas_sensor",
+        "illuminance_sensor",
         "presence_sensor_radar"
       ]
     },
@@ -5121,6 +5042,7 @@
         "climate_sensor",
         "curtain_motor",
         "gas_sensor",
+        "illuminance_sensor",
         "ir_blaster",
         "presence_sensor_radar",
         "rain_sensor",
@@ -5130,6 +5052,7 @@
         "switch_1gang",
         "switch_2gang",
         "switch_3gang",
+        "vibration_sensor",
         "water_leak_sensor"
       ]
     },
@@ -5140,6 +5063,7 @@
         "climate_sensor",
         "curtain_motor",
         "gas_sensor",
+        "illuminance_sensor",
         "ir_blaster",
         "presence_sensor_radar",
         "rain_sensor",
@@ -5149,6 +5073,7 @@
         "switch_1gang",
         "switch_2gang",
         "switch_3gang",
+        "vibration_sensor",
         "water_leak_sensor"
       ]
     },
@@ -5159,6 +5084,7 @@
         "climate_sensor",
         "curtain_motor",
         "gas_sensor",
+        "illuminance_sensor",
         "ir_blaster",
         "presence_sensor_radar",
         "rain_sensor",
@@ -5168,6 +5094,7 @@
         "switch_1gang",
         "switch_2gang",
         "switch_3gang",
+        "vibration_sensor",
         "water_leak_sensor"
       ]
     },
@@ -5769,52 +5696,6 @@
       "drivers": [
         "presence_sensor_radar",
         "sensor_contact_zigbee"
-      ]
-    },
-    {
-      "key": "hobeian|hobeian",
-      "drivers": [
-        "button_wireless_1",
-        "gas_sensor",
-        "illuminance_sensor",
-        "presence_sensor_radar",
-        "rain_sensor",
-        "sensor_contact_zigbee",
-        "siren",
-        "soil_sensor",
-        "switch_1gang",
-        "switch_2gang",
-        "switch_3gang",
-        "vibration_sensor"
-      ]
-    },
-    {
-      "key": "hobeian|HOBEIAN",
-      "drivers": [
-        "button_wireless_1",
-        "gas_sensor",
-        "illuminance_sensor",
-        "presence_sensor_radar",
-        "rain_sensor",
-        "sensor_contact_zigbee",
-        "siren",
-        "soil_sensor",
-        "switch_1gang",
-        "switch_2gang",
-        "switch_3gang",
-        "vibration_sensor"
-      ]
-    },
-    {
-      "key": "hobeian|Hobeian",
-      "drivers": [
-        "gas_sensor",
-        "illuminance_sensor",
-        "rain_sensor",
-        "sensor_contact_zigbee",
-        "siren",
-        "switch_3gang",
-        "vibration_sensor"
       ]
     },
     {
