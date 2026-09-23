@@ -1990,5 +1990,8 @@
   },
   "5.12.319": {
     "en": "P2699: non-native DP/clusters complementary soft RX/TX (never mandatory)"
+  },
+  "5.12.320": {
+    "en": "P2700: soft-arm raw + RX/TX + PFC for non-native Homey gaps"
   }
 }
