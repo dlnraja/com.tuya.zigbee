@@ -1,0 +1,212 @@
+[
+  {
+    "file": "4f0d8bc7-7d08-4db3-a155-e7a296e2ad16.txt",
+    "date": "2026-09-22T15:23:00Z",
+    "app": "bastien",
+    "uuids": [
+      "cb3c0c87-45d4-4371-9ea8-8218037e3aaf"
+    ],
+    "tips": [],
+    "comment": "Rien ne fonctionne stdout: n/a stderr: - /app/packages/homey-local/lib/AppProcess/node_modules/@athombv/homey-apps-sdk-v3/index.js at Function._resolveFilename (node:internal/modules/cjs/loader:1430:15) at defaultResolveImpl (node:internal/modules/cjs/loader:1040:19) at resolveFo",
+    "link": "tools.developer.homey.app/apps/app/com.dlnraja.tuya.zigbee.bastien/build/56/crashes"
+  },
+  {
+    "file": "4f0d8bc7-7d08-4db3-a155-e7a296e2ad16.txt",
+    "date": "2026-09-22T19:39:19Z",
+    "app": "bastien",
+    "uuids": [
+      "8f0915fa-c0fd-45ca-b23b-82b2089863b9",
+      "8f3d6f86-ea37-409c-8aec-a8aef9e5438b",
+      "67bd6dec-acb8-4865-a1bc-b79f16ad1bb6",
+      "9604d30f-090e-40ac-8c46-2824fa38fcc0",
+      "3555a6a8-a91b-4729-b522-1163184773bf",
+      "258ba483-39c7-41ec-9337-932a2cc11a41",
+      "575dfc4d-3aba-4583-b9d0-ab08ffd0bb76",
+      "721848dd-a8d6-4ef2-9f89-153b20111e2d",
+      "012bac8c-29f9-439a-aca9-bfeb15ff35ce",
+      "422571df-9388-499a-b1ca-451bde89d09b",
+      "72ba40f0-3013-4307-a4de-6e5bb86008a9"
+    ],
+    "tips": [],
+    "comment": "Bouton avec les deux voix fonctionne, mais ne fonctionne pas à chaque clique est bien reconnu par l’application en bouton de voix, mais fonctionne très lentement, voir pas du tout Pour le bouton trois voies, il ne fonctionne pas du tout avec les trois voix stdout: 2026-09-22T19:3",
+    "link": "tools.developer.homey.app/apps/app/com.dlnraja.tuya.zigbee.bastien/build/61/crashes"
+  },
+  {
+    "file": "4f0d8bc7-7d08-4db3-a155-e7a296e2ad16.txt",
+    "date": "2026-09-22T20:10:30Z",
+    "app": "bastien",
+    "uuids": [
+      "f37e8a91-b411-4a11-b706-24759f539575",
+      "3555a6a8-a91b-4729-b522-1163184773bf",
+      "9cc9ab72-305a-49a6-9713-0cabfc1a935c",
+      "721848dd-a8d6-4ef2-9f89-153b20111e2d",
+      "012bac8c-29f9-439a-aca9-bfeb15ff35ce",
+      "422571df-9388-499a-b1ca-451bde89d09b",
+      "8f3d6f86-ea37-409c-8aec-a8aef9e5438b",
+      "67bd6dec-acb8-4865-a1bc-b79f16ad1bb6",
+      "9604d30f-090e-40ac-8c46-2824fa38fcc0",
+      "258ba483-39c7-41ec-9337-932a2cc11a41",
+      "72ba40f0-3013-4307-a4de-6e5bb86008a9",
+      "67c6b492-37c5-4997-aaf4-2a01629f0c72"
+    ],
+    "tips": [],
+    "comment": "Tous ceux qui ya sur insta merci stdout: 2026-09-22T20:00:38.450Z [log] [ManagerDrivers] [Driver:switch_1gang] [Device:3555a6a8-a91b-4729-b522-1163184773bf] [ZCL] 📥 EP1.onOff=true type=boolean interval=90ms count=241 2026-09-22T20:00:38.451Z [log] [ManagerDrivers] [Driver:switch",
+    "link": "tools.developer.homey.app/apps/app/com.dlnraja.tuya.zigbee.bastien/build/61/crashes"
+  },
+  {
+    "file": "4f0d8bc7-7d08-4db3-a155-e7a296e2ad16.txt",
+    "date": "2026-09-22T21:16:30Z",
+    "app": "universal",
+    "uuids": [
+      "9a2f232b-ae84-4c02-bd1b-25ef099813b1"
+    ],
+    "tips": [],
+    "comment": "Tuya Zigbee TRV not supported. Model: TS0601 Manufacturer: _TZE200_p3dbf6qs The device pairs with Homey, but is detected as an Unknown Zigbee Device. Please add support for this TRV. stdout: 2026-09-22T21:10:31.495Z [log] [ManagerFlow] [FlowCardAction][wifi_sonoff_tx_2ch_turn_off",
+    "link": "tools.developer.homey.app/apps/app/com.dlnraja.tuya.zigbee/build/3331/crashes"
+  },
+  {
+    "file": "4f0d8bc7-7d08-4db3-a155-e7a296e2ad16.txt",
+    "date": "2026-09-22T22:05:24Z",
+    "app": "bastien",
+    "uuids": [
+      "885a9901-ee7b-48db-827b-a0fa5b00f699",
+      "3555a6a8-a91b-4729-b522-1163184773bf",
+      "85aada24-c8dd-4352-b7d8-46064fa28d65",
+      "422571df-9388-499a-b1ca-451bde89d09b",
+      "721848dd-a8d6-4ef2-9f89-153b20111e2d",
+      "9604d30f-090e-40ac-8c46-2824fa38fcc0",
+      "8f3d6f86-ea37-409c-8aec-a8aef9e5438b",
+      "012bac8c-29f9-439a-aca9-bfeb15ff35ce",
+      "258ba483-39c7-41ec-9337-932a2cc11a41",
+      "67bd6dec-acb8-4865-a1bc-b79f16ad1bb6"
+    ],
+    "tips": [],
+    "comment": "Test du bouton 2channel ts0042 Tous fonctionne j’ai testé un scénario avec le bouton un appuyer une fois allumer puis éteindre la lampe, le scénario fonctionne, mais il y a un temps de latence entre allumer la première fois et le deuxième appui qui ne se fait pas rapidement, mais",
+    "link": "tools.developer.homey.app/apps/app/com.dlnraja.tuya.zigbee.bastien/build/70/crashes"
+  },
+  {
+    "file": "df0bd155-7e9f-48dd-bb1d-84c96c889f19.txt",
+    "date": "2026-09-20T13:31:32Z",
+    "app": "bastien",
+    "uuids": [
+      "e8d98608-671f-40e0-bc5c-6e01b0aa019b",
+      "8dbf4762-0953-41f4-9f10-d38900dfca82"
+    ],
+    "tips": [],
+    "comment": "Bug flow et device wrong device stdout: 2026-09-20T13:27:32.220Z [log] [ManagerDrivers] [Driver:remote_button_wireless_wall] [Device:8dbf4762-0953-41f4-9f10-d38900dfca82] [BUTTON-FLOW] button_matrix triggered 2026-09-20T13:27:32.221Z [log] [ManagerDrivers] [Driver:remote_button_w",
+    "link": "tools.developer.homey.app/apps/app/com.dlnraja.tuya.zigbee.bastien/build/8/crashes"
+  },
+  {
+    "file": "df0bd155-7e9f-48dd-bb1d-84c96c889f19.txt",
+    "date": "2026-09-20T21:25:14Z",
+    "app": "bastien",
+    "uuids": [
+      "4d4e1684-eb44-4db4-8485-3cb35f9a8fa6",
+      "67bd6dec-acb8-4865-a1bc-b79f16ad1bb6",
+      "422571df-9388-499a-b1ca-451bde89d09b",
+      "8f3d6f86-ea37-409c-8aec-a8aef9e5438b",
+      "012bac8c-29f9-439a-aca9-bfeb15ff35ce",
+      "9604d30f-090e-40ac-8c46-2824fa38fcc0",
+      "258ba483-39c7-41ec-9337-932a2cc11a41",
+      "3555a6a8-a91b-4729-b522-1163184773bf",
+      "721848dd-a8d6-4ef2-9f89-153b20111e2d",
+      "8dbf4762-0953-41f4-9f10-d38900dfca82"
+    ],
+    "tips": [],
+    "comment": "Le bouton 3ch ne fonctionne pas aucun des boutons ne fonctionne stdout: 2026-09-20T21:12:43.849Z [log] [ManagerDrivers] [Driver:switch_1gang] [Device:67bd6dec-acb8-4865-a1bc-b79f16ad1bb6] Debounce actif gang 1: skip (105ms < 200ms) 2026-09-20T21:12:44.346Z [log] [ManagerDrivers] ",
+    "link": "tools.developer.homey.app/apps/app/com.dlnraja.tuya.zigbee.bastien/build/17/crashes"
+  },
+  {
+    "file": "df0bd155-7e9f-48dd-bb1d-84c96c889f19.txt",
+    "date": "2026-09-21T08:00:22Z",
+    "app": "universal",
+    "uuids": [
+      "af98752d-f02e-4e74-a06e-ab8c025534bf",
+      "be4aad68-680d-4a42-8dca-3e84288db8f2",
+      "0020e94f-5de0-4975-82a0-0755d5e56836"
+    ],
+    "tips": [],
+    "comment": "Problema de sensor de presencia stdout: 2026-09-21T08:00:16.165Z [log] [ManagerDrivers] [Driver:presence_sensor_radar] [Device:be4aad68-680d-4a42-8dca-3e84288db8f2] [TUYA-P0] 🎉 TUYA 0xEF00 FRAME RECEIVED! 2026-09-21T08:00:16.165Z [log] [ManagerDrivers] [Driver:presence_sensor_ra",
+    "link": "tools.developer.homey.app/apps/app/com.dlnraja.tuya.zigbee/build/3317/crashes"
+  },
+  {
+    "file": "df0bd155-7e9f-48dd-bb1d-84c96c889f19.txt",
+    "date": "2026-09-21T18:18:35Z",
+    "app": "bastien",
+    "uuids": [
+      "4c0d232b-b21f-4273-8b2f-d1bbe2f270db",
+      "012bac8c-29f9-439a-aca9-bfeb15ff35ce",
+      "8f3d6f86-ea37-409c-8aec-a8aef9e5438b",
+      "721848dd-a8d6-4ef2-9f89-153b20111e2d",
+      "258ba483-39c7-41ec-9337-932a2cc11a41",
+      "9604d30f-090e-40ac-8c46-2824fa38fcc0",
+      "422571df-9388-499a-b1ca-451bde89d09b",
+      "3555a6a8-a91b-4729-b522-1163184773bf",
+      "67bd6dec-acb8-4865-a1bc-b79f16ad1bb6"
+    ],
+    "tips": [],
+    "comment": "Bouton trois channel ne fonctionne sur aucun channel et fonctionne une fois via un clic sur lapplication mais apres ne repond plus avec erreur sur lapplication stdout: 2026-09-21T18:07:07.689Z [log] [ManagerDrivers] [Driver:switch_1gang] [Device:012bac8c-29f9-439a-aca9-bfeb15ff35",
+    "link": "tools.developer.homey.app/apps/app/com.dlnraja.tuya.zigbee.bastien/build/37/crashes"
+  },
+  {
+    "file": "df0bd155-7e9f-48dd-bb1d-84c96c889f19.txt",
+    "date": "2026-09-21T19:27:28Z",
+    "app": "bastien",
+    "uuids": [
+      "52ef684a-988b-4b67-a8e4-897b87c9ce41",
+      "012bac8c-29f9-439a-aca9-bfeb15ff35ce",
+      "422571df-9388-499a-b1ca-451bde89d09b",
+      "8f3d6f86-ea37-409c-8aec-a8aef9e5438b",
+      "3555a6a8-a91b-4729-b522-1163184773bf",
+      "67bd6dec-acb8-4865-a1bc-b79f16ad1bb6",
+      "721848dd-a8d6-4ef2-9f89-153b20111e2d",
+      "9604d30f-090e-40ac-8c46-2824fa38fcc0",
+      "258ba483-39c7-41ec-9337-932a2cc11a41"
+    ],
+    "tips": [],
+    "comment": "Aucun bouton ne fonctionne stdout: 2026-09-21T19:23:26.728Z [log] [ManagerFlow] [FlowCardAction][home_mode_set] Warning: Run listener was already registered. 2026-09-21T19:23:26.728Z [log] [ManagerFlow] [FlowCardAction][home_mode_set_auto] Warning: Run listener was already regist",
+    "link": "tools.developer.homey.app/apps/app/com.dlnraja.tuya.zigbee.bastien/build/37/crashes"
+  },
+  {
+    "file": "df0bd155-7e9f-48dd-bb1d-84c96c889f19.txt",
+    "date": "2026-09-21T19:34:09Z",
+    "app": "bastien",
+    "uuids": [
+      "be119f76-946a-4cb2-b93e-6976ad9c0a3c",
+      "721848dd-a8d6-4ef2-9f89-153b20111e2d",
+      "422571df-9388-499a-b1ca-451bde89d09b",
+      "258ba483-39c7-41ec-9337-932a2cc11a41",
+      "67bd6dec-acb8-4865-a1bc-b79f16ad1bb6",
+      "8f3d6f86-ea37-409c-8aec-a8aef9e5438b",
+      "9604d30f-090e-40ac-8c46-2824fa38fcc0",
+      "3555a6a8-a91b-4729-b522-1163184773bf",
+      "012bac8c-29f9-439a-aca9-bfeb15ff35ce"
+    ],
+    "tips": [],
+    "comment": "Toujours le probleme de channel stdout: 2026-09-21T19:27:03.617Z [log] [TuyaUnifiedZigbeeApp] [FLOW-LOADER] triggerSubCapabilityChanged error: Could not trigger Flow card with id \"sub_capability_changed\": Invalid value for token value. Expected string but got boolean 2026-09-21T1",
+    "link": "tools.developer.homey.app/apps/app/com.dlnraja.tuya.zigbee.bastien/build/37/crashes"
+  },
+  {
+    "file": "df0bd155-7e9f-48dd-bb1d-84c96c889f19.txt",
+    "date": "2026-09-22T00:19:36Z",
+    "app": "universal",
+    "uuids": [
+      "149bc1a5-3ee3-4a11-bb2b-16839c87aa6e",
+      "279391a6-efe8-4706-90a3-75b92ecb1fd8",
+      "5be28b2c-61c5-482a-a2df-69f1d113fbb7",
+      "8eeb1a70-025a-40ca-adfe-2a90dea8293a",
+      "9b0940c2-6d0a-4cff-902e-0fb5b1c0332f",
+      "b50c6959-a114-4e90-abe3-3dba505137f1",
+      "0a630f2f-0f4c-4d59-8ee9-92825f1c7b07",
+      "26ed2e55-9690-4f25-8d11-757ab9615213",
+      "55ea1d43-c041-4c93-8263-80723d186c3d",
+      "b6bb08a1-0a9d-4867-ac93-b78b1ada6a7a",
+      "d499f4e0-91d6-4ed8-a6c8-fefcbf607ec7"
+    ],
+    "tips": [
+      "9.0.1165"
+    ],
+    "comment": "The app crashes immediately on startup after updating to v9.0.1165 (SIGABRT). All Tuya Zigbee devices remain unresponsive. stdout: 2026-09-22T00:19:08.017Z [log] [ManagerDrivers] [Driver:switch_1gang] [Device:279391a6-efe8-4706-90a3-75b92ecb1fd8] [HomeyCompensate] interview miss ",
+    "link": "tools.developer.homey.app/apps/app/com.dlnraja.tuya.zigbee/build/3325/crashes"
+  }
+]
