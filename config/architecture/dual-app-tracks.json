@@ -1,12 +1,17 @@
 {
   "_meta": {
-    "version": "1.3.0",
-    "updated": "2026-09-14",
-    "why": "Two Athom apps — never blur App ID / version / purpose. Classify every change.",
+    "version": "1.5.0",
+    "updated": "2026-09-23",
+    "why": "Three Athom apps — never blur App ID / version / purpose. Classify every change. Bastien house is private → promotes upstream only.",
     "doctrine": "docs/rules/DUAL_APP_VISION.md",
+    "bastienDoctrine": "docs/rules/BASTIEN_HOUSE_APP.md",
+    "bastienSsot": "config/architecture/bastien-house-ssot.json",
     "publishSsot": "config/architecture/publish-ssot.json",
     "forumFailoverSsot": "config/architecture/forum-complementary-failover-ssot.json",
-    "intelligentIrSsot": "config/architecture/intelligent-ir-ssot.json"
+    "intelligentIrSsot": "config/architecture/intelligent-ir-ssot.json",
+    "recentTipsHuman": "docs/architecture/THREE_APP_RECENT_TIPS.md",
+    "batteryAdaptiveSsot": "config/architecture/battery-adaptive-precision-ssot.json",
+    "interactionFlowSsot": "config/architecture/interaction-flow-cards-ssot.json"
   },
   "alwaysBothSameSession": {
     "mandate": "EVERY BOTH reliability change must be surgically ported to stable-v5 in the SAME agent session as master — never leave LTS tip-lag for Peter/GH crashes/sacred couples",
@@ -29,8 +34,8 @@
       "purpose": "Innovation + soak (features + reliability)",
       "cloneHint": "Documents/homey/master",
       "publish": "Auto-Publish on Push → Homey Test",
-      "tipHealthy": "9.0.926",
-      "tipNote": "P139 PF on 9.0.924/928 — soft-continue; do not spam"
+      "tipHealthy": "9.0.1195",
+      "tipNote": "P2687 interaction Flow + P2689 adaptive battery; P139 soft-continue on PF emails"
     },
     "stable": {
       "branch": "stable-v5",
@@ -39,7 +44,21 @@
       "versionLine": "5.12.x",
       "purpose": "Reliability LTS only — no feature managers unless human-promoted",
       "cloneHint": "Documents/homey/stable",
-      "publish": "Publish Stable → Test (APP_ID=.stable only); P139 no spam republish"
+      "publish": "Publish Stable → Test (APP_ID=.stable only); P139 no spam republish",
+      "tipHealthy": "5.12.308",
+      "tipNote": "P2689 adaptive battery BOTH; no P2687 SoftFeature"
+    },
+    "bastien": {
+      "branch": "bastien-home",
+      "appId": "com.dlnraja.tuya.zigbee.bastien",
+      "storeName": "Zigbee Bastien",
+      "versionLine": "1.0.x",
+      "purpose": "Private house-only Homey Pro for Bastien — live install/soak; promote learnings upstream surgically",
+      "cloneHint": "Documents/homey/bastien",
+      "publish": "Publish Zigbee Bastien workflow / homey app publish — App ID .bastien only; NEVER Universal or Stable slots",
+      "enrichment": "bastien_to_public_only",
+      "tipHealthy": "1.0.66",
+      "tipNote": "P2687 house Flow + P2689 battery; promote upstream surgically"
     }
   },
   "identityNeverCopy": [
@@ -49,6 +68,14 @@
     "store changelog identity"
   ],
   "l99RecentClassification": {
+    "p2606_bastien_house_track": {
+      "tag": "MASTER_ONLY",
+      "note": "Private Zigbee Bastien house app + one-way promote bastien→master/stable — never reverse wholesale; never share App ID"
+    },
+    "p2607_bastien_autonomous_promote": {
+      "tag": "BOTH",
+      "note": "Autonomous Bastien→master AUTO_SAFE + BOTH reliability → stable-v5 on cron/enrich/forum hooks"
+    },
     "p2497_stable_both_backport": {
       "tag": "BOTH",
       "note": "Surgical port P2490–P2496 reliability to stable-v5 — never App ID/version; skip P2487 IR MASTER_ONLY"
@@ -109,6 +136,18 @@
       "tag": "BOTH",
       "note": "VicHY clrdrnya MTG sticky DP1 + tuya_battery_low strip on mains"
     },
+    "p2579_mtg075_deep_harden": {
+      "tag": "BOTH",
+      "note": "MTG075/MTG235: heal DP115 occupied→on; quantized distance soft-clear; merged onSettings; bathroom settings hints"
+    },
+    "p2580_z2m_zha_complementary_transpose": {
+      "tag": "BOTH",
+      "note": "Transpose Z2M/ZHA/herdsman: motor_direction strings, Tongou Hz scale, MTG unsigned range, dqy15zxy curtain, heat DP7/8"
+    },
+    "p2581_vichy_8d9d0199_relay_watchdog": {
+      "tag": "BOTH",
+      "note": "VicHY #2247/8d9d0199: fail-closed onoff relay lock + sticky presence watchdog (needsPolling false)"
+    },
     "p2512_peter_smartbutton_history": {
       "tag": "BOTH",
       "note": "Peter Smartbutton measure_battery getable/insights app.json + boot heal"
@@ -116,6 +155,10 @@
     "p2513_salvagr_moes_stop_midpct": {
       "tag": "BOTH",
       "note": "Salvagr #533 Stop after 2s idle-skip + skip Homey open/close after mid-%"
+    },
+    "p2547_external_sdk3_inspiration": {
+      "tag": "BOTH",
+      "note": "Mine Johan/Drenso/Athom SDK3 + Sdk3ZclSafe; P216 data-collector no blind /2; silent enrich — never invent pid / forum POST"
     },
     "p2543_dual_app_benefit_recent": {
       "tag": "BOTH",
@@ -204,6 +247,18 @@
     "daylight_atmosphere_solar_sync": {
       "tag": "MASTER_ONLY",
       "note": "Circadian / AdaptiveLighting / Path Light / Room Balance — feature engines"
+    },
+    "p2563_smart_gateway_features": {
+      "tag": "MASTER_ONLY",
+      "note": "Soft Daylight Fade + Lamp Mesh Occupancy + world Zigbee cartography SSOT — feature engines; brand-scrub titles BOTH-safe"
+    },
+    "p2564_smart_gateway_full": {
+      "tag": "MASTER_ONLY",
+      "note": "Soft Daylight Auto + Lamp Mesh full_soft fusion + Soft Ambient Sync (rate-limited Entertainment alternative)"
+    },
+    "p2565_multi_vendor_gateway": {
+      "tag": "MASTER_ONLY",
+      "note": "IKEA/Aqara/ST/Lutron unbranded: Soft Device Link, Lux Adaptive Dim, Mirror, Welcome Home, Absence Energy, Staggered Leave"
     },
     "smart_features_brand_scrub": {
       "tag": "BOTH",
@@ -473,5 +528,97 @@
       "unified-ci.yml",
       "forum-poll.yml"
     ]
+  },
+  "domains": {
+    "p2566_improvement_vectors": {
+      "tag": "MASTER_ONLY",
+      "note": "Quiet Hours, Contact Entry, Shade Daylight, Peak Shed, Idle Auto-Off, Night Path bias"
+    },
+    "p2567_smart_features_200": {
+      "tag": "MASTER_ONLY",
+      "note": "200-vector SoftFeatureCatalog + SoftRecipeRunner declarative recipes"
+    },
+    "p2568_soft_features_finalize": {
+      "tag": "MASTER_ONLY",
+      "note": "Finalize all 200 Soft Feature vectors — alias resolve, recipe handlers, enableAll/family/disable flows"
+    },
+    "p2569_michaelp_ogx8u5z6_trv": {
+      "tag": "BOTH",
+      "note": "Forum #2244 ZG253 TRV ogx8u5z6+TS0601 EF00-only compose (no OnOff 6) + sacred-keep"
+    },
+    "p2570_johan_complementary_completion": {
+      "tag": "BOTH",
+      "note": "Johan handover — complementary FP/case/OEM sibling enrich + retain TuyaDataPointsJohan (no degrade)"
+    },
+    "p2621_wifi_heat_pump_ev_kettle_fixit": {
+      "tag": "MASTER_ONLY",
+      "note": "Dedicated wifi_heat_pump / wifi_kettle / wifi_ev_charger + settings Fix-It (com.tuyalocal inspired); WiFiDPRegistry UNION"
+    },
+    "p2641_tuyalocal_phase_json_wifi": {
+      "tag": "MASTER_ONLY",
+      "note": "EvChargerPhaseJson + wifi_ev_charger DP102 JSON + WiFiDPRegistry qccdz/hjjcy/wnykq UNION + SourceCredits andiwirz"
+    },
+    "p2641_tuyalocal_stale_data_lan": {
+      "tag": "BOTH",
+      "note": "TuyaLocalClient stale-data watchdog (HB alive / DPS dead) — LAN reliability from com.tuyalocal 1.0.190+"
+    },
+    "p2642_tuyalocal_charge_history_fof": {
+      "tag": "MASTER_ONLY",
+      "note": "EvChargerChargeHistory + fire_and_forget SET + OEM work_state map (Homey Store Test com.tuyalocal 1.0.237)"
+    },
+    "p2642_tuyalocal_fire_and_forget_lan": {
+      "tag": "BOTH",
+      "note": "TuyaLocalClient fire-and-forget SET (3.4/3.5 / pulse) — LAN reliability"
+    },
+    "p2643_complementary_homey_apps_catalog": {
+      "tag": "MASTER_ONLY",
+      "note": "SSOT + docs catalog of Homey Live/Test peers (tuyalocal, Johan, Drenso, Heine) + SourceCredits — cite/credit only"
+    },
+    "p2644_bastien_flow_wall_routing": {
+      "tag": "BOTH",
+      "note": "switch_1gang turned_* heuristics (no double gang invent) + remote_button_wireless_wall TS0041-only — reliability"
+    },
+    "p2645_sleepy_remote_pairing": {
+      "tag": "BOTH",
+      "note": "Skip battery configureReporting on SED remotes + quiet 0x000A + wake-during-pair SSOT — reliability; never strip measure_battery"
+    },
+    "p2646_bastien_homey_box_platform": {
+      "tag": "MASTER_ONLY",
+      "note": "Bastien house SSOT homeyBox lock (hostname/LAN/bootId/Node24) — private inventory; enables local API path"
+    },
+    "p2647_tuyalocal_store_test_complementary": {
+      "tag": "MASTER_ONLY",
+      "note": "Homey Store Test com.tuyalocal 1.0.237 — Fix It LAN ports + Cloud Lookup UX + AQI/EV flows UNION (no Zigbee invent)"
+    },
+    "p2656_oss_lan_tuya_enrich": {
+      "tag": "MASTER_ONLY",
+      "note": "OSS LAN WiFi + Tuya-hub Zigbee cid enrich (TinyTuya/tuyapi/HA/tuya-mqtt/Z2M path doctrine) — UNION only; prefer Homey Zigbee coordinator"
+    },
+    "p2657_homey_store_peers_enrich": {
+      "tag": "MASTER_ONLY",
+      "skipBastien": true,
+      "note": "Homey Store Zigbee/Tuya/WiFi/SmartLife peer catalog + CREDITS + pain map + peer probe workflow — complementary; skip Bastien"
+    },
+    "p2658_titlesanitizer_oss_sources": {
+      "tag": "BOTH",
+      "skipBastien": true,
+      "note": "TitleSanitizer/SmartDiscovery setName guard (diag crash) + OSS LAN scanners in auto-enrich — reliability BOTH; Bastien skip catalog"
+    },
+    "p2660_local_first_doctrine": {
+      "tag": "BOTH",
+      "note": "Unified local-first SSOT — Zigbee mesh + WiFi LAN before cloud; Homey runtime zero cloud AI; gate check:p2660"
+    },
+    "p2687_interaction_flow_cards": {
+      "tag": "MASTER_ONLY",
+      "note": "FeatureFlowCards list caps/actions + interaction history ring (partout) — SoftFeature UX like Daylight; no Stable backport"
+    },
+    "p2689_smart_battery_adaptive_precision": {
+      "tag": "BOTH",
+      "note": "SOC/chemistry adaptive battery reporting + throttle + piggyback — precision without CR2032 drain / mesh flood; Stable surgical"
+    },
+    "p2683_p2686_bastien_ts004x_diag": {
+      "tag": "BOTH",
+      "note": "Bastien TS004x latency/UX + skipBatteryReporting pile calm + hold-release ghost + TRV p3dbf6qs sacred-keep"
+    }
   }
 }
