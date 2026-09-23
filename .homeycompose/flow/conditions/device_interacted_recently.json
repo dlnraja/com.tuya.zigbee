@@ -1,0 +1,37 @@
+{
+  "id": "device_interacted_recently",
+  "title": {
+    "en": "[[device]] !{{was|was not}} interacted with in the last [[minutes]] minutes",
+    "fr": "[[device]] !{{a|n'a pas}} eu d'interaction dans les [[minutes]] dernières minutes",
+    "nl": "[[device]] !{{had|had geen}} interactie in de laatste [[minutes]] minuten",
+    "de": "[[device]] !{{hatte|hatte keine}} Interaktion in den letzten [[minutes]] Minuten"
+  },
+  "hint": {
+    "en": "True if this device recorded an interaction in the in-memory ring within X minutes (P2687).",
+    "fr": "Vrai si cet appareil a une interaction dans l'anneau mémoire depuis X minutes (P2687)."
+  },
+  "args": [
+    {
+      "type": "device",
+      "name": "device",
+      "title": {
+        "en": "Device",
+        "fr": "Appareil",
+        "nl": "Apparaat",
+        "de": "Gerät"
+      }
+    },
+    {
+      "name": "minutes",
+      "type": "number",
+      "title": {
+        "en": "Minutes",
+        "fr": "Minutes"
+      },
+      "min": 1,
+      "max": 1440,
+      "step": 1,
+      "value": 5
+    }
+  ]
+}

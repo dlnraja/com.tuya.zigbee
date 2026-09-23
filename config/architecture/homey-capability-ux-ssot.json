@@ -1,9 +1,9 @@
 {
   "_meta": {
     "id": "P2500-homey-capability-ux-ssot",
-    "updated": "2026-09-14",
+    "updated": "2026-09-23",
     "classify": "BOTH",
-    "why": "Lock Athom capabilityOptions + Device Capabilities (T43287) UX lessons so Homey UI/Insights/Flows stay coherent — Contre quoi Peter getable:false battery hide"
+    "why": "Lock Athom capabilityOptions + Device Capabilities (T43287) UX lessons so Homey UI/Insights/Flows stay coherent — Contre quoi Peter getable:false battery hide; P2687 interaction list cards MASTER_ONLY"
   },
   "sources": {
     "athom": [
@@ -48,7 +48,8 @@
       "P2492 HomeyButtonUiCharter",
       "P2499 Peter battery getable",
       "P2488/P2490 battery keep+rehydrate",
-      "FeatureFlowCards capability_value_changed_generic + historical value"
+      "FeatureFlowCards capability_value_changed_generic + historical value",
+      "P2687 InteractionHistory list caps/actions + fleet ring"
     ]
   },
   "athomRules": {
@@ -81,7 +82,23 @@
     },
     "historicalValue": {
       "ourCard": "capability_historical_value",
-      "note": "DC-style N minutes ago via Insights + in-memory ring"
+      "deviceFilter": "none — all app devices (not capabilities=onoff)",
+      "note": "DC-style N minutes ago via Insights + in-memory ring; P2687 removed onoff-only filter + value token",
+      "tokens": ["value"]
+    },
+    "interactionHistory": {
+      "patch": "P2687",
+      "classify": "MASTER_ONLY",
+      "cards": [
+        "list_device_capabilities",
+        "list_device_actions",
+        "list_recent_interactions",
+        "list_fleet_recent_interactions",
+        "device_interaction",
+        "device_interacted_recently"
+      ],
+      "runtime": "lib/flow/FeatureFlowCards.js + lib/flow/InteractionHistory.js",
+      "note": "Fleet ring of action-like interactions + list actions/caps; no AVD clone"
     },
     "antiPhantom": {
       "note": "Never DynCap-add climate/curtain phantoms; VicHY staleCaps strip",

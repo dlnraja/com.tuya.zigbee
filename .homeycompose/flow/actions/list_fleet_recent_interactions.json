@@ -1,0 +1,47 @@
+{
+  "id": "list_fleet_recent_interactions",
+  "title": {
+    "en": "List recent interactions (all devices)",
+    "fr": "Lister les interactions récentes (tous appareils)",
+    "nl": "Recente interacties (alle apparaten)",
+    "de": "Letzte Interaktionen (alle Geräte)"
+  },
+  "hint": {
+    "en": "Fleet-wide interaction ring for this app (max 50, P2687).",
+    "fr": "Anneau d'interactions de toute l'app (max 50, P2687)."
+  },
+  "args": [
+    {
+      "name": "limit",
+      "type": "number",
+      "title": {
+        "en": "Max entries",
+        "fr": "Nombre max"
+      },
+      "min": 1,
+      "max": 50,
+      "step": 1,
+      "value": 20
+    }
+  ],
+  "tokens": [
+    {
+      "name": "list",
+      "type": "string",
+      "title": {
+        "en": "Interactions",
+        "fr": "Interactions"
+      },
+      "example": "Lamp: onoff=true; Remote: button.1=true"
+    },
+    {
+      "name": "count",
+      "type": "number",
+      "title": {
+        "en": "Count",
+        "fr": "Nombre"
+      },
+      "example": 2
+    }
+  ]
+}
