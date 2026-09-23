@@ -3,9 +3,9 @@
 Silent only. Never forum POST (T157628). Dual-app noted per row.
 
 Generated: 2026-09-23 · Live tips after this treat:
-- **Universal** `9.0.1196` Homey Test build **#3339** (P2690 + prior)
-- **Stable** `5.12.309` Test build **#224** (P2690 BOTH)
-- **Bastien** `1.0.66` Test build **#75** (P2683–P2689)
+- **Universal** `9.0.1197` Homey Test (P2691 pile drain + prior)
+- **Stable** `5.12.310` Test (P2691 BOTH)
+- **Bastien** `1.0.67` Test (P2691 pile drain)
 
 ## Gmail diagnostics harvest (senetmarne)
 
@@ -15,7 +15,7 @@ Generated: 2026-09-23 · Live tips after this treat:
 | **9a2f232b** | Universal | `_TZE200_p3dbf6qs`+TS0601 Unknown TRV | **P2686** sacred-keep | Update ≥**9.0.1196**, remove Unknown, add **Radiator valve** |
 | **af98752d** | Universal | presence_sensor_radar (EF00 RX) | Tip / #550 family | Update ≥**9.0.1196** + re-pair if lux/distance cold |
 | **cb3c0c87** | Bastien | MODULE_NOT_FOUND zigbeedriver | **P2676** tip-lag | Bastien ≥**1.0.66** |
-| **885a9901** | Bastien | TS0042 latency / double-press slow | **P2686** hold-release + skipBattery | Bastien ≥**1.0.66**, re-pair if still slow |
+| **885a9901** | Bastien | TS0042 latency + **pile drain** (powerCfg EP1+EP2 Timeout) | **P2691** class skip | Bastien ≥**1.0.67**, update Test |
 | **8f0915fa** | Bastien | TS0042 slow / TS0043 dead | Tip-lag P2683/85/86 | Bastien ≥**1.0.66** |
 | **f37e8a91** | Bastien | thank-you + CPU / switches | Tip-lag | Bastien ≥**1.0.66** |
 | **be119f76** | Bastien | « channel » + `sub_capability_changed` boolean token | **P2659** already ships `String(value)` | Bastien ≥**1.0.66** |
@@ -43,6 +43,7 @@ Source: `reports/gmail-diag-2026-09-23/HARVEST.json` (Gmail MCP threads).
 
 | Patch | Track | Contre quoi |
 |-------|-------|-------------|
+| **P2691** | BOTH + Bastien | Sleepy remotes powerCfg TX storm → CR2032 drain (diag 885a9901) |
 | **P2690** | BOTH | Ceiling radar lux+distance cold while DP1 alive → find_switch re-arm (poll/presence/watchdog) |
 | **P2687** | MASTER_ONLY | Interaction Flow cards partout (already on tip ≥9.0.1194) |
 | **P2689** | BOTH | Adaptive battery precision (already on tip ≥9.0.1195 / Bastien 1.0.66 / Stable 5.12.308→309) |
@@ -52,9 +53,9 @@ Gates: `npm run check:p2690` · `check:p2687` · `check:p2689` · `check:p2521`.
 
 ## User action (no forum reply)
 
-1. Universal Test → **9.0.1196** (#3339).
-2. Stable Test → **5.12.309** (#224) if on Stable track.
-3. Bastien Test → **1.0.66** (#75).
+1. Universal Test → **9.0.1197**.
+2. Stable Test → **5.12.310** if on Stable track.
+3. Bastien Test → **1.0.67** (pile drain fix — remotes stop powerCfg on every press).
 4. #550: remove radar, re-add after tip.
 5. #551 / remotes: remove Generic, add Wireless Button 3; never plain Homey Zigbee.
 6. TRV `p3dbf6qs`: remove Unknown → Radiator valve.
