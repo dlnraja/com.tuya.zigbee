@@ -18,15 +18,20 @@ describe('P2699 non-native DP/cluster complementary never mandatory', () => {
     const ssot = JSON.parse(
       fs.readFileSync(path.join(ROOT, 'config/architecture/complementary-rx-tx-dp-cluster-ssot.json'), 'utf8')
     );
-    assert.equal(ssot.patch, 'P2699');
+    assert.ok(['P2699', 'P2700'].includes(ssot.patch), `unexpected patch ${ssot.patch}`);
     assert.equal(ssot.doctrine.nonNativeNeverMandatory, true);
     assert.equal(ssot.doctrine.complementaryOnly, true);
+    assert.equal(ssot.doctrine.softArmRawRxTxPfc, true);
     assert.equal(ssot.nonNativeHomeyGaps.mode, 'complementary_never_mandatory');
     assert.ok(ssot.nonNativeHomeyGaps.never.includes('hard_throw_missing_ef00_on_boot'));
     assert.ok(ssot.nonNativeHomeyGaps.always.includes('parallel_rx_tx_cascade'));
     assert.ok(ssot.nonNativeHomeyGaps.always.includes('raw_frame_parse'));
+    assert.ok(ssot.nonNativeHomeyGaps.always.includes('protocol_rxtx_chain'));
     assert.ok(ssot.nonNativeHomeyGaps.clusterExamples.includes('0xEF00'));
     assert.equal(ssot.nonNativeHomeyGaps.runtimeHelper, 'lib/io/NonNativeComplementary.js');
+    assert.ok(ssot.nonNativeHomeyGaps.softArmTargets.includes('RawClusterFallback'));
+    assert.ok(ssot.nonNativeHomeyGaps.softArmTargets.includes('ProtocolFallbackChain'));
+    assert.ok(ssot.nonNativeHomeyGaps.softArmTargets.includes('ProtocolRxTxChain'));
   });
 
   it('NonNativeComplementary classifies proprietary clusters + soft policy', () => {
@@ -56,6 +61,11 @@ describe('P2699 non-native DP/cluster complementary never mandatory', () => {
     const armed = softArmComplementaryIo({ setStoreValue: async () => {} });
     assert.equal(armed.ok, true);
     assert.ok(armed.armed.includes('store_flag'));
+    // P2700: soft-arm must attempt raw + PFC + rxtx (or mark present)
+    const joined = armed.armed.join(',');
+    assert.ok(/raw_cluster_fallback|raw_cluster_fallback_present/.test(joined), joined);
+    assert.ok(/protocol_fallback_chain|protocol_fallback_chain_present/.test(joined), joined);
+    assert.ok(/protocol_rxtx_chain|protocol_rxtx_present/.test(joined), joined);
   });
 
   it('HomeyCompensationLayer.attach soft-arms NonNativeComplementary (no throw)', () => {
@@ -64,6 +74,13 @@ describe('P2699 non-native DP/cluster complementary never mandatory', () => {
     assert.match(src, /softArmComplementaryIo/);
     assert.match(src, /NonNativeComplementary/);
     assert.match(src, /never mandatory/i);
+  });
+
+  it('DeviceIOFacade soft-arms complementary raw/RX-TX on attach (P2700)', () => {
+    const src = fs.readFileSync(path.join(ROOT, 'lib/io/DeviceIOFacade.js'), 'utf8');
+    assert.match(src, /P2700/);
+    assert.match(src, /softArmComplementaryIo/);
+    assert.match(src, /NonNativeComplementary/);
   });
 
   it('TuyaMagicPacket handshake is complementary soft (not mandatory wording)', () => {
