@@ -75,6 +75,21 @@ class Switch4GangDevice extends BaseClass {
 
   get mainsPowered() { return true; }
 
+  /**
+   * EXTEND parent dpMappings with energy monitoring DPs (smartDivisor).
+   * Contre quoi(P2696c): compose has meter_power → check-energy-divisor must see smartDivisor.
+   */
+  get dpMappings() {
+    const parentMappings = Object.getPrototypeOf(Object.getPrototypeOf(this)).dpMappings || {};
+    return {
+      ...parentMappings,
+      17: { capability: 'measure_current', smartDivisor: true, unit: 'A' },
+      18: { capability: 'measure_power', smartDivisor: true, unit: 'W' },
+      19: { capability: 'measure_voltage', smartDivisor: true, unit: 'V' },
+      20: { capability: 'meter_power', smartDivisor: true, unit: 'kWh' },
+    };
+  }
+
   /** WHY(P2463): relay-only — P2397 must not invent button.N */
   get skipGangButtonUi() { return true; }
 
