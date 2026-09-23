@@ -1,34 +1,60 @@
-# TREAT — L99 new Homey diags (2026-09-22 → 2026-09-23)
+# TREAT FINAL — L99 Gmail diags + GH + forum (2026-09-23)
 
-Silent only. Never forum POST (T157628).
+Silent only. Never forum POST (T157628). Dual-app noted per row.
 
-Generated: 2026-09-23 · Dual-app: **BOTH** (+ Bastien tip)
+Generated: 2026-09-23 · Live tips after this treat:
+- **Universal** `9.0.1196` Homey Test build **#3339** (P2690 + prior)
+- **Stable** `5.12.309` Test build **#224** (P2690 BOTH)
+- **Bastien** `1.0.66` Test build **#75** (P2683–P2689)
 
-## Harvest (Gmail MCP senetmarne)
+## Gmail diagnostics harvest (senetmarne)
 
-| Log ID | App @ tip | Couple / signal | Verdict |
-|--------|-----------|-----------------|---------|
-| **885a9901** | Bastien **1.0.60** | `_TZ3000_dzwgk7e2`+**TS0042** — latency + ghost | **P2686** root: invent HOLD-RELEASE mid single + battery TX tip-lag |
-| **9a2f232b** | Universal **9.0.1182** | `_TZE200_p3dbf6qs`+**TS0601** Unknown TRV | **P2686** sacred-keep pin + compose union (Z2M TRV06_1b/ME167) |
-| **f37e8a91** | Bastien 1.0.53 | thank-you + CPU + dzwgk7e2 | Tip-lag P2683/85; profile undefined on early re-arm |
-| **8f0915fa** | Bastien 1.0.53 | TS0042 slow / TS0043 dead | Tip-lag P2683 |
-| **cb3c0c87** | Bastien 1.0.51 | `homey-zigbeedriver` MODULE_NOT_FOUND | Already fixed ≥1.0.56 |
-| **149bc1a5** | Universal 9.0.1165 | OOM JsonParse boot | Already treated (heap / Buffer JSON) — tip ≥9.0.1192 |
-| **be119f76** | Bastien 1.0.34 | « channel » UX | Scene remotes ≠ Zigbee channels; Flow cards |
-| **52ef684a** | Bastien 1.0.34 | no buttons | Tip-lag + wrong pairing class |
+| Log ID | App | User signal | Verdict | Action |
+|--------|-----|-------------|---------|--------|
+| **149bc1a5** | Universal 9.0.1165 | SIGABRT boot / unresponsive | **P2674** tip-lag | Update ≥**9.0.1196** (GH#553 closed) |
+| **9a2f232b** | Universal | `_TZE200_p3dbf6qs`+TS0601 Unknown TRV | **P2686** sacred-keep | Update ≥**9.0.1196**, remove Unknown, add **Radiator valve** |
+| **af98752d** | Universal | presence_sensor_radar (EF00 RX) | Tip / #550 family | Update ≥**9.0.1196** + re-pair if lux/distance cold |
+| **cb3c0c87** | Bastien | MODULE_NOT_FOUND zigbeedriver | **P2676** tip-lag | Bastien ≥**1.0.66** |
+| **885a9901** | Bastien | TS0042 latency / double-press slow | **P2686** hold-release + skipBattery | Bastien ≥**1.0.66**, re-pair if still slow |
+| **8f0915fa** | Bastien | TS0042 slow / TS0043 dead | Tip-lag P2683/85/86 | Bastien ≥**1.0.66** |
+| **f37e8a91** | Bastien | thank-you + CPU / switches | Tip-lag | Bastien ≥**1.0.66** |
+| **be119f76** | Bastien | « channel » + `sub_capability_changed` boolean token | **P2659** already ships `String(value)` | Bastien ≥**1.0.66** |
+| **52ef684a** / **4c0d232b** / **4d4e1684** | Bastien | 3ch remote dead / wrong device | Tip-lag + pairing class | Bastien ≥**1.0.66**; pick Wireless Button 3 — not Homey Zigbee |
+| **e8d98608** | Bastien | wrong device / flow | Tip-lag | Bastien ≥**1.0.66** |
 
-## Code (P2686)
+Source: `reports/gmail-diag-2026-09-23/HARVEST.json` (Gmail MCP threads).
 
-1. **HOLD-RELEASE ghost** — TS004x `sceneSwitch` / `skipBatteryReporting` remotes use discrete 0xFD long; never invent soft release. Cancel all pending invent timers on any new press.
-2. **`dzwgk7e2` / `vsxvaj9i`** — add `skipBatteryReporting` + `skipSoftwareHoldRelease`.
-3. **TRV `_TZE200_p3dbf6qs`+TS0601** — sacred-keep → `radiator_valve`; union TZE200/204 into `device_radiator_valve` (P2520 complementary).
+## GitHub
 
-## Contre quoi
+| Issue | State | Treat |
+|-------|-------|-------|
+| **#553** SIGABRT 9.0.1165 | **CLOSED** | Tip-lag P2674 → ≥9.0.1192 / live 9.0.1196 |
+| **#550** gkfbdvyx lux/distance cold | OPEN | **P2690** live on 9.0.1196 + Stable 5.12.309 — user update + re-add |
+| **#551** famkxci2 Generic | OPEN | Sacred-keep since 9.0.1134+; tip-lag comment — user update + re-pair Wireless 3 |
+| Open PRs | **none** | — |
 
-- `test/critical/p2686-diag-l99-hold-release-trv.test.js`
-- `npm run check:p2686` / `check:p268x`
+## Forum (SHADOW)
+
+- Silent scan + actionable processor: 217 posts / 49 need-action — all **alreadyInCatalog** / **fixShipped** / tip-lag.
+- Do **not** invent garbled FP `_TZE2841000000_3MZB0SDZ` (OCR); real couple `_TZE284_3MZB0SDZ` ROUTED_OK.
+- VicHY Advanced Flow lag mention (forum mail): no POST; tip soak + P2687 Flow cards on Universal.
+
+## Code shipped this cycle
+
+| Patch | Track | Contre quoi |
+|-------|-------|-------------|
+| **P2690** | BOTH | Ceiling radar lux+distance cold while DP1 alive → find_switch re-arm (poll/presence/watchdog) |
+| **P2687** | MASTER_ONLY | Interaction Flow cards partout (already on tip ≥9.0.1194) |
+| **P2689** | BOTH | Adaptive battery precision (already on tip ≥9.0.1195 / Bastien 1.0.66 / Stable 5.12.308→309) |
+| **P2521** | master | Baseline intentional dual-claim `p3dbf6qs` so Auto-Publish can ship |
+
+Gates: `npm run check:p2690` · `check:p2687` · `check:p2689` · `check:p2521`.
 
 ## User action (no forum reply)
 
-- Bastien: update Test ≥ tip with P2686, re-pair remotes if still ghost/slow.
-- Universal: update Test, remove Unknown TRV, add as **Radiator valve** (`_TZE200_p3dbf6qs`+TS0601).
+1. Universal Test → **9.0.1196** (#3339).
+2. Stable Test → **5.12.309** (#224) if on Stable track.
+3. Bastien Test → **1.0.66** (#75).
+4. #550: remove radar, re-add after tip.
+5. #551 / remotes: remove Generic, add Wireless Button 3; never plain Homey Zigbee.
+6. TRV `p3dbf6qs`: remove Unknown → Radiator valve.

@@ -34,7 +34,7 @@
       "purpose": "Innovation + soak (features + reliability)",
       "cloneHint": "Documents/homey/master",
       "publish": "Auto-Publish on Push → Homey Test",
-      "tipHealthy": "9.0.1195",
+      "tipHealthy": "9.0.1196",
       "tipNote": "P2687 interaction Flow + P2689 adaptive battery; P139 soft-continue on PF emails"
     },
     "stable": {
@@ -45,7 +45,7 @@
       "purpose": "Reliability LTS only — no feature managers unless human-promoted",
       "cloneHint": "Documents/homey/stable",
       "publish": "Publish Stable → Test (APP_ID=.stable only); P139 no spam republish",
-      "tipHealthy": "5.12.308",
+      "tipHealthy": "5.12.309",
       "tipNote": "P2689 adaptive battery BOTH; no P2687 SoftFeature"
     },
     "bastien": {
