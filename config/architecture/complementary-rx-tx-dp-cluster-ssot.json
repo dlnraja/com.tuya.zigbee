@@ -1,15 +1,47 @@
 {
   "id": "complementary-rx-tx-dp-cluster-ssot",
-  "patch": "P2544",
+  "patch": "P2699",
   "dualApp": "BOTH",
-  "updated": "2026-09-17",
+  "updated": "2026-09-23",
   "doctrine": {
     "complementaryOnly": true,
     "noInventPid": true,
     "unionNotReplace": true,
     "ef00AndZclParallelOk": true,
     "rawIsLastResortNotOnly": true,
-    "wrappersBeyondHomeyLibs": true
+    "wrappersBeyondHomeyLibs": true,
+    "nonNativeNeverMandatory": true
+  },
+  "nonNativeHomeyGaps": {
+    "mode": "complementary_never_mandatory",
+    "why": "Homey SDK/interview does not natively cover every Tuya DP / proprietary cluster — treat gaps as parallel soft paths, never compose/bind/boot requirements",
+    "never": [
+      "compose_require_proprietary_only",
+      "hard_throw_missing_ef00_on_boot",
+      "force_bind_non_interviewed_cluster",
+      "invent_pid_to_cover_gap"
+    ],
+    "always": [
+      "parallel_rx_tx_cascade",
+      "raw_frame_parse",
+      "raw_cluster_fallback",
+      "protocol_fallback_chain",
+      "soft_stub_missing_methods",
+      "passive_listen_stream",
+      "magic_handshake_soft"
+    ],
+    "clusterExamples": [
+      "0xEF00",
+      "0xE000",
+      "0xE002",
+      "0xED00",
+      "0xFD",
+      "0xFC",
+      "msCO2",
+      "vocMeasurement"
+    ],
+    "runtimeHelper": "lib/io/NonNativeComplementary.js",
+    "gate": "npm run check:p2699"
   },
   "rxOrderCanonical": [
     "capability_listener",
@@ -92,6 +124,15 @@
   },
   "relatedSsot": [
     "config/architecture/complementary-coverage-max-ssot.json",
-    "config/architecture/homey-device-updates.json"
-  ]
+    "config/architecture/homey-device-updates.json",
+    "config/architecture/sleepy-remote-pairing-ssot.json",
+    "config/architecture/pairing-discovery-ssot.json"
+  ],
+  "sleepyRemoteComplementary": {
+    "patch": "P2645",
+    "rxNote": "SED remotes: prefer onOff 0xFD / multistate RX; skip powerConfiguration configureReporting at pair",
+    "txForbid": ["0x8004 scene-force on non-scene couples", "EF00 leftover on IAS-only"],
+    "quietClusters": ["0x000a", "0x0019"],
+    "ssot": "config/architecture/sleepy-remote-pairing-ssot.json"
+  }
 }
