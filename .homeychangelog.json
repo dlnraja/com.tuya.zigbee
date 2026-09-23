@@ -1,4 +1,8 @@
 {
+  "9.0.1211": {
+    "en": "Publish heal: FP collision baseline + HiepSVG radar P2705. Update Test.",
+    "fr": "Heal publish: baseline FP + radar HiepSVG P2705. Maj Test."
+  },
   "9.0.1210": {
     "en": "Radar gkfbdvyx: lux re-arm when distance still moves; Homey range/sensitivity push to MCU; sticky clear after leave. Update Test + Repair radar.",
     "fr": "Radar gkfbdvyx: rearme lux si distance bouge encore; portee/sensibilite Homey vers MCU; clear presence apres depart. Maj Test + Repair radar."
