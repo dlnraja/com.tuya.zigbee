@@ -1,0 +1,23 @@
+{
+  "version": 1,
+  "hooks": {
+    "subagentStart": [
+      {
+        "command": "node .cursor/hooks/limit-subagent-ai.js",
+        "failClosed": true
+      }
+    ],
+    "subagentStop": [
+      {
+        "command": "node .cursor/hooks/subagent-stop-count.js"
+      }
+    ],
+    "preToolUse": [
+      {
+        "command": "node .cursor/hooks/limit-subagent-ai.js",
+        "matcher": "Task",
+        "failClosed": true
+      }
+    ]
+  }
+}
