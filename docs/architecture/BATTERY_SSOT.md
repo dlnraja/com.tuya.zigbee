@@ -19,6 +19,7 @@ Source: [Battery status](https://apps.developer.homey.app/the-basics/devices/bes
 | Cover/CO2 power-source couples | `lib/helpers/batteryPowerSource.js` |
 | Facade fuse | `DeviceIOFacade` `fuseBattery` |
 | Sleepy remote skip configureReporting | `BaseUnifiedDevice` + `profile.skipBatteryReporting` (P2645) |
+| Adaptive SOC/chemistry precision | `lib/battery/SmartBatteryAdaptivePrecision.js` (P2689) |
 
 ## Known couples (P2296)
 
@@ -39,6 +40,26 @@ Complementary layers (see [`SLEEPY_REMOTE_PAIRING_SSOT.md`](./SLEEPY_REMOTE_PAIR
 | Skip `configureReporting` / `getOnStart` on button/sleepy drivers | Strip `measure_battery` from `button_*` (P2488) |
 | Accept passive % reports when SED wakes | Linear `(V-2.5)/0.5` |
 | Quiet Time `0x000A` L0 spam | Blame user-only without code skipBattCfg |
+
+## P2689 — Adaptive precision (piles / accus / mesh calm)
+
+Machine: [`lib/battery/SmartBatteryAdaptivePrecision.js`](../../lib/battery/SmartBatteryAdaptivePrecision.js)  
+Gate: `npm run check:p2689`  
+Classify: **BOTH** (reliability)
+
+Inspired by Z2M (awake-only configure, long minInterval), ZHA (no power bind on coin remotes), HomeSuite (jitter / no stampede), community last-seen doctrine:
+
+| SOC band | minChange | throttle | Poll scale (non-SED only) |
+|----------|-----------|----------|---------------------------|
+| critical ≤15% | 1% | 60s | 0.5× |
+| low ≤30% | 1% | 120s | 0.7× |
+| mid ≤70% | 2% | 5 min | 1× |
+| high ≤100% | 5% | 10 min | 1.5× |
+
+- **Coin (CR2032/CR2450…)** on buttons: never proactive poll; passive + optional stale piggyback on press.
+- **Accus (Li-ion…)** : slightly tighter maxInterval when low (SOC swings under load).
+- **Mains phantom**: park reporting (MeshFloodCalm disable).
+- Dual-signal fuse: flat ZCL 100% + low voltage → prefer voltage curve (no linear V formula).
 
 ## LEGACY (do not extend)
 

@@ -1,0 +1,72 @@
+{
+  "id": "device_interaction",
+  "title": {
+    "en": "A device interaction happened",
+    "fr": "Une interaction appareil a eu lieu",
+    "nl": "Er vond een apparaatininteractie plaats",
+    "de": "Eine Geräteinteraktion ist aufgetreten"
+  },
+  "hint": {
+    "en": "Fires on action-like capability changes (onoff, dim, button, cover, thermostat…). Optional device filter (P2687).",
+    "fr": "Se déclenche sur les changements de type action (onoff, dim, bouton, volet, thermostat…). Filtre appareil optionnel (P2687)."
+  },
+  "tokens": [
+    {
+      "name": "device_name",
+      "type": "string",
+      "title": {
+        "en": "Device name",
+        "fr": "Nom de l'appareil"
+      },
+      "example": "Living remote"
+    },
+    {
+      "name": "capability",
+      "type": "string",
+      "title": {
+        "en": "Capability",
+        "fr": "Capacité"
+      },
+      "example": "onoff"
+    },
+    {
+      "name": "value",
+      "type": "string",
+      "title": {
+        "en": "New value",
+        "fr": "Nouvelle valeur"
+      },
+      "example": "true"
+    },
+    {
+      "name": "old_value",
+      "type": "string",
+      "title": {
+        "en": "Previous value",
+        "fr": "Valeur précédente"
+      },
+      "example": "false"
+    },
+    {
+      "name": "kind",
+      "type": "string",
+      "title": {
+        "en": "Kind (action|sensor)",
+        "fr": "Type (action|sensor)"
+      },
+      "example": "action"
+    }
+  ],
+  "args": [
+    {
+      "type": "device",
+      "name": "device",
+      "title": {
+        "en": "Device (optional filter)",
+        "fr": "Appareil (filtre optionnel)",
+        "nl": "Apparaat (optioneel filter)",
+        "de": "Gerät (optionaler Filter)"
+      }
+    }
+  ]
+}

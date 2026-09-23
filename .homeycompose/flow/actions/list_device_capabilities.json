@@ -1,0 +1,45 @@
+{
+  "id": "list_device_capabilities",
+  "title": {
+    "en": "List all capabilities of [[device]]",
+    "fr": "Lister toutes les capacités de [[device]]",
+    "nl": "Alle capaciteiten van [[device]] opsommen",
+    "de": "Alle Fähigkeiten von [[device]] auflisten"
+  },
+  "hint": {
+    "en": "Returns a CSV list of every capability on the device (P2687).",
+    "fr": "Retourne la liste CSV de toutes les capacités de l'appareil (P2687)."
+  },
+  "args": [
+    {
+      "type": "device",
+      "name": "device",
+      "title": {
+        "en": "Device",
+        "fr": "Appareil",
+        "nl": "Apparaat",
+        "de": "Gerät"
+      }
+    }
+  ],
+  "tokens": [
+    {
+      "name": "list",
+      "type": "string",
+      "title": {
+        "en": "Capabilities list",
+        "fr": "Liste des capacités"
+      },
+      "example": "onoff, measure_battery, button.1"
+    },
+    {
+      "name": "count",
+      "type": "number",
+      "title": {
+        "en": "Count",
+        "fr": "Nombre"
+      },
+      "example": 3
+    }
+  ]
+}

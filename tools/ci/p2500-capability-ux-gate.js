@@ -85,6 +85,18 @@ function main() {
     fail('capability_value_changed_generic must not filter capabilities=onoff (blocks sensors)');
   }
 
+  // P2687 — historical value must work on all devices (not onoff-only)
+  const histPath = path.join(ROOT, '.homeycompose/flow/actions/capability_historical_value.json');
+  if (!fs.existsSync(histPath)) fail('missing capability_historical_value.json');
+  const hist = JSON.parse(fs.readFileSync(histPath, 'utf8'));
+  const histDev = (hist.args || []).find((a) => a.name === 'device' || a.type === 'device');
+  if (histDev?.filter && /capabilities=onoff/i.test(histDev.filter)) {
+    fail('capability_historical_value must not filter capabilities=onoff (P2687 partout)');
+  }
+  if (!(hist.tokens || []).some((t) => t.name === 'value')) {
+    fail('capability_historical_value must declare value token (P2687)');
+  }
+
   // Runtime wire (fleet onNodeInit — not only button override path)
   const base = fs.readFileSync(path.join(ROOT, 'lib/tuya/TuyaZigbeeDevice.js'), 'utf8');
   if (!base.includes('healSensorCapabilityGetable')) {
