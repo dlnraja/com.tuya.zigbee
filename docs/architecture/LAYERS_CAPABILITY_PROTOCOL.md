@@ -81,6 +81,8 @@ All protocol entry points are inventoried and cascaded:
 
 **P2540 complementary:** SSOT `config/architecture/complementary-rx-tx-dp-cluster-ssot.json` — EF00 + ZCL + raw listen in parallel (union). `RawClusterFallback` must **listen** AQ clusters (CO2/VOC/HCHO/PM2.5), not map-only. Gate: `npm run check:p2540`.
 
+**P2699 non-native never mandatory:** Homey SDK gaps (0xEF00, 0xE000, 0xE002, 0xED00, 0xFD/0xFC, AQ ZCL) are **complementary only** — soft-arm via `lib/io/NonNativeComplementary.js` (RX/TX/raw/stream/PFC). Never compose-require or boot-fatal throw. Gate: `npm run check:p2699`.
+
 API: `await this.tx({ kind:'dp', dp:1, value:true, capability:'onoff' })` · `await this.rx({ capability, cluster, attrs })` · `this.protocolRxTx.inventory()`.
 
 Wire new parsers to `confirmInbound` / `this.tx` / `this.rx` instead of bare `setCapabilityValue`.

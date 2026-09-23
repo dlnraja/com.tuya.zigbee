@@ -14,6 +14,7 @@
   "capabilities": [
     "button.1",
     "button.2",
+    "alarm_battery",
     "measure_battery"
   ],
   "capabilitiesOptions": {
