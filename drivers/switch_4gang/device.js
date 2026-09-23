@@ -12,10 +12,12 @@ try {
 }
 
 const { includesCI } = require('../../lib/utils/CaseInsensitiveMatcher');
+const { healTs0004SwitchModule } = require('../../lib/tuya/Ts0004SwitchModuleHeal');
 
 /**
  * 4-GANG SWITCH - v5.9.23
  * WHY(P2395/B10): no Physical/Virtual double-wrap — already on TuyaZigbeeDevice.
+ * WHY(P2634): _TZ3000_ltt60asa/mmkbptmx/liygxtcq + TS0004 — Z2M switch_module L99 heal.
  */
 
 // P141: _TYZB01_bagt1e4o + TS0014 — Oz Smart Things 4-gang; EndDevice, ZCL OnOff only.
@@ -74,6 +76,24 @@ class Switch4GangDevice extends BaseClass {
   get mainsPowered() { return true; }
 
   /**
+   * EXTEND parent dpMappings with energy monitoring DPs (smartDivisor).
+   * Contre quoi(P2696c): compose has meter_power → check-energy-divisor must see smartDivisor.
+   */
+  get dpMappings() {
+    const parentMappings = Object.getPrototypeOf(Object.getPrototypeOf(this)).dpMappings || {};
+    return {
+      ...parentMappings,
+      17: { capability: 'measure_current', smartDivisor: true, unit: 'A' },
+      18: { capability: 'measure_power', smartDivisor: true, unit: 'W' },
+      19: { capability: 'measure_voltage', smartDivisor: true, unit: 'V' },
+      20: { capability: 'meter_power', smartDivisor: true, unit: 'kWh' },
+    };
+  }
+
+  /** WHY(P2463): relay-only — P2397 must not invent button.N */
+  get skipGangButtonUi() { return true; }
+
+  /**
    * WHY(P2457 / GH#541): wired 4-gang UI = relays only.
    * Compose already dropped button.*; app.json drift + leftover device store
    * still showed 9 circular tiles + scene spam. Strip on every boot.
@@ -105,6 +125,26 @@ class Switch4GangDevice extends BaseClass {
       await super.onNodeInit({ zclNode });
       await this._stripPhantomButtonCaps(); // again after base may soft-add
       await this.initPhysicalButtonDetection(zclNode);
+      // WHY(P2634): SML-04Z family — magic + EP1–4 bind + E001 switch_type + metering
+      await healTs0004SwitchModule(this, zclNode).catch((e) => {
+        this.log(`[P2634] heal soft-fail: ${e && e.message}`);
+      });
+      // WHY(P2668 / Bastien Virtual→Bastien): salon 4-gang used as lighting (ZHA quirk family).
+      // Prefer light class so Homey Energy does not treat it as a metered socket tile.
+      try {
+        const mfr = String(
+          this.getSetting?.('zb_manufacturer_name')
+          || this.getData?.()?.manufacturerName
+          || '',
+        );
+        if (/ltt60asa|mmkbptmx|liygxtcq/i.test(mfr) && typeof this.setClass === 'function') {
+          const cls = String(this.getClass?.() || '');
+          if (cls === 'socket') {
+            await this.setClass('light').catch(() => {});
+            this.log('[P2668] setClass(light) for TS0004 lighting switch');
+          }
+        }
+      } catch (_e) { /* soft */ }
       // WHY(P2457): no virtual button tiles on wired relay UI
       this.log('[SWITCH-4G] Initialized (relay caps only)');
     } catch (err) {
@@ -222,7 +262,7 @@ class Switch4GangDevice extends BaseClass {
             try {
               const card = this.homey.flow.getDeviceTriggerCard(flowId);
               if (card) {
-                await card.trigger(this, { gang: epNum, state: value }, {}).catch(() => {});
+                await card.trigger(this, { gang: epNum, button: String(epNum), state: value }, { gang: String(epNum), button: String(epNum) }).catch(() => {});
                 this.log(`[BSEED-4G] ✅ Physical G${epNum} ${value ? 'ON' : 'OFF'}`);
               }
             } catch (e) { }
@@ -233,7 +273,7 @@ class Switch4GangDevice extends BaseClass {
             try {
               const card = this.homey.flow.getDeviceTriggerCard(sceneId);
               if (card) {
-                await card.trigger(this, { action: value ? 'on' : 'off' }, {}).catch(() => {});
+                await card.trigger(this, { action: value ? 'on' : 'off', gang: epNum, button: String(epNum) }, { gang: String(epNum), button: String(epNum), action: value ? 'on' : 'off' }).catch(() => {});
                 this.log(`[BSEED-4G] ✅ Scene G${epNum} ${value ? 'on' : 'off'}`);
               }
             } catch (e) { }
