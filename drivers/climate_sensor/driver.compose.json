@@ -11,7 +11,8 @@
     "measure_humidity",
     "measure_battery",
     "measure_voltage",
-    "button.1"
+    "button.1",
+    "alarm_battery"
   ],
   "energy": {
     "batteries": [
@@ -2208,7 +2209,11 @@
       "_TZE2841000000_QF5MZEWI",
       "_tze2841000000_QF5MZEWI",
       "heobian",
-      "Heobian"
+      "Heobian",
+      "tuyatec-1uxx9cci",
+      "tuyatec-haoiuwzy",
+      "TUYATEC-1UXX9CCI",
+      "TUYATEC-HAOIUWZY"
     ],
     "productId": [
       "ZTH13-3.0",
