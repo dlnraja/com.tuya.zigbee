@@ -44,6 +44,15 @@ describe('P2686 L99 diag hold-release + TRV sacred-keep', () => {
     assert.ok((c.zigbee.productId || []).includes('TS0601'));
   });
 
+  // WHY(P2697): enrich reorder buried p3 at idx~99 — compact could drop before sacred-keep
+  it('radiator_valve front-pins p3dbf6qs case forms', () => {
+    const c = JSON.parse(fs.readFileSync(
+      path.join(ROOT, 'drivers/radiator_valve/driver.compose.json'), 'utf8'));
+    const head = (c.zigbee.manufacturerName || []).slice(0, 4).map((s) => String(s).toLowerCase());
+    assert.ok(head.every((m) => m.includes('p3dbf6qs')), 'p3dbf6qs case forms front-pinned');
+    assert.equal(c.zigbee.productId[0], 'TS0601');
+  });
+
   it('device_radiator_valve unions TZE200_p3dbf6qs (complementary)', () => {
     const c = JSON.parse(fs.readFileSync(
       path.join(ROOT, 'drivers/device_radiator_valve/driver.compose.json'), 'utf8'));
