@@ -600,6 +600,14 @@
     "p2660_local_first_doctrine": {
       "tag": "BOTH",
       "note": "Unified local-first SSOT — Zigbee mesh + WiFi LAN before cloud; Homey runtime zero cloud AI; gate check:p2660"
+    },
+    "p2687_interaction_flow_cards": {
+      "tag": "MASTER_ONLY",
+      "note": "FeatureFlowCards list caps/actions + interaction history ring (partout) — SoftFeature UX like Daylight; no Stable backport"
+    },
+    "p2689_smart_battery_adaptive_precision": {
+      "tag": "BOTH",
+      "note": "SOC/chemistry adaptive battery reporting + throttle + piggyback — precision without CR2032 drain / mesh flood; Stable surgical"
     }
   }
 }

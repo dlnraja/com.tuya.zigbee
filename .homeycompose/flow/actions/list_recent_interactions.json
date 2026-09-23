@@ -1,0 +1,57 @@
+{
+  "id": "list_recent_interactions",
+  "title": {
+    "en": "List recent interactions of [[device]]",
+    "fr": "Lister les interactions récentes de [[device]]",
+    "nl": "Recente interacties van [[device]] opsommen",
+    "de": "Letzte Interaktionen von [[device]] auflisten"
+  },
+  "hint": {
+    "en": "In-memory history of capability changes for this device (ring buffer, P2687).",
+    "fr": "Historique mémoire des changements de capacités pour cet appareil (anneau P2687)."
+  },
+  "args": [
+    {
+      "type": "device",
+      "name": "device",
+      "title": {
+        "en": "Device",
+        "fr": "Appareil",
+        "nl": "Apparaat",
+        "de": "Gerät"
+      }
+    },
+    {
+      "name": "limit",
+      "type": "number",
+      "title": {
+        "en": "Max entries",
+        "fr": "Nombre max"
+      },
+      "min": 1,
+      "max": 50,
+      "step": 1,
+      "value": 10
+    }
+  ],
+  "tokens": [
+    {
+      "name": "list",
+      "type": "string",
+      "title": {
+        "en": "Interactions",
+        "fr": "Interactions"
+      },
+      "example": "12:01 onoff=true; 12:02 dim=0.5"
+    },
+    {
+      "name": "count",
+      "type": "number",
+      "title": {
+        "en": "Count",
+        "fr": "Nombre"
+      },
+      "example": 2
+    }
+  ]
+}
