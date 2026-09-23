@@ -1,0 +1,45 @@
+{
+  "id": "list_device_actions",
+  "title": {
+    "en": "List actionable capabilities of [[device]]",
+    "fr": "Lister les actions possibles de [[device]]",
+    "nl": "Acties van [[device]] opsommen",
+    "de": "Aktionen von [[device]] auflisten"
+  },
+  "hint": {
+    "en": "Setable / control capabilities only (onoff, dim, covers, buttons, thermostat target…) — P2687.",
+    "fr": "Uniquement les capacités contrôlables (onoff, dim, volets, boutons, consigne…) — P2687."
+  },
+  "args": [
+    {
+      "type": "device",
+      "name": "device",
+      "title": {
+        "en": "Device",
+        "fr": "Appareil",
+        "nl": "Apparaat",
+        "de": "Gerät"
+      }
+    }
+  ],
+  "tokens": [
+    {
+      "name": "list",
+      "type": "string",
+      "title": {
+        "en": "Actions list",
+        "fr": "Liste des actions"
+      },
+      "example": "onoff, dim, button.1"
+    },
+    {
+      "name": "count",
+      "type": "number",
+      "title": {
+        "en": "Count",
+        "fr": "Nombre"
+      },
+      "example": 3
+    }
+  ]
+}

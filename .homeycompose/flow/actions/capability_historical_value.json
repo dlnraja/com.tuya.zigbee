@@ -7,25 +7,33 @@
     "fr": "Récupérer la valeur historique de la capacité"
   },
   "hint": {
-    "en": "Retrieve a capability value from X minutes ago. Inspired by Device Capabilities app.",
-    "nl": "Haal een capaciteitswaarde op van X minuten geleden. Geinspireerd door Device Capabilities app."
+    "en": "Retrieve a capability value from X minutes ago. Works on any device of this app (P2687).",
+    "nl": "Haal een capaciteitswaarde op van X minuten geleden. Alle apparaten van deze app (P2687).",
+    "fr": "Valeur d'une capacité il y a X minutes. Tous les appareils de cette app (P2687)."
   },
   "args": [
     {
       "type": "device",
       "name": "device",
-      "filter": "capabilities=onoff"
+      "title": {
+        "en": "Device",
+        "fr": "Appareil",
+        "nl": "Apparaat",
+        "de": "Gerät"
+      }
     },
     {
       "name": "capability",
       "type": "text",
       "title": {
         "en": "Capability",
-        "nl": "Capaciteit"
+        "nl": "Capaciteit",
+        "fr": "Capacité"
       },
       "placeholder": {
         "en": "e.g. measure_temperature, onoff, dim",
-        "nl": "bijv. measure_temperature, onoff, dim"
+        "nl": "bijv. measure_temperature, onoff, dim",
+        "fr": "ex. measure_temperature, onoff, dim"
       }
     },
     {
@@ -33,11 +41,24 @@
       "type": "number",
       "title": {
         "en": "Minutes ago (0=current)",
-        "nl": "Minuten geleden (0=huidig)"
+        "nl": "Minuten geleden (0=huidig)",
+        "fr": "Minutes avant (0=actuel)"
       },
       "min": 0,
       "max": 1440,
       "step": 1
+    }
+  ],
+  "tokens": [
+    {
+      "name": "value",
+      "type": "string",
+      "title": {
+        "en": "Value",
+        "fr": "Valeur",
+        "nl": "Waarde"
+      },
+      "example": "21.5"
     }
   ]
 }
