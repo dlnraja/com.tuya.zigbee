@@ -3991,5 +3991,8 @@
   },
   "9.0.1206": {
     "en": "P2699: non-native DP/clusters use complementary RX/TX/raw paths (never mandatory)"
+  },
+  "9.0.1207": {
+    "en": "P2700: soft-arm raw + RX/TX + PFC for all non-native Homey gaps"
   }
 }
