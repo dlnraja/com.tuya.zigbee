@@ -32,9 +32,9 @@ class Button2GangDevice extends ButtonDevice {
       protocol: 'hybrid',
       productId: 'TS0042',
       buttonCount: 2,
-      // WHY(P2683): snappy lamp Flows — 400ms (was 1200 "super lent")
-      debounceMs: 400,
-      crossPathDedupMs: 650,
+      // WHY(P2693): snappy lamp Flows — 200ms (was 400/1200 "super lent")
+      debounceMs: 200,
+      crossPathDedupMs: 350,
       skip8004: true,
       writeSceneAttr: false,
       sceneSwitch: true,
@@ -44,7 +44,9 @@ class Button2GangDevice extends ButtonDevice {
       skipBatteryReporting: true,
       batteryEpOnly: 1,
       collapsePhantomEndpoints: true,
-      source: base.source || 'P2683_button_wireless_2_ts0042',
+      skipSoftwareHoldRelease: true,
+      disableLevelControlComplement: true,
+      source: base.source || 'P2693_button_wireless_2_ts0042',
     });
   }
 
@@ -109,14 +111,15 @@ class Button2GangDevice extends ButtonDevice {
       await installTs004xDedicatedComplement(this, zclNode, {
         maxButtons: 2,
         tag: 'BUTTON_WIRELESS_2',
-        enableLevelControl: true,
+        // WHY(P2693): LevelControl invent release toggled the other lamp
+        enableLevelControl: false,
       });
     } catch (e) {
       this.log('[BUTTON_WIRELESS_2] dedicated complement soft-fail:', e.message);
     }
 
     await this._stripPhantomButtonCapsBeyond2();
-    this.log('[BUTTON_WIRELESS_2] hybrid UNION dedicated (TS0042 / P2683 snappy)');
+    this.log('[BUTTON_WIRELESS_2] hybrid UNION dedicated (TS0042 / P2693 snappy)');
   }
 
 }
