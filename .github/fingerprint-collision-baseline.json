@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-22T22:27:33.621Z",
+  "generatedAt": "2026-09-23T03:21:18.468Z",
   "note": "P2677 refresh — heobian≡hobeian collision keys; Athom brand case forms",
   "collisions": [
     {
@@ -3013,6 +3013,13 @@
       ]
     },
     {
+      "key": "_tze200_p3dbf6qs|TS0601",
+      "drivers": [
+        "device_radiator_valve",
+        "radiator_valve"
+      ]
+    },
+    {
       "key": "_tze200_yh7aoahi|TS0205",
       "drivers": [
         "smoke_sensor",
@@ -3451,6 +3458,13 @@
       "drivers": [
         "dimmer_1_gang_tuya",
         "switch_1gang"
+      ]
+    },
+    {
+      "key": "_tze204_p3dbf6qs|TS0601",
+      "drivers": [
+        "device_radiator_valve",
+        "smart_lcd_thermostat"
       ]
     },
     {
