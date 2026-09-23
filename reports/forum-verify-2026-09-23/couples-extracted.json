@@ -1,0 +1,3058 @@
+[
+  {
+    "mfr": "_TZ3000_WKAI4GA5",
+    "pid": "TS0044",
+    "issues": [
+      "button",
+      "battery",
+      "gang",
+      "flow",
+      "endpoint"
+    ],
+    "sourceCount": 4,
+    "sources": [
+      {
+        "topic": 89271,
+        "post": 653,
+        "user": "Rob_G",
+        "issues": [
+          "button",
+          "battery"
+        ]
+      },
+      {
+        "topic": 156967,
+        "post": 12,
+        "user": "SunBeech",
+        "issues": [
+          "gang"
+        ]
+      },
+      {
+        "topic": 150690,
+        "post": 1,
+        "user": "Relax_swe",
+        "issues": [
+          "gang"
+        ]
+      },
+      {
+        "topic": 150690,
+        "post": 33,
+        "user": "Graeme_Hindmarsh",
+        "issues": [
+          "button",
+          "battery",
+          "flow",
+          "endpoint",
+          "gang"
+        ]
+      }
+    ]
+  },
+  {
+    "mfr": "_TZE2841000000_3MZB0SDZ",
+    "pid": "TS0601",
+    "issues": [
+      "unknown",
+      "blind",
+      "not work"
+    ],
+    "sourceCount": 4,
+    "sources": [
+      {
+        "topic": 154092,
+        "post": 37,
+        "user": "Stefan_Persson2",
+        "issues": [
+          "unknown",
+          "blind"
+        ]
+      },
+      {
+        "topic": 154092,
+        "post": 41,
+        "user": "Stefan_Persson2",
+        "issues": []
+      },
+      {
+        "topic": 154092,
+        "post": 43,
+        "user": "Stefan_Persson2",
+        "issues": [
+          "not work",
+          "unknown"
+        ]
+      },
+      {
+        "source": "new-fps",
+        "by": "Stefan_Persson2"
+      }
+    ]
+  },
+  {
+    "mfr": "_TZE28C100000_RZDKN5RX",
+    "pid": "TS0601",
+    "issues": [
+      "button"
+    ],
+    "sourceCount": 3,
+    "sources": [
+      {
+        "topic": 26439,
+        "post": 5484,
+        "user": "Michael_Hadjicosta",
+        "issues": [
+          "button"
+        ]
+      },
+      {
+        "topic": 154092,
+        "post": 10,
+        "user": "Michael_Hadjicosta",
+        "issues": [
+          "button"
+        ]
+      },
+      {
+        "topic": 154092,
+        "post": 11,
+        "user": "Zemismart_Official",
+        "issues": [
+          "button"
+        ]
+      }
+    ]
+  },
+  {
+    "mfr": "_TZ3000_KFU8ZAPD",
+    "pid": "TS0044",
+    "issues": [
+      "button",
+      "battery",
+      "flow",
+      "endpoint",
+      "gang"
+    ],
+    "sourceCount": 3,
+    "sources": [
+      {
+        "topic": 150690,
+        "post": 33,
+        "user": "Graeme_Hindmarsh",
+        "issues": [
+          "button",
+          "battery",
+          "flow",
+          "endpoint",
+          "gang"
+        ]
+      },
+      {
+        "topic": 150690,
+        "post": 35,
+        "user": "Primordial",
+        "issues": [
+          "button",
+          "flow"
+        ]
+      },
+      {
+        "topic": 150690,
+        "post": 39,
+        "user": "Jocke_Wallen",
+        "issues": []
+      }
+    ]
+  },
+  {
+    "mfr": "_TZE284_OGX8U5Z6",
+    "pid": "TS0601",
+    "issues": [
+      "unknown",
+      "trv",
+      "battery",
+      "thermostat"
+    ],
+    "sourceCount": 2,
+    "sources": [
+      {
+        "topic": 140352,
+        "post": 2244,
+        "user": "Michaelp",
+        "issues": [
+          "unknown",
+          "trv",
+          "battery"
+        ]
+      },
+      {
+        "topic": 140352,
+        "post": 2253,
+        "user": "Michaelp",
+        "issues": [
+          "trv",
+          "battery",
+          "thermostat"
+        ]
+      }
+    ]
+  },
+  {
+    "mfr": "_TZ3000_XR3HTD96",
+    "pid": "TS0201",
+    "issues": [
+      "crash",
+      "button",
+      "battery"
+    ],
+    "sourceCount": 2,
+    "sources": [
+      {
+        "topic": 26439,
+        "post": 1,
+        "user": "johan_bendz",
+        "issues": [
+          "crash",
+          "button"
+        ]
+      },
+      {
+        "topic": 89271,
+        "post": 656,
+        "user": "Mr_D_Forrest",
+        "issues": [
+          "battery"
+        ]
+      }
+    ]
+  },
+  {
+    "mfr": "_TZ3000_QEUVNOHG",
+    "pid": "(pid-missing)",
+    "issues": [],
+    "sourceCount": 2,
+    "sources": [
+      {
+        "topic": 89271,
+        "post": 641,
+        "user": "Zdenek_Sadek",
+        "issues": [],
+        "warn": "pid-missing"
+      },
+      {
+        "topic": 89271,
+        "post": 669,
+        "user": "Erwin3",
+        "issues": [],
+        "warn": "pid-missing"
+      }
+    ]
+  },
+  {
+    "mfr": "_TZ3000_WKR3JQMR",
+    "pid": "TS0004",
+    "issues": [],
+    "sourceCount": 2,
+    "sources": [
+      {
+        "topic": 89271,
+        "post": 648,
+        "user": "Roy1",
+        "issues": []
+      },
+      {
+        "topic": 89271,
+        "post": 670,
+        "user": "Trond_Sandland",
+        "issues": []
+      }
+    ]
+  },
+  {
+    "mfr": "_TZ3000_4UPL1FCJ",
+    "pid": "TS0041",
+    "issues": [
+      "battery",
+      "button",
+      "unavailable",
+      "gang"
+    ],
+    "sourceCount": 2,
+    "sources": [
+      {
+        "topic": 89271,
+        "post": 652,
+        "user": "Bo_Kjaergaard",
+        "issues": [
+          "battery",
+          "button",
+          "unavailable"
+        ]
+      },
+      {
+        "topic": 156967,
+        "post": 10,
+        "user": "SergeP",
+        "issues": [
+          "gang"
+        ]
+      }
+    ]
+  },
+  {
+    "mfr": "_TZE200_M6LWAZH9",
+    "pid": "TS0601",
+    "issues": [
+      "unknown",
+      "curtain",
+      "flow"
+    ],
+    "sourceCount": 2,
+    "sources": [
+      {
+        "topic": 154092,
+        "post": 25,
+        "user": "JOSE_ANGEL_RUIZ_JIME",
+        "issues": [
+          "unknown",
+          "curtain",
+          "flow"
+        ]
+      },
+      {
+        "topic": 154092,
+        "post": 26,
+        "user": "Zemismart_Official",
+        "issues": []
+      }
+    ]
+  },
+  {
+    "mfr": "_TZE200_ZO0CFEKV",
+    "pid": "TS0601",
+    "issues": [
+      "gang",
+      "endpoint",
+      "button"
+    ],
+    "sourceCount": 2,
+    "sources": [
+      {
+        "topic": 156967,
+        "post": 60,
+        "user": "Iulian_Baciu",
+        "issues": [
+          "gang",
+          "endpoint"
+        ]
+      },
+      {
+        "topic": 156967,
+        "post": 62,
+        "user": "Iulian_Baciu",
+        "issues": [
+          "gang",
+          "button"
+        ]
+      }
+    ]
+  },
+  {
+    "mfr": "_TZ3000_ZGYZGDUA",
+    "pid": "TS0044",
+    "issues": [
+      "gang",
+      "button",
+      "battery",
+      "flow",
+      "endpoint"
+    ],
+    "sourceCount": 2,
+    "sources": [
+      {
+        "topic": 150690,
+        "post": 1,
+        "user": "Relax_swe",
+        "issues": [
+          "gang"
+        ]
+      },
+      {
+        "topic": 150690,
+        "post": 33,
+        "user": "Graeme_Hindmarsh",
+        "issues": [
+          "button",
+          "battery",
+          "flow",
+          "endpoint",
+          "gang"
+        ]
+      }
+    ]
+  },
+  {
+    "mfr": "_TZ3000_22UGZKME",
+    "pid": "TS0041",
+    "issues": [],
+    "sourceCount": 2,
+    "sources": [
+      {
+        "topic": 150690,
+        "post": 15,
+        "user": "Chris_M",
+        "issues": []
+      },
+      {
+        "topic": 150690,
+        "post": 16,
+        "user": "Relax_swe",
+        "issues": []
+      }
+    ]
+  },
+  {
+    "mfr": "_TZ3000_XABCKQ1V",
+    "pid": "(pid-missing)",
+    "issues": [
+      "gang",
+      "battery"
+    ],
+    "sourceCount": 2,
+    "sources": [
+      {
+        "topic": 150690,
+        "post": 28,
+        "user": "SteampunkLolcat",
+        "issues": [
+          "gang"
+        ],
+        "warn": "pid-missing"
+      },
+      {
+        "topic": 150690,
+        "post": 30,
+        "user": "SteampunkLolcat",
+        "issues": [
+          "battery"
+        ],
+        "warn": "pid-missing"
+      }
+    ]
+  },
+  {
+    "mfr": "_TZ3000_V5498KDM",
+    "pid": "TS0001",
+    "issues": [
+      "unknown"
+    ],
+    "sourceCount": 2,
+    "sources": [
+      {
+        "topic": 99614,
+        "post": 285,
+        "user": "Antek_Tek",
+        "issues": [
+          "unknown"
+        ]
+      },
+      {
+        "topic": 99614,
+        "post": 286,
+        "user": "SergeP",
+        "issues": []
+      }
+    ]
+  },
+  {
+    "mfr": "_TZE204_CLRDRNYA",
+    "pid": "TS0601",
+    "issues": [],
+    "sourceCount": 1,
+    "sources": [
+      {
+        "topic": 140352,
+        "post": 2224,
+        "user": "VicHY",
+        "issues": []
+      }
+    ]
+  },
+  {
+    "mfr": "_TZE284_FODV6BKR",
+    "pid": "TS0601",
+    "issues": [
+      "blind",
+      "unknown",
+      "curtain",
+      "cover",
+      "gang",
+      "battery",
+      "endpoint"
+    ],
+    "sourceCount": 1,
+    "sources": [
+      {
+        "topic": 140352,
+        "post": 2228,
+        "user": "Eduard_Martirosyan",
+        "issues": [
+          "blind",
+          "unknown",
+          "curtain",
+          "cover",
+          "gang",
+          "battery",
+          "endpoint"
+        ]
+      }
+    ]
+  },
+  {
+    "mfr": "_TZE284_LIBHT6UA",
+    "pid": "TS0601",
+    "issues": [
+      "blind",
+      "unknown",
+      "curtain",
+      "cover",
+      "gang",
+      "battery",
+      "endpoint"
+    ],
+    "sourceCount": 1,
+    "sources": [
+      {
+        "topic": 140352,
+        "post": 2228,
+        "user": "Eduard_Martirosyan",
+        "issues": [
+          "blind",
+          "unknown",
+          "curtain",
+          "cover",
+          "gang",
+          "battery",
+          "endpoint"
+        ]
+      }
+    ]
+  },
+  {
+    "mfr": "_TZE200_ICKA1CLH",
+    "pid": "TS0601",
+    "issues": [
+      "blind"
+    ],
+    "sourceCount": 1,
+    "sources": [
+      {
+        "topic": 140352,
+        "post": 2229,
+        "user": "MIAMO_NISU",
+        "issues": [
+          "blind"
+        ]
+      }
+    ]
+  },
+  {
+    "mfr": "_TZE284_NE4PIKWM",
+    "pid": "TS0601",
+    "issues": [
+      "unknown",
+      "trv",
+      "battery"
+    ],
+    "sourceCount": 1,
+    "sources": [
+      {
+        "topic": 140352,
+        "post": 2244,
+        "user": "Michaelp",
+        "issues": [
+          "unknown",
+          "trv",
+          "battery"
+        ]
+      }
+    ]
+  },
+  {
+    "mfr": "_TZE204_DTZZIY1E",
+    "pid": "(pid-missing)",
+    "issues": [
+      "curtain",
+      "presence",
+      "lux",
+      "cover",
+      "flow"
+    ],
+    "sourceCount": 1,
+    "sources": [
+      {
+        "topic": 140352,
+        "post": 2249,
+        "user": "dlnraja",
+        "issues": [
+          "curtain",
+          "presence",
+          "lux",
+          "cover",
+          "flow"
+        ],
+        "warn": "pid-missing"
+      }
+    ]
+  },
+  {
+    "mfr": "_TZ3000_I8JFIEZR",
+    "pid": "TS0201",
+    "issues": [
+      "crash",
+      "button"
+    ],
+    "sourceCount": 1,
+    "sources": [
+      {
+        "topic": 26439,
+        "post": 1,
+        "user": "johan_bendz",
+        "issues": [
+          "crash",
+          "button"
+        ]
+      }
+    ]
+  },
+  {
+    "mfr": "_TZ3000_I8JFIEZR",
+    "pid": "TS0601",
+    "issues": [
+      "crash",
+      "button"
+    ],
+    "sourceCount": 1,
+    "sources": [
+      {
+        "topic": 26439,
+        "post": 1,
+        "user": "johan_bendz",
+        "issues": [
+          "crash",
+          "button"
+        ]
+      }
+    ]
+  },
+  {
+    "mfr": "_TZ3000_BGUSER20",
+    "pid": "TS0201",
+    "issues": [
+      "crash",
+      "button"
+    ],
+    "sourceCount": 1,
+    "sources": [
+      {
+        "topic": 26439,
+        "post": 1,
+        "user": "johan_bendz",
+        "issues": [
+          "crash",
+          "button"
+        ]
+      }
+    ]
+  },
+  {
+    "mfr": "_TZ3000_BGUSER20",
+    "pid": "TS0601",
+    "issues": [
+      "crash",
+      "button"
+    ],
+    "sourceCount": 1,
+    "sources": [
+      {
+        "topic": 26439,
+        "post": 1,
+        "user": "johan_bendz",
+        "issues": [
+          "crash",
+          "button"
+        ]
+      }
+    ]
+  },
+  {
+    "mfr": "_TZ3000_DOWJ6GYI",
+    "pid": "TS0201",
+    "issues": [
+      "crash",
+      "button"
+    ],
+    "sourceCount": 1,
+    "sources": [
+      {
+        "topic": 26439,
+        "post": 1,
+        "user": "johan_bendz",
+        "issues": [
+          "crash",
+          "button"
+        ]
+      }
+    ]
+  },
+  {
+    "mfr": "_TZ3000_DOWJ6GYI",
+    "pid": "TS0601",
+    "issues": [
+      "crash",
+      "button"
+    ],
+    "sourceCount": 1,
+    "sources": [
+      {
+        "topic": 26439,
+        "post": 1,
+        "user": "johan_bendz",
+        "issues": [
+          "crash",
+          "button"
+        ]
+      }
+    ]
+  },
+  {
+    "mfr": "_TZ3000_FLLYGHYJ",
+    "pid": "TS0201",
+    "issues": [
+      "crash",
+      "button"
+    ],
+    "sourceCount": 1,
+    "sources": [
+      {
+        "topic": 26439,
+        "post": 1,
+        "user": "johan_bendz",
+        "issues": [
+          "crash",
+          "button"
+        ]
+      }
+    ]
+  },
+  {
+    "mfr": "_TZ3000_FLLYGHYJ",
+    "pid": "TS0601",
+    "issues": [
+      "crash",
+      "button"
+    ],
+    "sourceCount": 1,
+    "sources": [
+      {
+        "topic": 26439,
+        "post": 1,
+        "user": "johan_bendz",
+        "issues": [
+          "crash",
+          "button"
+        ]
+      }
+    ]
+  },
+  {
+    "mfr": "_TZ3000_8YBE88NF",
+    "pid": "TS0201",
+    "issues": [
+      "crash",
+      "button"
+    ],
+    "sourceCount": 1,
+    "sources": [
+      {
+        "topic": 26439,
+        "post": 1,
+        "user": "johan_bendz",
+        "issues": [
+          "crash",
+          "button"
+        ]
+      }
+    ]
+  },
+  {
+    "mfr": "_TZ3000_8YBE88NF",
+    "pid": "TS0601",
+    "issues": [
+      "crash",
+      "button"
+    ],
+    "sourceCount": 1,
+    "sources": [
+      {
+        "topic": 26439,
+        "post": 1,
+        "user": "johan_bendz",
+        "issues": [
+          "crash",
+          "button"
+        ]
+      }
+    ]
+  },
+  {
+    "mfr": "_TZ3000_FIE1DPKM",
+    "pid": "TS0201",
+    "issues": [
+      "crash",
+      "button"
+    ],
+    "sourceCount": 1,
+    "sources": [
+      {
+        "topic": 26439,
+        "post": 1,
+        "user": "johan_bendz",
+        "issues": [
+          "crash",
+          "button"
+        ]
+      }
+    ]
+  },
+  {
+    "mfr": "_TZ3000_FIE1DPKM",
+    "pid": "TS0601",
+    "issues": [
+      "crash",
+      "button"
+    ],
+    "sourceCount": 1,
+    "sources": [
+      {
+        "topic": 26439,
+        "post": 1,
+        "user": "johan_bendz",
+        "issues": [
+          "crash",
+          "button"
+        ]
+      }
+    ]
+  },
+  {
+    "mfr": "_TZ3000_0S1IZERX",
+    "pid": "TS0201",
+    "issues": [
+      "crash",
+      "button"
+    ],
+    "sourceCount": 1,
+    "sources": [
+      {
+        "topic": 26439,
+        "post": 1,
+        "user": "johan_bendz",
+        "issues": [
+          "crash",
+          "button"
+        ]
+      }
+    ]
+  },
+  {
+    "mfr": "_TZ3000_0S1IZERX",
+    "pid": "TS0601",
+    "issues": [
+      "crash",
+      "button"
+    ],
+    "sourceCount": 1,
+    "sources": [
+      {
+        "topic": 26439,
+        "post": 1,
+        "user": "johan_bendz",
+        "issues": [
+          "crash",
+          "button"
+        ]
+      }
+    ]
+  },
+  {
+    "mfr": "_TZ3000_XR3HTD96",
+    "pid": "TS0601",
+    "issues": [
+      "crash",
+      "button"
+    ],
+    "sourceCount": 1,
+    "sources": [
+      {
+        "topic": 26439,
+        "post": 1,
+        "user": "johan_bendz",
+        "issues": [
+          "crash",
+          "button"
+        ]
+      }
+    ]
+  },
+  {
+    "mfr": "_TZ3000_SAIQCN0Y",
+    "pid": "TS0201",
+    "issues": [
+      "crash",
+      "button"
+    ],
+    "sourceCount": 1,
+    "sources": [
+      {
+        "topic": 26439,
+        "post": 1,
+        "user": "johan_bendz",
+        "issues": [
+          "crash",
+          "button"
+        ]
+      }
+    ]
+  },
+  {
+    "mfr": "_TZ3000_SAIQCN0Y",
+    "pid": "TS0601",
+    "issues": [
+      "crash",
+      "button"
+    ],
+    "sourceCount": 1,
+    "sources": [
+      {
+        "topic": 26439,
+        "post": 1,
+        "user": "johan_bendz",
+        "issues": [
+          "crash",
+          "button"
+        ]
+      }
+    ]
+  },
+  {
+    "mfr": "_TZE200_A8SDABTG",
+    "pid": "TS0201",
+    "issues": [
+      "crash",
+      "button"
+    ],
+    "sourceCount": 1,
+    "sources": [
+      {
+        "topic": 26439,
+        "post": 1,
+        "user": "johan_bendz",
+        "issues": [
+          "crash",
+          "button"
+        ]
+      }
+    ]
+  },
+  {
+    "mfr": "_TZE200_A8SDABTG",
+    "pid": "TS0601",
+    "issues": [
+      "crash",
+      "button"
+    ],
+    "sourceCount": 1,
+    "sources": [
+      {
+        "topic": 26439,
+        "post": 1,
+        "user": "johan_bendz",
+        "issues": [
+          "crash",
+          "button"
+        ]
+      }
+    ]
+  },
+  {
+    "mfr": "_TZ3000_UTWGOAUK",
+    "pid": "TS0201",
+    "issues": [
+      "crash",
+      "button"
+    ],
+    "sourceCount": 1,
+    "sources": [
+      {
+        "topic": 26439,
+        "post": 1,
+        "user": "johan_bendz",
+        "issues": [
+          "crash",
+          "button"
+        ]
+      }
+    ]
+  },
+  {
+    "mfr": "_TZ3000_UTWGOAUK",
+    "pid": "TS0601",
+    "issues": [
+      "crash",
+      "button"
+    ],
+    "sourceCount": 1,
+    "sources": [
+      {
+        "topic": 26439,
+        "post": 1,
+        "user": "johan_bendz",
+        "issues": [
+          "crash",
+          "button"
+        ]
+      }
+    ]
+  },
+  {
+    "mfr": "_TZE200_9YAPGBUV",
+    "pid": "TS0201",
+    "issues": [
+      "crash",
+      "button"
+    ],
+    "sourceCount": 1,
+    "sources": [
+      {
+        "topic": 26439,
+        "post": 1,
+        "user": "johan_bendz",
+        "issues": [
+          "crash",
+          "button"
+        ]
+      }
+    ]
+  },
+  {
+    "mfr": "_TZE200_9YAPGBUV",
+    "pid": "TS0601",
+    "issues": [
+      "crash",
+      "button"
+    ],
+    "sourceCount": 1,
+    "sources": [
+      {
+        "topic": 26439,
+        "post": 1,
+        "user": "johan_bendz",
+        "issues": [
+          "crash",
+          "button"
+        ]
+      }
+    ]
+  },
+  {
+    "mfr": "_TZ3000_F2BW0B6K",
+    "pid": "TS0201",
+    "issues": [
+      "crash",
+      "button"
+    ],
+    "sourceCount": 1,
+    "sources": [
+      {
+        "topic": 26439,
+        "post": 1,
+        "user": "johan_bendz",
+        "issues": [
+          "crash",
+          "button"
+        ]
+      }
+    ]
+  },
+  {
+    "mfr": "_TZ3000_F2BW0B6K",
+    "pid": "TS0601",
+    "issues": [
+      "crash",
+      "button"
+    ],
+    "sourceCount": 1,
+    "sources": [
+      {
+        "topic": 26439,
+        "post": 1,
+        "user": "johan_bendz",
+        "issues": [
+          "crash",
+          "button"
+        ]
+      }
+    ]
+  },
+  {
+    "mfr": "_TZ3000_ZL1KMJQX",
+    "pid": "TS0201",
+    "issues": [
+      "crash",
+      "button"
+    ],
+    "sourceCount": 1,
+    "sources": [
+      {
+        "topic": 26439,
+        "post": 1,
+        "user": "johan_bendz",
+        "issues": [
+          "crash",
+          "button"
+        ]
+      }
+    ]
+  },
+  {
+    "mfr": "_TZ3000_ZL1KMJQX",
+    "pid": "TS0601",
+    "issues": [
+      "crash",
+      "button"
+    ],
+    "sourceCount": 1,
+    "sources": [
+      {
+        "topic": 26439,
+        "post": 1,
+        "user": "johan_bendz",
+        "issues": [
+          "crash",
+          "button"
+        ]
+      }
+    ]
+  },
+  {
+    "mfr": "_TZE200_YJJDCQSQ",
+    "pid": "TS0201",
+    "issues": [
+      "crash",
+      "button"
+    ],
+    "sourceCount": 1,
+    "sources": [
+      {
+        "topic": 26439,
+        "post": 1,
+        "user": "johan_bendz",
+        "issues": [
+          "crash",
+          "button"
+        ]
+      }
+    ]
+  },
+  {
+    "mfr": "_TZE200_YJJDCQSQ",
+    "pid": "TS0601",
+    "issues": [
+      "crash",
+      "button"
+    ],
+    "sourceCount": 1,
+    "sources": [
+      {
+        "topic": 26439,
+        "post": 1,
+        "user": "johan_bendz",
+        "issues": [
+          "crash",
+          "button"
+        ]
+      }
+    ]
+  },
+  {
+    "mfr": "_TZE200_UTKEMKBS",
+    "pid": "TS0201",
+    "issues": [
+      "crash",
+      "button"
+    ],
+    "sourceCount": 1,
+    "sources": [
+      {
+        "topic": 26439,
+        "post": 1,
+        "user": "johan_bendz",
+        "issues": [
+          "crash",
+          "button"
+        ]
+      }
+    ]
+  },
+  {
+    "mfr": "_TZE200_UTKEMKBS",
+    "pid": "TS0601",
+    "issues": [
+      "crash",
+      "button"
+    ],
+    "sourceCount": 1,
+    "sources": [
+      {
+        "topic": 26439,
+        "post": 1,
+        "user": "johan_bendz",
+        "issues": [
+          "crash",
+          "button"
+        ]
+      }
+    ]
+  },
+  {
+    "mfr": "_TZ3000_6UZKISV2",
+    "pid": "TS0201",
+    "issues": [
+      "crash",
+      "button"
+    ],
+    "sourceCount": 1,
+    "sources": [
+      {
+        "topic": 26439,
+        "post": 1,
+        "user": "johan_bendz",
+        "issues": [
+          "crash",
+          "button"
+        ]
+      }
+    ]
+  },
+  {
+    "mfr": "_TZ3000_6UZKISV2",
+    "pid": "TS0601",
+    "issues": [
+      "crash",
+      "button"
+    ],
+    "sourceCount": 1,
+    "sources": [
+      {
+        "topic": 26439,
+        "post": 1,
+        "user": "johan_bendz",
+        "issues": [
+          "crash",
+          "button"
+        ]
+      }
+    ]
+  },
+  {
+    "mfr": "_TZ3000_AKQDG6G7",
+    "pid": "TS0201",
+    "issues": [
+      "crash",
+      "button"
+    ],
+    "sourceCount": 1,
+    "sources": [
+      {
+        "topic": 26439,
+        "post": 1,
+        "user": "johan_bendz",
+        "issues": [
+          "crash",
+          "button"
+        ]
+      }
+    ]
+  },
+  {
+    "mfr": "_TZ3000_AKQDG6G7",
+    "pid": "TS0601",
+    "issues": [
+      "crash",
+      "button"
+    ],
+    "sourceCount": 1,
+    "sources": [
+      {
+        "topic": 26439,
+        "post": 1,
+        "user": "johan_bendz",
+        "issues": [
+          "crash",
+          "button"
+        ]
+      }
+    ]
+  },
+  {
+    "mfr": "_TYZB01_A476RAQ2",
+    "pid": "TS0201",
+    "issues": [
+      "crash",
+      "button"
+    ],
+    "sourceCount": 1,
+    "sources": [
+      {
+        "topic": 26439,
+        "post": 1,
+        "user": "johan_bendz",
+        "issues": [
+          "crash",
+          "button"
+        ]
+      }
+    ]
+  },
+  {
+    "mfr": "_TYZB01_A476RAQ2",
+    "pid": "TS0601",
+    "issues": [
+      "crash",
+      "button"
+    ],
+    "sourceCount": 1,
+    "sources": [
+      {
+        "topic": 26439,
+        "post": 1,
+        "user": "johan_bendz",
+        "issues": [
+          "crash",
+          "button"
+        ]
+      }
+    ]
+  },
+  {
+    "mfr": "_TYZB01_HJSGDKFL",
+    "pid": "TS0201",
+    "issues": [
+      "crash",
+      "button"
+    ],
+    "sourceCount": 1,
+    "sources": [
+      {
+        "topic": 26439,
+        "post": 1,
+        "user": "johan_bendz",
+        "issues": [
+          "crash",
+          "button"
+        ]
+      }
+    ]
+  },
+  {
+    "mfr": "_TYZB01_HJSGDKFL",
+    "pid": "TS0601",
+    "issues": [
+      "crash",
+      "button"
+    ],
+    "sourceCount": 1,
+    "sources": [
+      {
+        "topic": 26439,
+        "post": 1,
+        "user": "johan_bendz",
+        "issues": [
+          "crash",
+          "button"
+        ]
+      }
+    ]
+  },
+  {
+    "mfr": "_TYZB01_IUEPBMPV",
+    "pid": "TS0201",
+    "issues": [
+      "crash",
+      "button"
+    ],
+    "sourceCount": 1,
+    "sources": [
+      {
+        "topic": 26439,
+        "post": 1,
+        "user": "johan_bendz",
+        "issues": [
+          "crash",
+          "button"
+        ]
+      }
+    ]
+  },
+  {
+    "mfr": "_TYZB01_IUEPBMPV",
+    "pid": "TS0601",
+    "issues": [
+      "crash",
+      "button"
+    ],
+    "sourceCount": 1,
+    "sources": [
+      {
+        "topic": 26439,
+        "post": 1,
+        "user": "johan_bendz",
+        "issues": [
+          "crash",
+          "button"
+        ]
+      }
+    ]
+  },
+  {
+    "mfr": "_TZ3000_RUSU2VZB",
+    "pid": "TS0201",
+    "issues": [
+      "crash",
+      "button"
+    ],
+    "sourceCount": 1,
+    "sources": [
+      {
+        "topic": 26439,
+        "post": 1,
+        "user": "johan_bendz",
+        "issues": [
+          "crash",
+          "button"
+        ]
+      }
+    ]
+  },
+  {
+    "mfr": "_TZ3000_RUSU2VZB",
+    "pid": "TS0601",
+    "issues": [
+      "crash",
+      "button"
+    ],
+    "sourceCount": 1,
+    "sources": [
+      {
+        "topic": 26439,
+        "post": 1,
+        "user": "johan_bendz",
+        "issues": [
+          "crash",
+          "button"
+        ]
+      }
+    ]
+  },
+  {
+    "mfr": "_TYZB01_CBIEZPDS",
+    "pid": "TS0201",
+    "issues": [
+      "crash",
+      "button"
+    ],
+    "sourceCount": 1,
+    "sources": [
+      {
+        "topic": 26439,
+        "post": 1,
+        "user": "johan_bendz",
+        "issues": [
+          "crash",
+          "button"
+        ]
+      }
+    ]
+  },
+  {
+    "mfr": "_TYZB01_CBIEZPDS",
+    "pid": "TS0601",
+    "issues": [
+      "crash",
+      "button"
+    ],
+    "sourceCount": 1,
+    "sources": [
+      {
+        "topic": 26439,
+        "post": 1,
+        "user": "johan_bendz",
+        "issues": [
+          "crash",
+          "button"
+        ]
+      }
+    ]
+  },
+  {
+    "mfr": "_TZE200_BJAWZODF",
+    "pid": "TS0201",
+    "issues": [
+      "crash",
+      "button"
+    ],
+    "sourceCount": 1,
+    "sources": [
+      {
+        "topic": 26439,
+        "post": 1,
+        "user": "johan_bendz",
+        "issues": [
+          "crash",
+          "button"
+        ]
+      }
+    ]
+  },
+  {
+    "mfr": "_TZE200_BJAWZODF",
+    "pid": "TS0601",
+    "issues": [
+      "crash",
+      "button"
+    ],
+    "sourceCount": 1,
+    "sources": [
+      {
+        "topic": 26439,
+        "post": 1,
+        "user": "johan_bendz",
+        "issues": [
+          "crash",
+          "button"
+        ]
+      }
+    ]
+  },
+  {
+    "mfr": "_TZE200_ZL1KMJQX",
+    "pid": "TS0201",
+    "issues": [
+      "crash",
+      "button"
+    ],
+    "sourceCount": 1,
+    "sources": [
+      {
+        "topic": 26439,
+        "post": 1,
+        "user": "johan_bendz",
+        "issues": [
+          "crash",
+          "button"
+        ]
+      }
+    ]
+  },
+  {
+    "mfr": "_TZE200_ZL1KMJQX",
+    "pid": "TS0601",
+    "issues": [
+      "crash",
+      "button"
+    ],
+    "sourceCount": 1,
+    "sources": [
+      {
+        "topic": 26439,
+        "post": 1,
+        "user": "johan_bendz",
+        "issues": [
+          "crash",
+          "button"
+        ]
+      }
+    ]
+  },
+  {
+    "mfr": "_TZE200_LOCANSQN",
+    "pid": "TS0201",
+    "issues": [
+      "crash",
+      "button"
+    ],
+    "sourceCount": 1,
+    "sources": [
+      {
+        "topic": 26439,
+        "post": 1,
+        "user": "johan_bendz",
+        "issues": [
+          "crash",
+          "button"
+        ]
+      }
+    ]
+  },
+  {
+    "mfr": "_TZE200_LOCANSQN",
+    "pid": "TS0601",
+    "issues": [
+      "crash",
+      "button"
+    ],
+    "sourceCount": 1,
+    "sources": [
+      {
+        "topic": 26439,
+        "post": 1,
+        "user": "johan_bendz",
+        "issues": [
+          "crash",
+          "button"
+        ]
+      }
+    ]
+  },
+  {
+    "mfr": "_TZ3000_YD2E749Y",
+    "pid": "TS0201",
+    "issues": [
+      "crash",
+      "button"
+    ],
+    "sourceCount": 1,
+    "sources": [
+      {
+        "topic": 26439,
+        "post": 1,
+        "user": "johan_bendz",
+        "issues": [
+          "crash",
+          "button"
+        ]
+      }
+    ]
+  },
+  {
+    "mfr": "_TZ3000_YD2E749Y",
+    "pid": "TS0601",
+    "issues": [
+      "crash",
+      "button"
+    ],
+    "sourceCount": 1,
+    "sources": [
+      {
+        "topic": 26439,
+        "post": 1,
+        "user": "johan_bendz",
+        "issues": [
+          "crash",
+          "button"
+        ]
+      }
+    ]
+  },
+  {
+    "mfr": "_TZ3000_YWAGC4RJ",
+    "pid": "TS0201",
+    "issues": [
+      "crash",
+      "button"
+    ],
+    "sourceCount": 1,
+    "sources": [
+      {
+        "topic": 26439,
+        "post": 1,
+        "user": "johan_bendz",
+        "issues": [
+          "crash",
+          "button"
+        ]
+      }
+    ]
+  },
+  {
+    "mfr": "_TZ3000_YWAGC4RJ",
+    "pid": "TS0601",
+    "issues": [
+      "crash",
+      "button"
+    ],
+    "sourceCount": 1,
+    "sources": [
+      {
+        "topic": 26439,
+        "post": 1,
+        "user": "johan_bendz",
+        "issues": [
+          "crash",
+          "button"
+        ]
+      }
+    ]
+  },
+  {
+    "mfr": "_TZ3000_ITNRSUFE",
+    "pid": "TS0201",
+    "issues": [
+      "crash",
+      "button"
+    ],
+    "sourceCount": 1,
+    "sources": [
+      {
+        "topic": 26439,
+        "post": 1,
+        "user": "johan_bendz",
+        "issues": [
+          "crash",
+          "button"
+        ]
+      }
+    ]
+  },
+  {
+    "mfr": "_TZ3000_ITNRSUFE",
+    "pid": "TS0601",
+    "issues": [
+      "crash",
+      "button"
+    ],
+    "sourceCount": 1,
+    "sources": [
+      {
+        "topic": 26439,
+        "post": 1,
+        "user": "johan_bendz",
+        "issues": [
+          "crash",
+          "button"
+        ]
+      }
+    ]
+  },
+  {
+    "mfr": "_TZ3000_BJAWZODF",
+    "pid": "TS0201",
+    "issues": [
+      "crash",
+      "button"
+    ],
+    "sourceCount": 1,
+    "sources": [
+      {
+        "topic": 26439,
+        "post": 1,
+        "user": "johan_bendz",
+        "issues": [
+          "crash",
+          "button"
+        ]
+      }
+    ]
+  },
+  {
+    "mfr": "_TZ3000_BJAWZODF",
+    "pid": "TS0601",
+    "issues": [
+      "crash",
+      "button"
+    ],
+    "sourceCount": 1,
+    "sources": [
+      {
+        "topic": 26439,
+        "post": 1,
+        "user": "johan_bendz",
+        "issues": [
+          "crash",
+          "button"
+        ]
+      }
+    ]
+  },
+  {
+    "mfr": "_TZ3210_NCW88JFQ",
+    "pid": "TS0201",
+    "issues": [
+      "crash",
+      "button"
+    ],
+    "sourceCount": 1,
+    "sources": [
+      {
+        "topic": 26439,
+        "post": 1,
+        "user": "johan_bendz",
+        "issues": [
+          "crash",
+          "button"
+        ]
+      }
+    ]
+  },
+  {
+    "mfr": "_TZ3210_NCW88JFQ",
+    "pid": "TS0601",
+    "issues": [
+      "crash",
+      "button"
+    ],
+    "sourceCount": 1,
+    "sources": [
+      {
+        "topic": 26439,
+        "post": 1,
+        "user": "johan_bendz",
+        "issues": [
+          "crash",
+          "button"
+        ]
+      }
+    ]
+  },
+  {
+    "mfr": "_TZE200_VVMBJ46N",
+    "pid": "TS0201",
+    "issues": [
+      "crash",
+      "button"
+    ],
+    "sourceCount": 1,
+    "sources": [
+      {
+        "topic": 26439,
+        "post": 1,
+        "user": "johan_bendz",
+        "issues": [
+          "crash",
+          "button"
+        ]
+      }
+    ]
+  },
+  {
+    "mfr": "_TZE200_VVMBJ46N",
+    "pid": "TS0601",
+    "issues": [
+      "crash",
+      "button"
+    ],
+    "sourceCount": 1,
+    "sources": [
+      {
+        "topic": 26439,
+        "post": 1,
+        "user": "johan_bendz",
+        "issues": [
+          "crash",
+          "button"
+        ]
+      }
+    ]
+  },
+  {
+    "mfr": "_TZE204_UPAGMTA9",
+    "pid": "TS0201",
+    "issues": [
+      "crash",
+      "button"
+    ],
+    "sourceCount": 1,
+    "sources": [
+      {
+        "topic": 26439,
+        "post": 1,
+        "user": "johan_bendz",
+        "issues": [
+          "crash",
+          "button"
+        ]
+      }
+    ]
+  },
+  {
+    "mfr": "_TZE204_UPAGMTA9",
+    "pid": "TS0601",
+    "issues": [
+      "crash",
+      "button"
+    ],
+    "sourceCount": 1,
+    "sources": [
+      {
+        "topic": 26439,
+        "post": 1,
+        "user": "johan_bendz",
+        "issues": [
+          "crash",
+          "button"
+        ]
+      }
+    ]
+  },
+  {
+    "mfr": "_TZE200_CIRVGEP4",
+    "pid": "TS0201",
+    "issues": [
+      "crash",
+      "button"
+    ],
+    "sourceCount": 1,
+    "sources": [
+      {
+        "topic": 26439,
+        "post": 1,
+        "user": "johan_bendz",
+        "issues": [
+          "crash",
+          "button"
+        ]
+      }
+    ]
+  },
+  {
+    "mfr": "_TZE200_CIRVGEP4",
+    "pid": "TS0601",
+    "issues": [
+      "crash",
+      "button"
+    ],
+    "sourceCount": 1,
+    "sources": [
+      {
+        "topic": 26439,
+        "post": 1,
+        "user": "johan_bendz",
+        "issues": [
+          "crash",
+          "button"
+        ]
+      }
+    ]
+  },
+  {
+    "mfr": "_TZE200_BQ5C8XFE",
+    "pid": "TS0201",
+    "issues": [
+      "crash",
+      "button"
+    ],
+    "sourceCount": 1,
+    "sources": [
+      {
+        "topic": 26439,
+        "post": 1,
+        "user": "johan_bendz",
+        "issues": [
+          "crash",
+          "button"
+        ]
+      }
+    ]
+  },
+  {
+    "mfr": "_TZE200_BQ5C8XFE",
+    "pid": "TS0601",
+    "issues": [
+      "crash",
+      "button"
+    ],
+    "sourceCount": 1,
+    "sources": [
+      {
+        "topic": 26439,
+        "post": 1,
+        "user": "johan_bendz",
+        "issues": [
+          "crash",
+          "button"
+        ]
+      }
+    ]
+  },
+  {
+    "mfr": "_TZE200_QYFLBNBJ",
+    "pid": "TS0201",
+    "issues": [
+      "crash",
+      "button"
+    ],
+    "sourceCount": 1,
+    "sources": [
+      {
+        "topic": 26439,
+        "post": 1,
+        "user": "johan_bendz",
+        "issues": [
+          "crash",
+          "button"
+        ]
+      }
+    ]
+  },
+  {
+    "mfr": "_TZE200_QYFLBNBJ",
+    "pid": "TS0601",
+    "issues": [
+      "crash",
+      "button"
+    ],
+    "sourceCount": 1,
+    "sources": [
+      {
+        "topic": 26439,
+        "post": 1,
+        "user": "johan_bendz",
+        "issues": [
+          "crash",
+          "button"
+        ]
+      }
+    ]
+  },
+  {
+    "mfr": "_TZE200_JTHF7VB6",
+    "pid": "TS0601",
+    "issues": [],
+    "sourceCount": 1,
+    "sources": [
+      {
+        "topic": 26439,
+        "post": 1636,
+        "user": "johan_bendz",
+        "issues": []
+      }
+    ]
+  },
+  {
+    "mfr": "_TZ3000_996RPFY6",
+    "pid": "TS0203",
+    "issues": [],
+    "sourceCount": 1,
+    "sources": [
+      {
+        "topic": 26439,
+        "post": 5482,
+        "user": "John_Kijk_in_de_Vegt",
+        "issues": []
+      }
+    ]
+  },
+  {
+    "mfr": "_TZE284_NT4PQUEF",
+    "pid": "TS0601",
+    "issues": [
+      "soil",
+      "battery"
+    ],
+    "sourceCount": 1,
+    "sources": [
+      {
+        "topic": 26439,
+        "post": 5491,
+        "user": "Martin_Kliment",
+        "issues": [
+          "soil",
+          "battery"
+        ]
+      }
+    ]
+  },
+  {
+    "mfr": "_TZE284_AAO3YZHS",
+    "pid": "TS0601",
+    "issues": [
+      "soil",
+      "battery"
+    ],
+    "sourceCount": 1,
+    "sources": [
+      {
+        "topic": 26439,
+        "post": 5491,
+        "user": "Martin_Kliment",
+        "issues": [
+          "soil",
+          "battery"
+        ]
+      }
+    ]
+  },
+  {
+    "mfr": "_TZE284_DEBCZECI",
+    "pid": "TS0601",
+    "issues": [
+      "presence"
+    ],
+    "sourceCount": 1,
+    "sources": [
+      {
+        "topic": 26439,
+        "post": 5493,
+        "user": "Alejandro_Palladino",
+        "issues": [
+          "presence"
+        ]
+      }
+    ]
+  },
+  {
+    "mfr": "_TZ3210_EYMUNFFL",
+    "pid": "TS0101",
+    "issues": [
+      "irrigation"
+    ],
+    "sourceCount": 1,
+    "sources": [
+      {
+        "topic": 26439,
+        "post": 5497,
+        "user": "Kai_Dybvik",
+        "issues": [
+          "irrigation"
+        ]
+      }
+    ]
+  },
+  {
+    "mfr": "_TZ3210_EYMUNFFL",
+    "pid": "TS0049",
+    "issues": [
+      "irrigation"
+    ],
+    "sourceCount": 1,
+    "sources": [
+      {
+        "topic": 26439,
+        "post": 5497,
+        "user": "Kai_Dybvik",
+        "issues": [
+          "irrigation"
+        ]
+      }
+    ]
+  },
+  {
+    "mfr": "_TZ3000_CJFMU5HE",
+    "pid": "TS0101",
+    "issues": [
+      "irrigation"
+    ],
+    "sourceCount": 1,
+    "sources": [
+      {
+        "topic": 26439,
+        "post": 5497,
+        "user": "Kai_Dybvik",
+        "issues": [
+          "irrigation"
+        ]
+      }
+    ]
+  },
+  {
+    "mfr": "_TZ3000_CJFMU5HE",
+    "pid": "TS0049",
+    "issues": [
+      "irrigation"
+    ],
+    "sourceCount": 1,
+    "sources": [
+      {
+        "topic": 26439,
+        "post": 5497,
+        "user": "Kai_Dybvik",
+        "issues": [
+          "irrigation"
+        ]
+      }
+    ]
+  },
+  {
+    "mfr": "_TZ3000_KZ1ANOI8",
+    "pid": "TS0101",
+    "issues": [
+      "irrigation"
+    ],
+    "sourceCount": 1,
+    "sources": [
+      {
+        "topic": 26439,
+        "post": 5497,
+        "user": "Kai_Dybvik",
+        "issues": [
+          "irrigation"
+        ]
+      }
+    ]
+  },
+  {
+    "mfr": "_TZ3000_KZ1ANOI8",
+    "pid": "TS0049",
+    "issues": [
+      "irrigation"
+    ],
+    "sourceCount": 1,
+    "sources": [
+      {
+        "topic": 26439,
+        "post": 5497,
+        "user": "Kai_Dybvik",
+        "issues": [
+          "irrigation"
+        ]
+      }
+    ]
+  },
+  {
+    "mfr": "_TZ3000_MQ4WUJMP",
+    "pid": "TS0101",
+    "issues": [
+      "irrigation"
+    ],
+    "sourceCount": 1,
+    "sources": [
+      {
+        "topic": 26439,
+        "post": 5497,
+        "user": "Kai_Dybvik",
+        "issues": [
+          "irrigation"
+        ]
+      }
+    ]
+  },
+  {
+    "mfr": "_TZ3000_MQ4WUJMP",
+    "pid": "TS0049",
+    "issues": [
+      "irrigation"
+    ],
+    "sourceCount": 1,
+    "sources": [
+      {
+        "topic": 26439,
+        "post": 5497,
+        "user": "Kai_Dybvik",
+        "issues": [
+          "irrigation"
+        ]
+      }
+    ]
+  },
+  {
+    "mfr": "_TZE284_NQQYLYKC",
+    "pid": "TS0601",
+    "issues": [
+      "dimmer"
+    ],
+    "sourceCount": 1,
+    "sources": [
+      {
+        "topic": 26439,
+        "post": 5516,
+        "user": "Axel_Ditmer",
+        "issues": [
+          "dimmer"
+        ]
+      }
+    ]
+  },
+  {
+    "mfr": "_TZE284_NQQYLYKC",
+    "pid": "(pid-missing)",
+    "issues": [],
+    "sourceCount": 1,
+    "sources": [
+      {
+        "topic": 26439,
+        "post": 5519,
+        "user": "Peter_Kawa",
+        "issues": [],
+        "warn": "pid-missing"
+      }
+    ]
+  },
+  {
+    "mfr": "_TZE200_8YGSUHE1",
+    "pid": "TS0601",
+    "issues": [],
+    "sourceCount": 1,
+    "sources": [
+      {
+        "topic": 89271,
+        "post": 642,
+        "user": "Yannick_Eeckelaert",
+        "issues": []
+      }
+    ]
+  },
+  {
+    "mfr": "_TZ3000_EYZB8YG3",
+    "pid": "TS0121",
+    "issues": [],
+    "sourceCount": 1,
+    "sources": [
+      {
+        "topic": 89271,
+        "post": 643,
+        "user": "Roald_Oien",
+        "issues": []
+      }
+    ]
+  },
+  {
+    "mfr": "_TZ3000_NKCOBIES",
+    "pid": "(pid-missing)",
+    "issues": [
+      "unknown"
+    ],
+    "sourceCount": 1,
+    "sources": [
+      {
+        "topic": 89271,
+        "post": 644,
+        "user": "Bo_Kjaergaard",
+        "issues": [
+          "unknown"
+        ],
+        "warn": "pid-missing"
+      }
+    ]
+  },
+  {
+    "mfr": "_TZ3000_LVHY15IX",
+    "pid": "TS0003",
+    "issues": [
+      "unknown",
+      "gang"
+    ],
+    "sourceCount": 1,
+    "sources": [
+      {
+        "topic": 89271,
+        "post": 645,
+        "user": "melectro",
+        "issues": [
+          "unknown",
+          "gang"
+        ]
+      }
+    ]
+  },
+  {
+    "mfr": "_TZ3000_MMKBPTMX",
+    "pid": "TS0004",
+    "issues": [
+      "gang"
+    ],
+    "sourceCount": 1,
+    "sources": [
+      {
+        "topic": 89271,
+        "post": 646,
+        "user": "melectro",
+        "issues": [
+          "gang"
+        ]
+      }
+    ]
+  },
+  {
+    "mfr": "_TZ3000_RUXEXJFZ",
+    "pid": "TS0002",
+    "issues": [
+      "gang"
+    ],
+    "sourceCount": 1,
+    "sources": [
+      {
+        "topic": 89271,
+        "post": 647,
+        "user": "melectro",
+        "issues": [
+          "gang"
+        ]
+      }
+    ]
+  },
+  {
+    "mfr": "_TZ3000_3DFEWSK1",
+    "pid": "TS0207",
+    "issues": [
+      "battery"
+    ],
+    "sourceCount": 1,
+    "sources": [
+      {
+        "topic": 89271,
+        "post": 649,
+        "user": "Roy1",
+        "issues": [
+          "battery"
+        ]
+      }
+    ]
+  },
+  {
+    "mfr": "_TZE200_2EKUZ3DZ",
+    "pid": "TS0601",
+    "issues": [
+      "thermostat"
+    ],
+    "sourceCount": 1,
+    "sources": [
+      {
+        "topic": 89271,
+        "post": 650,
+        "user": "melectro",
+        "issues": [
+          "thermostat"
+        ]
+      }
+    ]
+  },
+  {
+    "mfr": "_TZ3000_UPGCBODY",
+    "pid": "TS0207",
+    "issues": [],
+    "sourceCount": 1,
+    "sources": [
+      {
+        "topic": 89271,
+        "post": 651,
+        "user": "melectro",
+        "issues": []
+      }
+    ]
+  },
+  {
+    "mfr": "_TZ3000_4UPL1FCJ",
+    "pid": "TS0505B",
+    "issues": [
+      "battery",
+      "button",
+      "unavailable"
+    ],
+    "sourceCount": 1,
+    "sources": [
+      {
+        "topic": 89271,
+        "post": 652,
+        "user": "Bo_Kjaergaard",
+        "issues": [
+          "battery",
+          "button",
+          "unavailable"
+        ]
+      }
+    ]
+  },
+  {
+    "mfr": "_TZ3000_QD7HEJ8U",
+    "pid": "TS0041",
+    "issues": [
+      "battery",
+      "button",
+      "unavailable"
+    ],
+    "sourceCount": 1,
+    "sources": [
+      {
+        "topic": 89271,
+        "post": 652,
+        "user": "Bo_Kjaergaard",
+        "issues": [
+          "battery",
+          "button",
+          "unavailable"
+        ]
+      }
+    ]
+  },
+  {
+    "mfr": "_TZ3000_QD7HEJ8U",
+    "pid": "TS0505B",
+    "issues": [
+      "battery",
+      "button",
+      "unavailable"
+    ],
+    "sourceCount": 1,
+    "sources": [
+      {
+        "topic": 89271,
+        "post": 652,
+        "user": "Bo_Kjaergaard",
+        "issues": [
+          "battery",
+          "button",
+          "unavailable"
+        ]
+      }
+    ]
+  },
+  {
+    "mfr": "_TZE204_QASJIF9E",
+    "pid": "TS0601",
+    "issues": [],
+    "sourceCount": 1,
+    "sources": [
+      {
+        "topic": 89271,
+        "post": 654,
+        "user": "G4nd41f",
+        "issues": []
+      }
+    ]
+  },
+  {
+    "mfr": "_TZ3000_DECXRTWA",
+    "pid": "TS0203",
+    "issues": [
+      "unknown",
+      "battery"
+    ],
+    "sourceCount": 1,
+    "sources": [
+      {
+        "topic": 89271,
+        "post": 657,
+        "user": "Vincent_Lim",
+        "issues": [
+          "unknown",
+          "battery"
+        ]
+      }
+    ]
+  },
+  {
+    "mfr": "_TZ3000_AMDYMR7L",
+    "pid": "(pid-missing)",
+    "issues": [],
+    "sourceCount": 1,
+    "sources": [
+      {
+        "topic": 89271,
+        "post": 658,
+        "user": "Bram_B",
+        "issues": [],
+        "warn": "pid-missing"
+      }
+    ]
+  },
+  {
+    "mfr": "_TZE204_SXM7L9XA",
+    "pid": "TS0601",
+    "issues": [
+      "presence"
+    ],
+    "sourceCount": 1,
+    "sources": [
+      {
+        "topic": 89271,
+        "post": 659,
+        "user": "Marcel_Visser",
+        "issues": [
+          "presence"
+        ]
+      }
+    ]
+  },
+  {
+    "mfr": "_TZE200_3P5YDOS3",
+    "pid": "TS0601",
+    "issues": [
+      "dimmer"
+    ],
+    "sourceCount": 1,
+    "sources": [
+      {
+        "topic": 89271,
+        "post": 660,
+        "user": "Ferenc_Szasz",
+        "issues": [
+          "dimmer"
+        ]
+      }
+    ]
+  },
+  {
+    "mfr": "_TZE204_HLX9TNZB",
+    "pid": "TS0601",
+    "issues": [],
+    "sourceCount": 1,
+    "sources": [
+      {
+        "topic": 89271,
+        "post": 661,
+        "user": "Anders_Lim",
+        "issues": []
+      }
+    ]
+  },
+  {
+    "mfr": "_TZE200_3TOWULQD",
+    "pid": "TS0601",
+    "issues": [
+      "unknown"
+    ],
+    "sourceCount": 1,
+    "sources": [
+      {
+        "topic": 89271,
+        "post": 663,
+        "user": "Janderek",
+        "issues": [
+          "unknown"
+        ]
+      }
+    ]
+  },
+  {
+    "mfr": "_TZ3210_IYSTCADI",
+    "pid": "TS0505B",
+    "issues": [],
+    "sourceCount": 1,
+    "sources": [
+      {
+        "topic": 89271,
+        "post": 664,
+        "user": "MBrandt",
+        "issues": []
+      }
+    ]
+  },
+  {
+    "mfr": "_TYZB01_6G8B7AT8",
+    "pid": "TS0012",
+    "issues": [
+      "gang",
+      "battery"
+    ],
+    "sourceCount": 1,
+    "sources": [
+      {
+        "topic": 89271,
+        "post": 665,
+        "user": "Johan_Rossouw",
+        "issues": [
+          "gang",
+          "battery"
+        ]
+      }
+    ]
+  },
+  {
+    "mfr": "_TZ3210_0ZABBFAX",
+    "pid": "TS0503B",
+    "issues": [],
+    "sourceCount": 1,
+    "sources": [
+      {
+        "topic": 89271,
+        "post": 666,
+        "user": "RezaRose",
+        "issues": []
+      }
+    ]
+  },
+  {
+    "mfr": "_TZ3210_3LBTUXGP",
+    "pid": "TS0505B",
+    "issues": [],
+    "sourceCount": 1,
+    "sources": [
+      {
+        "topic": 89271,
+        "post": 667,
+        "user": "late4marshmellow",
+        "issues": []
+      }
+    ]
+  },
+  {
+    "mfr": "_TZE200_MYD45WEU",
+    "pid": "TS0601",
+    "issues": [
+      "soil",
+      "battery"
+    ],
+    "sourceCount": 1,
+    "sources": [
+      {
+        "topic": 89271,
+        "post": 668,
+        "user": "Peter_N",
+        "issues": [
+          "soil",
+          "battery"
+        ]
+      }
+    ]
+  },
+  {
+    "mfr": "_TZE200_P0GZBQCT",
+    "pid": "TS0601",
+    "issues": [],
+    "sourceCount": 1,
+    "sources": [
+      {
+        "topic": 89271,
+        "post": 671,
+        "user": "Henk_de_Boom",
+        "issues": []
+      }
+    ]
+  },
+  {
+    "mfr": "_TZE200_68NVBIO9",
+    "pid": "TS0601",
+    "issues": [
+      "curtain"
+    ],
+    "sourceCount": 1,
+    "sources": [
+      {
+        "topic": 154092,
+        "post": 29,
+        "user": "Marcelo_Leite",
+        "issues": [
+          "curtain"
+        ]
+      }
+    ]
+  },
+  {
+    "mfr": "_TZE200_CF1SL3TJ",
+    "pid": "TS0601",
+    "issues": [
+      "curtain"
+    ],
+    "sourceCount": 1,
+    "sources": [
+      {
+        "topic": 154092,
+        "post": 30,
+        "user": "Henk_Renting",
+        "issues": [
+          "curtain"
+        ]
+      }
+    ]
+  },
+  {
+    "mfr": "_TZ3000_WKAI4GA5",
+    "pid": "TS0042",
+    "issues": [
+      "gang"
+    ],
+    "sourceCount": 1,
+    "sources": [
+      {
+        "topic": 156967,
+        "post": 12,
+        "user": "SunBeech",
+        "issues": [
+          "gang"
+        ]
+      }
+    ]
+  },
+  {
+    "mfr": "_TZ3000_DFGBTUB0",
+    "pid": "TS0044",
+    "issues": [
+      "gang"
+    ],
+    "sourceCount": 1,
+    "sources": [
+      {
+        "topic": 156967,
+        "post": 12,
+        "user": "SunBeech",
+        "issues": [
+          "gang"
+        ]
+      }
+    ]
+  },
+  {
+    "mfr": "_TZ3000_DFGBTUB0",
+    "pid": "TS0042",
+    "issues": [
+      "gang"
+    ],
+    "sourceCount": 1,
+    "sources": [
+      {
+        "topic": 156967,
+        "post": 12,
+        "user": "SunBeech",
+        "issues": [
+          "gang"
+        ]
+      }
+    ]
+  },
+  {
+    "mfr": "_TZE204_5SLEHGEO",
+    "pid": "TS0601",
+    "issues": [
+      "curtain"
+    ],
+    "sourceCount": 1,
+    "sources": [
+      {
+        "topic": 156967,
+        "post": 68,
+        "user": "salvagr",
+        "issues": [
+          "curtain"
+        ]
+      }
+    ]
+  },
+  {
+    "mfr": "_TZE200_CQTAMHH5",
+    "pid": "TS0601",
+    "issues": [
+      "presence",
+      "gang"
+    ],
+    "sourceCount": 1,
+    "sources": [
+      {
+        "topic": 156967,
+        "post": 69,
+        "user": "Han_Kamminga",
+        "issues": [
+          "presence",
+          "gang"
+        ]
+      }
+    ]
+  },
+  {
+    "mfr": "_TZ3000_ZGYZGDUA",
+    "pid": "TS0043",
+    "issues": [
+      "gang"
+    ],
+    "sourceCount": 1,
+    "sources": [
+      {
+        "topic": 150690,
+        "post": 1,
+        "user": "Relax_swe",
+        "issues": [
+          "gang"
+        ]
+      }
+    ]
+  },
+  {
+    "mfr": "_TZ3000_WKAI4GA5",
+    "pid": "TS0043",
+    "issues": [
+      "gang"
+    ],
+    "sourceCount": 1,
+    "sources": [
+      {
+        "topic": 150690,
+        "post": 1,
+        "user": "Relax_swe",
+        "issues": [
+          "gang"
+        ]
+      }
+    ]
+  },
+  {
+    "mfr": "_TZ3000_GBM10JNJ",
+    "pid": "TS0044",
+    "issues": [
+      "gang"
+    ],
+    "sourceCount": 1,
+    "sources": [
+      {
+        "topic": 150690,
+        "post": 1,
+        "user": "Relax_swe",
+        "issues": [
+          "gang"
+        ]
+      }
+    ]
+  },
+  {
+    "mfr": "_TZ3000_GBM10JNJ",
+    "pid": "TS0043",
+    "issues": [
+      "gang"
+    ],
+    "sourceCount": 1,
+    "sources": [
+      {
+        "topic": 150690,
+        "post": 1,
+        "user": "Relax_swe",
+        "issues": [
+          "gang"
+        ]
+      }
+    ]
+  },
+  {
+    "mfr": "_TZ3000_W8JWKCZZ",
+    "pid": "TS0043",
+    "issues": [
+      "button",
+      "battery"
+    ],
+    "sourceCount": 1,
+    "sources": [
+      {
+        "topic": 150690,
+        "post": 10,
+        "user": "Relax_swe",
+        "issues": [
+          "button",
+          "battery"
+        ]
+      }
+    ]
+  },
+  {
+    "mfr": "_TZ3000_KFU8ZAPD",
+    "pid": "(pid-missing)",
+    "issues": [],
+    "sourceCount": 1,
+    "sources": [
+      {
+        "topic": 150690,
+        "post": 34,
+        "user": "Primordial",
+        "issues": [],
+        "warn": "pid-missing"
+      }
+    ]
+  },
+  {
+    "mfr": "_TZ3000_V7CHGQSO",
+    "pid": "TS0203",
+    "issues": [],
+    "sourceCount": 1,
+    "sources": [
+      {
+        "topic": 99614,
+        "post": 11,
+        "user": "Attila_Danis",
+        "issues": []
+      }
+    ]
+  },
+  {
+    "mfr": "_TZE284_WTIKAXZS",
+    "pid": "TS0601",
+    "issues": [],
+    "sourceCount": 1,
+    "sources": [
+      {
+        "topic": 99614,
+        "post": 321,
+        "user": "Mates1134",
+        "issues": []
+      }
+    ]
+  },
+  {
+    "mfr": "_TZ3218_T9YNFZ4X",
+    "pid": "(pid-missing)",
+    "issues": [
+      "presence"
+    ],
+    "sourceCount": 1,
+    "sources": [
+      {
+        "topic": 158757,
+        "post": 1,
+        "user": "A_Tas",
+        "issues": [
+          "presence"
+        ],
+        "warn": "pid-missing"
+      }
+    ]
+  },
+  {
+    "mfr": "_TZ3218_T9YNFZ4X",
+    "pid": "TS0225",
+    "issues": [
+      "flow"
+    ],
+    "sourceCount": 1,
+    "sources": [
+      {
+        "topic": 158757,
+        "post": 2,
+        "user": "Gabriel_Pedrosa_Mach",
+        "issues": [
+          "flow"
+        ]
+      }
+    ]
+  },
+  {
+    "mfr": "_TZ3210_TGVTVDOC",
+    "pid": "(pid-missing)",
+    "issues": [],
+    "sourceCount": 1,
+    "sources": [
+      {
+        "topic": 120477,
+        "post": 1,
+        "user": "FKey",
+        "issues": [],
+        "warn": "pid-missing"
+      }
+    ]
+  },
+  {
+    "mfr": "_TZE200_NPJ9BUG3",
+    "pid": "(pid-missing)",
+    "issues": [
+      "soil"
+    ],
+    "sourceCount": 1,
+    "sources": [
+      {
+        "topic": 146667,
+        "post": 10,
+        "user": "Michael_Edholm",
+        "issues": [
+          "soil"
+        ],
+        "warn": "pid-missing"
+      }
+    ]
+  }
+]
