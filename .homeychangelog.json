@@ -1953,5 +1953,9 @@
   "5.12.308": {
     "en": "Smarter battery % for coin cells and rechargeables — precise when low, without draining CR2032 or flooding the mesh. Update Test.",
     "fr": "Batterie plus precise (piles/accus) sans vider les CR2032 ni saturer le mesh. Maj Test."
+  },
+  "5.12.309": {
+    "en": "Ceiling radar: restore lux + distance when find_switch goes cold. Update Test, remove radar, re-add.",
+    "fr": "Radar plafond: lux + distance restaures si find_switch tombe a froid. Maj Test, retirer, re-ajouter."
   }
 }
