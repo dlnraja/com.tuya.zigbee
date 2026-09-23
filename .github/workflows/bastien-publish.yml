@@ -28,7 +28,8 @@ permissions:
   actions: read
 
 concurrency:
-  group: publish-bastien-home
+  # P139/P2696: shared Athom API mutex with master + stable (Gmail socket hang flood).
+  group: athom-developer-api-publish
   cancel-in-progress: false
 
 defaults:

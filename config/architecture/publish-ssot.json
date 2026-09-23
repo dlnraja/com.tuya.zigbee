@@ -111,12 +111,27 @@
   "p139": {
     "doNot": "spam republish on processing_failed / socket hang up",
     "doNotSpamRepublish": true,
-    "do": "soft-expect exit 0 when peer already on test; wait Athom cooldown",
-    "tipEmailExamples": ["#3140", "#3142", "#3184", "#3187"],
+    "do": "soft-expect exit 0 when peer already on test; wait Athom cooldown; serialize multi-app uploads",
+    "tipEmailExamples": ["#3140", "#3142", "#3184", "#3187", "#3340", "#225", "#77", "#78", "#80"],
     "tipEmailBody": "Your build has failed processing … socket hang up",
     "healthyTip2026_09_14": "#3186 v9.0.926 test",
     "failedTip2026_09_14": ["#3184 v9.0.924", "#3187 v9.0.928"],
-    "patch": "P2458",
+    "gmailFlood2026_09_23": {
+      "failed": [
+        "stable #225 socket hang up",
+        "bastien #77/#78/#80 socket hang up",
+        "universal #3340 socket hang up"
+      ],
+      "recovered": [
+        "universal #3341/#3342 testing",
+        "stable #227/#228 testing",
+        "bastien #79 testing"
+      ],
+      "fix": "P2696 shared concurrency group athom-developer-api-publish across auto-publish + publish-stable + bastien-publish"
+    },
+    "patch": "P2696",
+    "concurrencyGroup": "athom-developer-api-publish",
+    "cancelInProgress": false,
     "humanDoc": "docs/architecture/PUBLISH_SSOT.md §P139 / tip email pattern"
   },
   "p2384": {
