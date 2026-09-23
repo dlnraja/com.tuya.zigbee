@@ -33,6 +33,8 @@
   },
   "zigbee": {
     "manufacturerName": [
+      "_TZ3000_fllyghyj",
+      "eWeLink",
       "Wing",
       "_tyst11",
       "_tyst11_8daqwrsj",
@@ -578,8 +580,6 @@
       "_TZE284_ksz749x8",
       "_TZE204_ksz749x8",
       "_TZE2841000000_qf5mzewi",
-      "eWeLink",
-      "_TZ3000_fllyghyj",
       "wing",
       "WING",
       "_TYST11",
@@ -2214,8 +2214,9 @@
       "Heobian"
     ],
     "productId": [
-      "CK-TLSR8656-SS5-02(7014)",
+      "SNZB-02",
       "CK-TLSR8656-SS5-01(7014)",
+      "CK-TLSR8656-SS5-02(7014)",
       "ZTH13-3.0",
       "ZTH11-3.0",
       "lumi.sensor_ht",
@@ -2224,7 +2225,6 @@
       "RH3052",
       "SM0201",
       "SNTZ003",
-      "SNZB-02",
       "SNZB-02B",
       "SNZB-02D",
       "SNZB-02DR2",
