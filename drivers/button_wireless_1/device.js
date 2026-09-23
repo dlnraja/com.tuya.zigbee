@@ -39,6 +39,10 @@ class Button1GangDevice extends ButtonDevice {
       collapsePhantomEndpoints: true,
       mapAllEndpointsToButton1: true,
       skipBatteryReporting: true,
+      // WHY(P2702): snappy Flow→relay for Bastien axpdxqgu+TS0041
+      debounceMs: Math.min(Number(base.debounceMs) || 80, 80),
+      crossPathDedupMs: Math.min(Number(base.crossPathDedupMs) || 120, 120),
+      snappyRelayFlow: true,
     });
   }
 

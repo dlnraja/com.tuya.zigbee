@@ -36,7 +36,7 @@ describe('P2684 Bastien TS0041 button_wireless_1 Flow UX', () => {
 
   it('axpdxqgu DEVICE_PROFILES is snappy hybrid skip8004 buttonCount 1', () => {
     const src = fs.readFileSync(path.join(ROOT, 'lib/mixins/PhysicalButtonMixin.js'), 'utf8');
-    assert.match(src, /'_TZ3000_axpdxqgu'\s*:\s*\{[\s\S]*?debounceMs:\s*400/);
+    assert.match(src, /'_TZ3000_axpdxqgu'\s*:\s*\{[\s\S]*?debounceMs:\s*80/);
     assert.match(src, /'_TZ3000_axpdxqgu'\s*:\s*\{[\s\S]*?buttonCount:\s*1/);
     assert.match(src, /'_TZ3000_axpdxqgu'\s*:\s*\{[\s\S]*?skip8004:\s*true/);
     assert.match(src, /axpdxqgu\|adndolvx|axpdxqgu/);
