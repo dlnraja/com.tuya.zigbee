@@ -101,6 +101,12 @@ class Button3GangDevice extends ButtonDevice {
       this.log('[BUTTON_WIRELESS_3] dedicated complement soft-fail:', e.message);
     }
 
+    // WHY(P2699/P2701): E000 + 0xFD are Homey-gap — complementary soft-arm only (never EF00 mandatory)
+    try {
+      const { softArmComplementaryIo } = require('../../lib/io/NonNativeComplementary');
+      softArmComplementaryIo(this, { zclNode, io: this.io });
+    } catch (_e) { /* optional */ }
+
     this.log('[BUTTON_WIRELESS_3] hybrid UNION dedicated (TS0043 class / P2693)');
   }
 
