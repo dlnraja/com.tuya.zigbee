@@ -562,7 +562,8 @@
     "check:p2686": "node --test test/critical/p2686-diag-l99-hold-release-trv.test.js",
     "check:p2687": "node --test test/critical/p2687-interaction-flow-cards.test.js",
     "check:p2689": "node --test test/critical/p2689-smart-battery-adaptive-precision.test.js",
-    "check:p268x": "npm run check:p2680 && npm run check:p2681 && npm run check:p2682 && npm run check:p2683 && npm run check:p2684 && npm run check:p2685 && npm run check:p2686 && npm run check:p2687 && npm run check:p2689",
+    "check:p2690": "node --test test/critical/p2690-gkfbdvyx-550-cold-stream.test.js",
+    "check:p268x": "npm run check:p2680 && npm run check:p2681 && npm run check:p2682 && npm run check:p2683 && npm run check:p2684 && npm run check:p2685 && npm run check:p2686 && npm run check:p2687 && npm run check:p2689 && npm run check:p2690",
     "build:fp-shards": "node tools/ci/build-fingerprint-shards.js"
   },
   "keywords": [

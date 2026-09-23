@@ -3954,5 +3954,9 @@
   "9.0.1195": {
     "en": "Smarter battery % for coin cells and rechargeables — precise when low, without draining CR2032 or flooding the mesh. Update Test.",
     "fr": "Batterie plus precise (piles/accus) sans vider les CR2032 ni saturer le mesh. Maj Test."
+  },
+  "9.0.1196": {
+    "en": "Ceiling radar (ZY-M100): restore lux + distance when find_switch goes cold while presence still works. Update Test, remove radar, re-add.",
+    "fr": "Radar plafond (ZY-M100): lux + distance restaures si find_switch tombe a froid. Maj Test, retirer le radar, re-ajouter."
   }
 }

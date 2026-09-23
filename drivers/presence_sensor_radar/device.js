@@ -450,6 +450,9 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
 
     // WHY(P2597 / Z2M find_switch): enable DP101 so DP9 distance starts reporting
     this._scheduleCeilingFindSwitchEnable('boot');
+    // WHY(P2690 / GH#550 @ 9.0.1145): lux+distance cold while DP1 alarms still move —
+    // lux-nudge never fires when DP103 is silent; poll must re-arm find_switch.
+    this._armCeilingColdStreamWatchdog();
 
     // Idea #21: Initialize multi-zone capabilities if config supports it
     await this._initMultiZoneCapabilities();
@@ -984,7 +987,8 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
     const now = Date.now();
     if (this._lastFindSwitchOnAt && (now - this._lastFindSwitchOnAt) < 20_000) {
       // WHY(P2604): allow immediate re-arm when distance stuck at 0 after re-pair
-      if (!/stuck|repair|announce|lux-stuck/.test(String(reason || ''))) return false;
+      // WHY(P2690): cold/poll paths also bypass — MCU can drop find_switch while DP1 lives
+      if (!/stuck|repair|announce|lux-stuck|cold|poll/.test(String(reason || ''))) return false;
     }
     this._lastFindSwitchOnAt = now;
     this.log(`[RADAR] P2597 enabling DP101 find_switch (${reason})`);
@@ -1011,8 +1015,9 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
    * re-arm find_switch + EF00 requestDP (not Homey-native dataQuery alone).
    * WHY(P2604 / GH#550 re-pair): once DP9 paints 0m, `_distanceSeenOnce` blocked
    * forever re-arm → distance stuck 0 + lux goes quiet. Keep nudging while ≤0.05m.
+   * WHY(P2690): also called from presence/poll when lux stream itself is dead.
    */
-  _nudgeCeilingDistanceArmFromLux() {
+  _nudgeCeilingDistanceArmFromLux(reasonHint = 'lux-nudge') {
     try {
       const cfg = this._getRadarConfig() || {};
       if (!cfg.enableFindSwitchOnBoot && !cfg.syncPresenceFromLuxInference) return;
@@ -1021,13 +1026,56 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
       const stuckZero = this._distanceSeenOnce
         && Number.isFinite(dist)
         && dist <= 0.3;
-      if (this._distanceSeenOnce && !stuckZero) return;
+      const streamsCold = this._ceilingStreamsAreCold();
+      if (this._distanceSeenOnce && !stuckZero && !streamsCold) return;
       const now = Date.now();
-      const throttleMs = stuckZero ? 45_000 : 12_000;
+      const throttleMs = (stuckZero || streamsCold) ? 45_000 : 12_000;
       if (this._lastLuxDistanceNudgeAt && (now - this._lastLuxDistanceNudgeAt) < throttleMs) return;
       this._lastLuxDistanceNudgeAt = now;
-      this._ensureCeilingFindSwitchOn(stuckZero ? 'lux-stuck-zero' : 'lux-nudge').catch(() => {});
-      this._queryCeilingPresenceDps(stuckZero ? 'lux-stuck-zero' : 'lux-nudge').catch(() => {});
+      const reason = streamsCold
+        ? (String(reasonHint || '').includes('cold') ? reasonHint : 'cold-stream')
+        : (stuckZero ? 'lux-stuck-zero' : reasonHint);
+      this._ensureCeilingFindSwitchOn(reason).catch(() => {});
+      this._queryCeilingPresenceDps(reason).catch(() => {});
+    } catch (_e) { /* soft */ }
+  }
+
+  /**
+   * WHY(P2690 / GH#550 @ 9.0.1145): alarms still update (DP1) while lux last-changed
+   * hours ago and distance stuck at 0 — find_switch OFF / DP103 silent.
+   * Contre quoi: lux-only nudge never runs when illuminance RX is dead.
+   */
+  _ceilingStreamsAreCold(now = Date.now()) {
+    try {
+      const cfg = this._getRadarConfig() || {};
+      if (!cfg.enableFindSwitchOnBoot) return false;
+      const luxAt = this._lastLuxPaintAt || this._lastDp103LuxAt || 0;
+      const distAt = this._lastDistancePaintAt || 0;
+      const luxCold = !luxAt || (now - luxAt) > 90_000;
+      const dist = Number(this._lastDistanceM);
+      const distCold = !distAt
+        || (now - distAt) > 90_000
+        || (Number.isFinite(dist) && dist <= 0.3);
+      return luxCold && distCold;
+    } catch (_e) {
+      return false;
+    }
+  }
+
+  _armCeilingColdStreamWatchdog() {
+    try {
+      if (this._ceilingColdWatchArmed) return;
+      const cfg = this._getRadarConfig() || {};
+      if (!cfg.enableFindSwitchOnBoot) return;
+      const { safeSetInterval } = require('../../lib/utils/safe-timers');
+      if (typeof safeSetInterval !== 'function') return;
+      this._ceilingColdWatchArmed = true;
+      this._ceilingColdWatchTimer = safeSetInterval(this, () => {
+        if (this._destroyed) return;
+        if (!this._ceilingStreamsAreCold()) return;
+        this.log('[RADAR] P2690 cold-stream watchdog → re-arm find_switch + requestDPs');
+        this._nudgeCeilingDistanceArmFromLux('cold-watchdog');
+      }, 60_000);
     } catch (_e) { /* soft */ }
   }
 
@@ -1545,6 +1593,10 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
         // WHY(P2524 / diag 74e5cae7): UI painted presence but declared presence_* flow
         // triggers were never fired (sibling sensor_presence_radar did). Edge-fire only.
         this._commitPresenceAndFlows(presence);
+        // WHY(P2690 / GH#550): DP1 still moves while lux/distance cold → re-arm find_switch
+        if (config.enableFindSwitchOnBoot) {
+          this._nudgeCeilingDistanceArmFromLux('presence-cold');
+        }
         return;
       }
       return;
@@ -1580,6 +1632,7 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
       // WHY(P2640): meaningful = tracking actually ranged (>0.3m) — not cold 0m frames
       if (Number(distance) > 0.3) this._distanceSeenMeaningful = true;
       this._lastDistanceM = distance;
+      this._lastDistancePaintAt = Date.now();
       this._noteDistanceSample(distance);
       const inferred = this._ensureInference().updateDistance(distance);
       // WHY(P2509 / Z2M#30785): gkfbdvyx sticks DP1=true while DP9=0m — clear Homey presence
@@ -1639,6 +1692,7 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
       if (Number(dpId) === 103) {
         this._lastDp103LuxAt = nowLux;
         this._lastDp103Lux = lux;
+        this._lastLuxPaintAt = nowLux;
       } else if (Number(dpId) === 10) {
         const recent103 = this._lastDp103LuxAt && (nowLux - this._lastDp103LuxAt) < 45_000;
         if (recent103) {
@@ -1795,8 +1849,14 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
     try {
       // WHY(P2600 / GH#550): EF00 targeted query first — native dataQuery alone
       // left presence/distance dead while lux (DP103) kept streaming.
+      // WHY(P2690 / GH#550 @ 9.0.1145): query alone does not re-enable DP101 —
+      // when lux+distance are cold, force find_switch ON then requestDPs.
       const cfg = this._getRadarConfig() || {};
       if (cfg.enableFindSwitchOnBoot || this.forceActiveTuyaMode) {
+        if (this._ceilingStreamsAreCold()) {
+          this._nudgeCeilingDistanceArmFromLux('poll-cold');
+          return;
+        }
         const ok = await this._queryCeilingPresenceDps('poll');
         if (ok) return;
       }
