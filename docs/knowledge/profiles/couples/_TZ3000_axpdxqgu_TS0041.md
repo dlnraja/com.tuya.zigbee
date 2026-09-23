@@ -34,3 +34,5 @@ Bastien live Homey interview (ieee `7c:c6:b6:ff:fe:a3:e1:58`).
 - Z2M TS0041: `tuya.fz.on_off_action` + battery; toZigbee []
 - ZHA `TuyaSmartRemote0041TO`: signature `[0,1,6]/[25,10]` — exact match
 - Z2M issues #28038 #25720 (axpdxqgu action events)
+- Bastien mesh 2026-09-23: still **Unknown Node #3** until remove+re-pair
+- Contre quoi: `npm run check:p2630` · `check:p2695`
