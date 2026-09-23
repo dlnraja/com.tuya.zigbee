@@ -49,6 +49,15 @@ Machine SSOT: [`config/architecture/dual-app-tracks.json`](../../config/architec
 Forum failover: [`config/architecture/forum-complementary-failover-ssot.json`](../../config/architecture/forum-complementary-failover-ssot.json)  
 Regular CI: `node tools/ci/l99-dual-app-enrich-gates.js` (BOTH always; MASTER_ONLY skipped on stable track)
 
+### L99 recent (2026-09-23)
+
+| Deliverable | Tag | Tips (min) | Why |
+|-------------|-----|------------|-----|
+| P2689 SmartBatteryAdaptivePrecision | **BOTH** | U **9.0.1195** · B **1.0.66** · S **5.12.308** | Precise % without CR2032 drain / mesh flood |
+| P2687 interaction Flow cards partout | **MASTER_ONLY** | U **9.0.1194** · B **1.0.65** · S — | SoftFeature list actions/history; no Stable |
+| P2683–P2686 Bastien TS004x / pile / TRV keep | **BOTH** | U ≥**9.0.1193** · B ≥**1.0.64** · S ≥**5.12.307** | Latency UX + skipBatteryReporting + sacred-keep |
+| SSOT `battery-adaptive-precision-ssot.json` + `interaction-flow-cards-ssot.json` | **map** | — | Machine + human (`THREE_APP_RECENT_TIPS.md`) |
+
 ### L99 recent (2026-09-14)
 
 | Deliverable | Tag | Why |

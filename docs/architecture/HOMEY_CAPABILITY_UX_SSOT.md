@@ -24,10 +24,13 @@ Docs: [Capabilities](https://apps.developer.homey.app/the-basics/devices/capabil
 | DC pattern | Our implementation |
 |------------|-------------------|
 | Listen to any capability change | `capability_value_changed_generic` (`FeatureFlowCards`) — device picker = **all** app devices |
-| Value N minutes ago | `capability_historical_value` (Insights + ring buffer) |
+| Value N minutes ago | `capability_historical_value` (Insights + ring buffer) — **no** `capabilities=onoff` filter (P2687) |
+| List actions + interaction history | P2687 `list_device_*` / `list_*_interactions` / `device_interaction` — MASTER_ONLY SoftFeature UX |
 | AVD custom fields | **Do not clone** full AVD — MASTER_ONLY features only; no phantom DynCap climate/curtains |
 | Parallel field spam crashes | BootBudget + L14 `safeSetCapabilityValue` anti-flood |
 | Energy subtypes | Only when driver `class` / Energy schema supports — never invent |
+
+Human detail: [`INTERACTION_FLOW_CARDS_SSOT.md`](./INTERACTION_FLOW_CARDS_SSOT.md) · machine `config/architecture/interaction-flow-cards-ssot.json` · tips [`THREE_APP_RECENT_TIPS.md`](./THREE_APP_RECENT_TIPS.md).
 
 ## Button vs sensor (same device)
 
