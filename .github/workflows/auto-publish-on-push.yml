@@ -22,10 +22,10 @@ permissions:
   contents: write
 
 concurrency:
-  # P139: NEVER cancel an in-flight Athom publish/promote. Cancelling mid-draft
-  # leaves orphan builds and amplifies processing_failed / socket hang up races
-  # when the next push starts another upload against the same App ID.
-  group: publish-master
+  # P139/P2696: serialize ALL Athom uploads across master+stable+bastien.
+  # Gmail 2026-09-23: concurrent #3340/#225/#77–80 → socket hang up floods;
+  # later queued siblings recovered. NEVER cancel mid-draft (orphan builds).
+  group: athom-developer-api-publish
   cancel-in-progress: false
 
 env:
@@ -126,11 +126,40 @@ jobs:
       - name: P246x anti-regression family
         run: npm run check:p246x
 
+      - name: Compact mfs_db before family gates (P2521d)
+        run: |
+          node -e "
+          const fs=require('fs');
+          const p='data/mfs_db.json';
+          const raw=fs.readFileSync(p,'utf8');
+          const lines=raw.trim().split(/\n/).length;
+          if (lines > 5) {
+            fs.writeFileSync(p, JSON.stringify(JSON.parse(raw)) + '\n');
+            console.log('P2521d recompacted mfs_db from', lines, 'lines');
+          } else {
+            console.log('P2521d mfs_db already compact');
+          }
+          "
+
       - name: P2487–P2490 IR + Smartbutton + complementary failover
         run: npm run check:p248x
 
+      - name: P260x Bastien + wall remote hybrid fleet
+        run: npm run check:p260x
+
       - name: P249x AI efficiency + Homey button UI + couple SSOT
         run: npm run check:p249x
+
+      - name: P257x VicHY radar / EF00 / anti-FP family
+        run: |
+          npm run check:p257x
+          npm run check:p2580
+          npm run check:p2581
+          npm run check:p2582
+          npm run check:p2583
+          npm run check:p2584
+          npm run check:p2585
+          npm run check:p2586
 
       - name: P2286–P2288 + P2495 publish path aggregator
         run: npm run check:publish
