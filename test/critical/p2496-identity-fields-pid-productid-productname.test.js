@@ -85,10 +85,11 @@ describe('P2496 identity fields (pid / productId / productName)', () => {
     const id = readJson('config/architecture/identity-fields-ssot.json');
     assert.equal(id.fields.productName.notPairingKey, true);
     assert.match(id.fields.productName.notes, /modelIds stay real|productNames hold aliases|NEVER use as zigbee.productId/i);
-    // Compose still lists HOBEIAN as productId case-form for broken interviews (P2434) —
-    // that is Homey productId string, not mfs productNames catalog.
+    // P2692: HOBEIAN is manufacturerName (brand), never invent as zigbee.productId.
+    // Real soil couple pid = ZG-303Z. Broken interviews normalize at runtime (P2434 helpers).
     const soil = readJson('drivers/soil_sensor/driver.compose.json');
-    assert.ok((soil.zigbee.productId || []).some((p) => String(p).toUpperCase() === 'HOBEIAN'));
+    assert.ok((soil.zigbee.manufacturerName || []).some((m) => String(m).toUpperCase() === 'HOBEIAN'));
+    assert.ok(!(soil.zigbee.productId || []).some((p) => /^hobeian$/i.test(String(p))));
     assert.ok((soil.zigbee.productId || []).includes('ZG-303Z'));
   });
 
