@@ -66,8 +66,8 @@ describe('P2667 Bastien Unknown recognize + HOBEIAN light class', () => {
     assert.ok(pkg.scripts['check:p2667']);
   });
 
-  // WHY(P2694 / Bastien DevTools 2026-09-23): live TS0042 IEEE moved; 3-btn off-mesh; Node18 no invent
-  it('P2694 live mesh IEEE: TS0042 e6:69 OK + vsxvaj9i OFF_MESH + Node18 NEED_INTERVIEW', () => {
+  // WHY(P2694 / Bastien DevTools 2026-09-23): live TS0042 IEEE moved; 3-btn may be OFF_MESH or Homey Appareil Zigbee
+  it('P2694/P2703 live mesh IEEE: TS0042 e6:69 OK + vsxvaj9i map + Node19 NEED_INTERVIEW', () => {
     const liveTs0042 = lookupBastienIeee('a4:c1:38:e6:69:60:4a:6f');
     assert.equal(liveTs0042.mfr, '_TZ3000_dzwgk7e2');
     assert.equal(liveTs0042.pid, 'TS0042');
@@ -77,8 +77,10 @@ describe('P2667 Bastien Unknown recognize + HOBEIAN light class', () => {
     const th = lookupBastienIeee('a4:c1:38:c1:17:76:42:f4');
     assert.equal(th.driver, 'climate_sensor');
     assert.equal(th.status, 'UNKNOWN_LIVE');
-    const ts0043 = lookupBastienIeee('a4:c1:38:f6:3d:2d:c9:79');
-    assert.equal(ts0043.status, 'OFF_MESH');
+    const ts0043Prior = lookupBastienIeee('a4:c1:38:f6:3d:2d:c9:79');
+    assert.equal(ts0043Prior.driver, 'button_wireless_3');
+    const ts0043Live = lookupBastienIeee('a4:c1:38:5b:91:98:dd:55');
+    assert.equal(ts0043Live.status, 'WRONG_APP_HOMEY');
     assert.equal(lookupBastienIeee('a4:c1:38:e6:74:3a:00:da'), null);
     assert.equal(isNeedInterviewIeee('a4:c1:38:e6:74:3a:00:da'), true);
   });
