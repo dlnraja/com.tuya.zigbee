@@ -3893,5 +3893,9 @@
   "1.0.69": {
     "en": "TS0043/TS0042: faster presses + fix ghost other lamp (use Homey Flow, not Zigbee channels). Update Test.",
     "fr": "TS0043/TS0042: appuis plus rapides + plus de ghost autre lampe (utiliser Flow Homey, pas les canaux Zigbee). Maj Test."
+  },
+  "1.0.70": {
+    "en": "P2694: Bastien mesh map from live DevTools — Unknown Node actions + prune ZG-302Z1 curtain bleed. Update Test.",
+    "fr": "P2694: carte mesh Bastien (DevTools) — actions Unknown Node + prune ZG-302Z1 curtain. Maj Test."
   }
 }
