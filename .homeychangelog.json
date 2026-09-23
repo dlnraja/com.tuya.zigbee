@@ -3966,5 +3966,9 @@
   "9.0.1196": {
     "en": "Ceiling radar (ZY-M100): restore lux + distance when find_switch goes cold while presence still works. Update Test, remove radar, re-add.",
     "fr": "Radar plafond (ZY-M100): lux + distance restaures si find_switch tombe a froid. Maj Test, retirer le radar, re-ajouter."
+  },
+  "9.0.1199": {
+    "en": "TS0043/TS0042 remotes: snappy presses + no phantom-gang ghost. Use Flow Button pressed — not Developer Zigbee channels.",
+    "fr": "Telecommandes TS0043/TS0042: appuis rapides + sans ghost EP fantome. Flow Bouton appuye — pas les canaux Zigbee."
   }
 }
