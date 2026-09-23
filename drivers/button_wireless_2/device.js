@@ -32,9 +32,11 @@ class Button2GangDevice extends ButtonDevice {
       protocol: 'hybrid',
       productId: 'TS0042',
       buttonCount: 2,
-      // WHY(P2693): snappy lamp Flows — 200ms (was 400/1200 "super lent")
-      debounceMs: 200,
-      crossPathDedupMs: 350,
+      // WHY(P2702 / diag 1f4dcf2e): button→relay felt huge at 200ms — 80/120
+      debounceMs: 80,
+      crossPathDedupMs: 120,
+      appCommandWindow: 250,
+      doubleClickWindow: 160,
       skip8004: true,
       writeSceneAttr: false,
       sceneSwitch: true,
@@ -46,7 +48,8 @@ class Button2GangDevice extends ButtonDevice {
       collapsePhantomEndpoints: true,
       skipSoftwareHoldRelease: true,
       disableLevelControlComplement: true,
-      source: base.source || 'P2693_button_wireless_2_ts0042',
+      snappyRelayFlow: true,
+      source: base.source || 'P2702_button_wireless_2_ts0042',
     });
   }
 

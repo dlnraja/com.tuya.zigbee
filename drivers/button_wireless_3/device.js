@@ -34,15 +34,18 @@ class Button3GangDevice extends ButtonDevice {
       productId: base.productId || 'TS0043',
       buttonCount: 3,
       maxButtons: 3,
-      debounceMs: Math.min(Number(base.debounceMs) || 200, 200),
-      crossPathDedupMs: Math.min(Number(base.crossPathDedupMs) || 350, 350),
+      debounceMs: Math.min(Number(base.debounceMs) || 80, 80),
+      crossPathDedupMs: Math.min(Number(base.crossPathDedupMs) || 120, 120),
+      appCommandWindow: Math.min(Number(base.appCommandWindow) || 250, 250),
+      doubleClickWindow: Math.min(Number(base.doubleClickWindow) || 160, 160),
       collapsePhantomEndpoints: true,
       sceneSwitch: true,
       zcl200IsPercent: true,
       skipBatteryReporting: true,
       skipSoftwareHoldRelease: true,
       disableLevelControlComplement: true,
-      source: base.source || 'P2693_button_wireless_3',
+      snappyRelayFlow: true,
+      source: base.source || 'P2702_button_wireless_3',
     });
   }
 
@@ -100,6 +103,12 @@ class Button3GangDevice extends ButtonDevice {
     } catch (e) {
       this.log('[BUTTON_WIRELESS_3] dedicated complement soft-fail:', e.message);
     }
+
+    // WHY(P2699/P2701): E000 + 0xFD are Homey-gap — complementary soft-arm only (never EF00 mandatory)
+    try {
+      const { softArmComplementaryIo } = require('../../lib/io/NonNativeComplementary');
+      softArmComplementaryIo(this, { zclNode, io: this.io });
+    } catch (_e) { /* optional */ }
 
     this.log('[BUTTON_WIRELESS_3] hybrid UNION dedicated (TS0043 class / P2693)');
   }
