@@ -3873,5 +3873,13 @@
   },
   "1.0.64": {
     "en": "Improved scene remote press latency and radiator valve pairing."
+  },
+  "1.0.65": {
+    "en": "Flow cards: list device actions and recent interactions. Update Bastien Test.",
+    "fr": "Cartes Flow: lister actions et interactions recentes. Maj Bastien Test."
+  },
+  "1.0.66": {
+    "en": "Smarter battery % (coin cells / rechargeables) without draining piles or flooding the mesh. Update Bastien Test.",
+    "fr": "Batterie plus precise (piles/accus) sans vider les piles ni saturer le mesh. Maj Bastien Test."
   }
 }

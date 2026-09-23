@@ -1,7 +1,7 @@
 {
   "_comment": "This file is generated. Please edit .homeycompose/app.json instead.",
   "id": "com.dlnraja.tuya.zigbee.bastien",
-  "version": "1.0.64",
+  "version": "1.0.66",
   "compatibility": ">=12.2.0",
   "platforms": [
     "local"
@@ -88619,6 +88619,78 @@
             "filter": "driver_id=wifi_water_valve"
           }
         ]
+      },
+      {
+        "id": "device_interaction",
+        "title": {
+          "en": "A device interaction happened",
+          "fr": "Une interaction appareil a eu lieu",
+          "nl": "Er vond een apparaatininteractie plaats",
+          "de": "Eine Geräteinteraktion ist aufgetreten"
+        },
+        "hint": {
+          "en": "Fires on action-like capability changes (onoff, dim, button, cover, thermostat…). Optional device filter (P2687).",
+          "fr": "Se déclenche sur les changements de type action (onoff, dim, bouton, volet, thermostat…). Filtre appareil optionnel (P2687)."
+        },
+        "tokens": [
+          {
+            "name": "device_name",
+            "type": "string",
+            "title": {
+              "en": "Device name",
+              "fr": "Nom de l'appareil"
+            },
+            "example": "Living remote"
+          },
+          {
+            "name": "capability",
+            "type": "string",
+            "title": {
+              "en": "Capability",
+              "fr": "Capacité"
+            },
+            "example": "onoff"
+          },
+          {
+            "name": "value",
+            "type": "string",
+            "title": {
+              "en": "New value",
+              "fr": "Nouvelle valeur"
+            },
+            "example": "true"
+          },
+          {
+            "name": "old_value",
+            "type": "string",
+            "title": {
+              "en": "Previous value",
+              "fr": "Valeur précédente"
+            },
+            "example": "false"
+          },
+          {
+            "name": "kind",
+            "type": "string",
+            "title": {
+              "en": "Kind (action|sensor)",
+              "fr": "Type (action|sensor)"
+            },
+            "example": "action"
+          }
+        ],
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "title": {
+              "en": "Device (optional filter)",
+              "fr": "Appareil (filtre optionnel)",
+              "nl": "Apparaat (optioneel filter)",
+              "de": "Gerät (optionaler Filter)"
+            }
+          }
+        ]
       }
     ],
     "conditions": [
@@ -105916,6 +105988,43 @@
           "fr": "Etat liquide !{{est|n'est pas}} [[state]]",
           "de": "Flussigkeitsstatus !{{ist|ist nicht}} [[state]]"
         }
+      },
+      {
+        "id": "device_interacted_recently",
+        "title": {
+          "en": "[[device]] !{{was|was not}} interacted with in the last [[minutes]] minutes",
+          "fr": "[[device]] !{{a|n'a pas}} eu d'interaction dans les [[minutes]] dernières minutes",
+          "nl": "[[device]] !{{had|had geen}} interactie in de laatste [[minutes]] minuten",
+          "de": "[[device]] !{{hatte|hatte keine}} Interaktion in den letzten [[minutes]] Minuten"
+        },
+        "hint": {
+          "en": "True if this device recorded an interaction in the in-memory ring within X minutes (P2687).",
+          "fr": "Vrai si cet appareil a une interaction dans l'anneau mémoire depuis X minutes (P2687)."
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "title": {
+              "en": "Device",
+              "fr": "Appareil",
+              "nl": "Apparaat",
+              "de": "Gerät"
+            }
+          },
+          {
+            "name": "minutes",
+            "type": "number",
+            "title": {
+              "en": "Minutes",
+              "fr": "Minutes"
+            },
+            "min": 1,
+            "max": 1440,
+            "step": 1,
+            "value": 5
+          }
+        ]
       }
     ],
     "actions": [
@@ -106049,25 +106158,33 @@
           "fr": "Récupérer la valeur historique de la capacité"
         },
         "hint": {
-          "en": "Retrieve a capability value from X minutes ago. Inspired by Device Capabilities app.",
-          "nl": "Haal een capaciteitswaarde op van X minuten geleden. Geinspireerd door Device Capabilities app."
+          "en": "Retrieve a capability value from X minutes ago. Works on any device of this app (P2687).",
+          "nl": "Haal een capaciteitswaarde op van X minuten geleden. Alle apparaten van deze app (P2687).",
+          "fr": "Valeur d'une capacité il y a X minutes. Tous les appareils de cette app (P2687)."
         },
         "args": [
           {
             "type": "device",
             "name": "device",
-            "filter": "capabilities=onoff"
+            "title": {
+              "en": "Device",
+              "fr": "Appareil",
+              "nl": "Apparaat",
+              "de": "Gerät"
+            }
           },
           {
             "name": "capability",
             "type": "text",
             "title": {
               "en": "Capability",
-              "nl": "Capaciteit"
+              "nl": "Capaciteit",
+              "fr": "Capacité"
             },
             "placeholder": {
               "en": "e.g. measure_temperature, onoff, dim",
-              "nl": "bijv. measure_temperature, onoff, dim"
+              "nl": "bijv. measure_temperature, onoff, dim",
+              "fr": "ex. measure_temperature, onoff, dim"
             }
           },
           {
@@ -106075,11 +106192,24 @@
             "type": "number",
             "title": {
               "en": "Minutes ago (0=current)",
-              "nl": "Minuten geleden (0=huidig)"
+              "nl": "Minuten geleden (0=huidig)",
+              "fr": "Minutes avant (0=actuel)"
             },
             "min": 0,
             "max": 1440,
             "step": 1
+          }
+        ],
+        "tokens": [
+          {
+            "name": "value",
+            "type": "string",
+            "title": {
+              "en": "Value",
+              "fr": "Valeur",
+              "nl": "Waarde"
+            },
+            "example": "21.5"
           }
         ]
       },
@@ -150347,6 +150477,200 @@
           "en": "Disable child lock",
           "fr": "Désactiver verrou enfant"
         }
+      },
+      {
+        "id": "list_device_capabilities",
+        "title": {
+          "en": "List all capabilities of [[device]]",
+          "fr": "Lister toutes les capacités de [[device]]",
+          "nl": "Alle capaciteiten van [[device]] opsommen",
+          "de": "Alle Fähigkeiten von [[device]] auflisten"
+        },
+        "hint": {
+          "en": "Returns a CSV list of every capability on the device (P2687).",
+          "fr": "Retourne la liste CSV de toutes les capacités de l'appareil (P2687)."
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "title": {
+              "en": "Device",
+              "fr": "Appareil",
+              "nl": "Apparaat",
+              "de": "Gerät"
+            }
+          }
+        ],
+        "tokens": [
+          {
+            "name": "list",
+            "type": "string",
+            "title": {
+              "en": "Capabilities list",
+              "fr": "Liste des capacités"
+            },
+            "example": "onoff, measure_battery, button.1"
+          },
+          {
+            "name": "count",
+            "type": "number",
+            "title": {
+              "en": "Count",
+              "fr": "Nombre"
+            },
+            "example": 3
+          }
+        ]
+      },
+      {
+        "id": "list_device_actions",
+        "title": {
+          "en": "List actionable capabilities of [[device]]",
+          "fr": "Lister les actions possibles de [[device]]",
+          "nl": "Acties van [[device]] opsommen",
+          "de": "Aktionen von [[device]] auflisten"
+        },
+        "hint": {
+          "en": "Setable / control capabilities only (onoff, dim, covers, buttons, thermostat target…) — P2687.",
+          "fr": "Uniquement les capacités contrôlables (onoff, dim, volets, boutons, consigne…) — P2687."
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "title": {
+              "en": "Device",
+              "fr": "Appareil",
+              "nl": "Apparaat",
+              "de": "Gerät"
+            }
+          }
+        ],
+        "tokens": [
+          {
+            "name": "list",
+            "type": "string",
+            "title": {
+              "en": "Actions list",
+              "fr": "Liste des actions"
+            },
+            "example": "onoff, dim, button.1"
+          },
+          {
+            "name": "count",
+            "type": "number",
+            "title": {
+              "en": "Count",
+              "fr": "Nombre"
+            },
+            "example": 3
+          }
+        ]
+      },
+      {
+        "id": "list_recent_interactions",
+        "title": {
+          "en": "List recent interactions of [[device]]",
+          "fr": "Lister les interactions récentes de [[device]]",
+          "nl": "Recente interacties van [[device]] opsommen",
+          "de": "Letzte Interaktionen von [[device]] auflisten"
+        },
+        "hint": {
+          "en": "In-memory history of capability changes for this device (ring buffer, P2687).",
+          "fr": "Historique mémoire des changements de capacités pour cet appareil (anneau P2687)."
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "title": {
+              "en": "Device",
+              "fr": "Appareil",
+              "nl": "Apparaat",
+              "de": "Gerät"
+            }
+          },
+          {
+            "name": "limit",
+            "type": "number",
+            "title": {
+              "en": "Max entries",
+              "fr": "Nombre max"
+            },
+            "min": 1,
+            "max": 50,
+            "step": 1,
+            "value": 10
+          }
+        ],
+        "tokens": [
+          {
+            "name": "list",
+            "type": "string",
+            "title": {
+              "en": "Interactions",
+              "fr": "Interactions"
+            },
+            "example": "12:01 onoff=true; 12:02 dim=0.5"
+          },
+          {
+            "name": "count",
+            "type": "number",
+            "title": {
+              "en": "Count",
+              "fr": "Nombre"
+            },
+            "example": 2
+          }
+        ]
+      },
+      {
+        "id": "list_fleet_recent_interactions",
+        "title": {
+          "en": "List recent interactions (all devices)",
+          "fr": "Lister les interactions récentes (tous appareils)",
+          "nl": "Recente interacties (alle apparaten)",
+          "de": "Letzte Interaktionen (alle Geräte)"
+        },
+        "hint": {
+          "en": "Fleet-wide interaction ring for this app (max 50, P2687).",
+          "fr": "Anneau d'interactions de toute l'app (max 50, P2687)."
+        },
+        "args": [
+          {
+            "name": "limit",
+            "type": "number",
+            "title": {
+              "en": "Max entries",
+              "fr": "Nombre max"
+            },
+            "min": 1,
+            "max": 50,
+            "step": 1,
+            "value": 20
+          }
+        ],
+        "tokens": [
+          {
+            "name": "list",
+            "type": "string",
+            "title": {
+              "en": "Interactions",
+              "fr": "Interactions"
+            },
+            "example": "Lamp: onoff=true; Remote: button.1=true"
+          },
+          {
+            "name": "count",
+            "type": "number",
+            "title": {
+              "en": "Count",
+              "fr": "Nombre"
+            },
+            "example": 2
+          }
+        ]
       }
     ]
   },
