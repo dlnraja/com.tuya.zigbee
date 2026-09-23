@@ -1,4 +1,4 @@
-# Couple profile — `_TZE204_clrdrnya+TS0601`
+﻿# Couple profile ÔÇö `_TZE204_clrdrnya+TS0601`
 
 
 - Driver: **presence_sensor_radar**
@@ -9,28 +9,35 @@
 
 | DP | Name | Type | Direction | Capability |
 |---:|---|---|---|
-| 1 | presence | — | rx | — |
-| 2 | radar_sensitivity | — | rx | — |
-| 3 | shield_range | — | rx | — |
-| 4 | detection_range | — | rx | — |
-| 6 | equipment_status | — | rx | — |
-| 9 | target_distance | — | rx | — |
-| 101 | entry_filter_time | — | rx | — |
-| 102 | departure_delay | — | rx | — |
-| 103 | cline | — | rx | — |
-| 104 | illuminance | — | rx | — |
-| 105 | entry_sensitivity | — | rx | — |
-| 106 | entry_distance_indentation | — | rx | — |
-| 107 | breaker_mode | — | rx | — |
-| 108 | breaker_status | — | rx | — |
-| 109 | status_indication | — | rx | — |
-| 110 | illuminance_threshold | — | rx | — |
-| 111 | breaker_polarity | — | rx | — |
-| 112 | block_time | — | rx | — |
-| 113 | parameter_setting_result | — | rx | — |
-| 114 | factory_parameters | — | rx | — |
-| 115 | sensor | — | rx | — |
+| 1 | presence | ÔÇö | rx | ÔÇö |
+| 2 | radar_sensitivity | ÔÇö | rx | ÔÇö |
+| 3 | shield_range | ÔÇö | rx | ÔÇö |
+| 4 | detection_range | ÔÇö | rx | ÔÇö |
+| 6 | equipment_status | ÔÇö | rx | ÔÇö |
+| 9 | target_distance | ÔÇö | rx | ÔÇö |
+| 101 | entry_filter_time | ÔÇö | rx | ÔÇö |
+| 102 | departure_delay | ÔÇö | rx | ÔÇö |
+| 103 | cline | ÔÇö | rx | ÔÇö |
+| 104 | illuminance | ÔÇö | rx | ÔÇö |
+| 105 | entry_sensitivity | ÔÇö | rx | ÔÇö |
+| 106 | entry_distance_indentation | ÔÇö | rx | ÔÇö |
+| 107 | breaker_mode | ÔÇö | rx | ÔÇö |
+| 108 | breaker_status | ÔÇö | rx | ÔÇö |
+| 109 | status_indication | ÔÇö | rx | ÔÇö |
+| 110 | illuminance_threshold | ÔÇö | rx | ÔÇö |
+| 111 | breaker_polarity | ÔÇö | rx | ÔÇö |
+| 112 | block_time | ÔÇö | rx | ÔÇö |
+| 113 | parameter_setting_result | ÔÇö | rx | ÔÇö |
+| 114 | factory_parameters | ÔÇö | rx | ÔÇö |
+| 115 | sensor | ÔÇö | rx | ÔÇö |
 
 ---
 See `docs/guides/DP_INTERPRETATION.md`
+
+## Known bugs (P2579 ÔÇö MTG075 / MTG235)
+
+- **occupied** sensor mode can stick true (false presence) ÔÇö soft-clear + healForcedOccupiedOnSoftClear on tip.
+- Distance is **quantized** (~2.8 m steps) ÔÇö quantizedDistanceSoftClear avoids thrash.
+- Retail SKUs **MTG075** / **MTG235** share couple `_TZE204_clrdrnya`+`TS0601` (mains, no phantom battery).
+- antiFalsePositive: sticky DP1 needs distance corroboration before alarm_motion paints.
 
