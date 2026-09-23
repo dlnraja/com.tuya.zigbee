@@ -13,7 +13,6 @@
   "class": "button",
   "capabilities": [
     "button.1",
-    "alarm_battery",
     "measure_battery"
   ],
   "capabilitiesOptions": {
@@ -41,13 +40,6 @@
       "units": "%",
       "getable": true,
       "preventInsights": false
-    },
-    "alarm_battery": {
-      "title": {
-        "en": "Battery Low",
-        "fr": "Batterie faible"
-      },
-      "ranked": false
     }
   },
   "energy": {
