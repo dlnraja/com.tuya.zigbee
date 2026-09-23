@@ -40,4 +40,3 @@ See `docs/guides/DP_INTERPRETATION.md`
 - Distance is **quantized** (~2.8 m steps) — quantizedDistanceSoftClear avoids thrash.
 - Retail SKUs **MTG075** / **MTG235** share couple `_TZE204_clrdrnya`+`TS0601` (mains, no phantom battery).
 - antiFalsePositive: sticky DP1 needs distance corroboration before alarm_motion paints.
-
