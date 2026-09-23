@@ -1981,5 +1981,8 @@
   },
   "5.12.316": {
     "en": "Fixed climate eWeLink couple and battery capability guideline."
+  },
+  "5.12.317": {
+    "en": "P2698: strip radar FP bleed from curtain_motor (publish CI)"
   }
 }
