@@ -40,6 +40,9 @@ class Button2GangDevice extends ButtonDevice {
       sceneSwitch: true,
       usesE000: true,
       noEf00Tx: true,
+      // WHY(P2691 / Bastien 885a9901): never powerCfg TX on press — CR2032 drain
+      skipBatteryReporting: true,
+      batteryEpOnly: 1,
       collapsePhantomEndpoints: true,
       source: base.source || 'P2683_button_wireless_2_ts0042',
     });
