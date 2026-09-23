@@ -1,27 +1,21 @@
-# L99 residual treat — 2026-09-18 (silent)
+# L99 residual treat — 2026-09-23 (silent) — P2705
 
-## Live open (code)
-| ID | Couple | Symptom | Fix |
-|----|--------|---------|-----|
-| GH **#550** / #547 HiepSVG | `_TZE204_gkfbdvyx`+`TS0601` | OCR: lux OK, motion/presence No, distance `-`, phantom Channel 1 | **P2600** (+ prior P2595/97) |
-| VicHY #2252 | `_TZE204_clrdrnya`+`TS0601` | distance `[object Object]`, phantoms | **P2599** tip ≥1079 |
-| Michaelp #2253 | `_TZE284_ogx8u5z6`+`TS0601` | empty caps / datapoint TX | **P2593–98** tip ≥1076 |
+## Live open
+| ID | Couple | Tip | Fix |
+|----|--------|-----|-----|
+| GH **#550** HiepSVG | `_TZE204_gkfbdvyx`+`TS0601` | ≥**9.0.1210** | **P2705** (+ P2690) |
 
-## OCR GH#550 (`reports/forum-hiepsvg-550/ocr/`)
-- Motion alarm **No** / Human presence **No** / Detection Distance **-** / Luminance **751 lx** dynamic
-- Phantom power Channel 1 (compose onoff)
+## Latest @ 9.0.1207
+- Alarms OK but sometimes hung after leave
+- Lux nearly dead; distance flaky
+- No detect beyond ~3.5m
 
-## P2600 root causes
-1. Anti-FP treated DP9-never-seen as empty → blocked presence while find_switch cold
-2. DP104 motion_state clear wiped lux/DP1 presence
-3. Native `tuya.dataQuery` alone — need EF00 `requestDPs` + `forceActiveTuyaMode`
-4. Lux tiny deltas — cadence soft-present while distance cold
+## P2705 root causes
+1. Cold-stream AND-gate skipped lux re-arm when distance still moved
+2. Ceiling DP map had no Homey `setting:` → MCU never got range/sensitivity/delay
+3. Sticky/survival watchdogs not armed on ceiling (gated on floodCalm)
 
-## Also
-- Synced 11 uncovered DP couples into `data/dp_couple_knowledge.json` (incl. gkfbdvyx)
+See `reports/gmail-hiepsvg-550-2026-09-23/TREAT.md`
 
-## User action (no forum POST)
-Update Test **≥ tip this publish** → Repair radar / TRV / MTG bathrooms.
-
-## Dual-app
-BOTH · Silent (T157628)
+## User action
+Update Test ≥9.0.1210 → Repair radar. No forum POST.

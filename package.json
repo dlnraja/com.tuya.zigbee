@@ -1,6 +1,6 @@
 {
   "name": "com.dlnraja.tuya.zigbee",
-  "version": "9.0.1209",
+  "version": "9.0.1210",
   "description": "Tuya Unified Zigbee - Local-first control with AI automation",
   "main": "app.js",
   "scripts": {
@@ -565,7 +565,7 @@
     "check:p2690": "node --test test/critical/p2690-gkfbdvyx-550-cold-stream.test.js",
     "check:p2691": "node --test test/critical/p2691-sleepy-remote-battery-drain.test.js",
     "check:p2692": "node --test test/critical/p2692-publish-heal-energy.test.js",
-    "check:p268x": "npm run check:p2680 && npm run check:p2681 && npm run check:p2682 && npm run check:p2683 && npm run check:p2684 && npm run check:p2685 && npm run check:p2686 && npm run check:p2687 && npm run check:p2689 && npm run check:p2690 && npm run check:p2691 && npm run check:p2692 && npm run check:p2693 && npm run check:p2702",
+    "check:p268x": "npm run check:p2680 && npm run check:p2681 && npm run check:p2682 && npm run check:p2683 && npm run check:p2684 && npm run check:p2685 && npm run check:p2686 && npm run check:p2687 && npm run check:p2689 && npm run check:p2690 && npm run check:p2691 && npm run check:p2692 && npm run check:p2693 && npm run check:p2702 && npm run check:p2705",
     "build:fp-shards": "node tools/ci/build-fingerprint-shards.js",
     "check:p2693": "node --test test/critical/p2693-bastien-ts004x-snappy-ghost.test.js",
     "check:p2695": "node --test test/critical/p2695-bastien-mesh-couple-research.test.js",
@@ -574,7 +574,8 @@
     "check:p2699": "node --test test/critical/p2699-non-native-complementary-never-mandatory.test.js",
     "check:p269x": "npm run check:p2691 && npm run check:p2692 && npm run check:p2693 && npm run check:p2695 && npm run check:p2696 && npm run check:p2698 && npm run check:p2699 && npm run check:p2702 && npm run check:p2704",
     "check:p2702": "node --test test/critical/p2702-bastien-ts004x-unknown-snappy.test.js",
-    "check:p2704": "node --test test/critical/p2704-bastien-fleet-snappy-frontpin.test.js"
+    "check:p2704": "node --test test/critical/p2704-bastien-fleet-snappy-frontpin.test.js",
+    "check:p2705": "node --test test/critical/p2705-hiepsvg-550-lux-cold-settings.test.js"
   },
   "keywords": [
     "homey",
