@@ -77,7 +77,23 @@ class Switch3GangDevice extends UnifiedSwitchBase {
     return includesCI(ZCL_ONLY_MANUFACTURERS_3G, mfr);
   }
 
-  async onNodeInit({
+  async onNodeInit({ zclNode }) {
+    // --- Attribute Reporting Configuration (auto-generated) ---
+    try {
+      await this.configureAttributeReporting([
+        {
+          cluster: 'haElectricalMeasurement',
+          attributeName: 'activePower',
+          minInterval: 10,
+          maxInterval: 300,
+          minChange: 5,
+        }
+      ]);
+      this.log('Attribute reporting configured successfully');
+    } catch (err) {
+      this.log('Attribute reporting config failed (device may not support it):', err.message);
+    }
+
     // P2485: Z2M colored 3-gang rkbxtclc — log profile + force mains (no phantom battery)
     try {
       const { resolveEf00MultiGangProfile } = require('../../lib/tuya/Ef00MultiGangProfiles');
@@ -94,22 +110,6 @@ class Switch3GangDevice extends UnifiedSwitchBase {
       }
     } catch (e) {
       this.log('[P2485] profile resolve soft-fail:', e.message);
-    }
- zclNode }) {
-    // --- Attribute Reporting Configuration (auto-generated) ---
-    try {
-      await this.configureAttributeReporting([
-        {
-          cluster: 'haElectricalMeasurement',
-          attributeName: 'activePower',
-          minInterval: 10,
-          maxInterval: 300,
-          minChange: 5,
-        }
-      ]);
-      this.log('Attribute reporting configured successfully');
-    } catch (err) {
-      this.log('Attribute reporting config failed (device may not support it):', err.message);
     }
 
     try {
