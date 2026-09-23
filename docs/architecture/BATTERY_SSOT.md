@@ -43,9 +43,17 @@ Complementary layers (see [`SLEEPY_REMOTE_PAIRING_SSOT.md`](./SLEEPY_REMOTE_PAIR
 
 ## P2689 — Adaptive precision (piles / accus / mesh calm)
 
-Machine: [`lib/battery/SmartBatteryAdaptivePrecision.js`](../../lib/battery/SmartBatteryAdaptivePrecision.js)  
+Machine: [`config/architecture/battery-adaptive-precision-ssot.json`](../../config/architecture/battery-adaptive-precision-ssot.json)  
+Runtime: [`lib/battery/SmartBatteryAdaptivePrecision.js`](../../lib/battery/SmartBatteryAdaptivePrecision.js)  
 Gate: `npm run check:p2689`  
-Classify: **BOTH** (reliability)
+Classify: **BOTH** (reliability)  
+Three-app tips: [`THREE_APP_RECENT_TIPS.md`](./THREE_APP_RECENT_TIPS.md)
+
+| Track | Tip (min) |
+|-------|-----------|
+| Universal `master` | ≥ **9.0.1195** |
+| Bastien `bastien-home` | ≥ **1.0.66** |
+| Stable `stable-v5` | ≥ **5.12.308** |
 
 Inspired by Z2M (awake-only configure, long minInterval), ZHA (no power bind on coin remotes), HomeSuite (jitter / no stampede), community last-seen doctrine:
 
@@ -56,10 +64,12 @@ Inspired by Z2M (awake-only configure, long minInterval), ZHA (no power bind on 
 | mid ≤70% | 2% | 5 min | 1× |
 | high ≤100% | 5% | 10 min | 1.5× |
 
-- **Coin (CR2032/CR2450…)** on buttons: never proactive poll; passive + optional stale piggyback on press.
+- **Coin (CR2032/CR2450…)** on buttons: never proactive poll; passive + optional stale piggyback on press (**P2685** skipBatteryReporting still never TX).
 - **Accus (Li-ion…)** : slightly tighter maxInterval when low (SOC swings under load).
 - **Mains phantom**: park reporting (MeshFloodCalm disable).
 - Dual-signal fuse: flat ZCL 100% + low voltage → prefer voltage curve (no linear V formula).
+
+Wire: UnifiedBatteryHandler · battery-reporting-manager · UnifiedSensorBase · ButtonDevice · PowerClusterPolicy · MeshFloodCalm.
 
 ## LEGACY (do not extend)
 
@@ -75,3 +85,5 @@ Linear formulas like `(voltage - 2.5) / 0.5`. Use profiles (`3V_2100`, `1.5V_AA`
 Blind ZCL `/2` → 100% reports as 50% (forum SOS / Tuya 0–100). Gate: battery intelligence / P216 notes in `.cursorrules`.
 MCU `mcuVersionRequest` loops on Zemismart battery covers → pack drain (Z2M #28655).
 Battery configureReporting storm on sleepy remotes → mute buttons (P2645 / Bastien `4d4e1684`). Gate: `npm run check:p2645`.
+Fixed 2%/5min throttle hiding low-SOC 1% drops / coin poll storms → P2689. Gate: `npm run check:p2689`.
+Wake powerCfg TX on skipBatteryReporting remotes → pile drain (P2685). Gate: `npm run check:p2685`.

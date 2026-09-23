@@ -1,7 +1,7 @@
 {
   "_meta": {
     "id": "P2543-dual-app-benefit-recent",
-    "updated": "2026-09-17",
+    "updated": "2026-09-23",
     "patch": "P2543",
     "dualApp": "BOTH",
     "why": "Every recent reliability advance must benefit master Test AND stable LTS in the same session — complementary union, never App ID/version wipe"
@@ -12,32 +12,32 @@
     "complementaryOnly": true,
     "neverCopyAppIdOrVersion": true,
     "neverShrinkDualCase": true,
-    "masterOnlySkip": ["Intelligent IR UX", "mega feature managers", "Daylight Atmosphere"]
+    "masterOnlySkip": ["Intelligent IR UX", "mega feature managers", "Daylight Atmosphere", "P2687 interaction Flow cards"]
   },
   "recentBothPacks": [
+    "P2689 adaptive battery precision (SOC/chemistry — tip Universal 9.0.1195 / Bastien 1.0.66 / Stable 5.12.308)",
+    "P2683–P2686 Bastien TS004x UX + pile calm + hold-release + TRV p3dbf6qs sacred-keep",
+    "P2660 local-first doctrine",
+    "P2645 sleepy remote pairing skipBattCfg",
     "P2520 complementary variant enrich",
     "P2538 airbox AQ lock",
-    "P2539 Zigbee 4.0 / Suzi classifier",
     "P2540 complementary DP/cluster/raw RX-TX",
-    "P2541–P2541b AQ reinstate + anti-collision",
-    "P2542 local auto-improve + forfait crons",
-    "P2544 complementary coverage max + multi-index OEM OTA"
+    "P2542 local auto-improve + forfait crons"
+  ],
+  "masterOnlyPacks": [
+    "P2687 interaction Flow cards (list caps/actions/history) — Bastien sync OK; no Stable"
   ],
   "portMasterToStable": [
-    "lib/io/ProtocolFallbackChain.js",
-    "tools/ci/local-intelligent-solver.js",
-    "lib/clusters/RawClusterFallback.js",
-    "lib/layers/ProtocolRxTxChain.js",
-    "lib/features/LocalSelfImproveCatalog.js",
-    "lib/catalog/ComplementaryCoverageCatalog.js",
-    "lib/ota/OTARepository.js",
-    "lib/ota/TuyaXiaomiOTAProvider.js",
-    "lib/zigbee/CapabilityCommandRouter.js",
-    "config/architecture/local-auto-improve-ssot.json",
-    "config/architecture/complementary-coverage-max-ssot.json",
-    "config/architecture/complementary-rx-tx-dp-cluster-ssot.json",
-    "config/architecture/homey-device-updates.json",
-    "config/security/ai-plan-forfait.json"
+    "lib/battery/SmartBatteryAdaptivePrecision.js",
+    "lib/battery/UnifiedBatteryHandler.js",
+    "lib/utils/battery-reporting-manager.js",
+    "lib/zigbee/PowerClusterPolicy.js",
+    "lib/zigbee/MeshFloodCalm.js",
+    "lib/devices/ButtonDevice.js",
+    "lib/devices/UnifiedSensorBase.js",
+    "config/architecture/battery-adaptive-precision-ssot.json",
+    "docs/architecture/BATTERY_SSOT.md",
+    "test/critical/p2689-smart-battery-adaptive-precision.test.js"
   ],
   "unionBothWays": [
     "drivers/air_quality_co2 manufacturerName dual-case forms"
@@ -45,11 +45,15 @@
   "orchestrator": "tools/ci/dual-app-benefit-recent.js",
   "gates": {
     "npm": "check:p2543",
-    "family": "check:p254x"
+    "family": "check:p254x",
+    "battery": "check:p2689"
   },
   "refs": [
     "docs/rules/DUAL_APP_VISION.md",
     "config/architecture/dual-app-tracks.json",
+    "docs/architecture/THREE_APP_RECENT_TIPS.md",
+    "docs/architecture/BATTERY_SSOT.md",
+    "docs/architecture/INTERACTION_FLOW_CARDS_SSOT.md",
     "docs/architecture/LOCAL_AUTO_IMPROVE_SSOT.md",
     "docs/rules/COMPLEMENTARY_VARIANT_ENRICH.md"
   ]
