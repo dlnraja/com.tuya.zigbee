@@ -34,15 +34,18 @@ class Button3GangDevice extends ButtonDevice {
       productId: base.productId || 'TS0043',
       buttonCount: 3,
       maxButtons: 3,
-      debounceMs: Math.min(Number(base.debounceMs) || 200, 200),
-      crossPathDedupMs: Math.min(Number(base.crossPathDedupMs) || 350, 350),
+      debounceMs: Math.min(Number(base.debounceMs) || 80, 80),
+      crossPathDedupMs: Math.min(Number(base.crossPathDedupMs) || 120, 120),
+      appCommandWindow: Math.min(Number(base.appCommandWindow) || 250, 250),
+      doubleClickWindow: Math.min(Number(base.doubleClickWindow) || 160, 160),
       collapsePhantomEndpoints: true,
       sceneSwitch: true,
       zcl200IsPercent: true,
       skipBatteryReporting: true,
       skipSoftwareHoldRelease: true,
       disableLevelControlComplement: true,
-      source: base.source || 'P2693_button_wireless_3',
+      snappyRelayFlow: true,
+      source: base.source || 'P2702_button_wireless_3',
     });
   }
 
