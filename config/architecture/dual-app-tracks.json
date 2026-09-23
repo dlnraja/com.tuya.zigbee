@@ -1,14 +1,17 @@
 {
   "_meta": {
-    "version": "1.4.0",
-    "updated": "2026-09-19",
+    "version": "1.5.0",
+    "updated": "2026-09-23",
     "why": "Three Athom apps — never blur App ID / version / purpose. Classify every change. Bastien house is private → promotes upstream only.",
     "doctrine": "docs/rules/DUAL_APP_VISION.md",
     "bastienDoctrine": "docs/rules/BASTIEN_HOUSE_APP.md",
     "bastienSsot": "config/architecture/bastien-house-ssot.json",
     "publishSsot": "config/architecture/publish-ssot.json",
     "forumFailoverSsot": "config/architecture/forum-complementary-failover-ssot.json",
-    "intelligentIrSsot": "config/architecture/intelligent-ir-ssot.json"
+    "intelligentIrSsot": "config/architecture/intelligent-ir-ssot.json",
+    "recentTipsHuman": "docs/architecture/THREE_APP_RECENT_TIPS.md",
+    "batteryAdaptiveSsot": "config/architecture/battery-adaptive-precision-ssot.json",
+    "interactionFlowSsot": "config/architecture/interaction-flow-cards-ssot.json"
   },
   "alwaysBothSameSession": {
     "mandate": "EVERY BOTH reliability change must be surgically ported to stable-v5 in the SAME agent session as master — never leave LTS tip-lag for Peter/GH crashes/sacred couples",
@@ -31,8 +34,8 @@
       "purpose": "Innovation + soak (features + reliability)",
       "cloneHint": "Documents/homey/master",
       "publish": "Auto-Publish on Push → Homey Test",
-      "tipHealthy": "9.0.926",
-      "tipNote": "P139 PF on 9.0.924/928 — soft-continue; do not spam"
+      "tipHealthy": "9.0.1195",
+      "tipNote": "P2687 interaction Flow + P2689 adaptive battery; P139 soft-continue on PF emails"
     },
     "stable": {
       "branch": "stable-v5",
@@ -41,7 +44,9 @@
       "versionLine": "5.12.x",
       "purpose": "Reliability LTS only — no feature managers unless human-promoted",
       "cloneHint": "Documents/homey/stable",
-      "publish": "Publish Stable → Test (APP_ID=.stable only); P139 no spam republish"
+      "publish": "Publish Stable → Test (APP_ID=.stable only); P139 no spam republish",
+      "tipHealthy": "5.12.308",
+      "tipNote": "P2689 adaptive battery BOTH; no P2687 SoftFeature"
     },
     "bastien": {
       "branch": "bastien-home",
@@ -51,7 +56,9 @@
       "purpose": "Private house-only Homey Pro for Bastien — live install/soak; promote learnings upstream surgically",
       "cloneHint": "Documents/homey/bastien",
       "publish": "Publish Zigbee Bastien workflow / homey app publish — App ID .bastien only; NEVER Universal or Stable slots",
-      "enrichment": "bastien_to_public_only"
+      "enrichment": "bastien_to_public_only",
+      "tipHealthy": "1.0.66",
+      "tipNote": "P2687 house Flow + P2689 battery; promote upstream surgically"
     }
   },
   "identityNeverCopy": [
@@ -608,6 +615,10 @@
     "p2689_smart_battery_adaptive_precision": {
       "tag": "BOTH",
       "note": "SOC/chemistry adaptive battery reporting + throttle + piggyback — precision without CR2032 drain / mesh flood; Stable surgical"
+    },
+    "p2683_p2686_bastien_ts004x_diag": {
+      "tag": "BOTH",
+      "note": "Bastien TS004x latency/UX + skipBatteryReporting pile calm + hold-release ghost + TRV p3dbf6qs sacred-keep"
     }
   }
 }

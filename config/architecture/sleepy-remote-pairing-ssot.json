@@ -85,7 +85,7 @@
       "why": "Keeps SED awake until Homey finishes bind/config — complementary to code skipBattCfg"
     },
     "rePairSteps": [
-      "Update app tip (Bastien ≥1.0.30 / Universal ≥9.0.1145 / Stable ≥5.12.288)",
+      "Update app tip (Bastien ≥1.0.66 / Universal ≥9.0.1195 / Stable ≥5.12.308)",
       "Remove device from Homey",
       "Pair near Homey Pro",
       "Pick correct gang driver (Bouton sans fil 3 for TS0043 — not wall 1-btn)",
@@ -93,9 +93,10 @@
     ]
   },
   "tipsMin": {
-    "master": "9.0.1145",
-    "bastien": "1.0.30",
-    "stable": "5.12.288"
+    "master": "9.0.1195",
+    "bastien": "1.0.66",
+    "stable": "5.12.308",
+    "note": "P2685 pile calm + P2689 adaptive battery on same tip line"
   },
   "contreQuoi": [
     "battery configureReporting / getOnStart true on sleepy button drivers",

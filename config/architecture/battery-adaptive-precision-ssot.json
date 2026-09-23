@@ -1,0 +1,56 @@
+{
+  "_meta": {
+    "id": "P2689-battery-adaptive-precision-ssot",
+    "updated": "2026-09-23",
+    "classify": "BOTH",
+    "why": "Precise measure_battery for piles/accus without draining CR2032 or flooding Zigbee — SOC-band + chemistry adaptive reporting/throttle/poll/piggyback",
+    "human": "docs/architecture/BATTERY_SSOT.md",
+    "runtime": "lib/battery/SmartBatteryAdaptivePrecision.js",
+    "gate": "npm run check:p2689",
+    "peersInspiration": [
+      "Z2M awake-only configureReporting + long minInterval",
+      "ZHA TuyaNoBindPower / skip power bind on coin remotes",
+      "HomeSuite jitter + no thundering herd + skip Poll Control on sleepy",
+      "Community last-seen often beats % for dead battery"
+    ]
+  },
+  "tipsMin": {
+    "universal": "9.0.1195",
+    "bastien": "1.0.66",
+    "stable": "5.12.308"
+  },
+  "wire": [
+    "lib/battery/UnifiedBatteryHandler.js",
+    "lib/utils/battery-reporting-manager.js",
+    "lib/devices/UnifiedSensorBase.js",
+    "lib/devices/ButtonDevice.js",
+    "lib/zigbee/PowerClusterPolicy.js",
+    "lib/zigbee/MeshFloodCalm.js"
+  ],
+  "socBands": [
+    { "id": "critical", "maxPct": 15, "minChange": 1, "throttleMs": 60000, "pollScale": 0.5 },
+    { "id": "low", "maxPct": 30, "minChange": 1, "throttleMs": 120000, "pollScale": 0.7 },
+    { "id": "mid", "maxPct": 70, "minChange": 2, "throttleMs": 300000, "pollScale": 1.0 },
+    { "id": "high", "maxPct": 100, "minChange": 5, "throttleMs": 600000, "pollScale": 1.5 }
+  ],
+  "chemistry": {
+    "coin": { "examples": ["CR2032", "CR2450", "CR2477", "CR1632"], "proactivePollOnButton": false },
+    "rechargeable": { "examples": ["Li-ion", "Li-polymer", "18650"], "tighterMaxWhenLow": true },
+    "alkaline": { "examples": ["AAA", "AA", "2xAA", "2xAAA"] },
+    "mains": { "parkReporting": true }
+  },
+  "rules": {
+    "skipBatteryReportingNeverProactiveTx": true,
+    "skipNeqStripMeasureBattery": true,
+    "noLinearVoltageFormula": true,
+    "piggybackOnlyWhenStale": true,
+    "fusePreferVoltageOnFlatZcl100Coin": true
+  },
+  "related": ["P2645", "P2685", "P2470", "P2488", "P2490", "P2663", "P216"],
+  "dualApp": {
+    "master": true,
+    "bastien": true,
+    "stable": true,
+    "note": "BOTH reliability — surgical stable backport mandatory same session"
+  }
+}
