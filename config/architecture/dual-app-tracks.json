@@ -180,6 +180,10 @@
       "tag": "BOTH",
       "note": "Homey-gap DP/clusters (EF00/E000/ED00/AQ) = complementary soft RX/TX/raw/PFC only — never compose-mandatory or boot-fatal; NonNativeComplementary + check:p2699"
     },
+    "p2700_soft_arm_raw_rxtx_pfc": {
+      "tag": "BOTH",
+      "note": "softArmComplementaryIo arms RawClusterFallback + ProtocolFallbackChain + ProtocolRxTxChain on DeviceIOFacade attach — Bastien included"
+    },
     "p2520_complementary_variant_enrich": {
       "tag": "BOTH",
       "note": "Enrich = variants/additions never wipe — ComplementaryMerge + check:p2520 always-on doctrine"
