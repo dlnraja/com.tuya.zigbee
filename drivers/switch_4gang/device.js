@@ -36,6 +36,36 @@ class Switch4GangDevice extends BaseClass {
   get gangCount() { return 4; }
 
   /**
+   * WHY(P2704): `_TZ3000_ltt60asa`+TS0004 — snappy Homey UI / Flow → relay.
+   * Contre quoi: multi-gang pace jitter (15–50ms) + 350ms retry made channels feel laggy.
+   */
+  getDeviceProfile() {
+    const base = (typeof super.getDeviceProfile === 'function' && super.getDeviceProfile()) || {};
+    const mfr = String(
+      this.getSetting?.('zb_manufacturer_name')
+      || this.getStoreValue?.('zb_manufacturer_name')
+      || this.getStoreValue?.('manufacturerName')
+      || this.getData?.()?.manufacturerName
+      || '',
+    );
+    if (/ltt60asa|mmkbptmx|liygxtcq/i.test(mfr)) {
+      return Object.assign({}, base, {
+        snappyTx: true,
+        snappyRelayFlow: true,
+        debounceMs: 80,
+        crossPathDedupMs: 120,
+        appCommandWindow: 350,
+        mainsPowered: true,
+        productId: 'TS0004',
+        gangCount: 4,
+        protocol: base.protocol || 'zcl_onoff',
+        source: 'P2704_bastien_ltt60asa_snappy',
+      });
+    }
+    return base;
+  }
+
+  /**
    * v9.7.4: _setGangOnOff for flow card compatibility in ZCL-only mode.
    * When isZclOnlyDevice is true, super.onNodeInit() is bypassed, so the
    * capability listeners from UnifiedSwitchBase._registerCapabilityListeners()
