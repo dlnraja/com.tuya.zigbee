@@ -1965,5 +1965,9 @@
   "5.12.309": {
     "en": "Ceiling radar: restore lux + distance when find_switch goes cold. Update Test, remove radar, re-add.",
     "fr": "Radar plafond: lux + distance restaures si find_switch tombe a froid. Maj Test, retirer, re-ajouter."
+  },
+  "5.12.312": {
+    "en": "TS0043/TS0042: snappy presses + no phantom-gang ghost. Use Homey Flow Button pressed.",
+    "fr": "TS0043/TS0042: appuis rapides + sans ghost. Utiliser Flow Bouton appuye."
   }
 }
