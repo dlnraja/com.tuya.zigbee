@@ -124,12 +124,14 @@ Homey tip mail for `com.dlnraja.tuya.zigbee`:
 | Healthy older Test still listed | Users can keep soaking last good tip | Soft-expect / soft-alert exit 0 |
 | **2026-09-14** #3186 = **9.0.926 test** healthy; #3184/#3187 PF | Git may be ahead (P2490) | Soft-continue; users update Test ≥9.0.926 |
 | Human wants one retry after hours | `workflow_dispatch` + `force_publish=true` once | Never cancel in-flight publish |
+| **2026-09-23** Gmail flood #3340/#225/#77–80 PF; #3341/#3342/#227/#228/#79 recovered | Concurrent 3-app Athom uploads | **P2696** shared concurrency `athom-developer-api-publish` (master+stable+bastien); no bump-loop |
 
 Gates / helpers:
 
 - `npm run check:p2286` · `test/critical/p2286-soft-expect-publish.test.js`
 - `test/critical/processing-failure-republish-check.test.js`
 - `test/critical/p2458-tip-email-socket-hang.test.js`
+- `npm run check:p2696` · `test/critical/p2696-homey-build-fail-fleetwood.test.js`
 - `.github/scripts/processing-failure-republish-check.js` (refuses transient bump-loop)
 - `scripts/lib/soft-expect-decision.js` (`isTransientAthomFailure` / `softAlertDecision`)
 
