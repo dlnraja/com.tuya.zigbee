@@ -68,7 +68,8 @@ function collectCollisions() {
     if (!zigbee?.manufacturerName || !zigbee?.productId) continue;
     for (const mfr of zigbee.manufacturerName) {
       for (const pid of zigbee.productId) {
-        const key = `${String(mfr).toLowerCase()}|${String(pid)}`;
+        // WHY(P2677/P2692): heobian≡hobeian — OCR typo must not create NEW collision keys
+        const key = `${norm(mfr)}|${String(pid)}`;
         if (!map.has(key)) map.set(key, []);
         map.get(key).push(driverId);
       }
