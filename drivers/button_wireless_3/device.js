@@ -69,9 +69,11 @@ class Button3GangDevice extends ButtonDevice {
           pid: 'TS0043',
           clustersEp1: [0, 1, 6, 57344],
           noEf00: true,
-          ieeeHint: 'a4:c1:38:f6:3d:2d:c9:79',
+          // WHY(P2703): live mesh Node 7 = 5b:91:98… (Homey Appareil Zigbee); prior f6:3d OFF_MESH
+          ieeeHint: 'a4:c1:38:5b:91:98:dd:55',
+          ieeeHintPrior: 'a4:c1:38:f6:3d:2d:c9:79',
         };
-        this.log('[P2629] TS0043 sticky interview profile (0xFD/E000, battery EP1, no EF00)');
+        this.log('[P2629/P2703] TS0043 sticky interview profile (0xFD/E000, battery EP1, no EF00)');
       }
     } catch (_e) { /* soft */ }
 

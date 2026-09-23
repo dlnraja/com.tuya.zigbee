@@ -1,4 +1,8 @@
 {
+  "1.0.79": {
+    "en": "Bastien remotes: front-pin TS0041/42/43 fingerprints + IEEE map for Homey « Appareil Zigbee » mis-pair. Update Test; remove Appareil Zigbee nodes 3+7 then re-pair as Bouton 1/3.",
+    "fr": "Telecommandes Bastien: fingerprints TS0041/42/43 en tete + carte IEEE pour « Appareil Zigbee » mal appairé. Maj Test; supprimer noeuds Appareil Zigbee 3+7 puis re-appairer Bouton 1/3."
+  },
   "1.0.78": {
     "en": "TS0042 snappier button to relay; TS0041/TS0043 pairing fix (remove bleed). Update Bastien Test; remove Unknown Nodes then re-pair as Bouton 1 / Bouton 3.",
     "fr": "TS0042 plus rapide bouton vers relais; correctif appairage TS0041/TS0043. Maj Test Bastien; supprimer noeuds Inconnus puis re-appairer Bouton 1 / Bouton 3."
