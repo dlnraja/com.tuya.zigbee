@@ -45,10 +45,20 @@ describe('P2640 GH#551/#552/#550 treat', () => {
     );
     const head = compose.zigbee.manufacturerName.slice(0, 4).map((s) => String(s).toLowerCase());
     assert.ok(head.every((m) => m.includes('famkxci2')), 'famkxci2 case forms front-pinned');
-    assert.ok(compose.zigbee.productId.includes('TS0043'));
+    assert.ok(compose.zigbee.productId[0] === 'TS0043' || compose.zigbee.productId.includes('TS0043'));
     const ep1 = compose.zigbee.endpoints['1'].clusters;
     assert.deepEqual(ep1.slice().sort((a, b) => a - b), [0, 1, 6, 57344]);
     assert.ok(!ep1.includes(1280) && !ep1.includes(61184));
+  });
+
+  // WHY(P2697 / fleet treat): enrich reorder must not bury GH#551 couple after other mfrs
+  it('baked app.json still has famkxci2 on button_wireless_3', () => {
+    const app = JSON.parse(fs.readFileSync(path.join(ROOT, 'app.json'), 'utf8'));
+    const d = (app.drivers || []).find((x) => x.id === 'button_wireless_3');
+    assert.ok(d, 'button_wireless_3 in app.json');
+    const mfr = d.zigbee?.manufacturerName || [];
+    assert.ok(mfr.some((m) => /famkxci2/i.test(m)), 'famkxci2 present after compact bake');
+    assert.ok((d.zigbee?.productId || []).includes('TS0043'));
   });
 
   it('gkfbdvyx zero-clear gated on meaningful distance', () => {

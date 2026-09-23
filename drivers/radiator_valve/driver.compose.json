@@ -25,6 +25,9 @@
   },
   "zigbee": {
     "manufacturerName": [
+      "_TZE200_p3dbf6qs",
+      "_TZE200_P3DBF6QS",
+      "_tze200_p3dbf6qs",
       "_TYST11_AZQP6SSJ",
       "_TYST11_CAJ4JZ0I",
       "_TYST11_KGBXAXL2",
@@ -124,7 +127,6 @@
       "_TZE200_lnbfnyxd",
       "_TZE200_mudxchsu",
       "_TZE200_ne4pikwm",
-      "_TZE200_p3dbf6qs",
       "_TZE200_qtbrwrfv",
       "_TZE200_sur6q7ko",
       "_TZE204_0DXRPQXL",
@@ -264,8 +266,6 @@
       "_tze200_zaabefnt",
       "_tze200_zuhszj9s",
       "_tze200_zvldkuav",
-      "_TZE200_P3DBF6QS",
-      "_tze200_p3dbf6qs",
       "_TZE200_QTBRWRFV",
       "_tze200_qtbrwrfv",
       "_tze204_0dxrpqxl",
@@ -489,6 +489,7 @@
       "_tze204_ne4pikwm"
     ],
     "productId": [
+      "TS0601",
       "TV01-ZB",
       "TV02-ZB",
       "TRV601",
@@ -504,7 +505,6 @@
       "STZB402",
       "STZB403",
       "Zen-01",
-      "TS0601",
       "TRVZB",
       "BASICZBR3",
       "BSP-EZ2",
