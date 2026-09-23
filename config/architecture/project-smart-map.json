@@ -1,22 +1,24 @@
 {
   "_meta": {
     "id": "P2491-project-smart-map",
-    "updated": "2026-09-16",
+    "updated": "2026-09-23",
     "why": "Slim cartography for bots/GHA/agents — pointers not walls. Full docs stay on disk; AI gets this map unless AI_FULL_CONTEXT=1.",
     "classify": "BOTH"
   },
   "tip": {
-    "healthyTest": "9.0.1145",
-    "git": "9.0.1145+",
-    "bastien": "1.0.30+",
-    "stable": "5.12.288+",
-    "p139": "soft-continue on PF tip emails; no spam republish"
+    "healthyTest": "9.0.1195",
+    "git": "9.0.1195+",
+    "bastien": "1.0.66+",
+    "stable": "5.12.308+",
+    "p139": "soft-continue on PF tip emails; no spam republish",
+    "recentHuman": "docs/architecture/THREE_APP_RECENT_TIPS.md"
   },
   "dualApp": {
     "ssot": "config/architecture/dual-app-tracks.json",
     "doctrine": "docs/rules/DUAL_APP_VISION.md",
-    "master": { "appId": "com.dlnraja.tuya.zigbee", "branch": "master", "line": "9.0.x" },
-    "stable": { "appId": "com.dlnraja.tuya.zigbee.stable", "branch": "stable-v5", "line": "5.12.x" }
+    "master": { "appId": "com.dlnraja.tuya.zigbee", "branch": "master", "line": "9.0.x", "tip": "9.0.1195" },
+    "stable": { "appId": "com.dlnraja.tuya.zigbee.stable", "branch": "stable-v5", "line": "5.12.x", "tip": "5.12.308" },
+    "bastien": { "appId": "com.dlnraja.tuya.zigbee.bastien", "branch": "bastien-home", "line": "1.0.x", "tip": "1.0.66" }
   },
   "identity": {
     "canonical": "manufacturerName + productId (sacred couple)",
@@ -43,10 +45,12 @@
     "sleepyRemoteSsot": "config/architecture/sleepy-remote-pairing-ssot.json",
     "sleepyRemoteHuman": "docs/architecture/SLEEPY_REMOTE_PAIRING_SSOT.md",
     "batteryHuman": "docs/architecture/BATTERY_SSOT.md",
+    "batteryAdaptiveSsot": "config/architecture/battery-adaptive-precision-ssot.json",
+    "batteryAdaptiveGate": "npm run check:p2689",
     "learnmode": "lib/pairing/LearnmodeTemplates.js",
     "zigbee": "Homey-owned UI — learnmode only; no custom pair views",
     "wifi": "Homey discovery + list_devices/add_devices + TuyaLocal maxDiscover",
-    "sleepyNote": "SED remotes: skipBattCfg + wake-tap 2–3s (P2645)",
+    "sleepyNote": "SED remotes: skipBattCfg + wake-tap 2–3s (P2645); pile calm P2685; adaptive % P2689",
     "gate": "npm run check:p2498",
     "sleepyGate": "npm run check:p2645"
   },
@@ -97,15 +101,22 @@
     "related": ["check:p2525", "check:wifi-local"]
   },
   "recentPatches": [
+    "P2689 adaptive battery precision SOC/chemistry (BOTH — tip 9.0.1195 / 1.0.66 / 5.12.308)",
+    "P2687 interaction Flow cards partout (MASTER_ONLY — tip 9.0.1194 / Bastien 1.0.65)",
+    "P2683–P2686 Bastien TS004x UX + pile calm + hold-release + TRV sacred-keep (BOTH)",
     "P2660 local-first doctrine SSOT (BOTH — Zigbee mesh + WiFi LAN before cloud)",
     "P2659 Bastien 4c0d232b subcap string + no scene invent",
     "P2645 sleepy remote pairing SSOT + skipBattCfg + quiet 0x000A (BOTH)",
     "P2644 Bastien flow ID + wall TS0041-only (BOTH)",
-    "P2643 complementary Homey apps catalog",
-    "P2547 external Homey apps + SDK3 inspiration SSOT (P216 collector)",
-    "P2546 VicHY radar periodic heal",
     "P2520 complementary variant enrich"
   ],
+  "interactionFlow": {
+    "ssot": "config/architecture/interaction-flow-cards-ssot.json",
+    "human": "docs/architecture/INTERACTION_FLOW_CARDS_SSOT.md",
+    "classify": "MASTER_ONLY",
+    "runtime": ["lib/flow/FeatureFlowCards.js", "lib/flow/InteractionHistory.js"],
+    "gate": "npm run check:p2687"
+  },
   "externalInspiration": {
     "ssot": "config/architecture/external-app-sdk3-inspiration-ssot.json",
     "human": "docs/architecture/EXTERNAL_APP_SDK3_INSPIRATION_SSOT.md",
@@ -159,7 +170,14 @@
     "runtime": "lib/utils/HomeyCapabilityUx.js",
     "gate": "npm run check:p2500",
     "forumSilent": [43287, 140352],
-    "note": "Never getable:false on measure_*/meter_*/alarm_*; generic capability_changed = all devices"
+    "note": "Never getable:false on measure_*/meter_*/alarm_*; generic capability_changed = all devices; P2687 list/history MASTER_ONLY"
+  },
+  "batteryAdaptive": {
+    "ssot": "config/architecture/battery-adaptive-precision-ssot.json",
+    "human": "docs/architecture/BATTERY_SSOT.md",
+    "runtime": "lib/battery/SmartBatteryAdaptivePrecision.js",
+    "classify": "BOTH",
+    "gate": "npm run check:p2689"
   },
   "ir": {
     "ssot": "config/architecture/intelligent-ir-ssot.json",
@@ -172,8 +190,11 @@
     "docs/GLOBAL_INVESTIGATION_PLAN.md",
     "docs/ARCHITECTURE_AI.md",
     "AGENTS.md",
+    "docs/architecture/THREE_APP_RECENT_TIPS.md",
     "docs/architecture/SACRED_COUPLE_SSOT.md",
-    "docs/architecture/IDENTITY_FIELDS_SSOT.md"
+    "docs/architecture/IDENTITY_FIELDS_SSOT.md",
+    "docs/architecture/BATTERY_SSOT.md",
+    "docs/architecture/INTERACTION_FLOW_CARDS_SSOT.md"
   ],
   "rulesAlways": [
     ".cursor/rules/operational-memory-2026-08-15.mdc",

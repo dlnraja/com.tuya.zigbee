@@ -30,6 +30,8 @@ Docs: [Capabilities](https://apps.developer.homey.app/the-basics/devices/capabil
 | Parallel field spam crashes | BootBudget + L14 `safeSetCapabilityValue` anti-flood |
 | Energy subtypes | Only when driver `class` / Energy schema supports — never invent |
 
+Human detail: [`INTERACTION_FLOW_CARDS_SSOT.md`](./INTERACTION_FLOW_CARDS_SSOT.md) · machine `config/architecture/interaction-flow-cards-ssot.json` · tips [`THREE_APP_RECENT_TIPS.md`](./THREE_APP_RECENT_TIPS.md).
+
 ## Button vs sensor (same device)
 
 - Scene remotes: `button.N` → `getable: false` + charter titles (P2492) — OK.

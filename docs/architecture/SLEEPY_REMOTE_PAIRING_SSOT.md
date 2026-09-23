@@ -39,9 +39,11 @@ Fix is **two complementary layers** (not either/or):
 
 | Track | Tip |
 |-------|-----|
-| Universal `master` | ≥ **9.0.1145** |
-| Bastien `bastien-home` | ≥ **1.0.30** |
-| Stable `stable-v5` | ≥ **5.12.288** |
+| Universal `master` | ≥ **9.0.1195** (P2685 pile + P2689 adaptive) |
+| Bastien `bastien-home` | ≥ **1.0.66** |
+| Stable `stable-v5` | ≥ **5.12.308** |
+
+See also [`THREE_APP_RECENT_TIPS.md`](./THREE_APP_RECENT_TIPS.md) · [`BATTERY_SSOT.md`](./BATTERY_SSOT.md) P2689.
 
 ## Contre quoi
 
