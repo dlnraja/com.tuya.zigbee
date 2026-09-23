@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-22T06:47:23.269Z",
+  "generatedAt": "2026-09-23T06:41:29.113Z",
   "mode": "APPLY",
   "compose": [],
   "sacredKeep": [],
@@ -7,12 +7,12 @@
     {
       "name": "case-variants",
       "ok": true,
-      "tail": "═══════════════════════════════════════════════\n  Ensure Homey case variants (P99)\n  root: /home/runner/work/com.tuya.zigbee/com.tuya.zigbee\n  mode: APPLY\n═══════════════════════════════════════════════\nDrivers needing variants: 0\nVariants to add: 0\n═══════════════════════════════════════════════"
+      "tail": "═══════════════════════════════════════════════\n  Ensure Homey case variants (P99/P2677)\n  root: /home/runner/work/com.tuya.zigbee/com.tuya.zigbee\n  mode: APPLY\n═══════════════════════════════════════════════\nDrivers needing variants: 0\nMfr variants to add: 0\nPid variants to add: 0\n═══════════════════════════════════════════════"
     },
     {
       "name": "sync-appjson-zigbee",
       "ok": true,
-      "tail": "[sync-appjson-zigbee] synced: 378 | changed: 3 | no compose: 0"
+      "tail": "[sync-appjson-zigbee] synced: 378 | changed: 4 | no compose: 0"
     },
     {
       "name": "p2138-gate",

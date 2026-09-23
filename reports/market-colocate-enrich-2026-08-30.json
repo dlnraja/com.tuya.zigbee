@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-22T06:46:45.906Z",
+  "generatedAt": "2026-09-23T06:38:19.485Z",
   "mode": "APPLY",
   "policy": "P2319 enrichment-first colocate — never strip other drivers",
   "applied": [],
@@ -36,6 +36,13 @@
       "reason": "not-confident",
       "tier": "heuristic_pid",
       "soft": "climate_sensor"
+    },
+    {
+      "mfr": "_TZ3000_7dcddnye",
+      "pid": "TS0501A",
+      "reason": "not-confident",
+      "tier": "pid_default",
+      "soft": "bulb_dimmable"
     },
     {
       "mfr": "_TZ3000_85czd6fy",
