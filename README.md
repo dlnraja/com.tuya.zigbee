@@ -33,19 +33,19 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 
 | Metric | Value |
 |--------|-------|
-| **App Version** | v9.0.1185 |
+| **App Version** | v9.0.1203 |
 | **Drivers** | 434 (381 Zigbee + 53 WiFi) |
 | **Unique Fingerprints** | 4,696 |
 | **Pairing Variants** | 18,807 (4 case combos per fingerprint) |
-| **Unique Product IDs** | 932 |
-| **Flow Cards** | 5,989 |
+| **Unique Product IDs** | 929 |
+| **Flow Cards** | 5,995 |
 | **Unique Capabilities** | 170 |
 | **Native OTA Drivers** | 8 |
-| **Test Suites** | 471 files |
+| **Test Suites** | 481 files |
 | **SVG Icons** | 734 |
 | **Languages** | EN, FR, NL, DE |
 | **SDK / Homey** | 3 / >= 12.2.0 |
-| **Last Updated** | 2026-09-22 |
+| **Last Updated** | 2026-09-23 |
 
 ### Top 20 Drivers by Fingerprint Count
 
@@ -59,7 +59,7 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 | 6 | `generic_tuya` | 581 |
 | 7 | `button_wireless_2` | 570 |
 | 8 | `wall_dimmer_tuya` | 548 |
-| 9 | `device_radiator_valve` | 364 |
+| 9 | `device_radiator_valve` | 368 |
 | 10 | `switch_2gang` | 337 |
 | 11 | `diy_custom_zigbee` | 306 |
 | 12 | `switch_4gang` | 300 |
@@ -103,18 +103,18 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 
 | Version | Changes |
 |---------|---------|
-| **v9.0.1185** | TS0043 vsxvaj9i + TS0042 sticky: Flow Button pressed (not Zigbee channels), snappier 2-btn. Update + re-pair remotes. |
-| **v9.0.1184** | Mesh calm: onOff report floor 1s + skip sleepy group-join (diag burst). Update Test. |
-| **v9.0.1183** | Fix random Homey Flows from switch bootstrap reports + TS0042 sticky button profile. Update Test. |
-| **v9.0.1182** | Dynamic fingerprint shards + Buffer JSON.parse (OOM harden). |
-| **v9.0.1181** | P2677b: HOBEIAN caseless on all tracks + collision baseline (heobian=hobeian). |
-| **v9.0.1180** | HOBEIAN case-insensitive everywhere (Athom forms + OCR heobian) + Z2M pids 3CH/MOTO/210Z/climate siblings (P2677). |
-| **v9.0.1178** | P2519: strip false climate host of 8eazvzo6 from app.json (publish gate). Keep P2674/P2676 boot harden. |
-| **v9.0.1177** | Boot harden: JsonParse OOM under device storm (P2674) + soft-require zigbeedriver (P2676). Update Test. |
-| **v9.0.1176** | Publish tip: drop dual alarm_battery; intelligent energy + HOBEIAN locks. |
-| **v9.0.1174** | Publish tip: intelligent energy + HOBEIAN ZG-302Z1 switch-only (no curtain bleed). |
-| **v9.0.1173** | Publish tip: intelligent energy + sacred 7dcddnye dimmer lock (P2672/P2517). |
-| **v9.0.1172** | Intelligent dynamic energy adapts per device (P2672). |
+| **v9.0.1203** | Improved fingerprint matching for wireless buttons and radiator valves. |
+| **v9.0.1202** | Improved energy parsing and CI publish reliability. |
+| **v9.0.1201** | Improved publish reliability and CI integrity checks. |
+| **v9.0.1200** | P2695: Bastien mesh couple research sync (Z2M/ZHA/profiles) + IEEE map. Update Test. |
+| **v9.0.1199** | TS0043/TS0042 remotes: snappy presses + no phantom-gang ghost. Use Flow Button pressed — not Developer Zigbee channels. |
+| **v9.0.1198** | Publish heal: HOBEIAN OCR collisions + ZG-301Z sacred couple + energy safety (P2692). Update Test. |
+| **v9.0.1197** | Battery remotes: stop powerCfg TX storms that empty CR2032 (P2691). Update Test. |
+| **v9.0.1196** | Ceiling radar (ZY-M100): restore lux + distance when find_switch goes cold while presence still works. Update Test, remove radar, re-add. |
+| **v9.0.1195** | Smarter battery % for coin cells and rechargeables — precise when low, without draining CR2032 or flooding the mesh. Update Test. |
+| **v9.0.1194** | Flow cards: list device actions and recent interactions on any app device. Update Test. |
+| **v9.0.1193** | Improved scene remote press latency and radiator valve pairing. |
+| **v9.0.1192** | Sleepy remotes (TS0041): lower battery TX — no powerCfg storm on wake, magic cooldown. Update Test. |
 
 <!-- CHANGELOG_END -->
 
