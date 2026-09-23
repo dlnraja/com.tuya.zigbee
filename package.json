@@ -1,6 +1,6 @@
 {
   "name": "com.dlnraja.tuya.zigbee.bastien",
-  "version": "1.0.77",
+  "version": "1.0.78",
   "description": "Private Zigbee house app for Bastien — local Homey Pro only. Learnings promote upstream to Universal Tuya / Stable (never the reverse wholesale).",
   "main": "app.js",
   "scripts": {
@@ -537,7 +537,8 @@
     "check:p2693": "node --test test/critical/p2693-bastien-ts004x-snappy-ghost.test.js",
     "check:p2695": "node --test test/critical/p2695-bastien-mesh-couple-research.test.js",
     "check:p2696": "node --test test/critical/p2696-homey-build-fail-fleetwood.test.js",
-    "check:p2699": "node --test test/critical/p2699-non-native-complementary-never-mandatory.test.js"
+    "check:p2699": "node --test test/critical/p2699-non-native-complementary-never-mandatory.test.js",
+    "check:p2702": "node --test test/critical/p2702-bastien-ts004x-unknown-snappy.test.js"
   },
   "keywords": [
     "homey",
