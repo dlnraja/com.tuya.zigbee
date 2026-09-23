@@ -20,6 +20,14 @@ const { spawnSync } = require('child_process');
 const ROOT = process.cwd();
 const TARGET_DIRS = ['lib', 'drivers', 'scripts'];
 const IGNORE_DIRS = ['node_modules', '.git', '.homeybuild', 'quarantine', 'tmp', 'temp'];
+// WHY(P2696): soft NaN/identity heuristics on scripts/ flood CI with 2k+ warnings and hide fatals.
+const SOFT_SANITY_ROOTS = ['lib/', 'drivers/'];
+const MAX_WARN_PRINT = Math.max(10, Number(process.env.PRE_COMMIT_WARN_PRINT || 40));
+
+function isSoftSanityPath(filePath) {
+  const rel = path.relative(ROOT, filePath).replace(/\\/g, '/');
+  return SOFT_SANITY_ROOTS.some((p) => rel.startsWith(p));
+}
 
 const colors = {
   reset: '\x1b[0m',
@@ -108,76 +116,78 @@ function validateJSFile(filePath) {
     }
 
     // 1d-ii. Loop for line-by-line checks (NaN Safety & Case Comparison)
-    for (let i = 0; i < lines.length; i++) {
-      const line = lines[i];
-      const trimmed = line.trim();
-      if (!trimmed || trimmed.startsWith('//') || trimmed.startsWith('*') || trimmed.startsWith('/*')) continue;
+    // Soft heuristics only on Homey runtime paths (lib/drivers) — scripts keep syntax-only.
+    if (isSoftSanityPath(filePath)) {
+      for (let i = 0; i < lines.length; i++) {
+        const line = lines[i];
+        const trimmed = line.trim();
+        if (!trimmed || trimmed.startsWith('//') || trimmed.startsWith('*') || trimmed.startsWith('/*')) continue;
 
-      const codeOnly = line
-        .replace(/\/\/.*$/, '')
-        .replace(/(['"`])((?:\\.|(?!\1).)*?)\1/g, '$1$1');
+        const codeOnly = line
+          .replace(/\/\/.*$/, '')
+          .replace(/(['"`])((?:\\.|(?!\1).)*?)\1/g, '$1$1');
 
-      // Manual identity comparisons instead of CaseInsensitiveMatcher
-      const isIdentityCompare = (codeOnly.includes('manufacturerName') || codeOnly.includes('modelId') || codeOnly.includes('productId')) && 
-                                (codeOnly.includes('===') || codeOnly.includes('==') || codeOnly.includes('toLowerCase()') || codeOnly.includes('toUpperCase()') || codeOnly.includes('.includes('));
-      
-      if (isIdentityCompare) {
-        const isException = filePath.includes('CaseInsensitiveMatcher') || 
-                            filePath.includes('ManufacturerNameHelper') || 
-                            filePath.includes('PRE_COMMIT_CHECKS') || 
-                            filePath.includes('zero-defect-architect-audit') || 
-                            filePath.includes('TuyaDPDeviceHelper') || 
-                            filePath.includes('TuyaDeviceHelper') || 
-                            codeOnly.includes('CI.');
-        if (!isException) {
-          report.warnings.push({
-            file: filePath,
-            type: 'MANUAL_IDENTITY_COMPARE',
-            message: `Line ${i + 1}: Manual identity comparison for manufacturerName/modelId/productId found. Use central "CI" CaseInsensitiveMatcher helper.`,
-          });
+        // Manual identity comparisons instead of CaseInsensitiveMatcher
+        const isIdentityCompare = (codeOnly.includes('manufacturerName') || codeOnly.includes('modelId') || codeOnly.includes('productId')) &&
+                                  (codeOnly.includes('===') || codeOnly.includes('==') || codeOnly.includes('toLowerCase()') || codeOnly.includes('toUpperCase()') || codeOnly.includes('.includes('));
+
+        if (isIdentityCompare) {
+          const isException = filePath.includes('CaseInsensitiveMatcher') ||
+                              filePath.includes('ManufacturerNameHelper') ||
+                              filePath.includes('PRE_COMMIT_CHECKS') ||
+                              filePath.includes('zero-defect-architect-audit') ||
+                              filePath.includes('TuyaDPDeviceHelper') ||
+                              filePath.includes('TuyaDeviceHelper') ||
+                              codeOnly.includes('CI.');
+          if (!isException) {
+            report.warnings.push({
+              file: filePath,
+              type: 'MANUAL_IDENTITY_COMPARE',
+              message: `Line ${i + 1}: Manual identity comparison for manufacturerName/modelId/productId found. Use central "CI" CaseInsensitiveMatcher helper.`,
+            });
+          }
         }
-      }
 
-      // v8.3.0: Forbidden raw brand checks to enforce 100% case-insensitivity
-      const forbiddenBrands = ['HOBEIAN', 'SONOFF', 'BSEED', 'LUMI', 'EWELINK', 'MOES', 'AQARA', 'HEIMAN', 'IKEA', 'PHILIPS'];
-      for (const brand of forbiddenBrands) {
-        if (codeOnly.includes('toUpperCase()') && codeOnly.includes(brand)) {
-          report.errors.push({
-            file: filePath,
-            type: `RAW_${brand}_CHECK_FORBIDDEN`,
-            message: `Line ${i + 1}: Legacy raw check 'toUpperCase() === "${brand}"' detected. Use CaseInsensitiveMatcher 'containsCI' or 'equalsCI' instead.`,
-          });
+        // v8.3.0: Forbidden raw brand checks to enforce 100% case-insensitivity
+        const forbiddenBrands = ['HOBEIAN', 'SONOFF', 'BSEED', 'LUMI', 'EWELINK', 'MOES', 'AQARA', 'HEIMAN', 'IKEA', 'PHILIPS'];
+        for (const brand of forbiddenBrands) {
+          if (codeOnly.includes('toUpperCase()') && codeOnly.includes(brand)) {
+            report.errors.push({
+              file: filePath,
+              type: `RAW_${brand}_CHECK_FORBIDDEN`,
+              message: `Line ${i + 1}: Legacy raw check 'toUpperCase() === "${brand}"' detected. Use CaseInsensitiveMatcher 'containsCI' or 'equalsCI' instead.`,
+            });
+          }
+          if (codeOnly.includes('toLowerCase()') && codeOnly.includes(brand.toLowerCase())) {
+            report.errors.push({
+              file: filePath,
+              type: `RAW_${brand}_CHECK_FORBIDDEN`,
+              message: `Line ${i + 1}: Legacy raw check 'toLowerCase() === "${brand.toLowerCase()}"' detected. Use CaseInsensitiveMatcher 'containsCI' or 'equalsCI' instead.`,
+            });
+          }
         }
-        if (codeOnly.includes('toLowerCase()') && codeOnly.includes(brand.toLowerCase())) {
-          report.errors.push({
-            file: filePath,
-            type: `RAW_${brand}_CHECK_FORBIDDEN`,
-            message: `Line ${i + 1}: Legacy raw check 'toLowerCase() === "${brand.toLowerCase()}"' detected. Use CaseInsensitiveMatcher 'containsCI' or 'equalsCI' instead.`,
-          });
-        }
-      }
 
-      // Potential unchecked division (NaN risk)
-      if (codeOnly.includes('/') && !filePath.includes('tuyaUtils') && !filePath.includes('PRE_COMMIT_CHECKS') && !filePath.includes('zero-defect-architect-audit')) {
-        if (!codeOnly.includes('safeParse') && 
-            !codeOnly.includes('safeDivide') && 
-            !codeOnly.includes('safeMultiply') && 
-            !codeOnly.includes('Number.isNaN') &&
-            !codeOnly.includes('Number.isFinite')) {
-          
-          const isImportExport = trimmed.match(/^\s*(import|export)\s+\*/);
-          const isDocBlock = trimmed.includes('*/');
-          const isTemplateLiteral = trimmed.includes('${') && trimmed.includes('}');
-          const isSafeConstant = codeOnly.match(/(\*\s*(1000|60|100|3600|24))|(\/\s*(1000|100|10|2))/);
-          const isMathRandom = codeOnly.includes('Math.random()');
+        // Potential unchecked division (NaN risk)
+        if (codeOnly.includes('/') && !filePath.includes('tuyaUtils') && !filePath.includes('PRE_COMMIT_CHECKS') && !filePath.includes('zero-defect-architect-audit')) {
+          if (!codeOnly.includes('safeParse') &&
+              !codeOnly.includes('safeDivide') &&
+              !codeOnly.includes('safeMultiply') &&
+              !codeOnly.includes('Number.isNaN') &&
+              !codeOnly.includes('Number.isFinite')) {
 
-          if (!isImportExport && !isDocBlock && !isSafeConstant && !isMathRandom) {
-            if (codeOnly.match(/[a-zA-Z0-9_$\].)]\s*[\/](?!\s*[\/*])\s*[a-zA-Z0-9_$0-9.]+/)) {
-              report.warnings.push({
-                file: filePath,
-                type: 'NAN_SAFETY_RISK',
-                message: `Line ${i + 1}: Potential unchecked division (NaN risk). Consider wrapping in 'safeDivide' from 'tuyaUtils.js'.`,
-              });
+            const isImportExport = trimmed.match(/^\s*(import|export)\s+\*/);
+            const isDocBlock = trimmed.includes('*/');
+            const isSafeConstant = codeOnly.match(/(\*\s*(1000|60|100|3600|24))|(\/\s*(1000|100|10|2))/);
+            const isMathRandom = codeOnly.includes('Math.random()');
+
+            if (!isImportExport && !isDocBlock && !isSafeConstant && !isMathRandom) {
+              if (codeOnly.match(/[a-zA-Z0-9_$\].)]\s*[\/](?!\s*[\/*])\s*[a-zA-Z0-9_$0-9.]+/)) {
+                report.warnings.push({
+                  file: filePath,
+                  type: 'NAN_SAFETY_RISK',
+                  message: `Line ${i + 1}: Potential unchecked division (NaN risk). Consider wrapping in 'safeDivide' from 'tuyaUtils.js'.`,
+                });
+              }
             }
           }
         }
@@ -513,11 +523,20 @@ if (report.errors.length === 0 && report.warnings.length === 0) {
 }
 
 if (report.warnings.length > 0) {
+  const byType = {};
+  for (const w of report.warnings) {
+    byType[w.type] = (byType[w.type] || 0) + 1;
+  }
   console.log(`\n  ${colors.yellow}${colors.bold}⚠️  WARNINGS LOGGED (${report.warnings.length}):${colors.reset}`);
-  report.warnings.forEach(w => {
+  console.log(`     ${colors.yellow}by type:${colors.reset} ${Object.entries(byType).map(([k, v]) => `${k}=${v}`).join(', ')}`);
+  const sample = report.warnings.slice(0, MAX_WARN_PRINT);
+  sample.forEach(w => {
     console.log(`     [${colors.yellow}${w.type}${colors.reset}] in ${colors.cyan}${path.relative(ROOT, w.file)}${colors.reset}`);
     console.log(`     └─ ${w.message}\n`);
   });
+  if (report.warnings.length > MAX_WARN_PRINT) {
+    console.log(`     ${colors.yellow}… +${report.warnings.length - MAX_WARN_PRINT} more suppressed (set PRE_COMMIT_WARN_PRINT to raise).${colors.reset}\n`);
+  }
 }
 
 if (report.errors.length > 0) {

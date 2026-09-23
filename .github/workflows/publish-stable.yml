@@ -6,7 +6,8 @@ name: "🚀 Publish Stable to Test"
 
 
 concurrency:
-  group: publish-stable-v5
+  # P139/P2696: shared Athom API mutex with master + Bastien (socket hang anti-flood).
+  group: athom-developer-api-publish
   # P139 / P193: never kill mid Athom draft/promote (orphan builds + socket hang up).
   cancel-in-progress: false
 

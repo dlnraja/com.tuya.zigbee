@@ -28,7 +28,8 @@ permissions:
   actions: read
 
 concurrency:
-  group: publish-bastien-home
+  # P139/P2696: shared Athom API mutex with master + stable (Gmail socket hang flood).
+  group: athom-developer-api-publish
   cancel-in-progress: false
 
 defaults:
@@ -95,6 +96,28 @@ jobs:
           npm run check:p2608 || true
           npm run check:p2609 || true
 
+      - name: Sync app.json zigbee from compose (P2626/P2627)
+        run: |
+          set -euo pipefail
+          node scripts/maintenance/sync-appjson-zigbee.js
+          node -e "
+            const fs=require('fs');
+            const app=JSON.parse(fs.readFileSync('app.json','utf8'));
+            for (const id of ['button_wireless_1','button_wireless_3','climate_sensor','remote_button_wireless_wall']) {
+              const d=app.drivers.find(x=>x.id===id);
+              if (!d) continue;
+              const c=JSON.parse(fs.readFileSync('drivers/'+id+'/driver.compose.json','utf8'));
+              if (c.capabilities) d.capabilities=c.capabilities;
+              if (c.capabilitiesOptions) d.capabilitiesOptions=c.capabilitiesOptions;
+              if (c.class) d.class=c.class;
+              if (c.energy) d.energy=c.energy;
+            }
+            fs.writeFileSync('app.json', JSON.stringify(app));
+            console.log('caps synced');
+          "
+          npm run check:p2626
+          npm run check:p2625 || true
+          npm run check:p2627 || true
       - name: Homey app build
         run: |
           set -euo pipefail
