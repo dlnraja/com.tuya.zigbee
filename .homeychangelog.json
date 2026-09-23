@@ -3901,5 +3901,8 @@
   "1.0.71": {
     "en": "P2695: deep mesh couple research (Z2M/ZHA/Blakadder/diags) — all Bastien mfr+pid locked + profiles. Update Test.",
     "fr": "P2695: recherche profonde couples mesh (Z2M/ZHA/Blakadder/diags) — tous mfr+pid Bastien + profils. Maj Test."
+  },
+  "1.0.72": {
+    "en": "Improved publish reliability and CI integrity checks."
   }
 }
