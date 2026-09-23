@@ -3889,5 +3889,9 @@
   "1.0.66": {
     "en": "Smarter battery % (coin cells / rechargeables) without draining piles or flooding the mesh. Update Bastien Test.",
     "fr": "Batterie plus precise (piles/accus) sans vider les piles ni saturer le mesh. Maj Bastien Test."
+  },
+  "1.0.69": {
+    "en": "TS0043/TS0042: faster presses + fix ghost other lamp (use Homey Flow, not Zigbee channels). Update Test.",
+    "fr": "TS0043/TS0042: appuis plus rapides + plus de ghost autre lampe (utiliser Flow Homey, pas les canaux Zigbee). Maj Test."
   }
 }

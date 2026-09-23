@@ -34,13 +34,15 @@ class Button3GangDevice extends ButtonDevice {
       productId: base.productId || 'TS0043',
       buttonCount: 3,
       maxButtons: 3,
-      debounceMs: Math.min(Number(base.debounceMs) || 400, 400),
-      crossPathDedupMs: Math.min(Number(base.crossPathDedupMs) || 650, 650),
+      debounceMs: Math.min(Number(base.debounceMs) || 200, 200),
+      crossPathDedupMs: Math.min(Number(base.crossPathDedupMs) || 350, 350),
       collapsePhantomEndpoints: true,
       sceneSwitch: true,
       zcl200IsPercent: true,
       skipBatteryReporting: true,
-      source: base.source || 'P2683_button_wireless_3',
+      skipSoftwareHoldRelease: true,
+      disableLevelControlComplement: true,
+      source: base.source || 'P2693_button_wireless_3',
     });
   }
 
@@ -92,13 +94,14 @@ class Button3GangDevice extends ButtonDevice {
       await installTs004xDedicatedComplement(this, zclNode, {
         maxButtons: 3,
         tag: 'BUTTON_WIRELESS_3',
-        enableLevelControl: true,
+        // WHY(P2693): LevelControl stop→release invent = ghost "other" lamp
+        enableLevelControl: false,
       });
     } catch (e) {
       this.log('[BUTTON_WIRELESS_3] dedicated complement soft-fail:', e.message);
     }
 
-    this.log('[BUTTON_WIRELESS_3] hybrid UNION dedicated (TS0043 class / P2629)');
+    this.log('[BUTTON_WIRELESS_3] hybrid UNION dedicated (TS0043 class / P2693)');
   }
 
 }
