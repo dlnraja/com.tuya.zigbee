@@ -13,6 +13,7 @@
   "class": "button",
   "capabilities": [
     "button.1",
+    "alarm_battery",
     "measure_battery"
   ],
   "capabilitiesOptions": {
@@ -40,6 +41,13 @@
       "units": "%",
       "getable": true,
       "preventInsights": false
+    },
+    "alarm_battery": {
+      "title": {
+        "en": "Battery Low",
+        "fr": "Batterie faible"
+      },
+      "ranked": false
     }
   },
   "energy": {
@@ -170,7 +178,23 @@
       "_TZ3000_X7MEJ5OC",
       "_tz3000_X7MEJ5OC",
       "heobian",
-      "Heobian"
+      "Heobian",
+      "_TZ3000_fkp5zyho",
+      "_tz3000_fkp5zyho",
+      "_TZ3000_peszejy7",
+      "_tz3000_peszejy7",
+      "_TZ3000_pzui3skt",
+      "_tz3000_pzui3skt",
+      "_TZ3000_f97vq5mn",
+      "_tz3000_f97vq5mn",
+      "_TZ3000_fa9mlvja",
+      "_tz3000_fa9mlvja",
+      "_TZ3000_8rppvwda",
+      "_tz3000_8rppvwda",
+      "_TZ3000_qgwcxxws",
+      "_tz3000_qgwcxxws",
+      "_TYZB02_keyjqthh",
+      "_tyzb02_keyjqthh"
     ],
     "productId": [
       "3450-L",
