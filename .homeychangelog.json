@@ -3988,5 +3988,8 @@
   },
   "9.0.1205": {
     "en": "P2698: strip radar FP bleed from curtain_motor so publish CI clears"
+  },
+  "9.0.1206": {
+    "en": "P2699: non-native DP/clusters use complementary RX/TX/raw paths (never mandatory)"
   }
 }
