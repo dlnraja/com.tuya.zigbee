@@ -13,6 +13,7 @@ const ROOT = path.join(__dirname, '..', '..');
 const {
   lookupBastienIeee,
   listUnknownNodeActions,
+  isNeedInterviewIeee,
 } = require('../../lib/zigbee/BastienIeeeIdentity');
 
 function compose(id) {
@@ -63,5 +64,22 @@ describe('P2667 Bastien Unknown recognize + HOBEIAN light class', () => {
   it('npm check:p2667 wired', () => {
     const pkg = JSON.parse(fs.readFileSync(path.join(ROOT, 'package.json'), 'utf8'));
     assert.ok(pkg.scripts['check:p2667']);
+  });
+
+  // WHY(P2694 / Bastien DevTools 2026-09-23): live TS0042 IEEE moved; 3-btn off-mesh; Node18 no invent
+  it('P2694 live mesh IEEE: TS0042 e6:69 OK + vsxvaj9i OFF_MESH + Node18 NEED_INTERVIEW', () => {
+    const liveTs0042 = lookupBastienIeee('a4:c1:38:e6:69:60:4a:6f');
+    assert.equal(liveTs0042.mfr, '_TZ3000_dzwgk7e2');
+    assert.equal(liveTs0042.pid, 'TS0042');
+    assert.equal(liveTs0042.status, 'OK_LIVE');
+    const stale = lookupBastienIeee('a4:c1:38:bb:8f:37:ee:17');
+    assert.equal(stale.status, 'STALE_GHOST');
+    const th = lookupBastienIeee('a4:c1:38:c1:17:76:42:f4');
+    assert.equal(th.driver, 'climate_sensor');
+    assert.equal(th.status, 'UNKNOWN_LIVE');
+    const ts0043 = lookupBastienIeee('a4:c1:38:f6:3d:2d:c9:79');
+    assert.equal(ts0043.status, 'OFF_MESH');
+    assert.equal(lookupBastienIeee('a4:c1:38:e6:74:3a:00:da'), null);
+    assert.equal(isNeedInterviewIeee('a4:c1:38:e6:74:3a:00:da'), true);
   });
 });
