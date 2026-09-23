@@ -37,13 +37,13 @@ describe('P2681 bootstrap ghost flows + dzwgk7e2 profile', () => {
     assert.ok(/lastState:\s*seedState/.test(src));
   });
 
-  it('dzwgk7e2 DEVICE_PROFILES is hybrid debounce 400 (P2683 snappy)', () => {
+  it('dzwgk7e2 DEVICE_PROFILES is hybrid debounce 80 (P2702 snappy)', () => {
     const src = fs.readFileSync(path.join(ROOT, 'lib/mixins/PhysicalButtonMixin.js'), 'utf8');
     const idx = src.indexOf("'_TZ3000_dzwgk7e2'");
     assert.ok(idx >= 0, 'dzwgk7e2 profile must exist');
-    const block = src.slice(idx, idx + 450);
+    const block = src.slice(idx, idx + 550);
     assert.ok(/protocol:\s*'hybrid'/.test(block));
-    assert.ok(/debounceMs:\s*400/.test(block));
+    assert.ok(/debounceMs:\s*80/.test(block));
     assert.ok(/skip8004:\s*true/.test(block));
     assert.ok(/productId:\s*'TS0042'/.test(block));
     assert.ok(/collapsePhantomEndpoints:\s*true/.test(block));
@@ -62,7 +62,7 @@ describe('P2681 bootstrap ghost flows + dzwgk7e2 profile', () => {
   it('button_wireless_2 forces TS0042 sticky profile', () => {
     const src = fs.readFileSync(path.join(ROOT, 'drivers/button_wireless_2/device.js'), 'utf8');
     assert.ok(/getDeviceProfile\(/.test(src));
-    assert.ok(/debounceMs:\s*400/.test(src));
+    assert.ok(/debounceMs:\s*80/.test(src));
     assert.ok(/_isDzwgk7e2Phantom4Ep/.test(src));
     const c = JSON.parse(
       fs.readFileSync(path.join(ROOT, 'drivers/button_wireless_2/driver.compose.json'), 'utf8')
@@ -71,8 +71,9 @@ describe('P2681 bootstrap ghost flows + dzwgk7e2 profile', () => {
     assert.ok((c.zigbee.productId || []).includes('TS0042'));
   });
 
-  it('TS0042/43/44 remote fallback debounce is snappy (~400)', () => {
+  it('TS004x remote fallback debounce is snappy (≤80)', () => {
     const src = fs.readFileSync(path.join(ROOT, 'lib/mixins/PhysicalButtonMixin.js'), 'utf8');
-    assert.ok(/TS004\[234\].*400|debounceMs = \/\^TS004\[234\]/.test(src.replace(/\s+/g, ' ')));
+    assert.ok(/debounceMs = \/\^TS004\[12346F\]\/i\.test\(productId\) \? 80/.test(src)
+      || /TS004\[12346F\].*\? 80/.test(src.replace(/\s+/g, ' ')));
   });
 });
