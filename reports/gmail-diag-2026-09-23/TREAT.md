@@ -3,9 +3,9 @@
 Silent only. Never forum POST (T157628). Dual-app noted per row.
 
 Generated: 2026-09-23 · Live tips after this treat:
-- **Universal** `9.0.1197` Homey Test (P2691 pile drain + prior)
-- **Stable** `5.12.310` Test (P2691 BOTH)
-- **Bastien** `1.0.67` Test (P2691 pile drain)
+- **Universal** `9.0.1198` Homey Test (P2691 pile + P2692 publish heal)
+- **Stable** `5.12.311` Test (P2691/P2692 BOTH)
+- **Bastien** `1.0.68` Test (P2691 pile + P2692 publish heal)
 
 ## Gmail diagnostics harvest (senetmarne)
 
@@ -43,19 +43,25 @@ Source: `reports/gmail-diag-2026-09-23/HARVEST.json` (Gmail MCP threads).
 
 | Patch | Track | Contre quoi |
 |-------|-------|-------------|
+| **P2692** | BOTH + Bastien | Auto-Publish unblock: heobian≡hobeian, strip invent brand-as-pid, ZG-301Z curtain strip |
 | **P2691** | BOTH + Bastien | Sleepy remotes powerCfg TX storm → CR2032 drain (diag 885a9901) |
 | **P2690** | BOTH | Ceiling radar lux+distance cold while DP1 alive → find_switch re-arm (poll/presence/watchdog) |
 | **P2687** | MASTER_ONLY | Interaction Flow cards partout (already on tip ≥9.0.1194) |
 | **P2689** | BOTH | Adaptive battery precision (already on tip ≥9.0.1195 / Bastien 1.0.66 / Stable 5.12.308→309) |
 | **P2521** | master | Baseline intentional dual-claim `p3dbf6qs` so Auto-Publish can ship |
 
-Gates: `npm run check:p2690` · `check:p2687` · `check:p2689` · `check:p2521`.
+Gates: `npm run check:p2692` · `check:p2691` · `check:p2690` · `check:p2687` · `check:p2689` · `check:p2521`.
+
+## Energy (fleet)
+
+- `energy.approximation` ∩ `measure_power`/`meter_power` = **0** (Homey Energy v3 safe)
+- Battery class: P2685/P2689/P2691 — no coin-cell powerCfg TX storm
 
 ## User action (no forum reply)
 
-1. Universal Test → **9.0.1197**.
-2. Stable Test → **5.12.310** if on Stable track.
-3. Bastien Test → **1.0.67** (pile drain fix — remotes stop powerCfg on every press).
+1. Universal Test → **9.0.1198**.
+2. Stable Test → **5.12.311** if on Stable track.
+3. Bastien Test → **1.0.68** (pile drain + publish heal).
 4. #550: remove radar, re-add after tip.
 5. #551 / remotes: remove Generic, add Wireless Button 3; never plain Homey Zigbee.
 6. TRV `p3dbf6qs`: remove Unknown → Radiator valve.
