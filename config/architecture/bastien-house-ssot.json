@@ -55,6 +55,12 @@
       "patch": "P2610",
       "appliedUnions": 12
     },
+    "lastL99Pass": {
+      "at": "2026-09-23T15:20:00+02:00",
+      "patch": "P2701",
+      "note": "Gmail #86 testing OK; P2673 IntelligentEnergyAdapter before SmartEnergy; P2699 soft complementary; dashboards need Chrome WebBridge daemon or Athom login",
+      "report": "reports/l99-bastien-2026-09-23/TREAT.md"
+    },
     "priorExternalPass": {
       "at": "2026-09-21T02:30:00.000Z",
       "patch": "P2645",
