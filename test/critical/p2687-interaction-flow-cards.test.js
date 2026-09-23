@@ -121,4 +121,16 @@ describe('P2687 interaction flow cards', () => {
     assert.ok(actions.includes('button.1'));
     assert.ok(!actions.includes('measure_temperature'));
   });
+
+  it('machine SSOT locks MASTER_ONLY + tip mins', () => {
+    const ssotPath = path.join(ROOT, 'config/architecture/interaction-flow-cards-ssot.json');
+    assert.ok(fs.existsSync(ssotPath));
+    const ssot = JSON.parse(fs.readFileSync(ssotPath, 'utf8'));
+    assert.strictEqual(ssot._meta.classify, 'MASTER_ONLY');
+    assert.strictEqual(ssot.dualApp.stable, false);
+    assert.ok(ssot.cards.actions.includes('list_device_actions'));
+    const human = fs.readFileSync(path.join(ROOT, 'docs/architecture/INTERACTION_FLOW_CARDS_SSOT.md'), 'utf8');
+    assert.match(human, /MASTER_ONLY/);
+    assert.match(human, /9\.0\.1194/);
+  });
 });

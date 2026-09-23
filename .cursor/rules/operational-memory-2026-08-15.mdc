@@ -3,23 +3,30 @@ description: Live operational memory — dual App IDs, forum #2190, P139 Stable,
 alwaysApply: true
 ---
 
-# Operational memory — dual apps (audit 2026-09-14)
+# Operational memory — dual apps (audit 2026-09-23)
 
 ## Dual Athom apps (independent Test slots)
 | Track | Branch | App ID | Tip (git) | Homey Test |
 |-------|--------|--------|-----------|------------|
-| Universal Tuya | `master` | `com.dlnraja.tuya.zigbee` | **9.0.927+** (P2490) | **#3186 = 9.0.926 test** (healthy) |
-| Tuya Unified (Stable) | `stable-v5` | `com.dlnraja.tuya.zigbee.stable` | **5.12.x** | P139 — **no republish loop** |
+| Universal Tuya | `master` | `com.dlnraja.tuya.zigbee` | **9.0.1195** (P2687+P2689) | Auto-Publish on push |
+| Zigbee Bastien | `bastien-home` | `com.dlnraja.tuya.zigbee.bastien` | **1.0.66** | House soak |
+| Tuya Unified (Stable) | `stable-v5` | `com.dlnraja.tuya.zigbee.stable` | **5.12.308** (P2689 BOTH) | P139 — **no republish loop** |
 
-SSOT: `config/architecture/dual-app-tracks.json` · publish: `config/architecture/publish-ssot.json` · forum failover: `config/architecture/forum-complementary-failover-ssot.json` · `docs/architecture/PUBLISH_SSOT.md` · gates: `npm run check:l99-dual` / `check:p2286`–`p2288` / `check:p248x`.
+SSOT: `config/architecture/dual-app-tracks.json` · tips map: `docs/architecture/THREE_APP_RECENT_TIPS.md` · publish: `config/architecture/publish-ssot.json` · forum failover: `config/architecture/forum-complementary-failover-ssot.json` · `docs/architecture/PUBLISH_SSOT.md` · gates: `npm run check:l99-dual` / `check:p2689` / `check:p2687` (master) / `check:p248x`.
 
-L99 classify: energy/divisors/BootBudget/brand-scrub / **P2481–P2490 reliability** = **BOTH**; Daylight Atmosphere / Path Light / **P2487 Intelligent IR UX** / CI intel = **MASTER_ONLY**. **P2448/P2449** knob + declared flow = **BOTH**.
+L99 classify: **P2689** battery adaptive + P2683–P2686 TS004x/pile/TRV = **BOTH**; **P2687** interaction Flow cards = **MASTER_ONLY** (Bastien sync OK). Daylight / **P2487 IR** / CI intel = **MASTER_ONLY**. **P2448/P2449** knob + declared flow = **BOTH**.
 
-Clone Stable: `Documents\homey\stable`. `stable-v5-p195` is **STALE**.
+Clone Stable: `Documents\homey\stable`. Bastien: `Documents\homey\bastien`. `stable-v5-p195` is **STALE**.
+
+## P2687–P2689 — Flow history + adaptive battery (2026-09-23)
+- **P2689 BOTH:** `SmartBatteryAdaptivePrecision` — SOC/chemistry minChange + throttle + no coin poll; piggyback only when stale. SSOT `config/architecture/battery-adaptive-precision-ssot.json` · human `docs/architecture/BATTERY_SSOT.md` · gate `npm run check:p2689`. Tips U≥**9.0.1195** / B≥**1.0.66** / S≥**5.12.308**.
+- **P2687 MASTER_ONLY:** list caps/actions + interaction rings + `device_interaction` / `device_interacted_recently`; historical no longer `capabilities=onoff`. SSOT `interaction-flow-cards-ssot.json` · `INTERACTION_FLOW_CARDS_SSOT.md` · gate `npm run check:p2687`. No Stable.
+- **P2685 BOTH:** skipBatteryReporting remotes — never announce powerCfg / magic storm (pile). Gate `check:p2685`.
+- **P2686 BOTH:** TS0042 hold-release ghost + TRV `p3dbf6qs` sacred-keep. Gate `check:p2686`.
 
 ## P2487–P2490 — Forum + Gmail complementary (2026-09-14)
 - **P2490 BOTH:** MIAMO `icka1clh` sacred-keep (Athom compact drop); Peter `a5304ce8` battery **rehydrate**; VicHY radar `staleCaps` curtains; tip PF **#3184/#3187** — soft-continue. Gate `npm run check:p2490` / `check:p248x`.
-- **P2488 BOTH:** `IntelligentDeviceAdapter` must not strip `measure_battery` on `button_*`. Tip ≥**9.0.923** (prefer ≥**9.0.926**).
+- **P2488 BOTH:** `IntelligentDeviceAdapter` must not strip `measure_battery` on `button_*`. Tip ≥**9.0.923** (prefer ≥**9.0.1195**).
 - **P2487 MASTER_ONLY:** Intelligent IR router + Homey Pronto TX UX. Doc `docs/architecture/INTELLIGENT_IR_SSOT.md`.
 - **P2484/P2481 BOTH:** EF00 OOM idempotent + `motionsensor` preempt — crash mails 9.0.891/895 = tip-lag.
 - Reports: `reports/forum-l99-2026-09-14-t140352/` · `reports/gmail-diag-2026-09-14/TREAT_LIVE.md`

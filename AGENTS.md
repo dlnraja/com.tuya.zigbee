@@ -10,11 +10,12 @@
 | **App ID** | `com.dlnraja.tuya.zigbee` |
 | **Author** | Dylan Rajasekaram (dlnraja) |
 | **License** | GPL-3.0 (was MIT-licensed JohanBendz fork) |
-| **Branches** | `master` (preview/dev) + `stable-v5` (production) |
-| **Current Version** | v9.0.927+ git / Homey Test tip **9.0.926** (#3186; P2490 complementary failover); stable LTS ~5.12.x as `com.dlnraja.tuya.zigbee.stable` |
+| **Branches** | `master` (preview/dev) + `stable-v5` (production) + `bastien-home` (private house) |
+| **Current Version** | Universal git tip **9.0.1195** (P2687/P2689) · Bastien **1.0.66** · Stable LTS **5.12.308** (`com.dlnraja.tuya.zigbee.stable`) |
 | **Drivers** | 430 on master, 431 on `stable-v5` |
 | **Fingerprints** | 5,471 (audit 2026-07-27; 4,218 entries in mfs_db) |
 | **SDK** | Homey SDK v3 (compatibility >= 12.2.0) |
+| **Recent tips map** | [`docs/architecture/THREE_APP_RECENT_TIPS.md`](docs/architecture/THREE_APP_RECENT_TIPS.md) |
 
 ## The Sacred Couple Doctrine
 
@@ -32,8 +33,9 @@ A **(mfr, pid)** pair = the canonical identity of a Zigbee device.
 
 | Track | Branch | Athom App ID | Version | Purpose |
 |-------|--------|--------------|---------|---------|
-| **master** | `master` | `com.dlnraja.tuya.zigbee` | `9.0.x` | Dev/preview, features + soak |
-| **stable-v5** | `stable-v5` | `com.dlnraja.tuya.zigbee.stable` | `5.12.x` | Production LTS — reliability only |
+| **master** | `master` | `com.dlnraja.tuya.zigbee` | `9.0.x` (≥**9.0.1195**) | Dev/preview, features + soak |
+| **stable-v5** | `stable-v5` | `com.dlnraja.tuya.zigbee.stable` | `5.12.x` (≥**5.12.308**) | Production LTS — reliability only |
+| **bastien** | `bastien-home` | `com.dlnraja.tuya.zigbee.bastien` | `1.0.x` (≥**1.0.66**) | Private house soak → promote upstream |
 
 > Machine SSOT: [`config/architecture/dual-app-tracks.json`](config/architecture/dual-app-tracks.json) · gates: `npm run check:l99-dual`
 
