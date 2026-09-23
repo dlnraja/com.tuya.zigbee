@@ -1,6 +1,6 @@
 {
   "name": "com.dlnraja.tuya.zigbee.bastien",
-  "version": "1.0.64",
+  "version": "1.0.66",
   "description": "Private Zigbee house app for Bastien — local Homey Pro only. Learnings promote upstream to Universal Tuya / Stable (never the reverse wholesale).",
   "main": "app.js",
   "scripts": {
@@ -529,7 +529,9 @@
     "check:p2683": "node --test test/critical/p2683-bastien-vsxvaj9i-dzwgk7e2-ux.test.js",
     "check:p2684": "node --test test/critical/p2684-bastien-ts0041-flow-ux.test.js",
     "check:p2685": "node --test test/critical/p2685-sleepy-remote-battery-conso.test.js",
-    "check:p2686": "node --test test/critical/p2686-diag-l99-hold-release-trv.test.js"
+    "check:p2686": "node --test test/critical/p2686-diag-l99-hold-release-trv.test.js",
+    "check:p2687": "node --test test/critical/p2687-interaction-flow-cards.test.js",
+    "check:p2689": "node --test test/critical/p2689-smart-battery-adaptive-precision.test.js"
   },
   "keywords": [
     "homey",
