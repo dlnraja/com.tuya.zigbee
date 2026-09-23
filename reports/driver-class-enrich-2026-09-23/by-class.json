@@ -53,7 +53,7 @@
       "driverId": "button_wireless_1",
       "homeyClass": "button",
       "mfrCount": 121,
-      "pidCount": 66,
+      "pidCount": 64,
       "capCount": 2,
       "settingCount": 9,
       "flowTriggers": 11,
@@ -71,7 +71,7 @@
       "driverId": "button_wireless_2",
       "homeyClass": "button",
       "mfrCount": 570,
-      "pidCount": 101,
+      "pidCount": 100,
       "capCount": 3,
       "settingCount": 10,
       "flowTriggers": 18,
@@ -1600,16 +1600,16 @@
     {
       "driverId": "switch_1gang",
       "homeyClass": "socket",
-      "mfrCount": 1519,
-      "pidCount": 105,
+      "mfrCount": 1520,
+      "pidCount": 103,
       "capCount": 9,
       "settingCount": 21,
       "flowTriggers": 10,
       "gaps": [],
       "productIds": [
+        "ZG-301Z",
         "01MINIZB",
         "BASICZBR3",
-        "hobeian",
         "S26R2ZB",
         "S31ZB",
         "TS0001"
@@ -1653,18 +1653,18 @@
       "driverId": "switch_2gang",
       "homeyClass": "socket",
       "mfrCount": 337,
-      "pidCount": 43,
+      "pidCount": 41,
       "capCount": 12,
       "settingCount": 13,
       "flowTriggers": 12,
       "gaps": [],
       "productIds": [
         "ZG-305Z",
-        "hobeian",
         "TS0002",
         "TS0002_power",
         "TS0002_switch_module",
-        "TS0003"
+        "TS0003",
+        "TS000F"
       ]
     },
     {
@@ -1685,7 +1685,7 @@
       "driverId": "switch_3gang",
       "homeyClass": "socket",
       "mfrCount": 221,
-      "pidCount": 132,
+      "pidCount": 129,
       "capCount": 13,
       "settingCount": 13,
       "flowTriggers": 17,
@@ -1693,10 +1693,10 @@
       "productIds": [
         "01MINIZB",
         "BASICZBR3",
-        "hobeian",
-        "Hobeian",
-        "HOBEIAN",
-        "JZ-ZB-004"
+        "JZ-ZB-004",
+        "S26R2ZB",
+        "S31ZB",
+        "TS0001"
       ]
     },
     {
@@ -1726,12 +1726,12 @@
       "flowTriggers": 36,
       "gaps": [],
       "productIds": [
+        "TS0004",
         "01MINIZB",
         "BASICZBR3",
         "JZ-ZB-004",
         "S26R2ZB",
-        "S31ZB",
-        "TS0001"
+        "S31ZB"
       ]
     },
     {
@@ -2726,12 +2726,12 @@
       "flowTriggers": 10,
       "gaps": [],
       "productIds": [
-        "CK-TLSR8656-SS5-02(7014)",
+        "SNZB-02",
         "CK-TLSR8656-SS5-01(7014)",
+        "CK-TLSR8656-SS5-02(7014)",
         "ZTH13-3.0",
         "ZTH11-3.0",
-        "lumi.sensor_ht",
-        "lumi.sensor_ht.agl02"
+        "lumi.sensor_ht"
       ]
     },
     {
@@ -3174,18 +3174,18 @@
       "driverId": "gas_sensor",
       "homeyClass": "sensor",
       "mfrCount": 30,
-      "pidCount": 18,
+      "pidCount": 15,
       "capCount": 6,
       "settingCount": 8,
       "flowTriggers": 11,
       "gaps": [],
       "productIds": [
-        "hobeian",
-        "Hobeian",
-        "HOBEIAN",
         "TS0225",
         "TS0301",
-        "TS0601"
+        "TS0601",
+        "TS0601_gas",
+        "ZG-225Z",
+        "ts0225"
       ]
     },
     {
@@ -3283,18 +3283,18 @@
       "driverId": "illuminance_sensor",
       "homeyClass": "sensor",
       "mfrCount": 7,
-      "pidCount": 14,
+      "pidCount": 11,
       "capCount": 3,
       "settingCount": 0,
       "flowTriggers": 2,
       "gaps": [],
       "productIds": [
-        "hobeian",
-        "Hobeian",
-        "HOBEIAN",
         "TS0222",
         "TS0225",
-        "TS0601"
+        "TS0601",
+        "ZG-106Z",
+        "ts0222",
+        "Ts0222"
       ]
     },
     {
@@ -3547,7 +3547,7 @@
       "driverId": "presence_sensor_radar",
       "homeyClass": "sensor",
       "mfrCount": 1011,
-      "pidCount": 127,
+      "pidCount": 125,
       "capCount": 4,
       "settingCount": 55,
       "flowTriggers": 13,
@@ -3618,18 +3618,18 @@
       "driverId": "rain_sensor",
       "homeyClass": "sensor",
       "mfrCount": 41,
-      "pidCount": 15,
+      "pidCount": 12,
       "capCount": 5,
       "settingCount": 2,
       "flowTriggers": 7,
       "gaps": [],
       "productIds": [
-        "hobeian",
-        "Hobeian",
-        "HOBEIAN",
         "TS0207",
         "TS0207_rain",
-        "TS0601"
+        "TS0601",
+        "ZG-223Z",
+        "ts0207",
+        "Ts0207"
       ]
     },
     {
@@ -3781,7 +3781,7 @@
       "driverId": "sensor_contact_zigbee",
       "homeyClass": "sensor",
       "mfrCount": 187,
-      "pidCount": 77,
+      "pidCount": 74,
       "capCount": 5,
       "settingCount": 11,
       "flowTriggers": 10,
@@ -4064,7 +4064,7 @@
       "driverId": "soil_sensor",
       "homeyClass": "sensor",
       "mfrCount": 276,
-      "pidCount": 101,
+      "pidCount": 99,
       "capCount": 9,
       "settingCount": 3,
       "flowTriggers": 14,
@@ -4242,7 +4242,7 @@
       "driverId": "vibration_sensor",
       "homeyClass": "sensor",
       "mfrCount": 129,
-      "pidCount": 26,
+      "pidCount": 23,
       "capCount": 6,
       "settingCount": 1,
       "flowTriggers": 9,
@@ -4250,10 +4250,10 @@
       "productIds": [
         "AY02SZ",
         "CK-BL702-MWS-01(7016)",
-        "hobeian",
-        "Hobeian",
-        "HOBEIAN",
-        "TS011F"
+        "TS011F",
+        "TS0209",
+        "TS0210",
+        "TS0601"
       ]
     },
     {
@@ -5208,7 +5208,7 @@
     {
       "driverId": "curtain_motor",
       "homeyClass": "windowcoverings",
-      "mfrCount": 1106,
+      "mfrCount": 1100,
       "pidCount": 118,
       "capCount": 8,
       "settingCount": 19,
@@ -5526,12 +5526,12 @@
       "flowTriggers": 6,
       "gaps": [],
       "productIds": [
+        "TS0601",
         "TV01-ZB",
         "TV02-ZB",
         "TRV601",
         "TRV602",
-        "SEA801-Zigbee",
-        "eTRV0100"
+        "SEA801-Zigbee"
       ]
     },
     {
@@ -5561,7 +5561,7 @@
     {
       "driverId": "smart_lcd_thermostat",
       "homeyClass": "thermostat",
-      "mfrCount": 32,
+      "mfrCount": 28,
       "pidCount": 1,
       "capCount": 6,
       "settingCount": 0,
@@ -5992,18 +5992,18 @@
       "driverId": "siren",
       "homeyClass": "other",
       "mfrCount": 122,
-      "pidCount": 14,
+      "pidCount": 11,
       "capCount": 5,
       "settingCount": 6,
       "flowTriggers": 6,
       "gaps": [],
       "productIds": [
-        "hobeian",
-        "Hobeian",
-        "HOBEIAN",
         "TS0216",
         "TS0219",
-        "TS0601"
+        "TS0601",
+        "ZG-229Z",
+        "ts0216",
+        "Ts0216"
       ]
     },
     {
