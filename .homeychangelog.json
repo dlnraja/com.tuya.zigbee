@@ -1949,5 +1949,9 @@
   },
   "5.12.307": {
     "en": "Improved scene remote press latency and radiator valve pairing."
+  },
+  "5.12.308": {
+    "en": "Smarter battery % for coin cells and rechargeables — precise when low, without draining CR2032 or flooding the mesh. Update Test.",
+    "fr": "Batterie plus precise (piles/accus) sans vider les CR2032 ni saturer le mesh. Maj Test."
   }
 }
