@@ -3985,5 +3985,8 @@
   },
   "9.0.1204": {
     "en": "Fixed CI sacred-couple gates and climate battery guideline conflict."
+  },
+  "9.0.1205": {
+    "en": "P2698: strip radar FP bleed from curtain_motor so publish CI clears"
   }
 }
