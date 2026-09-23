@@ -5,13 +5,13 @@ Mode: **apply**
 | Class | Drivers | Gaps | MFRs | Flow triggers |
 |-------|--------:|-----:|-----:|--------------:|
 | sensor | 122 | 10 | 6328 | 782 |
-| socket | 108 | 11 | 3970 | 1167 |
+| socket | 108 | 11 | 3971 | 1167 |
 | button | 54 | 2 | 1539 | 849 |
 | light | 53 | 2 | 1678 | 257 |
-| thermostat | 31 | 0 | 1775 | 177 |
+| thermostat | 31 | 0 | 1771 | 177 |
 | other | 13 | 0 | 1235 | 83 |
 | switch | 9 | 1 | 368 | 66 |
-| curtain | 9 | 1 | 1340 | 45 |
+| curtain | 9 | 1 | 1334 | 45 |
 | wifi | 9 | 0 | 0 | 30 |
 | fan | 6 | 0 | 96 | 20 |
 | siren | 6 | 0 | 159 | 30 |
@@ -22,6 +22,6 @@ Mode: **apply**
 | ir | 1 | 0 | 149 | 6 |
 | windowcoverings | 1 | 0 | 2 | 6 |
 
-**Totals:** 434 drivers · 18809 MFR entries · 30 with soft gaps
+**Totals:** 434 drivers · 18800 MFR entries · 30 with soft gaps
 
 Doctrine: never invent productId · never degrade coverage · free scrape + forfait AI only.
