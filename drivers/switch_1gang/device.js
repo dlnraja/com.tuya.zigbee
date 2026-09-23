@@ -38,6 +38,12 @@ class Switch1GangDevice extends UnifiedSwitchBase {
         mainsPowered: true,
         skipBatteryReporting: true,
         protocol: 'zcl_onoff',
+        // WHY(P2704): kitchen/salon lights — Homey UI + Flow must TX without pace lag
+        snappyTx: true,
+        snappyRelayFlow: true,
+        debounceMs: 80,
+        crossPathDedupMs: 120,
+        appCommandWindow: 350,
       });
     }
     return base;
