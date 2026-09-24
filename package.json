@@ -1,6 +1,6 @@
 {
   "name": "com.dlnraja.tuya.zigbee",
-  "version": "9.0.1235",
+  "version": "9.0.1236",
   "description": "Tuya Unified Zigbee - Local-first control with AI automation",
   "main": "app.js",
   "scripts": {
@@ -594,7 +594,9 @@
     "check:p2719": "node --test test/critical/p2719-hiepsvg-550-sticky-leave-motion-split.test.js",
     "check:p2720": "node --test test/critical/p2720-bastien-overlay-purge-press-heap.test.js",
     "check:p2721": "node --test test/critical/p2721-bastien-7s-press-dead-window.test.js",
-    "check:p2722": "node --test test/critical/p2722-hiepsvg-550-motion-rearm-distance-scale.test.js"
+    "check:p2722": "node --test test/critical/p2722-hiepsvg-550-motion-rearm-distance-scale.test.js",
+    "check:p2723": "node --test test/critical/p2723-skip-battery-settings-tx.test.js",
+    "check:p272x": "npm run check:p2722 && npm run check:p2723"
   },
   "keywords": [
     "homey",
