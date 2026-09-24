@@ -33,7 +33,7 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 
 | Metric | Value |
 |--------|-------|
-| **App Version** | v9.0.1232 |
+| **App Version** | v9.0.1233 |
 | **Drivers** | 434 (381 Zigbee + 53 WiFi) |
 | **Unique Fingerprints** | 4,696 |
 | **Pairing Variants** | 18,792 (4 case combos per fingerprint) |
@@ -41,7 +41,7 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 | **Flow Cards** | 5,995 |
 | **Unique Capabilities** | 170 |
 | **Native OTA Drivers** | 8 |
-| **Test Suites** | 503 files |
+| **Test Suites** | 504 files |
 | **SVG Icons** | 734 |
 | **Languages** | EN, FR, NL, DE |
 | **SDK / Homey** | 3 / >= 12.2.0 |
@@ -103,6 +103,7 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 
 | Version | Changes |
 |---------|---------|
+| **v9.0.1233** | Ceiling radar (gkfbdvyx): motion re-arms when you move after stillness; distance display closer to tape (~0.9). Update Test + Repair radar. |
 | **v9.0.1232** | Remotes: faster rapid off/on (no multi-second dead window when toggling). Update Test. |
 | **v9.0.1231** | Remotes: clear leftover LIVE-DATA overlay after OOM tip-lag; less work on button press. Update Test + restart app once. |
 | **v9.0.1230** | Ceiling radar (gkfbdvyx): clear after leave honours departure delay; motion vs human presence split; less ghost re-assert. Update Test + … |
@@ -114,7 +115,6 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 | **v9.0.1224** | Ceiling radar (_TZE204_gkfbdvyx): fix lux/distance + no phantom battery after Repair. Update Universal Tuya Test, Repair the radar. |
 | **v9.0.1223** | Faster TS0042/TS0043 wireless remotes (snappy press to relay). Update + Repair remotes. |
 | **v9.0.1222** | Fixed VicHY presence radar frozen readings — DP4 no longer painted as battery; lux uses DP104 (MTG075). |
-| **v9.0.1221** | Fixed Advanced Flows lag from presence radar heal storms (VicHY). Quieter phantom-cap maintenance. |
 
 <!-- CHANGELOG_END -->
 
