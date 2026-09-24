@@ -236,9 +236,16 @@ const SENSOR_CONFIGS = {
     // WHY(P2705 / GH#550 HiepSVG @ 9.0.1207): sticky presence hung after leave —
     // survival + soft-clear must arm on ceiling (was gated on floodCalm/relay only).
     survivalWatchdog: true,
-    softClearStableDistanceMs: 90_000,
-    softClearZeroDistanceMs: 45_000,
-    stickyPresenceWatchdogMs: 20_000,
+    // WHY(P2719 / GH#550 @ 9.0.1222): soft-clear stagnant ghost distance after leave
+    // (clearPresenceOnZeroDistance alone never fires when MCU sticks at 2–3m).
+    softClearStableDistanceMs: 75_000,
+    softClearZeroDistanceMs: 30_000,
+    stickyPresenceWatchdogMs: 15_000,
+    softClearIgnoreStickyDp1Ms: 120_000,
+    // WHY(P2719): gate sticky DP1 / distance re-assert after soft-clear
+    antiFalsePositive: true,
+    // WHY(P2719 / Z2M state none|presence|move): Homey motion ≠ human presence
+    splitMotionPresence: true,
     motionThrottleEnabled: true,
     motionThrottleMs: 10000,
     motionDebounceMs: 5000,
