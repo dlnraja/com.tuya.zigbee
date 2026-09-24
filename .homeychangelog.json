@@ -1,4 +1,8 @@
 {
+  "1.0.92": {
+    "en": "Bastien remotes: purge leftover LIVE-DATA overlay (fixes all dead after OOM); leaner button press. Update Bastien Test ≥1.0.92 + restart once.",
+    "fr": "Telecommandes Bastien: purge overlay LIVE-DATA (plus rien mort apres OOM); press plus leger. Maj Test Bastien ≥1.0.92 + restart une fois."
+  },
   "1.0.83": {
     "en": "Bastien remotes: TS0041 faster; TS0042/43 snappy + no TS0041 lag; battery % fix; black remotes crash-safe. Update Test.",
     "fr": "Telecommandes Bastien: TS0041 plus rapide; TS0042/43 snappy + sans lag TS0041; batterie %; noirs anti-crash. Maj Test."
