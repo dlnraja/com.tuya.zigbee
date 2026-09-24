@@ -4048,5 +4048,8 @@
   },
   "9.0.1221": {
     "en": "Fixed Advanced Flows lag from presence radar heal storms (VicHY). Quieter phantom-cap maintenance."
+  },
+  "9.0.1222": {
+    "en": "Fixed VicHY presence radar frozen readings — DP4 no longer painted as battery; lux uses DP104 (MTG075)."
   }
 }
