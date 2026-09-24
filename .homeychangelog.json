@@ -4026,5 +4026,9 @@
   "9.0.1215": {
     "en": "Wireless remotes TS004x: lean Flow crash-safe (black remotes), faster presses, battery % fix, sacred FP heal. Update Test.",
     "fr": "Telecommandes TS004x: Flow lean anti-crash (noires), presses plus rapides, batterie %, heal FP. Maj Test."
+  },
+  "9.0.1216": {
+    "en": "Publish heal: wall hybrid UI sync restored (skipUiPulse gate) + TS004x lean Flow crash-safe. Update Test.",
+    "fr": "Heal publish: sync UI hybrid restaure (gate skipUiPulse) + Flow lean TS004x. Maj Test."
   }
 }
