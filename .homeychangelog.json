@@ -3951,5 +3951,9 @@
   "1.0.85": {
     "en": "Restore hybrid parseZclHeader (P2616) + skipUiPulse UI gate.",
     "fr": "Restaure parseZclHeader hybrid (P2616) + gate skipUiPulse."
+  },
+  "1.0.86": {
+    "en": "Strip alarm_battery conflict on remotes/climate (keep %).",
+    "fr": "Retire alarm_battery conflit remotes/climate (garde %)."
   }
 }
