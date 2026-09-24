@@ -226,7 +226,8 @@ const SENSOR_CONFIGS = {
     needsPolling: true,
     // WHY(P2583 / GH#547): device left mesh / silent RX — soft DataQuery every 2 min
     pollIntervalMs: 120000,
-    ultraAggressiveDebounce: true,
+    // WHY(P2725 / GH#550 @ 9.0.1236): ultra debounce made lux feel "locked/slow/wrong direction"
+    ultraAggressiveDebounce: false,
     disableBatteryReporting: true,
     suppressBatteryCapability: true,
     invertPresence: false,
@@ -252,9 +253,10 @@ const SENSOR_CONFIGS = {
     rearmMotionDistanceDeltaM: 0.15,
     // WHY(P2722): Homey shows ~1.2× tape — ceiling display scale 0.9 (UI only; soft-clear uses pre-scale).
     distanceDisplayScale: 0.9,
+    // WHY(P2725 / GH#550 @ 9.0.1236): 10s motion throttle felt "locked NO" after re-arm
     motionThrottleEnabled: true,
-    motionThrottleMs: 10000,
-    motionDebounceMs: 5000,
+    motionThrottleMs: 2000,
+    motionDebounceMs: 800,
     ignoreMovementState: true,
     forceTimeUpdates: true,
     // WHY(P2595 / GH#550): no relay — DynCap must strip Channel 1 / Button 1
