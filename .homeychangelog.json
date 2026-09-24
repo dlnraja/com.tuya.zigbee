@@ -1,4 +1,8 @@
 {
+  "9.0.1232": {
+    "en": "Remotes: faster rapid off/on (no multi-second dead window when toggling). Update Test.",
+    "fr": "Telecommandes: off/on rapide (plus de fenetre morte multi-secondes). Maj Test."
+  },
   "9.0.1231": {
     "en": "Remotes: clear leftover LIVE-DATA overlay after OOM tip-lag; less work on button press. Update Test + restart app once.",
     "fr": "Telecommandes: purge overlay LIVE-DATA apres OOM tip-lag; moins de travail au press. Maj Test + restart app une fois."
