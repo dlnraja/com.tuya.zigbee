@@ -1,6 +1,6 @@
 {
   "name": "com.dlnraja.tuya.zigbee",
-  "version": "9.0.1212",
+  "version": "9.0.1213",
   "description": "Tuya Unified Zigbee - Local-first control with AI automation",
   "main": "app.js",
   "scripts": {
@@ -575,6 +575,7 @@
     "check:p269x": "npm run check:p2691 && npm run check:p2692 && npm run check:p2693 && npm run check:p2695 && npm run check:p2696 && npm run check:p2698 && npm run check:p2699 && npm run check:p2702 && npm run check:p2704",
     "check:p2702": "node --test test/critical/p2702-bastien-ts004x-unknown-snappy.test.js",
     "check:p2704": "node --test test/critical/p2704-bastien-fleet-snappy-frontpin.test.js",
+    "check:p2706": "node --test test/critical/p2706-bastien-ts004x-ultra-snappy-isolate.test.js",
     "check:p2705": "node --test test/critical/p2705-hiepsvg-550-lux-cold-settings.test.js"
   },
   "keywords": [
