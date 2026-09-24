@@ -40,6 +40,14 @@ describe('P2707 Bastien black TS0042/43 crash-safe', () => {
     assert.match(dzw, /skipUiPulse:\s*true/);
   });
 
+  it('WallSceneRemoteHybrid: syncPhysicalToHomeyUi gated by skipUiPulse (never await)', () => {
+    const wall = fs.readFileSync(
+      path.join(ROOT, 'lib/devices/WallSceneRemoteHybridInit.js'), 'utf8');
+    assert.match(wall, /syncPhysicalToHomeyUi/);
+    assert.match(wall, /!profile\.skipUiPulse/);
+    assert.doesNotMatch(wall, /await Promise\.resolve\(syncPhysicalToHomeyUi/);
+  });
+
   it('ZclBatteryMonitor skips voltage on zcl200IsPercent / skipBatteryReporting', () => {
     const mon = fs.readFileSync(path.join(ROOT, 'lib/battery/ZclBatteryMonitor.js'), 'utf8');
     assert.match(mon, /skipVoltage/);
