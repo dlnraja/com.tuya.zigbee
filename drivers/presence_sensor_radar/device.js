@@ -625,11 +625,31 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
         phantoms.push('button.1', 'button', 'onoff');
       }
     }
+    // WHY(P2712 / VicHY #2255): Advanced Flows cards disappear/reload when we
+    // removeCapability/setClass/setEnergy on a clean device every minute.
+    // Dirty-check first — no Homey UI invalidate when already healthy.
+    let dirty = false;
+    try {
+      if (typeof this.getClass === 'function') {
+        const cls0 = String(this.getClass() || '');
+        if (forceMains && cls0 && cls0 !== 'sensor') dirty = true;
+        if (/windowcoverings|curtain|blind|cover/i.test(cls0)) dirty = true;
+      }
+      if (!dirty && typeof this.hasCapability === 'function') {
+        dirty = phantoms.some((cap) => this.hasCapability(cap));
+      }
+    } catch (_e) { dirty = true; }
+    if (!dirty) {
+      return { dirty: false, flippedFromCurtain: false };
+    }
+
     let flippedFromCurtain = false;
+    let removedAny = false;
     for (const cap of phantoms) {
       try {
         if (typeof this.hasCapability === 'function' && this.hasCapability(cap)) {
           await this.removeCapability(cap).catch(() => {});
+          removedAny = true;
           this.log(`[RADAR] P2379/P2386/P2391 removed phantom capability ${cap}`);
         }
       } catch (_e) { /* soft */ }
@@ -652,7 +672,8 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
     } catch (_e) { /* soft */ }
     // WHY(P2391/P2420/P2431/P2459/P2472a VicHY): even after compose dropped energy.batteries,
     // Homey may keep prior session Energy metadata — mains MTG must clear batteries: null.
-    if (forceMains && typeof this.setEnergy === 'function') {
+    // WHY(P2712): only setEnergy when dirty (Homey UI refresh cost).
+    if (forceMains && typeof this.setEnergy === 'function' && (removedAny || flippedFromCurtain)) {
       try {
         await this.setEnergy({ batteries: null, mains: true });
         this.log('[RADAR] P2391/P2420/P2431/P2459/P2472a cleared Homey Energy batteries on mains radar');
@@ -678,8 +699,13 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
         this._armCurtainFlipBurstHeal();
       }
       // WHY(P2599 / VicHY #2252 OCR): tip bump re-injects compose zones/temp — burst strip
-      this._armMtgTileSanitizeBurst();
+      // WHY(P2712 / VicHY #2255): NEVER re-arm burst from clean periodic ticks —
+      // only when phantoms were actually removed or class flipped (Contre quoi Flow lag).
+      if (removedAny || flippedFromCurtain) {
+        this._armMtgTileSanitizeBurst();
+      }
     }
+    return { dirty: true, flippedFromCurtain, removedAny };
   }
 
   /**
@@ -694,11 +720,14 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
       const { safeSetTimeout } = require('../../lib/utils/safe-timers');
       // WHY(P2617 / GH#550 @ 9.0.1097): tip bump re-injects Button/zones/temp/battery for
       // minutes — extend burst so gkfbdvyx ceiling stays clean after Homey compose heal.
+      // WHY(P2712 / VicHY #2255): keep arm flag for full burst window (was 150s while
+      // ceiling bursts ran to 600s → periodic heal re-armed forever → Flow UI lag).
       const mfrNow = (MfrHelper.getManufacturerName(this) || '').toLowerCase();
       const ceiling = /gkfbdvyx|laokfqwu|ya4ft0w4/.test(mfrNow);
       const bursts = ceiling
-        ? [3_000, 8_000, 20_000, 45_000, 90_000, 180_000, 300_000, 600_000]
+        ? [3_000, 8_000, 20_000, 45_000, 90_000, 180_000, 300_000]
         : [5_000, 15_000, 45_000, 120_000];
+      const armMs = (bursts[bursts.length - 1] || 120_000) + 30_000;
       for (const ms of bursts) {
         safeSetTimeout(this, () => {
           this._healPresenceHistoryUx().catch(() => {});
@@ -707,8 +736,8 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
           this._sanitizeCorruptDistanceTile().catch(() => {});
         }, ms);
       }
-      safeSetTimeout(this, () => { this._mtgTileSanitizeArmed = false; }, 150_000);
-      this.log('[RADAR] P2599 MTG tile sanitize burst armed');
+      safeSetTimeout(this, () => { this._mtgTileSanitizeArmed = false; }, armMs);
+      this.log(`[RADAR] P2599/P2712 MTG tile sanitize burst armed (${armMs}ms)`);
     } catch (_e) { /* soft */ }
   }
 
@@ -813,8 +842,10 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
           }
         }, ms);
       }
-      // WHY(P2548/P2555 / VicHY #2241): Homey store restore can flip class without tip;
-      // 60s catches curtain UI faster than 120s while soft-dismiss users block updates.
+      // WHY(P2546 / VicHY #2241): slow periodic heal for class flip without tip.
+      // WHY(P2712 / VicHY #2255): NEVER 60s — addCapability/removeCapability storms make
+      // Advanced Flows cards vanish/reload and lag when dragging. Dirty heal is cheap;
+      // interval stays 10 min (P2546 Contre quoi).
       if (!this._radarPhantomHealInterval && typeof safeSetInterval === 'function') {
         this._radarPhantomHealInterval = safeSetInterval(this, () => {
           const mfr = (MfrHelper.getManufacturerName(this) || '').toLowerCase();
@@ -822,9 +853,14 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
             return;
           }
           this._armRadarDynCapGuards();
-          this._healRadarPhantomCaps().catch(() => {});
-          this._applyRadarCapabilityProfile().catch(() => {});
-        }, 60_000);
+          // Profile apply only when heal reports dirty (avoid Flow UI invalidate)
+          this._healRadarPhantomCaps().then((r) => {
+            if (r && r.dirty) {
+              return this._applyRadarCapabilityProfile();
+            }
+            return null;
+          }).catch(() => {});
+        }, 600_000);
       }
     } catch (_e) {
       try {

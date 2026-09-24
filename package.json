@@ -1,6 +1,6 @@
 {
   "name": "com.dlnraja.tuya.zigbee",
-  "version": "9.0.1220",
+  "version": "9.0.1221",
   "description": "Tuya Unified Zigbee - Local-first control with AI automation",
   "main": "app.js",
   "scripts": {
@@ -583,7 +583,8 @@
     "check:p2707": "node --test test/critical/p2707-bastien-ts004x-black-crash-safe.test.js",
     "check:p2708": "node --test test/critical/p2708-bastien-ts004x-full-feedback-matrix.test.js",
     "check:p270x": "npm run check:p2702 && npm run check:p2704 && npm run check:p2705 && npm run check:p2706 && npm run check:p2706b && npm run check:p2707 && npm run check:p2708",
-    "check:p2711": "node --test test/critical/p2711-fleet-datapoint-tx-learnmode.test.js"
+    "check:p2711": "node --test test/critical/p2711-fleet-datapoint-tx-learnmode.test.js",
+    "check:p2712": "node --test test/critical/p2712-vichy-advanced-flows-heal-lag.test.js test/critical/p2546-vichy-radar-periodic-heal.test.js"
   },
   "keywords": [
     "homey",
