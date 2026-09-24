@@ -31,6 +31,11 @@
 | 114 | factory_parameters | — | rx | — |
 | 115 | sensor | — | rx | — |
 
+## Notes (P2579 / VicHY)
+- MTG075 / MTG235 relay radar — DP115 `sensor_mode=occupied` locks presence forever
+- FloodCalm quantized distance (~2.8m bins) + soft-clear heal when Occupied
+- Lux = DP104; DP103 = cline (never generic lux)
+
 ---
 See `docs/guides/DP_INTERPRETATION.md`
 
