@@ -2001,5 +2001,9 @@
   "5.12.322": {
     "en": "Wireless remotes TS004x: lean Flow crash-safe, faster presses, battery % fix. Update Test.",
     "fr": "Telecommandes TS004x: Flow lean anti-crash, presses plus rapides, batterie %. Maj Test."
+  },
+  "5.12.323": {
+    "en": "Wireless remotes: hybrid parseZclHeader restore + lean Flow crash-safe. Update Test.",
+    "fr": "Telecommandes: parseZclHeader hybrid + Flow lean. Maj Test."
   }
 }
