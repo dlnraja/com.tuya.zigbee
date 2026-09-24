@@ -1751,14 +1751,23 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
       this._distanceSeenOnce = true;
       // WHY(P2640): meaningful = tracking actually ranged (>0.3m) — not cold 0m frames
       if (Number(distance) > 0.3) this._distanceSeenMeaningful = true;
-      this._lastDistanceM = distance;
+      // WHY(P2722 / GH#550): keep pre-scale meters for soft-clear / corroboration /
+      // motion re-arm; apply distanceDisplayScale only on Homey UI paint.
+      const logicDistance = distance;
+      this._lastDistanceM = logicDistance;
       this._lastDistancePaintAt = Date.now();
-      this._noteDistanceSample(distance);
-      const inferred = this._ensureInference().updateDistance(distance);
+      this._noteDistanceSample(logicDistance);
+      // WHY(P2722): still-present MCU sticks DP1=1 — distance jump while human YES → motion YES
+      this._rearmMotionFromDistanceDelta(logicDistance, config);
+      const displayScale = Number(config.distanceDisplayScale);
+      if (Number.isFinite(displayScale) && displayScale > 0 && displayScale !== 1) {
+        distance = Math.round(logicDistance * displayScale * 100) / 100;
+      }
+      const inferred = this._ensureInference().updateDistance(logicDistance);
       // WHY(P2509 / Z2M#30785): gkfbdvyx sticks DP1=true while DP9=0m — clear Homey presence
       // WHY(P2640 / GH#550): never zero-clear until a meaningful distance was seen —
       // find_switch OFF paints DP9=0 forever and would wipe lux/DP1 presence.
-      if (config.clearPresenceOnZeroDistance && Number(distance) <= 0.05) {
+      if (config.clearPresenceOnZeroDistance && Number(logicDistance) <= 0.05) {
         if (this._distanceSeenMeaningful === true) {
           this._commitPresenceAndFlows(false);
         }
@@ -1774,14 +1783,14 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
         }
       } else {
         // WHY(P2584): Occupied mode — DP1 useless; paint Homey presence from distance motion
-        this._applySmartPresenceUnderOccupied(distance, inferred, config);
+        this._applySmartPresenceUnderOccupied(logicDistance, inferred, config);
       }
       // WHY(P2575 / VicHY #2247 bathroom): DP1 can stick true while empty room distance≈0.
       // Soft clear after sustained zero distance (default 90s) — does not fight P2534
       // instantaneous flip-flop (needs sustained empty, not single DP9=0 frame).
-      this._softClearStuckPresenceOnZeroDistance(distance, config);
+      this._softClearStuckPresenceOnZeroDistance(logicDistance, config);
       // WHY(P2389): still feed inference every frame; only coalesce Homey capability writes
-      if (this._shouldSkipFloodCalmDp(dpId, distance, config)) {return;}
+      if (this._shouldSkipFloodCalmDp(dpId, logicDistance, config)) {return;}
       // WHY(P2590 Module 2): meaningful distance while Occupied = sign of life → rearm
       this._nudgeSurvivalWatchdog('distance');
       // WHY(P2599 / VicHY #2252 OCR): keep units string on every paint
@@ -2350,6 +2359,38 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
     if (this._distanceSamples.length > 12) this._distanceSamples.shift();
     this._lastDistanceM = d;
     this._lastDistanceAt = now;
+  }
+
+  /**
+   * WHY(P2722 / GH#550 HiepSVG @ 9.0.1232): after stillness DP1 sticks at enum 1 —
+   * MCU often skips enum 2 on re-move. Contre quoi: alarm_motion stuck NO while
+   * alarm_human YES and DP9 still updates.
+   */
+  _rearmMotionFromDistanceDelta(distance, config) {
+    try {
+      if (!config || config.splitMotionPresence !== true) return false;
+      if (config.rearmMotionOnDistanceDelta !== true) return false;
+      if (this.getCapabilityValue('alarm_human') !== true) return false;
+      if (this.getCapabilityValue('alarm_motion') === true) {
+        this._prevDistanceForMotionRearm = Number(distance);
+        return false;
+      }
+      const d = Number(distance);
+      if (!Number.isFinite(d)) return false;
+      const prev = Number(this._prevDistanceForMotionRearm);
+      this._prevDistanceForMotionRearm = d;
+      if (!Number.isFinite(prev)) return false;
+      const thr = Number(config.rearmMotionDistanceDeltaM) > 0
+        ? Number(config.rearmMotionDistanceDeltaM) : 0.15;
+      if (Math.abs(d - prev) < thr) return false;
+      // Sticky-ignore after leave — do not re-arm ghost motion
+      if (this._ignoreStickyDp1Until && Date.now() < this._ignoreStickyDp1Until) return false;
+      this.log(`[RADAR] P2722 re-arm motion (Δd=${Math.abs(d - prev).toFixed(2)}m while human)`);
+      this.safeSetCapabilityValue('alarm_motion', true).catch(() => {});
+      return true;
+    } catch (_e) {
+      return false;
+    }
   }
 
   _armStickyDp1Ignore(config) {
