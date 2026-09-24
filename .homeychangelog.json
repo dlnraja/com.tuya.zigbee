@@ -1,4 +1,8 @@
 {
+  "9.0.1230": {
+    "en": "Ceiling radar (gkfbdvyx): clear after leave honours departure delay; motion vs human presence split; less ghost re-assert. Update Test + Repair radar.",
+    "fr": "Radar plafond (gkfbdvyx): clear apres depart respecte delai; split motion vs presence humaine; moins de re-assert fantome. Maj Test + Repair radar."
+  },
   "9.0.1214": {
     "en": "Publish heal: scene remotes wkai4ga5/a4xycprs stay on scene_switch_4 (not button_wireless_4). Update Test.",
     "fr": "Heal publish: telecommandes scene wkai4ga5/a4xycprs restent sur scene_switch_4. Maj Test."
