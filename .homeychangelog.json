@@ -4034,5 +4034,9 @@
   "9.0.1217": {
     "en": "Publish heal: restore parseZclHeader on wall hybrid (P2616) + TS004x lean Flow. Update Test.",
     "fr": "Heal publish: parseZclHeader hybrid (P2616) + Flow lean TS004x. Maj Test."
+  },
+  "9.0.1218": {
+    "en": "Publish heal: strip alarm_battery conflict on remotes/climate (keep measure_battery %). Update Test.",
+    "fr": "Heal publish: retire alarm_battery (conflit) sur remotes/climate — garde mesure %. Maj Test."
   }
 }
