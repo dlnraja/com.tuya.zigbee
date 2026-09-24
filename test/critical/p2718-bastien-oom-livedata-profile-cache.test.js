@@ -24,7 +24,7 @@ describe('P2718 Bastien OOM — LIVE-DATA couple-only + profile cache', () => {
     assert.ok(src.includes('modelIds'), 'segment merge must require modelIds');
     assert.ok(/MAX_ENTRIES\s*=\s*800/.test(src), 'MAX_ENTRIES must be ≤800');
     assert.ok(/MAX_SEGMENTS\s*=\s*6/.test(src), 'MAX_SEGMENTS must cap segment storm');
-    assert.ok(/\.bastien\b/i.test(src) && src.includes('P2718 skip'), 'Bastien must skip OTA overlay');
+    assert.ok(/\.bastien\b/i.test(src) && /P2718.*skip/i.test(src), 'Bastien must skip OTA overlay');
   });
 
   it('PhysicalButtonMixin caches getDeviceProfile (no match-log spam)', () => {
