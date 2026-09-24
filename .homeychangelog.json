@@ -1,4 +1,8 @@
 {
+  "9.0.1238": {
+    "en": "Ceiling radar (gkfbdvyx): sitting still no longer false-clears presence; motion re-arms while sticky ignore; lux less laggy. Update Test + Repair radar.",
+    "fr": "Radar plafond (gkfbdvyx): immobilite ne clear plus a tort; motion se rearme; lux plus reactif. Maj Test + Repair radar."
+  },
   "9.0.1235": {
     "en": "Publish heal: wkai4ga5 stays scene_switch_4 (not button_wireless_4). Update Test.",
     "fr": "Publish heal: wkai4ga5 reste scene_switch_4. Maj Test."
