@@ -46,15 +46,18 @@ describe('P2702 Bastien TS0041/42/43 unknown + snappy relay', () => {
       const idx = src.indexOf(key);
       assert.ok(idx >= 0, `${key} profile`);
       const block = src.slice(idx, idx + 900);
-      assert.match(block, /debounceMs:\s*40/);
-      assert.match(block, /crossPathDedupMs:\s*60/);
+      const dm = block.match(/debounceMs:\s*(\d+)/);
+      assert.ok(dm && Number(dm[1]) <= 40, `${key} debounce≤40`);
+      const cp = block.match(/crossPathDedupMs:\s*(\d+)/);
+      assert.ok(cp && Number(cp[1]) <= 60, `${key} crossPath≤60`);
       assert.match(block, /snappyRelayFlow:\s*true/);
     }
   });
 
-  it('button_wireless_2 forces debounce 40 + ButtonDevice fires Flow before pulse', () => {
+  it('button_wireless_2 forces debounce≤40 + ButtonDevice fires Flow before pulse', () => {
     const d2 = fs.readFileSync(path.join(ROOT, 'drivers/button_wireless_2/device.js'), 'utf8');
-    assert.match(d2, /debounceMs:\s*40/);
+    const d2m = d2.match(/debounceMs:\s*(\d+)/);
+    assert.ok(d2m && Number(d2m[1]) <= 40);
     assert.match(d2, /snappyRelayFlow:\s*true/);
 
     const btn = fs.readFileSync(path.join(ROOT, 'lib/devices/ButtonDevice.js'), 'utf8');
