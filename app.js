@@ -500,7 +500,14 @@ class TuyaUnifiedZigbeeApp extends Homey.App {
     if (this._heavyInitStarted && !retry) {return;}
     this._heavyInitStarted = true;
     const allowHeavy = BootBudget.shouldStartHeavyFeatures();
-    this.log(`[BOOT-BUDGET] deferred pass heap=${BootBudget.heapUsedMb()} MB rss=${BootBudget.rssUsedMb()} MB heavy=${allowHeavy} retry=${retry}`);
+    // WHY(P2720 Bastien 27b0bd04): leftover live_data_overlay from tip ≤1.0.82 must be
+    // purged even when heap budget skips heavy engines — otherwise settings RAM stays hot
+    // and remotes die again after SIGABRT recovery.
+    let isBastienHouse = false;
+    try {
+      isBastienHouse = /\.bastien\b/i.test(String(this.homey?.manifest?.id || ''));
+    } catch (_e) { /* soft */ }
+    this.log(`[BOOT-BUDGET] deferred pass heap=${BootBudget.heapUsedMb()} MB rss=${BootBudget.rssUsedMb()} MB heavy=${allowHeavy} retry=${retry}${isBastienHouse ? ' bastien=1' : ''}`);
     try {
       const Lazy = require('./lib/performance/IntelligentLazyLoad');
       Lazy.trimLazyCacheUnderPressure();
@@ -646,16 +653,21 @@ class TuyaUnifiedZigbeeApp extends Homey.App {
       if (allowHeavy) {this.scheduleManager.start();}
       this.conditionEngine = new ConditionEngine(this.homey);
       this.predictiveHealthEngine = new PredictiveHealthEngine(this.homey);
-      if (allowHeavy) {this.predictiveHealthEngine.start();}
+      // WHY(P2720): Bastien house skips predictive health timers — remotes need heap headroom
+      if (allowHeavy && !isBastienHouse) {this.predictiveHealthEngine.start();}
 
-      if (allowHeavy) {
+      // WHY(P2720): Bastien MUST always call LiveDataUpdater.start() so leftover overlay
+      // from tip ≤1.0.82 is purged — even when BootBudget says !allowHeavy after OOM.
+      if (allowHeavy || isBastienHouse) {
         try {
           const LiveDataUpdater = require('./lib/dynamic/LiveDataUpdater');
           this.liveDataUpdater = new LiveDataUpdater(this.homey, this.log.bind(this));
           await this.liveDataUpdater.start();
           const FingerprintMatcher = require('./lib/utils/fingerprint-matcher');
           FingerprintMatcher.setOverlayProvider(() => this.liveDataUpdater?.getOverlay?.() || null);
-          this.log('✅ LiveDataUpdater started (gh-pages feed, 24h cycle)');
+          this.log(isBastienHouse
+            ? '✅ LiveDataUpdater started (P2720 Bastien purge/skip)'
+            : '✅ LiveDataUpdater started (gh-pages feed, 24h cycle)');
         } catch (err) {
           this.error('⚠️ LiveDataUpdater failed (non-critical, local data only):', err.message);
         }
