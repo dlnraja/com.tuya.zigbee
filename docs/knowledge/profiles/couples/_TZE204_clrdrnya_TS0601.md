@@ -31,11 +31,12 @@
 | 114 | factory_parameters | — | rx | — |
 | 115 | sensor | — | rx | — |
 
-## Notes (P2579 / VicHY)
-- MTG075 / MTG235 relay radar — DP115 `sensor_mode=occupied` locks presence forever
-- FloodCalm quantized distance (~2.8m bins) + soft-clear heal when Occupied
-- Lux = DP104; DP103 = cline (never generic lux)
-
 ---
 See `docs/guides/DP_INTERPRETATION.md`
 
+## Known bugs (P2579 — MTG075 / MTG235)
+
+- **occupied** sensor mode can stick true (false presence) — soft-clear + healForcedOccupiedOnSoftClear on tip.
+- Distance is **quantized** (~2.8 m steps) — quantizedDistanceSoftClear avoids thrash.
+- Retail SKUs **MTG075** / **MTG235** share couple `_TZE204_clrdrnya`+`TS0601` (mains, no phantom battery).
+- antiFalsePositive: sticky DP1 needs distance corroboration before alarm_motion paints.
