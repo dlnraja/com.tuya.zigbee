@@ -3970,5 +3970,9 @@
   "1.0.90": {
     "en": "App Settings: fix infinite spinner / blank page (Homey.ready). Update Test.",
     "fr": "Reglages app: correction roue infinie / page blanche (Homey.ready). Maj Test."
+  },
+  "1.0.91": {
+    "en": "Remotes: stop Homey OOM crash that killed all buttons after press. Update Test + restart app once.",
+    "fr": "Telecommandes: stop crash OOM Homey qui tuait tous les boutons apres un appui. Maj Test + redemarrer app."
   }
 }
