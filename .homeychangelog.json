@@ -2005,5 +2005,9 @@
   "5.12.323": {
     "en": "Wireless remotes: hybrid parseZclHeader restore + lean Flow crash-safe. Update Test.",
     "fr": "Telecommandes: parseZclHeader hybrid + Flow lean. Maj Test."
+  },
+  "5.12.324": {
+    "en": "Strip alarm_battery conflict on remotes/climate (keep %).",
+    "fr": "Retire alarm_battery conflit remotes/climate (garde %)."
   }
 }
