@@ -114,6 +114,17 @@ class Button3GangDevice extends ButtonDevice {
       softArmComplementaryIo(this, { zclNode, io: this.io });
     } catch (_e) { /* optional */ }
 
+    // WHY(P2714 / Bastien e1654535): same battery Invalid Capability race as bw2
+    try {
+      if (!this.hasCapability?.('measure_battery') && typeof this.addCapability === 'function') {
+        await this.addCapability('measure_battery').catch(() => {});
+        this.log('[BUTTON_WIRELESS_3] P2714 rehydrate measure_battery');
+      }
+      if (typeof this._ensureBatteryCapabilityUi === 'function') {
+        await this._ensureBatteryCapabilityUi().catch(() => {});
+      }
+    } catch (_e) { /* soft */ }
+
     this.log('[BUTTON_WIRELESS_3] hybrid UNION dedicated (TS0043 class / P2693)');
   }
 
