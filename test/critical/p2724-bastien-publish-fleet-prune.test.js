@@ -76,6 +76,8 @@ describe('P2724 Bastien house-fleet publish prune', () => {
     assert.ok(out.drivers.every((d) => !['air_purifier', 'pet_feeder'].includes(d.id)));
     assert.ok(out.flow.triggers.some((c) => c.id === 'button_wireless_1_pressed'));
     assert.ok(!out.flow.triggers.some((c) => c.id === 'air_purifier_on'));
+    // WHY(P2726 / Athom #106): orphan fleet cards must not survive soft-keep
+    assert.strictEqual(out.flow.triggers.length, 1);
 
     // Universal must be no-op
     fat.id = 'com.dlnraja.tuya.zigbee';

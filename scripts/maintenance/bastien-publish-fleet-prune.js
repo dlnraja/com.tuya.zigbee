@@ -62,22 +62,14 @@ function pruneBastienPublishFleet(destAppJson, opts = {}) {
   }
   manifest.drivers = keptDrivers;
 
-  // Drop flow cards whose id prefix matches a removed driver
-  const removedSet = new Set(removed);
+  // WHY(P2724 / Athom #106 invalid_state): keep ONLY flow cards for kept drivers.
+  // Soft "return true" left 1500+ orphan fleet triggers → Athom processor invalid_state.
   for (const section of ['triggers', 'conditions', 'actions']) {
     const cards = manifest.flow && manifest.flow[section];
     if (!Array.isArray(cards)) continue;
     manifest.flow[section] = cards.filter((c) => {
       const id = String(c.id || '');
-      const driverGuess = id.split('_').slice(0, 3).join('_');
-      // Keep if any kept driver is a prefix of the card id
-      const belongsToKept = keptDrivers.some((d) => id === d.id || id.startsWith(`${d.id}_`));
-      if (belongsToKept) return true;
-      // Drop if clearly tied to a removed driver id prefix
-      for (const rid of removedSet) {
-        if (id === rid || id.startsWith(`${rid}_`)) return false;
-      }
-      return true;
+      return keptDrivers.some((d) => id === d.id || id.startsWith(`${d.id}_`));
     });
   }
 

@@ -205,8 +205,30 @@ jobs:
           echo "- [Test install](https://homey.app/a/$EXPECTED_APP_ID/test/)" >> "$GITHUB_STEP_SUMMARY"
           echo "- Install on Bastien Pro: update Test channel or \`homey app install\` from clone" >> "$GITHUB_STEP_SUMMARY"
 
+      - name: Wait Athom draft ready (P2726)
+        id: wait_draft
+        continue-on-error: true
+        env:
+          HOMEY_PAT: ${{ secrets.HOMEY_PAT }}
+          TARGET_APP_ID: ${{ env.EXPECTED_APP_ID }}
+          HOMEY_DRAFT_WAIT_MS: ${{ env.HOMEY_DRAFT_WAIT_MS }}
+        run: |
+          set +e
+          node .github/scripts/wait-athom-draft-ready.js
+          rc=$?
+          set -e
+          if [ "$rc" -ne 0 ]; then
+            echo "::warning::Bastien draft not ready (processing_failed / invalid_state) — skip promote"
+            echo "draft_ok=false" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+          echo "draft_ok=true" >> "$GITHUB_OUTPUT"
+
       # P2620: always attempt draft→test after createBuild (same tiers as fleet)
+      # WHY(P2726): never promote when tip is already processing_failed (invalid_state) —
+      # Athom #106 stayed failed while job soft-greened on 1.0.93 tip-lag.
       - name: Install promotion tools
+        if: steps.wait_draft.outputs.draft_ok == 'true'
         continue-on-error: true
         run: |
           sudo apt-get update -qq || true
@@ -219,6 +241,7 @@ jobs:
 
       - name: "Bastien Tier 1: Promote draft→test (Puppeteer)"
         id: promote_puppeteer
+        if: steps.wait_draft.outputs.draft_ok == 'true'
         continue-on-error: true
         timeout-minutes: 8
         env:
@@ -231,7 +254,7 @@ jobs:
 
       - name: "Bastien Tier 2: Promote via API"
         id: promote_api
-        if: steps.promote_puppeteer.outcome != 'success'
+        if: steps.wait_draft.outputs.draft_ok == 'true' && steps.promote_puppeteer.outcome != 'success'
         continue-on-error: true
         env:
           HOMEY_PAT: ${{ secrets.HOMEY_PAT }}
@@ -240,8 +263,8 @@ jobs:
 
       - name: Verify Bastien Test channel
         id: verify_bastien_test
-        # WHY(P2723): 1.0.94 soft-continued on processing_failed while Homey stayed on 1.0.93 —
-        # job looked green; house tip-lag. Announce clearly; soft-continue still avoids bump-loop spam.
+        # WHY(P2726): tip-lag must be visible — soft-continue exit 0 only after clear warning;
+        # fail step (continue-on-error) when tip processing_failed so summary is not false-green.
         continue-on-error: true
         env:
           HOMEY_PAT: ${{ secrets.HOMEY_PAT }}
@@ -252,8 +275,11 @@ jobs:
           rc=$?
           set -e
           if [ "$rc" -ne 0 ]; then
-            echo "::warning::Bastien Test verify did not confirm tip — check Athom for processing_failed / tip-lag on Homey Pro"
+            echo "::error::Bastien Test tip did NOT land — Athom processing_failed / invalid_state / tip-lag. Do not bump-loop (P139); fix package then retry."
             echo "bastien_test_ok=false" >> "$GITHUB_OUTPUT"
-            exit 0
+            echo "### Bastien Test FAILED tip-lag" >> "$GITHUB_STEP_SUMMARY"
+            echo "- Expected tip not on Test — check Athom builds for \`processing_failed\` / \`invalid_state\`" >> "$GITHUB_STEP_SUMMARY"
+            exit 1
           fi
           echo "bastien_test_ok=true" >> "$GITHUB_OUTPUT"
+          echo "### Bastien Test OK" >> "$GITHUB_STEP_SUMMARY"
