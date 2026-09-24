@@ -590,6 +590,22 @@ try {
     process.exit(1);
   }
 
+  // 5a1) P2724 Bastien house-fleet prune — AFTER matrix compact, BEFORE 4MB gate.
+  // Athom socket-hang processing_failed on full-fleet Bastien #104/#105 (1.0.94/1.0.95).
+  try {
+    const { pruneBastienPublishFleet } = require('./maintenance/bastien-publish-fleet-prune.js');
+    const fleet = pruneBastienPublishFleet(destAppJson, { destDir });
+    if (!fleet.skipped) {
+      console.log(`[P2724] Bastien house-fleet prune: ${fleet.before} → ${fleet.after} drivers (removed ${fleet.removed.length})`);
+      if (fleet.removed.length) {
+        console.log(`  - sample removed: ${fleet.removed.slice(0, 8).join(', ')}${fleet.removed.length > 8 ? ', ...' : ''}`);
+      }
+    }
+  } catch (e) {
+    console.error('FATAL: P2724 Bastien fleet prune failed:', e.message);
+    process.exit(1);
+  }
+
   // 5a2) Athom hard limit — AFTER Zigbee matrix compact (whitespace-only can still be ~4.00MB)
   {
     try {
