@@ -1,0 +1,31 @@
+{
+  "_meta": {
+    "id": "P2710-battery-chemistry-curves-ssot",
+    "updated": "2026-09-24",
+    "classify": "BOTH",
+    "why": "Precise % + volts from non-linear discharge curves per pile/akku/lithium techno — no linear (V-2.5)/0.5",
+    "runtime": "lib/battery/BatteryChemistryCurves.js",
+    "handler": "lib/battery/UnifiedBatteryHandler.js",
+    "adaptive": "lib/battery/SmartBatteryAdaptivePrecision.js",
+    "gate": "npm run check:p2710",
+    "human": "docs/architecture/BATTERY_SSOT.md"
+  },
+  "families": {
+    "coin": ["CR2032", "CR2450", "CR2477", "CR1632", "CR1220", "3V_2100", "3V_2500"],
+    "alkaline": ["AAA", "AA", "C", "D", "9V", "2xAAA", "2xAA", "4xAAA", "4xAA", "1.5V_AA", "1.5V_AAA"],
+    "rechargeable": ["Li-ion", "Li-polymer", "18650", "LiHV", "LiFePO4", "NiMH", "NiMH_AA", "NiMH_AAA", "2xNiMH", "NiCd"],
+    "lithiumPrimary": ["CR123A", "2xCR123A", "Li-SOCl2", "ER14505"]
+  },
+  "rules": {
+    "noLinearVoltageFormula": true,
+    "zclBatteryVoltageIs100mV": true,
+    "fusePreferVoltageOnFlatZcl100Coin": true,
+    "curveAlgosMustNotFallThroughToDirect": true,
+    "skipVoltageOnSkipBatteryReportingCoinRemotes": true
+  },
+  "dualApp": {
+    "master": true,
+    "bastien": true,
+    "stable": true
+  }
+}
