@@ -4042,5 +4042,8 @@
   "9.0.1219": {
     "en": "Battery: precise % from chemistry curves (LiFePO4, NiMH, Li-SOCl2, coin/alkaline/akku) + voltage fuse. Update Test.",
     "fr": "Batterie: % precis via courbes chimie (LiFePO4, NiMH, Li-SOCl2, piles/akkus) + fuse tension. Maj Test."
+  },
+  "9.0.1220": {
+    "en": "Improved Tuya datapoint TX framing and Wireless Button 3 pairing instructions (fleet treat)."
   }
 }

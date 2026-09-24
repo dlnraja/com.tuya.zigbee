@@ -158,8 +158,8 @@
     "learnmode": {
       "image": "{{driverAssetsPath}}/icon.svg",
       "instruction": {
-        "en": "IMPORTANT: pick Zigbee Bastien → Wireless Button 3 — NOT Homey Zigbee. Hold any button 5–10s until LED blinks; tap every 2–3s while pairing. Use Homey Flow trigger « Button pressed » (Button 1/2/3) → light — NOT Developer Tools Zigbee channels/commands (scene remotes have no bindable OnOff). Never write 0x8004.",
-        "fr": "IMPORTANT: Zigbee Bastien → Bouton sans fil 3 — PAS Homey Zigbee. Maintenez 5–10 s puis appuyez toutes les 2–3 s. Flow Homey: declencheur « Bouton appuye » (Bouton 1/2/3) → lampe — PAS les canaux/commandes Zigbee des outils developpeur (telecommande scene = pas de OnOff bindable). Ne jamais ecrire 0x8004.",
+        "en": "IMPORTANT: pick Universal Tuya → Wireless Button 3 (TS0043) — NOT plain Homey Zigbee. Hold any button 5–10s until LED blinks; tap every 2–3s while pairing. Use Homey Flow trigger « Button pressed » (Button 1/2/3) → light — NOT Developer Tools Zigbee channels/commands (scene remotes have no bindable OnOff). Never write 0x8004.",
+        "fr": "IMPORTANT: Universal Tuya → Bouton sans fil 3 (TS0043) — PAS Homey Zigbee. Maintenez 5–10 s puis appuyez toutes les 2–3 s. Flow Homey: declencheur « Bouton appuye » (Bouton 1/2/3) → lampe — PAS les canaux/commandes Zigbee des outils developpeur (telecommande scene = pas de OnOff bindable). Ne jamais ecrire 0x8004.",
         "nl": "Houd een willekeurige knop 5 seconden ingedrukt totdat de LED snel knippert",
         "de": "Halten Sie eine beliebige Taste 5 Sekunden lang gedrückt, bis die LED schnell blinkt",
         "it": "Tenere premuto qualsiasi pulsante per 5 secondi finché il LED lampeggia rapidamente",
