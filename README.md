@@ -33,26 +33,26 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 
 | Metric | Value |
 |--------|-------|
-| **App Version** | v9.0.1203 |
+| **App Version** | v9.0.1213 |
 | **Drivers** | 434 (381 Zigbee + 53 WiFi) |
 | **Unique Fingerprints** | 4,696 |
-| **Pairing Variants** | 18,807 (4 case combos per fingerprint) |
+| **Pairing Variants** | 18,794 (4 case combos per fingerprint) |
 | **Unique Product IDs** | 929 |
 | **Flow Cards** | 5,995 |
 | **Unique Capabilities** | 170 |
 | **Native OTA Drivers** | 8 |
-| **Test Suites** | 481 files |
+| **Test Suites** | 487 files |
 | **SVG Icons** | 734 |
 | **Languages** | EN, FR, NL, DE |
 | **SDK / Homey** | 3 / >= 12.2.0 |
-| **Last Updated** | 2026-09-23 |
+| **Last Updated** | 2026-09-24 |
 
 ### Top 20 Drivers by Fingerprint Count
 
 | # | Driver | Fingerprints |
 |---|--------|-------------|
 | 1 | `climate_sensor` | 2,179 |
-| 2 | `switch_1gang` | 1,519 |
+| 2 | `switch_1gang` | 1,512 |
 | 3 | `curtain_motor` | 1,114 |
 | 4 | `presence_sensor_radar` | 1,011 |
 | 5 | `radiator_valve` | 609 |
@@ -103,18 +103,18 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 
 | Version | Changes |
 |---------|---------|
+| **v9.0.1213** | Wireless remotes (TS0041/42/43): faster presses, multi-btn no longer slows others or crash Homey; battery % fix. Update Test. |
+| **v9.0.1212** | Publish heal: restore VicHY MTG couple notes + HiepSVG radar P2705. Update Test. |
+| **v9.0.1211** | Publish heal: FP collision baseline + HiepSVG radar P2705. Update Test. |
+| **v9.0.1210** | Radar gkfbdvyx: lux re-arm when distance still moves; Homey range/sensitivity push to MCU; sticky clear after leave. Update Test + Repair… |
+| **v9.0.1209** | Fleet snappy TX for HOBEIAN/ZG-301Z + TS0004 modules; front-pin house climate couples. Update Homey Test. |
+| **v9.0.1208** | TS004x remotes: faster Flow to relay + TS0041 no longer stolen by 2-btn driver. Update Test; re-pair Unknown buttons as Wireless Button 1/3. |
+| **v9.0.1207** | P2700: soft-arm raw + RX/TX + PFC for all non-native Homey gaps |
+| **v9.0.1206** | P2699: non-native DP/clusters use complementary RX/TX/raw paths (never mandatory) |
+| **v9.0.1205** | P2698: strip radar FP bleed from curtain_motor so publish CI clears |
+| **v9.0.1204** | Fixed CI sacred-couple gates and climate battery guideline conflict. |
 | **v9.0.1203** | Improved fingerprint matching for wireless buttons and radiator valves. |
 | **v9.0.1202** | Improved energy parsing and CI publish reliability. |
-| **v9.0.1201** | Improved publish reliability and CI integrity checks. |
-| **v9.0.1200** | P2695: Bastien mesh couple research sync (Z2M/ZHA/profiles) + IEEE map. Update Test. |
-| **v9.0.1199** | TS0043/TS0042 remotes: snappy presses + no phantom-gang ghost. Use Flow Button pressed — not Developer Zigbee channels. |
-| **v9.0.1198** | Publish heal: HOBEIAN OCR collisions + ZG-301Z sacred couple + energy safety (P2692). Update Test. |
-| **v9.0.1197** | Battery remotes: stop powerCfg TX storms that empty CR2032 (P2691). Update Test. |
-| **v9.0.1196** | Ceiling radar (ZY-M100): restore lux + distance when find_switch goes cold while presence still works. Update Test, remove radar, re-add. |
-| **v9.0.1195** | Smarter battery % for coin cells and rechargeables — precise when low, without draining CR2032 or flooding the mesh. Update Test. |
-| **v9.0.1194** | Flow cards: list device actions and recent interactions on any app device. Update Test. |
-| **v9.0.1193** | Improved scene remote press latency and radiator valve pairing. |
-| **v9.0.1192** | Sleepy remotes (TS0041): lower battery TX — no powerCfg storm on wake, magic cooldown. Update Test. |
 
 <!-- CHANGELOG_END -->
 
