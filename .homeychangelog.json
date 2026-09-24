@@ -3947,5 +3947,9 @@
   "1.0.84": {
     "en": "Wall hybrid UI sync gated skipUiPulse (scene remotes keep tiles; black remotes crash-safe).",
     "fr": "Sync UI hybrid gate skipUiPulse (scene OK; noires crash-safe)."
+  },
+  "1.0.85": {
+    "en": "Restore hybrid parseZclHeader (P2616) + skipUiPulse UI gate.",
+    "fr": "Restaure parseZclHeader hybrid (P2616) + gate skipUiPulse."
   }
 }
