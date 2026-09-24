@@ -4030,5 +4030,9 @@
   "9.0.1216": {
     "en": "Publish heal: wall hybrid UI sync restored (skipUiPulse gate) + TS004x lean Flow crash-safe. Update Test.",
     "fr": "Heal publish: sync UI hybrid restaure (gate skipUiPulse) + Flow lean TS004x. Maj Test."
+  },
+  "9.0.1217": {
+    "en": "Publish heal: restore parseZclHeader on wall hybrid (P2616) + TS004x lean Flow. Update Test.",
+    "fr": "Heal publish: parseZclHeader hybrid (P2616) + Flow lean TS004x. Maj Test."
   }
 }
