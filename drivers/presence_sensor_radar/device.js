@@ -1092,7 +1092,8 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
       const cfg = this._getRadarConfig() || {};
       if (!cfg.enableFindSwitchOnBoot) return false;
       const luxAt = this._lastLuxPaintAt || this._lastDp103LuxAt || 0;
-      return !luxAt || (now - luxAt) > 90_000;
+      // WHY(P2715 / GH#550 @ 9.0.1207): lux "nearly dead" — re-arm sooner than 90s
+      return !luxAt || (now - luxAt) > 45_000;
     } catch (_e) {
       return false;
     }
@@ -1492,6 +1493,9 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
     // available). Drop 0-valued reports from THIS mfr on numeric DPs —
     // a real 0 (nobody present) is still surfaced via absence timeout,
     // not via the buggy stream.
+    // WHY(P2715 / Z2M#12069 / GH#550): gkfbdvyx also floods bogus 0 on
+    // move_sensitivity (DP2) / presence_sensitivity (DP102) — never overwrite
+    // Homey settings or collapse range → "dead past 3.5m" lookalike.
     if (rawValue === 0 || rawValue === '0') {
       const mfr = String(this.getSetting?.('zb_manufacturer_name') || '').toLowerCase();
       if (mfr === '_tze204_ya4ft0w4' && mapping && mapping.type !== 'bool') {
@@ -1500,6 +1504,10 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
         if (this._zeroFilterLogCount <= 3 || this._zeroFilterLogCount % 60 === 0) {
           this.log(`[RADAR] Zero-value report dropped (ZY-M100 firmware bug, DP${dp})`);
         }
+        return;
+      }
+      if (/gkfbdvyx|ya4ft0w4|laokfqwu/.test(mfr) && (dp === 2 || dp === 102)) {
+        this.log(`[RADAR] P2715 drop bogus sensitivity 0 (DP${dp})`);
         return;
       }
     }
@@ -1526,6 +1534,10 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
     if (value === 0 || value === '0') {
       const mfr = String(this.getSetting?.('zb_manufacturer_name') || '').toLowerCase();
       if (mfr === '_tze204_ya4ft0w4' && mapping && mapping.type !== 'bool') {
+        return;
+      }
+      // WHY(P2715 / Z2M#12069): drop bogus sensitivity 0 on ceiling V3
+      if (/gkfbdvyx|ya4ft0w4|laokfqwu/.test(mfr) && (dp === 2 || dp === 102)) {
         return;
       }
     }
@@ -2246,6 +2258,14 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
         const parsed = smartParse(raw, mapping.dpId || 9, { capability: 'measure_luminance.distance' });
         const n = Number(parsed);
         return Number.isFinite(n) ? n : null;
+      }
+      // WHY(P2715 / GH#550): dual-scale target distance (dm preferred, cm when ≥100)
+      if (mapping.radarDistanceScale === true) {
+        const { normalizeRadarTargetDistanceMeters } = require('../../lib/tuya/TuyaRadarRangeScale');
+        return normalizeRadarTargetDistanceMeters(raw, {
+          maxMeters: mapping.maxMeters || 12,
+          preferDivisor: mapping.preferDivisor || 10,
+        });
       }
       // WHY(P2580 / Z2M#32561): coerce signed VALUE garbage → uint32 before /divisor
       const { asUnsignedTuyaValue } = require('../../lib/tuya/TuyaUnsignedValue');
