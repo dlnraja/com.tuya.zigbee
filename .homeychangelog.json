@@ -4051,5 +4051,9 @@
   },
   "9.0.1222": {
     "en": "Fixed VicHY presence radar frozen readings — DP4 no longer painted as battery; lux uses DP104 (MTG075)."
+  },
+  "9.0.1223": {
+    "en": "Faster TS0042/TS0043 wireless remotes (snappy press to relay). Update + Repair remotes.",
+    "fr": "Telecommandes TS0042/TS0043 plus reactives. Maj + Repair."
   }
 }
