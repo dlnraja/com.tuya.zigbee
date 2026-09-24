@@ -4038,5 +4038,9 @@
   "9.0.1218": {
     "en": "Publish heal: strip alarm_battery conflict on remotes/climate (keep measure_battery %). Update Test.",
     "fr": "Heal publish: retire alarm_battery (conflit) sur remotes/climate — garde mesure %. Maj Test."
+  },
+  "9.0.1219": {
+    "en": "Battery: precise % from chemistry curves (LiFePO4, NiMH, Li-SOCl2, coin/alkaline/akku) + voltage fuse. Update Test.",
+    "fr": "Batterie: % precis via courbes chimie (LiFePO4, NiMH, Li-SOCl2, piles/akkus) + fuse tension. Maj Test."
   }
 }

@@ -71,6 +71,26 @@ Inspired by Z2M (awake-only configure, long minInterval), ZHA (no power bind on 
 
 Wire: UnifiedBatteryHandler · battery-reporting-manager · UnifiedSensorBase · ButtonDevice · PowerClusterPolicy · MeshFloodCalm.
 
+## P2710 — Chemistry precision curves (piles / akkumulators / lithium techno)
+
+Machine: [`config/architecture/battery-chemistry-curves-ssot.json`](../../config/architecture/battery-chemistry-curves-ssot.json)  
+Runtime: [`lib/battery/BatteryChemistryCurves.js`](../../lib/battery/BatteryChemistryCurves.js) (+ merge into `UnifiedBatteryHandler.BATTERY_SPECS`)  
+Gate: `npm run check:p2710` · Classify: **BOTH**
+
+| Family | Examples |
+|--------|----------|
+| Coin Li-MnO2 | CR2032, CR2450, CR2477, CR1632, CR1220 |
+| Alkaline | AA/AAA/… + Homey `1.5V_AA` / `1.5V_AAA` |
+| Akku | NiMH, NiCd, Li-ion, Li-polymer, 18650, LiHV, **LiFePO4** |
+| Lithium primary | CR123A, Li-SOCl2, ER14505 |
+
+- ZCL `batteryVoltage` = **100 mV** units (30 → 3.0 V) via `normalizeVoltagePrecise`
+- Voltage → % = non-linear curve + temp coeff — **never** `(V-2.5)/0.5`
+- Dual-signal fuse (P2689): flat ZCL 100% + low V → prefer curve on coin
+- `cr2032_curve` / `alkaline_curve` / `mv` Tuya algos route to curves (not `direct`)
+
+---
+
 ## LEGACY (do not extend)
 
 - `BatteryManagerV3` / `BatteryManagerV4`
