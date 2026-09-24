@@ -1,4 +1,8 @@
 {
+  "5.12.330": {
+    "en": "Reliability: clear leftover LIVE-DATA overlay after OOM; less work on sleepy remote press. Update Stable Test.",
+    "fr": "Fiabilite: purge overlay LIVE-DATA apres OOM; moins de travail au press telecommande. Maj Stable Test."
+  },
   "5.12.321": {
     "en": "TS004x remotes: faster Flow to relay + TS0041 pairing bleed fix. Update Stable Test; re-pair Unknown button nodes.",
     "fr": "Telecommandes TS004x: Flow vers relais plus rapide + correctif appairage TS0041. Maj Stable Test; re-appairer noeuds Inconnus."
