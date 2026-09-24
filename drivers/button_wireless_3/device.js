@@ -34,10 +34,11 @@ class Button3GangDevice extends ButtonDevice {
       productId: base.productId || 'TS0043',
       buttonCount: 3,
       maxButtons: 3,
-      debounceMs: Math.min(Number(base.debounceMs) || 80, 80),
-      crossPathDedupMs: Math.min(Number(base.crossPathDedupMs) || 120, 120),
-      appCommandWindow: Math.min(Number(base.appCommandWindow) || 250, 250),
-      doubleClickWindow: Math.min(Number(base.doubleClickWindow) || 160, 160),
+      // WHY(P2707): crash-safe lean Flow + skipUiPulse — Contre quoi Homey crash noir
+      debounceMs: Math.min(Number(base.debounceMs) || 25, 25),
+      crossPathDedupMs: Math.min(Number(base.crossPathDedupMs) || 40, 40),
+      appCommandWindow: Math.min(Number(base.appCommandWindow) || 180, 180),
+      doubleClickWindow: Math.min(Number(base.doubleClickWindow) || 120, 120),
       collapsePhantomEndpoints: true,
       sceneSwitch: true,
       zcl200IsPercent: true,
@@ -45,7 +46,8 @@ class Button3GangDevice extends ButtonDevice {
       skipSoftwareHoldRelease: true,
       disableLevelControlComplement: true,
       snappyRelayFlow: true,
-      source: base.source || 'P2702_button_wireless_3',
+      skipUiPulse: true,
+      source: base.source || 'P2707_button_wireless_3_crash_safe',
     });
   }
 
@@ -69,9 +71,11 @@ class Button3GangDevice extends ButtonDevice {
           pid: 'TS0043',
           clustersEp1: [0, 1, 6, 57344],
           noEf00: true,
-          ieeeHint: 'a4:c1:38:f6:3d:2d:c9:79',
+          // WHY(P2703): live mesh Node 7 = 5b:91:98… (Homey Appareil Zigbee); prior f6:3d OFF_MESH
+          ieeeHint: 'a4:c1:38:5b:91:98:dd:55',
+          ieeeHintPrior: 'a4:c1:38:f6:3d:2d:c9:79',
         };
-        this.log('[P2629] TS0043 sticky interview profile (0xFD/E000, battery EP1, no EF00)');
+        this.log('[P2629/P2703] TS0043 sticky interview profile (0xFD/E000, battery EP1, no EF00)');
       }
     } catch (_e) { /* soft */ }
 
