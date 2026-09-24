@@ -54,6 +54,7 @@
     "soil_sensor",
     "illuminance_sensor"
   ],
-  "alwaysKeepPrefixes": ["button_", "switch_", "wall_switch_", "remote_"],
-  "contreQuoi": "Full 400+ driver Bastien upload → Athom socket hang → tip stuck on 1.0.93 while remotes dead"
+  "alwaysKeepPrefixes": [],
+  "contreQuoi": "Full 400+ driver Bastien upload → Athom socket hang / invalid_state → tip stuck on 1.0.93 while remotes dead. Soft flow-keep left 1500+ orphan cards (#106).",
+  "notes": "P2726: empty alwaysKeepPrefixes — only keepDriverIds (house mesh + small buffer). Flow cards kept only when id starts with kept driver id."
 }

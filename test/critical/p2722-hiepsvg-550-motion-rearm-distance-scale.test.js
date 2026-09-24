@@ -36,12 +36,31 @@ describe('P2722 HiepSVG #550 motion re-arm + distance display scale', () => {
   it('device.js wires P2722 re-arm + pre-scale soft-clear', () => {
     const src = fs.readFileSync(DEVICE, 'utf8');
     assert.ok(src.includes('_rearmMotionFromDistanceDelta'));
-    assert.ok(src.includes('P2722 re-arm motion'));
+    assert.ok(src.includes('P2722') && src.includes('re-arm motion'));
     assert.ok(src.includes('distanceDisplayScale'));
     assert.ok(src.includes('keep pre-scale meters for soft-clear'));
     assert.match(src, /_softClearStuckPresenceOnZeroDistance\(logicDistance/);
-    assert.ok(src.includes('sticky-ignore after leave — do not re-arm ghost motion')
-      || src.includes('Sticky-ignore after leave'));
+  });
+
+  it('P2725: motion re-arm not blocked by sticky-DP1; sitting d>1m skips stagnant soft-clear', () => {
+    const src = fs.readFileSync(DEVICE, 'utf8');
+    assert.ok(src.includes('P2722/P2725 re-arm motion') || src.includes('P2725'));
+    assert.ok(src.includes('sitting still at d>1m'));
+    assert.ok(src.includes('splitMotionPresence === true && d > 1.0'));
+    // Contre quoi: sticky block inside rearm must stay gone
+    const fnStart = src.indexOf('_rearmMotionFromDistanceDelta');
+    const fn = src.slice(fnStart, fnStart + 1200);
+    assert.ok(!/Sticky-ignore after leave — do not re-arm ghost motion/.test(fn));
+  });
+
+  it('P2725 ceiling: motionThrottleMs softened + lux debounce off', () => {
+    // eslint-disable-next-line import/no-dynamic-require, global-require
+    const mod = require(CONFIGS);
+    const c = (mod.SENSOR_CONFIGS || mod).ZY_M100_CEILING_24G
+      || Object.values(mod.SENSOR_CONFIGS || mod).find((x) => x && x.configName === 'ZY_M100_CEILING_24G');
+    assert.ok(c);
+    assert.ok(Number(c.motionThrottleMs) <= 3000);
+    assert.equal(c.ultraAggressiveDebounce, false);
   });
 
   it('display scale 0.9 maps Homey 1.2 → tape ~1.08 (Hiep 1.2→1)', () => {

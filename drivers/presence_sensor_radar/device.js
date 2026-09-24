@@ -2121,6 +2121,19 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
         this._zeroDistSinceMs = 0;
       }
 
+      // WHY(P2725 / GH#550 HiepSVG @ 9.0.1236): ceiling splitMotionPresence —
+      // sitting still at d>1m (human YES, motion NO) is NORMAL, not bathroom wall ghost.
+      // Stagnant/micro-jitter soft-clear was wiping presence + arming 120s sticky →
+      // motion locked NO, human flapping YES, distance/lux felt "locked/slow".
+      // Empty room still clears via path (a) near-zero distance.
+      if (config.splitMotionPresence === true && d > 1.0) {
+        this._stableDistSinceMs = 0;
+        this._stableDistAnchor = d;
+        this._quantizedStagnantSinceMs = 0;
+        this._jitterSamples = null;
+        return;
+      }
+
       // (c) WHY(P2587): VMC / fan micro-motion — lux+distance still update, DP1 stuck true
       if (this._trySoftClearMicroJitter(d, now, config)) {
         return;
@@ -2383,9 +2396,10 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
       const thr = Number(config.rearmMotionDistanceDeltaM) > 0
         ? Number(config.rearmMotionDistanceDeltaM) : 0.15;
       if (Math.abs(d - prev) < thr) return false;
-      // Sticky-ignore after leave — do not re-arm ghost motion
-      if (this._ignoreStickyDp1Until && Date.now() < this._ignoreStickyDp1Until) return false;
-      this.log(`[RADAR] P2722 re-arm motion (Δd=${Math.abs(d - prev).toFixed(2)}m while human)`);
+      // WHY(P2725 / GH#550 HiepSVG @ 9.0.1236): soft-clear arms sticky-DP1 ignore (≤120s)
+      // to block ghost *presence* — but motion re-arm while human YES must still run
+      // (else motion stays locked NO after stillness + walk). Sticky stays for DP1/presence paths.
+      this.log(`[RADAR] P2722/P2725 re-arm motion (Δd=${Math.abs(d - prev).toFixed(2)}m while human)`);
       this.safeSetCapabilityValue('alarm_motion', true).catch(() => {});
       return true;
     } catch (_e) {
