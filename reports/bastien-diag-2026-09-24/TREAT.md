@@ -1,36 +1,34 @@
-# Bastien diag 27b0bd04 + Instagram — P2718 OOM
+# Bastien diag 27b0bd04 — P2718 + P2720
 
-Silent treat. No forum POST. Instagram DMs/vocaux: WebBridge had no IG session this turn — Gmail diags are SSOT.
+Silent treat. No forum POST. Gmail thread `1a0cee90e628df4b` (3 diags). No newer Bastien diag after 27b0bd04. Build #100 (1.0.91) was testing — tip-lag: house still reported on **1.0.82**.
 
 ## Timeline
-| When | Tip | Log | User |
-|------|-----|-----|------|
-| 23 Sep 15:36Z | 1.0.76 | `1f4dcf2e` | TS0042 latency; TS0041/43 unknown |
-| 23 Sep 22:09Z | 1.0.80 | `e1654535` | TS0041 OK; TS0042/43 trop lent |
-| **24 Sep 06:56Z** | **1.0.82** | **`27b0bd04`** | **Aucun des 3 boutons ne fonctionne** |
+| When | Tip | UUID | Symptom |
+|------|-----|------|---------|
+| 23 Sep 15:36Z | 1.0.76 | `1f4dcf2e` | TS0042 latency |
+| 23 Sep 22:09Z | 1.0.80 | `e1654535` | TS0042/43 slow |
+| **24 Sep 06:56Z** | **1.0.82** | **`27b0bd04`** | **Aucun des 3 boutons** |
 
-## Root cause (27b0bd04)
-1. Presses **do** RX (`0xFD` + `triggerButtonPress snappy`) then app **heap OOM → SIGABRT**.
-2. LIVE-DATA merged ~1500 segment rows **without modelIds** → `_validatePayload` rejected **after** RAM spent.
-3. `getDeviceProfile` called 8+/press with log+spread → CPU/heap storm under Homey 64MB.
-4. Tip-lag: Bastien still on **1.0.82**; tip was already ≥1.0.89 (P2714 latency) but OOM path remained.
+## Root cause
+1. Presses RX OK (`0xFD` snappy) → heap OOM → SIGABRT (LIVE-DATA junk merge + profile spam).
+2. P2718 tip **1.0.91** skips OTA overlay but **did not purge** leftover `live_data_overlay` from ≤1.0.82.
+3. If BootBudget `!allowHeavy` after OOM, LiveDataUpdater never started → overlay never cleared.
+4. Button press still logged + allocated battery path before skipBatteryReporting return.
 
-## Fix P2718 (BOTH + Bastien)
-- LiveDataUpdater: couple-only merge (`modelIds` required), MAX_ENTRIES 800, MAX_SEGMENTS 6
-- Bastien app id: **skip OTA overlay entirely**
-- PhysicalButtonMixin: cache profile + log-once; invalidate on MFR-ENSURE
+## Fix P2720 (BOTH + Bastien)
+- LiveDataUpdater Bastien: **unset** `live_data_overlay` + `live_data_version` then return
+- Bastien `app.js`: always start LiveDataUpdater for purge; skip PredictiveHealth timers
+- ButtonDevice: early return on skipBatteryReporting before “reading battery” log
 
 ## Tips
 | App | Tip |
 |-----|-----|
-| Bastien | **1.0.91** |
-| Universal | **9.0.1229** |
-| Stable | **5.12.329** |
+| Bastien | **1.0.92** |
+| Universal | **9.0.1231** |
+| Stable | **5.12.330** |
 
-## User
-1. Update **Zigbee Bastien** Test → ≥**1.0.91**
-2. Restart app (or reboot Homey) once after update
-3. Press TS0041/42/43 once — Flow → relais
-4. If Settings still blanc: already fixed P2717 (≥1.0.90)
-
-Instagram: if Bastien sent new vocaux after this diag, forward UUID / re-send diag — no IG access from agent this turn.
+## User (Bastien)
+1. Update **Zigbee Bastien** Test → ≥**1.0.92** (not 1.0.82 / not wait on #100 alone if still 1.0.91)
+2. Restart app once after update (purge runs at start)
+3. Press TS0041 / TS0042 / TS0043 — Flow → relays
+4. If still dead: send new diag UUID
