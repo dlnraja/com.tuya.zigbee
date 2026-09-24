@@ -3,26 +3,12 @@
 <head>
   <meta charset="utf-8">
   <title>Zigbee Bastien Settings</title>
-  <script type="text/javascript" src="/homey.js" data-origin="settings"></script>
   <!--
-    P2623: Homey shows a blank infinite loader until Homey.ready().
-    Define onHomeyReady BEFORE any heavy script so a zigbee-map / DOM failure
-    cannot trap the settings WebView forever. Full UI boots via __tuyaSettingsBoot.
+    P2717 / P2623: Athom hides settings behind an infinite spinner until Homey.ready().
+    Load /homey.js only in <head>. Define onHomeyReady at end of <body> (Athom docs).
+    Never put heavy scripts (zigbee-map) before ready() — Contre quoi blank page.
   -->
-  <script>
-    function onHomeyReady(homey) {
-      try { window.__homeySettings = homey; } catch (e0) {}
-      try { homey.ready(); } catch (e1) {}
-      try {
-        if (typeof window.__tuyaSettingsBoot === 'function') {
-          setTimeout(function () {
-            try { window.__tuyaSettingsBoot(homey); } catch (e2) { console.error('settings boot', e2); }
-          }, 0);
-        }
-      } catch (e3) {}
-    }
-    try { window.onHomeyReady = onHomeyReady; } catch (e4) {}
-  </script>
+  <script type="text/javascript" src="/homey.js" data-origin="settings"></script>
   <style>
     body {
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
@@ -555,13 +541,13 @@
     <b>Tip:</b> If a device doesn't work, remove it, factory reset (hold button 5-10s), then re-pair close to Homey.
   </div>
 
-  <!-- Loaded AFTER ready-stub so a map parse error cannot block Homey.ready() -->
-  <script src="zigbee-map.js"></script>
+  <!-- P2717: zigbee-map.js lazy-loaded on mesh click — never sync before Homey.ready() -->
   <script>
     var Homey = null;
     var tuyaSecretConfigured = false;
     var smartThingsSecretConfigured = false;
     var __settingsBooted = false;
+    var __zigbeeMapLoading = false;
 
     function el(id) { return document.getElementById(id); }
     function enableBtn(id) {
@@ -854,13 +840,33 @@
     }
 
     /**
-     * P2623: heavy UI boot AFTER Homey.ready() (see head stub).
-     * Contre quoi: blank infinite loader when mesh/WiFi auto-scan freezes WebView.
+     * P2717: lazy-load zigbee-map.js only when user opens mesh (never block ready).
      */
-    window.__tuyaSettingsBoot = function (homey) {
+    function loadZigbeeMapScript(done) {
+      if (window.TuyaZigbeeMap) { done(); return; }
+      if (__zigbeeMapLoading) return;
+      __zigbeeMapLoading = true;
+      var s = document.createElement('script');
+      s.src = 'zigbee-map.js';
+      s.async = true;
+      s.onload = function () { __zigbeeMapLoading = false; done(); };
+      s.onerror = function () {
+        __zigbeeMapLoading = false;
+        console.error('zigbee-map.js failed to load');
+        done(new Error('map load failed'));
+      };
+      document.head.appendChild(s);
+    }
+
+    /**
+     * Heavy UI AFTER Homey.ready() — never block the Athom spinner dismiss.
+     * Contre quoi: blank infinite loader (mesh/WiFi/API on open).
+     */
+    function bootSettingsUi(homey) {
       if (__settingsBooted) return;
       __settingsBooted = true;
-      try { Homey = homey || window.__homeySettings; } catch (x) {}
+      Homey = homey;
+      try { window.__homeySettings = homey; } catch (x0) {}
       if (!Homey) return;
 
       enableBtn('btn-save');
@@ -890,7 +896,7 @@
       var btnWifiLan = el('btn-wifi-lan-refresh');
       if (btnWifiLan) {
         btnWifiLan.addEventListener('click', function () { refreshWifiLanMap(); });
-        // P2623: do NOT auto-scan LAN/TCP on open — freezes Homey settings WebView
+        // P2717: do NOT auto-scan LAN/TCP on open — freezes Homey settings WebView
       }
 
       var btnShowMesh = el('btn-show-mesh');
@@ -899,24 +905,41 @@
           var card = el('mesh-card');
           if (card) card.style.display = '';
           btnShowMesh.style.display = 'none';
-          try {
-            if (window.TuyaZigbeeMap && typeof window.TuyaZigbeeMap.init === 'function') {
-              window.TuyaZigbeeMap.init(Homey);
-            }
-          } catch (x) { console.error('mesh init', x); }
+          loadZigbeeMapScript(function (err) {
+            if (err) return;
+            try {
+              if (window.TuyaZigbeeMap && typeof window.TuyaZigbeeMap.init === 'function') {
+                window.TuyaZigbeeMap.init(Homey);
+              }
+            } catch (x) { console.error('mesh init', x); }
+          });
         });
       }
 
-      // Defer device list — non-blocking
       setTimeout(function () {
         try { populateDevices(); } catch (x) { console.error('populateDevices', x); }
-      }, 50);
-    };
-
-    // If Homey called ready before this script finished parsing, finish boot now
-    if (window.__homeySettings) {
-      try { window.__tuyaSettingsBoot(window.__homeySettings); } catch (e) {}
+      }, 200);
     }
+
+    /**
+     * Athom-required global — MUST call Homey.ready() first (P2717).
+     * Docs: https://apps.developer.homey.app/advanced/custom-views/app-settings
+     */
+    function onHomeyReady(homey) {
+      try {
+        if (homey && typeof homey.ready === 'function') {
+          homey.ready();
+        }
+      } catch (eReady) {
+        console.error('Homey.ready failed', eReady);
+      }
+      try {
+        setTimeout(function () {
+          try { bootSettingsUi(homey); } catch (eBoot) { console.error('settings boot', eBoot); }
+        }, 0);
+      } catch (eSched) {}
+    }
+    try { window.onHomeyReady = onHomeyReady; } catch (eWin) {}
   </script>
 </body>
 </html>
