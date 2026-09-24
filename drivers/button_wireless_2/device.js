@@ -32,11 +32,11 @@ class Button2GangDevice extends ButtonDevice {
       protocol: 'hybrid',
       productId: 'TS0042',
       buttonCount: 2,
-      // WHY(P2702 / diag 1f4dcf2e): button→relay felt huge at 200ms — 80/120
-      debounceMs: 80,
-      crossPathDedupMs: 120,
-      appCommandWindow: 250,
-      doubleClickWindow: 160,
+      // WHY(P2706 / Bastien): 80ms still slow + cross-lag TS0041 — 40/60 + skipUiPulse
+      debounceMs: 40,
+      crossPathDedupMs: 60,
+      appCommandWindow: 200,
+      doubleClickWindow: 140,
       skip8004: true,
       writeSceneAttr: false,
       sceneSwitch: true,
@@ -45,11 +45,13 @@ class Button2GangDevice extends ButtonDevice {
       // WHY(P2691 / Bastien 885a9901): never powerCfg TX on press — CR2032 drain
       skipBatteryReporting: true,
       batteryEpOnly: 1,
+      zcl200IsPercent: true,
       collapsePhantomEndpoints: true,
       skipSoftwareHoldRelease: true,
       disableLevelControlComplement: true,
       snappyRelayFlow: true,
-      source: base.source || 'P2702_button_wireless_2_ts0042',
+      skipUiPulse: true,
+      source: base.source || 'P2706_button_wireless_2_ts0042',
     });
   }
 
