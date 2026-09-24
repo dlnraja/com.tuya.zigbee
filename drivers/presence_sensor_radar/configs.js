@@ -246,6 +246,12 @@ const SENSOR_CONFIGS = {
     antiFalsePositive: true,
     // WHY(P2719 / Z2M state none|presence|move): Homey motion ≠ human presence
     splitMotionPresence: true,
+    // WHY(P2722 / GH#550 HiepSVG @ 9.0.1232): after stillness DP1 sticks at 1 —
+    // re-arm alarm_motion when distance deltas while human YES (MCU often skips enum 2).
+    rearmMotionOnDistanceDelta: true,
+    rearmMotionDistanceDeltaM: 0.15,
+    // WHY(P2722): Homey shows ~1.2× tape — ceiling display scale 0.9 (UI only; soft-clear uses pre-scale).
+    distanceDisplayScale: 0.9,
     motionThrottleEnabled: true,
     motionThrottleMs: 10000,
     motionDebounceMs: 5000,
