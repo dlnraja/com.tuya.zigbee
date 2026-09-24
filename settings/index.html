@@ -3,25 +3,11 @@
 <head>
   <meta charset="utf-8">
   <title>Tuya Unified Settings</title>
-  <script type="text/javascript" src="/homey.js" data-origin="settings"></script>
   <!--
-    P2623: Homey blank infinite loader until Homey.ready().
-    Call ready() first; defer UI via __tuyaSettingsBoot.
+    P2717 / P2623: Athom hides settings behind an infinite spinner until Homey.ready().
+    Load /homey.js only in <head>. Define onHomeyReady at end of <body> (Athom docs).
   -->
-  <script>
-    function onHomeyReady(homey) {
-      try { window.__homeySettings = homey; } catch (e0) {}
-      try { homey.ready(); } catch (e1) {}
-      try {
-        if (typeof window.__tuyaSettingsBoot === 'function') {
-          setTimeout(function () {
-            try { window.__tuyaSettingsBoot(homey); } catch (e2) { console.error('settings boot', e2); }
-          }, 0);
-        }
-      } catch (e3) {}
-    }
-    try { window.onHomeyReady = onHomeyReady; } catch (e4) {}
-  </script>
+  <script type="text/javascript" src="/homey.js" data-origin="settings"></script>
 
   <style>
     body {
@@ -630,10 +616,16 @@
     }
 
     var __settingsBooted = false;
-    window.__tuyaSettingsBoot = function (homey) {
+
+    /**
+     * Heavy UI AFTER Homey.ready() — never block the Athom spinner dismiss.
+     * Contre quoi: blank infinite loader on settings open (P2717).
+     */
+    function bootSettingsUi(homey) {
       if (__settingsBooted) return;
       __settingsBooted = true;
-      try { Homey = homey || window.__homeySettings; } catch (x) {}
+      Homey = homey;
+      try { window.__homeySettings = homey; } catch (x0) {}
       if (!Homey) return;
       try {
         var bs = document.getElementById('btn-save'); if (bs) bs.disabled = false;
@@ -651,11 +643,28 @@
         Homey.get('issue_report_endpoint', function(e, v) { if (v) document.getElementById('ire').value = v; });
         Homey.get('experimental_smart_adapt', function(e, v) { var sa = document.getElementById('sa'); if (sa) sa.checked = !!v; });
       } catch (eGet) { console.error(eGet); }
-      setTimeout(function () { try { populateDevices(); } catch (x) {} }, 50);
-    };
-    if (window.__homeySettings) {
-      try { window.__tuyaSettingsBoot(window.__homeySettings); } catch (e) {}
+      setTimeout(function () { try { populateDevices(); } catch (x) {} }, 200);
     }
+
+    /**
+     * Athom-required global — MUST call Homey.ready() first (P2717).
+     * Docs: https://apps.developer.homey.app/advanced/custom-views/app-settings
+     */
+    function onHomeyReady(homey) {
+      try {
+        if (homey && typeof homey.ready === 'function') {
+          homey.ready();
+        }
+      } catch (eReady) {
+        console.error('Homey.ready failed', eReady);
+      }
+      try {
+        setTimeout(function () {
+          try { bootSettingsUi(homey); } catch (eBoot) { console.error('settings boot', eBoot); }
+        }, 0);
+      } catch (eSched) {}
+    }
+    try { window.onHomeyReady = onHomeyReady; } catch (eWin) {}
   </script>
 </body>
 </html>
