@@ -32,9 +32,9 @@ class Button2GangDevice extends ButtonDevice {
       protocol: 'hybrid',
       productId: 'TS0042',
       buttonCount: 2,
-      // WHY(P2706 / Bastien): 80ms still slow + cross-lag TS0041 — 40/60 + skipUiPulse
-      debounceMs: 40,
-      crossPathDedupMs: 60,
+      // WHY(P2707 / Bastien crash): lean Flow + 25/40 — Contre quoi Homey OOM on black remote
+      debounceMs: 25,
+      crossPathDedupMs: 40,
       appCommandWindow: 200,
       doubleClickWindow: 140,
       skip8004: true,
@@ -51,7 +51,7 @@ class Button2GangDevice extends ButtonDevice {
       disableLevelControlComplement: true,
       snappyRelayFlow: true,
       skipUiPulse: true,
-      source: base.source || 'P2706_button_wireless_2_ts0042',
+      source: base.source || 'P2707_button_wireless_2_crash_safe',
     });
   }
 
