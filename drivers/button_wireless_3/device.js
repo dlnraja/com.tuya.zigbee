@@ -34,10 +34,11 @@ class Button3GangDevice extends ButtonDevice {
       productId: base.productId || 'TS0043',
       buttonCount: 3,
       maxButtons: 3,
-      debounceMs: Math.min(Number(base.debounceMs) || 80, 80),
-      crossPathDedupMs: Math.min(Number(base.crossPathDedupMs) || 120, 120),
-      appCommandWindow: Math.min(Number(base.appCommandWindow) || 250, 250),
-      doubleClickWindow: Math.min(Number(base.doubleClickWindow) || 160, 160),
+      // WHY(P2706): ultra-snappy + skipUiPulse — Contre quoi crash noir + lag TS0041
+      debounceMs: Math.min(Number(base.debounceMs) || 40, 40),
+      crossPathDedupMs: Math.min(Number(base.crossPathDedupMs) || 60, 60),
+      appCommandWindow: Math.min(Number(base.appCommandWindow) || 200, 200),
+      doubleClickWindow: Math.min(Number(base.doubleClickWindow) || 140, 140),
       collapsePhantomEndpoints: true,
       sceneSwitch: true,
       zcl200IsPercent: true,
@@ -45,7 +46,8 @@ class Button3GangDevice extends ButtonDevice {
       skipSoftwareHoldRelease: true,
       disableLevelControlComplement: true,
       snappyRelayFlow: true,
-      source: base.source || 'P2702_button_wireless_3',
+      skipUiPulse: true,
+      source: base.source || 'P2706_button_wireless_3',
     });
   }
 
