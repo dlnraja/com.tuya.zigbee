@@ -631,6 +631,10 @@
     "p2706_p2708_ts004x_ultra_snappy_crash_safe": {
       "tag": "BOTH",
       "note": "TS004x lean primary Flow (no full cascade await) + skipUiPulse/skipCharter + ZCL% battery + fire-and-forget hybrid — Bastien black remotes crash/lag; Stable surgical"
+    },
+    "p2710_battery_chemistry_precision_curves": {
+      "tag": "BOTH",
+      "note": "Precise % + volts via non-linear curves per pile/akku/lithium techno (LiFePO4, NiMH, Li-SOCl2…) — no linear (V-2.5)/0.5; Stable surgical"
     }
   }
 }
