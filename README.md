@@ -33,10 +33,10 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 
 | Metric | Value |
 |--------|-------|
-| **App Version** | v9.0.1238 |
+| **App Version** | v9.0.1239 |
 | **Drivers** | 434 (381 Zigbee + 53 WiFi) |
 | **Unique Fingerprints** | 4,696 |
-| **Pairing Variants** | 18,792 (4 case combos per fingerprint) |
+| **Pairing Variants** | 18,788 (4 case combos per fingerprint) |
 | **Unique Product IDs** | 929 |
 | **Flow Cards** | 5,995 |
 | **Unique Capabilities** | 170 |
@@ -103,6 +103,7 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 
 | Version | Changes |
 |---------|---------|
+| **v9.0.1239** | Publish heal: strip scene remotes wkai4ga5/a4xycprs from button_wireless_4 + P2725 radar. Update Test. |
 | **v9.0.1238** | Ceiling radar (gkfbdvyx): sitting still no longer false-clears presence; motion re-arms while sticky ignore; lux less laggy. Update Test … |
 | **v9.0.1236** | Sleepy remotes: settings energy-opt must not configureReporting battery (TX storm). Bastien tip 1.0.95. |
 | **v9.0.1235** | Publish heal: wkai4ga5 stays scene_switch_4 (not button_wireless_4). Update Test. |
@@ -114,7 +115,6 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 | **v9.0.1229** | Remotes: stop Homey OOM crash that killed all buttons after press. Update Test + restart app once. |
 | **v9.0.1228** | App Settings: fix infinite spinner / blank page (Homey.ready). Update Test. |
 | **v9.0.1227** | TS0043 _TZ3000_famkxci2 stays Wireless Button 3 (no Generic Zigbee). Update Test; remove Generic device; add Universal Tuya → Wireless Bu… |
-| **v9.0.1226** | Publish gate: MTG075 profile notes + ceiling radar P2715. Update + Repair radar. |
 
 <!-- CHANGELOG_END -->
 
