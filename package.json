@@ -1,6 +1,6 @@
 {
   "name": "com.dlnraja.tuya.zigbee",
-  "version": "9.0.1213",
+  "version": "9.0.1214",
   "description": "Tuya Unified Zigbee - Local-first control with AI automation",
   "main": "app.js",
   "scripts": {
@@ -576,7 +576,8 @@
     "check:p2702": "node --test test/critical/p2702-bastien-ts004x-unknown-snappy.test.js",
     "check:p2704": "node --test test/critical/p2704-bastien-fleet-snappy-frontpin.test.js",
     "check:p2706": "node --test test/critical/p2706-bastien-ts004x-ultra-snappy-isolate.test.js",
-    "check:p2705": "node --test test/critical/p2705-hiepsvg-550-lux-cold-settings.test.js"
+    "check:p2705": "node --test test/critical/p2705-hiepsvg-550-lux-cold-settings.test.js",
+    "check:p2706b": "node --test test/critical/p2706b-wkai4ga5-a4xycprs-not-bw4.test.js"
   },
   "keywords": [
     "homey",
