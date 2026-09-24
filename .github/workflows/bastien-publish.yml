@@ -239,8 +239,21 @@ jobs:
         run: node .github/scripts/auto-publish-draft.js
 
       - name: Verify Bastien Test channel
+        id: verify_bastien_test
+        # WHY(P2723): 1.0.94 soft-continued on processing_failed while Homey stayed on 1.0.93 —
+        # job looked green; house tip-lag. Announce clearly; soft-continue still avoids bump-loop spam.
         continue-on-error: true
         env:
           HOMEY_PAT: ${{ secrets.HOMEY_PAT }}
           TARGET_APP_ID: ${{ env.EXPECTED_APP_ID }}
-        run: node .github/scripts/verify-test-version.js || true
+        run: |
+          set +e
+          node .github/scripts/verify-test-version.js
+          rc=$?
+          set -e
+          if [ "$rc" -ne 0 ]; then
+            echo "::warning::Bastien Test verify did not confirm tip — check Athom for processing_failed / tip-lag on Homey Pro"
+            echo "bastien_test_ok=false" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+          echo "bastien_test_ok=true" >> "$GITHUB_OUTPUT"
