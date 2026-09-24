@@ -4103,5 +4103,9 @@
   "9.0.1229": {
     "en": "Remotes: stop Homey OOM crash that killed all buttons after press. Update Test + restart app once.",
     "fr": "Telecommandes: stop crash OOM Homey qui tuait tous les boutons apres un appui. Maj Test + redemarrer app."
+  },
+  "9.0.1236": {
+    "en": "Sleepy remotes: settings energy-opt must not configureReporting battery (TX storm). Bastien tip 1.0.95.",
+    "fr": "Telecommandes: energy-opt settings ne doit plus configureReporting batterie (TX storm). Bastien tip 1.0.95."
   }
 }
