@@ -39,11 +39,10 @@ class Button1GangDevice extends ButtonDevice {
       collapsePhantomEndpoints: true,
       mapAllEndpointsToButton1: true,
       skipBatteryReporting: true,
-      // WHY(P2706): ultra-snappy for Bastien axpdxqgu+TS0041
-      debounceMs: Math.min(Number(base.debounceMs) || 40, 40),
-      crossPathDedupMs: Math.min(Number(base.crossPathDedupMs) || 60, 60),
+      // WHY(P2707/P2708): ultimate snappy for Bastien axpdxqgu+TS0041
+      debounceMs: Math.min(Number(base.debounceMs) || 25, 25),
+      crossPathDedupMs: Math.min(Number(base.crossPathDedupMs) || 40, 40),
       snappyRelayFlow: true,
-      zcl200IsPercent: true,
     });
   }
 

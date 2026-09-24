@@ -34,8 +34,8 @@
       "purpose": "Innovation + soak (features + reliability)",
       "cloneHint": "Documents/homey/master",
       "publish": "Auto-Publish on Push → Homey Test",
-      "tipHealthy": "9.0.1196",
-      "tipNote": "P2687 interaction Flow + P2689 adaptive battery; P139 soft-continue on PF emails"
+      "tipHealthy": "9.0.1215",
+      "tipNote": "P2707/P2708 TS004x lean Flow crash-safe + snappy isolate + battery %; P2687 SoftFeature"
     },
     "stable": {
       "branch": "stable-v5",
@@ -45,8 +45,8 @@
       "purpose": "Reliability LTS only — no feature managers unless human-promoted",
       "cloneHint": "Documents/homey/stable",
       "publish": "Publish Stable → Test (APP_ID=.stable only); P139 no spam republish",
-      "tipHealthy": "5.12.309",
-      "tipNote": "P2689 adaptive battery BOTH; no P2687 SoftFeature"
+      "tipHealthy": "5.12.322",
+      "tipNote": "P2707/P2708 TS004x lean Flow crash-safe BOTH; no P2687 SoftFeature"
     },
     "bastien": {
       "branch": "bastien-home",
@@ -57,8 +57,8 @@
       "cloneHint": "Documents/homey/bastien",
       "publish": "Publish Zigbee Bastien workflow / homey app publish — App ID .bastien only; NEVER Universal or Stable slots",
       "enrichment": "bastien_to_public_only",
-      "tipHealthy": "1.0.66",
-      "tipNote": "P2687 house Flow + P2689 battery; promote upstream surgically"
+      "tipHealthy": "1.0.83",
+      "tipNote": "P2708 TS004x full feedback matrix live; promote upstream surgically"
     }
   },
   "identityNeverCopy": [
@@ -627,6 +627,10 @@
     "p2683_p2686_bastien_ts004x_diag": {
       "tag": "BOTH",
       "note": "Bastien TS004x latency/UX + skipBatteryReporting pile calm + hold-release ghost + TRV p3dbf6qs sacred-keep"
+    },
+    "p2706_p2708_ts004x_ultra_snappy_crash_safe": {
+      "tag": "BOTH",
+      "note": "TS004x lean primary Flow (no full cascade await) + skipUiPulse/skipCharter + ZCL% battery + fire-and-forget hybrid — Bastien black remotes crash/lag; Stable surgical"
     }
   }
 }
