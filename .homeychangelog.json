@@ -4045,5 +4045,8 @@
   },
   "9.0.1220": {
     "en": "Improved Tuya datapoint TX framing and Wireless Button 3 pairing instructions (fleet treat)."
+  },
+  "9.0.1221": {
+    "en": "Fixed Advanced Flows lag from presence radar heal storms (VicHY). Quieter phantom-cap maintenance."
   }
 }
