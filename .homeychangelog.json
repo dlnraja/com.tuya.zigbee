@@ -1,4 +1,8 @@
 {
+  "1.0.83": {
+    "en": "Bastien remotes: TS0041 faster; TS0042/43 snappy + no TS0041 lag; battery % fix; black remotes crash-safe. Update Test.",
+    "fr": "Telecommandes Bastien: TS0041 plus rapide; TS0042/43 snappy + sans lag TS0041; batterie %; noirs anti-crash. Maj Test."
+  },
   "1.0.82": {
     "en": "Black TS0042/TS0043: stop Homey app crashes on press; leaner Flow path. Update Bastien Test.",
     "fr": "Boutons noirs TS0042/TS0043: stop crash app Homey au press; chemin Flow allégé. Maj Test Bastien."
