@@ -1,4 +1,8 @@
 {
+  "1.0.93": {
+    "en": "Remotes: faster rapid off/on (no ~7s dead window); less lag when TS0042/43 fire. Update Bastien Test + restart once.",
+    "fr": "Telecommandes: off/on rapide (plus de ~7s morts); moins de lag quand TS0042/43 tirent. Maj Test Bastien + restart."
+  },
   "1.0.92": {
     "en": "Bastien remotes: purge leftover LIVE-DATA overlay (fixes all dead after OOM); leaner button press. Update Bastien Test ≥1.0.92 + restart once.",
     "fr": "Telecommandes Bastien: purge overlay LIVE-DATA (plus rien mort apres OOM); press plus leger. Maj Test Bastien ≥1.0.92 + restart une fois."
