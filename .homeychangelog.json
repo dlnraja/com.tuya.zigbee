@@ -2013,5 +2013,9 @@
   "5.12.325": {
     "en": "Publish heal: scene remotes off button_wireless_4 + TS004x lean Flow. Update Test.",
     "fr": "Heal: telecommandes scene hors bw4 + Flow lean TS004x. Maj Test."
+  },
+  "5.12.326": {
+    "en": "Battery: precise % from chemistry curves (LiFePO4, NiMH, coin/akku) + voltage. Update Test.",
+    "fr": "Batterie: % precis courbes chimie (LiFePO4, NiMH, piles/akkus) + tension. Maj Test."
   }
 }
