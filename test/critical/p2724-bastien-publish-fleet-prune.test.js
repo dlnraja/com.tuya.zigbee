@@ -85,4 +85,44 @@ describe('P2724 Bastien house-fleet publish prune', () => {
     const u = pruneBastienPublishFleet(appJson);
     assert.strictEqual(u.skipped, true);
   });
+
+  it('P2726: rewrite orphan radar_sensor asset paths (Athom #107)', () => {
+    const { pruneBastienPublishFleet } = require(PRUNE);
+    const tmp = fs.mkdtempSync(path.join(os.tmpdir(), 'p2726-'));
+    const appJson = path.join(tmp, 'app.json');
+    const assetsSrc = path.join(ROOT, 'drivers', 'radar_sensor', 'assets', 'distance.svg');
+    const radarDir = path.join(tmp, 'drivers', 'radar_sensor', 'assets');
+    fs.mkdirSync(radarDir, { recursive: true });
+    if (fs.existsSync(assetsSrc)) fs.copyFileSync(assetsSrc, path.join(radarDir, 'distance.svg'));
+    else fs.writeFileSync(path.join(radarDir, 'distance.svg'), '<svg/>');
+    fs.mkdirSync(path.join(tmp, 'drivers', 'presence_sensor_radar'), { recursive: true });
+    const fat = {
+      id: 'com.dlnraja.tuya.zigbee.bastien',
+      version: '1.0.97',
+      sdk: 3,
+      capabilities: {
+        target_distance: { icon: '/drivers/radar_sensor/assets/distance.svg' },
+      },
+      drivers: [
+        { id: 'button_wireless_1', zigbee: {} },
+        { id: 'button_wireless_2', zigbee: {} },
+        { id: 'button_wireless_3', zigbee: {} },
+        { id: 'switch_1gang', zigbee: {} },
+        { id: 'switch_4gang', zigbee: {} },
+        { id: 'climate_sensor', zigbee: {} },
+        { id: 'wall_switch_4gang_1way', zigbee: {} },
+        { id: 'contact_sensor', zigbee: {} },
+        { id: 'presence_sensor_radar', zigbee: {} },
+        { id: 'radar_sensor', zigbee: {} },
+      ],
+      flow: { triggers: [] },
+    };
+    fs.writeFileSync(appJson, JSON.stringify(fat));
+    pruneBastienPublishFleet(appJson, { destDir: tmp });
+    const out = JSON.parse(fs.readFileSync(appJson, 'utf8'));
+    assert.ok(!out.drivers.some((d) => d.id === 'radar_sensor'));
+    assert.match(out.capabilities.target_distance.icon, /presence_sensor_radar/);
+    assert.ok(fs.existsSync(path.join(tmp, 'drivers', 'presence_sensor_radar', 'assets', 'distance.svg')));
+    assert.ok(!fs.existsSync(path.join(tmp, 'drivers', 'radar_sensor')));
+  });
 });
