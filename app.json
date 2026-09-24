@@ -11009,14 +11009,17 @@
             ]
           }
         },
-        "manufacturerName": [],
+        "manufacturerName": [
+          "_hybrid_air_purifier_curtain_needs_device_assignment",
+          "_HYBRID_AIR_PURIFIER_CURTAIN_NEEDS_DEVICE_ASSIGNMENT"
+        ],
         "learnmode": {
           "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
             "en": "Press the motor pairing button (or P2 twice) until the motor jogs / LED flashes, then start pairing in Homey.",
-            "fr": "Bouton moteur (ou P2??2) jusqu'?? jog/LED, puis lancez l'appairage Homey.",
-            "nl": "Motor-paarknop (of P2??2) tot jog/LED, start daarna Homey-pairing.",
-            "de": "Motor-Pairingtaste (oder P2??2) bis Ruck/LED, dann Homey-Pairing starten."
+            "fr": "Bouton moteur (ou P2×2) jusqu'à jog/LED, puis lancez l'appairage Homey.",
+            "nl": "Motor-paarknop (of P2×2) tot jog/LED, start daarna Homey-pairing.",
+            "de": "Motor-Pairingtaste (oder P2×2) bis Ruck/LED, dann Homey-Pairing starten."
           }
         }
       },
@@ -11930,7 +11933,7 @@
           "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
             "en": "Press and hold the pairing button for 5 seconds until the LED flashes.",
-            "fr": "Appuyez et maintenez le bouton d'appairage pendant 5 secondes jusqu'??ce que la LED clignote."
+            "fr": "Appuyez et maintenez le bouton d'appairage pendant 5 secondes jusqu'àce que la LED clignote."
           }
         },
         "endpoints": {
@@ -12935,9 +12938,9 @@
           "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
             "en": "Put the device in Zigbee pairing mode (usually hold reset/pairing 5 seconds until LED flashes).",
-            "fr": "Mode appairage Zigbee (souvent reset/pair 5 s jusqu'?? LED clignotante).",
+            "fr": "Mode appairage Zigbee (souvent reset/pair 5 s jusqu'à LED clignotante).",
             "nl": "Zet het apparaat in Zigbee-pairmodus (meestal reset/pair 5 s tot LED knippert).",
-            "de": "Ger??t in Zigbee-Pairingmodus (meist Reset/Pair 5 s bis LED blinkt)."
+            "de": "Gerät in Zigbee-Pairingmodus (meist Reset/Pair 5 s bis LED blinkt)."
           }
         }
       },
@@ -14239,11 +14242,11 @@
           "_tze284_YVX5LH6K"
         ],
         "productId": [
-          "TS0601",
           "RH3052",
           "TS0005",
           "TS0006",
-          "TS0212"
+          "TS0212",
+          "TS0601"
         ],
         "endpoints": {
           "1": {
@@ -14500,7 +14503,7 @@
           "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
             "en": "Press and hold the pairing button for 5 seconds until the LED flashes.",
-            "fr": "Appuyez et maintenez le bouton d'appairage pendant 5 secondes jusqu'?? ce que la LED clignote."
+            "fr": "Appuyez et maintenez le bouton d'appairage pendant 5 secondes jusqu'à ce que la LED clignote."
           }
         },
         "endpoints": {
@@ -14852,7 +14855,7 @@
             "en": "Press the pairing button for 5 seconds until LED blinks",
             "fr": "Appuyez sur le bouton d'appairage pendant 5 secondes",
             "nl": "Houd de koppelknop 5 seconden ingedrukt tot LED knippert",
-            "de": "Halten Sie die Pairing-Taste 5 Sekunden gedr??ckt, bis die LED blinkt"
+            "de": "Halten Sie die Pairing-Taste 5 Sekunden gedrückt, bis die LED blinkt"
           }
         },
         "manufacturerName": [
@@ -15560,7 +15563,7 @@
           "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
             "en": "Press and hold the pairing button for 5 seconds until the LED flashes.",
-            "fr": "Appuyez et maintenez le bouton d'appairage pendant 5 secondes jusqu'?? ce que la LED clignote."
+            "fr": "Appuyez et maintenez le bouton d'appairage pendant 5 secondes jusqu'à ce que la LED clignote."
           }
         }
       },
@@ -15950,7 +15953,7 @@
           "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
             "en": "Press and hold the pairing button for 5 seconds until the LED flashes.",
-            "fr": "Appuyez et maintenez le bouton d'appairage pendant 5 secondes jusqu'?? ce que la LED clignote."
+            "fr": "Appuyez et maintenez le bouton d'appairage pendant 5 secondes jusqu'à ce que la LED clignote."
           }
         }
       },
@@ -16281,7 +16284,7 @@
           "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
             "en": "Press and hold the pairing button for 5 seconds until the LED flashes.",
-            "fr": "Appuyez et maintenez le bouton d'appairage pendant 5 secondes jusqu'?? ce que la LED clignote."
+            "fr": "Appuyez et maintenez le bouton d'appairage pendant 5 secondes jusqu'à ce que la LED clignote."
           }
         },
         "productId": [
@@ -16888,7 +16891,7 @@
           "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
             "en": "Press and hold the pairing button for 5 seconds until the LED flashes.",
-            "fr": "Appuyez et maintenez le bouton d'appairage pendant 5 secondes jusqu'?? ce que la LED clignote."
+            "fr": "Appuyez et maintenez le bouton d'appairage pendant 5 secondes jusqu'à ce que la LED clignote."
           }
         },
         "productId": [
@@ -17953,7 +17956,7 @@
           "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
             "en": "Press and hold the pairing button for 5 seconds until the LED flashes.",
-            "fr": "Appuyez et maintenez le bouton d'appairage pendant 5 secondes jusqu'?? ce que la LED clignote."
+            "fr": "Appuyez et maintenez le bouton d'appairage pendant 5 secondes jusqu'à ce que la LED clignote."
           }
         }
       },
@@ -18395,7 +18398,7 @@
           "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
             "en": "Press the pairing button on your Zigbee device until it enters pairing mode.",
-            "fr": "Appuyez sur le bouton d'appairage de votre appareil Zigbee jusqu'??ce qu'il passe en mode appairage."
+            "fr": "Appuyez sur le bouton d'appairage de votre appareil Zigbee jusqu'àce qu'il passe en mode appairage."
           }
         }
       },
@@ -18579,7 +18582,7 @@
           "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
             "en": "Press and hold the pairing button for 5 seconds until the LED flashes.",
-            "fr": "Appuyez et maintenez le bouton d'appairage pendant 5 secondes jusqu'?? ce que la LED clignote."
+            "fr": "Appuyez et maintenez le bouton d'appairage pendant 5 secondes jusqu'à ce que la LED clignote."
           }
         },
         "manufacturerName": [
@@ -18943,7 +18946,7 @@
           "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
             "en": "Press and hold the pairing button for 5 seconds until the LED flashes.",
-            "fr": "Appuyez et maintenez le bouton d'appairage pendant 5 secondes jusqu'?? ce que la LED clignote."
+            "fr": "Appuyez et maintenez le bouton d'appairage pendant 5 secondes jusqu'à ce que la LED clignote."
           }
         }
       },
@@ -19429,7 +19432,7 @@
           "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
             "en": "Press and hold the SOS button for 5 seconds. KEEP PRESSING the button every 2 seconds during pairing to prevent device sleep and enrollment timeout.",
-            "fr": "Appuyez et maintenez le bouton SOS pendant 5 secondes. CONTINUEZ ?? appuyer toutes les 2 secondes pendant l appairage pour ??viter la mise en veille."
+            "fr": "Appuyez et maintenez le bouton SOS pendant 5 secondes. CONTINUEZ à appuyer toutes les 2 secondes pendant l appairage pour éviter la mise en veille."
           }
         }
       },
@@ -19928,13 +19931,13 @@
         "learnmode": {
           "instruction": {
             "en": "Press and hold the reset button for 5 seconds until the LED blinks rapidly",
-            "fr": "Appuyez et maintenez le bouton reset pendant 5 secondes jusqu'?? ce que la LED clignote rapidement",
+            "fr": "Appuyez et maintenez le bouton reset pendant 5 secondes jusqu'à ce que la LED clignote rapidement",
             "nl": "Houd de resetknop 5 seconden ingedrukt totdat de LED snel knippert",
-            "de": "Halten Sie die Reset-Taste 5 Sekunden lang gedr??ckt, bis die LED schnell blinkt",
+            "de": "Halten Sie die Reset-Taste 5 Sekunden lang gedrückt, bis die LED schnell blinkt",
             "it": "Tenere premuto il pulsante di reset per 5 secondi fino a quando il LED lampeggia rapidamente",
-            "sv": "H??ll ??terst??llningsknappen intryckt i 5 sekunder tills lysdioden blinkar snabbt",
+            "sv": "Håll återställningsknappen intryckt i 5 sekunder tills lysdioden blinkar snabbt",
             "no": "Hold tilbakestillingsknappen inne i 5 sekunder til LED-en blinker raskt",
-            "es": "Mantenga presionado el bot??n de reinicio durante 5 segundos hasta que el LED parpadee r??pidamente",
+            "es": "Mantenga presionado el botón de reinicio durante 5 segundos hasta que el LED parpadee rápidamente",
             "da": "Hold nulstillingsknappen inde i 5 sekunder, indtil LED'en blinker hurtigt"
           }
         },
@@ -20488,10 +20491,10 @@
         "learnmode": {
           "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
-            "en": "IMPORTANT: Zigbee Bastien / Universal ??? Wireless Button 1 (TS0041) ??? NOT Homey Zigbee. Remove any Unknown Node first. Hold 5???10s until LED blinks; tap every 2s while pairing. After pair: Homey Flow ??? When this device ??? ?? Button 1 pressed ?? / ?? Bouton 1 appuy?? ?? (or ?? Button pressed ??). Zigbee Developer Tools channels do nothing on scene remotes.",
-            "fr": "IMPORTANT: Zigbee Bastien / Universal ??? Bouton sans fil 1 (TS0041) ??? PAS Homey Zigbee. Supprimez tout n??ud Inconnu d'abord. Maintenez 5???10 s puis appuyez toutes les 2 s. Apr??s: Flow Homey ??? Quand cet appareil ??? ?? Bouton 1 appuy?? ?? (ou ?? Bouton appuy?? ??). Les canaux Zigbee des outils d??veloppeur ne marchent PAS (t??l??commande sc??ne).",
-            "nl": "Wireless Button 1 (TS0041) ??? niet Homey Zigbee. Unknown Node eerst verwijderen. Flow: Knop 1 ingedrukt.",
-            "de": "Wireless Button 1 (TS0041) ??? nicht Homey Zigbee. Unknown Node zuerst entfernen. Flow: Taste 1 gedr??ckt."
+            "en": "IMPORTANT: Zigbee Bastien / Universal → Wireless Button 1 (TS0041) — NOT Homey Zigbee. Remove any Unknown Node first. Hold 5–10s until LED blinks; tap every 2s while pairing. After pair: Homey Flow → When this device → « Button 1 pressed » / « Bouton 1 appuyé » (or « Button pressed »). Zigbee Developer Tools channels do nothing on scene remotes.",
+            "fr": "IMPORTANT: Zigbee Bastien / Universal → Bouton sans fil 1 (TS0041) — PAS Homey Zigbee. Supprimez tout nœud Inconnu d'abord. Maintenez 5–10 s puis appuyez toutes les 2 s. Après: Flow Homey → Quand cet appareil → « Bouton 1 appuyé » (ou « Bouton appuyé »). Les canaux Zigbee des outils développeur ne marchent PAS (télécommande scène).",
+            "nl": "Wireless Button 1 (TS0041) — niet Homey Zigbee. Unknown Node eerst verwijderen. Flow: Knop 1 ingedrukt.",
+            "de": "Wireless Button 1 (TS0041) — nicht Homey Zigbee. Unknown Node zuerst entfernen. Flow: Taste 1 gedrückt."
           }
         }
       },
@@ -21565,10 +21568,10 @@
         "learnmode": {
           "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
-            "en": "Zigbee Bastien ??? Wireless Button 2 (TS0042). NOT Homey Zigbee. Wake-tap every 2s while pairing. Homey Flow: Button pressed ??? lamp ??? NOT Developer Tools Zigbee channels. Update tip then re-pair if presses were dead/slow.",
-            "fr": "Zigbee Bastien ??? Bouton sans fil 2 (TS0042). PAS Homey Zigbee. Tap toutes les 2 s a l'appairage. Flow: Bouton appuye ??? lampe ??? PAS les canaux Zigbee des outils developpeur. Maj tip puis re-appairer si lent/mort.",
-            "nl": "Houd enige knop 5s tot LED knippert. Wireless Button 2 ??? niet Homey Zigbee / Appareil Zigbee.",
-            "de": "Beliebige Taste 5s halten bis LED blinkt. Wireless Button 2 ??? nicht Homey Zigbee."
+            "en": "Zigbee Bastien → Wireless Button 2 (TS0042). NOT Homey Zigbee. Wake-tap every 2s while pairing. Homey Flow: Button pressed → lamp — NOT Developer Tools Zigbee channels. Update tip then re-pair if presses were dead/slow.",
+            "fr": "Zigbee Bastien → Bouton sans fil 2 (TS0042). PAS Homey Zigbee. Tap toutes les 2 s a l'appairage. Flow: Bouton appuye → lampe — PAS les canaux Zigbee des outils developpeur. Maj tip puis re-appairer si lent/mort.",
+            "nl": "Houd enige knop 5s tot LED knippert. Wireless Button 2 — niet Homey Zigbee / Appareil Zigbee.",
+            "de": "Beliebige Taste 5s halten bis LED blinkt. Wireless Button 2 — nicht Homey Zigbee."
           }
         }
       },
@@ -22054,15 +22057,15 @@
         "learnmode": {
           "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
-            "en": "IMPORTANT: pick Universal Tuya ??? Wireless Button 3 (TS0043) ??? NOT plain Homey Zigbee. Hold any button 5???10s until LED blinks; tap every 2???3s while pairing. Use Homey Flow trigger ?? Button pressed ?? (Button 1/2/3) ??? light ??? NOT Developer Tools Zigbee channels/commands (scene remotes have no bindable OnOff). Never write 0x8004.",
-            "fr": "IMPORTANT: Universal Tuya ??? Bouton sans fil 3 (TS0043) ??? PAS Homey Zigbee. Maintenez 5???10 s puis appuyez toutes les 2???3 s. Flow Homey: declencheur ?? Bouton appuye ?? (Bouton 1/2/3) ??? lampe ??? PAS les canaux/commandes Zigbee des outils developpeur (telecommande scene = pas de OnOff bindable). Ne jamais ecrire 0x8004.",
+            "en": "IMPORTANT: pick Universal Tuya → Wireless Button 3 (TS0043) — NOT plain Homey Zigbee. Hold any button 5–10s until LED blinks; tap every 2–3s while pairing. Use Homey Flow trigger « Button pressed » (Button 1/2/3) → light — NOT Developer Tools Zigbee channels/commands (scene remotes have no bindable OnOff). Never write 0x8004.",
+            "fr": "IMPORTANT: Universal Tuya → Bouton sans fil 3 (TS0043) — PAS Homey Zigbee. Maintenez 5–10 s puis appuyez toutes les 2–3 s. Flow Homey: declencheur « Bouton appuye » (Bouton 1/2/3) → lampe — PAS les canaux/commandes Zigbee des outils developpeur (telecommande scene = pas de OnOff bindable). Ne jamais ecrire 0x8004.",
             "nl": "Houd een willekeurige knop 5 seconden ingedrukt totdat de LED snel knippert",
-            "de": "Halten Sie eine beliebige Taste 5 Sekunden lang gedr??ckt, bis die LED schnell blinkt",
-            "it": "Tenere premuto qualsiasi pulsante per 5 secondi finch?? il LED lampeggia rapidamente",
-            "sv": "H??ll ned valfri knapp i 5 sekunder tills LED:en blinkar snabbt",
+            "de": "Halten Sie eine beliebige Taste 5 Sekunden lang gedrückt, bis die LED schnell blinkt",
+            "it": "Tenere premuto qualsiasi pulsante per 5 secondi finché il LED lampeggia rapidamente",
+            "sv": "Håll ned valfri knapp i 5 sekunder tills LED:en blinkar snabbt",
             "no": "Hold inne en hvilken som helst knapp i 5 sekunder til LED-en blinker raskt",
-            "es": "IMPORTANTE: elija Universal Tuya ??? Wireless Button 3 (TS0043) ??? NO Zigbee gen??rico de Homey. Mantenga un bot??n 5???10 s hasta que el LED parpadee; pulse cada 2???3 s al emparejar. Flow: ?? Button pressed ?? (Bot??n 1/2/3). No use canales/comandos Zigbee de Developer Tools. Nunca escriba 0x8004.",
-            "da": "Hold en vilk??rlig knap nede i 5 sekunder, indtil LED'en blinker hurtigt"
+            "es": "IMPORTANTE: elija Universal Tuya → Wireless Button 3 (TS0043) — NO Zigbee genérico de Homey. Mantenga un botón 5–10 s hasta que el LED parpadee; pulse cada 2–3 s al emparejar. Flow: « Button pressed » (Botón 1/2/3). No use canales/comandos Zigbee de Developer Tools. Nunca escriba 0x8004.",
+            "da": "Hold en vilkårlig knap nede i 5 sekunder, indtil LED'en blinker hurtigt"
           }
         },
         "endpoints": {
@@ -22584,14 +22587,14 @@
           "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
             "en": "Press and hold any button for 5 seconds until the LED blinks rapidly",
-            "fr": "Appuyez et maintenez n'importe quel bouton pendant 5 secondes jusqu'?? ce que la LED clignote rapidement",
-            "nl": "Appuyez et maintenez n'importe quel bouton pendant 5 secondes jusqu'?? ce que la LED clignote rapidement",
-            "de": "Appuyez et maintenez n'importe quel bouton pendant 5 secondes jusqu'?? ce que la LED clignote rapidement",
-            "it": "Appuyez et maintenez n'importe quel bouton pendant 5 secondes jusqu'?? ce que la LED clignote rapidement",
-            "sv": "Appuyez et maintenez n'importe quel bouton pendant 5 secondes jusqu'?? ce que la LED clignote rapidement",
-            "no": "Appuyez et maintenez n'importe quel bouton pendant 5 secondes jusqu'?? ce que la LED clignote rapidement",
-            "es": "Appuyez et maintenez n'importe quel bouton pendant 5 secondes jusqu'?? ce que la LED clignote rapidement",
-            "da": "Appuyez et maintenez n'importe quel bouton pendant 5 secondes jusqu'?? ce que la LED clignote rapidement"
+            "fr": "Appuyez et maintenez n'importe quel bouton pendant 5 secondes jusqu'à ce que la LED clignote rapidement",
+            "nl": "Appuyez et maintenez n'importe quel bouton pendant 5 secondes jusqu'à ce que la LED clignote rapidement",
+            "de": "Appuyez et maintenez n'importe quel bouton pendant 5 secondes jusqu'à ce que la LED clignote rapidement",
+            "it": "Appuyez et maintenez n'importe quel bouton pendant 5 secondes jusqu'à ce que la LED clignote rapidement",
+            "sv": "Appuyez et maintenez n'importe quel bouton pendant 5 secondes jusqu'à ce que la LED clignote rapidement",
+            "no": "Appuyez et maintenez n'importe quel bouton pendant 5 secondes jusqu'à ce que la LED clignote rapidement",
+            "es": "Appuyez et maintenez n'importe quel bouton pendant 5 secondes jusqu'à ce que la LED clignote rapidement",
+            "da": "Appuyez et maintenez n'importe quel bouton pendant 5 secondes jusqu'à ce que la LED clignote rapidement"
           }
         },
         "endpoints": {
@@ -23218,14 +23221,14 @@
           "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
             "en": "Press and hold any button for 5 seconds until the LED blinks rapidly",
-            "fr": "Appuyez et maintenez n'importe quel bouton pendant 5 secondes jusqu'?? ce que la LED clignote rapidement",
-            "nl": "Appuyez et maintenez n'importe quel bouton pendant 5 secondes jusqu'?? ce que la LED clignote rapidement",
-            "de": "Appuyez et maintenez n'importe quel bouton pendant 5 secondes jusqu'?? ce que la LED clignote rapidement",
-            "it": "Appuyez et maintenez n'importe quel bouton pendant 5 secondes jusqu'?? ce que la LED clignote rapidement",
-            "sv": "Appuyez et maintenez n'importe quel bouton pendant 5 secondes jusqu'?? ce que la LED clignote rapidement",
-            "no": "Appuyez et maintenez n'importe quel bouton pendant 5 secondes jusqu'?? ce que la LED clignote rapidement",
-            "es": "Appuyez et maintenez n'importe quel bouton pendant 5 secondes jusqu'?? ce que la LED clignote rapidement",
-            "da": "Appuyez et maintenez n'importe quel bouton pendant 5 secondes jusqu'?? ce que la LED clignote rapidement"
+            "fr": "Appuyez et maintenez n'importe quel bouton pendant 5 secondes jusqu'à ce que la LED clignote rapidement",
+            "nl": "Appuyez et maintenez n'importe quel bouton pendant 5 secondes jusqu'à ce que la LED clignote rapidement",
+            "de": "Appuyez et maintenez n'importe quel bouton pendant 5 secondes jusqu'à ce que la LED clignote rapidement",
+            "it": "Appuyez et maintenez n'importe quel bouton pendant 5 secondes jusqu'à ce que la LED clignote rapidement",
+            "sv": "Appuyez et maintenez n'importe quel bouton pendant 5 secondes jusqu'à ce que la LED clignote rapidement",
+            "no": "Appuyez et maintenez n'importe quel bouton pendant 5 secondes jusqu'à ce que la LED clignote rapidement",
+            "es": "Appuyez et maintenez n'importe quel bouton pendant 5 secondes jusqu'à ce que la LED clignote rapidement",
+            "da": "Appuyez et maintenez n'importe quel bouton pendant 5 secondes jusqu'à ce que la LED clignote rapidement"
           }
         },
         "endpoints": {
@@ -23780,14 +23783,14 @@
           "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
             "en": "Press and hold any button for 5 seconds until the LED blinks rapidly",
-            "fr": "Appuyez et maintenez n'importe quel bouton pendant 5 secondes jusqu'?? ce que la LED clignote rapidement",
-            "nl": "Appuyez et maintenez n'importe quel bouton pendant 5 secondes jusqu'?? ce que la LED clignote rapidement",
-            "de": "Appuyez et maintenez n'importe quel bouton pendant 5 secondes jusqu'?? ce que la LED clignote rapidement",
-            "it": "Appuyez et maintenez n'importe quel bouton pendant 5 secondes jusqu'?? ce que la LED clignote rapidement",
-            "sv": "Appuyez et maintenez n'importe quel bouton pendant 5 secondes jusqu'?? ce que la LED clignote rapidement",
-            "no": "Appuyez et maintenez n'importe quel bouton pendant 5 secondes jusqu'?? ce que la LED clignote rapidement",
-            "es": "Appuyez et maintenez n'importe quel bouton pendant 5 secondes jusqu'?? ce que la LED clignote rapidement",
-            "da": "Appuyez et maintenez n'importe quel bouton pendant 5 secondes jusqu'?? ce que la LED clignote rapidement"
+            "fr": "Appuyez et maintenez n'importe quel bouton pendant 5 secondes jusqu'à ce que la LED clignote rapidement",
+            "nl": "Appuyez et maintenez n'importe quel bouton pendant 5 secondes jusqu'à ce que la LED clignote rapidement",
+            "de": "Appuyez et maintenez n'importe quel bouton pendant 5 secondes jusqu'à ce que la LED clignote rapidement",
+            "it": "Appuyez et maintenez n'importe quel bouton pendant 5 secondes jusqu'à ce que la LED clignote rapidement",
+            "sv": "Appuyez et maintenez n'importe quel bouton pendant 5 secondes jusqu'à ce que la LED clignote rapidement",
+            "no": "Appuyez et maintenez n'importe quel bouton pendant 5 secondes jusqu'à ce que la LED clignote rapidement",
+            "es": "Appuyez et maintenez n'importe quel bouton pendant 5 secondes jusqu'à ce que la LED clignote rapidement",
+            "da": "Appuyez et maintenez n'importe quel bouton pendant 5 secondes jusqu'à ce que la LED clignote rapidement"
           }
         }
       },
@@ -24303,14 +24306,14 @@
           "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
             "en": "Press and hold any button for 5 seconds until the LED blinks rapidly",
-            "fr": "Appuyez et maintenez n'importe quel bouton pendant 5 secondes jusqu'?? ce que la LED clignote rapidement",
-            "nl": "Appuyez et maintenez n'importe quel bouton pendant 5 secondes jusqu'?? ce que la LED clignote rapidement",
-            "de": "Appuyez et maintenez n'importe quel bouton pendant 5 secondes jusqu'?? ce que la LED clignote rapidement",
-            "it": "Appuyez et maintenez n'importe quel bouton pendant 5 secondes jusqu'?? ce que la LED clignote rapidement",
-            "sv": "Appuyez et maintenez n'importe quel bouton pendant 5 secondes jusqu'?? ce que la LED clignote rapidement",
-            "no": "Appuyez et maintenez n'importe quel bouton pendant 5 secondes jusqu'?? ce que la LED clignote rapidement",
-            "es": "Appuyez et maintenez n'importe quel bouton pendant 5 secondes jusqu'?? ce que la LED clignote rapidement",
-            "da": "Appuyez et maintenez n'importe quel bouton pendant 5 secondes jusqu'?? ce que la LED clignote rapidement"
+            "fr": "Appuyez et maintenez n'importe quel bouton pendant 5 secondes jusqu'à ce que la LED clignote rapidement",
+            "nl": "Appuyez et maintenez n'importe quel bouton pendant 5 secondes jusqu'à ce que la LED clignote rapidement",
+            "de": "Appuyez et maintenez n'importe quel bouton pendant 5 secondes jusqu'à ce que la LED clignote rapidement",
+            "it": "Appuyez et maintenez n'importe quel bouton pendant 5 secondes jusqu'à ce que la LED clignote rapidement",
+            "sv": "Appuyez et maintenez n'importe quel bouton pendant 5 secondes jusqu'à ce que la LED clignote rapidement",
+            "no": "Appuyez et maintenez n'importe quel bouton pendant 5 secondes jusqu'à ce que la LED clignote rapidement",
+            "es": "Appuyez et maintenez n'importe quel bouton pendant 5 secondes jusqu'à ce que la LED clignote rapidement",
+            "da": "Appuyez et maintenez n'importe quel bouton pendant 5 secondes jusqu'à ce que la LED clignote rapidement"
           }
         }
       },
@@ -25427,10 +25430,10 @@
         "learnmode": {
           "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
-            "en": "Hold all buttons together (or the reset pinhole) for 5???10 seconds until the LED flashes.",
-            "fr": "Maintenez tous les boutons (ou le trou reset) 5???10 s jusqu'?? clignotement.",
-            "nl": "Houd alle knoppen (of reset) 5???10 s vast tot de LED knippert.",
-            "de": "Alle Tasten (oder Reset) 5???10 s halten bis die LED blinkt."
+            "en": "Hold all buttons together (or the reset pinhole) for 5–10 seconds until the LED flashes.",
+            "fr": "Maintenez tous les boutons (ou le trou reset) 5–10 s jusqu'à clignotement.",
+            "nl": "Houd alle knoppen (of reset) 5–10 s vast tot de LED knippert.",
+            "de": "Alle Tasten (oder Reset) 5–10 s halten bis die LED blinkt."
           }
         }
       },
@@ -25582,7 +25585,7 @@
           "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
             "en": "Press and hold the pairing button for 5 seconds until the LED flashes.",
-            "fr": "Appuyez et maintenez le bouton d'appairage pendant 5 secondes jusqu'?? ce que la LED clignote."
+            "fr": "Appuyez et maintenez le bouton d'appairage pendant 5 secondes jusqu'à ce que la LED clignote."
           }
         },
         "endpoints": {
@@ -26128,14 +26131,14 @@
           "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
             "en": "Press and hold any button for 5 seconds until the LED blinks rapidly",
-            "fr": "Appuyez et maintenez n'importe quel bouton pendant 5 secondes jusqu'??ce que la LED clignote rapidement",
-            "nl": "Appuyez et maintenez n'importe quel bouton pendant 5 secondes jusqu'??ce que la LED clignote rapidement",
-            "de": "Appuyez et maintenez n'importe quel bouton pendant 5 secondes jusqu'??ce que la LED clignote rapidement",
-            "it": "Appuyez et maintenez n'importe quel bouton pendant 5 secondes jusqu'??ce que la LED clignote rapidement",
-            "sv": "Appuyez et maintenez n'importe quel bouton pendant 5 secondes jusqu'??ce que la LED clignote rapidement",
-            "no": "Appuyez et maintenez n'importe quel bouton pendant 5 secondes jusqu'??ce que la LED clignote rapidement",
-            "es": "Appuyez et maintenez n'importe quel bouton pendant 5 secondes jusqu'??ce que la LED clignote rapidement",
-            "da": "Appuyez et maintenez n'importe quel bouton pendant 5 secondes jusqu'??ce que la LED clignote rapidement"
+            "fr": "Appuyez et maintenez n'importe quel bouton pendant 5 secondes jusqu'àce que la LED clignote rapidement",
+            "nl": "Appuyez et maintenez n'importe quel bouton pendant 5 secondes jusqu'àce que la LED clignote rapidement",
+            "de": "Appuyez et maintenez n'importe quel bouton pendant 5 secondes jusqu'àce que la LED clignote rapidement",
+            "it": "Appuyez et maintenez n'importe quel bouton pendant 5 secondes jusqu'àce que la LED clignote rapidement",
+            "sv": "Appuyez et maintenez n'importe quel bouton pendant 5 secondes jusqu'àce que la LED clignote rapidement",
+            "no": "Appuyez et maintenez n'importe quel bouton pendant 5 secondes jusqu'àce que la LED clignote rapidement",
+            "es": "Appuyez et maintenez n'importe quel bouton pendant 5 secondes jusqu'àce que la LED clignote rapidement",
+            "da": "Appuyez et maintenez n'importe quel bouton pendant 5 secondes jusqu'àce que la LED clignote rapidement"
           }
         }
       },
@@ -26573,14 +26576,14 @@
           "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
             "en": "Press and hold any button for 5 seconds until the LED blinks rapidly",
-            "fr": "Appuyez et maintenez n'importe quel bouton pendant 5 secondes jusqu'?? ce que la LED clignote rapidement",
-            "nl": "Appuyez et maintenez n'importe quel bouton pendant 5 secondes jusqu'?? ce que la LED clignote rapidement",
-            "de": "Appuyez et maintenez n'importe quel bouton pendant 5 secondes jusqu'?? ce que la LED clignote rapidement",
-            "it": "Appuyez et maintenez n'importe quel bouton pendant 5 secondes jusqu'?? ce que la LED clignote rapidement",
-            "sv": "Appuyez et maintenez n'importe quel bouton pendant 5 secondes jusqu'?? ce que la LED clignote rapidement",
-            "no": "Appuyez et maintenez n'importe quel bouton pendant 5 secondes jusqu'?? ce que la LED clignote rapidement",
-            "es": "Appuyez et maintenez n'importe quel bouton pendant 5 secondes jusqu'?? ce que la LED clignote rapidement",
-            "da": "Appuyez et maintenez n'importe quel bouton pendant 5 secondes jusqu'?? ce que la LED clignote rapidement"
+            "fr": "Appuyez et maintenez n'importe quel bouton pendant 5 secondes jusqu'à ce que la LED clignote rapidement",
+            "nl": "Appuyez et maintenez n'importe quel bouton pendant 5 secondes jusqu'à ce que la LED clignote rapidement",
+            "de": "Appuyez et maintenez n'importe quel bouton pendant 5 secondes jusqu'à ce que la LED clignote rapidement",
+            "it": "Appuyez et maintenez n'importe quel bouton pendant 5 secondes jusqu'à ce que la LED clignote rapidement",
+            "sv": "Appuyez et maintenez n'importe quel bouton pendant 5 secondes jusqu'à ce que la LED clignote rapidement",
+            "no": "Appuyez et maintenez n'importe quel bouton pendant 5 secondes jusqu'à ce que la LED clignote rapidement",
+            "es": "Appuyez et maintenez n'importe quel bouton pendant 5 secondes jusqu'à ce que la LED clignote rapidement",
+            "da": "Appuyez et maintenez n'importe quel bouton pendant 5 secondes jusqu'à ce que la LED clignote rapidement"
           }
         }
       },
@@ -27991,10 +27994,10 @@
         "learnmode": {
           "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
-            "en": "Hold all buttons together (or the reset pinhole) for 5???10 seconds until the LED flashes.",
-            "fr": "Maintenez tous les boutons (ou le trou reset) 5???10 s jusqu'?? clignotement.",
-            "nl": "Houd alle knoppen (of reset) 5???10 s vast tot de LED knippert.",
-            "de": "Alle Tasten (oder Reset) 5???10 s halten bis die LED blinkt."
+            "en": "Hold all buttons together (or the reset pinhole) for 5–10 seconds until the LED flashes.",
+            "fr": "Maintenez tous les boutons (ou le trou reset) 5–10 s jusqu'à clignotement.",
+            "nl": "Houd alle knoppen (of reset) 5–10 s vast tot de LED knippert.",
+            "de": "Alle Tasten (oder Reset) 5–10 s halten bis die LED blinkt."
           }
         }
       },
@@ -28385,10 +28388,10 @@
         "learnmode": {
           "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
-            "en": "Hold all buttons together (or the reset pinhole) for 5???10 seconds until the LED flashes.",
-            "fr": "Maintenez tous les boutons (ou le trou reset) 5???10 s jusqu'?? clignotement.",
-            "nl": "Houd alle knoppen (of reset) 5???10 s vast tot de LED knippert.",
-            "de": "Alle Tasten (oder Reset) 5???10 s halten bis die LED blinkt."
+            "en": "Hold all buttons together (or the reset pinhole) for 5–10 seconds until the LED flashes.",
+            "fr": "Maintenez tous les boutons (ou le trou reset) 5–10 s jusqu'à clignotement.",
+            "nl": "Houd alle knoppen (of reset) 5–10 s vast tot de LED knippert.",
+            "de": "Alle Tasten (oder Reset) 5–10 s halten bis die LED blinkt."
           }
         }
       },
@@ -28476,14 +28479,14 @@
           "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
             "en": "Press and hold any button for 5 seconds until the LED blinks rapidly",
-            "fr": "Appuyez et maintenez n'importe quel bouton pendant 5 secondes jusqu'??ce que la LED clignote rapidement",
-            "nl": "Appuyez et maintenez n'importe quel bouton pendant 5 secondes jusqu'??ce que la LED clignote rapidement",
-            "de": "Appuyez et maintenez n'importe quel bouton pendant 5 secondes jusqu'??ce que la LED clignote rapidement",
-            "it": "Appuyez et maintenez n'importe quel bouton pendant 5 secondes jusqu'??ce que la LED clignote rapidement",
-            "sv": "Appuyez et maintenez n'importe quel bouton pendant 5 secondes jusqu'??ce que la LED clignote rapidement",
-            "no": "Appuyez et maintenez n'importe quel bouton pendant 5 secondes jusqu'??ce que la LED clignote rapidement",
-            "es": "Appuyez et maintenez n'importe quel bouton pendant 5 secondes jusqu'??ce que la LED clignote rapidement",
-            "da": "Appuyez et maintenez n'importe quel bouton pendant 5 secondes jusqu'??ce que la LED clignote rapidement"
+            "fr": "Appuyez et maintenez n'importe quel bouton pendant 5 secondes jusqu'àce que la LED clignote rapidement",
+            "nl": "Appuyez et maintenez n'importe quel bouton pendant 5 secondes jusqu'àce que la LED clignote rapidement",
+            "de": "Appuyez et maintenez n'importe quel bouton pendant 5 secondes jusqu'àce que la LED clignote rapidement",
+            "it": "Appuyez et maintenez n'importe quel bouton pendant 5 secondes jusqu'àce que la LED clignote rapidement",
+            "sv": "Appuyez et maintenez n'importe quel bouton pendant 5 secondes jusqu'àce que la LED clignote rapidement",
+            "no": "Appuyez et maintenez n'importe quel bouton pendant 5 secondes jusqu'àce que la LED clignote rapidement",
+            "es": "Appuyez et maintenez n'importe quel bouton pendant 5 secondes jusqu'àce que la LED clignote rapidement",
+            "da": "Appuyez et maintenez n'importe quel bouton pendant 5 secondes jusqu'àce que la LED clignote rapidement"
           }
         }
       },
@@ -28854,7 +28857,7 @@
           "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
             "en": "Press and hold the pairing button for 5 seconds until the LED flashes.",
-            "fr": "Appuyez et maintenez le bouton d'appairage pendant 5 secondes jusqu'?? ce que la LED clignote."
+            "fr": "Appuyez et maintenez le bouton d'appairage pendant 5 secondes jusqu'à ce que la LED clignote."
           }
         },
         "endpoints": {
@@ -31523,10 +31526,10 @@
         "learnmode": {
           "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
-            "en": "Climate / TH sensor (SNZB-02, eWeLink CK-TLSR???): Zigbee Bastien ??? Climate Sensor ??? NOT Homey Zigbee. Hold pair 5s; battery: tap every 2s while pairing.",
-            "fr": "Capteur climat (SNZB-02, eWeLink CK-TLSR???): Zigbee Bastien ??? Capteur climat ??? PAS Homey Zigbee. Maintenez 5 s; pile: appuyez toutes les 2 s.",
+            "en": "Climate / TH sensor (SNZB-02, eWeLink CK-TLSR…): Zigbee Bastien → Climate Sensor — NOT Homey Zigbee. Hold pair 5s; battery: tap every 2s while pairing.",
+            "fr": "Capteur climat (SNZB-02, eWeLink CK-TLSR…): Zigbee Bastien → Capteur climat — PAS Homey Zigbee. Maintenez 5 s; pile: appuyez toutes les 2 s.",
             "nl": "Houd de paarknop 5 seconden ingedrukt tot de LED knippert. Bij batterij: druk elke 2 s tijdens het pairen.",
-            "de": "Halten Sie die Kopplungstaste 5 Sekunden, bis die LED blinkt. Bei Batterie alle 2 s w??hrend des Pairings dr??cken."
+            "de": "Halten Sie die Kopplungstaste 5 Sekunden, bis die LED blinkt. Bei Batterie alle 2 s während des Pairings drücken."
           }
         }
       },
@@ -32308,7 +32311,7 @@
           "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
             "en": "Press and hold the pairing button for 5 seconds until the LED flashes.",
-            "fr": "Appuyez et maintenez le bouton d'appairage pendant 5 secondes jusqu'?? ce que la LED clignote."
+            "fr": "Appuyez et maintenez le bouton d'appairage pendant 5 secondes jusqu'à ce que la LED clignote."
           }
         },
         "endpoints": {
@@ -32745,9 +32748,9 @@
           "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
             "en": "Press and hold the pairing button for 5 seconds until the LED flashes. Keep pressing every 2 seconds during pairing if the device is battery-powered.",
-            "fr": "Maintenez le bouton d'appairage 5 secondes jusqu'?? ce que la LED clignote. Sur pile, rappuyez toutes les 2 s pendant l'appairage.",
+            "fr": "Maintenez le bouton d'appairage 5 secondes jusqu'à ce que la LED clignote. Sur pile, rappuyez toutes les 2 s pendant l'appairage.",
             "nl": "Houd de paarknop 5 seconden ingedrukt tot de LED knippert. Bij batterij: druk elke 2 s tijdens het pairen.",
-            "de": "Halten Sie die Kopplungstaste 5 Sekunden, bis die LED blinkt. Bei Batterie alle 2 s w??hrend des Pairings dr??cken."
+            "de": "Halten Sie die Kopplungstaste 5 Sekunden, bis die LED blinkt. Bei Batterie alle 2 s während des Pairings drücken."
           }
         }
       },
@@ -32829,9 +32832,9 @@
           "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
             "en": "Press and hold the pairing button for 5 seconds until the LED flashes. Keep pressing every 2 seconds during pairing if the device is battery-powered.",
-            "fr": "Maintenez le bouton d'appairage 5 secondes jusqu'?? ce que la LED clignote. Sur pile, rappuyez toutes les 2 s pendant l'appairage.",
+            "fr": "Maintenez le bouton d'appairage 5 secondes jusqu'à ce que la LED clignote. Sur pile, rappuyez toutes les 2 s pendant l'appairage.",
             "nl": "Houd de paarknop 5 seconden ingedrukt tot de LED knippert. Bij batterij: druk elke 2 s tijdens het pairen.",
-            "de": "Halten Sie die Kopplungstaste 5 Sekunden, bis die LED blinkt. Bei Batterie alle 2 s w??hrend des Pairings dr??cken."
+            "de": "Halten Sie die Kopplungstaste 5 Sekunden, bis die LED blinkt. Bei Batterie alle 2 s während des Pairings drücken."
           }
         }
       },
@@ -33260,9 +33263,9 @@
           "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
             "en": "Press and hold the pairing button for 5 seconds until the LED flashes. Keep pressing every 2 seconds during pairing if the device is battery-powered.",
-            "fr": "Maintenez le bouton d'appairage 5 secondes jusqu'?? ce que la LED clignote. Sur pile, rappuyez toutes les 2 s pendant l'appairage.",
+            "fr": "Maintenez le bouton d'appairage 5 secondes jusqu'à ce que la LED clignote. Sur pile, rappuyez toutes les 2 s pendant l'appairage.",
             "nl": "Houd de paarknop 5 seconden ingedrukt tot de LED knippert. Bij batterij: druk elke 2 s tijdens het pairen.",
-            "de": "Halten Sie die Kopplungstaste 5 Sekunden, bis die LED blinkt. Bei Batterie alle 2 s w??hrend des Pairings dr??cken."
+            "de": "Halten Sie die Kopplungstaste 5 Sekunden, bis die LED blinkt. Bei Batterie alle 2 s während des Pairings drücken."
           }
         }
       }
@@ -33921,9 +33924,9 @@
           "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
             "en": "Press and hold the pairing button for 5 seconds until the LED flashes. Keep pressing every 2 seconds during pairing if the device is battery-powered.",
-            "fr": "Maintenez le bouton d'appairage 5 secondes jusqu'?? ce que la LED clignote. Sur pile, rappuyez toutes les 2 s pendant l'appairage.",
+            "fr": "Maintenez le bouton d'appairage 5 secondes jusqu'à ce que la LED clignote. Sur pile, rappuyez toutes les 2 s pendant l'appairage.",
             "nl": "Houd de paarknop 5 seconden ingedrukt tot de LED knippert. Bij batterij: druk elke 2 s tijdens het pairen.",
-            "de": "Halten Sie die Kopplungstaste 5 Sekunden, bis die LED blinkt. Bei Batterie alle 2 s w??hrend des Pairings dr??cken."
+            "de": "Halten Sie die Kopplungstaste 5 Sekunden, bis die LED blinkt. Bei Batterie alle 2 s während des Pairings drücken."
           }
         }
       },
@@ -34101,7 +34104,7 @@
           "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
             "en": "Press and hold the pairing button for 5 seconds until the LED flashes.",
-            "fr": "Appuyez et maintenez le bouton d'appairage pendant 5 secondes jusqu'??ce que la LED clignote."
+            "fr": "Appuyez et maintenez le bouton d'appairage pendant 5 secondes jusqu'àce que la LED clignote."
           }
         },
         "endpoints": {
@@ -34913,9 +34916,9 @@
           "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
             "en": "Press and hold the pairing button for 5 seconds until the LED flashes. Keep pressing every 2 seconds during pairing if the device is battery-powered.",
-            "fr": "Maintenez le bouton d'appairage 5 secondes jusqu'?? ce que la LED clignote. Sur pile, rappuyez toutes les 2 s pendant l'appairage.",
+            "fr": "Maintenez le bouton d'appairage 5 secondes jusqu'à ce que la LED clignote. Sur pile, rappuyez toutes les 2 s pendant l'appairage.",
             "nl": "Houd de paarknop 5 seconden ingedrukt tot de LED knippert. Bij batterij: druk elke 2 s tijdens het pairen.",
-            "de": "Halten Sie die Kopplungstaste 5 Sekunden, bis die LED blinkt. Bei Batterie alle 2 s w??hrend des Pairings dr??cken."
+            "de": "Halten Sie die Kopplungstaste 5 Sekunden, bis die LED blinkt. Bei Batterie alle 2 s während des Pairings drücken."
           }
         }
       }
@@ -35710,9 +35713,9 @@
           "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
             "en": "Press and hold the pairing button for 5 seconds until the LED flashes. Keep pressing every 2 seconds during pairing if the device is battery-powered.",
-            "fr": "Maintenez le bouton d'appairage 5 secondes jusqu'?? ce que la LED clignote. Sur pile, rappuyez toutes les 2 s pendant l'appairage.",
+            "fr": "Maintenez le bouton d'appairage 5 secondes jusqu'à ce que la LED clignote. Sur pile, rappuyez toutes les 2 s pendant l'appairage.",
             "nl": "Houd de paarknop 5 seconden ingedrukt tot de LED knippert. Bij batterij: druk elke 2 s tijdens het pairen.",
-            "de": "Halten Sie die Kopplungstaste 5 Sekunden, bis die LED blinkt. Bei Batterie alle 2 s w??hrend des Pairings dr??cken."
+            "de": "Halten Sie die Kopplungstaste 5 Sekunden, bis die LED blinkt. Bei Batterie alle 2 s während des Pairings drücken."
           }
         }
       },
@@ -35806,9 +35809,9 @@
           "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
             "en": "Press and hold the pairing button for 5 seconds until the LED flashes. Keep pressing every 2 seconds during pairing if the device is battery-powered.",
-            "fr": "Maintenez le bouton d'appairage 5 secondes jusqu'?? ce que la LED clignote. Sur pile, rappuyez toutes les 2 s pendant l'appairage.",
+            "fr": "Maintenez le bouton d'appairage 5 secondes jusqu'à ce que la LED clignote. Sur pile, rappuyez toutes les 2 s pendant l'appairage.",
             "nl": "Houd de paarknop 5 seconden ingedrukt tot de LED knippert. Bij batterij: druk elke 2 s tijdens het pairen.",
-            "de": "Halten Sie die Kopplungstaste 5 Sekunden, bis die LED blinkt. Bei Batterie alle 2 s w??hrend des Pairings dr??cken."
+            "de": "Halten Sie die Kopplungstaste 5 Sekunden, bis die LED blinkt. Bei Batterie alle 2 s während des Pairings drücken."
           }
         }
       },
@@ -36031,7 +36034,7 @@
           "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
             "en": "Press and hold the pairing button for 5 seconds until the LED flashes.",
-            "fr": "Appuyez et maintenez le bouton d'appairage pendant 5 secondes jusqu'?? ce que la LED clignote."
+            "fr": "Appuyez et maintenez le bouton d'appairage pendant 5 secondes jusqu'à ce que la LED clignote."
           }
         },
         "endpoints": {
@@ -36285,7 +36288,15 @@
           "Tuyatec-trhrga6p",
           "EWeLink",
           "heobian",
-          "Heobian"
+          "Heobian",
+          "_TZE204_2imwyigp",
+          "_tze204_2imwyigp",
+          "_TZE200_u6x1zyv2",
+          "_tze200_u6x1zyv2",
+          "_TZE200_2imwyigp",
+          "_tze200_2imwyigp",
+          "_TZ3210_jaap6jeb",
+          "_tz3210_jaap6jeb"
         ]
       },
       "settings": [
@@ -37140,9 +37151,9 @@
           "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
             "en": "Press and hold the pairing button for 5 seconds until the LED flashes. Keep pressing every 2 seconds during pairing if the device is battery-powered.",
-            "fr": "Maintenez le bouton d'appairage 5 secondes jusqu'?? ce que la LED clignote. Sur pile, rappuyez toutes les 2 s pendant l'appairage.",
+            "fr": "Maintenez le bouton d'appairage 5 secondes jusqu'à ce que la LED clignote. Sur pile, rappuyez toutes les 2 s pendant l'appairage.",
             "nl": "Houd de paarknop 5 seconden ingedrukt tot de LED knippert. Bij batterij: druk elke 2 s tijdens het pairen.",
-            "de": "Halten Sie die Kopplungstaste 5 Sekunden, bis die LED blinkt. Bei Batterie alle 2 s w??hrend des Pairings dr??cken."
+            "de": "Halten Sie die Kopplungstaste 5 Sekunden, bis die LED blinkt. Bei Batterie alle 2 s während des Pairings drücken."
           }
         }
       }
@@ -37543,9 +37554,9 @@
           "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
             "en": "Press and hold the pairing button for 5 seconds until the LED flashes. Keep pressing every 2 seconds during pairing if the device is battery-powered.",
-            "fr": "Maintenez le bouton d'appairage 5 secondes jusqu'?? ce que la LED clignote. Sur pile, rappuyez toutes les 2 s pendant l'appairage.",
+            "fr": "Maintenez le bouton d'appairage 5 secondes jusqu'à ce que la LED clignote. Sur pile, rappuyez toutes les 2 s pendant l'appairage.",
             "nl": "Houd de paarknop 5 seconden ingedrukt tot de LED knippert. Bij batterij: druk elke 2 s tijdens het pairen.",
-            "de": "Halten Sie die Kopplungstaste 5 Sekunden, bis die LED blinkt. Bei Batterie alle 2 s w??hrend des Pairings dr??cken."
+            "de": "Halten Sie die Kopplungstaste 5 Sekunden, bis die LED blinkt. Bei Batterie alle 2 s während des Pairings drücken."
           }
         }
       },
@@ -38232,9 +38243,9 @@
           "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
             "en": "Press and hold the pairing button for 5 seconds until the LED flashes. Keep pressing every 2 seconds during pairing if the device is battery-powered.",
-            "fr": "Maintenez le bouton d'appairage 5 secondes jusqu'?? ce que la LED clignote. Sur pile, rappuyez toutes les 2 s pendant l'appairage.",
+            "fr": "Maintenez le bouton d'appairage 5 secondes jusqu'à ce que la LED clignote. Sur pile, rappuyez toutes les 2 s pendant l'appairage.",
             "nl": "Houd de paarknop 5 seconden ingedrukt tot de LED knippert. Bij batterij: druk elke 2 s tijdens het pairen.",
-            "de": "Halten Sie die Kopplungstaste 5 Sekunden, bis die LED blinkt. Bei Batterie alle 2 s w??hrend des Pairings dr??cken."
+            "de": "Halten Sie die Kopplungstaste 5 Sekunden, bis die LED blinkt. Bei Batterie alle 2 s während des Pairings drücken."
           }
         }
       },
@@ -39075,9 +39086,9 @@
           "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
             "en": "Press and hold the pairing button for 5 seconds until the LED flashes. Keep pressing every 2 seconds during pairing if the device is battery-powered.",
-            "fr": "Maintenez le bouton d'appairage 5 secondes jusqu'?? ce que la LED clignote. Sur pile, rappuyez toutes les 2 s pendant l'appairage.",
+            "fr": "Maintenez le bouton d'appairage 5 secondes jusqu'à ce que la LED clignote. Sur pile, rappuyez toutes les 2 s pendant l'appairage.",
             "nl": "Houd de paarknop 5 seconden ingedrukt tot de LED knippert. Bij batterij: druk elke 2 s tijdens het pairen.",
-            "de": "Halten Sie die Kopplungstaste 5 Sekunden, bis die LED blinkt. Bei Batterie alle 2 s w??hrend des Pairings dr??cken."
+            "de": "Halten Sie die Kopplungstaste 5 Sekunden, bis die LED blinkt. Bei Batterie alle 2 s während des Pairings drücken."
           }
         }
       },
@@ -39478,9 +39489,9 @@
           "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
             "en": "Press and hold the pairing button for 5 seconds until the LED flashes. Keep pressing every 2 seconds during pairing if the device is battery-powered.",
-            "fr": "Maintenez le bouton d'appairage 5 secondes jusqu'?? ce que la LED clignote. Sur pile, rappuyez toutes les 2 s pendant l'appairage.",
+            "fr": "Maintenez le bouton d'appairage 5 secondes jusqu'à ce que la LED clignote. Sur pile, rappuyez toutes les 2 s pendant l'appairage.",
             "nl": "Houd de paarknop 5 seconden ingedrukt tot de LED knippert. Bij batterij: druk elke 2 s tijdens het pairen.",
-            "de": "Halten Sie die Kopplungstaste 5 Sekunden, bis die LED blinkt. Bei Batterie alle 2 s w??hrend des Pairings dr??cken."
+            "de": "Halten Sie die Kopplungstaste 5 Sekunden, bis die LED blinkt. Bei Batterie alle 2 s während des Pairings drücken."
           }
         }
       }
@@ -41050,7 +41061,11 @@
           "_tze284_DQY15ZXY",
           "_TZE210_XGZZUERD",
           "_tze210_XGZZUERD",
-          "HEOBIAN"
+          "HEOBIAN",
+          "_TZE204_ycke4deo",
+          "_tze204_ycke4deo",
+          "_TZE200_j1xl73iw",
+          "_tze200_j1xl73iw"
         ],
         "productId": [
           "01minizb",
@@ -41942,9 +41957,9 @@
           "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
             "en": "Press the motor pairing button (or P2 twice) until the motor jogs / LED flashes, then start pairing in Homey.",
-            "fr": "Bouton moteur (ou P2??2) jusqu'?? jog/LED, puis lancez l'appairage Homey.",
-            "nl": "Motor-paarknop (of P2??2) tot jog/LED, start daarna Homey-pairing.",
-            "de": "Motor-Pairingtaste (oder P2??2) bis Ruck/LED, dann Homey-Pairing starten."
+            "fr": "Bouton moteur (ou P2×2) jusqu'à jog/LED, puis lancez l'appairage Homey.",
+            "nl": "Motor-paarknop (of P2×2) tot jog/LED, start daarna Homey-pairing.",
+            "de": "Motor-Pairingtaste (oder P2×2) bis Ruck/LED, dann Homey-Pairing starten."
           }
         }
       },
@@ -42774,7 +42789,7 @@
         "learnmode": {
           "instruction": {
             "en": "Press the pairing button on the meter for 5 seconds until LED blinks rapidly",
-            "fr": "Appuyez sur le bouton d'appairage du compteur pendant 5 secondes jusqu'??ce que la LED clignote rapidement"
+            "fr": "Appuyez sur le bouton d'appairage du compteur pendant 5 secondes jusqu'àce que la LED clignote rapidement"
           }
         },
         "manufacturerName": [
@@ -43150,7 +43165,7 @@
           "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
             "en": "Press and hold the pairing button for 5 seconds until the LED flashes.",
-            "fr": "Appuyez et maintenez le bouton d'appairage pendant 5 secondes jusqu'??ce que la LED clignote."
+            "fr": "Appuyez et maintenez le bouton d'appairage pendant 5 secondes jusqu'àce que la LED clignote."
           }
         },
         "manufacturerName": [
@@ -43681,7 +43696,7 @@
           "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
             "en": "Press and hold the pairing button for 5 seconds until the LED flashes.",
-            "fr": "Appuyez et maintenez le bouton d'appairage pendant 5 secondes jusqu'??ce que la LED clignote."
+            "fr": "Appuyez et maintenez le bouton d'appairage pendant 5 secondes jusqu'àce que la LED clignote."
           }
         },
         "endpoints": {
@@ -44029,7 +44044,7 @@
           "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
             "en": "Press and hold the pairing button for 5 seconds until the LED flashes.",
-            "fr": "Appuyez et maintenez le bouton d'appairage pendant 5 secondes jusqu'??ce que la LED clignote."
+            "fr": "Appuyez et maintenez le bouton d'appairage pendant 5 secondes jusqu'àce que la LED clignote."
           }
         },
         "endpoints": {
@@ -44700,7 +44715,7 @@
           "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
             "en": "Press and hold the pairing button for 5 seconds until the LED flashes.",
-            "fr": "Appuyez et maintenez le bouton d'appairage pendant 5 secondes jusqu'??ce que la LED clignote."
+            "fr": "Appuyez et maintenez le bouton d'appairage pendant 5 secondes jusqu'àce que la LED clignote."
           }
         },
         "endpoints": {
@@ -45070,7 +45085,7 @@
           "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
             "en": "Press and hold the pairing button for 5 seconds until the LED flashes.",
-            "fr": "Appuyez et maintenez le bouton d'appairage pendant 5 secondes jusqu'??ce que la LED clignote."
+            "fr": "Appuyez et maintenez le bouton d'appairage pendant 5 secondes jusqu'àce que la LED clignote."
           }
         },
         "endpoints": {
@@ -45412,7 +45427,7 @@
           "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
             "en": "Press and hold the pairing button for 5 seconds until the LED flashes.",
-            "fr": "Appuyez et maintenez le bouton d'appairage pendant 5 secondes jusqu'??ce que la LED clignote."
+            "fr": "Appuyez et maintenez le bouton d'appairage pendant 5 secondes jusqu'àce que la LED clignote."
           }
         },
         "endpoints": {
@@ -46160,7 +46175,7 @@
           "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
             "en": "Press and hold the pairing button for 5 seconds until the LED flashes.",
-            "fr": "Appuyez et maintenez le bouton d'appairage pendant 5 secondes jusqu'??ce que la LED clignote."
+            "fr": "Appuyez et maintenez le bouton d'appairage pendant 5 secondes jusqu'àce que la LED clignote."
           }
         },
         "productId": [
@@ -46539,10 +46554,10 @@
         "learnmode": {
           "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
-            "en": "On the thermostat, open settings ??? Zigbee/Network ??? Pair, or hold the reset pin until the display shows pairing mode.",
-            "fr": "R??glages ??? Zigbee/R??seau ??? Appairer, ou maintenez reset jusqu'au mode appairage.",
-            "nl": "Instellingen ??? Zigbee/Netwerk ??? Pairen, of reset tot pairmodus op display.",
-            "de": "Einstellungen ??? Zigbee/Netz ??? Koppeln, oder Reset bis Pairing-Modus."
+            "en": "On the thermostat, open settings → Zigbee/Network → Pair, or hold the reset pin until the display shows pairing mode.",
+            "fr": "Réglages → Zigbee/Réseau → Appairer, ou maintenez reset jusqu'au mode appairage.",
+            "nl": "Instellingen → Zigbee/Netwerk → Pairen, of reset tot pairmodus op display.",
+            "de": "Einstellungen → Zigbee/Netz → Koppeln, oder Reset bis Pairing-Modus."
           }
         }
       },
@@ -46950,7 +46965,7 @@
           "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
             "en": "Press and hold the pairing button for 5 seconds until the LED flashes.",
-            "fr": "Appuyez et maintenez le bouton d'appairage pendant 5 secondes jusqu'?? ce que la LED clignote."
+            "fr": "Appuyez et maintenez le bouton d'appairage pendant 5 secondes jusqu'à ce que la LED clignote."
           }
         },
         "endpoints": {
@@ -47348,7 +47363,7 @@
           "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
             "en": "Press and hold the pairing button for 5 seconds until the LED flashes.",
-            "fr": "Appuyez et maintenez le bouton d'appairage pendant 5 secondes jusqu'?? ce que la LED clignote."
+            "fr": "Appuyez et maintenez le bouton d'appairage pendant 5 secondes jusqu'à ce que la LED clignote."
           }
         },
         "endpoints": {
@@ -47800,10 +47815,10 @@
         "learnmode": {
           "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
-            "en": "On the thermostat, open settings ??? Zigbee/Network ??? Pair, or hold the reset pin until the display shows pairing mode.",
-            "fr": "R??glages ??? Zigbee/R??seau ??? Appairer, ou maintenez reset jusqu'au mode appairage.",
-            "nl": "Instellingen ??? Zigbee/Netwerk ??? Pairen, of reset tot pairmodus op display.",
-            "de": "Einstellungen ??? Zigbee/Netz ??? Koppeln, oder Reset bis Pairing-Modus."
+            "en": "On the thermostat, open settings → Zigbee/Network → Pair, or hold the reset pin until the display shows pairing mode.",
+            "fr": "Réglages → Zigbee/Réseau → Appairer, ou maintenez reset jusqu'au mode appairage.",
+            "nl": "Instellingen → Zigbee/Netwerk → Pairen, of reset tot pairmodus op display.",
+            "de": "Einstellungen → Zigbee/Netz → Koppeln, oder Reset bis Pairing-Modus."
           }
         }
       },
@@ -48149,7 +48164,7 @@
           "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
             "en": "Press the pairing button on your Zigbee device until it enters pairing mode.",
-            "fr": "Appuyez sur le bouton d'appairage de votre appareil Zigbee jusqu'??ce qu'il passe en mode appairage."
+            "fr": "Appuyez sur le bouton d'appairage de votre appareil Zigbee jusqu'àce qu'il passe en mode appairage."
           }
         }
       },
@@ -48317,7 +48332,7 @@
           "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
             "en": "Generic Tuya TS0601 device.\n\n1. Press and hold the reset button for 5+ seconds\n2. The LED should start blinking\n3. The device will be detected automatically\n\nNote: This is a fallback driver for unknown TS0601 devices. Data points will be auto-discovered.",
-            "fr": "Appareil Tuya TS0601 g??n??rique.\n\n1. Appuyez et maintenez le bouton reset pendant 5+ secondes\n2. La LED devrait clignoter\n3. L'appareil sera d??tect?? automatiquement\n\nNote: Driver de secours pour TS0601 inconnus. Les points de donn??es seront auto-d??couverts."
+            "fr": "Appareil Tuya TS0601 générique.\n\n1. Appuyez et maintenez le bouton reset pendant 5+ secondes\n2. La LED devrait clignoter\n3. L'appareil sera détecté automatiquement\n\nNote: Driver de secours pour TS0601 inconnus. Les points de données seront auto-découverts."
           }
         }
       },
@@ -48446,7 +48461,7 @@
           "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
             "en": "Press and hold the pairing button for 5 seconds until the LED flashes.",
-            "fr": "Appuyez et maintenez le bouton d'appairage pendant 5 secondes jusqu'??ce que la LED clignote."
+            "fr": "Appuyez et maintenez le bouton d'appairage pendant 5 secondes jusqu'àce que la LED clignote."
           }
         },
         "endpoints": {
@@ -49747,14 +49762,17 @@
             ]
           }
         },
-        "manufacturerName": [],
+        "manufacturerName": [
+          "_hybrid_device_plug_energy_monitor_needs_device_assignment",
+          "_HYBRID_DEVICE_PLUG_ENERGY_MONITOR_NEEDS_DEVICE_ASSIGNMENT"
+        ],
         "learnmode": {
           "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
             "en": "Turn the device on/off 3 times quickly, or hold the reset button until the LED flashes rapidly.",
-            "fr": "Allumez/??teignez 3 fois rapidement, ou maintenez reset jusqu'?? clignotement rapide.",
-            "nl": "Zet het apparaat 3?? snel aan/uit, of houd reset vast tot snelle LED-knippering.",
-            "de": "Ger??t 3?? schnell ein/aus, oder Reset halten bis die LED schnell blinkt."
+            "fr": "Allumez/éteignez 3 fois rapidement, ou maintenez reset jusqu'à clignotement rapide.",
+            "nl": "Zet het apparaat 3× snel aan/uit, of houd reset vast tot snelle LED-knippering.",
+            "de": "Gerät 3× schnell ein/aus, oder Reset halten bis die LED schnell blinkt."
           }
         }
       },
@@ -49816,7 +49834,9 @@
         "mains": true
       },
       "zigbee": {
-        "manufacturerName": [],
+        "manufacturerName": [
+          "_tz3000_cjfmu5he"
+        ],
         "productId": [
           "Excellux",
           "RH3052",
@@ -49843,7 +49863,7 @@
           "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
             "en": "Press and hold the pairing button for 5 seconds until the LED flashes.",
-            "fr": "Appuyez et maintenez le bouton d'appairage pendant 5 secondes jusqu'??ce que la LED clignote."
+            "fr": "Appuyez et maintenez le bouton d'appairage pendant 5 secondes jusqu'àce que la LED clignote."
           }
         },
         "endpoints": {
@@ -50534,7 +50554,7 @@
           "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
             "en": "Press and hold the pairing button for 5 seconds until the LED flashes.",
-            "fr": "Appuyez et maintenez le bouton d'appairage pendant 5 secondes jusqu'??ce que la LED clignote."
+            "fr": "Appuyez et maintenez le bouton d'appairage pendant 5 secondes jusqu'àce que la LED clignote."
           }
         },
         "endpoints": {
@@ -51217,7 +51237,7 @@
           "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
             "en": "Press and hold the pairing button for 5 seconds until the LED flashes.",
-            "fr": "Appuyez et maintenez le bouton d'appairage pendant 5 secondes jusqu'?? ce que la LED clignote."
+            "fr": "Appuyez et maintenez le bouton d'appairage pendant 5 secondes jusqu'à ce que la LED clignote."
           }
         },
         "endpoints": {
@@ -52000,7 +52020,7 @@
           "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
             "en": "Press and hold the pairing button for 5 seconds until the LED flashes.",
-            "fr": "Appuyez et maintenez le bouton d'appairage pendant 5 secondes jusqu'?? ce que la LED clignote."
+            "fr": "Appuyez et maintenez le bouton d'appairage pendant 5 secondes jusqu'à ce que la LED clignote."
           }
         },
         "endpoints": {
@@ -52387,10 +52407,10 @@
         "learnmode": {
           "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
-            "en": "On the thermostat, open settings ??? Zigbee/Network ??? Pair, or hold the reset pin until the display shows pairing mode.",
-            "fr": "R??glages ??? Zigbee/R??seau ??? Appairer, ou maintenez reset jusqu'au mode appairage.",
-            "nl": "Instellingen ??? Zigbee/Netwerk ??? Pairen, of reset tot pairmodus op display.",
-            "de": "Einstellungen ??? Zigbee/Netz ??? Koppeln, oder Reset bis Pairing-Modus."
+            "en": "On the thermostat, open settings → Zigbee/Network → Pair, or hold the reset pin until the display shows pairing mode.",
+            "fr": "Réglages → Zigbee/Réseau → Appairer, ou maintenez reset jusqu'au mode appairage.",
+            "nl": "Instellingen → Zigbee/Netwerk → Pairen, of reset tot pairmodus op display.",
+            "de": "Einstellungen → Zigbee/Netz → Koppeln, oder Reset bis Pairing-Modus."
           }
         }
       },
@@ -53014,7 +53034,10 @@
             "en": "Press the setup button for 10 seconds or switch the unit on and off five times to enter pairing mode (the LED should blink green)."
           }
         },
-        "manufacturerName": []
+        "manufacturerName": [
+          "_hybrid_dimmer_1_gang_2_needs_device_assignment",
+          "_HYBRID_DIMMER_1_GANG_2_NEEDS_DEVICE_ASSIGNMENT"
+        ]
       },
       "version": "1.0.0",
       "metadata": {
@@ -53868,7 +53891,7 @@
           "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
             "en": "Press and hold the pairing button for 5 seconds until the LED flashes.",
-            "fr": "Appuyez et maintenez le bouton d'appairage pendant 5 secondes jusqu'??ce que la LED clignote."
+            "fr": "Appuyez et maintenez le bouton d'appairage pendant 5 secondes jusqu'àce que la LED clignote."
           }
         },
         "endpoints": {
@@ -54305,7 +54328,7 @@
           "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
             "en": "Press and hold the pairing button for 5 seconds until the LED flashes.",
-            "fr": "Appuyez et maintenez le bouton d'appairage pendant 5 secondes jusqu'??ce que la LED clignote."
+            "fr": "Appuyez et maintenez le bouton d'appairage pendant 5 secondes jusqu'àce que la LED clignote."
           }
         },
         "capabilities": {
@@ -54684,7 +54707,10 @@
         }
       },
       "zigbee": {
-        "manufacturerName": [],
+        "manufacturerName": [
+          "_tz3000_92chsky7",
+          "_TZ3000_7ysdnebc"
+        ],
         "productId": [
           "TS1101",
           "TS0601"
@@ -54901,7 +54927,7 @@
         "learnmode": {
           "instruction": {
             "en": "Press the setup button for 10 seconds or switch the unit on and off five times to enter pairing mode.",
-            "fr": "Appuyez sur le bouton de configuration pendant 10 secondes ou allumez et ??teignez l'appareil cinq fois pour passer en mode appairage."
+            "fr": "Appuyez sur le bouton de configuration pendant 10 secondes ou allumez et éteignez l'appareil cinq fois pour passer en mode appairage."
           }
         }
       },
@@ -54958,7 +54984,7 @@
           "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
             "en": "Press and hold the pairing button for 5 seconds until the LED flashes.",
-            "fr": "Appuyez et maintenez le bouton d'appairage pendant 5 secondes jusqu'?? ce que la LED clignote."
+            "fr": "Appuyez et maintenez le bouton d'appairage pendant 5 secondes jusqu'à ce que la LED clignote."
           }
         },
         "endpoints": {
@@ -55787,10 +55813,10 @@
         "learnmode": {
           "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
-            "en": "Power-cycle the light 3???5 times until it flashes, or hold the reset button on the controller.",
-            "fr": "Coupez/r??tablissez l'alim. 3???5 fois jusqu'?? clignotement, ou maintenez reset.",
-            "nl": "Schakel de lamp 3???5?? uit/aan tot knipperen, of houd reset vast.",
-            "de": "Lampe 3???5?? netzschalten bis Blinken, oder Reset halten."
+            "en": "Power-cycle the light 3–5 times until it flashes, or hold the reset button on the controller.",
+            "fr": "Coupez/rétablissez l'alim. 3–5 fois jusqu'à clignotement, ou maintenez reset.",
+            "nl": "Schakel de lamp 3–5× uit/aan tot knipperen, of houd reset vast.",
+            "de": "Lampe 3–5× netzschalten bis Blinken, oder Reset halten."
           }
         }
       },
@@ -56491,10 +56517,10 @@
         "learnmode": {
           "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
-            "en": "Power-cycle the light 3???5 times until it flashes, or hold the reset button on the controller.",
-            "fr": "Coupez/r??tablissez l'alim. 3???5 fois jusqu'?? clignotement, ou maintenez reset.",
-            "nl": "Schakel de lamp 3???5?? uit/aan tot knipperen, of houd reset vast.",
-            "de": "Lampe 3???5?? netzschalten bis Blinken, oder Reset halten."
+            "en": "Power-cycle the light 3–5 times until it flashes, or hold the reset button on the controller.",
+            "fr": "Coupez/rétablissez l'alim. 3–5 fois jusqu'à clignotement, ou maintenez reset.",
+            "nl": "Schakel de lamp 3–5× uit/aan tot knipperen, of houd reset vast.",
+            "de": "Lampe 3–5× netzschalten bis Blinken, oder Reset halten."
           }
         }
       },
@@ -57141,7 +57167,7 @@
         "learnmode": {
           "instruction": {
             "en": "Press the pairing button on the meter for 5 seconds until LED blinks rapidly",
-            "fr": "Appuyez sur le bouton d'appairage du compteur pendant 5 secondes jusqu'?? ce que la LED clignote rapidement"
+            "fr": "Appuyez sur le bouton d'appairage du compteur pendant 5 secondes jusqu'à ce que la LED clignote rapidement"
           }
         }
       },
@@ -57308,7 +57334,7 @@
         "learnmode": {
           "instruction": {
             "en": "Press the pairing button for 5-10 seconds until LED blinks rapidly",
-            "fr": "Appuyez sur le bouton d'appairage pendant 5-10 secondes jusqu'?? clignotement rapide"
+            "fr": "Appuyez sur le bouton d'appairage pendant 5-10 secondes jusqu'à clignotement rapide"
           }
         }
       },
@@ -57895,7 +57921,7 @@
           "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
             "en": "DIY Custom Zigbee Device (PTVO, ESP32-H2, CC2530, etc.)\n\n1. Put your DIY device in pairing mode\n2. For PTVO: Short press the button or power cycle\n3. For ESP32: Follow your firmware instructions\n4. For CC2530/CC2531: Power cycle or use button\n5. Device will be auto-detected\n\nSupported Firmware:\n- PTVO Configurable Firmware\n- ESP Zigbee SDK (ESP32-H2/C6)\n- DIYRuZ projects\n- Tasmota Zigbee\n- Custom ZCL implementations",
-            "fr": "Appareil Zigbee DIY (PTVO, ESP32-H2, CC2530, etc.)\n\n1. Mettez votre appareil DIY en mode appairage\n2. PTVO: Appui court sur le bouton ou red??marrage\n3. ESP32: Suivez les instructions de votre firmware\n4. CC2530/CC2531: Red??marrage ou bouton\n5. L'appareil sera auto-d??tect??\n\nFirmwares Support??s:\n- PTVO Configurable Firmware\n- ESP Zigbee SDK (ESP32-H2/C6)\n- Projets DIYRuZ\n- Tasmota Zigbee\n- Impl??mentations ZCL personnalis??es"
+            "fr": "Appareil Zigbee DIY (PTVO, ESP32-H2, CC2530, etc.)\n\n1. Mettez votre appareil DIY en mode appairage\n2. PTVO: Appui court sur le bouton ou redémarrage\n3. ESP32: Suivez les instructions de votre firmware\n4. CC2530/CC2531: Redémarrage ou bouton\n5. L'appareil sera auto-détecté\n\nFirmwares Supportés:\n- PTVO Configurable Firmware\n- ESP Zigbee SDK (ESP32-H2/C6)\n- Projets DIYRuZ\n- Tasmota Zigbee\n- Implémentations ZCL personnalisées"
           }
         }
       },
@@ -58184,7 +58210,7 @@
           "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
             "en": "Press and hold the pairing button for 5 seconds until the LED flashes.",
-            "fr": "Appuyez et maintenez le bouton d'appairage pendant 5 secondes jusqu'?? ce que la LED clignote."
+            "fr": "Appuyez et maintenez le bouton d'appairage pendant 5 secondes jusqu'à ce que la LED clignote."
           }
         }
       },
@@ -58519,7 +58545,7 @@
           "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
             "en": "Press and hold the pairing button for 5 seconds until the LED flashes.",
-            "fr": "Appuyez et maintenez le bouton d'appairage pendant 5 secondes jusqu'??ce que la LED clignote."
+            "fr": "Appuyez et maintenez le bouton d'appairage pendant 5 secondes jusqu'àce que la LED clignote."
           }
         },
         "manufacturerName": [
@@ -58904,9 +58930,9 @@
           "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
             "en": "Press and hold the reset button for 5 seconds until the LED flashes.",
-            "fr": "Maintenez le bouton de r??initialisation pendant 5 secondes jusqu'?? ce que la LED clignote.",
+            "fr": "Maintenez le bouton de réinitialisation pendant 5 secondes jusqu'à ce que la LED clignote.",
             "nl": "Houd de resetknop 5 seconden ingedrukt tot de LED knippert.",
-            "de": "Halten Sie die Reset-Taste 5 Sekunden lang gedr??ckt, bis die LED blinkt."
+            "de": "Halten Sie die Reset-Taste 5 Sekunden lang gedrückt, bis die LED blinkt."
           }
         }
       },
@@ -59050,7 +59076,7 @@
           "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
             "en": "Press and hold the pairing button for 5 seconds until the LED flashes.",
-            "fr": "Appuyez et maintenez le bouton d'appairage pendant 5 secondes jusqu'?? ce que la LED clignote."
+            "fr": "Appuyez et maintenez le bouton d'appairage pendant 5 secondes jusqu'à ce que la LED clignote."
           }
         },
         "endpoints": {
@@ -59414,7 +59440,42 @@
             "en": "Insert a pin into the single hole on the side of the device and press it gently for aprox 10 seconds until the LED blinks rapidly."
           }
         },
-        "manufacturerName": []
+        "manufacturerName": [
+          "TUYATEC-7qunn4gq",
+          "TUYATEC-ABKEHQUS",
+          "TUYATEC-BFQ2I2SY",
+          "TUYATEC-Bfq2i2Sy",
+          "TUYATEC-G3GL6CGY",
+          "TUYATEC-abkehqus",
+          "TUYATEC-crr8qb0p",
+          "TUYATEC-g3gl6cgy",
+          "TUYATEC-ip9ganvw",
+          "TUYATEC-kbqf60nt",
+          "TUYATEC-r9hgssol",
+          "TUYATEC-rkqiqvcs",
+          "TUYATEC-sb6t7ett",
+          "TUYATEC-trhrga6p",
+          "_TYZB01_xph99wvr",
+          "tuyatec-abkehqus",
+          "tuyatec-bfq2i2sy",
+          "tuyatec-g3gl6cgy",
+          "tuyatec-7qunn4gq",
+          "tuyatec-crr8qb0p",
+          "tuyatec-ip9ganvw",
+          "tuyatec-kbqf60nt",
+          "tuyatec-r9hgssol",
+          "tuyatec-rkqiqvcs",
+          "tuyatec-sb6t7ett",
+          "tuyatec-trhrga6p",
+          "TUYATEC-7QUNN4GQ",
+          "TUYATEC-CRR8QB0P",
+          "TUYATEC-IP9GANVW",
+          "TUYATEC-KBQF60NT",
+          "TUYATEC-R9HGSSOL",
+          "TUYATEC-RKQIQVCS",
+          "TUYATEC-SB6T7ETT",
+          "TUYATEC-TRHRGA6P"
+        ]
       },
       "version": "1.0.0",
       "capabilitiesOptions": {
@@ -59837,7 +59898,10 @@
             "en": "Press and hold down on/off switch for aprox 5 seconds until the LED blinks rapidly."
           }
         },
-        "manufacturerName": []
+        "manufacturerName": [
+          "_hybrid_double_power_point_needs_device_assignment",
+          "_HYBRID_DOUBLE_POWER_POINT_NEEDS_DEVICE_ASSIGNMENT"
+        ]
       },
       "version": "1.0.0",
       "metadata": {
@@ -61995,10 +62059,10 @@
         "learnmode": {
           "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
-            "en": "On the thermostat, open settings ??? Zigbee/Network ??? Pair, or hold the reset pin until the display shows pairing mode.",
-            "fr": "R??glages ??? Zigbee/R??seau ??? Appairer, ou maintenez reset jusqu'au mode appairage.",
-            "nl": "Instellingen ??? Zigbee/Netwerk ??? Pairen, of reset tot pairmodus op display.",
-            "de": "Einstellungen ??? Zigbee/Netz ??? Koppeln, oder Reset bis Pairing-Modus."
+            "en": "On the thermostat, open settings → Zigbee/Network → Pair, or hold the reset pin until the display shows pairing mode.",
+            "fr": "Réglages → Zigbee/Réseau → Appairer, ou maintenez reset jusqu'au mode appairage.",
+            "nl": "Instellingen → Zigbee/Netwerk → Pairen, of reset tot pairmodus op display.",
+            "de": "Einstellungen → Zigbee/Netz → Koppeln, oder Reset bis Pairing-Modus."
           }
         }
       },
@@ -62584,7 +62648,7 @@
           "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
             "en": "Press and hold the pairing button for 5 seconds until the LED flashes.",
-            "fr": "Appuyez et maintenez le bouton d'appairage pendant 5 secondes jusqu'?? ce que la LED clignote."
+            "fr": "Appuyez et maintenez le bouton d'appairage pendant 5 secondes jusqu'à ce que la LED clignote."
           }
         },
         "productId": [
@@ -62935,7 +62999,7 @@
           "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
             "en": "Press and hold the pairing button for 5 seconds until the LED flashes.",
-            "fr": "Appuyez et maintenez le bouton d'appairage pendant 5 secondes jusqu'?? ce que la LED clignote."
+            "fr": "Appuyez et maintenez le bouton d'appairage pendant 5 secondes jusqu'à ce que la LED clignote."
           }
         },
         "endpoints": {
@@ -64136,7 +64200,7 @@
           "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
             "en": "Press and hold the pairing button for 5 seconds until the LED flashes.",
-            "fr": "Appuyez et maintenez le bouton d'appairage pendant 5 secondes jusqu'?? ce que la LED clignote."
+            "fr": "Appuyez et maintenez le bouton d'appairage pendant 5 secondes jusqu'à ce que la LED clignote."
           }
         }
       },
@@ -64539,7 +64603,7 @@
         "learnmode": {
           "instruction": {
             "en": "Universal Zigbee Device (DIY + Standard ZCL)\n\n1. Put your device in pairing mode\n2. For Sonoff: Hold button 5+ seconds\n3. For ESP32/PTVO: Press boot button\n4. For Danfoss/Legrand/Schneider: Follow manufacturer pairing\n\nCapabilities auto-discovered from ZCL clusters.\n\nSupported: Sonoff, eWeLink, Danfoss, Legrand, Schneider, Bosch, Niko, ESP32, PTVO, CC2652, routers.",
-            "fr": "Appareil Zigbee DIY g??n??rique (ESP32, PTVO, CC253x, etc.)\n\n1. Mettez votre appareil DIY en mode appairage\n2. Pour ESP32: Appuyez sur boot ou d??clenchez l'appairage\n3. Pour PTVO: Maintenez le bouton 5+ secondes\n4. Pour CC253x: Red??marrez ou r??initialisez\n\nLes capacit??s seront auto-d??couvertes depuis les clusters ZCL.\n\nSupport??: ESP32-C6, ESP32-H2, PTVO, CC2530/31, CC2652, routeurs Zigbee."
+            "fr": "Appareil Zigbee DIY générique (ESP32, PTVO, CC253x, etc.)\n\n1. Mettez votre appareil DIY en mode appairage\n2. Pour ESP32: Appuyez sur boot ou déclenchez l'appairage\n3. Pour PTVO: Maintenez le bouton 5+ secondes\n4. Pour CC253x: Redémarrez ou réinitialisez\n\nLes capacités seront auto-découvertes depuis les clusters ZCL.\n\nSupporté: ESP32-C6, ESP32-H2, PTVO, CC2530/31, CC2652, routeurs Zigbee."
           }
         }
       },
@@ -64818,7 +64882,7 @@
           "MLI",
           "MONOPRICE",
           "MULLER LICHT",
-          "M??LLER LICHT",
+          "MÜLLER LICHT",
           "NAMRON",
           "NANOLEAF",
           "NEO COOLCAM",
@@ -65002,8 +65066,8 @@
           "mli",
           "monoprice",
           "muller licht",
-          "m????ller licht",
-          "m??ller licht",
+          "mãœller licht",
+          "müller licht",
           "namron",
           "nanoleaf",
           "neo coolcam",
@@ -65131,10 +65195,10 @@
           "_tze200",
           "_tze204",
           "_tze284",
-          "ma??ller licht",
+          "maœller licht",
           "SE",
-          "MA??LLER LICHT",
-          "M????LLER LICHT",
+          "MAŒLLER LICHT",
+          "MÃŒLLER LICHT",
           "Aduro",
           "Adurosmart",
           "Ajax",
@@ -65300,7 +65364,7 @@
           "Zen thermostat",
           "Zigbee alliance",
           "Zigbee2mqtt",
-          "Ma??ller licht",
+          "Maœller licht",
           "Se"
         ],
         "productId": [
@@ -65320,7 +65384,7 @@
           "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
             "en": "Generic Tuya TS0601 device.\n\n1. Press and hold the reset button for 5+ seconds\n2. The LED should start blinking\n3. The device will be detected automatically\n\nNote: This is a fallback driver for unknown TS0601 devices. Data points will be auto-discovered.",
-            "fr": "Appareil Tuya TS0601 g??n??rique.\n\n1. Appuyez et maintenez le bouton reset pendant 5+ secondes\n2. La LED devrait clignoter\n3. L'appareil sera d??tect?? automatiquement\n\nNote: Driver de secours pour TS0601 inconnus. Les points de donn??es seront auto-d??couverts."
+            "fr": "Appareil Tuya TS0601 générique.\n\n1. Appuyez et maintenez le bouton reset pendant 5+ secondes\n2. La LED devrait clignoter\n3. L'appareil sera détecté automatiquement\n\nNote: Driver de secours pour TS0601 inconnus. Les points de données seront auto-découverts."
           }
         }
       },
@@ -65872,9 +65936,9 @@
           "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
             "en": "Press and hold the WiFi button for 5 seconds until LED blinks rapidly",
-            "fr": "Appuyez et maintenez le bouton WiFi pendant 5 secondes jusqu'?? ce que la LED clignote rapidement",
+            "fr": "Appuyez et maintenez le bouton WiFi pendant 5 secondes jusqu'à ce que la LED clignote rapidement",
             "nl": "Houd de WiFi-knop 5 seconden ingedrukt totdat de LED snel knippert",
-            "de": "Halten Sie die WLAN-Taste 5 Sekunden lang gedr??ckt, bis die LED schnell blinkt"
+            "de": "Halten Sie die WLAN-Taste 5 Sekunden lang gedrückt, bis die LED schnell blinkt"
           }
         },
         "manufacturerName": [
@@ -66412,9 +66476,9 @@
           "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
             "en": "Press and hold the power button for 5 seconds until LED blinks rapidly",
-            "fr": "Appuyez et maintenez le bouton d'alimentation pendant 5 secondes jusqu'?? ce que la LED clignote rapidement",
+            "fr": "Appuyez et maintenez le bouton d'alimentation pendant 5 secondes jusqu'à ce que la LED clignote rapidement",
             "nl": "Houd de aan/uit-knop 5 seconden ingedrukt totdat de LED snel knippert",
-            "de": "Halten Sie die Ein-/Aus-Taste 5 Sekunden lang gedr??ckt, bis die LED schnell blinkt"
+            "de": "Halten Sie die Ein-/Aus-Taste 5 Sekunden lang gedrückt, bis die LED schnell blinkt"
           }
         }
       },
@@ -67164,10 +67228,10 @@
         "learnmode": {
           "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
-            "en": "On the thermostat, open settings ??? Zigbee/Network ??? Pair, or hold the reset pin until the display shows pairing mode.",
-            "fr": "R??glages ??? Zigbee/R??seau ??? Appairer, ou maintenez reset jusqu'au mode appairage.",
-            "nl": "Instellingen ??? Zigbee/Netwerk ??? Pairen, of reset tot pairmodus op display.",
-            "de": "Einstellungen ??? Zigbee/Netz ??? Koppeln, oder Reset bis Pairing-Modus."
+            "en": "On the thermostat, open settings → Zigbee/Network → Pair, or hold the reset pin until the display shows pairing mode.",
+            "fr": "Réglages → Zigbee/Réseau → Appairer, ou maintenez reset jusqu'au mode appairage.",
+            "nl": "Instellingen → Zigbee/Netwerk → Pairen, of reset tot pairmodus op display.",
+            "de": "Einstellungen → Zigbee/Netz → Koppeln, oder Reset bis Pairing-Modus."
           }
         }
       },
@@ -67688,10 +67752,10 @@
         "learnmode": {
           "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
-            "en": "On the thermostat, open settings ??? Zigbee/Network ??? Pair, or hold the reset pin until the display shows pairing mode.",
-            "fr": "R??glages ??? Zigbee/R??seau ??? Appairer, ou maintenez reset jusqu'au mode appairage.",
-            "nl": "Instellingen ??? Zigbee/Netwerk ??? Pairen, of reset tot pairmodus op display.",
-            "de": "Einstellungen ??? Zigbee/Netz ??? Koppeln, oder Reset bis Pairing-Modus."
+            "en": "On the thermostat, open settings → Zigbee/Network → Pair, or hold the reset pin until the display shows pairing mode.",
+            "fr": "Réglages → Zigbee/Réseau → Appairer, ou maintenez reset jusqu'au mode appairage.",
+            "nl": "Instellingen → Zigbee/Netwerk → Pairen, of reset tot pairmodus op display.",
+            "de": "Einstellungen → Zigbee/Netz → Koppeln, oder Reset bis Pairing-Modus."
           }
         }
       },
@@ -67999,7 +68063,9 @@
           "_HYBRID_ILLUMINANCE_SENSOR_NEEDS_DEVICE_ASSIGNMENT",
           "hobeian",
           "Hobeian",
-          "HOBEIAN"
+          "HOBEIAN",
+          "heobian",
+          "Heobian"
         ]
       },
       "icon": "/drivers/illuminance_sensor/assets/icon.svg",
@@ -68368,9 +68434,9 @@
           "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
             "en": "Put the device in Zigbee pairing mode (usually hold reset/pairing 5 seconds until LED flashes).",
-            "fr": "Mode appairage Zigbee (souvent reset/pair 5 s jusqu'?? LED clignotante).",
+            "fr": "Mode appairage Zigbee (souvent reset/pair 5 s jusqu'à LED clignotante).",
             "nl": "Zet het apparaat in Zigbee-pairmodus (meestal reset/pair 5 s tot LED knippert).",
-            "de": "Ger??t in Zigbee-Pairingmodus (meist Reset/Pair 5 s bis LED blinkt)."
+            "de": "Gerät in Zigbee-Pairingmodus (meist Reset/Pair 5 s bis LED blinkt)."
           }
         }
       },
@@ -69105,10 +69171,10 @@
         "learnmode": {
           "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
-            "en": "Zigbee Bastien ??? LCD Temp/Humidity (_TZE284_vvmbj46n+TS0601???). NOT Homey Zigbee. Hold pair 5s; battery: tap every 2s while pairing.",
-            "fr": "Zigbee Bastien ??? Capteur LCD TH (_TZE284_vvmbj46n+TS0601???). PAS Homey Zigbee. Maintenez 5 s; pile: tap toutes les 2 s.",
-            "nl": "Zigbee Bastien ??? LCD TH. Niet Homey Zigbee. 5s vasthouden; batterij elke 2s tikken.",
-            "de": "Zigbee Bastien ??? LCD TH. Nicht Homey Zigbee. 5s halten; Batterie alle 2s tippen."
+            "en": "Zigbee Bastien → LCD Temp/Humidity (_TZE284_vvmbj46n+TS0601…). NOT Homey Zigbee. Hold pair 5s; battery: tap every 2s while pairing.",
+            "fr": "Zigbee Bastien → Capteur LCD TH (_TZE284_vvmbj46n+TS0601…). PAS Homey Zigbee. Maintenez 5 s; pile: tap toutes les 2 s.",
+            "nl": "Zigbee Bastien → LCD TH. Niet Homey Zigbee. 5s vasthouden; batterij elke 2s tikken.",
+            "de": "Zigbee Bastien → LCD TH. Nicht Homey Zigbee. 5s halten; Batterie alle 2s tippen."
           }
         }
       },
@@ -69745,7 +69811,7 @@
           "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
             "en": "Press and hold the pairing button for 5 seconds until the LED flashes.",
-            "fr": "Appuyez et maintenez le bouton d'appairage pendant 5 secondes jusqu'?? ce que la LED clignote."
+            "fr": "Appuyez et maintenez le bouton d'appairage pendant 5 secondes jusqu'à ce que la LED clignote."
           }
         },
         "endpoints": {
@@ -70580,7 +70646,7 @@
           "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
             "en": "Press and hold the pairing button for 5 seconds until the LED flashes.",
-            "fr": "Appuyez et maintenez le bouton d'appairage pendant 5 secondes jusqu'?? ce que la LED clignote."
+            "fr": "Appuyez et maintenez le bouton d'appairage pendant 5 secondes jusqu'à ce que la LED clignote."
           }
         }
       },
@@ -70911,7 +70977,7 @@
           "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
             "en": "Press and hold the pairing button for 5 seconds until the LED flashes.",
-            "fr": "Appuyez et maintenez le bouton d'appairage pendant 5 secondes jusqu'?? ce que la LED clignote."
+            "fr": "Appuyez et maintenez le bouton d'appairage pendant 5 secondes jusqu'à ce que la LED clignote."
           }
         },
         "productId": [
@@ -71302,7 +71368,7 @@
           "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
             "en": "Press and hold the pairing button for 5 seconds until the LED flashes.",
-            "fr": "Appuyez et maintenez le bouton d'appairage pendant 5 secondes jusqu'?? ce que la LED clignote."
+            "fr": "Appuyez et maintenez le bouton d'appairage pendant 5 secondes jusqu'à ce que la LED clignote."
           }
         }
       },
@@ -71725,7 +71791,7 @@
           "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
             "en": "Press and hold the pairing button for 5 seconds until the LED flashes.",
-            "fr": "Appuyez et maintenez le bouton d'appairage pendant 5 secondes jusqu'??ce que la LED clignote."
+            "fr": "Appuyez et maintenez le bouton d'appairage pendant 5 secondes jusqu'àce que la LED clignote."
           }
         },
         "capabilities": {
@@ -72166,7 +72232,7 @@
           "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
             "en": "Press and hold the pairing button for 5 seconds until the LED flashes.",
-            "fr": "Appuyez et maintenez le bouton d'appairage pendant 5 secondes jusqu'??ce que la LED clignote."
+            "fr": "Appuyez et maintenez le bouton d'appairage pendant 5 secondes jusqu'àce que la LED clignote."
           }
         },
         "productId": [
@@ -72781,7 +72847,7 @@
           "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
             "en": "Press and hold the pairing button for 5 seconds until the LED flashes.",
-            "fr": "Appuyez et maintenez le bouton d'appairage pendant 5 secondes jusqu'??ce que la LED clignote."
+            "fr": "Appuyez et maintenez le bouton d'appairage pendant 5 secondes jusqu'àce que la LED clignote."
           }
         },
         "productId": [
@@ -73408,7 +73474,7 @@
           "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
             "en": "Press and hold the pairing button for 5 seconds until the LED flashes.",
-            "fr": "Appuyez et maintenez le bouton d'appairage pendant 5 secondes jusqu'?? ce que la LED clignote."
+            "fr": "Appuyez et maintenez le bouton d'appairage pendant 5 secondes jusqu'à ce que la LED clignote."
           }
         },
         "productId": [
@@ -73886,7 +73952,7 @@
           "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
             "en": "Press and hold the pairing button for 5 seconds until the LED flashes.",
-            "fr": "Appuyez et maintenez le bouton d'appairage pendant 5 secondes jusqu'??ce que la LED clignote."
+            "fr": "Appuyez et maintenez le bouton d'appairage pendant 5 secondes jusqu'àce que la LED clignote."
           }
         },
         "capabilities": {
@@ -74393,7 +74459,7 @@
           "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
             "en": "Press and hold the pairing button for 5 seconds until the LED flashes.",
-            "fr": "Appuyez et maintenez le bouton d'appairage pendant 5 secondes jusqu'?? ce que la LED clignote."
+            "fr": "Appuyez et maintenez le bouton d'appairage pendant 5 secondes jusqu'à ce que la LED clignote."
           }
         },
         "endpoints": {
@@ -74758,7 +74824,7 @@
           "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
             "en": "Press and hold the pairing button for 5 seconds until the LED flashes.",
-            "fr": "Appuyez et maintenez le bouton d'appairage pendant 5 secondes jusqu'?? ce que la LED clignote."
+            "fr": "Appuyez et maintenez le bouton d'appairage pendant 5 secondes jusqu'à ce que la LED clignote."
           }
         }
       },
@@ -75571,7 +75637,7 @@
           "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
             "en": "Press and hold the pairing button for 5 seconds until the LED flashes.",
-            "fr": "Appuyez et maintenez le bouton d'appairage pendant 5 secondes jusqu'?? ce que la LED clignote."
+            "fr": "Appuyez et maintenez le bouton d'appairage pendant 5 secondes jusqu'à ce que la LED clignote."
           }
         },
         "endpoints": {
@@ -76183,7 +76249,7 @@
           "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
             "en": "Press and hold the pairing button for 5 seconds until the LED flashes.",
-            "fr": "Appuyez et maintenez le bouton d'appairage pendant 5 secondes jusqu'?? ce que la LED clignote."
+            "fr": "Appuyez et maintenez le bouton d'appairage pendant 5 secondes jusqu'à ce que la LED clignote."
           }
         },
         "productId": [
@@ -77577,7 +77643,10 @@
             "en": "Press and hold down on/off switch for aprox 5 seconds until the WiFi icon blinks rapidly."
           }
         },
-        "manufacturerName": []
+        "manufacturerName": [
+          "_hybrid_outdoor_2_socket_needs_device_assignment",
+          "_HYBRID_OUTDOOR_2_SOCKET_NEEDS_DEVICE_ASSIGNMENT"
+        ]
       },
       "version": "1.0.0",
       "capabilitiesOptions": {
@@ -78390,7 +78459,29 @@
         "large": "/drivers/pirsensor/assets/images/large.png"
       },
       "zigbee": {
-        "manufacturerName": [],
+        "manufacturerName": [
+          "TUYATEC-lha8pbwd",
+          "TUYATEC-zn9wyqtr",
+          "TUYATEC-dxnohkpd",
+          "TUYATEC-53o41joc",
+          "TUYATEC-deetibst",
+          "TUYATEC-dgtxmihe",
+          "TUYATEC-b5g40alm",
+          "tuyatec-lha8pbwd",
+          "tuyatec-zn9wyqtr",
+          "tuyatec-dxnohkpd",
+          "tuyatec-53o41joc",
+          "tuyatec-deetibst",
+          "tuyatec-dgtxmihe",
+          "tuyatec-b5g40alm",
+          "TUYATEC-LHA8PBWD",
+          "TUYATEC-ZN9WYQTR",
+          "TUYATEC-DXNOHKPD",
+          "TUYATEC-53O41JOC",
+          "TUYATEC-DEETIBST",
+          "TUYATEC-DGTXMIHE",
+          "TUYATEC-B5G40ALM"
+        ],
         "productId": [
           "RH3040"
         ],
@@ -78867,7 +78958,7 @@
           "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
             "en": "Press and hold the pairing button for 5 seconds until the LED flashes.",
-            "fr": "Appuyez et maintenez le bouton d'appairage pendant 5 secondes jusqu'?? ce que la LED clignote."
+            "fr": "Appuyez et maintenez le bouton d'appairage pendant 5 secondes jusqu'à ce que la LED clignote."
           }
         },
         "endpoints": {
@@ -79389,7 +79480,7 @@
           "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
             "en": "Press and hold the pairing button for 5 seconds until the LED flashes.",
-            "fr": "Appuyez et maintenez le bouton d'appairage pendant 5 secondes jusqu'?? ce que la LED clignote."
+            "fr": "Appuyez et maintenez le bouton d'appairage pendant 5 secondes jusqu'à ce que la LED clignote."
           }
         },
         "endpoints": {
@@ -80855,9 +80946,9 @@
           "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
             "en": "Turn the device on/off 3 times quickly, or hold the reset button until the LED flashes rapidly.",
-            "fr": "Allumez/??teignez 3 fois rapidement, ou maintenez reset jusqu'?? clignotement rapide.",
-            "nl": "Zet het apparaat 3?? snel aan/uit, of houd reset vast tot snelle LED-knippering.",
-            "de": "Ger??t 3?? schnell ein/aus, oder Reset halten bis die LED schnell blinkt."
+            "fr": "Allumez/éteignez 3 fois rapidement, ou maintenez reset jusqu'à clignotement rapide.",
+            "nl": "Zet het apparaat 3× snel aan/uit, of houd reset vast tot snelle LED-knippering.",
+            "de": "Gerät 3× schnell ein/aus, oder Reset halten bis die LED schnell blinkt."
           }
         }
       },
@@ -81999,7 +82090,7 @@
           "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
             "en": "Press and hold the pairing button for 5 seconds until the LED flashes rapidly.",
-            "fr": "Appuyez et maintenez le bouton d'appairage pendant 5 secondes jusqu'?? ce que la LED clignote rapidement."
+            "fr": "Appuyez et maintenez le bouton d'appairage pendant 5 secondes jusqu'à ce que la LED clignote rapidement."
           }
         }
       },
@@ -83556,7 +83647,7 @@
           "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
             "en": "Press and hold the pairing button for 5 seconds until the LED flashes.",
-            "fr": "Appuyez et maintenez le bouton d'appairage pendant 5 secondes jusqu'?? ce que la LED clignote."
+            "fr": "Appuyez et maintenez le bouton d'appairage pendant 5 secondes jusqu'à ce que la LED clignote."
           }
         },
         "endpoints": {
@@ -84070,7 +84161,10 @@
             "nl": "Druk 6 seconden op de reset knop. Wacht tot de led gaat knipperen."
           }
         },
-        "manufacturerName": []
+        "manufacturerName": [
+          "_hybrid_radar_sensor_2_needs_device_assignment",
+          "_HYBRID_RADAR_SENSOR_2_NEEDS_DEVICE_ASSIGNMENT"
+        ]
       },
       "version": "1.0.0",
       "metadata": {
@@ -84278,7 +84372,10 @@
             "en": "Press and hold the reset button for 5 seconds. When the indicator light flashes it is in pairing mode."
           }
         },
-        "manufacturerName": []
+        "manufacturerName": [
+          "_GENERIC_RADAR_SENSOR_CEILING",
+          "_generic_radar_sensor_ceiling"
+        ]
       },
       "settings": [
         {
@@ -84375,7 +84472,7 @@
           "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
             "en": "Turn the switch on/off 3 times quickly",
-            "fr": "Allumer/??teindre l'interrupteur 3 fois rapidement"
+            "fr": "Allumer/éteindre l'interrupteur 3 fois rapidement"
           }
         },
         "manufacturerName": [
@@ -85423,7 +85520,7 @@
           "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
             "en": "Press and hold the pairing button for 5 seconds until the LED flashes.",
-            "fr": "Appuyez et maintenez le bouton d'appairage pendant 5 secondes jusqu'?? ce que la LED clignote."
+            "fr": "Appuyez et maintenez le bouton d'appairage pendant 5 secondes jusqu'à ce que la LED clignote."
           }
         },
         "endpoints": {
@@ -85872,10 +85969,10 @@
         "learnmode": {
           "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
-            "en": "On the thermostat, open settings ??? Zigbee/Network ??? Pair, or hold the reset pin until the display shows pairing mode.",
-            "fr": "R??glages ??? Zigbee/R??seau ??? Appairer, ou maintenez reset jusqu'au mode appairage.",
-            "nl": "Instellingen ??? Zigbee/Netwerk ??? Pairen, of reset tot pairmodus op display.",
-            "de": "Einstellungen ??? Zigbee/Netz ??? Koppeln, oder Reset bis Pairing-Modus."
+            "en": "On the thermostat, open settings → Zigbee/Network → Pair, or hold the reset pin until the display shows pairing mode.",
+            "fr": "Réglages → Zigbee/Réseau → Appairer, ou maintenez reset jusqu'au mode appairage.",
+            "nl": "Instellingen → Zigbee/Netwerk → Pairen, of reset tot pairmodus op display.",
+            "de": "Einstellungen → Zigbee/Netz → Koppeln, oder Reset bis Pairing-Modus."
           }
         }
       },
@@ -86317,7 +86414,9 @@
             "en": "Press the setup button combined with 1 channel button for 10 seconds (the LED should blink green)."
           }
         },
-        "manufacturerName": []
+        "manufacturerName": [
+          "_TZ3000_dummy1781425895948"
+        ]
       },
       "version": "1.0.0",
       "capabilitiesOptions": {
@@ -86572,7 +86671,7 @@
         "learnmode": {
           "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
-            "en": "One device with 4 channels (gang 1???4). Press the setup button with channel 1 for ~10 seconds until the LED blinks blue. Re-pair after app update if you previously had four separate tiles."
+            "en": "One device with 4 channels (gang 1–4). Press the setup button with channel 1 for ~10 seconds until the LED blinks blue. Re-pair after app update if you previously had four separate tiles."
           }
         },
         "manufacturerName": [
@@ -86665,7 +86764,7 @@
           "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
             "en": "Push a pin gently into the reset hole on the backside of the unit for aprox 10 seconds until the led on the front blinks rapidly.",
-            "fr": "Appuyez doucement avec un stylet dans le trou de r??initialisation sur l'arri??re de l'unit?? pendant environ 10 secondes jusqu'?? ce que la LED clignote rapidement."
+            "fr": "Appuyez doucement avec un stylet dans le trou de réinitialisation sur l'arrière de l'unité pendant environ 10 secondes jusqu'à ce que la LED clignote rapidement."
           }
         },
         "manufacturerName": [
@@ -86867,14 +86966,14 @@
           "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
             "en": "Press and hold any button for 5 seconds until the LED blinks rapidly",
-            "fr": "Appuyez et maintenez n'importe quel bouton pendant 5 secondes jusqu'?? ce que la LED clignote rapidement",
+            "fr": "Appuyez et maintenez n'importe quel bouton pendant 5 secondes jusqu'à ce que la LED clignote rapidement",
             "nl": "Houd een willekeurige knop 5 seconden ingedrukt totdat de LED snel knippert",
-            "de": "Halten Sie eine beliebige Taste 5 Sekunden lang gedr??ckt, bis die LED schnell blinkt",
-            "it": "Tenere premuto qualsiasi pulsante per 5 secondi finch?? il LED lampeggia rapidamente",
-            "sv": "H??ll ned valfri knapp i 5 sekunder tills LED:en blinkar snabbt",
+            "de": "Halten Sie eine beliebige Taste 5 Sekunden lang gedrückt, bis die LED schnell blinkt",
+            "it": "Tenere premuto qualsiasi pulsante per 5 secondi finché il LED lampeggia rapidamente",
+            "sv": "Håll ned valfri knapp i 5 sekunder tills LED:en blinkar snabbt",
             "no": "Hold inne en hvilken som helst knapp i 5 sekunder til LED-en blinker raskt",
-            "es": "Mantenga presionado cualquier bot??n durante 5 segundos hasta que el LED parpadee r??pidamente",
-            "da": "Hold en vilk??rlig knap nede i 5 sekunder, indtil LED'en blinker hurtigt"
+            "es": "Mantenga presionado cualquier botón durante 5 segundos hasta que el LED parpadee rápidamente",
+            "da": "Hold en vilkårlig knap nede i 5 sekunder, indtil LED'en blinker hurtigt"
           }
         },
         "endpoints": {
@@ -88059,10 +88158,10 @@
         "learnmode": {
           "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
-            "en": "Hold all buttons together (or the reset pinhole) for 5???10 seconds until the LED flashes.",
-            "fr": "Maintenez tous les boutons (ou le trou reset) 5???10 s jusqu'?? clignotement.",
-            "nl": "Houd alle knoppen (of reset) 5???10 s vast tot de LED knippert.",
-            "de": "Alle Tasten (oder Reset) 5???10 s halten bis die LED blinkt."
+            "en": "Hold all buttons together (or the reset pinhole) for 5–10 seconds until the LED flashes.",
+            "fr": "Maintenez tous les boutons (ou le trou reset) 5–10 s jusqu'à clignotement.",
+            "nl": "Houd alle knoppen (of reset) 5–10 s vast tot de LED knippert.",
+            "de": "Alle Tasten (oder Reset) 5–10 s halten bis die LED blinkt."
           }
         }
       },
@@ -88142,14 +88241,14 @@
           "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
             "en": "Press and hold any button for 5 seconds until the LED blinks rapidly",
-            "fr": "Appuyez et maintenez n'importe quel bouton pendant 5 secondes jusqu'?? ce que la LED clignote rapidement",
-            "nl": "Appuyez et maintenez n'importe quel bouton pendant 5 secondes jusqu'?? ce que la LED clignote rapidement",
-            "de": "Appuyez et maintenez n'importe quel bouton pendant 5 secondes jusqu'?? ce que la LED clignote rapidement",
-            "it": "Appuyez et maintenez n'importe quel bouton pendant 5 secondes jusqu'?? ce que la LED clignote rapidement",
-            "sv": "Appuyez et maintenez n'importe quel bouton pendant 5 secondes jusqu'?? ce que la LED clignote rapidement",
-            "no": "Appuyez et maintenez n'importe quel bouton pendant 5 secondes jusqu'?? ce que la LED clignote rapidement",
-            "es": "Appuyez et maintenez n'importe quel bouton pendant 5 secondes jusqu'?? ce que la LED clignote rapidement",
-            "da": "Appuyez et maintenez n'importe quel bouton pendant 5 secondes jusqu'?? ce que la LED clignote rapidement"
+            "fr": "Appuyez et maintenez n'importe quel bouton pendant 5 secondes jusqu'à ce que la LED clignote rapidement",
+            "nl": "Appuyez et maintenez n'importe quel bouton pendant 5 secondes jusqu'à ce que la LED clignote rapidement",
+            "de": "Appuyez et maintenez n'importe quel bouton pendant 5 secondes jusqu'à ce que la LED clignote rapidement",
+            "it": "Appuyez et maintenez n'importe quel bouton pendant 5 secondes jusqu'à ce que la LED clignote rapidement",
+            "sv": "Appuyez et maintenez n'importe quel bouton pendant 5 secondes jusqu'à ce que la LED clignote rapidement",
+            "no": "Appuyez et maintenez n'importe quel bouton pendant 5 secondes jusqu'à ce que la LED clignote rapidement",
+            "es": "Appuyez et maintenez n'importe quel bouton pendant 5 secondes jusqu'à ce que la LED clignote rapidement",
+            "da": "Appuyez et maintenez n'importe quel bouton pendant 5 secondes jusqu'à ce que la LED clignote rapidement"
           }
         },
         "endpoints": {
@@ -89000,7 +89099,7 @@
           "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
             "en": "Press and hold the pairing button for 5 seconds until the LED flashes.",
-            "fr": "Appuyez et maintenez le bouton d'appairage pendant 5 secondes jusqu'?? ce que la LED clignote."
+            "fr": "Appuyez et maintenez le bouton d'appairage pendant 5 secondes jusqu'à ce que la LED clignote."
           }
         },
         "endpoints": {
@@ -89394,10 +89493,10 @@
         "learnmode": {
           "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
-            "en": "Hold all buttons together (or the reset pinhole) for 5???10 seconds until the LED flashes.",
-            "fr": "Maintenez tous les boutons (ou le trou reset) 5???10 s jusqu'?? clignotement.",
-            "nl": "Houd alle knoppen (of reset) 5???10 s vast tot de LED knippert.",
-            "de": "Alle Tasten (oder Reset) 5???10 s halten bis die LED blinkt."
+            "en": "Hold all buttons together (or the reset pinhole) for 5–10 seconds until the LED flashes.",
+            "fr": "Maintenez tous les boutons (ou le trou reset) 5–10 s jusqu'à clignotement.",
+            "nl": "Houd alle knoppen (of reset) 5–10 s vast tot de LED knippert.",
+            "de": "Alle Tasten (oder Reset) 5–10 s halten bis die LED blinkt."
           }
         }
       },
@@ -89472,14 +89571,14 @@
           "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
             "en": "Press and hold any button for 5 seconds until the LED blinks rapidly",
-            "fr": "Appuyez et maintenez n'importe quel bouton pendant 5 secondes jusqu'??ce que la LED clignote rapidement",
-            "nl": "Appuyez et maintenez n'importe quel bouton pendant 5 secondes jusqu'??ce que la LED clignote rapidement",
-            "de": "Appuyez et maintenez n'importe quel bouton pendant 5 secondes jusqu'??ce que la LED clignote rapidement",
-            "it": "Appuyez et maintenez n'importe quel bouton pendant 5 secondes jusqu'??ce que la LED clignote rapidement",
-            "sv": "Appuyez et maintenez n'importe quel bouton pendant 5 secondes jusqu'??ce que la LED clignote rapidement",
-            "no": "Appuyez et maintenez n'importe quel bouton pendant 5 secondes jusqu'??ce que la LED clignote rapidement",
-            "es": "Appuyez et maintenez n'importe quel bouton pendant 5 secondes jusqu'??ce que la LED clignote rapidement",
-            "da": "Appuyez et maintenez n'importe quel bouton pendant 5 secondes jusqu'??ce que la LED clignote rapidement"
+            "fr": "Appuyez et maintenez n'importe quel bouton pendant 5 secondes jusqu'àce que la LED clignote rapidement",
+            "nl": "Appuyez et maintenez n'importe quel bouton pendant 5 secondes jusqu'àce que la LED clignote rapidement",
+            "de": "Appuyez et maintenez n'importe quel bouton pendant 5 secondes jusqu'àce que la LED clignote rapidement",
+            "it": "Appuyez et maintenez n'importe quel bouton pendant 5 secondes jusqu'àce que la LED clignote rapidement",
+            "sv": "Appuyez et maintenez n'importe quel bouton pendant 5 secondes jusqu'àce que la LED clignote rapidement",
+            "no": "Appuyez et maintenez n'importe quel bouton pendant 5 secondes jusqu'àce que la LED clignote rapidement",
+            "es": "Appuyez et maintenez n'importe quel bouton pendant 5 secondes jusqu'àce que la LED clignote rapidement",
+            "da": "Appuyez et maintenez n'importe quel bouton pendant 5 secondes jusqu'àce que la LED clignote rapidement"
           }
         }
       },
@@ -90077,10 +90176,10 @@
         "learnmode": {
           "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
-            "en": "Hold all buttons together (or the reset pinhole) for 5???10 seconds until the LED flashes.",
-            "fr": "Maintenez tous les boutons (ou le trou reset) 5???10 s jusqu'?? clignotement.",
-            "nl": "Houd alle knoppen (of reset) 5???10 s vast tot de LED knippert.",
-            "de": "Alle Tasten (oder Reset) 5???10 s halten bis die LED blinkt."
+            "en": "Hold all buttons together (or the reset pinhole) for 5–10 seconds until the LED flashes.",
+            "fr": "Maintenez tous les boutons (ou le trou reset) 5–10 s jusqu'à clignotement.",
+            "nl": "Houd alle knoppen (of reset) 5–10 s vast tot de LED knippert.",
+            "de": "Alle Tasten (oder Reset) 5–10 s halten bis die LED blinkt."
           }
         }
       },
@@ -90468,10 +90567,10 @@
         "learnmode": {
           "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
-            "en": "Hold all buttons together (or the reset pinhole) for 5???10 seconds until the LED flashes.",
-            "fr": "Maintenez tous les boutons (ou le trou reset) 5???10 s jusqu'?? clignotement.",
-            "nl": "Houd alle knoppen (of reset) 5???10 s vast tot de LED knippert.",
-            "de": "Alle Tasten (oder Reset) 5???10 s halten bis die LED blinkt."
+            "en": "Hold all buttons together (or the reset pinhole) for 5–10 seconds until the LED flashes.",
+            "fr": "Maintenez tous les boutons (ou le trou reset) 5–10 s jusqu'à clignotement.",
+            "nl": "Houd alle knoppen (of reset) 5–10 s vast tot de LED knippert.",
+            "de": "Alle Tasten (oder Reset) 5–10 s halten bis die LED blinkt."
           }
         }
       },
@@ -90546,8 +90645,8 @@
         "learnmode": {
           "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
-            "en": "1-button wall remote only (TS0041). For 3-button TS0043 stickies (_TZ3000_vsxvaj9i???): remove device and pair as Wireless Button 3 ??? never Homey Zigbee generic. Hold any button 5???10s until LED blinks.",
-            "fr": "Telecommande murale 1 bouton (TS0041) uniquement. Pour stick 3 boutons TS0043 (_TZ3000_vsxvaj9i???): retirez et ajoutez en Bouton sans fil 3 ??? jamais Homey Zigbee generique. Maintenez 5???10 s jusqu'au clignotement LED.",
+            "en": "1-button wall remote only (TS0041). For 3-button TS0043 stickies (_TZ3000_vsxvaj9i…): remove device and pair as Wireless Button 3 — never Homey Zigbee generic. Hold any button 5–10s until LED blinks.",
+            "fr": "Telecommande murale 1 bouton (TS0041) uniquement. Pour stick 3 boutons TS0043 (_TZ3000_vsxvaj9i…): retirez et ajoutez en Bouton sans fil 3 — jamais Homey Zigbee generique. Maintenez 5–10 s jusqu'au clignotement LED.",
             "nl": "Press and hold any button for 5 seconds until the LED blinks rapidly",
             "de": "Press and hold any button for 5 seconds until the LED blinks rapidly",
             "it": "Press and hold any button for 5 seconds until the LED blinks rapidly",
@@ -90914,7 +91013,7 @@
             "en": "Press and hold the pairing button for 5 seconds until the LED flashes rapidly.",
             "fr": "Appuyez et maintenez le bouton d'appairage pendant 5 secondes jusqu'au clignotement rapide de la LED.",
             "nl": "Houd de koppelknop 5 seconden ingedrukt tot de LED snel knippert.",
-            "de": "Halten Sie die Kopplungstaste 5 Sekunden lang gedr??ckt, bis die LED schnell blinkt."
+            "de": "Halten Sie die Kopplungstaste 5 Sekunden lang gedrückt, bis die LED schnell blinkt."
           }
         }
       },
@@ -91087,7 +91186,11 @@
         }
       },
       "zigbee": {
-        "manufacturerName": [],
+        "manufacturerName": [
+          "eWeLight",
+          "ewelight",
+          "EWELIGHT"
+        ],
         "productId": [
           "TS0505A",
           "TS0505B",
@@ -91976,10 +92079,10 @@
         "learnmode": {
           "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
-            "en": "Hold all buttons together (or the reset pinhole) for 5???10 seconds until the LED flashes.",
-            "fr": "Maintenez tous les boutons (ou le trou reset) 5???10 s jusqu'?? clignotement.",
-            "nl": "Houd alle knoppen (of reset) 5???10 s vast tot de LED knippert.",
-            "de": "Alle Tasten (oder Reset) 5???10 s halten bis die LED blinkt."
+            "en": "Hold all buttons together (or the reset pinhole) for 5–10 seconds until the LED flashes.",
+            "fr": "Maintenez tous les boutons (ou le trou reset) 5–10 s jusqu'à clignotement.",
+            "nl": "Houd alle knoppen (of reset) 5–10 s vast tot de LED knippert.",
+            "de": "Alle Tasten (oder Reset) 5–10 s halten bis die LED blinkt."
           }
         }
       },
@@ -92129,10 +92232,10 @@
         "learnmode": {
           "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
-            "en": "Hold all buttons together (or the reset pinhole) for 5???10 seconds until the LED flashes.",
-            "fr": "Maintenez tous les boutons (ou le trou reset) 5???10 s jusqu'?? clignotement.",
-            "nl": "Houd alle knoppen (of reset) 5???10 s vast tot de LED knippert.",
-            "de": "Alle Tasten (oder Reset) 5???10 s halten bis die LED blinkt."
+            "en": "Hold all buttons together (or the reset pinhole) for 5–10 seconds until the LED flashes.",
+            "fr": "Maintenez tous les boutons (ou le trou reset) 5–10 s jusqu'à clignotement.",
+            "nl": "Houd alle knoppen (of reset) 5–10 s vast tot de LED knippert.",
+            "de": "Alle Tasten (oder Reset) 5–10 s halten bis die LED blinkt."
           }
         }
       },
@@ -92296,10 +92399,10 @@
         "learnmode": {
           "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
-            "en": "Hold all buttons together (or the reset pinhole) for 5???10 seconds until the LED flashes.",
-            "fr": "Maintenez tous les boutons (ou le trou reset) 5???10 s jusqu'?? clignotement.",
-            "nl": "Houd alle knoppen (of reset) 5???10 s vast tot de LED knippert.",
-            "de": "Alle Tasten (oder Reset) 5???10 s halten bis die LED blinkt."
+            "en": "Hold all buttons together (or the reset pinhole) for 5–10 seconds until the LED flashes.",
+            "fr": "Maintenez tous les boutons (ou le trou reset) 5–10 s jusqu'à clignotement.",
+            "nl": "Houd alle knoppen (of reset) 5–10 s vast tot de LED knippert.",
+            "de": "Alle Tasten (oder Reset) 5–10 s halten bis die LED blinkt."
           }
         }
       },
@@ -92554,10 +92657,10 @@
         "learnmode": {
           "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
-            "en": "Hold all buttons together (or the reset pinhole) for 5???10 seconds until the LED flashes.",
-            "fr": "Maintenez tous les boutons (ou le trou reset) 5???10 s jusqu'?? clignotement.",
-            "nl": "Houd alle knoppen (of reset) 5???10 s vast tot de LED knippert.",
-            "de": "Alle Tasten (oder Reset) 5???10 s halten bis die LED blinkt."
+            "en": "Hold all buttons together (or the reset pinhole) for 5–10 seconds until the LED flashes.",
+            "fr": "Maintenez tous les boutons (ou le trou reset) 5–10 s jusqu'à clignotement.",
+            "nl": "Houd alle knoppen (of reset) 5–10 s vast tot de LED knippert.",
+            "de": "Alle Tasten (oder Reset) 5–10 s halten bis die LED blinkt."
           }
         }
       },
@@ -92745,10 +92848,10 @@
         "learnmode": {
           "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
-            "en": "Hold all buttons together (or the reset pinhole) for 5???10 seconds until the LED flashes.",
-            "fr": "Maintenez tous les boutons (ou le trou reset) 5???10 s jusqu'?? clignotement.",
-            "nl": "Houd alle knoppen (of reset) 5???10 s vast tot de LED knippert.",
-            "de": "Alle Tasten (oder Reset) 5???10 s halten bis die LED blinkt."
+            "en": "Hold all buttons together (or the reset pinhole) for 5–10 seconds until the LED flashes.",
+            "fr": "Maintenez tous les boutons (ou le trou reset) 5–10 s jusqu'à clignotement.",
+            "nl": "Houd alle knoppen (of reset) 5–10 s vast tot de LED knippert.",
+            "de": "Alle Tasten (oder Reset) 5–10 s halten bis die LED blinkt."
           }
         }
       },
@@ -92926,10 +93029,10 @@
         "learnmode": {
           "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
-            "en": "Hold all buttons together (or the reset pinhole) for 5???10 seconds until the LED flashes.",
-            "fr": "Maintenez tous les boutons (ou le trou reset) 5???10 s jusqu'?? clignotement.",
-            "nl": "Houd alle knoppen (of reset) 5???10 s vast tot de LED knippert.",
-            "de": "Alle Tasten (oder Reset) 5???10 s halten bis die LED blinkt."
+            "en": "Hold all buttons together (or the reset pinhole) for 5–10 seconds until the LED flashes.",
+            "fr": "Maintenez tous les boutons (ou le trou reset) 5–10 s jusqu'à clignotement.",
+            "nl": "Houd alle knoppen (of reset) 5–10 s vast tot de LED knippert.",
+            "de": "Alle Tasten (oder Reset) 5–10 s halten bis die LED blinkt."
           }
         }
       },
@@ -93080,10 +93183,10 @@
         "learnmode": {
           "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
-            "en": "Hold all buttons together (or the reset pinhole) for 5???10 seconds until the LED flashes.",
-            "fr": "Maintenez tous les boutons (ou le trou reset) 5???10 s jusqu'?? clignotement.",
-            "nl": "Houd alle knoppen (of reset) 5???10 s vast tot de LED knippert.",
-            "de": "Alle Tasten (oder Reset) 5???10 s halten bis die LED blinkt."
+            "en": "Hold all buttons together (or the reset pinhole) for 5–10 seconds until the LED flashes.",
+            "fr": "Maintenez tous les boutons (ou le trou reset) 5–10 s jusqu'à clignotement.",
+            "nl": "Houd alle knoppen (of reset) 5–10 s vast tot de LED knippert.",
+            "de": "Alle Tasten (oder Reset) 5–10 s halten bis die LED blinkt."
           }
         }
       },
@@ -95409,9 +95512,9 @@
           "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
             "en": "Press and hold the pairing button for 5 seconds until the LED flashes. Keep pressing every 2 seconds during pairing if the device is battery-powered.",
-            "fr": "Maintenez le bouton d'appairage 5 secondes jusqu'?? ce que la LED clignote. Sur pile, rappuyez toutes les 2 s pendant l'appairage.",
+            "fr": "Maintenez le bouton d'appairage 5 secondes jusqu'à ce que la LED clignote. Sur pile, rappuyez toutes les 2 s pendant l'appairage.",
             "nl": "Houd de paarknop 5 seconden ingedrukt tot de LED knippert. Bij batterij: druk elke 2 s tijdens het pairen.",
-            "de": "Halten Sie die Kopplungstaste 5 Sekunden, bis die LED blinkt. Bei Batterie alle 2 s w??hrend des Pairings dr??cken."
+            "de": "Halten Sie die Kopplungstaste 5 Sekunden, bis die LED blinkt. Bei Batterie alle 2 s während des Pairings drücken."
           }
         }
       }
@@ -97235,7 +97338,7 @@
           "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
             "en": "Press and hold the pairing button for 5 seconds until the LED flashes.",
-            "fr": "Appuyez et maintenez le bouton d'appairage pendant 5 secondes jusqu'??ce que la LED clignote."
+            "fr": "Appuyez et maintenez le bouton d'appairage pendant 5 secondes jusqu'àce que la LED clignote."
           }
         },
         "endpoints": {
@@ -97990,7 +98093,7 @@
           "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
             "en": "Press and hold the pairing button for 5 seconds until the LED flashes.",
-            "fr": "Appuyez et maintenez le bouton d'appairage pendant 5 secondes jusqu'?? ce que la LED clignote."
+            "fr": "Appuyez et maintenez le bouton d'appairage pendant 5 secondes jusqu'à ce que la LED clignote."
           }
         },
         "endpoints": {
@@ -99350,7 +99453,7 @@
           "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
             "en": "Press and hold the pairing button for 5 seconds until the LED flashes.",
-            "fr": "Appuyez et maintenez le bouton d'appairage pendant 5 secondes jusqu'?? ce que la LED clignote."
+            "fr": "Appuyez et maintenez le bouton d'appairage pendant 5 secondes jusqu'à ce que la LED clignote."
           }
         },
         "endpoints": {
@@ -99656,7 +99759,7 @@
           "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
             "en": "Press and hold the pairing button for 5 seconds until the LED flashes.",
-            "fr": "Appuyez et maintenez le bouton d'appairage pendant 5 secondes jusqu'??ce que la LED clignote."
+            "fr": "Appuyez et maintenez le bouton d'appairage pendant 5 secondes jusqu'àce que la LED clignote."
           }
         },
         "endpoints": {
@@ -100189,7 +100292,7 @@
           "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
             "en": "Press and hold the pairing button for 5 seconds until the LED flashes.",
-            "fr": "Appuyez et maintenez le bouton d'appairage pendant 5 secondes jusqu'??ce que la LED clignote."
+            "fr": "Appuyez et maintenez le bouton d'appairage pendant 5 secondes jusqu'àce que la LED clignote."
           }
         },
         "endpoints": {
@@ -100993,7 +101096,7 @@
           "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
             "en": "Press and hold the pairing button for 5 seconds until the LED flashes.",
-            "fr": "Appuyez et maintenez le bouton d'appairage pendant 5 secondes jusqu'?? ce que la LED clignote."
+            "fr": "Appuyez et maintenez le bouton d'appairage pendant 5 secondes jusqu'à ce que la LED clignote."
           }
         },
         "endpoints": {
@@ -101896,7 +101999,9 @@
         ]
       },
       "zigbee": {
-        "manufacturerName": [],
+        "manufacturerName": [
+          "_TZ3000_rusu2vzb"
+        ],
         "productId": [
           "TS0601_lcd",
           "TS0601",
@@ -102222,7 +102327,7 @@
           "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
             "en": "Press and hold the pairing button for 5 seconds until the LED flashes.",
-            "fr": "Appuyez et maintenez le bouton d'appairage pendant 5 secondes jusqu'?? ce que la LED clignote."
+            "fr": "Appuyez et maintenez le bouton d'appairage pendant 5 secondes jusqu'à ce que la LED clignote."
           }
         },
         "endpoints": {
@@ -102843,7 +102948,7 @@
           "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
             "en": "Press and hold the pairing button for 5 seconds until the LED flashes.",
-            "fr": "Appuyez et maintenez le bouton d'appairage pendant 5 secondes jusqu'?? ce que la LED clignote."
+            "fr": "Appuyez et maintenez le bouton d'appairage pendant 5 secondes jusqu'à ce que la LED clignote."
           }
         },
         "productId": [
@@ -103389,7 +103494,7 @@
           "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
             "en": "Press and hold the pairing button for 5 seconds until the LED flashes.",
-            "fr": "Appuyez et maintenez le bouton d'appairage pendant 5 secondes jusqu'?? ce que la LED clignote."
+            "fr": "Appuyez et maintenez le bouton d'appairage pendant 5 secondes jusqu'à ce que la LED clignote."
           }
         },
         "endpoints": {
@@ -104054,7 +104159,7 @@
           "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
             "en": "Press and hold the pairing button for 5 seconds until the LED flashes.",
-            "fr": "Appuyez et maintenez le bouton d'appairage pendant 5 secondes jusqu'?? ce que la LED clignote."
+            "fr": "Appuyez et maintenez le bouton d'appairage pendant 5 secondes jusqu'à ce que la LED clignote."
           }
         },
         "manufacturerName": [
@@ -104509,7 +104614,7 @@
           "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
             "en": "Press and hold the pairing button for 5 seconds until the LED flashes.",
-            "fr": "Appuyez et maintenez le bouton d'appairage pendant 5 secondes jusqu'?? ce que la LED clignote."
+            "fr": "Appuyez et maintenez le bouton d'appairage pendant 5 secondes jusqu'à ce que la LED clignote."
           }
         },
         "endpoints": {
@@ -105075,7 +105180,10 @@
             "en": "Press and hold the button inside the battery compartment for aprox 5 seconds until the siren beeps."
           }
         },
-        "manufacturerName": []
+        "manufacturerName": [
+          "_hybrid_sirentemphumidsensor_needs_device_assignment",
+          "_HYBRID_SIRENTEMPHUMIDSENSOR_NEEDS_DEVICE_ASSIGNMENT"
+        ]
       },
       "maintenanceActions": [
         {
@@ -106355,7 +106463,7 @@
           "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
             "en": "Ensure the indicator light is flashing. If the indicator light isn't flashing: press and hold on/off buttons for 5 seconds until the indicator light starts to flashing.",
-            "it": "Accertarsi che la spia lampeggi. Se la spia non lampeggia: tenere premuti i pulsanti di accensione/spegnimento per 5 secondi finch?? la spia non inizia a lampeggiare"
+            "it": "Accertarsi che la spia lampeggi. Se la spia non lampeggia: tenere premuti i pulsanti di accensione/spegnimento per 5 secondi finché la spia non inizia a lampeggiare"
           }
         }
       },
@@ -106887,9 +106995,9 @@
           "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
             "en": "Put the device in Zigbee pairing mode (usually hold reset/pairing 5 seconds until LED flashes).",
-            "fr": "Mode appairage Zigbee (souvent reset/pair 5 s jusqu'?? LED clignotante).",
+            "fr": "Mode appairage Zigbee (souvent reset/pair 5 s jusqu'à LED clignotante).",
             "nl": "Zet het apparaat in Zigbee-pairmodus (meestal reset/pair 5 s tot LED knippert).",
-            "de": "Ger??t in Zigbee-Pairingmodus (meist Reset/Pair 5 s bis LED blinkt)."
+            "de": "Gerät in Zigbee-Pairingmodus (meist Reset/Pair 5 s bis LED blinkt)."
           }
         }
       },
@@ -107056,10 +107164,10 @@
         "learnmode": {
           "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
-            "en": "Hold all buttons together (or the reset pinhole) for 5???10 seconds until the LED flashes.",
-            "fr": "Maintenez tous les boutons (ou le trou reset) 5???10 s jusqu'?? clignotement.",
-            "nl": "Houd alle knoppen (of reset) 5???10 s vast tot de LED knippert.",
-            "de": "Alle Tasten (oder Reset) 5???10 s halten bis die LED blinkt."
+            "en": "Hold all buttons together (or the reset pinhole) for 5–10 seconds until the LED flashes.",
+            "fr": "Maintenez tous les boutons (ou le trou reset) 5–10 s jusqu'à clignotement.",
+            "nl": "Houd alle knoppen (of reset) 5–10 s vast tot de LED knippert.",
+            "de": "Alle Tasten (oder Reset) 5–10 s halten bis die LED blinkt."
           }
         }
       },
@@ -107306,9 +107414,9 @@
         "learnmode": {
           "instruction": {
             "en": "Press and hold the button for 10 seconds until LED flashes rapidly, then release.\n\nNote: Some models require pressing the button 5 times quickly.",
-            "fr": "Appuyez et maintenez le bouton pendant 10 secondes jusqu'?? ce que la LED clignote rapidement.\n\nRemarque: Certains mod??les n??cessitent d'appuyer 5 fois rapidement.",
+            "fr": "Appuyez et maintenez le bouton pendant 10 secondes jusqu'à ce que la LED clignote rapidement.\n\nRemarque: Certains modèles nécessitent d'appuyer 5 fois rapidement.",
             "nl": "Houd de knop 10 seconden ingedrukt tot de LED snel knippert.\n\nOpmerking: Sommige modellen vereisen 5 keer snel drukken.",
-            "de": "Halten Sie die Taste 10 Sekunden gedr??ckt, bis die LED schnell blinkt.\n\nHinweis: Einige Modelle erfordern 5 schnelle Tastendr??cke."
+            "de": "Halten Sie die Taste 10 Sekunden gedrückt, bis die LED schnell blinkt.\n\nHinweis: Einige Modelle erfordern 5 schnelle Tastendrücke."
           }
         }
       },
@@ -107497,7 +107605,7 @@
           "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
             "en": "Press the side button for aprox 10 seconds (LED should start blinking).",
-            "sv": "H??ll ned sidoknappen ca 10 sekunder (LED-lampan ska b??rja blinka)."
+            "sv": "Håll ned sidoknappen ca 10 sekunder (LED-lampan ska börja blinka)."
           }
         }
       },
@@ -107636,10 +107744,10 @@
         "learnmode": {
           "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
-            "en": "On the thermostat, open settings ??? Zigbee/Network ??? Pair, or hold the reset pin until the display shows pairing mode.",
-            "fr": "R??glages ??? Zigbee/R??seau ??? Appairer, ou maintenez reset jusqu'au mode appairage.",
-            "nl": "Instellingen ??? Zigbee/Netwerk ??? Pairen, of reset tot pairmodus op display.",
-            "de": "Einstellungen ??? Zigbee/Netz ??? Koppeln, oder Reset bis Pairing-Modus."
+            "en": "On the thermostat, open settings → Zigbee/Network → Pair, or hold the reset pin until the display shows pairing mode.",
+            "fr": "Réglages → Zigbee/Réseau → Appairer, ou maintenez reset jusqu'au mode appairage.",
+            "nl": "Instellingen → Zigbee/Netwerk → Pairen, of reset tot pairmodus op display.",
+            "de": "Einstellungen → Zigbee/Netz → Koppeln, oder Reset bis Pairing-Modus."
           }
         }
       },
@@ -107804,7 +107912,9 @@
         "button.1"
       ],
       "zigbee": {
-        "manufacturerName": [],
+        "manufacturerName": [
+          "_TZE284_6ocnqlhn"
+        ],
         "productId": [
           "TS0601_rcbo"
         ],
@@ -108059,7 +108169,9 @@
         ]
       },
       "zigbee": {
-        "manufacturerName": [],
+        "manufacturerName": [
+          "_tz3000_ja5osu5g"
+        ],
         "productId": [
           "TS004F"
         ],
@@ -108559,7 +108671,11 @@
             "en": "Press the setup button for approx 10 seconds to enter pairing mode (the LED should blink)."
           }
         },
-        "manufacturerName": []
+        "manufacturerName": [
+          "_HYBRID_SMART_SWITCH_NEEDS_DEVICE_ASSIGNMENT",
+          "_TYZB01_phjeraqq",
+          "_hybrid_smart_switch_needs_device_assignment"
+        ]
       },
       "version": "1.0.0",
       "capabilitiesOptions": {
@@ -109311,7 +109427,7 @@
           "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
             "en": "Press and hold the pairing button for 5 seconds until the LED flashes.",
-            "fr": "Appuyez et maintenez le bouton d'appairage pendant 5 secondes jusqu'?? ce que la LED clignote."
+            "fr": "Appuyez et maintenez le bouton d'appairage pendant 5 secondes jusqu'à ce que la LED clignote."
           }
         },
         "productId": [
@@ -111232,9 +111348,9 @@
           "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
             "en": "Press and hold the pairing button for 5 seconds until the LED flashes. Keep pressing every 2 seconds during pairing if the device is battery-powered.",
-            "fr": "Maintenez le bouton d'appairage 5 secondes jusqu'?? ce que la LED clignote. Sur pile, rappuyez toutes les 2 s pendant l'appairage.",
+            "fr": "Maintenez le bouton d'appairage 5 secondes jusqu'à ce que la LED clignote. Sur pile, rappuyez toutes les 2 s pendant l'appairage.",
             "nl": "Houd de paarknop 5 seconden ingedrukt tot de LED knippert. Bij batterij: druk elke 2 s tijdens het pairen.",
-            "de": "Halten Sie die Kopplungstaste 5 Sekunden, bis die LED blinkt. Bei Batterie alle 2 s w??hrend des Pairings dr??cken."
+            "de": "Halten Sie die Kopplungstaste 5 Sekunden, bis die LED blinkt. Bei Batterie alle 2 s während des Pairings drücken."
           }
         }
       },
@@ -111497,9 +111613,9 @@
           "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
             "en": "Press and hold the pairing button for 5 seconds until the LED flashes. Keep pressing every 2 seconds during pairing if the device is battery-powered.",
-            "fr": "Maintenez le bouton d'appairage 5 secondes jusqu'?? ce que la LED clignote. Sur pile, rappuyez toutes les 2 s pendant l'appairage.",
+            "fr": "Maintenez le bouton d'appairage 5 secondes jusqu'à ce que la LED clignote. Sur pile, rappuyez toutes les 2 s pendant l'appairage.",
             "nl": "Houd de paarknop 5 seconden ingedrukt tot de LED knippert. Bij batterij: druk elke 2 s tijdens het pairen.",
-            "de": "Halten Sie die Kopplungstaste 5 Sekunden, bis die LED blinkt. Bei Batterie alle 2 s w??hrend des Pairings dr??cken."
+            "de": "Halten Sie die Kopplungstaste 5 Sekunden, bis die LED blinkt. Bei Batterie alle 2 s während des Pairings drücken."
           }
         }
       },
@@ -112993,10 +113109,10 @@
         "learnmode": {
           "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
-            "en": "Zigbee Bastien ??? 1-gang Switch. HOBEIAN ZG-301Z / WHD02: toggle 3??. Update ???1.0.49 then Repair (countdown+switch_type+light class+mesh calm). NOT Homey Zigbee.",
-            "fr": "Zigbee Bastien ??? Interrupteur 1 voie. HOBEIAN ZG-301Z / WHD02: 3?? on/off. Update ???1.0.49 puis R??parer (countdown+switch_type+class light+mesh). PAS Homey Zigbee.",
-            "nl": "Zigbee Bastien ??? 1-gang. HOBEIAN: 3?? schakelen. Na update ???1.0.44: Repair.",
-            "de": "Zigbee Bastien ??? 1-fach. HOBEIAN: 3?? schalten. Nach Update ???1.0.44: Repair."
+            "en": "Zigbee Bastien → 1-gang Switch. HOBEIAN ZG-301Z / WHD02: toggle 3×. Update ≥1.0.49 then Repair (countdown+switch_type+light class+mesh calm). NOT Homey Zigbee.",
+            "fr": "Zigbee Bastien → Interrupteur 1 voie. HOBEIAN ZG-301Z / WHD02: 3× on/off. Update ≥1.0.49 puis Réparer (countdown+switch_type+class light+mesh). PAS Homey Zigbee.",
+            "nl": "Zigbee Bastien → 1-gang. HOBEIAN: 3× schakelen. Na update ≥1.0.44: Repair.",
+            "de": "Zigbee Bastien → 1-fach. HOBEIAN: 3× schalten. Nach Update ≥1.0.44: Repair."
           }
         },
         "manufacturerName": [
@@ -114511,7 +114627,9 @@
           "Tze204_7sjncirf",
           "hobeian",
           "heobian",
-          "Heobian"
+          "Heobian",
+          "_TZE200_nkjintbl",
+          "_tze200_nkjintbl"
         ],
         "endpoints": {
           "1": {
@@ -115633,7 +115751,10 @@
             "en": "Two tiles will be created, one for each channel of the device. Press the setup button for 10 seconds or switch the unit on and off five times to enter pairing mode (the LED should blink green)."
           }
         },
-        "manufacturerName": []
+        "manufacturerName": [
+          "_hybrid_switch_2_gang_metering_needs_device_assignment",
+          "_HYBRID_SWITCH_2_GANG_METERING_NEEDS_DEVICE_ASSIGNMENT"
+        ]
       },
       "version": "1.0.0",
       "energy": {
@@ -118478,8 +118599,8 @@
         "learnmode": {
           "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
-            "en": "4-gang switch (_TZ3000_ltt60asa+TS0004???): pick Zigbee Bastien ??? 4-gang Switch ??? NOT Homey Zigbee. Toggle any gang 3?? quickly.",
-            "fr": "Interrupteur 4 voies (_TZ3000_ltt60asa+TS0004???): Zigbee Bastien ??? Interrupteur 4 voies ??? PAS Homey Zigbee. Basculez 3?? rapidement."
+            "en": "4-gang switch (_TZ3000_ltt60asa+TS0004…): pick Zigbee Bastien → 4-gang Switch — NOT Homey Zigbee. Toggle any gang 3× quickly.",
+            "fr": "Interrupteur 4 voies (_TZ3000_ltt60asa+TS0004…): Zigbee Bastien → Interrupteur 4 voies — PAS Homey Zigbee. Basculez 3× rapidement."
           }
         },
         "manufacturerName": [
@@ -119861,9 +119982,9 @@
           "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
             "en": "Turn the device on/off 3 times quickly, or hold the reset button until the LED flashes rapidly.",
-            "fr": "Allumez/??teignez 3 fois rapidement, ou maintenez reset jusqu'?? clignotement rapide.",
-            "nl": "Zet het apparaat 3?? snel aan/uit, of houd reset vast tot snelle LED-knippering.",
-            "de": "Ger??t 3?? schnell ein/aus, oder Reset halten bis die LED schnell blinkt."
+            "fr": "Allumez/éteignez 3 fois rapidement, ou maintenez reset jusqu'à clignotement rapide.",
+            "nl": "Zet het apparaat 3× snel aan/uit, of houd reset vast tot snelle LED-knippering.",
+            "de": "Gerät 3× schnell ein/aus, oder Reset halten bis die LED schnell blinkt."
           }
         }
       },
@@ -120214,9 +120335,9 @@
           "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
             "en": "Turn the device on/off 3 times quickly, or hold the reset button until the LED flashes rapidly.",
-            "fr": "Allumez/??teignez 3 fois rapidement, ou maintenez reset jusqu'?? clignotement rapide.",
-            "nl": "Zet het apparaat 3?? snel aan/uit, of houd reset vast tot snelle LED-knippering.",
-            "de": "Ger??t 3?? schnell ein/aus, oder Reset halten bis die LED schnell blinkt."
+            "fr": "Allumez/éteignez 3 fois rapidement, ou maintenez reset jusqu'à clignotement rapide.",
+            "nl": "Zet het apparaat 3× snel aan/uit, of houd reset vast tot snelle LED-knippering.",
+            "de": "Gerät 3× schnell ein/aus, oder Reset halten bis die LED schnell blinkt."
           }
         }
       },
@@ -120628,7 +120749,7 @@
             "en": "Toggle the switch 5 times quickly (within 5 seconds) until the LED flashes rapidly, then release.",
             "nl": "Schakel 5 keer snel (binnen 5 seconden) totdat de LED snel knippert.",
             "de": "Schalten Sie 5 mal schnell (innerhalb von 5 Sekunden) bis die LED schnell blinkt.",
-            "fr": "Basculez l'interrupteur 5 fois rapidement (en 5 secondes) jusqu'?? ce que la LED clignote rapidement."
+            "fr": "Basculez l'interrupteur 5 fois rapidement (en 5 secondes) jusqu'à ce que la LED clignote rapidement."
           }
         }
       },
@@ -122299,7 +122420,7 @@
           "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
             "en": "Press and hold the pairing button for 5 seconds until the LED flashes.",
-            "fr": "Appuyez et maintenez le bouton d'appairage pendant 5 secondes jusqu'?? ce que la LED clignote."
+            "fr": "Appuyez et maintenez le bouton d'appairage pendant 5 secondes jusqu'à ce que la LED clignote."
           }
         },
         "endpoints": {
@@ -122505,7 +122626,7 @@
           "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
             "en": "Press and hold the power button for 5 seconds until the LED blinks",
-            "fr": "Appuyez et maintenez le bouton d'alimentation pendant 5 secondes jusqu'?? ce que la LED clignote"
+            "fr": "Appuyez et maintenez le bouton d'alimentation pendant 5 secondes jusqu'à ce que la LED clignote"
           }
         },
         "endpoints": {
@@ -124180,7 +124301,7 @@
           "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
             "en": "Press and hold the pairing button for 5 seconds until the LED flashes.",
-            "fr": "Appuyez et maintenez le bouton d'appairage pendant 5 secondes jusqu'?? ce que la LED clignote."
+            "fr": "Appuyez et maintenez le bouton d'appairage pendant 5 secondes jusqu'à ce que la LED clignote."
           }
         }
       },
@@ -125180,7 +125301,7 @@
         "learnmode": {
           "instruction": {
             "en": "Press and hold the button inside the battery compartment for aprox 5 seconds until the LED blinks rapidly.",
-            "it": "Tenere premuto il pulsante all'interno del vano batteria per cicrca 5 secondi finch?? il LED non lampeggia rapidamente."
+            "it": "Tenere premuto il pulsante all'interno del vano batteria per cicrca 5 secondi finchè il LED non lampeggia rapidamente."
           }
         },
         "manufacturerName": [
@@ -125623,10 +125744,10 @@
         "learnmode": {
           "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
-            "en": "On the thermostat, open settings ??? Zigbee/Network ??? Pair, or hold the reset pin until the display shows pairing mode.",
-            "fr": "R??glages ??? Zigbee/R??seau ??? Appairer, ou maintenez reset jusqu'au mode appairage.",
-            "nl": "Instellingen ??? Zigbee/Netwerk ??? Pairen, of reset tot pairmodus op display.",
-            "de": "Einstellungen ??? Zigbee/Netz ??? Koppeln, oder Reset bis Pairing-Modus."
+            "en": "On the thermostat, open settings → Zigbee/Network → Pair, or hold the reset pin until the display shows pairing mode.",
+            "fr": "Réglages → Zigbee/Réseau → Appairer, ou maintenez reset jusqu'au mode appairage.",
+            "nl": "Instellingen → Zigbee/Netwerk → Pairen, of reset tot pairmodus op display.",
+            "de": "Einstellungen → Zigbee/Netz → Koppeln, oder Reset bis Pairing-Modus."
           }
         }
       },
@@ -125961,10 +126082,10 @@
         "learnmode": {
           "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
-            "en": "On the thermostat, open settings ??? Zigbee/Network ??? Pair, or hold the reset pin until the display shows pairing mode.",
-            "fr": "R??glages ??? Zigbee/R??seau ??? Appairer, ou maintenez reset jusqu'au mode appairage.",
-            "nl": "Instellingen ??? Zigbee/Netwerk ??? Pairen, of reset tot pairmodus op display.",
-            "de": "Einstellungen ??? Zigbee/Netz ??? Koppeln, oder Reset bis Pairing-Modus."
+            "en": "On the thermostat, open settings → Zigbee/Network → Pair, or hold the reset pin until the display shows pairing mode.",
+            "fr": "Réglages → Zigbee/Réseau → Appairer, ou maintenez reset jusqu'au mode appairage.",
+            "nl": "Instellingen → Zigbee/Netwerk → Pairen, of reset tot pairmodus op display.",
+            "de": "Einstellungen → Zigbee/Netz → Koppeln, oder Reset bis Pairing-Modus."
           }
         }
       },
@@ -127688,7 +127809,7 @@
           "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
             "en": "Press the pairing button on your Zigbee device until it enters pairing mode.",
-            "fr": "Appuyez sur le bouton d'appairage de votre appareil Zigbee jusqu'??ce qu'il passe en mode appairage."
+            "fr": "Appuyez sur le bouton d'appairage de votre appareil Zigbee jusqu'àce qu'il passe en mode appairage."
           }
         }
       },
@@ -127847,7 +127968,7 @@
         "learnmode": {
           "instruction": {
             "en": "Press and hold the button for 5 seconds until the LED flashes rapidly.",
-            "fr": "Appuyez et maintenez le bouton pendant 5 secondes jusqu'?? ce que la LED clignote rapidement."
+            "fr": "Appuyez et maintenez le bouton pendant 5 secondes jusqu'à ce que la LED clignote rapidement."
           }
         }
       },
@@ -128674,7 +128795,7 @@
           "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
             "en": "Press and hold the pairing button for 5 seconds until the LED flashes.",
-            "fr": "Appuyez et maintenez le bouton d'appairage pendant 5 secondes jusqu'?? ce que la LED clignote."
+            "fr": "Appuyez et maintenez le bouton d'appairage pendant 5 secondes jusqu'à ce que la LED clignote."
           }
         }
       },
@@ -129168,9 +129289,9 @@
           "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
             "en": "Put the device in Zigbee pairing mode (usually hold reset/pairing 5 seconds until LED flashes).",
-            "fr": "Mode appairage Zigbee (souvent reset/pair 5 s jusqu'?? LED clignotante).",
+            "fr": "Mode appairage Zigbee (souvent reset/pair 5 s jusqu'à LED clignotante).",
             "nl": "Zet het apparaat in Zigbee-pairmodus (meestal reset/pair 5 s tot LED knippert).",
-            "de": "Ger??t in Zigbee-Pairingmodus (meist Reset/Pair 5 s bis LED blinkt)."
+            "de": "Gerät in Zigbee-Pairingmodus (meist Reset/Pair 5 s bis LED blinkt)."
           }
         }
       },
@@ -129397,9 +129518,9 @@
           "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
             "en": "Put the device in Zigbee pairing mode (usually hold reset/pairing 5 seconds until LED flashes).",
-            "fr": "Mode appairage Zigbee (souvent reset/pair 5 s jusqu'?? LED clignotante).",
+            "fr": "Mode appairage Zigbee (souvent reset/pair 5 s jusqu'à LED clignotante).",
             "nl": "Zet het apparaat in Zigbee-pairmodus (meestal reset/pair 5 s tot LED knippert).",
-            "de": "Ger??t in Zigbee-Pairingmodus (meist Reset/Pair 5 s bis LED blinkt)."
+            "de": "Gerät in Zigbee-Pairingmodus (meist Reset/Pair 5 s bis LED blinkt)."
           }
         }
       },
@@ -129528,9 +129649,9 @@
           "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
             "en": "Put the device in Zigbee pairing mode (usually hold reset/pairing 5 seconds until LED flashes).",
-            "fr": "Mode appairage Zigbee (souvent reset/pair 5 s jusqu'?? LED clignotante).",
+            "fr": "Mode appairage Zigbee (souvent reset/pair 5 s jusqu'à LED clignotante).",
             "nl": "Zet het apparaat in Zigbee-pairmodus (meestal reset/pair 5 s tot LED knippert).",
-            "de": "Ger??t in Zigbee-Pairingmodus (meist Reset/Pair 5 s bis LED blinkt)."
+            "de": "Gerät in Zigbee-Pairingmodus (meist Reset/Pair 5 s bis LED blinkt)."
           }
         }
       },
@@ -129873,7 +129994,9 @@
           "_TZE204_IBA1CKEK",
           "_TZE284_IBA1CKEK",
           "_tze204_IBA1CKEK",
-          "_tze284_IBA1CKEK"
+          "_tze284_IBA1CKEK",
+          "heobian",
+          "Heobian"
         ],
         "productId": [
           "AY02SZ",
@@ -131760,7 +131883,10 @@
             "en": "Press the lower left button for aprox 10 seconds (all LED should start blinking)."
           }
         },
-        "manufacturerName": []
+        "manufacturerName": [
+          "_tz3000_vp6clf9d",
+          "_tz3000_ufhtxr59"
+        ]
       },
       "settings": [],
       "maintenanceActions": [
@@ -136190,7 +136316,7 @@
           "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
             "en": "Press and hold the pairing button for 5 seconds until the LED flashes.",
-            "fr": "Appuyez et maintenez le bouton d'appairage pendant 5 secondes jusqu'?? ce que la LED clignote."
+            "fr": "Appuyez et maintenez le bouton d'appairage pendant 5 secondes jusqu'à ce que la LED clignote."
           }
         },
         "endpoints": {
@@ -137305,9 +137431,9 @@
           "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
             "en": "Put the device in Zigbee pairing mode (usually hold reset/pairing 5 seconds until LED flashes).",
-            "fr": "Mode appairage Zigbee (souvent reset/pair 5 s jusqu'?? LED clignotante).",
+            "fr": "Mode appairage Zigbee (souvent reset/pair 5 s jusqu'à LED clignotante).",
             "nl": "Zet het apparaat in Zigbee-pairmodus (meestal reset/pair 5 s tot LED knippert).",
-            "de": "Ger??t in Zigbee-Pairingmodus (meist Reset/Pair 5 s bis LED blinkt)."
+            "de": "Gerät in Zigbee-Pairingmodus (meist Reset/Pair 5 s bis LED blinkt)."
           }
         }
       },
@@ -137536,7 +137662,7 @@
           "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
             "en": "Press and hold the pairing button for 5 seconds until the LED flashes.",
-            "fr": "Appuyez et maintenez le bouton d'appairage pendant 5 secondes jusqu'?? ce que la LED clignote."
+            "fr": "Appuyez et maintenez le bouton d'appairage pendant 5 secondes jusqu'à ce que la LED clignote."
           }
         },
         "productId": [
