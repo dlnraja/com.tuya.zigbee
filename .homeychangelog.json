@@ -3943,5 +3943,9 @@
   },
   "1.0.77": {
     "en": "P2701: IntelligentEnergyAdapter before energy + TS0043 complementary soft-arm"
+  },
+  "1.0.84": {
+    "en": "Wall hybrid UI sync gated skipUiPulse (scene remotes keep tiles; black remotes crash-safe).",
+    "fr": "Sync UI hybrid gate skipUiPulse (scene OK; noires crash-safe)."
   }
 }
