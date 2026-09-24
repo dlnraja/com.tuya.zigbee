@@ -33,10 +33,10 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 
 | Metric | Value |
 |--------|-------|
-| **App Version** | v9.0.1233 |
+| **App Version** | v9.0.1234 |
 | **Drivers** | 434 (381 Zigbee + 53 WiFi) |
 | **Unique Fingerprints** | 4,696 |
-| **Pairing Variants** | 18,792 (4 case combos per fingerprint) |
+| **Pairing Variants** | 18,770 (4 case combos per fingerprint) |
 | **Unique Product IDs** | 929 |
 | **Flow Cards** | 5,995 |
 | **Unique Capabilities** | 170 |
@@ -53,7 +53,7 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 |---|--------|-------------|
 | 1 | `climate_sensor` | 2,179 |
 | 2 | `switch_1gang` | 1,512 |
-| 3 | `curtain_motor` | 1,114 |
+| 3 | `curtain_motor` | 1,098 |
 | 4 | `presence_sensor_radar` | 1,011 |
 | 5 | `radiator_valve` | 609 |
 | 6 | `generic_tuya` | 581 |
@@ -103,6 +103,7 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 
 | Version | Changes |
 |---------|---------|
+| **v9.0.1234** | Publish heal: fingerprint collision baseline refresh + radar P2722. Update Test. |
 | **v9.0.1233** | Ceiling radar (gkfbdvyx): motion re-arms when you move after stillness; distance display closer to tape (~0.9). Update Test + Repair radar. |
 | **v9.0.1232** | Remotes: faster rapid off/on (no multi-second dead window when toggling). Update Test. |
 | **v9.0.1231** | Remotes: clear leftover LIVE-DATA overlay after OOM tip-lag; less work on button press. Update Test + restart app once. |
@@ -114,7 +115,6 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 | **v9.0.1225** | Ceiling radar distance dual-scale lock (publish gate). Update + Repair radar. |
 | **v9.0.1224** | Ceiling radar (_TZE204_gkfbdvyx): fix lux/distance + no phantom battery after Repair. Update Universal Tuya Test, Repair the radar. |
 | **v9.0.1223** | Faster TS0042/TS0043 wireless remotes (snappy press to relay). Update + Repair remotes. |
-| **v9.0.1222** | Fixed VicHY presence radar frozen readings — DP4 no longer painted as battery; lux uses DP104 (MTG075). |
 
 <!-- CHANGELOG_END -->
 
