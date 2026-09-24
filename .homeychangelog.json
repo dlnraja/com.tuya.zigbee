@@ -1,4 +1,8 @@
 {
+  "5.12.331": {
+    "en": "Reliability: snappy remotes no multi-second dead window on rapid toggle. Update Stable Test.",
+    "fr": "Fiabilite: telecommandes snappy sans fenetre morte multi-secondes. Maj Stable Test."
+  },
   "5.12.330": {
     "en": "Reliability: clear leftover LIVE-DATA overlay after OOM; less work on sleepy remote press. Update Stable Test.",
     "fr": "Fiabilite: purge overlay LIVE-DATA apres OOM; moins de travail au press telecommande. Maj Stable Test."
