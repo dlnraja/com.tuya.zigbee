@@ -2,11 +2,13 @@
 
 /**
  * P2713 — VicHY #2254 diag af98752d: frozen presence + phantom battery
+ * P2715 — GH#550: ceiling lux must NOT be blanket-skipped with MTG DP103
  *
  * Contre quoi:
  * - Generic EF00 fallback maps DP4→measure_battery on MTG075 (DP4=detection_range)
- * - Generic maps DP103→measure_luminance (MTG lux=DP104; DP103=cline) → null lux
+ * - Generic maps DP103→measure_luminance on MTG (lux=DP104; DP103=cline) → null lux
  * - Presence radar detection must not require driver.id (empty early boot)
+ * - Ceiling gkfbdvyx lux IS DP103 — must still allow generic lux when map unseeded
  * Dual-app: BOTH reliability — master-first this session
  */
 
@@ -20,13 +22,15 @@ const MGR = path.join(ROOT, 'lib/tuya/TuyaEF00Manager.js');
 const CFG = path.join(ROOT, 'drivers/presence_sensor_radar/configs.js');
 
 describe('P2713 VicHY #2254 af98752d MTG DP4/DP103 generic skip', () => {
-  it('TuyaEF00Manager skips generic DP4/DP103 on presence radar', () => {
+  it('TuyaEF00Manager skips generic DP4 on all presence radar; DP103 only on MTG', () => {
     const src = fs.readFileSync(MGR, 'utf8');
     assert.ok(src.includes('P2713'));
     assert.ok(src.includes('af98752d') || src.includes('#2254'));
-    assert.match(src, /isPresenceRadarDriver && \(Number\(dp\) === 4 \|\| Number\(dp\) === 103\)/);
+    assert.ok(src.includes('isMtgLuxFamily'));
+    assert.match(src, /isPresenceRadarDriver && Number\(dp\) === 4/);
+    assert.match(src, /Number\(dp\) === 103 && isMtgLuxFamily/);
     assert.match(src, /4:\s*isPresenceRadarDriver\s*\?\s*null\s*:\s*'measure_battery'/);
-    assert.match(src, /103:\s*isPresenceRadarDriver\s*\?\s*null\s*:\s*'measure_luminance'/);
+    assert.match(src, /103:\s*\(isPresenceRadarDriver && isMtgLuxFamily\)\s*\?\s*null\s*:\s*'measure_luminance'/);
   });
 
   it('MTG075 clrdrnya dpMap: DP4 setting detection_range, lux on DP104 not 103', () => {

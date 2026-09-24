@@ -273,8 +273,14 @@ const SENSOR_CONFIGS = {
         radarRangeScale: true,
         maxMeters: 9,
       },
-      // WHY(P2595 / Z2M ZY-M100-24GV3): DP9 distance = ÷10 (not smartDivisor → /100 miss)
-      9: { cap: 'measure_luminance.distance', divisor: 10 },
+      // WHY(P2595 / Z2M ZY-M100-24GV3): DP9 distance = ÷10 preferred
+      // WHY(P2715 / GH#550): dual-scale when MCU sends cm (≥100) instead of dm
+      9: {
+        cap: 'measure_luminance.distance',
+        radarDistanceScale: true,
+        preferDivisor: 10,
+        maxMeters: 9,
+      },
       // WHY(P2618 / GH#550 Gmail): V3 illuminance is DP103 ONLY (Z2M).
       // Mapping DP10 as lux_direct painted junk (lux=1) and killed real DP103 updates.
       10: { cap: null, internal: 'illuminance_v2_compat' },
