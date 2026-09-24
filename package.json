@@ -1,6 +1,6 @@
 {
   "name": "com.dlnraja.tuya.zigbee",
-  "version": "9.0.1222",
+  "version": "9.0.1223",
   "description": "Tuya Unified Zigbee - Local-first control with AI automation",
   "main": "app.js",
   "scripts": {
@@ -585,7 +585,8 @@
     "check:p270x": "npm run check:p2702 && npm run check:p2704 && npm run check:p2705 && npm run check:p2706 && npm run check:p2706b && npm run check:p2707 && npm run check:p2708",
     "check:p2711": "node --test test/critical/p2711-fleet-datapoint-tx-learnmode.test.js",
     "check:p2712": "node --test test/critical/p2712-vichy-advanced-flows-heal-lag.test.js test/critical/p2546-vichy-radar-periodic-heal.test.js",
-    "check:p2713": "node --test test/critical/p2713-vichy-2254-af98752d-mtg-dp4-battery.test.js"
+    "check:p2713": "node --test test/critical/p2713-vichy-2254-af98752d-mtg-dp4-battery.test.js",
+    "check:p2714": "node --test test/critical/p2714-bastien-e1654535-ts004x-latency-battery.test.js"
   },
   "keywords": [
     "homey",
