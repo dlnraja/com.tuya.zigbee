@@ -3990,5 +3990,9 @@
   "1.0.95": {
     "en": "Retry after Athom hang on 1.0.94: skip battery configureReporting on remotes (settings/opt); less TX storm. Update Test + restart.",
     "fr": "Retry apres hang Athom 1.0.94: plus de configureReporting batterie sur telecommandes; moins de TX Error. Maj Test + restart."
+  },
+  "1.0.96": {
+    "en": "Athom publish slim (house fleet only) so Test can land after 1.0.94/95 hang; remotes TX quieter. Update Test + restart.",
+    "fr": "Publish Athom allégé (flotte maison) pour débloquer Test après hang 1.0.94/95; telecommandes. Maj Test + restart."
   }
 }

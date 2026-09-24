@@ -1,43 +1,35 @@
-# Bastien house live diag — 2026-09-24 (Chrome WebBridge + Homey CLI)
+# Bastien dump 2026-09-24 ~23:15 (Chrome WebBridge)
 
-Logged in: Dylan (guest) on Homey account **Bastien Andrieu** · Homey **Homey Pro de Bastien** (id `65d495eb252c3ef65c879247`).
+## Athom / Gmail
+| Build | Version | State |
+|-------|---------|-------|
+| #105 | 1.0.95 | **processing_failed** socket hang up |
+| #104 | 1.0.94 | **processing_failed** socket hang up |
+| #103 | **1.0.93** | **test** (healthy — what Homey installs) |
 
-Chrome MCP (cursor-ide-browser) was **not** logged in — used **Kimi WebBridge** against real Chrome cookies.
+Universal #3362 testing OK. Bastien tip-lag = Athom reject, not Homey UI.
 
-## App tip (Athom)
-| App | Installed on box | Athom Test healthy | Broken attempt |
-|-----|------------------|--------------------|----------------|
-| Zigbee Bastien | **1.0.93** | **1.0.93** #103 | **1.0.94** #104 `processing_failed` (socket hang up) |
+## App settings (`my.homey.app/.../com.dlnraja.tuya.zigbee.bastien`)
+Page was slow ("Chargement...") — cloud path. Expect installed **1.0.93** Test until 1.0.96 lands.
 
-→ Publish job soft-continued (P139) while Homey correctly stayed on 1.0.93. Tip-lag was **Athom reject**, not Homey ignoring updates.
-→ Retry tip: **1.0.95** (P2723 + same payload as 1.0.94 fixes).
+## Zigbee tools (Homey Pro de Bastien)
+| Node | Device | Couple | Last seen | TX Err |
+|------|--------|--------|-----------|--------|
+| 3 | Bouton 1 | axpdxqgu+TS0041 | **2 hours** | 64 (40%) |
+| 7 | Bouton 3 | vsxvaj9i+TS0043 | 7 min | 83 (56%) |
+| 18 | 2-Boutons | dzwgk7e2+TS0042 | **2 hours** | 146 (59%) |
+| 5–17 | HOBEIAN ZG-301Z | switch_1gang | 2 min | ~0% |
+| 20 | Eclairage salon | ltt60asa+TS0004 | 6 min | 0% |
+| 10/12 | SNZB-02 | fllyghyj | 11–17 min | ~10% |
+| 14/15/19 | Unknown | — | active RX | orphans |
 
-## Remotes (Zigbee tools) — high TX error (sleepy)
-| Node | Name | Couple | Last seen | TX / TX Err | RX | Route |
-|------|------|--------|-----------|-------------|-----|-------|
-| 3 | Bouton sans fil 1 | `_TZ3000_axpdxqgu`+TS0041 | ~29m | 229 / **148 (65%)** | 74 | 0→5→3 |
-| 7 | Bouton sans fil 3 | `_TZ3000_vsxvaj9i`+TS0043 | ~15m | 348 / **270 (78%)** | 161 | 0→7 |
-| 18 | 2-Boutons | `_TZ3000_dzwgk7e2`+TS0042 | ~27m | 449 / **378 (84%)** | 40 | 0→6→18 |
+→ Remotes 1+2 **dead window** (2h) while switches OK = “reconnu mais rien ne marche”.
 
-Devices tool: remotes Ready/Available, batteries painted, drivers `button_wireless_{1,2,3}` under Zigbee Bastien.
-Settings still show `enable_battery_notifications=true`, `battery_report_interval=24`, `optimization_mode=balanced`.
+## Fix P2724
+House-fleet prune at prepare-publish: ~431 → ~76 drivers, app.json ~7.9 → ~1.7 MB.
+Tip **1.0.96** republish to clear Athom hang.
 
-**P2723:** `applyEnergyOptimization` / `requestBatteryUpdate` now honor `skipBatteryReporting` (was a TX hole when settings change).
-
-## Unknown mesh nodes (no Homey device)
-| Node | IEEE | RX | Note |
-|------|------|-----|------|
-| 14 | a4:c1:38:bb:8f:37:ee:17 | ~946 | Not in Devices tool — orphan / unpaired |
-| 15 | a4:c1:38:c1:17:76:42:f4 | ~5648 | Active RX; route via 20 |
-| 19 | a4:c1:38:e6:74:3a:00:da | ~1267 | Orphan |
-
-## Routers OK
-HOBEIAN ZG-301Z + NodOn radiators + `_TZ3000_ltt60asa`+TS0004: TX err ~0%.
-
-## Actions
-1. Wait Athom Test **1.0.95** (or sideload if owner CLI)
-2. Update + restart Zigbee Bastien on box
-3. Press remotes → Flow → relays
-4. Optional: Repair or remove Unknown nodes 14/15/19
-
-Silent only — no forum POST.
+## User actions after Test 1.0.96
+1. Update Zigbee Bastien → 1.0.96 + **Redémarrer**
+2. Press each remote (wake) → Flow → lights
+3. If still dead: replace CR2032 / Repair device
