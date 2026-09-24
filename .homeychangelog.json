@@ -4067,5 +4067,9 @@
   "9.0.1226": {
     "en": "Publish gate: MTG075 profile notes + ceiling radar P2715. Update + Repair radar.",
     "fr": "Gate publish: notes MTG075 + radar plafond P2715. Maj + Repair."
+  },
+  "9.0.1227": {
+    "en": "TS0043 _TZ3000_famkxci2 stays Wireless Button 3 (no Generic Zigbee). Update Test; remove Generic device; add Universal Tuya → Wireless Button 3.",
+    "fr": "TS0043 famkxci2 reste Bouton 3 (pas Zigbee generique). Maj Test; supprimer Generique; ajouter Universal Tuya → Bouton 3."
   }
 }

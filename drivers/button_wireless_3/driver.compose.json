@@ -165,7 +165,7 @@
         "it": "Tenere premuto qualsiasi pulsante per 5 secondi finché il LED lampeggia rapidamente",
         "sv": "Håll ned valfri knapp i 5 sekunder tills LED:en blinkar snabbt",
         "no": "Hold inne en hvilken som helst knapp i 5 sekunder til LED-en blinker raskt",
-        "es": "Mantenga presionado cualquier botón durante 5 segundos hasta que el LED parpadee rápidamente",
+        "es": "IMPORTANTE: elija Universal Tuya → Wireless Button 3 (TS0043) — NO Zigbee genérico de Homey. Mantenga un botón 5–10 s hasta que el LED parpadee; pulse cada 2–3 s al emparejar. Flow: « Button pressed » (Botón 1/2/3). No use canales/comandos Zigbee de Developer Tools. Nunca escriba 0x8004.",
         "da": "Hold en vilkårlig knap nede i 5 sekunder, indtil LED'en blinker hurtigt"
       }
     },
