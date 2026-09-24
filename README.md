@@ -33,15 +33,15 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 
 | Metric | Value |
 |--------|-------|
-| **App Version** | v9.0.1213 |
+| **App Version** | v9.0.1214 |
 | **Drivers** | 434 (381 Zigbee + 53 WiFi) |
 | **Unique Fingerprints** | 4,696 |
-| **Pairing Variants** | 18,794 (4 case combos per fingerprint) |
+| **Pairing Variants** | 18,790 (4 case combos per fingerprint) |
 | **Unique Product IDs** | 929 |
 | **Flow Cards** | 5,995 |
 | **Unique Capabilities** | 170 |
 | **Native OTA Drivers** | 8 |
-| **Test Suites** | 487 files |
+| **Test Suites** | 488 files |
 | **SVG Icons** | 734 |
 | **Languages** | EN, FR, NL, DE |
 | **SDK / Homey** | 3 / >= 12.2.0 |
@@ -103,6 +103,7 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 
 | Version | Changes |
 |---------|---------|
+| **v9.0.1214** | Publish heal: scene remotes wkai4ga5/a4xycprs stay on scene_switch_4 (not button_wireless_4). Update Test. |
 | **v9.0.1213** | Wireless remotes (TS0041/42/43): faster presses, multi-btn no longer slows others or crash Homey; battery % fix. Update Test. |
 | **v9.0.1212** | Publish heal: restore VicHY MTG couple notes + HiepSVG radar P2705. Update Test. |
 | **v9.0.1211** | Publish heal: FP collision baseline + HiepSVG radar P2705. Update Test. |
@@ -114,7 +115,6 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 | **v9.0.1205** | P2698: strip radar FP bleed from curtain_motor so publish CI clears |
 | **v9.0.1204** | Fixed CI sacred-couple gates and climate battery guideline conflict. |
 | **v9.0.1203** | Improved fingerprint matching for wireless buttons and radiator valves. |
-| **v9.0.1202** | Improved energy parsing and CI publish reliability. |
 
 <!-- CHANGELOG_END -->
 
