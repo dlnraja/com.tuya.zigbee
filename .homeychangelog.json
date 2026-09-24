@@ -3959,5 +3959,8 @@
   "1.0.87": {
     "en": "Battery: precise % from chemistry curves (LiFePO4, NiMH, coin/akku) + voltage. Update Test.",
     "fr": "Batterie: % precis courbes chimie (LiFePO4, NiMH, piles/akkus) + tension. Maj Test."
+  },
+  "1.0.88": {
+    "en": "Improved Tuya datapoint TX framing (fleet treat)."
   }
 }
