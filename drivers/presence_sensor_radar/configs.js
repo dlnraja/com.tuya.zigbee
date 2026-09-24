@@ -213,8 +213,9 @@ const SENSOR_CONFIGS = {
     configName: 'ZY_M100_CEILING_24G',
     sensors: [
       '_TZE200_gkfbdvyx', '_TZE204_gkfbdvyx', '_TZE284_gkfbdvyx',
-      '_TZE204_ya4ft0w4', '_TZE200_ya4ft0w4', // WHY(P2585): Z2M ZY-M100-24GV3 sibling fingerprint
-      '_TZE204_laokfqwu',
+      // WHY(P2675): max sibling variants — Z2M ZY-M100-24GV3 TZE200/204/284
+      '_TZE204_ya4ft0w4', '_TZE200_ya4ft0w4', '_TZE284_ya4ft0w4',
+      '_TZE204_laokfqwu', '_TZE200_laokfqwu', '_TZE284_laokfqwu',
     ],
     battery: false,
     mainsPowered: true,
@@ -232,6 +233,25 @@ const SENSOR_CONFIGS = {
     presenceEnumMapping: { 0: false, 1: true, 2: true },
     clearPresenceOnZeroDistance: true,
     syncPresenceFromDistanceInference: true,
+    // WHY(P2705 / GH#550 HiepSVG @ 9.0.1207): sticky presence hung after leave —
+    // survival + soft-clear must arm on ceiling (was gated on floodCalm/relay only).
+    survivalWatchdog: true,
+    // WHY(P2719 / GH#550 @ 9.0.1222): soft-clear stagnant ghost distance after leave
+    // (clearPresenceOnZeroDistance alone never fires when MCU sticks at 2–3m).
+    softClearStableDistanceMs: 75_000,
+    softClearZeroDistanceMs: 30_000,
+    stickyPresenceWatchdogMs: 15_000,
+    softClearIgnoreStickyDp1Ms: 120_000,
+    // WHY(P2719): gate sticky DP1 / distance re-assert after soft-clear
+    antiFalsePositive: true,
+    // WHY(P2719 / Z2M state none|presence|move): Homey motion ≠ human presence
+    splitMotionPresence: true,
+    // WHY(P2722 / GH#550 HiepSVG @ 9.0.1232): after stillness DP1 sticks at 1 —
+    // re-arm alarm_motion when distance deltas while human YES (MCU often skips enum 2).
+    rearmMotionOnDistanceDelta: true,
+    rearmMotionDistanceDeltaM: 0.15,
+    // WHY(P2722): Homey shows ~1.2× tape — ceiling display scale 0.9 (UI only; soft-clear uses pre-scale).
+    distanceDisplayScale: 0.9,
     motionThrottleEnabled: true,
     motionThrottleMs: 10000,
     motionDebounceMs: 5000,
@@ -254,14 +274,29 @@ const SENSOR_CONFIGS = {
         useInference: true,
         unreliable: true,
       },
-      2: { cap: null, internal: 'move_sensitivity' },
+      // WHY(P2705 / GH#550 + Z2M#25692): MCU amnesia — Homey settings must map to DPs
+      // or restore/onSettings never push range/sensitivity/timeout (looks dead >3.5m).
+      2: { cap: null, setting: 'radar_sensitivity', internal: 'move_sensitivity' },
       // WHY(P2583): Z2M ÷100 vs ZHA ×0.1 — dual-scale via TuyaRadarRangeScale
-      3: { cap: null, internal: 'detection_distance_min', radarRangeScale: true, maxMeters: 12 },
-      4: { cap: null, internal: 'detection_distance_max', radarRangeScale: true, maxMeters: 12 },
-      // WHY(P2595 / Z2M ZY-M100-24GV3): DP9 distance = ÷10 (not smartDivisor → /100 miss)
-      9: { cap: 'measure_luminance.distance', divisor: 10 },
-      // WHY(P2604 / Z2M V3): illuminance is DP103 raw — DP10 kept as soft sibling only
-      10: { cap: 'measure_luminance', type: 'lux_direct' },
+      3: { cap: null, internal: 'detection_distance_min', radarRangeScale: true, maxMeters: 9 },
+      4: {
+        cap: null,
+        setting: 'detection_range',
+        internal: 'detection_distance_max',
+        radarRangeScale: true,
+        maxMeters: 9,
+      },
+      // WHY(P2595 / Z2M ZY-M100-24GV3): DP9 distance = ÷10 preferred
+      // WHY(P2715 / GH#550): dual-scale when MCU sends cm (≥100) instead of dm
+      9: {
+        cap: 'measure_luminance.distance',
+        radarDistanceScale: true,
+        preferDivisor: 10,
+        maxMeters: 9,
+      },
+      // WHY(P2618 / GH#550 Gmail): V3 illuminance is DP103 ONLY (Z2M).
+      // Mapping DP10 as lux_direct painted junk (lux=1) and killed real DP103 updates.
+      10: { cap: null, internal: 'illuminance_v2_compat' },
       // WHY(P2597 / Z2M DP101 find_switch): distance tracking — auto ON after pair
       101: {
         cap: null,
@@ -269,12 +304,12 @@ const SENSOR_CONFIGS = {
         type: 'bool',
         autoEnableFindSwitch: true,
       },
-      102: { cap: null, internal: 'presence_sensitivity' },
+      102: { cap: null, setting: 'entry_sensitivity', internal: 'presence_sensitivity' },
       103: { cap: 'measure_luminance', type: 'lux_direct' },
       // WHY(P2604 / Z2M ZY-M100-24GV3): V3 has NO DP104 presence — do not map as alarm_motion
       // (V2 used 104; mapping it on gkfbdvyx caused silent lux/distance races after re-pair).
       104: { cap: null, internal: 'motion_state_v2_compat' },
-      105: { cap: null, internal: 'fading_time' },
+      105: { cap: null, setting: 'departure_delay', internal: 'fading_time' },
     }
   },
 

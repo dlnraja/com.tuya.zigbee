@@ -287,6 +287,8 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
     // WHY(P2524b / VicHY #2239+74e5cae7): MTG075 inference/distance may paint alarm_motion
     // without _commitPresenceAndFlows — edge-fire declared presence cards on ANY path.
     // WHY(P2528): also edge-fire when alarm_human flips alone (UI "human presence" path).
+    // WHY(P2719 / GH#550): ceiling splitMotionPresence — motion flicker must not wipe human.
+    const split = this._getRadarConfig?.()?.splitMotionPresence === true;
     const edgeMotion = capability === 'alarm_motion' && typeof value === 'boolean';
     const edgeHuman = capability === 'alarm_human' && typeof value === 'boolean';
     const prevMotion = edgeMotion ? this.getCapabilityValue('alarm_motion') : undefined;
@@ -297,18 +299,39 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
       this._nudgeSensorClassLock().catch(() => {});
     }
     if (edgeMotion) {
-      if (typeof this.hasCapability === 'function' && this.hasCapability('alarm_human')) {
+      if (!split && typeof this.hasCapability === 'function' && this.hasCapability('alarm_human')) {
         await super.safeSetCapabilityValue('alarm_human', value).catch(() => {});
       }
+      // Split: motion true also lifts human; motion false leaves human for departure_delay
+      if (split && value === true && typeof this.hasCapability === 'function'
+          && this.hasCapability('alarm_human')) {
+        const curH = this.getCapabilityValue('alarm_human');
+        if (curH !== true) {
+          await super.safeSetCapabilityValue('alarm_human', true).catch(() => {});
+        }
+      }
       if (prevMotion !== value) {
-        this._triggerPresenceFlows(value);
+        if (!split || value === true) this._triggerPresenceFlows(value);
+        else if (split && value === false) {
+          try {
+            this.homey.flow.getDeviceTriggerCard('presence_sensor_radar_motion_cleared')
+              ?.trigger?.(this, {}).catch(() => {});
+          } catch (_e) { /* soft — card may be absent */ }
+        }
       }
     } else if (edgeHuman && prevHuman !== value) {
-      // Mirror motion so Homey "Motion alarm" stays in sync with human presence UI
-      if (typeof this.hasCapability === 'function' && this.hasCapability('alarm_motion')) {
+      if (!split && typeof this.hasCapability === 'function' && this.hasCapability('alarm_motion')) {
         const curMotion = this.getCapabilityValue('alarm_motion');
         if (curMotion !== value) {
           await super.safeSetCapabilityValue('alarm_motion', value).catch(() => {});
+        }
+      }
+      // Split: human clear also clears motion
+      if (split && value === false && typeof this.hasCapability === 'function'
+          && this.hasCapability('alarm_motion')) {
+        const curMotion = this.getCapabilityValue('alarm_motion');
+        if (curMotion !== false) {
+          await super.safeSetCapabilityValue('alarm_motion', false).catch(() => {});
         }
       }
       this._triggerPresenceFlows(value);
@@ -450,6 +473,9 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
 
     // WHY(P2597 / Z2M find_switch): enable DP101 so DP9 distance starts reporting
     this._scheduleCeilingFindSwitchEnable('boot');
+    // WHY(P2690 / GH#550 @ 9.0.1145): lux+distance cold while DP1 alarms still move —
+    // lux-nudge never fires when DP103 is silent; poll must re-arm find_switch.
+    this._armCeilingColdStreamWatchdog();
 
     // Idea #21: Initialize multi-zone capabilities if config supports it
     await this._initMultiZoneCapabilities();
@@ -622,11 +648,31 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
         phantoms.push('button.1', 'button', 'onoff');
       }
     }
+    // WHY(P2712 / VicHY #2255): Advanced Flows cards disappear/reload when we
+    // removeCapability/setClass/setEnergy on a clean device every minute.
+    // Dirty-check first — no Homey UI invalidate when already healthy.
+    let dirty = false;
+    try {
+      if (typeof this.getClass === 'function') {
+        const cls0 = String(this.getClass() || '');
+        if (forceMains && cls0 && cls0 !== 'sensor') dirty = true;
+        if (/windowcoverings|curtain|blind|cover/i.test(cls0)) dirty = true;
+      }
+      if (!dirty && typeof this.hasCapability === 'function') {
+        dirty = phantoms.some((cap) => this.hasCapability(cap));
+      }
+    } catch (_e) { dirty = true; }
+    if (!dirty) {
+      return { dirty: false, flippedFromCurtain: false };
+    }
+
     let flippedFromCurtain = false;
+    let removedAny = false;
     for (const cap of phantoms) {
       try {
         if (typeof this.hasCapability === 'function' && this.hasCapability(cap)) {
           await this.removeCapability(cap).catch(() => {});
+          removedAny = true;
           this.log(`[RADAR] P2379/P2386/P2391 removed phantom capability ${cap}`);
         }
       } catch (_e) { /* soft */ }
@@ -649,7 +695,8 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
     } catch (_e) { /* soft */ }
     // WHY(P2391/P2420/P2431/P2459/P2472a VicHY): even after compose dropped energy.batteries,
     // Homey may keep prior session Energy metadata — mains MTG must clear batteries: null.
-    if (forceMains && typeof this.setEnergy === 'function') {
+    // WHY(P2712): only setEnergy when dirty (Homey UI refresh cost).
+    if (forceMains && typeof this.setEnergy === 'function' && (removedAny || flippedFromCurtain)) {
       try {
         await this.setEnergy({ batteries: null, mains: true });
         this.log('[RADAR] P2391/P2420/P2431/P2459/P2472a cleared Homey Energy batteries on mains radar');
@@ -675,8 +722,13 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
         this._armCurtainFlipBurstHeal();
       }
       // WHY(P2599 / VicHY #2252 OCR): tip bump re-injects compose zones/temp — burst strip
-      this._armMtgTileSanitizeBurst();
+      // WHY(P2712 / VicHY #2255): NEVER re-arm burst from clean periodic ticks —
+      // only when phantoms were actually removed or class flipped (Contre quoi Flow lag).
+      if (removedAny || flippedFromCurtain) {
+        this._armMtgTileSanitizeBurst();
+      }
     }
+    return { dirty: true, flippedFromCurtain, removedAny };
   }
 
   /**
@@ -689,7 +741,16 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
       if (this._mtgTileSanitizeArmed) return;
       this._mtgTileSanitizeArmed = true;
       const { safeSetTimeout } = require('../../lib/utils/safe-timers');
-      const bursts = [5_000, 15_000, 45_000, 120_000];
+      // WHY(P2617 / GH#550 @ 9.0.1097): tip bump re-injects Button/zones/temp/battery for
+      // minutes — extend burst so gkfbdvyx ceiling stays clean after Homey compose heal.
+      // WHY(P2712 / VicHY #2255): keep arm flag for full burst window (was 150s while
+      // ceiling bursts ran to 600s → periodic heal re-armed forever → Flow UI lag).
+      const mfrNow = (MfrHelper.getManufacturerName(this) || '').toLowerCase();
+      const ceiling = /gkfbdvyx|laokfqwu|ya4ft0w4/.test(mfrNow);
+      const bursts = ceiling
+        ? [3_000, 8_000, 20_000, 45_000, 90_000, 180_000, 300_000]
+        : [5_000, 15_000, 45_000, 120_000];
+      const armMs = (bursts[bursts.length - 1] || 120_000) + 30_000;
       for (const ms of bursts) {
         safeSetTimeout(this, () => {
           this._healPresenceHistoryUx().catch(() => {});
@@ -698,8 +759,8 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
           this._sanitizeCorruptDistanceTile().catch(() => {});
         }, ms);
       }
-      safeSetTimeout(this, () => { this._mtgTileSanitizeArmed = false; }, 150_000);
-      this.log('[RADAR] P2599 MTG tile sanitize burst armed');
+      safeSetTimeout(this, () => { this._mtgTileSanitizeArmed = false; }, armMs);
+      this.log(`[RADAR] P2599/P2712 MTG tile sanitize burst armed (${armMs}ms)`);
     } catch (_e) { /* soft */ }
   }
 
@@ -804,8 +865,10 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
           }
         }, ms);
       }
-      // WHY(P2548/P2555 / VicHY #2241): Homey store restore can flip class without tip;
-      // 60s catches curtain UI faster than 120s while soft-dismiss users block updates.
+      // WHY(P2546 / VicHY #2241): slow periodic heal for class flip without tip.
+      // WHY(P2712 / VicHY #2255): NEVER 60s — addCapability/removeCapability storms make
+      // Advanced Flows cards vanish/reload and lag when dragging. Dirty heal is cheap;
+      // interval stays 10 min (P2546 Contre quoi).
       if (!this._radarPhantomHealInterval && typeof safeSetInterval === 'function') {
         this._radarPhantomHealInterval = safeSetInterval(this, () => {
           const mfr = (MfrHelper.getManufacturerName(this) || '').toLowerCase();
@@ -813,9 +876,14 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
             return;
           }
           this._armRadarDynCapGuards();
-          this._healRadarPhantomCaps().catch(() => {});
-          this._applyRadarCapabilityProfile().catch(() => {});
-        }, 60_000);
+          // Profile apply only when heal reports dirty (avoid Flow UI invalidate)
+          this._healRadarPhantomCaps().then((r) => {
+            if (r && r.dirty) {
+              return this._applyRadarCapabilityProfile();
+            }
+            return null;
+          }).catch(() => {});
+        }, 600_000);
       }
     } catch (_e) {
       try {
@@ -978,7 +1046,8 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
     const now = Date.now();
     if (this._lastFindSwitchOnAt && (now - this._lastFindSwitchOnAt) < 20_000) {
       // WHY(P2604): allow immediate re-arm when distance stuck at 0 after re-pair
-      if (!/stuck|repair|announce|lux-stuck/.test(String(reason || ''))) return false;
+      // WHY(P2690): cold/poll paths also bypass — MCU can drop find_switch while DP1 lives
+      if (!/stuck|repair|announce|lux-stuck|cold|poll/.test(String(reason || ''))) return false;
     }
     this._lastFindSwitchOnAt = now;
     this.log(`[RADAR] P2597 enabling DP101 find_switch (${reason})`);
@@ -1005,22 +1074,89 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
    * re-arm find_switch + EF00 requestDP (not Homey-native dataQuery alone).
    * WHY(P2604 / GH#550 re-pair): once DP9 paints 0m, `_distanceSeenOnce` blocked
    * forever re-arm → distance stuck 0 + lux goes quiet. Keep nudging while ≤0.05m.
+   * WHY(P2690): also called from presence/poll when lux stream itself is dead.
    */
-  _nudgeCeilingDistanceArmFromLux() {
+  _nudgeCeilingDistanceArmFromLux(reasonHint = 'lux-nudge') {
     try {
       const cfg = this._getRadarConfig() || {};
       if (!cfg.enableFindSwitchOnBoot && !cfg.syncPresenceFromLuxInference) return;
       const dist = Number(this._lastDistanceM);
+      // WHY(P2617 / GH#550): treat sub-0.3m sticky as cold (OCR showed 0.2m while room occupied)
       const stuckZero = this._distanceSeenOnce
         && Number.isFinite(dist)
-        && dist <= 0.05;
-      if (this._distanceSeenOnce && !stuckZero) return;
+        && dist <= 0.3;
+      const streamsCold = this._ceilingStreamsAreCold();
+      // WHY(P2705 / GH#550 HiepSVG @ 9.0.1207): distance can tick while lux stays dead —
+      // still re-arm find_switch + request DP103 (old AND gate skipped forever).
+      const luxCold = this._ceilingLuxIsCold();
+      if (this._distanceSeenOnce && !stuckZero && !streamsCold && !luxCold) return;
       const now = Date.now();
-      const throttleMs = stuckZero ? 45_000 : 12_000;
+      const throttleMs = (stuckZero || streamsCold || luxCold) ? 45_000 : 12_000;
       if (this._lastLuxDistanceNudgeAt && (now - this._lastLuxDistanceNudgeAt) < throttleMs) return;
       this._lastLuxDistanceNudgeAt = now;
-      this._ensureCeilingFindSwitchOn(stuckZero ? 'lux-stuck-zero' : 'lux-nudge').catch(() => {});
-      this._queryCeilingPresenceDps(stuckZero ? 'lux-stuck-zero' : 'lux-nudge').catch(() => {});
+      const reason = luxCold && !streamsCold
+        ? (String(reasonHint || '').includes('lux') ? reasonHint : 'lux-cold')
+        : (streamsCold
+          ? (String(reasonHint || '').includes('cold') ? reasonHint : 'cold-stream')
+          : (stuckZero ? 'lux-stuck-zero' : reasonHint));
+      this._ensureCeilingFindSwitchOn(reason).catch(() => {});
+      this._queryCeilingPresenceDps(reason).catch(() => {});
+    } catch (_e) { /* soft */ }
+  }
+
+  /**
+   * WHY(P2690 / GH#550 @ 9.0.1145): alarms still update (DP1) while lux last-changed
+   * hours ago and distance stuck at 0 — find_switch OFF / DP103 silent.
+   * Contre quoi: lux-only nudge never runs when illuminance RX is dead.
+   * WHY(P2705): split lux vs distance — HiepSVG lux dead while distance still moves.
+   */
+  _ceilingLuxIsCold(now = Date.now()) {
+    try {
+      const cfg = this._getRadarConfig() || {};
+      if (!cfg.enableFindSwitchOnBoot) return false;
+      const luxAt = this._lastLuxPaintAt || this._lastDp103LuxAt || 0;
+      // WHY(P2715 / GH#550 @ 9.0.1207): lux "nearly dead" — re-arm sooner than 90s
+      return !luxAt || (now - luxAt) > 45_000;
+    } catch (_e) {
+      return false;
+    }
+  }
+
+  _ceilingDistanceIsCold(now = Date.now()) {
+    try {
+      const cfg = this._getRadarConfig() || {};
+      if (!cfg.enableFindSwitchOnBoot) return false;
+      const distAt = this._lastDistancePaintAt || 0;
+      const dist = Number(this._lastDistanceM);
+      return !distAt
+        || (now - distAt) > 90_000
+        || (Number.isFinite(dist) && dist <= 0.3);
+    } catch (_e) {
+      return false;
+    }
+  }
+
+  _ceilingStreamsAreCold(now = Date.now()) {
+    return this._ceilingLuxIsCold(now) && this._ceilingDistanceIsCold(now);
+  }
+
+  _armCeilingColdStreamWatchdog() {
+    try {
+      if (this._ceilingColdWatchArmed) return;
+      const cfg = this._getRadarConfig() || {};
+      if (!cfg.enableFindSwitchOnBoot) return;
+      const { safeSetInterval } = require('../../lib/utils/safe-timers');
+      if (typeof safeSetInterval !== 'function') return;
+      this._ceilingColdWatchArmed = true;
+      this._ceilingColdWatchTimer = safeSetInterval(this, () => {
+        if (this._destroyed) return;
+        // WHY(P2705): lux-only cold still needs DP103 re-query
+        if (!this._ceilingStreamsAreCold() && !this._ceilingLuxIsCold()) return;
+        this.log('[RADAR] P2690/P2705 cold-stream watchdog → re-arm find_switch + requestDPs');
+        this._nudgeCeilingDistanceArmFromLux(
+          this._ceilingStreamsAreCold() ? 'cold-watchdog' : 'lux-cold-watchdog',
+        );
+      }, 60_000);
     } catch (_e) { /* soft */ }
   }
 
@@ -1028,7 +1164,8 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
     try {
       const mgr = this.tuyaEF00Manager;
       // WHY(P2604): V3 lux = DP103; keep 9/101 for find_switch + distance
-      const dps = [1, 9, 101, 103];
+      // WHY(P2617 / GH#550): also nudge DP10 (soft sibling) when lux goes quiet after tip bump
+      const dps = [1, 9, 10, 101, 103];
       if (mgr && typeof mgr.requestDPs === 'function') {
         this.log(`[RADAR] P2600 requestDPs [${dps.join(',')}] (${reason})`);
         await mgr.requestDPs(dps).catch(() => {});
@@ -1307,7 +1444,7 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
       return mapping.enumMap[value];
     }
     // WHY(P2583 / GH#547): Z2M ÷100 vs ZHA ×0.1 for near/far range DPs
-    // WHY(P2650): soft-require — crash mail stable Cannot find module TuyaRadarRangeScale
+    // WHY(P2648 crash mail): soft-require — missing module must never crash Homey app process
     if (mapping.radarRangeScale) {
       try {
         const { normalizeRadarRangeMeters } = require('../../lib/tuya/TuyaRadarRangeScale');
@@ -1315,7 +1452,6 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
         return m != null ? m : value;
       } catch (err) {
         this.error?.('[RADAR] TuyaRadarRangeScale missing/soft-fail:', err?.message || err);
-        if (mapping.divisor && typeof value === 'number') return value / mapping.divisor;
         return value;
       }
     }
@@ -1340,7 +1476,7 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
       }
     } catch (_eClamp) { /* soft */ }
     if (mapping.radarRangeScale) {
-      // WHY(P2650): soft-require — missing module must not crash Homey on settings TX
+      // WHY(P2650): soft-require — missing module must not crash Homey on settings TX (stable crash mail)
       try {
         const { toRadarRangeTuyaValue } = require('../../lib/tuya/TuyaRadarRangeScale');
         return toRadarRangeTuyaValue(value, { maxMeters: mapping.maxMeters || 12 });
@@ -1380,6 +1516,9 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
     // available). Drop 0-valued reports from THIS mfr on numeric DPs —
     // a real 0 (nobody present) is still surfaced via absence timeout,
     // not via the buggy stream.
+    // WHY(P2715 / Z2M#12069 / GH#550): gkfbdvyx also floods bogus 0 on
+    // move_sensitivity (DP2) / presence_sensitivity (DP102) — never overwrite
+    // Homey settings or collapse range → "dead past 3.5m" lookalike.
     if (rawValue === 0 || rawValue === '0') {
       const mfr = String(this.getSetting?.('zb_manufacturer_name') || '').toLowerCase();
       if (mfr === '_tze204_ya4ft0w4' && mapping && mapping.type !== 'bool') {
@@ -1388,6 +1527,10 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
         if (this._zeroFilterLogCount <= 3 || this._zeroFilterLogCount % 60 === 0) {
           this.log(`[RADAR] Zero-value report dropped (ZY-M100 firmware bug, DP${dp})`);
         }
+        return;
+      }
+      if (/gkfbdvyx|ya4ft0w4|laokfqwu/.test(mfr) && (dp === 2 || dp === 102)) {
+        this.log(`[RADAR] P2715 drop bogus sensitivity 0 (DP${dp})`);
         return;
       }
     }
@@ -1416,6 +1559,10 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
       if (mfr === '_tze204_ya4ft0w4' && mapping && mapping.type !== 'bool') {
         return;
       }
+      // WHY(P2715 / Z2M#12069): drop bogus sensitivity 0 on ceiling V3
+      if (/gkfbdvyx|ya4ft0w4|laokfqwu/.test(mfr) && (dp === 2 || dp === 102)) {
+        return;
+      }
     }
 
     // 1. Process via static config if matched
@@ -1425,6 +1572,15 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
     }
 
     // 2. Fallback: Intelligent Auto-Discovery
+    // WHY(P2618 / GH#550 Gmail Repair): discovery invents battery/zones/temp on ceiling
+    // V3 (OCR: Battery 7%, Button 1, Zone 1–3) — skip for gkfbdvyx family.
+    try {
+      const mfr = String(this.getSetting?.('zb_manufacturer_name') || '').toLowerCase();
+      if (/gkfbdvyx|ya4ft0w4|laokfqwu/.test(mfr) || (config && config.hasRelay === false && config.enableFindSwitchOnBoot)) {
+        this.log(`[RADAR] P2618 skip auto-discovery DP${dpId}=${value} (ceiling V3)`);
+        return;
+      }
+    } catch (_e) { /* soft */ }
     const discovery = this._ensureDiscovery();
     const discovered = discovery.analyzeDP(dp, value);
     if (discovered && discovered.confidence >= 60) {
@@ -1478,6 +1634,8 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
     if (mapping.cap === 'alarm_motion') {
       const inference = this._ensureInference();
       // v9.7.6: Use enumMap from mapping if available (e.g., gkfbdvyx: {0:false, 1:true, 2:true})
+      // WHY(P2719 / Z2M): raw 0=none, 1=presence, 2=move — split motion vs human on ceiling
+      const rawEnum = (typeof value === 'number') ? value : null;
       let presence;
       if (mapping.enumMap) {
         if (typeof value === 'boolean') {
@@ -1499,6 +1657,32 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
       if (mapping.ignorePresenceClear === true && (presence === false || presence === 0)) {
         this.log(`[RADAR] P2600 ignore presence clear from DP${dpId} (motion_state)`);
         return;
+      }
+
+      // WHY(P2719 / GH#550 @ 9.0.1222): split motion (move) vs presence (still human)
+      if (config.splitMotionPresence === true && rawEnum != null && mapping.enumMap) {
+        if (rawEnum === 2) {
+          this._commitPresenceAndFlows(true, { motion: true });
+          if (config.enableFindSwitchOnBoot) this._nudgeCeilingDistanceArmFromLux('presence-cold');
+          return;
+        }
+        if (rawEnum === 1) {
+          // Still present — keep human, clear motion (no 1s flicker wipe of presence)
+          this._commitPresenceAndFlows(true, { motion: false });
+          if (config.enableFindSwitchOnBoot) this._nudgeCeilingDistanceArmFromLux('presence-cold');
+          return;
+        }
+        if (rawEnum === 0) {
+          // Clear motion immediately; human clears via departure_delay / soft-clear / zero-dist
+          this.safeSetCapabilityValue('alarm_motion', false).catch(() => {});
+          if (this._distanceCorroboratesPresence()) {
+            this.log('[RADAR] P2719 DP1 none — keep human (distance corroborates)');
+            this._nudgeSurvivalWatchdog('presence');
+          } else {
+            this._nudgeSurvivalWatchdog('dp1-none');
+          }
+          return;
+        }
       }
 
       // Integrate with inference engine if needed
@@ -1529,6 +1713,10 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
         // WHY(P2524 / diag 74e5cae7): UI painted presence but declared presence_* flow
         // triggers were never fired (sibling sensor_presence_radar did). Edge-fire only.
         this._commitPresenceAndFlows(presence);
+        // WHY(P2690 / GH#550): DP1 still moves while lux/distance cold → re-arm find_switch
+        if (config.enableFindSwitchOnBoot) {
+          this._nudgeCeilingDistanceArmFromLux('presence-cold');
+        }
         return;
       }
       return;
@@ -1561,27 +1749,48 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
       let distance = this._coerceDistanceMeters(value, mapping);
       if (distance == null) return;
       this._distanceSeenOnce = true;
-      this._lastDistanceM = distance;
-      this._noteDistanceSample(distance);
-      const inferred = this._ensureInference().updateDistance(distance);
+      // WHY(P2640): meaningful = tracking actually ranged (>0.3m) — not cold 0m frames
+      if (Number(distance) > 0.3) this._distanceSeenMeaningful = true;
+      // WHY(P2722 / GH#550): keep pre-scale meters for soft-clear / corroboration /
+      // motion re-arm; apply distanceDisplayScale only on Homey UI paint.
+      const logicDistance = distance;
+      this._lastDistanceM = logicDistance;
+      this._lastDistancePaintAt = Date.now();
+      this._noteDistanceSample(logicDistance);
+      // WHY(P2722): still-present MCU sticks DP1=1 — distance jump while human YES → motion YES
+      this._rearmMotionFromDistanceDelta(logicDistance, config);
+      const displayScale = Number(config.distanceDisplayScale);
+      if (Number.isFinite(displayScale) && displayScale > 0 && displayScale !== 1) {
+        distance = Math.round(logicDistance * displayScale * 100) / 100;
+      }
+      const inferred = this._ensureInference().updateDistance(logicDistance);
       // WHY(P2509 / Z2M#30785): gkfbdvyx sticks DP1=true while DP9=0m — clear Homey presence
-      if (config.clearPresenceOnZeroDistance && Number(distance) <= 0.05) {
-        this._commitPresenceAndFlows(false);
+      // WHY(P2640 / GH#550): never zero-clear until a meaningful distance was seen —
+      // find_switch OFF paints DP9=0 forever and would wipe lux/DP1 presence.
+      if (config.clearPresenceOnZeroDistance && Number(logicDistance) <= 0.05) {
+        if (this._distanceSeenMeaningful === true) {
+          this._commitPresenceAndFlows(false);
+        }
       } else if (config.syncPresenceFromDistanceInference && typeof inferred === 'boolean') {
-        const painted = this.getCapabilityValue('alarm_motion');
-        if (painted !== inferred) {
+        const painted = this.getCapabilityValue('alarm_motion') === true
+          || this.getCapabilityValue('alarm_human') === true;
+        // WHY(P2719): after soft-clear, ghost stagnant distance must not re-assert presence
+        const ignoreActive = this._ignoreStickyDp1Until && Date.now() < this._ignoreStickyDp1Until;
+        if (inferred === true && ignoreActive && !this._distanceCorroboratesPresence()) {
+          this.log('[RADAR] P2719 skip distance→presence (sticky-ignore / ghost)');
+        } else if (painted !== inferred) {
           this._commitPresenceAndFlows(inferred);
         }
       } else {
         // WHY(P2584): Occupied mode — DP1 useless; paint Homey presence from distance motion
-        this._applySmartPresenceUnderOccupied(distance, inferred, config);
+        this._applySmartPresenceUnderOccupied(logicDistance, inferred, config);
       }
       // WHY(P2575 / VicHY #2247 bathroom): DP1 can stick true while empty room distance≈0.
       // Soft clear after sustained zero distance (default 90s) — does not fight P2534
       // instantaneous flip-flop (needs sustained empty, not single DP9=0 frame).
-      this._softClearStuckPresenceOnZeroDistance(distance, config);
+      this._softClearStuckPresenceOnZeroDistance(logicDistance, config);
       // WHY(P2389): still feed inference every frame; only coalesce Homey capability writes
-      if (this._shouldSkipFloodCalmDp(dpId, distance, config)) {return;}
+      if (this._shouldSkipFloodCalmDp(dpId, logicDistance, config)) {return;}
       // WHY(P2590 Module 2): meaningful distance while Occupied = sign of life → rearm
       this._nudgeSurvivalWatchdog('distance');
       // WHY(P2599 / VicHY #2252 OCR): keep units string on every paint
@@ -1611,6 +1820,22 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
         lux = smartParse(value, dpId, { capability: 'measure_luminance' });
       } else if (mapping.divisor) {lux = value / mapping.divisor;}
 
+      // WHY(P2617 / GH#550 @ 9.0.1097): DP10 junk (lux=1) must not overwrite fresh DP103.
+      // Prefer V3 illuminance; keep DP10 only when DP103 has been quiet ≥45s.
+      const nowLux = Date.now();
+      if (Number(dpId) === 103) {
+        this._lastDp103LuxAt = nowLux;
+        this._lastDp103Lux = lux;
+        this._lastLuxPaintAt = nowLux;
+      } else if (Number(dpId) === 10) {
+        const recent103 = this._lastDp103LuxAt && (nowLux - this._lastDp103LuxAt) < 45_000;
+        if (recent103) {
+          this.log(`[RADAR] P2617 skip DP10 lux=${lux} (DP103 preferred)`);
+          this._nudgeCeilingDistanceArmFromLux();
+          return;
+        }
+      }
+
       const luxInferred = this._ensureInference().updateLux(lux);
       // WHY(P2600 / GH#550): lux stream alive while DP9 never seen → re-arm find_switch
       this._nudgeCeilingDistanceArmFromLux();
@@ -1624,10 +1849,20 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
       }
       // WHY(P2595 / GH#550): gkfbdvyx lux floods while DP9 null — paint presence from lux rate
       // WHY(P2600): also accept lux-cadence soft present while find_switch warms
+      // WHY(P2617): never lux-force absent while distance still indicates someone
       if (config.syncPresenceFromLuxInference && typeof luxInferred === 'boolean') {
-        const painted = this.getCapabilityValue('alarm_motion');
+        const painted = this.getCapabilityValue('alarm_motion') === true
+          || this.getCapabilityValue('alarm_human') === true;
         if (painted !== luxInferred) {
-          this._commitPresenceAndFlows(luxInferred);
+          if (luxInferred === false && this._distanceCorroboratesPresence()) {
+            this.log('[RADAR] P2617 keep presence (distance corroborates; lux quiet)');
+          } else if (luxInferred === true && this._ignoreStickyDp1Until
+              && Date.now() < this._ignoreStickyDp1Until
+              && !this._distanceCorroboratesPresence()) {
+            this.log('[RADAR] P2719 skip lux→presence (sticky-ignore)');
+          } else {
+            this._commitPresenceAndFlows(luxInferred);
+          }
         }
       }
       if (this._shouldSkipFloodCalmDp(dpId, lux, config)) {return;}
@@ -1753,8 +1988,17 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
     try {
       // WHY(P2600 / GH#550): EF00 targeted query first — native dataQuery alone
       // left presence/distance dead while lux (DP103) kept streaming.
+      // WHY(P2690 / GH#550 @ 9.0.1145): query alone does not re-enable DP101 —
+      // when lux+distance are cold, force find_switch ON then requestDPs.
       const cfg = this._getRadarConfig() || {};
       if (cfg.enableFindSwitchOnBoot || this.forceActiveTuyaMode) {
+        // WHY(P2705): lux-only cold → still re-arm (distance may still tick)
+        if (this._ceilingStreamsAreCold() || this._ceilingLuxIsCold()) {
+          this._nudgeCeilingDistanceArmFromLux(
+            this._ceilingStreamsAreCold() ? 'poll-cold' : 'poll-lux-cold',
+          );
+          return;
+        }
         const ok = await this._queryCeilingPresenceDps('poll');
         if (ok) return;
       }
@@ -1777,7 +2021,9 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
     try {
       if (this._presenceWatchdogArmed) return;
       const config = this._getRadarConfig() || {};
-      if (!(config.antiFalsePositive || config.hasRelay || config.floodCalm)) return;
+      // WHY(P2705 / GH#550 HiepSVG): ceiling gkfbdvyx had no floodCalm/relay → sticky hung
+      if (!(config.antiFalsePositive || config.hasRelay || config.floodCalm
+        || config.enableFindSwitchOnBoot || config.survivalWatchdog === true)) return;
       const { safeSetInterval } = require('../../lib/utils/safe-timers');
       const period = Number(config.stickyPresenceWatchdogMs) > 0
         ? Number(config.stickyPresenceWatchdogMs) : 15_000;
@@ -1837,8 +2083,10 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
    */
   _softClearStuckPresenceOnZeroDistance(distance, config) {
     try {
-      if (!(config?.floodCalm || config?.hasRelay || config?.antiFalsePositive)) return;
-      if (config.clearPresenceOnZeroDistance) return;
+      // WHY(P2719 / GH#550): ceiling gkfbdvyx must soft-clear stagnant ghost distance
+      // even when clearPresenceOnZeroDistance (instant ≈0 path) is also enabled.
+      if (!(config?.floodCalm || config?.hasRelay || config?.antiFalsePositive
+        || config?.survivalWatchdog === true || config?.enableFindSwitchOnBoot)) return;
       const d = Number(distance);
       const now = Date.now();
       if (!Number.isFinite(d)) return;
@@ -2083,6 +2331,14 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
         const n = Number(parsed);
         return Number.isFinite(n) ? n : null;
       }
+      // WHY(P2715 / GH#550): dual-scale target distance (dm preferred, cm when ≥100)
+      if (mapping.radarDistanceScale === true) {
+        const { normalizeRadarTargetDistanceMeters } = require('../../lib/tuya/TuyaRadarRangeScale');
+        return normalizeRadarTargetDistanceMeters(raw, {
+          maxMeters: mapping.maxMeters || 12,
+          preferDivisor: mapping.preferDivisor || 10,
+        });
+      }
       // WHY(P2580 / Z2M#32561): coerce signed VALUE garbage → uint32 before /divisor
       const { asUnsignedTuyaValue } = require('../../lib/tuya/TuyaUnsignedValue');
       const u = asUnsignedTuyaValue(raw);
@@ -2103,6 +2359,38 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
     if (this._distanceSamples.length > 12) this._distanceSamples.shift();
     this._lastDistanceM = d;
     this._lastDistanceAt = now;
+  }
+
+  /**
+   * WHY(P2722 / GH#550 HiepSVG @ 9.0.1232): after stillness DP1 sticks at enum 1 —
+   * MCU often skips enum 2 on re-move. Contre quoi: alarm_motion stuck NO while
+   * alarm_human YES and DP9 still updates.
+   */
+  _rearmMotionFromDistanceDelta(distance, config) {
+    try {
+      if (!config || config.splitMotionPresence !== true) return false;
+      if (config.rearmMotionOnDistanceDelta !== true) return false;
+      if (this.getCapabilityValue('alarm_human') !== true) return false;
+      if (this.getCapabilityValue('alarm_motion') === true) {
+        this._prevDistanceForMotionRearm = Number(distance);
+        return false;
+      }
+      const d = Number(distance);
+      if (!Number.isFinite(d)) return false;
+      const prev = Number(this._prevDistanceForMotionRearm);
+      this._prevDistanceForMotionRearm = d;
+      if (!Number.isFinite(prev)) return false;
+      const thr = Number(config.rearmMotionDistanceDeltaM) > 0
+        ? Number(config.rearmMotionDistanceDeltaM) : 0.15;
+      if (Math.abs(d - prev) < thr) return false;
+      // Sticky-ignore after leave — do not re-arm ghost motion
+      if (this._ignoreStickyDp1Until && Date.now() < this._ignoreStickyDp1Until) return false;
+      this.log(`[RADAR] P2722 re-arm motion (Δd=${Math.abs(d - prev).toFixed(2)}m while human)`);
+      this.safeSetCapabilityValue('alarm_motion', true).catch(() => {});
+      return true;
+    } catch (_e) {
+      return false;
+    }
   }
 
   _armStickyDp1Ignore(config) {
@@ -2130,13 +2418,20 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
         }
         if (max - min >= 0.25) return true;
       }
+      // WHY(P2719): during sticky-ignore after leave, stagnant ghost (2–3m) is NOT entry
+      if (this._ignoreStickyDp1Until && now < this._ignoreStickyDp1Until) {
+        return false;
+      }
       const d = Number(this._lastDistanceM);
-      if (Number.isFinite(d) && d > 0.35
+      // WHY(P2618 / GH#550): OCR @ 9.0.1097 showed distance 0.2m while person nearby —
+      // treat fresh target >0.15m as entry corroboration (was 0.35 → missed).
+      if (Number.isFinite(d) && d > 0.15
           && this._lastDistanceAt && (now - this._lastDistanceAt) < 10_000) {
-        // Fresh non-zero target after a soft-clear is enough for bathroom entry
-        if (this._ignoreStickyDp1Until && now < this._ignoreStickyDp1Until) {
-          return d > 0.35;
-        }
+        // Ceiling V3: any fresh non-zero target while painted absent → corroborate
+        try {
+          const mfr = String(this.getSetting?.('zb_manufacturer_name') || '').toLowerCase();
+          if (/gkfbdvyx|ya4ft0w4|laokfqwu/.test(mfr) && d > 0.15) return true;
+        } catch (_e2) { /* soft */ }
       }
       const inf = this._inference;
       if (inf?.state?.luxChangeRate > 8) return true;
@@ -2271,6 +2566,33 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
     } else {
       this._clearSurvivalWatchdog();
     }
+    const cfg = this._getRadarConfig() || {};
+    // WHY(P2719 / GH#550): split — human stays when motion opts.false; full clear both
+    if (cfg.splitMotionPresence === true) {
+      if (!next) {
+        return this.safeSetCapabilityValue('alarm_human', false).catch(() => {});
+      }
+      if (opts.motion === true) {
+        return this.safeSetCapabilityValue('alarm_motion', true).catch(() => {});
+      }
+      if (opts.motion === false) {
+        return Promise.all([
+          this.safeSetCapabilityValue('alarm_motion', false).catch(() => {}),
+          super.safeSetCapabilityValue('alarm_human', true).catch(() => {}),
+        ]).then(() => {
+          if (this._lastPresenceFlowEdge !== true) {
+            this._lastPresenceFlowEdge = false;
+            this._triggerPresenceFlows(true);
+          }
+        }).catch(() => {});
+      }
+      // presence true without motion hint — set human; leave motion alone
+      return super.safeSetCapabilityValue('alarm_human', true).then(() => {
+        if (this._lastPresenceFlowEdge !== true) {
+          this._triggerPresenceFlows(true);
+        }
+      }).catch(() => {});
+    }
     // Motion first — safeSet mirrors human + fires presence WHEN on edge.
     return this.safeSetCapabilityValue('alarm_motion', next).catch(() => {});
   }
@@ -2284,16 +2606,43 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
   }
 
   /**
+   * WHY(P2719): only meaningful life (distance jump / lux motion) may reset the timer.
+   * Contre quoi: ambient lux + ghost distance forever rearm → hung after leave.
+   */
+  _isMeaningfulSurvivalLife(reason) {
+    try {
+      if (reason === 'presence' || reason === 'dp1-none') return true;
+      if (reason === 'distance') {
+        const samples = Array.isArray(this._distanceSamples) ? this._distanceSamples : [];
+        if (samples.length < 2) return true;
+        const a = samples[samples.length - 1];
+        const b = samples[samples.length - 2];
+        return Math.abs(Number(a.d) - Number(b.d)) >= 0.25;
+      }
+      if (reason === 'lux') {
+        const rate = Number(this._inference?.state?.luxChangeRate) || 0;
+        const thr = Number(this._getRadarConfig?.()?.luxPresenceRateThreshold) || 3;
+        return rate > thr;
+      }
+      return true;
+    } catch (_e) {
+      return true;
+    }
+  }
+
+  /**
    * WHY(P2590/P2591 Software Shield Module 2 Survival Watchdog): if clear frame is lost
    * in Zigbee flood or MCU freezes Occupied, force Homey absent after departure_delay + margin.
    * Contre quoi: NEVER paint presence=true from distance alone (P2534 bathroom flip-flop).
    * Only rearm while already Occupied / after DP1 true.
+   * WHY(P2719 / GH#550): stagnant lux/distance must not reset the countdown.
    */
   _nudgeSurvivalWatchdog(reason = 'life') {
     try {
       const config = this._getRadarConfig() || {};
       if (config.survivalWatchdog === false) return;
-      if (!(config.floodCalm || config.antiFalsePositive || config.hasRelay || config.survivalWatchdog === true)) {
+      if (!(config.floodCalm || config.antiFalsePositive || config.hasRelay
+        || config.survivalWatchdog === true || config.enableFindSwitchOnBoot)) {
         return;
       }
       // Optional user opt-out
@@ -2303,8 +2652,13 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
 
       const present = this.getCapabilityValue?.('alarm_motion') === true
         || this.getCapabilityValue?.('alarm_human') === true
-        || reason === 'presence';
-      if (!present && reason !== 'presence') return;
+        || reason === 'presence' || reason === 'dp1-none';
+      if (!present && reason !== 'presence' && reason !== 'dp1-none') return;
+
+      // Already armed + calm telemetry → let countdown finish (honour departure_delay)
+      if (this._survivalWatchdogTimer && !this._isMeaningfulSurvivalLife(reason)) {
+        return;
+      }
 
       this._clearSurvivalWatchdog();
       const { safeSetTimeout } = require('../../lib/utils/safe-timers');

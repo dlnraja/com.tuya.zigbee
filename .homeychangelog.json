@@ -1,4 +1,8 @@
 {
+  "1.0.94": {
+    "en": "Ceiling radar + remotes soak: motion re-arm after stillness; distance ~0.9. Update Bastien Test + restart.",
+    "fr": "Radar + telecommandes: motion rearme apres immobilite; distance ~0.9. Maj Bastien Test + restart."
+  },
   "1.0.93": {
     "en": "Remotes: faster rapid off/on (no ~7s dead window); less lag when TS0042/43 fire. Update Bastien Test + restart once.",
     "fr": "Telecommandes: off/on rapide (plus de ~7s morts); moins de lag quand TS0042/43 tirent. Maj Test Bastien + restart."
