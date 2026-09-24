@@ -1,4 +1,8 @@
 {
+  "1.0.82": {
+    "en": "Black TS0042/TS0043: stop Homey app crashes on press; leaner Flow path. Update Bastien Test.",
+    "fr": "Boutons noirs TS0042/TS0043: stop crash app Homey au press; chemin Flow allégé. Maj Test Bastien."
+  },
   "1.0.81": {
     "en": "TS0042/TS0043 faster + no longer slow TS0041; black remotes less crashy; TS0043 battery % fix (was stuck ~0–84). Update Bastien Test.",
     "fr": "TS0042/TS0043 plus rapides + ne ralentissent plus le TS0041; boutons noirs moins de crash; batterie TS0043 corrigee (bloquee ~0–84). Maj Test Bastien."
