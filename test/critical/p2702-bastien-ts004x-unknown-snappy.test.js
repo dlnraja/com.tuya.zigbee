@@ -40,21 +40,24 @@ describe('P2702 Bastien TS0041/42/43 unknown + snappy relay', () => {
     assert.ok(has('_TZ3000_dzwgk7e2', 'TS0042'), 'dzwgk7e2 still pinned');
   });
 
-  it('dzwgk7e2 / vsxvaj9i / axpdxqgu profiles: debounce≤80 + snappyRelayFlow', () => {
+  it('dzwgk7e2 / vsxvaj9i / axpdxqgu profiles: debounce≤40 + snappyRelayFlow', () => {
     const src = fs.readFileSync(path.join(ROOT, 'lib/mixins/PhysicalButtonMixin.js'), 'utf8');
     for (const key of ["'_TZ3000_dzwgk7e2'", "'_TZ3000_vsxvaj9i'", "'_TZ3000_axpdxqgu'"]) {
       const idx = src.indexOf(key);
       assert.ok(idx >= 0, `${key} profile`);
-      const block = src.slice(idx, idx + 750);
-      assert.match(block, /debounceMs:\s*80/);
-      assert.match(block, /crossPathDedupMs:\s*120/);
+      const block = src.slice(idx, idx + 900);
+      const dm = block.match(/debounceMs:\s*(\d+)/);
+      assert.ok(dm && Number(dm[1]) <= 40, `${key} debounce≤40`);
+      const cp = block.match(/crossPathDedupMs:\s*(\d+)/);
+      assert.ok(cp && Number(cp[1]) <= 60, `${key} crossPath≤60`);
       assert.match(block, /snappyRelayFlow:\s*true/);
     }
   });
 
-  it('button_wireless_2 forces debounce 80 + ButtonDevice fires Flow before pulse', () => {
+  it('button_wireless_2 forces debounce≤40 + ButtonDevice fires Flow before pulse', () => {
     const d2 = fs.readFileSync(path.join(ROOT, 'drivers/button_wireless_2/device.js'), 'utf8');
-    assert.match(d2, /debounceMs:\s*80/);
+    const d2m = d2.match(/debounceMs:\s*(\d+)/);
+    assert.ok(d2m && Number(d2m[1]) <= 40);
     assert.match(d2, /snappyRelayFlow:\s*true/);
 
     const btn = fs.readFileSync(path.join(ROOT, 'lib/devices/ButtonDevice.js'), 'utf8');
@@ -64,7 +67,7 @@ describe('P2702 Bastien TS0041/42/43 unknown + snappy relay', () => {
     // WHY: Flow log must appear before capsToPulse block that starts the UI pulse
     assert.ok(flowIdx < pulseIdx, 'Flow must start before capability pulse');
     assert.match(btn, /snappyRelayFlow/);
-    assert.match(btn, /minInterval = 50/);
+    assert.match(btn, /minInterval = 25/);
   });
 
   it('compose locks axpdxqgu→bw1 and vsxvaj9i→bw3', () => {

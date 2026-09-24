@@ -1,6 +1,6 @@
 {
   "name": "com.dlnraja.tuya.zigbee",
-  "version": "5.12.321",
+  "version": "5.12.322",
   "description": "Tuya Unified Zigbee - Local-first control with AI automation",
   "main": "app.js",
   "scripts": {
@@ -296,7 +296,10 @@
     "check:p2696": "node --test test/critical/p2696-homey-build-fail-fleetwood.test.js",
     "check:p2698": "node --test test/critical/p2698-publish-ci-dashboard.test.js",
     "check:p2699": "node --test test/critical/p2699-non-native-complementary-never-mandatory.test.js",
-    "check:p2702": "node --test test/critical/p2702-bastien-ts004x-unknown-snappy.test.js"
+    "check:p2702": "node --test test/critical/p2702-bastien-ts004x-unknown-snappy.test.js",
+    "check:p2706": "node --test test/critical/p2706-bastien-ts004x-ultra-snappy-isolate.test.js",
+    "check:p2707": "node --test test/critical/p2707-bastien-ts004x-black-crash-safe.test.js",
+    "check:p2708": "node --test test/critical/p2708-bastien-ts004x-full-feedback-matrix.test.js"
   },
   "keywords": [
     "homey",

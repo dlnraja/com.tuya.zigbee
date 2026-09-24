@@ -1997,5 +1997,9 @@
   },
   "5.12.320": {
     "en": "P2700: soft-arm raw + RX/TX + PFC for non-native Homey gaps"
+  },
+  "5.12.322": {
+    "en": "Wireless remotes TS004x: lean Flow crash-safe, faster presses, battery % fix. Update Test.",
+    "fr": "Telecommandes TS004x: Flow lean anti-crash, presses plus rapides, batterie %. Maj Test."
   }
 }
