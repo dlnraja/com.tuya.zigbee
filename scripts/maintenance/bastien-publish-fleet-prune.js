@@ -73,15 +73,21 @@ function pruneBastienPublishFleet(destAppJson, opts = {}) {
     });
   }
 
+  // WHY(P2726 / Athom #107): rewrite capability icons that pointed at pruned radar_sensor
+  rewriteCapabilityAssetPaths(manifest);
+
   fs.writeFileSync(destAppJson, JSON.stringify(manifest));
 
-  // Optionally delete pruned driver folders from publish tree (icons/assets weight)
   if (opts.destDir) {
+    ensurePresenceRadarDistanceSvg(opts.destDir);
     const driversDir = path.join(opts.destDir, 'drivers');
     if (fs.existsSync(driversDir)) {
       for (const rid of removed) {
         const p = path.join(driversDir, rid);
         if (fs.existsSync(p)) {
+          if (rid === 'radar_sensor' || rid === 'radar_sensor_2') {
+            ensurePresenceRadarDistanceSvg(opts.destDir);
+          }
           fs.rmSync(p, { recursive: true, force: true });
         }
       }
@@ -91,7 +97,43 @@ function pruneBastienPublishFleet(destAppJson, opts = {}) {
   return { before, after: keptDrivers.length, removed, skipped: false };
 }
 
-module.exports = { pruneBastienPublishFleet, APP_ID, SSOT };
+function rewriteCapabilityAssetPaths(manifest) {
+  const walk = (o) => {
+    if (!o || typeof o !== 'object') return;
+    for (const k of Object.keys(o)) {
+      const v = o[k];
+      if (typeof v === 'string' && v.includes('/drivers/radar_sensor')) {
+        o[k] = v
+          .replace(/\/drivers\/radar_sensor_2\//g, '/drivers/presence_sensor_radar/')
+          .replace(/\/drivers\/radar_sensor\//g, '/drivers/presence_sensor_radar/');
+      } else if (v && typeof v === 'object') {
+        walk(v);
+      }
+    }
+  };
+  walk(manifest.capabilities);
+  walk(manifest.drivers);
+}
+
+function ensurePresenceRadarDistanceSvg(destDir) {
+  if (!destDir) return;
+  const dest = path.join(destDir, 'drivers', 'presence_sensor_radar', 'assets', 'distance.svg');
+  if (fs.existsSync(dest)) return;
+  const candidates = [
+    path.join(destDir, 'drivers', 'radar_sensor', 'assets', 'distance.svg'),
+    path.join(__dirname, '..', '..', 'drivers', 'radar_sensor', 'assets', 'distance.svg'),
+    path.join(__dirname, '..', '..', 'drivers', 'presence_sensor_radar', 'assets', 'distance.svg'),
+  ];
+  for (const src of candidates) {
+    if (fs.existsSync(src)) {
+      fs.mkdirSync(path.dirname(dest), { recursive: true });
+      fs.copyFileSync(src, dest);
+      return;
+    }
+  }
+}
+
+module.exports = { pruneBastienPublishFleet, APP_ID, SSOT, rewriteCapabilityAssetPaths, ensurePresenceRadarDistanceSvg };
 
 if (require.main === module) {
   const target = process.argv[2];
