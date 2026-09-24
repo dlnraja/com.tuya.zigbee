@@ -1,0 +1,194 @@
+{
+  "skipped": false,
+  "recommendations": [
+    {
+      "driver": "bed_sensor",
+      "z2mExpose": "occupancy",
+      "capability": "alarm_motion",
+      "mfr": "_tze200_seq9cm6u",
+      "suggestedTrigger": "bed_sensor_motion_alarm"
+    },
+    {
+      "driver": "button_wireless_2",
+      "z2mExpose": "temperature",
+      "capability": "measure_temperature",
+      "mfr": "_tze204_jygvp6fk",
+      "suggestedTrigger": "button_wireless_2_temperature_changed"
+    },
+    {
+      "driver": "button_wireless_2",
+      "z2mExpose": "humidity",
+      "capability": "measure_humidity",
+      "mfr": "_tze204_jygvp6fk",
+      "suggestedTrigger": "button_wireless_2_humidity_changed"
+    },
+    {
+      "driver": "button_wireless_2",
+      "z2mExpose": "power",
+      "capability": "measure_power",
+      "mfr": "_tze200_hkdl5fmv",
+      "suggestedTrigger": "button_wireless_2_measure_power_changed"
+    },
+    {
+      "driver": "button_wireless_2",
+      "z2mExpose": "voltage",
+      "capability": "measure_voltage",
+      "mfr": "_tze200_hkdl5fmv",
+      "suggestedTrigger": "button_wireless_2_voltage_changed"
+    },
+    {
+      "driver": "button_wireless_2",
+      "z2mExpose": "energy",
+      "capability": "meter_power",
+      "mfr": "_tze200_hkdl5fmv",
+      "suggestedTrigger": "button_wireless_2_meter_power_changed"
+    },
+    {
+      "driver": "button_wireless_2",
+      "z2mExpose": "current",
+      "capability": "measure_current",
+      "mfr": "_tze200_hkdl5fmv",
+      "suggestedTrigger": "button_wireless_2_current_changed"
+    },
+    {
+      "driver": "button_wireless_2",
+      "z2mExpose": "presence",
+      "capability": "alarm_motion",
+      "mfr": "_tze204_muvkrjr5",
+      "suggestedTrigger": "button_wireless_2_motion_alarm"
+    },
+    {
+      "driver": "button_wireless_2",
+      "z2mExpose": "illuminance",
+      "capability": "measure_luminance",
+      "mfr": "_tze284_d4h8j2n6",
+      "suggestedTrigger": "button_wireless_2_illuminance_changed"
+    },
+    {
+      "driver": "climate_sensor",
+      "z2mExpose": "presence",
+      "capability": "alarm_motion",
+      "mfr": "_tze200_0u3bj3rc",
+      "suggestedTrigger": "climate_sensor_motion_alarm"
+    },
+    {
+      "driver": "climate_sensor",
+      "z2mExpose": "energy",
+      "capability": "meter_power",
+      "mfr": "_tze200_78ioiaml",
+      "suggestedTrigger": "climate_sensor_meter_power_changed"
+    },
+    {
+      "driver": "climate_sensor",
+      "z2mExpose": "power",
+      "capability": "measure_power",
+      "mfr": "_tze200_78ioiaml",
+      "suggestedTrigger": "climate_sensor_measure_power_changed"
+    },
+    {
+      "driver": "climate_sensor",
+      "z2mExpose": "current",
+      "capability": "measure_current",
+      "mfr": "_tze200_8eazvzo6",
+      "suggestedTrigger": "climate_sensor_current_changed"
+    },
+    {
+      "driver": "climate_sensor",
+      "z2mExpose": "occupancy",
+      "capability": "alarm_motion",
+      "mfr": "_tze200_auin8mzr",
+      "suggestedTrigger": "climate_sensor_motion_alarm"
+    },
+    {
+      "driver": "climate_sensor",
+      "z2mExpose": "illuminance",
+      "capability": "measure_luminance",
+      "mfr": "_tze200_grgol3xp",
+      "suggestedTrigger": "climate_sensor_illuminance_changed"
+    },
+    {
+      "driver": "climate_sensor",
+      "z2mExpose": "fan_speed",
+      "capability": "dim",
+      "mfr": "_tze200_hmqzfqml",
+      "suggestedTrigger": "climate_sensor_brightness_changed"
+    },
+    {
+      "driver": "dimmer_wall_1gang",
+      "z2mExpose": "presence",
+      "capability": "alarm_motion",
+      "mfr": "_tze284_nvodulvi",
+      "suggestedTrigger": "dimmer_wall_1gang_motion_alarm"
+    },
+    {
+      "driver": "generic_diy",
+      "z2mExpose": "power",
+      "capability": "measure_power",
+      "mfr": "_tz3210_vbfp8eyv",
+      "suggestedTrigger": "generic_diy_measure_power_changed"
+    },
+    {
+      "driver": "generic_diy",
+      "z2mExpose": "current",
+      "capability": "measure_current",
+      "mfr": "_tz3210_vbfp8eyv",
+      "suggestedTrigger": "generic_diy_current_changed"
+    },
+    {
+      "driver": "generic_diy",
+      "z2mExpose": "voltage",
+      "capability": "measure_voltage",
+      "mfr": "_tz3210_vbfp8eyv",
+      "suggestedTrigger": "generic_diy_voltage_changed"
+    },
+    {
+      "driver": "generic_diy",
+      "z2mExpose": "energy",
+      "capability": "meter_power",
+      "mfr": "_tz3210_vbfp8eyv",
+      "suggestedTrigger": "generic_diy_meter_power_changed"
+    },
+    {
+      "driver": "generic_tuya",
+      "z2mExpose": "illuminance",
+      "capability": "measure_luminance",
+      "mfr": "_tze200_cpbo62rn",
+      "suggestedTrigger": "generic_tuya_illuminance_changed"
+    },
+    {
+      "driver": "generic_tuya",
+      "z2mExpose": "current",
+      "capability": "measure_current",
+      "mfr": "_tze200_nslr42tt",
+      "suggestedTrigger": "generic_tuya_current_changed"
+    },
+    {
+      "driver": "generic_tuya",
+      "z2mExpose": "power",
+      "capability": "measure_power",
+      "mfr": "_tze200_nslr42tt",
+      "suggestedTrigger": "generic_tuya_measure_power_changed"
+    },
+    {
+      "driver": "generic_tuya",
+      "z2mExpose": "energy",
+      "capability": "meter_power",
+      "mfr": "_tze200_nslr42tt",
+      "suggestedTrigger": "generic_tuya_meter_power_changed"
+    },
+    {
+      "driver": "generic_tuya",
+      "z2mExpose": "voltage",
+      "capability": "measure_voltage",
+      "mfr": "_tze204_d2zfgtij",
+      "suggestedTrigger": "generic_tuya_voltage_changed"
+    },
+    {
+      "driver": "generic_tuya",
+      "z2mExpose": "fan_speed",
+      "capability": "dim",
+      "mfr": "_tze204_lawxy9e2",
+      "suggestedTrigger": "generic_tuya_brightness_changed"
+    }
+  ]
+}
