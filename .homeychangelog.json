@@ -2017,5 +2017,8 @@
   "5.12.326": {
     "en": "Battery: precise % from chemistry curves (LiFePO4, NiMH, coin/akku) + voltage. Update Test.",
     "fr": "Batterie: % precis courbes chimie (LiFePO4, NiMH, piles/akkus) + tension. Maj Test."
+  },
+  "5.12.327": {
+    "en": "Improved Tuya datapoint TX framing and Wireless Button 3 pairing instructions (fleet treat)."
   }
 }
