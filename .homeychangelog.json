@@ -4009,5 +4009,9 @@
   },
   "1.0.100": {
     "en": "Improved wireless remote reliability (skip IAS enroll storm)."
+  },
+  "1.0.101": {
+    "en": "Bastien TS004x: wake listen-only (no bind storm) — fixes ~7s dead + black remote lag/crash. Update Test + restart app.",
+    "fr": "TS004x Bastien: wake listen-only (pas de bind storm) — corrige ~7s mort + lag/crash noirs. Maj Test + redemarrer."
   }
 }

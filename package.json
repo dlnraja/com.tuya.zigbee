@@ -1,6 +1,6 @@
 {
   "name": "com.dlnraja.tuya.zigbee.bastien",
-  "version": "1.0.100",
+  "version": "1.0.101",
   "description": "Private Zigbee house app for Bastien — local Homey Pro only. Learnings promote upstream to Universal Tuya / Stable (never the reverse wholesale).",
   "main": "app.js",
   "scripts": {
@@ -553,7 +553,8 @@
     "check:p2724": "node --test test/critical/p2724-bastien-publish-fleet-prune.test.js",
     "check:p2727": "node --test test/critical/p2727-bastien-early-overlay-purge-remote-tx.test.js",
     "check:p272x": "npm run check:p2722 && npm run check:p2723 && npm run check:p2724 && npm run check:p2727",
-    "check:p2729": "node --test test/critical/p2729-wireless-button-skip-ias-enroll.test.js"
+    "check:p2729": "node --test test/critical/p2729-wireless-button-skip-ias-enroll.test.js",
+    "check:p2733": "node --test test/critical/p2733-bastien-ts004x-wake-listen-only.test.js"
   },
   "keywords": [
     "homey",
