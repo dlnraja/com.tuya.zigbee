@@ -200,7 +200,7 @@
       "bastienFailed": [
         "#114 v1.0.105 socket hang up"
       ],
-      "diagHouse": "ed627371 @ v1.0.93 — buttons recognized / nothing works; need Install Test ≥1.0.103 (P2729/P2736)",
+      "diagHouse": "ed627371 @ v1.0.93 — buttons OK identity / nothing works; Install Test >=1.0.107 (P2729/P2739)",
       "fleetWipe": "fleet-enrich renderCouplePage overwrote clrdrnya Known bugs → p2579 blocked Auto-Publish of 9.0.1245 until P2731 restore",
       "do": "P2732 tipLagDecision + P2738 Bastien soft-expect-first (no Homey CLI createBuild spam); one force after cooldown — no PF spam"
     },
