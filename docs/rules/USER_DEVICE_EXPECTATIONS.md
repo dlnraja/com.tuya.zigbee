@@ -6211,3 +6211,59 @@ _TZ3000_l9brjwau, _TZ3000_blhvsaqf, _TZ3000_ysdv91bk, _TZ3000_hafsqare, _TZ3000_
 | _tze204 + SENSOR | JohanBendz/com.tuya.zigbee#PR1462 | pr |
 | _tze204_mtoaryre + RELAY | JohanBendz/com.tuya.zigbee#PR1462 | pr |
 | _tze204_mtoaryre + SENSOR | JohanBendz/com.tuya.zigbee#PR1462 | pr |
+
+
+## Auto-discovered from GitHub (2026-09-25)
+
+| Fingerprint | Source | Type |
+|---|---|---|
+| _TZ3000_raytv4q5 + TS0001 | JohanBendz/com.tuya.zigbee#PR1466 | pr |
+| _TZ3000_raytv4q5 + TS0002 | JohanBendz/com.tuya.zigbee#PR1466 | pr |
+| _TZ3000_raytv4q5 + TS0003 | JohanBendz/com.tuya.zigbee#PR1466 | pr |
+| _TZ3000_raytv4q5 + generic | JohanBendz/com.tuya.zigbee#PR1466 | pr |
+| _TZ3000_raytv4q5 + ts0001 | JohanBendz/com.tuya.zigbee#PR1466 | pr |
+| _TZ3000_raytv4q5 + Ts0001 | JohanBendz/com.tuya.zigbee#PR1466 | pr |
+| _TZ3000_raytv4q5 + ROUTER | JohanBendz/com.tuya.zigbee#PR1466 | pr |
+| _TZ3000_raytv4q5 + SWITCH | JohanBendz/com.tuya.zigbee#PR1466 | pr |
+| _TZ3000_raytv4q5 + TEST | JohanBendz/com.tuya.zigbee#PR1466 | pr |
+| _TZ3000_raytv4q5 + ts0002 | JohanBendz/com.tuya.zigbee#PR1466 | pr |
+| _TZ3000_raytv4q5 + Ts0002 | JohanBendz/com.tuya.zigbee#PR1466 | pr |
+| _TZ3000_raytv4q5 + ts0003 | JohanBendz/com.tuya.zigbee#PR1466 | pr |
+| _TZ3000_raytv4q5 + Ts0003 | JohanBendz/com.tuya.zigbee#PR1466 | pr |
+| _TZ3000_xftvfolu + TS0001 | JohanBendz/com.tuya.zigbee#PR1466 | pr |
+| _TZ3000_xftvfolu + TS0002 | JohanBendz/com.tuya.zigbee#PR1466 | pr |
+| _TZ3000_xftvfolu + TS0003 | JohanBendz/com.tuya.zigbee#PR1466 | pr |
+| _TZ3000_xftvfolu + generic | JohanBendz/com.tuya.zigbee#PR1466 | pr |
+| _TZ3000_xftvfolu + ts0001 | JohanBendz/com.tuya.zigbee#PR1466 | pr |
+| _TZ3000_xftvfolu + Ts0001 | JohanBendz/com.tuya.zigbee#PR1466 | pr |
+| _TZ3000_xftvfolu + ROUTER | JohanBendz/com.tuya.zigbee#PR1466 | pr |
+| _TZ3000_xftvfolu + SWITCH | JohanBendz/com.tuya.zigbee#PR1466 | pr |
+| _TZ3000_xftvfolu + TEST | JohanBendz/com.tuya.zigbee#PR1466 | pr |
+| _TZ3000_xftvfolu + ts0002 | JohanBendz/com.tuya.zigbee#PR1466 | pr |
+| _TZ3000_xftvfolu + Ts0002 | JohanBendz/com.tuya.zigbee#PR1466 | pr |
+| _TZ3000_xftvfolu + ts0003 | JohanBendz/com.tuya.zigbee#PR1466 | pr |
+| _TZ3000_xftvfolu + Ts0003 | JohanBendz/com.tuya.zigbee#PR1466 | pr |
+| _TZ3000_kl72oake + TS0001 | JohanBendz/com.tuya.zigbee#PR1466 | pr |
+| _TZ3000_kl72oake + TS0002 | JohanBendz/com.tuya.zigbee#PR1466 | pr |
+| _TZ3000_kl72oake + TS0003 | JohanBendz/com.tuya.zigbee#PR1466 | pr |
+| _TZ3000_kl72oake + generic | JohanBendz/com.tuya.zigbee#PR1466 | pr |
+| _TZ3000_kl72oake + ts0001 | JohanBendz/com.tuya.zigbee#PR1466 | pr |
+| _TZ3000_kl72oake + Ts0001 | JohanBendz/com.tuya.zigbee#PR1466 | pr |
+| _TZ3000_kl72oake + ROUTER | JohanBendz/com.tuya.zigbee#PR1466 | pr |
+| _TZ3000_kl72oake + SWITCH | JohanBendz/com.tuya.zigbee#PR1466 | pr |
+| _TZ3000_kl72oake + TEST | JohanBendz/com.tuya.zigbee#PR1466 | pr |
+| _TZ3000_kl72oake + ts0002 | JohanBendz/com.tuya.zigbee#PR1466 | pr |
+| _TZ3000_kl72oake + Ts0002 | JohanBendz/com.tuya.zigbee#PR1466 | pr |
+| _TZ3000_kl72oake + ts0003 | JohanBendz/com.tuya.zigbee#PR1466 | pr |
+| _TZ3000_kl72oake + Ts0003 | JohanBendz/com.tuya.zigbee#PR1466 | pr |
+| _TZ3000_ + generic | JohanBendz/com.tuya.zigbee#PR1466 | pr |
+| _TZ3000_ + ROUTER | JohanBendz/com.tuya.zigbee#PR1466 | pr |
+| _TZ3000_ + SWITCH | JohanBendz/com.tuya.zigbee#PR1466 | pr |
+| _TZ3000_ + TEST | JohanBendz/com.tuya.zigbee#PR1466 | pr |
+| router + TS0001 | JohanBendz/com.tuya.zigbee#PR1466 | pr |
+| router + TS0002 | JohanBendz/com.tuya.zigbee#PR1466 | pr |
+| router + TS0003 | JohanBendz/com.tuya.zigbee#PR1466 | pr |
+| router + generic | JohanBendz/com.tuya.zigbee#PR1466 | pr |
+| router + ts0001 | JohanBendz/com.tuya.zigbee#PR1466 | pr |
+| router + Ts0001 | JohanBendz/com.tuya.zigbee#PR1466 | pr |
+| router + ts0002 | JohanBendz/com.tuya.zigbee#PR1466 | pr |
