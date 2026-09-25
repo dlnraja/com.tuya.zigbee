@@ -18,7 +18,10 @@
     ],
     "alternate": "npm run publish:temp -- --channel test",
     "tempDirName": "homey-publish-temp",
-    "refuseUnless": ["HOMEY_ALLOW_REPO_PUBLISH=1", "--force"],
+    "refuseUnless": [
+      "HOMEY_ALLOW_REPO_PUBLISH=1",
+      "--force"
+    ],
     "preflight": "prepare-publish validates sacred-keep couples via sacred-couple-pair (P2495)"
   },
   "scripts": {
@@ -31,14 +34,21 @@
   },
   "identity": {
     "rule": "manufacturerName + productId only — never invent pid; mfs multi-pid NORMAL",
-    "settingsKeys": { "mfr": "zb_manufacturer_name", "pid": "zb_model_id" },
+    "settingsKeys": {
+      "mfr": "zb_manufacturer_name",
+      "pid": "zb_model_id"
+    },
     "coupleSsot": "config/architecture/sacred-couple-ssot.json",
     "gate": "npm run check:p2494"
   },
   "softExpect": {
     "why": "Race when auto-publish and manual publish both createBuild same version (#2997→#2998, Stable #23).",
     "reListAfterCreateBuild": true,
-    "skipWhen": ["already-test", "in-flight", "peer-test-after-failed"],
+    "skipWhen": [
+      "already-test",
+      "in-flight",
+      "peer-test-after-failed"
+    ],
     "test": "test/critical/p2286-soft-expect-publish.test.js",
     "npm": "check:p2286"
   },
@@ -105,17 +115,33 @@
   },
   "aiEfficiency": {
     "why": "P2491 — publish bots must not burn remote AI quota",
-    "env": ["AI_FORCE_LOCAL=true", "AI_ALLOW_REMOTE=false"],
+    "env": [
+      "AI_FORCE_LOCAL=true",
+      "AI_ALLOW_REMOTE=false"
+    ],
     "gate": "npm run check:p2491"
   },
   "p139": {
     "doNot": "spam republish on processing_failed / socket hang up",
     "doNotSpamRepublish": true,
     "do": "soft-expect exit 0 when peer already on test; wait Athom cooldown; serialize multi-app uploads",
-    "tipEmailExamples": ["#3140", "#3142", "#3184", "#3187", "#3340", "#225", "#77", "#78", "#80"],
+    "tipEmailExamples": [
+      "#3140",
+      "#3142",
+      "#3184",
+      "#3187",
+      "#3340",
+      "#225",
+      "#77",
+      "#78",
+      "#80"
+    ],
     "tipEmailBody": "Your build has failed processing … socket hang up",
     "healthyTip2026_09_14": "#3186 v9.0.926 test",
-    "failedTip2026_09_14": ["#3184 v9.0.924", "#3187 v9.0.928"],
+    "failedTip2026_09_14": [
+      "#3184 v9.0.924",
+      "#3187 v9.0.928"
+    ],
     "gmailFlood2026_09_23": {
       "failed": [
         "stable #225 socket hang up",
@@ -132,7 +158,36 @@
     "patch": "P2696",
     "concurrencyGroup": "athom-developer-api-publish",
     "cancelInProgress": false,
-    "humanDoc": "docs/architecture/PUBLISH_SSOT.md §P139 / tip email pattern"
+    "humanDoc": "docs/architecture/PUBLISH_SSOT.md §P139 / tip email pattern",
+    "gmailFlood2026_09_24_25": {
+      "why": "Homey tip emails 2026-09-24→25 — Bastien house tip-lag on 1.0.93 while Athom recovered",
+      "bastienFailedClasses": [
+        "socket hang up",
+        "invalid_state",
+        "missing asset distance.svg"
+      ],
+      "bastienFailedBuilds": [
+        "#102",
+        "#104",
+        "#105",
+        "#106",
+        "#107"
+      ],
+      "universalFailed": [
+        "#3358",
+        "#3359"
+      ],
+      "stableFailed": [
+        "#240"
+      ],
+      "recovered": {
+        "bastien": "#109 testing 1.0.99 (P2724 fleet prune + P2726 SVG + P2727 early purge)",
+        "universal": "#3363 testing 9.0.1242+",
+        "stable": "#244 testing 5.12.336+"
+      },
+      "ciBreak": "Unified CI #36077719250 failed on heobian|* false NEW — P2728 fp-collision-check norm",
+      "houseTipLag": "Homey Pro Bastien stayed on 1.0.93 — store install targets on senetmarne lack Bastien Pro ID; update from house my.homey owner"
+    }
   },
   "p2384": {
     "why": "Athom tip socket hang up / processing_failed — longer API+draft waits + one-shot force_publish",
@@ -184,6 +239,15 @@
     "why": "Lock publish CI/CD + prepare-publish to couple-native discoveries",
     "gate": "npm run check:p2495",
     "aggregator": "npm run check:publish",
+    "classify": "BOTH"
+  },
+  "p2728": {
+    "why": "fp-collision-check.js must heobian≡hobeian like prune — else Unified CI red while Auto-Publish green",
+    "fpCollisionHeobianNorm": true,
+    "script": ".github/scripts/fp-collision-check.js",
+    "mirror": "tools/ci/prune-fp-collision-bleed.js",
+    "test": "test/critical/p2728-homey-mail-publish-ci-integral.test.js",
+    "npm": "check:p2728",
     "classify": "BOTH"
   }
 }
