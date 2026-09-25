@@ -66,10 +66,14 @@ describe('P2732 Homey tip-lag + couple profile preserve', () => {
   });
 
   it('live clrdrnya profile still documents P2579 Known bugs', () => {
-    const md = fs.readFileSync(
-      path.join(ROOT, 'docs/knowledge/profiles/couples/_TZE204_clrdrnya_TS0601.md'),
-      'utf8',
-    );
+    const p = path.join(ROOT, 'docs/knowledge/profiles/couples/_TZE204_clrdrnya_TS0601.md');
+    // Stable clone may omit profile pages — master MUST keep Contre quoi lock
+    if (!fs.existsSync(p)) {
+      const id = JSON.parse(fs.readFileSync(path.join(ROOT, 'app.json'), 'utf8')).id || '';
+      assert.ok(/\.stable$|\.bastien$/.test(id), 'master must ship clrdrnya couple profile');
+      return;
+    }
+    const md = fs.readFileSync(p, 'utf8');
     assert.ok(md.includes('Known bugs'));
     assert.ok(md.includes('occupied'));
   });
