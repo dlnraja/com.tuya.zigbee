@@ -34,8 +34,8 @@
       "purpose": "Innovation + soak (features + reliability)",
       "cloneHint": "Documents/homey/master",
       "publish": "Auto-Publish on Push → Homey Test",
-      "tipHealthy": "9.0.1248",
-      "tipNote": "P2732 tip-lag heal — Athom tip was #3364=9.0.1244; #3365/#3366 PF; target Test ≥9.0.1248 (P2730 radar + profile preserve)"
+      "tipHealthy": "9.0.1244",
+      "tipNote": "LIVE Athom tip #3364=9.0.1244 — #3365/#3366/#3367 PF socket hang (P139). Code tip 9.0.1248 on master with P2730+P2732; retry publish after Athom cooldown only (no spam)."
     },
     "stable": {
       "branch": "stable-v5",
@@ -46,7 +46,7 @@
       "cloneHint": "Documents/homey/stable",
       "publish": "Publish Stable → Test (APP_ID=.stable only); P139 no spam republish",
       "tipHealthy": "5.12.339",
-      "tipNote": "P2730 BOTH live on #247 testing — tipHealthy OK"
+      "tipNote": "LIVE #247 testing 5.12.339 (P2730) — healthy"
     },
     "bastien": {
       "branch": "bastien-home",

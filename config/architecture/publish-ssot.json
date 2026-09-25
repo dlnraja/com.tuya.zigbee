@@ -18,7 +18,10 @@
     ],
     "alternate": "npm run publish:temp -- --channel test",
     "tempDirName": "homey-publish-temp",
-    "refuseUnless": ["HOMEY_ALLOW_REPO_PUBLISH=1", "--force"],
+    "refuseUnless": [
+      "HOMEY_ALLOW_REPO_PUBLISH=1",
+      "--force"
+    ],
     "preflight": "prepare-publish validates sacred-keep couples via sacred-couple-pair (P2495)"
   },
   "scripts": {
@@ -31,14 +34,21 @@
   },
   "identity": {
     "rule": "manufacturerName + productId only — never invent pid; mfs multi-pid NORMAL",
-    "settingsKeys": { "mfr": "zb_manufacturer_name", "pid": "zb_model_id" },
+    "settingsKeys": {
+      "mfr": "zb_manufacturer_name",
+      "pid": "zb_model_id"
+    },
     "coupleSsot": "config/architecture/sacred-couple-ssot.json",
     "gate": "npm run check:p2494"
   },
   "softExpect": {
     "why": "Race when auto-publish and manual publish both createBuild same version (#2997→#2998, Stable #23).",
     "reListAfterCreateBuild": true,
-    "skipWhen": ["already-test", "in-flight", "peer-test-after-failed"],
+    "skipWhen": [
+      "already-test",
+      "in-flight",
+      "peer-test-after-failed"
+    ],
     "test": "test/critical/p2286-soft-expect-publish.test.js",
     "npm": "check:p2286"
   },
@@ -105,17 +115,33 @@
   },
   "aiEfficiency": {
     "why": "P2491 — publish bots must not burn remote AI quota",
-    "env": ["AI_FORCE_LOCAL=true", "AI_ALLOW_REMOTE=false"],
+    "env": [
+      "AI_FORCE_LOCAL=true",
+      "AI_ALLOW_REMOTE=false"
+    ],
     "gate": "npm run check:p2491"
   },
   "p139": {
     "doNot": "spam republish on processing_failed / socket hang up",
     "doNotSpamRepublish": true,
     "do": "soft-expect exit 0 when peer already on test; wait Athom cooldown; serialize multi-app uploads",
-    "tipEmailExamples": ["#3140", "#3142", "#3184", "#3187", "#3340", "#225", "#77", "#78", "#80"],
+    "tipEmailExamples": [
+      "#3140",
+      "#3142",
+      "#3184",
+      "#3187",
+      "#3340",
+      "#225",
+      "#77",
+      "#78",
+      "#80"
+    ],
     "tipEmailBody": "Your build has failed processing … socket hang up",
     "healthyTip2026_09_14": "#3186 v9.0.926 test",
-    "failedTip2026_09_14": ["#3184 v9.0.924", "#3187 v9.0.928"],
+    "failedTip2026_09_14": [
+      "#3184 v9.0.924",
+      "#3187 v9.0.928"
+    ],
     "gmailFlood2026_09_23": {
       "failed": [
         "stable #225 socket hang up",
@@ -136,9 +162,21 @@
         "invalid_state",
         "missing asset distance.svg"
       ],
-      "bastienFailedBuilds": ["#102", "#104", "#105", "#106", "#107"],
-      "universalFailed": ["#3358", "#3359"],
-      "stableFailed": ["#240", "#245 socket hang 5.12.337"],
+      "bastienFailedBuilds": [
+        "#102",
+        "#104",
+        "#105",
+        "#106",
+        "#107"
+      ],
+      "universalFailed": [
+        "#3358",
+        "#3359"
+      ],
+      "stableFailed": [
+        "#240",
+        "#245 socket hang 5.12.337"
+      ],
       "recovered": {
         "bastien": "#109 testing 1.0.99 (P2724 fleet prune + P2726 SVG + P2727 early purge)",
         "universal": "#3364 testing 9.0.1243 (P2728); next 9.0.1244 P2729",
@@ -152,9 +190,10 @@
       "why": "Homey tip mails after P2730/P2731 — Universal tip stuck; Stable healed",
       "universalFailed": [
         "#3365 v9.0.1245 socket hang up",
-        "#3366 v9.0.1247 socket hang up"
+        "#3366 v9.0.1247 socket hang up",
+        "#3367 v9.0.1248 socket hang up"
       ],
-      "liveTip": "#3364 testing 9.0.1244 (P2729) — tip-lag vs tipHealthy claims",
+      "liveTip": "#3364 testing 9.0.1244 — tip-lag vs git tip 9.0.1248; soft-continue P139/P2732",
       "stable": "#247 testing (5.12.339 P2730) after #245 PF soft-continue",
       "bastien": "#110 testing 1.0.100 — distance.svg fixed earlier",
       "fleetWipe": "fleet-enrich renderCouplePage overwrote clrdrnya Known bugs → p2579 blocked Auto-Publish of 9.0.1245 until P2731 restore",
