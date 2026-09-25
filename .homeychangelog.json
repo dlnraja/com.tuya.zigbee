@@ -4166,5 +4166,9 @@
   "9.0.1254": {
     "en": "Snappy remotes: skip wake magic/DP TX storm (listen-only). Update Test.",
     "fr": "Remotes snappy: plus de storm TX magic/DP au wake. Maj Test."
+  },
+  "9.0.1255": {
+    "en": "Ceiling radar: faster lux on light-off + smoother distance while walking; wall dimmer FP lock; Wireless Button 3 pairing (TS0043). Update Test + Repair radar/remote.",
+    "fr": "Radar plafond: lux plus rapide a l extinction + distance plus stable; FP dimmer mural; pairing Wireless Button 3 (TS0043). Maj Test + Repair radar/remote."
   }
 }
