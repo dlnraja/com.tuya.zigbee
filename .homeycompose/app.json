@@ -1,6 +1,6 @@
 {
   "id": "com.dlnraja.tuya.zigbee.bastien",
-  "version": "1.0.98",
+  "version": "1.0.99",
   "compatibility": ">=12.2.0",
   "platforms": [
     "local"
@@ -115,6 +115,6 @@
     }
   },
   "changelog": {
-    "en": "TS0041 Chinese remotes: collapse phantom 4-EP firmware (HA T455202 class). Flows 1-btn."
+    "en": "House remotes: early heap purge + skip battery TX on boot (update required from 1.0.93)."
   }
 }
