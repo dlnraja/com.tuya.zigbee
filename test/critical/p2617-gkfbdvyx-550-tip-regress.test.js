@@ -49,10 +49,12 @@ describe('P2617 gkfbdvyx #550 tip-regress lux/distance', () => {
       path.join(ROOT, 'drivers/presence_sensor_radar/configs.js'),
       'utf8',
     );
-    const idx = cfg.indexOf('ZY_M100_CEILING_24G');
-    const block = cfg.slice(idx, idx + 4500);
+    const idx = cfg.indexOf("'ZY_M100_CEILING_24G'");
+    assert.ok(idx > 0);
+    // WHY(P2725): ceiling block grew (soft-clear/throttle notes) — need full dpMap window
+    const block = cfg.slice(idx, idx + 12000);
     assert.ok(/10:\s*\{\s*cap:\s*null/.test(block), 'DP10 must be null (not lux)');
-    assert.ok(block.includes("103: { cap: 'measure_luminance'"));
+    assert.ok(/103:\s*\{\s*cap:\s*'measure_luminance'/.test(block), 'DP103 lux');
     const src = fs.readFileSync(DEVICE, 'utf8');
     assert.ok(src.includes('P2618 skip auto-discovery'));
   });
