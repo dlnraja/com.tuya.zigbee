@@ -34,8 +34,8 @@
       "purpose": "Innovation + soak (features + reliability)",
       "cloneHint": "Documents/homey/master",
       "publish": "Auto-Publish on Push → Homey Test",
-      "tipHealthy": "9.0.1244",
-      "tipNote": "P2729 skip IAS enroll on wireless buttons + P2728 heobian FP CI; Athom ≥#3364"
+      "tipHealthy": "9.0.1257",
+      "tipNote": "LIVE tip 9.0.1257 (P2741 MCU skip + P2740 antiflood). Update Test + Repair radar."
     },
     "stable": {
       "branch": "stable-v5",
@@ -45,8 +45,8 @@
       "purpose": "Reliability LTS only — no feature managers unless human-promoted",
       "cloneHint": "Documents/homey/stable",
       "publish": "Publish Stable → Test (APP_ID=.stable only); P139 no spam republish",
-      "tipHealthy": "5.12.336",
-      "tipNote": "Athom #244 testing; #245 5.12.337 socket hang (P139 soft-continue) — next tip ≥5.12.338 P2729"
+      "tipHealthy": "5.12.340",
+      "tipNote": "LIVE tip 5.12.340 — Bastien house BOTH backport P2733–P2741 snappy wake + lux antiflood"
     },
     "bastien": {
       "branch": "bastien-home",
@@ -55,10 +55,10 @@
       "versionLine": "1.0.x",
       "purpose": "Private house-only Homey Pro for Bastien — live install/soak; promote learnings upstream surgically",
       "cloneHint": "Documents/homey/bastien",
-      "publish": "Publish Zigbee Bastien workflow / homey app publish — App ID .bastien only; NEVER Universal or Stable slots",
+      "publish": "Publish Zigbee Bastien workflow / soft-expect first (P2738) — App ID .bastien only; NEVER Universal or Stable slots",
       "enrichment": "bastien_to_public_only",
-      "tipHealthy": "1.0.100",
-      "tipNote": "P2729 IAS skip + P2727 purge; Athom tip after publish — Homey house Install Test (was tip-lag 1.0.93)"
+      "tipHealthy": "1.0.108",
+      "tipNote": "LIVE tip 1.0.108 P2741 (owner Install Test on Bastien account). Diag 6bdc3c5e @ 1.0.107 healthy."
     }
   },
   "identityNeverCopy": [
@@ -523,6 +523,14 @@
     "p2508_firmware_device_updates_oem": {
       "tag": "BOTH",
       "note": "Homey Device Updates fleet — OEM only; refuse Koenkk pvvx; SSOT 8 drivers + softAnnounceNativeOta"
+    },
+    "p2733_bastien_ts004x_wake_listen_only": {
+      "tag": "BOTH",
+      "note": "TS004x snappy wake listen-only — no mass bind/batt TX"
+    },
+    "p2734_bastien_bidir_soft_ui_complementary": {
+      "tag": "BOTH",
+      "note": "skipUiPulse softPulsePhysicalUi bi-dir + softArmComplementaryIo"
     }
   },
   "ci": {

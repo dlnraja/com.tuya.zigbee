@@ -48,9 +48,10 @@ describe('P2730 GH#550 lux/distance snappy', () => {
 
   it('ceiling config snappier motion thresholds', () => {
     const src = fs.readFileSync(path.join(ROOT, 'drivers/presence_sensor_radar/configs.js'), 'utf8');
-    assert.ok(/rearmMotionDistanceDeltaM:\s*0\.08/.test(src));
-    assert.ok(/motionThrottleMs:\s*1000/.test(src));
-    assert.ok(/motionDebounceMs:\s*400/.test(src));
+    // WHY(P2740): tightened further after HiepSVG @ 9.0.1243 residual
+    assert.ok(/rearmMotionDistanceDeltaM:\s*0\.05/.test(src));
+    assert.ok(/motionThrottleMs:\s*600/.test(src));
+    assert.ok(/motionDebounceMs:\s*200/.test(src));
   });
 
   it('#551 famkxci2 still front-pinned on button_wireless_3 without IAS clusters', () => {
