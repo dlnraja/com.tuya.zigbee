@@ -56,10 +56,10 @@
       "appliedUnions": 12
     },
     "lastL99Pass": {
-      "at": "2026-09-25T11:29:51.053Z",
-      "patch": "P2735",
-      "note": "famkxci2 snappy + improvement plan canvas",
-      "report": "canvases/bastien-l99-improvement-plan"
+      "at": "2026-09-25T11:48:44.354Z",
+      "patch": "P2736",
+      "note": "L99 MAX treat + tip-lag doctrine + mesh status refresh",
+      "report": "reports/l99-bastien-2026-09-25/TREAT_MAX.md"
     },
     "priorExternalPass": {
       "at": "2026-09-21T02:30:00.000Z",
@@ -739,7 +739,7 @@
         "pid": "TS0601",
         "driver": "lcdtemphumidsensor",
         "status": "NEED_REPAIR",
-        "note": "P2637 LCD TH+clock — FP déjà en tip; remove+re-pair après maj ≥1.0.23",
+        "note": "FP locked lcdtemphumidsensor — Homey cannot hot-swap; remove+re-pair after tip >=1.0.104",
         "z2m": "nous_lcd_temperature_humidity_sensor"
       },
       {
@@ -780,8 +780,8 @@
         "mfr": "_TZ3000_dzwgk7e2",
         "pid": "TS0042",
         "driver": "button_wireless_2",
-        "status": "NEED_REPAIR",
-        "note": "P2636 — tip ≥1.0.22 puis remove+re-pair → 2 boutons"
+        "status": "OK_VERIFY_AFTER_TIP",
+        "note": "Driver already button_wireless_2 — tip >=1.0.104 + press wake; re-pair only if still Generic"
       },
       {
         "nwk": 15,
@@ -1099,6 +1099,8 @@
       "P2734",
       "P2735",
       "P2736"
-    ]
+    ],
+    "athomTipLanded": "1.0.103 Test OK 2026-09-25",
+    "tip104": "re-dispatched workflow_dispatch after concurrency cancel"
   }
 }
