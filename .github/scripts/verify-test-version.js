@@ -16,6 +16,7 @@ const {
 const {
   softAlertDecision,
   isTransientAthomFailure,
+  tipLagDecision,
 } = require('../../scripts/lib/soft-expect-decision');
 
 const ROOT = path.join(__dirname, '..', '..');
@@ -78,6 +79,10 @@ function buildsFromDashboardReport(report) {
  */
 function softContinueOnTransientHang(builds, expectedVersion, detail) {
   const list = Array.isArray(builds) ? builds : [];
+  const lag = tipLagDecision(list, expectedVersion);
+  if (lag.tipLag) {
+    log(`P2732 TIP_LAG: expected v${lag.expected} not on Test (reason=${lag.reason}); live tip v${lag.tip?.version || '?'} #${lag.tip?.id || '?'}`);
+  }
   const alert = softAlertDecision(list, { soft: true });
   if (!alert.alert && alert.reason === 'transient-hang-healthy-test') {
     log(`P139/P2325 soft-continue: ${detail || 'transient hang'} but Test healthy v${alert.healthy?.version} #${alert.healthy?.id}`);
