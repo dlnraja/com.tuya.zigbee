@@ -2347,9 +2347,13 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
       // WHY(P2715 / GH#550): dual-scale target distance (dm preferred, cm when ≥100)
       if (mapping.radarDistanceScale === true) {
         const { normalizeRadarTargetDistanceMeters } = require('../../lib/tuya/TuyaRadarRangeScale');
+        if (!this._radarDistanceScaleHint || typeof this._radarDistanceScaleHint !== 'object') {
+          this._radarDistanceScaleHint = { last: null };
+        }
         return normalizeRadarTargetDistanceMeters(raw, {
           maxMeters: mapping.maxMeters || 12,
           preferDivisor: mapping.preferDivisor || 10,
+          scaleHint: this._radarDistanceScaleHint,
         });
       }
       // WHY(P2580 / Z2M#32561): coerce signed VALUE garbage → uint32 before /divisor

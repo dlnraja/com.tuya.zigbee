@@ -152,20 +152,19 @@
     "productId": [
       "TS0043",
       "TS0013",
-      "TS0601",
       "TS0215A"
     ],
     "learnmode": {
       "image": "{{driverAssetsPath}}/icon.svg",
       "instruction": {
-        "en": "IMPORTANT: pick Tuya Unified (Stable) → Wireless Button 3 (TS0043) — NOT plain Homey Zigbee. Hold any button 5–10s until LED blinks; tap every 2–3s while pairing. Use Homey Flow trigger « Button pressed » (Button 1/2/3) → light — NOT Developer Tools Zigbee channels/commands. Never write 0x8004.",
-        "fr": "IMPORTANT: Tuya Unified (Stable) → Bouton sans fil 3 (TS0043) — PAS Homey Zigbee. Maintenez 5–10 s puis appuyez toutes les 2–3 s. Ne jamais ecrire 0x8004.",
+        "en": "IMPORTANT: pick Universal Tuya → Wireless Button 3 (TS0043) — NOT plain Homey Zigbee. Hold any button 5–10s until LED blinks; tap every 2–3s while pairing. Use Homey Flow trigger « Button pressed » (Button 1/2/3) → light — NOT Developer Tools Zigbee channels/commands (scene remotes have no bindable OnOff). Never write 0x8004.",
+        "fr": "IMPORTANT: Universal Tuya → Bouton sans fil 3 (TS0043) — PAS Homey Zigbee. Maintenez 5–10 s puis appuyez toutes les 2–3 s. Flow Homey: declencheur « Bouton appuye » (Bouton 1/2/3) → lampe — PAS les canaux/commandes Zigbee des outils developpeur (telecommande scene = pas de OnOff bindable). Ne jamais ecrire 0x8004.",
         "nl": "Houd een willekeurige knop 5 seconden ingedrukt totdat de LED snel knippert",
         "de": "Halten Sie eine beliebige Taste 5 Sekunden lang gedrückt, bis die LED schnell blinkt",
         "it": "Tenere premuto qualsiasi pulsante per 5 secondi finché il LED lampeggia rapidamente",
         "sv": "Håll ned valfri knapp i 5 sekunder tills LED:en blinkar snabbt",
         "no": "Hold inne en hvilken som helst knapp i 5 sekunder til LED-en blinker raskt",
-        "es": "Mantenga presionado cualquier botón durante 5 segundos hasta que el LED parpadee rápidamente",
+        "es": "IMPORTANTE: elija Universal Tuya → Wireless Button 3 (TS0043) — NO Zigbee genérico de Homey. Mantenga un botón 5–10 s hasta que el LED parpadee; pulse cada 2–3 s al emparejar. Flow: « Button pressed » (Botón 1/2/3). No use canales/comandos Zigbee de Developer Tools. Nunca escriba 0x8004.",
         "da": "Hold en vilkårlig knap nede i 5 sekunder, indtil LED'en blinker hurtigt"
       }
     },
