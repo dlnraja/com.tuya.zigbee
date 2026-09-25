@@ -79,8 +79,6 @@
       "m": [
         "_tz3000_49qchf10",
         "_TZ3000_49qchf10",
-        "_tz3000_7dcddnye",
-        "_TZ3000_7dcddnye",
         "_tz3000_9cpuaca6",
         "_TZ3000_9cpuaca6",
         "_tz3000_9evm3otq",
@@ -201,8 +199,6 @@
         "_TZ3000_49qchf10",
         "_tz3000_6zvw8ham",
         "_TZ3000_6zvw8ham",
-        "_tz3000_7dcddnye",
-        "_TZ3000_7dcddnye",
         "_tz3000_9cpuaca6",
         "_TZ3000_9cpuaca6",
         "_tz3000_as7eqiri",
@@ -12524,12 +12520,10 @@
       "dimmer_wall_1gang"
     ],
     "_tz3000_7dcddnye": [
-      "bulb_dimmable",
-      "bulb_rgb"
+      "dimmer_wall_1gang"
     ],
     "_TZ3000_7dcddnye": [
-      "bulb_dimmable",
-      "bulb_rgb"
+      "dimmer_wall_1gang"
     ],
     "_tz3000_9cpuaca6": [
       "bulb_dimmable",
