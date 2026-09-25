@@ -15,13 +15,24 @@ const fs = require('fs');
 const path = require('path');
 
 const ROOT = path.join(__dirname, '..', '..');
-const { tipLagDecision } = require('../../scripts/lib/soft-expect-decision');
+const { tipLagDecision, softExpectDecision } = require('../../scripts/lib/soft-expect-decision');
 const {
   mergeCouplePagePreservingCurated,
   renderCouplePage,
 } = require('../../tools/ci/render-enrichment-index');
 
 describe('P2732 Homey tip-lag + couple profile preserve', () => {
+  
+  it('softExpectDecision skips tip-lag expected PF (no createBuild spam)', () => {
+    const builds = [
+      { id: 3367, version: '9.0.1248', state: 'processing_failed', stateMeta: 'socket hang up' },
+      { id: 3364, version: '9.0.1244', state: 'test' },
+    ];
+    const d = softExpectDecision(builds, '9.0.1248');
+    assert.strictEqual(d.skip, true);
+    assert.strictEqual(d.reason, 'tip-lag-expected-pf');
+  });
+
   it('tipLagDecision flags expected PF while older tip healthy', () => {
     const builds = [
       { id: 3366, version: '9.0.1247', state: 'processing_failed', stateMeta: 'socket hang up' },
