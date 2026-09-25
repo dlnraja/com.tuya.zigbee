@@ -87,6 +87,19 @@ function softExpectDecision(builds, version, opts = {}) {
     if (peerTest) {
       return { skip: true, reason: 'peer-test-after-failed', build: peerTest, failed };
     }
+    // P2732 / P139: expected version already PF + older healthy tip → do NOT createBuild again
+    const olderTip = findHealthyTest(builds);
+    if (olderTip && String(olderTip.version) !== String(version)) {
+      const transient = failed.some((b) => isTransientAthomFailure(b));
+      if (transient || opts.tipLagSoft !== false) {
+        return {
+          skip: true,
+          reason: 'tip-lag-expected-pf',
+          build: olderTip,
+          failed,
+        };
+      }
+    }
   }
   return { skip: false, failedCount: failed.length };
 }
