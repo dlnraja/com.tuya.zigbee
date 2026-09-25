@@ -34,8 +34,8 @@
       "purpose": "Innovation + soak (features + reliability)",
       "cloneHint": "Documents/homey/master",
       "publish": "Auto-Publish on Push → Homey Test",
-      "tipHealthy": "9.0.1244",
-      "tipNote": "LIVE Athom tip #3364=9.0.1244 — #3365/#3366/#3367 PF socket hang (P139). Code tip 9.0.1248 on master with P2730+P2732; retry publish after Athom cooldown only (no spam)."
+      "tipHealthy": "9.0.1252",
+      "tipNote": "LIVE Athom tip #3371=9.0.1252 (P2736) — #3365–#3367/#3370 PF socket hang soft-continued (P139/P2732). No Universal spam while tip healthy."
     },
     "stable": {
       "branch": "stable-v5",
@@ -46,7 +46,7 @@
       "cloneHint": "Documents/homey/stable",
       "publish": "Publish Stable → Test (APP_ID=.stable only); P139 no spam republish",
       "tipHealthy": "5.12.339",
-      "tipNote": "LIVE #247 testing 5.12.339 (P2730) — healthy"
+      "tipNote": "LIVE #247 testing 5.12.339 (P2730) — healthy; #248 soft-continue if PF"
     },
     "bastien": {
       "branch": "bastien-home",
@@ -55,10 +55,10 @@
       "versionLine": "1.0.x",
       "purpose": "Private house-only Homey Pro for Bastien — live install/soak; promote learnings upstream surgically",
       "cloneHint": "Documents/homey/bastien",
-      "publish": "Publish Zigbee Bastien workflow / homey app publish — App ID .bastien only; NEVER Universal or Stable slots",
+      "publish": "Publish Zigbee Bastien workflow / soft-expect first (P2738) — App ID .bastien only; NEVER Universal or Stable slots",
       "enrichment": "bastien_to_public_only",
-      "tipHealthy": "1.0.100",
-      "tipNote": "P2729 IAS skip + P2727 purge; Athom tip after publish — Homey house Install Test (was tip-lag 1.0.93)"
+      "tipHealthy": "1.0.103",
+      "tipNote": "LIVE Athom #113 testing 1.0.103 — #114 (1.0.105) PF soft-continue; house Pro still 1.0.93 until owner Install Test (diag ed627371)"
     }
   },
   "identityNeverCopy": [

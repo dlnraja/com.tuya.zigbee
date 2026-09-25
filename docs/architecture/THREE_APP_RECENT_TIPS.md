@@ -13,9 +13,11 @@ Pointers for agents after P2683â€“P2692. Machine tracks: [`dual-app-tracks.
 | P2693 Bastien TS0043/TS0042 snappy + no ghost canaux | BOTH | ≥9.0.1199 | ≥1.0.69 | ≥5.12.312 | Flow not Zigbee channels |
 | P2724–P2727 Bastien house fleet + tip-lag heal | Bastien | — | ≥1.0.99 (#109) | — | prune + SVG + early purge |
 | P2728 heobian≡hobeian in fp-collision-check | BOTH | ≥9.0.1243 | — | backport CI script | Unified CI green |
+| P2732 tip-lag soft-expect + couple Known bugs preserve | BOTH | ≥9.0.1252 | ≥1.0.103 | — | publish-ssot / soft-expect |
+| P2738 Bastien soft-expect-first (no Homey CLI createBuild spam) | BOTH | — | ≥1.0.105 code | — | bastien-publish.yml |
 
-**Athom tip emails (2026-09-25):** Universal `#3363` · Bastien `#109` · Stable `#244` — all testing OK. Bastien Homey Pro may still show 1.0.93 until owner Install Test.
+**Athom tip emails (2026-09-25 PM):** Universal `#3371` testing **9.0.1252** · Bastien `#113` testing **1.0.103** (`#114` 1.0.105 PF soft-continue) · Stable `#247` testing **5.12.339**. House Homey Pro may still show **1.0.93** until owner Install Test (diag `ed627371`).
 
-Gates: `npm run check:p2691` · `npm run check:p2692` · `npm run check:p2728` · `npm run check:publish`.
+Gates: `npm run check:p2691` · `npm run check:p2692` · `npm run check:p2728` · `npm run check:p2732` · `npm run check:publish`.
 
 Silent enrich only — never forum POST (T157628).
