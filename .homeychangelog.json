@@ -4186,5 +4186,9 @@
   "9.0.1260": {
     "en": "HiepSVG radar: fix lux (real light steps vs noise), distance (no farther-ghost / dm scale), hang re-arm. Update Test ≥9.0.1260; Repair radar once.",
     "fr": "Radar HiepSVG: lux (vrais changements vs bruit), distance (plus de ghost plus loin / echelle dm), re-arm freeze. Maj Test ≥9.0.1260; Repair une fois."
+  },
+  "9.0.1261": {
+    "en": "Tagged Flow cards (label/token) fire from all RX paths; remotes battery-changed. Update Test to 9.0.1261 then restart.",
+    "fr": "Flows etiquetes (tag/token) se declenchent sur tout RX; batterie remotes. Maj Test 9.0.1261 puis redemarrer."
   }
 }
