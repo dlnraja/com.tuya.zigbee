@@ -2070,5 +2070,9 @@
   },
   "5.12.339": {
     "en": "Improved ceiling radar lux/distance response and wireless button pairing."
+  },
+  "5.12.341": {
+    "en": "Ceiling radar lux→motion re-arm + TS0043 productId lock (GH#550/#551). Update Test; Repair.",
+    "fr": "Radar: rearm motion via lux + verrou TS0043 (GH#550/#551). Maj Test; Repair."
   }
 }

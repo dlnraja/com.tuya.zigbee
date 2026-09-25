@@ -1,20 +1,117 @@
 {
-  "version": 1,
-  "generatedAt": "2026-09-25T03:05:25.380Z",
-  "description": "Known historical fingerprint collisions. CI fails only for collisions not listed here.",
+  "generatedAt": "2026-09-25T13:30:24.412Z",
+  "note": "P2677 refresh — heobian≡hobeian collision keys; Athom brand case forms",
   "collisions": [
     {
-      "key": "_tz3000_18ejxno0|TS0002",
+      "key": "_tz3000_5iixzdo7|TS0301",
       "drivers": [
-        "switch_2gang",
-        "switch_usb_dongle"
+        "curtain_motor",
+        "curtain_motor_shutter"
       ]
     },
     {
-      "key": "_tz3000_18ejxno0|TS011F",
+      "key": "_tz3000_5iixzdo7|TS0601",
       "drivers": [
-        "switch_2gang",
-        "switch_usb_dongle"
+        "curtain_motor",
+        "curtain_motor_shutter"
+      ]
+    },
+    {
+      "key": "_tz3000_5iixzdo7|TS0726",
+      "drivers": [
+        "curtain_motor",
+        "curtain_motor_shutter"
+      ]
+    },
+    {
+      "key": "_tz3000_5iixzdo7|TS110E",
+      "drivers": [
+        "curtain_motor",
+        "curtain_motor_shutter"
+      ]
+    },
+    {
+      "key": "_tz3000_74hsp7qy|TS0301",
+      "drivers": [
+        "curtain_motor",
+        "curtain_motor_shutter"
+      ]
+    },
+    {
+      "key": "_tz3000_74hsp7qy|TS0601",
+      "drivers": [
+        "curtain_motor",
+        "curtain_motor_shutter"
+      ]
+    },
+    {
+      "key": "_tz3000_74hsp7qy|TS0726",
+      "drivers": [
+        "curtain_motor",
+        "curtain_motor_shutter"
+      ]
+    },
+    {
+      "key": "_tz3000_74hsp7qy|TS110E",
+      "drivers": [
+        "curtain_motor",
+        "curtain_motor_shutter"
+      ]
+    },
+    {
+      "key": "_tz3000_8h7wgocw|TS0301",
+      "drivers": [
+        "curtain_motor",
+        "curtain_motor_shutter"
+      ]
+    },
+    {
+      "key": "_tz3000_8h7wgocw|TS0601",
+      "drivers": [
+        "curtain_motor",
+        "curtain_motor_shutter"
+      ]
+    },
+    {
+      "key": "_tz3000_8h7wgocw|TS0726",
+      "drivers": [
+        "curtain_motor",
+        "curtain_motor_shutter"
+      ]
+    },
+    {
+      "key": "_tz3000_8h7wgocw|TS110E",
+      "drivers": [
+        "curtain_motor",
+        "curtain_motor_shutter"
+      ]
+    },
+    {
+      "key": "_tz3000_bs93npae|TS0301",
+      "drivers": [
+        "curtain_motor",
+        "curtain_motor_shutter"
+      ]
+    },
+    {
+      "key": "_tz3000_bs93npae|TS0601",
+      "drivers": [
+        "curtain_motor",
+        "curtain_motor_shutter"
+      ]
+    },
+    {
+      "key": "_tz3000_bs93npae|TS0726",
+      "drivers": [
+        "curtain_motor",
+        "curtain_motor_shutter"
+      ]
+    },
+    {
+      "key": "_tz3000_bs93npae|TS110E",
+      "drivers": [
+        "curtain_motor",
+        "curtain_motor_shutter"
       ]
     },
     {
@@ -43,6 +140,55 @@
       "drivers": [
         "pir_sensor_2",
         "sensor_motion_presence"
+      ]
+    },
+    {
+      "key": "_tz3000_c8ozah8n|TS0001",
+      "drivers": [
+        "motion_sensor",
+        "pir_sensor_2"
+      ]
+    },
+    {
+      "key": "_tz3000_c8ozah8n|TS0202",
+      "drivers": [
+        "motion_sensor",
+        "pir_sensor_2"
+      ]
+    },
+    {
+      "key": "_tz3000_c8ozah8n|TS0601",
+      "drivers": [
+        "motion_sensor",
+        "pir_sensor_2"
+      ]
+    },
+    {
+      "key": "_tz3000_c8ozah8n|TS110E",
+      "drivers": [
+        "motion_sensor",
+        "pir_sensor_2"
+      ]
+    },
+    {
+      "key": "_tz3000_cayepv1a|TS011F",
+      "drivers": [
+        "button_wireless_2",
+        "smartPlug_DinRail"
+      ]
+    },
+    {
+      "key": "_tz3000_cayepv1a|TS0121",
+      "drivers": [
+        "button_wireless_2",
+        "smartPlug_DinRail"
+      ]
+    },
+    {
+      "key": "_tz3000_cayepv1a|TSO121",
+      "drivers": [
+        "button_wireless_2",
+        "smartPlug_DinRail"
       ]
     },
     {
@@ -676,10 +822,10 @@
       ]
     },
     {
-      "key": "_tz3000_gbm10jnj|TS0601",
+      "key": "_tz3000_g1glzzfk|TS0502A",
       "drivers": [
-        "button_wireless_3",
-        "button_wireless_4"
+        "bulb_dimmable",
+        "tunable_bulb_E14"
       ]
     },
     {
@@ -904,6 +1050,13 @@
       "drivers": [
         "button_wireless_2",
         "lcdtemphumidsensor"
+      ]
+    },
+    {
+      "key": "_tz3000_iystcadi|TS0601",
+      "drivers": [
+        "dimmable_led_strip",
+        "led_controller_rgb"
       ]
     },
     {
@@ -1334,6 +1487,27 @@
       ]
     },
     {
+      "key": "_tz3000_lepzuhto|TS011F",
+      "drivers": [
+        "button_wireless_2",
+        "smartPlug_DinRail"
+      ]
+    },
+    {
+      "key": "_tz3000_lepzuhto|TS0121",
+      "drivers": [
+        "button_wireless_2",
+        "smartPlug_DinRail"
+      ]
+    },
+    {
+      "key": "_tz3000_lepzuhto|TSO121",
+      "drivers": [
+        "button_wireless_2",
+        "smartPlug_DinRail"
+      ]
+    },
+    {
       "key": "_tz3000_mcxw5ehu|Excellux",
       "drivers": [
         "pir_sensor_2",
@@ -1387,6 +1561,34 @@
       "drivers": [
         "pir_sensor_2",
         "sensor_motion_presence"
+      ]
+    },
+    {
+      "key": "_tz3000_mmtwjmaq|TS0001",
+      "drivers": [
+        "motion_sensor",
+        "pir_sensor_2"
+      ]
+    },
+    {
+      "key": "_tz3000_mmtwjmaq|TS0202",
+      "drivers": [
+        "motion_sensor",
+        "pir_sensor_2"
+      ]
+    },
+    {
+      "key": "_tz3000_mmtwjmaq|TS0601",
+      "drivers": [
+        "motion_sensor",
+        "pir_sensor_2"
+      ]
+    },
+    {
+      "key": "_tz3000_mmtwjmaq|TS110E",
+      "drivers": [
+        "motion_sensor",
+        "pir_sensor_2"
       ]
     },
     {
@@ -1677,38 +1879,73 @@
       ]
     },
     {
-      "key": "_tz3000_qystbcjg|TS0001",
+      "key": "_tz3000_pzui3skt|ts004f",
       "drivers": [
-        "plug",
-        "plug_energy_monitor"
+        "button_wireless_1",
+        "smart_knob_rotary"
       ]
     },
     {
-      "key": "_tz3000_qystbcjg|TS0003",
+      "key": "_tz3000_pzui3skt|Ts004f",
       "drivers": [
-        "plug",
-        "plug_energy_monitor"
+        "button_wireless_1",
+        "smart_knob_rotary"
       ]
     },
     {
-      "key": "_tz3000_qystbcjg|TS000F",
+      "key": "_tz3000_pzui3skt|TS004F",
       "drivers": [
-        "plug",
-        "plug_energy_monitor"
+        "button_wireless_1",
+        "smart_knob_rotary"
       ]
     },
     {
-      "key": "_tz3000_qystbcjg|TS0011",
+      "key": "_tz3000_pzui3skt|ts0601",
       "drivers": [
-        "plug",
-        "plug_energy_monitor"
+        "button_wireless_1",
+        "smart_knob_rotary"
       ]
     },
     {
-      "key": "_tz3000_qystbcjg|TS011F",
+      "key": "_tz3000_pzui3skt|Ts0601",
       "drivers": [
-        "plug",
-        "plug_energy_monitor"
+        "button_wireless_1",
+        "smart_knob_rotary"
+      ]
+    },
+    {
+      "key": "_tz3000_pzui3skt|TS0601",
+      "drivers": [
+        "button_wireless_1",
+        "smart_knob_rotary"
+      ]
+    },
+    {
+      "key": "_tz3000_pzui3skt|zg-101zd",
+      "drivers": [
+        "button_wireless_1",
+        "smart_knob_rotary"
+      ]
+    },
+    {
+      "key": "_tz3000_pzui3skt|ZG-101ZD",
+      "drivers": [
+        "button_wireless_1",
+        "smart_knob_rotary"
+      ]
+    },
+    {
+      "key": "_tz3000_q50zhdsc|TS0601",
+      "drivers": [
+        "bulb_rgb",
+        "dimmable_led_strip"
+      ]
+    },
+    {
+      "key": "_tz3000_qd7hej8u|TS0601",
+      "drivers": [
+        "bulb_rgb",
+        "dimmable_led_strip"
       ]
     },
     {
@@ -1803,6 +2040,34 @@
       ]
     },
     {
+      "key": "_tz3000_vw8pawxa|TS0301",
+      "drivers": [
+        "curtain_motor",
+        "curtain_motor_shutter"
+      ]
+    },
+    {
+      "key": "_tz3000_vw8pawxa|TS0601",
+      "drivers": [
+        "curtain_motor",
+        "curtain_motor_shutter"
+      ]
+    },
+    {
+      "key": "_tz3000_vw8pawxa|TS0726",
+      "drivers": [
+        "curtain_motor",
+        "curtain_motor_shutter"
+      ]
+    },
+    {
+      "key": "_tz3000_vw8pawxa|TS110E",
+      "drivers": [
+        "curtain_motor",
+        "curtain_motor_shutter"
+      ]
+    },
+    {
       "key": "_tz3000_wamqdr3f|TS0001",
       "drivers": [
         "plug",
@@ -1835,6 +2100,13 @@
       "drivers": [
         "plug",
         "plug_energy_monitor"
+      ]
+    },
+    {
+      "key": "_tz3000_wzauvbcs|TS011F",
+      "drivers": [
+        "button_wireless_2",
+        "socket_power_strip"
       ]
     },
     {
@@ -1873,17 +2145,10 @@
       ]
     },
     {
-      "key": "_tz3000_zw7wr5uo|TS0001",
+      "key": "_tz3000_zw7wr5uo|TS0502A",
       "drivers": [
         "bulb_dimmable",
-        "hybrid_light_windowcoverings"
-      ]
-    },
-    {
-      "key": "_tz3000_zw7wr5uo|TS0002",
-      "drivers": [
-        "bulb_dimmable",
-        "hybrid_light_windowcoverings"
+        "tunable_bulb_E14"
       ]
     },
     {
@@ -1943,38 +2208,10 @@
       ]
     },
     {
-      "key": "_tz3210_4ubylghk|TS0011",
-      "drivers": [
-        "dimmer_2_gang",
-        "light_bulb_dimmable_tunable"
-      ]
-    },
-    {
       "key": "_tz3210_4ubylghk|TS0601",
       "drivers": [
         "dimmer_2_gang",
-        "light_bulb_dimmable_tunable"
-      ]
-    },
-    {
-      "key": "_tz3210_4ubylghk|TS1101",
-      "drivers": [
-        "dimmer_2_gang",
-        "light_bulb_dimmable_tunable"
-      ]
-    },
-    {
-      "key": "_tz3210_4ubylghk|TS110E",
-      "drivers": [
-        "dimmer_2_gang",
-        "light_bulb_dimmable_tunable"
-      ]
-    },
-    {
-      "key": "_tz3210_4ubylghk|TS110F",
-      "drivers": [
-        "dimmer_2_gang",
-        "light_bulb_dimmable_tunable"
+        "rgb_led_strip"
       ]
     },
     {
@@ -2321,10 +2558,185 @@
       ]
     },
     {
+      "key": "_tz3210_huzkzqyk|TS0601",
+      "drivers": [
+        "lcdtemphumidluxsensor",
+        "wall_dimmer_tuya"
+      ]
+    },
+    {
+      "key": "_tz3210_invesber|TS0011",
+      "drivers": [
+        "dimmable_led_strip",
+        "wall_dimmer_tuya"
+      ]
+    },
+    {
+      "key": "_tz3210_invesber|TS0052",
+      "drivers": [
+        "dimmable_led_strip",
+        "wall_dimmer_tuya"
+      ]
+    },
+    {
+      "key": "_tz3210_invesber|TS0601",
+      "drivers": [
+        "dimmable_led_strip",
+        "wall_dimmer_tuya"
+      ]
+    },
+    {
+      "key": "_tz3210_invesber|TS0601_dim1",
+      "drivers": [
+        "dimmable_led_strip",
+        "wall_dimmer_tuya"
+      ]
+    },
+    {
+      "key": "_tz3210_invesber|TS1101",
+      "drivers": [
+        "dimmable_led_strip",
+        "wall_dimmer_tuya"
+      ]
+    },
+    {
+      "key": "_tz3210_invesber|TS110E",
+      "drivers": [
+        "dimmable_led_strip",
+        "wall_dimmer_tuya"
+      ]
+    },
+    {
+      "key": "_tz3210_invesber|TS110F",
+      "drivers": [
+        "dimmable_led_strip",
+        "wall_dimmer_tuya"
+      ]
+    },
+    {
+      "key": "_tz3210_invesber|ZBMINI-DIM",
+      "drivers": [
+        "dimmable_led_strip",
+        "wall_dimmer_tuya"
+      ]
+    },
+    {
+      "key": "_tz3210_invesber|ZBMINID",
+      "drivers": [
+        "dimmable_led_strip",
+        "wall_dimmer_tuya"
+      ]
+    },
+    {
+      "key": "_tz3210_k1pe6ibm|TS0601",
+      "drivers": [
+        "rgb_led_strip_controller",
+        "wall_dimmer_tuya"
+      ]
+    },
+    {
+      "key": "_tz3210_mja6r5ix|TS0601",
+      "drivers": [
+        "bulb_rgb",
+        "dimmable_led_strip"
+      ]
+    },
+    {
+      "key": "_tz3210_r0xgkft5|TS0601",
+      "drivers": [
+        "led_controller_cct",
+        "rgb_mood_light"
+      ]
+    },
+    {
       "key": "_tz3210_ttkgurpb|TS0601",
       "drivers": [
         "bulb_rgbw",
         "wall_dimmer_tuya"
+      ]
+    },
+    {
+      "key": "_tz3210_xbpt8ewc|TS0301",
+      "drivers": [
+        "curtain_motor",
+        "curtain_motor_shutter"
+      ]
+    },
+    {
+      "key": "_tz3210_xbpt8ewc|TS0601",
+      "drivers": [
+        "curtain_motor",
+        "curtain_motor_shutter"
+      ]
+    },
+    {
+      "key": "_tz3210_xbpt8ewc|TS0726",
+      "drivers": [
+        "curtain_motor",
+        "curtain_motor_shutter"
+      ]
+    },
+    {
+      "key": "_tz3210_xbpt8ewc|TS110E",
+      "drivers": [
+        "curtain_motor",
+        "curtain_motor_shutter"
+      ]
+    },
+    {
+      "key": "_tz3290_ixd9mvv4|TS0601",
+      "drivers": [
+        "smart_irrigation_valve",
+        "water_valve_smart"
+      ]
+    },
+    {
+      "key": "_tzb000_42ha4rsc|TS0301",
+      "drivers": [
+        "curtain_motor",
+        "curtain_motor_shutter"
+      ]
+    },
+    {
+      "key": "_tzb000_42ha4rsc|TS0601",
+      "drivers": [
+        "curtain_motor",
+        "curtain_motor_shutter"
+      ]
+    },
+    {
+      "key": "_tzb000_42ha4rsc|TS0726",
+      "drivers": [
+        "curtain_motor",
+        "curtain_motor_shutter"
+      ]
+    },
+    {
+      "key": "_tzb000_42ha4rsc|TS110E",
+      "drivers": [
+        "curtain_motor",
+        "curtain_motor_shutter"
+      ]
+    },
+    {
+      "key": "_tzb210_0bkzabht|TS0502A",
+      "drivers": [
+        "bulb_dimmable",
+        "tunable_bulb_E14"
+      ]
+    },
+    {
+      "key": "_tzb210_ayx58ft5|TS0502A",
+      "drivers": [
+        "bulb_dimmable",
+        "tunable_bulb_E14"
+      ]
+    },
+    {
+      "key": "_tzb210_eiwanbeb|TS0502A",
+      "drivers": [
+        "bulb_dimmable",
+        "tunable_bulb_E14"
       ]
     },
     {
@@ -2482,6 +2894,13 @@
       ]
     },
     {
+      "key": "_tze200_6ycgarab|TS0601",
+      "drivers": [
+        "presence_sensor_radar",
+        "smoke_sensor"
+      ]
+    },
+    {
       "key": "_tze200_bjzrowv2|TS0601",
       "drivers": [
         "curtain_motor",
@@ -2503,6 +2922,48 @@
       ]
     },
     {
+      "key": "_tze200_hyhl5y36|ts0601",
+      "drivers": [
+        "curtain_motor",
+        "presence_sensor_radar"
+      ]
+    },
+    {
+      "key": "_tze200_hyhl5y36|Ts0601",
+      "drivers": [
+        "curtain_motor",
+        "presence_sensor_radar"
+      ]
+    },
+    {
+      "key": "_tze200_hyhl5y36|TS0601",
+      "drivers": [
+        "curtain_motor",
+        "presence_sensor_radar"
+      ]
+    },
+    {
+      "key": "_tze200_hyhl5y36|ts110e",
+      "drivers": [
+        "curtain_motor",
+        "presence_sensor_radar"
+      ]
+    },
+    {
+      "key": "_tze200_hyhl5y36|Ts110e",
+      "drivers": [
+        "curtain_motor",
+        "presence_sensor_radar"
+      ]
+    },
+    {
+      "key": "_tze200_hyhl5y36|TS110E",
+      "drivers": [
+        "curtain_motor",
+        "presence_sensor_radar"
+      ]
+    },
+    {
       "key": "_tze200_jsaqgakf|TS0601",
       "drivers": [
         "rain_sensor",
@@ -2510,10 +2971,136 @@
       ]
     },
     {
+      "key": "_tze200_locansqn|Excellux",
+      "drivers": [
+        "lcdtemphumidsensor",
+        "lcdtemphumidsensor_3"
+      ]
+    },
+    {
+      "key": "_tze200_locansqn|TS0601",
+      "drivers": [
+        "lcdtemphumidsensor",
+        "lcdtemphumidsensor_3"
+      ]
+    },
+    {
+      "key": "_tze200_ntcy3xu1|GS361A-H04",
+      "drivers": [
+        "smoke_detector_advanced",
+        "smoke_sensor2"
+      ]
+    },
+    {
+      "key": "_tze200_ntcy3xu1|HS1SA",
+      "drivers": [
+        "smoke_detector_advanced",
+        "smoke_sensor2"
+      ]
+    },
+    {
+      "key": "_tze200_ntcy3xu1|HS3SA",
+      "drivers": [
+        "smoke_detector_advanced",
+        "smoke_sensor2"
+      ]
+    },
+    {
+      "key": "_tze200_ntcy3xu1|JTYJ-GD-01LM/BW",
+      "drivers": [
+        "smoke_detector_advanced",
+        "smoke_sensor2"
+      ]
+    },
+    {
+      "key": "_tze200_ntcy3xu1|lumi.sensor_smoke",
+      "drivers": [
+        "smoke_detector_advanced",
+        "smoke_sensor2"
+      ]
+    },
+    {
+      "key": "_tze200_ntcy3xu1|NAS-SD02B0",
+      "drivers": [
+        "smoke_detector_advanced",
+        "smoke_sensor2"
+      ]
+    },
+    {
+      "key": "_tze200_ntcy3xu1|PG-S11Z",
+      "drivers": [
+        "smoke_detector_advanced",
+        "smoke_sensor2"
+      ]
+    },
+    {
+      "key": "_tze200_ntcy3xu1|SA12IZL",
+      "drivers": [
+        "smoke_detector_advanced",
+        "smoke_sensor2"
+      ]
+    },
+    {
+      "key": "_tze200_ntcy3xu1|SD8SC_00.00.03.12TC",
+      "drivers": [
+        "smoke_detector_advanced",
+        "smoke_sensor2"
+      ]
+    },
+    {
+      "key": "_tze200_ntcy3xu1|SMSZB-120",
+      "drivers": [
+        "smoke_detector_advanced",
+        "smoke_sensor2"
+      ]
+    },
+    {
+      "key": "_tze200_ntcy3xu1|SSSQS01LM",
+      "drivers": [
+        "smoke_detector_advanced",
+        "smoke_sensor2"
+      ]
+    },
+    {
+      "key": "_tze200_ntcy3xu1|TS0205",
+      "drivers": [
+        "smoke_detector_advanced",
+        "smoke_sensor2"
+      ]
+    },
+    {
+      "key": "_tze200_ntcy3xu1|TS0601",
+      "drivers": [
+        "smoke_detector_advanced",
+        "smoke_sensor2"
+      ]
+    },
+    {
+      "key": "_tze200_ntcy3xu1|YG400A",
+      "drivers": [
+        "smoke_detector_advanced",
+        "smoke_sensor2"
+      ]
+    },
+    {
       "key": "_tze200_p3dbf6qs|TS0601",
       "drivers": [
         "device_radiator_valve",
         "radiator_valve"
+      ]
+    },
+    {
+      "key": "_tze200_yh7aoahi|TS0205",
+      "drivers": [
+        "smoke_sensor",
+        "smoke_sensor3"
+      ]
+    },
+    {
+      "key": "_tze200_zl1kmjqx|TS0601",
+      "drivers": [
+        "button_wireless_2",
+        "lcdtemphumidsensor_3"
       ]
     },
     {
@@ -2636,6 +3223,13 @@
       ]
     },
     {
+      "key": "_tze204_6ycgarab|TS0601",
+      "drivers": [
+        "presence_sensor_radar",
+        "smoke_sensor"
+      ]
+    },
+    {
       "key": "_tze204_9qhuzgo0|TS0001",
       "drivers": [
         "dimmer_1_gang_tuya",
@@ -2675,6 +3269,132 @@
       "drivers": [
         "dimmer_1_gang_tuya",
         "switch_1gang"
+      ]
+    },
+    {
+      "key": "_tze204_amp6tsvy|ts0003",
+      "drivers": [
+        "switch_1gang",
+        "switch_2gang"
+      ]
+    },
+    {
+      "key": "_tze204_amp6tsvy|Ts0003",
+      "drivers": [
+        "switch_1gang",
+        "switch_2gang"
+      ]
+    },
+    {
+      "key": "_tze204_amp6tsvy|TS0003",
+      "drivers": [
+        "switch_1gang",
+        "switch_2gang"
+      ]
+    },
+    {
+      "key": "_tze204_amp6tsvy|ts000f",
+      "drivers": [
+        "switch_1gang",
+        "switch_2gang"
+      ]
+    },
+    {
+      "key": "_tze204_amp6tsvy|Ts000f",
+      "drivers": [
+        "switch_1gang",
+        "switch_2gang"
+      ]
+    },
+    {
+      "key": "_tze204_amp6tsvy|TS000F",
+      "drivers": [
+        "switch_1gang",
+        "switch_2gang"
+      ]
+    },
+    {
+      "key": "_tze204_amp6tsvy|ts0012",
+      "drivers": [
+        "switch_1gang",
+        "switch_2gang"
+      ]
+    },
+    {
+      "key": "_tze204_amp6tsvy|Ts0012",
+      "drivers": [
+        "switch_1gang",
+        "switch_2gang"
+      ]
+    },
+    {
+      "key": "_tze204_amp6tsvy|TS0012",
+      "drivers": [
+        "switch_1gang",
+        "switch_2gang"
+      ]
+    },
+    {
+      "key": "_tze204_amp6tsvy|ts011f",
+      "drivers": [
+        "switch_1gang",
+        "switch_2gang"
+      ]
+    },
+    {
+      "key": "_tze204_amp6tsvy|Ts011f",
+      "drivers": [
+        "switch_1gang",
+        "switch_2gang"
+      ]
+    },
+    {
+      "key": "_tze204_amp6tsvy|TS011F",
+      "drivers": [
+        "switch_1gang",
+        "switch_2gang"
+      ]
+    },
+    {
+      "key": "_tze204_amp6tsvy|ts0601",
+      "drivers": [
+        "switch_1gang",
+        "switch_2gang"
+      ]
+    },
+    {
+      "key": "_tze204_amp6tsvy|Ts0601",
+      "drivers": [
+        "switch_1gang",
+        "switch_2gang"
+      ]
+    },
+    {
+      "key": "_tze204_amp6tsvy|TS0601",
+      "drivers": [
+        "switch_1gang",
+        "switch_2gang"
+      ]
+    },
+    {
+      "key": "_tze204_amp6tsvy|ts0726",
+      "drivers": [
+        "switch_1gang",
+        "switch_2gang"
+      ]
+    },
+    {
+      "key": "_tze204_amp6tsvy|Ts0726",
+      "drivers": [
+        "switch_1gang",
+        "switch_2gang"
+      ]
+    },
+    {
+      "key": "_tze204_amp6tsvy|TS0726",
+      "drivers": [
+        "switch_1gang",
+        "switch_2gang"
       ]
     },
     {
@@ -2797,7 +3517,35 @@
       ]
     },
     {
+      "key": "_tze204_vrcfo4i0|ts0225",
+      "drivers": [
+        "gas_sensor",
+        "presence_sensor_radar"
+      ]
+    },
+    {
+      "key": "_tze204_vrcfo4i0|Ts0225",
+      "drivers": [
+        "gas_sensor",
+        "presence_sensor_radar"
+      ]
+    },
+    {
       "key": "_tze204_vrcfo4i0|TS0225",
+      "drivers": [
+        "gas_sensor",
+        "presence_sensor_radar"
+      ]
+    },
+    {
+      "key": "_tze204_vrcfo4i0|ts0601",
+      "drivers": [
+        "gas_sensor",
+        "presence_sensor_radar"
+      ]
+    },
+    {
+      "key": "_tze204_vrcfo4i0|Ts0601",
       "drivers": [
         "gas_sensor",
         "presence_sensor_radar"
@@ -2807,6 +3555,48 @@
       "key": "_tze204_vrcfo4i0|TS0601",
       "drivers": [
         "gas_sensor",
+        "presence_sensor_radar"
+      ]
+    },
+    {
+      "key": "_tze204_ycke4deo|ts0601",
+      "drivers": [
+        "curtain_motor",
+        "presence_sensor_radar"
+      ]
+    },
+    {
+      "key": "_tze204_ycke4deo|Ts0601",
+      "drivers": [
+        "curtain_motor",
+        "presence_sensor_radar"
+      ]
+    },
+    {
+      "key": "_tze204_ycke4deo|TS0601",
+      "drivers": [
+        "curtain_motor",
+        "presence_sensor_radar"
+      ]
+    },
+    {
+      "key": "_tze204_ycke4deo|ts110e",
+      "drivers": [
+        "curtain_motor",
+        "presence_sensor_radar"
+      ]
+    },
+    {
+      "key": "_tze204_ycke4deo|Ts110e",
+      "drivers": [
+        "curtain_motor",
+        "presence_sensor_radar"
+      ]
+    },
+    {
+      "key": "_tze204_ycke4deo|TS110E",
+      "drivers": [
+        "curtain_motor",
         "presence_sensor_radar"
       ]
     },
@@ -2888,6 +3678,356 @@
       ]
     },
     {
+      "key": "_tze284_6ycgarab|TS0205",
+      "drivers": [
+        "smoke_sensor",
+        "smoke_sensor3"
+      ]
+    },
+    {
+      "key": "_tze284_6ycgarab|TS0601",
+      "drivers": [
+        "presence_sensor_radar",
+        "smoke_sensor"
+      ]
+    },
+    {
+      "key": "_tze284_a8sdabtg|TS0201",
+      "drivers": [
+        "lcdtemphumidsensor",
+        "temphumidsensor2"
+      ]
+    },
+    {
+      "key": "_tze284_a8sdabtg|TS0601",
+      "drivers": [
+        "lcdtemphumidsensor",
+        "temphumidsensor2"
+      ]
+    },
+    {
+      "key": "_tze284_amp6tsvy|ts0003",
+      "drivers": [
+        "switch_1gang",
+        "switch_2gang"
+      ]
+    },
+    {
+      "key": "_tze284_amp6tsvy|Ts0003",
+      "drivers": [
+        "switch_1gang",
+        "switch_2gang"
+      ]
+    },
+    {
+      "key": "_tze284_amp6tsvy|TS0003",
+      "drivers": [
+        "switch_1gang",
+        "switch_2gang"
+      ]
+    },
+    {
+      "key": "_tze284_amp6tsvy|ts000f",
+      "drivers": [
+        "switch_1gang",
+        "switch_2gang"
+      ]
+    },
+    {
+      "key": "_tze284_amp6tsvy|Ts000f",
+      "drivers": [
+        "switch_1gang",
+        "switch_2gang"
+      ]
+    },
+    {
+      "key": "_tze284_amp6tsvy|TS000F",
+      "drivers": [
+        "switch_1gang",
+        "switch_2gang"
+      ]
+    },
+    {
+      "key": "_tze284_amp6tsvy|ts0012",
+      "drivers": [
+        "switch_1gang",
+        "switch_2gang"
+      ]
+    },
+    {
+      "key": "_tze284_amp6tsvy|Ts0012",
+      "drivers": [
+        "switch_1gang",
+        "switch_2gang"
+      ]
+    },
+    {
+      "key": "_tze284_amp6tsvy|TS0012",
+      "drivers": [
+        "switch_1gang",
+        "switch_2gang"
+      ]
+    },
+    {
+      "key": "_tze284_amp6tsvy|ts011f",
+      "drivers": [
+        "switch_1gang",
+        "switch_2gang"
+      ]
+    },
+    {
+      "key": "_tze284_amp6tsvy|Ts011f",
+      "drivers": [
+        "switch_1gang",
+        "switch_2gang"
+      ]
+    },
+    {
+      "key": "_tze284_amp6tsvy|TS011F",
+      "drivers": [
+        "switch_1gang",
+        "switch_2gang"
+      ]
+    },
+    {
+      "key": "_tze284_amp6tsvy|ts0601",
+      "drivers": [
+        "switch_1gang",
+        "switch_2gang"
+      ]
+    },
+    {
+      "key": "_tze284_amp6tsvy|Ts0601",
+      "drivers": [
+        "switch_1gang",
+        "switch_2gang"
+      ]
+    },
+    {
+      "key": "_tze284_amp6tsvy|TS0601",
+      "drivers": [
+        "switch_1gang",
+        "switch_2gang"
+      ]
+    },
+    {
+      "key": "_tze284_amp6tsvy|ts0726",
+      "drivers": [
+        "switch_1gang",
+        "switch_2gang"
+      ]
+    },
+    {
+      "key": "_tze284_amp6tsvy|Ts0726",
+      "drivers": [
+        "switch_1gang",
+        "switch_2gang"
+      ]
+    },
+    {
+      "key": "_tze284_amp6tsvy|TS0726",
+      "drivers": [
+        "switch_1gang",
+        "switch_2gang"
+      ]
+    },
+    {
+      "key": "_tze284_la2c2uo9|TS0001",
+      "drivers": [
+        "dimmer_1_gang_tuya",
+        "wall_dimmer_tuya"
+      ]
+    },
+    {
+      "key": "_tze284_la2c2uo9|TS0002",
+      "drivers": [
+        "dimmer_1_gang_tuya",
+        "wall_dimmer_tuya"
+      ]
+    },
+    {
+      "key": "_tze284_la2c2uo9|TS0003",
+      "drivers": [
+        "dimmer_1_gang_tuya",
+        "wall_dimmer_tuya"
+      ]
+    },
+    {
+      "key": "_tze284_la2c2uo9|TS0013",
+      "drivers": [
+        "dimmer_1_gang_tuya",
+        "wall_dimmer_tuya"
+      ]
+    },
+    {
+      "key": "_tze284_la2c2uo9|TS0052",
+      "drivers": [
+        "dimmer_1_gang_tuya",
+        "wall_dimmer_tuya"
+      ]
+    },
+    {
+      "key": "_tze284_la2c2uo9|TS0601",
+      "drivers": [
+        "dimmer_1_gang_tuya",
+        "wall_dimmer_tuya"
+      ]
+    },
+    {
+      "key": "_tze284_la2c2uo9|TS110E",
+      "drivers": [
+        "dimmer_1_gang_tuya",
+        "wall_dimmer_tuya"
+      ]
+    },
+    {
+      "key": "_tze284_la2c2uo9|TS110F",
+      "drivers": [
+        "dimmer_1_gang_tuya",
+        "wall_dimmer_tuya"
+      ]
+    },
+    {
+      "key": "_tze284_ntcy3xu1|GS361A-H04",
+      "drivers": [
+        "smoke_detector_advanced",
+        "smoke_sensor2"
+      ]
+    },
+    {
+      "key": "_tze284_ntcy3xu1|HS1SA",
+      "drivers": [
+        "smoke_detector_advanced",
+        "smoke_sensor2"
+      ]
+    },
+    {
+      "key": "_tze284_ntcy3xu1|HS3SA",
+      "drivers": [
+        "smoke_detector_advanced",
+        "smoke_sensor2"
+      ]
+    },
+    {
+      "key": "_tze284_ntcy3xu1|JTYJ-GD-01LM/BW",
+      "drivers": [
+        "smoke_detector_advanced",
+        "smoke_sensor2"
+      ]
+    },
+    {
+      "key": "_tze284_ntcy3xu1|lumi.sensor_smoke",
+      "drivers": [
+        "smoke_detector_advanced",
+        "smoke_sensor2"
+      ]
+    },
+    {
+      "key": "_tze284_ntcy3xu1|NAS-SD02B0",
+      "drivers": [
+        "smoke_detector_advanced",
+        "smoke_sensor2"
+      ]
+    },
+    {
+      "key": "_tze284_ntcy3xu1|PG-S11Z",
+      "drivers": [
+        "smoke_detector_advanced",
+        "smoke_sensor2"
+      ]
+    },
+    {
+      "key": "_tze284_ntcy3xu1|SA12IZL",
+      "drivers": [
+        "smoke_detector_advanced",
+        "smoke_sensor2"
+      ]
+    },
+    {
+      "key": "_tze284_ntcy3xu1|SD8SC_00.00.03.12TC",
+      "drivers": [
+        "smoke_detector_advanced",
+        "smoke_sensor2"
+      ]
+    },
+    {
+      "key": "_tze284_ntcy3xu1|SMSZB-120",
+      "drivers": [
+        "smoke_detector_advanced",
+        "smoke_sensor2"
+      ]
+    },
+    {
+      "key": "_tze284_ntcy3xu1|SSSQS01LM",
+      "drivers": [
+        "smoke_detector_advanced",
+        "smoke_sensor2"
+      ]
+    },
+    {
+      "key": "_tze284_ntcy3xu1|TS0205",
+      "drivers": [
+        "smoke_detector_advanced",
+        "smoke_sensor2"
+      ]
+    },
+    {
+      "key": "_tze284_ntcy3xu1|TS0601",
+      "drivers": [
+        "smoke_detector_advanced",
+        "smoke_sensor2"
+      ]
+    },
+    {
+      "key": "_tze284_ntcy3xu1|YG400A",
+      "drivers": [
+        "smoke_detector_advanced",
+        "smoke_sensor2"
+      ]
+    },
+    {
+      "key": "_tze284_ozf4e02o|ts0601",
+      "drivers": [
+        "curtain_motor",
+        "presence_sensor_radar"
+      ]
+    },
+    {
+      "key": "_tze284_ozf4e02o|Ts0601",
+      "drivers": [
+        "curtain_motor",
+        "presence_sensor_radar"
+      ]
+    },
+    {
+      "key": "_tze284_ozf4e02o|TS0601",
+      "drivers": [
+        "curtain_motor",
+        "presence_sensor_radar"
+      ]
+    },
+    {
+      "key": "_tze284_ozf4e02o|ts110e",
+      "drivers": [
+        "curtain_motor",
+        "presence_sensor_radar"
+      ]
+    },
+    {
+      "key": "_tze284_ozf4e02o|Ts110e",
+      "drivers": [
+        "curtain_motor",
+        "presence_sensor_radar"
+      ]
+    },
+    {
+      "key": "_tze284_ozf4e02o|TS110E",
+      "drivers": [
+        "curtain_motor",
+        "presence_sensor_radar"
+      ]
+    },
+    {
       "key": "_tze284_r3szw0xr|TS0601",
       "drivers": [
         "curtain_motor",
@@ -2895,7 +4035,77 @@
       ]
     },
     {
+      "key": "_tze284_rlytpmij|ts0601",
+      "drivers": [
+        "curtain_motor",
+        "presence_sensor_radar"
+      ]
+    },
+    {
+      "key": "_tze284_rlytpmij|Ts0601",
+      "drivers": [
+        "curtain_motor",
+        "presence_sensor_radar"
+      ]
+    },
+    {
+      "key": "_tze284_rlytpmij|TS0601",
+      "drivers": [
+        "curtain_motor",
+        "presence_sensor_radar"
+      ]
+    },
+    {
+      "key": "_tze284_rlytpmij|ts110e",
+      "drivers": [
+        "curtain_motor",
+        "presence_sensor_radar"
+      ]
+    },
+    {
+      "key": "_tze284_rlytpmij|Ts110e",
+      "drivers": [
+        "curtain_motor",
+        "presence_sensor_radar"
+      ]
+    },
+    {
+      "key": "_tze284_rlytpmij|TS110E",
+      "drivers": [
+        "curtain_motor",
+        "presence_sensor_radar"
+      ]
+    },
+    {
+      "key": "_tze284_vrcfo4i0|ts0225",
+      "drivers": [
+        "gas_sensor",
+        "presence_sensor_radar"
+      ]
+    },
+    {
+      "key": "_tze284_vrcfo4i0|Ts0225",
+      "drivers": [
+        "gas_sensor",
+        "presence_sensor_radar"
+      ]
+    },
+    {
       "key": "_tze284_vrcfo4i0|TS0225",
+      "drivers": [
+        "gas_sensor",
+        "presence_sensor_radar"
+      ]
+    },
+    {
+      "key": "_tze284_vrcfo4i0|ts0601",
+      "drivers": [
+        "gas_sensor",
+        "presence_sensor_radar"
+      ]
+    },
+    {
+      "key": "_tze284_vrcfo4i0|Ts0601",
       "drivers": [
         "gas_sensor",
         "presence_sensor_radar"
@@ -2909,6 +4119,14 @@
       ]
     },
     {
+      "key": "hobeian|01minizb",
+      "drivers": [
+        "curtain_motor",
+        "switch_1gang",
+        "switch_3gang"
+      ]
+    },
+    {
       "key": "hobeian|01MINIZB",
       "drivers": [
         "curtain_motor",
@@ -2917,7 +4135,21 @@
       ]
     },
     {
+      "key": "hobeian|3300-s",
+      "drivers": [
+        "contact_sensor",
+        "sensor_contact_zigbee"
+      ]
+    },
+    {
       "key": "hobeian|3300-S",
+      "drivers": [
+        "contact_sensor",
+        "sensor_contact_zigbee"
+      ]
+    },
+    {
+      "key": "hobeian|3320-l",
       "drivers": [
         "contact_sensor",
         "sensor_contact_zigbee"
@@ -2931,7 +4163,7 @@
       ]
     },
     {
-      "key": "hobeian|BASICZBR3",
+      "key": "hobeian|basiczbr3",
       "drivers": [
         "curtain_motor",
         "soil_sensor",
@@ -2940,17 +4172,12 @@
       ]
     },
     {
-      "key": "hobeian|BSP-EZ2",
+      "key": "hobeian|BASICZBR3",
       "drivers": [
         "curtain_motor",
-        "soil_sensor"
-      ]
-    },
-    {
-      "key": "hobeian|BSP-FZ2",
-      "drivers": [
-        "curtain_motor",
-        "soil_sensor"
+        "soil_sensor",
+        "switch_1gang",
+        "switch_3gang"
       ]
     },
     {
@@ -2968,15 +4195,14 @@
       ]
     },
     {
-      "key": "hobeian|CK-TLSR8656-SS5-01(7014)",
+      "key": "hobeian|DoorWindow-Sensor-ZB3.0",
       "drivers": [
-        "climate_sensor",
-        "presence_sensor_radar",
-        "soil_sensor"
+        "contact_sensor",
+        "sensor_contact_zigbee"
       ]
     },
     {
-      "key": "hobeian|DoorWindow-Sensor-ZB3.0",
+      "key": "hobeian|ds01",
       "drivers": [
         "contact_sensor",
         "sensor_contact_zigbee"
@@ -2997,19 +4223,24 @@
       ]
     },
     {
-      "key": "hobeian|Excellux",
+      "key": "hobeian|excellux",
       "drivers": [
-        "contact_sensor",
         "presence_sensor_radar",
         "sensor_contact_zigbee"
       ]
     },
     {
-      "key": "hobeian|HOBEIAN",
+      "key": "hobeian|Excellux",
       "drivers": [
-        "siren",
-        "switch_2gang",
-        "vibration_sensor"
+        "presence_sensor_radar",
+        "sensor_contact_zigbee"
+      ]
+    },
+    {
+      "key": "hobeian|EXCELLUX",
+      "drivers": [
+        "presence_sensor_radar",
+        "sensor_contact_zigbee"
       ]
     },
     {
@@ -3065,7 +4296,21 @@
       ]
     },
     {
+      "key": "hobeian|mccgq01lm",
+      "drivers": [
+        "contact_sensor",
+        "sensor_contact_zigbee"
+      ]
+    },
+    {
       "key": "hobeian|MCCGQ01LM",
+      "drivers": [
+        "contact_sensor",
+        "sensor_contact_zigbee"
+      ]
+    },
+    {
+      "key": "hobeian|mccgq11lm",
       "drivers": [
         "contact_sensor",
         "sensor_contact_zigbee"
@@ -3079,7 +4324,21 @@
       ]
     },
     {
+      "key": "hobeian|mccgq12lm",
+      "drivers": [
+        "contact_sensor",
+        "sensor_contact_zigbee"
+      ]
+    },
+    {
       "key": "hobeian|MCCGQ12LM",
+      "drivers": [
+        "contact_sensor",
+        "sensor_contact_zigbee"
+      ]
+    },
+    {
+      "key": "hobeian|mccgq14lm",
       "drivers": [
         "contact_sensor",
         "sensor_contact_zigbee"
@@ -3100,18 +4359,11 @@
       ]
     },
     {
-      "key": "hobeian|q9mpfhw",
+      "key": "hobeian|rh3052",
       "drivers": [
-        "contact_sensor",
-        "water_leak_sensor"
-      ]
-    },
-    {
-      "key": "hobeian|RH3001",
-      "drivers": [
-        "contact_sensor",
-        "sensor_contact_zigbee",
-        "water_leak_sensor"
+        "climate_sensor",
+        "presence_sensor_radar",
+        "soil_sensor"
       ]
     },
     {
@@ -3123,7 +4375,25 @@
       ]
     },
     {
+      "key": "hobeian|s26r2zb",
+      "drivers": [
+        "curtain_motor",
+        "soil_sensor",
+        "switch_1gang",
+        "switch_3gang"
+      ]
+    },
+    {
       "key": "hobeian|S26R2ZB",
+      "drivers": [
+        "curtain_motor",
+        "soil_sensor",
+        "switch_1gang",
+        "switch_3gang"
+      ]
+    },
+    {
+      "key": "hobeian|s31zb",
       "drivers": [
         "curtain_motor",
         "soil_sensor",
@@ -3141,9 +4411,10 @@
       ]
     },
     {
-      "key": "hobeian|S40ZBTPB",
+      "key": "hobeian|sm0201",
       "drivers": [
-        "curtain_motor",
+        "climate_sensor",
+        "presence_sensor_radar",
         "soil_sensor"
       ]
     },
@@ -3156,38 +4427,23 @@
       ]
     },
     {
-      "key": "hobeian|SNZB-01",
+      "key": "hobeian|snzb-04",
       "drivers": [
-        "button_wireless_1",
-        "curtain_motor"
-      ]
-    },
-    {
-      "key": "hobeian|SNZB-01P",
-      "drivers": [
-        "button_wireless_1",
-        "curtain_motor"
-      ]
-    },
-    {
-      "key": "hobeian|SNZB-02",
-      "drivers": [
-        "climate_sensor",
-        "curtain_motor"
-      ]
-    },
-    {
-      "key": "hobeian|SNZB-02P",
-      "drivers": [
-        "climate_sensor",
-        "curtain_motor"
+        "contact_sensor",
+        "sensor_contact_zigbee"
       ]
     },
     {
       "key": "hobeian|SNZB-04",
       "drivers": [
         "contact_sensor",
-        "curtain_motor",
+        "sensor_contact_zigbee"
+      ]
+    },
+    {
+      "key": "hobeian|snzb-04p",
+      "drivers": [
+        "contact_sensor",
         "sensor_contact_zigbee"
       ]
     },
@@ -3195,12 +4451,25 @@
       "key": "hobeian|SNZB-04P",
       "drivers": [
         "contact_sensor",
-        "curtain_motor",
+        "sensor_contact_zigbee"
+      ]
+    },
+    {
+      "key": "hobeian|snzb-04pr2",
+      "drivers": [
+        "contact_sensor",
         "sensor_contact_zigbee"
       ]
     },
     {
       "key": "hobeian|SNZB-04PR2",
+      "drivers": [
+        "contact_sensor",
+        "sensor_contact_zigbee"
+      ]
+    },
+    {
+      "key": "hobeian|snzb-04r2",
       "drivers": [
         "contact_sensor",
         "sensor_contact_zigbee"
@@ -3214,14 +4483,23 @@
       ]
     },
     {
-      "key": "hobeian|SNZB-06P",
+      "key": "hobeian|th01",
       "drivers": [
-        "curtain_motor",
-        "presence_sensor_radar"
+        "climate_sensor",
+        "presence_sensor_radar",
+        "soil_sensor"
       ]
     },
     {
       "key": "hobeian|TH01",
+      "drivers": [
+        "climate_sensor",
+        "presence_sensor_radar",
+        "soil_sensor"
+      ]
+    },
+    {
+      "key": "hobeian|ths317-et",
       "drivers": [
         "climate_sensor",
         "presence_sensor_radar",
@@ -3244,24 +4522,23 @@
       ]
     },
     {
-      "key": "hobeian|TRV001",
-      "drivers": [
-        "curtain_motor",
-        "soil_sensor"
-      ]
-    },
-    {
-      "key": "hobeian|TRV003",
-      "drivers": [
-        "curtain_motor",
-        "soil_sensor"
-      ]
-    },
-    {
       "key": "hobeian|ts0001",
       "drivers": [
         "button_wireless_1",
-        "curtain_motor"
+        "curtain_motor",
+        "soil_sensor",
+        "switch_1gang",
+        "switch_3gang"
+      ]
+    },
+    {
+      "key": "hobeian|Ts0001",
+      "drivers": [
+        "button_wireless_1",
+        "curtain_motor",
+        "soil_sensor",
+        "switch_1gang",
+        "switch_3gang"
       ]
     },
     {
@@ -3275,7 +4552,47 @@
       ]
     },
     {
+      "key": "hobeian|ts0001_power",
+      "drivers": [
+        "curtain_motor",
+        "switch_1gang",
+        "switch_3gang"
+      ]
+    },
+    {
+      "key": "hobeian|Ts0001_power",
+      "drivers": [
+        "curtain_motor",
+        "switch_1gang",
+        "switch_3gang"
+      ]
+    },
+    {
       "key": "hobeian|TS0001_power",
+      "drivers": [
+        "curtain_motor",
+        "switch_1gang",
+        "switch_3gang"
+      ]
+    },
+    {
+      "key": "hobeian|TS0001_POWER",
+      "drivers": [
+        "curtain_motor",
+        "switch_1gang",
+        "switch_3gang"
+      ]
+    },
+    {
+      "key": "hobeian|ts0001_switch",
+      "drivers": [
+        "curtain_motor",
+        "switch_1gang",
+        "switch_3gang"
+      ]
+    },
+    {
+      "key": "hobeian|Ts0001_switch",
       "drivers": [
         "curtain_motor",
         "switch_1gang",
@@ -3291,6 +4608,30 @@
       ]
     },
     {
+      "key": "hobeian|TS0001_SWITCH",
+      "drivers": [
+        "curtain_motor",
+        "switch_1gang",
+        "switch_3gang"
+      ]
+    },
+    {
+      "key": "hobeian|ts0001_switch_module",
+      "drivers": [
+        "curtain_motor",
+        "switch_1gang",
+        "switch_3gang"
+      ]
+    },
+    {
+      "key": "hobeian|Ts0001_switch_module",
+      "drivers": [
+        "curtain_motor",
+        "switch_1gang",
+        "switch_3gang"
+      ]
+    },
+    {
       "key": "hobeian|TS0001_switch_module",
       "drivers": [
         "curtain_motor",
@@ -3299,9 +4640,51 @@
       ]
     },
     {
+      "key": "hobeian|TS0001_SWITCH_MODULE",
+      "drivers": [
+        "curtain_motor",
+        "switch_1gang",
+        "switch_3gang"
+      ]
+    },
+    {
+      "key": "hobeian|ts0002",
+      "drivers": [
+        "ir_blaster",
+        "switch_2gang",
+        "switch_3gang"
+      ]
+    },
+    {
+      "key": "hobeian|Ts0002",
+      "drivers": [
+        "ir_blaster",
+        "switch_2gang",
+        "switch_3gang"
+      ]
+    },
+    {
       "key": "hobeian|TS0002",
       "drivers": [
         "ir_blaster",
+        "switch_2gang",
+        "switch_3gang"
+      ]
+    },
+    {
+      "key": "hobeian|ts0003",
+      "drivers": [
+        "sensor_contact_zigbee",
+        "switch_1gang",
+        "switch_2gang",
+        "switch_3gang"
+      ]
+    },
+    {
+      "key": "hobeian|Ts0003",
+      "drivers": [
+        "sensor_contact_zigbee",
+        "switch_1gang",
         "switch_2gang",
         "switch_3gang"
       ]
@@ -3316,11 +4699,43 @@
       ]
     },
     {
+      "key": "hobeian|ts0004",
+      "drivers": [
+        "presence_sensor_radar",
+        "switch_1gang",
+        "switch_3gang"
+      ]
+    },
+    {
+      "key": "hobeian|Ts0004",
+      "drivers": [
+        "presence_sensor_radar",
+        "switch_1gang",
+        "switch_3gang"
+      ]
+    },
+    {
       "key": "hobeian|TS0004",
       "drivers": [
         "presence_sensor_radar",
         "switch_1gang",
         "switch_3gang"
+      ]
+    },
+    {
+      "key": "hobeian|ts000f",
+      "drivers": [
+        "curtain_motor",
+        "switch_1gang",
+        "switch_2gang"
+      ]
+    },
+    {
+      "key": "hobeian|Ts000f",
+      "drivers": [
+        "curtain_motor",
+        "switch_1gang",
+        "switch_2gang"
       ]
     },
     {
@@ -3332,10 +4747,44 @@
       ]
     },
     {
+      "key": "hobeian|ts0011",
+      "drivers": [
+        "curtain_motor",
+        "switch_1gang",
+        "switch_3gang"
+      ]
+    },
+    {
+      "key": "hobeian|Ts0011",
+      "drivers": [
+        "curtain_motor",
+        "switch_1gang",
+        "switch_3gang"
+      ]
+    },
+    {
       "key": "hobeian|TS0011",
       "drivers": [
         "curtain_motor",
         "switch_1gang",
+        "switch_3gang"
+      ]
+    },
+    {
+      "key": "hobeian|ts0012",
+      "drivers": [
+        "curtain_motor",
+        "switch_1gang",
+        "switch_2gang",
+        "switch_3gang"
+      ]
+    },
+    {
+      "key": "hobeian|Ts0012",
+      "drivers": [
+        "curtain_motor",
+        "switch_1gang",
+        "switch_2gang",
         "switch_3gang"
       ]
     },
@@ -3349,10 +4798,42 @@
       ]
     },
     {
+      "key": "hobeian|ts0013",
+      "drivers": [
+        "sensor_contact_zigbee",
+        "switch_2gang",
+        "switch_3gang"
+      ]
+    },
+    {
+      "key": "hobeian|Ts0013",
+      "drivers": [
+        "sensor_contact_zigbee",
+        "switch_2gang",
+        "switch_3gang"
+      ]
+    },
+    {
       "key": "hobeian|TS0013",
       "drivers": [
         "sensor_contact_zigbee",
         "switch_2gang",
+        "switch_3gang"
+      ]
+    },
+    {
+      "key": "hobeian|ts0014",
+      "drivers": [
+        "curtain_motor",
+        "switch_1gang",
+        "switch_3gang"
+      ]
+    },
+    {
+      "key": "hobeian|Ts0014",
+      "drivers": [
+        "curtain_motor",
+        "switch_1gang",
         "switch_3gang"
       ]
     },
@@ -3365,6 +4846,20 @@
       ]
     },
     {
+      "key": "hobeian|ts0021",
+      "drivers": [
+        "contact_sensor",
+        "sensor_contact_zigbee"
+      ]
+    },
+    {
+      "key": "hobeian|Ts0021",
+      "drivers": [
+        "contact_sensor",
+        "sensor_contact_zigbee"
+      ]
+    },
+    {
       "key": "hobeian|TS0021",
       "drivers": [
         "contact_sensor",
@@ -3372,10 +4867,17 @@
       ]
     },
     {
-      "key": "hobeian|TS0026",
+      "key": "hobeian|ts0041",
       "drivers": [
-        "curtain_motor",
-        "soil_sensor"
+        "button_wireless_1",
+        "switch_3gang"
+      ]
+    },
+    {
+      "key": "hobeian|Ts0041",
+      "drivers": [
+        "button_wireless_1",
+        "switch_3gang"
       ]
     },
     {
@@ -3386,15 +4888,38 @@
       ]
     },
     {
-      "key": "hobeian|TS0041A",
+      "key": "hobeian|ts0043",
       "drivers": [
-        "button_wireless_1",
-        "curtain_motor"
+        "sensor_contact_zigbee",
+        "switch_3gang"
+      ]
+    },
+    {
+      "key": "hobeian|Ts0043",
+      "drivers": [
+        "sensor_contact_zigbee",
+        "switch_3gang"
       ]
     },
     {
       "key": "hobeian|TS0043",
       "drivers": [
+        "sensor_contact_zigbee",
+        "switch_3gang"
+      ]
+    },
+    {
+      "key": "hobeian|ts0044",
+      "drivers": [
+        "scene_switch_4",
+        "sensor_contact_zigbee",
+        "switch_3gang"
+      ]
+    },
+    {
+      "key": "hobeian|Ts0044",
+      "drivers": [
+        "scene_switch_4",
         "sensor_contact_zigbee",
         "switch_3gang"
       ]
@@ -3408,21 +4933,46 @@
       ]
     },
     {
-      "key": "hobeian|TS004F",
+      "key": "hobeian|ts004f",
       "drivers": [
         "button_wireless_1",
-        "curtain_motor",
         "presence_sensor_radar",
         "sensor_contact_zigbee",
-        "switch_3gang",
-        "water_leak_sensor"
+        "switch_3gang"
       ]
     },
     {
-      "key": "hobeian|TS0052",
+      "key": "hobeian|Ts004f",
+      "drivers": [
+        "button_wireless_1",
+        "presence_sensor_radar",
+        "sensor_contact_zigbee",
+        "switch_3gang"
+      ]
+    },
+    {
+      "key": "hobeian|TS004F",
+      "drivers": [
+        "button_wireless_1",
+        "presence_sensor_radar",
+        "sensor_contact_zigbee",
+        "switch_3gang"
+      ]
+    },
+    {
+      "key": "hobeian|ts0101",
       "drivers": [
         "curtain_motor",
-        "soil_sensor"
+        "switch_1gang",
+        "switch_3gang"
+      ]
+    },
+    {
+      "key": "hobeian|Ts0101",
+      "drivers": [
+        "curtain_motor",
+        "switch_1gang",
+        "switch_3gang"
       ]
     },
     {
@@ -3434,10 +4984,19 @@
       ]
     },
     {
-      "key": "hobeian|TS0105",
+      "key": "hobeian|ts0111",
       "drivers": [
         "curtain_motor",
-        "soil_sensor"
+        "switch_1gang",
+        "switch_3gang"
+      ]
+    },
+    {
+      "key": "hobeian|Ts0111",
+      "drivers": [
+        "curtain_motor",
+        "switch_1gang",
+        "switch_3gang"
       ]
     },
     {
@@ -3446,6 +5005,26 @@
         "curtain_motor",
         "switch_1gang",
         "switch_3gang"
+      ]
+    },
+    {
+      "key": "hobeian|ts011f",
+      "drivers": [
+        "curtain_motor",
+        "switch_1gang",
+        "switch_2gang",
+        "switch_3gang",
+        "vibration_sensor"
+      ]
+    },
+    {
+      "key": "hobeian|Ts011f",
+      "drivers": [
+        "curtain_motor",
+        "switch_1gang",
+        "switch_2gang",
+        "switch_3gang",
+        "vibration_sensor"
       ]
     },
     {
@@ -3459,11 +5038,38 @@
       ]
     },
     {
+      "key": "hobeian|ts0201",
+      "drivers": [
+        "climate_sensor",
+        "presence_sensor_radar"
+      ]
+    },
+    {
+      "key": "hobeian|Ts0201",
+      "drivers": [
+        "climate_sensor",
+        "presence_sensor_radar"
+      ]
+    },
+    {
       "key": "hobeian|TS0201",
       "drivers": [
         "climate_sensor",
+        "presence_sensor_radar"
+      ]
+    },
+    {
+      "key": "hobeian|ts0202",
+      "drivers": [
         "presence_sensor_radar",
-        "water_leak_sensor"
+        "soil_sensor"
+      ]
+    },
+    {
+      "key": "hobeian|Ts0202",
+      "drivers": [
+        "presence_sensor_radar",
+        "soil_sensor"
       ]
     },
     {
@@ -3471,6 +5077,24 @@
       "drivers": [
         "presence_sensor_radar",
         "soil_sensor"
+      ]
+    },
+    {
+      "key": "hobeian|ts0203",
+      "drivers": [
+        "contact_sensor",
+        "presence_sensor_radar",
+        "sensor_contact_zigbee",
+        "switch_1gang"
+      ]
+    },
+    {
+      "key": "hobeian|Ts0203",
+      "drivers": [
+        "contact_sensor",
+        "presence_sensor_radar",
+        "sensor_contact_zigbee",
+        "switch_1gang"
       ]
     },
     {
@@ -3483,10 +5107,40 @@
       ]
     },
     {
+      "key": "hobeian|ts0207",
+      "drivers": [
+        "rain_sensor",
+        "water_leak_sensor"
+      ]
+    },
+    {
+      "key": "hobeian|Ts0207",
+      "drivers": [
+        "rain_sensor",
+        "water_leak_sensor"
+      ]
+    },
+    {
       "key": "hobeian|TS0207",
       "drivers": [
         "rain_sensor",
         "water_leak_sensor"
+      ]
+    },
+    {
+      "key": "hobeian|ts0215a",
+      "drivers": [
+        "button_wireless_1",
+        "presence_sensor_radar",
+        "switch_3gang"
+      ]
+    },
+    {
+      "key": "hobeian|Ts0215a",
+      "drivers": [
+        "button_wireless_1",
+        "presence_sensor_radar",
+        "switch_3gang"
       ]
     },
     {
@@ -3495,6 +5149,24 @@
         "button_wireless_1",
         "presence_sensor_radar",
         "switch_3gang"
+      ]
+    },
+    {
+      "key": "hobeian|ts0222",
+      "drivers": [
+        "climate_sensor",
+        "illuminance_sensor",
+        "presence_sensor_radar",
+        "soil_sensor"
+      ]
+    },
+    {
+      "key": "hobeian|Ts0222",
+      "drivers": [
+        "climate_sensor",
+        "illuminance_sensor",
+        "presence_sensor_radar",
+        "soil_sensor"
       ]
     },
     {
@@ -3507,10 +5179,19 @@
       ]
     },
     {
-      "key": "hobeian|TS0224",
+      "key": "hobeian|ts0225",
       "drivers": [
-        "curtain_motor",
-        "soil_sensor"
+        "gas_sensor",
+        "illuminance_sensor",
+        "presence_sensor_radar"
+      ]
+    },
+    {
+      "key": "hobeian|Ts0225",
+      "drivers": [
+        "gas_sensor",
+        "illuminance_sensor",
+        "presence_sensor_radar"
       ]
     },
     {
@@ -3529,17 +5210,17 @@
       ]
     },
     {
-      "key": "hobeian|TS0301",
+      "key": "hobeian|Ts0301",
       "drivers": [
         "curtain_motor",
         "gas_sensor"
       ]
     },
     {
-      "key": "hobeian|Ts0601",
+      "key": "hobeian|TS0301",
       "drivers": [
-        "button_wireless_1",
-        "climate_sensor"
+        "curtain_motor",
+        "gas_sensor"
       ]
     },
     {
@@ -3548,7 +5229,40 @@
         "button_wireless_1",
         "climate_sensor",
         "curtain_motor",
-        "gas_sensor"
+        "gas_sensor",
+        "illuminance_sensor",
+        "ir_blaster",
+        "presence_sensor_radar",
+        "rain_sensor",
+        "sensor_contact_zigbee",
+        "siren",
+        "soil_sensor",
+        "switch_1gang",
+        "switch_2gang",
+        "switch_3gang",
+        "vibration_sensor",
+        "water_leak_sensor"
+      ]
+    },
+    {
+      "key": "hobeian|Ts0601",
+      "drivers": [
+        "button_wireless_1",
+        "climate_sensor",
+        "curtain_motor",
+        "gas_sensor",
+        "illuminance_sensor",
+        "ir_blaster",
+        "presence_sensor_radar",
+        "rain_sensor",
+        "sensor_contact_zigbee",
+        "siren",
+        "soil_sensor",
+        "switch_1gang",
+        "switch_2gang",
+        "switch_3gang",
+        "vibration_sensor",
+        "water_leak_sensor"
       ]
     },
     {
@@ -3573,7 +5287,42 @@
       ]
     },
     {
+      "key": "hobeian|ts0601_generic",
+      "drivers": [
+        "curtain_motor",
+        "switch_1gang"
+      ]
+    },
+    {
+      "key": "hobeian|Ts0601_generic",
+      "drivers": [
+        "curtain_motor",
+        "switch_1gang"
+      ]
+    },
+    {
       "key": "hobeian|TS0601_generic",
+      "drivers": [
+        "curtain_motor",
+        "switch_1gang"
+      ]
+    },
+    {
+      "key": "hobeian|TS0601_GENERIC",
+      "drivers": [
+        "curtain_motor",
+        "switch_1gang"
+      ]
+    },
+    {
+      "key": "hobeian|ts0603",
+      "drivers": [
+        "curtain_motor",
+        "switch_1gang"
+      ]
+    },
+    {
+      "key": "hobeian|Ts0603",
       "drivers": [
         "curtain_motor",
         "switch_1gang"
@@ -3587,6 +5336,26 @@
       ]
     },
     {
+      "key": "hobeian|ts0726",
+      "drivers": [
+        "curtain_motor",
+        "sensor_contact_zigbee",
+        "switch_1gang",
+        "switch_2gang",
+        "switch_3gang"
+      ]
+    },
+    {
+      "key": "hobeian|Ts0726",
+      "drivers": [
+        "curtain_motor",
+        "sensor_contact_zigbee",
+        "switch_1gang",
+        "switch_2gang",
+        "switch_3gang"
+      ]
+    },
+    {
       "key": "hobeian|TS0726",
       "drivers": [
         "curtain_motor",
@@ -3597,16 +5366,41 @@
       ]
     },
     {
-      "key": "hobeian|TS0901",
+      "key": "hobeian|ts1002",
       "drivers": [
-        "curtain_motor",
-        "soil_sensor"
+        "scene_switch_4",
+        "switch_3gang"
+      ]
+    },
+    {
+      "key": "hobeian|Ts1002",
+      "drivers": [
+        "scene_switch_4",
+        "switch_3gang"
       ]
     },
     {
       "key": "hobeian|TS1002",
       "drivers": [
         "scene_switch_4",
+        "switch_3gang"
+      ]
+    },
+    {
+      "key": "hobeian|ts110e",
+      "drivers": [
+        "curtain_motor",
+        "presence_sensor_radar",
+        "switch_1gang",
+        "switch_3gang"
+      ]
+    },
+    {
+      "key": "hobeian|Ts110e",
+      "drivers": [
+        "curtain_motor",
+        "presence_sensor_radar",
+        "switch_1gang",
         "switch_3gang"
       ]
     },
@@ -3620,6 +5414,22 @@
       ]
     },
     {
+      "key": "hobeian|ts1201",
+      "drivers": [
+        "ir_blaster",
+        "presence_sensor_radar",
+        "soil_sensor"
+      ]
+    },
+    {
+      "key": "hobeian|Ts1201",
+      "drivers": [
+        "ir_blaster",
+        "presence_sensor_radar",
+        "soil_sensor"
+      ]
+    },
+    {
       "key": "hobeian|TS1201",
       "drivers": [
         "ir_blaster",
@@ -3628,10 +5438,44 @@
       ]
     },
     {
+      "key": "hobeian|ts130f",
+      "drivers": [
+        "curtain_motor",
+        "sensor_contact_zigbee",
+        "switch_1gang",
+        "switch_3gang"
+      ]
+    },
+    {
+      "key": "hobeian|Ts130f",
+      "drivers": [
+        "curtain_motor",
+        "sensor_contact_zigbee",
+        "switch_1gang",
+        "switch_3gang"
+      ]
+    },
+    {
       "key": "hobeian|TS130F",
       "drivers": [
         "curtain_motor",
         "sensor_contact_zigbee",
+        "switch_1gang",
+        "switch_3gang"
+      ]
+    },
+    {
+      "key": "hobeian|ts4100",
+      "drivers": [
+        "curtain_motor",
+        "switch_1gang",
+        "switch_3gang"
+      ]
+    },
+    {
+      "key": "hobeian|Ts4100",
+      "drivers": [
+        "curtain_motor",
         "switch_1gang",
         "switch_3gang"
       ]
@@ -3645,6 +5489,20 @@
       ]
     },
     {
+      "key": "hobeian|ty0201",
+      "drivers": [
+        "climate_sensor",
+        "presence_sensor_radar"
+      ]
+    },
+    {
+      "key": "hobeian|Ty0201",
+      "drivers": [
+        "climate_sensor",
+        "presence_sensor_radar"
+      ]
+    },
+    {
       "key": "hobeian|TY0201",
       "drivers": [
         "climate_sensor",
@@ -3652,7 +5510,23 @@
       ]
     },
     {
+      "key": "hobeian|wsdcgq01lm",
+      "drivers": [
+        "climate_sensor",
+        "presence_sensor_radar",
+        "soil_sensor"
+      ]
+    },
+    {
       "key": "hobeian|WSDCGQ01LM",
+      "drivers": [
+        "climate_sensor",
+        "presence_sensor_radar",
+        "soil_sensor"
+      ]
+    },
+    {
+      "key": "hobeian|wsdcgq11lm",
       "drivers": [
         "climate_sensor",
         "presence_sensor_radar",
@@ -3668,6 +5542,14 @@
       ]
     },
     {
+      "key": "hobeian|wsdcgq12lm",
+      "drivers": [
+        "climate_sensor",
+        "presence_sensor_radar",
+        "soil_sensor"
+      ]
+    },
+    {
       "key": "hobeian|WSDCGQ12LM",
       "drivers": [
         "climate_sensor",
@@ -3676,7 +5558,23 @@
       ]
     },
     {
+      "key": "hobeian|zbm5-1c-120",
+      "drivers": [
+        "curtain_motor",
+        "switch_1gang",
+        "switch_3gang"
+      ]
+    },
+    {
       "key": "hobeian|ZBM5-1C-120",
+      "drivers": [
+        "curtain_motor",
+        "switch_1gang",
+        "switch_3gang"
+      ]
+    },
+    {
+      "key": "hobeian|zbm5-2c-120",
       "drivers": [
         "curtain_motor",
         "switch_1gang",
@@ -3692,6 +5590,14 @@
       ]
     },
     {
+      "key": "hobeian|zbm5-3c-120",
+      "drivers": [
+        "curtain_motor",
+        "switch_1gang",
+        "switch_3gang"
+      ]
+    },
+    {
       "key": "hobeian|ZBM5-3C-120",
       "drivers": [
         "curtain_motor",
@@ -3700,7 +5606,25 @@
       ]
     },
     {
+      "key": "hobeian|zbmini",
+      "drivers": [
+        "curtain_motor",
+        "soil_sensor",
+        "switch_1gang",
+        "switch_3gang"
+      ]
+    },
+    {
       "key": "hobeian|ZBMINI",
+      "drivers": [
+        "curtain_motor",
+        "soil_sensor",
+        "switch_1gang",
+        "switch_3gang"
+      ]
+    },
+    {
+      "key": "hobeian|zbminil2",
       "drivers": [
         "curtain_motor",
         "soil_sensor",
@@ -3718,7 +5642,23 @@
       ]
     },
     {
+      "key": "hobeian|zbminil2-r2",
+      "drivers": [
+        "curtain_motor",
+        "switch_1gang",
+        "switch_3gang"
+      ]
+    },
+    {
       "key": "hobeian|ZBMINIL2-R2",
+      "drivers": [
+        "curtain_motor",
+        "switch_1gang",
+        "switch_3gang"
+      ]
+    },
+    {
+      "key": "hobeian|zbminir",
       "drivers": [
         "curtain_motor",
         "switch_1gang",
@@ -3734,7 +5674,23 @@
       ]
     },
     {
+      "key": "hobeian|zbminir2",
+      "drivers": [
+        "curtain_motor",
+        "switch_1gang",
+        "switch_3gang"
+      ]
+    },
+    {
       "key": "hobeian|ZBMINIR2",
+      "drivers": [
+        "curtain_motor",
+        "switch_1gang",
+        "switch_3gang"
+      ]
+    },
+    {
+      "key": "hobeian|zbminir2-r2",
       "drivers": [
         "curtain_motor",
         "switch_1gang",
@@ -3750,7 +5706,21 @@
       ]
     },
     {
+      "key": "hobeian|zg-102z",
+      "drivers": [
+        "contact_sensor",
+        "sensor_contact_zigbee"
+      ]
+    },
+    {
       "key": "hobeian|ZG-102Z",
+      "drivers": [
+        "contact_sensor",
+        "sensor_contact_zigbee"
+      ]
+    },
+    {
+      "key": "hobeian|zg-102za",
       "drivers": [
         "contact_sensor",
         "sensor_contact_zigbee"
@@ -3764,10 +5734,31 @@
       ]
     },
     {
+      "key": "hobeian|zg-102zl",
+      "drivers": [
+        "contact_sensor",
+        "sensor_contact_zigbee"
+      ]
+    },
+    {
       "key": "hobeian|ZG-102ZL",
       "drivers": [
         "contact_sensor",
         "sensor_contact_zigbee"
+      ]
+    },
+    {
+      "key": "hobeian|ZG-301Z",
+      "drivers": [
+        "curtain_motor",
+        "switch_1gang"
+      ]
+    },
+    {
+      "key": "hobeian|zg-302z1",
+      "drivers": [
+        "curtain_motor",
+        "switch_1gang"
       ]
     },
     {
@@ -3778,12 +5769,11 @@
       ]
     },
     {
-      "key": "hobeian|ZIGSTAR",
+      "key": "zbeacon|TS0601",
       "drivers": [
-        "curtain_motor",
-        "soil_sensor"
+        "doorwindowsensor_4",
+        "plug_smart"
       ]
     }
-  ],
-  "note": "P2728 refresh — heobian≡hobeian; stable-v5 intentional multi-home"
+  ]
 }
