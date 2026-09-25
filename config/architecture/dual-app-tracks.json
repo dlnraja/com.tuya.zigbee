@@ -34,8 +34,8 @@
       "purpose": "Innovation + soak (features + reliability)",
       "cloneHint": "Documents/homey/master",
       "publish": "Auto-Publish on Push → Homey Test",
-      "tipHealthy": "9.0.1243",
-      "tipNote": "P2728 heobian FP CI + Homey mail flood SSOT; Athom ≥#3363"
+      "tipHealthy": "9.0.1244",
+      "tipNote": "P2729 skip IAS enroll on wireless buttons + P2728 heobian FP CI; Athom ≥#3364"
     },
     "stable": {
       "branch": "stable-v5",
@@ -45,8 +45,8 @@
       "purpose": "Reliability LTS only — no feature managers unless human-promoted",
       "cloneHint": "Documents/homey/stable",
       "publish": "Publish Stable → Test (APP_ID=.stable only); P139 no spam republish",
-      "tipHealthy": "5.12.336",
-      "tipNote": "Athom #244 testing; P2725b scene remotes strip BOTH"
+      "tipHealthy": "5.12.338",
+      "tipNote": "P2729 IAS skip BOTH; Athom next after #245 PF cooldown"
     },
     "bastien": {
       "branch": "bastien-home",
@@ -57,8 +57,8 @@
       "cloneHint": "Documents/homey/bastien",
       "publish": "Publish Zigbee Bastien workflow / homey app publish — App ID .bastien only; NEVER Universal or Stable slots",
       "enrichment": "bastien_to_public_only",
-      "tipHealthy": "1.0.99",
-      "tipNote": "Athom #109 testing; P2727 early overlay purge — Homey house may still tip-lag on 1.0.93 until owner Install Test"
+      "tipHealthy": "1.0.100",
+      "tipNote": "P2729 IAS skip + P2727 purge; Athom tip after publish — Homey house Install Test (was tip-lag 1.0.93)"
     }
   },
   "identityNeverCopy": [
