@@ -253,6 +253,9 @@ const SENSOR_CONFIGS = {
     // WHY(P2730 / GH#550 @ 9.0.1243): 0.15m missed small re-moves → motion fails often
     // WHY(P2740 / GH#550 residual): still misses micro re-moves after stillness
     rearmMotionDistanceDeltaM: 0.05,
+    // WHY(P2743 / GH#550): lux steps re-arm motion when DP9 barely moves (walk in place)
+    rearmMotionOnLuxDelta: true,
+    rearmMotionLuxDelta: 12,
     // WHY(P2722): Homey shows ~1.2× tape — ceiling display scale 0.9 (UI only; soft-clear uses pre-scale).
     distanceDisplayScale: 0.9,
     // WHY(P2730 / GH#550): snappier motion after stillness (was 2s/800ms → laggy)

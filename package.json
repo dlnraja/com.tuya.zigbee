@@ -1,6 +1,6 @@
 {
   "name": "com.dlnraja.tuya.zigbee",
-  "version": "9.0.1257",
+  "version": "9.0.1259",
   "description": "Tuya Unified Zigbee - Local-first control with AI automation",
   "main": "app.js",
   "scripts": {
@@ -608,7 +608,9 @@
     "check:p2736": "node --test test/critical/p2736-ts004x-exact-profile-snappy-parity.test.js",
     "check:p2739": "node --test test/critical/p2739-bastien-snappy-wake-no-magic-tx.test.js",
     "check:p2740": "node --test test/critical/p2740-gh550-lux-distance-antiflood.test.js",
-    "check:p2741": "node --test test/critical/p2741-bastien-6bdc3c5e-skip-mcu-sync-remote.test.js"
+    "check:p2741": "node --test test/critical/p2741-bastien-6bdc3c5e-skip-mcu-sync-remote.test.js",
+    "check:p2743": "node --test test/critical/p2743-gh550-551-inbox-treat.test.js",
+    "check:p274x": "npm run check:p2740 && npm run check:p2741 && npm run check:p2743"
   },
   "keywords": [
     "homey",
