@@ -1150,13 +1150,18 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
       this._ceilingColdWatchArmed = true;
       this._ceilingColdWatchTimer = safeSetInterval(this, () => {
         if (this._destroyed) return;
-        // WHY(P2705): lux-only cold still needs DP103 re-query
-        if (!this._ceilingStreamsAreCold() && !this._ceilingLuxIsCold()) return;
-        this.log('[RADAR] P2690/P2705 cold-stream watchdog → re-arm find_switch + requestDPs');
+        // WHY(P2744 / GH#550 C14): measures hung for several minutes — also heal when
+        // any stream went silent ≥90s even if not fully "cold" by both lux+distance.
+        const now = Date.now();
+        const luxAge = this._lastLuxPaintAt ? now - this._lastLuxPaintAt : Infinity;
+        const distAge = this._lastDistancePaintAt ? now - this._lastDistancePaintAt : Infinity;
+        const hung = luxAge > 90_000 || distAge > 90_000;
+        if (!hung && !this._ceilingStreamsAreCold() && !this._ceilingLuxIsCold()) return;
+        this.log('[RADAR] P2690/P2744 cold/hang watchdog → re-arm find_switch + requestDPs');
         this._nudgeCeilingDistanceArmFromLux(
-          this._ceilingStreamsAreCold() ? 'cold-watchdog' : 'lux-cold-watchdog',
+          hung ? 'hang-watchdog' : (this._ceilingStreamsAreCold() ? 'cold-watchdog' : 'lux-cold-watchdog'),
         );
-      }, 60_000);
+      }, 30_000);
     } catch (_e) { /* soft */ }
   }
 
@@ -1754,20 +1759,24 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
       // WHY(P2722 / GH#550): keep pre-scale meters for soft-clear / corroboration /
       // motion re-arm; apply distanceDisplayScale only on Homey UI paint.
       const logicDistance = distance;
-      this._lastDistanceM = logicDistance;
+      // WHY(P2744 / GH#550 C14): mmWave often paints a farther ghost then corrects —
+      // reject upward spikes while human YES and recent samples were trending closer.
+      const gatedDistance = this._gateGhostFartherDistance(logicDistance, config);
+      this._lastDistanceM = gatedDistance;
       this._lastDistancePaintAt = Date.now();
-      this._noteDistanceSample(logicDistance);
+      this._noteDistanceSample(gatedDistance);
       // WHY(P2722): still-present MCU sticks DP1=1 — distance jump while human YES → motion YES
-      this._rearmMotionFromDistanceDelta(logicDistance, config);
+      this._rearmMotionFromDistanceDelta(gatedDistance, config);
+      let paintDistance = gatedDistance;
       const displayScale = Number(config.distanceDisplayScale);
       if (Number.isFinite(displayScale) && displayScale > 0 && displayScale !== 1) {
-        distance = Math.round(logicDistance * displayScale * 100) / 100;
+        paintDistance = Math.round(gatedDistance * displayScale * 100) / 100;
       }
-      const inferred = this._ensureInference().updateDistance(logicDistance);
+      const inferred = this._ensureInference().updateDistance(gatedDistance);
       // WHY(P2509 / Z2M#30785): gkfbdvyx sticks DP1=true while DP9=0m — clear Homey presence
       // WHY(P2640 / GH#550): never zero-clear until a meaningful distance was seen —
       // find_switch OFF paints DP9=0 forever and would wipe lux/DP1 presence.
-      if (config.clearPresenceOnZeroDistance && Number(logicDistance) <= 0.05) {
+      if (config.clearPresenceOnZeroDistance && Number(gatedDistance) <= 0.05) {
         if (this._distanceSeenMeaningful === true) {
           this._commitPresenceAndFlows(false);
         }
@@ -1783,19 +1792,19 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
         }
       } else {
         // WHY(P2584): Occupied mode — DP1 useless; paint Homey presence from distance motion
-        this._applySmartPresenceUnderOccupied(logicDistance, inferred, config);
+        this._applySmartPresenceUnderOccupied(gatedDistance, inferred, config);
       }
       // WHY(P2575 / VicHY #2247 bathroom): DP1 can stick true while empty room distance≈0.
       // Soft clear after sustained zero distance (default 90s) — does not fight P2534
       // instantaneous flip-flop (needs sustained empty, not single DP9=0 frame).
-      this._softClearStuckPresenceOnZeroDistance(logicDistance, config);
+      this._softClearStuckPresenceOnZeroDistance(gatedDistance, config);
       // WHY(P2389): still feed inference every frame; only coalesce Homey capability writes
-      if (this._shouldSkipFloodCalmDp(dpId, logicDistance, config)) {return;}
+      if (this._shouldSkipFloodCalmDp(dpId, gatedDistance, config)) {return;}
       // WHY(P2590 Module 2): meaningful distance while Occupied = sign of life → rearm
       this._nudgeSurvivalWatchdog('distance');
       // WHY(P2599 / VicHY #2252 OCR): keep units string on every paint
       this._ensureDistanceUnitsString('dp9').catch(() => {});
-      return this.safeSetCapabilityValue('measure_luminance.distance', distance).catch(() => {});
+      return this.safeSetCapabilityValue('measure_luminance.distance', paintDistance).catch(() => {});
     }
 
     // B2. Idea #21: Handle multi-zone distance DPs (measure_luminance.distance.zone1/zone2/zone3)
@@ -2386,6 +2395,40 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
    * MCU often skips enum 2 on re-move. Contre quoi: alarm_motion stuck NO while
    * alarm_human YES and DP9 still updates.
    */
+  /**
+   * WHY(P2744 / GH#550 HiepSVG C14 @ 9.0.1250): walk closer → Homey distance first
+   * jumped FARTHER for ~10s then corrected. Multipath ghost + sticky cm÷100 poison.
+   * Keep last painted meters when a sudden farther jump fights a closing trend.
+   */
+  _gateGhostFartherDistance(meters, config) {
+    try {
+      const d = Number(meters);
+      if (!Number.isFinite(d)) return meters;
+      if (config && config.rejectGhostFartherDistance === false) return d;
+      if (this.getCapabilityValue('alarm_human') !== true
+        && this.getCapabilityValue('alarm_motion') !== true) {
+        this._lastGatedDistanceM = d;
+        return d;
+      }
+      const samples = Array.isArray(this._distanceSamples) ? this._distanceSamples : [];
+      const recent = samples.slice(-5);
+      let trendingCloser = false;
+      if (recent.length >= 3) {
+        trendingCloser = recent[recent.length - 1].d <= recent[0].d - 0.2;
+      }
+      const prev = Number(this._lastGatedDistanceM);
+      const jumpUp = Number.isFinite(prev) && d > prev + 0.75;
+      if (jumpUp && trendingCloser) {
+        this.log(`[RADAR] P2744 reject ghost farther ${d.toFixed(2)}m (kept ${prev.toFixed(2)}m)`);
+        return prev;
+      }
+      this._lastGatedDistanceM = d;
+      return d;
+    } catch (_e) {
+      return meters;
+    }
+  }
+
   _rearmMotionFromDistanceDelta(distance, config) {
     try {
       if (!config || config.splitMotionPresence !== true) return false;

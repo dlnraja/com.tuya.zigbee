@@ -28,9 +28,9 @@ describe('P2743 GH#550/#551 inbox treat', () => {
     assert.ok(/P2743 re-arm motion/.test(device));
   });
 
-  it('SanityFilter snaps EMA on lux drop', () => {
+  it('SanityFilter snaps EMA on lux drop / large abs steps', () => {
     const src = fs.readFileSync(path.join(ROOT, 'lib/filter/SanityFilter.js'), 'utf8');
-    assert.ok(/P2743/.test(src));
+    assert.ok(/P2743|P2744/.test(src));
     assert.ok(/state\.ema\s*=\s*rawValue/.test(src));
   });
 

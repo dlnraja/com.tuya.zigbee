@@ -4182,5 +4182,9 @@
   "9.0.1259": {
     "en": "Ceiling radar motion re-arms from lux after stillness (GH#550). TS0043 famkxci2 stays Wireless Button 3 only (GH#551). Update Test; Repair radar / re-pair Generic remotes.",
     "fr": "Radar plafond: motion se rearme via lux apres immobilite (GH#550). TS0043 famkxci2 reste Bouton 3 (GH#551). Maj Test; Repair radar / re-appairer Generique."
+  },
+  "9.0.1260": {
+    "en": "HiepSVG radar: fix lux (real light steps vs noise), distance (no farther-ghost / dm scale), hang re-arm. Update Test ≥9.0.1260; Repair radar once.",
+    "fr": "Radar HiepSVG: lux (vrais changements vs bruit), distance (plus de ghost plus loin / echelle dm), re-arm freeze. Maj Test ≥9.0.1260; Repair une fois."
   }
 }
