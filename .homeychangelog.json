@@ -4040,5 +4040,9 @@
   "1.0.107": {
     "en": "Snappy remotes: skip wake magic/DP TX storm (listen-only). Update Test + Restart.",
     "fr": "Remotes snappy: plus de storm TX magic/DP au wake (listen-only). Maj Test + Redemarrer."
+  },
+  "1.0.109": {
+    "en": "2-button remote Flows: tagged Bouton appuye/double/long/multi + battery changed now fire on snappy TS0042. Update Bastien Test 1.0.109 then Restart once.",
+    "fr": "Flows telecommande 2 boutons: etiquettes Bouton appuye/double/long/multi + batterie changee marchent (TS0042 snappy). Maj Bastien Test 1.0.109 puis Redemarrer une fois."
   }
 }

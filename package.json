@@ -1,6 +1,6 @@
 {
   "name": "com.dlnraja.tuya.zigbee.bastien",
-  "version": "1.0.108",
+  "version": "1.0.109",
   "description": "Private Zigbee house app for Bastien — local Homey Pro only. Learnings promote upstream to Universal Tuya / Stable (never the reverse wholesale).",
   "main": "app.js",
   "scripts": {
@@ -561,7 +561,9 @@
     "check:p2736": "node --test test/critical/p2736-ts004x-exact-profile-snappy-parity.test.js",
     "check:p2737": "node --test test/critical/p2737-bastien-l99-house-plan-locks.test.js",
     "check:p2739": "node --test test/critical/p2739-bastien-snappy-wake-no-magic-tx.test.js",
-    "check:p2741": "node --test test/critical/p2741-bastien-6bdc3c5e-skip-mcu-sync-remote.test.js"
+    "check:p2741": "node --test test/critical/p2741-bastien-6bdc3c5e-skip-mcu-sync-remote.test.js",
+    "check:p2745": "node --test test/critical/p2745-bastien-2btn-tagged-flows.test.js",
+    "check:p274x": "npm run check:p2745"
   },
   "keywords": [
     "homey",
