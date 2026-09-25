@@ -1069,5 +1069,36 @@
       "Optional P2687 history UX"
     ],
     "verdict": "TS004x code path fixed; house residual = tip-lag + LCD re-pair + batteries"
+  },
+  "improvementPlanP2736": {
+    "at": "2026-09-25",
+    "tipGit": "1.0.104",
+    "rootCauseHouse": "TIP_LAG — Homey box often stays on old Test (e.g. 1.0.93) while Athom tip is newer",
+    "codeFix": "P2736 applyTs004xSnappyParity on every DEVICE_PROFILES exact match",
+    "p0": [
+      "On Bastien Homey phone: Apps → Zigbee Bastien → Installer Test 1.0.104",
+      "Restart",
+      "Press remotes",
+      "Re-pair LCD vvmbj if Unknown"
+    ],
+    "p1": [
+      "Soak bi-dir soft UI",
+      "ZG-301Z switch_mode=state if auto-off",
+      "Verify salon 4gang"
+    ],
+    "p2": [
+      "Weekly mesh dump",
+      "Athom soft-continue",
+      "Promote reliability only"
+    ],
+    "shipped": [
+      "P2721",
+      "P2727",
+      "P2729",
+      "P2733",
+      "P2734",
+      "P2735",
+      "P2736"
+    ]
   }
 }
