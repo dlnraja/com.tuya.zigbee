@@ -4025,5 +4025,9 @@
   "1.0.104": {
     "en": "Bastien: all TS0041-43 profiles get snappy parity (no slow exact-mfr trap). Update Test + restart on Bastien Homey.",
     "fr": "Bastien: tous profils TS0041-43 snappy (plus de piege mfr exact lent). Maj Test + restart sur Homey Bastien."
+  },
+  "1.0.105": {
+    "en": "Bastien L99: tip-lag is #1 house risk; remotes snappy+bi-dir locked. Update Test on Bastien Homey + restart.",
+    "fr": "Bastien L99: tip-lag = risque #1 maison; remotes snappy+bi-dir. Maj Test sur Homey Bastien + restart."
   }
 }
