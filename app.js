@@ -182,6 +182,12 @@ class TuyaUnifiedZigbeeApp extends Homey.App {
     this.homey.__tuyaApp = this;
     this.initializeSettings();
 
+    // WHY(P2727 Bastien tip-lag 1.0.93): LiveDataUpdater.start() is deferred
+    // (BootBudget DEFER_MS). Remotes wake before then while leftover
+    // live_data_overlay still sits in Homey settings → heap pressure + TX storm.
+    // Purge SYNCHRONOUSLY before drivers/flow cards so tip ≥1.0.99 heals on boot.
+    try { this._purgeBastienHeapSettingsEarly(); } catch (_e) { /* soft */ }
+
     // P2351/P2373: re-bind soft getDriver on the live ManagerDrivers instance
     // (prototype patch at module load may miss Homey's runtime instance).
     try {
@@ -1661,6 +1667,47 @@ class TuyaUnifiedZigbeeApp extends Homey.App {
         this.experimentalSmartAdapt = this.homey.settings.get('experimental_smart_adapt');
       }
     });
+  }
+
+  /**
+   * P2727 — Bastien-only sync heap/settings heal before deferred LiveDataUpdater.
+   * Contre quoi: tip-lag Homey stays on ≤1.0.93 / overlay leftovers kill remotes.
+   */
+  _purgeBastienHeapSettingsEarly() {
+    let isBastien = false;
+    try {
+      isBastien = /\.bastien\b/i.test(String(this.homey?.manifest?.id || ''));
+    } catch (_e) { /* soft */ }
+    if (!isBastien) return false;
+
+    const unsetKeys = [
+      'live_data_overlay',
+      'live_data_version',
+      // leftover fat caches from tip ≤1.0.82 that survive P2718 skip-only
+      'mfs_db_overlay',
+      'fingerprint_overlay',
+    ];
+    let purged = 0;
+    for (const key of unsetKeys) {
+      try {
+        const v = this.homey.settings.get(key);
+        if (v != null && v !== undefined && v !== '') {
+          this.homey.settings.unset(key);
+          purged += 1;
+        }
+      } catch (_e) { /* soft */ }
+    }
+    // WHY: one-shot boot marker so ButtonDevice / PhysicalButtonMixin can skip
+    // ZCL powerCfg storms even if profile lookup is slow on first wake.
+    try {
+      this.homey.settings.set('bastien_skip_battery_tx', true);
+    } catch (_e) { /* soft */ }
+    if (purged > 0) {
+      this.log(`[BOOT] P2727 Bastien purged ${purged} leftover setting key(s) (heap Contre quoi)`);
+    } else {
+      this.log('[BOOT] P2727 Bastien early heap gate OK (no leftover overlay)');
+    }
+    return true;
   }
 
   async onUninit() {
