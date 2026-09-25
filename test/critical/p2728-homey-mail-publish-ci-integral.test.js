@@ -59,8 +59,8 @@ describe('P2728 Homey mail + publish CI integral', () => {
     const um = String(u).match(/^9\.0\.(\d+)$/);
     const bm = String(b).match(/^1\.0\.(\d+)$/);
     const sm = String(s).match(/^5\.12\.(\d+)$/);
-    assert.ok(um && Number(um[1]) >= 1242, `Universal tipHealthy stale: ${u}`);
-    assert.ok(bm && Number(bm[1]) >= 99, `Bastien tipHealthy stale: ${b}`);
-    assert.ok(sm && Number(sm[1]) >= 336, `Stable tipHealthy stale: ${s}`);
+    assert.ok(um && Number(um[1]) >= 1252, `Universal tipHealthy stale: ${u}`);
+    assert.ok(bm && Number(bm[1]) >= 103, `Bastien tipHealthy stale: ${b}`);
+    assert.ok(sm && Number(sm[1]) >= 339, `Stable tipHealthy stale: ${s}`);
   });
 });

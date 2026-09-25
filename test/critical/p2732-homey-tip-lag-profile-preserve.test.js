@@ -93,8 +93,42 @@ describe('P2732 Homey tip-lag + couple profile preserve', () => {
     const ssot = JSON.parse(fs.readFileSync(path.join(ROOT, 'config/architecture/publish-ssot.json'), 'utf8'));
     const flood = ssot.p139?.gmailFlood2026_09_25;
     assert.ok(flood, 'must record gmailFlood2026_09_25');
-    assert.ok((flood.universalFailed || []).some((x) => /3366|3365/.test(String(x))));
-    assert.ok(flood.liveTip && /3364|9\.0\.1244/.test(String(flood.liveTip)));
+    assert.ok((flood.universalFailed || []).some((x) => /3366|3365|3370/.test(String(x))));
+    assert.ok(flood.liveTip && /3371|3364|9\.0\.(1252|1244)/.test(String(flood.liveTip)));
     assert.ok(ssot.p2732?.tipLagDecision && ssot.p2732?.preserveCoupleKnownBugs);
+    assert.ok(ssot.p2738?.bastienPublish, 'must lock P2738 Bastien soft-expect-first');
+  });
+
+  it('Bastien #114 PF tip-lag soft-expects while #113 healthy (Gmail PM)', () => {
+    const builds = [
+      { id: 114, version: '1.0.105', state: 'processing_failed', stateMeta: 'socket hang up' },
+      { id: 113, version: '1.0.103', state: 'test' },
+    ];
+    const lag = tipLagDecision(builds, '1.0.105');
+    assert.strictEqual(lag.tipLag, true);
+    assert.strictEqual(String(lag.tip.version), '1.0.103');
+    const soft = softExpectDecision(builds, '1.0.105');
+    assert.strictEqual(soft.skip, true);
+    assert.strictEqual(soft.reason, 'tip-lag-expected-pf');
+  });
+
+  it('Universal #3370 PF while #3371 testing does not tip-lag expected 9.0.1252', () => {
+    const builds = [
+      { id: 3371, version: '9.0.1252', state: 'test' },
+      { id: 3370, version: '9.0.1251', state: 'processing_failed', stateMeta: 'socket hang up' },
+    ];
+    const ok = tipLagDecision(builds, '9.0.1252');
+    assert.strictEqual(ok.tipLag, false);
+    assert.strictEqual(String(ok.tip.version), '9.0.1252');
+  });
+
+  it('bastien-publish.yml soft-expect-first + Wait Athom (P2738)', () => {
+    const yml = fs.readFileSync(path.join(ROOT, '.github/workflows/bastien-publish.yml'), 'utf8');
+    assert.ok(/P2738/.test(yml), 'must document P2738');
+    assert.ok(/soft-expect/.test(yml) && /direct-api-publish/.test(yml));
+    assert.ok(/no Homey CLI createBuild|no Homey CLI/.test(yml));
+    assert.ok(/Wait Athom draft ready/.test(yml));
+    assert.ok(/HOMEY_DRAFT_EARLY_FAIL_MS/.test(yml));
+    assert.ok(/draft_ok == 'true'/.test(yml), 'promote must gate on draft_ok');
   });
 });

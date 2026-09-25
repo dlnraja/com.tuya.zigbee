@@ -134,6 +134,7 @@ Homey tip mail for `com.dlnraja.tuya.zigbee`:
 | **2026-09-14** #3186 = **9.0.926 test** healthy; #3184/#3187 PF | Git may be ahead (P2490) | Soft-continue; users update Test ≥9.0.926 |
 | Human wants one retry after hours | `workflow_dispatch` + `force_publish=true` once | Never cancel in-flight publish |
 | **2026-09-23** Gmail flood #3340/#225/#77–80 PF; #3341/#3342/#227/#228/#79 recovered | Concurrent 3-app Athom uploads | **P2696** shared concurrency `athom-developer-api-publish` (master+stable+bastien); no bump-loop |
+| **2026-09-25 PM** Universal #3370 PF → #3371 testing 9.0.1252; Bastien #114 PF → keep #113 testing 1.0.103 | Homey CLI createBuild bypassed soft-expect | **P2738** Bastien soft-expect-first + Wait Athom skip promote; house Install Test ≥1.0.103 (still tip-lag 1.0.93 / diag ed627371) |
 
 Gates / helpers:
 
