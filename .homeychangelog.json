@@ -1,4 +1,8 @@
 {
+  "1.0.108": {
+    "en": "P2741 live: remotes skip MCU sync on wake; devices load OK after tip. UPDATE Bastien Test to 1.0.108 then Restart once.",
+    "fr": "P2741 live: remotes skip sync MCU au wake; appareils chargent. MAJ Bastien Test 1.0.108 puis Redemarrer une fois."
+  },
   "1.0.99": {
     "en": "Remotes dead on 1.0.93: early LIVE-DATA purge + skip battery TX on boot. UPDATE Bastien Test to 1.0.99 then Restart once. Press each remote to wake.",
     "fr": "Telecommandes mortes sur 1.0.93: purge LIVE-DATA au boot + skip TX batterie. MAJ Bastien Test 1.0.99 puis Redemarrer une fois. Appuyer chaque remote."
