@@ -23,5 +23,8 @@
 - Dual-app: **BOTH** (+ Bastien house tip)
 
 ## Chrome force update
-- App Store install picker has no Bastien Pro target (only Dylan Homey / Self-Hosted)
-- Path used: auto-update ON + Restart app after tip lands
+- App Store install picker has no Bastien Pro target (only Dylan Homey / Self-Hosted) — Dylan is guest on Bastien Andrieu account
+- Athom Test confirmed **v1.0.108** (CI verify OK)
+- Box still **v1.0.107** at treat time — auto-update ON + app Restart done; Homey will pull 1.0.108 when Athom pushes to box
+- Devices page loads all rooms; remotes visible (TS0041/42/43)
+- Universal Test tip **9.0.1257** live on Athom
