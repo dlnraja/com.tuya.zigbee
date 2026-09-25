@@ -34,8 +34,8 @@
       "purpose": "Innovation + soak (features + reliability)",
       "cloneHint": "Documents/homey/master",
       "publish": "Auto-Publish on Push → Homey Test",
-      "tipHealthy": "9.0.1255",
-      "tipNote": "LIVE tip 9.0.1255 (P2740 GH#550 lux/distance antiflood + p2517 7dcddnye sacred). Prior tip-lag notes still apply — update Test then re-pair radar."
+      "tipHealthy": "9.0.1256",
+      "tipNote": "LIVE tip 9.0.1256 (P2740 antiflood + collision baseline heal). Update Test + Repair radar."
     },
     "stable": {
       "branch": "stable-v5",
