@@ -4127,5 +4127,9 @@
   "9.0.1236": {
     "en": "Sleepy remotes: settings energy-opt must not configureReporting battery (TX storm). Bastien tip 1.0.95.",
     "fr": "Telecommandes: energy-opt settings ne doit plus configureReporting batterie (TX storm). Bastien tip 1.0.95."
+  },
+  "9.0.1243": {
+    "en": "CI publish heal: HOBEIAN OCR collision keys + tip SSOT (Homey mails). Update Test.",
+    "fr": "Heal CI publish: cles collision OCR HOBEIAN + tip SSOT (mails Homey). Maj Test."
   }
 }

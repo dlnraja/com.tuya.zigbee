@@ -34,8 +34,8 @@
       "purpose": "Innovation + soak (features + reliability)",
       "cloneHint": "Documents/homey/master",
       "publish": "Auto-Publish on Push → Homey Test",
-      "tipHealthy": "9.0.1215",
-      "tipNote": "P2707/P2708 TS004x lean Flow crash-safe + snappy isolate + battery %; P2687 SoftFeature"
+      "tipHealthy": "9.0.1243",
+      "tipNote": "P2728 heobian FP CI + Homey mail flood SSOT; Athom ≥#3363"
     },
     "stable": {
       "branch": "stable-v5",
@@ -45,8 +45,8 @@
       "purpose": "Reliability LTS only — no feature managers unless human-promoted",
       "cloneHint": "Documents/homey/stable",
       "publish": "Publish Stable → Test (APP_ID=.stable only); P139 no spam republish",
-      "tipHealthy": "5.12.322",
-      "tipNote": "P2707/P2708 TS004x lean Flow crash-safe BOTH; no P2687 SoftFeature"
+      "tipHealthy": "5.12.336",
+      "tipNote": "Athom #244 testing; P2725b scene remotes strip BOTH"
     },
     "bastien": {
       "branch": "bastien-home",
@@ -57,8 +57,8 @@
       "cloneHint": "Documents/homey/bastien",
       "publish": "Publish Zigbee Bastien workflow / homey app publish — App ID .bastien only; NEVER Universal or Stable slots",
       "enrichment": "bastien_to_public_only",
-      "tipHealthy": "1.0.83",
-      "tipNote": "P2708 TS004x full feedback matrix live; promote upstream surgically"
+      "tipHealthy": "1.0.99",
+      "tipNote": "Athom #109 testing; P2727 early overlay purge — Homey house may still tip-lag on 1.0.93 until owner Install Test"
     }
   },
   "identityNeverCopy": [

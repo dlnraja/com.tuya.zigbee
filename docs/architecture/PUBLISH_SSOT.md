@@ -38,7 +38,16 @@ Hard-wired in: `auto-publish-on-push.yml`, `auto-fix-and-publish.yml`, `unified-
 Soft: `continuous-flow.yml`, `project-resilience.yml`.  
 Stable track: `publish-stable.yml` runs anti-bot + P2138 + p2288 + p2494 + p2495 before prepare.
 
-## Soft-expect (P2286)
+## Bastien house fleet (P2724–P2727) + Homey tip emails (P2728)
+
+| Signal | Action |
+|--------|--------|
+| Bastien `socket hang up` / `invalid_state` / missing `distance.svg` | House-fleet prune + flow-only-keep + SVG rewrite — do **not** spam republish (P139) |
+| Homey Pro stuck on old tip while Athom testing OK | Owner Install Test from house my.homey — store account may lack Pro ID |
+| Unified CI `NEW COLLISION heobian\|*` while prune green | `fp-collision-check.js` must `heobian≡hobeian` (P2728) |
+
+Gate: `npm run check:p2728` (folded into `check:publish`).
+
 
 Athom races when two publishers hit `createBuild` for the same version.
 
