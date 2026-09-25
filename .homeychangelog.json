@@ -2060,5 +2060,8 @@
   "5.12.337": {
     "en": "CI publish heal: HOBEIAN OCR collision keys (P2728). Update Test.",
     "fr": "Heal CI publish: cles collision OCR HOBEIAN (P2728). Maj Test."
+  },
+  "5.12.338": {
+    "en": "Improved wireless remote reliability (skip IAS enroll storm on scene buttons)."
   }
 }
