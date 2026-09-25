@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-25T06:35:41.748Z",
+  "generatedAt": "2026-09-25T18:06:10.015Z",
   "mode": "apply",
   "crawl": false,
   "phases": [
@@ -8,7 +8,7 @@
       "label": "ai-guard",
       "ok": true,
       "exitCode": 0,
-      "durationMs": 35,
+      "durationMs": 32,
       "tail": "=== AI plan forfait guard (P2227) ===\nmode: forfait | allowPaid: false\nglobal: 0/80 (0%)\nsoftStop: false | hardStop: false | preferLocal: true\n  openai: 0/0 (0%) [PAID-BLOCK]\n  deepseek: 0/0 (0%) [PAID-BLOCK]\n  grok: 0/0 (0%) [PAID-BLOCK]\n  cursor-cloud: 0/0 (0%) [PAID-BLOCK]\nstate: /home/runner/work/com.tuya.zigbee/com.tuya.zigbee/.github/state/ai-plan-guard.json"
     },
     {
@@ -16,7 +16,7 @@
       "label": "scrape-budget",
       "ok": true,
       "exitCode": 0,
-      "durationMs": 28,
+      "durationMs": 31,
       "tail": "{\n  \"ok\": true,\n  \"softStopped\": [],\n  \"capped\": [],\n  \"report\": {\n    \"date\": \"2026-09-25\",\n    \"mode\": \"free_first\",\n    \"hits429\": 0,\n    \"hits403\": 0,\n    \"tiers\": [\n      {\n        \"tier\": \"jina\",\n        \"ok\": true,\n        \"used\": 0,\n        \"cap\": 80,\n        \"remaining\": 80,\n        \"cooldownUntil\": null\n      },\n      {\n        \"tier\": \"microlink\",\n        \"ok\": true,\n        \"used\": 0,\n        \"cap\": 40,\n        \"remaining\": 40,\n        \"cooldownUntil\": null\n      },\n      {\n        \"tier\": \"allorigins\",\n        \"ok\": true,\n        \"used\": 0,\n        \"cap\": 40,\n        \"remaining\": 40,\n        \"cooldownUntil\": null\n      },\n      {\n        \"tier\": \"wayback\",\n        \"ok\": true,\n        \"used\": 0,\n        \"cap\": 20,\n        \"remaining\": 20,\n        \"cooldownUntil\": null\n      },\n      {\n        \"tier\": \"crawl4ai\",\n        \"ok\": true,\n        \"used\": 0,\n        \"cap\": 100,\n        \"remaining\": 100,\n        \"cooldownUntil\": null\n      },\n      {\n        \"tier\": \"firecrawl\",\n        \"ok\": true,\n        \"used\": 0,\n        \"cap\": 3,\n        \"remaining\": 3,\n        \"cooldownUntil\": null\n      },\n      {\n        \"tier\": \"browser\",\n        \"ok\": false,\n        \"reason\": \"disabled\",\n        \"used\": 0,\n        \"cap\": 0,\n        \"remaining\": 0,\n        \"cooldownUntil\": null\n      },\n      {\n        \"tier\": \"direct\",\n        \"ok\": true,\n        \"used\": 0,\n        \"cap\": 2000,\n        \"remaining\": 2000,\n        \"cooldownUntil\": null\n      }\n    ],\n    \"softStopPercent\": 85\n  }\n}"
     },
     {
@@ -24,87 +24,87 @@
       "label": "source-diff",
       "ok": true,
       "exitCode": 0,
-      "durationMs": 821,
-      "tail": "[source-diff] mode=plan project=20075681b99b371d changed=false\n  skip=3 crawl=6 blocked=false\n  z2m: skip-fresh — cache fresh (data/z2m_cache.json, 0h)\n  zha: crawl-missing — no state file\n  blakadder: crawl-missing — no state file\n  deconz: crawl-missing — no state file\n  johan: crawl-missing — no state file\n  forum: skip-unavailable — secrets missing: DISCOURSE_API_KEY\n  gmail: skip-unavailable — secrets missing: GMAIL_EMAIL, GMAIL_APP_PASSWORD\n  cross-ref: run-local — local script stale or forced\n  flow-fleet: run-local — local script stale or forced\n  manifest → /home/runner/work/com.tuya.zigbee/com.tuya.zigbee/.github/state/intelligent-source-manifest.json"
+      "durationMs": 927,
+      "tail": "[source-diff] mode=plan project=d8fbf215ead701c8 changed=false\n  skip=3 crawl=6 blocked=false\n  z2m: skip-fresh — cache fresh (data/z2m_cache.json, 0h)\n  zha: crawl-missing — no state file\n  blakadder: crawl-missing — no state file\n  deconz: crawl-missing — no state file\n  johan: crawl-missing — no state file\n  forum: skip-unavailable — secrets missing: DISCOURSE_API_KEY\n  gmail: skip-unavailable — secrets missing: GMAIL_EMAIL, GMAIL_APP_PASSWORD\n  cross-ref: run-local — local script stale or forced\n  flow-fleet: run-local — local script stale or forced\n  manifest → /home/runner/work/com.tuya.zigbee/com.tuya.zigbee/.github/state/intelligent-source-manifest.json"
     },
     {
       "name": "cross-ref-all-sources",
       "label": "cross-ref",
       "ok": true,
       "exitCode": 0,
-      "durationMs": 1161,
-      "tail": "eless_2)\n  _TZ3000_26fmupbb + TS0601 (driverHint: sensor_contact_zigbee)\n  _TZ3000_2mbfxlzr + TS0601 (driverHint: sensor_contact_zigbee)\n  _TZ3000_303avxxt + TS0601 (driverHint: switch_1gang)\n  _TZ3000_3zofvcaa + TS0601 (driverHint: device_plug_energy)\n  _TZ3000_402vrq2i + TS0601 (driverHint: switch_4_gang_metering)\n  _TZ3000_4ugnzsli + TS0601 (driverHint: sensor_contact_zigbee)\n  _TZ3000_5k5vh43t + TS0601 (driverHint: zigbee_repeater)\n\nMarket-new (external sources, not in driver.compose): 44\n  _TZ3000_7dcddnye + TS0501A (mfs_db,blakadder)\n  _TZ3000_85czd6fy + TS0207 (mfs_db,blakadder)\n  _TZ3000_fa9mlvja + TS0041 (mfs_db,blakadder)\n  _TZ3000_ja5osu5g + ZG-103ZL (interview)\n  _TZ3000_jyupj3fw + TS0006 (mfs_db,blakadder)\n  _TZ3000_kyb656no + TS0207 (mfs_db,blakadder)\n  _TZ3000_lbtpiody + TS0201 (mfs_db,blakadder)\n  _TZ3000_lfa05ajd + TS0201 (mfs_db,blakadder)\n  _TZ3000_nzbm4ad4 + TS0504A (blakadder)\n  _TZ3000_o005nuxx + TS0115 (mfs_db,blakadder)\n  _TZ3000_o4mkahkc + TS0203 (interview)\n  _TZ3000_pzui3skt + TS0041 (mfs_db,blakadder)\n  _TZ3000_rrjr1q0u + TS0043 (blakadder)\n  _TZ3000_ww9i3e0y + TS0207 (mfs_db,blakadder)\n  _TZ3000_yw5tvzsk + TS0043 (blakadder)\n  _TZ3210_19qb27da + TS0501B (blakadder)\n  _TZ3210_1elppmba + TS0504B (blakadder)\n  _TZ3210_4whigl8i + TS0501 (mfs_db,blakadder)\n  _TZ3210_4zinq6io + TS0501B (mfs_db,blakadder)\n  _TZ3210_93gnbdgz + TS0501B (blakadder)\n\nSaved summary to .github/state/mfr-pid-cross-ref.json\nSaved all pairs to .github/state/all-mfr-pid-pairs.json"
+      "durationMs": 1156,
+      "tail": "less_2)\n  _TZ3000_26fmupbb + TS0601 (driverHint: sensor_contact_zigbee)\n  _TZ3000_2mbfxlzr + TS0601 (driverHint: sensor_contact_zigbee)\n  _TZ3000_303avxxt + TS0601 (driverHint: switch_1gang)\n  _TZ3000_3zofvcaa + TS0601 (driverHint: device_plug_energy)\n  _TZ3000_402vrq2i + TS0601 (driverHint: switch_4_gang_metering)\n  _TZ3000_4ugnzsli + TS0601 (driverHint: sensor_contact_zigbee)\n  _TZ3000_5k5vh43t + TS0601 (driverHint: zigbee_repeater)\n\nMarket-new (external sources, not in driver.compose): 43\n  _TZ3000_7dcddnye + TS0501A (mfs_db,blakadder)\n  _TZ3000_85czd6fy + TS0207 (mfs_db,blakadder)\n  _TZ3000_fa9mlvja + TS0041 (mfs_db,blakadder)\n  _TZ3000_ja5osu5g + ZG-103ZL (interview)\n  _TZ3000_jyupj3fw + TS0006 (mfs_db,blakadder)\n  _TZ3000_kyb656no + TS0207 (mfs_db,blakadder)\n  _TZ3000_lbtpiody + TS0201 (mfs_db,blakadder)\n  _TZ3000_lfa05ajd + TS0201 (mfs_db,blakadder)\n  _TZ3000_nzbm4ad4 + TS0504A (blakadder)\n  _TZ3000_o005nuxx + TS0115 (mfs_db,blakadder)\n  _TZ3000_o4mkahkc + TS0203 (interview)\n  _TZ3000_rrjr1q0u + TS0043 (blakadder)\n  _TZ3000_ww9i3e0y + TS0207 (mfs_db,blakadder)\n  _TZ3000_yw5tvzsk + TS0043 (blakadder)\n  _TZ3210_19qb27da + TS0501B (blakadder)\n  _TZ3210_1elppmba + TS0504B (blakadder)\n  _TZ3210_4whigl8i + TS0501 (mfs_db,blakadder)\n  _TZ3210_4zinq6io + TS0501B (mfs_db,blakadder)\n  _TZ3210_93gnbdgz + TS0501B (blakadder)\n  _TZ3210_9q49basr + TS0501B (mfs_db,blakadder)\n\nSaved summary to .github/state/mfr-pid-cross-ref.json\nSaved all pairs to .github/state/all-mfr-pid-pairs.json"
     },
     {
       "name": "market-couples-intake",
       "label": "market-intake",
       "ok": true,
       "exitCode": 0,
-      "durationMs": 1997,
-      "tail": "TEC-L8U78XHN\",\n      \"pid\": \"TS0901\",\n      \"sources\": [\n        \"blakadder\"\n      ],\n      \"meta\": [\n        {\n          \"source\": \"blakadder\",\n          \"vendor\": \"Tuya\",\n          \"category\": \"router\",\n          \"slug\": \"tuya-hs2rnl-ty-html\"\n        }\n      ],\n      \"routeHint\": null,\n      \"tier\": \"none\",\n      \"applySafe\": false,\n      \"reason\": \"no-route\",\n      \"z2mDesc\": null,\n      \"needsReview\": true,\n      \"catalogHit\": true,\n      \"blakadderHit\": true,\n      \"z2mHit\": false,\n      \"knowledgeHit\": false,\n      \"agreement\": 1,\n      \"heuristicSoft\": false\n    }\n  ],\n  \"crawlResults\": [],\n  \"crossRef\": {\n    \"ok\": true,\n    \"tail\": \"blakadder)\\n  _TZ3000_o005nuxx + TS0115 (mfs_db,blakadder)\\n  _TZ3000_o4mkahkc + TS0203 (interview)\\n  _TZ3000_pzui3skt + TS0041 (mfs_db,blakadder)\\n  _TZ3000_rrjr1q0u + TS0043 (blakadder)\\n  _TZ3000_ww9i3e0y + TS0207 (mfs_db,blakadder)\\n  _TZ3000_yw5tvzsk + TS0043 (blakadder)\\n  _TZ3210_19qb27da + TS0501B (blakadder)\\n  _TZ3210_1elppmba + TS0504B (blakadder)\\n  _TZ3210_4whigl8i + TS0501 (mfs_db,blakadder)\\n  _TZ3210_4zinq6io + TS0501B (mfs_db,blakadder)\\n  _TZ3210_93gnbdgz + TS0501B (blakadder)\\n\\nSaved summary to .github/state/mfr-pid-cross-ref.json\\nSaved all pairs to .github/state/all-mfr-pid-pairs.json\"\n  },\n  \"apply\": {\n    \"ok\": true,\n    \"tail\": \"=== apply-market-couples ===\\nMode: APPLY\\nWould/did apply: 0\\nSkipped: 44\\nReport: /home/runner/work/com.tuya.zigbee/com.tuya.zigbee/.github/state/market-couples/apply-report.json\"\n  }\n}"
+      "durationMs": 2069,
+      "tail": "TEC-L8U78XHN\",\n      \"pid\": \"TS0901\",\n      \"sources\": [\n        \"blakadder\"\n      ],\n      \"meta\": [\n        {\n          \"source\": \"blakadder\",\n          \"vendor\": \"Tuya\",\n          \"category\": \"router\",\n          \"slug\": \"tuya-hs2rnl-ty-html\"\n        }\n      ],\n      \"routeHint\": null,\n      \"tier\": \"none\",\n      \"applySafe\": false,\n      \"reason\": \"no-route\",\n      \"z2mDesc\": null,\n      \"needsReview\": true,\n      \"catalogHit\": true,\n      \"blakadderHit\": true,\n      \"z2mHit\": false,\n      \"knowledgeHit\": false,\n      \"agreement\": 1,\n      \"heuristicSoft\": false\n    }\n  ],\n  \"crawlResults\": [],\n  \"crossRef\": {\n    \"ok\": true,\n    \"tail\": \"lakadder)\\n  _TZ3000_o005nuxx + TS0115 (mfs_db,blakadder)\\n  _TZ3000_o4mkahkc + TS0203 (interview)\\n  _TZ3000_rrjr1q0u + TS0043 (blakadder)\\n  _TZ3000_ww9i3e0y + TS0207 (mfs_db,blakadder)\\n  _TZ3000_yw5tvzsk + TS0043 (blakadder)\\n  _TZ3210_19qb27da + TS0501B (blakadder)\\n  _TZ3210_1elppmba + TS0504B (blakadder)\\n  _TZ3210_4whigl8i + TS0501 (mfs_db,blakadder)\\n  _TZ3210_4zinq6io + TS0501B (mfs_db,blakadder)\\n  _TZ3210_93gnbdgz + TS0501B (blakadder)\\n  _TZ3210_9q49basr + TS0501B (mfs_db,blakadder)\\n\\nSaved summary to .github/state/mfr-pid-cross-ref.json\\nSaved all pairs to .github/state/all-mfr-pid-pairs.json\"\n  },\n  \"apply\": {\n    \"ok\": true,\n    \"tail\": \"=== apply-market-couples ===\\nMode: APPLY\\nWould/did apply: 0\\nSkipped: 43\\nReport: /home/runner/work/com.tuya.zigbee/com.tuya.zigbee/.github/state/market-couples/apply-report.json\"\n  }\n}"
     },
     {
       "name": "apply-market-couples",
       "label": "market-apply",
       "ok": true,
       "exitCode": 0,
-      "durationMs": 484,
-      "tail": "=== apply-market-couples ===\nMode: APPLY\nWould/did apply: 0\nSkipped: 44\nReport: /home/runner/work/com.tuya.zigbee/com.tuya.zigbee/.github/state/market-couples/apply-report.json"
+      "durationMs": 466,
+      "tail": "=== apply-market-couples ===\nMode: APPLY\nWould/did apply: 0\nSkipped: 43\nReport: /home/runner/work/com.tuya.zigbee/com.tuya.zigbee/.github/state/market-couples/apply-report.json"
     },
     {
       "name": "enrich-market-colocate",
       "label": "colocate",
       "ok": true,
       "exitCode": 0,
-      "durationMs": 444,
-      "tail": "=== enrich-market-colocate P2319 ===\nMode: APPLY\nApplied/would: 0\nAlready colocated: 0\nSkipped: 44\nReport: /home/runner/work/com.tuya.zigbee/com.tuya.zigbee/reports/market-colocate-enrich-2026-08-30.json"
+      "durationMs": 370,
+      "tail": "=== enrich-market-colocate P2319 ===\nMode: APPLY\nApplied/would: 0\nAlready colocated: 0\nSkipped: 43\nReport: /home/runner/work/com.tuya.zigbee/com.tuya.zigbee/reports/market-colocate-enrich-2026-08-30.json"
     },
     {
       "name": "multi-source-enrich",
       "label": "multi-source",
       "ok": true,
       "exitCode": 0,
-      "durationMs": 11505,
-      "tail": "ce] ✓ 1c-silent-enrichment-users (0.1s)\n[multi-source] ▶ 2-forum-ai-paste-gate\n[multi-source] ✓ 2-forum-ai-paste-gate (0.0s)\n[multi-source] ▶ 3-apply-forum-known-routes\n[multi-source] ✓ 3-apply-forum-known-routes (0.1s)\n[multi-source] ▶ 4-sacred-lot2\n[multi-source] ✓ 4-sacred-lot2 (0.5s)\n[multi-source] ▶ 5-sacred-lot3\n[multi-source] ✓ 5-sacred-lot3 (1.1s)\n[multi-source] ▶ 6-blakadder-new\n[multi-source] ✓ 6-blakadder-new (0.0s)\n[multi-source] ▶ 6b-market-couples-intake\n[multi-source] ✓ 6b-market-couples-intake (1.6s)\n[multi-source] ▶ 6c-market-couples-apply\n[multi-source] ✓ 6c-market-couples-apply (0.4s)\n[multi-source] ▶ 7-infer-enrich-dry\n[multi-source] ✓ 7-infer-enrich-dry (2.6s)\n[multi-source] ▶ 8-sacred-couple-dry-gate\n[multi-source] ✓ 8-sacred-couple-dry-gate (1.1s)\n[multi-source] ▶ 9-collision-resolve-dry\n[multi-source] ✓ 9-collision-resolve-dry (0.6s)\n[multi-source] ▶ 10-case-variants\n[multi-source] ✓ 10-case-variants (0.1s)\n[multi-source] ▶ 10b-cross-project-reimpl-gate\n[multi-source] ✓ 10b-cross-project-reimpl-gate (0.0s)\n[multi-source] ▶ 10c-dual-claim-compose-gate\n[multi-source] ✓ 10c-dual-claim-compose-gate (0.1s)\n[multi-source] ▶ 10d-align-mfs-db-intelligent-check\n[multi-source] ✓ 10d-align-mfs-db-intelligent-check (1.8s)\n[multi-source] ▶ 11-coverage-snapshot\n[multi-source] ✓ 11-coverage-snapshot (0.0s)\n[multi-source] Report → /home/runner/work/com.tuya.zigbee/com.tuya.zigbee/.github/state/multi-source/enrich-report.json\n[multi-source] Mode=apply phases=18 ok=true"
+      "durationMs": 149587,
+      "tail": "ce] ✓ 1c-silent-enrichment-users (0.2s)\n[multi-source] ▶ 2-forum-ai-paste-gate\n[multi-source] ✓ 2-forum-ai-paste-gate (0.0s)\n[multi-source] ▶ 3-apply-forum-known-routes\n[multi-source] ✓ 3-apply-forum-known-routes (0.1s)\n[multi-source] ▶ 4-sacred-lot2\n[multi-source] ✓ 4-sacred-lot2 (0.6s)\n[multi-source] ▶ 5-sacred-lot3\n[multi-source] ✓ 5-sacred-lot3 (1.3s)\n[multi-source] ▶ 6-blakadder-new\n[multi-source] ✓ 6-blakadder-new (0.0s)\n[multi-source] ▶ 6b-market-couples-intake\n[multi-source] ✓ 6b-market-couples-intake (1.9s)\n[multi-source] ▶ 6c-market-couples-apply\n[multi-source] ✓ 6c-market-couples-apply (0.7s)\n[multi-source] ▶ 7-infer-enrich-dry\n[multi-source] ✓ 7-infer-enrich-dry (2.7s)\n[multi-source] ▶ 8-sacred-couple-dry-gate\n[multi-source] ✓ 8-sacred-couple-dry-gate (1.2s)\n[multi-source] ▶ 9-collision-resolve-dry\n[multi-source] ✓ 9-collision-resolve-dry (0.6s)\n[multi-source] ▶ 10-case-variants\n[multi-source] ✓ 10-case-variants (0.1s)\n[multi-source] ▶ 10b-cross-project-reimpl-gate\n[multi-source] ✓ 10b-cross-project-reimpl-gate (0.0s)\n[multi-source] ▶ 10c-dual-claim-compose-gate\n[multi-source] ✓ 10c-dual-claim-compose-gate (0.1s)\n[multi-source] ▶ 10d-align-mfs-db-intelligent-check\n[multi-source] ✓ 10d-align-mfs-db-intelligent-check (1.8s)\n[multi-source] ▶ 11-coverage-snapshot\n[multi-source] ✓ 11-coverage-snapshot (0.0s)\n[multi-source] Report → /home/runner/work/com.tuya.zigbee/com.tuya.zigbee/.github/state/multi-source/enrich-report.json\n[multi-source] Mode=apply phases=18 ok=true"
     },
     {
       "name": "infer-enrich-apply",
       "label": "infer-enrich",
       "ok": true,
       "exitCode": 0,
-      "durationMs": 2694,
-      "tail": "  4817\n  · DID _tze200_8eazvzo6 + ts0601 → climate_sensor (95) [mfs_curated]\n  · DID _tze200_2imwyigp + ts0203 → contact_sensor (92) [pid_TS0203_contact]\n  · DID _tze204_2imwyigp + ts0203 → contact_sensor (92) [pid_TS0203_contact]\n  · DID _tz3210_jaap6jeb + ts0203 → contact_sensor (92) [pid_TS0203_contact]\n  · DID _tze200_u6x1zyv2 + ts0203 → contact_sensor (92) [pid_TS0203_contact]\n  · DID _tze200_j1xl73iw + TS0302 → curtain_motor (95) [mfs_curated]\n  · DID _TZE200_J1XL73IW + 01MINIZB → curtain_motor (95) [mfs_curated]\n  · DID _TZE200_J1XL73IW + AM02 → curtain_motor (95) [mfs_curated]\n  · DID _TZE200_J1XL73IW + BASICZBR3 → curtain_motor (95) [mfs_curated]\n  · DID _TZE200_J1XL73IW + DS421 → curtain_motor (95) [mfs_curated]\n  · DID _TZE200_J1XL73IW + DS82 → curtain_motor (95) [mfs_curated]\n  · DID _TZE200_J1XL73IW + E1757 → curtain_motor (95) [mfs_curated]\nReview samples:\n  · _tz3000_26fmupbb + TS0601 → sensor_contact_zigbee (95)\n  · _tz3000_2mbfxlzr + TS0601 → sensor_contact_zigbee (95)\n  · _tz3000_2mbfxlzr + AY-101Z → sensor_contact_zigbee (95)\n  · _tz3000_402jjyro + TS0601 → sensor_contact_zigbee (95)\n  · _tz3000_996rpfy6 + TS0601 → sensor_contact_zigbee (95)\n  · _tz3000_996rpfy6 + AY-101Z → sensor_contact_zigbee (95)\n  · _tz3000_bpkijo14 + TS0601 → sensor_contact_zigbee (95)\n  · _tz3000_n2egfsli + TS0601 → sensor_contact_water (95)\nReport: /home/runner/work/com.tuya.zigbee/com.tuya.zigbee/.github/state/infer-enrich-report.json\n═══════════════════════════════════════════════"
+      "durationMs": 2797,
+      "tail": "  4632\n  · DID _tze200_8eazvzo6 + ts0601 → climate_sensor (95) [mfs_curated]\n  · DID _tze200_2imwyigp + ts0203 → contact_sensor (92) [pid_TS0203_contact]\n  · DID _tze204_2imwyigp + ts0203 → contact_sensor (92) [pid_TS0203_contact]\n  · DID _tz3210_jaap6jeb + ts0203 → contact_sensor (92) [pid_TS0203_contact]\n  · DID _tze200_u6x1zyv2 + ts0203 → contact_sensor (92) [pid_TS0203_contact]\n  · DID _tze200_j1xl73iw + TS0302 → curtain_motor (95) [mfs_curated]\n  · DID _TZE200_J1XL73IW + 01MINIZB → curtain_motor (95) [mfs_curated]\n  · DID _TZE200_J1XL73IW + AM02 → curtain_motor (95) [mfs_curated]\n  · DID _TZE200_J1XL73IW + BASICZBR3 → curtain_motor (95) [mfs_curated]\n  · DID _TZE200_J1XL73IW + DS421 → curtain_motor (95) [mfs_curated]\n  · DID _TZE200_J1XL73IW + DS82 → curtain_motor (95) [mfs_curated]\n  · DID _TZE200_J1XL73IW + E1757 → curtain_motor (95) [mfs_curated]\nReview samples:\n  · _tz3000_26fmupbb + TS0601 → sensor_contact_zigbee (95)\n  · _tz3000_2mbfxlzr + TS0601 → sensor_contact_zigbee (95)\n  · _tz3000_2mbfxlzr + AY-101Z → sensor_contact_zigbee (95)\n  · _tz3000_402jjyro + TS0601 → sensor_contact_zigbee (95)\n  · _tz3000_996rpfy6 + TS0601 → sensor_contact_zigbee (95)\n  · _tz3000_996rpfy6 + AY-101Z → sensor_contact_zigbee (95)\n  · _tz3000_bpkijo14 + TS0601 → sensor_contact_zigbee (95)\n  · _tz3000_n2egfsli + TS0601 → sensor_contact_water (95)\nReport: /home/runner/work/com.tuya.zigbee/com.tuya.zigbee/.github/state/infer-enrich-report.json\n═══════════════════════════════════════════════"
     },
     {
       "name": "curtain-couples",
       "label": "curtain",
       "ok": true,
       "exitCode": 0,
-      "durationMs": 54,
-      "tail": "[apply-curtain-couples] candidates=116 toAdd=1 strip_curtain=2\n  + _TZE204_ycke4deo (TS0601_cover_10) [z2m_herdsman]\n[apply-curtain-couples] strip curtain_motor: 2 rows (tilt/module/shutter/forbidden)\n  → curtain_module_2_gang: _TZ3000_j1xl73iw\n  → curtain_module_2_gang: _TZ3000_l6iqph4f\n[apply-curtain-couples] APPLIED +1 mfrs, -2 stripped, curtain total=1099"
+      "durationMs": 67,
+      "tail": "[apply-curtain-couples] candidates=153 toAdd=4 strip_curtain=2\n  + _TZE200_jfw0a4aa (EPJ-ZB) [live-z2m-crawl]\n  + _TZE200_npj9bug3 (M515EGBZTN) [live-z2m-crawl]\n  + _TZE200_shkxsgis (ZM25TQ) [live-z2m-crawl]\n  + _TZE204_shkxsgis (ZM25TQ) [live-z2m-crawl]\n[apply-curtain-couples] strip curtain_motor: 2 rows (tilt/module/shutter/forbidden)\n  → curtain_module_2_gang: _TZ3000_j1xl73iw\n  → curtain_module_2_gang: _TZ3000_l6iqph4f\n[apply-curtain-couples] APPLIED +4 mfrs, -2 stripped, curtain total=1118"
     },
     {
       "name": "align-mfs-apply",
       "label": "align-mfs",
       "ok": true,
       "exitCode": 0,
-      "durationMs": 2114,
-      "tail": "align-mfs-db-intelligent: changes=4 skipped=64 high=2 (APPLIED)\nbyAction: {\"registry_compose_strip_couple_mfr\":2,\"registry_compose_strip\":2}\n  [medium] registry_compose_strip_couple_mfr _TZE200_8eazvzo6 climate_sensor→switch_wall_6gang\n  [high] registry_compose_strip _TZE200_2imwyigp contact_sensor→switch_3gang\n  [high] registry_compose_strip _TZ3210_jaap6jeb contact_sensor→bulb_rgbw\n  [medium] registry_compose_strip_couple_mfr _TZE200_nkjintbl switch_2gang→\nskipped (ambiguous/report-only): 64\n  registry_driver_missing p2605-nkjintbl-tze200-not-switch2gang-not-btn-plug  \n  registry_driver_missing p2509-invent-junk-do-not-lock  \n  registry_enrich_only p2317-cvis4qmw-ts0006-6gang  \n  registry_enrich_only p2317-g9chy2ib-ts0003-3gang  \n  registry_enrich_only p2317-etufnltx-ts1002-foria  \n  registry_enrich_only p2347-gabriel-zemismart-cartesian-doc-only  \n  registry_empty_mfr p2415-zg204zv-tze200-presence  \n  registry_empty_mfr p2415-zs301z-soil  \n  registry_driver_missing p2517-krwtzhfd-ts004f-not-leak  \n  registry_empty_mfr z2m-o4mkahkc-ts0202-motion  \n  registry_empty_mfr z2m-ksz749x8-ts0601-climate  \n  registry_empty_mfr z2m-ksz749x8-tze204-ts0601-climate  \n  registry_empty_mfr p2630-axpdxqgu-ts0041-interview-clusters  \n  registry_empty_mfr p2631-ewelink-7014-climate-only-mesh  \n  registry_empty_mfr p2633-adndolvx-ts0041-phantom-ep-firmware"
+      "durationMs": 2168,
+      "tail": "m] registry_compose_strip_couple_mfr _TZE200_npj9bug3 curtain_motor→soil_sensor\n  [medium] registry_compose_strip_couple_mfr _TZE204_shkxsgis curtain_motor→wall_switch_4_gang_tuya\n  [medium] registry_compose_strip_couple_mfr _TZE200_shkxsgis curtain_motor→wall_switch_4_gang_tuya\n  [medium] registry_compose_strip_couple_mfr _TZE200_8eazvzo6 climate_sensor→switch_wall_6gang\n  [high] registry_compose_strip _TZE200_2imwyigp contact_sensor→switch_3gang\n  [high] registry_compose_strip _TZ3210_jaap6jeb contact_sensor→bulb_rgbw\n  [medium] registry_compose_strip_couple_mfr _TZE200_nkjintbl switch_2gang→\nskipped (ambiguous/report-only): 64\n  registry_driver_missing p2605-nkjintbl-tze200-not-switch2gang-not-btn-plug  \n  registry_driver_missing p2509-invent-junk-do-not-lock  \n  registry_enrich_only p2317-cvis4qmw-ts0006-6gang  \n  registry_enrich_only p2317-g9chy2ib-ts0003-3gang  \n  registry_enrich_only p2317-etufnltx-ts1002-foria  \n  registry_enrich_only p2347-gabriel-zemismart-cartesian-doc-only  \n  registry_empty_mfr p2415-zg204zv-tze200-presence  \n  registry_empty_mfr p2415-zs301z-soil  \n  registry_driver_missing p2517-krwtzhfd-ts004f-not-leak  \n  registry_empty_mfr z2m-o4mkahkc-ts0202-motion  \n  registry_empty_mfr z2m-ksz749x8-ts0601-climate  \n  registry_empty_mfr z2m-ksz749x8-tze204-ts0601-climate  \n  registry_empty_mfr p2630-axpdxqgu-ts0041-interview-clusters  \n  registry_empty_mfr p2631-ewelink-7014-climate-only-mesh  \n  registry_empty_mfr p2633-adndolvx-ts0041-phantom-ep-firmware"
     },
     {
       "name": "sync-compose-mfs",
       "label": "sync-mfs",
       "ok": true,
       "exitCode": 0,
-      "durationMs": 3806,
-      "tail": "sync-compose-to-mfs-db: 13 change(s) (APPLY)\nbyAction: {\n  merge_wrong_prefix: 2,\n  known_correction: 3,\n  prune_modelIds: 7,\n  fix_driverId: 1\n}\nWritten: /home/runner/work/com.tuya.zigbee/com.tuya.zigbee/data/mfs_db.json"
+      "durationMs": 4081,
+      "tail": "sync-compose-to-mfs-db: 24 change(s) (APPLY)\nbyAction: {\n  merge_wrong_prefix: 2,\n  known_correction: 3,\n  prune_modelIds: 18,\n  fix_driverId: 1\n}\nWritten: /home/runner/work/com.tuya.zigbee/com.tuya.zigbee/data/mfs_db.json"
     },
     {
       "name": "harden-mfs-db",
       "label": "harden-mfs",
       "ok": true,
       "exitCode": 0,
-      "durationMs": 7895,
+      "durationMs": 8522,
       "tail": "=== harden-mfs-db (P2368) ===\n  ✓ mfs-db-dedupe\n  ✓ sync-compose-to-mfs-db\n  ✓ enrich-mfs-p2295\n  ✓ align-mfs-db-intelligent\n  ✓ compose-mfsdb-class-guard\n  ✓ p2138-sacred-couple-gate\n  ✓ p2368-mfs-test\nReport: /home/runner/work/com.tuya.zigbee/com.tuya.zigbee/reports/mfs-harden-latest.json"
     },
     {
@@ -112,7 +112,7 @@
       "label": "harden-unknown",
       "ok": true,
       "exitCode": 0,
-      "durationMs": 434,
+      "durationMs": 443,
       "tail": "=== harden-unknown-zigbee (P2366) ===\nMode: APPLY\nCompose changes: 0\nSacred-keep adds: 0\n  ✓ case-variants\n  ✓ sync-appjson-zigbee\n  ✓ p2138-gate\nReport: /home/runner/work/com.tuya.zigbee/com.tuya.zigbee/reports/unknown-zigbee-harden-latest.json"
     },
     {
@@ -120,7 +120,7 @@
       "label": "settings",
       "ok": true,
       "exitCode": 0,
-      "durationMs": 76,
+      "durationMs": 77,
       "tail": "enrich-driver-settings-intelligent: 0 driver(s) to update (apply=true)"
     },
     {
@@ -128,15 +128,15 @@
       "label": "driver-class",
       "ok": true,
       "exitCode": 0,
-      "durationMs": 7240,
-      "tail": "{\n  \"ok\": true,\n  \"totals\": {\n    \"drivers\": 434,\n    \"withGaps\": 30,\n    \"mfrEntries\": 18778,\n    \"flowTriggers\": 3590\n  },\n  \"classes\": {\n    \"button\": 54,\n    \"socket\": 108,\n    \"switch\": 9,\n    \"sensor\": 122,\n    \"light\": 53,\n    \"curtain\": 9,\n    \"thermostat\": 31,\n    \"meter\": 3,\n    \"fan\": 6,\n    \"lock\": 5,\n    \"siren\": 6,\n    \"ir\": 1,\n    \"wifi\": 9,\n    \"garagedoor\": 2,\n    \"heater\": 2,\n    \"windowcoverings\": 1,\n    \"other\": 13\n  },\n  \"out\": \"/home/runner/work/com.tuya.zigbee/com.tuya.zigbee/reports/driver-class-enrich-2026-09-25\"\n}"
+      "durationMs": 7333,
+      "tail": "{\n  \"ok\": true,\n  \"totals\": {\n    \"drivers\": 434,\n    \"withGaps\": 30,\n    \"mfrEntries\": 18794,\n    \"flowTriggers\": 3590\n  },\n  \"classes\": {\n    \"button\": 54,\n    \"socket\": 108,\n    \"switch\": 9,\n    \"sensor\": 122,\n    \"light\": 53,\n    \"curtain\": 9,\n    \"thermostat\": 31,\n    \"meter\": 3,\n    \"fan\": 6,\n    \"lock\": 5,\n    \"siren\": 6,\n    \"ir\": 1,\n    \"wifi\": 9,\n    \"garagedoor\": 2,\n    \"heater\": 2,\n    \"windowcoverings\": 1,\n    \"other\": 13\n  },\n  \"out\": \"/home/runner/work/com.tuya.zigbee/com.tuya.zigbee/reports/driver-class-enrich-2026-09-25\"\n}"
     },
     {
       "name": "flow-fleet-enrich-apply",
       "label": "flow-fleet",
       "ok": true,
       "exitCode": 0,
-      "durationMs": 1591,
+      "durationMs": 1704,
       "tail": "iator_valve_smart\\\",\\n      \\\"skip\\\": \\\"ok\\\"\\n    },\\n    {\\n      \\\"id\\\": \\\"smart_heater\\\",\\n      \\\"skip\\\": \\\"ok\\\"\\n    },\\n    {\\n      \\\"id\\\": \\\"smart_heater_controller\\\",\\n      \\\"skip\\\": \\\"ok\\\"\\n    },\\n    {\\n      \\\"id\\\": \\\"hybrid_heater_thermostat\\\",\\n      \\\"skip\\\": \\\"ok\\\"\\n    },\\n    {\\n      \\\"id\\\": \\\"climate_sensor_plug\\\",\\n      \\\"skip\\\": \\\"ok\\\"\\n    },\\n    {\\n      \\\"id\\\": \\\"contact_sensor_plug\\\",\\n      \\\"skip\\\": \\\"ok\\\"\\n    }\\n  ]\\n}\"\n    },\n    {\n      \"label\": \"button-flow-harvest\",\n      \"ok\": true,\n      \"exitCode\": 0,\n      \"tail\": \"ers\\\": 34\\n    },\\n    {\\n      \\\"driverId\\\": \\\"wall_remote_6_gang\\\",\\n      \\\"triggers\\\": 34\\n    },\\n    {\\n      \\\"driverId\\\": \\\"button_wireless_smart\\\",\\n      \\\"triggers\\\": 29\\n    },\\n    {\\n      \\\"driverId\\\": \\\"button_wireless_4\\\",\\n      \\\"triggers\\\": 28\\n    },\\n    {\\n      \\\"driverId\\\": \\\"button_wireless_4_ts0041\\\",\\n      \\\"triggers\\\": 25\\n    },\\n    {\\n      \\\"driverId\\\": \\\"remote_button_wireless_handheld\\\",\\n      \\\"triggers\\\": 25\\n    },\\n    {\\n      \\\"driverId\\\": \\\"handheld_remote_4_buttons\\\",\\n      \\\"triggers\\\": 24\\n    },\\n    {\\n      \\\"driverId\\\": \\\"wall_remote_4_gang\\\",\\n      \\\"triggers\\\": 24\\n    },\\n    {\\n      \\\"driverId\\\": \\\"button_wireless_3\\\",\\n      \\\"triggers\\\": 21\\n    },\\n    {\\n      \\\"driverId\\\": \\\"button_wireless_switch\\\",\\n      \\\"triggers\\\": 20\\n    },\\n    {\\n      \\\"driverId\\\": \\\"remote_button_emergency_sos\\\",\\n      \\\"triggers\\\": 20\\n    }\\n  ]\\n}\"\n    }\n  ],\n  \"topChanges\": []\n}"
     },
     {
@@ -144,15 +144,15 @@
       "label": "source-manifest",
       "ok": true,
       "exitCode": 0,
-      "durationMs": 760,
-      "tail": "[source-diff] mode=plan project=9816898d794b6d7c changed=true\n  skip=3 crawl=6 blocked=false\n  z2m: skip-fresh — cache fresh (data/z2m_cache.json, 0h)\n  zha: crawl-missing — no state file\n  blakadder: crawl-missing — no state file\n  deconz: crawl-missing — no state file\n  johan: crawl-missing — no state file\n  forum: skip-unavailable — secrets missing: DISCOURSE_API_KEY\n  gmail: skip-unavailable — secrets missing: GMAIL_EMAIL, GMAIL_APP_PASSWORD\n  cross-ref: run-local — project fingerprint changed — cross-ref only\n  flow-fleet: run-local — local script stale or forced\n  manifest → /home/runner/work/com.tuya.zigbee/com.tuya.zigbee/.github/state/intelligent-source-manifest.json"
+      "durationMs": 785,
+      "tail": "[source-diff] mode=plan project=acd51527eba8f9ca changed=true\n  skip=3 crawl=6 blocked=false\n  z2m: skip-fresh — cache fresh (data/z2m_cache.json, 0.1h)\n  zha: crawl-missing — no state file\n  blakadder: crawl-missing — no state file\n  deconz: crawl-missing — no state file\n  johan: crawl-missing — no state file\n  forum: skip-unavailable — secrets missing: DISCOURSE_API_KEY\n  gmail: skip-unavailable — secrets missing: GMAIL_EMAIL, GMAIL_APP_PASSWORD\n  cross-ref: run-local — project fingerprint changed — cross-ref only\n  flow-fleet: run-local — local script stale or forced\n  manifest → /home/runner/work/com.tuya.zigbee/com.tuya.zigbee/.github/state/intelligent-source-manifest.json"
     },
     {
       "name": "button-flow-harvest-apply",
       "label": "button-harvest",
       "ok": true,
       "exitCode": 0,
-      "durationMs": 1300,
+      "durationMs": 1378,
       "tail": "rivers\": 52,\n  \"appLevelButtonTriggers\": [\n    \"button_pressed\",\n    \"button_double_press\",\n    \"button_long_press\",\n    \"button_triple_clicked\",\n    \"button_multi_press\",\n    \"button_release\",\n    \"button_matrix\",\n    \"virtual_button_pressed\",\n    \"remote_button_pressed\",\n    \"knob_rotated\"\n  ],\n  \"appLevelButtonTriggersMissing\": [],\n  \"topByTriggers\": [\n    {\n      \"driverId\": \"scene_switch_4\",\n      \"triggers\": 51\n    },\n    {\n      \"driverId\": \"button_wireless_8\",\n      \"triggers\": 45\n    },\n    {\n      \"driverId\": \"scene_switch_6ch\",\n      \"triggers\": 40\n    },\n    {\n      \"driverId\": \"button_wireless_6\",\n      \"triggers\": 35\n    },\n    {\n      \"driverId\": \"scene_switch_6\",\n      \"triggers\": 34\n    },\n    {\n      \"driverId\": \"wall_remote_6_gang\",\n      \"triggers\": 34\n    },\n    {\n      \"driverId\": \"button_wireless_smart\",\n      \"triggers\": 29\n    },\n    {\n      \"driverId\": \"button_wireless_4\",\n      \"triggers\": 28\n    },\n    {\n      \"driverId\": \"button_wireless_4_ts0041\",\n      \"triggers\": 25\n    },\n    {\n      \"driverId\": \"remote_button_wireless_handheld\",\n      \"triggers\": 25\n    },\n    {\n      \"driverId\": \"handheld_remote_4_buttons\",\n      \"triggers\": 24\n    },\n    {\n      \"driverId\": \"wall_remote_4_gang\",\n      \"triggers\": 24\n    },\n    {\n      \"driverId\": \"button_wireless_3\",\n      \"triggers\": 21\n    },\n    {\n      \"driverId\": \"button_wireless_switch\",\n      \"triggers\": 20\n    },\n    {\n      \"driverId\": \"remote_button_emergency_sos\",\n      \"triggers\": 20\n    }\n  ]\n}"
     },
     {
@@ -160,23 +160,23 @@
       "label": "case-variants",
       "ok": true,
       "exitCode": 0,
-      "durationMs": 119,
-      "tail": "═══════════════════════════════════════════════\n  Ensure Homey case variants (P99/P2677)\n  root: /home/runner/work/com.tuya.zigbee/com.tuya.zigbee\n  mode: APPLY\n═══════════════════════════════════════════════\nDrivers needing variants: 0\nMfr variants to add: 0\nPid variants to add: 0\n═══════════════════════════════════════════════"
+      "durationMs": 111,
+      "tail": "═══════════════════════════════════════════════\n  Ensure Homey case variants (P99/P2677)\n  root: /home/runner/work/com.tuya.zigbee/com.tuya.zigbee\n  mode: APPLY\n═══════════════════════════════════════════════\nDrivers needing variants: 1\nMfr variants to add: 4\nPid variants to add: 0\n  · curtain_motor: mfr +4 pid +0 (mfr 1118→1122)\n═══════════════════════════════════════════════"
     },
     {
       "name": "prune-fp-collision",
       "label": "prune-fp",
       "ok": true,
       "exitCode": 0,
-      "durationMs": 1014,
-      "tail": "prune-fp-collision-bleed: new=7 actions=2 APPLIED\n  [registry] _tze200_8eazvzo6 keep=switch_wall_6gang strip=climate_sensor (1 keys)\n  [mfs_driverHint] _tze204_ycke4deo keep=presence_sensor_radar strip=curtain_motor (6 keys)"
+      "durationMs": 1013,
+      "tail": "prune-fp-collision-bleed: new=25 actions=5 APPLIED\n  [registry] _tze200_8eazvzo6 keep=switch_wall_6gang strip=climate_sensor (1 keys)\n  [registry] _tze200_jfw0a4aa keep=vibration_sensor strip=curtain_motor (6 keys)\n  [registry] _tze200_npj9bug3 keep=soil_sensor strip=curtain_motor (16 keys)\n  [registry] _tze200_shkxsgis keep=wall_switch_4_gang_tuya strip=curtain_motor (1 keys)\n  [registry] _tze204_shkxsgis keep=wall_switch_4_gang_tuya strip=curtain_motor (1 keys)"
     },
     {
       "name": "re-inject-sacred-strips",
       "label": "re-inject",
       "ok": true,
       "exitCode": 0,
-      "durationMs": 281,
+      "durationMs": 269,
       "tail": "radar\n  ~ p80-orphan-temphumidsensor5: skip _TYZB01_HJSGDKFL — already claimed by lcdtemphumidsensor\n  ~ p80-orphan-valvecontroller: skip _TZ3000_hyarhbyx — already claimed by switch_1gang\n  ~ p80-orphan-valvecontroller: skip _TZ3000_gjrubzje — already claimed by switch_1gang\n  ~ p80-orphan-wall-switch-5-gang-tuya: skip _TZE200_7TDTQGWV — already claimed by switch_1gang\n  ~ p80-orphan-wall-switch-5-gang-tuya: skip _TYZB01_QEQVMVTI — already claimed by switch_1gang\n  ~ p80-orphan-wall-switch-5-gang-tuya: skip _TZ3000_aetquff4 — already claimed by switch_1gang\n  ~ p80-orphan-wall-switch-5-gang-tuya: skip _TZ3000_hafsqare — already claimed by switch_1gang\n  ✅ p98-u6x1zyv2-remove-contact (Keep rain u6x1zyv2 off contact_sensor): +0 / -2 from source 'p98-forum-1610'\n  ✅ p218-2imwyigp-remove-contact (P218 anti-bot: 2imwyigp TS0601 lives on switch_3gang only): +0 / -4 from source 'p218-anti-bot'\n  ✅ p217-wing-climate-zth (P217 Johan #1429/#1422: Wing ZTH11/ZTH13 climate — keep pids at top (combo compact)): +0 / -0 from source 'p217-johan-1429'\n  ✅ p2291-ogkdpgy2-air-quality-add (P2291 Elliot #2204: ogkdpgy2 CO2 lock on air_quality_co2): +0 / -0 from source 'p2291-forum-2204'\n  ✅ p2487-tz3290-ir-blaster (P2487: TZ3290 UFO/ZS06 couples belong on ir_blaster (not virtual ir_remote)): +0 / -0 from source 'p2487-intelligent-ir'\n  ✅ p2631-ewelink-7014-climate (P2631 Bastien eWeLink 7014 TH → climate_sensor): +0 / -0 from source 'p2631-ewelink-climate'\n\nApplied: 6/73 manual fixes re-injected"
     },
     {
@@ -184,7 +184,7 @@
       "label": "strip-forbidden",
       "ok": true,
       "exitCode": 0,
-      "durationMs": 45391,
+      "durationMs": 44287,
       "tail": "{\n  \"mode\": \"apply\",\n  \"compose\": [\n    {\n      \"driverId\": \"switch_1gang\",\n      \"removed\": 2,\n      \"pidDrop\": 0\n    },\n    {\n      \"driverId\": \"contact_sensor\",\n      \"removed\": 2,\n      \"pidDrop\": 0\n    }\n  ],\n  \"app\": {\n    \"changed\": 2\n  },\n  \"mfs\": {\n    \"scrubbed\": 0\n  }\n}"
     },
     {
@@ -192,15 +192,15 @@
       "label": "master-auto",
       "ok": true,
       "exitCode": 0,
-      "durationMs": 655,
-      "tail": "  ✅ FIXÉ: dimmer_dual_channel → 2 MFs\u001b[0m\n\u001b[32m  ✅ FIXÉ: doorwindowsensor → 34 MFs\u001b[0m\n\u001b[32m  ✅ FIXÉ: double_power_point → 2 MFs\u001b[0m\n\u001b[32m  ✅ FIXÉ: outdoor_2_socket → 2 MFs\u001b[0m\n\u001b[32m  ✅ FIXÉ: pirsensor → 21 MFs\u001b[0m\n\u001b[32m  ✅ FIXÉ: radar_sensor_2 → 2 MFs\u001b[0m\n\u001b[32m  ✅ FIXÉ: radar_sensor_ceiling → 2 MFs\u001b[0m\n\u001b[32m  ✅ FIXÉ: relay_board_1_channel → 1 MFs\u001b[0m\n\u001b[32m  ✅ FIXÉ: rgb_bulb_E27 → 3 MFs\u001b[0m\n\u001b[32m  ✅ FIXÉ: sensor_lcdtemphumidsensor_temphumidsensor → 1 MFs\u001b[0m\n\u001b[32m  ✅ FIXÉ: sirentemphumidsensor → 2 MFs\u001b[0m\n\u001b[32m  ✅ FIXÉ: smart_rcbo → 1 MFs\u001b[0m\n\u001b[32m  ✅ FIXÉ: smart_remote_1_button_2 → 1 MFs\u001b[0m\n\u001b[32m  ✅ FIXÉ: smart_switch → 3 MFs\u001b[0m\n\u001b[32m  ✅ FIXÉ: switch_2_gang_metering → 2 MFs\u001b[0m\n\u001b[32m  ✅ FIXÉ: wall_remote_4_gang → 2 MFs\u001b[0m\n\u001b[32m  ✅ app.json mis à jour (20 drivers corrigés)\u001b[0m\n\u001b[1m\u001b[34m\n┌─ PHASE 3 — VALIDATION FINALE\u001b[0m\n\u001b[1m\u001b[34m\n┌─ PHASE 1a — APP.JSON DUAL-LAYER VALIDATION\u001b[0m\n\u001b[32m  ✅ Tous les drivers Zigbee/Hybrid ont des MF statiques (378)\u001b[0m\n\u001b[36m  ℹ️  Zigbee: 378 | WiFi: 54 | Hybrid: 0 | Virtual: 2\u001b[0m\n\u001b[32m  ✅ Validation finale: PASS — Zéro AggregateError\u001b[0m\n\u001b[1m\u001b[34m\n┌─ PHASE 4 — GIT COMMIT & PUSH\u001b[0m\n\u001b[36m  ℹ️  Mode commit désactivé. Utiliser --commit pour activer.\u001b[0m\n\u001b[36m  ℹ️  Rapport sauvegardé: /home/runner/work/com.tuya.zigbee/com.tuya.zigbee/docs/reports/MASTER_AUTOMATION_REPORT.json\u001b[0m\n\u001b[2m  ────────────────────────────────────────────────────────────\u001b[0m\n\u001b[1m\u001b[32m\n  ✅ PIPELINE: SUCCÈS — PRÊT POUR PUBLISH\u001b[0m\n\u001b[32m  434 drivers | 18874 fingerprints\u001b[0m"
+      "durationMs": 686,
+      "tail": "  ✅ FIXÉ: dimmer_dual_channel → 2 MFs\u001b[0m\n\u001b[32m  ✅ FIXÉ: doorwindowsensor → 34 MFs\u001b[0m\n\u001b[32m  ✅ FIXÉ: double_power_point → 2 MFs\u001b[0m\n\u001b[32m  ✅ FIXÉ: outdoor_2_socket → 2 MFs\u001b[0m\n\u001b[32m  ✅ FIXÉ: pirsensor → 21 MFs\u001b[0m\n\u001b[32m  ✅ FIXÉ: radar_sensor_2 → 2 MFs\u001b[0m\n\u001b[32m  ✅ FIXÉ: radar_sensor_ceiling → 2 MFs\u001b[0m\n\u001b[32m  ✅ FIXÉ: relay_board_1_channel → 1 MFs\u001b[0m\n\u001b[32m  ✅ FIXÉ: rgb_bulb_E27 → 3 MFs\u001b[0m\n\u001b[32m  ✅ FIXÉ: sensor_lcdtemphumidsensor_temphumidsensor → 1 MFs\u001b[0m\n\u001b[32m  ✅ FIXÉ: sirentemphumidsensor → 2 MFs\u001b[0m\n\u001b[32m  ✅ FIXÉ: smart_rcbo → 1 MFs\u001b[0m\n\u001b[32m  ✅ FIXÉ: smart_remote_1_button_2 → 1 MFs\u001b[0m\n\u001b[32m  ✅ FIXÉ: smart_switch → 3 MFs\u001b[0m\n\u001b[32m  ✅ FIXÉ: switch_2_gang_metering → 2 MFs\u001b[0m\n\u001b[32m  ✅ FIXÉ: wall_remote_4_gang → 2 MFs\u001b[0m\n\u001b[32m  ✅ app.json mis à jour (20 drivers corrigés)\u001b[0m\n\u001b[1m\u001b[34m\n┌─ PHASE 3 — VALIDATION FINALE\u001b[0m\n\u001b[1m\u001b[34m\n┌─ PHASE 1a — APP.JSON DUAL-LAYER VALIDATION\u001b[0m\n\u001b[32m  ✅ Tous les drivers Zigbee/Hybrid ont des MF statiques (378)\u001b[0m\n\u001b[36m  ℹ️  Zigbee: 378 | WiFi: 54 | Hybrid: 0 | Virtual: 2\u001b[0m\n\u001b[32m  ✅ Validation finale: PASS — Zéro AggregateError\u001b[0m\n\u001b[1m\u001b[34m\n┌─ PHASE 4 — GIT COMMIT & PUSH\u001b[0m\n\u001b[36m  ℹ️  Mode commit désactivé. Utiliser --commit pour activer.\u001b[0m\n\u001b[36m  ℹ️  Rapport sauvegardé: /home/runner/work/com.tuya.zigbee/com.tuya.zigbee/docs/reports/MASTER_AUTOMATION_REPORT.json\u001b[0m\n\u001b[2m  ────────────────────────────────────────────────────────────\u001b[0m\n\u001b[1m\u001b[32m\n  ✅ PIPELINE: SUCCÈS — PRÊT POUR PUBLISH\u001b[0m\n\u001b[32m  434 drivers | 18890 fingerprints\u001b[0m"
     },
     {
       "name": "sync-enrichment-profiles",
       "label": "profiles",
       "ok": true,
       "exitCode": 0,
-      "durationMs": 47,
+      "durationMs": 49,
       "tail": "{\n  \"dryRun\": false,\n  \"stats\": {\n    \"pruned\": 0,\n    \"processor\": {\n      \"usersTouched\": 0,\n      \"coupleStubs\": 0,\n      \"postsMerged\": 0,\n      \"skippedMegathread\": 0\n    },\n    \"parse\": {\n      \"usersTouched\": 0\n    }\n  }\n}\n[sync-enrichment-profiles] updated /home/runner/work/com.tuya.zigbee/com.tuya.zigbee/data/user-impact-catalog.json\n[sync-enrichment-profiles] updated /home/runner/work/com.tuya.zigbee/com.tuya.zigbee/data/dp_couple_knowledge.json"
     },
     {
@@ -208,7 +208,7 @@
       "label": "p2138",
       "ok": true,
       "exitCode": 0,
-      "durationMs": 148,
+      "durationMs": 153,
       "tail": "_tuya\n  ✅ getDriverId(_TZE200_m1cvyneb, TS0601) → wall_dimmer_tuya\n  ✅ DeviceFingerprintDB.lookup(m1cvyneb, TS0601) → wall_dimmer_tuya\n  ✅ DeviceFingerprintDB.lookup(m1cvyneb, TS0201) does not invent dimmer/climate\n  ✅ PRODUCT_ID_DEFAULTS.TS0201.driver === null (no invent)\n  ✅ PRODUCT_ID_DEFAULTS.TS0207.driver === null (water vs repeater vs rain)\n  ✅ PRODUCT_ID_DEFAULTS.TS011F.driver === null (plug vs DIN vs strip)\n  ✅ compound _TZ3000_k4ej3ww2+TS0207 → water_leak_sensor\n  ✅ compound _TZ3000_5k5vh43t+TS0207 → zigbee_repeater\n  ✅ compound _TZ3000_okaz9tjs+TS011F → plug_energy_monitor\n  ✅ compound _TZE284_nt4pquef+TS0601 → soil_sensor\n  ✅ compound _TZE284_6ocnqlhn+TS0601 → din_rail_meter\n  ✅ compound _TZ3000_mrpevh8p+TS0041 → button_wireless_1\n  ✅ compound _TZ3000_zgyzgdua+TS0044 → scene_switch_4\n  ✅ compound _TZ3000_kfu8zapd+TS0044 → button_wireless_4\n  ✅ compound _TZ3000_xabckq1v+TS004F → button_wireless_4\n  ✅ compound _TZ3000_4upl1fcj+TS0041 → button_wireless_1\n  ✅ compound _TZ3000_qeuvnohg+TS011F → din_rail_switch\n  ✅ compound HOBEIAN+3315-S → water_leak_sensor\n  ✅ wall_dimmer_tuya compose lists m1cvyneb\n  ✅ wall_dimmer_tuya productId includes TS0601\n  ✅ TuyaBrightnessScale 0.5 ↔ 500\n  ✅ TuyaBrightnessScale clamps to 0–1000\n  ✅ anti-bot mentions m1cvyneb\n  ✅ anti-bot mentions climate_sensor\n  ✅ anti-bot mentions soil_sensor\n  ✅ anti-bot mentions zigbee_universal\n  ✅ anti-bot mentions wall_dimmer\n  ✅ mfs_db has no m1cvyneb|TS0201 invent\n\nPASS: P2138 sacred-couple matrix gate"
     },
     {
@@ -216,7 +216,7 @@
       "label": "p2519",
       "ok": true,
       "exitCode": 0,
-      "durationMs": 64,
+      "durationMs": 69,
       "tail": "P2519 PASS — enrich append-only / sacred couples intact"
     },
     {
@@ -224,7 +224,7 @@
       "label": "anti-bot",
       "ok": true,
       "exitCode": 0,
-      "durationMs": 876,
+      "durationMs": 922,
       "tail": "ain:zigbee_universal: missing driver zigbee_universal\n  ~ skip registry:p2509-npj9bug3-soil-zg303z:zigbee_universal: missing driver zigbee_universal\n  ~ skip registry:p2363-curtain-ef00-hybrid-timeout:zigbee_universal: missing driver zigbee_universal\n  ~ skip registry:p2385-lerlink-r32ctezx-fan-switch:zigbee_universal: missing driver zigbee_universal\n  ~ skip registry:p2432-tz3000-mmkbptmx-switch-4gang:zigbee_universal: missing driver zigbee_universal\n  ~ skip registry:p2535-tzb210-rkgngb5o-ts0501b-dim:zigbee_universal: missing driver zigbee_universal\n  ~ skip registry:p2516-a14rjslz-3phase-meter:zigbee_universal: missing driver zigbee_universal\n  ~ skip registry:p2538-tze284-8b9zpaav-airbox:zigbee_universal: missing driver zigbee_universal\n  ~ skip registry:p2538-tze284-it9utkro-pm25-airbox:zigbee_universal: missing driver zigbee_universal\n  ~ skip registry:p2541-tze200-yvx5lh6k-air-quality-reinstate:zigbee_universal: missing driver zigbee_universal\n  ~ skip registry:p2571-hejhome-c8ipbljq-6gang:zigbee_universal: missing driver zigbee_universal\n  ~ skip registry:p2571-tgeqdjgk-knob-dimmer:zigbee_universal: missing driver zigbee_universal\n  ~ skip registry:p2571-vvmbj46n-lcd-th:zigbee_universal: missing driver zigbee_universal\n  ~ skip registry:p2634-tz3000-ltt60asa-ts0004-switch-4gang:zigbee_universal: missing driver zigbee_universal\n  ~ skip registry:p2636-tz3000-dzwgk7e2-ts0042-button-2:zigbee_universal: missing driver zigbee_universal\n  ✅ No known bot regressions detected"
     },
     {
@@ -232,7 +232,7 @@
       "label": "fp-check",
       "ok": true,
       "exitCode": 0,
-      "durationMs": 581,
+      "durationMs": 582,
       "tail": "prune-fp-collision-bleed: new=0 actions=0 dry-run"
     },
     {
@@ -240,24 +240,24 @@
       "label": "flow-l99",
       "ok": true,
       "exitCode": 0,
-      "durationMs": 2052,
-      "tail": "{\n  \"generatedAt\": \"2026-09-25T06:37:17.452Z\",\n  \"outDir\": \"/home/runner/work/com.tuya.zigbee/com.tuya.zigbee/reports/flow-l99-2026-09-25\",\n  \"steps\": [\n    {\n      \"label\": \"flow-dups\",\n      \"ok\": true,\n      \"status\": 0\n    },\n    {\n      \"label\": \"flows-integrity\",\n      \"ok\": true,\n      \"status\": 0\n    },\n    {\n      \"label\": \"flow-coherence\",\n      \"ok\": true,\n      \"status\": 0\n    },\n    {\n      \"label\": \"flow-fleet-enrich\",\n      \"ok\": true,\n      \"status\": 0\n    },\n    {\n      \"label\": \"appjson-flow-dedupe\",\n      \"ok\": true,\n      \"status\": 0\n    },\n    {\n      \"label\": \"voice-safety\",\n      \"ok\": true,\n      \"status\": 0\n    },\n    {\n      \"label\": \"dp-cluster-flow-coverage\",\n      \"ok\": true,\n      \"status\": 0\n    },\n    {\n      \"label\": \"button-flow-harvest\",\n      \"ok\": true,\n      \"status\": 0\n    }\n  ],\n  \"failCount\": 0\n}"
+      "durationMs": 2174,
+      "tail": "{\n  \"generatedAt\": \"2026-09-25T18:10:04.364Z\",\n  \"outDir\": \"/home/runner/work/com.tuya.zigbee/com.tuya.zigbee/reports/flow-l99-2026-09-25\",\n  \"steps\": [\n    {\n      \"label\": \"flow-dups\",\n      \"ok\": true,\n      \"status\": 0\n    },\n    {\n      \"label\": \"flows-integrity\",\n      \"ok\": true,\n      \"status\": 0\n    },\n    {\n      \"label\": \"flow-coherence\",\n      \"ok\": true,\n      \"status\": 0\n    },\n    {\n      \"label\": \"flow-fleet-enrich\",\n      \"ok\": true,\n      \"status\": 0\n    },\n    {\n      \"label\": \"appjson-flow-dedupe\",\n      \"ok\": true,\n      \"status\": 0\n    },\n    {\n      \"label\": \"voice-safety\",\n      \"ok\": true,\n      \"status\": 0\n    },\n    {\n      \"label\": \"dp-cluster-flow-coverage\",\n      \"ok\": true,\n      \"status\": 0\n    },\n    {\n      \"label\": \"button-flow-harvest\",\n      \"ok\": true,\n      \"status\": 0\n    }\n  ],\n  \"failCount\": 0\n}"
     }
   ],
   "ok": true,
   "baseline": {
     "driverCount": 434,
-    "mfrEntries": 18768,
-    "pidEntries": 3607
+    "mfrEntries": 18786,
+    "pidEntries": 3605
   },
   "final": {
     "driverCount": 434,
-    "mfrEntries": 18772,
-    "pidEntries": 3608
+    "mfrEntries": 18790,
+    "pidEntries": 3605
   },
   "delta": {
     "drivers": 0,
     "mfrs": 4,
-    "pids": 1
+    "pids": 0
   }
 }
