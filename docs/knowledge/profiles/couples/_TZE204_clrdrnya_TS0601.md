@@ -34,3 +34,9 @@
 ---
 See `docs/guides/DP_INTERPRETATION.md`
 
+## Known bugs (P2579 — MTG075 / MTG235)
+
+- **occupied** sensor mode can stick true (false presence) — soft-clear + healForcedOccupiedOnSoftClear on tip.
+- Distance is **quantized** (~2.8 m steps) — quantizedDistanceSoftClear avoids thrash.
+- Retail SKUs **MTG075** / **MTG235** share couple `_TZE204_clrdrnya`+`TS0601` (mains, no phantom battery).
+- antiFalsePositive: sticky DP1 needs distance corroboration before alarm_motion paints.
