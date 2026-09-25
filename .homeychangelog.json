@@ -4032,5 +4032,9 @@
   },
   "1.0.106": {
     "en": "Improved Homey Test publish soft-continue after Athom processing flakes."
+  },
+  "1.0.107": {
+    "en": "Snappy remotes: skip wake magic/DP TX storm (listen-only). Update Test + Restart.",
+    "fr": "Remotes snappy: plus de storm TX magic/DP au wake (listen-only). Maj Test + Redemarrer."
   }
 }

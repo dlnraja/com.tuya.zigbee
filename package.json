@@ -1,6 +1,6 @@
 {
   "name": "com.dlnraja.tuya.zigbee.bastien",
-  "version": "1.0.106",
+  "version": "1.0.107",
   "description": "Private Zigbee house app for Bastien — local Homey Pro only. Learnings promote upstream to Universal Tuya / Stable (never the reverse wholesale).",
   "main": "app.js",
   "scripts": {
@@ -556,10 +556,11 @@
     "check:p2729": "node --test test/critical/p2729-wireless-button-skip-ias-enroll.test.js",
     "check:p2733": "node --test test/critical/p2733-bastien-ts004x-wake-listen-only.test.js",
     "check:p2734": "node --test test/critical/p2734-bastien-bidir-soft-ui-complementary.test.js",
-    "check:p273x": "npm run check:p2733 && npm run check:p2734 && npm run check:p2735 && npm run check:p2736 && npm run check:p2737",
+    "check:p273x": "npm run check:p2733 && npm run check:p2734 && npm run check:p2735 && npm run check:p2736 && npm run check:p2737 && npm run check:p2739",
     "check:p2735": "node --test test/critical/p2735-famkxci2-ts0043-snappy-parity.test.js",
     "check:p2736": "node --test test/critical/p2736-ts004x-exact-profile-snappy-parity.test.js",
-    "check:p2737": "node --test test/critical/p2737-bastien-l99-house-plan-locks.test.js"
+    "check:p2737": "node --test test/critical/p2737-bastien-l99-house-plan-locks.test.js",
+    "check:p2739": "node --test test/critical/p2739-bastien-snappy-wake-no-magic-tx.test.js"
   },
   "keywords": [
     "homey",
