@@ -4190,5 +4190,9 @@
   "9.0.1261": {
     "en": "Tagged Flow cards (label/token) fire from all RX paths; remotes battery-changed. Update Test to 9.0.1261 then restart.",
     "fr": "Flows etiquetes (tag/token) se declenchent sur tout RX; batterie remotes. Maj Test 9.0.1261 puis redemarrer."
+  },
+  "9.0.1262": {
+    "en": "Publish fix: FlowCardHelper Buffer JSON + no duplicate button tokens. Update Test to 9.0.1262.",
+    "fr": "Fix publish: FlowCardHelper Buffer JSON + tokens bouton uniques. Maj Test 9.0.1262."
   }
 }

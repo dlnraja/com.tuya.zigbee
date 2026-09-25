@@ -15,15 +15,6 @@
             "fr": "Bouton"
           },
           "example": "1"
-        },
-        {
-          "name": "button_id",
-          "type": "string",
-          "title": {
-            "en": "Button",
-            "fr": "Bouton"
-          },
-          "example": "1"
         }
       ],
       "args": [
@@ -81,15 +72,6 @@
             "fr": "Bouton"
           },
           "example": "1"
-        },
-        {
-          "name": "button_id",
-          "type": "string",
-          "title": {
-            "en": "Button",
-            "fr": "Bouton"
-          },
-          "example": "1"
         }
       ],
       "args": [
@@ -138,15 +120,6 @@
         "fr": "Bouton pressé longtemps"
       },
       "tokens": [
-        {
-          "name": "button_id",
-          "type": "string",
-          "title": {
-            "en": "Button",
-            "fr": "Bouton"
-          },
-          "example": "1"
-        },
         {
           "name": "button_id",
           "type": "string",
@@ -220,15 +193,6 @@
             "fr": "Nombre de pressions"
           },
           "example": 3
-        },
-        {
-          "name": "button_id",
-          "type": "string",
-          "title": {
-            "en": "Button",
-            "fr": "Bouton"
-          },
-          "example": "1"
         }
       ],
       "args": [
