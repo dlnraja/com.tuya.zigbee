@@ -57,8 +57,8 @@
       "cloneHint": "Documents/homey/bastien",
       "publish": "Publish Zigbee Bastien workflow / soft-expect first (P2738) — App ID .bastien only; NEVER Universal or Stable slots",
       "enrichment": "bastien_to_public_only",
-      "tipHealthy": "1.0.103",
-      "tipNote": "LIVE Athom #113 testing 1.0.103 — #114 (1.0.105) PF soft-continue; house Pro still 1.0.93 until owner Install Test (diag ed627371)"
+      "tipHealthy": "1.0.107",
+      "tipNote": "LIVE tip 1.0.107 P2739 snappy wake no magic/DP TX (diag ed627371). House Pro must Install Test >=1.0.107 (was tip-lag 1.0.100)."
     }
   },
   "identityNeverCopy": [
