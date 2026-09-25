@@ -1,174 +1,4 @@
 {
-  "1.0.108": {
-    "en": "P2741 live: remotes skip MCU sync on wake; devices load OK after tip. UPDATE Bastien Test to 1.0.108 then Restart once.",
-    "fr": "P2741 live: remotes skip sync MCU au wake; appareils chargent. MAJ Bastien Test 1.0.108 puis Redemarrer une fois."
-  },
-  "1.0.99": {
-    "en": "Remotes dead on 1.0.93: early LIVE-DATA purge + skip battery TX on boot. UPDATE Bastien Test to 1.0.99 then Restart once. Press each remote to wake.",
-    "fr": "Telecommandes mortes sur 1.0.93: purge LIVE-DATA au boot + skip TX batterie. MAJ Bastien Test 1.0.99 puis Redemarrer une fois. Appuyer chaque remote."
-  },
-  "1.0.98": {
-    "en": "Publish fix: radar distance icon asset + house fleet land. Update Bastien Test + restart.",
-    "fr": "Fix publish: icone distance radar + flotte maison. Maj Bastien Test + restart."
-  },
-  "1.0.97": {
-    "en": "Publish slim house fleet (Athom land) + ceiling radar sitting/motion fix. Update Bastien Test + restart.",
-    "fr": "Publish flotte maison (Athom) + radar plafond immobilite/motion. Maj Bastien Test + restart."
-  },
-  "1.0.94": {
-    "en": "Ceiling radar + remotes soak: motion re-arm after stillness; distance ~0.9. Update Bastien Test + restart.",
-    "fr": "Radar + telecommandes: motion rearme apres immobilite; distance ~0.9. Maj Bastien Test + restart."
-  },
-  "1.0.93": {
-    "en": "Remotes: faster rapid off/on (no ~7s dead window); less lag when TS0042/43 fire. Update Bastien Test + restart once.",
-    "fr": "Telecommandes: off/on rapide (plus de ~7s morts); moins de lag quand TS0042/43 tirent. Maj Test Bastien + restart."
-  },
-  "1.0.92": {
-    "en": "Bastien remotes: purge leftover LIVE-DATA overlay (fixes all dead after OOM); leaner button press. Update Bastien Test ≥1.0.92 + restart once.",
-    "fr": "Telecommandes Bastien: purge overlay LIVE-DATA (plus rien mort apres OOM); press plus leger. Maj Test Bastien ≥1.0.92 + restart une fois."
-  },
-  "1.0.83": {
-    "en": "Bastien remotes: TS0041 faster; TS0042/43 snappy + no TS0041 lag; battery % fix; black remotes crash-safe. Update Test.",
-    "fr": "Telecommandes Bastien: TS0041 plus rapide; TS0042/43 snappy + sans lag TS0041; batterie %; noirs anti-crash. Maj Test."
-  },
-  "1.0.82": {
-    "en": "Black TS0042/TS0043: stop Homey app crashes on press; leaner Flow path. Update Bastien Test.",
-    "fr": "Boutons noirs TS0042/TS0043: stop crash app Homey au press; chemin Flow allégé. Maj Test Bastien."
-  },
-  "1.0.81": {
-    "en": "TS0042/TS0043 faster + no longer slow TS0041; black remotes less crashy; TS0043 battery % fix (was stuck ~0–84). Update Bastien Test.",
-    "fr": "TS0042/TS0043 plus rapides + ne ralentissent plus le TS0041; boutons noirs moins de crash; batterie TS0043 corrigee (bloquee ~0–84). Maj Test Bastien."
-  },
-  "1.0.80": {
-    "en": "Bastien fleet: front-pin HOBEIAN/ZG-301Z, ltt60asa/TS0004, fllyghyj/SNZB-02 + snappy Homey→relay TX. Update Test; Repair lights/4gang if laggy.",
-    "fr": "Flotte Bastien: front-pin HOBEIAN/ZG-301Z, ltt60asa/TS0004, fllyghyj/SNZB-02 + TX Homey→relais rapide. Maj Test; Repar lights/4gang si lent."
-  },
-  "1.0.79": {
-    "en": "Bastien remotes: front-pin TS0041/42/43 fingerprints + IEEE map for Homey « Appareil Zigbee » mis-pair. Update Test; remove Appareil Zigbee nodes 3+7 then re-pair as Bouton 1/3.",
-    "fr": "Telecommandes Bastien: fingerprints TS0041/42/43 en tete + carte IEEE pour « Appareil Zigbee » mal appairé. Maj Test; supprimer noeuds Appareil Zigbee 3+7 puis re-appairer Bouton 1/3."
-  },
-  "1.0.78": {
-    "en": "TS0042 snappier button to relay; TS0041/TS0043 pairing fix (remove bleed). Update Bastien Test; remove Unknown Nodes then re-pair as Bouton 1 / Bouton 3.",
-    "fr": "TS0042 plus rapide bouton vers relais; correctif appairage TS0041/TS0043. Maj Test Bastien; supprimer noeuds Inconnus puis re-appairer Bouton 1 / Bouton 3."
-  },
-  "1.0.68": {
-    "en": "Publish heal: HOBEIAN OCR collisions + ZG-301Z sacred couple + energy safety (P2692). Update Test.",
-    "fr": "Heal publish: collisions OCR HOBEIAN + couple ZG-301Z + energie (P2692). Maj Test."
-  },
-  "1.0.67": {
-    "en": "Battery remotes: stop powerCfg TX storms that empty CR2032 (P2691). Update Test.",
-    "fr": "Telecommandes piles: stop tempetes powerCfg qui vident les CR2032 (P2691). Maj Test."
-  },
-  "1.0.56": {
-    "en": "HOBEIAN caseless Athom forms + Z2M pids (P2677).",
-    "fr": "HOBEIAN formes Athom caseless + pids Z2M (P2677)."
-  },
-  "1.0.55": {
-    "en": "Critical: lights/relays boot after MODULE_NOT_FOUND harden (P2676). Update Bastien Test and restart.",
-    "fr": "Critique: demarrage lumieres/relais apres correctif MODULE_NOT_FOUND (P2676). Maj Bastien Test et redemarrer."
-  },
-  "1.0.54": {
-    "en": "Boot fix: app no longer crashes when Zigbee driver module load fails (lights/relays dead). Update Bastien Test and restart app.",
-    "fr": "Correctif demarrage: l app ne plante plus si le module Zigbee manque (lumieres/relais morts). Maj Bastien Test et redemarrer l app."
-  },
-  "1.0.22": {
-    "en": "2-btn remote _TZ3000_dzwgk7e2+TS0042 (was unrecognized; phantom EP3/4 ignored). Update Bastien Test + re-pair.",
-    "fr": "Télécommande 2 boutons _TZ3000_dzwgk7e2+TS0042 (non reconnue). Maj Test Bastien + re-appairer."
-  },
-  "1.0.21": {
-    "en": "4-gang module _TZ3000_ltt60asa+TS0004 (was Zigbee unknown); switch/button Flow fixes (Homey state match). Update Bastien Test + re-pair unknown module.",
-    "fr": "Module 4-gang _TZ3000_ltt60asa+TS0004 (était Zigbee inconnu); correctifs Flows interrupteurs/boutons. Maj Test Bastien + re-appairer le module."
-  },
-  "9.0.1072": {
-    "en": "TRV empty values: force EF00 DP queries after pair (battery passive was skipping 0/10). Update Test + Repair radiator valve."
-  },
-  "9.0.1071": {
-    "en": "24G ceiling radar gkfbdvyx: presence/distance + strip phantom Channel/Button; lux corroboration. Update Homey Test + Repair radar."
-  },
-  "9.0.1069": {
-    "en": "TRV empty values fix: EF00 RX attach for thermostats (ogx8u5z6 me167 maps + battery DPs). Update Homey Test + Repair radiator valve; wait ~10s for temps."
-  },
-  "9.0.1066": {
-    "en": "mmWave Software Shield API: forceClearPresence / triggerPresenceWatchdog / restoreTuyaParameters; ZG-204 lux anti-spam + survival watchdog; boot restore ~12s. Update Homey Test."
-  },
-  "9.0.1065": {
-    "en": "Presence radar Software Shield tip (anti-spam, survival watchdog, MCU restore, Clear presence). Update Homey Test."
-  },
-  "9.0.1064": {
-    "en": "Presence radar: safe EF00 restore pacing (no bare timers); misattribution lookup tolerates string productId from enrich. Update Homey Test for stabilizer tip."
-  },
-  "9.0.1063": {
-    "en": "Publish unblock: Clear presence Flow uses title-only (no [[device]] catch-22). mmWave stabilizer (anti-spam, survival watchdog, MCU restore) ships to Test. Update Homey Test; use Clear presence if Occupied sticks."
-  },
-  "9.0.1062": {
-    "en": "Publish fix: Clear presence Flow card titleFormatted; mmWave stabilizer ready for VicHY tip soak. Update Homey Test and Repair sensors if stuck Occupied."
-  },
-  "9.0.1061": {
-    "en": "mmWave stabilizer: tighter distance/lux anti-spam, survival watchdog auto-clears stuck Occupied after departure delay, settings restore + Clear presence. Update Homey Test."
-  },
-  "9.0.1060": {
-    "en": "Presence radar: re-push sensitivity/delay after MCU reboot; Clear presence Flow action + settings; ghost-presence hints. Update Homey Test."
-  },
-  "9.0.1059": {
-    "en": "Presence radar settings hints: ghost presence sensitivity 2–4, MCU power-cycle if lux moves but presence stuck, through-wall range. Update Homey Test."
-  },
-  "9.0.1058": {
-    "en": "CI: align mfs_db after MTG075 dtzziy1e lock so the VicHY Curtain-heal tip can publish. Update Homey Test; restart 2–3 min; if still Curtain → remove + re-pair as Presence Sensor Radar."
-  },
-  "9.0.1057": {
-    "en": "Presence radar: heal Homey Curtain type flip faster; bathroom sticky presence soft-clear for VMC/fan micro-motion; MTG075 dtzziy1e family lock. Update Homey Test, restart app 2–3 min; re-pair as Presence Sensor Radar if still Curtain."
-  },
-  "9.0.1056": {
-    "en": "Homey RAM: smarter RSS/heap budget + safer lazy JSON loading; fix fingerprint routing after Z2M enrich. Update Homey Test."
-  },
-  "9.0.1055": {
-    "en": "Z2M/herdsman complementary: more verified mfr+pid couples (climate, dimmer, motion, SOS, switches, plugs, curtain) + misroute locks. Update Homey Test."
-  },
-  "9.0.1054": {
-    "en": "MTG075 Occupied mode: Homey still tracks real presence from distance/lux (smart overlay); keep Occupied if you want. Update Homey Test and restart both sensors."
-  },
-  "9.0.1052": {
-    "en": "CI: align mfs_db after gkfbdvyx sacred lock so L99 tip can publish. Update Homey Test."
-  },
-  "9.0.1051": {
-    "en": "L99: GH#547 gkfbdvyx radar dual-scale range + soft poll; sacred-keep TZE284; Moes curtain #533 keep. Update Homey Test and re-pair virtual/wrong drivers."
-  },
-  "9.0.1049": {
-    "en": "Republish after Athom processing_failed on 9.0.1048: OCR radar watchdog fix + OpenCodeReview wiring. Update Homey Test."
-  },
-  "9.0.1047": {
-    "en": "OCR review: fix bathroom radar watchdog false-clear + timer leak; add Alibaba OpenCodeReview project rules. Update Homey Test."
-  },
-  "9.0.1045": {
-    "en": "CI: align mfs_db after curtain FP move so VicHY radar tip 9.0.1044 can publish. Update Homey Test (8d9d0199)."
-  },
-  "9.0.1044": {
-    "en": "Bathroom radar MTG075: keep relay on/off after tip update, clear sticky empty-room presence faster. Update Homey Test and restart both sensors. Diag 8d9d0199."
-  },
-  "9.0.1043": {
-    "en": "Z2M/ZHA transpose: tubular motor fingerprint fix, cover direction strings, Tongou frequency scale, radar range unsigned, heat-meter DPs. Update Homey Test."
-  },
-  "9.0.1041": {
-    "en": "Presence radar MTG075/MTG235: occupied-mode unlock + smarter empty-room clear (Athom republish after 9.0.1040 processing_failed). Update Homey Test."
-  },
-  "9.0.1039": {
-    "en": "Presence radar MTG075 publish gate: keep DP1 trust lock with occupied-mode harden. Update Homey Test."
-  },
-  "9.0.1038": {
-    "en": "Presence radar MTG075/MTG235: unlock forced-occupied mode, smarter empty-room clear, clearer bathroom settings. Update Homey Test and restart both sensors."
-  },
-  "9.0.1036": {
-    "en": "CI: brand-scrub Solar Sync flow titles; wire radar anti-FP gates. Update Homey Test."
-  },
-  "9.0.1034": {
-    "en": "CI: wire VicHY radar anti-FP gates into all hard workflows. Presence bathroom false-positive harden. Update Homey Test."
-  },
-  "9.0.1032": {
-    "en": "Presence radar: fewer bathroom false positives, fix distance display, restore relay switch. Update Homey Test and restart the app on both sensors."
-  },
-  "9.0.1030": {
-    "en": "Presence radar: trust presence DP, keep sensor on/off, clear sticky empty-room detections. Update Homey Test and restart the app on both units."
-  },
   "changelog": [
     {
       "version": "9.0.497",
@@ -1077,6 +907,348 @@
       ]
     }
   ],
+  "9.0.1091": {
+    "en": "Restored MTG075 couple profile (Occupied/quantized docs) so Auto-Publish Contre quoi stays green."
+  },
+  "9.0.1090": {
+    "en": "Publish unblock: nkjintbl TZE204 plug-only (anti-bot). Radar/button/curtain residuals from GH#550-552 stay on tip."
+  },
+  "9.0.1089": {
+    "en": "Radar distance re-arm; TS0043 pairing; TS130F curtain; nkjintbl plug lock. Update Homey Test + Repair."
+  },
+  "9.0.1088": {
+    "en": "Radar distance re-arm; TS0043 pairing; TS130F curtain match; stop nkjintbl bleed to 2-gang. Update Test + Repair."
+  },
+  "9.0.1087": {
+    "en": "Radar distance re-arm after re-pair; TS0043 scene remote pairing; TS130F curtain switch match. Update Homey Test + Repair."
+  },
+  "9.0.1085": {
+    "en": "Presence radar: no phantom Channel on ceiling radars; presence quick action; MTG relay Channel via runtime. Update Homey Test + Repair."
+  },
+  "9.0.1084": {
+    "en": "Presence radar: no phantom Channel on ceiling (gkfbdvyx); presence as quick action; MTG relay still gets Channel. Also slim compose + distance tracking. Update Homey Test + Repair radars/TRVs."
+  },
+  "9.0.1082": {
+    "en": "Presence radar: slim compose (no phantom zones/temp on tip), announce re-arms distance tracking, CRQ3 DP9 fix. Update Homey Test + Repair radars/TRVs."
+  },
+  "9.0.1080": {
+    "en": "Radar/TRV residual: mains EF00 periodic query, gkfbdvyx DP9 /10 SSOT, soft Channel listener before init. Update Homey Test + Repair presence radars and radiator valves."
+  },
+  "9.0.1078": {
+    "en": "Improved MTG075 bathroom radar tiles — distance units and phantom zone/temp/battery cleanup after tip update."
+  },
+  "9.0.1076": {
+    "en": "Improved ZG253 / me167 TRV temperature scale and wake refresh so empty caps and setpoint errors clear after update."
+  },
+  "9.0.1074": {
+    "en": "Improved ceiling radar distance tracking and presence when lux works but distance stayed empty; TRV data query hardening stays in tip."
+  },
+  "9.0.1072": {
+    "en": "TRV empty values: force EF00 DP queries after pair (battery passive was skipping 0/10). Update Test + Repair radiator valve."
+  },
+  "9.0.1071": {
+    "en": "24G ceiling radar gkfbdvyx: presence/distance + strip phantom Channel/Button; lux corroboration. Update Homey Test + Repair radar."
+  },
+  "9.0.1069": {
+    "en": "TRV empty values fix: EF00 RX attach for thermostats (ogx8u5z6 me167 maps + battery DPs). Update Homey Test + Repair radiator valve; wait ~10s for temps."
+  },
+  "9.0.1068": {
+    "en": "ZG253 TRV ogx8u5z6: fix setpoint TX (Homey datapoint args) + EF00 DP refresh after pair. Update Test + Repair TRV."
+  },
+  "9.0.1066": {
+    "en": "mmWave Software Shield API: forceClearPresence / triggerPresenceWatchdog / restoreTuyaParameters; ZG-204 lux anti-spam + survival watchdog; boot restore ~12s. Update Homey Test."
+  },
+  "9.0.1065": {
+    "en": "Presence radar Software Shield tip (anti-spam, survival watchdog, MCU restore, Clear presence). Update Homey Test."
+  },
+  "9.0.1064": {
+    "en": "Presence radar: safe EF00 restore pacing (no bare timers); misattribution lookup tolerates string productId from enrich. Update Homey Test for stabilizer tip."
+  },
+  "9.0.1063": {
+    "en": "Publish unblock: Clear presence Flow uses title-only (no [[device]] catch-22). mmWave stabilizer (anti-spam, survival watchdog, MCU restore) ships to Test. Update Homey Test; use Clear presence if Occupied sticks."
+  },
+  "9.0.1062": {
+    "en": "Publish fix: Clear presence Flow card titleFormatted; mmWave stabilizer ready for VicHY tip soak. Update Homey Test and Repair sensors if stuck Occupied."
+  },
+  "9.0.1061": {
+    "en": "mmWave stabilizer: tighter distance/lux anti-spam, survival watchdog auto-clears stuck Occupied after departure delay, settings restore + Clear presence. Update Homey Test."
+  },
+  "9.0.1060": {
+    "en": "Presence radar: re-push sensitivity/delay after MCU reboot; Clear presence Flow action + settings; ghost-presence hints. Update Homey Test."
+  },
+  "9.0.1059": {
+    "en": "Presence radar settings hints: ghost presence sensitivity 2–4, MCU power-cycle if lux moves but presence stuck, through-wall range. Update Homey Test."
+  },
+  "9.0.1058": {
+    "en": "CI: align mfs_db after MTG075 dtzziy1e lock so the VicHY Curtain-heal tip can publish. Update Homey Test; restart 2–3 min; if still Curtain → remove + re-pair as Presence Sensor Radar."
+  },
+  "9.0.1057": {
+    "en": "Presence radar: heal Homey Curtain type flip faster; bathroom sticky presence soft-clear for VMC/fan micro-motion; MTG075 dtzziy1e family lock. Update Homey Test, restart app 2–3 min; re-pair as Presence Sensor Radar if still Curtain."
+  },
+  "9.0.1056": {
+    "en": "Homey RAM: smarter RSS/heap budget + safer lazy JSON loading; fix fingerprint routing after Z2M enrich. Update Homey Test."
+  },
+  "9.0.1055": {
+    "en": "Z2M/herdsman complementary: more verified mfr+pid couples (climate, dimmer, motion, SOS, switches, plugs, curtain) + misroute locks. Update Homey Test."
+  },
+  "9.0.1054": {
+    "en": "MTG075 Occupied mode: Homey still tracks real presence from distance/lux (smart overlay); keep Occupied if you want. Update Homey Test and restart both sensors."
+  },
+  "9.0.1052": {
+    "en": "CI: align mfs_db after gkfbdvyx sacred lock so L99 tip can publish. Update Homey Test."
+  },
+  "9.0.1051": {
+    "en": "L99: GH#547 gkfbdvyx radar dual-scale range + soft poll; sacred-keep TZE284; Moes curtain #533 keep. Update Homey Test and re-pair virtual/wrong drivers."
+  },
+  "9.0.1049": {
+    "en": "Republish after Athom processing_failed on 9.0.1048: OCR radar watchdog fix + OpenCodeReview wiring. Update Homey Test."
+  },
+  "9.0.1047": {
+    "en": "OCR review: fix bathroom radar watchdog false-clear + timer leak; add Alibaba OpenCodeReview project rules. Update Homey Test."
+  },
+  "9.0.1045": {
+    "en": "CI: align mfs_db after curtain FP move so VicHY radar tip 9.0.1044 can publish. Update Homey Test (8d9d0199)."
+  },
+  "9.0.1044": {
+    "en": "Bathroom radar MTG075: keep relay on/off after tip update, clear sticky empty-room presence faster. Update Homey Test and restart both sensors. Diag 8d9d0199."
+  },
+  "9.0.1043": {
+    "en": "Z2M/ZHA transpose: tubular motor fingerprint fix, cover direction strings, Tongou frequency scale, radar range unsigned, heat-meter DPs. Update Homey Test."
+  },
+  "9.0.1041": {
+    "en": "Presence radar MTG075/MTG235: occupied-mode unlock + smarter empty-room clear (Athom republish after 9.0.1040 processing_failed). Update Homey Test."
+  },
+  "9.0.1039": {
+    "en": "Presence radar MTG075 publish gate: keep DP1 trust lock with occupied-mode harden. Update Homey Test."
+  },
+  "9.0.1038": {
+    "en": "Presence radar MTG075/MTG235: unlock forced-occupied mode, smarter empty-room clear, clearer bathroom settings. Update Homey Test and restart both sensors."
+  },
+  "9.0.1036": {
+    "en": "CI: brand-scrub Solar Sync flow titles; wire radar anti-FP gates. Update Homey Test."
+  },
+  "9.0.1034": {
+    "en": "CI: wire VicHY radar anti-FP gates into all hard workflows. Presence bathroom false-positive harden. Update Homey Test."
+  },
+  "9.0.1032": {
+    "en": "Presence radar: fewer bathroom false positives, fix distance display, restore relay switch. Update Homey Test and restart the app on both sensors."
+  },
+  "9.0.1030": {
+    "en": "Presence radar: trust presence DP, keep sensor on/off, clear sticky empty-room detections. Update Homey Test and restart the app on both units."
+  },
+  "9.0.1028": {
+    "en": "VicHY #2247 diag 8d9d0199: trust DP1, restore relay onoff, soft-clear stagnant bathroom presence; fix publish gate p2511."
+  },
+  "9.0.1027": {
+    "en": "VicHY MTG075: trust DP1 presence, keep relay onoff, soft-clear sticky empty-room presence; EF00 incomplete interview cascade."
+  },
+  "9.0.1026": {
+    "en": "Incomplete Homey interview: intelligent DP/ZCL/raw RX-TX cascade (EF00-only + parallelDiscover)."
+  },
+  "9.0.1025": {
+    "en": "EF00-only pairing with ED00 extras (no OnOff 6); VicHY clrdrnya pure Tuya DP reinforce; ZG253 TRV #2244."
+  },
+  "9.0.1023": {
+    "en": "P2572 publish fix: contact_sensor P126 no TS0601 + pay2byax ZG path; Johan mega coverage."
+  },
+  "9.0.1022": {
+    "en": "Johan issues/PRs mega complementary coverage (radar/valve/CO2/plug/button/3gang) + dump pagination fix."
+  },
+  "9.0.1020": {
+    "en": "P2571 mfs_db align after T26439 locks (c8ipbljq/tgeqdjgk/vvmbj46n)."
+  },
+  "9.0.1019": {
+    "en": "T26439 tip harvest: Hejhome 6-gang + knob dimmer + LCD TH locks; soil/radar/bed/lux couples reinforced."
+  },
+  "9.0.1018": {
+    "en": "Johan complementary enrich + FP collision prune (OEM sibling bleed fixed)."
+  },
+  "9.0.1017": {
+    "en": "Complementary device coverage enrich (OEM/case variants) + Johan DP libraries retained; TRV/radar/curtain locks intact."
+  },
+  "9.0.1016": {
+    "en": "Forum fixes: ZG253 TRV ogx8u5z6 EF00 pairing (no OnOff cluster), sacred-keep; VicHY radar heal on tip."
+  },
+  "9.0.1015": {
+    "en": "Soft Feature 200 vectors finalized end-to-end (alias resolve, path/welcome/mode recipes, enable-all flows)."
+  },
+  "9.0.1014": {
+    "en": "200 unbranded Soft Feature vectors catalog + SoftRecipeRunner (path/welcome/lux/peak/idle/ambient recipes)."
+  },
+  "9.0.1013": {
+    "en": "More unbranded smart vectors: Quiet Hours, Contact Entry, Shade Daylight, Peak Load Soft Shed, Idle Auto-Off, Night Path bias."
+  },
+  "9.0.1012": {
+    "en": "Multi-vendor unbranded gateway features: Soft Device Link, Lux Adaptive Dim, Mirror Sync, Welcome Home, Absence Energy, Staggered Leave Off."
+  },
+  "9.0.1011": {
+    "en": "Full Soft Daylight Auto, Lamp Mesh Occupancy fusion, Soft Ambient Sync (BootBudget-safe Entertainment alternative)."
+  },
+  "9.0.1010": {
+    "en": "Soft Daylight Fade and Lamp Mesh Occupancy — branding-free gateway smart features; world Zigbee cartography."
+  },
+  "9.0.1009": {
+    "en": "Local smart learning for all workflows (CI habits + energy); forfait env on every GHA yml."
+  },
+  "9.0.1008": {
+    "en": "Publish size-gate prefers prepared app.json; Smart Flow + local energy learner on both tips."
+  },
+  "9.0.1007": {
+    "en": "Heal publish gate for Smart provenance energy mixin; keep local learner."
+  },
+  "9.0.1006": {
+    "en": "Keep ceiling radar gkfbdvyx front-pinned for pairing; Smart Flow learner tip."
+  },
+  "9.0.1005": {
+    "en": "Smart Flow provenance cards + local energy learning (habits, dim/color, measured vs estimate)."
+  },
+  "9.0.1004": {
+    "en": "Fine treat: Moes ZTS/AM43 + ceiling radar magic handshake; front-pin #533/#547 couples for pairing."
+  },
+  "9.0.1003": {
+    "en": "Elegant measured-first values: clean titles for real metrics; ≈ estimated, ƒ calculated, → predicted in UI and Smart Flows."
+  },
+  "9.0.1002": {
+    "en": "Fleet provenance keeps estimate/calculated labels; radar class nudge; wall dimmer magic TX heal."
+  },
+  "9.0.1001": {
+    "en": "Distinguish measured vs intelligent estimate vs calculated values in UI and Flow cards."
+  },
+  "9.0.1000": {
+    "en": "Smartbutton History + presence WHEN/class heal even when reports say fine."
+  },
+  "9.0.999": {
+    "en": "Wireless buttons: first-press after sleep (Z2M/ZHA magic), TS0046 cascade, Moes remotes skip broken scene mode."
+  },
+  "9.0.998": {
+    "en": "P2553: intelligent History/Insights on across sensor drivers (battery, climate, energy, alarms); silence mmWave distance + twin motion spam."
+  },
+  "9.0.997": {
+    "en": "P2550/P2551 dual-app: Smartbutton Insights History recycle + radar History/presence harden (BOTH)."
+  },
+  "9.0.996": {
+    "en": "P2550/P2551: Smartbutton battery Insights History recycle (Peter #2239); radar History dedupe + presence WHEN harden (VicHY #2240)."
+  },
+  "9.0.995": {
+    "en": "Presence radar: lock sensor class, faster heal if Homey flips type without app update."
+  },
+  "9.0.994": {
+    "en": "Removed wrong OEM fingerprint bleed onto 2-gang switch driver."
+  },
+  "9.0.993": {
+    "en": "Hardened SDK3 deferred init helper (no bare timers)."
+  },
+  "9.0.992": {
+    "en": "Improved Zigbee init safety and battery reporting. Expanded SDK3 and community app references."
+  },
+  "9.0.991": {
+    "en": "P2546 VicHY radar: periodic curtain/class heal + presence flow edge dedupe (forum #2240/#2241)."
+  },
+  "9.0.990": {
+    "en": "Aligned forfait unit tests with live daily AI cap (40)."
+  },
+  "9.0.989": {
+    "en": "Improved complementary I/O coverage (RX/TX/flow/energy/OTA) and multi-source OEM firmware indexes."
+  },
+  "9.0.988": {
+    "en": "Shared recent reliability advances across both apps (protocol fallbacks, air quality dual-case, local auto-improve)."
+  },
+  "9.0.987": {
+    "en": "Hardened cron automations for local-only self-improve and tighter AI plan limits without remote AI spend."
+  },
+  "9.0.986": {
+    "en": "Locked air-quality pairing to one driver and kept complementary DP logic without fingerprint collisions."
+  },
+  "9.0.985": {
+    "en": "Restored complementary air-quality fingerprints and dual-case enrich guards without shrinking working drivers."
+  },
+  "9.0.984": {
+    "en": "Improved complementary Zigbee DP/cluster/raw RX-TX paths for air quality and sensors without replacing working EF00 maps."
+  },
+  "9.0.983": {
+    "en": "Intelligent Zigbee 4.0 / Suzi awareness (classifier + diagnostics) without inventing device fingerprints."
+  },
+  "9.0.982": {
+    "en": "Aligned airbox fingerprint routing in mfs_db after air quality lock (no other device changes)."
+  },
+  "9.0.981": {
+    "en": "Improved air quality pairing for Tuya airbox sensors and Zigbee mesh guidance without degrading other devices."
+  },
+  "9.0.980": {
+    "en": "Publish unblock: nkjintbl anti-bot (TZE204 on plug only) + Zigbee RF/MCU evolution without degrade."
+  },
+  "9.0.979": {
+    "en": "Fixed complementary enrich bleed (nkjintbl) and kept Zigbee RF / MCU evolution guidance without degrading pairing."
+  },
+  "9.0.978": {
+    "en": "Improved Zigbee RF coexistence guidance and Tuya MCU time-sync resilience (Zigbee 4.0 / Suzi awareness without degrading pairing)."
+  },
+  "9.0.977": {
+    "en": "P2535: WZ1 rkgngb5o+TS0501B on led_controller_dimmable (anti-bot clear). Update Homey Test."
+  },
+  "9.0.976": {
+    "en": "P2535 fix: WZ1 rkgngb5o+TS0501B on led_controller_dimmable (avoid CCT Cartesian anti-bot). Update Homey Test."
+  },
+  "9.0.975": {
+    "en": "P2535 forum treat: Skydance/WZ1 _TZB210_rkgngb5o+TS0501B dimmable pairing (sibling TS0502B CCT). Update Homey Test."
+  },
+  "9.0.974": {
+    "en": "P2534 VicHY MTG075: presence follows DP1 (Z2M) — stop distance=0 flip-flop killing presence Flow WHEN."
+  },
+  "9.0.973": {
+    "en": "P2533 dual-app Contre quoi: gbm10jnj TS0044 lock soft on button_wireless_3 when absent (stable)."
+  },
+  "9.0.972": {
+    "en": "P2533 Contre quoi tests for complementary merge helpers; strip nkjintbl bleed from switch_2gang; keep dual-case + multi-pid locks."
+  },
+  "9.0.971": {
+    "en": "Added missing Contre quoi unit tests for complementary OEM overlays, dual-case compose preserve, and wall dimmer firmware mfr sync."
+  },
+  "9.0.970": {
+    "en": "Improved OEM/case variants and capabilities for recent Zigbee couples (covers, radar, dimmer, soil, DIN, buttons, knobs, plugs)."
+  },
+  "9.0.969": {
+    "en": "Improved OEM/case variants and capabilities for recent Zigbee couples (covers, radar, dimmer, soil, DIN, buttons, knobs, plugs)."
+  },
+  "9.0.967": {
+    "en": "Synced wall dimmer firmware update manufacturer names with Zigbee fingerprints."
+  },
+  "9.0.966": {
+    "en": "OEM TZE200/204/284 and case variants completed for recent radar, dimmer, knob and curtain couples."
+  },
+  "9.0.965": {
+    "en": "Completed OEM variants for recent devices; Moes SFC02 kq1l5eu5 locked on wall curtain switch."
+  },
+  "9.0.964": {
+    "en": "Completed OEM/case variants and capabilities for recent curtain, radar, dimmer and button couples."
+  },
+  "9.0.963": {
+    "en": "Deep functional enrich in all inbox workflows — DP, clusters, flows and RX/TX audited beyond fingerprint locks."
+  },
+  "9.0.962": {
+    "en": "Hardened radar DP ownership (cap vs capability) so lux/presence RX and presence flow edges stay correct."
+  },
+  "9.0.961": {
+    "en": "Fixed Intelligent IR flow cards after fleet-enrich re-inject; keep titleFormatted omitted."
+  },
+  "9.0.960": {
+    "en": "Hardened forum and scrape ingest against prompt injection and malicious markup."
+  },
+  "9.0.958": {
+    "en": "Presence radar WHEN cards fire on human presence edges; register remaining flow conditions."
+  },
+  "9.0.956": {
+    "en": "Hardened local-first WiFi credentials after Homey reboot (no cloud re-login)."
+  },
+  "9.0.955": {
+    "en": "Hardened mmWave presence flow triggers for all update paths."
+  },
+  "9.0.954": {
+    "en": "Improved mmWave presence flow triggers and IR flow cards."
+  },
+  "9.0.952": {
+    "en": "L99: strip doNotLock invent from climate (Fleet anti-bot); harden isForbiddenPlacement. Update Homey Test."
+  },
   "9.0.951": {
     "en": "Forum fine-resolve: OCR invent pad→ZM16B curtain; radar/curtain sacred front-pin; battery Insights heal. Update Homey Test."
   },
@@ -3497,560 +3669,392 @@
   "5.12.0": {
     "en": "v5.12.0: stable-v5 batch sync (drivers, FPs, flows, manifest) from master v9.0.240–v9.0.260."
   },
-  "9.0.952": {
-    "en": "L99: strip doNotLock invent from climate (Fleet anti-bot); harden isForbiddenPlacement. Update Homey Test."
-  },
-  "9.0.954": {
-    "en": "Improved mmWave presence flow triggers and IR flow cards."
-  },
-  "9.0.955": {
-    "en": "Hardened mmWave presence flow triggers for all update paths."
-  },
-  "9.0.956": {
-    "en": "Hardened local-first WiFi credentials after Homey reboot (no cloud re-login)."
-  },
-  "9.0.958": {
-    "en": "Presence radar WHEN cards fire on human presence edges; register remaining flow conditions."
-  },
-  "9.0.960": {
-    "en": "Hardened forum and scrape ingest against prompt injection and malicious markup."
-  },
-  "9.0.961": {
-    "en": "Fixed Intelligent IR flow cards after fleet-enrich re-inject; keep titleFormatted omitted."
-  },
-  "9.0.962": {
-    "en": "Hardened radar DP ownership (cap vs capability) so lux/presence RX and presence flow edges stay correct."
-  },
-  "9.0.963": {
-    "en": "Deep functional enrich in all inbox workflows — DP, clusters, flows and RX/TX audited beyond fingerprint locks."
-  },
-  "9.0.964": {
-    "en": "Completed OEM/case variants and capabilities for recent curtain, radar, dimmer and button couples."
-  },
-  "9.0.965": {
-    "en": "Completed OEM variants for recent devices; Moes SFC02 kq1l5eu5 locked on wall curtain switch."
-  },
-  "9.0.966": {
-    "en": "OEM TZE200/204/284 and case variants completed for recent radar, dimmer, knob and curtain couples."
-  },
-  "9.0.967": {
-    "en": "Synced wall dimmer firmware update manufacturer names with Zigbee fingerprints."
-  },
-  "9.0.969": {
-    "en": "Improved OEM/case variants and capabilities for recent Zigbee couples (covers, radar, dimmer, soil, DIN, buttons, knobs, plugs)."
-  },
-  "9.0.970": {
-    "en": "Improved OEM/case variants and capabilities for recent Zigbee couples (covers, radar, dimmer, soil, DIN, buttons, knobs, plugs)."
-  },
-  "9.0.971": {
-    "en": "Added missing Contre quoi unit tests for complementary OEM overlays, dual-case compose preserve, and wall dimmer firmware mfr sync."
-  },
-  "9.0.972": {
-    "en": "P2533 Contre quoi tests for complementary merge helpers; strip nkjintbl bleed from switch_2gang; keep dual-case + multi-pid locks."
-  },
-  "9.0.973": {
-    "en": "P2533 dual-app Contre quoi: gbm10jnj TS0044 lock soft on button_wireless_3 when absent (stable)."
-  },
-  "9.0.974": {
-    "en": "P2534 VicHY MTG075: presence follows DP1 (Z2M) — stop distance=0 flip-flop killing presence Flow WHEN."
-  },
-  "9.0.975": {
-    "en": "P2535 forum treat: Skydance/WZ1 _TZB210_rkgngb5o+TS0501B dimmable pairing (sibling TS0502B CCT). Update Homey Test."
-  },
-  "9.0.976": {
-    "en": "P2535 fix: WZ1 rkgngb5o+TS0501B on led_controller_dimmable (avoid CCT Cartesian anti-bot). Update Homey Test."
-  },
-  "9.0.977": {
-    "en": "P2535: WZ1 rkgngb5o+TS0501B on led_controller_dimmable (anti-bot clear). Update Homey Test."
-  },
-  "9.0.978": {
-    "en": "Improved Zigbee RF coexistence guidance and Tuya MCU time-sync resilience (Zigbee 4.0 / Suzi awareness without degrading pairing)."
-  },
-  "9.0.979": {
-    "en": "Fixed complementary enrich bleed (nkjintbl) and kept Zigbee RF / MCU evolution guidance without degrading pairing."
-  },
-  "9.0.980": {
-    "en": "Publish unblock: nkjintbl anti-bot (TZE204 on plug only) + Zigbee RF/MCU evolution without degrade."
-  },
-  "9.0.981": {
-    "en": "Improved air quality pairing for Tuya airbox sensors and Zigbee mesh guidance without degrading other devices."
-  },
-  "9.0.982": {
-    "en": "Aligned airbox fingerprint routing in mfs_db after air quality lock (no other device changes)."
-  },
-  "9.0.983": {
-    "en": "Intelligent Zigbee 4.0 / Suzi awareness (classifier + diagnostics) without inventing device fingerprints."
-  },
-  "9.0.984": {
-    "en": "Improved complementary Zigbee DP/cluster/raw RX-TX paths for air quality and sensors without replacing working EF00 maps."
-  },
-  "9.0.985": {
-    "en": "Restored complementary air-quality fingerprints and dual-case enrich guards without shrinking working drivers."
-  },
-  "9.0.986": {
-    "en": "Locked air-quality pairing to one driver and kept complementary DP logic without fingerprint collisions."
-  },
-  "9.0.987": {
-    "en": "Hardened cron automations for local-only self-improve and tighter AI plan limits without remote AI spend."
-  },
-  "9.0.988": {
-    "en": "Shared recent reliability advances across both apps (protocol fallbacks, air quality dual-case, local auto-improve)."
-  },
-  "9.0.989": {
-    "en": "Improved complementary I/O coverage (RX/TX/flow/energy/OTA) and multi-source OEM firmware indexes."
-  },
-  "9.0.990": {
-    "en": "Aligned forfait unit tests with live daily AI cap (40)."
-  },
-  "9.0.991": {
-    "en": "P2546 VicHY radar: periodic curtain/class heal + presence flow edge dedupe (forum #2240/#2241)."
-  },
-  "9.0.992": {
-    "en": "Improved Zigbee init safety and battery reporting. Expanded SDK3 and community app references."
-  },
-  "9.0.993": {
-    "en": "Hardened SDK3 deferred init helper (no bare timers)."
-  },
-  "9.0.994": {
-    "en": "Removed wrong OEM fingerprint bleed onto 2-gang switch driver."
-  },
-  "9.0.995": {
-    "en": "Presence radar: lock sensor class, faster heal if Homey flips type without app update."
-  },
-  "9.0.996": {
-    "en": "P2550/P2551: Smartbutton battery Insights History recycle (Peter #2239); radar History dedupe + presence WHEN harden (VicHY #2240)."
-  },
-  "9.0.997": {
-    "en": "P2550/P2551 dual-app: Smartbutton Insights History recycle + radar History/presence harden (BOTH)."
-  },
-  "9.0.998": {
-    "en": "P2553: intelligent History/Insights on across sensor drivers (battery, climate, energy, alarms); silence mmWave distance + twin motion spam."
-  },
-  "9.0.999": {
-    "en": "Wireless buttons: first-press after sleep (Z2M/ZHA magic), TS0046 cascade, Moes remotes skip broken scene mode."
-  },
-  "9.0.1000": {
-    "en": "Smartbutton History + presence WHEN/class heal even when reports say fine."
-  },
-  "9.0.1001": {
-    "en": "Distinguish measured vs intelligent estimate vs calculated values in UI and Flow cards."
-  },
-  "9.0.1002": {
-    "en": "Fleet provenance keeps estimate/calculated labels; radar class nudge; wall dimmer magic TX heal."
-  },
-  "9.0.1003": {
-    "en": "Elegant measured-first values: clean titles for real metrics; ≈ estimated, ƒ calculated, → predicted in UI and Smart Flows."
-  },
-  "9.0.1004": {
-    "en": "Fine treat: Moes ZTS/AM43 + ceiling radar magic handshake; front-pin #533/#547 couples for pairing."
-  },
-  "9.0.1005": {
-    "en": "Smart Flow provenance cards + local energy learning (habits, dim/color, measured vs estimate)."
-  },
-  "9.0.1006": {
-    "en": "Keep ceiling radar gkfbdvyx front-pinned for pairing; Smart Flow learner tip."
-  },
-  "9.0.1007": {
-    "en": "Heal publish gate for Smart provenance energy mixin; keep local learner."
-  },
-  "9.0.1008": {
-    "en": "Publish size-gate prefers prepared app.json; Smart Flow + local energy learner on both tips."
-  },
-  "9.0.1009": {
-    "en": "Local smart learning for all workflows (CI habits + energy); forfait env on every GHA yml."
-  },
-  "9.0.1010": {
-    "en": "Soft Daylight Fade and Lamp Mesh Occupancy — branding-free gateway smart features; world Zigbee cartography."
-  },
-  "9.0.1011": {
-    "en": "Full Soft Daylight Auto, Lamp Mesh Occupancy fusion, Soft Ambient Sync (BootBudget-safe Entertainment alternative)."
-  },
-  "9.0.1012": {
-    "en": "Multi-vendor unbranded gateway features: Soft Device Link, Lux Adaptive Dim, Mirror Sync, Welcome Home, Absence Energy, Staggered Leave Off."
-  },
-  "9.0.1013": {
-    "en": "More unbranded smart vectors: Quiet Hours, Contact Entry, Shade Daylight, Peak Load Soft Shed, Idle Auto-Off, Night Path bias."
-  },
-  "9.0.1014": {
-    "en": "200 unbranded Soft Feature vectors catalog + SoftRecipeRunner (path/welcome/lux/peak/idle/ambient recipes)."
-  },
-  "9.0.1015": {
-    "en": "Soft Feature 200 vectors finalized end-to-end (alias resolve, path/welcome/mode recipes, enable-all flows)."
-  },
-  "9.0.1016": {
-    "en": "Forum fixes: ZG253 TRV ogx8u5z6 EF00 pairing (no OnOff cluster), sacred-keep; VicHY radar heal on tip."
-  },
-  "9.0.1017": {
-    "en": "Complementary device coverage enrich (OEM/case variants) + Johan DP libraries retained; TRV/radar/curtain locks intact."
-  },
-  "9.0.1018": {
-    "en": "Johan complementary enrich + FP collision prune (OEM sibling bleed fixed)."
-  },
-  "9.0.1019": {
-    "en": "T26439 tip harvest: Hejhome 6-gang + knob dimmer + LCD TH locks; soil/radar/bed/lux couples reinforced."
-  },
-  "9.0.1020": {
-    "en": "P2571 mfs_db align after T26439 locks (c8ipbljq/tgeqdjgk/vvmbj46n)."
-  },
-  "9.0.1022": {
-    "en": "Johan issues/PRs mega complementary coverage (radar/valve/CO2/plug/button/3gang) + dump pagination fix."
-  },
-  "9.0.1023": {
-    "en": "P2572 publish fix: contact_sensor P126 no TS0601 + pay2byax ZG path; Johan mega coverage."
-  },
-  "9.0.1025": {
-    "en": "EF00-only pairing with ED00 extras (no OnOff 6); VicHY clrdrnya pure Tuya DP reinforce; ZG253 TRV #2244."
-  },
-  "9.0.1026": {
-    "en": "Incomplete Homey interview: intelligent DP/ZCL/raw RX-TX cascade (EF00-only + parallelDiscover)."
-  },
-  "9.0.1027": {
-    "en": "VicHY MTG075: trust DP1 presence, keep relay onoff, soft-clear sticky empty-room presence; EF00 incomplete interview cascade."
-  },
-  "9.0.1028": {
-    "en": "VicHY #2247 diag 8d9d0199: trust DP1, restore relay onoff, soft-clear stagnant bathroom presence; fix publish gate p2511."
-  },
-  "9.0.1068": {
-    "en": "ZG253 TRV ogx8u5z6: fix setpoint TX (Homey datapoint args) + EF00 DP refresh after pair. Update Test + Repair TRV."
-  },
-  "9.0.1074": {
-    "en": "Improved ceiling radar distance tracking and presence when lux works but distance stayed empty; TRV data query hardening stays in tip."
-  },
-  "9.0.1076": {
-    "en": "Improved ZG253 / me167 TRV temperature scale and wake refresh so empty caps and setpoint errors clear after update."
-  },
-  "9.0.1078": {
-    "en": "Improved MTG075 bathroom radar tiles — distance units and phantom zone/temp/battery cleanup after tip update."
-  },
-  "9.0.1080": {
-    "en": "Radar/TRV residual: mains EF00 periodic query, gkfbdvyx DP9 /10 SSOT, soft Channel listener before init. Update Homey Test + Repair presence radars and radiator valves."
-  },
-  "9.0.1082": {
-    "en": "Presence radar: slim compose (no phantom zones/temp on tip), announce re-arms distance tracking, CRQ3 DP9 fix. Update Homey Test + Repair radars/TRVs."
-  },
-  "9.0.1084": {
-    "en": "Presence radar: no phantom Channel on ceiling (gkfbdvyx); presence as quick action; MTG relay still gets Channel. Also slim compose + distance tracking. Update Homey Test + Repair radars/TRVs."
-  },
-  "9.0.1085": {
-    "en": "Presence radar: no phantom Channel on ceiling radars; presence quick action; MTG relay Channel via runtime. Update Homey Test + Repair."
-  },
-  "9.0.1087": {
-    "en": "Radar distance re-arm after re-pair; TS0043 scene remote pairing; TS130F curtain switch match. Update Homey Test + Repair."
-  },
-  "9.0.1088": {
-    "en": "Radar distance re-arm; TS0043 pairing; TS130F curtain match; stop nkjintbl bleed to 2-gang. Update Test + Repair."
-  },
-  "9.0.1089": {
-    "en": "Radar distance re-arm; TS0043 pairing; TS130F curtain; nkjintbl plug lock. Update Homey Test + Repair."
-  },
-  "9.0.1090": {
-    "en": "Publish unblock: nkjintbl TZE204 plug-only (anti-bot). Radar/button/curtain residuals from GH#550-552 stay on tip."
-  },
-  "9.0.1091": {
-    "en": "Restored MTG075 couple profile (Occupied/quantized docs) so Auto-Publish Contre quoi stays green."
-  },
-  "1.0.0": {
-    "en": "Bastien house track bootstrap — private Homey install; upstream enrich only.",
-    "fr": "Piste maison Bastien — install Homey privee; enrichissement upstream uniquement."
-  },
-  "1.0.1": {
-    "en": "Athom first-create ready — private Zigbee Bastien house app + publish workflow.",
-    "fr": "Pret pour creation Athom — app Zigbee Bastien maison + workflow publish."
-  },
-  "1.0.2": {
-    "en": "Wall 3-btn remotes hybrid RX (TS0043 class) for Bastien house install."
-  },
-  "1.0.3": {
-    "en": "Wall/scene remotes 1-6 btn hybrid RX fleet (battery+mains). Update Bastien Test; Repair remotes if presses miss."
-  },
-  "1.0.4": {
-    "en": "External Z2M/Johan wall-remote inventory + TS0041 tk3s5tyg rehome. Bastien Test update."
-  },
-  "1.0.5": {
-    "en": "Bastien: Moes ZT-YK + dual-app layer gate. Update Bastien Test."
-  },
-  "1.0.6": {
-    "en": "Bastien: sacred mfr+pid couple locks for Moes ZT-YK. Update Bastien Test."
-  },
-  "1.0.7": {
-    "en": "Bastien: prune remote mfs bleed to sacred mfr+pid couples. Update Bastien Test."
-  },
-  "1.0.8": {
-    "en": "Draft-to-test fleet sync + house profile refresh. Update Bastien Test."
-  },
-  "1.0.9": {
-    "en": "Added eWeLink CK-TLSR8656-SS5-01(7014) climate sensor support (temperature, humidity, battery). Re-pair if it was added as a generic Zigbee device."
-  },
-  "1.0.10": {
-    "en": "Fixed app settings blank infinite loading so Homey diagnostic reports can be sent. Mesh/WiFi scans are now optional."
-  },
-  "1.0.11": {
-    "en": "Fixed remote button crash (CI is not defined), flow cards, and moved _TZ3000_axpdxqgu TS0041 to Wireless Button 1. Update then remove+re-pair the button."
-  },
-  "1.0.12": {
-    "en": "3-button flat battery remote _TZ3000_vsxvaj9i TS0043: buttons now visible in device UI (Button 1-3), flows and Zigbee clusters locked. Update then remove+re-pair the remote."
-  },
-  "1.0.13": {
-    "en": "Fixed pairing so 1-button and 3-button remotes join the correct drivers (flows work). Update app, then REMOVE and re-add both remotes + the eWeLink climate sensor."
-  },
-  "1.0.14": {
-    "en": "Bastien house: fixed fingerprint sync + button flow cards (1-btn numbered, 3-btn, climate). Update to 1.0.14 then REMOVE and re-add the 1-button, 3-button remotes and eWeLink climate sensor. Recreate flows on the new devices."
-  },
-  "1.0.15": {
-    "en": "Flow UX: all buttons of a multi-button remote/wall share one Flow page (dropdown Button 1-N). Fixed Flows that never started. Update then recreate button Flows."
-  },
-  "1.0.16": {
-    "en": "TS0043 _TZ3000_vsxvaj9i: locked interview clusters (OnOff+E000, no EF00), battery EP1, 0xFD RX. Update then remove+re-pair the 3-button remote."
-  },
-  "1.0.17": {
-    "en": "TS0041 _TZ3000_axpdxqgu: locked interview clusters [0,1,6], fixed Flow cards (no args.device gate), 0xFD RX. Update then remove+re-pair the 1-button remote."
-  },
-  "1.0.18": {
-    "en": "Bastien mesh: eWeLink CK-TLSR TH→climate_sensor (not generic), cleared wrong 7014 fingerprints, clearer TS0041/TS0043 names. Update then remove+re-pair: 1-btn remote, eWeLink TH, verify 3-btn flows."
-  },
-  "1.0.19": {
-    "en": "Kitchen HOBEIAN ZG-301Z: clear auto-off countdown + force switch type State. TS0041 phantom-EP remotes (adndolvx). Update; for the light open settings → Clear countdown / Switch type=State, or restart app."
-  },
-  "1.0.23": {
-    "en": "Mesh inventory sync: LCD Unknown (_TZE284_vvmbj46n), 4-gang salon (_TZ3000_ltt60asa), TS0042 2-btn. Update app then re-pair Unknown LCD + Appareil Zigbee if needed."
-  },
-  "1.0.24": {
-    "en": "Bouton mural: lock 1-btn Moes Star Ring (TS0041) — Flows single/double/long, CR2032. Name 3ch is cosmetic."
-  },
-  "1.0.25": {
-    "en": "TS0041 Chinese remotes: collapse phantom 4-EP firmware (HA T455202 class). Flows 1-btn."
-  },
-  "1.0.26": {
-    "en": "Improved local LAN reliability (stale-data watchdog, fire-and-forget)."
-  },
-  "1.0.27": {
-    "en": "Fixed app settings blank infinite loader (Homey.ready before mesh/WiFi scan)."
-  },
-  "1.0.28": {
-    "en": "P2644: fix switch flow card IDs + remote CI crash (Bastien diags). Re-pair axpdxqgu as 1-btn, vsxvaj9i as 3-btn."
-  },
-  "1.0.29": {
-    "en": "P2644b: wall remote TS0041-only — stop 3ch remotes pairing as 1-button (Bastien 4d4e1684). Update + re-pair 3ch as Bouton sans fil 3."
-  },
-  "1.0.30": {
-    "en": "P2645: sleepy remotes skip battery configure on pair; quiet Time 0x000A logs. Keep tapping during pair."
-  },
-  "1.0.31": {
-    "en": "P2470: battery-skip log lock so publish gate stays green."
-  },
-  "1.0.32": {
-    "en": "P2650: radar range soft-require (align crash harden). Keep tapping sleepy remotes during pair."
-  },
-  "1.0.33": {
-    "en": "P2652/P2634: 4-gang ZCL-safe pairing + liygxtcq only on switch_4gang. Update Bastien Test; re-pair 4-gang if needed."
-  },
-  "1.0.34": {
-    "en": "P2654: remove truncated duplicate Flow card IDs (Athom unique-id). P2652 4-gang pairing. Update Bastien Test.",
-    "fr": "P2654: IDs Flow tronques en double retires. P2652 4-gang. Maj Test Bastien."
-  },
-  "1.0.35": {
-    "en": "Fixed flow token string + undeclared scene invent (P2659 Bastien diag)."
-  },
-  "1.0.36": {
-    "en": "Must update: lock mesh couples (TS0043 remote, TS0004 4gang, SNZB-02 climate) — remove Homey Virtual Zigbee tiles + re-pair under Zigbee Bastien. Flow/RX quiet fixes (P2659/P2661).",
-    "fr": "Maj obligatoire: couples mesh (telecommande TS0043, 4-gang TS0004, SNZB-02) — supprimer les tuiles Zigbee Homey generique + re-appairer sous Zigbee Bastien. Correctifs flow/RX (P2659/P2661)."
-  },
-  "1.0.37": {
-    "en": "Smarter warning fix: HOBEIAN ZG-301Z heal even when Homey leaves model blank (strips phantom Energy/power). TS0043 pairing text: never Homey Virtual. Update + Repair lights; re-pair 3-btn under Bastien.",
-    "fr": "Correctifs warnings: heal HOBEIAN ZG-301Z meme si modele Homey vide (retire Energie/power fantomes). Texte appairage TS0043: jamais Homey generique. Maj + Repair eclairages; re-appairer telecommande 3 sous Bastien."
-  },
-  "1.0.38": {
-    "en": "Zigbee mesh calm: stop aggressive power reporting on HOBEIAN wall modules that flooded the network. Update app then restart; re-pair any Homey Virtual Zigbee tiles under Bastien.",
-    "fr": "Calme du mesh Zigbee: arrete le reporting electrique agressif sur les modules HOBEIAN qui saturaient le reseau. Maj app puis redemarrer; re-appairer les tuiles Homey Zigbee generiques sous Bastien."
-  },
-  "1.0.39": {
-    "en": "Fix battery wall remotes (TS0043): presses reach Flows again; pair as Wireless Button 3 not Homey Zigbee; rebuild Flows with Button pressed → light. Update app then remove+re-add sticky.",
-    "fr": "Correctif telecommandes murales a piles (TS0043): les appuis repartent vers les Flows; appairer en Bouton sans fil 3 pas Homey Zigbee; recreer Flows Bouton appuye → lumiere. Maj app puis retirer+re-ajouter le stick."
-  },
-  "1.0.40": {
-    "en": "Mesh calm deepen: stop HOBEIAN modules flooding Zigbee (~5k msgs). Update+restart app. Re-pair Virtual remotes/sensors under Bastien drivers. Remove Unknown Nodes.",
-    "fr": "Calme mesh renforce: arrete le flood Zigbee des modules HOBEIAN (~5k msgs). Maj+redemarrer app. Re-appairer Virtual sous Bastien. Retirer les Unknown Nodes."
-  },
-  "1.0.41": {
-    "en": "P2666: lock Bastien climate couples (fllyghyj/eWeLink TH) to climate_sensor; prune FP bleed so SNZB-02 and CK-TLSR 7014 pair correctly."
-  },
-  "1.0.42": {
-    "en": "P2667: recognize Bastien Unknown Nodes (axpdxqgu 1-btn, dzwgk7e2 2-btn); HOBEIAN ZG-301Z setClass(light) + anti-Virtual learnmodes."
-  },
-  "1.0.43": {
-    "en": "P2667 republish: Bastien Unknown Node recognition + HOBEIAN setClass(light). Retry after Athom 1.0.42 socket hang up."
-  },
-  "1.0.44": {
-    "en": "P2668: Bastien couple research — HOBEIAN Z2M no-metering energy, learnmodes, TS0004 light class, LCD TH anti-Virtual. Update≥1.0.44 then Repair HOBEIAN + re-pair Virtuals."
-  },
-  "1.0.45": {
-    "en": "Bastien checklist: Update+Repair HOBEIAN lights, re-pair Virtuals/Unknown under Zigbee Bastien only, rebuild button Flows."
-  },
-  "1.0.46": {
-    "en": "Bastien mesh PID/mfs lock — HOBEIAN ZG-301Z + climate/button couples case forms."
-  },
-  "1.0.47": {
-    "en": "Deep Bastien enrich: HOBEIAN countdown+switch_type, WHD02, electrical 4-gang, climate/button alarm_battery."
-  },
-  "1.0.48": {
-    "en": "Fix TS0041 pair lock + P2670 deep enrich (countdown, WHD02, alarm_battery)."
-  },
-  "1.0.49": {
-    "en": "Publish fix: OTA manufacturerName exact case + P2670 deep enrich (HOBEIAN countdown/WHD02)."
-  },
-  "1.0.50": {
-    "en": "HOBEIAN recognition fix: exact HOBEIAN/heobian case forms + missing Z2M pids (3CH/MOTO/IR/210Z). Update + Repair."
-  },
-  "1.0.51": {
-    "en": "Intelligent dynamic energy: metered/approximate/battery adapts per device (P2672)."
-  },
-  "1.0.52": {
-    "en": "Bastien-first: all devices get intelligent energy + complementary HOBEIAN/UI enrich from master (P2673)."
-  },
-  "1.0.53": {
-    "en": "Publish tip: Bastien-first intelligent energy + HOBEIAN enrich (P2673)."
-  },
-  "1.0.57": {
-    "en": "HOBEIAN caseless collision harden + prevent empty WiFi zigbee stubs on promote."
-  },
-  "1.0.58": {
-    "en": "Dynamic fingerprint shards + Buffer JSON.parse (OOM harden P2678)."
-  },
-  "1.0.59": {
-    "en": "Fix random Flows from switch bootstrap + TS0042 sticky buttons (P2681). Update Test."
-  },
-  "1.0.60": {
-    "en": "Mesh calm: onOff report floor + no sleepy group-join spam (P2682)."
-  },
-  "1.0.61": {
-    "en": "TS0043 vsxvaj9i + TS0042 sticky: Flow Button pressed (not Zigbee channels), snappier 2-btn. Update + re-pair remotes."
-  },
-  "1.0.62": {
-    "en": "TS0041: pair Wireless Button 1 (not Unknown), Flow Bouton 1 appuye. Update + re-pair."
-  },
-  "1.0.63": {
-    "en": "TS0041 battery: less wake TX (pile). Update + re-pair remotes if tip-lag."
-  },
-  "1.0.64": {
-    "en": "Improved scene remote press latency and radiator valve pairing."
-  },
-  "1.0.65": {
-    "en": "Flow cards: list device actions and recent interactions. Update Bastien Test.",
-    "fr": "Cartes Flow: lister actions et interactions recentes. Maj Bastien Test."
-  },
-  "1.0.66": {
-    "en": "Smarter battery % (coin cells / rechargeables) without draining piles or flooding the mesh. Update Bastien Test.",
-    "fr": "Batterie plus precise (piles/accus) sans vider les piles ni saturer le mesh. Maj Bastien Test."
-  },
-  "1.0.69": {
-    "en": "TS0043/TS0042: faster presses + fix ghost other lamp (use Homey Flow, not Zigbee channels). Update Test.",
-    "fr": "TS0043/TS0042: appuis plus rapides + plus de ghost autre lampe (utiliser Flow Homey, pas les canaux Zigbee). Maj Test."
-  },
-  "1.0.70": {
-    "en": "P2694: Bastien mesh map from live DevTools — Unknown Node actions + prune ZG-302Z1 curtain bleed. Update Test.",
-    "fr": "P2694: carte mesh Bastien (DevTools) — actions Unknown Node + prune ZG-302Z1 curtain. Maj Test."
-  },
-  "1.0.71": {
-    "en": "P2695: deep mesh couple research (Z2M/ZHA/Blakadder/diags) — all Bastien mfr+pid locked + profiles. Update Test.",
-    "fr": "P2695: recherche profonde couples mesh (Z2M/ZHA/Blakadder/diags) — tous mfr+pid Bastien + profils. Maj Test."
-  },
-  "1.0.72": {
-    "en": "Improved publish reliability and CI integrity checks."
-  },
-  "1.0.73": {
-    "en": "Improved wireless button and radiator valve fingerprint pinning."
-  },
-  "1.0.74": {
-    "en": "P2698c: soft republish after Athom socket hang on #82"
-  },
-  "1.0.75": {
-    "en": "P2699 + house enrich: complementary DP/clusters, alarm_battery buttons, external FPs"
-  },
-  "1.0.76": {
-    "en": "P2700: soft-arm raw + RX/TX + PFC for non-native Homey gaps"
-  },
-  "1.0.77": {
-    "en": "P2701: IntelligentEnergyAdapter before energy + TS0043 complementary soft-arm"
-  },
-  "1.0.84": {
-    "en": "Wall hybrid UI sync gated skipUiPulse (scene remotes keep tiles; black remotes crash-safe).",
-    "fr": "Sync UI hybrid gate skipUiPulse (scene OK; noires crash-safe)."
-  },
-  "1.0.85": {
-    "en": "Restore hybrid parseZclHeader (P2616) + skipUiPulse UI gate.",
-    "fr": "Restaure parseZclHeader hybrid (P2616) + gate skipUiPulse."
-  },
-  "1.0.86": {
-    "en": "Strip alarm_battery conflict on remotes/climate (keep %).",
-    "fr": "Retire alarm_battery conflit remotes/climate (garde %)."
-  },
-  "1.0.87": {
-    "en": "Battery: precise % from chemistry curves (LiFePO4, NiMH, coin/akku) + voltage. Update Test.",
-    "fr": "Batterie: % precis courbes chimie (LiFePO4, NiMH, piles/akkus) + tension. Maj Test."
-  },
-  "1.0.88": {
-    "en": "Improved Tuya datapoint TX framing (fleet treat)."
-  },
-  "1.0.89": {
-    "en": "Faster TS0042/TS0043 remotes. Update + Repair.",
-    "fr": "TS0042/TS0043 plus rapides. Maj + Repair."
-  },
-  "1.0.90": {
-    "en": "App Settings: fix infinite spinner / blank page (Homey.ready). Update Test.",
-    "fr": "Reglages app: correction roue infinie / page blanche (Homey.ready). Maj Test."
-  },
-  "1.0.91": {
-    "en": "Remotes: stop Homey OOM crash that killed all buttons after press. Update Test + restart app once.",
-    "fr": "Telecommandes: stop crash OOM Homey qui tuait tous les boutons apres un appui. Maj Test + redemarrer app."
-  },
-  "1.0.95": {
-    "en": "Retry after Athom hang on 1.0.94: skip battery configureReporting on remotes (settings/opt); less TX storm. Update Test + restart.",
-    "fr": "Retry apres hang Athom 1.0.94: plus de configureReporting batterie sur telecommandes; moins de TX Error. Maj Test + restart."
-  },
-  "1.0.96": {
-    "en": "Athom publish slim (house fleet only) so Test can land after 1.0.94/95 hang; remotes TX quieter. Update Test + restart.",
-    "fr": "Publish Athom allégé (flotte maison) pour débloquer Test après hang 1.0.94/95; telecommandes. Maj Test + restart."
-  },
-  "1.0.100": {
-    "en": "Improved wireless remote reliability (skip IAS enroll storm)."
-  },
-  "1.0.101": {
-    "en": "Bastien TS004x: wake listen-only (no bind storm) — fixes ~7s dead + black remote lag/crash. Update Test + restart app.",
-    "fr": "TS004x Bastien: wake listen-only (pas de bind storm) — corrige ~7s mort + lag/crash noirs. Maj Test + redemarrer."
-  },
-  "1.0.102": {
-    "en": "Bastien bi-dir: soft Homey UI pulse on press + complementary RX/TX soft-arm (tiles alive, no crash). Update Test + restart.",
-    "fr": "Bi-dir Bastien: soft pulse UI Homey + soft-arm RX/TX complementaire (tuiles vivantes, pas de crash). Maj Test + restart."
-  },
-  "1.0.103": {
-    "en": "Bastien: famkxci2 TS0043 snappy parity (same as blacks) + L99 house plan. Update Test + restart.",
-    "fr": "Bastien: parite snappy famkxci2 TS0043 (comme noirs) + plan maison L99. Maj Test + restart."
-  },
-  "1.0.104": {
-    "en": "Bastien: all TS0041-43 profiles get snappy parity (no slow exact-mfr trap). Update Test + restart on Bastien Homey.",
-    "fr": "Bastien: tous profils TS0041-43 snappy (plus de piege mfr exact lent). Maj Test + restart sur Homey Bastien."
-  },
-  "1.0.105": {
-    "en": "Bastien L99: tip-lag is #1 house risk; remotes snappy+bi-dir locked. Update Test on Bastien Homey + restart.",
-    "fr": "Bastien L99: tip-lag = risque #1 maison; remotes snappy+bi-dir. Maj Test sur Homey Bastien + restart."
-  },
-  "1.0.106": {
-    "en": "Improved Homey Test publish soft-continue after Athom processing flakes."
-  },
-  "1.0.107": {
-    "en": "Snappy remotes: skip wake magic/DP TX storm (listen-only). Update Test + Restart.",
-    "fr": "Remotes snappy: plus de storm TX magic/DP au wake (listen-only). Maj Test + Redemarrer."
-  },
-  "1.0.109": {
-    "en": "2-button remote Flows: tagged Bouton appuye/double/long/multi + battery changed now fire on snappy TS0042. Update Bastien Test 1.0.109 then Restart once.",
-    "fr": "Flows telecommande 2 boutons: etiquettes Bouton appuye/double/long/multi + batterie changee marchent (TS0042 snappy). Maj Bastien Test 1.0.109 puis Redemarrer une fois."
+  "1.0.112": {
+    "en": "Tagged Flows (label/token icon) now fire from all paths incl. complementary/raw RX. UPDATE Bastien Test to 1.0.112 then Restart once.",
+    "fr": "Flows etiquetes (icone tag/token) se declenchent aussi en RX complementaire/raw. MAJ Bastien Test 1.0.112 puis Redemarrer une fois."
+  },
+  "1.0.111": {
+    "en": "All Homey tagged Flows: emit *_changed tokens when values update + wire dropdown args. Update Bastien Test 1.0.111 then Restart once.",
+    "fr": "Tous les Flows etiquetes Homey: emission *_changed + cableage args dropdown. Maj Bastien Test 1.0.111 puis Redemarrer une fois."
   },
   "1.0.110": {
     "en": "All remote Flows improved: tagged button cards + battery-changed fleet-wide (1–8 btn / scene / wall). Update Bastien Test 1.0.110 then Restart once.",
     "fr": "Tous les Flows telecommandes ameliores: cartes etiquetees + batterie changee (1–8 btn / scene / mur). Maj Bastien Test 1.0.110 puis Redemarrer une fois."
   },
-  "1.0.111": {
-    "en": "All Homey tagged Flows: emit *_changed tokens when values update + wire dropdown args. Update Bastien Test 1.0.111 then Restart once.",
-    "fr": "Tous les Flows etiquetes Homey: emission *_changed + cableage args dropdown. Maj Bastien Test 1.0.111 puis Redemarrer une fois."
+  "1.0.109": {
+    "en": "2-button remote Flows: tagged Bouton appuye/double/long/multi + battery changed now fire on snappy TS0042. Update Bastien Test 1.0.109 then Restart once.",
+    "fr": "Flows telecommande 2 boutons: etiquettes Bouton appuye/double/long/multi + batterie changee marchent (TS0042 snappy). Maj Bastien Test 1.0.109 puis Redemarrer une fois."
+  },
+  "1.0.108": {
+    "en": "P2741 live: remotes skip MCU sync on wake; devices load OK after tip. UPDATE Bastien Test to 1.0.108 then Restart once.",
+    "fr": "P2741 live: remotes skip sync MCU au wake; appareils chargent. MAJ Bastien Test 1.0.108 puis Redemarrer une fois."
+  },
+  "1.0.107": {
+    "en": "Snappy remotes: skip wake magic/DP TX storm (listen-only). Update Test + Restart.",
+    "fr": "Remotes snappy: plus de storm TX magic/DP au wake (listen-only). Maj Test + Redemarrer."
+  },
+  "1.0.106": {
+    "en": "Improved Homey Test publish soft-continue after Athom processing flakes."
+  },
+  "1.0.105": {
+    "en": "Bastien L99: tip-lag is #1 house risk; remotes snappy+bi-dir locked. Update Test on Bastien Homey + restart.",
+    "fr": "Bastien L99: tip-lag = risque #1 maison; remotes snappy+bi-dir. Maj Test sur Homey Bastien + restart."
+  },
+  "1.0.104": {
+    "en": "Bastien: all TS0041-43 profiles get snappy parity (no slow exact-mfr trap). Update Test + restart on Bastien Homey.",
+    "fr": "Bastien: tous profils TS0041-43 snappy (plus de piege mfr exact lent). Maj Test + restart sur Homey Bastien."
+  },
+  "1.0.103": {
+    "en": "Bastien: famkxci2 TS0043 snappy parity (same as blacks) + L99 house plan. Update Test + restart.",
+    "fr": "Bastien: parite snappy famkxci2 TS0043 (comme noirs) + plan maison L99. Maj Test + restart."
+  },
+  "1.0.102": {
+    "en": "Bastien bi-dir: soft Homey UI pulse on press + complementary RX/TX soft-arm (tiles alive, no crash). Update Test + restart.",
+    "fr": "Bi-dir Bastien: soft pulse UI Homey + soft-arm RX/TX complementaire (tuiles vivantes, pas de crash). Maj Test + restart."
+  },
+  "1.0.101": {
+    "en": "Bastien TS004x: wake listen-only (no bind storm) — fixes ~7s dead + black remote lag/crash. Update Test + restart app.",
+    "fr": "TS004x Bastien: wake listen-only (pas de bind storm) — corrige ~7s mort + lag/crash noirs. Maj Test + redemarrer."
+  },
+  "1.0.100": {
+    "en": "Improved wireless remote reliability (skip IAS enroll storm)."
+  },
+  "1.0.99": {
+    "en": "Remotes dead on 1.0.93: early LIVE-DATA purge + skip battery TX on boot. UPDATE Bastien Test to 1.0.99 then Restart once. Press each remote to wake.",
+    "fr": "Telecommandes mortes sur 1.0.93: purge LIVE-DATA au boot + skip TX batterie. MAJ Bastien Test 1.0.99 puis Redemarrer une fois. Appuyer chaque remote."
+  },
+  "1.0.98": {
+    "en": "Publish fix: radar distance icon asset + house fleet land. Update Bastien Test + restart.",
+    "fr": "Fix publish: icone distance radar + flotte maison. Maj Bastien Test + restart."
+  },
+  "1.0.97": {
+    "en": "Publish slim house fleet (Athom land) + ceiling radar sitting/motion fix. Update Bastien Test + restart.",
+    "fr": "Publish flotte maison (Athom) + radar plafond immobilite/motion. Maj Bastien Test + restart."
+  },
+  "1.0.96": {
+    "en": "Athom publish slim (house fleet only) so Test can land after 1.0.94/95 hang; remotes TX quieter. Update Test + restart.",
+    "fr": "Publish Athom allégé (flotte maison) pour débloquer Test après hang 1.0.94/95; telecommandes. Maj Test + restart."
+  },
+  "1.0.95": {
+    "en": "Retry after Athom hang on 1.0.94: skip battery configureReporting on remotes (settings/opt); less TX storm. Update Test + restart.",
+    "fr": "Retry apres hang Athom 1.0.94: plus de configureReporting batterie sur telecommandes; moins de TX Error. Maj Test + restart."
+  },
+  "1.0.94": {
+    "en": "Ceiling radar + remotes soak: motion re-arm after stillness; distance ~0.9. Update Bastien Test + restart.",
+    "fr": "Radar + telecommandes: motion rearme apres immobilite; distance ~0.9. Maj Bastien Test + restart."
+  },
+  "1.0.93": {
+    "en": "Remotes: faster rapid off/on (no ~7s dead window); less lag when TS0042/43 fire. Update Bastien Test + restart once.",
+    "fr": "Telecommandes: off/on rapide (plus de ~7s morts); moins de lag quand TS0042/43 tirent. Maj Test Bastien + restart."
+  },
+  "1.0.92": {
+    "en": "Bastien remotes: purge leftover LIVE-DATA overlay (fixes all dead after OOM); leaner button press. Update Bastien Test ≥1.0.92 + restart once.",
+    "fr": "Telecommandes Bastien: purge overlay LIVE-DATA (plus rien mort apres OOM); press plus leger. Maj Test Bastien ≥1.0.92 + restart une fois."
+  },
+  "1.0.91": {
+    "en": "Remotes: stop Homey OOM crash that killed all buttons after press. Update Test + restart app once.",
+    "fr": "Telecommandes: stop crash OOM Homey qui tuait tous les boutons apres un appui. Maj Test + redemarrer app."
+  },
+  "1.0.90": {
+    "en": "App Settings: fix infinite spinner / blank page (Homey.ready). Update Test.",
+    "fr": "Reglages app: correction roue infinie / page blanche (Homey.ready). Maj Test."
+  },
+  "1.0.89": {
+    "en": "Faster TS0042/TS0043 remotes. Update + Repair.",
+    "fr": "TS0042/TS0043 plus rapides. Maj + Repair."
+  },
+  "1.0.88": {
+    "en": "Improved Tuya datapoint TX framing (fleet treat)."
+  },
+  "1.0.87": {
+    "en": "Battery: precise % from chemistry curves (LiFePO4, NiMH, coin/akku) + voltage. Update Test.",
+    "fr": "Batterie: % precis courbes chimie (LiFePO4, NiMH, piles/akkus) + tension. Maj Test."
+  },
+  "1.0.86": {
+    "en": "Strip alarm_battery conflict on remotes/climate (keep %).",
+    "fr": "Retire alarm_battery conflit remotes/climate (garde %)."
+  },
+  "1.0.85": {
+    "en": "Restore hybrid parseZclHeader (P2616) + skipUiPulse UI gate.",
+    "fr": "Restaure parseZclHeader hybrid (P2616) + gate skipUiPulse."
+  },
+  "1.0.84": {
+    "en": "Wall hybrid UI sync gated skipUiPulse (scene remotes keep tiles; black remotes crash-safe).",
+    "fr": "Sync UI hybrid gate skipUiPulse (scene OK; noires crash-safe)."
+  },
+  "1.0.83": {
+    "en": "Bastien remotes: TS0041 faster; TS0042/43 snappy + no TS0041 lag; battery % fix; black remotes crash-safe. Update Test.",
+    "fr": "Telecommandes Bastien: TS0041 plus rapide; TS0042/43 snappy + sans lag TS0041; batterie %; noirs anti-crash. Maj Test."
+  },
+  "1.0.82": {
+    "en": "Black TS0042/TS0043: stop Homey app crashes on press; leaner Flow path. Update Bastien Test.",
+    "fr": "Boutons noirs TS0042/TS0043: stop crash app Homey au press; chemin Flow allégé. Maj Test Bastien."
+  },
+  "1.0.81": {
+    "en": "TS0042/TS0043 faster + no longer slow TS0041; black remotes less crashy; TS0043 battery % fix (was stuck ~0–84). Update Bastien Test.",
+    "fr": "TS0042/TS0043 plus rapides + ne ralentissent plus le TS0041; boutons noirs moins de crash; batterie TS0043 corrigee (bloquee ~0–84). Maj Test Bastien."
+  },
+  "1.0.80": {
+    "en": "Bastien fleet: front-pin HOBEIAN/ZG-301Z, ltt60asa/TS0004, fllyghyj/SNZB-02 + snappy Homey→relay TX. Update Test; Repair lights/4gang if laggy.",
+    "fr": "Flotte Bastien: front-pin HOBEIAN/ZG-301Z, ltt60asa/TS0004, fllyghyj/SNZB-02 + TX Homey→relais rapide. Maj Test; Repar lights/4gang si lent."
+  },
+  "1.0.79": {
+    "en": "Bastien remotes: front-pin TS0041/42/43 fingerprints + IEEE map for Homey « Appareil Zigbee » mis-pair. Update Test; remove Appareil Zigbee nodes 3+7 then re-pair as Bouton 1/3.",
+    "fr": "Telecommandes Bastien: fingerprints TS0041/42/43 en tete + carte IEEE pour « Appareil Zigbee » mal appairé. Maj Test; supprimer noeuds Appareil Zigbee 3+7 puis re-appairer Bouton 1/3."
+  },
+  "1.0.78": {
+    "en": "TS0042 snappier button to relay; TS0041/TS0043 pairing fix (remove bleed). Update Bastien Test; remove Unknown Nodes then re-pair as Bouton 1 / Bouton 3.",
+    "fr": "TS0042 plus rapide bouton vers relais; correctif appairage TS0041/TS0043. Maj Test Bastien; supprimer noeuds Inconnus puis re-appairer Bouton 1 / Bouton 3."
+  },
+  "1.0.77": {
+    "en": "P2701: IntelligentEnergyAdapter before energy + TS0043 complementary soft-arm"
+  },
+  "1.0.76": {
+    "en": "P2700: soft-arm raw + RX/TX + PFC for non-native Homey gaps"
+  },
+  "1.0.75": {
+    "en": "P2699 + house enrich: complementary DP/clusters, alarm_battery buttons, external FPs"
+  },
+  "1.0.74": {
+    "en": "P2698c: soft republish after Athom socket hang on #82"
+  },
+  "1.0.73": {
+    "en": "Improved wireless button and radiator valve fingerprint pinning."
+  },
+  "1.0.72": {
+    "en": "Improved publish reliability and CI integrity checks."
+  },
+  "1.0.71": {
+    "en": "P2695: deep mesh couple research (Z2M/ZHA/Blakadder/diags) — all Bastien mfr+pid locked + profiles. Update Test.",
+    "fr": "P2695: recherche profonde couples mesh (Z2M/ZHA/Blakadder/diags) — tous mfr+pid Bastien + profils. Maj Test."
+  },
+  "1.0.70": {
+    "en": "P2694: Bastien mesh map from live DevTools — Unknown Node actions + prune ZG-302Z1 curtain bleed. Update Test.",
+    "fr": "P2694: carte mesh Bastien (DevTools) — actions Unknown Node + prune ZG-302Z1 curtain. Maj Test."
+  },
+  "1.0.69": {
+    "en": "TS0043/TS0042: faster presses + fix ghost other lamp (use Homey Flow, not Zigbee channels). Update Test.",
+    "fr": "TS0043/TS0042: appuis plus rapides + plus de ghost autre lampe (utiliser Flow Homey, pas les canaux Zigbee). Maj Test."
+  },
+  "1.0.68": {
+    "en": "Publish heal: HOBEIAN OCR collisions + ZG-301Z sacred couple + energy safety (P2692). Update Test.",
+    "fr": "Heal publish: collisions OCR HOBEIAN + couple ZG-301Z + energie (P2692). Maj Test."
+  },
+  "1.0.67": {
+    "en": "Battery remotes: stop powerCfg TX storms that empty CR2032 (P2691). Update Test.",
+    "fr": "Telecommandes piles: stop tempetes powerCfg qui vident les CR2032 (P2691). Maj Test."
+  },
+  "1.0.66": {
+    "en": "Smarter battery % (coin cells / rechargeables) without draining piles or flooding the mesh. Update Bastien Test.",
+    "fr": "Batterie plus precise (piles/accus) sans vider les piles ni saturer le mesh. Maj Bastien Test."
+  },
+  "1.0.65": {
+    "en": "Flow cards: list device actions and recent interactions. Update Bastien Test.",
+    "fr": "Cartes Flow: lister actions et interactions recentes. Maj Bastien Test."
+  },
+  "1.0.64": {
+    "en": "Improved scene remote press latency and radiator valve pairing."
+  },
+  "1.0.63": {
+    "en": "TS0041 battery: less wake TX (pile). Update + re-pair remotes if tip-lag."
+  },
+  "1.0.62": {
+    "en": "TS0041: pair Wireless Button 1 (not Unknown), Flow Bouton 1 appuye. Update + re-pair."
+  },
+  "1.0.61": {
+    "en": "TS0043 vsxvaj9i + TS0042 sticky: Flow Button pressed (not Zigbee channels), snappier 2-btn. Update + re-pair remotes."
+  },
+  "1.0.60": {
+    "en": "Mesh calm: onOff report floor + no sleepy group-join spam (P2682)."
+  },
+  "1.0.59": {
+    "en": "Fix random Flows from switch bootstrap + TS0042 sticky buttons (P2681). Update Test."
+  },
+  "1.0.58": {
+    "en": "Dynamic fingerprint shards + Buffer JSON.parse (OOM harden P2678)."
+  },
+  "1.0.57": {
+    "en": "HOBEIAN caseless collision harden + prevent empty WiFi zigbee stubs on promote."
+  },
+  "1.0.56": {
+    "en": "HOBEIAN caseless Athom forms + Z2M pids (P2677).",
+    "fr": "HOBEIAN formes Athom caseless + pids Z2M (P2677)."
+  },
+  "1.0.55": {
+    "en": "Critical: lights/relays boot after MODULE_NOT_FOUND harden (P2676). Update Bastien Test and restart.",
+    "fr": "Critique: demarrage lumieres/relais apres correctif MODULE_NOT_FOUND (P2676). Maj Bastien Test et redemarrer."
+  },
+  "1.0.54": {
+    "en": "Boot fix: app no longer crashes when Zigbee driver module load fails (lights/relays dead). Update Bastien Test and restart app.",
+    "fr": "Correctif demarrage: l app ne plante plus si le module Zigbee manque (lumieres/relais morts). Maj Bastien Test et redemarrer l app."
+  },
+  "1.0.53": {
+    "en": "Publish tip: Bastien-first intelligent energy + HOBEIAN enrich (P2673)."
+  },
+  "1.0.52": {
+    "en": "Bastien-first: all devices get intelligent energy + complementary HOBEIAN/UI enrich from master (P2673)."
+  },
+  "1.0.51": {
+    "en": "Intelligent dynamic energy: metered/approximate/battery adapts per device (P2672)."
+  },
+  "1.0.50": {
+    "en": "HOBEIAN recognition fix: exact HOBEIAN/heobian case forms + missing Z2M pids (3CH/MOTO/IR/210Z). Update + Repair."
+  },
+  "1.0.49": {
+    "en": "Publish fix: OTA manufacturerName exact case + P2670 deep enrich (HOBEIAN countdown/WHD02)."
+  },
+  "1.0.48": {
+    "en": "Fix TS0041 pair lock + P2670 deep enrich (countdown, WHD02, alarm_battery)."
+  },
+  "1.0.47": {
+    "en": "Deep Bastien enrich: HOBEIAN countdown+switch_type, WHD02, electrical 4-gang, climate/button alarm_battery."
+  },
+  "1.0.46": {
+    "en": "Bastien mesh PID/mfs lock — HOBEIAN ZG-301Z + climate/button couples case forms."
+  },
+  "1.0.45": {
+    "en": "Bastien checklist: Update+Repair HOBEIAN lights, re-pair Virtuals/Unknown under Zigbee Bastien only, rebuild button Flows."
+  },
+  "1.0.44": {
+    "en": "P2668: Bastien couple research — HOBEIAN Z2M no-metering energy, learnmodes, TS0004 light class, LCD TH anti-Virtual. Update≥1.0.44 then Repair HOBEIAN + re-pair Virtuals."
+  },
+  "1.0.43": {
+    "en": "P2667 republish: Bastien Unknown Node recognition + HOBEIAN setClass(light). Retry after Athom 1.0.42 socket hang up."
+  },
+  "1.0.42": {
+    "en": "P2667: recognize Bastien Unknown Nodes (axpdxqgu 1-btn, dzwgk7e2 2-btn); HOBEIAN ZG-301Z setClass(light) + anti-Virtual learnmodes."
+  },
+  "1.0.41": {
+    "en": "P2666: lock Bastien climate couples (fllyghyj/eWeLink TH) to climate_sensor; prune FP bleed so SNZB-02 and CK-TLSR 7014 pair correctly."
+  },
+  "1.0.40": {
+    "en": "Mesh calm deepen: stop HOBEIAN modules flooding Zigbee (~5k msgs). Update+restart app. Re-pair Virtual remotes/sensors under Bastien drivers. Remove Unknown Nodes.",
+    "fr": "Calme mesh renforce: arrete le flood Zigbee des modules HOBEIAN (~5k msgs). Maj+redemarrer app. Re-appairer Virtual sous Bastien. Retirer les Unknown Nodes."
+  },
+  "1.0.39": {
+    "en": "Fix battery wall remotes (TS0043): presses reach Flows again; pair as Wireless Button 3 not Homey Zigbee; rebuild Flows with Button pressed → light. Update app then remove+re-add sticky.",
+    "fr": "Correctif telecommandes murales a piles (TS0043): les appuis repartent vers les Flows; appairer en Bouton sans fil 3 pas Homey Zigbee; recreer Flows Bouton appuye → lumiere. Maj app puis retirer+re-ajouter le stick."
+  },
+  "1.0.38": {
+    "en": "Zigbee mesh calm: stop aggressive power reporting on HOBEIAN wall modules that flooded the network. Update app then restart; re-pair any Homey Virtual Zigbee tiles under Bastien.",
+    "fr": "Calme du mesh Zigbee: arrete le reporting electrique agressif sur les modules HOBEIAN qui saturaient le reseau. Maj app puis redemarrer; re-appairer les tuiles Homey Zigbee generiques sous Bastien."
+  },
+  "1.0.37": {
+    "en": "Smarter warning fix: HOBEIAN ZG-301Z heal even when Homey leaves model blank (strips phantom Energy/power). TS0043 pairing text: never Homey Virtual. Update + Repair lights; re-pair 3-btn under Bastien.",
+    "fr": "Correctifs warnings: heal HOBEIAN ZG-301Z meme si modele Homey vide (retire Energie/power fantomes). Texte appairage TS0043: jamais Homey generique. Maj + Repair eclairages; re-appairer telecommande 3 sous Bastien."
+  },
+  "1.0.36": {
+    "en": "Must update: lock mesh couples (TS0043 remote, TS0004 4gang, SNZB-02 climate) — remove Homey Virtual Zigbee tiles + re-pair under Zigbee Bastien. Flow/RX quiet fixes (P2659/P2661).",
+    "fr": "Maj obligatoire: couples mesh (telecommande TS0043, 4-gang TS0004, SNZB-02) — supprimer les tuiles Zigbee Homey generique + re-appairer sous Zigbee Bastien. Correctifs flow/RX (P2659/P2661)."
+  },
+  "1.0.35": {
+    "en": "Fixed flow token string + undeclared scene invent (P2659 Bastien diag)."
+  },
+  "1.0.34": {
+    "en": "P2654: remove truncated duplicate Flow card IDs (Athom unique-id). P2652 4-gang pairing. Update Bastien Test.",
+    "fr": "P2654: IDs Flow tronques en double retires. P2652 4-gang. Maj Test Bastien."
+  },
+  "1.0.33": {
+    "en": "P2652/P2634: 4-gang ZCL-safe pairing + liygxtcq only on switch_4gang. Update Bastien Test; re-pair 4-gang if needed."
+  },
+  "1.0.32": {
+    "en": "P2650: radar range soft-require (align crash harden). Keep tapping sleepy remotes during pair."
+  },
+  "1.0.31": {
+    "en": "P2470: battery-skip log lock so publish gate stays green."
+  },
+  "1.0.30": {
+    "en": "P2645: sleepy remotes skip battery configure on pair; quiet Time 0x000A logs. Keep tapping during pair."
+  },
+  "1.0.29": {
+    "en": "P2644b: wall remote TS0041-only — stop 3ch remotes pairing as 1-button (Bastien 4d4e1684). Update + re-pair 3ch as Bouton sans fil 3."
+  },
+  "1.0.28": {
+    "en": "P2644: fix switch flow card IDs + remote CI crash (Bastien diags). Re-pair axpdxqgu as 1-btn, vsxvaj9i as 3-btn."
+  },
+  "1.0.27": {
+    "en": "Fixed app settings blank infinite loader (Homey.ready before mesh/WiFi scan)."
+  },
+  "1.0.26": {
+    "en": "Improved local LAN reliability (stale-data watchdog, fire-and-forget)."
+  },
+  "1.0.25": {
+    "en": "TS0041 Chinese remotes: collapse phantom 4-EP firmware (HA T455202 class). Flows 1-btn."
+  },
+  "1.0.24": {
+    "en": "Bouton mural: lock 1-btn Moes Star Ring (TS0041) — Flows single/double/long, CR2032. Name 3ch is cosmetic."
+  },
+  "1.0.23": {
+    "en": "Mesh inventory sync: LCD Unknown (_TZE284_vvmbj46n), 4-gang salon (_TZ3000_ltt60asa), TS0042 2-btn. Update app then re-pair Unknown LCD + Appareil Zigbee if needed."
+  },
+  "1.0.22": {
+    "en": "2-btn remote _TZ3000_dzwgk7e2+TS0042 (was unrecognized; phantom EP3/4 ignored). Update Bastien Test + re-pair.",
+    "fr": "Télécommande 2 boutons _TZ3000_dzwgk7e2+TS0042 (non reconnue). Maj Test Bastien + re-appairer."
+  },
+  "1.0.21": {
+    "en": "4-gang module _TZ3000_ltt60asa+TS0004 (was Zigbee unknown); switch/button Flow fixes (Homey state match). Update Bastien Test + re-pair unknown module.",
+    "fr": "Module 4-gang _TZ3000_ltt60asa+TS0004 (était Zigbee inconnu); correctifs Flows interrupteurs/boutons. Maj Test Bastien + re-appairer le module."
+  },
+  "1.0.19": {
+    "en": "Kitchen HOBEIAN ZG-301Z: clear auto-off countdown + force switch type State. TS0041 phantom-EP remotes (adndolvx). Update; for the light open settings → Clear countdown / Switch type=State, or restart app."
+  },
+  "1.0.18": {
+    "en": "Bastien mesh: eWeLink CK-TLSR TH→climate_sensor (not generic), cleared wrong 7014 fingerprints, clearer TS0041/TS0043 names. Update then remove+re-pair: 1-btn remote, eWeLink TH, verify 3-btn flows."
+  },
+  "1.0.17": {
+    "en": "TS0041 _TZ3000_axpdxqgu: locked interview clusters [0,1,6], fixed Flow cards (no args.device gate), 0xFD RX. Update then remove+re-pair the 1-button remote."
+  },
+  "1.0.16": {
+    "en": "TS0043 _TZ3000_vsxvaj9i: locked interview clusters (OnOff+E000, no EF00), battery EP1, 0xFD RX. Update then remove+re-pair the 3-button remote."
+  },
+  "1.0.15": {
+    "en": "Flow UX: all buttons of a multi-button remote/wall share one Flow page (dropdown Button 1-N). Fixed Flows that never started. Update then recreate button Flows."
+  },
+  "1.0.14": {
+    "en": "Bastien house: fixed fingerprint sync + button flow cards (1-btn numbered, 3-btn, climate). Update to 1.0.14 then REMOVE and re-add the 1-button, 3-button remotes and eWeLink climate sensor. Recreate flows on the new devices."
+  },
+  "1.0.13": {
+    "en": "Fixed pairing so 1-button and 3-button remotes join the correct drivers (flows work). Update app, then REMOVE and re-add both remotes + the eWeLink climate sensor."
+  },
+  "1.0.12": {
+    "en": "3-button flat battery remote _TZ3000_vsxvaj9i TS0043: buttons now visible in device UI (Button 1-3), flows and Zigbee clusters locked. Update then remove+re-pair the remote."
+  },
+  "1.0.11": {
+    "en": "Fixed remote button crash (CI is not defined), flow cards, and moved _TZ3000_axpdxqgu TS0041 to Wireless Button 1. Update then remove+re-pair the button."
+  },
+  "1.0.10": {
+    "en": "Fixed app settings blank infinite loading so Homey diagnostic reports can be sent. Mesh/WiFi scans are now optional."
+  },
+  "1.0.9": {
+    "en": "Added eWeLink CK-TLSR8656-SS5-01(7014) climate sensor support (temperature, humidity, battery). Re-pair if it was added as a generic Zigbee device."
+  },
+  "1.0.8": {
+    "en": "Draft-to-test fleet sync + house profile refresh. Update Bastien Test."
+  },
+  "1.0.7": {
+    "en": "Bastien: prune remote mfs bleed to sacred mfr+pid couples. Update Bastien Test."
+  },
+  "1.0.6": {
+    "en": "Bastien: sacred mfr+pid couple locks for Moes ZT-YK. Update Bastien Test."
+  },
+  "1.0.5": {
+    "en": "Bastien: Moes ZT-YK + dual-app layer gate. Update Bastien Test."
+  },
+  "1.0.4": {
+    "en": "External Z2M/Johan wall-remote inventory + TS0041 tk3s5tyg rehome. Bastien Test update."
+  },
+  "1.0.3": {
+    "en": "Wall/scene remotes 1-6 btn hybrid RX fleet (battery+mains). Update Bastien Test; Repair remotes if presses miss."
+  },
+  "1.0.2": {
+    "en": "Wall 3-btn remotes hybrid RX (TS0043 class) for Bastien house install."
+  },
+  "1.0.1": {
+    "en": "Athom first-create ready — private Zigbee Bastien house app + publish workflow.",
+    "fr": "Pret pour creation Athom — app Zigbee Bastien maison + workflow publish."
+  },
+  "1.0.0": {
+    "en": "Bastien house track bootstrap — private Homey install; upstream enrich only.",
+    "fr": "Piste maison Bastien — install Homey privee; enrichissement upstream uniquement."
   }
 }
