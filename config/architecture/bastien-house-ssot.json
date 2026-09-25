@@ -56,10 +56,10 @@
       "appliedUnions": 12
     },
     "lastL99Pass": {
-      "at": "2026-09-23T15:20:00+02:00",
-      "patch": "P2701",
-      "note": "Gmail #86 testing OK; P2673 IntelligentEnergyAdapter before SmartEnergy; P2699 soft complementary; dashboards need Chrome WebBridge daemon or Athom login",
-      "report": "reports/l99-bastien-2026-09-23/TREAT.md"
+      "at": "2026-09-25T11:29:51.053Z",
+      "patch": "P2735",
+      "note": "famkxci2 snappy + improvement plan canvas",
+      "report": "canvases/bastien-l99-improvement-plan"
     },
     "priorExternalPass": {
       "at": "2026-09-21T02:30:00.000Z",
@@ -1044,5 +1044,30 @@
       "_TZ3000_fllyghyj",
       "eWeLink"
     ]
+  },
+  "improvementPlanP2735": {
+    "at": "2026-09-25",
+    "tipGit": "1.0.103",
+    "tipPrior": "1.0.102",
+    "canvas": "bastien-l99-improvement-plan.canvas.tsx",
+    "shipped": [
+      "P2721",
+      "P2729",
+      "P2733",
+      "P2734",
+      "P2735"
+    ],
+    "p0": [
+      "Update Test >= 1.0.103",
+      "Restart",
+      "Wake remotes",
+      "Re-pair LCD vvmbj if Unknown"
+    ],
+    "remaining": [
+      "LCD NEED_REPAIR",
+      "TX Err soak after tip",
+      "Optional P2687 history UX"
+    ],
+    "verdict": "TS004x code path fixed; house residual = tip-lag + LCD re-pair + batteries"
   }
 }
