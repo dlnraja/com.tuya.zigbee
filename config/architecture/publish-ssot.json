@@ -194,7 +194,7 @@
         "#3367 v9.0.1248 socket hang up",
         "#3370 socket hang up (PM)"
       ],
-      "liveTip": "#3371 testing 9.0.1252 (recovered after #3370 PF); prior floor #3364=9.0.1244",
+      "liveTip": "#pending tip 9.0.1255 (P2740); prior floor #3371=9.0.1252 after PF soft-continue",
       "stable": "#247 testing (5.12.339 P2730); #248 created — soft-continue if PF",
       "bastien": "#113 testing 1.0.103 — #114 (1.0.105) PF socket hang; house Pro still tip-lag 1.0.93 until Install Test",
       "bastienFailed": [
