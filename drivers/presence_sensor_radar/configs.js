@@ -250,11 +250,16 @@ const SENSOR_CONFIGS = {
     // WHY(P2722 / GH#550 HiepSVG @ 9.0.1232): after stillness DP1 sticks at 1 —
     // re-arm alarm_motion when distance deltas while human YES (MCU often skips enum 2).
     rearmMotionOnDistanceDelta: true,
-    // WHY(P2740 / GH#550 Bastien→stable): snappier than P2730 0.08/1000/400
+    // WHY(P2730 / GH#550 @ 9.0.1243): 0.15m missed small re-moves → motion fails often
+    // WHY(P2740 / GH#550 residual): still misses micro re-moves after stillness
     rearmMotionDistanceDeltaM: 0.05,
+    // WHY(P2743 / GH#550): lux steps re-arm motion when DP9 barely moves (walk in place)
+    rearmMotionOnLuxDelta: true,
+    rearmMotionLuxDelta: 12,
     // WHY(P2722): Homey shows ~1.2× tape — ceiling display scale 0.9 (UI only; soft-clear uses pre-scale).
     distanceDisplayScale: 0.9,
-    // WHY(P2740 / GH#550): motion after stillness must feel live
+    // WHY(P2730 / GH#550): snappier motion after stillness (was 2s/800ms → laggy)
+    // WHY(P2740): motion still fails often — tighten debounce/throttle further
     motionThrottleEnabled: true,
     motionThrottleMs: 600,
     motionDebounceMs: 200,
