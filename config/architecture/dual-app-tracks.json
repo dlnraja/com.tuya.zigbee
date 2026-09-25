@@ -34,8 +34,8 @@
       "purpose": "Innovation + soak (features + reliability)",
       "cloneHint": "Documents/homey/master",
       "publish": "Auto-Publish on Push → Homey Test",
-      "tipHealthy": "9.0.1196",
-      "tipNote": "P2687 interaction Flow + P2689 adaptive battery; P139 soft-continue on PF emails"
+      "tipHealthy": "9.0.1252",
+      "tipNote": "LIVE Athom tip #3371=9.0.1252 (P2736) — #3365–#3367/#3370 PF socket hang soft-continued (P139/P2732). No Universal spam while tip healthy."
     },
     "stable": {
       "branch": "stable-v5",
@@ -45,8 +45,8 @@
       "purpose": "Reliability LTS only — no feature managers unless human-promoted",
       "cloneHint": "Documents/homey/stable",
       "publish": "Publish Stable → Test (APP_ID=.stable only); P139 no spam republish",
-      "tipHealthy": "5.12.309",
-      "tipNote": "P2689 adaptive battery BOTH; no P2687 SoftFeature"
+      "tipHealthy": "5.12.339",
+      "tipNote": "LIVE #247 testing 5.12.339 (P2730) — healthy; #248 soft-continue if PF"
     },
     "bastien": {
       "branch": "bastien-home",
@@ -55,10 +55,10 @@
       "versionLine": "1.0.x",
       "purpose": "Private house-only Homey Pro for Bastien — live install/soak; promote learnings upstream surgically",
       "cloneHint": "Documents/homey/bastien",
-      "publish": "Publish Zigbee Bastien workflow / homey app publish — App ID .bastien only; NEVER Universal or Stable slots",
+      "publish": "Publish Zigbee Bastien workflow / soft-expect first (P2738) — App ID .bastien only; NEVER Universal or Stable slots",
       "enrichment": "bastien_to_public_only",
-      "tipHealthy": "1.0.66",
-      "tipNote": "P2687 house Flow + P2689 battery; promote upstream surgically"
+      "tipHealthy": "1.0.103",
+      "tipNote": "LIVE Athom #113 testing 1.0.103 — #114 (1.0.105) PF soft-continue; house Pro still 1.0.93 until owner Install Test (diag ed627371)"
     }
   },
   "identityNeverCopy": [
@@ -526,11 +526,11 @@
     },
     "p2733_bastien_ts004x_wake_listen_only": {
       "tag": "BOTH",
-      "note": "TS004x snappy wake listen-only — no mass bind/batt TX; Contre quoi ~7s dead + black lag; Bastien tip priority"
+      "note": "TS004x snappy wake listen-only — no mass bind/batt TX"
     },
     "p2734_bastien_bidir_soft_ui_complementary": {
       "tag": "BOTH",
-      "note": "skipUiPulse softPulsePhysicalUi bi-dir Homey tiles + softArmComplementaryIo; Contre quoi dead UI or OOM charter; Bastien tip priority"
+      "note": "skipUiPulse softPulsePhysicalUi bi-dir + softArmComplementaryIo"
     }
   },
   "ci": {
@@ -635,6 +635,14 @@
     "p2683_p2686_bastien_ts004x_diag": {
       "tag": "BOTH",
       "note": "Bastien TS004x latency/UX + skipBatteryReporting pile calm + hold-release ghost + TRV p3dbf6qs sacred-keep"
+    },
+    "p2706_p2708_ts004x_ultra_snappy_crash_safe": {
+      "tag": "BOTH",
+      "note": "TS004x lean primary Flow (no full cascade await) + skipUiPulse/skipCharter + ZCL% battery + fire-and-forget hybrid — Bastien black remotes crash/lag; Stable surgical"
+    },
+    "p2710_battery_chemistry_precision_curves": {
+      "tag": "BOTH",
+      "note": "Precise % + volts via non-linear curves per pile/akku/lithium techno (LiFePO4, NiMH, Li-SOCl2…) — no linear (V-2.5)/0.5; Stable surgical"
     }
   }
 }
