@@ -4013,5 +4013,9 @@
   "1.0.101": {
     "en": "Bastien TS004x: wake listen-only (no bind storm) — fixes ~7s dead + black remote lag/crash. Update Test + restart app.",
     "fr": "TS004x Bastien: wake listen-only (pas de bind storm) — corrige ~7s mort + lag/crash noirs. Maj Test + redemarrer."
+  },
+  "1.0.102": {
+    "en": "Bastien bi-dir: soft Homey UI pulse on press + complementary RX/TX soft-arm (tiles alive, no crash). Update Test + restart.",
+    "fr": "Bi-dir Bastien: soft pulse UI Homey + soft-arm RX/TX complementaire (tuiles vivantes, pas de crash). Maj Test + restart."
   }
 }

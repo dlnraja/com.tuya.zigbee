@@ -31,20 +31,20 @@ describe('P2707 Bastien black TS0042/43 crash-safe', () => {
       'snappy must not fire full tryOnce cascade');
   });
 
-  it('PhysicalButtonMixin skips HomeyButtonUiCharter on skipUiPulse', () => {
+  it('PhysicalButtonMixin soft-pulses UI on skipUiPulse (P2734 bi-dir)', () => {
     const src = fs.readFileSync(path.join(ROOT, 'lib/mixins/PhysicalButtonMixin.js'), 'utf8');
-    assert.match(src, /skipCharter/);
-    assert.match(src, /P2707 \/ Bastien/);
+    assert.match(src, /softPulsePhysicalUi|P2734/);
+    assert.match(src, /softOnly/);
     const dzw = src.slice(src.indexOf("'_TZ3000_dzwgk7e2'"), src.indexOf("'_TZ3000_dzwgk7e2'") + 800);
     assert.match(dzw, /debounceMs:\s*25/);
     assert.match(dzw, /skipUiPulse:\s*true/);
   });
 
-  it('WallSceneRemoteHybrid: syncPhysicalToHomeyUi gated by skipUiPulse (never await)', () => {
+  it('WallSceneRemoteHybrid: softPulse when skipUiPulse (never await full charter)', () => {
     const wall = fs.readFileSync(
       path.join(ROOT, 'lib/devices/WallSceneRemoteHybridInit.js'), 'utf8');
-    assert.match(wall, /syncPhysicalToHomeyUi/);
-    assert.match(wall, /!profile\.skipUiPulse/);
+    assert.match(wall, /softPulsePhysicalUi/);
+    assert.match(wall, /skipUiPulse/);
     assert.doesNotMatch(wall, /await Promise\.resolve\(syncPhysicalToHomeyUi/);
   });
 

@@ -148,6 +148,12 @@ class Button1GangDevice extends ButtonDevice {
       await applyHomeyButtonUiCharter(this);
     } catch (_e) { /* soft */ }
 
+    // WHY(P2734): complementary non-native soft-arm (raw/0xFD gap — never mandatory)
+    try {
+      const { softArmComplementaryIo } = require('../../lib/io/NonNativeComplementary');
+      softArmComplementaryIo(this, { zclNode, io: this.io });
+    } catch (_e) { /* optional */ }
+
     try {
       if (typeof this._ensureBatteryCapabilityUi === 'function') {
         await this._ensureBatteryCapabilityUi().catch(() => {});
@@ -165,7 +171,7 @@ class Button1GangDevice extends ButtonDevice {
       }
     } catch (_e) { /* soft */ }
 
-    this.log('[BUTTON_WIRELESS_1] P2630/P2684 ready (TS0041 0xFD / Flow Bouton 1)');
+    this.log('[BUTTON_WIRELESS_1] P2630/P2684/P2734 ready (TS0041 0xFD / bi-dir Flow Bouton 1)');
   }
 
 }
