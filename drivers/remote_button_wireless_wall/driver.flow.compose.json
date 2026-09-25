@@ -2,81 +2,205 @@
   "triggers": [
     {
       "id": "remote_button_wireless_wall_btn_pressed",
-      "title": { "en": "Button pressed", "fr": "Bouton appuyé" },
+      "title": {
+        "en": "Button pressed",
+        "fr": "Bouton appuyé"
+      },
       "tokens": [
-        { "name": "button", "type": "string", "title": { "en": "Button", "fr": "Bouton" }, "example": "1" }
+        {
+          "name": "button",
+          "type": "string",
+          "title": {
+            "en": "Button",
+            "fr": "Bouton"
+          },
+          "example": "1"
+        }
       ],
       "args": [],
-      "titleFormatted": { "en": "Button pressed ([[button]])", "fr": "Bouton appuyé ([[button]])" }
+      "titleFormatted": {
+        "en": "Button pressed ([[button]])",
+        "fr": "Bouton appuyé ([[button]])"
+      }
     },
     {
       "id": "remote_button_wireless_wall_btn_double",
-      "title": { "en": "Button double-pressed", "fr": "Bouton double-cliqué" },
+      "title": {
+        "en": "Button double-pressed",
+        "fr": "Bouton double-cliqué"
+      },
       "tokens": [
-        { "name": "button", "type": "string", "title": { "en": "Button", "fr": "Bouton" }, "example": "1" }
+        {
+          "name": "button",
+          "type": "string",
+          "title": {
+            "en": "Button",
+            "fr": "Bouton"
+          },
+          "example": "1"
+        }
       ],
       "args": [],
-      "titleFormatted": { "en": "Button double-pressed ([[button]])", "fr": "Bouton double-cliqué ([[button]])" }
+      "titleFormatted": {
+        "en": "Button double-pressed ([[button]])",
+        "fr": "Bouton double-cliqué ([[button]])"
+      }
     },
     {
       "id": "remote_button_wireless_wall_btn_long",
-      "title": { "en": "Button long-pressed", "fr": "Bouton pressé longtemps" },
+      "title": {
+        "en": "Button long-pressed",
+        "fr": "Bouton pressé longtemps"
+      },
       "tokens": [
-        { "name": "button", "type": "string", "title": { "en": "Button", "fr": "Bouton" }, "example": "1" }
+        {
+          "name": "button",
+          "type": "string",
+          "title": {
+            "en": "Button",
+            "fr": "Bouton"
+          },
+          "example": "1"
+        }
       ],
       "args": [],
-      "titleFormatted": { "en": "Button long-pressed ([[button]])", "fr": "Bouton pressé longtemps ([[button]])" }
+      "titleFormatted": {
+        "en": "Button long-pressed ([[button]])",
+        "fr": "Bouton pressé longtemps ([[button]])"
+      }
     },
     {
       "id": "remote_button_wireless_wall_btn_multi",
-      "title": { "en": "Button multi-pressed", "fr": "Bouton multi-cliqué" },
+      "title": {
+        "en": "Button multi-pressed",
+        "fr": "Bouton multi-cliqué"
+      },
       "tokens": [
-        { "name": "button", "type": "string", "title": { "en": "Button", "fr": "Bouton" }, "example": "1" },
-        { "name": "count", "type": "number", "title": { "en": "Press count", "fr": "Nombre de pressions" }, "example": 3 }
+        {
+          "name": "button",
+          "type": "string",
+          "title": {
+            "en": "Button",
+            "fr": "Bouton"
+          },
+          "example": "1"
+        },
+        {
+          "name": "count",
+          "type": "number",
+          "title": {
+            "en": "Press count",
+            "fr": "Nombre de pressions"
+          },
+          "example": 3
+        }
       ],
       "args": [],
-      "titleFormatted": { "en": "Button multi-pressed ([[button]]) ([[count]])", "fr": "Bouton multi-cliqué ([[button]]) ([[count]])" }
+      "titleFormatted": {
+        "en": "Button multi-pressed ([[button]]) ([[count]])",
+        "fr": "Bouton multi-cliqué ([[button]]) ([[count]])"
+      }
     },
     {
       "id": "remote_button_wireless_wall_btn1_pressed",
-      "title": { "en": "Button 1 pressed", "fr": "Bouton 1 appuyé" },
+      "title": {
+        "en": "Button 1 pressed",
+        "fr": "Bouton 1 appuyé"
+      },
       "args": [],
-      "titleFormatted": { "en": "Button 1 pressed", "fr": "Bouton 1 appuyé" }
+      "titleFormatted": {
+        "en": "Button 1 pressed",
+        "fr": "Bouton 1 appuyé"
+      }
     },
     {
       "id": "remote_button_wireless_wall_btn1_double",
-      "title": { "en": "Button 1 double-pressed", "fr": "Bouton 1 double-cliqué" },
+      "title": {
+        "en": "Button 1 double-pressed",
+        "fr": "Bouton 1 double-cliqué"
+      },
       "args": [],
-      "titleFormatted": { "en": "Button 1 double-pressed", "fr": "Bouton 1 double-cliqué" }
+      "titleFormatted": {
+        "en": "Button 1 double-pressed",
+        "fr": "Bouton 1 double-cliqué"
+      }
     },
     {
       "id": "remote_button_wireless_wall_btn1_long",
-      "title": { "en": "Button 1 long-pressed", "fr": "Bouton 1 pressé longtemps" },
+      "title": {
+        "en": "Button 1 long-pressed",
+        "fr": "Bouton 1 pressé longtemps"
+      },
       "args": [],
-      "titleFormatted": { "en": "Button 1 long-pressed", "fr": "Bouton 1 pressé longtemps" }
+      "titleFormatted": {
+        "en": "Button 1 long-pressed",
+        "fr": "Bouton 1 pressé longtemps"
+      }
     },
     {
       "id": "remote_button_wireless_wall_btn1_triple",
-      "title": { "en": "Button 1 triple-pressed", "fr": "Bouton 1 triple-cliqué" },
+      "title": {
+        "en": "Button 1 triple-pressed",
+        "fr": "Bouton 1 triple-cliqué"
+      },
       "args": [],
-      "titleFormatted": { "en": "Button 1 triple-pressed", "fr": "Bouton 1 triple-cliqué" }
+      "titleFormatted": {
+        "en": "Button 1 triple-pressed",
+        "fr": "Bouton 1 triple-cliqué"
+      }
     },
     {
       "id": "remote_button_wireless_wall_btn1_release",
-      "title": { "en": "Button 1 released - after hold", "fr": "Bouton 1 relâché - après maintien" },
+      "title": {
+        "en": "Button 1 released - after hold",
+        "fr": "Bouton 1 relâché - après maintien"
+      },
       "args": [],
-      "titleFormatted": { "en": "Button 1 released - after hold", "fr": "Bouton 1 relâché - après maintien" }
+      "titleFormatted": {
+        "en": "Button 1 released - after hold",
+        "fr": "Bouton 1 relâché - après maintien"
+      }
     },
     {
       "id": "remote_button_wireless_wall_scene_recall",
-      "title": { "en": "Scene recalled", "fr": "Scène rappelée" },
+      "title": {
+        "en": "Scene recalled",
+        "fr": "Scène rappelée"
+      },
       "tokens": [
-        { "name": "scene_id", "type": "number", "title": { "en": "Scene", "fr": "Scène" }, "example": 1 },
-        { "name": "button", "type": "string", "title": { "en": "Button", "fr": "Bouton" }, "example": "1" },
-        { "name": "press_type", "type": "string", "title": { "en": "Press type", "fr": "Type" }, "example": "single" }
+        {
+          "name": "scene_id",
+          "type": "number",
+          "title": {
+            "en": "Scene",
+            "fr": "Scène"
+          },
+          "example": 1
+        },
+        {
+          "name": "button",
+          "type": "string",
+          "title": {
+            "en": "Button",
+            "fr": "Bouton"
+          },
+          "example": "1"
+        },
+        {
+          "name": "press_type",
+          "type": "string",
+          "title": {
+            "en": "Press type",
+            "fr": "Type"
+          },
+          "example": "single"
+        }
       ],
       "args": [],
-      "titleFormatted": { "en": "Scene recalled ([[scene_id]])", "fr": "Scène rappelée ([[scene_id]])" }
+      "titleFormatted": {
+        "en": "Scene recalled ([[scene_id]])",
+        "fr": "Scène rappelée ([[scene_id]])"
+      }
     },
     {
       "id": "remote_button_wireless_wall_battery_low",
@@ -92,6 +216,39 @@
         "fr": "Batterie faible",
         "nl": "Batterij laag",
         "de": "Batterie schwach"
+      }
+    },
+    {
+      "id": "remote_button_wireless_wall_measure_battery_changed",
+      "title": {
+        "en": "The battery level changed",
+        "fr": "Le niveau de la batterie a changé",
+        "nl": "Batterijniveau is veranderd",
+        "de": "Batteriestand hat sich geändert"
+      },
+      "hint": {
+        "en": "Fires when measure_battery updates (passive ZCL). Token = new %.",
+        "fr": "Se déclenche quand measure_battery change (ZCL passif). Jeton = nouveau %."
+      },
+      "tokens": [
+        {
+          "name": "battery",
+          "type": "number",
+          "title": {
+            "en": "Battery",
+            "fr": "Batterie",
+            "nl": "Batterij",
+            "de": "Batterie"
+          },
+          "example": 87
+        }
+      ],
+      "args": [],
+      "titleFormatted": {
+        "en": "The battery level changed",
+        "fr": "Le niveau de la batterie a changé",
+        "nl": "Batterijniveau is veranderd",
+        "de": "Batteriestand hat sich geändert"
       }
     }
   ],

@@ -51,7 +51,7 @@
       ],
       "tokens": [
         {
-          "name": "button",
+          "name": "button_id",
           "type": "string",
           "title": {
             "en": "Button",
@@ -120,7 +120,7 @@
       ],
       "tokens": [
         {
-          "name": "button",
+          "name": "button_id",
           "type": "string",
           "title": {
             "en": "Button",
@@ -189,7 +189,7 @@
       ],
       "tokens": [
         {
-          "name": "button",
+          "name": "button_id",
           "type": "string",
           "title": {
             "en": "Button",
@@ -221,6 +221,39 @@
         "fr": "Batterie faible",
         "nl": "Batterij laag",
         "de": "Batterie schwach"
+      }
+    },
+    {
+      "id": "scene_switch_3_measure_battery_changed",
+      "title": {
+        "en": "The battery level changed",
+        "fr": "Le niveau de la batterie a changé",
+        "nl": "Batterijniveau is veranderd",
+        "de": "Batteriestand hat sich geändert"
+      },
+      "hint": {
+        "en": "Fires when measure_battery updates (passive ZCL). Token = new %.",
+        "fr": "Se déclenche quand measure_battery change (ZCL passif). Jeton = nouveau %."
+      },
+      "tokens": [
+        {
+          "name": "battery",
+          "type": "number",
+          "title": {
+            "en": "Battery",
+            "fr": "Batterie",
+            "nl": "Batterij",
+            "de": "Batterie"
+          },
+          "example": 87
+        }
+      ],
+      "args": [],
+      "titleFormatted": {
+        "en": "The battery level changed",
+        "fr": "Le niveau de la batterie a changé",
+        "nl": "Batterijniveau is veranderd",
+        "de": "Batteriestand hat sich geändert"
       }
     },
     {
