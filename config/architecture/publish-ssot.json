@@ -129,10 +129,45 @@
       ],
       "fix": "P2696 shared concurrency group athom-developer-api-publish across auto-publish + publish-stable + bastien-publish"
     },
+    "gmailFlood2026_09_24_25": {
+      "why": "Homey tip emails 2026-09-24→25 — Bastien house tip-lag on 1.0.93 while Athom recovered",
+      "bastienFailedClasses": [
+        "socket hang up",
+        "invalid_state",
+        "missing asset distance.svg"
+      ],
+      "bastienFailedBuilds": ["#102", "#104", "#105", "#106", "#107"],
+      "universalFailed": ["#3358", "#3359"],
+      "stableFailed": ["#240", "#245 socket hang 5.12.337"],
+      "recovered": {
+        "bastien": "#109 testing 1.0.99 (P2724 fleet prune + P2726 SVG + P2727 early purge)",
+        "universal": "#3364 testing 9.0.1243 (P2728); next 9.0.1244 P2729",
+        "stable": "#244 testing 5.12.336 — #245 PF soft-continue P139; next ≥5.12.338 P2729"
+      },
+      "ciBreak": "Unified CI #36077719250 failed on heobian|* false NEW — P2728 fp-collision-check norm",
+      "houseTipLag": "Homey Pro Bastien stayed on 1.0.93 — store install targets on senetmarne lack Bastien Pro ID; update from house my.homey owner",
+      "bastienDiagRootCause": "ed627371 @ 1.0.93 — IAS enroll + battery TX on button_wireless_* (P2729); LIVE-DATA OOM on 1.0.82 (P2727 early purge)"
+    },
     "patch": "P2696",
     "concurrencyGroup": "athom-developer-api-publish",
     "cancelInProgress": false,
     "humanDoc": "docs/architecture/PUBLISH_SSOT.md §P139 / tip email pattern"
+  },
+  "p2729": {
+    "why": "Skip proactive IAS enroll + BatteryRouter TX on wireless button/remote drivers",
+    "helper": "IASZoneManager.isWirelessButtonRemoteNotIas",
+    "test": "test/critical/p2729-wireless-button-skip-ias-enroll.test.js",
+    "npm": "check:p2729",
+    "classify": "BOTH"
+  },
+  "p2728": {
+    "why": "fp-collision-check.js must heobian≡hobeian like prune — else Unified CI red while Auto-Publish green",
+    "fpCollisionHeobianNorm": true,
+    "script": ".github/scripts/fp-collision-check.js",
+    "mirror": "tools/ci/prune-fp-collision-bleed.js",
+    "test": "test/critical/p2728-homey-mail-publish-ci-integral.test.js",
+    "npm": "check:p2728",
+    "classify": "BOTH"
   },
   "p2384": {
     "why": "Athom tip socket hang up / processing_failed — longer API+draft waits + one-shot force_publish",
