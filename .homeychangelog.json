@@ -4178,5 +4178,9 @@
   "9.0.1256": {
     "en": "Publish heal: FP collision baseline + snappy lux/distance antiflood (radar). Update Test.",
     "fr": "Heal publish: baseline collisions FP + antiflood lux/distance (radar). Maj Test."
+  },
+  "9.0.1259": {
+    "en": "Ceiling radar motion re-arms from lux after stillness (GH#550). TS0043 famkxci2 stays Wireless Button 3 only (GH#551). Update Test; Repair radar / re-pair Generic remotes.",
+    "fr": "Radar plafond: motion se rearme via lux apres immobilite (GH#550). TS0043 famkxci2 reste Bouton 3 (GH#551). Maj Test; Repair radar / re-appairer Generique."
   }
 }
