@@ -448,7 +448,8 @@ jobs:
           HOMEY_HEALTHY_TEST_PATCH_LAG: '32'
           # WHY(P2474): large uploads + Athom socket hang up need longer soak before soft-continue
           HOMEY_DRAFT_WAIT_MS: '900000'
-          HOMEY_DRAFT_EARLY_FAIL_MS: '180000'
+          # WHY(P2738): Gmail tip PF lands fast — early soft-continue (was 180s)
+          HOMEY_DRAFT_EARLY_FAIL_MS: '60000'
         run: node .github/scripts/wait-athom-draft-ready.js
 
       - name: Install Puppeteer (draft → test promotion)

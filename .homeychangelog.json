@@ -4159,5 +4159,8 @@
   "9.0.1252": {
     "en": "TS0041-43 exact profile snappy parity (no slow mfr trap). Update Test.",
     "fr": "Parite snappy TS0041-43 sur profil exact (plus de piege lent). Maj Test."
+  },
+  "9.0.1253": {
+    "en": "Improved Homey Test publish soft-continue after Athom processing flakes."
   }
 }
