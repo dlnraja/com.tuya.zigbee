@@ -34,8 +34,8 @@
       "purpose": "Innovation + soak (features + reliability)",
       "cloneHint": "Documents/homey/master",
       "publish": "Auto-Publish on Push → Homey Test",
-      "tipHealthy": "9.0.1244",
-      "tipNote": "P2729 skip IAS enroll on wireless buttons + P2728 heobian FP CI; Athom ≥#3364"
+      "tipHealthy": "9.0.1245",
+      "tipNote": "P2730 GH#550 lux/distance snappy + P2729 IAS skip; republish after #3365 PF"
     },
     "stable": {
       "branch": "stable-v5",
