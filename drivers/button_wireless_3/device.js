@@ -114,6 +114,17 @@ class Button3GangDevice extends ButtonDevice {
       softArmComplementaryIo(this, { zclNode, io: this.io });
     } catch (_e) { /* optional */ }
 
+    // WHY(P2734): Homey charter Button 1–3 tiles + bi-dir soft pulse
+    try {
+      for (const cap of ['button.1', 'button.2', 'button.3']) {
+        if (!this.hasCapability?.(cap) && typeof this.addCapability === 'function') {
+          await this.addCapability(cap).catch(() => {});
+        }
+      }
+      const { applyHomeyButtonUiCharter } = require('../../lib/utils/HomeyButtonUiCharter');
+      await applyHomeyButtonUiCharter(this);
+    } catch (_e) { /* soft */ }
+
     // WHY(P2714 / Bastien e1654535): same battery Invalid Capability race as bw2
     try {
       if (!this.hasCapability?.('measure_battery') && typeof this.addCapability === 'function') {
@@ -125,7 +136,7 @@ class Button3GangDevice extends ButtonDevice {
       }
     } catch (_e) { /* soft */ }
 
-    this.log('[BUTTON_WIRELESS_3] hybrid UNION dedicated (TS0043 class / P2693)');
+    this.log('[BUTTON_WIRELESS_3] hybrid UNION dedicated + bi-dir soft UI (TS0043 / P2734)');
   }
 
 }
