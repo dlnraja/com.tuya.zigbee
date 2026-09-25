@@ -4048,5 +4048,9 @@
   "1.0.110": {
     "en": "All remote Flows improved: tagged button cards + battery-changed fleet-wide (1–8 btn / scene / wall). Update Bastien Test 1.0.110 then Restart once.",
     "fr": "Tous les Flows telecommandes ameliores: cartes etiquetees + batterie changee (1–8 btn / scene / mur). Maj Bastien Test 1.0.110 puis Redemarrer une fois."
+  },
+  "1.0.111": {
+    "en": "All Homey tagged Flows: emit *_changed tokens when values update + wire dropdown args. Update Bastien Test 1.0.111 then Restart once.",
+    "fr": "Tous les Flows etiquetes Homey: emission *_changed + cableage args dropdown. Maj Bastien Test 1.0.111 puis Redemarrer une fois."
   }
 }
