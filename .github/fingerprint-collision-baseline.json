@@ -1,6 +1,7 @@
 {
-  "generatedAt": "2026-09-23T12:37:48.585Z",
-  "note": "P2677 refresh — heobian≡hobeian collision keys; Athom brand case forms",
+  "version": 1,
+  "generatedAt": "2026-09-25T03:05:25.380Z",
+  "description": "Known historical fingerprint collisions. CI fails only for collisions not listed here.",
   "collisions": [
     {
       "key": "_tz3000_18ejxno0|TS0002",
@@ -1676,13 +1677,6 @@
       ]
     },
     {
-      "key": "_tz3000_qgwcxxws|TS0601",
-      "drivers": [
-        "smart_button_switch",
-        "switch_1gang"
-      ]
-    },
-    {
       "key": "_tz3000_qystbcjg|TS0001",
       "drivers": [
         "plug",
@@ -2917,7 +2911,6 @@
     {
       "key": "hobeian|01MINIZB",
       "drivers": [
-        "climate_sensor",
         "curtain_motor",
         "switch_1gang",
         "switch_3gang"
@@ -2940,7 +2933,6 @@
     {
       "key": "hobeian|BASICZBR3",
       "drivers": [
-        "climate_sensor",
         "curtain_motor",
         "soil_sensor",
         "switch_1gang",
@@ -2962,16 +2954,8 @@
       ]
     },
     {
-      "key": "hobeian|CK-BL702-MWS-01",
-      "drivers": [
-        "climate_sensor",
-        "presence_sensor_radar"
-      ]
-    },
-    {
       "key": "hobeian|CK-BL702-MWS-01(7016)",
       "drivers": [
-        "climate_sensor",
         "presence_sensor_radar",
         "vibration_sensor"
       ]
@@ -3116,13 +3100,6 @@
       ]
     },
     {
-      "key": "hobeian|MG1_5RZ",
-      "drivers": [
-        "climate_sensor",
-        "presence_sensor_radar"
-      ]
-    },
-    {
       "key": "hobeian|q9mpfhw",
       "drivers": [
         "contact_sensor",
@@ -3148,7 +3125,6 @@
     {
       "key": "hobeian|S26R2ZB",
       "drivers": [
-        "climate_sensor",
         "curtain_motor",
         "soil_sensor",
         "switch_1gang",
@@ -3158,7 +3134,6 @@
     {
       "key": "hobeian|S31ZB",
       "drivers": [
-        "climate_sensor",
         "curtain_motor",
         "soil_sensor",
         "switch_1gang",
@@ -3246,13 +3221,6 @@
       ]
     },
     {
-      "key": "hobeian|SZLMR10",
-      "drivers": [
-        "climate_sensor",
-        "presence_sensor_radar"
-      ]
-    },
-    {
       "key": "hobeian|TH01",
       "drivers": [
         "climate_sensor",
@@ -3309,7 +3277,6 @@
     {
       "key": "hobeian|TS0001_power",
       "drivers": [
-        "climate_sensor",
         "curtain_motor",
         "switch_1gang",
         "switch_3gang"
@@ -3318,7 +3285,6 @@
     {
       "key": "hobeian|TS0001_switch",
       "drivers": [
-        "climate_sensor",
         "curtain_motor",
         "switch_1gang",
         "switch_3gang"
@@ -3327,7 +3293,6 @@
     {
       "key": "hobeian|TS0001_switch_module",
       "drivers": [
-        "climate_sensor",
         "curtain_motor",
         "switch_1gang",
         "switch_3gang"
@@ -3353,7 +3318,6 @@
     {
       "key": "hobeian|TS0004",
       "drivers": [
-        "climate_sensor",
         "presence_sensor_radar",
         "switch_1gang",
         "switch_3gang"
@@ -3370,7 +3334,6 @@
     {
       "key": "hobeian|TS0011",
       "drivers": [
-        "climate_sensor",
         "curtain_motor",
         "switch_1gang",
         "switch_3gang"
@@ -3465,7 +3428,6 @@
     {
       "key": "hobeian|TS0101",
       "drivers": [
-        "climate_sensor",
         "curtain_motor",
         "switch_1gang",
         "switch_3gang"
@@ -3507,7 +3469,6 @@
     {
       "key": "hobeian|TS0202",
       "drivers": [
-        "climate_sensor",
         "presence_sensor_radar",
         "soil_sensor"
       ]
@@ -3532,7 +3493,6 @@
       "key": "hobeian|TS0215A",
       "drivers": [
         "button_wireless_1",
-        "climate_sensor",
         "presence_sensor_radar",
         "switch_3gang"
       ]
@@ -3576,6 +3536,13 @@
       ]
     },
     {
+      "key": "hobeian|Ts0601",
+      "drivers": [
+        "button_wireless_1",
+        "climate_sensor"
+      ]
+    },
+    {
       "key": "hobeian|ts0601",
       "drivers": [
         "button_wireless_1",
@@ -3613,13 +3580,6 @@
       ]
     },
     {
-      "key": "hobeian|TS0601_wirelesssw",
-      "drivers": [
-        "climate_sensor",
-        "presence_sensor_radar"
-      ]
-    },
-    {
       "key": "hobeian|TS0603",
       "drivers": [
         "curtain_motor",
@@ -3629,7 +3589,6 @@
     {
       "key": "hobeian|TS0726",
       "drivers": [
-        "climate_sensor",
         "curtain_motor",
         "sensor_contact_zigbee",
         "switch_1gang",
@@ -3654,7 +3613,6 @@
     {
       "key": "hobeian|TS110E",
       "drivers": [
-        "climate_sensor",
         "curtain_motor",
         "presence_sensor_radar",
         "switch_1gang",
@@ -3664,7 +3622,6 @@
     {
       "key": "hobeian|TS1201",
       "drivers": [
-        "climate_sensor",
         "ir_blaster",
         "presence_sensor_radar",
         "soil_sensor"
@@ -3682,7 +3639,6 @@
     {
       "key": "hobeian|TS4100",
       "drivers": [
-        "climate_sensor",
         "curtain_motor",
         "switch_1gang",
         "switch_3gang"
@@ -3722,7 +3678,6 @@
     {
       "key": "hobeian|ZBM5-1C-120",
       "drivers": [
-        "climate_sensor",
         "curtain_motor",
         "switch_1gang",
         "switch_3gang"
@@ -3731,7 +3686,6 @@
     {
       "key": "hobeian|ZBM5-2C-120",
       "drivers": [
-        "climate_sensor",
         "curtain_motor",
         "switch_1gang",
         "switch_3gang"
@@ -3740,7 +3694,6 @@
     {
       "key": "hobeian|ZBM5-3C-120",
       "drivers": [
-        "climate_sensor",
         "curtain_motor",
         "switch_1gang",
         "switch_3gang"
@@ -3749,7 +3702,6 @@
     {
       "key": "hobeian|ZBMINI",
       "drivers": [
-        "climate_sensor",
         "curtain_motor",
         "soil_sensor",
         "switch_1gang",
@@ -3759,7 +3711,6 @@
     {
       "key": "hobeian|ZBMINIL2",
       "drivers": [
-        "climate_sensor",
         "curtain_motor",
         "soil_sensor",
         "switch_1gang",
@@ -3769,7 +3720,6 @@
     {
       "key": "hobeian|ZBMINIL2-R2",
       "drivers": [
-        "climate_sensor",
         "curtain_motor",
         "switch_1gang",
         "switch_3gang"
@@ -3778,7 +3728,6 @@
     {
       "key": "hobeian|ZBMINIR",
       "drivers": [
-        "climate_sensor",
         "curtain_motor",
         "switch_1gang",
         "switch_3gang"
@@ -3787,7 +3736,6 @@
     {
       "key": "hobeian|ZBMINIR2",
       "drivers": [
-        "climate_sensor",
         "curtain_motor",
         "switch_1gang",
         "switch_3gang"
@@ -3796,7 +3744,6 @@
     {
       "key": "hobeian|ZBMINIR2-R2",
       "drivers": [
-        "climate_sensor",
         "curtain_motor",
         "switch_1gang",
         "switch_3gang"
@@ -3836,13 +3783,7 @@
         "curtain_motor",
         "soil_sensor"
       ]
-    },
-    {
-      "key": "hobeian|ZP-301Z",
-      "drivers": [
-        "climate_sensor",
-        "presence_sensor_radar"
-      ]
     }
-  ]
+  ],
+  "note": "P2728 refresh — heobian≡hobeian; stable-v5 intentional multi-home"
 }
