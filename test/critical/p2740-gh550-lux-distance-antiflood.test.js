@@ -27,6 +27,10 @@ describe('P2740 GH#550 lux/distance antiflood + sacred rollback', () => {
     assert.ok(/'measure_luminance\.distance':\s*200/.test(src), 'distance throttle ≤200ms');
     assert.ok(/'measure_luminance':\s*12/.test(src), 'lux significant ≤12');
     assert.ok(/isLuxDrop/.test(src), 'lux drop bypasses throttle');
+    const mixin = fs.readFileSync(path.join(ROOT, 'lib/mixins/CapabilityManagerMixin.js'), 'utf8');
+    assert.ok(/'measure_luminance':\s*400/.test(mixin), 'mixin lux throttle ≤400ms');
+    const uni = fs.readFileSync(path.join(ROOT, 'lib/utils/UniversalThrottleManager.js'), 'utf8');
+    assert.ok(/measure_luminance:\s*400/.test(uni), 'UniversalThrottle lux ≤400ms');
   });
 
   it('EventDedup skips softNumeric on lux and distance', () => {
