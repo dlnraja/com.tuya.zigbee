@@ -4143,5 +4143,9 @@
   },
   "9.0.1248": {
     "en": "Publish tip-lag heal after Athom socket hang; preserve radar couple notes; improved lux/distance responsiveness."
+  },
+  "9.0.1249": {
+    "en": "Wireless remotes: wake listen-only (no bind/battery TX storm). Update Test.",
+    "fr": "Telecommandes: wake listen-only (pas de storm bind/batterie). Maj Test."
   }
 }
