@@ -4140,5 +4140,8 @@
   },
   "9.0.1246": {
     "en": "Restored VicHY radar couple profile notes after fleet enrich; radar lux/distance snappy + button_wireless_3 pairing fix."
+  },
+  "9.0.1248": {
+    "en": "Publish tip-lag heal after Athom socket hang; preserve radar couple notes; improved lux/distance responsiveness."
   }
 }
