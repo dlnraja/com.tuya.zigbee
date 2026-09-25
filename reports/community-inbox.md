@@ -1,4 +1,4 @@
-# 📥 Community Inbox — 2026-09-24 09:59 UTC
+# 📥 Community Inbox — 2026-09-25 10:11 UTC
 
 Généré par `.github/scripts/community-inbox-digest.js` (workflow `community-inbox.yml`).
 
@@ -11,9 +11,9 @@ Généré par `.github/scripts/community-inbox-digest.js` (workflow `community-i
 
 ## 🔴 Issues à traiter
 
-- [#550](https://github.com/dlnraja/com.tuya.zigbee/issues/550) — Bug report - [Short description] _(🔴 escaladé, maj 2026-09-24)_
+- [#550](https://github.com/dlnraja/com.tuya.zigbee/issues/550) — Bug report - [Short description] _(🔴 escaladé, maj 2026-09-25)_
 
 ## 🟢 Maintainer actif dessus
 
-- [#551](https://github.com/dlnraja/com.tuya.zigbee/issues/551) — Bug report - TS0043 (_TZ3000_famkxci2) detected as Generic Zigbee Device instead of button_wireless_3 _(maj 2026-09-24)_
+- [#551](https://github.com/dlnraja/com.tuya.zigbee/issues/551) — Bug report - TS0043 (_TZ3000_famkxci2) detected as Generic Zigbee Device instead of button_wireless_3 _(maj 2026-09-25)_
 
