@@ -17,10 +17,11 @@ Pointers for agents after P2683â€“P2692. Machine tracks: [`dual-app-tracks.
 | P2733–P2736 + P2739 snappy wake listen-only / bi-dir soft UI | BOTH | ≥9.0.1254 | ≥1.0.107 | ≥5.12.340 | Bastien house soak → stable |
 | P2740 lux/distance antiflood + 7dcddnye sacred | BOTH | ≥9.0.1256 | — | ≥5.12.340 | GH#550 residual |
 | P2741 skip MCU sync on snappy remotes | BOTH | ≥9.0.1257 | ≥1.0.108 | ≥5.12.340 | diag 6bdc3c5e |
+| P2743 GH#550 lux→motion re-arm + #551 TS0043-only | BOTH | ≥9.0.1259 | — | ≥5.12.341 | inbox treat |
 | P2738 Bastien soft-expect-first (no Homey CLI createBuild spam) | BOTH | — | ≥1.0.105 code | — | bastien-publish.yml |
 
-**Athom tips (2026-09-25):** Universal **9.0.1257** · Bastien **1.0.108** (owner Install) · Stable **5.12.340** (Bastien BOTH backport).
+**Athom tips (2026-09-25):** Universal **9.0.1259** · Bastien **1.0.108** (owner Install) · Stable **5.12.341** (P2743 BOTH).
 
-Gates: `npm run check:p273x` · `npm run check:p2740` · `npm run check:p2741` · `npm run check:publish`.
+Gates: `npm run check:p273x` · `npm run check:p274x` · `npm run check:publish`.
 
 Silent enrich only — never forum POST (T157628).

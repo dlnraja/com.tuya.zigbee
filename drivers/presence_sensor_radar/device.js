@@ -1867,6 +1867,9 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
       }
       if (this._shouldSkipFloodCalmDp(dpId, lux, config)) {return;}
       this._nudgeSurvivalWatchdog('lux');
+      // WHY(P2743 / GH#550 @ 9.0.1243): MCU often skips DP1 enum 2 after stillness;
+      // distance Δ can stay <0.05m while walking in place — lux steps still prove move.
+      this._rearmMotionFromLuxDelta(lux, config);
       return this.safeSetCapabilityValue('measure_luminance', lux).catch(() => {});
     }
 
@@ -2404,6 +2407,35 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
       // to block ghost *presence* — but motion re-arm while human YES must still run
       // (else motion stays locked NO after stillness + walk). Sticky stays for DP1/presence paths.
       this.log(`[RADAR] P2722/P2725 re-arm motion (Δd=${Math.abs(d - prev).toFixed(2)}m while human)`);
+      this.safeSetCapabilityValue('alarm_motion', true).catch(() => {});
+      return true;
+    } catch (_e) {
+      return false;
+    }
+  }
+
+  /**
+   * WHY(P2743 / GH#550): after stillness MCU sticks DP1=1 (presence) and DP9 may barely
+   * move when walking in place — lux steps still prove movement → re-arm alarm_motion.
+   */
+  _rearmMotionFromLuxDelta(lux, config) {
+    try {
+      if (!config || config.splitMotionPresence !== true) return false;
+      if (config.rearmMotionOnLuxDelta === false) return false;
+      if (this.getCapabilityValue('alarm_human') !== true) return false;
+      if (this.getCapabilityValue('alarm_motion') === true) {
+        this._prevLuxForMotionRearm = Number(lux);
+        return false;
+      }
+      const v = Number(lux);
+      if (!Number.isFinite(v)) return false;
+      const prev = Number(this._prevLuxForMotionRearm);
+      this._prevLuxForMotionRearm = v;
+      if (!Number.isFinite(prev)) return false;
+      const thr = Number(config.rearmMotionLuxDelta) > 0
+        ? Number(config.rearmMotionLuxDelta) : 12;
+      if (Math.abs(v - prev) < thr) return false;
+      this.log(`[RADAR] P2743 re-arm motion (Δlux=${Math.abs(v - prev).toFixed(0)} while human)`);
       this.safeSetCapabilityValue('alarm_motion', true).catch(() => {});
       return true;
     } catch (_e) {
