@@ -4170,5 +4170,9 @@
   "9.0.1255": {
     "en": "Ceiling radar: faster lux on light-off + smoother distance while walking; wall dimmer FP lock; Wireless Button 3 pairing (TS0043). Update Test + Repair radar/remote.",
     "fr": "Radar plafond: lux plus rapide a l extinction + distance plus stable; FP dimmer mural; pairing Wireless Button 3 (TS0043). Maj Test + Repair radar/remote."
+  },
+  "9.0.1256": {
+    "en": "Publish heal: FP collision baseline + snappy lux/distance antiflood (radar). Update Test.",
+    "fr": "Heal publish: baseline collisions FP + antiflood lux/distance (radar). Maj Test."
   }
 }

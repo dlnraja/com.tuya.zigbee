@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-25T00:07:23.167Z",
+  "generatedAt": "2026-09-25T13:30:24.412Z",
   "note": "P2677 refresh — heobian≡hobeian collision keys; Athom brand case forms",
   "collisions": [
     {
@@ -826,13 +826,6 @@
       "drivers": [
         "bulb_dimmable",
         "tunable_bulb_E14"
-      ]
-    },
-    {
-      "key": "_tz3000_gbm10jnj|TS0601",
-      "drivers": [
-        "button_wireless_3",
-        "button_wireless_4"
       ]
     },
     {
@@ -1886,6 +1879,62 @@
       ]
     },
     {
+      "key": "_tz3000_pzui3skt|ts004f",
+      "drivers": [
+        "button_wireless_1",
+        "smart_knob_rotary"
+      ]
+    },
+    {
+      "key": "_tz3000_pzui3skt|Ts004f",
+      "drivers": [
+        "button_wireless_1",
+        "smart_knob_rotary"
+      ]
+    },
+    {
+      "key": "_tz3000_pzui3skt|TS004F",
+      "drivers": [
+        "button_wireless_1",
+        "smart_knob_rotary"
+      ]
+    },
+    {
+      "key": "_tz3000_pzui3skt|ts0601",
+      "drivers": [
+        "button_wireless_1",
+        "smart_knob_rotary"
+      ]
+    },
+    {
+      "key": "_tz3000_pzui3skt|Ts0601",
+      "drivers": [
+        "button_wireless_1",
+        "smart_knob_rotary"
+      ]
+    },
+    {
+      "key": "_tz3000_pzui3skt|TS0601",
+      "drivers": [
+        "button_wireless_1",
+        "smart_knob_rotary"
+      ]
+    },
+    {
+      "key": "_tz3000_pzui3skt|zg-101zd",
+      "drivers": [
+        "button_wireless_1",
+        "smart_knob_rotary"
+      ]
+    },
+    {
+      "key": "_tz3000_pzui3skt|ZG-101ZD",
+      "drivers": [
+        "button_wireless_1",
+        "smart_knob_rotary"
+      ]
+    },
+    {
       "key": "_tz3000_q50zhdsc|TS0601",
       "drivers": [
         "bulb_rgb",
@@ -2873,6 +2922,48 @@
       ]
     },
     {
+      "key": "_tze200_hyhl5y36|ts0601",
+      "drivers": [
+        "curtain_motor",
+        "presence_sensor_radar"
+      ]
+    },
+    {
+      "key": "_tze200_hyhl5y36|Ts0601",
+      "drivers": [
+        "curtain_motor",
+        "presence_sensor_radar"
+      ]
+    },
+    {
+      "key": "_tze200_hyhl5y36|TS0601",
+      "drivers": [
+        "curtain_motor",
+        "presence_sensor_radar"
+      ]
+    },
+    {
+      "key": "_tze200_hyhl5y36|ts110e",
+      "drivers": [
+        "curtain_motor",
+        "presence_sensor_radar"
+      ]
+    },
+    {
+      "key": "_tze200_hyhl5y36|Ts110e",
+      "drivers": [
+        "curtain_motor",
+        "presence_sensor_radar"
+      ]
+    },
+    {
+      "key": "_tze200_hyhl5y36|TS110E",
+      "drivers": [
+        "curtain_motor",
+        "presence_sensor_radar"
+      ]
+    },
+    {
       "key": "_tze200_jsaqgakf|TS0601",
       "drivers": [
         "rain_sensor",
@@ -3468,6 +3559,48 @@
       ]
     },
     {
+      "key": "_tze204_ycke4deo|ts0601",
+      "drivers": [
+        "curtain_motor",
+        "presence_sensor_radar"
+      ]
+    },
+    {
+      "key": "_tze204_ycke4deo|Ts0601",
+      "drivers": [
+        "curtain_motor",
+        "presence_sensor_radar"
+      ]
+    },
+    {
+      "key": "_tze204_ycke4deo|TS0601",
+      "drivers": [
+        "curtain_motor",
+        "presence_sensor_radar"
+      ]
+    },
+    {
+      "key": "_tze204_ycke4deo|ts110e",
+      "drivers": [
+        "curtain_motor",
+        "presence_sensor_radar"
+      ]
+    },
+    {
+      "key": "_tze204_ycke4deo|Ts110e",
+      "drivers": [
+        "curtain_motor",
+        "presence_sensor_radar"
+      ]
+    },
+    {
+      "key": "_tze204_ycke4deo|TS110E",
+      "drivers": [
+        "curtain_motor",
+        "presence_sensor_radar"
+      ]
+    },
+    {
       "key": "_tze284_4mh6tyyo|TS0001",
       "drivers": [
         "dimmer_1_gang_tuya",
@@ -3853,10 +3986,94 @@
       ]
     },
     {
+      "key": "_tze284_ozf4e02o|ts0601",
+      "drivers": [
+        "curtain_motor",
+        "presence_sensor_radar"
+      ]
+    },
+    {
+      "key": "_tze284_ozf4e02o|Ts0601",
+      "drivers": [
+        "curtain_motor",
+        "presence_sensor_radar"
+      ]
+    },
+    {
+      "key": "_tze284_ozf4e02o|TS0601",
+      "drivers": [
+        "curtain_motor",
+        "presence_sensor_radar"
+      ]
+    },
+    {
+      "key": "_tze284_ozf4e02o|ts110e",
+      "drivers": [
+        "curtain_motor",
+        "presence_sensor_radar"
+      ]
+    },
+    {
+      "key": "_tze284_ozf4e02o|Ts110e",
+      "drivers": [
+        "curtain_motor",
+        "presence_sensor_radar"
+      ]
+    },
+    {
+      "key": "_tze284_ozf4e02o|TS110E",
+      "drivers": [
+        "curtain_motor",
+        "presence_sensor_radar"
+      ]
+    },
+    {
       "key": "_tze284_r3szw0xr|TS0601",
       "drivers": [
         "curtain_motor",
         "device_radiator_valve"
+      ]
+    },
+    {
+      "key": "_tze284_rlytpmij|ts0601",
+      "drivers": [
+        "curtain_motor",
+        "presence_sensor_radar"
+      ]
+    },
+    {
+      "key": "_tze284_rlytpmij|Ts0601",
+      "drivers": [
+        "curtain_motor",
+        "presence_sensor_radar"
+      ]
+    },
+    {
+      "key": "_tze284_rlytpmij|TS0601",
+      "drivers": [
+        "curtain_motor",
+        "presence_sensor_radar"
+      ]
+    },
+    {
+      "key": "_tze284_rlytpmij|ts110e",
+      "drivers": [
+        "curtain_motor",
+        "presence_sensor_radar"
+      ]
+    },
+    {
+      "key": "_tze284_rlytpmij|Ts110e",
+      "drivers": [
+        "curtain_motor",
+        "presence_sensor_radar"
+      ]
+    },
+    {
+      "key": "_tze284_rlytpmij|TS110E",
+      "drivers": [
+        "curtain_motor",
+        "presence_sensor_radar"
       ]
     },
     {
