@@ -32,11 +32,11 @@ class Button2GangDevice extends ButtonDevice {
       protocol: 'hybrid',
       productId: 'TS0042',
       buttonCount: 2,
-      // WHY(P2707 / Bastien crash): lean Flow + 25/40 — Contre quoi Homey OOM on black remote
+      // WHY(P2714 / Bastien e1654535): match TS0041 axpdxqgu floor (was 200/140 — lag vs 1-btn)
       debounceMs: 25,
       crossPathDedupMs: 40,
-      appCommandWindow: 200,
-      doubleClickWindow: 140,
+      appCommandWindow: 180,
+      doubleClickWindow: 120,
       skip8004: true,
       writeSceneAttr: false,
       sceneSwitch: true,
@@ -124,7 +124,34 @@ class Button2GangDevice extends ButtonDevice {
     }
 
     await this._stripPhantomButtonCapsBeyond2();
-    this.log('[BUTTON_WIRELESS_2] hybrid UNION dedicated (TS0042 / P2693 snappy)');
+
+    // WHY(P2734): Homey charter tiles Button 1–2 + complementary non-native soft-arm
+    try {
+      for (const cap of ['button.1', 'button.2']) {
+        if (!this.hasCapability?.(cap) && typeof this.addCapability === 'function') {
+          await this.addCapability(cap).catch(() => {});
+        }
+      }
+      const { applyHomeyButtonUiCharter } = require('../../lib/utils/HomeyButtonUiCharter');
+      await applyHomeyButtonUiCharter(this);
+    } catch (_e) { /* soft */ }
+    try {
+      const { softArmComplementaryIo } = require('../../lib/io/NonNativeComplementary');
+      softArmComplementaryIo(this, { zclNode, io: this.io });
+    } catch (_e) { /* optional */ }
+
+    // WHY(P2714 / Bastien e1654535): Invalid Capability measure_battery after strip race
+    try {
+      if (!this.hasCapability?.('measure_battery') && typeof this.addCapability === 'function') {
+        await this.addCapability('measure_battery').catch(() => {});
+        this.log('[BUTTON_WIRELESS_2] P2714 rehydrate measure_battery');
+      }
+      if (typeof this._ensureBatteryCapabilityUi === 'function') {
+        await this._ensureBatteryCapabilityUi().catch(() => {});
+      }
+    } catch (_e) { /* soft */ }
+
+    this.log('[BUTTON_WIRELESS_2] hybrid UNION dedicated + bi-dir soft UI (TS0042 / P2734)');
   }
 
 }

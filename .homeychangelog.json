@@ -1,4 +1,8 @@
 {
+  "5.12.340": {
+    "en": "Remotes: snappy wake listen-only + skip MCU sync; lux/distance antiflood (Bastien house soak). Update Test.",
+    "fr": "Telecommandes: wake snappy listen-only + skip sync MCU; antiflood lux/distance (soak Bastien). Maj Test."
+  },
   "5.12.336": {
     "en": "Publish heal: scene remotes stay scene_switch_4 + ceiling radar P2725. Update Test.",
     "fr": "Heal publish: scene remotes restent scene_switch_4 + radar P2725. Maj Test."

@@ -250,14 +250,14 @@ const SENSOR_CONFIGS = {
     // WHY(P2722 / GH#550 HiepSVG @ 9.0.1232): after stillness DP1 sticks at 1 —
     // re-arm alarm_motion when distance deltas while human YES (MCU often skips enum 2).
     rearmMotionOnDistanceDelta: true,
-    // WHY(P2730 / GH#550 @ 9.0.1243): 0.15m missed small re-moves → motion fails often
-    rearmMotionDistanceDeltaM: 0.08,
+    // WHY(P2740 / GH#550 Bastien→stable): snappier than P2730 0.08/1000/400
+    rearmMotionDistanceDeltaM: 0.05,
     // WHY(P2722): Homey shows ~1.2× tape — ceiling display scale 0.9 (UI only; soft-clear uses pre-scale).
     distanceDisplayScale: 0.9,
-    // WHY(P2730 / GH#550): snappier motion after stillness (was 2s/800ms → laggy)
+    // WHY(P2740 / GH#550): motion after stillness must feel live
     motionThrottleEnabled: true,
-    motionThrottleMs: 1000,
-    motionDebounceMs: 400,
+    motionThrottleMs: 600,
+    motionDebounceMs: 200,
     ignoreMovementState: true,
     forceTimeUpdates: true,
     // WHY(P2595 / GH#550): no relay — DynCap must strip Channel 1 / Button 1

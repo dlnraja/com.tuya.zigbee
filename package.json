@@ -1,6 +1,6 @@
 {
   "name": "com.dlnraja.tuya.zigbee",
-  "version": "5.12.339",
+  "version": "5.12.340",
   "description": "Tuya Unified Zigbee - Local-first control with AI automation",
   "main": "app.js",
   "scripts": {
@@ -306,7 +306,16 @@
     "check:p2722": "node --test test/critical/p2722-hiepsvg-550-motion-rearm-distance-scale.test.js",
     "check:p2728": "node --test test/critical/p2728-homey-mail-publish-ci-integral.test.js",
     "check:p2729": "node --test test/critical/p2729-wireless-button-skip-ias-enroll.test.js",
-    "check:p2732": "node --test test/critical/p2732-homey-tip-lag-profile-preserve.test.js"
+    "check:p2732": "node --test test/critical/p2732-homey-tip-lag-profile-preserve.test.js",
+    "check:p2733": "node --test test/critical/p2733-bastien-ts004x-wake-listen-only.test.js",
+    "check:p2734": "node --test test/critical/p2734-bastien-bidir-soft-ui-complementary.test.js",
+    "check:p2735": "node --test test/critical/p2735-famkxci2-ts0043-snappy-parity.test.js",
+    "check:p2736": "node --test test/critical/p2736-ts004x-exact-profile-snappy-parity.test.js",
+    "check:p2739": "node --test test/critical/p2739-bastien-snappy-wake-no-magic-tx.test.js",
+    "check:p2740": "node --test test/critical/p2740-gh550-lux-distance-antiflood.test.js",
+    "check:p2741": "node --test test/critical/p2741-bastien-6bdc3c5e-skip-mcu-sync-remote.test.js",
+    "check:p274x": "npm run check:p2740 && npm run check:p2741",
+    "check:p273x": "npm run check:p2733 && npm run check:p2734 && npm run check:p2735 && npm run check:p2736 && npm run check:p2739"
   },
   "keywords": [
     "homey",
