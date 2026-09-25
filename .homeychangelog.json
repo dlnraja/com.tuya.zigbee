@@ -4131,5 +4131,8 @@
   "9.0.1243": {
     "en": "CI publish heal: HOBEIAN OCR collision keys + tip SSOT (Homey mails). Update Test.",
     "fr": "Heal CI publish: cles collision OCR HOBEIAN + tip SSOT (mails Homey). Maj Test."
+  },
+  "9.0.1244": {
+    "en": "Improved wireless remote reliability (skip IAS enroll storm on scene buttons)."
   }
 }
