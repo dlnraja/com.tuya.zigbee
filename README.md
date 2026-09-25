@@ -33,7 +33,7 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 
 | Metric | Value |
 |--------|-------|
-| **App Version** | v9.0.1239 |
+| **App Version** | v9.0.1253 |
 | **Drivers** | 434 (381 Zigbee + 53 WiFi) |
 | **Unique Fingerprints** | 4,696 |
 | **Pairing Variants** | 18,788 (4 case combos per fingerprint) |
@@ -41,11 +41,11 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 | **Flow Cards** | 5,995 |
 | **Unique Capabilities** | 170 |
 | **Native OTA Drivers** | 8 |
-| **Test Suites** | 505 files |
+| **Test Suites** | 513 files |
 | **SVG Icons** | 734 |
 | **Languages** | EN, FR, NL, DE |
 | **SDK / Homey** | 3 / >= 12.2.0 |
-| **Last Updated** | 2026-09-24 |
+| **Last Updated** | 2026-09-25 |
 
 ### Top 20 Drivers by Fingerprint Count
 
@@ -103,18 +103,18 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 
 | Version | Changes |
 |---------|---------|
-| **v9.0.1239** | Publish heal: strip scene remotes wkai4ga5/a4xycprs from button_wireless_4 + P2725 radar. Update Test. |
-| **v9.0.1238** | Ceiling radar (gkfbdvyx): sitting still no longer false-clears presence; motion re-arms while sticky ignore; lux less laggy. Update Test … |
-| **v9.0.1236** | Sleepy remotes: settings energy-opt must not configureReporting battery (TX storm). Bastien tip 1.0.95. |
-| **v9.0.1235** | Publish heal: wkai4ga5 stays scene_switch_4 (not button_wireless_4). Update Test. |
-| **v9.0.1234** | Publish heal: fingerprint collision baseline refresh + radar P2722. Update Test. |
-| **v9.0.1233** | Ceiling radar (gkfbdvyx): motion re-arms when you move after stillness; distance display closer to tape (~0.9). Update Test + Repair radar. |
-| **v9.0.1232** | Remotes: faster rapid off/on (no multi-second dead window when toggling). Update Test. |
-| **v9.0.1231** | Remotes: clear leftover LIVE-DATA overlay after OOM tip-lag; less work on button press. Update Test + restart app once. |
-| **v9.0.1230** | Ceiling radar (gkfbdvyx): clear after leave honours departure delay; motion vs human presence split; less ghost re-assert. Update Test + … |
-| **v9.0.1229** | Remotes: stop Homey OOM crash that killed all buttons after press. Update Test + restart app once. |
-| **v9.0.1228** | App Settings: fix infinite spinner / blank page (Homey.ready). Update Test. |
-| **v9.0.1227** | TS0043 _TZ3000_famkxci2 stays Wireless Button 3 (no Generic Zigbee). Update Test; remove Generic device; add Universal Tuya → Wireless Bu… |
+| **v9.0.1253** | Improved Homey Test publish soft-continue after Athom processing flakes. |
+| **v9.0.1252** | TS0041-43 exact profile snappy parity (no slow mfr trap). Update Test. |
+| **v9.0.1251** | famkxci2 TS0043 snappy parity (GH#551 class). Update Test. |
+| **v9.0.1250** | Bi-dir soft Homey UI pulse on snappy remotes + complementary soft-arm. Update Test. |
+| **v9.0.1249** | Wireless remotes: wake listen-only (no bind/battery TX storm). Update Test. |
+| **v9.0.1248** | Publish tip-lag heal after Athom socket hang; preserve radar couple notes; improved lux/distance responsiveness. |
+| **v9.0.1246** | Restored VicHY radar couple profile notes after fleet enrich; radar lux/distance snappy + button_wireless_3 pairing fix. |
+| **v9.0.1245** | Improved ceiling radar lux/distance response and wireless button pairing. |
+| **v9.0.1244** | Improved wireless remote reliability (skip IAS enroll storm on scene buttons). |
+| **v9.0.1243** | CI publish heal: HOBEIAN OCR collision keys + tip SSOT (Homey mails). Update Test. |
+| **v9.0.1242** | Publish heal: P2618 ceiling lux assert window + P2725 radar. Update Test. |
+| **v9.0.1241** | Publish heal: FP collision baseline + P2725 radar. Update Test + Repair radar. |
 
 <!-- CHANGELOG_END -->
 
