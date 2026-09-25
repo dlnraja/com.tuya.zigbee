@@ -11,7 +11,11 @@ Pointers for agents after P2683â€“P2692. Machine tracks: [`dual-app-tracks.
 | P2691 sleepy remote powerCfg TX calm (Bastien pile drain) | BOTH | â‰¥9.0.1197 | â‰¥1.0.67 | â‰¥5.12.310 | diag 885a9901 |
 | P2692 publish heal (heobianâ‰¡hobeian + ZG-301Z couple + energy approx) | BOTH | â‰¥9.0.1198 | â‰¥1.0.68 | â‰¥5.12.311 | Auto-Publish unblock |
 | P2693 Bastien TS0043/TS0042 snappy + no ghost canaux | BOTH | ≥9.0.1199 | ≥1.0.69 | ≥5.12.312 | Flow not Zigbee channels |
+| P2724–P2727 Bastien house fleet + tip-lag heal | Bastien | — | ≥1.0.99 (#109) | — | prune + SVG + early purge |
+| P2728 heobian≡hobeian in fp-collision-check | BOTH | ≥9.0.1243 | — | backport CI script | Unified CI green |
 
-Gates: `npm run check:p2691` Â· `npm run check:p2692` Â· `npm run check:p2521` Â· `npm run check:p2685`.
+**Athom tip emails (2026-09-25):** Universal `#3363` · Bastien `#109` · Stable `#244` — all testing OK. Bastien Homey Pro may still show 1.0.93 until owner Install Test.
 
-Silent enrich only â€” never forum POST (T157628).
+Gates: `npm run check:p2691` · `npm run check:p2692` · `npm run check:p2728` · `npm run check:publish`.
+
+Silent enrich only — never forum POST (T157628).

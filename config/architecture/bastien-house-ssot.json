@@ -15,8 +15,16 @@
   "install": {
     "mode": "athom_first_publish_then_test_or_sideload",
     "storeUrlTest": "https://homey.app/a/com.dlnraja.tuya.zigbee.bastien/test/",
+    "homeyCloudId": "65d495eb252c3ef65c879247",
+    "myHomeyApps": "https://my.homey.app/homeys/65d495eb252c3ef65c879247/settings/apps/com.dlnraja.tuya.zigbee.bastien",
     "firstCreate": "If Athom shows Create a Homey App → run Publish Zigbee Bastien workflow or `homey app publish` from bastien clone",
     "publishWorkflow": ".github/workflows/bastien-publish.yml",
+    "tipLagLesson2026_09_25": {
+      "symptom": "Athom tip 1.0.98/1.0.99 testing but Homey Pro stays on 1.0.93 with no Mettre à jour",
+      "why": "senetmarne Athom store install targets list Self-Hosted (offline) + other Homey (incompatible) — not this Pro ID",
+      "do": "On Bastien Homey owner session: Apps → Zigbee Bastien → Afficher App Store → Installer Test tip → Redémarrer → press remotes",
+      "contreQuoi": "P2724–P2727 already on Athom; remotes stay dead until house installs tip"
+    },
     "note": "First Athom create uses App ID com.dlnraja.tuya.zigbee.bastien only. Prefer Test channel or `homey app install` on Bastien Pro. NEVER publish onto Universal Tuya or Stable Test slots."
   },
   "enrichment": {

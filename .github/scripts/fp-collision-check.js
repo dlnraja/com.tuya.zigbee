@@ -53,6 +53,18 @@ function normalizeDrivers(drivers) {
   return [...new Set(drivers)].sort((a, b) => a.localeCompare(b));
 }
 
+/**
+ * WHY(P2677/P2692/P2728): Athom compose keeps OCR typo `heobian`, but collision
+ * keys must treat it as `hobeian` (same brand). Mirror prune-fp-collision-bleed.js
+ * — otherwise baseline refresh (hobeian|…) leaves heobian|* as 200+ false NEW
+ * and Unified CI fails while Auto-Publish still lands (tip-lag noise).
+ */
+function normMfr(s) {
+  let x = String(s || '').trim().toLowerCase();
+  if (x === 'heobian') return 'hobeian';
+  return x;
+}
+
 function collectCollisions() {
   const map = new Map();
   if (!fs.existsSync(DRIVERS_DIR)) return [];
@@ -76,16 +88,9 @@ function collectCollisions() {
 
     for (const mfr of zigbee.manufacturerName) {
       for (const pid of zigbee.productId) {
-        // P53 fix: case-SENSITIVE comparison. mfrs like "_TZ3000_xxx" and
-        // "_tz3000_xxx" are treated as DIFFERENT mfrs (Homey match is case-
-        // sensitive). This aligns with driver-conflict-audit.js (official) which
-        // reports 0 mfr+pid duplicates — the previous lower-case logic produced
-        // 3,274 false positives from case-only differences.
-        // v10.17.4 (P92.89e): with the 4-combo case coverage (P92.62), every
-        // shared pair now appears as 4 case forms → 4x false "collisions".
-        // The collision key is case-NORMALIZED (lowercase): same underlying
-        // pair in the same drivers = ONE collision, whatever the case form.
-        const key = `${String(mfr).toLowerCase()}|${String(pid)}`;
+        // P53 / P92.89e: case-NORMALIZED key (lowercase) so 4 Athom case forms
+        // count as ONE collision. P2728: heobian≡hobeian.
+        const key = `${normMfr(mfr)}|${String(pid)}`;
         if (!map.has(key)) map.set(key, []);
         map.get(key).push(driverId);
       }

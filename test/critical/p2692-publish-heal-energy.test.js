@@ -21,6 +21,20 @@ describe('P2692 publish heal + energy safety', () => {
     assert.match(src, /heobian≡hobeian|heobian.*hobeian/i);
   });
 
+  it('fp-collision-check also normalizes heobian→hobeian (P2728)', () => {
+    // Contre quoi: Unified CI failed on tip 9.0.1242 with 204 NEW heobian|* while
+    // prune --check was green (baseline keys are hobeian|*).
+    const src = fs.readFileSync(path.join(ROOT, '.github/scripts/fp-collision-check.js'), 'utf8');
+    assert.match(src, /normMfr|heobian.*hobeian/i);
+    assert.match(src, /P2728/);
+    const r = spawnSync(
+      process.execPath,
+      [path.join(ROOT, '.github/scripts/fp-collision-check.js'), '--baseline', '.github/fingerprint-collision-baseline.json'],
+      { cwd: ROOT, encoding: 'utf8', timeout: 180000 },
+    );
+    assert.strictEqual(r.status, 0, r.stderr || r.stdout);
+  });
+
   it('no driver invents productId HOBEIAN/heobian brand-as-pid', () => {
     const driversDir = path.join(ROOT, 'drivers');
     const bad = [];
