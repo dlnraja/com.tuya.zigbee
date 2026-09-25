@@ -523,6 +523,14 @@
     "p2508_firmware_device_updates_oem": {
       "tag": "BOTH",
       "note": "Homey Device Updates fleet — OEM only; refuse Koenkk pvvx; SSOT 8 drivers + softAnnounceNativeOta"
+    },
+    "p2733_bastien_ts004x_wake_listen_only": {
+      "tag": "BOTH",
+      "note": "TS004x snappy wake listen-only — no mass bind/batt TX; Contre quoi ~7s dead + black lag; Bastien tip priority"
+    },
+    "p2734_bastien_bidir_soft_ui_complementary": {
+      "tag": "BOTH",
+      "note": "skipUiPulse softPulsePhysicalUi bi-dir Homey tiles + softArmComplementaryIo; Contre quoi dead UI or OOM charter; Bastien tip priority"
     }
   },
   "ci": {
