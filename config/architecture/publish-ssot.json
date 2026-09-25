@@ -18,7 +18,10 @@
     ],
     "alternate": "npm run publish:temp -- --channel test",
     "tempDirName": "homey-publish-temp",
-    "refuseUnless": ["HOMEY_ALLOW_REPO_PUBLISH=1", "--force"],
+    "refuseUnless": [
+      "HOMEY_ALLOW_REPO_PUBLISH=1",
+      "--force"
+    ],
     "preflight": "prepare-publish validates sacred-keep couples via sacred-couple-pair (P2495)"
   },
   "scripts": {
@@ -31,14 +34,21 @@
   },
   "identity": {
     "rule": "manufacturerName + productId only — never invent pid; mfs multi-pid NORMAL",
-    "settingsKeys": { "mfr": "zb_manufacturer_name", "pid": "zb_model_id" },
+    "settingsKeys": {
+      "mfr": "zb_manufacturer_name",
+      "pid": "zb_model_id"
+    },
     "coupleSsot": "config/architecture/sacred-couple-ssot.json",
     "gate": "npm run check:p2494"
   },
   "softExpect": {
     "why": "Race when auto-publish and manual publish both createBuild same version (#2997→#2998, Stable #23).",
     "reListAfterCreateBuild": true,
-    "skipWhen": ["already-test", "in-flight", "peer-test-after-failed"],
+    "skipWhen": [
+      "already-test",
+      "in-flight",
+      "peer-test-after-failed"
+    ],
     "test": "test/critical/p2286-soft-expect-publish.test.js",
     "npm": "check:p2286"
   },
@@ -105,17 +115,33 @@
   },
   "aiEfficiency": {
     "why": "P2491 — publish bots must not burn remote AI quota",
-    "env": ["AI_FORCE_LOCAL=true", "AI_ALLOW_REMOTE=false"],
+    "env": [
+      "AI_FORCE_LOCAL=true",
+      "AI_ALLOW_REMOTE=false"
+    ],
     "gate": "npm run check:p2491"
   },
   "p139": {
     "doNot": "spam republish on processing_failed / socket hang up",
     "doNotSpamRepublish": true,
     "do": "soft-expect exit 0 when peer already on test; wait Athom cooldown; serialize multi-app uploads",
-    "tipEmailExamples": ["#3140", "#3142", "#3184", "#3187", "#3340", "#225", "#77", "#78", "#80"],
+    "tipEmailExamples": [
+      "#3140",
+      "#3142",
+      "#3184",
+      "#3187",
+      "#3340",
+      "#225",
+      "#77",
+      "#78",
+      "#80"
+    ],
     "tipEmailBody": "Your build has failed processing … socket hang up",
     "healthyTip2026_09_14": "#3186 v9.0.926 test",
-    "failedTip2026_09_14": ["#3184 v9.0.924", "#3187 v9.0.928"],
+    "failedTip2026_09_14": [
+      "#3184 v9.0.924",
+      "#3187 v9.0.928"
+    ],
     "gmailFlood2026_09_23": {
       "failed": [
         "stable #225 socket hang up",
@@ -136,9 +162,21 @@
         "invalid_state",
         "missing asset distance.svg"
       ],
-      "bastienFailedBuilds": ["#102", "#104", "#105", "#106", "#107"],
-      "universalFailed": ["#3358", "#3359"],
-      "stableFailed": ["#240", "#245 socket hang 5.12.337"],
+      "bastienFailedBuilds": [
+        "#102",
+        "#104",
+        "#105",
+        "#106",
+        "#107"
+      ],
+      "universalFailed": [
+        "#3358",
+        "#3359"
+      ],
+      "stableFailed": [
+        "#240",
+        "#245 socket hang 5.12.337"
+      ],
       "recovered": {
         "bastien": "#109 testing 1.0.99 (P2724 fleet prune + P2726 SVG + P2727 early purge)",
         "universal": "#3364 testing 9.0.1243 (P2728); next 9.0.1244 P2729",
@@ -148,10 +186,47 @@
       "houseTipLag": "Homey Pro Bastien stayed on 1.0.93 — store install targets on senetmarne lack Bastien Pro ID; update from house my.homey owner",
       "bastienDiagRootCause": "ed627371 @ 1.0.93 — IAS enroll + battery TX on button_wireless_* (P2729); LIVE-DATA OOM on 1.0.82 (P2727 early purge)"
     },
+    "gmailFlood2026_09_25": {
+      "why": "Homey tip mails after P2730/P2731 — Universal tip stuck; Stable healed; PM wave PF then recover",
+      "universalFailed": [
+        "#3365 v9.0.1245 socket hang up",
+        "#3366 v9.0.1247 socket hang up",
+        "#3367 v9.0.1248 socket hang up",
+        "#3370 socket hang up (PM)"
+      ],
+      "liveTip": "#3371 testing 9.0.1252 (recovered after #3370 PF); prior floor #3364=9.0.1244",
+      "stable": "#247 testing (5.12.339 P2730); #248 created — soft-continue if PF",
+      "bastien": "#113 testing 1.0.103 — #114 (1.0.105) PF socket hang; house Pro still tip-lag 1.0.93 until Install Test",
+      "bastienFailed": [
+        "#114 v1.0.105 socket hang up"
+      ],
+      "diagHouse": "ed627371 @ v1.0.93 — buttons recognized / nothing works; need Install Test ≥1.0.103 (P2729/P2736)",
+      "fleetWipe": "fleet-enrich renderCouplePage overwrote clrdrnya Known bugs → p2579 blocked Auto-Publish of 9.0.1245 until P2731 restore",
+      "do": "P2732 tipLagDecision + P2738 Bastien soft-expect-first (no Homey CLI createBuild spam); one force after cooldown — no PF spam"
+    },
     "patch": "P2696",
     "concurrencyGroup": "athom-developer-api-publish",
     "cancelInProgress": false,
     "humanDoc": "docs/architecture/PUBLISH_SSOT.md §P139 / tip email pattern"
+  },
+  "p2738": {
+    "why": "Homey tip mails 2026-09-25 PM — Bastien #114 PF + Universal #3370 PF while #113/#3371 healthy; Homey CLI createBuild bypassed soft-expect",
+    "bastienPublish": "soft-expect direct-api first (no CLI); Wait Athom + skip promote on PF; HOMEY_DRAFT_EARLY_FAIL_MS=60000",
+    "workflow": ".github/workflows/bastien-publish.yml",
+    "test": "test/critical/p2732-homey-tip-lag-profile-preserve.test.js",
+    "npm": "check:p2732",
+    "classify": "BOTH"
+  },
+  "p2732": {
+    "why": "Tip-lag when expected version PF while older Test tip healthy; fleet enrich must not wipe couple Known bugs",
+    "tipLagDecision": true,
+    "preserveCoupleKnownBugs": true,
+    "helper": "scripts/lib/soft-expect-decision.js → tipLagDecision",
+    "enrich": "tools/ci/render-enrichment-index.js → mergeCouplePagePreservingCurated",
+    "verify": ".github/scripts/verify-test-version.js softContinue logs TIP_LAG",
+    "test": "test/critical/p2732-homey-tip-lag-profile-preserve.test.js",
+    "npm": "check:p2732",
+    "classify": "BOTH"
   },
   "p2729": {
     "why": "Skip proactive IAS enroll + BatteryRouter TX on wireless button/remote drivers",
