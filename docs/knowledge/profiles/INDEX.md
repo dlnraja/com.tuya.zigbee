@@ -1,6 +1,6 @@
 # Enrichment profiles index
 
-Generated: 2026-09-25T18:08:33 · manifest `config/enrichment/manifest.json`
+Generated: 2026-09-19T16:47:48 · manifest `config/enrichment/manifest.json`
 
 ## Users
 
@@ -262,4 +262,3 @@ Generated: 2026-09-25T18:08:33 · manifest `config/enrichment/manifest.json`
 | `_TZE284_c8ipbljq+TS0601` | wall_switch_6_gang_tuya | 0 | [profile](couples/_TZE284_c8ipbljq_TS0601.md) |
 
 Regenerate: `npm run enrich:profiles`
-
