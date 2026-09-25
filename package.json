@@ -187,7 +187,7 @@
     "check:p2512": "node --test test/critical/p2512-peter-smartbutton-battery-history.test.js",
     "check:p2513": "node --test test/critical/p2513-salvagr-moes-stop-midpct.test.js",
     "check:p249x": "npm run check:p2490 && npm run check:p2492 && npm run check:p2494 && npm run check:p2496 && npm run check:p2499 && npm run check:p2502 && npm run check:p2503 && npm run check:p2505 && npm run check:p2506 && npm run check:p2507 && npm run check:p2508 && npm run check:p2509 && npm run check:p2511 && npm run check:p2512 && npm run check:p2513",
-    "check:publish": "npm run check:p2288 && npm run check:p2490 && npm run check:p2494 && npm run check:p2495 && npm run check:p2496 && npm run check:p2728",
+    "check:publish": "npm run check:p2288 && npm run check:p2490 && npm run check:p2494 && npm run check:p2495 && npm run check:p2496 && npm run check:p2728 && npm run check:p2732",
     "check:p2505": "node --test test/critical/p2505-p2485-ef00-multigang-rehome.test.js",
     "check:p2517": "node --test test/critical/p2517-market-apply-sacred-rollback.test.js",
     "check:p2518": "node --test test/critical/p2518-cap-flow-dp-rx-enrich.test.js",
@@ -305,7 +305,8 @@
     "check:p2711": "node --test test/critical/p2711-fleet-datapoint-tx-learnmode.test.js",
     "check:p2722": "node --test test/critical/p2722-hiepsvg-550-motion-rearm-distance-scale.test.js",
     "check:p2728": "node --test test/critical/p2728-homey-mail-publish-ci-integral.test.js",
-    "check:p2729": "node --test test/critical/p2729-wireless-button-skip-ias-enroll.test.js"
+    "check:p2729": "node --test test/critical/p2729-wireless-button-skip-ias-enroll.test.js",
+    "check:p2732": "node --test test/critical/p2732-homey-tip-lag-profile-preserve.test.js"
   },
   "keywords": [
     "homey",
