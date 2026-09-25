@@ -34,7 +34,7 @@
       "purpose": "Innovation + soak (features + reliability)",
       "cloneHint": "Documents/homey/master",
       "publish": "Auto-Publish on Push → Homey Test",
-      "tipHealthy": "9.0.1245",
+      "tipHealthy": "9.0.1246",
       "tipNote": "P2730 GH#550 lux/distance snappy + P2729 IAS skip; republish after #3365 PF"
     },
     "stable": {
@@ -45,7 +45,7 @@
       "purpose": "Reliability LTS only — no feature managers unless human-promoted",
       "cloneHint": "Documents/homey/stable",
       "publish": "Publish Stable → Test (APP_ID=.stable only); P139 no spam republish",
-      "tipHealthy": "5.12.338",
+      "tipHealthy": "5.12.339",
       "tipNote": "P2729 IAS skip BOTH; Athom next after #245 PF cooldown"
     },
     "bastien": {
