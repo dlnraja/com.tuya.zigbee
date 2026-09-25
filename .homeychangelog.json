@@ -4021,5 +4021,9 @@
   "1.0.103": {
     "en": "Bastien: famkxci2 TS0043 snappy parity (same as blacks) + L99 house plan. Update Test + restart.",
     "fr": "Bastien: parite snappy famkxci2 TS0043 (comme noirs) + plan maison L99. Maj Test + restart."
+  },
+  "1.0.104": {
+    "en": "Bastien: all TS0041-43 profiles get snappy parity (no slow exact-mfr trap). Update Test + restart on Bastien Homey.",
+    "fr": "Bastien: tous profils TS0041-43 snappy (plus de piege mfr exact lent). Maj Test + restart sur Homey Bastien."
   }
 }
