@@ -256,6 +256,8 @@ const SENSOR_CONFIGS = {
     // WHY(P2743 / GH#550): lux steps re-arm motion when DP9 barely moves (walk in place)
     rearmMotionOnLuxDelta: true,
     rearmMotionLuxDelta: 12,
+    // WHY(P2744 / GH#550 C14): reject multipath farther ghost while walking closer
+    rejectGhostFartherDistance: true,
     // WHY(P2722): Homey shows ~1.2× tape — ceiling display scale 0.9 (UI only; soft-clear uses pre-scale).
     distanceDisplayScale: 0.9,
     // WHY(P2730 / GH#550): snappier motion after stillness (was 2s/800ms → laggy)
