@@ -34,8 +34,8 @@
       "purpose": "Innovation + soak (features + reliability)",
       "cloneHint": "Documents/homey/master",
       "publish": "Auto-Publish on Push → Homey Test",
-      "tipHealthy": "9.0.1256",
-      "tipNote": "LIVE tip 9.0.1256 (P2740 antiflood + collision baseline heal). Update Test + Repair radar."
+      "tipHealthy": "9.0.1257",
+      "tipNote": "LIVE tip 9.0.1257 (P2741 MCU skip + P2740 antiflood). Update Test + Repair radar."
     },
     "stable": {
       "branch": "stable-v5",
@@ -45,8 +45,8 @@
       "purpose": "Reliability LTS only — no feature managers unless human-promoted",
       "cloneHint": "Documents/homey/stable",
       "publish": "Publish Stable → Test (APP_ID=.stable only); P139 no spam republish",
-      "tipHealthy": "5.12.339",
-      "tipNote": "LIVE #247 testing 5.12.339 (P2730) — P2740 BOTH backlog for next stable tip"
+      "tipHealthy": "5.12.340",
+      "tipNote": "LIVE tip 5.12.340 — Bastien house BOTH backport P2733–P2741 snappy wake + lux antiflood"
     },
     "bastien": {
       "branch": "bastien-home",
@@ -57,8 +57,8 @@
       "cloneHint": "Documents/homey/bastien",
       "publish": "Publish Zigbee Bastien workflow / soft-expect first (P2738) — App ID .bastien only; NEVER Universal or Stable slots",
       "enrichment": "bastien_to_public_only",
-      "tipHealthy": "1.0.107",
-      "tipNote": "LIVE tip 1.0.107 P2739 snappy wake no magic/DP TX (diag ed627371). House Pro must Install Test >=1.0.107 (was tip-lag 1.0.100)."
+      "tipHealthy": "1.0.108",
+      "tipNote": "LIVE tip 1.0.108 P2741 (owner Install Test on Bastien account). Diag 6bdc3c5e @ 1.0.107 healthy."
     }
   },
   "identityNeverCopy": [
