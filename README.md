@@ -33,7 +33,7 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 
 | Metric | Value |
 |--------|-------|
-| **App Version** | v9.0.1253 |
+| **App Version** | v9.0.1254 |
 | **Drivers** | 434 (381 Zigbee + 53 WiFi) |
 | **Unique Fingerprints** | 4,696 |
 | **Pairing Variants** | 18,788 (4 case combos per fingerprint) |
@@ -41,7 +41,7 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 | **Flow Cards** | 5,995 |
 | **Unique Capabilities** | 170 |
 | **Native OTA Drivers** | 8 |
-| **Test Suites** | 513 files |
+| **Test Suites** | 514 files |
 | **SVG Icons** | 734 |
 | **Languages** | EN, FR, NL, DE |
 | **SDK / Homey** | 3 / >= 12.2.0 |
@@ -103,6 +103,7 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 
 | Version | Changes |
 |---------|---------|
+| **v9.0.1254** | Snappy remotes: skip wake magic/DP TX storm (listen-only). Update Test. |
 | **v9.0.1253** | Improved Homey Test publish soft-continue after Athom processing flakes. |
 | **v9.0.1252** | TS0041-43 exact profile snappy parity (no slow mfr trap). Update Test. |
 | **v9.0.1251** | famkxci2 TS0043 snappy parity (GH#551 class). Update Test. |
@@ -114,7 +115,6 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 | **v9.0.1244** | Improved wireless remote reliability (skip IAS enroll storm on scene buttons). |
 | **v9.0.1243** | CI publish heal: HOBEIAN OCR collision keys + tip SSOT (Homey mails). Update Test. |
 | **v9.0.1242** | Publish heal: P2618 ceiling lux assert window + P2725 radar. Update Test. |
-| **v9.0.1241** | Publish heal: FP collision baseline + P2725 radar. Update Test + Repair radar. |
 
 <!-- CHANGELOG_END -->
 
