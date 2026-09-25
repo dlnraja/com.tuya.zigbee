@@ -1,0 +1,89 @@
+{
+  "generatedAt": "2026-09-20T19:06:02.376Z",
+  "mode": "dry-run",
+  "driversTouched": 12,
+  "orphanTokensFixed": 16,
+  "triggersAdded": 0,
+  "actionsAdded": 0,
+  "appJsonDedupe": {
+    "mode": "dry-run"
+  },
+  "z2mCrossRef": {
+    "count": 27
+  },
+  "subtools": [],
+  "topChanges": [
+    {
+      "driver": "button_wireless_2",
+      "orphans": 1,
+      "triggers": [],
+      "actions": []
+    },
+    {
+      "driver": "button_wireless_3",
+      "orphans": 1,
+      "triggers": [],
+      "actions": []
+    },
+    {
+      "driver": "button_wireless_4",
+      "orphans": 1,
+      "triggers": [],
+      "actions": []
+    },
+    {
+      "driver": "button_wireless_6",
+      "orphans": 1,
+      "triggers": [],
+      "actions": []
+    },
+    {
+      "driver": "button_wireless_8",
+      "orphans": 1,
+      "triggers": [],
+      "actions": []
+    },
+    {
+      "driver": "handheld_remote_4_buttons",
+      "orphans": 1,
+      "triggers": [],
+      "actions": []
+    },
+    {
+      "driver": "remote_button_wireless",
+      "orphans": 1,
+      "triggers": [],
+      "actions": []
+    },
+    {
+      "driver": "remote_button_wireless_wall",
+      "orphans": 5,
+      "triggers": [],
+      "actions": []
+    },
+    {
+      "driver": "scene_switch_4",
+      "orphans": 1,
+      "triggers": [],
+      "actions": []
+    },
+    {
+      "driver": "wall_remote_3_gang",
+      "orphans": 1,
+      "triggers": [],
+      "actions": []
+    },
+    {
+      "driver": "wall_remote_4_gang",
+      "orphans": 1,
+      "triggers": [],
+      "actions": []
+    },
+    {
+      "driver": "wall_remote_6_gang",
+      "orphans": 1,
+      "triggers": [],
+      "actions": []
+    }
+  ]
+}
