@@ -52,7 +52,7 @@
     {
       "driverId": "button_wireless_1",
       "homeyClass": "button",
-      "mfrCount": 133,
+      "mfrCount": 135,
       "pidCount": 64,
       "capCount": 2,
       "settingCount": 9,
@@ -89,16 +89,13 @@
       "driverId": "button_wireless_3",
       "homeyClass": "button",
       "mfrCount": 79,
-      "pidCount": 4,
+      "pidCount": 1,
       "capCount": 4,
       "settingCount": 13,
       "flowTriggers": 21,
       "gaps": [],
       "productIds": [
-        "TS0043",
-        "TS0013",
-        "TS0601",
-        "TS0215A"
+        "TS0043"
       ]
     },
     {
@@ -5208,7 +5205,7 @@
     {
       "driverId": "curtain_motor",
       "homeyClass": "windowcoverings",
-      "mfrCount": 1100,
+      "mfrCount": 1114,
       "pidCount": 118,
       "capCount": 8,
       "settingCount": 19,

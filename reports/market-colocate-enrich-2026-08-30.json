@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-25T06:35:46.332Z",
+  "generatedAt": "2026-09-25T18:06:14.760Z",
   "mode": "APPLY",
   "policy": "P2319 enrichment-first colocate — never strip other drivers",
   "applied": [],
@@ -89,12 +89,6 @@
       "pid": "TS0115",
       "reason": "p2520-would-degrade",
       "driver": "usb_outlet_advanced"
-    },
-    {
-      "mfr": "_TZ3000_pzui3skt",
-      "pid": "TS0041",
-      "reason": "p2520-would-degrade",
-      "driver": "button_wireless_1"
     },
     {
       "mfr": "_TZ3000_ww9i3e0y",
