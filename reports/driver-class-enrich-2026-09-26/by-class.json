@@ -52,7 +52,7 @@
     {
       "driverId": "button_wireless_1",
       "homeyClass": "button",
-      "mfrCount": 137,
+      "mfrCount": 135,
       "pidCount": 64,
       "capCount": 2,
       "settingCount": 9,
@@ -89,16 +89,13 @@
       "driverId": "button_wireless_3",
       "homeyClass": "button",
       "mfrCount": 79,
-      "pidCount": 4,
+      "pidCount": 1,
       "capCount": 4,
       "settingCount": 13,
       "flowTriggers": 22,
       "gaps": [],
       "productIds": [
-        "TS0043",
-        "TS0013",
-        "TS0601",
-        "TS0215A"
+        "TS0043"
       ]
     },
     {
@@ -621,7 +618,7 @@
       "pidCount": 11,
       "capCount": 6,
       "settingCount": 1,
-      "flowTriggers": 17,
+      "flowTriggers": 18,
       "gaps": [],
       "productIds": [
         "TS004F",
@@ -4399,7 +4396,7 @@
     {
       "driverId": "bulb_dimmable",
       "homeyClass": "light",
-      "mfrCount": 174,
+      "mfrCount": 172,
       "pidCount": 86,
       "capCount": 8,
       "settingCount": 8,

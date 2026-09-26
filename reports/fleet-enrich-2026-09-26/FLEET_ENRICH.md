@@ -7,8 +7,8 @@ Mode: **apply** | Crawl: **no**
 | Metric | Baseline | Final | Δ |
 |--------|----------|-------|---|
 | Drivers | 434 | 434 | 0 |
-| MFR entries | 18795 | 18790 | -5 |
-| PID entries | 3608 | 3608 | 0 |
+| MFR entries | 18788 | 18792 | 4 |
+| PID entries | 3605 | 3605 | 0 |
 
 ## Phases
 
@@ -40,7 +40,7 @@ Mode: **apply** | Crawl: **no**
 - sacred-couple-gate: OK
 - p2519-anti-overwrite: OK
 - anti-bot-gate: OK
-- fp-collision-check: FAIL
+- fp-collision-check: OK
 - flow-l99: OK
 
 ✅ Coverage maintained or enriched

@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-26T06:37:30.192Z",
+  "generatedAt": "2026-09-26T17:24:48.724Z",
   "mode": "APPLY",
   "policy": "P2319 enrichment-first colocate — never strip other drivers",
   "applied": [],
@@ -38,10 +38,24 @@
       "soft": "climate_sensor"
     },
     {
+      "mfr": "_TZ3000_7dcddnye",
+      "pid": "TS0501A",
+      "reason": "not-confident",
+      "tier": "pid_default",
+      "soft": "bulb_dimmable"
+    },
+    {
       "mfr": "_TZ3000_85czd6fy",
       "pid": "TS0207",
       "reason": "p2520-would-degrade",
       "driver": "water_leak_sensor"
+    },
+    {
+      "mfr": "_TZ3000_fa9mlvja",
+      "pid": "TS0041",
+      "reason": "needs-deep-review",
+      "tier": null,
+      "soft": null
     },
     {
       "mfr": "_TZ3000_jyupj3fw",
