@@ -48,10 +48,10 @@
         }
       ],
       "titleFormatted": {
-        "en": "Button pressed [[button]]",
-        "fr": "Bouton appuyé [[button]]",
-        "nl": "Knop ingedrukt [[button]]",
-        "de": "Taste gedrückt [[button]]"
+        "en": "Button pressed [[button]] ({button_id})",
+        "fr": "Bouton appuyé [[button]] ({button_id})",
+        "nl": "Knop ingedrukt [[button]] ({button_id})",
+        "de": "Taste gedrückt [[button]] ({button_id})"
       }
     },
     {
@@ -102,10 +102,10 @@
         }
       ],
       "titleFormatted": {
-        "en": "Button double-pressed [[button]]",
-        "fr": "Bouton double-cliqué [[button]]",
-        "nl": "Knop dubbel ingedrukt [[button]]",
-        "de": "Taste doppelt gedrückt [[button]]"
+        "en": "Button double-pressed [[button]] ({button_id})",
+        "fr": "Bouton double-cliqué [[button]] ({button_id})",
+        "nl": "Knop dubbel ingedrukt [[button]] ({button_id})",
+        "de": "Taste doppelt gedrückt [[button]] ({button_id})"
       }
     },
     {
@@ -156,10 +156,10 @@
         }
       ],
       "titleFormatted": {
-        "en": "Button long-pressed [[button]]",
-        "fr": "Bouton appui long [[button]]",
-        "nl": "Knop lang ingedrukt [[button]]",
-        "de": "Taste lang gedrückt [[button]]"
+        "en": "Button long-pressed [[button]] ({button_id})",
+        "fr": "Bouton appui long [[button]] ({button_id})",
+        "nl": "Knop lang ingedrukt [[button]] ({button_id})",
+        "de": "Taste lang gedrückt [[button]] ({button_id})"
       }
     },
     {
@@ -205,10 +205,10 @@
       ],
       "args": [],
       "titleFormatted": {
-        "en": "The battery level changed",
-        "fr": "Le niveau de la batterie a changé",
-        "nl": "Batterijniveau is veranderd",
-        "de": "Batteriestand hat sich geändert"
+        "en": "The battery level changed ({battery})",
+        "fr": "Le niveau de la batterie a changé ({battery})",
+        "nl": "Batterijniveau is veranderd ({battery})",
+        "de": "Batteriestand hat sich geändert ({battery})"
       }
     },
     {
@@ -283,5 +283,7 @@
         "fr": "Bouton 2 appui long"
       }
     }
-  ]
+  ],
+  "conditions": [],
+  "actions": []
 }
