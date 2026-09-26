@@ -1,0 +1,238 @@
+{
+  "generatedAt": "2026-09-26T08:53:26.531Z",
+  "date": "2026-09-26",
+  "mode": "full",
+  "phases": [
+    {
+      "name": "guard",
+      "ok": true,
+      "durationMs": 0,
+      "note": "SHADOW env forced"
+    },
+    {
+      "name": "github",
+      "ok": true,
+      "durationMs": 211
+    },
+    {
+      "name": "gmail",
+      "ok": true,
+      "durationMs": 217,
+      "details": {
+        "crash": {
+          "ok": true,
+          "skipped": false,
+          "status": 0,
+          "durationMs": 39,
+          "stderr": "",
+          "stdoutTail": "[gmail-crash-pattern-gate] sources=32 hits=0 unknown=0\n  wrote .github/state/gmail-crash-patterns.json\n  verdict: ok\n"
+        },
+        "treat": {
+          "ok": true,
+          "skipped": false,
+          "status": 0,
+          "durationMs": 177,
+          "stderr": "",
+          "stdoutTail": "[automate] inbox total=0 have=30 missing=0 ingested_now=0\n[recursive-treat] sources: 136\n[recursive-treat] wrote /home/runner/work/com.tuya.zigbee/com.tuya.zigbee/reports/diag-recursive-treat-2026-09-26\n{\n  \"generatedAt\": \"2026-09-26T08:53:26.948Z\",\n  \"methodology\": \"f647d35b-style full-body recursive treat — sacred couple never invented; P2246 derive from interview when ABSENT\",\n  \"sourcesScanned\": 136,\n  \"uniqueCases\": 122,\n  \"actionable\": 36,\n  \"derivedFromInterview\": 3,\n  \"signalTally\": {\n    \"scene_mode_unsupported\": 3,\n    \"wrong_driver_hint\": 4,\n    \"athom_socket_hang\": 6,\n    \"athom_processing_failed\": 2,\n    \"wrong_smart_rcbo\": 2,\n    \"flow_guard_spam\": 2,\n    \"processing_failed\": 6,\n    \"scene_0x8004\": 2,\n    \"invalid_flow_card\": 1,\n    \"missing_capability_listener\": 1\n  },\n  \"gmailBodiesPresent\": 30,\n  \"interviews\": 90\n}\n[automate] status → .github/state/diag-recursive-inbox/automate-status.json\n{\n  \"total\": 0,\n  \"have\": 30,\n  \"missing\": 0,\n  \"missingIds\": []\n}\n[automate] actionable= 36 gmailBodies= 30\n"
+        }
+      }
+    },
+    {
+      "name": "forum",
+      "ok": true,
+      "durationMs": 28917,
+      "skipScan": false,
+      "steps": [
+        {
+          "ok": true,
+          "skipped": false
+        },
+        {
+          "ok": true,
+          "skipped": false
+        },
+        {
+          "ok": true,
+          "skipped": false
+        },
+        {
+          "ok": true,
+          "skipped": false
+        }
+      ]
+    },
+    {
+      "name": "drivers",
+      "ok": true,
+      "durationMs": 1872,
+      "mfs": {
+        "high": 0,
+        "changes": 0,
+        "fail": false
+      },
+      "sacredOk": true
+    },
+    {
+      "name": "functionalDeep",
+      "ok": true,
+      "durationMs": 57,
+      "note": "P2529 complementary deep functional (soft)"
+    },
+    {
+      "name": "prioritize",
+      "ok": true,
+      "durationMs": 1,
+      "count": 3
+    },
+    {
+      "name": "docs",
+      "ok": true,
+      "durationMs": 0,
+      "doc": "/home/runner/work/com.tuya.zigbee/com.tuya.zigbee/docs/architecture/L99_INBOX_INTELLIGENCE.md"
+    },
+    {
+      "name": "gates",
+      "ok": true,
+      "durationMs": 2716
+    }
+  ],
+  "github": {
+    "harvestedAt": "2026-09-26T08:53:26.741Z",
+    "repo": "dlnraja/com.tuya.zigbee",
+    "auth": "token",
+    "error": null,
+    "issues": [
+      {
+        "number": 550,
+        "title": "Bug report - [Short description]",
+        "labels": [
+          "bug",
+          "reopened-by-user"
+        ],
+        "updatedAt": "2026-09-26T07:33:15Z",
+        "user": "HiepSVG",
+        "htmlUrl": "https://github.com/dlnraja/com.tuya.zigbee/issues/550",
+        "bodySnippet": "> Thank you for the assistance. However, the device is not working properly yet.\n> It is now added as Presence Sensor (Radar / mmWave), so it is a step forward.\n> However, the sensor gives off just LUX measurement, not presence/motion alarm\n> \n> I am running 9.0.1059 version\n> \n> I have used both options of adding devices and have turned off and on Homey several times --> the device is added successfully but\n> a) no change in Motion alarm, human presence or detection distance (even I am waving it in front of me). The luminance data is working OK by updating the values every 1-2 second\n> b) there is a button option which gives error \"Missing capability Listener: onoff\" when I push on it.\n> \n> <img width=\"684\" height=\"478\" alt=\"Image\" src=\"https://github.com/user-attachments/assets/7017b08f-4087-472f-98a9-b3f45db6b70a\" />\n> \n> \n> <img width=\"391\" height=\"493\" alt=\"Image\" src=\"https://github.com/user-attachments/assets/bf06bbac-4454-42da-906c-92121cdf82cf\" />\n> \n> <img width=\"395\" height=\"442\" alt=\"Image\" src=\"https://github.com/user-attachments/assets/ab04bff0-5715-4705-af3c-61fbab3bf336\" />\n> \n> Presence Sensor (Radar / mmWave)\n> Property\tValue\n> ID\tfcbe58a8-1a89-4486-bb88-178bb286dfe5\n> Name\tPresence Sensor (Radar / mmWave)\n> Class\tsensor\n> Driver\thomey:app:com.dlnraja.tuya.zigbee:presence_sensor_radar\n> Ready\tYes\n> Available\tYes\n> Warning\tNo\n> Custom icon\tNo\n> \n> Data\n> Key\tValue\n> token\t\"e1fd995c-1b42-4b44-948b-55d63156f90b\"\n> \n> Settings\n> Key\tValue\n> zb_product_id\t\"TS0601\"\n> zb_manufacturer_name\t\"_TZE204_gkfbdvyx\"\n> zb_receive_when_idle\t\"✓\"\n> zb_device_type\t\"router\"\n> zb_ieee_address\t\"a4:c1:38:86:ef:fe:6b:3c\"\n> zb_sw_build_id\t\"\"\n> zb_touchlink_group_ids\t\"\"\n> radar_sensitivity\t7\n> detection_range\t6\n> departure_delay\t30\n> entry_sensitivity\t7\n> illuminance_threshold\t50\n> sensor_mode\t\"on\"\n> smart_presence_while_occupied\ttrue\n> auto_unlock_occupied_on_empty\tfalse\n> homey_curtain_flip_help\tnull\n> energy_value_off\t0\n> energy_value_on\t0\n> zone_activity_disabled\tfalse\n> climate_exclude\tfalse\n> smart_adaptation_report\t\"═════��════════════════════════════════════════════════════════════════\\n🤖 SMART DRIVER ADAPTATION REPORT\\n══════════════════════════════════════════════════════════════════════\\n\\n📱 Device: Presence Sensor (Radar / mmWave)\\n🔧 Driver: presence_sensor_radar\\n🏭 Manufacturer: Unknown\\n📦 Model: Unknown\\n\\n🎯 Real Capabilities Detected:\\n Required: \\n Optional: \\n Forbidden: \\n\\n⚖️ Comparison:\\n Status: ✅ CORRECT\\n\\n══════════════════════════════════════════════════════════════════════\"\n> smart_adaptation_date\t\"2026-09-18T12:22:19.469Z\"\n> smart_adaptation_success\ttrue\n> mcu_version\t\"2.0.3\"\n> \n> \n> Capabilities\n> ID\tTitle\tType\tValue\tSet Value\tLast Changed\n> alarm_motion\tMotion alarm\tboolean\tfalse\t\t4 minutes ago\n> measure_luminance\tLuminance\tnumber\t647\t\t0 seconds ago\n> alarm_human\tHuman presence\tboolean\tfalse\t\t4 minutes ago\n> onoff\tChannel 1\tboolean\tnull\t\n> measure_luminance.distance\tDetection Distance\tnumber\tnull\t\t\n> button.1\tButton 1\tboolean\tnull\t\n> \n> <img width=\"1379\" height=\"422\" alt=\"Image\" src=\"https://github.com/user-attachments/assets/3b68d2db-85e9-47db-a4f4-b27f179f0ef8\" /> \n\n _Originally posted by @HiepSVG in [#547](https://github.com/dlnraja/com.tuya.zigbee/issues/547#issuecomment-5730200202)_"
+      },
+      {
+        "number": 551,
+        "title": "Bug report - TS0043 (_TZ3000_famkxci2) detected as Generic Zigbee Device instead of button_wireless_3",
+        "labels": [
+          "bug"
+        ],
+        "updatedAt": "2026-09-25T17:43:55Z",
+        "user": "migueleap",
+        "htmlUrl": "https://github.com/dlnraja/com.tuya.zigbee/issues/551",
+        "bodySnippet": "Describe the bug\nWhen pairing a Tuya 3-button scene remote TS0043 with manufacturer ID _TZ3000_famkxci2, Homey pairs it as a \"Generic Zigbee Device\" instead of matching it with the button_wireless_3 driver.\n\nTo Reproduce\nSteps to reproduce the behavior:\n1.\tGo to Homey App > Devices > Add Device.\n2.\tSearch for 'Tuya Zigbee' and select 'Wireless 3-Button Switch' (or start Zigbee pairing).\n3.\tPut the TS0043 remote in pairing mode (hold button for 5 seconds until LED blinks).\n4.\tSee error: Device is paired as \"Generic Zigbee Device\" without any capabilities/buttons.\n\nExpected behavior\nThe TS0043 (_TZ3000_famkxci2) remote should be recognized by the button_wireless_3 driver with battery measurement and button press flow triggers.\nApp and Homey version\n•\tWhat Homey version are you running? Homey Pro (Early 2023)\n•\tWhat version of Homey firmware do you use? 13.5.0\n•\tWhat version of the Universal Tuya App are you using? v9.0.1086\n\nScreenshots\n\nAdditional context\nRoot cause analysis of driver.compose.json for button_wireless_3:\nThe driver's endpoints.1.clusters definition includes Security/Alarm clusters (1280 / 1281 IAS Zone). Since the TS0043 hardware lacks these clusters, Homey's Zigbee signature matching algorithm fails and falls back to Generic Zigbee Device. \nRemoving clusters 1280, 1281, and 61184 from the endpoints configuration in driver.compose.json resolves the matching issue. \n"
+      }
+    ],
+    "prs": [],
+    "openIssueCount": 2,
+    "openPrCount": 0
+  },
+  "forum": {
+    "path": "/home/runner/work/com.tuya.zigbee/com.tuya.zigbee/.github/state/forum/actionable-processor-report.json",
+    "totals": {
+      "posts": 216,
+      "withCouples": 76,
+      "needAction": 49,
+      "both": 127,
+      "masterOnly": 18
+    },
+    "posts": 216
+  },
+  "gmail": {
+    "generatedAt": "2026-09-26T08:53:26.774Z",
+    "sourcesScanned": 32,
+    "patternCounts": {
+      "flow_getDeviceActionCard": 0,
+      "readonly_error_assign": 0,
+      "unbound_destroyed": 0,
+      "getDiscoveries_not_fn": 0,
+      "getDeviceById": 0,
+      "catch_on_undefined": 0,
+      "registerRunListenerasync_typo": 0,
+      "settimeout_destroyed": 0,
+      "onDeleted_null": 0,
+      "dcm_auditCapabilities_missing": 0,
+      "capability_ref_undefined": 0,
+      "clusterutils_destroyed_unbound": 0,
+      "heap_oom_live_data": 0,
+      "setName_not_fn": 0,
+      "sub_capability_value_not_string": 0,
+      "ERR_IAS_SLEEPY_TIMEOUT": 0,
+      "ERR_DESTROYED_DEVICE_TIMER": 0,
+      "ERR_UNBOUND_DESTROYED": 0,
+      "ERR_CATCH_ON_UNDEFINED": 0,
+      "ERR_CAPABILITY_NOT_FOUND": 0,
+      "ERR_AUDIT_CAPABILITIES": 0,
+      "ERR_ZIGBEE_ROUTE_FULL": 0
+    },
+    "hits": [],
+    "unknownFatals": [],
+    "knownFixed": [
+      "flow_getDeviceActionCard",
+      "readonly_error_assign",
+      "unbound_destroyed",
+      "getDiscoveries_not_fn",
+      "getDeviceById",
+      "catch_on_undefined",
+      "registerRunListenerasync_typo",
+      "settimeout_destroyed",
+      "onDeleted_null",
+      "dcm_auditCapabilities_missing",
+      "capability_ref_undefined",
+      "clusterutils_destroyed_unbound",
+      "heap_oom_live_data",
+      "setName_not_fn",
+      "sub_capability_value_not_string",
+      "ERR_IAS_SLEEPY_TIMEOUT",
+      "ERR_DESTROYED_DEVICE_TIMER",
+      "ERR_UNBOUND_DESTROYED",
+      "ERR_CATCH_ON_UNDEFINED",
+      "ERR_AUDIT_CAPABILITIES"
+    ],
+    "watch": [],
+    "verdict": "ok"
+  },
+  "mfs": {
+    "high": 0,
+    "changes": 0,
+    "fail": false
+  },
+  "priority": [
+    {
+      "score": 90,
+      "dualApp": "BOTH",
+      "source": "github-issue",
+      "id": "#550",
+      "title": "Bug report - [Short description]",
+      "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/550",
+      "action": "investigate-code-silent",
+      "forumReply": "NEVER"
+    },
+    {
+      "score": 90,
+      "dualApp": "BOTH",
+      "source": "github-issue",
+      "id": "#551",
+      "title": "Bug report - TS0043 (_TZ3000_famkxci2) detected as Generic Zigbee Device instead of button_wireless_3",
+      "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/551",
+      "action": "investigate-code-silent",
+      "forumReply": "NEVER"
+    },
+    {
+      "score": 75,
+      "dualApp": "BOTH",
+      "source": "forum",
+      "id": "forum-need-action",
+      "title": "49 forum posts needAction (shadow processor)",
+      "action": "enrich:investigate + deep-functional (DP/cluster/flow/RX-TX, not mfr+pid only)",
+      "forumReply": "NEVER"
+    }
+  ],
+  "functionalDeep": {
+    "ok": true,
+    "durationMs": 57
+  }
+}
