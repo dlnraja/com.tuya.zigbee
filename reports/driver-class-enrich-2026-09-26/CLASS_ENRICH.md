@@ -6,8 +6,8 @@ Mode: **apply**
 |-------|--------:|-----:|-----:|--------------:|
 | sensor | 122 | 10 | 6328 | 782 |
 | socket | 108 | 11 | 3959 | 1167 |
-| button | 54 | 2 | 1533 | 885 |
-| light | 53 | 2 | 1680 | 257 |
+| button | 54 | 2 | 1531 | 886 |
+| light | 53 | 2 | 1678 | 257 |
 | thermostat | 31 | 0 | 1771 | 177 |
 | other | 13 | 0 | 1237 | 83 |
 | switch | 9 | 1 | 368 | 66 |
@@ -22,6 +22,6 @@ Mode: **apply**
 | ir | 1 | 0 | 149 | 6 |
 | windowcoverings | 1 | 0 | 2 | 6 |
 
-**Totals:** 434 drivers · 18800 MFR entries · 30 with soft gaps
+**Totals:** 434 drivers · 18796 MFR entries · 30 with soft gaps
 
 Doctrine: never invent productId · never degrade coverage · free scrape + forfait AI only.
