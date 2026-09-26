@@ -1,0 +1,13 @@
+{
+  "when": "2026-09-26T09:56:35.799Z",
+  "from": "HEAD~40",
+  "to": "HEAD",
+  "changed": 3,
+  "interesting": 0,
+  "interestingSample": [],
+  "skipped": true,
+  "reviewable_count": null,
+  "excluded_count": null,
+  "ok": true,
+  "reason": "no interesting path changes in range (drivers/lib/workflows/tools/ci/.opencodereview)"
+}
