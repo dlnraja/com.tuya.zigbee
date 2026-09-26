@@ -1,143 +1,13 @@
 {
-  "timestamp": "2026-09-26T06:37:57.486Z",
+  "timestamp": "2026-09-26T09:39:55.084Z",
   "gate": "align-mfs-db-intelligent",
-  "apply": true,
-  "check": false,
-  "changeCount": 4,
+  "apply": false,
+  "check": true,
+  "changeCount": 0,
   "skippedCount": 64,
-  "highSeverityCount": 4,
-  "byAction": {
-    "registry_force": 4
-  },
-  "changes": [
-    {
-      "severity": "high",
-      "action": "registry_force",
-      "mfr": "_TZE204_r0jdjrvi",
-      "from": {
-        "driverId": "curtain_motor_tilt",
-        "modelIds": [
-          "TS0601"
-        ]
-      },
-      "to": {
-        "driverId": "curtain_motor_tilt",
-        "modelIds": [
-          "TS0601",
-          "TS0601_curtain_tilt"
-        ]
-      },
-      "caseId": "curtain-r0jdjrvi-tilt"
-    },
-    {
-      "severity": "high",
-      "action": "registry_force",
-      "mfr": "_TZE200_pay2byax",
-      "from": {
-        "driverId": "contact_sensor_zigbee",
-        "modelIds": [
-          "TS0601"
-        ]
-      },
-      "to": {
-        "driverId": "contact_sensor_zigbee",
-        "modelIds": [
-          "TS0601",
-          "ZG-102Z",
-          "ZG-102ZL"
-        ]
-      },
-      "caseId": "p2201-pay2byax-zg102zl-contact"
-    },
-    {
-      "severity": "high",
-      "action": "registry_force",
-      "mfr": "_TZE204_pay2byax",
-      "from": {
-        "driverId": "contact_sensor_zigbee",
-        "modelIds": [
-          "TS0601"
-        ]
-      },
-      "to": {
-        "driverId": "contact_sensor_zigbee",
-        "modelIds": [
-          "TS0601",
-          "ZG-102Z",
-          "ZG-102ZL"
-        ]
-      },
-      "caseId": "p2201-pay2byax-zg102zl-contact"
-    },
-    {
-      "severity": "high",
-      "action": "registry_force",
-      "mfr": "_TZE200_wzk0x7fq",
-      "from": {
-        "driverId": "curtain_motor",
-        "modelIds": [
-          "01MINIZB",
-          "AM02",
-          "AM43-0.45/40-ES-EB",
-          "AM43-0.45/40-ES-EZ",
-          "BASICZBR3",
-          "DS421",
-          "DS82",
-          "E1757",
-          "FYRTUR",
-          "KADRILJ",
-          "LUMI.CURTAIN",
-          "LUMI.CURTAIN.ACN002",
-          "LUMI.CURTAIN.HAGL04",
-          "S26R2ZB",
-          "S31ZB",
-          "TS0001",
-          "TS0001_POWER",
-          "TS0001_SWITCH",
-          "TS0001_SWITCH_MODULE",
-          "TS000F",
-          "TS0011",
-          "TS0012",
-          "TS0014",
-          "TS0101",
-          "TS0111",
-          "TS011F",
-          "TS0301",
-          "TS0302",
-          "TS030F",
-          "TS0601",
-          "TS0601_GENERIC",
-          "TS0603",
-          "TS0726",
-          "TS110E",
-          "TS130F",
-          "TS4100",
-          "ZBCURTAIN",
-          "ZBM5-1C-120",
-          "ZBM5-2C-120",
-          "ZBM5-3C-120",
-          "ZBMINI",
-          "ZBMINIL2",
-          "ZBMINIL2-R2",
-          "ZBMINIR",
-          "ZBMINIR2",
-          "ZBMINIR2-R2",
-          "ZG-301Z",
-          "ZG-301Z-MOTO",
-          "ZG-302Z1"
-        ]
-      },
-      "to": {
-        "driverId": "vibration_sensor",
-        "modelIds": [
-          "AY02SZ",
-          "TS0601",
-          "ZG-102ZM"
-        ]
-      },
-      "caseId": "hobeian-zg102zm-vibration-contact"
-    }
-  ],
+  "highSeverityCount": 0,
+  "byAction": {},
+  "changes": [],
   "skipped": [
     {
       "reason": "registry_driver_missing",
@@ -660,10 +530,5 @@
       ]
     }
   ],
-  "highSeverity": [
-    "registry drift _TZE204_r0jdjrvi → curtain_motor_tilt",
-    "registry drift _TZE200_pay2byax → contact_sensor_zigbee",
-    "registry drift _TZE204_pay2byax → contact_sensor_zigbee",
-    "registry drift _TZE200_wzk0x7fq → vibration_sensor"
-  ]
+  "highSeverity": []
 }
