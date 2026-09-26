@@ -33,19 +33,19 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 
 | Metric | Value |
 |--------|-------|
-| **App Version** | v9.0.1254 |
+| **App Version** | v9.0.1265 |
 | **Drivers** | 434 (381 Zigbee + 53 WiFi) |
 | **Unique Fingerprints** | 4,696 |
-| **Pairing Variants** | 18,788 (4 case combos per fingerprint) |
+| **Pairing Variants** | 18,790 (4 case combos per fingerprint) |
 | **Unique Product IDs** | 929 |
-| **Flow Cards** | 5,995 |
+| **Flow Cards** | 6,032 |
 | **Unique Capabilities** | 170 |
 | **Native OTA Drivers** | 8 |
-| **Test Suites** | 514 files |
+| **Test Suites** | 523 files |
 | **SVG Icons** | 734 |
 | **Languages** | EN, FR, NL, DE |
 | **SDK / Homey** | 3 / >= 12.2.0 |
-| **Last Updated** | 2026-09-25 |
+| **Last Updated** | 2026-09-26 |
 
 ### Top 20 Drivers by Fingerprint Count
 
@@ -103,18 +103,18 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 
 | Version | Changes |
 |---------|---------|
+| **v9.0.1265** | Radar presence: clear hung YES when lux+distance freeze after leave; re-pair Wireless Button 3 (TS0043) if still Generic. |
+| **v9.0.1262** | Publish fix: FlowCardHelper Buffer JSON + no duplicate button tokens. Update Test to 9.0.1262. |
+| **v9.0.1261** | Tagged Flow cards (label/token) fire from all RX paths; remotes battery-changed. Update Test to 9.0.1261 then restart. |
+| **v9.0.1260** | HiepSVG radar: fix lux (real light steps vs noise), distance (no farther-ghost / dm scale), hang re-arm. Update Test ≥9.0.1260; Repair ra… |
+| **v9.0.1259** | Ceiling radar motion re-arms from lux after stillness (GH#550). TS0043 famkxci2 stays Wireless Button 3 only (GH#551). Update Test; Repai… |
+| **v9.0.1257** | Remotes: skip MCU time sync on snappy buttons after wake (less mute pile). Update Test. |
+| **v9.0.1256** | Publish heal: FP collision baseline + snappy lux/distance antiflood (radar). Update Test. |
+| **v9.0.1255** | Ceiling radar: faster lux on light-off + smoother distance while walking; wall dimmer FP lock; Wireless Button 3 pairing (TS0043). Update… |
 | **v9.0.1254** | Snappy remotes: skip wake magic/DP TX storm (listen-only). Update Test. |
 | **v9.0.1253** | Improved Homey Test publish soft-continue after Athom processing flakes. |
 | **v9.0.1252** | TS0041-43 exact profile snappy parity (no slow mfr trap). Update Test. |
 | **v9.0.1251** | famkxci2 TS0043 snappy parity (GH#551 class). Update Test. |
-| **v9.0.1250** | Bi-dir soft Homey UI pulse on snappy remotes + complementary soft-arm. Update Test. |
-| **v9.0.1249** | Wireless remotes: wake listen-only (no bind/battery TX storm). Update Test. |
-| **v9.0.1248** | Publish tip-lag heal after Athom socket hang; preserve radar couple notes; improved lux/distance responsiveness. |
-| **v9.0.1246** | Restored VicHY radar couple profile notes after fleet enrich; radar lux/distance snappy + button_wireless_3 pairing fix. |
-| **v9.0.1245** | Improved ceiling radar lux/distance response and wireless button pairing. |
-| **v9.0.1244** | Improved wireless remote reliability (skip IAS enroll storm on scene buttons). |
-| **v9.0.1243** | CI publish heal: HOBEIAN OCR collision keys + tip SSOT (Homey mails). Update Test. |
-| **v9.0.1242** | Publish heal: P2618 ceiling lux assert window + P2725 radar. Update Test. |
 
 <!-- CHANGELOG_END -->
 
