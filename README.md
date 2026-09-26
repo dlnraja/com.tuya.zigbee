@@ -33,7 +33,7 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 
 | Metric | Value |
 |--------|-------|
-| **App Version** | v9.0.1265 |
+| **App Version** | v9.0.1266 |
 | **Drivers** | 434 (381 Zigbee + 53 WiFi) |
 | **Unique Fingerprints** | 4,696 |
 | **Pairing Variants** | 18,790 (4 case combos per fingerprint) |
@@ -103,6 +103,7 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 
 | Version | Changes |
 |---------|---------|
+| **v9.0.1266** | Publish heal: Wireless Button 3 Flow titleFormatted locales + hang-leave radar. Update Test. |
 | **v9.0.1265** | Radar presence: clear hung YES when lux+distance freeze after leave; re-pair Wireless Button 3 (TS0043) if still Generic. |
 | **v9.0.1262** | Publish fix: FlowCardHelper Buffer JSON + no duplicate button tokens. Update Test to 9.0.1262. |
 | **v9.0.1261** | Tagged Flow cards (label/token) fire from all RX paths; remotes battery-changed. Update Test to 9.0.1261 then restart. |
@@ -114,7 +115,6 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 | **v9.0.1254** | Snappy remotes: skip wake magic/DP TX storm (listen-only). Update Test. |
 | **v9.0.1253** | Improved Homey Test publish soft-continue after Athom processing flakes. |
 | **v9.0.1252** | TS0041-43 exact profile snappy parity (no slow mfr trap). Update Test. |
-| **v9.0.1251** | famkxci2 TS0043 snappy parity (GH#551 class). Update Test. |
 
 <!-- CHANGELOG_END -->
 
