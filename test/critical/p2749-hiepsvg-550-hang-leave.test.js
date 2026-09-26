@@ -60,4 +60,18 @@ describe('P2749 HiepSVG #550 hang-leave resolve', () => {
     assert.ok(/prev \+ 0\.5/.test(deviceSrc));
     assert.ok(/trendingFarther/.test(deviceSrc));
   });
+
+  it('button_wireless_3 titleFormatted locales include [[button]]', () => {
+    const flow = JSON.parse(fs.readFileSync(
+      path.join(ROOT, 'drivers/button_wireless_3/driver.flow.compose.json'),
+      'utf8',
+    ));
+    const card = (flow.triggers || []).find(
+      (t) => t.id === 'button_wireless_3_button_3gang_button_pressed',
+    );
+    assert.ok(card);
+    for (const [lang, tf] of Object.entries(card.titleFormatted || {})) {
+      assert.ok(String(tf).includes('[[button]]'), `${lang} missing [[button]]`);
+    }
+  });
 });
