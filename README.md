@@ -33,15 +33,15 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 
 | Metric | Value |
 |--------|-------|
-| **App Version** | v9.0.1266 |
+| **App Version** | v9.0.1272 |
 | **Drivers** | 434 (381 Zigbee + 53 WiFi) |
 | **Unique Fingerprints** | 4,696 |
-| **Pairing Variants** | 18,790 (4 case combos per fingerprint) |
+| **Pairing Variants** | 18,788 (4 case combos per fingerprint) |
 | **Unique Product IDs** | 929 |
 | **Flow Cards** | 6,032 |
 | **Unique Capabilities** | 170 |
 | **Native OTA Drivers** | 8 |
-| **Test Suites** | 523 files |
+| **Test Suites** | 525 files |
 | **SVG Icons** | 734 |
 | **Languages** | EN, FR, NL, DE |
 | **SDK / Homey** | 3 / >= 12.2.0 |
@@ -103,18 +103,18 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 
 | Version | Changes |
 |---------|---------|
+| **v9.0.1272** | v9.0.1271: |
+| **v9.0.1271** | v9.0.1271: P2749f Flow titleFormatted gate + Homey Test sync. |
+| **v9.0.1270** | CI: Flow titleFormatted [[args]] gate before Athom validate + hang-leave radar. Update Test. |
+| **v9.0.1269** | Publish heal: OCR invent pad doNotLock under heap pressure + Flow locales. Update Test. |
+| **v9.0.1268** | Publish heal: Flow titleFormatted locales must include [[args]] (IT/SV/…). Update Test. |
+| **v9.0.1267** | Publish heal: keep 7dcddnye on wall dimmer (not bulb) + hang-leave radar. Update Test. |
 | **v9.0.1266** | Publish heal: Wireless Button 3 Flow titleFormatted locales + hang-leave radar. Update Test. |
 | **v9.0.1265** | Radar presence: clear hung YES when lux+distance freeze after leave; re-pair Wireless Button 3 (TS0043) if still Generic. |
 | **v9.0.1262** | Publish fix: FlowCardHelper Buffer JSON + no duplicate button tokens. Update Test to 9.0.1262. |
 | **v9.0.1261** | Tagged Flow cards (label/token) fire from all RX paths; remotes battery-changed. Update Test to 9.0.1261 then restart. |
 | **v9.0.1260** | HiepSVG radar: fix lux (real light steps vs noise), distance (no farther-ghost / dm scale), hang re-arm. Update Test ≥9.0.1260; Repair ra… |
 | **v9.0.1259** | Ceiling radar motion re-arms from lux after stillness (GH#550). TS0043 famkxci2 stays Wireless Button 3 only (GH#551). Update Test; Repai… |
-| **v9.0.1257** | Remotes: skip MCU time sync on snappy buttons after wake (less mute pile). Update Test. |
-| **v9.0.1256** | Publish heal: FP collision baseline + snappy lux/distance antiflood (radar). Update Test. |
-| **v9.0.1255** | Ceiling radar: faster lux on light-off + smoother distance while walking; wall dimmer FP lock; Wireless Button 3 pairing (TS0043). Update… |
-| **v9.0.1254** | Snappy remotes: skip wake magic/DP TX storm (listen-only). Update Test. |
-| **v9.0.1253** | Improved Homey Test publish soft-continue after Athom processing flakes. |
-| **v9.0.1252** | TS0041-43 exact profile snappy parity (no slow mfr trap). Update Test. |
 
 <!-- CHANGELOG_END -->
 
