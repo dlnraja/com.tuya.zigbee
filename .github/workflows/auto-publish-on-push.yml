@@ -525,9 +525,13 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           restore_volatile_artifacts() {
-            for path in .github/state diagnostics screenshots screenshots-debug promote-screenshots push-promote-screenshots .homeybuild; do
+            # WHY(P2750): P169 align writes reports/P169_* during publish; leaving it dirty
+            # skipped tip bump push while Homey Test already had the new version (9.0.1271).
+            for path in .github/state diagnostics screenshots screenshots-debug promote-screenshots push-promote-screenshots .homeybuild reports/P169_MFS_DB_ALIGN_LATEST.json; do
               git restore -- "$path" 2>/dev/null || true
             done
+            # Best-effort: any other P169 report dirt must not block metadata push
+            git restore -- reports/P169_*.json 2>/dev/null || true
           }
           stage_publish_metadata() {
             for path in app.json .homeycompose .homeychangelog.json CHANGELOG.md README.md docs .github/scripts/_stats.json package.json package-lock.json data/mfs_db.json; do

@@ -373,6 +373,25 @@ jobs:
             echo "No sanitized diagnostic state changes to push"
           fi
 
+      # WHY(P2750): Fetch Homey Diagnostics had zero downloadable artifacts — IDE/agents
+      # could only pull from Gmail Diagnostics Auto-Analysis. Mirror that upload set.
+      - name: Upload sanitized diagnostics artifacts
+        if: always()
+        uses: actions/upload-artifact@330a01c490aca151604b8cf639adc76d48f6c5d4 # v5.0.0
+        with:
+          name: sanitized-diagnostics-report
+          path: |
+            .github/state/diagnostics-report.json
+            .github/state/diagnostics-crossref.yml
+            .github/state/gmail-crash-patterns.json
+            .github/state/gmail-unique-fps.json
+            .github/state/gmail-fps-crossref-v2.json
+            .github/state/sacred-couple-dry-gate.json
+            .github/state/gmail-token-health.json
+            diagnostics/summary.json
+          if-no-files-found: warn
+          retention-days: 30
+
       - name: Assert Gmail diagnostics access
         if: always() && steps.gmail_fetch.outputs.exit_code != '0' && github.event.inputs.require_access == 'true'
         run: |
