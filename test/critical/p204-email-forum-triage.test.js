@@ -71,5 +71,7 @@ describe('P204 email/forum/github triage fixes', () => {
     assert.ok(!yml.includes('::error::Uncommitted tracked changes remain before rebase'));
     assert.ok(yml.includes('Uncommitted tracked changes remain before rebase; skipping metadata push'));
     assert.ok(!yml.includes('::error::Bot commit HEAD is not reachable'));
+    // P2750: P169 align report must be restored so tip bump is not skipped forever
+    assert.ok(yml.includes('reports/P169_MFS_DB_ALIGN_LATEST.json'));
   });
 });

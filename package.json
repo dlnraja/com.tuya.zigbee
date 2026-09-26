@@ -1,6 +1,6 @@
 {
   "name": "com.dlnraja.tuya.zigbee",
-  "version": "9.0.1270",
+  "version": "9.0.1271",
   "description": "Tuya Unified Zigbee - Local-first control with AI automation",
   "main": "app.js",
   "scripts": {
@@ -619,7 +619,8 @@
     "check:p2747": "node --test test/critical/p2747-tagged-flow-emit.test.js",
     "check:p2748": "node --test test/critical/p2748-complementary-tagged-flow-emit.test.js",
     "check:p2749": "node --test test/critical/p2749-hiepsvg-550-hang-leave.test.js",
-    "check:p2749f": "node --test test/critical/p2749f-flow-titleformatted-args-gate.test.js"
+    "check:p2749f": "node --test test/critical/p2749f-flow-titleformatted-args-gate.test.js",
+    "check:p2750": "node --test test/critical/p2750-fetch-diags-gmail-artifact-tip.test.js"
   },
   "keywords": [
     "homey",
