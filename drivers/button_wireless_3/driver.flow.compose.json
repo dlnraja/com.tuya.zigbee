@@ -78,11 +78,11 @@
         "fr": "Bouton appuyé [[button]] ({button_id})",
         "nl": "Button pressed [[button]] ({button_id})",
         "de": "Button pressed [[button]] ({button_id})",
-        "it": "Pulsante premuto ({button_id})",
-        "sv": "Knapp tryckt ({button_id})",
-        "no": "Knapp trykket ({button_id})",
-        "es": "Botón presionado ({button_id})",
-        "da": "Knap trykket ({button_id})"
+        "it": "Pulsante premuto [[button]] ({button_id})",
+        "sv": "Knapp tryckt [[button]] ({button_id})",
+        "no": "Knapp trykket [[button]] ({button_id})",
+        "es": "Botón presionado [[button]] ({button_id})",
+        "da": "Knap trykket [[button]] ({button_id})"
       }
     },
     {
@@ -162,11 +162,11 @@
         "fr": "Bouton double-cliqué [[button]] ({button_id})",
         "nl": "Button double-pressed [[button]] ({button_id})",
         "de": "Button double-pressed [[button]] ({button_id})",
-        "it": "Pulsante premuto due volte ({button_id})",
-        "sv": "Knapp dubbeltryckt ({button_id})",
-        "no": "Knapp dobbeltrykket ({button_id})",
-        "es": "Botón presionado dos veces ({button_id})",
-        "da": "Knap dobbeltklikket ({button_id})"
+        "it": "Pulsante premuto due volte [[button]] ({button_id})",
+        "sv": "Knapp dubbeltryckt [[button]] ({button_id})",
+        "no": "Knapp dobbeltrykket [[button]] ({button_id})",
+        "es": "Botón presionado dos veces [[button]] ({button_id})",
+        "da": "Knap dobbeltklikket [[button]] ({button_id})"
       }
     },
     {
@@ -246,11 +246,11 @@
         "fr": "Bouton pressé longtemps [[button]] ({button_id})",
         "nl": "Button long-pressed [[button]] ({button_id})",
         "de": "Button long-pressed [[button]] ({button_id})",
-        "it": "Pulsante premuto a lungo ({button_id})",
-        "sv": "Knapp långtryckt ({button_id})",
-        "no": "Knapp langttrykket ({button_id})",
-        "es": "Botón presionado largo ({button_id})",
-        "da": "Knap langt trykket ({button_id})"
+        "it": "Pulsante premuto a lungo [[button]] ({button_id})",
+        "sv": "Knapp långtryckt [[button]] ({button_id})",
+        "no": "Knapp langttrykket [[button]] ({button_id})",
+        "es": "Botón presionado largo [[button]] ({button_id})",
+        "da": "Knap langt trykket [[button]] ({button_id})"
       }
     },
     {
