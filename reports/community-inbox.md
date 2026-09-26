@@ -1,4 +1,4 @@
-# 📥 Community Inbox — 2026-09-25 10:11 UTC
+# 📥 Community Inbox — 2026-09-26 09:51 UTC
 
 Généré par `.github/scripts/community-inbox-digest.js` (workflow `community-inbox.yml`).
 
@@ -11,7 +11,7 @@ Généré par `.github/scripts/community-inbox-digest.js` (workflow `community-i
 
 ## 🔴 Issues à traiter
 
-- [#550](https://github.com/dlnraja/com.tuya.zigbee/issues/550) — Bug report - [Short description] _(🔴 escaladé, maj 2026-09-25)_
+- [#550](https://github.com/dlnraja/com.tuya.zigbee/issues/550) — Bug report - [Short description] _(🔴 escaladé, maj 2026-09-26)_
 
 ## 🟢 Maintainer actif dessus
 
