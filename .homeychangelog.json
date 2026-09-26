@@ -4194,5 +4194,8 @@
   "9.0.1262": {
     "en": "Publish fix: FlowCardHelper Buffer JSON + no duplicate button tokens. Update Test to 9.0.1262.",
     "fr": "Fix publish: FlowCardHelper Buffer JSON + tokens bouton uniques. Maj Test 9.0.1262."
+  },
+  "9.0.1265": {
+    "en": "Radar presence: clear hung YES when lux+distance freeze after leave; re-pair Wireless Button 3 (TS0043) if still Generic."
   }
 }
