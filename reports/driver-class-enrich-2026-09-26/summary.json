@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-26T06:37:59.416Z",
+  "generatedAt": "2026-09-26T17:25:17.512Z",
   "mode": "apply",
   "classFilter": null,
   "neverInventProductId": true,
@@ -7,8 +7,8 @@
     "button": {
       "count": 54,
       "withGaps": 2,
-      "mfrEntries": 1533,
-      "flowTriggers": 885,
+      "mfrEntries": 1531,
+      "flowTriggers": 886,
       "gapSamples": [
         {
           "id": "smart_remote_1_button_2",
@@ -154,7 +154,7 @@
     "light": {
       "count": 53,
       "withGaps": 2,
-      "mfrEntries": 1680,
+      "mfrEntries": 1678,
       "flowTriggers": 257,
       "gapSamples": [
         {
@@ -286,15 +286,15 @@
   "totals": {
     "drivers": 434,
     "withGaps": 30,
-    "mfrEntries": 18800,
-    "flowTriggers": 3626
+    "mfrEntries": 18796,
+    "flowTriggers": 3627
   },
   "applyResults": [
     {
       "phase": "flow-fleet-enrich",
       "ok": true,
       "exitCode": 0,
-      "tail": "gers\": [],\n      \"actions\": []\n    },\n    {\n      \"driver\": \"remote_button_wireless_wall\",\n      \"orphans\": 1,\n      \"triggers\": [],\n      \"actions\": []\n    },\n    {\n      \"driver\": \"scene_switch_2\",\n      \"orphans\": 4,\n      \"triggers\": [],\n      \"actions\": []\n    },\n    {\n      \"driver\": \"scene_switch_3\",\n      \"orphans\": 4,\n      \"triggers\": [],\n      \"actions\": []\n    },\n    {\n      \"driver\": \"scene_switch_4\",\n      \"orphans\": 7,\n      \"triggers\": [],\n      \"actions\": []\n    },\n    {\n      \"driver\": \"scene_switch_6\",\n      \"orphans\": 4,\n      \"triggers\": [],\n      \"actions\": []\n    }\n  ]\n}"
+      "tail": "  \\\"triggers\\\": 26\\n    },\\n    {\\n      \\\"driverId\\\": \\\"remote_button_wireless_handheld\\\",\\n      \\\"triggers\\\": 26\\n    },\\n    {\\n      \\\"driverId\\\": \\\"handheld_remote_4_buttons\\\",\\n      \\\"triggers\\\": 25\\n    },\\n    {\\n      \\\"driverId\\\": \\\"wall_remote_4_gang\\\",\\n      \\\"triggers\\\": 25\\n    },\\n    {\\n      \\\"driverId\\\": \\\"button_wireless_3\\\",\\n      \\\"triggers\\\": 22\\n    },\\n    {\\n      \\\"driverId\\\": \\\"remote_button_emergency_sos\\\",\\n      \\\"triggers\\\": 21\\n    },\\n    {\\n      \\\"driverId\\\": \\\"wall_remote_4_gang_3\\\",\\n      \\\"triggers\\\": 21\\n    }\\n  ]\\n}\"\n    }\n  ],\n  \"topChanges\": []\n}"
     },
     {
       "phase": "button-flow-harvest",
