@@ -44,6 +44,15 @@ describe('P2522 forum OCR invent + sacred pair fine-resolve', () => {
     assert.strictEqual(row.doNotLock, true);
   });
 
+  it('OCR invent pad stays DO_NOT_LOCK even if registry lookup deferred (heap)', () => {
+    // Contre quoi P2749e: buildDriverIndex + BootBudget must not wipe doNotLock
+    const index = buildDriverIndex();
+    buildDriverIndex();
+    const row = analyzeCouple('_TZE2841000000_3MZB0SDZ', 'TS0601', index, new Map());
+    assert.strictEqual(row.verdict, 'DO_NOT_LOCK');
+    assert.strictEqual(row.doNotLock, true);
+  });
+
   it('presence_sensor_radar keeps gkfbdvyx at front; curtain keeps 5slehgeo', () => {
     const radar = JSON.parse(fs.readFileSync(
       path.join(ROOT, 'drivers/presence_sensor_radar/driver.compose.json'),
