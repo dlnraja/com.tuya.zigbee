@@ -200,6 +200,7 @@ jobs:
           node --test test/critical/p2453-gmail-gh-couple-locks.test.js
           node --test test/critical/p2454-package-lock-integrity.test.js
           npm run check:p244x
+          npm run check:flow-titleformatted
           npm run check:p246x
           npm run check:p248x
           npm run check:p249x

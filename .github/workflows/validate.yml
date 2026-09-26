@@ -121,6 +121,9 @@ jobs:
       - name: 🛡️ P2448/P2449 knob + declared flow wiring
         run: npm run check:p244x
 
+      - name: 🛡️ Flow titleFormatted [[args]] gate (P2749f)
+        run: npm run check:flow-titleformatted
+
       - name: 🛡️ P246x anti-regression family (Moes EF00 / IAS / battery)
         run: npm run check:p246x
 

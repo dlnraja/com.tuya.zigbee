@@ -134,6 +134,7 @@ jobs:
           node tools/ci/anti-bot-regression-gate.js
           node tools/ci/p2138-sacred-couple-matrix-gate.js
           npm run check:p244x
+          npm run check:flow-titleformatted
           npm run check:p246x
           npm run check:p248x
           npm run check:p249x

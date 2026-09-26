@@ -1,6 +1,6 @@
 {
   "name": "com.dlnraja.tuya.zigbee",
-  "version": "9.0.1269",
+  "version": "9.0.1270",
   "description": "Tuya Unified Zigbee - Local-first control with AI automation",
   "main": "app.js",
   "scripts": {
@@ -225,6 +225,8 @@
     "knowledge:peculiarities": "node tools/ci/investigate-device-peculiarities.js",
     "check:forum-ai-paste": "node tools/ci/forum-ai-paste-gate.js --scan-defaults",
     "check:flow-dups": "node tools/ci/flow-card-dup-gate.js",
+    "check:flow-titleformatted": "node tools/ci/flow-titleformatted-args-gate.js",
+    "check:flows-publish": "npm run check:flow-dups && npm run check:flow-titleformatted",
     "flow:audit": "node tools/ci/flow-l99-orchestrator.js",
     "flow:l99": "node tools/ci/flow-l99-orchestrator.js && node tools/ci/project-resilience-orchestrator.js --write-report --critical-only",
     "github:intel-respond": "node tools/ci/intelligent-github-respond.js --dry-run --scan-open",
@@ -610,13 +612,14 @@
     "check:p2740": "node --test test/critical/p2740-gh550-lux-distance-antiflood.test.js",
     "check:p2741": "node --test test/critical/p2741-bastien-6bdc3c5e-skip-mcu-sync-remote.test.js",
     "check:p2743": "node --test test/critical/p2743-gh550-551-inbox-treat.test.js",
-    "check:p274x": "npm run check:p2740 && npm run check:p2741 && npm run check:p2743 && npm run check:p2744 && npm run check:p2745 && npm run check:p2746 && npm run check:p2747 && npm run check:p2748 && npm run check:p2749",
+    "check:p274x": "npm run check:p2740 && npm run check:p2741 && npm run check:p2743 && npm run check:p2744 && npm run check:p2745 && npm run check:p2746 && npm run check:p2747 && npm run check:p2748 && npm run check:p2749 && npm run check:p2749f",
     "check:p2744": "node --test test/critical/p2744-hiepsvg-550-complete-resolve.test.js",
     "check:p2745": "node --test test/critical/p2745-bastien-2btn-tagged-flows.test.js",
     "check:p2746": "node --test test/critical/p2746-fleet-button-flow-enrich.test.js",
     "check:p2747": "node --test test/critical/p2747-tagged-flow-emit.test.js",
     "check:p2748": "node --test test/critical/p2748-complementary-tagged-flow-emit.test.js",
-    "check:p2749": "node --test test/critical/p2749-hiepsvg-550-hang-leave.test.js"
+    "check:p2749": "node --test test/critical/p2749-hiepsvg-550-hang-leave.test.js",
+    "check:p2749f": "node --test test/critical/p2749f-flow-titleformatted-args-gate.test.js"
   },
   "keywords": [
     "homey",

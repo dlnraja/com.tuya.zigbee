@@ -94,6 +94,9 @@ jobs:
           if [ -f tools/ci/flow-card-dup-gate.js ]; then
             node tools/ci/flow-card-dup-gate.js || exit 1
           fi
+          if [ -f tools/ci/flow-titleformatted-args-gate.js ]; then
+            node tools/ci/flow-titleformatted-args-gate.js || exit 1
+          fi
           set +e
           OUTPUT=$(npx homey app validate --level publish 2>&1)
           EXIT=$?
