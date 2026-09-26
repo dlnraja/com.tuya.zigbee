@@ -72,10 +72,10 @@
         }
       ],
       "titleFormatted": {
-        "en": "Button pressed [[button]]",
-        "fr": "Bouton appuyé [[button]]",
-        "nl": "Button pressed [[button]]",
-        "de": "Button pressed [[button]]"
+        "en": "Button pressed [[button]] ({button_id})",
+        "fr": "Bouton appuyé [[button]] ({button_id})",
+        "nl": "Button pressed [[button]] ({button_id})",
+        "de": "Button pressed [[button]] ({button_id})"
       },
       "highlight": true
     },
@@ -160,10 +160,10 @@
         }
       ],
       "titleFormatted": {
-        "en": "Button multi-pressed [[button]] ({count})",
-        "fr": "Bouton multi-cliqué [[button]] ({count})",
-        "nl": "Button multi-pressed [[button]] ({count})",
-        "de": "Button multi-pressed [[button]] ({count})"
+        "en": "Button multi-pressed [[button]] ({count}) ({button_id})",
+        "fr": "Bouton multi-cliqué [[button]] ({count}) ({button_id})",
+        "nl": "Button multi-pressed [[button]] ({count}) ({button_id})",
+        "de": "Button multi-pressed [[button]] ({count}) ({button_id})"
       }
     },
     {
@@ -238,10 +238,10 @@
         }
       ],
       "titleFormatted": {
-        "en": "Button long-pressed [[button]]",
-        "fr": "Bouton pressé longtemps [[button]]",
-        "nl": "Button long-pressed [[button]]",
-        "de": "Button long-pressed [[button]]"
+        "en": "Button long-pressed [[button]] ({button_id})",
+        "fr": "Bouton pressé longtemps [[button]] ({button_id})",
+        "nl": "Button long-pressed [[button]] ({button_id})",
+        "de": "Button long-pressed [[button]] ({button_id})"
       }
     },
     {
@@ -316,10 +316,10 @@
         }
       ],
       "titleFormatted": {
-        "en": "Button double-pressed [[button]]",
-        "fr": "Bouton double-cliqué [[button]]",
-        "nl": "Button double-pressed [[button]]",
-        "de": "Button double-pressed [[button]]"
+        "en": "Button double-pressed [[button]] ({button_id})",
+        "fr": "Bouton double-cliqué [[button]] ({button_id})",
+        "nl": "Button double-pressed [[button]] ({button_id})",
+        "de": "Button double-pressed [[button]] ({button_id})"
       }
     },
     {
@@ -589,10 +589,10 @@
       ],
       "args": [],
       "titleFormatted": {
-        "en": "The battery level changed",
-        "fr": "Le niveau de la batterie a changé",
-        "nl": "Batterijniveau is veranderd",
-        "de": "Batteriestand hat sich geändert"
+        "en": "The battery level changed ({battery})",
+        "fr": "Le niveau de la batterie a changé ({battery})",
+        "nl": "Batterijniveau is veranderd ({battery})",
+        "de": "Batteriestand hat sich geändert ({battery})"
       }
     }
   ],

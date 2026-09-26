@@ -1,42 +1,13 @@
 {
-  "generatedAt": "2026-09-25T18:09:09.249Z",
+  "generatedAt": "2026-09-26T06:38:05.879Z",
   "verdict": "curtain-z2m-missing-2026-09-01",
   "verified36_present": true,
-  "added": [
-    {
-      "mfr": "_TZE200_jfw0a4aa",
-      "pid": "TS0601",
-      "source": "live-z2m-crawl",
-      "model": "EPJ-ZB",
-      "desc": "Smart sliding window pusher"
-    },
-    {
-      "mfr": "_TZE200_npj9bug3",
-      "pid": "TS0601",
-      "source": "live-z2m-crawl",
-      "model": "M515EGBZTN",
-      "desc": "Zigbee roller blind"
-    },
-    {
-      "mfr": "_TZE200_shkxsgis",
-      "pid": "TS0601",
-      "source": "live-z2m-crawl",
-      "model": "ZM25TQ",
-      "desc": "Tubular motor"
-    },
-    {
-      "mfr": "_TZE204_shkxsgis",
-      "pid": "TS0601",
-      "source": "live-z2m-crawl",
-      "model": "ZM25TQ",
-      "desc": "Tubular motor"
-    }
-  ],
+  "added": [],
   "stripped_from_curtain_motor": 2,
   "module2_gang_added": [
     "_TZ3000_j1xl73iw",
     "_TZ3000_l6iqph4f"
   ],
-  "curtainMfrCount": 1118,
+  "curtainMfrCount": 1114,
   "climateStripped": 0
 }

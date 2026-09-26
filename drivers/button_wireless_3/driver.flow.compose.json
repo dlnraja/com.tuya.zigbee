@@ -74,10 +74,15 @@
         }
       ],
       "titleFormatted": {
-        "en": "Button pressed [[button]]",
-        "fr": "Bouton appuyé [[button]]",
-        "nl": "Button pressed [[button]]",
-        "de": "Button pressed [[button]]"
+        "en": "Button pressed [[button]] ({button_id})",
+        "fr": "Bouton appuyé [[button]] ({button_id})",
+        "nl": "Button pressed [[button]] ({button_id})",
+        "de": "Button pressed [[button]] ({button_id})",
+        "it": "Pulsante premuto ({button_id})",
+        "sv": "Knapp tryckt ({button_id})",
+        "no": "Knapp trykket ({button_id})",
+        "es": "Botón presionado ({button_id})",
+        "da": "Knap trykket ({button_id})"
       }
     },
     {
@@ -153,10 +158,15 @@
         }
       ],
       "titleFormatted": {
-        "en": "Button double-pressed [[button]]",
-        "fr": "Bouton double-cliqué [[button]]",
-        "nl": "Button double-pressed [[button]]",
-        "de": "Button double-pressed [[button]]"
+        "en": "Button double-pressed [[button]] ({button_id})",
+        "fr": "Bouton double-cliqué [[button]] ({button_id})",
+        "nl": "Button double-pressed [[button]] ({button_id})",
+        "de": "Button double-pressed [[button]] ({button_id})",
+        "it": "Pulsante premuto due volte ({button_id})",
+        "sv": "Knapp dubbeltryckt ({button_id})",
+        "no": "Knapp dobbeltrykket ({button_id})",
+        "es": "Botón presionado dos veces ({button_id})",
+        "da": "Knap dobbeltklikket ({button_id})"
       }
     },
     {
@@ -232,10 +242,15 @@
         }
       ],
       "titleFormatted": {
-        "en": "Button long-pressed [[button]]",
-        "fr": "Bouton pressé longtemps [[button]]",
-        "nl": "Button long-pressed [[button]]",
-        "de": "Button long-pressed [[button]]"
+        "en": "Button long-pressed [[button]] ({button_id})",
+        "fr": "Bouton pressé longtemps [[button]] ({button_id})",
+        "nl": "Button long-pressed [[button]] ({button_id})",
+        "de": "Button long-pressed [[button]] ({button_id})",
+        "it": "Pulsante premuto a lungo ({button_id})",
+        "sv": "Knapp långtryckt ({button_id})",
+        "no": "Knapp langttrykket ({button_id})",
+        "es": "Botón presionado largo ({button_id})",
+        "da": "Knap langt trykket ({button_id})"
       }
     },
     {
@@ -327,15 +342,15 @@
         }
       ],
       "titleFormatted": {
-        "en": "Button multi-pressed [[button]] ({count})",
-        "fr": "Bouton multi-cliqué [[button]] ({count})",
-        "nl": "Knop meerdere keren ingedrukt [[button]] ({count})",
-        "de": "Taste mehrfach gedrückt [[button]] ({count})",
-        "it": "Pulsante premuto più volte [[button]] ({count})",
-        "sv": "Knapp flertryck [[button]] ({count})",
-        "no": "Knapp flertrykk [[button]] ({count})",
-        "es": "Botón presionado múltiple [[button]] ({count})",
-        "da": "Knap flertrykket [[button]] ({count})"
+        "en": "Button multi-pressed [[button]] ({count}) ({button_id})",
+        "fr": "Bouton multi-cliqué [[button]] ({count}) ({button_id})",
+        "nl": "Knop meerdere keren ingedrukt [[button]] ({count}) ({button_id})",
+        "de": "Taste mehrfach gedrückt [[button]] ({count}) ({button_id})",
+        "it": "Pulsante premuto più volte [[button]] ({count}) ({button_id})",
+        "sv": "Knapp flertryck [[button]] ({count}) ({button_id})",
+        "no": "Knapp flertrykk [[button]] ({count}) ({button_id})",
+        "es": "Botón presionado múltiple [[button]] ({count}) ({button_id})",
+        "da": "Knap flertrykket [[button]] ({count}) ({button_id})"
       }
     },
     {
@@ -687,10 +702,10 @@
       ],
       "args": [],
       "titleFormatted": {
-        "en": "The battery level changed",
-        "fr": "Le niveau de la batterie a changé",
-        "nl": "Batterijniveau is veranderd",
-        "de": "Batteriestand hat sich geändert"
+        "en": "The battery level changed ({battery})",
+        "fr": "Le niveau de la batterie a changé ({battery})",
+        "nl": "Batterijniveau is veranderd ({battery})",
+        "de": "Batteriestand hat sich geändert ({battery})"
       }
     },
     {
