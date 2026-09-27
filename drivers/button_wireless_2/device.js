@@ -33,7 +33,7 @@ class Button2GangDevice extends ButtonDevice {
       productId: 'TS0042',
       buttonCount: 2,
       // WHY(P2714 / Bastien e1654535): match TS0041 axpdxqgu floor (was 200/140 — lag vs 1-btn)
-      debounceMs: 25,
+      debounceMs: 25, // debounceMs: 80 (P2693)
       crossPathDedupMs: 40,
       appCommandWindow: 180,
       doubleClickWindow: 120,

@@ -61,6 +61,36 @@ function findHealthyTest(builds) {
 }
 
 /**
+ * P2732 tipLagDecision:
+ * Flags expected PF when an older tip is healthy (test) while the target version
+ * failed with transient PF.
+ *
+ * @param {Array<object>} builds
+ * @param {string} targetVersion
+ * @returns {{tipLag:boolean, reason?:string, tip?:object, failed?:object[]}}
+ */
+function tipLagDecision(builds, targetVersion) {
+  const list = builds || [];
+  const tip = findHealthyTest(list);
+  if (!tip) return { tipLag: false };
+  if (targetVersion != null && String(tip.version) === String(targetVersion)) {
+    return { tipLag: false, tip };
+  }
+  const failed = list.filter((b) =>
+    String(b.state) === 'processing_failed'
+    && (targetVersion == null || String(b.version) === String(targetVersion)));
+  if (failed.length >= 1) {
+    return {
+      tipLag: true,
+      reason: 'expected-version-pf-tip-behind',
+      tip,
+      failed,
+    };
+  }
+  return { tipLag: false, tip };
+}
+
+/**
  * @param {Array<{id?:string|number,version?:string,state?:string,channel?:string}>} builds
  * @param {string} version
  * @param {{force?:boolean, excludeBuildId?:string|number|null}} [opts]
@@ -68,6 +98,10 @@ function findHealthyTest(builds) {
  */
 function softExpectDecision(builds, version, opts = {}) {
   if (opts.force) return { skip: false };
+  const lag = tipLagDecision(builds, version);
+  if (lag.tipLag) {
+    return { skip: true, reason: 'tip-lag-expected-pf', tip: lag.tip, failed: lag.failed };
+  }
   const exclude = opts.excludeBuildId != null ? String(opts.excludeBuildId) : null;
   const same = (builds || []).filter((b) => {
     if (String(b.version) !== String(version)) return false;
@@ -122,6 +156,7 @@ function softAlertDecision(builds, opts = {}) {
 
 module.exports = {
   softExpectDecision,
+  tipLagDecision,
   softAlertDecision,
   isTransientAthomFailure,
   buildFailureDetail,
