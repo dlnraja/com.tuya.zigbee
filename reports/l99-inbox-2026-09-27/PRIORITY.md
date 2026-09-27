@@ -4,7 +4,7 @@ Silent only. **Never** Homey forum POST / PM / AI paste (T157628).
 Lock **manufacturerName + productId** only. Never invent pid. Dual-app: BOTH | MASTER_ONLY | STABLE_ONLY.
 **P2529:** also audit DP / clusters / flow wire / RX-TX (not couple-lock only).
 
-Generated: **2026-09-27T09:35:06.180Z** · Mode: `full`
+Generated: **2026-09-27T15:51:32.689Z** · Mode: `full`
 
 ## Snapshot
 
@@ -12,7 +12,7 @@ Generated: **2026-09-27T09:35:06.180Z** · Mode: `full`
 |---------|--------------|
 | GitHub open issues | 2 |
 | GitHub open PRs | 0 |
-| Forum needAction | 52 |
+| Forum needAction | 49 |
 | Gmail crash state | present |
 | mfs high drift | 0 |
 | Deep functional | ran (P2529) |
@@ -21,18 +21,18 @@ Generated: **2026-09-27T09:35:06.180Z** · Mode: `full`
 
 | Score | Dual | Source | ID | Action |
 |------:|------|--------|----|--------|
-| 90 | BOTH | github-issue | #551 | investigate-code-silent |
 | 90 | BOTH | github-issue | #550 | investigate-code-silent |
+| 90 | BOTH | github-issue | #551 | investigate-code-silent |
 | 75 | BOTH | forum | forum-need-action | enrich:investigate + deep-functional (DP/cluster/flow/RX-TX, not mfr+pid only) |
 
 ## Phase results
 
 - **guard**: ok (0ms)
-- **github**: ok (378ms)
-- **gmail**: ok (198ms)
-- **forum**: ok (26565ms)
-- **drivers**: ok (1500ms)
-- **functionalDeep**: ok (46ms)
+- **github**: ok (289ms)
+- **gmail**: ok (217ms)
+- **forum**: ok (25829ms)
+- **drivers**: ok (1983ms)
+- **functionalDeep**: ok (62ms)
 
 ## Doctrine
 
