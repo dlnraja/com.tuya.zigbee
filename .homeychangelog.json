@@ -4065,6 +4065,9 @@
   },
   "1.0.115": {
     "en": "Battery consumption optimization & EMA anti-sag stability filter (TS0042/TS0043) + radar presence clear on leave."
+  },
+  "1.0.116": {
+    "en": "P2756: Eliminate button battery drain: disable unsolicited periodic scene recovery writes on sleeping devices, guard awake readAttributes & Tuya DP storms, suppress polling & configureReporting on sleepy remotes, preserving CR2032 life."
   }
 }
 
