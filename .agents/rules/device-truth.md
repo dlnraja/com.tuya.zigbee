@@ -1,0 +1,67 @@
+---
+description: Per-device truth lookup every prompt — manufacturerName+productId, no invented pids, publish app ≠ post forum
+alwaysApply: true
+---
+
+# Device truth (every prompt / every interaction)
+
+## Publish vs forum (do not confuse)
+- **Publish** = Homey App Store (master `9.0.x` Test). Do this when the user asks to push/publish.
+- **Do not post** = never write Homey Community or PM replies (T157628). Scan → code/CI only.
+- Never Publish Stable→Test while 9.x occupies the shared App ID Test slot.
+
+## Lookup order (mandatory on device work)
+1. Lock **manufacturerName + productId** only; read [docs/knowledge/DEVICE_TRUTH.md](docs/knowledge/DEVICE_TRUTH.md) and look up [docs/knowledge/device-truth.json](docs/knowledge/device-truth.json). Never invent pid.
+2. Machine SSOT: [config/architecture/sacred-couple-ssot.json](config/architecture/sacred-couple-ssot.json) · human: [docs/architecture/SACRED_COUPLE_SSOT.md](docs/architecture/SACRED_COUPLE_SSOT.md) · gate `npm run check:p2494`.
+3. Open [docs/knowledge/device-truth.json](docs/knowledge/device-truth.json) → `drivers.<driverId>` (431 drivers, 1 by 1).
+4. Read [docs/knowledge/PECULIARITIES.md](docs/knowledge/PECULIARITIES.md) for DP/cluster/source notes per couple.
+5. Confirm in `drivers/<id>/driver.compose.json` and `data/user-misattribution-registry.json`.
+6. Cross-check: `AI_CONTEXT_MANDATE.md`, `docs/ARCHITECTURE_AI.md`, `docs/GLOBAL_INVESTIGATION_PLAN.md`, `docs/rules/WHY_INTERROGATION.md`, `docs/rules/DUAL_APP_VISION.md`, `docs/rules/FORUM_SILENT_HUMANIZE.md`, `.cursorrules`.
+
+## One mfr / mfs → many variants & productIds (NORMAL)
+
+**Un même `manufacturerName` (entrée `mfs_db` / fingerprint) peut couvrir plusieurs appareils réels** — ce n’est pas un bug ni une collision à “nettoyer” par défaut.
+
+| Autorisé | Interdit |
+|----------|----------|
+| Même mfr + **pid différent** → drivers différents (ex. `_TZ3000_abc`+`TS0001` vs `TS0002`) | Retirer un mfr d’un driver parce qu’il apparaît ailleurs avec **un autre** pid |
+| Même mfr + **variants OEM** (HOBEIAN, Wing, labels retail `ZG-303Z`, suffixes `_curtain_tilt`) | Inventer un pid pour “couvrir” climate / effacer une collision |
+| `mfs_db` avec **plusieurs `modelIds`** pour un mfr si **chaque** pid est un couple vérifié | Router sur mfr seul quand le pid est connu mais absent de la liste |
+| Même OEM Tuya (`_TZE200` / `_TZE204` / `_TZE284`) = familles séparées jusqu’à preuve | Supposer qu’un mfr = un seul type d’appareil |
+
+**Règle d’or :** identité = **(manufacturerName, productId)**. Homey compose `productId` = Zigbee tools **Model ID** = interview `modelId` = internal `pid`. **productName** = alias catalogue only. Settings: `zb_manufacturer_name` + `zb_model_id`. See `docs/architecture/IDENTITY_FIELDS_SSOT.md` · `npm run check:p2496`.
+
+### HOBEIAN (brand ≠ one device) — P2250
+| Couple | Driver | Protocol |
+|--------|--------|----------|
+| `HOBEIAN` + `ZG-227Z`/`ZG-227ZL` | `climate_sensor` | ZCL temp/humidity |
+| `HOBEIAN` + `ZG-303Z` | `soil_sensor` | EF00 soil |
+| `HOBEIAN` + `ZG-204*`/`ZG-205*` | `presence_sensor_radar` | presence/radar |
+| `HOBEIAN` + `ZG-102Z`/`ZG-102ZL` | `contact_sensor` | IAS/contact |
+| `HOBEIAN` + `ZG-222*`/`ZG-223Z` | `water_leak_sensor` | IAS leak |
+| `HOBEIAN` + `ZG-305Z` | `switch_2gang` | ZCL USB 2-gang |
+| `HOBEIAN` + `ZG-106Z` | `illuminance_sensor` | illuminance |
+| `HOBEIAN` + `ZG-101ZL` | `button_wireless_1` | button |
+
+Never ban brand `HOBEIAN` from climate because soil exists — use **couple-aware** registry (`forbidMode: "couple"`). Match all CASE forms via `pairingCaseVariants` / `CaseInsensitiveMatcher` (HOBEIAN / hobeian / Hobeian).
+
+### Homey native gaps → parallel wrappers
+Homey SDK/interview does **not** cover every ZCL/EF00 path. Runtime must keep parallel RX/TX: `HomeyCompensationLayer`, `IntelligentProtocolDetect` (HYBRID), `CapabilityCommandRouter` / `ProtocolFallbackChain`, raw frame + magic handshake, `ZclClusterLexicon`. Never assume “native cluster only”.
+
+## High-risk peculiarities (never invert)
+- `_TZE284_m1cvyneb` + `TS0601` → `wall_dimmer_tuya` only. Brightness MCU **0–1000**. Forbid climate/soil/universal.
+- `_TZ3000_w5xztuy7` + `TS0002` → `switch_2gang` **zcl_only**.
+- `_TZ3218_7fiyo3kv` / `_TZ3218_ya5d6wth` + `TS000F` → `switch_temp_sensor` (re-pair if 1-gang).
+- TZ3000 3-gang `TS0003`/`TS0013` → `wall_switch_3gang_1way` (not `switch_3gang`). 4-gang `_TZ3000_lwthnp7j`+`TS0004` → `wall_switch_4gang_1way`.
+- `_TZ3000_k4ej3ww2` + `TS0207` → `water_leak_sensor` IAS (sleepy, wet/dry only). `_TZ3000_5k5vh43t` + `TS0207` → `zigbee_repeater`. Never rain from pid.
+- `_TZE284_nt4pquef` + `TS0601` → `soil_sensor`. DP2 = light enum, not moisture. Do not compose `0xED00`. SGS02Z is retail, not a pid.
+- `_TZ3000_okaz9tjs` / `_TZ3210_fgwhjm9j` + `TS011F` → `plug_energy_monitor` (fw 1.0.5+ electrical poll). Pid also used by DIN/strip/double-outlet.
+- `_TZE200_icka1clh` / `_TZE204_icka1clh` + `TS0601` → `curtain_motor` (MIAMO AM43). **P2490:** pin sacred-keep — Athom compact can drop TZE200 while keeping `fodv6bkr`.
+- `_TZ3000_mrpevh8p` + `TS0041` → `button_wireless_1` (Peter). **P2488/P2490:** keep + rehydrate `measure_battery` (adapter hourly strip / boot).
+- `_TZE204_clrdrnya` + `TS0601` → `presence_sensor_radar` (VicHY mains). No phantom battery; **P2490** strip curtain `windowcoverings_*` / `dim` phantoms.
+- SOS / water leak / contact = sleepy IAS. Enroll on wake. No boot poll storm. No leftover EF00 TX.
+- Backlight settings are strings `off`/`normal`/`inverted`. Battery: no linear `(V-2.5)/0.5`.
+- BSEED zcl_only mfrs: `_TZ3000_l9brjwau`, `_TZ3000_blhvsaqf`, `_TZ3000_ysdv91bk`, `_TZ3000_hafsqare`, `_TZ3000_e98krvvk`, `_TZ3000_iedbgyxt`, `_TZ3000_cauq1okq`, `_TZ3000_w5xztuy7`.
+- **P2448 knobs:** `_TZ3000_uri7ongn`/`ixla93vd`/`g9g2xnch`/`402vrq2i`+`TS004F` → `smart_knob` **command/dimmer** (levelControl). `smart_knob_rotary` / `smart_knob_switch` same. Never scene-force. **P2439:** `kaflzta4`/`ja5osu5g`/`an5rjiwd` stay **scene**. Never put `abrsvsou`/`4fjiwweb` in `KNOB_MFR` (`button_wireless_4`). SSOT: `config/architecture/rotary-knob-ssot.json` · `docs/architecture/KNOB_FLOW_WIRING_SSOT.md` · `npm run check:p244x`.
+
+Regenerate catalog: `node tools/ci/build-device-truth.js` then `node tools/ci/investigate-device-peculiarities.js`.
