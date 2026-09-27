@@ -907,6 +907,9 @@
       ]
     }
   ],
+  "9.0.1273": {
+    "en": "v9.0.1273: automated publish, manifest sync, and Homey test promotion."
+  },
   "9.0.1272": {
     "en": "v9.0.1272: automated publish, manifest sync, and Homey test promotion."
   },
@@ -970,11 +973,7 @@
     "en": "TS0041-43 exact profile snappy parity (no slow mfr trap). Update Test.",
     "fr": "Parite snappy TS0041-43 sur profil exact (plus de piege lent). Maj Test."
   },
-  "9.0.1251": {
-    "en": "famkxci2 TS0043 snappy parity (GH#551 class). Update Test.",
-    "fr": "Parite snappy famkxci2 TS0043 (classe GH#551). Maj Test."
-  },
-  "9.0.1273": {
-    "en": "v9.0.1273: automated publish, manifest sync, and Homey test promotion."
+  "9.0.1274": {
+    "en": "v9.0.1274: automated publish, manifest sync, and Homey test promotion."
   }
 }

@@ -33,7 +33,7 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 
 | Metric | Value |
 |--------|-------|
-| **App Version** | v9.0.1273 |
+| **App Version** | v9.0.1274 |
 | **Drivers** | 434 (381 Zigbee + 53 WiFi) |
 | **Unique Fingerprints** | 4,697 |
 | **Pairing Variants** | 18,774 (4 case combos per fingerprint) |
@@ -41,7 +41,7 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 | **Flow Cards** | 6,032 |
 | **Unique Capabilities** | 170 |
 | **Native OTA Drivers** | 8 |
-| **Test Suites** | 527 files |
+| **Test Suites** | 528 files |
 | **SVG Icons** | 734 |
 | **Languages** | EN, FR, NL, DE |
 | **SDK / Homey** | 3 / >= 12.2.0 |
@@ -103,7 +103,8 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 
 | Version | Changes |
 |---------|---------|
-| **v9.0.1273** | v9.0.1272: |
+| **v9.0.1274** | v9.0.1273: |
+| **v9.0.1273** | v9.0.1273: automated publish, manifest sync, and Homey test promotion. |
 | **v9.0.1272** | v9.0.1272: automated publish, manifest sync, and Homey test promotion. |
 | **v9.0.1271** | v9.0.1271: P2749f Flow titleFormatted gate + Homey Test sync. |
 | **v9.0.1270** | CI: Flow titleFormatted [[args]] gate before Athom validate + hang-leave radar. Update Test. |
@@ -114,7 +115,6 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 | **v9.0.1265** | Radar presence: clear hung YES when lux+distance freeze after leave; re-pair Wireless Button 3 (TS0043) if still Generic. |
 | **v9.0.1262** | Publish fix: FlowCardHelper Buffer JSON + no duplicate button tokens. Update Test to 9.0.1262. |
 | **v9.0.1261** | Tagged Flow cards (label/token) fire from all RX paths; remotes battery-changed. Update Test to 9.0.1261 then restart. |
-| **v9.0.1260** | HiepSVG radar: fix lux (real light steps vs noise), distance (no farther-ghost / dm scale), hang re-arm. Update Test ≥9.0.1260; Repair ra… |
 
 <!-- CHANGELOG_END -->
 
