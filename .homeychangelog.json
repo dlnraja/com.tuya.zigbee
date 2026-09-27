@@ -972,5 +972,8 @@
   },
   "9.0.1278": {
     "en": "v9.0.1278: automated publish, manifest sync, and Homey test promotion."
+  },
+  "9.0.1279": {
+    "en": "P2756: Eliminate button battery drain: disable unsolicited periodic scene recovery writes on sleeping devices, guard awake readAttributes & Tuya DP storms, suppress polling & configureReporting on sleepy remotes, preserving CR2032 life."
   }
 }
