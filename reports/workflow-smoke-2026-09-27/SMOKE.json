@@ -1,0 +1,57 @@
+{
+  "workflows": [
+    {
+      "file": ".github/workflows/project-resilience.yml",
+      "ok": false,
+      "error": "Cannot find module 'js-yaml'\nRequire stack:\n- C:\\Users\\Dell\\Documents\\homey\\master\\tools\\ci\\workflow-smoke-p2226.js"
+    },
+    {
+      "file": ".github/workflows/forum-poll.yml",
+      "ok": false,
+      "error": "Cannot find module 'js-yaml'\nRequire stack:\n- C:\\Users\\Dell\\Documents\\homey\\master\\tools\\ci\\workflow-smoke-p2226.js"
+    },
+    {
+      "file": ".github/workflows/auto-enrich-closed-loop.yml",
+      "ok": false,
+      "error": "Cannot find module 'js-yaml'\nRequire stack:\n- C:\\Users\\Dell\\Documents\\homey\\master\\tools\\ci\\workflow-smoke-p2226.js"
+    },
+    {
+      "file": ".github/workflows/fetch-diags.yml",
+      "ok": false,
+      "error": "Cannot find module 'js-yaml'\nRequire stack:\n- C:\\Users\\Dell\\Documents\\homey\\master\\tools\\ci\\workflow-smoke-p2226.js"
+    },
+    {
+      "file": ".github/workflows/gmail-diagnostics.yml",
+      "ok": false,
+      "error": "Cannot find module 'js-yaml'\nRequire stack:\n- C:\\Users\\Dell\\Documents\\homey\\master\\tools\\ci\\workflow-smoke-p2226.js"
+    },
+    {
+      "file": ".github/workflows/gmail-token-keepalive.yml",
+      "ok": false,
+      "error": "Cannot find module 'js-yaml'\nRequire stack:\n- C:\\Users\\Dell\\Documents\\homey\\master\\tools\\ci\\workflow-smoke-p2226.js"
+    }
+  ],
+  "scripts": [
+    {
+      "script": "tools/ci/inventory-features-bugs.js",
+      "ok": true,
+      "status": 0
+    },
+    {
+      "script": "tools/ci/project-resilience-orchestrator.js",
+      "ok": true,
+      "status": 0
+    },
+    {
+      "script": ".github/scripts/gmail-auth-cascade.js",
+      "ok": true,
+      "status": 0
+    },
+    {
+      "script": "tools/ci/ai-plan-guard.js",
+      "ok": true,
+      "status": 0
+    }
+  ],
+  "ok": false
+}
