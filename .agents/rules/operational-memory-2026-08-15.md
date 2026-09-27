@@ -1,0 +1,171 @@
+---
+description: Live operational memory — dual App IDs, forum #2190, P139 Stable, P2207/P2210
+alwaysApply: true
+---
+
+# Operational memory — dual apps (audit 2026-09-23)
+
+## Dual Athom apps (independent Test slots)
+| Track | Branch | App ID | Tip (git) | Homey Test |
+|-------|--------|--------|-----------|------------|
+| Universal Tuya | `master` | `com.dlnraja.tuya.zigbee` | **9.0.1195** (P2687+P2689) | Auto-Publish on push |
+| Zigbee Bastien | `bastien-home` | `com.dlnraja.tuya.zigbee.bastien` | **1.0.66** | House soak |
+| Tuya Unified (Stable) | `stable-v5` | `com.dlnraja.tuya.zigbee.stable` | **5.12.308** (P2689 BOTH) | P139 — **no republish loop** |
+
+SSOT: `config/architecture/dual-app-tracks.json` · tips map: `docs/architecture/THREE_APP_RECENT_TIPS.md` · publish: `config/architecture/publish-ssot.json` · forum failover: `config/architecture/forum-complementary-failover-ssot.json` · `docs/architecture/PUBLISH_SSOT.md` · gates: `npm run check:l99-dual` / `check:p2689` / `check:p2687` (master) / `check:p248x`.
+
+L99 classify: **P2689** battery adaptive + P2683–P2686 TS004x/pile/TRV = **BOTH**; **P2687** interaction Flow cards = **MASTER_ONLY** (Bastien sync OK). Daylight / **P2487 IR** / CI intel = **MASTER_ONLY**. **P2448/P2449** knob + declared flow = **BOTH**.
+
+Clone Stable: `Documents\homey\stable`. Bastien: `Documents\homey\bastien`. `stable-v5-p195` is **STALE**.
+
+## P2687–P2689 — Flow history + adaptive battery (2026-09-23)
+- **P2689 BOTH:** `SmartBatteryAdaptivePrecision` — SOC/chemistry minChange + throttle + no coin poll; piggyback only when stale. SSOT `config/architecture/battery-adaptive-precision-ssot.json` · human `docs/architecture/BATTERY_SSOT.md` · gate `npm run check:p2689`. Tips U≥**9.0.1195** / B≥**1.0.66** / S≥**5.12.308**.
+- **P2687 MASTER_ONLY:** list caps/actions + interaction rings + `device_interaction` / `device_interacted_recently`; historical no longer `capabilities=onoff`. SSOT `interaction-flow-cards-ssot.json` · `INTERACTION_FLOW_CARDS_SSOT.md` · gate `npm run check:p2687`. No Stable.
+- **P2685 BOTH:** skipBatteryReporting remotes — never announce powerCfg / magic storm (pile). Gate `check:p2685`.
+- **P2686 BOTH:** TS0042 hold-release ghost + TRV `p3dbf6qs` sacred-keep. Gate `check:p2686`.
+
+## P2487–P2490 — Forum + Gmail complementary (2026-09-14)
+- **P2490 BOTH:** MIAMO `icka1clh` sacred-keep (Athom compact drop); Peter `a5304ce8` battery **rehydrate**; VicHY radar `staleCaps` curtains; tip PF **#3184/#3187** — soft-continue. Gate `npm run check:p2490` / `check:p248x`.
+- **P2488 BOTH:** `IntelligentDeviceAdapter` must not strip `measure_battery` on `button_*`. Tip ≥**9.0.923** (prefer ≥**9.0.1195**).
+- **P2487 MASTER_ONLY:** Intelligent IR router + Homey Pronto TX UX. Doc `docs/architecture/INTELLIGENT_IR_SSOT.md`.
+- **P2484/P2481 BOTH:** EF00 OOM idempotent + `motionsensor` preempt — crash mails 9.0.891/895 = tip-lag.
+- Reports: `reports/forum-l99-2026-09-14-t140352/` · `reports/gmail-diag-2026-09-14/TREAT_LIVE.md`
+- Harvest: `tools/ci/forum-t140352-recent-harvest.js` (post_number pages, not offset pages)
+
+## P2448 / P2449 — Rotary knobs + declared flows (2026-09-10)
+- **P2448:** ERS-10 / ZG-101ZD need `0x8004=command` + levelControl; never scene-force on `smart_knob_rotary`. SSOT `config/architecture/rotary-knob-ssot.json`.
+- **P2449:** Fleet declare⇒wire — `DeclaredFlowCardAutoWire`, ButtonDevice driver-scoped `*_scene_recall`, dim→`*_brightness_changed`. SDK3: `getDeviceTriggerCard(id)` only.
+- **P2439:** `kaflzta4` / `ja5osu5g` / `an5rjiwd` stay **scene**.
+- Gates: `npm run check:p244x` (hard in unified-ci / syntax-check / pr-gate / validate / code-quality).
+- Docs: `docs/architecture/KNOB_FLOW_WIRING_SSOT.md` · rule: `.cursor/rules/knob-flow-wiring.mdc`
+- Couples: `uri7ongn`/`ixla93vd`/`g9g2xnch`→`smart_knob` dimmer; `abrsvsou`/`4fjiwweb` stay `button_wireless_4`.
+
+## P2313 — User report doctrine (every prompt)
+- **Never** dismiss with “déjà couvert” / “user wrong” without full pass: driver, flows, flow cards, DP/cluster, RX/TX, interview, Gmail diag cross-ref.
+- **Recurring report** = investigate harder, not deny. Push + publish when asked; **stable-v5** backport when BOTH (reliability only).
+- Rule: `.cursor/rules/user-report-deep-investigation-always.mdc`
+
+## P2351 — Foreign driver ID crash (2026-08-31)
+- Gmail: `Invalid Driver ID: ZG9101SAC_HP` on **9.0.730** + **9.0.743** (HomeySerializer → `_getDriverManifest`).
+- Fix: `lib/utils/safe-get-driver-patch.js` + `App.onInit` rebind. BOTH tracks.
+- Also: kill Cartesian registry case that broke `align-mfs-db-intelligent --check` (multi-gang → 1gang).
+
+## P2352 — L99 Inbox Intelligence (regular automation)
+- Workflow: `l99-inbox-intelligence.yml` cron `45 2,6,10,14,18,22` UTC
+- Script: `npm run inbox:l99` · hooks in forum-poll / auto-enrich / recurrent
+- Docs: `docs/architecture/L99_INBOX_INTELLIGENCE.md`
+- SHADOW only — never forum POST; never invent pid
+
+## Forum silent (T157628) — SHADOW read only
+- **Passive GET only** — never POST/reply/PM/like; never paste AI.
+- Scan → processor → enrich:investigate → code/CI only. `FORUM_AUTO_POST=0` + `SHADOW_FORUM=1` forced.
+- **P2218** heuristics for missing pid/DP; **P2220–P2221** bidirectional buttons (physical↔virtual+UI, 0xFD/0xFC parallel RX).
+- **P2492** Homey button UI charter: switches = Channel onoff primary; scene remotes = Button N in device view; shared `HomeyButtonUiCharter` sync. Gate `npm run check:p2492`.
+- **P2493 BOTH:** Hard CI must wire `check:p244x` + `check:p246x` + `check:p248x` + `check:p249x` (unified-ci / validate / syntax-check / pr-gate / code-quality / auto-publish). Soft: project-resilience. Gate `npm run check:p2493`.
+- **P2494 BOTH:** Sacred-couple SSOT granularity — app is `(mfr,pid)` native; mfs multi-pid NORMAL; machine `config/architecture/sacred-couple-ssot.json` · human `docs/architecture/SACRED_COUPLE_SSOT.md` · gate `npm run check:p2494`.
+- **P2495 BOTH:** Publish CI/CD path — `prepare-publish` sacred-keep preflight; `npm run check:publish`; hard on auto-publish / auto-fix-and-publish / unified-ci / validate / syntax / pr-gate / code-quality; soft continuous-flow; stable reliability subset before prepare.
+- **P2496 BOTH:** Identity fields — Homey `productId` === Zigbee `modelId` === internal `pid`; `productName` catalog-only. SSOT `identity-fields-ssot.json` · gate `npm run check:p2496`.
+- Reports local only: `reports/forum-verify-*/NEED_ACTION.md` · L99 fleet **2026-09-14**: `reports/forum-l99-2026-09-14-t140352/FLEET_L99.md` (+ prior `forum-l99-2026-09-12/`).
+- Highest live **#2237** (Peter Smartbutton OCR @ **9.0.916** battery `?` → tip ≥**9.0.926** P2488+P2490). Prior #2210–#2236: VicHY / Joep / meter91 / Eduard / MIAMO / PresentSky.
+- **#2236** PresentSky `m1cvyneb`+TS0601 → `wall_dimmer_tuya` — **RESOLVED** after re-add.
+- **P2470** Peter diag `8afffc76`: battery `?` = THROTTLE after 100% + ZCL batt configure storm; CR2450; passive sleepy DataQuery.
+- **P2488/P2490** Peter Gmail `a5304ce8` @ 9.0.916: ZCL paints 76% but `capability_id_not_available_on_device` — keep + **rehydrate**.
+- **P2468** Joep Insoma clusters `[0,4,5,61184]`; FrankEver NEED_INTERVIEW; VicHY 10min mains re-heal.
+- **#2190** Peter (diag `0cea6870`) — couple **ABSENT** in post. Do not invent k4ej/mrpevh8p onto non-Smartbutton tiles.
+- **#2189/#2213** meter91: `_TZ3000_zgyzgdua`+**TS0044** → `scene_switch_4` 0xFD. Update + re-pair. Never paste networkKey.
+- **#2228** Eduard `fodv6bkr`+TS0601 / **#2229** MIAMO `icka1clh`+TS0601 → `curtain_motor` (**P2490** pin icka1clh sacred-keep — compact was dropping FP).
+- Soft only (no lock): `_TZ3000_xabckq1v`+TS0001 hypothesis — known couple is **TS004F** → `button_wireless_4`.
+- DP audit: `npm run audit:dp-couples` · guide: `docs/guides/DP_INTERPRETATION.md`
+- Default: **no forum / PM replies**. Scan → `forum-actionable-processor.js` → code/CI only.
+
+## Shipped on master Test (users must update + re-pair)
+- IAS zoneStatus Buffer/object coerce
+- Skip leftover EF00 TX on IAS-only (`lib/io/shouldSkipIasOnlyEf00Tx.js` — P2287 gate)
+- **P2286–P2288 (2026-08-26):** publish temp-only + soft-expect + sacred-keep compaction; both tracks CI wired
+- PhysicalButtonMixin / scene_switch_4 **0xFD** (skip 0x8004)
+- P2203 `_ensureIasBound` on already-enrolled
+- Hashed flow resolve, IR `_sendIR` aliases, ZS06→`ir_blaster` TS1201
+- Drop genPowerCfg bind on IAS-only (INVALID_EP)
+- P2207 Tongou DIN meter DP profile (`din_rail_meter/device.js`)
+
+## Sacred couples (lock mfr+pid only)
+| Couple | Driver | Note |
+|--------|--------|------|
+| `_TZE284_6ocnqlhn`+TS0601 | `din_rail_meter` | Tongou TO-Q-SYS-JZT; forbid `smart_rcbo` |
+| `_TZ3000_zgyzgdua`+TS0044 | `scene_switch_4` | meter91; 0xFD; not knob |
+| `_TZ3000_k4ej3ww2`+TS0207 | `water_leak_sensor` IAS 1280 | Z2M; never EF00 tuya water |
+| `_TZE284_m1cvyneb`+TS0601 | `wall_dimmer_tuya` | brightness 0–1000 |
+| `_TZ3000_lwthnp7j`+TS0004 | `wall_switch_4gang_1way` | Gabriel; pid not in #2186 post |
+| `_TZE200/204_pay2byax`+TS0601 | `contact_sensor_zigbee` | P126 no TS0601 on contact_sensor |
+| `_TZ3000_xffhmvhv`+TS004F | `button_wireless_4` | Nobø diag `9cbf9eb6` |
+| `_TZ3000_uri7ongn`+TS004F | `smart_knob` | P2448 ERS-10 rotary; command/dimmer |
+| `_TZ3000_kaflzta4`+TS004F | `smart_knob` | P2439 1-btn scene — not rotary |
+| `_TZ3000_mrpevh8p`+TS0041 | `button_wireless_1` | Peter SH-SC07; P2470 battery UI + no ZCL storm |
+| `_TZE284_fhvpaltk`+TS0601 | `valve_dual_irrigation` | Joep Insoma; clusters no OnOff 6 (P2468) |
+| `_TZE204_clrdrnya`+TS0601 | `presence_sensor_radar` | VicHY MTG075 mains; no phantom battery |
+| `_TZE284_fodv6bkr`+TS0601 | `curtain_motor` | Eduard tubular (≥9.0.830 FP) |
+| `_TZE200_icka1clh`+TS0601 | `curtain_motor` | MIAMO AM43 P2461 EF00 + **P2490 sacred-keep** |
+
+## P2473 / P2472a / P2470 / P2468 / P2469 (2026-09-11→12)
+- **P2473:** Joep/FrankEver/Moes — interview `[0,4,5,61184]` must not compose OnOff `6`; `lib/zigbee/Ef00OnlyInterview.js` max EF00+raw+PFC; `water_valve_smart` + `valve_dual_irrigation` · tip **≥9.0.890** · `npm run check:p2473`
+- **P2472a:** VicHY mains radar — no compose `measure_battery` / `energy.batteries` · tip **≥9.0.889** (prefer ≥**9.0.920**)
+- **P2470:** `test/critical/p2470-peter-8afffc76-smartbutton-battery.test.js` · tip **9.0.888** (prefer ≥**9.0.926**)
+- **P2468:** Joep Insoma clusters + FrankEver DP soft + VicHY re-heal · tip **≥9.0.887**
+- **P2469:** always-on Contre quoi unit tests — `npm run check:p246x`
+- BOTH reliability → backport to `stable-v5` when publish asked (EF00-only Unknown / Insoma / battery / sacred-keep)
+
+## P139 — Athom transient (DO NOT LOOP)
+- Stable 5.12.88 + master tip emails **#3184/#3187** (`9.0.924`/`9.0.928`) — wait; do **not** force_test spam while **#3186 = 9.0.926** healthy.
+- Scripts: `.github/scripts/processing-failure-republish-check.js` · soft-expect / soft-continue P2325.
+
+## P2469 — Unit tests anti-régression (every prompt)
+- Always-on rule: `.cursor/rules/unit-test-anti-regression-always.mdc`
+- Doctrine: `docs/rules/UNIT_TEST_ANTI_REGRESSION.md` · system prompt: `AI_CONTEXT_MANDATE.md`
+- Every fix → extend/add `test/critical/pNNNN-*.test.js` (smart Contre quoi lock)
+- Gates: `npm run check:p2467` · `check:p2468` · `check:p2469` · `check:p246x`
+
+## Commands
+```bash
+gh run list --repo dlnraja/com.tuya.zigbee --limit 12
+npm run enrich:silent
+npm run enrich:investigate
+npm run resilience:audit
+npm run forum:process
+npm run forum:parse-digest
+npm run check:p244x
+npm run check:p246x
+npm run check:p248x
+```
+
+## Resilience (P2222 / P2224 / P2225) — BOTH tracks
+- SSOT: `config/resilience/` (22 domains, critical-gaps, bug-classes, glossary)
+- Inventory: `npm run resilience:inventory` → `reports/resilience-*/INVENTORY.md`
+- Critical-first: `npm run resilience:critical` · full: `npm run resilience:all`
+- Workflow: `project-resilience.yml` (05:20 UTC) + wired in forum-poll / auto-enrich / fetch-diags
+- Doctrine: `docs/architecture/COMPLEMENTARY_ENRICHMENT.md`
+- Runtime: `HomeyGapCompensator` + `ButtonCaptureCascade`
+- Forum: SHADOW only
+- Stale worktrees not mass-synced — canonical Stable: `Documents\homey\stable`
+
+## Gmail cascade (P2226)
+- L0 Cursor Gmail plugin = IDE only (probed OK this session — Homey diag mail present)
+- CI: L1 IMAP secrets → L2 OAuth → L3 local state (`npm run diag:gmail:cascade`)
+- Workflows: `fetch-diags.yml`, `gmail-diagnostics.yml` + `npm run workflow:smoke`
+
+## CI vs Homey app (P2228)
+- Doctrine: `docs/architecture/CI_VS_HOMEY_RUNTIME.md`
+- Homey: soft hooks in `lib/` + `lib/**/data/*` only
+- GHA: `config/enrichment|resilience|security`, `tools/ci/*` — excluded via `.homeyignore`
+
+## AI forfait + context compress (P2227 + P2437 + P2491)
+- Mode: `AI_PLAN_MODE=forfait` — never paid overage (`AI_ALLOW_PAID=false`)
+- **P2491:** remote OFF by default (`AI_FORCE_LOCAL=true`, `AI_ALLOW_REMOTE=false`); slim `project-smart-map.json` (~2KB) not 54KB rules dump; no ensemble/map-reduce/model-list
+- Caps: global **80**/day, soft-stop **60%**, `GMAIL_DIAG_AI_MAX=0`; grok/cursor-cloud cap **0**
+- Crons thinned: forum-poll 4×, L99 3×, auto-enrich `/6h`
+- Doc: `docs/architecture/AI_EFFICIENCY_SSOT.md` · gate: `npm run check:p2491`
+- **Cursor:** no Grok/Opus/cloud Task — `.cursor/hooks.json` + `.cursor/rules/ai-forfait-cursor-limit.mdc`
+- **GHA:** `AI_FORCE_LOCAL=true` on enrich / diags / monthly / publish validate; `local-intelligent-solver.js`
+- Tests: `npm run check:p243x` + `check:p2491`
+
+## Handoffs (parent folder)
+`Documents\homey\FROM_THE_BEGINNING.md` · `NEXT_PATCHES.md` · `FORUM_LATEST_2190.md` · `FULL_SOURCE_SWEEP.md` · `ZIGBEE_PARALLEL_CROSS.md`
