@@ -1,0 +1,36 @@
+---
+description: Dual-app master vs stable-v5 — distinct Athom App IDs as of 2026-08-21
+alwaysApply: true
+---
+
+# Dual-App Vision (master ≠ stable-v5)
+
+Two tracks, **different goals**. Never wholesale sync.
+
+| Track | Branch | Athom App ID | Store name | Purpose |
+|-------|--------|--------------|------------|---------|
+| Preview / soak | `master` | `com.dlnraja.tuya.zigbee` | Universal Tuya (~9.0.x) | Features + soak |
+| Production / LTS | `stable-v5` | `com.dlnraja.tuya.zigbee.stable` | Tuya Unified (Stable) (~5.12.x) | Reliability only |
+
+Canonical clone Stable: `C:\Users\Dell\Documents\homey\stable` (not stale `stable-v5-p195`).
+
+## Identity (2026-08-21+)
+- Store slots are **independent** when Stable compose id is `.stable`.
+- `Publish Stable to Test` must set `APP_ID=com.dlnraja.tuya.zigbee.stable` (stable workflows).
+- Master Auto-Publish never retargets `.stable`.
+- **P139**: Stable draft `5.12.88` #13 hit `processing_failed` (socket hang up) — **do not spam republish**. Wait cooldown; Test Stable may still show 5.11.x until promote succeeds.
+- Soak-guard that assumed **one shared id forever** is outdated for Store reality, but keep refuse-overwrite helpers until every stable workflow path is verified `.stable`-only.
+
+## Before every change
+1. Classify: `BOTH` | `MASTER_ONLY` | `STABLE_ONLY`.
+2. Fix on **master** first for `BOTH`.
+3. Backport to **stable-v5** surgically — **never** copy App ID / version / whole trees the wrong way.
+4. Protect identity: `.homeycompose/app.json`, `package.json`, `app.json` per track.
+
+## MASTER_ONLY (examples)
+AlarmPolarity smart-learn, free-scrape / diag orchestrator, CapabilityCommandRouter `parallelDiscover`, mega feature managers.
+
+## BOTH (examples)
+IAS leftover EF00 skip (`shouldSkipIasOnlyEf00Tx`), zoneStatus coerce, `_ensureIasBound`, TS0044 0xFD physical, Poll Control skip sleepy, sacred-couple FP locks, MCU brightness clamp, **P2448/P2449** rotary command mode + declared flow card wiring.
+
+Full doctrine: `docs/rules/DUAL_APP_VISION.md` · handoffs under `Documents\homey\FROM_THE_BEGINNING.md`.

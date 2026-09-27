@@ -1,0 +1,36 @@
+---
+description: Forum silent-first doctrine — no AI paste, humanize max, prefer code over replies (Homey T157628)
+alwaysApply: true
+---
+
+# Forum Silent-First + Humanize (T157628)
+
+Community mandate mirrored from Homey thread
+[Stop pasting unchecked AI answers](https://community.homey.app/t/stop-pasting-unchecked-ai-answers-in-the-homey-community/157628):
+
+## Absolute defaults
+1. **Prefer NOT posting** on the Homey forum. Fix/enrich the app, workflows, and automations silently.
+2. **Never paste unchecked AI output** into forum drafts, PR comments meant for community paste, or Discourse posts.
+3. **REPLY_TOPICS = `140352` only** if a human maintainer explicitly asks to publish a **forum reply**. All other topics are READ-ONLY forever.
+4. **Publish the Homey app** when asked to push/publish. "Do not publish on the forum" never means skip App Store Test.
+5. Auto-post scripts stay **forced dry-run / blocked** (`forum-responder.js`, `post-forum-update.js`).
+6. Private inbox is harvested on cron (`forum-pm-read.yml` 07:50/19:50 UTC + `forum-poll.yml`) via `forum-pm-read-only.js`. **Never POST.** Do not use `forum-pm-scanner.js` for replies.
+
+## RF coexistence (silent transfer from T157859 education)
+- Zigbee/Thread channel numbers ≠ Wi-Fi channel numbers (same 2.4 GHz band, different numbering).
+- Prefer Zigbee/Thread **15 / 20 / 25** when Wi-Fi is on **1 / 6 / 11** @ 20 MHz.
+- Prefer Wi-Fi 20 MHz (not 40 MHz) on 2.4 GHz when coexistence matters.
+- Do not casually change Homey Zigbee/Thread channel; after change use Maintenance → Repair when possible.
+- RSSI alone is not link quality.
+- Helper: `lib/utils/rf-channel-coexistence.js` · guide: `docs/guides/RF_CHANNEL_COEXISTENCE.md`
+
+## When a reply draft is requested (rare)
+- Humanize to Dylan’s voice: short, imperfect English OK, “I”, no corporate tone, no markdown walls, no emoji spam, no bot footer.
+- Verify facts against local drivers / sacred couples before any wording.
+- Teach briefly if needed — do not act as an AI→forum macro.
+- Strip: AI/LLM/bot/pipeline/workflow/cron/scraping/ensemble and external-thread attribution.
+
+## Agent behaviour
+- Scan all threads silently → implement in code/CI.
+- Do not offer to “post this on the forum” unless the user explicitly asks.
+- Changelogs/commits: generic wording only (“improved”, “added support”) — no external forum attribution.
