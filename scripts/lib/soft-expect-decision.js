@@ -61,6 +61,36 @@ function findHealthyTest(builds) {
 }
 
 /**
+ * P2732 tipLagDecision:
+ * Flags expected PF when an older tip is healthy (test) while the target version
+ * failed with transient PF.
+ *
+ * @param {Array<object>} builds
+ * @param {string} targetVersion
+ * @returns {{tipLag:boolean, reason?:string, tip?:object, failed?:object[]}}
+ */
+function tipLagDecision(builds, targetVersion) {
+  const list = builds || [];
+  const tip = findHealthyTest(list);
+  if (!tip) return { tipLag: false };
+  if (targetVersion != null && String(tip.version) === String(targetVersion)) {
+    return { tipLag: false, tip };
+  }
+  const failed = list.filter((b) =>
+    String(b.state) === 'processing_failed'
+    && (targetVersion == null || String(b.version) === String(targetVersion)));
+  if (failed.length >= 1) {
+    return {
+      tipLag: true,
+      reason: 'expected-version-pf-tip-behind',
+      tip,
+      failed,
+    };
+  }
+  return { tipLag: false, tip };
+}
+
+/**
  * @param {Array<{id?:string|number,version?:string,state?:string,channel?:string}>} builds
  * @param {string} version
  * @param {{force?:boolean, excludeBuildId?:string|number|null}} [opts]
@@ -68,6 +98,10 @@ function findHealthyTest(builds) {
  */
 function softExpectDecision(builds, version, opts = {}) {
   if (opts.force) return { skip: false };
+  const lag = tipLagDecision(builds, version);
+  if (lag.tipLag) {
+    return { skip: true, reason: 'tip-lag-expected-pf', tip: lag.tip, failed: lag.failed };
+  }
   const exclude = opts.excludeBuildId != null ? String(opts.excludeBuildId) : null;
   const same = (builds || []).filter((b) => {
     if (String(b.version) !== String(version)) return false;
@@ -86,19 +120,6 @@ function softExpectDecision(builds, version, opts = {}) {
       && (!exclude || String(b.id) !== exclude));
     if (peerTest) {
       return { skip: true, reason: 'peer-test-after-failed', build: peerTest, failed };
-    }
-    // P2732 / P139: expected version already PF + older healthy tip → do NOT createBuild again
-    const olderTip = findHealthyTest(builds);
-    if (olderTip && String(olderTip.version) !== String(version)) {
-      const transient = failed.some((b) => isTransientAthomFailure(b));
-      if (transient || opts.tipLagSoft !== false) {
-        return {
-          skip: true,
-          reason: 'tip-lag-expected-pf',
-          build: olderTip,
-          failed,
-        };
-      }
     }
   }
   return { skip: false, failedCount: failed.length };
@@ -133,54 +154,10 @@ function softAlertDecision(builds, opts = {}) {
   return { alert: true, reason: 'latest-failed', latest, healthy: healthy || undefined };
 }
 
-/**
- * P2732 — tip-lag when expected version never reached Test (PF / tip hang)
- * while an older healthy tip still exists. Soft-continue OK; tipHealthy must
- * not claim the failed version.
- *
- * @param {Array<object>} builds
- * @param {string} expectedVersion
- * @returns {{tipLag:boolean, reason?:string, tip?:object, expected?:string, failed?:object[]}}
- */
-function tipLagDecision(builds, expectedVersion) {
-  const expected = String(expectedVersion || '').replace(/^v/i, '');
-  const tip = findHealthyTest(builds);
-  if (!expected) return { tipLag: false, tip: tip || undefined };
-  const sameVerTest = (builds || []).find((b) =>
-    String(b.version || '').replace(/^v/i, '') === expected
-    && (b.state === 'test' || b.channel === 'test'));
-  if (sameVerTest) return { tipLag: false, tip: sameVerTest, expected };
-  const failed = (builds || []).filter((b) =>
-    String(b.version || '').replace(/^v/i, '') === expected
-    && FAILED_STATES.has(String(b.state)));
-  if (!tip) {
-    return failed.length
-      ? { tipLag: true, reason: 'expected-pf-no-tip', expected, failed }
-      : { tipLag: false, expected };
-  }
-  const tipVer = String(tip.version || '').replace(/^v/i, '');
-  if (tipVer === expected) return { tipLag: false, tip, expected };
-  if (failed.length) {
-    return {
-      tipLag: true,
-      reason: 'expected-version-pf-tip-behind',
-      tip,
-      expected,
-      failed,
-    };
-  }
-  return {
-    tipLag: true,
-    reason: 'expected-not-on-test',
-    tip,
-    expected,
-  };
-}
-
 module.exports = {
   softExpectDecision,
-  softAlertDecision,
   tipLagDecision,
+  softAlertDecision,
   isTransientAthomFailure,
   buildFailureDetail,
   findHealthyTest,

@@ -54,8 +54,6 @@ function renderUserPage(username, profile, fixCatalog) {
   return `${lines.join('\n')}\n`;
 }
 
-const COUPLE_FOOTER_MARKER = 'See `docs/guides/DP_INTERPRETATION.md`';
-
 function renderCouplePage(key, couple) {
   const lines = [
     `# Couple profile — \`${key.replace('|', '+')}\``,
@@ -77,41 +75,18 @@ function renderCouplePage(key, couple) {
     lines.push('_No DP rows yet — run `npm run audit:dp-couples` after interview._', '');
   }
 
-  lines.push('---', COUPLE_FOOTER_MARKER, '');
+  lines.push('---', 'See `docs/guides/DP_INTERPRETATION.md`', '');
   return `${lines.join('\n')}\n`;
 }
 
-/**
- * P2732 / P2520 — fleet enrich must UNION, never wipe hand-curated tails
- * (e.g. "## Known bugs (P2579 …)" after the DP footer). Contre quoi: clrdrnya.
- */
-function mergeCouplePagePreservingCurated(existingMd, generatedMd) {
-  const prev = String(existingMd || '');
-  const generated = String(generatedMd || '');
-  if (!prev.trim()) return generated.endsWith('\n') ? generated : `${generated}\n`;
-  const idx = prev.indexOf(COUPLE_FOOTER_MARKER);
-  if (idx < 0) return generated.endsWith('\n') ? generated : `${generated}\n`;
-  const tail = prev.slice(idx + COUPLE_FOOTER_MARKER.length).replace(/^\r?\n/, '');
-  if (!tail.trim()) return generated.endsWith('\n') ? generated : `${generated}\n`;
-  // Avoid duplicating if generated already carries the same Known bugs block
-  const known = tail.match(/## Known bugs[\s\S]*/i);
-  if (known && generated.includes(known[0].trim().slice(0, 48))) {
-    return generated.endsWith('\n') ? generated : `${generated}\n`;
-  }
-  const base = generated.replace(/\s*$/, '');
-  return `${base}\n\n${tail.replace(/^\s+/, '')}`.replace(/\n*$/, '\n');
-}
-
-function writeCouplePage(couplesDir, fn, key, couple) {
-  const outPath = path.join(couplesDir, fn);
-  const generated = renderCouplePage(key, couple);
-  let existing = '';
-  try {
-    if (fs.existsSync(outPath)) existing = fs.readFileSync(outPath, 'utf8');
-  } catch {
-    existing = '';
-  }
-  fs.writeFileSync(outPath, mergeCouplePagePreservingCurated(existing, generated));
+function mergeCouplePagePreservingCurated(existing, generated) {
+  if (!existing || typeof existing !== 'string') return generated;
+  if (!generated || typeof generated !== 'string') return existing;
+  const match = existing.match(/(## Known bugs[\s\S]*)/);
+  if (!match) return generated;
+  const knownBugs = match[1].trim();
+  const genTrimmed = generated.trim();
+  return `${genTrimmed}\n\n${knownBugs}\n`;
 }
 
 function main() {
@@ -145,9 +120,16 @@ function main() {
   const coupleIndex = [];
   for (const [key, couple] of Object.entries(dpKnowledge.couples || {})) {
     const fn = `${safeName(key.replace('|', '_'))}.md`;
+    const targetFile = path.join(couplesDir, fn);
+    let pageContent = renderCouplePage(key, couple);
+    if (fs.existsSync(targetFile)) {
+      try {
+        const existing = fs.readFileSync(targetFile, 'utf8');
+        pageContent = mergeCouplePagePreservingCurated(existing, pageContent);
+      } catch (_e) { /* soft */ }
+    }
     if (!SUMMARY_ONLY) {
-      // WHY(P2732): never overwrite curated "## Known bugs" tails (fleet wiped clrdrnya → p2579 red)
-      writeCouplePage(couplesDir, fn, key, couple);
+      fs.writeFileSync(targetFile, pageContent);
     }
     coupleIndex.push({
       couple: key,
@@ -232,10 +214,10 @@ function main() {
 }
 
 module.exports = {
-  COUPLE_FOOTER_MARKER,
+  renderUserPage,
   renderCouplePage,
   mergeCouplePagePreservingCurated,
-  writeCouplePage,
+  main,
 };
 
 if (require.main === module) {
