@@ -620,7 +620,8 @@
     "check:p2748": "node --test test/critical/p2748-complementary-tagged-flow-emit.test.js",
     "check:p2749": "node --test test/critical/p2749-hiepsvg-550-hang-leave.test.js",
     "check:p2749f": "node --test test/critical/p2749f-flow-titleformatted-args-gate.test.js",
-    "check:p2750": "node --test test/critical/p2750-fetch-diags-gmail-artifact-tip.test.js"
+    "check:p2750": "node --test test/critical/p2750-fetch-diags-gmail-artifact-tip.test.js",
+    "check:p2751": "node --test test/critical/p2751-lazyload-bidir-complementary-exotic.test.js"
   },
   "keywords": [
     "homey",
