@@ -4,7 +4,12 @@ All notable changes to the **Tuya Unified Zigbee** app for Homey Pro.
 
 ---
 
-## [9.0.1275] - 2026-09-27
+## [9.0.1277] - 2026-09-27
+
+Battery consumption optimization & EMA anti-sag stability filter (TS0042/TS0043) + radar presence clear on leave (#550).
+---
+
+ [9.0.1275] - 2026-09-27
 
 v9.0.1275: automated publish, manifest sync, and Homey test promotion.
 ---
