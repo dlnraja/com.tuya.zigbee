@@ -1,0 +1,6589 @@
+{
+  "cases": [
+    {
+      "source": "reports/gmail-diags-2026-08-24/SUMMARY.json",
+      "kind": "gmail_treat",
+      "logId": "f647d35b",
+      "appVersion": null,
+      "userMessage": null,
+      "drivers": [],
+      "deviceIds": [],
+      "couples": [
+        {
+          "mfr": "_TZE284_6ocnqlhn",
+          "pid": "TS0601",
+          "canonicalDriver": "din_rail_meter",
+          "forbiddenDrivers": [
+            "smart_rcbo",
+            "climate_sensor",
+            "soil_sensor",
+            "generic_tuya",
+            "zigbee_universal"
+          ],
+          "confidence": "in_log"
+        },
+        {
+          "mfr": "_TZ3000_xffhmvhv",
+          "pid": "TS004F",
+          "canonicalDriver": "button_wireless_4",
+          "forbiddenDrivers": [
+            "scene_switch_4",
+            "smart_knob",
+            "wall_switch_4_gang",
+            "button_wireless_1"
+          ],
+          "confidence": "in_log"
+        }
+      ],
+      "coupleAbsent": false,
+      "derivedCoupleCount": 0,
+      "signals": [
+        {
+          "id": "scene_mode_unsupported",
+          "severity": "medium",
+          "fix": "scene_switch / TS0044 profile",
+          "track": "BOTH"
+        },
+        {
+          "id": "wrong_driver_hint",
+          "severity": "medium",
+          "fix": "Lock sacred couple in compose + registry",
+          "track": "BOTH"
+        },
+        {
+          "id": "athom_socket_hang",
+          "severity": "high",
+          "fix": "P139/P2323: wait Athom; no bump-loop; dashboard $timeout 60s; combo budget P2252",
+          "track": "BOTH"
+        },
+        {
+          "id": "athom_processing_failed",
+          "severity": "high",
+          "fix": "Check Homey developer tools stateMeta; soft-expect if Test healthy",
+          "track": "BOTH"
+        },
+        {
+          "id": "wrong_smart_rcbo",
+          "severity": "critical",
+          "rootCause": "Tongou DIN meter stolen by smart_rcbo (6ocnqlhn / OCR 60cnqlhn)",
+          "fix": "Lock _TZE284_6ocnqlhn+TS0601 → din_rail_meter; user update+re-pair",
+          "track": "BOTH"
+        },
+        {
+          "id": "flow_guard_spam",
+          "severity": "medium",
+          "rootCause": "Stale or mismatched flow card IDs",
+          "fix": "Hashed flow resolve / compose ID audit",
+          "track": "BOTH"
+        },
+        {
+          "id": "processing_failed",
+          "severity": "low",
+          "rootCause": "Athom publish transient (P139)",
+          "fix": "Do not spam republish; wait cooldown",
+          "track": "CI"
+        },
+        {
+          "id": "scene_0x8004",
+          "severity": "medium",
+          "rootCause": "TS004x scene mode attribute probe",
+          "fix": "Skip 0x8004 for known scene/button mfrs",
+          "track": "BOTH"
+        }
+      ],
+      "highlights": [],
+      "summary": "id=f647d35b | couple=_TZE284_6ocnqlhn+TS0601 | signals=scene_mode_unsupported,wrong_driver_hint,athom_socket_hang,athom_processing_failed",
+      "interviewId": null
+    },
+    {
+      "source": ".github/state/diag-recursive-inbox/bodies/imap_f4dcd5e9cb9d.txt",
+      "kind": "gmail_body",
+      "logId": "f4dcd5e9",
+      "appVersion": "1.0.82",
+      "userMessage": null,
+      "drivers": [
+        "button_wireless_2",
+        "button_wireless_1",
+        "switch_1gang"
+      ],
+      "deviceIds": [],
+      "couples": [
+        {
+          "mfr": "_TZ3000_blhvsaqf",
+          "pid": "TS0001",
+          "canonicalDriver": "switch_1gang",
+          "forbiddenDrivers": [],
+          "confidence": "derived_interview_soft",
+          "sourceInterview": "INT-019"
+        },
+        {
+          "mfr": "_TZ3000_ysdv91bk",
+          "pid": "TS0001",
+          "canonicalDriver": "switch_1gang",
+          "forbiddenDrivers": [],
+          "confidence": "derived_interview_soft",
+          "sourceInterview": "INT-051"
+        }
+      ],
+      "coupleAbsent": false,
+      "derivedCoupleCount": 2,
+      "signals": [
+        {
+          "id": "heap_oom",
+          "severity": "critical",
+          "fix": "LiveData caps / buffer JSON load",
+          "track": "BOTH"
+        },
+        {
+          "id": "heap_oom",
+          "severity": "critical",
+          "rootCause": "Homey 64MB heap OOM",
+          "fix": "Buffer JSON load + LiveData caps",
+          "track": "BOTH"
+        }
+      ],
+      "highlights": [
+        "FATAL ERROR: Reached heap limit Allocation failed - JavaScript heap out of memory",
+        "ERROR: Reached heap limit Allocation failed - JavaScript heap out of memory"
+      ],
+      "summary": "app=1.0.82 | drivers=button_wireless_2,button_wireless_1,switch_1gang | signals=heap_oom",
+      "interviewId": null
+    },
+    {
+      "source": ".github/state/diag-recursive-inbox/bodies/imap_d7c7b90a1e77.txt",
+      "kind": "gmail_body",
+      "logId": "d7c7b90a",
+      "appVersion": "9.0.1165",
+      "userMessage": null,
+      "drivers": [
+        "switch_1gang",
+        "wall_switch_1gang_1way"
+      ],
+      "deviceIds": [],
+      "couples": [
+        {
+          "mfr": "_TZ3000_FDXIHPP7",
+          "pid": "TS0001",
+          "canonicalDriver": null,
+          "forbiddenDrivers": [],
+          "confidence": "in_log"
+        }
+      ],
+      "coupleAbsent": false,
+      "derivedCoupleCount": 0,
+      "signals": [
+        {
+          "id": "heap_oom",
+          "severity": "critical",
+          "fix": "LiveData caps / buffer JSON load",
+          "track": "BOTH"
+        },
+        {
+          "id": "heap_oom",
+          "severity": "critical",
+          "rootCause": "Homey 64MB heap OOM",
+          "fix": "Buffer JSON load + LiveData caps",
+          "track": "BOTH"
+        }
+      ],
+      "highlights": [
+        "FATAL ERROR: Reached heap limit Allocation failed - JavaScript heap out of memory",
+        "FATAL ERROR: Reached heap limit Allocation failed - JavaScript heap out of memory",
+        "FATAL ERROR: Reached heap limit Allocation failed - JavaScript heap out of memory",
+        "ERROR: Reached heap limit Allocation failed - JavaScript heap out of memory"
+      ],
+      "summary": "app=9.0.1165 | couple=_TZ3000_FDXIHPP7+TS0001 | signals=heap_oom",
+      "interviewId": null
+    },
+    {
+      "source": "reports/gmail-diags-2026-08-23/DIAG_FIXES.md",
+      "kind": "local_report",
+      "logId": null,
+      "appVersion": null,
+      "userMessage": null,
+      "drivers": [],
+      "deviceIds": [],
+      "couples": [],
+      "coupleAbsent": false,
+      "derivedCoupleCount": 0,
+      "signals": [
+        {
+          "id": "wrong_driver_hint",
+          "severity": "medium",
+          "fix": "Lock sacred couple in compose + registry",
+          "track": "BOTH"
+        },
+        {
+          "id": "athom_socket_hang",
+          "severity": "high",
+          "fix": "P139/P2323: wait Athom; no bump-loop; dashboard $timeout 60s; combo budget P2252",
+          "track": "BOTH"
+        },
+        {
+          "id": "athom_processing_failed",
+          "severity": "high",
+          "fix": "Check Homey developer tools stateMeta; soft-expect if Test healthy",
+          "track": "BOTH"
+        },
+        {
+          "id": "wrong_smart_rcbo",
+          "severity": "critical",
+          "rootCause": "Tongou DIN meter stolen by smart_rcbo (6ocnqlhn / OCR 60cnqlhn)",
+          "fix": "Lock _TZE284_6ocnqlhn+TS0601 → din_rail_meter; user update+re-pair",
+          "track": "BOTH"
+        },
+        {
+          "id": "processing_failed",
+          "severity": "low",
+          "rootCause": "Athom publish transient (P139)",
+          "fix": "Do not spam republish; wait cooldown",
+          "track": "CI"
+        }
+      ],
+      "highlights": [],
+      "summary": "signals=wrong_driver_hint,athom_socket_hang,athom_processing_failed",
+      "interviewId": null
+    },
+    {
+      "source": "docs/data/DEVICE_INTERVIEWS.json#INT-146",
+      "kind": "interview",
+      "logId": "c33007b0",
+      "appVersion": null,
+      "userMessage": null,
+      "drivers": [],
+      "deviceIds": [],
+      "couples": [
+        {
+          "mfr": "_TZ3002_*",
+          "pid": "TS0726",
+          "canonicalDriver": "switch_4gang",
+          "forbiddenDrivers": [],
+          "confidence": "interview_locked"
+        },
+        {
+          "mfr": "_TZ3002_",
+          "pid": "TS0726",
+          "canonicalDriver": null,
+          "forbiddenDrivers": [],
+          "confidence": "interview_locked"
+        }
+      ],
+      "coupleAbsent": false,
+      "derivedCoupleCount": 0,
+      "signals": [
+        {
+          "id": "invalid_flow_card",
+          "severity": "medium",
+          "fix": "Check driver.flow.compose.json IDs",
+          "track": "BOTH"
+        },
+        {
+          "id": "missing_capability_listener",
+          "severity": "high",
+          "fix": "Register listener in onNodeInit",
+          "track": "BOTH"
+        },
+        {
+          "id": "flow_guard_spam",
+          "severity": "medium",
+          "rootCause": "Stale or mismatched flow card IDs",
+          "fix": "Hashed flow resolve / compose ID audit",
+          "track": "BOTH"
+        }
+      ],
+      "highlights": [],
+      "summary": "id=c33007b0 | couple=_TZ3002_+TS0726 | signals=invalid_flow_card,missing_capability_listener",
+      "interviewId": "INT-146"
+    },
+    {
+      "source": ".github/state/diag-recursive-inbox/bodies/imap_b631c78d2f38.txt",
+      "kind": "gmail_body",
+      "logId": "b631c78d",
+      "appVersion": null,
+      "userMessage": null,
+      "drivers": [],
+      "deviceIds": [],
+      "couples": [
+        {
+          "mfr": "_TZE204_gkfbdvyx",
+          "pid": "TS0601",
+          "canonicalDriver": "presence_sensor_radar",
+          "forbiddenDrivers": [
+            "curtain_motor",
+            "device_radiator_valve",
+            "radiator_valve",
+            "smartplug",
+            "generic_tuya",
+            "zigbee_universal",
+            "unknown_zigbee_unit"
+          ],
+          "confidence": "in_log"
+        }
+      ],
+      "coupleAbsent": false,
+      "derivedCoupleCount": 0,
+      "signals": [
+        {
+          "id": "missing_capability_listener",
+          "severity": "high",
+          "fix": "Register listener in onNodeInit",
+          "track": "BOTH"
+        }
+      ],
+      "highlights": [],
+      "summary": "couple=_TZE204_gkfbdvyx+TS0601 | signals=missing_capability_listener",
+      "interviewId": null
+    },
+    {
+      "source": ".github/state/diag-recursive-inbox/bodies/doc-FORUM_ISSUES_ANALYSIS.md--_TZ3000_wkai4ga5-_TZ3000-200.txt",
+      "kind": "gmail_body",
+      "logId": null,
+      "appVersion": null,
+      "userMessage": null,
+      "drivers": [],
+      "deviceIds": [],
+      "couples": [],
+      "coupleAbsent": true,
+      "derivedCoupleCount": 0,
+      "signals": [
+        {
+          "id": "wrong_driver_hint",
+          "severity": "medium",
+          "fix": "Lock sacred couple in compose + registry",
+          "track": "BOTH"
+        }
+      ],
+      "highlights": [],
+      "summary": "signals=wrong_driver_hint",
+      "interviewId": null
+    },
+    {
+      "source": ".github/state/diag-recursive-inbox/bodies/doc-FORUM_ISSUES_ANALYSIS.md--_TZ3000_wkai4ga5-_TZ3000-892.txt",
+      "kind": "gmail_body",
+      "logId": null,
+      "appVersion": null,
+      "userMessage": null,
+      "drivers": [],
+      "deviceIds": [],
+      "couples": [],
+      "coupleAbsent": true,
+      "derivedCoupleCount": 0,
+      "signals": [
+        {
+          "id": "wrong_driver_hint",
+          "severity": "medium",
+          "fix": "Lock sacred couple in compose + registry",
+          "track": "BOTH"
+        }
+      ],
+      "highlights": [],
+      "summary": "signals=wrong_driver_hint",
+      "interviewId": null
+    },
+    {
+      "source": ".github/state/diag-recursive-inbox/bodies/doc-GITHUB_RESPONSES_FULL.md-DAVID9SE-_TZ3000_an5rjiwd-FI-20.txt",
+      "kind": "gmail_body",
+      "logId": null,
+      "appVersion": null,
+      "userMessage": null,
+      "drivers": [],
+      "deviceIds": [],
+      "couples": [],
+      "coupleAbsent": true,
+      "derivedCoupleCount": 0,
+      "signals": [
+        {
+          "id": "wrong_driver_hint",
+          "severity": "medium",
+          "fix": "Lock sacred couple in compose + registry",
+          "track": "BOTH"
+        }
+      ],
+      "highlights": [],
+      "summary": "signals=wrong_driver_hint",
+      "interviewId": null
+    },
+    {
+      "source": ".github/state/diag-recursive-inbox/bodies/doc-GITHUB_RESPONSES_FULL.md-DAVID9SE-_TZ3000_an5rjiwd-FIX-336.txt",
+      "kind": "gmail_body",
+      "logId": null,
+      "appVersion": null,
+      "userMessage": null,
+      "drivers": [],
+      "deviceIds": [],
+      "couples": [],
+      "coupleAbsent": true,
+      "derivedCoupleCount": 0,
+      "signals": [
+        {
+          "id": "wrong_driver_hint",
+          "severity": "medium",
+          "fix": "Lock sacred couple in compose + registry",
+          "track": "BOTH"
+        }
+      ],
+      "highlights": [],
+      "summary": "signals=wrong_driver_hint",
+      "interviewId": null
+    },
+    {
+      "source": "docs/data/DEVICE_INTERVIEWS.json#INT-015",
+      "kind": "interview",
+      "logId": null,
+      "appVersion": null,
+      "userMessage": null,
+      "drivers": [],
+      "deviceIds": [],
+      "couples": [
+        {
+          "mfr": "_TZ3000_zgyzgdua",
+          "pid": "TS0044",
+          "canonicalDriver": "scene_switch_4",
+          "forbiddenDrivers": [
+            "button_wireless_4",
+            "smart_knob",
+            "wall_dimmer_tuya"
+          ],
+          "confidence": "interview_locked"
+        }
+      ],
+      "coupleAbsent": false,
+      "derivedCoupleCount": 0,
+      "signals": [
+        {
+          "id": "scene_mode_unsupported",
+          "severity": "medium",
+          "fix": "scene_switch / TS0044 profile",
+          "track": "BOTH"
+        }
+      ],
+      "highlights": [],
+      "summary": "couple=_TZ3000_zgyzgdua+TS0044 | signals=scene_mode_unsupported",
+      "interviewId": "INT-015"
+    },
+    {
+      "source": "docs/data/DEVICE_INTERVIEWS.json#INT-062",
+      "kind": "interview",
+      "logId": null,
+      "appVersion": null,
+      "userMessage": null,
+      "drivers": [],
+      "deviceIds": [],
+      "couples": [
+        {
+          "mfr": "_TZ3000_kfu8zapd",
+          "pid": "TS0044",
+          "canonicalDriver": "button_wireless_4",
+          "forbiddenDrivers": [
+            "switch_1gang",
+            "scene_switch_4"
+          ],
+          "confidence": "interview_locked"
+        }
+      ],
+      "coupleAbsent": false,
+      "derivedCoupleCount": 0,
+      "signals": [
+        {
+          "id": "scene_mode_unsupported",
+          "severity": "medium",
+          "fix": "scene_switch / TS0044 profile",
+          "track": "BOTH"
+        },
+        {
+          "id": "scene_0x8004",
+          "severity": "medium",
+          "rootCause": "TS004x scene mode attribute probe",
+          "fix": "Skip 0x8004 for known scene/button mfrs",
+          "track": "BOTH"
+        }
+      ],
+      "highlights": [],
+      "summary": "couple=_TZ3000_kfu8zapd+TS0044 | signals=scene_mode_unsupported",
+      "interviewId": "INT-062"
+    },
+    {
+      "source": "docs/data/DEVICE_INTERVIEWS.json#INT-145",
+      "kind": "interview",
+      "logId": null,
+      "appVersion": null,
+      "userMessage": null,
+      "drivers": [],
+      "deviceIds": [],
+      "couples": [
+        {
+          "mfr": "_TZE200_2aaelwxk",
+          "pid": "TS0601",
+          "canonicalDriver": "presence_sensor_radar",
+          "forbiddenDrivers": [
+            "climate_sensor",
+            "vibration_sensor",
+            "soil_sensor",
+            "power_clamp_meter",
+            "motion_sensor"
+          ],
+          "confidence": "interview_locked"
+        },
+        {
+          "mfr": "HOBEIAN",
+          "pid": "ZG-204ZM",
+          "canonicalDriver": "presence_sensor_radar",
+          "forbiddenDrivers": [
+            "climate_sensor",
+            "climate_sensor_energy",
+            "sensor_climate_temphumidsensor",
+            "temphumidsensor",
+            "temphumidsensor5",
+            "soil_sensor",
+            "vibration_sensor",
+            "power_clamp_meter",
+            "motion_sensor",
+            "radar_sensor_ceiling"
+          ],
+          "confidence": "interview_locked"
+        },
+        {
+          "mfr": "HOBEIAN",
+          "pid": "zg-204zm-review",
+          "canonicalDriver": null,
+          "forbiddenDrivers": [],
+          "confidence": "interview_locked"
+        }
+      ],
+      "coupleAbsent": false,
+      "derivedCoupleCount": 0,
+      "signals": [
+        {
+          "id": "wrong_driver_hint",
+          "severity": "medium",
+          "fix": "Lock sacred couple in compose + registry",
+          "track": "BOTH"
+        }
+      ],
+      "highlights": [],
+      "summary": "couple=_TZE200_2aaelwxk+TS0601 | signals=wrong_driver_hint",
+      "interviewId": "INT-145"
+    },
+    {
+      "source": "docs/data/DEVICE_INTERVIEWS.json#INT-163",
+      "kind": "interview",
+      "logId": null,
+      "appVersion": null,
+      "userMessage": null,
+      "drivers": [],
+      "deviceIds": [],
+      "couples": [
+        {
+          "mfr": "_TZE204_ztqnh5cg",
+          "pid": "TS0601",
+          "canonicalDriver": null,
+          "forbiddenDrivers": [],
+          "confidence": "interview_locked"
+        }
+      ],
+      "coupleAbsent": false,
+      "derivedCoupleCount": 0,
+      "signals": [
+        {
+          "id": "wrong_driver_hint",
+          "severity": "medium",
+          "fix": "Lock sacred couple in compose + registry",
+          "track": "BOTH"
+        }
+      ],
+      "highlights": [],
+      "summary": "couple=_TZE204_ztqnh5cg+TS0601 | signals=wrong_driver_hint",
+      "interviewId": "INT-163"
+    },
+    {
+      "source": ".github/state/diag-recursive-inbox/bodies/imap_ffb1d0e99b7f.txt",
+      "kind": "gmail_body",
+      "logId": "ffb1d0e9",
+      "appVersion": null,
+      "userMessage": null,
+      "drivers": [],
+      "deviceIds": [],
+      "couples": [],
+      "coupleAbsent": false,
+      "derivedCoupleCount": 0,
+      "signals": [],
+      "highlights": [],
+      "summary": null,
+      "interviewId": null
+    },
+    {
+      "source": ".github/state/diag-recursive-inbox/bodies/imap_fd4949a03cac.txt",
+      "kind": "gmail_body",
+      "logId": "fd4949a0",
+      "appVersion": null,
+      "userMessage": null,
+      "drivers": [],
+      "deviceIds": [],
+      "couples": [],
+      "coupleAbsent": false,
+      "derivedCoupleCount": 0,
+      "signals": [],
+      "highlights": [],
+      "summary": null,
+      "interviewId": null
+    },
+    {
+      "source": ".github/state/diag-recursive-inbox/bodies/imap_fca8f038f64e.txt",
+      "kind": "gmail_body",
+      "logId": "fca8f038",
+      "appVersion": "1.0.34",
+      "userMessage": null,
+      "drivers": [
+        "switch_1gang"
+      ],
+      "deviceIds": [],
+      "couples": [
+        {
+          "mfr": "_TZ3000_blhvsaqf",
+          "pid": "TS0001",
+          "canonicalDriver": "switch_1gang",
+          "forbiddenDrivers": [],
+          "confidence": "derived_interview_soft",
+          "sourceInterview": "INT-019"
+        },
+        {
+          "mfr": "_TZ3000_ysdv91bk",
+          "pid": "TS0001",
+          "canonicalDriver": "switch_1gang",
+          "forbiddenDrivers": [],
+          "confidence": "derived_interview_soft",
+          "sourceInterview": "INT-051"
+        }
+      ],
+      "coupleAbsent": false,
+      "derivedCoupleCount": 2,
+      "signals": [],
+      "highlights": [
+        "2026-09-21T19:27:03.617Z [log] [TuyaUnifiedZigbeeApp] [FLOW-LOADER] triggerSubCapabilityChanged error: Could not trigger Flow card with id \"sub_capability_chang",
+        "2026-09-21T19:27:03.638Z [log] [TuyaUnifiedZigbeeApp] [FLOW-LOADER] triggerSubCapabilityChanged error: Could not trigger Flow card with id \"sub_capability_chang",
+        "2026-09-21T19:27:03.652Z [log] [TuyaUnifiedZigbeeApp] [FLOW-LOADER] triggerSubCapabilityChanged error: Could not trigger Flow card with id \"sub_capability_chang",
+        "2026-09-21T19:27:03.665Z [log] [TuyaUnifiedZigbeeApp] [FLOW-LOADER] triggerSubCapabilityChanged error: Could not trigger Flow card with id \"sub_capability_chang",
+        "2026-09-21T19:27:11.830Z [log] [TuyaUnifiedZigbeeApp] [FLOW-LOADER] triggerSubCapabilityChanged error: Could not trigger Flow card with id \"sub_capability_chang",
+        "2026-09-21T19:27:11.843Z [log] [TuyaUnifiedZigbeeApp] [FLOW-LOADER] triggerSubCapabilityChanged error: Could not trigger Flow card with id \"sub_capability_chang"
+      ],
+      "summary": "app=1.0.34 | drivers=switch_1gang",
+      "interviewId": null
+    },
+    {
+      "source": "docs/data/DEVICE_INTERVIEWS.json#INT-164",
+      "kind": "interview",
+      "logId": "f089e2e7",
+      "appVersion": null,
+      "userMessage": null,
+      "drivers": [],
+      "deviceIds": [],
+      "couples": [
+        {
+          "mfr": "_TZE284_o3x45p96",
+          "pid": "TS0601",
+          "canonicalDriver": null,
+          "forbiddenDrivers": [],
+          "confidence": "interview_locked"
+        }
+      ],
+      "coupleAbsent": false,
+      "derivedCoupleCount": 0,
+      "signals": [],
+      "highlights": [],
+      "summary": "id=f089e2e7 | couple=_TZE284_o3x45p96+TS0601",
+      "interviewId": "INT-164"
+    },
+    {
+      "source": ".github/state/diag-recursive-inbox/bodies/imap_ee4cb1acfea5.txt",
+      "kind": "gmail_body",
+      "logId": "ee4cb1ac",
+      "appVersion": null,
+      "userMessage": null,
+      "drivers": [],
+      "deviceIds": [],
+      "couples": [],
+      "coupleAbsent": false,
+      "derivedCoupleCount": 0,
+      "signals": [],
+      "highlights": [],
+      "summary": null,
+      "interviewId": null
+    },
+    {
+      "source": ".github/state/diag-recursive-inbox/bodies/imap_ee31741584f3.txt",
+      "kind": "gmail_body",
+      "logId": "ee317415",
+      "appVersion": "1.0.112",
+      "userMessage": null,
+      "drivers": [
+        "switch_1gang",
+        "button_wireless_1",
+        "button_wireless_2",
+        "button_wireless_3"
+      ],
+      "deviceIds": [],
+      "couples": [
+        {
+          "mfr": "_TZ3000_blhvsaqf",
+          "pid": "TS0001",
+          "canonicalDriver": "switch_1gang",
+          "forbiddenDrivers": [],
+          "confidence": "derived_interview_soft",
+          "sourceInterview": "INT-019"
+        },
+        {
+          "mfr": "_TZ3000_ysdv91bk",
+          "pid": "TS0001",
+          "canonicalDriver": "switch_1gang",
+          "forbiddenDrivers": [],
+          "confidence": "derived_interview_soft",
+          "sourceInterview": "INT-051"
+        },
+        {
+          "mfr": "_TZ3000_*",
+          "pid": "TS0043",
+          "canonicalDriver": "button_wireless_3",
+          "forbiddenDrivers": [],
+          "confidence": "derived_interview_soft",
+          "sourceInterview": "INT-014"
+        },
+        {
+          "mfr": "_TZ3000_bczr4e10",
+          "pid": "TS0043",
+          "canonicalDriver": "button_wireless_3",
+          "forbiddenDrivers": [],
+          "confidence": "derived_interview_soft",
+          "sourceInterview": "INT-170"
+        }
+      ],
+      "coupleAbsent": false,
+      "derivedCoupleCount": 4,
+      "signals": [],
+      "highlights": [
+        "2026-09-25T22:06:48.915Z [log] [ManagerDrivers] [Driver:button_wireless_1] [Device:[REDACTED_UUID:[REDACTED_SECRET] [BATTERY] batteryPercentageRemaining report:"
+      ],
+      "summary": "app=1.0.112 | drivers=switch_1gang,button_wireless_1,button_wireless_2",
+      "interviewId": null
+    },
+    {
+      "source": ".github/state/diag-recursive-inbox/bodies/imap_ec62a8ee905a.txt",
+      "kind": "gmail_body",
+      "logId": "ec62a8ee",
+      "appVersion": null,
+      "userMessage": null,
+      "drivers": [],
+      "deviceIds": [],
+      "couples": [],
+      "coupleAbsent": false,
+      "derivedCoupleCount": 0,
+      "signals": [],
+      "highlights": [],
+      "summary": null,
+      "interviewId": null
+    },
+    {
+      "source": ".github/state/diag-recursive-inbox/bodies/imap_ebf31bb85430.txt",
+      "kind": "gmail_body",
+      "logId": "ebf31bb8",
+      "appVersion": null,
+      "userMessage": null,
+      "drivers": [],
+      "deviceIds": [],
+      "couples": [
+        {
+          "mfr": "_TZE204_gkfbdvyx",
+          "pid": "TS0601",
+          "canonicalDriver": "presence_sensor_radar",
+          "forbiddenDrivers": [
+            "curtain_motor",
+            "device_radiator_valve",
+            "radiator_valve",
+            "smartplug",
+            "generic_tuya",
+            "zigbee_universal",
+            "unknown_zigbee_unit"
+          ],
+          "confidence": "in_log"
+        }
+      ],
+      "coupleAbsent": false,
+      "derivedCoupleCount": 0,
+      "signals": [],
+      "highlights": [],
+      "summary": "couple=_TZE204_gkfbdvyx+TS0601",
+      "interviewId": null
+    },
+    {
+      "source": ".github/state/diag-recursive-inbox/bodies/imap_e89b7a3ee6af.txt",
+      "kind": "gmail_body",
+      "logId": "e89b7a3e",
+      "appVersion": "1.0.34",
+      "userMessage": null,
+      "drivers": [
+        "switch_1gang"
+      ],
+      "deviceIds": [],
+      "couples": [
+        {
+          "mfr": "_TZ3000_blhvsaqf",
+          "pid": "TS0001",
+          "canonicalDriver": "switch_1gang",
+          "forbiddenDrivers": [],
+          "confidence": "derived_interview_soft",
+          "sourceInterview": "INT-019"
+        },
+        {
+          "mfr": "_TZ3000_ysdv91bk",
+          "pid": "TS0001",
+          "canonicalDriver": "switch_1gang",
+          "forbiddenDrivers": [],
+          "confidence": "derived_interview_soft",
+          "sourceInterview": "INT-051"
+        }
+      ],
+      "coupleAbsent": false,
+      "derivedCoupleCount": 2,
+      "signals": [],
+      "highlights": [
+        "2026-09-21T18:07:07.981Z [log] [TuyaUnifiedZigbeeApp] [FLOW-LOADER] triggerSubCapabilityChanged error: Could not trigger Flow card with id \"sub_capability_chang",
+        "2026-09-21T18:07:07.995Z [log] [TuyaUnifiedZigbeeApp] [FLOW-LOADER] triggerSubCapabilityChanged error: Could not trigger Flow card with id \"sub_capability_chang",
+        "2026-09-21T18:07:38.860Z [log] [TuyaUnifiedZigbeeApp] [FLOW-LOADER] triggerSubCapabilityChanged error: Could not trigger Flow card with id \"sub_capability_chang",
+        "2026-09-21T18:07:38.863Z [log] [TuyaUnifiedZigbeeApp] [FLOW-LOADER] triggerSubCapabilityChanged error: Could not trigger Flow card with id \"sub_capability_chang",
+        "2026-09-21T18:07:43.722Z [log] [TuyaUnifiedZigbeeApp] [FLOW-LOADER] triggerSubCapabilityChanged error: Could not trigger Flow card with id \"sub_capability_chang",
+        "2026-09-21T18:07:43.734Z [log] [TuyaUnifiedZigbeeApp] [FLOW-LOADER] triggerSubCapabilityChanged error: Could not trigger Flow card with id \"sub_capability_chang"
+      ],
+      "summary": "app=1.0.34 | drivers=switch_1gang",
+      "interviewId": null
+    },
+    {
+      "source": ".github/state/diag-recursive-inbox/bodies/imap_e7fa006ac162.txt",
+      "kind": "gmail_body",
+      "logId": "e7fa006a",
+      "appVersion": null,
+      "userMessage": null,
+      "drivers": [],
+      "deviceIds": [],
+      "couples": [],
+      "coupleAbsent": false,
+      "derivedCoupleCount": 0,
+      "signals": [],
+      "highlights": [],
+      "summary": null,
+      "interviewId": null
+    },
+    {
+      "source": ".github/state/diag-recursive-inbox/bodies/imap_e7bcb045c7e3.txt",
+      "kind": "gmail_body",
+      "logId": "e7bcb045",
+      "appVersion": null,
+      "userMessage": null,
+      "drivers": [],
+      "deviceIds": [],
+      "couples": [
+        {
+          "mfr": "_TZE284_ogx8u5z6",
+          "pid": "TS0601",
+          "canonicalDriver": "device_radiator_valve",
+          "forbiddenDrivers": [
+            "climate_sensor",
+            "wall_thermostat",
+            "zigbee_universal"
+          ],
+          "confidence": "in_log"
+        }
+      ],
+      "coupleAbsent": false,
+      "derivedCoupleCount": 0,
+      "signals": [],
+      "highlights": [
+        "When trying to change the target temperature I get this error:"
+      ],
+      "summary": "couple=_TZE284_ogx8u5z6+TS0601",
+      "interviewId": null
+    },
+    {
+      "source": ".github/state/diag-recursive-inbox/bodies/imap_e783bb08b214.txt",
+      "kind": "gmail_body",
+      "logId": "e783bb08",
+      "appVersion": null,
+      "userMessage": null,
+      "drivers": [],
+      "deviceIds": [],
+      "couples": [],
+      "coupleAbsent": false,
+      "derivedCoupleCount": 0,
+      "signals": [],
+      "highlights": [],
+      "summary": null,
+      "interviewId": null
+    },
+    {
+      "source": ".github/state/diag-recursive-inbox/bodies/imap_e63b27c41e9f.txt",
+      "kind": "gmail_body",
+      "logId": "e63b27c4",
+      "appVersion": null,
+      "userMessage": null,
+      "drivers": [],
+      "deviceIds": [],
+      "couples": [],
+      "coupleAbsent": false,
+      "derivedCoupleCount": 0,
+      "signals": [],
+      "highlights": [],
+      "summary": null,
+      "interviewId": null
+    },
+    {
+      "source": ".github/state/diag-recursive-inbox/bodies/imap_e56ffe59c76e.txt",
+      "kind": "gmail_body",
+      "logId": "e56ffe59",
+      "appVersion": null,
+      "userMessage": null,
+      "drivers": [],
+      "deviceIds": [],
+      "couples": [],
+      "coupleAbsent": false,
+      "derivedCoupleCount": 0,
+      "signals": [],
+      "highlights": [],
+      "summary": null,
+      "interviewId": null
+    },
+    {
+      "source": ".github/state/diag-recursive-inbox/bodies/imap_e499b71ecd4a.txt",
+      "kind": "gmail_body",
+      "logId": "e499b71e",
+      "appVersion": null,
+      "userMessage": null,
+      "drivers": [],
+      "deviceIds": [],
+      "couples": [],
+      "coupleAbsent": false,
+      "derivedCoupleCount": 0,
+      "signals": [],
+      "highlights": [],
+      "summary": null,
+      "interviewId": null
+    },
+    {
+      "source": ".github/state/diag-recursive-inbox/bodies/imap_e3948c7f5ee0.txt",
+      "kind": "gmail_body",
+      "logId": "e3948c7f",
+      "appVersion": null,
+      "userMessage": null,
+      "drivers": [],
+      "deviceIds": [],
+      "couples": [],
+      "coupleAbsent": false,
+      "derivedCoupleCount": 0,
+      "signals": [],
+      "highlights": [],
+      "summary": null,
+      "interviewId": null
+    },
+    {
+      "source": ".github/state/diag-recursive-inbox/bodies/imap_dfda79579a3e.txt",
+      "kind": "gmail_body",
+      "logId": "dfda7957",
+      "appVersion": null,
+      "userMessage": null,
+      "drivers": [],
+      "deviceIds": [],
+      "couples": [],
+      "coupleAbsent": false,
+      "derivedCoupleCount": 0,
+      "signals": [],
+      "highlights": [],
+      "summary": null,
+      "interviewId": null
+    },
+    {
+      "source": ".github/state/diag-recursive-inbox/bodies/imap_dd816fa0e3a5.txt",
+      "kind": "gmail_body",
+      "logId": "dd816fa0",
+      "appVersion": "9.0.1016",
+      "userMessage": null,
+      "drivers": [
+        "presence_sensor_radar"
+      ],
+      "deviceIds": [],
+      "couples": [
+        {
+          "mfr": "_TZ321C_fkzihaxe8",
+          "pid": "TS0225",
+          "canonicalDriver": "presence_sensor_radar",
+          "forbiddenDrivers": [],
+          "confidence": "derived_interview_soft",
+          "sourceInterview": "INT-005"
+        },
+        {
+          "mfr": "_TZE200_rhgsbacq",
+          "pid": "TS0601",
+          "canonicalDriver": "presence_sensor_radar",
+          "forbiddenDrivers": [],
+          "confidence": "derived_interview_soft",
+          "sourceInterview": "INT-016"
+        },
+        {
+          "mfr": "HOBEIAN",
+          "pid": "ZG-204ZV",
+          "canonicalDriver": "presence_sensor_radar",
+          "forbiddenDrivers": [],
+          "confidence": "derived_interview_soft",
+          "sourceInterview": "INT-143"
+        },
+        {
+          "mfr": "_TZE200_3towulqd",
+          "pid": "TS0601",
+          "canonicalDriver": "presence_sensor_radar",
+          "forbiddenDrivers": [],
+          "confidence": "derived_interview_soft",
+          "sourceInterview": "INT-144"
+        },
+        {
+          "mfr": "_TZE200_2aaelwxk",
+          "pid": "TS0601",
+          "canonicalDriver": "presence_sensor_radar",
+          "forbiddenDrivers": [],
+          "confidence": "derived_interview_soft",
+          "sourceInterview": "INT-145"
+        },
+        {
+          "mfr": "_TZE200_kb5noeto",
+          "pid": "TS0601",
+          "canonicalDriver": "presence_sensor_radar",
+          "forbiddenDrivers": [],
+          "confidence": "derived_interview_soft",
+          "sourceInterview": "INT-141"
+        }
+      ],
+      "coupleAbsent": false,
+      "derivedCoupleCount": 6,
+      "signals": [],
+      "highlights": [
+        "2026-09-17T20:03:44.174Z [log] [ManagerDrivers] [Driver:presence_sensor_radar] [Device:[REDACTED_UUID:[REDACTED_SECRET] [TUYA-P0] ð TUYA 0xEF00 FRAME RECEIVE",
+        "2026-09-17T20:03:44.174Z [log] [ManagerDrivers] [Driver:presence_sensor_radar] [Device:[REDACTED_UUID:[REDACTED_SECRET] [TUYA-P0] ð¨ Default Response: cmd=0x1",
+        "2026-09-17T20:03:44.175Z [log] [ManagerDrivers] [Driver:presence_sensor_radar] [Device:[REDACTED_UUID:[REDACTED_SECRET] [TUYA-P0] ð TUYA 0xEF00 FRAME RECEIVE",
+        "2026-09-17T20:03:44.175Z [log] [ManagerDrivers] [Driver:presence_sensor_radar] [Device:[REDACTED_UUID:[REDACTED_SECRET] [TUYA-P0] ð¦ MCU version: 1.0.6 (0x46)",
+        "2026-09-17T20:03:46.060Z [log] [ManagerDrivers] [Driver:presence_sensor_radar] [Device:[REDACTED_UUID:[REDACTED_SECRET] [TUYA-P0] ð TUYA 0xEF00 FRAME RECEIVE",
+        "2026-09-17T20:03:46.060Z [log] [ManagerDrivers] [Driver:presence_sensor_radar] [Device:[REDACTED_UUID:[REDACTED_SECRET] [TUYA-P0] Parsing frame: 096e02006b09020"
+      ],
+      "summary": "app=9.0.1016 | drivers=presence_sensor_radar",
+      "interviewId": null
+    },
+    {
+      "source": "docs/data/DEVICE_INTERVIEWS.json#INT-001",
+      "kind": "interview",
+      "logId": "d8820bc1",
+      "appVersion": null,
+      "userMessage": null,
+      "drivers": [],
+      "deviceIds": [],
+      "couples": [
+        {
+          "mfr": "_TZE284_iadro9bf",
+          "pid": "TS0601",
+          "canonicalDriver": null,
+          "forbiddenDrivers": [],
+          "confidence": "interview_locked"
+        }
+      ],
+      "coupleAbsent": false,
+      "derivedCoupleCount": 0,
+      "signals": [],
+      "highlights": [],
+      "summary": "id=d8820bc1 | couple=_TZE284_iadro9bf+TS0601",
+      "interviewId": "INT-001"
+    },
+    {
+      "source": ".github/state/diag-recursive-inbox/bodies/imap_d5b33da76528.txt",
+      "kind": "gmail_body",
+      "logId": "d5b33da7",
+      "appVersion": null,
+      "userMessage": null,
+      "drivers": [],
+      "deviceIds": [],
+      "couples": [],
+      "coupleAbsent": false,
+      "derivedCoupleCount": 0,
+      "signals": [],
+      "highlights": [],
+      "summary": null,
+      "interviewId": null
+    },
+    {
+      "source": ".github/state/diag-recursive-inbox/bodies/imap_d517ff884078.txt",
+      "kind": "gmail_body",
+      "logId": "d517ff88",
+      "appVersion": null,
+      "userMessage": null,
+      "drivers": [],
+      "deviceIds": [],
+      "couples": [
+        {
+          "mfr": "_TZE204_gkfbdvyx",
+          "pid": "TS0601",
+          "canonicalDriver": "presence_sensor_radar",
+          "forbiddenDrivers": [
+            "curtain_motor",
+            "device_radiator_valve",
+            "radiator_valve",
+            "smartplug",
+            "generic_tuya",
+            "zigbee_universal",
+            "unknown_zigbee_unit"
+          ],
+          "confidence": "in_log"
+        }
+      ],
+      "coupleAbsent": false,
+      "derivedCoupleCount": 0,
+      "signals": [],
+      "highlights": [],
+      "summary": "couple=_TZE204_gkfbdvyx+TS0601",
+      "interviewId": null
+    },
+    {
+      "source": ".github/state/diag-recursive-inbox/bodies/imap_d3b8f0ad2c3d.txt",
+      "kind": "gmail_body",
+      "logId": "d3b8f0ad",
+      "appVersion": null,
+      "userMessage": null,
+      "drivers": [],
+      "deviceIds": [],
+      "couples": [
+        {
+          "mfr": "_TZE204_gkfbdvyx",
+          "pid": "TS0601",
+          "canonicalDriver": "presence_sensor_radar",
+          "forbiddenDrivers": [
+            "curtain_motor",
+            "device_radiator_valve",
+            "radiator_valve",
+            "smartplug",
+            "generic_tuya",
+            "zigbee_universal",
+            "unknown_zigbee_unit"
+          ],
+          "confidence": "in_log"
+        }
+      ],
+      "coupleAbsent": false,
+      "derivedCoupleCount": 0,
+      "signals": [],
+      "highlights": [],
+      "summary": "couple=_TZE204_gkfbdvyx+TS0601",
+      "interviewId": null
+    },
+    {
+      "source": ".github/state/diag-recursive-inbox/bodies/imap_d352ad5121d9.txt",
+      "kind": "gmail_body",
+      "logId": "d352ad51",
+      "appVersion": null,
+      "userMessage": null,
+      "drivers": [],
+      "deviceIds": [],
+      "couples": [],
+      "coupleAbsent": false,
+      "derivedCoupleCount": 0,
+      "signals": [],
+      "highlights": [],
+      "summary": null,
+      "interviewId": null
+    },
+    {
+      "source": ".github/state/diag-recursive-inbox/bodies/imap_d2eea94bd5c8.txt",
+      "kind": "gmail_body",
+      "logId": "d2eea94b",
+      "appVersion": null,
+      "userMessage": null,
+      "drivers": [],
+      "deviceIds": [],
+      "couples": [],
+      "coupleAbsent": false,
+      "derivedCoupleCount": 0,
+      "signals": [],
+      "highlights": [],
+      "summary": null,
+      "interviewId": null
+    },
+    {
+      "source": ".github/state/diag-recursive-inbox/bodies/imap_d2bc73e93af2.txt",
+      "kind": "gmail_body",
+      "logId": "d2bc73e9",
+      "appVersion": "1.0.51",
+      "userMessage": null,
+      "drivers": [],
+      "deviceIds": [],
+      "couples": [],
+      "coupleAbsent": false,
+      "derivedCoupleCount": 0,
+      "signals": [],
+      "highlights": [
+        "CreateClientError: Cannot find module 'homey-zigbeedriver'",
+        "- /app/packages/homey-local/lib/AppProcess/node_modules/@athombv/homey-apps-sdk-v3/index.js Error: Cannot find module 'homey-zigbeedriver'",
+        "CreateClientError: Cannot find module 'homey-zigbeedriver'",
+        "- /app/packages/homey-local/lib/AppProcess/node_modules/@athombv/homey-apps-sdk-v3/index.js Error: Cannot find module 'homey-zigbeedriver'",
+        "Error: Cannot find module 'homey-zigbeedriver'",
+        "Error: Cannot find module 'homey-zigbeedriver'"
+      ],
+      "summary": "app=1.0.51",
+      "interviewId": null
+    },
+    {
+      "source": ".github/state/diag-recursive-inbox/bodies/imap_d1d1eefe8db4.txt",
+      "kind": "gmail_body",
+      "logId": "d1d1eefe",
+      "appVersion": null,
+      "userMessage": null,
+      "drivers": [],
+      "deviceIds": [],
+      "couples": [
+        {
+          "mfr": "_TZE204_gkfbdvyx",
+          "pid": "TS0601",
+          "canonicalDriver": "presence_sensor_radar",
+          "forbiddenDrivers": [
+            "curtain_motor",
+            "device_radiator_valve",
+            "radiator_valve",
+            "smartplug",
+            "generic_tuya",
+            "zigbee_universal",
+            "unknown_zigbee_unit"
+          ],
+          "confidence": "in_log"
+        }
+      ],
+      "coupleAbsent": false,
+      "derivedCoupleCount": 0,
+      "signals": [],
+      "highlights": [],
+      "summary": "couple=_TZE204_gkfbdvyx+TS0601",
+      "interviewId": null
+    },
+    {
+      "source": ".github/state/diag-recursive-inbox/bodies/imap_d18eba1569ab.txt",
+      "kind": "gmail_body",
+      "logId": "d18eba15",
+      "appVersion": null,
+      "userMessage": null,
+      "drivers": [],
+      "deviceIds": [],
+      "couples": [
+        {
+          "mfr": "_TZ3000_famkxci2",
+          "pid": "TS0043",
+          "canonicalDriver": null,
+          "forbiddenDrivers": [],
+          "confidence": "in_log"
+        }
+      ],
+      "coupleAbsent": false,
+      "derivedCoupleCount": 0,
+      "signals": [],
+      "highlights": [],
+      "summary": "couple=_TZ3000_famkxci2+TS0043",
+      "interviewId": null
+    },
+    {
+      "source": ".github/state/diag-recursive-inbox/bodies/imap_d149506e6276.txt",
+      "kind": "gmail_body",
+      "logId": "d149506e",
+      "appVersion": "5.12.290",
+      "userMessage": null,
+      "drivers": [],
+      "deviceIds": [],
+      "couples": [],
+      "coupleAbsent": false,
+      "derivedCoupleCount": 0,
+      "signals": [],
+      "highlights": [
+        "Error: Cannot find module '../../lib/tuya/TuyaRadarRangeScale'",
+        "Error: Cannot find module '../../lib/tuya/TuyaRadarRangeScale'"
+      ],
+      "summary": "app=5.12.290",
+      "interviewId": null
+    },
+    {
+      "source": ".github/state/diag-recursive-inbox/bodies/imap_ce3d268b04d0.txt",
+      "kind": "gmail_body",
+      "logId": "ce3d268b",
+      "appVersion": null,
+      "userMessage": null,
+      "drivers": [],
+      "deviceIds": [],
+      "couples": [],
+      "coupleAbsent": false,
+      "derivedCoupleCount": 0,
+      "signals": [],
+      "highlights": [],
+      "summary": null,
+      "interviewId": null
+    },
+    {
+      "source": ".github/state/diag-recursive-inbox/bodies/imap_cddb45873177.txt",
+      "kind": "gmail_body",
+      "logId": "cddb4587",
+      "appVersion": null,
+      "userMessage": null,
+      "drivers": [],
+      "deviceIds": [],
+      "couples": [],
+      "coupleAbsent": false,
+      "derivedCoupleCount": 0,
+      "signals": [],
+      "highlights": [],
+      "summary": null,
+      "interviewId": null
+    },
+    {
+      "source": ".github/state/diag-recursive-inbox/bodies/imap_cb6727077498.txt",
+      "kind": "gmail_body",
+      "logId": "cb672707",
+      "appVersion": "1.0.93",
+      "userMessage": null,
+      "drivers": [
+        "button_wireless_2",
+        "button_wireless_1",
+        "button_wireless_3"
+      ],
+      "deviceIds": [],
+      "couples": [
+        {
+          "mfr": "_TZ3000_dzwgk7e2",
+          "pid": "TS0042",
+          "canonicalDriver": "button_wireless_2",
+          "forbiddenDrivers": [
+            "button_wireless_1",
+            "button_wireless_4",
+            "scene_switch_4",
+            "switch_2gang",
+            "zigbee_universal",
+            "generic_tuya"
+          ],
+          "confidence": "in_log"
+        }
+      ],
+      "coupleAbsent": false,
+      "derivedCoupleCount": 0,
+      "signals": [],
+      "highlights": [
+        "2026-09-24T17:27:15.159Z [log] [ManagerDrivers] [Driver:button_wireless_1] [Device:[REDACTED_UUID:[REDACTED_SECRET] [BATTERY] Configuring standard battery repor",
+        "2026-09-24T17:27:21.139Z [log] [ManagerDrivers] [Driver:button_wireless_3] [Device:[REDACTED_UUID:[REDACTED_SECRET] [BATTERY] â ï¸ configureReporting failed (",
+        "2026-09-24T17:27:21.140Z [log] [ManagerDrivers] [Driver:button_wireless_3] [Device:[REDACTED_UUID:[REDACTED_SECRET] [BATTERY] Device will report battery when it",
+        "2026-09-24T17:27:30.169Z [log] [ManagerDrivers] [Driver:button_wireless_1] [Device:[REDACTED_UUID:[REDACTED_SECRET] [BATTERY] â ï¸ configureReporting failed (",
+        "2026-09-24T17:27:30.170Z [log] [ManagerDrivers] [Driver:button_wireless_1] [Device:[REDACTED_UUID:[REDACTED_SECRET] [BATTERY] Device will report battery when it",
+        "2026-09-24T17:27:41.441Z [log] [ManagerDrivers] [Driver:button_wireless_2] [Device:[REDACTED_UUID:[REDACTED_SECRET] [IAS-ZONE] â Found IAS Zone cluster on end"
+      ],
+      "summary": "app=1.0.93 | couple=_TZ3000_dzwgk7e2+TS0042",
+      "interviewId": null
+    },
+    {
+      "source": ".github/state/diag-recursive-inbox/bodies/imap_c7982b41da12.txt",
+      "kind": "gmail_body",
+      "logId": "c7982b41",
+      "appVersion": null,
+      "userMessage": null,
+      "drivers": [],
+      "deviceIds": [],
+      "couples": [],
+      "coupleAbsent": false,
+      "derivedCoupleCount": 0,
+      "signals": [],
+      "highlights": [],
+      "summary": null,
+      "interviewId": null
+    },
+    {
+      "source": ".github/state/diag-recursive-inbox/bodies/imap_c4d1498d3d3e.txt",
+      "kind": "gmail_body",
+      "logId": "c4d1498d",
+      "appVersion": null,
+      "userMessage": null,
+      "drivers": [],
+      "deviceIds": [],
+      "couples": [],
+      "coupleAbsent": false,
+      "derivedCoupleCount": 0,
+      "signals": [],
+      "highlights": [],
+      "summary": null,
+      "interviewId": null
+    },
+    {
+      "source": ".github/state/diag-recursive-inbox/bodies/imap_c4b1431bc108.txt",
+      "kind": "gmail_body",
+      "logId": "c4b1431b",
+      "appVersion": null,
+      "userMessage": null,
+      "drivers": [],
+      "deviceIds": [],
+      "couples": [],
+      "coupleAbsent": false,
+      "derivedCoupleCount": 0,
+      "signals": [],
+      "highlights": [],
+      "summary": null,
+      "interviewId": null
+    },
+    {
+      "source": "docs/data/DEVICE_INTERVIEWS.json#INT-150",
+      "kind": "interview",
+      "logId": "c4a25bc8",
+      "appVersion": null,
+      "userMessage": null,
+      "drivers": [],
+      "deviceIds": [],
+      "couples": [
+        {
+          "mfr": "unknown",
+          "pid": "unknown",
+          "canonicalDriver": "button_wireless_1",
+          "forbiddenDrivers": [],
+          "confidence": "interview_locked"
+        }
+      ],
+      "coupleAbsent": false,
+      "derivedCoupleCount": 0,
+      "signals": [],
+      "highlights": [],
+      "summary": "id=c4a25bc8",
+      "interviewId": "INT-150"
+    },
+    {
+      "source": ".github/state/diag-recursive-inbox/bodies/imap_bc22d547f4ec.txt",
+      "kind": "gmail_body",
+      "logId": "bc22d547",
+      "appVersion": null,
+      "userMessage": null,
+      "drivers": [],
+      "deviceIds": [],
+      "couples": [],
+      "coupleAbsent": false,
+      "derivedCoupleCount": 0,
+      "signals": [],
+      "highlights": [],
+      "summary": null,
+      "interviewId": null
+    },
+    {
+      "source": ".github/state/diag-recursive-inbox/bodies/imap_bb9c0bbd59b3.txt",
+      "kind": "gmail_body",
+      "logId": "bb9c0bbd",
+      "appVersion": null,
+      "userMessage": null,
+      "drivers": [],
+      "deviceIds": [],
+      "couples": [],
+      "coupleAbsent": false,
+      "derivedCoupleCount": 0,
+      "signals": [],
+      "highlights": [],
+      "summary": null,
+      "interviewId": null
+    },
+    {
+      "source": ".github/state/diag-recursive-inbox/bodies/imap_baeb84985803.txt",
+      "kind": "gmail_body",
+      "logId": "baeb8498",
+      "appVersion": null,
+      "userMessage": null,
+      "drivers": [],
+      "deviceIds": [],
+      "couples": [],
+      "coupleAbsent": false,
+      "derivedCoupleCount": 0,
+      "signals": [],
+      "highlights": [],
+      "summary": null,
+      "interviewId": null
+    },
+    {
+      "source": ".github/state/diag-recursive-inbox/bodies/imap_b49324ab22cb.txt",
+      "kind": "gmail_body",
+      "logId": "b49324ab",
+      "appVersion": "1.0.7",
+      "userMessage": null,
+      "drivers": [
+        "remote_button_wireless_wall"
+      ],
+      "deviceIds": [],
+      "couples": [
+        {
+          "mfr": "_TZ3000_axpdxqgu",
+          "pid": "TS0041",
+          "canonicalDriver": "button_wireless_1",
+          "forbiddenDrivers": [
+            "remote_button_wireless_wall",
+            "smart_knob",
+            "button_wireless_4",
+            "scene_switch_4"
+          ],
+          "confidence": "in_log"
+        }
+      ],
+      "coupleAbsent": false,
+      "derivedCoupleCount": 0,
+      "signals": [],
+      "highlights": [
+        "2026-09-20T13:23:26.403Z [err] [ManagerDrivers] [Driver:remote_button_wireless_wall] [Device:[REDACTED_UUID:[REDACTED_SECRET] Error: 'onNodeInit()' failed, reas",
+        "2026-09-20T13:23:26.405Z [err] [ManagerDrivers] [Driver:remote_button_wireless_wall] [Device:[REDACTED_UUID:[REDACTED_SECRET] Error: could not initialize node R",
+        "'onNodeInit()' failed, reason: ReferenceError: CI is not defined",
+        "could not initialize node ReferenceError: CI is not defined",
+        "Error: 'onNodeInit()' failed, reason: ReferenceError: CI is not defined",
+        "Error: could not initialize node ReferenceError: CI is not defined"
+      ],
+      "summary": "app=1.0.7 | couple=_TZ3000_axpdxqgu+TS0041",
+      "interviewId": null
+    },
+    {
+      "source": ".github/state/diag-recursive-inbox/bodies/imap_af6bd1cfdc10.txt",
+      "kind": "gmail_body",
+      "logId": "af6bd1cf",
+      "appVersion": "9.0.992",
+      "userMessage": null,
+      "drivers": [
+        "presence_sensor_radar"
+      ],
+      "deviceIds": [],
+      "couples": [
+        {
+          "mfr": "_TZ321C_fkzihaxe8",
+          "pid": "TS0225",
+          "canonicalDriver": "presence_sensor_radar",
+          "forbiddenDrivers": [],
+          "confidence": "derived_interview_soft",
+          "sourceInterview": "INT-005"
+        },
+        {
+          "mfr": "_TZE200_rhgsbacq",
+          "pid": "TS0601",
+          "canonicalDriver": "presence_sensor_radar",
+          "forbiddenDrivers": [],
+          "confidence": "derived_interview_soft",
+          "sourceInterview": "INT-016"
+        },
+        {
+          "mfr": "HOBEIAN",
+          "pid": "ZG-204ZV",
+          "canonicalDriver": "presence_sensor_radar",
+          "forbiddenDrivers": [],
+          "confidence": "derived_interview_soft",
+          "sourceInterview": "INT-143"
+        },
+        {
+          "mfr": "_TZE200_3towulqd",
+          "pid": "TS0601",
+          "canonicalDriver": "presence_sensor_radar",
+          "forbiddenDrivers": [],
+          "confidence": "derived_interview_soft",
+          "sourceInterview": "INT-144"
+        },
+        {
+          "mfr": "_TZE200_2aaelwxk",
+          "pid": "TS0601",
+          "canonicalDriver": "presence_sensor_radar",
+          "forbiddenDrivers": [],
+          "confidence": "derived_interview_soft",
+          "sourceInterview": "INT-145"
+        },
+        {
+          "mfr": "_TZE200_kb5noeto",
+          "pid": "TS0601",
+          "canonicalDriver": "presence_sensor_radar",
+          "forbiddenDrivers": [],
+          "confidence": "derived_interview_soft",
+          "sourceInterview": "INT-141"
+        }
+      ],
+      "coupleAbsent": false,
+      "derivedCoupleCount": 6,
+      "signals": [],
+      "highlights": [
+        "2026-09-17T11:02:43.734Z [log] [ManagerDrivers] [Driver:presence_sensor_radar] [Device:[REDACTED_UUID:[REDACTED_SECRET] [TUYA-P0] ð TUYA 0xEF00 FRAME RECEIVE",
+        "2026-09-17T11:02:43.735Z [log] [ManagerDrivers] [Driver:presence_sensor_radar] [Device:[REDACTED_UUID:[REDACTED_SECRET] [TUYA-P0] Parsing frame: 091202004074040",
+        "2026-09-17T11:02:43.735Z [log] [ManagerDrivers] [Driver:presence_sensor_radar] [Device:[REDACTED_UUID:[REDACTED_SECRET] [TUYA-P0] â Parsed DP116 type=4 len=1",
+        "2026-09-17T11:02:43.735Z [log] [ManagerDrivers] [Driver:presence_sensor_radar] [Device:[REDACTED_UUID:[REDACTED_SECRET] [DP] ð¥ DP116 type=uint8 raw=1 interva",
+        "2026-09-17T11:02:43.764Z [log] [ManagerDrivers] [Driver:presence_sensor_radar] [Device:[REDACTED_UUID:[REDACTED_SECRET] [TUYA-P0] ð TUYA 0xEF00 FRAME RECEIVE",
+        "2026-09-17T11:02:43.764Z [log] [ManagerDrivers] [Driver:presence_sensor_radar] [Device:[REDACTED_UUID:[REDACTED_SECRET] [TUYA-P0] Parsing frame: 096102007d74040"
+      ],
+      "summary": "app=9.0.992 | drivers=presence_sensor_radar",
+      "interviewId": null
+    },
+    {
+      "source": ".github/state/diag-recursive-inbox/bodies/imap_ae62e3cf84d7.txt",
+      "kind": "gmail_body",
+      "logId": "ae62e3cf",
+      "appVersion": null,
+      "userMessage": null,
+      "drivers": [],
+      "deviceIds": [],
+      "couples": [],
+      "coupleAbsent": false,
+      "derivedCoupleCount": 0,
+      "signals": [],
+      "highlights": [],
+      "summary": null,
+      "interviewId": null
+    },
+    {
+      "source": "docs/data/DEVICE_INTERVIEWS.json#INT-161",
+      "kind": "interview",
+      "logId": "ad2e946e",
+      "appVersion": null,
+      "userMessage": null,
+      "drivers": [],
+      "deviceIds": [],
+      "couples": [
+        {
+          "mfr": "_TZ3000_zgyzgdua",
+          "pid": "TS0044",
+          "canonicalDriver": "scene_switch_4",
+          "forbiddenDrivers": [
+            "button_wireless_4",
+            "smart_knob",
+            "wall_dimmer_tuya"
+          ],
+          "confidence": "interview_locked"
+        }
+      ],
+      "coupleAbsent": false,
+      "derivedCoupleCount": 0,
+      "signals": [],
+      "highlights": [],
+      "summary": "id=ad2e946e | couple=_TZ3000_zgyzgdua+TS0044",
+      "interviewId": "INT-161"
+    },
+    {
+      "source": ".github/state/diag-recursive-inbox/bodies/imap_aca32908b1cf.txt",
+      "kind": "gmail_body",
+      "logId": "aca32908",
+      "appVersion": "9.0.1145",
+      "userMessage": null,
+      "drivers": [
+        "presence_sensor_radar"
+      ],
+      "deviceIds": [],
+      "couples": [
+        {
+          "mfr": "_TZ321C_fkzihaxe8",
+          "pid": "TS0225",
+          "canonicalDriver": "presence_sensor_radar",
+          "forbiddenDrivers": [],
+          "confidence": "derived_interview_soft",
+          "sourceInterview": "INT-005"
+        },
+        {
+          "mfr": "_TZE200_rhgsbacq",
+          "pid": "TS0601",
+          "canonicalDriver": "presence_sensor_radar",
+          "forbiddenDrivers": [],
+          "confidence": "derived_interview_soft",
+          "sourceInterview": "INT-016"
+        },
+        {
+          "mfr": "HOBEIAN",
+          "pid": "ZG-204ZV",
+          "canonicalDriver": "presence_sensor_radar",
+          "forbiddenDrivers": [],
+          "confidence": "derived_interview_soft",
+          "sourceInterview": "INT-143"
+        },
+        {
+          "mfr": "_TZE200_3towulqd",
+          "pid": "TS0601",
+          "canonicalDriver": "presence_sensor_radar",
+          "forbiddenDrivers": [],
+          "confidence": "derived_interview_soft",
+          "sourceInterview": "INT-144"
+        },
+        {
+          "mfr": "_TZE200_2aaelwxk",
+          "pid": "TS0601",
+          "canonicalDriver": "presence_sensor_radar",
+          "forbiddenDrivers": [],
+          "confidence": "derived_interview_soft",
+          "sourceInterview": "INT-145"
+        },
+        {
+          "mfr": "_TZE200_kb5noeto",
+          "pid": "TS0601",
+          "canonicalDriver": "presence_sensor_radar",
+          "forbiddenDrivers": [],
+          "confidence": "derived_interview_soft",
+          "sourceInterview": "INT-141"
+        }
+      ],
+      "coupleAbsent": false,
+      "derivedCoupleCount": 6,
+      "signals": [],
+      "highlights": [
+        "2026-09-21T08:00:16.165Z [log] [ManagerDrivers] [Driver:presence_sensor_radar] [Device:[REDACTED_UUID:[REDACTED_SECRET] [TUYA-P0] ð TUYA 0xEF00 FRAME RECEIVE",
+        "2026-09-21T08:00:16.165Z [log] [ManagerDrivers] [Driver:presence_sensor_radar] [Device:[REDACTED_UUID:[REDACTED_SECRET] [TUYA-P0] Parsing frame: 090802004471040",
+        "2026-09-21T08:00:16.165Z [log] [ManagerDrivers] [Driver:presence_sensor_radar] [Device:[REDACTED_UUID:[REDACTED_SECRET] [TUYA-P0] â Parsed DP113 type=4 len=1",
+        "2026-09-21T08:00:16.165Z [log] [ManagerDrivers] [Driver:presence_sensor_radar] [Device:[REDACTED_UUID:[REDACTED_SECRET] [DP] ð¥ DP113 type=uint8 raw=0 interva",
+        "2026-09-21T08:00:16.251Z [log] [ManagerDrivers] [Driver:presence_sensor_radar] [Device:[REDACTED_UUID:[REDACTED_SECRET] [TUYA-P0] ð TUYA 0xEF00 FRAME RECEIVE",
+        "2026-09-21T08:00:16.251Z [log] [ManagerDrivers] [Driver:presence_sensor_radar] [Device:[REDACTED_UUID:[REDACTED_SECRET] [TUYA-P0] Parsing frame: 090902004573040"
+      ],
+      "summary": "app=9.0.1145 | drivers=presence_sensor_radar",
+      "interviewId": null
+    },
+    {
+      "source": ".github/state/diag-recursive-inbox/bodies/imap_ac10250f72ba.txt",
+      "kind": "gmail_body",
+      "logId": "ac10250f",
+      "appVersion": null,
+      "userMessage": null,
+      "drivers": [],
+      "deviceIds": [],
+      "couples": [],
+      "coupleAbsent": false,
+      "derivedCoupleCount": 0,
+      "signals": [],
+      "highlights": [],
+      "summary": null,
+      "interviewId": null
+    },
+    {
+      "source": "docs/data/DEVICE_INTERVIEWS.json#INT-162",
+      "kind": "interview",
+      "logId": "aba2c0c3",
+      "appVersion": null,
+      "userMessage": null,
+      "drivers": [],
+      "deviceIds": [],
+      "couples": [
+        {
+          "mfr": "_TZE284_o3x45p96",
+          "pid": "TS0601",
+          "canonicalDriver": null,
+          "forbiddenDrivers": [],
+          "confidence": "interview_locked"
+        }
+      ],
+      "coupleAbsent": false,
+      "derivedCoupleCount": 0,
+      "signals": [],
+      "highlights": [],
+      "summary": "id=aba2c0c3 | couple=_TZE284_o3x45p96+TS0601",
+      "interviewId": "INT-162"
+    },
+    {
+      "source": ".github/state/diag-recursive-inbox/bodies/imap_ab1dfbb3bc07.txt",
+      "kind": "gmail_body",
+      "logId": "ab1dfbb3",
+      "appVersion": "1.0.53",
+      "userMessage": null,
+      "drivers": [
+        "switch_1gang",
+        "button_wireless_2",
+        "button_wireless_3"
+      ],
+      "deviceIds": [],
+      "couples": [
+        {
+          "mfr": "_TZ3000_dzwgk7e2",
+          "pid": "TS0042",
+          "canonicalDriver": "button_wireless_2",
+          "forbiddenDrivers": [
+            "button_wireless_1",
+            "button_wireless_4",
+            "scene_switch_4",
+            "switch_2gang",
+            "zigbee_universal",
+            "generic_tuya"
+          ],
+          "confidence": "in_log"
+        }
+      ],
+      "coupleAbsent": false,
+      "derivedCoupleCount": 0,
+      "signals": [],
+      "highlights": [],
+      "summary": "app=1.0.53 | couple=_TZ3000_dzwgk7e2+TS0042",
+      "interviewId": null
+    },
+    {
+      "source": ".github/state/diag-recursive-inbox/bodies/imap_a98b597c4451.txt",
+      "kind": "gmail_body",
+      "logId": "a98b597c",
+      "appVersion": "1.0.80",
+      "userMessage": null,
+      "drivers": [
+        "switch_1gang",
+        "button_wireless_3",
+        "button_wireless_2",
+        "button_wireless_1"
+      ],
+      "deviceIds": [],
+      "couples": [
+        {
+          "mfr": "_TZ3000_dzwgk7e2",
+          "pid": "TS0042",
+          "canonicalDriver": "button_wireless_2",
+          "forbiddenDrivers": [
+            "button_wireless_1",
+            "button_wireless_4",
+            "scene_switch_4",
+            "switch_2gang",
+            "zigbee_universal",
+            "generic_tuya"
+          ],
+          "confidence": "in_log"
+        }
+      ],
+      "coupleAbsent": false,
+      "derivedCoupleCount": 0,
+      "signals": [],
+      "highlights": [],
+      "summary": "app=1.0.80 | couple=_TZ3000_dzwgk7e2+TS0042",
+      "interviewId": null
+    },
+    {
+      "source": ".github/state/diag-recursive-inbox/bodies/imap_a920572c4db6.txt",
+      "kind": "gmail_body",
+      "logId": "a920572c",
+      "appVersion": null,
+      "userMessage": null,
+      "drivers": [],
+      "deviceIds": [],
+      "couples": [],
+      "coupleAbsent": false,
+      "derivedCoupleCount": 0,
+      "signals": [],
+      "highlights": [],
+      "summary": null,
+      "interviewId": null
+    },
+    {
+      "source": ".github/state/diag-recursive-inbox/bodies/imap_a75b5fb7946d.txt",
+      "kind": "gmail_body",
+      "logId": "a75b5fb7",
+      "appVersion": null,
+      "userMessage": null,
+      "drivers": [],
+      "deviceIds": [],
+      "couples": [],
+      "coupleAbsent": false,
+      "derivedCoupleCount": 0,
+      "signals": [],
+      "highlights": [],
+      "summary": null,
+      "interviewId": null
+    },
+    {
+      "source": ".github/state/diag-recursive-inbox/bodies/imap_a4603b33f7c3.txt",
+      "kind": "gmail_body",
+      "logId": "a4603b33",
+      "appVersion": "1.0.112",
+      "userMessage": null,
+      "drivers": [
+        "switch_1gang",
+        "button_wireless_1",
+        "button_wireless_2",
+        "button_wireless_3"
+      ],
+      "deviceIds": [],
+      "couples": [
+        {
+          "mfr": "_TZ3000_blhvsaqf",
+          "pid": "TS0001",
+          "canonicalDriver": "switch_1gang",
+          "forbiddenDrivers": [],
+          "confidence": "derived_interview_soft",
+          "sourceInterview": "INT-019"
+        },
+        {
+          "mfr": "_TZ3000_ysdv91bk",
+          "pid": "TS0001",
+          "canonicalDriver": "switch_1gang",
+          "forbiddenDrivers": [],
+          "confidence": "derived_interview_soft",
+          "sourceInterview": "INT-051"
+        },
+        {
+          "mfr": "_TZ3000_*",
+          "pid": "TS0043",
+          "canonicalDriver": "button_wireless_3",
+          "forbiddenDrivers": [],
+          "confidence": "derived_interview_soft",
+          "sourceInterview": "INT-014"
+        },
+        {
+          "mfr": "_TZ3000_bczr4e10",
+          "pid": "TS0043",
+          "canonicalDriver": "button_wireless_3",
+          "forbiddenDrivers": [],
+          "confidence": "derived_interview_soft",
+          "sourceInterview": "INT-170"
+        }
+      ],
+      "coupleAbsent": false,
+      "derivedCoupleCount": 4,
+      "signals": [],
+      "highlights": [
+        "2026-09-25T22:06:48.915Z [log] [ManagerDrivers] [Driver:button_wireless_1] [Device:[REDACTED_UUID:[REDACTED_SECRET] [BATTERY] batteryPercentageRemaining report:"
+      ],
+      "summary": "app=1.0.112 | drivers=switch_1gang,button_wireless_1,button_wireless_2",
+      "interviewId": null
+    },
+    {
+      "source": ".github/state/diag-recursive-inbox/bodies/imap_a24fbe284e71.txt",
+      "kind": "gmail_body",
+      "logId": "a24fbe28",
+      "appVersion": null,
+      "userMessage": null,
+      "drivers": [],
+      "deviceIds": [],
+      "couples": [],
+      "coupleAbsent": false,
+      "derivedCoupleCount": 0,
+      "signals": [],
+      "highlights": [],
+      "summary": null,
+      "interviewId": null
+    },
+    {
+      "source": ".github/state/diag-recursive-inbox/bodies/imap_a1a243f9ec09.txt",
+      "kind": "gmail_body",
+      "logId": "a1a243f9",
+      "appVersion": "1.0.34",
+      "userMessage": null,
+      "drivers": [
+        "switch_1gang"
+      ],
+      "deviceIds": [],
+      "couples": [
+        {
+          "mfr": "_TZ3000_blhvsaqf",
+          "pid": "TS0001",
+          "canonicalDriver": "switch_1gang",
+          "forbiddenDrivers": [],
+          "confidence": "derived_interview_soft",
+          "sourceInterview": "INT-019"
+        },
+        {
+          "mfr": "_TZ3000_ysdv91bk",
+          "pid": "TS0001",
+          "canonicalDriver": "switch_1gang",
+          "forbiddenDrivers": [],
+          "confidence": "derived_interview_soft",
+          "sourceInterview": "INT-051"
+        }
+      ],
+      "coupleAbsent": false,
+      "derivedCoupleCount": 2,
+      "signals": [],
+      "highlights": [
+        "2026-09-21T19:27:03.617Z [log] [TuyaUnifiedZigbeeApp] [FLOW-LOADER] triggerSubCapabilityChanged error: Could not trigger Flow card with id \"sub_capability_chang",
+        "2026-09-21T19:27:03.638Z [log] [TuyaUnifiedZigbeeApp] [FLOW-LOADER] triggerSubCapabilityChanged error: Could not trigger Flow card with id \"sub_capability_chang",
+        "2026-09-21T19:27:03.652Z [log] [TuyaUnifiedZigbeeApp] [FLOW-LOADER] triggerSubCapabilityChanged error: Could not trigger Flow card with id \"sub_capability_chang",
+        "2026-09-21T19:27:03.665Z [log] [TuyaUnifiedZigbeeApp] [FLOW-LOADER] triggerSubCapabilityChanged error: Could not trigger Flow card with id \"sub_capability_chang",
+        "2026-09-21T19:27:11.830Z [log] [TuyaUnifiedZigbeeApp] [FLOW-LOADER] triggerSubCapabilityChanged error: Could not trigger Flow card with id \"sub_capability_chang",
+        "2026-09-21T19:27:11.843Z [log] [TuyaUnifiedZigbeeApp] [FLOW-LOADER] triggerSubCapabilityChanged error: Could not trigger Flow card with id \"sub_capability_chang"
+      ],
+      "summary": "app=1.0.34 | drivers=switch_1gang",
+      "interviewId": null
+    },
+    {
+      "source": ".github/state/diag-recursive-inbox/bodies/imap_a15abd948498.txt",
+      "kind": "gmail_body",
+      "logId": "a15abd94",
+      "appVersion": "1.0.76",
+      "userMessage": null,
+      "drivers": [
+        "switch_1gang",
+        "button_wireless_2"
+      ],
+      "deviceIds": [],
+      "couples": [
+        {
+          "mfr": "_TZ3000_dzwgk7e2",
+          "pid": "TS0042",
+          "canonicalDriver": "button_wireless_2",
+          "forbiddenDrivers": [
+            "button_wireless_1",
+            "button_wireless_4",
+            "scene_switch_4",
+            "switch_2gang",
+            "zigbee_universal",
+            "generic_tuya"
+          ],
+          "confidence": "in_log"
+        }
+      ],
+      "coupleAbsent": false,
+      "derivedCoupleCount": 0,
+      "signals": [],
+      "highlights": [
+        "2026-09-23T15:29:50.209Z [log] [ManagerDrivers] [Driver:switch_1gang] [Device:[REDACTED_UUID:[REDACTED_SECRET] [FLOW] â¡ Triggered switch_1gang_turned_off",
+        "2026-09-23T15:29:50.325Z [log] [ManagerDrivers] [Driver:switch_1gang] [Device:[REDACTED_UUID:[REDACTED_SECRET] [FLOW] â¡ Triggered switch_1gang_turned_on"
+      ],
+      "summary": "app=1.0.76 | couple=_TZ3000_dzwgk7e2+TS0042",
+      "interviewId": null
+    },
+    {
+      "source": ".github/state/diag-recursive-inbox/bodies/imap_9ab1e21e9ad2.txt",
+      "kind": "gmail_body",
+      "logId": "9ab1e21e",
+      "appVersion": null,
+      "userMessage": null,
+      "drivers": [],
+      "deviceIds": [],
+      "couples": [
+        {
+          "mfr": "_TZE204_gkfbdvyx",
+          "pid": "TS0601",
+          "canonicalDriver": "presence_sensor_radar",
+          "forbiddenDrivers": [
+            "curtain_motor",
+            "device_radiator_valve",
+            "radiator_valve",
+            "smartplug",
+            "generic_tuya",
+            "zigbee_universal",
+            "unknown_zigbee_unit"
+          ],
+          "confidence": "in_log"
+        }
+      ],
+      "coupleAbsent": false,
+      "derivedCoupleCount": 0,
+      "signals": [],
+      "highlights": [],
+      "summary": "couple=_TZE204_gkfbdvyx+TS0601",
+      "interviewId": null
+    },
+    {
+      "source": ".github/state/diag-recursive-inbox/bodies/imap_9761b749fc01.txt",
+      "kind": "gmail_body",
+      "logId": "9761b749",
+      "appVersion": "1.0.53",
+      "userMessage": null,
+      "drivers": [
+        "switch_1gang",
+        "button_wireless_2",
+        "button_wireless_3"
+      ],
+      "deviceIds": [],
+      "couples": [
+        {
+          "mfr": "_TZ3000_dzwgk7e2",
+          "pid": "TS0042",
+          "canonicalDriver": "button_wireless_2",
+          "forbiddenDrivers": [
+            "button_wireless_1",
+            "button_wireless_4",
+            "scene_switch_4",
+            "switch_2gang",
+            "zigbee_universal",
+            "generic_tuya"
+          ],
+          "confidence": "in_log"
+        }
+      ],
+      "coupleAbsent": false,
+      "derivedCoupleCount": 0,
+      "signals": [],
+      "highlights": [
+        "2026-09-22T20:00:39.079Z [log] [ManagerDrivers] [Driver:switch_1gang] [Device:[REDACTED_UUID:[REDACTED_SECRET] [FLOW] â¡ Triggered switch_1gang_turned_on"
+      ],
+      "summary": "app=1.0.53 | couple=_TZ3000_dzwgk7e2+TS0042",
+      "interviewId": null
+    },
+    {
+      "source": ".github/state/diag-recursive-inbox/bodies/imap_9742b7f3888e.txt",
+      "kind": "gmail_body",
+      "logId": "9742b7f3",
+      "appVersion": null,
+      "userMessage": null,
+      "drivers": [],
+      "deviceIds": [],
+      "couples": [],
+      "coupleAbsent": false,
+      "derivedCoupleCount": 0,
+      "signals": [],
+      "highlights": [],
+      "summary": null,
+      "interviewId": null
+    },
+    {
+      "source": ".github/state/diag-recursive-inbox/bodies/imap_95e3e00f1154.txt",
+      "kind": "gmail_body",
+      "logId": "95e3e00f",
+      "appVersion": null,
+      "userMessage": null,
+      "drivers": [],
+      "deviceIds": [],
+      "couples": [],
+      "coupleAbsent": false,
+      "derivedCoupleCount": 0,
+      "signals": [],
+      "highlights": [],
+      "summary": null,
+      "interviewId": null
+    },
+    {
+      "source": ".github/state/diag-recursive-inbox/bodies/imap_9389e216b140.txt",
+      "kind": "gmail_body",
+      "logId": "9389e216",
+      "appVersion": null,
+      "userMessage": null,
+      "drivers": [],
+      "deviceIds": [],
+      "couples": [
+        {
+          "mfr": "_TZE204_gkfbdvyx",
+          "pid": "TS0601",
+          "canonicalDriver": "presence_sensor_radar",
+          "forbiddenDrivers": [
+            "curtain_motor",
+            "device_radiator_valve",
+            "radiator_valve",
+            "smartplug",
+            "generic_tuya",
+            "zigbee_universal",
+            "unknown_zigbee_unit"
+          ],
+          "confidence": "in_log"
+        }
+      ],
+      "coupleAbsent": false,
+      "derivedCoupleCount": 0,
+      "signals": [],
+      "highlights": [],
+      "summary": "couple=_TZE204_gkfbdvyx+TS0601",
+      "interviewId": null
+    },
+    {
+      "source": ".github/state/diag-recursive-inbox/bodies/imap_90a1baca7d65.txt",
+      "kind": "gmail_body",
+      "logId": "90a1baca",
+      "appVersion": null,
+      "userMessage": null,
+      "drivers": [],
+      "deviceIds": [],
+      "couples": [],
+      "coupleAbsent": false,
+      "derivedCoupleCount": 0,
+      "signals": [],
+      "highlights": [],
+      "summary": null,
+      "interviewId": null
+    },
+    {
+      "source": ".github/state/diag-recursive-inbox/bodies/imap_90263ff1e250.txt",
+      "kind": "gmail_body",
+      "logId": "90263ff1",
+      "appVersion": null,
+      "userMessage": null,
+      "drivers": [],
+      "deviceIds": [],
+      "couples": [
+        {
+          "mfr": "_TZE204_gkfbdvyx",
+          "pid": "TS0601",
+          "canonicalDriver": "presence_sensor_radar",
+          "forbiddenDrivers": [
+            "curtain_motor",
+            "device_radiator_valve",
+            "radiator_valve",
+            "smartplug",
+            "generic_tuya",
+            "zigbee_universal",
+            "unknown_zigbee_unit"
+          ],
+          "confidence": "in_log"
+        }
+      ],
+      "coupleAbsent": false,
+      "derivedCoupleCount": 0,
+      "signals": [],
+      "highlights": [],
+      "summary": "couple=_TZE204_gkfbdvyx+TS0601",
+      "interviewId": null
+    },
+    {
+      "source": ".github/state/diag-recursive-inbox/bodies/imap_8a3848acb700.txt",
+      "kind": "gmail_body",
+      "logId": "8a3848ac",
+      "appVersion": null,
+      "userMessage": null,
+      "drivers": [],
+      "deviceIds": [],
+      "couples": [],
+      "coupleAbsent": false,
+      "derivedCoupleCount": 0,
+      "signals": [],
+      "highlights": [],
+      "summary": null,
+      "interviewId": null
+    },
+    {
+      "source": ".github/state/diag-recursive-inbox/bodies/imap_8972b1d096f2.txt",
+      "kind": "gmail_body",
+      "logId": "8972b1d0",
+      "appVersion": null,
+      "userMessage": null,
+      "drivers": [],
+      "deviceIds": [],
+      "couples": [
+        {
+          "mfr": "_TZE204_gkfbdvyx",
+          "pid": "TS0601",
+          "canonicalDriver": "presence_sensor_radar",
+          "forbiddenDrivers": [
+            "curtain_motor",
+            "device_radiator_valve",
+            "radiator_valve",
+            "smartplug",
+            "generic_tuya",
+            "zigbee_universal",
+            "unknown_zigbee_unit"
+          ],
+          "confidence": "in_log"
+        }
+      ],
+      "coupleAbsent": false,
+      "derivedCoupleCount": 0,
+      "signals": [],
+      "highlights": [],
+      "summary": "couple=_TZE204_gkfbdvyx+TS0601",
+      "interviewId": null
+    },
+    {
+      "source": ".github/state/diag-recursive-inbox/bodies/imap_87b09c7af7c5.txt",
+      "kind": "gmail_body",
+      "logId": "87b09c7a",
+      "appVersion": null,
+      "userMessage": null,
+      "drivers": [],
+      "deviceIds": [],
+      "couples": [
+        {
+          "mfr": "_TZE204_gkfbdvyx",
+          "pid": "TS0601",
+          "canonicalDriver": "presence_sensor_radar",
+          "forbiddenDrivers": [
+            "curtain_motor",
+            "device_radiator_valve",
+            "radiator_valve",
+            "smartplug",
+            "generic_tuya",
+            "zigbee_universal",
+            "unknown_zigbee_unit"
+          ],
+          "confidence": "in_log"
+        }
+      ],
+      "coupleAbsent": false,
+      "derivedCoupleCount": 0,
+      "signals": [],
+      "highlights": [],
+      "summary": "couple=_TZE204_gkfbdvyx+TS0601",
+      "interviewId": null
+    },
+    {
+      "source": ".github/state/diag-recursive-inbox/bodies/imap_85b60092a6fc.txt",
+      "kind": "gmail_body",
+      "logId": "85b60092",
+      "appVersion": "1.0.60",
+      "userMessage": null,
+      "drivers": [
+        "switch_1gang",
+        "button_wireless_2"
+      ],
+      "deviceIds": [],
+      "couples": [
+        {
+          "mfr": "_TZ3000_dzwgk7e2",
+          "pid": "ts0042",
+          "canonicalDriver": "button_wireless_2",
+          "forbiddenDrivers": [
+            "button_wireless_1",
+            "button_wireless_4",
+            "scene_switch_4",
+            "switch_2gang",
+            "zigbee_universal",
+            "generic_tuya"
+          ],
+          "confidence": "in_log"
+        }
+      ],
+      "coupleAbsent": false,
+      "derivedCoupleCount": 0,
+      "signals": [],
+      "highlights": [
+        "2026-09-22T22:01:03.882Z [log] [ManagerDrivers] [Driver:switch_1gang] [Device:[REDACTED_UUID:[REDACTED_SECRET] [FLOW] â¡ Triggered switch_1gang_turned_off",
+        "2026-09-22T22:01:04.558Z [log] [ManagerDrivers] [Driver:switch_1gang] [Device:[REDACTED_UUID:[REDACTED_SECRET] [FLOW] â¡ Triggered switch_1gang_turned_on",
+        "2026-09-22T22:01:06.843Z [log] [ManagerDrivers] [Driver:switch_1gang] [Device:[REDACTED_UUID:[REDACTED_SECRET] [FLOW] â¡ Triggered switch_1gang_turned_on",
+        "2026-09-22T22:01:28.993Z [log] [ManagerDrivers] [Driver:switch_1gang] [Device:[REDACTED_UUID:[REDACTED_SECRET] [FLOW] â¡ Triggered switch_1gang_turned_off",
+        "2026-09-22T22:03:41.335Z [log] [ManagerDrivers] [Driver:switch_1gang] [Device:[REDACTED_UUID:[REDACTED_SECRET] [FLOW] â¡ Triggered switch_1gang_turned_off"
+      ],
+      "summary": "app=1.0.60 | couple=_TZ3000_dzwgk7e2+ts0042",
+      "interviewId": null
+    },
+    {
+      "source": ".github/state/diag-recursive-inbox/bodies/imap_825d38ae6017.txt",
+      "kind": "gmail_body",
+      "logId": "825d38ae",
+      "appVersion": null,
+      "userMessage": null,
+      "drivers": [],
+      "deviceIds": [],
+      "couples": [],
+      "coupleAbsent": false,
+      "derivedCoupleCount": 0,
+      "signals": [],
+      "highlights": [],
+      "summary": null,
+      "interviewId": null
+    },
+    {
+      "source": ".github/state/diag-recursive-inbox/bodies/imap_8244fec1cd46.txt",
+      "kind": "gmail_body",
+      "logId": "8244fec1",
+      "appVersion": null,
+      "userMessage": null,
+      "drivers": [],
+      "deviceIds": [],
+      "couples": [],
+      "coupleAbsent": false,
+      "derivedCoupleCount": 0,
+      "signals": [],
+      "highlights": [],
+      "summary": null,
+      "interviewId": null
+    },
+    {
+      "source": ".github/state/diag-recursive-inbox/bodies/imap_81ed3eed5cda.txt",
+      "kind": "gmail_body",
+      "logId": "81ed3eed",
+      "appVersion": null,
+      "userMessage": null,
+      "drivers": [],
+      "deviceIds": [],
+      "couples": [],
+      "coupleAbsent": false,
+      "derivedCoupleCount": 0,
+      "signals": [],
+      "highlights": [],
+      "summary": null,
+      "interviewId": null
+    },
+    {
+      "source": ".github/state/diag-recursive-inbox/bodies/imap_816c91e189db.txt",
+      "kind": "gmail_body",
+      "logId": "816c91e1",
+      "appVersion": null,
+      "userMessage": null,
+      "drivers": [],
+      "deviceIds": [],
+      "couples": [],
+      "coupleAbsent": false,
+      "derivedCoupleCount": 0,
+      "signals": [],
+      "highlights": [],
+      "summary": null,
+      "interviewId": null
+    },
+    {
+      "source": ".github/state/diag-recursive-inbox/bodies/imap_7ff4974e03ad.txt",
+      "kind": "gmail_body",
+      "logId": "7ff4974e",
+      "appVersion": null,
+      "userMessage": null,
+      "drivers": [],
+      "deviceIds": [],
+      "couples": [],
+      "coupleAbsent": false,
+      "derivedCoupleCount": 0,
+      "signals": [],
+      "highlights": [],
+      "summary": null,
+      "interviewId": null
+    },
+    {
+      "source": "docs/data/DEVICE_INTERVIEWS.json#INT-013",
+      "kind": "interview",
+      "logId": "7fc451ca",
+      "appVersion": null,
+      "userMessage": null,
+      "drivers": [],
+      "deviceIds": [],
+      "couples": [
+        {
+          "mfr": "_TZ3000_*",
+          "pid": "TS004F",
+          "canonicalDriver": null,
+          "forbiddenDrivers": [],
+          "confidence": "interview_locked"
+        },
+        {
+          "mfr": "_TZ3000_",
+          "pid": "TS004F",
+          "canonicalDriver": null,
+          "forbiddenDrivers": [],
+          "confidence": "interview_locked"
+        }
+      ],
+      "coupleAbsent": false,
+      "derivedCoupleCount": 0,
+      "signals": [],
+      "highlights": [],
+      "summary": "id=7fc451ca | couple=_TZ3000_+TS004F",
+      "interviewId": "INT-013"
+    },
+    {
+      "source": ".github/state/diag-recursive-inbox/bodies/imap_77bf619001e8.txt",
+      "kind": "gmail_body",
+      "logId": "77bf6190",
+      "appVersion": null,
+      "userMessage": null,
+      "drivers": [],
+      "deviceIds": [],
+      "couples": [],
+      "coupleAbsent": false,
+      "derivedCoupleCount": 0,
+      "signals": [],
+      "highlights": [],
+      "summary": null,
+      "interviewId": null
+    },
+    {
+      "source": ".github/state/diag-recursive-inbox/bodies/imap_71345e242046.txt",
+      "kind": "gmail_body",
+      "logId": "71345e24",
+      "appVersion": null,
+      "userMessage": null,
+      "drivers": [],
+      "deviceIds": [],
+      "couples": [],
+      "coupleAbsent": false,
+      "derivedCoupleCount": 0,
+      "signals": [],
+      "highlights": [],
+      "summary": null,
+      "interviewId": null
+    },
+    {
+      "source": ".github/state/diag-recursive-inbox/bodies/imap_7047203b855a.txt",
+      "kind": "gmail_body",
+      "logId": "7047203b",
+      "appVersion": null,
+      "userMessage": null,
+      "drivers": [],
+      "deviceIds": [],
+      "couples": [],
+      "coupleAbsent": false,
+      "derivedCoupleCount": 0,
+      "signals": [],
+      "highlights": [],
+      "summary": null,
+      "interviewId": null
+    },
+    {
+      "source": ".github/state/diag-recursive-inbox/bodies/imap_6f1bafc2c4ed.txt",
+      "kind": "gmail_body",
+      "logId": "6f1bafc2",
+      "appVersion": null,
+      "userMessage": null,
+      "drivers": [],
+      "deviceIds": [],
+      "couples": [],
+      "coupleAbsent": false,
+      "derivedCoupleCount": 0,
+      "signals": [],
+      "highlights": [],
+      "summary": null,
+      "interviewId": null
+    },
+    {
+      "source": ".github/state/diag-recursive-inbox/bodies/imap_6ddc94a987cc.txt",
+      "kind": "gmail_body",
+      "logId": "6ddc94a9",
+      "appVersion": null,
+      "userMessage": null,
+      "drivers": [],
+      "deviceIds": [],
+      "couples": [],
+      "coupleAbsent": false,
+      "derivedCoupleCount": 0,
+      "signals": [],
+      "highlights": [],
+      "summary": null,
+      "interviewId": null
+    },
+    {
+      "source": ".github/state/diag-recursive-inbox/bodies/imap_6a26e2f39761.txt",
+      "kind": "gmail_body",
+      "logId": "6a26e2f3",
+      "appVersion": null,
+      "userMessage": null,
+      "drivers": [],
+      "deviceIds": [],
+      "couples": [],
+      "coupleAbsent": false,
+      "derivedCoupleCount": 0,
+      "signals": [],
+      "highlights": [],
+      "summary": null,
+      "interviewId": null
+    },
+    {
+      "source": "docs/data/DEVICE_INTERVIEWS.json#INT-111",
+      "kind": "interview",
+      "logId": "68fd94c5",
+      "appVersion": null,
+      "userMessage": null,
+      "drivers": [],
+      "deviceIds": [],
+      "couples": [
+        {
+          "mfr": "_TZE204_xu4a5rhj",
+          "pid": "TS0601",
+          "canonicalDriver": null,
+          "forbiddenDrivers": [],
+          "confidence": "interview_locked"
+        }
+      ],
+      "coupleAbsent": false,
+      "derivedCoupleCount": 0,
+      "signals": [],
+      "highlights": [],
+      "summary": "id=68fd94c5 | couple=_TZE204_xu4a5rhj+TS0601",
+      "interviewId": "INT-111"
+    },
+    {
+      "source": ".github/state/diag-recursive-inbox/bodies/imap_68fce23715ed.txt",
+      "kind": "gmail_body",
+      "logId": "68fce237",
+      "appVersion": "9.0.1182",
+      "userMessage": null,
+      "drivers": [
+        "wifi_sonoff_tx_2ch",
+        "wifi_switch",
+        "wifi_switch_2gang",
+        "wifi_switch_4gang",
+        "wifi_water_tank_monitor",
+        "wifi_switch_3gang",
+        "wifi_thermostat",
+        "zigbee_repeater",
+        "wifi_water_valve"
+      ],
+      "deviceIds": [],
+      "couples": [
+        {
+          "mfr": "_TZE200_p3dbf6qs",
+          "pid": "TS0601",
+          "canonicalDriver": null,
+          "forbiddenDrivers": [],
+          "confidence": "in_log"
+        }
+      ],
+      "coupleAbsent": false,
+      "derivedCoupleCount": 0,
+      "signals": [],
+      "highlights": [
+        "2026-09-22T21:10:31.495Z [log] [ManagerDrivers] [Driver:wifi_sonoff_tx_2ch] [FLOW] Gang onoff cards registered for wifi_sonoff_tx_2ch (2ch)"
+      ],
+      "summary": "app=9.0.1182 | couple=_TZE200_p3dbf6qs+TS0601",
+      "interviewId": null
+    },
+    {
+      "source": ".github/state/diag-recursive-inbox/bodies/imap_6578d507a549.txt",
+      "kind": "gmail_body",
+      "logId": "6578d507",
+      "appVersion": null,
+      "userMessage": null,
+      "drivers": [],
+      "deviceIds": [],
+      "couples": [],
+      "coupleAbsent": false,
+      "derivedCoupleCount": 0,
+      "signals": [],
+      "highlights": [],
+      "summary": null,
+      "interviewId": null
+    },
+    {
+      "source": "docs/data/DEVICE_INTERVIEWS.json#INT-011",
+      "kind": "interview",
+      "logId": "63cacdf6",
+      "appVersion": null,
+      "userMessage": null,
+      "drivers": [],
+      "deviceIds": [],
+      "couples": [
+        {
+          "mfr": "_TZ3000_wkai4ga5",
+          "pid": "TS0044",
+          "canonicalDriver": "scene_switch_4",
+          "forbiddenDrivers": [
+            "button_wireless_4",
+            "smart_knob",
+            "wall_switch_4_gang",
+            "wall_dimmer_tuya"
+          ],
+          "confidence": "interview_locked"
+        }
+      ],
+      "coupleAbsent": false,
+      "derivedCoupleCount": 0,
+      "signals": [],
+      "highlights": [],
+      "summary": "id=63cacdf6 | couple=_TZ3000_wkai4ga5+TS0044",
+      "interviewId": "INT-011"
+    },
+    {
+      "source": ".github/state/diag-recursive-inbox/bodies/imap_61b655cbc4cb.txt",
+      "kind": "gmail_body",
+      "logId": "61b655cb",
+      "appVersion": null,
+      "userMessage": null,
+      "drivers": [],
+      "deviceIds": [],
+      "couples": [
+        {
+          "mfr": "_TZE204_gkfbdvyx",
+          "pid": "TS0601",
+          "canonicalDriver": "presence_sensor_radar",
+          "forbiddenDrivers": [
+            "curtain_motor",
+            "device_radiator_valve",
+            "radiator_valve",
+            "smartplug",
+            "generic_tuya",
+            "zigbee_universal",
+            "unknown_zigbee_unit"
+          ],
+          "confidence": "in_log"
+        }
+      ],
+      "coupleAbsent": false,
+      "derivedCoupleCount": 0,
+      "signals": [],
+      "highlights": [],
+      "summary": "couple=_TZE204_gkfbdvyx+TS0601",
+      "interviewId": null
+    },
+    {
+      "source": ".github/state/diag-recursive-inbox/bodies/imap_6019d291fe9b.txt",
+      "kind": "gmail_body",
+      "logId": "6019d291",
+      "appVersion": "1.0.112",
+      "userMessage": null,
+      "drivers": [
+        "switch_1gang",
+        "button_wireless_1",
+        "button_wireless_2",
+        "button_wireless_3"
+      ],
+      "deviceIds": [],
+      "couples": [
+        {
+          "mfr": "_TZ3000_blhvsaqf",
+          "pid": "TS0001",
+          "canonicalDriver": "switch_1gang",
+          "forbiddenDrivers": [],
+          "confidence": "derived_interview_soft",
+          "sourceInterview": "INT-019"
+        },
+        {
+          "mfr": "_TZ3000_ysdv91bk",
+          "pid": "TS0001",
+          "canonicalDriver": "switch_1gang",
+          "forbiddenDrivers": [],
+          "confidence": "derived_interview_soft",
+          "sourceInterview": "INT-051"
+        },
+        {
+          "mfr": "_TZ3000_*",
+          "pid": "TS0043",
+          "canonicalDriver": "button_wireless_3",
+          "forbiddenDrivers": [],
+          "confidence": "derived_interview_soft",
+          "sourceInterview": "INT-014"
+        },
+        {
+          "mfr": "_TZ3000_bczr4e10",
+          "pid": "TS0043",
+          "canonicalDriver": "button_wireless_3",
+          "forbiddenDrivers": [],
+          "confidence": "derived_interview_soft",
+          "sourceInterview": "INT-170"
+        }
+      ],
+      "coupleAbsent": false,
+      "derivedCoupleCount": 4,
+      "signals": [],
+      "highlights": [
+        "2026-09-25T22:06:48.915Z [log] [ManagerDrivers] [Driver:button_wireless_1] [Device:[REDACTED_UUID:[REDACTED_SECRET] [BATTERY] batteryPercentageRemaining report:"
+      ],
+      "summary": "app=1.0.112 | drivers=switch_1gang,button_wireless_1,button_wireless_2",
+      "interviewId": null
+    },
+    {
+      "source": ".github/state/diag-recursive-inbox/bodies/imap_5428f89eb1e9.txt",
+      "kind": "gmail_body",
+      "logId": "5428f89e",
+      "appVersion": "1.0.14",
+      "userMessage": null,
+      "drivers": [
+        "switch_1gang",
+        "remote_button_wireless_wall"
+      ],
+      "deviceIds": [],
+      "couples": [
+        {
+          "mfr": "_TZ3000_blhvsaqf",
+          "pid": "TS0001",
+          "canonicalDriver": "switch_1gang",
+          "forbiddenDrivers": [],
+          "confidence": "derived_interview_soft",
+          "sourceInterview": "INT-019"
+        },
+        {
+          "mfr": "_TZ3000_ysdv91bk",
+          "pid": "TS0001",
+          "canonicalDriver": "switch_1gang",
+          "forbiddenDrivers": [],
+          "confidence": "derived_interview_soft",
+          "sourceInterview": "INT-051"
+        }
+      ],
+      "coupleAbsent": false,
+      "derivedCoupleCount": 2,
+      "signals": [],
+      "highlights": [
+        "2026-09-20T21:12:44.836Z [log] [ManagerDrivers] [Driver:switch_1gang] [Device:[REDACTED_UUID:[REDACTED_SECRET] [FLOW] â¡ Triggered switch_1gang_1gang_turned_of",
+        "2026-09-20T21:12:45.299Z [log] [ManagerDrivers] [Driver:switch_1gang] [Device:[REDACTED_UUID:[REDACTED_SECRET] [FLOW] â¡ Triggered switch_1gang_1gang_turned_on",
+        "2026-09-20T21:12:45.961Z [log] [ManagerDrivers] [Driver:switch_1gang] [Device:[REDACTED_UUID:[REDACTED_SECRET] [FLOW] â¡ Triggered switch_1gang_1gang_turned_on",
+        "2026-09-20T21:12:46.417Z [log] [ManagerDrivers] [Driver:switch_1gang] [Device:[REDACTED_UUID:[REDACTED_SECRET] [FLOW] â¡ Triggered switch_1gang_1gang_turned_of",
+        "2026-09-20T21:12:47.080Z [log] [ManagerDrivers] [Driver:switch_1gang] [Device:[REDACTED_UUID:[REDACTED_SECRET] [FLOW] â¡ Triggered switch_1gang_1gang_turned_of",
+        "2026-09-20T21:12:47.859Z [log] [ManagerDrivers] [Driver:switch_1gang] [Device:[REDACTED_UUID:[REDACTED_SECRET] [FLOW] â¡ Triggered switch_1gang_1gang_turned_of"
+      ],
+      "summary": "app=1.0.14 | drivers=switch_1gang,remote_button_wireless_wall",
+      "interviewId": null
+    },
+    {
+      "source": ".github/state/diag-recursive-inbox/bodies/imap_53a9fdb46ba2.txt",
+      "kind": "gmail_body",
+      "logId": "53a9fdb4",
+      "appVersion": null,
+      "userMessage": null,
+      "drivers": [],
+      "deviceIds": [],
+      "couples": [],
+      "coupleAbsent": false,
+      "derivedCoupleCount": 0,
+      "signals": [],
+      "highlights": [],
+      "summary": null,
+      "interviewId": null
+    },
+    {
+      "source": "docs/data/DEVICE_INTERVIEWS.json#INT-158",
+      "kind": "interview",
+      "logId": "52546992",
+      "appVersion": null,
+      "userMessage": null,
+      "drivers": [],
+      "deviceIds": [],
+      "couples": [
+        {
+          "mfr": "_TZE200_3towulqd",
+          "pid": "TS0601",
+          "canonicalDriver": "presence_sensor_radar",
+          "forbiddenDrivers": [
+            "air_purifier",
+            "wall_switch_5_gang_tuya",
+            "climate_sensor"
+          ],
+          "confidence": "interview_locked"
+        },
+        {
+          "mfr": "HOBEIAN",
+          "pid": "ZG-204ZV",
+          "canonicalDriver": "presence_sensor_radar",
+          "forbiddenDrivers": [
+            "climate_sensor",
+            "climate_sensor_energy",
+            "sensor_climate_temphumidsensor",
+            "temphumidsensor",
+            "temphumidsensor5",
+            "soil_sensor",
+            "vibration_sensor",
+            "power_clamp_meter",
+            "motion_sensor",
+            "radar_sensor_ceiling"
+          ],
+          "confidence": "interview_locked"
+        }
+      ],
+      "coupleAbsent": false,
+      "derivedCoupleCount": 0,
+      "signals": [],
+      "highlights": [],
+      "summary": "id=52546992 | couple=_TZE200_3towulqd+TS0601",
+      "interviewId": "INT-158"
+    },
+    {
+      "source": ".github/state/diag-recursive-inbox/bodies/imap_50085f33cb4d.txt",
+      "kind": "gmail_body",
+      "logId": "50085f33",
+      "appVersion": null,
+      "userMessage": null,
+      "drivers": [],
+      "deviceIds": [],
+      "couples": [],
+      "coupleAbsent": false,
+      "derivedCoupleCount": 0,
+      "signals": [],
+      "highlights": [],
+      "summary": null,
+      "interviewId": null
+    },
+    {
+      "source": ".github/state/diag-recursive-inbox/bodies/imap_4ef518d20ec6.txt",
+      "kind": "gmail_body",
+      "logId": "4ef518d2",
+      "appVersion": null,
+      "userMessage": null,
+      "drivers": [],
+      "deviceIds": [],
+      "couples": [],
+      "coupleAbsent": false,
+      "derivedCoupleCount": 0,
+      "signals": [],
+      "highlights": [],
+      "summary": null,
+      "interviewId": null
+    },
+    {
+      "source": "docs/data/DEVICE_INTERVIEWS.json#INT-010",
+      "kind": "interview",
+      "logId": "4d7b45a5",
+      "appVersion": null,
+      "userMessage": null,
+      "drivers": [],
+      "deviceIds": [],
+      "couples": [
+        {
+          "mfr": "_TZ3000_*",
+          "pid": "TS0041",
+          "canonicalDriver": null,
+          "forbiddenDrivers": [],
+          "confidence": "interview_locked"
+        },
+        {
+          "mfr": "_TZ3000_",
+          "pid": "TS0041",
+          "canonicalDriver": null,
+          "forbiddenDrivers": [],
+          "confidence": "interview_locked"
+        }
+      ],
+      "coupleAbsent": false,
+      "derivedCoupleCount": 0,
+      "signals": [],
+      "highlights": [],
+      "summary": "id=4d7b45a5 | couple=_TZ3000_+TS0041",
+      "interviewId": "INT-010"
+    },
+    {
+      "source": ".github/state/diag-recursive-inbox/bodies/imap_4cf478ebd1d1.txt",
+      "kind": "gmail_body",
+      "logId": "4cf478eb",
+      "appVersion": "1.0.107",
+      "userMessage": null,
+      "drivers": [
+        "switch_1gang",
+        "button_wireless_1",
+        "button_wireless_3",
+        "button_wireless_2"
+      ],
+      "deviceIds": [],
+      "couples": [
+        {
+          "mfr": "_TZ3000_blhvsaqf",
+          "pid": "TS0001",
+          "canonicalDriver": "switch_1gang",
+          "forbiddenDrivers": [],
+          "confidence": "derived_interview_soft",
+          "sourceInterview": "INT-019"
+        },
+        {
+          "mfr": "_TZ3000_ysdv91bk",
+          "pid": "TS0001",
+          "canonicalDriver": "switch_1gang",
+          "forbiddenDrivers": [],
+          "confidence": "derived_interview_soft",
+          "sourceInterview": "INT-051"
+        },
+        {
+          "mfr": "_TZ3000_*",
+          "pid": "TS0043",
+          "canonicalDriver": "button_wireless_3",
+          "forbiddenDrivers": [],
+          "confidence": "derived_interview_soft",
+          "sourceInterview": "INT-014"
+        },
+        {
+          "mfr": "_TZ3000_bczr4e10",
+          "pid": "TS0043",
+          "canonicalDriver": "button_wireless_3",
+          "forbiddenDrivers": [],
+          "confidence": "derived_interview_soft",
+          "sourceInterview": "INT-170"
+        }
+      ],
+      "coupleAbsent": false,
+      "derivedCoupleCount": 4,
+      "signals": [],
+      "highlights": [
+        "2026-09-25T13:29:25.851Z [log] [ManagerDrivers] [Driver:button_wireless_1] [Device:[REDACTED_UUID:[REDACTED_SECRET] [BATTERY] batteryPercentageRemaining report:"
+      ],
+      "summary": "app=1.0.107 | drivers=switch_1gang,button_wireless_1,button_wireless_3",
+      "interviewId": null
+    },
+    {
+      "source": ".github/state/diag-recursive-inbox/bodies/imap_4cb772fa29c0.txt",
+      "kind": "gmail_body",
+      "logId": "4cb772fa",
+      "appVersion": null,
+      "userMessage": null,
+      "drivers": [],
+      "deviceIds": [],
+      "couples": [],
+      "coupleAbsent": false,
+      "derivedCoupleCount": 0,
+      "signals": [],
+      "highlights": [],
+      "summary": null,
+      "interviewId": null
+    },
+    {
+      "source": ".github/state/diag-recursive-inbox/bodies/imap_4c9fe5b1497c.txt",
+      "kind": "gmail_body",
+      "logId": "4c9fe5b1",
+      "appVersion": null,
+      "userMessage": null,
+      "drivers": [],
+      "deviceIds": [],
+      "couples": [],
+      "coupleAbsent": false,
+      "derivedCoupleCount": 0,
+      "signals": [],
+      "highlights": [],
+      "summary": null,
+      "interviewId": null
+    },
+    {
+      "source": ".github/state/diag-recursive-inbox/bodies/imap_4ac105d705d3.txt",
+      "kind": "gmail_body",
+      "logId": "4ac105d7",
+      "appVersion": null,
+      "userMessage": null,
+      "drivers": [],
+      "deviceIds": [],
+      "couples": [],
+      "coupleAbsent": false,
+      "derivedCoupleCount": 0,
+      "signals": [],
+      "highlights": [],
+      "summary": null,
+      "interviewId": null
+    },
+    {
+      "source": ".github/state/diag-recursive-inbox/bodies/imap_475b2e5516e0.txt",
+      "kind": "gmail_body",
+      "logId": "475b2e55",
+      "appVersion": null,
+      "userMessage": null,
+      "drivers": [],
+      "deviceIds": [],
+      "couples": [],
+      "coupleAbsent": false,
+      "derivedCoupleCount": 0,
+      "signals": [],
+      "highlights": [],
+      "summary": null,
+      "interviewId": null
+    },
+    {
+      "source": ".github/state/diag-recursive-inbox/bodies/imap_45ffd032258a.txt",
+      "kind": "gmail_body",
+      "logId": "45ffd032",
+      "appVersion": null,
+      "userMessage": null,
+      "drivers": [],
+      "deviceIds": [],
+      "couples": [],
+      "coupleAbsent": false,
+      "derivedCoupleCount": 0,
+      "signals": [],
+      "highlights": [],
+      "summary": null,
+      "interviewId": null
+    },
+    {
+      "source": ".github/state/diag-recursive-inbox/bodies/imap_3fe19156722f.txt",
+      "kind": "gmail_body",
+      "logId": "3fe19156",
+      "appVersion": null,
+      "userMessage": null,
+      "drivers": [],
+      "deviceIds": [],
+      "couples": [],
+      "coupleAbsent": false,
+      "derivedCoupleCount": 0,
+      "signals": [],
+      "highlights": [],
+      "summary": null,
+      "interviewId": null
+    },
+    {
+      "source": ".github/state/diag-recursive-inbox/bodies/imap_382f2b2a427f.txt",
+      "kind": "gmail_body",
+      "logId": "382f2b2a",
+      "appVersion": null,
+      "userMessage": null,
+      "drivers": [],
+      "deviceIds": [],
+      "couples": [],
+      "coupleAbsent": false,
+      "derivedCoupleCount": 0,
+      "signals": [],
+      "highlights": [],
+      "summary": null,
+      "interviewId": null
+    },
+    {
+      "source": ".github/state/diag-recursive-inbox/bodies/imap_35e12f3f54f8.txt",
+      "kind": "gmail_body",
+      "logId": "35e12f3f",
+      "appVersion": null,
+      "userMessage": null,
+      "drivers": [],
+      "deviceIds": [],
+      "couples": [],
+      "coupleAbsent": false,
+      "derivedCoupleCount": 0,
+      "signals": [],
+      "highlights": [],
+      "summary": null,
+      "interviewId": null
+    },
+    {
+      "source": "docs/data/DEVICE_INTERVIEWS.json#INT-166",
+      "kind": "interview",
+      "logId": "33677378",
+      "appVersion": null,
+      "userMessage": null,
+      "drivers": [],
+      "deviceIds": [],
+      "couples": [
+        {
+          "mfr": "_TZE200_kb5noeto",
+          "pid": "TS0601",
+          "canonicalDriver": "presence_sensor_radar",
+          "forbiddenDrivers": [
+            "climate_sensor",
+            "vibration_sensor",
+            "soil_sensor",
+            "power_clamp_meter",
+            "motion_sensor"
+          ],
+          "confidence": "interview_locked"
+        }
+      ],
+      "coupleAbsent": false,
+      "derivedCoupleCount": 0,
+      "signals": [],
+      "highlights": [],
+      "summary": "id=33677378 | couple=_TZE200_kb5noeto+TS0601",
+      "interviewId": "INT-166"
+    },
+    {
+      "source": ".github/state/diag-recursive-inbox/bodies/imap_2ec256aa8592.txt",
+      "kind": "gmail_body",
+      "logId": "2ec256aa",
+      "appVersion": null,
+      "userMessage": null,
+      "drivers": [],
+      "deviceIds": [],
+      "couples": [],
+      "coupleAbsent": false,
+      "derivedCoupleCount": 0,
+      "signals": [],
+      "highlights": [],
+      "summary": null,
+      "interviewId": null
+    },
+    {
+      "source": ".github/state/diag-recursive-inbox/bodies/imap_2e724a13675d.txt",
+      "kind": "gmail_body",
+      "logId": "2e724a13",
+      "appVersion": null,
+      "userMessage": null,
+      "drivers": [],
+      "deviceIds": [],
+      "couples": [],
+      "coupleAbsent": false,
+      "derivedCoupleCount": 0,
+      "signals": [],
+      "highlights": [],
+      "summary": null,
+      "interviewId": null
+    },
+    {
+      "source": ".github/state/diag-recursive-inbox/bodies/imap_2dace352cfb4.txt",
+      "kind": "gmail_body",
+      "logId": "2dace352",
+      "appVersion": null,
+      "userMessage": null,
+      "drivers": [],
+      "deviceIds": [],
+      "couples": [],
+      "coupleAbsent": false,
+      "derivedCoupleCount": 0,
+      "signals": [],
+      "highlights": [],
+      "summary": null,
+      "interviewId": null
+    },
+    {
+      "source": ".github/state/diag-recursive-inbox/bodies/imap_2cc1e137e1e9.txt",
+      "kind": "gmail_body",
+      "logId": "2cc1e137",
+      "appVersion": "9.0.1037",
+      "userMessage": null,
+      "drivers": [
+        "device_radiator_valve"
+      ],
+      "deviceIds": [],
+      "couples": [
+        {
+          "mfr": "_TZE284_ogx8u5z6",
+          "pid": "TS0601",
+          "canonicalDriver": "device_radiator_valve",
+          "forbiddenDrivers": [
+            "climate_sensor",
+            "wall_thermostat",
+            "zigbee_universal"
+          ],
+          "confidence": "in_log"
+        }
+      ],
+      "coupleAbsent": false,
+      "derivedCoupleCount": 0,
+      "signals": [],
+      "highlights": [],
+      "summary": "app=9.0.1037 | couple=_TZE284_ogx8u5z6+TS0601",
+      "interviewId": null
+    },
+    {
+      "source": ".github/state/diag-recursive-inbox/bodies/imap_2b0b75c60994.txt",
+      "kind": "gmail_body",
+      "logId": "2b0b75c6",
+      "appVersion": null,
+      "userMessage": null,
+      "drivers": [],
+      "deviceIds": [],
+      "couples": [],
+      "coupleAbsent": false,
+      "derivedCoupleCount": 0,
+      "signals": [],
+      "highlights": [],
+      "summary": null,
+      "interviewId": null
+    },
+    {
+      "source": ".github/state/diag-recursive-inbox/bodies/imap_2a5364d2e048.txt",
+      "kind": "gmail_body",
+      "logId": "2a5364d2",
+      "appVersion": null,
+      "userMessage": null,
+      "drivers": [],
+      "deviceIds": [],
+      "couples": [],
+      "coupleAbsent": false,
+      "derivedCoupleCount": 0,
+      "signals": [],
+      "highlights": [],
+      "summary": null,
+      "interviewId": null
+    },
+    {
+      "source": ".github/state/diag-recursive-inbox/bodies/imap_2a4fbe3f3499.txt",
+      "kind": "gmail_body",
+      "logId": "2a4fbe3f",
+      "appVersion": "5.12.288",
+      "userMessage": null,
+      "drivers": [],
+      "deviceIds": [],
+      "couples": [],
+      "coupleAbsent": false,
+      "derivedCoupleCount": 0,
+      "signals": [],
+      "highlights": [
+        "Error: Cannot find module '../../lib/tuya/TuyaRadarRangeScale'",
+        "Error: Cannot find module '../../lib/tuya/TuyaRadarRangeScale'"
+      ],
+      "summary": "app=5.12.288",
+      "interviewId": null
+    },
+    {
+      "source": ".github/state/diag-recursive-inbox/bodies/imap_2a04326a3cde.txt",
+      "kind": "gmail_body",
+      "logId": "2a04326a",
+      "appVersion": null,
+      "userMessage": null,
+      "drivers": [],
+      "deviceIds": [],
+      "couples": [],
+      "coupleAbsent": false,
+      "derivedCoupleCount": 0,
+      "signals": [],
+      "highlights": [],
+      "summary": null,
+      "interviewId": null
+    },
+    {
+      "source": ".github/state/diag-recursive-inbox/bodies/imap_2962d941f190.txt",
+      "kind": "gmail_body",
+      "logId": "2962d941",
+      "appVersion": null,
+      "userMessage": null,
+      "drivers": [],
+      "deviceIds": [],
+      "couples": [],
+      "coupleAbsent": false,
+      "derivedCoupleCount": 0,
+      "signals": [],
+      "highlights": [],
+      "summary": null,
+      "interviewId": null
+    },
+    {
+      "source": ".github/state/diag-recursive-inbox/bodies/imap_1faefca39d60.txt",
+      "kind": "gmail_body",
+      "logId": "1faefca3",
+      "appVersion": null,
+      "userMessage": null,
+      "drivers": [],
+      "deviceIds": [],
+      "couples": [],
+      "coupleAbsent": false,
+      "derivedCoupleCount": 0,
+      "signals": [],
+      "highlights": [],
+      "summary": null,
+      "interviewId": null
+    },
+    {
+      "source": ".github/state/diag-recursive-inbox/bodies/imap_1e20cfbdef7a.txt",
+      "kind": "gmail_body",
+      "logId": "1e20cfbd",
+      "appVersion": null,
+      "userMessage": null,
+      "drivers": [],
+      "deviceIds": [],
+      "couples": [],
+      "coupleAbsent": false,
+      "derivedCoupleCount": 0,
+      "signals": [],
+      "highlights": [],
+      "summary": null,
+      "interviewId": null
+    },
+    {
+      "source": ".github/state/diag-recursive-inbox/bodies/imap_1b44bd217e34.txt",
+      "kind": "gmail_body",
+      "logId": "1b44bd21",
+      "appVersion": null,
+      "userMessage": null,
+      "drivers": [],
+      "deviceIds": [],
+      "couples": [],
+      "coupleAbsent": false,
+      "derivedCoupleCount": 0,
+      "signals": [],
+      "highlights": [],
+      "summary": null,
+      "interviewId": null
+    },
+    {
+      "source": ".github/state/diag-recursive-inbox/bodies/imap_17a4197f8977.txt",
+      "kind": "gmail_body",
+      "logId": "17a4197f",
+      "appVersion": null,
+      "userMessage": null,
+      "drivers": [],
+      "deviceIds": [],
+      "couples": [
+        {
+          "mfr": "_TZE204_gkfbdvyx",
+          "pid": "TS0601",
+          "canonicalDriver": "presence_sensor_radar",
+          "forbiddenDrivers": [
+            "curtain_motor",
+            "device_radiator_valve",
+            "radiator_valve",
+            "smartplug",
+            "generic_tuya",
+            "zigbee_universal",
+            "unknown_zigbee_unit"
+          ],
+          "confidence": "in_log"
+        }
+      ],
+      "coupleAbsent": false,
+      "derivedCoupleCount": 0,
+      "signals": [],
+      "highlights": [],
+      "summary": "couple=_TZE204_gkfbdvyx+TS0601",
+      "interviewId": null
+    },
+    {
+      "source": ".github/state/diag-recursive-inbox/bodies/gmail-state-3-1790357319789.txt",
+      "kind": "gmail_body",
+      "logId": "17903573",
+      "appVersion": null,
+      "userMessage": null,
+      "drivers": [],
+      "deviceIds": [],
+      "couples": [
+        {
+          "mfr": "_TZE284_iadro9bf",
+          "pid": "TS0601",
+          "canonicalDriver": null,
+          "forbiddenDrivers": [],
+          "confidence": "in_log"
+        }
+      ],
+      "coupleAbsent": false,
+      "derivedCoupleCount": 0,
+      "signals": [],
+      "highlights": [],
+      "summary": "couple=_TZE284_iadro9bf+TS0601",
+      "interviewId": null
+    },
+    {
+      "source": ".github/state/diag-recursive-inbox/bodies/gmail-state-3-1790339474859.txt",
+      "kind": "gmail_body",
+      "logId": "17903394",
+      "appVersion": null,
+      "userMessage": null,
+      "drivers": [],
+      "deviceIds": [],
+      "couples": [
+        {
+          "mfr": "_TZE284_iadro9bf",
+          "pid": "TS0601",
+          "canonicalDriver": null,
+          "forbiddenDrivers": [],
+          "confidence": "in_log"
+        }
+      ],
+      "coupleAbsent": false,
+      "derivedCoupleCount": 0,
+      "signals": [],
+      "highlights": [],
+      "summary": "couple=_TZE284_iadro9bf+TS0601",
+      "interviewId": null
+    },
+    {
+      "source": ".github/state/diag-recursive-inbox/bodies/gmail-state-3-1790327990958.txt",
+      "kind": "gmail_body",
+      "logId": "17903279",
+      "appVersion": null,
+      "userMessage": null,
+      "drivers": [],
+      "deviceIds": [],
+      "couples": [
+        {
+          "mfr": "_TZE284_iadro9bf",
+          "pid": "TS0601",
+          "canonicalDriver": null,
+          "forbiddenDrivers": [],
+          "confidence": "in_log"
+        }
+      ],
+      "coupleAbsent": false,
+      "derivedCoupleCount": 0,
+      "signals": [],
+      "highlights": [],
+      "summary": "couple=_TZE284_iadro9bf+TS0601",
+      "interviewId": null
+    },
+    {
+      "source": ".github/state/diag-recursive-inbox/bodies/gmail-state-3-1790288012941.txt",
+      "kind": "gmail_body",
+      "logId": "17902880",
+      "appVersion": null,
+      "userMessage": null,
+      "drivers": [],
+      "deviceIds": [],
+      "couples": [
+        {
+          "mfr": "_TZE284_iadro9bf",
+          "pid": "TS0601",
+          "canonicalDriver": null,
+          "forbiddenDrivers": [],
+          "confidence": "in_log"
+        }
+      ],
+      "coupleAbsent": false,
+      "derivedCoupleCount": 0,
+      "signals": [],
+      "highlights": [],
+      "summary": "couple=_TZE284_iadro9bf+TS0601",
+      "interviewId": null
+    },
+    {
+      "source": ".github/state/diag-recursive-inbox/bodies/gmail-state-16-1790245969493.txt",
+      "kind": "gmail_body",
+      "logId": "17902459",
+      "appVersion": null,
+      "userMessage": null,
+      "drivers": [],
+      "deviceIds": [],
+      "couples": [
+        {
+          "mfr": "HOBEIAN",
+          "pid": "ZG-102Z-IAS-Zone-921",
+          "canonicalDriver": null,
+          "forbiddenDrivers": [],
+          "confidence": "in_log"
+        },
+        {
+          "mfr": "HOBEIAN",
+          "pid": "ZG-102Z",
+          "canonicalDriver": null,
+          "forbiddenDrivers": [],
+          "confidence": "in_log"
+        }
+      ],
+      "coupleAbsent": false,
+      "derivedCoupleCount": 0,
+      "signals": [],
+      "highlights": [],
+      "summary": "couple=HOBEIAN+ZG-102Z-IAS-Zone-921",
+      "interviewId": null
+    },
+    {
+      "source": ".github/state/diag-recursive-inbox/bodies/imap_178cdc15bcc6.txt",
+      "kind": "gmail_body",
+      "logId": "178cdc15",
+      "appVersion": null,
+      "userMessage": null,
+      "drivers": [],
+      "deviceIds": [],
+      "couples": [],
+      "coupleAbsent": false,
+      "derivedCoupleCount": 0,
+      "signals": [],
+      "highlights": [],
+      "summary": null,
+      "interviewId": null
+    },
+    {
+      "source": ".github/state/diag-recursive-inbox/bodies/imap_16f2aa3c3094.txt",
+      "kind": "gmail_body",
+      "logId": "16f2aa3c",
+      "appVersion": null,
+      "userMessage": null,
+      "drivers": [],
+      "deviceIds": [],
+      "couples": [],
+      "coupleAbsent": false,
+      "derivedCoupleCount": 0,
+      "signals": [],
+      "highlights": [],
+      "summary": null,
+      "interviewId": null
+    },
+    {
+      "source": ".github/state/diag-recursive-inbox/bodies/imap_16e35d00a4a4.txt",
+      "kind": "gmail_body",
+      "logId": "16e35d00",
+      "appVersion": null,
+      "userMessage": null,
+      "drivers": [],
+      "deviceIds": [],
+      "couples": [],
+      "coupleAbsent": false,
+      "derivedCoupleCount": 0,
+      "signals": [],
+      "highlights": [],
+      "summary": null,
+      "interviewId": null
+    },
+    {
+      "source": "docs/data/DEVICE_INTERVIEWS.json#INT-151",
+      "kind": "interview",
+      "logId": "112d80f7",
+      "appVersion": null,
+      "userMessage": null,
+      "drivers": [],
+      "deviceIds": [],
+      "couples": [
+        {
+          "mfr": "_TZ3002_pzao9ls1",
+          "pid": "TS0726",
+          "canonicalDriver": null,
+          "forbiddenDrivers": [],
+          "confidence": "interview_locked"
+        }
+      ],
+      "coupleAbsent": false,
+      "derivedCoupleCount": 0,
+      "signals": [],
+      "highlights": [],
+      "summary": "id=112d80f7 | couple=_TZ3002_pzao9ls1+TS0726",
+      "interviewId": "INT-151"
+    },
+    {
+      "source": ".github/state/diag-recursive-inbox/bodies/imap_1081c90ee398.txt",
+      "kind": "gmail_body",
+      "logId": "1081c90e",
+      "appVersion": null,
+      "userMessage": null,
+      "drivers": [],
+      "deviceIds": [],
+      "couples": [
+        {
+          "mfr": "_TZE204_gkfbdvyx",
+          "pid": "TS0601",
+          "canonicalDriver": "presence_sensor_radar",
+          "forbiddenDrivers": [
+            "curtain_motor",
+            "device_radiator_valve",
+            "radiator_valve",
+            "smartplug",
+            "generic_tuya",
+            "zigbee_universal",
+            "unknown_zigbee_unit"
+          ],
+          "confidence": "in_log"
+        }
+      ],
+      "coupleAbsent": false,
+      "derivedCoupleCount": 0,
+      "signals": [],
+      "highlights": [],
+      "summary": "couple=_TZE204_gkfbdvyx+TS0601",
+      "interviewId": null
+    },
+    {
+      "source": ".github/state/diag-recursive-inbox/bodies/imap_0d9c8e72b636.txt",
+      "kind": "gmail_body",
+      "logId": "0d9c8e72",
+      "appVersion": null,
+      "userMessage": null,
+      "drivers": [],
+      "deviceIds": [],
+      "couples": [],
+      "coupleAbsent": false,
+      "derivedCoupleCount": 0,
+      "signals": [],
+      "highlights": [],
+      "summary": null,
+      "interviewId": null
+    },
+    {
+      "source": ".github/state/diag-recursive-inbox/bodies/imap_0bc23db006cc.txt",
+      "kind": "gmail_body",
+      "logId": "0bc23db0",
+      "appVersion": null,
+      "userMessage": null,
+      "drivers": [],
+      "deviceIds": [],
+      "couples": [],
+      "coupleAbsent": false,
+      "derivedCoupleCount": 0,
+      "signals": [],
+      "highlights": [],
+      "summary": null,
+      "interviewId": null
+    },
+    {
+      "source": ".github/state/diag-recursive-inbox/bodies/imap_0bab26b69265.txt",
+      "kind": "gmail_body",
+      "logId": "0bab26b6",
+      "appVersion": null,
+      "userMessage": null,
+      "drivers": [],
+      "deviceIds": [],
+      "couples": [],
+      "coupleAbsent": false,
+      "derivedCoupleCount": 0,
+      "signals": [],
+      "highlights": [],
+      "summary": null,
+      "interviewId": null
+    },
+    {
+      "source": ".github/state/diag-recursive-inbox/bodies/imap_0a9e0f5097df.txt",
+      "kind": "gmail_body",
+      "logId": "0a9e0f50",
+      "appVersion": "9.0.1021",
+      "userMessage": null,
+      "drivers": [
+        "presence_sensor_radar"
+      ],
+      "deviceIds": [],
+      "couples": [
+        {
+          "mfr": "_TZ321C_fkzihaxe8",
+          "pid": "TS0225",
+          "canonicalDriver": "presence_sensor_radar",
+          "forbiddenDrivers": [],
+          "confidence": "derived_interview_soft",
+          "sourceInterview": "INT-005"
+        },
+        {
+          "mfr": "_TZE200_rhgsbacq",
+          "pid": "TS0601",
+          "canonicalDriver": "presence_sensor_radar",
+          "forbiddenDrivers": [],
+          "confidence": "derived_interview_soft",
+          "sourceInterview": "INT-016"
+        },
+        {
+          "mfr": "HOBEIAN",
+          "pid": "ZG-204ZV",
+          "canonicalDriver": "presence_sensor_radar",
+          "forbiddenDrivers": [],
+          "confidence": "derived_interview_soft",
+          "sourceInterview": "INT-143"
+        },
+        {
+          "mfr": "_TZE200_3towulqd",
+          "pid": "TS0601",
+          "canonicalDriver": "presence_sensor_radar",
+          "forbiddenDrivers": [],
+          "confidence": "derived_interview_soft",
+          "sourceInterview": "INT-144"
+        },
+        {
+          "mfr": "_TZE200_2aaelwxk",
+          "pid": "TS0601",
+          "canonicalDriver": "presence_sensor_radar",
+          "forbiddenDrivers": [],
+          "confidence": "derived_interview_soft",
+          "sourceInterview": "INT-145"
+        },
+        {
+          "mfr": "_TZE200_kb5noeto",
+          "pid": "TS0601",
+          "canonicalDriver": "presence_sensor_radar",
+          "forbiddenDrivers": [],
+          "confidence": "derived_interview_soft",
+          "sourceInterview": "INT-141"
+        }
+      ],
+      "coupleAbsent": false,
+      "derivedCoupleCount": 6,
+      "signals": [],
+      "highlights": [
+        "2026-09-17T20:24:13.329Z [log] [ManagerDrivers] [Driver:presence_sensor_radar] [Device:[REDACTED_UUID:[REDACTED_SECRET] [TUYA-P0] ð TUYA 0xEF00 FRAME RECEIVE",
+        "2026-09-17T20:24:13.329Z [log] [ManagerDrivers] [Driver:presence_sensor_radar] [Device:[REDACTED_UUID:[REDACTED_SECRET] [TUYA-P0] Parsing frame: 091f02001474040",
+        "2026-09-17T20:24:13.329Z [log] [ManagerDrivers] [Driver:presence_sensor_radar] [Device:[REDACTED_UUID:[REDACTED_SECRET] [TUYA-P0] â Parsed DP116 type=4 len=1",
+        "2026-09-17T20:24:13.330Z [log] [ManagerDrivers] [Driver:presence_sensor_radar] [Device:[REDACTED_UUID:[REDACTED_SECRET] [DP] ð¥ DP116 type=uint8 raw=1 interva",
+        "2026-09-17T20:24:13.355Z [log] [ManagerDrivers] [Driver:presence_sensor_radar] [Device:[REDACTED_UUID:[REDACTED_SECRET] [TUYA-P0] ð TUYA 0xEF00 FRAME RECEIVE",
+        "2026-09-17T20:24:13.356Z [log] [ManagerDrivers] [Driver:presence_sensor_radar] [Device:[REDACTED_UUID:[REDACTED_SECRET] [TUYA-P0] Parsing frame: 094402006a75040"
+      ],
+      "summary": "app=9.0.1021 | drivers=presence_sensor_radar",
+      "interviewId": null
+    },
+    {
+      "source": "docs/data/DEVICE_INTERVIEWS.json#INT-152",
+      "kind": "interview",
+      "logId": "096349c5",
+      "appVersion": null,
+      "userMessage": null,
+      "drivers": [],
+      "deviceIds": [],
+      "couples": [
+        {
+          "mfr": "unknown",
+          "pid": "TS0601",
+          "canonicalDriver": "motion_sensor_radar_mmwave",
+          "forbiddenDrivers": [],
+          "confidence": "interview_locked"
+        }
+      ],
+      "coupleAbsent": false,
+      "derivedCoupleCount": 0,
+      "signals": [],
+      "highlights": [],
+      "summary": "id=096349c5",
+      "interviewId": "INT-152"
+    },
+    {
+      "source": ".github/state/diag-recursive-inbox/bodies/imap_06f54c2d75bb.txt",
+      "kind": "gmail_body",
+      "logId": "06f54c2d",
+      "appVersion": null,
+      "userMessage": null,
+      "drivers": [],
+      "deviceIds": [],
+      "couples": [],
+      "coupleAbsent": false,
+      "derivedCoupleCount": 0,
+      "signals": [],
+      "highlights": [],
+      "summary": null,
+      "interviewId": null
+    },
+    {
+      "source": ".github/state/diag-recursive-inbox/bodies/imap_06df4b2fd1a0.txt",
+      "kind": "gmail_body",
+      "logId": "06df4b2f",
+      "appVersion": null,
+      "userMessage": null,
+      "drivers": [],
+      "deviceIds": [],
+      "couples": [],
+      "coupleAbsent": false,
+      "derivedCoupleCount": 0,
+      "signals": [],
+      "highlights": [],
+      "summary": null,
+      "interviewId": null
+    },
+    {
+      "source": ".github/state/diag-recursive-inbox/bodies/imap_04f744f43ee8.txt",
+      "kind": "gmail_body",
+      "logId": "04f744f4",
+      "appVersion": null,
+      "userMessage": null,
+      "drivers": [],
+      "deviceIds": [],
+      "couples": [],
+      "coupleAbsent": false,
+      "derivedCoupleCount": 0,
+      "signals": [],
+      "highlights": [],
+      "summary": null,
+      "interviewId": null
+    },
+    {
+      "source": ".github/state/diag-recursive-inbox/bodies/doc-FORUM_ISSUES_ANALYSIS.md--Contact-Sensor-No-Respon-45.txt",
+      "kind": "gmail_body",
+      "logId": null,
+      "appVersion": null,
+      "userMessage": null,
+      "drivers": [],
+      "deviceIds": [],
+      "couples": [],
+      "coupleAbsent": false,
+      "derivedCoupleCount": 0,
+      "signals": [],
+      "highlights": [],
+      "summary": null,
+      "interviewId": null
+    },
+    {
+      "source": ".github/state/diag-recursive-inbox/bodies/doc-FORUM_ISSUES_ANALYSIS.md--Contact-Sensor-No-Respon-737.txt",
+      "kind": "gmail_body",
+      "logId": null,
+      "appVersion": null,
+      "userMessage": null,
+      "drivers": [],
+      "deviceIds": [],
+      "couples": [],
+      "coupleAbsent": false,
+      "derivedCoupleCount": 0,
+      "signals": [],
+      "highlights": [],
+      "summary": null,
+      "interviewId": null
+    },
+    {
+      "source": ".github/state/diag-recursive-inbox/bodies/doc-FORUM_ISSUES_ANALYSIS.md--eWeLink-CK-TLSR8656-SS5-01-166.txt",
+      "kind": "gmail_body",
+      "logId": null,
+      "appVersion": null,
+      "userMessage": null,
+      "drivers": [],
+      "deviceIds": [],
+      "couples": [],
+      "coupleAbsent": false,
+      "derivedCoupleCount": 0,
+      "signals": [],
+      "highlights": [],
+      "summary": null,
+      "interviewId": null
+    },
+    {
+      "source": ".github/state/diag-recursive-inbox/bodies/doc-FORUM_ISSUES_ANALYSIS.md--eWeLink-CK-TLSR8656-SS5-01-858.txt",
+      "kind": "gmail_body",
+      "logId": null,
+      "appVersion": null,
+      "userMessage": null,
+      "drivers": [],
+      "deviceIds": [],
+      "couples": [],
+      "coupleAbsent": false,
+      "derivedCoupleCount": 0,
+      "signals": [],
+      "highlights": [],
+      "summary": null,
+      "interviewId": null
+    },
+    {
+      "source": ".github/state/diag-recursive-inbox/bodies/doc-FORUM_ISSUES_ANALYSIS.md--HOBEIAN-ZG-102Z-IAS-Zone-229.txt",
+      "kind": "gmail_body",
+      "logId": null,
+      "appVersion": null,
+      "userMessage": null,
+      "drivers": [],
+      "deviceIds": [],
+      "couples": [
+        {
+          "mfr": "HOBEIAN",
+          "pid": "ZG-102Z",
+          "canonicalDriver": null,
+          "forbiddenDrivers": [],
+          "confidence": "in_log"
+        }
+      ],
+      "coupleAbsent": false,
+      "derivedCoupleCount": 0,
+      "signals": [],
+      "highlights": [],
+      "summary": "couple=HOBEIAN+ZG-102Z",
+      "interviewId": null
+    },
+    {
+      "source": ".github/state/diag-recursive-inbox/bodies/doc-FORUM_ISSUES_ANALYSIS.md--HOBEIAN-ZG-102Z-IAS-Zone-921.txt",
+      "kind": "gmail_body",
+      "logId": null,
+      "appVersion": null,
+      "userMessage": null,
+      "drivers": [],
+      "deviceIds": [],
+      "couples": [
+        {
+          "mfr": "HOBEIAN",
+          "pid": "ZG-102Z",
+          "canonicalDriver": null,
+          "forbiddenDrivers": [],
+          "confidence": "in_log"
+        }
+      ],
+      "coupleAbsent": false,
+      "derivedCoupleCount": 0,
+      "signals": [],
+      "highlights": [],
+      "summary": "couple=HOBEIAN+ZG-102Z",
+      "interviewId": null
+    },
+    {
+      "source": ".github/state/diag-recursive-inbox/bodies/doc-FORUM_ISSUES_ANALYSIS.md--Motion-Sensor-Lux-Only-U-263.txt",
+      "kind": "gmail_body",
+      "logId": null,
+      "appVersion": null,
+      "userMessage": null,
+      "drivers": [],
+      "deviceIds": [],
+      "couples": [],
+      "coupleAbsent": false,
+      "derivedCoupleCount": 0,
+      "signals": [],
+      "highlights": [],
+      "summary": null,
+      "interviewId": null
+    },
+    {
+      "source": ".github/state/diag-recursive-inbox/bodies/doc-FORUM_ISSUES_ANALYSIS.md--Motion-Sensor-Lux-Only-U-955.txt",
+      "kind": "gmail_body",
+      "logId": null,
+      "appVersion": null,
+      "userMessage": null,
+      "drivers": [],
+      "deviceIds": [],
+      "couples": [],
+      "coupleAbsent": false,
+      "derivedCoupleCount": 0,
+      "signals": [],
+      "highlights": [],
+      "summary": null,
+      "interviewId": null
+    },
+    {
+      "source": ".github/state/diag-recursive-inbox/bodies/doc-FORUM_ISSUES_ANALYSIS.md--Scene-Switches-No-Button-75.txt",
+      "kind": "gmail_body",
+      "logId": null,
+      "appVersion": null,
+      "userMessage": null,
+      "drivers": [],
+      "deviceIds": [],
+      "couples": [],
+      "coupleAbsent": true,
+      "derivedCoupleCount": 0,
+      "signals": [],
+      "highlights": [],
+      "summary": null,
+      "interviewId": null
+    },
+    {
+      "source": ".github/state/diag-recursive-inbox/bodies/doc-FORUM_ISSUES_ANALYSIS.md--Scene-Switches-No-Button-767.txt",
+      "kind": "gmail_body",
+      "logId": null,
+      "appVersion": null,
+      "userMessage": null,
+      "drivers": [],
+      "deviceIds": [],
+      "couples": [],
+      "coupleAbsent": true,
+      "derivedCoupleCount": 0,
+      "signals": [],
+      "highlights": [],
+      "summary": null,
+      "interviewId": null
+    },
+    {
+      "source": ".github/state/diag-recursive-inbox/bodies/doc-FORUM_ISSUES_ANALYSIS.md--Smart-Buttons-No-Flow-Re-11.txt",
+      "kind": "gmail_body",
+      "logId": null,
+      "appVersion": null,
+      "userMessage": null,
+      "drivers": [],
+      "deviceIds": [],
+      "couples": [],
+      "coupleAbsent": false,
+      "derivedCoupleCount": 0,
+      "signals": [],
+      "highlights": [],
+      "summary": null,
+      "interviewId": null
+    },
+    {
+      "source": ".github/state/diag-recursive-inbox/bodies/doc-FORUM_ISSUES_ANALYSIS.md--Smart-Buttons-No-Flow-Re-703.txt",
+      "kind": "gmail_body",
+      "logId": null,
+      "appVersion": null,
+      "userMessage": null,
+      "drivers": [],
+      "deviceIds": [],
+      "couples": [],
+      "coupleAbsent": false,
+      "derivedCoupleCount": 0,
+      "signals": [],
+      "highlights": [],
+      "summary": null,
+      "interviewId": null
+    },
+    {
+      "source": ".github/state/diag-recursive-inbox/bodies/doc-FORUM_ISSUES_ANALYSIS.md--_TZE204_gkfbdvyx-Similar-146.txt",
+      "kind": "gmail_body",
+      "logId": null,
+      "appVersion": null,
+      "userMessage": null,
+      "drivers": [],
+      "deviceIds": [],
+      "couples": [
+        {
+          "mfr": "_TZE204_gkfbdvyx",
+          "pid": "TS0601",
+          "canonicalDriver": "presence_sensor_radar",
+          "forbiddenDrivers": [
+            "curtain_motor",
+            "device_radiator_valve",
+            "radiator_valve",
+            "smartplug",
+            "generic_tuya",
+            "zigbee_universal",
+            "unknown_zigbee_unit"
+          ],
+          "confidence": "in_log"
+        }
+      ],
+      "coupleAbsent": false,
+      "derivedCoupleCount": 0,
+      "signals": [],
+      "highlights": [],
+      "summary": "couple=_TZE204_gkfbdvyx+TS0601",
+      "interviewId": null
+    },
+    {
+      "source": ".github/state/diag-recursive-inbox/bodies/doc-FORUM_ISSUES_ANALYSIS.md--_TZE204_gkfbdvyx-Similar-838.txt",
+      "kind": "gmail_body",
+      "logId": null,
+      "appVersion": null,
+      "userMessage": null,
+      "drivers": [],
+      "deviceIds": [],
+      "couples": [
+        {
+          "mfr": "_TZE204_gkfbdvyx",
+          "pid": "TS0601",
+          "canonicalDriver": "presence_sensor_radar",
+          "forbiddenDrivers": [
+            "curtain_motor",
+            "device_radiator_valve",
+            "radiator_valve",
+            "smartplug",
+            "generic_tuya",
+            "zigbee_universal",
+            "unknown_zigbee_unit"
+          ],
+          "confidence": "in_log"
+        }
+      ],
+      "coupleAbsent": false,
+      "derivedCoupleCount": 0,
+      "signals": [],
+      "highlights": [],
+      "summary": "couple=_TZE204_gkfbdvyx+TS0601",
+      "interviewId": null
+    },
+    {
+      "source": ".github/state/diag-recursive-inbox/bodies/doc-FORUM_ISSUES_ANALYSIS.md--_TZE284_iadro9bf-Motion--105.txt",
+      "kind": "gmail_body",
+      "logId": null,
+      "appVersion": null,
+      "userMessage": null,
+      "drivers": [],
+      "deviceIds": [],
+      "couples": [
+        {
+          "mfr": "_TZE284_iadro9bf",
+          "pid": "TS0601",
+          "canonicalDriver": null,
+          "forbiddenDrivers": [],
+          "confidence": "in_log"
+        }
+      ],
+      "coupleAbsent": false,
+      "derivedCoupleCount": 0,
+      "signals": [],
+      "highlights": [],
+      "summary": "couple=_TZE284_iadro9bf+TS0601",
+      "interviewId": null
+    },
+    {
+      "source": ".github/state/diag-recursive-inbox/bodies/doc-FORUM_ISSUES_ANALYSIS.md--_TZE284_iadro9bf-Motion--797.txt",
+      "kind": "gmail_body",
+      "logId": null,
+      "appVersion": null,
+      "userMessage": null,
+      "drivers": [],
+      "deviceIds": [],
+      "couples": [
+        {
+          "mfr": "_TZE284_iadro9bf",
+          "pid": "TS0601",
+          "canonicalDriver": null,
+          "forbiddenDrivers": [],
+          "confidence": "in_log"
+        }
+      ],
+      "coupleAbsent": false,
+      "derivedCoupleCount": 0,
+      "signals": [],
+      "highlights": [],
+      "summary": "couple=_TZE284_iadro9bf+TS0601",
+      "interviewId": null
+    },
+    {
+      "source": ".github/state/diag-recursive-inbox/bodies/doc-FORUM_ISSUES_CONSOLIDATED.md-HOBEIAN-ZG-102Z-CIE-Enrollment-286.txt",
+      "kind": "gmail_body",
+      "logId": null,
+      "appVersion": null,
+      "userMessage": null,
+      "drivers": [],
+      "deviceIds": [],
+      "couples": [
+        {
+          "mfr": "HOBEIAN",
+          "pid": "ZG-102Z",
+          "canonicalDriver": null,
+          "forbiddenDrivers": [],
+          "confidence": "in_log"
+        }
+      ],
+      "coupleAbsent": false,
+      "derivedCoupleCount": 0,
+      "signals": [],
+      "highlights": [],
+      "summary": "couple=HOBEIAN+ZG-102Z",
+      "interviewId": null
+    },
+    {
+      "source": ".github/state/diag-recursive-inbox/bodies/doc-FORUM_ISSUES_CONSOLIDATED.md-HOBEIAN-ZG-102Z-CIE-Enrollment-51.txt",
+      "kind": "gmail_body",
+      "logId": null,
+      "appVersion": null,
+      "userMessage": null,
+      "drivers": [],
+      "deviceIds": [],
+      "couples": [
+        {
+          "mfr": "HOBEIAN",
+          "pid": "ZG-102Z",
+          "canonicalDriver": null,
+          "forbiddenDrivers": [],
+          "confidence": "in_log"
+        }
+      ],
+      "coupleAbsent": false,
+      "derivedCoupleCount": 0,
+      "signals": [],
+      "highlights": [],
+      "summary": "couple=HOBEIAN+ZG-102Z",
+      "interviewId": null
+    },
+    {
+      "source": ".github/state/diag-recursive-inbox/bodies/doc-FORUM_ISSUES_CONSOLIDATED.md-Presence-Radar-Motion-Alarm-St-273.txt",
+      "kind": "gmail_body",
+      "logId": null,
+      "appVersion": null,
+      "userMessage": null,
+      "drivers": [],
+      "deviceIds": [],
+      "couples": [
+        {
+          "mfr": "_TZE284_iadro9bf",
+          "pid": "TS0601",
+          "canonicalDriver": null,
+          "forbiddenDrivers": [],
+          "confidence": "in_log"
+        }
+      ],
+      "coupleAbsent": false,
+      "derivedCoupleCount": 0,
+      "signals": [],
+      "highlights": [],
+      "summary": "couple=_TZE284_iadro9bf+TS0601",
+      "interviewId": null
+    },
+    {
+      "source": ".github/state/diag-recursive-inbox/bodies/doc-FORUM_ISSUES_CONSOLIDATED.md-Presence-Radar-Motion-Alarm-St-38.txt",
+      "kind": "gmail_body",
+      "logId": null,
+      "appVersion": null,
+      "userMessage": null,
+      "drivers": [],
+      "deviceIds": [],
+      "couples": [
+        {
+          "mfr": "_TZE284_iadro9bf",
+          "pid": "TS0601",
+          "canonicalDriver": null,
+          "forbiddenDrivers": [],
+          "confidence": "in_log"
+        }
+      ],
+      "coupleAbsent": false,
+      "derivedCoupleCount": 0,
+      "signals": [],
+      "highlights": [],
+      "summary": "couple=_TZE284_iadro9bf+TS0601",
+      "interviewId": null
+    },
+    {
+      "source": ".github/state/diag-recursive-inbox/bodies/doc-FORUM_ISSUES_CONSOLIDATED.md-Smart-Button-No-Flow-Response-26.txt",
+      "kind": "gmail_body",
+      "logId": null,
+      "appVersion": null,
+      "userMessage": null,
+      "drivers": [],
+      "deviceIds": [],
+      "couples": [],
+      "coupleAbsent": false,
+      "derivedCoupleCount": 0,
+      "signals": [],
+      "highlights": [],
+      "summary": null,
+      "interviewId": null
+    },
+    {
+      "source": ".github/state/diag-recursive-inbox/bodies/doc-FORUM_ISSUES_CONSOLIDATED.md-Smart-Button-No-Flow-Response-261.txt",
+      "kind": "gmail_body",
+      "logId": null,
+      "appVersion": null,
+      "userMessage": null,
+      "drivers": [],
+      "deviceIds": [],
+      "couples": [],
+      "coupleAbsent": false,
+      "derivedCoupleCount": 0,
+      "signals": [],
+      "highlights": [],
+      "summary": null,
+      "interviewId": null
+    },
+    {
+      "source": ".github/state/diag-recursive-inbox/bodies/doc-GITHUB_RESPONSES_FULL.md-azkysmarthome-TS0203-SUPPORT-5.txt",
+      "kind": "gmail_body",
+      "logId": null,
+      "appVersion": null,
+      "userMessage": null,
+      "drivers": [],
+      "deviceIds": [],
+      "couples": [],
+      "coupleAbsent": false,
+      "derivedCoupleCount": 0,
+      "signals": [],
+      "highlights": [],
+      "summary": null,
+      "interviewId": null
+    },
+    {
+      "source": ".github/state/diag-recursive-inbox/bodies/doc-GITHUB_RESPONSES_FULL.md-azkysmarthome-TS0203-SUPPORTE-321.txt",
+      "kind": "gmail_body",
+      "logId": null,
+      "appVersion": null,
+      "userMessage": null,
+      "drivers": [],
+      "deviceIds": [],
+      "couples": [],
+      "coupleAbsent": false,
+      "derivedCoupleCount": 0,
+      "signals": [],
+      "highlights": [],
+      "summary": null,
+      "interviewId": null
+    },
+    {
+      "source": ".github/state/diag-recursive-inbox/bodies/doc-GITHUB_RESPONSES_FULL.md-DVMasters-TS0043-_TZ3000_fam-32.txt",
+      "kind": "gmail_body",
+      "logId": null,
+      "appVersion": null,
+      "userMessage": null,
+      "drivers": [],
+      "deviceIds": [],
+      "couples": [],
+      "coupleAbsent": true,
+      "derivedCoupleCount": 0,
+      "signals": [],
+      "highlights": [],
+      "summary": null,
+      "interviewId": null
+    },
+    {
+      "source": ".github/state/diag-recursive-inbox/bodies/doc-GITHUB_RESPONSES_FULL.md-DVMasters-TS0043-_TZ3000_famk-348.txt",
+      "kind": "gmail_body",
+      "logId": null,
+      "appVersion": null,
+      "userMessage": null,
+      "drivers": [],
+      "deviceIds": [],
+      "couples": [],
+      "coupleAbsent": true,
+      "derivedCoupleCount": 0,
+      "signals": [],
+      "highlights": [],
+      "summary": null,
+      "interviewId": null
+    },
+    {
+      "source": ".github/state/diag-recursive-inbox/bodies/doc-GITHUB_RESPONSES_FULL.md-elgato7-Longsam-FIXED-v5-8-8-17.txt",
+      "kind": "gmail_body",
+      "logId": null,
+      "appVersion": null,
+      "userMessage": null,
+      "drivers": [],
+      "deviceIds": [],
+      "couples": [],
+      "coupleAbsent": false,
+      "derivedCoupleCount": 0,
+      "signals": [],
+      "highlights": [],
+      "summary": null,
+      "interviewId": null
+    },
+    {
+      "source": ".github/state/diag-recursive-inbox/bodies/doc-GITHUB_RESPONSES_FULL.md-elgato7-Longsam-FIXED-v5-8-88-333.txt",
+      "kind": "gmail_body",
+      "logId": null,
+      "appVersion": null,
+      "userMessage": null,
+      "drivers": [],
+      "deviceIds": [],
+      "couples": [],
+      "coupleAbsent": false,
+      "derivedCoupleCount": 0,
+      "signals": [],
+      "highlights": [],
+      "summary": null,
+      "interviewId": null
+    },
+    {
+      "source": ".github/state/diag-recursive-inbox/bodies/doc-GITHUB_RESPONSES_FULL.md-Ernst02507-TS004F-_TZ3000_gw-26.txt",
+      "kind": "gmail_body",
+      "logId": null,
+      "appVersion": null,
+      "userMessage": null,
+      "drivers": [],
+      "deviceIds": [],
+      "couples": [],
+      "coupleAbsent": false,
+      "derivedCoupleCount": 0,
+      "signals": [],
+      "highlights": [],
+      "summary": null,
+      "interviewId": null
+    },
+    {
+      "source": ".github/state/diag-recursive-inbox/bodies/doc-GITHUB_RESPONSES_FULL.md-Ernst02507-TS004F-_TZ3000_gwk-342.txt",
+      "kind": "gmail_body",
+      "logId": null,
+      "appVersion": null,
+      "userMessage": null,
+      "drivers": [],
+      "deviceIds": [],
+      "couples": [],
+      "coupleAbsent": false,
+      "derivedCoupleCount": 0,
+      "signals": [],
+      "highlights": [],
+      "summary": null,
+      "interviewId": null
+    },
+    {
+      "source": ".github/state/diag-recursive-inbox/bodies/doc-GITHUB_RESPONSES_FULL.md-Lalla80111-TS0041-button-NO--8.txt",
+      "kind": "gmail_body",
+      "logId": null,
+      "appVersion": null,
+      "userMessage": null,
+      "drivers": [],
+      "deviceIds": [],
+      "couples": [
+        {
+          "mfr": "_TZ3000_b4awzgct",
+          "pid": "TS0041",
+          "canonicalDriver": "button_wireless_1",
+          "forbiddenDrivers": [
+            "button_wireless_4_ts0041",
+            "switch_1gang",
+            "scene_switch_1",
+            "scene_switch_4"
+          ],
+          "confidence": "in_log"
+        }
+      ],
+      "coupleAbsent": false,
+      "derivedCoupleCount": 0,
+      "signals": [],
+      "highlights": [],
+      "summary": "couple=_TZ3000_b4awzgct+TS0041",
+      "interviewId": null
+    },
+    {
+      "source": ".github/state/diag-recursive-inbox/bodies/doc-GITHUB_RESPONSES_FULL.md-Lalla80111-TS0041-button-NO-F-324.txt",
+      "kind": "gmail_body",
+      "logId": null,
+      "appVersion": null,
+      "userMessage": null,
+      "drivers": [],
+      "deviceIds": [],
+      "couples": [
+        {
+          "mfr": "_TZ3000_b4awzgct",
+          "pid": "TS0041",
+          "canonicalDriver": "button_wireless_1",
+          "forbiddenDrivers": [
+            "button_wireless_4_ts0041",
+            "switch_1gang",
+            "scene_switch_1",
+            "scene_switch_4"
+          ],
+          "confidence": "in_log"
+        }
+      ],
+      "coupleAbsent": false,
+      "derivedCoupleCount": 0,
+      "signals": [],
+      "highlights": [],
+      "summary": "couple=_TZ3000_b4awzgct+TS0041",
+      "interviewId": null
+    },
+    {
+      "source": ".github/state/diag-recursive-inbox/bodies/doc-GITHUB_RESPONSES_FULL.md-Lalla80111-TS0041-_TZ3000_b4-23.txt",
+      "kind": "gmail_body",
+      "logId": null,
+      "appVersion": null,
+      "userMessage": null,
+      "drivers": [],
+      "deviceIds": [],
+      "couples": [],
+      "coupleAbsent": true,
+      "derivedCoupleCount": 0,
+      "signals": [],
+      "highlights": [],
+      "summary": null,
+      "interviewId": null
+    },
+    {
+      "source": ".github/state/diag-recursive-inbox/bodies/doc-GITHUB_RESPONSES_FULL.md-Lalla80111-TS0041-_TZ3000_b4a-339.txt",
+      "kind": "gmail_body",
+      "logId": null,
+      "appVersion": null,
+      "userMessage": null,
+      "drivers": [],
+      "deviceIds": [],
+      "couples": [],
+      "coupleAbsent": true,
+      "derivedCoupleCount": 0,
+      "signals": [],
+      "highlights": [],
+      "summary": null,
+      "interviewId": null
+    },
+    {
+      "source": ".github/state/diag-recursive-inbox/bodies/doc-GITHUB_RESPONSES_FULL.md-NoroddH-TS0225-_TZ321C_fkzih-35.txt",
+      "kind": "gmail_body",
+      "logId": null,
+      "appVersion": null,
+      "userMessage": null,
+      "drivers": [],
+      "deviceIds": [],
+      "couples": [],
+      "coupleAbsent": false,
+      "derivedCoupleCount": 0,
+      "signals": [],
+      "highlights": [],
+      "summary": null,
+      "interviewId": null
+    },
+    {
+      "source": ".github/state/diag-recursive-inbox/bodies/doc-GITHUB_RESPONSES_FULL.md-NoroddH-TS0225-_TZ321C_fkziha-351.txt",
+      "kind": "gmail_body",
+      "logId": null,
+      "appVersion": null,
+      "userMessage": null,
+      "drivers": [],
+      "deviceIds": [],
+      "couples": [],
+      "coupleAbsent": false,
+      "derivedCoupleCount": 0,
+      "signals": [],
+      "highlights": [],
+      "summary": null,
+      "interviewId": null
+    },
+    {
+      "source": ".github/state/diag-recursive-inbox/bodies/doc-GITHUB_RESPONSES_FULL.md-Pollepa-TS011F-_TZ3210_w0qqd-29.txt",
+      "kind": "gmail_body",
+      "logId": null,
+      "appVersion": null,
+      "userMessage": null,
+      "drivers": [],
+      "deviceIds": [],
+      "couples": [],
+      "coupleAbsent": false,
+      "derivedCoupleCount": 0,
+      "signals": [],
+      "highlights": [],
+      "summary": null,
+      "interviewId": null
+    },
+    {
+      "source": ".github/state/diag-recursive-inbox/bodies/doc-GITHUB_RESPONSES_FULL.md-Pollepa-TS011F-_TZ3210_w0qqde-345.txt",
+      "kind": "gmail_body",
+      "logId": null,
+      "appVersion": null,
+      "userMessage": null,
+      "drivers": [],
+      "deviceIds": [],
+      "couples": [],
+      "coupleAbsent": false,
+      "derivedCoupleCount": 0,
+      "signals": [],
+      "highlights": [],
+      "summary": null,
+      "interviewId": null
+    },
+    {
+      "source": ".github/state/diag-recursive-inbox/bodies/doc-GITHUB_RESPONSES_FULL.md-Tauno20-WZ-M100-FIXED-v5-8-8-2.txt",
+      "kind": "gmail_body",
+      "logId": null,
+      "appVersion": null,
+      "userMessage": null,
+      "drivers": [],
+      "deviceIds": [],
+      "couples": [],
+      "coupleAbsent": false,
+      "derivedCoupleCount": 0,
+      "signals": [],
+      "highlights": [],
+      "summary": null,
+      "interviewId": null
+    },
+    {
+      "source": ".github/state/diag-recursive-inbox/bodies/doc-GITHUB_RESPONSES_FULL.md-Tauno20-WZ-M100-FIXED-v5-8-87-318.txt",
+      "kind": "gmail_body",
+      "logId": null,
+      "appVersion": null,
+      "userMessage": null,
+      "drivers": [],
+      "deviceIds": [],
+      "couples": [],
+      "coupleAbsent": false,
+      "derivedCoupleCount": 0,
+      "signals": [],
+      "highlights": [],
+      "summary": null,
+      "interviewId": null
+    },
+    {
+      "source": ".github/state/diag-recursive-inbox/bodies/doc-ISSUE_RESPONSES.md-Air-Quality-Monitor-Request-9.txt",
+      "kind": "gmail_body",
+      "logId": null,
+      "appVersion": null,
+      "userMessage": null,
+      "drivers": [],
+      "deviceIds": [],
+      "couples": [],
+      "coupleAbsent": false,
+      "derivedCoupleCount": 0,
+      "signals": [],
+      "highlights": [],
+      "summary": null,
+      "interviewId": null
+    },
+    {
+      "source": ".github/state/diag-recursive-inbox/bodies/doc-ISSUE_RESPONSES.md-BSEED-1-Button-Switch-_TZ3000-69.txt",
+      "kind": "gmail_body",
+      "logId": null,
+      "appVersion": null,
+      "userMessage": null,
+      "drivers": [],
+      "deviceIds": [],
+      "couples": [],
+      "coupleAbsent": false,
+      "derivedCoupleCount": 0,
+      "signals": [],
+      "highlights": [],
+      "summary": null,
+      "interviewId": null
+    },
+    {
+      "source": ".github/state/diag-recursive-inbox/bodies/doc-ISSUE_RESPONSES.md-BSEED-1-Button-Switch-_TZ3000-91.txt",
+      "kind": "gmail_body",
+      "logId": null,
+      "appVersion": null,
+      "userMessage": null,
+      "drivers": [],
+      "deviceIds": [],
+      "couples": [],
+      "coupleAbsent": false,
+      "derivedCoupleCount": 0,
+      "signals": [],
+      "highlights": [],
+      "summary": null,
+      "interviewId": null
+    },
+    {
+      "source": ".github/state/diag-recursive-inbox/bodies/doc-ISSUE_RESPONSES.md-Climate-Sensor-from-AliExpress-42.txt",
+      "kind": "gmail_body",
+      "logId": null,
+      "appVersion": null,
+      "userMessage": null,
+      "drivers": [],
+      "deviceIds": [],
+      "couples": [],
+      "coupleAbsent": false,
+      "derivedCoupleCount": 0,
+      "signals": [],
+      "highlights": [],
+      "summary": null,
+      "interviewId": null
+    },
+    {
+      "source": "docs/data/DEVICE_INTERVIEWS.json#INT-002",
+      "kind": "interview",
+      "logId": null,
+      "appVersion": null,
+      "userMessage": null,
+      "drivers": [],
+      "deviceIds": [],
+      "couples": [
+        {
+          "mfr": "_TZE204_gkfbdvyx",
+          "pid": "TS0601",
+          "canonicalDriver": "presence_sensor_radar",
+          "forbiddenDrivers": [
+            "curtain_motor",
+            "device_radiator_valve",
+            "radiator_valve",
+            "smartplug",
+            "generic_tuya",
+            "zigbee_universal",
+            "unknown_zigbee_unit"
+          ],
+          "confidence": "interview_locked"
+        }
+      ],
+      "coupleAbsent": false,
+      "derivedCoupleCount": 0,
+      "signals": [],
+      "highlights": [],
+      "summary": "couple=_TZE204_gkfbdvyx+TS0601",
+      "interviewId": "INT-002"
+    },
+    {
+      "source": "docs/data/DEVICE_INTERVIEWS.json#INT-003",
+      "kind": "interview",
+      "logId": null,
+      "appVersion": null,
+      "userMessage": null,
+      "drivers": [],
+      "deviceIds": [],
+      "couples": [
+        {
+          "mfr": "_TZE204_*",
+          "pid": "TS0601",
+          "canonicalDriver": null,
+          "forbiddenDrivers": [],
+          "confidence": "interview_locked"
+        },
+        {
+          "mfr": "_TZE204_",
+          "pid": "TS0601",
+          "canonicalDriver": null,
+          "forbiddenDrivers": [],
+          "confidence": "interview_locked"
+        }
+      ],
+      "coupleAbsent": false,
+      "derivedCoupleCount": 0,
+      "signals": [],
+      "highlights": [],
+      "summary": "couple=_TZE204_+TS0601",
+      "interviewId": "INT-003"
+    },
+    {
+      "source": "docs/data/DEVICE_INTERVIEWS.json#INT-004",
+      "kind": "interview",
+      "logId": null,
+      "appVersion": null,
+      "userMessage": null,
+      "drivers": [],
+      "deviceIds": [],
+      "couples": [
+        {
+          "mfr": "_TZE204_ztqnh5cg",
+          "pid": "TS0601",
+          "canonicalDriver": null,
+          "forbiddenDrivers": [],
+          "confidence": "interview_locked"
+        }
+      ],
+      "coupleAbsent": false,
+      "derivedCoupleCount": 0,
+      "signals": [],
+      "highlights": [],
+      "summary": "couple=_TZE204_ztqnh5cg+TS0601",
+      "interviewId": "INT-004"
+    },
+    {
+      "source": "docs/data/DEVICE_INTERVIEWS.json#INT-005",
+      "kind": "interview",
+      "logId": null,
+      "appVersion": null,
+      "userMessage": null,
+      "drivers": [],
+      "deviceIds": [],
+      "couples": [
+        {
+          "mfr": "_TZ321C_fkzihaxe8",
+          "pid": "TS0225",
+          "canonicalDriver": "presence_sensor_radar",
+          "forbiddenDrivers": [],
+          "confidence": "interview_locked"
+        }
+      ],
+      "coupleAbsent": false,
+      "derivedCoupleCount": 0,
+      "signals": [],
+      "highlights": [],
+      "summary": null,
+      "interviewId": "INT-005"
+    },
+    {
+      "source": "docs/data/DEVICE_INTERVIEWS.json#INT-012",
+      "kind": "interview",
+      "logId": null,
+      "appVersion": null,
+      "userMessage": null,
+      "drivers": [],
+      "deviceIds": [],
+      "couples": [
+        {
+          "mfr": "_TZ3000_5tqxpine",
+          "pid": "TS0044",
+          "canonicalDriver": "scene_switch_4",
+          "forbiddenDrivers": [
+            "button_wireless_4",
+            "smart_knob"
+          ],
+          "confidence": "interview_locked"
+        }
+      ],
+      "coupleAbsent": false,
+      "derivedCoupleCount": 0,
+      "signals": [],
+      "highlights": [],
+      "summary": "couple=_TZ3000_5tqxpine+TS0044",
+      "interviewId": "INT-012"
+    },
+    {
+      "source": "docs/data/DEVICE_INTERVIEWS.json#INT-014",
+      "kind": "interview",
+      "logId": null,
+      "appVersion": null,
+      "userMessage": null,
+      "drivers": [],
+      "deviceIds": [],
+      "couples": [
+        {
+          "mfr": "_TZ3000_*",
+          "pid": "TS0043",
+          "canonicalDriver": "button_wireless_3",
+          "forbiddenDrivers": [],
+          "confidence": "interview_locked"
+        },
+        {
+          "mfr": "_TZ3000_",
+          "pid": "TS0043",
+          "canonicalDriver": null,
+          "forbiddenDrivers": [],
+          "confidence": "interview_locked"
+        }
+      ],
+      "coupleAbsent": false,
+      "derivedCoupleCount": 0,
+      "signals": [],
+      "highlights": [],
+      "summary": "couple=_TZ3000_+TS0043",
+      "interviewId": "INT-014"
+    },
+    {
+      "source": "docs/data/DEVICE_INTERVIEWS.json#INT-016",
+      "kind": "interview",
+      "logId": null,
+      "appVersion": null,
+      "userMessage": null,
+      "drivers": [],
+      "deviceIds": [],
+      "couples": [
+        {
+          "mfr": "_TZE200_rhgsbacq",
+          "pid": "TS0601",
+          "canonicalDriver": "presence_sensor_radar",
+          "forbiddenDrivers": [],
+          "confidence": "interview_locked"
+        }
+      ],
+      "coupleAbsent": false,
+      "derivedCoupleCount": 0,
+      "signals": [],
+      "highlights": [],
+      "summary": "couple=_TZE200_rhgsbacq+TS0601",
+      "interviewId": "INT-016"
+    },
+    {
+      "source": "docs/data/DEVICE_INTERVIEWS.json#INT-017",
+      "kind": "interview",
+      "logId": null,
+      "appVersion": null,
+      "userMessage": null,
+      "drivers": [],
+      "deviceIds": [],
+      "couples": [
+        {
+          "mfr": "_TZE284_xnbkhhdr",
+          "pid": "TS0601",
+          "canonicalDriver": null,
+          "forbiddenDrivers": [],
+          "confidence": "interview_locked"
+        }
+      ],
+      "coupleAbsent": false,
+      "derivedCoupleCount": 0,
+      "signals": [],
+      "highlights": [],
+      "summary": "couple=_TZE284_xnbkhhdr+TS0601",
+      "interviewId": "INT-017"
+    },
+    {
+      "source": "docs/data/DEVICE_INTERVIEWS.json#INT-018",
+      "kind": "interview",
+      "logId": null,
+      "appVersion": null,
+      "userMessage": null,
+      "drivers": [],
+      "deviceIds": [],
+      "couples": [
+        {
+          "mfr": "_TZ3000_l9brjwau",
+          "pid": "TS0002",
+          "canonicalDriver": "wall_switch_2gang_1way",
+          "forbiddenDrivers": [
+            "switch_2gang",
+            "switch_2_gang",
+            "switch_1gang",
+            "wall_switch_1gang_1way",
+            "button_wireless_2"
+          ],
+          "confidence": "interview_locked"
+        }
+      ],
+      "coupleAbsent": false,
+      "derivedCoupleCount": 0,
+      "signals": [],
+      "highlights": [],
+      "summary": "couple=_TZ3000_l9brjwau+TS0002",
+      "interviewId": "INT-018"
+    },
+    {
+      "source": "docs/data/DEVICE_INTERVIEWS.json#INT-019",
+      "kind": "interview",
+      "logId": null,
+      "appVersion": null,
+      "userMessage": null,
+      "drivers": [],
+      "deviceIds": [],
+      "couples": [
+        {
+          "mfr": "_TZ3000_blhvsaqf",
+          "pid": "TS0001",
+          "canonicalDriver": null,
+          "forbiddenDrivers": [],
+          "confidence": "interview_locked"
+        }
+      ],
+      "coupleAbsent": false,
+      "derivedCoupleCount": 0,
+      "signals": [],
+      "highlights": [],
+      "summary": "couple=_TZ3000_blhvsaqf+TS0001",
+      "interviewId": "INT-019"
+    },
+    {
+      "source": "docs/data/DEVICE_INTERVIEWS.json#INT-020",
+      "kind": "interview",
+      "logId": null,
+      "appVersion": null,
+      "userMessage": null,
+      "drivers": [],
+      "deviceIds": [],
+      "couples": [
+        {
+          "mfr": "_TZ3000_*",
+          "pid": "TS0203",
+          "canonicalDriver": null,
+          "forbiddenDrivers": [],
+          "confidence": "interview_locked"
+        },
+        {
+          "mfr": "_TZ3000_",
+          "pid": "TS0203",
+          "canonicalDriver": null,
+          "forbiddenDrivers": [],
+          "confidence": "interview_locked"
+        }
+      ],
+      "coupleAbsent": false,
+      "derivedCoupleCount": 0,
+      "signals": [],
+      "highlights": [],
+      "summary": "couple=_TZ3000_+TS0203",
+      "interviewId": "INT-020"
+    },
+    {
+      "source": "docs/data/DEVICE_INTERVIEWS.json#INT-021",
+      "kind": "interview",
+      "logId": null,
+      "appVersion": null,
+      "userMessage": null,
+      "drivers": [],
+      "deviceIds": [],
+      "couples": [
+        {
+          "mfr": "HOBEIAN",
+          "pid": "ZG-102Z",
+          "canonicalDriver": null,
+          "forbiddenDrivers": [],
+          "confidence": "interview_locked"
+        }
+      ],
+      "coupleAbsent": false,
+      "derivedCoupleCount": 0,
+      "signals": [],
+      "highlights": [],
+      "summary": "couple=HOBEIAN+ZG-102Z",
+      "interviewId": "INT-021"
+    },
+    {
+      "source": "docs/data/DEVICE_INTERVIEWS.json#INT-022",
+      "kind": "interview",
+      "logId": null,
+      "appVersion": null,
+      "userMessage": null,
+      "drivers": [],
+      "deviceIds": [],
+      "couples": [
+        {
+          "mfr": "_TZ3000_o4mkahkc",
+          "pid": "TS0203",
+          "canonicalDriver": null,
+          "forbiddenDrivers": [],
+          "confidence": "interview_locked"
+        }
+      ],
+      "coupleAbsent": false,
+      "derivedCoupleCount": 0,
+      "signals": [],
+      "highlights": [],
+      "summary": "couple=_TZ3000_o4mkahkc+TS0203",
+      "interviewId": "INT-022"
+    },
+    {
+      "source": "docs/data/DEVICE_INTERVIEWS.json#INT-030",
+      "kind": "interview",
+      "logId": null,
+      "appVersion": null,
+      "userMessage": null,
+      "drivers": [],
+      "deviceIds": [],
+      "couples": [
+        {
+          "mfr": "eWeLink",
+          "pid": "CK-TLSR8656-SS5-01(7014)",
+          "canonicalDriver": "climate_sensor",
+          "forbiddenDrivers": [],
+          "confidence": "interview_locked"
+        }
+      ],
+      "coupleAbsent": false,
+      "derivedCoupleCount": 0,
+      "signals": [],
+      "highlights": [],
+      "summary": null,
+      "interviewId": "INT-030"
+    },
+    {
+      "source": "docs/data/DEVICE_INTERVIEWS.json#INT-031",
+      "kind": "interview",
+      "logId": null,
+      "appVersion": null,
+      "userMessage": null,
+      "drivers": [],
+      "deviceIds": [],
+      "couples": [
+        {
+          "mfr": "HOBEIAN",
+          "pid": "ZG-227Z",
+          "canonicalDriver": "climate_sensor",
+          "forbiddenDrivers": [
+            "soil_sensor",
+            "soilsensor_2",
+            "presence_sensor_radar",
+            "sensor_contact_presence",
+            "motion_sensor",
+            "contact_sensor"
+          ],
+          "confidence": "interview_locked"
+        }
+      ],
+      "coupleAbsent": false,
+      "derivedCoupleCount": 0,
+      "signals": [],
+      "highlights": [],
+      "summary": "couple=HOBEIAN+ZG-227Z",
+      "interviewId": "INT-031"
+    },
+    {
+      "source": "docs/data/DEVICE_INTERVIEWS.json#INT-032",
+      "kind": "interview",
+      "logId": null,
+      "appVersion": null,
+      "userMessage": null,
+      "drivers": [],
+      "deviceIds": [],
+      "couples": [
+        {
+          "mfr": "_TZE200_*",
+          "pid": "TS0601",
+          "canonicalDriver": "climate_sensor",
+          "forbiddenDrivers": [],
+          "confidence": "interview_locked"
+        },
+        {
+          "mfr": "_TZE200_",
+          "pid": "TS0601",
+          "canonicalDriver": null,
+          "forbiddenDrivers": [],
+          "confidence": "interview_locked"
+        }
+      ],
+      "coupleAbsent": false,
+      "derivedCoupleCount": 0,
+      "signals": [],
+      "highlights": [],
+      "summary": "couple=_TZE200_+TS0601",
+      "interviewId": "INT-032"
+    },
+    {
+      "source": "docs/data/DEVICE_INTERVIEWS.json#INT-044",
+      "kind": "interview",
+      "logId": null,
+      "appVersion": null,
+      "userMessage": null,
+      "drivers": [],
+      "deviceIds": [],
+      "couples": [
+        {
+          "mfr": "HOBEIAN",
+          "pid": "ZG-204ZL",
+          "canonicalDriver": "presence_sensor_radar",
+          "forbiddenDrivers": [
+            "climate_sensor",
+            "climate_sensor_energy",
+            "sensor_climate_temphumidsensor",
+            "temphumidsensor",
+            "temphumidsensor5",
+            "soil_sensor",
+            "vibration_sensor",
+            "power_clamp_meter",
+            "motion_sensor",
+            "radar_sensor_ceiling"
+          ],
+          "confidence": "interview_locked"
+        }
+      ],
+      "coupleAbsent": false,
+      "derivedCoupleCount": 0,
+      "signals": [],
+      "highlights": [],
+      "summary": "couple=HOBEIAN+ZG-204ZL",
+      "interviewId": "INT-044"
+    },
+    {
+      "source": "docs/data/DEVICE_INTERVIEWS.json#INT-040",
+      "kind": "interview",
+      "logId": null,
+      "appVersion": null,
+      "userMessage": null,
+      "drivers": [],
+      "deviceIds": [],
+      "couples": [
+        {
+          "mfr": "_TZ3000_*",
+          "pid": "TS0202",
+          "canonicalDriver": null,
+          "forbiddenDrivers": [],
+          "confidence": "interview_locked"
+        },
+        {
+          "mfr": "_TZ3000_",
+          "pid": "TS0202",
+          "canonicalDriver": null,
+          "forbiddenDrivers": [],
+          "confidence": "interview_locked"
+        }
+      ],
+      "coupleAbsent": false,
+      "derivedCoupleCount": 0,
+      "signals": [],
+      "highlights": [],
+      "summary": "couple=_TZ3000_+TS0202",
+      "interviewId": "INT-040"
+    },
+    {
+      "source": "docs/data/DEVICE_INTERVIEWS.json#INT-041",
+      "kind": "interview",
+      "logId": null,
+      "appVersion": null,
+      "userMessage": null,
+      "drivers": [],
+      "deviceIds": [],
+      "couples": [
+        {
+          "mfr": "_TZE200_y8jijhba",
+          "pid": "TS0601",
+          "canonicalDriver": null,
+          "forbiddenDrivers": [],
+          "confidence": "interview_locked"
+        }
+      ],
+      "coupleAbsent": false,
+      "derivedCoupleCount": 0,
+      "signals": [],
+      "highlights": [],
+      "summary": "couple=_TZE200_y8jijhba+TS0601",
+      "interviewId": "INT-041"
+    },
+    {
+      "source": "docs/data/DEVICE_INTERVIEWS.json#INT-042",
+      "kind": "interview",
+      "logId": null,
+      "appVersion": null,
+      "userMessage": null,
+      "drivers": [],
+      "deviceIds": [],
+      "couples": [
+        {
+          "mfr": "_TZ3000_c8ozah8n",
+          "pid": "TS0202",
+          "canonicalDriver": null,
+          "forbiddenDrivers": [],
+          "confidence": "interview_locked"
+        }
+      ],
+      "coupleAbsent": false,
+      "derivedCoupleCount": 0,
+      "signals": [],
+      "highlights": [],
+      "summary": "couple=_TZ3000_c8ozah8n+TS0202",
+      "interviewId": "INT-042"
+    },
+    {
+      "source": "docs/data/DEVICE_INTERVIEWS.json#INT-043",
+      "kind": "interview",
+      "logId": null,
+      "appVersion": null,
+      "userMessage": null,
+      "drivers": [],
+      "deviceIds": [],
+      "couples": [
+        {
+          "mfr": [
+            "_TZ3000_fa9mlvja",
+            "_TZ3000_rcuyhwe3"
+          ],
+          "pid": "TS0202",
+          "canonicalDriver": "motion_sensor",
+          "forbiddenDrivers": [],
+          "confidence": "interview_locked"
+        },
+        {
+          "mfr": "_TZ3000_fa9mlvja",
+          "pid": "TS0202",
+          "canonicalDriver": null,
+          "forbiddenDrivers": [],
+          "confidence": "interview_locked"
+        }
+      ],
+      "coupleAbsent": false,
+      "derivedCoupleCount": 0,
+      "signals": [],
+      "highlights": [],
+      "summary": "couple=_TZ3000_fa9mlvja+TS0202",
+      "interviewId": "INT-043"
+    },
+    {
+      "source": "docs/data/DEVICE_INTERVIEWS.json#INT-050",
+      "kind": "interview",
+      "logId": null,
+      "appVersion": null,
+      "userMessage": null,
+      "drivers": [],
+      "deviceIds": [],
+      "couples": [
+        {
+          "mfr": "_TZ3000_blhvsaqf",
+          "pid": "TS0001",
+          "canonicalDriver": null,
+          "forbiddenDrivers": [],
+          "confidence": "interview_locked"
+        }
+      ],
+      "coupleAbsent": false,
+      "derivedCoupleCount": 0,
+      "signals": [],
+      "highlights": [],
+      "summary": "couple=_TZ3000_blhvsaqf+TS0001",
+      "interviewId": "INT-050"
+    },
+    {
+      "source": "docs/data/DEVICE_INTERVIEWS.json#INT-051",
+      "kind": "interview",
+      "logId": null,
+      "appVersion": null,
+      "userMessage": null,
+      "drivers": [],
+      "deviceIds": [],
+      "couples": [
+        {
+          "mfr": "_TZ3000_ysdv91bk",
+          "pid": "TS0001",
+          "canonicalDriver": "wall_switch_1gang_1way",
+          "forbiddenDrivers": [
+            "switch_1gang",
+            "wall_switch_2gang_1way",
+            "generic_tuya",
+            "zigbee_universal"
+          ],
+          "confidence": "interview_locked"
+        }
+      ],
+      "coupleAbsent": false,
+      "derivedCoupleCount": 0,
+      "signals": [],
+      "highlights": [],
+      "summary": "couple=_TZ3000_ysdv91bk+TS0001",
+      "interviewId": "INT-051"
+    },
+    {
+      "source": "docs/data/DEVICE_INTERVIEWS.json#INT-052",
+      "kind": "interview",
+      "logId": null,
+      "appVersion": null,
+      "userMessage": null,
+      "drivers": [],
+      "deviceIds": [],
+      "couples": [
+        {
+          "mfr": "_TZ3000_l9brjwau",
+          "pid": "TS0002",
+          "canonicalDriver": "wall_switch_2gang_1way",
+          "forbiddenDrivers": [
+            "switch_2gang",
+            "switch_2_gang",
+            "switch_1gang",
+            "wall_switch_1gang_1way",
+            "button_wireless_2"
+          ],
+          "confidence": "interview_locked"
+        }
+      ],
+      "coupleAbsent": false,
+      "derivedCoupleCount": 0,
+      "signals": [],
+      "highlights": [],
+      "summary": "couple=_TZ3000_l9brjwau+TS0002",
+      "interviewId": "INT-052"
+    },
+    {
+      "source": "docs/data/DEVICE_INTERVIEWS.json#INT-053",
+      "kind": "interview",
+      "logId": null,
+      "appVersion": null,
+      "userMessage": null,
+      "drivers": [],
+      "deviceIds": [],
+      "couples": [
+        {
+          "mfr": "_TZ3000_qkixdnon",
+          "pid": "TS0003",
+          "canonicalDriver": null,
+          "forbiddenDrivers": [],
+          "confidence": "interview_locked"
+        }
+      ],
+      "coupleAbsent": false,
+      "derivedCoupleCount": 0,
+      "signals": [],
+      "highlights": [],
+      "summary": "couple=_TZ3000_qkixdnon+TS0003",
+      "interviewId": "INT-053"
+    },
+    {
+      "source": "docs/data/DEVICE_INTERVIEWS.json#INT-054",
+      "kind": "interview",
+      "logId": null,
+      "appVersion": null,
+      "userMessage": null,
+      "drivers": [],
+      "deviceIds": [],
+      "couples": [
+        {
+          "mfr": "_TZ3210_4ux0ondb",
+          "pid": "TS011F",
+          "canonicalDriver": null,
+          "forbiddenDrivers": [],
+          "confidence": "interview_locked"
+        }
+      ],
+      "coupleAbsent": false,
+      "derivedCoupleCount": 0,
+      "signals": [],
+      "highlights": [],
+      "summary": "couple=_TZ3210_4ux0ondb+TS011F",
+      "interviewId": "INT-054"
+    },
+    {
+      "source": "docs/data/DEVICE_INTERVIEWS.json#INT-2138",
+      "kind": "interview",
+      "logId": null,
+      "appVersion": null,
+      "userMessage": null,
+      "drivers": [],
+      "deviceIds": [],
+      "couples": [
+        {
+          "mfr": "_TZE284_m1cvyneb",
+          "pid": "TS0601",
+          "canonicalDriver": "wall_dimmer_tuya",
+          "forbiddenDrivers": [
+            "climate_sensor",
+            "climate_sensor_temperature",
+            "thermostat",
+            "air_purifier_climate",
+            "soil_sensor",
+            "zigbee_universal",
+            "generic_tuya",
+            "ir_blaster"
+          ],
+          "confidence": "interview_locked"
+        }
+      ],
+      "coupleAbsent": false,
+      "derivedCoupleCount": 0,
+      "signals": [],
+      "highlights": [],
+      "summary": "couple=_TZE284_m1cvyneb+TS0601",
+      "interviewId": "INT-2138"
+    },
+    {
+      "source": "docs/data/DEVICE_INTERVIEWS.json#INT-2172",
+      "kind": "interview",
+      "logId": null,
+      "appVersion": null,
+      "userMessage": null,
+      "drivers": [],
+      "deviceIds": [],
+      "couples": [
+        {
+          "mfr": "_TZ3000_*",
+          "pid": "TS0002",
+          "canonicalDriver": "switch_2gang",
+          "forbiddenDrivers": [],
+          "confidence": "interview_locked"
+        },
+        {
+          "mfr": "_TZ3000_",
+          "pid": "TS0002",
+          "canonicalDriver": null,
+          "forbiddenDrivers": [],
+          "confidence": "interview_locked"
+        }
+      ],
+      "coupleAbsent": false,
+      "derivedCoupleCount": 0,
+      "signals": [],
+      "highlights": [],
+      "summary": "couple=_TZ3000_+TS0002",
+      "interviewId": "INT-2172"
+    },
+    {
+      "source": "docs/data/DEVICE_INTERVIEWS.json#INT-2173",
+      "kind": "interview",
+      "logId": null,
+      "appVersion": null,
+      "userMessage": null,
+      "drivers": [],
+      "deviceIds": [],
+      "couples": [
+        {
+          "mfr": "_TZ3000_jjdkhueq",
+          "pid": "TS0002",
+          "canonicalDriver": "wall_switch_2gang_1way",
+          "forbiddenDrivers": [
+            "switch_1gang",
+            "climate_sensor",
+            "switch_3gang",
+            "switch_2gang"
+          ],
+          "confidence": "interview_locked"
+        }
+      ],
+      "coupleAbsent": false,
+      "derivedCoupleCount": 0,
+      "signals": [],
+      "highlights": [],
+      "summary": "couple=_TZ3000_jjdkhueq+TS0002",
+      "interviewId": "INT-2173"
+    },
+    {
+      "source": "docs/data/DEVICE_INTERVIEWS.json#INT-060",
+      "kind": "interview",
+      "logId": null,
+      "appVersion": null,
+      "userMessage": null,
+      "drivers": [],
+      "deviceIds": [],
+      "couples": [
+        {
+          "mfr": "_TZE204_81yrt3lo",
+          "pid": "TS0601",
+          "canonicalDriver": "power_clamp_meter",
+          "forbiddenDrivers": [
+            "power_meter",
+            "din_rail_meter"
+          ],
+          "confidence": "interview_locked"
+        }
+      ],
+      "coupleAbsent": false,
+      "derivedCoupleCount": 0,
+      "signals": [],
+      "highlights": [],
+      "summary": "couple=_TZE204_81yrt3lo+TS0601",
+      "interviewId": "INT-060"
+    },
+    {
+      "source": "docs/data/DEVICE_INTERVIEWS.json#INT-061",
+      "kind": "interview",
+      "logId": null,
+      "appVersion": null,
+      "userMessage": null,
+      "drivers": [],
+      "deviceIds": [],
+      "couples": [
+        {
+          "mfr": "SONOFF",
+          "pid": "S60ZBTPF",
+          "canonicalDriver": "plug_energy_monitor",
+          "forbiddenDrivers": [],
+          "confidence": "interview_locked"
+        }
+      ],
+      "coupleAbsent": false,
+      "derivedCoupleCount": 0,
+      "signals": [],
+      "highlights": [],
+      "summary": null,
+      "interviewId": "INT-061"
+    },
+    {
+      "source": "docs/data/DEVICE_INTERVIEWS.json#INT-070",
+      "kind": "interview",
+      "logId": null,
+      "appVersion": null,
+      "userMessage": null,
+      "drivers": [],
+      "deviceIds": [],
+      "couples": [
+        {
+          "mfr": "_TZE200_*",
+          "pid": "TS0601",
+          "canonicalDriver": "smoke_detector_advanced",
+          "forbiddenDrivers": [],
+          "confidence": "interview_locked"
+        },
+        {
+          "mfr": "_TZE200_",
+          "pid": "TS0601",
+          "canonicalDriver": null,
+          "forbiddenDrivers": [],
+          "confidence": "interview_locked"
+        }
+      ],
+      "coupleAbsent": false,
+      "derivedCoupleCount": 0,
+      "signals": [],
+      "highlights": [],
+      "summary": "couple=_TZE200_+TS0601",
+      "interviewId": "INT-070"
+    },
+    {
+      "source": "docs/data/DEVICE_INTERVIEWS.json#INT-071",
+      "kind": "interview",
+      "logId": null,
+      "appVersion": null,
+      "userMessage": null,
+      "drivers": [],
+      "deviceIds": [],
+      "couples": [
+        {
+          "mfr": "_TZE284_gyzlwu5q",
+          "pid": "TS0601",
+          "canonicalDriver": null,
+          "forbiddenDrivers": [],
+          "confidence": "interview_locked"
+        }
+      ],
+      "coupleAbsent": false,
+      "derivedCoupleCount": 0,
+      "signals": [],
+      "highlights": [],
+      "summary": "couple=_TZE284_gyzlwu5q+TS0601",
+      "interviewId": "INT-071"
+    },
+    {
+      "source": "docs/data/DEVICE_INTERVIEWS.json#INT-080",
+      "kind": "interview",
+      "logId": null,
+      "appVersion": null,
+      "userMessage": null,
+      "drivers": [],
+      "deviceIds": [],
+      "couples": [
+        {
+          "mfr": "_TZE284_aa03yzhs",
+          "pid": "TS0601",
+          "canonicalDriver": null,
+          "forbiddenDrivers": [],
+          "confidence": "interview_locked"
+        }
+      ],
+      "coupleAbsent": false,
+      "derivedCoupleCount": 0,
+      "signals": [],
+      "highlights": [],
+      "summary": "couple=_TZE284_aa03yzhs+TS0601",
+      "interviewId": "INT-080"
+    },
+    {
+      "source": "docs/data/DEVICE_INTERVIEWS.json#INT-081",
+      "kind": "interview",
+      "logId": null,
+      "appVersion": null,
+      "userMessage": null,
+      "drivers": [],
+      "deviceIds": [],
+      "couples": [
+        {
+          "mfr": "_TZE204_*",
+          "pid": "TS0601",
+          "canonicalDriver": "water_tank_monitor",
+          "forbiddenDrivers": [],
+          "confidence": "interview_locked"
+        },
+        {
+          "mfr": "_TZE204_",
+          "pid": "TS0601",
+          "canonicalDriver": null,
+          "forbiddenDrivers": [],
+          "confidence": "interview_locked"
+        }
+      ],
+      "coupleAbsent": false,
+      "derivedCoupleCount": 0,
+      "signals": [],
+      "highlights": [],
+      "summary": "couple=_TZE204_+TS0601",
+      "interviewId": "INT-081"
+    },
+    {
+      "source": "docs/data/DEVICE_INTERVIEWS.json#INT-090",
+      "kind": "interview",
+      "logId": null,
+      "appVersion": null,
+      "userMessage": null,
+      "drivers": [],
+      "deviceIds": [],
+      "couples": [
+        {
+          "mfr": "_TZE284_9ern5sfh",
+          "pid": "TS0601",
+          "canonicalDriver": null,
+          "forbiddenDrivers": [],
+          "confidence": "interview_locked"
+        }
+      ],
+      "coupleAbsent": false,
+      "derivedCoupleCount": 0,
+      "signals": [],
+      "highlights": [],
+      "summary": "couple=_TZE284_9ern5sfh+TS0601",
+      "interviewId": "INT-090"
+    },
+    {
+      "source": "docs/data/DEVICE_INTERVIEWS.json#INT-100",
+      "kind": "interview",
+      "logId": null,
+      "appVersion": null,
+      "userMessage": null,
+      "drivers": [],
+      "deviceIds": [],
+      "couples": [
+        {
+          "mfr": "_TZE204_yvx5lh6k",
+          "pid": "TS0601",
+          "canonicalDriver": "air_quality_co2",
+          "forbiddenDrivers": [
+            "climate_sensor",
+            "soil_sensor",
+            "zigbee_universal",
+            "air_quality_comprehensive",
+            "smart_air_detection_box"
+          ],
+          "confidence": "interview_locked"
+        }
+      ],
+      "coupleAbsent": false,
+      "derivedCoupleCount": 0,
+      "signals": [],
+      "highlights": [],
+      "summary": "couple=_TZE204_yvx5lh6k+TS0601",
+      "interviewId": "INT-100"
+    },
+    {
+      "source": "docs/data/DEVICE_INTERVIEWS.json#INT-110",
+      "kind": "interview",
+      "logId": null,
+      "appVersion": null,
+      "userMessage": null,
+      "drivers": [],
+      "deviceIds": [],
+      "couples": [
+        {
+          "mfr": "_TZE204_bjzrowv2",
+          "pid": "TS0601",
+          "canonicalDriver": null,
+          "forbiddenDrivers": [],
+          "confidence": "interview_locked"
+        }
+      ],
+      "coupleAbsent": false,
+      "derivedCoupleCount": 0,
+      "signals": [],
+      "highlights": [],
+      "summary": "couple=_TZE204_bjzrowv2+TS0601",
+      "interviewId": "INT-110"
+    },
+    {
+      "source": "docs/data/DEVICE_INTERVIEWS.json#INT-120",
+      "kind": "interview",
+      "logId": null,
+      "appVersion": null,
+      "userMessage": null,
+      "drivers": [],
+      "deviceIds": [],
+      "couples": [
+        {
+          "mfr": "_TZE200_t1blo2bj",
+          "pid": "TS0601",
+          "canonicalDriver": null,
+          "forbiddenDrivers": [],
+          "confidence": "interview_locked"
+        }
+      ],
+      "coupleAbsent": false,
+      "derivedCoupleCount": 0,
+      "signals": [],
+      "highlights": [],
+      "summary": "couple=_TZE200_t1blo2bj+TS0601",
+      "interviewId": "INT-120"
+    },
+    {
+      "source": "docs/data/DEVICE_INTERVIEWS.json#INT-130",
+      "kind": "interview",
+      "logId": null,
+      "appVersion": null,
+      "userMessage": null,
+      "drivers": [],
+      "deviceIds": [],
+      "couples": [
+        {
+          "mfr": "_TZ3210_j4pdtz9v",
+          "pid": "TS0001",
+          "canonicalDriver": null,
+          "forbiddenDrivers": [],
+          "confidence": "interview_locked"
+        }
+      ],
+      "coupleAbsent": false,
+      "derivedCoupleCount": 0,
+      "signals": [],
+      "highlights": [],
+      "summary": "couple=_TZ3210_j4pdtz9v+TS0001",
+      "interviewId": "INT-130"
+    },
+    {
+      "source": "docs/data/DEVICE_INTERVIEWS.json#INT-143",
+      "kind": "interview",
+      "logId": null,
+      "appVersion": null,
+      "userMessage": null,
+      "drivers": [],
+      "deviceIds": [],
+      "couples": [
+        {
+          "mfr": "HOBEIAN",
+          "pid": "ZG-204ZV",
+          "canonicalDriver": "presence_sensor_radar",
+          "forbiddenDrivers": [
+            "climate_sensor",
+            "climate_sensor_energy",
+            "sensor_climate_temphumidsensor",
+            "temphumidsensor",
+            "temphumidsensor5",
+            "soil_sensor",
+            "vibration_sensor",
+            "power_clamp_meter",
+            "motion_sensor",
+            "radar_sensor_ceiling"
+          ],
+          "confidence": "interview_locked"
+        },
+        {
+          "mfr": "HOBEIAN",
+          "pid": "ZG-204ZV.html",
+          "canonicalDriver": null,
+          "forbiddenDrivers": [],
+          "confidence": "interview_locked"
+        },
+        {
+          "mfr": "HOBEIAN",
+          "pid": "ZG-204ZG",
+          "canonicalDriver": null,
+          "forbiddenDrivers": [],
+          "confidence": "interview_locked"
+        }
+      ],
+      "coupleAbsent": false,
+      "derivedCoupleCount": 0,
+      "signals": [],
+      "highlights": [],
+      "summary": "couple=HOBEIAN+ZG-204ZV",
+      "interviewId": "INT-143"
+    },
+    {
+      "source": "docs/data/DEVICE_INTERVIEWS.json#INT-144",
+      "kind": "interview",
+      "logId": null,
+      "appVersion": null,
+      "userMessage": null,
+      "drivers": [],
+      "deviceIds": [],
+      "couples": [
+        {
+          "mfr": "_TZE200_3towulqd",
+          "pid": "TS0601",
+          "canonicalDriver": "presence_sensor_radar",
+          "forbiddenDrivers": [
+            "air_purifier",
+            "wall_switch_5_gang_tuya",
+            "climate_sensor"
+          ],
+          "confidence": "interview_locked"
+        },
+        {
+          "mfr": "HOBEIAN",
+          "pid": "ZG-204ZL",
+          "canonicalDriver": "presence_sensor_radar",
+          "forbiddenDrivers": [
+            "climate_sensor",
+            "climate_sensor_energy",
+            "sensor_climate_temphumidsensor",
+            "temphumidsensor",
+            "temphumidsensor5",
+            "soil_sensor",
+            "vibration_sensor",
+            "power_clamp_meter",
+            "motion_sensor",
+            "radar_sensor_ceiling"
+          ],
+          "confidence": "interview_locked"
+        },
+        {
+          "mfr": "HOBEIAN",
+          "pid": "ZG-204ZV",
+          "canonicalDriver": "presence_sensor_radar",
+          "forbiddenDrivers": [
+            "climate_sensor",
+            "climate_sensor_energy",
+            "sensor_climate_temphumidsensor",
+            "temphumidsensor",
+            "temphumidsensor5",
+            "soil_sensor",
+            "vibration_sensor",
+            "power_clamp_meter",
+            "motion_sensor",
+            "radar_sensor_ceiling"
+          ],
+          "confidence": "interview_locked"
+        },
+        {
+          "mfr": "HOBEIAN",
+          "pid": "ZG-204ZM",
+          "canonicalDriver": "presence_sensor_radar",
+          "forbiddenDrivers": [
+            "climate_sensor",
+            "climate_sensor_energy",
+            "sensor_climate_temphumidsensor",
+            "temphumidsensor",
+            "temphumidsensor5",
+            "soil_sensor",
+            "vibration_sensor",
+            "power_clamp_meter",
+            "motion_sensor",
+            "radar_sensor_ceiling"
+          ],
+          "confidence": "interview_locked"
+        }
+      ],
+      "coupleAbsent": false,
+      "derivedCoupleCount": 0,
+      "signals": [],
+      "highlights": [],
+      "summary": "couple=_TZE200_3towulqd+TS0601",
+      "interviewId": "INT-144"
+    },
+    {
+      "source": "docs/data/DEVICE_INTERVIEWS.json#INT-140",
+      "kind": "interview",
+      "logId": null,
+      "appVersion": null,
+      "userMessage": null,
+      "drivers": [],
+      "deviceIds": [],
+      "couples": [
+        {
+          "mfr": "_TZE200_rhgsbacq",
+          "pid": "TS0601",
+          "canonicalDriver": "presence_sensor_radar",
+          "forbiddenDrivers": [],
+          "confidence": "interview_locked"
+        }
+      ],
+      "coupleAbsent": false,
+      "derivedCoupleCount": 0,
+      "signals": [],
+      "highlights": [],
+      "summary": "couple=_TZE200_rhgsbacq+TS0601",
+      "interviewId": "INT-140"
+    },
+    {
+      "source": "docs/data/DEVICE_INTERVIEWS.json#INT-141",
+      "kind": "interview",
+      "logId": null,
+      "appVersion": null,
+      "userMessage": null,
+      "drivers": [],
+      "deviceIds": [],
+      "couples": [
+        {
+          "mfr": "_TZE200_kb5noeto",
+          "pid": "TS0601",
+          "canonicalDriver": "presence_sensor_radar",
+          "forbiddenDrivers": [
+            "climate_sensor",
+            "vibration_sensor",
+            "soil_sensor",
+            "power_clamp_meter",
+            "motion_sensor"
+          ],
+          "confidence": "interview_locked"
+        }
+      ],
+      "coupleAbsent": false,
+      "derivedCoupleCount": 0,
+      "signals": [],
+      "highlights": [],
+      "summary": "couple=_TZE200_kb5noeto+TS0601",
+      "interviewId": "INT-141"
+    },
+    {
+      "source": "docs/data/DEVICE_INTERVIEWS.json#INT-142",
+      "kind": "interview",
+      "logId": null,
+      "appVersion": null,
+      "userMessage": null,
+      "drivers": [],
+      "deviceIds": [],
+      "couples": [
+        {
+          "mfr": "_TZE200_2aaelwxk",
+          "pid": "TS0601",
+          "canonicalDriver": "presence_sensor_radar",
+          "forbiddenDrivers": [
+            "climate_sensor",
+            "vibration_sensor",
+            "soil_sensor",
+            "power_clamp_meter",
+            "motion_sensor"
+          ],
+          "confidence": "interview_locked"
+        }
+      ],
+      "coupleAbsent": false,
+      "derivedCoupleCount": 0,
+      "signals": [],
+      "highlights": [],
+      "summary": "couple=_TZE200_2aaelwxk+TS0601",
+      "interviewId": "INT-142"
+    },
+    {
+      "source": "docs/data/DEVICE_INTERVIEWS.json#INT-150",
+      "kind": "interview",
+      "logId": null,
+      "appVersion": null,
+      "userMessage": null,
+      "drivers": [],
+      "deviceIds": [],
+      "couples": [
+        {
+          "mfr": "_TZ3210_eejm8dcr",
+          "pid": "TS0505B",
+          "canonicalDriver": null,
+          "forbiddenDrivers": [],
+          "confidence": "interview_locked"
+        }
+      ],
+      "coupleAbsent": false,
+      "derivedCoupleCount": 0,
+      "signals": [],
+      "highlights": [],
+      "summary": "couple=_TZ3210_eejm8dcr+TS0505B",
+      "interviewId": "INT-150"
+    },
+    {
+      "source": "docs/data/DEVICE_INTERVIEWS.json#INT-152",
+      "kind": "interview",
+      "logId": null,
+      "appVersion": null,
+      "userMessage": null,
+      "drivers": [],
+      "deviceIds": [],
+      "couples": [
+        {
+          "mfr": "_TZ3000_ja5osu5g",
+          "pid": "ZG-103ZL",
+          "canonicalDriver": null,
+          "forbiddenDrivers": [],
+          "confidence": "interview_locked"
+        }
+      ],
+      "coupleAbsent": false,
+      "derivedCoupleCount": 0,
+      "signals": [],
+      "highlights": [],
+      "summary": "couple=_TZ3000_ja5osu5g+ZG-103ZL",
+      "interviewId": "INT-152"
+    },
+    {
+      "source": "docs/data/DEVICE_INTERVIEWS.json#INT-153",
+      "kind": "interview",
+      "logId": null,
+      "appVersion": null,
+      "userMessage": null,
+      "drivers": [],
+      "deviceIds": [],
+      "couples": [
+        {
+          "mfr": "_TZ3000_5iixzdo7",
+          "pid": "TS130F",
+          "canonicalDriver": null,
+          "forbiddenDrivers": [],
+          "confidence": "interview_locked"
+        }
+      ],
+      "coupleAbsent": false,
+      "derivedCoupleCount": 0,
+      "signals": [],
+      "highlights": [],
+      "summary": "couple=_TZ3000_5iixzdo7+TS130F",
+      "interviewId": "INT-153"
+    },
+    {
+      "source": "docs/data/DEVICE_INTERVIEWS.json#INT-154",
+      "kind": "interview",
+      "logId": null,
+      "appVersion": null,
+      "userMessage": null,
+      "drivers": [],
+      "deviceIds": [],
+      "couples": [
+        {
+          "mfr": "_TZ3000_bs93npae",
+          "pid": "TS130F",
+          "canonicalDriver": null,
+          "forbiddenDrivers": [],
+          "confidence": "interview_locked"
+        }
+      ],
+      "coupleAbsent": false,
+      "derivedCoupleCount": 0,
+      "signals": [],
+      "highlights": [],
+      "summary": "couple=_TZ3000_bs93npae+TS130F",
+      "interviewId": "INT-154"
+    },
+    {
+      "source": "docs/data/DEVICE_INTERVIEWS.json#INT-155",
+      "kind": "interview",
+      "logId": null,
+      "appVersion": null,
+      "userMessage": null,
+      "drivers": [],
+      "deviceIds": [],
+      "couples": [
+        {
+          "mfr": "_TZ3000_l9brjwau",
+          "pid": "TS0003",
+          "canonicalDriver": "wall_switch_3gang_1way",
+          "forbiddenDrivers": [
+            "switch_2gang",
+            "switch_3gang"
+          ],
+          "confidence": "interview_locked"
+        }
+      ],
+      "coupleAbsent": false,
+      "derivedCoupleCount": 0,
+      "signals": [],
+      "highlights": [],
+      "summary": "couple=_TZ3000_l9brjwau+TS0003",
+      "interviewId": "INT-155"
+    },
+    {
+      "source": "docs/data/DEVICE_INTERVIEWS.json#INT-156",
+      "kind": "interview",
+      "logId": null,
+      "appVersion": null,
+      "userMessage": null,
+      "drivers": [],
+      "deviceIds": [],
+      "couples": [
+        {
+          "mfr": "_TZ3000_qkixdnon",
+          "pid": "TS0003",
+          "canonicalDriver": null,
+          "forbiddenDrivers": [],
+          "confidence": "interview_locked"
+        }
+      ],
+      "coupleAbsent": false,
+      "derivedCoupleCount": 0,
+      "signals": [],
+      "highlights": [],
+      "summary": "couple=_TZ3000_qkixdnon+TS0003",
+      "interviewId": "INT-156"
+    },
+    {
+      "source": "docs/data/DEVICE_INTERVIEWS.json#INT-157",
+      "kind": "interview",
+      "logId": null,
+      "appVersion": null,
+      "userMessage": null,
+      "drivers": [],
+      "deviceIds": [],
+      "couples": [
+        {
+          "mfr": "TZ3210_p68kms0l",
+          "pid": "TS0207",
+          "canonicalDriver": "water_leak_sensor",
+          "forbiddenDrivers": [],
+          "confidence": "interview_locked"
+        }
+      ],
+      "coupleAbsent": false,
+      "derivedCoupleCount": 0,
+      "signals": [],
+      "highlights": [],
+      "summary": null,
+      "interviewId": "INT-157"
+    },
+    {
+      "source": "docs/data/DEVICE_INTERVIEWS.json#INT-159",
+      "kind": "interview",
+      "logId": null,
+      "appVersion": null,
+      "userMessage": null,
+      "drivers": [],
+      "deviceIds": [],
+      "couples": [
+        {
+          "mfr": "_TZ3000_996rpfy6",
+          "pid": "TS0203",
+          "canonicalDriver": null,
+          "forbiddenDrivers": [],
+          "confidence": "interview_locked"
+        }
+      ],
+      "coupleAbsent": false,
+      "derivedCoupleCount": 0,
+      "signals": [],
+      "highlights": [],
+      "summary": "couple=_TZ3000_996rpfy6+TS0203",
+      "interviewId": "INT-159"
+    },
+    {
+      "source": "docs/data/DEVICE_INTERVIEWS.json#INT-160",
+      "kind": "interview",
+      "logId": null,
+      "appVersion": null,
+      "userMessage": null,
+      "drivers": [],
+      "deviceIds": [],
+      "couples": [
+        {
+          "mfr": "_TZE284_81yrt3lo",
+          "pid": "TS0601",
+          "canonicalDriver": null,
+          "forbiddenDrivers": [],
+          "confidence": "interview_locked"
+        }
+      ],
+      "coupleAbsent": false,
+      "derivedCoupleCount": 0,
+      "signals": [],
+      "highlights": [],
+      "summary": "couple=_TZE284_81yrt3lo+TS0601",
+      "interviewId": "INT-160"
+    },
+    {
+      "source": "docs/data/DEVICE_INTERVIEWS.json#INT-162",
+      "kind": "interview",
+      "logId": null,
+      "appVersion": null,
+      "userMessage": null,
+      "drivers": [],
+      "deviceIds": [],
+      "couples": [
+        {
+          "mfr": "unknown",
+          "pid": "unknown",
+          "canonicalDriver": null,
+          "forbiddenDrivers": [],
+          "confidence": "interview_locked"
+        }
+      ],
+      "coupleAbsent": false,
+      "derivedCoupleCount": 0,
+      "signals": [],
+      "highlights": [],
+      "summary": null,
+      "interviewId": "INT-162"
+    },
+    {
+      "source": "docs/data/DEVICE_INTERVIEWS.json#INT-165",
+      "kind": "interview",
+      "logId": null,
+      "appVersion": null,
+      "userMessage": null,
+      "drivers": [],
+      "deviceIds": [],
+      "couples": [
+        {
+          "mfr": "unknown",
+          "pid": "TS0601",
+          "canonicalDriver": "presence_sensor_radar",
+          "forbiddenDrivers": [],
+          "confidence": "interview_locked"
+        }
+      ],
+      "coupleAbsent": false,
+      "derivedCoupleCount": 0,
+      "signals": [],
+      "highlights": [],
+      "summary": null,
+      "interviewId": "INT-165"
+    },
+    {
+      "source": "docs/data/DEVICE_INTERVIEWS.json#INT-167",
+      "kind": "interview",
+      "logId": null,
+      "appVersion": null,
+      "userMessage": null,
+      "drivers": [],
+      "deviceIds": [],
+      "couples": [
+        {
+          "mfr": "unknown",
+          "pid": "unknown",
+          "canonicalDriver": null,
+          "forbiddenDrivers": [],
+          "confidence": "interview_locked"
+        }
+      ],
+      "coupleAbsent": false,
+      "derivedCoupleCount": 0,
+      "signals": [],
+      "highlights": [],
+      "summary": null,
+      "interviewId": "INT-167"
+    },
+    {
+      "source": "docs/data/DEVICE_INTERVIEWS.json#INT-147",
+      "kind": "interview",
+      "logId": null,
+      "appVersion": null,
+      "userMessage": null,
+      "drivers": [],
+      "deviceIds": [],
+      "couples": [
+        {
+          "mfr": "_TZE204_xu4a5rhj",
+          "pid": "TS0601",
+          "canonicalDriver": null,
+          "forbiddenDrivers": [],
+          "confidence": "interview_locked"
+        }
+      ],
+      "coupleAbsent": false,
+      "derivedCoupleCount": 0,
+      "signals": [],
+      "highlights": [],
+      "summary": "couple=_TZE204_xu4a5rhj+TS0601",
+      "interviewId": "INT-147"
+    },
+    {
+      "source": "docs/data/DEVICE_INTERVIEWS.json#INT-149",
+      "kind": "interview",
+      "logId": null,
+      "appVersion": null,
+      "userMessage": null,
+      "drivers": [],
+      "deviceIds": [],
+      "couples": [
+        {
+          "mfr": "_TZE284_o3x45p96",
+          "pid": "TS0601",
+          "canonicalDriver": null,
+          "forbiddenDrivers": [],
+          "confidence": "interview_locked"
+        }
+      ],
+      "coupleAbsent": false,
+      "derivedCoupleCount": 0,
+      "signals": [],
+      "highlights": [],
+      "summary": "couple=_TZE284_o3x45p96+TS0601",
+      "interviewId": "INT-149"
+    },
+    {
+      "source": "docs/data/DEVICE_INTERVIEWS.json#INT-151",
+      "kind": "interview",
+      "logId": null,
+      "appVersion": null,
+      "userMessage": null,
+      "drivers": [],
+      "deviceIds": [],
+      "couples": [
+        {
+          "mfr": "_TZE200_icka1clh",
+          "pid": "TS0601",
+          "canonicalDriver": "curtain_motor",
+          "forbiddenDrivers": [
+            "curtain_motor_shutter",
+            "curtain_motor_tilt",
+            "climate_sensor",
+            "soil_sensor",
+            "zigbee_universal",
+            "generic_tuya"
+          ],
+          "confidence": "interview_locked"
+        }
+      ],
+      "coupleAbsent": false,
+      "derivedCoupleCount": 0,
+      "signals": [],
+      "highlights": [],
+      "summary": "couple=_TZE200_icka1clh+TS0601",
+      "interviewId": "INT-151"
+    },
+    {
+      "source": "docs/data/DEVICE_INTERVIEWS.json#INT-158",
+      "kind": "interview",
+      "logId": null,
+      "appVersion": null,
+      "userMessage": null,
+      "drivers": [],
+      "deviceIds": [],
+      "couples": [
+        {
+          "mfr": "_TZ3000_iedbgyxt",
+          "pid": "TS0001",
+          "canonicalDriver": null,
+          "forbiddenDrivers": [],
+          "confidence": "interview_locked"
+        }
+      ],
+      "coupleAbsent": false,
+      "derivedCoupleCount": 0,
+      "signals": [],
+      "highlights": [],
+      "summary": "couple=_TZ3000_iedbgyxt+TS0001",
+      "interviewId": "INT-158"
+    },
+    {
+      "source": "docs/data/DEVICE_INTERVIEWS.json#INT-164",
+      "kind": "interview",
+      "logId": null,
+      "appVersion": null,
+      "userMessage": null,
+      "drivers": [],
+      "deviceIds": [],
+      "couples": [
+        {
+          "mfr": "unknown",
+          "pid": "unknown",
+          "canonicalDriver": "contact_sensor",
+          "forbiddenDrivers": [],
+          "confidence": "interview_locked"
+        }
+      ],
+      "coupleAbsent": false,
+      "derivedCoupleCount": 0,
+      "signals": [],
+      "highlights": [],
+      "summary": null,
+      "interviewId": "INT-164"
+    },
+    {
+      "source": "docs/data/DEVICE_INTERVIEWS.json#INT-166",
+      "kind": "interview",
+      "logId": null,
+      "appVersion": null,
+      "userMessage": null,
+      "drivers": [],
+      "deviceIds": [],
+      "couples": [
+        {
+          "mfr": "unknown",
+          "pid": "unknown",
+          "canonicalDriver": "energy_meter",
+          "forbiddenDrivers": [],
+          "confidence": "interview_locked"
+        }
+      ],
+      "coupleAbsent": false,
+      "derivedCoupleCount": 0,
+      "signals": [],
+      "highlights": [],
+      "summary": null,
+      "interviewId": "INT-166"
+    },
+    {
+      "source": "docs/data/DEVICE_INTERVIEWS.json#INT-168",
+      "kind": "interview",
+      "logId": null,
+      "appVersion": null,
+      "userMessage": null,
+      "drivers": [],
+      "deviceIds": [],
+      "couples": [
+        {
+          "mfr": "_TZE284_oitavov2",
+          "pid": "TS0601",
+          "canonicalDriver": null,
+          "forbiddenDrivers": [],
+          "confidence": "interview_locked"
+        }
+      ],
+      "coupleAbsent": false,
+      "derivedCoupleCount": 0,
+      "signals": [],
+      "highlights": [],
+      "summary": "couple=_TZE284_oitavov2+TS0601",
+      "interviewId": "INT-168"
+    },
+    {
+      "source": "docs/data/DEVICE_INTERVIEWS.json#INT-169",
+      "kind": "interview",
+      "logId": null,
+      "appVersion": null,
+      "userMessage": null,
+      "drivers": [],
+      "deviceIds": [],
+      "couples": [
+        {
+          "mfr": "HOBEIAN",
+          "pid": "ZG-204ZM",
+          "canonicalDriver": "presence_sensor_radar",
+          "forbiddenDrivers": [
+            "climate_sensor",
+            "climate_sensor_energy",
+            "sensor_climate_temphumidsensor",
+            "temphumidsensor",
+            "temphumidsensor5",
+            "soil_sensor",
+            "vibration_sensor",
+            "power_clamp_meter",
+            "motion_sensor",
+            "radar_sensor_ceiling"
+          ],
+          "confidence": "interview_locked"
+        }
+      ],
+      "coupleAbsent": false,
+      "derivedCoupleCount": 0,
+      "signals": [],
+      "highlights": [],
+      "summary": "couple=HOBEIAN+ZG-204ZM",
+      "interviewId": "INT-169"
+    },
+    {
+      "source": "docs/data/DEVICE_INTERVIEWS.json#INT-170",
+      "kind": "interview",
+      "logId": null,
+      "appVersion": null,
+      "userMessage": null,
+      "drivers": [],
+      "deviceIds": [],
+      "couples": [
+        {
+          "mfr": "_TZ3000_bczr4e10",
+          "pid": "TS0043",
+          "canonicalDriver": "button_wireless_3",
+          "forbiddenDrivers": [
+            "switch_3gang",
+            "switch_4gang",
+            "switch_2gang"
+          ],
+          "confidence": "interview_locked"
+        }
+      ],
+      "coupleAbsent": false,
+      "derivedCoupleCount": 0,
+      "signals": [],
+      "highlights": [],
+      "summary": "couple=_TZ3000_bczr4e10+TS0043",
+      "interviewId": "INT-170"
+    },
+    {
+      "source": "docs/data/DEVICE_INTERVIEWS.json#INT-171",
+      "kind": "interview",
+      "logId": null,
+      "appVersion": null,
+      "userMessage": null,
+      "drivers": [],
+      "deviceIds": [],
+      "couples": [
+        {
+          "mfr": "_TZ3000_h1ipgkwn",
+          "pid": "TS0002",
+          "canonicalDriver": null,
+          "forbiddenDrivers": [],
+          "confidence": "interview_locked"
+        }
+      ],
+      "coupleAbsent": false,
+      "derivedCoupleCount": 0,
+      "signals": [],
+      "highlights": [],
+      "summary": "couple=_TZ3000_h1ipgkwn+TS0002",
+      "interviewId": "INT-171"
+    },
+    {
+      "source": "docs/data/DEVICE_INTERVIEWS.json#INT-172",
+      "kind": "interview",
+      "logId": null,
+      "appVersion": null,
+      "userMessage": null,
+      "drivers": [],
+      "deviceIds": [],
+      "couples": [
+        {
+          "mfr": "_TZE284_iadro9bf",
+          "pid": "TS0601",
+          "canonicalDriver": null,
+          "forbiddenDrivers": [],
+          "confidence": "interview_locked"
+        }
+      ],
+      "coupleAbsent": false,
+      "derivedCoupleCount": 0,
+      "signals": [],
+      "highlights": [],
+      "summary": "couple=_TZE284_iadro9bf+TS0601",
+      "interviewId": "INT-172"
+    },
+    {
+      "source": "docs/data/DEVICE_INTERVIEWS.json#INT-173",
+      "kind": "interview",
+      "logId": null,
+      "appVersion": null,
+      "userMessage": null,
+      "drivers": [],
+      "deviceIds": [],
+      "couples": [
+        {
+          "mfr": "_TZE204_laokfqwu",
+          "pid": "TS0601",
+          "canonicalDriver": null,
+          "forbiddenDrivers": [],
+          "confidence": "interview_locked"
+        }
+      ],
+      "coupleAbsent": false,
+      "derivedCoupleCount": 0,
+      "signals": [],
+      "highlights": [],
+      "summary": "couple=_TZE204_laokfqwu+TS0601",
+      "interviewId": "INT-173"
+    },
+    {
+      "source": "docs/data/DEVICE_INTERVIEWS.json#INT-174",
+      "kind": "interview",
+      "logId": null,
+      "appVersion": null,
+      "userMessage": null,
+      "drivers": [],
+      "deviceIds": [],
+      "couples": [
+        {
+          "mfr": "_TZ3000_bgtzm4ny",
+          "pid": "TS0044",
+          "canonicalDriver": null,
+          "forbiddenDrivers": [],
+          "confidence": "interview_locked"
+        }
+      ],
+      "coupleAbsent": false,
+      "derivedCoupleCount": 0,
+      "signals": [],
+      "highlights": [],
+      "summary": "couple=_TZ3000_bgtzm4ny+TS0044",
+      "interviewId": "INT-174"
+    },
+    {
+      "source": "docs/data/DEVICE_INTERVIEWS.json#INT-175",
+      "kind": "interview",
+      "logId": null,
+      "appVersion": null,
+      "userMessage": null,
+      "drivers": [],
+      "deviceIds": [],
+      "couples": [
+        {
+          "mfr": "_TZ3000_0dumfk2z",
+          "pid": "TS0215A",
+          "canonicalDriver": null,
+          "forbiddenDrivers": [],
+          "confidence": "interview_locked"
+        }
+      ],
+      "coupleAbsent": false,
+      "derivedCoupleCount": 0,
+      "signals": [],
+      "highlights": [],
+      "summary": "couple=_TZ3000_0dumfk2z+TS0215A",
+      "interviewId": "INT-175"
+    },
+    {
+      "source": "docs/data/DEVICE_INTERVIEWS.json#INT-176",
+      "kind": "interview",
+      "logId": null,
+      "appVersion": null,
+      "userMessage": null,
+      "drivers": [],
+      "deviceIds": [],
+      "couples": [
+        {
+          "mfr": "_TZE200_3towulqd",
+          "pid": "TS0601",
+          "canonicalDriver": "presence_sensor_radar",
+          "forbiddenDrivers": [
+            "air_purifier",
+            "wall_switch_5_gang_tuya",
+            "climate_sensor"
+          ],
+          "confidence": "interview_locked"
+        }
+      ],
+      "coupleAbsent": false,
+      "derivedCoupleCount": 0,
+      "signals": [],
+      "highlights": [],
+      "summary": "couple=_TZE200_3towulqd+TS0601",
+      "interviewId": "INT-176"
+    }
+  ]
+}
