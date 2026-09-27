@@ -621,7 +621,8 @@
     "check:p2749": "node --test test/critical/p2749-hiepsvg-550-hang-leave.test.js",
     "check:p2749f": "node --test test/critical/p2749f-flow-titleformatted-args-gate.test.js",
     "check:p2750": "node --test test/critical/p2750-fetch-diags-gmail-artifact-tip.test.js",
-    "check:p2751": "node --test test/critical/p2751-lazyload-bidir-complementary-exotic.test.js"
+    "check:p2751": "node --test test/critical/p2751-lazyload-bidir-complementary-exotic.test.js",
+    "check:p2752": "node --test test/critical/p2752-boot-crash-guard-uncaught-color.test.js"
   },
   "keywords": [
     "homey",
