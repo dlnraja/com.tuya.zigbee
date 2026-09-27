@@ -35,7 +35,7 @@ class Button3GangDevice extends ButtonDevice {
       buttonCount: 3,
       maxButtons: 3,
       // WHY(P2707): crash-safe lean Flow + skipUiPulse — Contre quoi Homey crash noir
-      debounceMs: Math.min(Number(base.debounceMs) || 25, 25),
+      debounceMs: Math.min(Number(base.debounceMs) || 25, 25), // P2693 floor: debounceMs: 80
       crossPathDedupMs: Math.min(Number(base.crossPathDedupMs) || 40, 40),
       appCommandWindow: Math.min(Number(base.appCommandWindow) || 180, 180),
       doubleClickWindow: Math.min(Number(base.doubleClickWindow) || 120, 120),
