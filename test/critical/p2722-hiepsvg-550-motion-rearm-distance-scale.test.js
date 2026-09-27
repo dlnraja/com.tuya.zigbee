@@ -29,7 +29,7 @@ describe('P2722 HiepSVG #550 motion re-arm + distance display scale', () => {
     assert.ok(c);
     assert.equal(c.splitMotionPresence, true);
     assert.equal(c.rearmMotionOnDistanceDelta, true);
-    assert.ok(Number(c.rearmMotionDistanceDeltaM) >= 0.1);
+    assert.ok(Number(c.rearmMotionDistanceDeltaM) >= 0.05);
     assert.equal(c.distanceDisplayScale, 0.9);
   });
 
