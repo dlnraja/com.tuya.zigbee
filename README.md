@@ -33,15 +33,15 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 
 | Metric | Value |
 |--------|-------|
-| **App Version** | v9.0.1272 |
+| **App Version** | v9.0.1273 |
 | **Drivers** | 434 (381 Zigbee + 53 WiFi) |
 | **Unique Fingerprints** | 4,697 |
-| **Pairing Variants** | 18,792 (4 case combos per fingerprint) |
+| **Pairing Variants** | 18,774 (4 case combos per fingerprint) |
 | **Unique Product IDs** | 929 |
 | **Flow Cards** | 6,032 |
 | **Unique Capabilities** | 170 |
 | **Native OTA Drivers** | 8 |
-| **Test Suites** | 525 files |
+| **Test Suites** | 527 files |
 | **SVG Icons** | 734 |
 | **Languages** | EN, FR, NL, DE |
 | **SDK / Homey** | 3 / >= 12.2.0 |
@@ -53,7 +53,7 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 |---|--------|-------------|
 | 1 | `climate_sensor` | 2,179 |
 | 2 | `switch_1gang` | 1,512 |
-| 3 | `curtain_motor` | 1,116 |
+| 3 | `curtain_motor` | 1,100 |
 | 4 | `presence_sensor_radar` | 1,011 |
 | 5 | `radiator_valve` | 609 |
 | 6 | `generic_tuya` | 581 |
@@ -103,6 +103,7 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 
 | Version | Changes |
 |---------|---------|
+| **v9.0.1273** | v9.0.1272: |
 | **v9.0.1272** | v9.0.1272: automated publish, manifest sync, and Homey test promotion. |
 | **v9.0.1271** | v9.0.1271: P2749f Flow titleFormatted gate + Homey Test sync. |
 | **v9.0.1270** | CI: Flow titleFormatted [[args]] gate before Athom validate + hang-leave radar. Update Test. |
@@ -114,7 +115,6 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 | **v9.0.1262** | Publish fix: FlowCardHelper Buffer JSON + no duplicate button tokens. Update Test to 9.0.1262. |
 | **v9.0.1261** | Tagged Flow cards (label/token) fire from all RX paths; remotes battery-changed. Update Test to 9.0.1261 then restart. |
 | **v9.0.1260** | HiepSVG radar: fix lux (real light steps vs noise), distance (no farther-ghost / dm scale), hang re-arm. Update Test ≥9.0.1260; Repair ra… |
-| **v9.0.1259** | Ceiling radar motion re-arms from lux after stillness (GH#550). TS0043 famkxci2 stays Wireless Button 3 only (GH#551). Update Test; Repai… |
 
 <!-- CHANGELOG_END -->
 

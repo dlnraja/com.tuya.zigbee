@@ -907,6 +907,9 @@
       ]
     }
   ],
+  "9.0.1272": {
+    "en": "v9.0.1272: automated publish, manifest sync, and Homey test promotion."
+  },
   "9.0.1271": {
     "en": "v9.0.1271: P2749f Flow titleFormatted gate + Homey Test sync."
   },
@@ -971,11 +974,7 @@
     "en": "famkxci2 TS0043 snappy parity (GH#551 class). Update Test.",
     "fr": "Parite snappy famkxci2 TS0043 (classe GH#551). Maj Test."
   },
-  "9.0.1250": {
-    "en": "Bi-dir soft Homey UI pulse on snappy remotes + complementary soft-arm. Update Test.",
-    "fr": "Soft pulse UI Homey bi-dir sur remotes snappy + soft-arm complementaire. Maj Test."
-  },
-  "9.0.1272": {
-    "en": "v9.0.1272: automated publish, manifest sync, and Homey test promotion."
+  "9.0.1273": {
+    "en": "v9.0.1273: automated publish, manifest sync, and Homey test promotion."
   }
 }
