@@ -1,0 +1,56 @@
+---
+description: Manifest-driven silent enrichment — never wait for forum reply
+globs:
+  - config/enrichment/**
+  - lib/enrichment/**
+  - lib/helpers/UnknownCaseRealigner.js
+  - tools/ci/silent-enrichment-orchestrator.js
+  - tools/ci/auto-investigate-need-action.js
+  - tools/ci/sync-enrichment-profiles.js
+  - data/user-impact-catalog.json
+  - data/dp_couple_knowledge.json
+alwaysApply: false
+---
+
+# Enrichment architecture (P2215–P2219)
+
+## SSOT
+
+| Layer | Path |
+|-------|------|
+| Manifest | `config/enrichment/manifest.json` |
+| Phases | `config/enrichment/phases.json` |
+| Action / issue / investigation | `config/enrichment/models/*` |
+| Heuristic unknowns | `config/enrichment/models/heuristic-model.json` |
+| User fleets | `data/user-impact-catalog.json` |
+| DP couples | `data/dp_couple_knowledge.json` |
+| Resilience domains (P2224) | `config/resilience/domains.json` + `layer-glossary.json` |
+
+## Commands
+
+```bash
+npm run enrich:silent
+npm run enrich:investigate
+npm run enrich:sync
+npm run enrich:profiles
+```
+
+## Rules
+
+1. **SHADOW forum (absolute)** — passive read only (GET). Never POST, reply, PM, like, or draft text meant for community paste. Intelligence = local code/CI only (T157628).
+2. **Never wait for forum reply** — investigate via registry/truth/compose/history/diags/web.
+3. **Never invent pid as hard lock** — soft hypotheses OK; catalog write only at `hardLock` (≥92).
+4. **Predictive unknowns (P2218)** — symptom/prefix/peer boosts; runtime `UnknownCaseRealigner` observes (no TX guess).
+5. **Button UI/UX (P2220–P2221)** — bidirectional physical↔virtual: UnifiedSwitchBase inits all three (physical+virtual+UI); 0xFD/0xFC parallel RX; `markAppCommand` before TX; scene remotes flow-only; 2s dedup.
+6. **Declared flow wiring (P2449)** — compose `scene_recall` / `set_brightness` / `brightness_changed` / `rotate_*` must be wired (`DeclaredFlowCardAutoWire` + ButtonDevice / mixin). SDK3: `getDeviceTriggerCard(id)` one arg. Knobs: P2448 command/dimmer — see `knob-flow-wiring.mdc` + `npm run check:p244x`.
+7. **Auto stubs only** — never overwrite curated `users.*.devices`.
+8. **`userAction` fields** — shadow report guidance — **not** forum copy.
+9. **Megathread guard** — ≤6 couples/post, ≤12 auto devices/user.
+10. **Extend via config** — `phases.json` + models, not spaghetti.
+11. **Complementary resilience (P2224)** — enrichment layers point at resilience domains/glossary; investigate routes symptoms → domain IDs; never delete older layer docs.
+12. **P2520 complementary VARIANT enrich (ALWAYS)** — enrichments are variants/additions, never degradations. Union mfr/pid/caps; append settings by id; use `lib/enrichment/ComplementaryMerge.js`. Gates `check:p2520` + `check:p2519`. Doctrine: `docs/rules/COMPLEMENTARY_VARIANT_ENRICH.md` · always-on rule `complementary-variant-enrich-always.mdc`.
+
+## Workflows
+
+`forum-poll.yml`, `auto-enrich-closed-loop.yml`, `fetch-diags.yml` → orchestrator with `FORUM_AUTO_POST=0` + `SHADOW_FORUM=1` forced.  
+Hard knob/flow gates: `unified-ci` / `syntax-check` / `pr-gate` / `validate` / `code-quality` → `npm run check:p244x`. Soft: `project-resilience.yml`.

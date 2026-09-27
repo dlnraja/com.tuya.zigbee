@@ -1,0 +1,17 @@
+# bastien-house-track (P2606)
+
+When working on Bastien's private Homey house app or promoting house learnings:
+
+1. Clone/worktree: `Documents/homey/bastien` on branch `bastien-home`
+2. App ID **must** stay `com.dlnraja.tuya.zigbee.bastien` (never Universal / Stable IDs)
+3. Enrichment is **one-way**: Bastien → master → (BOTH reliability) stable — never wholesale reverse
+4. First Athom create: workflow **Publish Zigbee Bastien** or `homey app publish` from bastien clone — never Universal/Stable IDs
+5. Install on Bastien Pro via Test URL or `homey app install` — never publish onto Universal Tuya Test slot
+6. Lock every device as `manufacturerName` + `productId` only
+7. Autonomous promote (P2607): Bastien → master → BOTH stable on cron — never reverse wholesale
+8. Run `npm run check:p260x-bastien` and `npm run bastien:promote` (dry-run) before claiming promote done
+
+Doctrine: `docs/rules/BASTIEN_HOUSE_APP.md`  
+SSOT: `config/architecture/bastien-house-ssot.json`  
+Publish: `.github/workflows/bastien-publish.yml`  
+Promote: `.github/workflows/bastien-promote-upstream.yml`
