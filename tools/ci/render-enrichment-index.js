@@ -79,6 +79,16 @@ function renderCouplePage(key, couple) {
   return `${lines.join('\n')}\n`;
 }
 
+function mergeCouplePagePreservingCurated(existing, generated) {
+  if (!existing || typeof existing !== 'string') return generated;
+  if (!generated || typeof generated !== 'string') return existing;
+  const match = existing.match(/(## Known bugs[\s\S]*)/);
+  if (!match) return generated;
+  const knownBugs = match[1].trim();
+  const genTrimmed = generated.trim();
+  return `${genTrimmed}\n\n${knownBugs}\n`;
+}
+
 function main() {
   const reg = loadManifest();
   const userCatalog = getLayer('userImpact') || { users: {}, fixCatalog: {} };
@@ -110,8 +120,16 @@ function main() {
   const coupleIndex = [];
   for (const [key, couple] of Object.entries(dpKnowledge.couples || {})) {
     const fn = `${safeName(key.replace('|', '_'))}.md`;
+    const targetFile = path.join(couplesDir, fn);
+    let pageContent = renderCouplePage(key, couple);
+    if (fs.existsSync(targetFile)) {
+      try {
+        const existing = fs.readFileSync(targetFile, 'utf8');
+        pageContent = mergeCouplePagePreservingCurated(existing, pageContent);
+      } catch (_e) { /* soft */ }
+    }
     if (!SUMMARY_ONLY) {
-      fs.writeFileSync(path.join(couplesDir, fn), renderCouplePage(key, couple));
+      fs.writeFileSync(targetFile, pageContent);
     }
     coupleIndex.push({
       couple: key,
@@ -195,4 +213,13 @@ function main() {
   console.log('[render-enrichment-index] wrote', path.join(reportDir, 'ENRICHMENT.md'));
 }
 
-main();
+module.exports = {
+  renderUserPage,
+  renderCouplePage,
+  mergeCouplePagePreservingCurated,
+  main,
+};
+
+if (require.main === module) {
+  main();
+}
