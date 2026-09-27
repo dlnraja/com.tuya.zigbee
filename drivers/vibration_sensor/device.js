@@ -2,7 +2,7 @@
 
 const UnifiedSensorBase = require('../../lib/devices/UnifiedSensorBase');
 const { boolean } = require('../../lib/converters/ValueConverterRegistry');
-const { includesCI } = require('../../lib/utils/CaseInsensitiveMatcher');
+const { containsCI } = require('../../lib/utils/CaseInsensitiveMatcher');
 const { safeSetTimeout, safeClearTimeout } = require('../../lib/utils/safe-timers');
 const MfrHelper = require('../../lib/helpers/ManufacturerNameHelper');
 
@@ -45,18 +45,19 @@ class VibrationSensorDevice extends UnifiedSensorBase {
     const pid = String(this._modelPid()).toUpperCase();
     const mfr = this._mfr();
     if (pid.includes('ZG-102ZM') || pid.includes('AY02SZ')) { return true; }
-    return includesCI(mfr, 'jfw0a4aa') || includesCI(mfr, 'wzk0x7fq');
+    return containsCI(mfr, 'jfw0a4aa') || containsCI(mfr, 'wzk0x7fq');
   }
 
   _isHobeian103Z() {
     const pid = String(this._modelPid()).toUpperCase();
     const mfr = this._mfr();
-    if (pid.includes('ZG-103Z')) { return true; }
+    if (pid.includes('ZG-103Z') || pid.includes('ZG-103ZL')) { return true; }
+    if (containsCI(mfr, 'hobeian') && !this._isHobeian102ZM() && !this._isHobeian228Z()) { return true; }
     return (
-      includesCI(mfr, 'iba1ckek')
-      || includesCI(mfr, 'hggxgsjj')
-      || includesCI(mfr, 'yjryxpot')
-      || includesCI(mfr, 'afycb3cg')
+      containsCI(mfr, 'iba1ckek')
+      || containsCI(mfr, 'hggxgsjj')
+      || containsCI(mfr, 'yjryxpot')
+      || containsCI(mfr, 'afycb3cg')
     );
   }
 
@@ -114,9 +115,15 @@ class VibrationSensorDevice extends UnifiedSensorBase {
       1: { capability: 'alarm_vibration', transform: boolean() },
       2: { capability: 'alarm_tamper', transform: boolean() },
       4: { capability: 'measure_battery', divisor: 1 },
+      7: { capability: 'alarm_tamper', transform: boolean() }, // tilt/tamper fallback
       15: { capability: 'measure_battery', divisor: 1 },
       18: { capability: 'measure_temperature', smartDivisor: true },
       19: { capability: 'measure_temperature', smartDivisor: true },
+      101: { capability: null, internal: 'axis_x' },
+      102: { capability: null, internal: 'axis_y' },
+      103: { capability: null, internal: 'axis_z' },
+      104: { capability: null, setting: 'sensitivity' },
+      105: { capability: 'measure_battery', divisor: 1 },
     };
   }
 

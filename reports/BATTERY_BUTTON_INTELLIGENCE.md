@@ -1,6 +1,6 @@
 # Battery / Button Intelligence Gate
 
-Generated: 2026-09-27T13:00:02.322Z
+Generated: 2026-09-27T16:41:28.156Z
 
 - Errors: **0**
 - Warnings: **44**
@@ -25,7 +25,7 @@ Generated: 2026-09-27T13:00:02.322Z
 | F1 | warn | `drivers/button_wireless_1/driver.compose.json` | - | marketing model names used as productId (zg-101zd, ZG-101ZD, zg-101zl, ZG-101ZL) — the hardware reports TS0601/TS02xx, so these entries never match; real couples are in data/marketing-model-alias-registry.json |
 | F1 | warn | `drivers/climate_sensor/driver.compose.json` | - | marketing model names used as productId (ZG-227Z, ZG-227ZL, ZG-227ZH, ZG-227ZP, zg-227z, zg-227zl, zg-227zh, zg-227zp) — the hardware reports TS0601/TS02xx, so these entries never match; real couples are in data/marketing-model-alias-registry.json |
 | F1 | warn | `drivers/contact_sensor/driver.compose.json` | - | marketing model names used as productId (ZG-102Z, ZG-102ZL, ZG-102ZA, zg-102z, zg-102zl, zg-102za) — the hardware reports TS0601/TS02xx, so these entries never match; real couples are in data/marketing-model-alias-registry.json |
-| F1 | warn | `drivers/curtain_motor/driver.compose.json` | - | marketing model names used as productId (ZG-301Z, zg-301z-moto, ZG-301Z-MOTO, zg-302z1, ZG-302Z1) — the hardware reports TS0601/TS02xx, so these entries never match; real couples are in data/marketing-model-alias-registry.json |
+| F1 | warn | `drivers/curtain_motor/driver.compose.json` | - | marketing model names used as productId (zg-301z-moto, ZG-301Z-MOTO, zg-302z1, ZG-302Z1) — the hardware reports TS0601/TS02xx, so these entries never match; real couples are in data/marketing-model-alias-registry.json |
 | F1 | warn | `drivers/gas_sensor/driver.compose.json` | - | marketing model names used as productId (ZG-225Z, zg-225z) — the hardware reports TS0601/TS02xx, so these entries never match; real couples are in data/marketing-model-alias-registry.json |
 | F1 | warn | `drivers/illuminance_sensor/driver.compose.json` | - | marketing model names used as productId (ZG-106Z, zg-106z) — the hardware reports TS0601/TS02xx, so these entries never match; real couples are in data/marketing-model-alias-registry.json |
 | F1 | warn | `drivers/lcdtemphumidsensor/driver.compose.json` | - | marketing model names used as productId (ZG-227Z, zg-227z) — the hardware reports TS0601/TS02xx, so these entries never match; real couples are in data/marketing-model-alias-registry.json |

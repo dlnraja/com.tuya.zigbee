@@ -1,12 +1,9 @@
 # Project resilience audit — 2026-09-27
 
 SHADOW forum. Methodology: Homey-native gaps → parallel complementary stacks (P2221→P2225).
-Mode: full fleet
-
-Domains: **19/22** gates green | Bug classes: fixed=11 partial=42 open=3
 Mode: **critical-first** (sacred_couple_fp, buttons_bidirectional, rotary_knob_command_mode, declared_flow_card_wiring, handleframe_chain, ias_sleepy, battery, energy_divisors, ef00_dp, l14_telemetry)
 
-Domains: **7/7** gates green | Bug classes: fixed=11 partial=29 open=3
+Domains: **7/7** gates green | Bug classes: fixed=13 partial=29 open=0
 
 See also: `INVENTORY.md` (`npm run resilience:inventory`)
 
@@ -21,21 +18,6 @@ See also: `INVENTORY.md` (`npm run resilience:inventory`)
 | energy_divisors | 1 | partial | 4/4 | Double division; energy.approximation vs meter caps; paralle |
 | ef00_dp | 1 | partial | 1/1 | Opaque 0xEF00; type0 misread |
 | l14_telemetry | 1 | partial | 1/1 | Raw setCapability floods UI; no EMA/ROC |
-| hybrid_protocol | 2 | partial | 1/1 | Assumes single cluster path |
-| flows | 2 | partial | 2/2 ⚠ | titleFormatted [[device]]; Missing Capability Listener; lega |
-| mcu_time | 2 | partial | 0/0 | Wrong epoch / format variants |
-| dimmer_brightness | 2 | hardened | 1/1 | dim 0–1 vs MCU 0–1000 |
-| timers_destroyed | 2 | partial | 0/0 ⚠ | setTimeout after destroy |
-| heap_json | 2 | partial | 1/1 | UTF-16 string OOM on large JSON |
-| enrichment_shadow | 2 | hardened | 2/2 | N/A — ops; forum write forbidden |
-| dual_app_publish | 2 | partial | 0/0 | Shared Test slot historically |
-| protocol_rxtx_bus | 2 | partial | 2/2 | Single confirm path; reconnect storms |
-| identity_normalize | 2 | partial | 1/1 | Case-sensitive mfr/pid mismatches |
-| ci_fleetwood | 2 | partial | 1/1 ⚠ | N/A — CI purity (braces, shell bash, schema) |
-| wifi_local | 3 | partial | 1/1 | Cloud-only MCU handshake |
-| layers_fusion | 3 | partial | 1/1 | Single-path RX loss |
-| dynamic_adaptation | 3 | partial | 0/0 | Static compose cannot hot-adapt DP/caps |
-| bypass_elite_complement | 3 | partial | 0/0 | Documented elite bypass intent — runtime denser now |
 
 ## Residual OPEN/PARTIAL bugs
 
@@ -47,7 +29,6 @@ See also: `INVENTORY.md` (`npm run resilience:inventory`)
 - `phantom_mains_battery` (**partial**) → mainsPowered strip + P2391/P2392 FirmwareQuirkCompensator + Energy clear [battery, sacred_couple_fp]
 - `mmwave_rx_flood` (**partial**) → P2389 radar RX budget + floodCalm DP coalesce (airtime is firmware) [hybrid_protocol]
 - `ias_ef00_leftover` (**partial**) → shouldSkipIasOnlyEf00Tx [ias_sleepy]
-- `fp_collision_ts0601` (**open**) → sacred locks + softHypothesis [sacred_couple_fp]
 - `sacred_misroute` (**partial**) → p2138 matrix [sacred_couple_fp, dimmer_brightness, ef00_dp]
 - `oom_json_utf16` (**partial**) → Buffer JSON.parse [heap_json]
 - `settimeout_destroyed` (**partial**) → safe-timers [timers_destroyed]
@@ -56,8 +37,6 @@ See also: `INVENTORY.md` (`npm run resilience:inventory`)
 - `dp_type0_misread` (**partial**) → DpByteArrayProfiles + audit [ef00_dp]
 - `bseed_group_all_gangs` (**partial**) → group strip + per-gang mark [buttons_bidirectional]
 - `enricher_reinject` (**partial**) → anti-bot + sacred gate [sacred_couple_fp, enrichment_shadow]
-- `forum_soft_hypothesis` (**open**) → never invent pid; soft only [enrichment_shadow]
-- `p139_processing_failed` (**open**) → wait cooldown no loop [dual_app_publish]
 - `onoff_fd_dropped` (**partial**) → OnOffBoundCluster 0xFD/0xFC + cascade L1 [buttons_bidirectional]
 - `e000_unbound_silent` (**partial**) → ButtonCaptureCascade L5 E000 BoundCluster [buttons_bidirectional]
 - `raw_capability_flood` (**partial**) → safeSetCapabilityValue + SanityFilter [l14_telemetry]

@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-27T13:00:18.217Z",
+  "generatedAt": "2026-09-27T16:41:38.218Z",
   "policy": "SHADOW forum — intelligence in code/CI only",
   "complementary": "P2224/P2225 — inventory + critical-first + parallel layer vocabularies",
   "criticalFirst": true,
@@ -18,10 +18,10 @@
   "domainsAudited": 7,
   "domainsOk": 7,
   "bugClassCounts": {
-    "fixed": 11,
+    "fixed": 13,
     "partial": 29,
-    "open": 3,
-    "hardened": 1
+    "open": 0,
+    "hardened": 2
   },
   "layerSchemes": [
     "pipeline_l0_l11",
@@ -60,22 +60,22 @@
           "script": "tools/ci/p2138-sacred-couple-matrix-gate.js",
           "ok": true,
           "exitCode": 0,
-          "durationMs": 268,
+          "durationMs": 1108,
           "tail": " compose lists m1cvyneb\n  ✅ wall_dimmer_tuya productId includes TS0601\n  ✅ TuyaBrightnessScale 0.5 ↔ 500\n  ✅ TuyaBrightnessScale clamps to 0–1000\n  ✅ anti-bot mentions m1cvyneb\n  ✅ anti-bot mentions climate_sensor\n  ✅ anti-bot mentions soil_sensor\n  ✅ anti-bot mentions zigbee_universal\n  ✅ anti-bot mentions wall_dimmer\n  ✅ mfs_db has no m1cvyneb|TS0201 invent\n\nPASS: P2138 sacred-couple matrix gate"
         },
         {
           "script": "tools/ci/sacred-couple-dry-gate.js",
           "ok": true,
           "exitCode": 0,
-          "durationMs": 3122,
+          "durationMs": 43658,
           "tail": "[sacred-couple-dry-gate] dry-run apply scripts\n  - p101-lot2: ok\n  - blakadder-new: skip (input_missing)\n  - issue-439: ok\n  - canonical-gaps: skip (input_missing)"
         },
         {
           "script": "tools/ci/dual-claim-compose-gate.js",
           "ok": true,
           "exitCode": 0,
-          "durationMs": 376,
-          "tail": "4mh6tyyo shared=[ts0001, ts0002, ts0003, ts0012, ts0013, ts0052, ts0505b, ts0601, ts0726, ts110e, ts110f] drivers=dimmer_1_gang_tuya | dimmer_wall_1gang\n  [TZ] _tz3210_invesber shared=[ts0011, ts0052, ts0601, ts0601_dim1, ts1101, ts110e, ts110f, zbmini-dim, zbminid] drivers=dimmable_led_strip | wall_dimmer_tuya\n  ... and 203 more\nMode: warn (exit 0). Pass --strict to fail on _TZ* family conflicts."
+          "durationMs": 2365,
+          "tail": "4mh6tyyo shared=[ts0001, ts0002, ts0003, ts0012, ts0013, ts0052, ts0505b, ts0601, ts0726, ts110e, ts110f] drivers=dimmer_1_gang_tuya | dimmer_wall_1gang\n  [TZ] _tz3210_invesber shared=[ts0011, ts0052, ts0601, ts0601_dim1, ts1101, ts110e, ts110f, zbmini-dim, zbminid] drivers=dimmable_led_strip | wall_dimmer_tuya\n  ... and 170 more\nMode: warn (exit 0). Pass --strict to fail on _TZ* family conflicts."
         }
       ],
       "npm": [],
@@ -117,14 +117,14 @@
           "script": "tools/ci/battery-button-intelligence-gate.js",
           "ok": true,
           "exitCode": 0,
-          "durationMs": 7089,
+          "durationMs": 5387,
           "tail": "[battery-button-gate] errors=0 warnings=44\n  B5: 14\n  F1: 24\n  C2: 6\n[battery-button-gate] report: reports/BATTERY_BUTTON_INTELLIGENCE.md"
         },
         {
           "script": "tools/ci/button-physical-gang-parity-gate.js",
           "ok": true,
           "exitCode": 0,
-          "durationMs": 191,
+          "durationMs": 383,
           "tail": "[P2395] physical_gang parity OK (16 drivers)"
         }
       ],
@@ -213,14 +213,14 @@
           "script": "tools/ci/p216-zcl-battery-half-percent-gate.js",
           "ok": true,
           "exitCode": 0,
-          "durationMs": 154,
+          "durationMs": 250,
           "tail": "PASS: P216 ZCL battery half-percent (no blind /2)"
         },
         {
           "script": "tools/ci/battery-button-intelligence-gate.js",
           "ok": true,
           "exitCode": 0,
-          "durationMs": 1960,
+          "durationMs": 4633,
           "tail": "[battery-button-gate] errors=0 warnings=44\n  B5: 14\n  F1: 24\n  C2: 6\n[battery-button-gate] report: reports/BATTERY_BUTTON_INTELLIGENCE.md"
         }
       ],
@@ -265,28 +265,28 @@
           "script": "tools/ci/adaptive-double-division-gate.js",
           "ok": true,
           "exitCode": 0,
-          "durationMs": 12207,
+          "durationMs": 3647,
           "tail": "[adaptive-double-division-gate] hits=2 hardHits=0 mode=soft\n  (soft) lib/devices/BaseUnifiedDevice.js: AdaptiveDataParser + local divisor/smartDivisor in same file\n  (soft) lib/tuya/TuyaEF00Manager.js: AdaptiveDataParser + local divisor/smartDivisor in same file"
         },
         {
           "script": "tools/ci/energy-compose-gate.js",
           "ok": true,
           "exitCode": 0,
-          "durationMs": 434,
+          "durationMs": 2352,
           "tail": "energy-compose-gate: scanned 434 driver.compose.json files\nOK: no Homey Energy v3 approximation + power-cap conflicts\nNOTE: 4 driver(s) have energy.batteries + measure_power/meter_power without approximation (informational)"
         },
         {
           "script": "tools/ci/l14-capability-writers-gate.js",
           "ok": true,
           "exitCode": 0,
-          "durationMs": 159,
+          "durationMs": 218,
           "tail": "[l14-capability-writers-gate] PASS"
         },
         {
           "script": "scripts/validation/check-energy-divisor.js",
           "ok": true,
           "exitCode": 0,
-          "durationMs": 1037,
+          "durationMs": 2697,
           "tail": "🔍 TITAN v5 — Checking energy divisor validation...\n\nFound 75 drivers with meter_power capability\n\n\n📊 Results:\n   Drivers with energy capability: 75\n   Drivers without divisor: 0\n\n✅ All energy drivers have proper divisor settings"
         }
       ],
@@ -329,7 +329,7 @@
           "script": "tools/ci/audit-sacred-couple-dps.js",
           "ok": true,
           "exitCode": 0,
-          "durationMs": 1450,
+          "durationMs": 847,
           "tail": "missing_in_driver — Z2M defines opening_mode — no driver dpMapping\n hobeian-zg103z-vibration-tilt (vibration_sensor): 35 issue(s)\n   DP7 missing_in_driver — Z2M defines tilt — no driver dpMapping\n   DP102 missing_in_driver — Z2M defines y — no driver dpMapping\n   DP103 missing_in_driver — Z2M defines z — no driver dpMapping\n   DP104 missing_in_driver — Z2M defines sensitivity — no driver dpMapping"
         }
       ],
@@ -367,7 +367,7 @@
           "script": "tools/ci/l14-capability-writers-gate.js",
           "ok": true,
           "exitCode": 0,
-          "durationMs": 567,
+          "durationMs": 205,
           "tail": "[l14-capability-writers-gate] PASS"
         }
       ],
@@ -459,14 +459,6 @@
       "fix": "shouldSkipIasOnlyEf00Tx"
     },
     {
-      "id": "fp_collision_ts0601",
-      "status": "open",
-      "domains": [
-        "sacred_couple_fp"
-      ],
-      "fix": "sacred locks + softHypothesis"
-    },
-    {
       "id": "sacred_misroute",
       "status": "partial",
       "domains": [
@@ -532,22 +524,6 @@
         "enrichment_shadow"
       ],
       "fix": "anti-bot + sacred gate"
-    },
-    {
-      "id": "forum_soft_hypothesis",
-      "status": "open",
-      "domains": [
-        "enrichment_shadow"
-      ],
-      "fix": "never invent pid; soft only"
-    },
-    {
-      "id": "p139_processing_failed",
-      "status": "open",
-      "domains": [
-        "dual_app_publish"
-      ],
-      "fix": "wait cooldown no loop"
     },
     {
       "id": "onoff_fd_dropped",

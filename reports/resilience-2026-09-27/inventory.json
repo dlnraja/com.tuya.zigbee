@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-27T12:59:49.166Z",
+  "generatedAt": "2026-09-27T16:40:30.396Z",
   "policy": "SHADOW forum — intelligence in code/CI only",
   "methodology": [
     "Homey gap → parallel complementary stack",
@@ -10,7 +10,7 @@
     "domains": 22,
     "priority1": 7,
     "bugClasses": 37,
-    "residualOpenPartial": 26,
+    "residualOpenPartial": 23,
     "criticalGaps": 10,
     "layerSchemes": 5
   },
@@ -517,30 +517,6 @@
     }
   ],
   "residualBugs": [
-    {
-      "id": "fp_collision_ts0601",
-      "status": "open",
-      "domains": [
-        "sacred_couple_fp"
-      ],
-      "fix": "sacred locks + softHypothesis"
-    },
-    {
-      "id": "forum_soft_hypothesis",
-      "status": "open",
-      "domains": [
-        "enrichment_shadow"
-      ],
-      "fix": "never invent pid; soft only"
-    },
-    {
-      "id": "p139_processing_failed",
-      "status": "open",
-      "domains": [
-        "dual_app_publish"
-      ],
-      "fix": "wait cooldown no loop"
-    },
     {
       "id": "ghost_flow_echo",
       "status": "partial",
