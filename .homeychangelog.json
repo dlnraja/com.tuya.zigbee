@@ -4059,5 +4059,8 @@
   },
   "1.0.113": {
     "en": "Radar hang-leave clear when lux+distance freeze; Wireless Button 3 = TS0043 only."
+  },
+  "1.0.114": {
+    "en": "Fix battery state for multi-button TS0042/TS0043 remotes on awake; guard AutoAdaptive against unmounted Not Found."
   }
 }
