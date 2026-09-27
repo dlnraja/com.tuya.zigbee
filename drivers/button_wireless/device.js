@@ -46,6 +46,18 @@ class UniversalWirelessButtonDevice extends ButtonDevice {
    */
   async _forceInitialBatteryRead(zclNode) {
     try {
+      const cur = this.getCapabilityValue('measure_battery');
+      if (cur != null && Number(cur) > 0) {
+        this.log(`[BUTTON-WIRELESS] 🔋 Battery already present (${cur}%) - skipping initial read to preserve battery`);
+        return;
+      }
+      const cached = await this.getStoreValue('last_battery_percentage').catch(() => null);
+      if (cached != null && Number(cached) > 0) {
+        await this.safeSetCapabilityValue('measure_battery', Number(cached)).catch(() => {});
+        this.log(`[BUTTON-WIRELESS] 🔋 Battery restored from cache (${cached}%) - skipping initial read`);
+        return;
+      }
+
       const ep = zclNode?.endpoints?.[1];
       const powerCluster = ep?.clusters?.powerConfiguration || ep?.clusters?.genPowerCfg || ep?.clusters?.[1];
       
