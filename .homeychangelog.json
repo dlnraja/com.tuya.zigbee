@@ -4068,6 +4068,9 @@
   },
   "1.0.116": {
     "en": "P2756: Eliminate button battery drain: disable unsolicited periodic scene recovery writes on sleeping devices, guard awake readAttributes & Tuya DP storms, suppress polling & configureReporting on sleepy remotes, preserving CR2032 life."
+  },
+  "1.0.117": {
+    "en": "P2757: Bastien app enhancement: refined anti-sag filter to >=8% under RF TX load, responsive battery replacement jump (>=10%), and guaranteed isWake anti-sag protection across button devices."
   }
 }
 
