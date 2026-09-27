@@ -907,6 +907,9 @@
       ]
     }
   ],
+  "9.0.1275": {
+    "en": "v9.0.1275: automated publish, manifest sync, and Homey test promotion."
+  },
   "9.0.1274": {
     "en": "v9.0.1274: automated publish, manifest sync, and Homey test promotion."
   },
@@ -969,10 +972,7 @@
     "en": "Snappy remotes: skip wake magic/DP TX storm (listen-only). Update Test.",
     "fr": "Remotes snappy: plus de storm TX magic/DP au wake. Maj Test."
   },
-  "9.0.1253": {
-    "en": "Improved Homey Test publish soft-continue after Athom processing flakes."
-  },
-  "9.0.1275": {
-    "en": "v9.0.1275: automated publish, manifest sync, and Homey test promotion."
+  "9.0.1276": {
+    "en": "v9.0.1276: automated publish, manifest sync, and Homey test promotion."
   }
 }
