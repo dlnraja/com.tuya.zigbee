@@ -31,5 +31,5 @@ for (const d of app.drivers || []) {
   synced++;
 }
 
-if (!DRY && changed > 0) fs.writeFileSync(appPath, JSON.stringify(app));
+if (!DRY && changed > 0) fs.writeFileSync(appPath, JSON.stringify(app, null, 2) + '\n');
 console.log(`[sync-appjson-zigbee] synced: ${synced} | changed: ${changed} | no compose: ${missing}${DRY ? ' (dry-run)' : ''}`);
