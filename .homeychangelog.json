@@ -4062,5 +4062,9 @@
   },
   "1.0.114": {
     "en": "Fix battery state for multi-button TS0042/TS0043 remotes on awake; guard AutoAdaptive against unmounted Not Found."
+  },
+  "1.0.115": {
+    "en": "Battery consumption optimization & EMA anti-sag stability filter (TS0042/TS0043) + radar presence clear on leave."
   }
 }
+

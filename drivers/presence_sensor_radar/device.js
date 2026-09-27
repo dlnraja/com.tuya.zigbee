@@ -174,8 +174,20 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
       this.log(`[RADAR] P2459 refused addCapability(${cap}) (radar never cover/DIY)`);
       return;
     }
+    const mfr = (MfrHelper.getManufacturerName(this) || '').toLowerCase();
+    const cfg = this._getRadarConfig?.() || {};
+    const noRelayCeiling = cfg.hasRelay === false || /gkfbdvyx|laokfqwu|ya4ft0w4/.test(mfr);
+    if (noRelayCeiling && (cap === 'button.1' || cap === 'button' || cap === 'onoff')) {
+      this.log(`[RADAR] P2755 refused addCapability(${cap}) (no-relay ceiling radar)`);
+      return;
+    }
+    if (!cfg.hasMultiZone && (/^alarm_motion\.zone\d+$/.test(cap) || /^measure_luminance\.distance\.zone\d+$/.test(cap) || cap === 'measure_motion.classification')) {
+      this.log(`[RADAR] P2755 refused addCapability(${cap}) (no multi-zone declared on this radar)`);
+      return;
+    }
     return super.addCapability(capability);
   }
+
 
   /**
    * WHY(P2548 / VicHY #2241): Homey can flip class to windowcoverings hours after boot
@@ -2720,11 +2732,18 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
     } else {
       this._clearSurvivalWatchdog();
     }
-    const cfg = this._getRadarConfig() || {};
-    // WHY(P2719 / GH#550): split — human stays when motion opts.false; full clear both
+    // WHY(P2719 / P2755 / GH#550 HiepSVG): split — when next is false (leave room),
+    // clear BOTH alarm_human AND alarm_motion, and fire presence cleared flows!
     if (cfg.splitMotionPresence === true) {
       if (!next) {
-        return this.safeSetCapabilityValue('alarm_human', false).catch(() => {});
+        if (this._lastPresenceFlowEdge !== false) {
+          this._lastPresenceFlowEdge = false;
+          this._triggerPresenceFlows(false);
+        }
+        return Promise.all([
+          this.safeSetCapabilityValue('alarm_human', false).catch(() => {}),
+          this.safeSetCapabilityValue('alarm_motion', false).catch(() => {}),
+        ]);
       }
       if (opts.motion === true) {
         return this.safeSetCapabilityValue('alarm_motion', true).catch(() => {});
@@ -2735,7 +2754,7 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
           super.safeSetCapabilityValue('alarm_human', true).catch(() => {}),
         ]).then(() => {
           if (this._lastPresenceFlowEdge !== true) {
-            this._lastPresenceFlowEdge = false;
+            this._lastPresenceFlowEdge = true;
             this._triggerPresenceFlows(true);
           }
         }).catch(() => {});
@@ -2743,10 +2762,12 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
       // presence true without motion hint — set human; leave motion alone
       return super.safeSetCapabilityValue('alarm_human', true).then(() => {
         if (this._lastPresenceFlowEdge !== true) {
+          this._lastPresenceFlowEdge = true;
           this._triggerPresenceFlows(true);
         }
       }).catch(() => {});
     }
+
     // Motion first — safeSet mirrors human + fires presence WHEN on edge.
     return this.safeSetCapabilityValue('alarm_motion', next).catch(() => {});
   }
