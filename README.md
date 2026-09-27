@@ -33,7 +33,7 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 
 | Metric | Value |
 |--------|-------|
-| **App Version** | v9.0.1276 |
+| **App Version** | v9.0.1278 |
 | **Drivers** | 434 (381 Zigbee + 53 WiFi) |
 | **Unique Fingerprints** | 4,697 |
 | **Pairing Variants** | 18,774 (4 case combos per fingerprint) |
@@ -41,7 +41,7 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 | **Flow Cards** | 6,032 |
 | **Unique Capabilities** | 170 |
 | **Native OTA Drivers** | 8 |
-| **Test Suites** | 530 files |
+| **Test Suites** | 531 files |
 | **SVG Icons** | 734 |
 | **Languages** | EN, FR, NL, DE |
 | **SDK / Homey** | 3 / >= 12.2.0 |
@@ -103,7 +103,9 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 
 | Version | Changes |
 |---------|---------|
-| **v9.0.1276** | v9.0.1275: |
+| **v9.0.1278** | v9.0.1277: |
+| **v9.0.1277** | Battery consumption optimization & EMA anti-sag stability filter (TS0042/TS0043) + radar presence clear on leave (#550). |
+| **v9.0.1276** | v9.0.1276: automated publish, manifest sync, and Homey test promotion. |
 | **v9.0.1275** | v9.0.1275: automated publish, manifest sync, and Homey test promotion. |
 | **v9.0.1274** | v9.0.1274: automated publish, manifest sync, and Homey test promotion. |
 | **v9.0.1273** | v9.0.1273: automated publish, manifest sync, and Homey test promotion. |
@@ -113,8 +115,6 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 | **v9.0.1269** | Publish heal: OCR invent pad doNotLock under heap pressure + Flow locales. Update Test. |
 | **v9.0.1268** | Publish heal: Flow titleFormatted locales must include [[args]] (IT/SV/…). Update Test. |
 | **v9.0.1267** | Publish heal: keep 7dcddnye on wall dimmer (not bulb) + hang-leave radar. Update Test. |
-| **v9.0.1266** | Publish heal: Wireless Button 3 Flow titleFormatted locales + hang-leave radar. Update Test. |
-| **v9.0.1265** | Radar presence: clear hung YES when lux+distance freeze after leave; re-pair Wireless Button 3 (TS0043) if still Generic. |
 
 <!-- CHANGELOG_END -->
 
