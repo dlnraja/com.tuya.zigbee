@@ -4,7 +4,12 @@ All notable changes to the **Tuya Unified Zigbee** app for Homey Pro.
 
 ---
 
-## [9.0.1277] - 2026-09-27
+## [9.0.1279] - 2026-09-27
+
+P2756: Eliminate button battery drain: disable unsolicited periodic scene recovery writes on sleeping devices, guard awake readAttributes & Tuya DP storms, suppress polling & configureReporting on sleepy remotes, preserving CR2032 life.
+---
+
+ [9.0.1277] - 2026-09-27
 
 Battery consumption optimization & EMA anti-sag stability filter (TS0042/TS0043) + radar presence clear on leave (#550).
 ---
