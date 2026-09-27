@@ -4,6 +4,9 @@ SHADOW forum. Methodology: Homey-native gaps → parallel complementary stacks (
 Mode: full fleet
 
 Domains: **19/22** gates green | Bug classes: fixed=11 partial=42 open=3
+Mode: **critical-first** (sacred_couple_fp, buttons_bidirectional, rotary_knob_command_mode, declared_flow_card_wiring, handleframe_chain, ias_sleepy, battery, energy_divisors, ef00_dp, l14_telemetry)
+
+Domains: **7/7** gates green | Bug classes: fixed=11 partial=29 open=3
 
 See also: `INVENTORY.md` (`npm run resilience:inventory`)
 
