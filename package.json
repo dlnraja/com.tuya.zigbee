@@ -566,7 +566,8 @@
     "check:p274x": "npm run check:p2745 && npm run check:p2746 && npm run check:p2747 && npm run check:p2748",
     "check:p2746": "node --test test/critical/p2746-fleet-button-flow-enrich.test.js",
     "check:p2747": "node --test test/critical/p2747-tagged-flow-emit.test.js",
-    "check:p2748": "node --test test/critical/p2748-complementary-tagged-flow-emit.test.js"
+    "check:p2748": "node --test test/critical/p2748-complementary-tagged-flow-emit.test.js",
+    "check:p2751": "node --test test/critical/p2751-lazyload-bidir-complementary-exotic.test.js"
   },
   "keywords": [
     "homey",
