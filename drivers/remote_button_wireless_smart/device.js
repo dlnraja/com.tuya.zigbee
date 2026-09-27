@@ -804,8 +804,16 @@ class Button1GangDevice extends ButtonDevice {
       await super.triggerButtonPress(buttonNumber, pressType);
     }
 
-    // Device is awake after button press - try to read battery
-    if (this._powerCluster && typeof this._powerCluster.readAttributes === 'function') {
+    // Device is awake after button press - try to read battery only if missing (preserves battery)
+    const curBattery = this.getCapabilityValue('measure_battery');
+    const hasBattery = curBattery != null && Number(curBattery) > 0;
+    let skipSleepy = false;
+    try {
+      const { shouldSkipSleepyRemoteBatteryTx } = require('../../lib/zigbee/PowerClusterPolicy');
+      skipSleepy = shouldSkipSleepyRemoteBatteryTx(this.getDeviceProfile?.(), { device: this, homey: this.homey });
+    } catch (_e) { /* soft */ }
+
+    if (!hasBattery && !skipSleepy && this._powerCluster && typeof this._powerCluster.readAttributes === 'function') {
       this.homey.setTimeout(async () => {
         if (this._destroyed) {return;}
         try {
@@ -842,7 +850,7 @@ class Button1GangDevice extends ButtonDevice {
     const modelId = this.getSetting?.('zb_model_id') || this.getData()?.modelId || '';
     const manufacturerName = this.getSetting?.('zb_manufacturer_name') || this.getData()?.manufacturerName || '';
     
-    // WHY(P2644/e8d98608 sibling): CI was never imported
+    // WHY(P2644/e8d98608 sibling): CI was never imported → ReferenceError killed onNodeInit
     const isSmartKnob = containsCI(modelId, 'TS004F')
       || containsCI(manufacturerName, 'gwkzibhs');
     
