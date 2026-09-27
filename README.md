@@ -33,7 +33,7 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 
 | Metric | Value |
 |--------|-------|
-| **App Version** | v9.0.1275 |
+| **App Version** | v9.0.1276 |
 | **Drivers** | 434 (381 Zigbee + 53 WiFi) |
 | **Unique Fingerprints** | 4,697 |
 | **Pairing Variants** | 18,774 (4 case combos per fingerprint) |
@@ -41,7 +41,7 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 | **Flow Cards** | 6,032 |
 | **Unique Capabilities** | 170 |
 | **Native OTA Drivers** | 8 |
-| **Test Suites** | 529 files |
+| **Test Suites** | 530 files |
 | **SVG Icons** | 734 |
 | **Languages** | EN, FR, NL, DE |
 | **SDK / Homey** | 3 / >= 12.2.0 |
@@ -103,7 +103,8 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 
 | Version | Changes |
 |---------|---------|
-| **v9.0.1275** | v9.0.1274: |
+| **v9.0.1276** | v9.0.1275: |
+| **v9.0.1275** | v9.0.1275: automated publish, manifest sync, and Homey test promotion. |
 | **v9.0.1274** | v9.0.1274: automated publish, manifest sync, and Homey test promotion. |
 | **v9.0.1273** | v9.0.1273: automated publish, manifest sync, and Homey test promotion. |
 | **v9.0.1272** | v9.0.1272: automated publish, manifest sync, and Homey test promotion. |
@@ -114,7 +115,6 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 | **v9.0.1267** | Publish heal: keep 7dcddnye on wall dimmer (not bulb) + hang-leave radar. Update Test. |
 | **v9.0.1266** | Publish heal: Wireless Button 3 Flow titleFormatted locales + hang-leave radar. Update Test. |
 | **v9.0.1265** | Radar presence: clear hung YES when lux+distance freeze after leave; re-pair Wireless Button 3 (TS0043) if still Generic. |
-| **v9.0.1262** | Publish fix: FlowCardHelper Buffer JSON + no duplicate button tokens. Update Test to 9.0.1262. |
 
 <!-- CHANGELOG_END -->
 
