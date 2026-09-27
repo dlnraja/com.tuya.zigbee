@@ -2,7 +2,7 @@
 
 SHADOW forum. Method: Homey-native gaps → **parallel complementary stacks** → gates/workflows (P2221→P2225).
 
-Domains: **22** (prio1=7) | Bugs: **37** (residual OPEN/PARTIAL=26) | Critical gaps: **10** | Layer schemes: **5**
+Domains: **22** (prio1=7) | Bugs: **37** (residual OPEN/PARTIAL=23) | Critical gaps: **10** | Layer schemes: **5**
 
 ## Methodology
 
@@ -173,9 +173,6 @@ _Discoveries:_
 
 ## Residual OPEN / PARTIAL bugs
 
-- `fp_collision_ts0601` (**open**) → sacred locks + softHypothesis [sacred_couple_fp]
-- `forum_soft_hypothesis` (**open**) → never invent pid; soft only [enrichment_shadow]
-- `p139_processing_failed` (**open**) → wait cooldown no loop [dual_app_publish]
 - `ghost_flow_echo` (**partial**) → markAppCommand + dedup [buttons_bidirectional, flows]
 - `missing_capability_listener` (**partial**) → P2220/P2221 UI listeners [buttons_bidirectional, flows]
 - `double_division` (**partial**) → SmartDivisorManager + gate [energy_divisors]
