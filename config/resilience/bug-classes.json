@@ -94,11 +94,11 @@
       "fix": "IASZoneEnhanced.coerce"
     },
     "fp_collision_ts0601": {
-      "status": "open",
+      "status": "hardened",
       "domains": [
         "sacred_couple_fp"
       ],
-      "fix": "sacred locks + softHypothesis"
+      "fix": "MFR_PID_SCALE_INTELLIGENCE: 4-tier routing (Tier 1 compound exact, Tier 2 LRU shards <63KB, Tier 3 signature/endpoints, Tier 4 P2529 deep functional) + sacred locks"
     },
     "sacred_misroute": {
       "status": "partial",
@@ -167,18 +167,18 @@
       "fix": "anti-bot + sacred gate"
     },
     "forum_soft_hypothesis": {
-      "status": "open",
+      "status": "fixed",
       "domains": [
         "enrichment_shadow"
       ],
-      "fix": "never invent pid; soft only"
+      "fix": "L99 Doctrine + MFR_PID_SCALE_INTELLIGENCE: never invent pid; silent mode, code/store-test channel only"
     },
     "p139_processing_failed": {
-      "status": "open",
+      "status": "fixed",
       "domains": [
         "dual_app_publish"
       ],
-      "fix": "wait cooldown no loop"
+      "fix": "P2738/P2752: athom-developer-api-publish mutex + soft-expect direct-api cooldown + no CLI createBuild spam"
     },
     "settings_camelcase": {
       "status": "fixed",
