@@ -180,7 +180,11 @@ class TuyaUnifiedZigbeeApp extends Homey.App {
 
   async onInit() {
     this.homey.__tuyaApp = this;
-    this.initializeSettings();
+    try {
+      this.initializeSettings();
+    } catch (err) {
+      try { this.log('⚠️ initializeSettings soft-fail:', err?.message); } catch (_) {}
+    }
 
     // WHY(P2727 Bastien tip-lag 1.0.93): LiveDataUpdater.start() is deferred
     // (BootBudget DEFER_MS). Remotes wake before then while leftover
@@ -272,6 +276,14 @@ class TuyaUnifiedZigbeeApp extends Homey.App {
       }
     });
 
+    process.on('uncaughtException', (err) => {
+      try {
+        this.error('UNCAUGHT EXCEPTION:', err && (err.stack || err.message || err));
+      } catch (e) {
+        console.error('Error logging uncaughtException', e);
+      }
+    });
+
     if (this._flowCardsRegistered) {
       this.log('⏭️  Flow cards already registered');
       return;
@@ -285,11 +297,19 @@ class TuyaUnifiedZigbeeApp extends Homey.App {
     this.log(`📊 Mode: ${this.developerDebugMode ? 'DEVELOPER (verbose)' : 'PRODUCTION (minimal logs)'}`);
     this.log(`🤖 Smart-Adapt: ${this.experimentalSmartAdapt ? 'EXPERIMENTAL (modifies)' : 'READ-ONLY (safe)'}`);
 
-    this.capabilityManager = new CapabilityManager(this.homey);
-    this.log('✅ CapabilityManager initialized');
+    try {
+      this.capabilityManager = new CapabilityManager(this.homey);
+      this.log('✅ CapabilityManager initialized');
+    } catch (err) {
+      this.error('⚠️ CapabilityManager init failed (non-critical):', err?.message);
+    }
 
-    this.identificationDatabase = new DeviceIdentificationDatabase(this.homey);
-    this.log(`⏭️ ID database deferred (${BootBudget.heapUsedMb()} MB heap) — devices start first`);
+    try {
+      this.identificationDatabase = new DeviceIdentificationDatabase(this.homey);
+      this.log(`⏭️ ID database deferred (${BootBudget.heapUsedMb()} MB heap) — devices start first`);
+    } catch (err) {
+      this.error('⚠️ DeviceIdentificationDatabase init failed (non-critical):', err?.message);
+    }
 
     try {
       registerCustomClusters(this);
@@ -1657,16 +1677,22 @@ class TuyaUnifiedZigbeeApp extends Homey.App {
   }
 
   initializeSettings() {
-    this.developerDebugMode = this.homey.settings.get('developer_debug_mode') ?? false;
-    this.experimentalSmartAdapt = this.homey.settings.get('experimental_smart_adapt') ?? false;
-    this.homey.settings.on('set', (key) => {
-      if (key === 'developer_debug_mode') {
-        this.developerDebugMode = this.homey.settings.get('developer_debug_mode');
-      }
-      if (key === 'experimental_smart_adapt') {
-        this.experimentalSmartAdapt = this.homey.settings.get('experimental_smart_adapt');
-      }
-    });
+    try {
+      this.developerDebugMode = this.homey?.settings?.get('developer_debug_mode') ?? false;
+      this.experimentalSmartAdapt = this.homey?.settings?.get('experimental_smart_adapt') ?? false;
+      this.homey?.settings?.on('set', (key) => {
+        try {
+          if (key === 'developer_debug_mode') {
+            this.developerDebugMode = this.homey.settings.get('developer_debug_mode');
+          }
+          if (key === 'experimental_smart_adapt') {
+            this.experimentalSmartAdapt = this.homey.settings.get('experimental_smart_adapt');
+          }
+        } catch (_e) { /* ignore */ }
+      });
+    } catch (err) {
+      try { this.log('⚠️ initializeSettings safe fallback:', err?.message); } catch (_) {}
+    }
   }
 
   /**
