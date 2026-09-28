@@ -134,6 +134,23 @@ class SirenDevice extends UnifiedPlugBase {
   }
 
   /**
+   * Helper to set alarm volume from flow cards or direct calls
+   * Handles string values ('low', 'medium', 'high') or numeric indices (0, 1, 2)
+   */
+  async sendAlarmVolume(volume) {
+    const vol = typeof volume === 'string'
+      ? ({ low: 0, medium: 1, high: 2 }[volume.toLowerCase()] ?? Number(volume) ?? 1)
+      : (Number(volume) || 0);
+    const validVol = Math.max(0, Math.min(2, isNaN(vol) ? 1 : vol));
+    try { await this._sendTuyaDP(5, validVol, 'enum'); } catch (e) {}
+    try { await this._sendTuyaDP(116, validVol, 'enum'); } catch (e) {}
+    if (this.hasCapability('volume_set')) {
+      const capVal = validVol === 0 ? 0.33 : validVol === 1 ? 0.66 : 1.0;
+      await this.setCapabilityValue('volume_set', capVal).catch(() => {});
+    }
+  }
+
+  /**
    * `alarm_generic` mirrors the sounding state. The siren reports it through
    * whichever of DP1/13/104 its firmware uses, all of which land on `onoff`,
    * so mirroring here covers every variant. driver.js `siren_is_sounding`
