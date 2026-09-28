@@ -2086,5 +2086,8 @@
   "5.12.342": {
     "en": "HiepSVG radar lux/distance/hang fixes (GH#550). Update Test; Repair once.",
     "fr": "Radar HiepSVG lux/distance/freeze (GH#550). Maj Test; Repair."
+  },
+  "5.12.347": {
+    "en": "Battery conservation: no proactive PowerCfg polls on coin-cell devices (P2757)."
   }
 }
