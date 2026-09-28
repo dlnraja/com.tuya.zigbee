@@ -76,7 +76,46 @@ class radarSensor2 extends TuyaSpecificClusterDevice {
 
       case V2_RADAR_SENSOR_DATA_POINTS.radarSensitivity:
         this.log('Received radar sensitivity:', parsedValue);
+        if (typeof parsedValue === 'number' && this.getSetting('radar_sensitivity') !== parsedValue) {
+          this.setSettings({ radar_sensitivity: parsedValue }).catch(() => {});
+        }
         break;
+
+      case V2_RADAR_SENSOR_DATA_POINTS.minimumRange: {
+        const minVal = Math.round((parsedValue / 100) * 10) / 10;
+        this.log('Received minimum range:', minVal);
+        if (this.getSetting('minimum_range') !== minVal) {
+          this.setSettings({ minimum_range: minVal }).catch(() => {});
+        }
+        break;
+      }
+
+      case V2_RADAR_SENSOR_DATA_POINTS.maximumRange: {
+        const maxVal = Math.round((parsedValue / 100) * 10) / 10;
+        this.log('Received maximum range:', maxVal);
+        if (this.getSetting('maximum_range') !== maxVal) {
+          this.setSettings({ maximum_range: maxVal }).catch(() => {});
+        }
+        break;
+      }
+
+      case V2_RADAR_SENSOR_DATA_POINTS.detectionDelay: {
+        const delayVal = Math.round((parsedValue / 10) * 10) / 10;
+        this.log('Received detection delay:', delayVal);
+        if (this.getSetting('detection_delay') !== delayVal) {
+          this.setSettings({ detection_delay: delayVal }).catch(() => {});
+        }
+        break;
+      }
+
+      case V2_RADAR_SENSOR_DATA_POINTS.fadingTime: {
+        const fadeVal = Math.round((parsedValue / 10) * 10) / 10;
+        this.log('Received fading time:', fadeVal);
+        if (this.getSetting('fading_time') !== fadeVal) {
+          this.setSettings({ fading_time: fadeVal }).catch(() => {});
+        }
+        break;
+      }
 
       case V2_RADAR_SENSOR_DATA_POINTS.illuminanceLux:
         this.log('Received illuminance value:', parsedValue);
@@ -103,16 +142,16 @@ class radarSensor2 extends TuyaSpecificClusterDevice {
         await this.writeData32(V2_RADAR_SENSOR_DATA_POINTS.radarSensitivity, newSettings['radar_sensitivity']);
       }
       if (changedKeys.includes('minimum_range')) {
-        await this.writeData32(V2_RADAR_SENSOR_DATA_POINTS.minimumRange, newSettings['minimum_range'] * 100); // convert to centimeters
+        await this.writeData32(V2_RADAR_SENSOR_DATA_POINTS.minimumRange, Math.round(newSettings['minimum_range'] * 100)); // convert to centimeters
       }
       if (changedKeys.includes('maximum_range')) {
-        await this.writeData32(V2_RADAR_SENSOR_DATA_POINTS.maximumRange, newSettings['maximum_range'] * 100); // convert to centimeters
+        await this.writeData32(V2_RADAR_SENSOR_DATA_POINTS.maximumRange, Math.round(newSettings['maximum_range'] * 100)); // convert to centimeters
       }
       if (changedKeys.includes('detection_delay')) {
-        await this.writeData32(V2_RADAR_SENSOR_DATA_POINTS.detectionDelay, newSettings['detection_delay']);
+        await this.writeData32(V2_RADAR_SENSOR_DATA_POINTS.detectionDelay, Math.round(newSettings['detection_delay'] * 10)); // tenths of second
       }
       if (changedKeys.includes('fading_time')) {
-        await this.writeData32(V2_RADAR_SENSOR_DATA_POINTS.fadingTime, newSettings['fading_time']);
+        await this.writeData32(V2_RADAR_SENSOR_DATA_POINTS.fadingTime, Math.round(newSettings['fading_time'] * 10)); // tenths of second
       }
     } catch (error) {
       this.error('Error in onSettings:', error);
