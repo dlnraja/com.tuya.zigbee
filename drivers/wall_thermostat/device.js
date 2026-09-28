@@ -324,13 +324,18 @@ class WallThermostatDevice extends TuyaSpecificClusterDevice {
     });
 
     this.registerCapabilityListener('target_temperature', async (targetTemperature) => {
-      const rawValue = Math.round(Number(targetTemperature) * 10);
+      let rawValue = Math.round(Number(targetTemperature) * 10);
+      if (this._dp16Scale === 'half') {
+        rawValue = Math.round(Number(targetTemperature) * 2);
+      } else if (this._dp16Scale === 'raw') {
+        rawValue = Math.round(Number(targetTemperature));
+      }
       // WHY(P2324): setpoint DP16 first; optional DP101 only when RX-confirmed.
       await this._txValue(BHT_DATA_POINTS.targetTemperature, rawValue);
       await this._ensureFcuManualForTx().catch((e) => {
         this.log('[WALL-THERMO] DP101 after setpoint skipped:', e?.message || e);
       });
-      this.log('[WALL-THERMO] target_temperature TX', targetTemperature, 'raw', rawValue);
+      this.log('[WALL-THERMO] target_temperature TX', targetTemperature, 'raw', rawValue, 'scale', this._dp16Scale || 'tenth');
     });
 
     this.registerCapabilityListener('child_lock', async (childlock) => {
@@ -447,9 +452,24 @@ class WallThermostatDevice extends TuyaSpecificClusterDevice {
       case BHT_DATA_POINTS.currentTemperature:
         await this.safeSetCapabilityValue('measure_temperature', Number(parsedValue) / 10).catch(() => {});
         break;
-      case BHT_DATA_POINTS.targetTemperature:
-        await this.safeSetCapabilityValue('target_temperature', Number(parsedValue) / 10).catch(() => {});
+      case BHT_DATA_POINTS.targetTemperature: {
+        const rawNum = Number(parsedValue);
+        let targetTemp = rawNum / 10;
+        if (Number.isFinite(rawNum)) {
+          if (rawNum >= 100) {
+            targetTemp = rawNum / 10; // Tenths (e.g. 215 -> 21.5°C)
+            this._dp16Scale = 'tenth';
+          } else if (rawNum > 45 && rawNum <= 90) {
+            targetTemp = rawNum / 2; // Half-degrees (e.g. 43 -> 21.5°C)
+            this._dp16Scale = 'half';
+          } else if (rawNum >= 5 && rawNum <= 45) {
+            targetTemp = rawNum; // Raw degrees (e.g. 21 -> 21°C)
+            this._dp16Scale = 'raw';
+          }
+        }
+        await this.safeSetCapabilityValue('target_temperature', targetTemp).catch(() => {});
         break;
+      }
       case BHT_DATA_POINTS.childlock:
         await this.safeSetCapabilityValue('child_lock', !!parsedValue).catch(() => {});
         break;
