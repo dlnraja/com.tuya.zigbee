@@ -316,7 +316,8 @@
     "check:p2741": "node --test test/critical/p2741-bastien-6bdc3c5e-skip-mcu-sync-remote.test.js",
     "check:p274x": "npm run check:p2740 && npm run check:p2741",
     "check:p273x": "npm run check:p2733 && npm run check:p2734 && npm run check:p2735 && npm run check:p2736 && npm run check:p2739",
-    "check:p2743": "node --test test/critical/p2743-gh550-551-inbox-treat.test.js"
+    "check:p2743": "node --test test/critical/p2743-gh550-551-inbox-treat.test.js",
+    "check:p2765": "node --test test/critical/p2765-gh550-missing-listener-presence-lift.test.js"
   },
   "keywords": [
     "homey",
