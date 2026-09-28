@@ -2721,6 +2721,7 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
    */
   _commitPresenceAndFlows(presence, opts = {}) {
     const next = !!presence;
+    const cfg = this._getRadarConfig?.() || {};
     // WHY(P2555): heal/boot paints must not lock edge-dedupe without firing WHEN —
     // VicHY #2240 "sensor shows present but Presence detected WHEN dead".
     if (opts && opts.silent === true) {
