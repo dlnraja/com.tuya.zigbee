@@ -907,6 +907,9 @@
       ]
     }
   ],
+  "9.0.1280": {
+    "en": "Radar presence cfg crash & phantom onoff click fix (#550), TS0043 _TZ3000_famkxci2 3-button scene remote pairing fix (#551), button battery drain elimination & radio calm (P2756/P2757)."
+  },
   "9.0.1279": {
     "en": "P2756: Eliminate button battery drain: disable unsolicited periodic scene recovery writes on sleeping devices, guard awake readAttributes & Tuya DP storms, suppress polling & configureReporting on sleepy remotes, preserving CR2032 life."
   },
@@ -964,12 +967,7 @@
     "en": "HiepSVG radar: fix lux (real light steps vs noise), distance (no farther-ghost / dm scale), hang re-arm. Update Test ≥9.0.1260; Repair radar once.",
     "fr": "Radar HiepSVG: lux (vrais changements vs bruit), distance (plus de ghost plus loin / echelle dm), re-arm freeze. Maj Test ≥9.0.1260; Repair une fois."
   },
-  "9.0.1259": {
-    "en": "Ceiling radar motion re-arms from lux after stillness (GH#550). TS0043 famkxci2 stays Wireless Button 3 only (GH#551). Update Test; Repair radar / re-pair Generic remotes.",
-    "fr": "Radar plafond: motion se rearme via lux apres immobilite (GH#550). TS0043 famkxci2 reste Bouton 3 (GH#551). Maj Test; Repair radar / re-appairer Generique."
-  },
-  "9.0.1280": {
-    "en": "Radar presence cfg crash & phantom onoff click fix (#550), TS0043 _TZ3000_famkxci2 3-button scene remote pairing fix (#551), button battery drain elimination & radio calm (P2756/P2757).",
-    "fr": "Fix crash radar présence cfg & clic fantôme onoff (#550), appairage télécommande 3 boutons TS0043 famkxci2 (#551), élimination du drain batterie boutons & calme radio (P2756/P2757)."
+  "9.0.1281": {
+    "en": "v9.0.1281: automated publish, manifest sync, and Homey test promotion."
   }
 }
