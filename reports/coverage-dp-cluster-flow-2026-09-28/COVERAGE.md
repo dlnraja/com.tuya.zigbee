@@ -6,7 +6,7 @@ Critical gaps: **0**
 - Drivers: 434
 - With flow.compose: 434
 - Without: none
-- Flow card entries (compose): 5856
+- Flow card entries (compose): 5854
 
 ## Clusters
 - Compose unique: 36
