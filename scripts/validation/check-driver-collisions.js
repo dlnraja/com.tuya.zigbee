@@ -41,6 +41,7 @@ const DOCUMENTED_EXCEPTIONS = [
   { mfr: 'hobeian', pid: 'ts0013', drivers: ['sensor_contact_zigbee', 'switch_2gang'] },
   { mfr: 'hobeian', pid: 'ts0726', drivers: ['sensor_contact_zigbee', 'switch_2gang'] },
   { mfr: 'hobeian', pid: 'zg-305z', drivers: ['switch_2gang'] },
+  { mfr: 'aoyan', pid: 'ts0601', drivers: ['soil_sensor', 'water_leak_sensor'] },
 ];
 
 // Invalid wildcard patterns that should never be used

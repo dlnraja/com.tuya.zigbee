@@ -73,9 +73,9 @@ class SoilSensorDevice extends TuyaUnifiedDevice {
       || this.getSetting?.('zb_model_id')
       || '',
     ).toUpperCase();
-    // WHY(P2339): blutch32 HOBEIAN ZG-303Z — settings may lag getData on first DP RX
-    if (includesCI(['HOBEIAN'], manufacturer)) { return true; }
-    if (productId === 'ZG-303Z' || productId === 'ZG-303ZL') { return true; }
+    // WHY(P2339 / EdP forum #2258): HOBEIAN, AOYAN (AY-303Z), COOLO (CS-201Z)
+    if (includesCI(['HOBEIAN', 'hobeian', 'AOYAN', 'aoyan', 'COOLO', 'coolo'], manufacturer)) { return true; }
+    if (['ZG-303Z', 'ZG-303ZL', 'AY-303Z', 'AY-302Z', 'CS-201Z'].includes(productId)) { return true; }
     // MFRs known to use the ZG-303Z DP map: _TZE200_wqashyqo, _TZE284_awepdiwi,
     // _TZE284_ga1maeof, _TZE284_myd45weu, _TZE284_oitavov2, _TZE284_2nhqasjh,
     // _TZE284_aao3yzhs, _TZE284_tgrzpqf4, _TZE284_0ints6wl, _TZE200_npj9bug3.
@@ -227,6 +227,26 @@ class SoilSensorDevice extends TuyaUnifiedDevice {
     this._previousMoisture = null;
     this._previousTemperature = null;
     this._previousBattery = null;
+
+    // WHY(EdP forum #2258): on ZG-303Z/AY-303Z white-labels, native cluster 0x0405
+    // reports soil moisture (not ambient air humidity). Real air humidity is DP 109.
+    if (this.isZG303ZVariant) {
+      try {
+        const ep1 = zclNode?.endpoints?.[1];
+        const humCluster = ep1?.clusters?.msRelativeHumidity || ep1?.clusters?.relativeHumidity;
+        if (humCluster && typeof humCluster.on === 'function') {
+          humCluster.on('attr.measuredValue', (val) => {
+            if (typeof val === 'number') {
+              const soilMoisture = Math.max(0, Math.min(100, Math.round(val / 100)));
+              this.log(`[SOIL] ZG-303Z/AY-303Z cluster 0x0405 measuredValue reports soil moisture: ${soilMoisture}%`);
+              if (this.hasCapability('measure_humidity.soil')) {
+                this.safeSetCapabilityValue('measure_humidity.soil', soilMoisture).catch(() => {});
+              }
+            }
+          });
+        }
+      } catch (_e) { /* soft */ }
+    }
 
     // v5.5.564: Schedule a delayed DP query for battery devices that may not
     // report immediately after pairing (fix for _TZE284_oitavov2 binding issues)
