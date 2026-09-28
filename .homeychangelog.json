@@ -4074,5 +4074,8 @@
   },
   "1.0.118": {
     "en": "Longer battery life: no proactive PowerCfg polls on coin-cell sensors/remotes. TS0043 interview clusters restored."
+  },
+  "1.0.119": {
+    "en": "Battery listen-only for coin cells; Johan couple collision locks (pay2byax / 6ycgarab)."
   }
 }
