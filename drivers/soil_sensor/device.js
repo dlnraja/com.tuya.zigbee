@@ -310,6 +310,15 @@ class SoilSensorDevice extends TuyaUnifiedDevice {
 
     // Conductivity / EC (DP 4, 20, 22, 106, 112)
     if (dp === 4 || dp === 20 || dp === 22 || dp === 106 || dp === 112) {
+      if (this.isZG303ZVariant && dp === 106) {
+        // ZG-303Z uses DP 106 as dry/water shortage alarm boolean
+        const alarm = Boolean(parsedValue);
+        this.log(`[SOIL] ZG-303Z DP106 dry alarm = ${alarm}`);
+        if (this.hasCapability('alarm_water')) {
+          this.safeSetCapabilityValue('alarm_water', alarm).catch(() => {});
+        }
+        return;
+      }
       this.log(`[SOIL] EC/Conductivity DP${dp} = ${parsedValue}`);
       this.safeSetCapabilityValue('measure_ec', parseFloat(parsedValue)).catch(() => { });
       this._triggerECFlows(parsedValue);
