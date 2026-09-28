@@ -551,7 +551,11 @@ class IrBlasterDevice extends TuyaZigbeeDevice {
     // Listen for Tuya datapoints (alternative protocol)
     if (endpoint.clusters.tuya) {
       endpoint.clusters.tuya.on('datapoint', (data) => {
-        this._handleTuyaIRDatapoint(data);
+        try {
+          this._handleTuyaIRDatapoint(data);
+        } catch (err) {
+          this.error('Failed to handle Tuya IR datapoint', err);
+        }
       });
     }
 
@@ -559,7 +563,11 @@ class IrBlasterDevice extends TuyaZigbeeDevice {
     endpoint.on('frame', (clusterId, frame, meta) => {
       if (clusterId === ZOSUNG_IR_CONTROL_CLUSTER_ID ||
         clusterId === ZOSUNG_IR_TRANSMIT_CLUSTER_ID) {
-        this._handleIRClusterFrame(clusterId, frame, meta);
+        try {
+          this._handleIRClusterFrame(clusterId, frame, meta);
+        } catch (err) {
+          this.error('Failed to handle IR cluster frame', err);
+        }
       }
     });
   }
