@@ -41,3 +41,12 @@ Still **report-only** (IDE quota). Not Homey.
 ## Dual-app
 
 BOTH reliability locks → master + Bastien + Stable surgical backport.
+
+## P2760 wave2 (same day)
+
+| Couple | Johan | OUR | Action |
+|--------|-------|-----|--------|
+| TS0207 leak mfrs (#1041) | water_leak_sensor | keep IAS; strip tuya twin | collision heal |
+| `_TZE200_kb5noeto`+TS0601 | #1481 IAS motion | `pir_sensor_2` | off radar EF00 |
+| `_TZ3000_air9m6af`+TS011F | #1485 4-socket | `socket_power_strip_four_two` | off usb_dongle |
+
