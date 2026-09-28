@@ -907,6 +907,12 @@
       ]
     }
   ],
+  "9.0.1284": {
+    "en": "Fix radar _TZE204_gkfbdvyx ghost capabilities, strip phantoms on ceiling 24G, fix 0m distance & presence lock (GH#550)."
+  },
+  "9.0.1283": {
+    "en": "v9.0.1283: automated publish, manifest sync, and Homey test promotion."
+  },
   "9.0.1282": {
     "en": "v9.0.1282: automated publish, manifest sync, and Homey test promotion."
   },
@@ -958,21 +964,7 @@
   "9.0.1266": {
     "en": "Publish heal: Wireless Button 3 Flow titleFormatted locales + hang-leave radar. Update Test."
   },
-  "9.0.1265": {
-    "en": "Radar presence: clear hung YES when lux+distance freeze after leave; re-pair Wireless Button 3 (TS0043) if still Generic."
-  },
-  "9.0.1262": {
-    "en": "Publish fix: FlowCardHelper Buffer JSON + no duplicate button tokens. Update Test to 9.0.1262.",
-    "fr": "Fix publish: FlowCardHelper Buffer JSON + tokens bouton uniques. Maj Test 9.0.1262."
-  },
-  "9.0.1282": {
-    "en": "v9.0.1282: automated publish, manifest sync, and Homey test promotion."
-  },
-  "9.0.1283": {
-    "en": "v9.0.1283: automated publish, manifest sync, and Homey test promotion."
-  },
-  "9.0.1284": {
-    "en": "Fix radar _TZE204_gkfbdvyx ghost capabilities, strip phantoms on ceiling 24G, fix 0m distance & presence lock (GH#550).",
-    "fr": "Correction radar _TZE204_gkfbdvyx: suppression des capacites fantomes plafond 24G, fix distance 0m et verrouillage presence (GH#550)."
+  "9.0.1285": {
+    "en": "v9.0.1285: automated publish, manifest sync, and Homey test promotion."
   }
 }
