@@ -4,7 +4,12 @@ All notable changes to the **Tuya Unified Zigbee** app for Homey Pro.
 
 ---
 
-## [9.0.1291] - 2026-09-28
+## [9.0.1293] - 2026-09-28
+
+Johan L99 wave2: IAS leak family vs tuya twin, kb5noeto IAS motion, air9m6af 4-socket strip.
+---
+
+ [9.0.1291] - 2026-09-28
 
 Align P2572 Contre quoi with P2758: pay2byax only on contact_sensor_zigbee.
 ---

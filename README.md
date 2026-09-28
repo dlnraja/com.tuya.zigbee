@@ -33,15 +33,15 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 
 | Metric | Value |
 |--------|-------|
-| **App Version** | v9.0.1292 |
+| **App Version** | v9.0.1294 |
 | **Drivers** | 434 (381 Zigbee + 53 WiFi) |
 | **Unique Fingerprints** | 4,702 |
-| **Pairing Variants** | 18,767 (4 case combos per fingerprint) |
+| **Pairing Variants** | 18,742 (4 case combos per fingerprint) |
 | **Unique Product IDs** | 933 |
 | **Flow Cards** | 6,030 |
 | **Unique Capabilities** | 170 |
 | **Native OTA Drivers** | 8 |
-| **Test Suites** | 538 files |
+| **Test Suites** | 539 files |
 | **SVG Icons** | 734 |
 | **Languages** | EN, FR, NL, DE |
 | **SDK / Homey** | 3 / >= 12.2.0 |
@@ -54,7 +54,7 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 | 1 | `climate_sensor` | 2,155 |
 | 2 | `switch_1gang` | 1,505 |
 | 3 | `curtain_motor` | 1,110 |
-| 4 | `presence_sensor_radar` | 999 |
+| 4 | `presence_sensor_radar` | 987 |
 | 5 | `radiator_valve` | 609 |
 | 6 | `generic_tuya` | 581 |
 | 7 | `button_wireless_2` | 566 |
@@ -70,7 +70,7 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 | 17 | `plug_energy_monitor` | 208 |
 | 18 | `thermostat_tuya_dp` | 200 |
 | 19 | `sensor_contact_zigbee` | 187 |
-| 20 | `water_leak_sensor_tuya` | 185 |
+| 20 | `wall_thermostat` | 180 |
 
 ### Drivers by Device Class
 
@@ -103,6 +103,8 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 
 | Version | Changes |
 |---------|---------|
+| **v9.0.1294** | v9.0.1293: |
+| **v9.0.1293** | Johan L99 wave2: IAS leak family vs tuya twin, kb5noeto IAS motion, air9m6af 4-socket strip. |
 | **v9.0.1292** | Johan L99 transpose: Moes SR-ZS to 3-gang, air-monitor off IAS contact, TS0207 leak family enrich. |
 | **v9.0.1291** | Align P2572 Contre quoi with P2758: pay2byax only on contact_sensor_zigbee. |
 | **v9.0.1290** | Anti-bot gate aligns pay2byax with contact_sensor_zigbee; coin-cell battery listen-only; 6ycgarab smoke/CO not radar. |
@@ -113,8 +115,6 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 | **v9.0.1285** | v9.0.1285: automated publish, manifest sync, and Homey test promotion. |
 | **v9.0.1284** | Fix radar _TZE204_gkfbdvyx ghost capabilities, strip phantoms on ceiling 24G, fix 0m distance & presence lock (GH#550). |
 | **v9.0.1283** | v9.0.1283: automated publish, manifest sync, and Homey test promotion. |
-| **v9.0.1282** | v9.0.1282: automated publish, manifest sync, and Homey test promotion. |
-| **v9.0.1281** | v9.0.1281: automated publish, manifest sync, and Homey test promotion. |
 
 <!-- CHANGELOG_END -->
 
