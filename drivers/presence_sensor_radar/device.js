@@ -1247,14 +1247,15 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
    */
   _registerPhantomRelaySoftListeners() {
     try {
-      const cfg = this._getRadarConfig() || {};
-      const mfr = String(this.getSetting?.('zb_manufacturer_name') || '').toLowerCase();
-      const noRelay = cfg.hasRelay === false || /gkfbdvyx|laokfqwu|ya4ft0w4/.test(mfr);
-      if (!noRelay) return;
-      if (this.hasCapability('onoff') && !this._phantomOnoffListener) {
+      if (this.hasCapability('onoff') && !this._phantomOnoffListener && !this._radarRelayListenerRegistered) {
         this._phantomOnoffListener = true;
-        this.registerCapabilityListener('onoff', async () => {
-          this.log('[RADAR] P2597 ignore phantom Channel 1 (no relay)');
+        this.registerCapabilityListener('onoff', async (value) => {
+          const cfg = this._getRadarConfig?.() || {};
+          if (cfg.hasRelay) {
+            const dp = Number(cfg.relayDp || 108);
+            return await this._sendRadarDP(dp, value ? 1 : 0, cfg.relayType || 'enum');
+          }
+          this.log('[RADAR] Channel 1 toggled on non-relay radar — acknowledged cleanly');
           return true;
         });
       }

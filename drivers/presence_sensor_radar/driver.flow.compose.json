@@ -96,26 +96,6 @@
       "args": []
     },
     {
-      "id": "presence_sensor_radar_lux_changed",
-      "title": {
-        "en": "Luminance changed",
-        "fr": "Luminance changée",
-        "nl": "Lichtsterkte gewijzigd",
-        "de": "Helligkeit geändert"
-      },
-      "args": []
-    },
-    {
-      "id": "presence_sensor_radar_battery_low",
-      "title": {
-        "en": "Battery low",
-        "fr": "Batterie faible",
-        "nl": "Batterij laag",
-        "de": "Batterie schwach"
-      },
-      "args": []
-    },
-    {
       "id": "presence_sensor_radar_zone1_presence",
       "title": {
         "en": "Zone 1 presence detected"
