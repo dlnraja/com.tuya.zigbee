@@ -4119,6 +4119,27 @@
       ]
     },
     {
+      "key": "aoyan|ts0601",
+      "drivers": [
+        "soil_sensor",
+        "water_leak_sensor"
+      ]
+    },
+    {
+      "key": "aoyan|Ts0601",
+      "drivers": [
+        "soil_sensor",
+        "water_leak_sensor"
+      ]
+    },
+    {
+      "key": "aoyan|TS0601",
+      "drivers": [
+        "soil_sensor",
+        "water_leak_sensor"
+      ]
+    },
+    {
       "key": "hobeian|01minizb",
       "drivers": [
         "curtain_motor",
