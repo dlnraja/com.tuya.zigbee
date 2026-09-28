@@ -252,6 +252,18 @@ const FORBIDDEN = [
     driver: 'soil_sensor',
     mfrs: ['_TZE200_pay2byax', '_TZE204_pay2byax'],
   },
+  // P2758 / P2201 / P126: EF00 pay2byax+TS0601 is contact_sensor_zigbee — never IAS contact_sensor
+  {
+    id: 'p2758-pay2byax-not-ias-contact',
+    driver: 'contact_sensor',
+    mfrs: ['_TZE200_pay2byax', '_TZE204_pay2byax', '_TZE284_pay2byax'],
+  },
+  // P2758 / Johan #1487: smoke+CO 6ycgarab stays smoke_sensor — never radar
+  {
+    id: 'p2758-6ycgarab-not-radar',
+    driver: 'presence_sensor_radar',
+    mfrs: ['_TZE284_6ycgarab', '_TZE200_6ycgarab', '_TZE204_6ycgarab'],
+  },
   // P98 sacred-couple rehomes — never dump back into generic/wrong class
   {
     id: 'p98-pftj0i7z-not-generic',
@@ -611,9 +623,9 @@ const REQUIRED = [
   },
   {
     id: 'p98-pay2byax-contact',
-    // ZG-102ZL path on contact_sensor; TS0601 pairs via contact_sensor_zigbee (P126)
-    driver: 'contact_sensor',
-    mfrs: ['_TZE200_pay2byax'],
+    // P2758: ZG-102ZL / TS0601 EF00 couple lives on contact_sensor_zigbee (P126 / P2201)
+    driver: 'contact_sensor_zigbee',
+    mfrs: ['_TZE200_pay2byax', '_TZE204_pay2byax'],
   },
   {
     id: 'p2201-pay2byax-contact-zigbee-ts0601',
