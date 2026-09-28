@@ -169,6 +169,7 @@ class ClimateSensorDevice extends UnifiedSensorBase {
       }
 
       if (val !== null) {
+        val = this._applyCalibration(mapping.capability, val);
         return this.safeSetCapabilityValue(mapping.capability, val).catch(() => {});
       }
       return;

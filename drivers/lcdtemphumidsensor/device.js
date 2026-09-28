@@ -43,14 +43,14 @@ class LCDTempHumidSensorDevice extends UnifiedSensorBase {
     const usesDirectHumidity = this.usesDirectHumidity;
     return {
       // Temperature (Standard DP 1 or 18 or 101)
-      1: { capability: 'measure_temperature', divisor: 10 },
+      1: { capability: 'measure_temperature', smartDivisor: true },
       18: { capability: 'measure_temperature', smartDivisor: true },
       101: { capability: 'measure_temperature', smartDivisor: true },
 
       // Humidity (DP 2 or 102)
-      // v7.4.4: Research shows _TZE284_vvmbj46n does NOT use divisor 10 for humidity!
-      2: { capability: 'measure_humidity', divisor: usesDirectHumidity ? 1 : 10 },
-      102: { capability: 'measure_humidity', divisor: usesDirectHumidity ? 1 : 10 },
+      // Uses smartDivisor with fallback to direct / x10 detection
+      2: { capability: 'measure_humidity', divisor: usesDirectHumidity ? 1 : 10, smartDivisor: !usesDirectHumidity },
+      102: { capability: 'measure_humidity', divisor: usesDirectHumidity ? 1 : 10, smartDivisor: !usesDirectHumidity },
 
       // Battery
       // v5.12.3: DP 3 battery enum (0=low, 1=med, 2=high)
@@ -106,23 +106,23 @@ class LCDTempHumidSensorDevice extends UnifiedSensorBase {
         {
           cluster: 'msTemperatureMeasurement',
           attributeName: 'measuredValue',
-          minInterval: 60,
-          maxInterval: 3600,
-          minChange: 50, // 0.5C
+          minInterval: 10,
+          maxInterval: 1800,
+          minChange: 10, // 0.1°C (was 50 = 0.5°C) -> high precision
         },
         {
           cluster: 'msRelativeHumidity',
           attributeName: 'measuredValue',
-          minInterval: 60,
-          maxInterval: 3600,
-          minChange: 100, // 1%
+          minInterval: 10,
+          maxInterval: 1800,
+          minChange: 50, // 0.5% (was 100 = 1%) -> high precision
         },
         {
           cluster: 'genPowerCfg',
           attributeName: 'batteryPercentageRemaining',
           minInterval: 3600,
-          maxInterval: 86400,
-          minChange: 2,
+          maxInterval: 43200,
+          minChange: 1, // 1% (was 2%) -> fine battery tracking
         }
       ]);
     } catch (err) {
