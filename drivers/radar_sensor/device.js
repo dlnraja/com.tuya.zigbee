@@ -68,7 +68,11 @@ class radarSensor extends TuyaSpecificClusterDevice {
   }
 
   async onNodeInit({zclNode}) {
-    zclNode.endpoints[1].clusters.tuya.on("response", value => this.updatePosition(value));
+    if (zclNode?.endpoints?.[1]?.clusters?.tuya) {
+      zclNode.endpoints[1].clusters.tuya.on("response", value => this.updatePosition(value));
+      zclNode.endpoints[1].clusters.tuya.on("reporting", value => this.updatePosition(value));
+      zclNode.endpoints[1].clusters.tuya.on("datapoint", value => this.updatePosition(value));
+    }
   }
 
   async updatePosition(data) {
