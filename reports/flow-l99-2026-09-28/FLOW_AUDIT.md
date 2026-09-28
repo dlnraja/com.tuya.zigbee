@@ -22,7 +22,7 @@ Failing steps: **0** / 8
 ### flow-dups
 
 ```
-Flow card ID uniqueness OK (6032 compose ids)
+Flow card ID uniqueness OK (6030 compose ids)
 
 ```
 
@@ -65,7 +65,7 @@ First 20 issues:
 
 ```
 {
-  "generatedAt": "2026-09-28T01:21:27.105Z",
+  "generatedAt": "2026-09-28T07:38:00.420Z",
   "mode": "dry-run",
   "driversTouched": 0,
   "orphanTokensFixed": 0,
@@ -89,9 +89,9 @@ First 20 issues:
 {
   "mode": "dry-run",
   "removed": {
-    "triggers": 3627,
-    "conditions": 666,
-    "actions": 1563
+    "triggers": 0,
+    "conditions": 0,
+    "actions": 0
   },
   "kept": {
     "triggers": 52,
@@ -131,7 +131,7 @@ Critical gaps: **0**
 - Drivers: 434
 - With flow.compose: 434
 - Without: none
-- Flow card entries (compose): 5856
+- Flow card entries (compose): 5854
 
 ## Clusters
 - Compose unique: 36
@@ -174,7 +174,7 @@ npm run flow:l99
 ### button-flow-harvest
 
 ```
-tDrivers": 0,
+Drivers": 52,
   "appLevelButtonTriggers": [
     "button_pressed",
     "button_double_press",
