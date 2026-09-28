@@ -1,6 +1,6 @@
 {
   "name": "com.dlnraja.tuya.zigbee",
-  "version": "9.0.1292",
+  "version": "9.0.1293",
   "description": "Tuya Unified Zigbee - Local-first control with AI automation",
   "main": "app.js",
   "scripts": {
@@ -628,7 +628,8 @@
     "check:p2757": "node --test test/critical/p2757-coin-battery-no-proactive-poll.test.js",
     "check:p275x": "npm run check:p2750 && npm run check:p2751 && npm run check:p2752 && npm run check:p2753 && npm run check:p2757 && npm run check:p2758 && npm run check:p2759",
     "check:p2758": "node --test test/critical/p2758-johan-couple-collision-locks.test.js",
-    "check:p2759": "node --test test/critical/p2759-johan-l99-recursive-transpose.test.js"
+    "check:p2759": "node --test test/critical/p2759-johan-l99-recursive-transpose.test.js",
+    "check:p2760": "node --test test/critical/p2760-johan-l99-ias-strip-locks.test.js"
   },
   "keywords": [
     "homey",
