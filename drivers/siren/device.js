@@ -15,6 +15,16 @@ const UnifiedPlugBase = require('../../lib/devices/UnifiedPlugBase');
  */
 class SirenDevice extends UnifiedPlugBase {
 
+  // WHY P2466: Cleverio SA100 (_TZ3000_vdfwjopk+TS0219) is mains IAS WD — no phantom battery
+  get mainsPowered() {
+    try {
+      const mfr = String(this.getData?.()?.manufacturerName || this.getSetting?.('zb_manufacturer_name') || '').toLowerCase();
+      return /vdfwjopk/i.test(mfr);
+    } catch {
+      return false;
+    }
+  }
+
   get plugCapabilities() {
     return ['onoff', 'measure_battery', 'measure_temperature', 'measure_humidity'];
   }
@@ -71,6 +81,11 @@ class SirenDevice extends UnifiedPlugBase {
     this._isInitializing = true;
     await super.onNodeInit({ zclNode });
 
+    // WHY P2466: Cleverio SA100 is mains — strip phantom battery capability
+    if (this.mainsPowered && this.hasCapability('measure_battery')) {
+      try { await this.removeCapability('measure_battery'); } catch (_) { /* ignore */ }
+    }
+
     // --- Attribute Reporting Configuration (auto-generated) ---
     try {
       await this.configureAttributeReporting([
@@ -98,6 +113,11 @@ class SirenDevice extends UnifiedPlugBase {
 
     // Setup IAS WD cluster (parent doesn't have this)
     await this._setupIasWD(zclNode);
+    try {
+      if (this.io && typeof this.io.ensureIasWd === 'function') {
+        await this.io.ensureIasWd();
+      }
+    } catch (_) { /* ignore */ }
 
     // Register volume listener (send to BOTH standard DP5 + NEO DP116)
     if (this.hasCapability('volume_set')) {
@@ -111,6 +131,37 @@ class SirenDevice extends UnifiedPlugBase {
     // Flow cards registered in driver.js
     this._isInitializing = false;
     this.log('[SIREN]  Ready');
+  }
+
+  /**
+   * Helper to set alarm volume from flow cards or direct calls
+   * Handles string values ('low', 'medium', 'high') or numeric indices (0, 1, 2)
+   */
+  async sendAlarmVolume(volume) {
+    const vol = typeof volume === 'string'
+      ? ({ low: 0, medium: 1, high: 2 }[volume.toLowerCase()] ?? Number(volume) ?? 1)
+      : (Number(volume) || 0);
+    const validVol = Math.max(0, Math.min(2, isNaN(vol) ? 1 : vol));
+    try { await this._sendTuyaDP(5, validVol, 'enum'); } catch (e) {}
+    try { await this._sendTuyaDP(116, validVol, 'enum'); } catch (e) {}
+    if (this.hasCapability('volume_set')) {
+      const capVal = validVol === 0 ? 0.33 : validVol === 1 ? 0.66 : 1.0;
+      await this.setCapabilityValue('volume_set', capVal).catch(() => {});
+    }
+  }
+
+  /**
+   * `alarm_generic` mirrors the sounding state. The siren reports it through
+   * whichever of DP1/13/104 its firmware uses, all of which land on `onoff`,
+   * so mirroring here covers every variant. driver.js `siren_is_sounding`
+   * reads both capabilities and would otherwise only ever see `onoff`.
+   */
+  async safeSetCapabilityValue(capability, value) {
+    const result = await super.safeSetCapabilityValue(capability, value);
+    if (capability === 'onoff' && this.hasCapability('alarm_generic')) {
+      await super.safeSetCapabilityValue('alarm_generic', !!value).catch(() => {});
+    }
+    return result;
   }
 
   async _setupIasWD(zclNode) {
@@ -132,17 +183,23 @@ class SirenDevice extends UnifiedPlugBase {
     try { await this._sendTuyaDP(104, !!value, 'bool'); } catch (e) {}
     await super._setOnOff?.(value );
 
-    // Also trigger IAS WD if available
-    if (this._iasWd?.startWarning) {
-      try {
+    // Also trigger IAS WD if available (prefer DeviceIOFacade multi-path)
+    try {
+      if (this.io && typeof this.io.startWarning === 'function') {
+        if (value) {
+          await this.io.startWarning({ duration: 30, strobeDutyCycle: 50, strobeLevel: 1 });
+        } else {
+          await this.io.stopWarning();
+        }
+      } else if (this._iasWd?.startWarning) {
         await this._iasWd.startWarning({
           warningMode: value ? 1 : 0,
           warningDuration: value ? 30 : 0,
           strobeDutyCycle: value ? 50 : 0,
           strobeLevel: value ? 1 : 0
         });
-      } catch (e) { /* ignore */ }
-    }
+      }
+    } catch (e) { /* ignore */ }
   }
 
   async _sendTuyaDP(dp, value, type) {
