@@ -1,66 +1,81 @@
 'use strict';
 
-const TuyaZigbeeDevice = require('../../lib/tuya/TuyaZigbeeDevice');
 const ZclBatteryMonitor = require('../../lib/battery/ZclBatteryMonitor');
-const Homey = require('homey');
-const { Cluster, debug, CLUSTER } = require('zigbee-clusters');
+const TuyaZigbeeDevice = require('../../lib/tuya/TuyaZigbeeDevice');
+const { Cluster, CLUSTER } = require('zigbee-clusters');
 const TuyaSpecificCluster = require('../../lib/TuyaSpecificCluster');
+const { safeSetTimeout, safeClearTimeout } = require('../../lib/utils/safe-timers');
 
 Cluster.addCluster(TuyaSpecificCluster);
 
-const DEFAULT_ONOFF_DURATION = 1000
-
+/**
+ * P124 — TuyaZigbeeDevice + safe-timers (no bare setTimeout / destroyed race)
+ */
 class IrrigationController extends TuyaZigbeeDevice {
 
-  async onNodeInit({zclNode}) {
-    // Primary battery path (attr listeners + initial read)
+  async onNodeInit({ zclNode }) {
+    await super.onNodeInit({ zclNode });
     ZclBatteryMonitor.attach(this, zclNode);
 
     this.printNode();
 
     this.registerCapability('onoff', CLUSTER.ON_OFF);
 
-    this.registerCapabilityListener("onoff", async (value, options) => {
+    this.registerCapabilityListener('onoff', async (value, options = {}) => {
       this.log(`value ${value}`);
-      this.log(`options ${options.duration}`);
-      if (value && options.duration != undefined ){
-        await zclNode.endpoints[1].clusters['onOff'].setOn();
-        this._onOffTimeout = this.homey.setTimeout(async () => {
-          if (this._destroyed) {return;}
-          await zclNode.endpoints[1].clusters['onOff'].setOff();
-        }, options.duration);
-      } else if(value && options.duration === undefined){
-        await zclNode.endpoints[1].clusters['onOff'].setOn();
-      } else if(!value && options.duration === undefined){
-        await zclNode.endpoints[1].clusters['onOff'].setOff();
+      this.log(`options ${options?.duration}`);
+
+      if (this._onOffTimeout) {
+        safeClearTimeout(this, this._onOffTimeout);
+        this._onOffTimeout = null;
+      }
+
+      if (value) {
+        await zclNode.endpoints[1].clusters.onOff.setOn();
+        if (options?.duration !== undefined) {
+          this._onOffTimeout = safeSetTimeout(this, async () => {
+            this._onOffTimeout = null;
+            if (this._destroyed) return;
+            try {
+              await zclNode.endpoints[1].clusters.onOff.setOff();
+            } catch (err) {
+              this.error('Failed to turn irrigation off after duration', err);
+            }
+          }, options.duration);
+        }
+      } else {
+        await zclNode.endpoints[1].clusters.onOff.setOff();
       }
     });
-  
+
     await this.configureAttributeReporting([
       {
-          endpointId: 1,
-          cluster: CLUSTER.POWER_CONFIGURATION,
-          attributeName: 'batteryPercentageRemaining',
-          minInterval: 60, // Minimum interval (1 minute)
-          maxInterval: 21600, // Maximum interval (6 hours)
-          minChange: 1, // Report changes greater than 1%
-      }
+        endpointId: 1,
+        cluster: CLUSTER.POWER_CONFIGURATION,
+        attributeName: 'batteryPercentageRemaining',
+        minInterval: 60,
+        maxInterval: 21600,
+        minChange: 1,
+      },
     ]);
-    // Battery % via ZclBatteryMonitor.attach (UnifiedBatteryHandler) — no naive /2 path
   }
 
   async onDeleted() {
     this._destroyed = true;
+    if (this._onOffTimeout) {
+      safeClearTimeout(this, this._onOffTimeout);
+      this._onOffTimeout = null;
+    }
     await super.onDeleted();
     this.log('Smart irrigation controller removed');
   }
 
   onUninit() {
     if (this._onOffTimeout) {
-      this.homey.clearTimeout(this._onOffTimeout);
+      safeClearTimeout(this, this._onOffTimeout);
+      this._onOffTimeout = null;
     }
   }
-
 }
 
 module.exports = IrrigationController;
