@@ -4,7 +4,12 @@ All notable changes to the **Tuya Unified Zigbee** app for Homey Pro.
 
 ---
 
-## [9.0.1279] - 2026-09-27
+## [9.0.1280] - 2026-09-28
+
+Radar presence cfg crash & phantom onoff click fix (#550), TS0043 _TZ3000_famkxci2 3-button scene remote pairing fix (#551), button battery drain elimination & radio calm (P2756/P2757).
+---
+
+ [9.0.1279] - 2026-09-27
 
 P2756: Eliminate button battery drain: disable unsolicited periodic scene recovery writes on sleeping devices, guard awake readAttributes & Tuya DP storms, suppress polling & configureReporting on sleepy remotes, preserving CR2032 life.
 ---

@@ -33,10 +33,10 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 
 | Metric | Value |
 |--------|-------|
-| **App Version** | v9.0.1280 |
+| **App Version** | v9.0.1281 |
 | **Drivers** | 434 (381 Zigbee + 53 WiFi) |
 | **Unique Fingerprints** | 4,700 |
-| **Pairing Variants** | 18,771 (4 case combos per fingerprint) |
+| **Pairing Variants** | 18,769 (4 case combos per fingerprint) |
 | **Unique Product IDs** | 929 |
 | **Flow Cards** | 6,032 |
 | **Unique Capabilities** | 170 |
@@ -103,6 +103,7 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 
 | Version | Changes |
 |---------|---------|
+| **v9.0.1281** | v9.0.1280: |
 | **v9.0.1280** | Radar presence cfg crash & phantom onoff click fix (#550), TS0043 _TZ3000_famkxci2 3-button scene remote pairing fix (#551), button batte… |
 | **v9.0.1279** | P2756: Eliminate button battery drain: disable unsolicited periodic scene recovery writes on sleeping devices, guard awake readAttributes… |
 | **v9.0.1278** | v9.0.1278: automated publish, manifest sync, and Homey test promotion. |
@@ -114,7 +115,6 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 | **v9.0.1272** | v9.0.1272: automated publish, manifest sync, and Homey test promotion. |
 | **v9.0.1271** | v9.0.1271: P2749f Flow titleFormatted gate + Homey Test sync. |
 | **v9.0.1270** | CI: Flow titleFormatted [[args]] gate before Athom validate + hang-leave radar. Update Test. |
-| **v9.0.1269** | Publish heal: OCR invent pad doNotLock under heap pressure + Flow locales. Update Test. |
 
 <!-- CHANGELOG_END -->
 
