@@ -111,6 +111,21 @@ class FingerBotTimeBoundCluster extends BoundCluster {
 
 class FingerBot extends TuyaSpecificClusterDevice {
 
+  getTuyaCommandName(_dp) {
+    const mfr = String(
+      (typeof this.getManufacturerName === 'function' ? this.getManufacturerName() : '')
+      || this.getSetting?.('zb_manufacturer_name')
+      || this.getData?.()?.manufacturerName
+      || ''
+    ).toLowerCase();
+
+    // Fingerbot variants requiring cmd 0x04 (sendData) instead of cmd 0x00 (datapoint)
+    if (mfr.includes('j4pdtz9v') || mfr.includes('7vgttna6') || mfr.includes('a04acm9s') || mfr.includes('dse8ogfy')) {
+      return 'sendData';
+    }
+    return 'datapoint';
+  }
+
   async onNodeInit({ zclNode }) {
     this.log('Initializing FingerBot device...');
     
@@ -288,6 +303,22 @@ class FingerBot extends TuyaSpecificClusterDevice {
       }
     });
 
+    tuyaCluster.on('statusReport', async data => {
+      try {
+        await this.processDatapoint(data);
+      } catch (err) {
+        this.error('Error processing Tuya statusReport frame:', err);
+      }
+    });
+
+    tuyaCluster.on('reporting_0x05', async data => {
+      try {
+        await this.processDatapoint(data);
+      } catch (err) {
+        this.error('Error processing Tuya reporting_0x05 frame:', err);
+      }
+    });
+
     this._tuyaListenersAttached = true;
   }
 
@@ -323,7 +354,7 @@ class FingerBot extends TuyaSpecificClusterDevice {
 
       // Reset GUI shortly after success.
       this.homey.setTimeout(() => {
-        if (this._destroyed) return;
+        if (this._destroyed) {return;}
         this._setCapabilitySafe(
           'onoff',
           false,
@@ -344,7 +375,7 @@ class FingerBot extends TuyaSpecificClusterDevice {
     }
 
     this._guiPulseTimeout = this.homey.setTimeout(() => {
-      if (this._destroyed) return;
+      if (this._destroyed) {return;}
       this._setCapabilitySafe('onoff', false, 'Failed to reset momentary GUI state' );
     }, MOMENTARY_GUI_PULSE_MS);
   }

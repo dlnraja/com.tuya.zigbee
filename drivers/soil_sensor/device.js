@@ -34,6 +34,13 @@ const { SoilMoistureInference, BatteryInference } = require('../../lib/Intellige
  *   - DP102: illuminance lux
  *   - DP106: fertilizer_ec (advanced variants)
  *   - DP112: soil_fertility_ec (TZE284 specific)
+ *
+ *   PAIRING (forum 140352 #2101, blutch32): HOBEIAN ZG-303Z units with
+ *   swBuild 0129122025 expose only clusters [0,3,61184,1026,1029,1].
+ *   The driver manifest previously required clusters [0,4,5,60672,61184],
+ *   so these units paired as "unknown zigbee device". Manifest endpoints
+ *   were relaxed to [0,61184]; temp/humidity/battery are handled by the
+ *   universal ZCL handlers in TuyaUnifiedDevice (hybrid mode).
  */
 class SoilSensorDevice extends TuyaUnifiedDevice {
 
@@ -66,9 +73,9 @@ class SoilSensorDevice extends TuyaUnifiedDevice {
       || this.getSetting?.('zb_model_id')
       || '',
     ).toUpperCase();
-    // WHY(P2339): blutch32 HOBEIAN ZG-303Z — settings may lag getData on first DP RX
-    if (includesCI(['HOBEIAN'], manufacturer)) { return true; }
-    if (productId === 'ZG-303Z' || productId === 'ZG-303ZL') { return true; }
+    // WHY(P2339 / EdP forum #2258): HOBEIAN, AOYAN (AY-303Z), COOLO (CS-201Z)
+    if (includesCI(['HOBEIAN', 'hobeian', 'AOYAN', 'aoyan', 'COOLO', 'coolo'], manufacturer)) { return true; }
+    if (['ZG-303Z', 'ZG-303ZL', 'AY-303Z', 'AY-302Z', 'CS-201Z'].includes(productId)) { return true; }
     // MFRs known to use the ZG-303Z DP map: _TZE200_wqashyqo, _TZE284_awepdiwi,
     // _TZE284_ga1maeof, _TZE284_myd45weu, _TZE284_oitavov2, _TZE284_2nhqasjh,
     // _TZE284_aao3yzhs, _TZE284_tgrzpqf4, _TZE284_0ints6wl, _TZE200_npj9bug3.
@@ -115,7 +122,22 @@ class SoilSensorDevice extends TuyaUnifiedDevice {
   get dpMappings() {
     return {
       1: { capability: 'measure_temperature', smartDivisor: true },
-      2: { capability: 'measure_humidity.soil', divisor: 1 }, // Alt moisture (Z2M DP mapping)
+      // Most soils: DP2 = alt moisture. SGS02Z `_TZE284_nt4pquef`: DP2 = illuminance enum (Z2M).
+      2: {
+        capability: 'measure_humidity.soil',
+        divisor: 1,
+        transform: (value) => {
+          const mfr = (this.getSetting?.('zb_manufacturer_name') || '').toLowerCase();
+          if (mfr.includes('nt4pquef')) {
+            const lux = { 0: 10, 1: 50, 2: 200, 3: 500, 4: 1000 }[value];
+            if (lux != null && this.hasCapability('measure_luminance')) {
+              this.safeSetCapabilityValue('measure_luminance', lux).catch(() => {});
+            }
+            return null; // do not treat illuminance enum as soil %
+          }
+          return value;
+        },
+      },
       3: {
         capability: 'measure_humidity.soil',
         transform: (value) => this.isSgabhwa6Variant ? safeDivide(value, 10) : value,
@@ -206,6 +228,26 @@ class SoilSensorDevice extends TuyaUnifiedDevice {
     this._previousTemperature = null;
     this._previousBattery = null;
 
+    // WHY(EdP forum #2258): on ZG-303Z/AY-303Z white-labels, native cluster 0x0405
+    // reports soil moisture (not ambient air humidity). Real air humidity is DP 109.
+    if (this.isZG303ZVariant) {
+      try {
+        const ep1 = zclNode?.endpoints?.[1];
+        const humCluster = ep1?.clusters?.msRelativeHumidity || ep1?.clusters?.relativeHumidity;
+        if (humCluster && typeof humCluster.on === 'function') {
+          humCluster.on('attr.measuredValue', (val) => {
+            if (typeof val === 'number') {
+              const soilMoisture = Math.max(0, Math.min(100, Math.round(val / 100)));
+              this.log(`[SOIL] ZG-303Z/AY-303Z cluster 0x0405 measuredValue reports soil moisture: ${soilMoisture}%`);
+              if (this.hasCapability('measure_humidity.soil')) {
+                this.safeSetCapabilityValue('measure_humidity.soil', soilMoisture).catch(() => {});
+              }
+            }
+          });
+        }
+      } catch (_e) { /* soft */ }
+    }
+
     // v5.5.564: Schedule a delayed DP query for battery devices that may not
     // report immediately after pairing (fix for _TZE284_oitavov2 binding issues)
     this.homey.setTimeout(() => {
@@ -257,9 +299,10 @@ class SoilSensorDevice extends TuyaUnifiedDevice {
       else if (value.length === 1) {parsedValue = value.readUInt8(0);}
     }
 
-    // Backport (forum 140352): ignore Tuya overflow/sentinel readings
-    // (e.g. 67109120 = 0x04000000) reported by some soil sensors for
-    // temperature/humidity. Legitimate readings never reach this magnitude.
+    // Forum 140352 FIX: ignore Tuya overflow/sentinel readings (e.g. 67109120
+    // = 0x04000000) reported by some soil sensors for temperature/humidity.
+    // They surfaced as absurd values (67109120 °C / %) in Homey. Legitimate
+    // soil readings never reach this magnitude, so drop the report.
     if (typeof parsedValue === 'number' && Number.isFinite(parsedValue) && Math.abs(parsedValue) >= 0x04000000) {
       this.log(`[SOIL] Ignoring overflow/sentinel value DP${dp} = ${parsedValue} (0x${(parsedValue >>> 0).toString(16).toUpperCase()})`);
       return;
@@ -267,6 +310,15 @@ class SoilSensorDevice extends TuyaUnifiedDevice {
 
     // Conductivity / EC (DP 4, 20, 22, 106, 112)
     if (dp === 4 || dp === 20 || dp === 22 || dp === 106 || dp === 112) {
+      if (this.isZG303ZVariant && dp === 106) {
+        // ZG-303Z uses DP 106 as dry/water shortage alarm boolean
+        const alarm = Boolean(parsedValue);
+        this.log(`[SOIL] ZG-303Z DP106 dry alarm = ${alarm}`);
+        if (this.hasCapability('alarm_water')) {
+          this.safeSetCapabilityValue('alarm_water', alarm).catch(() => {});
+        }
+        return;
+      }
       this.log(`[SOIL] EC/Conductivity DP${dp} = ${parsedValue}`);
       this.safeSetCapabilityValue('measure_ec', parseFloat(parsedValue)).catch(() => { });
       this._triggerECFlows(parsedValue);
