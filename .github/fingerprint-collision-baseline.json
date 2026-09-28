@@ -1427,6 +1427,27 @@
         "contact_sensor",
         "sensor_contact_zigbee"
       ]
+    },
+    {
+      "key": "hobeian|ZG-301Z",
+      "drivers": [
+        "curtain_motor",
+        "switch_1gang"
+      ]
+    },
+    {
+      "key": "hobeian|zg-302z1",
+      "drivers": [
+        "curtain_motor",
+        "switch_1gang"
+      ]
+    },
+    {
+      "key": "hobeian|ZG-302Z1",
+      "drivers": [
+        "curtain_motor",
+        "switch_1gang"
+      ]
     }
   ]
 }
