@@ -836,7 +836,14 @@ class Button1GangDevice extends ButtonDevice {
     }
 
     // Device is awake after button press - try to read battery only if missing (preserves battery)
-    const curBattery = this.getCapabilityValue('measure_battery');
+    let curBattery = this.getCapabilityValue('measure_battery');
+    if (curBattery == null) {
+      const stored = this.getStoreValue?.('measure_battery') ?? this.getStoreValue?.('battery_percent');
+      if (stored != null && typeof stored === 'number' && stored > 0) {
+        this.setCapabilityValue('measure_battery', stored).catch(() => {});
+        curBattery = stored;
+      }
+    }
     const hasBattery = curBattery != null && Number(curBattery) > 0;
     let skipSleepy = false;
     try {
