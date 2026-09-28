@@ -85,7 +85,16 @@ async onInit() {
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device || args.device._isInitializing) {return false;}
-          if (typeof args.device._sendTuyaDP === 'function') { await args.device._sendTuyaDP(5, args.volume || 1, 'enum').catch(() => {}); }
+          if (typeof args.device.sendAlarmVolume === 'function') {
+            await args.device.sendAlarmVolume(args.volume);
+          } else if (typeof args.device._sendTuyaDP === 'function') {
+            const vol = typeof args.volume === 'string'
+              ? ({ low: 0, medium: 1, high: 2 }[args.volume.toLowerCase()] ?? Number(args.volume) ?? 1)
+              : (Number(args.volume) || 0);
+            const validVol = Math.max(0, Math.min(2, isNaN(vol) ? 1 : vol));
+            await args.device._sendTuyaDP(5, validVol, 'enum').catch(() => {});
+            await args.device._sendTuyaDP(116, validVol, 'enum').catch(() => {});
+          }
           return true;
         });
       }
