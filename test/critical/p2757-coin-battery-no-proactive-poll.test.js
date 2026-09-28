@@ -70,7 +70,9 @@ describe('P2757 coin battery no proactive poll', () => {
   it('deprecated BatteryManagerV3 / BatterySystem gate PowerCfg TX', () => {
     const v3 = fs.readFileSync(path.join(ROOT, 'lib/battery/BatteryManagerV3.js'), 'utf8');
     assert.match(v3, /P2757 skip ZCL configure\/read/);
+    assert.match(v3, /P2757 refuse startPolling/);
     const sys = fs.readFileSync(path.join(ROOT, 'lib/battery/BatterySystem.js'), 'utf8');
     assert.match(sys, /P2757 skip configureReporting/);
+    assert.match(sys, /P2757 sleepy\/coin — listen-only/);
   });
 });
