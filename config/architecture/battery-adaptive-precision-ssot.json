@@ -44,9 +44,11 @@
     "skipNeqStripMeasureBattery": true,
     "noLinearVoltageFormula": true,
     "piggybackOnlyWhenStale": true,
-    "fusePreferVoltageOnFlatZcl100Coin": true
+    "fusePreferVoltageOnFlatZcl100Coin": true,
+    "neverProactivePollCoinChemistry": true,
+    "neverProactivePowerCfgOnSleepyNoClock": true
   },
-  "related": ["P2645", "P2685", "P2470", "P2488", "P2490", "P2663", "P216"],
+  "related": ["P2645", "P2685", "P2470", "P2488", "P2490", "P2663", "P216", "P2757"],
   "dualApp": {
     "master": true,
     "bastien": true,
