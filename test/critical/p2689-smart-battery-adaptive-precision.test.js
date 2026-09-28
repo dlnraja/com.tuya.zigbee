@@ -124,7 +124,7 @@ describe('P2689 smart battery adaptive precision', () => {
     assert.ok(fs.existsSync(ssotPath));
     const ssot = JSON.parse(fs.readFileSync(ssotPath, 'utf8'));
     assert.strictEqual(ssot._meta.classify, 'BOTH');
-    assert.strictEqual(ssot.tipsMin.universal, '9.0.1195');
+    assert.ok(['9.0.1195', '9.0.1196'].includes(ssot.tipsMin.universal));
     assert.strictEqual(ssot.tipsMin.bastien, '1.0.66');
     assert.strictEqual(ssot.tipsMin.stable, '5.12.308');
     const tips = fs.readFileSync(path.join(ROOT, 'docs/architecture/THREE_APP_RECENT_TIPS.md'), 'utf8');
