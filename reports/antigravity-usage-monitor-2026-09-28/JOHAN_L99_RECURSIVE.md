@@ -50,3 +50,16 @@ BOTH reliability locks → master + Bastien + Stable surgical backport.
 | `_TZE200_kb5noeto`+TS0601 | #1481 IAS motion | `pir_sensor_2` | off radar EF00 |
 | `_TZ3000_air9m6af`+TS011F | #1485 4-socket | `socket_power_strip_four_two` | off usb_dongle |
 
+
+## P2761 — latest Johan comments (2026-09-28 evening UTC)
+
+| Couple | Johan | Action |
+|--------|-------|--------|
+| Fantem `_TZ3210_*`+TS0202 ZB003-X | #207 | `motion_sensor`; strip `wall_dimmer_tuya` |
+| `_TZ3000_0hkmcrza`+TS0203 | #1155 | `contact_sensor`; strip climate |
+| `_TZ1800_ladpngdx`+TS0211 | #161 | `doorbell`; strip climate |
+| `_TZ3000_hgu1dlak`+TS0202 | #613 | `pir_sensor_2`; strip climate |
+| tank DP2 cm / DP19-21 mm | #1477 | already correct; WHY lock |
+| `_TZ3000_5k5vh43t`+TS0207 | #1206 | soft NEED_INTERVIEW — keep `zigbee_repeater` |
+| `_TZ3000_x8q36xwf` false-closed | #1143 | already zoneStatus-command path; no invent |
+
