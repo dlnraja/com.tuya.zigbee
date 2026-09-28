@@ -71,7 +71,7 @@ class TuyatecTempHumidSensorDevice extends UnifiedSensorBase {
     await super.onNodeInit({ zclNode });
     this._registerCapabilityListeners(); // rule-12a injected
     // A8: NaN Safety - use safeDivide/safeMultiply
-  this.getSettings() || {};
+    const settings = this.getSettings() || {};
     this.log('[TUYATEC]  TUYATEC Temperature/Humidity Sensor ready');
     this.log('[TUYATEC] Model:', settings.zb_model_id || settings.zb_model_id || 'TUYATEC_TempHumid');
     this.log('[TUYATEC] Manufacturer:', settings.zb_manufacturer_name || settings.zb_manufacturer_name || 'unknown');
@@ -81,7 +81,7 @@ class TuyatecTempHumidSensorDevice extends UnifiedSensorBase {
     this.log('[TUYATEC]  Data received:', JSON.stringify(status));
     super.onTuyaStatus(status);
 
-    this.homey.setTimeout(() => { if (this._destroyed) return; const temp = this.getCapabilityValue('measure_temperature');
+    this.homey.setTimeout(() => { if (this._destroyed) {return;} const temp = this.getCapabilityValue('measure_temperature');
       const hum = this.getCapabilityValue('measure_humidity');
       const bat = this.getCapabilityValue('measure_battery');
       this.log('[TUYATEC]  T:', temp, 'Â°C H:', hum, '% B:', bat, '%'); }, 100);
