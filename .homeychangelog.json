@@ -907,6 +907,9 @@
       ]
     }
   ],
+  "9.0.1281": {
+    "en": "v9.0.1281: automated publish, manifest sync, and Homey test promotion."
+  },
   "9.0.1280": {
     "en": "Radar presence cfg crash & phantom onoff click fix (#550), TS0043 _TZ3000_famkxci2 3-button scene remote pairing fix (#551), button battery drain elimination & radio calm (P2756/P2757)."
   },
@@ -963,11 +966,7 @@
     "en": "Tagged Flow cards (label/token) fire from all RX paths; remotes battery-changed. Update Test to 9.0.1261 then restart.",
     "fr": "Flows etiquetes (tag/token) se declenchent sur tout RX; batterie remotes. Maj Test 9.0.1261 puis redemarrer."
   },
-  "9.0.1260": {
-    "en": "HiepSVG radar: fix lux (real light steps vs noise), distance (no farther-ghost / dm scale), hang re-arm. Update Test ≥9.0.1260; Repair radar once.",
-    "fr": "Radar HiepSVG: lux (vrais changements vs bruit), distance (plus de ghost plus loin / echelle dm), re-arm freeze. Maj Test ≥9.0.1260; Repair une fois."
-  },
-  "9.0.1281": {
-    "en": "v9.0.1281: automated publish, manifest sync, and Homey test promotion."
+  "9.0.1282": {
+    "en": "v9.0.1282: automated publish, manifest sync, and Homey test promotion."
   }
 }

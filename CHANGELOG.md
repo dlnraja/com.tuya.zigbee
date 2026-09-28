@@ -4,7 +4,12 @@ All notable changes to the **Tuya Unified Zigbee** app for Homey Pro.
 
 ---
 
-## [9.0.1280] - 2026-09-28
+## [9.0.1281] - 2026-09-28
+
+v9.0.1281: automated publish, manifest sync, and Homey test promotion.
+---
+
+ [9.0.1280] - 2026-09-28
 
 Radar presence cfg crash & phantom onoff click fix (#550), TS0043 _TZ3000_famkxci2 3-button scene remote pairing fix (#551), button battery drain elimination & radio calm (P2756/P2757).
 ---
