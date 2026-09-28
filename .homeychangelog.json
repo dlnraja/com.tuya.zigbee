@@ -2095,5 +2095,8 @@
   },
   "5.12.349": {
     "en": "Johan L99: Moes SR-ZS 3-gang, air-monitor couple lock, TS0207 leak enrich."
+  },
+  "5.12.350": {
+    "en": "P2759/P2760 CI heal: pay2byax anti-bot → contact_sensor_zigbee; siren safeSetCapabilityValue."
   }
 }
