@@ -67,7 +67,8 @@ describe('P2640 GH#551/#552/#550 treat', () => {
       'utf8',
     );
     assert.ok(src.includes('_distanceSeenMeaningful'));
-    assert.ok(src.includes('clearPresenceOnZeroDistance && Number(distance) <= 0.05'));
+    // WHY(P2640→P2749): gate uses gatedDistance (cold-stream filtered), not raw distance
+    assert.ok(src.includes('clearPresenceOnZeroDistance && Number(gatedDistance) <= 0.05'));
     assert.ok(src.includes('if (this._distanceSeenMeaningful === true)'));
   });
 
