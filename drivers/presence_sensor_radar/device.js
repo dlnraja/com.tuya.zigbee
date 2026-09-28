@@ -1757,7 +1757,7 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
       // WHY(P2640): meaningful = tracking actually ranged (>0.3m) — not cold 0m frames
       if (Number(distance) > 0.3) this._distanceSeenMeaningful = true;
       // WHY(P2722 / GH#550): keep pre-scale meters for soft-clear / corroboration /
-      // motion re-arm; apply distanceDisplayScale only on Homey UI paint.
+      // WHY(P2722): keep pre-scale meters for soft-clear & motion re-arm; apply distanceDisplayScale only on Homey UI paint.
       const logicDistance = distance;
       // WHY(P2744 / GH#550 C14): mmWave often paints a farther ghost then corrects —
       // reject upward spikes while human YES and recent samples were trending closer.
@@ -1797,7 +1797,7 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
       // WHY(P2575 / VicHY #2247 bathroom): DP1 can stick true while empty room distance≈0.
       // Soft clear after sustained zero distance (default 90s) — does not fight P2534
       // instantaneous flip-flop (needs sustained empty, not single DP9=0 frame).
-      this._softClearStuckPresenceOnZeroDistance(gatedDistance, config);
+      this._softClearStuckPresenceOnZeroDistance(logicDistance, config);
       // WHY(P2389): still feed inference every frame; only coalesce Homey capability writes
       if (this._shouldSkipFloodCalmDp(dpId, gatedDistance, config)) {return;}
       // WHY(P2590 Module 2): meaningful distance while Occupied = sign of life → rearm

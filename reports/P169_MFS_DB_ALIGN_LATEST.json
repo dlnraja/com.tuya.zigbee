@@ -1,13 +1,513 @@
 {
-  "timestamp": "2026-09-22T19:18:14.939Z",
+  "timestamp": "2026-09-27T21:24:32.720Z",
   "gate": "align-mfs-db-intelligent",
   "apply": false,
   "check": true,
-  "changeCount": 0,
-  "skippedCount": 140,
+  "changeCount": 71,
+  "skippedCount": 64,
   "highSeverityCount": 0,
-  "byAction": {},
-  "changes": [],
+  "byAction": {
+    "compose_exclusive": 71
+  },
+  "changes": [
+    {
+      "severity": "medium",
+      "action": "compose_exclusive",
+      "mfr": "_tz3000_xwh1e22x",
+      "from": "bulb_rgbw",
+      "to": "smart_irrigation_valve"
+    },
+    {
+      "severity": "medium",
+      "action": "compose_exclusive",
+      "mfr": "_tz3210_p9ao60da",
+      "from": "led_controller_cct",
+      "to": "bulb_tunable_white"
+    },
+    {
+      "severity": "medium",
+      "action": "compose_exclusive",
+      "mfr": "_tz3000_kdpxju99",
+      "from": "rgb_spot_GU10",
+      "to": "bulb_tunable_white"
+    },
+    {
+      "severity": "medium",
+      "action": "compose_exclusive",
+      "mfr": "_tyzb01_ncutbjdi",
+      "from": "switch_2_gang",
+      "to": "switch_1_gang"
+    },
+    {
+      "severity": "medium",
+      "action": "compose_exclusive",
+      "mfr": "_tyzb01_aneiicmq",
+      "from": "switch_2_gang",
+      "to": "switch_1_gang"
+    },
+    {
+      "severity": "medium",
+      "action": "compose_exclusive",
+      "mfr": "_TZ3000_dpo1ysak",
+      "from": "button_wireless_2",
+      "to": "smartplug"
+    },
+    {
+      "severity": "medium",
+      "action": "compose_exclusive",
+      "mfr": "_tz3000_jd3z4yig",
+      "from": "rgb_led_strip",
+      "to": "christmas_lights"
+    },
+    {
+      "severity": "medium",
+      "action": "compose_exclusive",
+      "mfr": "_TZ3210_jd3z4yig",
+      "from": "rgb_led_strip",
+      "to": "christmas_lights"
+    },
+    {
+      "severity": "medium",
+      "action": "compose_exclusive",
+      "mfr": "_TZE200_AYCXWIAU",
+      "from": "sensor_climate_contact",
+      "to": "co_sensor"
+    },
+    {
+      "severity": "medium",
+      "action": "compose_exclusive",
+      "mfr": "_TZ3000_4UUAJA4A",
+      "from": "curtain_module",
+      "to": "curtain_motor"
+    },
+    {
+      "severity": "medium",
+      "action": "compose_exclusive",
+      "mfr": "_TZ3000_J1XL73IW",
+      "from": "curtain_module_2_gang",
+      "to": "curtain_motor"
+    },
+    {
+      "severity": "medium",
+      "action": "compose_exclusive",
+      "mfr": "_TZ3000_L6IQPH4F",
+      "from": "curtain_module_2_gang",
+      "to": "curtain_motor"
+    },
+    {
+      "severity": "medium",
+      "action": "compose_exclusive",
+      "mfr": "_TZE284_LNYZ4A6V",
+      "from": "device_air_purifier_plug",
+      "to": "curtain_motor"
+    },
+    {
+      "severity": "medium",
+      "action": "compose_exclusive",
+      "mfr": "_TZ3000_8uaoilu9",
+      "from": "curtain_motor_shutter",
+      "to": "rgb_floor_led_light"
+    },
+    {
+      "severity": "medium",
+      "action": "compose_exclusive",
+      "mfr": "_TZ3000_odygigth",
+      "from": "curtain_motor_shutter",
+      "to": "rgb_bulb_E14"
+    },
+    {
+      "severity": "medium",
+      "action": "compose_exclusive",
+      "mfr": "_TZ3000_gek6snaj",
+      "from": "curtain_motor_shutter",
+      "to": "rgb_led_light_bar"
+    },
+    {
+      "severity": "medium",
+      "action": "compose_exclusive",
+      "mfr": "_tz3000_mq4wujmp",
+      "from": "smart_garden_irrigation_control",
+      "to": "water_valve_garden"
+    },
+    {
+      "severity": "medium",
+      "action": "compose_exclusive",
+      "mfr": "_TZ3000_g1glzzfk",
+      "from": "tunable_bulb_E14",
+      "to": "bulb_dimmable"
+    },
+    {
+      "severity": "medium",
+      "action": "compose_exclusive",
+      "mfr": "_TZB210_ayx58ft5",
+      "from": "tunable_bulb_E14",
+      "to": "bulb_dimmable"
+    },
+    {
+      "severity": "medium",
+      "action": "compose_exclusive",
+      "mfr": "_TZB210_eiwanbeb",
+      "from": "tunable_bulb_E14",
+      "to": "bulb_dimmable"
+    },
+    {
+      "severity": "medium",
+      "action": "compose_exclusive",
+      "mfr": "_TZB210_0bkzabht",
+      "from": "tunable_bulb_E14",
+      "to": "bulb_dimmable"
+    },
+    {
+      "severity": "medium",
+      "action": "compose_exclusive",
+      "mfr": "_TZ3210_c2iwpxf1",
+      "from": "tunable_bulb_E14",
+      "to": "dimmable_recessed_led"
+    },
+    {
+      "severity": "medium",
+      "action": "compose_exclusive",
+      "mfr": "TUYATEC-1G3TAWNP",
+      "from": "temphumidsensor",
+      "to": "hybrid_fan_sensor"
+    },
+    {
+      "severity": "medium",
+      "action": "compose_exclusive",
+      "mfr": "TUYATEC-GQHXIXYK",
+      "from": "temphumidsensor",
+      "to": "hybrid_fan_sensor"
+    },
+    {
+      "severity": "medium",
+      "action": "compose_exclusive",
+      "mfr": "TUYATEC-OJMXEIKG",
+      "from": "temphumidsensor",
+      "to": "hybrid_fan_sensor"
+    },
+    {
+      "severity": "medium",
+      "action": "compose_exclusive",
+      "mfr": "TUYATEC-OJMXEIKQ",
+      "from": "temphumidsensor",
+      "to": "hybrid_fan_sensor"
+    },
+    {
+      "severity": "medium",
+      "action": "compose_exclusive",
+      "mfr": "TUYATEC-PRHS1RSD",
+      "from": "temphumidsensor",
+      "to": "hybrid_fan_sensor"
+    },
+    {
+      "severity": "medium",
+      "action": "compose_exclusive",
+      "mfr": "TUYATEC-RIUJ5XZS",
+      "from": "temphumidsensor",
+      "to": "hybrid_fan_sensor"
+    },
+    {
+      "severity": "medium",
+      "action": "compose_exclusive",
+      "mfr": "TUYATEC-V3UXBUXY",
+      "from": "temphumidsensor",
+      "to": "hybrid_fan_sensor"
+    },
+    {
+      "severity": "medium",
+      "action": "compose_exclusive",
+      "mfr": "TUYATEC-VMGH3FXD",
+      "from": "temphumidsensor",
+      "to": "hybrid_fan_sensor"
+    },
+    {
+      "severity": "medium",
+      "action": "compose_exclusive",
+      "mfr": "TUYATEC-YG5DCBFU",
+      "from": "temphumidsensor",
+      "to": "hybrid_fan_sensor"
+    },
+    {
+      "severity": "medium",
+      "action": "compose_exclusive",
+      "mfr": "_TZ3000_RYLAOZUC",
+      "from": "tunable_bulb_E14",
+      "to": "hybrid_light_windowcoverings"
+    },
+    {
+      "severity": "medium",
+      "action": "compose_exclusive",
+      "mfr": "_TZ3000_5FKUFHN1",
+      "from": "tunable_bulb_E14",
+      "to": "hybrid_light_windowcoverings"
+    },
+    {
+      "severity": "medium",
+      "action": "compose_exclusive",
+      "mfr": "_TZ3000_ZW7WR5UO",
+      "from": "tunable_bulb_E14",
+      "to": "hybrid_light_windowcoverings"
+    },
+    {
+      "severity": "medium",
+      "action": "compose_exclusive",
+      "mfr": "_TZ3000_OBORYBOW",
+      "from": "tunable_bulb_E14",
+      "to": "hybrid_light_windowcoverings"
+    },
+    {
+      "severity": "medium",
+      "action": "compose_exclusive",
+      "mfr": "_TZ3000_RIWP3K79",
+      "from": "rgb_led_strip",
+      "to": "hybrid_light_windowcoverings"
+    },
+    {
+      "severity": "medium",
+      "action": "compose_exclusive",
+      "mfr": "_TZE200_bjzrowv2",
+      "from": "curtain_motor",
+      "to": "device_radiator_valve"
+    },
+    {
+      "severity": "medium",
+      "action": "compose_exclusive",
+      "mfr": "_tz3210_eejm8dcr",
+      "from": "led_strip_rgbw",
+      "to": "dimmer_2_gang_tuya"
+    },
+    {
+      "severity": "medium",
+      "action": "compose_exclusive",
+      "mfr": "_tz3210_4ubylghk",
+      "from": "rgb_led_strip",
+      "to": "light_bulb_dimmable_tunable"
+    },
+    {
+      "severity": "medium",
+      "action": "compose_exclusive",
+      "mfr": "_tz3000_utagpnzs",
+      "from": "rgb_wall_led_light",
+      "to": "light_bulb_rgb_led"
+    },
+    {
+      "severity": "medium",
+      "action": "compose_exclusive",
+      "mfr": "_tz3000_5bsf8vaj",
+      "from": "rgb_wall_led_light",
+      "to": "light_bulb_rgb_led"
+    },
+    {
+      "severity": "medium",
+      "action": "compose_exclusive",
+      "mfr": "_tze204_khoqss0a",
+      "from": "sensor_climate_contact",
+      "to": "lock_smart"
+    },
+    {
+      "severity": "medium",
+      "action": "compose_exclusive",
+      "mfr": "_tz3000_dd8wwzcy",
+      "from": "plug_energy_monitor",
+      "to": "climate_sensor"
+    },
+    {
+      "severity": "medium",
+      "action": "compose_exclusive",
+      "mfr": "_tz3000_j1v25l17",
+      "from": "plug_energy_monitor",
+      "to": "smartplug"
+    },
+    {
+      "severity": "medium",
+      "action": "compose_exclusive",
+      "mfr": "_TZ3000_QYSTBCJG",
+      "from": "smartPlug_DinRail",
+      "to": "plug_energy_monitor"
+    },
+    {
+      "severity": "medium",
+      "action": "compose_exclusive",
+      "mfr": "_TZE200_CXAKECFO",
+      "from": "sensor_climate_contact",
+      "to": "radiator_valve"
+    },
+    {
+      "severity": "medium",
+      "action": "compose_exclusive",
+      "mfr": "_TZ3000_rcuyhwe3",
+      "from": "smart_door_window_sensor",
+      "to": "contact_sensor"
+    },
+    {
+      "severity": "medium",
+      "action": "compose_exclusive",
+      "mfr": "_TZ3000_lf56vpxj",
+      "from": "sensor_motion_presence",
+      "to": "slim_motion_sensor"
+    },
+    {
+      "severity": "medium",
+      "action": "compose_exclusive",
+      "mfr": "_TZE200_jsaqgakf",
+      "from": "rain_sensor",
+      "to": "sensor_motion_presence"
+    },
+    {
+      "severity": "medium",
+      "action": "compose_exclusive",
+      "mfr": "_TZE200_2pddnnrk",
+      "from": "rain_sensor",
+      "to": "sensor_motion_presence"
+    },
+    {
+      "severity": "medium",
+      "action": "compose_exclusive",
+      "mfr": "_TZE200_m9skfctm",
+      "from": "smoke_sensor2",
+      "to": "switch_wireless"
+    },
+    {
+      "severity": "medium",
+      "action": "compose_exclusive",
+      "mfr": "_TYZB01_mtunwanm",
+      "from": "switch_2_gang",
+      "to": "socket_power_strip_four_three"
+    },
+    {
+      "severity": "medium",
+      "action": "compose_exclusive",
+      "mfr": "_TZ3000_54HJN4VS",
+      "from": "switch_2gang",
+      "to": "switch_1gang"
+    },
+    {
+      "severity": "medium",
+      "action": "compose_exclusive",
+      "mfr": "_TZ3000_5GEY1OHX",
+      "from": "switch_2gang",
+      "to": "switch_1gang"
+    },
+    {
+      "severity": "medium",
+      "action": "compose_exclusive",
+      "mfr": "_TZ3000_AAIFMPUQ",
+      "from": "switch_2gang",
+      "to": "switch_1gang"
+    },
+    {
+      "severity": "medium",
+      "action": "compose_exclusive",
+      "mfr": "_TZ3000_HUVXRX4I",
+      "from": "switch_2gang",
+      "to": "switch_1gang"
+    },
+    {
+      "severity": "medium",
+      "action": "compose_exclusive",
+      "mfr": "_TZ3000_I9W5MEHZ",
+      "from": "switch_2gang",
+      "to": "switch_1gang"
+    },
+    {
+      "severity": "medium",
+      "action": "compose_exclusive",
+      "mfr": "_TZ3000_IN5QXHTT",
+      "from": "switch_2gang",
+      "to": "switch_1gang"
+    },
+    {
+      "severity": "medium",
+      "action": "compose_exclusive",
+      "mfr": "_TZ3000_IRRMJCGI",
+      "from": "switch_2gang",
+      "to": "switch_1gang"
+    },
+    {
+      "severity": "medium",
+      "action": "compose_exclusive",
+      "mfr": "_TZ3000_MUFWV0RY",
+      "from": "switch_2gang",
+      "to": "switch_1gang"
+    },
+    {
+      "severity": "medium",
+      "action": "compose_exclusive",
+      "mfr": "_TZ3000_OGPLA3LH",
+      "from": "switch_2gang",
+      "to": "switch_1gang"
+    },
+    {
+      "severity": "medium",
+      "action": "compose_exclusive",
+      "mfr": "_TZ3000_pxfjrzyj",
+      "from": "switch_2gang",
+      "to": "switch_1gang"
+    },
+    {
+      "severity": "medium",
+      "action": "compose_exclusive",
+      "mfr": "LELLKI",
+      "from": "socket_power_strip_four_three",
+      "to": "switch_4gang"
+    },
+    {
+      "severity": "medium",
+      "action": "compose_exclusive",
+      "mfr": "_TYZB01_VKWRYFDR",
+      "from": "socket_power_strip_four",
+      "to": "usb_outlet_advanced"
+    },
+    {
+      "severity": "medium",
+      "action": "compose_exclusive",
+      "mfr": "_TZE200_hvaxb2tc",
+      "from": "device_radiator_valve_smart",
+      "to": "wall_thermostat"
+    },
+    {
+      "severity": "medium",
+      "action": "compose_exclusive",
+      "mfr": "_TZE200_bvu2wnxz",
+      "from": "device_radiator_valve_smart",
+      "to": "wall_thermostat"
+    },
+    {
+      "severity": "medium",
+      "action": "compose_exclusive",
+      "mfr": "_TZ3000_zojh9vz7",
+      "from": "switch_1gang",
+      "to": "water_leak_sensor"
+    },
+    {
+      "severity": "medium",
+      "action": "compose_exclusive",
+      "mfr": "_TZ3000_gsat0axs",
+      "from": "switch_1gang",
+      "to": "water_leak_sensor"
+    },
+    {
+      "severity": "medium",
+      "action": "compose_exclusive",
+      "mfr": "dht0001",
+      "from": "lcdtemphumidsensor_3",
+      "to": "climate_sensor"
+    },
+    {
+      "severity": "medium",
+      "action": "compose_exclusive",
+      "mfr": "dhta001",
+      "from": "lcdtemphumidsensor_3",
+      "to": "climate_sensor"
+    },
+    {
+      "severity": "medium",
+      "action": "compose_exclusive",
+      "mfr": "ntcht01",
+      "from": "lcdtemphumidsensor_3",
+      "to": "climate_sensor"
+    }
+  ],
   "skipped": [
     {
       "reason": "registry_driver_missing",
@@ -281,44 +781,6 @@
       "curated": "valvecontroller"
     },
     {
-      "reason": "pair_conflict_ambiguous",
-      "mfr": "_TZ3000_dpo1ysak",
-      "curated": "button_wireless_2",
-      "foreign": [
-        "plug",
-        "smartplug"
-      ],
-      "modelIds": [
-        "TS0001",
-        "TS0002",
-        "TS0003",
-        "TS000F",
-        "TS0011",
-        "TS0012",
-        "TS0013",
-        "TS0014",
-        "TS0041",
-        "TS0042",
-        "TS0043",
-        "TS0044",
-        "TS0111",
-        "TS011F",
-        "TS0121",
-        "TS0215A",
-        "TS0601",
-        "TSO121"
-      ]
-    },
-    {
-      "reason": "unclaimed_multi",
-      "mfr": "_TZ3000_dpo1ysak",
-      "curated": "button_wireless_2",
-      "claimers": [
-        "plug",
-        "smartplug"
-      ]
-    },
-    {
       "reason": "unclaimed_no_compose",
       "mfr": "_TYZB01_CBIEZPDS",
       "curated": "lcdtemphumidsensor_2"
@@ -353,8 +815,7 @@
       "curated": "doorwindowsensor",
       "claimers": [
         "contact_sensor",
-        "hybrid_fan_sensor",
-        "temphumidsensor"
+        "hybrid_fan_sensor"
       ]
     },
     {
@@ -363,8 +824,7 @@
       "curated": "doorwindowsensor",
       "claimers": [
         "contact_sensor",
-        "hybrid_fan_sensor",
-        "temphumidsensor"
+        "hybrid_fan_sensor"
       ]
     },
     {
@@ -386,29 +846,6 @@
       "reason": "unclaimed_no_compose",
       "mfr": "danfoss",
       "curated": "generic_diy"
-    },
-    {
-      "reason": "pair_conflict_ambiguous",
-      "mfr": "_TZ3000_ZW7WR5UO",
-      "curated": "tunable_bulb_E14",
-      "foreign": [
-        "bulb_dimmable",
-        "hybrid_light_windowcoverings"
-      ],
-      "modelIds": [
-        "TS0502A",
-        "TS0503A",
-        "TS0601"
-      ]
-    },
-    {
-      "reason": "unclaimed_multi",
-      "mfr": "_TZ3000_ZW7WR5UO",
-      "curated": "tunable_bulb_E14",
-      "claimers": [
-        "bulb_dimmable",
-        "hybrid_light_windowcoverings"
-      ]
     },
     {
       "reason": "pair_conflict_ambiguous",
@@ -434,38 +871,6 @@
       "claimers": [
         "led_controller_dimmable",
         "led_controller_rgb"
-      ]
-    },
-    {
-      "reason": "pair_conflict_ambiguous",
-      "mfr": "_tz3210_4ubylghk",
-      "curated": "rgb_led_strip",
-      "foreign": [
-        "dimmer_2_gang",
-        "light_bulb_dimmable_tunable"
-      ],
-      "modelIds": [
-        "TS0502",
-        "TS0505A",
-        "TS0601"
-      ]
-    },
-    {
-      "reason": "unclaimed_multi",
-      "mfr": "_tz3210_4ubylghk",
-      "curated": "rgb_led_strip",
-      "claimers": [
-        "dimmer_2_gang",
-        "light_bulb_dimmable_tunable"
-      ]
-    },
-    {
-      "reason": "unclaimed_multi",
-      "mfr": "_TZ3000_QYSTBCJG",
-      "curated": "smartPlug_DinRail",
-      "claimers": [
-        "plug",
-        "plug_energy_monitor"
       ]
     },
     {
@@ -509,54 +914,14 @@
       "curated": "motion_sensor_2"
     },
     {
-      "reason": "unclaimed_no_compose",
-      "mfr": "_tze204_aaeasoll",
-      "curated": "light_sensor_outdoor"
-    },
-    {
-      "reason": "unclaimed_no_compose",
-      "mfr": "_tze200_aaeasoll",
-      "curated": "light_sensor_outdoor"
-    },
-    {
-      "reason": "unclaimed_no_compose",
-      "mfr": "_tze204_f91miyhj",
-      "curated": "plug_energy_monitor"
-    },
-    {
-      "reason": "unclaimed_no_compose",
-      "mfr": "_tze284_f91miyhj",
-      "curated": "plug_energy_monitor"
-    },
-    {
-      "reason": "unclaimed_no_compose",
-      "mfr": "_tz3008_tary5dvv",
-      "curated": "plug_energy_monitor"
-    },
-    {
-      "reason": "unclaimed_no_compose",
-      "mfr": "_tz3210_iooniers",
-      "curated": "plug_energy_monitor"
-    },
-    {
-      "reason": "unclaimed_no_compose",
-      "mfr": "_tze200_yensya2c",
-      "curated": "presence_sensor_ceiling"
-    },
-    {
-      "reason": "unclaimed_no_compose",
-      "mfr": "_tze284_yensya2c",
-      "curated": "presence_sensor_ceiling"
-    },
-    {
-      "reason": "unclaimed_no_compose",
-      "mfr": "_tze204_ne4pikwm",
-      "curated": "radiator_valve"
-    },
-    {
-      "reason": "unclaimed_no_compose",
-      "mfr": "_tze284_yojqa8xn",
-      "curated": "sensor_gas_presence"
+      "reason": "brand_multi_intentional",
+      "mfr": "Heobian",
+      "curated": "multi",
+      "claimers": [
+        "climate_sensor",
+        "switch_1gang",
+        "switch_2gang"
+      ]
     }
   ],
   "highSeverity": []
