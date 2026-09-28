@@ -907,6 +907,9 @@
       ]
     }
   ],
+  "9.0.1285": {
+    "en": "v9.0.1285: automated publish, manifest sync, and Homey test promotion."
+  },
   "9.0.1284": {
     "en": "Fix radar _TZE204_gkfbdvyx ghost capabilities, strip phantoms on ceiling 24G, fix 0m distance & presence lock (GH#550)."
   },
@@ -961,10 +964,7 @@
   "9.0.1267": {
     "en": "Publish heal: keep 7dcddnye on wall dimmer (not bulb) + hang-leave radar. Update Test."
   },
-  "9.0.1266": {
-    "en": "Publish heal: Wireless Button 3 Flow titleFormatted locales + hang-leave radar. Update Test."
-  },
-  "9.0.1285": {
-    "en": "v9.0.1285: automated publish, manifest sync, and Homey test promotion."
+  "9.0.1286": {
+    "en": "v9.0.1286: automated publish, manifest sync, and Homey test promotion."
   }
 }
