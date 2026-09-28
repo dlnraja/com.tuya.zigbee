@@ -1264,21 +1264,44 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
    */
   _registerPhantomRelaySoftListeners() {
     try {
-      if (this.hasCapability('onoff') && !this._phantomOnoffListener && !this._radarRelayListenerRegistered) {
-        this._phantomOnoffListener = true;
-        this.registerCapabilityListener('onoff', async (value) => {
-          const cfg = this._getRadarConfig?.() || {};
-          if (cfg.hasRelay) {
-            const dp = Number(cfg.relayDp || 108);
-            return await this._sendRadarDP(dp, value ? 1 : 0, cfg.relayType || 'enum');
+      if (this.hasCapability('onoff') && !this._radarRelayListenerRegistered) {
+        try {
+          this.registerCapabilityListener('onoff', async (value) => {
+            const cfg = this._getRadarConfig?.() || {};
+            if (cfg.hasRelay) {
+              const dp = Number(cfg.relayDp || 108);
+              return await this._sendRadarDP(dp, value ? 1 : 0, cfg.relayType || 'enum');
+            }
+            this.log('[RADAR] Channel 1 toggled on non-relay radar — acknowledged cleanly');
+            await this.safeSetCapabilityValue('onoff', !!value).catch(() => {});
+            return true;
+          });
+          this._phantomOnoffListener = true;
+        } catch (e) {
+          if (!/already been registered/i.test(e.message)) {
+            this.log('[RADAR] onoff listener registration error:', e.message);
           }
-          this.log('[RADAR] Channel 1 toggled on non-relay radar — acknowledged cleanly');
-          return true;
-        });
+        }
       }
       if (this.hasCapability('button.1') && !this._phantomButtonListener) {
-        this._phantomButtonListener = true;
-        this.registerCapabilityListener('button.1', async () => true);
+        try {
+          this.registerCapabilityListener('button.1', async () => true);
+          this._phantomButtonListener = true;
+        } catch (e) {
+          if (!/already been registered/i.test(e.message)) {
+            this.log('[RADAR] button.1 listener registration error:', e.message);
+          }
+        }
+      }
+      if (this.hasCapability('button') && !this._phantomButtonBaseListener) {
+        try {
+          this.registerCapabilityListener('button', async () => true);
+          this._phantomButtonBaseListener = true;
+        } catch (e) {
+          if (!/already been registered/i.test(e.message)) {
+            this.log('[RADAR] button listener registration error:', e.message);
+          }
+        }
       }
     } catch (_e) { /* soft */ }
   }
@@ -1482,7 +1505,7 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
 
   _registerRadarCapabilityListeners() {
     const config = this._getRadarConfig();
-    if (!config.hasRelay || !this.hasCapability('onoff') || this._radarRelayListenerRegistered) {return;}
+    if (!config?.hasRelay || !this.hasCapability('onoff') || this._radarRelayListenerRegistered) {return;}
 
     try {
       this.registerCapabilityListener('onoff', async (value) => {
@@ -1491,12 +1514,16 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
         if (!sent) {
           throw new Error(`Relay DP${dp} write failed`);
         }
+        await this.safeSetCapabilityValue('onoff', !!value).catch(() => {});
         return true;
       });
       this._radarRelayListenerRegistered = true;
+      this._phantomOnoffListener = true;
       this.log(`[RADAR] Relay capability registered on DP${config.relayDp || 108}`);
     } catch (err) {
-      this.log('[RADAR] Relay listener registration failed:', err.message);
+      if (!/already been registered/i.test(err.message)) {
+        this.log('[RADAR] Relay listener registration failed:', err.message);
+      }
     }
   }
 
@@ -1747,8 +1774,17 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
           return;
         }
         if (rawEnum === 1) {
-          // Still present — keep human, clear motion (no 1s flicker wipe of presence)
-          this._commitPresenceAndFlows(true, { motion: false });
+          // WHY(P2765): rawEnum 1 is "presence detected" on Tuya radar.
+          // On many ZY-M100 firmware, rawEnum 1 is the ONLY presence event sent (never 2).
+          // If neither motion nor human was true, trigger motion for initial entry so lights turn on.
+          const currentMotion = this.getCapabilityValue('alarm_motion');
+          const currentHuman = this.getCapabilityValue('alarm_human');
+          if (currentMotion !== true && currentHuman !== true) {
+            this._commitPresenceAndFlows(true, { motion: true });
+          } else {
+            // Still present — keep human, clear motion (no 1s flicker wipe of presence)
+            this._commitPresenceAndFlows(true, { motion: false });
+          }
           if (config.enableFindSwitchOnBoot) this._nudgeCeilingDistanceArmFromLux('presence-cold');
           return;
         }
@@ -2770,7 +2806,14 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
         ]);
       }
       if (opts.motion === true) {
-        return this.safeSetCapabilityValue('alarm_motion', true).catch(() => {});
+        if (this._lastPresenceFlowEdge !== true) {
+          this._lastPresenceFlowEdge = true;
+          this._triggerPresenceFlows(true);
+        }
+        return Promise.all([
+          this.safeSetCapabilityValue('alarm_motion', true).catch(() => {}),
+          super.safeSetCapabilityValue('alarm_human', true).catch(() => {}),
+        ]);
       }
       if (opts.motion === false) {
         return Promise.all([
