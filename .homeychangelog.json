@@ -969,6 +969,7 @@
     "fr": "Radar plafond: motion se rearme via lux apres immobilite (GH#550). TS0043 famkxci2 reste Bouton 3 (GH#551). Maj Test; Repair radar / re-appairer Generique."
   },
   "9.0.1280": {
-    "en": "v9.0.1280: automated publish, manifest sync, and Homey test promotion."
+    "en": "Radar presence cfg crash & phantom onoff click fix (#550), TS0043 _TZ3000_famkxci2 3-button scene remote pairing fix (#551), button battery drain elimination & radio calm (P2756/P2757).",
+    "fr": "Fix crash radar présence cfg & clic fantôme onoff (#550), appairage télécommande 3 boutons TS0043 famkxci2 (#551), élimination du drain batterie boutons & calme radio (P2756/P2757)."
   }
 }

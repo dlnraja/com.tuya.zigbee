@@ -21,14 +21,31 @@
     ]
   },
   "subDevices": [],
-  "capabilityOptions": {
-    "measure_temperature.probe": {
+  "capabilitiesOptions": {
+    "button.1": {
       "title": {
-        "en": "Probe Temperature",
-        "fr": "Température Sonde",
-        "nl": "Sonde Temperatuur",
-        "de": "Sondentemperatur"
-      }
+        "en": "Button 1",
+        "fr": "Bouton 1"
+      },
+      "maintenanceAction": true,
+      "getable": false,
+      "setable": false
+    },
+    "measure_temperature": {
+      "getable": true,
+      "preventInsights": false
+    },
+    "measure_humidity": {
+      "getable": true,
+      "preventInsights": false
+    },
+    "measure_battery": {
+      "getable": true,
+      "preventInsights": false
+    },
+    "measure_voltage": {
+      "getable": true,
+      "preventInsights": false
     }
   },
   "zigbee": {
@@ -397,7 +414,6 @@
       "_tze204_u9bfwha0",
       "_tze204_uab532m0",
       "_tze204_ue3rzddr",
-      "_tze204_uo8qcagc",
       "_tze204_upagmta9",
       "_tze204_utkemkbs",
       "_tze204_ux5v4tgb",
@@ -507,7 +523,6 @@
       "_tze284_tuhfx7tf",
       "_tze284_tzreobvu",
       "_tze284_uab532m0",
-      "_tze284_uo8qcagc",
       "_tze284_upagmta9",
       "_tze284_utkemkbs",
       "_tze284_v5xjyphj",
@@ -566,7 +581,6 @@
       "_TZE200_AHWVLKPY",
       "_TZE200_QF5MZEWI",
       "_TZE204_QF5MZEWI",
-      "_TZE200_UO8QCAGC",
       "_TZE200_RQCUWLSA",
       "_TZE204_RQCUWLSA",
       "_TZE200_S139ROAS",
@@ -943,7 +957,6 @@
       "_TZE204_u9bfwha0",
       "_TZE204_uab532m0",
       "_TZE204_ue3rzddr",
-      "_TZE204_uo8qcagc",
       "_TZE204_upagmta9",
       "_TZE204_utkemkbs",
       "_TZE204_ux5v4tgb",
@@ -1053,7 +1066,6 @@
       "_TZE284_tuhfx7tf",
       "_TZE284_tzreobvu",
       "_TZE284_uab532m0",
-      "_TZE284_uo8qcagc",
       "_TZE284_upagmta9",
       "_TZE284_utkemkbs",
       "_TZE284_v5xjyphj",
@@ -1135,8 +1147,6 @@
       "_tze200_qf5mzewi",
       "_TZE204_qf5mzewi",
       "_tze204_qf5mzewi",
-      "_TZE200_uo8qcagc",
-      "_tze200_uo8qcagc",
       "_TZE200_rqcuwlsa",
       "_tze200_rqcuwlsa",
       "_TZE204_rqcuwlsa",
@@ -1882,8 +1892,6 @@
       "_tze204_UAB532M0",
       "_TZE204_UE3RZDDR",
       "_tze204_UE3RZDDR",
-      "_TZE204_UO8QCAGC",
-      "_tze204_UO8QCAGC",
       "_TZE204_UPAGMTA9",
       "_tze204_UPAGMTA9",
       "_TZE204_UTKEMKBS",
@@ -2102,8 +2110,6 @@
       "_tze284_TZREOBVU",
       "_TZE284_UAB532M0",
       "_tze284_UAB532M0",
-      "_TZE284_UO8QCAGC",
-      "_tze284_UO8QCAGC",
       "_TZE284_UPAGMTA9",
       "_tze284_UPAGMTA9",
       "_TZE284_UTKEMKBS",
@@ -2185,7 +2191,6 @@
       "_tze200_AHWVLKPY",
       "_tze200_QF5MZEWI",
       "_tze204_QF5MZEWI",
-      "_tze200_UO8QCAGC",
       "_tze200_RQCUWLSA",
       "_tze204_RQCUWLSA",
       "_tze200_S139ROAS",
@@ -2728,33 +2733,6 @@
   ],
   "id": "climate_sensor",
   "version": "1.0.0",
-  "capabilitiesOptions": {
-    "button.1": {
-      "title": {
-        "en": "Button 1",
-        "fr": "Bouton 1"
-      },
-      "maintenanceAction": true,
-      "getable": false,
-      "setable": false
-    },
-    "measure_temperature": {
-      "getable": true,
-      "preventInsights": false
-    },
-    "measure_humidity": {
-      "getable": true,
-      "preventInsights": false
-    },
-    "measure_battery": {
-      "getable": true,
-      "preventInsights": false
-    },
-    "measure_voltage": {
-      "getable": true,
-      "preventInsights": false
-    }
-  },
   "_sacredCoupleFixes": [
     "// FIX-PID-SACRED-COUPLE: 2026-07-12 — removed 10 TS0201 overlapping mfrs (kept in air_purifier which has measure_pm25)"
   ]

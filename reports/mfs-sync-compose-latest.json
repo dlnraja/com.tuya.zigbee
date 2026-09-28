@@ -1,7 +1,7 @@
 {
-  "generatedAt": "2026-09-27T07:08:00.461Z",
-  "mode": "APPLY",
-  "changeCount": 4,
+  "generatedAt": "2026-09-28T01:19:04.819Z",
+  "mode": "DRY-RUN",
+  "changeCount": 230,
   "changes": [
     {
       "action": "merge_wrong_prefix",
@@ -42,6 +42,1387 @@
           "TS004F"
         ]
       }
+    },
+    {
+      "action": "known_correction",
+      "mfr": "_TZE204_r0jdjrvi",
+      "before": {
+        "driverId": "curtain_motor_tilt",
+        "modelIds": [
+          "TS0601",
+          "TS0601_curtain_tilt"
+        ]
+      },
+      "after": {
+        "driverId": "curtain_motor_tilt",
+        "modelIds": [
+          "TS0601"
+        ]
+      }
+    },
+    {
+      "action": "prune_modelIds",
+      "mfr": "_TZE200_eatmkx5j",
+      "driverId": "curtain_motor",
+      "before": 48,
+      "after": 47
+    },
+    {
+      "action": "prune_modelIds",
+      "mfr": "_TZ3000_EGQ7Y6PR",
+      "driverId": "curtain_motor",
+      "before": 48,
+      "after": 47
+    },
+    {
+      "action": "prune_modelIds",
+      "mfr": "_TZ3000_T3S9QMMG",
+      "driverId": "curtain_motor",
+      "before": 48,
+      "after": 47
+    },
+    {
+      "action": "prune_modelIds",
+      "mfr": "_TZE200_1N2KYPHZ",
+      "driverId": "curtain_motor",
+      "before": 48,
+      "after": 47
+    },
+    {
+      "action": "prune_modelIds",
+      "mfr": "_TZE200_1VXGQFBA",
+      "driverId": "curtain_motor",
+      "before": 48,
+      "after": 47
+    },
+    {
+      "action": "prune_modelIds",
+      "mfr": "_TZE200_2ODRMQWQ",
+      "driverId": "curtain_motor",
+      "before": 48,
+      "after": 47
+    },
+    {
+      "action": "prune_modelIds",
+      "mfr": "_TZE200_2VFXWENG",
+      "driverId": "curtain_motor",
+      "before": 48,
+      "after": 47
+    },
+    {
+      "action": "prune_modelIds",
+      "mfr": "_TZE200_3YLEW7B4",
+      "driverId": "curtain_motor",
+      "before": 48,
+      "after": 47
+    },
+    {
+      "action": "prune_modelIds",
+      "mfr": "_TZE200_7DEQ70B8",
+      "driverId": "curtain_motor",
+      "before": 48,
+      "after": 47
+    },
+    {
+      "action": "prune_modelIds",
+      "mfr": "_TZE200_7SHYDDJ3",
+      "driverId": "curtain_motor",
+      "before": 48,
+      "after": 47
+    },
+    {
+      "action": "prune_modelIds",
+      "mfr": "_TZE200_A8Z0G46U",
+      "driverId": "curtain_motor",
+      "before": 48,
+      "after": 47
+    },
+    {
+      "action": "prune_modelIds",
+      "mfr": "_TZE200_AX8A8AHX",
+      "driverId": "curtain_motor",
+      "before": 48,
+      "after": 47
+    },
+    {
+      "action": "prune_modelIds",
+      "mfr": "_TZE200_B2U1DRDV",
+      "driverId": "curtain_motor",
+      "before": 48,
+      "after": 47
+    },
+    {
+      "action": "prune_modelIds",
+      "mfr": "_TZE200_BV1JCQQU",
+      "driverId": "curtain_motor",
+      "before": 48,
+      "after": 47
+    },
+    {
+      "action": "prune_modelIds",
+      "mfr": "_TZE200_CLM4GDW4",
+      "driverId": "curtain_motor",
+      "before": 48,
+      "after": 47
+    },
+    {
+      "action": "prune_modelIds",
+      "mfr": "_TZE200_CXU0JKJK",
+      "driverId": "curtain_motor",
+      "before": 48,
+      "after": 47
+    },
+    {
+      "action": "prune_modelIds",
+      "mfr": "_TZE200_DNG9FN0K",
+      "driverId": "curtain_motor",
+      "before": 48,
+      "after": 47
+    },
+    {
+      "action": "prune_modelIds",
+      "mfr": "_TZE200_EN3WVCBX",
+      "driverId": "curtain_motor",
+      "before": 48,
+      "after": 47
+    },
+    {
+      "action": "prune_modelIds",
+      "mfr": "_TZE200_FEOLM6RK",
+      "driverId": "curtain_motor",
+      "before": 48,
+      "after": 47
+    },
+    {
+      "action": "prune_modelIds",
+      "mfr": "_TZE200_FODV6BKR",
+      "driverId": "curtain_motor",
+      "before": 48,
+      "after": 47
+    },
+    {
+      "action": "prune_modelIds",
+      "mfr": "_TZE200_G5WDNUOW",
+      "driverId": "curtain_motor",
+      "before": 48,
+      "after": 47
+    },
+    {
+      "action": "prune_modelIds",
+      "mfr": "_TZE200_G5XQOSU7",
+      "driverId": "curtain_motor",
+      "before": 48,
+      "after": 47
+    },
+    {
+      "action": "prune_modelIds",
+      "mfr": "_TZE200_GNW1RRIL",
+      "driverId": "curtain_motor",
+      "before": 48,
+      "after": 47
+    },
+    {
+      "action": "prune_modelIds",
+      "mfr": "_TZE200_HOJRYZZD",
+      "driverId": "curtain_motor",
+      "before": 48,
+      "after": 47
+    },
+    {
+      "action": "prune_modelIds",
+      "mfr": "_TZE200_JS3MGBJB",
+      "driverId": "curtain_motor",
+      "before": 48,
+      "after": 47
+    },
+    {
+      "action": "prune_modelIds",
+      "mfr": "_TZE200_JWSJBXJS",
+      "driverId": "curtain_motor",
+      "before": 48,
+      "after": 47
+    },
+    {
+      "action": "prune_modelIds",
+      "mfr": "_TZE200_LEAQTHQQ",
+      "driverId": "curtain_motor",
+      "before": 48,
+      "after": 47
+    },
+    {
+      "action": "prune_modelIds",
+      "mfr": "_TZE200_LLM0EPXG",
+      "driverId": "curtain_motor",
+      "before": 48,
+      "after": 47
+    },
+    {
+      "action": "prune_modelIds",
+      "mfr": "_TZE200_N1AAUWB4",
+      "driverId": "curtain_motor",
+      "before": 48,
+      "after": 47
+    },
+    {
+      "action": "prune_modelIds",
+      "mfr": "_TZE200_ODLLDRXX",
+      "driverId": "curtain_motor",
+      "before": 48,
+      "after": 47
+    },
+    {
+      "action": "prune_modelIds",
+      "mfr": "_TZE200_OISQYL4O",
+      "driverId": "curtain_motor",
+      "before": 48,
+      "after": 47
+    },
+    {
+      "action": "prune_modelIds",
+      "mfr": "_TZE200_P2QZZAZI",
+      "driverId": "curtain_motor",
+      "before": 48,
+      "after": 47
+    },
+    {
+      "action": "prune_modelIds",
+      "mfr": "_TZE200_QHLXVE78",
+      "driverId": "curtain_motor",
+      "before": 48,
+      "after": 47
+    },
+    {
+      "action": "prune_modelIds",
+      "mfr": "_TZE200_RSJ5PU8Y",
+      "driverId": "curtain_motor",
+      "before": 48,
+      "after": 47
+    },
+    {
+      "action": "prune_modelIds",
+      "mfr": "_TZE200_SQ6AFFPE",
+      "driverId": "curtain_motor",
+      "before": 48,
+      "after": 47
+    },
+    {
+      "action": "prune_modelIds",
+      "mfr": "_TZE200_TVRVDJ6O",
+      "driverId": "curtain_motor",
+      "before": 48,
+      "after": 47
+    },
+    {
+      "action": "prune_modelIds",
+      "mfr": "_TZE200_UDANK5ZS",
+      "driverId": "curtain_motor",
+      "before": 48,
+      "after": 47
+    },
+    {
+      "action": "prune_modelIds",
+      "mfr": "_TZE200_VDIUWBKQ",
+      "driverId": "curtain_motor",
+      "before": 48,
+      "after": 47
+    },
+    {
+      "action": "prune_modelIds",
+      "mfr": "_TZE200_WRMHP6B3",
+      "driverId": "curtain_motor",
+      "before": 48,
+      "after": 47
+    },
+    {
+      "action": "prune_modelIds",
+      "mfr": "_TZE200_XTRNJAOZ",
+      "driverId": "curtain_motor",
+      "before": 48,
+      "after": 47
+    },
+    {
+      "action": "prune_modelIds",
+      "mfr": "_TZE200_XU4A5RHJ",
+      "driverId": "curtain_motor",
+      "before": 48,
+      "after": 47
+    },
+    {
+      "action": "prune_modelIds",
+      "mfr": "_TZE200_YENBR4OM",
+      "driverId": "curtain_motor",
+      "before": 48,
+      "after": 47
+    },
+    {
+      "action": "prune_modelIds",
+      "mfr": "_TZE200_YRUGSPHV",
+      "driverId": "curtain_motor",
+      "before": 48,
+      "after": 47
+    },
+    {
+      "action": "prune_modelIds",
+      "mfr": "_TZE200_ZUZ7F94Z",
+      "driverId": "curtain_motor",
+      "before": 48,
+      "after": 47
+    },
+    {
+      "action": "prune_modelIds",
+      "mfr": "_TZE200_ZVO63CMO",
+      "driverId": "curtain_motor",
+      "before": 48,
+      "after": 47
+    },
+    {
+      "action": "prune_modelIds",
+      "mfr": "_TZE200_ZYRDRMNO",
+      "driverId": "curtain_motor",
+      "before": 48,
+      "after": 47
+    },
+    {
+      "action": "prune_modelIds",
+      "mfr": "_TZE204_2RVVQJOA",
+      "driverId": "curtain_motor",
+      "before": 48,
+      "after": 47
+    },
+    {
+      "action": "prune_modelIds",
+      "mfr": "_TZE204_A8Z0G46U",
+      "driverId": "curtain_motor",
+      "before": 48,
+      "after": 47
+    },
+    {
+      "action": "prune_modelIds",
+      "mfr": "_TZE204_DPQSVDBI",
+      "driverId": "curtain_motor",
+      "before": 48,
+      "after": 47
+    },
+    {
+      "action": "prune_modelIds",
+      "mfr": "_TZE204_G5XQOSU7",
+      "driverId": "curtain_motor",
+      "before": 48,
+      "after": 47
+    },
+    {
+      "action": "prune_modelIds",
+      "mfr": "_TZE204_IC7JTUTB",
+      "driverId": "curtain_motor",
+      "before": 48,
+      "after": 47
+    },
+    {
+      "action": "prune_modelIds",
+      "mfr": "_TZE204_M1WL5FVQ",
+      "driverId": "curtain_motor",
+      "before": 48,
+      "after": 47
+    },
+    {
+      "action": "prune_modelIds",
+      "mfr": "_TZE204_NLADMFVF",
+      "driverId": "curtain_motor",
+      "before": 48,
+      "after": 47
+    },
+    {
+      "action": "prune_modelIds",
+      "mfr": "_TZE204_ODLLDRXX",
+      "driverId": "curtain_motor",
+      "before": 48,
+      "after": 47
+    },
+    {
+      "action": "prune_modelIds",
+      "mfr": "_TZE204_PTAQH9TK",
+      "driverId": "curtain_motor",
+      "before": 48,
+      "after": 47
+    },
+    {
+      "action": "prune_modelIds",
+      "mfr": "_TZE204_QHLXVE78",
+      "driverId": "curtain_motor",
+      "before": 48,
+      "after": 47
+    },
+    {
+      "action": "prune_modelIds",
+      "mfr": "_TZE204_X9USYGQ1",
+      "driverId": "curtain_motor",
+      "before": 48,
+      "after": 47
+    },
+    {
+      "action": "prune_modelIds",
+      "mfr": "_TZE204_XTRNJAOZ",
+      "driverId": "curtain_motor",
+      "before": 48,
+      "after": 47
+    },
+    {
+      "action": "prune_modelIds",
+      "mfr": "_TZE204_ZXKWAZTM",
+      "driverId": "curtain_motor",
+      "before": 48,
+      "after": 47
+    },
+    {
+      "action": "prune_modelIds",
+      "mfr": "_TZE284_2GI1HY8S",
+      "driverId": "curtain_motor",
+      "before": 48,
+      "after": 47
+    },
+    {
+      "action": "prune_modelIds",
+      "mfr": "_TZE284_6HRNP30W",
+      "driverId": "curtain_motor",
+      "before": 48,
+      "after": 47
+    },
+    {
+      "action": "prune_modelIds",
+      "mfr": "_TZE284_AJUASRMX",
+      "driverId": "curtain_motor",
+      "before": 48,
+      "after": 47
+    },
+    {
+      "action": "prune_modelIds",
+      "mfr": "_TZE284_B7KBNL6Q",
+      "driverId": "curtain_motor",
+      "before": 48,
+      "after": 47
+    },
+    {
+      "action": "prune_modelIds",
+      "mfr": "_TZE284_IWYQTCLW",
+      "driverId": "curtain_motor",
+      "before": 48,
+      "after": 47
+    },
+    {
+      "action": "prune_modelIds",
+      "mfr": "_TZE284_QHLXVE78",
+      "driverId": "curtain_motor",
+      "before": 48,
+      "after": 47
+    },
+    {
+      "action": "prune_modelIds",
+      "mfr": "_TZE284_UDANK5ZS",
+      "driverId": "curtain_motor",
+      "before": 48,
+      "after": 47
+    },
+    {
+      "action": "prune_modelIds",
+      "mfr": "_TZE284_V9HKZ2YN",
+      "driverId": "curtain_motor",
+      "before": 48,
+      "after": 47
+    },
+    {
+      "action": "prune_modelIds",
+      "mfr": "_TZE284_VES1YCWX",
+      "driverId": "curtain_motor",
+      "before": 48,
+      "after": 47
+    },
+    {
+      "action": "prune_modelIds",
+      "mfr": "_TZE284_YZR43AYQ",
+      "driverId": "curtain_motor",
+      "before": 48,
+      "after": 47
+    },
+    {
+      "action": "prune_modelIds",
+      "mfr": "_TZE284_clm4gdw4",
+      "driverId": "curtain_motor",
+      "before": 48,
+      "after": 47
+    },
+    {
+      "action": "prune_modelIds",
+      "mfr": "_TYST11_udank5zs",
+      "driverId": "curtain_motor",
+      "before": 48,
+      "after": 47
+    },
+    {
+      "action": "prune_modelIds",
+      "mfr": "_tze204_v9hkz2yn",
+      "driverId": "curtain_motor",
+      "before": 48,
+      "after": 47
+    },
+    {
+      "action": "prune_modelIds",
+      "mfr": "_tze200_v9hkz2yn",
+      "driverId": "curtain_motor",
+      "before": 48,
+      "after": 47
+    },
+    {
+      "action": "prune_modelIds",
+      "mfr": "_tze204_ves1ycwx",
+      "driverId": "curtain_motor",
+      "before": 48,
+      "after": 47
+    },
+    {
+      "action": "prune_modelIds",
+      "mfr": "_tze200_ves1ycwx",
+      "driverId": "curtain_motor",
+      "before": 48,
+      "after": 47
+    },
+    {
+      "action": "prune_modelIds",
+      "mfr": "_TZE284_65gzcss7",
+      "driverId": "curtain_motor",
+      "before": 48,
+      "after": 47
+    },
+    {
+      "action": "prune_modelIds",
+      "mfr": "_TZE200_pay2byax",
+      "driverId": "contact_sensor_zigbee",
+      "before": 3,
+      "after": 1
+    },
+    {
+      "action": "prune_modelIds",
+      "mfr": "_TZ3000_EAFAA66E",
+      "driverId": "curtain_motor",
+      "before": 48,
+      "after": 47
+    },
+    {
+      "action": "prune_modelIds",
+      "mfr": "_TZ3000_EG7AWG6A",
+      "driverId": "curtain_motor",
+      "before": 48,
+      "after": 47
+    },
+    {
+      "action": "prune_modelIds",
+      "mfr": "_TZ3000_FCCPJZ5Z",
+      "driverId": "curtain_motor",
+      "before": 48,
+      "after": 47
+    },
+    {
+      "action": "prune_modelIds",
+      "mfr": "_TZ3000_KE7PZJ5D",
+      "driverId": "curtain_motor",
+      "before": 48,
+      "after": 47
+    },
+    {
+      "action": "prune_modelIds",
+      "mfr": "_TZ3000_ZIRYCPWS",
+      "driverId": "curtain_motor",
+      "before": 48,
+      "after": 47
+    },
+    {
+      "action": "prune_modelIds",
+      "mfr": "_TZ3210_SXTFESC6",
+      "driverId": "curtain_motor",
+      "before": 48,
+      "after": 47
+    },
+    {
+      "action": "prune_modelIds",
+      "mfr": "_TZ3210_ZANA8D08",
+      "driverId": "curtain_motor",
+      "before": 48,
+      "after": 47
+    },
+    {
+      "action": "prune_modelIds",
+      "mfr": "_TZE200_4HBX5COR",
+      "driverId": "curtain_motor",
+      "before": 48,
+      "after": 47
+    },
+    {
+      "action": "prune_modelIds",
+      "mfr": "_TZE200_BDBLIDQ3",
+      "driverId": "curtain_motor",
+      "before": 48,
+      "after": 47
+    },
+    {
+      "action": "prune_modelIds",
+      "mfr": "_TZE200_SWHWV3K3",
+      "driverId": "curtain_motor",
+      "before": 48,
+      "after": 47
+    },
+    {
+      "action": "prune_modelIds",
+      "mfr": "_TZE200_ZAH67EKH",
+      "driverId": "curtain_motor",
+      "before": 48,
+      "after": 47
+    },
+    {
+      "action": "prune_modelIds",
+      "mfr": "_TZE200_ZC2OWU5K",
+      "driverId": "curtain_motor",
+      "before": 48,
+      "after": 47
+    },
+    {
+      "action": "prune_modelIds",
+      "mfr": "_TZE204_BDBLIDQ3",
+      "driverId": "curtain_motor",
+      "before": 48,
+      "after": 47
+    },
+    {
+      "action": "prune_modelIds",
+      "mfr": "_TZE204_FCTWHUGX",
+      "driverId": "curtain_motor",
+      "before": 48,
+      "after": 47
+    },
+    {
+      "action": "prune_modelIds",
+      "mfr": "_TZE204_TXRZY8HS",
+      "driverId": "curtain_motor",
+      "before": 48,
+      "after": 47
+    },
+    {
+      "action": "prune_modelIds",
+      "mfr": "_TZE204_XUZCVLKU",
+      "driverId": "curtain_motor",
+      "before": 48,
+      "after": 47
+    },
+    {
+      "action": "prune_modelIds",
+      "mfr": "_TZE204_ZAH67EKH",
+      "driverId": "curtain_motor",
+      "before": 48,
+      "after": 47
+    },
+    {
+      "action": "prune_modelIds",
+      "mfr": "_TZE204_ZC2OWU5K",
+      "driverId": "curtain_motor",
+      "before": 48,
+      "after": 47
+    },
+    {
+      "action": "prune_modelIds",
+      "mfr": "_TZE204_ZPZNDJEZ",
+      "driverId": "curtain_motor",
+      "before": 48,
+      "after": 47
+    },
+    {
+      "action": "prune_modelIds",
+      "mfr": "_TZE284_HBJWGKDH",
+      "driverId": "curtain_motor",
+      "before": 48,
+      "after": 47
+    },
+    {
+      "action": "prune_modelIds",
+      "mfr": "_TZE200_gubdgai2",
+      "driverId": "curtain_motor",
+      "before": 48,
+      "after": 47
+    },
+    {
+      "action": "prune_modelIds",
+      "mfr": "_TZE200_nv6nxo0c",
+      "driverId": "curtain_motor",
+      "before": 48,
+      "after": 47
+    },
+    {
+      "action": "prune_modelIds",
+      "mfr": "_TZE204_bjzrowv2",
+      "driverId": "curtain_motor",
+      "before": 48,
+      "after": 47
+    },
+    {
+      "action": "prune_modelIds",
+      "mfr": "_TZE200_5zbp6j0u",
+      "driverId": "curtain_motor",
+      "before": 48,
+      "after": 47
+    },
+    {
+      "action": "prune_modelIds",
+      "mfr": "_TZE200_nkoabg8w",
+      "driverId": "curtain_motor",
+      "before": 48,
+      "after": 47
+    },
+    {
+      "action": "prune_modelIds",
+      "mfr": "_TZE200_xuzcvlku",
+      "driverId": "curtain_motor",
+      "before": 48,
+      "after": 47
+    },
+    {
+      "action": "prune_modelIds",
+      "mfr": "_TZE200_4vobcgd3",
+      "driverId": "curtain_motor",
+      "before": 48,
+      "after": 47
+    },
+    {
+      "action": "prune_modelIds",
+      "mfr": "_TZE200_nogaemzt",
+      "driverId": "curtain_motor",
+      "before": 48,
+      "after": 47
+    },
+    {
+      "action": "prune_modelIds",
+      "mfr": "_TZE200_pk0sfzvr",
+      "driverId": "curtain_motor",
+      "before": 48,
+      "after": 47
+    },
+    {
+      "action": "prune_modelIds",
+      "mfr": "_TZE200_fdtjuw7u",
+      "driverId": "curtain_motor",
+      "before": 48,
+      "after": 47
+    },
+    {
+      "action": "prune_modelIds",
+      "mfr": "_TZE200_zpzndjez",
+      "driverId": "curtain_motor",
+      "before": 48,
+      "after": 47
+    },
+    {
+      "action": "prune_modelIds",
+      "mfr": "_TZE200_wmcdj3aq",
+      "driverId": "curtain_motor",
+      "before": 48,
+      "after": 47
+    },
+    {
+      "action": "prune_modelIds",
+      "mfr": "_TZE200_cowvfni3",
+      "driverId": "curtain_motor",
+      "before": 48,
+      "after": 47
+    },
+    {
+      "action": "prune_modelIds",
+      "mfr": "_TZE200_rddyvrci",
+      "driverId": "curtain_motor",
+      "before": 48,
+      "after": 47
+    },
+    {
+      "action": "prune_modelIds",
+      "mfr": "_TZE200_nueqqe6k",
+      "driverId": "curtain_motor",
+      "before": 48,
+      "after": 47
+    },
+    {
+      "action": "prune_modelIds",
+      "mfr": "_TZE200_xaabybja",
+      "driverId": "curtain_motor",
+      "before": 48,
+      "after": 47
+    },
+    {
+      "action": "prune_modelIds",
+      "mfr": "_TZE200_rmymn92d",
+      "driverId": "curtain_motor",
+      "before": 48,
+      "after": 47
+    },
+    {
+      "action": "prune_modelIds",
+      "mfr": "_TZE200_3i3exuay",
+      "driverId": "curtain_motor",
+      "before": 48,
+      "after": 47
+    },
+    {
+      "action": "prune_modelIds",
+      "mfr": "_TZE200_hsgrhjpf",
+      "driverId": "curtain_motor",
+      "before": 48,
+      "after": 47
+    },
+    {
+      "action": "prune_modelIds",
+      "mfr": "_TZE200_axgvo9jh",
+      "driverId": "curtain_motor",
+      "before": 48,
+      "after": 47
+    },
+    {
+      "action": "prune_modelIds",
+      "mfr": "_TZE200_gaj531w3",
+      "driverId": "curtain_motor",
+      "before": 48,
+      "after": 47
+    },
+    {
+      "action": "prune_modelIds",
+      "mfr": "_TZE200_yia0p3tr",
+      "driverId": "curtain_motor",
+      "before": 48,
+      "after": 47
+    },
+    {
+      "action": "prune_modelIds",
+      "mfr": "_TZE204_xu4a5rhj",
+      "driverId": "curtain_motor",
+      "before": 48,
+      "after": 47
+    },
+    {
+      "action": "prune_modelIds",
+      "mfr": "_tze200_7eue9vhc",
+      "driverId": "curtain_motor",
+      "before": 48,
+      "after": 47
+    },
+    {
+      "action": "prune_modelIds",
+      "mfr": "_tz3210_emqmwtym",
+      "driverId": "curtain_motor",
+      "before": 48,
+      "after": 47
+    },
+    {
+      "action": "prune_modelIds",
+      "mfr": "_TZE200_bjzrowv2",
+      "driverId": "curtain_motor",
+      "before": 48,
+      "after": 47
+    },
+    {
+      "action": "prune_modelIds",
+      "mfr": "_TZE200_bqcqqjpb",
+      "driverId": "curtain_motor",
+      "before": 48,
+      "after": 47
+    },
+    {
+      "action": "prune_modelIds",
+      "mfr": "_TZE204_pay2byax",
+      "driverId": "contact_sensor_zigbee",
+      "before": 3,
+      "after": 1
+    },
+    {
+      "action": "prune_modelIds",
+      "mfr": "_TYST11_fzo2pocs",
+      "driverId": "curtain_motor",
+      "before": 48,
+      "after": 47
+    },
+    {
+      "action": "prune_modelIds",
+      "mfr": "_TZE200_5sbebbzs",
+      "driverId": "curtain_motor",
+      "before": 48,
+      "after": 47
+    },
+    {
+      "action": "prune_modelIds",
+      "mfr": "_TZE200_fctwhugx",
+      "driverId": "curtain_motor",
+      "before": 48,
+      "after": 47
+    },
+    {
+      "action": "prune_modelIds",
+      "mfr": "_TZE200_ol5jlkkr",
+      "driverId": "curtain_motor",
+      "before": 48,
+      "after": 47
+    },
+    {
+      "action": "prune_modelIds",
+      "mfr": "_TZE200_zxxfv8wi",
+      "driverId": "curtain_motor",
+      "before": 48,
+      "after": 47
+    },
+    {
+      "action": "prune_modelIds",
+      "mfr": "_TZE204_57hjqelq",
+      "driverId": "curtain_motor",
+      "before": 48,
+      "after": 47
+    },
+    {
+      "action": "prune_modelIds",
+      "mfr": "_TZE204_F5EFVTBV",
+      "driverId": "curtain_motor",
+      "before": 48,
+      "after": 47
+    },
+    {
+      "action": "prune_modelIds",
+      "mfr": "_TZE204_GM8H14WY",
+      "driverId": "curtain_motor",
+      "before": 48,
+      "after": 47
+    },
+    {
+      "action": "prune_modelIds",
+      "mfr": "_TZE204_IIK0PQUW",
+      "driverId": "curtain_motor",
+      "before": 48,
+      "after": 47
+    },
+    {
+      "action": "prune_modelIds",
+      "mfr": "_TZE204_LBHH5O6Z",
+      "driverId": "curtain_motor",
+      "before": 48,
+      "after": 47
+    },
+    {
+      "action": "prune_modelIds",
+      "mfr": "_TZE204_MEXISFIK",
+      "driverId": "curtain_motor",
+      "before": 48,
+      "after": 47
+    },
+    {
+      "action": "prune_modelIds",
+      "mfr": "_TZE204_lh3arisb",
+      "driverId": "curtain_motor",
+      "before": 48,
+      "after": 47
+    },
+    {
+      "action": "prune_modelIds",
+      "mfr": "_TZE204_vvvtcehj",
+      "driverId": "curtain_motor",
+      "before": 48,
+      "after": 47
+    },
+    {
+      "action": "prune_modelIds",
+      "mfr": "_TZE204_yrugsphv",
+      "driverId": "curtain_motor",
+      "before": 48,
+      "after": 47
+    },
+    {
+      "action": "prune_modelIds",
+      "mfr": "_TZE204_zuq5xxib",
+      "driverId": "curtain_motor",
+      "before": 48,
+      "after": 47
+    },
+    {
+      "action": "prune_modelIds",
+      "mfr": "_TZE284_F5EFVTBV",
+      "driverId": "curtain_motor",
+      "before": 48,
+      "after": 47
+    },
+    {
+      "action": "prune_modelIds",
+      "mfr": "_TZE284_LBHH5O6Z",
+      "driverId": "curtain_motor",
+      "before": 48,
+      "after": 47
+    },
+    {
+      "action": "prune_modelIds",
+      "mfr": "_TZE284_4vobcgd3",
+      "driverId": "curtain_motor",
+      "before": 48,
+      "after": 47
+    },
+    {
+      "action": "prune_modelIds",
+      "mfr": "_TZE284_gaj531w3",
+      "driverId": "curtain_motor",
+      "before": 48,
+      "after": 47
+    },
+    {
+      "action": "prune_modelIds",
+      "mfr": "_TZE204_wzre8hu2",
+      "driverId": "curtain_motor",
+      "before": 48,
+      "after": 47
+    },
+    {
+      "action": "prune_modelIds",
+      "mfr": "_TZE200_swlgvdlh",
+      "driverId": "curtain_motor",
+      "before": 48,
+      "after": 47
+    },
+    {
+      "action": "prune_modelIds",
+      "mfr": "_TZE284_fzo2pocs",
+      "driverId": "curtain_motor",
+      "before": 48,
+      "after": 47
+    },
+    {
+      "action": "prune_modelIds",
+      "mfr": "_TZE204_fzo2pocs",
+      "driverId": "curtain_motor",
+      "before": 48,
+      "after": 47
+    },
+    {
+      "action": "prune_modelIds",
+      "mfr": "_TZE200_fzo2pocs",
+      "driverId": "curtain_motor",
+      "before": 48,
+      "after": 47
+    },
+    {
+      "action": "prune_modelIds",
+      "mfr": "_TYST11_wmcdj3aq",
+      "driverId": "curtain_motor",
+      "before": 48,
+      "after": 47
+    },
+    {
+      "action": "prune_modelIds",
+      "mfr": "_tze204_q9xty0ad",
+      "driverId": "curtain_motor",
+      "before": 48,
+      "after": 47
+    },
+    {
+      "action": "prune_modelIds",
+      "mfr": "_tzb210_rkgngb5o",
+      "driverId": "bulb_tunable_white",
+      "before": 47,
+      "after": 46
+    },
+    {
+      "action": "prune_modelIds",
+      "mfr": "_tz3000_l9brjwau",
+      "driverId": "wall_switch_2gang_1way",
+      "before": 4,
+      "after": 3
+    },
+    {
+      "action": "prune_modelIds",
+      "mfr": "Wing",
+      "driverId": "contact_sensor",
+      "before": 28,
+      "after": 26
+    },
+    {
+      "action": "prune_modelIds",
+      "mfr": "_TZ3000_wkai4ga5",
+      "driverId": "button_wireless_2",
+      "before": 101,
+      "after": 100
+    },
+    {
+      "action": "prune_modelIds",
+      "mfr": "_tze200_5slehgeo",
+      "driverId": "curtain_motor",
+      "before": 48,
+      "after": 47
+    },
+    {
+      "action": "prune_modelIds",
+      "mfr": "_tze200_5vqk5kod",
+      "driverId": "curtain_motor",
+      "before": 48,
+      "after": 47
+    },
+    {
+      "action": "prune_modelIds",
+      "mfr": "_tze284_n73badib",
+      "driverId": "curtain_motor",
+      "before": 48,
+      "after": 47
+    },
+    {
+      "action": "prune_modelIds",
+      "mfr": "_tze204_dq7c8fng",
+      "driverId": "curtain_motor",
+      "before": 48,
+      "after": 47
+    },
+    {
+      "action": "prune_modelIds",
+      "mfr": "_tz3000_ehgouyvu",
+      "driverId": "curtain_motor",
+      "before": 48,
+      "after": 47
+    },
+    {
+      "action": "prune_modelIds",
+      "mfr": "_tze284_ncc7uahd",
+      "driverId": "curtain_motor",
+      "before": 48,
+      "after": 47
+    },
+    {
+      "action": "prune_modelIds",
+      "mfr": "_tze200_rgeapp2c",
+      "driverId": "curtain_motor",
+      "before": 48,
+      "after": 47
+    },
+    {
+      "action": "prune_modelIds",
+      "mfr": "_tze210_yqwse3h5",
+      "driverId": "curtain_motor",
+      "before": 48,
+      "after": 47
+    },
+    {
+      "action": "prune_modelIds",
+      "mfr": "_tze284_xtrnjaoz",
+      "driverId": "curtain_motor",
+      "before": 48,
+      "after": 47
+    },
+    {
+      "action": "prune_modelIds",
+      "mfr": "_tze284_xu4a5rhj",
+      "driverId": "curtain_motor",
+      "before": 48,
+      "after": 47
+    },
+    {
+      "action": "prune_modelIds",
+      "mfr": "_tze204_7lb6j8wg",
+      "driverId": "curtain_motor",
+      "before": 48,
+      "after": 47
+    },
+    {
+      "action": "prune_modelIds",
+      "mfr": "_tz3210_jrhczaaa",
+      "driverId": "curtain_motor",
+      "before": 48,
+      "after": 47
+    },
+    {
+      "action": "prune_modelIds",
+      "mfr": "_tze284_o409r73p",
+      "driverId": "curtain_motor",
+      "before": 48,
+      "after": 47
+    },
+    {
+      "action": "prune_modelIds",
+      "mfr": "_tze284_t88bjhfu",
+      "driverId": "curtain_motor",
+      "before": 48,
+      "after": 47
+    },
+    {
+      "action": "prune_modelIds",
+      "mfr": "_tze200_osmxri8y",
+      "driverId": "curtain_motor",
+      "before": 48,
+      "after": 47
+    },
+    {
+      "action": "prune_modelIds",
+      "mfr": "_tze284_bjzrowv2",
+      "driverId": "curtain_motor",
+      "before": 48,
+      "after": 47
+    },
+    {
+      "action": "prune_modelIds",
+      "mfr": "_tze284_8whfphjv",
+      "driverId": "curtain_motor",
+      "before": 48,
+      "after": 47
+    },
+    {
+      "action": "fix_driverId",
+      "mfr": "_TZE200_wzk0x7fq",
+      "from": "vibration_sensor",
+      "to": "curtain_motor"
+    },
+    {
+      "action": "prune_modelIds",
+      "mfr": "_TZE200_wzk0x7fq",
+      "driverId": "curtain_motor",
+      "before": 3,
+      "after": 47
+    },
+    {
+      "action": "prune_modelIds",
+      "mfr": "_TZE200_bcusnqt8",
+      "driverId": "curtain_motor",
+      "before": 48,
+      "after": 47
+    },
+    {
+      "action": "prune_modelIds",
+      "mfr": "_tze204_3mzb0sdz",
+      "driverId": "curtain_motor",
+      "before": 48,
+      "after": 47
+    },
+    {
+      "action": "prune_modelIds",
+      "mfr": "_tze204_zah67ekd",
+      "driverId": "curtain_motor",
+      "before": 48,
+      "after": 47
+    },
+    {
+      "action": "prune_modelIds",
+      "mfr": "_tze204_libht6ua",
+      "driverId": "curtain_motor",
+      "before": 48,
+      "after": 47
+    },
+    {
+      "action": "prune_modelIds",
+      "mfr": "_tze204_fodv6bkr",
+      "driverId": "curtain_motor",
+      "before": 48,
+      "after": 47
+    },
+    {
+      "action": "prune_modelIds",
+      "mfr": "_tze204_i8sdouy0",
+      "driverId": "curtain_motor",
+      "before": 48,
+      "after": 47
+    },
+    {
+      "action": "prune_modelIds",
+      "mfr": "_tze204_upt8lzi0",
+      "driverId": "curtain_motor",
+      "before": 48,
+      "after": 47
+    },
+    {
+      "action": "prune_modelIds",
+      "mfr": "_tze204_127x7wnl",
+      "driverId": "curtain_motor",
+      "before": 48,
+      "after": 47
+    },
+    {
+      "action": "prune_modelIds",
+      "mfr": "_tze204_nhyj64w2",
+      "driverId": "curtain_motor",
+      "before": 48,
+      "after": 47
+    },
+    {
+      "action": "prune_modelIds",
+      "mfr": "_tze284_nhyj64w2",
+      "driverId": "curtain_motor",
+      "before": 48,
+      "after": 47
+    },
+    {
+      "action": "prune_modelIds",
+      "mfr": "_tze284_127x7wnl",
+      "driverId": "curtain_motor",
+      "before": 48,
+      "after": 47
+    },
+    {
+      "action": "prune_modelIds",
+      "mfr": "_tze200_upt8lzi0",
+      "driverId": "curtain_motor",
+      "before": 48,
+      "after": 47
+    },
+    {
+      "action": "prune_modelIds",
+      "mfr": "_tze200_i8sdouy0",
+      "driverId": "curtain_motor",
+      "before": 48,
+      "after": 47
+    },
+    {
+      "action": "prune_modelIds",
+      "mfr": "_tze284_i8sdouy0",
+      "driverId": "curtain_motor",
+      "before": 48,
+      "after": 47
+    },
+    {
+      "action": "prune_modelIds",
+      "mfr": "_tze284_icka1clh",
+      "driverId": "curtain_motor",
+      "before": 48,
+      "after": 47
+    },
+    {
+      "action": "prune_modelIds",
+      "mfr": "_tze284_zah67ekd",
+      "driverId": "curtain_motor",
+      "before": 48,
+      "after": 47
+    },
+    {
+      "action": "prune_modelIds",
+      "mfr": "_tze200_3mzb0sdz",
+      "driverId": "curtain_motor",
+      "before": 48,
+      "after": 47
+    },
+    {
+      "action": "prune_modelIds",
+      "mfr": "_tze200_fu14oapz",
+      "driverId": "curtain_motor",
+      "before": 48,
+      "after": 47
+    },
+    {
+      "action": "prune_modelIds",
+      "mfr": "_tze204_gubdgai2",
+      "driverId": "curtain_motor",
+      "before": 48,
+      "after": 47
+    },
+    {
+      "action": "prune_modelIds",
+      "mfr": "_tze284_gubdgai2",
+      "driverId": "curtain_motor",
+      "before": 48,
+      "after": 47
+    },
+    {
+      "action": "prune_modelIds",
+      "mfr": "_tze204_vdiuwbkq",
+      "driverId": "curtain_motor",
+      "before": 48,
+      "after": 47
     }
   ]
 }
