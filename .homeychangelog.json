@@ -907,6 +907,12 @@
       ]
     }
   ],
+  "9.0.1287": {
+    "en": "Improved battery life for coin-cell sensors and remotes (no proactive PowerCfg polls). Restored TS0043 wireless button interview clusters for pairing. Radar presence zero-clear gated again after meaningful distance."
+  },
+  "9.0.1286": {
+    "en": "v9.0.1286: automated publish, manifest sync, and Homey test promotion."
+  },
   "9.0.1285": {
     "en": "v9.0.1285: automated publish, manifest sync, and Homey test promotion."
   },
@@ -958,16 +964,7 @@
   "9.0.1269": {
     "en": "Publish heal: OCR invent pad doNotLock under heap pressure + Flow locales. Update Test."
   },
-  "9.0.1268": {
-    "en": "Publish heal: Flow titleFormatted locales must include [[args]] (IT/SV/…). Update Test."
-  },
-  "9.0.1267": {
-    "en": "Publish heal: keep 7dcddnye on wall dimmer (not bulb) + hang-leave radar. Update Test."
-  },
-  "9.0.1286": {
-    "en": "v9.0.1286: automated publish, manifest sync, and Homey test promotion."
-  },
-  "9.0.1287": {
-    "en": "Improved battery life for coin-cell sensors and remotes (no proactive PowerCfg polls). Restored TS0043 wireless button interview clusters for pairing. Radar presence zero-clear gated again after meaningful distance."
+  "9.0.1288": {
+    "en": "v9.0.1288: automated publish, manifest sync, and Homey test promotion."
   }
 }
