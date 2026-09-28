@@ -1,4 +1,8 @@
 {
+  "5.12.345": {
+    "en": "Radar: fix _TZE204_gkfbdvyx ghost capabilities, strip phantoms on ceiling 24G, fix 0m distance & presence lock (GH#550).",
+    "fr": "Radar: correction _TZE204_gkfbdvyx capacites fantomes plafond 24G, fix distance 0m et verrouillage presence (GH#550)."
+  },
   "5.12.344": {
     "en": "Sensors: AutoAdaptive anticrash protection, temperature & humidity sleep jump handling, battery replacement support. Update Test.",
     "fr": "Capteurs: protection anticrash AutoAdaptive, gestion sauts sommeil temp/humidite, support remplacement pile. Maj Test."
