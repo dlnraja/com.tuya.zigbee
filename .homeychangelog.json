@@ -4071,6 +4071,8 @@
   },
   "1.0.117": {
     "en": "P2757: Bastien app enhancement: refined anti-sag filter to >=8% under RF TX load, responsive battery replacement jump (>=10%), and guaranteed isWake anti-sag protection across button devices."
+  },
+  "1.0.118": {
+    "en": "Longer battery life: no proactive PowerCfg polls on coin-cell sensors/remotes. TS0043 interview clusters restored."
   }
 }
-
