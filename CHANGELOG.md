@@ -4,7 +4,12 @@ All notable changes to the **Tuya Unified Zigbee** app for Homey Pro.
 
 ---
 
-## [9.0.1293] - 2026-09-28
+## [9.0.1294] - 2026-09-28
+
+Johan comments: Fantem ZB003-X to motion, doorbell/PIR/contact misroutes fixed, tank DP2 cm lock.
+---
+
+ [9.0.1293] - 2026-09-28
 
 Johan L99 wave2: IAS leak family vs tuya twin, kb5noeto IAS motion, air9m6af 4-socket strip.
 ---
