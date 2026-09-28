@@ -717,13 +717,13 @@ const SENSOR_CONFIGS = {
     }
   },
 
-  // DEFAULT fallback — with multi-zone support (Idea #21)
+  // DEFAULT fallback — safe generic radar config (multi-zone only on dedicated profiles)
   'DEFAULT': {
     sensors: [],
     configName: 'DEFAULT',
     battery: false,
     hasIlluminance: true,
-    hasMultiZone: true,
+    hasMultiZone: false,
     needsPolling: true,
     noTemperature: true,
     noHumidity: true,
@@ -731,14 +731,6 @@ const SENSOR_CONFIGS = {
       1: { cap: 'alarm_motion', type: 'presence_enum' },
       9: { cap: 'measure_luminance.distance', smartDivisor: true },
       12: { cap: 'measure_luminance', type: 'lux_direct' },
-      // Idea #21: Multi-zone presence DPs (generic Tuya mmWave zone mapping)
-      13: { cap: 'alarm_motion.zone1', type: 'presence_bool', zone: 1 },
-      14: { cap: 'alarm_motion.zone2', type: 'presence_bool', zone: 2 },
-      15: { cap: 'alarm_motion.zone3', type: 'presence_bool', zone: 3 },
-      16: { cap: 'measure_luminance.distance.zone1', smartDivisor: true, zone: 1 },
-      17: { cap: 'measure_luminance.distance.zone2', smartDivisor: true, zone: 2 },
-      18: { cap: 'measure_luminance.distance.zone3', smartDivisor: true, zone: 3 },
-      19: { cap: 'measure_motion.classification', type: 'movement_enum', zone: 0 },
       104: { cap: 'measure_luminance', type: 'lux_direct' },
       105: { cap: 'alarm_motion', type: 'presence_enum' },
       109: { cap: 'measure_luminance.distance', smartDivisor: true },
