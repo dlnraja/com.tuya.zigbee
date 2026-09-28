@@ -62,14 +62,18 @@ class radarSensorCeiling extends TuyaSpecificClusterDevice {
   _shouldPublishDistance(intervalSeconds = 10) {
     const intervalMs = Math.max(1, Number(intervalSeconds) || 10) * 1000;
     const now = Date.now();
-    if (this._lastDistancePublishedAt && now - this._lastDistancePublishedAt < intervalMs) return false;
+    if (this._lastDistancePublishedAt && now - this._lastDistancePublishedAt < intervalMs) {return false;}
     this._lastDistancePublishedAt = now;
     return true;
   }
 
   async onNodeInit({zclNode}) {
 
-    zclNode.endpoints[1].clusters.tuya.on("response", value => this.updatePosition(value));
+    if (zclNode?.endpoints?.[1]?.clusters?.tuya) {
+      zclNode.endpoints[1].clusters.tuya.on("response", value => this.updatePosition(value));
+      zclNode.endpoints[1].clusters.tuya.on("reporting", value => this.updatePosition(value));
+      zclNode.endpoints[1].clusters.tuya.on("datapoint", value => this.updatePosition(value));
+    }
   }
 
   async updatePosition(data) {
@@ -77,14 +81,14 @@ class radarSensorCeiling extends TuyaSpecificClusterDevice {
     const value = getDataValue(data);
     switch (dp) {
       case dataPoints.tshpsPresenceState:
-        this.log("presence state: "+ value)
+        this.log(`presence state: ${ value}`)
         this.safeSetCapabilityValue('alarm_motion', Boolean(value)).catch(() => {})
         break;
       case dataPoints.tshpscSensitivity:
-        this.log("sensitivity state: "+ value)
+        this.log(`sensitivity state: ${ value}`)
         break;
       case dataPoints.tshpsIlluminanceLux:
-        this.log("lux value: "+ value)
+        this.log(`lux value: ${ value}`)
         this.onIlluminanceMeasuredAttributeReport(value/10)
         break;
       case dataPoints.tshpsTargetDistance:

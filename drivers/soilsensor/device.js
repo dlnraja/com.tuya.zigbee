@@ -61,7 +61,11 @@ class soilsensor extends TuyaSpecificClusterDevice {
 
     this.printNode();
 
-    zclNode.endpoints[1].clusters.tuya.on("response", value => this.updateData(value));
+    if (zclNode?.endpoints?.[1]?.clusters?.tuya) {
+      zclNode.endpoints[1].clusters.tuya.on("response", value => this.updateData(value));
+      zclNode.endpoints[1].clusters.tuya.on("reporting", value => this.updateData(value));
+      zclNode.endpoints[1].clusters.tuya.on("datapoint", value => this.updateData(value));
+    }
 
     await zclNode.endpoints[1].clusters.basic.readAttributes(['manufacturerName', 'zclVersion', 'appVersion', 'modelId', 'powerSource', 'attributeReportingStatus'])
     .catch(err => {
@@ -75,22 +79,22 @@ class soilsensor extends TuyaSpecificClusterDevice {
 
     switch (dp) {
       case dataPoints.humidity:
-        this.log("Humidity: " + value);
+        this.log(`Humidity: ${  value}`);
 
         this.safeSetCapabilityValue('measure_humidity', value).catch(this._boundError || ((e) => { try { this.error(e); } catch (_) {} }));
         break;
       case dataPoints.temperature:
-        this.log("Temparature: " + value);
+        this.log(`Temparature: ${  value}`);
 
         this.safeSetCapabilityValue('measure_temperature', value).catch(this._boundError || ((e) => { try { this.error(e); } catch (_) {} }));
         break;
       case dataPoints.battery:
-        this.log("Battery: " + value);
+        this.log(`Battery: ${  value}`);
 
         this.safeSetCapabilityValue('measure_battery', value).catch(this._boundError || ((e) => { try { this.error(e); } catch (_) {} }));
         break;
       case dataPoints.battery_state:
-        this.log("Battery state: " + value);
+        this.log(`Battery state: ${  value}`);
         var batAlarm = value === 0 ? true : false;
 
         this.safeSetCapabilityValue('alarm_battery', batAlarm).catch(this._boundError || ((e) => { try { this.error(e); } catch (_) {} }));

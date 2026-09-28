@@ -7,9 +7,8 @@ const SleepyInit = require('../../lib/utils/SleepyDeviceInit');
 
 Cluster.addCluster(TuyaSpecificCluster);
 
-const PhysicalButtonMixin = require('../../lib/mixins/PhysicalButtonMixin');
-
-class motion_sensor_2 extends PhysicalButtonMixin(TuyaZigbeeDevice) {
+// P115: TuyaZigbeeDevice already includes Physical+Virtual button mixins — do not re-wrap.
+class motion_sensor_2 extends TuyaZigbeeDevice {
 
   async onNodeInit({ zclNode }) {
     await super.onNodeInit({ zclNode });
@@ -60,7 +59,7 @@ class motion_sensor_2 extends PhysicalButtonMixin(TuyaZigbeeDevice) {
         this.configureAttributeReporting(reportingPayload),
         { name: 'configureAttributeReporting', timeoutMs: SleepyInit.ZCL_TIMEOUT_MS }
       ).then((res) => {
-        if (res && res !== 'timeout') this.log('Attribute reporting configured');
+        if (res && res !== 'timeout') {this.log('Attribute reporting configured');}
       });
     }
 
@@ -74,9 +73,10 @@ class motion_sensor_2 extends PhysicalButtonMixin(TuyaZigbeeDevice) {
     zclNode.endpoints[1].clusters[CLUSTER.ILLUMINANCE_MEASUREMENT.NAME]
       .on('attr.measuredValue', this.onIlluminanceMeasuredAttributeReport.bind(this));
 
-    // Tuya specific cluster handler (optional — _TZE200_3towulqd is ZCL-only)
-    if (zclNode.endpoints[1].clusters.tuya) {
+    if (zclNode?.endpoints?.[1]?.clusters?.tuya) {
       zclNode.endpoints[1].clusters.tuya.on('reporting', value => this.processResponse(value));
+      zclNode.endpoints[1].clusters.tuya.on('response', value => this.processResponse(value));
+      zclNode.endpoints[1].clusters.tuya.on('datapoint', value => this.processResponse(value));
     }
   }
 
@@ -100,7 +100,7 @@ class motion_sensor_2 extends PhysicalButtonMixin(TuyaZigbeeDevice) {
 
   // Handle device removal with cleanup
   async onDeleted() {
-    if (this._destroyed) return;
+    if (this._destroyed) {return;}
     this._destroyed = true;
     this.log('Motion Sensor removed');
     try {
