@@ -1,0 +1,35 @@
+{
+  "timestamp": "2026-09-28T02:11:06.539Z",
+  "mode": "dry-run",
+  "results": [
+    {
+      "id": "p101-lot2",
+      "status": "ok",
+      "exitCode": 0,
+      "signal": null,
+      "stdoutTail": "_3gang rem - addM 0 addP 0\nDRY _TZE200_rqhnxkqu -> switch_wall_6gang rem - addM 0 addP 0\nDRY _TZE284_hyssaqjk -> switch_wall_6gang rem - addM 0 addP 0\nDRY _TZ3218_sgbsg6mr -> switch_2gang rem - addM 0 addP 0\nDRY _TZE204_xu4a5rhj -> curtain_motor rem - addM 0 addP 0\nDRY _TYST11_fzo2pocs -> curtain_motor rem - addM 0 addP 0\nDRY _TZE284_d2zfgtij -> energy_meter_din rem - addM 0 addP 0\nDRY _TZE284_s4sa1mcx -> energy_meter_3phase rem - addM 0 addP 0\nDRY _TZE204_x8diwkqb -> energy_meter_3phase rem - addM 0 addP 0\nDRY _TZE284_x8diwkqb -> energy_meter_3phase rem - addM 0 addP 0\nDRY _TZE204_lawxy9e2 -> ceiling_fan rem - addM 0 addP 0\nDRY _TZE204_2jnoy8dj -> fan_controller rem - addM 0 addP 0\nDRY _TZE200_xixlazkg -> wall_thermostat rem - addM 0 addP 0\n\nP101 lot2: 19 couples (dry-run — pass --apply)\n",
+      "stderrTail": ""
+    },
+    {
+      "id": "blakadder-new",
+      "status": "skip",
+      "reason": "input_missing",
+      "input": ".github/state/blakadder/blakadder-only.json"
+    },
+    {
+      "id": "issue-439",
+      "status": "ok",
+      "exitCode": 0,
+      "signal": null,
+      "stdoutTail": "=== P53 — Apply missing FPs from issue #439 to generic_tuya ===\nNo issue-439-fps.json — falling back to embedded list...\nNo embedded FP list either — nothing to apply (dry-run OK).\n",
+      "stderrTail": ""
+    },
+    {
+      "id": "canonical-gaps",
+      "status": "skip",
+      "reason": "input_missing",
+      "input": ".github/state/mfr-pid-cross-ref.json"
+    }
+  ],
+  "ok": true
+}
