@@ -4,7 +4,12 @@ All notable changes to the **Tuya Unified Zigbee** app for Homey Pro.
 
 ---
 
-## [9.0.1287] - 2026-09-28
+## [9.0.1291] - 2026-09-28
+
+Align P2572 Contre quoi with P2758: pay2byax only on contact_sensor_zigbee.
+---
+
+ [9.0.1287] - 2026-09-28
 
 Improved battery life for coin-cell sensors and remotes (no proactive PowerCfg polls). Restored TS0043 wireless button interview clusters for pairing. Radar presence zero-clear gated again after meaningful distance.
 ---

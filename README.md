@@ -33,7 +33,7 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 
 | Metric | Value |
 |--------|-------|
-| **App Version** | v9.0.1290 |
+| **App Version** | v9.0.1292 |
 | **Drivers** | 434 (381 Zigbee + 53 WiFi) |
 | **Unique Fingerprints** | 4,702 |
 | **Pairing Variants** | 18,759 (4 case combos per fingerprint) |
@@ -103,6 +103,8 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 
 | Version | Changes |
 |---------|---------|
+| **v9.0.1292** | v9.0.1291: |
+| **v9.0.1291** | Align P2572 Contre quoi with P2758: pay2byax only on contact_sensor_zigbee. |
 | **v9.0.1290** | Anti-bot gate aligns pay2byax with contact_sensor_zigbee; coin-cell battery listen-only; 6ycgarab smoke/CO not radar. |
 | **v9.0.1289** | Longer coin-cell battery life (no PowerCfg poll storms). Johan couple locks: pay2byax contact EF00 + 6ycgarab smoke/CO not radar. |
 | **v9.0.1288** | v9.0.1288: automated publish, manifest sync, and Homey test promotion. |
@@ -113,8 +115,6 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 | **v9.0.1283** | v9.0.1283: automated publish, manifest sync, and Homey test promotion. |
 | **v9.0.1282** | v9.0.1282: automated publish, manifest sync, and Homey test promotion. |
 | **v9.0.1281** | v9.0.1281: automated publish, manifest sync, and Homey test promotion. |
-| **v9.0.1280** | Radar presence cfg crash & phantom onoff click fix (#550), TS0043 _TZ3000_famkxci2 3-button scene remote pairing fix (#551), button batte… |
-| **v9.0.1279** | P2756: Eliminate button battery drain: disable unsolicited periodic scene recovery writes on sleeping devices, guard awake readAttributes… |
 
 <!-- CHANGELOG_END -->
 
