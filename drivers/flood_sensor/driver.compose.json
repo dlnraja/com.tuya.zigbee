@@ -21,8 +21,8 @@
     ]
   },
   "images": {
-    "large": "/{{driverAssetsPath}}/images/large.png",
-    "small": "/{{driverAssetsPath}}/images/small.png"
+    "small": "/drivers/flood_sensor/assets/images/small.png",
+    "large": "/drivers/flood_sensor/assets/images/large.png"
   },
   "zigbee": {
     "productId": [
@@ -49,11 +49,7 @@
         "en": "Push the button for aprox 10 seconds until the LED blinks rapidly. If nothing happens; put two fingers against the detectors and repeat."
       }
     },
-    "manufacturerName": [
-      "_TZ3000_baeiitad",
-      "_TZ3000_BAEIITAD",
-      "_tz3000_baeiitad"
-    ]
+    "manufacturerName": []
   },
   "version": "1.0.0",
   "capabilitiesOptions": {
@@ -74,8 +70,5 @@
       "getable": true,
       "preventInsights": false
     }
-  },
-  "_pidConflictNotes": [
-    "// PID-CONFLICT-NOTE TS0207 shared with 5 other drivers (cross-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md"
-  ]
+  }
 }
