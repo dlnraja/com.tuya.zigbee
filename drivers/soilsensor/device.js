@@ -61,7 +61,11 @@ class soilsensor extends TuyaSpecificClusterDevice {
 
     this.printNode();
 
-    zclNode.endpoints[1].clusters.tuya.on("response", value => this.updateData(value));
+    if (zclNode?.endpoints?.[1]?.clusters?.tuya) {
+      zclNode.endpoints[1].clusters.tuya.on("response", value => this.updateData(value));
+      zclNode.endpoints[1].clusters.tuya.on("reporting", value => this.updateData(value));
+      zclNode.endpoints[1].clusters.tuya.on("datapoint", value => this.updateData(value));
+    }
 
     await zclNode.endpoints[1].clusters.basic.readAttributes(['manufacturerName', 'zclVersion', 'appVersion', 'modelId', 'powerSource', 'attributeReportingStatus'])
     .catch(err => {
