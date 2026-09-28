@@ -511,6 +511,13 @@ class SosEmergencyButtonDevice extends TuyaZigbeeDevice {
   }
 
   async _readBatteryNow() {
+    const prev = this.getCapabilityValue('measure_battery');
+    const lastAt = this.getStoreValue('sos_battery_last_write_at') || 0;
+    if (typeof prev === 'number' && prev > 0 && (Date.now() - lastAt < 24 * 3600 * 1000)) {
+      this.log(`[SOS] 🔋 Battery already fresh (${prev}%) - skipping read to preserve battery`);
+      return;
+    }
+
     const ep1 = this.zclNode?.endpoints?.[1];
     const powerCfg = ep1?.clusters?.powerConfiguration || ep1?.clusters?.genPowerCfg;
     if (!powerCfg?.readAttributes) {return;}

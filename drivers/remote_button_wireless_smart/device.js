@@ -804,8 +804,23 @@ class Button1GangDevice extends ButtonDevice {
       await super.triggerButtonPress(buttonNumber, pressType);
     }
 
-    // Device is awake after button press - try to read battery
-    if (this._powerCluster && typeof this._powerCluster.readAttributes === 'function') {
+    // Device is awake after button press - try to read battery only if missing (preserves battery)
+    let curBattery = this.getCapabilityValue('measure_battery');
+    if (curBattery == null) {
+      const stored = this.getStoreValue?.('measure_battery') ?? this.getStoreValue?.('battery_percent');
+      if (stored != null && typeof stored === 'number' && stored > 0) {
+        this.setCapabilityValue('measure_battery', stored).catch(() => {});
+        curBattery = stored;
+      }
+    }
+    const hasBattery = curBattery != null && Number(curBattery) > 0;
+    let skipSleepy = false;
+    try {
+      const { shouldSkipSleepyRemoteBatteryTx } = require('../../lib/zigbee/PowerClusterPolicy');
+      skipSleepy = shouldSkipSleepyRemoteBatteryTx(this.getDeviceProfile?.(), { device: this, homey: this.homey });
+    } catch (_e) { /* soft */ }
+
+    if (!hasBattery && !skipSleepy && this._powerCluster && typeof this._powerCluster.readAttributes === 'function') {
       this.homey.setTimeout(async () => {
         if (this._destroyed) {return;}
         try {
