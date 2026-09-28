@@ -16,11 +16,25 @@
       "blaster_remote_ir_remote_code_learned",
       "blaster_remote_ir_code_received"
     ],
-    "missingInAppJson": [],
+    "missingInAppJson": [
+      "blaster_remote_ir_remote_code_learned",
+      "blaster_remote_ir_code_received"
+    ],
     "heuristicResolvable": true,
     "heuristicGaps": [],
     "heuristicFalsePositives": [],
-    "issues": [],
+    "issues": [
+      {
+        "type": "app_json_drift",
+        "severity": "info",
+        "count": 2,
+        "sample": [
+          "blaster_remote_ir_remote_code_learned",
+          "blaster_remote_ir_code_received"
+        ],
+        "note": "compose cards absent from last .homeybuild/root app.json — Auto-Publish regenerates; runtime FlowCardHeuristics still resolves"
+      }
+    ],
     "productIds": [
       "TS0601",
       "TS1201"
@@ -61,7 +75,15 @@
       "button_emergency_sos_physical_on",
       "button_emergency_sos_physical_off"
     ],
-    "missingInAppJson": [],
+    "missingInAppJson": [
+      "button_emergency_sos_pressed",
+      "button_emergency_sos_double_pressed",
+      "button_emergency_sos_long_pressed",
+      "button_emergency_sos_battery_low",
+      "button_emergency_sos_measure_battery_changed",
+      "button_emergency_sos_physical_on",
+      "button_emergency_sos_physical_off"
+    ],
     "heuristicResolvable": true,
     "heuristicGaps": [],
     "heuristicFalsePositives": [
@@ -134,6 +156,19 @@
           }
         ],
         "reason": "socket hybrid — runtime PhysicalButtonMixin + switch_1gang/physical_on"
+      },
+      {
+        "type": "app_json_drift",
+        "severity": "info",
+        "count": 7,
+        "sample": [
+          "button_emergency_sos_pressed",
+          "button_emergency_sos_double_pressed",
+          "button_emergency_sos_long_pressed",
+          "button_emergency_sos_battery_low",
+          "button_emergency_sos_measure_battery_changed"
+        ],
+        "note": "compose cards absent from last .homeybuild/root app.json — Auto-Publish regenerates; runtime FlowCardHeuristics still resolves"
       }
     ],
     "productIds": [
@@ -178,11 +213,32 @@
       "button_wireless_battery_low",
       "button_wireless_measure_battery_changed"
     ],
-    "missingInAppJson": [],
+    "missingInAppJson": [
+      "button_wireless_button_pressed",
+      "button_wireless_button_double_press",
+      "button_wireless_button_long_press",
+      "button_wireless_button_release",
+      "button_wireless_battery_low",
+      "button_wireless_measure_battery_changed"
+    ],
     "heuristicResolvable": true,
     "heuristicGaps": [],
     "heuristicFalsePositives": [],
-    "issues": [],
+    "issues": [
+      {
+        "type": "app_json_drift",
+        "severity": "info",
+        "count": 6,
+        "sample": [
+          "button_wireless_button_pressed",
+          "button_wireless_button_double_press",
+          "button_wireless_button_long_press",
+          "button_wireless_button_release",
+          "button_wireless_battery_low"
+        ],
+        "note": "compose cards absent from last .homeybuild/root app.json — Auto-Publish regenerates; runtime FlowCardHeuristics still resolves"
+      }
+    ],
     "productIds": [
       "TS0040",
       "SNZB-01",
@@ -248,7 +304,20 @@
       "button_wireless_1_measure_battery_changed",
       "button_wireless_1_button_1gang_button_scene_recall"
     ],
-    "missingInAppJson": [],
+    "missingInAppJson": [
+      "button_wireless_1_button_1gang_button_pressed",
+      "button_wireless_1_button_1gang_button_double_press",
+      "button_wireless_1_button_1gang_button_long_press",
+      "button_wireless_1_button_1gang_button_multi_press",
+      "button_wireless_1_button_1gang_button_1_pressed",
+      "button_wireless_1_button_1gang_button_1_double",
+      "button_wireless_1_button_1gang_button_1_long",
+      "button_wireless_1_button_1gang_button_1_triple",
+      "button_wireless_1_button_1gang_button_1_release",
+      "button_wireless_1_battery_low",
+      "button_wireless_1_measure_battery_changed",
+      "button_wireless_1_button_1gang_button_scene_recall"
+    ],
     "heuristicResolvable": true,
     "heuristicGaps": [],
     "heuristicFalsePositives": [
@@ -281,6 +350,19 @@
           }
         ],
         "reason": "Ngang cards declared — CI tries generic patterns first; runtime resolves"
+      },
+      {
+        "type": "app_json_drift",
+        "severity": "info",
+        "count": 12,
+        "sample": [
+          "button_wireless_1_button_1gang_button_pressed",
+          "button_wireless_1_button_1gang_button_double_press",
+          "button_wireless_1_button_1gang_button_long_press",
+          "button_wireless_1_button_1gang_button_multi_press",
+          "button_wireless_1_button_1gang_button_1_pressed"
+        ],
+        "note": "compose cards absent from last .homeybuild/root app.json — Auto-Publish regenerates; runtime FlowCardHeuristics still resolves"
       }
     ],
     "productIds": [
@@ -398,7 +480,27 @@
       "button_wireless_2_physical_off",
       "button_wireless_2_measure_battery_changed"
     ],
-    "missingInAppJson": [],
+    "missingInAppJson": [
+      "button_wireless_2_button_2gang_button_pressed",
+      "button_wireless_2_button_2gang_button_double_press",
+      "button_wireless_2_button_2gang_button_long_press",
+      "button_wireless_2_button_2gang_button_multi_press",
+      "button_wireless_2_button_2gang_button_1_pressed",
+      "button_wireless_2_button_2gang_button_1_double",
+      "button_wireless_2_button_2gang_button_1_long",
+      "button_wireless_2_button_2gang_button_2_pressed",
+      "button_wireless_2_button_2gang_button_2_double",
+      "button_wireless_2_button_2gang_button_2_long",
+      "button_wireless_2_button_2gang_button_1_triple",
+      "button_wireless_2_button_2gang_button_2_triple",
+      "button_wireless_2_button_2gang_button_1_release",
+      "button_wireless_2_button_2gang_button_2_release",
+      "button_wireless_2_battery_low",
+      "button_wireless_2_button_2gang_button_scene_recall",
+      "button_wireless_2_physical_on",
+      "button_wireless_2_physical_off",
+      "button_wireless_2_measure_battery_changed"
+    ],
     "heuristicResolvable": false,
     "heuristicGaps": [
       {
@@ -499,6 +601,19 @@
           }
         ],
         "reason": "Ngang cards declared — CI tries generic patterns first; runtime resolves"
+      },
+      {
+        "type": "app_json_drift",
+        "severity": "info",
+        "count": 19,
+        "sample": [
+          "button_wireless_2_button_2gang_button_pressed",
+          "button_wireless_2_button_2gang_button_double_press",
+          "button_wireless_2_button_2gang_button_long_press",
+          "button_wireless_2_button_2gang_button_multi_press",
+          "button_wireless_2_button_2gang_button_1_pressed"
+        ],
+        "note": "compose cards absent from last .homeybuild/root app.json — Auto-Publish regenerates; runtime FlowCardHeuristics still resolves"
       }
     ],
     "productIds": [
@@ -603,7 +718,7 @@
       "lumi.plug.mmeu01",
       "SNZB-01M"
     ],
-    "mfrCount": 570
+    "mfrCount": 566
   },
   {
     "driverId": "button_wireless_3",
@@ -652,7 +767,28 @@
       "button_wireless_3_measure_battery_changed",
       "button_wireless_3_button_3gang_button_scene_recall"
     ],
-    "missingInAppJson": [],
+    "missingInAppJson": [
+      "button_wireless_3_button_3gang_button_pressed",
+      "button_wireless_3_button_3gang_button_double_press",
+      "button_wireless_3_button_3gang_button_long_press",
+      "button_wireless_3_button_3gang_button_multi_press",
+      "button_wireless_3_button_3gang_button_1_pressed",
+      "button_wireless_3_button_3gang_button_2_pressed",
+      "button_wireless_3_button_3gang_button_3_pressed",
+      "button_wireless_3_button_3gang_button_1_double",
+      "button_wireless_3_button_3gang_button_2_double",
+      "button_wireless_3_button_3gang_button_3_double",
+      "button_wireless_3_button_3gang_button_1_long",
+      "button_wireless_3_button_3gang_button_2_long",
+      "button_wireless_3_button_3gang_button_3_long",
+      "button_wireless_3_button_3gang_button_1_triple",
+      "button_wireless_3_button_3gang_button_2_triple",
+      "button_wireless_3_button_3gang_button_3_triple",
+      "button_wireless_3_button_3gang_button_1_release",
+      "button_wireless_3_button_3gang_button_2_release",
+      "button_wireless_3_button_3gang_button_3_release",
+      "button_wireless_3_battery_low"
+    ],
     "heuristicResolvable": false,
     "heuristicGaps": [
       {
@@ -793,6 +929,19 @@
           }
         ],
         "reason": "Ngang cards declared — CI tries generic patterns first; runtime resolves"
+      },
+      {
+        "type": "app_json_drift",
+        "severity": "info",
+        "count": 22,
+        "sample": [
+          "button_wireless_3_button_3gang_button_pressed",
+          "button_wireless_3_button_3gang_button_double_press",
+          "button_wireless_3_button_3gang_button_long_press",
+          "button_wireless_3_button_3gang_button_multi_press",
+          "button_wireless_3_button_3gang_button_1_pressed"
+        ],
+        "note": "compose cards absent from last .homeybuild/root app.json — Auto-Publish regenerates; runtime FlowCardHeuristics still resolves"
       }
     ],
     "productIds": [
@@ -859,7 +1008,28 @@
       "button_wireless_4_physical_on",
       "button_wireless_4_physical_off"
     ],
-    "missingInAppJson": [],
+    "missingInAppJson": [
+      "button_wireless_4_button_4gang_button_pressed",
+      "button_wireless_4_button_4gang_button_double_press",
+      "button_wireless_4_button_4gang_button_long_press",
+      "button_wireless_4_button_4gang_button_multi_press",
+      "button_wireless_4_button_4gang_button_1_pressed",
+      "button_wireless_4_button_4gang_button_1_double",
+      "button_wireless_4_button_4gang_button_1_long",
+      "button_wireless_4_button_4gang_button_2_pressed",
+      "button_wireless_4_button_4gang_button_2_double",
+      "button_wireless_4_button_4gang_button_2_long",
+      "button_wireless_4_button_4gang_button_3_pressed",
+      "button_wireless_4_button_4gang_button_3_double",
+      "button_wireless_4_button_4gang_button_3_long",
+      "button_wireless_4_button_4gang_button_4_pressed",
+      "button_wireless_4_button_4gang_button_4_double",
+      "button_wireless_4_button_4gang_button_4_long",
+      "button_wireless_4_button_4gang_button_1_triple",
+      "button_wireless_4_button_4gang_button_2_triple",
+      "button_wireless_4_button_4gang_button_3_triple",
+      "button_wireless_4_button_4gang_button_4_triple"
+    ],
     "heuristicResolvable": false,
     "heuristicGaps": [
       {
@@ -1020,6 +1190,19 @@
           }
         ],
         "reason": "Ngang cards declared — CI tries generic patterns first; runtime resolves"
+      },
+      {
+        "type": "app_json_drift",
+        "severity": "info",
+        "count": 29,
+        "sample": [
+          "button_wireless_4_button_4gang_button_pressed",
+          "button_wireless_4_button_4gang_button_double_press",
+          "button_wireless_4_button_4gang_button_long_press",
+          "button_wireless_4_button_4gang_button_multi_press",
+          "button_wireless_4_button_4gang_button_1_pressed"
+        ],
+        "note": "compose cards absent from last .homeybuild/root app.json — Auto-Publish regenerates; runtime FlowCardHeuristics still resolves"
       }
     ],
     "productIds": [
@@ -1119,7 +1302,28 @@
       "button_wireless_4_ts0041_battery_low",
       "button_wireless_4_ts0041_measure_battery_changed"
     ],
-    "missingInAppJson": [],
+    "missingInAppJson": [
+      "button_wireless_4_ts0041_button_4gang_button_52f48",
+      "button_wireless_4_ts0041_button_4gang_button_505b8",
+      "button_wireless_4_ts0041_button_4gang_button_fabd0",
+      "button_wireless_4_ts0041_button_4gang_button_0d242",
+      "button_wireless_4_ts0041_button_4gang_button_eeba2",
+      "button_wireless_4_ts0041_button_4gang_button_e87b4",
+      "button_wireless_4_ts0041_button_4gang_button_d4e74",
+      "button_wireless_4_ts0041_button_4gang_button_83fb1",
+      "button_wireless_4_ts0041_button_4gang_button_841c9",
+      "button_wireless_4_ts0041_button_4gang_button_c5826",
+      "button_wireless_4_ts0041_button_4gang_button_56ccd",
+      "button_wireless_4_ts0041_button_4gang_button_aadcd",
+      "button_wireless_4_ts0041_button_4gang_button_328f6",
+      "button_wireless_4_ts0041_button_4gang_button_86bcb",
+      "button_wireless_4_ts0041_button_4gang_button_174ad",
+      "button_wireless_4_ts0041_button_4gang_button_34862",
+      "button_wireless_4_ts0041_button_4gang_button_7a5f0",
+      "button_wireless_4_ts0041_button_4gang_button_f4422",
+      "button_wireless_4_ts0041_button_4gang_button_6e597",
+      "button_wireless_4_ts0041_button_4gang_button_ee419"
+    ],
     "heuristicResolvable": true,
     "heuristicGaps": [],
     "heuristicFalsePositives": [
@@ -1242,6 +1446,19 @@
           }
         ],
         "reason": "Ngang cards declared — CI tries generic patterns first; runtime resolves"
+      },
+      {
+        "type": "app_json_drift",
+        "severity": "info",
+        "count": 26,
+        "sample": [
+          "button_wireless_4_ts0041_button_4gang_button_52f48",
+          "button_wireless_4_ts0041_button_4gang_button_505b8",
+          "button_wireless_4_ts0041_button_4gang_button_fabd0",
+          "button_wireless_4_ts0041_button_4gang_button_0d242",
+          "button_wireless_4_ts0041_button_4gang_button_eeba2"
+        ],
+        "note": "compose cards absent from last .homeybuild/root app.json — Auto-Publish regenerates; runtime FlowCardHeuristics still resolves"
       }
     ],
     "productIds": [
@@ -1317,7 +1534,28 @@
       "button_wireless_6_button_6gang_button_6_triple",
       "button_wireless_6_button_6gang_button_6_release"
     ],
-    "missingInAppJson": [],
+    "missingInAppJson": [
+      "button_wireless_6_button_6gang_button_pressed",
+      "button_wireless_6_button_6gang_button_double_press",
+      "button_wireless_6_button_6gang_button_long_press",
+      "button_wireless_6_button_6gang_button_multi_press",
+      "button_wireless_6_button_6gang_button_1_pressed",
+      "button_wireless_6_button_6gang_button_1_double",
+      "button_wireless_6_button_6gang_button_1_long",
+      "button_wireless_6_button_6gang_button_2_pressed",
+      "button_wireless_6_button_6gang_button_2_double",
+      "button_wireless_6_button_6gang_button_2_long",
+      "button_wireless_6_button_6gang_button_3_pressed",
+      "button_wireless_6_button_6gang_button_3_double",
+      "button_wireless_6_button_6gang_button_3_long",
+      "button_wireless_6_button_6gang_button_4_pressed",
+      "button_wireless_6_button_6gang_button_4_double",
+      "button_wireless_6_button_6gang_button_4_long",
+      "button_wireless_6_button_6gang_button_5_pressed",
+      "button_wireless_6_button_6gang_button_5_double",
+      "button_wireless_6_button_6gang_button_5_long",
+      "button_wireless_6_button_6gang_button_6_pressed"
+    ],
     "heuristicResolvable": false,
     "heuristicGaps": [
       {
@@ -1518,6 +1756,19 @@
           }
         ],
         "reason": "Ngang cards declared — CI tries generic patterns first; runtime resolves"
+      },
+      {
+        "type": "app_json_drift",
+        "severity": "info",
+        "count": 36,
+        "sample": [
+          "button_wireless_6_button_6gang_button_pressed",
+          "button_wireless_6_button_6gang_button_double_press",
+          "button_wireless_6_button_6gang_button_long_press",
+          "button_wireless_6_button_6gang_button_multi_press",
+          "button_wireless_6_button_6gang_button_1_pressed"
+        ],
+        "note": "compose cards absent from last .homeybuild/root app.json — Auto-Publish regenerates; runtime FlowCardHeuristics still resolves"
       }
     ],
     "productIds": [
@@ -1598,7 +1849,28 @@
       "button_wireless_8_button_8gang_button_8_triple",
       "button_wireless_8_button_8gang_button_8_release"
     ],
-    "missingInAppJson": [],
+    "missingInAppJson": [
+      "button_wireless_8_button_8gang_button_pressed",
+      "button_wireless_8_button_8gang_button_double_press",
+      "button_wireless_8_button_8gang_button_long_press",
+      "button_wireless_8_button_8gang_button_multi_press",
+      "button_wireless_8_button_8gang_button_1_pressed",
+      "button_wireless_8_button_8gang_button_1_double",
+      "button_wireless_8_button_8gang_button_1_long",
+      "button_wireless_8_button_8gang_button_2_pressed",
+      "button_wireless_8_button_8gang_button_2_double",
+      "button_wireless_8_button_8gang_button_2_long",
+      "button_wireless_8_button_8gang_button_3_pressed",
+      "button_wireless_8_button_8gang_button_3_double",
+      "button_wireless_8_button_8gang_button_3_long",
+      "button_wireless_8_button_8gang_button_4_pressed",
+      "button_wireless_8_button_8gang_button_4_double",
+      "button_wireless_8_button_8gang_button_4_long",
+      "button_wireless_8_button_8gang_button_5_pressed",
+      "button_wireless_8_button_8gang_button_5_double",
+      "button_wireless_8_button_8gang_button_5_long",
+      "button_wireless_8_button_8gang_button_6_pressed"
+    ],
     "heuristicResolvable": false,
     "heuristicGaps": [
       {
@@ -1839,6 +2111,19 @@
           }
         ],
         "reason": "Ngang cards declared — CI tries generic patterns first; runtime resolves"
+      },
+      {
+        "type": "app_json_drift",
+        "severity": "info",
+        "count": 46,
+        "sample": [
+          "button_wireless_8_button_8gang_button_pressed",
+          "button_wireless_8_button_8gang_button_double_press",
+          "button_wireless_8_button_8gang_button_long_press",
+          "button_wireless_8_button_8gang_button_multi_press",
+          "button_wireless_8_button_8gang_button_1_pressed"
+        ],
+        "note": "compose cards absent from last .homeybuild/root app.json — Auto-Publish regenerates; runtime FlowCardHeuristics still resolves"
       }
     ],
     "productIds": [
@@ -1879,7 +2164,24 @@
       "button_wireless_fingerbot_voltage_changed",
       "button_wireless_fingerbot_current_changed"
     ],
-    "missingInAppJson": [],
+    "missingInAppJson": [
+      "button_wireless_fingerbot_switch_1gang_turned_on",
+      "button_wireless_fingerbot_switch_1gang_turned_off",
+      "button_wireless_fingerbot_switch_1gang_physical_on",
+      "button_wireless_fingerbot_switch_1gang_physical_off",
+      "button_wireless_fingerbot_switch_1gang_physical_single",
+      "button_wireless_fingerbot_switch_1gang_physical_double",
+      "button_wireless_fingerbot_switch_1gang_physical_long_press",
+      "button_wireless_fingerbot_switch_1gang_physical_triple",
+      "button_wireless_fingerbot_switch_1gang_battery_low",
+      "button_wireless_fingerbot_switch_1gang_power_changed",
+      "button_wireless_fingerbot_switch_1gang_gang1_scene",
+      "button_wireless_fingerbot_physical_on",
+      "button_wireless_fingerbot_physical_off",
+      "button_wireless_fingerbot_meter_power_changed",
+      "button_wireless_fingerbot_voltage_changed",
+      "button_wireless_fingerbot_current_changed"
+    ],
     "heuristicResolvable": true,
     "heuristicGaps": [],
     "heuristicFalsePositives": [
@@ -1932,6 +2234,19 @@
           }
         ],
         "reason": "socket hybrid — runtime PhysicalButtonMixin + switch_1gang/physical_on"
+      },
+      {
+        "type": "app_json_drift",
+        "severity": "info",
+        "count": 16,
+        "sample": [
+          "button_wireless_fingerbot_switch_1gang_turned_on",
+          "button_wireless_fingerbot_switch_1gang_turned_off",
+          "button_wireless_fingerbot_switch_1gang_physical_on",
+          "button_wireless_fingerbot_switch_1gang_physical_off",
+          "button_wireless_fingerbot_switch_1gang_physical_single"
+        ],
+        "note": "compose cards absent from last .homeybuild/root app.json — Auto-Publish regenerates; runtime FlowCardHeuristics still resolves"
       }
     ],
     "productIds": [
@@ -1977,7 +2292,18 @@
       "button_wireless_plug_physical_on",
       "button_wireless_plug_physical_off"
     ],
-    "missingInAppJson": [],
+    "missingInAppJson": [
+      "button_wireless_plug_turned_on",
+      "button_wireless_plug_turned_off",
+      "button_wireless_plug_measure_power_changed",
+      "button_wireless_plug_measure_voltage_changed",
+      "button_wireless_plug_measure_current_changed",
+      "button_wireless_plug_meter_power_changed",
+      "button_wireless_plug_power_changed",
+      "button_wireless_plug_battery_low",
+      "button_wireless_plug_physical_on",
+      "button_wireless_plug_physical_off"
+    ],
     "heuristicResolvable": true,
     "heuristicGaps": [],
     "heuristicFalsePositives": [
@@ -2050,6 +2376,19 @@
           }
         ],
         "reason": "socket hybrid — runtime PhysicalButtonMixin + switch_1gang/physical_on"
+      },
+      {
+        "type": "app_json_drift",
+        "severity": "info",
+        "count": 10,
+        "sample": [
+          "button_wireless_plug_turned_on",
+          "button_wireless_plug_turned_off",
+          "button_wireless_plug_measure_power_changed",
+          "button_wireless_plug_measure_voltage_changed",
+          "button_wireless_plug_measure_current_changed"
+        ],
+        "note": "compose cards absent from last .homeybuild/root app.json — Auto-Publish regenerates; runtime FlowCardHeuristics still resolves"
       }
     ],
     "productIds": [
@@ -2136,7 +2475,24 @@
       "button_wireless_scene_battery_low",
       "button_wireless_scene_measure_battery_changed"
     ],
-    "missingInAppJson": [],
+    "missingInAppJson": [
+      "button_wireless_scene_button_2gang_button_pressed",
+      "button_wireless_scene_button_2gang_button_do_fd794",
+      "button_wireless_scene_button_2gang_button_lo_d6f2d",
+      "button_wireless_scene_button_2gang_button_mu_8e6dd",
+      "button_wireless_scene_button_2gang_button_1__5809e",
+      "button_wireless_scene_button_2gang_button_1_double",
+      "button_wireless_scene_button_2gang_button_1_long",
+      "button_wireless_scene_button_2gang_button_2__ee41a",
+      "button_wireless_scene_button_2gang_button_2_double",
+      "button_wireless_scene_button_2gang_button_2_long",
+      "button_wireless_scene_button_2gang_button_1_triple",
+      "button_wireless_scene_button_2gang_button_2_triple",
+      "button_wireless_scene_button_2gang_button_1__634f8",
+      "button_wireless_scene_button_2gang_button_2__28f08",
+      "button_wireless_scene_battery_low",
+      "button_wireless_scene_measure_battery_changed"
+    ],
     "heuristicResolvable": true,
     "heuristicGaps": [],
     "heuristicFalsePositives": [
@@ -2219,6 +2575,19 @@
           }
         ],
         "reason": "Ngang cards declared — CI tries generic patterns first; runtime resolves"
+      },
+      {
+        "type": "app_json_drift",
+        "severity": "info",
+        "count": 16,
+        "sample": [
+          "button_wireless_scene_button_2gang_button_pressed",
+          "button_wireless_scene_button_2gang_button_do_fd794",
+          "button_wireless_scene_button_2gang_button_lo_d6f2d",
+          "button_wireless_scene_button_2gang_button_mu_8e6dd",
+          "button_wireless_scene_button_2gang_button_1__5809e"
+        ],
+        "note": "compose cards absent from last .homeybuild/root app.json — Auto-Publish regenerates; runtime FlowCardHeuristics still resolves"
       }
     ],
     "productIds": [
@@ -2289,11 +2658,46 @@
       "button_wireless_smart_button_3_scene_recall",
       "button_wireless_smart_button_4_scene_recall"
     ],
-    "missingInAppJson": [],
+    "missingInAppJson": [
+      "button_wireless_smart_button_1gang_button_pressed",
+      "button_wireless_smart_button_1gang_button_do_2c981",
+      "button_wireless_smart_button_1gang_button_lo_8a4e2",
+      "button_wireless_smart_button_1gang_button_mu_55088",
+      "button_wireless_smart_button_1gang_button_1__96a5e",
+      "button_wireless_smart_button_1gang_button_1_double",
+      "button_wireless_smart_button_1gang_button_1_long",
+      "button_wireless_smart_button_1gang_button_1_triple",
+      "button_wireless_smart_button_1gang_button_1__95ae0",
+      "button_wireless_smart_battery_low",
+      "button_wireless_smart_measure_battery_changed",
+      "button_wireless_smart_button_1gang_button_2__97012",
+      "button_wireless_smart_button_1gang_button_2_double",
+      "button_wireless_smart_button_1gang_button_2_long",
+      "button_wireless_smart_button_1gang_button_2_triple",
+      "button_wireless_smart_button_1gang_button_2__90428",
+      "button_wireless_smart_button_1gang_button_3__6bb28",
+      "button_wireless_smart_button_1gang_button_3_double",
+      "button_wireless_smart_button_1gang_button_3_long",
+      "button_wireless_smart_button_1gang_button_3_triple"
+    ],
     "heuristicResolvable": true,
     "heuristicGaps": [],
     "heuristicFalsePositives": [],
-    "issues": [],
+    "issues": [
+      {
+        "type": "app_json_drift",
+        "severity": "info",
+        "count": 30,
+        "sample": [
+          "button_wireless_smart_button_1gang_button_pressed",
+          "button_wireless_smart_button_1gang_button_do_2c981",
+          "button_wireless_smart_button_1gang_button_lo_8a4e2",
+          "button_wireless_smart_button_1gang_button_mu_55088",
+          "button_wireless_smart_button_1gang_button_1__96a5e"
+        ],
+        "note": "compose cards absent from last .homeybuild/root app.json — Auto-Publish regenerates; runtime FlowCardHeuristics still resolves"
+      }
+    ],
     "productIds": [
       "TS0041",
       "TS0042",
@@ -2349,7 +2753,28 @@
       "button_wireless_switch_current_changed",
       "button_wireless_switch_meter_power_changed"
     ],
-    "missingInAppJson": [],
+    "missingInAppJson": [
+      "button_wireless_switch_2gang_gang1_turned_on",
+      "button_wireless_switch_2gang_gang1_turned_off",
+      "button_wireless_switch_2gang_gang2_turned_on",
+      "button_wireless_switch_2gang_gang2_turned_off",
+      "button_wireless_switch_2gang_physical_gang1_on",
+      "button_wireless_switch_2gang_physical_gang1_off",
+      "button_wireless_switch_2gang_physical_gang2_on",
+      "button_wireless_switch_2gang_physical_gang2_off",
+      "button_wireless_switch_2gang_turned_on",
+      "button_wireless_switch_2gang_turned_off",
+      "button_wireless_switch_2gang_power_changed",
+      "button_wireless_switch_2gang_gang1_scene",
+      "button_wireless_switch_2gang_gang2_scene",
+      "button_wireless_switch_physical_gang1_on",
+      "button_wireless_switch_physical_gang1_off",
+      "button_wireless_switch_physical_gang2_on",
+      "button_wireless_switch_physical_gang2_off",
+      "button_wireless_switch_voltage_changed",
+      "button_wireless_switch_current_changed",
+      "button_wireless_switch_meter_power_changed"
+    ],
     "heuristicResolvable": true,
     "heuristicGaps": [],
     "heuristicFalsePositives": [
@@ -2452,6 +2877,19 @@
           }
         ],
         "reason": "socket hybrid — runtime PhysicalButtonMixin + switch_1gang/physical_on"
+      },
+      {
+        "type": "app_json_drift",
+        "severity": "info",
+        "count": 20,
+        "sample": [
+          "button_wireless_switch_2gang_gang1_turned_on",
+          "button_wireless_switch_2gang_gang1_turned_off",
+          "button_wireless_switch_2gang_gang2_turned_on",
+          "button_wireless_switch_2gang_gang2_turned_off",
+          "button_wireless_switch_2gang_physical_gang1_on"
+        ],
+        "note": "compose cards absent from last .homeybuild/root app.json — Auto-Publish regenerates; runtime FlowCardHeuristics still resolves"
       }
     ],
     "productIds": [
@@ -2519,7 +2957,16 @@
       "button_wireless_usb_voltage_changed",
       "button_wireless_usb_current_changed"
     ],
-    "missingInAppJson": [],
+    "missingInAppJson": [
+      "button_wireless_usb_dongle_dual_repeater_turned_on",
+      "button_wireless_usb_dongle_dual_repeater_tur_67093",
+      "button_wireless_usb_dongle_dual_repeater_pow_4d1a5",
+      "button_wireless_usb_button_1gang_button_scen_1252c",
+      "button_wireless_usb_measure_power_changed",
+      "button_wireless_usb_meter_power_changed",
+      "button_wireless_usb_voltage_changed",
+      "button_wireless_usb_current_changed"
+    ],
     "heuristicResolvable": true,
     "heuristicGaps": [],
     "heuristicFalsePositives": [
@@ -2682,6 +3129,19 @@
           }
         ],
         "reason": "Ngang cards declared — CI tries generic patterns first; runtime resolves"
+      },
+      {
+        "type": "app_json_drift",
+        "severity": "info",
+        "count": 8,
+        "sample": [
+          "button_wireless_usb_dongle_dual_repeater_turned_on",
+          "button_wireless_usb_dongle_dual_repeater_tur_67093",
+          "button_wireless_usb_dongle_dual_repeater_pow_4d1a5",
+          "button_wireless_usb_button_1gang_button_scen_1252c",
+          "button_wireless_usb_measure_power_changed"
+        ],
+        "note": "compose cards absent from last .homeybuild/root app.json — Auto-Publish regenerates; runtime FlowCardHeuristics still resolves"
       }
     ],
     "productIds": [
@@ -2721,7 +3181,24 @@
       "button_wireless_valve_battery_low",
       "button_wireless_valve_measure_battery_changed"
     ],
-    "missingInAppJson": [],
+    "missingInAppJson": [
+      "button_wireless_valve_button_2gang_button_pressed",
+      "button_wireless_valve_button_2gang_button_do_8575b",
+      "button_wireless_valve_button_2gang_button_lo_4c9c3",
+      "button_wireless_valve_button_2gang_button_mu_89f39",
+      "button_wireless_valve_button_2gang_button_1__6a71a",
+      "button_wireless_valve_button_2gang_button_1_double",
+      "button_wireless_valve_button_2gang_button_1_long",
+      "button_wireless_valve_button_2gang_button_2__2bfa7",
+      "button_wireless_valve_button_2gang_button_2_double",
+      "button_wireless_valve_button_2gang_button_2_long",
+      "button_wireless_valve_button_2gang_button_1_triple",
+      "button_wireless_valve_button_2gang_button_2_triple",
+      "button_wireless_valve_button_2gang_button_1__84801",
+      "button_wireless_valve_button_2gang_button_2__6e751",
+      "button_wireless_valve_battery_low",
+      "button_wireless_valve_measure_battery_changed"
+    ],
     "heuristicResolvable": true,
     "heuristicGaps": [],
     "heuristicFalsePositives": [
@@ -2884,6 +3361,19 @@
           }
         ],
         "reason": "Ngang cards declared — CI tries generic patterns first; runtime resolves"
+      },
+      {
+        "type": "app_json_drift",
+        "severity": "info",
+        "count": 16,
+        "sample": [
+          "button_wireless_valve_button_2gang_button_pressed",
+          "button_wireless_valve_button_2gang_button_do_8575b",
+          "button_wireless_valve_button_2gang_button_lo_4c9c3",
+          "button_wireless_valve_button_2gang_button_mu_89f39",
+          "button_wireless_valve_button_2gang_button_1__6a71a"
+        ],
+        "note": "compose cards absent from last .homeybuild/root app.json — Auto-Publish regenerates; runtime FlowCardHeuristics still resolves"
       }
     ],
     "productIds": [
@@ -2931,7 +3421,24 @@
       "button_wireless_wall_battery_low",
       "button_wireless_wall_measure_battery_changed"
     ],
-    "missingInAppJson": [],
+    "missingInAppJson": [
+      "button_wireless_wall_button_2gang_button_pressed",
+      "button_wireless_wall_button_2gang_button_dou_708f9",
+      "button_wireless_wall_button_2gang_button_lon_061fd",
+      "button_wireless_wall_button_2gang_button_mul_63a3a",
+      "button_wireless_wall_button_2gang_button_1_pressed",
+      "button_wireless_wall_button_2gang_button_1_double",
+      "button_wireless_wall_button_2gang_button_1_long",
+      "button_wireless_wall_button_2gang_button_2_pressed",
+      "button_wireless_wall_button_2gang_button_2_double",
+      "button_wireless_wall_button_2gang_button_2_long",
+      "button_wireless_wall_button_2gang_button_1_triple",
+      "button_wireless_wall_button_2gang_button_2_triple",
+      "button_wireless_wall_button_2gang_button_1_release",
+      "button_wireless_wall_button_2gang_button_2_release",
+      "button_wireless_wall_battery_low",
+      "button_wireless_wall_measure_battery_changed"
+    ],
     "heuristicResolvable": false,
     "heuristicGaps": [
       {
@@ -3032,6 +3539,19 @@
           }
         ],
         "reason": "Ngang cards declared — CI tries generic patterns first; runtime resolves"
+      },
+      {
+        "type": "app_json_drift",
+        "severity": "info",
+        "count": 16,
+        "sample": [
+          "button_wireless_wall_button_2gang_button_pressed",
+          "button_wireless_wall_button_2gang_button_dou_708f9",
+          "button_wireless_wall_button_2gang_button_lon_061fd",
+          "button_wireless_wall_button_2gang_button_mul_63a3a",
+          "button_wireless_wall_button_2gang_button_1_pressed"
+        ],
+        "note": "compose cards absent from last .homeybuild/root app.json — Auto-Publish regenerates; runtime FlowCardHeuristics still resolves"
       }
     ],
     "productIds": [
@@ -3072,11 +3592,29 @@
       "fingerbot_turned_off",
       "fingerbot_battery_low"
     ],
-    "missingInAppJson": [],
+    "missingInAppJson": [
+      "fingerbot_button_pressed",
+      "fingerbot_turned_on",
+      "fingerbot_turned_off",
+      "fingerbot_battery_low"
+    ],
     "heuristicResolvable": true,
     "heuristicGaps": [],
     "heuristicFalsePositives": [],
-    "issues": [],
+    "issues": [
+      {
+        "type": "app_json_drift",
+        "severity": "info",
+        "count": 4,
+        "sample": [
+          "fingerbot_button_pressed",
+          "fingerbot_turned_on",
+          "fingerbot_turned_off",
+          "fingerbot_battery_low"
+        ],
+        "note": "compose cards absent from last .homeybuild/root app.json — Auto-Publish regenerates; runtime FlowCardHeuristics still resolves"
+      }
+    ],
     "productIds": [
       "TS0001",
       "TS0001_fingerbot",
@@ -3140,11 +3678,46 @@
       "handheld_remote_4_buttons_button_4gang_butto_cc2da",
       "handheld_remote_4_buttons_measure_battery_changed"
     ],
-    "missingInAppJson": [],
+    "missingInAppJson": [
+      "handheld_remote_4_buttons_button_4gang_button_pressed",
+      "handheld_remote_4_buttons_button_4gang_button_multi_press",
+      "handheld_remote_4_buttons_button_4gang_button_long_press",
+      "handheld_remote_4_buttons_button_4gang_button_double_press",
+      "handheld_remote_4_buttons_button_4gang_butto_5b2bb",
+      "handheld_remote_4_buttons_button_4gang_butto_7a536",
+      "handheld_remote_4_buttons_button_4gang_butto_5fe38",
+      "handheld_remote_4_buttons_button_4gang_butto_e53cd",
+      "handheld_remote_4_buttons_button_4gang_butto_c3e7c",
+      "handheld_remote_4_buttons_button_4gang_butto_9ce86",
+      "handheld_remote_4_buttons_button_4gang_butto_5067b",
+      "handheld_remote_4_buttons_button_4gang_butto_63fdf",
+      "handheld_remote_4_buttons_button_4gang_butto_4f5e6",
+      "handheld_remote_4_buttons_button_4gang_butto_06670",
+      "handheld_remote_4_buttons_button_4gang_butto_6e010",
+      "handheld_remote_4_buttons_button_4gang_butto_8528a",
+      "handheld_remote_4_buttons_button_4gang_butto_9b757",
+      "handheld_remote_4_buttons_button_4gang_butto_70209",
+      "handheld_remote_4_buttons_button_4gang_butto_46d09",
+      "handheld_remote_4_buttons_button_4gang_butto_c4c41"
+    ],
     "heuristicResolvable": true,
     "heuristicGaps": [],
     "heuristicFalsePositives": [],
-    "issues": [],
+    "issues": [
+      {
+        "type": "app_json_drift",
+        "severity": "info",
+        "count": 25,
+        "sample": [
+          "handheld_remote_4_buttons_button_4gang_button_pressed",
+          "handheld_remote_4_buttons_button_4gang_button_multi_press",
+          "handheld_remote_4_buttons_button_4gang_button_long_press",
+          "handheld_remote_4_buttons_button_4gang_button_double_press",
+          "handheld_remote_4_buttons_button_4gang_butto_5b2bb"
+        ],
+        "note": "compose cards absent from last .homeybuild/root app.json — Auto-Publish regenerates; runtime FlowCardHeuristics still resolves"
+      }
+    ],
     "productIds": [
       "SNZB-01M",
       "TS0014",
@@ -3207,7 +3780,28 @@
       "remote_button_emergency_sos_button_4gang_but_9325f",
       "remote_button_emergency_sos_measure_battery_changed"
     ],
-    "missingInAppJson": [],
+    "missingInAppJson": [
+      "remote_button_emergency_sos_button_4gang_but_5cf0a",
+      "remote_button_emergency_sos_button_4gang_but_dd980",
+      "remote_button_emergency_sos_button_4gang_but_d7435",
+      "remote_button_emergency_sos_button_4gang_but_1ebba",
+      "remote_button_emergency_sos_button_4gang_but_f8621",
+      "remote_button_emergency_sos_button_4gang_but_90901",
+      "remote_button_emergency_sos_button_4gang_but_6db7c",
+      "remote_button_emergency_sos_button_4gang_but_eb956",
+      "remote_button_emergency_sos_button_4gang_but_077a7",
+      "remote_button_emergency_sos_button_4gang_but_97b06",
+      "remote_button_emergency_sos_button_4gang_but_9cf20",
+      "remote_button_emergency_sos_button_4gang_but_0486d",
+      "remote_button_emergency_sos_button_4gang_but_5ffdd",
+      "remote_button_emergency_sos_button_4gang_but_689e0",
+      "remote_button_emergency_sos_button_4gang_but_2ce31",
+      "remote_button_emergency_sos_button_4gang_but_fd6f4",
+      "remote_button_emergency_sos_button_4gang_but_cdc51",
+      "remote_button_emergency_sos_button_4gang_but_7ce21",
+      "remote_button_emergency_sos_button_4gang_but_86ec0",
+      "remote_button_emergency_sos_button_4gang_but_9325f"
+    ],
     "heuristicResolvable": true,
     "heuristicGaps": [],
     "heuristicFalsePositives": [
@@ -3330,6 +3924,19 @@
           }
         ],
         "reason": "hashed Ngang cards — runtime ButtonDevice/FlowCardHeuristics resolves"
+      },
+      {
+        "type": "app_json_drift",
+        "severity": "info",
+        "count": 21,
+        "sample": [
+          "remote_button_emergency_sos_button_4gang_but_5cf0a",
+          "remote_button_emergency_sos_button_4gang_but_dd980",
+          "remote_button_emergency_sos_button_4gang_but_d7435",
+          "remote_button_emergency_sos_button_4gang_but_1ebba",
+          "remote_button_emergency_sos_button_4gang_but_f8621"
+        ],
+        "note": "compose cards absent from last .homeybuild/root app.json — Auto-Publish regenerates; runtime FlowCardHeuristics still resolves"
       }
     ],
     "productIds": [
@@ -3382,7 +3989,17 @@
       "remote_button_wireless_battery_low",
       "remote_button_wireless_measure_battery_changed"
     ],
-    "missingInAppJson": [],
+    "missingInAppJson": [
+      "remote_button_wireless_button_3gang_button_pressed",
+      "remote_button_wireless_button_3gang_button_multi_press",
+      "remote_button_wireless_button_3gang_button_long_press",
+      "remote_button_wireless_button_3gang_button_double_press",
+      "remote_button_wireless_button_3gang_button_1_long",
+      "remote_button_wireless_button_3gang_button_2_long",
+      "remote_button_wireless_button_3gang_button_3_long",
+      "remote_button_wireless_battery_low",
+      "remote_button_wireless_measure_battery_changed"
+    ],
     "heuristicResolvable": true,
     "heuristicGaps": [],
     "heuristicFalsePositives": [
@@ -3485,6 +4102,19 @@
           }
         ],
         "reason": "Ngang cards declared — CI tries generic patterns first; runtime resolves"
+      },
+      {
+        "type": "app_json_drift",
+        "severity": "info",
+        "count": 9,
+        "sample": [
+          "remote_button_wireless_button_3gang_button_pressed",
+          "remote_button_wireless_button_3gang_button_multi_press",
+          "remote_button_wireless_button_3gang_button_long_press",
+          "remote_button_wireless_button_3gang_button_double_press",
+          "remote_button_wireless_button_3gang_button_1_long"
+        ],
+        "note": "compose cards absent from last .homeybuild/root app.json — Auto-Publish regenerates; runtime FlowCardHeuristics still resolves"
       }
     ],
     "productIds": [
@@ -3532,7 +4162,25 @@
       "remote_button_wireless_fingerbot_voltage_changed",
       "remote_button_wireless_fingerbot_current_changed"
     ],
-    "missingInAppJson": [],
+    "missingInAppJson": [
+      "remote_button_wireless_fingerbot_button_wire_c8def",
+      "remote_button_wireless_fingerbot_button_wire_a5c3a",
+      "remote_button_wireless_fingerbot_button_wire_208e1",
+      "remote_button_wireless_fingerbot_button_wire_5bcb0",
+      "remote_button_wireless_fingerbot_button_wire_2095c",
+      "remote_button_wireless_fingerbot_button_wire_70b04",
+      "remote_button_wireless_fingerbot_button_wire_7b2a1",
+      "remote_button_wireless_fingerbot_button_wire_dec14",
+      "remote_button_wireless_fingerbot_button_wire_4e036",
+      "remote_button_wireless_fingerbot_button_wire_5042e",
+      "remote_button_wireless_fingerbot_button_wire_558b6",
+      "remote_button_wireless_fingerbot_physical_on",
+      "remote_button_wireless_fingerbot_physical_off",
+      "remote_button_wireless_fingerbot_measure_power_changed",
+      "remote_button_wireless_fingerbot_meter_power_changed",
+      "remote_button_wireless_fingerbot_voltage_changed",
+      "remote_button_wireless_fingerbot_current_changed"
+    ],
     "heuristicResolvable": true,
     "heuristicGaps": [],
     "heuristicFalsePositives": [
@@ -3605,6 +4253,19 @@
           }
         ],
         "reason": "socket hybrid — runtime PhysicalButtonMixin + switch_1gang/physical_on"
+      },
+      {
+        "type": "app_json_drift",
+        "severity": "info",
+        "count": 17,
+        "sample": [
+          "remote_button_wireless_fingerbot_button_wire_c8def",
+          "remote_button_wireless_fingerbot_button_wire_a5c3a",
+          "remote_button_wireless_fingerbot_button_wire_208e1",
+          "remote_button_wireless_fingerbot_button_wire_5bcb0",
+          "remote_button_wireless_fingerbot_button_wire_2095c"
+        ],
+        "note": "compose cards absent from last .homeybuild/root app.json — Auto-Publish regenerates; runtime FlowCardHeuristics still resolves"
       }
     ],
     "productIds": [
@@ -3655,11 +4316,46 @@
       "remote_button_wireless_handheld_battery_low",
       "remote_button_wireless_handheld_measure_battery_changed"
     ],
-    "missingInAppJson": [],
+    "missingInAppJson": [
+      "remote_button_wireless_handheld_button_4gang_89a72",
+      "remote_button_wireless_handheld_button_4gang_38dd2",
+      "remote_button_wireless_handheld_button_4gang_74277",
+      "remote_button_wireless_handheld_button_4gang_31d6f",
+      "remote_button_wireless_handheld_button_4gang_10c50",
+      "remote_button_wireless_handheld_button_4gang_fbbf5",
+      "remote_button_wireless_handheld_button_4gang_6995f",
+      "remote_button_wireless_handheld_button_4gang_358d7",
+      "remote_button_wireless_handheld_button_4gang_b209e",
+      "remote_button_wireless_handheld_button_4gang_d5c47",
+      "remote_button_wireless_handheld_button_4gang_1f75d",
+      "remote_button_wireless_handheld_button_4gang_8a6cc",
+      "remote_button_wireless_handheld_button_4gang_a56b1",
+      "remote_button_wireless_handheld_button_4gang_a38bf",
+      "remote_button_wireless_handheld_button_4gang_54a9f",
+      "remote_button_wireless_handheld_button_4gang_ac33b",
+      "remote_button_wireless_handheld_button_4gang_cb22f",
+      "remote_button_wireless_handheld_button_4gang_63b36",
+      "remote_button_wireless_handheld_button_4gang_c5636",
+      "remote_button_wireless_handheld_button_4gang_ed1c2"
+    ],
     "heuristicResolvable": true,
     "heuristicGaps": [],
     "heuristicFalsePositives": [],
-    "issues": [],
+    "issues": [
+      {
+        "type": "app_json_drift",
+        "severity": "info",
+        "count": 26,
+        "sample": [
+          "remote_button_wireless_handheld_button_4gang_89a72",
+          "remote_button_wireless_handheld_button_4gang_38dd2",
+          "remote_button_wireless_handheld_button_4gang_74277",
+          "remote_button_wireless_handheld_button_4gang_31d6f",
+          "remote_button_wireless_handheld_button_4gang_10c50"
+        ],
+        "note": "compose cards absent from last .homeybuild/root app.json — Auto-Publish regenerates; runtime FlowCardHeuristics still resolves"
+      }
+    ],
     "productIds": [
       "DISABLED_REMOTE_BUTTON_WIRELESS_HANDHELD"
     ],
@@ -3695,7 +4391,18 @@
       "remote_button_wireless_plug_physical_on",
       "remote_button_wireless_plug_physical_off"
     ],
-    "missingInAppJson": [],
+    "missingInAppJson": [
+      "remote_button_wireless_plug_turned_on",
+      "remote_button_wireless_plug_turned_off",
+      "remote_button_wireless_plug_measure_power_changed",
+      "remote_button_wireless_plug_measure_voltage__6eb92",
+      "remote_button_wireless_plug_measure_current__8295c",
+      "remote_button_wireless_plug_meter_power_changed",
+      "remote_button_wireless_plug_power_changed",
+      "remote_button_wireless_plug_battery_low",
+      "remote_button_wireless_plug_physical_on",
+      "remote_button_wireless_plug_physical_off"
+    ],
     "heuristicResolvable": true,
     "heuristicGaps": [],
     "heuristicFalsePositives": [
@@ -3768,6 +4475,19 @@
           }
         ],
         "reason": "socket hybrid — runtime PhysicalButtonMixin + switch_1gang/physical_on"
+      },
+      {
+        "type": "app_json_drift",
+        "severity": "info",
+        "count": 10,
+        "sample": [
+          "remote_button_wireless_plug_turned_on",
+          "remote_button_wireless_plug_turned_off",
+          "remote_button_wireless_plug_measure_power_changed",
+          "remote_button_wireless_plug_measure_voltage__6eb92",
+          "remote_button_wireless_plug_measure_current__8295c"
+        ],
+        "note": "compose cards absent from last .homeybuild/root app.json — Auto-Publish regenerates; runtime FlowCardHeuristics still resolves"
       }
     ],
     "productIds": [
@@ -3807,7 +4527,24 @@
       "remote_button_wireless_scene_button_wireless_32e39",
       "remote_button_wireless_scene_measure_battery_changed"
     ],
-    "missingInAppJson": [],
+    "missingInAppJson": [
+      "remote_button_wireless_scene_button_wireless_b4e6e",
+      "remote_button_wireless_scene_button_wireless_c17ed",
+      "remote_button_wireless_scene_button_wireless_266ac",
+      "remote_button_wireless_scene_button_wireless_05645",
+      "remote_button_wireless_scene_button_wireless_02c7a",
+      "remote_button_wireless_scene_button_wireless_a7122",
+      "remote_button_wireless_scene_button_wireless_00468",
+      "remote_button_wireless_scene_button_wireless_ef641",
+      "remote_button_wireless_scene_button_wireless_995e7",
+      "remote_button_wireless_scene_button_wireless_3bf82",
+      "remote_button_wireless_scene_button_wireless_15881",
+      "remote_button_wireless_scene_button_wireless_0a52a",
+      "remote_button_wireless_scene_button_wireless_7e6f8",
+      "remote_button_wireless_scene_button_wireless_c338a",
+      "remote_button_wireless_scene_button_wireless_32e39",
+      "remote_button_wireless_scene_measure_battery_changed"
+    ],
     "heuristicResolvable": true,
     "heuristicGaps": [],
     "heuristicFalsePositives": [
@@ -3970,6 +4707,19 @@
           }
         ],
         "reason": "hashed Ngang cards — runtime ButtonDevice/FlowCardHeuristics resolves"
+      },
+      {
+        "type": "app_json_drift",
+        "severity": "info",
+        "count": 16,
+        "sample": [
+          "remote_button_wireless_scene_button_wireless_b4e6e",
+          "remote_button_wireless_scene_button_wireless_c17ed",
+          "remote_button_wireless_scene_button_wireless_266ac",
+          "remote_button_wireless_scene_button_wireless_05645",
+          "remote_button_wireless_scene_button_wireless_02c7a"
+        ],
+        "note": "compose cards absent from last .homeybuild/root app.json — Auto-Publish regenerates; runtime FlowCardHeuristics still resolves"
       }
     ],
     "productIds": [
@@ -4012,11 +4762,37 @@
       "remote_button_wireless_smart_battery_low",
       "remote_button_wireless_smart_measure_battery_changed"
     ],
-    "missingInAppJson": [],
+    "missingInAppJson": [
+      "remote_button_wireless_smart_button_1gang_button_28b43",
+      "remote_button_wireless_smart_button_1gang_button_8c5c8",
+      "remote_button_wireless_smart_button_1gang_button_96943",
+      "remote_button_wireless_smart_button_1gang_button_28283",
+      "remote_button_wireless_smart_button_1gang_button_3e544",
+      "remote_button_wireless_smart_button_1gang_button_a5eca",
+      "remote_button_wireless_smart_button_1gang_button_ac594",
+      "remote_button_wireless_smart_button_1gang_button_d43b5",
+      "remote_button_wireless_smart_button_1gang_button_198cd",
+      "remote_button_wireless_smart_battery_low",
+      "remote_button_wireless_smart_measure_battery_changed"
+    ],
     "heuristicResolvable": true,
     "heuristicGaps": [],
     "heuristicFalsePositives": [],
-    "issues": [],
+    "issues": [
+      {
+        "type": "app_json_drift",
+        "severity": "info",
+        "count": 11,
+        "sample": [
+          "remote_button_wireless_smart_button_1gang_button_28b43",
+          "remote_button_wireless_smart_button_1gang_button_8c5c8",
+          "remote_button_wireless_smart_button_1gang_button_96943",
+          "remote_button_wireless_smart_button_1gang_button_28283",
+          "remote_button_wireless_smart_button_1gang_button_3e544"
+        ],
+        "note": "compose cards absent from last .homeybuild/root app.json — Auto-Publish regenerates; runtime FlowCardHeuristics still resolves"
+      }
+    ],
     "productIds": [
       "TS0601",
       "TS0215A"
@@ -4044,7 +4820,14 @@
       "remote_button_wireless_usb_voltage_changed",
       "remote_button_wireless_usb_current_changed"
     ],
-    "missingInAppJson": [],
+    "missingInAppJson": [
+      "remote_button_wireless_usb_physical_on",
+      "remote_button_wireless_usb_physical_off",
+      "remote_button_wireless_usb_measure_power_changed",
+      "remote_button_wireless_usb_meter_power_changed",
+      "remote_button_wireless_usb_voltage_changed",
+      "remote_button_wireless_usb_current_changed"
+    ],
     "heuristicResolvable": true,
     "heuristicGaps": [],
     "heuristicFalsePositives": [
@@ -4117,6 +4900,19 @@
           }
         ],
         "reason": "socket hybrid — runtime PhysicalButtonMixin + switch_1gang/physical_on"
+      },
+      {
+        "type": "app_json_drift",
+        "severity": "info",
+        "count": 6,
+        "sample": [
+          "remote_button_wireless_usb_physical_on",
+          "remote_button_wireless_usb_physical_off",
+          "remote_button_wireless_usb_measure_power_changed",
+          "remote_button_wireless_usb_meter_power_changed",
+          "remote_button_wireless_usb_voltage_changed"
+        ],
+        "note": "compose cards absent from last .homeybuild/root app.json — Auto-Publish regenerates; runtime FlowCardHeuristics still resolves"
       }
     ],
     "productIds": [
@@ -4156,7 +4952,24 @@
       "remote_button_wireless_valve_button_wireless_27465",
       "remote_button_wireless_valve_measure_battery_changed"
     ],
-    "missingInAppJson": [],
+    "missingInAppJson": [
+      "remote_button_wireless_valve_button_wireless_b8fc9",
+      "remote_button_wireless_valve_button_wireless_a8cb2",
+      "remote_button_wireless_valve_button_wireless_e34aa",
+      "remote_button_wireless_valve_button_wireless_68e9c",
+      "remote_button_wireless_valve_button_wireless_9a60f",
+      "remote_button_wireless_valve_button_wireless_e7c1d",
+      "remote_button_wireless_valve_button_wireless_eebb0",
+      "remote_button_wireless_valve_button_wireless_30e55",
+      "remote_button_wireless_valve_button_wireless_d3f7f",
+      "remote_button_wireless_valve_button_wireless_939b3",
+      "remote_button_wireless_valve_button_wireless_912b7",
+      "remote_button_wireless_valve_button_wireless_355a0",
+      "remote_button_wireless_valve_button_wireless_95d97",
+      "remote_button_wireless_valve_button_wireless_470c9",
+      "remote_button_wireless_valve_button_wireless_27465",
+      "remote_button_wireless_valve_measure_battery_changed"
+    ],
     "heuristicResolvable": true,
     "heuristicGaps": [],
     "heuristicFalsePositives": [
@@ -4319,6 +5132,19 @@
           }
         ],
         "reason": "hashed Ngang cards — runtime ButtonDevice/FlowCardHeuristics resolves"
+      },
+      {
+        "type": "app_json_drift",
+        "severity": "info",
+        "count": 16,
+        "sample": [
+          "remote_button_wireless_valve_button_wireless_b8fc9",
+          "remote_button_wireless_valve_button_wireless_a8cb2",
+          "remote_button_wireless_valve_button_wireless_e34aa",
+          "remote_button_wireless_valve_button_wireless_68e9c",
+          "remote_button_wireless_valve_button_wireless_9a60f"
+        ],
+        "note": "compose cards absent from last .homeybuild/root app.json — Auto-Publish regenerates; runtime FlowCardHeuristics still resolves"
       }
     ],
     "productIds": [
@@ -4357,7 +5183,20 @@
       "remote_button_wireless_wall_battery_low",
       "remote_button_wireless_wall_measure_battery_changed"
     ],
-    "missingInAppJson": [],
+    "missingInAppJson": [
+      "remote_button_wireless_wall_btn_pressed",
+      "remote_button_wireless_wall_btn_double",
+      "remote_button_wireless_wall_btn_long",
+      "remote_button_wireless_wall_btn_multi",
+      "remote_button_wireless_wall_btn1_pressed",
+      "remote_button_wireless_wall_btn1_double",
+      "remote_button_wireless_wall_btn1_long",
+      "remote_button_wireless_wall_btn1_triple",
+      "remote_button_wireless_wall_btn1_release",
+      "remote_button_wireless_wall_scene_recall",
+      "remote_button_wireless_wall_battery_low",
+      "remote_button_wireless_wall_measure_battery_changed"
+    ],
     "heuristicResolvable": true,
     "heuristicGaps": [],
     "heuristicFalsePositives": [
@@ -4390,6 +5229,19 @@
           }
         ],
         "reason": "socket hybrid — runtime PhysicalButtonMixin + switch_1gang/physical_on"
+      },
+      {
+        "type": "app_json_drift",
+        "severity": "info",
+        "count": 12,
+        "sample": [
+          "remote_button_wireless_wall_btn_pressed",
+          "remote_button_wireless_wall_btn_double",
+          "remote_button_wireless_wall_btn_long",
+          "remote_button_wireless_wall_btn_multi",
+          "remote_button_wireless_wall_btn1_pressed"
+        ],
+        "note": "compose cards absent from last .homeybuild/root app.json — Auto-Publish regenerates; runtime FlowCardHeuristics still resolves"
       }
     ],
     "productIds": [
@@ -4426,11 +5278,36 @@
       "remote_dimmer_physical_on",
       "remote_dimmer_physical_off"
     ],
-    "missingInAppJson": [],
+    "missingInAppJson": [
+      "remote_dimmer_button_on",
+      "remote_dimmer_button_off",
+      "remote_dimmer_button_toggle",
+      "remote_dimmer_brightness_up",
+      "remote_dimmer_brightness_down",
+      "remote_dimmer_brightness_stop",
+      "remote_dimmer_brightness_set",
+      "remote_dimmer_scene",
+      "remote_dimmer_physical_on",
+      "remote_dimmer_physical_off"
+    ],
     "heuristicResolvable": true,
     "heuristicGaps": [],
     "heuristicFalsePositives": [],
-    "issues": [],
+    "issues": [
+      {
+        "type": "app_json_drift",
+        "severity": "info",
+        "count": 10,
+        "sample": [
+          "remote_dimmer_button_on",
+          "remote_dimmer_button_off",
+          "remote_dimmer_button_toggle",
+          "remote_dimmer_brightness_up",
+          "remote_dimmer_brightness_down"
+        ],
+        "note": "compose cards absent from last .homeybuild/root app.json — Auto-Publish regenerates; runtime FlowCardHeuristics still resolves"
+      }
+    ],
     "productIds": [
       "TS1001"
     ],
@@ -4473,7 +5350,18 @@
       "scene_switch_1_button_1gang_button_1_triple",
       "scene_switch_1_button_1gang_button_1_release"
     ],
-    "missingInAppJson": [],
+    "missingInAppJson": [
+      "scene_switch_1_button_pressed",
+      "scene_switch_1_button_double_press",
+      "scene_switch_1_button_long_press",
+      "scene_switch_1_battery_changed",
+      "scene_switch_1_battery_low",
+      "scene_switch_1_button_1gang_button_1_pressed",
+      "scene_switch_1_button_1gang_button_1_double",
+      "scene_switch_1_button_1gang_button_1_long",
+      "scene_switch_1_button_1gang_button_1_triple",
+      "scene_switch_1_button_1gang_button_1_release"
+    ],
     "heuristicResolvable": false,
     "heuristicGaps": [
       {
@@ -4534,6 +5422,19 @@
           }
         ],
         "reason": "Ngang cards declared — CI tries generic patterns first; runtime resolves"
+      },
+      {
+        "type": "app_json_drift",
+        "severity": "info",
+        "count": 10,
+        "sample": [
+          "scene_switch_1_button_pressed",
+          "scene_switch_1_button_double_press",
+          "scene_switch_1_button_long_press",
+          "scene_switch_1_battery_changed",
+          "scene_switch_1_battery_low"
+        ],
+        "note": "compose cards absent from last .homeybuild/root app.json — Auto-Publish regenerates; runtime FlowCardHeuristics still resolves"
       }
     ],
     "productIds": [
@@ -4587,7 +5488,23 @@
       "scene_switch_2_button_2gang_button_2_triple",
       "scene_switch_2_button_2gang_button_2_release"
     ],
-    "missingInAppJson": [],
+    "missingInAppJson": [
+      "scene_switch_2_button_pressed",
+      "scene_switch_2_button_double_press",
+      "scene_switch_2_button_long_press",
+      "scene_switch_2_battery_low",
+      "scene_switch_2_measure_battery_changed",
+      "scene_switch_2_button_2gang_button_1_pressed",
+      "scene_switch_2_button_2gang_button_1_double",
+      "scene_switch_2_button_2gang_button_1_long",
+      "scene_switch_2_button_2gang_button_1_triple",
+      "scene_switch_2_button_2gang_button_1_release",
+      "scene_switch_2_button_2gang_button_2_pressed",
+      "scene_switch_2_button_2gang_button_2_double",
+      "scene_switch_2_button_2gang_button_2_long",
+      "scene_switch_2_button_2gang_button_2_triple",
+      "scene_switch_2_button_2gang_button_2_release"
+    ],
     "heuristicResolvable": false,
     "heuristicGaps": [
       {
@@ -4688,6 +5605,19 @@
           }
         ],
         "reason": "Ngang cards declared — CI tries generic patterns first; runtime resolves"
+      },
+      {
+        "type": "app_json_drift",
+        "severity": "info",
+        "count": 15,
+        "sample": [
+          "scene_switch_2_button_pressed",
+          "scene_switch_2_button_double_press",
+          "scene_switch_2_button_long_press",
+          "scene_switch_2_battery_low",
+          "scene_switch_2_measure_battery_changed"
+        ],
+        "note": "compose cards absent from last .homeybuild/root app.json — Auto-Publish regenerates; runtime FlowCardHeuristics still resolves"
       }
     ],
     "productIds": [
@@ -4748,7 +5678,28 @@
       "scene_switch_3_button_3gang_button_3_triple",
       "scene_switch_3_button_3gang_button_3_release"
     ],
-    "missingInAppJson": [],
+    "missingInAppJson": [
+      "scene_switch_3_button_pressed",
+      "scene_switch_3_button_double_press",
+      "scene_switch_3_button_long_press",
+      "scene_switch_3_battery_low",
+      "scene_switch_3_measure_battery_changed",
+      "scene_switch_3_button_3gang_button_1_pressed",
+      "scene_switch_3_button_3gang_button_1_double",
+      "scene_switch_3_button_3gang_button_1_long",
+      "scene_switch_3_button_3gang_button_1_triple",
+      "scene_switch_3_button_3gang_button_1_release",
+      "scene_switch_3_button_3gang_button_2_pressed",
+      "scene_switch_3_button_3gang_button_2_double",
+      "scene_switch_3_button_3gang_button_2_long",
+      "scene_switch_3_button_3gang_button_2_triple",
+      "scene_switch_3_button_3gang_button_2_release",
+      "scene_switch_3_button_3gang_button_3_pressed",
+      "scene_switch_3_button_3gang_button_3_double",
+      "scene_switch_3_button_3gang_button_3_long",
+      "scene_switch_3_button_3gang_button_3_triple",
+      "scene_switch_3_button_3gang_button_3_release"
+    ],
     "heuristicResolvable": false,
     "heuristicGaps": [
       {
@@ -4889,6 +5840,19 @@
           }
         ],
         "reason": "Ngang cards declared — CI tries generic patterns first; runtime resolves"
+      },
+      {
+        "type": "app_json_drift",
+        "severity": "info",
+        "count": 20,
+        "sample": [
+          "scene_switch_3_button_pressed",
+          "scene_switch_3_button_double_press",
+          "scene_switch_3_button_long_press",
+          "scene_switch_3_battery_low",
+          "scene_switch_3_measure_battery_changed"
+        ],
+        "note": "compose cards absent from last .homeybuild/root app.json — Auto-Publish regenerates; runtime FlowCardHeuristics still resolves"
       }
     ],
     "productIds": [
@@ -4983,7 +5947,28 @@
       "scene_switch_4_physical_on",
       "scene_switch_4_physical_off"
     ],
-    "missingInAppJson": [],
+    "missingInAppJson": [
+      "scene_switch_4_button_4gang_button_multi_press",
+      "scene_switch_4_button_4gang_button_long_press",
+      "scene_switch_4_button_4gang_button_double_press",
+      "scene_switch_4_button_4gang_button_pressed",
+      "scene_switch_4_button_pressed",
+      "scene_switch_4_button_double_press",
+      "scene_switch_4_button_long_press",
+      "scene_switch_4_button_1_pressed",
+      "scene_switch_4_button_1_double",
+      "scene_switch_4_button_1_long",
+      "scene_switch_4_button_2_pressed",
+      "scene_switch_4_button_2_double",
+      "scene_switch_4_button_2_long",
+      "scene_switch_4_button_3_pressed",
+      "scene_switch_4_button_3_double",
+      "scene_switch_4_button_3_long",
+      "scene_switch_4_button_4_pressed",
+      "scene_switch_4_button_4_double",
+      "scene_switch_4_button_4_long",
+      "scene_switch_4_battery_changed"
+    ],
     "heuristicResolvable": false,
     "heuristicGaps": [
       {
@@ -5144,6 +6129,19 @@
           }
         ],
         "reason": "Ngang cards declared — CI tries generic patterns first; runtime resolves"
+      },
+      {
+        "type": "app_json_drift",
+        "severity": "info",
+        "count": 51,
+        "sample": [
+          "scene_switch_4_button_4gang_button_multi_press",
+          "scene_switch_4_button_4gang_button_long_press",
+          "scene_switch_4_button_4gang_button_double_press",
+          "scene_switch_4_button_4gang_button_pressed",
+          "scene_switch_4_button_pressed"
+        ],
+        "note": "compose cards absent from last .homeybuild/root app.json — Auto-Publish regenerates; runtime FlowCardHeuristics still resolves"
       }
     ],
     "productIds": [
@@ -5217,7 +6215,28 @@
       "scene_switch_6_button_6gang_button_6_triple",
       "scene_switch_6_button_6gang_button_6_release"
     ],
-    "missingInAppJson": [],
+    "missingInAppJson": [
+      "scene_switch_6_button_pressed",
+      "scene_switch_6_button_double_press",
+      "scene_switch_6_button_long_press",
+      "scene_switch_6_battery_low",
+      "scene_switch_6_measure_battery_changed",
+      "scene_switch_6_button_6gang_button_1_pressed",
+      "scene_switch_6_button_6gang_button_1_double",
+      "scene_switch_6_button_6gang_button_1_long",
+      "scene_switch_6_button_6gang_button_1_triple",
+      "scene_switch_6_button_6gang_button_1_release",
+      "scene_switch_6_button_6gang_button_2_pressed",
+      "scene_switch_6_button_6gang_button_2_double",
+      "scene_switch_6_button_6gang_button_2_long",
+      "scene_switch_6_button_6gang_button_2_triple",
+      "scene_switch_6_button_6gang_button_2_release",
+      "scene_switch_6_button_6gang_button_3_pressed",
+      "scene_switch_6_button_6gang_button_3_double",
+      "scene_switch_6_button_6gang_button_3_long",
+      "scene_switch_6_button_6gang_button_3_triple",
+      "scene_switch_6_button_6gang_button_3_release"
+    ],
     "heuristicResolvable": false,
     "heuristicGaps": [
       {
@@ -5418,6 +6437,19 @@
           }
         ],
         "reason": "Ngang cards declared — CI tries generic patterns first; runtime resolves"
+      },
+      {
+        "type": "app_json_drift",
+        "severity": "info",
+        "count": 35,
+        "sample": [
+          "scene_switch_6_button_pressed",
+          "scene_switch_6_button_double_press",
+          "scene_switch_6_button_long_press",
+          "scene_switch_6_battery_low",
+          "scene_switch_6_measure_battery_changed"
+        ],
+        "note": "compose cards absent from last .homeybuild/root app.json — Auto-Publish regenerates; runtime FlowCardHeuristics still resolves"
       }
     ],
     "productIds": [
@@ -5485,7 +6517,28 @@
       "scene_switch_6ch_button_5_pressed",
       "scene_switch_6ch_button_6_pressed"
     ],
-    "missingInAppJson": [],
+    "missingInAppJson": [
+      "scene_switch_6ch_button_pressed",
+      "scene_switch_6ch_button_double_press",
+      "scene_switch_6ch_button_long_press",
+      "scene_switch_6ch_battery_low",
+      "scene_switch_6ch_measure_battery_changed",
+      "scene_switch_6ch_button_6gang_button_1_pressed",
+      "scene_switch_6ch_button_6gang_button_1_double",
+      "scene_switch_6ch_button_6gang_button_1_long",
+      "scene_switch_6ch_button_6gang_button_1_triple",
+      "scene_switch_6ch_button_6gang_button_1_release",
+      "scene_switch_6ch_button_6gang_button_2_pressed",
+      "scene_switch_6ch_button_6gang_button_2_double",
+      "scene_switch_6ch_button_6gang_button_2_long",
+      "scene_switch_6ch_button_6gang_button_2_triple",
+      "scene_switch_6ch_button_6gang_button_2_release",
+      "scene_switch_6ch_button_6gang_button_3_pressed",
+      "scene_switch_6ch_button_6gang_button_3_double",
+      "scene_switch_6ch_button_6gang_button_3_long",
+      "scene_switch_6ch_button_6gang_button_3_triple",
+      "scene_switch_6ch_button_6gang_button_3_release"
+    ],
     "heuristicResolvable": false,
     "heuristicGaps": [
       {
@@ -5686,6 +6739,19 @@
           }
         ],
         "reason": "Ngang cards declared — CI tries generic patterns first; runtime resolves"
+      },
+      {
+        "type": "app_json_drift",
+        "severity": "info",
+        "count": 41,
+        "sample": [
+          "scene_switch_6ch_button_pressed",
+          "scene_switch_6ch_button_double_press",
+          "scene_switch_6ch_button_long_press",
+          "scene_switch_6ch_battery_low",
+          "scene_switch_6ch_measure_battery_changed"
+        ],
+        "note": "compose cards absent from last .homeybuild/root app.json — Auto-Publish regenerates; runtime FlowCardHeuristics still resolves"
       }
     ],
     "productIds": [
@@ -5732,7 +6798,19 @@
       "scene_switch_wall_button_2gang_button_2_double_pressed",
       "scene_switch_wall_button_2gang_button_2_long_pressed"
     ],
-    "missingInAppJson": [],
+    "missingInAppJson": [
+      "scene_switch_wall_button_pressed",
+      "scene_switch_wall_button_double_press",
+      "scene_switch_wall_button_long_press",
+      "scene_switch_wall_battery_low",
+      "scene_switch_wall_measure_battery_changed",
+      "scene_switch_wall_button_2gang_button_1_pressed",
+      "scene_switch_wall_button_2gang_button_1_double_pressed",
+      "scene_switch_wall_button_2gang_button_1_long_pressed",
+      "scene_switch_wall_button_2gang_button_2_pressed",
+      "scene_switch_wall_button_2gang_button_2_double_pressed",
+      "scene_switch_wall_button_2gang_button_2_long_pressed"
+    ],
     "heuristicResolvable": true,
     "heuristicGaps": [],
     "heuristicFalsePositives": [
@@ -5835,6 +6913,19 @@
           }
         ],
         "reason": "Ngang cards declared — CI tries generic patterns first; runtime resolves"
+      },
+      {
+        "type": "app_json_drift",
+        "severity": "info",
+        "count": 11,
+        "sample": [
+          "scene_switch_wall_button_pressed",
+          "scene_switch_wall_button_double_press",
+          "scene_switch_wall_button_long_press",
+          "scene_switch_wall_battery_low",
+          "scene_switch_wall_measure_battery_changed"
+        ],
+        "note": "compose cards absent from last .homeybuild/root app.json — Auto-Publish regenerates; runtime FlowCardHeuristics still resolves"
       }
     ],
     "productIds": [
@@ -5877,11 +6968,33 @@
       "smart_button_switch_physical_on",
       "smart_button_switch_physical_off"
     ],
-    "missingInAppJson": [],
+    "missingInAppJson": [
+      "smart_button_switch_button_1gang_button_1_pressed",
+      "smart_button_switch_button_1gang_button_1_double",
+      "smart_button_switch_button_1gang_button_1_long",
+      "smart_button_switch_button_1gang_button_1_triple",
+      "smart_button_switch_button_1gang_button_1_release",
+      "smart_button_switch_physical_on",
+      "smart_button_switch_physical_off"
+    ],
     "heuristicResolvable": true,
     "heuristicGaps": [],
     "heuristicFalsePositives": [],
-    "issues": [],
+    "issues": [
+      {
+        "type": "app_json_drift",
+        "severity": "info",
+        "count": 7,
+        "sample": [
+          "smart_button_switch_button_1gang_button_1_pressed",
+          "smart_button_switch_button_1gang_button_1_double",
+          "smart_button_switch_button_1gang_button_1_long",
+          "smart_button_switch_button_1gang_button_1_triple",
+          "smart_button_switch_button_1gang_button_1_release"
+        ],
+        "note": "compose cards absent from last .homeybuild/root app.json — Auto-Publish regenerates; runtime FlowCardHeuristics still resolves"
+      }
+    ],
     "productIds": [
       "TS0040",
       "SNZB-01",
@@ -5944,11 +7057,44 @@
       "smart_knob_scene_recall",
       "smart_knob_measure_battery_changed"
     ],
-    "missingInAppJson": [],
+    "missingInAppJson": [
+      "smart_knob_button_1gang_button_pressed",
+      "smart_knob_button_1gang_button_double_press",
+      "smart_knob_button_1gang_button_long_press",
+      "smart_knob_button_1gang_button_multi_press",
+      "smart_knob_button_1gang_button_1_pressed",
+      "smart_knob_button_1gang_button_1_double",
+      "smart_knob_button_1gang_button_1_long",
+      "smart_knob_button_1gang_button_1_triple",
+      "smart_knob_button_1gang_button_1_release",
+      "smart_knob_battery_low",
+      "smart_knob_button_1gang_button_scene_recall",
+      "smart_knob_rotate_left",
+      "smart_knob_rotate_right",
+      "smart_knob_press_and_rotate_left",
+      "smart_knob_press_and_rotate_right",
+      "smart_knob_brightness_changed",
+      "smart_knob_scene_recall",
+      "smart_knob_measure_battery_changed"
+    ],
     "heuristicResolvable": true,
     "heuristicGaps": [],
     "heuristicFalsePositives": [],
-    "issues": [],
+    "issues": [
+      {
+        "type": "app_json_drift",
+        "severity": "info",
+        "count": 18,
+        "sample": [
+          "smart_knob_button_1gang_button_pressed",
+          "smart_knob_button_1gang_button_double_press",
+          "smart_knob_button_1gang_button_long_press",
+          "smart_knob_button_1gang_button_multi_press",
+          "smart_knob_button_1gang_button_1_pressed"
+        ],
+        "note": "compose cards absent from last .homeybuild/root app.json — Auto-Publish regenerates; runtime FlowCardHeuristics still resolves"
+      }
+    ],
     "productIds": [
       "TS004F",
       "ERS-10TZBVK-AA",
@@ -6007,7 +7153,21 @@
       "smart_knob_rotary_physical_on",
       "smart_knob_rotary_physical_off"
     ],
-    "missingInAppJson": [],
+    "missingInAppJson": [
+      "smart_knob_rotary_rotate_left",
+      "smart_knob_rotary_rotate_right",
+      "smart_knob_rotary_pressed",
+      "smart_knob_rotary_single_press",
+      "smart_knob_rotary_double_press",
+      "smart_knob_rotary_long_press",
+      "smart_knob_rotary_battery_low",
+      "smart_knob_rotary_press_and_rotate_left",
+      "smart_knob_rotary_press_and_rotate_right",
+      "smart_knob_rotary_scene_recall",
+      "smart_knob_rotary_brightness_changed",
+      "smart_knob_rotary_physical_on",
+      "smart_knob_rotary_physical_off"
+    ],
     "heuristicResolvable": true,
     "heuristicGaps": [],
     "heuristicFalsePositives": [
@@ -6080,6 +7240,19 @@
           }
         ],
         "reason": "socket hybrid — runtime PhysicalButtonMixin + switch_1gang/physical_on"
+      },
+      {
+        "type": "app_json_drift",
+        "severity": "info",
+        "count": 13,
+        "sample": [
+          "smart_knob_rotary_rotate_left",
+          "smart_knob_rotary_rotate_right",
+          "smart_knob_rotary_pressed",
+          "smart_knob_rotary_single_press",
+          "smart_knob_rotary_double_press"
+        ],
+        "note": "compose cards absent from last .homeybuild/root app.json — Auto-Publish regenerates; runtime FlowCardHeuristics still resolves"
       }
     ],
     "productIds": [
@@ -6142,11 +7315,38 @@
       "smart_knob_switch_battery_low",
       "smart_knob_switch_scene_recall"
     ],
-    "missingInAppJson": [],
+    "missingInAppJson": [
+      "smart_knob_switch_button_1gang_button_1_pressed",
+      "smart_knob_switch_button_1gang_button_1_double",
+      "smart_knob_switch_button_1gang_button_1_long",
+      "smart_knob_switch_button_1gang_button_1_triple",
+      "smart_knob_switch_button_1gang_button_1_release",
+      "smart_knob_switch_rotate_left",
+      "smart_knob_switch_rotate_right",
+      "smart_knob_switch_press_and_rotate_left",
+      "smart_knob_switch_press_and_rotate_right",
+      "smart_knob_switch_brightness_changed",
+      "smart_knob_switch_battery_low",
+      "smart_knob_switch_scene_recall"
+    ],
     "heuristicResolvable": true,
     "heuristicGaps": [],
     "heuristicFalsePositives": [],
-    "issues": [],
+    "issues": [
+      {
+        "type": "app_json_drift",
+        "severity": "info",
+        "count": 12,
+        "sample": [
+          "smart_knob_switch_button_1gang_button_1_pressed",
+          "smart_knob_switch_button_1gang_button_1_double",
+          "smart_knob_switch_button_1gang_button_1_long",
+          "smart_knob_switch_button_1gang_button_1_triple",
+          "smart_knob_switch_button_1gang_button_1_release"
+        ],
+        "note": "compose cards absent from last .homeybuild/root app.json — Auto-Publish regenerates; runtime FlowCardHeuristics still resolves"
+      }
+    ],
     "productIds": [
       "TS004F",
       "ERS-10TZBVK-AA",
@@ -6184,11 +7384,32 @@
       "smart_remote_1_button_1gang_button_1_release",
       "smart_remote_1_button_measure_battery_changed"
     ],
-    "missingInAppJson": [],
+    "missingInAppJson": [
+      "smart_remote_1_button_1gang_button_1_pressed",
+      "smart_remote_1_button_1gang_button_1_double",
+      "smart_remote_1_button_1gang_button_1_long",
+      "smart_remote_1_button_1gang_button_1_triple",
+      "smart_remote_1_button_1gang_button_1_release",
+      "smart_remote_1_button_measure_battery_changed"
+    ],
     "heuristicResolvable": true,
     "heuristicGaps": [],
     "heuristicFalsePositives": [],
-    "issues": [],
+    "issues": [
+      {
+        "type": "app_json_drift",
+        "severity": "info",
+        "count": 6,
+        "sample": [
+          "smart_remote_1_button_1gang_button_1_pressed",
+          "smart_remote_1_button_1gang_button_1_double",
+          "smart_remote_1_button_1gang_button_1_long",
+          "smart_remote_1_button_1gang_button_1_triple",
+          "smart_remote_1_button_1gang_button_1_release"
+        ],
+        "note": "compose cards absent from last .homeybuild/root app.json — Auto-Publish regenerates; runtime FlowCardHeuristics still resolves"
+      }
+    ],
     "productIds": [
       "TS004F"
     ],
@@ -6214,11 +7435,32 @@
       "smart_remote_1_button_2_button_1gang_button__04888",
       "smart_remote_1_button_2_measure_battery_changed"
     ],
-    "missingInAppJson": [],
+    "missingInAppJson": [
+      "smart_remote_1_button_2_button_1gang_button__76f3b",
+      "smart_remote_1_button_2_button_1gang_button__ca977",
+      "smart_remote_1_button_2_button_1gang_button_1_long",
+      "smart_remote_1_button_2_button_1gang_button__71271",
+      "smart_remote_1_button_2_button_1gang_button__04888",
+      "smart_remote_1_button_2_measure_battery_changed"
+    ],
     "heuristicResolvable": true,
     "heuristicGaps": [],
     "heuristicFalsePositives": [],
-    "issues": [],
+    "issues": [
+      {
+        "type": "app_json_drift",
+        "severity": "info",
+        "count": 6,
+        "sample": [
+          "smart_remote_1_button_2_button_1gang_button__76f3b",
+          "smart_remote_1_button_2_button_1gang_button__ca977",
+          "smart_remote_1_button_2_button_1gang_button_1_long",
+          "smart_remote_1_button_2_button_1gang_button__71271",
+          "smart_remote_1_button_2_button_1gang_button__04888"
+        ],
+        "note": "compose cards absent from last .homeybuild/root app.json — Auto-Publish regenerates; runtime FlowCardHeuristics still resolves"
+      }
+    ],
     "productIds": [
       "TS004F"
     ],
@@ -6255,11 +7497,31 @@
       "smart_remote_4_buttons_button_4gang_button_4_long",
       "smart_remote_4_buttons_measure_battery_changed"
     ],
-    "missingInAppJson": [],
+    "missingInAppJson": [
+      "smart_remote_4_buttons_button_4gang_button_1_long",
+      "smart_remote_4_buttons_button_4gang_button_2_long",
+      "smart_remote_4_buttons_button_4gang_button_3_long",
+      "smart_remote_4_buttons_button_4gang_button_4_long",
+      "smart_remote_4_buttons_measure_battery_changed"
+    ],
     "heuristicResolvable": true,
     "heuristicGaps": [],
     "heuristicFalsePositives": [],
-    "issues": [],
+    "issues": [
+      {
+        "type": "app_json_drift",
+        "severity": "info",
+        "count": 5,
+        "sample": [
+          "smart_remote_4_buttons_button_4gang_button_1_long",
+          "smart_remote_4_buttons_button_4gang_button_2_long",
+          "smart_remote_4_buttons_button_4gang_button_3_long",
+          "smart_remote_4_buttons_button_4gang_button_4_long",
+          "smart_remote_4_buttons_measure_battery_changed"
+        ],
+        "note": "compose cards absent from last .homeybuild/root app.json — Auto-Publish regenerates; runtime FlowCardHeuristics still resolves"
+      }
+    ],
     "productIds": [
       "TS0215A",
       "TS0601"
@@ -6291,11 +7553,32 @@
       "wall_remote_1_gang_button_1gang_button_1_release",
       "wall_remote_1_gang_measure_battery_changed"
     ],
-    "missingInAppJson": [],
+    "missingInAppJson": [
+      "wall_remote_1_gang_button_1gang_button_1_pressed",
+      "wall_remote_1_gang_button_1gang_button_1_double",
+      "wall_remote_1_gang_button_1gang_button_1_long",
+      "wall_remote_1_gang_button_1gang_button_1_triple",
+      "wall_remote_1_gang_button_1gang_button_1_release",
+      "wall_remote_1_gang_measure_battery_changed"
+    ],
     "heuristicResolvable": true,
     "heuristicGaps": [],
     "heuristicFalsePositives": [],
-    "issues": [],
+    "issues": [
+      {
+        "type": "app_json_drift",
+        "severity": "info",
+        "count": 6,
+        "sample": [
+          "wall_remote_1_gang_button_1gang_button_1_pressed",
+          "wall_remote_1_gang_button_1gang_button_1_double",
+          "wall_remote_1_gang_button_1gang_button_1_long",
+          "wall_remote_1_gang_button_1gang_button_1_triple",
+          "wall_remote_1_gang_button_1gang_button_1_release"
+        ],
+        "note": "compose cards absent from last .homeybuild/root app.json — Auto-Publish regenerates; runtime FlowCardHeuristics still resolves"
+      }
+    ],
     "productIds": [
       "TS0041"
     ],
@@ -6327,11 +7610,25 @@
       "wall_remote_2_gang_buttons",
       "wall_remote_2_gang_measure_battery_changed"
     ],
-    "missingInAppJson": [],
+    "missingInAppJson": [
+      "wall_remote_2_gang_buttons",
+      "wall_remote_2_gang_measure_battery_changed"
+    ],
     "heuristicResolvable": true,
     "heuristicGaps": [],
     "heuristicFalsePositives": [],
-    "issues": [],
+    "issues": [
+      {
+        "type": "app_json_drift",
+        "severity": "info",
+        "count": 2,
+        "sample": [
+          "wall_remote_2_gang_buttons",
+          "wall_remote_2_gang_measure_battery_changed"
+        ],
+        "note": "compose cards absent from last .homeybuild/root app.json — Auto-Publish regenerates; runtime FlowCardHeuristics still resolves"
+      }
+    ],
     "productIds": [
       "TS0042"
     ],
@@ -6378,11 +7675,46 @@
       "wall_remote_3_gang_button_3gang_button_3_release",
       "wall_remote_3_gang_measure_battery_changed"
     ],
-    "missingInAppJson": [],
+    "missingInAppJson": [
+      "wall_remote_3_gang_button_3gang_button_pressed",
+      "wall_remote_3_gang_button_3gang_button_multi_press",
+      "wall_remote_3_gang_button_3gang_button_long_press",
+      "wall_remote_3_gang_button_3gang_button_double_press",
+      "wall_remote_3_gang_button_3gang_button_1_pressed",
+      "wall_remote_3_gang_button_3gang_button_1_double",
+      "wall_remote_3_gang_button_3gang_button_1_long",
+      "wall_remote_3_gang_button_3gang_button_1_triple",
+      "wall_remote_3_gang_button_3gang_button_1_release",
+      "wall_remote_3_gang_button_3gang_button_2_pressed",
+      "wall_remote_3_gang_button_3gang_button_2_double",
+      "wall_remote_3_gang_button_3gang_button_2_long",
+      "wall_remote_3_gang_button_3gang_button_2_triple",
+      "wall_remote_3_gang_button_3gang_button_2_release",
+      "wall_remote_3_gang_button_3gang_button_3_pressed",
+      "wall_remote_3_gang_button_3gang_button_3_double",
+      "wall_remote_3_gang_button_3gang_button_3_long",
+      "wall_remote_3_gang_button_3gang_button_3_triple",
+      "wall_remote_3_gang_button_3gang_button_3_release",
+      "wall_remote_3_gang_measure_battery_changed"
+    ],
     "heuristicResolvable": true,
     "heuristicGaps": [],
     "heuristicFalsePositives": [],
-    "issues": [],
+    "issues": [
+      {
+        "type": "app_json_drift",
+        "severity": "info",
+        "count": 20,
+        "sample": [
+          "wall_remote_3_gang_button_3gang_button_pressed",
+          "wall_remote_3_gang_button_3gang_button_multi_press",
+          "wall_remote_3_gang_button_3gang_button_long_press",
+          "wall_remote_3_gang_button_3gang_button_double_press",
+          "wall_remote_3_gang_button_3gang_button_1_pressed"
+        ],
+        "note": "compose cards absent from last .homeybuild/root app.json — Auto-Publish regenerates; runtime FlowCardHeuristics still resolves"
+      }
+    ],
     "productIds": [
       "TS0043"
     ],
@@ -6430,11 +7762,46 @@
       "wall_remote_4_gang_button_4gang_button_4_release",
       "wall_remote_4_gang_measure_battery_changed"
     ],
-    "missingInAppJson": [],
+    "missingInAppJson": [
+      "wall_remote_4_gang_button_4gang_button_pressed",
+      "wall_remote_4_gang_button_4gang_button_multi_press",
+      "wall_remote_4_gang_button_4gang_button_long_press",
+      "wall_remote_4_gang_button_4gang_button_double_press",
+      "wall_remote_4_gang_button_4gang_button_1_pressed",
+      "wall_remote_4_gang_button_4gang_button_1_double",
+      "wall_remote_4_gang_button_4gang_button_1_long",
+      "wall_remote_4_gang_button_4gang_button_1_triple",
+      "wall_remote_4_gang_button_4gang_button_1_release",
+      "wall_remote_4_gang_button_4gang_button_2_pressed",
+      "wall_remote_4_gang_button_4gang_button_2_double",
+      "wall_remote_4_gang_button_4gang_button_2_long",
+      "wall_remote_4_gang_button_4gang_button_2_triple",
+      "wall_remote_4_gang_button_4gang_button_2_release",
+      "wall_remote_4_gang_button_4gang_button_3_pressed",
+      "wall_remote_4_gang_button_4gang_button_3_double",
+      "wall_remote_4_gang_button_4gang_button_3_long",
+      "wall_remote_4_gang_button_4gang_button_3_triple",
+      "wall_remote_4_gang_button_4gang_button_3_release",
+      "wall_remote_4_gang_button_4gang_button_4_pressed"
+    ],
     "heuristicResolvable": true,
     "heuristicGaps": [],
     "heuristicFalsePositives": [],
-    "issues": [],
+    "issues": [
+      {
+        "type": "app_json_drift",
+        "severity": "info",
+        "count": 25,
+        "sample": [
+          "wall_remote_4_gang_button_4gang_button_pressed",
+          "wall_remote_4_gang_button_4gang_button_multi_press",
+          "wall_remote_4_gang_button_4gang_button_long_press",
+          "wall_remote_4_gang_button_4gang_button_double_press",
+          "wall_remote_4_gang_button_4gang_button_1_pressed"
+        ],
+        "note": "compose cards absent from last .homeybuild/root app.json — Auto-Publish regenerates; runtime FlowCardHeuristics still resolves"
+      }
+    ],
     "productIds": [
       "TS0043",
       "TS0601",
@@ -6463,11 +7830,29 @@
       "wall_remote_4_gang_2_physical_off",
       "wall_remote_4_gang_2_measure_battery_changed"
     ],
-    "missingInAppJson": [],
+    "missingInAppJson": [
+      "wall_remote_4_gang_2_wall_remote_4_gang_buttons_2",
+      "wall_remote_4_gang_2_physical_on",
+      "wall_remote_4_gang_2_physical_off",
+      "wall_remote_4_gang_2_measure_battery_changed"
+    ],
     "heuristicResolvable": true,
     "heuristicGaps": [],
     "heuristicFalsePositives": [],
-    "issues": [],
+    "issues": [
+      {
+        "type": "app_json_drift",
+        "severity": "info",
+        "count": 4,
+        "sample": [
+          "wall_remote_4_gang_2_wall_remote_4_gang_buttons_2",
+          "wall_remote_4_gang_2_physical_on",
+          "wall_remote_4_gang_2_physical_off",
+          "wall_remote_4_gang_2_measure_battery_changed"
+        ],
+        "note": "compose cards absent from last .homeybuild/root app.json — Auto-Publish regenerates; runtime FlowCardHeuristics still resolves"
+      }
+    ],
     "productIds": [
       "TS0043",
       "TS0601",
@@ -6513,11 +7898,46 @@
       "wall_remote_4_gang_3_button_4gang_button_4_release",
       "wall_remote_4_gang_3_measure_battery_changed"
     ],
-    "missingInAppJson": [],
+    "missingInAppJson": [
+      "wall_remote_4_gang_3_button_4gang_button_1_pressed",
+      "wall_remote_4_gang_3_button_4gang_button_1_double",
+      "wall_remote_4_gang_3_button_4gang_button_1_long",
+      "wall_remote_4_gang_3_button_4gang_button_1_triple",
+      "wall_remote_4_gang_3_button_4gang_button_1_release",
+      "wall_remote_4_gang_3_button_4gang_button_2_pressed",
+      "wall_remote_4_gang_3_button_4gang_button_2_double",
+      "wall_remote_4_gang_3_button_4gang_button_2_long",
+      "wall_remote_4_gang_3_button_4gang_button_2_triple",
+      "wall_remote_4_gang_3_button_4gang_button_2_release",
+      "wall_remote_4_gang_3_button_4gang_button_3_pressed",
+      "wall_remote_4_gang_3_button_4gang_button_3_double",
+      "wall_remote_4_gang_3_button_4gang_button_3_long",
+      "wall_remote_4_gang_3_button_4gang_button_3_triple",
+      "wall_remote_4_gang_3_button_4gang_button_3_release",
+      "wall_remote_4_gang_3_button_4gang_button_4_pressed",
+      "wall_remote_4_gang_3_button_4gang_button_4_double",
+      "wall_remote_4_gang_3_button_4gang_button_4_long",
+      "wall_remote_4_gang_3_button_4gang_button_4_triple",
+      "wall_remote_4_gang_3_button_4gang_button_4_release"
+    ],
     "heuristicResolvable": true,
     "heuristicGaps": [],
     "heuristicFalsePositives": [],
-    "issues": [],
+    "issues": [
+      {
+        "type": "app_json_drift",
+        "severity": "info",
+        "count": 21,
+        "sample": [
+          "wall_remote_4_gang_3_button_4gang_button_1_pressed",
+          "wall_remote_4_gang_3_button_4gang_button_1_double",
+          "wall_remote_4_gang_3_button_4gang_button_1_long",
+          "wall_remote_4_gang_3_button_4gang_button_1_triple",
+          "wall_remote_4_gang_3_button_4gang_button_1_release"
+        ],
+        "note": "compose cards absent from last .homeybuild/root app.json — Auto-Publish regenerates; runtime FlowCardHeuristics still resolves"
+      }
+    ],
     "productIds": [
       "TS0043",
       "TS0601",
@@ -6592,11 +8012,46 @@
       "wall_remote_6_gang_button_6gang_button_6_release",
       "wall_remote_6_gang_measure_battery_changed"
     ],
-    "missingInAppJson": [],
+    "missingInAppJson": [
+      "wall_remote_6_gang_button_6gang_button_pressed",
+      "wall_remote_6_gang_button_6gang_button_multi_press",
+      "wall_remote_6_gang_button_6gang_button_long_press",
+      "wall_remote_6_gang_button_6gang_button_double_press",
+      "wall_remote_6_gang_button_6gang_button_1_pressed",
+      "wall_remote_6_gang_button_6gang_button_1_double",
+      "wall_remote_6_gang_button_6gang_button_1_long",
+      "wall_remote_6_gang_button_6gang_button_1_triple",
+      "wall_remote_6_gang_button_6gang_button_1_release",
+      "wall_remote_6_gang_button_6gang_button_2_pressed",
+      "wall_remote_6_gang_button_6gang_button_2_double",
+      "wall_remote_6_gang_button_6gang_button_2_long",
+      "wall_remote_6_gang_button_6gang_button_2_triple",
+      "wall_remote_6_gang_button_6gang_button_2_release",
+      "wall_remote_6_gang_button_6gang_button_3_pressed",
+      "wall_remote_6_gang_button_6gang_button_3_double",
+      "wall_remote_6_gang_button_6gang_button_3_long",
+      "wall_remote_6_gang_button_6gang_button_3_triple",
+      "wall_remote_6_gang_button_6gang_button_3_release",
+      "wall_remote_6_gang_button_6gang_button_4_pressed"
+    ],
     "heuristicResolvable": true,
     "heuristicGaps": [],
     "heuristicFalsePositives": [],
-    "issues": [],
+    "issues": [
+      {
+        "type": "app_json_drift",
+        "severity": "info",
+        "count": 35,
+        "sample": [
+          "wall_remote_6_gang_button_6gang_button_pressed",
+          "wall_remote_6_gang_button_6gang_button_multi_press",
+          "wall_remote_6_gang_button_6gang_button_long_press",
+          "wall_remote_6_gang_button_6gang_button_double_press",
+          "wall_remote_6_gang_button_6gang_button_1_pressed"
+        ],
+        "note": "compose cards absent from last .homeybuild/root app.json — Auto-Publish regenerates; runtime FlowCardHeuristics still resolves"
+      }
+    ],
     "productIds": [
       "TS0046",
       "TS0601",

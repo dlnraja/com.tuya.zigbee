@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-28T01:22:08.882Z",
+  "generatedAt": "2026-09-28T07:38:02.265Z",
   "driverCount": 52,
   "exemptIrDrivers": [
     "ir_remote",
@@ -12,7 +12,7 @@
   "highSeverityIssues": 0,
   "heuristicMissDrivers": 12,
   "heuristicFalsePositiveDrivers": 31,
-  "appJsonDriftDrivers": 0,
+  "appJsonDriftDrivers": 52,
   "appLevelButtonTriggers": [
     "button_pressed",
     "button_double_press",
