@@ -4,13 +4,13 @@ Silent only. **Never** Homey forum POST / PM / AI paste (T157628).
 Lock **manufacturerName + productId** only. Never invent pid. Dual-app: BOTH | MASTER_ONLY | STABLE_ONLY.
 **P2529:** also audit DP / clusters / flow wire / RX-TX (not couple-lock only).
 
-Generated: **2026-09-28T10:14:11.742Z** · Mode: `full`
+Generated: **2026-09-28T18:47:38.321Z** · Mode: `full`
 
 ## Snapshot
 
 | Channel | Count / note |
 |---------|--------------|
-| GitHub open issues | 2 |
+| GitHub open issues | 1 |
 | GitHub open PRs | 0 |
 | Forum needAction | 50 |
 | Gmail crash state | present |
@@ -22,17 +22,16 @@ Generated: **2026-09-28T10:14:11.742Z** · Mode: `full`
 | Score | Dual | Source | ID | Action |
 |------:|------|--------|----|--------|
 | 90 | BOTH | github-issue | #550 | investigate-code-silent |
-| 90 | BOTH | github-issue | #551 | investigate-code-silent |
 | 75 | BOTH | forum | forum-need-action | enrich:investigate + deep-functional (DP/cluster/flow/RX-TX, not mfr+pid only) |
 
 ## Phase results
 
 - **guard**: ok (0ms)
-- **github**: ok (391ms)
-- **gmail**: ok (218ms)
-- **forum**: ok (24679ms)
-- **drivers**: ok (1885ms)
-- **functionalDeep**: ok (59ms)
+- **github**: ok (316ms)
+- **gmail**: ok (201ms)
+- **forum**: ok (33679ms)
+- **drivers**: ok (1849ms)
+- **functionalDeep**: ok (50ms)
 
 ## Doctrine
 
