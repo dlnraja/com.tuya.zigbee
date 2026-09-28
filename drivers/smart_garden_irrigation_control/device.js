@@ -21,19 +21,29 @@ class IrrigationController extends TuyaZigbeeDevice {
 
     this.registerCapability('onoff', CLUSTER.ON_OFF);
 
-    this.registerCapabilityListener('onoff', async (value, options) => {
+    this.registerCapabilityListener('onoff', async (value, options = {}) => {
       this.log(`value ${value}`);
-      this.log(`options ${options.duration}`);
-      if (value && options.duration != undefined) {
+      this.log(`options ${options?.duration}`);
+
+      if (this._onOffTimeout) {
+        safeClearTimeout(this, this._onOffTimeout);
+        this._onOffTimeout = null;
+      }
+
+      if (value) {
         await zclNode.endpoints[1].clusters.onOff.setOn();
-        if (this._onOffTimeout) safeClearTimeout(this, this._onOffTimeout);
-        this._onOffTimeout = safeSetTimeout(this, async () => {
-          if (this._destroyed) return;
-          await zclNode.endpoints[1].clusters.onOff.setOff();
-        }, options.duration);
-      } else if (value && options.duration === undefined) {
-        await zclNode.endpoints[1].clusters.onOff.setOn();
-      } else if (!value && options.duration === undefined) {
+        if (options?.duration !== undefined) {
+          this._onOffTimeout = safeSetTimeout(this, async () => {
+            this._onOffTimeout = null;
+            if (this._destroyed) return;
+            try {
+              await zclNode.endpoints[1].clusters.onOff.setOff();
+            } catch (err) {
+              this.error('Failed to turn irrigation off after duration', err);
+            }
+          }, options.duration);
+        }
+      } else {
         await zclNode.endpoints[1].clusters.onOff.setOff();
       }
     });
