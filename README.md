@@ -36,12 +36,12 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 | **App Version** | v9.0.1292 |
 | **Drivers** | 434 (381 Zigbee + 53 WiFi) |
 | **Unique Fingerprints** | 4,702 |
-| **Pairing Variants** | 18,759 (4 case combos per fingerprint) |
+| **Pairing Variants** | 18,767 (4 case combos per fingerprint) |
 | **Unique Product IDs** | 933 |
 | **Flow Cards** | 6,030 |
 | **Unique Capabilities** | 170 |
 | **Native OTA Drivers** | 8 |
-| **Test Suites** | 537 files |
+| **Test Suites** | 538 files |
 | **SVG Icons** | 734 |
 | **Languages** | EN, FR, NL, DE |
 | **SDK / Homey** | 3 / >= 12.2.0 |
@@ -52,7 +52,7 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 | # | Driver | Fingerprints |
 |---|--------|-------------|
 | 1 | `climate_sensor` | 2,155 |
-| 2 | `switch_1gang` | 1,513 |
+| 2 | `switch_1gang` | 1,505 |
 | 3 | `curtain_motor` | 1,110 |
 | 4 | `presence_sensor_radar` | 999 |
 | 5 | `radiator_valve` | 609 |
@@ -65,8 +65,8 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 | 12 | `switch_4gang` | 300 |
 | 13 | `soil_sensor` | 282 |
 | 14 | `motion_sensor` | 267 |
-| 15 | `contact_sensor` | 229 |
-| 16 | `switch_3gang` | 223 |
+| 15 | `switch_3gang` | 227 |
+| 16 | `contact_sensor` | 225 |
 | 17 | `plug_energy_monitor` | 208 |
 | 18 | `thermostat_tuya_dp` | 200 |
 | 19 | `sensor_contact_zigbee` | 187 |
@@ -103,7 +103,7 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 
 | Version | Changes |
 |---------|---------|
-| **v9.0.1292** | v9.0.1291: |
+| **v9.0.1292** | Johan L99 transpose: Moes SR-ZS to 3-gang, air-monitor off IAS contact, TS0207 leak family enrich. |
 | **v9.0.1291** | Align P2572 Contre quoi with P2758: pay2byax only on contact_sensor_zigbee. |
 | **v9.0.1290** | Anti-bot gate aligns pay2byax with contact_sensor_zigbee; coin-cell battery listen-only; 6ycgarab smoke/CO not radar. |
 | **v9.0.1289** | Longer coin-cell battery life (no PowerCfg poll storms). Johan couple locks: pay2byax contact EF00 + 6ycgarab smoke/CO not radar. |
