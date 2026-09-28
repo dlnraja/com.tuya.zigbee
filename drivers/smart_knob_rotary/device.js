@@ -114,6 +114,19 @@ class SmartKnobRotaryDevice extends SmartKnobRotationMixin(TuyaZigbeeDevice) {
         // it makes them drop off the network hourly ("needs 2 presses",
         // LED flashing, battery drain). Read once + passive reports only.
 
+        // Check if UI already has battery or restore from store to preserve CR2032
+        const curBatt = this.getCapabilityValue?.('measure_battery');
+        if (curBatt != null && curBatt > 0) {
+          this.log('[KNOB] 🔋 Battery already present:', curBatt, '% - skipping readAttributes');
+          return;
+        }
+        const stored = await Promise.resolve(this.getStoreValue?.('last_battery_percentage')).catch(() => null);
+        if (stored != null && stored > 0) {
+          await this.safeSetCapabilityValue('measure_battery', Number(stored)).catch(() => {});
+          this.log('[KNOB] 🔋 Battery restored from store:', stored, '% - skipping readAttributes');
+          return;
+        }
+
         // Read initial battery value
         const batteryStatus = await powerCluster.readAttributes(['batteryPercentageRemaining']).catch(() => null);
         if (batteryStatus && batteryStatus.batteryPercentageRemaining !== undefined) {

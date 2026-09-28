@@ -197,6 +197,42 @@
           }
         }
       ]
+    },
+    {
+      "id": "temperature_offset",
+      "type": "number",
+      "label": {
+        "en": "Temperature Offset (°C)",
+        "fr": "Calibration Température (°C)",
+        "nl": "Temperatuur Kalibratie (°C)",
+        "de": "Temperaturkalibrierung (°C)"
+      },
+      "value": 0,
+      "min": -10,
+      "max": 10,
+      "step": 0.1,
+      "hint": {
+        "en": "Add or subtract from measured temperature (e.g. -0.5 or +1.2)",
+        "fr": "Ajouter ou soustraire de la température mesurée (ex. -0.5 ou +1.2)"
+      }
+    },
+    {
+      "id": "humidity_offset",
+      "type": "number",
+      "label": {
+        "en": "Humidity Offset (%)",
+        "fr": "Calibration Humidité (%)",
+        "nl": "Vochtigheid Kalibratie (%)",
+        "de": "Feuchtigkeitskalibrierung (%)"
+      },
+      "value": 0,
+      "min": -20,
+      "max": 20,
+      "step": 0.1,
+      "hint": {
+        "en": "Add or subtract from measured humidity (e.g. -3 or +5)",
+        "fr": "Ajouter ou soustraire de l'humidité mesurée (ex. -3 ou +5)"
+      }
     }
   ],
   "maintenanceActions": [
@@ -241,15 +277,18 @@
     },
     "measure_temperature": {
       "getable": true,
-      "preventInsights": false
+      "preventInsights": false,
+      "decimals": 1
     },
     "measure_humidity": {
       "getable": true,
-      "preventInsights": false
+      "preventInsights": false,
+      "decimals": 1
     },
     "measure_battery": {
       "getable": true,
-      "preventInsights": false
+      "preventInsights": false,
+      "decimals": 0
     }
   }
 }
