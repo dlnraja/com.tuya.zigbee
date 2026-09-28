@@ -1,13 +1,44 @@
 {
-  "timestamp": "2026-09-27T10:21:04.349Z",
+  "timestamp": "2026-09-28T02:05:40.350Z",
   "gate": "align-mfs-db-intelligent",
   "apply": false,
   "check": true,
-  "changeCount": 0,
+  "changeCount": 4,
   "skippedCount": 64,
   "highSeverityCount": 0,
-  "byAction": {},
-  "changes": [],
+  "byAction": {
+    "compose_exclusive": 4
+  },
+  "changes": [
+    {
+      "severity": "medium",
+      "action": "compose_exclusive",
+      "mfr": "_TZ3000_itnrsufe",
+      "from": "button_wireless_2",
+      "to": "lcdtemphumidsensor"
+    },
+    {
+      "severity": "medium",
+      "action": "compose_exclusive",
+      "mfr": "_TZE204_UO8QCAGC",
+      "from": "climate_sensor",
+      "to": "gas_sensor"
+    },
+    {
+      "severity": "medium",
+      "action": "compose_exclusive",
+      "mfr": "_tze284_uo8qcagc",
+      "from": "climate_sensor",
+      "to": "gas_sensor"
+    },
+    {
+      "severity": "medium",
+      "action": "compose_exclusive",
+      "mfr": "_tze200_uo8qcagc",
+      "from": "climate_sensor",
+      "to": "gas_sensor"
+    }
+  ],
   "skipped": [
     {
       "reason": "registry_driver_missing",
@@ -514,7 +545,6 @@
         "contact_sensor",
         "curtain_motor",
         "gas_sensor",
-        "illuminance_sensor",
         "ir_blaster",
         "presence_sensor_radar",
         "rain_sensor",
@@ -525,7 +555,6 @@
         "switch_1gang",
         "switch_2gang",
         "switch_3gang",
-        "vibration_sensor",
         "water_leak_sensor"
       ]
     }
