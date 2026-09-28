@@ -6267,3 +6267,59 @@ _TZ3000_l9brjwau, _TZ3000_blhvsaqf, _TZ3000_ysdv91bk, _TZ3000_hafsqare, _TZ3000_
 | router + ts0001 | JohanBendz/com.tuya.zigbee#PR1466 | pr |
 | router + Ts0001 | JohanBendz/com.tuya.zigbee#PR1466 | pr |
 | router + ts0002 | JohanBendz/com.tuya.zigbee#PR1466 | pr |
+
+
+## Auto-discovered from GitHub (2026-09-28)
+
+| Fingerprint | Source | Type |
+|---|---|---|
+| _TZ3210_ddigca5n + TS0203 | JohanBendz/com.tuya.zigbee#PR1470 | pr |
+| _TZ3210_ddigca5n + TS0225 | JohanBendz/com.tuya.zigbee#PR1470 | pr |
+| _TZ3210_ddigca5n + TS0202 | JohanBendz/com.tuya.zigbee#PR1470 | pr |
+| _TZ3210_ddigca5n + SNZB-03 | JohanBendz/com.tuya.zigbee#PR1470 | pr |
+| _TZ3210_ddigca5n + SQ510A | JohanBendz/com.tuya.zigbee#PR1470 | pr |
+| _TZ3210_ddigca5n + ZG-227Z | JohanBendz/com.tuya.zigbee#PR1470 | pr |
+| _TZ3210_ddigca5n + ZG-305Z | JohanBendz/com.tuya.zigbee#PR1470 | pr |
+| _TZ3210_ddigca5n + zg-227z | JohanBendz/com.tuya.zigbee#PR1470 | pr |
+| _TZ3210_ddigca5n + ts0203 | JohanBendz/com.tuya.zigbee#PR1470 | pr |
+| _TZ3210_ddigca5n + Ts0203 | JohanBendz/com.tuya.zigbee#PR1470 | pr |
+| _TZ3210_ddigca5n + RELAY | JohanBendz/com.tuya.zigbee#PR1470 | pr |
+| _TZ3210_ddigca5n + SENSOR | JohanBendz/com.tuya.zigbee#PR1470 | pr |
+| _TZ3210_ddigca5n + BUTTON | JohanBendz/com.tuya.zigbee#PR1470 | pr |
+| _TZ3210_ddigca5n + DIMMER | JohanBendz/com.tuya.zigbee#PR1470 | pr |
+| _TZ3210_ddigca5n + LIGHT | JohanBendz/com.tuya.zigbee#PR1470 | pr |
+| _TZ3210_ddigca5n + SWITCH | JohanBendz/com.tuya.zigbee#PR1470 | pr |
+| _TZ3210_ddigca5n + TEST | JohanBendz/com.tuya.zigbee#PR1470 | pr |
+| _TZ3210_ddigca5n + ts0225 | JohanBendz/com.tuya.zigbee#PR1470 | pr |
+| _TZ3210_ddigca5n + Ts0225 | JohanBendz/com.tuya.zigbee#PR1470 | pr |
+| _TZ3210_ddigca5n + ts0202 | JohanBendz/com.tuya.zigbee#PR1470 | pr |
+| _TZ3210_ddigca5n + Ts0202 | JohanBendz/com.tuya.zigbee#PR1470 | pr |
+| _TZ3210_ddigca5n + zg-305z | JohanBendz/com.tuya.zigbee#PR1470 | pr |
+| _TZ3210_ddigca5n + TS0505 | JohanBendz/com.tuya.zigbee#PR1470 | pr |
+| _TZ3210_ddigca5n + sq510a | JohanBendz/com.tuya.zigbee#PR1470 | pr |
+| _TZ3000_kfu8zapd + TS0203 | JohanBendz/com.tuya.zigbee#PR1470 | pr |
+| _TZ3000_kfu8zapd + TS0041 | JohanBendz/com.tuya.zigbee#PR1470 | pr |
+| _TZ3000_kfu8zapd + TS0202 | JohanBendz/com.tuya.zigbee#PR1470 | pr |
+| _TZ3000_kfu8zapd + TS0505B | JohanBendz/com.tuya.zigbee#PR1470 | pr |
+| _TZ3000_kfu8zapd + SNZB-03 | JohanBendz/com.tuya.zigbee#PR1470 | pr |
+| _TZ3000_kfu8zapd + SQ510A | JohanBendz/com.tuya.zigbee#PR1470 | pr |
+| _TZ3000_kfu8zapd + ZG-227Z | JohanBendz/com.tuya.zigbee#PR1470 | pr |
+| _TZ3000_kfu8zapd + ZG-305Z | JohanBendz/com.tuya.zigbee#PR1470 | pr |
+| _TZ3000_kfu8zapd + ts0041 | JohanBendz/com.tuya.zigbee#PR1470 | pr |
+| _TZ3000_kfu8zapd + Ts0041 | JohanBendz/com.tuya.zigbee#PR1470 | pr |
+| _TZ3000_kfu8zapd + zg-227z | JohanBendz/com.tuya.zigbee#PR1470 | pr |
+| _TZ3000_kfu8zapd + ts0203 | JohanBendz/com.tuya.zigbee#PR1470 | pr |
+| _TZ3000_kfu8zapd + Ts0203 | JohanBendz/com.tuya.zigbee#PR1470 | pr |
+| _TZ3000_kfu8zapd + RELAY | JohanBendz/com.tuya.zigbee#PR1470 | pr |
+| _TZ3000_kfu8zapd + SENSOR | JohanBendz/com.tuya.zigbee#PR1470 | pr |
+| _TZ3000_kfu8zapd + BUTTON | JohanBendz/com.tuya.zigbee#PR1470 | pr |
+| _TZ3000_kfu8zapd + DIMMER | JohanBendz/com.tuya.zigbee#PR1470 | pr |
+| _TZ3000_kfu8zapd + LIGHT | JohanBendz/com.tuya.zigbee#PR1470 | pr |
+| _TZ3000_kfu8zapd + SWITCH | JohanBendz/com.tuya.zigbee#PR1470 | pr |
+| _TZ3000_kfu8zapd + TEST | JohanBendz/com.tuya.zigbee#PR1470 | pr |
+| _TZ3000_kfu8zapd + ts0202 | JohanBendz/com.tuya.zigbee#PR1470 | pr |
+| _TZ3000_kfu8zapd + Ts0202 | JohanBendz/com.tuya.zigbee#PR1470 | pr |
+| _TZ3000_kfu8zapd + zg-305z | JohanBendz/com.tuya.zigbee#PR1470 | pr |
+| _TZ3000_kfu8zapd + TS0505 | JohanBendz/com.tuya.zigbee#PR1470 | pr |
+| _TZ3000_kfu8zapd + sq510a | JohanBendz/com.tuya.zigbee#PR1470 | pr |
+| _TZ3210_eejm8dcr + TS0203 | JohanBendz/com.tuya.zigbee#PR1470 | pr |
