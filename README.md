@@ -33,15 +33,15 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 
 | Metric | Value |
 |--------|-------|
-| **App Version** | v9.0.1288 |
+| **App Version** | v9.0.1289 |
 | **Drivers** | 434 (381 Zigbee + 53 WiFi) |
 | **Unique Fingerprints** | 4,702 |
-| **Pairing Variants** | 18,779 (4 case combos per fingerprint) |
+| **Pairing Variants** | 18,759 (4 case combos per fingerprint) |
 | **Unique Product IDs** | 933 |
 | **Flow Cards** | 6,030 |
 | **Unique Capabilities** | 170 |
 | **Native OTA Drivers** | 8 |
-| **Test Suites** | 536 files |
+| **Test Suites** | 537 files |
 | **SVG Icons** | 734 |
 | **Languages** | EN, FR, NL, DE |
 | **SDK / Homey** | 3 / >= 12.2.0 |
@@ -54,7 +54,7 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 | 1 | `climate_sensor` | 2,155 |
 | 2 | `switch_1gang` | 1,513 |
 | 3 | `curtain_motor` | 1,110 |
-| 4 | `presence_sensor_radar` | 1,011 |
+| 4 | `presence_sensor_radar` | 999 |
 | 5 | `radiator_valve` | 609 |
 | 6 | `generic_tuya` | 581 |
 | 7 | `button_wireless_2` | 566 |
@@ -65,7 +65,7 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 | 12 | `switch_4gang` | 300 |
 | 13 | `soil_sensor` | 282 |
 | 14 | `motion_sensor` | 267 |
-| 15 | `contact_sensor` | 237 |
+| 15 | `contact_sensor` | 229 |
 | 16 | `switch_3gang` | 223 |
 | 17 | `plug_energy_monitor` | 208 |
 | 18 | `thermostat_tuya_dp` | 200 |
@@ -103,7 +103,8 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 
 | Version | Changes |
 |---------|---------|
-| **v9.0.1288** | v9.0.1287: |
+| **v9.0.1289** | Longer coin-cell battery life (no PowerCfg poll storms). Johan couple locks: pay2byax contact EF00 + 6ycgarab smoke/CO not radar. |
+| **v9.0.1288** | v9.0.1288: automated publish, manifest sync, and Homey test promotion. |
 | **v9.0.1287** | Improved battery life for coin-cell sensors and remotes (no proactive PowerCfg polls). Restored TS0043 wireless button interview clusters… |
 | **v9.0.1286** | v9.0.1286: automated publish, manifest sync, and Homey test promotion. |
 | **v9.0.1285** | v9.0.1285: automated publish, manifest sync, and Homey test promotion. |
@@ -114,7 +115,6 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 | **v9.0.1280** | Radar presence cfg crash & phantom onoff click fix (#550), TS0043 _TZ3000_famkxci2 3-button scene remote pairing fix (#551), button batte… |
 | **v9.0.1279** | P2756: Eliminate button battery drain: disable unsolicited periodic scene recovery writes on sleeping devices, guard awake readAttributes… |
 | **v9.0.1278** | v9.0.1278: automated publish, manifest sync, and Homey test promotion. |
-| **v9.0.1277** | Battery consumption optimization & EMA anti-sag stability filter (TS0042/TS0043) + radar presence clear on leave (#550). |
 
 <!-- CHANGELOG_END -->
 
