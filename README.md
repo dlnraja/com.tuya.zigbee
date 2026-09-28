@@ -33,7 +33,7 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 
 | Metric | Value |
 |--------|-------|
-| **App Version** | v9.0.1286 |
+| **App Version** | v9.0.1288 |
 | **Drivers** | 434 (381 Zigbee + 53 WiFi) |
 | **Unique Fingerprints** | 4,702 |
 | **Pairing Variants** | 18,779 (4 case combos per fingerprint) |
@@ -41,7 +41,7 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 | **Flow Cards** | 6,030 |
 | **Unique Capabilities** | 170 |
 | **Native OTA Drivers** | 8 |
-| **Test Suites** | 535 files |
+| **Test Suites** | 536 files |
 | **SVG Icons** | 734 |
 | **Languages** | EN, FR, NL, DE |
 | **SDK / Homey** | 3 / >= 12.2.0 |
@@ -103,6 +103,8 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 
 | Version | Changes |
 |---------|---------|
+| **v9.0.1288** | v9.0.1287: |
+| **v9.0.1287** | Improved battery life for coin-cell sensors and remotes (no proactive PowerCfg polls). Restored TS0043 wireless button interview clusters… |
 | **v9.0.1286** | v9.0.1286: automated publish, manifest sync, and Homey test promotion. |
 | **v9.0.1285** | v9.0.1285: automated publish, manifest sync, and Homey test promotion. |
 | **v9.0.1284** | Fix radar _TZE204_gkfbdvyx ghost capabilities, strip phantoms on ceiling 24G, fix 0m distance & presence lock (GH#550). |
@@ -113,8 +115,6 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 | **v9.0.1279** | P2756: Eliminate button battery drain: disable unsolicited periodic scene recovery writes on sleeping devices, guard awake readAttributes… |
 | **v9.0.1278** | v9.0.1278: automated publish, manifest sync, and Homey test promotion. |
 | **v9.0.1277** | Battery consumption optimization & EMA anti-sag stability filter (TS0042/TS0043) + radar presence clear on leave (#550). |
-| **v9.0.1276** | v9.0.1276: automated publish, manifest sync, and Homey test promotion. |
-| **v9.0.1275** | v9.0.1275: automated publish, manifest sync, and Homey test promotion. |
 
 <!-- CHANGELOG_END -->
 
