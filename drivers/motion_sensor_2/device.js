@@ -73,9 +73,10 @@ class motion_sensor_2 extends TuyaZigbeeDevice {
     zclNode.endpoints[1].clusters[CLUSTER.ILLUMINANCE_MEASUREMENT.NAME]
       .on('attr.measuredValue', this.onIlluminanceMeasuredAttributeReport.bind(this));
 
-    // Tuya specific cluster handler (optional — _TZE200_3towulqd is ZCL-only)
-    if (zclNode.endpoints[1].clusters.tuya) {
+    if (zclNode?.endpoints?.[1]?.clusters?.tuya) {
       zclNode.endpoints[1].clusters.tuya.on('reporting', value => this.processResponse(value));
+      zclNode.endpoints[1].clusters.tuya.on('response', value => this.processResponse(value));
+      zclNode.endpoints[1].clusters.tuya.on('datapoint', value => this.processResponse(value));
     }
   }
 
