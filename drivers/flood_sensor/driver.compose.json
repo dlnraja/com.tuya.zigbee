@@ -21,8 +21,8 @@
     ]
   },
   "images": {
-    "small": "/drivers/flood_sensor/assets/images/small.png",
-    "large": "/drivers/flood_sensor/assets/images/large.png"
+    "large": "/{{driverAssetsPath}}/images/large.png",
+    "small": "/{{driverAssetsPath}}/images/small.png"
   },
   "zigbee": {
     "productId": [
@@ -70,5 +70,8 @@
       "getable": true,
       "preventInsights": false
     }
-  }
+  },
+  "_pidConflictNotes": [
+    "// PID-CONFLICT-NOTE TS0207 shared with 5 other drivers (cross-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md"
+  ]
 }
