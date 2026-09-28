@@ -94,8 +94,30 @@ class CurtainMotorDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedC
     return mfr.includes('3mzb0sdz');
   }
 
+  /** WHY(Johan #1472 / #1405): Quoya M515EGBZTN — 0=open, 100=closed + DP16 limits */
+  _isQuoyaM515() {
+    const mfr = String(
+      this.getManufacturerName?.()
+      || this.getSetting?.('zb_manufacturer_name')
+      || this.getData?.()?.manufacturerName
+      || ''
+    ).toLowerCase();
+    return mfr.includes('gubdgai2') || mfr.includes('vdiuwbkq');
+  }
+
   // v5.5.322: Extended DP mappings with lux sensor and button support
   get dpMappings() {
+    if (this._isQuoyaM515()) {
+      return {
+        1: {
+          capability: 'windowcoverings_state',
+          transform: (v) => (v === 0 || v === 'open' ? 'up' : v === 2 || v === 'close' ? 'down' : 'idle'),
+        },
+        2: { capability: 'windowcoverings_set', transform: (v) => (100 - Number(v)) / 100 },
+        13: { capability: 'measure_battery', divisor: 1 },
+        16: { capability: null, internal: 'border_limits', writable: true },
+      };
+    }
     if (this._isMoesZtsEurC()) {
       return {
         1: {
@@ -213,7 +235,7 @@ class CurtainMotorDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedC
     if (this._isMoesZtsEurC() || this._isBatteryTubularRoller()) {
       await this._ensureCoverMagicHandshake(zclNode).catch(() => {});
     }
-    if (this._isMoesZtsEurC()) {
+    if (this._isMoesZtsEurC() || this._isQuoyaM515()) {
       this._invertedPosition = true;
       try {
         if (typeof this._sendMoesMcuSyncTime === 'function') {

@@ -59,7 +59,11 @@ class lcdtemphumidsensor3 extends TuyaSpecificClusterDevice {
   async onNodeInit({ zclNode }) {
     this.printNode();
 
-    zclNode.endpoints[1].clusters.tuya.on("reporting", value => this.processResponse(value));
+    if (zclNode?.endpoints?.[1]?.clusters?.tuya) {
+      zclNode.endpoints[1].clusters.tuya.on("reporting", value => this.processResponse(value));
+      zclNode.endpoints[1].clusters.tuya.on("response", value => this.processResponse(value));
+      zclNode.endpoints[1].clusters.tuya.on("datapoint", value => this.processResponse(value));
+    }
   }
 
 
