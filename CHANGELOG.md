@@ -4,7 +4,12 @@ All notable changes to the **Tuya Unified Zigbee** app for Homey Pro.
 
 ---
 
-## [9.0.1285] - 2026-09-28
+## [9.0.1287] - 2026-09-28
+
+Improved battery life for coin-cell sensors and remotes (no proactive PowerCfg polls). Restored TS0043 wireless button interview clusters for pairing. Radar presence zero-clear gated again after meaningful distance.
+---
+
+ [9.0.1285] - 2026-09-28
 
 v9.0.1285: automated publish, manifest sync, and Homey test promotion.
 ---
