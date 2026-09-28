@@ -76,11 +76,15 @@ class SmartAirDetectionBox extends TuyaSpecificClusterDevice {
     const tuya = zclNode?.endpoints?.[1]?.clusters?.tuya;
     if (tuya && typeof tuya.on === "function") {
       // P112: listen reporting + response (Yannick #2029 mute after update)
-      tuya.on("response", (value) => this.handleDataPoint(value));
-      tuya.on("reporting", (value) => this.handleDataPoint(value));
-      if (typeof tuya.on === "function" && tuya.listenerCount) {
-        /* already attached */
-      }
+      const handleDp = async (value) => {
+        try {
+          await this.handleDataPoint(value);
+        } catch (err) {
+          this.error('Failed to handle Tuya datapoint', err);
+        }
+      };
+      tuya.on("response", handleDp);
+      tuya.on("reporting", handleDp);
     }
   }
 
