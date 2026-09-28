@@ -181,6 +181,14 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
       this.log(`[RADAR] P2755 refused addCapability(${cap}) (no-relay ceiling radar)`);
       return;
     }
+    if ((cfg.noTemperature || noRelayCeiling) && cap === 'measure_temperature') {
+      this.log(`[RADAR] Refused addCapability(${cap}) (radar has no temperature sensor)`);
+      return;
+    }
+    if ((cfg.noHumidity || noRelayCeiling) && cap === 'measure_humidity') {
+      this.log(`[RADAR] Refused addCapability(${cap}) (radar has no humidity sensor)`);
+      return;
+    }
     if (!cfg.hasMultiZone && (/^alarm_motion\.zone\d+$/.test(cap) || /^measure_luminance\.distance\.zone\d+$/.test(cap) || cap === 'measure_motion.classification')) {
       this.log(`[RADAR] P2755 refused addCapability(${cap}) (no multi-zone declared on this radar)`);
       return;
@@ -637,7 +645,9 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
     ];
     // WHY(P2459): treat known MTG/clrdrnya mfr as mains even if config cache still DEFAULT
     const mfrNow = (MfrHelper.getManufacturerName(this) || '').toLowerCase();
-    const forceMains = this.mainsPowered || MAINS_POWERED_RADARS.has(mfrNow) || MTG_RELAY_MFR_RE.test(mfrNow);
+    const cfg = this._getRadarConfig?.() || {};
+    const isCeiling = /gkfbdvyx|laokfqwu|ya4ft0w4/.test(mfrNow) || cfg.configName === 'ZY_M100_CEILING_24G';
+    const forceMains = this.mainsPowered || MAINS_POWERED_RADARS.has(mfrNow) || MTG_RELAY_MFR_RE.test(mfrNow) || isCeiling;
     if (forceMains) {
       // WHY(P2511 / VicHY): strip native + app-owned battery low after tip update
       // WHY(P2599 / VicHY #2252 OCR): Temperatura + Battery low still on tile @ 9.0.1053
@@ -645,8 +655,19 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
         'measure_battery',
         'alarm_battery',
         'tuya_battery_low',
-        'measure_temperature',
-        'measure_humidity',
+      );
+      if (isCeiling || cfg.hasRelay === false) {
+        phantoms.push('button.1', 'button', 'onoff');
+      }
+    }
+    if (cfg.noTemperature || isCeiling) {
+      phantoms.push('measure_temperature');
+    }
+    if (cfg.noHumidity || isCeiling) {
+      phantoms.push('measure_humidity');
+    }
+    if (!cfg.hasMultiZone) {
+      phantoms.push(
         'alarm_motion.zone1',
         'alarm_motion.zone2',
         'alarm_motion.zone3',
@@ -655,10 +676,6 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
         'measure_luminance.distance.zone3',
         'measure_motion.classification',
       );
-      // WHY(P2604 / GH#550): no-relay ceiling — strip Button 1 reinject after re-pair
-      if (/gkfbdvyx|laokfqwu|ya4ft0w4/.test(mfrNow)) {
-        phantoms.push('button.1', 'button', 'onoff');
-      }
     }
     // WHY(P2712 / VicHY #2255): Advanced Flows cards disappear/reload when we
     // removeCapability/setClass/setEnergy on a clean device every minute.
@@ -1631,8 +1648,8 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
     // WHY(P2618 / GH#550 Gmail Repair): discovery invents battery/zones/temp on ceiling
     // V3 (OCR: Battery 7%, Button 1, Zone 1–3) — skip for gkfbdvyx family.
     try {
-      const mfr = String(this.getSetting?.('zb_manufacturer_name') || '').toLowerCase();
-      if (/gkfbdvyx|ya4ft0w4|laokfqwu/.test(mfr) || (config && config.hasRelay === false && config.enableFindSwitchOnBoot)) {
+      const mfr = (MfrHelper.getManufacturerName(this) || '').toLowerCase();
+      if (/gkfbdvyx|ya4ft0w4|laokfqwu/.test(mfr) || (config && (config.configName === 'ZY_M100_CEILING_24G' || (config.hasRelay === false && (config.enableFindSwitchOnBoot || config.mainsPowered))))) {
         this.log(`[RADAR] P2618 skip auto-discovery DP${dpId}=${value} (ceiling V3)`);
         return;
       }
@@ -1736,12 +1753,13 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
           return;
         }
         if (rawEnum === 0) {
-          // Clear motion immediately; human clears via departure_delay / soft-clear / zero-dist
-          this.safeSetCapabilityValue('alarm_motion', false).catch(() => {});
-          if (this._distanceCorroboratesPresence()) {
-            this.log('[RADAR] P2719 DP1 none — keep human (distance corroborates)');
-            this._nudgeSurvivalWatchdog('presence');
+          // Clear motion immediately; if distance does not corroborate, clear human immediately too (MCU confirmed empty)
+          if (!this._distanceCorroboratesPresence()) {
+            this.log('[RADAR] P2719 DP1 none & empty distance — clear presence');
+            this._commitPresenceAndFlows(false);
           } else {
+            this.safeSetCapabilityValue('alarm_motion', false).catch(() => {});
+            this.log('[RADAR] P2719 DP1 none — keep human briefly (distance corroborates)');
             this._nudgeSurvivalWatchdog('dp1-none');
           }
           return;
@@ -1835,9 +1853,7 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
       // WHY(P2640 / GH#550): never zero-clear until a meaningful distance was seen —
       // find_switch OFF paints DP9=0 forever and would wipe lux/DP1 presence.
       if (config.clearPresenceOnZeroDistance && Number(gatedDistance) <= 0.05) {
-        if (this._distanceSeenMeaningful === true) {
-          this._commitPresenceAndFlows(false);
-        }
+        this._commitPresenceAndFlows(false);
       } else if (config.syncPresenceFromDistanceInference && typeof inferred === 'boolean') {
         const painted = this.getCapabilityValue('alarm_motion') === true
           || this.getCapabilityValue('alarm_human') === true;
@@ -1895,6 +1911,12 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
         this._lastDp103Lux = lux;
         this._lastLuxPaintAt = nowLux;
       } else if (Number(dpId) === 10) {
+        const mfr = (MfrHelper.getManufacturerName(this) || '').toLowerCase();
+        if (/gkfbdvyx|ya4ft0w4|laokfqwu/.test(mfr) || config?.configName === 'ZY_M100_CEILING_24G') {
+          this.log(`[RADAR] P2617 skip DP10 lux=${lux} on ceiling 24G (DP10 is not illuminance)`);
+          this._nudgeCeilingDistanceArmFromLux();
+          return;
+        }
         const recent103 = this._lastDp103LuxAt && (nowLux - this._lastDp103LuxAt) < 45_000;
         if (recent103) {
           this.log(`[RADAR] P2617 skip DP10 lux=${lux} (DP103 preferred)`);
