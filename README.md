@@ -4,11 +4,11 @@
 
 [![Version](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fraw.githubusercontent.com%2Fdlnraja%2Fcom.tuya.zigbee%2Fmaster%2Fapp.json&query=%24.version&label=version&color=blue)](https://homey.app/a/com.dlnraja.tuya.zigbee/)
 [![Drivers](https://img.shields.io/badge/drivers-434-brightgreen)](https://homey.app/a/com.dlnraja.tuya.zigbee/)
-[![Fingerprints](https://img.shields.io/badge/fingerprints-4,702%20unique-green)](https://homey.app/a/com.dlnraja.tuya.zigbee/)
+[![Fingerprints](https://img.shields.io/badge/fingerprints-4,700%20unique-green)](https://homey.app/a/com.dlnraja.tuya.zigbee/)
 [![SDK](https://img.shields.io/badge/SDK-3-orange)](https://apps.developer.homey.app/)
 [![License](https://img.shields.io/badge/license-GPL--3.0-green)](LICENSE)
 
-Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, sensors, lights, thermostats, covers, valves — **434 drivers**, **4,702 unique fingerprints**. No cloud required.
+Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, sensors, lights, thermostats, covers, valves — **434 drivers**, **4,700 unique fingerprints**. No cloud required.
 
 **What it does:**
 - Talks to devices on your Homey Zigbee mesh (Tuya DP `0xEF00` and standard ZCL)
@@ -33,15 +33,15 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 
 | Metric | Value |
 |--------|-------|
-| **App Version** | v9.0.1294 |
+| **App Version** | v9.0.1295 |
 | **Drivers** | 434 (381 Zigbee + 53 WiFi) |
-| **Unique Fingerprints** | 4,702 |
-| **Pairing Variants** | 18,742 (4 case combos per fingerprint) |
+| **Unique Fingerprints** | 4,700 |
+| **Pairing Variants** | 18,725 (4 case combos per fingerprint) |
 | **Unique Product IDs** | 933 |
 | **Flow Cards** | 6,030 |
 | **Unique Capabilities** | 170 |
 | **Native OTA Drivers** | 8 |
-| **Test Suites** | 539 files |
+| **Test Suites** | 540 files |
 | **SVG Icons** | 734 |
 | **Languages** | EN, FR, NL, DE |
 | **SDK / Homey** | 3 / >= 12.2.0 |
@@ -51,22 +51,22 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 
 | # | Driver | Fingerprints |
 |---|--------|-------------|
-| 1 | `climate_sensor` | 2,155 |
+| 1 | `climate_sensor` | 2,143 |
 | 2 | `switch_1gang` | 1,505 |
 | 3 | `curtain_motor` | 1,110 |
 | 4 | `presence_sensor_radar` | 987 |
 | 5 | `radiator_valve` | 609 |
 | 6 | `generic_tuya` | 581 |
 | 7 | `button_wireless_2` | 566 |
-| 8 | `wall_dimmer_tuya` | 548 |
+| 8 | `wall_dimmer_tuya` | 524 |
 | 9 | `device_radiator_valve` | 368 |
 | 10 | `switch_2gang` | 339 |
 | 11 | `diy_custom_zigbee` | 306 |
 | 12 | `switch_4gang` | 300 |
-| 13 | `soil_sensor` | 282 |
-| 14 | `motion_sensor` | 267 |
-| 15 | `switch_3gang` | 227 |
-| 16 | `contact_sensor` | 225 |
+| 13 | `motion_sensor` | 285 |
+| 14 | `soil_sensor` | 282 |
+| 15 | `contact_sensor` | 228 |
+| 16 | `switch_3gang` | 227 |
 | 17 | `plug_energy_monitor` | 208 |
 | 18 | `thermostat_tuya_dp` | 200 |
 | 19 | `sensor_contact_zigbee` | 187 |
@@ -103,7 +103,8 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 
 | Version | Changes |
 |---------|---------|
-| **v9.0.1294** | v9.0.1293: |
+| **v9.0.1295** | v9.0.1294: |
+| **v9.0.1294** | Johan comments: Fantem ZB003-X to motion, doorbell/PIR/contact misroutes fixed, tank DP2 cm lock. |
 | **v9.0.1293** | Johan L99 wave2: IAS leak family vs tuya twin, kb5noeto IAS motion, air9m6af 4-socket strip. |
 | **v9.0.1292** | Johan L99 transpose: Moes SR-ZS to 3-gang, air-monitor off IAS contact, TS0207 leak family enrich. |
 | **v9.0.1291** | Align P2572 Contre quoi with P2758: pay2byax only on contact_sensor_zigbee. |
@@ -114,7 +115,6 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 | **v9.0.1286** | v9.0.1286: automated publish, manifest sync, and Homey test promotion. |
 | **v9.0.1285** | v9.0.1285: automated publish, manifest sync, and Homey test promotion. |
 | **v9.0.1284** | Fix radar _TZE204_gkfbdvyx ghost capabilities, strip phantoms on ceiling 24G, fix 0m distance & presence lock (GH#550). |
-| **v9.0.1283** | v9.0.1283: automated publish, manifest sync, and Homey test promotion. |
 
 <!-- CHANGELOG_END -->
 
