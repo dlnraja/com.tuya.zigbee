@@ -840,7 +840,7 @@ class Button1GangDevice extends ButtonDevice {
     if (curBattery == null) {
       const stored = this.getStoreValue?.('measure_battery') ?? this.getStoreValue?.('battery_percent');
       if (stored != null && typeof stored === 'number' && stored > 0) {
-        this.setCapabilityValue('measure_battery', stored).catch(() => {});
+        this.safeSetCapabilityValue('measure_battery', stored).catch(() => {});
         curBattery = stored;
       }
     }
