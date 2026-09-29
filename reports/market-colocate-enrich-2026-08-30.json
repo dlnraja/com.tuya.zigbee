@@ -1,9 +1,15 @@
 {
-  "generatedAt": "2026-09-28T20:16:24.992Z",
+  "generatedAt": "2026-09-29T07:29:39.182Z",
   "mode": "APPLY",
   "policy": "P2319 enrichment-first colocate — never strip other drivers",
   "applied": [],
   "skipped": [
+    {
+      "mfr": "_TZE200_kb5noeto",
+      "pid": "ZG-204ZM",
+      "reason": "p2520-would-degrade",
+      "driver": "presence_sensor_radar"
+    },
     {
       "mfr": "_TZE200_wzk0x7fq",
       "pid": "ZG-102ZM",
@@ -15,6 +21,30 @@
       "pid": "TS0203",
       "reason": "p2520-would-degrade",
       "driver": "contact_sensor"
+    },
+    {
+      "mfr": "_TZE200_pay2byax",
+      "pid": "ZG-102Z",
+      "reason": "p2520-would-degrade",
+      "driver": "contact_sensor_zigbee"
+    },
+    {
+      "mfr": "_TZE200_pay2byax",
+      "pid": "ZG-102ZL",
+      "reason": "p2520-would-degrade",
+      "driver": "contact_sensor_zigbee"
+    },
+    {
+      "mfr": "_TZE204_pay2byax",
+      "pid": "ZG-102Z",
+      "reason": "p2520-would-degrade",
+      "driver": "contact_sensor_zigbee"
+    },
+    {
+      "mfr": "_TZE204_pay2byax",
+      "pid": "ZG-102ZL",
+      "reason": "p2520-would-degrade",
+      "driver": "contact_sensor_zigbee"
     },
     {
       "mfr": "_TZE200_n8dljorx",
@@ -157,32 +187,11 @@
       "soft": null
     },
     {
-      "mfr": "_TZ3210_rxqls8v0",
-      "pid": "TS0202",
-      "reason": "not-confident",
-      "tier": "pid_default",
-      "soft": "motion_sensor"
-    },
-    {
       "mfr": "_TZ3210_wp1k8xws",
       "pid": "TS0503B",
       "reason": "not-confident",
       "tier": "heuristic_pid",
       "soft": "bulb_rgb"
-    },
-    {
-      "mfr": "_TZ3210_wuhzzfqg",
-      "pid": "TS0202",
-      "reason": "not-confident",
-      "tier": "pid_default",
-      "soft": "motion_sensor"
-    },
-    {
-      "mfr": "_TZ3210_zmy9hjay",
-      "pid": "TS0202",
-      "reason": "not-confident",
-      "tier": "pid_default",
-      "soft": "motion_sensor"
     },
     {
       "mfr": "_TZB210_nfzrlz29",
