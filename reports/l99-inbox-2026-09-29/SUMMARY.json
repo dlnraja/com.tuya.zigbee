@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-29T10:13:00.837Z",
+  "generatedAt": "2026-09-29T17:04:03.851Z",
   "date": "2026-09-29",
   "mode": "full",
   "phases": [
@@ -12,18 +12,18 @@
     {
       "name": "github",
       "ok": true,
-      "durationMs": 348
+      "durationMs": 440
     },
     {
       "name": "gmail",
       "ok": true,
-      "durationMs": 233,
+      "durationMs": 161,
       "details": {
         "crash": {
           "ok": true,
           "skipped": false,
           "status": 0,
-          "durationMs": 44,
+          "durationMs": 32,
           "stderr": "",
           "stdoutTail": "[gmail-crash-pattern-gate] sources=32 hits=0 unknown=0\n  wrote .github/state/gmail-crash-patterns.json\n  verdict: ok\n"
         },
@@ -31,16 +31,16 @@
           "ok": true,
           "skipped": false,
           "status": 0,
-          "durationMs": 187,
+          "durationMs": 128,
           "stderr": "",
-          "stdoutTail": "[automate] inbox total=0 have=30 missing=0 ingested_now=0\n[recursive-treat] sources: 136\n[recursive-treat] wrote /home/runner/work/com.tuya.zigbee/com.tuya.zigbee/reports/diag-recursive-treat-2026-09-29\n{\n  \"generatedAt\": \"2026-09-29T10:13:01.405Z\",\n  \"methodology\": \"f647d35b-style full-body recursive treat — sacred couple never invented; P2246 derive from interview when ABSENT\",\n  \"sourcesScanned\": 136,\n  \"uniqueCases\": 122,\n  \"actionable\": 33,\n  \"derivedFromInterview\": 0,\n  \"signalTally\": {\n    \"scene_mode_unsupported\": 3,\n    \"wrong_driver_hint\": 4,\n    \"athom_socket_hang\": 2,\n    \"athom_processing_failed\": 2,\n    \"wrong_smart_rcbo\": 2,\n    \"flow_guard_spam\": 2,\n    \"processing_failed\": 2,\n    \"scene_0x8004\": 2,\n    \"invalid_flow_card\": 1,\n    \"missing_capability_listener\": 1\n  },\n  \"gmailBodiesPresent\": 30,\n  \"interviews\": 90\n}\n[automate] status → .github/state/diag-recursive-inbox/automate-status.json\n{\n  \"total\": 0,\n  \"have\": 30,\n  \"missing\": 0,\n  \"missingIds\": []\n}\n[automate] actionable= 33 gmailBodies= 30\n"
+          "stdoutTail": "[automate] inbox total=0 have=30 missing=0 ingested_now=0\n[recursive-treat] sources: 136\n[recursive-treat] wrote /home/runner/work/com.tuya.zigbee/com.tuya.zigbee/reports/diag-recursive-treat-2026-09-29\n{\n  \"generatedAt\": \"2026-09-29T17:04:04.442Z\",\n  \"methodology\": \"f647d35b-style full-body recursive treat — sacred couple never invented; P2246 derive from interview when ABSENT\",\n  \"sourcesScanned\": 136,\n  \"uniqueCases\": 122,\n  \"actionable\": 38,\n  \"derivedFromInterview\": 0,\n  \"signalTally\": {\n    \"scene_mode_unsupported\": 3,\n    \"wrong_driver_hint\": 4,\n    \"athom_socket_hang\": 2,\n    \"athom_processing_failed\": 2,\n    \"wrong_smart_rcbo\": 2,\n    \"flow_guard_spam\": 2,\n    \"processing_failed\": 2,\n    \"scene_0x8004\": 2,\n    \"invalid_flow_card\": 1,\n    \"missing_capability_listener\": 1\n  },\n  \"gmailBodiesPresent\": 30,\n  \"interviews\": 90\n}\n[automate] status → .github/state/diag-recursive-inbox/automate-status.json\n{\n  \"total\": 0,\n  \"have\": 30,\n  \"missing\": 0,\n  \"missingIds\": []\n}\n[automate] actionable= 38 gmailBodies= 30\n"
         }
       }
     },
     {
       "name": "forum",
       "ok": true,
-      "durationMs": 27821,
+      "durationMs": 26285,
       "skipScan": false,
       "steps": [
         {
@@ -64,7 +64,7 @@
     {
       "name": "drivers",
       "ok": true,
-      "durationMs": 1822,
+      "durationMs": 1152,
       "mfs": {
         "high": 0,
         "changes": 0,
@@ -75,7 +75,7 @@
     {
       "name": "functionalDeep",
       "ok": true,
-      "durationMs": 57,
+      "durationMs": 38,
       "note": "P2529 complementary deep functional (soft)"
     },
     {
@@ -93,11 +93,11 @@
     {
       "name": "gates",
       "ok": true,
-      "durationMs": 2694
+      "durationMs": 1832
     }
   ],
   "github": {
-    "harvestedAt": "2026-09-29T10:13:01.185Z",
+    "harvestedAt": "2026-09-29T17:04:04.290Z",
     "repo": "dlnraja/com.tuya.zigbee",
     "auth": "token",
     "error": null,
@@ -124,14 +124,14 @@
     "totals": {
       "posts": 216,
       "withCouples": 77,
-      "needAction": 50,
+      "needAction": 53,
       "both": 128,
       "masterOnly": 18
     },
     "posts": 216
   },
   "gmail": {
-    "generatedAt": "2026-09-29T10:13:01.222Z",
+    "generatedAt": "2026-09-29T17:04:04.316Z",
     "sourcesScanned": 32,
     "patternCounts": {
       "flow_getDeviceActionCard": 0,
@@ -205,13 +205,13 @@
       "dualApp": "BOTH",
       "source": "forum",
       "id": "forum-need-action",
-      "title": "50 forum posts needAction (shadow processor)",
+      "title": "53 forum posts needAction (shadow processor)",
       "action": "enrich:investigate + deep-functional (DP/cluster/flow/RX-TX, not mfr+pid only)",
       "forumReply": "NEVER"
     }
   ],
   "functionalDeep": {
     "ok": true,
-    "durationMs": 57
+    "durationMs": 37
   }
 }
