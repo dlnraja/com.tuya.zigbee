@@ -3,7 +3,7 @@
   "mode": "local-only",
   "quick": false,
   "apply": false,
-  "ok": false,
+  "ok": true,
   "hardOk": true,
   "results": [
     {
@@ -32,20 +32,20 @@
       "skipped": false,
       "rel": "tools/ci/local-workflow-learn.js",
       "status": 0,
-      "outTail": "      \"failStreak\": 0,\n      \"lastOk\": true,\n      \"lastAt\": 1790063888816,\n      \"lastConclusion\": \"success\"\n    }\n  }\n}\n"
+      "outTail": "      \"failStreak\": 0,\n      \"lastOk\": true,\n      \"lastAt\": 1790672809477,\n      \"lastConclusion\": \"success\"\n    }\n  }\n}\n"
     },
     {
-      "ok": false,
+      "ok": true,
       "skipped": false,
       "rel": "tools/ci/prune-fp-collision-bleed.js",
-      "status": 1,
-      "outTail": "prune-fp-collision-bleed: new=128 actions=0 dry-run\n"
+      "status": 0,
+      "outTail": "prune-fp-collision-bleed: new=0 actions=0 dry-run\n"
     },
     {
-      "ok": false,
+      "ok": true,
       "skipped": false,
       "rel": "tools/ci/align-mfs-db-intelligent.js",
-      "status": 1,
+      "status": 0,
       "outTail": "  registry_driver_missing p2517-krwtzhfd-ts004f-not-leak  \n  registry_empty_mfr z2m-o4mkahkc-ts0202-motion  \n  registry_empty_mfr z2m-ksz749x8-ts0601-climate  \n  registry_empty_mfr z2m-ksz749x8-tze204-ts0601-climate  \n  registry_empty_mfr p2630-axpdxqgu-ts0041-interview-clusters  \n  registry_empty_mfr p2631-ewelink-7014-climate-only-mesh  \n  registry_empty_mfr p2633-adndolvx-ts0041-phantom-ep-firmware  \n"
     },
     {
@@ -60,14 +60,14 @@
       "skipped": false,
       "rel": "tools/ci/l99-dual-app-enrich-gates.js",
       "status": 0,
-      "outTail": "[BOTH] OK tools/ci/adaptive-double-division-gate.js — [adaptive-double-division-gate] hits=2 hardHits=0 mode=soft |   (soft) lib/devices/BaseUnifiedDevice.js: AdaptiveDataParser + local divisor/smartDivisor in same file |   (soft) lib/tuya/TuyaEF00Manager.js: AdaptiveDataParser + local divisor\n[BOTH] FAIL scripts/validation/check-energy-divisor.js —    AdaptiveDataParser: false |  | 💡 Fix: Add smartDivisor: true or explicit divisor to energy DPs\n[BOTH] OK tools/ci/smart-features-brand-scrub-gate.js — smart-features-brand-scrub-gate: OK (no commercial UI tokens in .homeycompose/flow)\n[BOTH] OK test/critical/l99-energy-jump-divisor.test.js — # skipped 0 | # todo 0 | # duration_ms 42.970942\n[MASTER_ONLY] OK test/critical/l99-daylight-atmosphere.test.js — # skipped 0 | # todo 0 | # duration_ms 40.131849\n[MASTER_ONLY] OK test/hue-smart-features.test.js — # skipped 0 | # todo 0 | # duration_ms 97.438588\n[MASTER_ONLY] OK tools/ci/flow-l99-orchestrator.js —   ], |   \"failCount\": 0 | }\n"
+      "outTail": "[BOTH] OK scripts/validation/check-energy-divisor.js —    Drivers without divisor: 0 |  | ✅ All energy drivers have proper divisor settings\n[BOTH] OK tools/ci/smart-features-brand-scrub-gate.js — smart-features-brand-scrub-gate: OK (no commercial UI tokens in .homeycompose/flow)\n[BOTH] OK test/critical/l99-energy-jump-divisor.test.js — # skipped 0 | # todo 0 | # duration_ms 43.732847\n[MASTER_ONLY] OK test/critical/l99-daylight-atmosphere.test.js — # skipped 0 | # todo 0 | # duration_ms 44.491353\n[MASTER_ONLY] OK test/hue-smart-features.test.js — # skipped 0 | # todo 0 | # duration_ms 103.706154\n[MASTER_ONLY] OK tools/ci/flow-l99-orchestrator.js —   ], |   \"failCount\": 0 | }\nl99-dual-app-enrich-gates: all green\n"
     },
     {
       "ok": true,
       "skipped": false,
       "rel": "tools/ci/case-variant-fixer.js",
       "status": 0,
-      "outTail": "[case-variant-fixer] mode=DRY-RUN | drivers concernés: 67 | variantes à ajouter: 4488 | placeholders ignorés: 5\n"
+      "outTail": "[case-variant-fixer] mode=DRY-RUN | drivers concernés: 17 | variantes à ajouter: 80 | placeholders ignorés: 5\n"
     },
     {
       "ok": true,
@@ -84,5 +84,5 @@
       "outTail": "[battery-button-gate] errors=0 warnings=44\n  B5: 14\n  F1: 24\n  C2: 6\n[battery-button-gate] report: reports/BATTERY_BUTTON_INTELLIGENCE.md\n"
     }
   ],
-  "ts": "2026-09-22T07:58:13.792Z"
+  "ts": "2026-09-29T09:06:55.395Z"
 }
