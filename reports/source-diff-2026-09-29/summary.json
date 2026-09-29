@@ -1,13 +1,13 @@
 {
-  "generatedAt": "2026-09-29T07:30:12.353Z",
+  "generatedAt": "2026-09-29T18:54:56.019Z",
   "mode": "plan",
-  "projectFingerprint": "8cfec4dad8d6f0fa",
+  "projectFingerprint": "915965f73359577f",
   "projectChanged": true,
   "plan": [
     {
       "id": "z2m",
       "action": "skip-fresh",
-      "reason": "cache fresh (data/z2m_cache.json, 0h)"
+      "reason": "cache fresh (data/z2m_cache.json, 0.1h)"
     },
     {
       "id": "zha",
