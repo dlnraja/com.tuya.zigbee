@@ -52,7 +52,7 @@
     {
       "driverId": "button_wireless_1",
       "homeyClass": "button",
-      "mfrCount": 135,
+      "mfrCount": 149,
       "pidCount": 64,
       "capCount": 2,
       "settingCount": 9,
@@ -101,7 +101,7 @@
     {
       "driverId": "button_wireless_4",
       "homeyClass": "button",
-      "mfrCount": 138,
+      "mfrCount": 140,
       "pidCount": 45,
       "capCount": 5,
       "settingCount": 13,
@@ -1519,7 +1519,7 @@
     {
       "driverId": "socket_power_strip_four_two",
       "homeyClass": "socket",
-      "mfrCount": 5,
+      "mfrCount": 6,
       "pidCount": 9,
       "capCount": 2,
       "settingCount": 0,
@@ -1597,7 +1597,7 @@
     {
       "driverId": "switch_1gang",
       "homeyClass": "socket",
-      "mfrCount": 1505,
+      "mfrCount": 1507,
       "pidCount": 103,
       "capCount": 9,
       "settingCount": 21,
@@ -1649,7 +1649,7 @@
     {
       "driverId": "switch_2gang",
       "homeyClass": "socket",
-      "mfrCount": 339,
+      "mfrCount": 341,
       "pidCount": 41,
       "capCount": 12,
       "settingCount": 13,
@@ -1681,7 +1681,7 @@
     {
       "driverId": "switch_3gang",
       "homeyClass": "socket",
-      "mfrCount": 227,
+      "mfrCount": 229,
       "pidCount": 129,
       "capCount": 13,
       "settingCount": 13,
@@ -2483,7 +2483,7 @@
     {
       "driverId": "dimmer_wall_1gang",
       "homeyClass": "light",
-      "mfrCount": 144,
+      "mfrCount": 150,
       "pidCount": 20,
       "capCount": 6,
       "settingCount": 10,
@@ -2835,7 +2835,7 @@
     {
       "driverId": "contact_sensor",
       "homeyClass": "sensor",
-      "mfrCount": 234,
+      "mfrCount": 237,
       "pidCount": 46,
       "capCount": 5,
       "settingCount": 13,
@@ -3172,7 +3172,7 @@
     {
       "driverId": "gas_sensor",
       "homeyClass": "sensor",
-      "mfrCount": 36,
+      "mfrCount": 42,
       "pidCount": 15,
       "capCount": 6,
       "settingCount": 8,
@@ -3281,7 +3281,7 @@
     {
       "driverId": "illuminance_sensor",
       "homeyClass": "sensor",
-      "mfrCount": 13,
+      "mfrCount": 19,
       "pidCount": 11,
       "capCount": 3,
       "settingCount": 0,
@@ -3377,7 +3377,7 @@
     {
       "driverId": "motion_sensor",
       "homeyClass": "sensor",
-      "mfrCount": 285,
+      "mfrCount": 291,
       "pidCount": 34,
       "capCount": 6,
       "settingCount": 11,
@@ -3447,7 +3447,7 @@
     {
       "driverId": "pir_sensor_2",
       "homeyClass": "sensor",
-      "mfrCount": 72,
+      "mfrCount": 76,
       "pidCount": 35,
       "capCount": 4,
       "settingCount": 0,
@@ -3721,7 +3721,7 @@
     {
       "driverId": "sensor_contact_motion",
       "homeyClass": "sensor",
-      "mfrCount": 8,
+      "mfrCount": 12,
       "pidCount": 2,
       "capCount": 7,
       "settingCount": 11,
@@ -4276,7 +4276,7 @@
     {
       "driverId": "water_leak_sensor",
       "homeyClass": "sensor",
-      "mfrCount": 93,
+      "mfrCount": 98,
       "pidCount": 42,
       "capCount": 4,
       "settingCount": 10,
@@ -5207,7 +5207,7 @@
     {
       "driverId": "curtain_motor",
       "homeyClass": "windowcoverings",
-      "mfrCount": 1110,
+      "mfrCount": 1122,
       "pidCount": 117,
       "capCount": 8,
       "settingCount": 19,
@@ -5407,7 +5407,7 @@
     {
       "driverId": "device_radiator_valve",
       "homeyClass": "thermostat",
-      "mfrCount": 368,
+      "mfrCount": 372,
       "pidCount": 1,
       "capCount": 8,
       "settingCount": 9,
@@ -5976,7 +5976,7 @@
     {
       "driverId": "doorbell",
       "homeyClass": "doorbell",
-      "mfrCount": 35,
+      "mfrCount": 36,
       "pidCount": 2,
       "capCount": 6,
       "settingCount": 8,
