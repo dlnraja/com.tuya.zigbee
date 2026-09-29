@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-09-22T07:58:28.155Z",
+  "timestamp": "2026-09-29T09:07:10.838Z",
   "gate": "audit-sacred-couple-by-class",
   "apply": false,
   "scanned": 434,
@@ -435,24 +435,6 @@
       "families": [
         "button",
         "socket"
-      ],
-      "absurd": true
-    },
-    {
-      "couple": "_tz3000_itnrsufe|ts0601",
-      "mfr": "_tz3000_itnrsufe",
-      "pid": "ts0601",
-      "drivers": [
-        "button_wireless_2",
-        "lcdtemphumidsensor"
-      ],
-      "classes": [
-        "button",
-        "sensor"
-      ],
-      "families": [
-        "button",
-        "sensor"
       ],
       "absurd": true
     },
@@ -1459,24 +1441,6 @@
       "absurd": true
     },
     {
-      "couple": "_tz3000_qgwcxxws|ts0601",
-      "mfr": "_tz3000_qgwcxxws",
-      "pid": "ts0601",
-      "drivers": [
-        "smart_button_switch",
-        "switch_1gang"
-      ],
-      "classes": [
-        "remote",
-        "socket"
-      ],
-      "families": [
-        "button",
-        "socket"
-      ],
-      "absurd": true
-    },
-    {
       "couple": "_tz3290_ixd9mvv4|ts0601",
       "mfr": "_tz3290_ixd9mvv4",
       "pid": "ts0601",
@@ -1673,40 +1637,6 @@
       "families": [
         "cover",
         "sensor"
-      ],
-      "absurd": false
-    },
-    {
-      "couple": "_tz3000_peszejy7|ts0601",
-      "mfr": "_tz3000_peszejy7",
-      "pid": "ts0601",
-      "drivers": [
-        "scene_switch_1",
-        "smart_button_switch"
-      ],
-      "classes": [
-        "button",
-        "remote"
-      ],
-      "families": [
-        "button"
-      ],
-      "absurd": false
-    },
-    {
-      "couple": "_tz3000_peszejy7|ts0215a",
-      "mfr": "_tz3000_peszejy7",
-      "pid": "ts0215a",
-      "drivers": [
-        "scene_switch_1",
-        "smart_button_switch"
-      ],
-      "classes": [
-        "button",
-        "remote"
-      ],
-      "families": [
-        "button"
       ],
       "absurd": false
     }
@@ -4257,6 +4187,54 @@
       "absurd": false
     },
     {
+      "couple": "_tz3000_pzui3skt|ts004f",
+      "mfr": "_tz3000_pzui3skt",
+      "pid": "ts004f",
+      "drivers": [
+        "button_wireless_1",
+        "smart_knob_rotary"
+      ],
+      "classes": [
+        "button"
+      ],
+      "families": [
+        "button"
+      ],
+      "absurd": false
+    },
+    {
+      "couple": "_tz3000_pzui3skt|ts0601",
+      "mfr": "_tz3000_pzui3skt",
+      "pid": "ts0601",
+      "drivers": [
+        "button_wireless_1",
+        "smart_knob_rotary"
+      ],
+      "classes": [
+        "button"
+      ],
+      "families": [
+        "button"
+      ],
+      "absurd": false
+    },
+    {
+      "couple": "_tz3000_pzui3skt|zg-101zd",
+      "mfr": "_tz3000_pzui3skt",
+      "pid": "zg-101zd",
+      "drivers": [
+        "button_wireless_1",
+        "smart_knob_rotary"
+      ],
+      "classes": [
+        "button"
+      ],
+      "families": [
+        "button"
+      ],
+      "absurd": false
+    },
+    {
       "couple": "_tz3000_dfgbtub0|01minizb",
       "mfr": "_tz3000_dfgbtub0",
       "pid": "01minizb",
@@ -5313,22 +5291,6 @@
       "absurd": false
     },
     {
-      "couple": "_tz3000_gbm10jnj|ts0601",
-      "mfr": "_tz3000_gbm10jnj",
-      "pid": "ts0601",
-      "drivers": [
-        "button_wireless_3",
-        "button_wireless_4"
-      ],
-      "classes": [
-        "button"
-      ],
-      "families": [
-        "button"
-      ],
-      "absurd": false
-    },
-    {
       "couple": "_tz3000_5iixzdo7|ts0301",
       "mfr": "_tz3000_5iixzdo7",
       "pid": "ts0301",
@@ -5773,6 +5735,22 @@
       ],
       "families": [
         "cover"
+      ],
+      "absurd": false
+    },
+    {
+      "couple": "_tze200_p3dbf6qs|ts0601",
+      "mfr": "_tze200_p3dbf6qs",
+      "pid": "ts0601",
+      "drivers": [
+        "device_radiator_valve",
+        "radiator_valve"
+      ],
+      "classes": [
+        "thermostat"
+      ],
+      "families": [
+        "climate_ctrl"
       ],
       "absurd": false
     },
@@ -6945,22 +6923,6 @@
       "absurd": false
     },
     {
-      "couple": "_tze204_vrcfo4i0|hobeian",
-      "mfr": "_tze204_vrcfo4i0",
-      "pid": "hobeian",
-      "drivers": [
-        "gas_sensor",
-        "presence_sensor_radar"
-      ],
-      "classes": [
-        "sensor"
-      ],
-      "families": [
-        "sensor"
-      ],
-      "absurd": false
-    },
-    {
       "couple": "_tze204_vrcfo4i0|ts0225",
       "mfr": "_tze204_vrcfo4i0",
       "pid": "ts0225",
@@ -6980,22 +6942,6 @@
       "couple": "_tze204_vrcfo4i0|ts0601",
       "mfr": "_tze204_vrcfo4i0",
       "pid": "ts0601",
-      "drivers": [
-        "gas_sensor",
-        "presence_sensor_radar"
-      ],
-      "classes": [
-        "sensor"
-      ],
-      "families": [
-        "sensor"
-      ],
-      "absurd": false
-    },
-    {
-      "couple": "_tze284_vrcfo4i0|hobeian",
-      "mfr": "_tze284_vrcfo4i0",
-      "pid": "hobeian",
       "drivers": [
         "gas_sensor",
         "presence_sensor_radar"
@@ -7889,54 +7835,6 @@
       "absurd": false
     },
     {
-      "couple": "_tze284_6ycgarab|ts0601",
-      "mfr": "_tze284_6ycgarab",
-      "pid": "ts0601",
-      "drivers": [
-        "presence_sensor_radar",
-        "smoke_sensor"
-      ],
-      "classes": [
-        "sensor"
-      ],
-      "families": [
-        "sensor"
-      ],
-      "absurd": false
-    },
-    {
-      "couple": "_tze200_6ycgarab|ts0601",
-      "mfr": "_tze200_6ycgarab",
-      "pid": "ts0601",
-      "drivers": [
-        "presence_sensor_radar",
-        "smoke_sensor"
-      ],
-      "classes": [
-        "sensor"
-      ],
-      "families": [
-        "sensor"
-      ],
-      "absurd": false
-    },
-    {
-      "couple": "_tze204_6ycgarab|ts0601",
-      "mfr": "_tze204_6ycgarab",
-      "pid": "ts0601",
-      "drivers": [
-        "presence_sensor_radar",
-        "smoke_sensor"
-      ],
-      "classes": [
-        "sensor"
-      ],
-      "families": [
-        "sensor"
-      ],
-      "absurd": false
-    },
-    {
       "couple": "_tze200_2pddnnrk|ts0601",
       "mfr": "_tze200_2pddnnrk",
       "pid": "ts0601",
@@ -8618,22 +8516,6 @@
       "absurd": false
     },
     {
-      "couple": "_tze204_amp6tsvy|hobeian",
-      "mfr": "_tze204_amp6tsvy",
-      "pid": "hobeian",
-      "drivers": [
-        "switch_1gang",
-        "switch_2gang"
-      ],
-      "classes": [
-        "socket"
-      ],
-      "families": [
-        "socket"
-      ],
-      "absurd": false
-    },
-    {
       "couple": "_tze204_amp6tsvy|ts0003",
       "mfr": "_tze204_amp6tsvy",
       "pid": "ts0003",
@@ -8717,22 +8599,6 @@
       "couple": "_tze204_amp6tsvy|ts0726",
       "mfr": "_tze204_amp6tsvy",
       "pid": "ts0726",
-      "drivers": [
-        "switch_1gang",
-        "switch_2gang"
-      ],
-      "classes": [
-        "socket"
-      ],
-      "families": [
-        "socket"
-      ],
-      "absurd": false
-    },
-    {
-      "couple": "_tze284_amp6tsvy|hobeian",
-      "mfr": "_tze284_amp6tsvy",
-      "pid": "hobeian",
       "drivers": [
         "switch_1gang",
         "switch_2gang"
@@ -8856,9 +8722,9 @@
     }
   ],
   "counts": {
-    "crossClassAbsurd": 82,
-    "crossClassOther": 12,
-    "sameClassDual": 445,
+    "crossClassAbsurd": 80,
+    "crossClassOther": 10,
+    "sameClassDual": 441,
     "energyIssues": 1
   }
 }
