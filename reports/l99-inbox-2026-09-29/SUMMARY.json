@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-29T17:04:03.851Z",
+  "generatedAt": "2026-09-29T23:16:25.636Z",
   "date": "2026-09-29",
   "mode": "full",
   "phases": [
@@ -12,18 +12,18 @@
     {
       "name": "github",
       "ok": true,
-      "durationMs": 440
+      "durationMs": 513
     },
     {
       "name": "gmail",
       "ok": true,
-      "durationMs": 161,
+      "durationMs": 220,
       "details": {
         "crash": {
           "ok": true,
           "skipped": false,
           "status": 0,
-          "durationMs": 32,
+          "durationMs": 43,
           "stderr": "",
           "stdoutTail": "[gmail-crash-pattern-gate] sources=32 hits=0 unknown=0\n  wrote .github/state/gmail-crash-patterns.json\n  verdict: ok\n"
         },
@@ -31,16 +31,16 @@
           "ok": true,
           "skipped": false,
           "status": 0,
-          "durationMs": 128,
+          "durationMs": 175,
           "stderr": "",
-          "stdoutTail": "[automate] inbox total=0 have=30 missing=0 ingested_now=0\n[recursive-treat] sources: 136\n[recursive-treat] wrote /home/runner/work/com.tuya.zigbee/com.tuya.zigbee/reports/diag-recursive-treat-2026-09-29\n{\n  \"generatedAt\": \"2026-09-29T17:04:04.442Z\",\n  \"methodology\": \"f647d35b-style full-body recursive treat — sacred couple never invented; P2246 derive from interview when ABSENT\",\n  \"sourcesScanned\": 136,\n  \"uniqueCases\": 122,\n  \"actionable\": 38,\n  \"derivedFromInterview\": 0,\n  \"signalTally\": {\n    \"scene_mode_unsupported\": 3,\n    \"wrong_driver_hint\": 4,\n    \"athom_socket_hang\": 2,\n    \"athom_processing_failed\": 2,\n    \"wrong_smart_rcbo\": 2,\n    \"flow_guard_spam\": 2,\n    \"processing_failed\": 2,\n    \"scene_0x8004\": 2,\n    \"invalid_flow_card\": 1,\n    \"missing_capability_listener\": 1\n  },\n  \"gmailBodiesPresent\": 30,\n  \"interviews\": 90\n}\n[automate] status → .github/state/diag-recursive-inbox/automate-status.json\n{\n  \"total\": 0,\n  \"have\": 30,\n  \"missing\": 0,\n  \"missingIds\": []\n}\n[automate] actionable= 38 gmailBodies= 30\n"
+          "stdoutTail": "[automate] inbox total=0 have=30 missing=0 ingested_now=0\n[recursive-treat] sources: 136\n[recursive-treat] wrote /home/runner/work/com.tuya.zigbee/com.tuya.zigbee/reports/diag-recursive-treat-2026-09-29\n{\n  \"generatedAt\": \"2026-09-29T23:16:26.360Z\",\n  \"methodology\": \"f647d35b-style full-body recursive treat — sacred couple never invented; P2246 derive from interview when ABSENT\",\n  \"sourcesScanned\": 136,\n  \"uniqueCases\": 122,\n  \"actionable\": 34,\n  \"derivedFromInterview\": 0,\n  \"signalTally\": {\n    \"scene_mode_unsupported\": 3,\n    \"wrong_driver_hint\": 4,\n    \"athom_socket_hang\": 2,\n    \"athom_processing_failed\": 2,\n    \"wrong_smart_rcbo\": 2,\n    \"flow_guard_spam\": 2,\n    \"processing_failed\": 2,\n    \"scene_0x8004\": 2,\n    \"invalid_flow_card\": 1,\n    \"missing_capability_listener\": 1\n  },\n  \"gmailBodiesPresent\": 30,\n  \"interviews\": 90\n}\n[automate] status → .github/state/diag-recursive-inbox/automate-status.json\n{\n  \"total\": 0,\n  \"have\": 30,\n  \"missing\": 0,\n  \"missingIds\": []\n}\n[automate] actionable= 34 gmailBodies= 30\n"
         }
       }
     },
     {
       "name": "forum",
       "ok": true,
-      "durationMs": 26285,
+      "durationMs": 26120,
       "skipScan": false,
       "steps": [
         {
@@ -64,7 +64,7 @@
     {
       "name": "drivers",
       "ok": true,
-      "durationMs": 1152,
+      "durationMs": 1796,
       "mfs": {
         "high": 0,
         "changes": 0,
@@ -75,33 +75,44 @@
     {
       "name": "functionalDeep",
       "ok": true,
-      "durationMs": 38,
+      "durationMs": 83,
       "note": "P2529 complementary deep functional (soft)"
     },
     {
       "name": "prioritize",
       "ok": true,
       "durationMs": 1,
-      "count": 2
+      "count": 3
     },
     {
       "name": "docs",
       "ok": true,
-      "durationMs": 0,
+      "durationMs": 1,
       "doc": "/home/runner/work/com.tuya.zigbee/com.tuya.zigbee/docs/architecture/L99_INBOX_INTELLIGENCE.md"
     },
     {
       "name": "gates",
       "ok": true,
-      "durationMs": 1832
+      "durationMs": 2924
     }
   ],
   "github": {
-    "harvestedAt": "2026-09-29T17:04:04.290Z",
+    "harvestedAt": "2026-09-29T23:16:26.045Z",
     "repo": "dlnraja/com.tuya.zigbee",
     "auth": "token",
     "error": null,
     "issues": [
+      {
+        "number": 554,
+        "title": "Bug report - TS0046 / _TZ3000_iszegwpd 6 Gang Wall Remote fails to pair although Zigbee interview succeeds",
+        "labels": [
+          "bug"
+        ],
+        "updatedAt": "2026-09-29T22:47:52Z",
+        "user": "draqlek",
+        "htmlUrl": "https://github.com/dlnraja/com.tuya.zigbee/issues/554",
+        "bodySnippet": "### Describe the bug\n\nI am unable to pair a 6-button Zigbee remote SS9600ZB-V2 / T066 with Homey Pro using the Universal Tuya Zigbee / Tuya Unified app.\n\nThe device has the following Zigbee fingerprint:\n\n> Model ID: TS0046\n> Manufacturer: _TZ3000_iszegwpd\n> Type: EndDevice\n\nWhen I select 6 Gang Wall Remote in the app and put the remote into pairing mode, Homey displays that the device is being added, but the process ends with:\n\n“Connection impossible”\n\nHowever, the device actually joins the Homey Zigbee network and appears in Homey Developer Tools → Zigbee.\n\nA manual Zigbee Interview completes successfully. The device reports:\n\n> modelId: TS0046\n> manufacturerName: _TZ3000_iszegwpd\n> appVersion: 68\n> hwVersion: 1\n> batteryVoltage: 30\n> batteryPercentageRemaining: 200\n\nThe Interview detects endpoints 1–4 successfully.\n\nI also tested the device with the older Tuya Zigbee Homey app and experienced the same pairing failure.\n\n\n\n### To Reproduce\n\nSteps to reproduce the behavior:\n\n1. Open Homey and select Add Device.\n2. Select Universal Tuya Zigbee / Tuya Unified.\n3. Select 6 Gang Wall Remote.\n4. Remove the battery from the SS9600ZB-V2 for about 20 seconds and reinstall it.\n5. Put the remote into pairing mode by holding a button until the LED starts blinking.\n6. Homey displays that the device is being added.\n7. Keep pressing buttons periodically during pairing to keep the battery-powered Zigbee EndDevice awake.\n8. Pairing eventually fails with “Connection impossible”.\n9. Open Homey Developer Tools → Zigbee.\n10. The device is visible there as: TS0046 / _TZ3000_iszegwpd\n11. Run a manual Interview.\n12. The Interview completes successfully, despite the pairing process having failed.\n13. I also repeated the Interview while alternating buttons 5 and 6. The result was the same.\n\n\n\n### Expected behavior\n\nThe device should be successfully created in Homey as 6 Gang Wall Remote, because it joins the Homey Zigbee network successfully, its Zigbee Interview completes successfully, and its fingerprint is:\n\n> TS0046 / _TZ3000_iszegwpd\n\n### App and Homey version\n\nHomey model: Homey Pro (Early 2023), v. 13.5.1\nUniversal Tuya v.9.0.1295 Test\n\n### Additional context\n\nDevice information:\n> Product name: T066\n> Model printed on box: SS9600ZB-V2\n> Model ID: TS0046\n> Manufacturer: _TZ3000_iszegwpd\n> Device type: EndDevice\n> appVersion: 68\n> hwVersion: 1\n\nThe important point is that this does not appear to be a Zigbee join problem: the device is successfully present in the Homey Zigbee network and can be interviewed successfully. The failure seems to occur later in the pairing / device creation process.\n\nThe full Zigbee Interview JSON:\n\n\n  \"ids\": {\n    \"modelId\": \"TS0046\",\n    \"manufacturerName\": \"_TZ3000_iszegwpd\"\n  },\n  \"endpoints\": {\n    \"ieeeAddress\": \"a4:c1:38:1e:c0:f6:a4:fd\",\n    \"networkAddress\": 12196,\n    \"modelId\": \"TS0046\",\n    \"manufacturerName\": \"_TZ3000_iszegwpd\",\n    \"endpointDescriptors\": [\n      {\n        \"status\": \"SUCCESS\",\n        \"nwkAddrOfInterest\": 12196,\n        \"_reserved\": 20,\n        \"endpointId\": 1,\n        \"applicationProfileId\": 260,\n        \"applicationDeviceId\": 0,\n        \"applicationDeviceVersion\": 0,\n        \"_reserved1\": 1,\n        \"inputClusters\": [\n          1,\n          6,\n          57344,\n          0\n        ],\n        \"outputClusters\": [\n          25,\n          10\n        ]\n      },\n      {\n        \"status\": \"SUCCESS\",\n        \"nwkAddrOfInterest\": 12196,\n        \"_reserved\": 14,\n        \"endpointId\": 2,\n        \"applicationProfileId\": 260,\n        \"applicationDeviceId\": 0,\n        \"applicationDeviceVersion\": 0,\n        \"_reserved1\": 1,\n        \"inputClusters\": [\n          6,\n          1,\n          6\n        ],\n        \"outputClusters\": []\n      },\n      {\n        \"status\": \"SUCCESS\",\n        \"nwkAddrOfInterest\": 12196,\n        \"_reserved\": 14,\n        \"endpointId\": 3,\n        \"applicationProfileId\": 260,\n        \"applicationDeviceId\": 0,\n        \"applicationDeviceVersion\": 0,\n        \"_reserved1\": 1,\n        \"inputClusters\": [\n          6,\n          1,\n          6\n        ],\n        \"outputClusters\": []\n      },\n      {\n        \"status\": \"SUCCESS\",\n        \"nwkAddrOfInterest\": 12196,\n        \"_reserved\": 14,\n        \"endpointId\": 4,\n        \"applicationProfileId\": 260,\n        \"applicationDeviceId\": 0,\n        \"applicationDeviceVersion\": 0,\n        \"_reserved1\": 1,\n        \"inputClusters\": [\n          6,\n          1,\n          6\n        ],\n        \"outputClusters\": []\n      }\n    ],\n    \"deviceType\": \"endde"
+      },
       {
         "number": 550,
         "title": "Bug report - [Short description]",
@@ -116,22 +127,22 @@
       }
     ],
     "prs": [],
-    "openIssueCount": 1,
+    "openIssueCount": 2,
     "openPrCount": 0
   },
   "forum": {
     "path": "/home/runner/work/com.tuya.zigbee/com.tuya.zigbee/.github/state/forum/actionable-processor-report.json",
     "totals": {
       "posts": 216,
-      "withCouples": 77,
-      "needAction": 53,
-      "both": 128,
+      "withCouples": 78,
+      "needAction": 50,
+      "both": 129,
       "masterOnly": 18
     },
     "posts": 216
   },
   "gmail": {
-    "generatedAt": "2026-09-29T17:04:04.316Z",
+    "generatedAt": "2026-09-29T23:16:26.188Z",
     "sourcesScanned": 32,
     "patternCounts": {
       "flow_getDeviceActionCard": 0,
@@ -194,6 +205,16 @@
       "score": 90,
       "dualApp": "BOTH",
       "source": "github-issue",
+      "id": "#554",
+      "title": "Bug report - TS0046 / _TZ3000_iszegwpd 6 Gang Wall Remote fails to pair although Zigbee interview succeeds",
+      "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/554",
+      "action": "investigate-code-silent",
+      "forumReply": "NEVER"
+    },
+    {
+      "score": 90,
+      "dualApp": "BOTH",
+      "source": "github-issue",
       "id": "#550",
       "title": "Bug report - [Short description]",
       "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/550",
@@ -205,13 +226,13 @@
       "dualApp": "BOTH",
       "source": "forum",
       "id": "forum-need-action",
-      "title": "53 forum posts needAction (shadow processor)",
+      "title": "50 forum posts needAction (shadow processor)",
       "action": "enrich:investigate + deep-functional (DP/cluster/flow/RX-TX, not mfr+pid only)",
       "forumReply": "NEVER"
     }
   ],
   "functionalDeep": {
     "ok": true,
-    "durationMs": 37
+    "durationMs": 83
   }
 }
