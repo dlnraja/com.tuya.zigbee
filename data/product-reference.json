@@ -1,6 +1,6 @@
 {
- "generated": "2026-09-28T10:09:20.248Z",
- "count": 16570,
+ "generated": "2026-09-29T09:06:55.873Z",
+ "count": 16548,
  "reference": {
   "_tze200_qpn5q17m": {
    "driverId": "air_purifier",
@@ -29402,40 +29402,10 @@
    ]
   },
   "_TZ1800_LADPNGDX": {
-   "driverId": "climate_sensor",
+   "driverId": "doorbell",
    "modelIds": [
-    "CK-TLSR8656-SS5-01(7014)",
-    "CK-TLSR8656-SS5-02(7014)",
-    "LUMI.SENSOR_HT",
-    "LUMI.SENSOR_HT.AGL02",
-    "LUMI.WEATHER",
-    "RH3052",
-    "RHK08",
-    "SM0201",
-    "SNTZ003",
-    "SNZB-02",
-    "SNZB-02B",
-    "SNZB-02D",
-    "SNZB-02DR2",
-    "SNZB-02LD",
-    "SNZB-02M",
-    "SNZB-02P",
-    "SNZB-02WD",
-    "TH01",
-    "THS317-ET",
-    "TS0201",
-    "TS0222",
-    "TS0601",
-    "TY0201",
-    "WSDCGQ01LM",
-    "WSDCGQ11LM",
-    "WSDCGQ12LM",
-    "ZG-227Z",
-    "ZG-227ZH",
-    "ZG-227ZL",
-    "ZG-227ZP",
-    "ZTH11-3.0",
-    "ZTH13-3.0"
+    "TS0211",
+    "TS0601"
    ],
    "vendor": null,
    "model": null,
@@ -29445,18 +29415,17 @@
    "productPage": null,
    "imageCandidates": [],
    "batteries": [
-    "AAA",
-    "CR2032",
-    "CR2450"
+    "OTHER",
+    "OTHER"
    ],
-   "batteryTypical": "AAA",
+   "batteryTypical": "OTHER",
    "energy": {
-    "nominalW": null,
-    "standbyW": null
+    "nominalW": 2,
+    "standbyW": 0.1
    },
-   "deviceClass": "sensor",
+   "deviceClass": "doorbell",
    "capabilities": null,
-   "source": "auto-sync"
+   "source": "compose-exclusive"
   },
   "_TZ2000_LXVYCLN5": {
    "driverId": "climate_sensor",
@@ -29573,40 +29542,34 @@
    "source": "auto-sync"
   },
   "_TZ3000_0HKMCRZA": {
-   "driverId": "climate_sensor",
+   "driverId": "contact_sensor",
    "modelIds": [
-    "CK-TLSR8656-SS5-01(7014)",
-    "CK-TLSR8656-SS5-02(7014)",
-    "LUMI.SENSOR_HT",
-    "LUMI.SENSOR_HT.AGL02",
-    "LUMI.WEATHER",
-    "RH3052",
-    "RHK08",
-    "SM0201",
-    "SNTZ003",
-    "SNZB-02",
-    "SNZB-02B",
-    "SNZB-02D",
-    "SNZB-02DR2",
-    "SNZB-02LD",
-    "SNZB-02M",
-    "SNZB-02P",
-    "SNZB-02WD",
-    "TH01",
-    "THS317-ET",
-    "TS0201",
-    "TS0222",
-    "TS0601",
-    "TY0201",
-    "WSDCGQ01LM",
-    "WSDCGQ11LM",
-    "WSDCGQ12LM",
-    "ZG-227Z",
-    "ZG-227ZH",
-    "ZG-227ZL",
-    "ZG-227ZP",
-    "ZTH11-3.0",
-    "ZTH13-3.0"
+    "3300-S",
+    "3320-L",
+    "CK-TLSR8656-SS5-01(7003)",
+    "DOORWINDOW-SENSOR-ZB3.0",
+    "DS01",
+    "E1603/E1702",
+    "LUMI.MAGNET.AC01",
+    "LUMI.MAGNET.AGL02",
+    "LUMI.SENSOR_MAGNET",
+    "LUMI.SENSOR_MAGNET.AQ2",
+    "MCCGQ01LM",
+    "MCCGQ11LM",
+    "MCCGQ12LM",
+    "MCCGQ14LM",
+    "MCT-340 E",
+    "SNZB-04",
+    "SNZB-04P",
+    "SNZB-04PR2",
+    "SNZB-04R2",
+    "TRADFRI OPEN/CLOSE REMOTE",
+    "TS0021",
+    "TS0203",
+    "TY0203",
+    "ZG-102Z",
+    "ZG-102ZA",
+    "ZG-102ZL"
    ],
    "vendor": null,
    "model": null,
@@ -29616,18 +29579,18 @@
    "productPage": null,
    "imageCandidates": [],
    "batteries": [
-    "AAA",
     "CR2032",
-    "CR2450"
+    "CR1632",
+    "AAA"
    ],
-   "batteryTypical": "AAA",
+   "batteryTypical": "CR2032",
    "energy": {
     "nominalW": null,
     "standbyW": null
    },
    "deviceClass": "sensor",
    "capabilities": null,
-   "source": "auto-sync"
+   "source": "compose-exclusive"
   },
   "_TZ3000_0S1IZERX": {
    "driverId": "temphumidsensor2",
@@ -31480,40 +31443,43 @@
    "source": "auto-sync"
   },
   "_TZ3000_HGU1DLAK": {
-   "driverId": "climate_sensor",
+   "driverId": "pir_sensor_2",
    "modelIds": [
-    "CK-TLSR8656-SS5-01(7014)",
-    "CK-TLSR8656-SS5-02(7014)",
-    "LUMI.SENSOR_HT",
-    "LUMI.SENSOR_HT.AGL02",
-    "LUMI.WEATHER",
-    "RH3052",
-    "RHK08",
-    "SM0201",
-    "SNTZ003",
-    "SNZB-02",
-    "SNZB-02B",
-    "SNZB-02D",
-    "SNZB-02DR2",
-    "SNZB-02LD",
-    "SNZB-02M",
-    "SNZB-02P",
-    "SNZB-02WD",
-    "TH01",
-    "THS317-ET",
-    "TS0201",
-    "TS0222",
+    "01MINIZB",
+    "BASICZBR3",
+    "EXCELLUX",
+    "S26R2ZB",
+    "S31ZB",
+    "TS0001",
+    "TS0001_POWER",
+    "TS0001_SWITCH",
+    "TS0001_SWITCH_MODULE",
+    "TS0002",
+    "TS0003",
+    "TS000F",
+    "TS0011",
+    "TS0012",
+    "TS0014",
+    "TS0041",
+    "TS0101",
+    "TS0111",
+    "TS011F",
+    "TS0202",
+    "TS0225",
     "TS0601",
-    "TY0201",
-    "WSDCGQ01LM",
-    "WSDCGQ11LM",
-    "WSDCGQ12LM",
-    "ZG-227Z",
-    "ZG-227ZH",
-    "ZG-227ZL",
-    "ZG-227ZP",
-    "ZTH11-3.0",
-    "ZTH13-3.0"
+    "TS0726",
+    "TS110E",
+    "TS130F",
+    "TS4100",
+    "ZBM5-1C-120",
+    "ZBM5-2C-120",
+    "ZBM5-3C-120",
+    "ZBMINI",
+    "ZBMINIL2",
+    "ZBMINIL2-R2",
+    "ZBMINIR",
+    "ZBMINIR2",
+    "ZBMINIR2-R2"
    ],
    "vendor": null,
    "model": null,
@@ -31523,18 +31489,16 @@
    "productPage": null,
    "imageCandidates": [],
    "batteries": [
-    "AAA",
-    "CR2032",
-    "CR2450"
+    "CR123A"
    ],
-   "batteryTypical": "AAA",
+   "batteryTypical": "CR123A",
    "energy": {
     "nominalW": null,
     "standbyW": null
    },
    "deviceClass": "sensor",
    "capabilities": null,
-   "source": "auto-sync"
+   "source": "compose-exclusive"
   },
   "_TZ3000_HY6NCVMW": {
    "driverId": "illuminance_sensor",
@@ -94930,31 +94894,43 @@
    "source": "auto-sync"
   },
   "_TZE204_kb5noeto": {
-   "driverId": "presence_sensor_radar",
+   "driverId": "pir_sensor_2",
    "modelIds": [
-    "CK-BL702-MWS-01",
-    "CK-BL702-MWS-01(7016)",
-    "MG1_5RZ",
-    "SNZB-06P",
-    "SNZB-06P24",
-    "SZLMR10",
-    "TS0004",
-    "TS0203",
+    "01MINIZB",
+    "BASICZBR3",
+    "EXCELLUX",
+    "S26R2ZB",
+    "S31ZB",
+    "TS0001",
+    "TS0001_POWER",
+    "TS0001_SWITCH",
+    "TS0001_SWITCH_MODULE",
+    "TS0002",
+    "TS0003",
+    "TS000F",
+    "TS0011",
+    "TS0012",
+    "TS0014",
+    "TS0041",
+    "TS0101",
+    "TS0111",
+    "TS011F",
+    "TS0202",
     "TS0225",
     "TS0601",
+    "TS0726",
     "TS110E",
-    "ZG-204ZE",
-    "ZG-204ZH",
-    "ZG-204ZK",
-    "ZG-204ZL",
-    "ZG-204ZM",
-    "ZG-204ZQ",
-    "ZG-204ZV",
-    "ZG-205Z",
-    "ZG-205ZL",
-    "ZG-302ZL",
-    "ZG-302ZM",
-    "ZP-301Z"
+    "TS130F",
+    "TS4100",
+    "ZBM5-1C-120",
+    "ZBM5-2C-120",
+    "ZBM5-3C-120",
+    "ZBMINI",
+    "ZBMINIL2",
+    "ZBMINIL2-R2",
+    "ZBMINIR",
+    "ZBMINIR2",
+    "ZBMINIR2-R2"
    ],
    "vendor": null,
    "model": null,
@@ -94964,16 +94940,16 @@
    "productPage": null,
    "imageCandidates": [],
    "batteries": [
-    "Li-ion"
+    "CR123A"
    ],
-   "batteryTypical": "Li-ion",
+   "batteryTypical": "CR123A",
    "energy": {
     "nominalW": null,
     "standbyW": null
    },
    "deviceClass": "sensor",
    "capabilities": null,
-   "source": "auto-sync"
+   "source": "compose-exclusive"
   },
   "_TZE284_mrf6vtua": {
    "driverId": "presence_sensor_radar",
@@ -116120,12 +116096,11 @@
    "source": "auto-sync",
    "variants": [
     "_tz3000_air9m6af",
+    "_TZ3000_air9m6af",
+    "_TZ3000_AIR9M6AF",
     "_tz3000_9djocypn",
     "_TZ3000_9djocypn",
-    "_tz3000_9DJOCYPN",
-    "_TZ3000_AIR9M6AF",
-    "_TZ3000_air9m6af",
-    "_tz3000_AIR9M6AF"
+    "_tz3000_9DJOCYPN"
    ]
   },
   "_TZ3000_AN5JIWD": {
@@ -116797,45 +116772,29 @@
    "source": "auto-sync"
   },
   "_TZ3000_BAEIITAD": {
-   "driverId": "switch_1gang",
+   "driverId": "water_leak_sensor",
    "modelIds": [
-    "01MINIZB",
-    "BASICZBR3",
-    "S26R2ZB",
-    "S31ZB",
-    "TS0001",
-    "TS0001_POWER",
-    "TS0001_SWITCH",
-    "TS0001_SWITCH_MODULE",
-    "TS0003",
-    "TS0004",
-    "TS000F",
-    "TS0011",
-    "TS0012",
-    "TS0014",
-    "TS0101",
-    "TS0111",
-    "TS011F",
-    "TS0203",
+    "_TZ3000_EIT6L5",
+    "_TZ3000_KYB656NO",
+    "3315-S",
+    "3315-SEU",
+    "AY222Z",
+    "CK-TLSR8656-SS5-01(7019)",
+    "CK-TLSR8656-Z23SE11HW-01(7019)",
+    "HS1WL",
+    "LS21001",
+    "LUMI.SENSOR_WLEAK.AQ1",
+    "SJCGQ11LM",
+    "SJCGQ12LM",
+    "SJCGQ13LM",
+    "SNZB-05",
+    "SNZB-05P",
+    "SQ510A",
+    "TS0207",
     "TS0601",
-    "TS0601_GENERIC",
-    "TS0601_TEMPSWITCH",
-    "TS0603",
-    "TS0726",
-    "TS110E",
-    "TS130F",
-    "TS4100",
-    "ZBM5-1C-120",
-    "ZBM5-2C-120",
-    "ZBM5-3C-120",
-    "ZBMINI",
-    "ZBMINIL2",
-    "ZBMINIL2-R2",
-    "ZBMINIR",
-    "ZBMINIR2",
-    "ZBMINIR2-R2",
-    "ZG-301Z",
-    "ZG-302Z1"
+    "ZG-222Z",
+    "ZG-222ZA",
+    "ZG-226Z"
    ],
    "vendor": null,
    "model": null,
@@ -116844,15 +116803,19 @@
    "description": null,
    "productPage": null,
    "imageCandidates": [],
-   "batteries": [],
-   "batteryTypical": null,
+   "batteries": [
+    "CR2032",
+    "CR2450",
+    "AAA"
+   ],
+   "batteryTypical": "CR2032",
    "energy": {
-    "nominalW": 3,
-    "standbyW": 0.4
+    "nominalW": null,
+    "standbyW": null
    },
-   "deviceClass": "socket",
+   "deviceClass": "sensor",
    "capabilities": null,
-   "source": "auto-sync"
+   "source": "compose-exclusive"
   },
   "_TZ3000_BEZFTHWC": {
    "driverId": "switch_1gang",
@@ -146730,7 +146693,7 @@
    "source": "auto-sync"
   },
   "_tz3000_air9m6af": {
-   "driverId": "usb_dongle_triple",
+   "driverId": "socket_power_strip_four_two",
    "modelIds": [
     "S26R2ZB",
     "S31 Lite zb",
@@ -146756,19 +146719,18 @@
    "batteryTypical": null,
    "energy": {
     "nominalW": 5,
-    "standbyW": 0.4
+    "standbyW": 0.5
    },
    "deviceClass": "socket",
    "capabilities": null,
-   "source": "auto-sync",
+   "source": "compose-exclusive",
    "variants": [
     "_TZ3000_9DJOCYPN",
+    "_TZ3000_air9m6af",
+    "_TZ3000_AIR9M6AF",
     "_tz3000_9djocypn",
     "_TZ3000_9djocypn",
-    "_tz3000_9DJOCYPN",
-    "_TZ3000_AIR9M6AF",
-    "_TZ3000_air9m6af",
-    "_tz3000_AIR9M6AF"
+    "_tz3000_9DJOCYPN"
    ]
   },
   "_tz3000_twqctvna": {
@@ -151740,17 +151702,42 @@
    "source": "auto-sync"
   },
   "_tz3210_zmy9hjay": {
-   "driverId": "wall_dimmer_tuya",
+   "driverId": "motion_sensor",
    "modelIds": [
-    "TS0011",
-    "TS0052",
+    "3305-S",
+    "3325-S",
+    "3326-L",
+    "CK-BL702-MWS-01",
+    "CK-BL702-MWS-01(7016)",
+    "CK-TLSR8656-SS5-01(7002)",
+    "E1525/E1745",
+    "E1745",
+    "IH012-RT01",
+    "LUMI.MOTION.AC02",
+    "LUMI.MOTION.AGL04",
+    "LUMI.SENSOR_MOTION",
+    "LUMI.SENSOR_MOTION.AQ2",
+    "MG1_5RZ",
+    "MS01",
+    "MSO1",
+    "RH3040",
+    "SML001",
+    "SML002",
+    "SML003",
+    "SML004",
+    "SNZB-03",
+    "SNZB-03P",
+    "SNZB-03PR2",
+    "SNZB-03R2",
+    "SZLMR10",
+    "TRADFRI MOTION SENSOR",
+    "TS0001",
+    "TS0004",
+    "TS0202",
     "TS0601",
-    "TS0601_dim1",
-    "TS1101",
     "TS110E",
-    "TS110F",
-    "ZBMINI-DIM",
-    "ZBMINID"
+    "TY0202",
+    "ZP-301Z"
    ],
    "vendor": "Fantem",
    "model": "ZB003-X",
@@ -151762,27 +151749,26 @@
     "https://zigbee.blakadder.com/assets/images/devices/fantem-zb003-x.jpg",
     "https://www.zigbee2mqtt.io/images/devices/ZB003-X.jpg"
    ],
-   "batteries": [],
-   "batteryTypical": null,
+   "batteries": [
+    "CR2450"
+   ],
+   "batteryTypical": "CR2450",
    "energy": {
-    "nominalW": 9,
-    "standbyW": 0.3
+    "nominalW": null,
+    "standbyW": null
    },
-   "deviceClass": "light",
+   "deviceClass": "sensor",
    "capabilities": null,
-   "source": "auto-sync",
+   "source": "compose-exclusive",
    "variants": [
     "_tz3210_rxqls8v0",
     "_tz3210_wuhzzfqg",
-    "_TZ3210_rxqls8v0",
-    "_TZ3210_wuhzzfqg",
     "_TZ3210_zmy9hjay",
-    "_TZ3210_RXQLS8V0",
-    "_tz3210_RXQLS8V0",
-    "_TZ3210_WUHZZFQG",
-    "_tz3210_WUHZZFQG",
     "_TZ3210_ZMY9HJAY",
-    "_tz3210_ZMY9HJAY"
+    "_TZ3210_rxqls8v0",
+    "_TZ3210_RXQLS8V0",
+    "_TZ3210_wuhzzfqg",
+    "_TZ3210_WUHZZFQG"
    ]
   },
   "_tzb210_3owg3kkv": {
@@ -152679,17 +152665,42 @@
    "source": "auto-sync"
   },
   "_tz3210_0aqbrnts": {
-   "driverId": "wall_dimmer_tuya",
+   "driverId": "motion_sensor",
    "modelIds": [
-    "TS0011",
-    "TS0052",
+    "3305-S",
+    "3325-S",
+    "3326-L",
+    "CK-BL702-MWS-01",
+    "CK-BL702-MWS-01(7016)",
+    "CK-TLSR8656-SS5-01(7002)",
+    "E1525/E1745",
+    "E1745",
+    "IH012-RT01",
+    "LUMI.MOTION.AC02",
+    "LUMI.MOTION.AGL04",
+    "LUMI.SENSOR_MOTION",
+    "LUMI.SENSOR_MOTION.AQ2",
+    "MG1_5RZ",
+    "MS01",
+    "MSO1",
+    "RH3040",
+    "SML001",
+    "SML002",
+    "SML003",
+    "SML004",
+    "SNZB-03",
+    "SNZB-03P",
+    "SNZB-03PR2",
+    "SNZB-03R2",
+    "SZLMR10",
+    "TRADFRI MOTION SENSOR",
+    "TS0001",
+    "TS0004",
+    "TS0202",
     "TS0601",
-    "TS0601_dim1",
-    "TS1101",
     "TS110E",
-    "TS110F",
-    "ZBMINI-DIM",
-    "ZBMINID"
+    "TY0202",
+    "ZP-301Z"
    ],
    "vendor": null,
    "model": null,
@@ -152698,28 +152709,55 @@
    "description": null,
    "productPage": null,
    "imageCandidates": [],
-   "batteries": [],
-   "batteryTypical": null,
+   "batteries": [
+    "CR2450"
+   ],
+   "batteryTypical": "CR2450",
    "energy": {
-    "nominalW": 9,
-    "standbyW": 0.3
+    "nominalW": null,
+    "standbyW": null
    },
-   "deviceClass": "light",
+   "deviceClass": "sensor",
    "capabilities": null,
-   "source": "auto-sync"
+   "source": "compose-exclusive"
   },
   "_tz3210_rxqls8v0": {
-   "driverId": "wall_dimmer_tuya",
+   "driverId": "motion_sensor",
    "modelIds": [
-    "TS0011",
-    "TS0052",
+    "3305-S",
+    "3325-S",
+    "3326-L",
+    "CK-BL702-MWS-01",
+    "CK-BL702-MWS-01(7016)",
+    "CK-TLSR8656-SS5-01(7002)",
+    "E1525/E1745",
+    "E1745",
+    "IH012-RT01",
+    "LUMI.MOTION.AC02",
+    "LUMI.MOTION.AGL04",
+    "LUMI.SENSOR_MOTION",
+    "LUMI.SENSOR_MOTION.AQ2",
+    "MG1_5RZ",
+    "MS01",
+    "MSO1",
+    "RH3040",
+    "SML001",
+    "SML002",
+    "SML003",
+    "SML004",
+    "SNZB-03",
+    "SNZB-03P",
+    "SNZB-03PR2",
+    "SNZB-03R2",
+    "SZLMR10",
+    "TRADFRI MOTION SENSOR",
+    "TS0001",
+    "TS0004",
+    "TS0202",
     "TS0601",
-    "TS0601_dim1",
-    "TS1101",
     "TS110E",
-    "TS110F",
-    "ZBMINI-DIM",
-    "ZBMINID"
+    "TY0202",
+    "ZP-301Z"
    ],
    "vendor": "Fantem",
    "model": "ZB003-X",
@@ -152731,41 +152769,65 @@
     "https://zigbee.blakadder.com/assets/images/devices/fantem-zb003-x.jpg",
     "https://www.zigbee2mqtt.io/images/devices/ZB003-X.jpg"
    ],
-   "batteries": [],
-   "batteryTypical": null,
+   "batteries": [
+    "CR2450"
+   ],
+   "batteryTypical": "CR2450",
    "energy": {
-    "nominalW": 9,
-    "standbyW": 0.3
+    "nominalW": null,
+    "standbyW": null
    },
-   "deviceClass": "light",
+   "deviceClass": "sensor",
    "capabilities": null,
-   "source": "auto-sync",
+   "source": "compose-exclusive",
    "variants": [
     "_tz3210_zmy9hjay",
     "_tz3210_wuhzzfqg",
-    "_TZ3210_rxqls8v0",
-    "_TZ3210_wuhzzfqg",
     "_TZ3210_zmy9hjay",
-    "_TZ3210_RXQLS8V0",
-    "_tz3210_RXQLS8V0",
-    "_TZ3210_WUHZZFQG",
-    "_tz3210_WUHZZFQG",
     "_TZ3210_ZMY9HJAY",
-    "_tz3210_ZMY9HJAY"
+    "_TZ3210_rxqls8v0",
+    "_TZ3210_RXQLS8V0",
+    "_TZ3210_wuhzzfqg",
+    "_TZ3210_WUHZZFQG"
    ]
   },
   "_tz3210_wuhzzfqg": {
-   "driverId": "wall_dimmer_tuya",
+   "driverId": "motion_sensor",
    "modelIds": [
-    "TS0011",
-    "TS0052",
+    "3305-S",
+    "3325-S",
+    "3326-L",
+    "CK-BL702-MWS-01",
+    "CK-BL702-MWS-01(7016)",
+    "CK-TLSR8656-SS5-01(7002)",
+    "E1525/E1745",
+    "E1745",
+    "IH012-RT01",
+    "LUMI.MOTION.AC02",
+    "LUMI.MOTION.AGL04",
+    "LUMI.SENSOR_MOTION",
+    "LUMI.SENSOR_MOTION.AQ2",
+    "MG1_5RZ",
+    "MS01",
+    "MSO1",
+    "RH3040",
+    "SML001",
+    "SML002",
+    "SML003",
+    "SML004",
+    "SNZB-03",
+    "SNZB-03P",
+    "SNZB-03PR2",
+    "SNZB-03R2",
+    "SZLMR10",
+    "TRADFRI MOTION SENSOR",
+    "TS0001",
+    "TS0004",
+    "TS0202",
     "TS0601",
-    "TS0601_dim1",
-    "TS1101",
     "TS110E",
-    "TS110F",
-    "ZBMINI-DIM",
-    "ZBMINID"
+    "TY0202",
+    "ZP-301Z"
    ],
    "vendor": "Fantem",
    "model": "ZB003-X",
@@ -152777,41 +152839,65 @@
     "https://zigbee.blakadder.com/assets/images/devices/fantem-zb003-x.jpg",
     "https://www.zigbee2mqtt.io/images/devices/ZB003-X.jpg"
    ],
-   "batteries": [],
-   "batteryTypical": null,
+   "batteries": [
+    "CR2450"
+   ],
+   "batteryTypical": "CR2450",
    "energy": {
-    "nominalW": 9,
-    "standbyW": 0.3
+    "nominalW": null,
+    "standbyW": null
    },
-   "deviceClass": "light",
+   "deviceClass": "sensor",
    "capabilities": null,
-   "source": "auto-sync",
+   "source": "compose-exclusive",
    "variants": [
     "_tz3210_zmy9hjay",
     "_tz3210_rxqls8v0",
-    "_TZ3210_rxqls8v0",
-    "_TZ3210_wuhzzfqg",
     "_TZ3210_zmy9hjay",
-    "_TZ3210_RXQLS8V0",
-    "_tz3210_RXQLS8V0",
-    "_TZ3210_WUHZZFQG",
-    "_tz3210_WUHZZFQG",
     "_TZ3210_ZMY9HJAY",
-    "_tz3210_ZMY9HJAY"
+    "_TZ3210_rxqls8v0",
+    "_TZ3210_RXQLS8V0",
+    "_TZ3210_wuhzzfqg",
+    "_TZ3210_WUHZZFQG"
    ]
   },
   "_tz3210_ohvnwamm": {
-   "driverId": "wall_dimmer_tuya",
+   "driverId": "motion_sensor",
    "modelIds": [
-    "TS0011",
-    "TS0052",
+    "3305-S",
+    "3325-S",
+    "3326-L",
+    "CK-BL702-MWS-01",
+    "CK-BL702-MWS-01(7016)",
+    "CK-TLSR8656-SS5-01(7002)",
+    "E1525/E1745",
+    "E1745",
+    "IH012-RT01",
+    "LUMI.MOTION.AC02",
+    "LUMI.MOTION.AGL04",
+    "LUMI.SENSOR_MOTION",
+    "LUMI.SENSOR_MOTION.AQ2",
+    "MG1_5RZ",
+    "MS01",
+    "MSO1",
+    "RH3040",
+    "SML001",
+    "SML002",
+    "SML003",
+    "SML004",
+    "SNZB-03",
+    "SNZB-03P",
+    "SNZB-03PR2",
+    "SNZB-03R2",
+    "SZLMR10",
+    "TRADFRI MOTION SENSOR",
+    "TS0001",
+    "TS0004",
+    "TS0202",
     "TS0601",
-    "TS0601_dim1",
-    "TS1101",
     "TS110E",
-    "TS110F",
-    "ZBMINI-DIM",
-    "ZBMINID"
+    "TY0202",
+    "ZP-301Z"
    ],
    "vendor": null,
    "model": null,
@@ -152820,28 +152906,55 @@
    "description": null,
    "productPage": null,
    "imageCandidates": [],
-   "batteries": [],
-   "batteryTypical": null,
+   "batteries": [
+    "CR2450"
+   ],
+   "batteryTypical": "CR2450",
    "energy": {
-    "nominalW": 9,
-    "standbyW": 0.3
+    "nominalW": null,
+    "standbyW": null
    },
-   "deviceClass": "light",
+   "deviceClass": "sensor",
    "capabilities": null,
-   "source": "auto-sync"
+   "source": "compose-exclusive"
   },
   "_tz3210_oekbi7o4": {
-   "driverId": "wall_dimmer_tuya",
+   "driverId": "motion_sensor",
    "modelIds": [
-    "TS0011",
-    "TS0052",
+    "3305-S",
+    "3325-S",
+    "3326-L",
+    "CK-BL702-MWS-01",
+    "CK-BL702-MWS-01(7016)",
+    "CK-TLSR8656-SS5-01(7002)",
+    "E1525/E1745",
+    "E1745",
+    "IH012-RT01",
+    "LUMI.MOTION.AC02",
+    "LUMI.MOTION.AGL04",
+    "LUMI.SENSOR_MOTION",
+    "LUMI.SENSOR_MOTION.AQ2",
+    "MG1_5RZ",
+    "MS01",
+    "MSO1",
+    "RH3040",
+    "SML001",
+    "SML002",
+    "SML003",
+    "SML004",
+    "SNZB-03",
+    "SNZB-03P",
+    "SNZB-03PR2",
+    "SNZB-03R2",
+    "SZLMR10",
+    "TRADFRI MOTION SENSOR",
+    "TS0001",
+    "TS0004",
+    "TS0202",
     "TS0601",
-    "TS0601_dim1",
-    "TS1101",
     "TS110E",
-    "TS110F",
-    "ZBMINI-DIM",
-    "ZBMINID"
+    "TY0202",
+    "ZP-301Z"
    ],
    "vendor": null,
    "model": null,
@@ -152850,15 +152963,17 @@
    "description": null,
    "productPage": null,
    "imageCandidates": [],
-   "batteries": [],
-   "batteryTypical": null,
+   "batteries": [
+    "CR2450"
+   ],
+   "batteryTypical": "CR2450",
    "energy": {
-    "nominalW": 9,
-    "standbyW": 0.3
+    "nominalW": null,
+    "standbyW": null
    },
-   "deviceClass": "light",
+   "deviceClass": "sensor",
    "capabilities": null,
-   "source": "auto-sync"
+   "source": "compose-exclusive"
   },
   "_tze204_nthhgkd6": {
    "driverId": "wall_dimmer_tuya",
@@ -154198,7 +154313,7 @@
    "source": "auto-sync"
   },
   "_tz3002_vaq2bfcu": {
-   "driverId": "switch_1gang",
+   "driverId": "switch_3gang",
    "modelIds": [],
    "vendor": null,
    "model": null,
@@ -154210,12 +154325,12 @@
    "batteries": [],
    "batteryTypical": null,
    "energy": {
-    "nominalW": 3,
-    "standbyW": 0.4
+    "nominalW": 5,
+    "standbyW": 0.6
    },
    "deviceClass": "socket",
    "capabilities": null,
-   "source": "auto-sync"
+   "source": "compose-exclusive"
   },
   "_tz3000_2ei1fkwb": {
    "driverId": "wall_switch_4gang_1way",
@@ -156532,25 +156647,29 @@
    "source": "registry:p2432-tz3000-3dfewsk1-water-leak"
   },
   "_tz3000_4qaowtdo": {
-   "driverId": "water_leak_sensor_tuya",
+   "driverId": "water_leak_sensor",
    "modelIds": [
     "_TZ3000_EIT6L5",
     "_TZ3000_KYB656NO",
     "3315-S",
     "3315-SEU",
+    "AY222Z",
     "CK-TLSR8656-SS5-01(7019)",
+    "CK-TLSR8656-Z23SE11HW-01(7019)",
     "HS1WL",
     "LS21001",
     "LUMI.SENSOR_WLEAK.AQ1",
-    "Q9MPFHW",
     "SJCGQ11LM",
     "SJCGQ12LM",
     "SJCGQ13LM",
     "SNZB-05",
     "SNZB-05P",
     "SQ510A",
+    "TS0207",
     "TS0601",
-    "ZG-222Z"
+    "ZG-222Z",
+    "ZG-222ZA",
+    "ZG-226Z"
    ],
    "vendor": null,
    "model": null,
@@ -156560,16 +156679,18 @@
    "productPage": null,
    "imageCandidates": [],
    "batteries": [
-    "CR2"
+    "CR2032",
+    "CR2450",
+    "AAA"
    ],
-   "batteryTypical": "CR2",
+   "batteryTypical": "CR2032",
    "energy": {
-    "nominalW": 0,
-    "standbyW": 0
+    "nominalW": null,
+    "standbyW": null
    },
    "deviceClass": "sensor",
    "capabilities": null,
-   "source": "auto-sync"
+   "source": "compose-exclusive"
   },
   "_tz3000_4uvovz4r": {
    "driverId": "water_leak_sensor",
@@ -156661,25 +156782,29 @@
    "source": "auto-sync"
   },
   "_tz3000_bfopm9ga": {
-   "driverId": "water_leak_sensor_tuya",
+   "driverId": "water_leak_sensor",
    "modelIds": [
     "_TZ3000_EIT6L5",
     "_TZ3000_KYB656NO",
     "3315-S",
     "3315-SEU",
+    "AY222Z",
     "CK-TLSR8656-SS5-01(7019)",
+    "CK-TLSR8656-Z23SE11HW-01(7019)",
     "HS1WL",
     "LS21001",
     "LUMI.SENSOR_WLEAK.AQ1",
-    "Q9MPFHW",
     "SJCGQ11LM",
     "SJCGQ12LM",
     "SJCGQ13LM",
     "SNZB-05",
     "SNZB-05P",
     "SQ510A",
+    "TS0207",
     "TS0601",
-    "ZG-222Z"
+    "ZG-222Z",
+    "ZG-222ZA",
+    "ZG-226Z"
    ],
    "vendor": null,
    "model": null,
@@ -156689,37 +156814,43 @@
    "productPage": null,
    "imageCandidates": [],
    "batteries": [
-    "CR2"
+    "CR2032",
+    "CR2450",
+    "AAA"
    ],
-   "batteryTypical": "CR2",
+   "batteryTypical": "CR2032",
    "energy": {
-    "nominalW": 0,
-    "standbyW": 0
+    "nominalW": null,
+    "standbyW": null
    },
    "deviceClass": "sensor",
    "capabilities": null,
-   "source": "auto-sync"
+   "source": "compose-exclusive"
   },
   "_tz3000_bzt33cyu": {
-   "driverId": "water_leak_sensor_tuya",
+   "driverId": "water_leak_sensor",
    "modelIds": [
     "_TZ3000_EIT6L5",
     "_TZ3000_KYB656NO",
     "3315-S",
     "3315-SEU",
+    "AY222Z",
     "CK-TLSR8656-SS5-01(7019)",
+    "CK-TLSR8656-Z23SE11HW-01(7019)",
     "HS1WL",
     "LS21001",
     "LUMI.SENSOR_WLEAK.AQ1",
-    "Q9MPFHW",
     "SJCGQ11LM",
     "SJCGQ12LM",
     "SJCGQ13LM",
     "SNZB-05",
     "SNZB-05P",
     "SQ510A",
+    "TS0207",
     "TS0601",
-    "ZG-222Z"
+    "ZG-222Z",
+    "ZG-222ZA",
+    "ZG-226Z"
    ],
    "vendor": null,
    "model": null,
@@ -156729,16 +156860,18 @@
    "productPage": null,
    "imageCandidates": [],
    "batteries": [
-    "CR2"
+    "CR2032",
+    "CR2450",
+    "AAA"
    ],
-   "batteryTypical": "CR2",
+   "batteryTypical": "CR2032",
    "energy": {
-    "nominalW": 0,
-    "standbyW": 0
+    "nominalW": null,
+    "standbyW": null
    },
    "deviceClass": "sensor",
    "capabilities": null,
-   "source": "auto-sync"
+   "source": "compose-exclusive"
   },
   "_tz3000_eit7p838": {
    "driverId": "water_leak_sensor_tuya",
@@ -157229,25 +157362,29 @@
    "source": "auto-sync"
   },
   "_tz3000_qhozxs2b": {
-   "driverId": "water_leak_sensor_tuya",
+   "driverId": "water_leak_sensor",
    "modelIds": [
     "_TZ3000_EIT6L5",
     "_TZ3000_KYB656NO",
     "3315-S",
     "3315-SEU",
+    "AY222Z",
     "CK-TLSR8656-SS5-01(7019)",
+    "CK-TLSR8656-Z23SE11HW-01(7019)",
     "HS1WL",
     "LS21001",
     "LUMI.SENSOR_WLEAK.AQ1",
-    "Q9MPFHW",
     "SJCGQ11LM",
     "SJCGQ12LM",
     "SJCGQ13LM",
     "SNZB-05",
     "SNZB-05P",
     "SQ510A",
+    "TS0207",
     "TS0601",
-    "ZG-222Z"
+    "ZG-222Z",
+    "ZG-222ZA",
+    "ZG-226Z"
    ],
    "vendor": null,
    "model": null,
@@ -157257,16 +157394,18 @@
    "productPage": null,
    "imageCandidates": [],
    "batteries": [
-    "CR2"
+    "CR2032",
+    "CR2450",
+    "AAA"
    ],
-   "batteryTypical": "CR2",
+   "batteryTypical": "CR2032",
    "energy": {
-    "nominalW": 0,
-    "standbyW": 0
+    "nominalW": null,
+    "standbyW": null
    },
    "deviceClass": "sensor",
    "capabilities": null,
-   "source": "auto-sync"
+   "source": "compose-exclusive"
   },
   "_tz3000_rurvxhcx": {
    "driverId": "water_leak_sensor_tuya",
@@ -183674,64 +183813,43 @@
    "source": "sync-compose-add"
   },
   "_tze284_kb5noeto": {
-   "driverId": "presence_sensor_radar",
+   "driverId": "pir_sensor_2",
    "modelIds": [
-    "AY-204ZX",
-    "AY204T",
-    "AY205Z",
-    "AY208Z",
-    "CK-BL702-MWS-01",
-    "CK-BL702-MWS-01(7016)",
-    "EDM-1ZBA-EU",
+    "01MINIZB",
+    "BASICZBR3",
     "EXCELLUX",
-    "LUMI.SENSOR_HT",
-    "LUMI.SENSOR_HT.AGL02",
-    "LUMI.WEATHER",
-    "MG1_5RZ",
-    "RH3052",
-    "SM0201",
-    "SNZB-06P",
-    "SNZB-06P24",
-    "SZLMR10",
-    "TH01",
-    "THS317-ET",
-    "TRI-C1ZR",
-    "TRI-K1ZR",
-    "TS0004",
-    "TS0045",
-    "TS004F",
-    "TS0201",
+    "S26R2ZB",
+    "S31ZB",
+    "TS0001",
+    "TS0001_POWER",
+    "TS0001_SWITCH",
+    "TS0001_SWITCH_MODULE",
+    "TS0002",
+    "TS0003",
+    "TS000F",
+    "TS0011",
+    "TS0012",
+    "TS0014",
+    "TS0041",
+    "TS0101",
+    "TS0111",
+    "TS011F",
     "TS0202",
-    "TS0203",
-    "TS0215A",
-    "TS0222",
     "TS0225",
-    "TS0501B",
     "TS0601",
-    "TS0601_WIRELESSSW",
+    "TS0726",
     "TS110E",
-    "TS1201",
-    "TY0201",
-    "WSDCGQ01LM",
-    "WSDCGQ11LM",
-    "WSDCGQ12LM",
-    "ZG-204Z",
-    "ZG-204ZE",
-    "ZG-204ZH",
-    "ZG-204ZK",
-    "ZG-204ZL",
-    "ZG-204ZM",
-    "ZG-204ZP",
-    "ZG-204ZQ",
-    "ZG-204ZV",
-    "ZG-204ZX",
-    "ZG-205W",
-    "ZG-205Z",
-    "ZG-205ZL",
-    "ZG-210Z",
-    "ZG-302ZL",
-    "ZG-302ZM",
-    "ZP-301Z"
+    "TS130F",
+    "TS4100",
+    "ZBM5-1C-120",
+    "ZBM5-2C-120",
+    "ZBM5-3C-120",
+    "ZBMINI",
+    "ZBMINIL2",
+    "ZBMINIL2-R2",
+    "ZBMINIR",
+    "ZBMINIR2",
+    "ZBMINIR2-R2"
    ],
    "vendor": null,
    "model": null,
@@ -183741,16 +183859,16 @@
    "productPage": null,
    "imageCandidates": [],
    "batteries": [
-    "Li-ion"
+    "CR123A"
    ],
-   "batteryTypical": "Li-ion",
+   "batteryTypical": "CR123A",
    "energy": {
     "nominalW": null,
     "standbyW": null
    },
    "deviceClass": "sensor",
    "capabilities": null,
-   "source": "sync-compose-add"
+   "source": "compose-exclusive"
   },
   "_tze200_debczeci": {
    "driverId": "presence_sensor_radar",
@@ -190057,6 +190175,58 @@
     "standbyW": 0.6
    },
    "deviceClass": "socket",
+   "capabilities": null,
+   "source": "sync-compose-add"
+  },
+  "_tze200_6ycgarab": {
+   "driverId": "smoke_sensor",
+   "modelIds": [
+    "SMD9300",
+    "TS0205",
+    "TS0601"
+   ],
+   "vendor": null,
+   "model": null,
+   "title": null,
+   "category": null,
+   "description": null,
+   "productPage": null,
+   "imageCandidates": [],
+   "batteries": [
+    "CR123A"
+   ],
+   "batteryTypical": "CR123A",
+   "energy": {
+    "nominalW": 0,
+    "standbyW": 0
+   },
+   "deviceClass": "sensor",
+   "capabilities": null,
+   "source": "sync-compose-add"
+  },
+  "_tze204_6ycgarab": {
+   "driverId": "smoke_sensor",
+   "modelIds": [
+    "SMD9300",
+    "TS0205",
+    "TS0601"
+   ],
+   "vendor": null,
+   "model": null,
+   "title": null,
+   "category": null,
+   "description": null,
+   "productPage": null,
+   "imageCandidates": [],
+   "batteries": [
+    "CR123A"
+   ],
+   "batteryTypical": "CR123A",
+   "energy": {
+    "nominalW": 0,
+    "standbyW": 0
+   },
+   "deviceClass": "sensor",
    "capabilities": null,
    "source": "sync-compose-add"
   },
@@ -235605,30 +235775,6 @@
     "_tyzb01_CBIEZPDS"
    ]
   },
-  "_tz1800_ladpngdx": {
-   "driverId": "climate_sensor",
-   "modelIds": [],
-   "vendor": null,
-   "model": null,
-   "title": null,
-   "category": null,
-   "description": null,
-   "productPage": null,
-   "imageCandidates": [],
-   "batteries": [
-    "AAA",
-    "CR2032",
-    "CR2450"
-   ],
-   "batteryTypical": "AAA",
-   "energy": {
-    "nominalW": null,
-    "standbyW": null
-   },
-   "deviceClass": "sensor",
-   "capabilities": null,
-   "source": null
-  },
   "_tz2000_lxvycln5": {
    "driverId": "climate_sensor",
    "modelIds": [],
@@ -235654,30 +235800,6 @@
    "source": null
   },
   "_tz2000_zsfvulde": {
-   "driverId": "climate_sensor",
-   "modelIds": [],
-   "vendor": null,
-   "model": null,
-   "title": null,
-   "category": null,
-   "description": null,
-   "productPage": null,
-   "imageCandidates": [],
-   "batteries": [
-    "AAA",
-    "CR2032",
-    "CR2450"
-   ],
-   "batteryTypical": "AAA",
-   "energy": {
-    "nominalW": null,
-    "standbyW": null
-   },
-   "deviceClass": "sensor",
-   "capabilities": null,
-   "source": null
-  },
-  "_tz3000_0hkmcrza": {
    "driverId": "climate_sensor",
    "modelIds": [],
    "vendor": null,
@@ -236359,30 +236481,6 @@
    "source": null
   },
   "_tz3000_hgm6k8ku": {
-   "driverId": "climate_sensor",
-   "modelIds": [],
-   "vendor": null,
-   "model": null,
-   "title": null,
-   "category": null,
-   "description": null,
-   "productPage": null,
-   "imageCandidates": [],
-   "batteries": [
-    "AAA",
-    "CR2032",
-    "CR2450"
-   ],
-   "batteryTypical": "AAA",
-   "energy": {
-    "nominalW": null,
-    "standbyW": null
-   },
-   "deviceClass": "sensor",
-   "capabilities": null,
-   "source": null
-  },
-  "_tz3000_hgu1dlak": {
    "driverId": "climate_sensor",
    "modelIds": [],
    "vendor": null,
@@ -249048,30 +249146,6 @@
     "_tyzb01_CBIEZPDS"
    ]
   },
-  "_TZ1800_ladpngdx": {
-   "driverId": "climate_sensor",
-   "modelIds": [],
-   "vendor": null,
-   "model": null,
-   "title": null,
-   "category": null,
-   "description": null,
-   "productPage": null,
-   "imageCandidates": [],
-   "batteries": [
-    "AAA",
-    "CR2032",
-    "CR2450"
-   ],
-   "batteryTypical": "AAA",
-   "energy": {
-    "nominalW": null,
-    "standbyW": null
-   },
-   "deviceClass": "sensor",
-   "capabilities": null,
-   "source": null
-  },
   "_TZ2000_lxvycln5": {
    "driverId": "climate_sensor",
    "modelIds": [],
@@ -249097,30 +249171,6 @@
    "source": null
   },
   "_TZ2000_zsfvulde": {
-   "driverId": "climate_sensor",
-   "modelIds": [],
-   "vendor": null,
-   "model": null,
-   "title": null,
-   "category": null,
-   "description": null,
-   "productPage": null,
-   "imageCandidates": [],
-   "batteries": [
-    "AAA",
-    "CR2032",
-    "CR2450"
-   ],
-   "batteryTypical": "AAA",
-   "energy": {
-    "nominalW": null,
-    "standbyW": null
-   },
-   "deviceClass": "sensor",
-   "capabilities": null,
-   "source": null
-  },
-  "_TZ3000_0hkmcrza": {
    "driverId": "climate_sensor",
    "modelIds": [],
    "vendor": null,
@@ -249887,30 +249937,6 @@
    "source": null
   },
   "_TZ3000_hgm6k8ku": {
-   "driverId": "climate_sensor",
-   "modelIds": [],
-   "vendor": null,
-   "model": null,
-   "title": null,
-   "category": null,
-   "description": null,
-   "productPage": null,
-   "imageCandidates": [],
-   "batteries": [
-    "AAA",
-    "CR2032",
-    "CR2450"
-   ],
-   "batteryTypical": "AAA",
-   "energy": {
-    "nominalW": null,
-    "standbyW": null
-   },
-   "deviceClass": "sensor",
-   "capabilities": null,
-   "source": null
-  },
-  "_TZ3000_hgu1dlak": {
    "driverId": "climate_sensor",
    "modelIds": [],
    "vendor": null,
@@ -263507,30 +263533,6 @@
     "_tyzb01_CBIEZPDS"
    ]
   },
-  "_tz1800_LADPNGDX": {
-   "driverId": "climate_sensor",
-   "modelIds": [],
-   "vendor": null,
-   "model": null,
-   "title": null,
-   "category": null,
-   "description": null,
-   "productPage": null,
-   "imageCandidates": [],
-   "batteries": [
-    "AAA",
-    "CR2032",
-    "CR2450"
-   ],
-   "batteryTypical": "AAA",
-   "energy": {
-    "nominalW": null,
-    "standbyW": null
-   },
-   "deviceClass": "sensor",
-   "capabilities": null,
-   "source": null
-  },
   "_tz2000_LXVYCLN5": {
    "driverId": "climate_sensor",
    "modelIds": [],
@@ -263556,30 +263558,6 @@
    "source": null
   },
   "_tz2000_ZSFVULDE": {
-   "driverId": "climate_sensor",
-   "modelIds": [],
-   "vendor": null,
-   "model": null,
-   "title": null,
-   "category": null,
-   "description": null,
-   "productPage": null,
-   "imageCandidates": [],
-   "batteries": [
-    "AAA",
-    "CR2032",
-    "CR2450"
-   ],
-   "batteryTypical": "AAA",
-   "energy": {
-    "nominalW": null,
-    "standbyW": null
-   },
-   "deviceClass": "sensor",
-   "capabilities": null,
-   "source": null
-  },
-  "_tz3000_0HKMCRZA": {
    "driverId": "climate_sensor",
    "modelIds": [],
    "vendor": null,
@@ -264503,30 +264481,6 @@
    "source": null
   },
   "_tz3000_HGM6K8KU": {
-   "driverId": "climate_sensor",
-   "modelIds": [],
-   "vendor": null,
-   "model": null,
-   "title": null,
-   "category": null,
-   "description": null,
-   "productPage": null,
-   "imageCandidates": [],
-   "batteries": [
-    "AAA",
-    "CR2032",
-    "CR2450"
-   ],
-   "batteryTypical": "AAA",
-   "energy": {
-    "nominalW": null,
-    "standbyW": null
-   },
-   "deviceClass": "sensor",
-   "capabilities": null,
-   "source": null
-  },
-  "_tz3000_HGU1DLAK": {
    "driverId": "climate_sensor",
    "modelIds": [],
    "vendor": null,
@@ -289765,86 +289719,6 @@
    "capabilities": null,
    "source": "sync-compose-add"
   },
-  "_tze200_pay2byax": {
-   "driverId": null,
-   "modelIds": [],
-   "vendor": "Tuya",
-   "model": "ZG-102ZL",
-   "title": "Luminance Door Sensor",
-   "category": "sensor",
-   "description": "Luminance Door Sensor",
-   "productPage": "https://zigbee.blakadder.com/Tuya_ZG-102ZL.html",
-   "imageCandidates": [
-    "https://zigbee.blakadder.com/assets/images/devices/tuya-zg-102zl.jpg",
-    "https://www.zigbee2mqtt.io/images/devices/ZG-102ZL.jpg"
-   ],
-   "batteries": [],
-   "batteryTypical": null,
-   "energy": null,
-   "deviceClass": null,
-   "capabilities": null,
-   "source": null,
-   "variants": [
-    "_TZE200_N8DLJORX",
-    "_TZE200_pay2byax",
-    "_tze200_n8dljorx",
-    "_tze200_N8DLJORX",
-    "_TZE200_n8dljorx",
-    "_TZE200_PAY2BYAX",
-    "_tze200_PAY2BYAX"
-   ]
-  },
-  "_tze204_pay2byax": {
-   "driverId": null,
-   "modelIds": [],
-   "vendor": null,
-   "model": null,
-   "title": null,
-   "category": null,
-   "description": null,
-   "productPage": null,
-   "imageCandidates": [],
-   "batteries": [],
-   "batteryTypical": null,
-   "energy": null,
-   "deviceClass": null,
-   "capabilities": null,
-   "source": null
-  },
-  "_TZE200_vrcfo4i0": {
-   "driverId": null,
-   "modelIds": [],
-   "vendor": null,
-   "model": null,
-   "title": null,
-   "category": null,
-   "description": null,
-   "productPage": null,
-   "imageCandidates": [],
-   "batteries": [],
-   "batteryTypical": null,
-   "energy": null,
-   "deviceClass": null,
-   "capabilities": null,
-   "source": null
-  },
-  "_tze200_vrcfo4i0": {
-   "driverId": null,
-   "modelIds": [],
-   "vendor": null,
-   "model": null,
-   "title": null,
-   "category": null,
-   "description": null,
-   "productPage": null,
-   "imageCandidates": [],
-   "batteries": [],
-   "batteryTypical": null,
-   "energy": null,
-   "deviceClass": null,
-   "capabilities": null,
-   "source": null
-  },
   "_tze284_N8DLJORX": {
    "driverId": "contact_sensor",
    "modelIds": [
@@ -289896,65 +289770,55 @@
    "capabilities": null,
    "source": "sync-compose-add"
   },
-  "_TZE200_PAY2BYAX": {
-   "driverId": null,
+  "_TZ3000_0hkmcrza": {
+   "driverId": "contact_sensor",
    "modelIds": [],
-   "vendor": "Tuya",
-   "model": "ZG-102ZL",
-   "title": "Luminance Door Sensor",
-   "category": "sensor",
-   "description": "Luminance Door Sensor",
-   "productPage": "https://zigbee.blakadder.com/Tuya_ZG-102ZL.html",
-   "imageCandidates": [
-    "https://zigbee.blakadder.com/assets/images/devices/tuya-zg-102zl.jpg",
-    "https://www.zigbee2mqtt.io/images/devices/ZG-102ZL.jpg"
+   "vendor": null,
+   "model": null,
+   "title": null,
+   "category": null,
+   "description": null,
+   "productPage": null,
+   "imageCandidates": [],
+   "batteries": [
+    "CR2032",
+    "CR1632",
+    "AAA"
    ],
-   "batteries": [],
-   "batteryTypical": null,
-   "energy": null,
-   "deviceClass": null,
+   "batteryTypical": "CR2032",
+   "energy": {
+    "nominalW": null,
+    "standbyW": null
+   },
+   "deviceClass": "sensor",
    "capabilities": null,
-   "source": null,
-   "variants": [
-    "_TZE200_N8DLJORX",
-    "_TZE200_pay2byax",
-    "_tze200_n8dljorx",
-    "_tze200_N8DLJORX",
-    "_TZE200_n8dljorx",
-    "_tze200_pay2byax",
-    "_tze200_PAY2BYAX"
-   ]
+   "source": null
   },
-  "_tze200_PAY2BYAX": {
-   "driverId": null,
+  "_tz3000_0hkmcrza": {
+   "driverId": "contact_sensor",
    "modelIds": [],
-   "vendor": "Tuya",
-   "model": "ZG-102ZL",
-   "title": "Luminance Door Sensor",
-   "category": "sensor",
-   "description": "Luminance Door Sensor",
-   "productPage": "https://zigbee.blakadder.com/Tuya_ZG-102ZL.html",
-   "imageCandidates": [
-    "https://zigbee.blakadder.com/assets/images/devices/tuya-zg-102zl.jpg",
-    "https://www.zigbee2mqtt.io/images/devices/ZG-102ZL.jpg"
+   "vendor": null,
+   "model": null,
+   "title": null,
+   "category": null,
+   "description": null,
+   "productPage": null,
+   "imageCandidates": [],
+   "batteries": [
+    "CR2032",
+    "CR1632",
+    "AAA"
    ],
-   "batteries": [],
-   "batteryTypical": null,
-   "energy": null,
-   "deviceClass": null,
+   "batteryTypical": "CR2032",
+   "energy": {
+    "nominalW": null,
+    "standbyW": null
+   },
+   "deviceClass": "sensor",
    "capabilities": null,
-   "source": null,
-   "variants": [
-    "_TZE200_N8DLJORX",
-    "_TZE200_pay2byax",
-    "_tze200_n8dljorx",
-    "_tze200_N8DLJORX",
-    "_TZE200_n8dljorx",
-    "_tze200_pay2byax",
-    "_TZE200_PAY2BYAX"
-   ]
+   "source": null
   },
-  "_TZE204_PAY2BYAX": {
+  "_TZE200_vrcfo4i0": {
    "driverId": null,
    "modelIds": [],
    "vendor": null,
@@ -289971,24 +289835,7 @@
    "capabilities": null,
    "source": null
   },
-  "_tze204_PAY2BYAX": {
-   "driverId": null,
-   "modelIds": [],
-   "vendor": null,
-   "model": null,
-   "title": null,
-   "category": null,
-   "description": null,
-   "productPage": null,
-   "imageCandidates": [],
-   "batteries": [],
-   "batteryTypical": null,
-   "energy": null,
-   "deviceClass": null,
-   "capabilities": null,
-   "source": null
-  },
-  "_tze200_VRCFO4I0": {
+  "_tze200_vrcfo4i0": {
    "driverId": null,
    "modelIds": [],
    "vendor": null,
@@ -290029,6 +289876,96 @@
    "capabilities": null,
    "source": "sync-compose-add"
   },
+  "_tze200_pay2byax": {
+   "driverId": "contact_sensor_zigbee",
+   "modelIds": [],
+   "vendor": "Tuya",
+   "model": "ZG-102ZL",
+   "title": "Luminance Door Sensor",
+   "category": "sensor",
+   "description": "Luminance Door Sensor",
+   "productPage": "https://zigbee.blakadder.com/Tuya_ZG-102ZL.html",
+   "imageCandidates": [
+    "https://zigbee.blakadder.com/assets/images/devices/tuya-zg-102zl.jpg",
+    "https://www.zigbee2mqtt.io/images/devices/ZG-102ZL.jpg"
+   ],
+   "batteries": [
+    "CR2450"
+   ],
+   "batteryTypical": "CR2450",
+   "energy": {
+    "nominalW": null,
+    "standbyW": null
+   },
+   "deviceClass": "sensor",
+   "capabilities": null,
+   "source": null,
+   "variants": [
+    "_TZE200_N8DLJORX",
+    "_TZE200_pay2byax",
+    "_tze200_n8dljorx",
+    "_tze200_N8DLJORX",
+    "_TZE200_n8dljorx",
+    "_TZE200_PAY2BYAX",
+    "_tze200_PAY2BYAX"
+   ]
+  },
+  "_tze204_pay2byax": {
+   "driverId": "contact_sensor_zigbee",
+   "modelIds": [],
+   "vendor": null,
+   "model": null,
+   "title": null,
+   "category": null,
+   "description": null,
+   "productPage": null,
+   "imageCandidates": [],
+   "batteries": [
+    "CR2450"
+   ],
+   "batteryTypical": "CR2450",
+   "energy": {
+    "nominalW": null,
+    "standbyW": null
+   },
+   "deviceClass": "sensor",
+   "capabilities": null,
+   "source": null
+  },
+  "_TZE200_PAY2BYAX": {
+   "driverId": "contact_sensor_zigbee",
+   "modelIds": [],
+   "vendor": "Tuya",
+   "model": "ZG-102ZL",
+   "title": "Luminance Door Sensor",
+   "category": "sensor",
+   "description": "Luminance Door Sensor",
+   "productPage": "https://zigbee.blakadder.com/Tuya_ZG-102ZL.html",
+   "imageCandidates": [
+    "https://zigbee.blakadder.com/assets/images/devices/tuya-zg-102zl.jpg",
+    "https://www.zigbee2mqtt.io/images/devices/ZG-102ZL.jpg"
+   ],
+   "batteries": [
+    "CR2450"
+   ],
+   "batteryTypical": "CR2450",
+   "energy": {
+    "nominalW": null,
+    "standbyW": null
+   },
+   "deviceClass": "sensor",
+   "capabilities": null,
+   "source": null,
+   "variants": [
+    "_TZE200_N8DLJORX",
+    "_TZE200_pay2byax",
+    "_tze200_n8dljorx",
+    "_tze200_N8DLJORX",
+    "_TZE200_n8dljorx",
+    "_tze200_pay2byax",
+    "_tze200_PAY2BYAX"
+   ]
+  },
   "_TZE284_PAY2BYAX": {
    "driverId": "contact_sensor_zigbee",
    "modelIds": [
@@ -290052,6 +289989,84 @@
    "deviceClass": "sensor",
    "capabilities": null,
    "source": "sync-compose-add"
+  },
+  "_tze200_PAY2BYAX": {
+   "driverId": "contact_sensor_zigbee",
+   "modelIds": [],
+   "vendor": "Tuya",
+   "model": "ZG-102ZL",
+   "title": "Luminance Door Sensor",
+   "category": "sensor",
+   "description": "Luminance Door Sensor",
+   "productPage": "https://zigbee.blakadder.com/Tuya_ZG-102ZL.html",
+   "imageCandidates": [
+    "https://zigbee.blakadder.com/assets/images/devices/tuya-zg-102zl.jpg",
+    "https://www.zigbee2mqtt.io/images/devices/ZG-102ZL.jpg"
+   ],
+   "batteries": [
+    "CR2450"
+   ],
+   "batteryTypical": "CR2450",
+   "energy": {
+    "nominalW": null,
+    "standbyW": null
+   },
+   "deviceClass": "sensor",
+   "capabilities": null,
+   "source": null,
+   "variants": [
+    "_TZE200_N8DLJORX",
+    "_TZE200_pay2byax",
+    "_tze200_n8dljorx",
+    "_tze200_N8DLJORX",
+    "_TZE200_n8dljorx",
+    "_tze200_pay2byax",
+    "_TZE200_PAY2BYAX"
+   ]
+  },
+  "_TZE204_PAY2BYAX": {
+   "driverId": "contact_sensor_zigbee",
+   "modelIds": [],
+   "vendor": null,
+   "model": null,
+   "title": null,
+   "category": null,
+   "description": null,
+   "productPage": null,
+   "imageCandidates": [],
+   "batteries": [
+    "CR2450"
+   ],
+   "batteryTypical": "CR2450",
+   "energy": {
+    "nominalW": null,
+    "standbyW": null
+   },
+   "deviceClass": "sensor",
+   "capabilities": null,
+   "source": null
+  },
+  "_tze204_PAY2BYAX": {
+   "driverId": "contact_sensor_zigbee",
+   "modelIds": [],
+   "vendor": null,
+   "model": null,
+   "title": null,
+   "category": null,
+   "description": null,
+   "productPage": null,
+   "imageCandidates": [],
+   "batteries": [
+    "CR2450"
+   ],
+   "batteryTypical": "CR2450",
+   "energy": {
+    "nominalW": null,
+    "standbyW": null
+   },
+   "deviceClass": "sensor",
+   "capabilities": null,
+   "source": null
   },
   "_tze284_PAY2BYAX": {
    "driverId": "contact_sensor_zigbee",
@@ -343381,6 +343396,52 @@
    "capabilities": null,
    "source": "auto-sync"
   },
+  "_TZ1800_ladpngdx": {
+   "driverId": "doorbell",
+   "modelIds": [],
+   "vendor": null,
+   "model": null,
+   "title": null,
+   "category": null,
+   "description": null,
+   "productPage": null,
+   "imageCandidates": [],
+   "batteries": [
+    "OTHER",
+    "OTHER"
+   ],
+   "batteryTypical": "OTHER",
+   "energy": {
+    "nominalW": 2,
+    "standbyW": 0.1
+   },
+   "deviceClass": "doorbell",
+   "capabilities": null,
+   "source": null
+  },
+  "_tz1800_ladpngdx": {
+   "driverId": "doorbell",
+   "modelIds": [],
+   "vendor": null,
+   "model": null,
+   "title": null,
+   "category": null,
+   "description": null,
+   "productPage": null,
+   "imageCandidates": [],
+   "batteries": [
+    "OTHER",
+    "OTHER"
+   ],
+   "batteryTypical": "OTHER",
+   "energy": {
+    "nominalW": 2,
+    "standbyW": 0.1
+   },
+   "deviceClass": "doorbell",
+   "capabilities": null,
+   "source": null
+  },
   "_tz3000_dummy1781425895946": {
    "driverId": "doorwindowsensor_2",
    "modelIds": [],
@@ -348212,57 +348273,6 @@
    "capabilities": null,
    "source": "auto-sync"
   },
-  "_TZ3000_baeiitad": {
-   "driverId": null,
-   "modelIds": [],
-   "vendor": null,
-   "model": null,
-   "title": null,
-   "category": null,
-   "description": null,
-   "productPage": null,
-   "imageCandidates": [],
-   "batteries": [],
-   "batteryTypical": null,
-   "energy": null,
-   "deviceClass": null,
-   "capabilities": null,
-   "source": null
-  },
-  "_tz3000_baeiitad": {
-   "driverId": null,
-   "modelIds": [],
-   "vendor": null,
-   "model": null,
-   "title": null,
-   "category": null,
-   "description": null,
-   "productPage": null,
-   "imageCandidates": [],
-   "batteries": [],
-   "batteryTypical": null,
-   "energy": null,
-   "deviceClass": null,
-   "capabilities": null,
-   "source": null
-  },
-  "_tz3000_BAEIITAD": {
-   "driverId": null,
-   "modelIds": [],
-   "vendor": null,
-   "model": null,
-   "title": null,
-   "category": null,
-   "description": null,
-   "productPage": null,
-   "imageCandidates": [],
-   "batteries": [],
-   "batteryTypical": null,
-   "energy": null,
-   "deviceClass": null,
-   "capabilities": null,
-   "source": null
-  },
   "_TZE200_ULYN7B1O": {
    "driverId": "floor_heating_thermostat",
    "modelIds": [
@@ -350697,6 +350707,23 @@
     "standbyW": null
    },
    "deviceClass": "sensor",
+   "capabilities": null,
+   "source": null
+  },
+  "_tze200_VRCFO4I0": {
+   "driverId": null,
+   "modelIds": [],
+   "vendor": null,
+   "model": null,
+   "title": null,
+   "category": null,
+   "description": null,
+   "productPage": null,
+   "imageCandidates": [],
+   "batteries": [],
+   "batteryTypical": null,
+   "energy": null,
+   "deviceClass": null,
    "capabilities": null,
    "source": null
   },
@@ -376180,6 +376207,768 @@
     "_TZ3000_O4MKAHKC"
    ]
   },
+  "_TZ3210_zmy9hjay": {
+   "driverId": "motion_sensor",
+   "modelIds": [
+    "3305-S",
+    "3325-S",
+    "3326-L",
+    "CK-BL702-MWS-01",
+    "CK-BL702-MWS-01(7016)",
+    "CK-TLSR8656-SS5-01(7002)",
+    "E1525/E1745",
+    "E1745",
+    "IH012-RT01",
+    "LUMI.MOTION.AC02",
+    "LUMI.MOTION.AGL04",
+    "LUMI.SENSOR_MOTION",
+    "LUMI.SENSOR_MOTION.AQ2",
+    "MG1_5RZ",
+    "MS01",
+    "MSO1",
+    "RH3040",
+    "SML001",
+    "SML002",
+    "SML003",
+    "SML004",
+    "SNZB-03",
+    "SNZB-03P",
+    "SNZB-03PR2",
+    "SNZB-03R2",
+    "SZLMR10",
+    "TRADFRI MOTION SENSOR",
+    "TS0001",
+    "TS0004",
+    "TS0202",
+    "TS0601",
+    "TS110E",
+    "TY0202",
+    "ZP-301Z"
+   ],
+   "vendor": "Fantem",
+   "model": "ZB003-X",
+   "title": "Multi Sensor 4 in 1",
+   "category": "sensor",
+   "description": "Multi Sensor 4 in 1",
+   "productPage": "https://zigbee.blakadder.com/Fantem_ZB003-X.html",
+   "imageCandidates": [
+    "https://zigbee.blakadder.com/assets/images/devices/fantem-zb003-x.jpg",
+    "https://www.zigbee2mqtt.io/images/devices/ZB003-X.jpg"
+   ],
+   "batteries": [
+    "CR2450"
+   ],
+   "batteryTypical": "CR2450",
+   "energy": {
+    "nominalW": null,
+    "standbyW": null
+   },
+   "deviceClass": "sensor",
+   "capabilities": null,
+   "source": "compose-exclusive",
+   "variants": [
+    "_tz3210_zmy9hjay",
+    "_tz3210_rxqls8v0",
+    "_tz3210_wuhzzfqg",
+    "_TZ3210_ZMY9HJAY",
+    "_TZ3210_rxqls8v0",
+    "_TZ3210_RXQLS8V0",
+    "_TZ3210_wuhzzfqg",
+    "_TZ3210_WUHZZFQG"
+   ]
+  },
+  "_TZ3210_ZMY9HJAY": {
+   "driverId": "motion_sensor",
+   "modelIds": [
+    "3305-S",
+    "3325-S",
+    "3326-L",
+    "CK-BL702-MWS-01",
+    "CK-BL702-MWS-01(7016)",
+    "CK-TLSR8656-SS5-01(7002)",
+    "E1525/E1745",
+    "E1745",
+    "IH012-RT01",
+    "LUMI.MOTION.AC02",
+    "LUMI.MOTION.AGL04",
+    "LUMI.SENSOR_MOTION",
+    "LUMI.SENSOR_MOTION.AQ2",
+    "MG1_5RZ",
+    "MS01",
+    "MSO1",
+    "RH3040",
+    "SML001",
+    "SML002",
+    "SML003",
+    "SML004",
+    "SNZB-03",
+    "SNZB-03P",
+    "SNZB-03PR2",
+    "SNZB-03R2",
+    "SZLMR10",
+    "TRADFRI MOTION SENSOR",
+    "TS0001",
+    "TS0004",
+    "TS0202",
+    "TS0601",
+    "TS110E",
+    "TY0202",
+    "ZP-301Z"
+   ],
+   "vendor": "Fantem",
+   "model": "ZB003-X",
+   "title": "Multi Sensor 4 in 1",
+   "category": "sensor",
+   "description": "Multi Sensor 4 in 1",
+   "productPage": "https://zigbee.blakadder.com/Fantem_ZB003-X.html",
+   "imageCandidates": [
+    "https://zigbee.blakadder.com/assets/images/devices/fantem-zb003-x.jpg",
+    "https://www.zigbee2mqtt.io/images/devices/ZB003-X.jpg"
+   ],
+   "batteries": [
+    "CR2450"
+   ],
+   "batteryTypical": "CR2450",
+   "energy": {
+    "nominalW": null,
+    "standbyW": null
+   },
+   "deviceClass": "sensor",
+   "capabilities": null,
+   "source": "compose-exclusive",
+   "variants": [
+    "_tz3210_zmy9hjay",
+    "_tz3210_rxqls8v0",
+    "_tz3210_wuhzzfqg",
+    "_TZ3210_zmy9hjay",
+    "_TZ3210_rxqls8v0",
+    "_TZ3210_RXQLS8V0",
+    "_TZ3210_wuhzzfqg",
+    "_TZ3210_WUHZZFQG"
+   ]
+  },
+  "_TZ3210_0aqbrnts": {
+   "driverId": "motion_sensor",
+   "modelIds": [
+    "3305-S",
+    "3325-S",
+    "3326-L",
+    "CK-BL702-MWS-01",
+    "CK-BL702-MWS-01(7016)",
+    "CK-TLSR8656-SS5-01(7002)",
+    "E1525/E1745",
+    "E1745",
+    "IH012-RT01",
+    "LUMI.MOTION.AC02",
+    "LUMI.MOTION.AGL04",
+    "LUMI.SENSOR_MOTION",
+    "LUMI.SENSOR_MOTION.AQ2",
+    "MG1_5RZ",
+    "MS01",
+    "MSO1",
+    "RH3040",
+    "SML001",
+    "SML002",
+    "SML003",
+    "SML004",
+    "SNZB-03",
+    "SNZB-03P",
+    "SNZB-03PR2",
+    "SNZB-03R2",
+    "SZLMR10",
+    "TRADFRI MOTION SENSOR",
+    "TS0001",
+    "TS0004",
+    "TS0202",
+    "TS0601",
+    "TS110E",
+    "TY0202",
+    "ZP-301Z"
+   ],
+   "vendor": null,
+   "model": null,
+   "title": null,
+   "category": null,
+   "description": null,
+   "productPage": null,
+   "imageCandidates": [],
+   "batteries": [
+    "CR2450"
+   ],
+   "batteryTypical": "CR2450",
+   "energy": {
+    "nominalW": null,
+    "standbyW": null
+   },
+   "deviceClass": "sensor",
+   "capabilities": null,
+   "source": "compose-exclusive"
+  },
+  "_TZ3210_0AQBRNTS": {
+   "driverId": "motion_sensor",
+   "modelIds": [
+    "3305-S",
+    "3325-S",
+    "3326-L",
+    "CK-BL702-MWS-01",
+    "CK-BL702-MWS-01(7016)",
+    "CK-TLSR8656-SS5-01(7002)",
+    "E1525/E1745",
+    "E1745",
+    "IH012-RT01",
+    "LUMI.MOTION.AC02",
+    "LUMI.MOTION.AGL04",
+    "LUMI.SENSOR_MOTION",
+    "LUMI.SENSOR_MOTION.AQ2",
+    "MG1_5RZ",
+    "MS01",
+    "MSO1",
+    "RH3040",
+    "SML001",
+    "SML002",
+    "SML003",
+    "SML004",
+    "SNZB-03",
+    "SNZB-03P",
+    "SNZB-03PR2",
+    "SNZB-03R2",
+    "SZLMR10",
+    "TRADFRI MOTION SENSOR",
+    "TS0001",
+    "TS0004",
+    "TS0202",
+    "TS0601",
+    "TS110E",
+    "TY0202",
+    "ZP-301Z"
+   ],
+   "vendor": null,
+   "model": null,
+   "title": null,
+   "category": null,
+   "description": null,
+   "productPage": null,
+   "imageCandidates": [],
+   "batteries": [
+    "CR2450"
+   ],
+   "batteryTypical": "CR2450",
+   "energy": {
+    "nominalW": null,
+    "standbyW": null
+   },
+   "deviceClass": "sensor",
+   "capabilities": null,
+   "source": "compose-exclusive"
+  },
+  "_TZ3210_rxqls8v0": {
+   "driverId": "motion_sensor",
+   "modelIds": [
+    "3305-S",
+    "3325-S",
+    "3326-L",
+    "CK-BL702-MWS-01",
+    "CK-BL702-MWS-01(7016)",
+    "CK-TLSR8656-SS5-01(7002)",
+    "E1525/E1745",
+    "E1745",
+    "IH012-RT01",
+    "LUMI.MOTION.AC02",
+    "LUMI.MOTION.AGL04",
+    "LUMI.SENSOR_MOTION",
+    "LUMI.SENSOR_MOTION.AQ2",
+    "MG1_5RZ",
+    "MS01",
+    "MSO1",
+    "RH3040",
+    "SML001",
+    "SML002",
+    "SML003",
+    "SML004",
+    "SNZB-03",
+    "SNZB-03P",
+    "SNZB-03PR2",
+    "SNZB-03R2",
+    "SZLMR10",
+    "TRADFRI MOTION SENSOR",
+    "TS0001",
+    "TS0004",
+    "TS0202",
+    "TS0601",
+    "TS110E",
+    "TY0202",
+    "ZP-301Z"
+   ],
+   "vendor": "Fantem",
+   "model": "ZB003-X",
+   "title": "Multi Sensor 4 in 1",
+   "category": "sensor",
+   "description": "Multi Sensor 4 in 1",
+   "productPage": "https://zigbee.blakadder.com/Fantem_ZB003-X.html",
+   "imageCandidates": [
+    "https://zigbee.blakadder.com/assets/images/devices/fantem-zb003-x.jpg",
+    "https://www.zigbee2mqtt.io/images/devices/ZB003-X.jpg"
+   ],
+   "batteries": [
+    "CR2450"
+   ],
+   "batteryTypical": "CR2450",
+   "energy": {
+    "nominalW": null,
+    "standbyW": null
+   },
+   "deviceClass": "sensor",
+   "capabilities": null,
+   "source": "compose-exclusive",
+   "variants": [
+    "_tz3210_zmy9hjay",
+    "_tz3210_rxqls8v0",
+    "_tz3210_wuhzzfqg",
+    "_TZ3210_zmy9hjay",
+    "_TZ3210_ZMY9HJAY",
+    "_TZ3210_RXQLS8V0",
+    "_TZ3210_wuhzzfqg",
+    "_TZ3210_WUHZZFQG"
+   ]
+  },
+  "_TZ3210_RXQLS8V0": {
+   "driverId": "motion_sensor",
+   "modelIds": [
+    "3305-S",
+    "3325-S",
+    "3326-L",
+    "CK-BL702-MWS-01",
+    "CK-BL702-MWS-01(7016)",
+    "CK-TLSR8656-SS5-01(7002)",
+    "E1525/E1745",
+    "E1745",
+    "IH012-RT01",
+    "LUMI.MOTION.AC02",
+    "LUMI.MOTION.AGL04",
+    "LUMI.SENSOR_MOTION",
+    "LUMI.SENSOR_MOTION.AQ2",
+    "MG1_5RZ",
+    "MS01",
+    "MSO1",
+    "RH3040",
+    "SML001",
+    "SML002",
+    "SML003",
+    "SML004",
+    "SNZB-03",
+    "SNZB-03P",
+    "SNZB-03PR2",
+    "SNZB-03R2",
+    "SZLMR10",
+    "TRADFRI MOTION SENSOR",
+    "TS0001",
+    "TS0004",
+    "TS0202",
+    "TS0601",
+    "TS110E",
+    "TY0202",
+    "ZP-301Z"
+   ],
+   "vendor": "Fantem",
+   "model": "ZB003-X",
+   "title": "Multi Sensor 4 in 1",
+   "category": "sensor",
+   "description": "Multi Sensor 4 in 1",
+   "productPage": "https://zigbee.blakadder.com/Fantem_ZB003-X.html",
+   "imageCandidates": [
+    "https://zigbee.blakadder.com/assets/images/devices/fantem-zb003-x.jpg",
+    "https://www.zigbee2mqtt.io/images/devices/ZB003-X.jpg"
+   ],
+   "batteries": [
+    "CR2450"
+   ],
+   "batteryTypical": "CR2450",
+   "energy": {
+    "nominalW": null,
+    "standbyW": null
+   },
+   "deviceClass": "sensor",
+   "capabilities": null,
+   "source": "compose-exclusive",
+   "variants": [
+    "_tz3210_zmy9hjay",
+    "_tz3210_rxqls8v0",
+    "_tz3210_wuhzzfqg",
+    "_TZ3210_zmy9hjay",
+    "_TZ3210_ZMY9HJAY",
+    "_TZ3210_rxqls8v0",
+    "_TZ3210_wuhzzfqg",
+    "_TZ3210_WUHZZFQG"
+   ]
+  },
+  "_TZ3210_wuhzzfqg": {
+   "driverId": "motion_sensor",
+   "modelIds": [
+    "3305-S",
+    "3325-S",
+    "3326-L",
+    "CK-BL702-MWS-01",
+    "CK-BL702-MWS-01(7016)",
+    "CK-TLSR8656-SS5-01(7002)",
+    "E1525/E1745",
+    "E1745",
+    "IH012-RT01",
+    "LUMI.MOTION.AC02",
+    "LUMI.MOTION.AGL04",
+    "LUMI.SENSOR_MOTION",
+    "LUMI.SENSOR_MOTION.AQ2",
+    "MG1_5RZ",
+    "MS01",
+    "MSO1",
+    "RH3040",
+    "SML001",
+    "SML002",
+    "SML003",
+    "SML004",
+    "SNZB-03",
+    "SNZB-03P",
+    "SNZB-03PR2",
+    "SNZB-03R2",
+    "SZLMR10",
+    "TRADFRI MOTION SENSOR",
+    "TS0001",
+    "TS0004",
+    "TS0202",
+    "TS0601",
+    "TS110E",
+    "TY0202",
+    "ZP-301Z"
+   ],
+   "vendor": "Fantem",
+   "model": "ZB003-X",
+   "title": "Multi Sensor 4 in 1",
+   "category": "sensor",
+   "description": "Multi Sensor 4 in 1",
+   "productPage": "https://zigbee.blakadder.com/Fantem_ZB003-X.html",
+   "imageCandidates": [
+    "https://zigbee.blakadder.com/assets/images/devices/fantem-zb003-x.jpg",
+    "https://www.zigbee2mqtt.io/images/devices/ZB003-X.jpg"
+   ],
+   "batteries": [
+    "CR2450"
+   ],
+   "batteryTypical": "CR2450",
+   "energy": {
+    "nominalW": null,
+    "standbyW": null
+   },
+   "deviceClass": "sensor",
+   "capabilities": null,
+   "source": "compose-exclusive",
+   "variants": [
+    "_tz3210_zmy9hjay",
+    "_tz3210_rxqls8v0",
+    "_tz3210_wuhzzfqg",
+    "_TZ3210_zmy9hjay",
+    "_TZ3210_ZMY9HJAY",
+    "_TZ3210_rxqls8v0",
+    "_TZ3210_RXQLS8V0",
+    "_TZ3210_WUHZZFQG"
+   ]
+  },
+  "_TZ3210_WUHZZFQG": {
+   "driverId": "motion_sensor",
+   "modelIds": [
+    "3305-S",
+    "3325-S",
+    "3326-L",
+    "CK-BL702-MWS-01",
+    "CK-BL702-MWS-01(7016)",
+    "CK-TLSR8656-SS5-01(7002)",
+    "E1525/E1745",
+    "E1745",
+    "IH012-RT01",
+    "LUMI.MOTION.AC02",
+    "LUMI.MOTION.AGL04",
+    "LUMI.SENSOR_MOTION",
+    "LUMI.SENSOR_MOTION.AQ2",
+    "MG1_5RZ",
+    "MS01",
+    "MSO1",
+    "RH3040",
+    "SML001",
+    "SML002",
+    "SML003",
+    "SML004",
+    "SNZB-03",
+    "SNZB-03P",
+    "SNZB-03PR2",
+    "SNZB-03R2",
+    "SZLMR10",
+    "TRADFRI MOTION SENSOR",
+    "TS0001",
+    "TS0004",
+    "TS0202",
+    "TS0601",
+    "TS110E",
+    "TY0202",
+    "ZP-301Z"
+   ],
+   "vendor": "Fantem",
+   "model": "ZB003-X",
+   "title": "Multi Sensor 4 in 1",
+   "category": "sensor",
+   "description": "Multi Sensor 4 in 1",
+   "productPage": "https://zigbee.blakadder.com/Fantem_ZB003-X.html",
+   "imageCandidates": [
+    "https://zigbee.blakadder.com/assets/images/devices/fantem-zb003-x.jpg",
+    "https://www.zigbee2mqtt.io/images/devices/ZB003-X.jpg"
+   ],
+   "batteries": [
+    "CR2450"
+   ],
+   "batteryTypical": "CR2450",
+   "energy": {
+    "nominalW": null,
+    "standbyW": null
+   },
+   "deviceClass": "sensor",
+   "capabilities": null,
+   "source": "compose-exclusive",
+   "variants": [
+    "_tz3210_zmy9hjay",
+    "_tz3210_rxqls8v0",
+    "_tz3210_wuhzzfqg",
+    "_TZ3210_zmy9hjay",
+    "_TZ3210_ZMY9HJAY",
+    "_TZ3210_rxqls8v0",
+    "_TZ3210_RXQLS8V0",
+    "_TZ3210_wuhzzfqg"
+   ]
+  },
+  "_TZ3210_ohvnwamm": {
+   "driverId": "motion_sensor",
+   "modelIds": [
+    "3305-S",
+    "3325-S",
+    "3326-L",
+    "CK-BL702-MWS-01",
+    "CK-BL702-MWS-01(7016)",
+    "CK-TLSR8656-SS5-01(7002)",
+    "E1525/E1745",
+    "E1745",
+    "IH012-RT01",
+    "LUMI.MOTION.AC02",
+    "LUMI.MOTION.AGL04",
+    "LUMI.SENSOR_MOTION",
+    "LUMI.SENSOR_MOTION.AQ2",
+    "MG1_5RZ",
+    "MS01",
+    "MSO1",
+    "RH3040",
+    "SML001",
+    "SML002",
+    "SML003",
+    "SML004",
+    "SNZB-03",
+    "SNZB-03P",
+    "SNZB-03PR2",
+    "SNZB-03R2",
+    "SZLMR10",
+    "TRADFRI MOTION SENSOR",
+    "TS0001",
+    "TS0004",
+    "TS0202",
+    "TS0601",
+    "TS110E",
+    "TY0202",
+    "ZP-301Z"
+   ],
+   "vendor": null,
+   "model": null,
+   "title": null,
+   "category": null,
+   "description": null,
+   "productPage": null,
+   "imageCandidates": [],
+   "batteries": [
+    "CR2450"
+   ],
+   "batteryTypical": "CR2450",
+   "energy": {
+    "nominalW": null,
+    "standbyW": null
+   },
+   "deviceClass": "sensor",
+   "capabilities": null,
+   "source": "compose-exclusive"
+  },
+  "_TZ3210_OHVNWAMM": {
+   "driverId": "motion_sensor",
+   "modelIds": [
+    "3305-S",
+    "3325-S",
+    "3326-L",
+    "CK-BL702-MWS-01",
+    "CK-BL702-MWS-01(7016)",
+    "CK-TLSR8656-SS5-01(7002)",
+    "E1525/E1745",
+    "E1745",
+    "IH012-RT01",
+    "LUMI.MOTION.AC02",
+    "LUMI.MOTION.AGL04",
+    "LUMI.SENSOR_MOTION",
+    "LUMI.SENSOR_MOTION.AQ2",
+    "MG1_5RZ",
+    "MS01",
+    "MSO1",
+    "RH3040",
+    "SML001",
+    "SML002",
+    "SML003",
+    "SML004",
+    "SNZB-03",
+    "SNZB-03P",
+    "SNZB-03PR2",
+    "SNZB-03R2",
+    "SZLMR10",
+    "TRADFRI MOTION SENSOR",
+    "TS0001",
+    "TS0004",
+    "TS0202",
+    "TS0601",
+    "TS110E",
+    "TY0202",
+    "ZP-301Z"
+   ],
+   "vendor": null,
+   "model": null,
+   "title": null,
+   "category": null,
+   "description": null,
+   "productPage": null,
+   "imageCandidates": [],
+   "batteries": [
+    "CR2450"
+   ],
+   "batteryTypical": "CR2450",
+   "energy": {
+    "nominalW": null,
+    "standbyW": null
+   },
+   "deviceClass": "sensor",
+   "capabilities": null,
+   "source": "compose-exclusive"
+  },
+  "_TZ3210_oekbi7o4": {
+   "driverId": "motion_sensor",
+   "modelIds": [
+    "3305-S",
+    "3325-S",
+    "3326-L",
+    "CK-BL702-MWS-01",
+    "CK-BL702-MWS-01(7016)",
+    "CK-TLSR8656-SS5-01(7002)",
+    "E1525/E1745",
+    "E1745",
+    "IH012-RT01",
+    "LUMI.MOTION.AC02",
+    "LUMI.MOTION.AGL04",
+    "LUMI.SENSOR_MOTION",
+    "LUMI.SENSOR_MOTION.AQ2",
+    "MG1_5RZ",
+    "MS01",
+    "MSO1",
+    "RH3040",
+    "SML001",
+    "SML002",
+    "SML003",
+    "SML004",
+    "SNZB-03",
+    "SNZB-03P",
+    "SNZB-03PR2",
+    "SNZB-03R2",
+    "SZLMR10",
+    "TRADFRI MOTION SENSOR",
+    "TS0001",
+    "TS0004",
+    "TS0202",
+    "TS0601",
+    "TS110E",
+    "TY0202",
+    "ZP-301Z"
+   ],
+   "vendor": null,
+   "model": null,
+   "title": null,
+   "category": null,
+   "description": null,
+   "productPage": null,
+   "imageCandidates": [],
+   "batteries": [
+    "CR2450"
+   ],
+   "batteryTypical": "CR2450",
+   "energy": {
+    "nominalW": null,
+    "standbyW": null
+   },
+   "deviceClass": "sensor",
+   "capabilities": null,
+   "source": "compose-exclusive"
+  },
+  "_TZ3210_OEKBI7O4": {
+   "driverId": "motion_sensor",
+   "modelIds": [
+    "3305-S",
+    "3325-S",
+    "3326-L",
+    "CK-BL702-MWS-01",
+    "CK-BL702-MWS-01(7016)",
+    "CK-TLSR8656-SS5-01(7002)",
+    "E1525/E1745",
+    "E1745",
+    "IH012-RT01",
+    "LUMI.MOTION.AC02",
+    "LUMI.MOTION.AGL04",
+    "LUMI.SENSOR_MOTION",
+    "LUMI.SENSOR_MOTION.AQ2",
+    "MG1_5RZ",
+    "MS01",
+    "MSO1",
+    "RH3040",
+    "SML001",
+    "SML002",
+    "SML003",
+    "SML004",
+    "SNZB-03",
+    "SNZB-03P",
+    "SNZB-03PR2",
+    "SNZB-03R2",
+    "SZLMR10",
+    "TRADFRI MOTION SENSOR",
+    "TS0001",
+    "TS0004",
+    "TS0202",
+    "TS0601",
+    "TS110E",
+    "TY0202",
+    "ZP-301Z"
+   ],
+   "vendor": null,
+   "model": null,
+   "title": null,
+   "category": null,
+   "description": null,
+   "productPage": null,
+   "imageCandidates": [],
+   "batteries": [
+    "CR2450"
+   ],
+   "batteryTypical": "CR2450",
+   "energy": {
+    "nominalW": null,
+    "standbyW": null
+   },
+   "deviceClass": "sensor",
+   "capabilities": null,
+   "source": "compose-exclusive"
+  },
   "_tz3218_awarhusb": {
    "driverId": "motion_sensor_radar_mmwave",
    "modelIds": [],
@@ -378659,6 +379448,254 @@
     "alarm_motion",
     "alarm_battery"
    ],
+   "source": null
+  },
+  "_tze200_kb5noeto": {
+   "driverId": "pir_sensor_2",
+   "modelIds": [],
+   "vendor": null,
+   "model": null,
+   "title": null,
+   "category": null,
+   "description": null,
+   "productPage": null,
+   "imageCandidates": [],
+   "batteries": [
+    "CR123A"
+   ],
+   "batteryTypical": "CR123A",
+   "energy": {
+    "nominalW": null,
+    "standbyW": null
+   },
+   "deviceClass": "sensor",
+   "capabilities": null,
+   "source": null
+  },
+  "_TZE200_KB5NOETO": {
+   "driverId": "pir_sensor_2",
+   "modelIds": [],
+   "vendor": null,
+   "model": null,
+   "title": null,
+   "category": null,
+   "description": null,
+   "productPage": null,
+   "imageCandidates": [],
+   "batteries": [
+    "CR123A"
+   ],
+   "batteryTypical": "CR123A",
+   "energy": {
+    "nominalW": null,
+    "standbyW": null
+   },
+   "deviceClass": "sensor",
+   "capabilities": null,
+   "source": null
+  },
+  "_tze204_kb5noeto": {
+   "driverId": "pir_sensor_2",
+   "modelIds": [],
+   "vendor": null,
+   "model": null,
+   "title": null,
+   "category": null,
+   "description": null,
+   "productPage": null,
+   "imageCandidates": [],
+   "batteries": [
+    "CR123A"
+   ],
+   "batteryTypical": "CR123A",
+   "energy": {
+    "nominalW": null,
+    "standbyW": null
+   },
+   "deviceClass": "sensor",
+   "capabilities": null,
+   "source": null
+  },
+  "_TZE204_KB5NOETO": {
+   "driverId": "pir_sensor_2",
+   "modelIds": [],
+   "vendor": null,
+   "model": null,
+   "title": null,
+   "category": null,
+   "description": null,
+   "productPage": null,
+   "imageCandidates": [],
+   "batteries": [
+    "CR123A"
+   ],
+   "batteryTypical": "CR123A",
+   "energy": {
+    "nominalW": null,
+    "standbyW": null
+   },
+   "deviceClass": "sensor",
+   "capabilities": null,
+   "source": null
+  },
+  "_TZE284_kb5noeto": {
+   "driverId": "pir_sensor_2",
+   "modelIds": [
+    "01MINIZB",
+    "BASICZBR3",
+    "EXCELLUX",
+    "S26R2ZB",
+    "S31ZB",
+    "TS0001",
+    "TS0001_POWER",
+    "TS0001_SWITCH",
+    "TS0001_SWITCH_MODULE",
+    "TS0002",
+    "TS0003",
+    "TS000F",
+    "TS0011",
+    "TS0012",
+    "TS0014",
+    "TS0041",
+    "TS0101",
+    "TS0111",
+    "TS011F",
+    "TS0202",
+    "TS0225",
+    "TS0601",
+    "TS0726",
+    "TS110E",
+    "TS130F",
+    "TS4100",
+    "ZBM5-1C-120",
+    "ZBM5-2C-120",
+    "ZBM5-3C-120",
+    "ZBMINI",
+    "ZBMINIL2",
+    "ZBMINIL2-R2",
+    "ZBMINIR",
+    "ZBMINIR2",
+    "ZBMINIR2-R2"
+   ],
+   "vendor": null,
+   "model": null,
+   "title": null,
+   "category": null,
+   "description": null,
+   "productPage": null,
+   "imageCandidates": [],
+   "batteries": [
+    "CR123A"
+   ],
+   "batteryTypical": "CR123A",
+   "energy": {
+    "nominalW": null,
+    "standbyW": null
+   },
+   "deviceClass": "sensor",
+   "capabilities": null,
+   "source": "compose-exclusive"
+  },
+  "_TZE284_KB5NOETO": {
+   "driverId": "pir_sensor_2",
+   "modelIds": [
+    "01MINIZB",
+    "BASICZBR3",
+    "EXCELLUX",
+    "S26R2ZB",
+    "S31ZB",
+    "TS0001",
+    "TS0001_POWER",
+    "TS0001_SWITCH",
+    "TS0001_SWITCH_MODULE",
+    "TS0002",
+    "TS0003",
+    "TS000F",
+    "TS0011",
+    "TS0012",
+    "TS0014",
+    "TS0041",
+    "TS0101",
+    "TS0111",
+    "TS011F",
+    "TS0202",
+    "TS0225",
+    "TS0601",
+    "TS0726",
+    "TS110E",
+    "TS130F",
+    "TS4100",
+    "ZBM5-1C-120",
+    "ZBM5-2C-120",
+    "ZBM5-3C-120",
+    "ZBMINI",
+    "ZBMINIL2",
+    "ZBMINIL2-R2",
+    "ZBMINIR",
+    "ZBMINIR2",
+    "ZBMINIR2-R2"
+   ],
+   "vendor": null,
+   "model": null,
+   "title": null,
+   "category": null,
+   "description": null,
+   "productPage": null,
+   "imageCandidates": [],
+   "batteries": [
+    "CR123A"
+   ],
+   "batteryTypical": "CR123A",
+   "energy": {
+    "nominalW": null,
+    "standbyW": null
+   },
+   "deviceClass": "sensor",
+   "capabilities": null,
+   "source": "compose-exclusive"
+  },
+  "_TZ3000_hgu1dlak": {
+   "driverId": "pir_sensor_2",
+   "modelIds": [],
+   "vendor": null,
+   "model": null,
+   "title": null,
+   "category": null,
+   "description": null,
+   "productPage": null,
+   "imageCandidates": [],
+   "batteries": [
+    "CR123A"
+   ],
+   "batteryTypical": "CR123A",
+   "energy": {
+    "nominalW": null,
+    "standbyW": null
+   },
+   "deviceClass": "sensor",
+   "capabilities": null,
+   "source": null
+  },
+  "_tz3000_hgu1dlak": {
+   "driverId": "pir_sensor_2",
+   "modelIds": [],
+   "vendor": null,
+   "model": null,
+   "title": null,
+   "category": null,
+   "description": null,
+   "productPage": null,
+   "imageCandidates": [],
+   "batteries": [
+    "CR123A"
+   ],
+   "batteryTypical": "CR123A",
+   "energy": {
+    "nominalW": null,
+    "standbyW": null
+   },
+   "deviceClass": "sensor",
+   "capabilities": null,
    "source": null
   },
   "_tz3000_jcqs2mrv": {
@@ -390472,28 +391509,6 @@
    "capabilities": null,
    "source": null
   },
-  "_tze200_kb5noeto": {
-   "driverId": "presence_sensor_radar",
-   "modelIds": [],
-   "vendor": null,
-   "model": null,
-   "title": null,
-   "category": null,
-   "description": null,
-   "productPage": null,
-   "imageCandidates": [],
-   "batteries": [
-    "Li-ion"
-   ],
-   "batteryTypical": "Li-ion",
-   "energy": {
-    "nominalW": null,
-    "standbyW": null
-   },
-   "deviceClass": "sensor",
-   "capabilities": null,
-   "source": null
-  },
   "_tze200_kccdzaeo": {
    "driverId": "presence_sensor_radar",
    "modelIds": [],
@@ -391955,28 +392970,6 @@
    ]
   },
   "_tze204_ikvncluo": {
-   "driverId": "presence_sensor_radar",
-   "modelIds": [],
-   "vendor": null,
-   "model": null,
-   "title": null,
-   "category": null,
-   "description": null,
-   "productPage": null,
-   "imageCandidates": [],
-   "batteries": [
-    "Li-ion"
-   ],
-   "batteryTypical": "Li-ion",
-   "energy": {
-    "nominalW": null,
-    "standbyW": null
-   },
-   "deviceClass": "sensor",
-   "capabilities": null,
-   "source": null
-  },
-  "_tze204_kb5noeto": {
    "driverId": "presence_sensor_radar",
    "modelIds": [],
    "vendor": null,
@@ -398053,209 +399046,7 @@
    "capabilities": null,
    "source": "sync-compose-add"
   },
-  "_TZE200_KB5NOETO": {
-   "driverId": "presence_sensor_radar",
-   "modelIds": [],
-   "vendor": null,
-   "model": null,
-   "title": null,
-   "category": null,
-   "description": null,
-   "productPage": null,
-   "imageCandidates": [],
-   "batteries": [
-    "Li-ion"
-   ],
-   "batteryTypical": "Li-ion",
-   "energy": {
-    "nominalW": null,
-    "standbyW": null
-   },
-   "deviceClass": "sensor",
-   "capabilities": null,
-   "source": null
-  },
-  "_TZE204_KB5NOETO": {
-   "driverId": "presence_sensor_radar",
-   "modelIds": [],
-   "vendor": null,
-   "model": null,
-   "title": null,
-   "category": null,
-   "description": null,
-   "productPage": null,
-   "imageCandidates": [],
-   "batteries": [
-    "Li-ion"
-   ],
-   "batteryTypical": "Li-ion",
-   "energy": {
-    "nominalW": null,
-    "standbyW": null
-   },
-   "deviceClass": "sensor",
-   "capabilities": null,
-   "source": null
-  },
-  "_TZE284_KB5NOETO": {
-   "driverId": "presence_sensor_radar",
-   "modelIds": [
-    "AY-204ZX",
-    "AY204T",
-    "AY205Z",
-    "AY208Z",
-    "CK-BL702-MWS-01",
-    "CK-BL702-MWS-01(7016)",
-    "EDM-1ZBA-EU",
-    "EXCELLUX",
-    "LUMI.SENSOR_HT",
-    "LUMI.SENSOR_HT.AGL02",
-    "LUMI.WEATHER",
-    "MG1_5RZ",
-    "RH3052",
-    "SM0201",
-    "SNZB-06P",
-    "SNZB-06P24",
-    "SZLMR10",
-    "TH01",
-    "THS317-ET",
-    "TRI-C1ZR",
-    "TRI-K1ZR",
-    "TS0004",
-    "TS0045",
-    "TS004F",
-    "TS0201",
-    "TS0202",
-    "TS0203",
-    "TS0215A",
-    "TS0222",
-    "TS0225",
-    "TS0501B",
-    "TS0601",
-    "TS0601_WIRELESSSW",
-    "TS110E",
-    "TS1201",
-    "TY0201",
-    "WSDCGQ01LM",
-    "WSDCGQ11LM",
-    "WSDCGQ12LM",
-    "ZG-204Z",
-    "ZG-204ZE",
-    "ZG-204ZH",
-    "ZG-204ZK",
-    "ZG-204ZL",
-    "ZG-204ZM",
-    "ZG-204ZP",
-    "ZG-204ZQ",
-    "ZG-204ZV",
-    "ZG-204ZX",
-    "ZG-205W",
-    "ZG-205Z",
-    "ZG-205ZL",
-    "ZG-210Z",
-    "ZG-302ZL",
-    "ZG-302ZM",
-    "ZP-301Z"
-   ],
-   "vendor": null,
-   "model": null,
-   "title": null,
-   "category": null,
-   "description": null,
-   "productPage": null,
-   "imageCandidates": [],
-   "batteries": [
-    "Li-ion"
-   ],
-   "batteryTypical": "Li-ion",
-   "energy": {
-    "nominalW": null,
-    "standbyW": null
-   },
-   "deviceClass": "sensor",
-   "capabilities": null,
-   "source": "sync-compose-add"
-  },
   "_TZE200_debczeci": {
-   "driverId": "presence_sensor_radar",
-   "modelIds": [
-    "AY-204ZX",
-    "AY204T",
-    "AY205Z",
-    "AY208Z",
-    "CK-BL702-MWS-01",
-    "CK-BL702-MWS-01(7016)",
-    "EDM-1ZBA-EU",
-    "EXCELLUX",
-    "LUMI.SENSOR_HT",
-    "LUMI.SENSOR_HT.AGL02",
-    "LUMI.WEATHER",
-    "MG1_5RZ",
-    "RH3052",
-    "SM0201",
-    "SNZB-06P",
-    "SNZB-06P24",
-    "SZLMR10",
-    "TH01",
-    "THS317-ET",
-    "TRI-C1ZR",
-    "TRI-K1ZR",
-    "TS0004",
-    "TS0045",
-    "TS004F",
-    "TS0201",
-    "TS0202",
-    "TS0203",
-    "TS0215A",
-    "TS0222",
-    "TS0225",
-    "TS0501B",
-    "TS0601",
-    "TS0601_WIRELESSSW",
-    "TS110E",
-    "TS1201",
-    "TY0201",
-    "WSDCGQ01LM",
-    "WSDCGQ11LM",
-    "WSDCGQ12LM",
-    "ZG-204Z",
-    "ZG-204ZE",
-    "ZG-204ZH",
-    "ZG-204ZK",
-    "ZG-204ZL",
-    "ZG-204ZM",
-    "ZG-204ZP",
-    "ZG-204ZQ",
-    "ZG-204ZV",
-    "ZG-204ZX",
-    "ZG-205W",
-    "ZG-205Z",
-    "ZG-205ZL",
-    "ZG-210Z",
-    "ZG-302ZL",
-    "ZG-302ZM",
-    "ZP-301Z"
-   ],
-   "vendor": null,
-   "model": null,
-   "title": null,
-   "category": null,
-   "description": null,
-   "productPage": null,
-   "imageCandidates": [],
-   "batteries": [
-    "Li-ion"
-   ],
-   "batteryTypical": "Li-ion",
-   "energy": {
-    "nominalW": null,
-    "standbyW": null
-   },
-   "deviceClass": "sensor",
-   "capabilities": null,
-   "source": "sync-compose-add"
-  },
-  "_TZE284_kb5noeto": {
    "driverId": "presence_sensor_radar",
    "modelIds": [
     "AY-204ZX",
@@ -400548,108 +401339,6 @@
    "deviceClass": "sensor",
    "capabilities": null,
    "source": "sync-compose-add"
-  },
-  "_TZE284_6YCGARAB": {
-   "driverId": null,
-   "modelIds": [],
-   "vendor": null,
-   "model": null,
-   "title": null,
-   "category": null,
-   "description": null,
-   "productPage": null,
-   "imageCandidates": [],
-   "batteries": [],
-   "batteryTypical": null,
-   "energy": null,
-   "deviceClass": null,
-   "capabilities": null,
-   "source": null
-  },
-  "_tze284_6ycgarab": {
-   "driverId": null,
-   "modelIds": [],
-   "vendor": null,
-   "model": null,
-   "title": null,
-   "category": null,
-   "description": null,
-   "productPage": null,
-   "imageCandidates": [],
-   "batteries": [],
-   "batteryTypical": null,
-   "energy": null,
-   "deviceClass": null,
-   "capabilities": null,
-   "source": null
-  },
-  "_TZE200_6YCGARAB": {
-   "driverId": null,
-   "modelIds": [],
-   "vendor": null,
-   "model": null,
-   "title": null,
-   "category": null,
-   "description": null,
-   "productPage": null,
-   "imageCandidates": [],
-   "batteries": [],
-   "batteryTypical": null,
-   "energy": null,
-   "deviceClass": null,
-   "capabilities": null,
-   "source": null
-  },
-  "_TZE204_6YCGARAB": {
-   "driverId": null,
-   "modelIds": [],
-   "vendor": null,
-   "model": null,
-   "title": null,
-   "category": null,
-   "description": null,
-   "productPage": null,
-   "imageCandidates": [],
-   "batteries": [],
-   "batteryTypical": null,
-   "energy": null,
-   "deviceClass": null,
-   "capabilities": null,
-   "source": null
-  },
-  "_tze200_6ycgarab": {
-   "driverId": null,
-   "modelIds": [],
-   "vendor": null,
-   "model": null,
-   "title": null,
-   "category": null,
-   "description": null,
-   "productPage": null,
-   "imageCandidates": [],
-   "batteries": [],
-   "batteryTypical": null,
-   "energy": null,
-   "deviceClass": null,
-   "capabilities": null,
-   "source": null
-  },
-  "_tze204_6ycgarab": {
-   "driverId": null,
-   "modelIds": [],
-   "vendor": null,
-   "model": null,
-   "title": null,
-   "category": null,
-   "description": null,
-   "productPage": null,
-   "imageCandidates": [],
-   "batteries": [],
-   "batteryTypical": null,
-   "energy": null,
-   "deviceClass": null,
-   "capabilities": null,
-   "source": null
   },
   "_TZE284_DWCARSAT": {
    "driverId": "presence_sensor_radar",
@@ -403651,40 +404340,6 @@
    "capabilities": null,
    "source": "sync-compose-add"
   },
-  "_TZE200_6ycgarab": {
-   "driverId": null,
-   "modelIds": [],
-   "vendor": null,
-   "model": null,
-   "title": null,
-   "category": null,
-   "description": null,
-   "productPage": null,
-   "imageCandidates": [],
-   "batteries": [],
-   "batteryTypical": null,
-   "energy": null,
-   "deviceClass": null,
-   "capabilities": null,
-   "source": null
-  },
-  "_TZE204_6ycgarab": {
-   "driverId": null,
-   "modelIds": [],
-   "vendor": null,
-   "model": null,
-   "title": null,
-   "category": null,
-   "description": null,
-   "productPage": null,
-   "imageCandidates": [],
-   "batteries": [],
-   "batteryTypical": null,
-   "energy": null,
-   "deviceClass": null,
-   "capabilities": null,
-   "source": null
-  },
   "_TZE284_dwcarsat": {
    "driverId": "presence_sensor_radar",
    "modelIds": [
@@ -406443,28 +407098,6 @@
    "source": null
   },
   "_tze200_KA8L86IU": {
-   "driverId": "presence_sensor_radar",
-   "modelIds": [],
-   "vendor": null,
-   "model": null,
-   "title": null,
-   "category": null,
-   "description": null,
-   "productPage": null,
-   "imageCandidates": [],
-   "batteries": [
-    "Li-ion"
-   ],
-   "batteryTypical": "Li-ion",
-   "energy": {
-    "nominalW": null,
-    "standbyW": null
-   },
-   "deviceClass": "sensor",
-   "capabilities": null,
-   "source": null
-  },
-  "_tze200_KB5NOETO": {
    "driverId": "presence_sensor_radar",
    "modelIds": [],
    "vendor": null,
@@ -409332,28 +409965,6 @@
    "deviceClass": "sensor",
    "capabilities": null,
    "source": "auto-sync"
-  },
-  "_tze204_KB5NOETO": {
-   "driverId": "presence_sensor_radar",
-   "modelIds": [],
-   "vendor": null,
-   "model": null,
-   "title": null,
-   "category": null,
-   "description": null,
-   "productPage": null,
-   "imageCandidates": [],
-   "batteries": [
-    "Li-ion"
-   ],
-   "batteryTypical": "Li-ion",
-   "energy": {
-    "nominalW": null,
-    "standbyW": null
-   },
-   "deviceClass": "sensor",
-   "capabilities": null,
-   "source": null
   },
   "_tze204_KYHBRFYL": {
    "driverId": "presence_sensor_radar",
@@ -413110,85 +413721,6 @@
    "capabilities": null,
    "source": "sync-compose-add"
   },
-  "_tze284_KB5NOETO": {
-   "driverId": "presence_sensor_radar",
-   "modelIds": [
-    "AY-204ZX",
-    "AY204T",
-    "AY205Z",
-    "AY208Z",
-    "CK-BL702-MWS-01",
-    "CK-BL702-MWS-01(7016)",
-    "EDM-1ZBA-EU",
-    "EXCELLUX",
-    "LUMI.SENSOR_HT",
-    "LUMI.SENSOR_HT.AGL02",
-    "LUMI.WEATHER",
-    "MG1_5RZ",
-    "RH3052",
-    "SM0201",
-    "SNZB-06P",
-    "SNZB-06P24",
-    "SZLMR10",
-    "TH01",
-    "THS317-ET",
-    "TRI-C1ZR",
-    "TRI-K1ZR",
-    "TS0004",
-    "TS0045",
-    "TS004F",
-    "TS0201",
-    "TS0202",
-    "TS0203",
-    "TS0215A",
-    "TS0222",
-    "TS0225",
-    "TS0501B",
-    "TS0601",
-    "TS0601_WIRELESSSW",
-    "TS110E",
-    "TS1201",
-    "TY0201",
-    "WSDCGQ01LM",
-    "WSDCGQ11LM",
-    "WSDCGQ12LM",
-    "ZG-204Z",
-    "ZG-204ZE",
-    "ZG-204ZH",
-    "ZG-204ZK",
-    "ZG-204ZL",
-    "ZG-204ZM",
-    "ZG-204ZP",
-    "ZG-204ZQ",
-    "ZG-204ZV",
-    "ZG-204ZX",
-    "ZG-205W",
-    "ZG-205Z",
-    "ZG-205ZL",
-    "ZG-210Z",
-    "ZG-302ZL",
-    "ZG-302ZM",
-    "ZP-301Z"
-   ],
-   "vendor": null,
-   "model": null,
-   "title": null,
-   "category": null,
-   "description": null,
-   "productPage": null,
-   "imageCandidates": [],
-   "batteries": [
-    "Li-ion"
-   ],
-   "batteryTypical": "Li-ion",
-   "energy": {
-    "nominalW": null,
-    "standbyW": null
-   },
-   "deviceClass": "sensor",
-   "capabilities": null,
-   "source": "sync-compose-add"
-  },
   "_tze200_DEBCZECI": {
    "driverId": "presence_sensor_radar",
    "modelIds": [
@@ -415027,57 +415559,6 @@
    "deviceClass": "sensor",
    "capabilities": null,
    "source": "sync-compose-add"
-  },
-  "_tze284_6YCGARAB": {
-   "driverId": null,
-   "modelIds": [],
-   "vendor": null,
-   "model": null,
-   "title": null,
-   "category": null,
-   "description": null,
-   "productPage": null,
-   "imageCandidates": [],
-   "batteries": [],
-   "batteryTypical": null,
-   "energy": null,
-   "deviceClass": null,
-   "capabilities": null,
-   "source": null
-  },
-  "_tze200_6YCGARAB": {
-   "driverId": null,
-   "modelIds": [],
-   "vendor": null,
-   "model": null,
-   "title": null,
-   "category": null,
-   "description": null,
-   "productPage": null,
-   "imageCandidates": [],
-   "batteries": [],
-   "batteryTypical": null,
-   "energy": null,
-   "deviceClass": null,
-   "capabilities": null,
-   "source": null
-  },
-  "_tze204_6YCGARAB": {
-   "driverId": null,
-   "modelIds": [],
-   "vendor": null,
-   "model": null,
-   "title": null,
-   "category": null,
-   "description": null,
-   "productPage": null,
-   "imageCandidates": [],
-   "batteries": [],
-   "batteryTypical": null,
-   "energy": null,
-   "deviceClass": null,
-   "capabilities": null,
-   "source": null
   },
   "_tze284_DWCARSAT": {
    "driverId": "presence_sensor_radar",
@@ -431779,53 +432260,27 @@
    "capabilities": null,
    "source": "auto-sync"
   },
-  "_TZE200_RXQLS8V0": {
-   "driverId": "sensor_contact_motion",
-   "modelIds": [
-    "Excellux",
-    "TS0601"
-   ],
-   "vendor": null,
-   "model": null,
-   "title": null,
-   "category": null,
-   "description": null,
-   "productPage": null,
-   "imageCandidates": [],
-   "batteries": [],
-   "batteryTypical": null,
-   "energy": {
-    "nominalW": 0,
-    "standbyW": 0
-   },
-   "deviceClass": "sensor",
-   "capabilities": null,
-   "source": "auto-sync"
-  },
-  "_TZE204_RXQLS8V0": {
-   "driverId": "sensor_contact_motion",
-   "modelIds": [
-    "Excellux",
-    "TS0601"
-   ],
-   "vendor": null,
-   "model": null,
-   "title": null,
-   "category": null,
-   "description": null,
-   "productPage": null,
-   "imageCandidates": [],
-   "batteries": [],
-   "batteryTypical": null,
-   "energy": {
-    "nominalW": 0,
-    "standbyW": 0
-   },
-   "deviceClass": "sensor",
-   "capabilities": null,
-   "source": "auto-sync"
-  },
   "_TZE200_3to": {
+   "driverId": "sensor_contact_motion",
+   "modelIds": [],
+   "vendor": null,
+   "model": null,
+   "title": null,
+   "category": null,
+   "description": null,
+   "productPage": null,
+   "imageCandidates": [],
+   "batteries": [],
+   "batteryTypical": null,
+   "energy": {
+    "nominalW": 0,
+    "standbyW": 0
+   },
+   "deviceClass": "sensor",
+   "capabilities": null,
+   "source": "auto-sync"
+  },
+  "_tze200_3TO": {
    "driverId": "sensor_contact_motion",
    "modelIds": [],
    "vendor": null,
@@ -431869,72 +432324,6 @@
    "source": "auto-sync"
   },
   "_TZE204_rxqls8v0": {
-   "driverId": "sensor_contact_motion",
-   "modelIds": [
-    "Excellux",
-    "TS0601"
-   ],
-   "vendor": null,
-   "model": null,
-   "title": null,
-   "category": null,
-   "description": null,
-   "productPage": null,
-   "imageCandidates": [],
-   "batteries": [],
-   "batteryTypical": null,
-   "energy": {
-    "nominalW": 0,
-    "standbyW": 0
-   },
-   "deviceClass": "sensor",
-   "capabilities": null,
-   "source": "auto-sync"
-  },
-  "_tze200_3TO": {
-   "driverId": "sensor_contact_motion",
-   "modelIds": [],
-   "vendor": null,
-   "model": null,
-   "title": null,
-   "category": null,
-   "description": null,
-   "productPage": null,
-   "imageCandidates": [],
-   "batteries": [],
-   "batteryTypical": null,
-   "energy": {
-    "nominalW": 0,
-    "standbyW": 0
-   },
-   "deviceClass": "sensor",
-   "capabilities": null,
-   "source": "auto-sync"
-  },
-  "_tze200_RXQLS8V0": {
-   "driverId": "sensor_contact_motion",
-   "modelIds": [
-    "Excellux",
-    "TS0601"
-   ],
-   "vendor": null,
-   "model": null,
-   "title": null,
-   "category": null,
-   "description": null,
-   "productPage": null,
-   "imageCandidates": [],
-   "batteries": [],
-   "batteryTypical": null,
-   "energy": {
-    "nominalW": 0,
-    "standbyW": 0
-   },
-   "deviceClass": "sensor",
-   "capabilities": null,
-   "source": "auto-sync"
-  },
-  "_tze204_RXQLS8V0": {
    "driverId": "sensor_contact_motion",
    "modelIds": [
     "Excellux",
@@ -452527,6 +452916,23 @@
    "capabilities": null,
    "source": null
   },
+  "_tze284_6ycgarab": {
+   "driverId": null,
+   "modelIds": [],
+   "vendor": null,
+   "model": null,
+   "title": null,
+   "category": null,
+   "description": null,
+   "productPage": null,
+   "imageCandidates": [],
+   "batteries": [],
+   "batteryTypical": null,
+   "energy": null,
+   "deviceClass": null,
+   "capabilities": null,
+   "source": null
+  },
   "_TZ3210_09HZMIRW": {
    "driverId": "smoke_sensor",
    "modelIds": [],
@@ -452604,6 +453010,196 @@
    "deviceClass": null,
    "capabilities": null,
    "source": null
+  },
+  "_TZE284_6YCGARAB": {
+   "driverId": null,
+   "modelIds": [],
+   "vendor": null,
+   "model": null,
+   "title": null,
+   "category": null,
+   "description": null,
+   "productPage": null,
+   "imageCandidates": [],
+   "batteries": [],
+   "batteryTypical": null,
+   "energy": null,
+   "deviceClass": null,
+   "capabilities": null,
+   "source": null
+  },
+  "_tze284_6YCGARAB": {
+   "driverId": null,
+   "modelIds": [],
+   "vendor": null,
+   "model": null,
+   "title": null,
+   "category": null,
+   "description": null,
+   "productPage": null,
+   "imageCandidates": [],
+   "batteries": [],
+   "batteryTypical": null,
+   "energy": null,
+   "deviceClass": null,
+   "capabilities": null,
+   "source": null
+  },
+  "_TZE200_6YCGARAB": {
+   "driverId": "smoke_sensor",
+   "modelIds": [
+    "SMD9300",
+    "TS0205",
+    "TS0601"
+   ],
+   "vendor": null,
+   "model": null,
+   "title": null,
+   "category": null,
+   "description": null,
+   "productPage": null,
+   "imageCandidates": [],
+   "batteries": [
+    "CR123A"
+   ],
+   "batteryTypical": "CR123A",
+   "energy": {
+    "nominalW": 0,
+    "standbyW": 0
+   },
+   "deviceClass": "sensor",
+   "capabilities": null,
+   "source": "sync-compose-add"
+  },
+  "_TZE204_6YCGARAB": {
+   "driverId": "smoke_sensor",
+   "modelIds": [
+    "SMD9300",
+    "TS0205",
+    "TS0601"
+   ],
+   "vendor": null,
+   "model": null,
+   "title": null,
+   "category": null,
+   "description": null,
+   "productPage": null,
+   "imageCandidates": [],
+   "batteries": [
+    "CR123A"
+   ],
+   "batteryTypical": "CR123A",
+   "energy": {
+    "nominalW": 0,
+    "standbyW": 0
+   },
+   "deviceClass": "sensor",
+   "capabilities": null,
+   "source": "sync-compose-add"
+  },
+  "_TZE200_6ycgarab": {
+   "driverId": "smoke_sensor",
+   "modelIds": [
+    "SMD9300",
+    "TS0205",
+    "TS0601"
+   ],
+   "vendor": null,
+   "model": null,
+   "title": null,
+   "category": null,
+   "description": null,
+   "productPage": null,
+   "imageCandidates": [],
+   "batteries": [
+    "CR123A"
+   ],
+   "batteryTypical": "CR123A",
+   "energy": {
+    "nominalW": 0,
+    "standbyW": 0
+   },
+   "deviceClass": "sensor",
+   "capabilities": null,
+   "source": "sync-compose-add"
+  },
+  "_TZE204_6ycgarab": {
+   "driverId": "smoke_sensor",
+   "modelIds": [
+    "SMD9300",
+    "TS0205",
+    "TS0601"
+   ],
+   "vendor": null,
+   "model": null,
+   "title": null,
+   "category": null,
+   "description": null,
+   "productPage": null,
+   "imageCandidates": [],
+   "batteries": [
+    "CR123A"
+   ],
+   "batteryTypical": "CR123A",
+   "energy": {
+    "nominalW": 0,
+    "standbyW": 0
+   },
+   "deviceClass": "sensor",
+   "capabilities": null,
+   "source": "sync-compose-add"
+  },
+  "_tze200_6YCGARAB": {
+   "driverId": "smoke_sensor",
+   "modelIds": [
+    "SMD9300",
+    "TS0205",
+    "TS0601"
+   ],
+   "vendor": null,
+   "model": null,
+   "title": null,
+   "category": null,
+   "description": null,
+   "productPage": null,
+   "imageCandidates": [],
+   "batteries": [
+    "CR123A"
+   ],
+   "batteryTypical": "CR123A",
+   "energy": {
+    "nominalW": 0,
+    "standbyW": 0
+   },
+   "deviceClass": "sensor",
+   "capabilities": null,
+   "source": "sync-compose-add"
+  },
+  "_tze204_6YCGARAB": {
+   "driverId": "smoke_sensor",
+   "modelIds": [
+    "SMD9300",
+    "TS0205",
+    "TS0601"
+   ],
+   "vendor": null,
+   "model": null,
+   "title": null,
+   "category": null,
+   "description": null,
+   "productPage": null,
+   "imageCandidates": [],
+   "batteries": [
+    "CR123A"
+   ],
+   "batteryTypical": "CR123A",
+   "energy": {
+    "nominalW": 0,
+    "standbyW": 0
+   },
+   "deviceClass": "sensor",
+   "capabilities": null,
+   "source": "sync-compose-add"
   },
   "_TYZB01_dsjszp0x": {
    "driverId": "smoke_sensor2",
@@ -457547,6 +458143,88 @@
     "_tz3000_O005NUXX",
     "_TZ3000_CFNPRAB5",
     "_tz3000_cfnprab5"
+   ]
+  },
+  "_TZ3000_air9m6af": {
+   "driverId": "socket_power_strip_four_two",
+   "modelIds": [
+    "S26R2ZB",
+    "S31 Lite zb",
+    "S40LITE",
+    "S60ZBTPF",
+    "S60ZBTPG",
+    "TS0101",
+    "TS0111",
+    "TS011F",
+    "TS0601"
+   ],
+   "vendor": "LELLKI",
+   "model": "WP33",
+   "title": "Power Strip 16A 4000W 4AC + 2USB",
+   "category": "plug",
+   "description": "Power Strip 16A 4000W 4AC + 2USB",
+   "productPage": "https://zigbee.blakadder.com/LELLKI_WP33.html",
+   "imageCandidates": [
+    "https://zigbee.blakadder.com/assets/images/devices/lellki-wp33.jpg",
+    "https://www.zigbee2mqtt.io/images/devices/WP33.jpg"
+   ],
+   "batteries": [],
+   "batteryTypical": null,
+   "energy": {
+    "nominalW": 5,
+    "standbyW": 0.5
+   },
+   "deviceClass": "socket",
+   "capabilities": null,
+   "source": "compose-exclusive",
+   "variants": [
+    "_TZ3000_9DJOCYPN",
+    "_tz3000_air9m6af",
+    "_TZ3000_AIR9M6AF",
+    "_tz3000_9djocypn",
+    "_TZ3000_9djocypn",
+    "_tz3000_9DJOCYPN"
+   ]
+  },
+  "_TZ3000_AIR9M6AF": {
+   "driverId": "socket_power_strip_four_two",
+   "modelIds": [
+    "S26R2ZB",
+    "S31 Lite zb",
+    "S40LITE",
+    "S60ZBTPF",
+    "S60ZBTPG",
+    "TS0101",
+    "TS0111",
+    "TS011F",
+    "TS0601"
+   ],
+   "vendor": "LELLKI",
+   "model": "WP33",
+   "title": "Power Strip 16A 4000W 4AC + 2USB",
+   "category": "plug",
+   "description": "Power Strip 16A 4000W 4AC + 2USB",
+   "productPage": "https://zigbee.blakadder.com/LELLKI_WP33.html",
+   "imageCandidates": [
+    "https://zigbee.blakadder.com/assets/images/devices/lellki-wp33.jpg",
+    "https://www.zigbee2mqtt.io/images/devices/WP33.jpg"
+   ],
+   "batteries": [],
+   "batteryTypical": null,
+   "energy": {
+    "nominalW": 5,
+    "standbyW": 0.5
+   },
+   "deviceClass": "socket",
+   "capabilities": null,
+   "source": "compose-exclusive",
+   "variants": [
+    "_TZ3000_9DJOCYPN",
+    "_tz3000_air9m6af",
+    "_TZ3000_air9m6af",
+    "_tz3000_9djocypn",
+    "_TZ3000_9djocypn",
+    "_tz3000_9DJOCYPN"
    ]
   },
   "_tze284_nt4pquef": {
@@ -466907,11 +467585,10 @@
    "variants": [
     "_TZ3000_9DJOCYPN",
     "_tz3000_air9m6af",
-    "_TZ3000_9djocypn",
-    "_tz3000_9DJOCYPN",
-    "_TZ3000_AIR9M6AF",
     "_TZ3000_air9m6af",
-    "_tz3000_AIR9M6AF"
+    "_TZ3000_AIR9M6AF",
+    "_TZ3000_9djocypn",
+    "_tz3000_9DJOCYPN"
    ]
   },
   "_tz3000_9evm3otq": {
@@ -475495,11 +476172,10 @@
    "variants": [
     "_TZ3000_9DJOCYPN",
     "_tz3000_air9m6af",
-    "_tz3000_9djocypn",
-    "_tz3000_9DJOCYPN",
-    "_TZ3000_AIR9M6AF",
     "_TZ3000_air9m6af",
-    "_tz3000_AIR9M6AF"
+    "_TZ3000_AIR9M6AF",
+    "_tz3000_9djocypn",
+    "_tz3000_9DJOCYPN"
    ]
   },
   "_tz3000_9DJOCYPN": {
@@ -475527,11 +476203,10 @@
    "variants": [
     "_TZ3000_9DJOCYPN",
     "_tz3000_air9m6af",
-    "_tz3000_9djocypn",
-    "_TZ3000_9djocypn",
-    "_TZ3000_AIR9M6AF",
     "_TZ3000_air9m6af",
-    "_tz3000_AIR9M6AF"
+    "_TZ3000_AIR9M6AF",
+    "_tz3000_9djocypn",
+    "_TZ3000_9djocypn"
    ]
   },
   "_TZ3000_9evm3otq": {
@@ -486170,66 +486845,6 @@
    "deviceClass": "socket",
    "capabilities": null,
    "source": null
-  },
-  "_TZ3002_VAQ2BFCU": {
-   "driverId": "switch_1gang",
-   "modelIds": [],
-   "vendor": null,
-   "model": null,
-   "title": null,
-   "category": null,
-   "description": null,
-   "productPage": null,
-   "imageCandidates": [],
-   "batteries": [],
-   "batteryTypical": null,
-   "energy": {
-    "nominalW": 3,
-    "standbyW": 0.4
-   },
-   "deviceClass": "socket",
-   "capabilities": null,
-   "source": "auto-sync"
-  },
-  "_TZ3002_vaq2bfcu": {
-   "driverId": "switch_1gang",
-   "modelIds": [],
-   "vendor": null,
-   "model": null,
-   "title": null,
-   "category": null,
-   "description": null,
-   "productPage": null,
-   "imageCandidates": [],
-   "batteries": [],
-   "batteryTypical": null,
-   "energy": {
-    "nominalW": 3,
-    "standbyW": 0.4
-   },
-   "deviceClass": "socket",
-   "capabilities": null,
-   "source": "auto-sync"
-  },
-  "_tz3002_VAQ2BFCU": {
-   "driverId": "switch_1gang",
-   "modelIds": [],
-   "vendor": null,
-   "model": null,
-   "title": null,
-   "category": null,
-   "description": null,
-   "productPage": null,
-   "imageCandidates": [],
-   "batteries": [],
-   "batteryTypical": null,
-   "energy": {
-    "nominalW": 3,
-    "standbyW": 0.4
-   },
-   "deviceClass": "socket",
-   "capabilities": null,
-   "source": "auto-sync"
   },
   "_TZ3002_YPTOMML1": {
    "driverId": "switch_1gang",
@@ -505017,6 +505632,66 @@
    "deviceClass": "socket",
    "capabilities": null,
    "source": null
+  },
+  "_TZ3002_vaq2bfcu": {
+   "driverId": "switch_3gang",
+   "modelIds": [],
+   "vendor": null,
+   "model": null,
+   "title": null,
+   "category": null,
+   "description": null,
+   "productPage": null,
+   "imageCandidates": [],
+   "batteries": [],
+   "batteryTypical": null,
+   "energy": {
+    "nominalW": 5,
+    "standbyW": 0.6
+   },
+   "deviceClass": "socket",
+   "capabilities": null,
+   "source": "compose-exclusive"
+  },
+  "_TZ3002_VAQ2BFCU": {
+   "driverId": "switch_3gang",
+   "modelIds": [],
+   "vendor": null,
+   "model": null,
+   "title": null,
+   "category": null,
+   "description": null,
+   "productPage": null,
+   "imageCandidates": [],
+   "batteries": [],
+   "batteryTypical": null,
+   "energy": {
+    "nominalW": 5,
+    "standbyW": 0.6
+   },
+   "deviceClass": "socket",
+   "capabilities": null,
+   "source": "compose-exclusive"
+  },
+  "_tz3002_VAQ2BFCU": {
+   "driverId": "switch_3gang",
+   "modelIds": [],
+   "vendor": null,
+   "model": null,
+   "title": null,
+   "category": null,
+   "description": null,
+   "productPage": null,
+   "imageCandidates": [],
+   "batteries": [],
+   "batteryTypical": null,
+   "energy": {
+    "nominalW": 5,
+    "standbyW": 0.6
+   },
+   "deviceClass": "socket",
+   "capabilities": null,
+   "source": "compose-exclusive"
   },
   "_TZ3000_1FQPJ6QZ": {
    "driverId": "switch_4_gang_metering",
@@ -523839,48 +524514,6 @@
    "capabilities": null,
    "source": "auto-sync"
   },
-  "_TZ3000_AIR9M6AF": {
-   "driverId": "usb_dongle_triple",
-   "modelIds": [
-    "S26R2ZB",
-    "S31 Lite zb",
-    "S40LITE",
-    "S60ZBTPF",
-    "S60ZBTPG",
-    "TS0101",
-    "TS0111",
-    "TS011F",
-    "TS0601"
-   ],
-   "vendor": "LELLKI",
-   "model": "WP33",
-   "title": "Power Strip 16A 4000W 4AC + 2USB",
-   "category": "plug",
-   "description": "Power Strip 16A 4000W 4AC + 2USB",
-   "productPage": "https://zigbee.blakadder.com/LELLKI_WP33.html",
-   "imageCandidates": [
-    "https://zigbee.blakadder.com/assets/images/devices/lellki-wp33.jpg",
-    "https://www.zigbee2mqtt.io/images/devices/WP33.jpg"
-   ],
-   "batteries": [],
-   "batteryTypical": null,
-   "energy": {
-    "nominalW": 5,
-    "standbyW": 0.4
-   },
-   "deviceClass": "socket",
-   "capabilities": null,
-   "source": "auto-sync",
-   "variants": [
-    "_TZ3000_9DJOCYPN",
-    "_tz3000_air9m6af",
-    "_tz3000_9djocypn",
-    "_TZ3000_9djocypn",
-    "_tz3000_9DJOCYPN",
-    "_TZ3000_air9m6af",
-    "_tz3000_AIR9M6AF"
-   ]
-  },
   "_TZ3000_Z6FGD73R": {
    "driverId": "usb_dongle_triple",
    "modelIds": [
@@ -524712,48 +525345,6 @@
    "capabilities": null,
    "source": "auto-sync"
   },
-  "_TZ3000_air9m6af": {
-   "driverId": "usb_dongle_triple",
-   "modelIds": [
-    "S26R2ZB",
-    "S31 Lite zb",
-    "S40LITE",
-    "S60ZBTPF",
-    "S60ZBTPG",
-    "TS0101",
-    "TS0111",
-    "TS011F",
-    "TS0601"
-   ],
-   "vendor": "LELLKI",
-   "model": "WP33",
-   "title": "Power Strip 16A 4000W 4AC + 2USB",
-   "category": "plug",
-   "description": "Power Strip 16A 4000W 4AC + 2USB",
-   "productPage": "https://zigbee.blakadder.com/LELLKI_WP33.html",
-   "imageCandidates": [
-    "https://zigbee.blakadder.com/assets/images/devices/lellki-wp33.jpg",
-    "https://www.zigbee2mqtt.io/images/devices/WP33.jpg"
-   ],
-   "batteries": [],
-   "batteryTypical": null,
-   "energy": {
-    "nominalW": 5,
-    "standbyW": 0.4
-   },
-   "deviceClass": "socket",
-   "capabilities": null,
-   "source": "auto-sync",
-   "variants": [
-    "_TZ3000_9DJOCYPN",
-    "_tz3000_air9m6af",
-    "_tz3000_9djocypn",
-    "_TZ3000_9djocypn",
-    "_tz3000_9DJOCYPN",
-    "_TZ3000_AIR9M6AF",
-    "_tz3000_AIR9M6AF"
-   ]
-  },
   "_TZ3000_z6fgd73r": {
    "driverId": "usb_dongle_triple",
    "modelIds": [
@@ -525584,48 +526175,6 @@
    "deviceClass": "socket",
    "capabilities": null,
    "source": "auto-sync"
-  },
-  "_tz3000_AIR9M6AF": {
-   "driverId": "usb_dongle_triple",
-   "modelIds": [
-    "S26R2ZB",
-    "S31 Lite zb",
-    "S40LITE",
-    "S60ZBTPF",
-    "S60ZBTPG",
-    "TS0101",
-    "TS0111",
-    "TS011F",
-    "TS0601"
-   ],
-   "vendor": "LELLKI",
-   "model": "WP33",
-   "title": "Power Strip 16A 4000W 4AC + 2USB",
-   "category": "plug",
-   "description": "Power Strip 16A 4000W 4AC + 2USB",
-   "productPage": "https://zigbee.blakadder.com/LELLKI_WP33.html",
-   "imageCandidates": [
-    "https://zigbee.blakadder.com/assets/images/devices/lellki-wp33.jpg",
-    "https://www.zigbee2mqtt.io/images/devices/WP33.jpg"
-   ],
-   "batteries": [],
-   "batteryTypical": null,
-   "energy": {
-    "nominalW": 5,
-    "standbyW": 0.4
-   },
-   "deviceClass": "socket",
-   "capabilities": null,
-   "source": "auto-sync",
-   "variants": [
-    "_TZ3000_9DJOCYPN",
-    "_tz3000_air9m6af",
-    "_tz3000_9djocypn",
-    "_TZ3000_9djocypn",
-    "_tz3000_9DJOCYPN",
-    "_TZ3000_AIR9M6AF",
-    "_TZ3000_air9m6af"
-   ]
   },
   "_tz3000_Z6FGD73R": {
    "driverId": "usb_dongle_triple",
@@ -534438,36 +534987,6 @@
    "capabilities": null,
    "source": "auto-sync"
   },
-  "_TZ3210_0aqbrnts": {
-   "driverId": "wall_dimmer_tuya",
-   "modelIds": [
-    "TS0011",
-    "TS0052",
-    "TS0601",
-    "TS0601_dim1",
-    "TS1101",
-    "TS110E",
-    "TS110F",
-    "ZBMINI-DIM",
-    "ZBMINID"
-   ],
-   "vendor": null,
-   "model": null,
-   "title": null,
-   "category": null,
-   "description": null,
-   "productPage": null,
-   "imageCandidates": [],
-   "batteries": [],
-   "batteryTypical": null,
-   "energy": {
-    "nominalW": 9,
-    "standbyW": 0.3
-   },
-   "deviceClass": "light",
-   "capabilities": null,
-   "source": "auto-sync"
-  },
   "_TZ3210_2uk4z8ce": {
    "driverId": "wall_dimmer_tuya",
    "modelIds": [
@@ -535324,66 +535843,6 @@
     "_tz3210_ODLGHNA1"
    ]
   },
-  "_TZ3210_oekbi7o4": {
-   "driverId": "wall_dimmer_tuya",
-   "modelIds": [
-    "TS0011",
-    "TS0052",
-    "TS0601",
-    "TS0601_dim1",
-    "TS1101",
-    "TS110E",
-    "TS110F",
-    "ZBMINI-DIM",
-    "ZBMINID"
-   ],
-   "vendor": null,
-   "model": null,
-   "title": null,
-   "category": null,
-   "description": null,
-   "productPage": null,
-   "imageCandidates": [],
-   "batteries": [],
-   "batteryTypical": null,
-   "energy": {
-    "nominalW": 9,
-    "standbyW": 0.3
-   },
-   "deviceClass": "light",
-   "capabilities": null,
-   "source": "auto-sync"
-  },
-  "_TZ3210_ohvnwamm": {
-   "driverId": "wall_dimmer_tuya",
-   "modelIds": [
-    "TS0011",
-    "TS0052",
-    "TS0601",
-    "TS0601_dim1",
-    "TS1101",
-    "TS110E",
-    "TS110F",
-    "ZBMINI-DIM",
-    "ZBMINID"
-   ],
-   "vendor": null,
-   "model": null,
-   "title": null,
-   "category": null,
-   "description": null,
-   "productPage": null,
-   "imageCandidates": [],
-   "batteries": [],
-   "batteryTypical": null,
-   "energy": {
-    "nominalW": 9,
-    "standbyW": 0.3
-   },
-   "deviceClass": "light",
-   "capabilities": null,
-   "source": "auto-sync"
-  },
   "_TZ3210_onejz0gt": {
    "driverId": "wall_dimmer_tuya",
    "modelIds": [
@@ -535533,52 +535992,6 @@
    "deviceClass": "light",
    "capabilities": null,
    "source": "auto-sync"
-  },
-  "_TZ3210_rxqls8v0": {
-   "driverId": "wall_dimmer_tuya",
-   "modelIds": [
-    "TS0011",
-    "TS0052",
-    "TS0601",
-    "TS0601_dim1",
-    "TS1101",
-    "TS110E",
-    "TS110F",
-    "ZBMINI-DIM",
-    "ZBMINID"
-   ],
-   "vendor": "Fantem",
-   "model": "ZB003-X",
-   "title": "Multi Sensor 4 in 1",
-   "category": "sensor",
-   "description": "Multi Sensor 4 in 1",
-   "productPage": "https://zigbee.blakadder.com/Fantem_ZB003-X.html",
-   "imageCandidates": [
-    "https://zigbee.blakadder.com/assets/images/devices/fantem-zb003-x.jpg",
-    "https://www.zigbee2mqtt.io/images/devices/ZB003-X.jpg"
-   ],
-   "batteries": [],
-   "batteryTypical": null,
-   "energy": {
-    "nominalW": 9,
-    "standbyW": 0.3
-   },
-   "deviceClass": "light",
-   "capabilities": null,
-   "source": "auto-sync",
-   "variants": [
-    "_tz3210_zmy9hjay",
-    "_tz3210_rxqls8v0",
-    "_tz3210_wuhzzfqg",
-    "_TZ3210_wuhzzfqg",
-    "_TZ3210_zmy9hjay",
-    "_TZ3210_RXQLS8V0",
-    "_tz3210_RXQLS8V0",
-    "_TZ3210_WUHZZFQG",
-    "_tz3210_WUHZZFQG",
-    "_TZ3210_ZMY9HJAY",
-    "_tz3210_ZMY9HJAY"
-   ]
   },
   "_TZ3210_sarhwfpm": {
    "driverId": "wall_dimmer_tuya",
@@ -535820,52 +536233,6 @@
    "capabilities": null,
    "source": "auto-sync"
   },
-  "_TZ3210_wuhzzfqg": {
-   "driverId": "wall_dimmer_tuya",
-   "modelIds": [
-    "TS0011",
-    "TS0052",
-    "TS0601",
-    "TS0601_dim1",
-    "TS1101",
-    "TS110E",
-    "TS110F",
-    "ZBMINI-DIM",
-    "ZBMINID"
-   ],
-   "vendor": "Fantem",
-   "model": "ZB003-X",
-   "title": "Multi Sensor 4 in 1",
-   "category": "sensor",
-   "description": "Multi Sensor 4 in 1",
-   "productPage": "https://zigbee.blakadder.com/Fantem_ZB003-X.html",
-   "imageCandidates": [
-    "https://zigbee.blakadder.com/assets/images/devices/fantem-zb003-x.jpg",
-    "https://www.zigbee2mqtt.io/images/devices/ZB003-X.jpg"
-   ],
-   "batteries": [],
-   "batteryTypical": null,
-   "energy": {
-    "nominalW": 9,
-    "standbyW": 0.3
-   },
-   "deviceClass": "light",
-   "capabilities": null,
-   "source": "auto-sync",
-   "variants": [
-    "_tz3210_zmy9hjay",
-    "_tz3210_rxqls8v0",
-    "_tz3210_wuhzzfqg",
-    "_TZ3210_rxqls8v0",
-    "_TZ3210_zmy9hjay",
-    "_TZ3210_RXQLS8V0",
-    "_tz3210_RXQLS8V0",
-    "_TZ3210_WUHZZFQG",
-    "_tz3210_WUHZZFQG",
-    "_TZ3210_ZMY9HJAY",
-    "_tz3210_ZMY9HJAY"
-   ]
-  },
   "_TZ3210_wv2myxv4": {
    "driverId": "wall_dimmer_tuya",
    "modelIds": [
@@ -535985,52 +536352,6 @@
    "deviceClass": "light",
    "capabilities": null,
    "source": "auto-sync"
-  },
-  "_TZ3210_zmy9hjay": {
-   "driverId": "wall_dimmer_tuya",
-   "modelIds": [
-    "TS0011",
-    "TS0052",
-    "TS0601",
-    "TS0601_dim1",
-    "TS1101",
-    "TS110E",
-    "TS110F",
-    "ZBMINI-DIM",
-    "ZBMINID"
-   ],
-   "vendor": "Fantem",
-   "model": "ZB003-X",
-   "title": "Multi Sensor 4 in 1",
-   "category": "sensor",
-   "description": "Multi Sensor 4 in 1",
-   "productPage": "https://zigbee.blakadder.com/Fantem_ZB003-X.html",
-   "imageCandidates": [
-    "https://zigbee.blakadder.com/assets/images/devices/fantem-zb003-x.jpg",
-    "https://www.zigbee2mqtt.io/images/devices/ZB003-X.jpg"
-   ],
-   "batteries": [],
-   "batteryTypical": null,
-   "energy": {
-    "nominalW": 9,
-    "standbyW": 0.3
-   },
-   "deviceClass": "light",
-   "capabilities": null,
-   "source": "auto-sync",
-   "variants": [
-    "_tz3210_zmy9hjay",
-    "_tz3210_rxqls8v0",
-    "_tz3210_wuhzzfqg",
-    "_TZ3210_rxqls8v0",
-    "_TZ3210_wuhzzfqg",
-    "_TZ3210_RXQLS8V0",
-    "_tz3210_RXQLS8V0",
-    "_TZ3210_WUHZZFQG",
-    "_tz3210_WUHZZFQG",
-    "_TZ3210_ZMY9HJAY",
-    "_tz3210_ZMY9HJAY"
-   ]
   },
   "_TZB210_3owg3kkv": {
    "driverId": "wall_dimmer_tuya",
@@ -539985,66 +540306,6 @@
    "capabilities": null,
    "source": "auto-sync"
   },
-  "_TZ3210_0AQBRNTS": {
-   "driverId": "wall_dimmer_tuya",
-   "modelIds": [
-    "TS0011",
-    "TS0052",
-    "TS0601",
-    "TS0601_dim1",
-    "TS1101",
-    "TS110E",
-    "TS110F",
-    "ZBMINI-DIM",
-    "ZBMINID"
-   ],
-   "vendor": null,
-   "model": null,
-   "title": null,
-   "category": null,
-   "description": null,
-   "productPage": null,
-   "imageCandidates": [],
-   "batteries": [],
-   "batteryTypical": null,
-   "energy": {
-    "nominalW": 9,
-    "standbyW": 0.3
-   },
-   "deviceClass": "light",
-   "capabilities": null,
-   "source": "auto-sync"
-  },
-  "_tz3210_0AQBRNTS": {
-   "driverId": "wall_dimmer_tuya",
-   "modelIds": [
-    "TS0011",
-    "TS0052",
-    "TS0601",
-    "TS0601_dim1",
-    "TS1101",
-    "TS110E",
-    "TS110F",
-    "ZBMINI-DIM",
-    "ZBMINID"
-   ],
-   "vendor": null,
-   "model": null,
-   "title": null,
-   "category": null,
-   "description": null,
-   "productPage": null,
-   "imageCandidates": [],
-   "batteries": [],
-   "batteryTypical": null,
-   "energy": {
-    "nominalW": 9,
-    "standbyW": 0.3
-   },
-   "deviceClass": "light",
-   "capabilities": null,
-   "source": "auto-sync"
-  },
   "_TZ3210_2UK4Z8CE": {
    "driverId": "wall_dimmer_tuya",
    "modelIds": [
@@ -541757,126 +542018,6 @@
     "_TZ3210_ODLGHNA1"
    ]
   },
-  "_TZ3210_OEKBI7O4": {
-   "driverId": "wall_dimmer_tuya",
-   "modelIds": [
-    "TS0011",
-    "TS0052",
-    "TS0601",
-    "TS0601_dim1",
-    "TS1101",
-    "TS110E",
-    "TS110F",
-    "ZBMINI-DIM",
-    "ZBMINID"
-   ],
-   "vendor": null,
-   "model": null,
-   "title": null,
-   "category": null,
-   "description": null,
-   "productPage": null,
-   "imageCandidates": [],
-   "batteries": [],
-   "batteryTypical": null,
-   "energy": {
-    "nominalW": 9,
-    "standbyW": 0.3
-   },
-   "deviceClass": "light",
-   "capabilities": null,
-   "source": "auto-sync"
-  },
-  "_tz3210_OEKBI7O4": {
-   "driverId": "wall_dimmer_tuya",
-   "modelIds": [
-    "TS0011",
-    "TS0052",
-    "TS0601",
-    "TS0601_dim1",
-    "TS1101",
-    "TS110E",
-    "TS110F",
-    "ZBMINI-DIM",
-    "ZBMINID"
-   ],
-   "vendor": null,
-   "model": null,
-   "title": null,
-   "category": null,
-   "description": null,
-   "productPage": null,
-   "imageCandidates": [],
-   "batteries": [],
-   "batteryTypical": null,
-   "energy": {
-    "nominalW": 9,
-    "standbyW": 0.3
-   },
-   "deviceClass": "light",
-   "capabilities": null,
-   "source": "auto-sync"
-  },
-  "_TZ3210_OHVNWAMM": {
-   "driverId": "wall_dimmer_tuya",
-   "modelIds": [
-    "TS0011",
-    "TS0052",
-    "TS0601",
-    "TS0601_dim1",
-    "TS1101",
-    "TS110E",
-    "TS110F",
-    "ZBMINI-DIM",
-    "ZBMINID"
-   ],
-   "vendor": null,
-   "model": null,
-   "title": null,
-   "category": null,
-   "description": null,
-   "productPage": null,
-   "imageCandidates": [],
-   "batteries": [],
-   "batteryTypical": null,
-   "energy": {
-    "nominalW": 9,
-    "standbyW": 0.3
-   },
-   "deviceClass": "light",
-   "capabilities": null,
-   "source": "auto-sync"
-  },
-  "_tz3210_OHVNWAMM": {
-   "driverId": "wall_dimmer_tuya",
-   "modelIds": [
-    "TS0011",
-    "TS0052",
-    "TS0601",
-    "TS0601_dim1",
-    "TS1101",
-    "TS110E",
-    "TS110F",
-    "ZBMINI-DIM",
-    "ZBMINID"
-   ],
-   "vendor": null,
-   "model": null,
-   "title": null,
-   "category": null,
-   "description": null,
-   "productPage": null,
-   "imageCandidates": [],
-   "batteries": [],
-   "batteryTypical": null,
-   "energy": {
-    "nominalW": 9,
-    "standbyW": 0.3
-   },
-   "deviceClass": "light",
-   "capabilities": null,
-   "source": "auto-sync"
-  },
   "_TZ3210_ONEJZ0GT": {
    "driverId": "wall_dimmer_tuya",
    "modelIds": [
@@ -542176,98 +542317,6 @@
    "deviceClass": "light",
    "capabilities": null,
    "source": "auto-sync"
-  },
-  "_TZ3210_RXQLS8V0": {
-   "driverId": "wall_dimmer_tuya",
-   "modelIds": [
-    "TS0011",
-    "TS0052",
-    "TS0601",
-    "TS0601_dim1",
-    "TS1101",
-    "TS110E",
-    "TS110F",
-    "ZBMINI-DIM",
-    "ZBMINID"
-   ],
-   "vendor": "Fantem",
-   "model": "ZB003-X",
-   "title": "Multi Sensor 4 in 1",
-   "category": "sensor",
-   "description": "Multi Sensor 4 in 1",
-   "productPage": "https://zigbee.blakadder.com/Fantem_ZB003-X.html",
-   "imageCandidates": [
-    "https://zigbee.blakadder.com/assets/images/devices/fantem-zb003-x.jpg",
-    "https://www.zigbee2mqtt.io/images/devices/ZB003-X.jpg"
-   ],
-   "batteries": [],
-   "batteryTypical": null,
-   "energy": {
-    "nominalW": 9,
-    "standbyW": 0.3
-   },
-   "deviceClass": "light",
-   "capabilities": null,
-   "source": "auto-sync",
-   "variants": [
-    "_tz3210_zmy9hjay",
-    "_tz3210_rxqls8v0",
-    "_tz3210_wuhzzfqg",
-    "_TZ3210_rxqls8v0",
-    "_TZ3210_wuhzzfqg",
-    "_TZ3210_zmy9hjay",
-    "_tz3210_RXQLS8V0",
-    "_TZ3210_WUHZZFQG",
-    "_tz3210_WUHZZFQG",
-    "_TZ3210_ZMY9HJAY",
-    "_tz3210_ZMY9HJAY"
-   ]
-  },
-  "_tz3210_RXQLS8V0": {
-   "driverId": "wall_dimmer_tuya",
-   "modelIds": [
-    "TS0011",
-    "TS0052",
-    "TS0601",
-    "TS0601_dim1",
-    "TS1101",
-    "TS110E",
-    "TS110F",
-    "ZBMINI-DIM",
-    "ZBMINID"
-   ],
-   "vendor": "Fantem",
-   "model": "ZB003-X",
-   "title": "Multi Sensor 4 in 1",
-   "category": "sensor",
-   "description": "Multi Sensor 4 in 1",
-   "productPage": "https://zigbee.blakadder.com/Fantem_ZB003-X.html",
-   "imageCandidates": [
-    "https://zigbee.blakadder.com/assets/images/devices/fantem-zb003-x.jpg",
-    "https://www.zigbee2mqtt.io/images/devices/ZB003-X.jpg"
-   ],
-   "batteries": [],
-   "batteryTypical": null,
-   "energy": {
-    "nominalW": 9,
-    "standbyW": 0.3
-   },
-   "deviceClass": "light",
-   "capabilities": null,
-   "source": "auto-sync",
-   "variants": [
-    "_tz3210_zmy9hjay",
-    "_tz3210_rxqls8v0",
-    "_tz3210_wuhzzfqg",
-    "_TZ3210_rxqls8v0",
-    "_TZ3210_wuhzzfqg",
-    "_TZ3210_zmy9hjay",
-    "_TZ3210_RXQLS8V0",
-    "_TZ3210_WUHZZFQG",
-    "_tz3210_WUHZZFQG",
-    "_TZ3210_ZMY9HJAY",
-    "_tz3210_ZMY9HJAY"
-   ]
   },
   "_TZ3210_SARHWFPM": {
    "driverId": "wall_dimmer_tuya",
@@ -542749,98 +542798,6 @@
    "capabilities": null,
    "source": "auto-sync"
   },
-  "_TZ3210_WUHZZFQG": {
-   "driverId": "wall_dimmer_tuya",
-   "modelIds": [
-    "TS0011",
-    "TS0052",
-    "TS0601",
-    "TS0601_dim1",
-    "TS1101",
-    "TS110E",
-    "TS110F",
-    "ZBMINI-DIM",
-    "ZBMINID"
-   ],
-   "vendor": "Fantem",
-   "model": "ZB003-X",
-   "title": "Multi Sensor 4 in 1",
-   "category": "sensor",
-   "description": "Multi Sensor 4 in 1",
-   "productPage": "https://zigbee.blakadder.com/Fantem_ZB003-X.html",
-   "imageCandidates": [
-    "https://zigbee.blakadder.com/assets/images/devices/fantem-zb003-x.jpg",
-    "https://www.zigbee2mqtt.io/images/devices/ZB003-X.jpg"
-   ],
-   "batteries": [],
-   "batteryTypical": null,
-   "energy": {
-    "nominalW": 9,
-    "standbyW": 0.3
-   },
-   "deviceClass": "light",
-   "capabilities": null,
-   "source": "auto-sync",
-   "variants": [
-    "_tz3210_zmy9hjay",
-    "_tz3210_rxqls8v0",
-    "_tz3210_wuhzzfqg",
-    "_TZ3210_rxqls8v0",
-    "_TZ3210_wuhzzfqg",
-    "_TZ3210_zmy9hjay",
-    "_TZ3210_RXQLS8V0",
-    "_tz3210_RXQLS8V0",
-    "_tz3210_WUHZZFQG",
-    "_TZ3210_ZMY9HJAY",
-    "_tz3210_ZMY9HJAY"
-   ]
-  },
-  "_tz3210_WUHZZFQG": {
-   "driverId": "wall_dimmer_tuya",
-   "modelIds": [
-    "TS0011",
-    "TS0052",
-    "TS0601",
-    "TS0601_dim1",
-    "TS1101",
-    "TS110E",
-    "TS110F",
-    "ZBMINI-DIM",
-    "ZBMINID"
-   ],
-   "vendor": "Fantem",
-   "model": "ZB003-X",
-   "title": "Multi Sensor 4 in 1",
-   "category": "sensor",
-   "description": "Multi Sensor 4 in 1",
-   "productPage": "https://zigbee.blakadder.com/Fantem_ZB003-X.html",
-   "imageCandidates": [
-    "https://zigbee.blakadder.com/assets/images/devices/fantem-zb003-x.jpg",
-    "https://www.zigbee2mqtt.io/images/devices/ZB003-X.jpg"
-   ],
-   "batteries": [],
-   "batteryTypical": null,
-   "energy": {
-    "nominalW": 9,
-    "standbyW": 0.3
-   },
-   "deviceClass": "light",
-   "capabilities": null,
-   "source": "auto-sync",
-   "variants": [
-    "_tz3210_zmy9hjay",
-    "_tz3210_rxqls8v0",
-    "_tz3210_wuhzzfqg",
-    "_TZ3210_rxqls8v0",
-    "_TZ3210_wuhzzfqg",
-    "_TZ3210_zmy9hjay",
-    "_TZ3210_RXQLS8V0",
-    "_tz3210_RXQLS8V0",
-    "_TZ3210_WUHZZFQG",
-    "_TZ3210_ZMY9HJAY",
-    "_tz3210_ZMY9HJAY"
-   ]
-  },
   "_TZ3210_WV2MYXV4": {
    "driverId": "wall_dimmer_tuya",
    "modelIds": [
@@ -543080,98 +543037,6 @@
    "deviceClass": "light",
    "capabilities": null,
    "source": "auto-sync"
-  },
-  "_TZ3210_ZMY9HJAY": {
-   "driverId": "wall_dimmer_tuya",
-   "modelIds": [
-    "TS0011",
-    "TS0052",
-    "TS0601",
-    "TS0601_dim1",
-    "TS1101",
-    "TS110E",
-    "TS110F",
-    "ZBMINI-DIM",
-    "ZBMINID"
-   ],
-   "vendor": "Fantem",
-   "model": "ZB003-X",
-   "title": "Multi Sensor 4 in 1",
-   "category": "sensor",
-   "description": "Multi Sensor 4 in 1",
-   "productPage": "https://zigbee.blakadder.com/Fantem_ZB003-X.html",
-   "imageCandidates": [
-    "https://zigbee.blakadder.com/assets/images/devices/fantem-zb003-x.jpg",
-    "https://www.zigbee2mqtt.io/images/devices/ZB003-X.jpg"
-   ],
-   "batteries": [],
-   "batteryTypical": null,
-   "energy": {
-    "nominalW": 9,
-    "standbyW": 0.3
-   },
-   "deviceClass": "light",
-   "capabilities": null,
-   "source": "auto-sync",
-   "variants": [
-    "_tz3210_zmy9hjay",
-    "_tz3210_rxqls8v0",
-    "_tz3210_wuhzzfqg",
-    "_TZ3210_rxqls8v0",
-    "_TZ3210_wuhzzfqg",
-    "_TZ3210_zmy9hjay",
-    "_TZ3210_RXQLS8V0",
-    "_tz3210_RXQLS8V0",
-    "_TZ3210_WUHZZFQG",
-    "_tz3210_WUHZZFQG",
-    "_tz3210_ZMY9HJAY"
-   ]
-  },
-  "_tz3210_ZMY9HJAY": {
-   "driverId": "wall_dimmer_tuya",
-   "modelIds": [
-    "TS0011",
-    "TS0052",
-    "TS0601",
-    "TS0601_dim1",
-    "TS1101",
-    "TS110E",
-    "TS110F",
-    "ZBMINI-DIM",
-    "ZBMINID"
-   ],
-   "vendor": "Fantem",
-   "model": "ZB003-X",
-   "title": "Multi Sensor 4 in 1",
-   "category": "sensor",
-   "description": "Multi Sensor 4 in 1",
-   "productPage": "https://zigbee.blakadder.com/Fantem_ZB003-X.html",
-   "imageCandidates": [
-    "https://zigbee.blakadder.com/assets/images/devices/fantem-zb003-x.jpg",
-    "https://www.zigbee2mqtt.io/images/devices/ZB003-X.jpg"
-   ],
-   "batteries": [],
-   "batteryTypical": null,
-   "energy": {
-    "nominalW": 9,
-    "standbyW": 0.3
-   },
-   "deviceClass": "light",
-   "capabilities": null,
-   "source": "auto-sync",
-   "variants": [
-    "_tz3210_zmy9hjay",
-    "_tz3210_rxqls8v0",
-    "_tz3210_wuhzzfqg",
-    "_TZ3210_rxqls8v0",
-    "_TZ3210_wuhzzfqg",
-    "_TZ3210_zmy9hjay",
-    "_TZ3210_RXQLS8V0",
-    "_tz3210_RXQLS8V0",
-    "_TZ3210_WUHZZFQG",
-    "_tz3210_WUHZZFQG",
-    "_TZ3210_ZMY9HJAY"
-   ]
   },
   "_TZB210_3OWG3KKV": {
    "driverId": "wall_dimmer_tuya",
@@ -556098,6 +555963,422 @@
    "capabilities": null,
    "source": "sync-compose-add"
   },
+  "_TZ3000_bzt33cyu": {
+   "driverId": "water_leak_sensor",
+   "modelIds": [
+    "_TZ3000_EIT6L5",
+    "_TZ3000_KYB656NO",
+    "3315-S",
+    "3315-SEU",
+    "AY222Z",
+    "CK-TLSR8656-SS5-01(7019)",
+    "CK-TLSR8656-Z23SE11HW-01(7019)",
+    "HS1WL",
+    "LS21001",
+    "LUMI.SENSOR_WLEAK.AQ1",
+    "SJCGQ11LM",
+    "SJCGQ12LM",
+    "SJCGQ13LM",
+    "SNZB-05",
+    "SNZB-05P",
+    "SQ510A",
+    "TS0207",
+    "TS0601",
+    "ZG-222Z",
+    "ZG-222ZA",
+    "ZG-226Z"
+   ],
+   "vendor": null,
+   "model": null,
+   "title": null,
+   "category": null,
+   "description": null,
+   "productPage": null,
+   "imageCandidates": [],
+   "batteries": [
+    "CR2032",
+    "CR2450",
+    "AAA"
+   ],
+   "batteryTypical": "CR2032",
+   "energy": {
+    "nominalW": null,
+    "standbyW": null
+   },
+   "deviceClass": "sensor",
+   "capabilities": null,
+   "source": "compose-exclusive"
+  },
+  "_TZ3000_BZT33CYU": {
+   "driverId": "water_leak_sensor",
+   "modelIds": [
+    "_TZ3000_EIT6L5",
+    "_TZ3000_KYB656NO",
+    "3315-S",
+    "3315-SEU",
+    "AY222Z",
+    "CK-TLSR8656-SS5-01(7019)",
+    "CK-TLSR8656-Z23SE11HW-01(7019)",
+    "HS1WL",
+    "LS21001",
+    "LUMI.SENSOR_WLEAK.AQ1",
+    "SJCGQ11LM",
+    "SJCGQ12LM",
+    "SJCGQ13LM",
+    "SNZB-05",
+    "SNZB-05P",
+    "SQ510A",
+    "TS0207",
+    "TS0601",
+    "ZG-222Z",
+    "ZG-222ZA",
+    "ZG-226Z"
+   ],
+   "vendor": null,
+   "model": null,
+   "title": null,
+   "category": null,
+   "description": null,
+   "productPage": null,
+   "imageCandidates": [],
+   "batteries": [
+    "CR2032",
+    "CR2450",
+    "AAA"
+   ],
+   "batteryTypical": "CR2032",
+   "energy": {
+    "nominalW": null,
+    "standbyW": null
+   },
+   "deviceClass": "sensor",
+   "capabilities": null,
+   "source": "compose-exclusive"
+  },
+  "_TZ3000_bfopm9ga": {
+   "driverId": "water_leak_sensor",
+   "modelIds": [
+    "_TZ3000_EIT6L5",
+    "_TZ3000_KYB656NO",
+    "3315-S",
+    "3315-SEU",
+    "AY222Z",
+    "CK-TLSR8656-SS5-01(7019)",
+    "CK-TLSR8656-Z23SE11HW-01(7019)",
+    "HS1WL",
+    "LS21001",
+    "LUMI.SENSOR_WLEAK.AQ1",
+    "SJCGQ11LM",
+    "SJCGQ12LM",
+    "SJCGQ13LM",
+    "SNZB-05",
+    "SNZB-05P",
+    "SQ510A",
+    "TS0207",
+    "TS0601",
+    "ZG-222Z",
+    "ZG-222ZA",
+    "ZG-226Z"
+   ],
+   "vendor": null,
+   "model": null,
+   "title": null,
+   "category": null,
+   "description": null,
+   "productPage": null,
+   "imageCandidates": [],
+   "batteries": [
+    "CR2032",
+    "CR2450",
+    "AAA"
+   ],
+   "batteryTypical": "CR2032",
+   "energy": {
+    "nominalW": null,
+    "standbyW": null
+   },
+   "deviceClass": "sensor",
+   "capabilities": null,
+   "source": "compose-exclusive"
+  },
+  "_TZ3000_BFOPM9GA": {
+   "driverId": "water_leak_sensor",
+   "modelIds": [
+    "_TZ3000_EIT6L5",
+    "_TZ3000_KYB656NO",
+    "3315-S",
+    "3315-SEU",
+    "AY222Z",
+    "CK-TLSR8656-SS5-01(7019)",
+    "CK-TLSR8656-Z23SE11HW-01(7019)",
+    "HS1WL",
+    "LS21001",
+    "LUMI.SENSOR_WLEAK.AQ1",
+    "SJCGQ11LM",
+    "SJCGQ12LM",
+    "SJCGQ13LM",
+    "SNZB-05",
+    "SNZB-05P",
+    "SQ510A",
+    "TS0207",
+    "TS0601",
+    "ZG-222Z",
+    "ZG-222ZA",
+    "ZG-226Z"
+   ],
+   "vendor": null,
+   "model": null,
+   "title": null,
+   "category": null,
+   "description": null,
+   "productPage": null,
+   "imageCandidates": [],
+   "batteries": [
+    "CR2032",
+    "CR2450",
+    "AAA"
+   ],
+   "batteryTypical": "CR2032",
+   "energy": {
+    "nominalW": null,
+    "standbyW": null
+   },
+   "deviceClass": "sensor",
+   "capabilities": null,
+   "source": "compose-exclusive"
+  },
+  "_TZ3000_4qaowtdo": {
+   "driverId": "water_leak_sensor",
+   "modelIds": [
+    "_TZ3000_EIT6L5",
+    "_TZ3000_KYB656NO",
+    "3315-S",
+    "3315-SEU",
+    "AY222Z",
+    "CK-TLSR8656-SS5-01(7019)",
+    "CK-TLSR8656-Z23SE11HW-01(7019)",
+    "HS1WL",
+    "LS21001",
+    "LUMI.SENSOR_WLEAK.AQ1",
+    "SJCGQ11LM",
+    "SJCGQ12LM",
+    "SJCGQ13LM",
+    "SNZB-05",
+    "SNZB-05P",
+    "SQ510A",
+    "TS0207",
+    "TS0601",
+    "ZG-222Z",
+    "ZG-222ZA",
+    "ZG-226Z"
+   ],
+   "vendor": null,
+   "model": null,
+   "title": null,
+   "category": null,
+   "description": null,
+   "productPage": null,
+   "imageCandidates": [],
+   "batteries": [
+    "CR2032",
+    "CR2450",
+    "AAA"
+   ],
+   "batteryTypical": "CR2032",
+   "energy": {
+    "nominalW": null,
+    "standbyW": null
+   },
+   "deviceClass": "sensor",
+   "capabilities": null,
+   "source": "compose-exclusive"
+  },
+  "_TZ3000_4QAOWTDO": {
+   "driverId": "water_leak_sensor",
+   "modelIds": [
+    "_TZ3000_EIT6L5",
+    "_TZ3000_KYB656NO",
+    "3315-S",
+    "3315-SEU",
+    "AY222Z",
+    "CK-TLSR8656-SS5-01(7019)",
+    "CK-TLSR8656-Z23SE11HW-01(7019)",
+    "HS1WL",
+    "LS21001",
+    "LUMI.SENSOR_WLEAK.AQ1",
+    "SJCGQ11LM",
+    "SJCGQ12LM",
+    "SJCGQ13LM",
+    "SNZB-05",
+    "SNZB-05P",
+    "SQ510A",
+    "TS0207",
+    "TS0601",
+    "ZG-222Z",
+    "ZG-222ZA",
+    "ZG-226Z"
+   ],
+   "vendor": null,
+   "model": null,
+   "title": null,
+   "category": null,
+   "description": null,
+   "productPage": null,
+   "imageCandidates": [],
+   "batteries": [
+    "CR2032",
+    "CR2450",
+    "AAA"
+   ],
+   "batteryTypical": "CR2032",
+   "energy": {
+    "nominalW": null,
+    "standbyW": null
+   },
+   "deviceClass": "sensor",
+   "capabilities": null,
+   "source": "compose-exclusive"
+  },
+  "_TZ3000_qhozxs2b": {
+   "driverId": "water_leak_sensor",
+   "modelIds": [
+    "_TZ3000_EIT6L5",
+    "_TZ3000_KYB656NO",
+    "3315-S",
+    "3315-SEU",
+    "AY222Z",
+    "CK-TLSR8656-SS5-01(7019)",
+    "CK-TLSR8656-Z23SE11HW-01(7019)",
+    "HS1WL",
+    "LS21001",
+    "LUMI.SENSOR_WLEAK.AQ1",
+    "SJCGQ11LM",
+    "SJCGQ12LM",
+    "SJCGQ13LM",
+    "SNZB-05",
+    "SNZB-05P",
+    "SQ510A",
+    "TS0207",
+    "TS0601",
+    "ZG-222Z",
+    "ZG-222ZA",
+    "ZG-226Z"
+   ],
+   "vendor": null,
+   "model": null,
+   "title": null,
+   "category": null,
+   "description": null,
+   "productPage": null,
+   "imageCandidates": [],
+   "batteries": [
+    "CR2032",
+    "CR2450",
+    "AAA"
+   ],
+   "batteryTypical": "CR2032",
+   "energy": {
+    "nominalW": null,
+    "standbyW": null
+   },
+   "deviceClass": "sensor",
+   "capabilities": null,
+   "source": "compose-exclusive"
+  },
+  "_TZ3000_QHOZXS2B": {
+   "driverId": "water_leak_sensor",
+   "modelIds": [
+    "_TZ3000_EIT6L5",
+    "_TZ3000_KYB656NO",
+    "3315-S",
+    "3315-SEU",
+    "AY222Z",
+    "CK-TLSR8656-SS5-01(7019)",
+    "CK-TLSR8656-Z23SE11HW-01(7019)",
+    "HS1WL",
+    "LS21001",
+    "LUMI.SENSOR_WLEAK.AQ1",
+    "SJCGQ11LM",
+    "SJCGQ12LM",
+    "SJCGQ13LM",
+    "SNZB-05",
+    "SNZB-05P",
+    "SQ510A",
+    "TS0207",
+    "TS0601",
+    "ZG-222Z",
+    "ZG-222ZA",
+    "ZG-226Z"
+   ],
+   "vendor": null,
+   "model": null,
+   "title": null,
+   "category": null,
+   "description": null,
+   "productPage": null,
+   "imageCandidates": [],
+   "batteries": [
+    "CR2032",
+    "CR2450",
+    "AAA"
+   ],
+   "batteryTypical": "CR2032",
+   "energy": {
+    "nominalW": null,
+    "standbyW": null
+   },
+   "deviceClass": "sensor",
+   "capabilities": null,
+   "source": "compose-exclusive"
+  },
+  "_TZ3000_baeiitad": {
+   "driverId": "water_leak_sensor",
+   "modelIds": [],
+   "vendor": null,
+   "model": null,
+   "title": null,
+   "category": null,
+   "description": null,
+   "productPage": null,
+   "imageCandidates": [],
+   "batteries": [
+    "CR2032",
+    "CR2450",
+    "AAA"
+   ],
+   "batteryTypical": "CR2032",
+   "energy": {
+    "nominalW": null,
+    "standbyW": null
+   },
+   "deviceClass": "sensor",
+   "capabilities": null,
+   "source": null
+  },
+  "_tz3000_baeiitad": {
+   "driverId": "water_leak_sensor",
+   "modelIds": [],
+   "vendor": null,
+   "model": null,
+   "title": null,
+   "category": null,
+   "description": null,
+   "productPage": null,
+   "imageCandidates": [],
+   "batteries": [
+    "CR2032",
+    "CR2450",
+    "AAA"
+   ],
+   "batteryTypical": "CR2032",
+   "energy": {
+    "nominalW": null,
+    "standbyW": null
+   },
+   "deviceClass": "sensor",
+   "capabilities": null,
+   "source": null
+  },
   "_TYST11_qq9mpfhw": {
    "driverId": "water_leak_sensor_tuya",
    "modelIds": [
@@ -557266,46 +557547,6 @@
    "capabilities": null,
    "source": "auto-sync"
   },
-  "_TZ3000_4QAOWTDO": {
-   "driverId": "water_leak_sensor_tuya",
-   "modelIds": [
-    "_TZ3000_EIT6L5",
-    "_TZ3000_KYB656NO",
-    "3315-S",
-    "3315-SEU",
-    "CK-TLSR8656-SS5-01(7019)",
-    "HS1WL",
-    "LS21001",
-    "LUMI.SENSOR_WLEAK.AQ1",
-    "Q9MPFHW",
-    "SJCGQ11LM",
-    "SJCGQ12LM",
-    "SJCGQ13LM",
-    "SNZB-05",
-    "SNZB-05P",
-    "SQ510A",
-    "TS0601",
-    "ZG-222Z"
-   ],
-   "vendor": null,
-   "model": null,
-   "title": null,
-   "category": null,
-   "description": null,
-   "productPage": null,
-   "imageCandidates": [],
-   "batteries": [
-    "CR2"
-   ],
-   "batteryTypical": "CR2",
-   "energy": {
-    "nominalW": 0,
-    "standbyW": 0
-   },
-   "deviceClass": "sensor",
-   "capabilities": null,
-   "source": "auto-sync"
-  },
   "_TZ3000_ABAPLIMJ": {
    "driverId": "water_leak_sensor_tuya",
    "modelIds": [
@@ -557347,86 +557588,6 @@
    "source": "auto-sync"
   },
   "_TZ3000_AMIS43TJ": {
-   "driverId": "water_leak_sensor_tuya",
-   "modelIds": [
-    "_TZ3000_EIT6L5",
-    "_TZ3000_KYB656NO",
-    "3315-S",
-    "3315-SEU",
-    "CK-TLSR8656-SS5-01(7019)",
-    "HS1WL",
-    "LS21001",
-    "LUMI.SENSOR_WLEAK.AQ1",
-    "Q9MPFHW",
-    "SJCGQ11LM",
-    "SJCGQ12LM",
-    "SJCGQ13LM",
-    "SNZB-05",
-    "SNZB-05P",
-    "SQ510A",
-    "TS0601",
-    "ZG-222Z"
-   ],
-   "vendor": null,
-   "model": null,
-   "title": null,
-   "category": null,
-   "description": null,
-   "productPage": null,
-   "imageCandidates": [],
-   "batteries": [
-    "CR2"
-   ],
-   "batteryTypical": "CR2",
-   "energy": {
-    "nominalW": 0,
-    "standbyW": 0
-   },
-   "deviceClass": "sensor",
-   "capabilities": null,
-   "source": "auto-sync"
-  },
-  "_TZ3000_BFOPM9GA": {
-   "driverId": "water_leak_sensor_tuya",
-   "modelIds": [
-    "_TZ3000_EIT6L5",
-    "_TZ3000_KYB656NO",
-    "3315-S",
-    "3315-SEU",
-    "CK-TLSR8656-SS5-01(7019)",
-    "HS1WL",
-    "LS21001",
-    "LUMI.SENSOR_WLEAK.AQ1",
-    "Q9MPFHW",
-    "SJCGQ11LM",
-    "SJCGQ12LM",
-    "SJCGQ13LM",
-    "SNZB-05",
-    "SNZB-05P",
-    "SQ510A",
-    "TS0601",
-    "ZG-222Z"
-   ],
-   "vendor": null,
-   "model": null,
-   "title": null,
-   "category": null,
-   "description": null,
-   "productPage": null,
-   "imageCandidates": [],
-   "batteries": [
-    "CR2"
-   ],
-   "batteryTypical": "CR2",
-   "energy": {
-    "nominalW": 0,
-    "standbyW": 0
-   },
-   "deviceClass": "sensor",
-   "capabilities": null,
-   "source": "auto-sync"
-  },
-  "_TZ3000_BZT33CYU": {
    "driverId": "water_leak_sensor_tuya",
    "modelIds": [
     "_TZ3000_EIT6L5",
@@ -557867,46 +558028,6 @@
    "source": "auto-sync"
   },
   "_TZ3000_QDMNMDDG": {
-   "driverId": "water_leak_sensor_tuya",
-   "modelIds": [
-    "_TZ3000_EIT6L5",
-    "_TZ3000_KYB656NO",
-    "3315-S",
-    "3315-SEU",
-    "CK-TLSR8656-SS5-01(7019)",
-    "HS1WL",
-    "LS21001",
-    "LUMI.SENSOR_WLEAK.AQ1",
-    "Q9MPFHW",
-    "SJCGQ11LM",
-    "SJCGQ12LM",
-    "SJCGQ13LM",
-    "SNZB-05",
-    "SNZB-05P",
-    "SQ510A",
-    "TS0601",
-    "ZG-222Z"
-   ],
-   "vendor": null,
-   "model": null,
-   "title": null,
-   "category": null,
-   "description": null,
-   "productPage": null,
-   "imageCandidates": [],
-   "batteries": [
-    "CR2"
-   ],
-   "batteryTypical": "CR2",
-   "energy": {
-    "nominalW": 0,
-    "standbyW": 0
-   },
-   "deviceClass": "sensor",
-   "capabilities": null,
-   "source": "auto-sync"
-  },
-  "_TZ3000_QHOZXS2B": {
    "driverId": "water_leak_sensor_tuya",
    "modelIds": [
     "_TZ3000_EIT6L5",
@@ -558466,46 +558587,6 @@
    "capabilities": null,
    "source": "auto-sync"
   },
-  "_TZ3000_4qaowtdo": {
-   "driverId": "water_leak_sensor_tuya",
-   "modelIds": [
-    "_TZ3000_EIT6L5",
-    "_TZ3000_KYB656NO",
-    "3315-S",
-    "3315-SEU",
-    "CK-TLSR8656-SS5-01(7019)",
-    "HS1WL",
-    "LS21001",
-    "LUMI.SENSOR_WLEAK.AQ1",
-    "Q9MPFHW",
-    "SJCGQ11LM",
-    "SJCGQ12LM",
-    "SJCGQ13LM",
-    "SNZB-05",
-    "SNZB-05P",
-    "SQ510A",
-    "TS0601",
-    "ZG-222Z"
-   ],
-   "vendor": null,
-   "model": null,
-   "title": null,
-   "category": null,
-   "description": null,
-   "productPage": null,
-   "imageCandidates": [],
-   "batteries": [
-    "CR2"
-   ],
-   "batteryTypical": "CR2",
-   "energy": {
-    "nominalW": 0,
-    "standbyW": 0
-   },
-   "deviceClass": "sensor",
-   "capabilities": null,
-   "source": "auto-sync"
-  },
   "_TZ3000_abaplimj": {
    "driverId": "water_leak_sensor_tuya",
    "modelIds": [
@@ -558547,86 +558628,6 @@
    "source": "auto-sync"
   },
   "_TZ3000_amis43tj": {
-   "driverId": "water_leak_sensor_tuya",
-   "modelIds": [
-    "_TZ3000_EIT6L5",
-    "_TZ3000_KYB656NO",
-    "3315-S",
-    "3315-SEU",
-    "CK-TLSR8656-SS5-01(7019)",
-    "HS1WL",
-    "LS21001",
-    "LUMI.SENSOR_WLEAK.AQ1",
-    "Q9MPFHW",
-    "SJCGQ11LM",
-    "SJCGQ12LM",
-    "SJCGQ13LM",
-    "SNZB-05",
-    "SNZB-05P",
-    "SQ510A",
-    "TS0601",
-    "ZG-222Z"
-   ],
-   "vendor": null,
-   "model": null,
-   "title": null,
-   "category": null,
-   "description": null,
-   "productPage": null,
-   "imageCandidates": [],
-   "batteries": [
-    "CR2"
-   ],
-   "batteryTypical": "CR2",
-   "energy": {
-    "nominalW": 0,
-    "standbyW": 0
-   },
-   "deviceClass": "sensor",
-   "capabilities": null,
-   "source": "auto-sync"
-  },
-  "_TZ3000_bfopm9ga": {
-   "driverId": "water_leak_sensor_tuya",
-   "modelIds": [
-    "_TZ3000_EIT6L5",
-    "_TZ3000_KYB656NO",
-    "3315-S",
-    "3315-SEU",
-    "CK-TLSR8656-SS5-01(7019)",
-    "HS1WL",
-    "LS21001",
-    "LUMI.SENSOR_WLEAK.AQ1",
-    "Q9MPFHW",
-    "SJCGQ11LM",
-    "SJCGQ12LM",
-    "SJCGQ13LM",
-    "SNZB-05",
-    "SNZB-05P",
-    "SQ510A",
-    "TS0601",
-    "ZG-222Z"
-   ],
-   "vendor": null,
-   "model": null,
-   "title": null,
-   "category": null,
-   "description": null,
-   "productPage": null,
-   "imageCandidates": [],
-   "batteries": [
-    "CR2"
-   ],
-   "batteryTypical": "CR2",
-   "energy": {
-    "nominalW": 0,
-    "standbyW": 0
-   },
-   "deviceClass": "sensor",
-   "capabilities": null,
-   "source": "auto-sync"
-  },
-  "_TZ3000_bzt33cyu": {
    "driverId": "water_leak_sensor_tuya",
    "modelIds": [
     "_TZ3000_EIT6L5",
@@ -559067,46 +559068,6 @@
    "source": "auto-sync"
   },
   "_TZ3000_qdmnmddg": {
-   "driverId": "water_leak_sensor_tuya",
-   "modelIds": [
-    "_TZ3000_EIT6L5",
-    "_TZ3000_KYB656NO",
-    "3315-S",
-    "3315-SEU",
-    "CK-TLSR8656-SS5-01(7019)",
-    "HS1WL",
-    "LS21001",
-    "LUMI.SENSOR_WLEAK.AQ1",
-    "Q9MPFHW",
-    "SJCGQ11LM",
-    "SJCGQ12LM",
-    "SJCGQ13LM",
-    "SNZB-05",
-    "SNZB-05P",
-    "SQ510A",
-    "TS0601",
-    "ZG-222Z"
-   ],
-   "vendor": null,
-   "model": null,
-   "title": null,
-   "category": null,
-   "description": null,
-   "productPage": null,
-   "imageCandidates": [],
-   "batteries": [
-    "CR2"
-   ],
-   "batteryTypical": "CR2",
-   "energy": {
-    "nominalW": 0,
-    "standbyW": 0
-   },
-   "deviceClass": "sensor",
-   "capabilities": null,
-   "source": "auto-sync"
-  },
-  "_TZ3000_qhozxs2b": {
    "driverId": "water_leak_sensor_tuya",
    "modelIds": [
     "_TZ3000_EIT6L5",
@@ -560210,46 +560171,6 @@
    "capabilities": null,
    "source": "auto-sync"
   },
-  "_tz3000_4QAOWTDO": {
-   "driverId": "water_leak_sensor_tuya",
-   "modelIds": [
-    "_TZ3000_EIT6L5",
-    "_TZ3000_KYB656NO",
-    "3315-S",
-    "3315-SEU",
-    "CK-TLSR8656-SS5-01(7019)",
-    "HS1WL",
-    "LS21001",
-    "LUMI.SENSOR_WLEAK.AQ1",
-    "Q9MPFHW",
-    "SJCGQ11LM",
-    "SJCGQ12LM",
-    "SJCGQ13LM",
-    "SNZB-05",
-    "SNZB-05P",
-    "SQ510A",
-    "TS0601",
-    "ZG-222Z"
-   ],
-   "vendor": null,
-   "model": null,
-   "title": null,
-   "category": null,
-   "description": null,
-   "productPage": null,
-   "imageCandidates": [],
-   "batteries": [
-    "CR2"
-   ],
-   "batteryTypical": "CR2",
-   "energy": {
-    "nominalW": 0,
-    "standbyW": 0
-   },
-   "deviceClass": "sensor",
-   "capabilities": null,
-   "source": "auto-sync"
-  },
   "_tz3000_ABAPLIMJ": {
    "driverId": "water_leak_sensor_tuya",
    "modelIds": [
@@ -560291,86 +560212,6 @@
    "source": "auto-sync"
   },
   "_tz3000_AMIS43TJ": {
-   "driverId": "water_leak_sensor_tuya",
-   "modelIds": [
-    "_TZ3000_EIT6L5",
-    "_TZ3000_KYB656NO",
-    "3315-S",
-    "3315-SEU",
-    "CK-TLSR8656-SS5-01(7019)",
-    "HS1WL",
-    "LS21001",
-    "LUMI.SENSOR_WLEAK.AQ1",
-    "Q9MPFHW",
-    "SJCGQ11LM",
-    "SJCGQ12LM",
-    "SJCGQ13LM",
-    "SNZB-05",
-    "SNZB-05P",
-    "SQ510A",
-    "TS0601",
-    "ZG-222Z"
-   ],
-   "vendor": null,
-   "model": null,
-   "title": null,
-   "category": null,
-   "description": null,
-   "productPage": null,
-   "imageCandidates": [],
-   "batteries": [
-    "CR2"
-   ],
-   "batteryTypical": "CR2",
-   "energy": {
-    "nominalW": 0,
-    "standbyW": 0
-   },
-   "deviceClass": "sensor",
-   "capabilities": null,
-   "source": "auto-sync"
-  },
-  "_tz3000_BFOPM9GA": {
-   "driverId": "water_leak_sensor_tuya",
-   "modelIds": [
-    "_TZ3000_EIT6L5",
-    "_TZ3000_KYB656NO",
-    "3315-S",
-    "3315-SEU",
-    "CK-TLSR8656-SS5-01(7019)",
-    "HS1WL",
-    "LS21001",
-    "LUMI.SENSOR_WLEAK.AQ1",
-    "Q9MPFHW",
-    "SJCGQ11LM",
-    "SJCGQ12LM",
-    "SJCGQ13LM",
-    "SNZB-05",
-    "SNZB-05P",
-    "SQ510A",
-    "TS0601",
-    "ZG-222Z"
-   ],
-   "vendor": null,
-   "model": null,
-   "title": null,
-   "category": null,
-   "description": null,
-   "productPage": null,
-   "imageCandidates": [],
-   "batteries": [
-    "CR2"
-   ],
-   "batteryTypical": "CR2",
-   "energy": {
-    "nominalW": 0,
-    "standbyW": 0
-   },
-   "deviceClass": "sensor",
-   "capabilities": null,
-   "source": "auto-sync"
-  },
-  "_tz3000_BZT33CYU": {
    "driverId": "water_leak_sensor_tuya",
    "modelIds": [
     "_TZ3000_EIT6L5",
@@ -560811,46 +560652,6 @@
    "source": "auto-sync"
   },
   "_tz3000_QDMNMDDG": {
-   "driverId": "water_leak_sensor_tuya",
-   "modelIds": [
-    "_TZ3000_EIT6L5",
-    "_TZ3000_KYB656NO",
-    "3315-S",
-    "3315-SEU",
-    "CK-TLSR8656-SS5-01(7019)",
-    "HS1WL",
-    "LS21001",
-    "LUMI.SENSOR_WLEAK.AQ1",
-    "Q9MPFHW",
-    "SJCGQ11LM",
-    "SJCGQ12LM",
-    "SJCGQ13LM",
-    "SNZB-05",
-    "SNZB-05P",
-    "SQ510A",
-    "TS0601",
-    "ZG-222Z"
-   ],
-   "vendor": null,
-   "model": null,
-   "title": null,
-   "category": null,
-   "description": null,
-   "productPage": null,
-   "imageCandidates": [],
-   "batteries": [
-    "CR2"
-   ],
-   "batteryTypical": "CR2",
-   "energy": {
-    "nominalW": 0,
-    "standbyW": 0
-   },
-   "deviceClass": "sensor",
-   "capabilities": null,
-   "source": "auto-sync"
-  },
-  "_tz3000_QHOZXS2B": {
    "driverId": "water_leak_sensor_tuya",
    "modelIds": [
     "_TZ3000_EIT6L5",
