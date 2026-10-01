@@ -41,7 +41,6 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 | **Flow Cards** | 6,030 |
 | **Unique Capabilities** | 170 |
 | **Native OTA Drivers** | 8 |
-| **Test Suites** | 541 files |
 | **Test Suites** | 542 files |
 | **SVG Icons** | 734 |
 | **Languages** | EN, FR, NL, DE |
