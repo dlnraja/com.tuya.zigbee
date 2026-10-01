@@ -19,6 +19,7 @@ const DEBOUNCE = {
   KEEP_ALIVE_MAX_MS: 4000000,
 };
 
+const ContactSourceLatch = require('../../lib/sensors/ContactSourceLatch');
 class ContactSensorDevice extends UnifiedSensorBase {
 
   get mainsPowered() { return false; }
@@ -151,6 +152,7 @@ class ContactSensorDevice extends UnifiedSensorBase {
       const current = this.getCapabilityValue('alarm_contact');
       if (current !== null) {
         const newValue = !current;
+        if (this._contactLatch) {this._contactLatch.value = newValue;} // P2763b keep latch in polarity space
         await super.setCapabilityValue('alarm_contact', newValue).catch(() => { });
         if (this._contactState) {
           if (this._invertedByDefault) {
@@ -176,6 +178,10 @@ class ContactSensorDevice extends UnifiedSensorBase {
 
       const shouldInvert = isIAS ? false : this._userExplicitInvert || this._invertContact;
       const finalValue = shouldInvert ? !value : value;
+
+      // WHY(P2763b): single source of truth DP1 > IAS (see lib/sensors/ContactSourceLatch).
+      // latch is complementary — never block the contact path.
+      if (!ContactSourceLatch.applyToDevice(this, isIAS, finalValue)) {return;}
 
       const now = Date.now();
       const state = this._contactState || { lastValue: null, lastChangeTime: 0, timer: null };

@@ -67,6 +67,21 @@ describe('P2763 contact source latch', () => {
     assert.doesNotMatch(src, /this\.setCapabilityValue\(/);
   });
 
+  it('P2763b: applyToDevice latches out contradicting IAS on zigbee contact drivers', () => {
+    const { applyToDevice } = require('../../lib/sensors/ContactSourceLatch');
+    const store = {};
+    const dev = { log() {}, getStoreValue: (k) => store[k], setStoreValue: async (k, v) => { store[k] = v; } };
+    assert.equal(applyToDevice(dev, false, true), true);
+    assert.equal(applyToDevice(dev, true, false), false);
+    assert.equal(applyToDevice(dev, true, true), true);
+    assert.equal(applyToDevice(null, true, false), true); // soft on bad input
+    for (const d of ['contact_sensor_zigbee', 'sensor_contact_zigbee']) {
+      const src = fs.readFileSync(path.join(__dirname, `../../drivers/${d}/device.js`), 'utf8');
+      assert.match(src, /ContactSourceLatch\.applyToDevice\(this, isIAS, finalValue\)/, d);
+      assert.match(src, /latch is complementary/, d);
+    }
+  });
+
   it('npm check:p2763 wired', () => {
     const pkg = JSON.parse(fs.readFileSync(path.join(__dirname, '../../package.json'), 'utf8'));
     assert.ok(pkg.scripts['check:p2763']);
