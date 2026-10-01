@@ -80,7 +80,11 @@ async function gh(path, { method = 'GET', body, allow404 = false, raw = false } 
       if (ra > 0 && ra <= 60000 && attempt === 0) { log(`Retry-After ${ra / 1000}s`); await sleep(ra); continue; } // one polite retry max
       throw new StopDigest(`GitHub rate limit hit on ${path} (remaining=${remHdr}, retry-after=${res.headers.get('retry-after')})`);
     }
-    if (remaining < MIN_REMAINING) throw new StopDigest(`x-ratelimit-remaining=${remaining} < ${MIN_REMAINING}`);
+    // Threshold applies to the hourly "core" pool; search (30/min) and code_search (10/min) are tiny
+    // per-minute pools → only stop when nearly empty there.
+    const resource = res.headers.get('x-ratelimit-resource') || 'core';
+    const floor = resource === 'core' || resource === 'graphql' ? MIN_REMAINING : 2;
+    if (remaining < floor) throw new StopDigest(`x-ratelimit-remaining=${remaining} < ${floor} (${resource})`);
     if (res.status >= 500) { await sleep(2000 * (attempt + 1)); continue; }
     if (!res.ok) throw new Error(`${method} ${url} -> ${res.status} ${(await res.text()).slice(0, 300)}`);
     if (raw) return res.text();
