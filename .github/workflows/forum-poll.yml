@@ -61,7 +61,7 @@ jobs:
     timeout-minutes: 20
     env:
       # Free reader fallback chain (Jina Reader keyless + Firecrawl if keyed)
-      FIRECRAWL_API_KEY: ${{ secrets.FIRECRAWL_API_KEY }}
+      FIRECRAWL_API_KEY: ${{ vars.FIRECRAWL_DISABLED != 'true' && secrets.FIRECRAWL_API_KEY || '' }}
       SMART_FETCH_READER_FALLBACK: '1'
 
     steps:
@@ -123,7 +123,7 @@ jobs:
         timeout-minutes: 10
         env:
           SMART_FETCH_READER_FALLBACK: '1'
-          FIRECRAWL_API_KEY: ${{ secrets.FIRECRAWL_API_KEY }}
+          FIRECRAWL_API_KEY: ${{ vars.FIRECRAWL_DISABLED != 'true' && secrets.FIRECRAWL_API_KEY || '' }}
           REPLY_TOPICS: '140352'
           FORUM_AUTO_POST: '0'
         run: |
@@ -239,7 +239,7 @@ jobs:
         timeout-minutes: 8
         env:
           SMART_FETCH_READER_FALLBACK: '1'
-          FIRECRAWL_API_KEY: ${{ secrets.FIRECRAWL_API_KEY }}
+          FIRECRAWL_API_KEY: ${{ vars.FIRECRAWL_DISABLED != 'true' && secrets.FIRECRAWL_API_KEY || '' }}
           FORUM_AUTO_POST: '0'
         run: |
           echo "## 🖼️ Forum media deep scan" >> "$GITHUB_STEP_SUMMARY"
