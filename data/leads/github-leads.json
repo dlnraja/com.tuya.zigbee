@@ -484,6 +484,27 @@
    "seen": "2026-10-01"
   },
   {
+   "mfr": "_TZE200_3ylew7b4",
+   "pids": [
+    "TS0601"
+   ],
+   "dps": [
+    1,
+    2,
+    3,
+    5
+   ],
+   "firmware": [
+    "inverted"
+   ],
+   "knownDrivers": [
+    "curtain_motor"
+   ],
+   "url": "https://github.com/map1981/com.tuya.zigbee/blob/add-dooya-curtain/drivers/curtain_motor_dooya/device.js",
+   "snippet": "le (DC1545R family) — TS0601 / EF00 * * Verified datapoint map (live capture, _TZE200_3ylew7b4 / DC1545R): * DP1 enum command: 0 = open/up, 1 = stop, 2 = close/down * DP2 value position 0-100 (INVERTED vs",
+   "seen": "2026-10-01"
+  },
+  {
    "mfr": "_TZE200_a8sdabtg",
    "pids": [
     "TS0601"
