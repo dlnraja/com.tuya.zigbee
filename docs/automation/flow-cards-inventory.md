@@ -35,3 +35,21 @@ Sources:
 - Missing fr/nl/de titles filled from a reviewed template dictionary (129 driver title templates + every app-level card).
 - Number arguments without a range got explicit `min`/`max` (10 arguments).
 - Generic triggers only call `trigger()` when a Flow actually uses the card for that device (argument cache), so busy meters do not cost anything.
+
+## Predictive / smart cards (P2777)
+
+Implemented in `lib/flow/PredictiveFlowCards.js` (pure statistics, unit-tested in `test/critical/p2777-predictive-flow-cards.test.js`). Cards only learn/evaluate for devices and capabilities used in at least one Flow.
+
+| Card | Type | Method |
+|---|---|---|
+| `battery_depletion_forecast` | trigger | least-squares slope over persisted battery samples (store `p2777_batt_samples`, max 40, >= 3 samples over >= 1 day), fires once per crossing of N days |
+| `capability_anomaly` | trigger | EWMA mean/variance, z-score after 20 samples; sensitivity low/medium/high = z 4/3/2 |
+| `capability_trend` | trigger | slope per hour over a window (rising/falling, rate threshold) |
+| `device_offline_risk` | trigger | silence > factor x median report interval, checked every 5 min, once per silence |
+| `battery_days_remaining_below` | condition | same forecast |
+| `capability_trend_is` | condition | rising / falling / stable |
+| `device_silent_for` | condition | last report age |
+
+Fixes: `health_failure_predicted` / `health_battery_replacement_predicted` now match the selected device and fall back to the app-level card when no driver card exists.
+
+Limits: anomaly/trend/report-rhythm history is in memory (relearns after an app restart); battery samples are persisted.

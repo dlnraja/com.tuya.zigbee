@@ -7,7 +7,10 @@
     "de": "Geräteausfall vorhergesagt"
   },
   "hint": {
-    "en": "Triggers when the health engine predicts a likely device failure based on trend analysis"
+    "en": "Triggers when the health engine predicts a likely device failure based on trend analysis",
+    "fr": "Se déclenche quand le moteur de santé prévoit une panne probable d'après l'analyse de tendance",
+    "nl": "Gaat af wanneer de gezondheidsengine op basis van trendanalyse een waarschijnlijke storing voorspelt",
+    "de": "Löst aus, wenn die Zustandsanalyse anhand der Trends einen wahrscheinlichen Ausfall vorhersagt"
   },
   "args": [
     {
@@ -21,14 +24,20 @@
       "name": "health_score",
       "type": "number",
       "title": {
-        "en": "Health score (0-100)"
+        "en": "Health score (0-100)",
+        "fr": "Score de santé (0-100)",
+        "nl": "Gezondheidsscore (0-100)",
+        "de": "Zustandswert (0-100)"
       }
     },
     {
       "name": "status",
       "type": "string",
       "title": {
-        "en": "Health status"
+        "en": "Health status",
+        "fr": "État de santé",
+        "nl": "Gezondheidsstatus",
+        "de": "Zustand"
       },
       "example": "critical"
     },
@@ -36,7 +45,10 @@
       "name": "failure_type",
       "type": "string",
       "title": {
-        "en": "Likely failure type"
+        "en": "Likely failure type",
+        "fr": "Type de panne probable",
+        "nl": "Waarschijnlijk type storing",
+        "de": "Wahrscheinliche Ausfallart"
       },
       "example": "signal_degradation"
     },
@@ -44,7 +56,10 @@
       "name": "days_until_failure",
       "type": "number",
       "title": {
-        "en": "Estimated days until failure"
+        "en": "Estimated days until failure",
+        "fr": "Jours estimés avant la panne",
+        "nl": "Geschatte dagen tot storing",
+        "de": "Geschätzte Tage bis zum Ausfall"
       }
     }
   ]

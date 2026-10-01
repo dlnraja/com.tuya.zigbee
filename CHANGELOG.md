@@ -25,8 +25,10 @@ v9.0.1301: WiFi devices: the Repair screen (update IP / local key / protocol, or
 ---
 
  [Unreleased] (P2774)
-## [Unreleased] (P2774 to P2776)
+## [Unreleased] (P2774 to P2777)
 
+- New predictive Flow cards: battery will run out within N days, unusual value (adaptive, low/medium/high sensitivity), value is rising/falling faster than N per hour, device may be going offline (silent much longer than its usual rhythm), and conditions "battery forecast is below N days", "value trend is", "device silent for N minutes".
+- Health prediction triggers now fire for the selected device only and reach Flows reliably; their tokens and hints are translated (French, Dutch, German), as is the energy usage condition.
 - New generic Flow cards for every device: a value crossed a threshold, a value is (not) between, gang N switched / is on / switch gang N (on, off, toggle), no motion for N minutes, child lock changed / is on / set child lock, set backlight.
 - Flow cards: every card with arguments now has a formatted title, missing French, Dutch and German titles were added (about 2,800 cards) and numeric arguments have explicit ranges.
 - "Changed" Flow triggers fired directly by drivers also skip the first value after a restart; the 1-gang wall dimmer no longer fires a physical on/off trigger for the state sync after a restart.
