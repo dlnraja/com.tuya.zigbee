@@ -4,6 +4,16 @@ All notable changes to the **Tuya Unified Zigbee** app for Homey Pro.
 
 ---
 
+## [Unreleased] - P2768 to P2773
+
+- WiFi devices: the Repair screen (update IP / local key / protocol, or fetch the key again) now opens; the view file was missing for 53 drivers.
+- Tuya DP values are decoded as signed 32-bit numbers everywhere, so negative temperatures no longer show as huge numbers.
+- "Changed" Flow triggers no longer fire for the first value received right after an app or device restart (that value only sets the baseline).
+- "Device became unavailable" waits a grace period (app setting, default 120 s, 0 = immediate); a device back within the grace fires nothing.
+- Opt-in firmware quirk to drop a periodic (about hourly) spurious alarm pulse; the guard survives restarts.
+- Curtains that never report a position (open/stop/close only) hide the position slider after enough use; it comes back automatically if a position is ever reported.
+- New Flow action "Set a device setting" to change device settings (sensitivity, delays, thresholds, …) from Flows.
+
 ## [9.0.1299] - 2026-10-01
 
 v9.0.1299: automated publish, manifest sync, and Homey test promotion.
