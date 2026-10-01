@@ -1,5 +1,8 @@
-# 🤖 Daily Digest (free replacement for the Grok Bot "Homey digest" + "Labs digest" routines)
-# Triggers: cron weekdays (Paris 08:16 Homey, 08:49 Labs — DST-safe via tz-guard) + workflow_dispatch
+# 🤖 Daily Digest (free replacement for the Grok Bot "Homey digest", "Labs digest" and "forum scan" routines)
+# Triggers: cron weekdays (Paris 08:16 Homey, 08:49 Labs, 10:23 Forum watch, 11:41 Inspiration JohanBendz —
+#   DST-safe via tz-guard) + workflow_dispatch. REPORT-ONLY: never commits, never touches drivers, never publishes.
+# Politeness: each slot runs once per weekday, random 0–120 s start jitter, API calls spaced 300–800 ms,
+# Discourse: 1 topic request + ≤3 post-window requests spaced 2–5 s, stop + 20 h back-off on 429/403.
 # Secrets: GITHUB_TOKEN only. Reads public repos dlnraja/ascendos + dlnraja/pulse-automix.
 # Notification = ONE comment on the tracking issue "🤖 Daily digest" (label bot-digest) only when
 # something changed; state is kept in that issue body (no commits, no push → no CI churn).
@@ -14,13 +17,17 @@ on:
     - cron: '16 7 * * 1-5'   # Homey 08:16 Paris (CET, from 25 Oct 2026)
     - cron: '49 6 * * 1-5'   # Labs 08:49 Paris (CEST)
     - cron: '49 7 * * 1-5'   # Labs 08:49 Paris (CET)
+    - cron: '23 8 * * 1-5'   # Forum watch 10:23 Paris (CEST) — offset from forum-poll's :15 to avoid hitting Discourse together
+    - cron: '23 9 * * 1-5'   # Forum watch 10:23 Paris (CET)
+    - cron: '41 9 * * 1-5'   # Inspiration JohanBendz 11:41 Paris (CEST)
+    - cron: '41 10 * * 1-5'  # Inspiration JohanBendz 11:41 Paris (CET)
   workflow_dispatch:
     inputs:
       which:
         description: 'Digest to run'
         type: choice
-        options: [both, homey, labs]
-        default: both
+        options: [all, homey, labs, forum, inspiration]
+        default: all
       force:
         description: 'Post a comment even if nothing changed'
         type: boolean
@@ -52,14 +59,20 @@ jobs:
     if: >-
       github.repository == 'dlnraja/com.tuya.zigbee' &&
       ((github.event_name == 'schedule' && startsWith(github.event.schedule, '16 ')) ||
-       (github.event_name == 'workflow_dispatch' && inputs.which != 'labs'))
+       (github.event_name == 'workflow_dispatch' && (inputs.which == 'all' || inputs.which == 'homey')))
     runs-on: ubuntu-latest
     timeout-minutes: 10
     steps:
-      - name: 📥 Checkout (scripts only)
+      - name: 📥 Checkout (scripts + drivers/lib/data for enrichment leads, read-only)
         uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # v5.1.0
         with:
-          sparse-checkout: scripts/digest
+          sparse-checkout: |
+            scripts/digest
+            scripts/sync/data
+            drivers
+            lib
+            data
+            .homeycompose/flow
           persist-credentials: false
       - name: 📦 Setup Node.js
         uses: actions/setup-node@a0853c24544627f65ddf259abe73b1d18a591444 # v5.0.0
@@ -68,6 +81,9 @@ jobs:
       - name: 🕗 Paris-time guard
         id: tz
         run: node scripts/digest/tz-guard.js --schedule="${{ github.event.schedule }}" --paris-hour=8
+      - name: 🎲 Start jitter (0–120 s, scheduled runs only)
+        if: github.event_name == 'schedule' && steps.tz.outputs.run == 'true'
+        run: sleep $((RANDOM % 121))
       - name: 📬 Fetch latest sanitized diagnostics artifact (best-effort)
         if: steps.tz.outputs.run == 'true'
         continue-on-error: true
@@ -92,7 +108,7 @@ jobs:
     if: >-
       github.repository == 'dlnraja/com.tuya.zigbee' &&
       ((github.event_name == 'schedule' && startsWith(github.event.schedule, '49 ')) ||
-       (github.event_name == 'workflow_dispatch' && inputs.which != 'homey'))
+       (github.event_name == 'workflow_dispatch' && (inputs.which == 'all' || inputs.which == 'labs')))
     runs-on: ubuntu-latest
     timeout-minutes: 10
     steps:
@@ -108,9 +124,92 @@ jobs:
       - name: 🕗 Paris-time guard
         id: tz
         run: node scripts/digest/tz-guard.js --schedule="${{ github.event.schedule }}" --paris-hour=8
+      - name: 🎲 Start jitter (0–120 s, scheduled runs only)
+        if: github.event_name == 'schedule' && steps.tz.outputs.run == 'true'
+        run: sleep $((RANDOM % 121))
       - name: 🧪 Labs digest
         if: steps.tz.outputs.run == 'true'
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           LABS_REPOS: dlnraja/ascendos,dlnraja/pulse-automix
         run: node scripts/digest/labs-digest.js
+
+  forum:
+    name: 💬 Forum watch (topic 140352, read-only)
+    if: >-
+      github.repository == 'dlnraja/com.tuya.zigbee' &&
+      ((github.event_name == 'schedule' && startsWith(github.event.schedule, '23 ')) ||
+       (github.event_name == 'workflow_dispatch' && (inputs.which == 'all' || inputs.which == 'forum')))
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: 📥 Checkout (scripts + driver manifests only)
+        uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # v5.1.0
+        with:
+          sparse-checkout: |
+            scripts/digest
+            scripts/sync/data
+            drivers
+            lib
+            data
+            .homeycompose/flow
+          persist-credentials: false
+      - name: 📦 Setup Node.js
+        uses: actions/setup-node@a0853c24544627f65ddf259abe73b1d18a591444 # v5.0.0
+        with:
+          node-version: '22'
+      - name: 🕗 Paris-time guard
+        id: tz
+        run: node scripts/digest/tz-guard.js --schedule="${{ github.event.schedule }}" --paris-hour=10
+      - name: 🎲 Start jitter (0–120 s, scheduled runs only)
+        if: github.event_name == 'schedule' && steps.tz.outputs.run == 'true'
+        run: sleep $((RANDOM % 121))
+      - name: 💬 Forum watch
+        if: steps.tz.outputs.run == 'true'
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          FORUM_TOPIC: '140352'
+          FORUM_NOTIFY: any
+          FORUM_MAX_FETCHES: '3'
+          FORUM_BACKOFF_HOURS: '20'
+        run: node scripts/digest/forum-watch.js
+
+  inspiration:
+    name: 🧭 Inspiration JohanBendz (issues + PRs incl. closed, read-only)
+    if: >-
+      github.repository == 'dlnraja/com.tuya.zigbee' &&
+      ((github.event_name == 'schedule' && startsWith(github.event.schedule, '41 ')) ||
+       (github.event_name == 'workflow_dispatch' && (inputs.which == 'all' || inputs.which == 'inspiration')))
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - name: 📥 Checkout (scripts + drivers/lib/data, read-only)
+        uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # v5.1.0
+        with:
+          sparse-checkout: |
+            scripts/digest
+            scripts/sync/data
+            drivers
+            lib
+            data
+            .homeycompose/flow
+          persist-credentials: false
+      - name: 📦 Setup Node.js
+        uses: actions/setup-node@a0853c24544627f65ddf259abe73b1d18a591444 # v5.0.0
+        with:
+          node-version: '22'
+      - name: 🕗 Paris-time guard
+        id: tz
+        run: node scripts/digest/tz-guard.js --schedule="${{ github.event.schedule }}" --paris-hour=11
+      - name: 🎲 Start jitter (0–120 s, scheduled runs only)
+        if: github.event_name == 'schedule' && steps.tz.outputs.run == 'true'
+        run: sleep $((RANDOM % 121))
+      - name: 🧭 Inspiration scan
+        if: steps.tz.outputs.run == 'true'
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          INSPIRATION_OWNER: JohanBendz
+          INSPIRATION_MAX_ITEMS: '100'      # ≤100 issues/PRs per run (backlog walked incrementally)
+          LOOKUP_CODE_SEARCH_MAX: '5'       # code search is 10 req/min → ≤5 per run, ≥7 s apart
+          DIGEST_MAX_API_CALLS: '320'
+        run: node scripts/digest/inspiration-scan.js

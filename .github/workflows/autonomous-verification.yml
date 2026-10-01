@@ -2,6 +2,7 @@
 # Triggers: cron: 15 */6 * * * + workflow_dispatch | Secrets: GITHUB_TOKEN only
 # + ci-health job (free replacement for the Grok "Homey CI health" routine): red/green of every
 #   workflow on master + stable-v5, comments on the "🤖 Daily digest" issue only on transitions.
+#   Runs only on its own weekday crons (08:30 + 16:15 Paris) or manual dispatch, never on the 6-hourly cron.
 # Doc header added 2026-07-29 (workflows genealogy enrichment).
 
 defaults:
@@ -14,6 +15,12 @@ on:
   # Every 6 hours
   schedule:
     - cron: '15 */6 * * *'
+    # ci-health job only (verify job ignores these): ≈08:30 and 16:15 Paris on weekdays,
+    # summer/winter pairs filtered by scripts/digest/tz-guard.js
+    - cron: '30 6 * * 1-5'   # 08:30 Paris (CEST)
+    - cron: '30 7 * * 1-5'   # 08:30 Paris (CET)
+    - cron: '15 14 * * 1-5'  # 16:15 Paris (CEST)
+    - cron: '15 15 * * 1-5'  # 16:15 Paris (CET)
   # Manual trigger
   workflow_dispatch:
     inputs:
@@ -44,6 +51,8 @@ env:
 jobs:
   verify:
     name: Run autonomous verification
+    # only the original 6-hourly cron (the weekday crons belong to ci-health)
+    if: github.event_name != 'schedule' || github.event.schedule == '15 */6 * * *'
     runs-on: ubuntu-latest
     timeout-minutes: 10
 
@@ -95,7 +104,9 @@ jobs:
 
   ci-health:
     name: 🩺 CI health (master + stable-v5 → tracking issue)
-    if: github.repository == 'dlnraja/com.tuya.zigbee'
+    if: >-
+      github.repository == 'dlnraja/com.tuya.zigbee' &&
+      (github.event_name != 'schedule' || github.event.schedule != '15 */6 * * *')
     runs-on: ubuntu-latest
     timeout-minutes: 10
     permissions:
@@ -116,7 +127,14 @@ jobs:
         uses: actions/setup-node@a0853c24544627f65ddf259abe73b1d18a591444 # v5.0.0
         with:
           node-version: '22'
+      - name: 🕗 Paris-time guard
+        id: tz
+        run: node scripts/digest/tz-guard.js --schedule="${{ github.event.schedule }}" --paris-hour=${{ startsWith(github.event.schedule, '30 ') && '8' || '16' }}
+      - name: 🎲 Start jitter (0–120 s, scheduled runs only)
+        if: github.event_name == 'schedule' && steps.tz.outputs.run == 'true'
+        run: sleep $((RANDOM % 121))
       - name: 🩺 CI health
+        if: steps.tz.outputs.run == 'true'
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           CI_BRANCHES: master,stable-v5
