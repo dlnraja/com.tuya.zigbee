@@ -3,7 +3,10 @@
     {
       "id": "wifi_plug_turned_on",
       "title": {
-        "en": "Turned on"
+        "en": "Turned on",
+        "fr": "Allumé",
+        "nl": "Aangezet",
+        "de": "Eingeschaltet"
       },
       "args": [],
       "titleFormatted": {
@@ -13,7 +16,10 @@
     {
       "id": "wifi_plug_turned_off",
       "title": {
-        "en": "Turned off"
+        "en": "Turned off",
+        "fr": "Éteint",
+        "nl": "Uitgezet",
+        "de": "Ausgeschaltet"
       },
       "args": [],
       "titleFormatted": {
@@ -24,7 +30,9 @@
       "id": "wifi_plug_measure_power_changed",
       "title": {
         "en": "Power changed",
-        "fr": "Puissance changée"
+        "fr": "Puissance changée",
+        "nl": "Vermogen gewijzigd",
+        "de": "Leistung geändert"
       },
       "tokens": [
         {
@@ -47,7 +55,9 @@
       "id": "wifi_plug_meter_power_changed",
       "title": {
         "en": "Energy changed",
-        "fr": "Énergie changée"
+        "fr": "Énergie changée",
+        "nl": "Energie gewijzigd",
+        "de": "Energie geändert"
       },
       "tokens": [
         {
@@ -70,7 +80,9 @@
       "id": "wifi_plug_current_changed",
       "title": {
         "en": "Current changed",
-        "fr": "Courant changé"
+        "fr": "Courant changé",
+        "nl": "Stroom gewijzigd",
+        "de": "Strom geändert"
       },
       "tokens": [
         {
@@ -93,7 +105,9 @@
       "id": "wifi_plug_voltage_changed",
       "title": {
         "en": "Voltage changed",
-        "fr": "Tension changée"
+        "fr": "Tension changée",
+        "nl": "Spanning gewijzigd",
+        "de": "Spannung geändert"
       },
       "tokens": [
         {
@@ -117,7 +131,10 @@
     {
       "id": "wifi_plug_is_on",
       "title": {
-        "en": "Is on"
+        "en": "Is on",
+        "fr": "Est allumé",
+        "nl": "Is aan",
+        "de": "Ist an"
       },
       "args": [],
       "titleFormatted": {

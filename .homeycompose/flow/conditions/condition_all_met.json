@@ -1,7 +1,10 @@
 {
   "id": "condition_all_met",
   "title": {
-    "en": "All conditions met"
+    "en": "All conditions met",
+    "fr": "Toutes les conditions remplies",
+    "nl": "Aan alle voorwaarden voldaan",
+    "de": "Alle Bedingungen erfüllt"
   },
   "hint": {
     "en": "Checks if multiple conditions are all satisfied (AND logic)"
@@ -145,5 +148,11 @@
         "en": "All conditions met"
       }
     }
-  ]
+  ],
+  "titleFormatted": {
+    "en": "All conditions met [[condition_1_cap]] [[condition_1_op]] [[condition_1_val]] [[condition_2_cap]] [[condition_2_op]] [[condition_2_val]] ([[device]])",
+    "fr": "Toutes les conditions remplies [[condition_1_cap]] [[condition_1_op]] [[condition_1_val]] [[condition_2_cap]] [[condition_2_op]] [[condition_2_val]] ([[device]])",
+    "nl": "Aan alle voorwaarden voldaan [[condition_1_cap]] [[condition_1_op]] [[condition_1_val]] [[condition_2_cap]] [[condition_2_op]] [[condition_2_val]] ([[device]])",
+    "de": "Alle Bedingungen erfüllt [[condition_1_cap]] [[condition_1_op]] [[condition_1_val]] [[condition_2_cap]] [[condition_2_op]] [[condition_2_val]] ([[device]])"
+  }
 }

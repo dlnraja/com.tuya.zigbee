@@ -4,7 +4,9 @@
       "id": "button_wireless_4_button_4gang_button_pressed",
       "title": {
         "en": "A button was pressed",
-        "fr": "Un bouton a été appuyé"
+        "fr": "Un bouton a été appuyé",
+        "nl": "Er is een knop ingedrukt",
+        "de": "Eine Taste wurde gedrückt"
       },
       "hint": {
         "en": "Triggers when any button is pressed. Use the button token in your flow.",
@@ -83,7 +85,9 @@
       "id": "button_wireless_4_button_4gang_button_double_press",
       "title": {
         "en": "A button was double-pressed",
-        "fr": "Un bouton a été double-cliqué"
+        "fr": "Un bouton a été double-cliqué",
+        "nl": "Er is een knop dubbel ingedrukt",
+        "de": "Eine Taste wurde doppelt gedrückt"
       },
       "hint": {
         "en": "Triggers when any button is double-pressed.",
@@ -161,7 +165,9 @@
       "id": "button_wireless_4_button_4gang_button_long_press",
       "title": {
         "en": "A button was long-pressed",
-        "fr": "Un bouton a été appuyé longtemps"
+        "fr": "Un bouton a été appuyé longtemps",
+        "nl": "Er is een knop lang ingedrukt",
+        "de": "Eine Taste wurde lange gedrückt"
       },
       "hint": {
         "en": "Triggers when any button is long-pressed.",
@@ -239,7 +245,9 @@
       "id": "button_wireless_4_button_4gang_button_multi_press",
       "title": {
         "en": "A button was multi-pressed",
-        "fr": "Un bouton a été multi-cliqué"
+        "fr": "Un bouton a été multi-cliqué",
+        "nl": "Er is een knop meerdere keren ingedrukt",
+        "de": "Eine Taste wurde mehrfach gedrückt"
       },
       "hint": {
         "en": "Triggers when any button is pressed multiple times.",
@@ -326,7 +334,9 @@
       "id": "button_wireless_4_button_4gang_button_1_pressed",
       "title": {
         "en": "Button 1 pressed",
-        "fr": "Bouton 1 appuyé"
+        "fr": "Bouton 1 appuyé",
+        "nl": "Knop 1 ingedrukt",
+        "de": "Taste 1 gedrückt"
       },
       "args": [],
       "titleFormatted": {
@@ -338,7 +348,9 @@
       "id": "button_wireless_4_button_4gang_button_1_double",
       "title": {
         "en": "Button 1 double-pressed",
-        "fr": "Bouton 1 double-cliqué"
+        "fr": "Bouton 1 double-cliqué",
+        "nl": "Knop 1 dubbel ingedrukt",
+        "de": "Taste 1 doppelt gedrückt"
       },
       "args": [],
       "titleFormatted": {
@@ -350,7 +362,9 @@
       "id": "button_wireless_4_button_4gang_button_1_long",
       "title": {
         "en": "Button 1 long-pressed",
-        "fr": "Bouton 1 pressé longtemps"
+        "fr": "Bouton 1 pressé longtemps",
+        "nl": "Knop 1 lang ingedrukt",
+        "de": "Taste 1 lange gedrückt"
       },
       "args": [],
       "titleFormatted": {
@@ -362,7 +376,9 @@
       "id": "button_wireless_4_button_4gang_button_2_pressed",
       "title": {
         "en": "Button 2 pressed",
-        "fr": "Bouton 2 appuyé"
+        "fr": "Bouton 2 appuyé",
+        "nl": "Knop 2 ingedrukt",
+        "de": "Taste 2 gedrückt"
       },
       "args": [],
       "titleFormatted": {
@@ -374,7 +390,9 @@
       "id": "button_wireless_4_button_4gang_button_2_double",
       "title": {
         "en": "Button 2 double-pressed",
-        "fr": "Bouton 2 double-cliqué"
+        "fr": "Bouton 2 double-cliqué",
+        "nl": "Knop 2 dubbel ingedrukt",
+        "de": "Taste 2 doppelt gedrückt"
       },
       "args": [],
       "titleFormatted": {
@@ -386,7 +404,9 @@
       "id": "button_wireless_4_button_4gang_button_2_long",
       "title": {
         "en": "Button 2 long-pressed",
-        "fr": "Bouton 2 pressé longtemps"
+        "fr": "Bouton 2 pressé longtemps",
+        "nl": "Knop 2 lang ingedrukt",
+        "de": "Taste 2 lange gedrückt"
       },
       "args": [],
       "titleFormatted": {
@@ -398,7 +418,9 @@
       "id": "button_wireless_4_button_4gang_button_3_pressed",
       "title": {
         "en": "Button 3 pressed",
-        "fr": "Bouton 3 appuyé"
+        "fr": "Bouton 3 appuyé",
+        "nl": "Knop 3 ingedrukt",
+        "de": "Taste 3 gedrückt"
       },
       "args": [],
       "titleFormatted": {
@@ -410,7 +432,9 @@
       "id": "button_wireless_4_button_4gang_button_3_double",
       "title": {
         "en": "Button 3 double-pressed",
-        "fr": "Bouton 3 double-cliqué"
+        "fr": "Bouton 3 double-cliqué",
+        "nl": "Knop 3 dubbel ingedrukt",
+        "de": "Taste 3 doppelt gedrückt"
       },
       "args": [],
       "titleFormatted": {
@@ -422,7 +446,9 @@
       "id": "button_wireless_4_button_4gang_button_3_long",
       "title": {
         "en": "Button 3 long-pressed",
-        "fr": "Bouton 3 pressé longtemps"
+        "fr": "Bouton 3 pressé longtemps",
+        "nl": "Knop 3 lang ingedrukt",
+        "de": "Taste 3 lange gedrückt"
       },
       "args": [],
       "titleFormatted": {
@@ -434,7 +460,9 @@
       "id": "button_wireless_4_button_4gang_button_4_pressed",
       "title": {
         "en": "Button 4 pressed",
-        "fr": "Bouton 4 appuyé"
+        "fr": "Bouton 4 appuyé",
+        "nl": "Knop 4 ingedrukt",
+        "de": "Taste 4 gedrückt"
       },
       "args": [],
       "titleFormatted": {
@@ -446,7 +474,9 @@
       "id": "button_wireless_4_button_4gang_button_4_double",
       "title": {
         "en": "Button 4 double-pressed",
-        "fr": "Bouton 4 double-cliqué"
+        "fr": "Bouton 4 double-cliqué",
+        "nl": "Knop 4 dubbel ingedrukt",
+        "de": "Taste 4 doppelt gedrückt"
       },
       "args": [],
       "titleFormatted": {
@@ -458,7 +488,9 @@
       "id": "button_wireless_4_button_4gang_button_4_long",
       "title": {
         "en": "Button 4 long-pressed",
-        "fr": "Bouton 4 pressé longtemps"
+        "fr": "Bouton 4 pressé longtemps",
+        "nl": "Knop 4 lang ingedrukt",
+        "de": "Taste 4 lange gedrückt"
       },
       "args": [],
       "titleFormatted": {
@@ -470,7 +502,9 @@
       "id": "button_wireless_4_button_4gang_button_1_triple",
       "title": {
         "en": "Button 1 triple-pressed",
-        "fr": "Bouton 1 triple-cliqué"
+        "fr": "Bouton 1 triple-cliqué",
+        "nl": "Knop 1 driemaal ingedrukt",
+        "de": "Taste 1 dreimal gedrückt"
       },
       "args": [],
       "titleFormatted": {
@@ -482,7 +516,9 @@
       "id": "button_wireless_4_button_4gang_button_2_triple",
       "title": {
         "en": "Button 2 triple-pressed",
-        "fr": "Bouton 2 triple-cliqué"
+        "fr": "Bouton 2 triple-cliqué",
+        "nl": "Knop 2 driemaal ingedrukt",
+        "de": "Taste 2 dreimal gedrückt"
       },
       "args": [],
       "titleFormatted": {
@@ -494,7 +530,9 @@
       "id": "button_wireless_4_button_4gang_button_3_triple",
       "title": {
         "en": "Button 3 triple-pressed",
-        "fr": "Bouton 3 triple-cliqué"
+        "fr": "Bouton 3 triple-cliqué",
+        "nl": "Knop 3 driemaal ingedrukt",
+        "de": "Taste 3 dreimal gedrückt"
       },
       "args": [],
       "titleFormatted": {
@@ -506,7 +544,9 @@
       "id": "button_wireless_4_button_4gang_button_4_triple",
       "title": {
         "en": "Button 4 triple-pressed",
-        "fr": "Bouton 4 triple-cliqué"
+        "fr": "Bouton 4 triple-cliqué",
+        "nl": "Knop 4 driemaal ingedrukt",
+        "de": "Taste 4 dreimal gedrückt"
       },
       "args": [],
       "titleFormatted": {
@@ -518,7 +558,9 @@
       "id": "button_wireless_4_button_4gang_button_1_release",
       "title": {
         "en": "Button 1 released - after hold",
-        "fr": "Bouton 1 relâché - après maintien"
+        "fr": "Bouton 1 relâché - après maintien",
+        "nl": "Knop 1 losgelaten na vasthouden",
+        "de": "Taste 1 nach Halten losgelassen"
       },
       "args": [],
       "titleFormatted": {
@@ -530,7 +572,9 @@
       "id": "button_wireless_4_button_4gang_button_2_release",
       "title": {
         "en": "Button 2 released - after hold",
-        "fr": "Bouton 2 relâché - après maintien"
+        "fr": "Bouton 2 relâché - après maintien",
+        "nl": "Knop 2 losgelaten na vasthouden",
+        "de": "Taste 2 nach Halten losgelassen"
       },
       "args": [],
       "titleFormatted": {
@@ -542,7 +586,9 @@
       "id": "button_wireless_4_button_4gang_button_3_release",
       "title": {
         "en": "Button 3 released - after hold",
-        "fr": "Bouton 3 relâché - après maintien"
+        "fr": "Bouton 3 relâché - après maintien",
+        "nl": "Knop 3 losgelaten na vasthouden",
+        "de": "Taste 3 nach Halten losgelassen"
       },
       "args": [],
       "titleFormatted": {
@@ -554,7 +600,9 @@
       "id": "button_wireless_4_button_4gang_button_4_release",
       "title": {
         "en": "Button 4 released - after hold",
-        "fr": "Bouton 4 relâché - après maintien"
+        "fr": "Bouton 4 relâché - après maintien",
+        "nl": "Knop 4 losgelaten na vasthouden",
+        "de": "Taste 4 nach Halten losgelassen"
       },
       "args": [],
       "titleFormatted": {
@@ -650,7 +698,9 @@
       "id": "button_wireless_4_physical_on",
       "title": {
         "en": "Physical button on",
-        "fr": "Physical button on"
+        "fr": "Physical button on",
+        "nl": "Fysieke knop aan",
+        "de": "Physische Taste an"
       },
       "args": []
     },
@@ -658,7 +708,9 @@
       "id": "button_wireless_4_physical_off",
       "title": {
         "en": "Physical button off",
-        "fr": "Physical button off"
+        "fr": "Physical button off",
+        "nl": "Fysieke knop uit",
+        "de": "Physische Taste aus"
       },
       "args": []
     }

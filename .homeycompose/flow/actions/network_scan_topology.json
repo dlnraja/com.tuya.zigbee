@@ -1,7 +1,10 @@
 {
   "id": "network_scan_topology",
   "title": {
-    "en": "Scan network topology"
+    "en": "Scan network topology",
+    "fr": "Scanner la topologie du réseau",
+    "nl": "Netwerktopologie scannen",
+    "de": "Netzwerktopologie scannen"
   },
   "hint": {
     "en": "Trigger a scan of the Zigbee mesh network topology to discover devices and paths"

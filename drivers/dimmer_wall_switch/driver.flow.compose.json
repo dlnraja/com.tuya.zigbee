@@ -185,7 +185,10 @@
     {
       "id": "dimmer_wall_switch_2gang_gang1_scene",
       "title": {
-        "en": "Gang 1 scene triggered"
+        "en": "Gang 1 scene triggered",
+        "fr": "Scène de la voie 1 déclenchée",
+        "nl": "Scène van kanaal 1 geactiveerd",
+        "de": "Szene von Kanal 1 ausgelöst"
       },
       "args": [],
       "tokens": [
@@ -207,7 +210,10 @@
     {
       "id": "dimmer_wall_switch_2gang_gang2_scene",
       "title": {
-        "en": "Gang 2 scene triggered"
+        "en": "Gang 2 scene triggered",
+        "fr": "Scène de la voie 2 déclenchée",
+        "nl": "Scène van kanaal 2 geactiveerd",
+        "de": "Szene von Kanal 2 ausgelöst"
       },
       "args": [],
       "tokens": [
@@ -230,7 +236,9 @@
       "id": "dimmer_wall_switch_physical_gang1_on",
       "title": {
         "en": "Physical gang 1 on",
-        "fr": "Physical gang 1 on"
+        "fr": "Physical gang 1 on",
+        "nl": "Kanaal 1 fysiek aan",
+        "de": "Kanal 1 physisch an"
       },
       "args": []
     },
@@ -238,7 +246,9 @@
       "id": "dimmer_wall_switch_physical_gang1_off",
       "title": {
         "en": "Physical gang 1 off",
-        "fr": "Physical gang 1 off"
+        "fr": "Physical gang 1 off",
+        "nl": "Kanaal 1 fysiek uit",
+        "de": "Kanal 1 physisch aus"
       },
       "args": []
     },
@@ -246,7 +256,9 @@
       "id": "dimmer_wall_switch_physical_gang2_on",
       "title": {
         "en": "Physical gang 2 on",
-        "fr": "Physical gang 2 on"
+        "fr": "Physical gang 2 on",
+        "nl": "Kanaal 2 fysiek aan",
+        "de": "Kanal 2 physisch an"
       },
       "args": []
     },
@@ -254,7 +266,9 @@
       "id": "dimmer_wall_switch_physical_gang2_off",
       "title": {
         "en": "Physical gang 2 off",
-        "fr": "Physical gang 2 off"
+        "fr": "Physical gang 2 off",
+        "nl": "Kanaal 2 fysiek uit",
+        "de": "Kanal 2 physisch aus"
       },
       "args": []
     },
@@ -262,7 +276,9 @@
       "id": "dimmer_wall_switch_voltage_changed",
       "title": {
         "en": "Voltage changed",
-        "fr": "Tension changée"
+        "fr": "Tension changée",
+        "nl": "Spanning gewijzigd",
+        "de": "Spannung geändert"
       },
       "tokens": [
         {
@@ -285,7 +301,9 @@
       "id": "dimmer_wall_switch_current_changed",
       "title": {
         "en": "Current changed",
-        "fr": "Courant changé"
+        "fr": "Courant changé",
+        "nl": "Stroom gewijzigd",
+        "de": "Strom geändert"
       },
       "tokens": [
         {
@@ -308,7 +326,9 @@
       "id": "dimmer_wall_switch_meter_power_changed",
       "title": {
         "en": "Energy changed",
-        "fr": "Énergie changée"
+        "fr": "Énergie changée",
+        "nl": "Energie gewijzigd",
+        "de": "Energie geändert"
       },
       "tokens": [
         {
@@ -632,7 +652,10 @@
     {
       "id": "dimmer_wall_switch_2gang_set_scene_mode",
       "title": {
-        "en": "Set scene mode"
+        "en": "Set scene mode",
+        "fr": "Régler le mode scène",
+        "nl": "Scènemodus instellen",
+        "de": "Szenenmodus einstellen"
       },
       "args": [
         {
@@ -661,7 +684,10 @@
         }
       ],
       "titleFormatted": {
-        "en": "Set scene mode [[mode]]"
+        "en": "Set scene mode [[mode]]",
+        "fr": "Régler le mode scène [[mode]]",
+        "nl": "Scènemodus instellen [[mode]]",
+        "de": "Szenenmodus einstellen [[mode]]"
       }
     }
   ]

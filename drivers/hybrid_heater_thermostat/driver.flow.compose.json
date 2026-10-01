@@ -28,7 +28,9 @@
       "id": "hybrid_heater_thermostat_temperature_changed",
       "title": {
         "en": "Temperature changed",
-        "fr": "Température changée"
+        "fr": "Température changée",
+        "nl": "Temperatuur gewijzigd",
+        "de": "Temperatur geändert"
       },
       "tokens": [
         {
@@ -74,7 +76,9 @@
       "id": "hybrid_heater_thermostat_power_changed",
       "title": {
         "en": "Power consumption changed",
-        "fr": "Consommation changée"
+        "fr": "Consommation changée",
+        "nl": "Stroomverbruik gewijzigd",
+        "de": "Stromverbrauch geändert"
       },
       "tokens": [
         {
@@ -97,7 +101,9 @@
       "id": "hybrid_heater_thermostat_target_temperature_changed",
       "title": {
         "en": "Target temperature changed",
-        "fr": "Consigne changée"
+        "fr": "Consigne changée",
+        "nl": "Doeltemperatuur gewijzigd",
+        "de": "Zieltemperatur geändert"
       },
       "tokens": [
         {
@@ -120,7 +126,9 @@
       "id": "hybrid_heater_thermostat_meter_power_changed",
       "title": {
         "en": "Energy changed",
-        "fr": "Énergie changée"
+        "fr": "Énergie changée",
+        "nl": "Energie gewijzigd",
+        "de": "Energie geändert"
       },
       "tokens": [
         {
@@ -143,7 +151,9 @@
       "id": "hybrid_heater_thermostat_voltage_changed",
       "title": {
         "en": "Voltage changed",
-        "fr": "Tension changée"
+        "fr": "Tension changée",
+        "nl": "Spanning gewijzigd",
+        "de": "Spannung geändert"
       },
       "tokens": [
         {
@@ -166,7 +176,9 @@
       "id": "hybrid_heater_thermostat_current_changed",
       "title": {
         "en": "Current changed",
-        "fr": "Courant changé"
+        "fr": "Courant changé",
+        "nl": "Stroom gewijzigd",
+        "de": "Strom geändert"
       },
       "tokens": [
         {
@@ -254,7 +266,9 @@
       "id": "hybrid_heater_thermostat_temperature_above",
       "title": {
         "en": "Temperature is above",
-        "fr": "Température supérieure à"
+        "fr": "Température supérieure à",
+        "nl": "Temperatuur is hoger dan",
+        "de": "Temperatur liegt über"
       },
       "args": [
         {
@@ -271,14 +285,18 @@
       ],
       "titleFormatted": {
         "en": "Temperature is above [[temp]]",
-        "fr": "Température supérieure à [[temp]]"
+        "fr": "Température supérieure à [[temp]]",
+        "nl": "Temperatuur is hoger dan [[temp]]",
+        "de": "Temperatur liegt über [[temp]]"
       }
     },
     {
       "id": "hybrid_heater_thermostat_temperature_below",
       "title": {
         "en": "Temperature is below",
-        "fr": "Température inférieure à"
+        "fr": "Température inférieure à",
+        "nl": "Temperatuur is lager dan",
+        "de": "Temperatur liegt unter"
       },
       "args": [
         {
@@ -295,7 +313,9 @@
       ],
       "titleFormatted": {
         "en": "Temperature is below [[temp]]",
-        "fr": "Température inférieure à [[temp]]"
+        "fr": "Température inférieure à [[temp]]",
+        "nl": "Temperatuur is lager dan [[temp]]",
+        "de": "Temperatur liegt unter [[temp]]"
       }
     }
   ],
@@ -379,7 +399,9 @@
       "id": "hybrid_heater_thermostat_set_temperature",
       "title": {
         "en": "Set target temperature",
-        "fr": "Définir température cible"
+        "fr": "Définir température cible",
+        "nl": "Doeltemperatuur instellen",
+        "de": "Zieltemperatur einstellen"
       },
       "args": [
         {
@@ -396,7 +418,9 @@
       ],
       "titleFormatted": {
         "en": "Set target temperature [[temperature]]",
-        "fr": "Définir température cible [[temperature]]"
+        "fr": "Définir température cible [[temperature]]",
+        "nl": "Doeltemperatuur instellen [[temperature]]",
+        "de": "Zieltemperatur einstellen [[temperature]]"
       }
     }
   ]

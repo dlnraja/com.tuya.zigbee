@@ -16,19 +16,34 @@
     {
       "name": "capability",
       "type": "string",
-      "title": { "en": "Capability", "fr": "Capability", "nl": "Capability", "de": "Capability" },
+      "title": {
+        "en": "Capability",
+        "fr": "Capability",
+        "nl": "Capability",
+        "de": "Capability"
+      },
       "example": "measure_power"
     },
     {
       "name": "previous",
       "type": "string",
-      "title": { "en": "Previous quality", "fr": "Qualité précédente", "nl": "Vorige kwaliteit", "de": "Vorherige Qualität" },
+      "title": {
+        "en": "Previous quality",
+        "fr": "Qualité précédente",
+        "nl": "Vorige kwaliteit",
+        "de": "Vorherige Qualität"
+      },
       "example": "estimated"
     },
     {
       "name": "origin",
       "type": "string",
-      "title": { "en": "New quality", "fr": "Nouvelle qualité", "nl": "Nieuwe kwaliteit", "de": "Neue Qualität" },
+      "title": {
+        "en": "New quality",
+        "fr": "Nouvelle qualité",
+        "nl": "Nieuwe kwaliteit",
+        "de": "Neue Qualität"
+      },
       "example": "measured"
     },
     {

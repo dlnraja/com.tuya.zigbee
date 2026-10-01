@@ -110,7 +110,9 @@
       "id": "radiator_wifi_tuya_enable_child_lock",
       "title": {
         "en": "Enable child lock",
-        "fr": "Activer verrou enfant"
+        "fr": "Activer verrou enfant",
+        "nl": "Kinderslot inschakelen",
+        "de": "Kindersicherung aktivieren"
       },
       "args": [],
       "titleFormatted": {
@@ -122,7 +124,9 @@
       "id": "radiator_wifi_tuya_disable_child_lock",
       "title": {
         "en": "Disable child lock",
-        "fr": "Désactiver verrou enfant"
+        "fr": "Désactiver verrou enfant",
+        "nl": "Kinderslot uitschakelen",
+        "de": "Kindersicherung deaktivieren"
       },
       "args": [],
       "titleFormatted": {

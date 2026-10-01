@@ -4,7 +4,9 @@
       "id": "device_air_purifier_device_air_purifier_ther_42884",
       "title": {
         "en": "Target temperature changed",
-        "fr": "Température cible changée"
+        "fr": "Température cible changée",
+        "nl": "Doeltemperatuur gewijzigd",
+        "de": "Zieltemperatur geändert"
       },
       "tokens": [
         {
@@ -27,7 +29,9 @@
       "id": "device_air_purifier_device_air_purifier_ther_8e685",
       "title": {
         "en": "Temperature changed",
-        "fr": "Température changée"
+        "fr": "Température changée",
+        "nl": "Temperatuur gewijzigd",
+        "de": "Temperatur geändert"
       },
       "tokens": [
         {
@@ -50,7 +54,9 @@
       "id": "device_air_purifier_device_air_purifier_ther_559cc",
       "title": {
         "en": "Mode changed",
-        "fr": "Mode changé"
+        "fr": "Mode changé",
+        "nl": "Modus gewijzigd",
+        "de": "Modus geändert"
       },
       "tokens": [
         {
@@ -73,7 +79,9 @@
       "id": "device_air_purifier_device_air_purifier_ther_1ab31",
       "title": {
         "en": "Heating started",
-        "fr": "Chauffage démarré"
+        "fr": "Chauffage démarré",
+        "nl": "Verwarming gestart",
+        "de": "Heizen gestartet"
       },
       "args": [],
       "titleFormatted": {
@@ -85,7 +93,9 @@
       "id": "device_air_purifier_device_air_purifier_ther_72b5b",
       "title": {
         "en": "Heating stopped",
-        "fr": "Chauffage arrêté"
+        "fr": "Chauffage arrêté",
+        "nl": "Verwarming gestopt",
+        "de": "Heizen gestoppt"
       },
       "args": [],
       "titleFormatted": {
@@ -177,7 +187,9 @@
       "id": "device_air_purifier_target_temperature_changed",
       "title": {
         "en": "Target temperature changed",
-        "fr": "Consigne changée"
+        "fr": "Consigne changée",
+        "nl": "Doeltemperatuur gewijzigd",
+        "de": "Zieltemperatur geändert"
       },
       "tokens": [
         {
@@ -200,7 +212,9 @@
       "id": "device_air_purifier_humidity_changed",
       "title": {
         "en": "Humidity changed",
-        "fr": "Humidité changée"
+        "fr": "Humidité changée",
+        "nl": "Luchtvochtigheid gewijzigd",
+        "de": "Luftfeuchtigkeit geändert"
       },
       "tokens": [
         {
@@ -223,7 +237,9 @@
       "id": "device_air_purifier_brightness_changed",
       "title": {
         "en": "Brightness changed",
-        "fr": "Luminosité changée"
+        "fr": "Luminosité changée",
+        "nl": "Helderheid gewijzigd",
+        "de": "Helligkeit geändert"
       },
       "tokens": [
         {
@@ -246,7 +262,9 @@
       "id": "device_air_purifier_pm25_changed",
       "title": {
         "en": "PM2.5 changed",
-        "fr": "PM2.5 changé"
+        "fr": "PM2.5 changé",
+        "nl": "PM2.5 gewijzigd",
+        "de": "PM2.5 geändert"
       },
       "tokens": [
         {
@@ -271,7 +289,9 @@
       "id": "device_air_purifier_device_air_purifier_ther_f58c8",
       "title": {
         "en": "Thermostat is !{{heating|not heating}}",
-        "fr": "Thermostat !{{chauffe|ne chauffe pas}}"
+        "fr": "Thermostat !{{chauffe|ne chauffe pas}}",
+        "nl": "Thermostaat !{{verwarmt|verwarmt niet}}",
+        "de": "Thermostat !{{heizt|heizt nicht}}"
       },
       "args": [],
       "titleFormatted": {
@@ -283,7 +303,9 @@
       "id": "device_air_purifier_device_air_purifier_ther_d9c6f",
       "title": {
         "en": "Temperature is above target",
-        "fr": "Température supérieure àla cible"
+        "fr": "Température supérieure àla cible",
+        "nl": "Temperatuur is boven doel",
+        "de": "Temperatur liegt über dem Ziel"
       },
       "args": [],
       "titleFormatted": {
@@ -295,7 +317,9 @@
       "id": "device_air_purifier_device_air_purifier_ther_8fcd1",
       "title": {
         "en": "Temperature is below target",
-        "fr": "Température inférieure àla cible"
+        "fr": "Température inférieure àla cible",
+        "nl": "Temperatuur is onder doel",
+        "de": "Temperatur liegt unter dem Ziel"
       },
       "args": [],
       "titleFormatted": {
@@ -307,7 +331,9 @@
       "id": "device_air_purifier_device_air_purifier_ther_aa7c8",
       "title": {
         "en": "Mode is",
-        "fr": "Mode est"
+        "fr": "Mode est",
+        "nl": "Modus is",
+        "de": "Modus ist"
       },
       "args": [
         {
@@ -347,14 +373,18 @@
       ],
       "titleFormatted": {
         "en": "Mode is [[mode]]",
-        "fr": "Mode est [[mode]]"
+        "fr": "Mode est [[mode]]",
+        "nl": "Modus is [[mode]]",
+        "de": "Modus ist [[mode]]"
       }
     },
     {
       "id": "device_air_purifier_device_air_purifier_ther_c9dac",
       "title": {
         "en": "Child lock is !{{enabled|disabled}}",
-        "fr": "Verrouillage enfant !{{activé|désactivé}}"
+        "fr": "Verrouillage enfant !{{activé|désactivé}}",
+        "nl": "Kinderslot is !{{ingeschakeld|uitgeschakeld}}",
+        "de": "Kindersicherung ist !{{aktiviert|deaktiviert}}"
       },
       "args": [],
       "titleFormatted": {
@@ -384,7 +414,9 @@
       "id": "device_air_purifier_device_air_purifier_ther_b066b",
       "title": {
         "en": "Set target temperature",
-        "fr": "Définir température cible"
+        "fr": "Définir température cible",
+        "nl": "Doeltemperatuur instellen",
+        "de": "Zieltemperatur einstellen"
       },
       "args": [
         {
@@ -401,14 +433,18 @@
       ],
       "titleFormatted": {
         "en": "Set target temperature [[temperature]]",
-        "fr": "Définir température cible [[temperature]]"
+        "fr": "Définir température cible [[temperature]]",
+        "nl": "Doeltemperatuur instellen [[temperature]]",
+        "de": "Zieltemperatur einstellen [[temperature]]"
       }
     },
     {
       "id": "device_air_purifier_device_air_purifier_ther_74594",
       "title": {
         "en": "Set mode",
-        "fr": "Définir mode"
+        "fr": "Définir mode",
+        "nl": "Modus instellen",
+        "de": "Modus einstellen"
       },
       "args": [
         {
@@ -441,14 +477,18 @@
       ],
       "titleFormatted": {
         "en": "Set mode [[mode]]",
-        "fr": "Définir mode [[mode]]"
+        "fr": "Définir mode [[mode]]",
+        "nl": "Modus instellen [[mode]]",
+        "de": "Modus einstellen [[mode]]"
       }
     },
     {
       "id": "device_air_purifier_device_air_purifier_ther_2a98c",
       "title": {
         "en": "Increase temperature",
-        "fr": "Augmenter température"
+        "fr": "Augmenter température",
+        "nl": "Temperatuur verhogen",
+        "de": "Temperatur erhöhen"
       },
       "args": [
         {
@@ -465,14 +505,18 @@
       ],
       "titleFormatted": {
         "en": "Increase temperature [[degrees]]",
-        "fr": "Augmenter température [[degrees]]"
+        "fr": "Augmenter température [[degrees]]",
+        "nl": "Temperatuur verhogen [[degrees]]",
+        "de": "Temperatur erhöhen [[degrees]]"
       }
     },
     {
       "id": "device_air_purifier_device_air_purifier_ther_8796f",
       "title": {
         "en": "Decrease temperature",
-        "fr": "Diminuer température"
+        "fr": "Diminuer température",
+        "nl": "Temperatuur verlagen",
+        "de": "Temperatur verringern"
       },
       "args": [
         {
@@ -489,14 +533,18 @@
       ],
       "titleFormatted": {
         "en": "Decrease temperature [[degrees]]",
-        "fr": "Diminuer température [[degrees]]"
+        "fr": "Diminuer température [[degrees]]",
+        "nl": "Temperatuur verlagen [[degrees]]",
+        "de": "Temperatur verringern [[degrees]]"
       }
     },
     {
       "id": "device_air_purifier_device_air_purifier_ther_dee77",
       "title": {
         "en": "Set child lock",
-        "fr": "Définir verrouillage enfant"
+        "fr": "Définir verrouillage enfant",
+        "nl": "Kinderslot instellen",
+        "de": "Kindersicherung einstellen"
       },
       "args": [
         {
@@ -522,7 +570,9 @@
       ],
       "titleFormatted": {
         "en": "Set child lock [[enabled]]",
-        "fr": "Définir verrouillage enfant [[enabled]]"
+        "fr": "Définir verrouillage enfant [[enabled]]",
+        "nl": "Kinderslot instellen [[enabled]]",
+        "de": "Kindersicherung einstellen [[enabled]]"
       }
     },
     {
@@ -694,7 +744,9 @@
       "id": "device_air_purifier_enable_child_lock",
       "title": {
         "en": "Enable child lock",
-        "fr": "Activer verrou enfant"
+        "fr": "Activer verrou enfant",
+        "nl": "Kinderslot inschakelen",
+        "de": "Kindersicherung aktivieren"
       },
       "args": [],
       "titleFormatted": {
@@ -706,7 +758,9 @@
       "id": "device_air_purifier_disable_child_lock",
       "title": {
         "en": "Disable child lock",
-        "fr": "Désactiver verrou enfant"
+        "fr": "Désactiver verrou enfant",
+        "nl": "Kinderslot uitschakelen",
+        "de": "Kindersicherung deaktivieren"
       },
       "args": [],
       "titleFormatted": {

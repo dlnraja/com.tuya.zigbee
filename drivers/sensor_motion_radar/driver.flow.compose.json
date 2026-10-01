@@ -28,7 +28,9 @@
       "id": "sensor_motion_radar_motion_sensor_radar_mmwa_d5421",
       "title": {
         "en": "Motion detected",
-        "fr": "Mouvement détecté"
+        "fr": "Mouvement détecté",
+        "nl": "Beweging gedetecteerd",
+        "de": "Bewegung erkannt"
       },
       "args": [],
       "titleFormatted": {
@@ -52,7 +54,9 @@
       "id": "sensor_motion_radar_motion_sensor_radar_mmwa_b3cd9",
       "title": {
         "en": "Illuminance changed",
-        "fr": "Luminosité changée"
+        "fr": "Luminosité changée",
+        "nl": "Verlichtingssterkte gewijzigd",
+        "de": "Beleuchtungsstärke geändert"
       },
       "tokens": [
         {
@@ -75,7 +79,9 @@
       "id": "sensor_motion_radar_motion_sensor_radar_mmwa_f8e99",
       "title": {
         "en": "Temperature changed",
-        "fr": "Température changée"
+        "fr": "Température changée",
+        "nl": "Temperatuur gewijzigd",
+        "de": "Temperatur geändert"
       },
       "tokens": [
         {
@@ -98,7 +104,9 @@
       "id": "sensor_motion_radar_motion_sensor_radar_mmwa_88701",
       "title": {
         "en": "Humidity changed",
-        "fr": "Humidité changée"
+        "fr": "Humidité changée",
+        "nl": "Luchtvochtigheid gewijzigd",
+        "de": "Luftfeuchtigkeit geändert"
       },
       "tokens": [
         {
@@ -121,7 +129,9 @@
       "id": "sensor_motion_radar_motion_sensor_radar_mmwa_4efe6",
       "title": {
         "en": "Target distance changed",
-        "fr": "Distance cible changée"
+        "fr": "Distance cible changée",
+        "nl": "Doelafstand gewijzigd",
+        "de": "Zielentfernung geändert"
       },
       "tokens": [
         {
@@ -144,7 +154,9 @@
       "id": "sensor_motion_radar_motion_sensor_radar_mmwa_07014",
       "title": {
         "en": "Battery low",
-        "fr": "Batterie faible"
+        "fr": "Batterie faible",
+        "nl": "Batterij bijna leeg",
+        "de": "Batterie schwach"
       },
       "args": [],
       "titleFormatted": {
@@ -156,7 +168,9 @@
       "id": "sensor_motion_radar_motion_sensor_radar_mmwa_494ef",
       "title": {
         "en": "Battery level changed",
-        "fr": "Niveau batterie changé"
+        "fr": "Niveau batterie changé",
+        "nl": "Batterijniveau gewijzigd",
+        "de": "Batteriestand geändert"
       },
       "tokens": [
         {
@@ -227,7 +241,9 @@
       "id": "sensor_motion_radar_temperature_changed",
       "title": {
         "en": "Temperature changed",
-        "fr": "Température changée"
+        "fr": "Température changée",
+        "nl": "Temperatuur gewijzigd",
+        "de": "Temperatur geändert"
       },
       "tokens": [
         {
@@ -250,7 +266,9 @@
       "id": "sensor_motion_radar_humidity_changed",
       "title": {
         "en": "Humidity changed",
-        "fr": "Humidité changée"
+        "fr": "Humidité changée",
+        "nl": "Luchtvochtigheid gewijzigd",
+        "de": "Luftfeuchtigkeit geändert"
       },
       "tokens": [
         {
@@ -273,7 +291,9 @@
       "id": "sensor_motion_radar_illuminance_changed",
       "title": {
         "en": "Illuminance changed",
-        "fr": "Luminosité ambiante changée"
+        "fr": "Luminosité ambiante changée",
+        "nl": "Verlichtingssterkte gewijzigd",
+        "de": "Beleuchtungsstärke geändert"
       },
       "tokens": [
         {
@@ -358,7 +378,9 @@
       "id": "sensor_motion_radar_motion_sensor_radar_mmwa_07985",
       "title": {
         "en": "Temperature is above",
-        "fr": "Température supérieure à"
+        "fr": "Température supérieure à",
+        "nl": "Temperatuur is hoger dan",
+        "de": "Temperatur liegt über"
       },
       "args": [
         {
@@ -375,7 +397,9 @@
       ],
       "titleFormatted": {
         "en": "Temperature is above [[temp]]",
-        "fr": "Température supérieure à [[temp]]"
+        "fr": "Température supérieure à [[temp]]",
+        "nl": "Temperatuur is hoger dan [[temp]]",
+        "de": "Temperatur liegt über [[temp]]"
       }
     },
     {

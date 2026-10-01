@@ -2,7 +2,9 @@
   "id": "lux_adaptive_dim_enroll",
   "title": {
     "en": "Enroll Lux Adaptive Dim",
-    "fr": "Inscrire Lux Adaptive Dim"
+    "fr": "Inscrire Lux Adaptive Dim",
+    "nl": "Lux Adaptive Dim inschakelen",
+    "de": "Lux Adaptive Dim aufnehmen"
   },
   "hint": {
     "en": "Soft-dim light from room lux (illuminance-aware lighting)",
@@ -13,14 +15,26 @@
       "type": "device",
       "name": "light",
       "filter": "capabilities=dim",
-      "title": { "en": "Light", "fr": "Lumière" }
+      "title": {
+        "en": "Light",
+        "fr": "Lumière"
+      }
     },
     {
       "type": "device",
       "name": "lux_sensor",
       "filter": "capabilities=measure_luminance",
-      "title": { "en": "Lux sensor (optional)", "fr": "Capteur lux (option)" },
+      "title": {
+        "en": "Lux sensor (optional)",
+        "fr": "Capteur lux (option)"
+      },
       "optional": true
     }
-  ]
+  ],
+  "titleFormatted": {
+    "en": "Enroll Lux Adaptive Dim ([[light]] [[lux_sensor]])",
+    "fr": "Inscrire Lux Adaptive Dim ([[light]] [[lux_sensor]])",
+    "nl": "Lux Adaptive Dim inschakelen ([[light]] [[lux_sensor]])",
+    "de": "Lux Adaptive Dim aufnehmen ([[light]] [[lux_sensor]])"
+  }
 }

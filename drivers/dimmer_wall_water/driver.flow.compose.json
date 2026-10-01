@@ -4,7 +4,10 @@
       "id": "dimmer_wall_water_dimmer_wall_1gang_physical_on",
       "args": [],
       "title": {
-        "en": "Turned on - physical button"
+        "en": "Turned on - physical button",
+        "fr": "Allumé - bouton physique",
+        "nl": "Aangezet - fysieke knop",
+        "de": "Eingeschaltet - physische Taste"
       },
       "titleFormatted": {
         "en": "Turned on - physical button"
@@ -14,7 +17,10 @@
       "id": "dimmer_wall_water_dimmer_wall_1gang_physical_off",
       "args": [],
       "title": {
-        "en": "Turned off - physical button"
+        "en": "Turned off - physical button",
+        "fr": "Éteint - bouton physique",
+        "nl": "Uitgezet - fysieke knop",
+        "de": "Ausgeschaltet - physische Taste"
       },
       "titleFormatted": {
         "en": "Turned off - physical button"
@@ -24,7 +30,10 @@
       "id": "dimmer_wall_water_dimmer_wall_1gang_physical_759d1",
       "args": [],
       "title": {
-        "en": "Brightness increased - physical"
+        "en": "Brightness increased - physical",
+        "fr": "Luminosité augmentée (physique)",
+        "nl": "Helderheid verhoogd (fysiek)",
+        "de": "Helligkeit erhöht (physisch)"
       },
       "tokens": [
         {
@@ -44,7 +53,10 @@
       "id": "dimmer_wall_water_dimmer_wall_1gang_physical_7522c",
       "args": [],
       "title": {
-        "en": "Brightness decreased - physical"
+        "en": "Brightness decreased - physical",
+        "fr": "Luminosité diminuée (physique)",
+        "nl": "Helderheid verlaagd (fysiek)",
+        "de": "Helligkeit verringert (physisch)"
       },
       "tokens": [
         {

@@ -40,5 +40,11 @@
       "step": 1,
       "value": 1
     }
-  ]
+  ],
+  "titleFormatted": {
+    "en": "Countdown to OFF [[duration_seconds]] [[gang]] ([[device]])",
+    "fr": "Compte à rebours avant extinction [[duration_seconds]] [[gang]] ([[device]])",
+    "nl": "Aftellen naar UIT [[duration_seconds]] [[gang]] ([[device]])",
+    "de": "Countdown bis AUS [[duration_seconds]] [[gang]] ([[device]])"
+  }
 }

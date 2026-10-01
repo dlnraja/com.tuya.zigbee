@@ -1,7 +1,10 @@
 {
   "id": "solar_sunrise_detected",
   "title": {
-    "en": "Sunrise detected"
+    "en": "Sunrise detected",
+    "fr": "Lever du soleil détecté",
+    "nl": "Zonsopkomst gedetecteerd",
+    "de": "Sonnenaufgang erkannt"
   },
   "hint": {
     "en": "Triggers when the sun rises above the horizon based on your location"
@@ -51,6 +54,9 @@
     }
   ],
   "titleFormatted": {
-    "en": "Sunrise detected [[elevation_threshold]]"
+    "en": "Sunrise detected [[elevation_threshold]]",
+    "fr": "Lever du soleil détecté [[elevation_threshold]]",
+    "nl": "Zonsopkomst gedetecteerd [[elevation_threshold]]",
+    "de": "Sonnenaufgang erkannt [[elevation_threshold]]"
   }
 }

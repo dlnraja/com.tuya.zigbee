@@ -4,7 +4,9 @@
       "id": "universal_zigbee_turned_on",
       "title": {
         "en": "Turned on",
-        "fr": "Allume"
+        "fr": "Allume",
+        "nl": "Aangezet",
+        "de": "Eingeschaltet"
       },
       "args": [],
       "titleFormatted": {
@@ -16,7 +18,9 @@
       "id": "universal_zigbee_turned_off",
       "title": {
         "en": "Turned off",
-        "fr": "Eteint"
+        "fr": "Eteint",
+        "nl": "Uitgezet",
+        "de": "Ausgeschaltet"
       },
       "args": [],
       "titleFormatted": {
@@ -28,7 +32,9 @@
       "id": "universal_zigbee_dim_changed",
       "title": {
         "en": "Brightness changed",
-        "fr": "Luminosite changee"
+        "fr": "Luminosite changee",
+        "nl": "Helderheid gewijzigd",
+        "de": "Helligkeit geändert"
       },
       "args": [],
       "tokens": [
@@ -51,7 +57,9 @@
       "id": "universal_zigbee_temperature_changed",
       "title": {
         "en": "Temperature changed",
-        "fr": "Temperature changee"
+        "fr": "Temperature changee",
+        "nl": "Temperatuur gewijzigd",
+        "de": "Temperatur geändert"
       },
       "args": [],
       "tokens": [
@@ -74,7 +82,9 @@
       "id": "universal_zigbee_humidity_changed",
       "title": {
         "en": "Humidity changed",
-        "fr": "Humidite changee"
+        "fr": "Humidite changee",
+        "nl": "Luchtvochtigheid gewijzigd",
+        "de": "Luftfeuchtigkeit geändert"
       },
       "args": [],
       "tokens": [
@@ -97,7 +107,9 @@
       "id": "universal_zigbee_luminance_changed",
       "title": {
         "en": "Luminance changed",
-        "fr": "Luminance changee"
+        "fr": "Luminance changee",
+        "nl": "Lichtsterkte gewijzigd",
+        "de": "Leuchtdichte geändert"
       },
       "args": [],
       "tokens": [
@@ -120,7 +132,9 @@
       "id": "universal_zigbee_motion_detected",
       "title": {
         "en": "Motion detected",
-        "fr": "Mouvement detecte"
+        "fr": "Mouvement detecte",
+        "nl": "Beweging gedetecteerd",
+        "de": "Bewegung erkannt"
       },
       "args": [],
       "titleFormatted": {
@@ -132,7 +146,9 @@
       "id": "universal_zigbee_motion_off",
       "title": {
         "en": "Motion ended",
-        "fr": "Mouvement termine"
+        "fr": "Mouvement termine",
+        "nl": "Beweging beëindigd",
+        "de": "Bewegung beendet"
       },
       "args": [],
       "titleFormatted": {
@@ -184,7 +200,9 @@
       "id": "universal_zigbee_position_changed",
       "title": {
         "en": "Position changed",
-        "fr": "Position changee"
+        "fr": "Position changee",
+        "nl": "Positie gewijzigd",
+        "de": "Position geändert"
       },
       "args": [],
       "tokens": [
@@ -230,7 +248,9 @@
       "id": "universal_zigbee_measure_power_changed",
       "title": {
         "en": "Power changed",
-        "fr": "Puissance changée"
+        "fr": "Puissance changée",
+        "nl": "Vermogen gewijzigd",
+        "de": "Leistung geändert"
       },
       "tokens": [
         {
@@ -253,7 +273,9 @@
       "id": "universal_zigbee_voltage_changed",
       "title": {
         "en": "Voltage changed",
-        "fr": "Tension changée"
+        "fr": "Tension changée",
+        "nl": "Spanning gewijzigd",
+        "de": "Spannung geändert"
       },
       "tokens": [
         {
@@ -276,7 +298,9 @@
       "id": "universal_zigbee_current_changed",
       "title": {
         "en": "Current changed",
-        "fr": "Courant changé"
+        "fr": "Courant changé",
+        "nl": "Stroom gewijzigd",
+        "de": "Strom geändert"
       },
       "tokens": [
         {
@@ -299,7 +323,9 @@
       "id": "universal_zigbee_meter_power_changed",
       "title": {
         "en": "Energy changed",
-        "fr": "Énergie changée"
+        "fr": "Énergie changée",
+        "nl": "Energie gewijzigd",
+        "de": "Energie geändert"
       },
       "tokens": [
         {
@@ -322,7 +348,9 @@
       "id": "universal_zigbee_target_temperature_changed",
       "title": {
         "en": "Target temperature changed",
-        "fr": "Consigne changée"
+        "fr": "Consigne changée",
+        "nl": "Doeltemperatuur gewijzigd",
+        "de": "Zieltemperatur geändert"
       },
       "tokens": [
         {
@@ -347,7 +375,9 @@
       "id": "universal_zigbee_is_on",
       "title": {
         "en": "Is turned !{{on|off}}",
-        "fr": "Est !{{allume|eteint}}"
+        "fr": "Est !{{allume|eteint}}",
+        "nl": "Is !{{aan|uit}}",
+        "de": "Ist !{{an|aus}}"
       },
       "args": [],
       "titleFormatted": {
@@ -373,7 +403,9 @@
       "id": "universal_zigbee_turn_on",
       "title": {
         "en": "Turn on",
-        "fr": "Allumer"
+        "fr": "Allumer",
+        "nl": "Zet aan",
+        "de": "Einschalten"
       },
       "args": [],
       "titleFormatted": {
@@ -385,7 +417,9 @@
       "id": "universal_zigbee_turn_off",
       "title": {
         "en": "Turn off",
-        "fr": "Eteindre"
+        "fr": "Eteindre",
+        "nl": "Zet uit",
+        "de": "Ausschalten"
       },
       "args": [],
       "titleFormatted": {
@@ -397,7 +431,9 @@
       "id": "universal_zigbee_toggle",
       "title": {
         "en": "Toggle",
-        "fr": "Basculer"
+        "fr": "Basculer",
+        "nl": "Wisselen",
+        "de": "Umschalten"
       },
       "args": [],
       "titleFormatted": {
@@ -409,7 +445,9 @@
       "id": "universal_zigbee_set_brightness",
       "title": {
         "en": "Set brightness",
-        "fr": "Regler luminosite"
+        "fr": "Regler luminosite",
+        "nl": "Helderheid instellen",
+        "de": "Helligkeit einstellen"
       },
       "args": [
         {
@@ -423,7 +461,9 @@
       ],
       "titleFormatted": {
         "en": "Set brightness [[brightness]]",
-        "fr": "Regler luminosite [[brightness]]"
+        "fr": "Regler luminosite [[brightness]]",
+        "nl": "Helderheid instellen [[brightness]]",
+        "de": "Helligkeit einstellen [[brightness]]"
       }
     },
     {

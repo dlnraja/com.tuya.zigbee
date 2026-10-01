@@ -97,7 +97,9 @@
       "id": "scene_switch_1_button_1gang_button_1_pressed",
       "title": {
         "en": "Button pressed",
-        "fr": "Bouton appuye"
+        "fr": "Bouton appuye",
+        "nl": "Knop ingedrukt",
+        "de": "Taste gedrückt"
       },
       "args": [],
       "titleFormatted": {
@@ -109,7 +111,9 @@
       "id": "scene_switch_1_button_1gang_button_1_double",
       "title": {
         "en": "Button double-pressed",
-        "fr": "Bouton double-appui"
+        "fr": "Bouton double-appui",
+        "nl": "Knop dubbel ingedrukt",
+        "de": "Taste doppelt gedrückt"
       },
       "args": [],
       "titleFormatted": {
@@ -121,7 +125,9 @@
       "id": "scene_switch_1_button_1gang_button_1_long",
       "title": {
         "en": "Button long-pressed",
-        "fr": "Bouton appui long"
+        "fr": "Bouton appui long",
+        "nl": "Knop lang ingedrukt",
+        "de": "Taste lange gedrückt"
       },
       "args": [],
       "titleFormatted": {
@@ -133,7 +139,9 @@
       "id": "scene_switch_1_button_1gang_button_1_triple",
       "title": {
         "en": "Button triple-pressed",
-        "fr": "Bouton triple-appui"
+        "fr": "Bouton triple-appui",
+        "nl": "Knop driemaal ingedrukt",
+        "de": "Taste dreimal gedrückt"
       },
       "args": [],
       "titleFormatted": {
@@ -145,7 +153,9 @@
       "id": "scene_switch_1_button_1gang_button_1_release",
       "title": {
         "en": "Button released",
-        "fr": "Bouton relache"
+        "fr": "Bouton relache",
+        "nl": "Knop losgelaten",
+        "de": "Taste losgelassen"
       },
       "args": [],
       "titleFormatted": {

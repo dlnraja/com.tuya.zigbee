@@ -4,7 +4,9 @@
       "id": "relay_board_4_channel_turned_on",
       "title": {
         "en": "Turned on",
-        "fr": "Allume"
+        "fr": "Allume",
+        "nl": "Aangezet",
+        "de": "Eingeschaltet"
       },
       "args": [],
       "titleFormatted": {
@@ -16,7 +18,9 @@
       "id": "relay_board_4_channel_turned_off",
       "title": {
         "en": "Turned off",
-        "fr": "Eteint"
+        "fr": "Eteint",
+        "nl": "Uitgezet",
+        "de": "Ausgeschaltet"
       },
       "args": [],
       "titleFormatted": {
@@ -28,7 +32,9 @@
       "id": "relay_board_4_channel_gang2_turned_on",
       "title": {
         "en": "Gang 2 turned on",
-        "fr": "Gang 2 allume"
+        "fr": "Gang 2 allume",
+        "nl": "Kanaal 2 aangezet",
+        "de": "Kanal 2 eingeschaltet"
       },
       "args": [],
       "titleFormatted": {
@@ -40,7 +46,9 @@
       "id": "relay_board_4_channel_gang2_turned_off",
       "title": {
         "en": "Gang 2 turned off",
-        "fr": "Gang 2 eteint"
+        "fr": "Gang 2 eteint",
+        "nl": "Kanaal 2 uitgezet",
+        "de": "Kanal 2 ausgeschaltet"
       },
       "args": [],
       "titleFormatted": {
@@ -52,7 +60,9 @@
       "id": "relay_board_4_channel_gang3_turned_on",
       "title": {
         "en": "Gang 3 turned on",
-        "fr": "Gang 3 allume"
+        "fr": "Gang 3 allume",
+        "nl": "Kanaal 3 aangezet",
+        "de": "Kanal 3 eingeschaltet"
       },
       "args": [],
       "titleFormatted": {
@@ -64,7 +74,9 @@
       "id": "relay_board_4_channel_gang3_turned_off",
       "title": {
         "en": "Gang 3 turned off",
-        "fr": "Gang 3 eteint"
+        "fr": "Gang 3 eteint",
+        "nl": "Kanaal 3 uitgezet",
+        "de": "Kanal 3 ausgeschaltet"
       },
       "args": [],
       "titleFormatted": {
@@ -76,7 +88,9 @@
       "id": "relay_board_4_channel_gang4_turned_on",
       "title": {
         "en": "Gang 4 turned on",
-        "fr": "Gang 4 allume"
+        "fr": "Gang 4 allume",
+        "nl": "Kanaal 4 aangezet",
+        "de": "Kanal 4 eingeschaltet"
       },
       "args": [],
       "titleFormatted": {
@@ -88,7 +102,9 @@
       "id": "relay_board_4_channel_gang4_turned_off",
       "title": {
         "en": "Gang 4 turned off",
-        "fr": "Gang 4 eteint"
+        "fr": "Gang 4 eteint",
+        "nl": "Kanaal 4 uitgezet",
+        "de": "Kanal 4 ausgeschaltet"
       },
       "args": [],
       "titleFormatted": {
@@ -100,7 +116,9 @@
       "id": "relay_board_4_channel_physical_gang1_on",
       "title": {
         "en": "Physical gang 1 on",
-        "fr": "Physical gang 1 on"
+        "fr": "Physical gang 1 on",
+        "nl": "Kanaal 1 fysiek aan",
+        "de": "Kanal 1 physisch an"
       },
       "args": []
     },
@@ -108,7 +126,9 @@
       "id": "relay_board_4_channel_physical_gang1_off",
       "title": {
         "en": "Physical gang 1 off",
-        "fr": "Physical gang 1 off"
+        "fr": "Physical gang 1 off",
+        "nl": "Kanaal 1 fysiek uit",
+        "de": "Kanal 1 physisch aus"
       },
       "args": []
     },
@@ -116,7 +136,9 @@
       "id": "relay_board_4_channel_physical_gang2_on",
       "title": {
         "en": "Physical gang 2 on",
-        "fr": "Physical gang 2 on"
+        "fr": "Physical gang 2 on",
+        "nl": "Kanaal 2 fysiek aan",
+        "de": "Kanal 2 physisch an"
       },
       "args": []
     },
@@ -124,7 +146,9 @@
       "id": "relay_board_4_channel_physical_gang2_off",
       "title": {
         "en": "Physical gang 2 off",
-        "fr": "Physical gang 2 off"
+        "fr": "Physical gang 2 off",
+        "nl": "Kanaal 2 fysiek uit",
+        "de": "Kanal 2 physisch aus"
       },
       "args": []
     },
@@ -132,7 +156,9 @@
       "id": "relay_board_4_channel_physical_gang3_on",
       "title": {
         "en": "Physical gang 3 on",
-        "fr": "Physical gang 3 on"
+        "fr": "Physical gang 3 on",
+        "nl": "Kanaal 3 fysiek aan",
+        "de": "Kanal 3 physisch an"
       },
       "args": []
     },
@@ -140,7 +166,9 @@
       "id": "relay_board_4_channel_physical_gang3_off",
       "title": {
         "en": "Physical gang 3 off",
-        "fr": "Physical gang 3 off"
+        "fr": "Physical gang 3 off",
+        "nl": "Kanaal 3 fysiek uit",
+        "de": "Kanal 3 physisch aus"
       },
       "args": []
     },
@@ -148,7 +176,9 @@
       "id": "relay_board_4_channel_physical_gang4_on",
       "title": {
         "en": "Physical gang 4 on",
-        "fr": "Physical gang 4 on"
+        "fr": "Physical gang 4 on",
+        "nl": "Kanaal 4 fysiek aan",
+        "de": "Kanal 4 physisch an"
       },
       "args": []
     },
@@ -156,7 +186,9 @@
       "id": "relay_board_4_channel_physical_gang4_off",
       "title": {
         "en": "Physical gang 4 off",
-        "fr": "Physical gang 4 off"
+        "fr": "Physical gang 4 off",
+        "nl": "Kanaal 4 fysiek uit",
+        "de": "Kanal 4 physisch aus"
       },
       "args": []
     }
@@ -166,7 +198,9 @@
       "id": "relay_board_4_channel_is_on",
       "title": {
         "en": "Is turned !{{on|off}}",
-        "fr": "Est !{{allume|eteint}}"
+        "fr": "Est !{{allume|eteint}}",
+        "nl": "Is !{{aan|uit}}",
+        "de": "Ist !{{an|aus}}"
       },
       "args": [],
       "titleFormatted": {
@@ -178,7 +212,9 @@
       "id": "relay_board_4_channel_gang1_is_on",
       "title": {
         "en": "Gang 1 is !{{on|off}}",
-        "fr": "Gang 1 est !{{allume|eteint}}"
+        "fr": "Gang 1 est !{{allume|eteint}}",
+        "nl": "Kanaal 1 is !{{aan|uit}}",
+        "de": "Kanal 1 ist !{{an|aus}}"
       },
       "args": [],
       "titleFormatted": {
@@ -190,7 +226,9 @@
       "id": "relay_board_4_channel_gang2_is_on",
       "title": {
         "en": "Gang 2 is !{{on|off}}",
-        "fr": "Gang 2 est !{{allume|eteint}}"
+        "fr": "Gang 2 est !{{allume|eteint}}",
+        "nl": "Kanaal 2 is !{{aan|uit}}",
+        "de": "Kanal 2 ist !{{an|aus}}"
       },
       "args": [],
       "titleFormatted": {
@@ -202,7 +240,9 @@
       "id": "relay_board_4_channel_gang3_is_on",
       "title": {
         "en": "Gang 3 is !{{on|off}}",
-        "fr": "Gang 3 est !{{allume|eteint}}"
+        "fr": "Gang 3 est !{{allume|eteint}}",
+        "nl": "Kanaal 3 is !{{aan|uit}}",
+        "de": "Kanal 3 ist !{{an|aus}}"
       },
       "args": [],
       "titleFormatted": {
@@ -214,7 +254,9 @@
       "id": "relay_board_4_channel_gang4_is_on",
       "title": {
         "en": "Gang 4 is !{{on|off}}",
-        "fr": "Gang 4 est !{{allume|eteint}}"
+        "fr": "Gang 4 est !{{allume|eteint}}",
+        "nl": "Kanaal 4 is !{{aan|uit}}",
+        "de": "Kanal 4 ist !{{an|aus}}"
       },
       "args": [],
       "titleFormatted": {
@@ -228,7 +270,9 @@
       "id": "relay_board_4_channel_turn_on",
       "title": {
         "en": "Turn on",
-        "fr": "Allumer"
+        "fr": "Allumer",
+        "nl": "Zet aan",
+        "de": "Einschalten"
       },
       "args": [],
       "titleFormatted": {
@@ -240,7 +284,9 @@
       "id": "relay_board_4_channel_turn_off",
       "title": {
         "en": "Turn off",
-        "fr": "Eteindre"
+        "fr": "Eteindre",
+        "nl": "Zet uit",
+        "de": "Ausschalten"
       },
       "args": [],
       "titleFormatted": {
@@ -252,7 +298,9 @@
       "id": "relay_board_4_channel_toggle",
       "title": {
         "en": "Toggle",
-        "fr": "Basculer"
+        "fr": "Basculer",
+        "nl": "Wisselen",
+        "de": "Umschalten"
       },
       "args": [],
       "titleFormatted": {
@@ -264,7 +312,9 @@
       "id": "relay_board_4_channel_turn_on_gang1",
       "title": {
         "en": "Turn on gang 1",
-        "fr": "Allumer gang 1"
+        "fr": "Allumer gang 1",
+        "nl": "Kanaal 1 aanzetten",
+        "de": "Kanal 1 einschalten"
       },
       "args": [],
       "titleFormatted": {
@@ -276,7 +326,9 @@
       "id": "relay_board_4_channel_turn_off_gang1",
       "title": {
         "en": "Turn off gang 1",
-        "fr": "Eteindre gang 1"
+        "fr": "Eteindre gang 1",
+        "nl": "Kanaal 1 uitzetten",
+        "de": "Kanal 1 ausschalten"
       },
       "args": [],
       "titleFormatted": {
@@ -288,7 +340,9 @@
       "id": "relay_board_4_channel_turn_on_gang2",
       "title": {
         "en": "Turn on gang 2",
-        "fr": "Allumer gang 2"
+        "fr": "Allumer gang 2",
+        "nl": "Kanaal 2 aanzetten",
+        "de": "Kanal 2 einschalten"
       },
       "args": [],
       "titleFormatted": {
@@ -300,7 +354,9 @@
       "id": "relay_board_4_channel_turn_off_gang2",
       "title": {
         "en": "Turn off gang 2",
-        "fr": "Eteindre gang 2"
+        "fr": "Eteindre gang 2",
+        "nl": "Kanaal 2 uitzetten",
+        "de": "Kanal 2 ausschalten"
       },
       "args": [],
       "titleFormatted": {
@@ -312,7 +368,9 @@
       "id": "relay_board_4_channel_turn_on_gang3",
       "title": {
         "en": "Turn on gang 3",
-        "fr": "Allumer gang 3"
+        "fr": "Allumer gang 3",
+        "nl": "Kanaal 3 aanzetten",
+        "de": "Kanal 3 einschalten"
       },
       "args": [],
       "titleFormatted": {
@@ -324,7 +382,9 @@
       "id": "relay_board_4_channel_turn_off_gang3",
       "title": {
         "en": "Turn off gang 3",
-        "fr": "Eteindre gang 3"
+        "fr": "Eteindre gang 3",
+        "nl": "Kanaal 3 uitzetten",
+        "de": "Kanal 3 ausschalten"
       },
       "args": [],
       "titleFormatted": {
@@ -336,7 +396,9 @@
       "id": "relay_board_4_channel_turn_on_gang4",
       "title": {
         "en": "Turn on gang 4",
-        "fr": "Allumer gang 4"
+        "fr": "Allumer gang 4",
+        "nl": "Kanaal 4 aanzetten",
+        "de": "Kanal 4 einschalten"
       },
       "args": [],
       "titleFormatted": {
@@ -348,7 +410,9 @@
       "id": "relay_board_4_channel_turn_off_gang4",
       "title": {
         "en": "Turn off gang 4",
-        "fr": "Eteindre gang 4"
+        "fr": "Eteindre gang 4",
+        "nl": "Kanaal 4 uitzetten",
+        "de": "Kanal 4 ausschalten"
       },
       "args": [],
       "titleFormatted": {

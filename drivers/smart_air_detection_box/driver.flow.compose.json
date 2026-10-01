@@ -4,7 +4,9 @@
       "id": "smart_air_detection_box_temperature_changed",
       "title": {
         "en": "Temperature changed",
-        "fr": "Temperature changee"
+        "fr": "Temperature changee",
+        "nl": "Temperatuur gewijzigd",
+        "de": "Temperatur geändert"
       },
       "args": [],
       "tokens": [
@@ -27,7 +29,9 @@
       "id": "smart_air_detection_box_humidity_changed",
       "title": {
         "en": "Humidity changed",
-        "fr": "Humidite changee"
+        "fr": "Humidite changee",
+        "nl": "Luchtvochtigheid gewijzigd",
+        "de": "Luftfeuchtigkeit geändert"
       },
       "args": [],
       "tokens": [
@@ -50,7 +54,9 @@
       "id": "smart_air_detection_box_co2_changed",
       "title": {
         "en": "CO₂ changed",
-        "fr": "CO₂ changé"
+        "fr": "CO₂ changé",
+        "nl": "CO₂ gewijzigd",
+        "de": "CO₂ geändert"
       },
       "tokens": [
         {

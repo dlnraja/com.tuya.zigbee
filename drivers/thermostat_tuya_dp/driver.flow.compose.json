@@ -4,7 +4,9 @@
       "id": "thermostat_tuya_dp_target_temperature_changed",
       "title": {
         "en": "Target temperature changed",
-        "fr": "Température cible changée"
+        "fr": "Température cible changée",
+        "nl": "Doeltemperatuur gewijzigd",
+        "de": "Zieltemperatur geändert"
       },
       "tokens": [
         {
@@ -27,7 +29,9 @@
       "id": "thermostat_tuya_dp_temperature_changed",
       "title": {
         "en": "Temperature changed",
-        "fr": "Température changée"
+        "fr": "Température changée",
+        "nl": "Temperatuur gewijzigd",
+        "de": "Temperatur geändert"
       },
       "tokens": [
         {
@@ -50,7 +54,9 @@
       "id": "thermostat_tuya_dp_mode_changed",
       "title": {
         "en": "Mode changed",
-        "fr": "Mode changé"
+        "fr": "Mode changé",
+        "nl": "Modus gewijzigd",
+        "de": "Modus geändert"
       },
       "tokens": [
         {
@@ -73,7 +79,9 @@
       "id": "thermostat_tuya_dp_heating_started",
       "title": {
         "en": "Heating started",
-        "fr": "Chauffage démarré"
+        "fr": "Chauffage démarré",
+        "nl": "Verwarming gestart",
+        "de": "Heizen gestartet"
       },
       "args": [],
       "titleFormatted": {
@@ -85,7 +93,9 @@
       "id": "thermostat_tuya_dp_heating_stopped",
       "title": {
         "en": "Heating stopped",
-        "fr": "Chauffage arrêté"
+        "fr": "Chauffage arrêté",
+        "nl": "Verwarming gestopt",
+        "de": "Heizen gestoppt"
       },
       "args": [],
       "titleFormatted": {
@@ -179,7 +189,9 @@
       "id": "thermostat_tuya_dp_is_heating",
       "title": {
         "en": "Thermostat is !{{heating|not heating}}",
-        "fr": "Thermostat !{{chauffe|ne chauffe pas}}"
+        "fr": "Thermostat !{{chauffe|ne chauffe pas}}",
+        "nl": "Thermostaat !{{verwarmt|verwarmt niet}}",
+        "de": "Thermostat !{{heizt|heizt nicht}}"
       },
       "args": [],
       "titleFormatted": {
@@ -191,7 +203,9 @@
       "id": "thermostat_tuya_dp_temperature_above_target",
       "title": {
         "en": "Temperature is above target",
-        "fr": "Température supérieure à la cible"
+        "fr": "Température supérieure à la cible",
+        "nl": "Temperatuur is boven doel",
+        "de": "Temperatur liegt über dem Ziel"
       },
       "args": [],
       "titleFormatted": {
@@ -203,7 +217,9 @@
       "id": "thermostat_tuya_dp_temperature_below_target",
       "title": {
         "en": "Temperature is below target",
-        "fr": "Température inférieure à la cible"
+        "fr": "Température inférieure à la cible",
+        "nl": "Temperatuur is onder doel",
+        "de": "Temperatur liegt unter dem Ziel"
       },
       "args": [],
       "titleFormatted": {
@@ -215,7 +231,9 @@
       "id": "thermostat_tuya_dp_mode_is",
       "title": {
         "en": "Mode is",
-        "fr": "Mode est"
+        "fr": "Mode est",
+        "nl": "Modus is",
+        "de": "Modus ist"
       },
       "args": [
         {
@@ -255,14 +273,18 @@
       ],
       "titleFormatted": {
         "en": "Mode is [[mode]]",
-        "fr": "Mode est [[mode]]"
+        "fr": "Mode est [[mode]]",
+        "nl": "Modus is [[mode]]",
+        "de": "Modus ist [[mode]]"
       }
     },
     {
       "id": "thermostat_tuya_dp_child_lock_is",
       "title": {
         "en": "Child lock is !{{enabled|disabled}}",
-        "fr": "Verrouillage enfant !{{activé|désactivé}}"
+        "fr": "Verrouillage enfant !{{activé|désactivé}}",
+        "nl": "Kinderslot is !{{ingeschakeld|uitgeschakeld}}",
+        "de": "Kindersicherung ist !{{aktiviert|deaktiviert}}"
       },
       "args": [],
       "titleFormatted": {
@@ -292,7 +314,9 @@
       "id": "thermostat_tuya_dp_set_target_temperature",
       "title": {
         "en": "Set target temperature",
-        "fr": "Définir température cible"
+        "fr": "Définir température cible",
+        "nl": "Doeltemperatuur instellen",
+        "de": "Zieltemperatur einstellen"
       },
       "args": [
         {
@@ -309,14 +333,18 @@
       ],
       "titleFormatted": {
         "en": "Set target temperature [[temperature]]",
-        "fr": "Définir température cible [[temperature]]"
+        "fr": "Définir température cible [[temperature]]",
+        "nl": "Doeltemperatuur instellen [[temperature]]",
+        "de": "Zieltemperatur einstellen [[temperature]]"
       }
     },
     {
       "id": "thermostat_tuya_dp_set_mode",
       "title": {
         "en": "Set mode",
-        "fr": "Définir mode"
+        "fr": "Définir mode",
+        "nl": "Modus instellen",
+        "de": "Modus einstellen"
       },
       "args": [
         {
@@ -349,14 +377,18 @@
       ],
       "titleFormatted": {
         "en": "Set mode [[mode]]",
-        "fr": "Définir mode [[mode]]"
+        "fr": "Définir mode [[mode]]",
+        "nl": "Modus instellen [[mode]]",
+        "de": "Modus einstellen [[mode]]"
       }
     },
     {
       "id": "thermostat_tuya_dp_increase_temperature",
       "title": {
         "en": "Increase temperature",
-        "fr": "Augmenter température"
+        "fr": "Augmenter température",
+        "nl": "Temperatuur verhogen",
+        "de": "Temperatur erhöhen"
       },
       "args": [
         {
@@ -373,14 +405,18 @@
       ],
       "titleFormatted": {
         "en": "Increase temperature [[degrees]]",
-        "fr": "Augmenter température [[degrees]]"
+        "fr": "Augmenter température [[degrees]]",
+        "nl": "Temperatuur verhogen [[degrees]]",
+        "de": "Temperatur erhöhen [[degrees]]"
       }
     },
     {
       "id": "thermostat_tuya_dp_decrease_temperature",
       "title": {
         "en": "Decrease temperature",
-        "fr": "Diminuer température"
+        "fr": "Diminuer température",
+        "nl": "Temperatuur verlagen",
+        "de": "Temperatur verringern"
       },
       "args": [
         {
@@ -397,14 +433,18 @@
       ],
       "titleFormatted": {
         "en": "Decrease temperature [[degrees]]",
-        "fr": "Diminuer température [[degrees]]"
+        "fr": "Diminuer température [[degrees]]",
+        "nl": "Temperatuur verlagen [[degrees]]",
+        "de": "Temperatur verringern [[degrees]]"
       }
     },
     {
       "id": "thermostat_tuya_dp_set_child_lock",
       "title": {
         "en": "Set child lock",
-        "fr": "Définir verrouillage enfant"
+        "fr": "Définir verrouillage enfant",
+        "nl": "Kinderslot instellen",
+        "de": "Kindersicherung einstellen"
       },
       "args": [
         {
@@ -430,7 +470,9 @@
       ],
       "titleFormatted": {
         "en": "Set child lock [[enabled]]",
-        "fr": "Définir verrouillage enfant [[enabled]]"
+        "fr": "Définir verrouillage enfant [[enabled]]",
+        "nl": "Kinderslot instellen [[enabled]]",
+        "de": "Kindersicherung einstellen [[enabled]]"
       }
     },
     {

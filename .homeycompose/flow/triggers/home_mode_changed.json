@@ -67,5 +67,11 @@
         "fr": "Mode précédent"
       }
     }
-  ]
+  ],
+  "titleFormatted": {
+    "en": "Home mode changed [[mode]]",
+    "fr": "Le mode de la maison a changé [[mode]]",
+    "nl": "Huismodus gewijzigd [[mode]]",
+    "de": "Hausmodus geändert [[mode]]"
+  }
 }

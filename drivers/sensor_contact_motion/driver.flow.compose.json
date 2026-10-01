@@ -5,7 +5,9 @@
       "highlight": true,
       "title": {
         "en": "Motion detected",
-        "fr": "Mouvement détecté"
+        "fr": "Mouvement détecté",
+        "nl": "Beweging gedetecteerd",
+        "de": "Bewegung erkannt"
       },
       "args": [],
       "titleFormatted": {
@@ -17,7 +19,9 @@
       "id": "sensor_contact_motion_sensor_motion_cleared",
       "title": {
         "en": "Motion cleared",
-        "fr": "Mouvement terminé"
+        "fr": "Mouvement terminé",
+        "nl": "Beweging gestopt",
+        "de": "Bewegung beendet"
       },
       "args": [],
       "titleFormatted": {
@@ -29,7 +33,9 @@
       "id": "sensor_contact_motion_sensor_battery_low",
       "title": {
         "en": "Battery low",
-        "fr": "Batterie faible"
+        "fr": "Batterie faible",
+        "nl": "Batterij bijna leeg",
+        "de": "Batterie schwach"
       },
       "args": [],
       "titleFormatted": {
@@ -41,7 +47,9 @@
       "id": "sensor_contact_motion_sensor_battery_changed",
       "title": {
         "en": "Battery level changed",
-        "fr": "Niveau batterie changé"
+        "fr": "Niveau batterie changé",
+        "nl": "Batterijniveau gewijzigd",
+        "de": "Batteriestand geändert"
       },
       "tokens": [
         {
@@ -158,7 +166,9 @@
       "id": "sensor_contact_motion_temperature_changed",
       "title": {
         "en": "Temperature changed",
-        "fr": "Température changée"
+        "fr": "Température changée",
+        "nl": "Temperatuur gewijzigd",
+        "de": "Temperatur geändert"
       },
       "tokens": [
         {
@@ -181,7 +191,9 @@
       "id": "sensor_contact_motion_humidity_changed",
       "title": {
         "en": "Humidity changed",
-        "fr": "Humidité changée"
+        "fr": "Humidité changée",
+        "nl": "Luchtvochtigheid gewijzigd",
+        "de": "Luftfeuchtigkeit geändert"
       },
       "tokens": [
         {
@@ -206,7 +218,9 @@
       "id": "sensor_contact_motion_sensor_motion_active",
       "title": {
         "en": "Motion !{{is|is not}} detected",
-        "fr": "Mouvement !{{est|n'est pas}} détecté"
+        "fr": "Mouvement !{{est|n'est pas}} détecté",
+        "nl": "Beweging !{{wordt|wordt niet}} gedetecteerd",
+        "de": "Bewegung !{{wird|wird nicht}} erkannt"
       },
       "args": [],
       "titleFormatted": {

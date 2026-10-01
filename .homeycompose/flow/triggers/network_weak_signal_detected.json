@@ -1,7 +1,10 @@
 {
   "id": "network_weak_signal_detected",
   "title": {
-    "en": "Weak signal detected"
+    "en": "Weak signal detected",
+    "fr": "Signal faible détecté",
+    "nl": "Zwak signaal gedetecteerd",
+    "de": "Schwaches Signal erkannt"
   },
   "hint": {
     "en": "Triggers when a device's signal quality drops below acceptable levels"
@@ -57,6 +60,9 @@
     }
   ],
   "titleFormatted": {
-    "en": "Weak signal detected [[lqi_threshold]]"
+    "en": "Weak signal detected [[lqi_threshold]]",
+    "fr": "Signal faible détecté [[lqi_threshold]]",
+    "nl": "Zwak signaal gedetecteerd [[lqi_threshold]]",
+    "de": "Schwaches Signal erkannt [[lqi_threshold]]"
   }
 }

@@ -32,7 +32,9 @@
         "fr": "La tension connue mesurée avec un multimètre",
         "nl": "De bekende nauwkeurige spanning gemeten met een multimeter",
         "de": "Die bekannte genaue Spannung, gemessen mit einem Multimeter"
-      }
+      },
+      "min": 0,
+      "max": 60
     },
     {
       "name": "reference_percentage",
@@ -52,5 +54,11 @@
         "de": "Der tatsächliche Batterieprozentswert bei der gemessenen Spannung"
       }
     }
-  ]
+  ],
+  "titleFormatted": {
+    "en": "Calibrate battery reading [[reference_voltage]] [[reference_percentage]] ([[device]])",
+    "fr": "Calibrer la lecture de la batterie [[reference_voltage]] [[reference_percentage]] ([[device]])",
+    "nl": "Batterij uitlezing kalibreren [[reference_voltage]] [[reference_percentage]] ([[device]])",
+    "de": "Batterieablesung kalibrieren [[reference_voltage]] [[reference_percentage]] ([[device]])"
+  }
 }

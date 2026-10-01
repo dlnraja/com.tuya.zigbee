@@ -4,7 +4,9 @@
       "id": "smartplug_turned_on",
       "title": {
         "en": "Turned on",
-        "fr": "Allume"
+        "fr": "Allume",
+        "nl": "Aangezet",
+        "de": "Eingeschaltet"
       },
       "args": [],
       "titleFormatted": {
@@ -16,7 +18,9 @@
       "id": "smartplug_turned_off",
       "title": {
         "en": "Turned off",
-        "fr": "Eteint"
+        "fr": "Eteint",
+        "nl": "Uitgezet",
+        "de": "Ausgeschaltet"
       },
       "args": [],
       "titleFormatted": {
@@ -28,7 +32,9 @@
       "id": "smartplug_measure_power_changed",
       "title": {
         "en": "Power changed",
-        "fr": "Puissance changée"
+        "fr": "Puissance changée",
+        "nl": "Vermogen gewijzigd",
+        "de": "Leistung geändert"
       },
       "tokens": [
         {
@@ -51,7 +57,9 @@
       "id": "smartplug_meter_power_changed",
       "title": {
         "en": "Energy changed",
-        "fr": "Énergie changée"
+        "fr": "Énergie changée",
+        "nl": "Energie gewijzigd",
+        "de": "Energie geändert"
       },
       "tokens": [
         {
@@ -74,7 +82,9 @@
       "id": "smartplug_current_changed",
       "title": {
         "en": "Current changed",
-        "fr": "Courant changé"
+        "fr": "Courant changé",
+        "nl": "Stroom gewijzigd",
+        "de": "Strom geändert"
       },
       "tokens": [
         {
@@ -97,7 +107,9 @@
       "id": "smartplug_voltage_changed",
       "title": {
         "en": "Voltage changed",
-        "fr": "Tension changée"
+        "fr": "Tension changée",
+        "nl": "Spanning gewijzigd",
+        "de": "Spannung geändert"
       },
       "tokens": [
         {
@@ -122,7 +134,9 @@
       "id": "smartplug_is_on",
       "title": {
         "en": "Is turned !{{on|off}}",
-        "fr": "Est !{{allume|eteint}}"
+        "fr": "Est !{{allume|eteint}}",
+        "nl": "Is !{{aan|uit}}",
+        "de": "Ist !{{an|aus}}"
       },
       "args": [],
       "titleFormatted": {
@@ -136,7 +150,9 @@
       "id": "smartplug_turn_on",
       "title": {
         "en": "Turn on",
-        "fr": "Allumer"
+        "fr": "Allumer",
+        "nl": "Zet aan",
+        "de": "Einschalten"
       },
       "args": [],
       "titleFormatted": {
@@ -148,7 +164,9 @@
       "id": "smartplug_turn_off",
       "title": {
         "en": "Turn off",
-        "fr": "Eteindre"
+        "fr": "Eteindre",
+        "nl": "Zet uit",
+        "de": "Ausschalten"
       },
       "args": [],
       "titleFormatted": {
@@ -160,7 +178,9 @@
       "id": "smartplug_toggle",
       "title": {
         "en": "Toggle",
-        "fr": "Basculer"
+        "fr": "Basculer",
+        "nl": "Wisselen",
+        "de": "Umschalten"
       },
       "args": [],
       "titleFormatted": {
@@ -172,7 +192,9 @@
       "id": "smartplug_enable_child_lock",
       "title": {
         "en": "Enable child lock",
-        "fr": "Activer verrou enfant"
+        "fr": "Activer verrou enfant",
+        "nl": "Kinderslot inschakelen",
+        "de": "Kindersicherung aktivieren"
       },
       "args": [],
       "titleFormatted": {
@@ -184,7 +206,9 @@
       "id": "smartplug_disable_child_lock",
       "title": {
         "en": "Disable child lock",
-        "fr": "Désactiver verrou enfant"
+        "fr": "Désactiver verrou enfant",
+        "nl": "Kinderslot uitschakelen",
+        "de": "Kindersicherung deaktivieren"
       },
       "args": [],
       "titleFormatted": {

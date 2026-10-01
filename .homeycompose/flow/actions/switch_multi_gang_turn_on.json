@@ -2,7 +2,9 @@
   "id": "switch_multi_gang_turn_on",
   "title": {
     "en": "Turn on Gang..",
-    "fr": "Allumer Bouton.."
+    "fr": "Allumer Bouton..",
+    "nl": "Kanaal aanzetten…",
+    "de": "Kanal einschalten…"
   },
   "args": [
     {
@@ -52,5 +54,11 @@
         }
       ]
     }
-  ]
+  ],
+  "titleFormatted": {
+    "en": "Turn on Gang [[gang]] ([[device]])",
+    "fr": "Allumer Bouton [[gang]] ([[device]])",
+    "nl": "Kanaal aanzetten [[gang]] ([[device]])",
+    "de": "Kanal einschalten [[gang]] ([[device]])"
+  }
 }

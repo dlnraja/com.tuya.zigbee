@@ -3,7 +3,10 @@
     {
       "id": "wifi_ewelink_led_turned_on",
       "title": {
-        "en": "Turned on"
+        "en": "Turned on",
+        "fr": "Allumé",
+        "nl": "Aangezet",
+        "de": "Eingeschaltet"
       },
       "args": [],
       "titleFormatted": {
@@ -13,7 +16,10 @@
     {
       "id": "wifi_ewelink_led_turned_off",
       "title": {
-        "en": "Turned off"
+        "en": "Turned off",
+        "fr": "Éteint",
+        "nl": "Uitgezet",
+        "de": "Ausgeschaltet"
       },
       "args": [],
       "titleFormatted": {
@@ -24,7 +30,9 @@
       "id": "wifi_ewelink_led_brightness_changed",
       "title": {
         "en": "Brightness changed",
-        "fr": "Luminosité changée"
+        "fr": "Luminosité changée",
+        "nl": "Helderheid gewijzigd",
+        "de": "Helligkeit geändert"
       },
       "tokens": [
         {
@@ -48,7 +56,10 @@
     {
       "id": "wifi_ewelink_led_is_on",
       "title": {
-        "en": "Is on"
+        "en": "Is on",
+        "fr": "Est allumé",
+        "nl": "Is aan",
+        "de": "Ist an"
       },
       "args": [],
       "titleFormatted": {
@@ -60,7 +71,10 @@
     {
       "id": "wifi_ewelink_led_set_dim",
       "title": {
-        "en": "Set dim level"
+        "en": "Set dim level",
+        "fr": "Régler le niveau de variation",
+        "nl": "Dimniveau instellen",
+        "de": "Dimmstufe einstellen"
       },
       "args": [
         {
@@ -73,7 +87,10 @@
         }
       ],
       "titleFormatted": {
-        "en": "Set dim level [[dim]]"
+        "en": "Set dim level [[dim]]",
+        "fr": "Régler le niveau de variation [[dim]]",
+        "nl": "Dimniveau instellen [[dim]]",
+        "de": "Dimmstufe einstellen [[dim]]"
       }
     },
     {

@@ -4,7 +4,9 @@
       "id": "dimmer_bulb_dimmable_bulb_dimmable_dimmer_bu_9e8af",
       "title": {
         "en": "Turned on",
-        "fr": "Allumé"
+        "fr": "Allumé",
+        "nl": "Aangezet",
+        "de": "Eingeschaltet"
       },
       "args": [],
       "titleFormatted": {
@@ -16,7 +18,9 @@
       "id": "dimmer_bulb_dimmable_bulb_dimmable_dimmer_bu_0828e",
       "title": {
         "en": "Turned off",
-        "fr": "Éteint"
+        "fr": "Éteint",
+        "nl": "Uitgezet",
+        "de": "Ausgeschaltet"
       },
       "args": [],
       "titleFormatted": {
@@ -28,7 +32,9 @@
       "id": "dimmer_bulb_dimmable_bulb_dimmable_dimmer_bu_220ad",
       "title": {
         "en": "Brightness changed",
-        "fr": "Luminosité changée"
+        "fr": "Luminosité changée",
+        "nl": "Helderheid gewijzigd",
+        "de": "Helligkeit geändert"
       },
       "tokens": [
         {
@@ -99,7 +105,9 @@
       "id": "dimmer_bulb_dimmable_physical_on",
       "title": {
         "en": "Physical button on",
-        "fr": "Physical button on"
+        "fr": "Physical button on",
+        "nl": "Fysieke knop aan",
+        "de": "Physische Taste an"
       },
       "args": []
     },
@@ -107,7 +115,9 @@
       "id": "dimmer_bulb_dimmable_physical_off",
       "title": {
         "en": "Physical button off",
-        "fr": "Physical button off"
+        "fr": "Physical button off",
+        "nl": "Fysieke knop uit",
+        "de": "Physische Taste aus"
       },
       "args": []
     },
@@ -115,7 +125,9 @@
       "id": "dimmer_bulb_dimmable_measure_power_changed",
       "title": {
         "en": "Power changed",
-        "fr": "Puissance changée"
+        "fr": "Puissance changée",
+        "nl": "Vermogen gewijzigd",
+        "de": "Leistung geändert"
       },
       "tokens": [
         {
@@ -140,7 +152,9 @@
       "id": "dimmer_bulb_dimmable_bulb_dimmable_dimmer_bu_6c729",
       "title": {
         "en": "Is turned !{{on|off}}",
-        "fr": "Est !{{allumé|éteint}}"
+        "fr": "Est !{{allumé|éteint}}",
+        "nl": "Is !{{aan|uit}}",
+        "de": "Ist !{{an|aus}}"
       },
       "args": [],
       "titleFormatted": {
@@ -170,7 +184,9 @@
       "id": "dimmer_bulb_dimmable_bulb_dimmable_dimmer_bu_84d0c",
       "title": {
         "en": "Turn on",
-        "fr": "Allumer"
+        "fr": "Allumer",
+        "nl": "Zet aan",
+        "de": "Einschalten"
       },
       "args": [],
       "titleFormatted": {
@@ -182,7 +198,9 @@
       "id": "dimmer_bulb_dimmable_bulb_dimmable_dimmer_bu_72177",
       "title": {
         "en": "Turn off",
-        "fr": "Éteindre"
+        "fr": "Éteindre",
+        "nl": "Zet uit",
+        "de": "Ausschalten"
       },
       "args": [],
       "titleFormatted": {
@@ -194,7 +212,9 @@
       "id": "dimmer_bulb_dimmable_bulb_dimmable_dimmer_bu_3dc54",
       "title": {
         "en": "Toggle on or off",
-        "fr": "Basculer"
+        "fr": "Basculer",
+        "nl": "Aan of uit wisselen",
+        "de": "Ein/Aus umschalten"
       },
       "args": [],
       "titleFormatted": {
@@ -206,7 +226,9 @@
       "id": "dimmer_bulb_dimmable_bulb_dimmable_dimmer_bu_631da",
       "title": {
         "en": "Set brightness to...",
-        "fr": "Régler la luminosité à..."
+        "fr": "Régler la luminosité à...",
+        "nl": "Helderheid instellen op…",
+        "de": "Helligkeit einstellen auf…"
       },
       "args": [
         {

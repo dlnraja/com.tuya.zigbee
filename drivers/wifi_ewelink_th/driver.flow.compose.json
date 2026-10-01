@@ -3,7 +3,10 @@
     {
       "id": "wifi_ewelink_th_temperature_changed",
       "title": {
-        "en": "Temperature changed"
+        "en": "Temperature changed",
+        "fr": "Température modifiée",
+        "nl": "Temperatuur gewijzigd",
+        "de": "Temperatur geändert"
       },
       "tokens": [
         {
@@ -23,7 +26,10 @@
     {
       "id": "wifi_ewelink_th_humidity_changed",
       "title": {
-        "en": "Humidity changed"
+        "en": "Humidity changed",
+        "fr": "Humidité modifiée",
+        "nl": "Luchtvochtigheid gewijzigd",
+        "de": "Luftfeuchtigkeit geändert"
       },
       "tokens": [
         {

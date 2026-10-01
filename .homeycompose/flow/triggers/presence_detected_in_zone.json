@@ -1,7 +1,10 @@
 {
   "id": "presence_detected_in_zone",
   "title": {
-    "en": "Presence detected in zone"
+    "en": "Presence detected in zone",
+    "fr": "Présence détectée dans la zone",
+    "nl": "Aanwezigheid gedetecteerd in zone",
+    "de": "Anwesenheit in Zone erkannt"
   },
   "hint": {
     "en": "Triggers when the Virtual Presence Detector determines a zone is occupied"

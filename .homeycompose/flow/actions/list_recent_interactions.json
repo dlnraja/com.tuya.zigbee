@@ -53,5 +53,11 @@
       },
       "example": 2
     }
-  ]
+  ],
+  "titleFormatted": {
+    "en": "List recent interactions of [[device]] [[limit]]",
+    "fr": "Lister les interactions récentes de [[device]] [[limit]]",
+    "nl": "Recente interacties van [[device]] opsommen [[limit]]",
+    "de": "Letzte Interaktionen von [[device]] auflisten [[limit]]"
+  }
 }

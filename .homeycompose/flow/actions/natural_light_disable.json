@@ -2,7 +2,9 @@
   "id": "natural_light_disable",
   "title": {
     "en": "Disable Solar Sync",
-    "fr": "Désactiver Synchro solaire"
+    "fr": "Désactiver Synchro solaire",
+    "nl": "Solar Sync uitschakelen",
+    "de": "Solar Sync deaktivieren"
   },
   "hint": {
     "en": "Remove this light from Daylight Atmosphere enrollment",
@@ -18,5 +20,11 @@
       },
       "filter": "capabilities=dim|capabilities=light_temperature|capabilities=light_hue"
     }
-  ]
+  ],
+  "titleFormatted": {
+    "en": "Disable Solar Sync ([[device]])",
+    "fr": "Désactiver Synchro solaire ([[device]])",
+    "nl": "Solar Sync uitschakelen ([[device]])",
+    "de": "Solar Sync deaktivieren ([[device]])"
+  }
 }

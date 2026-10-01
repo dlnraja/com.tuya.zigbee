@@ -1,7 +1,10 @@
 {
   "id": "tariff_is_peak_period",
   "title": {
-    "en": "Currently in peak period"
+    "en": "Currently in peak period",
+    "fr": "Période de pointe en cours",
+    "nl": "Momenteel piekperiode",
+    "de": "Aktuell Spitzenzeit"
   },
   "hint": {
     "en": "Checks if the current time falls within a peak tariff period"
@@ -65,6 +68,9 @@
     }
   ],
   "titleFormatted": {
-    "en": "Currently in peak period [[period_type]]"
+    "en": "Currently in peak period [[period_type]]",
+    "fr": "Période de pointe en cours [[period_type]]",
+    "nl": "Momenteel piekperiode [[period_type]]",
+    "de": "Aktuell Spitzenzeit [[period_type]]"
   }
 }

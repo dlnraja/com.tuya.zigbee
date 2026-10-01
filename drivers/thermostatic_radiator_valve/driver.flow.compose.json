@@ -4,7 +4,9 @@
       "id": "thermostatic_radiator_valve_target_temperature_changed",
       "title": {
         "en": "Target temperature changed",
-        "fr": "Consigne changée"
+        "fr": "Consigne changée",
+        "nl": "Doeltemperatuur gewijzigd",
+        "de": "Zieltemperatur geändert"
       },
       "tokens": [
         {
@@ -148,7 +150,10 @@
     {
       "id": "thermostatic_radiator_valve_set_child_lock",
       "title": {
-        "en": "Set child lock"
+        "en": "Set child lock",
+        "fr": "Régler le verrouillage enfant",
+        "nl": "Kinderslot instellen",
+        "de": "Kindersicherung einstellen"
       },
       "hint": {
         "en": "Enable or disable child lock to prevent manual changes on the device"
@@ -174,7 +179,10 @@
         }
       ],
       "titleFormatted": {
-        "en": "Set child lock [[mode]]"
+        "en": "Set child lock [[mode]]",
+        "fr": "Régler le verrouillage enfant [[mode]]",
+        "nl": "Kinderslot instellen [[mode]]",
+        "de": "Kindersicherung einstellen [[mode]]"
       }
     },
     {

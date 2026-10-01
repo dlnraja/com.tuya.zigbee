@@ -1,7 +1,10 @@
 {
   "id": "condition_evaluate_set",
   "title": {
-    "en": "Evaluate condition set"
+    "en": "Evaluate condition set",
+    "fr": "Évaluer un ensemble de conditions",
+    "nl": "Voorwaardenset evalueren",
+    "de": "Bedingungssatz auswerten"
   },
   "hint": {
     "en": "Evaluate a named condition set and trigger if all conditions are met"
@@ -38,5 +41,11 @@
         "en": "Condition set evaluated"
       }
     }
-  ]
+  ],
+  "titleFormatted": {
+    "en": "Evaluate condition set [[condition_set_id]] ([[device]])",
+    "fr": "Évaluer un ensemble de conditions [[condition_set_id]] ([[device]])",
+    "nl": "Voorwaardenset evalueren [[condition_set_id]] ([[device]])",
+    "de": "Bedingungssatz auswerten [[condition_set_id]] ([[device]])"
+  }
 }

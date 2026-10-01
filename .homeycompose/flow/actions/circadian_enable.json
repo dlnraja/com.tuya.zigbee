@@ -16,5 +16,11 @@
       "type": "device",
       "filter": "capabilities=light_color_temp|light_hue|dim"
     }
-  ]
+  ],
+  "titleFormatted": {
+    "en": "Enable circadian lighting ([[device]])",
+    "fr": "Activer l'éclairage circadien ([[device]])",
+    "nl": "Circadiaanse verlichting inschakelen ([[device]])",
+    "de": "Zirkadiane Beleuchtung aktivieren ([[device]])"
+  }
 }

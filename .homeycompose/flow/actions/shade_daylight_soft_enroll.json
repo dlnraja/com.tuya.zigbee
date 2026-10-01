@@ -2,7 +2,9 @@
   "id": "shade_daylight_soft_enroll",
   "title": {
     "en": "Shade Daylight Soft — solar open/close",
-    "fr": "Shade Daylight Soft — ouvrir/fermer au soleil"
+    "fr": "Shade Daylight Soft — ouvrir/fermer au soleil",
+    "nl": "Shade Daylight Soft — openen/sluiten op zon",
+    "de": "Shade Daylight Soft — Öffnen/Schließen nach Sonne"
   },
   "hint": {
     "en": "Closes cover at dusk and opens at dawn from solar elevation",
@@ -13,7 +15,16 @@
       "type": "device",
       "name": "cover",
       "filter": "capabilities=windowcoverings_set|capabilities=windowcoverings_state",
-      "title": { "en": "Cover / shade", "fr": "Volet / store" }
+      "title": {
+        "en": "Cover / shade",
+        "fr": "Volet / store"
+      }
     }
-  ]
+  ],
+  "titleFormatted": {
+    "en": "Shade Daylight Soft — solar open/close ([[cover]])",
+    "fr": "Shade Daylight Soft — ouvrir/fermer au soleil ([[cover]])",
+    "nl": "Shade Daylight Soft — openen/sluiten op zon ([[cover]])",
+    "de": "Shade Daylight Soft — Öffnen/Schließen nach Sonne ([[cover]])"
+  }
 }

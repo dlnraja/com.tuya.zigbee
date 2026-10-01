@@ -2,7 +2,9 @@
   "id": "switch_multi_gang_turn_off",
   "title": {
     "en": "Turn off Gang..",
-    "fr": "Eteindre Bouton.."
+    "fr": "Eteindre Bouton..",
+    "nl": "Kanaal uitzetten…",
+    "de": "Kanal ausschalten…"
   },
   "args": [
     {
@@ -52,5 +54,11 @@
         }
       ]
     }
-  ]
+  ],
+  "titleFormatted": {
+    "en": "Turn off Gang [[gang]] ([[device]])",
+    "fr": "Eteindre Bouton [[gang]] ([[device]])",
+    "nl": "Kanaal uitzetten [[gang]] ([[device]])",
+    "de": "Kanal ausschalten [[gang]] ([[device]])"
+  }
 }

@@ -1,0 +1,73 @@
+{
+  "id": "child_lock_changed",
+  "title": {
+    "en": "Child lock changed",
+    "fr": "Verrouillage enfant modifié",
+    "nl": "Kinderslot gewijzigd",
+    "de": "Kindersicherung geändert"
+  },
+  "args": [
+    {
+      "type": "device",
+      "name": "device",
+      "title": {
+        "en": "Device",
+        "fr": "Appareil",
+        "nl": "Apparaat",
+        "de": "Gerät"
+      }
+    },
+    {
+      "type": "dropdown",
+      "name": "state",
+      "title": {
+        "en": "State",
+        "fr": "État",
+        "nl": "Status",
+        "de": "Zustand"
+      },
+      "values": [
+        {
+          "id": "on",
+          "label": {
+            "en": "on",
+            "fr": "allumé",
+            "nl": "aan",
+            "de": "an"
+          }
+        },
+        {
+          "id": "off",
+          "label": {
+            "en": "off",
+            "fr": "éteint",
+            "nl": "uit",
+            "de": "aus"
+          }
+        },
+        {
+          "id": "any",
+          "label": {
+            "en": "on or off",
+            "fr": "allumé ou éteint",
+            "nl": "aan of uit",
+            "de": "an oder aus"
+          }
+        }
+      ]
+    }
+  ],
+  "tokens": [
+    {
+      "name": "state",
+      "type": "string",
+      "title": {
+        "en": "State",
+        "fr": "État",
+        "nl": "Status",
+        "de": "Zustand"
+      },
+      "example": "on"
+    }
+  ]
+}

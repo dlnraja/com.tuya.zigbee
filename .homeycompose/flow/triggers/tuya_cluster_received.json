@@ -2,7 +2,9 @@
   "id": "tuya_cluster_received",
   "title": {
     "en": "Zigbee cluster event received",
-    "fr": "Événement cluster Zigbee reçu"
+    "fr": "Événement cluster Zigbee reçu",
+    "nl": "Zigbee-clustergebeurtenis ontvangen",
+    "de": "Zigbee-Cluster-Ereignis empfangen"
   },
   "hint": {
     "en": "Triggers when a manufacturer cluster frame is received (0xE000-0xFFFF).",

@@ -4,7 +4,9 @@
       "id": "contact_sensor_dimmer_button_pressed",
       "title": {
         "en": "Button pressed",
-        "fr": "Bouton pressé"
+        "fr": "Bouton pressé",
+        "nl": "Knop ingedrukt",
+        "de": "Taste gedrückt"
       },
       "tokens": [
         {
@@ -221,7 +223,9 @@
       "id": "contact_sensor_dimmer_illuminance_changed",
       "title": {
         "en": "Illuminance changed",
-        "fr": "Luminosité ambiante changée"
+        "fr": "Luminosité ambiante changée",
+        "nl": "Verlichtingssterkte gewijzigd",
+        "de": "Beleuchtungsstärke geändert"
       },
       "tokens": [
         {
@@ -244,7 +248,9 @@
       "id": "contact_sensor_dimmer_measure_power_changed",
       "title": {
         "en": "Power changed",
-        "fr": "Puissance changée"
+        "fr": "Puissance changée",
+        "nl": "Vermogen gewijzigd",
+        "de": "Leistung geändert"
       },
       "tokens": [
         {

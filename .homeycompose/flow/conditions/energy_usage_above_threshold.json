@@ -1,7 +1,10 @@
 {
   "id": "energy_usage_above_threshold",
   "title": {
-    "en": "Energy usage above [[threshold_kwh]] kWh"
+    "en": "Energy usage above [[threshold_kwh]] kWh",
+    "fr": "Consommation d'énergie au-dessus de",
+    "nl": "Energieverbruik boven",
+    "de": "Energieverbrauch über"
   },
   "hint": {
     "en": "Checks if the tracked energy usage exceeds a threshold within a time window"

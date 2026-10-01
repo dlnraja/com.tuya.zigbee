@@ -4,7 +4,9 @@
       "id": "smart_screen_switch_motion_detected",
       "title": {
         "en": "Motion detected",
-        "fr": "Mouvement détecté"
+        "fr": "Mouvement détecté",
+        "nl": "Beweging gedetecteerd",
+        "de": "Bewegung erkannt"
       },
       "titleFormatted": {
         "en": "Motion detected",
@@ -15,7 +17,9 @@
       "id": "smart_screen_switch_physical_on",
       "title": {
         "en": "Physical button on",
-        "fr": "Physical button on"
+        "fr": "Physical button on",
+        "nl": "Fysieke knop aan",
+        "de": "Physische Taste an"
       },
       "args": []
     },
@@ -23,7 +27,9 @@
       "id": "smart_screen_switch_physical_off",
       "title": {
         "en": "Physical button off",
-        "fr": "Physical button off"
+        "fr": "Physical button off",
+        "nl": "Fysieke knop uit",
+        "de": "Physische Taste aus"
       },
       "args": []
     },
@@ -31,7 +37,9 @@
       "id": "smart_screen_switch_position_changed",
       "title": {
         "en": "Position changed",
-        "fr": "Position changée"
+        "fr": "Position changée",
+        "nl": "Positie gewijzigd",
+        "de": "Position geändert"
       },
       "tokens": [
         {
@@ -54,7 +62,9 @@
       "id": "smart_screen_switch_illuminance_changed",
       "title": {
         "en": "Illuminance changed",
-        "fr": "Luminosité ambiante changée"
+        "fr": "Luminosité ambiante changée",
+        "nl": "Verlichtingssterkte gewijzigd",
+        "de": "Beleuchtungsstärke geändert"
       },
       "tokens": [
         {
@@ -77,7 +87,9 @@
       "id": "smart_screen_switch_temperature_changed",
       "title": {
         "en": "Temperature changed",
-        "fr": "Température changée"
+        "fr": "Température changée",
+        "nl": "Temperatuur gewijzigd",
+        "de": "Temperatur geändert"
       },
       "tokens": [
         {
@@ -102,7 +114,9 @@
       "id": "smart_screen_switch_motion_active",
       "title": {
         "en": "Motion !{{is|is not}} detected",
-        "fr": "Mouvement !{{détecté|non détecté}}"
+        "fr": "Mouvement !{{détecté|non détecté}}",
+        "nl": "Beweging !{{wordt|wordt niet}} gedetecteerd",
+        "de": "Bewegung !{{wird|wird nicht}} erkannt"
       },
       "titleFormatted": {
         "en": "Motion !{{is|is not}} detected",

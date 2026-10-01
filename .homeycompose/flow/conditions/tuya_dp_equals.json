@@ -2,7 +2,9 @@
   "id": "tuya_dp_equals",
   "title": {
     "en": "Tuya DP [[dp]] equals [[value]]",
-    "fr": "DP Tuya [[dp]] égal à [[value]]"
+    "fr": "DP Tuya [[dp]] égal à [[value]]",
+    "nl": "Tuya-DP is gelijk aan",
+    "de": "Tuya-DP ist gleich"
   },
   "hint": {
     "en": "Check if a raw Tuya datapoint has a specific value",
@@ -32,5 +34,11 @@
         "fr": "Valeur"
       }
     }
-  ]
+  ],
+  "titleFormatted": {
+    "en": "Tuya DP [[dp]] equals [[value]] ([[device]])",
+    "fr": "DP Tuya [[dp]] égal à [[value]] ([[device]])",
+    "nl": "Tuya-DP is gelijk aan [[dp]] [[value]] ([[device]])",
+    "de": "Tuya-DP ist gleich [[dp]] [[value]] ([[device]])"
+  }
 }

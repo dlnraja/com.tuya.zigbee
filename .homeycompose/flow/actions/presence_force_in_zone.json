@@ -1,7 +1,10 @@
 {
   "id": "presence_force_in_zone",
   "title": {
-    "en": "Force presence in zone"
+    "en": "Force presence in zone",
+    "fr": "Forcer la présence dans la zone",
+    "nl": "Aanwezigheid in zone forceren",
+    "de": "Anwesenheit in Zone erzwingen"
   },
   "hint": {
     "en": "Force presence state in a Virtual Presence Detector zone (present or clear)"

@@ -3,7 +3,10 @@
     {
       "id": "smart_scene_panel_scene_activated",
       "title": {
-        "en": "Scene activated"
+        "en": "Scene activated",
+        "fr": "Scène activée",
+        "nl": "Scène geactiveerd",
+        "de": "Szene aktiviert"
       },
       "args": [
         {
@@ -38,13 +41,19 @@
         }
       ],
       "titleFormatted": {
-        "en": "Scene activated [[scene]]"
+        "en": "Scene activated [[scene]]",
+        "fr": "Scène activée [[scene]]",
+        "nl": "Scène geactiveerd [[scene]]",
+        "de": "Szene aktiviert [[scene]]"
       }
     },
     {
       "id": "smart_scene_panel_switch_1_changed",
       "title": {
-        "en": "Switch 1 changed"
+        "en": "Switch 1 changed",
+        "fr": "Interrupteur 1 modifié",
+        "nl": "Schakelaar 1 gewijzigd",
+        "de": "Schalter 1 geändert"
       },
       "args": [],
       "titleFormatted": {
@@ -54,7 +63,10 @@
     {
       "id": "smart_scene_panel_switch_2_changed",
       "title": {
-        "en": "Switch 2 changed"
+        "en": "Switch 2 changed",
+        "fr": "Interrupteur 2 modifié",
+        "nl": "Schakelaar 2 gewijzigd",
+        "de": "Schalter 2 geändert"
       },
       "args": [],
       "titleFormatted": {
@@ -64,7 +76,10 @@
     {
       "id": "smart_scene_panel_switch_3_changed",
       "title": {
-        "en": "Switch 3 changed"
+        "en": "Switch 3 changed",
+        "fr": "Interrupteur 3 modifié",
+        "nl": "Schakelaar 3 gewijzigd",
+        "de": "Schalter 3 geändert"
       },
       "args": [],
       "titleFormatted": {
@@ -74,7 +89,10 @@
     {
       "id": "smart_scene_panel_switch_4_changed",
       "title": {
-        "en": "Switch 4 changed"
+        "en": "Switch 4 changed",
+        "fr": "Interrupteur 4 modifié",
+        "nl": "Schakelaar 4 gewijzigd",
+        "de": "Schalter 4 geändert"
       },
       "args": [],
       "titleFormatted": {
@@ -86,7 +104,10 @@
     {
       "id": "smart_scene_panel_set_switch_1",
       "title": {
-        "en": "Set switch 1"
+        "en": "Set switch 1",
+        "fr": "Régler l'interrupteur 1",
+        "nl": "Schakelaar 1 instellen",
+        "de": "Schalter 1 einstellen"
       },
       "args": [
         {
@@ -95,13 +116,19 @@
         }
       ],
       "titleFormatted": {
-        "en": "Set switch 1 [[state]]"
+        "en": "Set switch 1 [[state]]",
+        "fr": "Régler l'interrupteur 1 [[state]]",
+        "nl": "Schakelaar 1 instellen [[state]]",
+        "de": "Schalter 1 einstellen [[state]]"
       }
     },
     {
       "id": "smart_scene_panel_set_switch_2",
       "title": {
-        "en": "Set switch 2"
+        "en": "Set switch 2",
+        "fr": "Régler l'interrupteur 2",
+        "nl": "Schakelaar 2 instellen",
+        "de": "Schalter 2 einstellen"
       },
       "args": [
         {
@@ -110,13 +137,19 @@
         }
       ],
       "titleFormatted": {
-        "en": "Set switch 2 [[state]]"
+        "en": "Set switch 2 [[state]]",
+        "fr": "Régler l'interrupteur 2 [[state]]",
+        "nl": "Schakelaar 2 instellen [[state]]",
+        "de": "Schalter 2 einstellen [[state]]"
       }
     },
     {
       "id": "smart_scene_panel_set_switch_3",
       "title": {
-        "en": "Set switch 3"
+        "en": "Set switch 3",
+        "fr": "Régler l'interrupteur 3",
+        "nl": "Schakelaar 3 instellen",
+        "de": "Schalter 3 einstellen"
       },
       "args": [
         {
@@ -125,13 +158,19 @@
         }
       ],
       "titleFormatted": {
-        "en": "Set switch 3 [[state]]"
+        "en": "Set switch 3 [[state]]",
+        "fr": "Régler l'interrupteur 3 [[state]]",
+        "nl": "Schakelaar 3 instellen [[state]]",
+        "de": "Schalter 3 einstellen [[state]]"
       }
     },
     {
       "id": "smart_scene_panel_set_switch_4",
       "title": {
-        "en": "Set switch 4"
+        "en": "Set switch 4",
+        "fr": "Régler l'interrupteur 4",
+        "nl": "Schakelaar 4 instellen",
+        "de": "Schalter 4 einstellen"
       },
       "args": [
         {
@@ -140,7 +179,10 @@
         }
       ],
       "titleFormatted": {
-        "en": "Set switch 4 [[state]]"
+        "en": "Set switch 4 [[state]]",
+        "fr": "Régler l'interrupteur 4 [[state]]",
+        "nl": "Schakelaar 4 instellen [[state]]",
+        "de": "Schalter 4 einstellen [[state]]"
       }
     }
   ],

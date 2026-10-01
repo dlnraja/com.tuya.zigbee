@@ -2,27 +2,44 @@
   "id": "mirror_light_sync_enroll",
   "title": {
     "en": "Mirror Light Sync — master to followers",
-    "fr": "Mirror Light Sync — maître vers suiveurs"
+    "fr": "Mirror Light Sync — maître vers suiveurs",
+    "nl": "Mirror Light Sync — master naar volgers",
+    "de": "Mirror Light Sync — Master zu Folgern"
   },
   "args": [
     {
       "type": "device",
       "name": "master",
       "filter": "capabilities=onoff",
-      "title": { "en": "Master light", "fr": "Lumière maître" }
+      "title": {
+        "en": "Master light",
+        "fr": "Lumière maître"
+      }
     },
     {
       "type": "device",
       "name": "follower_a",
       "filter": "capabilities=onoff",
-      "title": { "en": "Follower A", "fr": "Suiveur A" }
+      "title": {
+        "en": "Follower A",
+        "fr": "Suiveur A"
+      }
     },
     {
       "type": "device",
       "name": "follower_b",
       "filter": "capabilities=onoff",
-      "title": { "en": "Follower B (optional)", "fr": "Suiveur B (option)" },
+      "title": {
+        "en": "Follower B (optional)",
+        "fr": "Suiveur B (option)"
+      },
       "optional": true
     }
-  ]
+  ],
+  "titleFormatted": {
+    "en": "Mirror Light Sync — master to followers ([[master]] [[follower_a]] [[follower_b]])",
+    "fr": "Mirror Light Sync — maître vers suiveurs ([[master]] [[follower_a]] [[follower_b]])",
+    "nl": "Mirror Light Sync — master naar volgers ([[master]] [[follower_a]] [[follower_b]])",
+    "de": "Mirror Light Sync — Master zu Folgern ([[master]] [[follower_a]] [[follower_b]])"
+  }
 }

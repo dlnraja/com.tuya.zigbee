@@ -4,7 +4,9 @@
       "id": "button_wireless_button_pressed",
       "title": {
         "en": "Button pressed",
-        "fr": "Bouton appuyé"
+        "fr": "Bouton appuyé",
+        "nl": "Knop ingedrukt",
+        "de": "Taste gedrückt"
       },
       "tokens": [
         {
@@ -73,7 +75,9 @@
       "id": "button_wireless_button_release",
       "title": {
         "en": "Button released",
-        "fr": "Bouton relâché"
+        "fr": "Bouton relâché",
+        "nl": "Knop losgelaten",
+        "de": "Taste losgelassen"
       },
       "tokens": [
         {
@@ -96,7 +100,9 @@
       "id": "button_wireless_battery_low",
       "title": {
         "en": "Battery low",
-        "fr": "Batterie faible"
+        "fr": "Batterie faible",
+        "nl": "Batterij bijna leeg",
+        "de": "Batterie schwach"
       },
       "args": [],
       "titleFormatted": {

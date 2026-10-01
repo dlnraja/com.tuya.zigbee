@@ -3,7 +3,10 @@
     {
       "id": "wifi_ewelink_switch_turned_on",
       "title": {
-        "en": "Turned on"
+        "en": "Turned on",
+        "fr": "Allumé",
+        "nl": "Aangezet",
+        "de": "Eingeschaltet"
       },
       "args": [],
       "titleFormatted": {
@@ -13,7 +16,10 @@
     {
       "id": "wifi_ewelink_switch_turned_off",
       "title": {
-        "en": "Turned off"
+        "en": "Turned off",
+        "fr": "Éteint",
+        "nl": "Uitgezet",
+        "de": "Ausgeschaltet"
       },
       "args": [],
       "titleFormatted": {
@@ -25,7 +31,10 @@
     {
       "id": "wifi_ewelink_switch_is_on",
       "title": {
-        "en": "Is on"
+        "en": "Is on",
+        "fr": "Est allumé",
+        "nl": "Is aan",
+        "de": "Ist an"
       },
       "args": [],
       "titleFormatted": {

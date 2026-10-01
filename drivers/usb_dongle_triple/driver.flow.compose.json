@@ -3,7 +3,10 @@
     {
       "id": "usb_dongle_triple_turned_on",
       "title": {
-        "en": "Turned on"
+        "en": "Turned on",
+        "fr": "Allumé",
+        "nl": "Aangezet",
+        "de": "Eingeschaltet"
       },
       "args": [],
       "titleFormatted": {
@@ -13,7 +16,10 @@
     {
       "id": "usb_dongle_triple_turned_off",
       "title": {
-        "en": "Turned off"
+        "en": "Turned off",
+        "fr": "Éteint",
+        "nl": "Uitgezet",
+        "de": "Ausgeschaltet"
       },
       "args": [],
       "titleFormatted": {
@@ -23,7 +29,10 @@
     {
       "id": "usb_dongle_triple_power_changed",
       "title": {
-        "en": "Power changed"
+        "en": "Power changed",
+        "fr": "Puissance modifiée",
+        "nl": "Vermogen gewijzigd",
+        "de": "Leistung geändert"
       },
       "tokens": [
         {
@@ -44,7 +53,9 @@
       "id": "usb_dongle_triple_meter_power_changed",
       "title": {
         "en": "Energy changed",
-        "fr": "Énergie changée"
+        "fr": "Énergie changée",
+        "nl": "Energie gewijzigd",
+        "de": "Energie geändert"
       },
       "tokens": [
         {
@@ -67,7 +78,9 @@
       "id": "usb_dongle_triple_voltage_changed",
       "title": {
         "en": "Voltage changed",
-        "fr": "Tension changée"
+        "fr": "Tension changée",
+        "nl": "Spanning gewijzigd",
+        "de": "Spannung geändert"
       },
       "tokens": [
         {
@@ -90,7 +103,9 @@
       "id": "usb_dongle_triple_current_changed",
       "title": {
         "en": "Current changed",
-        "fr": "Courant changé"
+        "fr": "Courant changé",
+        "nl": "Stroom gewijzigd",
+        "de": "Strom geändert"
       },
       "tokens": [
         {
@@ -124,7 +139,10 @@
     {
       "id": "usb_dongle_triple_power_above",
       "title": {
-        "en": "Power !{{is|is not}} above"
+        "en": "Power !{{is|is not}} above",
+        "fr": "La puissance !{{est|n'est pas}} supérieure à",
+        "nl": "Vermogen !{{is|is niet}} hoger dan",
+        "de": "Leistung !{{liegt|liegt nicht}} über"
       },
       "args": [
         {
@@ -136,7 +154,10 @@
         }
       ],
       "titleFormatted": {
-        "en": "Power !{{is|is not}} above [[power]]"
+        "en": "Power !{{is|is not}} above [[power]]",
+        "fr": "La puissance !{{est|n'est pas}} supérieure à [[power]]",
+        "nl": "Vermogen !{{is|is niet}} hoger dan [[power]]",
+        "de": "Leistung !{{liegt|liegt nicht}} über [[power]]"
       }
     }
   ],

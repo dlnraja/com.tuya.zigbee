@@ -1,0 +1,57 @@
+{
+  "id": "child_lock_set",
+  "title": {
+    "en": "Set child lock",
+    "fr": "Régler le verrouillage enfant",
+    "nl": "Kinderslot instellen",
+    "de": "Kindersicherung einstellen"
+  },
+  "titleFormatted": {
+    "en": "Turn child lock of [[device]] [[state]]",
+    "fr": "Verrouillage enfant de [[device]] : [[state]]",
+    "nl": "Zet kinderslot van [[device]] [[state]]",
+    "de": "Kindersicherung von [[device]] [[state]]"
+  },
+  "args": [
+    {
+      "type": "device",
+      "name": "device",
+      "title": {
+        "en": "Device",
+        "fr": "Appareil",
+        "nl": "Apparaat",
+        "de": "Gerät"
+      }
+    },
+    {
+      "type": "dropdown",
+      "name": "state",
+      "title": {
+        "en": "State",
+        "fr": "État",
+        "nl": "Status",
+        "de": "Zustand"
+      },
+      "values": [
+        {
+          "id": "on",
+          "label": {
+            "en": "on",
+            "fr": "activé",
+            "nl": "aan",
+            "de": "an"
+          }
+        },
+        {
+          "id": "off",
+          "label": {
+            "en": "off",
+            "fr": "désactivé",
+            "nl": "uit",
+            "de": "aus"
+          }
+        }
+      ]
+    }
+  ]
+}

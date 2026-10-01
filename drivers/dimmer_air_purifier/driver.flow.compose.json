@@ -4,7 +4,10 @@
       "id": "dimmer_air_purifier_air_purifier_dimmer_wall_e4263",
       "args": [],
       "title": {
-        "en": "Turned on - physical button"
+        "en": "Turned on - physical button",
+        "fr": "Allumé - bouton physique",
+        "nl": "Aangezet - fysieke knop",
+        "de": "Eingeschaltet - physische Taste"
       },
       "titleFormatted": {
         "en": "Turned on - physical button"
@@ -14,7 +17,10 @@
       "id": "dimmer_air_purifier_air_purifier_dimmer_wall_1049d",
       "args": [],
       "title": {
-        "en": "Turned off - physical button"
+        "en": "Turned off - physical button",
+        "fr": "Éteint - bouton physique",
+        "nl": "Uitgezet - fysieke knop",
+        "de": "Ausgeschaltet - physische Taste"
       },
       "titleFormatted": {
         "en": "Turned off - physical button"
@@ -24,7 +30,10 @@
       "id": "dimmer_air_purifier_air_purifier_dimmer_wall_79bcf",
       "args": [],
       "title": {
-        "en": "Brightness increased - physical"
+        "en": "Brightness increased - physical",
+        "fr": "Luminosité augmentée (physique)",
+        "nl": "Helderheid verhoogd (fysiek)",
+        "de": "Helligkeit erhöht (physisch)"
       },
       "tokens": [
         {
@@ -44,7 +53,10 @@
       "id": "dimmer_air_purifier_air_purifier_dimmer_wall_59e68",
       "args": [],
       "title": {
-        "en": "Brightness decreased - physical"
+        "en": "Brightness decreased - physical",
+        "fr": "Luminosité diminuée (physique)",
+        "nl": "Helderheid verlaagd (fysiek)",
+        "de": "Helligkeit verringert (physisch)"
       },
       "tokens": [
         {
@@ -64,7 +76,9 @@
       "id": "dimmer_air_purifier_air_purifier_dimmer_wall_92f9b",
       "title": {
         "en": "Turned on",
-        "fr": "Allumé"
+        "fr": "Allumé",
+        "nl": "Aangezet",
+        "de": "Eingeschaltet"
       },
       "args": [],
       "titleFormatted": {
@@ -76,7 +90,9 @@
       "id": "dimmer_air_purifier_air_purifier_dimmer_wall_afbde",
       "title": {
         "en": "Turned off",
-        "fr": "Éteint"
+        "fr": "Éteint",
+        "nl": "Uitgezet",
+        "de": "Ausgeschaltet"
       },
       "args": [],
       "titleFormatted": {
@@ -88,7 +104,9 @@
       "id": "dimmer_air_purifier_air_purifier_dimmer_wall_96146",
       "title": {
         "en": "Brightness changed",
-        "fr": "Luminosité changée"
+        "fr": "Luminosité changée",
+        "nl": "Helderheid gewijzigd",
+        "de": "Helligkeit geändert"
       },
       "tokens": [
         {
@@ -159,7 +177,9 @@
       "id": "dimmer_air_purifier_measure_power_changed",
       "title": {
         "en": "Power changed",
-        "fr": "Puissance changée"
+        "fr": "Puissance changée",
+        "nl": "Vermogen gewijzigd",
+        "de": "Leistung geändert"
       },
       "tokens": [
         {
@@ -182,7 +202,9 @@
       "id": "dimmer_air_purifier_pm25_changed",
       "title": {
         "en": "PM2.5 changed",
-        "fr": "PM2.5 changé"
+        "fr": "PM2.5 changé",
+        "nl": "PM2.5 gewijzigd",
+        "de": "PM2.5 geändert"
       },
       "tokens": [
         {
@@ -207,7 +229,9 @@
       "id": "dimmer_air_purifier_air_purifier_dimmer_wall_9b26f",
       "title": {
         "en": "Is turned !{{on|off}}",
-        "fr": "Est !{{allumé|éteint}}"
+        "fr": "Est !{{allumé|éteint}}",
+        "nl": "Is !{{aan|uit}}",
+        "de": "Ist !{{an|aus}}"
       },
       "args": [],
       "titleFormatted": {
@@ -237,7 +261,9 @@
       "id": "dimmer_air_purifier_air_purifier_dimmer_wall_a0fdd",
       "title": {
         "en": "Turn on",
-        "fr": "Allumer"
+        "fr": "Allumer",
+        "nl": "Zet aan",
+        "de": "Einschalten"
       },
       "args": [],
       "titleFormatted": {
@@ -249,7 +275,9 @@
       "id": "dimmer_air_purifier_air_purifier_dimmer_wall_32169",
       "title": {
         "en": "Turn off",
-        "fr": "Éteindre"
+        "fr": "Éteindre",
+        "nl": "Zet uit",
+        "de": "Ausschalten"
       },
       "args": [],
       "titleFormatted": {
@@ -261,7 +289,9 @@
       "id": "dimmer_air_purifier_air_purifier_dimmer_wall_9df13",
       "title": {
         "en": "Toggle on or off",
-        "fr": "Basculer"
+        "fr": "Basculer",
+        "nl": "Aan of uit wisselen",
+        "de": "Ein/Aus umschalten"
       },
       "args": [],
       "titleFormatted": {
@@ -273,7 +303,9 @@
       "id": "dimmer_air_purifier_air_purifier_dimmer_wall_10f30",
       "title": {
         "en": "Set brightness to...",
-        "fr": "Régler la luminosité à..."
+        "fr": "Régler la luminosité à...",
+        "nl": "Helderheid instellen op…",
+        "de": "Helligkeit einstellen auf…"
       },
       "args": [
         {
