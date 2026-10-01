@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-30T18:38:29.210Z",
+  "generatedAt": "2026-10-01T07:47:07.682Z",
   "mode": "APPLY",
   "phases": [
     {
@@ -42,7 +42,7 @@
       "name": "p2368-mfs-test",
       "ok": true,
       "exit": 0,
-      "tail": "    duration_ms: 51.687149\n      type: 'test'\n      ...\n    # Subtest: no case-duplicate mfr keys\n    ok 5 - no case-duplicate mfr keys\n      ---\n      duration_ms: 55.000525\n      type: 'test'\n      ...\n    # Subtest: UdpDiscoveryKeys SSOT exists (wifi unrelated sanity)\n    ok 6 - UdpDiscoveryKeys SSOT exists (wifi unrelated sanity)\n      ---\n      duration_ms: 0.251498\n      type: 'test'\n      ...\n    1..6\nok 1 - P2368 mfs_db hardening\n  ---\n  duration_ms: 557.423894\n  type: 'suite'\n  ...\n1..1\n# tests 6\n# suites 1\n# pass 6\n# fail 0\n# cancelled 0\n# skipped 0\n# todo 0\n# duration_ms 628.748141\n"
+      "tail": "     duration_ms: 49.816309\n      type: 'test'\n      ...\n    # Subtest: no case-duplicate mfr keys\n    ok 5 - no case-duplicate mfr keys\n      ---\n      duration_ms: 53.217671\n      type: 'test'\n      ...\n    # Subtest: UdpDiscoveryKeys SSOT exists (wifi unrelated sanity)\n    ok 6 - UdpDiscoveryKeys SSOT exists (wifi unrelated sanity)\n      ---\n      duration_ms: 0.267019\n      type: 'test'\n      ...\n    1..6\nok 1 - P2368 mfs_db hardening\n  ---\n  duration_ms: 530.651912\n  type: 'suite'\n  ...\n1..1\n# tests 6\n# suites 1\n# pass 6\n# fail 0\n# cancelled 0\n# skipped 0\n# todo 0\n# duration_ms 599.16395\n"
     }
   ],
   "pass": true
