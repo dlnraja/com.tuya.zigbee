@@ -54,14 +54,14 @@ sibling IDs in the same fingerprint array already live in the chosen driver with
 
 | Topic | Finding | Applicability | Source URL |
 |---|---|---|---|
-| Repair views | Homey loads repair views only from `drivers/<id>/repair/`; views placed in `pair/` are silently ignored | 53 of our WiFi drivers declare a `configure` repair view with only `pair/configure.html` present → flagged to the WiFi owner (not changed here) | https://community.homey.app/t/154077 (v1.0.23 notes) |
-| Periodic alarm pulse | some firmwares emit an alarm pulse about every 60 min; guard timestamp must survive restarts | same pattern as our contact keep-alive guard; consider persisting guard timestamps | https://community.homey.app/t/154077 (v1.0.26 notes) |
-| Triggers after restart | a trigger comparing against a stored previous value fired right after app restart | check "changed" triggers seeded from stale store values | https://community.homey.app/t/154077 (feeder report) |
-| Offline grace period | delay "disconnected" triggers by a configurable grace period to avoid night-time spam | idea for router/battery availability flows | https://community.homey.app/t/154077 |
+| Repair views | Homey loads repair views only from `drivers/<id>/repair/`; views placed in `pair/` are silently ignored | **DONE (P2768, master + stable)**: `drivers/<id>/repair/configure.html` added for every driver declaring the view; test `check:p2768` | https://community.homey.app/t/154077 (v1.0.23 notes) |
+| Periodic alarm pulse | some firmwares emit an alarm pulse about every 60 min; guard timestamp must survive restarts | **DONE (P2771, master)**: quirk type `alarm_pulse_guard` (`params.capability`, `periodMs`, `toleranceMs`), timestamp in device store; opt-in per pair, no pair enabled until a source cites one | https://community.homey.app/t/154077 (v1.0.26 notes) |
+| Triggers after restart | a trigger comparing against a stored previous value fired right after app restart | **DONE (P2770, master)**: `lib/flow/TriggerGuards.js`; first `*_changed` value within 45 s of init only sets the baseline (Zigbee trigger path) | https://community.homey.app/t/154077 (feeder report) |
+| Offline grace period | delay "disconnected" triggers by a configurable grace period to avoid night-time spam | **DONE (P2770, master)**: app setting `availability_trigger_grace_s` (default 120 s) delays `device_became_unavailable`; WiFi already had its own grace (P2619) | https://community.homey.app/t/154077 |
 | Enum DPs as words | motion DP reported as `pir`/`none`; settings expecting numbers break with word enums | relevant for WiFi drivers; Zigbee DPs are numeric enums | https://community.homey.app/t/154077 |
-| Unsupported position | curtains that only support open/stop/close exposed with a position slider break HomeKit | consider hiding `windowcoverings_set` when the device never reports position | https://community.homey.app/t/146735 |
-| Settings as flow cards | users want flow action cards for device settings (sensitivity, delay, dusk threshold) | feature idea | https://community.homey.app/t/154077 |
-| Signed values | pool heat pump showed −22 °C (signed/unsigned decoding) | keep signed int32 decoding for temperature DPs | https://community.homey.app/t/146735 |
+| Unsupported position | curtains that only support open/stop/close exposed with a position slider break HomeKit | **DONE (P2772, master)**: `lib/covers/PositionSupportTracker.js`; pure-DP covers with ≥20 movements over ≥7 days and no position report lose the slider; restored on first position report | https://community.homey.app/t/146735 |
+| Settings as flow cards | users want flow action cards for device settings (sensitivity, delay, dusk threshold) | **DONE (P2773, master)**: app-level action `device_set_setting` (autocomplete of editable settings, type coercion, calls `onSettings`) | https://community.homey.app/t/154077 |
+| Signed values | pool heat pump showed −22 °C (signed/unsigned decoding) | **DONE (P2769, master + stable)**: VALUE decoded as signed int32 in all DP parsers (`lib/tuya/TuyaDpValue.js`); test `check:p2769` | https://community.homey.app/t/146735 |
 
 ## Feedback loop
 
