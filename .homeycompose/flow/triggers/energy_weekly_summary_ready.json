@@ -1,7 +1,10 @@
 {
   "id": "energy_weekly_summary_ready",
   "title": {
-    "en": "Weekly energy summary ready"
+    "en": "Weekly energy summary ready",
+    "fr": "Résumé énergétique hebdomadaire prêt",
+    "nl": "Wekelijks energieoverzicht klaar",
+    "de": "Wöchentliche Energieübersicht bereit"
   },
   "hint": {
     "en": "Triggers when the weekly energy usage summary is calculated"

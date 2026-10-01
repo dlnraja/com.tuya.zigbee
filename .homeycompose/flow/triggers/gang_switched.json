@@ -1,0 +1,103 @@
+{
+  "id": "gang_switched",
+  "title": {
+    "en": "A gang was switched",
+    "fr": "Une voie a été commutée",
+    "nl": "Een kanaal is geschakeld",
+    "de": "Ein Kanal wurde geschaltet"
+  },
+  "args": [
+    {
+      "type": "device",
+      "name": "device",
+      "title": {
+        "en": "Device",
+        "fr": "Appareil",
+        "nl": "Apparaat",
+        "de": "Gerät"
+      }
+    },
+    {
+      "type": "number",
+      "name": "gang",
+      "min": 1,
+      "max": 8,
+      "step": 1,
+      "placeholder": {
+        "en": "1 to 8",
+        "fr": "1 à 8",
+        "nl": "1 tot 8",
+        "de": "1 bis 8"
+      },
+      "title": {
+        "en": "Gang",
+        "fr": "Voie",
+        "nl": "Kanaal",
+        "de": "Kanal"
+      }
+    },
+    {
+      "type": "dropdown",
+      "name": "state",
+      "title": {
+        "en": "State",
+        "fr": "État",
+        "nl": "Status",
+        "de": "Zustand"
+      },
+      "values": [
+        {
+          "id": "on",
+          "label": {
+            "en": "on",
+            "fr": "allumé",
+            "nl": "aan",
+            "de": "an"
+          }
+        },
+        {
+          "id": "off",
+          "label": {
+            "en": "off",
+            "fr": "éteint",
+            "nl": "uit",
+            "de": "aus"
+          }
+        },
+        {
+          "id": "any",
+          "label": {
+            "en": "on or off",
+            "fr": "allumé ou éteint",
+            "nl": "aan of uit",
+            "de": "an oder aus"
+          }
+        }
+      ]
+    }
+  ],
+  "tokens": [
+    {
+      "name": "gang",
+      "type": "number",
+      "title": {
+        "en": "Gang",
+        "fr": "Voie",
+        "nl": "Kanaal",
+        "de": "Kanal"
+      },
+      "example": 2
+    },
+    {
+      "name": "state",
+      "type": "string",
+      "title": {
+        "en": "State",
+        "fr": "État",
+        "nl": "Status",
+        "de": "Zustand"
+      },
+      "example": "on"
+    }
+  ]
+}

@@ -4,7 +4,9 @@
       "id": "lcdtemphumidsensor_2_temperature_changed",
       "title": {
         "en": "Temperature changed",
-        "fr": "Temperature changee"
+        "fr": "Temperature changee",
+        "nl": "Temperatuur gewijzigd",
+        "de": "Temperatur geändert"
       },
       "args": [],
       "tokens": [
@@ -27,7 +29,9 @@
       "id": "lcdtemphumidsensor_2_humidity_changed",
       "title": {
         "en": "Humidity changed",
-        "fr": "Humidite changee"
+        "fr": "Humidite changee",
+        "nl": "Luchtvochtigheid gewijzigd",
+        "de": "Luftfeuchtigkeit geändert"
       },
       "args": [],
       "tokens": [

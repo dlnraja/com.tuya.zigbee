@@ -2,7 +2,9 @@
   "id": "tuya_dp_type_is",
   "title": {
     "en": "DP type is...",
-    "fr": "Type DP est..."
+    "fr": "Type DP est...",
+    "nl": "DP-type is…",
+    "de": "DP-Typ ist…"
   },
   "args": [
     {
@@ -64,5 +66,11 @@
         }
       ]
     }
-  ]
+  ],
+  "titleFormatted": {
+    "en": "DP type is [[dp]] [[dp_type]] ([[device]])",
+    "fr": "Type DP est [[dp]] [[dp_type]] ([[device]])",
+    "nl": "DP-type is [[dp]] [[dp_type]] ([[device]])",
+    "de": "DP-Typ ist [[dp]] [[dp_type]] ([[device]])"
+  }
 }

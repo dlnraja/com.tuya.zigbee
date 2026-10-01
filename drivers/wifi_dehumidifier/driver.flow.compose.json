@@ -34,7 +34,9 @@
       "id": "wifi_dehumidifier_temperature_changed",
       "title": {
         "en": "Temperature changed",
-        "fr": "Température changée"
+        "fr": "Température changée",
+        "nl": "Temperatuur gewijzigd",
+        "de": "Temperatur geändert"
       },
       "tokens": [
         {
@@ -60,7 +62,9 @@
       "id": "wifi_dehumidifier_enable_child_lock",
       "title": {
         "en": "Enable child lock",
-        "fr": "Activer verrou enfant"
+        "fr": "Activer verrou enfant",
+        "nl": "Kinderslot inschakelen",
+        "de": "Kindersicherung aktivieren"
       },
       "args": [],
       "titleFormatted": {
@@ -72,7 +76,9 @@
       "id": "wifi_dehumidifier_disable_child_lock",
       "title": {
         "en": "Disable child lock",
-        "fr": "Désactiver verrou enfant"
+        "fr": "Désactiver verrou enfant",
+        "nl": "Kinderslot uitschakelen",
+        "de": "Kindersicherung deaktivieren"
       },
       "args": [],
       "titleFormatted": {

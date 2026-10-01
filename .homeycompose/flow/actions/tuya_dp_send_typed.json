@@ -2,7 +2,9 @@
   "id": "tuya_dp_send_typed",
   "title": {
     "en": "Send typed Tuya DP",
-    "fr": "Envoyer DP Tuya typé"
+    "fr": "Envoyer DP Tuya typé",
+    "nl": "Getypeerde Tuya-DP verzenden",
+    "de": "Typisierten Tuya-DP senden"
   },
   "hint": {
     "en": "Send a Tuya DP with explicit type (bool/value/enum/string/raw/bitmap)",
@@ -75,5 +77,11 @@
         "en": "Value"
       }
     }
-  ]
+  ],
+  "titleFormatted": {
+    "en": "Send typed Tuya DP [[dp]] [[dp_type]] [[value]] ([[device]])",
+    "fr": "Envoyer DP Tuya typé [[dp]] [[dp_type]] [[value]] ([[device]])",
+    "nl": "Getypeerde Tuya-DP verzenden [[dp]] [[dp_type]] [[value]] ([[device]])",
+    "de": "Typisierten Tuya-DP senden [[dp]] [[dp_type]] [[value]] ([[device]])"
+  }
 }

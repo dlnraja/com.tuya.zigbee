@@ -1,0 +1,85 @@
+{
+  "id": "gang_set",
+  "title": {
+    "en": "Switch a gang",
+    "fr": "Commuter une voie",
+    "nl": "Een kanaal schakelen",
+    "de": "Einen Kanal schalten"
+  },
+  "titleFormatted": {
+    "en": "[[action]] gang [[gang]] of [[device]]",
+    "fr": "[[action]] la voie [[gang]] de [[device]]",
+    "nl": "[[action]] kanaal [[gang]] van [[device]]",
+    "de": "Kanal [[gang]] von [[device]] [[action]]"
+  },
+  "args": [
+    {
+      "type": "device",
+      "name": "device",
+      "title": {
+        "en": "Device",
+        "fr": "Appareil",
+        "nl": "Apparaat",
+        "de": "Gerät"
+      }
+    },
+    {
+      "type": "number",
+      "name": "gang",
+      "min": 1,
+      "max": 8,
+      "step": 1,
+      "placeholder": {
+        "en": "1 to 8",
+        "fr": "1 à 8",
+        "nl": "1 tot 8",
+        "de": "1 bis 8"
+      },
+      "title": {
+        "en": "Gang",
+        "fr": "Voie",
+        "nl": "Kanaal",
+        "de": "Kanal"
+      }
+    },
+    {
+      "type": "dropdown",
+      "name": "action",
+      "title": {
+        "en": "Action",
+        "fr": "Action",
+        "nl": "Actie",
+        "de": "Aktion"
+      },
+      "values": [
+        {
+          "id": "on",
+          "label": {
+            "en": "Turn on",
+            "fr": "Allumer",
+            "nl": "Zet aan",
+            "de": "Einschalten"
+          }
+        },
+        {
+          "id": "off",
+          "label": {
+            "en": "Turn off",
+            "fr": "Éteindre",
+            "nl": "Zet uit",
+            "de": "Ausschalten"
+          }
+        },
+        {
+          "id": "toggle",
+          "label": {
+            "en": "Toggle",
+            "fr": "Basculer",
+            "nl": "Wissel",
+            "de": "Umschalten"
+          }
+        }
+      ]
+    }
+  ]
+}

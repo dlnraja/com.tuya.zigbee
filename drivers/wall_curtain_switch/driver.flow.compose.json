@@ -4,7 +4,9 @@
       "id": "wallcurtainswitch_physical_on",
       "title": {
         "en": "Physical button on",
-        "fr": "Physical button on"
+        "fr": "Physical button on",
+        "nl": "Fysieke knop aan",
+        "de": "Physische Taste an"
       },
       "args": []
     },
@@ -12,7 +14,9 @@
       "id": "wallcurtainswitch_physical_off",
       "title": {
         "en": "Physical button off",
-        "fr": "Physical button off"
+        "fr": "Physical button off",
+        "nl": "Fysieke knop uit",
+        "de": "Physische Taste aus"
       },
       "args": []
     },
@@ -20,7 +24,9 @@
       "id": "wall_curtain_switch_position_changed",
       "title": {
         "en": "Position changed",
-        "fr": "Position changée"
+        "fr": "Position changée",
+        "nl": "Positie gewijzigd",
+        "de": "Position geändert"
       },
       "tokens": [
         {

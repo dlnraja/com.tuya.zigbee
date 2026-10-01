@@ -193,7 +193,13 @@
             "de": "power_on"
           }
         }
-      ]
+      ],
+      "titleFormatted": {
+        "en": "IR code exists [[code_name]]",
+        "nl": "IR code bestaat [[code_name]]",
+        "de": "IR-Code existiert [[code_name]]",
+        "fr": "IR code exists [[code_name]]"
+      }
     },
     {
       "id": "ir_blaster_protocol_detected",
@@ -272,7 +278,13 @@
             }
           ]
         }
-      ]
+      ],
+      "titleFormatted": {
+        "en": "IR protocol detected [[code_name]] [[protocol]]",
+        "nl": "IR protocol gedetecteerd [[code_name]] [[protocol]]",
+        "de": "IR-Protokoll erkannt [[code_name]] [[protocol]]",
+        "fr": "IR protocol detected [[code_name]] [[protocol]]"
+      }
     },
     {
       "id": "ir_blaster_is_on",
@@ -424,7 +436,13 @@
             "de": "TV-Fernbedienung"
           }
         }
-      ]
+      ],
+      "titleFormatted": {
+        "en": "Learn IR Code [[code_name]] [[duration_seconds]] [[protocol]] [[frequency]] [[category]]",
+        "nl": "Leer IR Code [[code_name]] [[duration_seconds]] [[protocol]] [[frequency]] [[category]]",
+        "de": "IR-Code Lernen [[code_name]] [[duration_seconds]] [[protocol]] [[frequency]] [[category]]",
+        "fr": "Learn IR Code [[code_name]] [[duration_seconds]] [[protocol]] [[frequency]] [[category]]"
+      }
     },
     {
       "id": "ir_blaster_send_code",
@@ -554,7 +572,13 @@
             "de": "1"
           }
         }
-      ]
+      ],
+      "titleFormatted": {
+        "en": "Send IR Code [[ir_code]] [[protocol]] [[frequency]] [[repeat]]",
+        "nl": "Verstuur IR Code [[ir_code]] [[protocol]] [[frequency]] [[repeat]]",
+        "de": "IR-Code Senden [[ir_code]] [[protocol]] [[frequency]] [[repeat]]",
+        "fr": "Send IR Code [[ir_code]] [[protocol]] [[frequency]] [[repeat]]"
+      }
     },
     {
       "id": "ir_blaster_send_by_category",
@@ -597,7 +621,13 @@
             "de": "power_on"
           }
         }
-      ]
+      ],
+      "titleFormatted": {
+        "en": "Send IR Code by Category [[category]] [[code_name]]",
+        "nl": "Verstuur IR Code per Categorie [[category]] [[code_name]]",
+        "de": "IR-Code nach Kategorie Senden [[category]] [[code_name]]",
+        "fr": "Send IR Code by Category [[category]] [[code_name]]"
+      }
     },
     {
       "id": "ir_blaster_send_ac_command",
@@ -700,7 +730,13 @@
             }
           ]
         }
-      ]
+      ],
+      "titleFormatted": {
+        "en": "Send AC Command [[mode]] [[temperature]] [[fan_speed]]",
+        "nl": "Verstuur Airco Commando [[mode]] [[temperature]] [[fan_speed]]",
+        "de": "AC-Befehl Senden [[mode]] [[temperature]] [[fan_speed]]",
+        "fr": "Send AC Command [[mode]] [[temperature]] [[fan_speed]]"
+      }
     },
     {
       "id": "ir_blaster_send_by_brand",
@@ -742,7 +778,11 @@
             "en": "Power, Volume Up..."
           }
         }
-      ]
+      ],
+      "titleFormatted": {
+        "en": "Send IR Code by Brand [[brand]] [[device_type]] [[function_name]]",
+        "fr": "Envoyer Code IR par Marque [[brand]] [[device_type]] [[function_name]]"
+      }
     },
     {
       "id": "ir_blaster_turn_on",
@@ -799,7 +839,13 @@
             "en": "Select a learned code..."
           }
         }
-      ]
+      ],
+      "titleFormatted": {
+        "en": "Send Learned IR Command [[code_name]]",
+        "fr": "Envoyer Commande IR Apprise [[code_name]]",
+        "nl": "Verstuur Geleerde IR Opdracht [[code_name]]",
+        "de": "Gelernten IR-Befehl Senden [[code_name]]"
+      }
     },
     {
       "id": "ir_blaster_delete_code",
@@ -823,7 +869,13 @@
             "en": "Select code to delete..."
           }
         }
-      ]
+      ],
+      "titleFormatted": {
+        "en": "Delete Stored IR Code [[code_name]]",
+        "fr": "Supprimer Code IR [[code_name]]",
+        "nl": "Verwijder IR Code [[code_name]]",
+        "de": "IR-Code Löschen [[code_name]]"
+      }
     },
     {
       "id": "ir_blaster_send_raw",
@@ -882,7 +934,13 @@
             "en": "1"
           }
         }
-      ]
+      ],
+      "titleFormatted": {
+        "en": "Send Raw IR Code [[raw_code]] [[frequency]] [[repeat]]",
+        "fr": "Envoyer Code IR Brut [[raw_code]] [[frequency]] [[repeat]]",
+        "nl": "Verstuur Raw IR Code [[raw_code]] [[frequency]] [[repeat]]",
+        "de": "Raw IR-Code Senden [[raw_code]] [[frequency]] [[repeat]]"
+      }
     },
     {
       "id": "ir_blaster_tv_power",
@@ -1080,7 +1138,11 @@
             }
           ]
         }
-      ]
+      ],
+      "titleFormatted": {
+        "en": "Send TV Command [[brand]] [[command]]",
+        "fr": "Envoyer une commande TV [[brand]] [[command]]"
+      }
     }
   ]
 }

@@ -3,7 +3,10 @@
     {
       "id": "dimmer_3gang_turn_on",
       "title": {
-        "en": "Turn on"
+        "en": "Turn on",
+        "fr": "Allumer",
+        "nl": "Zet aan",
+        "de": "Einschalten"
       },
       "args": [],
       "titleFormatted": {
@@ -13,7 +16,10 @@
     {
       "id": "dimmer_3gang_turn_off",
       "title": {
-        "en": "Turn off"
+        "en": "Turn off",
+        "fr": "Éteindre",
+        "nl": "Zet uit",
+        "de": "Ausschalten"
       },
       "args": [],
       "titleFormatted": {
@@ -68,7 +74,10 @@
       "id": "dimmer_3gang_physical_gang1_on",
       "args": [],
       "title": {
-        "en": "Gang 1 on - physical"
+        "en": "Gang 1 on - physical",
+        "fr": "Voie 1 allumée (physique)",
+        "nl": "Kanaal 1 aan (fysiek)",
+        "de": "Kanal 1 an (physisch)"
       },
       "titleFormatted": {
         "en": "Gang 1 on - physical"
@@ -78,7 +87,10 @@
       "id": "dimmer_3gang_physical_gang1_off",
       "args": [],
       "title": {
-        "en": "Gang 1 off - physical"
+        "en": "Gang 1 off - physical",
+        "fr": "Voie 1 éteinte (physique)",
+        "nl": "Kanaal 1 uit (fysiek)",
+        "de": "Kanal 1 aus (physisch)"
       },
       "titleFormatted": {
         "en": "Gang 1 off - physical"
@@ -88,7 +100,10 @@
       "id": "dimmer_3gang_physical_gang1_brightness_increased",
       "args": [],
       "title": {
-        "en": "Gang 1 brightness up - physical"
+        "en": "Gang 1 brightness up - physical",
+        "fr": "Voie 1 luminosité + (physique)",
+        "nl": "Kanaal 1 helderheid omhoog (fysiek)",
+        "de": "Kanal 1 Helligkeit hoch (physisch)"
       },
       "tokens": [
         {
@@ -108,7 +123,10 @@
       "id": "dimmer_3gang_physical_gang1_brightness_decreased",
       "args": [],
       "title": {
-        "en": "Gang 1 brightness down - physical"
+        "en": "Gang 1 brightness down - physical",
+        "fr": "Voie 1 luminosité - (physique)",
+        "nl": "Kanaal 1 helderheid omlaag (fysiek)",
+        "de": "Kanal 1 Helligkeit runter (physisch)"
       },
       "tokens": [
         {
@@ -128,7 +146,10 @@
       "id": "dimmer_3gang_physical_gang2_on",
       "args": [],
       "title": {
-        "en": "Gang 2 on - physical"
+        "en": "Gang 2 on - physical",
+        "fr": "Voie 2 allumée (physique)",
+        "nl": "Kanaal 2 aan (fysiek)",
+        "de": "Kanal 2 an (physisch)"
       },
       "titleFormatted": {
         "en": "Gang 2 on - physical"
@@ -138,7 +159,10 @@
       "id": "dimmer_3gang_physical_gang2_off",
       "args": [],
       "title": {
-        "en": "Gang 2 off - physical"
+        "en": "Gang 2 off - physical",
+        "fr": "Voie 2 éteinte (physique)",
+        "nl": "Kanaal 2 uit (fysiek)",
+        "de": "Kanal 2 aus (physisch)"
       },
       "titleFormatted": {
         "en": "Gang 2 off - physical"
@@ -148,7 +172,10 @@
       "id": "dimmer_3gang_physical_gang2_brightness_increased",
       "args": [],
       "title": {
-        "en": "Gang 2 brightness up - physical"
+        "en": "Gang 2 brightness up - physical",
+        "fr": "Voie 2 luminosité + (physique)",
+        "nl": "Kanaal 2 helderheid omhoog (fysiek)",
+        "de": "Kanal 2 Helligkeit hoch (physisch)"
       },
       "tokens": [
         {
@@ -168,7 +195,10 @@
       "id": "dimmer_3gang_physical_gang2_brightness_decreased",
       "args": [],
       "title": {
-        "en": "Gang 2 brightness down - physical"
+        "en": "Gang 2 brightness down - physical",
+        "fr": "Voie 2 luminosité - (physique)",
+        "nl": "Kanaal 2 helderheid omlaag (fysiek)",
+        "de": "Kanal 2 Helligkeit runter (physisch)"
       },
       "tokens": [
         {
@@ -188,7 +218,10 @@
       "id": "dimmer_3gang_physical_gang3_on",
       "args": [],
       "title": {
-        "en": "Gang 3 on - physical"
+        "en": "Gang 3 on - physical",
+        "fr": "Voie 3 allumée (physique)",
+        "nl": "Kanaal 3 aan (fysiek)",
+        "de": "Kanal 3 an (physisch)"
       },
       "titleFormatted": {
         "en": "Gang 3 on - physical"
@@ -198,7 +231,10 @@
       "id": "dimmer_3gang_physical_gang3_off",
       "args": [],
       "title": {
-        "en": "Gang 3 off - physical"
+        "en": "Gang 3 off - physical",
+        "fr": "Voie 3 éteinte (physique)",
+        "nl": "Kanaal 3 uit (fysiek)",
+        "de": "Kanal 3 aus (physisch)"
       },
       "titleFormatted": {
         "en": "Gang 3 off - physical"
@@ -208,7 +244,10 @@
       "id": "dimmer_3gang_physical_gang3_brightness_increased",
       "args": [],
       "title": {
-        "en": "Gang 3 brightness up - physical"
+        "en": "Gang 3 brightness up - physical",
+        "fr": "Voie 3 luminosité + (physique)",
+        "nl": "Kanaal 3 helderheid omhoog (fysiek)",
+        "de": "Kanal 3 Helligkeit hoch (physisch)"
       },
       "tokens": [
         {
@@ -228,7 +267,10 @@
       "id": "dimmer_3gang_physical_gang3_brightness_decreased",
       "args": [],
       "title": {
-        "en": "Gang 3 brightness down - physical"
+        "en": "Gang 3 brightness down - physical",
+        "fr": "Voie 3 luminosité - (physique)",
+        "nl": "Kanaal 3 helderheid omlaag (fysiek)",
+        "de": "Kanal 3 Helligkeit runter (physisch)"
       },
       "tokens": [
         {

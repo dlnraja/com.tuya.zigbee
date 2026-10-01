@@ -28,7 +28,9 @@
       "id": "hybrid_fan_sensor_temperature_changed",
       "title": {
         "en": "Temperature changed",
-        "fr": "Température changée"
+        "fr": "Température changée",
+        "nl": "Temperatuur gewijzigd",
+        "de": "Temperatur geändert"
       },
       "tokens": [
         {
@@ -51,7 +53,9 @@
       "id": "hybrid_fan_sensor_humidity_changed",
       "title": {
         "en": "Humidity changed",
-        "fr": "Humidité changée"
+        "fr": "Humidité changée",
+        "nl": "Luchtvochtigheid gewijzigd",
+        "de": "Luftfeuchtigkeit geändert"
       },
       "tokens": [
         {
@@ -74,7 +78,9 @@
       "id": "hybrid_fan_sensor_pm25_changed",
       "title": {
         "en": "PM2.5 changed",
-        "fr": "PM2.5 changée"
+        "fr": "PM2.5 changée",
+        "nl": "PM2.5 gewijzigd",
+        "de": "PM2.5 geändert"
       },
       "tokens": [
         {
@@ -97,7 +103,9 @@
       "id": "hybrid_fan_sensor_brightness_changed",
       "title": {
         "en": "Brightness changed",
-        "fr": "Luminosité changée"
+        "fr": "Luminosité changée",
+        "nl": "Helderheid gewijzigd",
+        "de": "Helligkeit geändert"
       },
       "tokens": [
         {
@@ -136,7 +144,9 @@
       "id": "hybrid_fan_sensor_set_speed",
       "title": {
         "en": "Set fan speed",
-        "fr": "Régler vitesse ventilateur"
+        "fr": "Régler vitesse ventilateur",
+        "nl": "Ventilatorsnelheid instellen",
+        "de": "Lüftergeschwindigkeit einstellen"
       },
       "args": [
         {
@@ -153,7 +163,9 @@
       ],
       "titleFormatted": {
         "en": "Set fan speed [[speed]]",
-        "fr": "Régler vitesse ventilateur [[speed]]"
+        "fr": "Régler vitesse ventilateur [[speed]]",
+        "nl": "Ventilatorsnelheid instellen [[speed]]",
+        "de": "Lüftergeschwindigkeit einstellen [[speed]]"
       }
     }
   ]

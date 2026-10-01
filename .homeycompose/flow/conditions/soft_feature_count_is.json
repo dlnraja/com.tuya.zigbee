@@ -2,16 +2,27 @@
   "id": "soft_feature_count_is",
   "title": {
     "en": "Soft Feature catalog has at least N vectors",
-    "fr": "Le catalogue Soft Feature a au moins N vecteurs"
+    "fr": "Le catalogue Soft Feature a au moins N vecteurs",
+    "nl": "Soft Feature-catalogus heeft minstens N vectoren",
+    "de": "Soft-Feature-Katalog hat mindestens N Vektoren"
   },
   "args": [
     {
       "type": "number",
       "name": "min",
-      "title": { "en": "Minimum count", "fr": "Minimum" },
+      "title": {
+        "en": "Minimum count",
+        "fr": "Minimum"
+      },
       "min": 1,
       "max": 500,
       "value": 200
     }
-  ]
+  ],
+  "titleFormatted": {
+    "en": "Soft Feature catalog has at least N vectors [[min]]",
+    "fr": "Le catalogue Soft Feature a au moins N vecteurs [[min]]",
+    "nl": "Soft Feature-catalogus heeft minstens N vectoren [[min]]",
+    "de": "Soft-Feature-Katalog hat mindestens N Vektoren [[min]]"
+  }
 }

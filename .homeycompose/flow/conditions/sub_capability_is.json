@@ -2,7 +2,9 @@
   "id": "sub_capability_is",
   "title": {
     "en": "Sub-capability [[capability]] is on",
-    "fr": "Sous-capacité [[capability]] est active"
+    "fr": "Sous-capacité [[capability]] est active",
+    "nl": "Subcapaciteit is aan",
+    "de": "Unterfähigkeit ist an"
   },
   "hint": {
     "en": "Check if a sub-capability is on (e.g. onoff.gang2)",
@@ -26,5 +28,11 @@
         "fr": "onoff.gang2"
       }
     }
-  ]
+  ],
+  "titleFormatted": {
+    "en": "Sub-capability [[capability]] is on ([[device]])",
+    "fr": "Sous-capacité [[capability]] est active ([[device]])",
+    "nl": "Subcapaciteit is aan [[capability]] ([[device]])",
+    "de": "Unterfähigkeit ist an [[capability]] ([[device]])"
+  }
 }

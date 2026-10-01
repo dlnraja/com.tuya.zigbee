@@ -1,7 +1,10 @@
 {
   "id": "health_run_prediction",
   "title": {
-    "en": "Run health prediction"
+    "en": "Run health prediction",
+    "fr": "Lancer la prévision de santé",
+    "nl": "Gezondheidsvoorspelling uitvoeren",
+    "de": "Zustandsprognose ausführen"
   },
   "hint": {
     "en": "Trigger an immediate health prediction analysis for a device"
@@ -49,5 +52,11 @@
         "en": "Error rate (%)"
       }
     }
-  ]
+  ],
+  "titleFormatted": {
+    "en": "Run health prediction ([[device]])",
+    "fr": "Lancer la prévision de santé ([[device]])",
+    "nl": "Gezondheidsvoorspelling uitvoeren ([[device]])",
+    "de": "Zustandsprognose ausführen ([[device]])"
+  }
 }

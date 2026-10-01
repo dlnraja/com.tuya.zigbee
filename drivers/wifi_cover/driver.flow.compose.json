@@ -26,7 +26,10 @@
     {
       "id": "wifi_cover_open",
       "title": {
-        "en": "Open"
+        "en": "Open",
+        "fr": "Ouvrir",
+        "nl": "Openen",
+        "de": "Öffnen"
       },
       "args": [],
       "titleFormatted": {
@@ -36,7 +39,10 @@
     {
       "id": "wifi_cover_close",
       "title": {
-        "en": "Close"
+        "en": "Close",
+        "fr": "Fermer",
+        "nl": "Sluiten",
+        "de": "Schließen"
       },
       "args": [],
       "titleFormatted": {
@@ -46,7 +52,10 @@
     {
       "id": "wifi_cover_stop",
       "title": {
-        "en": "Stop"
+        "en": "Stop",
+        "fr": "Arrêter",
+        "nl": "Stoppen",
+        "de": "Stoppen"
       },
       "args": [],
       "titleFormatted": {

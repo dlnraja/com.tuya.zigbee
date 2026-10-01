@@ -3,7 +3,8 @@
   "title": {
     "en": "Power is above [[threshold]] W",
     "fr": "Puissance supérieure à [[threshold]] W",
-    "nl": "Vermogen is boven [[threshold]] W"
+    "nl": "Vermogen is boven [[threshold]] W",
+    "de": "Leistung liegt über"
   },
   "hint": {
     "en": "True when measure_power is above the threshold.",
@@ -27,5 +28,11 @@
       "step": 1,
       "value": 50
     }
-  ]
+  ],
+  "titleFormatted": {
+    "en": "Power is above [[threshold]] W ([[device]])",
+    "fr": "Puissance supérieure à [[threshold]] W ([[device]])",
+    "nl": "Vermogen is boven [[threshold]] W ([[device]])",
+    "de": "Leistung liegt über [[threshold]] ([[device]])"
+  }
 }

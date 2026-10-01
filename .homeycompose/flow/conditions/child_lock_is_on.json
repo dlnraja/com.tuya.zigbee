@@ -1,0 +1,27 @@
+{
+  "id": "child_lock_is_on",
+  "title": {
+    "en": "Child lock !{{is|is not}} on",
+    "fr": "Verrouillage enfant !{{actif|inactif}}",
+    "nl": "Kinderslot !{{is|is niet}} aan",
+    "de": "Kindersicherung !{{ist|ist nicht}} an"
+  },
+  "titleFormatted": {
+    "en": "Child lock of [[device]] !{{is|is not}} on",
+    "fr": "Verrouillage enfant de [[device]] !{{actif|inactif}}",
+    "nl": "Kinderslot van [[device]] !{{is|is niet}} aan",
+    "de": "Kindersicherung von [[device]] !{{ist|ist nicht}} an"
+  },
+  "args": [
+    {
+      "type": "device",
+      "name": "device",
+      "title": {
+        "en": "Device",
+        "fr": "Appareil",
+        "nl": "Apparaat",
+        "de": "Gerät"
+      }
+    }
+  ]
+}

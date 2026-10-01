@@ -1,7 +1,10 @@
 {
   "id": "schedule_action_executed",
   "title": {
-    "en": "Scheduled action executed"
+    "en": "Scheduled action executed",
+    "fr": "Action planifiée exécutée",
+    "nl": "Geplande actie uitgevoerd",
+    "de": "Geplante Aktion ausgeführt"
   },
   "hint": {
     "en": "Triggers when a scheduled action fires"

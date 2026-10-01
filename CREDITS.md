@@ -27,6 +27,14 @@
 - **codetheweb/tuyapi** - Node.js Tuya API
 - **blakadder/zigbee** - Zigbee device database
 
+## Flow card inspiration (inspiration, no code copied)
+Public `app.json` flow card lists were read to decide which generic cards to offer (P2775). The cards are our own implementation.
+- **JohanBendz/com.tuya.zigbee** (MIT) - siren/window/button card set
+- **Drenso/com.tuya2** - per-channel on/off triggers and conditions, child lock and night-mode actions
+- **shaarkys/com.xiaomi-miio** - "no motion for N minutes", "value is between" and button-gesture cards
+- **chaosfish/com.xiaomi-mi-zigbee** (fork of the Xiaomi/Aqara Zigbee app) - device information action
+- **athombv/com.ikea.tradfri-example** - reference structure for Zigbee driver flow cards
+
 ## Homey Community Forum Contributors
 - **dlnraja** - App author, primary maintainer, TITAN Protocol architect
 - **Peter** - Issue #2090 (HOBEIAN water leak sensor), active device reporter

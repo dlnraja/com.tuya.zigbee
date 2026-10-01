@@ -2,7 +2,9 @@
   "id": "absence_energy_soft_enroll",
   "title": {
     "en": "Absence Energy Soft — eco when zone clears",
-    "fr": "Absence Energy Soft — éco quand zone libre"
+    "fr": "Absence Energy Soft — éco quand zone libre",
+    "nl": "Absence Energy Soft — eco als de zone leeg is",
+    "de": "Absence Energy Soft — Eco, wenn die Zone leer ist"
   },
   "hint": {
     "en": "When Lamp Mesh zone clears, dim or off enrolled devices (presence energy-save)",
@@ -12,30 +14,60 @@
     {
       "type": "text",
       "name": "zone",
-      "title": { "en": "Zone id", "fr": "Id zone" },
+      "title": {
+        "en": "Zone id",
+        "fr": "Id zone"
+      },
       "value": "home"
     },
     {
       "type": "device",
       "name": "device_a",
       "filter": "capabilities=onoff|capabilities=dim",
-      "title": { "en": "Device A", "fr": "Appareil A" }
+      "title": {
+        "en": "Device A",
+        "fr": "Appareil A"
+      }
     },
     {
       "type": "device",
       "name": "device_b",
       "filter": "capabilities=onoff|capabilities=dim",
-      "title": { "en": "Device B (optional)", "fr": "Appareil B (option)" },
+      "title": {
+        "en": "Device B (optional)",
+        "fr": "Appareil B (option)"
+      },
       "optional": true
     },
     {
       "type": "dropdown",
       "name": "mode",
-      "title": { "en": "Action", "fr": "Action" },
+      "title": {
+        "en": "Action",
+        "fr": "Action"
+      },
       "values": [
-        { "id": "dim", "label": { "en": "Soft dim", "fr": "Assombrir" } },
-        { "id": "off", "label": { "en": "Turn off", "fr": "Éteindre" } }
+        {
+          "id": "dim",
+          "label": {
+            "en": "Soft dim",
+            "fr": "Assombrir"
+          }
+        },
+        {
+          "id": "off",
+          "label": {
+            "en": "Turn off",
+            "fr": "Éteindre"
+          }
+        }
       ]
     }
-  ]
+  ],
+  "titleFormatted": {
+    "en": "Absence Energy Soft — eco when zone clears [[zone]] [[mode]] ([[device_a]] [[device_b]])",
+    "fr": "Absence Energy Soft — éco quand zone libre [[zone]] [[mode]] ([[device_a]] [[device_b]])",
+    "nl": "Absence Energy Soft — eco als de zone leeg is [[zone]] [[mode]] ([[device_a]] [[device_b]])",
+    "de": "Absence Energy Soft — Eco, wenn die Zone leer ist [[zone]] [[mode]] ([[device_a]] [[device_b]])"
+  }
 }

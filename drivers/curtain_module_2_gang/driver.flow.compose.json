@@ -4,7 +4,9 @@
       "id": "curtain_module_2_gang_move_open_2gang",
       "title": {
         "en": "Open",
-        "de": "Öffnen"
+        "de": "Öffnen",
+        "fr": "Ouvrir",
+        "nl": "Openen"
       },
       "args": [],
       "titleFormatted": {
@@ -16,7 +18,9 @@
       "id": "curtain_module_2_gang_move_close_2gang",
       "title": {
         "en": "Close",
-        "de": "Schließen"
+        "de": "Schließen",
+        "fr": "Fermer",
+        "nl": "Sluiten"
       },
       "args": [],
       "titleFormatted": {
@@ -30,7 +34,9 @@
       "id": "curtain_module_2_gang_physical_on",
       "title": {
         "en": "Physical button on",
-        "fr": "Physical button on"
+        "fr": "Physical button on",
+        "nl": "Fysieke knop aan",
+        "de": "Physische Taste an"
       },
       "args": []
     },
@@ -38,7 +44,9 @@
       "id": "curtain_module_2_gang_physical_off",
       "title": {
         "en": "Physical button off",
-        "fr": "Physical button off"
+        "fr": "Physical button off",
+        "nl": "Fysieke knop uit",
+        "de": "Physische Taste aus"
       },
       "args": []
     },
@@ -46,7 +54,9 @@
       "id": "curtain_module_2_gang_position_changed",
       "title": {
         "en": "Position changed",
-        "fr": "Position changée"
+        "fr": "Position changée",
+        "nl": "Positie gewijzigd",
+        "de": "Position geändert"
       },
       "tokens": [
         {

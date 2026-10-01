@@ -57,7 +57,9 @@
       "id": "switch_usb_dongle_physical_on",
       "title": {
         "en": "Physical button on",
-        "fr": "Physical button on"
+        "fr": "Physical button on",
+        "nl": "Fysieke knop aan",
+        "de": "Physische Taste an"
       },
       "args": []
     },
@@ -65,7 +67,9 @@
       "id": "switch_usb_dongle_physical_off",
       "title": {
         "en": "Physical button off",
-        "fr": "Physical button off"
+        "fr": "Physical button off",
+        "nl": "Fysieke knop uit",
+        "de": "Physische Taste aus"
       },
       "args": []
     },
@@ -73,7 +77,9 @@
       "id": "switch_usb_dongle_measure_power_changed",
       "title": {
         "en": "Power changed",
-        "fr": "Puissance changée"
+        "fr": "Puissance changée",
+        "nl": "Vermogen gewijzigd",
+        "de": "Leistung geändert"
       },
       "tokens": [
         {
@@ -96,7 +102,9 @@
       "id": "switch_usb_dongle_meter_power_changed",
       "title": {
         "en": "Energy changed",
-        "fr": "Énergie changée"
+        "fr": "Énergie changée",
+        "nl": "Energie gewijzigd",
+        "de": "Energie geändert"
       },
       "tokens": [
         {

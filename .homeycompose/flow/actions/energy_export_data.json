@@ -1,7 +1,10 @@
 {
   "id": "energy_export_data",
   "title": {
-    "en": "Export energy data"
+    "en": "Export energy data",
+    "fr": "Exporter les données d'énergie",
+    "nl": "Energiegegevens exporteren",
+    "de": "Energiedaten exportieren"
   },
   "hint": {
     "en": "Export energy history data for a device or all devices as a trigger token"
@@ -86,6 +89,9 @@
     }
   ],
   "titleFormatted": {
-    "en": "Export energy data [[format]] [[period]]"
+    "en": "Export energy data [[format]] [[period]]",
+    "fr": "Exporter les données d'énergie [[format]] [[period]]",
+    "nl": "Energiegegevens exporteren [[format]] [[period]]",
+    "de": "Energiedaten exportieren [[format]] [[period]]"
   }
 }

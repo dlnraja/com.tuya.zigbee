@@ -3,7 +3,10 @@
     {
       "id": "switch_temp_sensor_turn_on",
       "title": {
-        "en": "Turn on"
+        "en": "Turn on",
+        "fr": "Allumer",
+        "nl": "Zet aan",
+        "de": "Einschalten"
       },
       "args": [],
       "titleFormatted": {
@@ -13,7 +16,10 @@
     {
       "id": "switch_temp_sensor_turn_off",
       "title": {
-        "en": "Turn off"
+        "en": "Turn off",
+        "fr": "Éteindre",
+        "nl": "Zet uit",
+        "de": "Ausschalten"
       },
       "args": [],
       "titleFormatted": {
@@ -39,7 +45,10 @@
     {
       "id": "switch_temp_sensor_set_temperature",
       "title": {
-        "en": "Set target temperature"
+        "en": "Set target temperature",
+        "fr": "Régler la température cible",
+        "nl": "Doeltemperatuur instellen",
+        "de": "Zieltemperatur einstellen"
       },
       "args": [
         {
@@ -47,11 +56,16 @@
           "type": "number",
           "title": {
             "en": "Temperature (°C)"
-          }
+          },
+          "min": -40,
+          "max": 125
         }
       ],
       "titleFormatted": {
-        "en": "Set target temperature [[temperature]]"
+        "en": "Set target temperature [[temperature]]",
+        "fr": "Régler la température cible [[temperature]]",
+        "nl": "Doeltemperatuur instellen [[temperature]]",
+        "de": "Zieltemperatur einstellen [[temperature]]"
       }
     }
   ],
@@ -124,7 +138,9 @@
       "id": "switch_temp_sensor_physical_gang1_on",
       "title": {
         "en": "Physical gang 1 ON",
-        "fr": "Physique gang 1 ON"
+        "fr": "Physique gang 1 ON",
+        "nl": "Kanaal 1 fysiek AAN",
+        "de": "Kanal 1 physisch EIN"
       },
       "args": [],
       "titleFormatted": {
@@ -136,7 +152,9 @@
       "id": "switch_temp_sensor_physical_gang1_off",
       "title": {
         "en": "Physical gang 1 OFF",
-        "fr": "Physique gang 1 OFF"
+        "fr": "Physique gang 1 OFF",
+        "nl": "Kanaal 1 fysiek UIT",
+        "de": "Kanal 1 physisch AUS"
       },
       "args": [],
       "titleFormatted": {

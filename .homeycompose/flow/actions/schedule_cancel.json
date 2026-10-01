@@ -1,7 +1,10 @@
 {
   "id": "schedule_cancel",
   "title": {
-    "en": "Cancel schedule"
+    "en": "Cancel schedule",
+    "fr": "Annuler le planning",
+    "nl": "Schema annuleren",
+    "de": "Zeitplan abbrechen"
   },
   "hint": {
     "en": "Cancel (delete) a schedule by its name or ID"
@@ -19,6 +22,9 @@
     }
   ],
   "titleFormatted": {
-    "en": "Cancel schedule [[schedule_id]]"
+    "en": "Cancel schedule [[schedule_id]]",
+    "fr": "Annuler le planning [[schedule_id]]",
+    "nl": "Schema annuleren [[schedule_id]]",
+    "de": "Zeitplan abbrechen [[schedule_id]]"
   }
 }

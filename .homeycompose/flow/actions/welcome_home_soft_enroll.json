@@ -2,7 +2,9 @@
   "id": "welcome_home_soft_enroll",
   "title": {
     "en": "Welcome Home Soft — lights on zone occupy",
-    "fr": "Welcome Home Soft — lumières à l'occupation"
+    "fr": "Welcome Home Soft — lumières à l'occupation",
+    "nl": "Welcome Home Soft — lichten aan bij bezetting",
+    "de": "Welcome Home Soft — Licht an bei Belegung"
   },
   "hint": {
     "en": "When Lamp Mesh zone becomes occupied, soft-fade welcome lights on",
@@ -12,21 +14,36 @@
     {
       "type": "text",
       "name": "zone",
-      "title": { "en": "Zone id", "fr": "Id zone" },
+      "title": {
+        "en": "Zone id",
+        "fr": "Id zone"
+      },
       "value": "home"
     },
     {
       "type": "device",
       "name": "light_a",
       "filter": "capabilities=onoff",
-      "title": { "en": "Welcome light A", "fr": "Lumière accueil A" }
+      "title": {
+        "en": "Welcome light A",
+        "fr": "Lumière accueil A"
+      }
     },
     {
       "type": "device",
       "name": "light_b",
       "filter": "capabilities=onoff",
-      "title": { "en": "Welcome light B (optional)", "fr": "Lumière accueil B (option)" },
+      "title": {
+        "en": "Welcome light B (optional)",
+        "fr": "Lumière accueil B (option)"
+      },
       "optional": true
     }
-  ]
+  ],
+  "titleFormatted": {
+    "en": "Welcome Home Soft — lights on zone occupy [[zone]] ([[light_a]] [[light_b]])",
+    "fr": "Welcome Home Soft — lumières à l'occupation [[zone]] ([[light_a]] [[light_b]])",
+    "nl": "Welcome Home Soft — lichten aan bij bezetting [[zone]] ([[light_a]] [[light_b]])",
+    "de": "Welcome Home Soft — Licht an bei Belegung [[zone]] ([[light_a]] [[light_b]])"
+  }
 }

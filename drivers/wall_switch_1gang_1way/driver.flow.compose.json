@@ -4,7 +4,9 @@
       "id": "wall_switch_1gang_1way_turned_on",
       "title": {
         "en": "Turned on - physical button",
-        "nl": "Aangezet - fysieke knop"
+        "nl": "Aangezet - fysieke knop",
+        "fr": "Allumé - bouton physique",
+        "de": "Eingeschaltet - physische Taste"
       },
       "hint": {
         "en": "Triggered when the switch is turned on using the physical button",
@@ -20,7 +22,9 @@
       "id": "wall_switch_1gang_1way_turned_off",
       "title": {
         "en": "Turned off - physical button",
-        "nl": "Uitgezet - fysieke knop"
+        "nl": "Uitgezet - fysieke knop",
+        "fr": "Éteint - bouton physique",
+        "de": "Ausgeschaltet - physische Taste"
       },
       "hint": {
         "en": "Triggered when the switch is turned off using the physical button",
@@ -150,7 +154,10 @@
       "id": "wall_switch_1gang_1way_physical_gang1_on",
       "args": [],
       "title": {
-        "en": "Turned on physically - gang 1"
+        "en": "Turned on physically - gang 1",
+        "fr": "Allumée physiquement - voie 1",
+        "nl": "Fysiek aangezet - kanaal 1",
+        "de": "Physisch eingeschaltet - Kanal 1"
       },
       "titleFormatted": {
         "en": "Turned on physically - gang 1"
@@ -160,7 +167,10 @@
       "id": "wall_switch_1gang_1way_physical_gang1_off",
       "args": [],
       "title": {
-        "en": "Turned off physically - gang 1"
+        "en": "Turned off physically - gang 1",
+        "fr": "Éteinte physiquement - voie 1",
+        "nl": "Fysiek uitgezet - kanaal 1",
+        "de": "Physisch ausgeschaltet - Kanal 1"
       },
       "titleFormatted": {
         "en": "Turned off physically - gang 1"
@@ -172,7 +182,9 @@
       "id": "wall_switch_1gang_1way_set_backlight",
       "title": {
         "en": "Set LED indicator mode",
-        "nl": "Stel LED-indicator modus in"
+        "nl": "Stel LED-indicator modus in",
+        "fr": "Régler le mode du voyant LED",
+        "de": "LED-Anzeigemodus einstellen"
       },
       "hint": {
         "en": "Control when the LED indicator on the switch is lit",
@@ -209,7 +221,9 @@
       ],
       "titleFormatted": {
         "en": "Set LED indicator mode [[mode]]",
-        "nl": "Stel LED-indicator modus in [[mode]]"
+        "nl": "Stel LED-indicator modus in [[mode]]",
+        "fr": "Régler le mode du voyant LED [[mode]]",
+        "de": "LED-Anzeigemodus einstellen [[mode]]"
       }
     },
     {
@@ -352,7 +366,9 @@
       "id": "wall_switch_1gang_1way_set_scene_mode",
       "title": {
         "en": "Set scene mode",
-        "nl": "Stel scènemodus in"
+        "nl": "Stel scènemodus in",
+        "fr": "Régler le mode scène",
+        "de": "Szenenmodus einstellen"
       },
       "args": [
         {
@@ -382,7 +398,9 @@
       ],
       "titleFormatted": {
         "en": "Set scene mode [[mode]]",
-        "nl": "Stel scènemodus in [[mode]]"
+        "nl": "Stel scènemodus in [[mode]]",
+        "fr": "Régler le mode scène [[mode]]",
+        "de": "Szenenmodus einstellen [[mode]]"
       }
     }
   ],

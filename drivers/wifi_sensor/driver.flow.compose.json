@@ -3,7 +3,10 @@
     {
       "id": "wifi_sensor_temp_changed",
       "title": {
-        "en": "Temperature changed"
+        "en": "Temperature changed",
+        "fr": "Température modifiée",
+        "nl": "Temperatuur gewijzigd",
+        "de": "Temperatur geändert"
       },
       "tokens": [
         {
@@ -22,7 +25,10 @@
     {
       "id": "wifi_sensor_hum_changed",
       "title": {
-        "en": "Humidity changed"
+        "en": "Humidity changed",
+        "fr": "Humidité modifiée",
+        "nl": "Luchtvochtigheid gewijzigd",
+        "de": "Luftfeuchtigkeit geändert"
       },
       "tokens": [
         {
@@ -42,7 +48,9 @@
       "id": "wifi_sensor_humidity_changed",
       "title": {
         "en": "Humidity changed",
-        "fr": "Humidité changée"
+        "fr": "Humidité changée",
+        "nl": "Luchtvochtigheid gewijzigd",
+        "de": "Luftfeuchtigkeit geändert"
       },
       "tokens": [
         {

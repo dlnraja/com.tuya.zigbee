@@ -3,7 +3,10 @@
     {
       "id": "valve_dual_irrigation_valve_irrigation_turn_on",
       "title": {
-        "en": "Turn on"
+        "en": "Turn on",
+        "fr": "Allumer",
+        "nl": "Zet aan",
+        "de": "Einschalten"
       },
       "args": [],
       "titleFormatted": {
@@ -13,7 +16,10 @@
     {
       "id": "valve_dual_irrigation_valve_irrigation_turn_off",
       "title": {
-        "en": "Turn off"
+        "en": "Turn off",
+        "fr": "Éteindre",
+        "nl": "Zet uit",
+        "de": "Ausschalten"
       },
       "args": [],
       "titleFormatted": {

@@ -3,7 +3,10 @@
     {
       "id": "wifi_ewelink_switch_2ch_gang1_turned_on",
       "title": {
-        "en": "Gang 1 turned on"
+        "en": "Gang 1 turned on",
+        "fr": "Voie 1 allumée",
+        "nl": "Kanaal 1 aangezet",
+        "de": "Kanal 1 eingeschaltet"
       },
       "args": [],
       "titleFormatted": {
@@ -13,7 +16,10 @@
     {
       "id": "wifi_ewelink_switch_2ch_gang1_turned_off",
       "title": {
-        "en": "Gang 1 turned off"
+        "en": "Gang 1 turned off",
+        "fr": "Voie 1 éteinte",
+        "nl": "Kanaal 1 uitgezet",
+        "de": "Kanal 1 ausgeschaltet"
       },
       "args": [],
       "titleFormatted": {
@@ -23,7 +29,10 @@
     {
       "id": "wifi_ewelink_switch_2ch_gang2_turned_on",
       "title": {
-        "en": "Gang 2 turned on"
+        "en": "Gang 2 turned on",
+        "fr": "Voie 2 allumée",
+        "nl": "Kanaal 2 aangezet",
+        "de": "Kanal 2 eingeschaltet"
       },
       "args": [],
       "titleFormatted": {
@@ -33,7 +42,10 @@
     {
       "id": "wifi_ewelink_switch_2ch_gang2_turned_off",
       "title": {
-        "en": "Gang 2 turned off"
+        "en": "Gang 2 turned off",
+        "fr": "Voie 2 éteinte",
+        "nl": "Kanaal 2 uitgezet",
+        "de": "Kanal 2 ausgeschaltet"
       },
       "args": [],
       "titleFormatted": {
@@ -45,7 +57,10 @@
     {
       "id": "wifi_ewelink_switch_2ch_gang1_is_on",
       "title": {
-        "en": "Gang 1 is on"
+        "en": "Gang 1 is on",
+        "fr": "La voie 1 est allumée",
+        "nl": "Kanaal 1 is aan",
+        "de": "Kanal 1 ist an"
       },
       "args": [],
       "titleFormatted": {
@@ -55,7 +70,10 @@
     {
       "id": "wifi_ewelink_switch_2ch_gang2_is_on",
       "title": {
-        "en": "Gang 2 is on"
+        "en": "Gang 2 is on",
+        "fr": "La voie 2 est allumée",
+        "nl": "Kanaal 2 is aan",
+        "de": "Kanal 2 ist an"
       },
       "args": [],
       "titleFormatted": {

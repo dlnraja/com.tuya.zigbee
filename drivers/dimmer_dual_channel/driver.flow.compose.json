@@ -27,7 +27,9 @@
       "id": "dimmer_dual_channel_turned_on",
       "title": {
         "en": "Turned on",
-        "fr": "Allumé"
+        "fr": "Allumé",
+        "nl": "Aangezet",
+        "de": "Eingeschaltet"
       },
       "args": [],
       "titleFormatted": {
@@ -39,7 +41,9 @@
       "id": "dimmer_dual_channel_turned_off",
       "title": {
         "en": "Turned off",
-        "fr": "Éteint"
+        "fr": "Éteint",
+        "nl": "Uitgezet",
+        "de": "Ausgeschaltet"
       },
       "args": [],
       "titleFormatted": {
@@ -51,7 +55,9 @@
       "id": "dimmer_dual_channel_physical_on",
       "title": {
         "en": "Physical button on",
-        "fr": "Physical button on"
+        "fr": "Physical button on",
+        "nl": "Fysieke knop aan",
+        "de": "Physische Taste an"
       },
       "args": []
     },
@@ -59,7 +65,9 @@
       "id": "dimmer_dual_channel_physical_off",
       "title": {
         "en": "Physical button off",
-        "fr": "Physical button off"
+        "fr": "Physical button off",
+        "nl": "Fysieke knop uit",
+        "de": "Physische Taste aus"
       },
       "args": []
     }
@@ -103,7 +111,9 @@
       "id": "dimmer_dual_channel_turn_on",
       "title": {
         "en": "Turn on",
-        "fr": "Allumer"
+        "fr": "Allumer",
+        "nl": "Zet aan",
+        "de": "Einschalten"
       },
       "args": [],
       "titleFormatted": {
@@ -115,7 +125,9 @@
       "id": "dimmer_dual_channel_turn_off",
       "title": {
         "en": "Turn off",
-        "fr": "Éteindre"
+        "fr": "Éteindre",
+        "nl": "Zet uit",
+        "de": "Ausschalten"
       },
       "args": [],
       "titleFormatted": {
@@ -127,7 +139,9 @@
       "id": "dimmer_dual_channel_toggle",
       "title": {
         "en": "Toggle",
-        "fr": "Basculer"
+        "fr": "Basculer",
+        "nl": "Wisselen",
+        "de": "Umschalten"
       },
       "args": [],
       "titleFormatted": {
@@ -139,7 +153,9 @@
       "id": "dimmer_dual_channel_set_dim",
       "title": {
         "en": "Set dim level",
-        "fr": "Définir niveau dim"
+        "fr": "Définir niveau dim",
+        "nl": "Dimniveau instellen",
+        "de": "Dimmstufe einstellen"
       },
       "args": [
         {
@@ -152,7 +168,9 @@
       ],
       "titleFormatted": {
         "en": "Set dim level [[level]]",
-        "fr": "Définir niveau dim [[level]]"
+        "fr": "Définir niveau dim [[level]]",
+        "nl": "Dimniveau instellen [[level]]",
+        "de": "Dimmstufe einstellen [[level]]"
       }
     },
     {

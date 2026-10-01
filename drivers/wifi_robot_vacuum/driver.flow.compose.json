@@ -29,7 +29,10 @@
     {
       "id": "wifi_robot_vacuum_battery_low",
       "title": {
-        "en": "Battery low"
+        "en": "Battery low",
+        "fr": "Batterie faible",
+        "nl": "Batterij bijna leeg",
+        "de": "Batterie schwach"
       },
       "hint": {
         "en": "Triggers when vacuum battery drops below threshold"

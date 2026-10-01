@@ -4,7 +4,9 @@
       "id": "radar_sensor_2_luminance_changed",
       "title": {
         "en": "Luminance changed",
-        "fr": "Luminance changee"
+        "fr": "Luminance changee",
+        "nl": "Lichtsterkte gewijzigd",
+        "de": "Leuchtdichte geändert"
       },
       "args": [],
       "tokens": [
@@ -27,7 +29,9 @@
       "id": "radar_sensor_2_motion_detected",
       "title": {
         "en": "Motion detected",
-        "fr": "Mouvement detecte"
+        "fr": "Mouvement detecte",
+        "nl": "Beweging gedetecteerd",
+        "de": "Bewegung erkannt"
       },
       "args": [],
       "titleFormatted": {
@@ -39,7 +43,9 @@
       "id": "radar_sensor_2_motion_off",
       "title": {
         "en": "Motion ended",
-        "fr": "Mouvement termine"
+        "fr": "Mouvement termine",
+        "nl": "Beweging beëindigd",
+        "de": "Bewegung beendet"
       },
       "args": [],
       "titleFormatted": {
@@ -51,7 +57,9 @@
       "id": "radar_sensor_2_target_distance_changed",
       "title": {
         "en": "Target distance changed",
-        "fr": "Distance cible changee"
+        "fr": "Distance cible changee",
+        "nl": "Doelafstand gewijzigd",
+        "de": "Zielentfernung geändert"
       },
       "args": [],
       "tokens": [

@@ -161,7 +161,9 @@
       "id": "climate_sensor_presence_motion_alarm",
       "title": {
         "en": "Motion alarm",
-        "fr": "Alarme mouvement"
+        "fr": "Alarme mouvement",
+        "nl": "Bewegingsalarm",
+        "de": "Bewegungsalarm"
       },
       "args": [],
       "titleFormatted": {
@@ -173,7 +175,9 @@
       "id": "climate_sensor_presence_illuminance_changed",
       "title": {
         "en": "Illuminance changed",
-        "fr": "Luminosité ambiante changée"
+        "fr": "Luminosité ambiante changée",
+        "nl": "Verlichtingssterkte gewijzigd",
+        "de": "Beleuchtungsstärke geändert"
       },
       "tokens": [
         {
@@ -196,7 +200,9 @@
       "id": "climate_sensor_presence_temperature_changed",
       "title": {
         "en": "Temperature changed",
-        "fr": "Température changée"
+        "fr": "Température changée",
+        "nl": "Temperatuur gewijzigd",
+        "de": "Temperatur geändert"
       },
       "tokens": [
         {
@@ -219,7 +225,9 @@
       "id": "climate_sensor_presence_humidity_changed",
       "title": {
         "en": "Humidity changed",
-        "fr": "Humidité changée"
+        "fr": "Humidité changée",
+        "nl": "Luchtvochtigheid gewijzigd",
+        "de": "Luftfeuchtigkeit geändert"
       },
       "tokens": [
         {
@@ -242,7 +250,9 @@
       "id": "climate_sensor_presence_measure_power_changed",
       "title": {
         "en": "Power changed",
-        "fr": "Puissance changée"
+        "fr": "Puissance changée",
+        "nl": "Vermogen gewijzigd",
+        "de": "Leistung geändert"
       },
       "tokens": [
         {
@@ -265,7 +275,9 @@
       "id": "climate_sensor_presence_meter_power_changed",
       "title": {
         "en": "Energy changed",
-        "fr": "Énergie changée"
+        "fr": "Énergie changée",
+        "nl": "Energie gewijzigd",
+        "de": "Energie geändert"
       },
       "tokens": [
         {

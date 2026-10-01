@@ -4,7 +4,9 @@
       "id": "ceiling_fan_turned_on",
       "title": {
         "en": "Turned on",
-        "fr": "Allumé"
+        "fr": "Allumé",
+        "nl": "Aangezet",
+        "de": "Eingeschaltet"
       },
       "args": [],
       "titleFormatted": {
@@ -16,7 +18,9 @@
       "id": "ceiling_fan_turned_off",
       "title": {
         "en": "Turned off",
-        "fr": "Éteint"
+        "fr": "Éteint",
+        "nl": "Uitgezet",
+        "de": "Ausgeschaltet"
       },
       "args": [],
       "titleFormatted": {
@@ -28,7 +32,9 @@
       "id": "ceiling_fan_dim_changed",
       "title": {
         "en": "Brightness changed",
-        "fr": "Luminosité changée"
+        "fr": "Luminosité changée",
+        "nl": "Helderheid gewijzigd",
+        "de": "Helligkeit geändert"
       },
       "tokens": [
         {
@@ -69,7 +75,9 @@
       "id": "ceiling_fan_is_on",
       "title": {
         "en": "Is turned !{{on|off}}",
-        "fr": "Est !{{allumé|éteint}}"
+        "fr": "Est !{{allumé|éteint}}",
+        "nl": "Is !{{aan|uit}}",
+        "de": "Ist !{{an|aus}}"
       },
       "args": [],
       "titleFormatted": {
@@ -83,7 +91,9 @@
       "id": "ceiling_fan_turn_on",
       "title": {
         "en": "Turn on",
-        "fr": "Allumer"
+        "fr": "Allumer",
+        "nl": "Zet aan",
+        "de": "Einschalten"
       },
       "args": [],
       "titleFormatted": {
@@ -95,7 +105,9 @@
       "id": "ceiling_fan_turn_off",
       "title": {
         "en": "Turn off",
-        "fr": "Éteindre"
+        "fr": "Éteindre",
+        "nl": "Zet uit",
+        "de": "Ausschalten"
       },
       "args": [],
       "titleFormatted": {
@@ -107,7 +119,9 @@
       "id": "ceiling_fan_toggle",
       "title": {
         "en": "Toggle on or off",
-        "fr": "Basculer"
+        "fr": "Basculer",
+        "nl": "Aan of uit wisselen",
+        "de": "Ein/Aus umschalten"
       },
       "args": [],
       "titleFormatted": {
@@ -119,7 +133,9 @@
       "id": "ceiling_fan_set_dim",
       "title": {
         "en": "Set brightness to...",
-        "fr": "Régler la luminosité à..."
+        "fr": "Régler la luminosité à...",
+        "nl": "Helderheid instellen op…",
+        "de": "Helligkeit einstellen auf…"
       },
       "args": [
         {

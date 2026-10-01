@@ -36,7 +36,9 @@
       "id": "rgb_ceiling_led_light_dim_changed",
       "title": {
         "en": "Brightness changed",
-        "fr": "Luminosite changee"
+        "fr": "Luminosite changee",
+        "nl": "Helderheid gewijzigd",
+        "de": "Helligkeit geändert"
       },
       "tokens": [
         {
@@ -190,7 +192,9 @@
       "id": "rgb_ceiling_led_light_set_color_temperature",
       "title": {
         "en": "Set color temperature",
-        "fr": "Regler temperature de couleur"
+        "fr": "Regler temperature de couleur",
+        "nl": "Kleurtemperatuur instellen",
+        "de": "Farbtemperatur einstellen"
       },
       "args": [
         {
@@ -204,7 +208,9 @@
       ],
       "titleFormatted": {
         "en": "Set color temperature [[temperature]]",
-        "fr": "Regler temperature de couleur [[temperature]]"
+        "fr": "Regler temperature de couleur [[temperature]]",
+        "nl": "Kleurtemperatuur instellen [[temperature]]",
+        "de": "Farbtemperatur einstellen [[temperature]]"
       }
     }
   ]

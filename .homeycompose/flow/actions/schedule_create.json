@@ -1,7 +1,10 @@
 {
   "id": "schedule_create",
   "title": {
-    "en": "Create schedule"
+    "en": "Create schedule",
+    "fr": "Créer un planning",
+    "nl": "Schema aanmaken",
+    "de": "Zeitplan erstellen"
   },
   "hint": {
     "en": "Create a new schedule for a device"
@@ -69,5 +72,11 @@
         "en": "Created schedule ID"
       }
     }
-  ]
+  ],
+  "titleFormatted": {
+    "en": "Create schedule [[schedule_name]] [[capability]] [[capability_value]] [[cron_expression]] [[interval_minutes]] ([[device]])",
+    "fr": "Créer un planning [[schedule_name]] [[capability]] [[capability_value]] [[cron_expression]] [[interval_minutes]] ([[device]])",
+    "nl": "Schema aanmaken [[schedule_name]] [[capability]] [[capability_value]] [[cron_expression]] [[interval_minutes]] ([[device]])",
+    "de": "Zeitplan erstellen [[schedule_name]] [[capability]] [[capability_value]] [[cron_expression]] [[interval_minutes]] ([[device]])"
+  }
 }

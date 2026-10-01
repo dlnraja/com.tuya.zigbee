@@ -1,7 +1,10 @@
 {
   "id": "health_failure_predicted",
   "title": {
-    "en": "Device failure predicted"
+    "en": "Device failure predicted",
+    "fr": "Panne d'appareil prévue",
+    "nl": "Apparaatstoring voorspeld",
+    "de": "Geräteausfall vorhergesagt"
   },
   "hint": {
     "en": "Triggers when the health engine predicts a likely device failure based on trend analysis"

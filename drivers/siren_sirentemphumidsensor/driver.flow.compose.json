@@ -4,7 +4,9 @@
       "id": "siren_sirentemphumidsensor_temperature_changed",
       "title": {
         "en": "Temperature changed",
-        "fr": "Température changée"
+        "fr": "Température changée",
+        "nl": "Temperatuur gewijzigd",
+        "de": "Temperatur geändert"
       },
       "tokens": [
         {
@@ -27,7 +29,9 @@
       "id": "siren_sirentemphumidsensor_motion_alarm",
       "title": {
         "en": "Motion alarm",
-        "fr": "Alarme mouvement"
+        "fr": "Alarme mouvement",
+        "nl": "Bewegingsalarm",
+        "de": "Bewegungsalarm"
       },
       "args": [],
       "titleFormatted": {

@@ -5,7 +5,9 @@
       "highlight": true,
       "title": {
         "en": "Temperature changed",
-        "fr": "Température changée"
+        "fr": "Température changée",
+        "nl": "Temperatuur gewijzigd",
+        "de": "Temperatur geändert"
       },
       "tokens": [
         {
@@ -28,7 +30,9 @@
       "id": "hvac_controller_target_temperature_changed",
       "title": {
         "en": "Target temperature changed",
-        "fr": "Température cible changée"
+        "fr": "Température cible changée",
+        "nl": "Doeltemperatuur gewijzigd",
+        "de": "Zieltemperatur geändert"
       },
       "tokens": [
         {
@@ -126,7 +130,9 @@
       "id": "hvac_controller_set_target_temperature",
       "title": {
         "en": "Set temperature to...",
-        "fr": "Régler la température à..."
+        "fr": "Régler la température à...",
+        "nl": "Temperatuur instellen op…",
+        "de": "Temperatur einstellen auf…"
       },
       "args": [
         {
@@ -176,7 +182,9 @@
       "id": "hvac_controller_set_mode",
       "title": {
         "en": "Set mode",
-        "fr": "Définir mode"
+        "fr": "Définir mode",
+        "nl": "Modus instellen",
+        "de": "Modus einstellen"
       },
       "args": [
         {
@@ -219,14 +227,18 @@
       ],
       "titleFormatted": {
         "en": "Set mode [[mode]]",
-        "fr": "Définir mode [[mode]]"
+        "fr": "Définir mode [[mode]]",
+        "nl": "Modus instellen [[mode]]",
+        "de": "Modus einstellen [[mode]]"
       }
     },
     {
       "id": "hvac_controller_set_fan_speed",
       "title": {
         "en": "Set fan speed",
-        "fr": "Définir vitesse ventilateur"
+        "fr": "Définir vitesse ventilateur",
+        "nl": "Ventilatorsnelheid instellen",
+        "de": "Lüftergeschwindigkeit einstellen"
       },
       "args": [
         {
@@ -269,7 +281,9 @@
       ],
       "titleFormatted": {
         "en": "Set fan speed [[fan_speed]]",
-        "fr": "Définir vitesse ventilateur [[fan_speed]]"
+        "fr": "Définir vitesse ventilateur [[fan_speed]]",
+        "nl": "Ventilatorsnelheid instellen [[fan_speed]]",
+        "de": "Lüftergeschwindigkeit einstellen [[fan_speed]]"
       }
     },
     {

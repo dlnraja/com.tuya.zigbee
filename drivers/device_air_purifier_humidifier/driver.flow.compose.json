@@ -3,7 +3,10 @@
     {
       "id": "device_air_purifier_humidifier_turn_on",
       "title": {
-        "en": "Turn on"
+        "en": "Turn on",
+        "fr": "Allumer",
+        "nl": "Zet aan",
+        "de": "Einschalten"
       },
       "args": [],
       "titleFormatted": {
@@ -13,7 +16,10 @@
     {
       "id": "device_air_purifier_humidifier_turn_off",
       "title": {
-        "en": "Turn off"
+        "en": "Turn off",
+        "fr": "Éteindre",
+        "nl": "Zet uit",
+        "de": "Ausschalten"
       },
       "args": [],
       "titleFormatted": {
@@ -116,7 +122,9 @@
       "id": "device_air_purifier_humidifier_brightness_changed",
       "title": {
         "en": "Brightness changed",
-        "fr": "Luminosité changée"
+        "fr": "Luminosité changée",
+        "nl": "Helderheid gewijzigd",
+        "de": "Helligkeit geändert"
       },
       "tokens": [
         {
@@ -139,7 +147,9 @@
       "id": "device_air_purifier_humidifier_pm25_changed",
       "title": {
         "en": "PM2.5 changed",
-        "fr": "PM2.5 changé"
+        "fr": "PM2.5 changé",
+        "nl": "PM2.5 gewijzigd",
+        "de": "PM2.5 geändert"
       },
       "tokens": [
         {

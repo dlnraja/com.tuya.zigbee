@@ -2,7 +2,9 @@
   "id": "tuya_raw_received",
   "title": {
     "en": "Tuya raw DP received",
-    "fr": "DP Tuya brut reçu"
+    "fr": "DP Tuya brut reçu",
+    "nl": "Ruwe Tuya-DP ontvangen",
+    "de": "Roher Tuya-DP empfangen"
   },
   "hint": {
     "en": "Triggers when a raw (type 0) DP is received. Data is provided as hex string.",

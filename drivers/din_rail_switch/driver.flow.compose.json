@@ -3,7 +3,10 @@
     {
       "id": "din_rail_switch_turn_on",
       "title": {
-        "en": "Turn on"
+        "en": "Turn on",
+        "fr": "Allumer",
+        "nl": "Zet aan",
+        "de": "Einschalten"
       },
       "args": [],
       "titleFormatted": {
@@ -13,7 +16,10 @@
     {
       "id": "din_rail_switch_turn_off",
       "title": {
-        "en": "Turn off"
+        "en": "Turn off",
+        "fr": "Éteindre",
+        "nl": "Zet uit",
+        "de": "Ausschalten"
       },
       "args": [],
       "titleFormatted": {
@@ -158,7 +164,9 @@
       "id": "din_rail_switch_meter_power_changed",
       "title": {
         "en": "Energy changed",
-        "fr": "Énergie changée"
+        "fr": "Énergie changée",
+        "nl": "Energie gewijzigd",
+        "de": "Energie geändert"
       },
       "tokens": [
         {
@@ -181,7 +189,9 @@
       "id": "din_rail_switch_voltage_changed",
       "title": {
         "en": "Voltage changed",
-        "fr": "Tension changée"
+        "fr": "Tension changée",
+        "nl": "Spanning gewijzigd",
+        "de": "Spannung geändert"
       },
       "tokens": [
         {
@@ -204,7 +214,9 @@
       "id": "din_rail_switch_current_changed",
       "title": {
         "en": "Current changed",
-        "fr": "Courant changé"
+        "fr": "Courant changé",
+        "nl": "Stroom gewijzigd",
+        "de": "Strom geändert"
       },
       "tokens": [
         {

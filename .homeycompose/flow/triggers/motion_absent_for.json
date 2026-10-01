@@ -1,0 +1,59 @@
+{
+  "id": "motion_absent_for",
+  "title": {
+    "en": "No motion for a while",
+    "fr": "Aucun mouvement depuis un moment",
+    "nl": "Een tijd geen beweging",
+    "de": "Eine Weile keine Bewegung"
+  },
+  "hint": {
+    "en": "Starts counting when motion clears; cancelled by new motion.",
+    "fr": "Le compte démarre à la fin du mouvement ; annulé par un nouveau mouvement.",
+    "nl": "Telt vanaf het einde van de beweging; geannuleerd bij nieuwe beweging.",
+    "de": "Zählt ab Ende der Bewegung; neue Bewegung bricht ab."
+  },
+  "args": [
+    {
+      "type": "device",
+      "name": "device",
+      "title": {
+        "en": "Device",
+        "fr": "Appareil",
+        "nl": "Apparaat",
+        "de": "Gerät"
+      }
+    },
+    {
+      "type": "number",
+      "name": "minutes",
+      "min": 1,
+      "max": 1440,
+      "step": 1,
+      "title": {
+        "en": "Minutes",
+        "fr": "Minutes",
+        "nl": "Minuten",
+        "de": "Minuten"
+      },
+      "placeholder": {
+        "en": "1 to 1440",
+        "fr": "1 à 1440",
+        "nl": "1 tot 1440",
+        "de": "1 bis 1440"
+      }
+    }
+  ],
+  "tokens": [
+    {
+      "name": "minutes",
+      "type": "number",
+      "title": {
+        "en": "Minutes",
+        "fr": "Minutes",
+        "nl": "Minuten",
+        "de": "Minuten"
+      },
+      "example": 10
+    }
+  ]
+}

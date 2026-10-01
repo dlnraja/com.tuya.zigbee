@@ -20,7 +20,9 @@
       "id": "din_rail_meter_voltage_changed",
       "title": {
         "en": "Voltage changed",
-        "fr": "Tension changée"
+        "fr": "Tension changée",
+        "nl": "Spanning gewijzigd",
+        "de": "Spannung geändert"
       },
       "tokens": [
         {
@@ -42,7 +44,9 @@
       "id": "din_rail_meter_current_changed",
       "title": {
         "en": "Current changed",
-        "fr": "Courant changé"
+        "fr": "Courant changé",
+        "nl": "Stroom gewijzigd",
+        "de": "Strom geändert"
       },
       "tokens": [
         {
@@ -64,7 +68,9 @@
       "id": "din_rail_meter_energy_changed",
       "title": {
         "en": "Energy consumption changed",
-        "fr": "Consommation changée"
+        "fr": "Consommation changée",
+        "nl": "Energieverbruik gewijzigd",
+        "de": "Energieverbrauch geändert"
       },
       "tokens": [
         {
@@ -87,7 +93,10 @@
     {
       "id": "din_rail_meter_power_above",
       "title": {
-        "en": "Power !{{is|is not}} above"
+        "en": "Power !{{is|is not}} above",
+        "fr": "La puissance !{{est|n'est pas}} supérieure à",
+        "nl": "Vermogen !{{is|is niet}} hoger dan",
+        "de": "Leistung !{{liegt|liegt nicht}} über"
       },
       "args": [
         {
@@ -99,7 +108,10 @@
         }
       ],
       "titleFormatted": {
-        "en": "Power !{{is|is not}} above [[power]]"
+        "en": "Power !{{is|is not}} above [[power]]",
+        "fr": "La puissance !{{est|n'est pas}} supérieure à [[power]]",
+        "nl": "Vermogen !{{is|is niet}} hoger dan [[power]]",
+        "de": "Leistung !{{liegt|liegt nicht}} über [[power]]"
       }
     }
   ],
@@ -107,7 +119,10 @@
     {
       "id": "din_rail_meter_reset_meter",
       "title": {
-        "en": "Reset energy meter"
+        "en": "Reset energy meter",
+        "fr": "Réinitialiser le compteur d'énergie",
+        "nl": "Energiemeter resetten",
+        "de": "Energiezähler zurücksetzen"
       },
       "args": [],
       "titleFormatted": {

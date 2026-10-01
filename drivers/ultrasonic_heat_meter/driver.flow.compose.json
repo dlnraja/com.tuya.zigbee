@@ -17,7 +17,9 @@
       "id": "ultrasonic_heat_meter_physical_on",
       "title": {
         "en": "Physical button on",
-        "fr": "Physical button on"
+        "fr": "Physical button on",
+        "nl": "Fysieke knop aan",
+        "de": "Physische Taste an"
       },
       "args": []
     },
@@ -25,7 +27,9 @@
       "id": "ultrasonic_heat_meter_physical_off",
       "title": {
         "en": "Physical button off",
-        "fr": "Physical button off"
+        "fr": "Physical button off",
+        "nl": "Fysieke knop uit",
+        "de": "Physische Taste aus"
       },
       "args": []
     },
@@ -33,7 +37,9 @@
       "id": "ultrasonic_heat_meter_temperature_changed",
       "title": {
         "en": "Temperature changed",
-        "fr": "Température changée"
+        "fr": "Température changée",
+        "nl": "Temperatuur gewijzigd",
+        "de": "Temperatur geändert"
       },
       "tokens": [
         {
@@ -56,7 +62,9 @@
       "id": "ultrasonic_heat_meter_measure_power_changed",
       "title": {
         "en": "Power changed",
-        "fr": "Puissance changée"
+        "fr": "Puissance changée",
+        "nl": "Vermogen gewijzigd",
+        "de": "Leistung geändert"
       },
       "tokens": [
         {

@@ -2,7 +2,9 @@
   "id": "boiler_switch_energy_power_above",
   "title": {
     "en": "Boiler power is above [[threshold]] W",
-    "fr": "La puissance chaudiere est au-dessus de [[threshold]] W"
+    "fr": "La puissance chaudiere est au-dessus de [[threshold]] W",
+    "nl": "Boilervermogen is hoger dan",
+    "de": "Boilerleistung liegt über"
   },
   "args": [
     {
@@ -22,5 +24,11 @@
       "step": 10,
       "value": 1000
     }
-  ]
+  ],
+  "titleFormatted": {
+    "en": "Boiler power is above [[threshold]] W ([[device]])",
+    "fr": "La puissance chaudiere est au-dessus de [[threshold]] W ([[device]])",
+    "nl": "Boilervermogen is hoger dan [[threshold]] ([[device]])",
+    "de": "Boilerleistung liegt über [[threshold]] ([[device]])"
+  }
 }

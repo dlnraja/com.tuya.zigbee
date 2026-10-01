@@ -189,7 +189,9 @@
       "id": "sensor_contact_zigbee_illuminance_changed",
       "title": {
         "en": "Illuminance changed",
-        "fr": "Luminosité ambiante changée"
+        "fr": "Luminosité ambiante changée",
+        "nl": "Verlichtingssterkte gewijzigd",
+        "de": "Beleuchtungsstärke geändert"
       },
       "tokens": [
         {
@@ -212,7 +214,9 @@
       "id": "sensor_contact_zigbee_voltage_changed",
       "title": {
         "en": "Voltage changed",
-        "fr": "Tension changée"
+        "fr": "Tension changée",
+        "nl": "Spanning gewijzigd",
+        "de": "Spannung geändert"
       },
       "tokens": [
         {

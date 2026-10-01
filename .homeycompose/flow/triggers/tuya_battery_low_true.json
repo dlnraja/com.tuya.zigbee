@@ -21,12 +21,18 @@
     {
       "name": "battery_percent",
       "type": "number",
-      "title": { "en": "Battery %", "fr": "Batterie %" }
+      "title": {
+        "en": "Battery %",
+        "fr": "Batterie %"
+      }
     },
     {
       "name": "threshold",
       "type": "number",
-      "title": { "en": "Low threshold", "fr": "Seuil bas" }
+      "title": {
+        "en": "Low threshold",
+        "fr": "Seuil bas"
+      }
     }
   ]
 }

@@ -1,7 +1,10 @@
 {
   "id": "network_new_device_joined",
   "title": {
-    "en": "New device joined network"
+    "en": "New device joined network",
+    "fr": "Nouvel appareil sur le réseau",
+    "nl": "Nieuw apparaat aan netwerk toegevoegd",
+    "de": "Neues Gerät dem Netzwerk beigetreten"
   },
   "hint": {
     "en": "Triggers when a new device joins the Zigbee network"

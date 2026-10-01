@@ -98,7 +98,10 @@
     {
       "id": "presence_sensor_radar_zone1_presence",
       "title": {
-        "en": "Zone 1 presence detected"
+        "en": "Zone 1 presence detected",
+        "fr": "Présence détectée en zone 1",
+        "nl": "Aanwezigheid gedetecteerd in zone 1",
+        "de": "Anwesenheit in Zone 1 erkannt"
       },
       "hint": {
         "en": "Triggers when presence is detected in Zone 1 (near field)"
@@ -108,7 +111,10 @@
     {
       "id": "presence_sensor_radar_zone2_presence",
       "title": {
-        "en": "Zone 2 presence detected"
+        "en": "Zone 2 presence detected",
+        "fr": "Présence détectée en zone 2",
+        "nl": "Aanwezigheid gedetecteerd in zone 2",
+        "de": "Anwesenheit in Zone 2 erkannt"
       },
       "hint": {
         "en": "Triggers when presence is detected in Zone 2 (mid field)"
@@ -118,7 +124,10 @@
     {
       "id": "presence_sensor_radar_zone3_presence",
       "title": {
-        "en": "Zone 3 presence detected"
+        "en": "Zone 3 presence detected",
+        "fr": "Présence détectée en zone 3",
+        "nl": "Aanwezigheid gedetecteerd in zone 3",
+        "de": "Anwesenheit in Zone 3 erkannt"
       },
       "hint": {
         "en": "Triggers when presence is detected in Zone 3 (far field)"
@@ -149,7 +158,9 @@
       "id": "presence_sensor_radar_temperature_changed",
       "title": {
         "en": "Temperature changed",
-        "fr": "Température changée"
+        "fr": "Température changée",
+        "nl": "Temperatuur gewijzigd",
+        "de": "Temperatur geändert"
       },
       "tokens": [
         {
@@ -168,7 +179,9 @@
       "id": "presence_sensor_radar_humidity_changed",
       "title": {
         "en": "Humidity changed",
-        "fr": "Humidité changée"
+        "fr": "Humidité changée",
+        "nl": "Luchtvochtigheid gewijzigd",
+        "de": "Luftfeuchtigkeit geändert"
       },
       "tokens": [
         {
@@ -214,7 +227,13 @@
             "en": "100"
           }
         }
-      ]
+      ],
+      "titleFormatted": {
+        "en": "Illuminance !{{is|is not}} above [[lux]]",
+        "nl": "Lichtsterkte !{{is|is niet}} boven [[lux]]",
+        "fr": "Luminosité !{{est|n'est pas}} au-dessus de [[lux]]",
+        "de": "Helligkeit !{{ist|ist nicht}} über [[lux]]"
+      }
     },
     {
       "id": "presence_sensor_radar_distance_within",
@@ -235,7 +254,13 @@
             "en": "300"
           }
         }
-      ]
+      ],
+      "titleFormatted": {
+        "en": "Target !{{is|is not}} within distance [[distance]]",
+        "nl": "Doel !{{is|is niet}} binnen afstand [[distance]]",
+        "fr": "Cible !{{est|n'est pas}} dans la distance [[distance]]",
+        "de": "Ziel !{{ist|ist nicht}} innerhalb der Entfernung [[distance]]"
+      }
     },
     {
       "id": "presence_sensor_radar_motion_active",
@@ -280,7 +305,10 @@
             }
           ]
         }
-      ]
+      ],
+      "titleFormatted": {
+        "en": "Zone !{{1|2|3}} presence !{{is|is not}} detected [[zone]]"
+      }
     },
     {
       "id": "presence_sensor_radar_movement_is",
@@ -327,7 +355,10 @@
             }
           ]
         }
-      ]
+      ],
+      "titleFormatted": {
+        "en": "Movement type !{{is|is not}} [[classification]]"
+      }
     }
   ],
   "actions": [

@@ -70,7 +70,9 @@
       "title": {
         "en": "Threshold Value",
         "fr": "Valeur seuil"
-      }
+      },
+      "min": -2147483648,
+      "max": 2147483647
     }
   ]
 }

@@ -1,7 +1,10 @@
 {
   "id": "energy_daily_summary_ready",
   "title": {
-    "en": "Daily energy summary ready"
+    "en": "Daily energy summary ready",
+    "fr": "Résumé énergétique quotidien prêt",
+    "nl": "Dagelijks energieoverzicht klaar",
+    "de": "Tägliche Energieübersicht bereit"
   },
   "hint": {
     "en": "Triggers when the daily energy usage summary is calculated"

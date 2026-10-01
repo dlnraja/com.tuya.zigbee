@@ -2,7 +2,9 @@
   "id": "lamp_mesh_occupancy_enroll",
   "title": {
     "en": "Enroll lights in Lamp Mesh Occupancy zone",
-    "fr": "Inscrire des lumières dans une zone Occupation maillage"
+    "fr": "Inscrire des lumières dans une zone Occupation maillage",
+    "nl": "Lampen in Lamp Mesh-zone opnemen",
+    "de": "Lampen in Lamp Mesh-Zone aufnehmen"
   },
   "hint": {
     "en": "Soft RF/link-quality fusion across lights (+ optional PIR). Homey alternative to proprietary lamp-as-sensor hubs — not vendor-parity.",
@@ -12,27 +14,45 @@
     {
       "type": "text",
       "name": "zone",
-      "title": { "en": "Zone id", "fr": "Id zone" },
+      "title": {
+        "en": "Zone id",
+        "fr": "Id zone"
+      },
       "value": "living"
     },
     {
       "type": "device",
       "name": "light_a",
       "filter": "capabilities=onoff",
-      "title": { "en": "Light A (mains)", "fr": "Lumière A" }
+      "title": {
+        "en": "Light A (mains)",
+        "fr": "Lumière A"
+      }
     },
     {
       "type": "device",
       "name": "light_b",
       "filter": "capabilities=onoff",
-      "title": { "en": "Light B (mains)", "fr": "Lumière B" }
+      "title": {
+        "en": "Light B (mains)",
+        "fr": "Lumière B"
+      }
     },
     {
       "type": "device",
       "name": "light_c",
       "filter": "capabilities=onoff",
-      "title": { "en": "Light C (optional)", "fr": "Lumière C (option)" },
+      "title": {
+        "en": "Light C (optional)",
+        "fr": "Lumière C (option)"
+      },
       "optional": true
     }
-  ]
+  ],
+  "titleFormatted": {
+    "en": "Enroll lights in Lamp Mesh Occupancy zone [[zone]] ([[light_a]] [[light_b]] [[light_c]])",
+    "fr": "Inscrire des lumières dans une zone Occupation maillage [[zone]] ([[light_a]] [[light_b]] [[light_c]])",
+    "nl": "Lampen in Lamp Mesh-zone opnemen [[zone]] ([[light_a]] [[light_b]] [[light_c]])",
+    "de": "Lampen in Lamp Mesh-Zone aufnehmen [[zone]] ([[light_a]] [[light_b]] [[light_c]])"
+  }
 }

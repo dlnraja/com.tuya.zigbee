@@ -13,7 +13,10 @@
     {
       "id": "wifi_doorbell_motion",
       "title": {
-        "en": "Motion detected"
+        "en": "Motion detected",
+        "fr": "Mouvement détecté",
+        "nl": "Beweging gedetecteerd",
+        "de": "Bewegung erkannt"
       },
       "args": [],
       "titleFormatted": {

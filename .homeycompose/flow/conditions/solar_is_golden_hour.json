@@ -1,7 +1,10 @@
 {
   "id": "solar_is_golden_hour",
   "title": {
-    "en": "It is golden hour"
+    "en": "It is golden hour",
+    "fr": "C'est l'heure dorée",
+    "nl": "Het is gouden uur",
+    "de": "Es ist goldene Stunde"
   },
   "hint": {
     "en": "Checks if the sun elevation is between 0 and 18 degrees (golden hour / civil twilight)"
@@ -47,6 +50,9 @@
     }
   ],
   "titleFormatted": {
-    "en": "It is golden hour [[min_elevation]] [[max_elevation]]"
+    "en": "It is golden hour [[min_elevation]] [[max_elevation]]",
+    "fr": "C'est l'heure dorée [[min_elevation]] [[max_elevation]]",
+    "nl": "Het is gouden uur [[min_elevation]] [[max_elevation]]",
+    "de": "Es ist goldene Stunde [[min_elevation]] [[max_elevation]]"
   }
 }

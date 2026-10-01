@@ -28,5 +28,11 @@
       "step": 1,
       "value": 60
     }
-  ]
+  ],
+  "titleFormatted": {
+    "en": "Suppress sensor motion flows [[duration_minutes]] ([[device]])",
+    "fr": "Suspendre les flows de mouvement du capteur [[duration_minutes]] ([[device]])",
+    "nl": "Bewegingsflows sensor onderdrukken [[duration_minutes]] ([[device]])",
+    "de": "Bewegungs-Flows des Sensors unterdrücken [[duration_minutes]] ([[device]])"
+  }
 }

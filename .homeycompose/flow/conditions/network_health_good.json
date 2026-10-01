@@ -1,7 +1,10 @@
 {
   "id": "network_health_good",
   "title": {
-    "en": "Network health good"
+    "en": "Network health good",
+    "fr": "Santé du réseau bonne",
+    "nl": "Netwerkgezondheid goed",
+    "de": "Netzwerkzustand gut"
   },
   "hint": {
     "en": "Checks if the Zigbee network health score is above a threshold"
@@ -61,6 +64,9 @@
     }
   ],
   "titleFormatted": {
-    "en": "Network health good [[min_coverage]] [[max_orphaned]]"
+    "en": "Network health good [[min_coverage]] [[max_orphaned]]",
+    "fr": "Santé du réseau bonne [[min_coverage]] [[max_orphaned]]",
+    "nl": "Netwerkgezondheid goed [[min_coverage]] [[max_orphaned]]",
+    "de": "Netzwerkzustand gut [[min_coverage]] [[max_orphaned]]"
   }
 }

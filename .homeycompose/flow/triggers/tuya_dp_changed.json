@@ -2,7 +2,9 @@
   "id": "tuya_dp_changed",
   "title": {
     "en": "Any Tuya DP changed",
-    "fr": "Tout DP Tuya changé"
+    "fr": "Tout DP Tuya changé",
+    "nl": "Een Tuya-DP is gewijzigd",
+    "de": "Ein Tuya-DP hat sich geändert"
   },
   "hint": {
     "en": "Triggers when ANY DP value changes. Includes DP type info (raw/bool/value/string/enum/bitmap).",

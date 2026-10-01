@@ -33,5 +33,11 @@
       "step": 1,
       "value": 5
     }
-  ]
+  ],
+  "titleFormatted": {
+    "en": "[[device]] !{{was|was not}} interacted with in the last [[minutes]] minutes",
+    "fr": "[[device]] !{{a|n'a pas}} eu d'interaction dans les [[minutes]] dernières minutes",
+    "nl": "[[device]] !{{had|had geen}} interactie in de laatste [[minutes]] minuten",
+    "de": "[[device]] !{{hatte|hatte keine}} Interaktion in den letzten [[minutes]] Minuten"
+  }
 }

@@ -2,7 +2,9 @@
   "id": "tuya_bitmap_changed",
   "title": {
     "en": "Tuya bitmap DP changed",
-    "fr": "Bitmap Tuya changé"
+    "fr": "Bitmap Tuya changé",
+    "nl": "Tuya-bitmap-DP gewijzigd",
+    "de": "Tuya-Bitmap-DP geändert"
   },
   "hint": {
     "en": "Triggers when a bitmap (type 5) DP changes. Bitmap is a bitmask of active flags.",

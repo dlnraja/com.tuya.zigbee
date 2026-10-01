@@ -4,7 +4,9 @@
       "id": "device_air_purifier_floor_target_temperature_changed",
       "title": {
         "en": "Target temperature changed",
-        "fr": "Consigne changée"
+        "fr": "Consigne changée",
+        "nl": "Doeltemperatuur gewijzigd",
+        "de": "Zieltemperatur geändert"
       },
       "tokens": [
         {
@@ -27,7 +29,9 @@
       "id": "device_air_purifier_floor_brightness_changed",
       "title": {
         "en": "Brightness changed",
-        "fr": "Luminosité changée"
+        "fr": "Luminosité changée",
+        "nl": "Helderheid gewijzigd",
+        "de": "Helligkeit geändert"
       },
       "tokens": [
         {
@@ -50,7 +54,9 @@
       "id": "device_air_purifier_floor_pm25_changed",
       "title": {
         "en": "PM2.5 changed",
-        "fr": "PM2.5 changé"
+        "fr": "PM2.5 changé",
+        "nl": "PM2.5 gewijzigd",
+        "de": "PM2.5 geändert"
       },
       "tokens": [
         {
@@ -75,7 +81,9 @@
       "id": "device_air_purifier_floor_enable_child_lock",
       "title": {
         "en": "Enable child lock",
-        "fr": "Activer verrou enfant"
+        "fr": "Activer verrou enfant",
+        "nl": "Kinderslot inschakelen",
+        "de": "Kindersicherung aktivieren"
       },
       "args": [],
       "titleFormatted": {
@@ -87,7 +95,9 @@
       "id": "device_air_purifier_floor_disable_child_lock",
       "title": {
         "en": "Disable child lock",
-        "fr": "Désactiver verrou enfant"
+        "fr": "Désactiver verrou enfant",
+        "nl": "Kinderslot uitschakelen",
+        "de": "Kindersicherung deaktivieren"
       },
       "args": [],
       "titleFormatted": {

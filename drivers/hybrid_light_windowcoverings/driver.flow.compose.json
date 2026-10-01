@@ -4,7 +4,9 @@
       "id": "hybrid_light_windowcoverings_light_turned_on",
       "title": {
         "en": "Light turned on",
-        "fr": "Lumière allumée"
+        "fr": "Lumière allumée",
+        "nl": "Licht aangezet",
+        "de": "Licht eingeschaltet"
       },
       "args": [],
       "titleFormatted": {
@@ -16,7 +18,9 @@
       "id": "hybrid_light_windowcoverings_light_turned_off",
       "title": {
         "en": "Light turned off",
-        "fr": "Lumière éteinte"
+        "fr": "Lumière éteinte",
+        "nl": "Licht uitgezet",
+        "de": "Licht ausgeschaltet"
       },
       "args": [],
       "titleFormatted": {
@@ -51,7 +55,9 @@
       "id": "hybrid_light_windowcoverings_brightness_changed",
       "title": {
         "en": "Brightness changed",
-        "fr": "Luminosité changée"
+        "fr": "Luminosité changée",
+        "nl": "Helderheid gewijzigd",
+        "de": "Helligkeit geändert"
       },
       "tokens": [
         {

@@ -1,7 +1,10 @@
 {
   "id": "network_router_offline",
   "title": {
-    "en": "Router offline"
+    "en": "Router offline",
+    "fr": "Routeur hors ligne",
+    "nl": "Router offline",
+    "de": "Router offline"
   },
   "hint": {
     "en": "Triggers when a router device goes offline, potentially disrupting mesh connectivity"

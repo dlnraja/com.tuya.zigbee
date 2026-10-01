@@ -2,7 +2,9 @@
   "id": "natural_light_enable",
   "title": {
     "en": "Enable Solar Sync",
-    "fr": "Activer Synchro solaire"
+    "fr": "Activer Synchro solaire",
+    "nl": "Solar Sync inschakelen",
+    "de": "Solar Sync aktivieren"
   },
   "hint": {
     "en": "Enroll this light in Daylight Atmosphere (sun-driven white + brightness)",
@@ -18,5 +20,11 @@
       },
       "filter": "capabilities=dim|capabilities=light_temperature|capabilities=light_hue"
     }
-  ]
+  ],
+  "titleFormatted": {
+    "en": "Enable Solar Sync ([[device]])",
+    "fr": "Activer Synchro solaire ([[device]])",
+    "nl": "Solar Sync inschakelen ([[device]])",
+    "de": "Solar Sync aktivieren ([[device]])"
+  }
 }

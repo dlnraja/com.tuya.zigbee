@@ -5,7 +5,9 @@
       "highlight": true,
       "title": {
         "en": "Temperature changed",
-        "fr": "Température changée"
+        "fr": "Température changée",
+        "nl": "Temperatuur gewijzigd",
+        "de": "Temperatur geändert"
       },
       "tokens": [
         {
@@ -27,7 +29,9 @@
       "id": "wifi_sonoff_thr316d_measure_humidity_changed",
       "title": {
         "en": "Humidity changed",
-        "fr": "Humidité changée"
+        "fr": "Humidité changée",
+        "nl": "Luchtvochtigheid gewijzigd",
+        "de": "Luftfeuchtigkeit geändert"
       },
       "tokens": [
         {
@@ -49,7 +53,9 @@
       "id": "wifi_sonoff_thr316d_target_temperature_changed",
       "title": {
         "en": "Target temperature changed",
-        "fr": "Consigne changée"
+        "fr": "Consigne changée",
+        "nl": "Doeltemperatuur gewijzigd",
+        "de": "Zieltemperatur geändert"
       },
       "tokens": [
         {

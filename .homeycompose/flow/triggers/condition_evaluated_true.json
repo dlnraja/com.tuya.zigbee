@@ -1,7 +1,10 @@
 {
   "id": "condition_evaluated_true",
   "title": {
-    "en": "Condition evaluated true"
+    "en": "Condition evaluated true",
+    "fr": "Condition évaluée vraie",
+    "nl": "Voorwaarde waar geëvalueerd",
+    "de": "Bedingung als wahr ausgewertet"
   },
   "hint": {
     "en": "Triggers when a condition set evaluates to true"

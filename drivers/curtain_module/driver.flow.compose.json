@@ -4,7 +4,9 @@
       "id": "curtain_module_move_open",
       "title": {
         "en": "Open",
-        "de": "Öffnen"
+        "de": "Öffnen",
+        "fr": "Ouvrir",
+        "nl": "Openen"
       },
       "args": [],
       "titleFormatted": {
@@ -16,7 +18,9 @@
       "id": "curtain_module_move_close",
       "title": {
         "en": "Close",
-        "de": "Schließen"
+        "de": "Schließen",
+        "fr": "Fermer",
+        "nl": "Sluiten"
       },
       "args": [],
       "titleFormatted": {
@@ -30,7 +34,9 @@
       "id": "curtain_module_position_changed",
       "title": {
         "en": "Position changed",
-        "fr": "Position changée"
+        "fr": "Position changée",
+        "nl": "Positie gewijzigd",
+        "de": "Position geändert"
       },
       "tokens": [
         {

@@ -4,7 +4,9 @@
       "id": "remote_button_wireless_scene_button_wireless_b4e6e",
       "title": {
         "en": "Button pressed",
-        "fr": "Bouton appuyé"
+        "fr": "Bouton appuyé",
+        "nl": "Knop ingedrukt",
+        "de": "Taste gedrückt"
       },
       "tokens": [
         {
@@ -27,7 +29,9 @@
       "id": "remote_button_wireless_scene_button_wireless_c17ed",
       "title": {
         "en": "Button double-pressed",
-        "fr": "Bouton double-cliqué"
+        "fr": "Bouton double-cliqué",
+        "nl": "Knop dubbel ingedrukt",
+        "de": "Taste doppelt gedrückt"
       },
       "tokens": [
         {
@@ -50,7 +54,9 @@
       "id": "remote_button_wireless_scene_button_wireless_266ac",
       "title": {
         "en": "Button long-pressed",
-        "fr": "Bouton pressé longtemps"
+        "fr": "Bouton pressé longtemps",
+        "nl": "Knop lang ingedrukt",
+        "de": "Taste lange gedrückt"
       },
       "tokens": [
         {
@@ -73,7 +79,9 @@
       "id": "remote_button_wireless_scene_button_wireless_05645",
       "title": {
         "en": "Button multi-pressed",
-        "fr": "Bouton multi-cliqué"
+        "fr": "Bouton multi-cliqué",
+        "nl": "Knop meerdere keren ingedrukt",
+        "de": "Taste mehrfach gedrückt"
       },
       "tokens": [
         {
@@ -105,7 +113,9 @@
       "id": "remote_button_wireless_scene_button_wireless_02c7a",
       "title": {
         "en": "Button 1 pressed",
-        "fr": "Bouton 1 appuyé"
+        "fr": "Bouton 1 appuyé",
+        "nl": "Knop 1 ingedrukt",
+        "de": "Taste 1 gedrückt"
       },
       "args": [],
       "titleFormatted": {
@@ -117,7 +127,9 @@
       "id": "remote_button_wireless_scene_button_wireless_a7122",
       "title": {
         "en": "Button 1 double-pressed",
-        "fr": "Bouton 1 double-cliqué"
+        "fr": "Bouton 1 double-cliqué",
+        "nl": "Knop 1 dubbel ingedrukt",
+        "de": "Taste 1 doppelt gedrückt"
       },
       "args": [],
       "titleFormatted": {
@@ -129,7 +141,9 @@
       "id": "remote_button_wireless_scene_button_wireless_00468",
       "title": {
         "en": "Button 1 long-pressed",
-        "fr": "Bouton 1 pressé longtemps"
+        "fr": "Bouton 1 pressé longtemps",
+        "nl": "Knop 1 lang ingedrukt",
+        "de": "Taste 1 lange gedrückt"
       },
       "args": [],
       "titleFormatted": {
@@ -141,7 +155,9 @@
       "id": "remote_button_wireless_scene_button_wireless_ef641",
       "title": {
         "en": "Button 2 pressed",
-        "fr": "Bouton 2 appuyé"
+        "fr": "Bouton 2 appuyé",
+        "nl": "Knop 2 ingedrukt",
+        "de": "Taste 2 gedrückt"
       },
       "args": [],
       "titleFormatted": {
@@ -153,7 +169,9 @@
       "id": "remote_button_wireless_scene_button_wireless_995e7",
       "title": {
         "en": "Button 2 double-pressed",
-        "fr": "Bouton 2 double-cliqué"
+        "fr": "Bouton 2 double-cliqué",
+        "nl": "Knop 2 dubbel ingedrukt",
+        "de": "Taste 2 doppelt gedrückt"
       },
       "args": [],
       "titleFormatted": {
@@ -165,7 +183,9 @@
       "id": "remote_button_wireless_scene_button_wireless_3bf82",
       "title": {
         "en": "Button 2 long-pressed",
-        "fr": "Bouton 2 pressé longtemps"
+        "fr": "Bouton 2 pressé longtemps",
+        "nl": "Knop 2 lang ingedrukt",
+        "de": "Taste 2 lange gedrückt"
       },
       "args": [],
       "titleFormatted": {
@@ -177,7 +197,9 @@
       "id": "remote_button_wireless_scene_button_wireless_15881",
       "title": {
         "en": "Button 1 triple-pressed",
-        "fr": "Bouton 1 triple-cliqué"
+        "fr": "Bouton 1 triple-cliqué",
+        "nl": "Knop 1 driemaal ingedrukt",
+        "de": "Taste 1 dreimal gedrückt"
       },
       "args": [],
       "titleFormatted": {
@@ -189,7 +211,9 @@
       "id": "remote_button_wireless_scene_button_wireless_0a52a",
       "title": {
         "en": "Button 2 triple-pressed",
-        "fr": "Bouton 2 triple-cliqué"
+        "fr": "Bouton 2 triple-cliqué",
+        "nl": "Knop 2 driemaal ingedrukt",
+        "de": "Taste 2 dreimal gedrückt"
       },
       "args": [],
       "titleFormatted": {
@@ -201,7 +225,9 @@
       "id": "remote_button_wireless_scene_button_wireless_7e6f8",
       "title": {
         "en": "Button 1 released - after hold",
-        "fr": "Bouton 1 relâché - après maintien"
+        "fr": "Bouton 1 relâché - après maintien",
+        "nl": "Knop 1 losgelaten na vasthouden",
+        "de": "Taste 1 nach Halten losgelassen"
       },
       "args": [],
       "titleFormatted": {
@@ -213,7 +239,9 @@
       "id": "remote_button_wireless_scene_button_wireless_c338a",
       "title": {
         "en": "Button 2 released - after hold",
-        "fr": "Bouton 2 relâché - après maintien"
+        "fr": "Bouton 2 relâché - après maintien",
+        "nl": "Knop 2 losgelaten na vasthouden",
+        "de": "Taste 2 nach Halten losgelassen"
       },
       "args": [],
       "titleFormatted": {

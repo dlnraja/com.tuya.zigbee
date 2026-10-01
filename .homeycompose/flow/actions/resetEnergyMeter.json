@@ -3,7 +3,9 @@
   "title": {
     "en": "Reset energy meter",
     "fr": "Réinitialiser le compteur d'énergie",
-    "sv": "Återställ energimätaren"
+    "sv": "Återställ energimätaren",
+    "nl": "Energiemeter resetten",
+    "de": "Energiezähler zurücksetzen"
   },
   "hint": {
     "en": "Sets cumulative energy (meter_power) back to 0 when the device supports it",
@@ -14,7 +16,10 @@
       "type": "device",
       "name": "device",
       "filter": "capabilities=meter_power",
-      "title": { "en": "Energy device", "fr": "Appareil énergie" }
+      "title": {
+        "en": "Energy device",
+        "fr": "Appareil énergie"
+      }
     }
   ],
   "titleFormatted": {

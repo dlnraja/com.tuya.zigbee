@@ -1,7 +1,10 @@
 {
   "id": "solar_set_adaptive_lighting",
   "title": {
-    "en": "Set Solar Sync mode"
+    "en": "Set Solar Sync mode",
+    "fr": "Régler le mode Solar Sync",
+    "nl": "Solar Sync-modus instellen",
+    "de": "Solar-Sync-Modus einstellen"
   },
   "hint": {
     "en": "Sets the Solar Sync white-temperature mode from current sun elevation"
@@ -75,6 +78,9 @@
     }
   ],
   "titleFormatted": {
-    "en": "Set Solar Sync mode [[mode]] [[transition_seconds]]"
+    "en": "Set Solar Sync mode [[mode]] [[transition_seconds]]",
+    "fr": "Régler le mode Solar Sync [[mode]] [[transition_seconds]]",
+    "nl": "Solar Sync-modus instellen [[mode]] [[transition_seconds]]",
+    "de": "Solar-Sync-Modus einstellen [[mode]] [[transition_seconds]]"
   }
 }

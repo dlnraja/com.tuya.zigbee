@@ -201,7 +201,10 @@
     {
       "id": "switch_3gang_gang1_scene",
       "title": {
-        "en": "Gang 1 scene triggered"
+        "en": "Gang 1 scene triggered",
+        "fr": "Scène de la voie 1 déclenchée",
+        "nl": "Scène van kanaal 1 geactiveerd",
+        "de": "Szene von Kanal 1 ausgelöst"
       },
       "tokens": [
         {
@@ -222,7 +225,10 @@
     {
       "id": "switch_3gang_gang2_scene",
       "title": {
-        "en": "Gang 2 scene triggered"
+        "en": "Gang 2 scene triggered",
+        "fr": "Scène de la voie 2 déclenchée",
+        "nl": "Scène van kanaal 2 geactiveerd",
+        "de": "Szene von Kanal 2 ausgelöst"
       },
       "tokens": [
         {
@@ -243,7 +249,10 @@
     {
       "id": "switch_3gang_gang3_scene",
       "title": {
-        "en": "Gang 3 scene triggered"
+        "en": "Gang 3 scene triggered",
+        "fr": "Scène de la voie 3 déclenchée",
+        "nl": "Scène van kanaal 3 geactiveerd",
+        "de": "Szene von Kanal 3 ausgelöst"
       },
       "tokens": [
         {
@@ -265,7 +274,9 @@
       "id": "switch_3gang_measure_power_changed",
       "title": {
         "en": "Power changed",
-        "fr": "Puissance changée"
+        "fr": "Puissance changée",
+        "nl": "Vermogen gewijzigd",
+        "de": "Leistung geändert"
       },
       "tokens": [
         {
@@ -288,7 +299,9 @@
       "id": "switch_3gang_meter_power_changed",
       "title": {
         "en": "Energy changed",
-        "fr": "Énergie changée"
+        "fr": "Énergie changée",
+        "nl": "Energie gewijzigd",
+        "de": "Energie geändert"
       },
       "tokens": [
         {
@@ -542,7 +555,9 @@
       ],
       "titleFormatted": {
         "en": "Set backlight mode [[mode]]",
-        "fr": "Définir le mode rétroéclairage [[mode]]"
+        "fr": "Définir le mode rétroéclairage [[mode]]",
+        "nl": "Stel achtergrondverlichting in [[mode]]",
+        "de": "Hintergrundbeleuchtung einstellen [[mode]]"
       }
     },
     {
@@ -550,7 +565,8 @@
       "title": {
         "en": "Set scene mode",
         "fr": "Définir le mode scène",
-        "nl": "Stel scènemodus in"
+        "nl": "Stel scènemodus in",
+        "de": "Szenenmodus einstellen"
       },
       "args": [
         {
@@ -580,7 +596,9 @@
       ],
       "titleFormatted": {
         "en": "Set scene mode [[mode]]",
-        "fr": "Définir le mode scène [[mode]]"
+        "fr": "Définir le mode scène [[mode]]",
+        "nl": "Stel scènemodus in [[mode]]",
+        "de": "Szenenmodus einstellen [[mode]]"
       }
     },
     {
@@ -622,7 +640,9 @@
       ],
       "titleFormatted": {
         "en": "Set power-on behavior [[mode]]",
-        "fr": "Définir le comportement à la mise sous tension [[mode]]"
+        "fr": "Définir le comportement à la mise sous tension [[mode]]",
+        "nl": "Stel inschakelgedrag in [[mode]]",
+        "de": "Einschaltverhalten einstellen [[mode]]"
       }
     }
   ]

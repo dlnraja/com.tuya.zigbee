@@ -4,7 +4,9 @@
       "id": "button_wireless_smart_button_1gang_button_pressed",
       "title": {
         "en": "Button pressed",
-        "fr": "Bouton appuyé"
+        "fr": "Bouton appuyé",
+        "nl": "Knop ingedrukt",
+        "de": "Taste gedrückt"
       },
       "tokens": [
         {
@@ -27,7 +29,9 @@
       "id": "button_wireless_smart_button_1gang_button_do_2c981",
       "title": {
         "en": "Button double-pressed",
-        "fr": "Bouton double-cliqué"
+        "fr": "Bouton double-cliqué",
+        "nl": "Knop dubbel ingedrukt",
+        "de": "Taste doppelt gedrückt"
       },
       "tokens": [
         {
@@ -50,7 +54,9 @@
       "id": "button_wireless_smart_button_1gang_button_lo_8a4e2",
       "title": {
         "en": "Button long-pressed",
-        "fr": "Bouton pressé longtemps"
+        "fr": "Bouton pressé longtemps",
+        "nl": "Knop lang ingedrukt",
+        "de": "Taste lange gedrückt"
       },
       "tokens": [
         {
@@ -73,7 +79,9 @@
       "id": "button_wireless_smart_button_1gang_button_mu_55088",
       "title": {
         "en": "Button multi-pressed",
-        "fr": "Bouton multi-cliqué"
+        "fr": "Bouton multi-cliqué",
+        "nl": "Knop meerdere keren ingedrukt",
+        "de": "Taste mehrfach gedrückt"
       },
       "tokens": [
         {
@@ -105,7 +113,9 @@
       "id": "button_wireless_smart_button_1gang_button_1__96a5e",
       "title": {
         "en": "Button 1 pressed",
-        "fr": "Bouton 1 appuyé"
+        "fr": "Bouton 1 appuyé",
+        "nl": "Knop 1 ingedrukt",
+        "de": "Taste 1 gedrückt"
       },
       "args": [],
       "titleFormatted": {
@@ -117,7 +127,9 @@
       "id": "button_wireless_smart_button_1gang_button_1_double",
       "title": {
         "en": "Button 1 double-pressed",
-        "fr": "Bouton 1 double-cliqué"
+        "fr": "Bouton 1 double-cliqué",
+        "nl": "Knop 1 dubbel ingedrukt",
+        "de": "Taste 1 doppelt gedrückt"
       },
       "args": [],
       "titleFormatted": {
@@ -129,7 +141,9 @@
       "id": "button_wireless_smart_button_1gang_button_1_long",
       "title": {
         "en": "Button 1 long-pressed",
-        "fr": "Bouton 1 pressé longtemps"
+        "fr": "Bouton 1 pressé longtemps",
+        "nl": "Knop 1 lang ingedrukt",
+        "de": "Taste 1 lange gedrückt"
       },
       "args": [],
       "titleFormatted": {
@@ -141,7 +155,9 @@
       "id": "button_wireless_smart_button_1gang_button_1_triple",
       "title": {
         "en": "Button 1 triple-pressed",
-        "fr": "Bouton 1 triple-cliqué"
+        "fr": "Bouton 1 triple-cliqué",
+        "nl": "Knop 1 driemaal ingedrukt",
+        "de": "Taste 1 dreimal gedrückt"
       },
       "args": [],
       "titleFormatted": {
@@ -153,7 +169,9 @@
       "id": "button_wireless_smart_button_1gang_button_1__95ae0",
       "title": {
         "en": "Button 1 released - after hold",
-        "fr": "Bouton 1 relâché - après maintien"
+        "fr": "Bouton 1 relâché - après maintien",
+        "nl": "Knop 1 losgelaten na vasthouden",
+        "de": "Taste 1 nach Halten losgelassen"
       },
       "args": [],
       "titleFormatted": {
@@ -214,7 +232,9 @@
       "id": "button_wireless_smart_button_1gang_button_2__97012",
       "title": {
         "en": "Button 2 pressed",
-        "fr": "Bouton 2 appuyé"
+        "fr": "Bouton 2 appuyé",
+        "nl": "Knop 2 ingedrukt",
+        "de": "Taste 2 gedrückt"
       },
       "args": [],
       "titleFormatted": {
@@ -226,7 +246,9 @@
       "id": "button_wireless_smart_button_1gang_button_2_double",
       "title": {
         "en": "Button 2 double-pressed",
-        "fr": "Bouton 2 double-cliqué"
+        "fr": "Bouton 2 double-cliqué",
+        "nl": "Knop 2 dubbel ingedrukt",
+        "de": "Taste 2 doppelt gedrückt"
       },
       "args": [],
       "titleFormatted": {
@@ -238,7 +260,9 @@
       "id": "button_wireless_smart_button_1gang_button_2_long",
       "title": {
         "en": "Button 2 long-pressed",
-        "fr": "Bouton 2 pressé longtemps"
+        "fr": "Bouton 2 pressé longtemps",
+        "nl": "Knop 2 lang ingedrukt",
+        "de": "Taste 2 lange gedrückt"
       },
       "args": [],
       "titleFormatted": {
@@ -250,7 +274,9 @@
       "id": "button_wireless_smart_button_1gang_button_2_triple",
       "title": {
         "en": "Button 2 triple-pressed",
-        "fr": "Bouton 2 triple-cliqué"
+        "fr": "Bouton 2 triple-cliqué",
+        "nl": "Knop 2 driemaal ingedrukt",
+        "de": "Taste 2 dreimal gedrückt"
       },
       "args": [],
       "titleFormatted": {
@@ -262,7 +288,9 @@
       "id": "button_wireless_smart_button_1gang_button_2__90428",
       "title": {
         "en": "Button 2 released - after hold",
-        "fr": "Bouton 2 relâché - après maintien"
+        "fr": "Bouton 2 relâché - après maintien",
+        "nl": "Knop 2 losgelaten na vasthouden",
+        "de": "Taste 2 nach Halten losgelassen"
       },
       "args": [],
       "titleFormatted": {
@@ -274,7 +302,9 @@
       "id": "button_wireless_smart_button_1gang_button_3__6bb28",
       "title": {
         "en": "Button 3 pressed",
-        "fr": "Bouton 3 appuyé"
+        "fr": "Bouton 3 appuyé",
+        "nl": "Knop 3 ingedrukt",
+        "de": "Taste 3 gedrückt"
       },
       "args": [],
       "titleFormatted": {
@@ -286,7 +316,9 @@
       "id": "button_wireless_smart_button_1gang_button_3_double",
       "title": {
         "en": "Button 3 double-pressed",
-        "fr": "Bouton 3 double-cliqué"
+        "fr": "Bouton 3 double-cliqué",
+        "nl": "Knop 3 dubbel ingedrukt",
+        "de": "Taste 3 doppelt gedrückt"
       },
       "args": [],
       "titleFormatted": {
@@ -298,7 +330,9 @@
       "id": "button_wireless_smart_button_1gang_button_3_long",
       "title": {
         "en": "Button 3 long-pressed",
-        "fr": "Bouton 3 pressé longtemps"
+        "fr": "Bouton 3 pressé longtemps",
+        "nl": "Knop 3 lang ingedrukt",
+        "de": "Taste 3 lange gedrückt"
       },
       "args": [],
       "titleFormatted": {
@@ -310,7 +344,9 @@
       "id": "button_wireless_smart_button_1gang_button_3_triple",
       "title": {
         "en": "Button 3 triple-pressed",
-        "fr": "Bouton 3 triple-cliqué"
+        "fr": "Bouton 3 triple-cliqué",
+        "nl": "Knop 3 driemaal ingedrukt",
+        "de": "Taste 3 dreimal gedrückt"
       },
       "args": [],
       "titleFormatted": {
@@ -322,7 +358,9 @@
       "id": "button_wireless_smart_button_1gang_button_3__690df",
       "title": {
         "en": "Button 3 released - after hold",
-        "fr": "Bouton 3 relâché - après maintien"
+        "fr": "Bouton 3 relâché - après maintien",
+        "nl": "Knop 3 losgelaten na vasthouden",
+        "de": "Taste 3 nach Halten losgelassen"
       },
       "args": [],
       "titleFormatted": {
@@ -334,7 +372,9 @@
       "id": "button_wireless_smart_button_1gang_button_4__1d893",
       "title": {
         "en": "Button 4 pressed",
-        "fr": "Bouton 4 appuyé"
+        "fr": "Bouton 4 appuyé",
+        "nl": "Knop 4 ingedrukt",
+        "de": "Taste 4 gedrückt"
       },
       "args": [],
       "titleFormatted": {
@@ -346,7 +386,9 @@
       "id": "button_wireless_smart_button_1gang_button_4_double",
       "title": {
         "en": "Button 4 double-pressed",
-        "fr": "Bouton 4 double-cliqué"
+        "fr": "Bouton 4 double-cliqué",
+        "nl": "Knop 4 dubbel ingedrukt",
+        "de": "Taste 4 doppelt gedrückt"
       },
       "args": [],
       "titleFormatted": {
@@ -358,7 +400,9 @@
       "id": "button_wireless_smart_button_1gang_button_4_long",
       "title": {
         "en": "Button 4 long-pressed",
-        "fr": "Bouton 4 pressé longtemps"
+        "fr": "Bouton 4 pressé longtemps",
+        "nl": "Knop 4 lang ingedrukt",
+        "de": "Taste 4 lange gedrückt"
       },
       "args": [],
       "titleFormatted": {
@@ -370,7 +414,9 @@
       "id": "button_wireless_smart_button_1gang_button_4_triple",
       "title": {
         "en": "Button 4 triple-pressed",
-        "fr": "Bouton 4 triple-cliqué"
+        "fr": "Bouton 4 triple-cliqué",
+        "nl": "Knop 4 driemaal ingedrukt",
+        "de": "Taste 4 dreimal gedrückt"
       },
       "args": [],
       "titleFormatted": {
@@ -382,7 +428,9 @@
       "id": "button_wireless_smart_button_1gang_button_4__cdb50",
       "title": {
         "en": "Button 4 released - after hold",
-        "fr": "Bouton 4 relâché - après maintien"
+        "fr": "Bouton 4 relâché - après maintien",
+        "nl": "Knop 4 losgelaten na vasthouden",
+        "de": "Taste 4 nach Halten losgelassen"
       },
       "args": [],
       "titleFormatted": {

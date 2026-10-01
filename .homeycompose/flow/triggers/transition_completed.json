@@ -1,7 +1,10 @@
 {
   "id": "transition_completed",
   "title": {
-    "en": "Transition completed"
+    "en": "Transition completed",
+    "fr": "Transition terminée",
+    "nl": "Overgang voltooid",
+    "de": "Übergang abgeschlossen"
   },
   "hint": {
     "en": "Triggers when a smooth device transition finishes"
