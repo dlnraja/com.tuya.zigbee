@@ -5,7 +5,7 @@
  * on the branch + tip check-runs. Keeps the set of red workflows in the tracking-issue state
  * and comments ONLY on transitions (newly red, with failed job names / recovered).
  * Also exported for digest-event.js (real-time workflow_run listener).
- * Env: CI_DAYS (7) · CI_PAGES (4) · CI_BRANCHES (master,stable-v5) · CI_IGNORE (regex of workflow names to ignore)
+ * Env: CI_DAYS (7) · CI_PAGES (3, max 5) · CI_BRANCHES (master,stable-v5) · CI_IGNORE (regex of workflow names to ignore)
  */
 const L = require('./lib');
 const REPO = process.env.HOMEY_REPO || L.REPO;
@@ -13,7 +13,7 @@ const BRANCHES = (process.env.CI_BRANCHES || 'master,stable-v5').split(',');
 const IGNORE = process.env.CI_IGNORE ? new RegExp(process.env.CI_IGNORE) : null;
 const BAD = ['failure', 'timed_out', 'startup_failure'];
 const DAYS = Number(process.env.CI_DAYS || 7);   // look-back window
-const PAGES = Number(process.env.CI_PAGES || 4); // ≤400 runs per branch
+const PAGES = Math.min(Number(process.env.CI_PAGES || 3), 5); // ≤300 runs per branch (hard cap 5)
 
 async function failedJobs(runId) {
   try {
@@ -52,7 +52,7 @@ async function branchHealth(branch) {
 
 function transitions(prev, cur) {
   const lines = [];
-  for (const b of Object.keys(cur)) {
+  for (const b of Object.keys(cur).filter((k) => !k.startsWith('_'))) {
     const p = (prev && prev[b] && prev[b].red) || {};
     const c = cur[b].red;
     for (const [n, r] of Object.entries(c)) {
@@ -65,14 +65,19 @@ function transitions(prev, cur) {
 
 function table(cur) {
   return ['| Branche | Tip | Checks tip en échec | Workflows 🟢 / 🔴 |', '|---|---|---|---|',
-    ...Object.entries(cur).map(([b, c]) => `| ${b} | \`${L.short(c.tip)}\` | ${c.tipFailed.length ? c.tipFailed.map(L.esc).join(', ') : `0/${c.tipChecks}`} | ${c.green} / ${Object.keys(c.red).length}${Object.keys(c.red).length ? ' (' + Object.keys(c.red).map(L.esc).join(', ') + ')' : ''} |`)].join('\n');
+    ...Object.entries(cur).filter(([b]) => !b.startsWith('_')).map(([b, c]) => `| ${b} | \`${L.short(c.tip)}\` | ${c.tipFailed.length ? c.tipFailed.map(L.esc).join(', ') : `0/${c.tipChecks}`} | ${c.green} / ${Object.keys(c.red).length}${Object.keys(c.red).length ? ' (' + Object.keys(c.red).map(L.esc).join(', ') + ')' : ''} |`)].join('\n');
 }
 
 async function main() {
   const { issue, prev } = await L.loadState('ci');
   const cur = {};
   for (const b of BRANCHES) { try { cur[b] = await branchHealth(b); } catch (e) { L.log(`${b}: ${e.message}`); if (prev && prev[b]) cur[b] = prev[b]; } }
-  const lines = prev ? transitions(prev, cur) : [];
+  // CI event lines buffered by digest-event.js burst dedupe: their red/green is already in prev,
+  // so transitions() won't repeat them — prepend them so they are not lost.
+  const pending = (prev && prev._events && prev._events.pending) || [];
+  const lines = [...pending, ...(prev ? transitions(prev, cur) : [])];
+  if (pending.length) L.log(`flushing ${pending.length} buffered event line(s)`);
+  cur._events = { lastAt: (prev && prev._events && prev._events.lastAt) || null, pending: [] };
   const md = `## 🩺 CI health — ${L.paris(new Date().toISOString())}\n\n${lines.length ? lines.map((l) => '- ' + l).join('\n') : (prev ? '_aucune transition_' : 'Premier passage : état initial enregistré.')}\n\n${table(cur)}\n\n<sub>autonomous-verification.yml (ci-health) · run ${process.env.GITHUB_RUN_ID || 'local'}</sub>`;
   L.summary(md);
   if (lines.length || L.FORCE) await L.postComment(issue, md); else console.log('No CI transition — silent.');
@@ -80,4 +85,4 @@ async function main() {
 }
 
 module.exports = { failedJobs, BAD };
-if (require.main === module) main().catch((e) => { console.error(e); process.exit(1); });
+if (require.main === module) L.run(main);

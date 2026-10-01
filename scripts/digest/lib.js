@@ -14,6 +14,9 @@
  *   DIGEST_DRY_RUN=1    never write (print the comment + new state instead)
  *   DIGEST_USE_GH_CLI=1 local testing: route API calls through an authenticated `gh api`
  *   DIGEST_FORCE=1      post even if nothing changed (manual dispatch "force")
+ *   DIGEST_MIN_RATE_REMAINING (50) stop gracefully below this x-ratelimit-remaining
+ *   DIGEST_MAX_API_CALLS (250)     hard cap of GitHub API calls per run
+ * Every GitHub call is spaced by a random 300–800 ms delay.
  */
 const { spawnSync } = require('child_process');
 const fs = require('fs');
@@ -27,9 +30,25 @@ const ISSUE_LABEL = 'bot-digest';
 const STATE_RE = /<!-- digest-state:BEGIN\n([\s\S]*?)\ndigest-state:END -->/;
 
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
+const jitter = (min, max) => sleep(min + Math.floor(Math.random() * (max - min + 1)));
+const UA = 'dlnraja-com.tuya.zigbee-digest/1.0 (+https://github.com/dlnraja/com.tuya.zigbee)';
+const MIN_REMAINING = Number(process.env.DIGEST_MIN_RATE_REMAINING || 50);
+let apiCalls = 0;
+
+/** Thrown to stop a digest gracefully (rate limit low / remote asked us to back off). */
+class StopDigest extends Error { constructor(msg) { super(msg); this.name = 'StopDigest'; } }
+/** Wrap a script's main(): StopDigest => exit 0 with a notice (no state write, no retry storm). */
+function run(main) {
+  main().catch((e) => {
+    if (e && e.name === 'StopDigest') { console.log(`::notice::digest stopped gracefully: ${e.message}`); process.exit(0); }
+    console.error(e); process.exit(1);
+  });
+}
 const log = (...a) => console.error('[digest]', ...a);
 
 async function gh(path, { method = 'GET', body, allow404 = false, raw = false } = {}) {
+  if (apiCalls++ > 0) await jitter(300, 800); // be gentle: spread calls out
+  if (apiCalls > Number(process.env.DIGEST_MAX_API_CALLS || 250)) throw new StopDigest(`API call budget exceeded (${apiCalls})`);
   if (process.env.DIGEST_USE_GH_CLI === '1') {
     const args = ['api', '-X', method, path.replace(API, ''), '-H', 'Accept: application/vnd.github+json'];
     if (body) args.push('--input', '-');
@@ -41,7 +60,7 @@ async function gh(path, { method = 'GET', body, allow404 = false, raw = false } 
     return r.stdout.trim() ? JSON.parse(r.stdout) : {};
   }
   const url = path.startsWith('http') ? path : API + path;
-  const headers = { Accept: 'application/vnd.github+json', 'User-Agent': 'dlnraja-digest-bot', 'X-GitHub-Api-Version': '2022-11-28' };
+  const headers = { Accept: 'application/vnd.github+json', 'User-Agent': UA, 'X-GitHub-Api-Version': '2022-11-28' };
   if (process.env.GITHUB_TOKEN) headers.Authorization = `Bearer ${process.env.GITHUB_TOKEN}`;
   if (body) headers['Content-Type'] = 'application/json';
   for (let attempt = 0; attempt < 4; attempt++) {
@@ -54,15 +73,14 @@ async function gh(path, { method = 'GET', body, allow404 = false, raw = false } 
       continue;
     }
     if (res.status === 404 && allow404) return null;
-    const remaining = Number(res.headers.get('x-ratelimit-remaining'));
+    const remHdr = res.headers.get('x-ratelimit-remaining');
+    const remaining = remHdr == null ? Infinity : Number(remHdr);
     if ((res.status === 403 || res.status === 429) && (remaining === 0 || res.headers.get('retry-after'))) {
-      const reset = Number(res.headers.get('x-ratelimit-reset')) * 1000;
-      const wait = res.headers.get('retry-after') ? Number(res.headers.get('retry-after')) * 1000 : Math.max(0, reset - Date.now()) + 1000;
-      if (wait > 120000) throw new Error(`rate limited on ${url} (reset in ${Math.round(wait / 1000)}s) — set GITHUB_TOKEN`);
-      log(`rate limited, waiting ${Math.round(wait / 1000)}s`);
-      await sleep(wait);
-      continue;
+      const ra = Number(res.headers.get('retry-after') || 0) * 1000;
+      if (ra > 0 && ra <= 60000 && attempt === 0) { log(`Retry-After ${ra / 1000}s`); await sleep(ra); continue; } // one polite retry max
+      throw new StopDigest(`GitHub rate limit hit on ${path} (remaining=${remHdr}, retry-after=${res.headers.get('retry-after')})`);
     }
+    if (remaining < MIN_REMAINING) throw new StopDigest(`x-ratelimit-remaining=${remaining} < ${MIN_REMAINING}`);
     if (res.status >= 500) { await sleep(2000 * (attempt + 1)); continue; }
     if (!res.ok) throw new Error(`${method} ${url} -> ${res.status} ${(await res.text()).slice(0, 300)}`);
     if (raw) return res.text();
@@ -72,17 +90,28 @@ async function gh(path, { method = 'GET', body, allow404 = false, raw = false } 
   throw new Error(`giving up on ${url}`);
 }
 
-async function fetchJson(url, { tries = 4 } = {}) {
-  for (let i = 0; i < tries; i++) {
+/**
+ * Polite public JSON fetch (Discourse). Descriptive UA, NO retry on 429/403 (throws
+ * StopDigest with .status so the caller can record a back-off), one retry on network/5xx.
+ */
+async function fetchJson(url) {
+  for (let i = 0; i < 2; i++) {
+    let res;
     try {
-      const res = await fetch(url, { headers: { Accept: 'application/json', 'User-Agent': 'dlnraja-digest-bot' }, signal: AbortSignal.timeout(30000) });
-      if (res.status === 429) { await sleep(Number(res.headers.get('retry-after') || 10) * 1000); continue; }
-      if (!res.ok) throw new Error(`${url} -> ${res.status}`);
-      return await res.json();
+      res = await fetch(url, { headers: { Accept: 'application/json', 'User-Agent': UA }, signal: AbortSignal.timeout(30000) });
     } catch (e) {
-      if (i === tries - 1) throw e;
-      await sleep(3000 * (i + 1));
+      if (i) throw e;
+      await jitter(5000, 10000);
+      continue;
     }
+    if (res.status === 429 || res.status === 403) {
+      const err = new StopDigest(`${url} -> ${res.status} (retry-after=${res.headers.get('retry-after')})`);
+      err.status = res.status; err.retryAfter = Number(res.headers.get('retry-after') || 0);
+      throw err;
+    }
+    if (res.status >= 500 && !i) { await jitter(5000, 10000); continue; }
+    if (!res.ok) throw new Error(`${url} -> ${res.status}`);
+    return res.json();
   }
 }
 
@@ -93,7 +122,7 @@ async function fileAt(repo, ref, path) {
   if (j.content) return Buffer.from(j.content, 'base64').toString('utf8');
   // Files > 1 MB (e.g. the generated root app.json) come back without content: use raw URL.
   if (j.download_url) {
-    const res = await fetch(j.download_url, { headers: { 'User-Agent': 'dlnraja-digest-bot' }, signal: AbortSignal.timeout(60000) });
+    const res = await fetch(j.download_url, { headers: { 'User-Agent': UA }, signal: AbortSignal.timeout(60000) });
     return res.ok ? res.text() : null;
   }
   return null;
@@ -126,10 +155,11 @@ function renderBody(state) {
     '',
     '| Workflow | Rôle |',
     '|---|---|',
-    "| `daily-digest.yml` (nouveau) | Homey 08:16 + Labs AscendOS/Pulse 08:49 (Paris), jours ouvrés ; inclut diags Gmail |",
-    "| `forum-poll.yml` › step *Forum watch* | Nouveaux posts topic 140352 + mfr/productId absents des drivers (4×/jour) |",
-    "| `autonomous-verification.yml` › job *ci-health* | Rouge/vert des workflows master & stable-v5 (toutes les 6 h, transitions seulement) |",
-    "| `notifications.yml` › job *digest-event* | PR ouverte/mergée + CI rouge/vert sur master (temps réel) |",
+    "| `daily-digest.yml` (nouveau) | Homey 08:16 + Labs 08:49 + Forum 10:23 + Inspiration 11:41 (Paris), jours ouvrés ; inclut diags Gmail |",
+    "| `daily-digest.yml` › job *inspiration* | JohanBendz : issues/PR (ouvertes+fermées, bots inclus) + workflows → pistes non mappées + recherche Z2M/ZHA/Blakadder (11:41 Paris, ≤100 éléments/jour) |",
+    "| `daily-digest.yml` › job *forum* | Nouveaux posts topic 140352 + mfr/productId absents des drivers (10:23 Paris, jours ouvrés) |",
+    "| `autonomous-verification.yml` › job *ci-health* | Rouge/vert des workflows master & stable-v5 (08:30 + 16:15 Paris jours ouvrés, transitions seulement) |",
+    "| `notifications.yml` › job *digest-event* | PR ouverte/mergée + CI rouge/vert sur master (temps réel, ≤1 commentaire CI / 30 min) |",
     '',
     `_Dernière mise à jour de l'état : ${new Date().toISOString()}_ — ne pas éditer le bloc ci-dessous (état machine).`,
     '',
@@ -189,4 +219,4 @@ function paris(iso) {
 const short = (sha) => (sha || '').slice(0, 7);
 const esc = (s) => String(s || '').replace(/[|<>@]/g, (c) => ({ '|': '\\|', '<': '&lt;', '>': '&gt;', '@': '@\u200b' }[c])).slice(0, 120);
 
-module.exports = { renderBody, gh, fetchJson, fileAt, findTrackingIssue, loadState, saveState, postComment, summary, paris, short, esc, log, sleep, REPO, DRY, FORCE };
+module.exports = { renderBody, run, StopDigest, jitter, UA, gh, fetchJson, fileAt, findTrackingIssue, loadState, saveState, postComment, summary, paris, short, esc, log, sleep, REPO, DRY, FORCE };

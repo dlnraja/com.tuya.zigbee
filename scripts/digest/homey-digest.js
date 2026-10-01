@@ -6,12 +6,22 @@
  * latest gmail-diagnostics / fetch-diags results. Diffs vs the previous state stored in the
  * tracking issue and posts ONE comment only if something changed.
  *
+ * New PRs/issues get an enrichment-leads line (scripts/digest/enrich.js, report-only).
  * Env: DIAG_REPORT_DIR (optional) = folder holding the downloaded
  *      sanitized-diagnostics-report artifact (diagnostics-report.json).
  */
 const fs = require('fs');
 const path = require('path');
 const L = require('./lib');
+const E = require('./enrich');
+const BODIES = new Map(); // number -> body (memory only, never stored in state)
+let IDX = null;
+function leadsFor(n) {
+  if (!IDX || !BODIES.get(n)) return '';
+  const c = E.check(E.extract(BODIES.get(n)), IDX);
+  const r = E.renderLeads(c);
+  return r ? `\n    - 🧭 ${r}` : '';
+}
 
 const REPO = process.env.HOMEY_REPO || 'dlnraja/com.tuya.zigbee';
 const BRANCHES = (process.env.HOMEY_BRANCHES || 'master,stable-v5').split(',');
@@ -55,8 +65,8 @@ async function branchInfo(b) {
 async function openItems() {
   // Search API counts PRs and issues separately in 2 calls.
   const q = async (type) => L.gh(`/search/issues?q=${encodeURIComponent(`repo:${REPO} is:open is:${type}`)}&per_page=30&sort=updated`);
-  const [prs, iss] = await Promise.all([q('pr'), q('issue')]);
-  const m = (i) => ({ n: i.number, t: i.title.slice(0, 80), u: i.user && i.user.login });
+  const prs = await q('pr'); const iss = await q('issue'); // sequential (spacing)
+  const m = (i) => { BODIES.set(i.number, `${i.title}\n${i.body || ''}`); return { n: i.number, t: i.title.slice(0, 80), u: i.user && i.user.login }; };
   const isBot = (i) => (i.labels || []).some((l) => l.name === 'bot-digest');
   return { prs: { count: prs.total_count, items: prs.items.map(m) }, issues: { count: iss.total_count - iss.items.filter(isBot).length, items: iss.items.filter((i) => !isBot(i)).map(m) } };
 }
@@ -103,7 +113,7 @@ function diffLines(prev, cur) {
     const added = setDiff(p.items, c.items); const gone = setDiff(c.items, p.items);
     if (p.count !== c.count || added.length || gone.length) {
       lines.push(`${k === 'prs' ? 'PR' : 'Issues'} ouvertes : ${p.count} → **${c.count}**` +
-        (added.length ? `\n  - ➕ ${added.map((i) => `#${i.n} ${L.esc(i.t)}`).join('\n  - ➕ ')}` : '') +
+        (added.length ? `\n  - ➕ ${added.map((i) => `#${i.n} ${L.esc(i.t)}${leadsFor(i.n)}`).join('\n  - ➕ ')}` : '') +
         (gone.length ? `\n  - ✔️ fermées : ${gone.map((i) => '#' + i.n).join(', ')}` : ''));
     }
   }
@@ -133,8 +143,10 @@ function snapshot(cur) {
       (cur.diags.report ? ` · rapport Gmail : ${cur.diags.report.count} diag(s), ${cur.diags.report.newFingerprints.length} FP non supporté(s)` : '')].join('\n');
 }
 
-(async () => {
+L.run(async () => {
   const { issue, prev } = await L.loadState('homey');
+  // enrichment leads for newly opened PRs/issues (needs drivers/ + lib/ + data/ in the checkout)
+  try { if (fs.existsSync('drivers')) IDX = E.buildIndex(process.cwd()); } catch (e) { L.log(`enrich index: ${e.message}`); }
   const cur = { at: new Date().toISOString(), branches: {}, open: await openItems(), diags: await diags() };
   for (const b of BRANCHES) {
     try { cur.branches[b] = await branchInfo(b); } catch (e) { L.log(`branch ${b}: ${e.message}`); }
@@ -146,4 +158,4 @@ function snapshot(cur) {
   else console.log('No change — silent.');
   // keep state small: drop item titles beyond 30
   await L.saveState(issue, 'homey', cur);
-})().catch((e) => { console.error(e); process.exit(1); });
+});

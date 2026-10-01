@@ -13,7 +13,7 @@ on:
   issues:
     types: [opened, closed]
   pull_request:
-    types: [opened, reopened, closed]
+    types: [opened, closed]
   # Real-time CI watcher on master (free replacement for the Grok event routine)
   workflow_run:
     workflows:
@@ -28,13 +28,13 @@ on:
 
 permissions:
   contents: read
-  issues: write   # digest-event: one comment on the "🤖 Daily digest" tracking issue
-  actions: read   # digest-event: failed job names of the CI run
 
 concurrency:
-  # workflow_run events get their own group (never cancel a CI-failure notification)
-  group: ${{ github.workflow }}-${{ github.event_name }}-${{ github.ref }}-${{ github.event.workflow_run.id || 'x' }}
-  cancel-in-progress: ${{ github.event_name != 'workflow_run' }}
+  # All workflow_run (CI) events share ONE group: a burst collapses to the latest run.
+  # digest-event.js also dedupes: ≤1 CI comment per 30 min (extra lines buffered, flushed later).
+  # Other events keep the ORIGINAL group (workflow + ref).
+  group: ${{ github.event_name == 'workflow_run' && format('{0}-ci-events', github.workflow) || format('{0}-{1}', github.workflow, github.ref) }}
+  cancel-in-progress: true
 defaults:
   run:
     shell: bash
@@ -87,6 +87,11 @@ jobs:
     name: 🔔 PR / CI-master event → tracking issue
     runs-on: ubuntu-latest
     timeout-minutes: 5
+    # job-scoped permissions: the original notify-maintainers job keeps contents: read only
+    permissions:
+      contents: read
+      issues: write   # one comment on the "🤖 Daily digest" tracking issue
+      actions: read   # failed job names of the CI run
     if: >-
       github.repository == 'dlnraja/com.tuya.zigbee' &&
       (github.event_name == 'pull_request' || github.event_name == 'workflow_run')
@@ -106,4 +111,5 @@ jobs:
         continue-on-error: true
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          DIGEST_EVENT_DEDUPE_MIN: '30'
         run: node scripts/digest/digest-event.js

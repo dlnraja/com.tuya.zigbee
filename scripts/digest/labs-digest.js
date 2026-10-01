@@ -60,7 +60,7 @@ function table(cur) {
   return ['| Repo | Tip | Dernier run par workflow | Ouverts |', '|---|---|---|---|', ...rows].join('\n');
 }
 
-(async () => {
+L.run(async () => {
   const { issue, prev } = await L.loadState('labs');
   const cur = {};
   for (const r of REPOS) { try { cur[r] = await repoInfo(r); } catch (e) { cur[r] = { error: e.message.slice(0, 120) }; } }
@@ -69,4 +69,4 @@ function table(cur) {
   L.summary(md);
   if (changes.length || L.FORCE) await L.postComment(issue, md); else console.log('No change — silent.');
   await L.saveState(issue, 'labs', cur);
-})().catch((e) => { console.error(e); process.exit(1); });
+});
