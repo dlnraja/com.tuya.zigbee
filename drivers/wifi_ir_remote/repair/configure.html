@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html><head><meta charset="utf-8">
+<style>
+body{font-family:-apple-system,Roboto,sans-serif;padding:12px;font-size:14px}
+label{display:block;margin-top:10px;font-weight:600}
+input,select{width:100%;padding:8px;margin-top:4px;box-sizing:border-box}
+button{margin-top:14px;padding:10px;width:100%}
+.msg{margin-top:10px;padding:8px;border-radius:4px;display:none}
+.err{background:#fde8e8;color:#9b1c1c}.ok{background:#e6f6ea;color:#1e6b35}
+small{color:#666}
+</style></head>
+<body>
+<!-- Repair view (WiFi local): update local key / IP / protocol of an existing device.
+     Handlers: TuyaLocalDriver.onRepair → configure, refresh_key, getSavedCredentials. -->
+<p><small>Leave a field empty to keep its current value.</small></p>
+<label for="ip">IP address</label><input id="ip" placeholder="192.168.1.50" autocomplete="off">
+<label for="lk">Local key</label><input id="lk" placeholder="16 ascii or 32 hex characters" autocomplete="off">
+<label for="pv">Protocol version</label>
+<select id="pv"><option value="">(unchanged)</option><option value="auto">Auto-detect</option>
+<option value="3.1">3.1</option><option value="3.3">3.3</option><option value="3.4">3.4</option><option value="3.5">3.5</option></select>
+<button id="save">Save</button>
+<button id="refresh">Fetch local key from linked account</button>
+<div id="err" class="msg err"></div><div id="ok" class="msg ok"></div>
+<script>
+var H;
+function show(id,t){var e=document.getElementById(id);e.textContent=t;e.style.display='block';}
+function hide(){document.getElementById('err').style.display='none';document.getElementById('ok').style.display='none';}
+function onHomeyReady(Homey){
+  H=Homey; Homey.ready();
+  document.getElementById('save').onclick=function(){
+    hide();
+    var p={};
+    var ip=document.getElementById('ip').value.trim(),lk=document.getElementById('lk').value.trim(),pv=document.getElementById('pv').value;
+    if(ip)p.ip=ip; if(lk){if(lk.length<8){show('err','Local key too short');return;}p.local_key=lk;} if(pv)p.protocol_version=pv;
+    if(!Object.keys(p).length){show('err','Nothing to update');return;}
+    H.emit('configure',p,function(err){ if(err){show('err',err.message||String(err));return;} show('ok','Saved'); H.done(); });
+  };
+  document.getElementById('refresh').onclick=function(){
+    hide();
+    H.emit('refresh_key',{},function(err,r){
+      if(err){show('err',err.message||String(err));return;}
+      if(r&&r.success===false){show('err',r.error||'Key not found');return;}
+      show('ok','Local key updated'); H.done();
+    });
+  };
+}
+</script>
+</body></html>
