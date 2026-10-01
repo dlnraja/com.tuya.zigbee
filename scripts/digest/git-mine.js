@@ -2,11 +2,10 @@
 /**
  * scripts/digest/git-mine.js — incremental mining of commit history as a feedback-loop input.
  *
- * Branches: GITMINE_BRANCHES (default master,stable-v5,bastien-home). Per branch a `since`
- * cursor (last commit date seen) lives in the tracking-issue state (key `gitmine`). First run
- * walks back GITMINE_BOOT_DAYS (default 3650 = whole history) but at most GITMINE_MAX_PAGES
- * (default 5 × 100 commits) per branch per run, oldest-first progress, so the full history is
- * covered over successive days without bursts.
+ * Branches: GITMINE_BRANCHES (default master,stable-v5,bastien-home). Per branch the state keeps
+ * `head` (newest commit date mined) and `back` (oldest reached). Each run first mines everything
+ * newer than `head` (≤2 pages), then spends the rest of GITMINE_MAX_PAGES (default 5 × 100) on
+ * backfill below `back` until the whole history is done. New commits are never starved.
  *
  * Commit messages describe what was fixed/added (mfr/pid, DP, cluster, frames, MCU behaviour).
  * Every lead from here is recorded with source `git-history` → heuristic: true. leads-merge only
@@ -23,7 +22,6 @@ const LD = require('./leads');
 const REPO = process.env.GITMINE_REPO || L.REPO;
 const BRANCHES = (process.env.GITMINE_BRANCHES || 'master,stable-v5,bastien-home').split(',').map((s) => s.trim()).filter(Boolean);
 const MAX_PAGES = Math.min(Number(process.env.GITMINE_MAX_PAGES || 5), 10);
-const BOOT_DAYS = Number(process.env.GITMINE_BOOT_DAYS || 3650);
 const SKIP_BOT = /\[auto:|\[bot\]|github-actions/i;
 const h8 = (s) => crypto.createHash('sha1').update(s).digest('hex').slice(0, 8);
 
@@ -33,34 +31,51 @@ L.run(async () => {
   const seen = new Set(st.seen || []);
   const idx = E.buildIndex(process.cwd());
   const fresh = []; let mined = 0;
-  for (const br of BRANCHES) {
-    const cur = st.cursors[br] || { since: new Date(Date.now() - BOOT_DAYS * 864e5).toISOString(), until: null };
-    // The commits API lists newest-first. To progress oldest-first we page from `since`, and when
-    // a branch has more than MAX_PAGES*100 commits pending we remember `until` (oldest reached)
-    // and continue next run, then move `since` forward once the window is exhausted.
-    let reachedEnd = false; let oldest = null; let newest = null;
-    for (let page = 1; page <= MAX_PAGES; page++) {
-      let list;
-      const q = `sha=${encodeURIComponent(br)}&per_page=100&page=${page}&since=${encodeURIComponent(cur.since)}` + (cur.until ? `&until=${encodeURIComponent(cur.until)}` : '');
-      try { list = await L.gh(`/repos/${REPO}/commits?${q}`, { allow404: true }); } catch (e) { if (e.name === 'StopDigest') throw e; L.log(`${br}: ${e.message.slice(0, 100)}`); break; }
-      if (!list || !list.length) { reachedEnd = true; break; }
-      for (const c of list) {
-        const date = c.commit.committer && c.commit.committer.date;
-        if (!newest || date > newest) newest = date;
-        if (!oldest || date < oldest) oldest = date;
-        const msg = c.commit.message || '';
-        if (SKIP_BOT.test(msg) || (c.author && /\[bot\]$/.test(c.author.login || ''))) continue;
-        mined++;
-        const rec = LD.record('git-history', c.html_url, msg, { origin: 'commit', idx, branch: br });
-        if (!rec || !rec.signals.unmapped) continue;
-        const f = rec.signals.unmapped.filter((u) => !u.startsWith('endpoint:') && !seen.has(h8(br + u)));
-        f.forEach((u) => seen.add(h8(br + u)));
-        if (f.length) fresh.push({ recent: Date.now() - Date.parse(date) < 14 * 864e5, br, sha: c.sha.slice(0, 10), url: c.html_url, title: msg.split('\n')[0].slice(0, 90), f });
-      }
-      if (list.length < 100) { reachedEnd = true; break; }
+  const handle = (br, c) => {
+    const date = c.commit.committer && c.commit.committer.date;
+    const msg = c.commit.message || '';
+    if (SKIP_BOT.test(msg) || (c.author && /\[bot\]$/.test(c.author.login || ''))) return date;
+    mined++;
+    const rec = LD.record('git-history', c.html_url, msg, { origin: 'commit', idx, branch: br });
+    if (rec && rec.signals.unmapped) {
+      const f = rec.signals.unmapped.filter((u) => !u.startsWith('endpoint:') && !seen.has(h8(br + u)));
+      f.forEach((u) => seen.add(h8(br + u)));
+      if (f.length) fresh.push({ recent: Date.now() - Date.parse(date) < 14 * 864e5, br, sha: c.sha.slice(0, 10), url: c.html_url, title: msg.split('\n')[0].slice(0, 90), f });
     }
-    if (reachedEnd) st.cursors[br] = { since: (cur.untilNewest && cur.untilNewest > (newest || '')) ? cur.untilNewest : (newest || cur.since), until: null };
-    else st.cursors[br] = { since: cur.since, until: oldest, untilNewest: cur.untilNewest || newest };
+    return date;
+  };
+  const page = async (br, extra, p) => {
+    try { return (await L.gh(`/repos/${REPO}/commits?sha=${encodeURIComponent(br)}&per_page=100&page=${p}${extra}`, { allow404: true })) || []; } catch (e) { if (e.name === 'StopDigest') throw e; L.log(`${br}: ${e.message.slice(0, 100)}`); return null; }
+  };
+  for (const br of BRANCHES) {
+    // Newest-first: (1) everything newer than `head` (≤ NEW_PAGES pages), then (2) backfill older
+    // history below `back` with the remaining page budget, until `done`.
+    let cur = st.cursors[br] || {};
+    if (cur.untilNewest || cur.until) cur = { head: cur.untilNewest || null, back: cur.until || null }; // migrate v1 state
+    let used = 0; let newest = null; let oldest = cur.back;
+    const NEW_PAGES = Math.max(1, Math.min(2, MAX_PAGES));
+    for (let p = 1; p <= NEW_PAGES; p++) {
+      const list = await page(br, cur.head ? `&since=${encodeURIComponent(cur.head)}` : '', p); used++;
+      if (!list || !list.length) break;
+      for (const c of list) {
+        if (cur.head && c.commit.committer.date <= cur.head) continue;
+        const d = handle(br, c);
+        if (!newest || d > newest) newest = d;
+        if (!cur.head && (!oldest || d < oldest)) oldest = d; // first run: new window doubles as backfill start
+      }
+      if (list.length < 100) break;
+    }
+    if (newest) cur.head = newest;
+    if (!cur.back) cur.back = oldest || cur.head;
+    for (let p = 1; !cur.done && used < MAX_PAGES && cur.back; p++) {
+      const until = new Date(Date.parse(cur.back) - 1000).toISOString();
+      const list = await page(br, `&until=${encodeURIComponent(until)}`, 1); used++;
+      if (!list) break;
+      if (!list.length) { cur.done = true; break; }
+      for (const c of list) { const d = handle(br, c); if (d < cur.back) cur.back = d; }
+      if (list.length < 100) { cur.done = true; break; }
+    }
+    st.cursors[br] = { head: cur.head, back: cur.back, done: !!cur.done };
   }
   st.seen = [...seen].slice(-3000); st.mined = (st.mined || 0) + mined; st.at = new Date().toISOString();
   const md = `## 🧬 Git history mining — ${BRANCHES.join(', ')}\n\n${mined} commit(s) analysés ce run (total ${st.mined}).` +

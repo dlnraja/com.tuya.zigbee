@@ -160,7 +160,7 @@ function renderBody(state) {
     '| Workflow | Rôle |',
     '|---|---|',
     "| `daily-digest.yml` (nouveau) | Homey 08:16 + Labs 08:49 + Forum 10:23 + Inspiration 11:41 (Paris), jours ouvrés ; inclut diags Gmail |",
-    "| `daily-digest.yml` › job *inspiration* | JohanBendz : issues/PR (ouvertes+fermées, bots inclus) + workflows → pistes non mappées + recherche Z2M/ZHA/Blakadder (11:41 Paris, ≤100 éléments/jour) |",
+    "| `daily-digest.yml` › job *inspiration* | JohanBendz : issues/PR (ouvertes+fermées, bots inclus) + workflows → pistes non mappées + recoupement externe (11:41 Paris, ≤100 éléments/jour) |",
     "| `daily-digest.yml` › job *forum* | Nouveaux posts topic 140352 + mfr/productId absents des drivers (10:23 Paris, jours ouvrés) |",
     "| `autonomous-verification.yml` › job *ci-health* | Rouge/vert des workflows master & stable-v5 (08:30 + 16:15 Paris jours ouvrés, transitions seulement) |",
     "| `notifications.yml` › job *digest-event* | PR ouverte/mergée + CI rouge/vert sur master (temps réel, ≤1 commentaire CI / 30 min) |",

@@ -105,9 +105,9 @@ function main() {
   const md = [
     '### 🔁 Digest feedback loop → market couples',
     `- artifacts: ${files.length} · records: ${recs.length} · couples: ${list.length} (sourced: ${promoted.length}, heuristic report-only: ${list.length - promoted.length})`,
-    `- functional leads (DP/cluster/frame/behaviour): ${signals.length} · DP meanings verified in Z2M cache: ${signals.filter((s) => s.verified).length}`,
+    `- functional leads (DP/cluster/frame/behaviour): ${signals.length} · DP meanings confirmed by external cross-reference: ${signals.filter((s) => s.verified).length}`,
     `- rules-digest: ${rules ? rules.rules.length + ' rules, hash ' + rules.inputsHash.slice(0, 12) : 'n/a'}`,
-    ...promoted.slice(0, 15).map((c) => `  - \`${c.mfr}\` + \`${c.pid}\` ← ${c.labels.join(',')}${c.verified ? ' ✔ ' + c.verifiedBy.join(',') : ''}${c.pinnedTo ? ' (DEVICE_TRUTH: ' + c.pinnedTo.join(',') + ')' : ''}`),
+    ...promoted.slice(0, 15).map((c) => `  - \`${c.mfr}\` + \`${c.pid}\` ← ${c.labels.join(',')}${c.verified ? ' ✔ external cross-reference ×' + c.verifiedBy.length : ''}${c.pinnedTo ? ' (DEVICE_TRUTH: ' + c.pinnedTo.join(',') + ')' : ''}`),
   ].join('\n');
   fs.writeFileSync(path.join(OUTDIR, 'SUMMARY.md'), md + '\n');
   console.log(md);
