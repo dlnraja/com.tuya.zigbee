@@ -200,6 +200,70 @@
       "source": [
         "https://github.com/JohanBendz/com.tuya.zigbee/issues/1474"
       ]
+    },
+    {
+      "id": "aao3yzhs_dp5_temperature_div10",
+      "mfr": [
+        "_TZE284_aao3yzhs"
+      ],
+      "pid": [
+        "TS0601"
+      ],
+      "bug": "soil sensor reports DP5 temperature in 0.1 °C; runtimes that read it as whole °C show 10x values (also sends data as response frames, and compound frames)",
+      "workaround": "DP5 /10, DP3 soil moisture, DP15 battery; accept both report and response frames",
+      "status": "existing",
+      "location": "lib/DeviceFingerprintDB.js ('_TZE284_aao3yzhs|TS0601'), lib/devices/TuyaUnifiedDevice.js (compound frame fix)",
+      "source": [
+        "https://github.com/JohanBendz/com.tuya.zigbee/issues/1009#issuecomment-5897476882"
+      ]
+    },
+    {
+      "id": "wkai4ga5_frame_multiplicity",
+      "mfr": [
+        "_TZ3000_wkai4ga5"
+      ],
+      "pid": [
+        "TS0044"
+      ],
+      "bug": "an every-other-frame debounce makes presses need repeating on newer Homey hardware, while other reports show an OFF->ON double toggle: the frame multiplicity differs from sibling remotes",
+      "workaround": "do not drop alternate frames globally; dedupe by ZCL transaction sequence number per endpoint (scope any bypass to this pair after a raw-frame check)",
+      "status": "documented",
+      "location": "drivers/button_wireless_2, drivers/scene_switch_4",
+      "source": [
+        "https://github.com/JohanBendz/com.tuya.zigbee/issues/457#issuecomment-5870019780"
+      ]
+    },
+    {
+      "id": "pzao9ls1_group_toggle",
+      "mfr": [
+        "_TZ3002_pzao9ls1"
+      ],
+      "pid": [
+        "TS0726"
+      ],
+      "bug": "a virtual (app) press on one gang toggles all physical gangs (group-addressed command reaches every endpoint)",
+      "workaround": "send per-endpoint unicast commands, never group-addressed onOff, for this 4-gang switch",
+      "status": "documented",
+      "location": "drivers/wall_switch_4gang_1way",
+      "source": [
+        "https://github.com/dlnraja/com.tuya.zigbee/issues/132#issuecomment-3947072344"
+      ]
+    },
+    {
+      "id": "rco1yzb1_single_click_missing",
+      "mfr": [
+        "_TZ3000_rco1yzb1"
+      ],
+      "pid": [
+        "TS004F"
+      ],
+      "bug": "single click not reported in scene mode; a later press (even 20 s apart) is seen as a double click",
+      "workaround": "none applied yet: requires the TS004F mode switch (event mode) and per-press transaction dedupe; tracked for retest",
+      "status": "documented",
+      "location": "drivers/button_wireless_4",
+      "source": [
+        "https://github.com/JohanBendz/com.tuya.zigbee/issues/423#issuecomment-2405850747"
+      ]
     }
   ]
 }

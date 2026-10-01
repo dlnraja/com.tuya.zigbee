@@ -1,11 +1,11 @@
 {
   "updated": "2026-10-01",
   "forum_raw_pages_done": {
-    "154077": "all",
-    "146735": "all",
-    "89271": "all",
+    "21313": "all (28 pages)",
     "26439": "all",
-    "21313": "all (28 pages)"
+    "89271": "all",
+    "146735": "all",
+    "154077": "all"
   },
   "github_comments": {
     "dlnraja/com.tuya.zigbee": "300 most recent, oldest read 2026-08-11 (issues/420#issuecomment-5248892381)",
@@ -15,5 +15,284 @@
     "dlnraja/com.tuya.zigbee": "300 most recently updated (oldest 2026-04-12, #235)",
     "JohanBendz/com.tuya.zigbee": "300 most recently updated (oldest 2026-09-30, #968)"
   },
-  "note": "continue older comments with ?sort=created&direction=desc&page=4+"
+  "note": "continue older comments with ?sort=created&direction=desc&page=4+",
+  "scan": {
+    "tracked": [
+      "dlnraja/com.tuya.zigbee",
+      "JohanBendz/com.tuya.zigbee"
+    ],
+    "peers": [
+      "JohanBendz/com.lidl",
+      "ChrisBloem/Homey-Zigbee-Community",
+      "gpmachado/com.gpm.homesuite",
+      "kodalissri/com.MyZigbee.Devices"
+    ],
+    "forkRoots": [
+      "JohanBendz/com.tuya.zigbee",
+      "dlnraja/com.tuya.zigbee"
+    ],
+    "comments": {
+      "dlnraja/com.tuya.zigbee": {
+        "page": 24,
+        "done": true,
+        "last": "2025-08-09T19:16:12Z"
+      },
+      "JohanBendz/com.tuya.zigbee": {
+        "page": 38,
+        "done": true,
+        "last": "2020-10-19T21:35:04Z"
+      }
+    },
+    "issues": {
+      "dlnraja/com.tuya.zigbee": {
+        "page": 7,
+        "done": true,
+        "last": "2025-08-05T23:56:44Z"
+      },
+      "JohanBendz/com.tuya.zigbee": {
+        "page": 16,
+        "done": true,
+        "last": "2020-05-17T19:38:24Z"
+      }
+    },
+    "peerIssues": {
+      "JohanBendz/com.lidl": {
+        "page": 2,
+        "done": true,
+        "last": "2021-01-27T19:48:31Z"
+      },
+      "ChrisBloem/Homey-Zigbee-Community": {
+        "page": 1,
+        "done": true
+      },
+      "gpmachado/com.gpm.homesuite": {
+        "page": 2,
+        "done": true,
+        "last": "2026-07-21T13:41:47Z"
+      },
+      "kodalissri/com.MyZigbee.Devices": {
+        "page": 1,
+        "done": true
+      }
+    },
+    "peerComments": {
+      "JohanBendz/com.lidl": {
+        "page": 2,
+        "done": true,
+        "last": "2021-02-04T14:18:15Z"
+      },
+      "ChrisBloem/Homey-Zigbee-Community": {
+        "page": 1,
+        "done": true
+      },
+      "gpmachado/com.gpm.homesuite": {
+        "page": 1,
+        "done": true
+      },
+      "kodalissri/com.MyZigbee.Devices": {
+        "page": 1,
+        "done": true
+      }
+    },
+    "peerDrivers": {
+      "JohanBendz/com.lidl": {
+        "pushed_at": "2024-05-15T21:15:05Z"
+      },
+      "ChrisBloem/Homey-Zigbee-Community": {
+        "pushed_at": "2026-09-08T18:21:11Z"
+      },
+      "gpmachado/com.gpm.homesuite": {
+        "pushed_at": "2026-09-03T00:28:33Z"
+      },
+      "kodalissri/com.MyZigbee.Devices": {
+        "pushed_at": "2026-06-16T00:29:18Z"
+      }
+    },
+    "forks": {
+      "JohanBendz/com.tuya.zigbee": {
+        "page": 2,
+        "done": false,
+        "seen": {
+          "jrevillard/com.tuya.zigbee": "2025-06-06T12:31:00Z",
+          "jurgenheine/com.tuya.zigbee": "2021-02-15T16:06:26Z",
+          "PiTRiS87/com.tuya.zigbee": "2026-03-05T20:04:48Z",
+          "MarkBenard/com.tuya.zigbee": "never-pushed",
+          "hallard/com.tuya.zigbee": "2021-06-16T13:55:50Z",
+          "bramoosterhuis/com.tuya.zigbee": "never-pushed",
+          "Netmonks/com.tuya.zigbee": "2021-08-19T11:29:13Z",
+          "martijnpieters/com.tuya.zigbee": "never-pushed",
+          "danielgajdos/com.tuya.zigbee": "2022-01-06T21:17:55Z",
+          "melkuier/com.tuya.zigbee": "2021-12-30T11:26:44Z",
+          "BertvanHoekelen/com.tuya.zigbee": "2024-08-22T22:57:16Z",
+          "mgblm/com.tuya.zigbee": "never-pushed",
+          "rivaljin/com.tuya.zigbee": "never-pushed",
+          "kb-net/com.tuya.zigbee": "never-pushed",
+          "Mimomaj/com.tuya.zigbee": "2022-02-24T14:29:51Z",
+          "ToreLa/com.tuya.zigbee": "never-pushed",
+          "mvervoorn/com.tuya.zigbee": "2022-03-14T19:50:15Z",
+          "rdl987/com.tuya.zigbee": "2022-06-16T15:10:09Z",
+          "Benni404/com.tuya.zigbee": "2025-04-09T20:24:10Z",
+          "JirLap/com.tuya.zigbee": "never-pushed",
+          "ferdyh/com.tuya.zigbee": "2022-05-18T20:28:39Z",
+          "dansav/com.tuya.zigbee": "2023-07-02T12:01:24Z",
+          "rvorsten/com.tuya.zigbee": "2022-06-24T10:27:42Z",
+          "mengwong/com.tuya.zigbee": "2023-11-27T10:48:16Z",
+          "jesbach/com.tuya.zigbee": "2022-08-17T20:52:45Z",
+          "LubosCzech/com.tuya.zigbee": "2024-02-22T17:57:36Z",
+          "PeterKawa/com.tuya.zigbee": "never-pushed",
+          "cor73x/com.tuya.zigbee": "2022-12-07T01:25:15Z",
+          "alistairg/com.tuya.zigbee": "never-pushed",
+          "CyB0rgg/com.tuya.zigbee": "2023-02-13T10:00:24Z",
+          "regnerus/com.tuya.zigbee": "2023-02-20T08:56:18Z",
+          "ThaYoung1/com.tuya.zigbee": "2023-03-04T11:41:41Z",
+          "Radiosprey/com.tuya.zigbee": "2023-03-03T22:50:55Z",
+          "shaarkys/com.tuya.zigbee": "2026-09-26T20:33:22Z",
+          "ThomasPaq/com.tuya.zigbee": "never-pushed",
+          "Zsoltt-dom/com.tuya.zigbee": "2023-04-02T16:58:32Z",
+          "ameesme/com.tuya.zigbee": "2023-04-19T13:24:58Z",
+          "artanisdesign/com.tuya.zigbee": "2023-06-15T09:46:58Z",
+          "pbruining/com.tuya.zigbee": "2025-12-09T07:29:00Z",
+          "hsdmiranda/com.tuya.zigbee": "2023-12-01T15:04:48Z",
+          "Internetwerk-Nederland-BV/com.tuya.zigbee": "2024-05-06T13:12:44Z",
+          "bengro/com.tuya.zigbee": "2024-07-05T09:35:36Z",
+          "Roaldoien/com.tuya.zigbee": "2023-08-07T13:12:53Z",
+          "jdotcole/com.tuya.zigbee": "2023-08-18T04:51:25Z",
+          "TheLostHomeyAppRepositories/com.tuya.zigbee": "2026-04-17T19:17:59Z",
+          "Allram/com.tuya.zigbee": "2023-09-08T09:14:12Z",
+          "abn/com.tuya.zigbee": "2024-11-21T01:00:27Z",
+          "fnxpt/com.tuya.zigbee": "2023-10-04T11:14:57Z",
+          "mhaid/com.tuya.zigbee": "2025-01-05T11:42:08Z",
+          "WJGvdVelden/com.tuya.zigbee": "2025-10-08T13:50:27Z",
+          "OMGatito/com.tuya.zigbee": "2024-08-10T19:59:39Z",
+          "daervik/com.tuya.zigbee": "2023-10-29T21:41:34Z",
+          "some-say/com.tuya.zigbee": "never-pushed",
+          "demyvdj/com.tuya.zigbee": "2023-11-13T13:57:32Z",
+          "habbo656/com.tuya.zigbee": "2024-02-04T17:17:53Z",
+          "syzygyinteractivemedia/com.tuya.zigbee": "2025-07-03T11:14:15Z",
+          "gooooba/com.tuya.zigbee": "never-pushed",
+          "steampunklolcat/com.tuya.zigbee": "2023-11-23T17:13:17Z",
+          "ricardo777/com.tuya.zigbee": "2023-11-22T13:49:08Z",
+          "slicke/com.tuya.zigbee": "2024-12-05T00:01:45Z",
+          "evanhemmen/com.tuya.zigbee": "2023-11-29T09:44:29Z",
+          "JuliusIl/com.tuya.zigbee": "2023-11-29T20:15:40Z",
+          "obetsak/com.tuya.zigbee": "2024-01-07T22:18:07Z",
+          "stefan-schweiger/com.tuya.zigbee": "2024-02-14T07:30:32Z",
+          "GerwinKr/com.tuya.zigbee": "2023-12-30T21:23:55Z",
+          "FlyJJ1010/com.tuya.zigbee": "2023-12-09T13:44:18Z",
+          "tfoldi/com.tuya.zigbee": "2024-09-16T20:39:34Z",
+          "gtankovics/com.tuya.zigbee": "2023-12-23T20:28:55Z",
+          "jaenster/com.tuya.zigbee": "2023-12-24T15:55:11Z",
+          "papadeeh/com.tuya.zigbee": "2023-12-26T17:06:08Z",
+          "RimlingerGuillaume/com.tuya.zigbee": "2023-12-28T16:45:00Z",
+          "doedeluxe/com.tuya.zigbee": "2024-04-07T10:21:21Z",
+          "neoscaler/com.tuya.zigbee": "2024-01-06T10:58:31Z",
+          "nilnor/com.tuya.zigbee": "2023-12-30T19:59:34Z",
+          "rickardgranberg/com.tuya.zigbee": "2024-02-05T06:56:07Z",
+          "jlvanoorschot/com.tuya.zigbee": "2024-01-16T20:26:07Z",
+          "Geim66/com.tuya.zigbee": "2024-01-15T21:18:49Z",
+          "SparklingKnuckle69/com.tuya.zigbee": "2024-01-23T19:48:40Z",
+          "razorback16/com.tuya.zigbee": "2024-01-24T18:59:35Z",
+          "shahzadsk/com.tuya.zigbee": "2024-02-01T03:30:06Z",
+          "frostmarelen/com.tuya.zigbee.frost": "never-pushed",
+          "den-frie-vilje/com.tuya.zigbee": "never-pushed",
+          "danielloczi/com.tuya.zigbee": "2025-11-01T14:36:04Z",
+          "Osbakk/com.tuya.zigbee": "never-pushed",
+          "housedadlife/com.tuya.zigbee": "never-pushed",
+          "maccyber/com.tuya.zigbee": "2024-04-08T05:43:02Z",
+          "ProfFunny13/com.tuya.zigbee": "2024-02-11T18:55:14Z",
+          "sinan92/com.tuya.zigbee": "2025-10-31T23:00:12Z",
+          "InDate/com.tuya.zigbee": "2024-02-25T12:58:26Z",
+          "HenkLaracker/com.tuya.zigbee": "2024-02-21T17:07:06Z",
+          "kevinmcb90/com.tuya.zikbee": "2024-02-27T21:21:56Z",
+          "Koekstra/com.tuya.zigbee": "2024-03-06T19:36:48Z",
+          "mwadelin/com.tuya.zigbee": "never-pushed",
+          "TzK069/com.tuya.zigbee": "2024-03-31T22:08:12Z",
+          "Eastmasters/com.tuya.zigbee": "2024-04-04T19:55:03Z",
+          "mpagnoulle/com.tuya.zigbee": "2024-04-08T18:27:59Z",
+          "djfutur/com.tuya.zigbee": "2024-04-30T12:04:21Z",
+          "MarcQ3/com.tuya.zigbee": "never-pushed",
+          "jcmandersson/com.tuya.zigbee": "2024-04-11T09:17:50Z",
+          "tweakerrobin/com.tuya.zigbee": "never-pushed",
+          "MartijnM15/com.tuya.zigbee": "2024-04-19T12:57:59Z",
+          "giokerst/com.tuya.zigbee": "2026-05-11T10:42:40Z",
+          "Stephan-de-Jong/com.tuya.zigbee_SJO": "2025-12-12T22:48:35Z",
+          "PollekevT/com.tuya.zigbee": "never-pushed",
+          "mech78/com.tuya.zigbee": "2024-12-08T19:24:49Z",
+          "moKorean/com.tuya.zigbee": "2026-07-17T01:18:27Z",
+          "HendrikGrunstra/com.tuya.zigbee": "never-pushed",
+          "Trebbit/TuyaZigbeeExtraDevices": "2024-09-19T21:42:48Z",
+          "NicolasYDDER/com.tuya.zigbee": "2026-01-03T18:54:17Z",
+          "vletroye/com.tuya.zigbee": "2024-09-05T19:09:49Z",
+          "patrickwilkes1982/com.tuya.zigbee": "never-pushed",
+          "galaxyprof/com.tuya.zigbee": "2024-10-09T17:24:16Z",
+          "roelofoomen/com.tuya.zigbee": "2024-10-13T09:14:40Z",
+          "basco-jpg/com.tuya.zigbee": "2024-10-15T20:43:41Z",
+          "antonhagg/com.tuya.zigbee": "2025-01-22T20:38:21Z",
+          "jeroenvanagt/com.tuya.zigbee": "2025-05-17T14:44:08Z",
+          "maiacodes/com.tuya.zigbee": "never-pushed",
+          "rvproductions/com.tuya.zigbee": "2024-12-25T15:02:54Z",
+          "Onclin13/com.tuya.zigbee": "2024-12-08T18:53:21Z",
+          "omBratteng/com.tuya.zigbee": "2024-12-20T12:21:05Z",
+          "gtrolo/com.tuya.zigbee": "2024-12-18T20:13:45Z",
+          "evervondel/com.tuya.zigbee": "2025-02-27T19:12:41Z",
+          "chernals/com.tuya.zigbee": "2025-02-18T09:11:20Z",
+          "mkoslacz/com.tuya.zigbee": "2025-02-08T12:50:32Z",
+          "mikberg/com.tuya.zigbee": "2025-01-07T21:30:56Z",
+          "dirkg173/com.tuya.zigbee": "2025-01-19T10:19:50Z",
+          "snorro80/com.tuya.zigbee": "never-pushed",
+          "semolex/com.tuya.zigbee": "2025-03-05T12:42:32Z",
+          "artisare/com.tuya.zigbee": "never-pushed",
+          "TKGHill/com.tuya.zigbee": "2025-04-27T10:25:24Z",
+          "FinnKje/com.tuya.zigbee": "never-pushed",
+          "dvdkroft/com.tuya.zigbee": "never-pushed",
+          "YuriEstevan/com.tuya.zigbee": "2025-03-30T17:01:07Z",
+          "gpmachado/com.tuya.zigbee": "2025-07-24T03:30:00Z",
+          "hapylestat/com.tuya.zigbee": "2025-04-15T10:45:44Z",
+          "adamel2006/com.tuya.zigbee": "never-pushed",
+          "crimson7O/com.tuya.zigbee": "2025-04-26T06:53:55Z",
+          "guestus/com.tuya.zigbee": "never-pushed",
+          "Melectro1/com.tuya.zigbee": "2025-05-08T06:10:08Z",
+          "lima92/com.tuya.zigbee": "never-pushed",
+          "tannerchung/com.tuya.zigbee": "2025-05-28T01:54:15Z",
+          "cmanl/com.tuya.zigbee": "2025-05-30T21:12:59Z",
+          "mayconbordin/com.tuya.zigbee": "2025-06-28T00:29:27Z",
+          "AlfredMBG/com.tuya.zigbee": "2025-05-31T16:44:30Z",
+          "jievie2000/com.tuya.zigbee": "2025-06-20T17:03:36Z",
+          "IsaacNZ2/com.tuya.zigbee": "2025-10-30T23:12:36Z",
+          "script0803/com.tuya.zigbee": "never-pushed",
+          "dlnraja/com.tuya.zigbee": "2026-10-01T21:52:28Z",
+          "Peter-Celica/com.tuya.zigbee": "2025-10-10T11:15:14Z",
+          "kindberg95/com.tuya.zigbee": "2025-08-19T14:08:16Z",
+          "willarentz/com.tuya.zigbee": "2025-10-01T21:45:37Z",
+          "theswim/com.tuya.zigbee": "2026-02-15T02:21:38Z",
+          "SietzeM/com.tuya.zigbee": "never-pushed",
+          "kodalissri/com.tuya.zigbee": "2026-02-06T02:45:05Z",
+          "sebastianbrand01/com.tuya.zigbee": "2025-10-15T17:32:25Z",
+          "hendriksenremco/com.tuya.zigbee": "never-pushed",
+          "Mmaaikel/com.tuya.zigbee": "2026-07-05T06:37:17Z",
+          "tomkusz/com.tuya.zigbee": "never-pushed",
+          "baschte/de.baschte.tuya.zigbee": "2026-01-06T17:15:08Z",
+          "bmalkow/com.tuya.zigbee": "2026-01-09T10:24:26Z",
+          "pkuijpers/com.tuya.zigbee": "2026-01-30T15:54:03Z",
+          "Robsta86/com.tuya.zigbee": "2026-03-29T21:25:39Z",
+          "telenut/com.tuya.zigbee": "never-pushed",
+          "finnamu/com.tuya.zigbee": "never-pushed",
+          "oskarirauta/com.tuya.zigbee": "2026-09-28T16:17:05Z",
+          "MisterBRB/com.tuya.zigbee": "2026-04-18T19:00:37Z",
+          "pixelwiese/com.tuya.zigbee": "never-pushed",
+          "macmonty/com.tuya.zigbee": "never-pushed",
+          "ErnieV/com.tuya.zigbee": "2026-07-01T18:19:39Z"
+        },
+        "base": "SDK3"
+      }
+    },
+    "lastRun": {
+      "at": "2026-10-01T22:18:01.873Z",
+      "requests": 0,
+      "stopped": "budget 0 reached",
+      "mentionsSeen": 0,
+      "kept": 63,
+      "unknownMfrs": 5
+    }
+  }
 }
