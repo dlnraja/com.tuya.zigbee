@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-01T10:31:32.581Z",
+  "generatedAt": "2026-10-01T17:35:22.937Z",
   "date": "2026-10-01",
   "mode": "full",
   "phases": [
@@ -12,35 +12,35 @@
     {
       "name": "github",
       "ok": true,
-      "durationMs": 349
+      "durationMs": 509
     },
     {
       "name": "gmail",
       "ok": true,
-      "durationMs": 266,
+      "durationMs": 240,
       "details": {
         "crash": {
           "ok": true,
           "skipped": false,
           "status": 0,
-          "durationMs": 58,
+          "durationMs": 52,
           "stderr": "",
-          "stdoutTail": "[gmail-crash-pattern-gate] sources=32 hits=2 unknown=0\n  ERR_IAS_SLEEPY_TIMEOUT: 3 source-hit(s)\n  wrote .github/state/gmail-crash-patterns.json\n  verdict: ok\n"
+          "stdoutTail": "[gmail-crash-pattern-gate] sources=32 hits=0 unknown=0\n  wrote .github/state/gmail-crash-patterns.json\n  verdict: ok\n"
         },
         "treat": {
           "ok": true,
           "skipped": false,
           "status": 0,
-          "durationMs": 207,
+          "durationMs": 187,
           "stderr": "",
-          "stdoutTail": "[automate] inbox total=0 have=30 missing=0 ingested_now=0\n[recursive-treat] sources: 136\n[recursive-treat] wrote /home/runner/work/com.tuya.zigbee/com.tuya.zigbee/reports/diag-recursive-treat-2026-10-01\n{\n  \"generatedAt\": \"2026-10-01T10:31:33.185Z\",\n  \"methodology\": \"f647d35b-style full-body recursive treat — sacred couple never invented; P2246 derive from interview when ABSENT\",\n  \"sourcesScanned\": 136,\n  \"uniqueCases\": 122,\n  \"actionable\": 33,\n  \"derivedFromInterview\": 0,\n  \"signalTally\": {\n    \"scene_mode_unsupported\": 3,\n    \"wrong_driver_hint\": 4,\n    \"athom_socket_hang\": 2,\n    \"athom_processing_failed\": 2,\n    \"wrong_smart_rcbo\": 2,\n    \"flow_guard_spam\": 2,\n    \"processing_failed\": 2,\n    \"scene_0x8004\": 2,\n    \"invalid_flow_card\": 1,\n    \"missing_capability_listener\": 1\n  },\n  \"gmailBodiesPresent\": 30,\n  \"interviews\": 90\n}\n[automate] status → .github/state/diag-recursive-inbox/automate-status.json\n{\n  \"total\": 0,\n  \"have\": 30,\n  \"missing\": 0,\n  \"missingIds\": []\n}\n[automate] actionable= 33 gmailBodies= 30\n"
+          "stdoutTail": "[automate] inbox total=0 have=30 missing=0 ingested_now=0\n[recursive-treat] sources: 136\n[recursive-treat] wrote /home/runner/work/com.tuya.zigbee/com.tuya.zigbee/reports/diag-recursive-treat-2026-10-01\n{\n  \"generatedAt\": \"2026-10-01T17:35:23.676Z\",\n  \"methodology\": \"f647d35b-style full-body recursive treat — sacred couple never invented; P2246 derive from interview when ABSENT\",\n  \"sourcesScanned\": 136,\n  \"uniqueCases\": 122,\n  \"actionable\": 32,\n  \"derivedFromInterview\": 0,\n  \"signalTally\": {\n    \"scene_mode_unsupported\": 3,\n    \"wrong_driver_hint\": 4,\n    \"athom_socket_hang\": 2,\n    \"athom_processing_failed\": 2,\n    \"wrong_smart_rcbo\": 2,\n    \"flow_guard_spam\": 2,\n    \"processing_failed\": 2,\n    \"scene_0x8004\": 2,\n    \"invalid_flow_card\": 1,\n    \"missing_capability_listener\": 1\n  },\n  \"gmailBodiesPresent\": 30,\n  \"interviews\": 90\n}\n[automate] status → .github/state/diag-recursive-inbox/automate-status.json\n{\n  \"total\": 0,\n  \"have\": 30,\n  \"missing\": 0,\n  \"missingIds\": []\n}\n[automate] actionable= 32 gmailBodies= 30\n"
         }
       }
     },
     {
       "name": "forum",
       "ok": true,
-      "durationMs": 28815,
+      "durationMs": 26934,
       "skipScan": false,
       "steps": [
         {
@@ -64,7 +64,7 @@
     {
       "name": "drivers",
       "ok": true,
-      "durationMs": 1909,
+      "durationMs": 1859,
       "mfs": {
         "high": 0,
         "changes": 0,
@@ -75,45 +75,33 @@
     {
       "name": "functionalDeep",
       "ok": true,
-      "durationMs": 115,
+      "durationMs": 80,
       "note": "P2529 complementary deep functional (soft)"
     },
     {
       "name": "prioritize",
       "ok": true,
       "durationMs": 1,
-      "count": 5
+      "count": 4
     },
     {
       "name": "docs",
       "ok": true,
-      "durationMs": 0,
+      "durationMs": 1,
       "doc": "/home/runner/work/com.tuya.zigbee/com.tuya.zigbee/docs/architecture/L99_INBOX_INTELLIGENCE.md"
     },
     {
       "name": "gates",
       "ok": true,
-      "durationMs": 3022
+      "durationMs": 2954
     }
   ],
   "github": {
-    "harvestedAt": "2026-10-01T10:31:32.930Z",
+    "harvestedAt": "2026-10-01T17:35:23.445Z",
     "repo": "dlnraja/com.tuya.zigbee",
     "auth": "token",
     "error": null,
     "issues": [
-      {
-        "number": 556,
-        "title": "[Auto] New Tuya devices found in zigbee2mqtt",
-        "labels": [
-          "enhancement",
-          "auto-scan"
-        ],
-        "updatedAt": "2026-10-01T06:36:22Z",
-        "user": "github-actions[bot]",
-        "htmlUrl": "https://github.com/dlnraja/com.tuya.zigbee/issues/556",
-        "bodySnippet": "Monthly scan found new manufacturerName IDs:\n```\n_TZ3000_0lvv1d5b\n_TZ3000_1hypixdr\n_TZ3000_3o7r0mno\n_TZ3000_ahvrgyac\n_TZ3000_bbebkwjk\n_TZ3000_bu47m8pv\n_TZ3000_f6pgzqob\n_TZ3000_syetgitm\n_TZ3008_iooniers\n_TZ3008_qziabvzj\n_TZ3008_xvfd3nkp\n_TZ300A_57kqwetw\n_TZ3210_8etggm4u\n_TZ3210_cqqb61yo\n_TZ3210_mldzab8w\n_TZ3210_o235agwx\n_TZ3210_o4vasvef\n_TZ3210_tlwlmwm6\n_TZ3210_tqwyiitv\n_TZD200_sjjp9bti\n_TZE200_nkjintbl\n_TZE204_dak2k10o\n_TZE204_eaasry7v\n_TZE204_lyqazpe6\n_TZE204_pxbjch8m\n_TZE204_r6kfl9ta\n_TZE204_wsek35um\n_TZE20C_tjz9ad5g\n_TZE20C_ycab9txf\n_TZE284_5qfrnbqs\n_TZE284_hbxadcl0\n_TZE284_lyqazpe6\n_TZE284_n41i9jyt\n_TZE284_pxwixtky\n_TZE284_rfpyqax9\n_TZE284_tokhh9pf\n_TZE284_znkkcauq\n_TZE284_zuq5xxib\n```\nQueued for enrich; bot triage will close after processing."
-      },
       {
         "number": 554,
         "title": "Bug report - TS0046 / _TZ3000_iszegwpd 6 Gang Wall Remote fails to pair although Zigbee interview succeeds",
@@ -148,22 +136,22 @@
         "draft": false
       }
     ],
-    "openIssueCount": 3,
+    "openIssueCount": 2,
     "openPrCount": 1
   },
   "forum": {
     "path": "/home/runner/work/com.tuya.zigbee/com.tuya.zigbee/.github/state/forum/actionable-processor-report.json",
     "totals": {
-      "posts": 215,
-      "withCouples": 77,
-      "needAction": 53,
-      "both": 128,
-      "masterOnly": 18
+      "posts": 216,
+      "withCouples": 76,
+      "needAction": 51,
+      "both": 129,
+      "masterOnly": 19
     },
-    "posts": 215
+    "posts": 216
   },
   "gmail": {
-    "generatedAt": "2026-10-01T10:31:32.980Z",
+    "generatedAt": "2026-10-01T17:35:23.487Z",
     "sourcesScanned": 32,
     "patternCounts": {
       "flow_getDeviceActionCard": 0,
@@ -181,7 +169,7 @@
       "heap_oom_live_data": 0,
       "setName_not_fn": 0,
       "sub_capability_value_not_string": 0,
-      "ERR_IAS_SLEEPY_TIMEOUT": 3,
+      "ERR_IAS_SLEEPY_TIMEOUT": 0,
       "ERR_DESTROYED_DEVICE_TIMER": 0,
       "ERR_UNBOUND_DESTROYED": 0,
       "ERR_CATCH_ON_UNDEFINED": 0,
@@ -189,71 +177,7 @@
       "ERR_AUDIT_CAPABILITIES": 0,
       "ERR_ZIGBEE_ROUTE_FULL": 0
     },
-    "hits": [
-      {
-        "pattern": "ERR_IAS_SLEEPY_TIMEOUT",
-        "severity": "high",
-        "status": "fixed_p148",
-        "fix": "DataRecoveryManager: skip aggressive EF00 on IAS without EF00; no COMMON_DPS on sleepy (P148/P157).",
-        "source": ".github/state/diagnostics-report.json",
-        "sacred": {
-          "mfrs": [
-            "_TZE284_uo8qcagc",
-            "_TZ3210_eymunffl",
-            "_TZ3000_kfu8zapd",
-            "_TZ3000_wkai4ga5",
-            "_TZ3000_aetquff4",
-            "_TZ3000_hafsqare",
-            "_TZE284_aaeasoll",
-            "_TZE204_xalsoe3m",
-            "_TZE200_crq3r3la",
-            "_TZ3290_yyax9ajf",
-            "_TZ3290_gnl5a6a5xvql7c2a",
-            "_TZE284_rqcuwlsa",
-            "_TZ3000_hyarhbyx",
-            "_TZE284_0ints6wl",
-            "_TZE284_0ints6w",
-            "_TZE284_1youk3hj",
-            "_TZE284_qf5mzewi",
-            "_TZ3002_pzao9ls1",
-            "_TZ3210_n0wbkysi",
-            "_TZE200_bxoo2swd"
-          ],
-          "pids": [
-            "TS0601",
-            "TS0101",
-            "TS0044",
-            "TS0011",
-            "TS1201",
-            "TS0505B",
-            "TS0121",
-            "TS011F",
-            "TS0201",
-            "TS0001",
-            "TS0726",
-            "TS0004",
-            "TS0003",
-            "TS0002",
-            "TS130F"
-          ]
-        }
-      },
-      {
-        "pattern": "ERR_IAS_SLEEPY_TIMEOUT",
-        "severity": "high",
-        "status": "fixed_p148",
-        "fix": "DataRecoveryManager: skip aggressive EF00 on IAS without EF00; no COMMON_DPS on sleepy (P148/P157).",
-        "source": ".github/state/diagnostics-report.json#diag",
-        "sacred": {
-          "mfrs": [
-            "_TZE284_pcdmj88b"
-          ],
-          "pids": [
-            "TS0601"
-          ]
-        }
-      }
-    ],
+    "hits": [],
     "unknownFatals": [],
     "knownFixed": [
       "flow_getDeviceActionCard",
@@ -311,18 +235,8 @@
       "dualApp": "BOTH",
       "source": "forum",
       "id": "forum-need-action",
-      "title": "53 forum posts needAction (shadow processor)",
+      "title": "51 forum posts needAction (shadow processor)",
       "action": "enrich:investigate + deep-functional (DP/cluster/flow/RX-TX, not mfr+pid only)",
-      "forumReply": "NEVER"
-    },
-    {
-      "score": 70,
-      "dualApp": "BOTH",
-      "source": "github-issue",
-      "id": "#556",
-      "title": "[Auto] New Tuya devices found in zigbee2mqtt",
-      "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/556",
-      "action": "investigate-code-silent",
       "forumReply": "NEVER"
     },
     {
@@ -338,6 +252,6 @@
   ],
   "functionalDeep": {
     "ok": true,
-    "durationMs": 114
+    "durationMs": 79
   }
 }
