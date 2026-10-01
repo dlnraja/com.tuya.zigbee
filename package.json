@@ -317,7 +317,8 @@
     "check:p274x": "npm run check:p2740 && npm run check:p2741",
     "check:p273x": "npm run check:p2733 && npm run check:p2734 && npm run check:p2735 && npm run check:p2736 && npm run check:p2739",
     "check:p2743": "node --test test/critical/p2743-gh550-551-inbox-treat.test.js",
-    "check:p2765": "node --test test/critical/p2765-gh550-missing-listener-presence-lift.test.js"
+    "check:p2765": "node --test test/critical/p2765-gh550-missing-listener-presence-lift.test.js",
+    "check:p2764": "node --test test/critical/p2764-firmware-quirks.test.js"
   },
   "keywords": [
     "homey",

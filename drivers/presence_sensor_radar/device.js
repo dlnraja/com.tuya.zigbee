@@ -1,6 +1,7 @@
 'use strict';
 
 const UnifiedSensorBase = require('../../lib/devices/UnifiedSensorBase');
+const FirmwareQuirks = require('../../lib/quirks/FirmwareQuirks');
 const { getSensorConfig, transformPresence } = require('./configs');
 const IntelligentPresenceInference = require('../../lib/sensors/IntelligentPresenceInference');
 const IntelligentDPAutoDiscovery = require('../../lib/sensors/IntelligentDPAutoDiscovery');
@@ -1730,6 +1731,11 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
    * Handle DPs defined in the SENSOR_CONFIGS
    */
   _handleStaticDP(dpId, value, mapping, config) {
+    // WHY(P2764 firmware quirk, pair-scoped via lib/data/firmware-quirks.json):
+    // _TZE284_iadro9bf reports DP1 inverted (0 = present).
+    // https://github.com/Koenkk/zigbee-herdsman-converters/pull/9115
+    // https://github.com/zigpy/zha-device-handlers/issues/3969
+    try { value = FirmwareQuirks.transformDp(this, dpId, value); } catch (_e) { /* soft */ }
     // A. Handle presence DPs
     if (mapping.cap === 'alarm_motion') {
       const inference = this._ensureInference();
