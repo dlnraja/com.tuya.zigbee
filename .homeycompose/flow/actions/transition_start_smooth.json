@@ -1,7 +1,10 @@
 {
   "id": "transition_start_smooth",
   "title": {
-    "en": "Start smooth transition"
+    "en": "Start smooth transition",
+    "fr": "Démarrer une transition douce",
+    "nl": "Vloeiende overgang starten",
+    "de": "Sanften Übergang starten"
   },
   "hint": {
     "en": "Start a smooth transition on a numeric capability (e.g., dim, color_temperature)"
@@ -27,14 +30,18 @@
       "type": "number",
       "title": {
         "en": "From value"
-      }
+      },
+      "min": -100000,
+      "max": 100000
     },
     {
       "name": "to_value",
       "type": "number",
       "title": {
         "en": "To value"
-      }
+      },
+      "min": -100000,
+      "max": 100000
     },
     {
       "name": "duration_seconds",
@@ -98,5 +105,11 @@
         }
       ]
     }
-  ]
+  ],
+  "titleFormatted": {
+    "en": "Start smooth transition [[capability]] [[from_value]] [[to_value]] [[duration_seconds]] [[easing]] ([[device]])",
+    "fr": "Démarrer une transition douce [[capability]] [[from_value]] [[to_value]] [[duration_seconds]] [[easing]] ([[device]])",
+    "nl": "Vloeiende overgang starten [[capability]] [[from_value]] [[to_value]] [[duration_seconds]] [[easing]] ([[device]])",
+    "de": "Sanften Übergang starten [[capability]] [[from_value]] [[to_value]] [[duration_seconds]] [[easing]] ([[device]])"
+  }
 }

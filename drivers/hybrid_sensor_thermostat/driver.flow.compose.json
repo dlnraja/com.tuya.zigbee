@@ -4,7 +4,9 @@
       "id": "hybrid_sensor_thermostat_temperature_changed",
       "title": {
         "en": "Temperature changed",
-        "fr": "Température changée"
+        "fr": "Température changée",
+        "nl": "Temperatuur gewijzigd",
+        "de": "Temperatur geändert"
       },
       "tokens": [
         {
@@ -27,7 +29,9 @@
       "id": "hybrid_sensor_thermostat_humidity_changed",
       "title": {
         "en": "Humidity changed",
-        "fr": "Humidité changée"
+        "fr": "Humidité changée",
+        "nl": "Luchtvochtigheid gewijzigd",
+        "de": "Luftfeuchtigkeit geändert"
       },
       "tokens": [
         {
@@ -73,7 +77,9 @@
       "id": "hybrid_sensor_thermostat_battery_low",
       "title": {
         "en": "Battery low",
-        "fr": "Batterie faible"
+        "fr": "Batterie faible",
+        "nl": "Batterij bijna leeg",
+        "de": "Batterie schwach"
       },
       "args": [],
       "titleFormatted": {
@@ -85,7 +91,9 @@
       "id": "hybrid_sensor_thermostat_target_temperature_changed",
       "title": {
         "en": "Target temperature changed",
-        "fr": "Consigne changée"
+        "fr": "Consigne changée",
+        "nl": "Doeltemperatuur gewijzigd",
+        "de": "Zieltemperatur geändert"
       },
       "tokens": [
         {
@@ -161,7 +169,9 @@
       "id": "hybrid_sensor_thermostat_temperature_above",
       "title": {
         "en": "Temperature is above",
-        "fr": "Température supérieure à"
+        "fr": "Température supérieure à",
+        "nl": "Temperatuur is hoger dan",
+        "de": "Temperatur liegt über"
       },
       "args": [
         {
@@ -178,14 +188,18 @@
       ],
       "titleFormatted": {
         "en": "Temperature is above [[temp]]",
-        "fr": "Température supérieure à [[temp]]"
+        "fr": "Température supérieure à [[temp]]",
+        "nl": "Temperatuur is hoger dan [[temp]]",
+        "de": "Temperatur liegt über [[temp]]"
       }
     },
     {
       "id": "hybrid_sensor_thermostat_temperature_below",
       "title": {
         "en": "Temperature is below",
-        "fr": "Température inférieure à"
+        "fr": "Température inférieure à",
+        "nl": "Temperatuur is lager dan",
+        "de": "Temperatur liegt unter"
       },
       "args": [
         {
@@ -202,7 +216,9 @@
       ],
       "titleFormatted": {
         "en": "Temperature is below [[temp]]",
-        "fr": "Température inférieure à [[temp]]"
+        "fr": "Température inférieure à [[temp]]",
+        "nl": "Temperatuur is lager dan [[temp]]",
+        "de": "Temperatur liegt unter [[temp]]"
       }
     }
   ],
@@ -262,7 +278,9 @@
       "id": "hybrid_sensor_thermostat_set_temperature",
       "title": {
         "en": "Set target temperature",
-        "fr": "Définir température cible"
+        "fr": "Définir température cible",
+        "nl": "Doeltemperatuur instellen",
+        "de": "Zieltemperatur einstellen"
       },
       "args": [
         {
@@ -279,7 +297,9 @@
       ],
       "titleFormatted": {
         "en": "Set target temperature [[temperature]]",
-        "fr": "Définir température cible [[temperature]]"
+        "fr": "Définir température cible [[temperature]]",
+        "nl": "Doeltemperatuur instellen [[temperature]]",
+        "de": "Zieltemperatur einstellen [[temperature]]"
       }
     }
   ]

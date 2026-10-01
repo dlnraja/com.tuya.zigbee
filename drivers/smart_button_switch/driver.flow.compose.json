@@ -4,7 +4,9 @@
       "id": "smart_button_switch_button_1gang_button_1_pressed",
       "title": {
         "fr": "Bouton appuyé",
-        "en": "Button pressed"
+        "en": "Button pressed",
+        "nl": "Knop ingedrukt",
+        "de": "Taste gedrückt"
       },
       "args": [],
       "titleFormatted": {
@@ -16,7 +18,9 @@
       "id": "smart_button_switch_button_1gang_button_1_double",
       "title": {
         "fr": "Bouton double-appui",
-        "en": "Button double-pressed"
+        "en": "Button double-pressed",
+        "nl": "Knop dubbel ingedrukt",
+        "de": "Taste doppelt gedrückt"
       },
       "args": [],
       "titleFormatted": {
@@ -28,7 +32,9 @@
       "id": "smart_button_switch_button_1gang_button_1_long",
       "title": {
         "fr": "Bouton appui long",
-        "en": "Button long-pressed"
+        "en": "Button long-pressed",
+        "nl": "Knop lang ingedrukt",
+        "de": "Taste lange gedrückt"
       },
       "args": [],
       "titleFormatted": {
@@ -40,7 +46,9 @@
       "id": "smart_button_switch_button_1gang_button_1_triple",
       "title": {
         "fr": "Bouton triple-appui",
-        "en": "Button triple-pressed"
+        "en": "Button triple-pressed",
+        "nl": "Knop driemaal ingedrukt",
+        "de": "Taste dreimal gedrückt"
       },
       "args": [],
       "titleFormatted": {
@@ -52,7 +60,9 @@
       "id": "smart_button_switch_button_1gang_button_1_release",
       "title": {
         "fr": "Bouton relâché",
-        "en": "Button released"
+        "en": "Button released",
+        "nl": "Knop losgelaten",
+        "de": "Taste losgelassen"
       },
       "args": [],
       "titleFormatted": {
@@ -64,7 +74,9 @@
       "id": "smart_button_switch_physical_on",
       "title": {
         "en": "Physical button on",
-        "fr": "Physical button on"
+        "fr": "Physical button on",
+        "nl": "Fysieke knop aan",
+        "de": "Physische Taste an"
       },
       "args": []
     },
@@ -72,7 +84,9 @@
       "id": "smart_button_switch_physical_off",
       "title": {
         "en": "Physical button off",
-        "fr": "Physical button off"
+        "fr": "Physical button off",
+        "nl": "Fysieke knop uit",
+        "de": "Physische Taste aus"
       },
       "args": []
     }

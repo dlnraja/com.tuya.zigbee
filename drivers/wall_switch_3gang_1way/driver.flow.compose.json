@@ -4,7 +4,9 @@
       "id": "wall_switch_3gang_1way_turned_on",
       "title": {
         "en": "Turned on",
-        "nl": "Aangezet"
+        "nl": "Aangezet",
+        "fr": "Allumé",
+        "de": "Eingeschaltet"
       },
       "args": [],
       "titleFormatted": {
@@ -16,7 +18,9 @@
       "id": "wall_switch_3gang_1way_turned_off",
       "title": {
         "en": "Turned off",
-        "nl": "Uitgezet"
+        "nl": "Uitgezet",
+        "fr": "Éteint",
+        "de": "Ausgeschaltet"
       },
       "args": [],
       "titleFormatted": {
@@ -28,7 +32,9 @@
       "id": "wall_switch_3gang_1way_physical_gang1_on",
       "title": {
         "en": "Gang 1 physical ON",
-        "nl": "Gang 1 fysiek AAN"
+        "nl": "Gang 1 fysiek AAN",
+        "fr": "Voie 1 allumée (physique)",
+        "de": "Kanal 1 physisch EIN"
       },
       "args": [],
       "titleFormatted": {
@@ -40,7 +46,9 @@
       "id": "wall_switch_3gang_1way_physical_gang1_off",
       "title": {
         "en": "Gang 1 physical OFF",
-        "nl": "Gang 1 fysiek UIT"
+        "nl": "Gang 1 fysiek UIT",
+        "fr": "Voie 1 éteinte (physique)",
+        "de": "Kanal 1 physisch AUS"
       },
       "args": [],
       "titleFormatted": {
@@ -52,7 +60,9 @@
       "id": "wall_switch_3gang_1way_physical_gang2_on",
       "title": {
         "en": "Gang 2 physical ON",
-        "nl": "Gang 2 fysiek AAN"
+        "nl": "Gang 2 fysiek AAN",
+        "fr": "Voie 2 allumée (physique)",
+        "de": "Kanal 2 physisch EIN"
       },
       "args": [],
       "titleFormatted": {
@@ -64,7 +74,9 @@
       "id": "wall_switch_3gang_1way_physical_gang2_off",
       "title": {
         "en": "Gang 2 physical OFF",
-        "nl": "Gang 2 fysiek UIT"
+        "nl": "Gang 2 fysiek UIT",
+        "fr": "Voie 2 éteinte (physique)",
+        "de": "Kanal 2 physisch AUS"
       },
       "args": [],
       "titleFormatted": {
@@ -76,7 +88,9 @@
       "id": "wall_switch_3gang_1way_physical_gang3_on",
       "title": {
         "en": "Gang 3 physical ON",
-        "nl": "Gang 3 fysiek AAN"
+        "nl": "Gang 3 fysiek AAN",
+        "fr": "Voie 3 allumée (physique)",
+        "de": "Kanal 3 physisch EIN"
       },
       "args": [],
       "titleFormatted": {
@@ -88,7 +102,9 @@
       "id": "wall_switch_3gang_1way_physical_gang3_off",
       "title": {
         "en": "Gang 3 physical OFF",
-        "nl": "Gang 3 fysiek UIT"
+        "nl": "Gang 3 fysiek UIT",
+        "fr": "Voie 3 éteinte (physique)",
+        "de": "Kanal 3 physisch AUS"
       },
       "args": [],
       "titleFormatted": {
@@ -100,7 +116,9 @@
       "id": "wall_switch_3gang_1way_gang1_scene",
       "title": {
         "en": "Gang 1 scene triggered",
-        "nl": "Gang 1 scène geactiveerd"
+        "nl": "Gang 1 scène geactiveerd",
+        "fr": "Scène de la voie 1 déclenchée",
+        "de": "Szene von Kanal 1 ausgelöst"
       },
       "args": [],
       "tokens": [
@@ -124,7 +142,9 @@
       "id": "wall_switch_3gang_1way_gang2_scene",
       "title": {
         "en": "Gang 2 scene triggered",
-        "nl": "Gang 2 scène geactiveerd"
+        "nl": "Gang 2 scène geactiveerd",
+        "fr": "Scène de la voie 2 déclenchée",
+        "de": "Szene von Kanal 2 ausgelöst"
       },
       "args": [],
       "tokens": [
@@ -148,7 +168,9 @@
       "id": "wall_switch_3gang_1way_gang3_scene",
       "title": {
         "en": "Gang 3 scene triggered",
-        "nl": "Gang 3 scène geactiveerd"
+        "nl": "Gang 3 scène geactiveerd",
+        "fr": "Scène de la voie 3 déclenchée",
+        "de": "Szene von Kanal 3 ausgelöst"
       },
       "args": [],
       "tokens": [
@@ -174,7 +196,9 @@
       "id": "wall_switch_3gang_1way_set_backlight",
       "title": {
         "en": "Set LED indicator mode",
-        "nl": "Stel LED-indicator modus in"
+        "nl": "Stel LED-indicator modus in",
+        "fr": "Régler le mode du voyant LED",
+        "de": "LED-Anzeigemodus einstellen"
       },
       "args": [
         {
@@ -207,7 +231,9 @@
       ],
       "titleFormatted": {
         "en": "Set LED indicator mode [[mode]]",
-        "nl": "Stel LED-indicator modus in [[mode]]"
+        "nl": "Stel LED-indicator modus in [[mode]]",
+        "fr": "Régler le mode du voyant LED [[mode]]",
+        "de": "LED-Anzeigemodus einstellen [[mode]]"
       }
     },
     {
@@ -302,7 +328,9 @@
       "id": "wall_switch_3gang_1way_set_scene_mode",
       "title": {
         "en": "Set scene mode",
-        "nl": "Stel scènemodus in"
+        "nl": "Stel scènemodus in",
+        "fr": "Régler le mode scène",
+        "de": "Szenenmodus einstellen"
       },
       "args": [
         {
@@ -332,14 +360,18 @@
       ],
       "titleFormatted": {
         "en": "Set scene mode [[mode]]",
-        "nl": "Stel scènemodus in [[mode]]"
+        "nl": "Stel scènemodus in [[mode]]",
+        "fr": "Régler le mode scène [[mode]]",
+        "de": "Szenenmodus einstellen [[mode]]"
       }
     },
     {
       "id": "wall_switch_3gang_1way_turn_on",
       "title": {
         "en": "Turn on",
-        "nl": "Aanzetten"
+        "nl": "Aanzetten",
+        "fr": "Allumer",
+        "de": "Einschalten"
       },
       "args": [],
       "titleFormatted": {
@@ -351,7 +383,9 @@
       "id": "wall_switch_3gang_1way_turn_off",
       "title": {
         "en": "Turn off",
-        "nl": "Uitzetten"
+        "nl": "Uitzetten",
+        "fr": "Éteindre",
+        "de": "Ausschalten"
       },
       "args": [],
       "titleFormatted": {
@@ -363,7 +397,9 @@
       "id": "wall_switch_3gang_1way_toggle",
       "title": {
         "en": "Toggle",
-        "nl": "Wisselen"
+        "nl": "Wisselen",
+        "fr": "Basculer",
+        "de": "Umschalten"
       },
       "args": [],
       "titleFormatted": {
@@ -375,7 +411,9 @@
       "id": "wall_switch_3gang_1way_turn_on_gang1",
       "title": {
         "en": "Turn on gang 1",
-        "nl": "Gang 1 aanzetten"
+        "nl": "Gang 1 aanzetten",
+        "fr": "Allumer la voie 1",
+        "de": "Kanal 1 einschalten"
       },
       "args": [],
       "titleFormatted": {
@@ -387,7 +425,9 @@
       "id": "wall_switch_3gang_1way_turn_off_gang1",
       "title": {
         "en": "Turn off gang 1",
-        "nl": "Gang 1 uitzetten"
+        "nl": "Gang 1 uitzetten",
+        "fr": "Éteindre la voie 1",
+        "de": "Kanal 1 ausschalten"
       },
       "args": [],
       "titleFormatted": {
@@ -399,7 +439,9 @@
       "id": "wall_switch_3gang_1way_toggle_gang1",
       "title": {
         "en": "Toggle gang 1",
-        "nl": "Gang 1 wisselen"
+        "nl": "Gang 1 wisselen",
+        "fr": "Basculer la voie 1",
+        "de": "Kanal 1 umschalten"
       },
       "args": [],
       "titleFormatted": {
@@ -411,7 +453,9 @@
       "id": "wall_switch_3gang_1way_turn_on_gang2",
       "title": {
         "en": "Turn on gang 2",
-        "nl": "Gang 2 aanzetten"
+        "nl": "Gang 2 aanzetten",
+        "fr": "Allumer la voie 2",
+        "de": "Kanal 2 einschalten"
       },
       "args": [],
       "titleFormatted": {
@@ -423,7 +467,9 @@
       "id": "wall_switch_3gang_1way_turn_off_gang2",
       "title": {
         "en": "Turn off gang 2",
-        "nl": "Gang 2 uitzetten"
+        "nl": "Gang 2 uitzetten",
+        "fr": "Éteindre la voie 2",
+        "de": "Kanal 2 ausschalten"
       },
       "args": [],
       "titleFormatted": {
@@ -435,7 +481,9 @@
       "id": "wall_switch_3gang_1way_toggle_gang2",
       "title": {
         "en": "Toggle gang 2",
-        "nl": "Gang 2 wisselen"
+        "nl": "Gang 2 wisselen",
+        "fr": "Basculer la voie 2",
+        "de": "Kanal 2 umschalten"
       },
       "args": [],
       "titleFormatted": {
@@ -447,7 +495,9 @@
       "id": "wall_switch_3gang_1way_turn_on_gang3",
       "title": {
         "en": "Turn on gang 3",
-        "nl": "Gang 3 aanzetten"
+        "nl": "Gang 3 aanzetten",
+        "fr": "Allumer la voie 3",
+        "de": "Kanal 3 einschalten"
       },
       "args": [],
       "titleFormatted": {
@@ -459,7 +509,9 @@
       "id": "wall_switch_3gang_1way_turn_off_gang3",
       "title": {
         "en": "Turn off gang 3",
-        "nl": "Gang 3 uitzetten"
+        "nl": "Gang 3 uitzetten",
+        "fr": "Éteindre la voie 3",
+        "de": "Kanal 3 ausschalten"
       },
       "args": [],
       "titleFormatted": {
@@ -471,7 +523,9 @@
       "id": "wall_switch_3gang_1way_toggle_gang3",
       "title": {
         "en": "Toggle gang 3",
-        "nl": "Gang 3 wisselen"
+        "nl": "Gang 3 wisselen",
+        "fr": "Basculer la voie 3",
+        "de": "Kanal 3 umschalten"
       },
       "args": [],
       "titleFormatted": {
@@ -483,7 +537,9 @@
       "id": "wall_switch_3gang_1way_turn_on_all",
       "title": {
         "en": "Turn on all gangs",
-        "nl": "Alle gangs aanzetten"
+        "nl": "Alle gangs aanzetten",
+        "fr": "Allumer toutes les voies",
+        "de": "Alle Kanäle einschalten"
       },
       "args": [],
       "titleFormatted": {
@@ -495,7 +551,9 @@
       "id": "wall_switch_3gang_1way_turn_off_all",
       "title": {
         "en": "Turn off all gangs",
-        "nl": "Alle gangs uitzetten"
+        "nl": "Alle gangs uitzetten",
+        "fr": "Éteindre toutes les voies",
+        "de": "Alle Kanäle ausschalten"
       },
       "args": [],
       "titleFormatted": {
@@ -509,7 +567,9 @@
       "id": "wall_switch_3gang_1way_is_on",
       "title": {
         "en": "Is !{{on|off}}",
-        "nl": "Is !{{aan|uit}}"
+        "nl": "Is !{{aan|uit}}",
+        "fr": "Est !{{allumé|éteint}}",
+        "de": "Ist !{{an|aus}}"
       },
       "args": [],
       "titleFormatted": {

@@ -53,5 +53,11 @@
       ],
       "value": "on"
     }
-  ]
+  ],
+  "titleFormatted": {
+    "en": "Pulse device inching [[duration_seconds]] [[state]] ([[device]])",
+    "fr": "Impulsion sur l'appareil inching [[duration_seconds]] [[state]] ([[device]])",
+    "nl": "Apparaat pulseren inching [[duration_seconds]] [[state]] ([[device]])",
+    "de": "Gerät pulsen Inching [[duration_seconds]] [[state]] ([[device]])"
+  }
 }

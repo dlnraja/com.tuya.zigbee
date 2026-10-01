@@ -4,7 +4,9 @@
       "id": "smart_knob_button_1gang_button_pressed",
       "title": {
         "en": "Button pressed",
-        "fr": "Bouton appuy??"
+        "fr": "Bouton appuy??",
+        "nl": "Knop ingedrukt",
+        "de": "Taste gedrückt"
       },
       "tokens": [
         {
@@ -27,7 +29,9 @@
       "id": "smart_knob_button_1gang_button_double_press",
       "title": {
         "en": "Button double-pressed",
-        "fr": "Bouton double-cliqu??"
+        "fr": "Bouton double-cliqu??",
+        "nl": "Knop dubbel ingedrukt",
+        "de": "Taste doppelt gedrückt"
       },
       "tokens": [
         {
@@ -50,7 +54,9 @@
       "id": "smart_knob_button_1gang_button_long_press",
       "title": {
         "en": "Button long-pressed",
-        "fr": "Bouton press?? longtemps"
+        "fr": "Bouton press?? longtemps",
+        "nl": "Knop lang ingedrukt",
+        "de": "Taste lange gedrückt"
       },
       "tokens": [
         {
@@ -73,7 +79,9 @@
       "id": "smart_knob_button_1gang_button_multi_press",
       "title": {
         "en": "Button multi-pressed",
-        "fr": "Bouton multi-cliqu??"
+        "fr": "Bouton multi-cliqu??",
+        "nl": "Knop meerdere keren ingedrukt",
+        "de": "Taste mehrfach gedrückt"
       },
       "tokens": [
         {
@@ -105,7 +113,9 @@
       "id": "smart_knob_button_1gang_button_1_pressed",
       "title": {
         "en": "Button 1 pressed",
-        "fr": "Bouton 1 appuy??"
+        "fr": "Bouton 1 appuy??",
+        "nl": "Knop 1 ingedrukt",
+        "de": "Taste 1 gedrückt"
       },
       "args": [],
       "titleFormatted": {
@@ -117,7 +127,9 @@
       "id": "smart_knob_button_1gang_button_1_double",
       "title": {
         "en": "Button 1 double-pressed",
-        "fr": "Bouton 1 double-cliqu??"
+        "fr": "Bouton 1 double-cliqu??",
+        "nl": "Knop 1 dubbel ingedrukt",
+        "de": "Taste 1 doppelt gedrückt"
       },
       "args": [],
       "titleFormatted": {
@@ -129,7 +141,9 @@
       "id": "smart_knob_button_1gang_button_1_long",
       "title": {
         "en": "Button 1 long-pressed",
-        "fr": "Bouton 1 press?? longtemps"
+        "fr": "Bouton 1 press?? longtemps",
+        "nl": "Knop 1 lang ingedrukt",
+        "de": "Taste 1 lange gedrückt"
       },
       "args": [],
       "titleFormatted": {
@@ -141,7 +155,9 @@
       "id": "smart_knob_button_1gang_button_1_triple",
       "title": {
         "en": "Button 1 triple-pressed",
-        "fr": "Bouton 1 triple-cliqu??"
+        "fr": "Bouton 1 triple-cliqu??",
+        "nl": "Knop 1 driemaal ingedrukt",
+        "de": "Taste 1 dreimal gedrückt"
       },
       "args": [],
       "titleFormatted": {
@@ -153,7 +169,9 @@
       "id": "smart_knob_button_1gang_button_1_release",
       "title": {
         "en": "Button 1 released - after hold",
-        "fr": "Bouton 1 rel??ch?? - apr??s maintien"
+        "fr": "Bouton 1 rel??ch?? - apr??s maintien",
+        "nl": "Knop 1 losgelaten na vasthouden",
+        "de": "Taste 1 nach Halten losgelassen"
       },
       "args": [],
       "titleFormatted": {

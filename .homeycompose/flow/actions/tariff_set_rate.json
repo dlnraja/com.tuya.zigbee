@@ -1,7 +1,10 @@
 {
   "id": "tariff_set_rate",
   "title": {
-    "en": "Set tariff rate"
+    "en": "Set tariff rate",
+    "fr": "Régler le tarif",
+    "nl": "Tarief instellen",
+    "de": "Tarif einstellen"
   },
   "hint": {
     "en": "Change the active energy tariff at runtime"
@@ -108,6 +111,9 @@
     }
   ],
   "titleFormatted": {
-    "en": "Set tariff rate [[preset]] [[custom_rate_kwh]] [[daily_charge]] [[tax_rate]] [[currency]]"
+    "en": "Set tariff rate [[preset]] [[custom_rate_kwh]] [[daily_charge]] [[tax_rate]] [[currency]]",
+    "fr": "Régler le tarif [[preset]] [[custom_rate_kwh]] [[daily_charge]] [[tax_rate]] [[currency]]",
+    "nl": "Tarief instellen [[preset]] [[custom_rate_kwh]] [[daily_charge]] [[tax_rate]] [[currency]]",
+    "de": "Tarif einstellen [[preset]] [[custom_rate_kwh]] [[daily_charge]] [[tax_rate]] [[currency]]"
   }
 }

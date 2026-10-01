@@ -3,7 +3,10 @@
     {
       "id": "switch_plug_1_turn_on",
       "title": {
-        "en": "Turn on"
+        "en": "Turn on",
+        "fr": "Allumer",
+        "nl": "Zet aan",
+        "de": "Einschalten"
       },
       "args": [],
       "titleFormatted": {
@@ -13,7 +16,10 @@
     {
       "id": "switch_plug_1_turn_off",
       "title": {
-        "en": "Turn off"
+        "en": "Turn off",
+        "fr": "Éteindre",
+        "nl": "Zet uit",
+        "de": "Ausschalten"
       },
       "args": [],
       "titleFormatted": {
@@ -106,7 +112,9 @@
       "id": "switch_plug_1_physical_on",
       "title": {
         "en": "Physical button on",
-        "fr": "Physical button on"
+        "fr": "Physical button on",
+        "nl": "Fysieke knop aan",
+        "de": "Physische Taste an"
       },
       "args": []
     },
@@ -114,7 +122,9 @@
       "id": "switch_plug_1_physical_off",
       "title": {
         "en": "Physical button off",
-        "fr": "Physical button off"
+        "fr": "Physical button off",
+        "nl": "Fysieke knop uit",
+        "de": "Physische Taste aus"
       },
       "args": []
     },
@@ -122,7 +132,9 @@
       "id": "switch_plug_1_meter_power_changed",
       "title": {
         "en": "Energy changed",
-        "fr": "Énergie changée"
+        "fr": "Énergie changée",
+        "nl": "Energie gewijzigd",
+        "de": "Energie geändert"
       },
       "tokens": [
         {

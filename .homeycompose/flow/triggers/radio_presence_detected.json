@@ -2,7 +2,9 @@
   "id": "radio_presence_detected",
   "title": {
     "en": "Radio Presence Sensing Detected",
-    "fr": "Présence Radio Détectée (Inferred)"
+    "fr": "Présence Radio Détectée (Inferred)",
+    "nl": "Radio-aanwezigheid gedetecteerd",
+    "de": "Funk-Anwesenheit erkannt"
   },
   "hint": {
     "en": "Triggered when human movement is inferred from Zigbee signal fluctuations",

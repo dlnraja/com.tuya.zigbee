@@ -5,7 +5,9 @@
       "id": "remote_button_wireless_usb_physical_on",
       "title": {
         "en": "Physical button on",
-        "fr": "Physical button on"
+        "fr": "Physical button on",
+        "nl": "Fysieke knop aan",
+        "de": "Physische Taste an"
       },
       "args": []
     },
@@ -13,7 +15,9 @@
       "id": "remote_button_wireless_usb_physical_off",
       "title": {
         "en": "Physical button off",
-        "fr": "Physical button off"
+        "fr": "Physical button off",
+        "nl": "Fysieke knop uit",
+        "de": "Physische Taste aus"
       },
       "args": []
     },
@@ -21,7 +25,9 @@
       "id": "remote_button_wireless_usb_measure_power_changed",
       "title": {
         "en": "Power changed",
-        "fr": "Puissance changée"
+        "fr": "Puissance changée",
+        "nl": "Vermogen gewijzigd",
+        "de": "Leistung geändert"
       },
       "tokens": [
         {
@@ -44,7 +50,9 @@
       "id": "remote_button_wireless_usb_meter_power_changed",
       "title": {
         "en": "Energy changed",
-        "fr": "Énergie changée"
+        "fr": "Énergie changée",
+        "nl": "Energie gewijzigd",
+        "de": "Energie geändert"
       },
       "tokens": [
         {
@@ -67,7 +75,9 @@
       "id": "remote_button_wireless_usb_voltage_changed",
       "title": {
         "en": "Voltage changed",
-        "fr": "Tension changée"
+        "fr": "Tension changée",
+        "nl": "Spanning gewijzigd",
+        "de": "Spannung geändert"
       },
       "tokens": [
         {
@@ -90,7 +100,9 @@
       "id": "remote_button_wireless_usb_current_changed",
       "title": {
         "en": "Current changed",
-        "fr": "Courant changé"
+        "fr": "Courant changé",
+        "nl": "Stroom gewijzigd",
+        "de": "Strom geändert"
       },
       "tokens": [
         {

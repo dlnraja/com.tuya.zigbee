@@ -4,7 +4,9 @@
       "id": "energy_meter_din_turned_on",
       "title": {
         "en": "Turned on",
-        "fr": "Allumé"
+        "fr": "Allumé",
+        "nl": "Aangezet",
+        "de": "Eingeschaltet"
       },
       "titleFormatted": {
         "en": "Turned on",
@@ -15,7 +17,9 @@
       "id": "energy_meter_din_turned_off",
       "title": {
         "en": "Turned off",
-        "fr": "Éteint"
+        "fr": "Éteint",
+        "nl": "Uitgezet",
+        "de": "Ausgeschaltet"
       },
       "titleFormatted": {
         "en": "Turned off",
@@ -26,7 +30,9 @@
       "id": "energy_meter_din_physical_on",
       "title": {
         "en": "Physical button on",
-        "fr": "Physical button on"
+        "fr": "Physical button on",
+        "nl": "Fysieke knop aan",
+        "de": "Physische Taste an"
       },
       "args": []
     },
@@ -34,7 +40,9 @@
       "id": "energy_meter_din_physical_off",
       "title": {
         "en": "Physical button off",
-        "fr": "Physical button off"
+        "fr": "Physical button off",
+        "nl": "Fysieke knop uit",
+        "de": "Physische Taste aus"
       },
       "args": []
     },
@@ -42,7 +50,9 @@
       "id": "energy_meter_din_measure_power_changed",
       "title": {
         "en": "Power changed",
-        "fr": "Puissance changée"
+        "fr": "Puissance changée",
+        "nl": "Vermogen gewijzigd",
+        "de": "Leistung geändert"
       },
       "tokens": [
         {
@@ -65,7 +75,9 @@
       "id": "energy_meter_din_voltage_changed",
       "title": {
         "en": "Voltage changed",
-        "fr": "Tension changée"
+        "fr": "Tension changée",
+        "nl": "Spanning gewijzigd",
+        "de": "Spannung geändert"
       },
       "tokens": [
         {
@@ -88,7 +100,9 @@
       "id": "energy_meter_din_current_changed",
       "title": {
         "en": "Current changed",
-        "fr": "Courant changé"
+        "fr": "Courant changé",
+        "nl": "Stroom gewijzigd",
+        "de": "Strom geändert"
       },
       "tokens": [
         {
@@ -113,7 +127,9 @@
       "id": "energy_meter_din_power_above",
       "title": {
         "en": "Power !{{is|is not}} above",
-        "fr": "Puissance !{{est|n'est pas}} au-dessus de"
+        "fr": "Puissance !{{est|n'est pas}} au-dessus de",
+        "nl": "Vermogen !{{is|is niet}} hoger dan",
+        "de": "Leistung !{{liegt|liegt nicht}} über"
       },
       "args": [
         {
@@ -129,7 +145,9 @@
       ],
       "titleFormatted": {
         "en": "Power !{{is|is not}} above [[threshold]]",
-        "fr": "Puissance !{{est|n'est pas}} au-dessus de [[threshold]]"
+        "fr": "Puissance !{{est|n'est pas}} au-dessus de [[threshold]]",
+        "nl": "Vermogen !{{is|is niet}} hoger dan [[threshold]]",
+        "de": "Leistung !{{liegt|liegt nicht}} über [[threshold]]"
       }
     }
   ],

@@ -3,7 +3,8 @@
   "title": {
     "en": "Virtually press button [[gang]]",
     "fr": "Appuyer virtuellement sur le bouton [[gang]]",
-    "nl": "Virtueel knop [[gang]] indrukken"
+    "nl": "Virtueel knop [[gang]] indrukken",
+    "de": "Taste virtuell drücken"
   },
   "hint": {
     "en": "Simulates a UI / flow button press on the device (same path as Homey app tile).",
@@ -27,5 +28,11 @@
       "step": 1,
       "value": 1
     }
-  ]
+  ],
+  "titleFormatted": {
+    "en": "Virtually press button [[gang]] ([[device]])",
+    "fr": "Appuyer virtuellement sur le bouton [[gang]] ([[device]])",
+    "nl": "Virtueel knop [[gang]] indrukken ([[device]])",
+    "de": "Taste virtuell drücken [[gang]] ([[device]])"
+  }
 }

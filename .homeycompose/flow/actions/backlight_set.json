@@ -1,0 +1,81 @@
+{
+  "id": "backlight_set",
+  "title": {
+    "en": "Set backlight",
+    "fr": "Régler le rétroéclairage",
+    "nl": "Achtergrondverlichting instellen",
+    "de": "Hintergrundbeleuchtung einstellen"
+  },
+  "titleFormatted": {
+    "en": "Set backlight of [[device]] to [[mode]]",
+    "fr": "Rétroéclairage de [[device]] : [[mode]]",
+    "nl": "Zet achtergrondverlichting van [[device]] op [[mode]]",
+    "de": "Hintergrundbeleuchtung von [[device]] auf [[mode]]"
+  },
+  "hint": {
+    "en": "Works on devices that expose a backlight / indicator setting.",
+    "fr": "Fonctionne avec les appareils ayant un réglage de rétroéclairage / voyant.",
+    "nl": "Werkt op apparaten met een instelling voor achtergrondverlichting / indicator.",
+    "de": "Funktioniert mit Geräten, die eine Einstellung für Hintergrundbeleuchtung / Anzeige haben."
+  },
+  "args": [
+    {
+      "type": "device",
+      "name": "device",
+      "title": {
+        "en": "Device",
+        "fr": "Appareil",
+        "nl": "Apparaat",
+        "de": "Gerät"
+      }
+    },
+    {
+      "type": "dropdown",
+      "name": "mode",
+      "title": {
+        "en": "Mode",
+        "fr": "Mode",
+        "nl": "Modus",
+        "de": "Modus"
+      },
+      "values": [
+        {
+          "id": "on",
+          "label": {
+            "en": "on",
+            "fr": "allumé",
+            "nl": "aan",
+            "de": "an"
+          }
+        },
+        {
+          "id": "off",
+          "label": {
+            "en": "off",
+            "fr": "éteint",
+            "nl": "uit",
+            "de": "aus"
+          }
+        },
+        {
+          "id": "normal",
+          "label": {
+            "en": "normal",
+            "fr": "normal",
+            "nl": "normaal",
+            "de": "normal"
+          }
+        },
+        {
+          "id": "inverted",
+          "label": {
+            "en": "inverted",
+            "fr": "inversé",
+            "nl": "omgekeerd",
+            "de": "invertiert"
+          }
+        }
+      ]
+    }
+  ]
+}

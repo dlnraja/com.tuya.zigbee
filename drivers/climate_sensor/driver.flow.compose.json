@@ -5,7 +5,9 @@
       "highlight": true,
       "title": {
         "en": "Temperature changed",
-        "fr": "Température changée"
+        "fr": "Température changée",
+        "nl": "Temperatuur gewijzigd",
+        "de": "Temperatur geändert"
       },
       "tokens": [
         {
@@ -28,7 +30,9 @@
       "id": "climate_sensor_humidity_changed",
       "title": {
         "en": "Humidity changed",
-        "fr": "Humidité changée"
+        "fr": "Humidité changée",
+        "nl": "Luchtvochtigheid gewijzigd",
+        "de": "Luftfeuchtigkeit geändert"
       },
       "tokens": [
         {
@@ -51,7 +55,9 @@
       "id": "climate_sensor_battery_low",
       "title": {
         "en": "Battery low",
-        "fr": "Batterie faible"
+        "fr": "Batterie faible",
+        "nl": "Batterij bijna leeg",
+        "de": "Batterie schwach"
       },
       "args": [],
       "titleFormatted": {
@@ -63,7 +69,9 @@
       "id": "climate_sensor_temperature_alarm_high",
       "title": {
         "en": "Temperature too high",
-        "fr": "Température trop haute"
+        "fr": "Température trop haute",
+        "nl": "Temperatuur te hoog",
+        "de": "Temperatur zu hoch"
       },
       "args": [],
       "titleFormatted": {
@@ -75,7 +83,9 @@
       "id": "climate_sensor_temperature_alarm_low",
       "title": {
         "en": "Temperature too low",
-        "fr": "Température trop basse"
+        "fr": "Température trop basse",
+        "nl": "Temperatuur te laag",
+        "de": "Temperatur zu niedrig"
       },
       "args": [],
       "titleFormatted": {
@@ -87,7 +97,9 @@
       "id": "climate_sensor_humidity_alarm_high",
       "title": {
         "en": "Humidity too high",
-        "fr": "Humidité trop haute"
+        "fr": "Humidité trop haute",
+        "nl": "Luchtvochtigheid te hoog",
+        "de": "Luftfeuchtigkeit zu hoch"
       },
       "args": [],
       "titleFormatted": {
@@ -99,7 +111,9 @@
       "id": "climate_sensor_humidity_alarm_low",
       "title": {
         "en": "Humidity too low",
-        "fr": "Humidité trop basse"
+        "fr": "Humidité trop basse",
+        "nl": "Luchtvochtigheid te laag",
+        "de": "Luftfeuchtigkeit zu niedrig"
       },
       "args": [],
       "titleFormatted": {
@@ -178,7 +192,9 @@
       "id": "climate_sensor_temperature_above",
       "title": {
         "en": "Temperature is above",
-        "fr": "Température supérieure à"
+        "fr": "Température supérieure à",
+        "nl": "Temperatuur is hoger dan",
+        "de": "Temperatur liegt über"
       },
       "args": [
         {
@@ -195,14 +211,18 @@
       ],
       "titleFormatted": {
         "en": "Temperature is above [[temp]]",
-        "fr": "Température supérieure à [[temp]]"
+        "fr": "Température supérieure à [[temp]]",
+        "nl": "Temperatuur is hoger dan [[temp]]",
+        "de": "Temperatur liegt über [[temp]]"
       }
     },
     {
       "id": "climate_sensor_temperature_below",
       "title": {
         "en": "Temperature is below",
-        "fr": "Température inférieure à"
+        "fr": "Température inférieure à",
+        "nl": "Temperatuur is lager dan",
+        "de": "Temperatur liegt unter"
       },
       "args": [
         {
@@ -219,14 +239,18 @@
       ],
       "titleFormatted": {
         "en": "Temperature is below [[temp]]",
-        "fr": "Température inférieure à [[temp]]"
+        "fr": "Température inférieure à [[temp]]",
+        "nl": "Temperatuur is lager dan [[temp]]",
+        "de": "Temperatur liegt unter [[temp]]"
       }
     },
     {
       "id": "climate_sensor_humidity_above",
       "title": {
         "en": "Humidity is above",
-        "fr": "Humidité supérieure à"
+        "fr": "Humidité supérieure à",
+        "nl": "Luchtvochtigheid is hoger dan",
+        "de": "Luftfeuchtigkeit liegt über"
       },
       "args": [
         {
@@ -243,14 +267,18 @@
       ],
       "titleFormatted": {
         "en": "Humidity is above [[humidity]]",
-        "fr": "Humidité supérieure à [[humidity]]"
+        "fr": "Humidité supérieure à [[humidity]]",
+        "nl": "Luchtvochtigheid is hoger dan [[humidity]]",
+        "de": "Luftfeuchtigkeit liegt über [[humidity]]"
       }
     },
     {
       "id": "climate_sensor_humidity_below",
       "title": {
         "en": "Humidity is below",
-        "fr": "Humidité inférieure à"
+        "fr": "Humidité inférieure à",
+        "nl": "Luchtvochtigheid is lager dan",
+        "de": "Luftfeuchtigkeit liegt unter"
       },
       "args": [
         {
@@ -267,7 +295,9 @@
       ],
       "titleFormatted": {
         "en": "Humidity is below [[humidity]]",
-        "fr": "Humidité inférieure à [[humidity]]"
+        "fr": "Humidité inférieure à [[humidity]]",
+        "nl": "Luchtvochtigheid is lager dan [[humidity]]",
+        "de": "Luftfeuchtigkeit liegt unter [[humidity]]"
       }
     },
     {

@@ -16,5 +16,11 @@
       "type": "device",
       "filter": "capabilities=alarm_motion|alarm_human|alarm_presence"
     }
-  ]
+  ],
+  "titleFormatted": {
+    "en": "Motion !{{is|is not}} linked to path lighting ([[motion_device]])",
+    "fr": "Le mouvement !{{est|n'est pas}} lié à l'éclairage de passage ([[motion_device]])",
+    "nl": "Beweging !{{is|is niet}} gekoppeld aan padverlichting ([[motion_device]])",
+    "de": "Bewegung !{{ist|ist nicht}} mit Wegbeleuchtung verknüpft ([[motion_device]])"
+  }
 }

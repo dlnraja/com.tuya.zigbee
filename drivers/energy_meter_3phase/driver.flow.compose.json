@@ -35,7 +35,10 @@
     {
       "id": "energy_meter_3phase_voltage_changed",
       "title": {
-        "en": "Voltage changed"
+        "en": "Voltage changed",
+        "fr": "Tension modifiée",
+        "nl": "Spanning gewijzigd",
+        "de": "Spannung geändert"
       },
       "tokens": [
         {
@@ -55,7 +58,10 @@
     {
       "id": "energy_meter_3phase_current_changed",
       "title": {
-        "en": "Current changed"
+        "en": "Current changed",
+        "fr": "Courant modifié",
+        "nl": "Stroom gewijzigd",
+        "de": "Strom geändert"
       },
       "tokens": [
         {
@@ -75,7 +81,10 @@
     {
       "id": "energy_meter_3phase_energy_changed",
       "title": {
-        "en": "Energy changed"
+        "en": "Energy changed",
+        "fr": "Énergie modifiée",
+        "nl": "Energie gewijzigd",
+        "de": "Energie geändert"
       },
       "tokens": [
         {
@@ -97,7 +106,10 @@
     {
       "id": "energy_meter_3phase_power_above",
       "title": {
-        "en": "Power !{{is|is not}} above"
+        "en": "Power !{{is|is not}} above",
+        "fr": "La puissance !{{est|n'est pas}} supérieure à",
+        "nl": "Vermogen !{{is|is niet}} hoger dan",
+        "de": "Leistung !{{liegt|liegt nicht}} über"
       },
       "args": [
         {
@@ -109,7 +121,10 @@
         }
       ],
       "titleFormatted": {
-        "en": "Power !{{is|is not}} above [[power]]"
+        "en": "Power !{{is|is not}} above [[power]]",
+        "fr": "La puissance !{{est|n'est pas}} supérieure à [[power]]",
+        "nl": "Vermogen !{{is|is niet}} hoger dan [[power]]",
+        "de": "Leistung !{{liegt|liegt nicht}} über [[power]]"
       }
     }
   ],
@@ -117,7 +132,10 @@
     {
       "id": "energy_meter_3phase_reset_meter",
       "title": {
-        "en": "Reset energy meter"
+        "en": "Reset energy meter",
+        "fr": "Réinitialiser le compteur d'énergie",
+        "nl": "Energiemeter resetten",
+        "de": "Energiezähler zurücksetzen"
       },
       "args": [],
       "titleFormatted": {

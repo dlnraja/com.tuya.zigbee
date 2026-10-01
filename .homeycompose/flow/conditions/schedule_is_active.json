@@ -1,7 +1,10 @@
 {
   "id": "schedule_is_active",
   "title": {
-    "en": "Schedule is active"
+    "en": "Schedule is active",
+    "fr": "Le planning est actif",
+    "nl": "Schema is actief",
+    "de": "Zeitplan ist aktiv"
   },
   "hint": {
     "en": "Checks if the schedule manager is running and has active schedules"

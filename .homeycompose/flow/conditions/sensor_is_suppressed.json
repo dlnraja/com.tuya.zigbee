@@ -16,5 +16,11 @@
       "type": "device",
       "filter": "capabilities=alarm_motion|alarm_human|alarm_presence"
     }
-  ]
+  ],
+  "titleFormatted": {
+    "en": "Sensor motion flows !{{are|are not}} suppressed ([[device]])",
+    "fr": "Les flows de mouvement du capteur !{{sont|ne sont pas}} suspendus ([[device]])",
+    "nl": "Bewegingsflows sensor !{{zijn|zijn niet}} onderdrukt ([[device]])",
+    "de": "Bewegungs-Flows des Sensors !{{sind|sind nicht}} unterdrückt ([[device]])"
+  }
 }

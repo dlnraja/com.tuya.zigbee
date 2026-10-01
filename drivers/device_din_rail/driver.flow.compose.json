@@ -45,7 +45,9 @@
       "id": "device_din_rail_power_changed",
       "title": {
         "en": "Power consumption changed",
-        "fr": "Consommation changée"
+        "fr": "Consommation changée",
+        "nl": "Stroomverbruik gewijzigd",
+        "de": "Stromverbrauch geändert"
       },
       "tokens": [
         {
@@ -68,7 +70,9 @@
       "id": "device_din_rail_voltage_changed",
       "title": {
         "en": "Voltage changed",
-        "fr": "Tension changée"
+        "fr": "Tension changée",
+        "nl": "Spanning gewijzigd",
+        "de": "Spannung geändert"
       },
       "tokens": [
         {
@@ -91,7 +95,9 @@
       "id": "device_din_rail_current_changed",
       "title": {
         "en": "Current changed",
-        "fr": "Courant changé"
+        "fr": "Courant changé",
+        "nl": "Stroom gewijzigd",
+        "de": "Strom geändert"
       },
       "tokens": [
         {
@@ -114,7 +120,9 @@
       "id": "device_din_rail_motion_alarm",
       "title": {
         "en": "Motion alarm",
-        "fr": "Alarme mouvement"
+        "fr": "Alarme mouvement",
+        "nl": "Bewegingsalarm",
+        "de": "Bewegungsalarm"
       },
       "args": [],
       "titleFormatted": {
@@ -126,7 +134,9 @@
       "id": "device_din_rail_meter_power_changed",
       "title": {
         "en": "Energy changed",
-        "fr": "Énergie changée"
+        "fr": "Énergie changée",
+        "nl": "Energie gewijzigd",
+        "de": "Energie geändert"
       },
       "tokens": [
         {

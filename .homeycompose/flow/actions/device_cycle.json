@@ -52,5 +52,11 @@
       "step": 1,
       "value": 1
     }
-  ]
+  ],
+  "titleFormatted": {
+    "en": "Cycle device on/off [[on_seconds]] [[off_seconds]] [[cycles]] ([[device]])",
+    "fr": "Cycler l'appareil on/off [[on_seconds]] [[off_seconds]] [[cycles]] ([[device]])",
+    "nl": "Apparaat aan/uit cyclen [[on_seconds]] [[off_seconds]] [[cycles]] ([[device]])",
+    "de": "Gerät ein/aus zyklen [[on_seconds]] [[off_seconds]] [[cycles]] ([[device]])"
+  }
 }

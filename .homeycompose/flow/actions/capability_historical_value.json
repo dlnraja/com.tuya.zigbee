@@ -60,5 +60,11 @@
       },
       "example": "21.5"
     }
-  ]
+  ],
+  "titleFormatted": {
+    "en": "Retrieve historical capability value [[capability]] [[minutes_ago]] ([[device]])",
+    "nl": "Historische capaciteitswaarde ophalen [[capability]] [[minutes_ago]] ([[device]])",
+    "de": "Historischen Fähigkeitswert abrufen [[capability]] [[minutes_ago]] ([[device]])",
+    "fr": "Récupérer la valeur historique de la capacité [[capability]] [[minutes_ago]] ([[device]])"
+  }
 }

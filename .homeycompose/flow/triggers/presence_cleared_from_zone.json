@@ -1,7 +1,10 @@
 {
   "id": "presence_cleared_from_zone",
   "title": {
-    "en": "Presence cleared from zone"
+    "en": "Presence cleared from zone",
+    "fr": "Présence terminée dans la zone",
+    "nl": "Aanwezigheid in zone beëindigd",
+    "de": "Anwesenheit in Zone beendet"
   },
   "hint": {
     "en": "Triggers when the Virtual Presence Detector determines a zone is no longer occupied"

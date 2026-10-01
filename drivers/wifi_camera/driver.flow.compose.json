@@ -3,7 +3,10 @@
     {
       "id": "wifi_camera_motion_detected",
       "title": {
-        "en": "Motion detected"
+        "en": "Motion detected",
+        "fr": "Mouvement détecté",
+        "nl": "Beweging gedetecteerd",
+        "de": "Bewegung erkannt"
       },
       "args": [],
       "titleFormatted": {
@@ -13,7 +16,10 @@
     {
       "id": "wifi_camera_motion_cleared",
       "title": {
-        "en": "Motion cleared"
+        "en": "Motion cleared",
+        "fr": "Fin du mouvement",
+        "nl": "Beweging gestopt",
+        "de": "Bewegung beendet"
       },
       "args": [],
       "titleFormatted": {

@@ -3,7 +3,8 @@
   "title": {
     "en": "Battery percentage changed",
     "fr": "Pourcentage batterie modifié",
-    "nl": "Batterijpercentage gewijzigd"
+    "nl": "Batterijpercentage gewijzigd",
+    "de": "Batterieprozent geändert"
   },
   "hint": {
     "en": "Fires when measure_battery updates (token: percent).",

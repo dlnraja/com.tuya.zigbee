@@ -4,7 +4,9 @@
       "id": "bulb_rgbw_universal_brightness_changed",
       "title": {
         "en": "Brightness changed",
-        "fr": "Luminosité changée"
+        "fr": "Luminosité changée",
+        "nl": "Helderheid gewijzigd",
+        "de": "Helligkeit geändert"
       },
       "tokens": [
         {
@@ -27,7 +29,9 @@
       "id": "bulb_rgbw_universal_temperature_changed",
       "title": {
         "en": "Temperature changed",
-        "fr": "Température changée"
+        "fr": "Température changée",
+        "nl": "Temperatuur gewijzigd",
+        "de": "Temperatur geändert"
       },
       "tokens": [
         {
@@ -50,7 +54,9 @@
       "id": "bulb_rgbw_universal_humidity_changed",
       "title": {
         "en": "Humidity changed",
-        "fr": "Humidité changée"
+        "fr": "Humidité changée",
+        "nl": "Luchtvochtigheid gewijzigd",
+        "de": "Luftfeuchtigkeit geändert"
       },
       "tokens": [
         {
@@ -73,7 +79,9 @@
       "id": "bulb_rgbw_universal_illuminance_changed",
       "title": {
         "en": "Illuminance changed",
-        "fr": "Luminosité ambiante changée"
+        "fr": "Luminosité ambiante changée",
+        "nl": "Verlichtingssterkte gewijzigd",
+        "de": "Beleuchtungsstärke geändert"
       },
       "tokens": [
         {
@@ -96,7 +104,9 @@
       "id": "bulb_rgbw_universal_motion_alarm",
       "title": {
         "en": "Motion alarm",
-        "fr": "Alarme mouvement"
+        "fr": "Alarme mouvement",
+        "nl": "Bewegingsalarm",
+        "de": "Bewegungsalarm"
       },
       "args": [],
       "titleFormatted": {
@@ -108,7 +118,9 @@
       "id": "bulb_rgbw_universal_measure_power_changed",
       "title": {
         "en": "Power changed",
-        "fr": "Puissance changée"
+        "fr": "Puissance changée",
+        "nl": "Vermogen gewijzigd",
+        "de": "Leistung geändert"
       },
       "tokens": [
         {
@@ -131,7 +143,9 @@
       "id": "bulb_rgbw_universal_voltage_changed",
       "title": {
         "en": "Voltage changed",
-        "fr": "Tension changée"
+        "fr": "Tension changée",
+        "nl": "Spanning gewijzigd",
+        "de": "Spannung geändert"
       },
       "tokens": [
         {
@@ -154,7 +168,9 @@
       "id": "bulb_rgbw_universal_current_changed",
       "title": {
         "en": "Current changed",
-        "fr": "Courant changé"
+        "fr": "Courant changé",
+        "nl": "Stroom gewijzigd",
+        "de": "Strom geändert"
       },
       "tokens": [
         {
@@ -177,7 +193,9 @@
       "id": "bulb_rgbw_universal_meter_power_changed",
       "title": {
         "en": "Energy changed",
-        "fr": "Énergie changée"
+        "fr": "Énergie changée",
+        "nl": "Energie gewijzigd",
+        "de": "Energie geändert"
       },
       "tokens": [
         {
@@ -200,7 +218,9 @@
       "id": "bulb_rgbw_universal_position_changed",
       "title": {
         "en": "Position changed",
-        "fr": "Position changée"
+        "fr": "Position changée",
+        "nl": "Positie gewijzigd",
+        "de": "Position geändert"
       },
       "tokens": [
         {
@@ -223,7 +243,9 @@
       "id": "bulb_rgbw_universal_target_temperature_changed",
       "title": {
         "en": "Target temperature changed",
-        "fr": "Consigne changée"
+        "fr": "Consigne changée",
+        "nl": "Doeltemperatuur gewijzigd",
+        "de": "Zieltemperatur geändert"
       },
       "tokens": [
         {

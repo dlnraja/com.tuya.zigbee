@@ -20,7 +20,10 @@ v9.0.1301: WiFi devices: the Repair screen (update IP / local key / protocol, or
 ---
 
  [Unreleased] (P2774)
+## [Unreleased] (P2774 to P2776)
 
+- New generic Flow cards for every device: a value crossed a threshold, a value is (not) between, gang N switched / is on / switch gang N (on, off, toggle), no motion for N minutes, child lock changed / is on / set child lock, set backlight.
+- Flow cards: every card with arguments now has a formatted title, missing French, Dutch and German titles were added (about 2,800 cards) and numeric arguments have explicit ranges.
 - "Changed" Flow triggers fired directly by drivers also skip the first value after a restart; the 1-gang wall dimmer no longer fires a physical on/off trigger for the state sync after a restart.
 - Curtains: new setting "Always keep the position slider" (off by default).
 - "Set a device setting": an invalid or out-of-range value now stops the Flow with a clear, translated error.

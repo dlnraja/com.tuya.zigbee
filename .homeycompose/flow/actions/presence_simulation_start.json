@@ -40,5 +40,11 @@
       "step": 1,
       "value": 23
     }
-  ]
+  ],
+  "titleFormatted": {
+    "en": "Start presence simulation [[start_hour]] [[end_hour]] ([[device]])",
+    "fr": "Démarrer la simulation de présence [[start_hour]] [[end_hour]] ([[device]])",
+    "nl": "Aanwezigheidssimulatie starten [[start_hour]] [[end_hour]] ([[device]])",
+    "de": "Anwesenheitssimulation starten [[start_hour]] [[end_hour]] ([[device]])"
+  }
 }

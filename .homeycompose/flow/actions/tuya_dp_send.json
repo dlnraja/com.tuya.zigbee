@@ -34,5 +34,11 @@
         "fr": "Valeur"
       }
     }
-  ]
+  ],
+  "titleFormatted": {
+    "en": "Send Tuya DP [[dp]] [[value]] ([[device]])",
+    "fr": "Envoyer DP Tuya [[dp]] [[value]] ([[device]])",
+    "nl": "Tuya DP verzenden [[dp]] [[value]] ([[device]])",
+    "de": "Tuya DP senden [[dp]] [[value]] ([[device]])"
+  }
 }

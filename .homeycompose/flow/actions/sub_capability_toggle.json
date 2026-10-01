@@ -28,5 +28,11 @@
         "fr": "onoff.gang2"
       }
     }
-  ]
+  ],
+  "titleFormatted": {
+    "en": "Toggle sub-capability [[capability]] ([[device]])",
+    "fr": "Basculer sous-capacité [[capability]] ([[device]])",
+    "nl": "Sub-capability omschakelen [[capability]] ([[device]])",
+    "de": "Sub-Fähigkeit umschalten [[capability]] ([[device]])"
+  }
 }

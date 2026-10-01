@@ -2,39 +2,62 @@
   "id": "contact_entry_soft_enroll",
   "title": {
     "en": "Contact Entry Soft — door opens lights",
-    "fr": "Contact Entry Soft — porte → lumières"
+    "fr": "Contact Entry Soft — porte → lumières",
+    "nl": "Contact Entry Soft — deur opent lichten",
+    "de": "Contact Entry Soft — Tür schaltet Licht ein"
   },
   "args": [
     {
       "type": "device",
       "name": "contact",
       "filter": "capabilities=alarm_contact|capabilities=alarm_generic",
-      "title": { "en": "Contact / door", "fr": "Contact / porte" }
+      "title": {
+        "en": "Contact / door",
+        "fr": "Contact / porte"
+      }
     },
     {
       "type": "device",
       "name": "light_a",
       "filter": "capabilities=onoff",
-      "title": { "en": "Light A", "fr": "Lumière A" }
+      "title": {
+        "en": "Light A",
+        "fr": "Lumière A"
+      }
     },
     {
       "type": "device",
       "name": "light_b",
       "filter": "capabilities=onoff",
-      "title": { "en": "Light B (optional)", "fr": "Lumière B (option)" },
+      "title": {
+        "en": "Light B (optional)",
+        "fr": "Lumière B (option)"
+      },
       "optional": true
     },
     {
       "type": "text",
       "name": "quiet_start",
-      "title": { "en": "Quiet start (optional)", "fr": "Début calme (option)" },
+      "title": {
+        "en": "Quiet start (optional)",
+        "fr": "Début calme (option)"
+      },
       "optional": true
     },
     {
       "type": "text",
       "name": "quiet_end",
-      "title": { "en": "Quiet end (optional)", "fr": "Fin calme (option)" },
+      "title": {
+        "en": "Quiet end (optional)",
+        "fr": "Fin calme (option)"
+      },
       "optional": true
     }
-  ]
+  ],
+  "titleFormatted": {
+    "en": "Contact Entry Soft — door opens lights [[quiet_start]] [[quiet_end]] ([[contact]] [[light_a]] [[light_b]])",
+    "fr": "Contact Entry Soft — porte → lumières [[quiet_start]] [[quiet_end]] ([[contact]] [[light_a]] [[light_b]])",
+    "nl": "Contact Entry Soft — deur opent lichten [[quiet_start]] [[quiet_end]] ([[contact]] [[light_a]] [[light_b]])",
+    "de": "Contact Entry Soft — Tür schaltet Licht ein [[quiet_start]] [[quiet_end]] ([[contact]] [[light_a]] [[light_b]])"
+  }
 }

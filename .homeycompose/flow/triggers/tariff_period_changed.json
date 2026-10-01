@@ -1,7 +1,10 @@
 {
   "id": "tariff_period_changed",
   "title": {
-    "en": "Tariff period changed"
+    "en": "Tariff period changed",
+    "fr": "Période tarifaire modifiée",
+    "nl": "Tariefperiode gewijzigd",
+    "de": "Tarifzeitraum geändert"
   },
   "hint": {
     "en": "Triggers when the active tariff period changes (e.g., from off-peak to peak)"

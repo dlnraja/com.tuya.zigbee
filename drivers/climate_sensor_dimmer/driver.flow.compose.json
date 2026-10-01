@@ -4,7 +4,10 @@
       "id": "climate_sensor_dimmer_wall_1gang_physical_on",
       "args": [],
       "title": {
-        "en": "Turned on - physical button"
+        "en": "Turned on - physical button",
+        "fr": "Allumé - bouton physique",
+        "nl": "Aangezet - fysieke knop",
+        "de": "Eingeschaltet - physische Taste"
       },
       "titleFormatted": {
         "en": "Turned on - physical button"
@@ -14,7 +17,10 @@
       "id": "climate_sensor_dimmer_wall_1gang_physical_off",
       "args": [],
       "title": {
-        "en": "Turned off - physical button"
+        "en": "Turned off - physical button",
+        "fr": "Éteint - bouton physique",
+        "nl": "Uitgezet - fysieke knop",
+        "de": "Ausgeschaltet - physische Taste"
       },
       "titleFormatted": {
         "en": "Turned off - physical button"
@@ -24,7 +30,10 @@
       "id": "climate_sensor_dimmer_wall_1gang_physical_br_d2d99",
       "args": [],
       "title": {
-        "en": "Brightness increased - physical"
+        "en": "Brightness increased - physical",
+        "fr": "Luminosité augmentée (physique)",
+        "nl": "Helderheid verhoogd (fysiek)",
+        "de": "Helligkeit erhöht (physisch)"
       },
       "tokens": [
         {
@@ -44,7 +53,10 @@
       "id": "climate_sensor_dimmer_wall_1gang_physical_br_f339f",
       "args": [],
       "title": {
-        "en": "Brightness decreased - physical"
+        "en": "Brightness decreased - physical",
+        "fr": "Luminosité diminuée (physique)",
+        "nl": "Helderheid verlaagd (fysiek)",
+        "de": "Helligkeit verringert (physisch)"
       },
       "tokens": [
         {
@@ -64,7 +76,9 @@
       "id": "climate_sensor_dimmer_wall_1gang_dimmer_1gan_85e1d",
       "title": {
         "en": "Turned on",
-        "fr": "Allumé"
+        "fr": "Allumé",
+        "nl": "Aangezet",
+        "de": "Eingeschaltet"
       },
       "args": [],
       "titleFormatted": {
@@ -76,7 +90,9 @@
       "id": "climate_sensor_dimmer_wall_1gang_dimmer_1gan_f81b9",
       "title": {
         "en": "Turned off",
-        "fr": "Éteint"
+        "fr": "Éteint",
+        "nl": "Uitgezet",
+        "de": "Ausgeschaltet"
       },
       "args": [],
       "titleFormatted": {
@@ -88,7 +104,9 @@
       "id": "climate_sensor_dimmer_wall_1gang_dimmer_1gan_5e646",
       "title": {
         "en": "Brightness changed",
-        "fr": "Luminosité changée"
+        "fr": "Luminosité changée",
+        "nl": "Helderheid gewijzigd",
+        "de": "Helligkeit geändert"
       },
       "tokens": [
         {
@@ -159,7 +177,9 @@
       "id": "climate_sensor_dimmer_temperature_changed",
       "title": {
         "en": "Temperature changed",
-        "fr": "Température changée"
+        "fr": "Température changée",
+        "nl": "Temperatuur gewijzigd",
+        "de": "Temperatur geändert"
       },
       "tokens": [
         {
@@ -182,7 +202,9 @@
       "id": "climate_sensor_dimmer_humidity_changed",
       "title": {
         "en": "Humidity changed",
-        "fr": "Humidité changée"
+        "fr": "Humidité changée",
+        "nl": "Luchtvochtigheid gewijzigd",
+        "de": "Luftfeuchtigkeit geändert"
       },
       "tokens": [
         {
@@ -207,7 +229,9 @@
       "id": "climate_sensor_dimmer_wall_1gang_dimmer_1gan_ab9c7",
       "title": {
         "en": "Is turned !{{on|off}}",
-        "fr": "Est !{{allumé|éteint}}"
+        "fr": "Est !{{allumé|éteint}}",
+        "nl": "Is !{{aan|uit}}",
+        "de": "Ist !{{an|aus}}"
       },
       "args": [],
       "titleFormatted": {
@@ -237,7 +261,9 @@
       "id": "climate_sensor_dimmer_wall_1gang_dimmer_1gan_d1151",
       "title": {
         "en": "Turn on",
-        "fr": "Allumer"
+        "fr": "Allumer",
+        "nl": "Zet aan",
+        "de": "Einschalten"
       },
       "args": [],
       "titleFormatted": {
@@ -249,7 +275,9 @@
       "id": "climate_sensor_dimmer_wall_1gang_dimmer_1gan_02d79",
       "title": {
         "en": "Turn off",
-        "fr": "Éteindre"
+        "fr": "Éteindre",
+        "nl": "Zet uit",
+        "de": "Ausschalten"
       },
       "args": [],
       "titleFormatted": {
@@ -261,7 +289,9 @@
       "id": "climate_sensor_dimmer_wall_1gang_dimmer_1gan_6ec6b",
       "title": {
         "en": "Toggle on or off",
-        "fr": "Basculer"
+        "fr": "Basculer",
+        "nl": "Aan of uit wisselen",
+        "de": "Ein/Aus umschalten"
       },
       "args": [],
       "titleFormatted": {
@@ -273,7 +303,9 @@
       "id": "climate_sensor_dimmer_wall_1gang_dimmer_1gan_c6599",
       "title": {
         "en": "Set brightness to...",
-        "fr": "Régler la luminosité à..."
+        "fr": "Régler la luminosité à...",
+        "nl": "Helderheid instellen op…",
+        "de": "Helligkeit einstellen auf…"
       },
       "args": [
         {

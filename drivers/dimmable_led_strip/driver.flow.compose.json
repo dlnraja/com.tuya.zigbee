@@ -4,7 +4,9 @@
       "id": "dimmable_led_strip_dimmable_turned_on",
       "title": {
         "en": "Turned on",
-        "fr": "Allume"
+        "fr": "Allume",
+        "nl": "Aangezet",
+        "de": "Eingeschaltet"
       },
       "args": [],
       "titleFormatted": {
@@ -16,7 +18,9 @@
       "id": "dimmable_led_strip_dimmable_turned_off",
       "title": {
         "en": "Turned off",
-        "fr": "Eteint"
+        "fr": "Eteint",
+        "nl": "Uitgezet",
+        "de": "Ausgeschaltet"
       },
       "args": [],
       "titleFormatted": {
@@ -28,7 +32,9 @@
       "id": "dimmable_led_strip_dimmable_dim_changed",
       "title": {
         "en": "Brightness changed",
-        "fr": "Luminosite changee"
+        "fr": "Luminosite changee",
+        "nl": "Helderheid gewijzigd",
+        "de": "Helligkeit geändert"
       },
       "tokens": [
         {

@@ -45,7 +45,10 @@
     {
       "id": "water_valve_smart_temperature_changed",
       "title": {
-        "en": "Temperature changed"
+        "en": "Temperature changed",
+        "fr": "Température modifiée",
+        "nl": "Temperatuur gewijzigd",
+        "de": "Temperatur geändert"
       },
       "tokens": [
         {
@@ -105,7 +108,9 @@
       "id": "water_valve_smart_physical_on",
       "title": {
         "en": "Physical button on",
-        "fr": "Physical button on"
+        "fr": "Physical button on",
+        "nl": "Fysieke knop aan",
+        "de": "Physische Taste an"
       },
       "args": []
     },
@@ -113,7 +118,9 @@
       "id": "water_valve_smart_physical_off",
       "title": {
         "en": "Physical button off",
-        "fr": "Physical button off"
+        "fr": "Physical button off",
+        "nl": "Fysieke knop uit",
+        "de": "Physische Taste aus"
       },
       "args": []
     }
@@ -142,7 +149,10 @@
     {
       "id": "water_valve_smart_temperature_above",
       "title": {
-        "en": "Temperature !{{is|is not}} above"
+        "en": "Temperature !{{is|is not}} above",
+        "fr": "La température !{{est|n'est pas}} supérieure à",
+        "nl": "Temperatuur !{{is|is niet}} hoger dan",
+        "de": "Temperatur !{{liegt|liegt nicht}} über"
       },
       "args": [
         {
@@ -153,7 +163,10 @@
         }
       ],
       "titleFormatted": {
-        "en": "Temperature !{{is|is not}} above [[temp]]"
+        "en": "Temperature !{{is|is not}} above [[temp]]",
+        "fr": "La température !{{est|n'est pas}} supérieure à [[temp]]",
+        "nl": "Temperatuur !{{is|is niet}} hoger dan [[temp]]",
+        "de": "Temperatur !{{liegt|liegt nicht}} über [[temp]]"
       }
     },
     {

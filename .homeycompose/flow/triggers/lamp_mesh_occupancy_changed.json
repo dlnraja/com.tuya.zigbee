@@ -2,7 +2,9 @@
   "id": "lamp_mesh_occupancy_changed",
   "title": {
     "en": "Lamp Mesh Occupancy changed",
-    "fr": "Occupation maillage lampes changée"
+    "fr": "Occupation maillage lampes changée",
+    "nl": "Lamp Mesh-bezetting gewijzigd",
+    "de": "Lamp Mesh-Belegung geändert"
   },
   "hint": {
     "en": "Fires when soft mesh occupancy estimate flips occupied/clear for a zone",
@@ -12,25 +14,37 @@
     {
       "name": "zone",
       "type": "string",
-      "title": { "en": "Zone", "fr": "Zone" },
+      "title": {
+        "en": "Zone",
+        "fr": "Zone"
+      },
       "example": "living"
     },
     {
       "name": "occupied",
       "type": "boolean",
-      "title": { "en": "Occupied", "fr": "Occupé" },
+      "title": {
+        "en": "Occupied",
+        "fr": "Occupé"
+      },
       "example": true
     },
     {
       "name": "score",
       "type": "number",
-      "title": { "en": "Confidence", "fr": "Confiance" },
+      "title": {
+        "en": "Confidence",
+        "fr": "Confiance"
+      },
       "example": 0.55
     },
     {
       "name": "source",
       "type": "string",
-      "title": { "en": "Source", "fr": "Source" },
+      "title": {
+        "en": "Source",
+        "fr": "Source"
+      },
       "example": "mesh_soft"
     }
   ]

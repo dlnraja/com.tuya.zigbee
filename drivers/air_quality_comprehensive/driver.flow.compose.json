@@ -4,7 +4,9 @@
       "id": "air_quality_comprehensive_air_monitor_measur_5e035",
       "title": {
         "en": "Temperature changed",
-        "fr": "Température changée"
+        "fr": "Température changée",
+        "nl": "Temperatuur gewijzigd",
+        "de": "Temperatur geändert"
       },
       "tokens": [
         {
@@ -27,7 +29,9 @@
       "id": "air_quality_comprehensive_air_monitor_measur_fd5e7",
       "title": {
         "en": "Humidity changed",
-        "fr": "Humidité changée"
+        "fr": "Humidité changée",
+        "nl": "Luchtvochtigheid gewijzigd",
+        "de": "Luftfeuchtigkeit geändert"
       },
       "tokens": [
         {
@@ -125,7 +129,9 @@
       "id": "air_quality_comprehensive_pm25_changed",
       "title": {
         "en": "PM2.5 changed",
-        "fr": "PM2.5 changé"
+        "fr": "PM2.5 changé",
+        "nl": "PM2.5 gewijzigd",
+        "de": "PM2.5 geändert"
       },
       "tokens": [
         {
@@ -167,7 +173,10 @@
     {
       "id": "air_quality_comprehensive_temp_above",
       "title": {
-        "en": "Temperature !{{is|is not}} above"
+        "en": "Temperature !{{is|is not}} above",
+        "fr": "La température !{{est|n'est pas}} supérieure à",
+        "nl": "Temperatuur !{{is|is niet}} hoger dan",
+        "de": "Temperatur !{{liegt|liegt nicht}} über"
       },
       "args": [
         {
@@ -179,13 +188,19 @@
         }
       ],
       "titleFormatted": {
-        "en": "Temperature !{{is|is not}} above [[temperature]]"
+        "en": "Temperature !{{is|is not}} above [[temperature]]",
+        "fr": "La température !{{est|n'est pas}} supérieure à [[temperature]]",
+        "nl": "Temperatuur !{{is|is niet}} hoger dan [[temperature]]",
+        "de": "Temperatur !{{liegt|liegt nicht}} über [[temperature]]"
       }
     },
     {
       "id": "air_quality_comprehensive_humidity_above",
       "title": {
-        "en": "Humidity !{{is|is not}} above"
+        "en": "Humidity !{{is|is not}} above",
+        "fr": "L'humidité !{{est|n'est pas}} supérieure à",
+        "nl": "Luchtvochtigheid !{{is|is niet}} hoger dan",
+        "de": "Luftfeuchtigkeit !{{liegt|liegt nicht}} über"
       },
       "args": [
         {
@@ -197,7 +212,10 @@
         }
       ],
       "titleFormatted": {
-        "en": "Humidity !{{is|is not}} above [[humidity]]"
+        "en": "Humidity !{{is|is not}} above [[humidity]]",
+        "fr": "L'humidité !{{est|n'est pas}} supérieure à [[humidity]]",
+        "nl": "Luchtvochtigheid !{{is|is niet}} hoger dan [[humidity]]",
+        "de": "Luftfeuchtigkeit !{{liegt|liegt nicht}} über [[humidity]]"
       }
     }
   ],

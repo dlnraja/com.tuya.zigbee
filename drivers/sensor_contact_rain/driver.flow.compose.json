@@ -189,7 +189,9 @@
       "id": "sensor_contact_rain_illuminance_changed",
       "title": {
         "en": "Illuminance changed",
-        "fr": "Luminosité ambiante changée"
+        "fr": "Luminosité ambiante changée",
+        "nl": "Verlichtingssterkte gewijzigd",
+        "de": "Beleuchtungsstärke geändert"
       },
       "tokens": [
         {
@@ -212,7 +214,9 @@
       "id": "sensor_contact_rain_humidity_changed",
       "title": {
         "en": "Humidity changed",
-        "fr": "Humidité changée"
+        "fr": "Humidité changée",
+        "nl": "Luchtvochtigheid gewijzigd",
+        "de": "Luftfeuchtigkeit geändert"
       },
       "tokens": [
         {

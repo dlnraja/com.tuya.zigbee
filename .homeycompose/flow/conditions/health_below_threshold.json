@@ -1,7 +1,10 @@
 {
   "id": "health_below_threshold",
   "title": {
-    "en": "Device health below [[threshold]]"
+    "en": "Device health below [[threshold]]",
+    "fr": "Santé de l'appareil inférieure à",
+    "nl": "Apparaatgezondheid onder",
+    "de": "Gerätezustand unter"
   },
   "hint": {
     "en": "Checks if the device health score is below a given threshold"
@@ -39,5 +42,11 @@
         "en": "Health status"
       }
     }
-  ]
+  ],
+  "titleFormatted": {
+    "en": "Device health below [[threshold]] ([[device]])",
+    "fr": "Santé de l'appareil inférieure à [[threshold]] ([[device]])",
+    "nl": "Apparaatgezondheid onder [[threshold]] ([[device]])",
+    "de": "Gerätezustand unter [[threshold]] ([[device]])"
+  }
 }

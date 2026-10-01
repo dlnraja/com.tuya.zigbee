@@ -1,0 +1,121 @@
+{
+  "id": "capability_crossed_threshold",
+  "title": {
+    "en": "A value crossed a threshold",
+    "fr": "Une valeur a franchi un seuil",
+    "nl": "Een waarde heeft een drempel overschreden",
+    "de": "Ein Wert hat eine Schwelle überschritten"
+  },
+  "hint": {
+    "en": "Fires once when the value passes the threshold, not on every update.",
+    "fr": "Se déclenche une fois au passage du seuil, pas à chaque mise à jour.",
+    "nl": "Gaat één keer af bij het passeren van de drempel, niet bij elke update.",
+    "de": "Löst einmal beim Überschreiten der Schwelle aus, nicht bei jeder Aktualisierung."
+  },
+  "args": [
+    {
+      "type": "device",
+      "name": "device",
+      "title": {
+        "en": "Device",
+        "fr": "Appareil",
+        "nl": "Apparaat",
+        "de": "Gerät"
+      }
+    },
+    {
+      "type": "autocomplete",
+      "name": "capability",
+      "title": {
+        "en": "Value",
+        "fr": "Valeur",
+        "nl": "Waarde",
+        "de": "Wert"
+      }
+    },
+    {
+      "type": "dropdown",
+      "name": "direction",
+      "title": {
+        "en": "Direction",
+        "fr": "Sens",
+        "nl": "Richting",
+        "de": "Richtung"
+      },
+      "values": [
+        {
+          "id": "above",
+          "label": {
+            "en": "above",
+            "fr": "au-dessus de",
+            "nl": "boven",
+            "de": "über"
+          }
+        },
+        {
+          "id": "below",
+          "label": {
+            "en": "below",
+            "fr": "en dessous de",
+            "nl": "onder",
+            "de": "unter"
+          }
+        }
+      ]
+    },
+    {
+      "type": "number",
+      "name": "threshold",
+      "min": -100000,
+      "max": 1000000,
+      "step": 0.1,
+      "title": {
+        "en": "Threshold",
+        "fr": "Seuil",
+        "nl": "Drempel",
+        "de": "Schwelle"
+      },
+      "placeholder": {
+        "en": "e.g. 25",
+        "fr": "ex. 25",
+        "nl": "bijv. 25",
+        "de": "z. B. 25"
+      }
+    }
+  ],
+  "tokens": [
+    {
+      "name": "value",
+      "type": "number",
+      "title": {
+        "en": "Value",
+        "fr": "Valeur",
+        "nl": "Waarde",
+        "de": "Wert"
+      },
+      "example": 26
+    },
+    {
+      "name": "previous",
+      "type": "number",
+      "title": {
+        "en": "Previous value",
+        "fr": "Valeur précédente",
+        "nl": "Vorige waarde",
+        "de": "Vorheriger Wert"
+      },
+      "example": 24
+    },
+    {
+      "name": "capability",
+      "type": "string",
+      "title": {
+        "en": "Capability",
+        "fr": "Capacité",
+        "nl": "Capaciteit",
+        "de": "Fähigkeit"
+      },
+      "example": "measure_temperature"
+    }
+  ]
+}

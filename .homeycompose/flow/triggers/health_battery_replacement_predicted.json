@@ -1,7 +1,10 @@
 {
   "id": "health_battery_replacement_predicted",
   "title": {
-    "en": "Battery replacement predicted"
+    "en": "Battery replacement predicted",
+    "fr": "Remplacement de batterie prévu",
+    "nl": "Batterijvervanging voorspeld",
+    "de": "Batteriewechsel vorhergesagt"
   },
   "hint": {
     "en": "Triggers when the engine predicts battery needs replacement based on drain rate"
@@ -45,4 +48,3 @@
     }
   ]
 }
-

@@ -62,7 +62,9 @@
       "id": "formaldehyde_sensor_battery_low",
       "title": {
         "en": "Battery low",
-        "fr": "Batterie faible"
+        "fr": "Batterie faible",
+        "nl": "Batterij bijna leeg",
+        "de": "Batterie schwach"
       },
       "args": [],
       "titleFormatted": {
@@ -106,7 +108,9 @@
       "id": "formaldehyde_sensor_co2_changed",
       "title": {
         "en": "CO₂ changed",
-        "fr": "CO₂ changé"
+        "fr": "CO₂ changé",
+        "nl": "CO₂ gewijzigd",
+        "de": "CO₂ geändert"
       },
       "tokens": [
         {
@@ -129,7 +133,9 @@
       "id": "formaldehyde_sensor_pm25_changed",
       "title": {
         "en": "PM2.5 changed",
-        "fr": "PM2.5 changé"
+        "fr": "PM2.5 changé",
+        "nl": "PM2.5 gewijzigd",
+        "de": "PM2.5 geändert"
       },
       "tokens": [
         {

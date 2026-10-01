@@ -1,7 +1,10 @@
 {
   "id": "presence_zone_occupied",
   "title": {
-    "en": "Zone is occupied"
+    "en": "Zone is occupied",
+    "fr": "La zone est occupée",
+    "nl": "Zone is bezet",
+    "de": "Zone ist belegt"
   },
   "hint": {
     "en": "Checks if the Virtual Presence Detector considers its zone currently occupied"

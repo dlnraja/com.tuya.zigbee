@@ -36,7 +36,9 @@
       "id": "tunable_bulb_e14_dim_changed_7ab79",
       "title": {
         "en": "Brightness changed",
-        "fr": "Luminosite changee"
+        "fr": "Luminosite changee",
+        "nl": "Helderheid gewijzigd",
+        "de": "Helligkeit geändert"
       },
       "tokens": [
         {
@@ -169,7 +171,9 @@
       "id": "tunable_bulb_e14_set_color_temperature_ce77f",
       "title": {
         "en": "Set color temperature",
-        "fr": "Regler temperature de couleur"
+        "fr": "Regler temperature de couleur",
+        "nl": "Kleurtemperatuur instellen",
+        "de": "Farbtemperatur einstellen"
       },
       "args": [
         {
@@ -183,7 +187,9 @@
       ],
       "titleFormatted": {
         "en": "Set color temperature [[temperature]]",
-        "fr": "Regler temperature de couleur [[temperature]]"
+        "fr": "Regler temperature de couleur [[temperature]]",
+        "nl": "Kleurtemperatuur instellen [[temperature]]",
+        "de": "Farbtemperatur einstellen [[temperature]]"
       }
     }
   ]

@@ -213,7 +213,10 @@
     {
       "id": "remote_button_wireless_fingerbot_button_wire_558b6",
       "title": {
-        "en": "Gang 1 scene triggered"
+        "en": "Gang 1 scene triggered",
+        "fr": "Scène de la voie 1 déclenchée",
+        "nl": "Scène van kanaal 1 geactiveerd",
+        "de": "Szene von Kanal 1 ausgelöst"
       },
       "args": [],
       "tokens": [
@@ -236,7 +239,9 @@
       "id": "remote_button_wireless_fingerbot_physical_on",
       "title": {
         "en": "Physical button on",
-        "fr": "Physical button on"
+        "fr": "Physical button on",
+        "nl": "Fysieke knop aan",
+        "de": "Physische Taste an"
       },
       "args": []
     },
@@ -244,7 +249,9 @@
       "id": "remote_button_wireless_fingerbot_physical_off",
       "title": {
         "en": "Physical button off",
-        "fr": "Physical button off"
+        "fr": "Physical button off",
+        "nl": "Fysieke knop uit",
+        "de": "Physische Taste aus"
       },
       "args": []
     },
@@ -252,7 +259,9 @@
       "id": "remote_button_wireless_fingerbot_measure_power_changed",
       "title": {
         "en": "Power changed",
-        "fr": "Puissance changée"
+        "fr": "Puissance changée",
+        "nl": "Vermogen gewijzigd",
+        "de": "Leistung geändert"
       },
       "tokens": [
         {
@@ -275,7 +284,9 @@
       "id": "remote_button_wireless_fingerbot_meter_power_changed",
       "title": {
         "en": "Energy changed",
-        "fr": "Énergie changée"
+        "fr": "Énergie changée",
+        "nl": "Energie gewijzigd",
+        "de": "Energie geändert"
       },
       "tokens": [
         {
@@ -298,7 +309,9 @@
       "id": "remote_button_wireless_fingerbot_voltage_changed",
       "title": {
         "en": "Voltage changed",
-        "fr": "Tension changée"
+        "fr": "Tension changée",
+        "nl": "Spanning gewijzigd",
+        "de": "Spannung geändert"
       },
       "tokens": [
         {
@@ -321,7 +334,9 @@
       "id": "remote_button_wireless_fingerbot_current_changed",
       "title": {
         "en": "Current changed",
-        "fr": "Courant changé"
+        "fr": "Courant changé",
+        "nl": "Stroom gewijzigd",
+        "de": "Strom geändert"
       },
       "tokens": [
         {
@@ -731,7 +746,10 @@
     {
       "id": "remote_button_wireless_fingerbot_button_wire_de03b",
       "title": {
-        "en": "Set scene mode"
+        "en": "Set scene mode",
+        "fr": "Régler le mode scène",
+        "nl": "Scènemodus instellen",
+        "de": "Szenenmodus einstellen"
       },
       "args": [
         {
@@ -760,7 +778,10 @@
         }
       ],
       "titleFormatted": {
-        "en": "Set scene mode [[mode]]"
+        "en": "Set scene mode [[mode]]",
+        "fr": "Régler le mode scène [[mode]]",
+        "nl": "Scènemodus instellen [[mode]]",
+        "de": "Szenenmodus einstellen [[mode]]"
       }
     }
   ]

@@ -4,7 +4,9 @@
       "id": "generic_diy_temperature_changed",
       "title": {
         "en": "Temperature changed",
-        "fr": "Température changée"
+        "fr": "Température changée",
+        "nl": "Temperatuur gewijzigd",
+        "de": "Temperatur geändert"
       },
       "hint": {
         "en": "When the DIY sensor temperature changes",
@@ -31,7 +33,9 @@
       "id": "generic_diy_humidity_changed",
       "title": {
         "en": "Humidity changed",
-        "fr": "Humidité changée"
+        "fr": "Humidité changée",
+        "nl": "Luchtvochtigheid gewijzigd",
+        "de": "Luftfeuchtigkeit geändert"
       },
       "hint": {
         "en": "When the DIY sensor humidity changes",
@@ -58,7 +62,9 @@
       "id": "generic_diy_motion_detected",
       "title": {
         "en": "Motion detected",
-        "fr": "Mouvement détecté"
+        "fr": "Mouvement détecté",
+        "nl": "Beweging gedetecteerd",
+        "de": "Bewegung erkannt"
       },
       "hint": {
         "en": "When the DIY sensor detects motion",
@@ -74,7 +80,9 @@
       "id": "generic_diy_motion_cleared",
       "title": {
         "en": "Motion cleared",
-        "fr": "Mouvement terminé"
+        "fr": "Mouvement terminé",
+        "nl": "Beweging gestopt",
+        "de": "Bewegung beendet"
       },
       "hint": {
         "en": "When no more motion is detected",
@@ -90,7 +98,9 @@
       "id": "generic_diy_button_pressed",
       "title": {
         "en": "Button pressed",
-        "fr": "Bouton pressé"
+        "fr": "Bouton pressé",
+        "nl": "Knop ingedrukt",
+        "de": "Taste gedrückt"
       },
       "hint": {
         "en": "When a DIY button is pressed",
@@ -257,7 +267,9 @@
       "id": "generic_diy_illuminance_changed",
       "title": {
         "en": "Illuminance changed",
-        "fr": "Luminosité changée"
+        "fr": "Luminosité changée",
+        "nl": "Verlichtingssterkte gewijzigd",
+        "de": "Beleuchtungsstärke geändert"
       },
       "hint": {
         "en": "When the DIY light sensor value changes",
@@ -284,7 +296,9 @@
       "id": "generic_diy_battery_low",
       "title": {
         "en": "Battery low",
-        "fr": "Batterie faible"
+        "fr": "Batterie faible",
+        "nl": "Batterij bijna leeg",
+        "de": "Batterie schwach"
       },
       "hint": {
         "en": "When the DIY device battery is low",
@@ -441,7 +455,9 @@
           "placeholder": {
             "en": "25",
             "fr": "25"
-          }
+          },
+          "min": -40,
+          "max": 125
         }
       ],
       "titleFormatted": {
@@ -470,7 +486,9 @@
           "placeholder": {
             "en": "60",
             "fr": "60"
-          }
+          },
+          "min": 0,
+          "max": 100
         }
       ],
       "titleFormatted": {
@@ -499,7 +517,9 @@
           "placeholder": {
             "en": "20",
             "fr": "20"
-          }
+          },
+          "min": 0,
+          "max": 100
         }
       ],
       "titleFormatted": {

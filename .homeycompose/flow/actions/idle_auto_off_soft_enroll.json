@@ -2,7 +2,9 @@
   "id": "idle_auto_off_soft_enroll",
   "title": {
     "en": "Idle Auto-Off Soft",
-    "fr": "Idle Auto-Off Soft"
+    "fr": "Idle Auto-Off Soft",
+    "nl": "Idle Auto-Off Soft",
+    "de": "Idle Auto-Off Soft"
   },
   "hint": {
     "en": "Turns light off after idle minutes without change",
@@ -13,15 +15,27 @@
       "type": "device",
       "name": "light",
       "filter": "capabilities=onoff",
-      "title": { "en": "Light", "fr": "Lumière" }
+      "title": {
+        "en": "Light",
+        "fr": "Lumière"
+      }
     },
     {
       "type": "number",
       "name": "idle_minutes",
-      "title": { "en": "Idle minutes", "fr": "Minutes d'inactivité" },
+      "title": {
+        "en": "Idle minutes",
+        "fr": "Minutes d'inactivité"
+      },
       "min": 1,
       "max": 240,
       "value": 30
     }
-  ]
+  ],
+  "titleFormatted": {
+    "en": "Idle Auto-Off Soft [[idle_minutes]] ([[light]])",
+    "fr": "Idle Auto-Off Soft [[idle_minutes]] ([[light]])",
+    "nl": "Idle Auto-Off Soft [[idle_minutes]] ([[light]])",
+    "de": "Idle Auto-Off Soft [[idle_minutes]] ([[light]])"
+  }
 }

@@ -161,7 +161,9 @@
       "id": "device_air_purifier_presence_motion_alarm",
       "title": {
         "en": "Motion alarm",
-        "fr": "Alarme mouvement"
+        "fr": "Alarme mouvement",
+        "nl": "Bewegingsalarm",
+        "de": "Bewegungsalarm"
       },
       "args": [],
       "titleFormatted": {
@@ -173,7 +175,9 @@
       "id": "device_air_purifier_presence_illuminance_changed",
       "title": {
         "en": "Illuminance changed",
-        "fr": "Luminosité ambiante changée"
+        "fr": "Luminosité ambiante changée",
+        "nl": "Verlichtingssterkte gewijzigd",
+        "de": "Beleuchtungsstärke geändert"
       },
       "tokens": [
         {
@@ -196,7 +200,9 @@
       "id": "device_air_purifier_presence_temperature_changed",
       "title": {
         "en": "Temperature changed",
-        "fr": "Température changée"
+        "fr": "Température changée",
+        "nl": "Temperatuur gewijzigd",
+        "de": "Temperatur geändert"
       },
       "tokens": [
         {
@@ -219,7 +225,9 @@
       "id": "device_air_purifier_presence_humidity_changed",
       "title": {
         "en": "Humidity changed",
-        "fr": "Humidité changée"
+        "fr": "Humidité changée",
+        "nl": "Luchtvochtigheid gewijzigd",
+        "de": "Luftfeuchtigkeit geändert"
       },
       "tokens": [
         {
@@ -242,7 +250,9 @@
       "id": "device_air_purifier_presence_brightness_changed",
       "title": {
         "en": "Brightness changed",
-        "fr": "Luminosité changée"
+        "fr": "Luminosité changée",
+        "nl": "Helderheid gewijzigd",
+        "de": "Helligkeit geändert"
       },
       "tokens": [
         {
@@ -265,7 +275,9 @@
       "id": "device_air_purifier_presence_pm25_changed",
       "title": {
         "en": "PM2.5 changed",
-        "fr": "PM2.5 changé"
+        "fr": "PM2.5 changé",
+        "nl": "PM2.5 gewijzigd",
+        "de": "PM2.5 geändert"
       },
       "tokens": [
         {

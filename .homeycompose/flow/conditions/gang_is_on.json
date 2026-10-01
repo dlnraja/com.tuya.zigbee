@@ -1,0 +1,46 @@
+{
+  "id": "gang_is_on",
+  "title": {
+    "en": "A gang !{{is|is not}} on",
+    "fr": "Une voie !{{est|n'est pas}} allumée",
+    "nl": "Een kanaal !{{is|is niet}} aan",
+    "de": "Ein Kanal !{{ist|ist nicht}} an"
+  },
+  "titleFormatted": {
+    "en": "Gang [[gang]] of [[device]] !{{is|is not}} on",
+    "fr": "Voie [[gang]] de [[device]] !{{est|n'est pas}} allumée",
+    "nl": "Kanaal [[gang]] van [[device]] !{{is|is niet}} aan",
+    "de": "Kanal [[gang]] von [[device]] !{{ist|ist nicht}} an"
+  },
+  "args": [
+    {
+      "type": "device",
+      "name": "device",
+      "title": {
+        "en": "Device",
+        "fr": "Appareil",
+        "nl": "Apparaat",
+        "de": "Gerät"
+      }
+    },
+    {
+      "type": "number",
+      "name": "gang",
+      "min": 1,
+      "max": 8,
+      "step": 1,
+      "placeholder": {
+        "en": "1 to 8",
+        "fr": "1 à 8",
+        "nl": "1 tot 8",
+        "de": "1 bis 8"
+      },
+      "title": {
+        "en": "Gang",
+        "fr": "Voie",
+        "nl": "Kanaal",
+        "de": "Kanal"
+      }
+    }
+  ]
+}

@@ -28,5 +28,11 @@
       "step": 1,
       "value": 10
     }
-  ]
+  ],
+  "titleFormatted": {
+    "en": "Blink light alert [[duration_seconds]] ([[device]])",
+    "fr": "Faire clignoter la lumière alerte [[duration_seconds]] ([[device]])",
+    "nl": "Lamp laten knipperen alarm [[duration_seconds]] ([[device]])",
+    "de": "Licht blinken lassen Alarm [[duration_seconds]] ([[device]])"
+  }
 }

@@ -1,0 +1,63 @@
+{
+  "id": "capability_is_between",
+  "title": {
+    "en": "A value !{{is|is not}} between",
+    "fr": "Une valeur !{{est|n'est pas}} comprise entre",
+    "nl": "Een waarde !{{ligt|ligt niet}} tussen",
+    "de": "Ein Wert !{{liegt|liegt nicht}} zwischen"
+  },
+  "titleFormatted": {
+    "en": "[[capability]] of [[device]] !{{is|is not}} between [[min]] and [[max]]",
+    "fr": "[[capability]] de [[device]] !{{est|n'est pas}} entre [[min]] et [[max]]",
+    "nl": "[[capability]] van [[device]] !{{ligt|ligt niet}} tussen [[min]] en [[max]]",
+    "de": "[[capability]] von [[device]] !{{liegt|liegt nicht}} zwischen [[min]] und [[max]]"
+  },
+  "args": [
+    {
+      "type": "device",
+      "name": "device",
+      "title": {
+        "en": "Device",
+        "fr": "Appareil",
+        "nl": "Apparaat",
+        "de": "Gerät"
+      }
+    },
+    {
+      "type": "autocomplete",
+      "name": "capability",
+      "title": {
+        "en": "Value",
+        "fr": "Valeur",
+        "nl": "Waarde",
+        "de": "Wert"
+      }
+    },
+    {
+      "type": "number",
+      "name": "min",
+      "min": -100000,
+      "max": 1000000,
+      "step": 0.1,
+      "title": {
+        "en": "Minimum",
+        "fr": "Minimum",
+        "nl": "Minimum",
+        "de": "Minimum"
+      }
+    },
+    {
+      "type": "number",
+      "name": "max",
+      "min": -100000,
+      "max": 1000000,
+      "step": 0.1,
+      "title": {
+        "en": "Maximum",
+        "fr": "Maximum",
+        "nl": "Maximum",
+        "de": "Maximum"
+      }
+    }
+  ]
+}

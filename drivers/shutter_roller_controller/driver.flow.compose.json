@@ -4,7 +4,9 @@
       "id": "shutter_roller_controller_position_changed",
       "title": {
         "en": "Position changed",
-        "fr": "Position changée"
+        "fr": "Position changée",
+        "nl": "Positie gewijzigd",
+        "de": "Position geändert"
       },
       "tokens": [
         {
@@ -91,7 +93,9 @@
       "id": "shutter_roller_controller_brightness_changed",
       "title": {
         "en": "Brightness changed",
-        "fr": "Luminosité changée"
+        "fr": "Luminosité changée",
+        "nl": "Helderheid gewijzigd",
+        "de": "Helligkeit geändert"
       },
       "tokens": [
         {
@@ -162,7 +166,9 @@
       "id": "shutter_roller_controller_open",
       "title": {
         "en": "Open",
-        "fr": "Ouvrir"
+        "fr": "Ouvrir",
+        "nl": "Openen",
+        "de": "Öffnen"
       },
       "args": [],
       "titleFormatted": {
@@ -174,7 +180,9 @@
       "id": "shutter_roller_controller_close",
       "title": {
         "en": "Close",
-        "fr": "Fermer"
+        "fr": "Fermer",
+        "nl": "Sluiten",
+        "de": "Schließen"
       },
       "args": [],
       "titleFormatted": {
@@ -186,7 +194,9 @@
       "id": "shutter_roller_controller_stop",
       "title": {
         "en": "Stop",
-        "fr": "Arrêter"
+        "fr": "Arrêter",
+        "nl": "Stoppen",
+        "de": "Stoppen"
       },
       "args": [],
       "titleFormatted": {

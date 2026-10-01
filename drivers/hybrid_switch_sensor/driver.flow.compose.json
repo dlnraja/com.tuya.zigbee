@@ -28,7 +28,9 @@
       "id": "hybrid_switch_sensor_temperature_changed",
       "title": {
         "en": "Temperature changed",
-        "fr": "Température changée"
+        "fr": "Température changée",
+        "nl": "Temperatuur gewijzigd",
+        "de": "Temperatur geändert"
       },
       "tokens": [
         {
@@ -51,7 +53,9 @@
       "id": "hybrid_switch_sensor_humidity_changed",
       "title": {
         "en": "Humidity changed",
-        "fr": "Humidité changée"
+        "fr": "Humidité changée",
+        "nl": "Luchtvochtigheid gewijzigd",
+        "de": "Luftfeuchtigkeit geändert"
       },
       "tokens": [
         {
@@ -74,7 +78,9 @@
       "id": "hybrid_switch_sensor_physical_on",
       "title": {
         "en": "Physical button on",
-        "fr": "Physical button on"
+        "fr": "Physical button on",
+        "nl": "Fysieke knop aan",
+        "de": "Physische Taste an"
       },
       "args": []
     },
@@ -82,7 +88,9 @@
       "id": "hybrid_switch_sensor_physical_off",
       "title": {
         "en": "Physical button off",
-        "fr": "Physical button off"
+        "fr": "Physical button off",
+        "nl": "Fysieke knop uit",
+        "de": "Physische Taste aus"
       },
       "args": []
     }
@@ -104,7 +112,9 @@
       "id": "hybrid_switch_sensor_temperature_above",
       "title": {
         "en": "Temperature is above",
-        "fr": "Température supérieure à"
+        "fr": "Température supérieure à",
+        "nl": "Temperatuur is hoger dan",
+        "de": "Temperatur liegt über"
       },
       "args": [
         {
@@ -121,14 +131,18 @@
       ],
       "titleFormatted": {
         "en": "Temperature is above [[temp]]",
-        "fr": "Température supérieure à [[temp]]"
+        "fr": "Température supérieure à [[temp]]",
+        "nl": "Temperatuur is hoger dan [[temp]]",
+        "de": "Temperatur liegt über [[temp]]"
       }
     },
     {
       "id": "hybrid_switch_sensor_temperature_below",
       "title": {
         "en": "Temperature is below",
-        "fr": "Température inférieure à"
+        "fr": "Température inférieure à",
+        "nl": "Temperatuur is lager dan",
+        "de": "Temperatur liegt unter"
       },
       "args": [
         {
@@ -145,7 +159,9 @@
       ],
       "titleFormatted": {
         "en": "Temperature is below [[temp]]",
-        "fr": "Température inférieure à [[temp]]"
+        "fr": "Température inférieure à [[temp]]",
+        "nl": "Temperatuur is lager dan [[temp]]",
+        "de": "Temperatur liegt unter [[temp]]"
       }
     }
   ],
@@ -154,7 +170,9 @@
       "id": "hybrid_switch_sensor_turn_on",
       "title": {
         "en": "Turn on",
-        "fr": "Allumer"
+        "fr": "Allumer",
+        "nl": "Zet aan",
+        "de": "Einschalten"
       },
       "args": [],
       "titleFormatted": {
@@ -166,7 +184,9 @@
       "id": "hybrid_switch_sensor_turn_off",
       "title": {
         "en": "Turn off",
-        "fr": "Éteindre"
+        "fr": "Éteindre",
+        "nl": "Zet uit",
+        "de": "Ausschalten"
       },
       "args": [],
       "titleFormatted": {

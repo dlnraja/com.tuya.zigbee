@@ -2,20 +2,34 @@
   "id": "quiet_hours_is_active",
   "title": {
     "en": "Quiet Hours are active",
-    "fr": "Heures calmes actives"
+    "fr": "Heures calmes actives",
+    "nl": "Stille uren zijn actief",
+    "de": "Ruhezeiten sind aktiv"
   },
   "args": [
     {
       "type": "text",
       "name": "quiet_start",
-      "title": { "en": "Start (HH:MM)", "fr": "Début (HH:MM)" },
+      "title": {
+        "en": "Start (HH:MM)",
+        "fr": "Début (HH:MM)"
+      },
       "value": "22:00"
     },
     {
       "type": "text",
       "name": "quiet_end",
-      "title": { "en": "End (HH:MM)", "fr": "Fin (HH:MM)" },
+      "title": {
+        "en": "End (HH:MM)",
+        "fr": "Fin (HH:MM)"
+      },
       "value": "07:00"
     }
-  ]
+  ],
+  "titleFormatted": {
+    "en": "Quiet Hours are active [[quiet_start]] [[quiet_end]]",
+    "fr": "Heures calmes actives [[quiet_start]] [[quiet_end]]",
+    "nl": "Stille uren zijn actief [[quiet_start]] [[quiet_end]]",
+    "de": "Ruhezeiten sind aktiv [[quiet_start]] [[quiet_end]]"
+  }
 }

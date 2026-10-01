@@ -1,7 +1,10 @@
 {
   "id": "schedule_toggled",
   "title": {
-    "en": "Schedule activated/deactivated"
+    "en": "Schedule activated/deactivated",
+    "fr": "Planning activé/désactivé",
+    "nl": "Schema geactiveerd/gedeactiveerd",
+    "de": "Zeitplan aktiviert/deaktiviert"
   },
   "hint": {
     "en": "Triggers when a schedule is enabled or disabled"

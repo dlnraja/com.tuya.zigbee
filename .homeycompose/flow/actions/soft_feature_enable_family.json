@@ -2,7 +2,9 @@
   "id": "soft_feature_enable_family",
   "title": {
     "en": "Enable Soft Feature family",
-    "fr": "Activer famille Soft Feature"
+    "fr": "Activer famille Soft Feature",
+    "nl": "Soft Feature-familie inschakelen",
+    "de": "Soft-Feature-Familie aktivieren"
   },
   "hint": {
     "en": "Registers all catalog vectors of one family (light, presence, energy, cover, sensor, climate, generic)",
@@ -12,16 +14,67 @@
     {
       "type": "dropdown",
       "name": "family",
-      "title": { "en": "Family", "fr": "Famille" },
+      "title": {
+        "en": "Family",
+        "fr": "Famille"
+      },
       "values": [
-        { "id": "light", "label": { "en": "Light", "fr": "Lumière" } },
-        { "id": "presence", "label": { "en": "Presence", "fr": "Présence" } },
-        { "id": "energy", "label": { "en": "Energy", "fr": "Énergie" } },
-        { "id": "cover", "label": { "en": "Cover", "fr": "Volet" } },
-        { "id": "sensor", "label": { "en": "Sensor", "fr": "Capteur" } },
-        { "id": "climate", "label": { "en": "Climate", "fr": "Climat" } },
-        { "id": "generic", "label": { "en": "Generic", "fr": "Générique" } }
+        {
+          "id": "light",
+          "label": {
+            "en": "Light",
+            "fr": "Lumière"
+          }
+        },
+        {
+          "id": "presence",
+          "label": {
+            "en": "Presence",
+            "fr": "Présence"
+          }
+        },
+        {
+          "id": "energy",
+          "label": {
+            "en": "Energy",
+            "fr": "Énergie"
+          }
+        },
+        {
+          "id": "cover",
+          "label": {
+            "en": "Cover",
+            "fr": "Volet"
+          }
+        },
+        {
+          "id": "sensor",
+          "label": {
+            "en": "Sensor",
+            "fr": "Capteur"
+          }
+        },
+        {
+          "id": "climate",
+          "label": {
+            "en": "Climate",
+            "fr": "Climat"
+          }
+        },
+        {
+          "id": "generic",
+          "label": {
+            "en": "Generic",
+            "fr": "Générique"
+          }
+        }
       ]
     }
-  ]
+  ],
+  "titleFormatted": {
+    "en": "Enable Soft Feature family [[family]]",
+    "fr": "Activer famille Soft Feature [[family]]",
+    "nl": "Soft Feature-familie inschakelen [[family]]",
+    "de": "Soft-Feature-Familie aktivieren [[family]]"
+  }
 }

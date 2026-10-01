@@ -2,7 +2,9 @@
   "id": "night_path_is_active",
   "title": {
     "en": "Night Path bias is active",
-    "fr": "Biais Night Path actif"
+    "fr": "Biais Night Path actif",
+    "nl": "Nachtpad is actief",
+    "de": "Nachtweg ist aktiv"
   },
   "hint": {
     "en": "True when House Mode is night or sun is below horizon",

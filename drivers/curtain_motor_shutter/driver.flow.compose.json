@@ -4,7 +4,9 @@
       "id": "curtain_motor_shutter_button_pressed",
       "title": {
         "en": "Button pressed",
-        "fr": "Bouton pressé"
+        "fr": "Bouton pressé",
+        "nl": "Knop ingedrukt",
+        "de": "Taste gedrückt"
       },
       "tokens": [
         {
@@ -36,7 +38,9 @@
       "id": "curtain_motor_shutter_curtain_motor_windowco_94ffa",
       "title": {
         "en": "Position changed",
-        "fr": "Position changée"
+        "fr": "Position changée",
+        "nl": "Positie gewijzigd",
+        "de": "Position geändert"
       },
       "tokens": [
         {
@@ -59,7 +63,9 @@
       "id": "curtain_motor_shutter_curtain_motor_dim_changed",
       "title": {
         "en": "Brightness changed",
-        "fr": "Luminosité changée"
+        "fr": "Luminosité changée",
+        "nl": "Helderheid gewijzigd",
+        "de": "Helligkeit geändert"
       },
       "tokens": [
         {
@@ -98,7 +104,9 @@
       "id": "curtain_motor_shutter_curtain_motor_physical_on",
       "title": {
         "en": "Physically opened",
-        "fr": "Ouvert physiquement"
+        "fr": "Ouvert physiquement",
+        "nl": "Fysiek geopend",
+        "de": "Physisch geöffnet"
       },
       "tokens": [
         {
@@ -120,7 +128,9 @@
       "id": "curtain_motor_shutter_curtain_motor_physical_off",
       "title": {
         "en": "Physically closed",
-        "fr": "Fermé physiquement"
+        "fr": "Fermé physiquement",
+        "nl": "Fysiek gesloten",
+        "de": "Physisch geschlossen"
       },
       "tokens": [
         {
@@ -142,7 +152,9 @@
       "id": "curtain_motor_shutter_curtain_motor_physical_20967",
       "title": {
         "en": "Physically pressed",
-        "fr": "Pressé physiquement"
+        "fr": "Pressé physiquement",
+        "nl": "Fysiek ingedrukt",
+        "de": "Physisch gedrückt"
       },
       "tokens": [
         {
@@ -180,7 +192,9 @@
       "id": "curtain_motor_shutter_physical_on",
       "title": {
         "en": "Physical button on",
-        "fr": "Physical button on"
+        "fr": "Physical button on",
+        "nl": "Fysieke knop aan",
+        "de": "Physische Taste an"
       },
       "args": []
     },
@@ -188,7 +202,9 @@
       "id": "curtain_motor_shutter_physical_off",
       "title": {
         "en": "Physical button off",
-        "fr": "Physical button off"
+        "fr": "Physical button off",
+        "nl": "Fysieke knop uit",
+        "de": "Physische Taste aus"
       },
       "args": []
     }
@@ -198,7 +214,9 @@
       "id": "curtain_motor_shutter_curtain_motor_set_wind_571a6",
       "title": {
         "en": "Set position to...",
-        "fr": "Régler la position à..."
+        "fr": "Régler la position à...",
+        "nl": "Positie instellen op…",
+        "de": "Position einstellen auf…"
       },
       "args": [
         {
@@ -224,7 +242,9 @@
       "id": "curtain_motor_shutter_curtain_motor_windowco_91bdf",
       "title": {
         "en": "Open",
-        "fr": "Ouvrir"
+        "fr": "Ouvrir",
+        "nl": "Openen",
+        "de": "Öffnen"
       },
       "args": [],
       "titleFormatted": {
@@ -236,7 +256,9 @@
       "id": "curtain_motor_shutter_curtain_motor_windowco_52301",
       "title": {
         "en": "Close",
-        "fr": "Fermer"
+        "fr": "Fermer",
+        "nl": "Sluiten",
+        "de": "Schließen"
       },
       "args": [],
       "titleFormatted": {
@@ -248,7 +270,9 @@
       "id": "curtain_motor_shutter_curtain_motor_set_dim",
       "title": {
         "en": "Set brightness to...",
-        "fr": "Régler la luminosité à..."
+        "fr": "Régler la luminosité à...",
+        "nl": "Helderheid instellen op…",
+        "de": "Helligkeit einstellen auf…"
       },
       "args": [
         {
