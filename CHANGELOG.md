@@ -1,5 +1,13 @@
 # Changelog
 
+## Unreleased (P2768, P2769)
+
+### Fixed
+- **P2768**: WiFi devices: the Repair screen (update IP / local key / protocol, or fetch the key again) now opens; the view file was missing.
+- **P2769**: Tuya DP values are decoded as signed 32-bit numbers, so negative temperatures no longer show as huge numbers.
+
+---
+
 ## v5.12.171 (2026-09-12)
 
 ### Fixed

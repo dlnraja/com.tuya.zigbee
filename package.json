@@ -187,7 +187,7 @@
     "check:p2512": "node --test test/critical/p2512-peter-smartbutton-battery-history.test.js",
     "check:p2513": "node --test test/critical/p2513-salvagr-moes-stop-midpct.test.js",
     "check:p249x": "npm run check:p2490 && npm run check:p2492 && npm run check:p2494 && npm run check:p2496 && npm run check:p2499 && npm run check:p2502 && npm run check:p2503 && npm run check:p2505 && npm run check:p2506 && npm run check:p2507 && npm run check:p2508 && npm run check:p2509 && npm run check:p2511 && npm run check:p2512 && npm run check:p2513",
-    "check:publish": "npm run check:p2288 && npm run check:p2490 && npm run check:p2494 && npm run check:p2495 && npm run check:p2496 && npm run check:p2728 && npm run check:p2732",
+    "check:publish": "npm run check:p2288 && npm run check:p2490 && npm run check:p2494 && npm run check:p2495 && npm run check:p2496 && npm run check:p2728 && npm run check:p2732 && npm run check:p2768 && npm run check:p2769",
     "check:p2505": "node --test test/critical/p2505-p2485-ef00-multigang-rehome.test.js",
     "check:p2517": "node --test test/critical/p2517-market-apply-sacred-rollback.test.js",
     "check:p2518": "node --test test/critical/p2518-cap-flow-dp-rx-enrich.test.js",
@@ -319,7 +319,9 @@
     "check:p2743": "node --test test/critical/p2743-gh550-551-inbox-treat.test.js",
     "check:p2765": "node --test test/critical/p2765-gh550-missing-listener-presence-lift.test.js",
     "check:p2764": "node --test test/critical/p2764-firmware-quirks.test.js",
-    "check:p2766": "node --test test/critical/p2766-lcd-th05z-battery-ssot.test.js"
+    "check:p2766": "node --test test/critical/p2766-lcd-th05z-battery-ssot.test.js",
+    "check:p2768": "node --test test/critical/p2768-wifi-repair-views.test.js",
+    "check:p2769": "node --test test/critical/p2769-signed-dp-value.test.js"
   },
   "keywords": [
     "homey",
