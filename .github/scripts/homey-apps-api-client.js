@@ -142,7 +142,8 @@ async function updateBuildChannel(client, appId, buildId, channel = 'test') {
     $token: client.token,
     $timeout: client.timeoutMs,
     appId,
-    buildId,
+    // Athom SDK validates buildId as a string ("Invalid Parameter Type: buildId. Got: number").
+    buildId: String(buildId),
     channel,
   });
 }
