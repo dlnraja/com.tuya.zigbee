@@ -77,7 +77,7 @@ L.run(async () => {
     }
     st.cursors[br] = { head: cur.head, back: cur.back, done: !!cur.done };
   }
-  st.seen = [...seen].slice(-3000); st.mined = (st.mined || 0) + mined; st.at = new Date().toISOString();
+  st.seen = [...seen].slice(-1000); // issue body ≤ 65 536 chars: keep state compact st.mined = (st.mined || 0) + mined; st.at = new Date().toISOString();
   const md = `## 🧬 Git history mining — ${BRANCHES.join(', ')}\n\n${mined} commit(s) analysés ce run (total ${st.mined}).` +
     (fresh.length ? `\n\n🧭 **Pistes non mappées sur master** (heuristiques, à vérifier — bastien-home = expérimental) :\n${fresh.slice(0, 25).map((x) => `- \`${x.br}\` [${x.sha}](${x.url}) ${L.esc(x.title)} — ${x.f.slice(0, 8).map((u) => '`' + u + '`').join(', ')}`).join('\n')}` : '') +
     `\n\n<sub>daily-digest.yml (inspiration/git-mine) · lecture seule · run ${process.env.GITHUB_RUN_ID || 'local'}</sub>`;
