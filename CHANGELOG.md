@@ -4,7 +4,12 @@ All notable changes to the **Tuya Unified Zigbee** app for Homey Pro.
 
 ---
 
-## [Unreleased] - P2768 to P2773
+## [9.0.1300] - 2026-10-01
+
+v9.0.1300: automated publish, manifest sync, and Homey test promotion.
+---
+
+ [Unreleased] - P2768 to P2773
 
 - WiFi devices: the Repair screen (update IP / local key / protocol, or fetch the key again) now opens; the view file was missing for 53 drivers.
 - Tuya DP values are decoded as signed 32-bit numbers everywhere, so negative temperatures no longer show as huge numbers.
