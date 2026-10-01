@@ -1,5 +1,6 @@
 'use strict';
 const UnifiedLightBase = require('../../lib/devices/UnifiedLightBase');
+const FirmwareQuirks = require('../../lib/quirks/FirmwareQuirks');
 const VirtualButtonMixin = require('../../lib/mixins/VirtualButtonMixin');
 
 /**
@@ -55,11 +56,22 @@ class DimmableBulbDevice extends VirtualButtonMixin(UnifiedLightBase) {
 
       // v5.5.992: Initialize virtual buttons
       await this.initVirtualButtons();
+      // WHY(P2764 firmware quirk): _TZ3210_cnicaghm/TS0505B leaves the network after
+      // ~10 min without Basic keep-alive reads (pair-scoped, lib/data/firmware-quirks.json).
+      // https://github.com/Koenkk/zigbee-herdsman-converters/blob/master/src/devices/tuya.ts
+      try { FirmwareQuirks.startKeepAlive(this, zclNode); } catch (_e) { /* soft */ }
       this.log('[DIM-BULB] v5.5.992 ✅ Ready + virtual buttons');
     }, 'onNodeInit');
   }
 
+  async onUninit() {
+    try { FirmwareQuirks.stop(this); } catch (_e) { /* soft */ }
+    if (super.onUninit) {return super.onUninit();}
+    return undefined;
+  }
+
   onDeleted() {
+    try { FirmwareQuirks.stop(this); } catch (_e) { /* soft */ }
     this.log('Device deleted, cleaning up');
     if (super.onDeleted) {super.onDeleted();}
   }
