@@ -46,17 +46,17 @@ jobs:
       AI_ALLOW_PAID: "false"
       GMAIL_DIAG_AI_MAX: "0"
       # AI providers — present but skipped unless AI_ALLOW_REMOTE=true (P2491)
-      GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
-      OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
-      NVIDIA_API_KEY: ${{ secrets.NVIDIA_API_KEY }}
-      DEEPSEEK_API_KEY: ${{ secrets.DEEPSEEK_API_KEY }}
-      GROQ_API_KEY: ${{ secrets.GROQ_API_KEY || '' }}
-      HF_TOKEN: ${{ secrets.HF_TOKEN || '' }}
-      MISTRAL_API_KEY: ${{ secrets.MISTRAL_API_KEY || '' }}
-      OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY || '' }}
-      CEREBRAS_API_KEY: ${{ secrets.CEREBRAS_API_KEY || '' }}
-      TOGETHER_API_KEY: ${{ secrets.TOGETHER_API_KEY || '' }}
-      KIMI_API_KEY: ${{ secrets.KIMI_API_KEY || '' }}
+      GOOGLE_API_KEY: ${{ vars.AI_DISABLED != 'true' && secrets.GOOGLE_API_KEY || '' }}
+      OPENAI_API_KEY: '' # cancelled paid plan (2026-10): provider neutralized
+      NVIDIA_API_KEY: ${{ vars.AI_DISABLED != 'true' && secrets.NVIDIA_API_KEY || '' }}
+      DEEPSEEK_API_KEY: '' # cancelled paid plan (2026-10): provider neutralized
+      GROQ_API_KEY: ${{ vars.AI_DISABLED != 'true' && secrets.GROQ_API_KEY || '' }}
+      HF_TOKEN: ${{ vars.AI_DISABLED != 'true' && secrets.HF_TOKEN || '' }}
+      MISTRAL_API_KEY: ${{ vars.AI_DISABLED != 'true' && secrets.MISTRAL_API_KEY || '' }}
+      OPENROUTER_API_KEY: ${{ vars.AI_DISABLED != 'true' && secrets.OPENROUTER_API_KEY || '' }}
+      CEREBRAS_API_KEY: ${{ vars.AI_DISABLED != 'true' && secrets.CEREBRAS_API_KEY || '' }}
+      TOGETHER_API_KEY: ${{ vars.AI_DISABLED != 'true' && secrets.TOGETHER_API_KEY || '' }}
+      KIMI_API_KEY: '' # cancelled paid plan (2026-10): provider neutralized
       GH_PAT: ${{ secrets.GH_PAT }}
       GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 

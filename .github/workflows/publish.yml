@@ -62,16 +62,16 @@ jobs:
       AI_ALLOW_REMOTE: "false"
       AI_PLAN_MODE: forfait
       # === AI providers — circular chain (ai-helper.js) ===
-      GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
-      OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
-      DEEPSEEK_API_KEY: ${{ secrets.DEEPSEEK_API_KEY }}
-      GROQ_API_KEY: ${{ secrets.GROQ_API_KEY || '' }}
-      HF_TOKEN: ${{ secrets.HF_TOKEN || '' }}
-      MISTRAL_API_KEY: ${{ secrets.MISTRAL_API_KEY || '' }}
-      OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY || '' }}
-      CEREBRAS_API_KEY: ${{ secrets.CEREBRAS_API_KEY || '' }}
-      TOGETHER_API_KEY: ${{ secrets.TOGETHER_API_KEY || '' }}
-      KIMI_API_KEY: ${{ secrets.KIMI_API_KEY || '' }}
+      GOOGLE_API_KEY: ${{ vars.AI_DISABLED != 'true' && secrets.GOOGLE_API_KEY || '' }}
+      OPENAI_API_KEY: '' # cancelled paid plan (2026-10): provider neutralized
+      DEEPSEEK_API_KEY: '' # cancelled paid plan (2026-10): provider neutralized
+      GROQ_API_KEY: ${{ vars.AI_DISABLED != 'true' && secrets.GROQ_API_KEY || '' }}
+      HF_TOKEN: ${{ vars.AI_DISABLED != 'true' && secrets.HF_TOKEN || '' }}
+      MISTRAL_API_KEY: ${{ vars.AI_DISABLED != 'true' && secrets.MISTRAL_API_KEY || '' }}
+      OPENROUTER_API_KEY: ${{ vars.AI_DISABLED != 'true' && secrets.OPENROUTER_API_KEY || '' }}
+      CEREBRAS_API_KEY: ${{ vars.AI_DISABLED != 'true' && secrets.CEREBRAS_API_KEY || '' }}
+      TOGETHER_API_KEY: ${{ vars.AI_DISABLED != 'true' && secrets.TOGETHER_API_KEY || '' }}
+      KIMI_API_KEY: '' # cancelled paid plan (2026-10): provider neutralized
 
     steps:
       - uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # v5.1.0
@@ -154,7 +154,7 @@ jobs:
         id: ai_cl
         continue-on-error: true
         env:
-          GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
+          GOOGLE_API_KEY: ${{ vars.AI_DISABLED != 'true' && secrets.GOOGLE_API_KEY || '' }}
           GH_PAT: ${{ secrets.GH_PAT }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
@@ -200,7 +200,7 @@ jobs:
         if: steps.pat.outputs.ok == 'true'
         continue-on-error: true
         env:
-          GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
+          GOOGLE_API_KEY: ${{ vars.AI_DISABLED != 'true' && secrets.GOOGLE_API_KEY || '' }}
           GH_PAT: ${{ secrets.GH_PAT }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
@@ -338,7 +338,7 @@ jobs:
           GMAIL_REFRESH_TOKEN: ${{ secrets.GMAIL_REFRESH_TOKEN }}
           GMAIL_DIAG_AI_MAX: "0"
           GMAIL_DIAG_REQUIRE_ACCESS: "false"
-          GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
+          GOOGLE_API_KEY: ${{ vars.AI_DISABLED != 'true' && secrets.GOOGLE_API_KEY || '' }}
           HOMEY_PAT_API: ${{ secrets.HOMEY_PAT_API }}
           HOMEY_PAT: ${{ secrets.HOMEY_PAT }}
           GH_PAT: ${{ secrets.GH_PAT }}

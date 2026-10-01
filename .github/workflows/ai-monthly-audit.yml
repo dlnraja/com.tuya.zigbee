@@ -390,9 +390,9 @@ jobs:
       - name: Run AI analysis
         id: ai_analysis
         env:
-          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
-          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
-          GOOGLE_AI_KEY: ${{ secrets.GOOGLE_AI_KEY }}
+          ANTHROPIC_API_KEY: '' # cancelled paid plan (2026-10): provider neutralized
+          OPENAI_API_KEY: '' # cancelled paid plan (2026-10): provider neutralized
+          GOOGLE_AI_KEY: ${{ vars.AI_DISABLED != 'true' && secrets.GOOGLE_AI_KEY || '' }}
         run: |
           # Try Claude first, then OpenAI, then Gemini, then fallback
           ANALYSIS_FILE="/tmp/ai-context/analysis.json"
