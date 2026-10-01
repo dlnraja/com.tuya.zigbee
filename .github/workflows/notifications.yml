@@ -13,15 +13,28 @@ on:
   issues:
     types: [opened, closed]
   pull_request:
-    types: [opened, closed]
+    types: [opened, reopened, closed]
+  # Real-time CI watcher on master (free replacement for the Grok event routine)
+  workflow_run:
+    workflows:
+      - '🛡️ Unified CI/CD Orchestrator'
+      - '🔍 Syntax Check & SDK3 Validation'
+      - 'code-quality'
+      - 'Auto-Publish on Push'
+      - '🤖 Auto-Fix + Publish Pipeline'
+    types: [completed]
+    branches: [master]
   workflow_dispatch:
 
 permissions:
   contents: read
+  issues: write   # digest-event: one comment on the "🤖 Daily digest" tracking issue
+  actions: read   # digest-event: failed job names of the CI run
 
 concurrency:
-  group: ${{ github.workflow }}-${{ github.ref }}
-  cancel-in-progress: true
+  # workflow_run events get their own group (never cancel a CI-failure notification)
+  group: ${{ github.workflow }}-${{ github.event_name }}-${{ github.ref }}-${{ github.event.workflow_run.id || 'x' }}
+  cancel-in-progress: ${{ github.event_name != 'workflow_run' }}
 defaults:
   run:
     shell: bash
@@ -42,7 +55,7 @@ jobs:
   notify-maintainers:
     runs-on: ubuntu-latest
     timeout-minutes: 10
-    if: "contains(github.event.repository.name, 'tuya.zigbee')"
+    if: "contains(github.event.repository.name, 'tuya.zigbee') && github.event_name != 'workflow_run'"
     steps:
       - name: 📥 Checkout
         uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # v5.1.0
@@ -69,3 +82,28 @@ jobs:
         run: |
           echo "Event triggered in the repository: ${{ github.event_name }}"
           echo "Details: ${{ github.event.issue.html_url || github.event.pull_request.html_url }}"
+
+  digest-event:
+    name: 🔔 PR / CI-master event → tracking issue
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    if: >-
+      github.repository == 'dlnraja/com.tuya.zigbee' &&
+      (github.event_name == 'pull_request' || github.event_name == 'workflow_run')
+    steps:
+      - name: 📥 Checkout (scripts only, base repo)
+        uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # v5.1.0
+        with:
+          ref: ${{ github.event.repository.default_branch }}
+          sparse-checkout: scripts/digest
+          persist-credentials: false
+      - name: 📦 Setup Node.js
+        uses: actions/setup-node@a0853c24544627f65ddf259abe73b1d18a591444 # v5.0.0
+        with:
+          node-version: '22'
+      - name: 🔔 Digest event
+        # Fork PRs get a read-only token → comment impossible; never fail the PR for that.
+        continue-on-error: true
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: node scripts/digest/digest-event.js
