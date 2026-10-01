@@ -14,11 +14,13 @@ const fs = require('fs');
 const path = require('path');
 const L = require('./lib');
 const E = require('./enrich');
+const LD = require('./leads');
 const BODIES = new Map(); // number -> body (memory only, never stored in state)
 let IDX = null;
 function leadsFor(n) {
   if (!IDX || !BODIES.get(n)) return '';
   const c = E.check(E.extract(BODIES.get(n)), IDX);
+  LD.record('github-own', `https://github.com/${REPO}/issues/${n}`, BODIES.get(n), { idx: IDX });
   const r = E.renderLeads(c);
   return r ? `\n    - 🧭 ${r}` : '';
 }

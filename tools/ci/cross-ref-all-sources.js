@@ -403,6 +403,26 @@ function processGithubOwn() {
 console.log('=== CROSS-REFERENCING ALL SOURCES ===\n');
 console.log('Processing sources...');
 
+// ============== SOURCE: DIGEST FEEDBACK LOOP (scripts/digest/leads-merge.js) ==============
+// Couples captured by the daily digests (own issues/PRs, JohanBendz, forum, git history, OCR,
+// linked pages). Only entries leads-merge mapped to an existing market label are counted; heuristic
+// ones that are not externally verified keep label `digest-heuristic`, which is in no tier set
+// (report-only). Never escalates to the `interview` tier.
+function processDigestLeads() {
+  const data = readJson('.github/state/digest-leads/couples.json');
+  if (!data || !Array.isArray(data.couples)) return 0;
+  const allowed = new Set(['forum', 'github-own', 'johan-issue', 'johan-comment']);
+  let count = 0;
+  for (const c of data.couples) {
+    if (!c || !c.mfr || !c.pid) continue;
+    const labels = (Array.isArray(c.labels) && c.labels.length ? c.labels : [c.label]).filter((l) => allowed.has(l));
+    if (!labels.length) { addPair(c.mfr, c.pid, 'digest-heuristic', { refs: (c.refs || []).slice(0, 2) }); continue; }
+    for (const l of labels) addPair(c.mfr, c.pid, l, { via: 'digest', refs: (c.refs || []).slice(0, 2), verifiedBy: c.verifiedBy });
+    count++;
+  }
+  return count;
+}
+
 const counts = {
   johan_issues: processJohan(),
   johan_comments: processJohanComments(),
@@ -419,6 +439,7 @@ const counts = {
   interview: processInterviews(),
   device_truth: processDeviceTruth(),
   github_own: processGithubOwn(),
+  digest_leads: processDigestLeads(),
 };
 
 console.log('\n=== PAIRS EXTRACTED ===');

@@ -20,6 +20,7 @@
 const crypto = require('crypto');
 const L = require('./lib');
 const E = require('./enrich');
+const LD = require('./leads');
 const { lookup, stats } = require('./lookup');
 
 const OWNER = process.env.INSPIRATION_OWNER || 'JohanBendz';
@@ -32,13 +33,16 @@ async function repos() {
   const list = await L.gh(`/users/${OWNER}/repos?type=owner&sort=pushed&per_page=100`);
   return list.filter((r) => !r.fork && !r.private).map((r) => r.full_name);
 }
+// Own repo is scanned too (issues/PRs + comments, incremental) so its feedback reaches the loop.
+const EXTRA = (process.env.INSPIRATION_EXTRA_REPOS ?? 'dlnraja/com.tuya.zigbee').split(',').map((s) => s.trim()).filter(Boolean);
+const sourceOf = (repo) => (/^dlnraja\//i.test(repo) ? 'github-own' : 'johan-issue');
 
 L.run(async () => {
   const { issue, prev } = await L.loadState('inspiration');
   const st = prev || { cursors: {}, seen: [], scanned: 0 };
   const seen = new Set(st.seen || []);
   const idx = E.buildIndex(process.cwd());
-  const repoList = await repos();
+  const repoList = [...new Set([...(await repos()), ...EXTRA])];
   let budget = MAX_ITEMS;
   const found = []; // { item, leads(render), unmapped[] }
   let scanned = 0;
@@ -67,6 +71,7 @@ L.run(async () => {
           } catch (e) { if (e.name === 'StopDigest') throw e; }
         }
         const c = E.check(E.extract(text), idx);
+        try { await LD.recordDeep(sourceOf(repo), it.html_url, text, { idx }); } catch (e) { if (e.name === 'StopDigest') throw e; L.log(`leads: ${e.message}`); }
         const unmapped = E.unmappedLeads(c).filter((u) => !u.startsWith('endpoint:')); // endpoints w/o device context = noise
         const fresh = unmapped.filter((u) => !seen.has(h8(u)));
         if (fresh.length) found.push({ it, repo, leads: E.renderLeads(c), fresh });
@@ -82,7 +87,7 @@ L.run(async () => {
   st.wf = st.wf || {}; st.wfChecked = st.wfChecked || {};
   const ideas = [];
   let reads = 0;
-  const wfRepos = [...repoList].sort((a, b) => String(st.wfChecked[a] || '').localeCompare(String(st.wfChecked[b] || ''))).slice(0, 5);
+  const wfRepos = repoList.filter((r) => !EXTRA.includes(r)).sort((a, b) => String(st.wfChecked[a] || '').localeCompare(String(st.wfChecked[b] || ''))).slice(0, 5);
   for (const repo of wfRepos) {
     let files = [];
     try { files = (await L.gh(`/repos/${repo}/contents/.github/workflows`, { allow404: true })) || []; } catch (e) { if (e.name === 'StopDigest') throw e; }

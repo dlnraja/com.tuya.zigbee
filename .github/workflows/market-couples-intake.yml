@@ -92,6 +92,27 @@ jobs:
             ${{ runner.os }}-market-couples-
             ${{ runner.os }}-intel-cache-
 
+      - name: ♻️ Restore rules-digest (rebuilt only when docs/rules change)
+        uses: actions/cache@caa296126883cff596d87d8935842f9db880ef25 # v5.1.0
+        with:
+          path: .github/state/rules-digest.json
+          key: rules-digest-${{ hashFiles('CORE_RULES.md', 'AGENTS.md', 'AI_CONTEXT_MANDATE.md', 'CONTRIBUTING.md', 'docs/rules/**', 'docs/ARCHITECTURAL_RULES.md', 'docs/DRIVER_MAPPING_POLICY.md', 'docs/DP_MAPPING_REFERENCE.md', 'docs/knowledge/DEVICE_TRUTH.md', '.cursor/rules/**', 'CHANGELOG.md') }}
+
+      - name: 🔁 Feedback loop — merge digest leads (issues/PRs, JohanBendz, forum, git history, OCR, links)
+        continue-on-error: true
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          # Latest daily-digest runs (artifacts kept 14 d); bounded to 12 runs. Heuristic leads are
+          # promoted only when externally verified (scripts/digest/leads-merge.js) and none of the
+          # digest labels is an apply-safe tier — they only add evidence / review lines.
+          mkdir -p digest-leads-in
+          for RID in $(gh run list -R "$GITHUB_REPOSITORY" -w daily-digest.yml -L 12 --json databaseId -q '.[].databaseId'); do
+            gh run download "$RID" -R "$GITHUB_REPOSITORY" -p 'digest-leads-*' -D "digest-leads-in/$RID" >/dev/null 2>&1 || true
+          done
+          node scripts/digest/leads-merge.js digest-leads-in
+          cat .github/state/digest-leads/SUMMARY.md >> "$GITHUB_STEP_SUMMARY" || true
+
       - name: 📡 Market couples intake (P2232 max-source)
         id: intake
         run: |
@@ -145,6 +166,8 @@ jobs:
           path: |
             .github/state/market-couples/
             .github/state/mfr-pid-cross-ref.json
+            .github/state/digest-leads/
+            .github/state/rules-digest.json
             scripts/sync/data/blakadder.json
             scripts/sync/data/z2m.json
             scripts/sync/data/zha.json
