@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-10-01T11:18:34.513Z",
+  "timestamp": "2026-10-01T19:20:52.595Z",
   "gate": "align-mfs-db-intelligent",
   "apply": false,
   "check": true,
@@ -11,7 +11,7 @@
   "skipped": [
     {
       "reason": "registry_driver_missing",
-      "caseId": "p2605-nkjintbl-tze200-not-switch2gang-not-btn-plug",
+      "caseId": "p2605b-nkjintbl-tze284-ambiguous",
       "canon": null
     },
     {
@@ -514,7 +514,6 @@
         "contact_sensor",
         "curtain_motor",
         "gas_sensor",
-        "illuminance_sensor",
         "ir_blaster",
         "presence_sensor_radar",
         "rain_sensor",
@@ -525,7 +524,6 @@
         "switch_1gang",
         "switch_2gang",
         "switch_3gang",
-        "vibration_sensor",
         "water_leak_sensor"
       ]
     }
