@@ -1,0 +1,950 @@
+{
+ "generated": "2026-10-01",
+ "note": "read-only scan output; knownDrivers=[] means the mfr is not in any driver yet (review before applying)",
+ "leads": [
+  {
+   "mfr": "_TZ2300_gjnozsaz",
+   "pids": [],
+   "dps": [],
+   "firmware": [],
+   "knownDrivers": [],
+   "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/521#issuecomment-1792049987",
+   "snippet": "nd in the file drivers\\smartplug\\driver.compose.json I see the device is called _TZ2300_gjnozsaz (...gjn...). I don't know if this is a typo or there are two devices with almost the same name. Maybee it is best to add",
+   "seen": "2026-10-01"
+  },
+  {
+   "mfr": "_TZ3000_9er9cqgi",
+   "pids": [],
+   "dps": [],
+   "firmware": [],
+   "knownDrivers": [],
+   "url": "https://github.com/Geim66/com.tuya.zigbee/blob/patch-1/drivers/switch_2_gang/driver.compose.json",
+   "snippet": "\"_TZ3000_9er9cqgi\", }",
+   "seen": "2026-10-01"
+  },
+  {
+   "mfr": "_TZ3000_stt211u9",
+   "pids": [],
+   "dps": [],
+   "firmware": [],
+   "knownDrivers": [],
+   "url": "https://github.com/CyB0rgg/com.tuya.zigbee/blob/SDK3_UK/drivers/smartplug/driver.compose.json",
+   "snippet": "\"_TZ3000_stt211u9\",",
+   "seen": "2026-10-01"
+  },
+  {
+   "mfr": "_TZ3210_y5rtzkmc",
+   "pids": [],
+   "dps": [],
+   "firmware": [],
+   "knownDrivers": [],
+   "url": "https://github.com/rvproductions/com.tuya.zigbee/blob/SDK3/drivers/rgb_led_strip_controller/driver.compose.json",
+   "snippet": "color\", \"lidl_xmas_mode\"], \"_TZ3210_k1pe6ibm\", \"_TZ3210_0zabbfax\", \"_TZ3210_y5rtzkmc\"",
+   "seen": "2026-10-01"
+  },
+  {
+   "mfr": "_TZ3290_acv1iusl",
+   "pids": [],
+   "dps": [],
+   "firmware": [],
+   "knownDrivers": [],
+   "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/335#issuecomment-4589834219",
+   "snippet": "Z3000_1fqpj6qz` -> **switch_1gang** - `_TZ3000_sfibawtr` -> **switch_1gang** - `_TZ3290_acv1iusl` -> **switch_1gang** - `_TZE200_y8wkaq6w` -> **climate_sensor** - `_TZ3210_cyuyd5az` -> **switch_1gang** - `_TZ3000_5rpu3r0",
+   "seen": "2026-10-01"
+  },
+  {
+   "mfr": "_TZ3290_acv1iusl",
+   "pids": [],
+   "dps": [],
+   "firmware": [],
+   "knownDrivers": [],
+   "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/335#issuecomment-4586129321",
+   "snippet": "_TZ3000_cumqn2av`, `_TZ300A_fhbcipep`, `_TZ3000_1fqpj6qz`, `_TZ3000_sfibawtr`, `_TZ3290_acv1iusl`, `_TZE200_y8wkaq6w`, `_TZ3210_cyuyd5az`, `_TZ3000_5rpu3r0d`, `_TZE204_p6vz3wzt`, `_TZ3000_djgzdba9`, `_TZE284_nvodulvi`, `",
+   "seen": "2026-10-01"
+  },
+  {
+   "mfr": "_TZ3290_acv1iusl",
+   "pids": [],
+   "dps": [],
+   "firmware": [],
+   "knownDrivers": [],
+   "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/353#issuecomment-4586127829",
+   "snippet": "_TZ3000_cumqn2av`, `_TZ300A_fhbcipep`, `_TZ3000_1fqpj6qz`, `_TZ3000_sfibawtr`, `_TZ3290_acv1iusl`, `_TZE200_y8wkaq6w`, `_TZ3210_cyuyd5az`, `_TZ3000_yi0n4xfd`, `_TZ3000_5rpu3r0d`, `_TZE204_p6vz3wzt`, `_TZ3000_djgzdba9`, `",
+   "seen": "2026-10-01"
+  },
+  {
+   "mfr": "_TZ3000_bgsigers",
+   "pids": [
+    "TS0201"
+   ],
+   "dps": [],
+   "firmware": [
+    "bug",
+    "firmware"
+   ],
+   "knownDrivers": [
+    "lcdtemphumidsensor"
+   ],
+   "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/1344#issuecomment-3974868402",
+   "snippet": "rs. 3) Check if your Homey Pro had a firmware update or restart around Jan 9th. _TZ3000_bgsigers / TS0201 is well-supported in the app — the FP is in the climate_sensor driver and uses standard ZCL temperature/humidity c",
+   "seen": "2026-10-01"
+  },
+  {
+   "mfr": "_TZ3000_bgsigers",
+   "pids": [
+    "TS0201"
+   ],
+   "dps": [],
+   "firmware": [
+    "bug"
+   ],
+   "knownDrivers": [
+    "lcdtemphumidsensor"
+   ],
+   "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/1344",
+   "snippet": "Bug report - [Short description] _TZ3000_bgsigers - TS0201 sensors stopped working",
+   "seen": "2026-10-01"
+  },
+  {
+   "mfr": "_TZ3000_bjawzodf",
+   "pids": [],
+   "dps": [],
+   "firmware": [
+    "bug"
+   ],
+   "knownDrivers": [
+    "lcdtemphumidsensor"
+   ],
+   "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/1015#issuecomment-5873651750",
+   "snippet": "2026 canonicalization: this issue is now the primary `_TZ3000_bjawzodf / TY0201` pairing/behavior bug. Related reports #1309 and the second half of #796 point to the same failure pattern. Curren",
+   "seen": "2026-10-01"
+  },
+  {
+   "mfr": "_TZ3000_bjawzodf",
+   "pids": [],
+   "dps": [],
+   "firmware": [
+    "bug"
+   ],
+   "knownDrivers": [
+    "lcdtemphumidsensor"
+   ],
+   "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/1309#issuecomment-5873649942",
+   "snippet": "Consolidated into canonical pairing bug #1015 for `_TZ3000_bjawzodf / TY0201`. Both issues report that the fingerprint is recognized/listed but pairing fails or yields wrong behavior on Homey",
+   "seen": "2026-10-01"
+  },
+  {
+   "mfr": "_TZ3000_bjawzodf",
+   "pids": [],
+   "dps": [],
+   "firmware": [
+    "bug"
+   ],
+   "knownDrivers": [
+    "lcdtemphumidsensor"
+   ],
+   "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/1309#issuecomment-5873633492",
+   "snippet": "2026 triage: deliberately keeping this bug open. `_TZ3000_bjawzodf / TY0201` is present in the current `lcdtemphumidsensor` manifest, but the report says Homey Pro 2023 still fails to add it",
+   "seen": "2026-10-01"
+  },
+  {
+   "mfr": "_TZ3000_bjawzodf",
+   "pids": [],
+   "dps": [],
+   "firmware": [
+    "bug"
+   ],
+   "knownDrivers": [
+    "lcdtemphumidsensor"
+   ],
+   "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/1015#issuecomment-5873632676",
+   "snippet": "2026 triage: deliberately keeping this bug open. `_TZ3000_bjawzodf / TY0201` is present in the current `lcdtemphumidsensor` manifest, but this issue reports intermittent pairing failure and",
+   "seen": "2026-10-01"
+  },
+  {
+   "mfr": "_TZ3000_ja5osu5g",
+   "pids": [],
+   "dps": [],
+   "firmware": [
+    "bug"
+   ],
+   "knownDrivers": [
+    "smart_knob"
+   ],
+   "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/1026",
+   "snippet": "Bug report - device _TZ3000_ja5osu5g does not work with smart_remote_1_button_2",
+   "seen": "2026-10-01"
+  },
+  {
+   "mfr": "_TZ3000_rco1yzb1",
+   "pids": [
+    "TS004F"
+   ],
+   "dps": [],
+   "firmware": [
+    "bug"
+   ],
+   "knownDrivers": [
+    "button_wireless_4"
+   ],
+   "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/423#issuecomment-2405850747",
+   "snippet": "Mention ***@***.***> Onderwerp: Re: [JohanBendz/com.tuya.zigbee] Bug report - _TZ3000_rco1yzb1 TS004F 1 click not recognized (Issue #423)",
+   "seen": "2026-10-01"
+  },
+  {
+   "mfr": "_TZ3000_rco1yzb1",
+   "pids": [
+    "TS004F"
+   ],
+   "dps": [],
+   "firmware": [
+    "bug"
+   ],
+   "knownDrivers": [
+    "button_wireless_4"
+   ],
+   "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/423#issuecomment-2397681045",
+   "snippet": ">; Mention ***@***.***>Onderwerp: Re: [JohanBendz/com.tuya.zigbee] Bug report - _TZ3000_rco1yzb1 TS004F 1 click not recognized (Issue #423) Hi @fransjvos and @RogerGorissen, I will update the driver in next release. Ple",
+   "seen": "2026-10-01"
+  },
+  {
+   "mfr": "_TZ3000_rco1yzb1",
+   "pids": [
+    "TS004F"
+   ],
+   "dps": [],
+   "firmware": [
+    "bug"
+   ],
+   "knownDrivers": [
+    "button_wireless_4"
+   ],
+   "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/423#issuecomment-2395085388",
+   "snippet": ">; Mention ***@***.***>Onderwerp: Re: [JohanBendz/com.tuya.zigbee] Bug report - _TZ3000_rco1yzb1 TS004F 1 click not recognized (Issue #423) Is this still an issue?",
+   "seen": "2026-10-01"
+  },
+  {
+   "mfr": "_TZ3000_rco1yzb1",
+   "pids": [
+    "TS004F"
+   ],
+   "dps": [],
+   "firmware": [
+    "bug"
+   ],
+   "knownDrivers": [
+    "button_wireless_4"
+   ],
+   "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/423",
+   "snippet": "Bug report - _TZ3000_rco1yzb1 TS004F 1 click not recognized",
+   "seen": "2026-10-01"
+  },
+  {
+   "mfr": "_TZ3000_v4l4b0lp",
+   "pids": [],
+   "dps": [],
+   "firmware": [
+    "bug"
+   ],
+   "knownDrivers": [
+    "switch_3gang"
+   ],
+   "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/170#issuecomment-4129430265",
+   "snippet": "ve a precise bug report regarding the Flow cards for this specific fingerprint (_TZ3000_v4l4b0lp).",
+   "seen": "2026-10-01"
+  },
+  {
+   "mfr": "_TZ3000_wzmuk9ai",
+   "pids": [],
+   "dps": [],
+   "firmware": [
+    "bug"
+   ],
+   "knownDrivers": [
+    "plug_energy_monitor"
+   ],
+   "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/197",
+   "snippet": "[plug_energy_monitor] Bug: _TZ3000_wzmuk9ai",
+   "seen": "2026-10-01"
+  },
+  {
+   "mfr": "_TZ3000_xabckq1v",
+   "pids": [
+    "TS004F"
+   ],
+   "dps": [],
+   "firmware": [
+    "bug"
+   ],
+   "knownDrivers": [
+    "button_wireless_4"
+   ],
+   "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/270#issuecomment-5906975639",
+   "snippet": "2026 triage update: the historical button-order bug for `_TZ3000_xabckq1v / TS004F` has now been fixed, but this issue remains open for the separate duplicate-trigger report.",
+   "seen": "2026-10-01"
+  },
+  {
+   "mfr": "_TZ3000_xr3htd96",
+   "pids": [
+    "TS0201"
+   ],
+   "dps": [],
+   "firmware": [
+    "bug"
+   ],
+   "knownDrivers": [
+    "temphumidsensor3"
+   ],
+   "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/193",
+   "snippet": "[climate_sensor _TZ3000_xr3htd96 TS0201] Bug:",
+   "seen": "2026-10-01"
+  },
+  {
+   "mfr": "_TZ3000_zl1kmjqx",
+   "pids": [],
+   "dps": [],
+   "firmware": [
+    "bug"
+   ],
+   "knownDrivers": [
+    "button_wireless_2"
+   ],
+   "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/953",
+   "snippet": "Bug report - _TZ3000_zl1kmjqx still doesn't work",
+   "seen": "2026-10-01"
+  },
+  {
+   "mfr": "_TZ3000_zmy4lslw",
+   "pids": [
+    "TS0002"
+   ],
+   "dps": [],
+   "firmware": [
+    "bug"
+   ],
+   "knownDrivers": [
+    "switch_2gang"
+   ],
+   "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/548#issuecomment-5898397759",
+   "snippet": "Consolidating this into older canonical bug #453 for the exact same `_TZ3000_zmy4lslw / TS0002` profile.",
+   "seen": "2026-10-01"
+  },
+  {
+   "mfr": "_TZ3000_zmy4lslw",
+   "pids": [],
+   "dps": [],
+   "firmware": [
+    "bug"
+   ],
+   "knownDrivers": [
+    "switch_2gang"
+   ],
+   "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/548",
+   "snippet": "Bug report - _TZ3000_zmy4lslw / 2 Gang Switch Module with metering -> channel 2 does not work, energy meter does not work",
+   "seen": "2026-10-01"
+  },
+  {
+   "mfr": "_TZ3000_zmy4lslw",
+   "pids": [],
+   "dps": [],
+   "firmware": [
+    "bug"
+   ],
+   "knownDrivers": [
+    "switch_2gang"
+   ],
+   "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/453",
+   "snippet": "Bug report - 2 Gang switch with power metering _TZ3000_zmy4lslw",
+   "seen": "2026-10-01"
+  },
+  {
+   "mfr": "_TZ3002_pzao9ls1",
+   "pids": [
+    "TS0726"
+   ],
+   "dps": [],
+   "firmware": [
+    "bug"
+   ],
+   "knownDrivers": [
+    "wall_switch_4gang_1way"
+   ],
+   "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/132#issuecomment-3947072344",
+   "snippet": "### #1447/#1450 Hartmut_Dunker - TS0726/_TZ3002_pzao9ls1 Group Toggle Bug - **Device**: BSEED 4-gang wall switch (TS0726). - **Symptom**: Virtual button press toggles ALL physical",
+   "seen": "2026-10-01"
+  },
+  {
+   "mfr": "_TZ3002_pzao9ls1",
+   "pids": [
+    "TS0726"
+   ],
+   "dps": [],
+   "firmware": [
+    "bug"
+   ],
+   "knownDrivers": [
+    "wall_switch_4gang_1way"
+   ],
+   "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/132",
+   "snippet": "### #1447/#1450 Hartmut_Dunker - TS0726/_TZ3002_pzao9ls1 Group Toggle Bug - Device: BSEED 4-gang wall switch (TS0726) - Symptom: Virtual button press toggles ALL physical buttons -",
+   "seen": "2026-10-01"
+  },
+  {
+   "mfr": "_TZ3210_w0qqde0g",
+   "pids": [
+    "TS011F"
+   ],
+   "dps": [],
+   "firmware": [
+    "bug"
+   ],
+   "knownDrivers": [
+    "plug_energy_monitor"
+   ],
+   "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/137#issuecomment-3977856790",
+   "snippet": "Hey @Lalla80111, thanks for the device interview! I can see your device is _TZ3210_w0qqde0g / TS011F — that's a plug energy monitor.\\n\\nThe voltage issue was fixed in **v5.11.15** (double-divisor bug fix). The fix i",
+   "seen": "2026-10-01"
+  },
+  {
+   "mfr": "_TZ3210_w0qqde0g",
+   "pids": [],
+   "dps": [],
+   "firmware": [
+    "bug"
+   ],
+   "knownDrivers": [
+    "plug_energy_monitor"
+   ],
+   "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/110#issuecomment-3977308143",
+   "snippet": "al attributes: - The base class listener used the correct divisor (1) for your \\_TZ3210_w0qqde0g\\ device - The device-specific listener used a hardcoded divisor (10) from the config database",
+   "seen": "2026-10-01"
+  },
+  {
+   "mfr": "_TZE200_3towulqd",
+   "pids": [
+    "TS0601"
+   ],
+   "dps": [],
+   "firmware": [
+    "bug"
+   ],
+   "knownDrivers": [
+    "presence_sensor_radar"
+   ],
+   "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/1169#issuecomment-5919367207",
+   "snippet": "hygiene: historical bug #715 is being consolidated here because it is the same `_TZE200_3towulqd / TS0601` ambiguity. Preserve these facts from #715: multiple users on 0.2.23 could pair the device but got `missing_cluste",
+   "seen": "2026-10-01"
+  },
+  {
+   "mfr": "_TZE200_3towulqd",
+   "pids": [
+    "TS0601"
+   ],
+   "dps": [],
+   "firmware": [
+    "bug"
+   ],
+   "knownDrivers": [
+    "presence_sensor_radar"
+   ],
+   "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/1061#issuecomment-5860662045",
+   "snippet": "2026 maintenance pass: this `_TZE200_3towulqd / TS0601` case is now covered by the current `motion_sensor_2` implementation on `modernize-2026`. The driver matches the f",
+   "seen": "2026-10-01"
+  },
+  {
+   "mfr": "_TZE200_3towulqd",
+   "pids": [
+    "TS0601"
+   ],
+   "dps": [],
+   "firmware": [
+    "bug"
+   ],
+   "knownDrivers": [
+    "presence_sensor_radar"
+   ],
+   "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/1087#issuecomment-5860661510",
+   "snippet": "2026 maintenance pass: this `_TZE200_3towulqd / TS0601` case is now covered by the current `motion_sensor_2` implementation on `modernize-2026`. The driver matches the f",
+   "seen": "2026-10-01"
+  },
+  {
+   "mfr": "_TZE200_3towulqd",
+   "pids": [
+    "TS0601"
+   ],
+   "dps": [],
+   "firmware": [
+    "bug"
+   ],
+   "knownDrivers": [
+    "presence_sensor_radar"
+   ],
+   "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/1061",
+   "snippet": "Bug report - No data - Lux/Motion sensor - _TZE200_3towulqd / TS0601",
+   "seen": "2026-10-01"
+  },
+  {
+   "mfr": "_TZE200_a8sdabtg",
+   "pids": [
+    "TS0601"
+   ],
+   "dps": [],
+   "firmware": [
+    "bug"
+   ],
+   "knownDrivers": [
+    "temphumidsensor2"
+   ],
+   "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/1063#issuecomment-5905350752",
+   "snippet": "26 triage update: the standard-Zigbee runtime has been hardened for this exact `_TZE200_a8sdabtg / TS0601` profile, but this bug remains open for physical retest.",
+   "seen": "2026-10-01"
+  },
+  {
+   "mfr": "_TZE200_a8sdabtg",
+   "pids": [
+    "TS0601"
+   ],
+   "dps": [],
+   "firmware": [
+    "bug"
+   ],
+   "knownDrivers": [
+    "temphumidsensor2"
+   ],
+   "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/1063",
+   "snippet": "Bug report - No data - Temperature and humidity sensor - _TZE200_a8sdabtg / TS0601",
+   "seen": "2026-10-01"
+  },
+  {
+   "mfr": "_TZE200_e3oitdyu",
+   "pids": [
+    "TS0601"
+   ],
+   "dps": [],
+   "firmware": [
+    "bug"
+   ],
+   "knownDrivers": [
+    "dimmer_2_gang_tuya"
+   ],
+   "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/701",
+   "snippet": "Bug report - 2 gang dimmer _TZE200_e3oitdyu / TS0601, only 'first' dimmer works",
+   "seen": "2026-10-01"
+  },
+  {
+   "mfr": "_TZE200_fzo2pocs",
+   "pids": [
+    "TS0601"
+   ],
+   "dps": [],
+   "firmware": [
+    "firmware"
+   ],
+   "knownDrivers": [
+    "curtain_motor"
+   ],
+   "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/515#issuecomment-5919322773",
+   "snippet": "al physical interviews consolidated from #570 and #943. #570 matches the usual `_TZE200_fzo2pocs / TS0601` profile with Basic/Groups/Scenes/Tuya and Time as an output cluster. #943 is a later firmware/hardware interview",
+   "seen": "2026-10-01"
+  },
+  {
+   "mfr": "_TZE200_hl0ss9oa",
+   "pids": [
+    "TS0225"
+   ],
+   "dps": [],
+   "firmware": [
+    "bug"
+   ],
+   "knownDrivers": [
+    "presence_sensor_radar"
+   ],
+   "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/324#issuecomment-4632896727",
+   "snippet": "# Bug report: TS0225 `_TZE200_hl0ss9oa` mmWave presence sensor",
+   "seen": "2026-10-01"
+  },
+  {
+   "mfr": "_TZE200_hl0ss9oa",
+   "pids": [
+    "TS0225"
+   ],
+   "dps": [],
+   "firmware": [
+    "bug"
+   ],
+   "knownDrivers": [
+    "presence_sensor_radar"
+   ],
+   "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/324#issuecomment-4496052673",
+   "snippet": "Bug report: TS0225 / _TZE200_hl0ss9oa — presence_sensor_radar not functional Device",
+   "seen": "2026-10-01"
+  },
+  {
+   "mfr": "_TZE200_hl0ss9oa",
+   "pids": [
+    "TS0225"
+   ],
+   "dps": [],
+   "firmware": [
+    "bug"
+   ],
+   "knownDrivers": [
+    "presence_sensor_radar"
+   ],
+   "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/324#issuecomment-4472385069",
+   "snippet": "Bug report: TS0225 / _TZE200_hl0ss9oa matched to wrong driver Device",
+   "seen": "2026-10-01"
+  },
+  {
+   "mfr": "_TZE200_hvaxb2tc",
+   "pids": [
+    "TS0601"
+   ],
+   "dps": [],
+   "firmware": [
+    "firmware"
+   ],
+   "knownDrivers": [
+    "device_radiator_valve_smart"
+   ],
+   "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/77",
+   "snippet": "ata-end=\"570\">Manufacturer Name</strong>: <code data-start=\"572\" data-end=\"590\">_TZE200_hvaxb2tc</code><br data-start=\"590\" data-end=\"593\"> <strong data-start=\"593\" data-end=\"605\">Model ID</strong>: <code data-start=\"607",
+   "seen": "2026-10-01"
+  },
+  {
+   "mfr": "_TZE200_iq4ygaai",
+   "pids": [
+    "TS0201"
+   ],
+   "dps": [],
+   "firmware": [
+    "firmware"
+   ],
+   "knownDrivers": [
+    "motion_sensor"
+   ],
+   "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/1007#issuecomment-5860717740",
+   "snippet": "pass: keeping this as the canonical physical case for the Tuya-firmware probe `_TZE200_iq4ygaai / TS0201`. Historical PR #1230 contains relevant code but conflated this device with native OWON THS317-ET. The split imple",
+   "seen": "2026-10-01"
+  },
+  {
+   "mfr": "_TZE200_ka8l86iu",
+   "pids": [],
+   "dps": [],
+   "firmware": [
+    "bug"
+   ],
+   "knownDrivers": [
+    "presence_sensor_radar"
+   ],
+   "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/383#issuecomment-4648826144",
+   "snippet": "| Bug | Fix | |-----|-----| | Collision `_TZE200_ka8l86iu` | Retiré de 2 drivers, config dédiée KA8L86IU_BATTERY | | `transformPresence` undefined | Fonction ajoutée à configs.js |",
+   "seen": "2026-10-01"
+  },
+  {
+   "mfr": "_TZE200_m9skfctm",
+   "pids": [
+    "TS0601"
+   ],
+   "dps": [],
+   "firmware": [
+    "bug"
+   ],
+   "knownDrivers": [
+    "smoke_sensor2"
+   ],
+   "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/716",
+   "snippet": "Bug report - [Device Request - [Smoke Detector] - [_TZE200_m9skfctm] / [TS0601] #449",
+   "seen": "2026-10-01"
+  },
+  {
+   "mfr": "_TZE200_r731zlxk",
+   "pids": [
+    "TS0601"
+   ],
+   "dps": [],
+   "firmware": [
+    "firmware"
+   ],
+   "knownDrivers": [
+    "wall_switch_6_gang_tuya"
+   ],
+   "url": "https://github.com/gpmachado/com.tuya.zigbee/blob/SDK3/drivers/zemismart_switch_6_gang/sixgang_readme.md",
+   "snippet": "- **Model**: TS0601 (Tuya Protocol) - **Supported Manufacturers**: - `_TZE200_r731zlxk` - **Gang Count**: 6 independent switches - **Protocol**: Tuya Zigbee (single endpoint, multiple DPs) - **Firmware Type**:",
+   "seen": "2026-10-01"
+  },
+  {
+   "mfr": "_TZE200_ryfmq5rl",
+   "pids": [
+    "TS0601"
+   ],
+   "dps": [],
+   "firmware": [
+    "bug"
+   ],
+   "knownDrivers": [
+    "air_quality_co2"
+   ],
+   "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/359#issuecomment-5890859300",
+   "snippet": "bug in the existing `smart_air_detection_box` family: the app already matched `_TZE200_ryfmq5rl / TS0601`, but the shared datapoint table did not match this fingerprint and also had VOC/formaldehyde swapped for the defa",
+   "seen": "2026-10-01"
+  },
+  {
+   "mfr": "_TZE200_xlppj4f5",
+   "pids": [],
+   "dps": [],
+   "firmware": [
+    "bug"
+   ],
+   "knownDrivers": [
+    "valve_irrigation"
+   ],
+   "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/135#issuecomment-3971700612",
+   "snippet": "HI, Existing driver for _TZE200_xlppj4f5 can be found here: https://github.com/eelco2k/com.tuya.zigbee/tree/f63c956857404d56cabcb2bfde30f716356e1979/drivers/smart_w",
+   "seen": "2026-10-01"
+  },
+  {
+   "mfr": "_TZE200_zah67ekd",
+   "pids": [
+    "TS0601"
+   ],
+   "dps": [],
+   "firmware": [
+    "bug"
+   ],
+   "knownDrivers": [
+    "curtain_motor"
+   ],
+   "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/220#issuecomment-5919099290",
+   "snippet": "al position-direction bug into canonical curtain-family issue #1472. The exact `_TZE200_zah67ekd / TS0601` physical behavior reported here has been copied there. Closing this issue as superseded by #1472; this does **not",
+   "seen": "2026-10-01"
+  },
+  {
+   "mfr": "_TZE200_zah67ekd",
+   "pids": [
+    "TS0601"
+   ],
+   "dps": [],
+   "firmware": [
+    "inverted"
+   ],
+   "knownDrivers": [
+    "curtain_motor"
+   ],
+   "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/1472#issuecomment-5919098357",
+   "snippet": "Historical physical evidence consolidated from #220: `_TZE200_zah67ekd / TS0601` was supported in the old app but users reported inverted intermediate position semantics: requested 80% resulted",
+   "seen": "2026-10-01"
+  },
+  {
+   "mfr": "_TZE204_1v1dxkck",
+   "pids": [
+    "TS0601"
+   ],
+   "dps": [],
+   "firmware": [
+    "inverted"
+   ],
+   "knownDrivers": [
+    "wall_dimmer_tuya"
+   ],
+   "url": "https://github.com/gpmachado/com.tuya.zigbee/blob/SDK3/drivers/dimmer_3_gang_tuya/driver.compose.json",
+   "snippet": "\"template\": \"add_devices\" } ], \"zigbee\": { \"manufacturerName\": [\"_TZE204_1v1dxkck\"], \"productId\": [\"TS0601\"], \"endpoints\": { \"1\": { \"clusters\": [0, 4, 5, 61184], \"bindings\": [",
+   "seen": "2026-10-01"
+  },
+  {
+   "mfr": "_TZE284_aao3yzhs",
+   "pids": [
+    "TS0601"
+   ],
+   "dps": [
+    5
+   ],
+   "firmware": [
+    "bug",
+    "divided by"
+   ],
+   "knownDrivers": [
+    "soil_sensor"
+   ],
+   "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/1009#issuecomment-5897476882",
+   "snippet": "This request exposed a real profile-placement bug: `_TZE284_aao3yzhs / TS0601` had been matched by the older soil-sensor runtime where DP5 was interpreted as whole °C. Current exact protocol e",
+   "seen": "2026-10-01"
+  },
+  {
+   "mfr": "_TZE284_aao3yzhs",
+   "pids": [
+    "TS0601"
+   ],
+   "dps": [],
+   "firmware": [
+    "bug"
+   ],
+   "knownDrivers": [
+    "soil_sensor"
+   ],
+   "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/1233",
+   "snippet": "### Describe the bug Soil Humidity Sensor SGS01Z - Manufactor: _TZE284_aao3yzhs, ModelID: TS0601 - Shows temperature 67109120 degrees and the same in humanity",
+   "seen": "2026-10-01"
+  },
+  {
+   "mfr": "_TZE284_gyzlwu5q",
+   "pids": [],
+   "dps": [],
+   "firmware": [
+    "bug"
+   ],
+   "knownDrivers": [
+    "climate_sensor"
+   ],
+   "url": "https://github.com/JohanBendz/com.tuya.zigbee/pull/1237#issuecomment-5866244026",
+   "snippet": "2026 triage complete. The `_TZE284_gyzlwu5q` need is retained, but this implementation has an actual battery switch fall-through bug, references an undeclared `alarm_t",
+   "seen": "2026-10-01"
+  },
+  {
+   "mfr": "_TZE284_oitavov2",
+   "pids": [],
+   "dps": [],
+   "firmware": [
+    "bug"
+   ],
+   "knownDrivers": [
+    "soil_sensor"
+   ],
+   "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/383#issuecomment-4648826144",
+   "snippet": "| Bug | Fix | |-----|-----| | Collision `_TZE284_oitavov2` | 74 MFRs retirés de device_air_purifier_soil |",
+   "seen": "2026-10-01"
+  },
+  {
+   "mfr": "_TZE284_oitavov2",
+   "pids": [
+    "ZG-303Z"
+   ],
+   "dps": [
+    109,
+    3
+   ],
+   "firmware": [
+    "x10"
+   ],
+   "knownDrivers": [
+    "soil_sensor"
+   ],
+   "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/376#issuecomment-4637306489",
+   "snippet": "-303Z → uses DP109 for moisture ✅ - _TZE284 variants → use DP3 for moisture ✅ - _TZE284_oitavov2 → temperature in raw °C (not x10) ✅",
+   "seen": "2026-10-01"
+  },
+  {
+   "mfr": "_TZE284_oitavov2",
+   "pids": [],
+   "dps": [],
+   "firmware": [
+    "bug"
+   ],
+   "knownDrivers": [
+    "soil_sensor"
+   ],
+   "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/178",
+   "snippet": "[soil_sensor] Bug: No Connetion possible _TZE284_oitavov2",
+   "seen": "2026-10-01"
+  },
+  {
+   "mfr": "_TZE284_oitavov2",
+   "pids": [],
+   "dps": [],
+   "firmware": [
+    "bug"
+   ],
+   "knownDrivers": [
+    "soil_sensor"
+   ],
+   "url": "https://github.com/dlnraja/com.tuya.zigbee/pull/84",
+   "snippet": "This change introduces a dedicated driver for the Tuya soil moisture sensor (_TZE284_oitavov2) to resolve a pairing failure caused by misidentification as a generic climate sensor. It also fixes a bug in the mmWave ra",
+   "seen": "2026-10-01"
+  },
+  {
+   "mfr": "_TZE284_xnbkhhdr",
+   "pids": [],
+   "dps": [
+    1,
+    16,
+    24,
+    2
+   ],
+   "firmware": [
+    "firmware"
+   ],
+   "knownDrivers": [
+    "wall_thermostat"
+   ],
+   "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/1345#issuecomment-3839777286",
+   "snippet": "The _TZE284_xnbkhhdr is indeed a bit tricky. Based on recent implementation logs (notably from Zigbee2MQTT), here are a few things that should s",
+   "seen": "2026-10-01"
+  },
+  {
+   "mfr": "_TZ3000_u5u4cakc",
+   "pids": [
+    "TS011F"
+   ],
+   "dps": [],
+   "firmware": [
+    "bug"
+   ],
+   "knownDrivers": [
+    "button_wireless_plug",
+    "smartplug"
+   ],
+   "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/987",
+   "snippet": "nown Tuya devices get added as generic Zigbee devices - [Blitzwolf BW-SHP15] - [_TZ3000_u5u4cakc] / [TS011F]",
+   "seen": "2026-10-01"
+  },
+  {
+   "mfr": "_TZ3000_wkai4ga5",
+   "pids": [
+    "TS0044"
+   ],
+   "dps": [],
+   "firmware": [
+    "bug"
+   ],
+   "knownDrivers": [
+    "button_wireless_2",
+    "scene_switch_4"
+   ],
+   "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/457#issuecomment-5870019780",
+   "snippet": "ly reported that the every-other-frame debounce in `wall_remote_4_gang_3` made `_TZ3000_wkai4ga5 / TS0044` require repeated/slow presses on newer Homey hardware, and proposed removing it. Current `modernize-2026-issues`",
+   "seen": "2026-10-01"
+  },
+  {
+   "mfr": "_TZ3000_wkai4ga5",
+   "pids": [],
+   "dps": [],
+   "firmware": [
+    "bug"
+   ],
+   "knownDrivers": [
+    "button_wireless_2",
+    "scene_switch_4"
+   ],
+   "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/457",
+   "snippet": "4-button wall switch _TZ3000_wkai4ga5 bug ON/OFF",
+   "seen": "2026-10-01"
+  },
+  {
+   "mfr": "_TZE200_locansqn",
+   "pids": [
+    "TS0601"
+   ],
+   "dps": [],
+   "firmware": [
+    "bug"
+   ],
+   "knownDrivers": [
+    "lcdtemphumidsensor",
+    "lcdtemphumidsensor_3"
+   ],
+   "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/1104",
+   "snippet": "Bug report - TS0601 _TZE200_locansqn pairs, but leaves Zigbee network immediately",
+   "seen": "2026-10-01"
+  }
+ ]
+}
