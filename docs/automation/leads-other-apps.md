@@ -4,7 +4,7 @@ Sources read on 2026-10-01 (read-only, never posted):
 
 - **Forum (full raw export, 100 posts per request, random 4–9 s spacing, stop on 403/429):**
   154077 (Tuya Local, all pages), 146735 (Tuya Smart Life, all pages), 89271 (device-request archive, all pages),
-  26439 (Tuya Zigbee app thread, all pages), 21313 (Tuya Cloud, pages 1–18 of 28; continuation noted in
+  26439 (Tuya Zigbee app thread, all pages), 21313 (Tuya Cloud, all 28 pages; no new couple found there). GitHub continuation is noted in
   `docs/automation/leads-other-apps-cursor.json` (local copy in the git-ignored `.github/state/`)). 140352 is covered by the regular digest.
 - **GitHub:** the 300 most recent issue/PR conversation comments and the 300 most recently updated issues/PRs
   (open and closed) of `dlnraja/com.tuya.zigbee` and `JohanBendz/com.tuya.zigbee`.
