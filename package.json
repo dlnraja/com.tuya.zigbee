@@ -391,7 +391,7 @@
     "check:p2499": "node --test test/critical/p2499-peter-77394256-smartbutton-battery-ui.test.js",
     "check:p2500": "node tools/ci/p2500-capability-ux-gate.js && node --test test/critical/p2500-homey-capability-ux.test.js",
     "check:p249x": "npm run check:p2490 && npm run check:p2491 && npm run check:p2492 && npm run check:p2493 && npm run check:p2494 && npm run check:p2495 && npm run check:p2496 && npm run check:p2498 && npm run check:p2499 && npm run check:p2500 && npm run check:p2502",
-    "check:publish": "npm run check:p2286 && npm run check:p2287 && npm run check:p2288 && npm run check:p2490 && npm run check:p2502 && npm run check:p2494 && npm run check:p2495 && npm run check:p2496 && npm run check:p2728 && npm run check:p2729 && npm run check:p2732 && npm run check:p2762 && npm run check:p2763 && npm run check:p2764 && npm run check:p2766 && npm run check:p2768 && npm run check:p2769 && npm run check:p2770 && npm run check:p2774 && npm run check:p2775 && npm run check:p2777",
+    "check:publish": "npm run check:p2286 && npm run check:p2287 && npm run check:p2288 && npm run check:p2490 && npm run check:p2502 && npm run check:p2494 && npm run check:p2495 && npm run check:p2496 && npm run check:p2728 && npm run check:p2729 && npm run check:p2732 && npm run check:p2762 && npm run check:p2763 && npm run check:p2764 && npm run check:p2766 && npm run check:p2768 && npm run check:p2769 && npm run check:p2770 && npm run check:p2774 && npm run check:p2775 && npm run check:p2777 && npm run check:p2778",
     "ai:compress": "node tools/ci/ai-context-compress.js --self-test",
     "check:p2514": "node --test test/critical/p2514-zm16b-3mzb0sdz-curtain.test.js",
     "check:p2516": "node --test test/critical/p2268-parallel-zha-z2m-gate.test.js",
@@ -641,7 +641,8 @@
     "check:p2770": "node --test test/critical/p2770-p2773-trigger-guards-covers-settings.test.js",
     "check:p2774": "node --test test/critical/p2774-trigger-guard-slider-setting-errors.test.js",
     "check:p2775": "node --test test/critical/p2775-generic-device-cards.test.js",
-    "check:p2777": "node --test test/critical/p2777-predictive-flow-cards.test.js"
+    "check:p2777": "node --test test/critical/p2777-predictive-flow-cards.test.js",
+    "check:p2778": "node --test test/critical/p2778-predictive-persistence-wifi.test.js"
   },
   "keywords": [
     "homey",
