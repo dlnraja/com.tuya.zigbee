@@ -116,7 +116,7 @@ jobs:
           GMAIL_DIAG_STATE_LIMIT: ${{ github.event.inputs.max_total_results || '5000' }}
           GMAIL_DIAG_REPROCESS: ${{ github.event.inputs.reprocess || 'false' }}
           GMAIL_DIAG_REQUIRE_ACCESS: ${{ github.event.inputs.require_access || 'false' }}
-          GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
+          GOOGLE_API_KEY: ${{ vars.AI_DISABLED != 'true' && secrets.GOOGLE_API_KEY || '' }}
           GH_PAT: ${{ secrets.GH_PAT }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           DRY_RUN: "true"
@@ -142,7 +142,7 @@ jobs:
         continue-on-error: true
         timeout-minutes: 12
         env:
-          FIRECRAWL_API_KEY: ${{ secrets.FIRECRAWL_API_KEY }}
+          FIRECRAWL_API_KEY: ${{ vars.FIRECRAWL_DISABLED != 'true' && secrets.FIRECRAWL_API_KEY || '' }}
           CRAWL4AI_URL: ${{ secrets.CRAWL4AI_URL }}
           SMART_FETCH_READER_FALLBACK: "1"
         run: |

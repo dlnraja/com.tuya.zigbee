@@ -218,9 +218,13 @@ function _isWithinLimits(name) {
   return true;
 }
 
+// WHY(2026-10): every paid AI plan except Gemini was cancelled. Cancelled providers are never
+// called, even if a stale key is still present; AI_CANCELLED_PROVIDERS overrides the list.
+const CANCELLED = new Set((process.env.AI_CANCELLED_PROVIDERS ?? 'xiaomi-mimo,minimax,kimi,deepseek,openai,anthropic').split(',').map((s) => s.trim()).filter(Boolean));
+
 function _getApiKey(name) {
   const provider = PROVIDERS[name];
-  if (!provider) return null;
+  if (!provider || CANCELLED.has(name)) return null;
   if (provider.envKey === '_GH') return process.env.GH_PAT || process.env.GITHUB_TOKEN || process.env.GH_TOKEN || null;
   return process.env[provider.envKey] || null;
 }
