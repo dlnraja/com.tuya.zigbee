@@ -328,6 +328,31 @@ const SENSOR_CONFIGS = {
   // Z2M ZG-204ZV uses: DP 102=fading_time, 104=humidity_calibration,
   // 105=temperature_calibration, 107=illuminance_interval, 108=indicator,
   // 109=temperature_unit. We previously had 102/103/104/105/107 SWAPPED.
+  // WHY(P2791): ZY-M100-24GV2 exact layout for _TZE204_7gclukjs (physical interview EP1 [0,4,5,61184];
+  // JohanBendz/com.tuya.zigbee#803 issuecomment 2026-09-29). The generic map read DP104 (binary presence)
+  // as lux and ignored DP103 (lux). DP1 state 0 none / 1 presence / 2 move, DP9 distance ÷10.
+  'ZY_M100_24GV2': {
+    sensors: ['_TZE204_7gclukjs'],
+    battery: false,
+    mainsPowered: true,
+    noBatteryCapability: true,
+    hasIlluminance: true,
+    hasRelay: false,
+    noTemperature: true,
+    noHumidity: true,
+    dpMap: {
+      1: { cap: 'alarm_motion', type: 'presence_enum', enumMap: { 0: false, 1: true, 2: true } },
+      2: { cap: null, internal: 'move_sensitivity' },
+      3: { cap: null, internal: 'detection_distance_min', divisor: 100 },
+      4: { cap: null, internal: 'detection_distance_max', divisor: 100 },
+      9: { cap: 'measure_luminance.distance', divisor: 10 },
+      102: { cap: null, internal: 'presence_sensitivity' },
+      103: { cap: 'measure_luminance', type: 'lux_direct' },
+      104: { cap: 'alarm_motion', type: 'presence_bool' },
+      105: { cap: null, internal: 'fading_time' },
+    }
+  },
+
   'ZG_204ZV_MULTISENSOR': {
     sensors: [
       '_TZE200_grgol3xp', '_TZE204_grgol3xp',

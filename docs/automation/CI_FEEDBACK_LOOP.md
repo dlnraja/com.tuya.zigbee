@@ -168,3 +168,29 @@ is unknown stay `documented` (a DP is never guessed). Tests: `npm run check:p276
 ### Post-publish verification
 `scripts/digest/ci-health.js` compares `.homeycompose/app.json` version with the Athom `testBuild.version`
 for master AND stable-v5 (separate app ids); a version still missing on the next check is reported on #557.
+
+## 8. Phase 4 (P2791): systematic image reading + manifest drift gate
+
+### Issue image OCR (`scripts/scanners/issue-image-ocr.js`, step in `oss-lan-source-enrich.yml`, Tue/Fri)
+- Walks issues newest → oldest (`state=all`, closed included) of the configured repos, reads the body and
+  every comment, downloads attached screenshots (GitHub attachment URLs only, ≤ 8 MB, 1 s apart) and OCRs
+  them with `tesseract` installed in the job (`apt-get install tesseract-ocr`, free, no AI, no paid API).
+- Extracts manufacturerName / productId / DP ids / capability ids. Output `data/leads/image-ocr.json`
+  is a lead file: nothing is written to drivers from OCR text; the strict rule still needs a readable,
+  exact mfr + pid pair plus an interview or equivalent source.
+- Budget per run: `vars.IMAGE_OCR_MAX_ISSUES` (40), `vars.IMAGE_OCR_MAX_IMAGES` (25),
+  `vars.IMAGE_OCR_MAX_REQUESTS` (150). Resumable cursor `data/leads/image-ocr-cursor.json`
+  (per-repo page, issue `updated_at`, images already read). Commit via safe-auto-commit (`image-ocr`).
+  Kill switch: `vars.IMAGE_OCR_DISABLED=true`. Local run: `--issue=N`, `--dry`.
+
+### compose ↔ app.json fingerprint drift gate
+`tools/ci/compose-appjson-fingerprint-sync-gate.js` (check only) fails syntax-check when a driver's
+manufacturerName / productId set in `driver.compose.json` differs from the shipped `app.json`
+(same idea as a "generated manifest must be committed" check). Fix: `node tools/ci/sync-appjson-with-drivers.js`.
+Tests: `npm run check:p2791`.
+
+### Device-request processing notes (manual triage doctrine kept)
+- Exact pairing identity only (mfr + pid as reported by the interview); look-alike identities stay leads.
+- Requests are kept open until a physical confirmation; per-identity notes say which clusters/DPs were used.
+- Optional DP layers stay opt-in (e.g. `radar_direct_mode` on `presence_sensor_radar`: raw DP → capability,
+  inference/derived writes suppressed, default off).

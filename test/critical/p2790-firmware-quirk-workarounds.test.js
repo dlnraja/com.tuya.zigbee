@@ -33,8 +33,14 @@ describe('P2790 firmware quirk workarounds', () => {
     }
   });
 
-  it('button_dedupe only for wkai4ga5 TS0044 (TS0042 couple untouched)', () => {
-    assert.equal(Q.buttonDedupeMs(fakeDevice('_TZ3000_wkai4ga5', 'TS0044')), 500);
+  it('button_dedupe only for wkai4ga5 TS0044 (TS0042 couple untouched); parked since P2791', () => {
+    // P2791: parked — physical Homey testing found one usable frame per action
+    assert.equal(data.quirks.find((x) => x.id === 'wkai4ga5_frame_multiplicity').enabled, false);
+    assert.equal(Q.buttonDedupeMs(fakeDevice('_TZ3000_wkai4ga5', 'TS0044')), 0);
+    const on = fakeDevice('_TZ3000_wkai4ga5', 'TS0044');
+    Q.forDevice(on);
+    on._fwQuirks = [{ id: 't', type: 'button_dedupe', params: { windowMs: 500 } }];
+    assert.equal(Q.buttonDedupeMs(on), 500);
     assert.equal(Q.buttonDedupeMs(fakeDevice('_TZ3000_wkai4ga5', 'TS0042')), 0);
     assert.equal(Q.buttonDedupeMs(fakeDevice('_TZ3000_xabckq1v', 'TS004F')), 0);
   });

@@ -355,6 +355,13 @@ return Math.min(100, safeMultiply(v, 2)); // Fallback: treat as raw with x2
    *
    * These clusters MAY report data via ZCL even if Tuya DP doesn't work!
    */
+  /** P2791: manufacturer listed in UnifiedSensorBase.ZCL_HUMIDITY_X10_MFRS (humidity reported ×10 too small). */
+  _isZclHumidityX10() {
+    try {
+      return UnifiedSensorBase.ZCL_HUMIDITY_X10_MFRS.has(this._resolveZclHumidityMfr());
+    } catch (_e) { return false; }
+  }
+
   get clusterHandlers() {
     return {
       // 
@@ -397,6 +404,8 @@ return Math.min(100, safeMultiply(v, 2)); // Fallback: treat as raw with x2
         attributeReport: (data) => {
           if (data.measuredValue !== undefined) {
             let rawHum = data.measuredValue * 100;
+            // WHY(P2791): ×10-scale humidity firmware (ZCL_HUMIDITY_X10_MFRS) → standard raw scale
+            if (this._isZclHumidityX10?.()) {rawHum *= 10;}
             // v5.5.317: Validate with inference engine (smooths erratic readings)
             if (this._climateInference) {
               rawHum = this._climateInference.validateHumidity(rawHum);
@@ -1178,7 +1187,8 @@ return Math.min(100, safeMultiply(v, 2)); // Fallback: treat as raw with x2
 
         if (typeof humCluster.on === 'function') {
           humCluster.on('attr.measuredValue', (value) => {
-            let hum = value / 100;
+            // WHY(P2791): ×10-scale humidity firmware (e.g. _TZ3000_ywagc4rj raw 470 = 47%)
+            let hum = this._isZclHumidityX10?.() ? value / 10 : value / 100;
             // v5.5.793: Auto-detect divisor for devices reporting 0-1000 scale
             if (hum > VALIDATION.HUMIDITY_AUTO_DIVISOR_THRESHOLD) {
               hum = Math.round(hum);

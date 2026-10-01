@@ -232,16 +232,19 @@
         "TS0044"
       ],
       "bug": "an every-other-frame debounce makes presses need repeating on newer Homey hardware, while other reports show an OFF->ON double toggle: the frame multiplicity differs from sibling remotes",
-      "workaround": "pair-scoped: drop an identical button+pressType repeated within 500 ms (TS0044 only; the TS0042 couple is unaffected). No alternate-frame drop, so real presses are never skipped",
+      "workaround": "pair-scoped: drop an identical button+pressType repeated within 500 ms (TS0044 only; the TS0042 couple is unaffected). No alternate-frame drop, so real presses are never skipped; parked (P2791): physical Homey testing reports one usable frame per action, so a dedupe window could drop quick presses",
       "status": "runtime",
       "location": "lib/devices/ButtonDevice.js triggerButtonPress (FirmwareQuirks.buttonDedupeMs) — drivers/scene_switch_4",
       "source": [
-        "https://github.com/JohanBendz/com.tuya.zigbee/issues/457#issuecomment-5870019780"
+        "https://github.com/JohanBendz/com.tuya.zigbee/issues/457#issuecomment-5870019780",
+        "https://github.com/JohanBendz/com.tuya.zigbee/commit/54482ad"
       ],
       "type": "button_dedupe",
       "params": {
         "windowMs": 500
-      }
+      },
+      "enabled": false,
+      "enableWhen": "a Homey diagnostic showing duplicate frames per press for this couple (physical Homey testing found one usable frame per action)"
     },
     {
       "id": "pzao9ls1_group_toggle",
