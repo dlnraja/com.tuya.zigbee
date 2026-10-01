@@ -262,6 +262,10 @@ class TuyaUnifiedZigbeeApp extends Homey.App {
       }
     } catch (e) { /* flow guard is best-effort */ }
 
+    // P2774: post-init baseline guard for direct device trigger-card calls (first *_changed
+    // value after a device init only sets the baseline).
+    try { require('./lib/flow/TriggerGuards').installTriggerCardGuard(this.homey.flow); } catch (_e) { /* soft */ }
+
     process.on('unhandledRejection', (reason, promise) => {
       try {
         this.error('UNHANDLED REJECTION at:', promise, 'reason:', reason);

@@ -13,8 +13,10 @@
     "de": "Setze [[setting]] von [[device]] auf [[value]]"
   },
   "hint": {
-    "en": "Changes a device setting (sensitivity, delay, threshold, …) and pushes it to the device. Numbers are clamped to the allowed range; checkboxes accept true/false; dropdowns accept the option id.",
-    "fr": "Modifie un réglage de l'appareil (sensibilité, délai, seuil, …) et l'envoie à l'appareil. Les nombres sont bornés ; les cases acceptent true/false ; les listes acceptent l'identifiant de l'option."
+    "en": "Changes a device setting (sensitivity, delay, threshold, …) and pushes it to the device. Numbers must be within the allowed range; checkboxes accept true/false; dropdowns accept the option id. An invalid value stops the Flow with a clear error.",
+    "fr": "Modifie un réglage de l'appareil (sensibilité, délai, seuil, …) et l'envoie à l'appareil. Les nombres doivent être dans la plage autorisée ; les cases acceptent true/false ; les listes acceptent l'identifiant de l'option. Une valeur invalide arrête le Flow avec un message clair.",
+    "nl": "Wijzigt een apparaatinstelling (gevoeligheid, vertraging, drempel, …) en stuurt die naar het apparaat. Getallen moeten binnen het toegestane bereik liggen; vinkjes accepteren true/false; keuzelijsten accepteren de optie-id. Een ongeldige waarde stopt de Flow met een duidelijke foutmelding.",
+    "de": "Ändert eine Geräteeinstellung (Empfindlichkeit, Verzögerung, Schwelle, …) und sendet sie an das Gerät. Zahlen müssen im erlaubten Bereich liegen; Kontrollkästchen akzeptieren true/false; Auswahllisten die Options-ID. Ein ungültiger Wert stoppt den Flow mit einer klaren Fehlermeldung."
   },
   "args": [
     {
