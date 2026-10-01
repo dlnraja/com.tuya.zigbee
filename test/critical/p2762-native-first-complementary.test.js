@@ -7,8 +7,7 @@
  * - P2758 regression: TS0601/_TZE with complete native IAS interview forced HYBRID+DP TX
  * - sticky unreliable DP1 accepted with no distance ever seen (P2453 lock)
  * - raw this.setCapabilityValue in drivers/siren
- * Sources: Z2M tuya.ts TS0601_switch_2_gang (_TZE200_nkjintbl) + JohanBendz#46 interview;
- *          JohanBendz#44 (_TYZB01_jytabjkb TS0202 exposes 0xEF01).
+ * Sources: JohanBendz#44 (_TYZB01_jytabjkb TS0202 exposes 0xEF01).
  */
 
 const { describe, it } = require('node:test');
@@ -63,18 +62,12 @@ describe('P2762 native-first, complementary never mandatory', () => {
     assert.doesNotMatch(src, /this\.setCapabilityValue\(/);
   });
 
-  it('_TZE200_nkjintbl+TS0601 on switch_2gang (compose + app.json + DP1/DP2 map)', () => {
-    const c = JSON.parse(fs.readFileSync(path.join(ROOT, 'drivers/switch_2gang/driver.compose.json'), 'utf8'));
-    assert.ok(c.zigbee.manufacturerName.includes('_TZE200_nkjintbl'));
-    assert.ok(c.zigbee.productId.includes('TS0601'));
+  it('_TZE200_nkjintbl stays off forbidden drivers (P2605 registry wins over Z2M lead)', () => {
     const app = JSON.parse(fs.readFileSync(path.join(ROOT, 'app.json'), 'utf8'));
-    const d = app.drivers.find((x) => x.id === 'switch_2gang');
-    assert.ok(d.zigbee.manufacturerName.includes('_TZE200_nkjintbl'));
-    const others = app.drivers.filter((x) => x.id !== 'switch_2gang'
-      && (x.zigbee?.manufacturerName || []).includes('_TZE200_nkjintbl'));
-    assert.equal(others.length, 0, 'no dual-home');
-    const cfg = fs.readFileSync(path.join(ROOT, 'lib/configs/IntelligentDeviceConfig.js'), 'utf8');
-    assert.match(cfg, /'_TZE200_nkjintbl'/);
+    for (const id of ['switch_2gang', 'switch_1gang', 'button_wireless_plug']) {
+      const d = app.drivers.find((x) => x.id === id);
+      assert.ok(!(d?.zigbee?.manufacturerName || []).includes('_TZE200_nkjintbl'), id);
+    }
   });
 
   it('0xEF01 classified non-native (complementary, never mandatory)', () => {
