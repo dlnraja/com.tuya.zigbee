@@ -34,6 +34,43 @@ definitions, cluster mappings) and protocol patterns derived from:
   - OpenHAB Zigbee binding — EPL-2.0 (reporting interval research)
   - SmartThings Edge drivers — Apache-2.0 (Tuya DP patterns)
 
+PORTED CODE
+-----------
+lib/tuya-local/TuyaSharingClient.js is a JavaScript port of parts of
+tuya-device-sharing-sdk (LoginControl, CustomerApi signing / AES-GCM envelope).
+  - Project : https://github.com/tuya/tuya-device-sharing-sdk
+  - License : MIT
+  - Copyright (c) 2023 Tuya
+
+  Permission is hereby granted, free of charge, to any person obtaining a copy
+  of this software and associated documentation files (the "Software"), to deal
+  in the Software without restriction, including without limitation the rights
+  to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+  copies of the Software, and to permit persons to whom the Software is
+  furnished to do so, subject to the following conditions:
+
+  The above copyright notice and this permission notice shall be included in all
+  copies or substantial portions of the Software.
+
+  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+  FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+  SOFTWARE.
+
+RUNTIME DEPENDENCY (Wi-Fi LAN protocol)
+  - tuyapi (codetheweb) — MIT — https://github.com/codetheweb/tuyapi
+
+CONSULTED FOR THE Wi-Fi LOCAL STACK (facts / protocol behaviour only)
+  - make-all/tuya-local — MIT — https://github.com/make-all/tuya-local
+  - Home Assistant core, Tuya integration — Apache-2.0
+    https://github.com/home-assistant/core/tree/dev/homeassistant/components/tuya
+  - tinytuya (jasonacox) — MIT — https://github.com/jasonacox/tinytuya
+  - tuya-connector-nodejs (Tuya) — https://github.com/tuya/tuya-connector-nodejs
+  - andiwirz/com.tuyalocal — MIT — https://github.com/andiwirz/com.tuyalocal
+
 STUDIED REPOSITORIES (NO CODE COPIED)
 -------------------------------------
   - gpmachado/com.gpm.homesuite (GPL-3.0)
@@ -66,6 +103,6 @@ NOTE
 ----
 Device fingerprints, datapoint numbers, and protocol behaviors are factual
 interoperability data and are not subject to copyright. All original code in
-this repository is licensed under MIT (see LICENSE). No code was copied from
-the projects above; implementations are original and inspired by documented
-protocol behavior.
+this repository is licensed under MIT (see LICENSE). Apart from the MIT-licensed
+port listed under PORTED CODE, no code was copied from the projects above;
+implementations are original and inspired by documented protocol behavior.

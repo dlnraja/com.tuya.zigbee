@@ -121,6 +121,17 @@
 - **homey-api / Athom Apps API** — build/crash statistics, delegation token flow (mapped in `docs/HOMEY_DEV_PORTAL_MAP.md`)
 - **Kimi Code CLI + WebBridge** — autonomous CI repair, portal cartography, forum operations
 
+## Tuya Wi-Fi Local-First (Smart Life / white-label, 2026-10)
+Sources actually used or consulted for the Wi-Fi local stack (`lib/tuya-local/`):
+- **[tuya/tuya-device-sharing-sdk](https://github.com/tuya/tuya-device-sharing-sdk)** (MIT, © 2023 Tuya) — *ported* to JavaScript in `TuyaSharingClient.js`: Smart Life "User Code + QR" login, request signing and AES-GCM envelope. Lets users fetch local keys without a Tuya IoT developer account.
+- **[make-all/tuya-local](https://github.com/make-all/tuya-local)** (MIT, Jason Rumney and contributors) — consulted: QR flow (`cloud.py`, `config_flow.py`), public client id / `haauthorize` schema, QR payload format, device fields.
+- **[Home Assistant core – Tuya integration](https://github.com/home-assistant/core/tree/dev/homeassistant/components/tuya)** (Apache-2.0) — consulted: sharing client id / schema constants (facts only).
+- **[codetheweb/tuyapi](https://github.com/codetheweb/tuyapi)** (MIT) — runtime dependency: LAN protocol 3.1–3.5 including 3.4/3.5 session-key negotiation.
+- **[jasonacox/tinytuya](https://github.com/jasonacox/tinytuya)** (MIT) — consulted: 6699 frame layout and optional return code (`message_helper.py`), UDP discovery keys, scanner/wizard behaviour.
+- **[tuya/tuya-connector-nodejs](https://github.com/tuya/tuya-connector-nodejs)** — consulted for the OpenAPI signature string format (empty optional-headers line, sorted query). No code copied.
+- **[andiwirz/com.tuyalocal](https://github.com/andiwirz/com.tuyalocal)** (MIT) — Homey Tuya-local app: frequency-first protocol order, command gap, stale-data watchdog patterns (reimplemented earlier, credited in code).
+- **[Drenso/com.tuya2](https://github.com/Drenso/com.tuya2)**, **[jurgenheine/com.tuya.cloud](https://github.com/jurgenheine/com.tuya.cloud)** (MIT), **[rebtor/nl.rebtor.tuya](https://github.com/rebtor/nl.rebtor.tuya)** (MIT) — earlier Homey Tuya apps whose cloud/LAN patterns informed the original design.
+
 ## Licenses (SPDX)
 
 | Project | License | Usage |
@@ -132,6 +143,11 @@
 | jasonacox/tinytuya | **MIT** | Protocole local Tuya (WiFi) |
 | codetheweb/tuyapi | **MIT** | API locale Tuya |
 | make-all/tuya-local | **MIT** | Mappings DP (YAML) |
+| tuya/tuya-device-sharing-sdk | **MIT** | Porté en JS (`TuyaSharingClient.js`) — login QR Smart Life |
+| home-assistant/core (Tuya) | **Apache-2.0** | Constantes client id / schéma (faits) |
+| andiwirz/com.tuyalocal | **MIT** | Patterns Homey Tuya local (réimplémentés) |
+| jurgenheine/com.tuya.cloud | **MIT** | Patterns cloud Homey |
+| rebtor/nl.rebtor.tuya | **MIT** | Patterns tuyapi Homey |
 | blakadder/zigbee | **MIT** | Base de données d'empreintes |
 | athombv (SDK3, zigbeedriver, zigbee-clusters) | **MIT** | Framework |
 | OpenHAB Zigbee binding | **EPL-2.0** | Recherche intervalles de reporting |
