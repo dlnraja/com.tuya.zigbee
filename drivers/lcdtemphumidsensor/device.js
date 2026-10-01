@@ -54,10 +54,36 @@ class LCDTempHumidSensorDevice extends UnifiedSensorBase {
 
       // Battery
       // v5.12.3: DP 3 battery enum (0=low, 1=med, 2=high)
-      3: { capability: 'measure_battery', transform: (v) => UnifiedBatteryHandler.calculateFromTuyaDP(v, 'enum3') },
-      4: { capability: 'measure_battery', transform: (v) => UnifiedBatteryHandler.calculateFromTuyaDP(v, 'direct') },
-      15: { capability: 'measure_battery', transform: (v) => UnifiedBatteryHandler.calculateFromTuyaDP(v, 'direct') },
+      // WHY(P2766 / forum 26439 #5524 TH05Z _TZE200_vvmbj46n): the MCU sends both
+      // DP3 battery_state (enum) and DP4 battery (%) — once a real percentage was
+      // seen, the coarse enum must not overwrite it (flip 100% ↔ real %).
+      // https://github.com/Koenkk/zigbee-herdsman-converters/blob/master/src/devices/tuya.ts (ZTH05Z DP3/DP4)
+      3: {
+        capability: 'measure_battery',
+        transform: (v) => {
+          if (this._lcdBatteryPctSeen || this.getStoreValue?.('lcd_battery_pct_seen') === true) {
+            this.log?.('[LCD] P2766 DP3 battery enum ignored (DP4/DP15 percentage is authoritative)');
+            return null;
+          }
+          return UnifiedBatteryHandler.calculateFromTuyaDP(v, 'enum3');
+        },
+      },
+      4: { capability: 'measure_battery', transform: (v) => this._lcdMarkBatteryPct(UnifiedBatteryHandler.calculateFromTuyaDP(v, 'direct')) },
+      15: { capability: 'measure_battery', transform: (v) => this._lcdMarkBatteryPct(UnifiedBatteryHandler.calculateFromTuyaDP(v, 'direct')) },
     };
+  }
+
+  /** P2766: remember that this unit reports a real battery percentage (soft, never blocks). */
+  _lcdMarkBatteryPct(pct) {
+    try {
+      if (typeof pct === 'number' && Number.isFinite(pct) && !this._lcdBatteryPctSeen) {
+        this._lcdBatteryPctSeen = true;
+        if (this.getStoreValue?.('lcd_battery_pct_seen') !== true) {
+          this.setStoreValue?.('lcd_battery_pct_seen', true)?.catch?.(() => {});
+        }
+      }
+    } catch (_e) { /* soft */ }
+    return pct;
   }
 
   async _sendLcdMagicPacket(zclNode) {
