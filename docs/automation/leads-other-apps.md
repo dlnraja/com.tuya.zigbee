@@ -27,7 +27,7 @@ Sources read on 2026-10-01 (read-only, never posted):
 | `_TZE284_znkkcauq` / TS0601 | 6-gang switch | fingerprint → `wall_switch_6_gang_tuya` | same |
 | `_TZ3000_3o7r0mno` / TS011F | DIN-rail switch with power monitoring + thresholds | fingerprint → `smartPlug_DinRail` | same |
 | `_TZE200_locansqn` / TS0601 | data arrives as response (0x02) too; DP2 humidity not ×10 | already handled; recorded as `existing` quirk | https://github.com/JohanBendz/com.tuya.zigbee/issues/1474 |
-| `_TZE284_bquwrqh1` / TS0601 | inverted presence semantics, lux on DP101 (cross-platform test) | recorded as `documented` quirk (not applied) | https://github.com/JohanBendz/com.tuya.zigbee/issues/1351#issuecomment-5928283864 |
+| `_TZE284_bquwrqh1` / TS0601 | inverted presence semantics, lux on DP101 (cross-platform test) | **P2790**: workaround implemented (DP1 inversion, `invert_bool_dp`), parked `enabled:false` until a second source or a diagnostic | https://github.com/JohanBendz/com.tuya.zigbee/issues/1351#issuecomment-5928283864 |
 
 Driver choice rule: a couple is added only when its exact mfr+pid is listed by the source and the source's
 sibling IDs in the same fingerprint array already live in the chosen driver with the same productId.
@@ -46,9 +46,9 @@ sibling IDs in the same fingerprint array already live in the chosen driver with
 | `_TZ3290_acv1iusl` | appears in an automated community-sync table only | no primary source | https://github.com/dlnraja/com.tuya.zigbee/issues/538 |
 | `_TZE284_pcdmj88b`, `_TZE284_ne4pikwm` / TS0601 | TRVs; a generic TS0601 thermostat mapping did not react | needs device-specific DP capture | https://github.com/JohanBendz/com.tuya.zigbee/issues/1409#issuecomment-5928458518 · https://github.com/JohanBendz/com.tuya.zigbee/issues/1360#issuecomment-5928289076 |
 | `_TZE204_8fffc3kb` / TS0601 | addressable pixel-strip controller; generic dimmer mapping fails even on/off | needs EF00 DP capture | https://github.com/JohanBendz/com.tuya.zigbee/issues/1302#issuecomment-5927933645 |
-| `_TZE200_gubdgai2`, `_TZE200_vdiuwbkq` (curtain family) | DP1 open/stop/close and position direction differ per family | profile pass needed, no global change | https://github.com/JohanBendz/com.tuya.zigbee/issues/1472 |
+| `_TZE200_gubdgai2`, `_TZE200_vdiuwbkq` (curtain family) | DP1 open/stop/close and position direction differ per family | Quoya pair already profiled; **P2790**: `_TZE200_zah67ekd` position-only inversion (`invert_cover_position`) implemented, parked; no global change | https://github.com/JohanBendz/com.tuya.zigbee/issues/1472 |
 | `_TZE204_ijxvkhd0` / TS0601 | motion reported "inverted" on another app | reference maps DP1 as none/presence/move enum, which our radar config already handles | https://github.com/JohanBendz/com.tuya.zigbee/issues/886 |
-| `_TZ3000_riwp3k79` | LED strip warm/cold white reversed, RGB not settable | old report, no DP/cluster detail | https://github.com/JohanBendz/com.tuya.zigbee/issues/51 |
+| `_TZ3000_riwp3k79` | LED strip warm/cold white reversed, RGB not settable | **P2790**: warm/cold inversion (`invert_color_temperature`) implemented, parked (single old report, no pid); RGB: no data | https://github.com/JohanBendz/com.tuya.zigbee/issues/51 |
 
 ## Generic ideas / UX lessons (from other-app threads)
 
@@ -97,9 +97,9 @@ forks re-listed but only re-compared when `pushed_at` changed. The 29 mfrs still
 |---|---|---|---|
 | `_TZ3000_bwjstafw` / TS0203 | full device interview: IAS zone `contactSwitch`, clusters 0/1/3/1280, same as `contact_sensor` | fingerprint → `contact_sensor` (4 case variants) | https://github.com/rvproductions/com.tuya.zigbee/blob/SDK3/drivers/doorwindowsensor_3/device.js |
 | `_TZE284_aao3yzhs` / TS0601 | DP5 temperature is 0.1 °C (10x when read as whole °C) | already handled → quirk `existing` | https://github.com/JohanBendz/com.tuya.zigbee/issues/1009#issuecomment-5897476882 |
-| `_TZ3000_wkai4ga5` / TS0044 | alternate-frame debounce drops presses; double toggle elsewhere | quirk `documented` | https://github.com/JohanBendz/com.tuya.zigbee/issues/457#issuecomment-5870019780 |
-| `_TZ3002_pzao9ls1` / TS0726 | app press on one gang toggles all gangs | quirk `documented` | https://github.com/dlnraja/com.tuya.zigbee/issues/132#issuecomment-3947072344 |
-| `_TZ3000_rco1yzb1` / TS004F | single click missing, later press read as double click | quirk `documented` | https://github.com/JohanBendz/com.tuya.zigbee/issues/423#issuecomment-2405850747 |
+| `_TZ3000_wkai4ga5` / TS0044 | alternate-frame debounce drops presses; double toggle elsewhere | **P2790 runtime**: `button_dedupe` 500 ms window on physical presses (TS0044 only) | https://github.com/JohanBendz/com.tuya.zigbee/issues/457#issuecomment-5870019780 |
+| `_TZ3002_pzao9ls1` / TS0726 | app press on one gang toggles all gangs | **P2790 runtime**: `gang_echo_restore`: other gangs restored only if all of them echoed the commanded value within 1.5 s | https://github.com/dlnraja/com.tuya.zigbee/issues/132#issuecomment-3947072344 |
+| `_TZ3000_rco1yzb1` / TS004F | single click missing, later press read as double click | **P2790 runtime**: `onoff_commands_single`: off/on commands read as single press | https://github.com/JohanBendz/com.tuya.zigbee/issues/423#issuecomment-2405850747 |
 
 ### Unconfirmed (not applied)
 
