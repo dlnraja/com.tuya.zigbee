@@ -21,12 +21,14 @@ on:
     - cron: '23 9 * * 1-5'   # Forum watch 10:23 Paris (CET)
     - cron: '41 9 * * 1-5'   # Inspiration JohanBendz 11:41 Paris (CEST)
     - cron: '41 10 * * 1-5'  # Inspiration JohanBendz 11:41 Paris (CET)
+    - cron: '7 7 * * 1'      # Weekly summary Monday 09:07 Paris (CEST)
+    - cron: '7 8 * * 1'      # Weekly summary Monday 09:07 Paris (CET)
   workflow_dispatch:
     inputs:
       which:
         description: 'Digest to run'
         type: choice
-        options: [all, homey, labs, forum, inspiration]
+        options: [all, homey, labs, forum, inspiration, weekly]
         default: all
       force:
         description: 'Post a comment even if nothing changed'
@@ -305,3 +307,60 @@ jobs:
           path: digest-leads/
           if-no-files-found: ignore
           retention-days: 14
+
+  weekly:
+    name: 📅 Weekly summary + driver health score
+    if: >-
+      github.repository == 'dlnraja/com.tuya.zigbee' &&
+      ((github.event_name == 'schedule' && startsWith(github.event.schedule, '7 ')) ||
+       (github.event_name == 'workflow_dispatch' && inputs.which == 'weekly'))
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: 📥 Checkout (scripts + driver manifests, read-only)
+        uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # v5.1.0
+        with:
+          sparse-checkout: |
+            scripts/digest
+            drivers
+            lib
+            data
+            .homeycompose/flow
+          persist-credentials: false
+      - name: 📦 Setup Node.js
+        uses: actions/setup-node@a0853c24544627f65ddf259abe73b1d18a591444 # v5.0.0
+        with:
+          node-version: '22'
+      - name: 🕗 Paris-time guard
+        id: tz
+        run: node scripts/digest/tz-guard.js --schedule="${{ github.event.schedule }}" --paris-hour=9
+      - name: 📥 Week inputs (leads artifacts, diagnostics, quirk dataset — best-effort)
+        if: steps.tz.outputs.run == 'true'
+        continue-on-error: true
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          mkdir -p week-leads diag-report
+          for RID in $(gh run list -R "$GITHUB_REPOSITORY" -w daily-digest.yml -L 15 --created ">=$(date -u -d '7 days ago' +%F)" --json databaseId -q '.[].databaseId'); do
+            gh run download "$RID" -R "$GITHUB_REPOSITORY" -p 'digest-leads-*' -D "week-leads/$RID" >/dev/null 2>&1 || true
+          done
+          for wf in gmail-diagnostics.yml fetch-diags.yml; do
+            RID=$(gh run list -R "$GITHUB_REPOSITORY" -w "$wf" -s success -L 1 --json databaseId -q '.[0].databaseId' || true)
+            [ -n "$RID" ] && gh run download "$RID" -R "$GITHUB_REPOSITORY" -n sanitized-diagnostics-report -D diag-report && break
+          done
+          true
+      - name: ♻️ Restore firmware-quirk dataset
+        if: steps.tz.outputs.run == 'true'
+        uses: actions/cache/restore@caa296126883cff596d87d8935842f9db880ef25 # v5.1.0
+        with:
+          path: .quirks-db
+          key: quirks-db-weekly-${{ github.run_id }}
+          restore-keys: quirks-db-
+      - name: 📅 Weekly summary
+        if: steps.tz.outputs.run == 'true'
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          WEEKLY_LEADS_DIR: week-leads
+          WEEKLY_DIAG_DIR: diag-report
+          QUIRKS_DB: .quirks-db/quirks.json
+        run: node scripts/digest/weekly.js
