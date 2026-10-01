@@ -147,7 +147,7 @@ jobs:
         run: node scripts/digest/labs-digest.js
 
   forum:
-    name: 💬 Forum watch (topic 140352, read-only)
+    name: 💬 Forum watch (6 Tuya threads, read-only)
     if: >-
       github.repository == 'dlnraja/com.tuya.zigbee' &&
       ((github.event_name == 'schedule' && startsWith(github.event.schedule, '23 ')) ||
@@ -181,16 +181,19 @@ jobs:
         continue-on-error: true
         timeout-minutes: 4
         run: |
-          sudo apt-get install -y -qq --no-install-recommends tesseract-ocr >/dev/null 2>&1 || \
-            { sudo apt-get update -qq >/dev/null && sudo apt-get install -y -qq --no-install-recommends tesseract-ocr >/dev/null; }
-          tesseract --version | head -1
+          PKGS="tesseract-ocr tesseract-ocr-fra tesseract-ocr-deu tesseract-ocr-nld tesseract-ocr-spa tesseract-ocr-ita imagemagick"
+          # shellcheck disable=SC2086
+          sudo apt-get install -y -qq --no-install-recommends $PKGS >/dev/null 2>&1 || \
+            { sudo apt-get update -qq >/dev/null && sudo apt-get install -y -qq --no-install-recommends $PKGS >/dev/null; }
+          tesseract --version | head -1; tesseract --list-langs | tail -n +2 | tr '\n' ' '
       - name: 💬 Forum watch
         if: steps.tz.outputs.run == 'true'
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          FORUM_TOPIC: '140352'
+          # Universal Tuya Zigbee · Tuya Zigbee (JohanBendz) · device-request archive · Smart Life · Tuya Local · Tuya Cloud
+          FORUM_TOPICS: '140352,26439,89271,146735,154077,21313'
           FORUM_NOTIFY: any
-          FORUM_MAX_FETCHES: '3'
+          FORUM_MAX_REQUESTS: '4'           # global cap across ALL topics per run (unchanged politeness)
           FORUM_BACKOFF_HOURS: '20'
           DIGEST_LEADS_OUT: digest-leads/forum.json
           DIGEST_JOB: forum
@@ -241,9 +244,11 @@ jobs:
         continue-on-error: true
         timeout-minutes: 4
         run: |
-          sudo apt-get install -y -qq --no-install-recommends tesseract-ocr >/dev/null 2>&1 || \
-            { sudo apt-get update -qq >/dev/null && sudo apt-get install -y -qq --no-install-recommends tesseract-ocr >/dev/null; }
-          tesseract --version | head -1
+          PKGS="tesseract-ocr tesseract-ocr-fra tesseract-ocr-deu tesseract-ocr-nld tesseract-ocr-spa tesseract-ocr-ita imagemagick"
+          # shellcheck disable=SC2086
+          sudo apt-get install -y -qq --no-install-recommends $PKGS >/dev/null 2>&1 || \
+            { sudo apt-get update -qq >/dev/null && sudo apt-get install -y -qq --no-install-recommends $PKGS >/dev/null; }
+          tesseract --version | head -1; tesseract --list-langs | tail -n +2 | tr '\n' ' '
       - name: 🧭 Inspiration scan
         if: steps.tz.outputs.run == 'true'
         env:
