@@ -57,15 +57,17 @@ async function openItems() {
   const q = async (type) => L.gh(`/search/issues?q=${encodeURIComponent(`repo:${REPO} is:open is:${type}`)}&per_page=30&sort=updated`);
   const [prs, iss] = await Promise.all([q('pr'), q('issue')]);
   const m = (i) => ({ n: i.number, t: i.title.slice(0, 80), u: i.user && i.user.login });
-  return { prs: { count: prs.total_count, items: prs.items.map(m) }, issues: { count: iss.total_count, items: iss.items.filter((i) => !(i.labels || []).some((l) => l.name === 'bot-digest')).map(m) } };
+  const isBot = (i) => (i.labels || []).some((l) => l.name === 'bot-digest');
+  return { prs: { count: prs.total_count, items: prs.items.map(m) }, issues: { count: iss.total_count - iss.items.filter(isBot).length, items: iss.items.filter((i) => !isBot(i)).map(m) } };
 }
 
 async function diags() {
   const out = {};
   for (const wf of DIAG_WORKFLOWS) {
     try {
-      const r = await L.gh(`/repos/${REPO}/actions/workflows/${wf}/runs?per_page=1&status=completed`);
-      const run = (r.workflow_runs || [])[0];
+      // no status filter (filtered lists can be stale/unsorted): take newest completed of the last 10
+      const r = await L.gh(`/repos/${REPO}/actions/workflows/${wf}/runs?per_page=10`);
+      const run = (r.workflow_runs || []).filter((x) => x.status === 'completed').sort((a, b) => b.created_at.localeCompare(a.created_at))[0];
       out[wf] = run ? { id: run.id, conclusion: run.conclusion, at: run.updated_at, url: run.html_url } : null;
     } catch (e) { out[wf] = { error: e.message.slice(0, 100) }; }
   }
@@ -126,7 +128,9 @@ function snapshot(cur) {
     return `| ${b} | ${c.versions['app.json']} / compose ${vc || 'n/a'}${va && vc && va !== vc ? ' ⚠️ drift' : ''} | \`${L.short(c.tip)}\` ${L.paris(c.tipDate)} | ${ci} |`;
   });
   return ['| Branche | Version (app.json / compose) | Tip | CI dernier push |', '|---|---|---|---|', ...rows,
-    '', `PR ouvertes : **${cur.open.prs.count}** · Issues ouvertes : **${cur.open.issues.count}**`].join('\n');
+    '', `PR ouvertes : **${cur.open.prs.count}** · Issues ouvertes : **${cur.open.issues.count}**`,
+    '', 'Diags : ' + DIAG_WORKFLOWS.map((wf) => { const d = cur.diags[wf]; return `\`${wf}\` ${d && d.conclusion ? `${d.conclusion === 'success' ? '🟢' : '🔴'} ${d.conclusion} (${L.paris(d.at)})` : '—'}`; }).join(' · ') +
+      (cur.diags.report ? ` · rapport Gmail : ${cur.diags.report.count} diag(s), ${cur.diags.report.newFingerprints.length} FP non supporté(s)` : '')].join('\n');
 }
 
 (async () => {
