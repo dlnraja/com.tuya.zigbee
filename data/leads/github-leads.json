@@ -402,6 +402,22 @@
    "seen": "2026-10-01"
   },
   {
+   "mfr": "_TZ3000_bwjstafw",
+   "pids": [
+    "TS0203"
+   ],
+   "dps": [],
+   "firmware": [
+    "firmware"
+   ],
+   "knownDrivers": [
+    "contact_sensor"
+   ],
+   "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/557#issuecomment-5941996124",
+   "snippet": "ment workflow; cursor in docs/automation/leads-other-apps-cursor.json. Applied: _TZ3000_bwjstafw / TS0203 → contact_sensor (from a full device interview; master + stable). Added 4 firmware quirk records (aao3yzhs, wkai4g",
+   "seen": "2026-10-01"
+  },
+  {
    "mfr": "_TZ3000_cygcaxvv",
    "pids": [
     "TS0001"
@@ -431,22 +447,6 @@
    ],
    "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/1370#issuecomment-5928316911",
    "snippet": "PORTANT exact profile is **already in both** frozen 0.3.0 and 0.3.1 manifests: `_TZ3000_hafsqare / TS0011` → `wall_switch_1_gang`, with standard EP1 OnOff6 runtime. The full physical Homey interview exposes OnOff6 plus 5",
-   "seen": "2026-10-01"
-  },
-  {
-   "mfr": "_TZ3000_iszegwpd",
-   "pids": [
-    "TS0046"
-   ],
-   "dps": [],
-   "firmware": [
-    "bug"
-   ],
-   "knownDrivers": [
-    "scene_switch_6"
-   ],
-   "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/557",
-   "snippet": "\":\"dlnraja\"}]},\"issues\":{\"count\":2,\"items\":[{\"n\":554,\"t\":\"Bug report - TS0046 / _TZ3000_iszegwpd 6 Gang Wall Remote fails to pair although\",\"u\":\"draqlek\"},{\"n\":550,\"t\":\"Bug report - [Short description]\",\"u\":\"HiepSVG\"}]}}",
    "seen": "2026-10-01"
   },
   {
@@ -1516,6 +1516,23 @@
    ],
    "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/1345#issuecomment-3839777286",
    "snippet": "The _TZE284_xnbkhhdr is indeed a bit tricky. Based on recent implementation logs (notably from Zigbee2MQTT), here are a few things that should s",
+   "seen": "2026-10-01"
+  },
+  {
+   "mfr": "_TZ3000_iszegwpd",
+   "pids": [
+    "TS0046"
+   ],
+   "dps": [],
+   "firmware": [
+    "bug"
+   ],
+   "knownDrivers": [
+    "scene_switch_6",
+    "wall_remote_6_gang"
+   ],
+   "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/557",
+   "snippet": "\":\"dlnraja\"}]},\"issues\":{\"count\":2,\"items\":[{\"n\":554,\"t\":\"Bug report - TS0046 / _TZ3000_iszegwpd 6 Gang Wall Remote fails to pair although\",\"u\":\"draqlek\"},{\"n\":550,\"t\":\"Bug report - [Short description]\",\"u\":\"HiepSVG\"}]}}",
    "seen": "2026-10-01"
   },
   {
