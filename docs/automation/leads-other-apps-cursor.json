@@ -33,65 +33,101 @@
     ],
     "comments": {
       "dlnraja/com.tuya.zigbee": {
-        "page": 24,
+        "page": 2,
         "done": true,
-        "last": "2025-08-09T19:16:12Z"
+        "last": "2026-10-01T12:48:47Z",
+        "sinceMode": true,
+        "since": "2026-10-01T22:30:37.854Z",
+        "doneAt": "2026-10-01T22:30:37.854Z"
       },
       "JohanBendz/com.tuya.zigbee": {
-        "page": 38,
+        "page": 6,
         "done": true,
-        "last": "2020-10-19T21:35:04Z"
+        "last": "2026-09-30T06:11:00Z",
+        "sinceMode": true,
+        "since": "2026-10-01T22:30:37.854Z",
+        "doneAt": "2026-10-01T22:30:37.854Z"
       }
     },
     "issues": {
       "dlnraja/com.tuya.zigbee": {
-        "page": 7,
+        "page": 2,
         "done": true,
-        "last": "2025-08-05T23:56:44Z"
+        "last": "2026-10-01T06:02:17Z",
+        "sinceMode": true,
+        "since": "2026-10-01T22:30:56.498Z",
+        "doneAt": "2026-10-01T22:30:56.498Z"
       },
       "JohanBendz/com.tuya.zigbee": {
-        "page": 16,
+        "page": 5,
         "done": true,
-        "last": "2020-05-17T19:38:24Z"
+        "last": "2025-02-04T18:33:22Z",
+        "sinceMode": true,
+        "since": "2026-10-01T22:30:56.498Z",
+        "doneAt": "2026-10-01T22:30:56.498Z"
       }
     },
     "peerIssues": {
       "JohanBendz/com.lidl": {
-        "page": 2,
+        "page": 1,
         "done": true,
-        "last": "2021-01-27T19:48:31Z"
+        "last": "2021-01-27T19:48:31Z",
+        "sinceMode": true,
+        "since": "2026-10-01T22:31:15.655Z",
+        "doneAt": "2026-10-01T22:31:15.655Z"
       },
       "ChrisBloem/Homey-Zigbee-Community": {
         "page": 1,
-        "done": true
+        "done": true,
+        "sinceMode": true,
+        "since": "2026-10-01T22:31:15.655Z",
+        "doneAt": "2026-10-01T22:31:15.655Z"
       },
       "gpmachado/com.gpm.homesuite": {
-        "page": 2,
+        "page": 1,
         "done": true,
-        "last": "2026-07-21T13:41:47Z"
+        "last": "2026-07-21T13:41:47Z",
+        "sinceMode": true,
+        "since": "2026-10-01T22:31:15.655Z",
+        "doneAt": "2026-10-01T22:31:15.655Z"
       },
       "kodalissri/com.MyZigbee.Devices": {
         "page": 1,
-        "done": true
+        "done": true,
+        "sinceMode": true,
+        "since": "2026-10-01T22:31:15.655Z",
+        "doneAt": "2026-10-01T22:31:15.655Z"
       }
     },
     "peerComments": {
       "JohanBendz/com.lidl": {
-        "page": 2,
+        "page": 1,
         "done": true,
-        "last": "2021-02-04T14:18:15Z"
+        "last": "2021-02-04T14:18:15Z",
+        "sinceMode": true,
+        "since": "2026-10-01T22:31:23.956Z",
+        "doneAt": "2026-10-01T22:31:23.956Z"
       },
       "ChrisBloem/Homey-Zigbee-Community": {
         "page": 1,
-        "done": true
+        "done": true,
+        "sinceMode": true,
+        "since": "2026-10-01T22:31:23.956Z",
+        "doneAt": "2026-10-01T22:31:23.956Z"
       },
       "gpmachado/com.gpm.homesuite": {
         "page": 1,
-        "done": true
+        "done": true,
+        "sinceMode": true,
+        "since": "2026-10-01T22:31:23.956Z",
+        "doneAt": "2026-10-01T22:31:23.956Z"
       },
       "kodalissri/com.MyZigbee.Devices": {
         "page": 1,
-        "done": true
+        "done": true,
+        "sinceMode": true,
+        "since": "2026-10-01T22:31:23.956Z",
+        "doneAt": "2026-10-01T22:31:23.956Z"
       }
     },
     "peerDrivers": {
@@ -318,12 +354,12 @@
       }
     },
     "lastRun": {
-      "at": "2026-10-01T22:23:48.496Z",
-      "requests": 81,
+      "at": "2026-10-01T22:31:31.379Z",
+      "requests": 23,
       "stopped": "completed phases",
-      "mentionsSeen": 56,
-      "kept": 64,
-      "unknownMfrs": 5
+      "mentionsSeen": 1389,
+      "kept": 113,
+      "unknownMfrs": 29
     }
   }
 }
