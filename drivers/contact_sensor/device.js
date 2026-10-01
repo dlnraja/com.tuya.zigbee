@@ -278,6 +278,7 @@ class ContactSensorDevice extends UnifiedSensorBase {
       if (current !== null) {
         const newValue = !current;
         await super.setCapabilityValue('alarm_contact', newValue).catch(() => {});
+        if (this._contactLatch) {this._contactLatch.value = newValue;} // P2763 keep latch in polarity space
         // Reset confirmedValue so next IAS event is not blocked (Lasse_K #1401)
         if (this._contactState) {
           if (this._invertedByDefault) {
@@ -321,6 +322,25 @@ class ContactSensorDevice extends UnifiedSensorBase {
 
       const shouldInvert = isIAS ? false : this._userExplicitInvert || this._invertContact;
       const finalValue = shouldInvert ? !value : value;
+
+      // WHY(P2763): one source of truth per device (DP1 outranks IAS zoneStatus; owner
+      // hand-over only after 6h silence). A contradicting report from the non-owner
+      // path (e.g. IAS bitmap alarm1=false while DP1 says open) is latched out.
+      try {
+        const { createLatchState, decide } = require('../../lib/sensors/ContactSourceLatch');
+        if (!this._contactLatch) {
+          this._contactLatch = createLatchState(this.getStoreValue?.('contact_ssot_latch'));
+        }
+        const verdict = decide(this._contactLatch, isIAS ? 'ias' : 'dp', !!finalValue);
+        if (verdict.ownerChanged) {
+          this.log(`[CONTACT-LATCH] ${verdict.reason}`);
+          Promise.resolve(this.setStoreValue?.('contact_ssot_latch', this._contactLatch)).catch(() => {});
+        }
+        if (!verdict.accept) {
+          this.log(`[CONTACT-LATCH] ignored ${isIAS ? 'IAS' : 'DP'} ${finalValue} — ${verdict.reason}`);
+          return;
+        }
+      } catch (_latchErr) { /* latch is complementary — never block the contact path */ }
 
       const now = Date.now();
       const state = this._contactState || { lastValue: null, lastChangeTime: 0, timer: null };
