@@ -82,7 +82,35 @@ jobs:
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           node scripts/ci/safe-auto-commit.js --id=github-leads-scan \
             --message="chore(leads): incremental GitHub leads scan (cursor + output)" \
-            --paths="docs/automation/leads-other-apps-cursor.json data/leads/github-leads.json"
+            --paths="docs/automation/leads-other-apps-cursor.json data/leads/github-leads.json data/leads/peer-flow-cards.json"
+
+      # P2790 — strict-rule intake: exact mfr+pid in the source + exactly one driver already listing
+      # that pid → fingerprint written; strong firmware keywords → quirk recorded as "documented";
+      # new human comments on the tracking issue → same rule + ONE status reply. Everything else
+      # stays a lead (data/leads/strict-apply-report.json). Kill switch: vars.STRICT_APPLY_DISABLED.
+      - name: Strict-rule intake (leads, quirk records, tracking-issue triage)
+        id: strict_apply
+        if: vars.STRICT_APPLY_DISABLED != 'true'
+        continue-on-error: true
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          git pull -q --rebase --autostash origin master || true
+          node scripts/leads/strict-apply.js --source=leads --max=${{ vars.STRICT_APPLY_MAX || '5' }}
+          node scripts/leads/strict-apply.js --source=quirks
+          node scripts/leads/strict-apply.js --source=issue557 --max=${{ vars.STRICT_APPLY_MAX || '5' }} --reply
+
+      - name: Commit strict-rule intake (gated)
+        if: steps.strict_apply.outcome == 'success'
+        continue-on-error: true
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          node scripts/ci/safe-auto-commit.js --id=strict-apply \
+            --message="feat(leads): strict-rule fingerprints / quirk records from sourced leads" \
+            --paths="drivers app.json lib/data/firmware-quirks.json data/leads"
 
       - name: Contre quoi gates
         run: |
@@ -113,3 +141,41 @@ jobs:
           git pull --rebase origin master || true
           git commit -m "chore(P2658): refresh TinyTuya/tuya-local/peer probe data [skip ci]"
           git push origin HEAD:master || true
+
+  # P2790 — stable-v5 backport of device-compat-only couples written by the strict rule on master
+  # (data/leads/auto-applied.json). Same driver must already list the pid on stable; [skip ci].
+  stable-backport:
+    name: Backport strict-rule couples to stable-v5
+    needs: enrich
+    if: always() && vars.STRICT_APPLY_DISABLED != 'true'
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Checkout master
+        uses: actions/checkout@v4
+        with:
+          ref: master
+          path: master
+      - name: Checkout stable-v5
+        uses: actions/checkout@v4
+        with:
+          ref: stable-v5
+          path: stable
+          fetch-depth: 20
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+      - name: Apply + commit (gated, [skip ci])
+        continue-on-error: true
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        working-directory: stable
+        run: |
+          node ../master/scripts/leads/strict-apply.js --source=backport --backport-from=../master --root=.
+          if git diff --quiet; then echo "nothing to backport"; exit 0; fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          node ../master/scripts/ci/safe-auto-commit.js --id=stable-backport --branch=stable-v5 \
+            --message="feat(leads): backport strict-rule device couples from master" \
+            --paths="drivers app.json"

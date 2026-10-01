@@ -319,6 +319,37 @@
       "params": {},
       "enabled": false,
       "enableWhen": "second source or user confirmation with a diagnostic (single old report, no pid)"
+    },
+    {
+      "id": "oitavov2_temperature_raw_celsius",
+      "mfr": [
+        "_TZE284_oitavov2"
+      ],
+      "pid": [
+        "TS0601"
+      ],
+      "bug": "temperature DP reported in raw °C instead of the usual ×10 scaling",
+      "workaround": "already handled: per-manufacturer temperature parser returns the value unscaled",
+      "status": "existing",
+      "location": "drivers/sensor_lcdtemphumidsensor_soil/device.js (QT-07S temperature parser)",
+      "source": [
+        "https://github.com/dlnraja/com.tuya.zigbee/issues/376#issuecomment-4637306489"
+      ]
+    },
+    {
+      "id": "ijxvkhd0_motion_inverted_other_mapping",
+      "mfr": [
+        "_TZE204_ijxvkhd0"
+      ],
+      "pid": [
+        "TS0601"
+      ],
+      "bug": "radar motion reported inverted (on when leaving, off when entering) under another app's DP mapping",
+      "workaround": "not applied: our layout reads presence from DP105 (enum) and that report concerns a different mapping; the inverted DP for our layout is unconfirmed (never guess a DP). Generic enum_remap / invert_bool_dp are available once a diagnostic on this app shows the polarity",
+      "status": "documented",
+      "source": [
+        "https://github.com/JohanBendz/com.tuya.zigbee/issues/886"
+      ]
     }
   ]
 }

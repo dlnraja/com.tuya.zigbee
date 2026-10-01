@@ -70,10 +70,10 @@ function table(cur) {
 
 const vnum = (v) => String(v || '0').split('.').map((x) => Number(x) || 0).reduce((a, x) => a * 100000 + x, 0);
 /** Post-publish check: is the master app.json version actually visible on the Homey Test channel? */
-async function storeCheck(prev) {
+async function storeCheck(prev, branch = 'master') {
   const out = { lines: [], state: { ...(prev || {}) } };
   try {
-    const app = JSON.parse(await L.fileAt(L.REPO, 'master', '.homeycompose/app.json') || '{}');
+    const app = JSON.parse(await L.fileAt(L.REPO, branch, '.homeycompose/app.json') || '{}');
     const res = await fetch(`https://apps-api.athom.com/api/v1/app/${encodeURIComponent(app.id)}`, { headers: { 'User-Agent': L.UA }, signal: AbortSignal.timeout(20000) });
     if (!res.ok) return out;
     const j = await res.json();
@@ -82,8 +82,8 @@ async function storeCheck(prev) {
     if (master && test && vnum(master) > vnum(test)) {
       out.state.lagging = master;
       // alert only when the SAME master version is still missing on the next check (≥ 1 check apart)
-      if (prev && prev.lagging === master && prev.alerted !== master) { out.lines.push(`⚠️ Publication : v${master} (master) toujours absente du canal Test (Test = v${test}) — vérifier Auto-Publish / Athom.`); out.state.alerted = master; }
-    } else if (prev && prev.alerted && test && vnum(test) >= vnum(prev.alerted)) { out.lines.push(`✅ Publication : v${test} visible sur le canal Test.`); out.state.alerted = null; }
+      if (prev && prev.lagging === master && prev.alerted !== master) { out.lines.push(`⚠️ Publication : v${master} (${branch}) toujours absente du canal Test (Test = v${test}) — vérifier ${branch === 'master' ? 'Auto-Publish' : 'la publication stable'} / Athom.`); out.state.alerted = master; }
+    } else if (prev && prev.alerted && test && vnum(test) >= vnum(prev.alerted)) { out.lines.push(`✅ Publication : v${test} (${branch}) visible sur le canal Test.`); out.state.alerted = null; }
   } catch (e) { L.log(`store check: ${e.message}`); }
   return out;
 }
@@ -99,8 +99,11 @@ async function main() {
   if (pending.length) L.log(`flushing ${pending.length} buffered event line(s)`);
   const store = await storeCheck(prev && prev._store);
   lines.push(...store.lines); cur._store = store.state;
+  // P2790: same post-publish check for the stable app (separate app id on stable-v5).
+  const storeStable = await storeCheck(prev && prev._storeStable, 'stable-v5');
+  lines.push(...storeStable.lines); cur._storeStable = storeStable.state;
   cur._events = { lastAt: (prev && prev._events && prev._events.lastAt) || null, pending: [] };
-  const md = `## 🩺 CI health — ${L.paris(new Date().toISOString())}\n\n${lines.length ? lines.map((l) => '- ' + l).join('\n') : (prev ? '_aucune transition_' : 'Premier passage : état initial enregistré.')}\n\n${table(cur)}${cur._store && cur._store.test ? `\n\nCanal Test : v${cur._store.test} · master : v${cur._store.master}` : ''}\n\n<sub>autonomous-verification.yml (ci-health) · run ${process.env.GITHUB_RUN_ID || 'local'}</sub>`;
+  const md = `## 🩺 CI health — ${L.paris(new Date().toISOString())}\n\n${lines.length ? lines.map((l) => '- ' + l).join('\n') : (prev ? '_aucune transition_' : 'Premier passage : état initial enregistré.')}\n\n${table(cur)}${cur._store && cur._store.test ? `\n\nCanal Test : v${cur._store.test} · master : v${cur._store.master}` : ''}${cur._storeStable && cur._storeStable.test ? ` · stable Test : v${cur._storeStable.test} · stable-v5 : v${cur._storeStable.master}` : ''}\n\n<sub>autonomous-verification.yml (ci-health) · run ${process.env.GITHUB_RUN_ID || 'local'}</sub>`;
   L.summary(md);
   if (lines.length || L.FORCE) await L.postComment(issue, md); else console.log('No CI transition — silent.');
   await L.saveState(issue, 'ci', cur);

@@ -266,6 +266,7 @@ jobs:
           npm run check:p249x
           npm run check:p257x
           npm run check:p2580
+          npm run check:p2764
           npm run check:publish
 
       - name: Validate Homey SDK3 compliance
