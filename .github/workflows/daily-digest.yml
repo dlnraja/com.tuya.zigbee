@@ -273,6 +273,30 @@ jobs:
           DIGEST_LEADS_OUT: digest-leads/gitmine.json
           DIGEST_JOB: gitmine
         run: node scripts/digest/git-mine.js
+      - name: ♻️ Restore firmware-quirk dataset
+        if: steps.tz.outputs.run == 'true'
+        uses: actions/cache/restore@caa296126883cff596d87d8935842f9db880ef25 # v5.1.0
+        with:
+          path: .quirks-db
+          key: quirks-db-${{ github.run_id }}
+          restore-keys: quirks-db-
+      - name: 🧩 Firmware quirks (per mfr+pid, external cross-reference, capped)
+        if: steps.tz.outputs.run == 'true'
+        continue-on-error: true
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          QUIRKS_DB: .quirks-db/quirks.json
+          QUIRKS_LEADS_DIR: digest-leads
+          QUIRKS_GH_MAX: '4'                # ≤4 issue searches per run, ≥3 s apart
+          QUIRKS_DISCOURSE_MAX: '1'         # one community-forum search per run, rotating
+          DIGEST_MAX_API_CALLS: '20'
+        run: node scripts/digest/quirks-scan.js
+      - name: 💾 Save firmware-quirk dataset
+        if: always() && steps.tz.outputs.run == 'true' && hashFiles('.quirks-db/quirks.json') != ''
+        uses: actions/cache/save@caa296126883cff596d87d8935842f9db880ef25 # v5.1.0
+        with:
+          path: .quirks-db
+          key: quirks-db-${{ github.run_id }}
       - name: 📤 Upload feedback-loop leads (consumed by market-couples-intake)
         if: always() && steps.tz.outputs.run == 'true'
         uses: actions/upload-artifact@330a01c490aca151604b8cf639adc76d48f6c5d4 # v5.0.0

@@ -28,6 +28,7 @@ const os = require('os');
 const path = require('path');
 const { execFileSync } = require('child_process');
 const E = require('./enrich');
+const Q = require('./quirks');
 
 const OUT = process.env.DIGEST_LEADS_OUT || '';
 const OCR_MAX = Number(process.env.DIGEST_OCR_MAX ?? 5);
@@ -67,6 +68,7 @@ function signals(ex, chk, text) {
   if (ex.frame.length) s.frame = ex.frame;
   if (ex.ref.length) s.ref = ex.ref;
   const b = behaviours(text || ''); if (b.length) s.behaviour = b;
+  const q = Q.classify(text || ''); if (q.length) s.quirks = q;
   if (chk) { const u = E.unmappedLeads(chk); if (u.length) s.unmapped = u.slice(0, 20); }
   return s;
 }

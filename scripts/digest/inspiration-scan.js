@@ -121,7 +121,7 @@ L.run(async () => {
     st.wfChecked[repo] = new Date().toISOString();
   }
 
-  st.seen = [...seen].slice(-1500);
+  st.seen = [...seen].slice(-800); // issue body ≤ 65 536 chars: keep state compact
   st.scanned = (st.scanned || 0) + scanned;
   st.at = new Date().toISOString();
 
