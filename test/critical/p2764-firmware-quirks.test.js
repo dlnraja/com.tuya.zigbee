@@ -27,7 +27,8 @@ describe('P2764 firmware quirks', () => {
   it('every quirk has pair, bug, workaround, source', () => {
     for (const q of data.quirks) {
       assert.ok(q.id && Array.isArray(q.mfr) && q.mfr.length, q.id);
-      assert.ok(Array.isArray(q.pid) && q.pid.length, q.id);
+      // P2790: pid may be empty only when the source never reported it (explicit pidUnknown, never guessed)
+      assert.ok(Array.isArray(q.pid) && (q.pid.length || q.pidUnknown === true), q.id);
       assert.ok(q.bug && q.workaround && Array.isArray(q.source) && q.source.length, q.id);
       assert.ok(['runtime', 'existing', 'documented'].includes(q.status), q.id);
     }

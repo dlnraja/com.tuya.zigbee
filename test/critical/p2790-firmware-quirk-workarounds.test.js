@@ -26,7 +26,7 @@ function fakeDevice(mfr, pid) {
 describe('P2790 firmware quirk workarounds', () => {
   it('every runtime quirk has a known type and a source', () => {
     const known = new Set(['invert_bool_dp', 'keepalive_basic_read', 'alarm_pulse_guard', 'button_dedupe',
-      'onoff_commands_single', 'gang_echo_restore', 'enum_remap']);
+      'onoff_commands_single', 'gang_echo_restore', 'enum_remap', 'invert_cover_position', 'invert_color_temperature']);
     for (const q of data.quirks.filter((x) => x.status === 'runtime')) {
       assert.ok(known.has(q.type), `${q.id}: ${q.type}`);
       assert.ok(Array.isArray(q.source) && q.source.length, q.id);
@@ -94,5 +94,36 @@ describe('P2790 firmware quirk workarounds', () => {
   it('existing epoch guard: grxx6qek answers time sync with the 1970 epoch', () => {
     const T = require('../../lib/tuya/TuyaSpecificCluster');
     assert.equal(T.needsEpoch2000('_TZE284_grxx6qek'), false);
+  });
+  it('parked cover/colour-temperature quirks are not applied by default', () => {
+    for (const id of ['zah67ekd_position_inverted_provisional', 'riwp3k79_color_temperature_reversed_provisional']) {
+      const q = data.quirks.find((x) => x.id === id);
+      assert.ok(q, id);
+      assert.equal(q.enabled, false, id);
+      assert.ok(q.enableWhen && q.source.length, id);
+    }
+    assert.equal(Q.coverPositionInverted(fakeDevice('_TZE200_zah67ekd', 'TS0601')), false);
+    assert.equal(Q.mapColorTemperature(fakeDevice('_TZ3000_riwp3k79', 'TS0505A'), 0.2), 0.2);
+  });
+
+  it('cover/colour-temperature helpers work once a quirk is enabled', () => {
+    const withQuirk = (mfr, pid, type) => {
+      const d = fakeDevice(mfr, pid);
+      Q.forDevice(d); // primes the per-device cache key
+      d._fwQuirks = [{ id: 't', type, params: {} }];
+      return d;
+    };
+    assert.equal(Q.coverPositionInverted(withQuirk('_TZE200_zah67ekd', 'TS0601', 'invert_cover_position')), true);
+    const d = withQuirk('_TZ3000_riwp3k79', 'TS0505A', 'invert_color_temperature');
+    assert.ok(Math.abs(Q.mapColorTemperature(d, 0.2) - 0.8) < 1e-9);
+    assert.equal(Q.mapColorTemperature(d, 0), 1);
+    assert.equal(Q.mapColorTemperature(d, 'x'), 'x');
+  });
+
+  it('cover and light call sites are wired', () => {
+    const cover = fs.readFileSync(path.join(root, 'lib/devices/UnifiedCoverBase.js'), 'utf8');
+    assert.match(cover, /coverPositionInverted\(this\)\) \{this\._invertedPosition = true;\}/);
+    const light = fs.readFileSync(path.join(root, 'lib/TuyaZigBeeLightDevice.js'), 'utf8');
+    assert.ok((light.match(/mapColorTemperature\(this/g) || []).length >= 5);
   });
 });
