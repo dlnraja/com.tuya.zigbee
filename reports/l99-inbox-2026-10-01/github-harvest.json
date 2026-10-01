@@ -1,21 +1,9 @@
 {
-  "harvestedAt": "2026-10-01T10:31:32.930Z",
+  "harvestedAt": "2026-10-01T17:35:23.445Z",
   "repo": "dlnraja/com.tuya.zigbee",
   "auth": "token",
   "error": null,
   "issues": [
-    {
-      "number": 556,
-      "title": "[Auto] New Tuya devices found in zigbee2mqtt",
-      "labels": [
-        "enhancement",
-        "auto-scan"
-      ],
-      "updatedAt": "2026-10-01T06:36:22Z",
-      "user": "github-actions[bot]",
-      "htmlUrl": "https://github.com/dlnraja/com.tuya.zigbee/issues/556",
-      "bodySnippet": "Monthly scan found new manufacturerName IDs:\n```\n_TZ3000_0lvv1d5b\n_TZ3000_1hypixdr\n_TZ3000_3o7r0mno\n_TZ3000_ahvrgyac\n_TZ3000_bbebkwjk\n_TZ3000_bu47m8pv\n_TZ3000_f6pgzqob\n_TZ3000_syetgitm\n_TZ3008_iooniers\n_TZ3008_qziabvzj\n_TZ3008_xvfd3nkp\n_TZ300A_57kqwetw\n_TZ3210_8etggm4u\n_TZ3210_cqqb61yo\n_TZ3210_mldzab8w\n_TZ3210_o235agwx\n_TZ3210_o4vasvef\n_TZ3210_tlwlmwm6\n_TZ3210_tqwyiitv\n_TZD200_sjjp9bti\n_TZE200_nkjintbl\n_TZE204_dak2k10o\n_TZE204_eaasry7v\n_TZE204_lyqazpe6\n_TZE204_pxbjch8m\n_TZE204_r6kfl9ta\n_TZE204_wsek35um\n_TZE20C_tjz9ad5g\n_TZE20C_ycab9txf\n_TZE284_5qfrnbqs\n_TZE284_hbxadcl0\n_TZE284_lyqazpe6\n_TZE284_n41i9jyt\n_TZE284_pxwixtky\n_TZE284_rfpyqax9\n_TZE284_tokhh9pf\n_TZE284_znkkcauq\n_TZE284_zuq5xxib\n```\nQueued for enrich; bot triage will close after processing."
-    },
     {
       "number": 554,
       "title": "Bug report - TS0046 / _TZ3000_iszegwpd 6 Gang Wall Remote fails to pair although Zigbee interview succeeds",
@@ -50,6 +38,6 @@
       "draft": false
     }
   ],
-  "openIssueCount": 3,
+  "openIssueCount": 2,
   "openPrCount": 1
 }
