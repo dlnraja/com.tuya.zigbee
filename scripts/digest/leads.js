@@ -89,6 +89,7 @@ function record(source, ref, text, opts = {}) {
     signals: signals(ex, chk, text),
   };
   // DP/cluster meanings are never guessed here; they stay unverified until leads-merge cross-checks Z2M.
+  if (!rec.couples.length && !rec.mfr.length && !rec.pid.length && !Object.keys(rec.signals).length) return null; // nothing actionable
   if (rec.signals.dp || rec.signals.cluster) rec.signals.verified = false;
   records.push(rec);
   return rec;
