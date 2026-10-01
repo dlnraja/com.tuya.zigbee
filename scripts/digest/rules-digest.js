@@ -30,7 +30,7 @@ const FORCE = MAIN && process.argv.includes('--force');
 function inputs() {
   const list = ['CORE_RULES.md', 'AGENTS.md', 'AI_CONTEXT_MANDATE.md', 'CONTRIBUTING.md',
     'docs/ARCHITECTURAL_RULES.md', 'docs/DRIVER_MAPPING_POLICY.md', 'docs/DP_MAPPING_REFERENCE.md',
-    'docs/knowledge/DEVICE_TRUTH.md', 'CHANGELOG.md'];
+    'docs/knowledge/DEVICE_TRUTH.md', 'CHANGELOG.md', 'README.md', '.homeychangelog.json', 'docs/automation/CI_FEEDBACK_LOOP.md'];
   for (const dir of ['docs/rules', '.cursor/rules']) {
     try { for (const f of fs.readdirSync(path.join(ROOT, dir)).sort()) if (/\.(md|mdc)$/.test(f)) list.push(`${dir}/${f}`); } catch { /* absent */ }
   }
@@ -51,9 +51,13 @@ function build() {
   if (!FORCE && fs.existsSync(OUT)) {
     try { const cur = JSON.parse(fs.readFileSync(OUT, 'utf8')); if (cur.inputsHash === inputsHash) { console.log(`rules-digest up to date (${inputsHash.slice(0, 12)})`); return cur; } } catch { /* rebuild */ }
   }
-  const rules = []; const seen = new Set(); const deviceTruth = {}; let changelog = [];
+  const rules = []; const seen = new Set(); const deviceTruth = {}; let changelog = []; let homeyChangelog = [];
   for (const f of files) {
     const text = fs.readFileSync(path.join(ROOT, f), 'utf8');
+    if (f === '.homeychangelog.json') {
+      try { const j = JSON.parse(text); homeyChangelog = Object.keys(j).filter((v) => /^\d+\.\d+\.\d+$/.test(v)).sort((a, b) => b.localeCompare(a, undefined, { numeric: true })).slice(0, 5).map((v) => ({ v, en: String((j[v] && (j[v].en || Object.values(j[v])[0])) || '').slice(0, 160) })); } catch { /* ignore */ }
+      continue;
+    }
     if (f === 'CHANGELOG.md') { changelog = (text.match(/^#{1,3} .+$/gm) || []).slice(0, 5).map((s) => s.replace(/^#+\s*/, '').slice(0, 120)); continue; }
     if (f.endsWith('DEVICE_TRUTH.md')) {
       for (const line of text.split('\n')) {
@@ -84,6 +88,22 @@ function build() {
         additiveOnly: /additive|additif/i.test(all), complementary: /complementar|complémentaire/i.test(all),
       },
     },
+    // App roles (DUAL_APP_VISION): enrichment scripts must respect them.
+    appRoles: {
+      'stable-v5': 'simple and stable, maximum device coverage; sourced couples only, no heuristics, never published to Test from Stable, never pushed by automation',
+      master: 'advanced intelligence and heuristics (complementary handlers, adaptive DP/ZCL), Test channel via auto-publish after validation',
+      'bastien-home': 'experimental branch — mined for leads, never promoted',
+    },
+    // Automation discoveries (2026-10) used as guardrails by the digest scripts.
+    discoveries: {
+      forumTopics: { 140352: 'Universal Tuya Zigbee (this app)', 26439: 'Tuya Zigbee (JohanBendz)', 89271: 'device-request archive', 146735: 'Tuya Smart Life', 154077: 'Tuya Local', 21313: 'Tuya Cloud' },
+      quirkCategories: ['spurious-zero', 'null-invalid', 'wrong-scaling', 'reboot', 'overheat', 'over-reporting', 'duplicate-report', 'disconnect'],
+      quirkConfirmation: '>= 2 distinct sources (hosts/repos), otherwise heuristic',
+      aiPolicy: 'remote AI off by default (AI_FORCE_LOCAL); cancelled paid providers neutralized; Gemini/free tiers optional; repo variable AI_DISABLED=true removes every AI key; deterministic fallback always',
+      scrapePolicy: 'keyless readers first; paid-capable scraper only with daily cap; repo variable FIRECRAWL_DISABLED=true removes the key',
+      neutralWording: 'no external project names in commits, changelogs, PR/issue comments or tracking-issue comments — say "external cross-reference"',
+    },
+    homeyChangelog,
     deviceTruth: Object.fromEntries(Object.entries(deviceTruth).map(([k, v]) => [k, [...v]])),
     changelog, rules,
   };

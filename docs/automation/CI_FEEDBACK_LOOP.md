@@ -91,3 +91,37 @@ market-couples-intake (daily)
 
 - **master:** enrichment commits through safe-auto-commit. Test publishing is unchanged, via auto-publish after validation.
 - **stable-v5:** gets git-side enrichment from history mining (report and evidence only) and CI health in the digest. Its own `publish-stable.yml` (on push to stable-v5) keeps its pre-validation and soak gates. These scripts never push to stable-v5 and never promote Stable to Test.
+
+## 6. Phase 2 (2026-10-01)
+
+**Wording.** Messages written by the generators (#557 comments, triage comments, commit messages) no longer name external projects. They say "external cross-reference" / "réf. externe" instead, per CORE_RULES.
+
+**Hooks.** `.githooks/pre-commit` and `.githooks/pre-push` are now executable and run normally.
+
+**AI.** The central guard (`.github/scripts/ai-helper.js`, `config/security/ai-plan-forfait.json`) already keeps remote AI off by default (`AI_FORCE_LOCAL`, `GMAIL_DIAG_AI_MAX=0` in CI).
+- The cancelled paid providers are neutralized in every workflow: their key is set to `''`. The same providers are refused in `scripts/automation/api-key-manager.js` (`AI_CANCELLED_PROVIDERS`). They are Kimi, DeepSeek, OpenAI, Anthropic, MiniMax and Xiaomi MiMo.
+- The other AI keys stay optional. Gemini, Groq, Cerebras, HF, OpenRouter, Mistral, Together and NVIDIA keys are all removed at once when the repo variable `AI_DISABLED=true` is set.
+- Every caller already falls back to deterministic local heuristics when no AI answer comes back.
+
+**Scraper key.** The Firecrawl key is optional: it is removed when the repo variable `FIRECRAWL_DISABLED=true` is set. The library keeps its daily cap (`FIRECRAWL_DAILY_MAX`, 5 by default) and always tries the keyless reader first.
+
+**Forum.** forum-watch covers 6 topics: 140352, 26439, 89271, 146735 and 154077 rotate after the primary 140352, plus 21313. There are still at most 4 Discourse requests per run in total. Each topic needs one request (`/t/<id>/<n>.json`).
+
+**OCR.** tesseract runs with ImageMagick preprocessing (grayscale, 2× upscale, normalize, threshold) in eng+fra+deu+nld+spa+ita. Optional Gemini vision is used only when `AI_ALLOW_REMOTE=true` and a key is present, at most 2 per run.
+
+**Firmware quirks.** `scripts/digest/quirks.js` and `quirks-scan.js` build a per-couple dataset, persisted with `actions/cache`.
+- Categories come from multilingual rules.
+- Inputs: our own leads, ≤4 GitHub issue searches per run across public Zigbee projects, and 1 rotating community Discourse search.
+- A quirk stays heuristic until 2 distinct sources agree.
+- The #557 comment lists only new entries, with no URLs and no external names.
+
+**Self-living.**
+- `notifications.yml` › `auto-triage`: on a new issue, adds existing labels and posts one "what we already know" comment, deduplicated by a marker. Deterministic, no AI.
+- `ci-health`: checks whether the master version is visible on the Test channel, using the public apps API. It alerts #557 when the same version is still missing at the next check, and posts a recovery line once it appears.
+- `daily-digest` › `weekly` (Monday 09:07 Paris): weekly summary plus a per-driver health score.
+
+**Batch respond.** In `auto-close-supported.yml`, the read-only JohanBendz shadow pass is capped at 60 items and 12 min. Before, it hit the 45-min job limit and the whole run was cancelled.
+
+**Git mining.** History is mined newest first (everything newer than `head`), then older commits are backfilled with the remaining page budget.
+
+**Rules digest.** It now also reads README, `.homeychangelog.json` and this document. It carries the app roles (stable-v5 simple / maximum coverage, master heuristics, bastien-home experimental) and the discoveries above.
