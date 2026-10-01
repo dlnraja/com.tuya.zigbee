@@ -125,3 +125,46 @@ market-couples-intake (daily)
 **Git mining.** History is mined newest first (everything newer than `head`), then older commits are backfilled with the remaining page budget.
 
 **Rules digest.** It now also reads README, `.homeychangelog.json` and this document. It carries the app roles (stable-v5 simple / maximum coverage, master heuristics, bastien-home experimental) and the discoveries above.
+
+## 7. Phase 3 (P2790): firmware workarounds + strict-rule intake
+
+### Firmware quirk workarounds (`lib/data/firmware-quirks.json` → `lib/quirks/FirmwareQuirks.js`)
+Every recorded firmware bug has a software compensation, scoped to the exact manufacturerName + productId
+of the record (source kept on each entry). Records with `enabled: false` are implemented but parked
+until a second source or a user/diagnostic confirmation (`enableWhen` says what is needed).
+
+| Type | Effect | Call site |
+|---|---|---|
+| `invert_bool_dp` | invert a boolean DP before the pipeline | `presence_sensor_radar` |
+| `enum_remap` | remap enum values of one DP | `FirmwareQuirks.transformDp` |
+| `keepalive_basic_read` | periodic basic read keeps the device on the network | device init |
+| `alarm_pulse_guard` | drop the periodic alarm pulse | alarm capabilities |
+| `button_dedupe` | window (100–1500 ms) against duplicate frames on physical presses | `ButtonDevice.triggerButtonPress` |
+| `onoff_commands_single` | toggle-style remotes: off/on commands read as single press | `button_wireless_4` |
+| `gang_echo_restore` | restore other gangs only if ALL of them echoed an app command | `wall_switch_4gang_1way` |
+| `invert_cover_position` | position-only inversion (DP1 open/close untouched) | `UnifiedCoverBase` |
+| `invert_color_temperature` | warm/cold white swapped (1 − x, TX and RX) | `TuyaZigBeeLightDevice` |
+
+Records whose root cause is already handled in a driver are `existing`; records where the DP for our layout
+is unknown stay `documented` (a DP is never guessed). Tests: `npm run check:p2764` (also in syntax-check).
+
+### Strict-rule intake (`scripts/leads/strict-apply.js`, step in `oss-lan-source-enrich.yml`, Tue/Fri)
+- Inputs: `data/leads/github-leads.json` (incremental GitHub scan: issues, comments, peer apps, forks),
+  new human comments on #557 (owner comments only with `/triage`). Forum posts are read by
+  `forum-watch.js` and flow through `leads.js` → `leads-merge.js` → market-couples-intake (section 3).
+- Fingerprint written only when the source names the exact mfr + pid together, the mfr is in no driver,
+  the pid is not TS0601 and exactly one driver already lists that pid with siblings. Compose + app.json
+  are edited through a byte-identical JSON round-trip; max 5 per run; commit via safe-auto-commit
+  (`strict-apply`). Log: `data/leads/auto-applied.json`; everything else: `data/leads/strict-apply-report.json`.
+- Strong firmware keywords (inverted, drops off, wrong scale, ×10 …) in a bug report for a supported mfr
+  with one pid → appended to `firmware-quirks.json` as `documented`, `auto: true` (no runtime effect), max 3.
+- #557: one status reply per run (applied / already supported / lead + reason).
+- `stable-backport` job: couples from `auto-applied.json` are added to the same driver on stable-v5 when it
+  already lists the pid there; commit via safe-auto-commit `--branch=stable-v5` (adds `[skip ci]`).
+- Peer flow-card inventory: `github-leads-scan.js` phase `peerFlows` → `data/leads/peer-flow-cards.json`
+  (re-read only when a peer repo is pushed; ideas only, never copied).
+- Kill switch: `vars.STRICT_APPLY_DISABLED=true`; cap: `vars.STRICT_APPLY_MAX`.
+
+### Post-publish verification
+`scripts/digest/ci-health.js` compares `.homeycompose/app.json` version with the Athom `testBuild.version`
+for master AND stable-v5 (separate app ids); a version still missing on the next check is reported on #557.

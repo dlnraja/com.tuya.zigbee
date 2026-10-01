@@ -19,7 +19,9 @@
  * Auth: GITHUB_TOKEN / GH_TOKEN env (CI); otherwise falls back to the `gh api` CLI if present.
  *
  *   node scripts/scanners/github-leads-scan.js [--max-requests=120] [--min-delay=1500] [--max-delay=4000]
- *        [--phases=comments,issues,peers,peerDrivers,forks] [--dry]
+ *        [--phases=comments,issues,peers,peerDrivers,peerFlows,forks] [--dry]
+ *   peerFlows (P2790): inventory of peer apps' flow cards (driver.flow.compose.json + .homeycompose/flow)
+ *   → data/leads/peer-flow-cards.json (ideas only, never copied automatically).
  */
 const fs = require('fs');
 const path = require('path');
@@ -33,7 +35,7 @@ const arg = (k, d) => { const a = process.argv.find((x) => x.startsWith(`--${k}=
 const MAX_REQ = Number(arg('max-requests', 120));
 const MIN_DELAY = Number(arg('min-delay', 1500));
 const MAX_DELAY = Number(arg('max-delay', 4000));
-const PHASES = String(arg('phases', 'comments,issues,peers,peerDrivers,forks')).split(',').filter(Boolean);
+const PHASES = String(arg('phases', 'comments,issues,peers,peerDrivers,peerFlows,forks')).split(',').filter(Boolean);
 const DRY = process.argv.includes('--dry');
 const TOKEN = process.env.GITHUB_TOKEN || process.env.GH_TOKEN || '';
 
@@ -41,7 +43,7 @@ const DEFAULT_SCAN = {
   tracked: ['dlnraja/com.tuya.zigbee', 'JohanBendz/com.tuya.zigbee'],
   peers: ['JohanBendz/com.lidl', 'ChrisBloem/Homey-Zigbee-Community', 'gpmachado/com.gpm.homesuite', 'kodalissri/com.MyZigbee.Devices'],
   forkRoots: ['JohanBendz/com.tuya.zigbee', 'dlnraja/com.tuya.zigbee'],
-  comments: {}, issues: {}, peerIssues: {}, peerComments: {}, peerDrivers: {}, forks: {},
+  comments: {}, issues: {}, peerIssues: {}, peerComments: {}, peerDrivers: {}, peerFlows: {}, forks: {},
 };
 
 let requests = 0;
@@ -239,10 +241,58 @@ async function phasePeerDrivers(scan, idx, out) {
   }
 }
 
+const FLOWS_FILE = path.join(ROOT, 'data', 'leads', 'peer-flow-cards.json');
+const flowTitle = (t) => (t && typeof t === 'object' ? t.en || Object.values(t)[0] : t) || '';
+
+async function phasePeerFlows(scan) {
+  const inv = fs.existsSync(FLOWS_FILE) ? JSON.parse(fs.readFileSync(FLOWS_FILE, 'utf8')) : { repos: {} };
+  inv.repos = inv.repos || {};
+  let changed = false;
+  const flowRepos = [...new Set([...scan.peers, ...scan.tracked.filter((r) => !r.startsWith('dlnraja/'))])];
+  for (const repo of flowRepos) {
+    const st = scan.peerFlows[repo] || (scan.peerFlows[repo] = {});
+    const meta = await gh(`repos/${repo}`);
+    if (!meta) { if (stopped) {break;} continue; }
+    if (st.pushed_at === meta.pushed_at) {continue;}
+    const tree = await gh(`repos/${repo}/git/trees/${encodeURIComponent(meta.default_branch)}?recursive=1`);
+    if (!tree) { if (stopped) {break;} continue; }
+    const files = (tree.tree || []).filter((t) => /drivers\/[^/]+\/driver\.flow\.compose\.json$|^\.homeycompose\/flow\/(triggers|conditions|actions)\/[^/]+\.json$/.test(t.path)).slice(0, 300);
+    const cards = [];
+    let complete = true;
+    for (const t of files) {
+      const body = await raw(repo, meta.default_branch, t.path);
+      if (stopped) { complete = false; break; }
+      if (!body) {continue;}
+      try {
+        const j = JSON.parse(body);
+        const drv = (t.path.match(/drivers\/([^/]+)\//) || [])[1] || 'app';
+        if (t.path.startsWith('.homeycompose/')) {
+          const kind = t.path.split('/')[2];
+          cards.push({ kind, id: j.id || path.basename(t.path, '.json'), title: flowTitle(j.title), driver: 'app' });
+        } else {
+          for (const kind of ['triggers', 'conditions', 'actions']) {
+            for (const c of j[kind] || []) {cards.push({ kind, id: c.id, title: flowTitle(c.title), driver: drv });}
+          }
+        }
+      } catch { /* not JSON */ }
+    }
+    if (!complete) {break;}
+    inv.repos[repo] = { ref: meta.default_branch, pushed_at: meta.pushed_at, cards: cards.slice(0, 1500) };
+    st.pushed_at = meta.pushed_at;
+    changed = true;
+  }
+  if (changed && !DRY) {
+    inv.generated = new Date().toISOString().slice(0, 10);
+    inv.note = 'read-only inventory of peer apps flow cards (ideas for our own cards; never copied automatically)';
+    fs.mkdirSync(path.dirname(FLOWS_FILE), { recursive: true });
+    fs.writeFileSync(FLOWS_FILE, `${JSON.stringify(inv, null, 1)}\n`);
+  }
+}
+
 async function main() {
   const cursor = fs.existsSync(CURSOR_FILE) ? JSON.parse(fs.readFileSync(CURSOR_FILE, 'utf8')) : {};
   const scan = { ...DEFAULT_SCAN, ...cursor.scan || {} };
-  for (const k of ['comments', 'issues', 'peerIssues', 'peerComments', 'peerDrivers', 'forks']) {scan[k] = scan[k] || {};}
+  for (const k of ['comments', 'issues', 'peerIssues', 'peerComments', 'peerDrivers', 'peerFlows', 'forks']) {scan[k] = scan[k] || {};}
   const prev = fs.existsSync(LEADS_FILE) ? JSON.parse(fs.readFileSync(LEADS_FILE, 'utf8')) : { leads: [] };
   const out = { byKey: new Map(prev.leads.map((l) => [`${l.mfr.toLowerCase()}|${l.url}`, l])) };
   const before = out.byKey.size;
@@ -263,6 +313,8 @@ async function main() {
       await pagedPhase(scan.peerComments, scan.peers, (r, p) => `repos/${r}/issues/comments?sort=created&direction=desc&per_page=100&page=${p}`, commentText);
     } else if (phase === 'peerDrivers') {
       await phasePeerDrivers(scan, idx, out);
+    } else if (phase === 'peerFlows') {
+      await phasePeerFlows(scan);
     } else if (phase === 'forks') {
       await phaseForks(scan, idx, out);
     }

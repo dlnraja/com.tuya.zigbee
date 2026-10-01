@@ -1,0 +1,927 @@
+{
+ "repos": {
+  "JohanBendz/com.lidl": {
+   "ref": "SDK3",
+   "pushed_at": "2024-05-15T21:15:05Z",
+   "cards": [
+    {
+     "kind": "actions",
+     "id": "start_effect",
+     "title": "Start effect",
+     "driver": "app"
+    },
+    {
+     "kind": "triggers",
+     "id": "smart_remote_1_button",
+     "title": "Button Action",
+     "driver": "smart_remote_1_button"
+    }
+   ]
+  },
+  "ChrisBloem/Homey-Zigbee-Community": {
+   "ref": "develop",
+   "pushed_at": "2026-09-08T18:21:11Z",
+   "cards": [
+    {
+     "kind": "triggers",
+     "id": "single_press",
+     "title": "The button is pressed",
+     "driver": "rotary-button"
+    },
+    {
+     "kind": "triggers",
+     "id": "double_press",
+     "title": "The button is pressed twice",
+     "driver": "rotary-button"
+    },
+    {
+     "kind": "triggers",
+     "id": "long_press",
+     "title": "The button is held",
+     "driver": "rotary-button"
+    },
+    {
+     "kind": "triggers",
+     "id": "rotate_left",
+     "title": "The knob is rotated left",
+     "driver": "rotary-button"
+    },
+    {
+     "kind": "triggers",
+     "id": "rotate_right",
+     "title": "The knob is rotated right",
+     "driver": "rotary-button"
+    },
+    {
+     "kind": "triggers",
+     "id": "rotation_stopped",
+     "title": "Rotation is stopped (command mode)",
+     "driver": "rotary-button"
+    },
+    {
+     "kind": "actions",
+     "id": "configure_button",
+     "title": "Configure button for local events",
+     "driver": "rotary-button"
+    }
+   ]
+  },
+  "gpmachado/com.gpm.homesuite": {
+   "ref": "main",
+   "pushed_at": "2026-09-03T00:28:33Z",
+   "cards": [
+    {
+     "kind": "actions",
+     "id": "aqara_fp1_reset_presence",
+     "title": "Reset presence",
+     "driver": "app"
+    },
+    {
+     "kind": "actions",
+     "id": "mini_zb1gp_reset_consumption",
+     "title": "Reset accumulated consumption",
+     "driver": "app"
+    },
+    {
+     "kind": "actions",
+     "id": "novadigital_switch_1_gang_set_backlight",
+     "title": "Set backlight",
+     "driver": "app"
+    },
+    {
+     "kind": "actions",
+     "id": "novadigital_switch_2_gang_set_backlight",
+     "title": "Set backlight",
+     "driver": "app"
+    },
+    {
+     "kind": "actions",
+     "id": "novadigital_switch_2gang_touch_set_backlight",
+     "title": "Set backlight",
+     "driver": "app"
+    },
+    {
+     "kind": "actions",
+     "id": "novadigital_switch_3_gang_set_backlight",
+     "title": "Set backlight",
+     "driver": "app"
+    },
+    {
+     "kind": "actions",
+     "id": "novadigital_switch_4_gang_zcl_set_backlight",
+     "title": "Set backlight",
+     "driver": "app"
+    },
+    {
+     "kind": "actions",
+     "id": "wireless_switch_remote_2_gang_simulate_press",
+     "title": "Simulate button press",
+     "driver": "app"
+    },
+    {
+     "kind": "conditions",
+     "id": "availability_is_on",
+     "title": "Availability is on",
+     "driver": "app"
+    },
+    {
+     "kind": "conditions",
+     "id": "novadigital_switch_1_gang_backlight_is_on",
+     "title": "Backlight is on",
+     "driver": "app"
+    },
+    {
+     "kind": "conditions",
+     "id": "novadigital_switch_2_gang_backlight_is_on",
+     "title": "Backlight is on",
+     "driver": "app"
+    },
+    {
+     "kind": "conditions",
+     "id": "novadigital_switch_2gang_touch_backlight_is_on",
+     "title": "Backlight is on",
+     "driver": "app"
+    },
+    {
+     "kind": "conditions",
+     "id": "novadigital_switch_3_gang_backlight_is_on",
+     "title": "Backlight is on",
+     "driver": "app"
+    },
+    {
+     "kind": "conditions",
+     "id": "novadigital_switch_4_gang_zcl_backlight_is_on",
+     "title": "Backlight is on",
+     "driver": "app"
+    },
+    {
+     "kind": "triggers",
+     "id": "aqara_fp1_presence_event",
+     "title": "Presence event",
+     "driver": "app"
+    },
+    {
+     "kind": "triggers",
+     "title": "",
+     "driver": "BASICZBR3"
+    },
+    {
+     "kind": "triggers",
+     "title": "",
+     "driver": "BASICZBR3"
+    },
+    {
+     "kind": "triggers",
+     "title": "",
+     "driver": "MINI-ZBD"
+    },
+    {
+     "kind": "triggers",
+     "title": "",
+     "driver": "MINI-ZBD"
+    },
+    {
+     "kind": "triggers",
+     "title": "",
+     "driver": "MINI-ZBD"
+    },
+    {
+     "kind": "triggers",
+     "id": "MINI-ZBD:click",
+     "title": "Single click",
+     "driver": "MINI-ZBD"
+    },
+    {
+     "kind": "triggers",
+     "title": "",
+     "driver": "ZBMINIR2"
+    },
+    {
+     "kind": "triggers",
+     "title": "",
+     "driver": "ZBMINIR2"
+    },
+    {
+     "kind": "triggers",
+     "title": "",
+     "driver": "ZBMINIR2"
+    },
+    {
+     "kind": "triggers",
+     "id": "ZBMINIR2:click",
+     "title": "Single click",
+     "driver": "ZBMINIR2"
+    },
+    {
+     "kind": "triggers",
+     "title": "",
+     "driver": "doorwindowsensor"
+    },
+    {
+     "kind": "triggers",
+     "title": "",
+     "driver": "doorwindowsensor"
+    },
+    {
+     "kind": "triggers",
+     "title": "",
+     "driver": "doorwindowsensor_2"
+    },
+    {
+     "kind": "triggers",
+     "title": "",
+     "driver": "doorwindowsensor_2"
+    },
+    {
+     "kind": "triggers",
+     "title": "",
+     "driver": "ekaza_siren"
+    },
+    {
+     "kind": "triggers",
+     "title": "",
+     "driver": "ekaza_siren"
+    },
+    {
+     "kind": "triggers",
+     "id": "siren_activated",
+     "title": "Siren activated",
+     "driver": "ekaza_siren"
+    },
+    {
+     "kind": "triggers",
+     "id": "siren_deactivated",
+     "title": "Siren deactivated",
+     "driver": "ekaza_siren"
+    },
+    {
+     "kind": "conditions",
+     "id": "is_playing",
+     "title": "Siren is !{{playing|not playing}}",
+     "driver": "ekaza_siren"
+    },
+    {
+     "kind": "actions",
+     "id": "siren_play",
+     "title": "Play siren with melody",
+     "driver": "ekaza_siren"
+    },
+    {
+     "kind": "actions",
+     "id": "siren_stop",
+     "title": "Stop siren",
+     "driver": "ekaza_siren"
+    },
+    {
+     "kind": "triggers",
+     "title": "",
+     "driver": "gas_detector"
+    },
+    {
+     "kind": "triggers",
+     "title": "",
+     "driver": "gas_detector"
+    },
+    {
+     "kind": "triggers",
+     "title": "",
+     "driver": "lcdtemphumidsensor"
+    },
+    {
+     "kind": "triggers",
+     "title": "",
+     "driver": "lcdtemphumidsensor"
+    },
+    {
+     "kind": "triggers",
+     "title": "",
+     "driver": "moes_dimmer_3_gang"
+    },
+    {
+     "kind": "triggers",
+     "title": "",
+     "driver": "moes_dimmer_3_gang"
+    },
+    {
+     "kind": "triggers",
+     "title": "",
+     "driver": "moes_dimmer_3_gang"
+    },
+    {
+     "kind": "triggers",
+     "id": "moes_remote_4_gang_button",
+     "title": "Button action",
+     "driver": "moes_remote_4_gang"
+    },
+    {
+     "kind": "triggers",
+     "title": "",
+     "driver": "novadigital_switch_1_gang"
+    },
+    {
+     "kind": "triggers",
+     "title": "",
+     "driver": "novadigital_switch_1_gang"
+    },
+    {
+     "kind": "triggers",
+     "title": "",
+     "driver": "novadigital_switch_1_gang"
+    },
+    {
+     "kind": "triggers",
+     "title": "",
+     "driver": "novadigital_switch_2_gang"
+    },
+    {
+     "kind": "triggers",
+     "title": "",
+     "driver": "novadigital_switch_2_gang"
+    },
+    {
+     "kind": "triggers",
+     "title": "",
+     "driver": "novadigital_switch_2_gang"
+    },
+    {
+     "kind": "triggers",
+     "title": "",
+     "driver": "novadigital_switch_2gang_touch"
+    },
+    {
+     "kind": "triggers",
+     "title": "",
+     "driver": "novadigital_switch_2gang_touch"
+    },
+    {
+     "kind": "triggers",
+     "title": "",
+     "driver": "novadigital_switch_2gang_touch"
+    },
+    {
+     "kind": "triggers",
+     "title": "",
+     "driver": "novadigital_switch_3_gang"
+    },
+    {
+     "kind": "triggers",
+     "title": "",
+     "driver": "novadigital_switch_3_gang"
+    },
+    {
+     "kind": "triggers",
+     "title": "",
+     "driver": "novadigital_switch_3_gang"
+    },
+    {
+     "kind": "triggers",
+     "title": "",
+     "driver": "novadigital_switch_4_gang"
+    },
+    {
+     "kind": "triggers",
+     "title": "",
+     "driver": "novadigital_switch_4_gang"
+    },
+    {
+     "kind": "triggers",
+     "title": "",
+     "driver": "novadigital_switch_4_gang"
+    },
+    {
+     "kind": "triggers",
+     "title": "",
+     "driver": "novadigital_switch_4_gang_zcl"
+    },
+    {
+     "kind": "triggers",
+     "title": "",
+     "driver": "novadigital_switch_4_gang_zcl"
+    },
+    {
+     "kind": "triggers",
+     "title": "",
+     "driver": "novadigital_switch_4_gang_zcl"
+    },
+    {
+     "kind": "triggers",
+     "title": "",
+     "driver": "novadigital_switch_6_gang"
+    },
+    {
+     "kind": "triggers",
+     "title": "",
+     "driver": "novadigital_switch_6_gang"
+    },
+    {
+     "kind": "triggers",
+     "title": "",
+     "driver": "novadigital_switch_6_gang"
+    },
+    {
+     "kind": "triggers",
+     "title": "",
+     "driver": "smartplug"
+    },
+    {
+     "kind": "triggers",
+     "title": "",
+     "driver": "smartplug"
+    },
+    {
+     "kind": "triggers",
+     "title": "",
+     "driver": "smartplug"
+    },
+    {
+     "kind": "triggers",
+     "title": "",
+     "driver": "smartplug_2"
+    },
+    {
+     "kind": "triggers",
+     "title": "",
+     "driver": "smartplug_2"
+    },
+    {
+     "kind": "triggers",
+     "title": "",
+     "driver": "smartplug_2"
+    },
+    {
+     "kind": "triggers",
+     "title": "",
+     "driver": "smartplug_3"
+    },
+    {
+     "kind": "triggers",
+     "title": "",
+     "driver": "smartplug_3"
+    },
+    {
+     "kind": "triggers",
+     "title": "",
+     "driver": "smartplug_3"
+    },
+    {
+     "kind": "triggers",
+     "title": "",
+     "driver": "socket_power_strip"
+    },
+    {
+     "kind": "triggers",
+     "title": "",
+     "driver": "socket_power_strip"
+    },
+    {
+     "kind": "triggers",
+     "title": "",
+     "driver": "socket_power_strip"
+    },
+    {
+     "kind": "triggers",
+     "title": "",
+     "driver": "sonoff_dongle"
+    },
+    {
+     "kind": "triggers",
+     "title": "",
+     "driver": "sonoff_dongle"
+    },
+    {
+     "kind": "triggers",
+     "title": "",
+     "driver": "switch_1_ch"
+    },
+    {
+     "kind": "triggers",
+     "title": "",
+     "driver": "switch_1_ch"
+    },
+    {
+     "kind": "triggers",
+     "title": "",
+     "driver": "switch_1_ch"
+    },
+    {
+     "kind": "triggers",
+     "title": "",
+     "driver": "switch_2_ch"
+    },
+    {
+     "kind": "triggers",
+     "title": "",
+     "driver": "switch_2_ch"
+    },
+    {
+     "kind": "triggers",
+     "title": "",
+     "driver": "switch_2_ch"
+    },
+    {
+     "kind": "triggers",
+     "title": "",
+     "driver": "switch_3_ch"
+    },
+    {
+     "kind": "triggers",
+     "title": "",
+     "driver": "switch_3_ch"
+    },
+    {
+     "kind": "triggers",
+     "title": "",
+     "driver": "switch_3_ch"
+    },
+    {
+     "kind": "triggers",
+     "title": "",
+     "driver": "temphumidclock"
+    },
+    {
+     "kind": "triggers",
+     "title": "",
+     "driver": "temphumidclock"
+    },
+    {
+     "kind": "triggers",
+     "id": "wireless_switch_remote_2_gang_button",
+     "title": "Button action",
+     "driver": "wireless_switch_remote_2_gang"
+    },
+    {
+     "kind": "triggers",
+     "title": "",
+     "driver": "zigbee_repeater"
+    },
+    {
+     "kind": "triggers",
+     "title": "",
+     "driver": "zigbee_repeater"
+    }
+   ]
+  },
+  "kodalissri/com.MyZigbee.Devices": {
+   "ref": "main",
+   "pushed_at": "2026-06-16T00:29:18Z",
+   "cards": [
+    {
+     "kind": "conditions",
+     "id": "compare_ir_codes",
+     "title": "IR codes are equal",
+     "driver": "app"
+    },
+    {
+     "kind": "triggers",
+     "id": "RWL000_on",
+     "title": "On-button pressed",
+     "driver": "RWL000"
+    },
+    {
+     "kind": "triggers",
+     "id": "RWL000_off",
+     "title": "Off-button pressed",
+     "driver": "RWL000"
+    },
+    {
+     "kind": "triggers",
+     "id": "RWL000_dim",
+     "title": "Dim buttons",
+     "driver": "RWL000"
+    },
+    {
+     "kind": "triggers",
+     "id": "ir_code_learned",
+     "title": "IR Code Learned",
+     "driver": "tuya_ir_blaster"
+    },
+    {
+     "kind": "actions",
+     "id": "send_ir_slot",
+     "title": "Send IR from slot",
+     "driver": "tuya_ir_blaster"
+    },
+    {
+     "kind": "actions",
+     "id": "send_ir_code",
+     "title": "Send custom IR code",
+     "driver": "tuya_ir_blaster"
+    },
+    {
+     "kind": "triggers",
+     "id": "rotate_left_test",
+     "title": "Rotated left",
+     "driver": "tuya_rotary_knob_test"
+    },
+    {
+     "kind": "triggers",
+     "id": "rotate_right_test",
+     "title": "Rotated right",
+     "driver": "tuya_rotary_knob_test"
+    },
+    {
+     "kind": "triggers",
+     "id": "single_press_test",
+     "title": "Single press",
+     "driver": "tuya_rotary_knob_test"
+    },
+    {
+     "kind": "triggers",
+     "id": "double_press_test",
+     "title": "Double press",
+     "driver": "tuya_rotary_knob_test"
+    },
+    {
+     "kind": "triggers",
+     "id": "long_press_test",
+     "title": "Long press",
+     "driver": "tuya_rotary_knob_test"
+    },
+    {
+     "kind": "triggers",
+     "id": "toggle_action_test",
+     "title": "Toggle action",
+     "driver": "tuya_rotary_knob_test"
+    },
+    {
+     "kind": "triggers",
+     "id": "rotate_left",
+     "title": "Rotated left",
+     "driver": "tuya_smart_knob"
+    },
+    {
+     "kind": "triggers",
+     "id": "rotate_right",
+     "title": "Rotated right",
+     "driver": "tuya_smart_knob"
+    },
+    {
+     "kind": "triggers",
+     "id": "single_press",
+     "title": "Single press",
+     "driver": "tuya_smart_knob"
+    },
+    {
+     "kind": "triggers",
+     "id": "double_press",
+     "title": "Double press",
+     "driver": "tuya_smart_knob"
+    },
+    {
+     "kind": "triggers",
+     "id": "long_press",
+     "title": "Long press",
+     "driver": "tuya_smart_knob"
+    },
+    {
+     "kind": "triggers",
+     "id": "toggle_action",
+     "title": "Toggle action",
+     "driver": "tuya_smart_knob"
+    },
+    {
+     "kind": "triggers",
+     "id": "virtual_button_pressed",
+     "title": "Button pressed",
+     "driver": "virtual_button"
+    },
+    {
+     "kind": "actions",
+     "id": "press_button",
+     "title": "Press a button",
+     "driver": "virtual_button"
+    }
+   ]
+  },
+  "JohanBendz/com.tuya.zigbee": {
+   "ref": "SDK3",
+   "pushed_at": "2026-10-01T22:13:01Z",
+   "cards": [
+    {
+     "kind": "actions",
+     "id": "resetEnergyMeter",
+     "title": "Reset Energy Meter",
+     "driver": "app"
+    },
+    {
+     "kind": "actions",
+     "id": "start_effect",
+     "title": "Start effect",
+     "driver": "app"
+    },
+    {
+     "kind": "triggers",
+     "id": "target_distance_changed",
+     "title": "Target distance changed",
+     "driver": "app"
+    },
+    {
+     "kind": "actions",
+     "id": "move_open",
+     "title": "Open",
+     "driver": "curtain_module"
+    },
+    {
+     "kind": "actions",
+     "id": "move_close",
+     "title": "Close",
+     "driver": "curtain_module"
+    },
+    {
+     "kind": "actions",
+     "id": "move_open_2gang",
+     "title": "Open",
+     "driver": "curtain_module_2_gang"
+    },
+    {
+     "kind": "actions",
+     "id": "move_close_2gang",
+     "title": "Close",
+     "driver": "curtain_module_2_gang"
+    },
+    {
+     "kind": "triggers",
+     "id": "fingerbot_button_pressed",
+     "title": "Button pressed",
+     "driver": "fingerbot"
+    },
+    {
+     "kind": "triggers",
+     "id": "fingerbot_battery_low",
+     "title": "Battery low",
+     "driver": "fingerbot"
+    },
+    {
+     "kind": "actions",
+     "id": "fingerbot_push",
+     "title": "Push",
+     "driver": "fingerbot"
+    },
+    {
+     "kind": "triggers",
+     "id": "handheld_remote_4_buttons",
+     "title": "Button was pressed",
+     "driver": "handheld_remote_4_buttons"
+    },
+    {
+     "kind": "triggers",
+     "id": "siren_alarm",
+     "title": "Siren Alarm",
+     "driver": "siren"
+    },
+    {
+     "kind": "actions",
+     "id": "siren_alarm_state",
+     "title": "Change the alarm state",
+     "driver": "siren"
+    },
+    {
+     "kind": "actions",
+     "id": "siren_alarm_duration",
+     "title": "Switch on siren for X Seconds",
+     "driver": "siren"
+    },
+    {
+     "kind": "actions",
+     "id": "siren_volume_setting",
+     "title": "Set volume of siren",
+     "driver": "siren"
+    },
+    {
+     "kind": "actions",
+     "id": "siren_alarm_tune",
+     "title": "Set the alarm tune",
+     "driver": "siren"
+    },
+    {
+     "kind": "triggers",
+     "id": "alarm_siren",
+     "title": "Siren Alarm",
+     "driver": "sirentemphumidsensor"
+    },
+    {
+     "kind": "actions",
+     "id": "alarm_state",
+     "title": "Change the alarm state",
+     "driver": "sirentemphumidsensor"
+    },
+    {
+     "kind": "actions",
+     "id": "alarm_duration",
+     "title": "Switch on siren for X Seconds",
+     "driver": "sirentemphumidsensor"
+    },
+    {
+     "kind": "actions",
+     "id": "siren_volume",
+     "title": "Set volume of siren",
+     "driver": "sirentemphumidsensor"
+    },
+    {
+     "kind": "actions",
+     "id": "alarm_tune",
+     "title": "Set the alarm tune",
+     "driver": "sirentemphumidsensor"
+    },
+    {
+     "kind": "triggers",
+     "id": "smart_button_switch_buttons",
+     "title": "Button Action",
+     "driver": "smart_button_switch"
+    },
+    {
+     "kind": "triggers",
+     "id": "smart_knob_switch_button",
+     "title": "Button",
+     "driver": "smart_knob_switch"
+    },
+    {
+     "kind": "triggers",
+     "id": "smart_remote_1_button",
+     "title": "Button Action",
+     "driver": "smart_remote_1_button"
+    },
+    {
+     "kind": "triggers",
+     "id": "smart_remote_1_button_2",
+     "title": "Button Action",
+     "driver": "smart_remote_1_button_2"
+    },
+    {
+     "kind": "triggers",
+     "id": "smart_remote_4_buttons",
+     "title": "Button Action",
+     "driver": "smart_remote_4_buttons"
+    },
+    {
+     "kind": "conditions",
+     "id": "window_open_status_get",
+     "title": "Window !{{is|is not}} open",
+     "driver": "thermostatic_radiator_valve"
+    },
+    {
+     "kind": "actions",
+     "id": "window_open_status_set",
+     "title": "Set window open status",
+     "driver": "thermostatic_radiator_valve"
+    },
+    {
+     "kind": "actions",
+     "id": "wall_move_open",
+     "title": "Open",
+     "driver": "wall_curtain_switch"
+    },
+    {
+     "kind": "actions",
+     "id": "wall_move_close",
+     "title": "Close",
+     "driver": "wall_curtain_switch"
+    },
+    {
+     "kind": "triggers",
+     "id": "wall_remote_1_gang_buttons",
+     "title": "Button Action",
+     "driver": "wall_remote_1_gang"
+    },
+    {
+     "kind": "triggers",
+     "id": "wall_remote_2_gang_buttons",
+     "title": "Button Action",
+     "driver": "wall_remote_2_gang"
+    },
+    {
+     "kind": "triggers",
+     "id": "wall_remote_3_gang_buttons",
+     "title": "Button Action",
+     "driver": "wall_remote_3_gang"
+    },
+    {
+     "kind": "triggers",
+     "id": "wall_remote_4_gang_buttons",
+     "title": "Button Action",
+     "driver": "wall_remote_4_gang"
+    },
+    {
+     "kind": "triggers",
+     "id": "wall_remote_4_gang_buttons_2",
+     "title": "Button",
+     "driver": "wall_remote_4_gang_2"
+    },
+    {
+     "kind": "triggers",
+     "id": "wall_remote_4_gang_buttons_3",
+     "title": "Button Action",
+     "driver": "wall_remote_4_gang_3"
+    },
+    {
+     "kind": "triggers",
+     "id": "wall_remote_6_gang_buttons",
+     "title": "Button Action",
+     "driver": "wall_remote_6_gang"
+    }
+   ]
+  }
+ },
+ "generated": "2026-10-01",
+ "note": "read-only inventory of peer apps flow cards (ideas for our own cards; never copied automatically)"
+}
