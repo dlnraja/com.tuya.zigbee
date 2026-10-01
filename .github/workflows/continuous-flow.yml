@@ -51,10 +51,10 @@ on:
   push:
     branches: [master]
     paths:
+      # WHY(ci-consolidation 2026-10): tools/** and .github/state/** removed — state is gitignored and
+      # CI-script pushes are covered by unified-ci (saved ~1/3 of 1700 runner-min / 14 d).
       - 'drivers/**'
       - 'lib/**'
-      - 'tools/**'
-      - '.github/state/**'
       - 'data/mfs_db.json'
       - 'lib/tuya/fingerprints.json'
       - 'package.json'
@@ -92,7 +92,8 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 30
     permissions:
-      contents: read
+      # WHY(ci-consolidation 2026-10): was contents: read, so the manual mode=apply push could never succeed.
+      contents: write
       issues: write
       pull-requests: write
     env:
@@ -258,19 +259,15 @@ jobs:
 
       - name: Commit state (apply only)
         if: github.event.inputs.mode == 'apply' && success()
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add -A
-          if git diff --cached --quiet; then
-            echo "No changes to commit"
-          else
-            # [skip ci] keeps this out of the publish pipeline, and the rebase
-            # avoids losing the race against the other scheduled writers.
-            git commit -m "continuous-flow: apply enrichments (run ${{ github.run_id }}) [skip ci]"
-            git pull --rebase --autostash origin "${GITHUB_REF_NAME}" || true
-            git push
-          fi
+          # Gated + capped + loop-guarded commit (scripts/ci/safe-auto-commit.js): local gates on the
+          # staged files, max 1 auto-commit/day, rebase-retry push, refusal → single comment on #557.
+          node scripts/ci/safe-auto-commit.js --id=continuous-flow --branch="${GITHUB_REF_NAME}" \
+            --message="continuous-flow: apply enrichments (run ${{ github.run_id }})" --paths="."
 
       - name: Notify on failure
         if: failure()

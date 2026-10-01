@@ -29,6 +29,8 @@ on:
 
 permissions:
   contents: write
+  issues: write  # safe-auto-commit: single refusal comment on the tracking issue
+  actions: read  # download digest-leads artifacts (feedback loop)
 
 concurrency:
   group: market-couples-intake
@@ -155,17 +157,9 @@ jobs:
       - name: 📝 Commit state + compose (master)
         if: ${{ github.event_name == 'schedule' || inputs.dry_run != true }}
         run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           node scripts/maintenance/sync-appjson-zigbee.js || true
-          git add .github/state/market-couples/ .github/state/mfr-pid-cross-ref.json .github/state/all-mfr-pid-pairs.json 2>/dev/null || true
-          git add scripts/sync/data/blakadder.json scripts/sync/data/z2m.json scripts/sync/data/zha.json 2>/dev/null || true
-          git add drivers/*/driver.compose.json data/mfs_db.json app.json reports/P169_MFS_DB_ALIGN_LATEST.json 2>/dev/null || true
-          if git diff --staged --quiet; then
-            echo "Nothing to commit"
-            exit 0
-          fi
           VER=$(node -p "require('./app.json').version" 2>/dev/null || echo '?')
-          git commit -m "market(P2232): max-source intake + apply-safe couples v${VER} [skip ci]"
-          git pull --rebase origin master || true
-          git push origin HEAD:master
+          # Gated + capped + loop-guarded commit (scripts/ci/safe-auto-commit.js)
+          node scripts/ci/safe-auto-commit.js --id=market-couples \
+            --message="market(P2232): max-source intake + apply-safe couples v${VER}" \
+            --paths="scripts/sync/data/blakadder.json scripts/sync/data/z2m.json scripts/sync/data/zha.json drivers data/mfs_db.json app.json reports/P169_MFS_DB_ALIGN_LATEST.json"
