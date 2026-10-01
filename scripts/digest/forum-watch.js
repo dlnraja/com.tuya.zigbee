@@ -20,6 +20,7 @@ const fs = require('fs');
 const path = require('path');
 const L = require('./lib');
 const E = require('./enrich');
+const LD = require('./leads');
 
 const BASE = process.env.FORUM_BASE || 'https://community.homey.app';
 const TOPIC = process.env.FORUM_TOPIC || '140352';
@@ -76,6 +77,9 @@ L.run(async () => {
   try { if (fs.existsSync(DRIVERS)) idx = E.buildIndex(path.resolve(DRIVERS, '..')); } catch (e) { L.log(`index failed: ${e.message}`); }
   const rows = []; const missing = new Set();
   for (const p of posts) {
+    // Feedback loop: text + ≤3 screenshots (tesseract OCR, heuristic) + linked Z2M/Blakadder pages.
+    const imgs = [...String(p.cooked).matchAll(/<img[^>]+src="([^"]+\/uploads\/[^"]+\.(?:png|jpe?g|webp))"/gi)].map((m) => (m[1].startsWith('//') ? 'https:' + m[1] : m[1].startsWith('/') ? BASE + m[1] : m[1]));
+    try { await LD.recordDeep('forum', `${BASE}/t/${TOPIC}/${p.post_number}`, strip(p.cooked) + '\n' + imgs.join('\n'), { idx }); } catch (e) { L.log(`leads: ${e.message}`); }
     const ex = E.extract(strip(p.cooked));
     if (E.isEmpty(ex) && !Object.keys(ex.txrx).length && !ex.refMention) { rows.push(`- [#${p.post_number}](${BASE}/t/${TOPIC}/${p.post_number}) ${L.esc(p.username)} · ${L.paris(p.created_at)} — _pas d'identifiant technique_`); continue; }
     let leads;
