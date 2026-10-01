@@ -115,6 +115,7 @@ jobs:
       - name: "Process dlnraja issues & PRs"
         id: own_repo
         continue-on-error: true
+        timeout-minutes: 15
         env:
           GH_PAT: ${{ secrets.GH_PAT }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -139,6 +140,9 @@ jobs:
       - name: "Process JohanBendz issues & PRs"
         id: upstream_repo
         continue-on-error: true
+        # WHY(2026-10): this read-only shadow pass (200 items) ran until the 45-min job limit and
+        # cancelled the whole run. Capped; JohanBendz is also covered incrementally by daily-digest.
+        timeout-minutes: 12
         env:
           GH_PAT: ${{ secrets.GH_PAT }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -147,7 +151,7 @@ jobs:
           AI_PLAN_MODE: forfait
           AI_ALLOW_PAID: 'false'
           STALE_DAYS: "14"
-          MAX_ITEMS: ${{ inputs.max_items || '200' }}
+          MAX_ITEMS: ${{ inputs.max_items || '60' }}
           INCLUDE_CLOSED: ${{ inputs.include_closed || 'false' }}
           FORCE_REPROCESS: ${{ inputs.force_reprocess || 'false' }}
           REPOS: "JohanBendz/com.tuya.zigbee"

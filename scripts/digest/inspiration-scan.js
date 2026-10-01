@@ -141,7 +141,7 @@ L.run(async () => {
     `${scanned} issue(s)/PR(s) (ouvertes + fermées, avec commentaires) analysées ce passage · ${st.scanned} au total · ${repoList.length} repo(s).\n\n` +
     `${lines.join('\n')}${found.length > 40 ? `\n- … +${found.length - 40}` : ''}\n\n` +
     (ideas.length ? `### 💡 Idées de workflows (suggestions, non adoptées)\n${ideas.join('\n')}\n\n` : '') +
-    (looks.length ? `### Recherche gratuite (Z2M cache · Blakadder · code search ${s.codeSearchUsed}/5${s.codeSearchBlocked ? ' — indisponible ce passage' : ''})\n${looks.join('\n')}\n\n` : '') +
+    (looks.length ? `### Recoupement externe gratuit (caches · code search ${s.codeSearchUsed}/5${s.codeSearchBlocked ? ' — indisponible ce passage' : ''})\n${looks.join('\n')}\n\n` : '') +
     `${E.LEGEND}\n\n<sub>daily-digest.yml (inspiration) · lecture seule · run ${process.env.GITHUB_RUN_ID || 'local'}</sub>`;
   L.summary(md);
   await L.postComment(issue, md.length > 60000 ? md.slice(0, 60000) + '\n…(tronqué)' : md);

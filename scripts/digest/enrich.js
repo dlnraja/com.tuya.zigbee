@@ -105,11 +105,11 @@ function extract(raw) {
   }
   out.txrx = tx;
   const refs = [];
-  for (const m of text.matchAll(/github\.com\/Koenkk\/zigbee-herdsman-converters\/(?:pull|issues)\/(\d+)/gi)) refs.push(`z2m-converters#${m[1]}`);
-  for (const m of text.matchAll(/github\.com\/Koenkk\/zigbee2mqtt\/(?:pull|issues)\/(\d+)/gi)) refs.push(`zigbee2mqtt#${m[1]}`);
-  for (const m of text.matchAll(/github\.com\/zigpy\/zha-device-handlers\/(?:pull|issues)\/(\d+)/gi)) refs.push(`zha-quirks#${m[1]}`);
-  for (const m of text.matchAll(/zigbee2mqtt\.io\/devices\/([A-Za-z0-9_.\-]{2,60})\.html/gi)) refs.push(`z2m-device:${m[1]}`);
-  for (const m of text.matchAll(/github\.com\/Koenkk\/zigbee-herdsman-converters\/blob\/[^/\s]+\/(src\/[A-Za-z0-9_/.\-]{3,80})/gi)) refs.push(`z2m-src:${m[1]}`);
+  for (const m of text.matchAll(/github\.com\/Koenkk\/zigbee-herdsman-converters\/(?:pull|issues)\/(\d+)/gi)) refs.push(`ext-conv#${m[1]}`);
+  for (const m of text.matchAll(/github\.com\/Koenkk\/zigbee2mqtt\/(?:pull|issues)\/(\d+)/gi)) refs.push(`ext-app#${m[1]}`);
+  for (const m of text.matchAll(/github\.com\/zigpy\/zha-device-handlers\/(?:pull|issues)\/(\d+)/gi)) refs.push(`ext-quirk#${m[1]}`);
+  for (const m of text.matchAll(/zigbee2mqtt\.io\/devices\/([A-Za-z0-9_.\-]{2,60})\.html/gi)) refs.push(`ext-device:${m[1]}`);
+  for (const m of text.matchAll(/github\.com\/Koenkk\/zigbee-herdsman-converters\/blob\/[^/\s]+\/(src\/[A-Za-z0-9_/.\-]{3,80})/gi)) refs.push(`ext-src:${m[1]}`);
   out.ref = uniq(refs).slice(0, 10);
   out.refMention = (text.match(/\b(z2m|zigbee2mqtt|zha|quirks?|herdsman)\b/gi) || []).length;
   out.uuid = uniq((text.match(/\b[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}\b/gi) || []).map((s) => s.toLowerCase())).slice(0, 5);
@@ -273,7 +273,7 @@ function renderLeads(c) {
   if (c.flow.length) L.push(`flow cards: ${fmt(c.flow, (x) => x.v)}`);
   const tx = Object.entries(c.txrx || {});
   if (tx.length) L.push(`TX/RX: ${tx.map(([k, v]) => `${k}×${v}`).join(' ')}`);
-  if (c.ref.length || c.refMention) L.push(`Z2M/ZHA: ${[c.ref.length ? fmt(c.ref) : '', c.refMention ? `${c.refMention} mention(s)` : ''].filter(Boolean).join(' — ')}`);
+  if (c.ref.length || c.refMention) L.push(`Réf. externes: ${[c.ref.length ? fmt(c.ref) : '', c.refMention ? `${c.refMention} mention(s)` : ''].filter(Boolean).join(' — ')}`);
   if (c.uuid.length) L.push(`diag UUID: ${fmt(c.uuid)}`);
   return L.join(' · ');
 }
