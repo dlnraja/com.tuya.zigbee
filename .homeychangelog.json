@@ -907,6 +907,9 @@
       ]
     }
   ],
+  "9.0.1305": {
+    "en": "v9.0.1305: automated publish, manifest sync, and Homey test promotion."
+  },
   "9.0.1304": {
     "en": "v9.0.1304: automated publish, manifest sync, and Homey test promotion."
   },
@@ -961,10 +964,7 @@
   "9.0.1287": {
     "en": "Improved battery life for coin-cell sensors and remotes (no proactive PowerCfg polls). Restored TS0043 wireless button interview clusters for pairing. Radar presence zero-clear gated again after meaningful distance."
   },
-  "9.0.1286": {
-    "en": "v9.0.1286: automated publish, manifest sync, and Homey test promotion."
-  },
-  "9.0.1305": {
-    "en": "v9.0.1305: automated publish, manifest sync, and Homey test promotion."
+  "9.0.1306": {
+    "en": "v9.0.1306: automated publish, manifest sync, and Homey test promotion."
   }
 }
