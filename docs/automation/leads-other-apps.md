@@ -84,8 +84,12 @@ Coverage reached in this pass:
 | issue/PR comments, both tracked repos | complete history (back to 2020-10 / 2025-08) |
 | issues/PRs, both tracked repos | complete history, open + closed |
 | peer Homey Zigbee app repos (4) | issues, comments and every `driver.compose.json` |
-| forks of the root repo (196) | 169 forks checked (130 with pushes after forking, every branch compared); continues from page 2 |
-| forks of this repo (11) | pending (next run) |
+| forks of the root repo (196) | all 182 listed forks checked (forks never pushed after forking skipped; every branch of the others compared) |
+| forks of this repo (11) | all checked |
+
+After a full pass the scanner switches to incremental mode: issues/comments with `since=<previous pass>`,
+forks re-listed but only re-compared when `pushed_at` changed. The 29 mfrs still not in a driver are the
+#556 monthly-scan list already assessed above (no exact couple + driver evidence).
 
 ### Applied
 

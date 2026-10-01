@@ -152,12 +152,22 @@ function extract(text, url, idx, out) {
 
 // ---------- phases ----------
 async function pagedPhase(state, repos, listPath, textOf) {
+  const runStart = new Date().toISOString();
   for (const repo of repos) {
     const st = state[repo] || (state[repo] = { page: 1, done: false });
+    // History fully read once → later runs only fetch what changed since the previous pass.
+    if (st.done && !st.sinceMode) { st.sinceMode = true; st.since = st.doneAt || runStart; st.page = 1; st.done = false; }
+    if (st.sinceMode && st.done) { st.page = 1; st.done = false; }
     while (!st.done && !stopped) {
-      const items = await gh(listPath(repo, st.page));
+      const url = listPath(repo, st.page) + (st.sinceMode && st.since ? `&since=${encodeURIComponent(st.since)}` : '');
+      const items = await gh(url);
       if (items === null) {break;}
-      if (!Array.isArray(items) || items.length === 0) { st.done = true; break; }
+      if (!Array.isArray(items) || items.length === 0) {
+        st.done = true;
+        st.doneAt = runStart;
+        if (st.sinceMode) {st.since = runStart;}
+        break;
+      }
       for (const it of items) {textOf(it);}
       st.page++;
       st.last = items[items.length - 1].created_at || items[items.length - 1].updated_at;
@@ -168,7 +178,8 @@ async function pagedPhase(state, repos, listPath, textOf) {
 async function phaseForks(scan, idx, out) {
   for (const rootRepo of scan.forkRoots) {
     const st = scan.forks[rootRepo] || (scan.forks[rootRepo] = { page: 1, done: false, seen: {} });
-    if (st.done) {continue;}
+    // Full pass finished → restart the fork list; unchanged forks (same pushed_at) cost no extra call.
+    if (st.done) { st.page = 1; st.done = false; }
     const meta = st.base ? null : await gh(`repos/${rootRepo}`);
     if (meta) {st.base = meta.default_branch;}
     if (!st.base) {return;}
