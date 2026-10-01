@@ -376,6 +376,21 @@ const FORBIDDEN = [
     driver: 'thermostat_tuya_dp',
     mfrs: ['_TYST11_pisltm67', '_TZE200_pisltm67', '_TZE204_pisltm67'],
   },
+  // WHY(stable 2026-10): auto-fix bleed added these TS0002 2-gang couples to switch_1gang too
+  // (61 new fp collisions, check:p2728). Support stays on switch_2gang / doorbell (master SSOT P2761).
+  {
+    id: 'stable-ts0002-2gang-not-switch1gang',
+    driver: 'switch_1gang',
+    mfrs: [
+      '_TZ3000_54hjn4vs', '_TZ3000_5gey1ohx', '_TZ3000_aaifmpuq', '_TZ3000_huvxrx4i', '_TZ3000_i9w5mehz',
+      '_TZ3000_in5qxhtt', '_TZ3000_irrmjcgi', '_TZ3000_mufwv0ry', '_TZ3000_ogpla3lh', '_TZ3000_pxfjrzyj',
+    ],
+  },
+  {
+    id: 'stable-ladpngdx-doorbell-not-climate',
+    driver: 'climate_sensor',
+    mfrs: ['_TZ1800_ladpngdx'],
+  },
   {
     id: 'p102-din-not-btn-plug',
     driver: 'button_wireless_plug',

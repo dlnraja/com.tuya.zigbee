@@ -65,9 +65,9 @@ jobs:
         continue-on-error: true
         run: node .github/scripts/ai-enrichment-engine.js
         env:
-          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
-          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
-          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          OPENAI_API_KEY: '' # cancelled paid plan (2026-10): provider neutralized
+          ANTHROPIC_API_KEY: '' # cancelled paid plan (2026-10): provider neutralized
+          GEMINI_API_KEY: ${{ vars.AI_DISABLED != 'true' && secrets.GEMINI_API_KEY || '' }}
 
       - name: "🟡 Step 3: Run Ultimate Validation"
         continue-on-error: true

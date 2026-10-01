@@ -189,7 +189,7 @@ jobs:
         timeout-minutes: 18
         env:
           SMART_FETCH_READER_FALLBACK: "1"
-          FIRECRAWL_API_KEY: ${{ secrets.FIRECRAWL_API_KEY }}
+          FIRECRAWL_API_KEY: ${{ vars.FIRECRAWL_DISABLED != 'true' && secrets.FIRECRAWL_API_KEY || '' }}
           REPLY_TOPICS: "140352"
           FORUM_AUTO_POST: "0"
         run: |
@@ -266,7 +266,7 @@ jobs:
           NODE_OPTIONS: "--max-old-space-size=2048"
           GH_PAT: ${{ secrets.GH_PAT }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          FIRECRAWL_API_KEY: ${{ secrets.FIRECRAWL_API_KEY }}
+          FIRECRAWL_API_KEY: ${{ vars.FIRECRAWL_DISABLED != 'true' && secrets.FIRECRAWL_API_KEY || '' }}
           SMART_FETCH_READER_FALLBACK: "1"
         run: |
           if [ ! -f tools/ci/mega-crawler.js ]; then
@@ -300,7 +300,7 @@ jobs:
         timeout-minutes: 8
         env:
           SMART_FETCH_READER_FALLBACK: "1"
-          FIRECRAWL_API_KEY: ${{ secrets.FIRECRAWL_API_KEY }}
+          FIRECRAWL_API_KEY: ${{ vars.FIRECRAWL_DISABLED != 'true' && secrets.FIRECRAWL_API_KEY || '' }}
         run: |
           if [ ! -f tools/ci/forum-fetch-146735.js ]; then
             echo "forum-fetch-146735.js missing — skip"
@@ -322,7 +322,7 @@ jobs:
         timeout-minutes: 12
         env:
           SMART_FETCH_READER_FALLBACK: "1"
-          FIRECRAWL_API_KEY: ${{ secrets.FIRECRAWL_API_KEY }}
+          FIRECRAWL_API_KEY: ${{ vars.FIRECRAWL_DISABLED != 'true' && secrets.FIRECRAWL_API_KEY || '' }}
           REPLY_TOPICS: "140352"
           FORUM_AUTO_POST: "0"
         run: |
@@ -348,7 +348,7 @@ jobs:
         timeout-minutes: 8
         env:
           SMART_FETCH_READER_FALLBACK: "1"
-          FIRECRAWL_API_KEY: ${{ secrets.FIRECRAWL_API_KEY }}
+          FIRECRAWL_API_KEY: ${{ vars.FIRECRAWL_DISABLED != 'true' && secrets.FIRECRAWL_API_KEY || '' }}
           FORUM_AUTO_POST: "0"
         run: |
           if [ ! -f tools/ci/forum-media-deep-scan.js ]; then
