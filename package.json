@@ -633,7 +633,7 @@
     "check:p2761": "node --test test/critical/p2761-johan-latest-comments.test.js",
     "check:p2762": "node --test test/critical/p2762-native-first-complementary.test.js",
     "check:p2763": "node --test test/critical/p2763-contact-source-latch.test.js",
-    "check:p2764": "node --test test/critical/p2764-firmware-quirks.test.js",
+    "check:p2764": "node --test test/critical/p2764-firmware-quirks.test.js test/critical/p2790-firmware-quirk-workarounds.test.js",
     "check:p2766": "node --test test/critical/p2766-lcd-th05z-battery-ssot.test.js",
     "check:p2768": "node --test test/critical/p2768-wifi-repair-views.test.js",
     "check:p2769": "node --test test/critical/p2769-signed-dp-value.test.js",

@@ -123,7 +123,46 @@ class WallSwitch4Gang1WayDevice extends UnifiedSwitchBase {
    */
   _setGangOnOff(gang, value) {
     const targetGang = this._isSubDevice ? this._gangNumber : gang;
-    return super._setGangOnOff(targetGang, value);
+    const result = super._setGangOnOff(targetGang, value);
+    this._armGangEchoRestore(targetGang, value);
+    return result;
+  }
+
+  /**
+   * P2790 — gang_echo_restore (firmware-quirks.json, pair-scoped, opt-in): some firmwares apply an
+   * app command on one gang to ALL gangs. Snapshot the other gangs, and if every one of them flipped
+   * to the commanded value within the window, re-send their previous state per endpoint.
+   */
+  _armGangEchoRestore(gang, value) {
+    try {
+      if (this._isSubDevice) {return;}
+      const FirmwareQuirks = require('../../lib/quirks/FirmwareQuirks');
+      const q = FirmwareQuirks.getRuntime(this, 'gang_echo_restore');
+      if (!q) {return;}
+      const { capabilityForOnOffEndpoint } = require('../../lib/utils/endpointCapability');
+      const gangs = Math.max(1, Number(this.gangCount) || 4);
+      const commanded = !!value;
+      const before = {};
+      for (let g = 1; g <= gangs; g++) {
+        if (g === gang) {continue;}
+        const cap = capabilityForOnOffEndpoint(g, gangs);
+        if (cap && this.hasCapability(cap)) {before[g] = this.getCapabilityValue(cap) === true;}
+      }
+      const windowMs = Math.max(500, Math.min(4000, Number(q.params?.windowMs) || 1500));
+      const { safeSetTimeout } = require('../../lib/utils/safe-timers');
+      safeSetTimeout(this, async () => {
+        if (this._destroyed) {return;}
+        const after = {};
+        for (const g of Object.keys(before).map(Number)) {
+          after[g] = this.getCapabilityValue(capabilityForOnOffEndpoint(g, gangs)) === true;
+        }
+        const restore = FirmwareQuirks.gangsToRestore(before, after, commanded);
+        for (const g of restore) {
+          this.log(`[FW-QUIRK] ${q.id}: gang ${g} echoed the gang ${gang} command → restoring ${before[g]}`);
+          try { await super._setGangOnOff(g, before[g]); } catch (e) { this.log(`[FW-QUIRK] restore gang ${g} failed: ${e.message}`); }
+        }
+      }, windowMs);
+    } catch (_e) { /* soft: never block a switch command */ }
   }
 
   async _setupPzaoSceneInterceptor() {
