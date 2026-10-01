@@ -47,12 +47,16 @@ L.run(async () => {
   const found = []; // { item, leads(render), unmapped[] }
   let scanned = 0;
   // Fair share: repos with the oldest cursor first, so every repo progresses.
-  repoList.sort((a, b) => String(st.cursors[a] || '').localeCompare(String(st.cursors[b] || '')));
+  // Own repo (EXTRA) always first; each repo gets at most PER_REPO items per run so a long
+  // backlog in one repo cannot starve the others.
+  repoList.sort((a, b) => (EXTRA.includes(b) - EXTRA.includes(a)) || String(st.cursors[a] || '').localeCompare(String(st.cursors[b] || '')));
+  const PER_REPO = Math.max(10, Number(process.env.INSPIRATION_PER_REPO || 40));
   for (const repo of repoList) {
     if (budget <= 0) break;
     const since = st.cursors[repo];
-    for (let page = 1; page <= 4 && budget > 0; page++) {
-      const q = `state=all&sort=updated&direction=asc&per_page=${Math.min(50, budget)}&page=${page}` + (since ? `&since=${encodeURIComponent(since)}` : '');
+    const stopAt = Math.max(0, budget - PER_REPO);
+    for (let page = 1; page <= 4 && budget > stopAt; page++) {
+      const q = `state=all&sort=updated&direction=asc&per_page=${Math.min(50, PER_REPO)}&page=${page}` + (since ? `&since=${encodeURIComponent(since)}` : '');
       let items;
       try { items = await L.gh(`/repos/${repo}/issues?${q}`, { allow404: true }); } catch (e) {
         if (e.name === 'StopDigest') throw e;
@@ -60,7 +64,7 @@ L.run(async () => {
       }
       if (!items || !items.length) break;
       for (const it of items) {
-        if (budget <= 0) break;
+        if (budget <= stopAt) break;
         // `since` is inclusive: skip the item that set the cursor last time
         if (since && it.updated_at === since && st.lastIds && st.lastIds[repo] === it.id) continue;
         let text = `${it.title}\n${it.body || ''}`;
@@ -71,7 +75,7 @@ L.run(async () => {
           } catch (e) { if (e.name === 'StopDigest') throw e; }
         }
         const c = E.check(E.extract(text), idx);
-        try { await LD.recordDeep(sourceOf(repo), it.html_url, text, { idx }); } catch (e) { if (e.name === 'StopDigest') throw e; L.log(`leads: ${e.message}`); }
+        try { if (/tuya/i.test(repo)) await LD.recordDeep(sourceOf(repo), it.html_url, text, { idx }); else LD.record(sourceOf(repo), it.html_url, text, { idx }); } catch (e) { if (e.name === 'StopDigest') throw e; L.log(`leads: ${e.message}`); }
         const unmapped = E.unmappedLeads(c).filter((u) => !u.startsWith('endpoint:')); // endpoints w/o device context = noise
         const fresh = unmapped.filter((u) => !seen.has(h8(u)));
         if (fresh.length) found.push({ it, repo, leads: E.renderLeads(c), fresh });
@@ -80,7 +84,7 @@ L.run(async () => {
         st.lastIds = { ...(st.lastIds || {}), [repo]: it.id };
         budget--; scanned++;
       }
-      if (items.length < 50) break;
+      if (items.length < Math.min(50, PER_REPO)) break;
     }
   }
   // ---- workflow ideas (bounded: ≤5 listings + ≤3 file reads per run)
