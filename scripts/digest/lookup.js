@@ -63,20 +63,20 @@ async function lookup(lead, root = process.cwd()) {
   if (kind === 'mfr') {
     for (const d of (Z2M.byMfr[val] || []).slice(0, 2)) {
       const dps = (d.dps || []).slice(0, 10).map((x) => `${x.id}:${L.esc(x.name)}`).join(', ');
-      out.push(`Z2M (cache ${String(Z2M.fetched || '').slice(0, 10)}) : ${L.esc(d.vendor)} ${L.esc(d.model)} — ${L.esc(d.description)} · pid ${(d.modelIds || []).filter((m) => /^[\w.-]+$/.test(m)).join('/') || '?'}${dps ? ` · DP ${dps}` : ''}${(d.exposes || []).length ? ` · exposes ${d.exposes.slice(0, 6).join(',')}` : ''}`);
+      out.push(`Réf. externe A (cache ${String(Z2M.fetched || '').slice(0, 10)}) : ${L.esc(d.vendor)} ${L.esc(d.model)} — ${L.esc(d.description)} · pid ${(d.modelIds || []).filter((m) => /^[\w.-]+$/.test(m)).join('/') || '?'}${dps ? ` · DP ${dps}` : ''}${(d.exposes || []).length ? ` · exposes ${d.exposes.slice(0, 6).join(',')}` : ''}`);
     }
-    for (const b of (BLAK.byMfr[val] || []).slice(0, 2)) out.push(`Blakadder : ${L.esc(b.vendor)} ${L.esc(b.model)} (${L.esc(b.category)}${b.productId ? ', ' + b.productId : ''}${b.compatibility ? ', ' + b.compatibility.join('/') : ''})`);
+    for (const b of (BLAK.byMfr[val] || []).slice(0, 2)) out.push(`Réf. externe B : ${L.esc(b.vendor)} ${L.esc(b.model)} (${L.esc(b.category)}${b.productId ? ', ' + b.productId : ''}${b.compatibility ? ', ' + b.compatibility.join('/') : ''})`);
     if (!out.length) {
       for (const repo of ['Koenkk/zigbee-herdsman-converters', 'zigpy/zha-device-handlers']) {
         const hits = await codeSearch(val, repo);
-        if (hits && hits.length) out.push(`${repo.split('/')[1]} : ${hits.map((h) => `[${L.esc(h.path)}](${h.url})`).join(', ')}`);
-        else if (hits) out.push(`${repo.split('/')[1]} : aucune occurrence`);
+        const tag = repo.includes('zha') ? 'Réf. externe D' : 'Réf. externe C';
+        if (hits && hits.length) out.push(`${tag} : ${hits.length} occurrence(s) dans le code (${hits.map((h) => L.esc(h.path.split('/').pop())).join(', ')})`);
+        else if (hits) out.push(`${tag} : aucune occurrence`);
       }
     }
-    out.push(`🔎 [Z2M](${webSearch(val, 'Koenkk/zigbee-herdsman-converters')}) · [ZHA](${webSearch(val, 'zigpy/zha-device-handlers')})`);
   } else if (kind === 'pid') {
     const z = (Z2M.byModel[val] || []).length;
-    out.push(`Z2M cache : ${z} device(s) avec ce modelId${BLAK.pids.has(val) ? ' · Blakadder : connu' : ''} · 🔎 [Z2M](${webSearch(val, 'Koenkk/zigbee-herdsman-converters')})`);
+    out.push(`Réf. externe A : ${z} device(s) avec ce modelId${BLAK.pids.has(val) ? ' · réf. externe B : connu' : ''}`);
   }
   return out;
 }
