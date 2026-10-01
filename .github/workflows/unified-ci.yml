@@ -11,6 +11,12 @@ name: 🛡️ Unified CI/CD Orchestrator
 on:
   push:
     branches: [ master, main ]
+    # WHY(ci-consolidation 2026-10): docs/report-only pushes must not re-run the full pipeline
+    paths-ignore:
+      - 'docs/**'
+      - 'reports/**'
+      - '**/*.md'
+      - '.github/ISSUE_TEMPLATE/**'
   pull_request:
     branches: [ master, main ]
   workflow_dispatch:
