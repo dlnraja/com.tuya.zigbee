@@ -280,6 +280,45 @@
       ],
       "type": "onoff_commands_single",
       "params": {}
+    },
+    {
+      "id": "zah67ekd_position_inverted_provisional",
+      "mfr": [
+        "_TZE200_zah67ekd"
+      ],
+      "pid": [
+        "TS0601"
+      ],
+      "bug": "intermediate position reported/applied inverted (requested 80% gives ~20%); DP1 open/stop/close direction is correct, so the motor-reverse setting is not a fix",
+      "workaround": "implemented, parked (enabled=false): invert position only (100 - x, RX and TX) via the existing cover _invertedPosition path; DP1 untouched. Users can already enable the per-device invert_position setting",
+      "status": "runtime",
+      "location": "lib/devices/UnifiedCoverBase.js (FirmwareQuirks.coverPositionInverted)",
+      "source": [
+        "https://github.com/JohanBendz/com.tuya.zigbee/issues/1472#issuecomment-5919098357"
+      ],
+      "type": "invert_cover_position",
+      "params": {},
+      "enabled": false,
+      "enableWhen": "Homey diagnostic or user confirmation on the current app (historical report from the old app only; other firmware of this id may report correctly)"
+    },
+    {
+      "id": "riwp3k79_color_temperature_reversed_provisional",
+      "mfr": [
+        "_TZ3000_riwp3k79"
+      ],
+      "pid": [],
+      "pidUnknown": true,
+      "bug": "warm and cold white reversed (setting warm gives cold and vice versa); RGB not settable (no cluster detail)",
+      "workaround": "implemented, parked (enabled=false): light_temperature mapped 1 - x on TX and RX (TuyaZigBeeLightDevice). pid not reported in the source, so the record matches the manufacturer name only. RGB issue not addressed (no data)",
+      "status": "runtime",
+      "location": "lib/TuyaZigBeeLightDevice.js (FirmwareQuirks.mapColorTemperature)",
+      "source": [
+        "https://github.com/JohanBendz/com.tuya.zigbee/issues/51"
+      ],
+      "type": "invert_color_temperature",
+      "params": {},
+      "enabled": false,
+      "enableWhen": "second source or user confirmation with a diagnostic (single old report, no pid)"
     }
   ]
 }
