@@ -1,6 +1,7 @@
 'use strict';
 const { safeMultiply, safeParse } = require('../../lib/utils/tuyaUtils.js');
 const { UnifiedSensorBase } = require('../../lib/devices/UnifiedSensorBase');
+const ContactSourceLatch = require('../../lib/sensors/ContactSourceLatch');
 
 class ZigBeeContactSensorDevice extends UnifiedSensorBase {
   async onNodeInit({ zclNode }) {
@@ -17,6 +18,11 @@ class ZigBeeContactSensorDevice extends UnifiedSensorBase {
   async setCapabilityValue(capability, value) {
     if (capability === 'alarm_contact') {
       const finalValue = value;
+      // WHY(P2763b): single source of truth DP1 > IAS (lib/sensors/ContactSourceLatch).
+      // latch is complementary — never block the contact path.
+      const isIAS = this._iasOriginatedAlarm === true;
+      this._iasOriginatedAlarm = false;
+      if (!ContactSourceLatch.applyToDevice(this, isIAS, finalValue)) {return;}
       const now = Date.now();
       const state = this._contactState;
       if (state.confirmedValue === finalValue) {return;}
