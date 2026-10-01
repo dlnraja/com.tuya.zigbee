@@ -1,0 +1,55 @@
+{
+  "harvestedAt": "2026-10-01T10:31:32.930Z",
+  "repo": "dlnraja/com.tuya.zigbee",
+  "auth": "token",
+  "error": null,
+  "issues": [
+    {
+      "number": 556,
+      "title": "[Auto] New Tuya devices found in zigbee2mqtt",
+      "labels": [
+        "enhancement",
+        "auto-scan"
+      ],
+      "updatedAt": "2026-10-01T06:36:22Z",
+      "user": "github-actions[bot]",
+      "htmlUrl": "https://github.com/dlnraja/com.tuya.zigbee/issues/556",
+      "bodySnippet": "Monthly scan found new manufacturerName IDs:\n```\n_TZ3000_0lvv1d5b\n_TZ3000_1hypixdr\n_TZ3000_3o7r0mno\n_TZ3000_ahvrgyac\n_TZ3000_bbebkwjk\n_TZ3000_bu47m8pv\n_TZ3000_f6pgzqob\n_TZ3000_syetgitm\n_TZ3008_iooniers\n_TZ3008_qziabvzj\n_TZ3008_xvfd3nkp\n_TZ300A_57kqwetw\n_TZ3210_8etggm4u\n_TZ3210_cqqb61yo\n_TZ3210_mldzab8w\n_TZ3210_o235agwx\n_TZ3210_o4vasvef\n_TZ3210_tlwlmwm6\n_TZ3210_tqwyiitv\n_TZD200_sjjp9bti\n_TZE200_nkjintbl\n_TZE204_dak2k10o\n_TZE204_eaasry7v\n_TZE204_lyqazpe6\n_TZE204_pxbjch8m\n_TZE204_r6kfl9ta\n_TZE204_wsek35um\n_TZE20C_tjz9ad5g\n_TZE20C_ycab9txf\n_TZE284_5qfrnbqs\n_TZE284_hbxadcl0\n_TZE284_lyqazpe6\n_TZE284_n41i9jyt\n_TZE284_pxwixtky\n_TZE284_rfpyqax9\n_TZE284_tokhh9pf\n_TZE284_znkkcauq\n_TZE284_zuq5xxib\n```\nQueued for enrich; bot triage will close after processing."
+    },
+    {
+      "number": 554,
+      "title": "Bug report - TS0046 / _TZ3000_iszegwpd 6 Gang Wall Remote fails to pair although Zigbee interview succeeds",
+      "labels": [
+        "bug"
+      ],
+      "updatedAt": "2026-09-29T22:47:52Z",
+      "user": "draqlek",
+      "htmlUrl": "https://github.com/dlnraja/com.tuya.zigbee/issues/554",
+      "bodySnippet": "### Describe the bug\n\nI am unable to pair a 6-button Zigbee remote SS9600ZB-V2 / T066 with Homey Pro using the Universal Tuya Zigbee / Tuya Unified app.\n\nThe device has the following Zigbee fingerprint:\n\n> Model ID: TS0046\n> Manufacturer: _TZ3000_iszegwpd\n> Type: EndDevice\n\nWhen I select 6 Gang Wall Remote in the app and put the remote into pairing mode, Homey displays that the device is being added, but the process ends with:\n\n“Connection impossible”\n\nHowever, the device actually joins the Homey Zigbee network and appears in Homey Developer Tools → Zigbee.\n\nA manual Zigbee Interview completes successfully. The device reports:\n\n> modelId: TS0046\n> manufacturerName: _TZ3000_iszegwpd\n> appVersion: 68\n> hwVersion: 1\n> batteryVoltage: 30\n> batteryPercentageRemaining: 200\n\nThe Interview detects endpoints 1–4 successfully.\n\nI also tested the device with the older Tuya Zigbee Homey app and experienced the same pairing failure.\n\n\n\n### To Reproduce\n\nSteps to reproduce the behavior:\n\n1. Open Homey and select Add Device.\n2. Select Universal Tuya Zigbee / Tuya Unified.\n3. Select 6 Gang Wall Remote.\n4. Remove the battery from the SS9600ZB-V2 for about 20 seconds and reinstall it.\n5. Put the remote into pairing mode by holding a button until the LED starts blinking.\n6. Homey displays that the device is being added.\n7. Keep pressing buttons periodically during pairing to keep the battery-powered Zigbee EndDevice awake.\n8. Pairing eventually fails with “Connection impossible”.\n9. Open Homey Developer Tools → Zigbee.\n10. The device is visible there as: TS0046 / _TZ3000_iszegwpd\n11. Run a manual Interview.\n12. The Interview completes successfully, despite the pairing process having failed.\n13. I also repeated the Interview while alternating buttons 5 and 6. The result was the same.\n\n\n\n### Expected behavior\n\nThe device should be successfully created in Homey as 6 Gang Wall Remote, because it joins the Homey Zigbee network successfully, its Zigbee Interview completes successfully, and its fingerprint is:\n\n> TS0046 / _TZ3000_iszegwpd\n\n### App and Homey version\n\nHomey model: Homey Pro (Early 2023), v. 13.5.1\nUniversal Tuya v.9.0.1295 Test\n\n### Additional context\n\nDevice information:\n> Product name: T066\n> Model printed on box: SS9600ZB-V2\n> Model ID: TS0046\n> Manufacturer: _TZ3000_iszegwpd\n> Device type: EndDevice\n> appVersion: 68\n> hwVersion: 1\n\nThe important point is that this does not appear to be a Zigbee join problem: the device is successfully present in the Homey Zigbee network and can be interviewed successfully. The failure seems to occur later in the pairing / device creation process.\n\nThe full Zigbee Interview JSON:\n\n\n  \"ids\": {\n    \"modelId\": \"TS0046\",\n    \"manufacturerName\": \"_TZ3000_iszegwpd\"\n  },\n  \"endpoints\": {\n    \"ieeeAddress\": \"a4:c1:38:1e:c0:f6:a4:fd\",\n    \"networkAddress\": 12196,\n    \"modelId\": \"TS0046\",\n    \"manufacturerName\": \"_TZ3000_iszegwpd\",\n    \"endpointDescriptors\": [\n      {\n        \"status\": \"SUCCESS\",\n        \"nwkAddrOfInterest\": 12196,\n        \"_reserved\": 20,\n        \"endpointId\": 1,\n        \"applicationProfileId\": 260,\n        \"applicationDeviceId\": 0,\n        \"applicationDeviceVersion\": 0,\n        \"_reserved1\": 1,\n        \"inputClusters\": [\n          1,\n          6,\n          57344,\n          0\n        ],\n        \"outputClusters\": [\n          25,\n          10\n        ]\n      },\n      {\n        \"status\": \"SUCCESS\",\n        \"nwkAddrOfInterest\": 12196,\n        \"_reserved\": 14,\n        \"endpointId\": 2,\n        \"applicationProfileId\": 260,\n        \"applicationDeviceId\": 0,\n        \"applicationDeviceVersion\": 0,\n        \"_reserved1\": 1,\n        \"inputClusters\": [\n          6,\n          1,\n          6\n        ],\n        \"outputClusters\": []\n      },\n      {\n        \"status\": \"SUCCESS\",\n        \"nwkAddrOfInterest\": 12196,\n        \"_reserved\": 14,\n        \"endpointId\": 3,\n        \"applicationProfileId\": 260,\n        \"applicationDeviceId\": 0,\n        \"applicationDeviceVersion\": 0,\n        \"_reserved1\": 1,\n        \"inputClusters\": [\n          6,\n          1,\n          6\n        ],\n        \"outputClusters\": []\n      },\n      {\n        \"status\": \"SUCCESS\",\n        \"nwkAddrOfInterest\": 12196,\n        \"_reserved\": 14,\n        \"endpointId\": 4,\n        \"applicationProfileId\": 260,\n        \"applicationDeviceId\": 0,\n        \"applicationDeviceVersion\": 0,\n        \"_reserved1\": 1,\n        \"inputClusters\": [\n          6,\n          1,\n          6\n        ],\n        \"outputClusters\": []\n      }\n    ],\n    \"deviceType\": \"endde"
+    },
+    {
+      "number": 550,
+      "title": "Bug report - [Short description]",
+      "labels": [
+        "bug",
+        "reopened-by-user"
+      ],
+      "updatedAt": "2026-09-28T07:08:40Z",
+      "user": "HiepSVG",
+      "htmlUrl": "https://github.com/dlnraja/com.tuya.zigbee/issues/550",
+      "bodySnippet": "> Thank you for the assistance. However, the device is not working properly yet.\n> It is now added as Presence Sensor (Radar / mmWave), so it is a step forward.\n> However, the sensor gives off just LUX measurement, not presence/motion alarm\n> \n> I am running 9.0.1059 version\n> \n> I have used both options of adding devices and have turned off and on Homey several times --> the device is added successfully but\n> a) no change in Motion alarm, human presence or detection distance (even I am waving it in front of me). The luminance data is working OK by updating the values every 1-2 second\n> b) there is a button option which gives error \"Missing capability Listener: onoff\" when I push on it.\n> \n> <img width=\"684\" height=\"478\" alt=\"Image\" src=\"https://github.com/user-attachments/assets/7017b08f-4087-472f-98a9-b3f45db6b70a\" />\n> \n> \n> <img width=\"391\" height=\"493\" alt=\"Image\" src=\"https://github.com/user-attachments/assets/bf06bbac-4454-42da-906c-92121cdf82cf\" />\n> \n> <img width=\"395\" height=\"442\" alt=\"Image\" src=\"https://github.com/user-attachments/assets/ab04bff0-5715-4705-af3c-61fbab3bf336\" />\n> \n> Presence Sensor (Radar / mmWave)\n> Property\tValue\n> ID\tfcbe58a8-1a89-4486-bb88-178bb286dfe5\n> Name\tPresence Sensor (Radar / mmWave)\n> Class\tsensor\n> Driver\thomey:app:com.dlnraja.tuya.zigbee:presence_sensor_radar\n> Ready\tYes\n> Available\tYes\n> Warning\tNo\n> Custom icon\tNo\n> \n> Data\n> Key\tValue\n> token\t\"e1fd995c-1b42-4b44-948b-55d63156f90b\"\n> \n> Settings\n> Key\tValue\n> zb_product_id\t\"TS0601\"\n> zb_manufacturer_name\t\"_TZE204_gkfbdvyx\"\n> zb_receive_when_idle\t\"✓\"\n> zb_device_type\t\"router\"\n> zb_ieee_address\t\"a4:c1:38:86:ef:fe:6b:3c\"\n> zb_sw_build_id\t\"\"\n> zb_touchlink_group_ids\t\"\"\n> radar_sensitivity\t7\n> detection_range\t6\n> departure_delay\t30\n> entry_sensitivity\t7\n> illuminance_threshold\t50\n> sensor_mode\t\"on\"\n> smart_presence_while_occupied\ttrue\n> auto_unlock_occupied_on_empty\tfalse\n> homey_curtain_flip_help\tnull\n> energy_value_off\t0\n> energy_value_on\t0\n> zone_activity_disabled\tfalse\n> climate_exclude\tfalse\n> smart_adaptation_report\t\"══════════════════════════════════════════════════════════════════════\\n🤖 SMART DRIVER ADAPTATION REPORT\\n══════════════════════════════════════════════════════════════════════\\n\\n📱 Device: Presence Sensor (Radar / mmWave)\\n🔧 Driver: presence_sensor_radar\\n🏭 Manufacturer: Unknown\\n📦 Model: Unknown\\n\\n🎯 Real Capabilities Detected:\\n Required: \\n Optional: \\n Forbidden: \\n\\n⚖️ Comparison:\\n Status: ✅ CORRECT\\n\\n══════════════════════════════════════════════════════════════════════\"\n> smart_adaptation_date\t\"2026-09-18T12:22:19.469Z\"\n> smart_adaptation_success\ttrue\n> mcu_version\t\"2.0.3\"\n> \n> \n> Capabilities\n> ID\tTitle\tType\tValue\tSet Value\tLast Changed\n> alarm_motion\tMotion alarm\tboolean\tfalse\t\t4 minutes ago\n> measure_luminance\tLuminance\tnumber\t647\t\t0 seconds ago\n> alarm_human\tHuman presence\tboolean\tfalse\t\t4 minutes ago\n> onoff\tChannel 1\tboolean\tnull\t\n> measure_luminance.distance\tDetection Distance\tnumber\tnull\t\t\n> button.1\tButton 1\tboolean\tnull\t\n> \n> <img width=\"1379\" height=\"422\" alt=\"Image\" src=\"https://github.com/user-attachments/assets/3b68d2db-85e9-47db-a4f4-b27f179f0ef8\" /> \n\n _Originally posted by @HiepSVG in [#547](https://github.com/dlnraja/com.tuya.zigbee/issues/547#issuecomment-5730200202)_"
+    }
+  ],
+  "prs": [
+    {
+      "number": 555,
+      "title": "AI Monthly Audit - October 2026 | Risk: Updated",
+      "updatedAt": "2026-10-01T06:02:20Z",
+      "user": "dlnraja",
+      "htmlUrl": "https://github.com/dlnraja/com.tuya.zigbee/pull/555",
+      "draft": false
+    }
+  ],
+  "openIssueCount": 3,
+  "openPrCount": 1
+}
