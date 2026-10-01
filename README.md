@@ -4,11 +4,11 @@
 
 [![Version](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fraw.githubusercontent.com%2Fdlnraja%2Fcom.tuya.zigbee%2Fmaster%2Fapp.json&query=%24.version&label=version&color=blue)](https://homey.app/a/com.dlnraja.tuya.zigbee/)
 [![Drivers](https://img.shields.io/badge/drivers-434-brightgreen)](https://homey.app/a/com.dlnraja.tuya.zigbee/)
-[![Fingerprints](https://img.shields.io/badge/fingerprints-4,716%20unique-green)](https://homey.app/a/com.dlnraja.tuya.zigbee/)
+[![Fingerprints](https://img.shields.io/badge/fingerprints-4,717%20unique-green)](https://homey.app/a/com.dlnraja.tuya.zigbee/)
 [![SDK](https://img.shields.io/badge/SDK-3-orange)](https://apps.developer.homey.app/)
 [![License](https://img.shields.io/badge/license-GPL--3.0-green)](LICENSE)
 
-Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, sensors, lights, thermostats, covers, valves — **434 drivers**, **4,716 unique fingerprints**. No cloud required.
+Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, sensors, lights, thermostats, covers, valves — **434 drivers**, **4,717 unique fingerprints**. No cloud required.
 
 **What it does:**
 - Talks to devices on your Homey Zigbee mesh (Tuya DP `0xEF00` and standard ZCL)
@@ -33,10 +33,10 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 
 | Metric | Value |
 |--------|-------|
-| **App Version** | v9.0.1302 |
+| **App Version** | v9.0.1303 |
 | **Drivers** | 434 (381 Zigbee + 53 WiFi) |
-| **Unique Fingerprints** | 4,716 |
-| **Pairing Variants** | 18,841 (4 case combos per fingerprint) |
+| **Unique Fingerprints** | 4,717 |
+| **Pairing Variants** | 18,845 (4 case combos per fingerprint) |
 | **Unique Product IDs** | 933 |
 | **Flow Cards** | 6,031 |
 | **Unique Capabilities** | 170 |
@@ -65,7 +65,7 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 | 12 | `switch_4gang` | 302 |
 | 13 | `motion_sensor` | 291 |
 | 14 | `soil_sensor` | 282 |
-| 15 | `contact_sensor` | 233 |
+| 15 | `contact_sensor` | 237 |
 | 16 | `switch_3gang` | 233 |
 | 17 | `plug_energy_monitor` | 214 |
 | 18 | `thermostat_tuya_dp` | 200 |
@@ -103,6 +103,7 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 
 | Version | Changes |
 |---------|---------|
+| **v9.0.1303** | v9.0.1302: |
 | **v9.0.1302** | v9.0.1301: WiFi devices: the Repair screen (update IP / local key / protocol, or fetch the key again) now opens; the view file was missin… |
 | **v9.0.1301** | v9.0.1301: WiFi devices: the Repair screen (update IP / local key / protocol, or fetch the key again) now opens; the view file was missin… |
 | **v9.0.1300** | v9.0.1300: automated publish, manifest sync, and Homey test promotion. |
@@ -114,7 +115,6 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 | **v9.0.1294** | Johan comments: Fantem ZB003-X to motion, doorbell/PIR/contact misroutes fixed, tank DP2 cm lock. |
 | **v9.0.1293** | Johan L99 wave2: IAS leak family vs tuya twin, kb5noeto IAS motion, air9m6af 4-socket strip. |
 | **v9.0.1292** | Johan L99 transpose: Moes SR-ZS to 3-gang, air-monitor off IAS contact, TS0207 leak family enrich. |
-| **v9.0.1291** | Align P2572 Contre quoi with P2758: pay2byax only on contact_sensor_zigbee. |
 
 <!-- CHANGELOG_END -->
 
