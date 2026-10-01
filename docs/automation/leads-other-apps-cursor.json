@@ -110,8 +110,8 @@
     },
     "forks": {
       "JohanBendz/com.tuya.zigbee": {
-        "page": 2,
-        "done": false,
+        "page": 3,
+        "done": true,
         "seen": {
           "jrevillard/com.tuya.zigbee": "2025-06-06T12:31:00Z",
           "jurgenheine/com.tuya.zigbee": "2021-02-15T16:06:26Z",
@@ -260,7 +260,7 @@
           "jievie2000/com.tuya.zigbee": "2025-06-20T17:03:36Z",
           "IsaacNZ2/com.tuya.zigbee": "2025-10-30T23:12:36Z",
           "script0803/com.tuya.zigbee": "never-pushed",
-          "dlnraja/com.tuya.zigbee": "2026-10-01T21:52:28Z",
+          "dlnraja/com.tuya.zigbee": "2026-10-01T22:20:59Z",
           "Peter-Celica/com.tuya.zigbee": "2025-10-10T11:15:14Z",
           "kindberg95/com.tuya.zigbee": "2025-08-19T14:08:16Z",
           "willarentz/com.tuya.zigbee": "2025-10-01T21:45:37Z",
@@ -281,17 +281,48 @@
           "MisterBRB/com.tuya.zigbee": "2026-04-18T19:00:37Z",
           "pixelwiese/com.tuya.zigbee": "never-pushed",
           "macmonty/com.tuya.zigbee": "never-pushed",
-          "ErnieV/com.tuya.zigbee": "2026-07-01T18:19:39Z"
+          "ErnieV/com.tuya.zigbee": "2026-07-01T18:19:39Z",
+          "MartijnEisses/com.tuya.zigbee": "2026-05-30T11:32:16Z",
+          "arjanlemmers/com.tuya.zigbee": "never-pushed",
+          "MalmFredrik/com.tuya.zigbee": "never-pushed",
+          "map1981/com.tuya.zigbee": "2026-08-29T03:31:56Z",
+          "onesilop/com.tuya.zigbee": "2026-07-30T11:50:44Z",
+          "Diddern/com.tuya.zigbee": "never-pushed",
+          "Evil-Inside972/com.tuya.zigbee": "never-pushed",
+          "bubblefrog/com.tuya.zigbee": "2026-09-03T17:43:35Z",
+          "martijnbrands1978/com.tuya.zigbee": "never-pushed",
+          "mathieuChamois/com.tuya.zigbee": "2026-09-15T14:03:29Z",
+          "Technomorph303/com.tuya.zigbee": "2026-09-16T15:11:56Z",
+          "tecnicohome360-dev/com.tuya.zigbee": "2026-09-24T18:08:24Z",
+          "bertvm/com.tuya.zigbee": "never-pushed"
         },
         "base": "SDK3"
+      },
+      "dlnraja/com.tuya.zigbee": {
+        "page": 2,
+        "done": true,
+        "seen": {
+          "TheLostHomeyAppRepositories/com.tuya.zigbee-dlnraja": "2025-10-06T19:00:26Z",
+          "lsalmona/com.tuya.zigbee": "never-pushed",
+          "vl14-dev/com.tuya.zigbee": "2025-11-01T21:50:24Z",
+          "AreAArseth/com.tuya.zigbee": "2026-01-01T03:51:22Z",
+          "vgs14/com.tuya.zigbee": "never-pushed",
+          "packetninja/com.tuya.zigbee": "2026-01-30T10:14:49Z",
+          "michelhelsdingen/com.tuya.zigbee": "never-pushed",
+          "late4marshmellow/com.tuya.zigbee": "2026-06-05T22:28:22Z",
+          "PDominikPL/com.tuya.zigbee": "2026-06-02T06:56:58Z",
+          "jamesi8086/com.tuya.zigbee": "2026-08-22T17:39:44Z",
+          "evozong/com.tuya.zigbee": "2026-08-31T05:14:45Z"
+        },
+        "base": "master"
       }
     },
     "lastRun": {
-      "at": "2026-10-01T22:18:01.873Z",
-      "requests": 0,
-      "stopped": "budget 0 reached",
-      "mentionsSeen": 0,
-      "kept": 63,
+      "at": "2026-10-01T22:23:48.496Z",
+      "requests": 81,
+      "stopped": "completed phases",
+      "mentionsSeen": 56,
+      "kept": 64,
       "unknownMfrs": 5
     }
   }
