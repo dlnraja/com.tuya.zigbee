@@ -4,7 +4,12 @@ All notable changes to the **Tuya Unified Zigbee** app for Homey Pro.
 
 ---
 
-## [9.0.1294] - 2026-09-28
+## [9.0.1295] - 2026-10-01
+
+v9.0.1295: automated publish, manifest sync, and Homey test promotion.
+---
+
+ [9.0.1294] - 2026-09-28
 
 Johan comments: Fantem ZB003-X to motion, doorbell/PIR/contact misroutes fixed, tank DP2 cm lock.
 ---
