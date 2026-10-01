@@ -117,7 +117,7 @@ function gate(files) {
   const c = git('commit', '-q', '-m', `${MSG} [auto:${ID}] [skip ci]`);
   if (c.status !== 0) { await report('git commit a échoué', c.stderr); return; }
   for (let i = 1; i <= 3; i++) {
-    const r = git('pull', '-q', '--rebase', 'origin', BRANCH);
+    const r = git('pull', '-q', '--rebase', '--autostash', 'origin', BRANCH) // autostash: generators leave unrelated unstaged files;
     if (r.status !== 0) { git('rebase', '--abort'); await report('conflit de rebase (autre worker sur la même zone)', r.stderr); return; }
     const p = git('push', '-q', 'origin', `HEAD:${BRANCH}`);
     if (p.status === 0) { out('committed', 'true'); summary(`✅ safe-auto-commit [${ID}]: ${files.length} file(s) pushed to ${BRANCH}.`); return; }
