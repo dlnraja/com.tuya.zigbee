@@ -7,7 +7,10 @@
     "de": "Gerätezustand unter"
   },
   "hint": {
-    "en": "Checks if the device health score is below a given threshold"
+    "en": "Checks if the device health score is below a given threshold",
+    "fr": "Vérifie si le score de santé de l'appareil est inférieur à un seuil",
+    "nl": "Controleert of de gezondheidsscore van het apparaat onder een drempel ligt",
+    "de": "Prüft, ob der Zustandswert des Geräts unter einer Schwelle liegt"
   },
   "args": [
     {
@@ -19,7 +22,10 @@
       "name": "threshold",
       "type": "number",
       "title": {
-        "en": "Health threshold (0-100)"
+        "en": "Health threshold (0-100)",
+        "fr": "Seuil de santé (0-100)",
+        "nl": "Gezondheidsdrempel (0-100)",
+        "de": "Zustandsschwelle (0-100)"
       },
       "min": 0,
       "max": 100,
@@ -32,14 +38,20 @@
       "name": "health_score",
       "type": "number",
       "title": {
-        "en": "Current health score"
+        "en": "Current health score",
+        "fr": "Score de santé actuel",
+        "nl": "Huidige gezondheidsscore",
+        "de": "Aktueller Zustandswert"
       }
     },
     {
       "name": "health_status",
       "type": "string",
       "title": {
-        "en": "Health status"
+        "en": "Health status",
+        "fr": "État de santé",
+        "nl": "Gezondheidsstatus",
+        "de": "Zustand"
       }
     }
   ],

@@ -1,0 +1,70 @@
+{
+  "id": "device_offline_risk",
+  "title": {
+    "en": "Device may be going offline",
+    "fr": "L'appareil risque d'être hors ligne",
+    "nl": "Apparaat gaat mogelijk offline",
+    "de": "Gerät geht möglicherweise offline"
+  },
+  "hint": {
+    "en": "Fires once when the device has been silent for longer than the chosen multiple of its usual report interval, before it is marked unavailable.",
+    "fr": "Se déclenche une fois quand l'appareil est silencieux plus longtemps que le multiple choisi de son intervalle habituel, avant d'être marqué indisponible.",
+    "nl": "Gaat één keer af wanneer het apparaat langer stil is dan het gekozen veelvoud van zijn gebruikelijke meldinterval, voordat het onbeschikbaar wordt.",
+    "de": "Löst einmal aus, wenn das Gerät länger als das gewählte Vielfache seines üblichen Meldeintervalls still ist, bevor es als nicht verfügbar markiert wird."
+  },
+  "args": [
+    {
+      "type": "device",
+      "name": "device",
+      "title": {
+        "en": "Device",
+        "fr": "Appareil",
+        "nl": "Apparaat",
+        "de": "Gerät"
+      }
+    },
+    {
+      "type": "number",
+      "name": "factor",
+      "min": 2,
+      "max": 20,
+      "step": 1,
+      "title": {
+        "en": "Times the usual interval",
+        "fr": "Fois l'intervalle habituel",
+        "nl": "Keer het gebruikelijke interval",
+        "de": "Mal das übliche Intervall"
+      },
+      "placeholder": {
+        "en": "3",
+        "fr": "3",
+        "nl": "3",
+        "de": "3"
+      }
+    }
+  ],
+  "tokens": [
+    {
+      "name": "silent_minutes",
+      "type": "number",
+      "title": {
+        "en": "Minutes silent",
+        "fr": "Minutes de silence",
+        "nl": "Minuten stil",
+        "de": "Minuten still"
+      },
+      "example": 45
+    },
+    {
+      "name": "usual_interval_minutes",
+      "type": "number",
+      "title": {
+        "en": "Usual interval (min)",
+        "fr": "Intervalle habituel (min)",
+        "nl": "Gebruikelijk interval (min)",
+        "de": "Übliches Intervall (Min.)"
+      },
+      "example": 10
+    }
+  ]
+}

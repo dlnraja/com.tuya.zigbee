@@ -7,7 +7,10 @@
     "de": "Zustandsprognose ausführen"
   },
   "hint": {
-    "en": "Trigger an immediate health prediction analysis for a device"
+    "en": "Trigger an immediate health prediction analysis for a device",
+    "fr": "Lance immédiatement une analyse prédictive de santé pour un appareil",
+    "nl": "Start direct een voorspellende gezondheidsanalyse voor een apparaat",
+    "de": "Startet sofort eine vorausschauende Zustandsanalyse für ein Gerät"
   },
   "args": [
     {
@@ -21,35 +24,50 @@
       "name": "health_score",
       "type": "number",
       "title": {
-        "en": "Health score (0-100)"
+        "en": "Health score (0-100)",
+        "fr": "Score de santé (0-100)",
+        "nl": "Gezondheidsscore (0-100)",
+        "de": "Zustandswert (0-100)"
       }
     },
     {
       "name": "health_status",
       "type": "string",
       "title": {
-        "en": "Health status"
+        "en": "Health status",
+        "fr": "État de santé",
+        "nl": "Gezondheidsstatus",
+        "de": "Zustand"
       }
     },
     {
       "name": "signal_quality",
       "type": "string",
       "title": {
-        "en": "Signal quality"
+        "en": "Signal quality",
+        "fr": "Qualité du signal",
+        "nl": "Signaalkwaliteit",
+        "de": "Signalqualität"
       }
     },
     {
       "name": "battery_days_remaining",
       "type": "number",
       "title": {
-        "en": "Battery days remaining"
+        "en": "Battery days remaining",
+        "fr": "Jours de batterie restants",
+        "nl": "Resterende batterijdagen",
+        "de": "Verbleibende Batterietage"
       }
     },
     {
       "name": "error_rate",
       "type": "number",
       "title": {
-        "en": "Error rate (%)"
+        "en": "Error rate (%)",
+        "fr": "Taux d'erreur (%)",
+        "nl": "Foutpercentage (%)",
+        "de": "Fehlerrate (%)"
       }
     }
   ],
