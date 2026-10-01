@@ -4,12 +4,20 @@ All notable changes to the **Tuya Unified Zigbee** app for Homey Pro.
 
 ---
 
+## [Unreleased] (P2774)
+
+- "Changed" Flow triggers fired directly by drivers also skip the first value after a restart; the 1-gang wall dimmer no longer fires a physical on/off trigger for the state sync after a restart.
+- Curtains: new setting "Always keep the position slider" (off by default).
+- "Set a device setting": an invalid or out-of-range value now stops the Flow with a clear, translated error.
+
+---
+
 ## [9.0.1300] - 2026-10-01
 
 v9.0.1300: automated publish, manifest sync, and Homey test promotion.
 ---
 
- [Unreleased] - P2768 to P2773
+## [9.0.1301] - 2026-10-01 (P2768 to P2773)
 
 - WiFi devices: the Repair screen (update IP / local key / protocol, or fetch the key again) now opens; the view file was missing for 53 drivers.
 - Tuya DP values are decoded as signed 32-bit numbers everywhere, so negative temperatures no longer show as huge numbers.
