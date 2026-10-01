@@ -13,6 +13,26 @@
    "seen": "2026-10-01"
   },
   {
+   "mfr": "_TZ3000_0lvv1d5b",
+   "pids": [],
+   "dps": [],
+   "firmware": [],
+   "knownDrivers": [],
+   "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/556",
+   "snippet": "Monthly scan found new manufacturerName IDs: ``` _TZ3000_0lvv1d5b _TZ3000_1hypixdr _TZ3000_3o7r0mno _TZ3000_ahvrgyac _TZ3000_bbebkwjk _TZ3000_bu47m8pv _TZ3000_f6pgzqob _TZ3000_syetgitm _TZ3",
+   "seen": "2026-10-01"
+  },
+  {
+   "mfr": "_TZ3000_1hypixdr",
+   "pids": [],
+   "dps": [],
+   "firmware": [],
+   "knownDrivers": [],
+   "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/556",
+   "snippet": "Monthly scan found new manufacturerName IDs: ``` _TZ3000_0lvv1d5b _TZ3000_1hypixdr _TZ3000_3o7r0mno _TZ3000_ahvrgyac _TZ3000_bbebkwjk _TZ3000_bu47m8pv _TZ3000_f6pgzqob _TZ3000_syetgitm _TZ3008_iooniers _TZ3",
+   "seen": "2026-10-01"
+  },
+  {
    "mfr": "_TZ3000_9er9cqgi",
    "pids": [],
    "dps": [],
@@ -30,6 +50,76 @@
    "knownDrivers": [],
    "url": "https://github.com/CyB0rgg/com.tuya.zigbee/blob/SDK3_UK/drivers/smartplug/driver.compose.json",
    "snippet": "\"_TZ3000_stt211u9\",",
+   "seen": "2026-10-01"
+  },
+  {
+   "mfr": "_TZ3000_syetgitm",
+   "pids": [],
+   "dps": [],
+   "firmware": [],
+   "knownDrivers": [],
+   "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/556",
+   "snippet": "00_3o7r0mno _TZ3000_ahvrgyac _TZ3000_bbebkwjk _TZ3000_bu47m8pv _TZ3000_f6pgzqob _TZ3000_syetgitm _TZ3008_iooniers _TZ3008_qziabvzj _TZ3008_xvfd3nkp _TZ300A_57kqwetw _TZ3210_8etggm4u _TZ3210_cqqb61yo _TZ3210_mldzab8w _TZ3",
+   "seen": "2026-10-01"
+  },
+  {
+   "mfr": "_TZ3210_8etggm4u",
+   "pids": [],
+   "dps": [],
+   "firmware": [],
+   "knownDrivers": [],
+   "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/556",
+   "snippet": "00_syetgitm _TZ3008_iooniers _TZ3008_qziabvzj _TZ3008_xvfd3nkp _TZ300A_57kqwetw _TZ3210_8etggm4u _TZ3210_cqqb61yo _TZ3210_mldzab8w _TZ3210_o235agwx _TZ3210_o4vasvef _TZ3210_tlwlmwm6 _TZ3210_tqwyiitv _TZD200_sjjp9bti _TZE",
+   "seen": "2026-10-01"
+  },
+  {
+   "mfr": "_TZ3210_cqqb61yo",
+   "pids": [],
+   "dps": [],
+   "firmware": [],
+   "knownDrivers": [],
+   "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/556",
+   "snippet": "08_iooniers _TZ3008_qziabvzj _TZ3008_xvfd3nkp _TZ300A_57kqwetw _TZ3210_8etggm4u _TZ3210_cqqb61yo _TZ3210_mldzab8w _TZ3210_o235agwx _TZ3210_o4vasvef _TZ3210_tlwlmwm6 _TZ3210_tqwyiitv _TZD200_sjjp9bti _TZE200_nkjintbl _TZE",
+   "seen": "2026-10-01"
+  },
+  {
+   "mfr": "_TZ3210_mldzab8w",
+   "pids": [],
+   "dps": [],
+   "firmware": [],
+   "knownDrivers": [],
+   "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/556",
+   "snippet": "08_qziabvzj _TZ3008_xvfd3nkp _TZ300A_57kqwetw _TZ3210_8etggm4u _TZ3210_cqqb61yo _TZ3210_mldzab8w _TZ3210_o235agwx _TZ3210_o4vasvef _TZ3210_tlwlmwm6 _TZ3210_tqwyiitv _TZD200_sjjp9bti _TZE200_nkjintbl _TZE204_dak2k10o _TZE",
+   "seen": "2026-10-01"
+  },
+  {
+   "mfr": "_TZ3210_o4vasvef",
+   "pids": [],
+   "dps": [],
+   "firmware": [],
+   "knownDrivers": [],
+   "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/556",
+   "snippet": "0A_57kqwetw _TZ3210_8etggm4u _TZ3210_cqqb61yo _TZ3210_mldzab8w _TZ3210_o235agwx _TZ3210_o4vasvef _TZ3210_tlwlmwm6 _TZ3210_tqwyiitv _TZD200_sjjp9bti _TZE200_nkjintbl _TZE204_dak2k10o _TZE204_eaasry7v _TZE204_lyqazpe6 _TZE",
+   "seen": "2026-10-01"
+  },
+  {
+   "mfr": "_TZ3210_tlwlmwm6",
+   "pids": [],
+   "dps": [],
+   "firmware": [],
+   "knownDrivers": [],
+   "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/556",
+   "snippet": "10_8etggm4u _TZ3210_cqqb61yo _TZ3210_mldzab8w _TZ3210_o235agwx _TZ3210_o4vasvef _TZ3210_tlwlmwm6 _TZ3210_tqwyiitv _TZD200_sjjp9bti _TZE200_nkjintbl _TZE204_dak2k10o _TZE204_eaasry7v _TZE204_lyqazpe6 _TZE204_pxbjch8m _TZE",
+   "seen": "2026-10-01"
+  },
+  {
+   "mfr": "_TZ3210_tqwyiitv",
+   "pids": [],
+   "dps": [],
+   "firmware": [],
+   "knownDrivers": [],
+   "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/556",
+   "snippet": "10_cqqb61yo _TZ3210_mldzab8w _TZ3210_o235agwx _TZ3210_o4vasvef _TZ3210_tlwlmwm6 _TZ3210_tqwyiitv _TZD200_sjjp9bti _TZE200_nkjintbl _TZE204_dak2k10o _TZE204_eaasry7v _TZE204_lyqazpe6 _TZE204_pxbjch8m _TZE204_r6kfl9ta _TZE",
    "seen": "2026-10-01"
   },
   {
@@ -70,6 +160,156 @@
    "knownDrivers": [],
    "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/353#issuecomment-4586127829",
    "snippet": "_TZ3000_cumqn2av`, `_TZ300A_fhbcipep`, `_TZ3000_1fqpj6qz`, `_TZ3000_sfibawtr`, `_TZ3290_acv1iusl`, `_TZE200_y8wkaq6w`, `_TZ3210_cyuyd5az`, `_TZ3000_yi0n4xfd`, `_TZ3000_5rpu3r0d`, `_TZE204_p6vz3wzt`, `_TZ3000_djgzdba9`, `",
+   "seen": "2026-10-01"
+  },
+  {
+   "mfr": "_TZD200_sjjp9bti",
+   "pids": [],
+   "dps": [],
+   "firmware": [],
+   "knownDrivers": [],
+   "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/556",
+   "snippet": "10_mldzab8w _TZ3210_o235agwx _TZ3210_o4vasvef _TZ3210_tlwlmwm6 _TZ3210_tqwyiitv _TZD200_sjjp9bti _TZE200_nkjintbl _TZE204_dak2k10o _TZE204_eaasry7v _TZE204_lyqazpe6 _TZE204_pxbjch8m _TZE204_r6kfl9ta _TZE204_wsek35um _TZE",
+   "seen": "2026-10-01"
+  },
+  {
+   "mfr": "_TZE204_dak2k10o",
+   "pids": [],
+   "dps": [],
+   "firmware": [],
+   "knownDrivers": [],
+   "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/556",
+   "snippet": "10_o4vasvef _TZ3210_tlwlmwm6 _TZ3210_tqwyiitv _TZD200_sjjp9bti _TZE200_nkjintbl _TZE204_dak2k10o _TZE204_eaasry7v _TZE204_lyqazpe6 _TZE204_pxbjch8m _TZE204_r6kfl9ta _TZE204_wsek35um _TZE20C_tjz9ad5g _TZE20C_ycab9txf _TZE",
+   "seen": "2026-10-01"
+  },
+  {
+   "mfr": "_TZE204_eaasry7v",
+   "pids": [],
+   "dps": [],
+   "firmware": [],
+   "knownDrivers": [],
+   "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/556",
+   "snippet": "10_tlwlmwm6 _TZ3210_tqwyiitv _TZD200_sjjp9bti _TZE200_nkjintbl _TZE204_dak2k10o _TZE204_eaasry7v _TZE204_lyqazpe6 _TZE204_pxbjch8m _TZE204_r6kfl9ta _TZE204_wsek35um _TZE20C_tjz9ad5g _TZE20C_ycab9txf _TZE284_5qfrnbqs _TZE",
+   "seen": "2026-10-01"
+  },
+  {
+   "mfr": "_TZE204_lyqazpe6",
+   "pids": [],
+   "dps": [],
+   "firmware": [],
+   "knownDrivers": [],
+   "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/556",
+   "snippet": "10_tqwyiitv _TZD200_sjjp9bti _TZE200_nkjintbl _TZE204_dak2k10o _TZE204_eaasry7v _TZE204_lyqazpe6 _TZE204_pxbjch8m _TZE204_r6kfl9ta _TZE204_wsek35um _TZE20C_tjz9ad5g _TZE20C_ycab9txf _TZE284_5qfrnbqs _TZE284_hbxadcl0 _TZE",
+   "seen": "2026-10-01"
+  },
+  {
+   "mfr": "_TZE204_pxbjch8m",
+   "pids": [],
+   "dps": [],
+   "firmware": [],
+   "knownDrivers": [],
+   "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/556",
+   "snippet": "00_sjjp9bti _TZE200_nkjintbl _TZE204_dak2k10o _TZE204_eaasry7v _TZE204_lyqazpe6 _TZE204_pxbjch8m _TZE204_r6kfl9ta _TZE204_wsek35um _TZE20C_tjz9ad5g _TZE20C_ycab9txf _TZE284_5qfrnbqs _TZE284_hbxadcl0 _TZE284_lyqazpe6 _TZE",
+   "seen": "2026-10-01"
+  },
+  {
+   "mfr": "_TZE204_r6kfl9ta",
+   "pids": [],
+   "dps": [],
+   "firmware": [],
+   "knownDrivers": [],
+   "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/556",
+   "snippet": "00_nkjintbl _TZE204_dak2k10o _TZE204_eaasry7v _TZE204_lyqazpe6 _TZE204_pxbjch8m _TZE204_r6kfl9ta _TZE204_wsek35um _TZE20C_tjz9ad5g _TZE20C_ycab9txf _TZE284_5qfrnbqs _TZE284_hbxadcl0 _TZE284_lyqazpe6 _TZE284_n41i9jyt _TZE",
+   "seen": "2026-10-01"
+  },
+  {
+   "mfr": "_TZE204_wsek35um",
+   "pids": [],
+   "dps": [],
+   "firmware": [],
+   "knownDrivers": [],
+   "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/556",
+   "snippet": "04_dak2k10o _TZE204_eaasry7v _TZE204_lyqazpe6 _TZE204_pxbjch8m _TZE204_r6kfl9ta _TZE204_wsek35um _TZE20C_tjz9ad5g _TZE20C_ycab9txf _TZE284_5qfrnbqs _TZE284_hbxadcl0 _TZE284_lyqazpe6 _TZE284_n41i9jyt _TZE284_pxwixtky _TZE",
+   "seen": "2026-10-01"
+  },
+  {
+   "mfr": "_TZE20C_tjz9ad5g",
+   "pids": [],
+   "dps": [],
+   "firmware": [],
+   "knownDrivers": [],
+   "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/556",
+   "snippet": "04_eaasry7v _TZE204_lyqazpe6 _TZE204_pxbjch8m _TZE204_r6kfl9ta _TZE204_wsek35um _TZE20C_tjz9ad5g _TZE20C_ycab9txf _TZE284_5qfrnbqs _TZE284_hbxadcl0 _TZE284_lyqazpe6 _TZE284_n41i9jyt _TZE284_pxwixtky _TZE284_rfpyqax9 _TZE",
+   "seen": "2026-10-01"
+  },
+  {
+   "mfr": "_TZE20C_ycab9txf",
+   "pids": [],
+   "dps": [],
+   "firmware": [],
+   "knownDrivers": [],
+   "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/556",
+   "snippet": "04_lyqazpe6 _TZE204_pxbjch8m _TZE204_r6kfl9ta _TZE204_wsek35um _TZE20C_tjz9ad5g _TZE20C_ycab9txf _TZE284_5qfrnbqs _TZE284_hbxadcl0 _TZE284_lyqazpe6 _TZE284_n41i9jyt _TZE284_pxwixtky _TZE284_rfpyqax9 _TZE284_tokhh9pf _TZE",
+   "seen": "2026-10-01"
+  },
+  {
+   "mfr": "_TZE284_5qfrnbqs",
+   "pids": [],
+   "dps": [],
+   "firmware": [],
+   "knownDrivers": [],
+   "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/556",
+   "snippet": "04_pxbjch8m _TZE204_r6kfl9ta _TZE204_wsek35um _TZE20C_tjz9ad5g _TZE20C_ycab9txf _TZE284_5qfrnbqs _TZE284_hbxadcl0 _TZE284_lyqazpe6 _TZE284_n41i9jyt _TZE284_pxwixtky _TZE284_rfpyqax9 _TZE284_tokhh9pf _TZE284_znkkcauq _TZE",
+   "seen": "2026-10-01"
+  },
+  {
+   "mfr": "_TZE284_hbxadcl0",
+   "pids": [],
+   "dps": [],
+   "firmware": [],
+   "knownDrivers": [],
+   "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/556",
+   "snippet": "04_r6kfl9ta _TZE204_wsek35um _TZE20C_tjz9ad5g _TZE20C_ycab9txf _TZE284_5qfrnbqs _TZE284_hbxadcl0 _TZE284_lyqazpe6 _TZE284_n41i9jyt _TZE284_pxwixtky _TZE284_rfpyqax9 _TZE284_tokhh9pf _TZE284_znkkcauq _TZE284_zuq5xxib ```",
+   "seen": "2026-10-01"
+  },
+  {
+   "mfr": "_TZE284_lyqazpe6",
+   "pids": [],
+   "dps": [],
+   "firmware": [],
+   "knownDrivers": [],
+   "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/556",
+   "snippet": "04_wsek35um _TZE20C_tjz9ad5g _TZE20C_ycab9txf _TZE284_5qfrnbqs _TZE284_hbxadcl0 _TZE284_lyqazpe6 _TZE284_n41i9jyt _TZE284_pxwixtky _TZE284_rfpyqax9 _TZE284_tokhh9pf _TZE284_znkkcauq _TZE284_zuq5xxib ``` Queued for enrich",
+   "seen": "2026-10-01"
+  },
+  {
+   "mfr": "_TZE284_n41i9jyt",
+   "pids": [],
+   "dps": [],
+   "firmware": [],
+   "knownDrivers": [],
+   "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/556",
+   "snippet": "0C_tjz9ad5g _TZE20C_ycab9txf _TZE284_5qfrnbqs _TZE284_hbxadcl0 _TZE284_lyqazpe6 _TZE284_n41i9jyt _TZE284_pxwixtky _TZE284_rfpyqax9 _TZE284_tokhh9pf _TZE284_znkkcauq _TZE284_zuq5xxib ``` Queued for enrich; bot triage will",
+   "seen": "2026-10-01"
+  },
+  {
+   "mfr": "_TZE284_rfpyqax9",
+   "pids": [],
+   "dps": [],
+   "firmware": [],
+   "knownDrivers": [],
+   "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/556",
+   "snippet": "84_5qfrnbqs _TZE284_hbxadcl0 _TZE284_lyqazpe6 _TZE284_n41i9jyt _TZE284_pxwixtky _TZE284_rfpyqax9 _TZE284_tokhh9pf _TZE284_znkkcauq _TZE284_zuq5xxib ``` Queued for enrich; bot triage will close after processing.",
+   "seen": "2026-10-01"
+  },
+  {
+   "mfr": "_TZE284_tokhh9pf",
+   "pids": [],
+   "dps": [],
+   "firmware": [],
+   "knownDrivers": [],
+   "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/556",
+   "snippet": "84_hbxadcl0 _TZE284_lyqazpe6 _TZE284_n41i9jyt _TZE284_pxwixtky _TZE284_rfpyqax9 _TZE284_tokhh9pf _TZE284_znkkcauq _TZE284_zuq5xxib ``` Queued for enrich; bot triage will close after processing.",
    "seen": "2026-10-01"
   },
   {
@@ -162,6 +402,54 @@
    "seen": "2026-10-01"
   },
   {
+   "mfr": "_TZ3000_cygcaxvv",
+   "pids": [
+    "TS0001"
+   ],
+   "dps": [],
+   "firmware": [
+    "bug"
+   ],
+   "knownDrivers": [
+    "climate_sensor"
+   ],
+   "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/1469",
+   "snippet": "equirements under Homey SDK when development resumes. - [ ] #1165 Engocontrols `_TZ3000_cygcaxvv / TS0001` 'Repeater' — complete physical interview actually shows a mains router with endpoint 1 **OnOff 6** + manufacturer",
+   "seen": "2026-10-01"
+  },
+  {
+   "mfr": "_TZ3000_hafsqare",
+   "pids": [
+    "TS0011"
+   ],
+   "dps": [],
+   "firmware": [
+    "firmware"
+   ],
+   "knownDrivers": [
+    "switch_1gang"
+   ],
+   "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/1370#issuecomment-5928316911",
+   "snippet": "PORTANT exact profile is **already in both** frozen 0.3.0 and 0.3.1 manifests: `_TZ3000_hafsqare / TS0011` → `wall_switch_1_gang`, with standard EP1 OnOff6 runtime. The full physical Homey interview exposes OnOff6 plus 5",
+   "seen": "2026-10-01"
+  },
+  {
+   "mfr": "_TZ3000_iszegwpd",
+   "pids": [
+    "TS0046"
+   ],
+   "dps": [],
+   "firmware": [
+    "bug"
+   ],
+   "knownDrivers": [
+    "scene_switch_6"
+   ],
+   "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/557",
+   "snippet": "\":\"dlnraja\"}]},\"issues\":{\"count\":2,\"items\":[{\"n\":554,\"t\":\"Bug report - TS0046 / _TZ3000_iszegwpd 6 Gang Wall Remote fails to pair although\",\"u\":\"draqlek\"},{\"n\":550,\"t\":\"Bug report - [Short description]\",\"u\":\"HiepSVG\"}]}}",
+   "seen": "2026-10-01"
+  },
+  {
    "mfr": "_TZ3000_ja5osu5g",
    "pids": [],
    "dps": [],
@@ -173,6 +461,22 @@
    ],
    "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/1026",
    "snippet": "Bug report - device _TZ3000_ja5osu5g does not work with smart_remote_1_button_2",
+   "seen": "2026-10-01"
+  },
+  {
+   "mfr": "_TZ3000_kdpxju99",
+   "pids": [
+    "TS0505A"
+   ],
+   "dps": [],
+   "firmware": [
+    "bug"
+   ],
+   "knownDrivers": [
+    "rgb_spot_GU10"
+   ],
+   "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/175",
+   "snippet": "Bug report - _TZ3000_kdpxju99 / TS0505A GU10 pairs but dim/color commands fail",
    "seen": "2026-10-01"
   },
   {
@@ -251,6 +555,22 @@
    ],
    "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/170#issuecomment-4129430265",
    "snippet": "ve a precise bug report regarding the Flow cards for this specific fingerprint (_TZ3000_v4l4b0lp).",
+   "seen": "2026-10-01"
+  },
+  {
+   "mfr": "_TZ3000_vsj5o7dm",
+   "pids": [
+    "TS130F"
+   ],
+   "dps": [],
+   "firmware": [
+    "bug"
+   ],
+   "knownDrivers": [
+    "climate_sensor"
+   ],
+   "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/1149#issuecomment-5935456731",
+   "snippet": "BSEED wall shutter `_TZ3000_vsj5o7dm / TS130F` independently interviewed EP1 Window Covering258 + OnOff6/E001, EP242 is preserved in #919 with separate pairing,",
    "seen": "2026-10-01"
   },
   {
@@ -390,6 +710,22 @@
    "seen": "2026-10-01"
   },
   {
+   "mfr": "_TZ3210_3lbtuxgp",
+   "pids": [
+    "TS0505B"
+   ],
+   "dps": [],
+   "firmware": [
+    "firmware"
+   ],
+   "knownDrivers": [
+    "bulb_rgb"
+   ],
+   "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/364#issuecomment-5935606521",
+   "snippet": "LED strip controller `_TZ3210_3lbtuxgp / TS0505B` (EP1 ZCL OnOff6/Level8/ColorControl768 + EF00, EP242); retain independent strip output/ColorControl/reporting te",
+   "seen": "2026-10-01"
+  },
+  {
    "mfr": "_TZ3210_w0qqde0g",
    "pids": [
     "TS011F"
@@ -417,6 +753,42 @@
    ],
    "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/110#issuecomment-3977308143",
    "snippet": "al attributes: - The base class listener used the correct divisor (1) for your \\_TZ3210_w0qqde0g\\ device - The device-specific listener used a hardcoded divisor (10) from the config database",
+   "seen": "2026-10-01"
+  },
+  {
+   "mfr": "_TZ3210_zmy9hjay",
+   "pids": [
+    "TS0202"
+   ],
+   "dps": [
+    107,
+    108
+   ],
+   "firmware": [
+    "firmware"
+   ],
+   "knownDrivers": [
+    "motion_sensor"
+   ],
+   "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/1469",
+   "snippet": "- [x] #207 exact `_TZ3210_zmy9hjay / TS0202` externally identified as Fantem ZB003-X - [x] Fantem documentation verifies motion + temperature + humidity + bri",
+   "seen": "2026-10-01"
+  },
+  {
+   "mfr": "_TZE200_2aaelwxk",
+   "pids": [
+    "ZG-205Z",
+    "TS0225"
+   ],
+   "dps": [],
+   "firmware": [
+    "bug"
+   ],
+   "knownDrivers": [
+    "presence_sensor_radar"
+   ],
+   "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/828#issuecomment-5920593243",
+   "snippet": "'not recognized' bug as superseded by the later proper device interview #831 (`_TZE200_2aaelwxk / TS0225`) and the current exact-profile request #1133. This issue itself contains no Zigbee identity/interview beyond the",
    "seen": "2026-10-01"
   },
   {
@@ -537,6 +909,54 @@
    "seen": "2026-10-01"
   },
   {
+   "mfr": "_TZE200_amp6tsvy",
+   "pids": [
+    "TS0601"
+   ],
+   "dps": [],
+   "firmware": [
+    "bug"
+   ],
+   "knownDrivers": [
+    "switch_1gang"
+   ],
+   "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/1319",
+   "snippet": "Bug report - _TZE200_amp6tsvy / TS0601 pairs but exposes no On/Off control",
+   "seen": "2026-10-01"
+  },
+  {
+   "mfr": "_TZE200_bh3n6gk8",
+   "pids": [
+    "TS0601"
+   ],
+   "dps": [],
+   "firmware": [
+    "bug"
+   ],
+   "knownDrivers": [
+    "presence_sensor_radar"
+   ],
+   "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/1140#issuecomment-5927379059",
+   "snippet": "2026 Batch 61: the exact `_TZE200_bh3n6gk8 / TS0601` manufacturer/model **is already present** in both 0.3.0 and frozen 0.3.1 under `motion_sensor_2`. This is therefo",
+   "seen": "2026-10-01"
+  },
+  {
+   "mfr": "_TZE200_bh3n6gk8",
+   "pids": [
+    "TS0601"
+   ],
+   "dps": [],
+   "firmware": [
+    "bug"
+   ],
+   "knownDrivers": [
+    "presence_sensor_radar"
+   ],
+   "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/1140",
+   "snippet": "Bug report - _TZE200_bh3n6gk8 / TS0601 not active",
+   "seen": "2026-10-01"
+  },
+  {
    "mfr": "_TZE200_e3oitdyu",
    "pids": [
     "TS0601"
@@ -649,6 +1069,38 @@
    "seen": "2026-10-01"
   },
   {
+   "mfr": "_TZE200_iq4ygaai",
+   "pids": [
+    "TS0201"
+   ],
+   "dps": [],
+   "firmware": [
+    "firmware"
+   ],
+   "knownDrivers": [
+    "motion_sensor"
+   ],
+   "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/1007#issuecomment-5930064946",
+   "snippet": "Consolidated this Tuya-firmware THS317-ET-TY `_TZE200_iq4ygaai / TS0201` physical request into #1476, which explicitly separates it from the different native `OWON / THS317-ET` profile (",
+   "seen": "2026-10-01"
+  },
+  {
+   "mfr": "_TZE200_iq4ygaai",
+   "pids": [
+    "TS0201"
+   ],
+   "dps": [],
+   "firmware": [
+    "firmware"
+   ],
+   "knownDrivers": [
+    "motion_sensor"
+   ],
+   "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/1476",
+   "snippet": "### B. Tuya-firmware THS317-ET-TY - `manufacturerName: _TZE200_iq4ygaai` - `modelId: TS0201` - exposes standard temperature/humidity clusters *and* Tuya cluster `0xEF00` in the Homey interview -",
+   "seen": "2026-10-01"
+  },
+  {
    "mfr": "_TZE200_ka8l86iu",
    "pids": [],
    "dps": [],
@@ -692,6 +1144,54 @@
    ],
    "url": "https://github.com/gpmachado/com.tuya.zigbee/blob/SDK3/drivers/zemismart_switch_6_gang/sixgang_readme.md",
    "snippet": "- **Model**: TS0601 (Tuya Protocol) - **Supported Manufacturers**: - `_TZE200_r731zlxk` - **Gang Count**: 6 independent switches - **Protocol**: Tuya Zigbee (single endpoint, multiple DPs) - **Firmware Type**:",
+   "seen": "2026-10-01"
+  },
+  {
+   "mfr": "_TZE200_rhgsbacq",
+   "pids": [
+    "TS0601"
+   ],
+   "dps": [],
+   "firmware": [
+    "firmware"
+   ],
+   "knownDrivers": [
+    "presence_sensor_radar"
+   ],
+   "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/1398#issuecomment-5920880742",
+   "snippet": "2026 backlog triage: closing as duplicate/superseded by canonical #1305 for `_TZE200_rhgsbacq / TS0601`. This physical interview/firmware sample has been preserved there. Current support is not implied.",
+   "seen": "2026-10-01"
+  },
+  {
+   "mfr": "_TZE200_rhgsbacq",
+   "pids": [
+    "TS0601"
+   ],
+   "dps": [],
+   "firmware": [
+    "firmware"
+   ],
+   "knownDrivers": [
+    "presence_sensor_radar"
+   ],
+   "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/1343#issuecomment-5920879294",
+   "snippet": "2026 backlog triage: closing as duplicate/superseded by canonical #1305 for `_TZE200_rhgsbacq / TS0601`. This physical interview/firmware sample has been preserved there. Current support is not implied.",
+   "seen": "2026-10-01"
+  },
+  {
+   "mfr": "_TZE200_rhgsbacq",
+   "pids": [
+    "TS0601"
+   ],
+   "dps": [],
+   "firmware": [
+    "firmware"
+   ],
+   "knownDrivers": [
+    "presence_sensor_radar"
+   ],
+   "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/1305#issuecomment-5920878794",
+   "snippet": "026 backlog triage: consolidating physical duplicates #1343 and #1398 here for `_TZE200_rhgsbacq / TS0601`. Together they provide multiple independent interviews across firmware builds, consistently exposing standard IAS",
    "seen": "2026-10-01"
   },
   {
@@ -757,6 +1257,22 @@
    "seen": "2026-10-01"
   },
   {
+   "mfr": "_TZE200_zah67ekd",
+   "pids": [
+    "TS0601"
+   ],
+   "dps": [],
+   "firmware": [
+    "bug"
+   ],
+   "knownDrivers": [
+    "curtain_motor"
+   ],
+   "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/1469",
+   "snippet": "### Consolidated into 2026 canonical issues - [x] #220 `_TZE200_zah67ekd / TS0601` curtain position inversion — historical physical evidence copied to #1472, then #220 closed as superseded. #1472",
+   "seen": "2026-10-01"
+  },
+  {
    "mfr": "_TZE204_1v1dxkck",
    "pids": [
     "TS0601"
@@ -770,6 +1286,89 @@
    ],
    "url": "https://github.com/gpmachado/com.tuya.zigbee/blob/SDK3/drivers/dimmer_3_gang_tuya/driver.compose.json",
    "snippet": "\"template\": \"add_devices\" } ], \"zigbee\": { \"manufacturerName\": [\"_TZE204_1v1dxkck\"], \"productId\": [\"TS0601\"], \"endpoints\": { \"1\": { \"clusters\": [0, 4, 5, 61184], \"bindings\": [",
+   "seen": "2026-10-01"
+  },
+  {
+   "mfr": "_TZE204_clrdrnya",
+   "pids": [
+    "TS0601"
+   ],
+   "dps": [],
+   "firmware": [
+    "bug"
+   ],
+   "knownDrivers": [
+    "presence_sensor_radar"
+   ],
+   "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/1142#issuecomment-5927379723",
+   "snippet": "2026 Batch 61: exact `_TZE204_clrdrnya / TS0601` (Wenzhi WZ-235-ZB-RL) is **absent from frozen 0.3.1** despite its full physical Homey interview showing endpoint",
+   "seen": "2026-10-01"
+  },
+  {
+   "mfr": "_TZE204_ijxvkhd0",
+   "pids": [],
+   "dps": [],
+   "firmware": [
+    "bug",
+    "inverted"
+   ],
+   "knownDrivers": [
+    "presence_sensor_radar"
+   ],
+   "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/886#issuecomment-5920596734",
+   "snippet": "resence state directly to `alarm_motion` (`true/1` => motion) and has no exact `_TZE204_ijxvkhd0` inversion rule. The historical physical report therefore remains a credible profile-specific behavior bug. Closure require",
+   "seen": "2026-10-01"
+  },
+  {
+   "mfr": "_TZE204_ijxvkhd0",
+   "pids": [
+    "TS0601"
+   ],
+   "dps": [],
+   "firmware": [
+    "bug",
+    "inverted"
+   ],
+   "knownDrivers": [
+    "presence_sensor_radar"
+   ],
+   "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/886",
+   "snippet": "Bug report - _TZE204_ijxvkhd0 / TS0601 radar reports motion inverted",
+   "seen": "2026-10-01"
+  },
+  {
+   "mfr": "_TZE284_8zizsafo",
+   "pids": [
+    "TS0601"
+   ],
+   "dps": [],
+   "firmware": [
+    "bug"
+   ],
+   "knownDrivers": [
+    "valve_irrigation"
+   ],
+   "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/1410#issuecomment-5929512974",
+   "snippet": "2026 Batch 68: exact physical GIEX **two-zone irrigation valve** `_TZE284_8zizsafo / TS0601` is absent from both Test 0.3.0 and frozen 0.3.1. Supplied Homey endpoint 1 contains Basic0, Groups4, Scenes5, Tuy",
+   "seen": "2026-10-01"
+  },
+  {
+   "mfr": "_TZE284_aaeasoll",
+   "pids": [
+    "TS0601"
+   ],
+   "dps": [
+    2,
+    1
+   ],
+   "firmware": [
+    "bug"
+   ],
+   "knownDrivers": [
+    "light_sensor_outdoor"
+   ],
+   "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/1379#issuecomment-5928421093",
+   "snippet": "2026 Batch 67: SmarterCurry CS101 solar light/lux sensor `_TZE284_aaeasoll / TS0601` is **absent from both** 0.3.0 and frozen 0.3.1. Supplied endpoint descriptor advertises Tuya EF00 (61184) + manuf",
    "seen": "2026-10-01"
   },
   {
@@ -805,6 +1404,24 @@
    ],
    "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/1233",
    "snippet": "### Describe the bug Soil Humidity Sensor SGS01Z - Manufactor: _TZE284_aao3yzhs, ModelID: TS0601 - Shows temperature 67109120 degrees and the same in humanity",
+   "seen": "2026-10-01"
+  },
+  {
+   "mfr": "_TZE284_bquwrqh1",
+   "pids": [
+    "TS0601"
+   ],
+   "dps": [
+    101
+   ],
+   "firmware": [
+    "inverted"
+   ],
+   "knownDrivers": [
+    "presence_sensor_radar"
+   ],
+   "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/1351#issuecomment-5928283864",
+   "snippet": "tch 66: full physical Homey interview for VAT Speed BL M04LTHAZ PIR+brightness `_TZE284_bquwrqh1 / TS0601`, EP1 EF00 (61184) + manufacturer 60672, **not standard IAS Zone 1280 or Illuminance 1024** in submitted descripto",
    "seen": "2026-10-01"
   },
   {
@@ -965,6 +1582,40 @@
    ],
    "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/1104",
    "snippet": "Bug report - TS0601 _TZE200_locansqn pairs, but leaves Zigbee network immediately",
+   "seen": "2026-10-01"
+  },
+  {
+   "mfr": "_TZE200_locansqn",
+   "pids": [
+    "TS0601"
+   ],
+   "dps": [],
+   "firmware": [
+    "bug"
+   ],
+   "knownDrivers": [
+    "lcdtemphumidsensor",
+    "lcdtemphumidsensor_3"
+   ],
+   "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/1119#issuecomment-5930068330",
+   "snippet": "The exact TH01Z `_TZE200_locansqn / TS0601` physical device request is consolidated into open #1474 (Tuya DP report/response, humidity scaling, battery and t",
+   "seen": "2026-10-01"
+  },
+  {
+   "mfr": "_TZE200_locansqn",
+   "pids": [
+    "TS0601"
+   ],
+   "dps": [],
+   "firmware": [
+    "bug"
+   ],
+   "knownDrivers": [
+    "lcdtemphumidsensor",
+    "lcdtemphumidsensor_3"
+   ],
+   "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/1119#issuecomment-5927374536",
+   "snippet": "2026 Batch 61: current frozen 0.3.1 already exactly matches `_TZE200_locansqn / TS0601` in `lcdtemphumidsensor_3` and has manufacturer-specific MCU time sync plus Tuya response/reporting handling. This",
    "seen": "2026-10-01"
   }
  ]
