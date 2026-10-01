@@ -110,22 +110,56 @@ function hasTesseract() {
   return tesseract;
 }
 
-/** OCR an image URL with local tesseract (free). Returns text or ''. Bounded by DIGEST_OCR_MAX. */
+const OCR_LANGS = process.env.DIGEST_OCR_LANGS || 'eng+fra+deu+nld+spa+ita';
+let visionUsed = 0;
+function run(cmd, args, timeout = 45000) {
+  return execFileSync(cmd, args, { timeout, maxBuffer: 4 * 1024 * 1024, stdio: ['ignore', 'pipe', 'ignore'] }).toString();
+}
+function tesseractText(file) {
+  // Installed languages only (missing traineddata would make tesseract fail).
+  let langs = OCR_LANGS;
+  try { const have = new Set(run('tesseract', ['--list-langs']).split('\n').map((x) => x.trim())); langs = OCR_LANGS.split('+').filter((l) => have.has(l)).join('+') || 'eng'; } catch { langs = 'eng'; }
+  const out = [];
+  // Preprocess with ImageMagick when available: grayscale, 2× upscale, normalize, threshold.
+  const pre = `${file}-pre.png`;
+  try { run('convert', [file, '-colorspace', 'Gray', '-resize', '200%', '-normalize', '-threshold', '55%', pre], 30000); out.push(run('tesseract', [pre, 'stdout', '-l', langs, '--psm', '6'])); } catch { /* no imagemagick or failed */ } finally { try { fs.unlinkSync(pre); } catch { /* none */ } }
+  if (out.join('').trim().length < 20) { try { out.push(run('tesseract', [file, 'stdout', '-l', langs, '--psm', '6'])); } catch { /* ignore */ } }
+  return out.join('\n');
+}
+/** Optional Gemini vision (only when AI_ALLOW_REMOTE=true AND a key is provided; ≤2 per run). */
+async function geminiVision(buf, type) {
+  const key = process.env.GOOGLE_API_KEY || process.env.GEMINI_API_KEY;
+  if (!key || !/^(1|true|yes)$/i.test(process.env.AI_ALLOW_REMOTE || '') || visionUsed >= 2) return '';
+  visionUsed++;
+  try {
+    const res = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${encodeURIComponent(key)}`, {
+      method: 'POST', headers: { 'Content-Type': 'application/json' }, signal: AbortSignal.timeout(30000),
+      body: JSON.stringify({ contents: [{ parts: [{ text: 'Transcribe all text in this screenshot verbatim (identifiers, numbers, hex). No commentary.' }, { inline_data: { mime_type: type, data: buf.toString('base64') } }] }], generationConfig: { temperature: 0, maxOutputTokens: 800 } }),
+    });
+    if (!res.ok) return '';
+    const j = await res.json();
+    return String(j.candidates?.[0]?.content?.parts?.[0]?.text || '').slice(0, 20000);
+  } catch { return ''; }
+}
+
+/** OCR an image URL: optional Gemini vision, else free local tesseract (+preprocessing, multi-language). */
 async function ocr(url) {
-  if (ocrUsed >= OCR_MAX || !hasTesseract()) return '';
+  if (ocrUsed >= OCR_MAX) return '';
+  const tess = hasTesseract();
   ocrUsed++;
   const tmp = path.join(os.tmpdir(), `digest-ocr-${process.pid}-${ocrUsed}`);
   try {
-    const ctl = AbortSignal.timeout(20000);
-    const res = await fetch(url, { headers: { 'User-Agent': UA }, redirect: 'follow', signal: ctl });
+    const res = await fetch(url, { headers: { 'User-Agent': UA }, redirect: 'follow', signal: AbortSignal.timeout(20000) });
     if (!res.ok) return '';
-    const type = res.headers.get('content-type') || '';
+    const type = (res.headers.get('content-type') || '').split(';')[0];
     if (!/^image\//.test(type)) return '';
     const buf = Buffer.from(await res.arrayBuffer());
     if (buf.length > 6 * 1024 * 1024) return '';
+    const v = await geminiVision(buf, type);
+    if (v) return v;
+    if (!tess) return '';
     fs.writeFileSync(tmp, buf);
-    const txt = execFileSync('tesseract', [tmp, 'stdout', '--psm', '6'], { timeout: 45000, maxBuffer: 4 * 1024 * 1024, stdio: ['ignore', 'pipe', 'ignore'] }).toString();
-    return txt.slice(0, 20000);
+    return tesseractText(tmp).slice(0, 20000);
   } catch { return ''; } finally { try { fs.unlinkSync(tmp); } catch { /* none */ } }
 }
 
