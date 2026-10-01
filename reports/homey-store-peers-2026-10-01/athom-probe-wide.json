@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-01T22:20:52.157Z",
+  "generatedAt": "2026-10-01T23:09:21.185Z",
   "patch": "P2657",
   "api": "https://apps-api.athom.com/api/v1",
   "searchHits": {
@@ -1200,9 +1200,9 @@
       "appId": "com.dlnraja.tuya.zigbee",
       "ok": true,
       "liveVersion": null,
-      "testVersion": "9.0.1302",
+      "testVersion": "9.0.1305",
       "liveBuildId": null,
-      "testBuildId": 3401,
+      "testBuildId": 3404,
       "name": "Universal Tuya",
       "author": "Dylan Rajasekaram",
       "private": false,

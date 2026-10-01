@@ -1,4 +1,4 @@
-# Homey Store peer probe 2026-10-01T22:20:52.157Z
+# Homey Store peer probe 2026-10-01T23:09:21.185Z
 
 API: `https://apps-api.athom.com/api/v1`
 OK: **42** / 55 · Tuya/Zigbee-related filter: **16**
@@ -6,7 +6,7 @@ OK: **42** / 55 · Tuya/Zigbee-related filter: **16**
 ## Tuya / Zigbee / SmartLife / related (ok)
 - `cloud.shelly` **Shelly (Legacy)** live=`3.65.1` test=`-` author=Allterco Robotics · src=https://github.com/Drenso/cloud.shelly
 - `com.Meian.zigbee` **Meian** live=`0.1.4` test=`-` author=Wim Van der Velden · src=https://github.com/WJGvdVelden/MeianSiren
-- `com.dlnraja.tuya.zigbee` **Universal Tuya** live=`-` test=`9.0.1302` author=Dylan Rajasekaram · src=https://github.com/dlnraja/com.tuya.zigbee
+- `com.dlnraja.tuya.zigbee` **Universal Tuya** live=`-` test=`9.0.1305` author=Dylan Rajasekaram · src=https://github.com/dlnraja/com.tuya.zigbee
 - `com.dlnraja.tuya.zigbee.stable` **Tuya Unified (Stable)** live=`-` test=`5.12.354` author=Dylan Rajasekaram · src=https://github.com/dlnraja/com.tuya.zigbee
 - `com.heszi.ledvance-wifi` **SMART+ Wifi** live=`1.1.1` test=`-` author=Andras Heszegi · src=https://github.com/heszegi/com.heszi.ledvance-wifi
 - `com.hyundaiht.cloud` **HT Cloud** live=`1.0.5` test=`-` author=hyundai HT
@@ -33,7 +33,7 @@ OK: **42** / 55 · Tuya/Zigbee-related filter: **16**
 - `com.athom.homeyscript` live=3.6.3 test=- — HomeyScript
 - `com.broadlink` live=3.1.73 test=- — Broadlink
 - `com.danfoss` live=2.6.3 test=- — Danfoss
-- `com.dlnraja.tuya.zigbee` live=- test=9.0.1302 — Universal Tuya
+- `com.dlnraja.tuya.zigbee` live=- test=9.0.1305 — Universal Tuya
 - `com.dlnraja.tuya.zigbee.stable` live=- test=5.12.354 — Tuya Unified (Stable)
 - `com.fibaro` live=3.8.18 test=- — Fibaro
 - `com.frient` live=3.0.0 test=- — frient
