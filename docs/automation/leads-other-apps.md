@@ -68,3 +68,43 @@ sibling IDs in the same fingerprint array already live in the chosen driver with
 The daily digest already watches all six threads (`FORUM_TOPICS=140352,26439,89271,146735,154077,21313`,
 ≤4 requests per run, back-off on 403/429) and scans issues/PRs **with their comments** of JohanBendz repos and
 of this repo (open and closed, bots included). No AI is required.
+
+## Continuation 2026-10-01 — incremental GitHub scan (`scripts/scanners/github-leads-scan.js`)
+
+Read-only, polite random delays, hard request budget, stop on 403/429; cursor in
+`docs/automation/leads-other-apps-cursor.json` → `scan`, output in `data/leads/github-leads.json`
+(only mfrs not yet in a driver, or texts with firmware/bug keywords). The same scan now runs in
+`oss-lan-source-enrich.yml` (GITHUB_TOKEN only, no AI, budget `vars.LEADS_SCAN_MAX_REQUESTS`, default 150)
+and commits through `scripts/ci/safe-auto-commit.js`.
+
+Coverage reached in this pass:
+
+| Source | Coverage |
+|---|---|
+| issue/PR comments, both tracked repos | complete history (back to 2020-10 / 2025-08) |
+| issues/PRs, both tracked repos | complete history, open + closed |
+| peer Homey Zigbee app repos (4) | issues, comments and every `driver.compose.json` |
+| forks of the root repo (196) | 169 forks checked (130 with pushes after forking, every branch compared); continues from page 2 |
+| forks of this repo (11) | pending (next run) |
+
+### Applied
+
+| Couple | Finding | Action | Source URL |
+|---|---|---|---|
+| `_TZ3000_bwjstafw` / TS0203 | full device interview: IAS zone `contactSwitch`, clusters 0/1/3/1280, same as `contact_sensor` | fingerprint → `contact_sensor` (4 case variants) | https://github.com/rvproductions/com.tuya.zigbee/blob/SDK3/drivers/doorwindowsensor_3/device.js |
+| `_TZE284_aao3yzhs` / TS0601 | DP5 temperature is 0.1 °C (10x when read as whole °C) | already handled → quirk `existing` | https://github.com/JohanBendz/com.tuya.zigbee/issues/1009#issuecomment-5897476882 |
+| `_TZ3000_wkai4ga5` / TS0044 | alternate-frame debounce drops presses; double toggle elsewhere | quirk `documented` | https://github.com/JohanBendz/com.tuya.zigbee/issues/457#issuecomment-5870019780 |
+| `_TZ3002_pzao9ls1` / TS0726 | app press on one gang toggles all gangs | quirk `documented` | https://github.com/dlnraja/com.tuya.zigbee/issues/132#issuecomment-3947072344 |
+| `_TZ3000_rco1yzb1` / TS004F | single click missing, later press read as double click | quirk `documented` | https://github.com/JohanBendz/com.tuya.zigbee/issues/423#issuecomment-2405850747 |
+
+### Unconfirmed (not applied)
+
+| Couple | Why | Source URL |
+|---|---|---|
+| `_TZ3000_stt211u9` | fork list with mixed pids (incl. typo `TSO121`), no interview | https://github.com/CyB0rgg/com.tuya.zigbee/blob/SDK3_UK/drivers/smartplug/driver.compose.json |
+| `_TZ3000_9er9cqgi` | fork list shared by TS0002/3/12/13/011F, no exact pid | https://github.com/Geim66/com.tuya.zigbee/blob/patch-1/drivers/switch_2_gang/driver.compose.json |
+| `_TZ3210_y5rtzkmc` | fork LED list with 4 pids, no exact pid | https://github.com/rvproductions/com.tuya.zigbee/blob/SDK3/drivers/rgb_led_strip_controller/driver.compose.json |
+| `_TZ3290_acv1iusl` | only in automated triage output, no device evidence | https://github.com/dlnraja/com.tuya.zigbee/issues/335 |
+| `_TZ2300_gjnozsaz` | user asks whether it is a typo of a known id | https://github.com/JohanBendz/com.tuya.zigbee/issues/521#issuecomment-1792049987 |
+
+Side note: `_TZ3000_wkai4ga5` (TS0044, 4 buttons) also sits on `button_wireless_2`; worth a review.

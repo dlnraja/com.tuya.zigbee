@@ -10,6 +10,7 @@ on:
 
 permissions:
   contents: write
+  issues: write  # safe-auto-commit: single refusal comment on the tracking issue
 
 concurrency:
   group: oss-lan-source-enrich
@@ -61,6 +62,27 @@ jobs:
       - name: Homey Store peer probe
         continue-on-error: true
         run: npm run probe:homey-peers || echo "peer-probe soft-skip"
+
+      - name: GitHub leads scan (issues, comments, peer apps, forks + branches; incremental)
+        id: leads_scan
+        continue-on-error: true
+        timeout-minutes: 12
+        env:
+          # GITHUB_TOKEN only: read-only public API, no AI, hard request budget per run.
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: node scripts/scanners/github-leads-scan.js --max-requests=${{ vars.LEADS_SCAN_MAX_REQUESTS || '150' }} --min-delay=800 --max-delay=2500
+
+      - name: Commit leads cursor + scan output (gated)
+        if: steps.leads_scan.outcome == 'success'
+        continue-on-error: true
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          node scripts/ci/safe-auto-commit.js --id=github-leads-scan \
+            --message="chore(leads): incremental GitHub leads scan (cursor + output)" \
+            --paths="docs/automation/leads-other-apps-cursor.json data/leads/github-leads.json"
 
       - name: Contre quoi gates
         run: |
