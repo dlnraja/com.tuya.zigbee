@@ -387,9 +387,21 @@ jobs:
           TARGET_APP_ID: ${{ needs.publish.outputs.app_id }}
           HOMEY_EXPECTED_VERSION: ${{ needs.publish.outputs.uploaded_version }}
         run: node .github/scripts/auto-promote-puppeteer.js
+      - name: Promote via OAuth (ported from master)
+        id: promote_oauth
+        if: steps.soak.outputs.skip != 'true' && steps.promote_puppeteer.outcome != 'success'
+        continue-on-error: true
+        timeout-minutes: 5
+        env:
+          HOMEY_EMAIL: ${{ secrets.HOMEY_EMAIL }}
+          HOMEY_PASSWORD: ${{ secrets.HOMEY_PASSWORD }}
+          ATHOM_CLIENT_ID: ${{ secrets.ATHOM_CLIENT_ID }}
+          ATHOM_CLIENT_SECRET: ${{ secrets.ATHOM_CLIENT_SECRET }}
+        # auto-promote-oauth.js reads the App ID from app.json (com.dlnraja.tuya.zigbee.stable here).
+        run: node .github/scripts/auto-promote-oauth.js
       - name: Promote via API (PAT)
         id: promote_api
-        if: steps.soak.outputs.skip != 'true' && steps.promote_puppeteer.outcome != 'success'
+        if: steps.soak.outputs.skip != 'true' && steps.promote_puppeteer.outcome != 'success' && steps.promote_oauth.outcome != 'success'
         continue-on-error: true
         env:
           HOMEY_PAT: ${{ secrets.HOMEY_PAT }}
@@ -406,6 +418,7 @@ jobs:
           HOMEY_EXPECTED_VERSION: ${{ needs.publish.outputs.uploaded_version }}
         run: |
           if [ "${{ steps.promote_puppeteer.outcome }}" != "success" ] && \
+             [ "${{ steps.promote_oauth.outcome }}" != "success" ] && \
              [ "${{ steps.promote_api.outcome }}" != "success" ]; then
             echo "::warning::All stable draft-to-test promotion tiers returned non-success; verifying actual Homey channel state before failing."
           fi
