@@ -105,7 +105,7 @@ jobs:
         if: ${{ github.event_name == 'workflow_dispatch' && github.event.inputs.full_llm_review == 'true' }}
         continue-on-error: true
         env:
-          OCR_LLM_AUTH_TOKEN: ${{ secrets.OCR_LLM_AUTH_TOKEN }}
+          OCR_LLM_AUTH_TOKEN: ${{ vars.AI_DISABLED != 'true' && secrets.OCR_LLM_AUTH_TOKEN || '' }}
           OCR_LLM_MODEL: ${{ vars.OCR_LLM_MODEL }}
           OCR_LLM_BASE_URL: ${{ vars.OCR_LLM_BASE_URL }}
         run: |

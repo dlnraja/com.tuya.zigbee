@@ -88,7 +88,7 @@ jobs:
 
       - name: Run free scrape cross-ref
         env:
-          FIRECRAWL_API_KEY: ${{ secrets.FIRECRAWL_API_KEY }}
+          FIRECRAWL_API_KEY: ${{ vars.FIRECRAWL_DISABLED != 'true' && secrets.FIRECRAWL_API_KEY || '' }}
           CRAWL4AI_URL: ${{ secrets.CRAWL4AI_URL }}
         run: |
           node tools/ci/free-scrape-crossref.js \
