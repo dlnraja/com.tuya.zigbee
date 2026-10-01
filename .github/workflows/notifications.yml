@@ -33,7 +33,8 @@ concurrency:
   # All workflow_run (CI) events share ONE group: a burst collapses to the latest run.
   # digest-event.js also dedupes: ≤1 CI comment per 30 min (extra lines buffered, flushed later).
   # Other events keep the ORIGINAL group (workflow + ref).
-  group: ${{ github.event_name == 'workflow_run' && format('{0}-ci-events', github.workflow) || format('{0}-{1}', github.workflow, github.ref) }}
+  # Issue events get a per-issue group so two issues opened together are both triaged.
+  group: ${{ github.event_name == 'workflow_run' && format('{0}-ci-events', github.workflow) || (github.event_name == 'issues' && format('{0}-issue-{1}', github.workflow, github.event.issue.number)) || format('{0}-{1}', github.workflow, github.ref) }}
   cancel-in-progress: true
 defaults:
   run:
@@ -82,6 +83,40 @@ jobs:
         run: |
           echo "Event triggered in the repository: ${{ github.event_name }}"
           echo "Details: ${{ github.event.issue.html_url || github.event.pull_request.html_url }}"
+
+  auto-triage:
+    name: 🏷️ Auto-triage new issue (labels + "what we already know")
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    permissions:
+      contents: read
+      issues: write   # labels + one triage comment on the new issue
+    if: >-
+      github.repository == 'dlnraja/com.tuya.zigbee' &&
+      github.event_name == 'issues' && github.event.action == 'opened' &&
+      !endsWith(github.event.issue.user.login, '[bot]')
+    steps:
+      - name: 📥 Checkout (scripts + driver manifests + offline caches, read-only)
+        uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # v5.1.0
+        with:
+          ref: ${{ github.event.repository.default_branch }}
+          sparse-checkout: |
+            scripts/digest
+            scripts/sync/data
+            drivers
+            lib
+            data
+            .homeycompose/flow
+          persist-credentials: false
+      - name: 📦 Setup Node.js
+        uses: actions/setup-node@a0853c24544627f65ddf259abe73b1d18a591444 # v5.0.0
+        with:
+          node-version: '22'
+      - name: 🏷️ Triage
+        continue-on-error: true
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: node scripts/digest/triage.js
 
   digest-event:
     name: 🔔 PR / CI-master event → tracking issue
