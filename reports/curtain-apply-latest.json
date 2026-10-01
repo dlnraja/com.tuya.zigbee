@@ -1,22 +1,8 @@
 {
-  "generatedAt": "2026-09-30T18:38:36.515Z",
+  "generatedAt": "2026-10-01T07:47:14.609Z",
   "verdict": "curtain-z2m-missing-2026-09-01",
   "verified36_present": true,
   "added": [
-    {
-      "mfr": "_TZE200_jfw0a4aa",
-      "pid": "TS0601",
-      "source": "live-z2m-crawl",
-      "model": "EPJ-ZB",
-      "desc": "Smart sliding window pusher"
-    },
-    {
-      "mfr": "_TZE200_npj9bug3",
-      "pid": "TS0601",
-      "source": "live-z2m-crawl",
-      "model": "M515EGBZTN",
-      "desc": "Zigbee roller blind"
-    },
     {
       "mfr": "_TZE200_shkxsgis",
       "pid": "TS0601",
