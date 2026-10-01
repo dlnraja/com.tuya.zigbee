@@ -135,7 +135,7 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 
 ### Extras (master / Test channel)
 - Motion lighting helpers, circadian ramps, scene tools where enabled
-- Optional WiFi local-first for a subset of Tuya LAN devices
+- Optional WiFi local-first for Tuya LAN devices (Tuya / Smart Life and white-label brands such as Lidl Silvercrest, Moes, Nedis, Gosund, Avatto): LAN protocol 3.1–3.5, UDP + mDNS + TCP discovery, local keys via **Smart Life User Code + QR** (no developer account), Tuya IoT Platform, or manual entry; cloud only for key retrieval unless you opt in. Details: [`lib/tuya-local/README.md`](lib/tuya-local/README.md) · credits: [`CREDITS.md`](CREDITS.md)
 
 ---
 
