@@ -261,6 +261,13 @@ jobs:
           npm run check:p2288
           npm run check:p2494
           npm run check:p2495
+      - name: "🛡️ Fingerprint collision + workflow YAML gates (ported from master)"
+        run: |
+          npm run check:p2728
+          npm run check:yaml
+      - name: "📦 Publish payload size report (non-blocking)"
+        continue-on-error: true
+        run: node scripts/ci/publish-size-gate.cjs || echo "::warning::Publish payload size above the soft limit (see report above)"
       - name: Prepare Publish Directory
         run: npm run prepare-publish
       - name: Publish to Draft
