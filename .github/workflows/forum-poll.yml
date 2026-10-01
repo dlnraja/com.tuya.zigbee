@@ -2,7 +2,6 @@
 # Triggers: cron: 15 2,6,10,14,18,22 * * * + workflow_dispatch
 # Secrets: GITHUB_TOKEN; HOMEY_EMAIL+HOMEY_PASSWORD (or DISCOURSE_API_KEY) for PM harvest only
 # Never posts. PM + public scan + screenshot/media scan.
-# + forum-watch step: comments new-post digests on the "🤖 Daily digest" GitHub issue (issues: write).
 # Doc header added 2026-07-29 (workflows genealogy enrichment).
 
 name: 🌍 Forum Poll (P69)
@@ -31,7 +30,6 @@ on:
 permissions:
   contents: write
   pull-requests: write
-  issues: write # forum-watch: one comment on the "🤖 Daily digest" tracking issue (never posts on the forum)
 
 concurrency:
   group: forum-poll
@@ -117,19 +115,6 @@ jobs:
             echo '' >> $GITHUB_STEP_SUMMARY
             echo '```' >> $GITHUB_STEP_SUMMARY
           fi
-
-      # Free replacement for the Grok "Homey forum scan" routine: new posts since last-seen post number,
-      # extracts _TZ3000_/_TZE2xx_ mfr + TS0xxx productIds and cross-checks drivers/*/driver.compose.json.
-      # State + notification = tracking issue "🤖 Daily digest" (comment only when new posts). READ-ONLY on Discourse.
-      - name: 💬 Forum watch digest (new posts → tracking issue)
-        if: always() && github.repository == 'dlnraja/com.tuya.zigbee'
-        continue-on-error: true
-        timeout-minutes: 5
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          FORUM_TOPIC: ${{ inputs.topic_id || '140352' }}
-          FORUM_NOTIFY: any
-        run: node scripts/digest/forum-watch.js
 
       # READ-ONLY: scan own + satellite threads. NEVER posts. Prefer silent enrichment (T157628).
       - name: 🔇 Silent multi-topic forum scan
