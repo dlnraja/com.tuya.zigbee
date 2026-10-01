@@ -31,7 +31,7 @@ jobs:
   enrich:
     name: Scan OSS LAN sources
     runs-on: ubuntu-latest
-    timeout-minutes: 20
+    timeout-minutes: 35
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -83,6 +83,44 @@ jobs:
           node scripts/ci/safe-auto-commit.js --id=github-leads-scan \
             --message="chore(leads): incremental GitHub leads scan (cursor + output)" \
             --paths="docs/automation/leads-other-apps-cursor.json data/leads/github-leads.json data/leads/peer-flow-cards.json"
+
+      # P2791 — systematic image reading: issue/comment screenshots (interviews, DP logs, settings,
+      # capability tables) are OCR'd locally with tesseract (free, no AI), capped per run, with a
+      # resumable cursor. Output is a lead file only; nothing is applied from OCR text directly.
+      - name: Install tesseract (free local OCR; best-effort)
+        id: ocr_install
+        if: vars.IMAGE_OCR_DISABLED != 'true'
+        continue-on-error: true
+        timeout-minutes: 4
+        run: |
+          sudo apt-get install -y -qq --no-install-recommends tesseract-ocr >/dev/null 2>&1 || \
+            { sudo apt-get update -qq >/dev/null && sudo apt-get install -y -qq --no-install-recommends tesseract-ocr >/dev/null; }
+          tesseract --version | head -1
+
+      - name: Issue image OCR scan (capped, incremental)
+        id: image_ocr
+        if: vars.IMAGE_OCR_DISABLED != 'true' && steps.ocr_install.outcome == 'success'
+        continue-on-error: true
+        timeout-minutes: 10
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          node scripts/scanners/issue-image-ocr.js \
+            --max-issues=${{ vars.IMAGE_OCR_MAX_ISSUES || '40' }} \
+            --max-images=${{ vars.IMAGE_OCR_MAX_IMAGES || '25' }} \
+            --max-requests=${{ vars.IMAGE_OCR_MAX_REQUESTS || '150' }}
+
+      - name: Commit image OCR cursor + output (gated)
+        if: steps.image_ocr.outcome == 'success'
+        continue-on-error: true
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          node scripts/ci/safe-auto-commit.js --id=image-ocr \
+            --message="chore(leads): incremental issue image OCR (cursor + output)" \
+            --paths="data/leads/image-ocr.json data/leads/image-ocr-cursor.json"
 
       # P2790 — strict-rule intake: exact mfr+pid in the source + exactly one driver already listing
       # that pid → fingerprint written; strong firmware keywords → quirk recorded as "documented";
