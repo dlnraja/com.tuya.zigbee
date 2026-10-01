@@ -4,12 +4,18 @@
   "quirks": [
     {
       "id": "iadro9bf_dp1_inverted",
-      "mfr": ["_TZE284_iadro9bf"],
-      "pid": ["TS0601"],
+      "mfr": [
+        "_TZE284_iadro9bf"
+      ],
+      "pid": [
+        "TS0601"
+      ],
       "bug": "DP1 presence is inverted: 0 = person present, 1 = clear (looks like presence stuck YES when the room is empty)",
       "workaround": "invert DP1 before the presence pipeline (pair-scoped)",
       "type": "invert_bool_dp",
-      "params": { "dp": 1 },
+      "params": {
+        "dp": 1
+      },
       "status": "runtime",
       "location": "drivers/presence_sensor_radar/device.js _handleStaticDP",
       "source": [
@@ -20,12 +26,20 @@
     },
     {
       "id": "cnicaghm_leaves_network",
-      "mfr": ["_TZ3210_cnicaghm"],
-      "pid": ["TS0505B"],
+      "mfr": [
+        "_TZ3210_cnicaghm"
+      ],
+      "pid": [
+        "TS0505B"
+      ],
       "bug": "firmware leaves the network after ~10 minutes without Basic-cluster keep-alive reads",
       "workaround": "read genBasic.appVersion every 120 s while the device is initialised (pair-scoped)",
       "type": "keepalive_basic_read",
-      "params": { "intervalMs": 120000, "endpoint": 1, "attribute": "appVersion" },
+      "params": {
+        "intervalMs": 120000,
+        "endpoint": 1,
+        "attribute": "appVersion"
+      },
       "status": "runtime",
       "location": "drivers/bulb_dimmable/device.js onNodeInit",
       "source": [
@@ -35,8 +49,15 @@
     },
     {
       "id": "ceiling_v3_sensitivity_zero",
-      "mfr": ["_TZE200_gkfbdvyx", "_TZE204_gkfbdvyx", "_TZE204_ya4ft0w4", "_TZE200_ya4ft0w4"],
-      "pid": ["TS0601"],
+      "mfr": [
+        "_TZE200_gkfbdvyx",
+        "_TZE204_gkfbdvyx",
+        "_TZE204_ya4ft0w4",
+        "_TZE200_ya4ft0w4"
+      ],
+      "pid": [
+        "TS0601"
+      ],
       "bug": "firmware periodically reports move/presence sensitivity (DP2/DP102) as 0 although a valid value is stored",
       "workaround": "drop DP2/DP102 value 0 so Homey settings are not overwritten",
       "status": "existing",
@@ -49,38 +70,62 @@
     },
     {
       "id": "ya4ft0w4_zero_loop",
-      "mfr": ["_TZE204_ya4ft0w4"],
-      "pid": ["TS0601"],
+      "mfr": [
+        "_TZE204_ya4ft0w4"
+      ],
+      "pid": [
+        "TS0601"
+      ],
       "bug": "ZY-M100-24GV3 firmware emits numeric 0 reports in loops",
       "workaround": "drop 0-valued non-bool DP reports for this mfr",
       "status": "existing",
       "location": "drivers/presence_sensor_radar/device.js _handleDP/onTuyaDP (v10.9.0)",
-      "source": ["drivers/presence_sensor_radar/device.js comment (community report)"]
+      "source": [
+        "drivers/presence_sensor_radar/device.js comment (community report)"
+      ]
     },
     {
       "id": "ceiling_v3_sticky_dp1",
-      "mfr": ["_TZE200_gkfbdvyx", "_TZE204_gkfbdvyx"],
-      "pid": ["TS0601"],
+      "mfr": [
+        "_TZE200_gkfbdvyx",
+        "_TZE204_gkfbdvyx"
+      ],
+      "pid": [
+        "TS0601"
+      ],
       "bug": "DP1 sticks at present while distance is 0 m",
       "workaround": "DP1 marked unreliable + clear presence on zero distance + soft-clear watchdog",
       "status": "existing",
       "location": "drivers/presence_sensor_radar/configs.js ZY_M100_CEILING_24G (P2509/P2719)",
-      "source": ["https://github.com/Koenkk/zigbee2mqtt/issues/30785"]
+      "source": [
+        "https://github.com/Koenkk/zigbee2mqtt/issues/30785"
+      ]
     },
     {
       "id": "ts004f_magic_packet_unsupported",
-      "mfr": ["_TZ3000_gwkzibhs"],
-      "pid": ["TS004F"],
+      "mfr": [
+        "_TZ3000_gwkzibhs"
+      ],
+      "pid": [
+        "TS004F"
+      ],
       "bug": "replies UNSUPPORTED_ATTRIBUTE to the magic packet / tuyaOperationMode access",
       "workaround": "operating-mode setup is wrapped in try/catch; device keeps working",
       "status": "existing",
       "location": "drivers/smart_knob_rotary/device.js _enableTS004FOperatingMode",
-      "source": ["https://github.com/Koenkk/zigbee2mqtt/issues/31917"]
+      "source": [
+        "https://github.com/Koenkk/zigbee2mqtt/issues/31917"
+      ]
     },
     {
       "id": "knob_dimmer_stale_hourly_report",
-      "mfr": ["_TZE200_ykgar0ow", "_TZE200_4mh6tyyo"],
-      "pid": ["TS0601"],
+      "mfr": [
+        "_TZE200_ykgar0ow",
+        "_TZE200_4mh6tyyo"
+      ],
+      "pid": [
+        "TS0601"
+      ],
       "bug": "with periodic genOnOff/genLevelCtrl reporting (max 3600 s) the firmware sends a stale hourly report (onOff=1, frozen level)",
       "workaround": "none needed: our drivers do not configure periodic genOnOff/genLevelCtrl reporting for these pairs (do not add it)",
       "status": "documented",
@@ -92,18 +137,29 @@
     },
     {
       "id": "grxx6qek_time_sync_epoch",
-      "mfr": ["_TZE284_grxx6qek"],
-      "pid": ["TS0601"],
+      "mfr": [
+        "_TZE284_grxx6qek"
+      ],
+      "pid": [
+        "TS0601"
+      ],
       "bug": "MCU only accepts a Unix-epoch (1970) mcuSyncTime answer; Tuya-2000 epoch or no answer freezes sensor reporting after reboot",
       "workaround": "not applied: pair is currently listed under presence_sensor_radar while the source describes a temperature/humidity switch; needs a device diagnostic first",
       "status": "documented",
       "location": "drivers/presence_sensor_radar/driver.compose.json",
-      "source": ["https://github.com/Koenkk/zigbee-herdsman-converters/blob/master/src/devices/tuya.ts (_TZE284_grxx6qek timeStart 1970)"]
+      "source": [
+        "https://github.com/Koenkk/zigbee-herdsman-converters/blob/master/src/devices/tuya.ts (_TZE284_grxx6qek timeStart 1970)"
+      ]
     },
     {
       "id": "lzriup1j_preset_enum",
-      "mfr": ["_TZE204_lzriup1j", "_TZE204_gops3slb"],
-      "pid": ["TS0601"],
+      "mfr": [
+        "_TZE204_lzriup1j",
+        "_TZE204_gops3slb"
+      ],
+      "pid": [
+        "TS0601"
+      ],
       "bug": "preset enum differs from siblings (auto=1, manual=0, temporary_manual=2)",
       "workaround": "not applied: wall_thermostat uses another DP layout for these pairs; needs a device diagnostic",
       "status": "documented",
@@ -111,6 +167,38 @@
       "source": [
         "https://github.com/Koenkk/zigbee2mqtt/issues/21353#issuecomment-1938328429",
         "https://github.com/Koenkk/zigbee2mqtt/issues/28035"
+      ]
+    },
+    {
+      "id": "bquwrqh1_presence_polarity_provisional",
+      "mfr": [
+        "_TZE284_bquwrqh1"
+      ],
+      "pid": [
+        "TS0601"
+      ],
+      "bug": "PIR+lux unit reported with inverted presence semantics (0/1) and illuminance on DP101; battery DP unknown",
+      "workaround": "not applied: provisional cross-platform evidence only; needs a Homey diagnostic confirming DP1 polarity before any pair-scoped inversion",
+      "status": "documented",
+      "location": "drivers/presence_sensor_radar (TZE284_IADRO9BF config)",
+      "source": [
+        "https://github.com/JohanBendz/com.tuya.zigbee/issues/1351#issuecomment-5928283864"
+      ]
+    },
+    {
+      "id": "locansqn_response_and_humidity",
+      "mfr": [
+        "_TZE200_locansqn"
+      ],
+      "pid": [
+        "TS0601"
+      ],
+      "bug": "values arrive as Tuya data response (0x02) as well as report; DP2 humidity is not x10 on this variant",
+      "workaround": "listen to both report and response; DP2 humidity used as-is (direct humidity list)",
+      "status": "existing",
+      "location": "drivers/lcdtemphumidsensor_3/device.js (response listener), drivers/lcdtemphumidsensor/device.js DIRECT_HUMIDITY_MANUFACTURERS",
+      "source": [
+        "https://github.com/JohanBendz/com.tuya.zigbee/issues/1474"
       ]
     }
   ]
