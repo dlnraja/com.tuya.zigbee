@@ -1,0 +1,55 @@
+{
+  "id": "device_set_setting",
+  "title": {
+    "en": "Set a device setting",
+    "fr": "Modifier un réglage de l'appareil",
+    "nl": "Een apparaatinstelling wijzigen",
+    "de": "Eine Geräteeinstellung ändern"
+  },
+  "titleFormatted": {
+    "en": "Set [[setting]] of [[device]] to [[value]]",
+    "fr": "Régler [[setting]] de [[device]] sur [[value]]",
+    "nl": "Zet [[setting]] van [[device]] op [[value]]",
+    "de": "Setze [[setting]] von [[device]] auf [[value]]"
+  },
+  "hint": {
+    "en": "Changes a device setting (sensitivity, delay, threshold, …) and pushes it to the device. Numbers are clamped to the allowed range; checkboxes accept true/false; dropdowns accept the option id.",
+    "fr": "Modifie un réglage de l'appareil (sensibilité, délai, seuil, …) et l'envoie à l'appareil. Les nombres sont bornés ; les cases acceptent true/false ; les listes acceptent l'identifiant de l'option."
+  },
+  "args": [
+    {
+      "type": "device",
+      "name": "device",
+      "title": {
+        "en": "Device",
+        "fr": "Appareil",
+        "nl": "Apparaat",
+        "de": "Gerät"
+      }
+    },
+    {
+      "type": "autocomplete",
+      "name": "setting",
+      "title": {
+        "en": "Setting",
+        "fr": "Réglage",
+        "nl": "Instelling",
+        "de": "Einstellung"
+      }
+    },
+    {
+      "type": "text",
+      "name": "value",
+      "title": {
+        "en": "Value",
+        "fr": "Valeur",
+        "nl": "Waarde",
+        "de": "Wert"
+      },
+      "placeholder": {
+        "en": "e.g. 5, true, high",
+        "fr": "ex. 5, true, high"
+      }
+    }
+  ]
+}

@@ -561,6 +561,13 @@
       </div>
       <input type="text" id="ire" placeholder="https://….workers.dev" style="min-width:220px" onchange="setText('issue_report_endpoint',this.value)">
     </div>
+    <div class="tr">
+      <div>
+        <b>Unavailable trigger grace (seconds)</b><br>
+        <span style="font-size:11px;color:#666">Wait this long before the "Device became unavailable" Flow fires. A device back online within the grace fires nothing. Default 120, 0 = immediate.</span>
+      </div>
+      <input type="number" id="avg" min="0" max="3600" step="10" placeholder="120" style="width:90px" onchange="setText('availability_trigger_grace_s',this.value)">
+    </div>
   </div>
 
   <div class="card" style="font-size:11px;color:#64748b;border-style:dashed;">
@@ -954,6 +961,7 @@
         Homey.get('smartthings_client_secret', function(e, v) { updateSTSecretStatus(!!v); });
         Homey.get('developer_debug_mode', function(e, v) { if (el('dbg')) el('dbg').checked = !!v; });
         Homey.get('issue_report_endpoint', function(e, v) { if (v && el('ire')) el('ire').value = v; });
+        Homey.get('availability_trigger_grace_s', function(e, v) { if (v !== undefined && v !== null && v !== '' && el('avg')) el('avg').value = v; });
         Homey.get('experimental_smart_adapt', function(e, v) { if (el('sa')) el('sa').checked = !!v; });
       } catch (eGet) { console.error('settings get', eGet); }
 
