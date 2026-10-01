@@ -62,12 +62,14 @@ describe('P2762 native-first, complementary never mandatory', () => {
     assert.doesNotMatch(src, /this\.setCapabilityValue\(/);
   });
 
-  it('_TZE200_nkjintbl stays off forbidden drivers (P2605 registry wins over Z2M lead)', () => {
+  it('_TZE200_nkjintbl follows the P2605 registry (switch_2gang only, never plug/1/3/4-gang)', () => {
     const app = JSON.parse(fs.readFileSync(path.join(ROOT, 'app.json'), 'utf8'));
-    for (const id of ['switch_2gang', 'switch_1gang', 'button_wireless_plug']) {
-      const d = app.drivers.find((x) => x.id === id);
-      assert.ok(!(d?.zigbee?.manufacturerName || []).includes('_TZE200_nkjintbl'), id);
-    }
+    const has = (id) => (app.drivers.find((x) => x.id === id)?.zigbee?.manufacturerName || []).includes('_TZE200_nkjintbl');
+    assert.ok(has('switch_2gang'), 'switch_2gang');
+    for (const id of ['switch_1gang', 'switch_3gang', 'switch_4gang', 'button_wireless_plug']) assert.ok(!has(id), id);
+    const reg = require('../../data/user-misattribution-registry.json');
+    assert.equal(reg.cases.find((c) => c.id === 'p2605-nkjintbl-tze200-not-switch2gang-not-btn-plug').canonicalDriver, 'switch_2gang');
+    assert.ok(!(app.drivers.find((x) => x.id === 'switch_2gang')?.zigbee?.manufacturerName || []).some((m) => /_tze284_nkjintbl/i.test(m)));
   });
 
   it('0xEF01 classified non-native (complementary, never mandatory)', () => {
