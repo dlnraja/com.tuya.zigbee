@@ -1,0 +1,95 @@
+{
+  "id": "capability_trend_is",
+  "title": {
+    "en": "A value !{{is|is not}} trending",
+    "fr": "Une valeur !{{suit|ne suit pas}} une tendance",
+    "nl": "Een waarde !{{vertoont|vertoont geen}} trend",
+    "de": "Ein Wert !{{zeigt|zeigt keinen}} Trend"
+  },
+  "titleFormatted": {
+    "en": "[[capability]] of [[device]] !{{is|is not}} [[trend]] over [[window]] minutes",
+    "fr": "[[capability]] de [[device]] !{{est|n'est pas}} [[trend]] sur [[window]] minutes",
+    "nl": "[[capability]] van [[device]] !{{is|is niet}} [[trend]] over [[window]] minuten",
+    "de": "[[capability]] von [[device]] !{{ist|ist nicht}} [[trend]] über [[window]] Minuten"
+  },
+  "args": [
+    {
+      "type": "device",
+      "name": "device",
+      "title": {
+        "en": "Device",
+        "fr": "Appareil",
+        "nl": "Apparaat",
+        "de": "Gerät"
+      }
+    },
+    {
+      "type": "autocomplete",
+      "name": "capability",
+      "title": {
+        "en": "Value",
+        "fr": "Valeur",
+        "nl": "Waarde",
+        "de": "Wert"
+      }
+    },
+    {
+      "type": "dropdown",
+      "name": "trend",
+      "title": {
+        "en": "Trend",
+        "fr": "Tendance",
+        "nl": "Trend",
+        "de": "Trend"
+      },
+      "values": [
+        {
+          "id": "rising",
+          "label": {
+            "en": "rising",
+            "fr": "en hausse",
+            "nl": "stijgend",
+            "de": "steigend"
+          }
+        },
+        {
+          "id": "falling",
+          "label": {
+            "en": "falling",
+            "fr": "en baisse",
+            "nl": "dalend",
+            "de": "fallend"
+          }
+        },
+        {
+          "id": "stable",
+          "label": {
+            "en": "stable",
+            "fr": "stable",
+            "nl": "stabiel",
+            "de": "stabil"
+          }
+        }
+      ]
+    },
+    {
+      "type": "number",
+      "name": "window",
+      "min": 15,
+      "max": 120,
+      "step": 5,
+      "title": {
+        "en": "Window (minutes)",
+        "fr": "Fenêtre (minutes)",
+        "nl": "Venster (minuten)",
+        "de": "Fenster (Minuten)"
+      },
+      "placeholder": {
+        "en": "60",
+        "fr": "60",
+        "nl": "60",
+        "de": "60"
+      }
+    }
+  ]
+}

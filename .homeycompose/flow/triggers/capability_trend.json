@@ -1,0 +1,140 @@
+{
+  "id": "capability_trend",
+  "title": {
+    "en": "A value is trending",
+    "fr": "Une valeur suit une tendance",
+    "nl": "Een waarde vertoont een trend",
+    "de": "Ein Wert zeigt einen Trend"
+  },
+  "hint": {
+    "en": "Fires once when the value rises or falls faster than the chosen rate per hour over the window (e.g. humidity rising 10 %/h).",
+    "fr": "Se déclenche une fois quand la valeur monte ou baisse plus vite que le taux choisi par heure sur la fenêtre (ex. humidité +10 %/h).",
+    "nl": "Gaat één keer af wanneer de waarde sneller stijgt of daalt dan het gekozen tempo per uur in het venster (bijv. vochtigheid +10 %/u).",
+    "de": "Löst einmal aus, wenn der Wert im Fenster schneller als die gewählte Rate pro Stunde steigt oder fällt (z. B. Feuchte +10 %/h)."
+  },
+  "args": [
+    {
+      "type": "device",
+      "name": "device",
+      "title": {
+        "en": "Device",
+        "fr": "Appareil",
+        "nl": "Apparaat",
+        "de": "Gerät"
+      }
+    },
+    {
+      "type": "autocomplete",
+      "name": "capability",
+      "title": {
+        "en": "Value",
+        "fr": "Valeur",
+        "nl": "Waarde",
+        "de": "Wert"
+      }
+    },
+    {
+      "type": "dropdown",
+      "name": "direction",
+      "title": {
+        "en": "Direction",
+        "fr": "Sens",
+        "nl": "Richting",
+        "de": "Richtung"
+      },
+      "values": [
+        {
+          "id": "rising",
+          "label": {
+            "en": "rising",
+            "fr": "en hausse",
+            "nl": "stijgend",
+            "de": "steigend"
+          }
+        },
+        {
+          "id": "falling",
+          "label": {
+            "en": "falling",
+            "fr": "en baisse",
+            "nl": "dalend",
+            "de": "fallend"
+          }
+        }
+      ]
+    },
+    {
+      "type": "number",
+      "name": "rate",
+      "min": 0,
+      "max": 100000,
+      "step": 0.1,
+      "title": {
+        "en": "Rate per hour",
+        "fr": "Taux par heure",
+        "nl": "Tempo per uur",
+        "de": "Rate pro Stunde"
+      },
+      "placeholder": {
+        "en": "e.g. 10",
+        "fr": "ex. 10",
+        "nl": "bijv. 10",
+        "de": "z. B. 10"
+      }
+    },
+    {
+      "type": "number",
+      "name": "window",
+      "min": 15,
+      "max": 120,
+      "step": 5,
+      "title": {
+        "en": "Window (minutes)",
+        "fr": "Fenêtre (minutes)",
+        "nl": "Venster (minuten)",
+        "de": "Fenster (Minuten)"
+      },
+      "placeholder": {
+        "en": "60",
+        "fr": "60",
+        "nl": "60",
+        "de": "60"
+      }
+    }
+  ],
+  "tokens": [
+    {
+      "name": "rate_per_hour",
+      "type": "number",
+      "title": {
+        "en": "Rate per hour",
+        "fr": "Taux par heure",
+        "nl": "Tempo per uur",
+        "de": "Rate pro Stunde"
+      },
+      "example": 12.5
+    },
+    {
+      "name": "value",
+      "type": "number",
+      "title": {
+        "en": "Value",
+        "fr": "Valeur",
+        "nl": "Waarde",
+        "de": "Wert"
+      },
+      "example": 78
+    },
+    {
+      "name": "capability",
+      "type": "string",
+      "title": {
+        "en": "Capability",
+        "fr": "Capacité",
+        "nl": "Capaciteit",
+        "de": "Fähigkeit"
+      },
+      "example": "measure_humidity"
+    }
+  ]
+}

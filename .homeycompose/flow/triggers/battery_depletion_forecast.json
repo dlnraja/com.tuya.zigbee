@@ -1,0 +1,71 @@
+{
+  "id": "battery_depletion_forecast",
+  "title": {
+    "en": "Battery expected to run out soon",
+    "fr": "Batterie bientôt vide (prévision)",
+    "nl": "Batterij binnenkort leeg (voorspelling)",
+    "de": "Batterie bald leer (Prognose)"
+  },
+  "hint": {
+    "en": "Fires once when the forecast (trend of the reported battery level over the last days) drops to the chosen number of days or less. Needs a few days of history.",
+    "fr": "Se déclenche une fois quand la prévision (tendance du niveau de batterie des derniers jours) atteint le nombre de jours choisi. Nécessite quelques jours d'historique.",
+    "nl": "Gaat één keer af wanneer de voorspelling (trend van het batterijniveau van de afgelopen dagen) het gekozen aantal dagen bereikt. Heeft enkele dagen historie nodig.",
+    "de": "Löst einmal aus, wenn die Prognose (Verlauf des Batteriestands der letzten Tage) die gewählte Anzahl Tage erreicht. Benötigt einige Tage Verlauf."
+  },
+  "args": [
+    {
+      "type": "device",
+      "name": "device",
+      "title": {
+        "en": "Device",
+        "fr": "Appareil",
+        "nl": "Apparaat",
+        "de": "Gerät"
+      },
+      "filter": "capabilities=measure_battery"
+    },
+    {
+      "type": "number",
+      "name": "days",
+      "min": 1,
+      "max": 365,
+      "step": 1,
+      "title": {
+        "en": "Days",
+        "fr": "Jours",
+        "nl": "Dagen",
+        "de": "Tage"
+      },
+      "placeholder": {
+        "en": "14",
+        "fr": "14",
+        "nl": "14",
+        "de": "14"
+      }
+    }
+  ],
+  "tokens": [
+    {
+      "name": "days_remaining",
+      "type": "number",
+      "title": {
+        "en": "Days remaining",
+        "fr": "Jours restants",
+        "nl": "Resterende dagen",
+        "de": "Verbleibende Tage"
+      },
+      "example": 12
+    },
+    {
+      "name": "battery",
+      "type": "number",
+      "title": {
+        "en": "Battery %",
+        "fr": "Batterie %",
+        "nl": "Batterij %",
+        "de": "Batterie %"
+      },
+      "example": 23
+    }
+  ]
+}

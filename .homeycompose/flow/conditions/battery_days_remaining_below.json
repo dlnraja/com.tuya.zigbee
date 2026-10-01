@@ -1,0 +1,41 @@
+{
+  "id": "battery_days_remaining_below",
+  "title": {
+    "en": "Battery forecast !{{is|is not}} below",
+    "fr": "Prévision batterie !{{inférieure|non inférieure}} à",
+    "nl": "Batterijvoorspelling !{{is|is niet}} lager dan",
+    "de": "Batterieprognose !{{liegt|liegt nicht}} unter"
+  },
+  "titleFormatted": {
+    "en": "Battery of [[device]] !{{is|is not}} expected empty within [[days]] days",
+    "fr": "Batterie de [[device]] !{{prévue|non prévue}} vide d'ici [[days]] jours",
+    "nl": "Batterij van [[device]] !{{is|is niet}} binnen [[days]] dagen leeg verwacht",
+    "de": "Batterie von [[device]] !{{wird|wird nicht}} in [[days]] Tagen leer erwartet"
+  },
+  "args": [
+    {
+      "type": "device",
+      "name": "device",
+      "title": {
+        "en": "Device",
+        "fr": "Appareil",
+        "nl": "Apparaat",
+        "de": "Gerät"
+      },
+      "filter": "capabilities=measure_battery"
+    },
+    {
+      "type": "number",
+      "name": "days",
+      "min": 1,
+      "max": 365,
+      "step": 1,
+      "title": {
+        "en": "Days",
+        "fr": "Jours",
+        "nl": "Dagen",
+        "de": "Tage"
+      }
+    }
+  ]
+}

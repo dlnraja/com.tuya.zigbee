@@ -7,14 +7,20 @@
     "de": "Energieverbrauch über"
   },
   "hint": {
-    "en": "Checks if the tracked energy usage exceeds a threshold within a time window"
+    "en": "Checks if the tracked energy usage exceeds a threshold within a time window",
+    "fr": "Vérifie si la consommation suivie dépasse un seuil sur une période",
+    "nl": "Controleert of het gemeten energieverbruik binnen een periode een drempel overschrijdt",
+    "de": "Prüft, ob der erfasste Energieverbrauch in einem Zeitraum eine Schwelle überschreitet"
   },
   "args": [
     {
       "name": "threshold_kwh",
       "type": "number",
       "title": {
-        "en": "Threshold (kWh)"
+        "en": "Threshold (kWh)",
+        "fr": "Seuil (kWh)",
+        "nl": "Drempel (kWh)",
+        "de": "Schwelle (kWh)"
       },
       "min": 0,
       "max": 1000,
@@ -25,37 +31,55 @@
       "name": "period",
       "type": "dropdown",
       "title": {
-        "en": "Time period"
+        "en": "Time period",
+        "fr": "Période",
+        "nl": "Periode",
+        "de": "Zeitraum"
       },
       "values": [
         {
           "id": "today",
           "title": {
-            "en": "Today"
+            "en": "Today",
+            "fr": "Aujourd'hui",
+            "nl": "Vandaag",
+            "de": "Heute"
           }
         },
         {
           "id": "yesterday",
           "title": {
-            "en": "Yesterday"
+            "en": "Yesterday",
+            "fr": "Hier",
+            "nl": "Gisteren",
+            "de": "Gestern"
           }
         },
         {
           "id": "this_week",
           "title": {
-            "en": "This week"
+            "en": "This week",
+            "fr": "Cette semaine",
+            "nl": "Deze week",
+            "de": "Diese Woche"
           }
         },
         {
           "id": "last_24h",
           "title": {
-            "en": "Last 24 hours"
+            "en": "Last 24 hours",
+            "fr": "Dernières 24 heures",
+            "nl": "Afgelopen 24 uur",
+            "de": "Letzte 24 Stunden"
           }
         },
         {
           "id": "last_7d",
           "title": {
-            "en": "Last 7 days"
+            "en": "Last 7 days",
+            "fr": "7 derniers jours",
+            "nl": "Afgelopen 7 dagen",
+            "de": "Letzte 7 Tage"
           }
         }
       ]
@@ -66,14 +90,20 @@
       "name": "actual_usage_kwh",
       "type": "number",
       "title": {
-        "en": "Actual usage (kWh)"
+        "en": "Actual usage (kWh)",
+        "fr": "Consommation réelle (kWh)",
+        "nl": "Werkelijk verbruik (kWh)",
+        "de": "Tatsächlicher Verbrauch (kWh)"
       }
     },
     {
       "name": "threshold_kwh",
       "type": "number",
       "title": {
-        "en": "Threshold (kWh)"
+        "en": "Threshold (kWh)",
+        "fr": "Seuil (kWh)",
+        "nl": "Drempel (kWh)",
+        "de": "Schwelle (kWh)"
       }
     }
   ],

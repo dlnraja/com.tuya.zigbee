@@ -1,0 +1,122 @@
+{
+  "id": "capability_anomaly",
+  "title": {
+    "en": "Unusual value detected",
+    "fr": "Valeur inhabituelle détectée",
+    "nl": "Ongebruikelijke waarde gedetecteerd",
+    "de": "Ungewöhnlicher Wert erkannt"
+  },
+  "hint": {
+    "en": "Learns the usual range of the value (e.g. power consumption) and fires when a new value is far outside it. Learns for about 20 reports first.",
+    "fr": "Apprend la plage habituelle de la valeur (ex. consommation) et se déclenche quand une valeur s'en écarte fortement. Apprentissage d'environ 20 mesures.",
+    "nl": "Leert het gebruikelijke bereik van de waarde (bijv. verbruik) en gaat af als een nieuwe waarde er ver buiten valt. Leert eerst ongeveer 20 metingen.",
+    "de": "Lernt den üblichen Bereich des Werts (z. B. Verbrauch) und löst aus, wenn ein neuer Wert weit davon abweicht. Lernt zuerst etwa 20 Meldungen."
+  },
+  "args": [
+    {
+      "type": "device",
+      "name": "device",
+      "title": {
+        "en": "Device",
+        "fr": "Appareil",
+        "nl": "Apparaat",
+        "de": "Gerät"
+      }
+    },
+    {
+      "type": "autocomplete",
+      "name": "capability",
+      "title": {
+        "en": "Value",
+        "fr": "Valeur",
+        "nl": "Waarde",
+        "de": "Wert"
+      }
+    },
+    {
+      "type": "dropdown",
+      "name": "sensitivity",
+      "title": {
+        "en": "Sensitivity",
+        "fr": "Sensibilité",
+        "nl": "Gevoeligheid",
+        "de": "Empfindlichkeit"
+      },
+      "values": [
+        {
+          "id": "low",
+          "label": {
+            "en": "low",
+            "fr": "faible",
+            "nl": "laag",
+            "de": "niedrig"
+          }
+        },
+        {
+          "id": "medium",
+          "label": {
+            "en": "medium",
+            "fr": "moyenne",
+            "nl": "middel",
+            "de": "mittel"
+          }
+        },
+        {
+          "id": "high",
+          "label": {
+            "en": "high",
+            "fr": "élevée",
+            "nl": "hoog",
+            "de": "hoch"
+          }
+        }
+      ]
+    }
+  ],
+  "tokens": [
+    {
+      "name": "value",
+      "type": "number",
+      "title": {
+        "en": "Value",
+        "fr": "Valeur",
+        "nl": "Waarde",
+        "de": "Wert"
+      },
+      "example": 2400
+    },
+    {
+      "name": "expected",
+      "type": "number",
+      "title": {
+        "en": "Usual value",
+        "fr": "Valeur habituelle",
+        "nl": "Gebruikelijke waarde",
+        "de": "Üblicher Wert"
+      },
+      "example": 120
+    },
+    {
+      "name": "deviation",
+      "type": "number",
+      "title": {
+        "en": "Deviation (σ)",
+        "fr": "Écart (σ)",
+        "nl": "Afwijking (σ)",
+        "de": "Abweichung (σ)"
+      },
+      "example": 4.2
+    },
+    {
+      "name": "capability",
+      "type": "string",
+      "title": {
+        "en": "Capability",
+        "fr": "Capacité",
+        "nl": "Capaciteit",
+        "de": "Fähigkeit"
+      },
+      "example": "measure_power"
+    }
+  ]
+}

@@ -1,0 +1,40 @@
+{
+  "id": "device_silent_for",
+  "title": {
+    "en": "Device !{{has|has not}} been silent for",
+    "fr": "L'appareil !{{est|n'est pas}} silencieux depuis",
+    "nl": "Apparaat !{{is|is niet}} stil sinds",
+    "de": "Gerät !{{ist|ist nicht}} still seit"
+  },
+  "titleFormatted": {
+    "en": "[[device]] !{{has|has not}} been silent for more than [[minutes]] minutes",
+    "fr": "[[device]] !{{est|n'est pas}} silencieux depuis plus de [[minutes]] minutes",
+    "nl": "[[device]] !{{is|is niet}} meer dan [[minutes]] minuten stil",
+    "de": "[[device]] !{{ist|ist nicht}} seit mehr als [[minutes]] Minuten still"
+  },
+  "args": [
+    {
+      "type": "device",
+      "name": "device",
+      "title": {
+        "en": "Device",
+        "fr": "Appareil",
+        "nl": "Apparaat",
+        "de": "Gerät"
+      }
+    },
+    {
+      "type": "number",
+      "name": "minutes",
+      "min": 1,
+      "max": 10080,
+      "step": 1,
+      "title": {
+        "en": "Minutes",
+        "fr": "Minutes",
+        "nl": "Minuten",
+        "de": "Minuten"
+      }
+    }
+  ]
+}
