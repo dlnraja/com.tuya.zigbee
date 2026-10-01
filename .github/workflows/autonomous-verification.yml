@@ -1,5 +1,7 @@
 # Autonomous Verification (P37)
 # Triggers: cron: 15 */6 * * * + workflow_dispatch | Secrets: GITHUB_TOKEN only
+# + ci-health job (free replacement for the Grok "Homey CI health" routine): red/green of every
+#   workflow on master + stable-v5, comments on the "🤖 Daily digest" issue only on transitions.
 # Doc header added 2026-07-29 (workflows genealogy enrichment).
 
 defaults:
@@ -90,3 +92,32 @@ jobs:
             console.log('  SecurityGuard:',typeof S.SecurityGuard);
             console.log('  ✅ All modules loadable');
           "
+
+  ci-health:
+    name: 🩺 CI health (master + stable-v5 → tracking issue)
+    if: github.repository == 'dlnraja/com.tuya.zigbee'
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    permissions:
+      contents: read
+      actions: read
+      checks: read
+      issues: write
+    concurrency:
+      group: digest-ci-health
+      cancel-in-progress: false
+    steps:
+      - name: 📥 Checkout (scripts only)
+        uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # v5.1.0
+        with:
+          sparse-checkout: scripts/digest
+          persist-credentials: false
+      - name: 📦 Setup Node.js
+        uses: actions/setup-node@a0853c24544627f65ddf259abe73b1d18a591444 # v5.0.0
+        with:
+          node-version: '22'
+      - name: 🩺 CI health
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          CI_BRANCHES: master,stable-v5
+        run: node scripts/digest/ci-health.js

@@ -1,0 +1,116 @@
+# 🤖 Daily Digest (free replacement for the Grok Bot "Homey digest" + "Labs digest" routines)
+# Triggers: cron weekdays (Paris 08:16 Homey, 08:49 Labs — DST-safe via tz-guard) + workflow_dispatch
+# Secrets: GITHUB_TOKEN only. Reads public repos dlnraja/ascendos + dlnraja/pulse-automix.
+# Notification = ONE comment on the tracking issue "🤖 Daily digest" (label bot-digest) only when
+# something changed; state is kept in that issue body (no commits, no push → no CI churn).
+# Folds the latest gmail-diagnostics / fetch-diags results (run status + sanitized artifact).
+name: 🤖 Daily Digest
+
+on:
+  schedule:
+    # GitHub cron is UTC. Two crons per slot: summer (UTC+2) and winter (UTC+1);
+    # scripts/digest/tz-guard.js keeps only the one matching Paris time today.
+    - cron: '16 6 * * 1-5'   # Homey 08:16 Paris (CEST)
+    - cron: '16 7 * * 1-5'   # Homey 08:16 Paris (CET, from 25 Oct 2026)
+    - cron: '49 6 * * 1-5'   # Labs 08:49 Paris (CEST)
+    - cron: '49 7 * * 1-5'   # Labs 08:49 Paris (CET)
+  workflow_dispatch:
+    inputs:
+      which:
+        description: 'Digest to run'
+        type: choice
+        options: [both, homey, labs]
+        default: both
+      force:
+        description: 'Post a comment even if nothing changed'
+        type: boolean
+        default: false
+
+permissions:
+  contents: read
+  issues: write
+  actions: read
+  checks: read
+  pull-requests: read
+
+concurrency:
+  group: daily-digest-${{ github.event.schedule || inputs.which || 'manual' }}
+  cancel-in-progress: false
+
+defaults:
+  run:
+    shell: bash
+
+env:
+  DIGEST_FORCE: ${{ inputs.force && '1' || '0' }}
+  AI_ALLOW_PAID: 'false'
+  AI_ALLOW_REMOTE: 'false'
+
+jobs:
+  homey:
+    name: 🏠 Homey digest
+    if: >-
+      github.repository == 'dlnraja/com.tuya.zigbee' &&
+      ((github.event_name == 'schedule' && startsWith(github.event.schedule, '16 ')) ||
+       (github.event_name == 'workflow_dispatch' && inputs.which != 'labs'))
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: 📥 Checkout (scripts only)
+        uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # v5.1.0
+        with:
+          sparse-checkout: scripts/digest
+          persist-credentials: false
+      - name: 📦 Setup Node.js
+        uses: actions/setup-node@a0853c24544627f65ddf259abe73b1d18a591444 # v5.0.0
+        with:
+          node-version: '22'
+      - name: 🕗 Paris-time guard
+        id: tz
+        run: node scripts/digest/tz-guard.js --schedule="${{ github.event.schedule }}" --paris-hour=8
+      - name: 📬 Fetch latest sanitized diagnostics artifact (best-effort)
+        if: steps.tz.outputs.run == 'true'
+        continue-on-error: true
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          mkdir -p diag-report
+          for wf in gmail-diagnostics.yml fetch-diags.yml; do
+            RID=$(gh run list -R "$GITHUB_REPOSITORY" -w "$wf" -s success -L 1 --json databaseId -q '.[0].databaseId' || true)
+            [ -n "$RID" ] && gh run download "$RID" -R "$GITHUB_REPOSITORY" -n sanitized-diagnostics-report -D diag-report && break
+          done
+          find diag-report -name 'diagnostics-report.json' | head -1
+      - name: 🏠 Homey digest
+        if: steps.tz.outputs.run == 'true'
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          DIAG_REPORT_DIR: diag-report
+        run: node scripts/digest/homey-digest.js
+
+  labs:
+    name: 🧪 Labs digest (AscendOS / Pulse)
+    if: >-
+      github.repository == 'dlnraja/com.tuya.zigbee' &&
+      ((github.event_name == 'schedule' && startsWith(github.event.schedule, '49 ')) ||
+       (github.event_name == 'workflow_dispatch' && inputs.which != 'homey'))
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: 📥 Checkout (scripts only)
+        uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # v5.1.0
+        with:
+          sparse-checkout: scripts/digest
+          persist-credentials: false
+      - name: 📦 Setup Node.js
+        uses: actions/setup-node@a0853c24544627f65ddf259abe73b1d18a591444 # v5.0.0
+        with:
+          node-version: '22'
+      - name: 🕗 Paris-time guard
+        id: tz
+        run: node scripts/digest/tz-guard.js --schedule="${{ github.event.schedule }}" --paris-hour=8
+      - name: 🧪 Labs digest
+        if: steps.tz.outputs.run == 'true'
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          LABS_REPOS: dlnraja/ascendos,dlnraja/pulse-automix
+        run: node scripts/digest/labs-digest.js
