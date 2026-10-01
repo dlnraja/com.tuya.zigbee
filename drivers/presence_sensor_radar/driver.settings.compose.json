@@ -151,5 +151,61 @@
       "nl": "Als geen clear-frame binnen Vertrekvertraging + 5s komt, forceert Homey presence UIT. Aanbevolen AAN."
     },
     "value": true
+  },
+  {
+    "id": "radar_direct_mode",
+    "type": "checkbox",
+    "value": false,
+    "label": {
+      "en": "Direct mode (raw sensor values)",
+      "fr": "Mode direct (valeurs brutes du capteur)",
+      "nl": "Directe modus (ruwe sensorwaarden)"
+    },
+    "hint": {
+      "en": "Presence, lux and distance follow the sensor reports as-is: no smoothing, inference or automatic clearing. Try this if values lag or stay stuck. Off by default.",
+      "fr": "Présence, lux et distance suivent les rapports du capteur tels quels : sans lissage, inférence ni effacement automatique. À essayer si les valeurs traînent ou restent bloquées. Désactivé par défaut.",
+      "nl": "Aanwezigheid, lux en afstand volgen de sensorrapporten ongewijzigd: geen afvlakking, inferentie of automatisch wissen. Probeer dit als waarden achterlopen of vastlopen. Standaard uit."
+    }
+  },
+  {
+    "id": "radar_direct_distance_scale",
+    "type": "dropdown",
+    "value": "auto",
+    "label": {
+      "en": "Direct mode: distance unit",
+      "fr": "Mode direct : unité de distance",
+      "nl": "Directe modus: afstandseenheid"
+    },
+    "hint": {
+      "en": "Only used in direct mode. Auto uses the device profile; pick dm or cm if the distance is 10× off.",
+      "fr": "Utilisé uniquement en mode direct. Auto suit le profil de l'appareil ; choisir dm ou cm si la distance est fausse d'un facteur 10.",
+      "nl": "Alleen in directe modus. Auto volgt het apparaatprofiel; kies dm of cm als de afstand 10× afwijkt."
+    },
+    "values": [
+      {
+        "id": "auto",
+        "label": {
+          "en": "Auto",
+          "fr": "Auto",
+          "nl": "Auto"
+        }
+      },
+      {
+        "id": "dm",
+        "label": {
+          "en": "Decimetres (÷10)",
+          "fr": "Décimètres (÷10)",
+          "nl": "Decimeters (÷10)"
+        }
+      },
+      {
+        "id": "cm",
+        "label": {
+          "en": "Centimetres (÷100)",
+          "fr": "Centimètres (÷100)",
+          "nl": "Centimeters (÷100)"
+        }
+      }
+    ]
   }
 ]

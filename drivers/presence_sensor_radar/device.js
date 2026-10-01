@@ -2,6 +2,7 @@
 
 const UnifiedSensorBase = require('../../lib/devices/UnifiedSensorBase');
 const FirmwareQuirks = require('../../lib/quirks/FirmwareQuirks');
+const { RADAR_DIRECT_CAPS, radarDirectValue } = require('../../lib/sensors/RadarDirectMode');
 const { getSensorConfig, transformPresence } = require('./configs');
 const IntelligentPresenceInference = require('../../lib/sensors/IntelligentPresenceInference');
 const IntelligentDPAutoDiscovery = require('../../lib/sensors/IntelligentDPAutoDiscovery');
@@ -298,6 +299,11 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
    * mirroring is consistent with the driver's own semantics.
    */
   async safeSetCapabilityValue(capability, value) {
+    // WHY(P2791 / GH#550): opt-in direct mode — only raw DP reports may paint presence/lux/distance;
+    // smoothing, inference, soft-clear and watchdog writes are dropped. Default off (no change).
+    if (this._radarDirectMode() && RADAR_DIRECT_CAPS.has(capability) && !this._radarDirectWrite) {
+      return false;
+    }
     // WHY(P2391): mains MTG/clrdrnya must never commit phantom battery or DIY DP caps
     if (this.mainsPowered && (capability === 'measure_battery' || capability === 'alarm_battery' || capability === 'tuya_battery_low')) {
       return false;
@@ -1727,6 +1733,37 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
     return true;
   }
 
+  /** P2791: per-device opt-in "direct mode" setting (radar_direct_mode). */
+  _radarDirectMode() {
+    try { return this.getSetting?.('radar_direct_mode') === true; } catch (_e) { return false; }
+  }
+
+  /**
+   * P2791 / GH#550: direct DP → capability, no smoothing / inference / soft-clear.
+   * Presence: enum via the profile enumMap (0 none, 1 presence, 2 move) or truthy; invert_presence honoured.
+   * Measures: profile divisor only. Settings/internal DPs return false → normal path (settings sync).
+   * Pure mapping helper is radarDirectValue() (unit-tested).
+   */
+  _handleDirectDP(dpId, value, mapping, config) {
+    const out = radarDirectValue(mapping, value, {
+      invert: this.getSetting?.('invert_presence') === true || config?.invertPresence === true,
+      scale: this.getSetting?.('radar_direct_distance_scale') || 'auto',
+    });
+    if (!out) {return false;}
+    const writes = out.cap === 'alarm_motion' ? ['alarm_motion', 'alarm_human'] : [out.cap];
+    for (const cap of writes) {
+      if (!this.hasCapability?.(cap)) {continue;}
+      this._radarDirectWrite = true;
+      try {
+        this.safeSetCapabilityValue(cap, out.value).catch(() => {});
+      } finally {
+        this._radarDirectWrite = false;
+      }
+    }
+    this.log(`[RADAR] direct DP${dpId}=${JSON.stringify(value)} → ${writes.join('+')}=${out.value}`);
+    return true;
+  }
+
   /**
    * Handle DPs defined in the SENSOR_CONFIGS
    */
@@ -1736,6 +1773,7 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
     // https://github.com/Koenkk/zigbee-herdsman-converters/pull/9115
     // https://github.com/zigpy/zha-device-handlers/issues/3969
     try { value = FirmwareQuirks.transformDp(this, dpId, value); } catch (_e) { /* soft */ }
+    if (this._radarDirectMode() && this._handleDirectDP(dpId, value, mapping, config)) {return;}
     // A. Handle presence DPs
     if (mapping.cap === 'alarm_motion') {
       const inference = this._ensureInference();
