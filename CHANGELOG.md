@@ -4,7 +4,12 @@ All notable changes to the **Tuya Unified Zigbee** app for Homey Pro.
 
 ---
 
-## [9.0.1302] - 2026-10-01
+## [9.0.1303] - 2026-10-01
+
+v9.0.1303: automated publish, manifest sync, and Homey test promotion.
+---
+
+ [9.0.1302] - 2026-10-01
 
 v9.0.1301: WiFi devices: the Repair screen (update IP / local key / protocol, or fetch the key again) now opens; the view file was missing for 53 drivers., Tuya DP values are decoded as signed 32-bit numbers everywhere, so negative temperatures no longer show as huge numbers., "Changed" Flow triggers no longer fire for the first value received right after an app or device restart (that value only
 ---
