@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "description": "Known manufacturer firmware bugs for mfr+pid pairs already present in our drivers. type=runtime rules are applied by lib/quirks/FirmwareQuirks.js; status=existing points to code that already handles it; status=documented is tracked only (not applied).",
+  "description": "Known manufacturer firmware bugs for mfr+pid pairs already present in our drivers. type=runtime rules are applied by lib/quirks/FirmwareQuirks.js; status=existing points to code that already handles it; status=documented is tracked only (not applied). enabled=false means the runtime workaround exists but is parked until a second source or user confirmation.",
   "quirks": [
     {
       "id": "iadro9bf_dp1_inverted",
@@ -127,8 +127,8 @@
         "TS0601"
       ],
       "bug": "with periodic genOnOff/genLevelCtrl reporting (max 3600 s) the firmware sends a stale hourly report (onOff=1, frozen level)",
-      "workaround": "none needed: our drivers do not configure periodic genOnOff/genLevelCtrl reporting for these pairs (do not add it)",
-      "status": "documented",
+      "workaround": "our drivers never configure periodic genOnOff/genLevelCtrl reporting for these pairs (only activePower on dimmer_wall_1gang); guarded by test/critical/p2790-firmware-quirk-workarounds.test.js",
+      "status": "existing",
       "location": "drivers/wall_dimmer_tuya, drivers/dimmer_1_gang_tuya, drivers/dimmer_wall_1gang",
       "source": [
         "https://github.com/Koenkk/zigbee-herdsman-converters/blob/master/src/devices/tuya.ts (ION Industries _TZE200_ykgar0ow comment)",
@@ -144,9 +144,9 @@
         "TS0601"
       ],
       "bug": "MCU only accepts a Unix-epoch (1970) mcuSyncTime answer; Tuya-2000 epoch or no answer freezes sensor reporting after reboot",
-      "workaround": "not applied: pair is currently listed under presence_sensor_radar while the source describes a temperature/humidity switch; needs a device diagnostic first",
-      "status": "documented",
-      "location": "drivers/presence_sensor_radar/driver.compose.json",
+      "workaround": "time sync answers with the Unix 1970 epoch by default; this pair is not in the epoch-2000 list (TuyaSpecificCluster.needsEpoch2000 = false), guarded by test. Driver placement still needs a device diagnostic",
+      "status": "existing",
+      "location": "lib/tuya/TuyaSpecificCluster.js getTimestamps / needsEpoch2000",
       "source": [
         "https://github.com/Koenkk/zigbee-herdsman-converters/blob/master/src/devices/tuya.ts (_TZE284_grxx6qek timeStart 1970)"
       ]
@@ -161,7 +161,7 @@
         "TS0601"
       ],
       "bug": "preset enum differs from siblings (auto=1, manual=0, temporary_manual=2)",
-      "workaround": "not applied: wall_thermostat uses another DP layout for these pairs; needs a device diagnostic",
+      "workaround": "not applied: the preset DP number for these pairs in our wall_thermostat layout is unconfirmed (never guess a DP); generic enum remap (type enum_remap, params {dp, map}) is available in FirmwareQuirks.transformDp once a diagnostic gives the DP",
       "status": "documented",
       "location": "drivers/wall_thermostat",
       "source": [
@@ -178,12 +178,18 @@
         "TS0601"
       ],
       "bug": "PIR+lux unit reported with inverted presence semantics (0/1) and illuminance on DP101; battery DP unknown",
-      "workaround": "not applied: provisional cross-platform evidence only; needs a Homey diagnostic confirming DP1 polarity before any pair-scoped inversion",
-      "status": "documented",
-      "location": "drivers/presence_sensor_radar (TZE284_IADRO9BF config)",
+      "workaround": "implemented, parked (enabled=false): invert DP1 before the presence pipeline, pair-scoped (same mechanism as iadro9bf)",
+      "status": "runtime",
+      "location": "drivers/presence_sensor_radar/device.js _handleStaticDP (FirmwareQuirks.transformDp)",
       "source": [
         "https://github.com/JohanBendz/com.tuya.zigbee/issues/1351#issuecomment-5928283864"
-      ]
+      ],
+      "type": "invert_bool_dp",
+      "params": {
+        "dp": 1
+      },
+      "enabled": false,
+      "enableWhen": "second independent source or a Homey diagnostic confirming DP1 polarity"
     },
     {
       "id": "locansqn_response_and_humidity",
@@ -226,12 +232,16 @@
         "TS0044"
       ],
       "bug": "an every-other-frame debounce makes presses need repeating on newer Homey hardware, while other reports show an OFF->ON double toggle: the frame multiplicity differs from sibling remotes",
-      "workaround": "do not drop alternate frames globally; dedupe by ZCL transaction sequence number per endpoint (scope any bypass to this pair after a raw-frame check)",
-      "status": "documented",
-      "location": "drivers/button_wireless_2, drivers/scene_switch_4",
+      "workaround": "pair-scoped: drop an identical button+pressType repeated within 500 ms (TS0044 only; the TS0042 couple is unaffected). No alternate-frame drop, so real presses are never skipped",
+      "status": "runtime",
+      "location": "lib/devices/ButtonDevice.js triggerButtonPress (FirmwareQuirks.buttonDedupeMs) — drivers/scene_switch_4",
       "source": [
         "https://github.com/JohanBendz/com.tuya.zigbee/issues/457#issuecomment-5870019780"
-      ]
+      ],
+      "type": "button_dedupe",
+      "params": {
+        "windowMs": 500
+      }
     },
     {
       "id": "pzao9ls1_group_toggle",
@@ -242,12 +252,16 @@
         "TS0726"
       ],
       "bug": "a virtual (app) press on one gang toggles all physical gangs (group-addressed command reaches every endpoint)",
-      "workaround": "send per-endpoint unicast commands, never group-addressed onOff, for this 4-gang switch",
-      "status": "documented",
-      "location": "drivers/wall_switch_4gang_1way",
+      "workaround": "pair-scoped: after an app command on one gang, if EVERY other gang flipped to the same value within 1.5 s, re-send their previous state (per-endpoint unicast)",
+      "status": "runtime",
+      "location": "drivers/wall_switch_4gang_1way/device.js _setGangOnOff (FirmwareQuirks.gangsToRestore)",
       "source": [
         "https://github.com/dlnraja/com.tuya.zigbee/issues/132#issuecomment-3947072344"
-      ]
+      ],
+      "type": "gang_echo_restore",
+      "params": {
+        "windowMs": 1500
+      }
     },
     {
       "id": "rco1yzb1_single_click_missing",
@@ -258,12 +272,14 @@
         "TS004F"
       ],
       "bug": "single click not reported in scene mode; a later press (even 20 s apart) is seen as a double click",
-      "workaround": "none applied yet: requires the TS004F mode switch (event mode) and per-press transaction dedupe; tracked for retest",
-      "status": "documented",
-      "location": "drivers/button_wireless_4",
+      "workaround": "pair-scoped: genOnOff commandOn AND commandOff both mean one single press (toggle firmware alternates them), so no press is read as a double click",
+      "status": "runtime",
+      "location": "drivers/button_wireless_4/device.js onOff command fallback (FirmwareQuirks.onOffCommandsAreSingle)",
       "source": [
         "https://github.com/JohanBendz/com.tuya.zigbee/issues/423#issuecomment-2405850747"
-      ]
+      ],
+      "type": "onoff_commands_single",
+      "params": {}
     }
   ]
 }

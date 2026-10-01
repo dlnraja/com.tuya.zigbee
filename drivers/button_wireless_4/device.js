@@ -97,8 +97,11 @@ class Button4GangDevice extends ButtonDevice {
         });
         onOff.on('commandOff', async () => {
           if (this._isDeduped(ep, 'off')) {return;}
-          this.log(`[E000-4G] EP${ep} commandOff -> Button ${ep} double`);
-          await this._triggerButton4Gang(ep, 'double');
+          // P2790: toggle firmware alternates On/Off per press → both are a single press (quirk-scoped).
+          let offPress = 'double';
+          try { if (require('../../lib/quirks/FirmwareQuirks').onOffCommandsAreSingle(this)) {offPress = 'single';} } catch (_q) { /* soft */ }
+          this.log(`[E000-4G] EP${ep} commandOff -> Button ${ep} ${offPress}`);
+          await this._triggerButton4Gang(ep, offPress);
         });
         onOff.on('commandToggle', async () => {
           if (this._isDeduped(ep, 'toggle')) {return;}
