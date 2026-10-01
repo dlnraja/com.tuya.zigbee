@@ -33,7 +33,7 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 
 | Metric | Value |
 |--------|-------|
-| **App Version** | v9.0.1297 |
+| **App Version** | v9.0.1298 |
 | **Drivers** | 434 (381 Zigbee + 53 WiFi) |
 | **Unique Fingerprints** | 4,703 |
 | **Pairing Variants** | 18,815 (4 case combos per fingerprint) |
@@ -41,7 +41,7 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 | **Flow Cards** | 6,030 |
 | **Unique Capabilities** | 170 |
 | **Native OTA Drivers** | 8 |
-| **Test Suites** | 542 files |
+| **Test Suites** | 544 files |
 | **SVG Icons** | 734 |
 | **Languages** | EN, FR, NL, DE |
 | **SDK / Homey** | 3 / >= 12.2.0 |
@@ -103,7 +103,8 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 
 | Version | Changes |
 |---------|---------|
-| **v9.0.1297** | v9.0.1296: |
+| **v9.0.1298** | v9.0.1297: |
+| **v9.0.1297** | v9.0.1297: automated publish, manifest sync, and Homey test promotion. |
 | **v9.0.1296** | v9.0.1296: automated publish, manifest sync, and Homey test promotion. |
 | **v9.0.1295** | v9.0.1295: automated publish, manifest sync, and Homey test promotion. |
 | **v9.0.1294** | Johan comments: Fantem ZB003-X to motion, doorbell/PIR/contact misroutes fixed, tank DP2 cm lock. |
@@ -114,7 +115,6 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 | **v9.0.1289** | Longer coin-cell battery life (no PowerCfg poll storms). Johan couple locks: pay2byax contact EF00 + 6ycgarab smoke/CO not radar. |
 | **v9.0.1288** | v9.0.1288: automated publish, manifest sync, and Homey test promotion. |
 | **v9.0.1287** | Improved battery life for coin-cell sensors and remotes (no proactive PowerCfg polls). Restored TS0043 wireless button interview clusters… |
-| **v9.0.1286** | v9.0.1286: automated publish, manifest sync, and Homey test promotion. |
 
 <!-- CHANGELOG_END -->
 
