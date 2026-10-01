@@ -153,6 +153,10 @@ Sources actually used or consulted for the Wi-Fi local stack (`lib/tuya-local/`)
 | OpenHAB Zigbee binding | **EPL-2.0** | Recherche intervalles de reporting |
 | SmartThings Edge drivers | **Apache-2.0** | Patterns Tuya DP |
 | gpmachado/com.gpm.homesuite | **GPL-3.0** | Study only — no code copied; behaviour reimplemented under MIT |
+| tesseract-ocr/tesseract | **Apache-2.0** | CI only — OCR local et gratuit des captures d'écran (boucle de feedback), installé sur le runner, non embarqué |
+| ImageMagick | **ImageMagick License** | CI only — prétraitement des images avant OCR (niveaux de gris, agrandissement, seuil), non embarqué |
+| arendst/Tasmota | **GPL-3.0** | CI only — recherche d'issues publiques pour le jeu de données de quirks firmware ; aucun code repris |
+| ioBroker/ioBroker.zigbee | **MIT** | CI only — recherche d'issues publiques (quirks firmware) ; aucun code repris |
 
 > Voir **NOTICE** à la racine pour les attributions complètes. Les empreintes,
 > numéros de datapoint et comportements protocolaires sont des données
@@ -162,6 +166,8 @@ Sources actually used or consulted for the Wi-Fi local stack (`lib/tuya-local/`)
 ## Inspiration
 - All community members who reported issues and requested devices
 - The Homey community forum contributors
+- Home Assistant, Hubitat, SmartThings, openHAB and Jeedom community forums — public device-behaviour reports read (capped, read-only) to build the firmware-quirk dataset
+- Drenso and Athom (athombv) — public Homey app CI workflows (validate / publish / version actions) studied as workflow patterns
 - Reddit r/homey, r/zigbee, r/homeautomation communities
 - GitHub issue reporters who help improve device compatibility
 - The open-source Zigbee community for protocol documentation and device databases
