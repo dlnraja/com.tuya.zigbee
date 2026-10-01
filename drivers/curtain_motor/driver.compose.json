@@ -1741,6 +1741,23 @@
         "en": "Estimate power consumption when real measurement is not available (AC/DC devices only)",
         "fr": "Estimer la consommation quand la mesure réelle n'est pas disponible (appareils AC/DC seulement)"
       }
+    },
+    {
+      "id": "keep_position_slider",
+      "type": "checkbox",
+      "value": false,
+      "label": {
+        "en": "Always keep the position slider",
+        "fr": "Toujours garder le curseur de position",
+        "nl": "Positieschuif altijd behouden",
+        "de": "Positionsregler immer behalten"
+      },
+      "hint": {
+        "en": "Off (default): the position slider is hidden when the curtain never reports a position (open/stop/close only) after sustained use. On: never hide it.",
+        "fr": "Désactivé (défaut) : le curseur est masqué si le rideau ne signale jamais de position (ouvrir/stop/fermer uniquement) après un usage prolongé. Activé : jamais masqué.",
+        "nl": "Uit (standaard): de positieschuif wordt verborgen als het gordijn na langer gebruik nooit een positie meldt (alleen open/stop/dicht). Aan: nooit verbergen.",
+        "de": "Aus (Standard): Der Positionsregler wird ausgeblendet, wenn der Vorhang nach längerer Nutzung nie eine Position meldet (nur Auf/Stopp/Zu). An: nie ausblenden."
+      }
     }
   ],
   "energy": {

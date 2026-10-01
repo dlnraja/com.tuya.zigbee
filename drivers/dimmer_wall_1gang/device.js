@@ -83,14 +83,20 @@ class DimmerWall1GangDevice extends PhysicalButtonMixin(VirtualButtonMixin(Light
   _handleDP(dpId, rawValue) {
     const oldOnoff = this._lastOnoffState;
     const oldDim = this._lastDimValue;
+    // P2774: after a restart _lastOnoffState is null; seed it from the stored capability so the
+    // first state report (sync, not a press) does not fire a "physical" trigger.
+    let prevCapOnoff = null;
+    try { prevCapOnoff = this.hasCapability('onoff') ? this.getCapabilityValue('onoff') : null; } catch (_e) { prevCapOnoff = null; }
     super._handleDP(dpId, rawValue);
     const isPhysical = !this._appCommandPending;
     
     if (dpId === 1) {
       const v = rawValue === 1 || rawValue === true;
+      if (this._lastOnoffState === null && typeof prevCapOnoff === 'boolean') {this._lastOnoffState = prevCapOnoff;}
       if (this._lastOnoffState === v) {return;}
+      const firstReport = this._lastOnoffState === null; // P2774: unknown baseline → baseline only
       this._lastOnoffState = v;
-      if (isPhysical) {
+      if (isPhysical && !firstReport) {
         const id = v ? 'dimmer_wall_1gang_physical_on' : 'dimmer_wall_1gang_physical_off';
         const trigger = this.homey.flow.getDeviceTriggerCard(id);
         if (trigger) {trigger.trigger(this).catch(this._boundError || ((e) => { try { this.error(e); } catch (_) {} }));}

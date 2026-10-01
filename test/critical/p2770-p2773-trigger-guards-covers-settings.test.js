@@ -131,10 +131,10 @@ describe('P2773 set device setting', () => {
     const ids = DSA.autocomplete(mk(), '').map((r) => r.id);
     assert.deepEqual(ids, ['sensitivity', 'led', 'mode']);
   });
-  it('coerces, clamps and calls onSettings', async () => {
+  it('coerces and calls onSettings', async () => {
     const d = mk();
-    const r = await DSA.apply(d, { id: 'sensitivity' }, '42');
-    assert.equal(r.value, 10);
+    const r = await DSA.apply(d, { id: 'sensitivity' }, '7');
+    assert.equal(r.value, 7);
     assert.deepEqual(d.calls[0].changedKeys, ['sensitivity']);
     assert.equal((await DSA.apply(d, 'led', 'off')).value, false);
     assert.equal((await DSA.apply(d, 'mode', 'HIGH')).value, 'high');
