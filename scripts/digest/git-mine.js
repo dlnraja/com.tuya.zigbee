@@ -40,7 +40,7 @@ L.run(async () => {
     if (rec && rec.signals.unmapped) {
       const f = rec.signals.unmapped.filter((u) => !u.startsWith('endpoint:') && !seen.has(h8(br + u)));
       f.forEach((u) => seen.add(h8(br + u)));
-      if (f.length) fresh.push({ recent: Date.now() - Date.parse(date) < 14 * 864e5, br, sha: c.sha.slice(0, 10), url: c.html_url, title: msg.split('\n')[0].slice(0, 90), f });
+      if (f.length) fresh.push({ recent: Date.now() - Date.parse(date) < 14 * 864e5, br, sha: c.sha.slice(0, 10), url: c.html_url, title: msg.split('\n')[0].replace(/\b(?:z2m|zha|zigbee2mqtt|blakadder|deconz|herdsman|zigpy|koenkk)\b/gi, 'ext').slice(0, 90), f });
     }
     return date;
   };
