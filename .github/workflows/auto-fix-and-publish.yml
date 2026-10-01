@@ -7,6 +7,12 @@ name: 🤖 Auto-Fix + Publish Pipeline
 on:
   push:
     branches: [master, stable-v5]
+    # WHY(ci-consolidation 2026-10): docs/report-only pushes must not re-run the full pipeline
+    paths-ignore:
+      - 'docs/**'
+      - 'reports/**'
+      - '**/*.md'
+      - '.github/ISSUE_TEMPLATE/**'
   schedule:
     - cron: '5 */6 * * *'  # Every 6 hours
   workflow_dispatch:

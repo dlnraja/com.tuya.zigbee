@@ -30,6 +30,7 @@ on:
 permissions:
   contents: write
   pull-requests: write
+  issues: write # safe-auto-commit: single refusal comment on the tracking issue
 
 concurrency:
   group: fleet-intelligent-enrich
@@ -156,16 +157,11 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git pull --rebase origin master || true
-          git add -A drivers data app.json docs/knowledge reports config/enrichment tools/ci lib/scraper lib/flow || true
-          if git diff --cached --quiet; then
-            echo "No enrichment changes to commit"
-            exit 0
-          fi
-          git commit -m "fleet-enrich: intelligent all-class coverage (P2372) [skip ci]" || true
-          # WHY(P2383): verified push — do not mask failures (policy gate)
-          git pull --rebase origin master || true
-          git push origin HEAD:master
+          # WHY(ci-consolidation 2026-10): 7/12 recent failures were this push step (pull --rebase on a
+          # dirty tree, then non-fast-forward). safe-auto-commit stages → gates → commits → rebase-retries.
+          node scripts/ci/safe-auto-commit.js --id=fleet-enrich \
+            --message="fleet-enrich: intelligent all-class coverage (P2372)" \
+            --paths="drivers data app.json docs/knowledge reports config/enrichment tools/ci lib/scraper lib/flow"
 
       - name: Upload reports
         if: always()
