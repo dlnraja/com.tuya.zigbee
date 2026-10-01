@@ -146,7 +146,7 @@ class SirenDevice extends UnifiedPlugBase {
     try { await this._sendTuyaDP(116, validVol, 'enum'); } catch (e) {}
     if (this.hasCapability('volume_set')) {
       const capVal = validVol === 0 ? 0.33 : validVol === 1 ? 0.66 : 1.0;
-      await this.setCapabilityValue('volume_set', capVal).catch(() => {});
+      await this.safeSetCapabilityValue('volume_set', capVal).catch(() => {});
     }
   }
 
