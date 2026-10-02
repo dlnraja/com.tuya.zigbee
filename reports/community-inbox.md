@@ -1,19 +1,22 @@
-# 📥 Community Inbox — 2026-10-01 11:36 UTC
+# 📥 Community Inbox — 2026-10-02 11:06 UTC
 
 Généré par `.github/scripts/community-inbox-digest.js` (workflow `community-inbox.yml`).
 
 ## Résumé
 
-- Issues ouvertes : **3** — 🔴 à traiter : **3**, 🟡 attente utilisateur : 0, 🟢 maintainer actif : 0
+- Issues ouvertes : **3** — 🔴 à traiter : **2**, 🟡 attente utilisateur : 1, 🟢 maintainer actif : 0
 - PRs ouvertes : **1**
 - Forum : **2** post(s) sans réponse du maintainer
 - Messages privés (lecture seule, jamais de réponse) : **20** thread(s), 7 mfr, 5 pid, 7 UUID diag
 
 ## 🔴 Issues à traiter
 
-- [#556](https://github.com/dlnraja/com.tuya.zigbee/issues/556) — [Auto] New Tuya devices found in zigbee2mqtt _(🔴 attente maintainer, maj 2026-10-01)_
 - [#554](https://github.com/dlnraja/com.tuya.zigbee/issues/554) — Bug report - TS0046 / _TZ3000_iszegwpd 6 Gang Wall Remote fails to pair although Zigbee interview succeeds _(🔴 attente maintainer, maj 2026-09-29)_
 - [#550](https://github.com/dlnraja/com.tuya.zigbee/issues/550) — Bug report - [Short description] _(🔴 escaladé, maj 2026-09-28)_
+
+## 🟡 Auto-résolues, en attente de retour
+
+- [#557](https://github.com/dlnraja/com.tuya.zigbee/issues/557) — 🤖 Daily digest _(maj 2026-10-02)_
 
 ## 🔀 PRs ouvertes
 
