@@ -14,6 +14,7 @@
 - **zigpy/zha-device-handlers** - ZHA Tuya quirks (zhaquirks/tuya/)
 - **jasonacox/tinytuya** - Tuya local protocol implementation
 - **make-all/tuya-local** - Tuya Local for Home Assistant (YAML config DP mappings)
+- **rospogrigio/localtuya and forks (e.g. xZetsubou/hass-localtuya)** (GPL-3.0) - localtuya and forks: inspiration only, no code copied. Behaviour notes in our own words: `docs/automation/localtuya-study.md`.
 - **dresden-elektronik/deconz-rest-plugin** - deCONZ Tuya support and Data Point Protocol documentation
 
 ## Community Contributors
