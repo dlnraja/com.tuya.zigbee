@@ -33,15 +33,15 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 
 | Metric | Value |
 |--------|-------|
-| **App Version** | v9.0.1310 |
+| **App Version** | v9.0.1311 |
 | **Drivers** | 434 (381 Zigbee + 53 WiFi) |
 | **Unique Fingerprints** | 4,717 |
-| **Pairing Variants** | 18,857 (4 case combos per fingerprint) |
+| **Pairing Variants** | 18,909 (4 case combos per fingerprint) |
 | **Unique Product IDs** | 933 |
 | **Flow Cards** | 6,048 |
 | **Unique Capabilities** | 170 |
 | **Native OTA Drivers** | 8 |
-| **Test Suites** | 557 files |
+| **Test Suites** | 558 files |
 | **SVG Icons** | 734 |
 | **Languages** | EN, FR, NL, DE |
 | **SDK / Homey** | 3 / >= 12.2.0 |
@@ -52,22 +52,22 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 | # | Driver | Fingerprints |
 |---|--------|-------------|
 | 1 | `climate_sensor` | 2,143 |
-| 2 | `switch_1gang` | 1,511 |
-| 3 | `curtain_motor` | 1,124 |
+| 2 | `switch_1gang` | 1,515 |
+| 3 | `curtain_motor` | 1,126 |
 | 4 | `presence_sensor_radar` | 987 |
 | 5 | `radiator_valve` | 609 |
 | 6 | `generic_tuya` | 581 |
 | 7 | `button_wireless_2` | 566 |
-| 8 | `wall_dimmer_tuya` | 526 |
+| 8 | `wall_dimmer_tuya` | 528 |
 | 9 | `device_radiator_valve` | 372 |
 | 10 | `switch_2gang` | 345 |
 | 11 | `diy_custom_zigbee` | 306 |
-| 12 | `switch_4gang` | 302 |
+| 12 | `switch_4gang` | 306 |
 | 13 | `motion_sensor` | 291 |
 | 14 | `soil_sensor` | 282 |
-| 15 | `contact_sensor` | 237 |
-| 16 | `switch_3gang` | 233 |
-| 17 | `plug_energy_monitor` | 214 |
+| 15 | `contact_sensor` | 241 |
+| 16 | `switch_3gang` | 237 |
+| 17 | `plug_energy_monitor` | 220 |
 | 18 | `thermostat_tuya_dp` | 200 |
 | 19 | `sensor_contact_zigbee` | 187 |
 | 20 | `wall_thermostat` | 180 |
@@ -103,7 +103,8 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 
 | Version | Changes |
 |---------|---------|
-| **v9.0.1310** | v9.0.1309: |
+| **v9.0.1311** | v9.0.1310: |
+| **v9.0.1310** | v9.0.1310: automated publish, manifest sync, and Homey test promotion. |
 | **v9.0.1309** | v9.0.1309: automated publish, manifest sync, and Homey test promotion. |
 | **v9.0.1308** | v9.0.1308: automated publish, manifest sync, and Homey test promotion. |
 | **v9.0.1307** | v9.0.1307: automated publish, manifest sync, and Homey test promotion. |
@@ -114,7 +115,6 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 | **v9.0.1302** | v9.0.1301: WiFi devices: the Repair screen (update IP / local key / protocol, or fetch the key again) now opens; the view file was missin… |
 | **v9.0.1301** | v9.0.1301: WiFi devices: the Repair screen (update IP / local key / protocol, or fetch the key again) now opens; the view file was missin… |
 | **v9.0.1300** | v9.0.1300: automated publish, manifest sync, and Homey test promotion. |
-| **v9.0.1299** | v9.0.1299: automated publish, manifest sync, and Homey test promotion. |
 
 <!-- CHANGELOG_END -->
 
