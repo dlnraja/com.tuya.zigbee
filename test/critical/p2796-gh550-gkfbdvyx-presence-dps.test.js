@@ -56,7 +56,8 @@ describe('P2796 GH#550 gkfbdvyx presence DPs + firmware quirk pack', () => {
     assert.ok(!caps.includes('button.1'));
     assert.ok(!caps.includes('button'));
     const opts = compose.capabilitiesOptions || {};
-    assert.ok(!opts.onoff, 'capabilitiesOptions.onoff removed');
+    // onoff options stay: MTG relay variants add onoff at runtime and need the "Relay" title (P2511/P2581/P2602/P2603)
+    assert.ok(opts.onoff, 'capabilitiesOptions.onoff kept for runtime relay');
     assert.ok(!opts['button.1'], 'capabilitiesOptions.button.1 removed');
     assert.ok(caps.includes('alarm_motion'));
     assert.ok(caps.includes('alarm_human'));

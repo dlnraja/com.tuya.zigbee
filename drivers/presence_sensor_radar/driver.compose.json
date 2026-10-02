@@ -131,6 +131,14 @@
         "de": "Bewegungsklassifikation"
       }
     },
+    "onoff": {
+      "title": {
+        "en": "Relay",
+        "fr": "Relais",
+        "nl": "Relais",
+        "de": "Relais"
+      }
+    },
     "measure_luminance": {
       "getable": true,
       "preventInsights": false
