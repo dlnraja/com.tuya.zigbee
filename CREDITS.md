@@ -39,7 +39,7 @@ Public `app.json` flow card lists were read to decide which generic cards to off
 ## Homey Community Forum Contributors
 - **dlnraja** - App author, primary maintainer, TITAN Protocol architect
 - **Peter** - Issue #2090 (HOBEIAN water leak sensor), active device reporter
-- **JohanBendz** - Original Tuya Zigbee app author (com.tuya.zigbee), foundational patterns
+- **JohanBendz** - Original Tuya Zigbee app author (com.tuya.zigbee), foundational patterns. His 2026 issue triage ("Batch" consolidation comments with exact device identities, acceptance objectives and known regressions, e.g. #423/#424 click-window request) is indexed as leads in `data/leads/johan-canonical-index.json` (read-only, links kept); thanks also to every reporter whose Homey interviews he preserved.
 - **Community members** - All forum contributors who reported issues #2091, #5472, #388, #383, #420, #417 and requested device support
 - **Reddit communities** - r/homey, r/zigbee, r/homeautomation for cross-platform device knowledge
 
