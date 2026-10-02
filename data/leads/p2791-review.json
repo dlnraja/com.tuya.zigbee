@@ -1,0 +1,26 @@
+{
+ "note": "P2791 manual review of a full newest-to-oldest pass over a peer Tuya Zigbee issue tracker (1496 issues/PRs, 403 images OCR'd). Lead file only: entries marked 'owner decision' are NOT applied because they would remove or move an existing fingerprint (additive-only rule).",
+ "applied": [
+  {"what": "_TZ3000_lmcp6b0a / TS0003 on switch_3_gang", "evidence": "full interview (EP1 0/3/4/5/6/E000/E001, EP2-3 on/off) in a public device request", "branches": ["master", "stable-v5"]},
+  {"what": "_TZE204_7gclukjs exact DP layout (DP1 state, DP9 distance /10, DP103 lux, DP104 presence, DP105 fading)", "evidence": "maintainer DP table for ZY-M100-24GV2 (2026-09-29)", "branches": ["master"]},
+  {"what": "_TZ3000_ywagc4rj ZCL humidity x10 scale", "evidence": "user report raw 470 shown as 4.7% (device is 47%); OCR of its settings screen confirms identity TS0201", "branches": ["master"]},
+  {"what": "presence_sensor_radar radar_direct_mode (opt-in)", "evidence": "GH#550: alarms locked, lux stuck at 1, distance 0 for _TZE204_gkfbdvyx; direct DP path bypasses inference/derived writes", "branches": ["master"]},
+  {"what": "wkai4ga5 frame-multiplicity quirk parked (enabled:false)", "evidence": "physical test reports one usable frame per action on Homey; dedupe could drop quick presses", "branches": ["master"]}
+ ],
+ "already_supported": [
+  "_TZ3000_s6ma1nh4 / TS0004 and _TZ3000_enmfaave / TS0004 (switch_4gang)",
+  "_TZ3000_lugaswf8 / _TZ3000_zxrfobzw / _TZ3000_rmiew70n / _TZ3000_pgcclddi / TS0002 (switch_2gang); _TZ3000_ptjcjise / TS0002 (wall_switch_2gang_1way)",
+  "_TZ3000_v4l4b0lp / TS0003 (switch_3gang)",
+  "air-box DP20 PM2.5 (_TZE200_yvx5lh6k, 8ygsuhe1, mja3fuja, ryfmq5rl, c2fmom5z on air_quality_co2)",
+  "_TZ3000_u5u4cakc, _TZ3000_wzmuk9ai / TS011F; _TZ3000_au1rjicn / TS0203; _TZE200_3towulqd, _TZE200_a8sdabtg, _TZE200_zl1kmjqx, _TZE204_s139roas / TS0601"
+ ],
+ "owner_decision": [
+  {"identity": "_TZE200_vzekyi4c / TS0601", "current": "switch_wireless", "evidence": "smoke-only TS0601 profile upstream; our own parser tables already type it as smoke (TuyaUnifiedParser, TuyaDataPointsZ2M)", "suggested": "smoke driver"},
+  {"identity": "_TZ3000_pmz6mjyu / TS011F", "current": "button_wireless_2", "evidence": "settings screenshot (Moes switch module, mains, onoff)", "suggested": "switch module / 1-gang switch driver"},
+  {"identity": "_TZ3000_mklgayek / TS0002", "current": "button_wireless_2", "evidence": "settings screenshot + request title (BSEED double wall switch)", "suggested": "2-gang switch driver"}
+ ],
+ "ocr_lessons": [
+  "OCR confuses i/j and o/0 in ids: pmz6mjyu read as pmz6miyu, mklgayek as mkigayek, s139roas as s139r0as. OCR ids are leads with verify:true; confirm against the post text or by viewing the image.",
+  "Leading underscore often read as '-' or '~'; normalisation handles it. '_TZ3210' was once read as '-1Z3210' (not normalised on purpose)."
+ ]
+}
