@@ -907,6 +907,9 @@
       ]
     }
   ],
+  "9.0.1310": {
+    "en": "v9.0.1310: automated publish, manifest sync, and Homey test promotion."
+  },
   "9.0.1309": {
     "en": "v9.0.1309: automated publish, manifest sync, and Homey test promotion."
   },
@@ -961,10 +964,7 @@
   "9.0.1292": {
     "en": "Johan L99 transpose: Moes SR-ZS to 3-gang, air-monitor off IAS contact, TS0207 leak family enrich."
   },
-  "9.0.1291": {
-    "en": "Align P2572 Contre quoi with P2758: pay2byax only on contact_sensor_zigbee."
-  },
-  "9.0.1310": {
-    "en": "v9.0.1310: automated publish, manifest sync, and Homey test promotion."
+  "9.0.1311": {
+    "en": "v9.0.1311: automated publish, manifest sync, and Homey test promotion."
   }
 }
