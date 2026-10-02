@@ -1,0 +1,16 @@
+{
+ "note": "fingerprint entries removed from a driver by the dual-couple resolution (P2794). Devices paired before keep this driver; runtime driver hints must stay quiet for them.",
+ "drivers": {
+  "curtain_motor": {
+   "manufacturerName": [],
+   "productId": [
+    "ZG-301Z",
+    "ZG-302Z1"
+   ],
+   "couples": [
+    "hobeian|ZG-301Z",
+    "hobeian|ZG-302Z1"
+   ]
+  }
+ }
+}
