@@ -186,6 +186,8 @@ function main() {
   // fp-shards are the runtime path), and data/mfs_db.json must either stay out of the payload
   // (.homeyignore) or stay under the same 4 MB ceiling as app.json.
   checkJsonUnderLimit('Runtime fingerprints.json', path.join(ROOT, 'lib', 'tuya', 'fingerprints.json'), LIMITS.dataJsonMB);
+  // P2797: lazily loaded gang pattern table must stay small.
+  checkJsonUnderLimit('Runtime gang-patterns.json', path.join(ROOT, 'lib', 'data', 'gang-patterns.json'), 0.25);
   checkMfsDb();
 
   checkDirUnderLimit(
