@@ -2101,5 +2101,9 @@
   },
   "5.12.351": {
     "en": "P2760 surgical Johan locks + refresh FP collision baseline (Stable)."
+  },
+  "5.12.354": {
+    "en": "Device compatibility: 3-gang switch _TZ3000_lmcp6b0a / TS0003, 6-gang remote _TZ3000_iszegwpd / TS0046, contact sensor _TZ3000_bwjstafw / TS0203; pair-scoped firmware quirk fixes; LCD climate battery and WiFi repair fixes.",
+    "fr": "Compatibilite: interrupteur 3 voies _TZ3000_lmcp6b0a / TS0003, telecommande 6 boutons _TZ3000_iszegwpd / TS0046, capteur d'ouverture _TZ3000_bwjstafw / TS0203; correctifs firmware cibles; corrections batterie climat LCD et reparation WiFi."
   }
 }
