@@ -907,6 +907,9 @@
       ]
     }
   ],
+  "9.0.1308": {
+    "en": "v9.0.1308: automated publish, manifest sync, and Homey test promotion."
+  },
   "9.0.1307": {
     "en": "v9.0.1307: automated publish, manifest sync, and Homey test promotion."
   },
@@ -961,10 +964,7 @@
   "9.0.1290": {
     "en": "Anti-bot gate aligns pay2byax with contact_sensor_zigbee; coin-cell battery listen-only; 6ycgarab smoke/CO not radar."
   },
-  "9.0.1289": {
-    "en": "Longer coin-cell battery life (no PowerCfg poll storms). Johan couple locks: pay2byax contact EF00 + 6ycgarab smoke/CO not radar."
-  },
-  "9.0.1308": {
-    "en": "v9.0.1308: automated publish, manifest sync, and Homey test promotion."
+  "9.0.1309": {
+    "en": "v9.0.1309: automated publish, manifest sync, and Homey test promotion."
   }
 }
