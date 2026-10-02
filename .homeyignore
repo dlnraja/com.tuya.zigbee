@@ -107,3 +107,6 @@ lib/tuya/_quarantine
 data/user-impact-catalog.json
 data/dp_couple_knowledge.json
 .cursor
+# P2791: OCR lead data is CI-only (not used at runtime)
+data/leads/image-ocr.json
+data/leads/image-ocr-cursor.json

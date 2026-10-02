@@ -55,9 +55,12 @@ async function gh(p) {
 // ---------- extraction (lenient for OCR noise, normalised) ----------
 const IMG_RE = /https:\/\/(?:github\.com\/user-attachments\/assets\/[0-9a-f-]{36}|(?:private-)?user-images\.githubusercontent\.com\/[^\s)"'<>]+|github\.com\/[^/\s]+\/[^/\s]+\/assets\/\d+\/[0-9a-f-]{36})/gi;
 const MFR_LOOSE = /(?<![A-Za-z0-9])_?T[Z2][A-Z0-9]{1,4}[_\s-]{1,2}[A-Za-z0-9]{8}(?![A-Za-z0-9])/g;
-const PID_RE = /\b(?:TS|T5)[0-9O]{3,4}[A-Z]?\b/g;
+// Case-insensitive: settings screens often render "Ts0002". OCR ids need a visual check (i/j, o/0 confusions).
+const PID_RE = /\b(?:TS|T5)[0-9O]{3,4}[A-Z]?\b/gi;
 const DP_RE = /\b(?:dp|DP|dpId|dp_id)\s*[:=#]?\s*(\d{1,3})\b/g;
 const CAP_RE = /\b(?:alarm|measure|meter|target|windowcoverings|light|dim|onoff)_[a-z_]{3,30}\b/g;
+
+function stripQuery(u) { return String(u).split(/[?#]/)[0]; }
 
 function normMfr(s) {
   let m = String(s).replace(/\s|-/g, '_').replace(/__+/g, '_');
@@ -115,15 +118,17 @@ async function readIssue(repo, issue, out) {
     const imgs = [...new Set(p.body.match(IMG_RE) || [])];
     const tx = extract(p.body);
     for (const img of imgs) {
-      if (out.seenImages.has(img)) {continue;}
+      // Never persist signed query strings (e.g. ?jwt=…): the cursor/output key is the bare URL.
+      const imgKey = stripQuery(img);
+      if (out.seenImages.has(imgKey)) {continue;}
       if (!TESS) {continue;} // no OCR engine: leave the image unseen for a later run that has one
       if (images >= MAX_IMAGES) { out.pendingImages = true; return false; }
       const text = await ocr(img);
-      out.seenImages.add(img);
+      out.seenImages.add(imgKey);
       if (!text) {continue;}
       const ex = extract(text);
       if (ex.mfrs.length || ex.pids.length || ex.dps.length || ex.caps.length) {
-        out.entries.push({ repo, issue: issue.number, post: p.url, user: p.user, image: img, source: 'ocr', ...ex, text: text.replace(/\s+/g, ' ').trim().slice(0, 600) });
+        out.entries.push({ repo, issue: issue.number, post: p.url, user: p.user, image: imgKey, source: 'ocr', verify: true, ...ex, text: text.replace(/\s+/g, ' ').trim().slice(0, 600) });
       }
     }
     if ((tx.mfrs.length && tx.pids.length) || (tx.mfrs.length && tx.dps.length)) {
@@ -176,9 +181,9 @@ async function main() {
   cur.lastRun = summary;
   fs.mkdirSync(path.dirname(OUT), { recursive: true });
   const dedup = new Map(out.entries.map((e) => [keyOf(e), e]));
-  fs.writeFileSync(OUT, `${JSON.stringify({ note: 'read-only leads from issue posts + OCR of attached images; review before applying', entries: [...dedup.values()] }, null, 1)}\n`);
+  fs.writeFileSync(OUT, `${JSON.stringify({ note: 'read-only leads from issue posts + OCR of attached images; review before applying', entries: [...dedup.values()].slice(-6000) }, null, 1)}\n`);
   fs.writeFileSync(CURSOR, `${JSON.stringify(cur, null, 1)}\n`);
 }
 
-module.exports = { extract, normMfr, IMG_RE };
+module.exports = { extract, normMfr, stripQuery, IMG_RE };
 if (require.main === module) {main().catch((e) => { console.error(`image-ocr: ${e.stack}`); process.exit(0); });}

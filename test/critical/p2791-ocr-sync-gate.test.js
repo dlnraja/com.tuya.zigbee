@@ -5,7 +5,7 @@ const { describe, it } = require('node:test');
 const assert = require('node:assert/strict');
 const fs = require('fs');
 const path = require('path');
-const { extract, normMfr, IMG_RE } = require('../../scripts/scanners/issue-image-ocr');
+const { extract, normMfr, stripQuery, IMG_RE } = require('../../scripts/scanners/issue-image-ocr');
 const { check, diffSets } = require('../../tools/ci/compose-appjson-fingerprint-sync-gate');
 
 const root = path.join(__dirname, '../..');
@@ -19,6 +19,11 @@ describe('P2791 issue image OCR', () => {
     assert.ok(r.caps.includes('measure_luminance'));
     assert.equal(normMfr('tze204_gkfbdvyx'), '_TZE204_gkfbdvyx');
     assert.equal(normMfr('_TZE204_00000000'), null);
+  });
+  it('never persists signed query strings', () => {
+    assert.equal(stripQuery('https://private-user-images.githubusercontent.com/1/2.png?jwt=abc'), 'https://private-user-images.githubusercontent.com/1/2.png');
+    const cur = fs.readFileSync(path.join(root, 'data/leads/image-ocr-cursor.json'), 'utf8');
+    assert.doesNotMatch(cur, /[?&]jwt=/);
   });
   it('recognises GitHub attachment image URLs', () => {
     const s = 'see https://github.com/user-attachments/assets/0123abcd-1111-2222-3333-444455556666 here';
