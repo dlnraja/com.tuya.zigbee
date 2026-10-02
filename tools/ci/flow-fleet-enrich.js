@@ -397,11 +397,15 @@ function ensureChildLockActions(driverId, flow, caps) {
   return added;
 }
 
+// WHY P2797: only a titleFormatted that carries [[device]] is the problem for these drivers. Stripping
+// every titleFormatted removed the formatted titles of cards with non-device args ([[code_name]],
+// [[protocol]]) that Athom requires (flow-titleformatted-args-gate) — ff1de8d2e broke ir_blaster,
+// blaster_remote and presence_sensor_radar this way.
 function stripTitleFormatted(flow) {
   let n = 0;
   for (const kind of ['triggers', 'conditions', 'actions']) {
     for (const card of flow[kind] || []) {
-      if (card && card.titleFormatted !== undefined) {
+      if (card && card.titleFormatted !== undefined && JSON.stringify(card.titleFormatted).includes('[[device]]')) {
         delete card.titleFormatted;
         n += 1;
       }

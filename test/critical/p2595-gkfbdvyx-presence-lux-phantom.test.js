@@ -29,8 +29,11 @@ describe('P2595 gkfbdvyx presence dead + phantom onoff', () => {
     assert.ok(src.includes('syncPresenceFromLuxInference: true'));
     const idx = src.indexOf('ZY_M100_CEILING_24G');
     assert.ok(idx > 0);
-    const block = src.slice(idx, idx + 2500);
-    assert.match(block, /9:\s*\{\s*cap:\s*'measure_luminance\.distance',\s*divisor:\s*10\s*\}/);
+    // The config block grew (P2675 sibling ids, P2705 settings), so read up to its DP9 entry.
+    const dp9 = src.indexOf('9: {', src.indexOf('dpMap', idx));
+    const block = src.slice(idx, dp9 + 300);
+    // ÷10 preferred: fixed divisor (P2595) or dual-scale with preferDivisor 10 (P2715, cm vs dm firmware)
+    assert.match(block, /9:\s*\{\s*cap:\s*'measure_luminance\.distance',\s*(divisor:\s*10\s*\}|radarDistanceScale:\s*true,\s*preferDivisor:\s*10\b)/);
     assert.ok(!/9:\s*\{\s*cap:\s*'measure_luminance\.distance',\s*smartDivisor:\s*true/.test(block));
   });
 

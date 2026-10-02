@@ -147,6 +147,12 @@ jobs:
       - name: Sacred + anti-bot gates
         run: |
           node tools/ci/strip-registry-forbidden-compose.js --apply
+          # P2797: keep dual-couple removals, resync app.json fingerprints with compose, then block the
+          # commit on drift, flow-title loss or a reverted couple resolution (ff1de8d2e).
+          node tools/ci/enforce-dual-couple-legacy.js --sync
+          node tools/ci/compose-appjson-fingerprint-sync-gate.js
+          node tools/ci/flow-titleformatted-args-gate.js
+          node --test test/critical/p2794-dual-couples.test.js test/critical/p2692-publish-heal-energy.test.js test/critical/p2433-hobeian-fodv6bkr-enrich.test.js
           node tools/ci/p2138-sacred-couple-matrix-gate.js
           node tools/ci/p2519-anti-regression-enrich-gate.js
           node tools/ci/anti-bot-regression-gate.js

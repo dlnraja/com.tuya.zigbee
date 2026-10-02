@@ -350,6 +350,23 @@ function applyFixes() {
       });
     }
   }
+  // WHY P2797: keep translations already present in scene_switch_6ch (nl/de titles of the legacy cards
+  // were dropped on every run because the regenerated cards only carry en/fr).
+  try {
+    const cur = readJson(path.join(DRIVERS_DIR, 'scene_switch_6ch/driver.flow.compose.json'));
+    for (const kind of ['triggers', 'conditions', 'actions']) {
+      const byId = new Map((cur[kind] || []).map((c) => [c.id, c]));
+      for (const card of ss6ch[kind] || []) {
+        const old = byId.get(card.id);
+        if (!old) {continue;}
+        for (const f of ['title', 'titleFormatted', 'hint']) {
+          if (old[f] && typeof old[f] === 'object' && card[f] && typeof card[f] === 'object') {
+            card[f] = { ...card[f], ...Object.fromEntries(Object.entries(old[f]).filter(([loc]) => !(loc in card[f]))) };
+          }
+        }
+      }
+    }
+  } catch (_e) { /* first run */ }
   writeJson(path.join(DRIVERS_DIR, 'scene_switch_6ch/driver.flow.compose.json'), ss6ch);
   fixes.push({ driver: 'scene_switch_6ch', triggers: ss6ch.triggers.length });
 
