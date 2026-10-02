@@ -1,4 +1,5 @@
 'use strict';
+const { includesCI: _includesCI } = require('../../lib/utils/TuyaNormalizer');
 const { safeMultiply, safeParse } = require('../../lib/utils/tuyaUtils.js');
 const { includesCI } = require('../../lib/utils/CaseInsensitiveMatcher');
 const { safeSetTimeout, safeClearTimeout } = require('../../lib/utils/safe-timers');
@@ -179,7 +180,7 @@ class ContactSensorDevice extends UnifiedSensorBase {
       '_TZ3000_x8q36xwf',
       '_TZ3000_402jjyro',
       '_TZ3000_n2egfsli'
-    ].includes(mfr);
+    ].some((_m) => _includesCI([_m], mfr));
 
     // v5.5.506: Forum fix Lasse_K - HOBEIAN ZG-102Z reports inverted by default
     // v5.5.713: Expanded list of sensors that report inverted by default

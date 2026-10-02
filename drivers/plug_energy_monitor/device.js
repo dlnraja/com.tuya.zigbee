@@ -1,4 +1,6 @@
 'use strict';
+const { includesCI: _includesCI } = require('../../lib/utils/TuyaNormalizer');
+const { ciGet: _ciGet } = require('../../lib/utils/TuyaNormalizer');
 
 
 const UnifiedPlugBase = require('../../lib/devices/UnifiedPlugBase');
@@ -154,7 +156,7 @@ for (const [configName, config] of Object.entries(ENERGY_DEVICE_CONFIGS)) {
 
 // Get config for manufacturer
 function getEnergyConfig(manufacturerName) {
-  return ENERGY_CONFIG_MAP[manufacturerName] || ENERGY_DEVICE_CONFIGS.TUYA_DP_STANDARD;
+  return _ciGet(ENERGY_CONFIG_MAP, manufacturerName) || ENERGY_DEVICE_CONFIGS.TUYA_DP_STANDARD;
 }
 
 class EnergyMonitorPlugDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedPlugBase)) {
@@ -173,7 +175,7 @@ class EnergyMonitorPlugDevice extends PhysicalButtonMixin(VirtualButtonMixin(Uni
     const baseDivisors = super.zclEnergyDivisors;
     
     // Override for specific devices that don't need the /10 or /1000 base divisors
-    if (directUnitMfrs.includes(mfr)) {
+    if (_includesCI(directUnitMfrs, mfr)) {
       const powerScale = parseFloat(this.getSetting?.('power_scale')) || 1;
       const voltageScale = parseFloat(this.getSetting?.('voltage_scale')) || 1;
       const currentScale = parseFloat(this.getSetting?.('current_scale')) || 1;

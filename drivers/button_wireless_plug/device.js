@@ -1,4 +1,5 @@
 'use strict';
+const { includesCI: _includesCI } = require('../../lib/utils/TuyaNormalizer');
 
 const UnifiedPlugBase = require('../../lib/devices/UnifiedPlugBase');
 const VirtualButtonMixin = require('../../lib/mixins/VirtualButtonMixin.js');
@@ -103,7 +104,7 @@ class EnergyMonitorPlugDevice extends PhysicalButtonMixin(VirtualButtonMixin(Uni
   get zclEnergyDivisors() {
     const mfr = this.getSetting('zb_manufacturer_name') || this.getData()?.manufacturerName || '';
     const directUnitMfrs = ['_TZ3210_xzhnra8x', '_TZ3210_w0qqde0g'];
-    const baseDivisors = directUnitMfrs.includes(mfr) 
+    const baseDivisors = _includesCI(directUnitMfrs, mfr) 
       ? { power: 1, voltage: 1, current: 1000 }
       : super.zclEnergyDivisors;
       
@@ -121,7 +122,7 @@ class EnergyMonitorPlugDevice extends PhysicalButtonMixin(VirtualButtonMixin(Uni
   _getEnergyConfig() {
     if (!this._energyConfig) {
       const mfr = this.getSetting('zb_manufacturer_name') || this.getData()?.manufacturerName || '';
-      this._energyConfig = Object.values(ENERGY_DEVICE_CONFIGS).find(c => c.sensors.includes(mfr)) || ENERGY_DEVICE_CONFIGS.TUYA_DP_STANDARD;
+      this._energyConfig = Object.values(ENERGY_DEVICE_CONFIGS).find(c => _includesCI(c.sensors, mfr)) || ENERGY_DEVICE_CONFIGS.TUYA_DP_STANDARD;
     }
     return this._energyConfig;
   }
