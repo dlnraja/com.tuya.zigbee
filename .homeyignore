@@ -110,3 +110,5 @@ data/dp_couple_knowledge.json
 # P2791: OCR lead data is CI-only (not used at runtime)
 data/leads/image-ocr.json
 data/leads/image-ocr-cursor.json
+data/leads/dual-couples.json
+data/leads/coverage-audit-report.json
