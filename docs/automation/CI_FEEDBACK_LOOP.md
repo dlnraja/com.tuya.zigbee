@@ -148,6 +148,17 @@ until a second source or a user/diagnostic confirmation (`enableWhen` says what 
 Records whose root cause is already handled in a driver are `existing`; records where the DP for our layout
 is unknown stay `documented` (a DP is never guessed). Tests: `npm run check:p2764` (also in syntax-check).
 
+#### Ceiling V3 / GH#550 quirk pack (couple | bug | fix | source)
+
+| Couple | Bug | Fix | Source |
+|---|---|---|---|
+| `_TZE204_gkfbdvyx` (+ `_TZE200_` / ya4ft0w4) / TS0601 | DP2/DP102 sensitivity floods as 0 | `drop_zero_dp` runtime | Z2M #24049 #26672 #27357 |
+| same | DP1 sticks present at distance 0 m | unreliable DP1 + soft-clear | Z2M #30785 · GH#550 · Hubitat · HA ZHA |
+| same | DP101 find_switch OFF → no distance | auto-enable find_switch | Z2M tuya.ts · GH#550 · Hubitat |
+| same | DP10 painted as lux (junk=1) | lux = DP103 only | Z2M tuya.ts · GH#550 · HA ZHA |
+| same | phantom onoff / button.1 Missing Listener | strip + soft listeners | GH#550 · Z2M (no relay) |
+
+
 ### Strict-rule intake (`scripts/leads/strict-apply.js`, step in `oss-lan-source-enrich.yml`, Tue/Fri)
 - Inputs: `data/leads/github-leads.json` (incremental GitHub scan: issues, comments, peer apps, forks),
   new human comments on #557 (owner comments only with `/triage`). Forum posts are read by

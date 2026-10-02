@@ -633,7 +633,7 @@
     "check:p2761": "node --test test/critical/p2761-johan-latest-comments.test.js",
     "check:p2762": "node --test test/critical/p2762-native-first-complementary.test.js",
     "check:p2763": "node --test test/critical/p2763-contact-source-latch.test.js",
-    "check:p2764": "node --test test/critical/p2764-firmware-quirks.test.js test/critical/p2790-firmware-quirk-workarounds.test.js test/critical/p2790-strict-apply.test.js",
+    "check:p2764": "node --test test/critical/p2764-firmware-quirks.test.js test/critical/p2790-firmware-quirk-workarounds.test.js test/critical/p2790-strict-apply.test.js test/critical/p2392-firmware-quirk-compensate.test.js test/critical/p2796-gh550-gkfbdvyx-presence-dps.test.js",
     "check:p2791": "node tools/ci/compose-appjson-fingerprint-sync-gate.js && node --test test/critical/p2791-radar-direct-mode.test.js test/critical/p2791-ocr-sync-gate.test.js test/critical/p2792-additive-identity-coverage.test.js test/critical/p2793-case-insensitive.test.js test/critical/p2794-dual-couples.test.js",
     "check:p2766": "node --test test/critical/p2766-lcd-th05z-battery-ssot.test.js",
     "check:p2768": "node --test test/critical/p2768-wifi-repair-views.test.js",
@@ -642,7 +642,8 @@
     "check:p2774": "node --test test/critical/p2774-trigger-guard-slider-setting-errors.test.js",
     "check:p2775": "node --test test/critical/p2775-generic-device-cards.test.js",
     "check:p2777": "node --test test/critical/p2777-predictive-flow-cards.test.js",
-    "check:p2778": "node --test test/critical/p2778-predictive-persistence-wifi.test.js"
+    "check:p2778": "node --test test/critical/p2778-predictive-persistence-wifi.test.js",
+    "check:p2796": "node --test test/critical/p2796-gh550-gkfbdvyx-presence-dps.test.js"
   },
   "keywords": [
     "homey",

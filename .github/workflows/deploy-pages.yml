@@ -91,6 +91,11 @@ jobs:
     needs: build
     runs-on: ubuntu-latest
     timeout-minutes: 10
+    # WHY(P2796): environment jobs do not inherit workflow id-token; OIDC deploy failed with
+    # "Ensure GITHUB_TOKEN has permission id-token: write" despite top-level permissions.
+    permissions:
+      pages: write
+      id-token: write
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
