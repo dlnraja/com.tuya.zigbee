@@ -26,7 +26,7 @@ class Button2GangDevice extends ButtonDevice {
       || this.getData?.()?.productId
       || '',
     ));
-    if (!sticky) return base;
+    if (!sticky) {return base;}
     return Object.assign({}, base, {
       brand: base.brand || 'Tuya',
       protocol: 'hybrid',
@@ -150,6 +150,13 @@ class Button2GangDevice extends ButtonDevice {
         await this._ensureBatteryCapabilityUi().catch(() => {});
       }
     } catch (_e) { /* soft */ }
+
+    // WHY(P2792): mains relay identities paired here keep this driver; expose their on/off
+    // gangs (native On/Off cluster) in place, per exact couple, without re-pairing.
+    try {
+      const { applyInPlaceIdentityLayer } = require('../../lib/devices/InPlaceIdentityLayer');
+      await applyInPlaceIdentityLayer(this, zclNode);
+    } catch (_e) { /* optional */ }
 
     this.log('[BUTTON_WIRELESS_2] hybrid UNION dedicated + bi-dir soft UI (TS0042 / P2734)');
   }
