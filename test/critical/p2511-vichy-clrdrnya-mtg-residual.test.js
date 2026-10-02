@@ -78,7 +78,7 @@ describe('P2511 VicHY clrdrnya MTG075 residual', () => {
     assert.ok(!compose.energy?.batteries?.length);
     // WHY(P2603): onoff not in default compose (ceiling Channel) — MTG gets it via addCapability
     assert.ok(!compose.capabilities.includes('onoff'));
-    // WHY(P2796): compose onoff/button.1 options stripped as phantoms; MTG relay keeps runtime addCapability
+    assert.ok(compose.capabilitiesOptions?.onoff, 'onoff options kept for MTG relay');
     const device = fs.readFileSync(path.join(ROOT, 'drivers/presence_sensor_radar/device.js'), 'utf8');
     assert.ok(device.includes("requiredCaps.add('onoff')"), 'MTG profile still adds relay onoff');
   });
