@@ -113,3 +113,31 @@ test('enrichment pipeline: legacy couples stay removed, app.json resynced last, 
   const cm = JSON.parse(fs.readFileSync(path.join(ROOT, 'drivers/curtain_motor/driver.compose.json'), 'utf8'));
   assert.ok(!cm.zigbee.productId.includes('ZG-301Z') && !cm.zigbee.productId.includes('ZG-302Z1'));
 });
+
+test('P2797b: 18 proven multi-gang couples moved off switch_1gang, one driver each, paired devices kept', () => {
+  const read = (d) => JSON.parse(fs.readFileSync(path.join(ROOT, 'drivers', d, 'driver.compose.json'), 'utf8')).zigbee;
+  const legacy = require('../../lib/data/dual-couple-legacy.json').drivers.switch_1gang;
+  assert.strictEqual(legacy.couples.length, 18);
+  const target = { 2: 'switch_2gang', 3: 'switch_3gang', 5: 'switch_wall_5gang', 6: 'switch_wall_6gang' };
+  const drivers = fs.readdirSync(path.join(ROOT, 'drivers')).filter((d) => fs.existsSync(path.join(ROOT, 'drivers', d, 'driver.compose.json')));
+  const zb = Object.fromEntries(drivers.map((d) => [d, read(d) || {}]));
+  const app = JSON.parse(fs.readFileSync(path.join(ROOT, 'app.json'), 'utf8'));
+  for (const c of legacy.couples) {
+    const [m, p] = c.split('|');
+    const gang = PAT.couples[c];
+    assert.ok(target[gang], `${c} has a gang count in the runtime table`);
+    const holders = drivers.filter((d) => (zb[d].manufacturerName || []).some((x) => x.toLowerCase() === m) && (zb[d].productId || []).some((x) => x.toUpperCase() === p));
+    assert.deepStrictEqual(holders, [target[gang]], `${c} only on ${target[gang]}`);
+    assert.ok(zb[target[gang]].manufacturerName.includes(`${m.slice(0, m.lastIndexOf('_') + 1).toUpperCase()}${m.slice(m.lastIndexOf('_') + 1)}`), `${c} real-world case present`);
+    const appDrv = app.drivers.find((d) => d.id === target[gang]);
+    assert.ok(appDrv.zigbee.manufacturerName.some((x) => x.toLowerCase() === m), `${c} in app.json`);
+    assert.ok(!app.drivers.find((d) => d.id === 'switch_1gang').zigbee.manufacturerName.some((x) => x.toLowerCase() === m));
+  }
+  // target drivers map gang DPs 1..N (TS0601) through UnifiedSwitchBase
+  for (const [n, d] of Object.entries(target)) {
+    const src = fs.readFileSync(path.join(ROOT, 'drivers', d, 'device.js'), 'utf8');
+    assert.ok(src.includes('UnifiedSwitchBase') && src.includes(`get gangCount() { return ${n}; }`), d);
+    const caps = JSON.parse(fs.readFileSync(path.join(ROOT, 'drivers', d, 'driver.compose.json'), 'utf8')).capabilities;
+    for (let g = 2; g <= Number(n); g++) {assert.ok(caps.includes(`onoff.gang${g}`), `${d} onoff.gang${g}`);}
+  }
+});

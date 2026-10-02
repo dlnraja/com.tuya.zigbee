@@ -128,3 +128,21 @@ The adapter is attached in `UnifiedSwitchBase` and applies to every couple in `d
   - The workflow now runs these before committing: compose/app.json sync gate, flow titleFormatted gate, and the p2794/p2692/p2433 tests.
   - `flow-fleet-enrich.js` strips only a `titleFormatted` that contains `[[device]]`.
   - `button-flow-harvest.js` keeps existing translations.
+
+## Applied move (P2797b, maintainer-approved)
+
+The 18 switch_1gang placements proven wrong by two sources (productId or DP registry, plus Z2M) were
+moved to the matching gang driver with all case variants, including the real-world form `_TZE204_xxxxxxxx`.
+They are listed in `dual-couple-legacy.json` under `switch_1gang`. Devices paired before keep switch_1gang
+without a migration nag, and the gang adapter adds their real gangs (the runtime table keeps them through `legacyAdapt`).
+
+| Couples | New driver | Gang DPs / endpoints |
+|---|---|---|
+| `_TZ3000_biakwrag` TS0012, `_TZE204_he9apaui` TS0601 | switch_2gang | EP1-2 / DP1-2 |
+| `_TZ3000_hbic3ka3`, `iv4eq7eh`, `ju82pu2b`, `mhhxxjrs`, `mzcp0of6`, `nnwehhst`, `vsasbzkf` TS0003; `_TZE200_go3tvswy`, `_TZE204_ccgyhbvd` TS0601 | switch_3gang | EP1-3 / DP1-3 |
+| `_TZE284_0kihjsys` TS0601 (EyZEE 5-gang) | switch_wall_5gang | DP1-5 |
+| `_TZE200_wnp4d4va`, `_TZE204_gxbdnfrh`, `lmgrbuwf`, `wskr3up8`, `y8ficeai`, `_TZE284_g1enhdsi` TS0601 | switch_wall_6gang | DP1-6 |
+
+All targets extend `UnifiedSwitchBase`, whose DP map routes DP1..8 to `onoff` / `onoff.gangN`. Their manifests carry
+`onoff.gang2..N`. The runtime `lib/tuya/fingerprints.json` (and its shards) points these mfrs to the new drivers.
+`_TZE284_g1enhdsi` previously pointed to motion_sensor; Z2M lists it as Ekaza EKAT-T3074-6WZ, a 6 gang switch.
