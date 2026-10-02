@@ -1,0 +1,7 @@
+{
+ "note": "couples the coverage audit must not write automatically (manual review outcome). Key: lowercase mfr|PID.",
+ "hold": {
+  "_tz3000_skueekg3|TS000F": "built-in switch module (issue 1109, no temperature cluster in the request); the only same-class driver listing TS000F is switch_temp_sensor (measure_temperature), so it stays a lead",
+  "_tz3210_jtifm80b|TS0502B": "CCT controller (issue 403); the only light driver listing TS0502B is dim-only (dimmable_recessed_led), so it stays a lead until a CCT driver carries TS0502B"
+ }
+}

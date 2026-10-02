@@ -1,4 +1,5 @@
 'use strict';
+const { ciGet: _ciGet } = require('../../lib/utils/TuyaNormalizer');
 const UnifiedBatteryHandler = require('../../lib/battery/UnifiedBatteryHandler');
 const CI = require('../../lib/utils/CaseInsensitiveMatcher');
 const { getManufacturer, getModelId } = require('../../lib/helpers/DeviceDataHelper');
@@ -31,7 +32,7 @@ function getSensorConfig(manufacturerName, modelId = null) {
   }
 
   // 2. EXACT MATCH
-  const config = MANUFACTURER_CONFIG_MAP[mfr];
+  const config = _ciGet(MANUFACTURER_CONFIG_MAP, mfr);
   if (config) {return config;}
 
   // 3. PATTERN MATCH

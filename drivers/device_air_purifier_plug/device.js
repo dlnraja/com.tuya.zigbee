@@ -1,4 +1,5 @@
 'use strict';
+const { ciGet: _ciGet } = require('../../lib/utils/TuyaNormalizer');
 const { safeDivide, safeMultiply } = require('../../lib/utils/tuyaUtils.js');
 const { safeSetInterval, safeClearInterval, safeClearTimeout } = require('../../lib/utils/safe-timers');
 
@@ -152,7 +153,7 @@ for (const [configName, config] of Object.entries(ENERGY_DEVICE_CONFIGS)) {
 
 // Get config for manufacturer
 function getEnergyConfig(manufacturerName) {
-  return ENERGY_CONFIG_MAP[manufacturerName] || ENERGY_DEVICE_CONFIGS.TUYA_DP_STANDARD;
+  return _ciGet(ENERGY_CONFIG_MAP, manufacturerName) || ENERGY_DEVICE_CONFIGS.TUYA_DP_STANDARD;
 }
 
 class EnergyMonitorPlugDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedPlugBase)) {

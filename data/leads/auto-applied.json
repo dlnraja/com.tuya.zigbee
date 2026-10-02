@@ -1,0 +1,53 @@
+{
+ "note": "couples written by the strict-rule scripts; source kept",
+ "applied": [
+  {
+   "mfr": "_TZ3040_o4mkahkc",
+   "pid": "TS0202",
+   "driver": "slim_motion_sensor",
+   "source": "https://github.com/JohanBendz/com.tuya.zigbee/issues/1392",
+   "via": "coverage-audit",
+   "date": "2026-10-02"
+  },
+  {
+   "mfr": "_TZ3000_cet6ch1r",
+   "pid": "TS130F",
+   "driver": "curtain_motor_wall",
+   "source": "https://github.com/JohanBendz/com.tuya.zigbee/issues/1316",
+   "via": "coverage-audit",
+   "date": "2026-10-02"
+  },
+  {
+   "mfr": "_TZ3210_odlghna1",
+   "pid": "TS0503B",
+   "driver": "led_strip_rgbw",
+   "source": "https://github.com/JohanBendz/com.tuya.zigbee/issues/1141",
+   "via": "coverage-audit",
+   "date": "2026-10-02"
+  },
+  {
+   "mfr": "_TZ3000_c8zfad4a",
+   "pid": "TS0203",
+   "driver": "contact_sensor",
+   "source": "https://github.com/JohanBendz/com.tuya.zigbee/pull/1137",
+   "via": "coverage-audit",
+   "date": "2026-10-02"
+  },
+  {
+   "mfr": "_TZ3210_f8dqbuze",
+   "pid": "TS0501B",
+   "driver": "led_controller_dimmable",
+   "source": "https://github.com/JohanBendz/com.tuya.zigbee/issues/1088",
+   "via": "coverage-audit",
+   "date": "2026-10-02"
+  },
+  {
+   "mfr": "_TZ3210_zkhmztqn",
+   "pid": "TS0501B",
+   "driver": "led_controller_dimmable",
+   "source": "https://github.com/JohanBendz/com.tuya.zigbee/issues/467",
+   "via": "coverage-audit",
+   "date": "2026-10-02"
+  }
+ ]
+}

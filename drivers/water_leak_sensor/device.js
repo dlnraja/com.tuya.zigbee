@@ -1,4 +1,5 @@
 'use strict';
+const { ciGet: _ciGet } = require('../../lib/utils/TuyaNormalizer');
 
 const UnifiedSensorBase = require('../../lib/devices/UnifiedSensorBase');
 const { startsWithCI, normalize } = require('../../lib/utils/CaseInsensitiveMatcher');
@@ -183,7 +184,7 @@ class WaterLeakSensorDevice extends UnifiedSensorBase {
       };
     }
 
-    if (WATER_SENSOR_PROFILES[mfr]) {
+    if (_ciGet(WATER_SENSOR_PROFILES, mfr)) {
       return { ...WATER_SENSOR_PROFILES[mfr], matchedBy: 'manufacturerName', mfr };
     }
 

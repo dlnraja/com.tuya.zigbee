@@ -1,4 +1,5 @@
 'use strict';
+const { includesCI: _includesCI } = require('../../lib/utils/TuyaNormalizer');
 const { safeDivide, safeMultiply, safeParse } = require('../../lib/utils/tuyaUtils.js');
 
 const TuyaUnifiedDevice = require('../../lib/devices/TuyaUnifiedDevice');
@@ -85,7 +86,7 @@ class SoilSensorDevice extends TuyaUnifiedDevice {
       '_tze284_aao3yzhs', '_tze284_tgrzpqf4', '_tze284_0ints6wl',
       '_tze200_npj9bug3', '_tze200_myd45weu', '_tze204_myd45weu',
     ];
-    return zg303Mfrs.includes(manufacturer);
+    return _includesCI(zg303Mfrs, manufacturer);
   }
 
   /** Capabilities for soil sensors */

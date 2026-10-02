@@ -1,4 +1,5 @@
 'use strict';
+const { ciGet: _ciGet } = require('../../lib/utils/TuyaNormalizer');
 
 const UnifiedPlugBase = require('../../lib/devices/UnifiedPlugBase');
 const { getDeviceConfig, transformDpValue, ENERGY_CONFIGS } = require('../../lib/configs/IntelligentDeviceConfig');
@@ -148,7 +149,7 @@ for (const [configName, config] of Object.entries(ENERGY_DEVICE_CONFIGS)) {
 
 // Get config for manufacturer
 function getEnergyConfig(manufacturerName) {
-  return ENERGY_CONFIG_MAP[manufacturerName] || ENERGY_DEVICE_CONFIGS.TUYA_DP_STANDARD;
+  return _ciGet(ENERGY_CONFIG_MAP, manufacturerName) || ENERGY_DEVICE_CONFIGS.TUYA_DP_STANDARD;
 }
 
 

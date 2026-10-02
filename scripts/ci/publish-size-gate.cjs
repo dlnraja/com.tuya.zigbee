@@ -28,6 +28,7 @@ const LIMITS = {
   publishFinalMB: numberEnv('HOMEY_PUBLISH_FINAL_MAX_MB', 40),
   archiveWarnMB: numberEnv('HOMEY_ARCHIVE_WARN_MB', 10),
   archiveMaxMB: numberEnv('HOMEY_ARCHIVE_MAX_MB', 20),
+  dataJsonMB: numberEnv('HOMEY_DATA_JSON_MAX_MB', 2),
 };
 
 const checks = [];
@@ -122,6 +123,21 @@ function checkJsonUnderLimit(label, file, limitMB) {
   }
 }
 
+function checkMfsDb() {
+  const file = path.join(ROOT, 'data', 'mfs_db.json');
+  if (!fs.existsSync(file)) {return;}
+  let ignored = false;
+  try {
+    ignored = fs.readFileSync(path.join(ROOT, '.homeyignore'), 'utf8').split(/\r?\n/).some((l) => l.trim() === 'data/mfs_db.json');
+  } catch { /* no .homeyignore */ }
+  const bytes = fs.statSync(file).size;
+  const status = !ignored && toMB(bytes) > LIMITS.appJsonMB ? 'fail' : 'pass';
+  addCheck('data/mfs_db.json', bytes, LIMITS.appJsonMB, status, ignored ? 'excluded from payload (.homeyignore)' : 'shipped');
+  if (status === 'fail') {
+    errors.push(`data/mfs_db.json is ${fmtMB(bytes)} MB and shipped: add it to .homeyignore or split it (runtime uses lib/tuya/fp-shards)`);
+  }
+}
+
 function checkDirUnderLimit(label, dir, limitMB, opts = {}) {
   if (!fs.existsSync(dir)) {
     const message = `${label}: missing, skipped (${dir})`;
@@ -166,6 +182,11 @@ function main() {
     : path.join(ROOT, 'app.json');
   checkJsonUnderLimit('Root app.json', rootApp, LIMITS.appJsonMB);
   checkJsonUnderLimit('Build app.json', path.join(ROOT, '.homeybuild', 'app.json'), LIMITS.appJsonMB);
+  // P2793 — large runtime data: the lazily loaded fingerprint table ships with the app (keep it small;
+  // fp-shards are the runtime path), and data/mfs_db.json must either stay out of the payload
+  // (.homeyignore) or stay under the same 4 MB ceiling as app.json.
+  checkJsonUnderLimit('Runtime fingerprints.json', path.join(ROOT, 'lib', 'tuya', 'fingerprints.json'), LIMITS.dataJsonMB);
+  checkMfsDb();
 
   checkDirUnderLimit(
     'Build directory',
