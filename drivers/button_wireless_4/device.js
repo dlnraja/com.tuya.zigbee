@@ -97,8 +97,17 @@ class Button4GangDevice extends ButtonDevice {
         });
         onOff.on('commandOff', async () => {
           if (this._isDeduped(ep, 'off')) {return;}
-          this.log(`[E000-4G] EP${ep} commandOff -> Button ${ep} double`);
-          await this._triggerButton4Gang(ep, 'double');
+          // #423: _TZ3000_rco1yzb1 / TS004F toggle firmware alternates On/Off per press, so
+          // Off is one single press there (not a double click). Exact pair only.
+          let offPress = 'double';
+          try {
+            const s = this.getSettings?.() || {};
+            const mfr = String(s.zb_manufacturer_name || this.getStoreValue?.('manufacturerName') || '').toLowerCase();
+            const pid = String(s.zb_model_id || this.getStoreValue?.('modelId') || '').toLowerCase();
+            if (mfr === '_tz3000_rco1yzb1' && (!pid || pid === 'ts004f')) {offPress = 'single';}
+          } catch (_q) { /* soft */ }
+          this.log(`[E000-4G] EP${ep} commandOff -> Button ${ep} ${offPress}`);
+          await this._triggerButton4Gang(ep, offPress);
         });
         onOff.on('commandToggle', async () => {
           if (this._isDeduped(ep, 'toggle')) {return;}
