@@ -907,6 +907,9 @@
       ]
     }
   ],
+  "9.0.1314": {
+    "en": "v9.0.1314: automated publish, manifest sync, and Homey test promotion."
+  },
   "9.0.1313": {
     "en": "fix(P2795): #554 TS0046/_TZ3000_iszegwpd 6-gang wall remote pairs with 4-endpoint firmware (EP1–4 only; soft magic; no onOff report storm)."
   },
@@ -961,10 +964,7 @@
   "9.0.1296": {
     "en": "v9.0.1296: automated publish, manifest sync, and Homey test promotion."
   },
-  "9.0.1295": {
-    "en": "v9.0.1295: automated publish, manifest sync, and Homey test promotion."
-  },
-  "9.0.1314": {
-    "en": "v9.0.1314: automated publish, manifest sync, and Homey test promotion."
+  "9.0.1315": {
+    "en": "v9.0.1315: automated publish, manifest sync, and Homey test promotion."
   }
 }
