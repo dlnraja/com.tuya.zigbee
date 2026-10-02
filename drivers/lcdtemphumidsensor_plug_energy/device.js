@@ -1,4 +1,6 @@
 'use strict';
+const { includesCI: _includesCI } = require('../../lib/utils/TuyaNormalizer');
+const { ciGet: _ciGet } = require('../../lib/utils/TuyaNormalizer');
 
 const UnifiedPlugBase = require('../../lib/devices/UnifiedPlugBase');
 const { getDeviceConfig, transformDpValue, ENERGY_CONFIGS } = require('../../lib/configs/IntelligentDeviceConfig');
@@ -169,7 +171,7 @@ function getEnergyConfig(manufacturerName) {
   if (!manufacturerName || manufacturerName === 'unknown') {
     return ENERGY_DEVICE_CONFIGS.HYBRID_SENSOR_PLUG;
   }
-  return ENERGY_CONFIG_MAP[manufacturerName] || ENERGY_DEVICE_CONFIGS.HYBRID_SENSOR_PLUG;
+  return _ciGet(ENERGY_CONFIG_MAP, manufacturerName) || ENERGY_DEVICE_CONFIGS.HYBRID_SENSOR_PLUG;
 }
 
 class LcdTempHumidSensorPlugDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedPlugBase)) {
@@ -188,7 +190,7 @@ class LcdTempHumidSensorPlugDevice extends PhysicalButtonMixin(VirtualButtonMixi
     const baseDivisors = super.zclEnergyDivisors;
     
     // Override for specific devices that don't need the /10 or /1000 base divisors
-    if (directUnitMfrs.includes(mfr)) {
+    if (_includesCI(directUnitMfrs, mfr)) {
       const powerScale = parseFloat(this.getSetting?.('power_scale')) || 1;
       const voltageScale = parseFloat(this.getSetting?.('voltage_scale')) || 1;
       const currentScale = parseFloat(this.getSetting?.('current_scale')) || 1;

@@ -137,6 +137,9 @@ jobs:
           node scripts/leads/strict-apply.js --source=leads --max=${{ vars.STRICT_APPLY_MAX || '5' }}
           node scripts/leads/strict-apply.js --source=quirks
           node scripts/leads/strict-apply.js --source=issue557 --max=${{ vars.STRICT_APPLY_MAX || '5' }} --reply
+          # P2793 — max-coverage audit: known manufacturerName + externally sourced productId, exactly one
+          # same-class driver, no couple on two drivers (data/leads/coverage-audit-report.json). Capped.
+          node scripts/leads/coverage-audit.js --max=${{ vars.COVERAGE_AUDIT_MAX || '3' }}
 
       - name: Commit strict-rule intake (gated)
         if: steps.strict_apply.outcome == 'success'

@@ -1,4 +1,5 @@
 'use strict';
+const { includesCI: _includesCI } = require('../../lib/utils/TuyaNormalizer');
 const { safeMultiply, safeParse } = require('../../lib/utils/tuyaUtils.js');
 const { includesCI } = require('../../lib/utils/CaseInsensitiveMatcher');
 
@@ -110,7 +111,7 @@ class ContactSensorDevice extends UnifiedSensorBase {
       '_TZ3000_x8q36xwf',
       '_TZ3000_402jjyro',
       '_TZ3000_n2egfsli'
-    ].includes(mfr);
+    ].some((_m) => _includesCI([_m], mfr));
 
     const invertedByDefault = [
       '_TZ3000_26fmupbb',
