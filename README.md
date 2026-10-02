@@ -33,7 +33,7 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 
 | Metric | Value |
 |--------|-------|
-| **App Version** | v9.0.1312 |
+| **App Version** | v9.0.1313 |
 | **Drivers** | 434 (381 Zigbee + 53 WiFi) |
 | **Unique Fingerprints** | 4,717 |
 | **Pairing Variants** | 18,909 (4 case combos per fingerprint) |
@@ -41,7 +41,7 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 | **Flow Cards** | 6,048 |
 | **Unique Capabilities** | 170 |
 | **Native OTA Drivers** | 8 |
-| **Test Suites** | 559 files |
+| **Test Suites** | 561 files |
 | **SVG Icons** | 734 |
 | **Languages** | EN, FR, NL, DE |
 | **SDK / Homey** | 3 / >= 12.2.0 |
@@ -103,7 +103,8 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 
 | Version | Changes |
 |---------|---------|
-| **v9.0.1312** | v9.0.1311: |
+| **v9.0.1313** | fix(P2795): #554 TS0046/_TZ3000_iszegwpd 6-gang wall remote pairs with 4-endpoint firmware (EP1–4 only; soft magic; no onOff report storm). |
+| **v9.0.1312** | v9.0.1312: automated publish, manifest sync, and Homey test promotion. |
 | **v9.0.1311** | v9.0.1311: automated publish, manifest sync, and Homey test promotion. |
 | **v9.0.1310** | v9.0.1310: automated publish, manifest sync, and Homey test promotion. |
 | **v9.0.1309** | v9.0.1309: automated publish, manifest sync, and Homey test promotion. |
@@ -114,7 +115,6 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 | **v9.0.1304** | v9.0.1304: automated publish, manifest sync, and Homey test promotion. |
 | **v9.0.1303** | v9.0.1303: automated publish, manifest sync, and Homey test promotion. |
 | **v9.0.1302** | v9.0.1301: WiFi devices: the Repair screen (update IP / local key / protocol, or fetch the key again) now opens; the view file was missin… |
-| **v9.0.1301** | v9.0.1301: WiFi devices: the Repair screen (update IP / local key / protocol, or fetch the key again) now opens; the view file was missin… |
 
 <!-- CHANGELOG_END -->
 
