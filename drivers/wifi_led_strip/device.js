@@ -15,11 +15,11 @@ class WiFiLedStripDevice extends TuyaLocalDevice {
         transform: (v) => v === 'white' ? 'temperature' : 'color',
         reverseTransform: (v) => v === 'temperature' ? 'white' : 'colour' },
       '22': { capability: 'dim', writable: true,
-        transform: (v) => Math.max(0, v - safeMultiply(10, 990)),
-        reverseTransform: (v) => safeMultiply(Math.round(v), 990) + 10 },
+        transform: (v) => Math.max(0, Math.min(1, safeDivide(v - 10, 990))),
+        reverseTransform: (v) => Math.round(safeMultiply(v, 990) + 10) },
       '23': { capability: 'light_temperature', writable: true,
-        transform: (v) => v * 1000,
-        reverseTransform: (v) => Math.round(v * 1000) },
+        transform: (v) => Math.max(0, Math.min(1, safeDivide(v, 1000))),
+        reverseTransform: (v) => Math.round(safeMultiply(v, 1000)) },
       '24': { capability: '_dp24_color_hsv', writable: true },
       '25': { capability: '_dp25' }, // scene_data
       '26': { capability: 'countdown_remaining' },
@@ -35,7 +35,12 @@ class WiFiLedStripDevice extends TuyaLocalDevice {
   }
 
   _registerCapabilityListeners() {
-    super._registerCapabilityListeners();
+    if (this._ledColorListenersRegistered) {return;}
+    this._ledColorListenersRegistered = true;
+    // TuyaLocalDevice (base) has no _registerCapabilityListeners — guard the super call.
+    if (typeof super._registerCapabilityListeners === 'function') {
+      super._registerCapabilityListeners();
+    }
     for (const cap of ['light_hue', 'light_saturation']) {
       if (this.hasCapability(cap)) {
         this.registerCapabilityListener(cap, async () => {
@@ -46,8 +51,9 @@ class WiFiLedStripDevice extends TuyaLocalDevice {
   }
 
   async _sendColor() {
-    const h = Math.round((this.getCapabilityValue('light_hue') || safeMultiply(0), 360));
-    const s = Math.round((this.getCapabilityValue('light_saturation') || 1) * 1000);
+    const h = Math.round(safeMultiply(this.getCapabilityValue('light_hue') || 0, 360));
+    const sat = this.getCapabilityValue('light_saturation');
+    const s = Math.round(safeMultiply(typeof sat === 'number' ? sat : 1, 1000));
     const v = Math.round((this.getCapabilityValue('dim') || 1) * 1000);
     const hsv = h.toString(16).padStart(4, '0') + s.toString(16).padStart(4, '0') + v.toString(16).padStart(4, '0');
     if (!this._client || !this._client.connected) {throw new Error('Not connected');}
@@ -59,12 +65,12 @@ class WiFiLedStripDevice extends TuyaLocalDevice {
     if (dps['24'] && typeof dps['24'] === 'string' && dps['24'].length >= 12) {
       try {
         const hex = dps['24'];
-        const h = parseInt(hex.substring(0, safeMultiply(4), 16));
-        const s = parseInt(hex.substring(4, safeMultiply(8), 16));
-        const v = parseInt(hex.substring(8, safeMultiply(12), 16));
+        const h = parseInt(hex.substring(0, 4), 16);
+        const s = parseInt(hex.substring(4, 8), 16);
+        const v = parseInt(hex.substring(8, 12), 16);
         if (h >= 0 && h <= 360 && s >= 0 && s <= 1000 && v >= 0 && v <= 1000) {
-          this.safeSetCapabilityValue('light_hue', safeMultiply(h, 360)).catch(this._boundError || ((e) => { try { this.error(e); } catch (_) {} }));
-          this.safeSetCapabilityValue('light_saturation', s * 1000).catch(this._boundError || ((e) => { try { this.error(e); } catch (_) {} }));
+          this.safeSetCapabilityValue('light_hue', safeDivide(h, 360)).catch(this._boundError || ((e) => { try { this.error(e); } catch (_) {} }));
+          this.safeSetCapabilityValue('light_saturation', safeDivide(s, 1000)).catch(this._boundError || ((e) => { try { this.error(e); } catch (_) {} }));
           this.log(`[WIFI-LED] DP24 color H=${  h  } S=${  s  } V=${  v}`);
         }
       } catch (e) { /* ignore */ }
@@ -74,11 +80,13 @@ class WiFiLedStripDevice extends TuyaLocalDevice {
 
   async onInit() {
     await super.onInit();
+    // The base class never calls _registerCapabilityListeners(): wire hue/saturation here.
+    this._registerCapabilityListeners();
     this.log('[WIFI-LED-STRIP] Ready (RGBCW + music + scenes)');
   }
 
   async onDeleted() {
-    if (this._destroyed) return;
+    if (this._destroyed) {return;}
     this._destroyed = true;
     this.log('Device deleted, cleaning up');
     await super.onDeleted();
