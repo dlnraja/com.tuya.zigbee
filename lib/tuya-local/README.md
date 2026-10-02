@@ -57,6 +57,14 @@ manual entry. See `TuyaWhiteLabelCatalog.js`.
 | `TuyaLocalDevice.js` / `TuyaLocalDriver.js` | Homey device/driver base classes for all `wifi_*` Tuya drivers |
 | `WiFiDPRegistry.js` | DP maps per category (reuses the app's DP tables) |
 
+## LAN behaviour helpers
+
+- `TuyaDpDetector.js` - DP discovery for firmwares that only answer explicit DP-id queries (batched probes, DP 1 always included, 255-byte payload cap).
+- `TuyaReconnectPolicy.js` - reconnect pacing with jitter, optional steady-then-backoff mode, sleepy-device grace, heartbeat health.
+- `TuyaDeviceTemplates.js` - cover command vocabularies, climate mode/precision, light colour encodings (12/14-char), brightness and colour-temperature ranges, legacy bulb layout (DPs 1..5), fan speed list/range mapping.
+
+Behaviour notes: `docs/automation/localtuya-study.md`.
+
 ## Protocol support
 - **3.1** plaintext JSON + MD5 signature, **3.2/3.3** AES-128-ECB, **3.4** AES-ECB + HMAC with
   session-key negotiation, **3.5** AES-128-GCM (6699 frames) with session-key negotiation.
