@@ -966,5 +966,9 @@
   },
   "9.0.1312": {
     "en": "v9.0.1312: automated publish, manifest sync, and Homey test promotion."
+  },
+  "9.0.1313": {
+    "en": "fix(P2795): #554 TS0046/_TZ3000_iszegwpd 6-gang wall remote pairs with 4-endpoint firmware (EP1–4 only; soft magic; no onOff report storm).",
+    "fr": "fix(P2795): #554 TS0046/_TZ3000_iszegwpd télécommande murale 6 boutons — appairage firmware 4 endpoints (EP1–4; magic soft; pas de tempête onOff reporting)."
   }
 }
