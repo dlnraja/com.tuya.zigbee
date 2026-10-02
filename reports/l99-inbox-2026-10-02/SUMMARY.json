@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-02T10:07:27.898Z",
+  "generatedAt": "2026-10-02T16:53:59.831Z",
   "date": "2026-10-02",
   "mode": "full",
   "phases": [
@@ -12,18 +12,18 @@
     {
       "name": "github",
       "ok": true,
-      "durationMs": 404
+      "durationMs": 382
     },
     {
       "name": "gmail",
       "ok": true,
-      "durationMs": 220,
+      "durationMs": 237,
       "details": {
         "crash": {
           "ok": true,
           "skipped": false,
           "status": 0,
-          "durationMs": 41,
+          "durationMs": 42,
           "stderr": "",
           "stdoutTail": "[gmail-crash-pattern-gate] sources=32 hits=0 unknown=0\n  wrote .github/state/gmail-crash-patterns.json\n  verdict: ok\n"
         },
@@ -31,16 +31,16 @@
           "ok": true,
           "skipped": false,
           "status": 0,
-          "durationMs": 177,
+          "durationMs": 195,
           "stderr": "",
-          "stdoutTail": "[automate] inbox total=0 have=30 missing=0 ingested_now=0\n[recursive-treat] sources: 136\n[recursive-treat] wrote /home/runner/work/com.tuya.zigbee/com.tuya.zigbee/reports/diag-recursive-treat-2026-10-02\n{\n  \"generatedAt\": \"2026-10-02T10:07:28.510Z\",\n  \"methodology\": \"f647d35b-style full-body recursive treat — sacred couple never invented; P2246 derive from interview when ABSENT\",\n  \"sourcesScanned\": 136,\n  \"uniqueCases\": 122,\n  \"actionable\": 38,\n  \"derivedFromInterview\": 0,\n  \"signalTally\": {\n    \"scene_mode_unsupported\": 3,\n    \"wrong_driver_hint\": 4,\n    \"athom_socket_hang\": 8,\n    \"athom_processing_failed\": 2,\n    \"wrong_smart_rcbo\": 2,\n    \"flow_guard_spam\": 2,\n    \"processing_failed\": 8,\n    \"scene_0x8004\": 2,\n    \"invalid_flow_card\": 1,\n    \"missing_capability_listener\": 1\n  },\n  \"gmailBodiesPresent\": 30,\n  \"interviews\": 90\n}\n[automate] status → .github/state/diag-recursive-inbox/automate-status.json\n{\n  \"total\": 0,\n  \"have\": 30,\n  \"missing\": 0,\n  \"missingIds\": []\n}\n[automate] actionable= 38 gmailBodies= 30\n"
+          "stdoutTail": "[automate] inbox total=0 have=30 missing=0 ingested_now=0\n[recursive-treat] sources: 136\n[recursive-treat] wrote /home/runner/work/com.tuya.zigbee/com.tuya.zigbee/reports/diag-recursive-treat-2026-10-02\n{\n  \"generatedAt\": \"2026-10-02T16:54:00.438Z\",\n  \"methodology\": \"f647d35b-style full-body recursive treat — sacred couple never invented; P2246 derive from interview when ABSENT\",\n  \"sourcesScanned\": 136,\n  \"uniqueCases\": 122,\n  \"actionable\": 34,\n  \"derivedFromInterview\": 0,\n  \"signalTally\": {\n    \"scene_mode_unsupported\": 3,\n    \"wrong_driver_hint\": 4,\n    \"athom_socket_hang\": 2,\n    \"athom_processing_failed\": 2,\n    \"wrong_smart_rcbo\": 2,\n    \"flow_guard_spam\": 2,\n    \"processing_failed\": 2,\n    \"scene_0x8004\": 2,\n    \"invalid_flow_card\": 1,\n    \"missing_capability_listener\": 2\n  },\n  \"gmailBodiesPresent\": 30,\n  \"interviews\": 90\n}\n[automate] status → .github/state/diag-recursive-inbox/automate-status.json\n{\n  \"total\": 0,\n  \"have\": 30,\n  \"missing\": 0,\n  \"missingIds\": []\n}\n[automate] actionable= 34 gmailBodies= 30\n"
         }
       }
     },
     {
       "name": "forum",
       "ok": true,
-      "durationMs": 25464,
+      "durationMs": 25558,
       "skipScan": false,
       "steps": [
         {
@@ -64,7 +64,7 @@
     {
       "name": "drivers",
       "ok": true,
-      "durationMs": 1858,
+      "durationMs": 1884,
       "mfs": {
         "high": 0,
         "changes": 0,
@@ -75,29 +75,29 @@
     {
       "name": "functionalDeep",
       "ok": true,
-      "durationMs": 103,
+      "durationMs": 82,
       "note": "P2529 complementary deep functional (soft)"
     },
     {
       "name": "prioritize",
       "ok": true,
-      "durationMs": 0,
+      "durationMs": 1,
       "count": 5
     },
     {
       "name": "docs",
       "ok": true,
-      "durationMs": 1,
+      "durationMs": 0,
       "doc": "/home/runner/work/com.tuya.zigbee/com.tuya.zigbee/docs/architecture/L99_INBOX_INTELLIGENCE.md"
     },
     {
       "name": "gates",
       "ok": true,
-      "durationMs": 2580
+      "durationMs": 2652
     }
   ],
   "github": {
-    "harvestedAt": "2026-10-02T10:07:28.302Z",
+    "harvestedAt": "2026-10-02T16:54:00.212Z",
     "repo": "dlnraja/com.tuya.zigbee",
     "auth": "token",
     "error": null,
@@ -108,10 +108,10 @@
         "labels": [
           "bot-digest"
         ],
-        "updatedAt": "2026-10-02T07:57:52Z",
+        "updatedAt": "2026-10-02T16:01:01Z",
         "user": "dlnraja",
         "htmlUrl": "https://github.com/dlnraja/com.tuya.zigbee/issues/557",
-        "bodySnippet": "# 🤖 Daily digest\n\nIssue de suivi des digests **gratuits** (GitHub Actions + `GITHUB_TOKEN`) qui remplacent les routines Grok Bot.\nChaque commentaire = quelque chose a changé (GitHub envoie un e-mail au propriétaire). Rien de nouveau ⇒ silence.\n\n| Workflow | Rôle |\n|---|---|\n| `daily-digest.yml` (nouveau) | Homey 08:16 + Labs 08:49 + Forum 10:23 + Inspiration 11:41 (Paris), jours ouvrés ; inclut diags Gmail |\n| `daily-digest.yml` › job *inspiration* | JohanBendz : issues/PR (ouvertes+fermées, bots inclus) + workflows → pistes non mappées + recoupement externe (11:41 Paris, ≤100 éléments/jour) |\n| `daily-digest.yml` › job *forum* | Nouveaux posts sur 6 topics Tuya (140352, 26439, 89271, 146735, 154077, 21313 ; ≤4 requêtes/passage) + identifiants absents des drivers (10:23 Paris, jours ouvrés) |\n| `autonomous-verification.yml` › job *ci-health* | Rouge/vert des workflows master & stable-v5 (08:30 + 16:15 Paris jours ouvrés, transitions seulement) |\n| `notifications.yml` › job *digest-event* | PR ouverte/mergée + CI rouge/vert sur master (temps réel, ≤1 commentaire CI / 30 min) |\n\n_Dernière mise à jour de l'état : 2026-10-02T07:57:51.633Z_ — ne pas éditer le bloc ci-dessous (état machine).\n\n<!-- digest-state:BEGIN\n{\"labs\":{\"dlnraja/ascendos\":{\"error\":\"x-ratelimit-remaining=29 < 50\"},\"dlnraja/pulse-automix\":{\"error\":\"x-ratelimit-remaining=28 < 50\"}},\"homey\":{\"at\":\"2026-10-01T18:43:39.905Z\",\"branches\":{\"master\":{\"tip\":\"a7b39e0c83887792054a758470e951bce8b40001\",\"tipMsg\":\"ci(feedback-loop): structured digest leads (own repo, JohanBendz, forum, git history maste\",\"tipDate\":\"2026-10-01T18:42:59Z\",\"versions\":{\"app.json\":\"com.dlnraja.tuya.zigbee@9.0.1295\",\".homeycompose/app.json\":\"com.dlnraja.tuya.zigbee@9.0.1295\"},\"lastPush\":null},\"stable-v5\":{\"tip\":\"2b1861f35cb40625a9db3789f011834ecd8bbb51\",\"tipMsg\":\"chore(P52-auto): sync safe changes from master\",\"tipDate\":\"2026-10-01T11:03:42Z\",\"versions\":{\"app.json\":\"com.dlnraja.tuya.zigbee.stable@5.12.351\",\".homeycompose/app.json\":\"com.dlnraja.tuya.zigbee.stable@5.12.354\"},\"lastPush\":{\"sha\":\"b7d0153e6149b5c0fba1638d4a34d8e3411ebaf1\",\"msg\":\"fix(stable): P2760 surgical Johan locks + collision baseline refresh\",\"ci\":{\"status\":\"red\",\"total\":11,\"ok\":10,\"pending\":0,\"failed\":[\"syntax-check\"]}}}},\"open\":{\"prs\":{\"count\":1,\"items\":[{\"n\":555,\"t\":\"AI Monthly Audit - October 2026 | Risk: Updated\",\"u\":\"dlnraja\"}]},\"issues\":{\"count\":2,\"items\":[{\"n\":554,\"t\":\"Bug report - TS0046 / _TZ3000_iszegwpd 6 Gang Wall Remote fails to pair although\",\"u\":\"draqlek\"},{\"n\":550,\"t\":\"Bug report - [Short description]\",\"u\":\"HiepSVG\"}]}},\"diags\":{\"gmail-diagnostics.yml\":{\"id\":36900393819,\"conclusion\":\"success\",\"at\":\"2026-10-01T17:41:57Z\",\"url\":\"https://github.com/dlnraja/com.tuya.zigbee/actions/runs/36900393819\"},\"fetch-diags.yml\":{\"id\":36869380584,\"conclusion\":\"success\",\"at\":\"2026-10-01T13:39:07Z\",\"url\":\"https://github.com/dlnraja/com.tuya.zigbee/actions/runs/36869380584\"}}},\"ci\":{\"master\":{\"tip\":\"def6421dc6a84ac22e96f73c67eb0251b731217b\",\"tipChecks\":7,\"tipFailed\":[],\"green\":41,\"red\":{\"🔍 Syntax Check & SDK3 Validation\":{\"id\":36977214371,\"conclusion\":\"failure\",\"sha\":\"7812b718f11c6c65132c8b96c2405e450547f6ea\",\"at\":\"2026-10-02T07:12:32Z\",\"url\":\"https://github.com/dlnraja/com.tuya.zigbee/actions/runs/36977214371\",\"event\":\"push\",\"jobs\":[\"syntax-check › P2138 BSEED dimmer + Poll Control tests\"]}}},\"stable-v5\":{\"tip\":\"31e21bee4c4808898299d742e8fe02510d874849\",\"tipChecks\":0,\"tipFailed\":[],\"green\":4,\"red\":{\"🔍 Syntax Check & SDK3 Validation\":{\"id\":36488845659,\"conclusion\":\"failure\",\"sha\":\"b7d0153e6149b5c0fba1638d4a34d8e3411ebaf1\",\"at\":\"2026-09-28T21:52:45Z\",\"url\":\"https://github.com/dlnraja/com.tuya.zigbee/actions/runs/36488845659\",\"event\":\"push\",\"jobs\":[\"syntax-check › P214 intelligent ZCL/EF00 adaptation gate\"]}}},\"_store\":{\"app\":\"com.dlnraja.tuya.zigbee\",\"master\":\"9.0.1296\",\"test\":\"9.0.1296\",\"live\":null,\"at\":\"2026-10-01T19:07:35.238Z\",\"alerted\":null,\"lagging\":null},\"_events\":{\"lastAt\":\"2026-10-02T07:54:17.613Z\",\"pending\":[\"🟢 **master** · _Auto-Publish on Push_ est repassé au vert (`ba0cbc8`) https://github.com/dlnraja/com.tuya.zigbee/actions/runs/36980827005\"]}},\"forum\":{\"topics\":{\"26439\":{\"lastSeen\":5526,\"highest\":5526,\"title\":\"[APP][Pro] Tuya Zigbee App\",\"at\":\"2026-10-01T19:01:06.146Z\"},\"89271\":{\"lastSeen\":673,\"highest\":673,\"title\":\"[APP][Pro] Tuya Zigbee App - Device Request Archive\",\"at\":\"2026-10-01T19:01:11.358Z\"},\"140352\":{\"lastSeen\":2258,\"highest\":2258,\"title\":\"[APP][Pro] Universal TUYA Zigbee Device App - test\",\"at\":\"2"
+        "bodySnippet": "# 🤖 Daily digest\n\nIssue de suivi des digests **gratuits** (GitHub Actions + `GITHUB_TOKEN`) qui remplacent les routines Grok Bot.\nChaque commentaire = quelque chose a changé (GitHub envoie un e-mail au propriétaire). Rien de nouveau ⇒ silence.\n\n| Workflow | Rôle |\n|---|---|\n| `daily-digest.yml` (nouveau) | Homey 08:16 + Labs 08:49 + Forum 10:23 + Inspiration 11:41 (Paris), jours ouvrés ; inclut diags Gmail |\n| `daily-digest.yml` › job *inspiration* | JohanBendz : issues/PR (ouvertes+fermées, bots inclus) + workflows → pistes non mappées + recoupement externe (11:41 Paris, ≤100 éléments/jour) |\n| `daily-digest.yml` › job *forum* | Nouveaux posts sur 6 topics Tuya (140352, 26439, 89271, 146735, 154077, 21313 ; ≤4 requêtes/passage) + identifiants absents des drivers (10:23 Paris, jours ouvrés) |\n| `autonomous-verification.yml` › job *ci-health* | Rouge/vert des workflows master & stable-v5 (08:30 + 16:15 Paris jours ouvrés, transitions seulement) |\n| `notifications.yml` › job *digest-event* | PR ouverte/mergée + CI rouge/vert sur master (temps réel, ≤1 commentaire CI / 30 min) |\n\n_Dernière mise à jour de l'état : 2026-10-02T16:01:00.402Z_ — ne pas éditer le bloc ci-dessous (état machine).\n\n<!-- digest-state:BEGIN\n{\"labs\":{\"dlnraja/ascendos\":{\"private\":false,\"branch\":\"master\",\"tip\":\"d8e36a3506b18dedc85753b8196303e4a20fc8cb\",\"tipMsg\":\"feat(autofill): add browser extension, apply-kit and smart cover-letter tuning\",\"tipDate\":\"2026-09-27T12:49:57Z\",\"workflows\":{\"Deploy Vercel\":{\"id\":36324101264,\"conclusion\":\"success\",\"sha\":\"d8e36a3506b18dedc85753b8196303e4a20fc8cb\",\"at\":\"2026-09-27T13:57:14Z\",\"url\":\"https://github.com/dlnraja/ascendos/actions/runs/36324101264\"},\"Deploy Cloudflare Pages\":{\"id\":36324101284,\"conclusion\":\"success\",\"sha\":\"d8e36a3506b18dedc85753b8196303e4a20fc8cb\",\"at\":\"2026-09-27T13:56:01Z\",\"url\":\"https://github.com/dlnraja/ascendos/actions/runs/36324101284\"},\"Deploy Oracle Always Free\":{\"id\":36324101263,\"conclusion\":\"success\",\"sha\":\"d8e36a3506b18dedc85753b8196303e4a20fc8cb\",\"at\":\"2026-09-27T13:56:06Z\",\"url\":\"https://github.com/dlnraja/ascendos/actions/runs/36324101263\"},\"Deploy AscendOS Pages\":{\"id\":36324101266,\"conclusion\":\"success\",\"sha\":\"d8e36a3506b18dedc85753b8196303e4a20fc8cb\",\"at\":\"2026-09-27T13:56:13Z\",\"url\":\"https://github.com/dlnraja/ascendos/actions/runs/36324101266\"},\"Deploy Cloudflare Worker\":{\"id\":31908434600,\"conclusion\":\"success\",\"sha\":\"2e16dac9dff2f5f0ca4afab05d9ee633bc176c2c\",\"at\":\"2026-08-15T21:05:05Z\",\"url\":\"https://github.com/dlnraja/ascendos/actions/runs/31908434600\"},\"Free deploy matrix\":{\"id\":31720586446,\"conclusion\":\"success\",\"sha\":\"edbbd22fa45c8e6a8df15686f86ab2c3898679cc\",\"at\":\"2026-08-13T16:25:27Z\",\"url\":\"https://github.com/dlnraja/ascendos/actions/runs/31720586446\"},\"Deploy GitHub Pages\":{\"id\":31677147405,\"conclusion\":\"success\",\"sha\":\"25daec6820a1035562332e8246275de569d7aa57\",\"at\":\"2026-08-13T07:17:36Z\",\"url\":\"https://github.com/dlnraja/ascendos/actions/runs/31677147405\"}},\"prs\":{\"count\":0,\"items\":[]},\"issues\":{\"count\":0,\"items\":[]}},\"dlnraja/pulse-automix\":{\"private\":false,\"branch\":\"master\",\"tip\":\"bd2eb68f346f80aca60d59735afe9eacc189527c\",\"tipMsg\":\"Release v1.4: tempo lanes, live playback settings, Cast button, and Bluetooth hooks.\",\"tipDate\":\"2026-08-18T15:56:15Z\",\"workflows\":{},\"prs\":{\"count\":0,\"items\":[]},\"issues\":{\"count\":0,\"items\":[]}}},\"homey\":{\"at\":\"2026-10-02T12:41:01.458Z\",\"branches\":{\"master\":{\"tip\":\"d414bd037ad2753dc409eab1802bb36d7b0c0018\",\"tipMsg\":\"v9.0.1316: 434 drivers, 4194 FPs [skip ci]\",\"tipDate\":\"2026-10-02T12:32:03Z\",\"versions\":{\"app.json\":\"com.dlnraja.tuya.zigbee@9.0.1316\",\".homeycompose/app.json\":\"com.dlnraja.tuya.zigbee@9.0.1316\"},\"lastPush\":{\"sha\":\"4d680773ec2be834863253c23fa4b4d18481540b\",\"msg\":\"fix(P2797b): move 18 proven multi-gang couples from switch_1gang to their gang drivers\",\"ci\":{\"status\":\"green\",\"total\":22,\"ok\":14,\"pending\":0,\"failed\":[]}}},\"stable-v5\":{\"tip\":\"0ed9ac3df51e59df14c1debd5bade469ad8ab8b1\",\"tipMsg\":\"fix(P2798): one-button TS004F remote (_TZ3000_rco1yzb1) — Off command is a single press, n\",\"tipDate\":\"2026-10-02T12:32:56Z\",\"versions\":{\"app.json\":\"com.dlnraja.tuya.zigbee.stable@5.12.355\",\".homeycompose/app.json\":\"com.dlnraja.tuya.zigbee.stable@5.12.356\"},\"lastPush\":{\"sha\":\"21e7904bd5797a5d2d708e3963fd5d860d3c9496\",\"msg\":\"chore(P52-auto): sync safe changes from master\",\"ci\":{\"status\":\"none\",\"total\":0,\"ok\":0,\"pending\":0,\"failed\":[]}}}},\"open\":{\"prs\":{\"count\":1,\"items\":[{\"n\":555,\"t\":\"AI Monthly Audit - October 2026 | Risk: Updated\",\"u\":\"dlnra"
       },
       {
         "number": 554,
@@ -162,7 +162,7 @@
     "posts": 217
   },
   "gmail": {
-    "generatedAt": "2026-10-02T10:07:28.337Z",
+    "generatedAt": "2026-10-02T16:54:00.247Z",
     "sourcesScanned": 32,
     "patternCounts": {
       "flow_getDeviceActionCard": 0,
@@ -273,6 +273,6 @@
   ],
   "functionalDeep": {
     "ok": true,
-    "durationMs": 102
+    "durationMs": 81
   }
 }
