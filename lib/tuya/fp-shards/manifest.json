@@ -1,9 +1,9 @@
 {
   "version": 1,
   "patch": "P2678",
-  "generatedAt": "2026-09-27T15:12:35.216Z",
+  "generatedAt": "2026-10-02T12:23:03.334Z",
   "source": "lib/tuya/fingerprints.json",
-  "sourceBytes": 929248,
+  "sourceBytes": 929508,
   "keyCount": 5780,
   "shardCount": 227,
   "shards": {
@@ -173,7 +173,7 @@
     },
     "TZ3000_b": {
       "keys": 66,
-      "bytes": 10215
+      "bytes": 10233
     },
     "TZ3000_c": {
       "keys": 54,
@@ -197,15 +197,15 @@
     },
     "TZ3000_h": {
       "keys": 69,
-      "bytes": 10950
+      "bytes": 10959
     },
     "TZ3000_i": {
       "keys": 59,
-      "bytes": 9143
+      "bytes": 9152
     },
     "TZ3000_j": {
       "keys": 56,
-      "bytes": 8741
+      "bytes": 8759
     },
     "TZ3000_k": {
       "keys": 74,
@@ -217,11 +217,11 @@
     },
     "TZ3000_m": {
       "keys": 68,
-      "bytes": 10365
+      "bytes": 10392
     },
     "TZ3000_n": {
       "keys": 47,
-      "bytes": 7122
+      "bytes": 7140
     },
     "TZ3000_o": {
       "keys": 54,
@@ -253,7 +253,7 @@
     },
     "TZ3000_v": {
       "keys": 42,
-      "bytes": 6879
+      "bytes": 6897
     },
     "TZ3000_w": {
       "keys": 60,
@@ -585,7 +585,7 @@
     },
     "TZE200_w": {
       "keys": 46,
-      "bytes": 6776
+      "bytes": 6800
     },
     "TZE200_x": {
       "keys": 23,
@@ -661,7 +661,7 @@
     },
     "TZE204_c": {
       "keys": 23,
-      "bytes": 3683
+      "bytes": 3692
     },
     "TZE204_d": {
       "keys": 36,
@@ -677,11 +677,11 @@
     },
     "TZE204_g": {
       "keys": 27,
-      "bytes": 4188
+      "bytes": 4212
     },
     "TZE204_h": {
       "keys": 14,
-      "bytes": 2283
+      "bytes": 2292
     },
     "TZE204_i": {
       "keys": 18,
@@ -697,7 +697,7 @@
     },
     "TZE204_l": {
       "keys": 32,
-      "bytes": 4905
+      "bytes": 4929
     },
     "TZE204_m": {
       "keys": 33,
@@ -741,7 +741,7 @@
     },
     "TZE204_w": {
       "keys": 24,
-      "bytes": 3905
+      "bytes": 3929
     },
     "TZE204_x": {
       "keys": 23,
@@ -749,7 +749,7 @@
     },
     "TZE204_y": {
       "keys": 18,
-      "bytes": 2902
+      "bytes": 2921
     },
     "TZE204_z": {
       "keys": 33,
@@ -829,7 +829,7 @@
     },
     "TZE284_g": {
       "keys": 13,
-      "bytes": 2045
+      "bytes": 2055
     },
     "TZE284_h": {
       "keys": 13,

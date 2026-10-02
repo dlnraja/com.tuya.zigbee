@@ -206,11 +206,25 @@ function run(root) {
       }
     }
   }
-  return { rows, mfrRows, misplaced };
+  // Couples moved off a gang driver (dual-couple-legacy.json): devices paired before keep that driver,
+  // so the runtime table keeps their real gang count for the adapter.
+  const legacyAdapt = [];
+  try {
+    const legacy = JSON.parse(fs.readFileSync(path.join(root, 'lib/data/dual-couple-legacy.json'), 'utf8')).drivers || {};
+    for (const [id, spec] of Object.entries(legacy)) {
+      const d = drivers.get(id);
+      if (!d || !d.gang) {continue;}
+      for (const k of spec.couples || []) {
+        const vals = [...new Set(directEvidence(k, ev, drivers).filter((x) => x.driver !== id).map((x) => x.gang))];
+        if (vals.length === 1 && vals[0] !== d.gang) {legacyAdapt.push({ couple: k, driver: id, gang: vals[0] });}
+      }
+    }
+  } catch (_e) { /* no legacy list */ }
+  return { rows, mfrRows, misplaced, legacyAdapt };
 }
 
 function main() {
-  const { rows, mfrRows, misplaced } = run(ROOT);
+  const { rows, mfrRows, misplaced, legacyAdapt } = run(ROOT);
   const realCouples = mfrRows.flatMap((x) => x.realCouples.map((c) => ({ ...c, mfr: x.mfr, family: x.family })));
   const count = (f) => rows.reduce((m, r) => { const k = f(r); m[k] = (m[k] || 0) + 1; return m; }, {});
   const summary = {
@@ -222,14 +236,16 @@ function main() {
     removalProposals: rows.reduce((n, r) => n + r.removalProposals.length, 0),
     misplacedSinglePlacements: misplaced.length,
     misplacedRemovalProposals: misplaced.filter((x) => x.removalProposal).length,
+    legacyAdapt: legacyAdapt.length,
     manufacturers: { onOneAndMultiGang: mfrRows.length, realCouples: realCouples.length, byClass: realCouples.reduce((m, c) => { m[c.cls] = (m[c.cls] || 0) + 1; return m; }, {}), byFamily: mfrRows.reduce((m, r) => { m[r.family] = (m[r.family] || 0) + 1; return m; }, {}), removalProposals: realCouples.reduce((n, c) => n + c.removalProposals.length, 0) },
   };
   if (!DRY) {
-    fs.writeFileSync(path.join(ROOT, 'data/leads/gang-patterns.json'), `${JSON.stringify({ ...summary, note: 'report only; removal proposals are never applied automatically', rows, manufacturers: mfrRows, misplaced })}\n`);
+    fs.writeFileSync(path.join(ROOT, 'data/leads/gang-patterns.json'), `${JSON.stringify({ ...summary, note: 'report only; removal proposals are never applied automatically', rows, manufacturers: mfrRows, misplaced, legacyAdapt })}\n`);
     const couples = {};
     const ambiguous = [];
     for (const r of rows) {if (r.gang) {couples[r.couple] = r.gang;} else {ambiguous.push(r.couple);}}
     for (const x of misplaced) {if (!couples[x.couple]) {couples[x.couple] = x.gang;}}
+    for (const x of legacyAdapt) {if (!couples[x.couple]) {couples[x.couple] = x.gang;}}
     for (const c of realCouples) {const k = `${c.mfr}|${c.pid}`; if (c.gang) {couples[k] = c.gang;} else if (!ambiguous.includes(k)) {ambiguous.push(k);}}
     for (const k of ambiguous) {delete couples[k];}
     if (WRITE_RUNTIME) {fs.writeFileSync(path.join(ROOT, 'lib/data/gang-patterns.json'), `${JSON.stringify({ note: 'P2797 gang count per couple listed on a 1-gang and a multi-gang driver; read lazily by lib/devices/GangCountAdapter.js', couples, ambiguous: ambiguous.sort() })}\n`);}
