@@ -1,0 +1,53 @@
+{
+ "note": "couples kept on several switch drivers (P2794); the runtime gang adapter may add gang capabilities for them from observed DPs/endpoints",
+ "couples": {
+  "_tze204_amp6tsvy|TS0003": [
+   "switch_1gang",
+   "switch_2gang"
+  ],
+  "_tze204_amp6tsvy|TS000F": [
+   "switch_1gang",
+   "switch_2gang"
+  ],
+  "_tze204_amp6tsvy|TS0012": [
+   "switch_1gang",
+   "switch_2gang"
+  ],
+  "_tze204_amp6tsvy|TS011F": [
+   "switch_1gang",
+   "switch_2gang"
+  ],
+  "_tze204_amp6tsvy|TS0601": [
+   "switch_1gang",
+   "switch_2gang"
+  ],
+  "_tze204_amp6tsvy|TS0726": [
+   "switch_1gang",
+   "switch_2gang"
+  ],
+  "_tze284_amp6tsvy|TS0003": [
+   "switch_1gang",
+   "switch_2gang"
+  ],
+  "_tze284_amp6tsvy|TS000F": [
+   "switch_1gang",
+   "switch_2gang"
+  ],
+  "_tze284_amp6tsvy|TS0012": [
+   "switch_1gang",
+   "switch_2gang"
+  ],
+  "_tze284_amp6tsvy|TS011F": [
+   "switch_1gang",
+   "switch_2gang"
+  ],
+  "_tze284_amp6tsvy|TS0601": [
+   "switch_1gang",
+   "switch_2gang"
+  ],
+  "_tze284_amp6tsvy|TS0726": [
+   "switch_1gang",
+   "switch_2gang"
+  ]
+ }
+}

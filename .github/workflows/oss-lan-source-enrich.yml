@@ -140,6 +140,8 @@ jobs:
           # P2793 — max-coverage audit: known manufacturerName + externally sourced productId, exactly one
           # same-class driver, no couple on two drivers (data/leads/coverage-audit-report.json). Capped.
           node scripts/leads/coverage-audit.js --max=${{ vars.COVERAGE_AUDIT_MAX || '3' }}
+          # P2794 — dual-couple classification, report only (data/leads/dual-couples.json); never removes.
+          node scripts/leads/dual-couples.js
 
       - name: Commit strict-rule intake (gated)
         if: steps.strict_apply.outcome == 'success'
