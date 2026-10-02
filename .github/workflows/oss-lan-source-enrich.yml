@@ -142,6 +142,8 @@ jobs:
           node scripts/leads/coverage-audit.js --max=${{ vars.COVERAGE_AUDIT_MAX || '3' }}
           # P2794 — dual-couple classification, report only (data/leads/dual-couples.json); never removes.
           node scripts/leads/dual-couples.js
+          # P2797 — gang patterns (1-gang vs multi-gang couples), report only (data/leads/gang-patterns.json).
+          node scripts/leads/gang-patterns.js
 
       - name: Commit strict-rule intake (gated)
         if: steps.strict_apply.outcome == 'success'

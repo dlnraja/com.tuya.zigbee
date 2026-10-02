@@ -129,6 +129,9 @@ if (APPLY) {
   phase('strip-registry-forbidden', () => run('strip-forbidden', 'tools/ci/strip-registry-forbidden-compose.js', ['--apply'], 180000, false));
   phase('master-automation-fix', () => run('master-auto', 'scripts/master-automation.js', ['--fix'], 300000, false));
   phase('sync-enrichment-profiles', () => run('profiles', 'tools/ci/sync-enrichment-profiles.js', [], 120000, true));
+  // WHY P2797: last step — keep P2794 dual-couple removals and resync app.json fingerprint lists with
+  // compose, so compose clean-ups made after harden-unknown-zigbee's mid-run sync reach app.json too.
+  phase('dual-couple-legacy-and-appjson-sync', () => run('legacy-sync', 'tools/ci/enforce-dual-couple-legacy.js', ['--sync'], 120000, false));
 } else {
   phase('multi-source-dry', () => run('multi-source', 'tools/ci/multi-source-enrich-orchestrator.js', ['--skip-scan'], 600000, true));
   phase('infer-enrich-dry', () => run('infer-enrich', 'tools/ci/infer-enrich-from-incomplete.js', [], 300000, true));
