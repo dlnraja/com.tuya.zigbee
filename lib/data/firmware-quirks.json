@@ -59,14 +59,21 @@
         "TS0601"
       ],
       "bug": "firmware periodically reports move/presence sensitivity (DP2/DP102) as 0 although a valid value is stored",
-      "workaround": "drop DP2/DP102 value 0 so Homey settings are not overwritten",
-      "status": "existing",
-      "location": "drivers/presence_sensor_radar/device.js _handleDP/onTuyaDP (P2715)",
+      "workaround": "drop DP2/DP102 value 0 via FirmwareQuirks.shouldDropDp so Homey settings are not overwritten",
+      "status": "runtime",
+      "location": "lib/quirks/FirmwareQuirks.js shouldDropDp + drivers/presence_sensor_radar/device.js",
       "source": [
         "https://github.com/Koenkk/zigbee2mqtt/issues/24049",
         "https://github.com/Koenkk/zigbee2mqtt/issues/26672",
         "https://github.com/Koenkk/zigbee2mqtt/issues/27357"
-      ]
+      ],
+      "type": "drop_zero_dp",
+      "params": {
+        "dps": [
+          2,
+          102
+        ]
+      }
     },
     {
       "id": "ya4ft0w4_zero_loop",
@@ -81,14 +88,18 @@
       "status": "existing",
       "location": "drivers/presence_sensor_radar/device.js _handleDP/onTuyaDP (v10.9.0)",
       "source": [
-        "drivers/presence_sensor_radar/device.js comment (community report)"
+        "drivers/presence_sensor_radar/device.js comment (community report)",
+        "https://github.com/Koenkk/zigbee2mqtt/issues/24049",
+        "https://github.com/Koenkk/zigbee-herdsman-converters/blob/master/src/devices/tuya.ts (ZY-M100-24GV3 sensitivity 0 drop)"
       ]
     },
     {
       "id": "ceiling_v3_sticky_dp1",
       "mfr": [
         "_TZE200_gkfbdvyx",
-        "_TZE204_gkfbdvyx"
+        "_TZE204_gkfbdvyx",
+        "_TZE204_ya4ft0w4",
+        "_TZE200_ya4ft0w4"
       ],
       "pid": [
         "TS0601"
@@ -98,7 +109,10 @@
       "status": "existing",
       "location": "drivers/presence_sensor_radar/configs.js ZY_M100_CEILING_24G (P2509/P2719)",
       "source": [
-        "https://github.com/Koenkk/zigbee2mqtt/issues/30785"
+        "https://github.com/Koenkk/zigbee2mqtt/issues/30785",
+        "https://github.com/dlnraja/com.tuya.zigbee/issues/550",
+        "https://community.hubitat.com/t/beta-tuya-zigbee-mmwave-sensors/137410",
+        "https://community.home-assistant.io/t/tze204-gkfbdvyx-presence-sensor-doesnt-want-to-work-with-zha/874026"
       ]
     },
     {
@@ -352,6 +366,71 @@
       "status": "documented",
       "source": [
         "https://github.com/JohanBendz/com.tuya.zigbee/issues/886"
+      ]
+    },
+    {
+      "id": "ceiling_v3_find_switch_dp101",
+      "mfr": [
+        "_TZE200_gkfbdvyx",
+        "_TZE204_gkfbdvyx",
+        "_TZE284_gkfbdvyx",
+        "_TZE200_ya4ft0w4",
+        "_TZE204_ya4ft0w4"
+      ],
+      "pid": [
+        "TS0601"
+      ],
+      "bug": "DP101 find_switch OFF → lux may still stream but distance (DP9) stays null/0 forever",
+      "workaround": "auto-enable DP101 find_switch on boot/poll/cold-stream/stuck-zero (enableFindSwitchOnBoot)",
+      "status": "existing",
+      "location": "drivers/presence_sensor_radar/device.js _scheduleCeilingFindSwitchEnable / configs.js ZY_M100_CEILING_24G",
+      "source": [
+        "https://github.com/Koenkk/zigbee-herdsman-converters/blob/master/src/devices/tuya.ts (ZY-M100-24GV3 DP101 find_switch)",
+        "https://github.com/dlnraja/com.tuya.zigbee/issues/550",
+        "https://community.hubitat.com/t/beta-tuya-zigbee-mmwave-sensors/137410"
+      ]
+    },
+    {
+      "id": "ceiling_v3_dp10_not_illuminance",
+      "mfr": [
+        "_TZE200_gkfbdvyx",
+        "_TZE204_gkfbdvyx",
+        "_TZE284_gkfbdvyx",
+        "_TZE200_ya4ft0w4",
+        "_TZE204_ya4ft0w4"
+      ],
+      "pid": [
+        "TS0601"
+      ],
+      "bug": "DP10 is not illuminance on ZY-M100-24GV3; treating it as lux paints junk (often lux=1) and kills real DP103 updates",
+      "workaround": "map lux from DP103 only; DP10 kept as internal compat and skipped for ceiling 24G paint",
+      "status": "existing",
+      "location": "drivers/presence_sensor_radar/configs.js + device.js P2617/P2618",
+      "source": [
+        "https://github.com/Koenkk/zigbee-herdsman-converters/blob/master/src/devices/tuya.ts (ZY-M100-24GV3 DP103 illuminance)",
+        "https://github.com/dlnraja/com.tuya.zigbee/issues/550",
+        "https://community.home-assistant.io/t/tze204-gkfbdvyx-presence-sensor-doesnt-want-to-work-with-zha/874026"
+      ]
+    },
+    {
+      "id": "ceiling_v3_phantom_onoff_button",
+      "mfr": [
+        "_TZE200_gkfbdvyx",
+        "_TZE204_gkfbdvyx",
+        "_TZE284_gkfbdvyx",
+        "_TZE200_ya4ft0w4",
+        "_TZE204_ya4ft0w4"
+      ],
+      "pid": [
+        "TS0601"
+      ],
+      "bug": "no relay — Homey may keep onoff / button.1 tiles that throw Missing capability Listener",
+      "workaround": "strip onoff/button phantoms + soft no-op listeners until strip lands; compose capabilities exclude them",
+      "status": "existing",
+      "location": "drivers/presence_sensor_radar/device.js _healRadarPhantomCaps / _registerPhantomRelaySoftListeners",
+      "source": [
+        "https://github.com/dlnraja/com.tuya.zigbee/issues/550",
+        "https://github.com/Koenkk/zigbee-herdsman-converters/blob/master/src/devices/tuya.ts (ZY-M100-24GV3 has no relay expose)"
       ]
     }
   ]
