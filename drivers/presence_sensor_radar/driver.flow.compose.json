@@ -227,7 +227,13 @@
             "en": "100"
           }
         }
-      ]
+      ],
+      "titleFormatted": {
+        "en": "Illuminance !{{is|is not}} above [[lux]]",
+        "nl": "Lichtsterkte !{{is|is niet}} boven [[lux]]",
+        "fr": "Luminosité !{{est|n'est pas}} au-dessus de [[lux]]",
+        "de": "Helligkeit !{{ist|ist nicht}} über [[lux]]"
+      }
     },
     {
       "id": "presence_sensor_radar_distance_within",
@@ -248,7 +254,13 @@
             "en": "300"
           }
         }
-      ]
+      ],
+      "titleFormatted": {
+        "en": "Target !{{is|is not}} within distance [[distance]]",
+        "nl": "Doel !{{is|is niet}} binnen afstand [[distance]]",
+        "fr": "Cible !{{est|n'est pas}} dans la distance [[distance]]",
+        "de": "Ziel !{{ist|ist nicht}} innerhalb der Entfernung [[distance]]"
+      }
     },
     {
       "id": "presence_sensor_radar_motion_active",
@@ -293,7 +305,10 @@
             }
           ]
         }
-      ]
+      ],
+      "titleFormatted": {
+        "en": "Zone !{{1|2|3}} presence !{{is|is not}} detected [[zone]]"
+      }
     },
     {
       "id": "presence_sensor_radar_movement_is",
@@ -340,7 +355,10 @@
             }
           ]
         }
-      ]
+      ],
+      "titleFormatted": {
+        "en": "Movement type !{{is|is not}} [[classification]]"
+      }
     }
   ],
   "actions": [
