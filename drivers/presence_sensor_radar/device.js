@@ -1618,6 +1618,11 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
     const config = this._getRadarConfig();
     const mapping = config.dpMap?.[dp];
 
+    // WHY(P2796): pair-scoped drop_zero_dp (ceiling V3 sensitivity 0) before paint
+    try {
+      if (FirmwareQuirks.shouldDropDp(this, dp, rawValue)) {return;}
+    } catch (_eDrop) { /* soft */ }
+
     // v10.9.0 (z2m/forum lesson): the ZY-M100-24GV3 firmware (_TZE204_ya4ft0w4)
     // emits 0 values in endless loops (documented firmware bug, no update
     // available). Drop 0-valued reports from THIS mfr on numeric DPs —
@@ -1659,6 +1664,11 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
     const config = this._getRadarConfig();
     const dp = parseInt(dpId, 10);
     const mapping = config.dpMap?.[dp];
+
+    // WHY(P2796): pair-scoped drop_zero_dp before paint (parallel to _handleDP)
+    try {
+      if (FirmwareQuirks.shouldDropDp(this, dp, value)) {return;}
+    } catch (_eDrop) { /* soft */ }
 
     // v10.9.0: same ZY-M100 zero-filter as _handleDP (both entry points)
     if (value === 0 || value === '0') {

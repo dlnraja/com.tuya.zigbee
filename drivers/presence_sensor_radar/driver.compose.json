@@ -131,23 +131,6 @@
         "de": "Bewegungsklassifikation"
       }
     },
-    "onoff": {
-      "title": {
-        "en": "Relay",
-        "fr": "Relais",
-        "nl": "Relais",
-        "de": "Relais"
-      }
-    },
-    "button.1": {
-      "title": {
-        "en": "Button 1",
-        "fr": "Bouton 1"
-      },
-      "maintenanceAction": true,
-      "getable": false,
-      "setable": false
-    },
     "measure_luminance": {
       "getable": true,
       "preventInsights": false

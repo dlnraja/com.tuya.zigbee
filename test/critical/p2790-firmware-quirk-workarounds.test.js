@@ -26,7 +26,7 @@ function fakeDevice(mfr, pid) {
 describe('P2790 firmware quirk workarounds', () => {
   it('every runtime quirk has a known type and a source', () => {
     const known = new Set(['invert_bool_dp', 'keepalive_basic_read', 'alarm_pulse_guard', 'button_dedupe',
-      'onoff_commands_single', 'gang_echo_restore', 'enum_remap', 'invert_cover_position', 'invert_color_temperature']);
+      'onoff_commands_single', 'gang_echo_restore', 'enum_remap', 'invert_cover_position', 'invert_color_temperature', 'drop_zero_dp']);
     for (const q of data.quirks.filter((x) => x.status === 'runtime')) {
       assert.ok(known.has(q.type), `${q.id}: ${q.type}`);
       assert.ok(Array.isArray(q.source) && q.source.length, q.id);
