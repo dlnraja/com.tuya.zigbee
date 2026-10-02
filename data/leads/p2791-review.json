@@ -1,11 +1,42 @@
 {
  "note": "P2791 manual review of a full newest-to-oldest pass over a peer Tuya Zigbee issue tracker (1496 issues/PRs, 403 images OCR'd). Lead file only: entries marked 'owner decision' are NOT applied because they would remove or move an existing fingerprint (additive-only rule).",
  "applied": [
-  {"what": "_TZ3000_lmcp6b0a / TS0003 on switch_3_gang", "evidence": "full interview (EP1 0/3/4/5/6/E000/E001, EP2-3 on/off) in a public device request", "branches": ["master", "stable-v5"]},
-  {"what": "_TZE204_7gclukjs exact DP layout (DP1 state, DP9 distance /10, DP103 lux, DP104 presence, DP105 fading)", "evidence": "maintainer DP table for ZY-M100-24GV2 (2026-09-29)", "branches": ["master"]},
-  {"what": "_TZ3000_ywagc4rj ZCL humidity x10 scale", "evidence": "user report raw 470 shown as 4.7% (device is 47%); OCR of its settings screen confirms identity TS0201", "branches": ["master"]},
-  {"what": "presence_sensor_radar radar_direct_mode (opt-in)", "evidence": "GH#550: alarms locked, lux stuck at 1, distance 0 for _TZE204_gkfbdvyx; direct DP path bypasses inference/derived writes", "branches": ["master"]},
-  {"what": "wkai4ga5 frame-multiplicity quirk parked (enabled:false)", "evidence": "physical test reports one usable frame per action on Homey; dedupe could drop quick presses", "branches": ["master"]}
+  {
+   "what": "_TZ3000_lmcp6b0a / TS0003 on switch_3_gang",
+   "evidence": "full interview (EP1 0/3/4/5/6/E000/E001, EP2-3 on/off) in a public device request",
+   "branches": [
+    "master",
+    "stable-v5"
+   ]
+  },
+  {
+   "what": "_TZE204_7gclukjs exact DP layout (DP1 state, DP9 distance /10, DP103 lux, DP104 presence, DP105 fading)",
+   "evidence": "maintainer DP table for ZY-M100-24GV2 (2026-09-29)",
+   "branches": [
+    "master"
+   ]
+  },
+  {
+   "what": "_TZ3000_ywagc4rj ZCL humidity x10 scale",
+   "evidence": "user report raw 470 shown as 4.7% (device is 47%); OCR of its settings screen confirms identity TS0201",
+   "branches": [
+    "master"
+   ]
+  },
+  {
+   "what": "presence_sensor_radar radar_direct_mode (opt-in)",
+   "evidence": "GH#550: alarms locked, lux stuck at 1, distance 0 for _TZE204_gkfbdvyx; direct DP path bypasses inference/derived writes",
+   "branches": [
+    "master"
+   ]
+  },
+  {
+   "what": "wkai4ga5 frame-multiplicity quirk parked (enabled:false)",
+   "evidence": "physical test reports one usable frame per action on Homey; dedupe could drop quick presses",
+   "branches": [
+    "master"
+   ]
+  }
  ],
  "already_supported": [
   "_TZ3000_s6ma1nh4 / TS0004 and _TZ3000_enmfaave / TS0004 (switch_4gang)",
@@ -15,12 +46,67 @@
   "_TZ3000_u5u4cakc, _TZ3000_wzmuk9ai / TS011F; _TZ3000_au1rjicn / TS0203; _TZE200_3towulqd, _TZE200_a8sdabtg, _TZE200_zl1kmjqx, _TZE204_s139roas / TS0601"
  ],
  "owner_decision": [
-  {"identity": "_TZE200_vzekyi4c / TS0601", "current": "switch_wireless", "evidence": "smoke-only TS0601 profile upstream; our own parser tables already type it as smoke (TuyaUnifiedParser, TuyaDataPointsZ2M)", "suggested": "smoke driver"},
-  {"identity": "_TZ3000_pmz6mjyu / TS011F", "current": "button_wireless_2", "evidence": "settings screenshot (Moes switch module, mains, onoff)", "suggested": "switch module / 1-gang switch driver"},
-  {"identity": "_TZ3000_mklgayek / TS0002", "current": "button_wireless_2", "evidence": "settings screenshot + request title (BSEED double wall switch)", "suggested": "2-gang switch driver"}
+  {
+   "identity": "_TZE200_vzekyi4c / TS0601",
+   "current": "switch_wireless",
+   "evidence": "smoke-only TS0601 profile upstream; our own parser tables already type it as smoke (TuyaUnifiedParser, TuyaDataPointsZ2M)",
+   "suggested": "smoke driver"
+  },
+  {
+   "identity": "_TZ3000_pmz6mjyu / TS011F",
+   "current": "button_wireless_2",
+   "evidence": "settings screenshot (Moes switch module, mains, onoff)",
+   "suggested": "switch module / 1-gang switch driver"
+  },
+  {
+   "identity": "_TZ3000_mklgayek / TS0002",
+   "current": "button_wireless_2",
+   "evidence": "settings screenshot + request title (BSEED double wall switch)",
+   "suggested": "2-gang switch driver"
+  }
  ],
  "ocr_lessons": [
   "OCR confuses i/j and o/0 in ids: pmz6mjyu read as pmz6miyu, mklgayek as mkigayek, s139roas as s139r0as. OCR ids are leads with verify:true; confirm against the post text or by viewing the image.",
   "Leading underscore often read as '-' or '~'; normalisation handles it. '_TZ3210' was once read as '-1Z3210' (not normalised on purpose)."
- ]
+ ],
+ "owner_decision_resolved_p2792": {
+  "rule": "existing couples stay where they are; uncovered known pids are added to the correct-type driver without duplicate couples; real functions are added in place per exact couple via lib/devices/InPlaceIdentityLayer.js (optional, cluster-gated, nothing removed)",
+  "couples": [
+   {
+    "couple": "_TZE200_vzekyi4c / TS0601",
+    "driver": "switch_wireless (unchanged)",
+    "enrichment": "in place: alarm_smoke (DP1 0 = alarm), alarm_tamper (DP4), alarm_battery (DP14 = 0), measure_battery (DP15); DP1 no longer read as a button press"
+   },
+   {
+    "couple": "_TZE200_vzekyi4c / TS0215A, TS0601_WIRELESSSW",
+    "driver": "switch_wireless (unchanged)",
+    "enrichment": "none (no source for these couples)"
+   },
+   {
+    "couple": "_TZE200_vzekyi4c / TS0205",
+    "driver": "smoke_sensor3 (added, master)",
+    "enrichment": "native smoke driver; stable skipped: every stable TS0205 smoke driver also lists TS0601 (would duplicate the switch_wireless couple)"
+   },
+   {
+    "couple": "_TZ3000_pmz6mjyu / TS011F, TS0002, TS0003, TS0012, TS0013",
+    "driver": "button_wireless_2 (unchanged)",
+    "enrichment": "in place: onoff / onoff.gang2 / onoff.gang3 per endpoint exposing On/Off; metering only if electricalMeasurement / metering clusters exist"
+   },
+   {
+    "couple": "_TZ3000_pmz6mjyu / TS0042",
+    "driver": "button_wireless_2 (unchanged)",
+    "enrichment": "none: button behaviour kept"
+   },
+   {
+    "couple": "_TZ3000_mklgayek / TS0002, TS0012",
+    "driver": "button_wireless_2 (unchanged)",
+    "enrichment": "in place: onoff + onoff.gang2 via native On/Off"
+   },
+   {
+    "couple": "_TZ3000_mklgayek / TS0042",
+    "driver": "button_wireless_2 (unchanged)",
+    "enrichment": "none: button behaviour kept"
+   }
+  ]
+ }
 }
