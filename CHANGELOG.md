@@ -4,7 +4,12 @@ All notable changes to the **Tuya Unified Zigbee** app for Homey Pro.
 
 ---
 
-## [9.0.1311] - 2026-10-02
+## [9.0.1313] - 2026-10-02
+
+fix(P2795): #554 TS0046/_TZ3000_iszegwpd 6-gang wall remote pairs with 4-endpoint firmware (EP1–4 only; soft magic; no onOff report storm).
+---
+
+ [9.0.1311] - 2026-10-02
 
 v9.0.1311: automated publish, manifest sync, and Homey test promotion.
 ---
