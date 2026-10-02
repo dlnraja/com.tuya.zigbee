@@ -1,0 +1,57 @@
+{
+  "id": "mc101z_pwm_dimmer",
+  "name": {
+    "en": "MC101Z PWM Dimmer"
+  },
+  "class": "light",
+  "platforms": [
+    "local"
+  ],
+  "connectivity": [
+    "zigbee"
+  ],
+  "capabilities": [
+    "onoff",
+    "dim"
+  ],
+  "capabilitiesOptions": {
+    "dim": {
+      "opts": {
+        "duration": true
+      }
+    }
+  },
+  "images": {
+    "small": "/drivers/mc101z_pwm_dimmer/assets/images/small.png",
+    "large": "/drivers/mc101z_pwm_dimmer/assets/images/large.png"
+  },
+  "zigbee": {
+    "productId": [
+      "TS0601"
+    ],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0,
+          4,
+          5,
+          61184
+        ],
+        "bindings": []
+      }
+    },
+    "learnmode": {
+      "image": "{{driverAssetsPath}}/icon.svg",
+      "instruction": {
+        "en": "Put the MC101Z into Zigbee pairing mode using the SET button."
+      }
+    },
+    "manufacturerName": [
+      "_TZE28C1000000_sinxpbrl"
+    ]
+  },
+  "version": "1.0.0",
+  "ui": {
+    "quickAction": "onoff"
+  }
+}
