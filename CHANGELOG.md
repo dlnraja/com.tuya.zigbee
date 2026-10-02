@@ -70,8 +70,9 @@ v9.0.1301: WiFi devices: the Repair screen (update IP / local key / protocol, or
 ---
 
  [Unreleased] (P2774)
-## [Unreleased] (P2774 to P2778)
+## [Unreleased] (P2774 to P2778, P2798)
 
+- Wireless buttons (4-button driver): new optional setting "Click window (ms)", off by default. For remotes that send one command per press (for example the one-button TS004F remote), presses inside the window are counted as one gesture: single, double or triple. Slow double-clicks and triple-clicks now work.
 - Predictive Flow cards keep what they learned (usual values, trends, reporting rhythm) across app restarts; saved compactly per device at most every 15 minutes, only for devices used in such a Flow. A restart never causes a false "may be going offline" alert.
 - Generic and predictive Flow cards also work for devices paired after the app started, including WiFi devices.
 - New predictive Flow cards: battery will run out within N days, unusual value (adaptive, low/medium/high sensitivity), value is rising/falling faster than N per hour, device may be going offline (silent much longer than its usual rhythm), and conditions "battery forecast is below N days", "value trend is", "device silent for N minutes".

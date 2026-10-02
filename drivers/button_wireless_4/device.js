@@ -91,16 +91,18 @@ class Button4GangDevice extends ButtonDevice {
       const onOff = endpoint.clusters?.onOff || endpoint.clusters?.[6];
       if (onOff && typeof onOff.on === 'function') {
         onOff.on('commandOn', async () => {
-          if (this._isDeduped(ep, 'on')) {return;}
+          if (this._isDeduped(ep, 'on', this._clickWindowMs() ? 150 : 500)) {return;}
           this.log(`[E000-4G] EP${ep} commandOn -> Button ${ep} single`);
+          if (this._clickWindowMs()) { this._aggregateClick(ep); return; }
           await this._triggerButton4Gang(ep, 'single');
         });
         onOff.on('commandOff', async () => {
-          if (this._isDeduped(ep, 'off')) {return;}
+          if (this._isDeduped(ep, 'off', this._clickWindowMs() ? 150 : 500)) {return;}
           // P2790: toggle firmware alternates On/Off per press → both are a single press (quirk-scoped).
           let offPress = 'double';
           try { if (require('../../lib/quirks/FirmwareQuirks').onOffCommandsAreSingle(this)) {offPress = 'single';} } catch (_q) { /* soft */ }
           this.log(`[E000-4G] EP${ep} commandOff -> Button ${ep} ${offPress}`);
+          if (offPress === 'single' && this._clickWindowMs()) { this._aggregateClick(ep); return; }
           await this._triggerButton4Gang(ep, offPress);
         });
         onOff.on('commandToggle', async () => {
@@ -367,14 +369,37 @@ class Button4GangDevice extends ButtonDevice {
    * Uses PhysicalButtonMixin _triggerPhysicalFlow if available, otherwise
    * triggers the flow card directly.
    */
-  async _triggerButton4Gang(button, pressType) {
+  /**
+   * P2798 (#423/#424): optional click window (setting `click_window_ms`, 0 = off). When set,
+   * single presses from the On/Off command path are counted within the window and emitted once
+   * as single / double / triple, so slow double-clicks and triple-clicks work on firmware that
+   * only sends one command per press. Native press types (0xFD / E000) are not affected.
+   */
+  _clickWindowMs() {
+    try {
+      const { clampWindow } = require('../../lib/utils/ClickAggregator');
+      return clampWindow(this.getSetting?.('click_window_ms'));
+    } catch (_e) { return 0; }
+  }
+
+  _aggregateClick(ep) {
+    if (!this._clickAggregator) {
+      const { ClickAggregator } = require('../../lib/utils/ClickAggregator');
+      this._clickAggregator = new ClickAggregator(this, (key, type) => {
+        this._triggerButton4Gang(key, type, { aggregated: true }).catch?.(() => {});
+      });
+    }
+    return this._clickAggregator.press(ep, this._clickWindowMs());
+  }
+
+  async _triggerButton4Gang(button, pressType, opts = {}) {
     const btn = Math.max(1, Math.min(4, Number(button) || 1));
     const type = ['single', 'double', 'long', 'multi', 'release'].includes(pressType)
       ? pressType
       : resolvePressType(pressType, '4G');
     const count = type === 'multi' ? 3 : type === 'double' ? 2 : 1;
 
-    if (this._isDeduped(btn, `flow_${type}`, 750)) {return;}
+    if (!opts.aggregated && this._isDeduped(btn, `flow_${type}`, 750)) {return;}
 
     if (typeof this.triggerButtonPress === 'function') {
       await this.triggerButtonPress(btn, type, count, { source: 'physical' });
@@ -462,6 +487,7 @@ class Button4GangDevice extends ButtonDevice {
   }
 
   async onDeleted() {
+    try { this._clickAggregator?.destroy(); } catch (_e) { /* soft */ }
     if (this._rawZigbeeNode?.__tuyaButton4RawWrapper === this._rawZigbeeNode.handleFrame) {
       this._rawZigbeeNode.handleFrame = this._rawZigbeeOriginalHandleFrame || undefined;
       delete this._rawZigbeeNode.__tuyaButton4RawWrapper;

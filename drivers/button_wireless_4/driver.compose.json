@@ -644,6 +644,29 @@
         "en": "Enable if your remote numbers buttons in reverse physical order (e.g. 3,4,2,1)",
         "fr": "Activer si votre télécommande numérote les boutons dans l’ordre physique inverse (ex. 3,4,2,1)"
       }
+    },
+    {
+      "id": "click_window_ms",
+      "type": "number",
+      "label": {
+        "en": "Click window (ms)",
+        "fr": "Fenêtre de clic (ms)",
+        "nl": "Klikvenster (ms)",
+        "de": "Klickfenster (ms)"
+      },
+      "hint": {
+        "en": "0 = off (default). For remotes that send one command per press: presses within this window are counted as one gesture (1 = single, 2 = double, 3 or more = triple). Try 400–800 ms; raise it for slow double-clicks. Adds this delay before a single press fires.",
+        "fr": "0 = désactivé (par défaut). Pour les télécommandes qui envoient une commande par appui : les appuis dans cette fenêtre forment un seul geste (1 = simple, 2 = double, 3 ou plus = triple). Essayez 400–800 ms ; augmentez pour des doubles clics lents. Ajoute ce délai avant un appui simple.",
+        "nl": "0 = uit (standaard). Voor afstandsbedieningen die één commando per druk sturen: drukken binnen dit venster tellen als één gebaar (1 = enkel, 2 = dubbel, 3 of meer = drievoudig). Probeer 400–800 ms; verhoog voor trage dubbelklikken. Voegt deze vertraging toe voor een enkele druk.",
+        "de": "0 = aus (Standard). Für Fernbedienungen, die pro Druck einen Befehl senden: Drücke innerhalb dieses Fensters zählen als eine Geste (1 = einfach, 2 = doppelt, 3 oder mehr = dreifach). 400–800 ms testen; für langsame Doppelklicks erhöhen. Verzögert einen Einfachdruck um diese Zeit."
+      },
+      "value": 0,
+      "min": 0,
+      "max": 2000,
+      "step": 50,
+      "units": {
+        "en": "ms"
+      }
     }
   ],
   "pair": [
