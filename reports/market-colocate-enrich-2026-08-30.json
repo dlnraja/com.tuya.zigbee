@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-01T07:44:22.625Z",
+  "generatedAt": "2026-10-02T07:31:24.568Z",
   "mode": "APPLY",
   "policy": "P2319 enrichment-first colocate — never strip other drivers",
   "applied": [],
@@ -48,13 +48,6 @@
     },
     {
       "mfr": "_TZE200_n8dljorx",
-      "pid": "TS0601",
-      "reason": "needs-deep-review",
-      "tier": null,
-      "soft": null
-    },
-    {
-      "mfr": "_TZE200_nkjintbl",
       "pid": "TS0601",
       "reason": "needs-deep-review",
       "tier": null,
@@ -164,13 +157,6 @@
       "reason": "needs-deep-review",
       "tier": null,
       "soft": null
-    },
-    {
-      "mfr": "_TZ3210_odlghna1",
-      "pid": "TS0503B",
-      "reason": "not-confident",
-      "tier": "heuristic_pid",
-      "soft": "bulb_rgb"
     },
     {
       "mfr": "_TZ3210_pudg9sge",
