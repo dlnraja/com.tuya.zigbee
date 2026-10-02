@@ -1,10 +1,9 @@
 {
  "generated": "2026-10-02",
- "applied": 6,
+ "applied": 0,
  "counts": {
-  "covered": 1509,
-  "lead": 46,
-  "applied": 6
+  "covered": 1516,
+  "lead": 46
  },
  "internalOnlyUncovered": 463,
  "results": [
@@ -114,26 +113,6 @@
    "why": "2 same-class drivers list TS0002 (ambiguous: sr_zs_switch, usb_dongle_dual_repeater)"
   },
   {
-   "mfr": "_TZ3040_o4mkahkc",
-   "pid": "TS0202",
-   "source": "https://github.com/JohanBendz/com.tuya.zigbee/issues/1392",
-   "status": "applied",
-   "driver": "slim_motion_sensor",
-   "alsoIn": [
-    "climate_sensor"
-   ]
-  },
-  {
-   "mfr": "_TZ3000_cet6ch1r",
-   "pid": "TS130F",
-   "source": "https://github.com/JohanBendz/com.tuya.zigbee/issues/1316",
-   "status": "applied",
-   "driver": "curtain_motor_wall",
-   "alsoIn": [
-    "curtain_motor_shutter"
-   ]
-  },
-  {
    "mfr": "_TZ3000_iiacqpdz",
    "pid": "TS011F",
    "source": "https://github.com/JohanBendz/com.tuya.zigbee/issues/1277",
@@ -169,31 +148,11 @@
    "why": "adding to air_purifier_motion, air_purifier_soil, device_air_purifier_soil, doorwindowsensor_3, motion_sensor, motion_sensor_2, pir_sensor_2, sensor_climate_motion, sensor_lcdtemphumidsensor_soil, sensor_motion_presence, smart_door_window_sensor, soil_sensor, soilsensor_2 would put an existing couple on two drivers"
   },
   {
-   "mfr": "_TZ3210_odlghna1",
-   "pid": "TS0503B",
-   "source": "https://github.com/JohanBendz/com.tuya.zigbee/issues/1141",
-   "status": "applied",
-   "driver": "led_strip_rgbw",
-   "alsoIn": [
-    "wall_dimmer_tuya"
-   ]
-  },
-  {
    "mfr": "_TZ3000_zgtbi4oy",
    "pid": "TS011F",
    "source": "https://github.com/JohanBendz/com.tuya.zigbee/issues/1138",
    "status": "lead",
    "why": "adding to air_purifier_motion, doorwindowsensor_3, pir_sensor_2, sensor_illuminance_presence, smart_door_window_sensor, vibration_sensor would put an existing couple on two drivers"
-  },
-  {
-   "mfr": "_TZ3000_c8zfad4a",
-   "pid": "TS0203",
-   "source": "https://github.com/JohanBendz/com.tuya.zigbee/pull/1137",
-   "status": "applied",
-   "driver": "contact_sensor",
-   "alsoIn": [
-    "climate_sensor"
-   ]
   },
   {
    "mfr": "_TZ3000_dvqt7qrw",
@@ -215,16 +174,6 @@
    "source": "https://github.com/JohanBendz/com.tuya.zigbee/issues/1098",
    "status": "lead",
    "why": "adding to motion_sensor, motion_sensor_radar_mmwave, pir_mmwave_sensor, power_clamp_meter, presence_sensor_ceiling, presence_sensor_radar, sensor_illuminance_presence, sensor_presence_radar would put an existing couple on two drivers"
-  },
-  {
-   "mfr": "_TZ3210_f8dqbuze",
-   "pid": "TS0501B",
-   "source": "https://github.com/JohanBendz/com.tuya.zigbee/issues/1088",
-   "status": "applied",
-   "driver": "led_controller_dimmable",
-   "alsoIn": [
-    "wall_dimmer_tuya"
-   ]
   },
   {
    "mfr": "_TZ3000_26gjlugm",
@@ -309,16 +258,6 @@
    "source": "https://github.com/JohanBendz/com.tuya.zigbee/issues/473",
    "status": "lead",
    "why": "adding to rain_sensor, sensor_contact_rain, water_leak_sensor would put an existing couple on two drivers"
-  },
-  {
-   "mfr": "_TZ3210_zkhmztqn",
-   "pid": "TS0501B",
-   "source": "https://github.com/JohanBendz/com.tuya.zigbee/issues/467",
-   "status": "applied",
-   "driver": "led_controller_dimmable",
-   "alsoIn": [
-    "wall_dimmer_tuya"
-   ]
   },
   {
    "mfr": "_TZ3000_cipibmnp",
