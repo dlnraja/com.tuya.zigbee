@@ -72,6 +72,7 @@ function mergeIndex(prev, items, comments) {
   for (const it of items) {
     const e = get(it.n);
     Object.assign(e, { title: it.t || it.title || e.title, state: it.state, state_reason: it.state_reason || null, closed_at: it.closed_at || null, pr: !!it.pr });
+    if (it.kind === 'discussion') { e.kind = 'discussion'; e.needsDeepRead = true; }
     if (it.body && it.user === AUTHOR) {
       const p = parseComment(it.body);
       for (const id of p.identities) {if (!e.identities.some((x) => x[0] === id[0] && x[1] === id[1])) {e.identities.push(id);}}
@@ -93,7 +94,7 @@ function mergeIndex(prev, items, comments) {
     if (p.regression) {e.regression = true;}
     if (p.duplicateOnly) {e.duplicateTrackingOnly = true;}
     // Spec 005: links + structured fields only — no comment text is persisted.
-    e.lastComment = { at: c.created_at, url: c.url || `https://github.com/${REPO}/issues/${c.issue}#issuecomment-${c.id}` };
+    e.lastComment = { at: c.created_at, url: c.url || `https://github.com/${REPO}/${c.kind === 'discussion' ? 'discussions' : 'issues'}/${c.issue}#issuecomment-${c.id}` };
     if (!e.deepReadAt || String(c.created_at) > String(e.deepReadAt)) {e.needsDeepRead = true;}
   }
   for (const e of Object.values(idx.issues)) {
@@ -154,6 +155,64 @@ async function fetchAll(since) {
   return { comments, items };
 }
 
+function ghGraphql(query, variables) {
+  return new Promise((resolve, reject) => {
+    const body = JSON.stringify({ query, variables });
+    const req = https.request('https://api.github.com/graphql', {
+      method: 'POST',
+      headers: { 'User-Agent': 'tuya-zigbee-leads-scan', Authorization: `Bearer ${process.env.GITHUB_TOKEN}`, 'Content-Type': 'application/json' },
+    }, (res) => {
+      let d = '';
+      res.on('data', (x) => { d += x; });
+      res.on('end', () => {
+        try {
+          const j = JSON.parse(d);
+          if (res.statusCode !== 200 || j.errors) {return reject(new Error(`GraphQL ${res.statusCode} ${JSON.stringify(j.errors || '').slice(0, 200)}`));}
+          resolve(j.data);
+        } catch (e) { reject(e); }
+      });
+    });
+    req.on('error', reject);
+    req.end(body);
+  });
+}
+
+const DISCUSSIONS_Q = `query($owner:String!,$name:String!,$after:String){repository(owner:$owner,name:$name){hasDiscussionsEnabled
+ discussions(first:25,after:$after,orderBy:{field:UPDATED_AT,direction:DESC}){pageInfo{hasNextPage endCursor}
+ nodes{number title url updatedAt closed closedAt author{login} body
+  comments(first:50){nodes{id url createdAt author{login} body replies(first:50){nodes{id url createdAt author{login} body}}}}}}}}`;
+
+/**
+ * Spec 009: GitHub Discussions (open + closed, comments + replies) via GraphQL, incremental by updatedAt.
+ * Needs GITHUB_TOKEN (GraphQL has no anonymous access); soft-skips when absent or when the repo
+ * has Discussions disabled. Returned in the same shape as issues so mergeIndex handles both.
+ */
+async function fetchDiscussions(since) {
+  const out = { comments: [], items: [], enabled: null };
+  if (!process.env.GITHUB_TOKEN) {return out;}
+  const [owner, name] = REPO.split('/');
+  let after = null;
+  for (let i = 0; i < MAX_PAGES; i++) {
+    const data = await ghGraphql(DISCUSSIONS_Q, { owner, name, after });
+    const repo = data && data.repository;
+    out.enabled = !!(repo && repo.hasDiscussionsEnabled);
+    if (!out.enabled) {break;}
+    let older = false;
+    for (const d of repo.discussions.nodes) {
+      if (String(d.updatedAt) < String(since)) { older = true; continue; }
+      out.items.push({ n: d.number, t: d.title, state: d.closed ? 'closed' : 'open', state_reason: null, closed_at: d.closedAt, pr: false, kind: 'discussion', user: d.author && d.author.login, body: d.body });
+      for (const c of d.comments.nodes) {
+        const all = [c, ...((c.replies && c.replies.nodes) || [])];
+        for (const x of all) {out.comments.push({ id: x.id, user: x.author && x.author.login, created_at: x.createdAt, issue: String(d.number), url: x.url, body: x.body, kind: 'discussion' });}
+      }
+    }
+    if (older || !repo.discussions.pageInfo.hasNextPage) {break;}
+    after = repo.discussions.pageInfo.endCursor;
+    await sleep(700);
+  }
+  return out;
+}
+
 const readJsonl = (f) => fs.readFileSync(f, 'utf8').split('\n').filter(Boolean).map((l) => JSON.parse(l));
 
 async function main() {
@@ -166,6 +225,12 @@ async function main() {
     data = { comments: readJsonl(arg('comments')), items: arg('items') ? readJsonl(arg('items')) : [] };
   } else {
     try { data = await fetchAll(since); } catch (e) { console.log(`[johan-index] soft-skip: ${e.message}`); return; }
+    try {
+      const disc = await fetchDiscussions(since);
+      data.items.push(...disc.items);
+      data.comments.push(...disc.comments);
+      console.log(`[johan-index] discussions: ${disc.enabled === null ? 'skipped (no token)' : disc.enabled ? `${disc.items.length} updated` : 'disabled on repo'}`);
+    } catch (e) { console.log(`[johan-index] discussions soft-skip: ${e.message}`); }
   }
   const idx = mergeIndex(prev, data.items, data.comments);
   idx.generated = startedAt;
@@ -183,4 +248,4 @@ async function main() {
 }
 
 if (require.main === module) {main();}
-module.exports = { parseComment, mergeIndex, summarize };
+module.exports = { parseComment, mergeIndex, summarize, fetchDiscussions };
