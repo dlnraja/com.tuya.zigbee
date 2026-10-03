@@ -73,6 +73,28 @@ jobs:
             fi
           done
 
+      - name: Drop synced rows whose driver does not exist on stable
+        run: |
+          # WHY(2026-10-03): master-only drivers (e.g. mc101z_pwm_dimmer) were copied into stable
+          # data/mfs_db.json → "orphan ambiguous" mfs drift and a failed
+          # stable Syntax Check. Keep only rows whose driverId has a drivers/<id>/ folder on stable.
+          node -e '
+            const fs=require("fs");
+            const have=new Set(fs.readdirSync("drivers").filter(d=>fs.existsSync("drivers/"+d+"/driver.compose.json")));
+            for (const f of ["data/mfs_db.json"]) { // fingerprints.json keeps legacy alias driverIds — not pruned
+              if (!fs.existsSync(f)) continue;
+              const raw=fs.readFileSync(f,"utf8"); const j=JSON.parse(raw); let n=0;
+              for (const [k,v] of Object.entries(j)) {
+                const id=v&&typeof v==="object"?v.driverId:null;
+                if (typeof id==="string"&&id&&id!=="multi"&&!have.has(id)) { delete j[k]; n++; }
+              }
+              if (n) {
+                const ind=raw.startsWith("{\n  ")?2:0;
+                fs.writeFileSync(f, JSON.stringify(j,null,ind)+(raw.endsWith("\n")?"\n":""));
+                console.log("pruned "+n+" master-only row(s) from "+f);
+              }
+            }'
+
       - name: Bump stable version
         run: |
           # Get current version (strip any legacy -stable suffix: pre-release
@@ -87,12 +109,20 @@ jobs:
             c.version='$NEW';
             c.stableNotes='P52-auto: synced safe changes from master';
             fs.writeFileSync('.homeycompose/app.json',JSON.stringify(c,null,2));
+            // keep app.json / package.json / changelog in step (2026-10-03: 5.12.355 vs 5.12.356 drift)
+            const a=fs.readFileSync('app.json','utf8'); const aj=JSON.parse(a); aj.version='$NEW';
+            fs.writeFileSync('app.json', a.startsWith('{\\n')?JSON.stringify(aj,null,2)+'\\n':JSON.stringify(aj));
+            const pk=JSON.parse(fs.readFileSync('package.json','utf8')); pk.version='$NEW';
+            fs.writeFileSync('package.json', JSON.stringify(pk,null,2)+'\\n');
+            const cl=JSON.parse(fs.readFileSync('.homeychangelog.json','utf8'));
+            if (!cl['$NEW']) cl['$NEW']={en:'Device database and reliability updates.',fr:'Mises à jour de la base d’appareils et de la fiabilité.'};
+            fs.writeFileSync('.homeychangelog.json', JSON.stringify(cl,null,2)+'\\n');
             console.log('Bumped to $NEW');
           "
 
       - name: Commit + push
         run: |
-          git add .homeycompose/app.json lib/ data/ 2>/dev/null || true
+          git add .homeycompose/app.json app.json package.json .homeychangelog.json lib/ data/ 2>/dev/null || true
           if git diff --cached --quiet; then
             echo "No changes to commit"
             exit 0
