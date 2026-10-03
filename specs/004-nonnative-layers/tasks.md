@@ -1,4 +1,4 @@
 # Tasks 004
-- [ ] T1 Contract + circuit breaker
+- [x] T1 Contract + circuit breaker
 - [ ] T2 Adapt LowLevelBridge / ProtocolRxTxChain
-- [ ] T3 Pairing-never-blocked test
+- [x] T3 Pairing-never-blocked test
