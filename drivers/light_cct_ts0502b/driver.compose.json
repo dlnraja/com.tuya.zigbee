@@ -1,0 +1,77 @@
+{
+  "id": "light_cct_ts0502b",
+  "name": {
+    "en": "CCT Light (TS0502B)",
+    "nl": "CCT-lamp (TS0502B)",
+    "fr": "Lumière CCT (TS0502B)"
+  },
+  "class": "light",
+  "platforms": [
+    "local"
+  ],
+  "connectivity": [
+    "zigbee"
+  ],
+  "capabilities": [
+    "onoff",
+    "dim",
+    "light_temperature"
+  ],
+  "capabilitiesOptions": {
+    "onoff": {
+      "setOnDim": true
+    },
+    "dim": {
+      "opts": {
+        "duration": true
+      }
+    }
+  },
+  "energy": {
+    "mains": true
+  },
+  "images": {
+    "small": "/drivers/light_cct_ts0502b/assets/images/small.png",
+    "large": "/drivers/light_cct_ts0502b/assets/images/large.png"
+  },
+  "zigbee": {
+    "manufacturerName": [
+      "_TZ3210_jtifm80b",
+      "_tz3210_jtifm80b"
+    ],
+    "productId": [
+      "TS0502B"
+    ],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0,
+          3,
+          4,
+          5,
+          6,
+          8,
+          768
+        ],
+        "bindings": []
+      }
+    },
+    "learnmode": {
+      "image": "{{driverAssetsPath}}/icon.svg",
+      "instruction": {
+        "en": "Switch the light off and on 3–5 times until it blinks to enter pairing mode.",
+        "fr": "Éteignez et rallumez la lampe 3 à 5 fois jusqu'à ce qu'elle clignote pour passer en mode appairage.",
+        "nl": "Schakel de lamp 3–5 keer uit en aan tot hij knippert om te koppelen."
+      }
+    }
+  },
+  "ui": {
+    "quickAction": "onoff"
+  },
+  "metadata": {
+    "homey": {
+      "natural_light": true
+    },
+    "source": "JohanBendz/com.tuya.zigbee#403 (canonical #178)"
+  }
+}
