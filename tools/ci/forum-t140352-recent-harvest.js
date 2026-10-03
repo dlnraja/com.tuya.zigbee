@@ -60,7 +60,7 @@ function mapPost(p) {
     user: p.username,
     created: p.created_at,
     images: extractImgs(p.cooked),
-    text: stripHtml(p.cooked).slice(0, 900),
+    url: `https://community.homey.app/t/140352/${p.post_number}`,
     links: extractLinks(p.cooked),
   };
 }
@@ -115,7 +115,7 @@ function mapPost(p) {
   let md = `# T140352 live harvest ${summary.generated}\n\n`;
   md += `Highest **#${highest}** · posts **#${needFrom}–#${highest}** (${posts.length}) · silent only · never invent pid\n\n`;
   for (const p of posts) {
-    md += `## #${p.n} @${p.user}\n${p.text}\n`;
+    md += `## #${p.n} @${p.user}\n${p.url}\n`;
     if (p.images.length) {
       md += `- images (${p.images.length}):\n  - ${p.images.slice(0, 8).join('\n  - ')}\n`;
       allImgs.push(...p.images.map((u) => ({ n: p.n, user: p.user, u })));

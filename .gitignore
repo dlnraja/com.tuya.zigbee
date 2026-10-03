@@ -304,3 +304,15 @@ reports/local-workflow-learn/STATE.json
 
 # Spec 005: no raw copied third-party text in git
 data/leads/johan-comments-raw.json
+
+# Spec 005 (C1): raw forum harvest dumps never committed — distilled into data/forum/forum-leads-ssot.json + docs/rules/FORUM_LEADS_RULES.md
+reports/forum-verify-*/actionable-processor.json
+reports/forum-t26439-*/POSTS.json
+reports/forum-t26439-*/HARVEST.json
+reports/FORUM_DEEP_INVESTIGATE_*.json
+reports/forum-l99-*/HARVEST.json
+reports/forum-l99-*/HARVEST.md
+reports/forum-l99-*/LAST_PAGE.json
+reports/forum-l99-*/FLEET_LAST80.json
+reports/forum-l99-*/FLEET.json
+reports/forum-l99-*/POSTS.json

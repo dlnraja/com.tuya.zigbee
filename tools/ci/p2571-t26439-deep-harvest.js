@@ -95,7 +95,7 @@ async function main() {
       diags,
       images: media.images,
       alts: media.alts,
-      text: text.slice(0, 1200),
+      url: `https://community.homey.app/t/26439/${p.post_number}`,
     };
     rows.push(row);
     for (const img of media.images) {
@@ -136,14 +136,13 @@ async function main() {
       neverInventPid: true,
     },
     latest: rows.slice(-20).map((r) => ({
-      n: r.n, user: r.user, mfrs: r.mfrs, pids: r.pids, imgs: r.images.length, text: r.text.slice(0, 220),
+      n: r.n, user: r.user, mfrs: r.mfrs, pids: r.pids, imgs: r.images.length, url: r.url,
     })),
     couples: coupleList.slice(0, 400),
     images: images.slice(0, 500),
   };
 
   fs.writeFileSync(path.join(OUT, 'HARVEST.json'), `${JSON.stringify(report, null, 2)}\n`);
-  fs.writeFileSync(path.join(OUT, 'POSTS.json'), `${JSON.stringify(rows, null, 2)}\n`);
   fs.writeFileSync(path.join(OUT, 'NEED_ACTION.md'), [
     `# T26439 deep harvest → OUR app (P2571)`,
     '',
