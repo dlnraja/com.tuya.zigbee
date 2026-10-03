@@ -42,4 +42,18 @@ describe('Spec 003: DeviceCoordinator', () => {
     assert.strictEqual(resolveProfile({ deviceClass: 'button', driverId: 'wall_remote_1_gang' }, p).dedupeMs, 3);
     assert.strictEqual(resolveProfile({ deviceClass: 'button', driverId: 'wall_remote_1_gang', mfr: '_tz3000_abc', pid: 'ts0041' }, p).dedupeMs, 4);
   });
+  it('T3 attach: button cross-channel copy dropped, same-channel double click kept, virtual untouched', () => {
+    const { admitButtonPress, admitCommand, getCoordinator } = require('../../lib/coordinator/attach');
+    const dev = (cls, setting) => ({ driver: { id: 'x', manifest: { class: cls } }, getSettings: () => ({}), getSetting: () => setting, getStoreValue: () => '' });
+    const d = dev('button');
+    assert.ok(admitButtonPress(d, 1, 'single', { source: 'physical' }));
+    assert.ok(!admitButtonPress(d, 1, 'single', { source: 'e000-s4' }));
+    assert.ok(admitButtonPress(d, 1, 'single', { source: 'physical' }));
+    assert.ok(admitButtonPress(d, 1, 'single', { source: 'virtual' }));
+    assert.ok(admitButtonPress(d, 1, 'double', { source: 'e000-s4' }));
+    const off = dev('button', 'off'); assert.strictEqual(getCoordinator(off), null);
+    assert.ok(admitButtonPress(off, 1, 'single', {})); assert.ok(admitButtonPress(off, 1, 'single', { source: 'dp' }));
+    const sock = dev('socket'); assert.strictEqual(getCoordinator(sock), null);
+    assert.ok(admitCommand(sock, 'dp1', true)); assert.ok(admitCommand(sock, 'dp1', true));
+  });
 });
