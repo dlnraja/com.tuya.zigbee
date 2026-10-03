@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-03T14:20:00+02:00",
+  "updated": "2026-10-03T14:35:00+02:00",
   "queue": "dlnraja maintenance queue 2026-10-03 (items 1-7)",
   "rules": ".specify/memory/constitution.md",
   "worktree_note": "Use a dedicated git worktree per agent (e.g. /workspace/exec-wt); a shared checkout was reset by another worker on 2026-10-03.",
@@ -25,10 +25,12 @@
     "5b": "spec 005 T2 (7773230234): 6 harvesters persist links+fields only; MAX_CROSS_COUPLES=16 (6 MB reports were 20k synthetic couples from T26439 #1 device list); dumps distilled → data/forum/forum-leads-ssot.json + docs/rules/FORUM_LEADS_RULES.md; ~54 MB untracked (git rm --cached + .gitignore, history kept); analysis .md kept",
     "7b": "spec 007 T4 (51836c1520): drivers light_cct_ts0502b (_TZ3210_jtifm80b, CCT-only caps), light_rgbcct_ts0505b (_TZ3210_p9ao60da), light_dimmable_ts0501a (_TZ3000_7dcddnye); device.js re-exports light_bulb_tunable_white/bulb_rgb/bulb_dimmable; 0 new dual couples. T5 partial (existing driver caps unchanged)",
     "9b": "spec 009 (340c553fa3): Discussions via GraphQL in scripts/scanners/johan-canonical-index.js (JohanBendz has Discussions disabled; works on our repo); deep read #797 (+#1246,#1284,#964,#1291,#1461) → docs/rules/JOHAN_797_STANDARD_ZCL_TEMP_RH.md, data/leads/johan-deep-read-log.json, new exact driver temphumidsensor_zcl_ts0601 (_TZE200_qoy0ekbd TS0601 never matched before)",
-    "appjson-a": "placeholders *_needs_device_assignment verified: runtime only filters them (TuyaNormalizer, DeviceFingerprintDB); kept in source because removal empties manufacturerName (gate) and prepare-publish already prunes them; publish compact 3.70/4.00 MB; publish-size-gate warns > 3.85 MB (::warning in CI)"
+    "appjson-a": "placeholders *_needs_device_assignment verified: runtime only filters them (TuyaNormalizer, DeviceFingerprintDB); kept in source because removal empties manufacturerName (gate) and prepare-publish already prunes them; publish compact 3.70/4.00 MB; publish-size-gate warns > 3.85 MB (::warning in CI)",
+    "branches-a": "dlnraja branches: relevant = master, stable-v5, bastien-home. bastien-home bf6fb47ddd pushed [skip ci]: 4 exact-pair drivers + SimpleButtonGate (app id com.dlnraja.tuya.zigbee.bastien kept, validate publish OK). stable: exec-stable 35b5248d29 + 1d8e55c578 (same drivers) committed locally, push held for grouped publish approval. Skipped (stale, auto/PR leftovers, not merged): ai/monthly-audit-2026-08, ai/monthly-audit-2026-09, auto/driver-maintenance, auto/johan-sdk3-sync, auto/weekly-fingerprint-sync, codex-diag-timeouts, fix/stable-clusterutils-p137, masterwlan, gh-pages (site)",
+    "branches-b": "Johan branches read (manifests): develop-0.4 + feature/0.4-mowe-ias-rain narrow profiles 165 identities, 161 covered; gaps recorded in docs/rules/JOHAN_BRANCHES_2026-10-03.md"
   },
   "next": [
-    "branches (user 2026-10-03): (a) list dlnraja/com.tuya.zigbee branches; port applicable fixes/fingerprints/gates to still-relevant ones (bastien app id com.dlnraja.tuya.zigbee.bastien = friend test app; respect ids/roles); report dead/merged skipped. (b) read JohanBendz/com.tuya.zigbee branches (develop-0.4 etc.) as inspiration — reimplement, no copy, credit",
+    "Johan branch gaps (docs/rules/JOHAN_BRANCHES_2026-10-03.md): _TZ3000_o9f2zqln TS0207 rain, _TZ3210_iystcadi TS0505A, _TZ3000_p26flek3 TS0001 relay (on climate_sensor) — read source interviews, then exact drivers; port to stable/bastien",
     "stable grouped publish: push exec-stable 35b5248d29 (SimpleButtonGate) + backports #1501/#1502/#1503/TH01Z + device compat (4 new dedicated drivers, qoy0ekbd) — needs explicit approval (auto-review blocked direct push)",
     "leads: zbeacon|TH01 + Zbeacon|TH01 routed to doorwindowsensor_4 (contact) — needs dw4 split without dual couples; _TZE200_rxq4iti9|TS0601 on device_radiator_valve (EF00 temp/RH, DP map unknown)",
     "spec 003 T1 inventory of legacy dedupe points (ReceptionManager/TransmissionManager/UniversalThrottleManager) and migrate to coordinator",
