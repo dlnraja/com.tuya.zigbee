@@ -2109,5 +2109,9 @@
   "5.12.355": {
     "en": "fix(P2795): #554 TS0046/_TZ3000_iszegwpd pairs with 4-endpoint firmware (EP1–4 only).",
     "fr": "fix(P2795): #554 TS0046/_TZ3000_iszegwpd appairage firmware 4 endpoints (EP1–4)."
+  },
+  "5.12.357": {
+    "en": "Added support: TS011F smart plugs (_TZ3000_zgtbi4oy, _TZ3000_iiacqpdz, _TZ3000_dvqt7qrw), TS130F curtain modules (_TZ3000_vsj5o7dm, _TZ3000_os0wy3vh, _TZ3000_26gjlugm), TS0041 1-button remotes (_TZ3000_fa9mlvja, _TZ3000_vn88ezar). Multi-gang couple fixes from 5.12.356.",
+    "fr": "Support ajouté : prises TS011F (_TZ3000_zgtbi4oy, _TZ3000_iiacqpdz, _TZ3000_dvqt7qrw), modules volet TS130F (_TZ3000_vsj5o7dm, _TZ3000_os0wy3vh, _TZ3000_26gjlugm), télécommandes TS0041 1 bouton (_TZ3000_fa9mlvja, _TZ3000_vn88ezar). Corrections multi-gang de 5.12.356."
   }
 }
