@@ -8,7 +8,7 @@ Queue state: `data/leads/resume-checkpoint.json`.
 | 003 | Device coordinator (dedupe / anti-flood) | planned |
 | 004 | Non-native low-level layers | planned |
 | 005 | No copy-paste (raw dumps → own rules) | planned |
-| 006 | Verified fingerprints + Johan develop-0.4 ports | fingerprints on master; ports pending |
+| 006 | Verified fingerprints + Johan develop-0.4 ports | master done; stable backport of device fixes pending |
 | 007 | Lights without driver (TS0502A/B, TS0505B, TS0501A) | planned |
-| 008 | Repo/CI hygiene (stable version, syntax check, p248x, .ai caches) | planned |
+| 008 | Repo/CI hygiene (stable version, syntax check, p248x, .ai caches) | done except app.json trim |
 | 009 | Daily Johan thread intelligence + deep reads (#797 seed) | planned |

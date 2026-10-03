@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-03T12:45:00+02:00",
+  "updated": "2026-10-03T13:40:00+02:00",
   "queue": "dlnraja maintenance queue 2026-10-03 (items 1-7)",
   "rules": ".specify/memory/constitution.md",
   "worktree_note": "Use a dedicated git worktree per agent (e.g. /workspace/exec-wt); a shared checkout was reset by another worker on 2026-10-03.",
@@ -8,11 +8,12 @@
     "2_partial": "scripts/gates/native-matrix-gate.js + data/native-matrix-baseline.json (252 non-native endpoint clusters, 705 dual couples frozen, shrink-only); npm validate:native-matrix; wired in pr-gate.yml and auto-fix-and-publish.yml",
     "6_partial": "Master fingerprints added: smartplug(TS011F) _TZ3000_zgtbi4oy/_TZ3000_iiacqpdz/_TZ3000_dvqt7qrw; curtain_module(TS130F) _TZ3000_vsj5o7dm/_TZ3000_os0wy3vh/_TZ3000_26gjlugm; wall_remote_1_gang(TS0041) _TZ3000_fa9mlvja/_TZ3000_vn88ezar (driver.compose + app.json); gate: 0 new dual couples",
     "7": "Root cause: fork PR #558 (mc101z_pwm_dimmer) merged without PR Gate running; driver lacked driver.flow.compose.json -> check:p2518 failed in 'P244x..family gates' (runs 2026-10-02 22:06Z and 2026-10-03 05:07Z). Fleet-enrich eccd3a7812 (07:07Z) generated the file. Prevention: auto-fix workflow now scaffolds missing driver.flow.compose.json before family gates. Same root cause for 2026-10-02 22:03Z failures of Auto-Publish on Push (P2518 via family gates), Syntax Check & SDK3 Validation (P2518 test) and PR Gate on feat/mc101z-support (PR merged despite failing gate).",
-    "8_partial": "stable Syntax Check 09-28 failure (P214 TS0601 escape) already fixed by 3e4c63aef5 (gate passes locally); master p248x/Auto-Publish/Syntax failures of 2026-10-02 22:03Z = same mc101z P2518 cause; Syntax Check + code-quality green on 9f6c920e36"
+    "8_partial": "stable Syntax Check 09-28 failure (P214 TS0601 escape) already fixed by 3e4c63aef5 (gate passes locally); master p248x/Auto-Publish/Syntax failures of 2026-10-02 22:03Z = same mc101z P2518 cause; Syntax Check + code-quality green on 9f6c920e36",
+    "8": "Done: .ai/cache + .ai/timeline.json untracked (git rm --cached + .gitignore, restored via actions/cache in ai-monthly-audit.yml); stable version aligned 5.12.357 (454323238f); stable Syntax Check already fixed (3e4c63aef5); master failures of 10-02/10-03 = mc101z P2518; 2 UTF-16 report artifacts removed (js-syntax-audit green). Open: app.json trim plan (4,180,221 B).",
+    "6": "Done on master: fingerprints; #1501 unknown-DP flood guard (lib/utils/UnknownDPLogger.js); #1502 CCT clamp 0..1 + best-effort tuyaRgbMode (lib/TuyaZigBeeLightDevice.js); #1503 read-only independent relay/indicator/child-lock sync + strict writes (lib/helpers/TuyaOnOffSettingsSync.js; smartplug, smartplug_2_socket, wall_socket, smartPlug_DinRail); TH05Z interview identity (ManufacturerNameHelper node.manufacturerName); TH01Z lcdtemphumidsensor_3 answers MCU time requests (GlobalTimeSyncEngine listener); knob native LevelControl bound cluster + 25 ms dual-path guard (SmartKnobRotationMixin). CREDITS updated. Stable: fingerprints done; device fixes (#1501/#1502/#1503/TH01Z) to backport in next grouped stable publish. NOTE: _TZE200_locansqn is in our EPOCH_2000 list while Johan's TH01Z fix uses 1970 epoch \u2014 unresolved, needs >=2 sources before changing."
   },
   "next": [
-    "8 (hygiene): stable-v5 version mismatch app.json 5.12.355 vs .homeycompose 5.12.356; stable Syntax Check failure 2026-09-28; code-quality lint errors (master 2026-10-02 22:03Z run 37070397287); .ai/ caches from PR #555 out of git; app.json trim",
-    "6: stable-v5 compat fingerprints (batched stable publish, M6); Johan develop-0.4 ports #1501 #1502 #1503 TH05Z TH01Z knob",
+    "6b stable: backport device fixes (UnknownDPLogger flood guard, CCT clamp, TuyaOnOffSettingsSync, lcdtemphumidsensor_3 time listener) in one grouped stable publish; resolve locansqn epoch with sources",
     "2: SSOT data/native-matrix.json generator + docs/NATIVE_MATRIX.md (dual couples kept per M3)",
     "3: DeviceCoordinator with per-type/driver/mfr+pid profiles (M1) and auto multi-click only where needed (M2)",
     "4: layer contract + circuit breaker",
