@@ -644,7 +644,8 @@
     "check:p2777": "node --test test/critical/p2777-predictive-flow-cards.test.js",
     "check:p2778": "node --test test/critical/p2778-predictive-persistence-wifi.test.js",
     "check:p2796": "node --test test/critical/p2796-gh550-gkfbdvyx-presence-dps.test.js",
-    "check:p2798": "node --test test/critical/p2798-click-window-johan-index.test.js"
+    "check:p2798": "node --test test/critical/p2798-click-window-johan-index.test.js",
+    "validate:native-matrix": "node scripts/gates/native-matrix-gate.js"
   },
   "keywords": [
     "homey",
