@@ -1,0 +1,66 @@
+# Spec 009 — daily, incremental, read-only index of upstream maintainer threads
+# (JohanBendz/com.tuya.zigbee issues + PRs + comments, open and closed).
+# Stores links + structured fields only (mfr/pid identities, canonical links, batches,
+# regression flags, objective counts, authors); never comment text (constitution C1/C5).
+# Threads with new activity are flagged needsDeepRead=true for our own deep-read pass.
+# Never posts, comments or reacts (X1). Free: GITHUB_TOKEN, Node built-ins, no AI.
+name: Johan thread intelligence (daily)
+
+on:
+  schedule:
+    - cron: '40 3 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: johan-thread-intel
+  cancel-in-progress: false
+
+defaults:
+  run:
+    shell: bash
+
+jobs:
+  index:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      - name: Incremental index (cursor stored in the output file)
+        id: scan
+        continue-on-error: true
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: node scripts/scanners/johan-canonical-index.js --max-pages=${{ vars.JOHAN_INDEX_MAX_PAGES || '10' }}
+
+      - name: Guard — no comment text persisted
+        if: steps.scan.outcome == 'success'
+        run: |
+          node -e '
+            const j=require("./data/leads/johan-canonical-index.json");
+            const bad=Object.values(j.issues).filter(e=>(e.lastComment&&e.lastComment.excerpt)||(e.objectives||[]).some(o=>o.text));
+            if(bad.length){console.error("text found in "+bad.length+" entries");process.exit(1);}
+            const pending=Object.values(j.issues).filter(e=>e.needsDeepRead).length;
+            console.log("threads pending deep read: "+pending);
+            require("fs").appendFileSync(process.env.GITHUB_STEP_SUMMARY||"/dev/null","Threads pending deep read: "+pending+"\n");'
+
+      - name: Commit index (gated)
+        if: steps.scan.outcome == 'success'
+        continue-on-error: true
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          node scripts/ci/safe-auto-commit.js --id=johan-thread-intel \
+            --message="chore(leads): incremental upstream thread index" \
+            --paths="data/leads/johan-canonical-index.json"
