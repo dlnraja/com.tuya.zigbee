@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-03T13:40:00+02:00",
+  "updated": "2026-10-03T13:55:00+02:00",
   "queue": "dlnraja maintenance queue 2026-10-03 (items 1-7)",
   "rules": ".specify/memory/constitution.md",
   "worktree_note": "Use a dedicated git worktree per agent (e.g. /workspace/exec-wt); a shared checkout was reset by another worker on 2026-10-03.",
@@ -21,7 +21,6 @@
     "6b": "stable 5.12.359: lcdtemphumidsensor_3 MCU time listener + ManufacturerNameHelper interview identity (knob not applicable: stable has raw handleFrame path, no mixin)"
   },
   "next": [
-    "verify master publish of aa23fab9c5 and stable 5.12.359 (re-dispatch if cancelled)",
     "spec 003 T3: opt-in wiring of DeviceCoordinator into base device classes; stable simple version; CREDITS for inspiring projects",
     "spec 004 T2: adapt LowLevelBridge + ProtocolRxTxChain to layer contract",
     "spec 005 T2: forum generators (forum-actionable-processor, forum-deep-investigate, p2571-t26439-deep-harvest, forum-t140352-recent-harvest, l99-inbox-intelligence-orchestrator, p2572-johan-mega-complementary) persist links+fields only; then git rm reports/forum-verify-*/actionable-processor.json, forum-t26439 POSTS.json, FORUM_DEEP_INVESTIGATE, forum-l99-* and gitignore",
@@ -35,8 +34,8 @@
     "mocha test/critical": "27-30 failing on clean origin/master (same with/without these changes)"
   },
   "pushed": {
-    "master": "aa23fab9c5 (batch: specs 002/003/004/005/007/009 + layer timer fix; auto-publish triggered). Previous 653870a870 published OK.",
-    "stable-v5": "5.12.358 (bc94147c8d) published to Test, run 37118019558 success; 17ab48012f = 5.12.359 (TH01Z time sync + interview identity), publish run 37119645069 started"
+    "master": "aa23fab9c5 published OK (Auto-Publish run 37119440540 success). 653870a870 published OK earlier.",
+    "stable-v5": "5.12.358 published to Test (run 37118019558 success); 5.12.359 17ab48012f published to Test (run 37119645069 success)"
   },
   "notes": {
     "appjson": "root app.json minified (one line, ~2.3 MB) on master and stable since bot commit 6b2f2d3c9a; edit with JSON.stringify(a) no newline. Compact build 3.69/4.00 MB."
