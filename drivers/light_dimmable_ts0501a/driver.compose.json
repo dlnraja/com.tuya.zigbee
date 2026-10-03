@@ -1,0 +1,72 @@
+{
+  "id": "light_dimmable_ts0501a",
+  "name": {
+    "en": "Dimmable Light (TS0501A)",
+    "nl": "Dimbare lamp (TS0501A)",
+    "fr": "Lumière variable (TS0501A)"
+  },
+  "class": "light",
+  "platforms": [
+    "local"
+  ],
+  "connectivity": [
+    "zigbee"
+  ],
+  "capabilities": [
+    "onoff",
+    "dim"
+  ],
+  "capabilitiesOptions": {
+    "onoff": {
+      "setOnDim": true
+    },
+    "dim": {
+      "opts": {
+        "duration": true
+      }
+    }
+  },
+  "energy": {
+    "mains": true
+  },
+  "images": {
+    "small": "/drivers/light_dimmable_ts0501a/assets/images/small.png",
+    "large": "/drivers/light_dimmable_ts0501a/assets/images/large.png"
+  },
+  "zigbee": {
+    "manufacturerName": [
+      "_TZ3000_7dcddnye",
+      "_tz3000_7dcddnye"
+    ],
+    "productId": [
+      "TS0501A"
+    ],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0,
+          3,
+          4,
+          5,
+          6,
+          8
+        ],
+        "bindings": []
+      }
+    },
+    "learnmode": {
+      "image": "{{driverAssetsPath}}/icon.svg",
+      "instruction": {
+        "en": "Switch the light off and on 3–5 times until it blinks to enter pairing mode.",
+        "fr": "Éteignez et rallumez la lampe 3 à 5 fois jusqu'à ce qu'elle clignote pour passer en mode appairage.",
+        "nl": "Schakel de lamp 3–5 keer uit en aan tot hij knippert om te koppelen."
+      }
+    }
+  },
+  "ui": {
+    "quickAction": "onoff"
+  },
+  "metadata": {
+    "source": "JohanBendz/com.tuya.zigbee#273 (canonical #271)"
+  }
+}
