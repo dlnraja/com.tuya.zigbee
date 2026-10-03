@@ -84,6 +84,28 @@ jobs:
             --message="chore(leads): incremental GitHub leads scan (cursor + output)" \
             --paths="docs/automation/leads-other-apps-cursor.json data/leads/github-leads.json data/leads/peer-flow-cards.json"
 
+      # Spec 005/009 — upstream maintainer threads (issues, PRs, comments incl. closed): links +
+      # structured fields only (mfr/pid, canonical, batches, regression flags); no comment text.
+      # Threads with new activity get needsDeepRead=true for our own deep-read pass.
+      - name: Johan canonical index (links + structured fields, incremental)
+        id: johan_index
+        continue-on-error: true
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: node scripts/scanners/johan-canonical-index.js --max-pages=${{ vars.JOHAN_INDEX_MAX_PAGES || '10' }}
+
+      - name: Commit Johan index (gated)
+        if: steps.johan_index.outcome == 'success'
+        continue-on-error: true
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          node scripts/ci/safe-auto-commit.js --id=johan-canonical-index \
+            --message="chore(leads): incremental upstream thread index" \
+            --paths="data/leads/johan-canonical-index.json"
+
       # P2791 — systematic image reading: issue/comment screenshots (interviews, DP logs, settings,
       # capability tables) are OCR'd locally with tesseract (free, no AI), capped per run, with a
       # resumable cursor. Output is a lead file only; nothing is applied from OCR text directly.
