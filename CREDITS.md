@@ -20,6 +20,7 @@
 ## Community Contributors
 - **AreAArseth/com.hobeian** - Hobeian Zigbee devices
 - **drenso/com.tuya2** - TypeScript Tuya cloud app (OAuth2 patterns)
+- **JohanBendz** — develop-0.4 engineering notes, reimplemented in our own code (no code copied): unknown-DP log flood guard ([#1501](https://github.com/JohanBendz/com.tuya.zigbee/issues/1501)), colour-temperature safe range + best-effort vendor RGB mode ([#1502](https://github.com/JohanBendz/com.tuya.zigbee/issues/1502)), read-only relay power-on sync ([#1503](https://github.com/JohanBendz/com.tuya.zigbee/issues/1503)), TH05Z identity without sleepy Basic reads (commit 71fc1e29), TH01Z MCU time requests (commit d78ab90a), knob Level Control bound cluster (commit 9045a3c4).
 - **gpmachado** (`gpmachado/com.gpm.homesuite`, GPL-3.0, ideas only — no code copied) — availability last-seen persist + boot grace, rejoin vs timeout (`device_rejoined`), lifecycle `onUninit` teardown, Poll Control skip on sleepy nodes, Homey settings over ZCL dump, jitter/TX pacing (no thundering herd), inching/power-on/backlight re-apply, interview-driven sacred couples, settings-as-labels, connected-devices grouping, rejoin-history settings tab, hide dead firmware settings. Dual-app tags in `.ai/KNOWLEDGE_CACHE.json` → `recentDiscoveries.homesuite`. HomeSuite itself credits **StyraHem / s-dimaio** (Homey.Sonoff.Zigbee) and JohanBendz — acknowledged as HomeSuite’s upstream, not copied here.
 - **andiwirz** - Protocol auto-detect, DP discovery tool
 - **rebtor** - TuyAPI local control
