@@ -1,14 +1,44 @@
 {
- "note": "Spec 003 dedupe/anti-flood profiles. Most specific wins: mfrPid > driver > deviceClass > default. Leading edge always passes; windows only suppress identical repeats. Initial values aligned with in-repo windows already proven in the field (TuyaEF00Manager DP dedupe 500 ms / 750 ms for button-like DPs) and kept short; tune per device from reports (constitution M1).",
- "default": { "dedupeMs": 500, "commandMs": 400, "multiClick": "off", "multiClickMs": 400 },
+ "note": "Spec 003 dedupe/anti-flood profiles. Most specific wins: mfrPid > driver > deviceClass > default. Leading edge always passes; windows only suppress identical repeats. Initial values aligned with in-repo windows already proven in the field (TuyaEF00Manager DP dedupe 500 ms / 750 ms for button-like DPs) and kept short; tune per device from reports (constitution M1). Opt-in: enabled=true activates runtime wiring (spec 003 T3); a device setting coordinator_mode on/off overrides. Button/remote: cross-channel-only press dedupe (same-channel repeats untouched, multi-click preserved), buttonCrossMs. collapseCommands=true collapses identical DP writes inside commandMs (off until a device report justifies it).",
+ "default": {
+  "dedupeMs": 500,
+  "commandMs": 400,
+  "multiClick": "off",
+  "multiClickMs": 400,
+  "enabled": false,
+  "collapseCommands": false
+ },
  "deviceClass": {
-  "button": { "dedupeMs": 750, "multiClick": "auto" },
-  "remote": { "dedupeMs": 750, "multiClick": "auto" },
-  "socket": { "dedupeMs": 400 },
-  "light": { "dedupeMs": 300, "commandMs": 250 },
-  "sensor": { "dedupeMs": 1000 },
-  "thermostat": { "dedupeMs": 1000, "commandMs": 800 },
-  "windowcoverings": { "dedupeMs": 500, "commandMs": 600 }
+  "button": {
+   "dedupeMs": 750,
+   "multiClick": "auto",
+   "enabled": true,
+   "buttonCrossMs": 400
+  },
+  "remote": {
+   "dedupeMs": 750,
+   "multiClick": "auto",
+   "enabled": true,
+   "buttonCrossMs": 400
+  },
+  "socket": {
+   "dedupeMs": 400
+  },
+  "light": {
+   "dedupeMs": 300,
+   "commandMs": 250
+  },
+  "sensor": {
+   "dedupeMs": 1000
+  },
+  "thermostat": {
+   "dedupeMs": 1000,
+   "commandMs": 800
+  },
+  "windowcoverings": {
+   "dedupeMs": 500,
+   "commandMs": 600
+  }
  },
  "driver": {},
  "mfrPid": {}
