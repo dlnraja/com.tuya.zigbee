@@ -1,4 +1,8 @@
 {
+  "5.12.359": {
+    "en": "LCD temperature/humidity sensors answer time sync requests; better identity detection for sleepy sensors.",
+    "fr": "Capteurs LCD temperature/humidite: reponse aux demandes de synchronisation horaire; meilleure detection d identite des capteurs en veille."
+  },
   "5.12.345": {
     "en": "Radar: fix _TZE204_gkfbdvyx ghost capabilities, strip phantoms on ceiling 24G, fix 0m distance & presence lock (GH#550).",
     "fr": "Radar: correction _TZE204_gkfbdvyx capacites fantomes plafond 24G, fix distance 0m et verrouillage presence (GH#550)."
