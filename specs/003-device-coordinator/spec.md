@@ -6,7 +6,9 @@ button floods, actuator command bursts.
 One entry point per device: `coordinator.ingest(source, key, value, meta)` and `coordinator.command(target, payload)`.
 ## Requirements
 - MUST pass the leading edge immediately (zero added latency on the first event).
-- MUST dedupe across channels by ZCL seqNum / Tuya seq, else by short window (default 300 ms, device setting, 0 = off).
+- MUST dedupe across channels by ZCL seqNum / Tuya seq, else by a short window taken from a per-device-type /
+  per-driver / per-mfr+pid profile (values benchmarked against Z2M, ZHA, Johan, deCONZ, localtuya; adaptive; setting override, 0 = off) (M1).
+- Multi-click (double/triple) window only auto-enabled for remotes without native press type; otherwise off (M2).
 - MUST give one trigger per real button press and keep double/triple/long press (press type is part of the key).
 - MUST collapse actuator report bursts; never send an identical command twice inside the window; command echoes do not retrigger flows.
 - master: full version (per-channel stats, adaptive window). stable: simple version (seq + fixed window).

@@ -21,6 +21,18 @@ Specs live in `specs/NNN-*/{spec,plan,tasks}.md`. This file overrides any spec/p
 - D6. **No perceptible latency.** Dedupe/anti-flood passes the leading edge immediately; windows
   are short and configurable.
 
+## Maintainer clarifications (2026-10-03)
+- M1. Dedupe/anti-flood windows are chosen by comparing Z2M, ZHA, Johan's apps, deCONZ and localtuya and taking the
+  most accurate value; they are dynamic per device type and per driver / mfr+pid profile, adaptive per case.
+- M2. Double/triple-click detection is enabled automatically only where needed (remotes that do not send a native
+  press type); otherwise it is off (no added latency).
+- M3. Existing phantom/dual couples are kept as-is (frozen baseline); act only when a user reports a conflict
+  (forum, threads, issues).
+- M4. Lights without a driver (TS0502A/B, TS0505B, TS0501A): add to existing light drivers, unless that would conflict
+  with another driver (e.g. TS0501A vs dimmer_wall_1gang) — then create a dedicated driver.
+- M5. External PRs are merged intelligently in an enrichment mindset: keep the best of both, never degrade.
+- M6. Stable publishes are grouped (batched), never one per fingerprint.
+
 ## Code & data
 - C1. No copy-paste from other projects/people. Read, understand, rewrite as our own rules/quirks;
   keep only source link + author/project. Raw dumps do not stay in the repo. GPL code is never copied.
