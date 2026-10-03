@@ -149,10 +149,14 @@ function canonicalizeForumMfr(mfr) {
   return stripped;
 }
 
+// WHY(spec 005): a device-list post (e.g. thread opener) crossed every mfr with every pid →
+// 20k synthetic couples / 6 MB per report. Above 16 combinations the post is a list, not a couple.
+const MAX_CROSS_COUPLES = 16;
 function couplesFromPost(post) {
   const mfrs = post.mfrs || [];
   const pids = post.pids || [];
   const out = [];
+  if (mfrs.length * pids.length > MAX_CROSS_COUPLES) return out;
   if (mfrs.length && pids.length) {
     for (const m of mfrs) for (const p of pids) out.push({ mfr: canonicalizeForumMfr(m), pid: p });
   } else if (mfrs.length) {
@@ -256,7 +260,8 @@ function processPost(topic, post, index, truth) {
     username: post.username,
     date: post.created_at || post.date || null,
     issues: post.issues || [],
-    excerpt: (post.excerpt || '').slice(0, 160),
+    url: `https://community.homey.app/t/${topic.id}/${post.post_number}`,
+    listPost: (post.mfrs || []).length * (post.pids || []).length > MAX_CROSS_COUPLES,
     dualApp: dual,
     couples: coupleAnalysis,
     recommendedAction: action,

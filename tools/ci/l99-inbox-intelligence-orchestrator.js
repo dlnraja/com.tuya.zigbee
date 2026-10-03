@@ -46,9 +46,14 @@ function ensureDir(d) {
   fs.mkdirSync(d, { recursive: true });
 }
 
+// Spec 005 (C1): issue bodies are analysed in memory only; persisted JSON keeps links + fields.
+function stripBodies(key, value) {
+  return key === 'bodySnippet' ? undefined : value;
+}
+
 function writeJson(fp, obj) {
   ensureDir(path.dirname(fp));
-  fs.writeFileSync(fp, `${JSON.stringify(obj, null, 2)}\n`);
+  fs.writeFileSync(fp, `${JSON.stringify(obj, stripBodies, 2)}\n`);
 }
 
 function runNode(scriptRel, args = [], envExtra = {}, timeoutMs = 180000) {
