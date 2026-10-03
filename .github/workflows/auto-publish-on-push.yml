@@ -25,7 +25,9 @@ concurrency:
   # P139/P2696: serialize ALL Athom uploads across master+stable+bastien.
   # Gmail 2026-09-23: concurrent #3340/#225/#77–80 → socket hang up floods;
   # later queued siblings recovered. NEVER cancel mid-draft (orphan builds).
-  group: athom-developer-api-publish
+  # Per-app group (2026-10-03): a shared group made a queued master publish cancel the
+  # queued stable one and vice versa (GitHub keeps only the newest pending run per group).
+  group: athom-publish-master
   cancel-in-progress: false
 
 env:
