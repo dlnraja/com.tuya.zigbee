@@ -1,0 +1,75 @@
+{
+  "id": "temphumidsensor_zcl_ts0601",
+  "name": {
+    "en": "Temperature & Humidity Sensor (ZCL, TS0601)",
+    "nl": "Temperatuur- en vochtigheidssensor (ZCL, TS0601)",
+    "fr": "Capteur température & humidité (ZCL, TS0601)"
+  },
+  "class": "sensor",
+  "platforms": [
+    "local"
+  ],
+  "connectivity": [
+    "zigbee"
+  ],
+  "capabilities": [
+    "measure_temperature",
+    "measure_humidity",
+    "measure_battery"
+  ],
+  "capabilitiesOptions": {
+    "measure_battery": {
+      "getable": true
+    },
+    "measure_humidity": {
+      "getable": true
+    },
+    "measure_temperature": {
+      "getable": true
+    }
+  },
+  "energy": {
+    "batteries": [
+      "OTHER"
+    ]
+  },
+  "images": {
+    "small": "/drivers/temphumidsensor_zcl_ts0601/assets/images/small.png",
+    "large": "/drivers/temphumidsensor_zcl_ts0601/assets/images/large.png"
+  },
+  "zigbee": {
+    "manufacturerName": [
+      "_TZE200_qoy0ekbd",
+      "_tze200_qoy0ekbd"
+    ],
+    "productId": [
+      "TS0601"
+    ],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0,
+          1,
+          1026,
+          1029
+        ],
+        "bindings": [
+          1,
+          1026,
+          1029
+        ]
+      }
+    },
+    "learnmode": {
+      "image": "{{driverAssetsPath}}/icon.svg",
+      "instruction": {
+        "en": "Press and hold the reset button for about 5 seconds until the LED blinks rapidly.",
+        "fr": "Maintenez le bouton reset environ 5 secondes jusqu’à ce que la LED clignote rapidement.",
+        "nl": "Houd de resetknop ongeveer 5 seconden ingedrukt tot de LED snel knippert."
+      }
+    }
+  },
+  "metadata": {
+    "source": "JohanBendz/com.tuya.zigbee#797 (physical Homey interview: EP1 in [0,1,1026,1029], out [25,10], no 0xEF00)"
+  }
+}
