@@ -8,7 +8,11 @@ const path = require('path');
 const ROOT = path.join(__dirname, '..', '..');
 const BASE = path.join(ROOT, 'data', 'native-matrix-baseline.json');
 const NON_NATIVE = new Set([0xEF00, 0xEF01, 0xE000, 0xE001]);
-const isNonNative = (c) => NON_NATIVE.has(c) || (c >= 0xFC00 && c <= 0xFFFF);
+// Non-native set mirrors data/native-matrix.json rules (scripts/gen/native-matrix.js).
+const isNonNative = (c) => NON_NATIVE.has(c) || (c >= 0xFC00 && c <= 0xFFFF) || (c >= 0xE000 && c <= 0xE002);
+// Brand-style manufacturer names (HOBEIAN, eWeLink, …) intentionally span several drivers and are
+// split at runtime (P2671 doctrine); only Tuya-style `_T…_` identities are checked for couples.
+const isTuyaStyle = (m) => m.startsWith('_');
 
 function scan() {
   const dir = path.join(ROOT, 'drivers');
@@ -27,7 +31,7 @@ function scan() {
     }
     const m = [].concat(z.manufacturerName || []).map((s) => String(s).toLowerCase());
     const p = [].concat(z.productId || []).map((s) => String(s).toLowerCase());
-    for (const a of new Set(m)) for (const b of new Set(p)) {
+    for (const a of new Set(m.filter(isTuyaStyle))) for (const b of new Set(p)) {
       const k = `${a}|${b}`;
       if (!couples.has(k)) couples.set(k, new Set());
       couples.get(k).add(id);
