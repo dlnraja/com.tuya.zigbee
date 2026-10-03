@@ -23,6 +23,8 @@ const CHECK_FINAL = ARGS.has('--final') || process.env.HOMEY_CHECK_FINAL_PUBLISH
 // Stale 26/34 defaults blocked local commits while Athom still accepted ~9 MB gz.
 const LIMITS = {
   appJsonMB: numberEnv('HOMEY_APP_JSON_MAX_MB', 4),
+  // Early-warning trend threshold (constitution C2): warn well before the 4 MB hard limit.
+  appJsonWarnMB: numberEnv('HOMEY_APP_JSON_WARN_MB', 3.85),
   publishUncompressedMB: numberEnv('HOMEY_PUBLISH_MAX_UNCOMPRESSED_MB', 50),
   publishSourceMB: numberEnv('HOMEY_PUBLISH_SOURCE_MAX_MB', 50),
   publishFinalMB: numberEnv('HOMEY_PUBLISH_FINAL_MAX_MB', 40),
@@ -120,6 +122,10 @@ function checkJsonUnderLimit(label, file, limitMB) {
   addCheck(label, bytes, limitMB, status, detail);
   if (status === 'fail') {
     errors.push(`${label} compact size is ${fmtMB(bytes)} MB, above ${limitMB.toFixed(2)} MB`);
+  } else if (/app\.json/i.test(label) && limitMB === LIMITS.appJsonMB && toMB(bytes) > LIMITS.appJsonWarnMB) {
+    const msg = `${label} compact size ${fmtMB(bytes)} MB is above the ${LIMITS.appJsonWarnMB.toFixed(2)} MB early-warning threshold (limit ${limitMB.toFixed(2)} MB) — move large driver data to lazy-loaded files`;
+    warnings.push(msg);
+    if (process.env.GITHUB_ACTIONS) { console.log(`::warning title=app.json size::${msg}`); }
   }
 }
 
