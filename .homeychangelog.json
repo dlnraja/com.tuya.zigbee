@@ -2113,5 +2113,9 @@
   "5.12.357": {
     "en": "Added support: TS011F smart plugs (_TZ3000_zgtbi4oy, _TZ3000_iiacqpdz, _TZ3000_dvqt7qrw), TS130F curtain modules (_TZ3000_vsj5o7dm, _TZ3000_os0wy3vh, _TZ3000_26gjlugm), TS0041 1-button remotes (_TZ3000_fa9mlvja, _TZ3000_vn88ezar). Multi-gang couple fixes from 5.12.356.",
     "fr": "Support ajouté : prises TS011F (_TZ3000_zgtbi4oy, _TZ3000_iiacqpdz, _TZ3000_dvqt7qrw), modules volet TS130F (_TZ3000_vsj5o7dm, _TZ3000_os0wy3vh, _TZ3000_26gjlugm), télécommandes TS0041 1 bouton (_TZ3000_fa9mlvja, _TZ3000_vn88ezar). Corrections multi-gang de 5.12.356."
+  },
+  "5.12.358": {
+    "en": "Fixes: colour/CCT lights load again and keep colour temperature in range; smart plugs read power-on state, indicator and child lock independently; repeated unknown Tuya datapoints no longer flood the log.",
+    "fr": "Corrections : les ampoules couleur/CCT se chargent à nouveau et gardent une température de couleur valide ; les prises lisent état au démarrage, voyant et verrouillage séparément ; les datapoints Tuya inconnus répétés n’inondent plus le journal."
   }
 }
