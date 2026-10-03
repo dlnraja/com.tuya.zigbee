@@ -1,33 +1,44 @@
 {
-  "updated": "2026-10-03T14:20:00+02:00",
+  "updated": "2026-10-03T13:40:00+02:00",
   "queue": "dlnraja maintenance queue 2026-10-03 (items 1-7)",
   "rules": ".specify/memory/constitution.md",
   "worktree_note": "Use a dedicated git worktree per agent (e.g. /workspace/exec-wt); a shared checkout was reset by another worker on 2026-10-03.",
   "done": {
     "1": "Spec Kit structure: .specify/memory/constitution.md, .specify/templates/*, specs/002..006/{spec,plan,tasks}.md; maintainer clarifications M1-M6 recorded in constitution; specs 007 (lights) and 008 (hygiene) added",
+    "2": "spec 002: scripts/gen/native-matrix.js -> data/native-matrix.json + docs/NATIVE_MATRIX.md; gate limited to Tuya-style couples, 0xE000-E002 non-native; baseline 255/531",
+    "6": "Done on master: fingerprints; #1501 unknown-DP flood guard (lib/utils/UnknownDPLogger.js); #1502 CCT clamp 0..1 + best-effort tuyaRgbMode (lib/TuyaZigBeeLightDevice.js); #1503 read-only independent relay/indicator/child-lock sync + strict writes (lib/helpers/TuyaOnOffSettingsSync.js; smartplug, smartplug_2_socket, wall_socket, smartPlug_DinRail); TH05Z interview identity (ManufacturerNameHelper node.manufacturerName); TH01Z lcdtemphumidsensor_3 answers MCU time requests (GlobalTimeSyncEngine listener); knob native LevelControl bound cluster + 25 ms dual-path guard (SmartKnobRotationMixin). CREDITS updated. Stable: fingerprints done; device fixes (#1501/#1502/#1503/TH01Z) to backport in next grouped stable publish. NOTE: _TZE200_locansqn is in our EPOCH_2000 list while Johan's TH01Z fix uses 1970 epoch — unresolved, needs >=2 sources before changing.",
+    "7": "Root cause: fork PR #558 (mc101z_pwm_dimmer) merged without PR Gate running; driver lacked driver.flow.compose.json -> check:p2518 failed in 'P244x..family gates' (runs 2026-10-02 22:06Z and 2026-10-03 05:07Z). Fleet-enrich eccd3a7812 (07:07Z) generated the file. Prevention: auto-fix workflow now scaffolds missing driver.flow.compose.json before family gates. Same root cause for 2026-10-02 22:03Z failures of Auto-Publish on Push (P2518 via family gates), Syntax Check & SDK3 Validation (P2518 test) and PR Gate on feat/mc101z-support (PR merged despite failing gate).",
+    "8": "Done: .ai/cache + .ai/timeline.json untracked (git rm --cached + .gitignore, restored via actions/cache in ai-monthly-audit.yml); stable version aligned 5.12.357 (454323238f); stable Syntax Check already fixed (3e4c63aef5); master failures of 10-02/10-03 = mc101z P2518; 2 UTF-16 report artifacts removed (js-syntax-audit green). Open: app.json trim plan (4,180,221 B).",
     "2_partial": "scripts/gates/native-matrix-gate.js + data/native-matrix-baseline.json (252 non-native endpoint clusters, 705 dual couples frozen, shrink-only); npm validate:native-matrix; wired in pr-gate.yml and auto-fix-and-publish.yml",
     "6_partial": "Master fingerprints added: smartplug(TS011F) _TZ3000_zgtbi4oy/_TZ3000_iiacqpdz/_TZ3000_dvqt7qrw; curtain_module(TS130F) _TZ3000_vsj5o7dm/_TZ3000_os0wy3vh/_TZ3000_26gjlugm; wall_remote_1_gang(TS0041) _TZ3000_fa9mlvja/_TZ3000_vn88ezar (driver.compose + app.json); gate: 0 new dual couples",
-    "7": "Root cause: fork PR #558 (mc101z_pwm_dimmer) merged without PR Gate running; driver lacked driver.flow.compose.json -> check:p2518 failed in 'P244x..family gates' (runs 2026-10-02 22:06Z and 2026-10-03 05:07Z). Fleet-enrich eccd3a7812 (07:07Z) generated the file. Prevention: auto-fix workflow now scaffolds missing driver.flow.compose.json before family gates. Same root cause for 2026-10-02 22:03Z failures of Auto-Publish on Push (P2518 via family gates), Syntax Check & SDK3 Validation (P2518 test) and PR Gate on feat/mc101z-support (PR merged despite failing gate).",
     "8_partial": "stable Syntax Check 09-28 failure (P214 TS0601 escape) already fixed by 3e4c63aef5 (gate passes locally); master p248x/Auto-Publish/Syntax failures of 2026-10-02 22:03Z = same mc101z P2518 cause; Syntax Check + code-quality green on 9f6c920e36",
-    "8": "Done: .ai/cache + .ai/timeline.json untracked (git rm --cached + .gitignore, restored via actions/cache in ai-monthly-audit.yml); stable version aligned 5.12.357 (454323238f); stable Syntax Check already fixed (3e4c63aef5); master failures of 10-02/10-03 = mc101z P2518; 2 UTF-16 report artifacts removed (js-syntax-audit green). Open: app.json trim plan (4,180,221 B).",
-    "6": "Done on master: fingerprints; #1501 unknown-DP flood guard (lib/utils/UnknownDPLogger.js); #1502 CCT clamp 0..1 + best-effort tuyaRgbMode (lib/TuyaZigBeeLightDevice.js); #1503 read-only independent relay/indicator/child-lock sync + strict writes (lib/helpers/TuyaOnOffSettingsSync.js; smartplug, smartplug_2_socket, wall_socket, smartPlug_DinRail); TH05Z interview identity (ManufacturerNameHelper node.manufacturerName); TH01Z lcdtemphumidsensor_3 answers MCU time requests (GlobalTimeSyncEngine listener); knob native LevelControl bound cluster + 25 ms dual-path guard (SmartKnobRotationMixin). CREDITS updated. Stable: fingerprints done; device fixes (#1501/#1502/#1503/TH01Z) to backport in next grouped stable publish. NOTE: _TZE200_locansqn is in our EPOCH_2000 list while Johan's TH01Z fix uses 1970 epoch \u2014 unresolved, needs >=2 sources before changing."
+    "ci-concurrency": "c18cecbe28: per-app publish concurrency groups (athom-publish-master/-stable/-bastien, cancel-in-progress false); safe-sync-stable prunes mfs_db rows whose driver is absent on stable and bumps app.json/package.json/changelog together. Stable 79bbc354a7 same groups.",
+    "3a": "spec 003 T1-T2: lib/coordinator/DeviceCoordinator.js + data/coordinator-profiles.json + test (not wired)",
+    "4a": "spec 004 T1: lib/layers/LayerInterface.js (CircuitBreaker, wrapLayer w/ homey timers, runLayers, background) + test",
+    "5a": "spec 005 T1: scanner persists links + structured fields only; johan-canonical-index stripped (670 threads needsDeepRead); johan-comments-raw.json removed + gitignored",
+    "7a": "spec 007: 5 CCT fps on light_bulb_tunable_white (_TZ3000_0ausfos0/_9evm3otq/_ajkq2isy TS0502A; _TZ3210_uos3hl9x/_y5ztga9r TS0502B)",
+    "9a": "spec 009 T1: .github/workflows/johan-thread-intel.yml daily 03:40 UTC with stored-text guard",
+    "6b": "stable 5.12.359: lcdtemphumidsensor_3 MCU time listener + ManufacturerNameHelper interview identity (knob not applicable: stable has raw handleFrame path, no mixin)"
   },
   "next": [
-    "6b stable: lcdtemphumidsensor_3 time-request listener + knob bound cluster not yet backported (next grouped stable publish); resolve _TZE200_locansqn epoch (2000 vs 1970) with >=2 sources",
-    "watch: P52 master->stable sync re-added master-only mfs_db row (mc101z) and caused stable mfs drift; the sync should skip mfs rows whose driver is absent on stable",
-    "2: SSOT data/native-matrix.json generator + docs/NATIVE_MATRIX.md (dual couples kept per M3)",
-    "3: DeviceCoordinator with per-type/driver/mfr+pid profiles (M1) and auto multi-click only where needed (M2)",
-    "4: layer contract + circuit breaker",
-    "5: johan-comments-raw.json -> own rules; scanner links+rules only; oss-lan-source-enrich.yml; delete raw dumps; Johan interactions since 2026-10-02",
-    "7b (spec 007): lights TS0502A/B, TS0505B, TS0501A per M4",
-    "9: spec 009 \u2014 daily incremental Johan thread-intel workflow + mandatory deep-read pass; seed #797 and similar threads; enrich both apps/SSOT/CREDITS"
+    "verify master publish of aa23fab9c5 and stable 5.12.359 (re-dispatch if cancelled)",
+    "spec 003 T3: opt-in wiring of DeviceCoordinator into base device classes; stable simple version; CREDITS for inspiring projects",
+    "spec 004 T2: adapt LowLevelBridge + ProtocolRxTxChain to layer contract",
+    "spec 005 T2: forum generators (forum-actionable-processor, forum-deep-investigate, p2571-t26439-deep-harvest, forum-t140352-recent-harvest, l99-inbox-intelligence-orchestrator, p2572-johan-mega-complementary) persist links+fields only; then git rm reports/forum-verify-*/actionable-processor.json, forum-t26439 POSTS.json, FORUM_DEEP_INVESTIGATE, forum-l99-* and gitignore",
+    "spec 007 T4: dedicated drivers for _TZ3210_jtifm80b TS0502B, _TZ3210_p9ao60da TS0505B, _TZ3000_7dcddnye TS0501A (all candidates conflict); T5 CCT-only capability set",
+    "spec 009: Discussions via GraphQL in scanner + deep-read log; deep-read #797 & similar -> own rules/quirks/fps/docs + CREDITS + stable compat",
+    "open: _TZE200_locansqn epoch 2000 vs 1970 — needs >=2 sources",
+    "app.json shrink plan: (1) prune 198 synthetic *_needs_device_assignment manufacturer names from source drivers (pre-commit M09 already warns; prepare-publish prunes) after checking no runtime code matches them; (2) move large per-driver settings/data blobs to lazy-loaded lib/data files; (3) add CI trend for compact build size (currently 3.69/4.00 MB) with alert at 3.85 MB"
   ],
   "known_preexisting_failures": {
     "validate:fingerprints": "13 errors (fingerprints.json vs driver.compose, unrelated mfrs)",
     "mocha test/critical": "27-30 failing on clean origin/master (same with/without these changes)"
   },
   "pushed": {
-    "master": "653870a870 (publish batch: .ai caches out of git, #1501/#1502/#1503/TH05Z/TH01Z/knob ports, report artifacts removed)",
-    "stable-v5": "454323238f (fingerprints, v5.12.357) + bc94147c8d (v5.12.358: TuyaZigBeeLightDevice syntax error since e745f89958 2026-09-28 fixed; CCT clamp; plug power-on sync; unknown-DP flood guard; orphan mfs_db row _tze28c1000000_sinxpbrl removed)"
+    "master": "aa23fab9c5 (batch: specs 002/003/004/005/007/009 + layer timer fix; auto-publish triggered). Previous 653870a870 published OK.",
+    "stable-v5": "5.12.358 (bc94147c8d) published to Test, run 37118019558 success; 17ab48012f = 5.12.359 (TH01Z time sync + interview identity), publish run 37119645069 started"
+  },
+  "notes": {
+    "appjson": "root app.json minified (one line, ~2.3 MB) on master and stable since bot commit 6b2f2d3c9a; edit with JSON.stringify(a) no newline. Compact build 3.69/4.00 MB."
   }
 }
