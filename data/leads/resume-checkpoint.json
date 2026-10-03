@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-03T13:55:00+02:00",
+  "updated": "2026-10-03T14:20:00+02:00",
   "queue": "dlnraja maintenance queue 2026-10-03 (items 1-7)",
   "rules": ".specify/memory/constitution.md",
   "worktree_note": "Use a dedicated git worktree per agent (e.g. /workspace/exec-wt); a shared checkout was reset by another worker on 2026-10-03.",
@@ -18,16 +18,24 @@
     "5a": "spec 005 T1: scanner persists links + structured fields only; johan-canonical-index stripped (670 threads needsDeepRead); johan-comments-raw.json removed + gitignored",
     "7a": "spec 007: 5 CCT fps on light_bulb_tunable_white (_TZ3000_0ausfos0/_9evm3otq/_ajkq2isy TS0502A; _TZ3210_uos3hl9x/_y5ztga9r TS0502B)",
     "9a": "spec 009 T1: .github/workflows/johan-thread-intel.yml daily 03:40 UTC with stored-text guard",
-    "6b": "stable 5.12.359: lcdtemphumidsensor_3 MCU time listener + ManufacturerNameHelper interview identity (knob not applicable: stable has raw handleFrame path, no mixin)"
+    "6b": "stable 5.12.359: lcdtemphumidsensor_3 MCU time listener + ManufacturerNameHelper interview identity (knob not applicable: stable has raw handleFrame path, no mixin)",
+    "3b": "spec 003 T3+T5 (master 4996f89165→3f5cff34b6): lib/coordinator/attach.js; ButtonDevice.triggerButtonPress cross-channel press dedupe (leading edge, same-channel repeats untouched → double/triple kept; virtual never gated); BaseUnifiedDevice.safeSetCapabilityValue seq dedupe (only when options.seq) + sendTuyaCommand collapse (profile collapseCommands, off by default); profiles: enabled only for button/remote (buttonCrossMs 400); setting coordinator_mode on/off override; CREDITS",
+    "3c": "spec 003 T4 stable: lib/coordinator/SimpleButtonGate.js (seq + fixed 400 ms cross-channel window) committed LOCALLY on exec-stable 35b5248d29 — NOT pushed (push to stable-v5 was blocked by auto-review; hold for grouped stable publish with the user's approval)",
+    "4b": "spec 004 T2 (f103de0961): lib/layers/LegacyLayerAdapters.js — native ZCL passthrough unwrapped first, tuya-raw + rxtx-chain wrapped (breaker/timeout); LowLevelBridge.asLayers(), ProtocolRxTxChain.asLayer(); nativeThenFallback sequential/parallel. Adapters only: callers not yet migrated",
+    "5b": "spec 005 T2 (7773230234): 6 harvesters persist links+fields only; MAX_CROSS_COUPLES=16 (6 MB reports were 20k synthetic couples from T26439 #1 device list); dumps distilled → data/forum/forum-leads-ssot.json + docs/rules/FORUM_LEADS_RULES.md; ~54 MB untracked (git rm --cached + .gitignore, history kept); analysis .md kept",
+    "7b": "spec 007 T4 (51836c1520): drivers light_cct_ts0502b (_TZ3210_jtifm80b, CCT-only caps), light_rgbcct_ts0505b (_TZ3210_p9ao60da), light_dimmable_ts0501a (_TZ3000_7dcddnye); device.js re-exports light_bulb_tunable_white/bulb_rgb/bulb_dimmable; 0 new dual couples. T5 partial (existing driver caps unchanged)",
+    "9b": "spec 009 (340c553fa3): Discussions via GraphQL in scripts/scanners/johan-canonical-index.js (JohanBendz has Discussions disabled; works on our repo); deep read #797 (+#1246,#1284,#964,#1291,#1461) → docs/rules/JOHAN_797_STANDARD_ZCL_TEMP_RH.md, data/leads/johan-deep-read-log.json, new exact driver temphumidsensor_zcl_ts0601 (_TZE200_qoy0ekbd TS0601 never matched before)",
+    "appjson-a": "placeholders *_needs_device_assignment verified: runtime only filters them (TuyaNormalizer, DeviceFingerprintDB); kept in source because removal empties manufacturerName (gate) and prepare-publish already prunes them; publish compact 3.70/4.00 MB; publish-size-gate warns > 3.85 MB (::warning in CI)"
   },
   "next": [
-    "spec 003 T3: opt-in wiring of DeviceCoordinator into base device classes; stable simple version; CREDITS for inspiring projects",
-    "spec 004 T2: adapt LowLevelBridge + ProtocolRxTxChain to layer contract",
-    "spec 005 T2: forum generators (forum-actionable-processor, forum-deep-investigate, p2571-t26439-deep-harvest, forum-t140352-recent-harvest, l99-inbox-intelligence-orchestrator, p2572-johan-mega-complementary) persist links+fields only; then git rm reports/forum-verify-*/actionable-processor.json, forum-t26439 POSTS.json, FORUM_DEEP_INVESTIGATE, forum-l99-* and gitignore",
-    "spec 007 T4: dedicated drivers for _TZ3210_jtifm80b TS0502B, _TZ3210_p9ao60da TS0505B, _TZ3000_7dcddnye TS0501A (all candidates conflict); T5 CCT-only capability set",
-    "spec 009: Discussions via GraphQL in scanner + deep-read log; deep-read #797 & similar -> own rules/quirks/fps/docs + CREDITS + stable compat",
-    "open: _TZE200_locansqn epoch 2000 vs 1970 — needs >=2 sources",
-    "app.json shrink plan: (1) prune 198 synthetic *_needs_device_assignment manufacturer names from source drivers (pre-commit M09 already warns; prepare-publish prunes) after checking no runtime code matches them; (2) move large per-driver settings/data blobs to lazy-loaded lib/data files; (3) add CI trend for compact build size (currently 3.69/4.00 MB) with alert at 3.85 MB"
+    "branches (user 2026-10-03): (a) list dlnraja/com.tuya.zigbee branches; port applicable fixes/fingerprints/gates to still-relevant ones (bastien app id com.dlnraja.tuya.zigbee.bastien = friend test app; respect ids/roles); report dead/merged skipped. (b) read JohanBendz/com.tuya.zigbee branches (develop-0.4 etc.) as inspiration — reimplement, no copy, credit",
+    "stable grouped publish: push exec-stable 35b5248d29 (SimpleButtonGate) + backports #1501/#1502/#1503/TH01Z + device compat (4 new dedicated drivers, qoy0ekbd) — needs explicit approval (auto-review blocked direct push)",
+    "leads: zbeacon|TH01 + Zbeacon|TH01 routed to doorwindowsensor_4 (contact) — needs dw4 split without dual couples; _TZE200_rxq4iti9|TS0601 on device_radiator_valve (EF00 temp/RH, DP map unknown)",
+    "spec 003 T1 inventory of legacy dedupe points (ReceptionManager/TransmissionManager/UniversalThrottleManager) and migrate to coordinator",
+    "spec 004: migrate callers to asLayers()/asLayer()",
+    "spec 009 T4/T6: continue deep reads of needsDeepRead threads",
+    "app.json shrink step 2: lazy-load large per-driver settings/data blobs",
+    "open: _TZE200_locansqn epoch 2000 vs 1970 — needs >=2 sources"
   ],
   "known_preexisting_failures": {
     "validate:fingerprints": "13 errors (fingerprints.json vs driver.compose, unrelated mfrs)",
