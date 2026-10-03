@@ -1,28 +1,13 @@
 {
-  "generatedAt": "2026-10-02T07:34:17.479Z",
+  "generatedAt": "2026-10-03T07:05:30.315Z",
   "verdict": "curtain-z2m-missing-2026-09-01",
   "verified36_present": true,
-  "added": [
-    {
-      "mfr": "_TZE200_shkxsgis",
-      "pid": "TS0601",
-      "source": "live-z2m-crawl",
-      "model": "ZM25TQ",
-      "desc": "Tubular motor"
-    },
-    {
-      "mfr": "_TZE204_shkxsgis",
-      "pid": "TS0601",
-      "source": "live-z2m-crawl",
-      "model": "ZM25TQ",
-      "desc": "Tubular motor"
-    }
-  ],
+  "added": [],
   "stripped_from_curtain_motor": 2,
   "module2_gang_added": [
     "_TZ3000_j1xl73iw",
     "_TZ3000_l6iqph4f"
   ],
-  "curtainMfrCount": 1130,
+  "curtainMfrCount": 1126,
   "climateStripped": 0
 }
