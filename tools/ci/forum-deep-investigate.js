@@ -100,7 +100,7 @@ async function main() {
         post_number: p.post_number,
         username: p.username,
         created: (p.created_at || '').slice(0, 10),
-        text: text.slice(0, 400),
+        url: `https://community.homey.app/t/140352/${p.post_number}`,
         mfrs: [...new Set(mfrMatches)],
         pids: [...new Set(pidMatches)],
         drivers: [...new Set(driverMatches)],
@@ -152,7 +152,7 @@ async function main() {
       johanFindings.push({
         thread: 26439, post: p.post_number, user: p.username,
         mfrs: [...new Set(mfrMatches)], pids: [...new Set(pidMatches)],
-        text: text.slice(0, 200),
+        url: `https://community.homey.app/t/26439/${p.post_number}`,
       });
     }
   }
@@ -183,7 +183,7 @@ async function main() {
   console.log('\n--- CRITICAL ISSUES ---');
   for (const f of critical) {
     console.log(`Post #${f.post_number} @${f.username} [${f.created}]: ${f.problems.join(',')} | mfrs=${f.mfrs.join(',')} pids=${f.pids.join(',')}`);
-    console.log('  ', f.text.slice(0, 200));
+    console.log('  ', f.url);
     if (f.images.length) console.log('  IMAGES:', f.images.join(', '));
     console.log('');
   }

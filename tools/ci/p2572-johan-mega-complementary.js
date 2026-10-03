@@ -328,6 +328,8 @@ function main() {
   }
 
   fs.mkdirSync(OUT, { recursive: true });
+  // Spec 005 (C1): source texts are used in memory only, never persisted.
+  const noText = (list) => list.map(({ texts, ...rest }) => rest); // eslint-disable-line no-unused-vars
   const report = {
     id: 'P2572',
     mode: APPLY ? 'apply' : 'dry-run',
@@ -336,9 +338,9 @@ function main() {
     alreadyCovered: already.length,
     driversTouched: applied.filter((a) => a.changed).length,
     applied,
-    skipped: skipped.slice(0, 300),
+    skipped: noText(skipped.slice(0, 300)),
     skippedTotal: skipped.length,
-    needInterview: needInterview.slice(0, 100),
+    needInterview: noText(needInterview.slice(0, 100)),
     needInterviewTotal: needInterview.length,
     policy: {
       targetApp: 'com.dlnraja.tuya.zigbee',
