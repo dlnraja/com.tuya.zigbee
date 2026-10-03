@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-03T12:40:00+02:00",
+  "updated": "2026-10-03T12:45:00+02:00",
   "queue": "dlnraja maintenance queue 2026-10-03 (items 1-7)",
   "rules": ".specify/memory/constitution.md",
   "worktree_note": "Use a dedicated git worktree per agent (e.g. /workspace/exec-wt); a shared checkout was reset by another worker on 2026-10-03.",
@@ -7,7 +7,8 @@
     "1": "Spec Kit structure: .specify/memory/constitution.md, .specify/templates/*, specs/002..006/{spec,plan,tasks}.md; maintainer clarifications M1-M6 recorded in constitution; specs 007 (lights) and 008 (hygiene) added",
     "2_partial": "scripts/gates/native-matrix-gate.js + data/native-matrix-baseline.json (252 non-native endpoint clusters, 705 dual couples frozen, shrink-only); npm validate:native-matrix; wired in pr-gate.yml and auto-fix-and-publish.yml",
     "6_partial": "Master fingerprints added: smartplug(TS011F) _TZ3000_zgtbi4oy/_TZ3000_iiacqpdz/_TZ3000_dvqt7qrw; curtain_module(TS130F) _TZ3000_vsj5o7dm/_TZ3000_os0wy3vh/_TZ3000_26gjlugm; wall_remote_1_gang(TS0041) _TZ3000_fa9mlvja/_TZ3000_vn88ezar (driver.compose + app.json); gate: 0 new dual couples",
-    "7": "Root cause: fork PR #558 (mc101z_pwm_dimmer) merged without PR Gate running; driver lacked driver.flow.compose.json -> check:p2518 failed in 'P244x..family gates' (runs 2026-10-02 22:06Z and 2026-10-03 05:07Z). Fleet-enrich eccd3a7812 (07:07Z) generated the file. Prevention: auto-fix workflow now scaffolds missing driver.flow.compose.json before family gates. Same root cause for 2026-10-02 22:03Z failures of Auto-Publish on Push (P2518 via family gates), Syntax Check & SDK3 Validation (P2518 test) and PR Gate on feat/mc101z-support (PR merged despite failing gate)."
+    "7": "Root cause: fork PR #558 (mc101z_pwm_dimmer) merged without PR Gate running; driver lacked driver.flow.compose.json -> check:p2518 failed in 'P244x..family gates' (runs 2026-10-02 22:06Z and 2026-10-03 05:07Z). Fleet-enrich eccd3a7812 (07:07Z) generated the file. Prevention: auto-fix workflow now scaffolds missing driver.flow.compose.json before family gates. Same root cause for 2026-10-02 22:03Z failures of Auto-Publish on Push (P2518 via family gates), Syntax Check & SDK3 Validation (P2518 test) and PR Gate on feat/mc101z-support (PR merged despite failing gate).",
+    "8_partial": "stable Syntax Check 09-28 failure (P214 TS0601 escape) already fixed by 3e4c63aef5 (gate passes locally); master p248x/Auto-Publish/Syntax failures of 2026-10-02 22:03Z = same mc101z P2518 cause; Syntax Check + code-quality green on 9f6c920e36"
   },
   "next": [
     "8 (hygiene): stable-v5 version mismatch app.json 5.12.355 vs .homeycompose 5.12.356; stable Syntax Check failure 2026-09-28; code-quality lint errors (master 2026-10-02 22:03Z run 37070397287); .ai/ caches from PR #555 out of git; app.json trim",
@@ -17,7 +18,7 @@
     "4: layer contract + circuit breaker",
     "5: johan-comments-raw.json -> own rules; scanner links+rules only; oss-lan-source-enrich.yml; delete raw dumps; Johan interactions since 2026-10-02",
     "7b (spec 007): lights TS0502A/B, TS0505B, TS0501A per M4",
-    "9 (new): read all comments of JohanBendz/com.tuya.zigbee#797 + similar PRs/issues/discussions (Johan's repo + ours, open/closed, forum); write own rules/quirks/fingerprints/docs in SSOT/DEVICE_TRUTH, credit authors/projects with links in CREDITS; device compat to stable (grouped publish), smart layers master only"
+    "9: spec 009 \u2014 daily incremental Johan thread-intel workflow + mandatory deep-read pass; seed #797 and similar threads; enrich both apps/SSOT/CREDITS"
   ],
   "known_preexisting_failures": {
     "validate:fingerprints": "13 errors (fingerprints.json vs driver.compose, unrelated mfrs)",
