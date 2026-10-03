@@ -41,6 +41,11 @@ Specs live in `specs/NNN-*/{spec,plan,tasks}.md`. This file overrides any spec/p
 - C3. All gates pass before push, incl. `homey app validate --level publish` on Node 22.
 - C4. Neutral commit wording.
 
+- C5. **Deep reading for every source.** Forum threads (all posts + images), our issues/PRs, Johan's repo, other apps'
+  threads, Z2M/ZHA/deCONZ/localtuya, Homey docs, diags/crash mails, forks, changelogs: read and understand finely
+  (symptoms, context, firmware, interviews, DP logs, workarounds, regressions, conflicts, screenshots), reason,
+  then write our own rules/code/SSOT. Regex/AI pre-extraction is only a helper, never the decision.
+
 ## Communication
 - X1. Agents never post on GitHub/forum or reply to emails on behalf of the maintainer.
 
