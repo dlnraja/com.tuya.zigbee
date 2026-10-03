@@ -301,3 +301,6 @@ reports/local-workflow-learn/STATE.json
 # Spec 008: large generated AI caches stay out of git (restored via actions/cache)
 .ai/cache/
 .ai/timeline.json
+
+# Spec 005: no raw copied third-party text in git
+data/leads/johan-comments-raw.json

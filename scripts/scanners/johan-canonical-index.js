@@ -7,7 +7,8 @@
  * "Batch NN" consolidation comments) into a machine-readable index:
  *   data/leads/johan-canonical-index.json
  *     issues[n] = { n, title, state, state_reason, closed_at, canonical, sources[], identities[[mfr,pid]],
- *                   objectives[{ key, text }], regression, implemented[], batches[], lastComment }
+ *                   objectives[{ key, count }], regression, implemented[], batches[], lastComment{at,url}, needsDeepRead }
+ * Spec 005: no comment text is ever written (links + structured fields only).
  *
  *   node scripts/scanners/johan-canonical-index.js                    (GitHub API, GITHUB_TOKEN optional)
  *   node scripts/scanners/johan-canonical-index.js --comments=a.jsonl --items=b.jsonl   (offline)
@@ -86,14 +87,17 @@ function mergeIndex(prev, items, comments) {
       if (!can.sources.includes(Number(c.issue))) {can.sources.push(Number(c.issue));}
     }
     for (const id of p.identities) {if (!e.identities.some((x) => x[0] === id[0] && x[1] === id[1])) {e.identities.push(id);}}
-    for (const o of p.objectives) {if (!e.objectives.some((x) => x.text === o.text)) {e.objectives.push(o);}}
+    // objectives: keep only kind + count (text stays on GitHub; our wording goes to rules/SSOT after a deep read)
+    for (const o of p.objectives) {e.objectives.push({ key: o.key });}
     for (const s of p.implemented) {if (!e.implemented.includes(s)) {e.implemented.push(s);}}
     if (p.regression) {e.regression = true;}
     if (p.duplicateOnly) {e.duplicateTrackingOnly = true;}
-    e.lastComment = { at: c.created_at, url: c.url || `https://github.com/${REPO}/issues/${c.issue}#issuecomment-${c.id}`, excerpt: String(c.body).replace(/\s+/g, ' ').slice(0, 280) };
+    // Spec 005: links + structured fields only — no comment text is persisted.
+    e.lastComment = { at: c.created_at, url: c.url || `https://github.com/${REPO}/issues/${c.issue}#issuecomment-${c.id}` };
+    if (!e.deepReadAt || String(c.created_at) > String(e.deepReadAt)) {e.needsDeepRead = true;}
   }
   for (const e of Object.values(idx.issues)) {
-    e.objectives = e.objectives.slice(0, 20);
+    e.objectives = Object.entries(e.objectives.reduce((a, o) => { a[o.key] = (a[o.key] || 0) + (o.count || 1); return a; }, {})).map(([key, count]) => ({ key, count }));
     e.identities = e.identities.slice(0, 40);
   }
   return idx;
