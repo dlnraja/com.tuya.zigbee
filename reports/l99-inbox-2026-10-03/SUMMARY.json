@@ -1,0 +1,297 @@
+{
+  "generatedAt": "2026-10-03T09:29:41.722Z",
+  "date": "2026-10-03",
+  "mode": "full",
+  "phases": [
+    {
+      "name": "guard",
+      "ok": true,
+      "durationMs": 0,
+      "note": "SHADOW env forced"
+    },
+    {
+      "name": "github",
+      "ok": true,
+      "durationMs": 314
+    },
+    {
+      "name": "gmail",
+      "ok": true,
+      "durationMs": 239,
+      "details": {
+        "crash": {
+          "ok": true,
+          "skipped": false,
+          "status": 0,
+          "durationMs": 49,
+          "stderr": "",
+          "stdoutTail": "[gmail-crash-pattern-gate] sources=32 hits=2 unknown=0\n  ERR_IAS_SLEEPY_TIMEOUT: 3 source-hit(s)\n  wrote .github/state/gmail-crash-patterns.json\n  verdict: ok\n"
+        },
+        "treat": {
+          "ok": true,
+          "skipped": false,
+          "status": 0,
+          "durationMs": 189,
+          "stderr": "",
+          "stdoutTail": "[automate] inbox total=0 have=30 missing=0 ingested_now=0\n[recursive-treat] sources: 136\n[recursive-treat] wrote /home/runner/work/com.tuya.zigbee/com.tuya.zigbee/reports/diag-recursive-treat-2026-10-03\n{\n  \"generatedAt\": \"2026-10-03T09:29:42.263Z\",\n  \"methodology\": \"f647d35b-style full-body recursive treat — sacred couple never invented; P2246 derive from interview when ABSENT\",\n  \"sourcesScanned\": 136,\n  \"uniqueCases\": 122,\n  \"actionable\": 39,\n  \"derivedFromInterview\": 0,\n  \"signalTally\": {\n    \"scene_mode_unsupported\": 4,\n    \"wrong_driver_hint\": 4,\n    \"athom_socket_hang\": 2,\n    \"athom_processing_failed\": 2,\n    \"wrong_smart_rcbo\": 2,\n    \"flow_guard_spam\": 2,\n    \"processing_failed\": 2,\n    \"scene_0x8004\": 2,\n    \"invalid_flow_card\": 1,\n    \"missing_capability_listener\": 2\n  },\n  \"gmailBodiesPresent\": 30,\n  \"interviews\": 90\n}\n[automate] status → .github/state/diag-recursive-inbox/automate-status.json\n{\n  \"total\": 0,\n  \"have\": 30,\n  \"missing\": 0,\n  \"missingIds\": []\n}\n[automate] actionable= 39 gmailBodies= 30\n"
+        }
+      }
+    },
+    {
+      "name": "forum",
+      "ok": true,
+      "durationMs": 28781,
+      "skipScan": false,
+      "steps": [
+        {
+          "ok": true,
+          "skipped": false
+        },
+        {
+          "ok": true,
+          "skipped": false
+        },
+        {
+          "ok": true,
+          "skipped": false
+        },
+        {
+          "ok": true,
+          "skipped": false
+        }
+      ]
+    },
+    {
+      "name": "drivers",
+      "ok": true,
+      "durationMs": 1864,
+      "mfs": {
+        "high": 0,
+        "changes": 0,
+        "fail": false
+      },
+      "sacredOk": true
+    },
+    {
+      "name": "functionalDeep",
+      "ok": true,
+      "durationMs": 59,
+      "note": "P2529 complementary deep functional (soft)"
+    },
+    {
+      "name": "prioritize",
+      "ok": true,
+      "durationMs": 1,
+      "count": 3
+    },
+    {
+      "name": "docs",
+      "ok": true,
+      "durationMs": 0,
+      "doc": "/home/runner/work/com.tuya.zigbee/com.tuya.zigbee/docs/architecture/L99_INBOX_INTELLIGENCE.md"
+    },
+    {
+      "name": "gates",
+      "ok": true,
+      "durationMs": 2797
+    }
+  ],
+  "github": {
+    "harvestedAt": "2026-10-03T09:29:42.035Z",
+    "repo": "dlnraja/com.tuya.zigbee",
+    "auth": "token",
+    "error": null,
+    "issues": [
+      {
+        "number": 557,
+        "title": "🤖 Daily digest",
+        "labels": [
+          "bot-digest"
+        ],
+        "updatedAt": "2026-10-02T22:05:42Z",
+        "user": "dlnraja",
+        "htmlUrl": "https://github.com/dlnraja/com.tuya.zigbee/issues/557",
+        "bodySnippet": "# 🤖 Daily digest\n\nIssue de suivi des digests **gratuits** (GitHub Actions + `GITHUB_TOKEN`) qui remplacent les routines Grok Bot.\nChaque commentaire = quelque chose a changé (GitHub envoie un e-mail au propriétaire). Rien de nouveau ⇒ silence.\n\n| Workflow | Rôle |\n|---|---|\n| `daily-digest.yml` (nouveau) | Homey 08:16 + Labs 08:49 + Forum 10:23 + Inspiration 11:41 (Paris), jours ouvrés ; inclut diags Gmail |\n| `daily-digest.yml` › job *inspiration* | JohanBendz : issues/PR (ouvertes+fermées, bots inclus) + workflows → pistes non mappées + recoupement externe (11:41 Paris, ≤100 éléments/jour) |\n| `daily-digest.yml` › job *forum* | Nouveaux posts sur 6 topics Tuya (140352, 26439, 89271, 146735, 154077, 21313 ; ≤4 requêtes/passage) + identifiants absents des drivers (10:23 Paris, jours ouvrés) |\n| `autonomous-verification.yml` › job *ci-health* | Rouge/vert des workflows master & stable-v5 (08:30 + 16:15 Paris jours ouvrés, transitions seulement) |\n| `notifications.yml` › job *digest-event* | PR ouverte/mergée + CI rouge/vert sur master (temps réel, ≤1 commentaire CI / 30 min) |\n\n_Dernière mise à jour de l'état : 2026-10-02T22:05:41.832Z_ — ne pas éditer le bloc ci-dessous (état machine).\n\n<!-- digest-state:BEGIN\n{\"labs\":{\"dlnraja/ascendos\":{\"private\":false,\"branch\":\"master\",\"tip\":\"d8e36a3506b18dedc85753b8196303e4a20fc8cb\",\"tipMsg\":\"feat(autofill): add browser extension, apply-kit and smart cover-letter tuning\",\"tipDate\":\"2026-09-27T12:49:57Z\",\"workflows\":{\"Deploy Vercel\":{\"id\":36324101264,\"conclusion\":\"success\",\"sha\":\"d8e36a3506b18dedc85753b8196303e4a20fc8cb\",\"at\":\"2026-09-27T13:57:14Z\",\"url\":\"https://github.com/dlnraja/ascendos/actions/runs/36324101264\"},\"Deploy Cloudflare Pages\":{\"id\":36324101284,\"conclusion\":\"success\",\"sha\":\"d8e36a3506b18dedc85753b8196303e4a20fc8cb\",\"at\":\"2026-09-27T13:56:01Z\",\"url\":\"https://github.com/dlnraja/ascendos/actions/runs/36324101284\"},\"Deploy Oracle Always Free\":{\"id\":36324101263,\"conclusion\":\"success\",\"sha\":\"d8e36a3506b18dedc85753b8196303e4a20fc8cb\",\"at\":\"2026-09-27T13:56:06Z\",\"url\":\"https://github.com/dlnraja/ascendos/actions/runs/36324101263\"},\"Deploy AscendOS Pages\":{\"id\":36324101266,\"conclusion\":\"success\",\"sha\":\"d8e36a3506b18dedc85753b8196303e4a20fc8cb\",\"at\":\"2026-09-27T13:56:13Z\",\"url\":\"https://github.com/dlnraja/ascendos/actions/runs/36324101266\"},\"Deploy Cloudflare Worker\":{\"id\":31908434600,\"conclusion\":\"success\",\"sha\":\"2e16dac9dff2f5f0ca4afab05d9ee633bc176c2c\",\"at\":\"2026-08-15T21:05:05Z\",\"url\":\"https://github.com/dlnraja/ascendos/actions/runs/31908434600\"},\"Free deploy matrix\":{\"id\":31720586446,\"conclusion\":\"success\",\"sha\":\"edbbd22fa45c8e6a8df15686f86ab2c3898679cc\",\"at\":\"2026-08-13T16:25:27Z\",\"url\":\"https://github.com/dlnraja/ascendos/actions/runs/31720586446\"},\"Deploy GitHub Pages\":{\"id\":31677147405,\"conclusion\":\"success\",\"sha\":\"25daec6820a1035562332e8246275de569d7aa57\",\"at\":\"2026-08-13T07:17:36Z\",\"url\":\"https://github.com/dlnraja/ascendos/actions/runs/31677147405\"}},\"prs\":{\"count\":0,\"items\":[]},\"issues\":{\"count\":0,\"items\":[]}},\"dlnraja/pulse-automix\":{\"private\":false,\"branch\":\"master\",\"tip\":\"bd2eb68f346f80aca60d59735afe9eacc189527c\",\"tipMsg\":\"Release v1.4: tempo lanes, live playback settings, Cast button, and Bluetooth hooks.\",\"tipDate\":\"2026-08-18T15:56:15Z\",\"workflows\":{},\"prs\":{\"count\":0,\"items\":[]},\"issues\":{\"count\":0,\"items\":[]}}},\"homey\":{\"at\":\"2026-10-02T12:41:01.458Z\",\"branches\":{\"master\":{\"tip\":\"d414bd037ad2753dc409eab1802bb36d7b0c0018\",\"tipMsg\":\"v9.0.1316: 434 drivers, 4194 FPs [skip ci]\",\"tipDate\":\"2026-10-02T12:32:03Z\",\"versions\":{\"app.json\":\"com.dlnraja.tuya.zigbee@9.0.1316\",\".homeycompose/app.json\":\"com.dlnraja.tuya.zigbee@9.0.1316\"},\"lastPush\":{\"sha\":\"4d680773ec2be834863253c23fa4b4d18481540b\",\"msg\":\"fix(P2797b): move 18 proven multi-gang couples from switch_1gang to their gang drivers\",\"ci\":{\"status\":\"green\",\"total\":22,\"ok\":14,\"pending\":0,\"failed\":[]}}},\"stable-v5\":{\"tip\":\"0ed9ac3df51e59df14c1debd5bade469ad8ab8b1\",\"tipMsg\":\"fix(P2798): one-button TS004F remote (_TZ3000_rco1yzb1) — Off command is a single press, n\",\"tipDate\":\"2026-10-02T12:32:56Z\",\"versions\":{\"app.json\":\"com.dlnraja.tuya.zigbee.stable@5.12.355\",\".homeycompose/app.json\":\"com.dlnraja.tuya.zigbee.stable@5.12.356\"},\"lastPush\":{\"sha\":\"21e7904bd5797a5d2d708e3963fd5d860d3c9496\",\"msg\":\"chore(P52-auto): sync safe changes from master\",\"ci\":{\"status\":\"none\",\"total\":0,\"ok\":0,\"pending\":0,\"failed\":[]}}}},\"open\":{\"prs\":{\"count\":1,\"items\":[{\"n\":555,\"t\":\"AI Monthly Audit - October 2026 | Risk: Updated\",\"u\":\"dlnra"
+      },
+      {
+        "number": 550,
+        "title": "Bug report - [Short description]",
+        "labels": [
+          "bug",
+          "reopened-by-user"
+        ],
+        "updatedAt": "2026-09-28T07:08:40Z",
+        "user": "HiepSVG",
+        "htmlUrl": "https://github.com/dlnraja/com.tuya.zigbee/issues/550",
+        "bodySnippet": "> Thank you for the assistance. However, the device is not working properly yet.\n> It is now added as Presence Sensor (Radar / mmWave), so it is a step forward.\n> However, the sensor gives off just LUX measurement, not presence/motion alarm\n> \n> I am running 9.0.1059 version\n> \n> I have used both options of adding devices and have turned off and on Homey several times --> the device is added successfully but\n> a) no change in Motion alarm, human presence or detection distance (even I am waving it in front of me). The luminance data is working OK by updating the values every 1-2 second\n> b) there is a button option which gives error \"Missing capability Listener: onoff\" when I push on it.\n> \n> <img width=\"684\" height=\"478\" alt=\"Image\" src=\"https://github.com/user-attachments/assets/7017b08f-4087-472f-98a9-b3f45db6b70a\" />\n> \n> \n> <img width=\"391\" height=\"493\" alt=\"Image\" src=\"https://github.com/user-attachments/assets/bf06bbac-4454-42da-906c-92121cdf82cf\" />\n> \n> <img width=\"395\" height=\"442\" alt=\"Image\" src=\"https://github.com/user-attachments/assets/ab04bff0-5715-4705-af3c-61fbab3bf336\" />\n> \n> Presence Sensor (Radar / mmWave)\n> Property\tValue\n> ID\tfcbe58a8-1a89-4486-bb88-178bb286dfe5\n> Name\tPresence Sensor (Radar / mmWave)\n> Class\tsensor\n> Driver\thomey:app:com.dlnraja.tuya.zigbee:presence_sensor_radar\n> Ready\tYes\n> Available\tYes\n> Warning\tNo\n> Custom icon\tNo\n> \n> Data\n> Key\tValue\n> token\t\"e1fd995c-1b42-4b44-948b-55d63156f90b\"\n> \n> Settings\n> Key\tValue\n> zb_product_id\t\"TS0601\"\n> zb_manufacturer_name\t\"_TZE204_gkfbdvyx\"\n> zb_receive_when_idle\t\"✓\"\n> zb_device_type\t\"router\"\n> zb_ieee_address\t\"a4:c1:38:86:ef:fe:6b:3c\"\n> zb_sw_build_id\t\"\"\n> zb_touchlink_group_ids\t\"\"\n> radar_sensitivity\t7\n> detection_range\t6\n> departure_delay\t30\n> entry_sensitivity\t7\n> illuminance_threshold\t50\n> sensor_mode\t\"on\"\n> smart_presence_while_occupied\ttrue\n> auto_unlock_occupied_on_empty\tfalse\n> homey_curtain_flip_help\tnull\n> energy_value_off\t0\n> energy_value_on\t0\n> zone_activity_disabled\tfalse\n> climate_exclude\tfalse\n> smart_adaptation_report\t\"══════════��═══════════════════════════════════════════════════════════\\n🤖 SMART DRIVER ADAPTATION REPORT\\n══════════════════════════════════════════════════════════════════════\\n\\n📱 Device: Presence Sensor (Radar / mmWave)\\n🔧 Driver: presence_sensor_radar\\n🏭 Manufacturer: Unknown\\n📦 Model: Unknown\\n\\n🎯 Real Capabilities Detected:\\n Required: \\n Optional: \\n Forbidden: \\n\\n⚖️ Comparison:\\n Status: ✅ CORRECT\\n\\n══════════════════════════════════════════════════════════════════════\"\n> smart_adaptation_date\t\"2026-09-18T12:22:19.469Z\"\n> smart_adaptation_success\ttrue\n> mcu_version\t\"2.0.3\"\n> \n> \n> Capabilities\n> ID\tTitle\tType\tValue\tSet Value\tLast Changed\n> alarm_motion\tMotion alarm\tboolean\tfalse\t\t4 minutes ago\n> measure_luminance\tLuminance\tnumber\t647\t\t0 seconds ago\n> alarm_human\tHuman presence\tboolean\tfalse\t\t4 minutes ago\n> onoff\tChannel 1\tboolean\tnull\t\n> measure_luminance.distance\tDetection Distance\tnumber\tnull\t\t\n> button.1\tButton 1\tboolean\tnull\t\n> \n> <img width=\"1379\" height=\"422\" alt=\"Image\" src=\"https://github.com/user-attachments/assets/3b68d2db-85e9-47db-a4f4-b27f179f0ef8\" /> \n\n _Originally posted by @HiepSVG in [#547](https://github.com/dlnraja/com.tuya.zigbee/issues/547#issuecomment-5730200202)_"
+      }
+    ],
+    "prs": [],
+    "openIssueCount": 2,
+    "openPrCount": 0
+  },
+  "forum": {
+    "path": "/home/runner/work/com.tuya.zigbee/com.tuya.zigbee/.github/state/forum/actionable-processor-report.json",
+    "totals": {
+      "posts": 217,
+      "withCouples": 74,
+      "needAction": 52,
+      "both": 130,
+      "masterOnly": 19
+    },
+    "posts": 217
+  },
+  "gmail": {
+    "generatedAt": "2026-10-03T09:29:42.077Z",
+    "sourcesScanned": 32,
+    "patternCounts": {
+      "flow_getDeviceActionCard": 0,
+      "readonly_error_assign": 0,
+      "unbound_destroyed": 0,
+      "getDiscoveries_not_fn": 0,
+      "getDeviceById": 0,
+      "catch_on_undefined": 0,
+      "registerRunListenerasync_typo": 0,
+      "settimeout_destroyed": 0,
+      "onDeleted_null": 0,
+      "dcm_auditCapabilities_missing": 0,
+      "capability_ref_undefined": 0,
+      "clusterutils_destroyed_unbound": 0,
+      "heap_oom_live_data": 0,
+      "setName_not_fn": 0,
+      "sub_capability_value_not_string": 0,
+      "ERR_IAS_SLEEPY_TIMEOUT": 3,
+      "ERR_DESTROYED_DEVICE_TIMER": 0,
+      "ERR_UNBOUND_DESTROYED": 0,
+      "ERR_CATCH_ON_UNDEFINED": 0,
+      "ERR_CAPABILITY_NOT_FOUND": 0,
+      "ERR_AUDIT_CAPABILITIES": 0,
+      "ERR_ZIGBEE_ROUTE_FULL": 0
+    },
+    "hits": [
+      {
+        "pattern": "ERR_IAS_SLEEPY_TIMEOUT",
+        "severity": "high",
+        "status": "fixed_p148",
+        "fix": "DataRecoveryManager: skip aggressive EF00 on IAS without EF00; no COMMON_DPS on sleepy (P148/P157).",
+        "source": ".github/state/diagnostics-report.json",
+        "sacred": {
+          "mfrs": [
+            "_TZ3000_qja6nq5z",
+            "_TZ3000_4fjiwweb",
+            "_TZ3000_402vrq2i",
+            "_TZ3000_gwkzibhs",
+            "_TZ3000_kaflzta4",
+            "_TZE200_qoy0ekbd",
+            "_TZ3000_tsgqxdb4",
+            "_TZE284_bquwrqh1",
+            "_TZE200_n8dljorx",
+            "_TZ3000_k",
+            "_TZ3000_lqpt3mvr",
+            "_TZ3000_jqge2fjx",
+            "_TZ3000_bmfw9ykl",
+            "_TZE200_iba1ckek",
+            "_TZE200_rxq4iti9",
+            "_TZE204_s139roas",
+            "_TZE200_arge1ptm",
+            "_TZ3210_0jxeoadc",
+            "_TZ3210_tgvtvdoc",
+            "_TZ3000_o9f2zqln"
+          ],
+          "pids": [
+            "TS004F",
+            "TS0044",
+            "TS0601",
+            "TS0201",
+            "TS0203",
+            "TS0210",
+            "TS0049",
+            "TS0207",
+            "TS0219"
+          ]
+        }
+      },
+      {
+        "pattern": "ERR_IAS_SLEEPY_TIMEOUT",
+        "severity": "high",
+        "status": "fixed_p148",
+        "fix": "DataRecoveryManager: skip aggressive EF00 on IAS without EF00; no COMMON_DPS on sleepy (P148/P157).",
+        "source": ".github/state/diagnostics-report.json#diag",
+        "sacred": {
+          "mfrs": [
+            "_TZ3000_kaflzta4",
+            "_TZ3000_k"
+          ],
+          "pids": [
+            "TS004F"
+          ]
+        }
+      }
+    ],
+    "unknownFatals": [],
+    "knownFixed": [
+      "flow_getDeviceActionCard",
+      "readonly_error_assign",
+      "unbound_destroyed",
+      "getDiscoveries_not_fn",
+      "getDeviceById",
+      "catch_on_undefined",
+      "registerRunListenerasync_typo",
+      "settimeout_destroyed",
+      "onDeleted_null",
+      "dcm_auditCapabilities_missing",
+      "capability_ref_undefined",
+      "clusterutils_destroyed_unbound",
+      "heap_oom_live_data",
+      "setName_not_fn",
+      "sub_capability_value_not_string",
+      "ERR_IAS_SLEEPY_TIMEOUT",
+      "ERR_DESTROYED_DEVICE_TIMER",
+      "ERR_UNBOUND_DESTROYED",
+      "ERR_CATCH_ON_UNDEFINED",
+      "ERR_AUDIT_CAPABILITIES"
+    ],
+    "watch": [],
+    "verdict": "ok"
+  },
+  "mfs": {
+    "high": 0,
+    "changes": 0,
+    "fail": false
+  },
+  "priority": [
+    {
+      "score": 90,
+      "dualApp": "BOTH",
+      "source": "github-issue",
+      "id": "#550",
+      "title": "Bug report - [Short description]",
+      "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/550",
+      "action": "investigate-code-silent",
+      "forumReply": "NEVER"
+    },
+    {
+      "score": 75,
+      "dualApp": "BOTH",
+      "source": "forum",
+      "id": "forum-need-action",
+      "title": "52 forum posts needAction (shadow processor)",
+      "action": "enrich:investigate + deep-functional (DP/cluster/flow/RX-TX, not mfr+pid only)",
+      "forumReply": "NEVER"
+    },
+    {
+      "score": 70,
+      "dualApp": "BOTH",
+      "source": "github-issue",
+      "id": "#557",
+      "title": "🤖 Daily digest",
+      "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/557",
+      "action": "investigate-code-silent",
+      "forumReply": "NEVER"
+    }
+  ],
+  "functionalDeep": {
+    "ok": true,
+    "durationMs": 58
+  }
+}
