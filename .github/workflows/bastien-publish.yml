@@ -33,7 +33,9 @@ permissions:
 
 concurrency:
   # P139/P2696: shared Athom API mutex with master + stable (Gmail socket hang flood).
-  group: athom-developer-api-publish
+  # Per-app group (2026-10-03): a shared group made a queued master publish cancel the
+  # queued stable one and vice versa (GitHub keeps only the newest pending run per group).
+  group: athom-publish-bastien
   cancel-in-progress: false
 
 defaults:
