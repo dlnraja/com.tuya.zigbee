@@ -4,4 +4,4 @@
 - [ ] T1 Generator for data/native-matrix.json from zigbee-clusters + homey-zigbeedriver
 - [ ] T2 Interview/diag cluster census (counts + source links only)
 - [ ] T3 docs/NATIVE_MATRIX.md rendered from SSOT
-- [ ] T6 Burn down 705 dual couples / 252 endpoint entries
+- [ ] T6 Dual couples: keep all (M3); resolve a couple only when a user reports a conflict, then shrink baseline
