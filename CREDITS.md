@@ -159,6 +159,9 @@ Sources actually used or consulted for the Wi-Fi local stack (`lib/tuya-local/`)
 > factuelles d'interopérabilité (non copyrightables) ; tout le code original
 > de ce dépôt est sous **MIT** (voir LICENSE).
 
+## Device coordinator (spec 003, simple stable version) — ideas only
+- JohanBendz Tuya Zigbee apps, Koenkk/zigbee-herdsman-converters, zigpy/zha-device-handlers, deCONZ, localtuya (study only): cross-channel button press de-duplication ideas. `lib/coordinator/SimpleButtonGate.js` is original MIT code.
+
 ## Inspiration
 - All community members who reported issues and requested devices
 - The Homey community forum contributors
