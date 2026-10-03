@@ -98,6 +98,14 @@ Public `app.json` flow card lists were read to decide which generic cards to off
 - **ZHA availability timeouts** — mains/battery timeout model (2 h / 6 h), cross-checked against our 15 min / 24 h choice
 - **Philips Hue / Hue Zigbee app (JohanBendz sdk3)** — adaptive lighting, natural light emulation, wakeup ramps (`AdaptiveLightingManager`, `TransitionEngine`) ; flow actions **Alert**/**Blink** (notre `light_alert_blink` via ZCL Identify + fallback impulsions avec restauration d'état) et **suppress_sensor** (notre `SensorSuppressionManager` centralisé, avec filtrage motion-only et auto-expiration)
 - **SmartThings Edge drivers** — device health/watchdog patterns for predictive alerts (`PredictiveHealthEngine`)
+
+## Device coordinator (spec 003) — ideas only, no code copied
+- **JohanBendz Tuya Zigbee apps** — per-device debounce of repeated Tuya reports and scene/onOff button duality observed in user threads
+- **Koenkk/zigbee-herdsman-converters** — ZCL transaction-sequence based duplicate detection and per-device debounce options
+- **zigpy/zha-device-handlers** — Tuya quirks handling duplicate DP reports and remote press types
+- **dresden-elektronik/deconz-rest-plugin** — button event de-duplication across clusters
+- **rospogrigio/localtuya** (GPL-3.0, study only) — DP update coalescing behaviour
+Our implementation (`lib/coordinator/*`, `data/coordinator-profiles.json`) is original MIT code.
 - **Tuya Smart Life app** — inching/pulse relay mode (`device_pulse` avec restauration d'état), random timing anti-cambriolage (notre `PresenceSimulationManager`), countdown timers (notre `device_countdown_off` avec fallback minuteur logiciel), **cycle timing** (notre `device_cycle` ON/OFF ×N avec restauration), power-on behavior
 - **Hubitat Mode Manager / SmartThings location modes** — home modes day/evening/night/away (`HomeModeManager`), en version pilotée par l'élévation solaire réelle avec priorité au choix manuel
 - **ZCL standard (Zigbee Cluster Library)** — Identify cluster (`light_alert_blink`), LevelControl `moveToLevelWithOnOff` (`light_smooth_dim`) — chaîne de fallback systématique natif → Tuya DP → émulation logicielle (`FeatureFallbackRouter`) couvrant les 431 drivers
