@@ -118,6 +118,21 @@ jobs:
             console.log('compacted mfs_db from '+lines+' lines');
           "
 
+      - name: "🩹 Scaffold missing driver.flow.compose.json (P2518 self-heal)"
+        run: |
+          # WHY: 2026-10-03 05:07Z run failed P2518 because a fork PR (#558) added a driver
+          # without driver.flow.compose.json and was merged without PR Gate. Minimal empty
+          # flow file keeps the pipeline green; fleet-intelligent-enrich fills it later.
+          node -e '
+            const fs=require("fs"),p=require("path");
+            for (const d of fs.readdirSync("drivers")) {
+              const dir=p.join("drivers",d);
+              if (!fs.statSync(dir).isDirectory()||!fs.existsSync(p.join(dir,"driver.compose.json"))) continue;
+              const f=p.join(dir,"driver.flow.compose.json");
+              if (!fs.existsSync(f)) { fs.writeFileSync(f, JSON.stringify({triggers:[],conditions:[],actions:[]},null,2)+"\n"); console.log("scaffolded "+f); }
+            }'
+          node scripts/gates/native-matrix-gate.js || [ ! -f scripts/gates/native-matrix-gate.js ]
+
       - name: "🛡️ P244x / P246x / P248x / P249x family gates"
         run: |
           # WHY(P2521e): stable-v5 lacks some master-only family scripts (p246x/p248x).

@@ -78,6 +78,9 @@ jobs:
       - name: 🛡️ P216 ZCL battery half-percent gate
         run: node tools/ci/p216-zcl-battery-half-percent-gate.js
 
+      - name: 🛡️ Spec 002 native-matrix gate (dual couples + mandatory non-native clusters)
+        run: node scripts/gates/native-matrix-gate.js
+
       - name: 🛡️ Layer coverage gate
         run: node tools/ci/layer-coverage-gate.js
 
