@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-03T10:55:00+02:00",
+  "updated": "2026-10-03T12:40:00+02:00",
   "queue": "dlnraja maintenance queue 2026-10-03 (items 1-7)",
   "rules": ".specify/memory/constitution.md",
   "worktree_note": "Use a dedicated git worktree per agent (e.g. /workspace/exec-wt); a shared checkout was reset by another worker on 2026-10-03.",
@@ -16,10 +16,14 @@
     "3: DeviceCoordinator with per-type/driver/mfr+pid profiles (M1) and auto multi-click only where needed (M2)",
     "4: layer contract + circuit breaker",
     "5: johan-comments-raw.json -> own rules; scanner links+rules only; oss-lan-source-enrich.yml; delete raw dumps; Johan interactions since 2026-10-02",
-    "7b (spec 007): lights TS0502A/B, TS0505B, TS0501A per M4"
+    "7b (spec 007): lights TS0502A/B, TS0505B, TS0501A per M4",
+    "9 (new): read all comments of JohanBendz/com.tuya.zigbee#797 + similar PRs/issues/discussions (Johan's repo + ours, open/closed, forum); write own rules/quirks/fingerprints/docs in SSOT/DEVICE_TRUTH, credit authors/projects with links in CREDITS; device compat to stable (grouped publish), smart layers master only"
   ],
   "known_preexisting_failures": {
     "validate:fingerprints": "13 errors (fingerprints.json vs driver.compose, unrelated mfrs)",
     "mocha test/critical": "27-30 failing on clean origin/master (same with/without these changes)"
+  },
+  "pushed": {
+    "master": "9f6c920e36 (spec-kit + native-matrix gate + auto-fix scaffold step + 8 fingerprints + clarifications); version bump/publish handled by Auto-Publish pipeline"
   }
 }
