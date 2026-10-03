@@ -1,9 +1,22 @@
 {
-  "harvestedAt": "2026-10-03T15:19:17.566Z",
+  "harvestedAt": "2026-10-03T22:28:23.373Z",
   "repo": "dlnraja/com.tuya.zigbee",
   "auth": "token",
   "error": null,
   "issues": [
+    {
+      "number": 559,
+      "title": "Smartplug",
+      "labels": [
+        "enhancement",
+        "device-request",
+        "auto-triage",
+        "fingerprint-supported"
+      ],
+      "updatedAt": "2026-10-03T21:01:31Z",
+      "user": "Lalla80111",
+      "htmlUrl": "https://github.com/dlnraja/com.tuya.zigbee/issues/559"
+    },
     {
       "number": 557,
       "title": "🤖 Daily digest",
@@ -27,6 +40,6 @@
     }
   ],
   "prs": [],
-  "openIssueCount": 2,
+  "openIssueCount": 3,
   "openPrCount": 0
 }
