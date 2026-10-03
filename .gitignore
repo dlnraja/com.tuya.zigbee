@@ -297,3 +297,7 @@ reports/local-workflow-learn/STATE.json
 # Local Homey PATs (never commit)
 .github/state/homey-secrets.local.json
 *.local.json
+
+# Spec 008: large generated AI caches stay out of git (restored via actions/cache)
+.ai/cache/
+.ai/timeline.json
