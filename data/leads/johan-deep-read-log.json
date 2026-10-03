@@ -1,0 +1,30 @@
+{
+ "note": "Spec 009 T4: deep-read log. One entry per thread read in full (all comments, open + closed). Rules are written in our own words in rulesDoc; no copied text.",
+ "entries": [
+  {
+   "thread": 797,
+   "repo": "JohanBendz/com.tuya.zigbee",
+   "readAt": "2026-10-03",
+   "comments": 5,
+   "related": [
+    1246,
+    1284,
+    964,
+    1423,
+    1291,
+    1214,
+    1461,
+    1235,
+    1506
+   ],
+   "rulesDoc": "docs/rules/JOHAN_797_STANDARD_ZCL_TEMP_RH.md",
+   "filesChanged": [
+    "drivers/temphumidsensor_zcl_ts0601/*"
+   ],
+   "leads": [
+    "zbeacon|TH01 + Zbeacon|TH01 on doorwindowsensor_4 (misroute)",
+    "_TZE200_rxq4iti9|TS0601 on device_radiator_valve (EF00 temp/RH, DP map unknown)"
+   ]
+  }
+ ]
+}

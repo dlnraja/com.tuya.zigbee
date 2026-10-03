@@ -13,6 +13,7 @@ on:
 
 permissions:
   contents: write
+  discussions: read
 
 concurrency:
   group: johan-thread-intel

@@ -106,6 +106,10 @@ Public `app.json` flow card lists were read to decide which generic cards to off
 - **dresden-elektronik/deconz-rest-plugin** — button event de-duplication across clusters
 - **rospogrigio/localtuya** (GPL-3.0, study only) — DP update coalescing behaviour
 Our implementation (`lib/coordinator/*`, `data/coordinator-profiles.json`) is original MIT code.
+
+## Upstream thread intelligence (spec 009) — ideas only
+- **Johan Bendz** and the reporters of JohanBendz/com.tuya.zigbee #797, #1246, #1284, #964/#1423, #1291/#1214, #1461 — physical interviews and triage of standard-ZCL temperature/RH sensors (exact-pair matching, TS0601 without 0xEF00, unknown battery cells). Our rules: `docs/rules/JOHAN_797_STANDARD_ZCL_TEMP_RH.md`.
+- **Homey community forum** users of T140352 / T26439 — device reports distilled into `data/forum/forum-leads-ssot.json` (links only).
 - **Tuya Smart Life app** — inching/pulse relay mode (`device_pulse` avec restauration d'état), random timing anti-cambriolage (notre `PresenceSimulationManager`), countdown timers (notre `device_countdown_off` avec fallback minuteur logiciel), **cycle timing** (notre `device_cycle` ON/OFF ×N avec restauration), power-on behavior
 - **Hubitat Mode Manager / SmartThings location modes** — home modes day/evening/night/away (`HomeModeManager`), en version pilotée par l'élévation solaire réelle avec priorité au choix manuel
 - **ZCL standard (Zigbee Cluster Library)** — Identify cluster (`light_alert_blink`), LevelControl `moveToLevelWithOnOff` (`light_smooth_dim`) — chaîne de fallback systématique natif → Tuya DP → émulation logicielle (`FeatureFallbackRouter`) couvrant les 431 drivers
