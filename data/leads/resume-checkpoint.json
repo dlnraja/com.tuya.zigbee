@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-03T13:40:00+02:00",
+  "updated": "2026-10-03T14:20:00+02:00",
   "queue": "dlnraja maintenance queue 2026-10-03 (items 1-7)",
   "rules": ".specify/memory/constitution.md",
   "worktree_note": "Use a dedicated git worktree per agent (e.g. /workspace/exec-wt); a shared checkout was reset by another worker on 2026-10-03.",
@@ -13,7 +13,8 @@
     "6": "Done on master: fingerprints; #1501 unknown-DP flood guard (lib/utils/UnknownDPLogger.js); #1502 CCT clamp 0..1 + best-effort tuyaRgbMode (lib/TuyaZigBeeLightDevice.js); #1503 read-only independent relay/indicator/child-lock sync + strict writes (lib/helpers/TuyaOnOffSettingsSync.js; smartplug, smartplug_2_socket, wall_socket, smartPlug_DinRail); TH05Z interview identity (ManufacturerNameHelper node.manufacturerName); TH01Z lcdtemphumidsensor_3 answers MCU time requests (GlobalTimeSyncEngine listener); knob native LevelControl bound cluster + 25 ms dual-path guard (SmartKnobRotationMixin). CREDITS updated. Stable: fingerprints done; device fixes (#1501/#1502/#1503/TH01Z) to backport in next grouped stable publish. NOTE: _TZE200_locansqn is in our EPOCH_2000 list while Johan's TH01Z fix uses 1970 epoch \u2014 unresolved, needs >=2 sources before changing."
   },
   "next": [
-    "6b stable: backport device fixes (UnknownDPLogger flood guard, CCT clamp, TuyaOnOffSettingsSync, lcdtemphumidsensor_3 time listener) in one grouped stable publish; resolve locansqn epoch with sources",
+    "6b stable: lcdtemphumidsensor_3 time-request listener + knob bound cluster not yet backported (next grouped stable publish); resolve _TZE200_locansqn epoch (2000 vs 1970) with >=2 sources",
+    "watch: P52 master->stable sync re-added master-only mfs_db row (mc101z) and caused stable mfs drift; the sync should skip mfs rows whose driver is absent on stable",
     "2: SSOT data/native-matrix.json generator + docs/NATIVE_MATRIX.md (dual couples kept per M3)",
     "3: DeviceCoordinator with per-type/driver/mfr+pid profiles (M1) and auto multi-click only where needed (M2)",
     "4: layer contract + circuit breaker",
@@ -26,6 +27,7 @@
     "mocha test/critical": "27-30 failing on clean origin/master (same with/without these changes)"
   },
   "pushed": {
-    "master": "9f6c920e36 (spec-kit + native-matrix gate + auto-fix scaffold step + 8 fingerprints + clarifications); version bump/publish handled by Auto-Publish pipeline"
+    "master": "653870a870 (publish batch: .ai caches out of git, #1501/#1502/#1503/TH05Z/TH01Z/knob ports, report artifacts removed)",
+    "stable-v5": "454323238f (fingerprints, v5.12.357) + bc94147c8d (v5.12.358: TuyaZigBeeLightDevice syntax error since e745f89958 2026-09-28 fixed; CCT clamp; plug power-on sync; unknown-DP flood guard; orphan mfs_db row _tze28c1000000_sinxpbrl removed)"
   }
 }
