@@ -11,3 +11,4 @@ Queue state: `data/leads/resume-checkpoint.json`.
 | 006 | Verified fingerprints + Johan develop-0.4 ports | fingerprints on master; ports pending |
 | 007 | Lights without driver (TS0502A/B, TS0505B, TS0501A) | planned |
 | 008 | Repo/CI hygiene (stable version, syntax check, p248x, .ai caches) | planned |
+| 009 | Daily Johan thread intelligence + deep reads (#797 seed) | planned |
