@@ -89,7 +89,7 @@
   },
   "master_queue": {
     "note": "Single master checklist of ALL user requests since the start. Daily resumption reads this FIRST. Tick (verified) only after verification.",
-    "updated": "2026-10-04 06:40 Paris",
+    "updated": "2026-10-04 06:50 Paris",
     "items": [
       {
         "id": 1,
@@ -868,15 +868,15 @@
       }
     ],
     "next": [
-      "stable grouped publish after #100 port (Test is 5.12.363; 5.12.364 #276 stuck)",
-      "verify master Auto-Publish for the #100 push",
-      "#123 fp-collision baseline review",
-      "#99 source registry parsers (tools/sources/dp-parsers.js + test)",
-      "#98 athombv org study",
+      "recheck stable Test shows 5.12.365",
+      "#123 fp-collision baseline review (pre-existing curtain_motor_shutter / sensor_motion_presence)",
+      "#99 triage CLI over source-proposals",
+      "#98 deps upgrade proposal (zigbee-clusters 3.8, homey-zigbeedriver 2.2.18) as reviewed change",
       "spec 010",
       "PCr2",
       "#95 mirrors",
-      "sacred pins for switch_presence_tuya / panel_switch_cover_tuya / sound_sensor_tuya once root app.json has them"
+      "sacred pins for switch_presence_tuya / panel_switch_cover_tuya / sound_sensor_tuya once root app.json has them",
+      "_TZE284_rzdkn5rx when ZHA PR #5387 merges"
     ],
     "user_actions": [
       "Rotate/revoke the Gmail app password and old GitHub PAT seen in clear text in July opencode/MiniMax prompts (not for agents)"
@@ -1025,6 +1025,20 @@
         "build": "#276",
         "result": "draft; Athom processing_failed reported, Test still 5.12.363 (#275, confirmed on public page)",
         "at": "2026-10-04 06:10 Paris"
+      },
+      {
+        "branch": "master",
+        "run": 37177061970,
+        "version": "9.0.1330",
+        "result": "on Test (public page 9.0.1330) — includes #100 and restored reviewed duals",
+        "at": "2026-10-04 06:40 Paris"
+      },
+      {
+        "branch": "stable-v5",
+        "run": 37177312019,
+        "version": "5.12.365",
+        "result": "run success (draft + promote job done); public Test page still shows 5.12.364 at 06:50 — recheck",
+        "at": "2026-10-04 06:44 Paris"
       }
     ],
     "rules_reporting": "Every report includes a French 'Découvertes' section (source link + author, mechanism/symptom, what we did or why not); append to docs/progress/DISCOVERIES.md"
