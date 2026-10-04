@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-04T03:00:00+02:00",
+ "updated": "2026-10-04T03:10:00+02:00",
  "queue": "dlnraja maintenance queue 2026-10-03 (items 1-7)",
  "rules": ".specify/memory/constitution.md",
  "worktree_note": "Use a dedicated git worktree per agent (e.g. /workspace/exec-wt); a shared checkout was reset by another worker on 2026-10-03.",
@@ -71,8 +71,8 @@
   "1_audit_copied_text": "done",
   "2_mail_crosscheck": "done (580/580)",
   "3_johan_gaps": "done: o9f2zqln->rain_sensor, p26flek3->switch_1gang, iystcadi TS0505B ok / TS0505A deferred",
-  "4_misroutes": "rxq4iti9 = TRV, correct (closed); zbeacon TH01: plan = exact driver temphumid ZCL for zbeacon/Zbeacon|TH01 + drop TH01 from doorwindowsensor_4 (in progress)",
-  "5_zg102": "pending",
+  "4_misroutes": "done: rxq4iti9 = TRV (correct); zbeacon/Zbeacon TH01 -> temphumidsensor_zcl_th01 (c5ccf1c00e)",
+  "5_zg102": "done (c5ccf1c00e)",
   "6_pc_harvest_actions": "pending",
   "7_ledger_wiring": "pending",
   "8_spec003_004": "pending",
@@ -80,6 +80,11 @@
   "10_forum_wifi_tests_workflows": "pending",
   "11_deep_read_sweep": "pending",
   "W7_polysemic_dp": "pending",
-  "W8_tooling_inventory": "pending"
+  "W8_tooling_inventory": "pending",
+  "NEXT": "port master fp fixes 31d83786f9 + c5ccf1c00e to stable (grouped publish) + bastien; then 6 PC-harvest r1 (21 pid-only drivers, DeviceFingerprintDB 153-162 typos, 18 raw setTimeout in TuyaEF00Manager, agent-rules generation, auto-post guard), PC-harvest r2 tasks (ledger task:*), 7 ledger wiring, 8 spec003/004, 9 lazy app.json, 10 forum/wifi/tests/workflows, 11 deep-read sweep, W4 conflict sweep, W7-W11 audits",
+  "stable_port_pending": [
+   "31d83786f9 (o9f2zqln, p26flek3)",
+   "c5ccf1c00e (TH01 driver, ZG-102Z/ZA, 3 mfrs)"
+  ]
  }
 }
