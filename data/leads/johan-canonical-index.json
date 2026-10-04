@@ -11367,7 +11367,9 @@
    "batches": [
     "64"
    ],
-   "implemented": [],
+   "implemented": [
+    "HOBEIAN|ZG-102ZL exact on contact_sensor; rules docs/rules/JOHAN_1298_CONTACT_LUX.md"
+   ],
    "title": "Device Request - HOBEIAN contact/lux sensor - ZG-102ZL",
    "state": "open",
    "state_reason": null,
@@ -11377,7 +11379,8 @@
     "at": "2026-10-01T08:35:11Z",
     "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/1298#issuecomment-5927789019"
    },
-   "needsDeepRead": true
+   "needsDeepRead": false,
+   "deepReadAt": "2026-10-03T15:00:00Z"
   },
   "1299": {
    "n": 1299,

@@ -25,6 +25,30 @@
     "zbeacon|TH01 + Zbeacon|TH01 on doorwindowsensor_4 (misroute)",
     "_TZE200_rxq4iti9|TS0601 on device_radiator_valve (EF00 temp/RH, DP map unknown)"
    ]
+  },
+  {
+   "thread": 1298,
+   "repo": "JohanBendz/com.tuya.zigbee",
+   "readAt": "2026-10-03",
+   "comments": 3,
+   "related": [
+    1508,
+    414,
+    1486,
+    1315,
+    1013,
+    1403
+   ],
+   "rulesDoc": "docs/rules/JOHAN_1298_CONTACT_LUX.md",
+   "filesChanged": [
+    "drivers/sensor_contact_zigbee/driver.compose.json",
+    "app.json"
+   ],
+   "leads": [
+    "_TZE200_ijey4q29/_TZE200_ykglasuj/_TZE200_kf2hbko4 TS0601 on climate_sensor; Z2M lists them as ZG-102ZL (needs 2nd source)",
+    "DP102 illuminance interval setting for ZG-102ZL",
+    "HOBEIAN ZG-102Z/ZG-102ZA dual contact_sensor + sensor_contact_zigbee"
+   ]
   }
  ]
 }
