@@ -83,8 +83,8 @@ class DoorControllerDriver extends ZigBeeDriver {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;
           // Generic action handler
-          this.log('[FLOW] Action door_controller_garage_door_controller_open triggered for', args.device.getName());
-          return true;
+          // #113: real effect through the device's own capability listener when one matches.
+          return require('../../lib/flow/PlaceholderActionWiring').run(this, 'door_controller_garage_door_controller_open', args);
         });
       }
     } catch (err) { if (this.developerDebugMode) { this.error(`Action door_controller_garage_door_controller_open: ${err.message}`); }; }
@@ -95,8 +95,8 @@ class DoorControllerDriver extends ZigBeeDriver {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;
           // Generic action handler
-          this.log('[FLOW] Action door_controller_garage_door_controller_close triggered for', args.device.getName());
-          return true;
+          // #113: real effect through the device's own capability listener when one matches.
+          return require('../../lib/flow/PlaceholderActionWiring').run(this, 'door_controller_garage_door_controller_close', args);
         });
       }
     } catch (err) { if (this.developerDebugMode) { this.error(`Action door_controller_garage_door_controller_close: ${err.message}`); }; }
@@ -107,8 +107,8 @@ class DoorControllerDriver extends ZigBeeDriver {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;
           // Generic action handler
-          this.log('[FLOW] Action door_controller_garage_door_controller_lock triggered for', args.device.getName());
-          return true;
+          // #113: real effect through the device's own capability listener when one matches.
+          return require('../../lib/flow/PlaceholderActionWiring').run(this, 'door_controller_garage_door_controller_lock', args);
         });
       }
     } catch (err) { if (this.developerDebugMode) { this.error(`Action door_controller_garage_door_controller_lock: ${err.message}`); }; }
@@ -119,8 +119,8 @@ class DoorControllerDriver extends ZigBeeDriver {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;
           // Generic action handler
-          this.log('[FLOW] Action door_controller_garage_door_controller_unlock triggered for', args.device.getName());
-          return true;
+          // #113: real effect through the device's own capability listener when one matches.
+          return require('../../lib/flow/PlaceholderActionWiring').run(this, 'door_controller_garage_door_controller_unlock', args);
         });
       }
     } catch (err) { if (this.developerDebugMode) { this.error(`Action door_controller_garage_door_controller_unlock: ${err.message}`); }; }
