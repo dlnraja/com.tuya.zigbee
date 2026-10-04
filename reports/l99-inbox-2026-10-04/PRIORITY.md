@@ -4,7 +4,7 @@ Silent only. **Never** Homey forum POST / PM / AI paste (T157628).
 Lock **manufacturerName + productId** only. Never invent pid. Dual-app: BOTH | MASTER_ONLY | STABLE_ONLY.
 **P2529:** also audit DP / clusters / flow wire / RX-TX (not couple-lock only).
 
-Generated: **2026-10-04T10:10:31.421Z** · Mode: `full`
+Generated: **2026-10-04T16:01:57.630Z** · Mode: `full`
 
 ## Snapshot
 
@@ -12,7 +12,7 @@ Generated: **2026-10-04T10:10:31.421Z** · Mode: `full`
 |---------|--------------|
 | GitHub open issues | 3 |
 | GitHub open PRs | 0 |
-| Forum needAction | 54 |
+| Forum needAction | 57 |
 | Gmail crash state | present |
 | mfs high drift | 0 |
 | Deep functional | ran (P2529) |
@@ -29,11 +29,11 @@ Generated: **2026-10-04T10:10:31.421Z** · Mode: `full`
 ## Phase results
 
 - **guard**: ok (0ms)
-- **github**: ok (218ms)
-- **gmail**: ok (222ms)
-- **forum**: ok (29111ms)
-- **drivers**: ok (1868ms)
-- **functionalDeep**: ok (1157ms)
+- **github**: ok (1314ms)
+- **gmail**: ok (138ms)
+- **forum**: ok (26292ms)
+- **drivers**: ok (1224ms)
+- **functionalDeep**: ok (1494ms)
 
 ## Doctrine
 
