@@ -165,6 +165,17 @@
    "source": "zigbee-herdsman-converters src/devices/gledopto.ts GL-SPI-206P",
    "date": "2026-10-04",
    "reviewed_by": "user decision 2026-10-04 06:49 (executor-flowport research)"
+  },
+  {
+   "couple": "HEIMAN|RC-EF-3.0",
+   "drivers": [
+    "button_emergency_sos",
+    "universal_zigbee"
+   ],
+   "reason": "HEIMAN remote (IAS ACE emergency) added to the SOS driver; the brand name also sits in the generic universal_zigbee fallback, so mfr x pid artifacts (TS0215A/TS0218/TS0601) overlap. Nothing removed from the fallback.",
+   "source": "zigbee-herdsman-converters src/devices/heiman.ts HM1RC-2-E (modelID RC-EF-3.0)",
+   "date": "2026-10-04",
+   "reviewed_by": "user order 2026-10-04 06:49 (PCr2-1, executor-flowport research)"
   }
  ]
 }
