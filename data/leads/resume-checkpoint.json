@@ -727,7 +727,7 @@
         "id": 105,
         "item": "News 2026-08-20 Homey Energy solar forecast + export pricing: check bidirectional meters expose meter_power.exported correctly in the driver energy object so export is counted",
         "status": "done",
-        "evidence": "https://homey.app/en-us/news/homey-energy-solar-forecast-export-pricing/ | 4 drivers energy.meterPowerImported/ExportedCapability: master 8c89afca30, stable 3259aa5ce3, bastien a017083230; test/energy-export-object.test.js; power_clamp_meter/plug_energy_monitor (runtime cap) deferred",
+        "evidence": "https://homey.app/en-us/news/homey-energy-solar-forecast-export-pricing/ | 4 drivers energy.meterPowerImported/ExportedCapability: master 8c89afca30, stable 3259aa5ce3, bastien a017083230; test/energy-export-object.test.js; power_clamp_meter/plug_energy_monitor (runtime cap) deferred | runtime follow-up: lib/energy/ExportEnergyConfig (setEnergy once when meter_power.exported appears): master c5a595779a, stable+bastien ports",
         "origin": "homey-news first pass 2026-10-04",
         "updated": "2026-10-04"
       },
@@ -750,15 +750,15 @@
         "id": 108,
         "item": "x-scan (a): add 36 missing ZHC mfr+pid couples (REPORT.md §3) with DP mappings from cited ZHC files, rewritten, credited Koenkk/Z2M; correct drivers or new exact-pair drivers on conflict; additive",
         "status": "done",
-        "evidence": "/workspace/x-scan/REPORT.md §3, zhc_pids.json | short-name couples placed: master 35921fcd57, stable 5738249832, bastien 0b1880cb33 (8 couples: wvedmwyp, rundhkxp, qtnjuoae x2, n41i9jyt, tokhh9pf, lyqazpe6 x2 + TOQCB2-80 profile DP1 energy/DP16 switch/phase struct). 23 long-name couples refused per R16 (malformed-mfr gate). Deferred: D4Z _TZE200_loejka0i (DP layout differs from energy_meter_3phase -> needs exact-pair profile), PCI-E card _TZE28C (long name).",
+        "evidence": "/workspace/x-scan/REPORT.md §3, zhc_pids.json | short-name couples placed: master 35921fcd57, stable 5738249832, bastien 0b1880cb33 (8 couples: wvedmwyp, rundhkxp, qtnjuoae x2, n41i9jyt, tokhh9pf, lyqazpe6 x2 + TOQCB2-80 profile DP1 energy/DP16 switch/phase struct). 23 long-name couples refused per R16 (malformed-mfr gate). Deferred: D4Z _TZE200_loejka0i (DP layout differs from energy_meter_3phase -> needs exact-pair profile), PCI-E card _TZE28C (long name). | leftovers done 2026-10-04: 23 long names (R16 exception for ^_(TZE28C1000000|TZE2841000000)_[a-z0-9]{8}$), D4Z profile, PCI-E card; sacred-keep pins so compaction keeps them",
         "origin": "user 2026-10-04 04:22/04:27",
         "updated": "2026-10-04"
       },
       {
         "id": 109,
         "item": "x-scan (b): 8 suspect placements (_TZ3008_reatplte, _TZ3000_9ni6xxld, _TZE284_xpq2rzhq, _TZE200_rgeapp2c, _TZ3000_yi0n4xfd, _TZ3000_46vasa5h, _TZ3000_excgg5kb, _TZ3000_w0qqde0g): research each, add to correct driver without removing existing",
-        "status": "awaiting_user_decision",
-        "evidence": "Research done (ZHC tuya.ts): _TZ3008_reatplte/_TZ3000_9ni6xxld/_TZ3000_w0qqde0g = TS011F metering plugs; _TZ3000_yi0n4xfd = TS011F breaker with thresholds; _TZ3000_46vasa5h = TS011F 2-gang wall socket; _TZE284_xpq2rzhq = TS0601 Moes ZSS-QY-HP presence; _TZE200_rgeapp2c = TS0601 2 switches + 2 covers panel; _TZ3000_excgg5kb = ZHC TS0004 (switch_4gang OK). Adding mfrs to the target drivers (plug_energy_monitor, double_power_point_2, presence_sensor_radar) was tried and reverted: the cartesian mfr x pid lists create 60 new dual couples (native-matrix gate 591 > baseline 531). Needs exact-pair drivers (W4) per couple. | native-matrix gate is shrink-only: any exact-pair driver keeps a dual because the wrong driver keeps the couple. Needs: allow reviewed baseline exceptions OR allow removing the couple from the clearly wrong driver.",
+        "status": "done",
+        "evidence": "Research done (ZHC tuya.ts): _TZ3008_reatplte/_TZ3000_9ni6xxld/_TZ3000_w0qqde0g = TS011F metering plugs; _TZ3000_yi0n4xfd = TS011F breaker with thresholds; _TZ3000_46vasa5h = TS011F 2-gang wall socket; _TZE284_xpq2rzhq = TS0601 Moes ZSS-QY-HP presence; _TZE200_rgeapp2c = TS0601 2 switches + 2 covers panel; _TZ3000_excgg5kb = ZHC TS0004 (switch_4gang OK). Adding mfrs to the target drivers (plug_energy_monitor, double_power_point_2, presence_sensor_radar) was tried and reverted: the cartesian mfr x pid lists create 60 new dual couples (native-matrix gate 591 > baseline 531). Needs exact-pair drivers (W4) per couple. | native-matrix gate is shrink-only: any exact-pair driver keeps a dual because the wrong driver keeps the couple. Needs: allow reviewed baseline exceptions OR allow removing the couple from the clearly wrong driver. | user decision 2026-10-04 (reviewed exceptions, no removal): master 79e550d0fc, stable 33a5535d66, bastien 9d2be41ef2; data/native-matrix-reviewed-duals.json (13 couples) honoured by native-matrix, fp-collision and prune gates (exact driver set only); new drivers switch_presence_tuya + panel_switch_cover_tuya",
         "origin": "user 2026-10-04 04:22/04:27",
         "updated": "2026-10-04"
       },
@@ -804,13 +804,47 @@
         "status": "in_progress",
         "evidence": "flow port+labels+leaks: 3/3; titleFormatted [[device]] rule: 3/3; long names, signed DPs, energy scaling, FAQ, R21 gate: 3/3 (stable d502e63d05, bastien b3d7e0ef45); auto-publish re-upload loop: master + stable (bastien has own workflows). Pending on all 3: #108 couples, #109 placements, #110 rest, #113 log-only actions, #101-#106 news",
         "origin": "user 2026-10-04 05:01"
+      },
+      {
+        "id": 116,
+        "item": "R16 exception: verified long Tuya names accepted by malformed-mfr gate, sacred-couple validator, registry junk list",
+        "status": "done",
+        "evidence": "master 79e550d0fc + 4a15753ea6; stable/bastien registry + sacred validator ports",
+        "origin": "user 2026-10-04 05:44",
+        "updated": "2026-10-04"
+      },
+      {
+        "id": 117,
+        "item": "valve_dual_irrigation optional main \"both valves\" onoff (additive)",
+        "status": "done",
+        "evidence": "all 3 branches in the #109 batch",
+        "origin": "user 2026-10-04 05:44",
+        "updated": "2026-10-04"
+      },
+      {
+        "id": 118,
+        "item": "Dimmer class change (socket/other -> light) for Homey Portal",
+        "status": "awaiting_user_decision",
+        "evidence": "user 2026-10-04: do NOT change yet",
+        "origin": "user 2026-10-04 05:44",
+        "updated": "2026-10-04"
+      },
+      {
+        "id": 119,
+        "item": "Stable Test check / re-upload",
+        "status": "done",
+        "evidence": "public Test page shows 5.12.363 (#275); re-run 37175745444 created 5.12.364 draft #276 (promotion not confirmed, Athom flagged processing_failed)",
+        "origin": "user 2026-10-04 05:44",
+        "updated": "2026-10-04"
       }
     ],
     "next": [
-      "#109 awaiting user decision (native-matrix exceptions vs removal)",
-      "D4Z exact-pair profile in energy_meter_3phase (#108 leftover)",
-      "grouped stable publish",
-      "#109 placements via exact-pair drivers",
+      "master 9.0.1328 failed 3x on Athom (socket hang up) — next push retries",
+      "stable 5.12.364 draft #276 — check promotion",
+      "#99/#100 source registry parsers + triage",
+      "#98 athombv org study",
+      "spec 010",
+      "PCr2",
       "Source registry follow-ups (#99): per-source DP parsers + triage; land #100 couples after research",
       "Matter/ecosystem per-driver additive mirrors (#95 follow-ups)",
       "athombv org study (#98) — start with node-zigbee-clusters + node-homey-zigbeedriver issues/PRs",
