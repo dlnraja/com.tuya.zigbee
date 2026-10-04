@@ -103,8 +103,8 @@ class ThermostatTuyaDpDriver extends ZigBeeDriver {
         card.registerRunListener(async (args) => {
           if (!args.device) {return false;}
           // Generic action handler
-          this.log('[FLOW] Action device_radiator_valve_thermostat_thermostat_tuya_dp_set_mode triggered for', args.device.getName());
-          return true;
+          // #113: real effect through the device's own capability listener when one matches.
+          return require('../../lib/flow/PlaceholderActionWiring').run(this, 'device_radiator_valve_thermostat_tuya_dp_set_mode', args);
         });
       }
     } catch (err) { if (this.developerDebugMode) { this.error(`Action device_radiator_valve_thermostat_thermostat_tuya_dp_set_mode: ${err.message}`); } }
@@ -115,8 +115,8 @@ class ThermostatTuyaDpDriver extends ZigBeeDriver {
         card.registerRunListener(async (args) => {
           if (!args.device) {return false;}
           // Generic action handler
-          this.log('[FLOW] Action device_radiator_valve_thermostat_thermostat_tuya_dp_increase_temperature triggered for', args.device.getName());
-          return true;
+          // #113: real effect through the device's own capability listener when one matches.
+          return require('../../lib/flow/PlaceholderActionWiring').run(this, 'device_radiator_valve_thermostat_tuya_dp_inc_8b664', args);
         });
       }
     } catch (err) { if (this.developerDebugMode) { this.error(`Action device_radiator_valve_thermostat_thermostat_tuya_dp_increase_temperature: ${err.message}`); } }
@@ -127,8 +127,8 @@ class ThermostatTuyaDpDriver extends ZigBeeDriver {
         card.registerRunListener(async (args) => {
           if (!args.device) {return false;}
           // Generic action handler
-          this.log('[FLOW] Action device_radiator_valve_thermostat_thermostat_tuya_dp_decrease_temperature triggered for', args.device.getName());
-          return true;
+          // #113: real effect through the device's own capability listener when one matches.
+          return require('../../lib/flow/PlaceholderActionWiring').run(this, 'device_radiator_valve_thermostat_tuya_dp_dec_6e5ef', args);
         });
       }
     } catch (err) { if (this.developerDebugMode) { this.error(`Action device_radiator_valve_thermostat_thermostat_tuya_dp_decrease_temperature: ${err.message}`); } }
@@ -139,8 +139,8 @@ class ThermostatTuyaDpDriver extends ZigBeeDriver {
         card.registerRunListener(async (args) => {
           if (!args.device) {return false;}
           // Generic action handler
-          this.log('[FLOW] Action device_radiator_valve_thermostat_thermostat_tuya_dp_set_child_lock triggered for', args.device.getName());
-          return true;
+          // #113: real effect through the device's own capability listener when one matches.
+          return require('../../lib/flow/PlaceholderActionWiring').run(this, 'device_radiator_valve_thermostat_tuya_dp_set_fa7a8', args);
         });
       }
     } catch (err) { if (this.developerDebugMode) { this.error(`Action device_radiator_valve_thermostat_thermostat_tuya_dp_set_child_lock: ${err.message}`); } }
