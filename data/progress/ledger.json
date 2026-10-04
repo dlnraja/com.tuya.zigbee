@@ -1,12 +1,13 @@
 {
  "version": 1,
- "updated": "2026-10-04T07:55:00+02:00",
+ "updated": "2026-10-04T09:04:45+02:00",
  "checkpoints": {
   "resume": "data/leads/resume-checkpoint.json",
   "deepRead": "data/leads/deep-read-checkpoint.json",
   "johanIndex": "data/leads/johan-canonical-index.json",
   "deepReadLog": "data/leads/johan-deep-read-log.json",
-  "journal": "docs/progress/JOURNAL.md"
+  "journal": "docs/progress/JOURNAL.md",
+  "sweep": "data/leads/sweep-checkpoint.json"
  },
  "items": {
   "conflict:_tz3000_4uuaja4a|ts0726": {
@@ -9657,11 +9658,14 @@
    "result": "diagnostic-report complaint; report content not accessible from box"
   },
   "johan-issue:1": {
-   "status": "pending",
+   "status": "done",
    "kind": "pr",
    "state": "closed",
    "comments": 0,
-   "upstreamUpdatedAt": "2020-05-17T19:39:32Z"
+   "upstreamUpdatedAt": "2020-05-17T19:39:32Z",
+   "date": "2026-10-04",
+   "note": "historical merged/closed PR (Added LCD Temperature and Humidity Sensor); no open reliability work",
+   "by": "advance-sweep"
   },
   "johan-issue:10": {
    "status": "pending",
@@ -15761,11 +15765,14 @@
    "upstreamUpdatedAt": "2026-09-30T20:22:26Z"
   },
   "johan-issue:2": {
-   "status": "pending",
+   "status": "done",
    "kind": "pr",
    "state": "closed",
    "comments": 0,
-   "upstreamUpdatedAt": "2020-06-14T06:46:07Z"
+   "upstreamUpdatedAt": "2020-06-14T06:46:07Z",
+   "date": "2026-10-04",
+   "note": "historical merged/closed PR (v0.0.6); no open reliability work",
+   "by": "advance-sweep"
   },
   "johan-issue:20": {
    "status": "pending",
@@ -16591,11 +16598,14 @@
    "upstreamUpdatedAt": "2023-06-18T09:39:30Z"
   },
   "johan-issue:3": {
-   "status": "pending",
+   "status": "done",
    "kind": "issue",
    "state": "closed",
    "comments": 6,
-   "upstreamUpdatedAt": "2024-12-08T17:12:59Z"
+   "upstreamUpdatedAt": "2024-12-08T17:12:59Z",
+   "date": "2026-10-04",
+   "note": "pid-only historical request (TS0601); covered by class drivers when mfr unknown",
+   "by": "advance-sweep"
   },
   "johan-issue:30": {
    "status": "pending",
@@ -17440,11 +17450,14 @@
    "upstreamUpdatedAt": "2024-09-15T20:02:27Z"
   },
   "johan-issue:4": {
-   "status": "pending",
+   "status": "deferred",
    "kind": "issue",
    "state": "closed",
    "comments": 2,
-   "upstreamUpdatedAt": "2022-01-02T09:52:02Z"
+   "upstreamUpdatedAt": "2022-01-02T09:52:02Z",
+   "date": "2026-10-04",
+   "note": "no usable mfr+pid in thread body; defer until interview/diag",
+   "by": "advance-sweep"
   },
   "johan-issue:40": {
    "status": "pending",
@@ -18363,11 +18376,14 @@
    "upstreamUpdatedAt": "2024-09-11T19:58:02Z"
   },
   "johan-issue:5": {
-   "status": "pending",
+   "status": "done",
    "kind": "issue",
    "state": "closed",
    "comments": 1,
-   "upstreamUpdatedAt": "2021-04-24T10:29:59Z"
+   "upstreamUpdatedAt": "2021-04-24T10:29:59Z",
+   "date": "2026-10-04",
+   "note": "couple(s) already present in drivers (_TZ3000_3ooaz3ng,_TYZB01_iuepbmpv/TS0121)",
+   "by": "advance-sweep"
   },
   "johan-issue:50": {
    "status": "pending",

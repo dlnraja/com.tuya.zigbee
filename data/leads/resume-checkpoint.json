@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-04T03:10:00+02:00",
+  "updated": "2026-10-04T09:05:19+02:00",
   "queue": "dlnraja maintenance queue 2026-10-03 (items 1-7)",
   "rules": ".specify/memory/constitution.md",
   "worktree_note": "Use a dedicated git worktree per agent (e.g. /workspace/exec-wt); a shared checkout was reset by another worker on 2026-10-03.",
@@ -50,7 +50,18 @@
   "pushed": {
     "master": "aa23fab9c5 published OK (Auto-Publish run 37119440540 success). 653870a870 published OK earlier.",
     "stable-v5": "5.12.358 published to Test (run 37118019558 success); 5.12.359 17ab48012f published to Test (run 37119645069 success)",
-    "2026-10-04": "master bca6ae7052 (#1298), 97a954cfa7+081ae687c8 (ledger/journal W3), 88b3584cf6+9c157a834a (#1113 zoneType driver), all [skip ci] = not yet published; bastien-home 84d81e5e88"
+    "2026-10-04": "master bca6ae7052 (#1298), 97a954cfa7+081ae687c8 (ledger/journal W3), 88b3584cf6+9c157a834a (#1113 zoneType driver), all [skip ci] = not yet published; bastien-home 84d81e5e88",
+    "exec_2026_10_04_am": {
+      "branch": "exec-work→origin/master",
+      "topics": [
+        "P2797c CI port",
+        "sweep-checkpoint",
+        "advance-sweep chunk Johan 1-5",
+        "workflow audit",
+        "digest self-check"
+      ],
+      "blocker": "Athom processing_failed on 9.0.1331 still tracked from prior queue tip analysis"
+    }
   },
   "notes": {
     "appjson": "root app.json minified (one line, ~2.3 MB) on master and stable since bot commit 6b2f2d3c9a; edit with JSON.stringify(a) no newline. Compact build 3.69/4.00 MB."
@@ -74,14 +85,14 @@
     "4_misroutes": "done: rxq4iti9 = TRV (correct); zbeacon/Zbeacon TH01 -> temphumidsensor_zcl_th01 (c5ccf1c00e)",
     "5_zg102": "done (c5ccf1c00e)",
     "6_pc_harvest_actions": "pending",
-    "7_ledger_wiring": "pending",
+    "7_ledger_wiring": "partial: advance-sweep + johan-thread-intel record ledger; broader wiring still pending",
     "8_spec003_004": "pending",
     "9_lazy_appjson": "pending",
-    "10_forum_wifi_tests_workflows": "pending",
-    "11_deep_read_sweep": "pending",
+    "10_forum_wifi_tests_workflows": "partial: workflow audit + history sweep + self-check filled; wifi/tests still pending",
+    "11_deep_read_sweep": "in-progress: sweep-checkpoint created; Johan next=6 (chunk 1-5 done 2026-10-04)",
     "W7_polysemic_dp": "pending",
     "W8_tooling_inventory": "pending",
-    "NEXT": "port master fp fixes 31d83786f9 + c5ccf1c00e to stable (grouped publish) + bastien; then 6 PC-harvest r1 (21 pid-only drivers, DeviceFingerprintDB 153-162 typos, 18 raw setTimeout in TuyaEF00Manager, agent-rules generation, auto-post guard), PC-harvest r2 tasks (ledger task:*), 7 ledger wiring, 8 spec003/004, 9 lazy app.json, 10 forum/wifi/tests/workflows, 11 deep-read sweep, W4 conflict sweep, W7-W11 audits",
+    "NEXT": "continue history sweep (Johan from 6 or forum 140352 >2258); ledger wiring into more workflows; PC-harvest remaining; stable port of pending fp fixes",
     "stable_port_pending": [
       "31d83786f9 (o9f2zqln, p26flek3)",
       "c5ccf1c00e (TH01 driver, ZG-102Z/ZA, 3 mfrs)"
@@ -89,7 +100,7 @@
   },
   "master_queue": {
     "note": "Single master checklist of ALL user requests since the start. Daily resumption reads this FIRST. Tick (verified) only after verification.",
-    "updated": "2026-10-04T08:55+02:00",
+    "updated": "2026-10-04T09:05+02:00",
     "items": [
       {
         "id": 1,
@@ -107,7 +118,7 @@
         "id": 3,
         "item": "W3 progress ledger + journal, read before / record after",
         "status": "in-progress",
-        "evidence": "ledger+journal+CLI exist; wired into johan scanner only; other workflows pending (item 7)"
+        "evidence": "ledger+journal+CLI; advance-sweep records; other workflows still pending"
       },
       {
         "id": 4,
@@ -148,8 +159,8 @@
       {
         "id": 10,
         "item": "W10 self-improving free ingestion workflows",
-        "status": "pending",
-        "evidence": "task:self-improving-ingest"
+        "status": "in-progress",
+        "evidence": "history sweep + oss-lan coverage; self-check on #557; continuous-flow dry-run decision"
       },
       {
         "id": 11,

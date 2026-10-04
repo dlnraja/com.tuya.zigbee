@@ -2,6 +2,18 @@
 
 Each entry: source (link + author), mechanism / symptom, what we did (or why not). Written in our own words.
 
+
+## 2026-10-04 — History sweep checkpoint + CI stash P2797c
+- Sources: Daily digest tracking issue https://github.com/dlnraja/com.tuya.zigbee/issues/557 (author dlnraja); git history SHAs for forum fixes (P2593/P2587/P2760/P2598/P2599/P2713/P2576); CI stash `P2797c-ci-review-wip` from worktree `/workspace/ci-work`; JohanBendz issues https://github.com/JohanBendz/com.tuya.zigbee/issues/1 … `/5` (author JohanBendz).
+- Mechanism: a resumable JSON cursor (`data/leads/sweep-checkpoint.json`) holds forum thread lastPost + GitHub next ids + per-item status so weekday free automation can advance without re-reading the whole history. Johan #1–#2 are historical closed PRs; #3 is pid-only curtain TS0601; #4 has no mfr/pid (needs interview); #5 Blitzwolf plug couples already in `smartplug`.
+- What we did: seed already-fixed items with SHAs; advance chunk to Johan next=6; extend `johan-thread-intel.yml`; port Pages OIDC retry + remove continuous-flow push + harden `safe-auto-commit`; add digest self-check script. No new mfr/pid invented.
+
+## 2026-10-04 — Continuous-flow push was pure waste
+- Source: workflow runs pattern (~30 dry-run enrich jobs / 48 h on push) + stash note P2797c.
+- Mechanism: on push, `DRY_RUN` stayed true unless dispatch `mode=apply`, and the commit step is apply-only, so every push paid runner minutes for zero writes; syntax-check / code-quality / unified-ci already cover the same gates.
+- What we did: removed the push trigger; documented schedule = always dry-run; apply only via manual dispatch.
+
+
 ## 2026-10-04 — Homey Matter Bridge: how devices are exposed
 - Source: https://github.com/athombv/com.athom.matter-bridge `lib/MatterBridgeServer.mjs` @045787d (Athom B.V., 2026-09-14).
 - Mechanism: the bridge picks a Matter device type from `virtualClass || class`, then reads only exact capability ids (socket: onoff + measure_power; light: onoff/dim/hue+saturation/temperature/mode; thermostat family: setpoint, room temperature, mode, humidity; lock; window coverings; sensor: temperature, humidity, CO, CO2, PM2.5, PM10, luminance, motion, occupancy, contact, smoke; any other class: onoff only). Sub-capabilities (`onoff.gang2`) are never bridged; a thermostat whose mode list has none of off/heat/cool/auto is skipped completely; smoke is bridged only under class `sensor`.
