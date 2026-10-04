@@ -14410,6 +14410,17 @@
    "status": "done",
    "date": "2026-10-03",
    "note": "c18cecbe28: per-app publish concurrency groups (athom-publish-master/-stable/-bastien, cancel-in-progress false); safe-sync-stable prunes mfs_db rows whose driver is absent on stable and bumps app.jso"
+  },
+  "task:stable-port-1298-1113": {
+   "status": "pending",
+   "date": "2026-10-04",
+   "commit": "323c38eda0",
+   "note": "local exec-stable; push needs approval"
+  },
+  "task:bastien-port-1298-1113": {
+   "status": "done",
+   "date": "2026-10-04",
+   "commit": "84d81e5e88"
   }
  }
 }
