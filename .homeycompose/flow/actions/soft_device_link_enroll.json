@@ -52,11 +52,19 @@
           "label": {
             "en": "Toggle",
             "fr": "Basculer"
+          },
+          "title": {
+            "en": "Toggle",
+            "fr": "Basculer"
           }
         },
         {
           "id": "on",
           "label": {
+            "en": "On on trigger",
+            "fr": "Allumer"
+          },
+          "title": {
             "en": "On on trigger",
             "fr": "Allumer"
           }
@@ -66,11 +74,19 @@
           "label": {
             "en": "Off on trigger",
             "fr": "Éteindre"
+          },
+          "title": {
+            "en": "Off on trigger",
+            "fr": "Éteindre"
           }
         },
         {
           "id": "follow",
           "label": {
+            "en": "Follow source",
+            "fr": "Suivre source"
+          },
+          "title": {
             "en": "Follow source",
             "fr": "Suivre source"
           }

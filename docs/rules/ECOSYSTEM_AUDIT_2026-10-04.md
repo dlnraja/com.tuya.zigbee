@@ -79,3 +79,9 @@ entirely (audit checks it; 0 drivers affected today).
 - Not done on purpose: base `onoff` on irrigation valves (`valve_dual_irrigation`, ...) because
   "turn on everything" by voice would open water valves; `climate_sensor_smart` /
   `sensor_climate_smart` only carry placeholder manufacturer ids (no real device yet).
+
+## AI assistants (ChatGPT app / Homey MCP server)
+
+Requirements found: the MCP server validates every flow card; dropdown values need `title`, `droptoken` must be an array.
+Fixed 38 label-only dropdown values (master); gate `check:flow-mcp-shape`. Next: flow-card fr coverage
+(120 driver cards miss `title.fr` in the build) and hints, tracked with the flow-label audit.

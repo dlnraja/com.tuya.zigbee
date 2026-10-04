@@ -50,11 +50,23 @@
             "fr": "en hausse",
             "nl": "stijgend",
             "de": "steigend"
+          },
+          "title": {
+            "en": "rising",
+            "fr": "en hausse",
+            "nl": "stijgend",
+            "de": "steigend"
           }
         },
         {
           "id": "falling",
           "label": {
+            "en": "falling",
+            "fr": "en baisse",
+            "nl": "dalend",
+            "de": "fallend"
+          },
+          "title": {
             "en": "falling",
             "fr": "en baisse",
             "nl": "dalend",

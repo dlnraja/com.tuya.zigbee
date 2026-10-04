@@ -46,11 +46,23 @@
             "fr": "allumé",
             "nl": "aan",
             "de": "an"
+          },
+          "title": {
+            "en": "on",
+            "fr": "allumé",
+            "nl": "aan",
+            "de": "an"
           }
         },
         {
           "id": "off",
           "label": {
+            "en": "off",
+            "fr": "éteint",
+            "nl": "uit",
+            "de": "aus"
+          },
+          "title": {
             "en": "off",
             "fr": "éteint",
             "nl": "uit",
@@ -64,11 +76,23 @@
             "fr": "normal",
             "nl": "normaal",
             "de": "normal"
+          },
+          "title": {
+            "en": "normal",
+            "fr": "normal",
+            "nl": "normaal",
+            "de": "normal"
           }
         },
         {
           "id": "inverted",
           "label": {
+            "en": "inverted",
+            "fr": "inversé",
+            "nl": "omgekeerd",
+            "de": "invertiert"
+          },
+          "title": {
             "en": "inverted",
             "fr": "inversé",
             "nl": "omgekeerd",

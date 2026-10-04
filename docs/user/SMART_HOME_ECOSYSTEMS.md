@@ -8,6 +8,7 @@ Homey stays the controller. Other ecosystems see your Tuya devices through one o
 | Google Home / Google Assistant | Homey's Google Assistant integration (account linking in Google Home), **or** the Matter Bridge | device class + standard capabilities |
 | Amazon Alexa | Homey skill, **or** the Matter Bridge | sockets, switches, lights, fans, thermostats, locks, blinds/curtains, TVs, speakers, or any device with on/off |
 | Samsung SmartThings | **Matter Bridge only** (Homey has no direct SmartThings export) | same as Matter Bridge |
+| ChatGPT / AI assistants (Claude, ...) | Homey's ChatGPT app or the Homey MCP server (`https://mcp.athom.com`) | clear device class, standard capabilities and titles, well-labelled flow cards (en + fr) |
 | Home Assistant | Matter Bridge (or the Homey integration on the HA side) | same as Matter Bridge |
 
 ## HomeKit is being retired on Homey
@@ -35,6 +36,14 @@ buttons and remotes, valves, battery level, and the extra channels of multi-gang
 Tip: if a relay or plug drives a lamp, set **"What's plugged in?"** to Light in the device
 settings in Homey; the bridge and the voice assistants then treat it as a light.
 
+## ChatGPT and other AI assistants
+
+Since June 2026 Homey can be connected to ChatGPT in one click (or any MCP-capable assistant via
+`https://mcp.athom.com`): it can read and control devices, start Flows and help create them. The
+assistant reads the device class, the capabilities and the Flow card catalogue, so clear names and
+complete flow-card labels matter. Known pitfall: one malformed flow card from any app can make the
+assistant unable to list Flow cards at all; this app is checked against that (see below).
+
 ## What we do in this app
 
 - The bridge mapping we check against is in `data/matter-bridge-mapping.json` (from Athom's Matter Bridge source, credited).
@@ -43,6 +52,8 @@ settings in Homey; the bridge and the voice assistants then treat it as a light.
 - Where a driver only exposes a custom capability, a standard one is added next to it; when no
   standard capability fits, the closest one is mirrored (for example a mode as on/off or a
   generic alarm, a scene as a button) or the feature stays available through flows.
+- Flow cards are checked for the shape AI assistants require (every dropdown option has a title,
+  drop tokens are arrays); 38 dropdown options that only had a `label` got a `title` too.
 - Nothing is removed or renamed: existing devices, flows and voice commands keep working.
 
 Status: `data/leads/resume-checkpoint.json` (master_queue, "Matter Bridge / ecosystems") and

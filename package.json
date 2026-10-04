@@ -226,7 +226,7 @@
     "check:forum-ai-paste": "node tools/ci/forum-ai-paste-gate.js --scan-defaults",
     "check:flow-dups": "node tools/ci/flow-card-dup-gate.js",
     "check:flow-titleformatted": "node tools/ci/flow-titleformatted-args-gate.js",
-    "check:flows-publish": "npm run check:flow-dups && npm run check:flow-titleformatted",
+    "check:flows-publish": "npm run check:flow-dups && npm run check:flow-titleformatted && npm run check:flow-mcp-shape",
     "flow:audit": "node tools/ci/flow-l99-orchestrator.js",
     "flow:l99": "node tools/ci/flow-l99-orchestrator.js && node tools/ci/project-resilience-orchestrator.js --write-report --critical-only",
     "github:intel-respond": "node tools/ci/intelligent-github-respond.js --dry-run --scan-open",
@@ -653,7 +653,8 @@
     "check:malformed-mfr": "node tools/ci/malformed-mfr-gate.js",
     "check:identifiers": "node tools/ci/identifier-audit.js --baseline tools/ci/identifier-audit-baseline.json",
     "check:runtime-safety": "node tools/ci/runtime-safety-gate.js",
-    "check:ecosystems": "node tools/ci/smart-home-ecosystem-audit.js"
+    "check:ecosystems": "node tools/ci/smart-home-ecosystem-audit.js",
+    "check:flow-mcp-shape": "node tools/ci/flow-mcp-shape-gate.js"
   },
   "keywords": [
     "homey",

@@ -52,11 +52,19 @@
           "label": {
             "en": "Soft dim",
             "fr": "Assombrir"
+          },
+          "title": {
+            "en": "Soft dim",
+            "fr": "Assombrir"
           }
         },
         {
           "id": "off",
           "label": {
+            "en": "Turn off",
+            "fr": "Éteindre"
+          },
+          "title": {
             "en": "Turn off",
             "fr": "Éteindre"
           }
