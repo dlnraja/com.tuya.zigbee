@@ -3,27 +3,31 @@
     {
       "id": "wifi_generic_dp_changed",
       "title": {
-        "en": "A DP value changed"
+        "en": "A DP value changed",
+        "fr": "Une valeur DP a changé"
       },
       "tokens": [
         {
           "name": "dp",
           "type": "string",
           "title": {
-            "en": "DP number"
+            "en": "DP number",
+            "fr": "Numéro DP"
           }
         },
         {
           "name": "value",
           "type": "string",
           "title": {
-            "en": "Value"
+            "en": "Value",
+            "fr": "Valeur"
           }
         }
       ],
       "args": [],
       "titleFormatted": {
-        "en": "A DP value changed ({dp}) ({value})"
+        "en": "A DP value changed ({dp}) ({value})",
+        "fr": "Une valeur DP a changé ({dp}) ({value})"
       }
     }
   ],
@@ -31,21 +35,32 @@
     {
       "id": "wifi_generic_set_dp",
       "title": {
-        "en": "Set a DP value"
+        "en": "Set a DP value",
+        "fr": "Définir une valeur DP"
       },
       "args": [
         {
           "name": "dp",
           "type": "text",
           "title": {
-            "en": "DP number"
+            "en": "DP number",
+            "fr": "Numéro DP"
+          },
+          "placeholder": {
+            "en": "DP number",
+            "fr": "Numéro DP"
           }
         },
         {
           "name": "value",
           "type": "text",
           "title": {
-            "en": "Value"
+            "en": "Value",
+            "fr": "Valeur"
+          },
+          "placeholder": {
+            "en": "Value",
+            "fr": "Valeur"
           }
         },
         {
@@ -59,23 +74,38 @@
               "id": "bool",
               "title": {
                 "en": "Boolean"
+              },
+              "label": {
+                "en": "Boolean",
+                "fr": "Booléen"
               }
             },
             {
               "id": "number",
               "title": {
                 "en": "Number"
+              },
+              "label": {
+                "en": "Number",
+                "fr": "Nombre"
               }
             },
             {
               "id": "string",
               "title": {
                 "en": "String"
+              },
+              "label": {
+                "en": "String",
+                "fr": "Texte"
               }
             },
             {
               "id": "json",
               "title": {
+                "en": "JSON"
+              },
+              "label": {
                 "en": "JSON"
               }
             }
@@ -83,7 +113,8 @@
         }
       ],
       "titleFormatted": {
-        "en": "Set a DP value [[dp]] [[value]] [[type]]"
+        "en": "Set a DP value [[dp]] [[value]] [[type]]",
+        "fr": "Définir une valeur DP [[dp]] [[value]] [[type]]"
       }
     }
   ],

@@ -32,5 +32,9 @@
       "name": "device",
       "filter": "capabilities=button.1,capabilities=button,capabilities=onoff,capabilities=alarm_generic"
     }
-  ]
+  ],
+  "titleFormatted": {
+    "en": "Button pressed ([[device]])",
+    "fr": "Bouton appuyé ([[device]])"
+  }
 }

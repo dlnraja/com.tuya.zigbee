@@ -375,41 +375,68 @@
                 "id": "Power",
                 "title": {
                   "en": "Power"
+                },
+                "label": {
+                  "en": "Power",
+                  "fr": "Puissance"
                 }
               },
               {
                 "id": "Volume Up",
                 "title": {
                   "en": "Volume Up"
+                },
+                "label": {
+                  "en": "Volume Up",
+                  "fr": "Volume +"
                 }
               },
               {
                 "id": "Volume Down",
                 "title": {
                   "en": "Volume Down"
+                },
+                "label": {
+                  "en": "Volume Down",
+                  "fr": "Volume -"
                 }
               },
               {
                 "id": "Mute",
                 "title": {
                   "en": "Mute"
+                },
+                "label": {
+                  "en": "Mute",
+                  "fr": "Muet"
                 }
               },
               {
                 "id": "Channel Up",
                 "title": {
                   "en": "Channel Up"
+                },
+                "label": {
+                  "en": "Channel Up",
+                  "fr": "Chaîne +"
                 }
               },
               {
                 "id": "Channel Down",
                 "title": {
                   "en": "Channel Down"
+                },
+                "label": {
+                  "en": "Channel Down",
+                  "fr": "Chaîne -"
                 }
               },
               {
                 "id": "Source",
                 "title": {
+                  "en": "Source"
+                },
+                "label": {
                   "en": "Source"
                 }
               },
@@ -417,53 +444,92 @@
                 "id": "Menu",
                 "title": {
                   "en": "Menu"
+                },
+                "label": {
+                  "en": "Menu"
                 }
               },
               {
                 "id": "OK/Enter",
                 "title": {
                   "en": "OK/Enter"
+                },
+                "label": {
+                  "en": "OK/Enter",
+                  "fr": "OK/Entrée"
                 }
               },
               {
                 "id": "Up",
                 "title": {
                   "en": "Up"
+                },
+                "label": {
+                  "en": "Up",
+                  "fr": "Haut"
                 }
               },
               {
                 "id": "Down",
                 "title": {
                   "en": "Down"
+                },
+                "label": {
+                  "en": "Down",
+                  "fr": "Bas"
                 }
               },
               {
                 "id": "Left",
                 "title": {
                   "en": "Left"
+                },
+                "label": {
+                  "en": "Left",
+                  "fr": "Gauche"
                 }
               },
               {
                 "id": "Right",
                 "title": {
                   "en": "Right"
+                },
+                "label": {
+                  "en": "Right",
+                  "fr": "Droite"
                 }
               },
               {
                 "id": "Back",
                 "title": {
                   "en": "Back"
+                },
+                "label": {
+                  "en": "Back",
+                  "fr": "Retour"
                 }
               },
               {
                 "id": "Home",
                 "title": {
                   "en": "Home"
+                },
+                "label": {
+                  "en": "Home",
+                  "fr": "Accueil"
                 }
               }
-            ]
+            ],
+            "title": {
+              "en": "Command",
+              "fr": "Commande"
+            }
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "Send TV Command [[brand]] [[command]]",
+          "fr": "Envoyer une commande TV [[brand]] [[command]]"
+        }
       }
     ]
   },

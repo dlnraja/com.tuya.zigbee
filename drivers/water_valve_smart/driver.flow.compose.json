@@ -4,101 +4,119 @@
       "id": "water_valve_smart_opened",
       "highlight": true,
       "title": {
-        "en": "Valve opened"
+        "en": "Valve opened",
+        "fr": "Vanne ouverte"
       },
       "args": [],
       "titleFormatted": {
-        "en": "Valve opened"
+        "en": "Valve opened",
+        "fr": "Vanne ouverte"
       }
     },
     {
       "id": "water_valve_smart_closed",
       "title": {
-        "en": "Valve closed"
+        "en": "Valve closed",
+        "fr": "Vanne fermée"
       },
       "args": [],
       "titleFormatted": {
-        "en": "Valve closed"
+        "en": "Valve closed",
+        "fr": "Vanne fermée"
       }
     },
     {
       "id": "water_valve_smart_leak_detected",
       "highlight": true,
       "title": {
-        "en": "Water leak detected!"
+        "en": "Water leak detected!",
+        "fr": "Fuite d'eau détectée !"
       },
       "args": [],
       "titleFormatted": {
-        "en": "Water leak detected!"
+        "en": "Water leak detected!",
+        "fr": "Fuite d'eau détectée !"
       }
     },
     {
       "id": "water_valve_smart_leak_cleared",
       "title": {
-        "en": "Water leak cleared"
+        "en": "Water leak cleared",
+        "fr": "Fuite d'eau terminée"
       },
       "args": [],
       "titleFormatted": {
-        "en": "Water leak cleared"
+        "en": "Water leak cleared",
+        "fr": "Fuite d'eau terminée"
       }
     },
     {
       "id": "water_valve_smart_temperature_changed",
       "title": {
-        "en": "Temperature changed"
+        "en": "Temperature changed",
+        "fr": "Température modifiée"
       },
       "tokens": [
         {
           "name": "temperature",
           "type": "number",
           "title": {
-            "en": "Temperature"
+            "en": "Temperature",
+            "fr": "Température"
           }
         }
       ],
       "args": [],
       "titleFormatted": {
-        "en": "Temperature changed ({temperature})"
+        "en": "Temperature changed ({temperature})",
+        "fr": "Température modifiée ({temperature})"
       }
     },
     {
       "id": "water_valve_smart_frost_warning",
       "highlight": true,
       "title": {
-        "en": "Frost warning"
+        "en": "Frost warning",
+        "fr": "Alerte gel"
       },
       "args": [],
       "titleFormatted": {
-        "en": "Frost warning"
+        "en": "Frost warning",
+        "fr": "Alerte gel"
       }
     },
     {
       "id": "water_valve_smart_battery_low",
       "title": {
-        "en": "Battery is low"
+        "en": "Battery is low",
+        "fr": "La batterie est faible"
       },
       "args": [],
       "titleFormatted": {
-        "en": "Battery is low"
+        "en": "Battery is low",
+        "fr": "La batterie est faible"
       }
     },
     {
       "id": "water_valve_smart_water_consumed",
       "title": {
-        "en": "Water consumption updated"
+        "en": "Water consumption updated",
+        "fr": "Consommation d'eau mise à jour"
       },
       "tokens": [
         {
           "name": "liters",
           "type": "number",
           "title": {
-            "en": "Total (m3)"
+            "en": "Total (m3)",
+            "fr": "Total (m³)"
           }
         }
       ],
       "args": [],
       "titleFormatted": {
-        "en": "Water consumption updated ({liters})"
+        "en": "Water consumption updated ({liters})",
+        "fr": "Consommation d'eau mise à jour ({liters})"
       }
     }
   ],
@@ -106,48 +124,64 @@
     {
       "id": "water_valve_smart_is_open",
       "title": {
-        "en": "Valve !{{is|is not}} open"
+        "en": "Valve !{{is|is not}} open",
+        "fr": "La vanne !{{est|n'est pas}} ouverte"
       },
       "args": [],
       "titleFormatted": {
-        "en": "Valve !{{is|is not}} open"
+        "en": "Valve !{{is|is not}} open",
+        "fr": "La vanne !{{est|n'est pas}} ouverte"
       }
     },
     {
       "id": "water_valve_smart_leak_is_detected",
       "title": {
-        "en": "Water leak !{{is|is not}} detected"
+        "en": "Water leak !{{is|is not}} detected",
+        "fr": "Une fuite d'eau !{{est|n'est pas}} détectée"
       },
       "args": [],
       "titleFormatted": {
-        "en": "Water leak !{{is|is not}} detected"
+        "en": "Water leak !{{is|is not}} detected",
+        "fr": "Une fuite d'eau !{{est|n'est pas}} détectée"
       }
     },
     {
       "id": "water_valve_smart_temperature_above",
       "title": {
-        "en": "Temperature !{{is|is not}} above"
+        "en": "Temperature !{{is|is not}} above",
+        "fr": "La température !{{est|n'est pas}} au-dessus de"
       },
       "args": [
         {
           "name": "temp",
           "type": "number",
           "min": -20,
-          "max": 60
+          "max": 60,
+          "title": {
+            "en": "Temp",
+            "fr": "Temp"
+          },
+          "placeholder": {
+            "en": "-20–60",
+            "fr": "-20–60"
+          }
         }
       ],
       "titleFormatted": {
-        "en": "Temperature !{{is|is not}} above [[temp]]"
+        "en": "Temperature !{{is|is not}} above [[temp]]",
+        "fr": "La température !{{est|n'est pas}} au-dessus de [[temp]]"
       }
     },
     {
       "id": "water_valve_smart_water_detected",
       "title": {
-        "en": "Water !{{is|is not}} detected"
+        "en": "Water !{{is|is not}} detected",
+        "fr": "De l'eau !{{est|n'est pas}} détectée"
       },
       "args": [],
       "titleFormatted": {
-        "en": "Water !{{is|is not}} detected"
+        "en": "Water !{{is|is not}} detected",
+        "fr": "De l'eau !{{est|n'est pas}} détectée"
       }
     }
   ],
@@ -155,49 +189,58 @@
     {
       "id": "water_valve_smart_open",
       "title": {
-        "en": "Open valve"
+        "en": "Open valve",
+        "fr": "Ouvrir la vanne"
       },
       "args": [],
       "titleFormatted": {
-        "en": "Open valve"
+        "en": "Open valve",
+        "fr": "Ouvrir la vanne"
       }
     },
     {
       "id": "water_valve_smart_close",
       "title": {
-        "en": "Close valve"
+        "en": "Close valve",
+        "fr": "Fermer la vanne"
       },
       "args": [],
       "titleFormatted": {
-        "en": "Close valve"
+        "en": "Close valve",
+        "fr": "Fermer la vanne"
       }
     },
     {
       "id": "water_valve_smart_toggle",
       "title": {
-        "en": "Toggle valve"
+        "en": "Toggle valve",
+        "fr": "Basculer la vanne"
       },
       "args": [],
       "titleFormatted": {
-        "en": "Toggle valve"
+        "en": "Toggle valve",
+        "fr": "Basculer la vanne"
       }
     },
     {
       "id": "water_valve_smart_set_valve",
       "title": {
-        "en": "Set valve state"
+        "en": "Set valve state",
+        "fr": "Régler l'état de la vanne"
       },
       "args": [
         {
           "name": "value",
           "type": "checkbox",
           "title": {
-            "en": "Open"
+            "en": "Open",
+            "fr": "Ouvrir"
           }
         }
       ],
       "titleFormatted": {
-        "en": "Set valve state [[value]]"
+        "en": "Set valve state [[value]]",
+        "fr": "Régler l'état de la vanne [[value]]"
       }
     }
   ]

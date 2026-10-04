@@ -168,7 +168,8 @@
     {
       "id": "device_air_purifier_quality_air_quality_comprehensive_co2_above",
       "title": {
-        "en": "CO !{{is|is not}} above"
+        "en": "CO !{{is|is not}} above",
+        "fr": "Le CO !{{est|n'est pas}} au-dessus de"
       },
       "args": [
         {
@@ -176,17 +177,27 @@
           "type": "number",
           "min": 0,
           "max": 5000,
-          "step": 50
+          "step": 50,
+          "title": {
+            "en": "Co2",
+            "fr": "Co2"
+          },
+          "placeholder": {
+            "en": "0–5000",
+            "fr": "0–5000"
+          }
         }
       ],
       "titleFormatted": {
-        "en": "CO !{{is|is not}} above [[co2]]"
+        "en": "CO !{{is|is not}} above [[co2]]",
+        "fr": "Le CO !{{est|n'est pas}} au-dessus de [[co2]]"
       }
     },
     {
       "id": "device_air_purifier_quality_air_quality_comprehensive_temp_above",
       "title": {
-        "en": "Temperature !{{is|is not}} above"
+        "en": "Temperature !{{is|is not}} above",
+        "fr": "La température !{{est|n'est pas}} au-dessus de"
       },
       "args": [
         {
@@ -194,17 +205,27 @@
           "type": "number",
           "min": -40,
           "max": 80,
-          "step": 0.5
+          "step": 0.5,
+          "title": {
+            "en": "Temperature",
+            "fr": "Température"
+          },
+          "placeholder": {
+            "en": "-40–80",
+            "fr": "-40–80"
+          }
         }
       ],
       "titleFormatted": {
-        "en": "Temperature !{{is|is not}} above [[temperature]]"
+        "en": "Temperature !{{is|is not}} above [[temperature]]",
+        "fr": "La température !{{est|n'est pas}} au-dessus de [[temperature]]"
       }
     },
     {
       "id": "device_air_purifier_quality_air_quality_comprehensive_humidity_above",
       "title": {
-        "en": "Humidity !{{is|is not}} above"
+        "en": "Humidity !{{is|is not}} above",
+        "fr": "L'humidité !{{est|n'est pas}} au-dessus de"
       },
       "args": [
         {
@@ -212,11 +233,20 @@
           "type": "number",
           "min": 0,
           "max": 100,
-          "step": 1
+          "step": 1,
+          "title": {
+            "en": "Humidity",
+            "fr": "Humidité"
+          },
+          "placeholder": {
+            "en": "0–100",
+            "fr": "0–100"
+          }
         }
       ],
       "titleFormatted": {
-        "en": "Humidity !{{is|is not}} above [[humidity]]"
+        "en": "Humidity !{{is|is not}} above [[humidity]]",
+        "fr": "L'humidité !{{est|n'est pas}} au-dessus de [[humidity]]"
       }
     }
   ],

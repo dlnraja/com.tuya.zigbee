@@ -10,5 +10,9 @@
       "type": "device",
       "filter": "capabilities=onoff"
     }
-  ]
+  ],
+  "titleFormatted": {
+    "en": "Auto-Off Timer triggered ([[device]])",
+    "fr": "Minuterie Auto-Off déclenchée ([[device]])"
+  }
 }

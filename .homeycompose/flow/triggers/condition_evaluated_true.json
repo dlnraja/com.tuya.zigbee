@@ -1,10 +1,12 @@
 {
   "id": "condition_evaluated_true",
   "title": {
-    "en": "Condition evaluated true"
+    "en": "Condition evaluated true",
+    "fr": "Condition évaluée vraie"
   },
   "hint": {
-    "en": "Triggers when a condition set evaluates to true"
+    "en": "Triggers when a condition set evaluates to true",
+    "fr": "Se déclenche quand un ensemble de conditions est vrai"
   },
   "args": [],
   "tokens": [
@@ -12,25 +14,29 @@
       "name": "condition_set_id",
       "type": "string",
       "title": {
-        "en": "Condition set ID"
+        "en": "Condition set ID",
+        "fr": "ID du jeu de conditions"
       }
     },
     {
       "name": "result",
       "type": "boolean",
       "title": {
-        "en": "Evaluation result"
+        "en": "Evaluation result",
+        "fr": "Résultat de l'évaluation"
       }
     },
     {
       "name": "evaluated_at",
       "type": "string",
       "title": {
-        "en": "Evaluation timestamp"
+        "en": "Evaluation timestamp",
+        "fr": "Horodatage de l'évaluation"
       }
     }
   ],
   "titleFormatted": {
-    "en": "Condition evaluated true"
+    "en": "Condition evaluated true",
+    "fr": "Condition évaluée vraie"
   }
 }

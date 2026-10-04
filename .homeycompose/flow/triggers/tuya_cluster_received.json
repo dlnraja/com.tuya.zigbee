@@ -13,7 +13,8 @@
       "name": "cluster_id",
       "type": "string",
       "title": {
-        "en": "Cluster ID"
+        "en": "Cluster ID",
+        "fr": "ID du cluster"
       },
       "example": "0xE001"
     },
@@ -21,7 +22,8 @@
       "name": "command_id",
       "type": "number",
       "title": {
-        "en": "Command ID"
+        "en": "Command ID",
+        "fr": "ID de commande"
       },
       "example": 0
     },
@@ -29,7 +31,8 @@
       "name": "data_hex",
       "type": "string",
       "title": {
-        "en": "Data (hex)"
+        "en": "Data (hex)",
+        "fr": "Données (hex)"
       },
       "example": "d03001"
     }
@@ -40,5 +43,9 @@
       "name": "device",
       "filter": "capabilities=tuya_cluster_event"
     }
-  ]
+  ],
+  "titleFormatted": {
+    "en": "Zigbee cluster event received ([[device]])",
+    "fr": "Événement cluster Zigbee reçu ([[device]])"
+  }
 }

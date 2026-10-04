@@ -21,7 +21,8 @@
       "type": "text",
       "title": {
         "en": "Capability",
-        "nl": "Capaciteit"
+        "nl": "Capaciteit",
+        "fr": "Capacité"
       },
       "placeholder": {
         "en": "e.g. measure_temperature, onoff, dim",
@@ -37,7 +38,15 @@
       },
       "min": 0,
       "max": 1440,
-      "step": 1
+      "step": 1,
+      "placeholder": {
+        "en": "0–1440",
+        "fr": "0–1440"
+      }
     }
-  ]
+  ],
+  "titleFormatted": {
+    "en": "Retrieve historical capability value [[capability]] [[minutes_ago]] ([[device]])",
+    "fr": "Récupérer la valeur historique de la capacité [[capability]] [[minutes_ago]] ([[device]])"
+  }
 }

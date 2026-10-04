@@ -3,21 +3,25 @@
     {
       "id": "wifi_led_strip_turned_on",
       "title": {
-        "en": "Light turned on"
+        "en": "Light turned on",
+        "fr": "Lumière allumée"
       },
       "args": [],
       "titleFormatted": {
-        "en": "Light turned on"
+        "en": "Light turned on",
+        "fr": "Lumière allumée"
       }
     },
     {
       "id": "wifi_led_strip_turned_off",
       "title": {
-        "en": "Light turned off"
+        "en": "Light turned off",
+        "fr": "Lumière éteinte"
       },
       "args": [],
       "titleFormatted": {
-        "en": "Light turned off"
+        "en": "Light turned off",
+        "fr": "Lumière éteinte"
       }
     },
     {
@@ -48,16 +52,22 @@
     {
       "id": "wifi_led_strip_set_color",
       "title": {
-        "en": "Set color"
+        "en": "Set color",
+        "fr": "Régler la couleur"
       },
       "args": [
         {
           "name": "color",
-          "type": "color"
+          "type": "color",
+          "title": {
+            "en": "Color",
+            "fr": "Couleur"
+          }
         }
       ],
       "titleFormatted": {
-        "en": "Set color [[color]]"
+        "en": "Set color [[color]]",
+        "fr": "Régler la couleur [[color]]"
       }
     }
   ],

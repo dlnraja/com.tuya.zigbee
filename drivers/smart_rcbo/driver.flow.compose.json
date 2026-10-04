@@ -3,21 +3,25 @@
     {
       "id": "smart_rcbo_turn_on",
       "title": {
-        "en": "Turn on"
+        "en": "Turn on",
+        "fr": "Allumer"
       },
       "args": [],
       "titleFormatted": {
-        "en": "Turn on"
+        "en": "Turn on",
+        "fr": "Allumer"
       }
     },
     {
       "id": "smart_rcbo_turn_off",
       "title": {
-        "en": "Turn off"
+        "en": "Turn off",
+        "fr": "Éteindre"
       },
       "args": [],
       "titleFormatted": {
-        "en": "Turn off"
+        "en": "Turn off",
+        "fr": "Éteindre"
       }
     },
     {

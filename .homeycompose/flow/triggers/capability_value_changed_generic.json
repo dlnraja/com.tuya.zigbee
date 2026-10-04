@@ -16,7 +16,8 @@
       "type": "string",
       "title": {
         "en": "Capability",
-        "nl": "Capaciteit"
+        "nl": "Capaciteit",
+        "fr": "Capacité"
       },
       "example": "onoff"
     },
@@ -25,7 +26,8 @@
       "type": "string",
       "title": {
         "en": "New value",
-        "nl": "Nieuwe waarde"
+        "nl": "Nieuwe waarde",
+        "fr": "Nouvelle valeur"
       },
       "example": "true"
     },
@@ -34,7 +36,8 @@
       "type": "string",
       "title": {
         "en": "Previous value",
-        "nl": "Vorige waarde"
+        "nl": "Vorige waarde",
+        "fr": "Valeur précédente"
       },
       "example": "false"
     }
@@ -45,5 +48,9 @@
       "name": "device",
       "filter": "capabilities=onoff"
     }
-  ]
+  ],
+  "titleFormatted": {
+    "en": "Any capability value changed ([[device]])",
+    "fr": "Toute valeur de capacité changée ([[device]])"
+  }
 }

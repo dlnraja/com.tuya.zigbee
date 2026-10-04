@@ -117,13 +117,16 @@ class curtain_module extends TuyaZigbeeDevice {
         }    
 
         const moveOpen = this.homey.flow.getActionCard("move_open");
+        // WHY: listener is shared by all devices of this driver (last registration wins) — act on the Flow's device, not the registering one.
         moveOpen.registerRunListener(async (args, state) => {
-            await this.zclNode.endpoints[1].clusters.windowCovering[UP_OPEN]();
+            const dev = (args && args.device) || this;
+            await dev.zclNode.endpoints[1].clusters.windowCovering[UP_OPEN]();
         });
 
         const moveClose = this.homey.flow.getActionCard("move_close");
         moveClose.registerRunListener(async (args, state) => {
-            await this.zclNode.endpoints[1].clusters.windowCovering[DOWN_CLOSE]();
+            const dev = (args && args.device) || this;
+            await dev.zclNode.endpoints[1].clusters.windowCovering[DOWN_CLOSE]();
         });
     }
 

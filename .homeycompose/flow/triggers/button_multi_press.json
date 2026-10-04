@@ -32,5 +32,9 @@
       "name": "device",
       "filter": "capabilities=button.1,capabilities=button"
     }
-  ]
+  ],
+  "titleFormatted": {
+    "en": "Button multi-pressed ([[device]])",
+    "fr": "Bouton multi-cliqué ([[device]])"
+  }
 }

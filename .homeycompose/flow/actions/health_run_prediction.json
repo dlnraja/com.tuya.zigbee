@@ -1,10 +1,12 @@
 {
   "id": "health_run_prediction",
   "title": {
-    "en": "Run health prediction"
+    "en": "Run health prediction",
+    "fr": "Lancer la prédiction de santé"
   },
   "hint": {
-    "en": "Trigger an immediate health prediction analysis for a device"
+    "en": "Trigger an immediate health prediction analysis for a device",
+    "fr": "Lancer une analyse immédiate de prédiction de santé pour un appareil"
   },
   "args": [
     {
@@ -18,36 +20,45 @@
       "name": "health_score",
       "type": "number",
       "title": {
-        "en": "Health score (0-100)"
+        "en": "Health score (0-100)",
+        "fr": "Score de santé (0-100)"
       }
     },
     {
       "name": "health_status",
       "type": "string",
       "title": {
-        "en": "Health status"
+        "en": "Health status",
+        "fr": "État de santé"
       }
     },
     {
       "name": "signal_quality",
       "type": "string",
       "title": {
-        "en": "Signal quality"
+        "en": "Signal quality",
+        "fr": "Qualité du signal"
       }
     },
     {
       "name": "battery_days_remaining",
       "type": "number",
       "title": {
-        "en": "Battery days remaining"
+        "en": "Battery days remaining",
+        "fr": "Jours de batterie restants"
       }
     },
     {
       "name": "error_rate",
       "type": "number",
       "title": {
-        "en": "Error rate (%)"
+        "en": "Error rate (%)",
+        "fr": "Taux d'erreur (%)"
       }
     }
-  ]
+  ],
+  "titleFormatted": {
+    "en": "Run health prediction ([[device]])",
+    "fr": "Lancer la prédiction de santé ([[device]])"
+  }
 }

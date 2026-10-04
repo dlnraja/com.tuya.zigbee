@@ -177,7 +177,15 @@
           "name": "co2",
           "type": "number",
           "min": 400,
-          "max": 5000
+          "max": 5000,
+          "title": {
+            "en": "Co2",
+            "fr": "Co2"
+          },
+          "placeholder": {
+            "en": "400–5000",
+            "fr": "400–5000"
+          }
         }
       ],
       "titleFormatted": {
@@ -196,7 +204,15 @@
           "name": "co2",
           "type": "number",
           "min": 400,
-          "max": 5000
+          "max": 5000,
+          "title": {
+            "en": "Co2",
+            "fr": "Co2"
+          },
+          "placeholder": {
+            "en": "400–5000",
+            "fr": "400–5000"
+          }
         }
       ],
       "titleFormatted": {

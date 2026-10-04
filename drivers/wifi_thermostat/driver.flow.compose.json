@@ -3,20 +3,23 @@
     {
       "id": "wifi_thermostat_temp_changed",
       "title": {
-        "en": "Temperature changed"
+        "en": "Temperature changed",
+        "fr": "Température modifiée"
       },
       "tokens": [
         {
           "name": "temperature",
           "type": "number",
           "title": {
-            "en": "Temperature"
+            "en": "Temperature",
+            "fr": "Température"
           }
         }
       ],
       "args": [],
       "titleFormatted": {
-        "en": "Temperature changed ({temperature})"
+        "en": "Temperature changed ({temperature})",
+        "fr": "Température modifiée ({temperature})"
       }
     },
     {
@@ -71,7 +74,8 @@
     {
       "id": "wifi_thermostat_set_temp",
       "title": {
-        "en": "Set temperature"
+        "en": "Set temperature",
+        "fr": "Régler la température"
       },
       "args": [
         {
@@ -79,11 +83,16 @@
           "type": "range",
           "min": 5,
           "max": 35,
-          "step": 0.5
+          "step": 0.5,
+          "title": {
+            "en": "Temperature",
+            "fr": "Température"
+          }
         }
       ],
       "titleFormatted": {
-        "en": "Set temperature [[temperature]]"
+        "en": "Set temperature [[temperature]]",
+        "fr": "Régler la température [[temperature]]"
       }
     },
     {

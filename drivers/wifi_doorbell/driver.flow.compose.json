@@ -3,21 +3,25 @@
     {
       "id": "wifi_doorbell_ring",
       "title": {
-        "en": "Doorbell pressed"
+        "en": "Doorbell pressed",
+        "fr": "Sonnette appuyée"
       },
       "args": [],
       "titleFormatted": {
-        "en": "Doorbell pressed"
+        "en": "Doorbell pressed",
+        "fr": "Sonnette appuyée"
       }
     },
     {
       "id": "wifi_doorbell_motion",
       "title": {
-        "en": "Motion detected"
+        "en": "Motion detected",
+        "fr": "Mouvement détecté"
       },
       "args": [],
       "titleFormatted": {
-        "en": "Motion detected"
+        "en": "Motion detected",
+        "fr": "Mouvement détecté"
       }
     }
   ],

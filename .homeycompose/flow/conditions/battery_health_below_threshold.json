@@ -29,7 +29,11 @@
       },
       "min": 0,
       "max": 100,
-      "step": 5
+      "step": 5,
+      "placeholder": {
+        "en": "0–100",
+        "fr": "0–100"
+      }
     }
   ],
   "tokens": [
@@ -53,5 +57,11 @@
         "de": "Gesundheitsstatus"
       }
     }
-  ]
+  ],
+  "titleFormatted": {
+    "en": "Battery health is below [[threshold]] ([[device]])",
+    "fr": "La santé de la batterie est inférieure à [[threshold]] ([[device]])",
+    "nl": "Batterij gezondheid is onder [[threshold]] ([[device]])",
+    "de": "Batteriezustand ist unter [[threshold]] ([[device]])"
+  }
 }

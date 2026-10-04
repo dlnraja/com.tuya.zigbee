@@ -160,49 +160,60 @@
     {
       "id": "presence_sensor_radar_zone1_presence",
       "title": {
-        "en": "Zone 1 presence detected"
+        "en": "Zone 1 presence detected",
+        "fr": "Présence détectée zone 1"
       },
       "hint": {
-        "en": "Triggers when presence is detected in Zone 1 (near field)"
+        "en": "Triggers when presence is detected in Zone 1 (near field)",
+        "fr": "Se déclenche quand une présence est détectée en zone 1 (champ proche)"
       },
       "args": [],
       "titleFormatted": {
-        "en": "Zone 1 presence detected"
+        "en": "Zone 1 presence detected",
+        "fr": "Présence détectée zone 1"
       }
     },
     {
       "id": "presence_sensor_radar_zone2_presence",
       "title": {
-        "en": "Zone 2 presence detected"
+        "en": "Zone 2 presence detected",
+        "fr": "Présence détectée zone 2"
       },
       "hint": {
-        "en": "Triggers when presence is detected in Zone 2 (mid field)"
+        "en": "Triggers when presence is detected in Zone 2 (mid field)",
+        "fr": "Se déclenche quand une présence est détectée en zone 2 (champ moyen)"
       },
       "args": [],
       "titleFormatted": {
-        "en": "Zone 2 presence detected"
+        "en": "Zone 2 presence detected",
+        "fr": "Présence détectée zone 2"
       }
     },
     {
       "id": "presence_sensor_radar_zone3_presence",
       "title": {
-        "en": "Zone 3 presence detected"
+        "en": "Zone 3 presence detected",
+        "fr": "Présence détectée zone 3"
       },
       "hint": {
-        "en": "Triggers when presence is detected in Zone 3 (far field)"
+        "en": "Triggers when presence is detected in Zone 3 (far field)",
+        "fr": "Se déclenche quand une présence est détectée en zone 3 (champ lointain)"
       },
       "args": [],
       "titleFormatted": {
-        "en": "Zone 3 presence detected"
+        "en": "Zone 3 presence detected",
+        "fr": "Présence détectée zone 3"
       }
     },
     {
       "id": "presence_sensor_radar_movement_classification_changed",
       "title": {
-        "en": "Movement classification changed"
+        "en": "Movement classification changed",
+        "fr": "Classification du mouvement modifiée"
       },
       "hint": {
-        "en": "Triggers when the type of detected movement changes (none/stationary/micro/small/large)"
+        "en": "Triggers when the type of detected movement changes (none/stationary/micro/small/large)",
+        "fr": "Se déclenche quand le type de mouvement détecté change (none/stationary/micro/small/large)"
       },
       "tokens": [
         {
@@ -216,7 +227,8 @@
       ],
       "args": [],
       "titleFormatted": {
-        "en": "Movement classification changed ({classification})"
+        "en": "Movement classification changed ({classification})",
+        "fr": "Classification du mouvement modifiée ({classification})"
       }
     },
     {
@@ -356,10 +368,12 @@
     {
       "id": "presence_sensor_radar_zone_active",
       "title": {
-        "en": "Zone !{{1|2|3}} presence !{{is|is not}} detected"
+        "en": "Zone !{{1|2|3}} presence !{{is|is not}} detected",
+        "fr": "Présence zone !{{1|2|3}} !{{détectée|non détectée}}"
       },
       "hint": {
-        "en": "Check if a specific detection zone has active presence"
+        "en": "Check if a specific detection zone has active presence",
+        "fr": "Vérifier si une zone de détection précise a une présence active"
       },
       "args": [
         {
@@ -370,34 +384,53 @@
               "id": "1",
               "title": {
                 "en": "Zone 1 (Near)"
+              },
+              "label": {
+                "en": "Zone 1 (Near)",
+                "fr": "Zone 1 (proche)"
               }
             },
             {
               "id": "2",
               "title": {
                 "en": "Zone 2 (Mid)"
+              },
+              "label": {
+                "en": "Zone 2 (Mid)",
+                "fr": "Zone 2 (milieu)"
               }
             },
             {
               "id": "3",
               "title": {
                 "en": "Zone 3 (Far)"
+              },
+              "label": {
+                "en": "Zone 3 (Far)",
+                "fr": "Zone 3 (loin)"
               }
             }
-          ]
+          ],
+          "title": {
+            "en": "Zone",
+            "fr": "Zone"
+          }
         }
       ],
       "titleFormatted": {
-        "en": "Zone !{{1|2|3}} presence !{{is|is not}} detected [[zone]]"
+        "en": "Zone !{{1|2|3}} presence !{{is|is not}} detected [[zone]]",
+        "fr": "Présence zone !{{1|2|3}} !{{détectée|non détectée}} [[zone]]"
       }
     },
     {
       "id": "presence_sensor_radar_movement_is",
       "title": {
-        "en": "Movement type !{{is|is not}}"
+        "en": "Movement type !{{is|is not}}",
+        "fr": "Le type de mouvement !{{est|n'est pas}}"
       },
       "hint": {
-        "en": "Check the current movement classification (none, stationary, micro_motion, small_motion, large_motion)"
+        "en": "Check the current movement classification (none, stationary, micro_motion, small_motion, large_motion)",
+        "fr": "Vérifier la classification actuelle du mouvement (none, stationary, micro_motion, small_motion, large_motion)"
       },
       "args": [
         {
@@ -408,37 +441,62 @@
               "id": "none",
               "title": {
                 "en": "None"
+              },
+              "label": {
+                "en": "None",
+                "fr": "Aucun"
               }
             },
             {
               "id": "stationary",
               "title": {
                 "en": "Stationary"
+              },
+              "label": {
+                "en": "Stationary",
+                "fr": "Immobile"
               }
             },
             {
               "id": "micro_motion",
               "title": {
                 "en": "Micro Motion (breathing)"
+              },
+              "label": {
+                "en": "Micro Motion (breathing)",
+                "fr": "Micro-mouvement (respiration)"
               }
             },
             {
               "id": "small_motion",
               "title": {
                 "en": "Small Motion (limb)"
+              },
+              "label": {
+                "en": "Small Motion (limb)",
+                "fr": "Petit mouvement (membre)"
               }
             },
             {
               "id": "large_motion",
               "title": {
                 "en": "Large Motion (walking)"
+              },
+              "label": {
+                "en": "Large Motion (walking)",
+                "fr": "Grand mouvement (marche)"
               }
             }
-          ]
+          ],
+          "title": {
+            "en": "Classification",
+            "fr": "Classification"
+          }
         }
       ],
       "titleFormatted": {
-        "en": "Movement type !{{is|is not}} [[classification]]"
+        "en": "Movement type !{{is|is not}} [[classification]]",
+        "fr": "Le type de mouvement !{{est|n'est pas}} [[classification]]"
       }
     }
   ],

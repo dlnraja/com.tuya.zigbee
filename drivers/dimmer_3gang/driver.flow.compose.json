@@ -3,21 +3,25 @@
     {
       "id": "dimmer_3gang_turn_on",
       "title": {
-        "en": "Turn on"
+        "en": "Turn on",
+        "fr": "Allumer"
       },
       "args": [],
       "titleFormatted": {
-        "en": "Turn on"
+        "en": "Turn on",
+        "fr": "Allumer"
       }
     },
     {
       "id": "dimmer_3gang_turn_off",
       "title": {
-        "en": "Turn off"
+        "en": "Turn off",
+        "fr": "Éteindre"
       },
       "args": [],
       "titleFormatted": {
-        "en": "Turn off"
+        "en": "Turn off",
+        "fr": "Éteindre"
       }
     },
     {
@@ -52,7 +56,11 @@
           "max": 100,
           "step": 1,
           "label": "%",
-          "labelDecimals": 0
+          "labelDecimals": 0,
+          "title": {
+            "en": "Brightness",
+            "fr": "Luminosité"
+          }
         }
       ],
       "titleFormatted": {
@@ -68,180 +76,210 @@
       "id": "dimmer_3gang_physical_gang1_on",
       "args": [],
       "title": {
-        "en": "Gang 1 on - physical"
+        "en": "Gang 1 on - physical",
+        "fr": "Voie 1 allumée - physique"
       },
       "titleFormatted": {
-        "en": "Gang 1 on - physical"
+        "en": "Gang 1 on - physical",
+        "fr": "Voie 1 allumée - physique"
       }
     },
     {
       "id": "dimmer_3gang_physical_gang1_off",
       "args": [],
       "title": {
-        "en": "Gang 1 off - physical"
+        "en": "Gang 1 off - physical",
+        "fr": "Voie 1 éteinte - physique"
       },
       "titleFormatted": {
-        "en": "Gang 1 off - physical"
+        "en": "Gang 1 off - physical",
+        "fr": "Voie 1 éteinte - physique"
       }
     },
     {
       "id": "dimmer_3gang_physical_gang1_brightness_increased",
       "args": [],
       "title": {
-        "en": "Gang 1 brightness up - physical"
+        "en": "Gang 1 brightness up - physical",
+        "fr": "Voie 1 luminosité augmentée - physique"
       },
       "tokens": [
         {
           "name": "brightness",
           "example": 75,
           "title": {
-            "en": "Brightness (%)"
+            "en": "Brightness (%)",
+            "fr": "Luminosité (%)"
           },
           "type": "number"
         }
       ],
       "titleFormatted": {
-        "en": "Gang 1 brightness up - physical ({brightness})"
+        "en": "Gang 1 brightness up - physical ({brightness})",
+        "fr": "Voie 1 luminosité augmentée - physique ({brightness})"
       }
     },
     {
       "id": "dimmer_3gang_physical_gang1_brightness_decreased",
       "args": [],
       "title": {
-        "en": "Gang 1 brightness down - physical"
+        "en": "Gang 1 brightness down - physical",
+        "fr": "Voie 1 luminosité diminuée - physique"
       },
       "tokens": [
         {
           "name": "brightness",
           "example": 25,
           "title": {
-            "en": "Brightness (%)"
+            "en": "Brightness (%)",
+            "fr": "Luminosité (%)"
           },
           "type": "number"
         }
       ],
       "titleFormatted": {
-        "en": "Gang 1 brightness down - physical ({brightness})"
+        "en": "Gang 1 brightness down - physical ({brightness})",
+        "fr": "Voie 1 luminosité diminuée - physique ({brightness})"
       }
     },
     {
       "id": "dimmer_3gang_physical_gang2_on",
       "args": [],
       "title": {
-        "en": "Gang 2 on - physical"
+        "en": "Gang 2 on - physical",
+        "fr": "Voie 2 allumée - physique"
       },
       "titleFormatted": {
-        "en": "Gang 2 on - physical"
+        "en": "Gang 2 on - physical",
+        "fr": "Voie 2 allumée - physique"
       }
     },
     {
       "id": "dimmer_3gang_physical_gang2_off",
       "args": [],
       "title": {
-        "en": "Gang 2 off - physical"
+        "en": "Gang 2 off - physical",
+        "fr": "Voie 2 éteinte - physique"
       },
       "titleFormatted": {
-        "en": "Gang 2 off - physical"
+        "en": "Gang 2 off - physical",
+        "fr": "Voie 2 éteinte - physique"
       }
     },
     {
       "id": "dimmer_3gang_physical_gang2_brightness_increased",
       "args": [],
       "title": {
-        "en": "Gang 2 brightness up - physical"
+        "en": "Gang 2 brightness up - physical",
+        "fr": "Voie 2 luminosité augmentée - physique"
       },
       "tokens": [
         {
           "name": "brightness",
           "example": 75,
           "title": {
-            "en": "Brightness (%)"
+            "en": "Brightness (%)",
+            "fr": "Luminosité (%)"
           },
           "type": "number"
         }
       ],
       "titleFormatted": {
-        "en": "Gang 2 brightness up - physical ({brightness})"
+        "en": "Gang 2 brightness up - physical ({brightness})",
+        "fr": "Voie 2 luminosité augmentée - physique ({brightness})"
       }
     },
     {
       "id": "dimmer_3gang_physical_gang2_brightness_decreased",
       "args": [],
       "title": {
-        "en": "Gang 2 brightness down - physical"
+        "en": "Gang 2 brightness down - physical",
+        "fr": "Voie 2 luminosité diminuée - physique"
       },
       "tokens": [
         {
           "name": "brightness",
           "example": 25,
           "title": {
-            "en": "Brightness (%)"
+            "en": "Brightness (%)",
+            "fr": "Luminosité (%)"
           },
           "type": "number"
         }
       ],
       "titleFormatted": {
-        "en": "Gang 2 brightness down - physical ({brightness})"
+        "en": "Gang 2 brightness down - physical ({brightness})",
+        "fr": "Voie 2 luminosité diminuée - physique ({brightness})"
       }
     },
     {
       "id": "dimmer_3gang_physical_gang3_on",
       "args": [],
       "title": {
-        "en": "Gang 3 on - physical"
+        "en": "Gang 3 on - physical",
+        "fr": "Voie 3 allumée - physique"
       },
       "titleFormatted": {
-        "en": "Gang 3 on - physical"
+        "en": "Gang 3 on - physical",
+        "fr": "Voie 3 allumée - physique"
       }
     },
     {
       "id": "dimmer_3gang_physical_gang3_off",
       "args": [],
       "title": {
-        "en": "Gang 3 off - physical"
+        "en": "Gang 3 off - physical",
+        "fr": "Voie 3 éteinte - physique"
       },
       "titleFormatted": {
-        "en": "Gang 3 off - physical"
+        "en": "Gang 3 off - physical",
+        "fr": "Voie 3 éteinte - physique"
       }
     },
     {
       "id": "dimmer_3gang_physical_gang3_brightness_increased",
       "args": [],
       "title": {
-        "en": "Gang 3 brightness up - physical"
+        "en": "Gang 3 brightness up - physical",
+        "fr": "Voie 3 luminosité augmentée - physique"
       },
       "tokens": [
         {
           "name": "brightness",
           "example": 75,
           "title": {
-            "en": "Brightness (%)"
+            "en": "Brightness (%)",
+            "fr": "Luminosité (%)"
           },
           "type": "number"
         }
       ],
       "titleFormatted": {
-        "en": "Gang 3 brightness up - physical ({brightness})"
+        "en": "Gang 3 brightness up - physical ({brightness})",
+        "fr": "Voie 3 luminosité augmentée - physique ({brightness})"
       }
     },
     {
       "id": "dimmer_3gang_physical_gang3_brightness_decreased",
       "args": [],
       "title": {
-        "en": "Gang 3 brightness down - physical"
+        "en": "Gang 3 brightness down - physical",
+        "fr": "Voie 3 luminosité diminuée - physique"
       },
       "tokens": [
         {
           "name": "brightness",
           "example": 25,
           "title": {
-            "en": "Brightness (%)"
+            "en": "Brightness (%)",
+            "fr": "Luminosité (%)"
           },
           "type": "number"
         }
       ],
       "titleFormatted": {
-        "en": "Gang 3 brightness down - physical ({brightness})"
+        "en": "Gang 3 brightness down - physical ({brightness})",
+        "fr": "Voie 3 luminosité diminuée - physique ({brightness})"
       }
     },
     {

@@ -83,7 +83,8 @@
     {
       "id": "power_meter_power_above",
       "title": {
-        "en": "Power !{{is|is not}} above"
+        "en": "Power !{{is|is not}} above",
+        "fr": "La puissance !{{est|n'est pas}} au-dessus de"
       },
       "args": [
         {
@@ -91,11 +92,20 @@
           "type": "number",
           "min": 0,
           "max": 10000,
-          "step": 10
+          "step": 10,
+          "title": {
+            "en": "Power",
+            "fr": "Puissance"
+          },
+          "placeholder": {
+            "en": "0–10000",
+            "fr": "0–10000"
+          }
         }
       ],
       "titleFormatted": {
-        "en": "Power !{{is|is not}} above [[power]]"
+        "en": "Power !{{is|is not}} above [[power]]",
+        "fr": "La puissance !{{est|n'est pas}} au-dessus de [[power]]"
       }
     }
   ],
@@ -103,11 +113,13 @@
     {
       "id": "power_meter_reset_meter",
       "title": {
-        "en": "Reset energy meter"
+        "en": "Reset energy meter",
+        "fr": "Réinitialiser le compteur d'énergie"
       },
       "args": [],
       "titleFormatted": {
-        "en": "Reset energy meter"
+        "en": "Reset energy meter",
+        "fr": "Réinitialiser le compteur d'énergie"
       }
     }
   ]

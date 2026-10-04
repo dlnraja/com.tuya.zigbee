@@ -1,17 +1,20 @@
 {
   "id": "schedule_cancel",
   "title": {
-    "en": "Cancel schedule"
+    "en": "Cancel schedule",
+    "fr": "Annuler la planification"
   },
   "hint": {
-    "en": "Cancel (delete) a schedule by its name or ID"
+    "en": "Cancel (delete) a schedule by its name or ID",
+    "fr": "Annuler (supprimer) une planification par son nom ou son ID"
   },
   "args": [
     {
       "name": "schedule_id",
       "type": "text",
       "title": {
-        "en": "Schedule ID or name"
+        "en": "Schedule ID or name",
+        "fr": "ID ou nom de planification"
       },
       "placeholder": {
         "en": "sched_1 or Morning lights"
@@ -19,6 +22,7 @@
     }
   ],
   "titleFormatted": {
-    "en": "Cancel schedule [[schedule_id]]"
+    "en": "Cancel schedule [[schedule_id]]",
+    "fr": "Annuler la planification [[schedule_id]]"
   }
 }
