@@ -16,11 +16,18 @@ function fetchT(url,opts,ms){ms=ms||30000;const ac=new AbortController();const t
 // Backoff with jitter
 function backoff(attempt){return Math.min(2000*Math.pow(2,attempt)+Math.random()*1000,60000);}
 
-const _rt={m:{},d:{},mt:0,dd:''};
+const _rt={m:{},d:{},off:{},mt:0,dd:''};
 const _rtF=path.join(__dirname,'..','..','.github','state','ai-rate-state.json');
-function _rtLoad(){try{const j=JSON.parse(fs.readFileSync(_rtF,'utf8'));const td=new Date().toISOString().slice(0,10);if(j.dd===td){_rt.d=j.d||{};_rt.dd=td}}catch{}}
+function _rtLoad(){try{const j=JSON.parse(fs.readFileSync(_rtF,'utf8'));const td=new Date().toISOString().slice(0,10);if(j.dd===td){_rt.d=j.d||{};_rt.off=j.off||{};_rt.dd=td}}catch{}}
 function _rtSave(){try{_rt.dd=new Date().toISOString().slice(0,10);fs.mkdirSync(path.dirname(_rtF),{recursive:true});fs.writeFileSync(_rtF,JSON.stringify(_rt))}catch{}}
-function _rtTrack(id){const n=Date.now(),td=new Date().toISOString().slice(0,10);if(n-_rt.mt>60000){_rt.m={};_rt.mt=n}if(_rt.dd!==td){_rt.d={};_rt.dd=td}_rt.m[id]=(_rt.m[id]||0)+1;_rt.d[id]=(_rt.d[id]||0)+1;_rtSave()}
+function _rtTrack(id){const n=Date.now(),td=new Date().toISOString().slice(0,10);if(n-_rt.mt>60000){_rt.m={};_rt.mt=n}if(_rt.dd!==td){_rt.d={};_rt.off={};_rt.dd=td}_rt.m[id]=(_rt.m[id]||0)+1;_rt.d[id]=(_rt.d[id]||0)+1;_rtSave()}
+// User decision 2026-10-04 (constitution R2/R13): AI is an optional complement. A 429 or any
+// quota/credit/billing error disables that provider until the next UTC day (persisted in the
+// rate-state file) instead of retrying or spilling into on-demand / overage billing.
+function _rtDisable(id,why){const td=new Date().toISOString().slice(0,10);if(_rt.dd!==td){_rt.d={};_rt.off={};_rt.dd=td}_rt.off[id]=why||'quota';_rtSave();console.log(`  [${id}] DISABLED for today: ${why||'quota'}`)}
+function _rtDisabled(id){_rtLoad();return Boolean(_rt.off&&_rt.off[id]);}
+const QUOTA_RE=/quota|insufficient|credit|billing|exceeded|payment|overage|limit reached/i;
+function isQuotaError(status,body){return status===429||status===402||((status===403||status===400)&&QUOTA_RE.test(String(body||'')));}
 function _rtBudget(){return Object.entries(_rt.d).map(([k,v])=>k+':'+v).join(' ');}
 
 function classifyTask(t,s,o){
@@ -76,7 +83,10 @@ function budgetAllows(name){
   _rtLoad();
   const b=_budgets()[name];
   const plan=_planMode();
-  const allowPaid=process.env.AI_ALLOW_PAID==='true';
+  // User decision 2026-10-04: never on-demand tokens, credits or overage billing, even if
+  // AI_ALLOW_PAID is set. Only still-active subscriptions within their included quota.
+  const allowPaid=false;
+  if(_rtDisabled(name)){console.log(`  [${name}] BLOCKED: disabled for today after a quota/429 error`);return false;}
   const blocked=_forfait().blockedUnlessPaidFlag||['openai','deepseek'];
   if(plan==='forfait'&&blocked.includes(name)&&!allowPaid){
     console.log(`  [${name}] BLOCKED: forfait plan — paid/overage provider (set AI_ALLOW_PAID=true only if intentional spend)`);
@@ -125,9 +135,16 @@ async function callAIEngine(url, headers, body, providerName, maxRetries = 1, ti
             return { text: t.trim(), model: providerName };
         }
       }
-      if (r.status === 429) {
-        console.log(`  [${providerName}] 429 rate limit.`);
-        if (retry >= maxRetries) cbFail(providerName, 180000);
+      if (r.status === 429 || r.status === 402 || r.status === 403 || r.status === 400) {
+        const e = await r.text().catch(()=>'');
+        if (isQuotaError(r.status, e)) {
+          console.log(`  [${providerName}] ${r.status} quota/rate limit.`);
+          _rtDisable(providerName, `HTTP ${r.status}`);
+          cbFail(providerName, 24 * 3600 * 1000);
+          break;
+        }
+        console.log(`  [${providerName}] failed: ${r.status}`);
+        break;
       } else if (r.status >= 500) {
         console.log(`  [${providerName}] 5xx error.`);
         cbFail(providerName, 60000);
@@ -169,7 +186,7 @@ function shouldSkipAI(opts={}){
   const total=Object.values(_rt.d||{}).reduce((a,c)=>a+Number(c||0),0);
   if(globalCap>0&&total>=globalCap)return true;
   if(softPct>0&&globalCap>0&&total>=Math.floor(globalCap*softPct/100))return true;
-  if(process.env.AI_ALLOW_PAID!=='true'&&(f.mode==='forfait'||_planMode()==='forfait')){
+  if(f.mode==='forfait'||_planMode()==='forfait'){
     const caps=f.includedDailyCaps||{};
     const blocked=new Set(f.blockedUnlessPaidFlag||[]);
     let any=false;
@@ -512,4 +529,4 @@ function smartMergePost(existing,fresh,opts){
 function getAIBudget(){_rtLoad();return{used:_rt.d,budget:_rtBudget()}}
 function localFallback(){}
 
-module.exports={callAI,callAIEnsemble,splitTaskAndCombine,analyzeImage,sleep,localFallback,textSimilarity,isDuplicateContent,MAX_POST_SIZE,smartMergePost,getAIBudget,classifyTask,budgetAllows,shouldSkipAI};
+module.exports={isQuotaError,callAI,callAIEnsemble,splitTaskAndCombine,analyzeImage,sleep,localFallback,textSimilarity,isDuplicateContent,MAX_POST_SIZE,smartMergePost,getAIBudget,classifyTask,budgetAllows,shouldSkipAI};

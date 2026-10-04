@@ -1,6 +1,6 @@
 {
  "version": 1,
- "updated": "2026-10-04T01:15:48.857Z",
+ "updated": "2026-10-04T01:37:56.857Z",
  "checkpoints": {
   "resume": "data/leads/resume-checkpoint.json",
   "deepRead": "data/leads/deep-read-checkpoint.json",
@@ -9160,11 +9160,13 @@
    "upstreamUpdatedAt": "2026-09-11T11:37:11Z"
   },
   "dlnraja-issue:543": {
-   "status": "pending",
+   "status": "deferred",
    "kind": "issue",
    "state": "closed",
    "comments": 9,
-   "upstreamUpdatedAt": "2026-09-12T05:23:34Z"
+   "upstreamUpdatedAt": "2026-09-12T05:23:34Z",
+   "date": "2026-10-04",
+   "note": "TS0001 not evidenced; TS0002 already on wall_switch_2gang_1way"
   },
   "dlnraja-issue:544": {
    "status": "pending",
@@ -22923,6 +22925,11 @@
     "close"
    ]
   },
+  "task:ai-quota-guard": {
+   "status": "done",
+   "date": "2026-10-04",
+   "note": "2026-10-04 batch"
+  },
   "task:alt-paths-circuit-breakers": {
    "status": "pending",
    "date": "2026-10-04",
@@ -23208,6 +23215,26 @@
    "date": "2026-10-04",
    "note": "21 drivers with empty manufacturerName are exempt templates (match nothing); no conflict, W6 forbids removal"
   },
+  "task:pcr2-missing-2uollq9d": {
+   "status": "done",
+   "date": "2026-10-04",
+   "note": "2026-10-04 batch"
+  },
+  "task:pcr2-missing-nuenzetq": {
+   "status": "done",
+   "date": "2026-10-04",
+   "note": "2026-10-04 batch"
+  },
+  "task:pcr2-missing-zbeacon-ts0001": {
+   "status": "done",
+   "date": "2026-10-04",
+   "note": "2026-10-04 batch"
+  },
+  "task:pcr2-missing-zbeacon-ts0505b": {
+   "status": "done",
+   "date": "2026-10-04",
+   "note": "2026-10-04 batch"
+  },
   "task:polysemic-dp-engine": {
    "status": "pending",
    "date": "2026-10-04",
@@ -23224,6 +23251,11 @@
    "date": "2026-10-04",
    "commit": "1142e94d59",
    "note": "fp-collision _TZ3000_4uuaja4a; rerun 37165678667 success, stable 5.12.359"
+  },
+  "task:r16-malformed-gate": {
+   "status": "done",
+   "date": "2026-10-04",
+   "note": "2026-10-04 batch"
   },
   "task:resume-1": {
    "status": "done",

@@ -1,0 +1,56 @@
+{
+  "id": "switch_zbeacon_ts0001",
+  "name": {
+    "en": "1-Gang Relay Switch (Zbeacon TS0001)",
+    "fr": "Interrupteur relais 1 voie (Zbeacon TS0001)",
+    "nl": "1-voudige relaisschakelaar (Zbeacon TS0001)"
+  },
+  "class": "socket",
+  "platforms": [
+    "local"
+  ],
+  "connectivity": [
+    "zigbee"
+  ],
+  "capabilities": [
+    "onoff"
+  ],
+  "images": {
+    "small": "/drivers/switch_zbeacon_ts0001/assets/images/small.png",
+    "large": "/drivers/switch_zbeacon_ts0001/assets/images/large.png"
+  },
+  "zigbee": {
+    "manufacturerName": [
+      "Zbeacon",
+      "zbeacon"
+    ],
+    "productId": [
+      "TS0001"
+    ],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0,
+          3,
+          4,
+          5,
+          6
+        ],
+        "bindings": [
+          6
+        ]
+      }
+    },
+    "learnmode": {
+      "image": "{{driverAssetsPath}}/icon.svg",
+      "instruction": {
+        "en": "Press the button on the device 5 times quickly (or hold it about 5 seconds) until the LED blinks.",
+        "fr": "Appuyez 5 fois rapidement sur le bouton (ou maintenez-le environ 5 secondes) jusqu’à ce que la LED clignote.",
+        "nl": "Druk 5 keer snel op de knop (of houd hem ongeveer 5 seconden ingedrukt) tot de LED knippert."
+      }
+    }
+  },
+  "metadata": {
+    "source": "Interview zigpy/zha-device-handlers#4406 (Zbeacon|TS0001 EP1 in 0x0000,0x0003,0x0004,0x0005,0x0006,0x000A,0x1000,0x1888,0xE000,0xE001); pvvx.github.io/Zbeacon-TS0001; docs/rules/PCR2_MISSING_DEVICES_2026-10-04.md"
+  }
+}
