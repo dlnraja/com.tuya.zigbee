@@ -31,6 +31,10 @@
         "fr": "Valeur",
         "nl": "Waarde",
         "de": "Wert"
+      },
+      "placeholder": {
+        "en": "Search...",
+        "fr": "Rechercher..."
       }
     },
     {
@@ -148,5 +152,9 @@
       },
       "example": "measure_humidity"
     }
-  ]
+  ],
+  "titleFormatted": {
+    "en": "A value is trending [[capability]] [[direction]] [[rate]] [[window]] ([[device]])",
+    "fr": "Une valeur suit une tendance [[capability]] [[direction]] [[rate]] [[window]] ([[device]])"
+  }
 }

@@ -15,7 +15,8 @@
       "name": "dp_number",
       "type": "number",
       "title": {
-        "en": "DP Number"
+        "en": "DP Number",
+        "fr": "Numéro DP"
       },
       "example": 14
     },
@@ -23,7 +24,8 @@
       "name": "bitmap",
       "type": "number",
       "title": {
-        "en": "Bitmap value"
+        "en": "Bitmap value",
+        "fr": "Valeur bitmap"
       },
       "example": 255
     }
@@ -38,10 +40,19 @@
       "name": "dp",
       "type": "number",
       "title": {
-        "en": "DP Number (0=any)"
+        "en": "DP Number (0=any)",
+        "fr": "Numéro DP (0 = tous)"
       },
       "min": 0,
-      "max": 255
+      "max": 255,
+      "placeholder": {
+        "en": "0–255",
+        "fr": "0–255"
+      }
     }
-  ]
+  ],
+  "titleFormatted": {
+    "en": "Tuya bitmap DP changed [[dp]] ([[device]])",
+    "fr": "Bitmap Tuya changé [[dp]] ([[device]])"
+  }
 }

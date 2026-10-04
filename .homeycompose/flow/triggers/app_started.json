@@ -8,7 +8,8 @@
   },
   "hint": {
     "en": "Triggers when a Homey app is started. Inspired by Device Capabilities app.",
-    "nl": "Activeert wanneer een Homey app wordt gestart. Geinspireerd door Device Capabilities app."
+    "nl": "Activeert wanneer een Homey app wordt gestart. Geinspireerd door Device Capabilities app.",
+    "fr": "Se déclenche quand une app Homey démarre. Inspiré de l'app Device Capabilities."
   },
   "tokens": [
     {
@@ -16,7 +17,8 @@
       "type": "string",
       "title": {
         "en": "App name",
-        "nl": "App naam"
+        "nl": "App naam",
+        "fr": "Nom de l'app"
       },
       "example": "com.dlnraja.tuya.zigbee"
     }
@@ -27,7 +29,8 @@
       "type": "text",
       "title": {
         "en": "App ID (leave empty for any)",
-        "nl": "App ID (laat leeg voor elke)"
+        "nl": "App ID (laat leeg voor elke)",
+        "fr": "ID d'app (vide = toutes)"
       },
       "placeholder": {
         "en": "e.g. com.dlnraja.tuya.zigbee",

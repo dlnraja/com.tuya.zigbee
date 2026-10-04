@@ -10,12 +10,14 @@
       },
       "hint": {
         "en": "Triggered when the switch is turned on using the physical button",
-        "nl": "Geactiveerd wanneer de schakelaar wordt aangezet met de fysieke knop"
+        "nl": "Geactiveerd wanneer de schakelaar wordt aangezet met de fysieke knop",
+        "fr": "Déclenché quand l'interrupteur est allumé avec le bouton physique"
       },
       "args": [],
       "titleFormatted": {
         "en": "Turned on - physical button",
-        "nl": "Aangezet - fysieke knop"
+        "nl": "Aangezet - fysieke knop",
+        "fr": "Allumé - bouton physique"
       }
     },
     {
@@ -28,23 +30,27 @@
       },
       "hint": {
         "en": "Triggered when the switch is turned off using the physical button",
-        "nl": "Geactiveerd wanneer de schakelaar wordt uitgezet met de fysieke knop"
+        "nl": "Geactiveerd wanneer de schakelaar wordt uitgezet met de fysieke knop",
+        "fr": "Déclenché quand l'interrupteur est éteint avec le bouton physique"
       },
       "args": [],
       "titleFormatted": {
         "en": "Turned off - physical button",
-        "nl": "Uitgezet - fysieke knop"
+        "nl": "Uitgezet - fysieke knop",
+        "fr": "Éteint - bouton physique"
       }
     },
     {
       "id": "wall_dimmer_1gang_1way_brightness_increased",
       "title": {
         "en": "Brightness increased - physical button",
-        "nl": "Helderheid verhoogd - fysieke knop"
+        "nl": "Helderheid verhoogd - fysieke knop",
+        "fr": "Luminosité augmentée - bouton physique"
       },
       "hint": {
         "en": "Triggered when brightness is increased using the physical button",
-        "nl": "Geactiveerd wanneer de helderheid wordt verhoogd met de fysieke knop"
+        "nl": "Geactiveerd wanneer de helderheid wordt verhoogd met de fysieke knop",
+        "fr": "Déclenché quand la luminosité est augmentée avec le bouton physique"
       },
       "tokens": [
         {
@@ -52,7 +58,8 @@
           "type": "number",
           "title": {
             "en": "Brightness",
-            "nl": "Helderheid"
+            "nl": "Helderheid",
+            "fr": "Luminosité"
           },
           "example": 0.5
         }
@@ -60,18 +67,21 @@
       "args": [],
       "titleFormatted": {
         "en": "Brightness increased - physical button ({brightness})",
-        "nl": "Helderheid verhoogd - fysieke knop ({brightness})"
+        "nl": "Helderheid verhoogd - fysieke knop ({brightness})",
+        "fr": "Luminosité augmentée - bouton physique ({brightness})"
       }
     },
     {
       "id": "wall_dimmer_1gang_1way_brightness_decreased",
       "title": {
         "en": "Brightness decreased - physical button",
-        "nl": "Helderheid verlaagd - fysieke knop"
+        "nl": "Helderheid verlaagd - fysieke knop",
+        "fr": "Luminosité diminuée - bouton physique"
       },
       "hint": {
         "en": "Triggered when brightness is decreased using the physical button",
-        "nl": "Geactiveerd wanneer de helderheid wordt verlaagd met de fysieke knop"
+        "nl": "Geactiveerd wanneer de helderheid wordt verlaagd met de fysieke knop",
+        "fr": "Déclenché quand la luminosité est baissée avec le bouton physique"
       },
       "tokens": [
         {
@@ -79,7 +89,8 @@
           "type": "number",
           "title": {
             "en": "Brightness",
-            "nl": "Helderheid"
+            "nl": "Helderheid",
+            "fr": "Luminosité"
           },
           "example": 0.5
         }
@@ -87,7 +98,8 @@
       "args": [],
       "titleFormatted": {
         "en": "Brightness decreased - physical button ({brightness})",
-        "nl": "Helderheid verlaagd - fysieke knop ({brightness})"
+        "nl": "Helderheid verlaagd - fysieke knop ({brightness})",
+        "fr": "Luminosité diminuée - bouton physique ({brightness})"
       }
     },
     {
@@ -100,7 +112,8 @@
         "de": "Physisch eingeschaltet - Kanal 1"
       },
       "titleFormatted": {
-        "en": "Turned on physically - gang 1"
+        "en": "Turned on physically - gang 1",
+        "fr": "Allumé physiquement - voie 1"
       }
     },
     {
@@ -113,7 +126,8 @@
         "de": "Physisch ausgeschaltet - Kanal 1"
       },
       "titleFormatted": {
-        "en": "Turned off physically - gang 1"
+        "en": "Turned off physically - gang 1",
+        "fr": "Éteint physiquement - voie 1"
       }
     },
     {
@@ -148,7 +162,8 @@
       },
       "hint": {
         "en": "Control when the LED indicator on the switch is lit",
-        "nl": "Bepaal wanneer de LED-indicator op de schakelaar brandt"
+        "nl": "Bepaal wanneer de LED-indicator op de schakelaar brandt",
+        "fr": "Choisir quand le voyant LED de l'interrupteur est allumé"
       },
       "args": [
         {
@@ -160,6 +175,11 @@
               "title": {
                 "en": "Always Off",
                 "nl": "Altijd Uit"
+              },
+              "label": {
+                "en": "Always Off",
+                "nl": "Altijd Uit",
+                "fr": "Toujours éteint"
               }
             },
             {
@@ -167,6 +187,11 @@
               "title": {
                 "en": "On when Light ON (Normal)",
                 "nl": "Aan wanneer Licht AAN (Normaal)"
+              },
+              "label": {
+                "en": "On when Light ON (Normal)",
+                "nl": "Aan wanneer Licht AAN (Normaal)",
+                "fr": "Allumé quand la lumière est allumée (normal)"
               }
             },
             {
@@ -174,9 +199,18 @@
               "title": {
                 "en": "On when Light OFF (Inverted)",
                 "nl": "Aan wanneer Licht UIT (Omgekeerd)"
+              },
+              "label": {
+                "en": "On when Light OFF (Inverted)",
+                "nl": "Aan wanneer Licht UIT (Omgekeerd)",
+                "fr": "Allumé quand la lumière est éteinte (inversé)"
               }
             }
-          ]
+          ],
+          "title": {
+            "en": "Mode",
+            "fr": "Mode"
+          }
         }
       ],
       "titleFormatted": {
@@ -250,7 +284,11 @@
           "max": 100,
           "step": 1,
           "label": "%",
-          "labelDecimals": 0
+          "labelDecimals": 0,
+          "title": {
+            "en": "Brightness",
+            "fr": "Luminosité"
+          }
         }
       ],
       "titleFormatted": {

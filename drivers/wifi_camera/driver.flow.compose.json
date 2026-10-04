@@ -10,7 +10,8 @@
       },
       "args": [],
       "titleFormatted": {
-        "en": "Motion detected"
+        "en": "Motion detected",
+        "fr": "Mouvement détecté"
       }
     },
     {
@@ -23,7 +24,8 @@
       },
       "args": [],
       "titleFormatted": {
-        "en": "Motion cleared"
+        "en": "Motion cleared",
+        "fr": "Fin de mouvement"
       }
     }
   ],
@@ -31,7 +33,8 @@
     {
       "id": "wifi_camera_set_privacy",
       "title": {
-        "en": "Set privacy mode"
+        "en": "Set privacy mode",
+        "fr": "Régler le mode confidentialité"
       },
       "args": [
         {
@@ -42,25 +45,39 @@
               "id": "on",
               "title": {
                 "en": "Privacy ON (camera off)"
+              },
+              "label": {
+                "en": "Privacy ON (camera off)",
+                "fr": "Confidentialité activée (caméra éteinte)"
               }
             },
             {
               "id": "off",
               "title": {
                 "en": "Privacy OFF (camera on)"
+              },
+              "label": {
+                "en": "Privacy OFF (camera on)",
+                "fr": "Confidentialité désactivée (caméra allumée)"
               }
             }
-          ]
+          ],
+          "title": {
+            "en": "Mode",
+            "fr": "Mode"
+          }
         }
       ],
       "titleFormatted": {
-        "en": "Set privacy mode [[mode]]"
+        "en": "Set privacy mode [[mode]]",
+        "fr": "Régler le mode confidentialité [[mode]]"
       }
     },
     {
       "id": "wifi_camera_set_night_vision",
       "title": {
-        "en": "Set night vision"
+        "en": "Set night vision",
+        "fr": "Régler la vision nocturne"
       },
       "args": [
         {
@@ -71,31 +88,48 @@
               "id": "0",
               "title": {
                 "en": "Auto"
+              },
+              "label": {
+                "en": "Auto"
               }
             },
             {
               "id": "1",
               "title": {
                 "en": "Off"
+              },
+              "label": {
+                "en": "Off",
+                "fr": "Éteint"
               }
             },
             {
               "id": "2",
               "title": {
                 "en": "On"
+              },
+              "label": {
+                "en": "On",
+                "fr": "Allumé"
               }
             }
-          ]
+          ],
+          "title": {
+            "en": "Mode",
+            "fr": "Mode"
+          }
         }
       ],
       "titleFormatted": {
-        "en": "Set night vision [[mode]]"
+        "en": "Set night vision [[mode]]",
+        "fr": "Régler la vision nocturne [[mode]]"
       }
     },
     {
       "id": "wifi_camera_ptz_move",
       "title": {
-        "en": "PTZ move camera"
+        "en": "PTZ move camera",
+        "fr": "Déplacer la caméra (PTZ)"
       },
       "args": [
         {
@@ -106,31 +140,52 @@
               "id": "0",
               "title": {
                 "en": "Up"
+              },
+              "label": {
+                "en": "Up",
+                "fr": "Haut"
               }
             },
             {
               "id": "2",
               "title": {
                 "en": "Right"
+              },
+              "label": {
+                "en": "Right",
+                "fr": "Droite"
               }
             },
             {
               "id": "4",
               "title": {
                 "en": "Down"
+              },
+              "label": {
+                "en": "Down",
+                "fr": "Bas"
               }
             },
             {
               "id": "6",
               "title": {
                 "en": "Left"
+              },
+              "label": {
+                "en": "Left",
+                "fr": "Gauche"
               }
             }
-          ]
+          ],
+          "title": {
+            "en": "Direction",
+            "fr": "Direction"
+          }
         }
       ],
       "titleFormatted": {
-        "en": "PTZ move camera [[direction]]"
+        "en": "PTZ move camera [[direction]]",
+        "fr": "Déplacer la caméra (PTZ) [[direction]]"
       }
     }
   ],

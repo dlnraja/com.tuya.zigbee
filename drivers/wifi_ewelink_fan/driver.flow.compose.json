@@ -10,7 +10,8 @@
       },
       "args": [],
       "titleFormatted": {
-        "en": "Turned on"
+        "en": "Turned on",
+        "fr": "Allumé"
       }
     },
     {
@@ -23,7 +24,8 @@
       },
       "args": [],
       "titleFormatted": {
-        "en": "Turned off"
+        "en": "Turned off",
+        "fr": "Éteint"
       }
     },
     {
@@ -63,7 +65,8 @@
       },
       "args": [],
       "titleFormatted": {
-        "en": "Is on"
+        "en": "Is on",
+        "fr": "Est allumé"
       }
     }
   ],
@@ -83,7 +86,11 @@
           "min": 0,
           "max": 100,
           "step": 1,
-          "label": "%"
+          "label": "%",
+          "title": {
+            "en": "Dim level",
+            "fr": "Niveau de variation"
+          }
         }
       ],
       "titleFormatted": {

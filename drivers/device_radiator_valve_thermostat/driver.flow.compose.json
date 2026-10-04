@@ -295,11 +295,19 @@
               "title": {
                 "en": "Off",
                 "fr": "Arrêt"
+              },
+              "label": {
+                "en": "Off",
+                "fr": "Arrêt"
               }
             },
             {
               "id": "heat",
               "title": {
+                "en": "Heat",
+                "fr": "Chauffage"
+              },
+              "label": {
                 "en": "Heat",
                 "fr": "Chauffage"
               }
@@ -309,6 +317,10 @@
               "title": {
                 "en": "Auto",
                 "fr": "Auto"
+              },
+              "label": {
+                "en": "Auto",
+                "fr": "Auto"
               }
             },
             {
@@ -316,9 +328,17 @@
               "title": {
                 "en": "Cool",
                 "fr": "Refroidissement"
+              },
+              "label": {
+                "en": "Cool",
+                "fr": "Refroidissement"
               }
             }
-          ]
+          ],
+          "title": {
+            "en": "Mode",
+            "fr": "Mode"
+          }
         }
       ],
       "titleFormatted": {
@@ -378,6 +398,10 @@
           "title": {
             "en": "Temperature",
             "fr": "Température"
+          },
+          "placeholder": {
+            "en": "5–35",
+            "fr": "5–35"
           }
         }
       ],
@@ -406,11 +430,19 @@
               "title": {
                 "en": "Off",
                 "fr": "Arrêt"
+              },
+              "label": {
+                "en": "Off",
+                "fr": "Arrêt"
               }
             },
             {
               "id": "heat",
               "title": {
+                "en": "Heat",
+                "fr": "Chauffage"
+              },
+              "label": {
                 "en": "Heat",
                 "fr": "Chauffage"
               }
@@ -420,9 +452,17 @@
               "title": {
                 "en": "Auto",
                 "fr": "Auto"
+              },
+              "label": {
+                "en": "Auto",
+                "fr": "Auto"
               }
             }
-          ]
+          ],
+          "title": {
+            "en": "Mode",
+            "fr": "Mode"
+          }
         }
       ],
       "titleFormatted": {
@@ -450,6 +490,10 @@
           "title": {
             "en": "Degrees",
             "fr": "Degrés"
+          },
+          "placeholder": {
+            "en": "0.5–5",
+            "fr": "0.5–5"
           }
         }
       ],
@@ -478,6 +522,10 @@
           "title": {
             "en": "Degrees",
             "fr": "Degrés"
+          },
+          "placeholder": {
+            "en": "0.5–5",
+            "fr": "0.5–5"
           }
         }
       ],
@@ -506,6 +554,10 @@
               "title": {
                 "en": "Enabled",
                 "fr": "Activé"
+              },
+              "label": {
+                "en": "Enabled",
+                "fr": "Activé"
               }
             },
             {
@@ -513,9 +565,17 @@
               "title": {
                 "en": "Disabled",
                 "fr": "Désactivé"
+              },
+              "label": {
+                "en": "Disabled",
+                "fr": "Désactivé"
               }
             }
-          ]
+          ],
+          "title": {
+            "en": "Enabled",
+            "fr": "Activé"
+          }
         }
       ],
       "titleFormatted": {
@@ -544,11 +604,19 @@
               "title": {
                 "en": "Comfort (21°C)",
                 "fr": "Confort (21°C)"
+              },
+              "label": {
+                "en": "Comfort (21°C)",
+                "fr": "Confort (21°C)"
               }
             },
             {
               "id": "eco",
               "title": {
+                "en": "Eco (18°C)",
+                "fr": "Éco (18°C)"
+              },
+              "label": {
                 "en": "Eco (18°C)",
                 "fr": "Éco (18°C)"
               }
@@ -558,11 +626,19 @@
               "title": {
                 "en": "Away (15°C)",
                 "fr": "Absent (15°C)"
+              },
+              "label": {
+                "en": "Away (15°C)",
+                "fr": "Absent (15°C)"
               }
             },
             {
               "id": "sleep",
               "title": {
+                "en": "Sleep (19°C)",
+                "fr": "Nuit (19°C)"
+              },
+              "label": {
                 "en": "Sleep (19°C)",
                 "fr": "Nuit (19°C)"
               }
@@ -572,9 +648,17 @@
               "title": {
                 "en": "Boost (25°C)",
                 "fr": "Boost (25°C)"
+              },
+              "label": {
+                "en": "Boost (25°C)",
+                "fr": "Boost (25°C)"
               }
             }
-          ]
+          ],
+          "title": {
+            "en": "Preset",
+            "fr": "Preset"
+          }
         }
       ],
       "titleFormatted": {
@@ -680,7 +764,11 @@
           "max": 35,
           "step": 0.5,
           "label": "°C",
-          "labelDecimals": 1
+          "labelDecimals": 1,
+          "title": {
+            "en": "Temperature",
+            "fr": "Température"
+          }
         }
       ],
       "titleFormatted": {

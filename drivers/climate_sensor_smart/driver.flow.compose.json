@@ -17,27 +17,47 @@
               "id": "5",
               "title": {
                 "en": "Scene 5"
+              },
+              "label": {
+                "en": "Scene 5",
+                "fr": "Scène 5"
               }
             },
             {
               "id": "6",
               "title": {
                 "en": "Scene 6"
+              },
+              "label": {
+                "en": "Scene 6",
+                "fr": "Scène 6"
               }
             },
             {
               "id": "7",
               "title": {
                 "en": "Scene 7"
+              },
+              "label": {
+                "en": "Scene 7",
+                "fr": "Scène 7"
               }
             },
             {
               "id": "8",
               "title": {
                 "en": "Scene 8"
+              },
+              "label": {
+                "en": "Scene 8",
+                "fr": "Scène 8"
               }
             }
-          ]
+          ],
+          "title": {
+            "en": "Scene",
+            "fr": "Scène"
+          }
         }
       ],
       "titleFormatted": {
@@ -57,7 +77,8 @@
       },
       "args": [],
       "titleFormatted": {
-        "en": "Switch 1 changed"
+        "en": "Switch 1 changed",
+        "fr": "Interrupteur 1 modifié"
       }
     },
     {
@@ -70,7 +91,8 @@
       },
       "args": [],
       "titleFormatted": {
-        "en": "Switch 2 changed"
+        "en": "Switch 2 changed",
+        "fr": "Interrupteur 2 modifié"
       }
     },
     {
@@ -83,7 +105,8 @@
       },
       "args": [],
       "titleFormatted": {
-        "en": "Switch 3 changed"
+        "en": "Switch 3 changed",
+        "fr": "Interrupteur 3 modifié"
       }
     },
     {
@@ -96,7 +119,8 @@
       },
       "args": [],
       "titleFormatted": {
-        "en": "Switch 4 changed"
+        "en": "Switch 4 changed",
+        "fr": "Interrupteur 4 modifié"
       }
     },
     {
@@ -162,7 +186,11 @@
       "args": [
         {
           "type": "checkbox",
-          "name": "state"
+          "name": "state",
+          "title": {
+            "en": "State",
+            "fr": "État"
+          }
         }
       ],
       "titleFormatted": {
@@ -183,7 +211,11 @@
       "args": [
         {
           "type": "checkbox",
-          "name": "state"
+          "name": "state",
+          "title": {
+            "en": "State",
+            "fr": "État"
+          }
         }
       ],
       "titleFormatted": {
@@ -204,7 +236,11 @@
       "args": [
         {
           "type": "checkbox",
-          "name": "state"
+          "name": "state",
+          "title": {
+            "en": "State",
+            "fr": "État"
+          }
         }
       ],
       "titleFormatted": {
@@ -225,7 +261,11 @@
       "args": [
         {
           "type": "checkbox",
-          "name": "state"
+          "name": "state",
+          "title": {
+            "en": "State",
+            "fr": "État"
+          }
         }
       ],
       "titleFormatted": {

@@ -7,7 +7,8 @@
     "de": "Anwesenheit in Zone beendet"
   },
   "hint": {
-    "en": "Triggers when the Virtual Presence Detector determines a zone is no longer occupied"
+    "en": "Triggers when the Virtual Presence Detector determines a zone is no longer occupied",
+    "fr": "Se déclenche quand le détecteur de présence virtuel juge qu'une zone n'est plus occupée"
   },
   "args": [
     {
@@ -21,7 +22,8 @@
       "name": "zone_name",
       "type": "string",
       "title": {
-        "en": "Zone name"
+        "en": "Zone name",
+        "fr": "Nom de la zone"
       },
       "example": "Living Room"
     },
@@ -29,15 +31,21 @@
       "name": "was_present_minutes",
       "type": "number",
       "title": {
-        "en": "Was present for (minutes)"
+        "en": "Was present for (minutes)",
+        "fr": "Présent pendant (minutes)"
       }
     },
     {
       "name": "final_confidence",
       "type": "number",
       "title": {
-        "en": "Final confidence (0-100)"
+        "en": "Final confidence (0-100)",
+        "fr": "Confiance finale (0-100)"
       }
     }
-  ]
+  ],
+  "titleFormatted": {
+    "en": "Presence cleared from zone ([[device]])",
+    "fr": "Présence terminée dans la zone ([[device]])"
+  }
 }

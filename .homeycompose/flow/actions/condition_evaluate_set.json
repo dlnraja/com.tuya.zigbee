@@ -7,14 +7,16 @@
     "de": "Bedingungssatz auswerten"
   },
   "hint": {
-    "en": "Evaluate a named condition set and trigger if all conditions are met"
+    "en": "Evaluate a named condition set and trigger if all conditions are met",
+    "fr": "Évaluer un ensemble de conditions nommé et déclencher si toutes sont remplies"
   },
   "args": [
     {
       "name": "condition_set_id",
       "type": "text",
       "title": {
-        "en": "Condition set name"
+        "en": "Condition set name",
+        "fr": "Nom du jeu de conditions"
       },
       "placeholder": {
         "en": "home_away_check"
@@ -31,14 +33,16 @@
       "name": "result",
       "type": "boolean",
       "title": {
-        "en": "Evaluation result"
+        "en": "Evaluation result",
+        "fr": "Résultat de l'évaluation"
       }
     },
     {
       "name": "condition_set_id",
       "type": "string",
       "title": {
-        "en": "Condition set evaluated"
+        "en": "Condition set evaluated",
+        "fr": "Jeu de conditions évalué"
       }
     }
   ],

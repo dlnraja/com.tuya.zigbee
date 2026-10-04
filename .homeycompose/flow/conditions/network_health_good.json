@@ -7,30 +7,41 @@
     "de": "Netzwerkzustand gut"
   },
   "hint": {
-    "en": "Checks if the Zigbee network health score is above a threshold"
+    "en": "Checks if the Zigbee network health score is above a threshold",
+    "fr": "Vérifie si le score de santé du réseau Zigbee dépasse un seuil"
   },
   "args": [
     {
       "name": "min_coverage",
       "type": "number",
       "title": {
-        "en": "Min coverage score (%)"
+        "en": "Min coverage score (%)",
+        "fr": "Score de couverture min (%)"
       },
       "min": 0,
       "max": 100,
       "step": 5,
-      "value": 80
+      "value": 80,
+      "placeholder": {
+        "en": "0–100",
+        "fr": "0–100"
+      }
     },
     {
       "name": "max_orphaned",
       "type": "number",
       "title": {
-        "en": "Max orphaned devices"
+        "en": "Max orphaned devices",
+        "fr": "Appareils orphelins max"
       },
       "min": 0,
       "max": 50,
       "step": 1,
-      "value": 2
+      "value": 2,
+      "placeholder": {
+        "en": "0–50",
+        "fr": "0–50"
+      }
     }
   ],
   "tokens": [
@@ -38,28 +49,32 @@
       "name": "coverage_score",
       "type": "number",
       "title": {
-        "en": "Coverage score"
+        "en": "Coverage score",
+        "fr": "Score de couverture"
       }
     },
     {
       "name": "total_devices",
       "type": "number",
       "title": {
-        "en": "Total devices"
+        "en": "Total devices",
+        "fr": "Nombre total d'appareils"
       }
     },
     {
       "name": "orphaned_devices",
       "type": "number",
       "title": {
-        "en": "Orphaned devices"
+        "en": "Orphaned devices",
+        "fr": "Appareils orphelins"
       }
     },
     {
       "name": "average_lqi",
       "type": "number",
       "title": {
-        "en": "Average LQI"
+        "en": "Average LQI",
+        "fr": "LQI moyen"
       }
     }
   ],

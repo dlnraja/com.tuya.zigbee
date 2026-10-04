@@ -1689,6 +1689,10 @@ class TuyaUnifiedZigbeeApp extends Homey.App {
         this.homey.clearTimeout(this._heavyInitTimer);
         this._heavyInitTimer = null;
       }
+      if (this._heavyRetryTimer) {
+        this.homey.clearTimeout(this._heavyRetryTimer);
+        this._heavyRetryTimer = null;
+      }
     } catch (e) {}
     // WHY(P2321): tear down availability first (sync flag) so device onUninit
     // cannot race store writes after app teardown — HomeSuite idea, MIT reimpl.

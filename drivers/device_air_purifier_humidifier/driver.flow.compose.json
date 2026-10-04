@@ -10,7 +10,8 @@
       },
       "args": [],
       "titleFormatted": {
-        "en": "Turn on"
+        "en": "Turn on",
+        "fr": "Allumer"
       }
     },
     {
@@ -23,7 +24,8 @@
       },
       "args": [],
       "titleFormatted": {
-        "en": "Turn off"
+        "en": "Turn off",
+        "fr": "Éteindre"
       }
     },
     {
@@ -58,7 +60,11 @@
           "max": 100,
           "step": 1,
           "label": "%",
-          "labelDecimals": 0
+          "labelDecimals": 0,
+          "title": {
+            "en": "Brightness",
+            "fr": "Luminosité"
+          }
         }
       ],
       "titleFormatted": {

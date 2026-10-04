@@ -204,7 +204,8 @@
         }
       ],
       "titleFormatted": {
-        "en": "Gang 1 scene triggered ({action})"
+        "en": "Gang 1 scene triggered ({action})",
+        "fr": "Scène voie 1 déclenchée ({action})"
       }
     },
     {
@@ -229,7 +230,8 @@
         }
       ],
       "titleFormatted": {
-        "en": "Gang 2 scene triggered ({action})"
+        "en": "Gang 2 scene triggered ({action})",
+        "fr": "Scène voie 2 déclenchée ({action})"
       }
     },
     {
@@ -571,6 +573,12 @@
                 "fr": "Éteint",
                 "nl": "Uit",
                 "de": "Aus"
+              },
+              "label": {
+                "en": "Off",
+                "fr": "Éteint",
+                "nl": "Uit",
+                "de": "Aus"
               }
             },
             {
@@ -580,11 +588,23 @@
                 "fr": "Normal (LED quand allumé)",
                 "nl": "Normaal (LED bij AAN)",
                 "de": "Normal (LED bei EIN)"
+              },
+              "label": {
+                "en": "Normal (LED when ON)",
+                "fr": "Normal (LED quand allumé)",
+                "nl": "Normaal (LED bij AAN)",
+                "de": "Normal (LED bei EIN)"
               }
             },
             {
               "id": "inverted",
               "title": {
+                "en": "Inverted (LED when OFF)",
+                "fr": "Inversé (LED quand éteint)",
+                "nl": "Omgekeerd (LED bij UIT)",
+                "de": "Invertiert (LED bei AUS)"
+              },
+              "label": {
                 "en": "Inverted (LED when OFF)",
                 "fr": "Inversé (LED quand éteint)",
                 "nl": "Omgekeerd (LED bij UIT)",
@@ -666,21 +686,37 @@
               "id": "auto",
               "title": {
                 "en": "Auto (Normal + flows)"
+              },
+              "label": {
+                "en": "Auto (Normal + flows)",
+                "fr": "Auto (normal + flows)"
               }
             },
             {
               "id": "magic",
               "title": {
                 "en": "Magic (Scene only)"
+              },
+              "label": {
+                "en": "Magic (Scene only)",
+                "fr": "Magique (scène uniquement)"
               }
             },
             {
               "id": "both",
               "title": {
                 "en": "Both (Load + scene)"
+              },
+              "label": {
+                "en": "Both (Load + scene)",
+                "fr": "Les deux (charge + scène)"
               }
             }
-          ]
+          ],
+          "title": {
+            "en": "Mode",
+            "fr": "Mode"
+          }
         }
       ],
       "titleFormatted": {

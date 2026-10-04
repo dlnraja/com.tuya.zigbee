@@ -13,7 +13,8 @@
           "name": "state",
           "type": "string",
           "title": {
-            "en": "State"
+            "en": "State",
+            "fr": "État"
           },
           "example": {
             "en": "low"
@@ -41,7 +42,8 @@
           "name": "depth",
           "type": "number",
           "title": {
-            "en": "Depth (cm)"
+            "en": "Depth (cm)",
+            "fr": "Profondeur (cm)"
           },
           "example": 50
         },
@@ -49,7 +51,8 @@
           "name": "percentage",
           "type": "number",
           "title": {
-            "en": "Fill (%)"
+            "en": "Fill (%)",
+            "fr": "Remplissage (%)"
           },
           "example": 75
         }
@@ -141,11 +144,18 @@
               "id": "low",
               "title": {
                 "en": "Low"
+              },
+              "label": {
+                "en": "Low",
+                "fr": "Bas"
               }
             },
             {
               "id": "normal",
               "title": {
+                "en": "Normal"
+              },
+              "label": {
                 "en": "Normal"
               }
             },
@@ -153,9 +163,17 @@
               "id": "high",
               "title": {
                 "en": "High"
+              },
+              "label": {
+                "en": "High",
+                "fr": "Haut"
               }
             }
-          ]
+          ],
+          "title": {
+            "en": "State",
+            "fr": "État"
+          }
         }
       ],
       "titleFormatted": {

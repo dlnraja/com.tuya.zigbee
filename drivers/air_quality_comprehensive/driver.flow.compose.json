@@ -155,7 +155,8 @@
     {
       "id": "air_quality_comprehensive_co2_above",
       "title": {
-        "en": "CO₂ !{{is|is not}} above"
+        "en": "CO₂ !{{is|is not}} above",
+        "fr": "Le CO₂ !{{est|n'est pas}} au-dessus de"
       },
       "args": [
         {
@@ -163,11 +164,20 @@
           "type": "number",
           "min": 0,
           "max": 5000,
-          "step": 50
+          "step": 50,
+          "title": {
+            "en": "Co2",
+            "fr": "Co2"
+          },
+          "placeholder": {
+            "en": "0–5000",
+            "fr": "0–5000"
+          }
         }
       ],
       "titleFormatted": {
-        "en": "CO₂ !{{is|is not}} above [[co2]]"
+        "en": "CO₂ !{{is|is not}} above [[co2]]",
+        "fr": "Le CO₂ !{{est|n'est pas}} au-dessus de [[co2]]"
       }
     },
     {
@@ -184,7 +194,15 @@
           "type": "number",
           "min": -40,
           "max": 80,
-          "step": 0.5
+          "step": 0.5,
+          "title": {
+            "en": "Temperature",
+            "fr": "Température"
+          },
+          "placeholder": {
+            "en": "-40–80",
+            "fr": "-40–80"
+          }
         }
       ],
       "titleFormatted": {
@@ -208,7 +226,15 @@
           "type": "number",
           "min": 0,
           "max": 100,
-          "step": 1
+          "step": 1,
+          "title": {
+            "en": "Humidity",
+            "fr": "Humidité"
+          },
+          "placeholder": {
+            "en": "0–100",
+            "fr": "0–100"
+          }
         }
       ],
       "titleFormatted": {

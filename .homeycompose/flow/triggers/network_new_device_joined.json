@@ -7,7 +7,8 @@
     "de": "Neues Gerät dem Netzwerk beigetreten"
   },
   "hint": {
-    "en": "Triggers when a new device joins the Zigbee network"
+    "en": "Triggers when a new device joins the Zigbee network",
+    "fr": "Se déclenche quand un nouvel appareil rejoint le réseau Zigbee"
   },
   "args": [],
   "tokens": [
@@ -15,7 +16,8 @@
       "name": "ieee_addr",
       "type": "string",
       "title": {
-        "en": "IEEE address"
+        "en": "IEEE address",
+        "fr": "Adresse IEEE"
       },
       "example": "0x00158d0001234567"
     },
@@ -23,7 +25,8 @@
       "name": "device_type",
       "type": "string",
       "title": {
-        "en": "Device type"
+        "en": "Device type",
+        "fr": "Type d'appareil"
       },
       "example": "end_device"
     },
@@ -31,39 +34,45 @@
       "name": "model_id",
       "type": "string",
       "title": {
-        "en": "Model ID"
+        "en": "Model ID",
+        "fr": "ID du modèle"
       }
     },
     {
       "name": "manufacturer",
       "type": "string",
       "title": {
-        "en": "Manufacturer"
+        "en": "Manufacturer",
+        "fr": "Fabricant"
       }
     },
     {
       "name": "rssi",
       "type": "number",
       "title": {
-        "en": "Signal strength (dBm)"
+        "en": "Signal strength (dBm)",
+        "fr": "Force du signal (dBm)"
       }
     },
     {
       "name": "lqi",
       "type": "number",
       "title": {
-        "en": "Link quality (0-255)"
+        "en": "Link quality (0-255)",
+        "fr": "Qualité du lien (0-255)"
       }
     },
     {
       "name": "total_devices",
       "type": "number",
       "title": {
-        "en": "Total network devices"
+        "en": "Total network devices",
+        "fr": "Nombre d'appareils du réseau"
       }
     }
   ],
   "titleFormatted": {
-    "en": "New device joined network"
+    "en": "New device joined network",
+    "fr": "Nouvel appareil sur le réseau"
   }
 }

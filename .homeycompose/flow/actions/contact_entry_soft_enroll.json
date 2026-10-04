@@ -42,7 +42,11 @@
         "en": "Quiet start (optional)",
         "fr": "Début calme (option)"
       },
-      "optional": true
+      "optional": true,
+      "placeholder": {
+        "en": "Quiet start (optional)",
+        "fr": "Début calme (option)"
+      }
     },
     {
       "type": "text",
@@ -51,7 +55,11 @@
         "en": "Quiet end (optional)",
         "fr": "Fin calme (option)"
       },
-      "optional": true
+      "optional": true,
+      "placeholder": {
+        "en": "Quiet end (optional)",
+        "fr": "Fin calme (option)"
+      }
     }
   ],
   "titleFormatted": {

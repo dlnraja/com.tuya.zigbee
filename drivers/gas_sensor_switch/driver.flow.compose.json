@@ -550,7 +550,8 @@
         }
       ],
       "titleFormatted": {
-        "en": "Gang 1 scene triggered ({action})"
+        "en": "Gang 1 scene triggered ({action})",
+        "fr": "Scène voie 1 déclenchée ({action})"
       }
     },
     {
@@ -575,7 +576,8 @@
         }
       ],
       "titleFormatted": {
-        "en": "Gang 2 scene triggered ({action})"
+        "en": "Gang 2 scene triggered ({action})",
+        "fr": "Scène voie 2 déclenchée ({action})"
       }
     },
     {
@@ -600,7 +602,8 @@
         }
       ],
       "titleFormatted": {
-        "en": "Gang 3 scene triggered ({action})"
+        "en": "Gang 3 scene triggered ({action})",
+        "fr": "Scène voie 3 déclenchée ({action})"
       }
     },
     {
@@ -625,7 +628,8 @@
         }
       ],
       "titleFormatted": {
-        "en": "Gang 4 scene triggered ({action})"
+        "en": "Gang 4 scene triggered ({action})",
+        "fr": "Scène voie 4 déclenchée ({action})"
       }
     },
     {
@@ -931,7 +935,8 @@
       "args": [],
       "titleFormatted": {
         "en": "Toggle gang 1",
-        "nl": "Gang 1 wisselen"
+        "nl": "Gang 1 wisselen",
+        "fr": "Basculer la voie 1"
       }
     },
     {
@@ -945,7 +950,8 @@
       "args": [],
       "titleFormatted": {
         "en": "Toggle gang 2",
-        "nl": "Gang 2 wisselen"
+        "nl": "Gang 2 wisselen",
+        "fr": "Basculer la voie 2"
       }
     },
     {
@@ -959,7 +965,8 @@
       "args": [],
       "titleFormatted": {
         "en": "Toggle gang 3",
-        "nl": "Gang 3 wisselen"
+        "nl": "Gang 3 wisselen",
+        "fr": "Basculer la voie 3"
       }
     },
     {
@@ -973,7 +980,8 @@
       "args": [],
       "titleFormatted": {
         "en": "Toggle gang 4",
-        "nl": "Gang 4 wisselen"
+        "nl": "Gang 4 wisselen",
+        "fr": "Basculer la voie 4"
       }
     },
     {
@@ -987,7 +995,8 @@
       "args": [],
       "titleFormatted": {
         "en": "Turn on all gangs",
-        "nl": "Alle gangs aanzetten"
+        "nl": "Alle gangs aanzetten",
+        "fr": "Allumer toutes les voies"
       }
     },
     {
@@ -1001,7 +1010,8 @@
       "args": [],
       "titleFormatted": {
         "en": "Turn off all gangs",
-        "nl": "Alle gangs uitzetten"
+        "nl": "Alle gangs uitzetten",
+        "fr": "Éteindre toutes les voies"
       }
     },
     {
@@ -1011,7 +1021,8 @@
         "fr": "Mode rétroéclairage LED"
       },
       "hint": {
-        "en": "Control the switch LED indicator (requires Tuya DP15 support)"
+        "en": "Control the switch LED indicator (requires Tuya DP15 support)",
+        "fr": "Contrôler le voyant LED de l'interrupteur (nécessite le DP15 Tuya)"
       },
       "args": [
         {
@@ -1025,18 +1036,30 @@
               "id": "off",
               "title": {
                 "en": "Off"
+              },
+              "label": {
+                "en": "Off",
+                "fr": "Éteint"
               }
             },
             {
               "id": "normal",
               "title": {
                 "en": "Normal (LED when ON)"
+              },
+              "label": {
+                "en": "Normal (LED when ON)",
+                "fr": "Normal (LED quand allumé)"
               }
             },
             {
               "id": "inverted",
               "title": {
                 "en": "Inverted (LED when OFF)"
+              },
+              "label": {
+                "en": "Inverted (LED when OFF)",
+                "fr": "Inversé (LED quand éteint)"
               }
             }
           ]
@@ -1058,19 +1081,28 @@
           "type": "dropdown",
           "name": "state",
           "title": {
-            "en": "State"
+            "en": "State",
+            "fr": "État"
           },
           "values": [
             {
               "id": "on",
               "title": {
                 "en": "When ON"
+              },
+              "label": {
+                "en": "When ON",
+                "fr": "Quand allumé"
               }
             },
             {
               "id": "off",
               "title": {
                 "en": "When OFF"
+              },
+              "label": {
+                "en": "When OFF",
+                "fr": "Quand éteint"
               }
             }
           ]
@@ -1079,25 +1111,38 @@
           "type": "dropdown",
           "name": "color",
           "title": {
-            "en": "Color"
+            "en": "Color",
+            "fr": "Couleur"
           },
           "values": [
             {
               "id": "blue",
               "title": {
                 "en": "Blue"
+              },
+              "label": {
+                "en": "Blue",
+                "fr": "Bleu"
               }
             },
             {
               "id": "red",
               "title": {
                 "en": "Red"
+              },
+              "label": {
+                "en": "Red",
+                "fr": "Rouge"
               }
             },
             {
               "id": "green",
               "title": {
                 "en": "Green"
+              },
+              "label": {
+                "en": "Green",
+                "fr": "Vert"
               }
             }
           ]
@@ -1122,7 +1167,8 @@
           "max": 100,
           "step": 10,
           "title": {
-            "en": "Brightness %"
+            "en": "Brightness %",
+            "fr": "Luminosité %"
           }
         }
       ],
@@ -1196,21 +1242,37 @@
               "id": "auto",
               "title": {
                 "en": "Auto (Normal + flows)"
+              },
+              "label": {
+                "en": "Auto (Normal + flows)",
+                "fr": "Auto (normal + flows)"
               }
             },
             {
               "id": "magic",
               "title": {
                 "en": "Magic (Scene only)"
+              },
+              "label": {
+                "en": "Magic (Scene only)",
+                "fr": "Magique (scène uniquement)"
               }
             },
             {
               "id": "both",
               "title": {
                 "en": "Both (Load + scene)"
+              },
+              "label": {
+                "en": "Both (Load + scene)",
+                "fr": "Les deux (charge + scène)"
               }
             }
-          ]
+          ],
+          "title": {
+            "en": "Mode",
+            "fr": "Mode"
+          }
         }
       ],
       "titleFormatted": {

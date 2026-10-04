@@ -23,11 +23,15 @@ function checkSource(src, file = '') {
     const name = decl.match(/^(?:const|let|var)\s+(\w+)/)[1];
     // A Set/Map that is never mutated (.add/.set) is a constant lookup table, not a cache.
     if (!new RegExp(`${name}\\.(add|set)\\s*\\(`).test(code)) { continue; }
+    // Explicit, reviewed bound written next to the code: `// r21-bounded: <name> <reason>`.
+    if (new RegExp(`r21-bounded:\\s*${name}\\b`).test(src)) { continue; }
     const bounded = new RegExp(`${name}\\.(delete|clear)\\s*\\(|${name}\\.size\\s*[<>]=?|MAX|TTL|maxSize|ttl`, 'i').test(code);
     if (!bounded) { issues.push(`module-level ${name} has no cap/TTL/eviction`); }
   }
   const isDeviceLike = /drivers\/|Device|Base\.js$/.test(file);
-  if (isDeviceLike && /\.(on|addListener)\(\s*['"`]/.test(code) && !/\.(removeListener|off|removeAllListeners)\s*\(/.test(code)) {
+  // Short-lived http request/response/stream objects die with the request: not device listeners.
+  const longLived = code.replace(/\b(req|res|request|response|stream|socket)\.on\(/g, '');
+  if (isDeviceLike && /\.(on|addListener)\(\s*['"`]/.test(longLived) && !/\.(removeListener|off|removeAllListeners)\s*\(/.test(code)) {
     issues.push('listeners registered without any removal (onDeleted/onUninit)');
   }
   const loops = code.match(/while\s*\(\s*true\s*\)\s*\{[\s\S]*?\n\s*\}|for\s*\(\s*;\s*;\s*\)\s*\{[\s\S]*?\n\s*\}/g) || [];

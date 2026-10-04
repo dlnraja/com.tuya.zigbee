@@ -7,7 +7,8 @@
     "de": "Anwesenheit in Zone erzwingen"
   },
   "hint": {
-    "en": "Force presence state in a Virtual Presence Detector zone (present or clear)"
+    "en": "Force presence state in a Virtual Presence Detector zone (present or clear)",
+    "fr": "Forcer l'état de présence d'une zone du détecteur de présence virtuel (présent ou libre)"
   },
   "args": [
     {
@@ -19,19 +20,28 @@
       "name": "force_state",
       "type": "dropdown",
       "title": {
-        "en": "Force state"
+        "en": "Force state",
+        "fr": "État forcé"
       },
       "values": [
         {
           "id": "present",
           "title": {
             "en": "Present"
+          },
+          "label": {
+            "en": "Present",
+            "fr": "Présent"
           }
         },
         {
           "id": "clear",
           "title": {
             "en": "Clear"
+          },
+          "label": {
+            "en": "Clear",
+            "fr": "Libre"
           }
         }
       ]
@@ -42,18 +52,21 @@
       "name": "zone_name",
       "type": "string",
       "title": {
-        "en": "Zone name"
+        "en": "Zone name",
+        "fr": "Nom de la zone"
       }
     },
     {
       "name": "new_state",
       "type": "string",
       "title": {
-        "en": "New state"
+        "en": "New state",
+        "fr": "Nouvel état"
       }
     }
   ],
   "titleFormatted": {
-    "en": "Force presence in zone [[force_state]]"
+    "en": "Force presence in zone [[force_state]]",
+    "fr": "Forcer la présence dans la zone [[force_state]]"
   }
 }

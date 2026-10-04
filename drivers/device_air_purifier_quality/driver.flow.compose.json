@@ -228,7 +228,8 @@
     {
       "id": "device_air_purifier_quality_air_quality_comp_1e649",
       "title": {
-        "en": "CO !{{is|is not}} above"
+        "en": "CO !{{is|is not}} above",
+        "fr": "Le CO !{{est|n'est pas}} au-dessus de"
       },
       "args": [
         {
@@ -236,11 +237,20 @@
           "type": "number",
           "min": 0,
           "max": 5000,
-          "step": 50
+          "step": 50,
+          "title": {
+            "en": "Co2",
+            "fr": "Co2"
+          },
+          "placeholder": {
+            "en": "0–5000",
+            "fr": "0–5000"
+          }
         }
       ],
       "titleFormatted": {
-        "en": "CO !{{is|is not}} above [[co2]]"
+        "en": "CO !{{is|is not}} above [[co2]]",
+        "fr": "Le CO !{{est|n'est pas}} au-dessus de [[co2]]"
       }
     },
     {
@@ -257,7 +267,15 @@
           "type": "number",
           "min": -40,
           "max": 80,
-          "step": 0.5
+          "step": 0.5,
+          "title": {
+            "en": "Temperature",
+            "fr": "Température"
+          },
+          "placeholder": {
+            "en": "-40–80",
+            "fr": "-40–80"
+          }
         }
       ],
       "titleFormatted": {
@@ -281,7 +299,15 @@
           "type": "number",
           "min": 0,
           "max": 100,
-          "step": 1
+          "step": 1,
+          "title": {
+            "en": "Humidity",
+            "fr": "Humidité"
+          },
+          "placeholder": {
+            "en": "0–100",
+            "fr": "0–100"
+          }
         }
       ],
       "titleFormatted": {

@@ -321,15 +321,17 @@ class WiFiCameraDevice extends Homey.Device {
   _registerFlowCards() {
     try {
       const privacyCard = (() => { try { return this.homey.flow.getActionCard('wifi_camera_set_privacy'); } catch (e) { return null; } })();
-      if (privacyCard) {privacyCard.registerRunListener(async (args) => this._setDP(DP.PRIVACY_MODE, args.mode === 'on'));}
+      if (privacyCard) {privacyCard.registerRunListener(async (args) => ((args && args.device) || this)._setDP(DP.PRIVACY_MODE, args.mode === 'on'));}
       
       const nvCard = (() => { try { return this.homey.flow.getActionCard('wifi_camera_set_night_vision'); } catch (e) { return null; } })();
-      if (nvCard) {nvCard.registerRunListener(async (args) => this._setDP(DP.NIGHT_VISION, parseInt(args.mode, 10)));}
+      if (nvCard) {nvCard.registerRunListener(async (args) => ((args && args.device) || this)._setDP(DP.NIGHT_VISION, parseInt(args.mode, 10)));}
       
       const ptzCard = (() => { try { return this.homey.flow.getActionCard('wifi_camera_ptz_move'); } catch (e) { return null; } })();
       if (ptzCard) {ptzCard.registerRunListener(async (args) => {
-        await this._setDP(DP.PTZ_CONTROL, args.direction);
-        safeSetTimeout(this, () => { if (this._destroyed) {return;} this._setDP(DP.PTZ_STOP, true).catch(() => {}); }, 1000);
+        // WHY: shared listener — target the Flow's device (multi-camera setups).
+        const dev = (args && args.device) || this;
+        await dev._setDP(DP.PTZ_CONTROL, args.direction);
+        safeSetTimeout(dev, () => { if (dev._destroyed) {return;} dev._setDP(DP.PTZ_STOP, true).catch(() => {}); }, 1000);
       });}
     } catch (e) { this.error('[WIFI-CAM] Flow card registration:', e.message); }
   }

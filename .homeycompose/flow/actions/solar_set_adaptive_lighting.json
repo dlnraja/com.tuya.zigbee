@@ -7,7 +7,8 @@
     "de": "Solar-Sync-Modus einstellen"
   },
   "hint": {
-    "en": "Sets the Solar Sync white-temperature mode from current sun elevation"
+    "en": "Sets the Solar Sync white-temperature mode from current sun elevation",
+    "fr": "Règle le mode de température de blanc Solar Sync selon l'élévation actuelle du soleil"
   },
   "args": [
     {
@@ -21,30 +22,50 @@
           "id": "auto",
           "title": {
             "en": "Auto (follow sun)"
+          },
+          "label": {
+            "en": "Auto (follow sun)",
+            "fr": "Auto (suit le soleil)"
           }
         },
         {
           "id": "day",
           "title": {
             "en": "Daylight (6500K)"
+          },
+          "label": {
+            "en": "Daylight (6500K)",
+            "fr": "Lumière du jour (6500K)"
           }
         },
         {
           "id": "warm",
           "title": {
             "en": "Warm (2700K)"
+          },
+          "label": {
+            "en": "Warm (2700K)",
+            "fr": "Chaud (2700K)"
           }
         },
         {
           "id": "golden",
           "title": {
             "en": "Golden hour (3200K)"
+          },
+          "label": {
+            "en": "Golden hour (3200K)",
+            "fr": "Heure dorée (3200K)"
           }
         },
         {
           "id": "night",
           "title": {
             "en": "Night (2200K)"
+          },
+          "label": {
+            "en": "Night (2200K)",
+            "fr": "Nuit (2200K)"
           }
         }
       ]
@@ -53,12 +74,17 @@
       "name": "transition_seconds",
       "type": "number",
       "title": {
-        "en": "Transition duration (seconds)"
+        "en": "Transition duration (seconds)",
+        "fr": "Durée de transition (secondes)"
       },
       "min": 0,
       "max": 3600,
       "step": 30,
-      "value": 300
+      "value": 300,
+      "placeholder": {
+        "en": "0–3600",
+        "fr": "0–3600"
+      }
     }
   ],
   "tokens": [
@@ -66,14 +92,16 @@
       "name": "elevation",
       "type": "number",
       "title": {
-        "en": "Current solar elevation"
+        "en": "Current solar elevation",
+        "fr": "Élévation solaire actuelle"
       }
     },
     {
       "name": "color_temp",
       "type": "number",
       "title": {
-        "en": "Target color temperature (K)"
+        "en": "Target color temperature (K)",
+        "fr": "Température de couleur cible (K)"
       }
     }
   ],

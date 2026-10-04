@@ -7,7 +7,8 @@
     "de": "Tägliche Energieübersicht bereit"
   },
   "hint": {
-    "en": "Triggers when the daily energy usage summary is calculated"
+    "en": "Triggers when the daily energy usage summary is calculated",
+    "fr": "Se déclenche quand le bilan de consommation journalier est calculé"
   },
   "args": [],
   "tokens": [
@@ -15,35 +16,40 @@
       "name": "total_energy_wh",
       "type": "number",
       "title": {
-        "en": "Total energy (Wh)"
+        "en": "Total energy (Wh)",
+        "fr": "Énergie totale (Wh)"
       }
     },
     {
       "name": "total_energy_kwh",
       "type": "number",
       "title": {
-        "en": "Total energy (kWh)"
+        "en": "Total energy (kWh)",
+        "fr": "Énergie totale (kWh)"
       }
     },
     {
       "name": "avg_power_w",
       "type": "number",
       "title": {
-        "en": "Average power (W)"
+        "en": "Average power (W)",
+        "fr": "Puissance moyenne (W)"
       }
     },
     {
       "name": "peak_power_w",
       "type": "number",
       "title": {
-        "en": "Peak power (W)"
+        "en": "Peak power (W)",
+        "fr": "Puissance de pointe (W)"
       }
     },
     {
       "name": "device_count",
       "type": "number",
       "title": {
-        "en": "Device count"
+        "en": "Device count",
+        "fr": "Nombre d'appareils"
       }
     },
     {
@@ -56,6 +62,7 @@
     }
   ],
   "titleFormatted": {
-    "en": "Daily energy summary ready"
+    "en": "Daily energy summary ready",
+    "fr": "Résumé énergétique journalier prêt"
   }
 }

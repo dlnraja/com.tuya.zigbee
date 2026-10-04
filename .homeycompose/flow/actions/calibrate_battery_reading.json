@@ -34,7 +34,11 @@
         "de": "Die bekannte genaue Spannung, gemessen mit einem Multimeter"
       },
       "min": 0,
-      "max": 60
+      "max": 60,
+      "placeholder": {
+        "en": "0–60",
+        "fr": "0–60"
+      }
     },
     {
       "name": "reference_percentage",
@@ -52,6 +56,10 @@
         "fr": "Le pourcentage réel de la batterie à la tension mesurée",
         "nl": "Het werkelijke batterijpercentage bij de gemeten spanning",
         "de": "Der tatsächliche Batterieprozentswert bei der gemessenen Spannung"
+      },
+      "placeholder": {
+        "en": "0–100",
+        "fr": "0–100"
       }
     }
   ],

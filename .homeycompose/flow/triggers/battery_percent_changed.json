@@ -27,5 +27,9 @@
       "name": "device",
       "filter": "capabilities=measure_battery"
     }
-  ]
+  ],
+  "titleFormatted": {
+    "en": "Battery percentage changed ([[device]])",
+    "fr": "Pourcentage batterie modifié ([[device]])"
+  }
 }

@@ -10,7 +10,8 @@
       },
       "args": [],
       "titleFormatted": {
-        "en": "Turn on"
+        "en": "Turn on",
+        "fr": "Allumer"
       }
     },
     {
@@ -23,7 +24,8 @@
       },
       "args": [],
       "titleFormatted": {
-        "en": "Turn off"
+        "en": "Turn off",
+        "fr": "Éteindre"
       }
     },
     {
@@ -55,10 +57,15 @@
           "name": "temperature",
           "type": "number",
           "title": {
-            "en": "Temperature (°C)"
+            "en": "Temperature (°C)",
+            "fr": "Température (°C)"
           },
           "min": -40,
-          "max": 125
+          "max": 125,
+          "placeholder": {
+            "en": "-40–125",
+            "fr": "-40–125"
+          }
         }
       ],
       "titleFormatted": {

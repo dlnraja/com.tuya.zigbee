@@ -10,7 +10,8 @@
       },
       "args": [],
       "titleFormatted": {
-        "en": "Turned on"
+        "en": "Turned on",
+        "fr": "Allumé"
       }
     },
     {
@@ -23,7 +24,8 @@
       },
       "args": [],
       "titleFormatted": {
-        "en": "Turned off"
+        "en": "Turned off",
+        "fr": "Éteint"
       }
     },
     {
@@ -39,14 +41,16 @@
           "name": "power",
           "type": "number",
           "title": {
-            "en": "Power (W)"
+            "en": "Power (W)",
+            "fr": "Puissance (W)"
           },
           "example": 100
         }
       ],
       "args": [],
       "titleFormatted": {
-        "en": "Power changed ({power})"
+        "en": "Power changed ({power})",
+        "fr": "Puissance modifiée ({power})"
       }
     },
     {
@@ -62,14 +66,16 @@
           "name": "voltage",
           "type": "number",
           "title": {
-            "en": "Voltage (V)"
+            "en": "Voltage (V)",
+            "fr": "Tension (V)"
           },
           "example": 230
         }
       ],
       "args": [],
       "titleFormatted": {
-        "en": "Voltage changed ({voltage})"
+        "en": "Voltage changed ({voltage})",
+        "fr": "Tension modifiée ({voltage})"
       }
     },
     {
@@ -85,14 +91,16 @@
           "name": "current",
           "type": "number",
           "title": {
-            "en": "Current (A)"
+            "en": "Current (A)",
+            "fr": "Courant (A)"
           },
           "example": 0.5
         }
       ],
       "args": [],
       "titleFormatted": {
-        "en": "Current changed ({current})"
+        "en": "Current changed ({current})",
+        "fr": "Courant modifié ({current})"
       }
     }
   ],
@@ -107,7 +115,8 @@
       },
       "args": [],
       "titleFormatted": {
-        "en": "Is on"
+        "en": "Is on",
+        "fr": "Est allumé"
       }
     }
   ],

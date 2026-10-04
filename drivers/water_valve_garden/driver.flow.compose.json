@@ -4,31 +4,37 @@
       "id": "water_valve_garden_opened",
       "highlight": true,
       "title": {
-        "en": "Valve opened"
+        "en": "Valve opened",
+        "fr": "Vanne ouverte"
       },
       "args": [],
       "titleFormatted": {
-        "en": "Valve opened"
+        "en": "Valve opened",
+        "fr": "Vanne ouverte"
       }
     },
     {
       "id": "water_valve_garden_closed",
       "title": {
-        "en": "Valve closed"
+        "en": "Valve closed",
+        "fr": "Vanne fermée"
       },
       "args": [],
       "titleFormatted": {
-        "en": "Valve closed"
+        "en": "Valve closed",
+        "fr": "Vanne fermée"
       }
     },
     {
       "id": "water_valve_garden_battery_low",
       "title": {
-        "en": "Battery is low"
+        "en": "Battery is low",
+        "fr": "La batterie est faible"
       },
       "args": [],
       "titleFormatted": {
-        "en": "Battery is low"
+        "en": "Battery is low",
+        "fr": "La batterie est faible"
       }
     },
     {
@@ -56,11 +62,13 @@
     {
       "id": "water_valve_garden_is_open",
       "title": {
-        "en": "Valve !{{is|is not}} open"
+        "en": "Valve !{{is|is not}} open",
+        "fr": "La vanne !{{est|n'est pas}} ouverte"
       },
       "args": [],
       "titleFormatted": {
-        "en": "Valve !{{is|is not}} open"
+        "en": "Valve !{{is|is not}} open",
+        "fr": "La vanne !{{est|n'est pas}} ouverte"
       }
     }
   ],
@@ -68,31 +76,37 @@
     {
       "id": "water_valve_garden_open",
       "title": {
-        "en": "Open valve"
+        "en": "Open valve",
+        "fr": "Ouvrir la vanne"
       },
       "args": [],
       "titleFormatted": {
-        "en": "Open valve"
+        "en": "Open valve",
+        "fr": "Ouvrir la vanne"
       }
     },
     {
       "id": "water_valve_garden_close",
       "title": {
-        "en": "Close valve"
+        "en": "Close valve",
+        "fr": "Fermer la vanne"
       },
       "args": [],
       "titleFormatted": {
-        "en": "Close valve"
+        "en": "Close valve",
+        "fr": "Fermer la vanne"
       }
     },
     {
       "id": "water_valve_garden_toggle",
       "title": {
-        "en": "Toggle valve"
+        "en": "Toggle valve",
+        "fr": "Basculer la vanne"
       },
       "args": [],
       "titleFormatted": {
-        "en": "Toggle valve"
+        "en": "Toggle valve",
+        "fr": "Basculer la vanne"
       }
     }
   ]

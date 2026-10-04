@@ -14,7 +14,11 @@
         "en": "Start (HH:MM)",
         "fr": "Début (HH:MM)"
       },
-      "value": "22:00"
+      "value": "22:00",
+      "placeholder": {
+        "en": "Start (HH:MM)",
+        "fr": "Début (HH:MM)"
+      }
     },
     {
       "type": "text",
@@ -23,7 +27,11 @@
         "en": "End (HH:MM)",
         "fr": "Fin (HH:MM)"
       },
-      "value": "07:00"
+      "value": "07:00",
+      "placeholder": {
+        "en": "End (HH:MM)",
+        "fr": "Fin (HH:MM)"
+      }
     }
   ],
   "titleFormatted": {

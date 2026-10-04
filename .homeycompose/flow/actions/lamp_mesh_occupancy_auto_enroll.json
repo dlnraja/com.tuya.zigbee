@@ -18,7 +18,11 @@
         "en": "Zone id",
         "fr": "Id zone"
       },
-      "value": "home"
+      "value": "home",
+      "placeholder": {
+        "en": "Zone id",
+        "fr": "Id zone"
+      }
     },
     {
       "type": "number",
@@ -29,7 +33,11 @@
       },
       "min": 2,
       "max": 12,
-      "value": 6
+      "value": 6,
+      "placeholder": {
+        "en": "2–12",
+        "fr": "2–12"
+      }
     }
   ],
   "titleFormatted": {

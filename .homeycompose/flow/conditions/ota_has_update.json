@@ -20,5 +20,9 @@
       },
       "filter": "driver_id=*"
     }
-  ]
+  ],
+  "titleFormatted": {
+    "en": "Device !{{has|has no}} OTA update available ([[device]])",
+    "fr": "Device !{{a|n'a pas}} de MàJ OTA disponible ([[device]])"
+  }
 }

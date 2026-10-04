@@ -120,21 +120,37 @@
               "id": "manual",
               "title": {
                 "en": "Manual"
+              },
+              "label": {
+                "en": "Manual",
+                "fr": "Manuel"
               }
             },
             {
               "id": "program",
               "title": {
                 "en": "Program"
+              },
+              "label": {
+                "en": "Program",
+                "fr": "Programme"
               }
             },
             {
               "id": "eco",
               "title": {
                 "en": "Eco"
+              },
+              "label": {
+                "en": "Eco",
+                "fr": "Éco"
               }
             }
-          ]
+          ],
+          "title": {
+            "en": "Mode",
+            "fr": "Mode"
+          }
         }
       ],
       "titleFormatted": {
@@ -163,21 +179,37 @@
               "id": "manual",
               "title": {
                 "en": "Manual"
+              },
+              "label": {
+                "en": "Manual",
+                "fr": "Manuel"
               }
             },
             {
               "id": "program",
               "title": {
                 "en": "Program"
+              },
+              "label": {
+                "en": "Program",
+                "fr": "Programme"
               }
             },
             {
               "id": "eco",
               "title": {
                 "en": "Eco"
+              },
+              "label": {
+                "en": "Eco",
+                "fr": "Éco"
               }
             }
-          ]
+          ],
+          "title": {
+            "en": "Mode",
+            "fr": "Mode"
+          }
         }
       ],
       "titleFormatted": {
@@ -203,7 +235,11 @@
           "max": 35,
           "step": 1,
           "label": "°C",
-          "labelDecimals": 0
+          "labelDecimals": 0,
+          "title": {
+            "en": "Temperature",
+            "fr": "Température"
+          }
         }
       ],
       "titleFormatted": {

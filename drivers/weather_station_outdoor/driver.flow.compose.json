@@ -144,7 +144,15 @@
           "name": "temperature",
           "type": "number",
           "min": -40,
-          "max": 60
+          "max": 60,
+          "title": {
+            "en": "Temperature",
+            "fr": "Température"
+          },
+          "placeholder": {
+            "en": "-40–60",
+            "fr": "-40–60"
+          }
         }
       ],
       "titleFormatted": {
@@ -163,7 +171,15 @@
           "name": "temperature",
           "type": "number",
           "min": -40,
-          "max": 60
+          "max": 60,
+          "title": {
+            "en": "Temperature",
+            "fr": "Température"
+          },
+          "placeholder": {
+            "en": "-40–60",
+            "fr": "-40–60"
+          }
         }
       ],
       "titleFormatted": {

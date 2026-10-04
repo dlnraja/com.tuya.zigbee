@@ -44,5 +44,9 @@
       },
       "example": "boot_dump"
     }
-  ]
+  ],
+  "titleFormatted": {
+    "en": "Device came back after a power cut ([[device]])",
+    "fr": "L'appareil est revenu après une coupure ([[device]])"
+  }
 }

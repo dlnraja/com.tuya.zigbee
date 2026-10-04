@@ -8,7 +8,8 @@
   },
   "hint": {
     "en": "Checks whether a Homey app is currently running. Inspired by Device Capabilities app.",
-    "nl": "Controleert of een Homey app momenteel draait. Geinspireerd door Device Capabilities app."
+    "nl": "Controleert of een Homey app momenteel draait. Geinspireerd door Device Capabilities app.",
+    "fr": "Vérifie si une app Homey est en cours d'exécution. Inspiré de l'app Device Capabilities."
   },
   "args": [
     {
@@ -16,7 +17,8 @@
       "type": "text",
       "title": {
         "en": "App ID",
-        "nl": "App ID"
+        "nl": "App ID",
+        "fr": "ID de l'app"
       },
       "placeholder": {
         "en": "e.g. com.dlnraja.tuya.zigbee",

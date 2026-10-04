@@ -3,21 +3,25 @@
     {
       "id": "wifi_garage_door_wifi_garage_opened",
       "title": {
-        "en": "Garage opened"
+        "en": "Garage opened",
+        "fr": "Garage ouvert"
       },
       "args": [],
       "titleFormatted": {
-        "en": "Garage opened"
+        "en": "Garage opened",
+        "fr": "Garage ouvert"
       }
     },
     {
       "id": "wifi_garage_door_wifi_garage_closed",
       "title": {
-        "en": "Garage closed"
+        "en": "Garage closed",
+        "fr": "Garage fermé"
       },
       "args": [],
       "titleFormatted": {
-        "en": "Garage closed"
+        "en": "Garage closed",
+        "fr": "Garage fermé"
       }
     }
   ],
@@ -25,11 +29,13 @@
     {
       "id": "wifi_garage_door_wifi_garage_is_open",
       "title": {
-        "en": "Garage is open"
+        "en": "Garage is open",
+        "fr": "Le garage est ouvert"
       },
       "args": [],
       "titleFormatted": {
-        "en": "Garage is open"
+        "en": "Garage is open",
+        "fr": "Le garage est ouvert"
       }
     }
   ],
