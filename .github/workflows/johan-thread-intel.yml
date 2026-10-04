@@ -64,4 +64,4 @@ jobs:
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           node scripts/ci/safe-auto-commit.js --id=johan-thread-intel \
             --message="chore(leads): incremental upstream thread index" \
-            --paths="data/leads/johan-canonical-index.json"
+            --paths="data/leads/johan-canonical-index.json data/progress/ledger.json"
