@@ -385,6 +385,19 @@
         "en": "Use if W/kWh readings are 10× too high or low.",
         "fr": "Si W/kWh sont ×10 trop hauts ou bas."
       }
+    },
+    {
+      "id": "tuya_time_sync",
+      "type": "checkbox",
+      "value": true,
+      "label": {
+        "en": "Send time to the device",
+        "fr": "Envoyer l'heure à l'appareil"
+      },
+      "hint": {
+        "en": "Turn off only if the device misbehaves after a time sync (clock jumps, schedule resets).",
+        "fr": "Désactivez seulement si l'appareil se comporte mal après une synchronisation de l'heure (horloge qui saute, programme réinitialisé)."
+      }
     }
   ],
   "pair": [

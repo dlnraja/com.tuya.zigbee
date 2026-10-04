@@ -637,6 +637,19 @@
         "en": "Offset written to TRV DP47. Some firmwares (_TZE204_ogx8u5z6) use 0.1 °C steps.",
         "fr": "Décalage écrit sur DP47. Certains firmwares (_TZE204_ogx8u5z6) utilisent des pas de 0,1 °C."
       }
+    },
+    {
+      "id": "tuya_time_sync",
+      "type": "checkbox",
+      "value": true,
+      "label": {
+        "en": "Send time to the device",
+        "fr": "Envoyer l'heure à l'appareil"
+      },
+      "hint": {
+        "en": "Turn off only if the device misbehaves after a time sync (clock jumps, schedule resets).",
+        "fr": "Désactivez seulement si l'appareil se comporte mal après une synchronisation de l'heure (horloge qui saute, programme réinitialisé)."
+      }
     }
   ],
   "images": {
