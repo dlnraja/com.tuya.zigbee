@@ -89,7 +89,7 @@
  },
  "master_queue": {
   "note": "Single master checklist of ALL user requests since the start. Daily resumption reads this FIRST. Tick (verified) only after verification.",
-  "updated": "2026-10-04T01:51:12.062Z",
+  "updated": "2026-10-04T01:58:19.072Z",
   "items": [
    {
     "id": 1,
@@ -287,7 +287,7 @@
     "id": 33,
     "item": "Queue9 lazy-load app.json data (size 3.70/4.00 MB) | r4-6: drivers expose methods/features before full init (lazy, safe)",
     "status": "pending",
-    "evidence": ""
+    "evidence": "merged into spec 010"
    },
    {
     "id": 34,
@@ -628,23 +628,50 @@
    {
     "id": 90,
     "item": "R20 identifier normalization: research Homey SDK/zigbee-clusters/homey-zigbeedriver, Z2M, ZHA, deCONZ, SmartThings matching; single normalizer at read/match; keep originals; gate for colliding normalized couples/malformed; never break current matches | clarified: respect each field format (no blanket transform); audit hidden case/char collisions across drivers and mfr reported with different case/padding; tolerant comparison only at match time",
-    "status": "pending",
-    "evidence": ""
+    "status": "in-progress",
+    "evidence": "research + docs/rules/R20_IDENTIFIER_MATCHING.md; gate check:identifiers (0 hidden case collisions, 7 deliberate encoding hedges); runtime tolerance exists in TuyaNormalizer/fingerprint-matcher; remaining: mojibake (cp1252) repair at compare time"
    },
    {
     "id": 91,
     "item": "PCr2-1 remaining: HEIMAN RC-EF-3.0, iHorn LH02121, SONOFF MINI-ZBRBS, Signify RDM001 exact drivers; eWeLight TS0502B needs real interview",
     "status": "pending",
     "evidence": ""
+   },
+   {
+    "id": 92,
+    "item": "Stable publish version bump (Homey rejected duplicate 5.12.359)",
+    "status": "verified",
+    "evidence": "stable 0eb2d31d91 + fbabec68d8: bump before build, retry on already-published, commit-back re-applied on tip; run 37169372245 uploaded 5.12.360"
+   },
+   {
+    "id": 93,
+    "item": "R21 memory/runtime safety rule + static gate check:runtime-safety (changed files)",
+    "status": "verified",
+    "evidence": "tools/ci/runtime-safety-gate.js + test; constitution R21"
+   },
+   {
+    "id": 94,
+    "item": "R22 modular architecture / sharded data / lazy loading: spec 010 (T1-T8), measure boot+heap | design from Homey SDK v3 docs/guides, homey-zigbeedriver, zigbee-clusters, Athom brand apps, Johan, Aqara, IKEA, Sonoff, Hue, community apps (T0), own implementation + credits (also for flows and memory work)",
+    "status": "pending",
+    "evidence": "specs/010-modular-lazy-data"
+   },
+   {
+    "id": 95,
+    "item": "Matter Bridge readiness (HomeKit retired from Homey v13.5.1, removed March 2027): verify Matter Bridge docs for supported classes/capabilities; audit drivers for standard class + standard capabilities; mirror a standard capability additively where only custom exists; never degrade",
+    "status": "pending",
+    "evidence": "user note docs/user/HOMEKIT_TO_MATTER_BRIDGE.md"
    }
   ],
   "next": [
-   "R20 audit: hidden case/char collisions + tolerant matcher (research Homey/Z2M/ZHA/deCONZ/ST first)",
-   "PCr2-1 remaining exact drivers (RC-EF-3.0, LH02121, MINI-ZBRBS, RDM001); port Zbeacon drivers to stable",
+   "spec 010 T0 research design sources",
+   "Matter Bridge audit (docs first, then class/capability audit script)",
+   "spec 010 T1 baseline perf + golden couple resolution",
+   "PCr2-1 remaining exact drivers (RC-EF-3.0, LH02121, MINI-ZBRBS, RDM001); Zbeacon drivers to stable",
    "PCr2-2 52 drivers required/optional clusters",
    "PCr2-4 Green Power + proprietary clusters -> native matrix",
    "r4-2/r4-4 button mode + TS0041 scene toggle",
-   "flow cards completion; ledger wiring into workflows"
+   "flow cards; ledger wiring into workflows",
+   "R20 cp1252 mojibake repair at compare time"
   ],
   "user_actions": [
    "Rotate/revoke the Gmail app password and old GitHub PAT seen in clear text in July opencode/MiniMax prompts (not for agents)"
@@ -671,6 +698,14 @@
     "run": 37168670987,
     "version": "stable app.json 5.12.359 (Test promotion succeeded)",
     "result": "success"
+   },
+   {
+    "date": "2026-10-04T03:56+02:00",
+    "branch": "stable-v5",
+    "commit": "0eb2d31d91",
+    "run": 37169372245,
+    "version": "5.12.360",
+    "result": "success (first real upload since 5.12.359; includes 1d06791f0d, 78bf4a93af, af8596d57b)"
    }
   ]
  }
