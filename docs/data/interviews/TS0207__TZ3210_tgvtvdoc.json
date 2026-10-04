@@ -1,0 +1,44 @@
+{
+  "manufacturerName": "_TZ3210_tgvtvdoc",
+  "productId": "TS0207",
+  "source": "pc-harvest-r2 (normalized interview facts; origins: Homey forum, GitHub issues, user diagnostics)",
+  "interviewsMerged": 1,
+  "powerSource": null,
+  "firmware": null,
+  "endpoints": {
+    "1": {
+      "inputClusters": [
+        0,
+        1,
+        4,
+        5,
+        1280,
+        61184
+      ],
+      "outputClusters": [
+        3,
+        4,
+        6,
+        10,
+        25,
+        4096
+      ]
+    }
+  },
+  "inputClusters": [
+    0,
+    1,
+    4,
+    5,
+    1280,
+    61184
+  ],
+  "outputClusters": [
+    3,
+    4,
+    6,
+    10,
+    25,
+    4096
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "manufacturerName": "TUYATEC-dxnohkpd",
+  "productId": "RH3040",
+  "source": "pc-harvest-r2 (normalized interview facts; origins: Homey forum, GitHub issues, user diagnostics)",
+  "interviewsMerged": 1,
+  "powerSource": null,
+  "firmware": null,
+  "endpoints": {
+    "1": {
+      "inputClusters": [
+        0,
+        1,
+        3,
+        1280
+      ],
+      "outputClusters": []
+    }
+  },
+  "inputClusters": [
+    0,
+    1,
+    3,
+    1280
+  ],
+  "outputClusters": []
+}
