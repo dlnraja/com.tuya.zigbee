@@ -76,6 +76,22 @@ class CurtainMotorTiltDriver extends ZigBeeDriver {
       await device.setCapabilityValue('windowcoverings_set', position / 100);
       return true;
     });
+
+    // P2803: Open/Close/Stop/Set position cards were left to the generic manifest
+    // handler, which cannot map "tilt_open"-style ids and returned false (silent no-op).
+    // Drive the cover through its own capability listeners instead (lazy, non-blocking).
+    try {
+      const { wireCoverActions, runCoverPosition } = require('../../lib/covers/CoverFlowActions');
+      wireCoverActions(this, {
+        open: ['air_purifier_curtain_motor_tilt_open'],
+        close: ['air_purifier_curtain_motor_tilt_close'],
+        stop: ['air_purifier_curtain_motor_tilt_stop']
+      });
+      regDev('air_purifier_curtain_motor_tilt_set_position', async (args) => {
+        if (!args || !args.device) {return false;}
+        return runCoverPosition(args.device, args.position);
+      });
+    } catch (err) { this.error('[FLOW] cover action wiring failed:', err.message); }
   }
 }
 
