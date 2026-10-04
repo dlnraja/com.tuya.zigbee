@@ -89,7 +89,7 @@
   },
   "master_queue": {
     "note": "Single master checklist of ALL user requests since the start. Daily resumption reads this FIRST. Tick (verified) only after verification.",
-    "updated": "2026-10-04 07:20 Paris",
+    "updated": "2026-10-04T07:55+02:00",
     "items": [
       {
         "id": 1,
@@ -322,8 +322,9 @@
       {
         "id": 39,
         "item": "PCr2-2 52 drivers: required clusters -> optional beyond interview",
-        "status": "pending",
-        "evidence": "user priority 2"
+        "status": "done",
+        "evidence": "tools/audit/w5-interview-clusters.js + docs/rules/W5_INTERVIEW_CLUSTER_AUDIT_2026-10-04.md: Homey matches on mfr+pid only and ZCLNode exposes manifest ∩ device clusters, so compose extras are already optional at runtime; nothing removed; interview-only clusters listed as review candidates (master eaf055a000, stable 7e549c0640, bastien b7b5274cdc)",
+        "updated": "2026-10-04"
       },
       {
         "id": 40,
@@ -334,8 +335,9 @@
       {
         "id": 41,
         "item": "PCr2-4 Green Power 0x0021 + 0xFC57/0xFC00/01/03/0x1888 facts -> native matrix",
-        "status": "pending",
-        "evidence": "user priority 4"
+        "status": "done",
+        "evidence": "109 normalized interviews in docs/data/interviews; native-matrix OBSERVED_NAMES 0x0021/0xFC00/0xFC57/0xFC01/0xFC03/0x1888; data/native-matrix.json + docs/NATIVE_MATRIX.md regenerated (61 clusters/122 interviews, gate OK, master only: stable/bastien have no matrix); Green Power 0x0021 seen in 32 interviews",
+        "updated": "2026-10-04"
       },
       {
         "id": 42,
@@ -346,26 +348,30 @@
       {
         "id": 43,
         "item": "PCr2 Johan PRs to port (#1406,#1346,#1121,#1017,#1065,#1106,#1237,#1210,#774,#1431,#1428,#1350,#1230,#1171,#145)",
-        "status": "pending",
-        "evidence": "ledger task:johan-pr-port-*"
+        "status": "done",
+        "evidence": "all 15 PRs closed/unmerged upstream; every Tuya mfr already present; ported OWON THS317-ET-TY _TZE200_iq4ygaai+TS0201 -> temphumidsensor (master 0b5ea16442, bastien c4470bdbd3; stable skipped: its motion_sensor already holds iq4ygaai+TS0201 -> would be a new collision); eWeLink SNZB-03 (#1171) already present; behaviour PRs #1406 (curtain inversion, risky for existing users) #1346 #1121 #1065 #1210 deferred",
+        "updated": "2026-10-04"
       },
       {
         "id": 44,
         "item": "PCr2 forum T140352 items (#2134,#2079,#2082,#2099,#2075,#2120,#2092/#2093) + 85 unrouted pairs",
-        "status": "pending",
-        "evidence": "ledger forum-post:*"
+        "status": "partial",
+        "evidence": "#2075 #2079 #2082 #2099 #2120 already routed to exactly one correct driver; #2092/#2093/#2134 are diagnostic-report complaints (reports not readable from box); 85 unrouted pairs file is on user PC only",
+        "updated": "2026-10-04"
       },
       {
         "id": 45,
         "item": "PCr2 Kimi backlog",
-        "status": "pending",
-        "evidence": ""
+        "status": "partial",
+        "evidence": "audited: ULTIMATE_CHECK.js exists; 21 pid-only catch-all drivers have empty manufacturerName (not filled without per-couple sources); air_purifier_dimmer driver.js registers trigger ids with double prefix (air_purifier_dimmer_dimmer_wall_1gang_*) vs compose ids -> harmless log noise, candidate fix; flow-coherence-audit 13 orphan-token lines remain",
+        "updated": "2026-10-04"
       },
       {
         "id": 46,
         "item": "PCr2 bleed button_wireless_2 / switch_1gang cartesian (only real collisions)",
         "status": "pending",
-        "evidence": ""
+        "evidence": "frozen per M3 unless a real collision is found; none found this round",
+        "updated": "2026-10-04"
       },
       {
         "id": 47,
@@ -896,20 +902,36 @@
         "id": 127,
         "item": "Dependency bump zigbee-clusters 3.8 / homey-zigbeedriver 2.2.18",
         "status": "blocked",
-        "evidence": "zigbee-clusters >=3.2.0 and homey-zigbeedriver 2.2.18 declare engines node >=22; Homey runs Node 22 only from v12.9.0 (Pro 2016-19 Node 16, Pro 2023/mini Node 18 below v12.9; apps.developer.homey.app/the-basics/app). App compatibility >=12.2.0 -> not committed. Options for the user: raise compatibility to >=12.9.0, or keep 2.6.0/2.2.17 (startUpOnOff already declared locally).",
+        "evidence": "zigbee-clusters >=3.2.0 and homey-zigbeedriver 2.2.18 declare engines node >=22; Homey runs Node 22 only from v12.9.0 (Pro 2016-19 Node 16, Pro 2023/mini Node 18 below v12.9; apps.developer.homey.app/the-basics/app). App compatibility >=12.2.0 -> not committed. Options for the user: raise compatibility to >=12.9.0, or keep 2.6.0/2.2.17 (startUpOnOff already declared locally). | user 2026-10-04 07:27: keep 2.6.0/2.2.17 and >=12.2.0; useful fixes backported locally instead (#128)",
         "origin": "executor-flowport 2026-10-04",
+        "updated": "2026-10-04"
+      },
+      {
+        "id": 128,
+        "item": "Local backports from zigbee-clusters 3.8 / homey-zigbeedriver 2.2.18: Time cluster 0x000A attributes (UTC 0xE2, validUntilTime id 9), finite transition-duration guard, dim read-back grace after changeDimLevel",
+        "status": "done",
+        "evidence": "lib/zigbee/ZigbeeLibBackports.js + test/zigbee-lib-backports.test.js; master 45c9927419, stable 6af311d998, bastien 8ca973dc3b",
+        "origin": "user 2026-10-04 07:27",
+        "updated": "2026-10-04"
+      },
+      {
+        "id": 129,
+        "item": "bastien anti-bot gate stale expectation p98-pay2byax-contact",
+        "status": "done",
+        "evidence": "now expects contact_sensor_zigbee like master + forbidden rule p2758; bastien 11fb98902d",
+        "origin": "user 2026-10-04 07:27",
         "updated": "2026-10-04"
       }
     ],
     "next": [
-      "recheck stable Test shows 5.12.365",
-      "#123 fp-collision baseline review (pre-existing curtain_motor_shutter / sensor_motion_presence)",
+      "verify master 37180863734 reaches Test (draft-to-test branch=master if draft stuck)",
+      "sacred pins for led_controller_spi_tuya / switch_presence_tuya / panel_switch_cover_tuya / sound_sensor_tuya once root app.json carries them",
+      "#44 85 unrouted pairs (file on user PC) + diagnostic reports #2092/#2093/#2134",
+      "#45 air_purifier_dimmer trigger id prefix fix (candidate)",
+      "#46 bleed only if real collision",
       "#99 triage CLI over source-proposals",
-      "#98 deps upgrade proposal (zigbee-clusters 3.8, homey-zigbeedriver 2.2.18) as reviewed change",
       "spec 010",
-      "PCr2",
       "#95 mirrors",
-      "sacred pins for switch_presence_tuya / panel_switch_cover_tuya / sound_sensor_tuya once root app.json has them",
       "_TZE284_rzdkn5rx when ZHA PR #5387 merges"
     ],
     "user_actions": [
@@ -1098,6 +1120,17 @@
         "at": "2026-10-04T07:26+02:00",
         "branch": "master",
         "note": "Auto-Publish 37178684262 (3c6cb2a480) still in progress; 37178968222 cancelled (superseded); 37179604880 (27520a280c) pending; Test page 9.0.1330"
+      },
+      {
+        "at": "2026-10-04T07:34+02:00",
+        "branch": "stable-v5",
+        "version": "5.12.366",
+        "note": "publish-stable 37179413932 left draft #278; draft-to-test 37179985579 promoted it; verified on public Test page"
+      },
+      {
+        "at": "2026-10-04T07:55+02:00",
+        "branch": "master",
+        "note": "37178684262/37179604880/37180219571/37180572285 cancelled (superseded, Athom draft processing slow); 37180863734 (0b5ea16442, contains all changes) in progress; Test page 9.0.1330"
       }
     ],
     "rules_reporting": "Every report includes a French 'Découvertes' section (source link + author, mechanism/symptom, what we did or why not); append to docs/progress/DISCOVERIES.md"
