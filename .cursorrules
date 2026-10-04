@@ -441,8 +441,453 @@ Merged without changing W1–W11 / P1–P7; where they overlap, they make an exi
 - R14. stable-v5 is the hardened, reliable line, inspired by the versions that worked best (forum
   feedback); master carries advanced features. Never copy one onto the other (clarifies R3).
 - R15. Scraping stays within free tiers (e.g. firecrawl free); prefer free tools and caches (R2).
-- R16. Malformed or synthetic manufacturerNames (e.g. `_TZE2841000000_*`, `_TZE28C1000000_*` from
-  PR #512) are never added and are rejected by the fingerprint gate.
+- R16. Malformed or synthetic manufacturerNames (wrong zero padding such as `_TZE28C100000_*`, placeholders,
+  PR #512 leftovers) are never added and are rejected by the fingerprint gate. Exception (user decision
+  2026-10-04): the verified long Tuya format `^_(TZE28C1000000|TZE2841000000)_[a-z0-9]{8}# Universal Tuya Zigbee - Cursor AI Rules
+# Project: com.dlnraja.tuya.zigbee
+
+> [!IMPORTANT]
+> **CRITICAL FIRST STEP:** You MUST read [AI_CONTEXT_MANDATE.md](AI_CONTEXT_MANDATE.md) at the start of your session (architecture, dual-app, pipeline).
+>
+> **MANDATORY SECOND STEP:** Read [docs/GLOBAL_INVESTIGATION_PLAN.md](docs/GLOBAL_INVESTIGATION_PLAN.md) — 22-section investigation methodology (forums/emails/GitHub/Z2M/ZHA, bug hunting, prevention).
+>
+> **MANDATORY THIRD STEP:** Read [docs/ARCHITECTURE_AI.md](docs/ARCHITECTURE_AI.md) — 3 AI layers: IDE Locale, GitHub Actions, Homey Runtime (SDK3, zero cloud).
+>
+> **LOCAL-FIRST (P2660 ALWAYS):** Homey Zigbee mesh → WiFi LAN → hub cid fallback → cloud only if user opts in. SSOT [config/architecture/local-first-ssot.json](config/architecture/local-first-ssot.json) · [docs/architecture/LOCAL_FIRST_SSOT.md](docs/architecture/LOCAL_FIRST_SSOT.md) · gate `npm run check:p2660`. Rule: `.cursor/rules/local-first-always.mdc`.
+>
+> **MANDATORY FOURTH STEP:** Read [docs/knowledge/DEVICE_TRUTH.md](docs/knowledge/DEVICE_TRUTH.md) then look up the driver in [docs/knowledge/device-truth.json](docs/knowledge/device-truth.json). Lock manufacturerName + productId. **Publish** = Homey app; **do not post** = no forum/PM replies.
+
+## CRITICAL FIRST STEPS
+1. Read `AI_CONTEXT_MANDATE.md`
+2. Read `docs/GLOBAL_INVESTIGATION_PLAN.md`
+3. Read `docs/ARCHITECTURE_AI.md`
+4. Read `docs/knowledge/DEVICE_TRUTH.md` and look up `docs/knowledge/device-truth.json` for the device in scope
+5. **P215:** For every feature / non-obvious line, answer Pourquoi / Comment / Pour qui / Quand / Contre quoi — see `docs/rules/WHY_INTERROGATION.md`. Use answers to enrich workflows, rules, docs, catalogs.
+6. **L99 ALWAYS:** Max-depth investigation + deep search on every prompt — see `.cursor/rules/l99-deep-investigation-always.mdc`. Silent forum enrich; cross-ref Z2M/ZHA/alt apps; TX/RX recursive; gates before done.
+7. **P2469 ALWAYS:** Every prompt / every fix → add or extend a **smart** `test/critical/pNNNN-*.test.js` that locks Contre quoi (anti-régression). Wire `npm run check:pNNNN`. No “tests later”. Rule: `.cursor/rules/unit-test-anti-regression-always.mdc` · doctrine: `docs/rules/UNIT_TEST_ANTI_REGRESSION.md` · gate: `npm run check:p2469` / `check:p246x`.
+8. **P2520 ALWAYS:** Enrichments are **variants / additions / complementary alternatives** — never overwrite/wipe/shrink. Union mfr+pid+caps; append settings by id. Helper `lib/enrichment/ComplementaryMerge.js`. Rule: `.cursor/rules/complementary-variant-enrich-always.mdc` · doctrine: `docs/rules/COMPLEMENTARY_VARIANT_ENRICH.md` · SSOT: `config/architecture/complementary-variant-enrich-ssot.json` · gates: `npm run check:p2520` / `check:p2519`.
+
+## Project Context
+Homey Pro app for 4200+ Tuya Zigbee devices. Hybrid protocol: Tuya DP (0xEF00) + ZCL clusters.
+
+## CRITICAL: Settings Keys
+- Use `zb_model_id` NOT zb_modelId
+- Use `zb_manufacturer_name` NOT zb_manufacturerName
+
+## CRITICAL: Security / data-leak (P2206)
+- Never commit secrets, raw Gmail dumps, `diag-*-excerpt.txt`, or forum user media
+- Workflows: top-level `permissions:`, no secret echo, no untrusted `pull_request_target` checkout
+- Redact before commit/upload: `node .github/scripts/privacy-redactor.js`
+- Gates: `npm run security-scan` · `npm run security:github` · see `docs/rules/SECURITY_RULES.md` + `.github/WORKFLOW_GUIDELINES.md` §O
+
+## Flow Cards
+- ID pattern: `{driver}_physical_gang{N}_{on|off}`
+- NO `titleFormatted` with `[[device]]` - causes bugs
+- Always check driver.flow.compose.json for exact IDs
+- Virtual buttons MUST use `this.safeSetCapabilityValue()` to route through the v5 hardening pipeline in `TuyaZigbeeDevice.js`. This ensures flow triggers map optimally and are protected by the L14 SanityFilter.
+- **P2449:** Declare⇒wire — never leave `scene_recall` / `set_brightness` / `brightness_changed` / `rotate_*` as compose-only. Fleet hook: `lib/flow/DeclaredFlowCardAutoWire.js` (boot via `UniversalFlowCardLoader`).
+- **SDK3:** `getDeviceTriggerCard(cardId)` only — no second `'trigger'` arg.
+
+## Imports
+```javascript
+const { ZigBeeDevice } = require('homey-zigbeedriver');
+const UnifiedSwitchBase = require('../../lib/devices/UnifiedSwitchBase');
+```
+
+## Switch Mixin Order
+```javascript
+class Device extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedSwitchBase))
+```
+
+## L14 Hardened Telemetry (v5.13.6+)
+- **Unified Engine**: ALL capability updates MUST use `this.safeSetCapabilityValue()`.
+- **Inheritance**: Drivers must inherit from `TuyaZigbeeDevice` (or `UnifiedBase`) to benefit from L14.
+- **SanityFilter**: Automatically active. Filters EMA (noise) and ROC (spikes).
+- **Anti-Flood**: Throttling is managed at the base class level.
+- **Case-Insensitivity**: Use `CaseInsensitiveMatcher.js` (`lib/utils/CaseInsensitiveMatcher.js`) for all manufacturerName matching. Manual `.toLowerCase()` is forbidden.
+- **Smart Divisors (v8.2+)**: Use `smartDivisorDetect()` for measure_temperature and measure_humidity parsing. Do NOT hardcode `value / 100` or `value / 10`.
+
+## Phoenix Sovereign Architecture (v8.2.0+) Rules
+1. **Virtual Buttons**: NEVER use `this.setCapabilityValue('button', ...)` natively. You MUST use `this._safeSetCapability()` or wrap with `markAppCommand()` to avoid infinite flow loops when physical buttons trigger Generic Flow Cards.
+2. **Batteries**: Linear formulas like `(voltage - 2.5) / 0.5` are STRICTLY BANNED. You must use `SmartBatteryManager` and non-linear profiles like `3V_2100` or `1.5V_AA`.
+3. **Mains-Powered Devices**: Must define `get mainsPowered() { return true; }` and strip `measure_battery` in `onNodeInit` to prevent phantom capabilities.
+
+## Smart Divisor Manager (v8.2.0+)
+- Located in `lib/managers/SmartDivisorManager.js`
+- Auto-détection du diviseur pour temperature, humidity, co2, power, current, voltage, energy, battery, distance, luminance
+- Résout le "Double-Division Bug": AdaptiveDataParser → /100 THEN dpMappings → /100 again
+- `smartDivisorDetect(rawValue, dpId, options)` — détection intelligente
+- `smartParse(rawValue, dpId, options)` — parse wrapper complet
+- Database KNOWN_DIVISORS + VALID_RANGES pour auto-détection
+- Cache automatique par (manufacturerName + dpId + capability)
+- Chaîne de fallback: Known DB → Auto-detect range → defaultDivisor param → 1
+
+## MCU Time Sync Formats (TuyaTimeSyncFormats.js v6.0.0)
+- 23 time sync format variants for Tuya MCU devices
+- **Location**: `lib/tuya/TuyaTimeSyncFormats.js`
+- **Usage**: `TuyaTimeSyncFormats.buildPayload(format, options)` to build time payloads
+- **Auto-detection**: `TuyaTimeSyncFormats.guessFormat(deviceInfo)` with 6 heuristics
+- **Fallback chain**: `TuyaTimeSyncFormats.getFallbackChain(primaryFormat, deviceInfo)`
+- **Key formats**: TUYA_DUAL_2000 (LCD sensors), TUYA_MCU (MCU devices), TUYA_SEQ_10 (v3.3+), TUYA_FULL_TZ (thermostats)
+- **MCU protocol versions**: v3.1 (8-byte), v3.2 (8-byte), v3.3 (10-byte seq REQUIRED), v3.4 (+DP17 commit), v3.5 (extended TZ)
+- **RULE**: Always use guessFormat() for unknown devices; never hardcode a single format
+- **RULE**: ZT08 weather stations require DP17 commit trigger after time sync
+- **RULE**: Check MCU version from device before selecting format; v3.3+ needs 10-byte response
+
+## MCU Format Guessing Rules (TuyaTimeSyncFormats.guessFormat())
+When encountering an unknown device, the system uses 6 heuristics to rank time format candidates:
+1. **Manufacturer prefix**: `_TZE200/204/284` -> TUYA_DUAL_2000 (MCU-based); `_TZ3000/3210` -> ZIGBEE_2000 (ZCL)
+2. **Product ID**: `TS0601` -> TUYA_DUAL_2000; `TS0201` -> ZIGBEE_2000; `TS130F` -> TUYA_STANDARD
+3. **Endpoint clusters**: 0xEF00 present -> MCU device; 0x000A present -> ZCL time cluster
+4. **Driver class**: Thermostat -> TUYA_FULL_TZ; Sensor -> TUYA_DUAL_2000; Cover -> TUYA_STANDARD
+5. **Known device patterns**: Specific manufacturer IDs mapped to proven formats
+6. **Model ID patterns**: 'th'/'temp' -> dual; 'trv'/'valve' -> full TZ; 'lcd'/'display' -> dual
+
+## Smart Calibration Rules (SmartDivisorManager)
+- **Location**: `lib/managers/SmartDivisorManager.js` (16.7KB)
+- **Auto-detection**: SmartDivisorManager auto-detects DP value divisors at runtime
+- **Known divisor DPs**: DP18 (temp/10), DP19 (humidity/10), DP22 (formaldehyde/100)
+- **Double-division prevention**: TuyaEF00Manager skips auto-convert when dpMappings divisor !== 1
+- **RULE**: Never assume 1:1 scaling; always check SmartDivisorManager for auto-detection
+- **RULE**: Values are checked against VALID_RANGES before capability updates
+- **RULE**: Use `smartDivisorDetect(rawValue, dpId, options)` for intelligent detection
+- **RULE**: Use `smartParse(rawValue, dpId, options)` for complete parse wrapper
+
+## Button Flow Card Rules
+- **Physical button**: `{driver}_physical_gang{N}_{on|off}` triggered by PhysicalButtonMixin
+- **Virtual button**: Uses `this.safeSetCapabilityValue()` through VirtualButtonMixin
+- **Deduplication**: 200ms debounce + 1.5s sliding window
+- **markAppCommand**: Always call before sending commands to prevent ghost triggers
+- **RULE**: IDs must be globally unique across ALL drivers
+- **RULE**: NO `titleFormatted` with `[[device]]` (causes manual device selection bug)
+- **RULE**: Virtual buttons MUST use `this.safeSetCapabilityValue()` through VirtualButtonMixin hardening
+- **RULE (P2449 SDK3)**: `this.homey.flow.getDeviceTriggerCard(id)` — **one argument only** (never `(id, 'trigger')`)
+- **RULE (P2449)**: Every declared `*_scene_recall` / `*_set_brightness` / `*_brightness_changed` / `*_rotate_*` must be wired (device fire + `registerRunListener`, or `DeclaredFlowCardAutoWire`)
+- **RULE (P2448 knobs)**: ERS-10 / ZG-101ZD / `smart_knob_rotary` → command/dimmer (`0x8004=0`) + levelControl; use `SmartKnobRotationMixin`. `kaflzta4` stays scene (P2439). SSOT: `config/architecture/rotary-knob-ssot.json` · `npm run check:p244x`
+
+## UnifiedBatteryHandler v8.2.0 (Phoenix Sovereign Fusion)
+- FUSION COMPLÈTE: v8 runtime-adaptive + v5 BatteryManagerV4/V5 courbes non-linéaires
+- `BATTERY_SPECS` statique: 15+ types (CR2032, CR2450, CR2477, CR123A, CR1632, AAA, AA, C, D, 9V, 2xAAA, 2xAA, 4xAAA, Li-ion, Li-polymer, 18650)
+- `calculateFromVoltage(voltage, batteryType, temperature)` — interpolation linéaire multipoints + compensation température
+- `lookupBatteryProfile(manufacturerName, productId)` — lookup par fabricant + productId (20+ profils)
+- `DEVICE_BATTERY_MAP` — 30+ device types → battery type mapping
+- `INTERVALS` — polling intervals par type d'appareil (1h à 12h)
+- EMA smoothing + health monitoring (drain rate, estimated days)
+- `calculateFromTuyaDP()` + `normalizeZigbeeValue()` — parsing multi-format
+- Anti-flood 5min/2% deduplication
+- Store persistence entre les sessions
+- ⚠️ RULE: Linear formulas like `(voltage - 2.5) / 0.5` are STRICTLY BANNED
+- ⚠️ RULE: Use non-linear profiles like `'3V_2100'` or `'1.5V_AA'`
+
+## Anti-Patterns & Bug Fallbacks
+
+- **ZCL Cluster Double-Parsing**: When mixing custom inference handlers in `setupUniversalZCLListeners` for hybrid sensors, wrap base class setups (`_setupZCLCluster`) in checks for `!this.clusterHandlers?.temperatureMeasurement` to prevent bouncing parallel streams.
+- **Phantom Capabilities**: Do NOT fallback to feature-bloated configs like `HOBEIAN_10G_MULTI` for missing-model IDs on onboarding. It assigns fake temperature and humidity capabilities causing UI spam, and breaks IAS Zone protocols. Cascade safely into robust profiles like `HOBEIAN_ZG204ZM_FALLBACK`.
+
+## Backlight Values
+- Strings only: `"off"`, `"normal"`, `"inverted"`.
+- Must NOT use numeric comparisons (e.g., `=== 0`, `=== 1`, `'0'`, `'1'`).
+- Use ternary assignments to map to DP integers when sending commands: `const lightMode = backlightMode === 'normal' ? 1 : 2;`
+- This is strictly verified by Layer 11 of the Multi-Layer Quality Gateway.
+
+## BSEED ZCL-Only Fingerprints
+`_TZ3000_l9brjwau`, `_TZ3000_blhvsaqf`, `_TZ3000_ysdv91bk`,
+`_TZ3000_hafsqare`, `_TZ3000_e98krvvk`, `_TZ3000_iedbgyxt`,
+`_TZ3000_cauq1okq`, `_TZ3000_w5xztuy7`
+
+## BSEED / Tuya EF00 Wall Dimmer (P2138)
+- Sacred couple: `_TZE284_m1cvyneb` (+ TZE204/TZE200) + `TS0601` → **`wall_dimmer_tuya` only**
+- Forbidden: `climate_sensor`, `soil_sensor`, `zigbee_universal`, `generic_tuya`, `ir_blaster`
+- Interview may show proprietary `0xED00` — do **not** add it to compose clusters/bindings
+- Brightness MCU scale is **0–1000**: always use `lib/tuya/TuyaBrightnessScale.js` (`toTuyaBrightness` / `fromTuyaBrightness`). Writing >1000 can reboot the MCU (Z2M #32305)
+- Stale climate pairing → user must **remove + re-pair** (Homey cannot hot-swap drivers)
+- Lock catalogs too: compose + `DeviceFingerprintDB` compound keys + `mfs_db` + `new_fingerprints.json` + misattribution registry (enrichers re-inject otherwise)
+
+## Tuya DP Protocol
+- Cluster: 0xEF00 | DP1-8: gangs | DP14: power-on | DP15: backlight
+- Types: 0=Raw, 1=Bool, 2=Value, 3=String, 4=Enum, 5=Bitmap
+- 1-gang EF00 dimmers (BSEED insert): DP1 on/off, DP2 brightness 0–1000, DP6 countdown, DP21 backlight
+
+## Key Files
+- `lib/devices/UnifiedSwitchBase.js` - Base switch class
+- `lib/mixins/PhysicalButtonMixin.js` - Physical detection
+- `drivers/{type}/driver.flow.compose.json` - Flow definitions
+
+## CRITICAL: Fingerprint Matching (Sacred Couple Doctrine)
+**One manufacturerName can map to MANY devices** — different productIds, hardware variants, OEM labels, retail SKUs, and device names. That is NORMAL.
+
+**`mfs_db` / mfs rule:** one mfr entry may list **multiple `modelIds` (productIds)** and **different variants** (e.g. HOBEIAN → soil `ZG-303Z`, switch `ZG-305Z`, climate sibling). Each `(mfr, pid)` is its own sacred couple → its own driver. Never dedupe or prune a mfr across drivers unless **same mfr + same pid** is in the **wrong** driver.
+
+### Fingerprint = manufacturerName + productId (COMBINED) — never mfr alone
+```
+_TZ3000_abc + TS0001 → switch_1gang
+_TZ3000_abc + TS0002 → switch_2gang  (SAME mfr, different productId = OK!)
+_TZ3000_abc + TS0003 → switch_3gang
+_TZE284_m1cvyneb + TS0601 → wall_dimmer_tuya   (verified Z2M couple)
+_TZE284_m1cvyneb + TS0201 → NOT a known couple (do NOT invent)
+```
+
+### Rules
+- Always investigate and lock the **(mfr, pid)** couple. Cross-ref Z2M/ZHA/forum/email on the pair.
+- A single mfr may have multiple modelIds in `mfs_db` **only** when each pid is a verified couple to its driver.
+- Never invent a second pid for a mfr just to “cover climate” or clear a collision.
+- Runtime `getDriverId(mfr, pid)` must refuse mfr-only catalog hits when `pid` is present but not in `modelIds`.
+- Same OEM / TZE200/204/284 prefix siblings are separate couples until verified.
+
+### When to REMOVE a fingerprint
+Only if SAME manufacturerName + SAME productId in WRONG driver.
+Do NOT remove just because mfr appears in another driver with different productId.
+
+### Common Multi-Driver Manufacturers
+- `_TZ3000_*` - Makes 1-gang, 2-gang, 3-gang variants
+- `_TZE200_*` / `_TZE204_*` / `_TZE284_*` - Tuya DP across sensors, TRVs, covers, dimmers
+- Same OEM = different productIds for different device types
+
+## GITHUB ACTIONS / YML WORKFLOW RULES
+
+> Full reference: `.github/WORKFLOW_GUIDELINES.md` and `.github/SECRETS.md`
+
+### Before editing ANY `.github/workflows/*.yml`:
+1. Read `.github/WORKFLOW_GUIDELINES.md` first
+2. Every job running `node` scripts MUST have: checkout → setup-node → npm ci
+3. Always set `timeout-minutes` on jobs
+4. Always set `permissions:` and `concurrency:` at top level
+5. Use `continue-on-error: true` for optional-secret steps
+6. Use `[skip ci]` in auto-commit messages to prevent infinite loops
+7. Stagger cron schedules by 30+ min to avoid git push conflicts
+8. Draft→test promotion: 3 tiers (Node → curl fallback → verify retry)
+9. `DISCOURSE_API_KEY` lint warnings = false positives (secret exists)
+10. `GITHUB_TOKEN` auto-provided; `GH_PAT` for cross-repo access
+11. Guard missing secrets: `if [ -z "$SECRET" ]; then exit 0; fi`
+12. Git commits: always `git pull --rebase origin master || true` before push
+13. After enrich/apply/anti-bot: run `node tools/ci/p2138-sacred-couple-matrix-gate.js` (mfr+pid only — no invent; see WORKFLOW_GUIDELINES §N)
+14. Dual-app: classify BOTH | MASTER_ONLY | STABLE_ONLY before backport; never Publish Stable→Test while 9.0 soaks
+15. Protocol: all drivers adapt ZCL↔EF00 via `IntelligentProtocolDetect` (HYBRID listen + cascade TX); never force EF00 on sacred `zcl_only` (BSEED)
+16. **P2448/P2449:** after knob/button/dimmer/flow compose changes run `npm run check:p244x` (rotary command mode + declared flow wire). See WORKFLOW_GUIDELINES §P2448/P2449 + `docs/architecture/KNOB_FLOW_WIRING_SSOT.md`
+17. P216: never blindly `/2` ZCL `batteryPercentageRemaining` — Tuya 0–100 stays 100%; spec 0–200 uses `/2`. Use `normalizeZclBatteryPercent()`.
+
+## SDK v3 OFFICIAL RULES (apps-sdk-v3.developer.homey.app)
+- Managers via `this.homey.<managerId>`: `this.homey.drivers`, `this.homey.flow`, `this.homey.settings`
+- Zigbee init: `async onNodeInit()` (NOT sync onInit)
+- `await this.safeSetCapabilityValue()` — ALWAYS use this; it is hardened in `TuyaZigbeeDevice.js` to provide L14 SanityFiltering and Anti-Flood protection.
+- Memory: idempotent listeners, clear timeouts in `onDeleted()`/`onUninit()`
+- NO v2 patterns: `this.homey.zigbee.getDevice()`, global Manager*
+
+## FORUM POSTING — ABSOLUTE RULE (P108 / T157628)
+- **Default: do NOT post on the forum.** Prefer silent code/CI enrichment.
+- Bot must ONLY ever be allowed on T140352 — and even there auto-post is **forced dry-run**.
+- REPLY_TOPICS must be '140352' only. Never add T26439, T146735, T89271, T43287, T157628.
+- FORUM_TOPICS may include other threads for READ-ONLY scanning (`forum-silent-multi-scan.js`).
+- **Never paste unchecked AI answers** into Homey Community (community mandate T157628).
+- If a human draft is explicitly requested: humanize hard (Dylan voice), verify FPs, run `reply-quality-gate` + `forum-ai-paste-gate`.
+- Scan everything → implement silently → credit only own sources in public text.
+- See `docs/rules/FORUM_SILENT_HUMANIZE.md` and `docs/responses/FORUM_STYLE_GUIDE.md`.
+
+## CI SEMANTIC LINTER — SAFETY
+- NEVER auto-modify driver files — report-only
+- Never pipe AI output into source files
+
+## INFORMATION FLOW & ATTRIBUTION
+- SCAN everything (Johan, WiFi, all threads, forks) → implement SILENTLY
+- External sources: NEVER mention in forum/changelogs/commits/PR comments
+- Own sources (dlnraja T140352, own GitHub, own PRs, own forks): CAN mention
+- Forum: ALWAYS merge with last dlnraja post (even if bot posted it)
+- Commit messages for external syncs: use generic wording ("improved", "added support")
+
+## POST-PROMOTION DOCUMENTATION & REGISTRY SYNC
+- **Mandatory Protocol**: Refer to [POST_PROMOTION_PROTOCOL.md](docs/rules/POST_PROMOTION_PROTOCOL.md) for the mandatory recursive audit, enrichment loop, and technical safeguards (Layer 12 compliance).
+
+Generated by Antigravity AI — 14 May 2026 | Version 8.0.0 (Hardened v5)
+\n
+
+## Dynamic RAM Optimization & Dual-Layer Pairing (v9.0.0+)
+- **Buffer-Based Direct JSON Loading (Double Heap memory fix)**: For all large JSON/file database loading (like `fingerprints.json` or `driver-mapping-database.json`), you **MUST** read the file directly as a raw Buffer (`fs.readFileSync(fpath)`) instead of converted UTF-16 string (`utf8`). Node.js allows passing a Buffer directly to `JSON.parse(buffer)`. This avoids allocating a giant intermediate JS String on the V8 heap and prevents fatal OOM crashes under Homey Pro's strict 64MB memory limit.
+- **Defensive V8 Garbage Collection**: The loader forces `global.gc()` sweeps (if available) before and after database parses to cleanly eject transient chunks.
+- **Static vs Dynamic Dual-Layer Matching**:
+  - **Static Manifests**: The manufacturer name, ZCL clusters, and `modelId` must remain statically registered in `driver.compose.json` / `app.json` to allow the Homey Pro box to match the hardware and complete the pairing flow locally.
+  - **Dynamic JSON Databases**: Kept in the app bundle (fully unignored in `.homeyignore`) to refine capabilities and custom DP parser operations dynamically at runtime, ensuring offline capability mapping continues to work perfectly.
+
+## Fleetwood Gateway & Syntax Purity Mandates (v8.4.0+)
+- **ZCL Method Override Purity**: Any driver class override of ZCL/SDK methods (e.g., `getDeviceById(id)`) MUST have correct closing braces to prevent breaking following method declarations like `onInit()` or `onNodeInit()`.
+- **Standard ZCL Measurement Scoping**: Inside ZCL Measurement cluster listeners (`attr.rmsCurrent`, etc.), never re-declare block-scoped variables (`const scaled`) in the same scope block; use unique variables (`scaledCurrent` and `scaledPower`) to prevent standard JS scope crash exceptions.
+- **Mains/Battery Approximation Conflicts**: If a compose manifest (`driver.compose.json`) defines `measure_power` or `meter_power`, it MUST NOT define `energy.approximation` under `energy` to prevent severe Homey Pro Energy v3 schema validation errors.
+- **Mandatory GitHub Actions Shell Default Configuration**: Every CI workflow `.yml` file that runs commands MUST include top-level `defaults: run: shell: bash` to prevent PowerShell syntax failures on Windows runners.
+- **GHA Cloud Purity Validation Gate**: Every primary workflow CI check (`unified-ci.yml`, `syntax-validation.yml`, `syntax-purity-gate.yml`, `syntax-check.yml`, `validate.yml`) has been hardened to execute the strict `PRE_COMMIT_CHECKS.js` gateway. This ensures 100% JS syntax parsing, workflow default checking, and manifest schema validation before commit integration.
+
+// ============================================================================
+// DEEP DIAGNOSTIC & CROSS-REFERENCING MANDATE (CRITICAL)
+// ============================================================================
+- DO NOT just say 'Missing manufacturer'. Perform deep cross-referencing with Z2M/ZHA and scrape forum/email info.
+- Remember a single `manufacturerName` can map to MULTIPLE variants and device IDs. Check productId!
+- Use Antigravity skills (`.agents/skills/`) and local Claude Code scripts.
+- Update docs, workflows, and Github Actions after fixing a bug.
+- Read Architecture 7+ and 8.0 docs before acting.
+
+// ============================================================================
+// AUTONOMOUS AGENT REFLECTION & LOGIC MODE
+// ============================================================================
+- **Thinking Blocks**: Before taking action, use a structured thinking process to reflect on the codebase state and potential side-effects.
+- **Incremental Verification**: Do not attempt to fix 10 things at once. Plan, execute one logical block, test/verify, and reflect on the outcome before proceeding.
+- **Tool-Driven Loop**: Leverage tools intelligently (read files to confirm context, search codebase for dependencies, run validation scripts) before making blind code edits.
+- **Context Mastery**: Assimilate the dual-app context and project architecture fully into your reasoning model before proposing solutions.
+
+<!-- CONSTITUTION:BEGIN (generated by scripts/gen/agent-rules.js — edit the constitution, not this block) -->
+# Universal Tuya Zigbee — Constitution
+
+Structure follows GitHub Spec Kit (github/spec-kit): `constitution → spec → plan → tasks`.
+Specs live in `specs/NNN-*/{spec,plan,tasks}.md`. This file overrides any spec/plan.
+
+## Identity (non-negotiable)
+- I1. App IDs are frozen: `com.dlnraja.tuya.zigbee` (master, "Universal Tuya Test"),
+  `com.dlnraja.tuya.zigbee.stable` (branch `stable-v5`), `com.dlnraja.tuya.zigbee.bastien`.
+- I2. A master push without `[skip ci]` auto-publishes — batch pushes, few publishes.
+
+## Device behaviour
+- D1. **Native first.** Homey-native clusters/capabilities (homey-zigbeedriver + zigbee-clusters)
+  are the primary path. Tuya DP (0xEF00), 0xE000/0xE001 and manufacturer-specific clusters are
+  fallbacks, never mandatory for pairing.
+- D2. **Fallbacks are additive.** Never degrade existing behaviour; a fallback that fails disables
+  itself and never blocks pairing or init.
+- D3. **No invented fingerprints.** Every manufacturerName/productId comes from a real interview,
+  diag, issue or a cited upstream source. A mfr+pid couple lives on exactly one driver.
+- D4. **Firmware quirks are opt-in** per mfr+pid and require ≥2 independent sources.
+- D5. **Case-insensitive** matching at runtime for mfr/pid.
+- D6. **No perceptible latency.** Dedupe/anti-flood passes the leading edge immediately; windows
+  are short and configurable.
+
+## Maintainer clarifications (2026-10-03)
+- M1. Dedupe/anti-flood windows are chosen by comparing Z2M, ZHA, Johan's apps, deCONZ and localtuya and taking the
+  most accurate value; they are dynamic per device type and per driver / mfr+pid profile, adaptive per case.
+- M2. Double/triple-click detection is enabled automatically only where needed (remotes that do not send a native
+  press type); otherwise it is off (no added latency).
+- M3. Existing phantom/dual couples are kept as-is (frozen baseline); act only when a user reports a conflict
+  (forum, threads, issues).
+- M4. Lights without a driver (TS0502A/B, TS0505B, TS0501A): add to existing light drivers, unless that would conflict
+  with another driver (e.g. TS0501A vs dimmer_wall_1gang) — then create a dedicated driver.
+- M5. External PRs are merged intelligently in an enrichment mindset: keep the best of both, never degrade.
+- M6. Stable publishes are grouped (batched), never one per fingerprint.
+
+## Code & data
+- C1. No copy-paste from other projects/people. Read, understand, rewrite as our own rules/quirks;
+  keep only source link + author/project. Raw dumps do not stay in the repo. GPL code is never copied.
+  Credit ideas in CREDITS.md.
+- C2. `app.json` < 4 MB; large data is lazy-loaded from `data/`/`lib/` at runtime.
+- C3. All gates pass before push, incl. `homey app validate --level publish` on Node 22.
+- C4. Neutral commit wording.
+
+- C5. **Deep reading for every source.** Forum threads (all posts + images), our issues/PRs, Johan's repo, other apps'
+  threads, Z2M/ZHA/deCONZ/localtuya, Homey docs, diags/crash mails, forks, changelogs: read and understand finely
+  (symptoms, context, firmware, interviews, DP logs, workarounds, regressions, conflicts, screenshots), reason,
+  then write our own rules/code/SSOT. Regex/AI pre-extraction is only a helper, never the decision.
+
+## Communication
+- X1. Agents never post on GitHub/forum or reply to emails on behalf of the maintainer.
+
+## Workflow
+- W1. Rebase before each push (concurrent workers). Use a dedicated git worktree per agent;
+  never run `git checkout -- .`/`git clean` in a shared checkout.
+- W2. Long queues keep a resumable checkpoint in `data/leads/resume-checkpoint.json`;
+  items are deferred, never skipped.
+  Its `master_queue` is the single checklist of every user request since the start
+  (rules, queues, harvests, forum, Johan, flows, conflicts, layers, workflows, size, specs);
+  every daily resumption reads it FIRST, and an item is ticked `verified` only with evidence.
+- W3. Progress ledger (nothing is done twice). `data/progress/ledger.json` is the machine SSOT:
+  key `<namespace>:<id>` (johan-issue:N, dlnraja-issue:N, forum-post:T/P, diag:<hash>,
+  task:<id>, …) → status (pending | in-progress | deferred | done | skipped-not-applicable),
+  commit, date, content hash and/or upstream updatedAt. Every workflow and agent (forum poll,
+  Johan scanner, enrich, diags, fleet-enrich, deep reads, maintenance queues) reads it before
+  working (`shouldProcess` in `scripts/lib/ledger.js`, or `node scripts/progress/ledger-cli.js
+  check <key> [updatedAt]`) and records after (`record`). Items already done and unchanged are
+  skipped; changed items (new hash / newer updatedAt) are re-processed. Humans read
+  `docs/progress/JOURNAL.md` (dated entries, newest first). Older checkpoints
+  (resume-checkpoint, deep-read-checkpoint, deep-read-log) stay as cursors linked from the
+  ledger's `checkpoints` map.
+- W4. Driver conflicts are researched, not deleted. For every mfr+pid couple claimed by two or
+  more drivers (ledger namespace `conflict:<mfr>|<pid>`) and every user-reported conflict: look up
+  the real hardware (Z2M converters/device pages, ZHA quirks, deCONZ, Blakadder, Homey forum,
+  Johan's repo, other Homey/ST/Hubitat/Jeedom apps), then, per pid, keep the couple in the single
+  driver matching that hardware (native first, never degrade, never invent mfr/pid, the 3 app IDs
+  stay intact). Create a new driver/category only when existing drivers truly conflict. Apply the
+  same placement on master and stable. Write the reasoning in our own words with links + credits
+  in `docs/rules/` and the ledger. Phantom cross-product couples are left alone unless they
+  actually collide or a user reports a conflict. Work frugally: a few couples per daily run,
+  user-reported and source-backed couples first; cursor in `data/leads/resume-checkpoint.json`.
+- W5. Interviews are the MINIMUM baseline for pairing. Never degrade a driver or remove
+  capabilities because an interview shows less than what is implemented. Only
+  interview-observed clusters may be required for pairing; every extra DP, cluster or
+  capability is optional and complementary and must never block pairing. Enrichment is
+  additive only.
+- W6. Never degrade any driver. Every driver/device follows dynamic, self-adaptive enrichment:
+  capabilities, DPs and clusters are added at runtime when the device actually reports them
+  (additive, optional, never blocking pairing), and nothing that works today is ever removed.
+  This applies to all conflict (W4) and interview (W5) work: moving a couple is allowed only
+  when the old placement has no working couple or the new one is a strict superset in
+  behaviour; existing paired devices keep their driver.
+- W7. Polysemic DPs. When one DP number means different things per mfr, pid, variant or
+  firmware, the app adapts per device: variant profiles keyed by mfr+pid(+firmware), value
+  range/type detection and cross-validation with other DPs. No DP is ever neglected (unknown
+  ones are logged and learned), internal cross-checks are used when ambiguous, and fallbacks
+  are additive — never degrading a working mapping.
+- W8. Reuse our own tooling. The project's parsers, scrapers and scanners (scripts/*, tools/*,
+  .github/scripts/*) are inventoried; unused or broken ones are fixed or retired, and their
+  outputs feed the ledger and SSOT (docs, workflows, automations). Done frugally with
+  checkpoints.
+- W9. Alternative paths for partial native support. When a DP, cluster or attribute is not
+  fully supported natively, provide alternative paths — lower level (raw ZCL frames,
+  manufacturer-specific commands) and/or higher level (Tuya DP layer, app-side logic, polling,
+  virtual capabilities) — orchestrated with circuit breakers so a failing path self-disables.
+  Anything not native per the interviews, the Homey SDK, zigbee-clusters or the Homey docs stays
+  optional and is never mandatory for pairing.
+- W10. Self-improving, free. Scheduled GitHub Actions regularly ingest technical changes from
+  sources (Z2M/ZHA/deCONZ converters, Homey SDK/docs, forum, Johan, other apps) and turn only
+  CHANGED items (ledger W3) into SSOT/rule proposals. Everything runs free: no paid APIs, local
+  or free tiers only (AI_ALLOW_PAID=false). Extend existing workflows before adding new ones.
+- W11. Proprietary layers, local-first. Manufacturer layers on top of Zigbee (Tuya 0xEF00/0xE000/
+  0xE001, MOES, Smartlife, Legrand 0xFC01/0xFC40, Lexman/Enki, Sonoff 0xFC11/0xFC57, Xiaomi/Aqara
+  0xFCC0, IKEA, Philips 0xFC03, Schneider, …) are supported fully and locally, with no cloud
+  dependency, as optional additive layers with circuit breakers that never block pairing, and are
+  registered in the native/non-native matrix. Sources (Z2M, ZHA, deCONZ) are credited by name.
+
+## Preferences (PC harvest round 2, 2026-10-04)
+- P1. Case-insensitive everywhere (mfr/pid/lookups).
+- P2. Wi-Fi: tuya-local first, inspired by the Tuya cloud Homey apps.
+- P3. Heuristic multipliers/divisors (auto scale detection) rather than fixed values.
+- P4. Regular automatic reorganisation of files/folders.
+- P5. Always read diagnostic log IDs posted on forum/GitHub/chat.
+- P6. Branches: keep master, stable-v5 and gh-pages; merge or clean the rest only with approval.
+- P7. Communication: French, tables, action over explanation, no needless questions, continuous flow.
+
+## Rules (PC harvest round 3, 2026-10-04)
+Merged without changing W1–W11 / P1–P7; where they overlap, they make an existing rule explicit.
+- R1. Secrets (keys, PATs, tokens) never go online, in code, logs, issues or reports; only in GitHub Secrets.
+- R2. Stay within included plans and AI quotas (flat-rate/token plans); prefer free sources and caches.
+  Only still-active subscriptions within their included quota: hard rate limits, a daily request cap,
+  automatic disable for the day on 429/quota errors, never on-demand tokens, credits or overage billing
+  (user decision 2026-10-04; enforced in `.github/scripts/ai-helper.js`).
+- R3. Each app keeps its own purpose: master (`.tuya.zigbee`, fast enrichment), stable-v5 (`.stable`,
+  device compatibility, grouped publishes), bastien-home (`.bastien`, friend's test app). Port fixes
+  as adapted enrichments, never wholesale copies; couple placement stays the same (W4).
+- R4. Every fix ships with a unit test that locks it (regression guard); mirrored in agent prompts.
+- R5. Non-native DPs/clusters are complements (rx/tx, raw, stream), never mandatory (extends W5/W9).
+- R6. Never invent productIds or manufacturerNames (Green Power included). New compose clusters only
+  from a real interview; Zigbee 4.0 awareness is not evidence.
+- R7. MCU time sync never hardcodes one format (epoch 1970/2000, local/UTC, timezone per device).
+- R8. RF coexistence: Wi-Fi channels 1/6/11 vs Zigbee 15/20/25 in advice and diagnostics.
+- R9. Workflows tolerate missing sources (never block), use a fetch cache and incremental diffs,
+  and stay polite with servers (extends W10).
+- R10. Enrichments are variants/alternatives, never degradations, on every app (explicit form of W6).
+- R11. A couple missing from a log is never invented: ask for the next diagnostic with mfr+pid.
+  A guess is allowed only as a labelled hypothesis, then verified.
+- R12. Product rules for batteries: SOS/alarm buttons get an inverted-signal setting with automatic
+  detection; sleepy devices follow the battery-saving policy (lib/battery/*, PowerClusterPolicy).
+- R13. Workflows run fully without AI: deterministic algorithms first. AI subscriptions are an
+  optional complementary layer (user decision 2026-10-04): keys only in GitHub Secrets, never in
+  code; the AI step is skipped when its secret is absent; quota rules of R2 apply (extends W10/R9).
+- R14. stable-v5 is the hardened, reliable line, inspired by the versions that worked best (forum
+  feedback); master carries advanced features. Never copy one onto the other (clarifies R3).
+- R15. Scraping stays within free tiers (e.g. firecrawl free); prefer free tools and caches (R2).
+ is real and
+  allowed when the couple is backed by a source (e.g. zigbee-herdsman-converters).
 - R17. GitOps automation only as draft PRs on dlnraja's own repository: no auto-merge, no issue or
   comment posting; gates decide; publishing stays batched (user decision 2026-10-04).
 - R18. Comments on third-party repositories (e.g. JohanBendz) are never deleted or edited by agents;
