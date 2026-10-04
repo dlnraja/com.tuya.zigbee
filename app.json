@@ -55542,7 +55542,7 @@
         },
         "devices": {
           "secondGang": {
-            "class": "socket",
+            "class": "light",
             "capabilities": [
               "onoff",
               "dim"
