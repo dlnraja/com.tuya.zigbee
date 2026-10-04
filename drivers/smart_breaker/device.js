@@ -33,6 +33,16 @@ class SmartBreakerDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedP
     const mfr = (this.getSetting('zb_manufacturer_name') || '').toUpperCase();
     const isTOWSMR1 = mfr.includes('4MA5PUFE');
 
+    // #108: Tongou TOQCB2-80 family (exact suffixes from ZHC tuya.ts). DP1 is energy, not
+    // on/off; the switch is DP16; DP6-8 are 8-byte phase structs handled in _handleDP.
+    if (this._isToqcb280()) {
+      return {
+        ...parentMappings,
+        1: { capability: 'meter_power', divisor: 100 },
+        16: { capability: 'onoff', transform: (v) => v === 1 || v === true },
+      };
+    }
+
     // TOWSMR1-40 RCBO uses different DP layout: DP6-8 for energy, DP9=energy, DP10=fault
     if (isTOWSMR1) {
       return {
@@ -58,6 +68,29 @@ class SmartBreakerDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedP
       19: { capability: 'measure_voltage', smartDivisor: true },
       101: { capability: 'meter_power', smartDivisor: true }
     };
+  }
+
+  _isToqcb280() {
+    const mfr = String(this.getSetting('zb_manufacturer_name') || '').toLowerCase();
+    return /_(kv1nvirl|lyqazpe6|9xstqowh|mrffaamu)$/.test(mfr);
+  }
+
+  // #108: phase A struct feeds the main V/A/W tiles; B and C are logged only (P2519).
+  _handleDP(dpId, rawValue) {
+    const id = Number(dpId);
+    if ((id === 6 || id === 7 || id === 8) && this._isToqcb280()) {
+      const ph = require('../../lib/tuya/TuyaPhaseStruct').decodePhaseVariant2(rawValue);
+      if (!ph) {return;}
+      if (id !== 6) {
+        this.log(`[BREAKER] phase ${id === 7 ? 'B' : 'C'}: ${ph.voltage} V ${ph.current} A ${ph.power} W`);
+        return;
+      }
+      this.safeSetCapabilityValue('measure_voltage', ph.voltage);
+      this.safeSetCapabilityValue('measure_current', ph.current);
+      this.safeSetCapabilityValue('measure_power', ph.power);
+      return;
+    }
+    return super._handleDP(dpId, rawValue);
   }
 
   onDeleted() {
