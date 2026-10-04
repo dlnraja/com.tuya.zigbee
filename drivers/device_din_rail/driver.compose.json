@@ -433,5 +433,9 @@
     }
   ],
   "id": "device_din_rail",
-  "version": "1.0.0"
+  "version": "1.0.0",
+  "energy": {
+    "meterPowerImportedCapability": "meter_power",
+    "meterPowerExportedCapability": "meter_power.exported"
+  }
 }
