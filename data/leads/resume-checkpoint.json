@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-04T02:55:00+02:00",
+ "updated": "2026-10-04T02:50:00+02:00",
  "queue": "dlnraja maintenance queue 2026-10-03 (items 1-7)",
  "rules": ".specify/memory/constitution.md",
  "worktree_note": "Use a dedicated git worktree per agent (e.g. /workspace/exec-wt); a shared checkout was reset by another worker on 2026-10-03.",
@@ -30,6 +30,7 @@
   "branches-b": "Johan branches read (manifests): develop-0.4 + feature/0.4-mowe-ias-rain narrow profiles 165 identities, 161 covered; gaps recorded in docs/rules/JOHAN_BRANCHES_2026-10-03.md"
  },
  "next": [
+  "conflict sweep (W4): continue from ledger conflict:* pending, frugally",
   "stable grouped publish now ALSO includes local exec-stable 323c38eda0 (#1298 + #1113 port) — push needs user approval",
   "deep-read sweep: follow data/leads/deep-read-checkpoint.json + ledger (johan-issue:* ascending from 1, then dlnraja-issue:*); 925 deferred",
   "next master publish: push a non-[skip ci] commit to ship #1298/#1113 drivers (batched)",
@@ -53,5 +54,17 @@
  },
  "notes": {
   "appjson": "root app.json minified (one line, ~2.3 MB) on master and stable since bot commit 6b2f2d3c9a; edit with JSON.stringify(a) no newline. Compact build 3.69/4.00 MB."
+ },
+ "conflict_sweep": {
+  "rule": "constitution W4",
+  "ledger_namespace": "conflict:<mfr>|<pid>",
+  "seeded": 702,
+  "tuya_style": 531,
+  "done": [
+   "_tz3000_4uuaja4a|ts130f",
+   "_tz3000_4uuaja4a|ts0726"
+  ],
+  "order": "user-reported first, then Tuya-style couples with external sources, then brand couples; 3-5 per daily run",
+  "howTo": "node scripts/progress/ledger-cli.js next conflict 5"
  }
 }

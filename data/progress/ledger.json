@@ -1,6 +1,6 @@
 {
  "version": 1,
- "updated": "2026-10-04T00:17:10.178336Z",
+ "updated": "2026-10-04T00:52:32.442Z",
  "checkpoints": {
   "resume": "data/leads/resume-checkpoint.json",
   "deepRead": "data/leads/deep-read-checkpoint.json",
@@ -9,6 +9,5797 @@
   "journal": "docs/progress/JOURNAL.md"
  },
  "items": {
+  "conflict:_tz3000_4uuaja4a|ts0726": {
+   "status": "done",
+   "date": "2026-10-04",
+   "drivers": [
+    "curtain_module"
+   ],
+   "commit": "1142e94d59",
+   "note": "no real device known (cross-product); single driver"
+  },
+  "conflict:_tz3000_4uuaja4a|ts130f": {
+   "status": "done",
+   "date": "2026-10-04",
+   "drivers": [
+    "curtain_module"
+   ],
+   "commit": "1142e94d59",
+   "note": "stable only; master already aligned; docs/rules/FP_TZ3000_4UUAJA4A_CURTAIN_MODULE.md"
+  },
+  "conflict:_tz3000_5iixzdo7|ts0301": {
+   "status": "pending",
+   "drivers": [
+    "curtain_motor",
+    "curtain_motor_shutter"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tz3000_5iixzdo7|ts0601": {
+   "status": "pending",
+   "drivers": [
+    "curtain_motor",
+    "curtain_motor_shutter"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tz3000_5iixzdo7|ts0726": {
+   "status": "pending",
+   "drivers": [
+    "curtain_motor",
+    "curtain_motor_shutter"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tz3000_5iixzdo7|ts110e": {
+   "status": "pending",
+   "drivers": [
+    "curtain_motor",
+    "curtain_motor_shutter"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tz3000_74hsp7qy|ts0301": {
+   "status": "pending",
+   "drivers": [
+    "curtain_motor",
+    "curtain_motor_shutter"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tz3000_74hsp7qy|ts0601": {
+   "status": "pending",
+   "drivers": [
+    "curtain_motor",
+    "curtain_motor_shutter"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tz3000_74hsp7qy|ts0726": {
+   "status": "pending",
+   "drivers": [
+    "curtain_motor",
+    "curtain_motor_shutter"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tz3000_74hsp7qy|ts110e": {
+   "status": "pending",
+   "drivers": [
+    "curtain_motor",
+    "curtain_motor_shutter"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tz3000_8h7wgocw|ts0301": {
+   "status": "pending",
+   "drivers": [
+    "curtain_motor",
+    "curtain_motor_shutter"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tz3000_8h7wgocw|ts0601": {
+   "status": "pending",
+   "drivers": [
+    "curtain_motor",
+    "curtain_motor_shutter"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tz3000_8h7wgocw|ts0726": {
+   "status": "pending",
+   "drivers": [
+    "curtain_motor",
+    "curtain_motor_shutter"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tz3000_8h7wgocw|ts110e": {
+   "status": "pending",
+   "drivers": [
+    "curtain_motor",
+    "curtain_motor_shutter"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tz3000_bs93npae|ts0301": {
+   "status": "pending",
+   "drivers": [
+    "curtain_motor",
+    "curtain_motor_shutter"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tz3000_bs93npae|ts0601": {
+   "status": "pending",
+   "drivers": [
+    "curtain_motor",
+    "curtain_motor_shutter"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tz3000_bs93npae|ts0726": {
+   "status": "pending",
+   "drivers": [
+    "curtain_motor",
+    "curtain_motor_shutter"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tz3000_bs93npae|ts110e": {
+   "status": "pending",
+   "drivers": [
+    "curtain_motor",
+    "curtain_motor_shutter"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tz3000_bsvqrxru|excellux": {
+   "status": "pending",
+   "drivers": [
+    "pir_sensor_2",
+    "sensor_motion_presence"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tz3000_bsvqrxru|ts0001": {
+   "status": "pending",
+   "drivers": [
+    "pir_sensor_2",
+    "sensor_motion_presence"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tz3000_bsvqrxru|ts0202": {
+   "status": "pending",
+   "drivers": [
+    "pir_sensor_2",
+    "sensor_motion_presence"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tz3000_bsvqrxru|ts0601": {
+   "status": "pending",
+   "drivers": [
+    "pir_sensor_2",
+    "sensor_motion_presence"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tz3000_c8ozah8n|ts0001": {
+   "status": "pending",
+   "drivers": [
+    "motion_sensor",
+    "pir_sensor_2"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tz3000_c8ozah8n|ts0202": {
+   "status": "pending",
+   "drivers": [
+    "motion_sensor",
+    "pir_sensor_2"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tz3000_c8ozah8n|ts0601": {
+   "status": "pending",
+   "drivers": [
+    "motion_sensor",
+    "pir_sensor_2"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tz3000_c8ozah8n|ts110e": {
+   "status": "pending",
+   "drivers": [
+    "motion_sensor",
+    "pir_sensor_2"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tz3000_cayepv1a|ts011f": {
+   "status": "pending",
+   "drivers": [
+    "button_wireless_2",
+    "smartPlug_DinRail"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tz3000_cayepv1a|ts0121": {
+   "status": "pending",
+   "drivers": [
+    "button_wireless_2",
+    "smartPlug_DinRail"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tz3000_cayepv1a|tso121": {
+   "status": "pending",
+   "drivers": [
+    "button_wireless_2",
+    "smartPlug_DinRail"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tz3000_cehuw1lw|ts011f": {
+   "status": "pending",
+   "drivers": [
+    "button_wireless_plug",
+    "smartplug"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tz3000_cehuw1lw|ts0121": {
+   "status": "pending",
+   "drivers": [
+    "button_wireless_plug",
+    "smartplug"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tz3000_cjfmu5he|ts0049": {
+   "status": "pending",
+   "drivers": [
+    "smart_garden_irrigation_control",
+    "water_valve_garden"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tz3000_cjfmu5he|ts0101": {
+   "status": "pending",
+   "drivers": [
+    "smart_garden_irrigation_control",
+    "water_valve_garden"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tz3000_cjfmu5he|ts0601": {
+   "status": "pending",
+   "drivers": [
+    "smart_garden_irrigation_control",
+    "water_valve_garden"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tz3000_cymsnfvf|ts0001": {
+   "status": "pending",
+   "drivers": [
+    "button_wireless_2",
+    "plug"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tz3000_cymsnfvf|ts0001_fingerbot": {
+   "status": "pending",
+   "drivers": [
+    "button_wireless_2",
+    "plug"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tz3000_cymsnfvf|ts0003": {
+   "status": "pending",
+   "drivers": [
+    "button_wireless_2",
+    "plug"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tz3000_cymsnfvf|ts000f": {
+   "status": "pending",
+   "drivers": [
+    "button_wireless_2",
+    "plug"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tz3000_cymsnfvf|ts0011": {
+   "status": "pending",
+   "drivers": [
+    "button_wireless_2",
+    "plug"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tz3000_cymsnfvf|ts011f": {
+   "status": "pending",
+   "drivers": [
+    "button_wireless_2",
+    "plug"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tz3000_dbou1ap4|ts0505a": {
+   "status": "pending",
+   "drivers": [
+    "bulb_rgb",
+    "light_bulb_rgb_rgbw"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tz3000_dbou1ap4|ts0505b": {
+   "status": "pending",
+   "drivers": [
+    "bulb_rgb",
+    "light_bulb_rgb_rgbw"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tz3000_dbou1ap4|ts0601": {
+   "status": "pending",
+   "drivers": [
+    "bulb_rgb",
+    "light_bulb_rgb_rgbw"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tz3000_dfgbtub0|01minizb": {
+   "status": "pending",
+   "drivers": [
+    "button_wireless_2",
+    "button_wireless_4"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tz3000_dfgbtub0|basiczbr3": {
+   "status": "pending",
+   "drivers": [
+    "button_wireless_2",
+    "button_wireless_4"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tz3000_dfgbtub0|s26r2zb": {
+   "status": "pending",
+   "drivers": [
+    "button_wireless_2",
+    "button_wireless_4"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tz3000_dfgbtub0|s31zb": {
+   "status": "pending",
+   "drivers": [
+    "button_wireless_2",
+    "button_wireless_4"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tz3000_dfgbtub0|snzb-01m": {
+   "status": "pending",
+   "drivers": [
+    "button_wireless_2",
+    "button_wireless_4"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tz3000_dfgbtub0|ts0001": {
+   "status": "pending",
+   "drivers": [
+    "button_wireless_2",
+    "button_wireless_4"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tz3000_dfgbtub0|ts0001_power": {
+   "status": "pending",
+   "drivers": [
+    "button_wireless_2",
+    "button_wireless_4"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tz3000_dfgbtub0|ts0001_switch": {
+   "status": "pending",
+   "drivers": [
+    "button_wireless_2",
+    "button_wireless_4"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tz3000_dfgbtub0|ts0001_switch_module": {
+   "status": "pending",
+   "drivers": [
+    "button_wireless_2",
+    "button_wireless_4"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tz3000_dfgbtub0|ts0002": {
+   "status": "pending",
+   "drivers": [
+    "button_wireless_2",
+    "button_wireless_4"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tz3000_dfgbtub0|ts0003": {
+   "status": "pending",
+   "drivers": [
+    "button_wireless_2",
+    "button_wireless_4"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tz3000_dfgbtub0|ts000f": {
+   "status": "pending",
+   "drivers": [
+    "button_wireless_2",
+    "button_wireless_4"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tz3000_dfgbtub0|ts0011": {
+   "status": "pending",
+   "drivers": [
+    "button_wireless_2",
+    "button_wireless_4"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tz3000_dfgbtub0|ts0012": {
+   "status": "pending",
+   "drivers": [
+    "button_wireless_2",
+    "button_wireless_4"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tz3000_dfgbtub0|ts0014": {
+   "status": "pending",
+   "drivers": [
+    "button_wireless_2",
+    "button_wireless_4"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tz3000_dfgbtub0|ts004f": {
+   "status": "pending",
+   "drivers": [
+    "button_wireless_2",
+    "button_wireless_4"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tz3000_dfgbtub0|ts0101": {
+   "status": "pending",
+   "drivers": [
+    "button_wireless_2",
+    "button_wireless_4"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tz3000_dfgbtub0|ts0111": {
+   "status": "pending",
+   "drivers": [
+    "button_wireless_2",
+    "button_wireless_4"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tz3000_dfgbtub0|ts011f": {
+   "status": "pending",
+   "drivers": [
+    "button_wireless_2",
+    "button_wireless_4"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tz3000_dfgbtub0|ts0601": {
+   "status": "pending",
+   "drivers": [
+    "button_wireless_2",
+    "button_wireless_4"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tz3000_dfgbtub0|ts0726": {
+   "status": "pending",
+   "drivers": [
+    "button_wireless_2",
+    "button_wireless_4"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tz3000_dfgbtub0|ts110e": {
+   "status": "pending",
+   "drivers": [
+    "button_wireless_2",
+    "button_wireless_4"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tz3000_dfgbtub0|ts130f": {
+   "status": "pending",
+   "drivers": [
+    "button_wireless_2",
+    "button_wireless_4"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tz3000_dfgbtub0|ts4100": {
+   "status": "pending",
+   "drivers": [
+    "button_wireless_2",
+    "button_wireless_4"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tz3000_dfgbtub0|zbm5-1c-120": {
+   "status": "pending",
+   "drivers": [
+    "button_wireless_2",
+    "button_wireless_4"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tz3000_dfgbtub0|zbm5-2c-120": {
+   "status": "pending",
+   "drivers": [
+    "button_wireless_2",
+    "button_wireless_4"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tz3000_dfgbtub0|zbm5-3c-120": {
+   "status": "pending",
+   "drivers": [
+    "button_wireless_2",
+    "button_wireless_4"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tz3000_dfgbtub0|zbmini": {
+   "status": "pending",
+   "drivers": [
+    "button_wireless_2",
+    "button_wireless_4"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tz3000_dfgbtub0|zbminil2": {
+   "status": "pending",
+   "drivers": [
+    "button_wireless_2",
+    "button_wireless_4"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tz3000_dfgbtub0|zbminil2-r2": {
+   "status": "pending",
+   "drivers": [
+    "button_wireless_2",
+    "button_wireless_4"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tz3000_dfgbtub0|zbminir": {
+   "status": "pending",
+   "drivers": [
+    "button_wireless_2",
+    "button_wireless_4"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tz3000_dfgbtub0|zbminir2": {
+   "status": "pending",
+   "drivers": [
+    "button_wireless_2",
+    "button_wireless_4"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tz3000_dfgbtub0|zbminir2-r2": {
+   "status": "pending",
+   "drivers": [
+    "button_wireless_2",
+    "button_wireless_4"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tz3000_dpo1ysak|ts011f": {
+   "status": "pending",
+   "drivers": [
+    "plug",
+    "smartplug"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tz3000_ee8nrt2l|01minizb": {
+   "status": "pending",
+   "drivers": [
+    "button_wireless_2",
+    "button_wireless_4"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tz3000_ee8nrt2l|basiczbr3": {
+   "status": "pending",
+   "drivers": [
+    "button_wireless_2",
+    "button_wireless_4"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tz3000_ee8nrt2l|s26r2zb": {
+   "status": "pending",
+   "drivers": [
+    "button_wireless_2",
+    "button_wireless_4"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tz3000_ee8nrt2l|s31zb": {
+   "status": "pending",
+   "drivers": [
+    "button_wireless_2",
+    "button_wireless_4"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tz3000_ee8nrt2l|snzb-01m": {
+   "status": "pending",
+   "drivers": [
+    "button_wireless_2",
+    "button_wireless_4"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tz3000_ee8nrt2l|ts0001": {
+   "status": "pending",
+   "drivers": [
+    "button_wireless_2",
+    "button_wireless_4"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tz3000_ee8nrt2l|ts0001_power": {
+   "status": "pending",
+   "drivers": [
+    "button_wireless_2",
+    "button_wireless_4"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tz3000_ee8nrt2l|ts0001_switch": {
+   "status": "pending",
+   "drivers": [
+    "button_wireless_2",
+    "button_wireless_4"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tz3000_ee8nrt2l|ts0001_switch_module": {
+   "status": "pending",
+   "drivers": [
+    "button_wireless_2",
+    "button_wireless_4"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tz3000_ee8nrt2l|ts0002": {
+   "status": "pending",
+   "drivers": [
+    "button_wireless_2",
+    "button_wireless_4"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tz3000_ee8nrt2l|ts0003": {
+   "status": "pending",
+   "drivers": [
+    "button_wireless_2",
+    "button_wireless_4"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tz3000_ee8nrt2l|ts000f": {
+   "status": "pending",
+   "drivers": [
+    "button_wireless_2",
+    "button_wireless_4"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tz3000_ee8nrt2l|ts0011": {
+   "status": "pending",
+   "drivers": [
+    "button_wireless_2",
+    "button_wireless_4"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tz3000_ee8nrt2l|ts0012": {
+   "status": "pending",
+   "drivers": [
+    "button_wireless_2",
+    "button_wireless_4"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tz3000_ee8nrt2l|ts0014": {
+   "status": "pending",
+   "drivers": [
+    "button_wireless_2",
+    "button_wireless_4"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tz3000_ee8nrt2l|ts004f": {
+   "status": "pending",
+   "drivers": [
+    "button_wireless_2",
+    "button_wireless_4"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tz3000_ee8nrt2l|ts0101": {
+   "status": "pending",
+   "drivers": [
+    "button_wireless_2",
+    "button_wireless_4"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tz3000_ee8nrt2l|ts0111": {
+   "status": "pending",
+   "drivers": [
+    "button_wireless_2",
+    "button_wireless_4"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tz3000_ee8nrt2l|ts011f": {
+   "status": "pending",
+   "drivers": [
+    "button_wireless_2",
+    "button_wireless_4"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tz3000_ee8nrt2l|ts0601": {
+   "status": "pending",
+   "drivers": [
+    "button_wireless_2",
+    "button_wireless_4"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tz3000_ee8nrt2l|ts0726": {
+   "status": "pending",
+   "drivers": [
+    "button_wireless_2",
+    "button_wireless_4"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tz3000_ee8nrt2l|ts110e": {
+   "status": "pending",
+   "drivers": [
+    "button_wireless_2",
+    "button_wireless_4"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tz3000_ee8nrt2l|ts130f": {
+   "status": "pending",
+   "drivers": [
+    "button_wireless_2",
+    "button_wireless_4"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tz3000_ee8nrt2l|ts4100": {
+   "status": "pending",
+   "drivers": [
+    "button_wireless_2",
+    "button_wireless_4"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tz3000_ee8nrt2l|zbm5-1c-120": {
+   "status": "pending",
+   "drivers": [
+    "button_wireless_2",
+    "button_wireless_4"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tz3000_ee8nrt2l|zbm5-2c-120": {
+   "status": "pending",
+   "drivers": [
+    "button_wireless_2",
+    "button_wireless_4"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tz3000_ee8nrt2l|zbm5-3c-120": {
+   "status": "pending",
+   "drivers": [
+    "button_wireless_2",
+    "button_wireless_4"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tz3000_ee8nrt2l|zbmini": {
+   "status": "pending",
+   "drivers": [
+    "button_wireless_2",
+    "button_wireless_4"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tz3000_ee8nrt2l|zbminil2": {
+   "status": "pending",
+   "drivers": [
+    "button_wireless_2",
+    "button_wireless_4"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tz3000_ee8nrt2l|zbminil2-r2": {
+   "status": "pending",
+   "drivers": [
+    "button_wireless_2",
+    "button_wireless_4"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tz3000_ee8nrt2l|zbminir": {
+   "status": "pending",
+   "drivers": [
+    "button_wireless_2",
+    "button_wireless_4"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tz3000_ee8nrt2l|zbminir2": {
+   "status": "pending",
+   "drivers": [
+    "button_wireless_2",
+    "button_wireless_4"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tz3000_ee8nrt2l|zbminir2-r2": {
+   "status": "pending",
+   "drivers": [
+    "button_wireless_2",
+    "button_wireless_4"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tz3000_ew31dmgx|ts0001": {
+   "status": "pending",
+   "drivers": [
+    "button_wireless_2",
+    "plug"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tz3000_ew31dmgx|ts0001_fingerbot": {
+   "status": "pending",
+   "drivers": [
+    "button_wireless_2",
+    "plug"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tz3000_ew31dmgx|ts0003": {
+   "status": "pending",
+   "drivers": [
+    "button_wireless_2",
+    "plug"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tz3000_ew31dmgx|ts000f": {
+   "status": "pending",
+   "drivers": [
+    "button_wireless_2",
+    "plug"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tz3000_ew31dmgx|ts0011": {
+   "status": "pending",
+   "drivers": [
+    "button_wireless_2",
+    "plug"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tz3000_ew31dmgx|ts011f": {
+   "status": "pending",
+   "drivers": [
+    "button_wireless_2",
+    "plug"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tz3000_fqoynhku|ts011f": {
+   "status": "pending",
+   "drivers": [
+    "plug_energy_monitor",
+    "smartplug"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tz3000_fqoynhku|ts0121": {
+   "status": "pending",
+   "drivers": [
+    "plug_energy_monitor",
+    "smartplug"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tz3000_fqoynhku|tso121": {
+   "status": "pending",
+   "drivers": [
+    "plug_energy_monitor",
+    "smartplug"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tz3000_g1glzzfk|ts0502a": {
+   "status": "pending",
+   "drivers": [
+    "bulb_dimmable",
+    "tunable_bulb_E14"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tz3000_gjnozsaz|ts011f": {
+   "status": "pending",
+   "drivers": [
+    "button_wireless_plug",
+    "smartplug"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tz3000_gjnozsaz|ts0121": {
+   "status": "pending",
+   "drivers": [
+    "button_wireless_plug",
+    "smartplug"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tz3000_hlijwsai|e11-g13": {
+   "status": "pending",
+   "drivers": [
+    "bulb_rgb",
+    "led_strip_rgbw"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tz3000_hlijwsai|e11-g14": {
+   "status": "pending",
+   "drivers": [
+    "bulb_rgb",
+    "led_strip_rgbw"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tz3000_hlijwsai|e11-g23": {
+   "status": "pending",
+   "drivers": [
+    "bulb_rgb",
+    "led_strip_rgbw"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tz3000_hlijwsai|gl-c-006": {
+   "status": "pending",
+   "drivers": [
+    "bulb_rgb",
+    "led_strip_rgbw"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tz3000_hlijwsai|lct001": {
+   "status": "pending",
+   "drivers": [
+    "bulb_rgb",
+    "led_strip_rgbw"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tz3000_hlijwsai|lct002": {
+   "status": "pending",
+   "drivers": [
+    "bulb_rgb",
+    "led_strip_rgbw"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tz3000_hlijwsai|lct003": {
+   "status": "pending",
+   "drivers": [
+    "bulb_rgb",
+    "led_strip_rgbw"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tz3000_hlijwsai|lct007": {
+   "status": "pending",
+   "drivers": [
+    "bulb_rgb",
+    "led_strip_rgbw"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tz3000_hlijwsai|lct010": {
+   "status": "pending",
+   "drivers": [
+    "bulb_rgb",
+    "led_strip_rgbw"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tz3000_hlijwsai|lct011": {
+   "status": "pending",
+   "drivers": [
+    "bulb_rgb",
+    "led_strip_rgbw"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tz3000_hlijwsai|lct012": {
+   "status": "pending",
+   "drivers": [
+    "bulb_rgb",
+    "led_strip_rgbw"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tz3000_hlijwsai|lct014": {
+   "status": "pending",
+   "drivers": [
+    "bulb_rgb",
+    "led_strip_rgbw"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tz3000_hlijwsai|lct015": {
+   "status": "pending",
+   "drivers": [
+    "bulb_rgb",
+    "led_strip_rgbw"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tz3000_hlijwsai|lct016": {
+   "status": "pending",
+   "drivers": [
+    "bulb_rgb",
+    "led_strip_rgbw"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tz3000_hlijwsai|rb 185 c": {
+   "status": "pending",
+   "drivers": [
+    "bulb_rgb",
+    "led_strip_rgbw"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tz3000_hlijwsai|rb 285 c": {
+   "status": "pending",
+   "drivers": [
+    "bulb_rgb",
+    "led_strip_rgbw"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tz3000_hlijwsai|ts0503a": {
+   "status": "pending",
+   "drivers": [
+    "bulb_rgb",
+    "led_strip_rgbw"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tz3000_hlijwsai|ts0503b": {
+   "status": "pending",
+   "drivers": [
+    "bulb_rgb",
+    "led_strip_rgbw"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tz3000_hlijwsai|ts0504b": {
+   "status": "pending",
+   "drivers": [
+    "bulb_rgb",
+    "led_strip_rgbw"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tz3000_hlijwsai|ts0505a": {
+   "status": "pending",
+   "drivers": [
+    "bulb_rgb",
+    "led_strip_rgbw"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tz3000_hlijwsai|ts0505b": {
+   "status": "pending",
+   "drivers": [
+    "bulb_rgb",
+    "led_strip_rgbw"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tz3000_hlijwsai|zb-cl01": {
+   "status": "pending",
+   "drivers": [
+    "bulb_rgb",
+    "led_strip_rgbw"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tz3000_hlijwsai|zbt-colorlight": {
+   "status": "pending",
+   "drivers": [
+    "bulb_rgb",
+    "led_strip_rgbw"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tz3000_hyfvrar3|ts0001": {
+   "status": "pending",
+   "drivers": [
+    "button_wireless_2",
+    "plug"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tz3000_hyfvrar3|ts0001_fingerbot": {
+   "status": "pending",
+   "drivers": [
+    "button_wireless_2",
+    "plug"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tz3000_hyfvrar3|ts0003": {
+   "status": "pending",
+   "drivers": [
+    "button_wireless_2",
+    "plug"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tz3000_hyfvrar3|ts000f": {
+   "status": "pending",
+   "drivers": [
+    "button_wireless_2",
+    "plug"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tz3000_hyfvrar3|ts0011": {
+   "status": "pending",
+   "drivers": [
+    "button_wireless_2",
+    "plug"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tz3000_hyfvrar3|ts011f": {
+   "status": "pending",
+   "drivers": [
+    "button_wireless_2",
+    "plug"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tz3000_iystcadi|ts0601": {
+   "status": "pending",
+   "drivers": [
+    "dimmable_led_strip",
+    "led_controller_rgb"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tz3000_j1v25l17|ts011f": {
+   "status": "pending",
+   "drivers": [
+    "plug_energy_monitor",
+    "smartplug"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tz3000_j1v25l17|ts0121": {
+   "status": "pending",
+   "drivers": [
+    "plug_energy_monitor",
+    "smartplug"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tz3000_j1v25l17|tso121": {
+   "status": "pending",
+   "drivers": [
+    "plug_energy_monitor",
+    "smartplug"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tz3000_j2w1dw29|ts0001": {
+   "status": "pending",
+   "drivers": [
+    "bulb_dimmable",
+    "dimmer_wall_1gang"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tz3000_j2w1dw29|ts0002": {
+   "status": "pending",
+   "drivers": [
+    "bulb_dimmable",
+    "dimmer_wall_1gang"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tz3000_j2w1dw29|ts0003": {
+   "status": "pending",
+   "drivers": [
+    "bulb_dimmable",
+    "dimmer_wall_1gang"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tz3000_j2w1dw29|ts0011": {
+   "status": "pending",
+   "drivers": [
+    "bulb_dimmable",
+    "dimmer_wall_1gang"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tz3000_j2w1dw29|ts0012": {
+   "status": "pending",
+   "drivers": [
+    "bulb_dimmable",
+    "dimmer_wall_1gang"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tz3000_j2w1dw29|ts0052": {
+   "status": "pending",
+   "drivers": [
+    "bulb_dimmable",
+    "dimmer_wall_1gang"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tz3000_j2w1dw29|ts011f": {
+   "status": "pending",
+   "drivers": [
+    "bulb_dimmable",
+    "dimmer_wall_1gang"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tz3000_j2w1dw29|ts0505b": {
+   "status": "pending",
+   "drivers": [
+    "bulb_dimmable",
+    "dimmer_wall_1gang"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tz3000_j2w1dw29|ts0726": {
+   "status": "pending",
+   "drivers": [
+    "bulb_dimmable",
+    "dimmer_wall_1gang"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tz3000_j2w1dw29|ts1101": {
+   "status": "pending",
+   "drivers": [
+    "bulb_dimmable",
+    "dimmer_wall_1gang"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tz3000_j2w1dw29|ts110e": {
+   "status": "pending",
+   "drivers": [
+    "bulb_dimmable",
+    "dimmer_wall_1gang"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tz3000_j2w1dw29|ts110f": {
+   "status": "pending",
+   "drivers": [
+    "bulb_dimmable",
+    "dimmer_wall_1gang"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tz3000_jak16dll|ts011f": {
+   "status": "pending",
+   "drivers": [
+    "button_wireless_2",
+    "smartplug_2_socket"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tz3000_jak16dll|ts0601": {
+   "status": "pending",
+   "drivers": [
+    "button_wireless_2",
+    "smartplug_2_socket"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tz3000_juq7i1fr|ts0001": {
+   "status": "pending",
+   "drivers": [
+    "bulb_dimmable",
+    "dimmer_wall_1gang"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tz3000_juq7i1fr|ts0002": {
+   "status": "pending",
+   "drivers": [
+    "bulb_dimmable",
+    "dimmer_wall_1gang"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tz3000_juq7i1fr|ts0003": {
+   "status": "pending",
+   "drivers": [
+    "bulb_dimmable",
+    "dimmer_wall_1gang"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tz3000_juq7i1fr|ts0011": {
+   "status": "pending",
+   "drivers": [
+    "bulb_dimmable",
+    "dimmer_wall_1gang"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tz3000_juq7i1fr|ts0012": {
+   "status": "pending",
+   "drivers": [
+    "bulb_dimmable",
+    "dimmer_wall_1gang"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tz3000_juq7i1fr|ts0052": {
+   "status": "pending",
+   "drivers": [
+    "bulb_dimmable",
+    "dimmer_wall_1gang"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tz3000_juq7i1fr|ts011f": {
+   "status": "pending",
+   "drivers": [
+    "bulb_dimmable",
+    "dimmer_wall_1gang"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tz3000_juq7i1fr|ts0505b": {
+   "status": "pending",
+   "drivers": [
+    "bulb_dimmable",
+    "dimmer_wall_1gang"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tz3000_juq7i1fr|ts0726": {
+   "status": "pending",
+   "drivers": [
+    "bulb_dimmable",
+    "dimmer_wall_1gang"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tz3000_juq7i1fr|ts1101": {
+   "status": "pending",
+   "drivers": [
+    "bulb_dimmable",
+    "dimmer_wall_1gang"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tz3000_juq7i1fr|ts110e": {
+   "status": "pending",
+   "drivers": [
+    "bulb_dimmable",
+    "dimmer_wall_1gang"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tz3000_juq7i1fr|ts110f": {
+   "status": "pending",
+   "drivers": [
+    "bulb_dimmable",
+    "dimmer_wall_1gang"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tz3000_kdi2o9m6|ts0001": {
+   "status": "pending",
+   "drivers": [
+    "button_wireless_2",
+    "plug"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tz3000_kdi2o9m6|ts0001_fingerbot": {
+   "status": "pending",
+   "drivers": [
+    "button_wireless_2",
+    "plug"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tz3000_kdi2o9m6|ts0003": {
+   "status": "pending",
+   "drivers": [
+    "button_wireless_2",
+    "plug"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tz3000_kdi2o9m6|ts000f": {
+   "status": "pending",
+   "drivers": [
+    "button_wireless_2",
+    "plug"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tz3000_kdi2o9m6|ts0011": {
+   "status": "pending",
+   "drivers": [
+    "button_wireless_2",
+    "plug"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tz3000_kdi2o9m6|ts011f": {
+   "status": "pending",
+   "drivers": [
+    "button_wireless_2",
+    "plug"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tz3000_keabpigv|e11-g13": {
+   "status": "pending",
+   "drivers": [
+    "bulb_rgb",
+    "led_strip_rgbw"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tz3000_keabpigv|e11-g14": {
+   "status": "pending",
+   "drivers": [
+    "bulb_rgb",
+    "led_strip_rgbw"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tz3000_keabpigv|e11-g23": {
+   "status": "pending",
+   "drivers": [
+    "bulb_rgb",
+    "led_strip_rgbw"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tz3000_keabpigv|gl-c-006": {
+   "status": "pending",
+   "drivers": [
+    "bulb_rgb",
+    "led_strip_rgbw"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tz3000_keabpigv|lct001": {
+   "status": "pending",
+   "drivers": [
+    "bulb_rgb",
+    "led_strip_rgbw"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tz3000_keabpigv|lct002": {
+   "status": "pending",
+   "drivers": [
+    "bulb_rgb",
+    "led_strip_rgbw"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tz3000_keabpigv|lct003": {
+   "status": "pending",
+   "drivers": [
+    "bulb_rgb",
+    "led_strip_rgbw"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tz3000_keabpigv|lct007": {
+   "status": "pending",
+   "drivers": [
+    "bulb_rgb",
+    "led_strip_rgbw"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tz3000_keabpigv|lct010": {
+   "status": "pending",
+   "drivers": [
+    "bulb_rgb",
+    "led_strip_rgbw"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tz3000_keabpigv|lct011": {
+   "status": "pending",
+   "drivers": [
+    "bulb_rgb",
+    "led_strip_rgbw"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tz3000_keabpigv|lct012": {
+   "status": "pending",
+   "drivers": [
+    "bulb_rgb",
+    "led_strip_rgbw"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tz3000_keabpigv|lct014": {
+   "status": "pending",
+   "drivers": [
+    "bulb_rgb",
+    "led_strip_rgbw"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tz3000_keabpigv|lct015": {
+   "status": "pending",
+   "drivers": [
+    "bulb_rgb",
+    "led_strip_rgbw"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tz3000_keabpigv|lct016": {
+   "status": "pending",
+   "drivers": [
+    "bulb_rgb",
+    "led_strip_rgbw"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tz3000_keabpigv|rb 185 c": {
+   "status": "pending",
+   "drivers": [
+    "bulb_rgb",
+    "led_strip_rgbw"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tz3000_keabpigv|rb 285 c": {
+   "status": "pending",
+   "drivers": [
+    "bulb_rgb",
+    "led_strip_rgbw"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tz3000_keabpigv|ts0503a": {
+   "status": "pending",
+   "drivers": [
+    "bulb_rgb",
+    "led_strip_rgbw"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tz3000_keabpigv|ts0503b": {
+   "status": "pending",
+   "drivers": [
+    "bulb_rgb",
+    "led_strip_rgbw"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tz3000_keabpigv|ts0504b": {
+   "status": "pending",
+   "drivers": [
+    "bulb_rgb",
+    "led_strip_rgbw"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tz3000_keabpigv|ts0505a": {
+   "status": "pending",
+   "drivers": [
+    "bulb_rgb",
+    "led_strip_rgbw"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tz3000_keabpigv|ts0505b": {
+   "status": "pending",
+   "drivers": [
+    "bulb_rgb",
+    "led_strip_rgbw"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tz3000_keabpigv|zb-cl01": {
+   "status": "pending",
+   "drivers": [
+    "bulb_rgb",
+    "led_strip_rgbw"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tz3000_keabpigv|zbt-colorlight": {
+   "status": "pending",
+   "drivers": [
+    "bulb_rgb",
+    "led_strip_rgbw"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tz3000_kz1anoi8|ts0049": {
+   "status": "pending",
+   "drivers": [
+    "smart_garden_irrigation_control",
+    "water_valve_garden"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tz3000_kz1anoi8|ts0101": {
+   "status": "pending",
+   "drivers": [
+    "smart_garden_irrigation_control",
+    "water_valve_garden"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tz3000_kz1anoi8|ts0601": {
+   "status": "pending",
+   "drivers": [
+    "smart_garden_irrigation_control",
+    "water_valve_garden"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tz3000_lepzuhto|ts011f": {
+   "status": "pending",
+   "drivers": [
+    "button_wireless_2",
+    "smartPlug_DinRail"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tz3000_lepzuhto|ts0121": {
+   "status": "pending",
+   "drivers": [
+    "button_wireless_2",
+    "smartPlug_DinRail"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tz3000_lepzuhto|tso121": {
+   "status": "pending",
+   "drivers": [
+    "button_wireless_2",
+    "smartPlug_DinRail"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tz3000_mcxw5ehu|excellux": {
+   "status": "pending",
+   "drivers": [
+    "pir_sensor_2",
+    "sensor_motion_presence"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tz3000_mcxw5ehu|ts0001": {
+   "status": "pending",
+   "drivers": [
+    "pir_sensor_2",
+    "sensor_motion_presence"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tz3000_mcxw5ehu|ts0202": {
+   "status": "pending",
+   "drivers": [
+    "pir_sensor_2",
+    "sensor_motion_presence"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tz3000_mcxw5ehu|ts0601": {
+   "status": "pending",
+   "drivers": [
+    "pir_sensor_2",
+    "sensor_motion_presence"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tz3000_mg4dy6z6|excellux": {
+   "status": "pending",
+   "drivers": [
+    "pir_sensor_2",
+    "sensor_motion_presence"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tz3000_mg4dy6z6|ts0001": {
+   "status": "pending",
+   "drivers": [
+    "pir_sensor_2",
+    "sensor_motion_presence"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tz3000_mg4dy6z6|ts0202": {
+   "status": "pending",
+   "drivers": [
+    "pir_sensor_2",
+    "sensor_motion_presence"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tz3000_mg4dy6z6|ts0601": {
+   "status": "pending",
+   "drivers": [
+    "pir_sensor_2",
+    "sensor_motion_presence"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tz3000_mmtwjmaq|ts0001": {
+   "status": "pending",
+   "drivers": [
+    "motion_sensor",
+    "pir_sensor_2"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tz3000_mmtwjmaq|ts0202": {
+   "status": "pending",
+   "drivers": [
+    "motion_sensor",
+    "pir_sensor_2"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tz3000_mmtwjmaq|ts0601": {
+   "status": "pending",
+   "drivers": [
+    "motion_sensor",
+    "pir_sensor_2"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tz3000_mmtwjmaq|ts110e": {
+   "status": "pending",
+   "drivers": [
+    "motion_sensor",
+    "pir_sensor_2"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tz3000_mq4wujmp|ts0049": {
+   "status": "pending",
+   "drivers": [
+    "smart_garden_irrigation_control",
+    "water_valve_garden"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tz3000_mq4wujmp|ts0101": {
+   "status": "pending",
+   "drivers": [
+    "smart_garden_irrigation_control",
+    "water_valve_garden"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tz3000_mq4wujmp|ts0601": {
+   "status": "pending",
+   "drivers": [
+    "smart_garden_irrigation_control",
+    "water_valve_garden"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tz3000_msl6wxk9|excellux": {
+   "status": "pending",
+   "drivers": [
+    "pir_sensor_2",
+    "sensor_motion_presence"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tz3000_msl6wxk9|ts0001": {
+   "status": "pending",
+   "drivers": [
+    "pir_sensor_2",
+    "sensor_motion_presence"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tz3000_msl6wxk9|ts0202": {
+   "status": "pending",
+   "drivers": [
+    "pir_sensor_2",
+    "sensor_motion_presence"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tz3000_msl6wxk9|ts0601": {
+   "status": "pending",
+   "drivers": [
+    "pir_sensor_2",
+    "sensor_motion_presence"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tz3000_nbnmw9nc|ts0001": {
+   "status": "pending",
+   "drivers": [
+    "bulb_dimmable",
+    "dimmer_wall_1gang"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tz3000_nbnmw9nc|ts0002": {
+   "status": "pending",
+   "drivers": [
+    "bulb_dimmable",
+    "dimmer_wall_1gang"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tz3000_nbnmw9nc|ts0003": {
+   "status": "pending",
+   "drivers": [
+    "bulb_dimmable",
+    "dimmer_wall_1gang"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tz3000_nbnmw9nc|ts0011": {
+   "status": "pending",
+   "drivers": [
+    "bulb_dimmable",
+    "dimmer_wall_1gang"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tz3000_nbnmw9nc|ts0012": {
+   "status": "pending",
+   "drivers": [
+    "bulb_dimmable",
+    "dimmer_wall_1gang"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tz3000_nbnmw9nc|ts0052": {
+   "status": "pending",
+   "drivers": [
+    "bulb_dimmable",
+    "dimmer_wall_1gang"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tz3000_nbnmw9nc|ts011f": {
+   "status": "pending",
+   "drivers": [
+    "bulb_dimmable",
+    "dimmer_wall_1gang"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tz3000_nbnmw9nc|ts0505b": {
+   "status": "pending",
+   "drivers": [
+    "bulb_dimmable",
+    "dimmer_wall_1gang"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tz3000_nbnmw9nc|ts0726": {
+   "status": "pending",
+   "drivers": [
+    "bulb_dimmable",
+    "dimmer_wall_1gang"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tz3000_nbnmw9nc|ts1101": {
+   "status": "pending",
+   "drivers": [
+    "bulb_dimmable",
+    "dimmer_wall_1gang"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tz3000_nbnmw9nc|ts110e": {
+   "status": "pending",
+   "drivers": [
+    "bulb_dimmable",
+    "dimmer_wall_1gang"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tz3000_nbnmw9nc|ts110f": {
+   "status": "pending",
+   "drivers": [
+    "bulb_dimmable",
+    "dimmer_wall_1gang"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tz3000_nosnx7im|ts0001": {
+   "status": "pending",
+   "drivers": [
+    "bulb_dimmable",
+    "dimmer_wall_1gang"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tz3000_nosnx7im|ts0002": {
+   "status": "pending",
+   "drivers": [
+    "bulb_dimmable",
+    "dimmer_wall_1gang"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tz3000_nosnx7im|ts0003": {
+   "status": "pending",
+   "drivers": [
+    "bulb_dimmable",
+    "dimmer_wall_1gang"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tz3000_nosnx7im|ts0011": {
+   "status": "pending",
+   "drivers": [
+    "bulb_dimmable",
+    "dimmer_wall_1gang"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tz3000_nosnx7im|ts0012": {
+   "status": "pending",
+   "drivers": [
+    "bulb_dimmable",
+    "dimmer_wall_1gang"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tz3000_nosnx7im|ts0052": {
+   "status": "pending",
+   "drivers": [
+    "bulb_dimmable",
+    "dimmer_wall_1gang"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tz3000_nosnx7im|ts011f": {
+   "status": "pending",
+   "drivers": [
+    "bulb_dimmable",
+    "dimmer_wall_1gang"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tz3000_nosnx7im|ts0505b": {
+   "status": "pending",
+   "drivers": [
+    "bulb_dimmable",
+    "dimmer_wall_1gang"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tz3000_nosnx7im|ts0726": {
+   "status": "pending",
+   "drivers": [
+    "bulb_dimmable",
+    "dimmer_wall_1gang"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tz3000_nosnx7im|ts1101": {
+   "status": "pending",
+   "drivers": [
+    "bulb_dimmable",
+    "dimmer_wall_1gang"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tz3000_nosnx7im|ts110e": {
+   "status": "pending",
+   "drivers": [
+    "bulb_dimmable",
+    "dimmer_wall_1gang"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tz3000_nosnx7im|ts110f": {
+   "status": "pending",
+   "drivers": [
+    "bulb_dimmable",
+    "dimmer_wall_1gang"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tz3000_nss8amz9|excellux": {
+   "status": "pending",
+   "drivers": [
+    "pir_sensor_2",
+    "sensor_motion_presence"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tz3000_nss8amz9|ts0001": {
+   "status": "pending",
+   "drivers": [
+    "pir_sensor_2",
+    "sensor_motion_presence"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tz3000_nss8amz9|ts0202": {
+   "status": "pending",
+   "drivers": [
+    "pir_sensor_2",
+    "sensor_motion_presence"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tz3000_nss8amz9|ts0601": {
+   "status": "pending",
+   "drivers": [
+    "pir_sensor_2",
+    "sensor_motion_presence"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tz3000_plyvnuf5|ts0001": {
+   "status": "pending",
+   "drivers": [
+    "button_wireless_2",
+    "plug"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tz3000_plyvnuf5|ts0001_fingerbot": {
+   "status": "pending",
+   "drivers": [
+    "button_wireless_2",
+    "plug"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tz3000_plyvnuf5|ts0003": {
+   "status": "pending",
+   "drivers": [
+    "button_wireless_2",
+    "plug"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tz3000_plyvnuf5|ts000f": {
+   "status": "pending",
+   "drivers": [
+    "button_wireless_2",
+    "plug"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tz3000_plyvnuf5|ts0011": {
+   "status": "pending",
+   "drivers": [
+    "button_wireless_2",
+    "plug"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tz3000_plyvnuf5|ts011f": {
+   "status": "pending",
+   "drivers": [
+    "button_wireless_2",
+    "plug"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tz3000_pzui3skt|ts004f": {
+   "status": "pending",
+   "drivers": [
+    "button_wireless_1",
+    "smart_knob_rotary"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tz3000_pzui3skt|ts0601": {
+   "status": "pending",
+   "drivers": [
+    "button_wireless_1",
+    "smart_knob_rotary"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tz3000_pzui3skt|zg-101zd": {
+   "status": "pending",
+   "drivers": [
+    "button_wireless_1",
+    "smart_knob_rotary"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tz3000_q50zhdsc|ts0601": {
+   "status": "pending",
+   "drivers": [
+    "bulb_rgb",
+    "dimmable_led_strip"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tz3000_qd7hej8u|ts0601": {
+   "status": "pending",
+   "drivers": [
+    "bulb_rgb",
+    "dimmable_led_strip"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tz3000_u5u4cakc|ts011f": {
+   "status": "pending",
+   "drivers": [
+    "button_wireless_plug",
+    "smartplug"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tz3000_u5u4cakc|ts0121": {
+   "status": "pending",
+   "drivers": [
+    "button_wireless_plug",
+    "smartplug"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tz3000_upjrsxh1|ts0001": {
+   "status": "pending",
+   "drivers": [
+    "button_wireless_2",
+    "plug"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tz3000_upjrsxh1|ts0001_fingerbot": {
+   "status": "pending",
+   "drivers": [
+    "button_wireless_2",
+    "plug"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tz3000_upjrsxh1|ts0003": {
+   "status": "pending",
+   "drivers": [
+    "button_wireless_2",
+    "plug"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tz3000_upjrsxh1|ts000f": {
+   "status": "pending",
+   "drivers": [
+    "button_wireless_2",
+    "plug"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tz3000_upjrsxh1|ts0011": {
+   "status": "pending",
+   "drivers": [
+    "button_wireless_2",
+    "plug"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tz3000_upjrsxh1|ts011f": {
+   "status": "pending",
+   "drivers": [
+    "button_wireless_2",
+    "plug"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tz3000_uvti8nkd|ts0003": {
+   "status": "pending",
+   "drivers": [
+    "doorwindowsensor_3",
+    "sensor_contact_zigbee"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tz3000_uvti8nkd|ts0203": {
+   "status": "pending",
+   "drivers": [
+    "doorwindowsensor_3",
+    "sensor_contact_zigbee"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tz3000_uvti8nkd|ts0601": {
+   "status": "pending",
+   "drivers": [
+    "doorwindowsensor_3",
+    "sensor_contact_zigbee"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tz3000_uvti8nkd|ts0726": {
+   "status": "pending",
+   "drivers": [
+    "doorwindowsensor_3",
+    "sensor_contact_zigbee"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tz3000_uvti8nkd|ts130f": {
+   "status": "pending",
+   "drivers": [
+    "doorwindowsensor_3",
+    "sensor_contact_zigbee"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tz3000_vw8pawxa|ts0301": {
+   "status": "pending",
+   "drivers": [
+    "curtain_motor",
+    "curtain_motor_shutter"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tz3000_vw8pawxa|ts0601": {
+   "status": "pending",
+   "drivers": [
+    "curtain_motor",
+    "curtain_motor_shutter"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tz3000_vw8pawxa|ts0726": {
+   "status": "pending",
+   "drivers": [
+    "curtain_motor",
+    "curtain_motor_shutter"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tz3000_vw8pawxa|ts110e": {
+   "status": "pending",
+   "drivers": [
+    "curtain_motor",
+    "curtain_motor_shutter"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tz3000_wamqdr3f|ts0001": {
+   "status": "pending",
+   "drivers": [
+    "plug",
+    "plug_energy_monitor"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tz3000_wamqdr3f|ts0003": {
+   "status": "pending",
+   "drivers": [
+    "plug",
+    "plug_energy_monitor"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tz3000_wamqdr3f|ts000f": {
+   "status": "pending",
+   "drivers": [
+    "plug",
+    "plug_energy_monitor"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tz3000_wamqdr3f|ts0011": {
+   "status": "pending",
+   "drivers": [
+    "plug",
+    "plug_energy_monitor"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tz3000_wamqdr3f|ts011f": {
+   "status": "pending",
+   "drivers": [
+    "plug",
+    "plug_energy_monitor"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tz3000_wzauvbcs|ts011f": {
+   "status": "pending",
+   "drivers": [
+    "button_wireless_2",
+    "socket_power_strip"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tz3000_zgrffiwg|ts0003": {
+   "status": "pending",
+   "drivers": [
+    "doorwindowsensor_3",
+    "sensor_contact_zigbee"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tz3000_zgrffiwg|ts0203": {
+   "status": "pending",
+   "drivers": [
+    "doorwindowsensor_3",
+    "sensor_contact_zigbee"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tz3000_zgrffiwg|ts0601": {
+   "status": "pending",
+   "drivers": [
+    "doorwindowsensor_3",
+    "sensor_contact_zigbee"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tz3000_zgrffiwg|ts0726": {
+   "status": "pending",
+   "drivers": [
+    "doorwindowsensor_3",
+    "sensor_contact_zigbee"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tz3000_zgrffiwg|ts130f": {
+   "status": "pending",
+   "drivers": [
+    "doorwindowsensor_3",
+    "sensor_contact_zigbee"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tz3000_zw7wr5uo|ts0502a": {
+   "status": "pending",
+   "drivers": [
+    "bulb_dimmable",
+    "tunable_bulb_E14"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tz3040_6ygjfyll|excellux": {
+   "status": "pending",
+   "drivers": [
+    "pir_sensor_2",
+    "sensor_motion_presence"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tz3040_6ygjfyll|ts0001": {
+   "status": "pending",
+   "drivers": [
+    "pir_sensor_2",
+    "sensor_motion_presence"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tz3040_6ygjfyll|ts0202": {
+   "status": "pending",
+   "drivers": [
+    "pir_sensor_2",
+    "sensor_motion_presence"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tz3040_6ygjfyll|ts0601": {
+   "status": "pending",
+   "drivers": [
+    "pir_sensor_2",
+    "sensor_motion_presence"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tz3040_wqmtjsyk|excellux": {
+   "status": "pending",
+   "drivers": [
+    "pir_sensor_2",
+    "sensor_motion_presence"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tz3040_wqmtjsyk|ts0001": {
+   "status": "pending",
+   "drivers": [
+    "pir_sensor_2",
+    "sensor_motion_presence"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tz3040_wqmtjsyk|ts0202": {
+   "status": "pending",
+   "drivers": [
+    "pir_sensor_2",
+    "sensor_motion_presence"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tz3040_wqmtjsyk|ts0601": {
+   "status": "pending",
+   "drivers": [
+    "pir_sensor_2",
+    "sensor_motion_presence"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tz3210_4ubylghk|ts0601": {
+   "status": "pending",
+   "drivers": [
+    "dimmer_2_gang",
+    "rgb_led_strip"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tz3210_claeh5ds|classic a60 tw": {
+   "status": "pending",
+   "drivers": [
+    "bulb_dimmable",
+    "light_bulb_dimmable_tunable"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tz3210_claeh5ds|e11-n13": {
+   "status": "pending",
+   "drivers": [
+    "bulb_dimmable",
+    "light_bulb_dimmable_tunable"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tz3210_claeh5ds|e11-n14": {
+   "status": "pending",
+   "drivers": [
+    "bulb_dimmable",
+    "light_bulb_dimmable_tunable"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tz3210_claeh5ds|e12-n13": {
+   "status": "pending",
+   "drivers": [
+    "bulb_dimmable",
+    "light_bulb_dimmable_tunable"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tz3210_claeh5ds|e12-n14": {
+   "status": "pending",
+   "drivers": [
+    "bulb_dimmable",
+    "light_bulb_dimmable_tunable"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tz3210_claeh5ds|gl-b-007z": {
+   "status": "pending",
+   "drivers": [
+    "bulb_dimmable",
+    "light_bulb_dimmable_tunable"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tz3210_claeh5ds|gl-c-007": {
+   "status": "pending",
+   "drivers": [
+    "bulb_dimmable",
+    "light_bulb_dimmable_tunable"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tz3210_claeh5ds|led1545g12": {
+   "status": "pending",
+   "drivers": [
+    "bulb_dimmable",
+    "light_bulb_dimmable_tunable"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tz3210_claeh5ds|led1546g12": {
+   "status": "pending",
+   "drivers": [
+    "bulb_dimmable",
+    "light_bulb_dimmable_tunable"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tz3210_claeh5ds|ltw001": {
+   "status": "pending",
+   "drivers": [
+    "bulb_dimmable",
+    "light_bulb_dimmable_tunable"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tz3210_claeh5ds|ltw004": {
+   "status": "pending",
+   "drivers": [
+    "bulb_dimmable",
+    "light_bulb_dimmable_tunable"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tz3210_claeh5ds|ltw010": {
+   "status": "pending",
+   "drivers": [
+    "bulb_dimmable",
+    "light_bulb_dimmable_tunable"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tz3210_claeh5ds|ltw012": {
+   "status": "pending",
+   "drivers": [
+    "bulb_dimmable",
+    "light_bulb_dimmable_tunable"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tz3210_claeh5ds|ltw013": {
+   "status": "pending",
+   "drivers": [
+    "bulb_dimmable",
+    "light_bulb_dimmable_tunable"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tz3210_claeh5ds|ltw015": {
+   "status": "pending",
+   "drivers": [
+    "bulb_dimmable",
+    "light_bulb_dimmable_tunable"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tz3210_claeh5ds|rb 178 t": {
+   "status": "pending",
+   "drivers": [
+    "bulb_dimmable",
+    "light_bulb_dimmable_tunable"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tz3210_claeh5ds|rs 128 t": {
+   "status": "pending",
+   "drivers": [
+    "bulb_dimmable",
+    "light_bulb_dimmable_tunable"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tz3210_claeh5ds|ts0011": {
+   "status": "pending",
+   "drivers": [
+    "bulb_dimmable",
+    "light_bulb_dimmable_tunable"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tz3210_claeh5ds|ts0052": {
+   "status": "pending",
+   "drivers": [
+    "bulb_dimmable",
+    "light_bulb_dimmable_tunable"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tz3210_claeh5ds|ts0502a": {
+   "status": "pending",
+   "drivers": [
+    "bulb_dimmable",
+    "light_bulb_dimmable_tunable"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tz3210_claeh5ds|ts0502b": {
+   "status": "pending",
+   "drivers": [
+    "bulb_dimmable",
+    "light_bulb_dimmable_tunable"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tz3210_claeh5ds|ts1101": {
+   "status": "pending",
+   "drivers": [
+    "bulb_dimmable",
+    "light_bulb_dimmable_tunable"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tz3210_claeh5ds|ts110e": {
+   "status": "pending",
+   "drivers": [
+    "bulb_dimmable",
+    "light_bulb_dimmable_tunable"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tz3210_claeh5ds|ts110f": {
+   "status": "pending",
+   "drivers": [
+    "bulb_dimmable",
+    "light_bulb_dimmable_tunable"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tz3210_claeh5ds|zbt-cctlight": {
+   "status": "pending",
+   "drivers": [
+    "bulb_dimmable",
+    "light_bulb_dimmable_tunable"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tz3210_dbilpfqk|ts0001": {
+   "status": "pending",
+   "drivers": [
+    "bulb_dimmable",
+    "dimmer_wall_1gang"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tz3210_dbilpfqk|ts0002": {
+   "status": "pending",
+   "drivers": [
+    "bulb_dimmable",
+    "dimmer_wall_1gang"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tz3210_dbilpfqk|ts0003": {
+   "status": "pending",
+   "drivers": [
+    "bulb_dimmable",
+    "dimmer_wall_1gang"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tz3210_dbilpfqk|ts0011": {
+   "status": "pending",
+   "drivers": [
+    "bulb_dimmable",
+    "dimmer_wall_1gang"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tz3210_dbilpfqk|ts0012": {
+   "status": "pending",
+   "drivers": [
+    "bulb_dimmable",
+    "dimmer_wall_1gang"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tz3210_dbilpfqk|ts0052": {
+   "status": "pending",
+   "drivers": [
+    "bulb_dimmable",
+    "dimmer_wall_1gang"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tz3210_dbilpfqk|ts011f": {
+   "status": "pending",
+   "drivers": [
+    "bulb_dimmable",
+    "dimmer_wall_1gang"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tz3210_dbilpfqk|ts0505b": {
+   "status": "pending",
+   "drivers": [
+    "bulb_dimmable",
+    "dimmer_wall_1gang"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tz3210_dbilpfqk|ts0726": {
+   "status": "pending",
+   "drivers": [
+    "bulb_dimmable",
+    "dimmer_wall_1gang"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tz3210_dbilpfqk|ts1101": {
+   "status": "pending",
+   "drivers": [
+    "bulb_dimmable",
+    "dimmer_wall_1gang"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tz3210_dbilpfqk|ts110e": {
+   "status": "pending",
+   "drivers": [
+    "bulb_dimmable",
+    "dimmer_wall_1gang"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tz3210_dbilpfqk|ts110f": {
+   "status": "pending",
+   "drivers": [
+    "bulb_dimmable",
+    "dimmer_wall_1gang"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tz3210_dxroobu3|ts0001": {
+   "status": "pending",
+   "drivers": [
+    "bulb_dimmable",
+    "dimmer_wall_1gang"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tz3210_dxroobu3|ts0002": {
+   "status": "pending",
+   "drivers": [
+    "bulb_dimmable",
+    "dimmer_wall_1gang"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tz3210_dxroobu3|ts0003": {
+   "status": "pending",
+   "drivers": [
+    "bulb_dimmable",
+    "dimmer_wall_1gang"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tz3210_dxroobu3|ts0011": {
+   "status": "pending",
+   "drivers": [
+    "bulb_dimmable",
+    "dimmer_wall_1gang"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tz3210_dxroobu3|ts0012": {
+   "status": "pending",
+   "drivers": [
+    "bulb_dimmable",
+    "dimmer_wall_1gang"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tz3210_dxroobu3|ts0052": {
+   "status": "pending",
+   "drivers": [
+    "bulb_dimmable",
+    "dimmer_wall_1gang"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tz3210_dxroobu3|ts011f": {
+   "status": "pending",
+   "drivers": [
+    "bulb_dimmable",
+    "dimmer_wall_1gang"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tz3210_dxroobu3|ts0505b": {
+   "status": "pending",
+   "drivers": [
+    "bulb_dimmable",
+    "dimmer_wall_1gang"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tz3210_dxroobu3|ts0726": {
+   "status": "pending",
+   "drivers": [
+    "bulb_dimmable",
+    "dimmer_wall_1gang"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tz3210_dxroobu3|ts1101": {
+   "status": "pending",
+   "drivers": [
+    "bulb_dimmable",
+    "dimmer_wall_1gang"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tz3210_dxroobu3|ts110e": {
+   "status": "pending",
+   "drivers": [
+    "bulb_dimmable",
+    "dimmer_wall_1gang"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tz3210_dxroobu3|ts110f": {
+   "status": "pending",
+   "drivers": [
+    "bulb_dimmable",
+    "dimmer_wall_1gang"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tz3210_huzkzqyk|ts0601": {
+   "status": "pending",
+   "drivers": [
+    "lcdtemphumidluxsensor",
+    "wall_dimmer_tuya"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tz3210_invesber|ts0011": {
+   "status": "pending",
+   "drivers": [
+    "dimmable_led_strip",
+    "wall_dimmer_tuya"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tz3210_invesber|ts0052": {
+   "status": "pending",
+   "drivers": [
+    "dimmable_led_strip",
+    "wall_dimmer_tuya"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tz3210_invesber|ts0601": {
+   "status": "pending",
+   "drivers": [
+    "dimmable_led_strip",
+    "wall_dimmer_tuya"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tz3210_invesber|ts0601_dim1": {
+   "status": "pending",
+   "drivers": [
+    "dimmable_led_strip",
+    "wall_dimmer_tuya"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tz3210_invesber|ts1101": {
+   "status": "pending",
+   "drivers": [
+    "dimmable_led_strip",
+    "wall_dimmer_tuya"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tz3210_invesber|ts110e": {
+   "status": "pending",
+   "drivers": [
+    "dimmable_led_strip",
+    "wall_dimmer_tuya"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tz3210_invesber|ts110f": {
+   "status": "pending",
+   "drivers": [
+    "dimmable_led_strip",
+    "wall_dimmer_tuya"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tz3210_invesber|zbmini-dim": {
+   "status": "pending",
+   "drivers": [
+    "dimmable_led_strip",
+    "wall_dimmer_tuya"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tz3210_invesber|zbminid": {
+   "status": "pending",
+   "drivers": [
+    "dimmable_led_strip",
+    "wall_dimmer_tuya"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tz3210_k1pe6ibm|ts0601": {
+   "status": "pending",
+   "drivers": [
+    "rgb_led_strip_controller",
+    "wall_dimmer_tuya"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tz3210_mja6r5ix|ts0601": {
+   "status": "pending",
+   "drivers": [
+    "bulb_rgb",
+    "dimmable_led_strip"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tz3210_r0xgkft5|ts0601": {
+   "status": "pending",
+   "drivers": [
+    "led_controller_cct",
+    "rgb_mood_light"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tz3210_ttkgurpb|ts0601": {
+   "status": "pending",
+   "drivers": [
+    "bulb_rgbw",
+    "wall_dimmer_tuya"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tz3210_xbpt8ewc|ts0301": {
+   "status": "pending",
+   "drivers": [
+    "curtain_motor",
+    "curtain_motor_shutter"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tz3210_xbpt8ewc|ts0601": {
+   "status": "pending",
+   "drivers": [
+    "curtain_motor",
+    "curtain_motor_shutter"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tz3210_xbpt8ewc|ts0726": {
+   "status": "pending",
+   "drivers": [
+    "curtain_motor",
+    "curtain_motor_shutter"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tz3210_xbpt8ewc|ts110e": {
+   "status": "pending",
+   "drivers": [
+    "curtain_motor",
+    "curtain_motor_shutter"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tz3290_ixd9mvv4|ts0601": {
+   "status": "pending",
+   "drivers": [
+    "smart_irrigation_valve",
+    "water_valve_smart"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tzb000_42ha4rsc|ts0301": {
+   "status": "pending",
+   "drivers": [
+    "curtain_motor",
+    "curtain_motor_shutter"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tzb000_42ha4rsc|ts0601": {
+   "status": "pending",
+   "drivers": [
+    "curtain_motor",
+    "curtain_motor_shutter"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tzb000_42ha4rsc|ts0726": {
+   "status": "pending",
+   "drivers": [
+    "curtain_motor",
+    "curtain_motor_shutter"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tzb000_42ha4rsc|ts110e": {
+   "status": "pending",
+   "drivers": [
+    "curtain_motor",
+    "curtain_motor_shutter"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tzb210_0bkzabht|ts0502a": {
+   "status": "pending",
+   "drivers": [
+    "bulb_dimmable",
+    "tunable_bulb_E14"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tzb210_ayx58ft5|ts0502a": {
+   "status": "pending",
+   "drivers": [
+    "bulb_dimmable",
+    "tunable_bulb_E14"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tzb210_eiwanbeb|ts0502a": {
+   "status": "pending",
+   "drivers": [
+    "bulb_dimmable",
+    "tunable_bulb_E14"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tzb210_zdvrsts8|ts0504b": {
+   "status": "pending",
+   "drivers": [
+    "bulb_rgb",
+    "bulb_rgbw"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tzb210_zdvrsts8|ts0505a": {
+   "status": "pending",
+   "drivers": [
+    "bulb_rgb",
+    "bulb_rgbw"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tzb210_zdvrsts8|ts0505b": {
+   "status": "pending",
+   "drivers": [
+    "bulb_rgb",
+    "bulb_rgbw"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tzb210_zdvrsts8|ts0601": {
+   "status": "pending",
+   "drivers": [
+    "bulb_rgb",
+    "bulb_rgbw"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tze200_2pddnnrk|ts0601": {
+   "status": "pending",
+   "drivers": [
+    "rain_sensor",
+    "sensor_motion_presence"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tze200_4mh6tyyo|ts0001": {
+   "status": "pending",
+   "drivers": [
+    "dimmer_1_gang_tuya",
+    "dimmer_wall_1gang"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tze200_4mh6tyyo|ts0002": {
+   "status": "pending",
+   "drivers": [
+    "dimmer_1_gang_tuya",
+    "dimmer_wall_1gang"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tze200_4mh6tyyo|ts0003": {
+   "status": "pending",
+   "drivers": [
+    "dimmer_1_gang_tuya",
+    "dimmer_wall_1gang"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tze200_4mh6tyyo|ts0012": {
+   "status": "pending",
+   "drivers": [
+    "dimmer_1_gang_tuya",
+    "dimmer_wall_1gang"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tze200_4mh6tyyo|ts0013": {
+   "status": "pending",
+   "drivers": [
+    "dimmer_1_gang_tuya",
+    "dimmer_wall_1gang"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tze200_4mh6tyyo|ts0052": {
+   "status": "pending",
+   "drivers": [
+    "dimmer_1_gang_tuya",
+    "dimmer_wall_1gang"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tze200_4mh6tyyo|ts0505b": {
+   "status": "pending",
+   "drivers": [
+    "dimmer_1_gang_tuya",
+    "dimmer_wall_1gang"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tze200_4mh6tyyo|ts0601": {
+   "status": "pending",
+   "drivers": [
+    "dimmer_1_gang_tuya",
+    "dimmer_wall_1gang"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tze200_4mh6tyyo|ts0726": {
+   "status": "pending",
+   "drivers": [
+    "dimmer_1_gang_tuya",
+    "dimmer_wall_1gang"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tze200_4mh6tyyo|ts110e": {
+   "status": "pending",
+   "drivers": [
+    "dimmer_1_gang_tuya",
+    "dimmer_wall_1gang"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tze200_4mh6tyyo|ts110f": {
+   "status": "pending",
+   "drivers": [
+    "dimmer_1_gang_tuya",
+    "dimmer_wall_1gang"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tze200_5cuocqty|ts0001": {
+   "status": "pending",
+   "drivers": [
+    "dimmer_1_gang_tuya",
+    "switch_1gang"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tze200_5cuocqty|ts0003": {
+   "status": "pending",
+   "drivers": [
+    "dimmer_1_gang_tuya",
+    "switch_1gang"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tze200_5cuocqty|ts0012": {
+   "status": "pending",
+   "drivers": [
+    "dimmer_1_gang_tuya",
+    "switch_1gang"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tze200_5cuocqty|ts0601": {
+   "status": "pending",
+   "drivers": [
+    "dimmer_1_gang_tuya",
+    "switch_1gang"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tze200_5cuocqty|ts0726": {
+   "status": "pending",
+   "drivers": [
+    "dimmer_1_gang_tuya",
+    "switch_1gang"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tze200_5cuocqty|ts110e": {
+   "status": "pending",
+   "drivers": [
+    "dimmer_1_gang_tuya",
+    "switch_1gang"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tze200_bjzrowv2|ts0601": {
+   "status": "pending",
+   "drivers": [
+    "curtain_motor",
+    "device_radiator_valve"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tze200_eqpaxqdv|ts0301": {
+   "status": "pending",
+   "drivers": [
+    "curtain_motor",
+    "sensor_gas_presence"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tze200_eqpaxqdv|ts0601": {
+   "status": "pending",
+   "drivers": [
+    "curtain_motor",
+    "sensor_gas_presence"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tze200_hyhl5y36|ts0601": {
+   "status": "pending",
+   "drivers": [
+    "curtain_motor",
+    "presence_sensor_radar"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tze200_hyhl5y36|ts110e": {
+   "status": "pending",
+   "drivers": [
+    "curtain_motor",
+    "presence_sensor_radar"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tze200_jsaqgakf|ts0601": {
+   "status": "pending",
+   "drivers": [
+    "rain_sensor",
+    "sensor_motion_presence"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tze200_locansqn|excellux": {
+   "status": "pending",
+   "drivers": [
+    "lcdtemphumidsensor",
+    "lcdtemphumidsensor_3"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tze200_locansqn|ts0601": {
+   "status": "pending",
+   "drivers": [
+    "lcdtemphumidsensor",
+    "lcdtemphumidsensor_3"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tze200_ntcy3xu1|gs361a-h04": {
+   "status": "pending",
+   "drivers": [
+    "smoke_detector_advanced",
+    "smoke_sensor2"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tze200_ntcy3xu1|hs1sa": {
+   "status": "pending",
+   "drivers": [
+    "smoke_detector_advanced",
+    "smoke_sensor2"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tze200_ntcy3xu1|hs3sa": {
+   "status": "pending",
+   "drivers": [
+    "smoke_detector_advanced",
+    "smoke_sensor2"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tze200_ntcy3xu1|jtyj-gd-01lm/bw": {
+   "status": "pending",
+   "drivers": [
+    "smoke_detector_advanced",
+    "smoke_sensor2"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tze200_ntcy3xu1|lumi.sensor_smoke": {
+   "status": "pending",
+   "drivers": [
+    "smoke_detector_advanced",
+    "smoke_sensor2"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tze200_ntcy3xu1|nas-sd02b0": {
+   "status": "pending",
+   "drivers": [
+    "smoke_detector_advanced",
+    "smoke_sensor2"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tze200_ntcy3xu1|pg-s11z": {
+   "status": "pending",
+   "drivers": [
+    "smoke_detector_advanced",
+    "smoke_sensor2"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tze200_ntcy3xu1|sa12izl": {
+   "status": "pending",
+   "drivers": [
+    "smoke_detector_advanced",
+    "smoke_sensor2"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tze200_ntcy3xu1|sd8sc_00.00.03.12tc": {
+   "status": "pending",
+   "drivers": [
+    "smoke_detector_advanced",
+    "smoke_sensor2"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tze200_ntcy3xu1|smszb-120": {
+   "status": "pending",
+   "drivers": [
+    "smoke_detector_advanced",
+    "smoke_sensor2"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tze200_ntcy3xu1|sssqs01lm": {
+   "status": "pending",
+   "drivers": [
+    "smoke_detector_advanced",
+    "smoke_sensor2"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tze200_ntcy3xu1|ts0205": {
+   "status": "pending",
+   "drivers": [
+    "smoke_detector_advanced",
+    "smoke_sensor2"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tze200_ntcy3xu1|ts0601": {
+   "status": "pending",
+   "drivers": [
+    "smoke_detector_advanced",
+    "smoke_sensor2"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tze200_ntcy3xu1|yg400a": {
+   "status": "pending",
+   "drivers": [
+    "smoke_detector_advanced",
+    "smoke_sensor2"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tze200_p3dbf6qs|ts0601": {
+   "status": "pending",
+   "drivers": [
+    "device_radiator_valve",
+    "radiator_valve"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tze200_yh7aoahi|ts0205": {
+   "status": "pending",
+   "drivers": [
+    "smoke_sensor",
+    "smoke_sensor3"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tze200_zl1kmjqx|ts0601": {
+   "status": "pending",
+   "drivers": [
+    "button_wireless_2",
+    "lcdtemphumidsensor_3"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tze204_4mh6tyyo|ts0001": {
+   "status": "pending",
+   "drivers": [
+    "dimmer_1_gang_tuya",
+    "dimmer_wall_1gang"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tze204_4mh6tyyo|ts0002": {
+   "status": "pending",
+   "drivers": [
+    "dimmer_1_gang_tuya",
+    "dimmer_wall_1gang"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tze204_4mh6tyyo|ts0003": {
+   "status": "pending",
+   "drivers": [
+    "dimmer_1_gang_tuya",
+    "dimmer_wall_1gang"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tze204_4mh6tyyo|ts0012": {
+   "status": "pending",
+   "drivers": [
+    "dimmer_1_gang_tuya",
+    "dimmer_wall_1gang"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tze204_4mh6tyyo|ts0013": {
+   "status": "pending",
+   "drivers": [
+    "dimmer_1_gang_tuya",
+    "dimmer_wall_1gang"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tze204_4mh6tyyo|ts0052": {
+   "status": "pending",
+   "drivers": [
+    "dimmer_1_gang_tuya",
+    "dimmer_wall_1gang"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tze204_4mh6tyyo|ts0505b": {
+   "status": "pending",
+   "drivers": [
+    "dimmer_1_gang_tuya",
+    "dimmer_wall_1gang"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tze204_4mh6tyyo|ts0601": {
+   "status": "pending",
+   "drivers": [
+    "dimmer_1_gang_tuya",
+    "dimmer_wall_1gang"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tze204_4mh6tyyo|ts0726": {
+   "status": "pending",
+   "drivers": [
+    "dimmer_1_gang_tuya",
+    "dimmer_wall_1gang"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tze204_4mh6tyyo|ts110e": {
+   "status": "pending",
+   "drivers": [
+    "dimmer_1_gang_tuya",
+    "dimmer_wall_1gang"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tze204_4mh6tyyo|ts110f": {
+   "status": "pending",
+   "drivers": [
+    "dimmer_1_gang_tuya",
+    "dimmer_wall_1gang"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tze204_5cuocqty|ts0001": {
+   "status": "pending",
+   "drivers": [
+    "dimmer_1_gang_tuya",
+    "switch_1gang"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tze204_5cuocqty|ts0003": {
+   "status": "pending",
+   "drivers": [
+    "dimmer_1_gang_tuya",
+    "switch_1gang"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tze204_5cuocqty|ts0012": {
+   "status": "pending",
+   "drivers": [
+    "dimmer_1_gang_tuya",
+    "switch_1gang"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tze204_5cuocqty|ts0601": {
+   "status": "pending",
+   "drivers": [
+    "dimmer_1_gang_tuya",
+    "switch_1gang"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tze204_5cuocqty|ts0726": {
+   "status": "pending",
+   "drivers": [
+    "dimmer_1_gang_tuya",
+    "switch_1gang"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tze204_5cuocqty|ts110e": {
+   "status": "pending",
+   "drivers": [
+    "dimmer_1_gang_tuya",
+    "switch_1gang"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tze204_9qhuzgo0|ts0001": {
+   "status": "pending",
+   "drivers": [
+    "dimmer_1_gang_tuya",
+    "switch_1gang"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tze204_9qhuzgo0|ts0003": {
+   "status": "pending",
+   "drivers": [
+    "dimmer_1_gang_tuya",
+    "switch_1gang"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tze204_9qhuzgo0|ts0012": {
+   "status": "pending",
+   "drivers": [
+    "dimmer_1_gang_tuya",
+    "switch_1gang"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tze204_9qhuzgo0|ts0601": {
+   "status": "pending",
+   "drivers": [
+    "dimmer_1_gang_tuya",
+    "switch_1gang"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tze204_9qhuzgo0|ts0726": {
+   "status": "pending",
+   "drivers": [
+    "dimmer_1_gang_tuya",
+    "switch_1gang"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tze204_9qhuzgo0|ts110e": {
+   "status": "pending",
+   "drivers": [
+    "dimmer_1_gang_tuya",
+    "switch_1gang"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tze204_amp6tsvy|ts0003": {
+   "status": "pending",
+   "drivers": [
+    "switch_1gang",
+    "switch_2gang"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tze204_amp6tsvy|ts000f": {
+   "status": "pending",
+   "drivers": [
+    "switch_1gang",
+    "switch_2gang"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tze204_amp6tsvy|ts0012": {
+   "status": "pending",
+   "drivers": [
+    "switch_1gang",
+    "switch_2gang"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tze204_amp6tsvy|ts011f": {
+   "status": "pending",
+   "drivers": [
+    "switch_1gang",
+    "switch_2gang"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tze204_amp6tsvy|ts0601": {
+   "status": "pending",
+   "drivers": [
+    "switch_1gang",
+    "switch_2gang"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tze204_amp6tsvy|ts0726": {
+   "status": "pending",
+   "drivers": [
+    "switch_1gang",
+    "switch_2gang"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tze204_dcnsggvz|ts0001": {
+   "status": "pending",
+   "drivers": [
+    "dimmer_1_gang_tuya",
+    "dimmer_wall_1gang"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tze204_dcnsggvz|ts0002": {
+   "status": "pending",
+   "drivers": [
+    "dimmer_1_gang_tuya",
+    "dimmer_wall_1gang"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tze204_dcnsggvz|ts0003": {
+   "status": "pending",
+   "drivers": [
+    "dimmer_1_gang_tuya",
+    "dimmer_wall_1gang"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tze204_dcnsggvz|ts0012": {
+   "status": "pending",
+   "drivers": [
+    "dimmer_1_gang_tuya",
+    "dimmer_wall_1gang"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tze204_dcnsggvz|ts0013": {
+   "status": "pending",
+   "drivers": [
+    "dimmer_1_gang_tuya",
+    "dimmer_wall_1gang"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tze204_dcnsggvz|ts0052": {
+   "status": "pending",
+   "drivers": [
+    "dimmer_1_gang_tuya",
+    "dimmer_wall_1gang"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tze204_dcnsggvz|ts0505b": {
+   "status": "pending",
+   "drivers": [
+    "dimmer_1_gang_tuya",
+    "dimmer_wall_1gang"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tze204_dcnsggvz|ts0601": {
+   "status": "pending",
+   "drivers": [
+    "dimmer_1_gang_tuya",
+    "dimmer_wall_1gang"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tze204_dcnsggvz|ts0726": {
+   "status": "pending",
+   "drivers": [
+    "dimmer_1_gang_tuya",
+    "dimmer_wall_1gang"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tze204_dcnsggvz|ts110e": {
+   "status": "pending",
+   "drivers": [
+    "dimmer_1_gang_tuya",
+    "dimmer_wall_1gang"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tze204_dcnsggvz|ts110f": {
+   "status": "pending",
+   "drivers": [
+    "dimmer_1_gang_tuya",
+    "dimmer_wall_1gang"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tze204_n9ctkb6j|ts0001": {
+   "status": "pending",
+   "drivers": [
+    "dimmer_1_gang_tuya",
+    "switch_1gang"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tze204_n9ctkb6j|ts0003": {
+   "status": "pending",
+   "drivers": [
+    "dimmer_1_gang_tuya",
+    "switch_1gang"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tze204_n9ctkb6j|ts0012": {
+   "status": "pending",
+   "drivers": [
+    "dimmer_1_gang_tuya",
+    "switch_1gang"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tze204_n9ctkb6j|ts0601": {
+   "status": "pending",
+   "drivers": [
+    "dimmer_1_gang_tuya",
+    "switch_1gang"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tze204_n9ctkb6j|ts0726": {
+   "status": "pending",
+   "drivers": [
+    "dimmer_1_gang_tuya",
+    "switch_1gang"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tze204_n9ctkb6j|ts110e": {
+   "status": "pending",
+   "drivers": [
+    "dimmer_1_gang_tuya",
+    "switch_1gang"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tze204_vrcfo4i0|ts0225": {
+   "status": "pending",
+   "drivers": [
+    "gas_sensor",
+    "presence_sensor_radar"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tze204_vrcfo4i0|ts0601": {
+   "status": "pending",
+   "drivers": [
+    "gas_sensor",
+    "presence_sensor_radar"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tze204_ycke4deo|ts0601": {
+   "status": "pending",
+   "drivers": [
+    "curtain_motor",
+    "presence_sensor_radar"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tze204_ycke4deo|ts110e": {
+   "status": "pending",
+   "drivers": [
+    "curtain_motor",
+    "presence_sensor_radar"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tze284_4mh6tyyo|ts0001": {
+   "status": "pending",
+   "drivers": [
+    "dimmer_1_gang_tuya",
+    "dimmer_wall_1gang"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tze284_4mh6tyyo|ts0002": {
+   "status": "pending",
+   "drivers": [
+    "dimmer_1_gang_tuya",
+    "dimmer_wall_1gang"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tze284_4mh6tyyo|ts0003": {
+   "status": "pending",
+   "drivers": [
+    "dimmer_1_gang_tuya",
+    "dimmer_wall_1gang"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tze284_4mh6tyyo|ts0012": {
+   "status": "pending",
+   "drivers": [
+    "dimmer_1_gang_tuya",
+    "dimmer_wall_1gang"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tze284_4mh6tyyo|ts0013": {
+   "status": "pending",
+   "drivers": [
+    "dimmer_1_gang_tuya",
+    "dimmer_wall_1gang"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tze284_4mh6tyyo|ts0052": {
+   "status": "pending",
+   "drivers": [
+    "dimmer_1_gang_tuya",
+    "dimmer_wall_1gang"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tze284_4mh6tyyo|ts0505b": {
+   "status": "pending",
+   "drivers": [
+    "dimmer_1_gang_tuya",
+    "dimmer_wall_1gang"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tze284_4mh6tyyo|ts0601": {
+   "status": "pending",
+   "drivers": [
+    "dimmer_1_gang_tuya",
+    "dimmer_wall_1gang"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tze284_4mh6tyyo|ts0726": {
+   "status": "pending",
+   "drivers": [
+    "dimmer_1_gang_tuya",
+    "dimmer_wall_1gang"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tze284_4mh6tyyo|ts110e": {
+   "status": "pending",
+   "drivers": [
+    "dimmer_1_gang_tuya",
+    "dimmer_wall_1gang"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tze284_4mh6tyyo|ts110f": {
+   "status": "pending",
+   "drivers": [
+    "dimmer_1_gang_tuya",
+    "dimmer_wall_1gang"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tze284_6ycgarab|ts0205": {
+   "status": "pending",
+   "drivers": [
+    "smoke_sensor",
+    "smoke_sensor3"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tze284_a8sdabtg|ts0201": {
+   "status": "pending",
+   "drivers": [
+    "lcdtemphumidsensor",
+    "temphumidsensor2"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tze284_a8sdabtg|ts0601": {
+   "status": "pending",
+   "drivers": [
+    "lcdtemphumidsensor",
+    "temphumidsensor2"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tze284_amp6tsvy|ts0003": {
+   "status": "pending",
+   "drivers": [
+    "switch_1gang",
+    "switch_2gang"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tze284_amp6tsvy|ts000f": {
+   "status": "pending",
+   "drivers": [
+    "switch_1gang",
+    "switch_2gang"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tze284_amp6tsvy|ts0012": {
+   "status": "pending",
+   "drivers": [
+    "switch_1gang",
+    "switch_2gang"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tze284_amp6tsvy|ts011f": {
+   "status": "pending",
+   "drivers": [
+    "switch_1gang",
+    "switch_2gang"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tze284_amp6tsvy|ts0601": {
+   "status": "pending",
+   "drivers": [
+    "switch_1gang",
+    "switch_2gang"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tze284_amp6tsvy|ts0726": {
+   "status": "pending",
+   "drivers": [
+    "switch_1gang",
+    "switch_2gang"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tze284_la2c2uo9|ts0001": {
+   "status": "pending",
+   "drivers": [
+    "dimmer_1_gang_tuya",
+    "wall_dimmer_tuya"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tze284_la2c2uo9|ts0002": {
+   "status": "pending",
+   "drivers": [
+    "dimmer_1_gang_tuya",
+    "wall_dimmer_tuya"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tze284_la2c2uo9|ts0003": {
+   "status": "pending",
+   "drivers": [
+    "dimmer_1_gang_tuya",
+    "wall_dimmer_tuya"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tze284_la2c2uo9|ts0013": {
+   "status": "pending",
+   "drivers": [
+    "dimmer_1_gang_tuya",
+    "wall_dimmer_tuya"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tze284_la2c2uo9|ts0052": {
+   "status": "pending",
+   "drivers": [
+    "dimmer_1_gang_tuya",
+    "wall_dimmer_tuya"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tze284_la2c2uo9|ts0601": {
+   "status": "pending",
+   "drivers": [
+    "dimmer_1_gang_tuya",
+    "wall_dimmer_tuya"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tze284_la2c2uo9|ts110e": {
+   "status": "pending",
+   "drivers": [
+    "dimmer_1_gang_tuya",
+    "wall_dimmer_tuya"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tze284_la2c2uo9|ts110f": {
+   "status": "pending",
+   "drivers": [
+    "dimmer_1_gang_tuya",
+    "wall_dimmer_tuya"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tze284_ntcy3xu1|gs361a-h04": {
+   "status": "pending",
+   "drivers": [
+    "smoke_detector_advanced",
+    "smoke_sensor2"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tze284_ntcy3xu1|hs1sa": {
+   "status": "pending",
+   "drivers": [
+    "smoke_detector_advanced",
+    "smoke_sensor2"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tze284_ntcy3xu1|hs3sa": {
+   "status": "pending",
+   "drivers": [
+    "smoke_detector_advanced",
+    "smoke_sensor2"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tze284_ntcy3xu1|jtyj-gd-01lm/bw": {
+   "status": "pending",
+   "drivers": [
+    "smoke_detector_advanced",
+    "smoke_sensor2"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tze284_ntcy3xu1|lumi.sensor_smoke": {
+   "status": "pending",
+   "drivers": [
+    "smoke_detector_advanced",
+    "smoke_sensor2"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tze284_ntcy3xu1|nas-sd02b0": {
+   "status": "pending",
+   "drivers": [
+    "smoke_detector_advanced",
+    "smoke_sensor2"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tze284_ntcy3xu1|pg-s11z": {
+   "status": "pending",
+   "drivers": [
+    "smoke_detector_advanced",
+    "smoke_sensor2"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tze284_ntcy3xu1|sa12izl": {
+   "status": "pending",
+   "drivers": [
+    "smoke_detector_advanced",
+    "smoke_sensor2"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tze284_ntcy3xu1|sd8sc_00.00.03.12tc": {
+   "status": "pending",
+   "drivers": [
+    "smoke_detector_advanced",
+    "smoke_sensor2"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tze284_ntcy3xu1|smszb-120": {
+   "status": "pending",
+   "drivers": [
+    "smoke_detector_advanced",
+    "smoke_sensor2"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tze284_ntcy3xu1|sssqs01lm": {
+   "status": "pending",
+   "drivers": [
+    "smoke_detector_advanced",
+    "smoke_sensor2"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tze284_ntcy3xu1|ts0205": {
+   "status": "pending",
+   "drivers": [
+    "smoke_detector_advanced",
+    "smoke_sensor2"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tze284_ntcy3xu1|ts0601": {
+   "status": "pending",
+   "drivers": [
+    "smoke_detector_advanced",
+    "smoke_sensor2"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tze284_ntcy3xu1|yg400a": {
+   "status": "pending",
+   "drivers": [
+    "smoke_detector_advanced",
+    "smoke_sensor2"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tze284_ozf4e02o|ts0601": {
+   "status": "pending",
+   "drivers": [
+    "curtain_motor",
+    "presence_sensor_radar"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tze284_ozf4e02o|ts110e": {
+   "status": "pending",
+   "drivers": [
+    "curtain_motor",
+    "presence_sensor_radar"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tze284_r3szw0xr|ts0601": {
+   "status": "pending",
+   "drivers": [
+    "curtain_motor",
+    "device_radiator_valve"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tze284_rlytpmij|ts0601": {
+   "status": "pending",
+   "drivers": [
+    "curtain_motor",
+    "presence_sensor_radar"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tze284_rlytpmij|ts110e": {
+   "status": "pending",
+   "drivers": [
+    "curtain_motor",
+    "presence_sensor_radar"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tze284_vrcfo4i0|ts0225": {
+   "status": "pending",
+   "drivers": [
+    "gas_sensor",
+    "presence_sensor_radar"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:_tze284_vrcfo4i0|ts0601": {
+   "status": "pending",
+   "drivers": [
+    "gas_sensor",
+    "presence_sensor_radar"
+   ],
+   "kind": "tuya"
+  },
+  "conflict:aoyan|ts0601": {
+   "status": "pending",
+   "drivers": [
+    "soil_sensor",
+    "water_leak_sensor"
+   ],
+   "kind": "brand"
+  },
+  "conflict:heobian|01minizb": {
+   "status": "pending",
+   "drivers": [
+    "curtain_motor",
+    "switch_1gang",
+    "switch_3gang"
+   ],
+   "kind": "brand"
+  },
+  "conflict:heobian|3300-s": {
+   "status": "pending",
+   "drivers": [
+    "contact_sensor",
+    "sensor_contact_zigbee"
+   ],
+   "kind": "brand"
+  },
+  "conflict:heobian|3320-l": {
+   "status": "pending",
+   "drivers": [
+    "contact_sensor",
+    "sensor_contact_zigbee"
+   ],
+   "kind": "brand"
+  },
+  "conflict:heobian|basiczbr3": {
+   "status": "pending",
+   "drivers": [
+    "curtain_motor",
+    "soil_sensor",
+    "switch_1gang",
+    "switch_3gang"
+   ],
+   "kind": "brand"
+  },
+  "conflict:heobian|ck-tlsr8656-ss5-01(7003)": {
+   "status": "pending",
+   "drivers": [
+    "contact_sensor",
+    "sensor_contact_zigbee"
+   ],
+   "kind": "brand"
+  },
+  "conflict:heobian|doorwindow-sensor-zb3.0": {
+   "status": "pending",
+   "drivers": [
+    "contact_sensor",
+    "sensor_contact_zigbee"
+   ],
+   "kind": "brand"
+  },
+  "conflict:heobian|ds01": {
+   "status": "pending",
+   "drivers": [
+    "contact_sensor",
+    "sensor_contact_zigbee"
+   ],
+   "kind": "brand"
+  },
+  "conflict:heobian|e1603/e1702": {
+   "status": "pending",
+   "drivers": [
+    "contact_sensor",
+    "sensor_contact_zigbee"
+   ],
+   "kind": "brand"
+  },
+  "conflict:heobian|excellux": {
+   "status": "pending",
+   "drivers": [
+    "presence_sensor_radar",
+    "sensor_contact_zigbee"
+   ],
+   "kind": "brand"
+  },
+  "conflict:heobian|lumi.magnet.ac01": {
+   "status": "pending",
+   "drivers": [
+    "contact_sensor",
+    "sensor_contact_zigbee"
+   ],
+   "kind": "brand"
+  },
+  "conflict:heobian|lumi.magnet.agl02": {
+   "status": "pending",
+   "drivers": [
+    "contact_sensor",
+    "sensor_contact_zigbee"
+   ],
+   "kind": "brand"
+  },
+  "conflict:heobian|lumi.sensor_ht": {
+   "status": "pending",
+   "drivers": [
+    "climate_sensor",
+    "presence_sensor_radar",
+    "soil_sensor"
+   ],
+   "kind": "brand"
+  },
+  "conflict:heobian|lumi.sensor_ht.agl02": {
+   "status": "pending",
+   "drivers": [
+    "climate_sensor",
+    "presence_sensor_radar",
+    "soil_sensor"
+   ],
+   "kind": "brand"
+  },
+  "conflict:heobian|lumi.sensor_magnet": {
+   "status": "pending",
+   "drivers": [
+    "contact_sensor",
+    "sensor_contact_zigbee"
+   ],
+   "kind": "brand"
+  },
+  "conflict:heobian|lumi.sensor_magnet.aq2": {
+   "status": "pending",
+   "drivers": [
+    "contact_sensor",
+    "sensor_contact_zigbee"
+   ],
+   "kind": "brand"
+  },
+  "conflict:heobian|lumi.weather": {
+   "status": "pending",
+   "drivers": [
+    "climate_sensor",
+    "presence_sensor_radar",
+    "soil_sensor"
+   ],
+   "kind": "brand"
+  },
+  "conflict:heobian|mccgq01lm": {
+   "status": "pending",
+   "drivers": [
+    "contact_sensor",
+    "sensor_contact_zigbee"
+   ],
+   "kind": "brand"
+  },
+  "conflict:heobian|mccgq11lm": {
+   "status": "pending",
+   "drivers": [
+    "contact_sensor",
+    "sensor_contact_zigbee"
+   ],
+   "kind": "brand"
+  },
+  "conflict:heobian|mccgq12lm": {
+   "status": "pending",
+   "drivers": [
+    "contact_sensor",
+    "sensor_contact_zigbee"
+   ],
+   "kind": "brand"
+  },
+  "conflict:heobian|mccgq14lm": {
+   "status": "pending",
+   "drivers": [
+    "contact_sensor",
+    "sensor_contact_zigbee"
+   ],
+   "kind": "brand"
+  },
+  "conflict:heobian|mct-340 e": {
+   "status": "pending",
+   "drivers": [
+    "contact_sensor",
+    "sensor_contact_zigbee"
+   ],
+   "kind": "brand"
+  },
+  "conflict:heobian|rh3052": {
+   "status": "pending",
+   "drivers": [
+    "climate_sensor",
+    "presence_sensor_radar",
+    "soil_sensor"
+   ],
+   "kind": "brand"
+  },
+  "conflict:heobian|s26r2zb": {
+   "status": "pending",
+   "drivers": [
+    "curtain_motor",
+    "soil_sensor",
+    "switch_1gang",
+    "switch_3gang"
+   ],
+   "kind": "brand"
+  },
+  "conflict:heobian|s31zb": {
+   "status": "pending",
+   "drivers": [
+    "curtain_motor",
+    "soil_sensor",
+    "switch_1gang",
+    "switch_3gang"
+   ],
+   "kind": "brand"
+  },
+  "conflict:heobian|sm0201": {
+   "status": "pending",
+   "drivers": [
+    "climate_sensor",
+    "presence_sensor_radar",
+    "soil_sensor"
+   ],
+   "kind": "brand"
+  },
+  "conflict:heobian|snzb-04": {
+   "status": "pending",
+   "drivers": [
+    "contact_sensor",
+    "sensor_contact_zigbee"
+   ],
+   "kind": "brand"
+  },
+  "conflict:heobian|snzb-04p": {
+   "status": "pending",
+   "drivers": [
+    "contact_sensor",
+    "sensor_contact_zigbee"
+   ],
+   "kind": "brand"
+  },
+  "conflict:heobian|snzb-04pr2": {
+   "status": "pending",
+   "drivers": [
+    "contact_sensor",
+    "sensor_contact_zigbee"
+   ],
+   "kind": "brand"
+  },
+  "conflict:heobian|snzb-04r2": {
+   "status": "pending",
+   "drivers": [
+    "contact_sensor",
+    "sensor_contact_zigbee"
+   ],
+   "kind": "brand"
+  },
+  "conflict:heobian|th01": {
+   "status": "pending",
+   "drivers": [
+    "climate_sensor",
+    "presence_sensor_radar",
+    "soil_sensor"
+   ],
+   "kind": "brand"
+  },
+  "conflict:heobian|ths317-et": {
+   "status": "pending",
+   "drivers": [
+    "climate_sensor",
+    "presence_sensor_radar",
+    "soil_sensor"
+   ],
+   "kind": "brand"
+  },
+  "conflict:heobian|tradfri open/close remote": {
+   "status": "pending",
+   "drivers": [
+    "contact_sensor",
+    "sensor_contact_zigbee"
+   ],
+   "kind": "brand"
+  },
+  "conflict:heobian|ts0001": {
+   "status": "pending",
+   "drivers": [
+    "button_wireless_1",
+    "curtain_motor",
+    "soil_sensor",
+    "switch_1gang",
+    "switch_3gang"
+   ],
+   "kind": "brand"
+  },
+  "conflict:heobian|ts0001_power": {
+   "status": "pending",
+   "drivers": [
+    "curtain_motor",
+    "switch_1gang",
+    "switch_3gang"
+   ],
+   "kind": "brand"
+  },
+  "conflict:heobian|ts0001_switch": {
+   "status": "pending",
+   "drivers": [
+    "curtain_motor",
+    "switch_1gang",
+    "switch_3gang"
+   ],
+   "kind": "brand"
+  },
+  "conflict:heobian|ts0001_switch_module": {
+   "status": "pending",
+   "drivers": [
+    "curtain_motor",
+    "switch_1gang",
+    "switch_3gang"
+   ],
+   "kind": "brand"
+  },
+  "conflict:heobian|ts0002": {
+   "status": "pending",
+   "drivers": [
+    "ir_blaster",
+    "switch_2gang",
+    "switch_3gang"
+   ],
+   "kind": "brand"
+  },
+  "conflict:heobian|ts0003": {
+   "status": "pending",
+   "drivers": [
+    "sensor_contact_zigbee",
+    "switch_1gang",
+    "switch_2gang",
+    "switch_3gang"
+   ],
+   "kind": "brand"
+  },
+  "conflict:heobian|ts0004": {
+   "status": "pending",
+   "drivers": [
+    "presence_sensor_radar",
+    "switch_1gang",
+    "switch_3gang"
+   ],
+   "kind": "brand"
+  },
+  "conflict:heobian|ts000f": {
+   "status": "pending",
+   "drivers": [
+    "curtain_motor",
+    "switch_1gang",
+    "switch_2gang"
+   ],
+   "kind": "brand"
+  },
+  "conflict:heobian|ts0011": {
+   "status": "pending",
+   "drivers": [
+    "curtain_motor",
+    "switch_1gang",
+    "switch_3gang"
+   ],
+   "kind": "brand"
+  },
+  "conflict:heobian|ts0012": {
+   "status": "pending",
+   "drivers": [
+    "curtain_motor",
+    "switch_1gang",
+    "switch_2gang",
+    "switch_3gang"
+   ],
+   "kind": "brand"
+  },
+  "conflict:heobian|ts0013": {
+   "status": "pending",
+   "drivers": [
+    "sensor_contact_zigbee",
+    "switch_2gang",
+    "switch_3gang"
+   ],
+   "kind": "brand"
+  },
+  "conflict:heobian|ts0014": {
+   "status": "pending",
+   "drivers": [
+    "curtain_motor",
+    "switch_1gang",
+    "switch_3gang"
+   ],
+   "kind": "brand"
+  },
+  "conflict:heobian|ts0021": {
+   "status": "pending",
+   "drivers": [
+    "contact_sensor",
+    "sensor_contact_zigbee"
+   ],
+   "kind": "brand"
+  },
+  "conflict:heobian|ts0041": {
+   "status": "pending",
+   "drivers": [
+    "button_wireless_1",
+    "switch_3gang"
+   ],
+   "kind": "brand"
+  },
+  "conflict:heobian|ts0043": {
+   "status": "pending",
+   "drivers": [
+    "sensor_contact_zigbee",
+    "switch_3gang"
+   ],
+   "kind": "brand"
+  },
+  "conflict:heobian|ts0044": {
+   "status": "pending",
+   "drivers": [
+    "scene_switch_4",
+    "sensor_contact_zigbee",
+    "switch_3gang"
+   ],
+   "kind": "brand"
+  },
+  "conflict:heobian|ts004f": {
+   "status": "pending",
+   "drivers": [
+    "button_wireless_1",
+    "presence_sensor_radar",
+    "sensor_contact_zigbee",
+    "switch_3gang"
+   ],
+   "kind": "brand"
+  },
+  "conflict:heobian|ts0101": {
+   "status": "pending",
+   "drivers": [
+    "curtain_motor",
+    "switch_1gang",
+    "switch_3gang"
+   ],
+   "kind": "brand"
+  },
+  "conflict:heobian|ts0111": {
+   "status": "pending",
+   "drivers": [
+    "curtain_motor",
+    "switch_1gang",
+    "switch_3gang"
+   ],
+   "kind": "brand"
+  },
+  "conflict:heobian|ts011f": {
+   "status": "pending",
+   "drivers": [
+    "curtain_motor",
+    "switch_1gang",
+    "switch_2gang",
+    "switch_3gang"
+   ],
+   "kind": "brand"
+  },
+  "conflict:heobian|ts0201": {
+   "status": "pending",
+   "drivers": [
+    "climate_sensor",
+    "presence_sensor_radar"
+   ],
+   "kind": "brand"
+  },
+  "conflict:heobian|ts0202": {
+   "status": "pending",
+   "drivers": [
+    "presence_sensor_radar",
+    "soil_sensor"
+   ],
+   "kind": "brand"
+  },
+  "conflict:heobian|ts0203": {
+   "status": "pending",
+   "drivers": [
+    "contact_sensor",
+    "presence_sensor_radar",
+    "sensor_contact_zigbee",
+    "switch_1gang"
+   ],
+   "kind": "brand"
+  },
+  "conflict:heobian|ts0207": {
+   "status": "pending",
+   "drivers": [
+    "rain_sensor",
+    "water_leak_sensor"
+   ],
+   "kind": "brand"
+  },
+  "conflict:heobian|ts0215a": {
+   "status": "pending",
+   "drivers": [
+    "button_wireless_1",
+    "presence_sensor_radar",
+    "switch_3gang"
+   ],
+   "kind": "brand"
+  },
+  "conflict:heobian|ts0222": {
+   "status": "pending",
+   "drivers": [
+    "climate_sensor",
+    "presence_sensor_radar",
+    "soil_sensor"
+   ],
+   "kind": "brand"
+  },
+  "conflict:heobian|ts0225": {
+   "status": "pending",
+   "drivers": [
+    "gas_sensor",
+    "presence_sensor_radar"
+   ],
+   "kind": "brand"
+  },
+  "conflict:heobian|ts0301": {
+   "status": "pending",
+   "drivers": [
+    "curtain_motor",
+    "gas_sensor"
+   ],
+   "kind": "brand"
+  },
+  "conflict:heobian|ts0601": {
+   "status": "pending",
+   "drivers": [
+    "button_wireless_1",
+    "climate_sensor",
+    "curtain_motor",
+    "gas_sensor",
+    "ir_blaster",
+    "presence_sensor_radar",
+    "rain_sensor",
+    "sensor_contact_zigbee",
+    "siren",
+    "soil_sensor",
+    "switch_1gang",
+    "switch_2gang",
+    "switch_3gang",
+    "water_leak_sensor"
+   ],
+   "kind": "brand"
+  },
+  "conflict:heobian|ts0601_generic": {
+   "status": "pending",
+   "drivers": [
+    "curtain_motor",
+    "switch_1gang"
+   ],
+   "kind": "brand"
+  },
+  "conflict:heobian|ts0603": {
+   "status": "pending",
+   "drivers": [
+    "curtain_motor",
+    "switch_1gang"
+   ],
+   "kind": "brand"
+  },
+  "conflict:heobian|ts0726": {
+   "status": "pending",
+   "drivers": [
+    "curtain_motor",
+    "sensor_contact_zigbee",
+    "switch_1gang",
+    "switch_2gang",
+    "switch_3gang"
+   ],
+   "kind": "brand"
+  },
+  "conflict:heobian|ts1002": {
+   "status": "pending",
+   "drivers": [
+    "scene_switch_4",
+    "switch_3gang"
+   ],
+   "kind": "brand"
+  },
+  "conflict:heobian|ts110e": {
+   "status": "pending",
+   "drivers": [
+    "curtain_motor",
+    "presence_sensor_radar",
+    "switch_1gang",
+    "switch_3gang"
+   ],
+   "kind": "brand"
+  },
+  "conflict:heobian|ts1201": {
+   "status": "pending",
+   "drivers": [
+    "ir_blaster",
+    "presence_sensor_radar",
+    "soil_sensor"
+   ],
+   "kind": "brand"
+  },
+  "conflict:heobian|ts130f": {
+   "status": "pending",
+   "drivers": [
+    "curtain_motor",
+    "sensor_contact_zigbee",
+    "switch_1gang",
+    "switch_3gang"
+   ],
+   "kind": "brand"
+  },
+  "conflict:heobian|ts4100": {
+   "status": "pending",
+   "drivers": [
+    "curtain_motor",
+    "switch_1gang",
+    "switch_3gang"
+   ],
+   "kind": "brand"
+  },
+  "conflict:heobian|ty0201": {
+   "status": "pending",
+   "drivers": [
+    "climate_sensor",
+    "presence_sensor_radar"
+   ],
+   "kind": "brand"
+  },
+  "conflict:heobian|wsdcgq01lm": {
+   "status": "pending",
+   "drivers": [
+    "climate_sensor",
+    "presence_sensor_radar",
+    "soil_sensor"
+   ],
+   "kind": "brand"
+  },
+  "conflict:heobian|wsdcgq11lm": {
+   "status": "pending",
+   "drivers": [
+    "climate_sensor",
+    "presence_sensor_radar",
+    "soil_sensor"
+   ],
+   "kind": "brand"
+  },
+  "conflict:heobian|wsdcgq12lm": {
+   "status": "pending",
+   "drivers": [
+    "climate_sensor",
+    "presence_sensor_radar",
+    "soil_sensor"
+   ],
+   "kind": "brand"
+  },
+  "conflict:heobian|zbm5-1c-120": {
+   "status": "pending",
+   "drivers": [
+    "curtain_motor",
+    "switch_1gang",
+    "switch_3gang"
+   ],
+   "kind": "brand"
+  },
+  "conflict:heobian|zbm5-2c-120": {
+   "status": "pending",
+   "drivers": [
+    "curtain_motor",
+    "switch_1gang",
+    "switch_3gang"
+   ],
+   "kind": "brand"
+  },
+  "conflict:heobian|zbm5-3c-120": {
+   "status": "pending",
+   "drivers": [
+    "curtain_motor",
+    "switch_1gang",
+    "switch_3gang"
+   ],
+   "kind": "brand"
+  },
+  "conflict:heobian|zbmini": {
+   "status": "pending",
+   "drivers": [
+    "curtain_motor",
+    "soil_sensor",
+    "switch_1gang",
+    "switch_3gang"
+   ],
+   "kind": "brand"
+  },
+  "conflict:heobian|zbminil2": {
+   "status": "pending",
+   "drivers": [
+    "curtain_motor",
+    "soil_sensor",
+    "switch_1gang",
+    "switch_3gang"
+   ],
+   "kind": "brand"
+  },
+  "conflict:heobian|zbminil2-r2": {
+   "status": "pending",
+   "drivers": [
+    "curtain_motor",
+    "switch_1gang",
+    "switch_3gang"
+   ],
+   "kind": "brand"
+  },
+  "conflict:heobian|zbminir": {
+   "status": "pending",
+   "drivers": [
+    "curtain_motor",
+    "switch_1gang",
+    "switch_3gang"
+   ],
+   "kind": "brand"
+  },
+  "conflict:heobian|zbminir2": {
+   "status": "pending",
+   "drivers": [
+    "curtain_motor",
+    "switch_1gang",
+    "switch_3gang"
+   ],
+   "kind": "brand"
+  },
+  "conflict:heobian|zbminir2-r2": {
+   "status": "pending",
+   "drivers": [
+    "curtain_motor",
+    "switch_1gang",
+    "switch_3gang"
+   ],
+   "kind": "brand"
+  },
+  "conflict:heobian|zg-102z": {
+   "status": "pending",
+   "drivers": [
+    "contact_sensor",
+    "sensor_contact_zigbee"
+   ],
+   "kind": "brand"
+  },
+  "conflict:heobian|zg-102za": {
+   "status": "pending",
+   "drivers": [
+    "contact_sensor",
+    "sensor_contact_zigbee"
+   ],
+   "kind": "brand"
+  },
+  "conflict:hobeian|01minizb": {
+   "status": "pending",
+   "drivers": [
+    "curtain_motor",
+    "switch_1gang",
+    "switch_3gang"
+   ],
+   "kind": "brand"
+  },
+  "conflict:hobeian|3300-s": {
+   "status": "pending",
+   "drivers": [
+    "contact_sensor",
+    "sensor_contact_zigbee"
+   ],
+   "kind": "brand"
+  },
+  "conflict:hobeian|3320-l": {
+   "status": "pending",
+   "drivers": [
+    "contact_sensor",
+    "sensor_contact_zigbee"
+   ],
+   "kind": "brand"
+  },
+  "conflict:hobeian|basiczbr3": {
+   "status": "pending",
+   "drivers": [
+    "curtain_motor",
+    "soil_sensor",
+    "switch_1gang",
+    "switch_3gang"
+   ],
+   "kind": "brand"
+  },
+  "conflict:hobeian|ck-bl702-mws-01(7016)": {
+   "status": "pending",
+   "drivers": [
+    "presence_sensor_radar",
+    "vibration_sensor"
+   ],
+   "kind": "brand"
+  },
+  "conflict:hobeian|ck-tlsr8656-ss5-01(7003)": {
+   "status": "pending",
+   "drivers": [
+    "contact_sensor",
+    "sensor_contact_zigbee"
+   ],
+   "kind": "brand"
+  },
+  "conflict:hobeian|doorwindow-sensor-zb3.0": {
+   "status": "pending",
+   "drivers": [
+    "contact_sensor",
+    "sensor_contact_zigbee"
+   ],
+   "kind": "brand"
+  },
+  "conflict:hobeian|ds01": {
+   "status": "pending",
+   "drivers": [
+    "contact_sensor",
+    "sensor_contact_zigbee"
+   ],
+   "kind": "brand"
+  },
+  "conflict:hobeian|e1603/e1702": {
+   "status": "pending",
+   "drivers": [
+    "contact_sensor",
+    "sensor_contact_zigbee"
+   ],
+   "kind": "brand"
+  },
+  "conflict:hobeian|excellux": {
+   "status": "pending",
+   "drivers": [
+    "presence_sensor_radar",
+    "sensor_contact_zigbee"
+   ],
+   "kind": "brand"
+  },
+  "conflict:hobeian|lumi.magnet.ac01": {
+   "status": "pending",
+   "drivers": [
+    "contact_sensor",
+    "sensor_contact_zigbee"
+   ],
+   "kind": "brand"
+  },
+  "conflict:hobeian|lumi.magnet.agl02": {
+   "status": "pending",
+   "drivers": [
+    "contact_sensor",
+    "sensor_contact_zigbee"
+   ],
+   "kind": "brand"
+  },
+  "conflict:hobeian|lumi.sensor_ht": {
+   "status": "pending",
+   "drivers": [
+    "climate_sensor",
+    "presence_sensor_radar",
+    "soil_sensor"
+   ],
+   "kind": "brand"
+  },
+  "conflict:hobeian|lumi.sensor_ht.agl02": {
+   "status": "pending",
+   "drivers": [
+    "climate_sensor",
+    "presence_sensor_radar",
+    "soil_sensor"
+   ],
+   "kind": "brand"
+  },
+  "conflict:hobeian|lumi.sensor_magnet": {
+   "status": "pending",
+   "drivers": [
+    "contact_sensor",
+    "sensor_contact_zigbee"
+   ],
+   "kind": "brand"
+  },
+  "conflict:hobeian|lumi.sensor_magnet.aq2": {
+   "status": "pending",
+   "drivers": [
+    "contact_sensor",
+    "sensor_contact_zigbee"
+   ],
+   "kind": "brand"
+  },
+  "conflict:hobeian|lumi.weather": {
+   "status": "pending",
+   "drivers": [
+    "climate_sensor",
+    "presence_sensor_radar",
+    "soil_sensor"
+   ],
+   "kind": "brand"
+  },
+  "conflict:hobeian|mccgq01lm": {
+   "status": "pending",
+   "drivers": [
+    "contact_sensor",
+    "sensor_contact_zigbee"
+   ],
+   "kind": "brand"
+  },
+  "conflict:hobeian|mccgq11lm": {
+   "status": "pending",
+   "drivers": [
+    "contact_sensor",
+    "sensor_contact_zigbee"
+   ],
+   "kind": "brand"
+  },
+  "conflict:hobeian|mccgq12lm": {
+   "status": "pending",
+   "drivers": [
+    "contact_sensor",
+    "sensor_contact_zigbee"
+   ],
+   "kind": "brand"
+  },
+  "conflict:hobeian|mccgq14lm": {
+   "status": "pending",
+   "drivers": [
+    "contact_sensor",
+    "sensor_contact_zigbee"
+   ],
+   "kind": "brand"
+  },
+  "conflict:hobeian|mct-340 e": {
+   "status": "pending",
+   "drivers": [
+    "contact_sensor",
+    "sensor_contact_zigbee"
+   ],
+   "kind": "brand"
+  },
+  "conflict:hobeian|rh3052": {
+   "status": "pending",
+   "drivers": [
+    "climate_sensor",
+    "presence_sensor_radar",
+    "soil_sensor"
+   ],
+   "kind": "brand"
+  },
+  "conflict:hobeian|s26r2zb": {
+   "status": "pending",
+   "drivers": [
+    "curtain_motor",
+    "soil_sensor",
+    "switch_1gang",
+    "switch_3gang"
+   ],
+   "kind": "brand"
+  },
+  "conflict:hobeian|s31zb": {
+   "status": "pending",
+   "drivers": [
+    "curtain_motor",
+    "soil_sensor",
+    "switch_1gang",
+    "switch_3gang"
+   ],
+   "kind": "brand"
+  },
+  "conflict:hobeian|sm0201": {
+   "status": "pending",
+   "drivers": [
+    "climate_sensor",
+    "presence_sensor_radar",
+    "soil_sensor"
+   ],
+   "kind": "brand"
+  },
+  "conflict:hobeian|snzb-04": {
+   "status": "pending",
+   "drivers": [
+    "contact_sensor",
+    "sensor_contact_zigbee"
+   ],
+   "kind": "brand"
+  },
+  "conflict:hobeian|snzb-04p": {
+   "status": "pending",
+   "drivers": [
+    "contact_sensor",
+    "sensor_contact_zigbee"
+   ],
+   "kind": "brand"
+  },
+  "conflict:hobeian|snzb-04pr2": {
+   "status": "pending",
+   "drivers": [
+    "contact_sensor",
+    "sensor_contact_zigbee"
+   ],
+   "kind": "brand"
+  },
+  "conflict:hobeian|snzb-04r2": {
+   "status": "pending",
+   "drivers": [
+    "contact_sensor",
+    "sensor_contact_zigbee"
+   ],
+   "kind": "brand"
+  },
+  "conflict:hobeian|th01": {
+   "status": "pending",
+   "drivers": [
+    "climate_sensor",
+    "presence_sensor_radar",
+    "soil_sensor"
+   ],
+   "kind": "brand"
+  },
+  "conflict:hobeian|ths317-et": {
+   "status": "pending",
+   "drivers": [
+    "climate_sensor",
+    "presence_sensor_radar",
+    "soil_sensor"
+   ],
+   "kind": "brand"
+  },
+  "conflict:hobeian|tradfri open/close remote": {
+   "status": "pending",
+   "drivers": [
+    "contact_sensor",
+    "sensor_contact_zigbee"
+   ],
+   "kind": "brand"
+  },
+  "conflict:hobeian|ts0001": {
+   "status": "pending",
+   "drivers": [
+    "button_wireless_1",
+    "curtain_motor",
+    "soil_sensor",
+    "switch_1gang",
+    "switch_3gang"
+   ],
+   "kind": "brand"
+  },
+  "conflict:hobeian|ts0001_power": {
+   "status": "pending",
+   "drivers": [
+    "curtain_motor",
+    "switch_1gang",
+    "switch_3gang"
+   ],
+   "kind": "brand"
+  },
+  "conflict:hobeian|ts0001_switch": {
+   "status": "pending",
+   "drivers": [
+    "curtain_motor",
+    "switch_1gang",
+    "switch_3gang"
+   ],
+   "kind": "brand"
+  },
+  "conflict:hobeian|ts0001_switch_module": {
+   "status": "pending",
+   "drivers": [
+    "curtain_motor",
+    "switch_1gang",
+    "switch_3gang"
+   ],
+   "kind": "brand"
+  },
+  "conflict:hobeian|ts0002": {
+   "status": "pending",
+   "drivers": [
+    "ir_blaster",
+    "switch_2gang",
+    "switch_3gang"
+   ],
+   "kind": "brand"
+  },
+  "conflict:hobeian|ts0003": {
+   "status": "pending",
+   "drivers": [
+    "sensor_contact_zigbee",
+    "switch_1gang",
+    "switch_2gang",
+    "switch_3gang"
+   ],
+   "kind": "brand"
+  },
+  "conflict:hobeian|ts0004": {
+   "status": "pending",
+   "drivers": [
+    "presence_sensor_radar",
+    "switch_1gang",
+    "switch_3gang"
+   ],
+   "kind": "brand"
+  },
+  "conflict:hobeian|ts000f": {
+   "status": "pending",
+   "drivers": [
+    "curtain_motor",
+    "switch_1gang",
+    "switch_2gang"
+   ],
+   "kind": "brand"
+  },
+  "conflict:hobeian|ts0011": {
+   "status": "pending",
+   "drivers": [
+    "curtain_motor",
+    "switch_1gang",
+    "switch_3gang"
+   ],
+   "kind": "brand"
+  },
+  "conflict:hobeian|ts0012": {
+   "status": "pending",
+   "drivers": [
+    "curtain_motor",
+    "switch_1gang",
+    "switch_2gang",
+    "switch_3gang"
+   ],
+   "kind": "brand"
+  },
+  "conflict:hobeian|ts0013": {
+   "status": "pending",
+   "drivers": [
+    "sensor_contact_zigbee",
+    "switch_2gang",
+    "switch_3gang"
+   ],
+   "kind": "brand"
+  },
+  "conflict:hobeian|ts0014": {
+   "status": "pending",
+   "drivers": [
+    "curtain_motor",
+    "switch_1gang",
+    "switch_3gang"
+   ],
+   "kind": "brand"
+  },
+  "conflict:hobeian|ts0021": {
+   "status": "pending",
+   "drivers": [
+    "contact_sensor",
+    "sensor_contact_zigbee"
+   ],
+   "kind": "brand"
+  },
+  "conflict:hobeian|ts0041": {
+   "status": "pending",
+   "drivers": [
+    "button_wireless_1",
+    "switch_3gang"
+   ],
+   "kind": "brand"
+  },
+  "conflict:hobeian|ts0043": {
+   "status": "pending",
+   "drivers": [
+    "sensor_contact_zigbee",
+    "switch_3gang"
+   ],
+   "kind": "brand"
+  },
+  "conflict:hobeian|ts0044": {
+   "status": "pending",
+   "drivers": [
+    "scene_switch_4",
+    "sensor_contact_zigbee",
+    "switch_3gang"
+   ],
+   "kind": "brand"
+  },
+  "conflict:hobeian|ts004f": {
+   "status": "pending",
+   "drivers": [
+    "button_wireless_1",
+    "presence_sensor_radar",
+    "sensor_contact_zigbee",
+    "switch_3gang"
+   ],
+   "kind": "brand"
+  },
+  "conflict:hobeian|ts0101": {
+   "status": "pending",
+   "drivers": [
+    "curtain_motor",
+    "switch_1gang",
+    "switch_3gang"
+   ],
+   "kind": "brand"
+  },
+  "conflict:hobeian|ts0111": {
+   "status": "pending",
+   "drivers": [
+    "curtain_motor",
+    "switch_1gang",
+    "switch_3gang"
+   ],
+   "kind": "brand"
+  },
+  "conflict:hobeian|ts011f": {
+   "status": "pending",
+   "drivers": [
+    "curtain_motor",
+    "switch_1gang",
+    "switch_2gang",
+    "switch_3gang",
+    "vibration_sensor"
+   ],
+   "kind": "brand"
+  },
+  "conflict:hobeian|ts0201": {
+   "status": "pending",
+   "drivers": [
+    "climate_sensor",
+    "presence_sensor_radar"
+   ],
+   "kind": "brand"
+  },
+  "conflict:hobeian|ts0202": {
+   "status": "pending",
+   "drivers": [
+    "presence_sensor_radar",
+    "soil_sensor"
+   ],
+   "kind": "brand"
+  },
+  "conflict:hobeian|ts0203": {
+   "status": "pending",
+   "drivers": [
+    "contact_sensor",
+    "presence_sensor_radar",
+    "sensor_contact_zigbee",
+    "switch_1gang"
+   ],
+   "kind": "brand"
+  },
+  "conflict:hobeian|ts0207": {
+   "status": "pending",
+   "drivers": [
+    "rain_sensor",
+    "water_leak_sensor"
+   ],
+   "kind": "brand"
+  },
+  "conflict:hobeian|ts0215a": {
+   "status": "pending",
+   "drivers": [
+    "button_wireless_1",
+    "presence_sensor_radar",
+    "switch_3gang"
+   ],
+   "kind": "brand"
+  },
+  "conflict:hobeian|ts0222": {
+   "status": "pending",
+   "drivers": [
+    "climate_sensor",
+    "illuminance_sensor",
+    "presence_sensor_radar",
+    "soil_sensor"
+   ],
+   "kind": "brand"
+  },
+  "conflict:hobeian|ts0225": {
+   "status": "pending",
+   "drivers": [
+    "gas_sensor",
+    "illuminance_sensor",
+    "presence_sensor_radar"
+   ],
+   "kind": "brand"
+  },
+  "conflict:hobeian|ts0301": {
+   "status": "pending",
+   "drivers": [
+    "curtain_motor",
+    "gas_sensor"
+   ],
+   "kind": "brand"
+  },
+  "conflict:hobeian|ts0601": {
+   "status": "pending",
+   "drivers": [
+    "button_wireless_1",
+    "climate_sensor",
+    "curtain_motor",
+    "gas_sensor",
+    "illuminance_sensor",
+    "ir_blaster",
+    "presence_sensor_radar",
+    "rain_sensor",
+    "sensor_contact_zigbee",
+    "siren",
+    "soil_sensor",
+    "switch_1gang",
+    "switch_2gang",
+    "switch_3gang",
+    "vibration_sensor",
+    "water_leak_sensor"
+   ],
+   "kind": "brand"
+  },
+  "conflict:hobeian|ts0601_generic": {
+   "status": "pending",
+   "drivers": [
+    "curtain_motor",
+    "switch_1gang"
+   ],
+   "kind": "brand"
+  },
+  "conflict:hobeian|ts0603": {
+   "status": "pending",
+   "drivers": [
+    "curtain_motor",
+    "switch_1gang"
+   ],
+   "kind": "brand"
+  },
+  "conflict:hobeian|ts0726": {
+   "status": "pending",
+   "drivers": [
+    "curtain_motor",
+    "sensor_contact_zigbee",
+    "switch_1gang",
+    "switch_2gang",
+    "switch_3gang"
+   ],
+   "kind": "brand"
+  },
+  "conflict:hobeian|ts1002": {
+   "status": "pending",
+   "drivers": [
+    "scene_switch_4",
+    "switch_3gang"
+   ],
+   "kind": "brand"
+  },
+  "conflict:hobeian|ts110e": {
+   "status": "pending",
+   "drivers": [
+    "curtain_motor",
+    "presence_sensor_radar",
+    "switch_1gang",
+    "switch_3gang"
+   ],
+   "kind": "brand"
+  },
+  "conflict:hobeian|ts1201": {
+   "status": "pending",
+   "drivers": [
+    "ir_blaster",
+    "presence_sensor_radar",
+    "soil_sensor"
+   ],
+   "kind": "brand"
+  },
+  "conflict:hobeian|ts130f": {
+   "status": "pending",
+   "drivers": [
+    "curtain_motor",
+    "sensor_contact_zigbee",
+    "switch_1gang",
+    "switch_3gang"
+   ],
+   "kind": "brand"
+  },
+  "conflict:hobeian|ts4100": {
+   "status": "pending",
+   "drivers": [
+    "curtain_motor",
+    "switch_1gang",
+    "switch_3gang"
+   ],
+   "kind": "brand"
+  },
+  "conflict:hobeian|ty0201": {
+   "status": "pending",
+   "drivers": [
+    "climate_sensor",
+    "presence_sensor_radar"
+   ],
+   "kind": "brand"
+  },
+  "conflict:hobeian|wsdcgq01lm": {
+   "status": "pending",
+   "drivers": [
+    "climate_sensor",
+    "presence_sensor_radar",
+    "soil_sensor"
+   ],
+   "kind": "brand"
+  },
+  "conflict:hobeian|wsdcgq11lm": {
+   "status": "pending",
+   "drivers": [
+    "climate_sensor",
+    "presence_sensor_radar",
+    "soil_sensor"
+   ],
+   "kind": "brand"
+  },
+  "conflict:hobeian|wsdcgq12lm": {
+   "status": "pending",
+   "drivers": [
+    "climate_sensor",
+    "presence_sensor_radar",
+    "soil_sensor"
+   ],
+   "kind": "brand"
+  },
+  "conflict:hobeian|zbm5-1c-120": {
+   "status": "pending",
+   "drivers": [
+    "curtain_motor",
+    "switch_1gang",
+    "switch_3gang"
+   ],
+   "kind": "brand"
+  },
+  "conflict:hobeian|zbm5-2c-120": {
+   "status": "pending",
+   "drivers": [
+    "curtain_motor",
+    "switch_1gang",
+    "switch_3gang"
+   ],
+   "kind": "brand"
+  },
+  "conflict:hobeian|zbm5-3c-120": {
+   "status": "pending",
+   "drivers": [
+    "curtain_motor",
+    "switch_1gang",
+    "switch_3gang"
+   ],
+   "kind": "brand"
+  },
+  "conflict:hobeian|zbmini": {
+   "status": "pending",
+   "drivers": [
+    "curtain_motor",
+    "soil_sensor",
+    "switch_1gang",
+    "switch_3gang"
+   ],
+   "kind": "brand"
+  },
+  "conflict:hobeian|zbminil2": {
+   "status": "pending",
+   "drivers": [
+    "curtain_motor",
+    "soil_sensor",
+    "switch_1gang",
+    "switch_3gang"
+   ],
+   "kind": "brand"
+  },
+  "conflict:hobeian|zbminil2-r2": {
+   "status": "pending",
+   "drivers": [
+    "curtain_motor",
+    "switch_1gang",
+    "switch_3gang"
+   ],
+   "kind": "brand"
+  },
+  "conflict:hobeian|zbminir": {
+   "status": "pending",
+   "drivers": [
+    "curtain_motor",
+    "switch_1gang",
+    "switch_3gang"
+   ],
+   "kind": "brand"
+  },
+  "conflict:hobeian|zbminir2": {
+   "status": "pending",
+   "drivers": [
+    "curtain_motor",
+    "switch_1gang",
+    "switch_3gang"
+   ],
+   "kind": "brand"
+  },
+  "conflict:hobeian|zbminir2-r2": {
+   "status": "pending",
+   "drivers": [
+    "curtain_motor",
+    "switch_1gang",
+    "switch_3gang"
+   ],
+   "kind": "brand"
+  },
+  "conflict:hobeian|zg-102z": {
+   "status": "pending",
+   "drivers": [
+    "contact_sensor",
+    "sensor_contact_zigbee"
+   ],
+   "kind": "brand"
+  },
+  "conflict:hobeian|zg-102za": {
+   "status": "pending",
+   "drivers": [
+    "contact_sensor",
+    "sensor_contact_zigbee"
+   ],
+   "kind": "brand"
+  },
+  "conflict:zbeacon|ts0601": {
+   "status": "pending",
+   "drivers": [
+    "doorwindowsensor_4",
+    "plug_smart"
+   ],
+   "kind": "brand"
+  },
   "dlnraja-issue:1": {
    "status": "pending",
    "kind": "issue",
@@ -14219,6 +20010,16 @@
    "comments": 4,
    "upstreamUpdatedAt": "2026-09-30T22:09:46Z"
   },
+  "task:audit-copied-text-ledger-journal": {
+   "status": "done",
+   "date": "2026-10-04",
+   "note": "ledger/journal clean; johan index 668 titles replaced by topic class + url; scanner no longer stores titles"
+  },
+  "task:bastien-port-1298-1113": {
+   "status": "done",
+   "date": "2026-10-04",
+   "commit": "84d81e5e88"
+  },
   "task:ledger-wire-auto-enrich-closed-loop": {
    "status": "pending",
    "date": "2026-10-03",
@@ -14261,15 +20062,15 @@
   },
   "task:next-01": {
    "status": "pending",
-   "note": "Johan branch gaps (docs/rules/JOHAN_BRANCHES_2026-10-03.md): _TZ3000_o9f2zqln TS0207 rain, _TZ3210_iystcadi TS0505A, _TZ3000_p26flek3 TS0001 relay (on climate_sensor) \u2014 read source interviews, then exact drivers; port to stable/bastien"
+   "note": "Johan branch gaps (docs/rules/JOHAN_BRANCHES_2026-10-03.md): _TZ3000_o9f2zqln TS0207 rain, _TZ3210_iystcadi TS0505A, _TZ3000_p26flek3 TS0001 relay (on climate_sensor) — read source interviews, then exact drivers; port to stable/bastien"
   },
   "task:next-02": {
    "status": "pending",
-   "note": "stable grouped publish: push exec-stable 35b5248d29 (SimpleButtonGate) + backports #1501/#1502/#1503/TH01Z + device compat (4 new dedicated drivers, qoy0ekbd) \u2014 needs explicit approval (auto-review blocked direct push)"
+   "note": "stable grouped publish: push exec-stable 35b5248d29 (SimpleButtonGate) + backports #1501/#1502/#1503/TH01Z + device compat (4 new dedicated drivers, qoy0ekbd) — needs explicit approval (auto-review blocked direct push)"
   },
   "task:next-03": {
    "status": "pending",
-   "note": "leads: zbeacon|TH01 + Zbeacon|TH01 routed to doorwindowsensor_4 (contact) \u2014 needs dw4 split without dual couples; _TZE200_rxq4iti9|TS0601 on device_radiator_valve (EF00 temp/RH, DP map unknown)"
+   "note": "leads: zbeacon|TH01 + Zbeacon|TH01 routed to doorwindowsensor_4 (contact) — needs dw4 split without dual couples; _TZE200_rxq4iti9|TS0601 on device_radiator_valve (EF00 temp/RH, DP map unknown)"
   },
   "task:next-04": {
    "status": "pending",
@@ -14289,7 +20090,19 @@
   },
   "task:next-08": {
    "status": "pending",
-   "note": "open: _TZE200_locansqn epoch 2000 vs 1970 \u2014 needs >=2 sources"
+   "note": "open: _TZE200_locansqn epoch 2000 vs 1970 — needs >=2 sources"
+  },
+  "task:publish-fix-master-37164856948": {
+   "status": "done",
+   "date": "2026-10-04",
+   "commit": "72ed541dd6",
+   "note": "P2518 flow compose; run 37165886836 success, 9.0.1322 promoted to Test"
+  },
+  "task:publish-fix-stable-37164858704": {
+   "status": "done",
+   "date": "2026-10-04",
+   "commit": "1142e94d59",
+   "note": "fp-collision _TZ3000_4uuaja4a; rerun 37165678667 success, stable 5.12.359"
   },
   "task:resume-1": {
    "status": "done",
@@ -14314,12 +20127,12 @@
   "task:resume-3b": {
    "status": "done",
    "date": "2026-10-03",
-   "note": "spec 003 T3+T5 (master 4996f89165\u21923f5cff34b6): lib/coordinator/attach.js; ButtonDevice.triggerButtonPress cross-channel press dedupe (leading edge, same-channel repeats untouched \u2192 double/triple kept;"
+   "note": "spec 003 T3+T5 (master 4996f89165→3f5cff34b6): lib/coordinator/attach.js; ButtonDevice.triggerButtonPress cross-channel press dedupe (leading edge, same-channel repeats untouched → double/triple kept;"
   },
   "task:resume-3c": {
    "status": "done",
    "date": "2026-10-03",
-   "note": "spec 003 T4 stable: lib/coordinator/SimpleButtonGate.js (seq + fixed 400 ms cross-channel window) committed LOCALLY on exec-stable 35b5248d29 \u2014 NOT pushed (push to stable-v5 was blocked by auto-review"
+   "note": "spec 003 T4 stable: lib/coordinator/SimpleButtonGate.js (seq + fixed 400 ms cross-channel window) committed LOCALLY on exec-stable 35b5248d29 — NOT pushed (push to stable-v5 was blocked by auto-review"
   },
   "task:resume-4a": {
    "status": "done",
@@ -14329,7 +20142,7 @@
   "task:resume-4b": {
    "status": "done",
    "date": "2026-10-03",
-   "note": "spec 004 T2 (f103de0961): lib/layers/LegacyLayerAdapters.js \u2014 native ZCL passthrough unwrapped first, tuya-raw + rxtx-chain wrapped (breaker/timeout); LowLevelBridge.asLayers(), ProtocolRxTxChain.asLa"
+   "note": "spec 004 T2 (f103de0961): lib/layers/LegacyLayerAdapters.js — native ZCL passthrough unwrapped first, tuya-raw + rxtx-chain wrapped (breaker/timeout); LowLevelBridge.asLayers(), ProtocolRxTxChain.asLa"
   },
   "task:resume-5a": {
    "status": "done",
@@ -14339,7 +20152,7 @@
   "task:resume-5b": {
    "status": "done",
    "date": "2026-10-03",
-   "note": "spec 005 T2 (7773230234): 6 harvesters persist links+fields only; MAX_CROSS_COUPLES=16 (6 MB reports were 20k synthetic couples from T26439 #1 device list); dumps distilled \u2192 data/forum/forum-leads-ss"
+   "note": "spec 005 T2 (7773230234): 6 harvesters persist links+fields only; MAX_CROSS_COUPLES=16 (6 MB reports were 20k synthetic couples from T26439 #1 device list); dumps distilled → data/forum/forum-leads-ss"
   },
   "task:resume-6": {
    "status": "done",
@@ -14389,7 +20202,7 @@
   "task:resume-9b": {
    "status": "done",
    "date": "2026-10-03",
-   "note": "spec 009 (340c553fa3): Discussions via GraphQL in scripts/scanners/johan-canonical-index.js (JohanBendz has Discussions disabled; works on our repo); deep read #797 (+#1246,#1284,#964,#1291,#1461) \u2192 d"
+   "note": "spec 009 (340c553fa3): Discussions via GraphQL in scripts/scanners/johan-canonical-index.js (JohanBendz has Discussions disabled; works on our repo); deep read #797 (+#1246,#1284,#964,#1291,#1461) → d"
   },
   "task:resume-appjson-a": {
    "status": "done",
@@ -14416,11 +20229,6 @@
    "date": "2026-10-04",
    "commit": "323c38eda0",
    "note": "local exec-stable; push needs approval"
-  },
-  "task:bastien-port-1298-1113": {
-   "status": "done",
-   "date": "2026-10-04",
-   "commit": "84d81e5e88"
   }
  }
 }

@@ -65,3 +65,13 @@ Specs live in `specs/NNN-*/{spec,plan,tasks}.md`. This file overrides any spec/p
   `docs/progress/JOURNAL.md` (dated entries, newest first). Older checkpoints
   (resume-checkpoint, deep-read-checkpoint, deep-read-log) stay as cursors linked from the
   ledger's `checkpoints` map.
+- W4. Driver conflicts are researched, not deleted. For every mfr+pid couple claimed by two or
+  more drivers (ledger namespace `conflict:<mfr>|<pid>`) and every user-reported conflict: look up
+  the real hardware (Z2M converters/device pages, ZHA quirks, deCONZ, Blakadder, Homey forum,
+  Johan's repo, other Homey/ST/Hubitat/Jeedom apps), then, per pid, keep the couple in the single
+  driver matching that hardware (native first, never degrade, never invent mfr/pid, the 3 app IDs
+  stay intact). Create a new driver/category only when existing drivers truly conflict. Apply the
+  same placement on master and stable. Write the reasoning in our own words with links + credits
+  in `docs/rules/` and the ledger. Phantom cross-product couples are left alone unless they
+  actually collide or a user reports a conflict. Work frugally: a few couples per daily run,
+  user-reported and source-backed couples first; cursor in `data/leads/resume-checkpoint.json`.
