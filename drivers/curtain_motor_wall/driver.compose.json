@@ -386,6 +386,27 @@
         "en": "Estimate power consumption when real measurement is not available (AC/DC devices only)",
         "fr": "Estimer la consommation quand la mesure réelle n'est pas disponible (appareils AC/DC seulement)"
       }
+    },
+    {
+      "id": "favorite_position",
+      "type": "number",
+      "label": {
+        "en": "Favorite position (%)",
+        "fr": "Position favorite (%)",
+        "nl": "Favoriete positie (%)",
+        "de": "Lieblingsposition (%)"
+      },
+      "value": 50,
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "units": "%",
+      "hint": {
+        "en": "Target of the \"Go to favorite position\" flow action (like a TaHoma \"My\" position). 0 = closed, 100 = open.",
+        "fr": "Cible de l action de flow « Aller position favorite » (comme la position « My » de TaHoma). 0 = fermé, 100 = ouvert.",
+        "nl": "Doel van de flow-actie \"Ga naar favoriete positie\". 0 = dicht, 100 = open.",
+        "de": "Ziel der Flow-Aktion \"Zur Lieblingsposition\". 0 = geschlossen, 100 = offen."
+      }
     }
   ],
   "energy": {
