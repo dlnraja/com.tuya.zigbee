@@ -317,6 +317,15 @@ Install from: [Test Version](https://homey.app/a/com.dlnraja.tuya.zigbee/test/) 
 2. Check [Zigbee2MQTT](https://www.zigbee2mqtt.io/supported-devices/) for DP mappings
 3. Check [Blakadder](https://zigbee.blakadder.com) for cross-references
 4. Open an [issue](https://github.com/dlnraja/com.tuya.zigbee/issues/new?template=01_device_request.yml) with: **manufacturerName**, **modelId**, and **interview data**
+| Doc | Content |
+|-----|---------|
+| [docs/INDEX.md](docs/INDEX.md) | Full documentation index |
+| [docs/user/FAQ_ZIGBEE_UPDATES.md](docs/user/FAQ_ZIGBEE_UPDATES.md) | Unavailable after Homey 13.5 (EmberZNet 9.1): wake or re-pair; Device Updates (OTA, Homey ≥13.2) |
+| [docs/user/SMART_HOME_ECOSYSTEMS.md](docs/user/SMART_HOME_ECOSYSTEMS.md) | Matter Bridge, Google, Alexa, SmartThings, ChatGPT |
+| [docs/rules/DUAL_APP_VISION.md](docs/rules/DUAL_APP_VISION.md) | master (preview) vs stable-v5 (reliability) |
+| [docs/CONTRIBUTING_DEV.md](docs/CONTRIBUTING_DEV.md) | Developer workflow |
+| [AGENTS.md](AGENTS.md) | Project rules for AI agents |
+| [CHANGELOG.md](CHANGELOG.md) | Full changelog |
 
 ### Report a Bug
 1. Go to **Settings > Apps > Tuya Unified Zigbee > Send Diagnostics**
