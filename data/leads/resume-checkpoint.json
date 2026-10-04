@@ -89,7 +89,7 @@
   },
   "master_queue": {
     "note": "Single master checklist of ALL user requests since the start. Daily resumption reads this FIRST. Tick (verified) only after verification.",
-    "updated": "2026-10-04T04:45+02:00",
+    "updated": "2026-10-04T02:28:05.688Z",
     "items": [
       {
         "id": 1,
@@ -732,9 +732,54 @@
         "status": "pending",
         "evidence": "https://homey.app/en-us/news/introducing-homey-portal/",
         "origin": "homey-news first pass 2026-10-04"
+      },
+      {
+        "id": 107,
+        "item": "Port bastien-home e181504939 to master (ManifestDriverFlowIndex + hasArgs, args.device listeners x6, timers on delete, FFC TTL/sweep/pulse-cycle cancel, additive labels) and to stable-v5 (leak/listener/label only); gates + validate publish; publish master batch + stable grouped",
+        "status": "in_progress",
+        "evidence": "master a3106fe114 (validate publish PASS, size 3.83/4.00 MB, 404 label files additive 0 changed leaves)",
+        "origin": "user 2026-10-04 04:22/04:27"
+      },
+      {
+        "id": 108,
+        "item": "x-scan (a): add 36 missing ZHC mfr+pid couples (REPORT.md §3) with DP mappings from cited ZHC files, rewritten, credited Koenkk/Z2M; correct drivers or new exact-pair drivers on conflict; additive",
+        "status": "pending",
+        "evidence": "/workspace/x-scan/REPORT.md §3, zhc_pids.json",
+        "origin": "user 2026-10-04 04:22/04:27"
+      },
+      {
+        "id": 109,
+        "item": "x-scan (b): 8 suspect placements (_TZ3008_reatplte, _TZ3000_9ni6xxld, _TZE284_xpq2rzhq, _TZE200_rgeapp2c, _TZ3000_yi0n4xfd, _TZ3000_46vasa5h, _TZ3000_excgg5kb, _TZ3000_w0qqde0g): research each, add to correct driver without removing existing",
+        "status": "pending",
+        "evidence": "REPORT.md §2.5, repo_check.json",
+        "origin": "user 2026-10-04 04:22/04:27"
+      },
+      {
+        "id": 110,
+        "item": "x-scan (c): DP quirks — signed int32 #12646, TRV calibration >5.5C #12472, Moes calibration time ENUM8->UINT16 #12619, TS011F_plug_1 current scale #12817, _TZ3008_reatplte scale #12545, polling _TZ3000_9ni6xxld #12460, stale states #12431, optional per-device time sync #13004",
+        "status": "pending",
+        "evidence": "Z2M 2.14.0-2.14.2 release notes",
+        "origin": "user 2026-10-04 04:22/04:27"
+      },
+      {
+        "id": 111,
+        "item": "x-scan (d): verify no code truncates or prefix-matches long _TZE28C1000000_/_TZE2841000000_ names (DeviceFingerprintDB, fp shards, normalizers)",
+        "status": "pending",
+        "evidence": "REPORT.md §2.1",
+        "origin": "user 2026-10-04 04:22/04:27"
+      },
+      {
+        "id": 112,
+        "item": "x-scan (e): firmware compose compatibility >=13.2 where OTA used + FAQ: unavailable after Homey 13.5 (EmberZNet 9.1) -> wake or re-pair",
+        "status": "pending",
+        "evidence": "apps.developer.homey.app zigbee-firmware-updates; forum 13.5.0",
+        "origin": "user 2026-10-04 04:22/04:27"
       }
     ],
     "next": [
+      "#107 bastien port: stable commit + master push/verify + stable grouped publish",
+      "#110-#112 x-scan quirks/long names/firmware FAQ",
+      "#108-#109 x-scan couples + placements",
       "Source registry follow-ups (#99): per-source DP parsers + triage; land #100 couples after research",
       "Matter/ecosystem per-driver additive mirrors (#95 follow-ups)",
       "athombv org study (#98) — start with node-zigbee-clusters + node-homey-zigbeedriver issues/PRs",
