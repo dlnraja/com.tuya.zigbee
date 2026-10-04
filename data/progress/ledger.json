@@ -1,6 +1,6 @@
 {
  "version": 1,
- "updated": "2026-10-03T14:58:08.134Z",
+ "updated": "2026-10-04T00:17:10.178336Z",
  "checkpoints": {
   "resume": "data/leads/resume-checkpoint.json",
   "deepRead": "data/leads/deep-read-checkpoint.json",
@@ -3762,11 +3762,15 @@
    "upstreamUpdatedAt": "2026-10-01T11:06:27Z"
   },
   "johan-issue:1008": {
-   "status": "pending",
+   "status": "done",
    "kind": "issue",
    "state": "closed",
    "comments": 3,
-   "upstreamUpdatedAt": "2026-09-30T20:52:56Z"
+   "upstreamUpdatedAt": "2026-09-30T20:52:56Z",
+   "date": "2026-10-04",
+   "note": "consolidated into #1113",
+   "commit": "88b3584cf6",
+   "updatedAt": "2026-09-30T20:52:56Z"
   },
   "johan-issue:1009": {
    "status": "pending",
@@ -4581,11 +4585,15 @@
    "upstreamUpdatedAt": "2026-10-02T11:58:35Z"
   },
   "johan-issue:1113": {
-   "status": "pending",
+   "status": "done",
    "kind": "issue",
    "state": "open",
    "comments": 2,
-   "upstreamUpdatedAt": "2026-10-03T08:05:05Z"
+   "upstreamUpdatedAt": "2026-10-03T08:05:05Z",
+   "date": "2026-10-04",
+   "note": "eWeLink|SNZB-03 -> sensor_ias_zonetype_ewelink (zoneType)",
+   "commit": "88b3584cf6",
+   "updatedAt": "2026-10-03T08:05:05Z"
   },
   "johan-issue:1114": {
    "status": "pending",
@@ -7392,11 +7400,15 @@
    "upstreamUpdatedAt": "2026-10-01T11:05:48Z"
   },
   "johan-issue:1475": {
-   "status": "pending",
+   "status": "done",
    "kind": "issue",
    "state": "open",
    "comments": 0,
-   "upstreamUpdatedAt": "2026-09-27T23:08:02Z"
+   "upstreamUpdatedAt": "2026-09-27T23:08:02Z",
+   "date": "2026-10-04",
+   "note": "covered by #1113 zoneType driver",
+   "commit": "88b3584cf6",
+   "updatedAt": "2026-09-27T23:08:02Z"
   },
   "johan-issue:1476": {
    "status": "pending",
@@ -13632,11 +13644,13 @@
    "upstreamUpdatedAt": "2026-07-12T21:33:18Z"
   },
   "johan-issue:925": {
-   "status": "pending",
+   "status": "deferred",
    "kind": "issue",
    "state": "closed",
    "comments": 3,
-   "upstreamUpdatedAt": "2026-10-03T08:06:34Z"
+   "upstreamUpdatedAt": "2026-10-03T08:06:34Z",
+   "date": "2026-10-04",
+   "note": "iHorn LH02121: app scope + zoneType proof needed"
   },
   "johan-issue:926": {
    "status": "pending",
@@ -14247,15 +14261,15 @@
   },
   "task:next-01": {
    "status": "pending",
-   "note": "Johan branch gaps (docs/rules/JOHAN_BRANCHES_2026-10-03.md): _TZ3000_o9f2zqln TS0207 rain, _TZ3210_iystcadi TS0505A, _TZ3000_p26flek3 TS0001 relay (on climate_sensor) — read source interviews, then exact drivers; port to stable/bastien"
+   "note": "Johan branch gaps (docs/rules/JOHAN_BRANCHES_2026-10-03.md): _TZ3000_o9f2zqln TS0207 rain, _TZ3210_iystcadi TS0505A, _TZ3000_p26flek3 TS0001 relay (on climate_sensor) \u2014 read source interviews, then exact drivers; port to stable/bastien"
   },
   "task:next-02": {
    "status": "pending",
-   "note": "stable grouped publish: push exec-stable 35b5248d29 (SimpleButtonGate) + backports #1501/#1502/#1503/TH01Z + device compat (4 new dedicated drivers, qoy0ekbd) — needs explicit approval (auto-review blocked direct push)"
+   "note": "stable grouped publish: push exec-stable 35b5248d29 (SimpleButtonGate) + backports #1501/#1502/#1503/TH01Z + device compat (4 new dedicated drivers, qoy0ekbd) \u2014 needs explicit approval (auto-review blocked direct push)"
   },
   "task:next-03": {
    "status": "pending",
-   "note": "leads: zbeacon|TH01 + Zbeacon|TH01 routed to doorwindowsensor_4 (contact) — needs dw4 split without dual couples; _TZE200_rxq4iti9|TS0601 on device_radiator_valve (EF00 temp/RH, DP map unknown)"
+   "note": "leads: zbeacon|TH01 + Zbeacon|TH01 routed to doorwindowsensor_4 (contact) \u2014 needs dw4 split without dual couples; _TZE200_rxq4iti9|TS0601 on device_radiator_valve (EF00 temp/RH, DP map unknown)"
   },
   "task:next-04": {
    "status": "pending",
@@ -14275,7 +14289,7 @@
   },
   "task:next-08": {
    "status": "pending",
-   "note": "open: _TZE200_locansqn epoch 2000 vs 1970 — needs >=2 sources"
+   "note": "open: _TZE200_locansqn epoch 2000 vs 1970 \u2014 needs >=2 sources"
   },
   "task:resume-1": {
    "status": "done",
@@ -14300,12 +14314,12 @@
   "task:resume-3b": {
    "status": "done",
    "date": "2026-10-03",
-   "note": "spec 003 T3+T5 (master 4996f89165→3f5cff34b6): lib/coordinator/attach.js; ButtonDevice.triggerButtonPress cross-channel press dedupe (leading edge, same-channel repeats untouched → double/triple kept;"
+   "note": "spec 003 T3+T5 (master 4996f89165\u21923f5cff34b6): lib/coordinator/attach.js; ButtonDevice.triggerButtonPress cross-channel press dedupe (leading edge, same-channel repeats untouched \u2192 double/triple kept;"
   },
   "task:resume-3c": {
    "status": "done",
    "date": "2026-10-03",
-   "note": "spec 003 T4 stable: lib/coordinator/SimpleButtonGate.js (seq + fixed 400 ms cross-channel window) committed LOCALLY on exec-stable 35b5248d29 — NOT pushed (push to stable-v5 was blocked by auto-review"
+   "note": "spec 003 T4 stable: lib/coordinator/SimpleButtonGate.js (seq + fixed 400 ms cross-channel window) committed LOCALLY on exec-stable 35b5248d29 \u2014 NOT pushed (push to stable-v5 was blocked by auto-review"
   },
   "task:resume-4a": {
    "status": "done",
@@ -14315,7 +14329,7 @@
   "task:resume-4b": {
    "status": "done",
    "date": "2026-10-03",
-   "note": "spec 004 T2 (f103de0961): lib/layers/LegacyLayerAdapters.js — native ZCL passthrough unwrapped first, tuya-raw + rxtx-chain wrapped (breaker/timeout); LowLevelBridge.asLayers(), ProtocolRxTxChain.asLa"
+   "note": "spec 004 T2 (f103de0961): lib/layers/LegacyLayerAdapters.js \u2014 native ZCL passthrough unwrapped first, tuya-raw + rxtx-chain wrapped (breaker/timeout); LowLevelBridge.asLayers(), ProtocolRxTxChain.asLa"
   },
   "task:resume-5a": {
    "status": "done",
@@ -14325,7 +14339,7 @@
   "task:resume-5b": {
    "status": "done",
    "date": "2026-10-03",
-   "note": "spec 005 T2 (7773230234): 6 harvesters persist links+fields only; MAX_CROSS_COUPLES=16 (6 MB reports were 20k synthetic couples from T26439 #1 device list); dumps distilled → data/forum/forum-leads-ss"
+   "note": "spec 005 T2 (7773230234): 6 harvesters persist links+fields only; MAX_CROSS_COUPLES=16 (6 MB reports were 20k synthetic couples from T26439 #1 device list); dumps distilled \u2192 data/forum/forum-leads-ss"
   },
   "task:resume-6": {
    "status": "done",
@@ -14375,7 +14389,7 @@
   "task:resume-9b": {
    "status": "done",
    "date": "2026-10-03",
-   "note": "spec 009 (340c553fa3): Discussions via GraphQL in scripts/scanners/johan-canonical-index.js (JohanBendz has Discussions disabled; works on our repo); deep read #797 (+#1246,#1284,#964,#1291,#1461) → d"
+   "note": "spec 009 (340c553fa3): Discussions via GraphQL in scripts/scanners/johan-canonical-index.js (JohanBendz has Discussions disabled; works on our repo); deep read #797 (+#1246,#1284,#964,#1291,#1461) \u2192 d"
   },
   "task:resume-appjson-a": {
    "status": "done",
