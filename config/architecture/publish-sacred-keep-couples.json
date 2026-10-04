@@ -937,6 +937,276 @@
       "pid": "TS0043",
       "driverId": "button_wireless_3",
       "note": "P2702 Bastien Unknown/off-mesh TS0043 — front-pin sacred-keep"
+    },
+    {
+      "mfr": "_TZ3008_reatplte",
+      "pid": "TS011F",
+      "driverId": "plug_energy_monitor",
+      "note": "#108/#109 2026-10-04 ZHC-verified (tuya.ts TS011F_plug_1 (metering plug), Koen Kanters and contributors) — keep through publish compaction"
+    },
+    {
+      "mfr": "_TZ3000_9ni6xxld",
+      "pid": "TS011F",
+      "driverId": "plug_energy_monitor",
+      "note": "#108/#109 2026-10-04 ZHC-verified (tuya.ts TS011F_plug_3 (metering plug), Koen Kanters and contributors) — keep through publish compaction"
+    },
+    {
+      "mfr": "_TZ3000_yi0n4xfd",
+      "pid": "TS011F",
+      "driverId": "smartPlug_DinRail",
+      "note": "#108/#109 2026-10-04 ZHC-verified (tuya.ts TS011F_with_threshold (DIN rail switch with metering), Koen Kanters and contributors) — keep through publish compaction"
+    },
+    {
+      "mfr": "_TZ3000_46vasa5h",
+      "pid": "TS011F",
+      "driverId": "double_power_point_2",
+      "note": "#108/#109 2026-10-04 ZHC-verified (tuya.ts TS011F_2_gang_wall (2 gang outlet), Koen Kanters and contributors) — keep through publish compaction"
+    },
+    {
+      "mfr": "_TZE284_xpq2rzhq",
+      "pid": "TS0601",
+      "driverId": "presence_sensor_radar",
+      "note": "#108/#109 2026-10-04 ZHC-verified (tuya.ts TS0601_smart_human_presence_sensor_1, Koen Kanters and contributors) — keep through publish compaction"
+    },
+    {
+      "mfr": "_TZE284_9xstqowh",
+      "pid": "TS0601",
+      "driverId": "smart_breaker",
+      "note": "#108/#109 2026-10-04 ZHC-verified (tuya.ts TOQCB2-80, Koen Kanters and contributors) — keep through publish compaction"
+    },
+    {
+      "mfr": "_TZE204_mrffaamu",
+      "pid": "TS0601",
+      "driverId": "smart_breaker",
+      "note": "#108/#109 2026-10-04 ZHC-verified (tuya.ts TOQCB2-80-2P whitelabel, Koen Kanters and contributors) — keep through publish compaction"
+    },
+    {
+      "mfr": "_TZE284_mrffaamu",
+      "pid": "TS0601",
+      "driverId": "smart_breaker",
+      "note": "#108/#109 2026-10-04 ZHC-verified (tuya.ts TOQCB2-80-2P whitelabel, Koen Kanters and contributors) — keep through publish compaction"
+    },
+    {
+      "mfr": "_TZE200_loejka0i",
+      "pid": "TS0601",
+      "driverId": "energy_meter_3phase",
+      "note": "#108/#109 2026-10-04 ZHC-verified (nous.ts D4Z (3P+N meter), Koen Kanters and contributors) — keep through publish compaction"
+    },
+    {
+      "mfr": "_TZE204_loejka0i",
+      "pid": "TS0601",
+      "driverId": "energy_meter_3phase",
+      "note": "#108/#109 2026-10-04 ZHC-verified (nous.ts D4Z (3P+N meter), Koen Kanters and contributors) — keep through publish compaction"
+    },
+    {
+      "mfr": "_TZE284_loejka0i",
+      "pid": "TS0601",
+      "driverId": "energy_meter_3phase",
+      "note": "#108/#109 2026-10-04 ZHC-verified (nous.ts D4Z (3P+N meter), Koen Kanters and contributors) — keep through publish compaction"
+    },
+    {
+      "mfr": "_TZE204_6fk3gewc",
+      "pid": "TS0601",
+      "driverId": "wall_switch_1gang_1way",
+      "note": "#108/#109 2026-10-04 ZHC-verified (weten.ts PCI E (DP1 on/off), Koen Kanters and contributors) — keep through publish compaction"
+    },
+    {
+      "mfr": "_TZE284_6fk3gewc",
+      "pid": "TS0601",
+      "driverId": "wall_switch_1gang_1way",
+      "note": "#108/#109 2026-10-04 ZHC-verified (weten.ts PCI E (DP1 on/off), Koen Kanters and contributors) — keep through publish compaction"
+    },
+    {
+      "mfr": "_TZE28C1000000_6fk3gewc",
+      "pid": "TS0601",
+      "driverId": "wall_switch_1gang_1way",
+      "note": "#108/#109 2026-10-04 ZHC-verified (weten.ts PCI E (DP1 on/off), Koen Kanters and contributors) — keep through publish compaction"
+    },
+    {
+      "mfr": "_TZE2841000000_3mzb0sdz",
+      "pid": "TS0601",
+      "driverId": "curtain_motor",
+      "note": "#108/#109 2026-10-04 ZHC-verified (zemismart.ts ZM16B, Koen Kanters and contributors) — keep through publish compaction"
+    },
+    {
+      "mfr": "_TZE2841000000_u68q868h",
+      "pid": "TS0601",
+      "driverId": "curtain_motor",
+      "note": "#108/#109 2026-10-04 ZHC-verified (moes.ts FWJZCEH18A001, Koen Kanters and contributors) — keep through publish compaction"
+    },
+    {
+      "mfr": "_TZE28C1000000_1fuxihti",
+      "pid": "TS0601",
+      "driverId": "curtain_motor",
+      "note": "#108/#109 2026-10-04 ZHC-verified (tuya.ts TS0601_cover_1, Koen Kanters and contributors) — keep through publish compaction"
+    },
+    {
+      "mfr": "_TZE28C1000000_vvvtcehj",
+      "pid": "TS0601",
+      "driverId": "curtain_motor",
+      "note": "#108/#109 2026-10-04 ZHC-verified (tuya.ts TS0601_cover_1 (Roximo CRTZ01), Koen Kanters and contributors) — keep through publish compaction"
+    },
+    {
+      "mfr": "_TZE28C1000000_v5xjyphj",
+      "pid": "TS0601",
+      "driverId": "valve_irrigation",
+      "note": "#108/#109 2026-10-04 ZHC-verified (iotperfect.ts PF-PM02D-TYZ, Koen Kanters and contributors) — keep through publish compaction"
+    },
+    {
+      "mfr": "_TZE2841000000_3yp57tby",
+      "pid": "TS0601",
+      "driverId": "radiator_valve",
+      "note": "#108/#109 2026-10-04 ZHC-verified (saswell.ts SEA801/SEA802, Koen Kanters and contributors) — keep through publish compaction"
+    },
+    {
+      "mfr": "_TZE2841000000_6ycgarab",
+      "pid": "TS0601",
+      "driverId": "smoke_sensor",
+      "note": "#108/#109 2026-10-04 ZHC-verified (tuya.ts TS0601_smoke_co, Koen Kanters and contributors) — keep through publish compaction"
+    },
+    {
+      "mfr": "_TZE2841000000_n4ttsck2",
+      "pid": "TS0601",
+      "driverId": "smoke_sensor2",
+      "note": "#108/#109 2026-10-04 ZHC-verified (onenuo.ts 288WZ, Koen Kanters and contributors) — keep through publish compaction"
+    },
+    {
+      "mfr": "_TZE2841000000_rccxox8p",
+      "pid": "TS0601",
+      "driverId": "smoke_sensor2",
+      "note": "#108/#109 2026-10-04 ZHC-verified (tuya.ts PA-44Z, Koen Kanters and contributors) — keep through publish compaction"
+    },
+    {
+      "mfr": "_TZE2841000000_bw4ayyeh",
+      "pid": "TS0601",
+      "driverId": "presence_sensor_radar",
+      "note": "#108/#109 2026-10-04 ZHC-verified (tuya.ts ZD24_Presence_Sensor, Koen Kanters and contributors) — keep through publish compaction"
+    },
+    {
+      "mfr": "_TZE28C1000000_1youk3hj",
+      "pid": "TS0601",
+      "driverId": "presence_sensor_radar",
+      "note": "#108/#109 2026-10-04 ZHC-verified (neo.ts NAS-PS10B2 / RTX ZPS4, Koen Kanters and contributors) — keep through publish compaction"
+    },
+    {
+      "mfr": "_TZE28C1000000_68utemio",
+      "pid": "TS0601",
+      "driverId": "wall_dimmer_tuya",
+      "note": "#108/#109 2026-10-04 ZHC-verified (tuya.ts TS0601_dimmer_1_gang_1, Koen Kanters and contributors) — keep through publish compaction"
+    },
+    {
+      "mfr": "_TZE28C1000000_nqqylykc",
+      "pid": "TS0601",
+      "driverId": "wall_dimmer_tuya",
+      "note": "#108/#109 2026-10-04 ZHC-verified (avatto.ts ZDMS16-1, Koen Kanters and contributors) — keep through publish compaction"
+    },
+    {
+      "mfr": "_TZE28C1000000_chbyv06x",
+      "pid": "TS0601",
+      "driverId": "gas_sensor",
+      "note": "#108/#109 2026-10-04 ZHC-verified (tuya.ts TS0601_gas_sensor_2 (DY-RQ500A), Koen Kanters and contributors) — keep through publish compaction"
+    },
+    {
+      "mfr": "_TZE28C1000000_a2teqi5u",
+      "pid": "TS0601",
+      "driverId": "switch_2gang",
+      "note": "#108/#109 2026-10-04 ZHC-verified (zemismart.ts ZMS-208US-2, Koen Kanters and contributors) — keep through publish compaction"
+    },
+    {
+      "mfr": "_TZE28C1000000_dmckrsxg",
+      "pid": "TS0601",
+      "driverId": "switch_2gang",
+      "note": "#108/#109 2026-10-04 ZHC-verified (zemismart.ts ZMS-206EU-2, Koen Kanters and contributors) — keep through publish compaction"
+    },
+    {
+      "mfr": "_TZE28C1000000_e4pf6l87",
+      "pid": "TS0601",
+      "driverId": "switch_3gang",
+      "note": "#108/#109 2026-10-04 ZHC-verified (zemismart.ts ZMS-206EU-3, Koen Kanters and contributors) — keep through publish compaction"
+    },
+    {
+      "mfr": "_TZE28C1000000_xvywzhmi",
+      "pid": "TS0601",
+      "driverId": "switch_3gang",
+      "note": "#108/#109 2026-10-04 ZHC-verified (zemismart.ts ZMS-208US-3, Koen Kanters and contributors) — keep through publish compaction"
+    },
+    {
+      "mfr": "_TZE28C1000000_pmbxyf97",
+      "pid": "TS0601",
+      "driverId": "switch_4gang",
+      "note": "#108/#109 2026-10-04 ZHC-verified (zemismart.ts ZMS-206US-4, Koen Kanters and contributors) — keep through publish compaction"
+    },
+    {
+      "mfr": "_TZE28C1000000_xibaabmu",
+      "pid": "TS0601",
+      "driverId": "switch_4gang",
+      "note": "#108/#109 2026-10-04 ZHC-verified (zemismart.ts ZMS-206US-4, Koen Kanters and contributors) — keep through publish compaction"
+    },
+    {
+      "mfr": "_TZE28C1000000_y4jqpry8",
+      "pid": "TS0601",
+      "driverId": "switch_4gang",
+      "note": "#108/#109 2026-10-04 ZHC-verified (zemismart.ts ZMS-206US-4, Koen Kanters and contributors) — keep through publish compaction"
+    },
+    {
+      "mfr": "_TZE28C1000000_hwv3by9k",
+      "pid": "TS0601",
+      "driverId": "switch_wall_8gang",
+      "note": "#108/#109 2026-10-04 ZHC-verified (manhot.ts MH03-8Z-OLED, Koen Kanters and contributors) — keep through publish compaction"
+    },
+    {
+      "mfr": "_TZE28C1000000_z5jz7wpo",
+      "pid": "TS0601",
+      "driverId": "fan_controller",
+      "note": "#108/#109 2026-10-04 ZHC-verified (tuya.ts TS0601_fan_switch, Koen Kanters and contributors) — keep through publish compaction"
+    },
+    {
+      "mfr": "_TZ3000_wvedmwyp",
+      "pid": "TS130F",
+      "driverId": "curtain_module_2_gang",
+      "note": "#108/#109 2026-10-04 ZHC-verified (lonsonho.ts TS130F_dual, Koen Kanters and contributors) — keep through publish compaction"
+    },
+    {
+      "mfr": "_TZ3210_rundhkxp",
+      "pid": "TS030F",
+      "driverId": "curtain_motor",
+      "note": "#108/#109 2026-10-04 ZHC-verified (moes.ts ADCBZI01, Koen Kanters and contributors) — keep through publish compaction"
+    },
+    {
+      "mfr": "_TZE204_qtnjuoae",
+      "pid": "TS0601",
+      "driverId": "valve_irrigation",
+      "note": "#108/#109 2026-10-04 ZHC-verified (rtx.ts ZVG1, Koen Kanters and contributors) — keep through publish compaction"
+    },
+    {
+      "mfr": "_TZE284_qtnjuoae",
+      "pid": "TS0601",
+      "driverId": "valve_irrigation",
+      "note": "#108/#109 2026-10-04 ZHC-verified (rtx.ts ZVG1, Koen Kanters and contributors) — keep through publish compaction"
+    },
+    {
+      "mfr": "_TZE284_n41i9jyt",
+      "pid": "TS0601",
+      "driverId": "valve_dual_irrigation",
+      "note": "#108/#109 2026-10-04 ZHC-verified (tuya.ts GX03, Koen Kanters and contributors) — keep through publish compaction"
+    },
+    {
+      "mfr": "_TZE284_tokhh9pf",
+      "pid": "TS0601",
+      "driverId": "switch_wall_6gang",
+      "note": "#108/#109 2026-10-04 ZHC-verified (tuya.ts TS0601_6gang_switch, Koen Kanters and contributors) — keep through publish compaction"
+    },
+    {
+      "mfr": "_TZE204_lyqazpe6",
+      "pid": "TS0601",
+      "driverId": "smart_breaker",
+      "note": "#108/#109 2026-10-04 ZHC-verified (tuya.ts TOQCB2-80, Koen Kanters and contributors) — keep through publish compaction"
+    },
+    {
+      "mfr": "_TZE284_lyqazpe6",
+      "pid": "TS0601",
+      "driverId": "smart_breaker",
+      "note": "#108/#109 2026-10-04 ZHC-verified (tuya.ts TOQCB2-80, Koen Kanters and contributors) — keep through publish compaction"
     }
   ]
 }
