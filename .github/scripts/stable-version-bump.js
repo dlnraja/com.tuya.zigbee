@@ -3,7 +3,7 @@
 // Stable publish versioning (2026-10-04). Homey rejects a re-upload of an existing version
 // ("already been published"), so every stable publish needs a fresh patch version.
 //   node stable-version-bump.js bump [--publish-dir DIR]  -> patch+1 everywhere (repo, optional publish dir)
-//   node stable-version-bump.js set <version>             -> write <version> into the repo manifests
+//   node stable-version-bump.js set <version> [--if-higher] -> write <version> into the repo manifests
 // The app id is never touched. app.json keeps its on-disk format (minified stays minified).
 const fs = require('fs');
 const path = require('path');
@@ -73,8 +73,13 @@ if (require.main === module) {
     console.log(`stable version -> ${v}${pd ? ` (publish dir ${pd})` : ''}`);
   } else if (cmd === 'set' && arg) {
     v = arg;
-    setVersion(ROOT, v);
-    console.log(`stable version set ${v}`);
+    const cur = currentVersion();
+    if (arg2 === '--if-higher' && cur && cmp(v, cur) <= 0) {
+      console.log(`stable version ${cur} already >= ${v}; unchanged`);
+    } else {
+      setVersion(ROOT, v);
+      console.log(`stable version set ${v}`);
+    }
   } else {
     console.error('usage: bump [--publish-dir DIR] | set <version>');
     process.exit(2);

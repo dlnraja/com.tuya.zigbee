@@ -348,12 +348,15 @@ jobs:
         run: |
           cd "$GITHUB_WORKSPACE"
           V="${{ steps.publish.outputs.version }}"
-          node .github/scripts/stable-version-bump.js set "$V"
-          git add .homeycompose/app.json app.json package.json package-lock.json .homeychangelog.json 2>/dev/null || true
-          git diff --cached --quiet && { echo "version already committed"; exit 0; }
-          git commit -m "chore(stable): v$V [skip ci]"
           for i in 1 2 3; do
-            git fetch --depth=20 origin stable-v5 && git rebase origin/stable-v5 && git push origin HEAD:stable-v5 && exit 0
+            # Re-apply on top of the latest tip instead of rebasing (bot commits touch the same manifests).
+            git fetch --depth=20 origin stable-v5
+            git reset --hard origin/stable-v5
+            node .github/scripts/stable-version-bump.js set "$V" --if-higher
+            git add .homeycompose/app.json app.json package.json package-lock.json .homeychangelog.json 2>/dev/null || true
+            git diff --cached --quiet && { echo "version v$V already on stable-v5"; exit 0; }
+            git commit -m "chore(stable): v$V [skip ci]"
+            git push origin HEAD:stable-v5 && exit 0
             sleep $((i * 10))
           done
           echo "::warning::Could not push stable version v$V back; next run bumps from the store-rejected retry path."
