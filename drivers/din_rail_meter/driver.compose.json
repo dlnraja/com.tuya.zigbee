@@ -264,5 +264,9 @@
     }
   ],
   "id": "din_rail_meter",
-  "version": "1.0.0"
+  "version": "1.0.0",
+  "energy": {
+    "meterPowerImportedCapability": "meter_power",
+    "meterPowerExportedCapability": "meter_power.exported"
+  }
 }
