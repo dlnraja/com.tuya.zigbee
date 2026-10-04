@@ -1,0 +1,2334 @@
+{
+ "generated": "2026-10-04T05:12:39.535Z",
+ "drivers": 388,
+ "snapshot": {
+  "air_purifier": {
+   "mfr": 3,
+   "pid": 2,
+   "mfrSha": "66bc03fe2a2df57d",
+   "pidSha": "70e5255abe7da9d7"
+  },
+  "air_purifier_climate": {
+   "mfr": 1,
+   "pid": 1,
+   "mfrSha": "2ed4dae826da6ea1",
+   "pidSha": "455c46e8c8549693"
+  },
+  "air_purifier_contact": {
+   "mfr": 1,
+   "pid": 5,
+   "mfrSha": "209f520980c2f1b3",
+   "pidSha": "f8dd5a0e7873b5da"
+  },
+  "air_purifier_curtain": {
+   "mfr": 0,
+   "pid": 1,
+   "mfrSha": "e3b0c44298fc1c14",
+   "pidSha": "455c46e8c8549693"
+  },
+  "air_purifier_dimmer": {
+   "mfr": 1,
+   "pid": 1,
+   "mfrSha": "b48eb80c03a84c13",
+   "pidSha": "455c46e8c8549693"
+  },
+  "air_purifier_din": {
+   "mfr": 1,
+   "pid": 1,
+   "mfrSha": "0a6a000f833214c5",
+   "pidSha": "455c46e8c8549693"
+  },
+  "air_purifier_lcdtemphumidsensor": {
+   "mfr": 1,
+   "pid": 1,
+   "mfrSha": "4df5491574a7a84d",
+   "pidSha": "455c46e8c8549693"
+  },
+  "air_purifier_motion": {
+   "mfr": 1,
+   "pid": 15,
+   "mfrSha": "f09922f5c9f4e753",
+   "pidSha": "64834086bf89edc6"
+  },
+  "air_purifier_presence": {
+   "mfr": 1,
+   "pid": 1,
+   "mfrSha": "c4c0671d3755e027",
+   "pidSha": "455c46e8c8549693"
+  },
+  "air_purifier_quality": {
+   "mfr": 1,
+   "pid": 1,
+   "mfrSha": "e15959a1860e5656",
+   "pidSha": "455c46e8c8549693"
+  },
+  "air_purifier_siren": {
+   "mfr": 1,
+   "pid": 1,
+   "mfrSha": "a672c37c8106bd07",
+   "pidSha": "455c46e8c8549693"
+  },
+  "air_purifier_soil": {
+   "mfr": 1,
+   "pid": 2,
+   "mfrSha": "1afdbff98f9a292d",
+   "pidSha": "a52af499d7d01202"
+  },
+  "air_purifier_switch": {
+   "mfr": 1,
+   "pid": 1,
+   "mfrSha": "ca71640c86442b54",
+   "pidSha": "455c46e8c8549693"
+  },
+  "air_quality_co2": {
+   "mfr": 28,
+   "pid": 5,
+   "mfrSha": "1e13d804c807909c",
+   "pidSha": "b6008010923a3ead"
+  },
+  "air_quality_comprehensive": {
+   "mfr": 7,
+   "pid": 3,
+   "mfrSha": "6b219ceba3c151ce",
+   "pidSha": "dc41211bd7b71501"
+  },
+  "bed_sensor": {
+   "mfr": 6,
+   "pid": 1,
+   "mfrSha": "110b2a5446300101",
+   "pidSha": "455c46e8c8549693"
+  },
+  "blaster_remote": {
+   "mfr": 1,
+   "pid": 2,
+   "mfrSha": "28c0a27de179d183",
+   "pidSha": "83a30f54ee64db1d"
+  },
+  "boiler_switch_energy": {
+   "mfr": 3,
+   "pid": 1,
+   "mfrSha": "9ae1f97218fbe1ca",
+   "pidSha": "455c46e8c8549693"
+  },
+  "bulb_dimmable": {
+   "mfr": 43,
+   "pid": 86,
+   "mfrSha": "ab419e4a5ad1bb0f",
+   "pidSha": "cbc5247d1f17c54e"
+  },
+  "bulb_dimmable_dimmer": {
+   "mfr": 12,
+   "pid": 4,
+   "mfrSha": "847b4e1877304d80",
+   "pidSha": "b4f68c3714451ee2"
+  },
+  "bulb_rgb": {
+   "mfr": 16,
+   "pid": 37,
+   "mfrSha": "bb3839438829a06e",
+   "pidSha": "0c00c18d00e6cdf3"
+  },
+  "bulb_rgb_led": {
+   "mfr": 10,
+   "pid": 1,
+   "mfrSha": "946fc602de776362",
+   "pidSha": "38bdc69f98e98fe7"
+  },
+  "bulb_rgb_rgbw": {
+   "mfr": 1,
+   "pid": 1,
+   "mfrSha": "b936858e6997508a",
+   "pidSha": "455c46e8c8549693"
+  },
+  "bulb_rgbw": {
+   "mfr": 29,
+   "pid": 14,
+   "mfrSha": "b1e2f901e144cd9b",
+   "pidSha": "a25e057df5861a3b"
+  },
+  "bulb_rgbw_universal": {
+   "mfr": 5,
+   "pid": 3,
+   "mfrSha": "87253880e0aebd5e",
+   "pidSha": "551af29add34650a"
+  },
+  "bulb_tunable_white": {
+   "mfr": 2,
+   "pid": 46,
+   "mfrSha": "d65b3ef008068252",
+   "pidSha": "d2bdb3ab2515b77c"
+  },
+  "bulb_white": {
+   "mfr": 1,
+   "pid": 2,
+   "mfrSha": "1b657a6db9fc7e3b",
+   "pidSha": "9ec48670e5ce7315"
+  },
+  "button_emergency_sos": {
+   "mfr": 31,
+   "pid": 6,
+   "mfrSha": "070fb0eb7aebc6ef",
+   "pidSha": "635866b899c3aee7"
+  },
+  "button_wireless": {
+   "mfr": 6,
+   "pid": 10,
+   "mfrSha": "12047ab896613a29",
+   "pidSha": "907c50f03c1b4f74"
+  },
+  "button_wireless_1": {
+   "mfr": 31,
+   "pid": 32,
+   "mfrSha": "30ed2f0300f2b3d0",
+   "pidSha": "97471aa91d3d60d5"
+  },
+  "button_wireless_2": {
+   "mfr": 141,
+   "pid": 100,
+   "mfrSha": "d2537153563424cb",
+   "pidSha": "25b2f5f37b8e4dd1"
+  },
+  "button_wireless_3": {
+   "mfr": 20,
+   "pid": 1,
+   "mfrSha": "c02ca1aec48f3d01",
+   "pidSha": "06cd0099c514e4ab"
+  },
+  "button_wireless_4": {
+   "mfr": 34,
+   "pid": 45,
+   "mfrSha": "767101ada500ce7a",
+   "pidSha": "fdbcbd0e265ae852"
+  },
+  "button_wireless_4_ts0041": {
+   "mfr": 1,
+   "pid": 1,
+   "mfrSha": "8ea03f9e2ffb59cd",
+   "pidSha": "fb8ef2c1ffae69fb"
+  },
+  "button_wireless_6": {
+   "mfr": 2,
+   "pid": 2,
+   "mfrSha": "a322cd664dd6cf70",
+   "pidSha": "efb4d9206c7f53e8"
+  },
+  "button_wireless_8": {
+   "mfr": 1,
+   "pid": 1,
+   "mfrSha": "fe23ffa46507623b",
+   "pidSha": "92a28e2f37d1d6d5"
+  },
+  "button_wireless_fingerbot": {
+   "mfr": 1,
+   "pid": 1,
+   "mfrSha": "5b6e42b90231621f",
+   "pidSha": "455c46e8c8549693"
+  },
+  "button_wireless_plug": {
+   "mfr": 20,
+   "pid": 36,
+   "mfrSha": "03508aeffa6ee2b3",
+   "pidSha": "3e8cfad7df358dc4"
+  },
+  "button_wireless_scene": {
+   "mfr": 2,
+   "pid": 7,
+   "mfrSha": "a4130134408f5712",
+   "pidSha": "7e5cb2b1208f832d"
+  },
+  "button_wireless_smart": {
+   "mfr": 1,
+   "pid": 4,
+   "mfrSha": "ee8a124b4043747e",
+   "pidSha": "7396bb6ea34447b5"
+  },
+  "button_wireless_switch": {
+   "mfr": 1,
+   "pid": 33,
+   "mfrSha": "a7694266ab728664",
+   "pidSha": "2be9363ca2742bb8"
+  },
+  "button_wireless_usb": {
+   "mfr": 1,
+   "pid": 2,
+   "mfrSha": "65a1f4ee0e1464da",
+   "pidSha": "720ce7b7ec09a25f"
+  },
+  "button_wireless_valve": {
+   "mfr": 1,
+   "pid": 1,
+   "mfrSha": "50716f6b49cb6a81",
+   "pidSha": "455c46e8c8549693"
+  },
+  "button_wireless_wall": {
+   "mfr": 1,
+   "pid": 2,
+   "mfrSha": "fb3afdbae2ee7638",
+   "pidSha": "ba5d0cd4edeafd8a"
+  },
+  "ceiling_fan": {
+   "mfr": 5,
+   "pid": 2,
+   "mfrSha": "034d38e40b221b50",
+   "pidSha": "5ea93c4689a42566"
+  },
+  "christmas_lights": {
+   "mfr": 2,
+   "pid": 2,
+   "mfrSha": "c287a7efefb6b2e3",
+   "pidSha": "3427697d0c296c9d"
+  },
+  "climate_sensor": {
+   "mfr": 535,
+   "pid": 32,
+   "mfrSha": "bfda1a2495063ec9",
+   "pidSha": "4809a771f46a5606"
+  },
+  "climate_sensor_device": {
+   "mfr": 1,
+   "pid": 1,
+   "mfrSha": "46c1062cf1f8f9b3",
+   "pidSha": "455c46e8c8549693"
+  },
+  "climate_sensor_dimmer": {
+   "mfr": 1,
+   "pid": 3,
+   "mfrSha": "c96b66a91fb142a5",
+   "pidSha": "ce553b0ef4dd198b"
+  },
+  "climate_sensor_energy": {
+   "mfr": 1,
+   "pid": 22,
+   "mfrSha": "ec28580d3d4cd6be",
+   "pidSha": "29e89d2a31da37a1"
+  },
+  "climate_sensor_gas": {
+   "mfr": 1,
+   "pid": 3,
+   "mfrSha": "f6013260bb66f046",
+   "pidSha": "ce553b0ef4dd198b"
+  },
+  "climate_sensor_plug": {
+   "mfr": 1,
+   "pid": 3,
+   "mfrSha": "d16c7032b570844e",
+   "pidSha": "ce553b0ef4dd198b"
+  },
+  "climate_sensor_presence": {
+   "mfr": 1,
+   "pid": 1,
+   "mfrSha": "17e407893fd52942",
+   "pidSha": "455c46e8c8549693"
+  },
+  "climate_sensor_smart": {
+   "mfr": 1,
+   "pid": 1,
+   "mfrSha": "74fee7992443876c",
+   "pidSha": "455c46e8c8549693"
+  },
+  "climate_sensor_switch": {
+   "mfr": 1,
+   "pid": 1,
+   "mfrSha": "7e22facf5d9755ad",
+   "pidSha": "455c46e8c8549693"
+  },
+  "climate_sensor_zt08": {
+   "mfr": 3,
+   "pid": 1,
+   "mfrSha": "1801e8f2b469866c",
+   "pidSha": "455c46e8c8549693"
+  },
+  "co_sensor": {
+   "mfr": 8,
+   "pid": 2,
+   "mfrSha": "4fdc731f2d4235dd",
+   "pidSha": "777a8703abf8065f"
+  },
+  "contact_sensor": {
+   "mfr": 59,
+   "pid": 26,
+   "mfrSha": "273913e8503d5b64",
+   "pidSha": "413aba4e609c4fb1"
+  },
+  "contact_sensor_curtain": {
+   "mfr": 1,
+   "pid": 2,
+   "mfrSha": "1fc9119e713d963a",
+   "pidSha": "eb0037885ed202bb"
+  },
+  "contact_sensor_dimmer": {
+   "mfr": 1,
+   "pid": 2,
+   "mfrSha": "b9b59f9887bae61b",
+   "pidSha": "eb0037885ed202bb"
+  },
+  "contact_sensor_plug": {
+   "mfr": 1,
+   "pid": 2,
+   "mfrSha": "6f097b74a5f6e083",
+   "pidSha": "eb0037885ed202bb"
+  },
+  "contact_sensor_switch": {
+   "mfr": 1,
+   "pid": 2,
+   "mfrSha": "3b456fa0e0c66d70",
+   "pidSha": "eb0037885ed202bb"
+  },
+  "contact_sensor_zigbee": {
+   "mfr": 6,
+   "pid": 1,
+   "mfrSha": "d46fd6dee331937f",
+   "pidSha": "455c46e8c8549693"
+  },
+  "curtain_module": {
+   "mfr": 8,
+   "pid": 3,
+   "mfrSha": "987ec8290c354d38",
+   "pidSha": "9100a07e492286f1"
+  },
+  "curtain_module_2_gang": {
+   "mfr": 12,
+   "pid": 3,
+   "mfrSha": "1eab0b939106ed95",
+   "pidSha": "c4343290bac9e455"
+  },
+  "curtain_motor": {
+   "mfr": 280,
+   "pid": 47,
+   "mfrSha": "54f3d8c47edc6bfd",
+   "pidSha": "735b9403d1d2fceb"
+  },
+  "curtain_motor_shutter": {
+   "mfr": 23,
+   "pid": 44,
+   "mfrSha": "c5238b3924a87bcb",
+   "pidSha": "167ad4e6d48fc2fa"
+  },
+  "curtain_motor_tilt": {
+   "mfr": 11,
+   "pid": 2,
+   "mfrSha": "558182e427420fc8",
+   "pidSha": "de8b16805ee7bb5f"
+  },
+  "curtain_motor_wall": {
+   "mfr": 7,
+   "pid": 1,
+   "mfrSha": "81ce71220e828faf",
+   "pidSha": "46e1811a1a151d23"
+  },
+  "device_air_purifier": {
+   "mfr": 1,
+   "pid": 1,
+   "mfrSha": "e707cf94ac98e312",
+   "pidSha": "455c46e8c8549693"
+  },
+  "device_air_purifier_din": {
+   "mfr": 1,
+   "pid": 1,
+   "mfrSha": "f9cd054f64a085e1",
+   "pidSha": "455c46e8c8549693"
+  },
+  "device_air_purifier_floor": {
+   "mfr": 1,
+   "pid": 1,
+   "mfrSha": "cf87b871c82e162e",
+   "pidSha": "455c46e8c8549693"
+  },
+  "device_air_purifier_humidifier": {
+   "mfr": 1,
+   "pid": 1,
+   "mfrSha": "0b017ef71164da05",
+   "pidSha": "455c46e8c8549693"
+  },
+  "device_air_purifier_led": {
+   "mfr": 1,
+   "pid": 1,
+   "mfrSha": "8293589f4f13b74d",
+   "pidSha": "455c46e8c8549693"
+  },
+  "device_air_purifier_motion": {
+   "mfr": 1,
+   "pid": 4,
+   "mfrSha": "8a0fc851a99da75b",
+   "pidSha": "3ba96bb1ed045b60"
+  },
+  "device_air_purifier_plug": {
+   "mfr": 3,
+   "pid": 54,
+   "mfrSha": "bbea73ed85f1b0f3",
+   "pidSha": "eeb53a88a0338ea3"
+  },
+  "device_air_purifier_presence": {
+   "mfr": 1,
+   "pid": 1,
+   "mfrSha": "990e77d6e24cc1fe",
+   "pidSha": "455c46e8c8549693"
+  },
+  "device_air_purifier_quality": {
+   "mfr": 1,
+   "pid": 1,
+   "mfrSha": "0027cc4fbf0a51a6",
+   "pidSha": "455c46e8c8549693"
+  },
+  "device_air_purifier_radiator": {
+   "mfr": 1,
+   "pid": 18,
+   "mfrSha": "8052e27716b178cd",
+   "pidSha": "e9464faa4cf3565b"
+  },
+  "device_air_purifier_siren": {
+   "mfr": 1,
+   "pid": 1,
+   "mfrSha": "6b80904e793208e4",
+   "pidSha": "455c46e8c8549693"
+  },
+  "device_air_purifier_smart": {
+   "mfr": 1,
+   "pid": 1,
+   "mfrSha": "19b46a4d782f148b",
+   "pidSha": "455c46e8c8549693"
+  },
+  "device_air_purifier_smoke": {
+   "mfr": 1,
+   "pid": 1,
+   "mfrSha": "108e2b5b8fc49bc8",
+   "pidSha": "455c46e8c8549693"
+  },
+  "device_air_purifier_soil": {
+   "mfr": 1,
+   "pid": 2,
+   "mfrSha": "948ae3c333d7dc1f",
+   "pidSha": "a52af499d7d01202"
+  },
+  "device_air_purifier_thermostat": {
+   "mfr": 1,
+   "pid": 1,
+   "mfrSha": "ed65275c12d8dc6b",
+   "pidSha": "455c46e8c8549693"
+  },
+  "device_air_purifier_water": {
+   "mfr": 1,
+   "pid": 1,
+   "mfrSha": "6eb43378197e23bb",
+   "pidSha": "455c46e8c8549693"
+  },
+  "device_din_rail": {
+   "mfr": 3,
+   "pid": 27,
+   "mfrSha": "dbc69f62cf0a2e26",
+   "pidSha": "6a464162712a80c0"
+  },
+  "device_din_rail_meter": {
+   "mfr": 1,
+   "pid": 5,
+   "mfrSha": "b5457b44f886a338",
+   "pidSha": "fd4116618bc5b9cc"
+  },
+  "device_floor_heating": {
+   "mfr": 1,
+   "pid": 1,
+   "mfrSha": "56cda68f805cfbe6",
+   "pidSha": "455c46e8c8549693"
+  },
+  "device_floor_heating_thermostat": {
+   "mfr": 1,
+   "pid": 1,
+   "mfrSha": "d3d32e9592c6020a",
+   "pidSha": "455c46e8c8549693"
+  },
+  "device_generic_diy_universal": {
+   "mfr": 1,
+   "pid": 1,
+   "mfrSha": "b4c35badf33d704d",
+   "pidSha": "455c46e8c8549693"
+  },
+  "device_generic_tuya": {
+   "mfr": 3,
+   "pid": 1,
+   "mfrSha": "008a5f7e64396986",
+   "pidSha": "455c46e8c8549693"
+  },
+  "device_generic_tuya_universal": {
+   "mfr": 14,
+   "pid": 2,
+   "mfrSha": "749faf10fd7621f3",
+   "pidSha": "8c7073f742a6dffc"
+  },
+  "device_plug_energy": {
+   "mfr": 2,
+   "pid": 3,
+   "mfrSha": "90dcefed1e1b86f5",
+   "pidSha": "f53921df74209f30"
+  },
+  "device_plug_energy_monitor": {
+   "mfr": 0,
+   "pid": 3,
+   "mfrSha": "e3b0c44298fc1c14",
+   "pidSha": "9f35c5dffebc5da0"
+  },
+  "device_plug_smart": {
+   "mfr": 0,
+   "pid": 20,
+   "mfrSha": "e3b0c44298fc1c14",
+   "pidSha": "fc68e03dbe648c7c"
+  },
+  "device_plug_smart_water": {
+   "mfr": 1,
+   "pid": 1,
+   "mfrSha": "28d097c3884331d1",
+   "pidSha": "455c46e8c8549693"
+  },
+  "device_radiator_valve": {
+   "mfr": 91,
+   "pid": 1,
+   "mfrSha": "9a4a7433c0fe8cda",
+   "pidSha": "455c46e8c8549693"
+  },
+  "device_radiator_valve_smart": {
+   "mfr": 2,
+   "pid": 49,
+   "mfrSha": "9ecc4526c100fe8c",
+   "pidSha": "3bbe33198764e953"
+  },
+  "device_radiator_valve_thermostat": {
+   "mfr": 1,
+   "pid": 1,
+   "mfrSha": "2602fabf42789c23",
+   "pidSha": "455c46e8c8549693"
+  },
+  "dimmable_led_strip": {
+   "mfr": 21,
+   "pid": 10,
+   "mfrSha": "e2c0dccb40568f04",
+   "pidSha": "f84642670cf35013"
+  },
+  "dimmable_recessed_led": {
+   "mfr": 5,
+   "pid": 1,
+   "mfrSha": "117df9e2fd6603fd",
+   "pidSha": "9e84a7b9a8e8cb87"
+  },
+  "dimmer_0_10v": {
+   "mfr": 1,
+   "pid": 1,
+   "mfrSha": "a8e5e831902968db",
+   "pidSha": "455c46e8c8549693"
+  },
+  "dimmer_1_gang": {
+   "mfr": 7,
+   "pid": 3,
+   "mfrSha": "d80467cf0eb0a704",
+   "pidSha": "626db59b8035d2cd"
+  },
+  "dimmer_1_gang_2": {
+   "mfr": 0,
+   "pid": 11,
+   "mfrSha": "e3b0c44298fc1c14",
+   "pidSha": "d3e783e22d9f2160"
+  },
+  "dimmer_1_gang_tuya": {
+   "mfr": 13,
+   "pid": 12,
+   "mfrSha": "ef1348732c135fe8",
+   "pidSha": "4ec845a853bc6530"
+  },
+  "dimmer_2_gang": {
+   "mfr": 5,
+   "pid": 34,
+   "mfrSha": "ebec7ef6f0751d89",
+   "pidSha": "2daaf0364f1df565"
+  },
+  "dimmer_2_gang_tuya": {
+   "mfr": 22,
+   "pid": 34,
+   "mfrSha": "5db4e7835ebf88b5",
+   "pidSha": "2daaf0364f1df565"
+  },
+  "dimmer_3gang": {
+   "mfr": 1,
+   "pid": 2,
+   "mfrSha": "8294ce95395d955e",
+   "pidSha": "d6eeced51843bc8d"
+  },
+  "dimmer_4ch": {
+   "mfr": 1,
+   "pid": 1,
+   "mfrSha": "a8e47ca1fbd78fd8",
+   "pidSha": "455c46e8c8549693"
+  },
+  "dimmer_air_purifier": {
+   "mfr": 1,
+   "pid": 1,
+   "mfrSha": "db8d743a9b54cdac",
+   "pidSha": "455c46e8c8549693"
+  },
+  "dimmer_bulb_dimmable": {
+   "mfr": 1,
+   "pid": 2,
+   "mfrSha": "c3ea290e455a9170",
+   "pidSha": "adb79be6212d4ab8"
+  },
+  "dimmer_dual_channel": {
+   "mfr": 0,
+   "pid": 2,
+   "mfrSha": "e3b0c44298fc1c14",
+   "pidSha": "b8e8f65f7524bfbf"
+  },
+  "dimmer_ts110e": {
+   "mfr": 2,
+   "pid": 10,
+   "mfrSha": "05c9a4dc1d9cb2b8",
+   "pidSha": "c24425335e22bfa5"
+  },
+  "dimmer_wall_1gang": {
+   "mfr": 37,
+   "pid": 20,
+   "mfrSha": "6a79ff31b8964d70",
+   "pidSha": "fafa2cc8c54068d7"
+  },
+  "dimmer_wall_plug": {
+   "mfr": 1,
+   "pid": 1,
+   "mfrSha": "016086479d969f70",
+   "pidSha": "455c46e8c8549693"
+  },
+  "dimmer_wall_switch": {
+   "mfr": 1,
+   "pid": 1,
+   "mfrSha": "06e9123bd7012b09",
+   "pidSha": "455c46e8c8549693"
+  },
+  "dimmer_wall_water": {
+   "mfr": 1,
+   "pid": 1,
+   "mfrSha": "1b8e66b3a860701a",
+   "pidSha": "455c46e8c8549693"
+  },
+  "din_rail_meter": {
+   "mfr": 15,
+   "pid": 8,
+   "mfrSha": "6c5aa01670bb74bb",
+   "pidSha": "dcd66b2fb4218937"
+  },
+  "din_rail_switch": {
+   "mfr": 11,
+   "pid": 3,
+   "mfrSha": "2e3720c4c0de0be4",
+   "pidSha": "f24501eccb54c0f8"
+  },
+  "diy_custom_zigbee": {
+   "mfr": 103,
+   "pid": 73,
+   "mfrSha": "055f77c927605a95",
+   "pidSha": "f55567cbaabb8814"
+  },
+  "door_controller": {
+   "mfr": 2,
+   "pid": 2,
+   "mfrSha": "0be38757eb496652",
+   "pidSha": "d513d932c92359cc"
+  },
+  "door_controller_garage": {
+   "mfr": 1,
+   "pid": 2,
+   "mfrSha": "026770db1570c1be",
+   "pidSha": "6657506bd357ec18"
+  },
+  "door_sensor": {
+   "mfr": 3,
+   "pid": 2,
+   "mfrSha": "89a6e388373880e2",
+   "pidSha": "8c7073f742a6dffc"
+  },
+  "doorbell": {
+   "mfr": 9,
+   "pid": 2,
+   "mfrSha": "299c7ac87cbc0923",
+   "pidSha": "dc1043fa1db8990b"
+  },
+  "doorwindowsensor": {
+   "mfr": 0,
+   "pid": 3,
+   "mfrSha": "e3b0c44298fc1c14",
+   "pidSha": "c8b1aff0995cd3f1"
+  },
+  "doorwindowsensor_2": {
+   "mfr": 1,
+   "pid": 5,
+   "mfrSha": "4c964f1cac07ffd3",
+   "pidSha": "1e92c402c531eb43"
+  },
+  "doorwindowsensor_3": {
+   "mfr": 3,
+   "pid": 32,
+   "mfrSha": "18f70facbece7af7",
+   "pidSha": "412114b3c38db9e8"
+  },
+  "doorwindowsensor_4": {
+   "mfr": 3,
+   "pid": 18,
+   "mfrSha": "72ba7add780a60b7",
+   "pidSha": "53087b42b7013a9f"
+  },
+  "double_power_point": {
+   "mfr": 0,
+   "pid": 2,
+   "mfrSha": "e3b0c44298fc1c14",
+   "pidSha": "720ce7b7ec09a25f"
+  },
+  "double_power_point_2": {
+   "mfr": 3,
+   "pid": 2,
+   "mfrSha": "3fbbeaa61492d98f",
+   "pidSha": "720ce7b7ec09a25f"
+  },
+  "energy_meter_3phase": {
+   "mfr": 18,
+   "pid": 2,
+   "mfrSha": "eaab671e9c322f39",
+   "pidSha": "1e6b96caf8d5722c"
+  },
+  "energy_meter_din": {
+   "mfr": 12,
+   "pid": 1,
+   "mfrSha": "18fab71c41b1794c",
+   "pidSha": "455c46e8c8549693"
+  },
+  "fan_controller": {
+   "mfr": 17,
+   "pid": 5,
+   "mfrSha": "b3a910082540222a",
+   "pidSha": "d05891b03894d4c9"
+  },
+  "fingerbot": {
+   "mfr": 7,
+   "pid": 6,
+   "mfrSha": "e5247d1620c3125e",
+   "pidSha": "cd8cc01224270f0e"
+  },
+  "fingerbot_switch": {
+   "mfr": 1,
+   "pid": 2,
+   "mfrSha": "81e869540cd229d4",
+   "pidSha": "a52af499d7d01202"
+  },
+  "fingerprint_lock": {
+   "mfr": 8,
+   "pid": 2,
+   "mfrSha": "d55b32d8c9206c03",
+   "pidSha": "25c257cef21663a6"
+  },
+  "flood_sensor": {
+   "mfr": 0,
+   "pid": 2,
+   "mfrSha": "e3b0c44298fc1c14",
+   "pidSha": "f374e1b42928673d"
+  },
+  "floor_heating_thermostat": {
+   "mfr": 1,
+   "pid": 1,
+   "mfrSha": "7a54c1b80b987f21",
+   "pidSha": "455c46e8c8549693"
+  },
+  "formaldehyde_sensor": {
+   "mfr": 1,
+   "pid": 2,
+   "mfrSha": "63594cac7f85670b",
+   "pidSha": "83fd31d092bac8e0"
+  },
+  "garage_door": {
+   "mfr": 9,
+   "pid": 2,
+   "mfrSha": "f639d18f9d488d6d",
+   "pidSha": "d39acf1020394df3"
+  },
+  "garage_door_opener": {
+   "mfr": 10,
+   "pid": 2,
+   "mfrSha": "25ef40a3cb406d1b",
+   "pidSha": "6657506bd357ec18"
+  },
+  "gas_detector": {
+   "mfr": 11,
+   "pid": 8,
+   "mfrSha": "fe20c29cb24e12a5",
+   "pidSha": "480a275813c8653e"
+  },
+  "gas_sensor": {
+   "mfr": 12,
+   "pid": 5,
+   "mfrSha": "d7f9fbfd2bf08d76",
+   "pidSha": "606b2995829e9479"
+  },
+  "gas_sensor_switch": {
+   "mfr": 1,
+   "pid": 48,
+   "mfrSha": "002812706265bc20",
+   "pidSha": "8807c1a05823d077"
+  },
+  "gateway_zigbee_bridge": {
+   "mfr": 1,
+   "pid": 10,
+   "mfrSha": "3ee8a16530d41fff",
+   "pidSha": "8f827b1e0cf0a503"
+  },
+  "generic_diy": {
+   "mfr": 24,
+   "pid": 50,
+   "mfrSha": "7969c24df6a66eab",
+   "pidSha": "3296bfc58afad3b7"
+  },
+  "generic_tuya": {
+   "mfr": 190,
+   "pid": 3,
+   "mfrSha": "c5ab0da166a871a6",
+   "pidSha": "eff8a90efdd5d27f"
+  },
+  "handheld_remote_4_buttons": {
+   "mfr": 9,
+   "pid": 7,
+   "mfrSha": "e90e3db3b3450b88",
+   "pidSha": "04b7761d509933fd"
+  },
+  "humidifier": {
+   "mfr": 5,
+   "pid": 2,
+   "mfrSha": "bd5e3665e3ff12e7",
+   "pidSha": "ca59a3b0f63700a3"
+  },
+  "hvac_air_conditioner": {
+   "mfr": 1,
+   "pid": 2,
+   "mfrSha": "b6a93905e3ff6d9d",
+   "pidSha": "f84f651f274c217f"
+  },
+  "hvac_controller": {
+   "mfr": 2,
+   "pid": 1,
+   "mfrSha": "10d6f2e0d22b973e",
+   "pidSha": "455c46e8c8549693"
+  },
+  "hvac_dehumidifier": {
+   "mfr": 5,
+   "pid": 2,
+   "mfrSha": "530685f9ad7970aa",
+   "pidSha": "d3320dc61ffa7fb9"
+  },
+  "hybrid_fan_sensor": {
+   "mfr": 3,
+   "pid": 1,
+   "mfrSha": "e979d5b532436fe4",
+   "pidSha": "455c46e8c8549693"
+  },
+  "hybrid_garage_door_sensor": {
+   "mfr": 5,
+   "pid": 2,
+   "mfrSha": "0264065bb3a3f73d",
+   "pidSha": "a52af499d7d01202"
+  },
+  "hybrid_heater_thermostat": {
+   "mfr": 5,
+   "pid": 1,
+   "mfrSha": "a19073ef4b87fbc8",
+   "pidSha": "455c46e8c8549693"
+  },
+  "hybrid_light_sensor": {
+   "mfr": 2,
+   "pid": 6,
+   "mfrSha": "36c7c70534f95110",
+   "pidSha": "380f457b32b36620"
+  },
+  "hybrid_light_windowcoverings": {
+   "mfr": 1,
+   "pid": 3,
+   "mfrSha": "8d25f9e3f30ba98c",
+   "pidSha": "f86e200367c6fbbd"
+  },
+  "hybrid_sensor_thermostat": {
+   "mfr": 1,
+   "pid": 33,
+   "mfrSha": "57ae3386dfed1581",
+   "pidSha": "9d1c880dd141e7cd"
+  },
+  "hybrid_switch_sensor": {
+   "mfr": 2,
+   "pid": 4,
+   "mfrSha": "fe96dd9aea7fdcb3",
+   "pidSha": "9ca0226f619cd8fb"
+  },
+  "illuminance_sensor": {
+   "mfr": 5,
+   "pid": 4,
+   "mfrSha": "57ca576f40de65a1",
+   "pidSha": "09fff199fe173c21"
+  },
+  "ir_blaster": {
+   "mfr": 39,
+   "pid": 5,
+   "mfrSha": "3fd444fb4f92a77e",
+   "pidSha": "22e4403748643810"
+  },
+  "lcdtemphumidluxsensor": {
+   "mfr": 6,
+   "pid": 4,
+   "mfrSha": "c485810ee3b8a1b7",
+   "pidSha": "261617b7dd61d124"
+  },
+  "lcdtemphumidsensor": {
+   "mfr": 23,
+   "pid": 6,
+   "mfrSha": "d9771640c14587f8",
+   "pidSha": "9be78874133bac72"
+  },
+  "lcdtemphumidsensor_2": {
+   "mfr": 1,
+   "pid": 4,
+   "mfrSha": "3b0a12f4c97165be",
+   "pidSha": "a858b6b4f28cd785"
+  },
+  "lcdtemphumidsensor_3": {
+   "mfr": 12,
+   "pid": 2,
+   "mfrSha": "e3e3f2e5440d194f",
+   "pidSha": "eb0037885ed202bb"
+  },
+  "lcdtemphumidsensor_plug_energy": {
+   "mfr": 1,
+   "pid": 1,
+   "mfrSha": "4fc0e6f539eca2ff",
+   "pidSha": "455c46e8c8549693"
+  },
+  "led_controller_cct": {
+   "mfr": 4,
+   "pid": 8,
+   "mfrSha": "958dff20ef91168e",
+   "pidSha": "9b704ef096b15bd7"
+  },
+  "led_controller_dimmable": {
+   "mfr": 3,
+   "pid": 4,
+   "mfrSha": "e1a808a0f168f2fd",
+   "pidSha": "a42dded92aa1c0bd"
+  },
+  "led_controller_rgb": {
+   "mfr": 2,
+   "pid": 3,
+   "mfrSha": "b073acc1b8559aab",
+   "pidSha": "595ceeb0a007d0a4"
+  },
+  "led_controller_spi_tuya": {
+   "mfr": 2,
+   "pid": 1,
+   "mfrSha": "988dca642a3fe653",
+   "pidSha": "455c46e8c8549693"
+  },
+  "led_strip": {
+   "mfr": 2,
+   "pid": 2,
+   "mfrSha": "28a0c7b0b56e8b56",
+   "pidSha": "d61bc85605a0599f"
+  },
+  "led_strip_advanced": {
+   "mfr": 1,
+   "pid": 1,
+   "mfrSha": "ae494582d213b57f",
+   "pidSha": "64ee7873940d7e1e"
+  },
+  "led_strip_rgbw": {
+   "mfr": 8,
+   "pid": 27,
+   "mfrSha": "e099c4c33d684aba",
+   "pidSha": "37f997a4a19de5a3"
+  },
+  "light_bulb_dimmable_tunable": {
+   "mfr": 7,
+   "pid": 29,
+   "mfrSha": "96300ced220909b0",
+   "pidSha": "5cdcab1eda456dd7"
+  },
+  "light_bulb_rgb": {
+   "mfr": 14,
+   "pid": 57,
+   "mfrSha": "c1e3fe22c75fd4fc",
+   "pidSha": "4a555f5c22859f15"
+  },
+  "light_bulb_rgb_led": {
+   "mfr": 20,
+   "pid": 1,
+   "mfrSha": "dcb3913ede0f5816",
+   "pidSha": "38bdc69f98e98fe7"
+  },
+  "light_bulb_rgb_rgbw": {
+   "mfr": 38,
+   "pid": 4,
+   "mfrSha": "e54c52302e91012f",
+   "pidSha": "672c6484bc898d45"
+  },
+  "light_bulb_tunable_white": {
+   "mfr": 2,
+   "pid": 4,
+   "mfrSha": "f81f1351ed7e33ad",
+   "pidSha": "b37ed01a69900c1e"
+  },
+  "light_cct_ts0502b": {
+   "mfr": 1,
+   "pid": 1,
+   "mfrSha": "06064301214ed4e7",
+   "pidSha": "9e84a7b9a8e8cb87"
+  },
+  "light_dimmable_ts0501a": {
+   "mfr": 1,
+   "pid": 1,
+   "mfrSha": "3c8e38cd6cebc36b",
+   "pidSha": "9ba9d3f04de6a2ef"
+  },
+  "light_rgbcct_ts0505b": {
+   "mfr": 1,
+   "pid": 1,
+   "mfrSha": "db958966b7e3ca84",
+   "pidSha": "38bdc69f98e98fe7"
+  },
+  "light_sensor_outdoor": {
+   "mfr": 7,
+   "pid": 2,
+   "mfrSha": "b294ea741d5fbec1",
+   "pidSha": "ec25d361ec43c29b"
+  },
+  "lock_smart": {
+   "mfr": 7,
+   "pid": 2,
+   "mfrSha": "973b80d821f12273",
+   "pidSha": "aa6986b1f318a8de"
+  },
+  "module_mini_switch": {
+   "mfr": 6,
+   "pid": 9,
+   "mfrSha": "78b88cdfa1eceafe",
+   "pidSha": "a413187c96e4c07e"
+  },
+  "motion_sensor": {
+   "mfr": 73,
+   "pid": 34,
+   "mfrSha": "a6c4b5cd5ad03a9c",
+   "pidSha": "a45bd40fa2655c51"
+  },
+  "motion_sensor_2": {
+   "mfr": 1,
+   "pid": 4,
+   "mfrSha": "a438b24ea9c80d45",
+   "pidSha": "3ba96bb1ed045b60"
+  },
+  "motion_sensor_radar_mmwave": {
+   "mfr": 9,
+   "pid": 7,
+   "mfrSha": "509f1990996a4cce",
+   "pidSha": "bf550bfce5b1a93d"
+  },
+  "motion_sensor_switch": {
+   "mfr": 3,
+   "pid": 5,
+   "mfrSha": "142c1129de8825d6",
+   "pidSha": "d708cdcadb08389b"
+  },
+  "outdoor_2_socket": {
+   "mfr": 0,
+   "pid": 2,
+   "mfrSha": "e3b0c44298fc1c14",
+   "pidSha": "720ce7b7ec09a25f"
+  },
+  "outdoor_plug": {
+   "mfr": 2,
+   "pid": 2,
+   "mfrSha": "8651b2ef4a5bd8a4",
+   "pidSha": "3aca9bb9ec5d844f"
+  },
+  "panel_switch_cover_tuya": {
+   "mfr": 1,
+   "pid": 1,
+   "mfrSha": "78f5b13d1b2f6ffa",
+   "pidSha": "455c46e8c8549693"
+  },
+  "pet_feeder": {
+   "mfr": 4,
+   "pid": 2,
+   "mfrSha": "fd0400009c62b4c1",
+   "pidSha": "7415faf547c56cb5"
+  },
+  "pet_feeder_zigbee": {
+   "mfr": 2,
+   "pid": 1,
+   "mfrSha": "e727fc487e97e882",
+   "pidSha": "455c46e8c8549693"
+  },
+  "pir_mmwave_sensor": {
+   "mfr": 1,
+   "pid": 6,
+   "mfrSha": "08a586f099f318e1",
+   "pidSha": "d68625ae238bbefa"
+  },
+  "pir_sensor_2": {
+   "mfr": 19,
+   "pid": 35,
+   "mfrSha": "331c41446624bc09",
+   "pidSha": "170e7d8f355a0e2c"
+  },
+  "pirsensor": {
+   "mfr": 0,
+   "pid": 1,
+   "mfrSha": "e3b0c44298fc1c14",
+   "pidSha": "8798a92daa3dc5c2"
+  },
+  "plug": {
+   "mfr": 12,
+   "pid": 6,
+   "mfrSha": "ffc9e85cbc557640",
+   "pidSha": "cd8cc01224270f0e"
+  },
+  "plug_energy_monitor": {
+   "mfr": 56,
+   "pid": 77,
+   "mfrSha": "0e7f4a3f5c0a37b3",
+   "pidSha": "996946b3efddf5b8"
+  },
+  "plug_smart": {
+   "mfr": 8,
+   "pid": 11,
+   "mfrSha": "d0cd20271ae5c3b1",
+   "pidSha": "5f4bc270f894dfee"
+  },
+  "plug_smart_switch": {
+   "mfr": 1,
+   "pid": 2,
+   "mfrSha": "558fe300bb60d9c6",
+   "pidSha": "720ce7b7ec09a25f"
+  },
+  "pool_pump": {
+   "mfr": 4,
+   "pid": 2,
+   "mfrSha": "ea42a3d7a2543acf",
+   "pidSha": "4e00cbb3c4a786ba"
+  },
+  "power_clamp_meter": {
+   "mfr": 9,
+   "pid": 11,
+   "mfrSha": "81c4f009eb80cd4b",
+   "pidSha": "74df414b6b5ef7ae"
+  },
+  "power_meter": {
+   "mfr": 14,
+   "pid": 4,
+   "mfrSha": "64483f9acefaa130",
+   "pidSha": "5e66f027ae0f9459"
+  },
+  "presence_sensor_ceiling": {
+   "mfr": 5,
+   "pid": 7,
+   "mfrSha": "ee1996f0a137aba1",
+   "pidSha": "3041fd34f640ddcb"
+  },
+  "presence_sensor_radar": {
+   "mfr": 251,
+   "pid": 56,
+   "mfrSha": "d72dfd726c79c772",
+   "pidSha": "ac803567e8fc211a"
+  },
+  "radar_sensor": {
+   "mfr": 2,
+   "pid": 1,
+   "mfrSha": "d4397be9be3b8103",
+   "pidSha": "455c46e8c8549693"
+  },
+  "radar_sensor_2": {
+   "mfr": 0,
+   "pid": 6,
+   "mfrSha": "e3b0c44298fc1c14",
+   "pidSha": "d68625ae238bbefa"
+  },
+  "radar_sensor_ceiling": {
+   "mfr": 0,
+   "pid": 11,
+   "mfrSha": "e3b0c44298fc1c14",
+   "pidSha": "c5a193f7355114fc"
+  },
+  "radiator_controller": {
+   "mfr": 1,
+   "pid": 2,
+   "mfrSha": "b408ad42c62250ed",
+   "pidSha": "81b47ff6ba151521"
+  },
+  "radiator_valve": {
+   "mfr": 156,
+   "pid": 60,
+   "mfrSha": "5c59d66916a9cbdc",
+   "pidSha": "a7fb4360e7673b32"
+  },
+  "radiator_valve_zigbee": {
+   "mfr": 2,
+   "pid": 1,
+   "mfrSha": "93795fe9043bd265",
+   "pidSha": "455c46e8c8549693"
+  },
+  "rain_sensor": {
+   "mfr": 12,
+   "pid": 4,
+   "mfrSha": "ccbb163bfcfd75cf",
+   "pidSha": "ebc0eb76557428e9"
+  },
+  "relay_board_1_channel": {
+   "mfr": 0,
+   "pid": 2,
+   "mfrSha": "e3b0c44298fc1c14",
+   "pidSha": "a52af499d7d01202"
+  },
+  "relay_board_2_channel": {
+   "mfr": 2,
+   "pid": 2,
+   "mfrSha": "1d0a6ff536ed63ae",
+   "pidSha": "d5939d250b4744ae"
+  },
+  "relay_board_4_channel": {
+   "mfr": 3,
+   "pid": 1,
+   "mfrSha": "9544d4f2277e5114",
+   "pidSha": "ef70226368aab48c"
+  },
+  "remote_button_emergency_sos": {
+   "mfr": 1,
+   "pid": 8,
+   "mfrSha": "aab9e71c690ba687",
+   "pidSha": "f194a1267ae18499"
+  },
+  "remote_button_wireless": {
+   "mfr": 1,
+   "pid": 7,
+   "mfrSha": "7ab6d2096bd151bd",
+   "pidSha": "df61901cf512e0e0"
+  },
+  "remote_button_wireless_fingerbot": {
+   "mfr": 1,
+   "pid": 1,
+   "mfrSha": "6d69d3e316c3ec81",
+   "pidSha": "455c46e8c8549693"
+  },
+  "remote_button_wireless_handheld": {
+   "mfr": 1,
+   "pid": 1,
+   "mfrSha": "e760eb9bbf891b53",
+   "pidSha": "090929e7a6124997"
+  },
+  "remote_button_wireless_plug": {
+   "mfr": 1,
+   "pid": 2,
+   "mfrSha": "137a54b3bfd24e2f",
+   "pidSha": "398f418e073a8ba8"
+  },
+  "remote_button_wireless_scene": {
+   "mfr": 1,
+   "pid": 2,
+   "mfrSha": "5dfbf875e919a0da",
+   "pidSha": "f3e89c56b663e4d7"
+  },
+  "remote_button_wireless_smart": {
+   "mfr": 1,
+   "pid": 2,
+   "mfrSha": "546300ad73b57d41",
+   "pidSha": "f3e89c56b663e4d7"
+  },
+  "remote_button_wireless_usb": {
+   "mfr": 1,
+   "pid": 2,
+   "mfrSha": "22d90d7677f0e028",
+   "pidSha": "720ce7b7ec09a25f"
+  },
+  "remote_button_wireless_valve": {
+   "mfr": 1,
+   "pid": 1,
+   "mfrSha": "fbb88cc11121aa4c",
+   "pidSha": "455c46e8c8549693"
+  },
+  "remote_button_wireless_wall": {
+   "mfr": 3,
+   "pid": 1,
+   "mfrSha": "4208aca5fe7bda88",
+   "pidSha": "fb8ef2c1ffae69fb"
+  },
+  "remote_dimmer": {
+   "mfr": 1,
+   "pid": 1,
+   "mfrSha": "2093aa6042dfee20",
+   "pidSha": "38f5ac236fa162ab"
+  },
+  "rgb_bulb_E14": {
+   "mfr": 1,
+   "pid": 1,
+   "mfrSha": "1360556114d30e1a",
+   "pidSha": "915e3d43eafc41f7"
+  },
+  "rgb_bulb_E27": {
+   "mfr": 0,
+   "pid": 3,
+   "mfrSha": "e3b0c44298fc1c14",
+   "pidSha": "e7f0b0b8277d4988"
+  },
+  "rgb_ceiling_led_light": {
+   "mfr": 1,
+   "pid": 1,
+   "mfrSha": "82badea6a9ed39eb",
+   "pidSha": "38bdc69f98e98fe7"
+  },
+  "rgb_floor_led_light": {
+   "mfr": 1,
+   "pid": 1,
+   "mfrSha": "82592c13023ab92a",
+   "pidSha": "bd90a083752564af"
+  },
+  "rgb_led_light_bar": {
+   "mfr": 1,
+   "pid": 2,
+   "mfrSha": "9ca4fc9f55a53ae6",
+   "pidSha": "78d47491ed3d522a"
+  },
+  "rgb_led_strip": {
+   "mfr": 4,
+   "pid": 3,
+   "mfrSha": "44f8fd76bbf4e7b5",
+   "pidSha": "d4c8db023aed407c"
+  },
+  "rgb_led_strip_controller": {
+   "mfr": 5,
+   "pid": 6,
+   "mfrSha": "ffc675fc716558b9",
+   "pidSha": "e184ce0ca3c0f6e1"
+  },
+  "rgb_mood_light": {
+   "mfr": 2,
+   "pid": 4,
+   "mfrSha": "492049ddafb9e91b",
+   "pidSha": "672c6484bc898d45"
+  },
+  "rgb_spot_GU10": {
+   "mfr": 1,
+   "pid": 4,
+   "mfrSha": "e11344c829b64115",
+   "pidSha": "dac73faf5858d8e8"
+  },
+  "rgb_spot_GardenLight": {
+   "mfr": 1,
+   "pid": 1,
+   "mfrSha": "a4bdfcdd92b2ef35",
+   "pidSha": "915e3d43eafc41f7"
+  },
+  "rgb_wall_led_light": {
+   "mfr": 2,
+   "pid": 2,
+   "mfrSha": "cbf938f7ffb71852",
+   "pidSha": "78d47491ed3d522a"
+  },
+  "scene_switch_1": {
+   "mfr": 3,
+   "pid": 4,
+   "mfrSha": "9444798b1efcf268",
+   "pidSha": "77f8cab477c8b35f"
+  },
+  "scene_switch_2": {
+   "mfr": 1,
+   "pid": 5,
+   "mfrSha": "e9f714a947a490dd",
+   "pidSha": "9383dfc66a12c80d"
+  },
+  "scene_switch_3": {
+   "mfr": 2,
+   "pid": 7,
+   "mfrSha": "095b9ee0d94560d8",
+   "pidSha": "278e503d4862c11f"
+  },
+  "scene_switch_4": {
+   "mfr": 14,
+   "pid": 3,
+   "mfrSha": "b5d27e753aad3be4",
+   "pidSha": "852c1ed113914f3e"
+  },
+  "scene_switch_6": {
+   "mfr": 1,
+   "pid": 1,
+   "mfrSha": "82bc3c94c9e69a85",
+   "pidSha": "01b576d96d546647"
+  },
+  "scene_switch_6ch": {
+   "mfr": 1,
+   "pid": 1,
+   "mfrSha": "9c5ccdf345e9566d",
+   "pidSha": "455c46e8c8549693"
+  },
+  "scene_switch_wall": {
+   "mfr": 12,
+   "pid": 2,
+   "mfrSha": "82e7916d65bb4bff",
+   "pidSha": "433f428a8ac246d5"
+  },
+  "sensor_climate_contact": {
+   "mfr": 3,
+   "pid": 1,
+   "mfrSha": "5fcdf16d9b532b9a",
+   "pidSha": "455c46e8c8549693"
+  },
+  "sensor_climate_lcdtemphumidsensor": {
+   "mfr": 1,
+   "pid": 1,
+   "mfrSha": "aa73c63470c3d686",
+   "pidSha": "455c46e8c8549693"
+  },
+  "sensor_climate_motion": {
+   "mfr": 1,
+   "pid": 4,
+   "mfrSha": "e26385a6e027992d",
+   "pidSha": "3ba96bb1ed045b60"
+  },
+  "sensor_climate_presence": {
+   "mfr": 1,
+   "pid": 1,
+   "mfrSha": "01e8780fc4a7cd5e",
+   "pidSha": "455c46e8c8549693"
+  },
+  "sensor_climate_smart": {
+   "mfr": 1,
+   "pid": 1,
+   "mfrSha": "6fadee47b25fc975",
+   "pidSha": "455c46e8c8549693"
+  },
+  "sensor_climate_temphumidsensor": {
+   "mfr": 3,
+   "pid": 25,
+   "mfrSha": "5063c5e00ae82f41",
+   "pidSha": "c1f59d764b8431fc"
+  },
+  "sensor_contact_climate": {
+   "mfr": 1,
+   "pid": 2,
+   "mfrSha": "a4041ceeedec1fcd",
+   "pidSha": "eb0037885ed202bb"
+  },
+  "sensor_contact_motion": {
+   "mfr": 1,
+   "pid": 2,
+   "mfrSha": "c24a2be8eff34540",
+   "pidSha": "eb0037885ed202bb"
+  },
+  "sensor_contact_plug": {
+   "mfr": 1,
+   "pid": 2,
+   "mfrSha": "459839e50b620037",
+   "pidSha": "eb0037885ed202bb"
+  },
+  "sensor_contact_presence": {
+   "mfr": 1,
+   "pid": 1,
+   "mfrSha": "e9be5563d54ddb72",
+   "pidSha": "ad9980a53282f628"
+  },
+  "sensor_contact_rain": {
+   "mfr": 1,
+   "pid": 5,
+   "mfrSha": "7d742b438b54b360",
+   "pidSha": "f33dbcb87be5dbb3"
+  },
+  "sensor_contact_water": {
+   "mfr": 1,
+   "pid": 2,
+   "mfrSha": "e7aeb06b4853ab85",
+   "pidSha": "eb0037885ed202bb"
+  },
+  "sensor_contact_zigbee": {
+   "mfr": 48,
+   "pid": 33,
+   "mfrSha": "fd8adc410d085f62",
+   "pidSha": "7fa640aea3e70b55"
+  },
+  "sensor_gas_presence": {
+   "mfr": 10,
+   "pid": 4,
+   "mfrSha": "07c97dbf1cb99e48",
+   "pidSha": "919c823c42eba473"
+  },
+  "sensor_ias_zonetype_ewelink": {
+   "mfr": 1,
+   "pid": 1,
+   "mfrSha": "1c7aa01100a550fe",
+   "pidSha": "d58bfac07ee13fc2"
+  },
+  "sensor_illuminance_presence": {
+   "mfr": 14,
+   "pid": 11,
+   "mfrSha": "46f93b14db25e527",
+   "pidSha": "fe43d0326456adb4"
+  },
+  "sensor_lcdtemphumidsensor_soil": {
+   "mfr": 1,
+   "pid": 2,
+   "mfrSha": "5a546bc4785351cd",
+   "pidSha": "a52af499d7d01202"
+  },
+  "sensor_lcdtemphumidsensor_temphumidsensor": {
+   "mfr": 0,
+   "pid": 4,
+   "mfrSha": "e3b0c44298fc1c14",
+   "pidSha": "16eca7095d19bea2"
+  },
+  "sensor_motion_presence": {
+   "mfr": 27,
+   "pid": 19,
+   "mfrSha": "5135f0c779c216fc",
+   "pidSha": "e7c5f08cc4f7e52a"
+  },
+  "sensor_motion_radar": {
+   "mfr": 1,
+   "pid": 1,
+   "mfrSha": "f1e943b3914b3cbd",
+   "pidSha": "455c46e8c8549693"
+  },
+  "sensor_presence_radar": {
+   "mfr": 1,
+   "pid": 10,
+   "mfrSha": "73be8f2a1ab0a956",
+   "pidSha": "adc0c6bbcdb42934"
+  },
+  "shutter_roller_controller": {
+   "mfr": 1,
+   "pid": 2,
+   "mfrSha": "8d1cbd6b632b09c5",
+   "pidSha": "a9c4fb702866c494"
+  },
+  "siren": {
+   "mfr": 31,
+   "pid": 4,
+   "mfrSha": "e75dc9c63e9620d3",
+   "pidSha": "a15c35a354663559"
+  },
+  "siren_sirentemphumidsensor": {
+   "mfr": 6,
+   "pid": 1,
+   "mfrSha": "4b8c959e831e1172",
+   "pidSha": "455c46e8c8549693"
+  },
+  "sirentemphumidsensor": {
+   "mfr": 0,
+   "pid": 1,
+   "mfrSha": "e3b0c44298fc1c14",
+   "pidSha": "455c46e8c8549693"
+  },
+  "slim_motion_sensor": {
+   "mfr": 1,
+   "pid": 1,
+   "mfrSha": "e26385a6e027992d",
+   "pidSha": "8f4edb7b9077ac2e"
+  },
+  "smartPlug_DinRail": {
+   "mfr": 5,
+   "pid": 3,
+   "mfrSha": "f8b78c7577a73ea7",
+   "pidSha": "d035b5d1165c0c3d"
+  },
+  "smart_air_detection_box": {
+   "mfr": 1,
+   "pid": 1,
+   "mfrSha": "264a0a78dbaa99b3",
+   "pidSha": "455c46e8c8549693"
+  },
+  "smart_breaker": {
+   "mfr": 7,
+   "pid": 2,
+   "mfrSha": "3470205ba7513afd",
+   "pidSha": "8de83880ca6634fa"
+  },
+  "smart_button_switch": {
+   "mfr": 5,
+   "pid": 10,
+   "mfrSha": "8acd5555c9a73d18",
+   "pidSha": "2203fb944e7a5a2b"
+  },
+  "smart_door_window_sensor": {
+   "mfr": 2,
+   "pid": 33,
+   "mfrSha": "ea62e63ea8d7ba21",
+   "pidSha": "3e62bbb2f610b753"
+  },
+  "smart_garden_irrigation_control": {
+   "mfr": 4,
+   "pid": 11,
+   "mfrSha": "289acae1e8e21c6a",
+   "pidSha": "8b2aa9884e9e3a9d"
+  },
+  "smart_heater": {
+   "mfr": 1,
+   "pid": 2,
+   "mfrSha": "8a101cffb2371aee",
+   "pidSha": "290684176bd031a5"
+  },
+  "smart_heater_controller": {
+   "mfr": 2,
+   "pid": 2,
+   "mfrSha": "3fd53978270ee51a",
+   "pidSha": "a799fdf7956e93cd"
+  },
+  "smart_irrigation_valve": {
+   "mfr": 3,
+   "pid": 3,
+   "mfrSha": "b2467773e4bfc1f2",
+   "pidSha": "f10b428ccaa7b390"
+  },
+  "smart_knob": {
+   "mfr": 10,
+   "pid": 5,
+   "mfrSha": "29784a949cad0474",
+   "pidSha": "3846deb0c0aed152"
+  },
+  "smart_knob_rotary": {
+   "mfr": 6,
+   "pid": 6,
+   "mfrSha": "b45cc5bccc545a0b",
+   "pidSha": "b8f989c20c36242e"
+  },
+  "smart_knob_switch": {
+   "mfr": 1,
+   "pid": 4,
+   "mfrSha": "2e1eebba4e2a01ba",
+   "pidSha": "bea76b1883d9ef71"
+  },
+  "smart_lcd_thermostat": {
+   "mfr": 8,
+   "pid": 1,
+   "mfrSha": "f4d738f3b75352f4",
+   "pidSha": "455c46e8c8549693"
+  },
+  "smart_motion_sensor": {
+   "mfr": 1,
+   "pid": 2,
+   "mfrSha": "8700fda598027cdf",
+   "pidSha": "7b7121b0da686e50"
+  },
+  "smart_rcbo": {
+   "mfr": 0,
+   "pid": 1,
+   "mfrSha": "e3b0c44298fc1c14",
+   "pidSha": "3ad5bcda078cf3dd"
+  },
+  "smart_remote_1_button": {
+   "mfr": 2,
+   "pid": 1,
+   "mfrSha": "c2f585986fc10043",
+   "pidSha": "74df0f4d2b001cb5"
+  },
+  "smart_remote_1_button_2": {
+   "mfr": 0,
+   "pid": 1,
+   "mfrSha": "e3b0c44298fc1c14",
+   "pidSha": "74df0f4d2b001cb5"
+  },
+  "smart_remote_4_buttons": {
+   "mfr": 1,
+   "pid": 2,
+   "mfrSha": "aab9e71c690ba687",
+   "pidSha": "f3e89c56b663e4d7"
+  },
+  "smart_scene_panel": {
+   "mfr": 1,
+   "pid": 1,
+   "mfrSha": "be8e636819dc484c",
+   "pidSha": "455c46e8c8549693"
+  },
+  "smart_screen_switch": {
+   "mfr": 1,
+   "pid": 1,
+   "mfrSha": "6572d82c13653364",
+   "pidSha": "455c46e8c8549693"
+  },
+  "smart_switch": {
+   "mfr": 0,
+   "pid": 2,
+   "mfrSha": "e3b0c44298fc1c14",
+   "pidSha": "a52af499d7d01202"
+  },
+  "smartplug": {
+   "mfr": 35,
+   "pid": 3,
+   "mfrSha": "aeec88b202438ac5",
+   "pidSha": "d035b5d1165c0c3d"
+  },
+  "smartplug_2_socket": {
+   "mfr": 1,
+   "pid": 2,
+   "mfrSha": "51ba331015c81041",
+   "pidSha": "720ce7b7ec09a25f"
+  },
+  "smoke_detector_advanced": {
+   "mfr": 3,
+   "pid": 15,
+   "mfrSha": "f0ebb763d43170ad",
+   "pidSha": "9d4e5eaba1deb655"
+  },
+  "smoke_sensor": {
+   "mfr": 8,
+   "pid": 3,
+   "mfrSha": "95504a65139e1e31",
+   "pidSha": "14fd4884570649ac"
+  },
+  "smoke_sensor2": {
+   "mfr": 34,
+   "pid": 14,
+   "mfrSha": "8747a6a6b933f537",
+   "pidSha": "91d04f847d60da6b"
+  },
+  "smoke_sensor3": {
+   "mfr": 11,
+   "pid": 1,
+   "mfrSha": "fb3a43945720e94c",
+   "pidSha": "ffba1e7b2343f15f"
+  },
+  "socket_power_strip": {
+   "mfr": 5,
+   "pid": 2,
+   "mfrSha": "a0f8b7b2230a3df0",
+   "pidSha": "a9680825b1d052a2"
+  },
+  "socket_power_strip_four": {
+   "mfr": 3,
+   "pid": 3,
+   "mfrSha": "849fbafd14b5865f",
+   "pidSha": "d427455deeb9007c"
+  },
+  "socket_power_strip_four_three": {
+   "mfr": 5,
+   "pid": 4,
+   "mfrSha": "a73b7bdcb5507a87",
+   "pidSha": "332c9f0db6816ace"
+  },
+  "socket_power_strip_four_two": {
+   "mfr": 2,
+   "pid": 9,
+   "mfrSha": "a9e6b85336ab7649",
+   "pidSha": "01d687d685c35f20"
+  },
+  "soil_sensor": {
+   "mfr": 72,
+   "pid": 46,
+   "mfrSha": "dd0f17fdbe37922b",
+   "pidSha": "39f6154403baf056"
+  },
+  "soil_sensor_ec": {
+   "mfr": 1,
+   "pid": 1,
+   "mfrSha": "1995121184183428",
+   "pidSha": "455c46e8c8549693"
+  },
+  "soilsensor": {
+   "mfr": 1,
+   "pid": 1,
+   "mfrSha": "1024f6b7207c1ac9",
+   "pidSha": "455c46e8c8549693"
+  },
+  "soilsensor_2": {
+   "mfr": 1,
+   "pid": 5,
+   "mfrSha": "5547a8f9b1ef65c1",
+   "pidSha": "df8d4df7b175b9f5"
+  },
+  "sound_sensor_tuya": {
+   "mfr": 1,
+   "pid": 1,
+   "mfrSha": "e31e446128104514",
+   "pidSha": "455c46e8c8549693"
+  },
+  "sr_zs_switch": {
+   "mfr": 1,
+   "pid": 1,
+   "mfrSha": "01339787e985c31f",
+   "pidSha": "a7f885cfce4bbc62"
+  },
+  "switch": {
+   "mfr": 1,
+   "pid": 3,
+   "mfrSha": "02c8caffcfe16aba",
+   "pidSha": "733735949f4e7156"
+  },
+  "switch_1_gang": {
+   "mfr": 1,
+   "pid": 8,
+   "mfrSha": "31ca22d12ee6438d",
+   "pidSha": "d9dc1001bf8b0fbd"
+  },
+  "switch_1_gang_metering": {
+   "mfr": 1,
+   "pid": 2,
+   "mfrSha": "f1cba4f2bea6a3bb",
+   "pidSha": "b46b96d17990cf37"
+  },
+  "switch_1gang": {
+   "mfr": 379,
+   "pid": 38,
+   "mfrSha": "08c8eaa82445ee90",
+   "pidSha": "fd65b1d55ed8db6a"
+  },
+  "switch_2_gang": {
+   "mfr": 3,
+   "pid": 5,
+   "mfrSha": "ad00c2c72b6df1de",
+   "pidSha": "f975dde8b1215fbe"
+  },
+  "switch_2_gang_metering": {
+   "mfr": 0,
+   "pid": 3,
+   "mfrSha": "e3b0c44298fc1c14",
+   "pidSha": "5181eca4102958ba"
+  },
+  "switch_2gang": {
+   "mfr": 90,
+   "pid": 14,
+   "mfrSha": "7c05ead64e9be8bb",
+   "pidSha": "830a6ff3ab71bd70"
+  },
+  "switch_3_gang": {
+   "mfr": 1,
+   "pid": 2,
+   "mfrSha": "a79e39d73d10e4eb",
+   "pidSha": "1c2e035cec82b333"
+  },
+  "switch_3gang": {
+   "mfr": 60,
+   "pid": 46,
+   "mfrSha": "a773e2f5d1a5f560",
+   "pidSha": "870729bf5269aac9"
+  },
+  "switch_4_gang_metering": {
+   "mfr": 6,
+   "pid": 5,
+   "mfrSha": "c4234061eeb0cdce",
+   "pidSha": "79608defafa31586"
+  },
+  "switch_4gang": {
+   "mfr": 79,
+   "pid": 40,
+   "mfrSha": "10d66d84956aa8a4",
+   "pidSha": "13ec4d7cc3589c0a"
+  },
+  "switch_dimmer_1gang": {
+   "mfr": 2,
+   "pid": 1,
+   "mfrSha": "aea869ca2d1e4635",
+   "pidSha": "455c46e8c8549693"
+  },
+  "switch_plug_1": {
+   "mfr": 1,
+   "pid": 1,
+   "mfrSha": "b219cf57185bffb8",
+   "pidSha": "50e8942b3244e499"
+  },
+  "switch_plug_2": {
+   "mfr": 1,
+   "pid": 1,
+   "mfrSha": "b40787ec452d0ba6",
+   "pidSha": "82d94ce445a6480d"
+  },
+  "switch_presence_tuya": {
+   "mfr": 3,
+   "pid": 1,
+   "mfrSha": "6fde082424d2d1a8",
+   "pidSha": "455c46e8c8549693"
+  },
+  "switch_temp_sensor": {
+   "mfr": 2,
+   "pid": 1,
+   "mfrSha": "84a6a6b3f9fa9888",
+   "pidSha": "ab07303ec08cf935"
+  },
+  "switch_usb_dongle": {
+   "mfr": 7,
+   "pid": 2,
+   "mfrSha": "404d2c9ac3c7edaf",
+   "pidSha": "d5939d250b4744ae"
+  },
+  "switch_wall": {
+   "mfr": 1,
+   "pid": 1,
+   "mfrSha": "d576ca292022c2ee",
+   "pidSha": "455c46e8c8549693"
+  },
+  "switch_wall_5gang": {
+   "mfr": 1,
+   "pid": 2,
+   "mfrSha": "0801431ff116f7ae",
+   "pidSha": "632a83d2820316dd"
+  },
+  "switch_wall_6gang": {
+   "mfr": 9,
+   "pid": 4,
+   "mfrSha": "619595b1607a542c",
+   "pidSha": "f55cc95aa962bca2"
+  },
+  "switch_wall_7gang": {
+   "mfr": 2,
+   "pid": 1,
+   "mfrSha": "f60a3d869ef6f66f",
+   "pidSha": "33d536e47d6d275a"
+  },
+  "switch_wall_8gang": {
+   "mfr": 5,
+   "pid": 2,
+   "mfrSha": "7b6ec1d080b8dbaa",
+   "pidSha": "a18913768ad7ed2f"
+  },
+  "switch_wireless": {
+   "mfr": 16,
+   "pid": 3,
+   "mfrSha": "f7cdbd766a6db040",
+   "pidSha": "81c373714c228628"
+  },
+  "temphumidsensor": {
+   "mfr": 17,
+   "pid": 4,
+   "mfrSha": "a743b8f88bad5d93",
+   "pidSha": "d6b9ec7c03b11cd7"
+  },
+  "temphumidsensor2": {
+   "mfr": 7,
+   "pid": 3,
+   "mfrSha": "6cdeee0b7a64c8cc",
+   "pidSha": "a0df21ee027d74b3"
+  },
+  "temphumidsensor3": {
+   "mfr": 5,
+   "pid": 6,
+   "mfrSha": "60d167e3ca19dd60",
+   "pidSha": "a958b9c16a659c84"
+  },
+  "temphumidsensor4": {
+   "mfr": 1,
+   "pid": 1,
+   "mfrSha": "4692c154ac35f0f5",
+   "pidSha": "455c46e8c8549693"
+  },
+  "temphumidsensor5": {
+   "mfr": 1,
+   "pid": 4,
+   "mfrSha": "4d9e07d1b0db1f91",
+   "pidSha": "d6b9ec7c03b11cd7"
+  },
+  "temphumidsensor_zcl_th01": {
+   "mfr": 1,
+   "pid": 1,
+   "mfrSha": "ec4310d667fec6b5",
+   "pidSha": "b91d5ce119725cc8"
+  },
+  "temphumidsensor_zcl_ts0601": {
+   "mfr": 1,
+   "pid": 1,
+   "mfrSha": "d950b7e3c169fa4f",
+   "pidSha": "455c46e8c8549693"
+  },
+  "thermostat_4ch": {
+   "mfr": 1,
+   "pid": 2,
+   "mfrSha": "c77004324c9eff21",
+   "pidSha": "ef07c6024272b0b9"
+  },
+  "thermostat_tuya_dp": {
+   "mfr": 50,
+   "pid": 2,
+   "mfrSha": "b8fdc45c367536d2",
+   "pidSha": "687391de8701e2ed"
+  },
+  "thermostatic_radiator_valve": {
+   "mfr": 28,
+   "pid": 20,
+   "mfrSha": "ca6892dd18f61a93",
+   "pidSha": "c2a60008cf2c6dba"
+  },
+  "tunable_bulb_E14": {
+   "mfr": 10,
+   "pid": 3,
+   "mfrSha": "4e8e544d803f0e29",
+   "pidSha": "da23de02556db2a8"
+  },
+  "tunable_bulb_E27": {
+   "mfr": 1,
+   "pid": 1,
+   "mfrSha": "1e6dc74674a8ddca",
+   "pidSha": "bd90a083752564af"
+  },
+  "tunable_spot_GU10": {
+   "mfr": 1,
+   "pid": 1,
+   "mfrSha": "ef4a824b259da157",
+   "pidSha": "bd90a083752564af"
+  },
+  "tuya_dummy_device": {
+   "mfr": 1,
+   "pid": 1,
+   "mfrSha": "cc7bd330ea9dc3e9",
+   "pidSha": "455c46e8c8549693"
+  },
+  "ultrasonic_heat_meter": {
+   "mfr": 1,
+   "pid": 1,
+   "mfrSha": "8b5f6ac33997131b",
+   "pidSha": "455c46e8c8549693"
+  },
+  "ultrasonic_water_meter": {
+   "mfr": 1,
+   "pid": 1,
+   "mfrSha": "75cd3f06f92298a2",
+   "pidSha": "455c46e8c8549693"
+  },
+  "universal_fallback": {
+   "mfr": 1,
+   "pid": 1,
+   "mfrSha": "8de7d12f297d8f64",
+   "pidSha": "455c46e8c8549693"
+  },
+  "universal_zigbee": {
+   "mfr": 47,
+   "pid": 66,
+   "mfrSha": "a9f81a975ef45494",
+   "pidSha": "93b18540f1bb98f9"
+  },
+  "usb_dongle_dual_repeater": {
+   "mfr": 2,
+   "pid": 2,
+   "mfrSha": "e44be354bc92e5e7",
+   "pidSha": "b5f78b2a386201c5"
+  },
+  "usb_dongle_triple": {
+   "mfr": 29,
+   "pid": 10,
+   "mfrSha": "5ec9cb73729e6e8e",
+   "pidSha": "d2d418f57022c1e1"
+  },
+  "usb_outlet_advanced": {
+   "mfr": 19,
+   "pid": 5,
+   "mfrSha": "349213ab48ee95df",
+   "pidSha": "b6aedd0f233585f0"
+  },
+  "valve_dual_irrigation": {
+   "mfr": 5,
+   "pid": 1,
+   "mfrSha": "3e5427f6f33a8b0c",
+   "pidSha": "455c46e8c8549693"
+  },
+  "valve_irrigation": {
+   "mfr": 29,
+   "pid": 3,
+   "mfrSha": "c6cec75a3011dfa4",
+   "pidSha": "5c308053fde30f1f"
+  },
+  "valve_single": {
+   "mfr": 4,
+   "pid": 3,
+   "mfrSha": "ba307d12ac38372a",
+   "pidSha": "44ec9fb1016d50d1"
+  },
+  "valvecontroller": {
+   "mfr": 7,
+   "pid": 3,
+   "mfrSha": "72bb366a2757b1e0",
+   "pidSha": "159f93fb8bd65bf7"
+  },
+  "vibration_sensor": {
+   "mfr": 33,
+   "pid": 10,
+   "mfrSha": "6c095c6d67198b7f",
+   "pidSha": "15d9e8ddb0c0fa4b"
+  },
+  "wall_curtain_switch": {
+   "mfr": 10,
+   "pid": 2,
+   "mfrSha": "a53187ad4eeed4e1",
+   "pidSha": "f8718c757b4c7b40"
+  },
+  "wall_dimmer_1gang_1way": {
+   "mfr": 1,
+   "pid": 5,
+   "mfrSha": "e8aa2a28342861f1",
+   "pidSha": "1326f3b1090e234a"
+  },
+  "wall_dimmer_tuya": {
+   "mfr": 133,
+   "pid": 14,
+   "mfrSha": "dba43948c2393424",
+   "pidSha": "86e609055c5d6281"
+  },
+  "wall_remote_1_gang": {
+   "mfr": 1,
+   "pid": 1,
+   "mfrSha": "4e89ba4cb84479b7",
+   "pidSha": "fb8ef2c1ffae69fb"
+  },
+  "wall_remote_2_gang": {
+   "mfr": 3,
+   "pid": 1,
+   "mfrSha": "cf1e49cc664ae58e",
+   "pidSha": "233554c19932f6a9"
+  },
+  "wall_remote_3_gang": {
+   "mfr": 1,
+   "pid": 1,
+   "mfrSha": "1f97cffcde290e13",
+   "pidSha": "06cd0099c514e4ab"
+  },
+  "wall_remote_4_gang": {
+   "mfr": 0,
+   "pid": 3,
+   "mfrSha": "e3b0c44298fc1c14",
+   "pidSha": "1af230efb294165c"
+  },
+  "wall_remote_4_gang_2": {
+   "mfr": 1,
+   "pid": 3,
+   "mfrSha": "8abe3ff9c8eed5a2",
+   "pidSha": "1af230efb294165c"
+  },
+  "wall_remote_4_gang_3": {
+   "mfr": 1,
+   "pid": 3,
+   "mfrSha": "1a357c62625b0c21",
+   "pidSha": "1af230efb294165c"
+  },
+  "wall_remote_6_gang": {
+   "mfr": 1,
+   "pid": 3,
+   "mfrSha": "fd4cb360388457bc",
+   "pidSha": "136b689726936b4c"
+  },
+  "wall_socket": {
+   "mfr": 1,
+   "pid": 1,
+   "mfrSha": "d53e865b32dab4ac",
+   "pidSha": "ee3881b630706571"
+  },
+  "wall_switch_1_gang": {
+   "mfr": 1,
+   "pid": 7,
+   "mfrSha": "220429d07bd8102f",
+   "pidSha": "77d1f07899dbce60"
+  },
+  "wall_switch_1_gang_tuya": {
+   "mfr": 1,
+   "pid": 26,
+   "mfrSha": "5f0feb85c86120f7",
+   "pidSha": "a919bfb9daea8608"
+  },
+  "wall_switch_1gang_1way": {
+   "mfr": 11,
+   "pid": 7,
+   "mfrSha": "01a06691bf03d883",
+   "pidSha": "77d1f07899dbce60"
+  },
+  "wall_switch_2_gang": {
+   "mfr": 2,
+   "pid": 3,
+   "mfrSha": "9c4283473dd590a7",
+   "pidSha": "c3e5b0d5766a1b68"
+  },
+  "wall_switch_2gang_1way": {
+   "mfr": 7,
+   "pid": 3,
+   "mfrSha": "dbc91c34286ab421",
+   "pidSha": "c3e5b0d5766a1b68"
+  },
+  "wall_switch_3_gang": {
+   "mfr": 4,
+   "pid": 3,
+   "mfrSha": "97a9901a34228417",
+   "pidSha": "d461d7c47c3e5204"
+  },
+  "wall_switch_3gang_1way": {
+   "mfr": 17,
+   "pid": 3,
+   "mfrSha": "087c6dce701428ab",
+   "pidSha": "e1a2162d2bdafe4b"
+  },
+  "wall_switch_4_gang": {
+   "mfr": 1,
+   "pid": 2,
+   "mfrSha": "25b329130f7e2032",
+   "pidSha": "584064452315f597"
+  },
+  "wall_switch_4_gang_tuya": {
+   "mfr": 8,
+   "pid": 1,
+   "mfrSha": "fa698f8a26cc88b0",
+   "pidSha": "455c46e8c8549693"
+  },
+  "wall_switch_4gang_1way": {
+   "mfr": 6,
+   "pid": 4,
+   "mfrSha": "3387bc7230367ad3",
+   "pidSha": "76b0910ec663b814"
+  },
+  "wall_switch_5_gang_tuya": {
+   "mfr": 1,
+   "pid": 2,
+   "mfrSha": "23d10556aefd063c",
+   "pidSha": "632a83d2820316dd"
+  },
+  "wall_switch_6_gang_tuya": {
+   "mfr": 11,
+   "pid": 1,
+   "mfrSha": "9d7526e113d57a24",
+   "pidSha": "455c46e8c8549693"
+  },
+  "wall_thermostat": {
+   "mfr": 45,
+   "pid": 2,
+   "mfrSha": "abb31f4cad64dcd6",
+   "pidSha": "a56800d53024720a"
+  },
+  "water_detector": {
+   "mfr": 1,
+   "pid": 23,
+   "mfrSha": "46710a383736d8a7",
+   "pidSha": "8218a22aa12bceb7"
+  },
+  "water_leak_sensor": {
+   "mfr": 26,
+   "pid": 21,
+   "mfrSha": "7a9efe7b53776a0f",
+   "pidSha": "ddd617471a56ff24"
+  },
+  "water_leak_sensor_tuya": {
+   "mfr": 42,
+   "pid": 17,
+   "mfrSha": "468fcbb0e04ee7c0",
+   "pidSha": "64256b5c3fce47c6"
+  },
+  "water_tank_monitor": {
+   "mfr": 10,
+   "pid": 3,
+   "mfrSha": "c26cfb656ce384e7",
+   "pidSha": "4e3ef65e098cb0b3"
+  },
+  "water_valve_garden": {
+   "mfr": 11,
+   "pid": 10,
+   "mfrSha": "6537ef99aa76ed4c",
+   "pidSha": "c8f72231c873aa05"
+  },
+  "water_valve_smart": {
+   "mfr": 24,
+   "pid": 8,
+   "mfrSha": "3e6e081479680e58",
+   "pidSha": "ec94ff10d92f8e3b"
+  },
+  "weather_station_outdoor": {
+   "mfr": 2,
+   "pid": 2,
+   "mfrSha": "50cd628c34af9ad1",
+   "pidSha": "df6a569a8074f7e1"
+  },
+  "zigbee_repeater": {
+   "mfr": 14,
+   "pid": 2,
+   "mfrSha": "387f6811647e0e59",
+   "pidSha": "5b0d1a938de39098"
+  }
+ }
+}
