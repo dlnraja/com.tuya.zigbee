@@ -1446,6 +1446,15 @@ Merged without changing W1–W11 / P1–P7; where they overlap, they make an exi
   Zigbee strings, `_`/`-` variants), while prefixes such as `_TZE200`/`_TZE204`/`_TZE284` stay distinct.
   Originals are kept for display and diagnostics, data is not duplicated, and anything that matches
   today must still match; a gate flags colliding normalized couples and malformed entries.
+- R21. Memory and runtime safety: no unbounded recursion; every cache/map has a cap or TTL; timers,
+  intervals and listeners are cleaned up in onDeleted/onUninit; no duplicate listener registration;
+  big data is lazy-loaded and shared (never copied per device); queues and retries are bounded.
+  Static check `npm run check:runtime-safety` (tools/ci/runtime-safety-gate.js) runs on new and
+  changed lib/drivers/scripts files; apply it to all new code.
+- R22. Modular architecture: small services, modules and functions; data loaded dynamically in small
+  chunks (sharded fingerprint/mfs data per pid or prefix, on demand, LRU-bounded cache); lazy and
+  progressive module loading (require on first use, non-critical layers after init). Migrate
+  incrementally without degrading anything and measure boot time and heap before/after (spec 010).
 
 ## Agent safety (generated)
 - Never post, comment, reply or send on GitHub, the Homey forum, email or chat on your own: draft and ask the maintainer.
