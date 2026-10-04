@@ -42,7 +42,8 @@ function walk(obj, trail, hits) {
       if (parentUi || UI_KEYS.has(k)) {
         for (const token of FORBIDDEN) {
           const re = new RegExp(`\\b${token.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}\\b`, 'i');
-          if (re.test(v)) {
+          // [[arg]] flow argument placeholders are identifiers, not UI text.
+          if (re.test(v.replace(/\[\[[^\]]+\]\]/g, ''))) {
             hits.push({ path: next, token, sample: v.slice(0, 120) });
           }
         }

@@ -25,6 +25,9 @@
 const fs = require('fs');
 const path = require('path');
 const { DRIVERS_DIR, STATE_DIR, writeDriverJson } = require('../lib/drivers');
+// User decision 2026-10-04: reviewed exact-pair duals (data/native-matrix-reviewed-duals.json) are not conflicts;
+// without this, the CI publish step stripped them again (v9.0.1328 bot commit).
+const { isReviewedCollision } = require('../../tools/ci/lib/reviewed-duals');
 
 const DRY_RUN = process.argv.includes('--dry-run');
 const REPORT_ONLY = process.argv.includes('--report-only');
@@ -130,7 +133,7 @@ function findConflicts(drivers) {
   const conflicts = [];
   for (const [key, drvs] of exactMap) {
     const unique = [...new Set(drvs)];
-    if (unique.length > 1) {
+    if (unique.length > 1 && !isReviewedCollision(key, unique)) {
       const [mfr, pid] = key.split('|');
       conflicts.push({ mfr, pid, drivers: unique });
     }
