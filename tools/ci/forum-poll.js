@@ -24,6 +24,7 @@
 
 'use strict';
 
+const { extractForumSignals } = require('./forum-signal-extract');
 const fs = require('fs');
 const path = require('path');
 const https = require('https');
@@ -110,13 +111,21 @@ async function poll() {
   const recent = posts.slice(-maxPosts);
   for (const p of recent) {
     const fpList = extractFPs(p.cooked);
+    // Deterministic symptom/fingerprint signals (no AI) → leads for closed-loop
+    const signals = extractForumSignals(p.cooked || '');
     const entry = {
       postId: p.id,
       postNumber: p.post_number,
       username: p.username,
       createdAt: p.created_at,
       excerpt: (p.cooked || '').replace(/<[^>]+>/g, ' ').slice(0, 200),
-      fps: fpList
+      fps: fpList,
+      signals: {
+        mfrs: signals.mfrs || [],
+        pids: signals.pids || [],
+        issues: signals.issues || [],
+        clusters: signals.clusters || [],
+      },
     };
     result.posts.push(entry);
     if (!lastState.posts[p.id]) {
@@ -131,6 +140,22 @@ async function poll() {
   // Write outputs
   fs.writeFileSync(path.join(STATE_DIR, 'latest.json'), JSON.stringify(result, null, 2));
   fs.writeFileSync(path.join(STATE_DIR, 'new-fps.json'), JSON.stringify({ newFPs: result.newFPs, count: result.newFPs.length, timestamp: result.timestamp }, null, 2));
+  // Symptom → lead stubs (no post body stored). Consumed by digest / daily resume.
+  const leadStubs = (result.newPosts || [])
+    .filter((p) => (p.fps && p.fps.length) || (p.signals && ((p.signals.issues || []).length || (p.signals.mfrs || []).length)))
+    .map((p) => ({
+      topicId: result.topicId || topicId,
+      postNumber: p.postNumber,
+      username: p.username,
+      createdAt: p.createdAt,
+      link: `https://community.homey.app/t/${result.topicId || topicId}/${p.postNumber}`,
+      fps: p.fps || [],
+      signals: p.signals || {},
+    }));
+  fs.writeFileSync(
+    path.join(STATE_DIR, 'new-leads.json'),
+    JSON.stringify({ timestamp: result.timestamp, count: leadStubs.length, leads: leadStubs }, null, 2),
+  );
 
   // Bridge for community-inbox-digest.js (reads forum-activity-data.json at state root)
   try {
@@ -145,6 +170,7 @@ async function poll() {
         createdAt: p.createdAt,
         excerpt: p.excerpt,
         fps: p.fps || [],
+        signals: p.signals || {},
       })),
       newPosts: result.newPosts || [],
       allFPs: result.allFPs || [],

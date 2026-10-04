@@ -3,6 +3,11 @@
 Each entry: source (link + author), mechanism / symptom, what we did (or why not). Written in our own words.
 
 
+## 2026-10-04 — Reprise journalière 0a/0b (forum 140352 #2238–#2258)
+- Sources: community.homey.app/t/140352 (posts ~2238–2258 ; auteurs EdP, Michaelp, VicHY, Peter) ; ZHA zigpy/zha-device-handlers#5352 ; Z2M MTG075 / me167 ; commits internes P2339/P2499/P2593/P2598/P2711/P2712.
+- Mécanisme: (1) sonde sol AY-303Z — le cluster relatif humidité 0x0405 porte l’humidité du sol, l’air vient du DP 109 ; (2) lux ZG-106Z sur le driver illuminance ; (3) TRV ZG253 — Homey zigbee-clusters refuse les clés `value`/`type` sur `datapoint` ; (4) radar VicHY — heal périodique trop agressif (removeCapability / setClass) invalide les cartes Advanced Flow ; (5) bouton Peter — `getable:false` / `preventInsights:true` masquent l’onglet History.
+- Ce que nous avons fait: 0a — règles d’enrichissement consolidées (`docs/rules/DAILY_RESUME_ENRICHMENT.md`, constitution W12, conventions DEVICE_TRUTH) + gate native-matrix branchée dans `validate.yml`. 0b — vérifié déjà corrigé pour #2258/#2257/#2253/#2246–2255/#2238 ; durcissement additif debounce sur `DynamicFlowCardManager` (une seule inscription de carte par capa) ; forum-poll écrit des leads symptômes sans IA (`new-leads.json`). History Insights: options compose déjà correctes — un re-appairage peut être nécessaire côté Homey pour l’enrôlement Insights.
+
 ## 2026-10-04 — History sweep checkpoint + CI stash P2797c
 - Sources: Daily digest tracking issue https://github.com/dlnraja/com.tuya.zigbee/issues/557 (author dlnraja); git history SHAs for forum fixes (P2593/P2587/P2760/P2598/P2599/P2713/P2576); CI stash `P2797c-ci-review-wip` from worktree `/workspace/ci-work`; JohanBendz issues https://github.com/JohanBendz/com.tuya.zigbee/issues/1 … `/5` (author JohanBendz).
 - Mechanism: a resumable JSON cursor (`data/leads/sweep-checkpoint.json`) holds forum thread lastPost + GitHub next ids + per-item status so weekday free automation can advance without re-reading the whole history. Johan #1–#2 are historical closed PRs; #3 is pid-only curtain TS0601; #4 has no mfr/pid (needs interview); #5 Blitzwolf plug couples already in `smartplug`.
@@ -12,6 +17,7 @@ Each entry: source (link + author), mechanism / symptom, what we did (or why not
 - Source: workflow runs pattern (~30 dry-run enrich jobs / 48 h on push) + stash note P2797c.
 - Mechanism: on push, `DRY_RUN` stayed true unless dispatch `mode=apply`, and the commit step is apply-only, so every push paid runner minutes for zero writes; syntax-check / code-quality / unified-ci already cover the same gates.
 - What we did: removed the push trigger; documented schedule = always dry-run; apply only via manual dispatch.
+
 
 
 ## 2026-10-04 — Homey Matter Bridge: how devices are exposed
