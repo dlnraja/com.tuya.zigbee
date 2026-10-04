@@ -16,4 +16,8 @@ describe('R21 runtime-safety gate', () => {
     assert.deepStrictEqual(checkSource("this.on('x', f);\nthis.removeListener('x', f);", 'drivers/a/device.js'), []);
     assert.deepStrictEqual(checkSource('while (true) {\n  if (x) break;\n}'), []);
   });
+  it('treats never-mutated Sets/Maps as constants, still flags mutated ones', () => {
+    assert.deepStrictEqual(checkSource("const KINDS = new Set(['a', 'b']);\nif (KINDS.has(x)) {}"), []);
+    assert.strictEqual(checkSource('const seen = new Set();\nseen.add(x);').length, 1);
+  });
 });
