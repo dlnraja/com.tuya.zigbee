@@ -3,41 +3,49 @@
     {
       "id": "wifi_ewelink_switch_2ch_gang1_turned_on",
       "title": {
-        "en": "Gang 1 turned on"
+        "en": "Gang 1 turned on",
+        "fr": "Voie 1 allumée"
       },
       "args": [],
       "titleFormatted": {
-        "en": "Gang 1 turned on"
+        "en": "Gang 1 turned on",
+        "fr": "Voie 1 allumée"
       }
     },
     {
       "id": "wifi_ewelink_switch_2ch_gang1_turned_off",
       "title": {
-        "en": "Gang 1 turned off"
+        "en": "Gang 1 turned off",
+        "fr": "Voie 1 éteinte"
       },
       "args": [],
       "titleFormatted": {
-        "en": "Gang 1 turned off"
+        "en": "Gang 1 turned off",
+        "fr": "Voie 1 éteinte"
       }
     },
     {
       "id": "wifi_ewelink_switch_2ch_gang2_turned_on",
       "title": {
-        "en": "Gang 2 turned on"
+        "en": "Gang 2 turned on",
+        "fr": "Voie 2 allumée"
       },
       "args": [],
       "titleFormatted": {
-        "en": "Gang 2 turned on"
+        "en": "Gang 2 turned on",
+        "fr": "Voie 2 allumée"
       }
     },
     {
       "id": "wifi_ewelink_switch_2ch_gang2_turned_off",
       "title": {
-        "en": "Gang 2 turned off"
+        "en": "Gang 2 turned off",
+        "fr": "Voie 2 éteinte"
       },
       "args": [],
       "titleFormatted": {
-        "en": "Gang 2 turned off"
+        "en": "Gang 2 turned off",
+        "fr": "Voie 2 éteinte"
       }
     }
   ],
@@ -45,21 +53,25 @@
     {
       "id": "wifi_ewelink_switch_2ch_gang1_is_on",
       "title": {
-        "en": "Gang 1 is on"
+        "en": "Gang 1 is on",
+        "fr": "Voie 1 est allumée"
       },
       "args": [],
       "titleFormatted": {
-        "en": "Gang 1 is on"
+        "en": "Gang 1 is on",
+        "fr": "Voie 1 est allumée"
       }
     },
     {
       "id": "wifi_ewelink_switch_2ch_gang2_is_on",
       "title": {
-        "en": "Gang 2 is on"
+        "en": "Gang 2 is on",
+        "fr": "Voie 2 est allumée"
       },
       "args": [],
       "titleFormatted": {
-        "en": "Gang 2 is on"
+        "en": "Gang 2 is on",
+        "fr": "Voie 2 est allumée"
       }
     }
   ],

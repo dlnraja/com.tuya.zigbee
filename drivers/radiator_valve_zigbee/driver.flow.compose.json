@@ -179,11 +179,23 @@
                 "fr": "Auto",
                 "nl": "Auto",
                 "de": "Auto"
+              },
+              "label": {
+                "en": "Auto",
+                "fr": "Auto",
+                "nl": "Auto",
+                "de": "Auto"
               }
             },
             {
               "id": "manual",
               "title": {
+                "en": "Manual",
+                "fr": "Manuel",
+                "nl": "Handmatig",
+                "de": "Manuell"
+              },
+              "label": {
                 "en": "Manual",
                 "fr": "Manuel",
                 "nl": "Handmatig",
@@ -197,11 +209,23 @@
                 "fr": "Éco",
                 "nl": "Eco",
                 "de": "Eco"
+              },
+              "label": {
+                "en": "Eco",
+                "fr": "Éco",
+                "nl": "Eco",
+                "de": "Eco"
               }
             },
             {
               "id": "boost",
               "title": {
+                "en": "Boost",
+                "fr": "Boost",
+                "nl": "Boost",
+                "de": "Boost"
+              },
+              "label": {
                 "en": "Boost",
                 "fr": "Boost",
                 "nl": "Boost",
@@ -215,11 +239,23 @@
                 "fr": "Absent",
                 "nl": "Afwezig",
                 "de": "Abwesend"
+              },
+              "label": {
+                "en": "Away",
+                "fr": "Absent",
+                "nl": "Afwezig",
+                "de": "Abwesend"
               }
             },
             {
               "id": "off",
               "title": {
+                "en": "Off",
+                "fr": "Arrêt",
+                "nl": "Uit",
+                "de": "Aus"
+              },
+              "label": {
                 "en": "Off",
                 "fr": "Arrêt",
                 "nl": "Uit",
@@ -274,6 +310,10 @@
             "fr": "Température (°C)",
             "nl": "Temperatuur (°C)",
             "de": "Temperatur (°C)"
+          },
+          "placeholder": {
+            "en": "5–35",
+            "fr": "5–35"
           }
         }
       ],
@@ -310,11 +350,23 @@
                 "fr": "Auto",
                 "nl": "Auto",
                 "de": "Auto"
+              },
+              "label": {
+                "en": "Auto",
+                "fr": "Auto",
+                "nl": "Auto",
+                "de": "Auto"
               }
             },
             {
               "id": "manual",
               "title": {
+                "en": "Manual",
+                "fr": "Manuel",
+                "nl": "Handmatig",
+                "de": "Manuell"
+              },
+              "label": {
                 "en": "Manual",
                 "fr": "Manuel",
                 "nl": "Handmatig",
@@ -328,11 +380,23 @@
                 "fr": "Éco",
                 "nl": "Eco",
                 "de": "Eco"
+              },
+              "label": {
+                "en": "Eco",
+                "fr": "Éco",
+                "nl": "Eco",
+                "de": "Eco"
               }
             },
             {
               "id": "boost",
               "title": {
+                "en": "Boost",
+                "fr": "Boost",
+                "nl": "Boost",
+                "de": "Boost"
+              },
+              "label": {
                 "en": "Boost",
                 "fr": "Boost",
                 "nl": "Boost",
@@ -346,11 +410,23 @@
                 "fr": "Absent",
                 "nl": "Afwezig",
                 "de": "Abwesend"
+              },
+              "label": {
+                "en": "Away",
+                "fr": "Absent",
+                "nl": "Afwezig",
+                "de": "Abwesend"
               }
             },
             {
               "id": "off",
               "title": {
+                "en": "Off",
+                "fr": "Arrêt",
+                "nl": "Uit",
+                "de": "Aus"
+              },
+              "label": {
                 "en": "Off",
                 "fr": "Arrêt",
                 "nl": "Uit",

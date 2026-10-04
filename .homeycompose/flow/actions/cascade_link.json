@@ -31,7 +31,11 @@
       "min": 1,
       "max": 120,
       "step": 1,
-      "value": 2
+      "value": 2,
+      "placeholder": {
+        "en": "1–120",
+        "fr": "1–120"
+      }
     },
     {
       "name": "dim_percent",
@@ -43,7 +47,11 @@
       "min": 1,
       "max": 100,
       "step": 1,
-      "value": 100
+      "value": 100,
+      "placeholder": {
+        "en": "1–100",
+        "fr": "1–100"
+      }
     }
   ],
   "titleFormatted": {

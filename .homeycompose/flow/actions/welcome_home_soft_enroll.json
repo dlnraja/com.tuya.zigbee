@@ -12,21 +12,38 @@
     {
       "type": "text",
       "name": "zone",
-      "title": { "en": "Zone id", "fr": "Id zone" },
-      "value": "home"
+      "title": {
+        "en": "Zone id",
+        "fr": "Id zone"
+      },
+      "value": "home",
+      "placeholder": {
+        "en": "Zone id",
+        "fr": "Id zone"
+      }
     },
     {
       "type": "device",
       "name": "light_a",
       "filter": "capabilities=onoff",
-      "title": { "en": "Welcome light A", "fr": "Lumière accueil A" }
+      "title": {
+        "en": "Welcome light A",
+        "fr": "Lumière accueil A"
+      }
     },
     {
       "type": "device",
       "name": "light_b",
       "filter": "capabilities=onoff",
-      "title": { "en": "Welcome light B (optional)", "fr": "Lumière accueil B (option)" },
+      "title": {
+        "en": "Welcome light B (optional)",
+        "fr": "Lumière accueil B (option)"
+      },
       "optional": true
     }
-  ]
+  ],
+  "titleFormatted": {
+    "en": "Welcome Home Soft — lights on zone occupy [[zone]] ([[light_a]], [[light_b]])",
+    "fr": "Welcome Home Soft — lumières à l'occupation [[zone]] ([[light_a]], [[light_b]])"
+  }
 }

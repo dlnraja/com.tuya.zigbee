@@ -304,7 +304,11 @@
           "max": 35,
           "step": 0.5,
           "label": "°C",
-          "labelDecimals": 1
+          "labelDecimals": 1,
+          "title": {
+            "en": "Temperature",
+            "fr": "Température"
+          }
         }
       ],
       "titleFormatted": {

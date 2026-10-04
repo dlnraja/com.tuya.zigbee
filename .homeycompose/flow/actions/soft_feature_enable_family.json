@@ -12,16 +12,65 @@
     {
       "type": "dropdown",
       "name": "family",
-      "title": { "en": "Family", "fr": "Famille" },
+      "title": {
+        "en": "Family",
+        "fr": "Famille"
+      },
       "values": [
-        { "id": "light", "label": { "en": "Light", "fr": "Lumière" } },
-        { "id": "presence", "label": { "en": "Presence", "fr": "Présence" } },
-        { "id": "energy", "label": { "en": "Energy", "fr": "Énergie" } },
-        { "id": "cover", "label": { "en": "Cover", "fr": "Volet" } },
-        { "id": "sensor", "label": { "en": "Sensor", "fr": "Capteur" } },
-        { "id": "climate", "label": { "en": "Climate", "fr": "Climat" } },
-        { "id": "generic", "label": { "en": "Generic", "fr": "Générique" } }
+        {
+          "id": "light",
+          "label": {
+            "en": "Light",
+            "fr": "Lumière"
+          }
+        },
+        {
+          "id": "presence",
+          "label": {
+            "en": "Presence",
+            "fr": "Présence"
+          }
+        },
+        {
+          "id": "energy",
+          "label": {
+            "en": "Energy",
+            "fr": "Énergie"
+          }
+        },
+        {
+          "id": "cover",
+          "label": {
+            "en": "Cover",
+            "fr": "Volet"
+          }
+        },
+        {
+          "id": "sensor",
+          "label": {
+            "en": "Sensor",
+            "fr": "Capteur"
+          }
+        },
+        {
+          "id": "climate",
+          "label": {
+            "en": "Climate",
+            "fr": "Climat"
+          }
+        },
+        {
+          "id": "generic",
+          "label": {
+            "en": "Generic",
+            "fr": "Générique"
+          }
+        }
       ]
     }
-  ]
+  ],
+  "titleFormatted": {
+    "en": "Enable Soft Feature family [[family]]",
+    "fr": "Activer famille Soft Feature [[family]]"
+  }
 }

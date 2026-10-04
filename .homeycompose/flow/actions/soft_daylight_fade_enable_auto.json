@@ -13,16 +13,30 @@
       "type": "device",
       "name": "light",
       "filter": "capabilities=onoff|capabilities=dim|capabilities=light_temperature|capabilities=light_color_temp",
-      "title": { "en": "Light", "fr": "Lumière" }
+      "title": {
+        "en": "Light",
+        "fr": "Lumière"
+      }
     },
     {
       "type": "number",
       "name": "interval_minutes",
-      "title": { "en": "Recheck every (min)", "fr": "Recalcul toutes (min)" },
+      "title": {
+        "en": "Recheck every (min)",
+        "fr": "Recalcul toutes (min)"
+      },
       "min": 2,
       "max": 30,
       "step": 1,
-      "value": 5
+      "value": 5,
+      "placeholder": {
+        "en": "2–30",
+        "fr": "2–30"
+      }
     }
-  ]
+  ],
+  "titleFormatted": {
+    "en": "Enable Soft Daylight Auto [[interval_minutes]] ([[light]])",
+    "fr": "Activer Soft Daylight Auto [[interval_minutes]] ([[light]])"
+  }
 }

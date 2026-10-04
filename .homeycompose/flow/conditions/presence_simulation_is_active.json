@@ -16,5 +16,9 @@
       "type": "device",
       "filter": "capabilities=onoff"
     }
-  ]
+  ],
+  "titleFormatted": {
+    "en": "Presence simulation !{{is|is not}} active ([[device]])",
+    "fr": "La simulation de présence !{{est|n'est pas}} active ([[device]])"
+  }
 }

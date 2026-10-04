@@ -12,30 +12,62 @@
     {
       "type": "text",
       "name": "zone",
-      "title": { "en": "Zone id", "fr": "Id zone" },
-      "value": "home"
+      "title": {
+        "en": "Zone id",
+        "fr": "Id zone"
+      },
+      "value": "home",
+      "placeholder": {
+        "en": "Zone id",
+        "fr": "Id zone"
+      }
     },
     {
       "type": "device",
       "name": "device_a",
       "filter": "capabilities=onoff|capabilities=dim",
-      "title": { "en": "Device A", "fr": "Appareil A" }
+      "title": {
+        "en": "Device A",
+        "fr": "Appareil A"
+      }
     },
     {
       "type": "device",
       "name": "device_b",
       "filter": "capabilities=onoff|capabilities=dim",
-      "title": { "en": "Device B (optional)", "fr": "Appareil B (option)" },
+      "title": {
+        "en": "Device B (optional)",
+        "fr": "Appareil B (option)"
+      },
       "optional": true
     },
     {
       "type": "dropdown",
       "name": "mode",
-      "title": { "en": "Action", "fr": "Action" },
+      "title": {
+        "en": "Action",
+        "fr": "Action"
+      },
       "values": [
-        { "id": "dim", "label": { "en": "Soft dim", "fr": "Assombrir" } },
-        { "id": "off", "label": { "en": "Turn off", "fr": "Éteindre" } }
+        {
+          "id": "dim",
+          "label": {
+            "en": "Soft dim",
+            "fr": "Assombrir"
+          }
+        },
+        {
+          "id": "off",
+          "label": {
+            "en": "Turn off",
+            "fr": "Éteindre"
+          }
+        }
       ]
     }
-  ]
+  ],
+  "titleFormatted": {
+    "en": "Absence Energy Soft — eco when zone clears [[zone]] [[mode]] ([[device_a]], [[device_b]])",
+    "fr": "Absence Energy Soft — éco quand zone libre [[zone]] [[mode]] ([[device_a]], [[device_b]])"
+  }
 }

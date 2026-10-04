@@ -25,7 +25,16 @@
       "min": 0,
       "max": 100,
       "step": 1,
-      "value": 20
+      "value": 20,
+      "placeholder": {
+        "en": "0–100",
+        "fr": "0–100"
+      }
     }
-  ]
+  ],
+  "titleFormatted": {
+    "en": "Battery percentage is below [[threshold]]% ([[device]])",
+    "fr": "Pourcentage batterie inférieur à [[threshold]]% ([[device]])",
+    "nl": "Batterijpercentage is onder [[threshold]]% ([[device]])"
+  }
 }

@@ -133,7 +133,8 @@
           "name": "duration",
           "type": "number",
           "title": {
-            "en": "Duration (ms)"
+            "en": "Duration (ms)",
+            "fr": "Durée (ms)"
           },
           "example": 1200
         }
@@ -165,7 +166,8 @@
           "name": "clicks",
           "type": "number",
           "title": {
-            "en": "Click count"
+            "en": "Click count",
+            "fr": "Nombre de clics"
           },
           "example": 3
         }
@@ -213,7 +215,8 @@
     {
       "id": "motion_sensor_switch_1gang_gang1_scene",
       "title": {
-        "en": "Gang 1 scene triggered"
+        "en": "Gang 1 scene triggered",
+        "fr": "Scène voie 1 déclenchée"
       },
       "args": [],
       "tokens": [
@@ -229,7 +232,8 @@
         }
       ],
       "titleFormatted": {
-        "en": "Gang 1 scene triggered ({action})"
+        "en": "Gang 1 scene triggered ({action})",
+        "fr": "Scène voie 1 déclenchée ({action})"
       }
     },
     {
@@ -489,6 +493,12 @@
                 "fr": "Éteint",
                 "nl": "Uit",
                 "de": "Aus"
+              },
+              "label": {
+                "en": "Off",
+                "fr": "Éteint",
+                "nl": "Uit",
+                "de": "Aus"
               }
             },
             {
@@ -498,11 +508,23 @@
                 "fr": "Normal (LED quand allumé)",
                 "nl": "Normaal (LED bij AAN)",
                 "de": "Normal (LED bei EIN)"
+              },
+              "label": {
+                "en": "Normal (LED when ON)",
+                "fr": "Normal (LED quand allumé)",
+                "nl": "Normaal (LED bij AAN)",
+                "de": "Normal (LED bei EIN)"
               }
             },
             {
               "id": "inverted",
               "title": {
+                "en": "Inverted (LED when OFF)",
+                "fr": "Inversé (LED quand éteint)",
+                "nl": "Omgekeerd (LED bij UIT)",
+                "de": "Invertiert (LED bei AUS)"
+              },
+              "label": {
                 "en": "Inverted (LED when OFF)",
                 "fr": "Inversé (LED quand éteint)",
                 "nl": "Omgekeerd (LED bij UIT)",
@@ -538,12 +560,19 @@
           "type": "dropdown",
           "name": "state",
           "title": {
-            "en": "State"
+            "en": "State",
+            "fr": "État"
           },
           "values": [
             {
               "id": "on",
               "title": {
+                "en": "ON state",
+                "fr": "État ON",
+                "nl": "AAN staat",
+                "de": "EIN-Zustand"
+              },
+              "label": {
                 "en": "ON state",
                 "fr": "État ON",
                 "nl": "AAN staat",
@@ -557,6 +586,12 @@
                 "fr": "État OFF",
                 "nl": "UIT staat",
                 "de": "AUS-Zustand"
+              },
+              "label": {
+                "en": "OFF state",
+                "fr": "État OFF",
+                "nl": "UIT staat",
+                "de": "AUS-Zustand"
               }
             }
           ]
@@ -565,12 +600,19 @@
           "type": "dropdown",
           "name": "color",
           "title": {
-            "en": "Color"
+            "en": "Color",
+            "fr": "Couleur"
           },
           "values": [
             {
               "id": "red",
               "title": {
+                "en": "Red",
+                "fr": "Rouge",
+                "nl": "Rood",
+                "de": "Rot"
+              },
+              "label": {
                 "en": "Red",
                 "fr": "Rouge",
                 "nl": "Rood",
@@ -584,11 +626,23 @@
                 "fr": "Bleu",
                 "nl": "Blauw",
                 "de": "Blau"
+              },
+              "label": {
+                "en": "Blue",
+                "fr": "Bleu",
+                "nl": "Blauw",
+                "de": "Blau"
               }
             },
             {
               "id": "green",
               "title": {
+                "en": "Green",
+                "fr": "Vert",
+                "nl": "Groen",
+                "de": "Grün"
+              },
+              "label": {
                 "en": "Green",
                 "fr": "Vert",
                 "nl": "Groen",
@@ -602,11 +656,23 @@
                 "fr": "Blanc",
                 "nl": "Wit",
                 "de": "Weiß"
+              },
+              "label": {
+                "en": "White",
+                "fr": "Blanc",
+                "nl": "Wit",
+                "de": "Weiß"
               }
             },
             {
               "id": "yellow",
               "title": {
+                "en": "Yellow",
+                "fr": "Jaune",
+                "nl": "Geel",
+                "de": "Gelb"
+              },
+              "label": {
                 "en": "Yellow",
                 "fr": "Jaune",
                 "nl": "Geel",
@@ -620,11 +686,23 @@
                 "fr": "Magenta",
                 "nl": "Magenta",
                 "de": "Magenta"
+              },
+              "label": {
+                "en": "Magenta",
+                "fr": "Magenta",
+                "nl": "Magenta",
+                "de": "Magenta"
               }
             },
             {
               "id": "cyan",
               "title": {
+                "en": "Cyan",
+                "fr": "Cyan",
+                "nl": "Cyaan",
+                "de": "Cyan"
+              },
+              "label": {
                 "en": "Cyan",
                 "fr": "Cyan",
                 "nl": "Cyaan",
@@ -638,11 +716,23 @@
                 "fr": "Blanc Chaud",
                 "nl": "Warm Wit",
                 "de": "Warmweiß"
+              },
+              "label": {
+                "en": "Warm White",
+                "fr": "Blanc Chaud",
+                "nl": "Warm Wit",
+                "de": "Warmweiß"
               }
             },
             {
               "id": "warm_yellow",
               "title": {
+                "en": "Warm Yellow",
+                "fr": "Jaune Chaud",
+                "nl": "Warm Geel",
+                "de": "Warmgelb"
+              },
+              "label": {
                 "en": "Warm Yellow",
                 "fr": "Jaune Chaud",
                 "nl": "Warm Geel",
@@ -681,7 +771,11 @@
           "max": 100,
           "step": 5,
           "label": "%",
-          "labelDecimals": 0
+          "labelDecimals": 0,
+          "title": {
+            "en": "Brightness",
+            "fr": "Luminosité"
+          }
         }
       ],
       "titleFormatted": {
@@ -743,7 +837,8 @@
           "type": "dropdown",
           "name": "locked",
           "title": {
-            "en": "Lock"
+            "en": "Lock",
+            "fr": "Verrouiller"
           },
           "values": [
             {
@@ -753,11 +848,23 @@
                 "fr": "Verrouillé",
                 "nl": "Vergrendeld",
                 "de": "Gesperrt"
+              },
+              "label": {
+                "en": "Locked",
+                "fr": "Verrouillé",
+                "nl": "Vergrendeld",
+                "de": "Gesperrt"
               }
             },
             {
               "id": "false",
               "title": {
+                "en": "Unlocked",
+                "fr": "Déverrouillé",
+                "nl": "Ontgrendeld",
+                "de": "Entsperrt"
+              },
+              "label": {
                 "en": "Unlocked",
                 "fr": "Déverrouillé",
                 "nl": "Ontgrendeld",
@@ -777,7 +884,8 @@
     {
       "id": "motion_sensor_switch_1gang_set_scene_mode",
       "title": {
-        "en": "Set scene mode"
+        "en": "Set scene mode",
+        "fr": "Régler le mode scène"
       },
       "args": [
         {
@@ -788,25 +896,42 @@
               "id": "auto",
               "title": {
                 "en": "Auto (Normal + flows)"
+              },
+              "label": {
+                "en": "Auto (Normal + flows)",
+                "fr": "Auto (normal + flows)"
               }
             },
             {
               "id": "magic",
               "title": {
                 "en": "Magic (Scene only)"
+              },
+              "label": {
+                "en": "Magic (Scene only)",
+                "fr": "Magique (scène uniquement)"
               }
             },
             {
               "id": "both",
               "title": {
                 "en": "Both (Load + scene)"
+              },
+              "label": {
+                "en": "Both (Load + scene)",
+                "fr": "Les deux (charge + scène)"
               }
             }
-          ]
+          ],
+          "title": {
+            "en": "Mode",
+            "fr": "Mode"
+          }
         }
       ],
       "titleFormatted": {
-        "en": "Set scene mode [[mode]]"
+        "en": "Set scene mode [[mode]]",
+        "fr": "Régler le mode scène [[mode]]"
       }
     }
   ]

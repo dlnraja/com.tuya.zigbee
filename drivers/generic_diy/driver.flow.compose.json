@@ -620,7 +620,11 @@
             "fr": "Endpoint"
           },
           "min": 1,
-          "max": 8
+          "max": 8,
+          "placeholder": {
+            "en": "1–8",
+            "fr": "1–8"
+          }
         }
       ],
       "titleFormatted": {
@@ -647,7 +651,11 @@
             "fr": "Endpoint"
           },
           "min": 1,
-          "max": 8
+          "max": 8,
+          "placeholder": {
+            "en": "1–8",
+            "fr": "1–8"
+          }
         }
       ],
       "titleFormatted": {

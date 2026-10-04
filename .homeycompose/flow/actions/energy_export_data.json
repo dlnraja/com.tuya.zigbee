@@ -1,22 +1,28 @@
 {
   "id": "energy_export_data",
   "title": {
-    "en": "Export energy data"
+    "en": "Export energy data",
+    "fr": "Exporter les données d'énergie"
   },
   "hint": {
-    "en": "Export energy history data for a device or all devices as a trigger token"
+    "en": "Export energy history data for a device or all devices as a trigger token",
+    "fr": "Exporter l'historique d'énergie d'un appareil ou de tous les appareils sous forme de jeton"
   },
   "args": [
     {
       "name": "format",
       "type": "dropdown",
       "title": {
-        "en": "Export format"
+        "en": "Export format",
+        "fr": "Format d'export"
       },
       "values": [
         {
           "id": "json",
           "title": {
+            "en": "JSON"
+          },
+          "label": {
             "en": "JSON"
           }
         },
@@ -24,6 +30,10 @@
           "id": "summary",
           "title": {
             "en": "Summary only"
+          },
+          "label": {
+            "en": "Summary only",
+            "fr": "Résumé uniquement"
           }
         }
       ]
@@ -32,31 +42,48 @@
       "name": "period",
       "type": "dropdown",
       "title": {
-        "en": "Time period"
+        "en": "Time period",
+        "fr": "Période"
       },
       "values": [
         {
           "id": "today",
           "title": {
             "en": "Today"
+          },
+          "label": {
+            "en": "Today",
+            "fr": "Aujourd'hui"
           }
         },
         {
           "id": "this_week",
           "title": {
             "en": "This week"
+          },
+          "label": {
+            "en": "This week",
+            "fr": "Cette semaine"
           }
         },
         {
           "id": "this_month",
           "title": {
             "en": "This month"
+          },
+          "label": {
+            "en": "This month",
+            "fr": "Ce mois-ci"
           }
         },
         {
           "id": "all",
           "title": {
             "en": "All data"
+          },
+          "label": {
+            "en": "All data",
+            "fr": "Toutes les données"
           }
         }
       ]
@@ -67,25 +94,29 @@
       "name": "export_data",
       "type": "string",
       "title": {
-        "en": "Exported data"
+        "en": "Exported data",
+        "fr": "Données exportées"
       }
     },
     {
       "name": "total_devices",
       "type": "number",
       "title": {
-        "en": "Total devices"
+        "en": "Total devices",
+        "fr": "Nombre total d'appareils"
       }
     },
     {
       "name": "total_energy_kwh",
       "type": "number",
       "title": {
-        "en": "Total energy (kWh)"
+        "en": "Total energy (kWh)",
+        "fr": "Énergie totale (kWh)"
       }
     }
   ],
   "titleFormatted": {
-    "en": "Export energy data [[format]] [[period]]"
+    "en": "Export energy data [[format]] [[period]]",
+    "fr": "Exporter les données d'énergie [[format]] [[period]]"
   }
 }

@@ -3,7 +3,8 @@
     {
       "id": "sensor_climate_sensor_smart_smart_scene_pane_abe86",
       "title": {
-        "en": "Scene activated"
+        "en": "Scene activated",
+        "fr": "Scène activée"
       },
       "args": [
         {
@@ -14,71 +15,100 @@
               "id": "5",
               "title": {
                 "en": "Scene 5"
+              },
+              "label": {
+                "en": "Scene 5",
+                "fr": "Scène 5"
               }
             },
             {
               "id": "6",
               "title": {
                 "en": "Scene 6"
+              },
+              "label": {
+                "en": "Scene 6",
+                "fr": "Scène 6"
               }
             },
             {
               "id": "7",
               "title": {
                 "en": "Scene 7"
+              },
+              "label": {
+                "en": "Scene 7",
+                "fr": "Scène 7"
               }
             },
             {
               "id": "8",
               "title": {
                 "en": "Scene 8"
+              },
+              "label": {
+                "en": "Scene 8",
+                "fr": "Scène 8"
               }
             }
-          ]
+          ],
+          "title": {
+            "en": "Scene",
+            "fr": "Scène"
+          }
         }
       ],
       "titleFormatted": {
-        "en": "Scene activated [[scene]]"
+        "en": "Scene activated [[scene]]",
+        "fr": "Scène activée [[scene]]"
       }
     },
     {
       "id": "sensor_climate_sensor_smart_smart_scene_pane_61d9d",
       "title": {
-        "en": "Switch 1 changed"
+        "en": "Switch 1 changed",
+        "fr": "Interrupteur 1 modifié"
       },
       "args": [],
       "titleFormatted": {
-        "en": "Switch 1 changed"
+        "en": "Switch 1 changed",
+        "fr": "Interrupteur 1 modifié"
       }
     },
     {
       "id": "sensor_climate_sensor_smart_smart_scene_pane_57762",
       "title": {
-        "en": "Switch 2 changed"
+        "en": "Switch 2 changed",
+        "fr": "Interrupteur 2 modifié"
       },
       "args": [],
       "titleFormatted": {
-        "en": "Switch 2 changed"
+        "en": "Switch 2 changed",
+        "fr": "Interrupteur 2 modifié"
       }
     },
     {
       "id": "sensor_climate_sensor_smart_smart_scene_pane_fbfa2",
       "title": {
-        "en": "Switch 3 changed"
+        "en": "Switch 3 changed",
+        "fr": "Interrupteur 3 modifié"
       },
       "args": [],
       "titleFormatted": {
-        "en": "Switch 3 changed"
+        "en": "Switch 3 changed",
+        "fr": "Interrupteur 3 modifié"
       }
     },
     {
       "id": "sensor_climate_sensor_smart_smart_scene_pane_ceaca",
       "title": {
-        "en": "Switch 4 changed"
+        "en": "Switch 4 changed",
+        "fr": "Interrupteur 4 modifié"
       },
       "args": [],
       "titleFormatted": {
-        "en": "Switch 4 changed"
+        "en": "Switch 4 changed",
+        "fr": "Interrupteur 4 modifié"
       }
     },
     {
@@ -132,61 +162,85 @@
     {
       "id": "sensor_climate_sensor_smart_smart_scene_pane_4d73e",
       "title": {
-        "en": "Set switch 1"
+        "en": "Set switch 1",
+        "fr": "Régler l'interrupteur 1"
       },
       "args": [
         {
           "type": "checkbox",
-          "name": "state"
+          "name": "state",
+          "title": {
+            "en": "State",
+            "fr": "État"
+          }
         }
       ],
       "titleFormatted": {
-        "en": "Set switch 1 [[state]]"
+        "en": "Set switch 1 [[state]]",
+        "fr": "Régler l'interrupteur 1 [[state]]"
       }
     },
     {
       "id": "sensor_climate_sensor_smart_smart_scene_pane_492ef",
       "title": {
-        "en": "Set switch 2"
+        "en": "Set switch 2",
+        "fr": "Régler l'interrupteur 2"
       },
       "args": [
         {
           "type": "checkbox",
-          "name": "state"
+          "name": "state",
+          "title": {
+            "en": "State",
+            "fr": "État"
+          }
         }
       ],
       "titleFormatted": {
-        "en": "Set switch 2 [[state]]"
+        "en": "Set switch 2 [[state]]",
+        "fr": "Régler l'interrupteur 2 [[state]]"
       }
     },
     {
       "id": "sensor_climate_sensor_smart_smart_scene_pane_e5876",
       "title": {
-        "en": "Set switch 3"
+        "en": "Set switch 3",
+        "fr": "Régler l'interrupteur 3"
       },
       "args": [
         {
           "type": "checkbox",
-          "name": "state"
+          "name": "state",
+          "title": {
+            "en": "State",
+            "fr": "État"
+          }
         }
       ],
       "titleFormatted": {
-        "en": "Set switch 3 [[state]]"
+        "en": "Set switch 3 [[state]]",
+        "fr": "Régler l'interrupteur 3 [[state]]"
       }
     },
     {
       "id": "sensor_climate_sensor_smart_smart_scene_pane_f1f68",
       "title": {
-        "en": "Set switch 4"
+        "en": "Set switch 4",
+        "fr": "Régler l'interrupteur 4"
       },
       "args": [
         {
           "type": "checkbox",
-          "name": "state"
+          "name": "state",
+          "title": {
+            "en": "State",
+            "fr": "État"
+          }
         }
       ],
       "titleFormatted": {
-        "en": "Set switch 4 [[state]]"
+        "en": "Set switch 4 [[state]]",
+        "fr": "Régler l'interrupteur 4 [[state]]"
       }
     }
   ],

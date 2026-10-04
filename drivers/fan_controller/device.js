@@ -60,9 +60,11 @@ class FanControllerDevice extends TuyaZigbeeDevice {
     const setSpeedCard = safeGetCard('action', 'fan_controller_set_speed');
     if (setSpeedCard) {
       setSpeedCard.registerRunListener(async (args) => {
+        // WHY: shared listener — target the Flow's device, not the last-registered one.
+        const dev = (args && args.device) || this;
         const speed = args.speed / 100;
-        await this['safeSetCapabilityValue']('dim', speed);
-        await this._setFanSpeed(speed);
+        await dev['safeSetCapabilityValue']('dim', speed);
+        await dev._setFanSpeed(speed);
         return true;
       });
     }
@@ -70,11 +72,12 @@ class FanControllerDevice extends TuyaZigbeeDevice {
     // Action: Increase fan speed
     const speedUpCard = safeGetCard('action', 'fan_controller_speed_up');
     if (speedUpCard) {
-      speedUpCard.registerRunListener(async () => {
-        const current = this.getCapabilityValue('dim') || 0;
+      speedUpCard.registerRunListener(async (args) => {
+        const dev = (args && args.device) || this;
+        const current = dev.getCapabilityValue('dim') || 0;
         const newSpeed = Math.min(1, current + 0.25);
-        await this['safeSetCapabilityValue']('dim', newSpeed);
-        await this._setFanSpeed(newSpeed);
+        await dev['safeSetCapabilityValue']('dim', newSpeed);
+        await dev._setFanSpeed(newSpeed);
         return true;
       });
     }
@@ -82,11 +85,12 @@ class FanControllerDevice extends TuyaZigbeeDevice {
     // Action: Decrease fan speed
     const speedDownCard = safeGetCard('action', 'fan_controller_speed_down');
     if (speedDownCard) {
-      speedDownCard.registerRunListener(async () => {
-        const current = this.getCapabilityValue('dim') || 0;
+      speedDownCard.registerRunListener(async (args) => {
+        const dev = (args && args.device) || this;
+        const current = dev.getCapabilityValue('dim') || 0;
         const newSpeed = Math.max(0, current - 0.25);
-        await this['safeSetCapabilityValue']('dim', newSpeed);
-        await this._setFanSpeed(newSpeed);
+        await dev['safeSetCapabilityValue']('dim', newSpeed);
+        await dev._setFanSpeed(newSpeed);
         return true;
       });
     }
@@ -95,7 +99,7 @@ class FanControllerDevice extends TuyaZigbeeDevice {
     const isOnCard = safeGetCard('condition', 'fan_controller_is_on');
     if (isOnCard) {
       isOnCard.registerRunListener((args) => {
-        return this.getCapabilityValue('onoff') === true;
+        return ((args && args.device) || this).getCapabilityValue('onoff') === true;
       });
     }
 
@@ -103,7 +107,7 @@ class FanControllerDevice extends TuyaZigbeeDevice {
     const speedIsCard = safeGetCard('condition', 'fan_controller_speed_is');
     if (speedIsCard) {
       speedIsCard.registerRunListener(async (args) => {
-        const current = (this.getCapabilityValue('dim') || 0) * 100;
+        const current = (((args && args.device) || this).getCapabilityValue('dim') || 0) * 100;
         return Math.abs(current - args.speed) < 5;
       });
     }

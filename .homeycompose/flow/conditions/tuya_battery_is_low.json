@@ -16,5 +16,9 @@
       "type": "device",
       "filter": "capabilities=measure_battery"
     }
-  ]
+  ],
+  "titleFormatted": {
+    "en": "Battery !{{is|is not}} low (app) ([[device]])",
+    "fr": "Batterie !{{est|n'est pas}} faible (app) ([[device]])"
+  }
 }

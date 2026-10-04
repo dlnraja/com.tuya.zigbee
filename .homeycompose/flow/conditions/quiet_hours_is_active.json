@@ -8,14 +8,32 @@
     {
       "type": "text",
       "name": "quiet_start",
-      "title": { "en": "Start (HH:MM)", "fr": "Début (HH:MM)" },
-      "value": "22:00"
+      "title": {
+        "en": "Start (HH:MM)",
+        "fr": "Début (HH:MM)"
+      },
+      "value": "22:00",
+      "placeholder": {
+        "en": "Start (HH:MM)",
+        "fr": "Début (HH:MM)"
+      }
     },
     {
       "type": "text",
       "name": "quiet_end",
-      "title": { "en": "End (HH:MM)", "fr": "Fin (HH:MM)" },
-      "value": "07:00"
+      "title": {
+        "en": "End (HH:MM)",
+        "fr": "Fin (HH:MM)"
+      },
+      "value": "07:00",
+      "placeholder": {
+        "en": "End (HH:MM)",
+        "fr": "Fin (HH:MM)"
+      }
     }
-  ]
+  ],
+  "titleFormatted": {
+    "en": "Quiet Hours are active [[quiet_start]] [[quiet_end]]",
+    "fr": "Heures calmes actives [[quiet_start]] [[quiet_end]]"
+  }
 }

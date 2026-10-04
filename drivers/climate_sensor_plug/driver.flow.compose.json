@@ -132,7 +132,8 @@
           "name": "power",
           "type": "number",
           "title": {
-            "en": "Power (W)"
+            "en": "Power (W)",
+            "fr": "Puissance (W)"
           },
           "example": 150
         }
@@ -476,11 +477,23 @@
                 "fr": "Toujours éteint",
                 "nl": "Altijd uit",
                 "de": "Immer aus"
+              },
+              "label": {
+                "en": "Always Off",
+                "fr": "Toujours éteint",
+                "nl": "Altijd uit",
+                "de": "Immer aus"
               }
             },
             {
               "id": "relay",
               "title": {
+                "en": "Follow Relay",
+                "fr": "Suivre relais",
+                "nl": "Volg relais",
+                "de": "Relais folgen"
+              },
+              "label": {
                 "en": "Follow Relay",
                 "fr": "Suivre relais",
                 "nl": "Volg relais",
@@ -494,11 +507,23 @@
                 "fr": "Inversé",
                 "nl": "Omgekeerd",
                 "de": "Invertiert"
+              },
+              "label": {
+                "en": "Inverted",
+                "fr": "Inversé",
+                "nl": "Omgekeerd",
+                "de": "Invertiert"
               }
             },
             {
               "id": "always_on",
               "title": {
+                "en": "Always On",
+                "fr": "Toujours allumé",
+                "nl": "Altijd aan",
+                "de": "Immer an"
+              },
+              "label": {
                 "en": "Always On",
                 "fr": "Toujours allumé",
                 "nl": "Altijd aan",
@@ -534,12 +559,19 @@
           "type": "dropdown",
           "name": "behavior",
           "title": {
-            "en": "Behavior"
+            "en": "Behavior",
+            "fr": "Comportement"
           },
           "values": [
             {
               "id": "off",
               "title": {
+                "en": "Start OFF",
+                "fr": "Démarrer éteint",
+                "nl": "Start UIT",
+                "de": "Start AUS"
+              },
+              "label": {
                 "en": "Start OFF",
                 "fr": "Démarrer éteint",
                 "nl": "Start UIT",
@@ -553,11 +585,23 @@
                 "fr": "Démarrer allumé",
                 "nl": "Start AAN",
                 "de": "Start EIN"
+              },
+              "label": {
+                "en": "Start ON",
+                "fr": "Démarrer allumé",
+                "nl": "Start AAN",
+                "de": "Start EIN"
               }
             },
             {
               "id": "memory",
               "title": {
+                "en": "Remember state",
+                "fr": "Mémoriser état",
+                "nl": "Onthoud staat",
+                "de": "Zustand merken"
+              },
+              "label": {
                 "en": "Remember state",
                 "fr": "Mémoriser état",
                 "nl": "Onthoud staat",

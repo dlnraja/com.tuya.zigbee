@@ -27,16 +27,17 @@ class WiFiHeaterDevice extends TuyaLocalDevice {
     const getCondition = (id) => { try { return cf.getConditionCard(id); } catch (e) { return null; } };
     const getAction = (id) => { try { return cf.getActionCard(id); } catch (e) { return null; } };
 
-    getCondition('wifi_heater_is_heating')?.registerRunListener(async () => this.getCapabilityValue('onoff') === true);
-    getCondition('wifi_heater_mode_is')?.registerRunListener(async (a) => this.getCapabilityValue('wifi_heater_mode') === a.mode);
+    // WHY: listener is shared by all devices of this driver (last registration wins) — act on the Flow's device, not the registering one.
+    getCondition('wifi_heater_is_heating')?.registerRunListener(async (a) => ((a && a.device) || this).getCapabilityValue('onoff') === true);
+    getCondition('wifi_heater_mode_is')?.registerRunListener(async (a) => ((a && a.device) || this).getCapabilityValue('wifi_heater_mode') === a.mode);
     
     getAction('wifi_heater_set_mode')?.registerRunListener(async (a ) => { 
       const val = { manual: 0, program: 1, eco: 2 }[a.mode] ?? 0;
-      await this._client?.setDP('4', val);
+      await ((a && a.device) || this)._client?.setDP('4', val);
       });
     
     getAction('wifi_heater_set_temperature')?.registerRunListener(async (a ) => { 
-      await this._client?.setDP('2', Math.round(a.temperature));
+      await ((a && a.device) || this)._client?.setDP('2', Math.round(a.temperature));
       });
   }
 

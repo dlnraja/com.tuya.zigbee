@@ -8,7 +8,8 @@
   },
   "hint": {
     "en": "Set a capability value across all devices in a zone. Inspired by Device Capabilities app.",
-    "nl": "Stel een capaciteitswaarde in voor alle apparaten in een zone. Geinspireerd door Device Capabilities app."
+    "nl": "Stel een capaciteitswaarde in voor alle apparaten in een zone. Geinspireerd door Device Capabilities app.",
+    "fr": "Définir la valeur d'une capacité sur tous les appareils d'une zone. Inspiré de l'app Device Capabilities."
   },
   "args": [
     {
@@ -17,6 +18,10 @@
       "title": {
         "en": "Zone",
         "nl": "Zone"
+      },
+      "placeholder": {
+        "en": "Search...",
+        "fr": "Rechercher..."
       }
     },
     {
@@ -24,7 +29,8 @@
       "type": "text",
       "title": {
         "en": "Capability",
-        "nl": "Capaciteit"
+        "nl": "Capaciteit",
+        "fr": "Capacité"
       },
       "placeholder": {
         "en": "e.g. onoff, dim, windowcoverings_set",
@@ -36,7 +42,8 @@
       "type": "text",
       "title": {
         "en": "Value",
-        "nl": "Waarde"
+        "nl": "Waarde",
+        "fr": "Valeur"
       },
       "placeholder": {
         "en": "e.g. true, false, 0.5",
@@ -48,7 +55,8 @@
       "type": "checkbox",
       "title": {
         "en": "Include subzones",
-        "nl": "Inclusief subzones"
+        "nl": "Inclusief subzones",
+        "fr": "Inclure les sous-zones"
       }
     }
   ],

@@ -26,7 +26,11 @@
       "min": 1,
       "max": 86400,
       "step": 1,
-      "value": 60
+      "value": 60,
+      "placeholder": {
+        "en": "1–86400",
+        "fr": "1–86400"
+      }
     },
     {
       "name": "gang",
@@ -38,7 +42,15 @@
       "min": 1,
       "max": 4,
       "step": 1,
-      "value": 1
+      "value": 1,
+      "placeholder": {
+        "en": "1–4",
+        "fr": "1–4"
+      }
     }
-  ]
+  ],
+  "titleFormatted": {
+    "en": "Countdown to OFF [[duration_seconds]] [[gang]] ([[device]])",
+    "fr": "Compte à rebours avant extinction [[duration_seconds]] [[gang]] ([[device]])"
+  }
 }

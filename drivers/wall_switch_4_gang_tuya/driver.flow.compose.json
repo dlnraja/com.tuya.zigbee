@@ -471,10 +471,44 @@
           "name": "mode",
           "type": "dropdown",
           "values": [
-            { "id": "off", "title": { "en": "Off", "fr": "Éteint" } },
-            { "id": "normal", "title": { "en": "Normal", "fr": "Normal" } },
-            { "id": "inverted", "title": { "en": "Inverted", "fr": "Inversé" } }
-          ]
+            {
+              "id": "off",
+              "title": {
+                "en": "Off",
+                "fr": "Éteint"
+              },
+              "label": {
+                "en": "Off",
+                "fr": "Éteint"
+              }
+            },
+            {
+              "id": "normal",
+              "title": {
+                "en": "Normal",
+                "fr": "Normal"
+              },
+              "label": {
+                "en": "Normal",
+                "fr": "Normal"
+              }
+            },
+            {
+              "id": "inverted",
+              "title": {
+                "en": "Inverted",
+                "fr": "Inversé"
+              },
+              "label": {
+                "en": "Inverted",
+                "fr": "Inversé"
+              }
+            }
+          ],
+          "title": {
+            "en": "Mode",
+            "fr": "Mode"
+          }
         }
       ],
       "titleFormatted": {
@@ -493,10 +527,41 @@
           "name": "mode",
           "type": "dropdown",
           "values": [
-            { "id": "off", "title": { "en": "Off" } },
-            { "id": "on", "title": { "en": "On" } },
-            { "id": "previous", "title": { "en": "Previous" } }
-          ]
+            {
+              "id": "off",
+              "title": {
+                "en": "Off"
+              },
+              "label": {
+                "en": "Off",
+                "fr": "Éteint"
+              }
+            },
+            {
+              "id": "on",
+              "title": {
+                "en": "On"
+              },
+              "label": {
+                "en": "On",
+                "fr": "Allumé"
+              }
+            },
+            {
+              "id": "previous",
+              "title": {
+                "en": "Previous"
+              },
+              "label": {
+                "en": "Previous",
+                "fr": "Précédent"
+              }
+            }
+          ],
+          "title": {
+            "en": "Mode",
+            "fr": "Mode"
+          }
         }
       ],
       "titleFormatted": {
@@ -514,7 +579,10 @@
         {
           "name": "locked",
           "type": "checkbox",
-          "title": { "en": "Locked", "fr": "Verrouillé" }
+          "title": {
+            "en": "Locked",
+            "fr": "Verrouillé"
+          }
         }
       ],
       "titleFormatted": {
@@ -533,16 +601,59 @@
           "name": "gang",
           "type": "dropdown",
           "values": [
-            { "id": "1", "title": { "en": "Gang 1" } },
-            { "id": "2", "title": { "en": "Gang 2" } },
-            { "id": "3", "title": { "en": "Gang 3" } },
-            { "id": "4", "title": { "en": "Gang 4" } }
-          ]
+            {
+              "id": "1",
+              "title": {
+                "en": "Gang 1"
+              },
+              "label": {
+                "en": "Gang 1",
+                "fr": "Voie 1"
+              }
+            },
+            {
+              "id": "2",
+              "title": {
+                "en": "Gang 2"
+              },
+              "label": {
+                "en": "Gang 2",
+                "fr": "Voie 2"
+              }
+            },
+            {
+              "id": "3",
+              "title": {
+                "en": "Gang 3"
+              },
+              "label": {
+                "en": "Gang 3",
+                "fr": "Voie 3"
+              }
+            },
+            {
+              "id": "4",
+              "title": {
+                "en": "Gang 4"
+              },
+              "label": {
+                "en": "Gang 4",
+                "fr": "Voie 4"
+              }
+            }
+          ],
+          "title": {
+            "en": "Gang",
+            "fr": "Voie"
+          }
         },
         {
           "name": "seconds",
           "type": "number",
-          "placeholder": { "en": "Seconds (0–86400)", "fr": "Secondes (0–86400)" },
+          "placeholder": {
+            "en": "Seconds (0–86400)",
+            "fr": "Secondes (0–86400)"
+          },
           "min": 0,
           "max": 86400
         }
@@ -562,7 +673,10 @@
         {
           "name": "on",
           "type": "checkbox",
-          "title": { "en": "On", "fr": "Allumé" }
+          "title": {
+            "en": "On",
+            "fr": "Allumé"
+          }
         }
       ],
       "titleFormatted": {

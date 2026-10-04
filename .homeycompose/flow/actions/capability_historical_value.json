@@ -46,7 +46,11 @@
       },
       "min": 0,
       "max": 1440,
-      "step": 1
+      "step": 1,
+      "placeholder": {
+        "en": "0–1440",
+        "fr": "0–1440"
+      }
     }
   ],
   "tokens": [
@@ -60,5 +64,9 @@
       },
       "example": "21.5"
     }
-  ]
+  ],
+  "titleFormatted": {
+    "en": "Retrieve historical capability value [[capability]] [[minutes_ago]] ([[device]])",
+    "fr": "Récupérer la valeur historique de la capacité [[capability]] [[minutes_ago]] ([[device]])"
+  }
 }
