@@ -1,0 +1,34 @@
+{
+  "id": "cover_identify",
+  "title": {
+    "en": "Identify cover",
+    "fr": "Identifier le volet",
+    "nl": "Rolluik identificeren",
+    "de": "Rollladen identifizieren"
+  },
+  "hint": {
+    "en": "Makes the motor jog or blink so you can tell which cover it is. Only works for Zigbee devices exposing the Identify cluster (0x0003); others report an error.",
+    "fr": "Fait bouger ou clignoter le moteur pour le reconnaître. Fonctionne seulement avec les appareils Zigbee qui exposent le cluster Identify (0x0003) ; les autres renvoient une erreur."
+  },
+  "args": [
+    {
+      "type": "device",
+      "name": "cover",
+      "filter": "capabilities=windowcoverings_set",
+      "title": { "en": "Cover", "fr": "Volet" }
+    },
+    {
+      "type": "number",
+      "name": "seconds",
+      "min": 1,
+      "max": 60,
+      "step": 1,
+      "placeholder": { "en": "5", "fr": "5" },
+      "title": { "en": "Duration (s)", "fr": "Durée (s)" }
+    }
+  ],
+  "titleFormatted": {
+    "en": "Identify [[cover]] for [[seconds]] s",
+    "fr": "Identifier [[cover]] pendant [[seconds]] s"
+  }
+}
