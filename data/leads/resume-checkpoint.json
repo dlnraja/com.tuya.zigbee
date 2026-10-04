@@ -89,7 +89,7 @@
   },
   "master_queue": {
     "note": "Single master checklist of ALL user requests since the start. Daily resumption reads this FIRST. Tick (verified) only after verification.",
-    "updated": "2026-10-04T07:55+02:00",
+    "updated": "2026-10-04T08:20+02:00",
     "items": [
       {
         "id": 1,
@@ -879,7 +879,7 @@
         "id": 124,
         "item": "Gledopto GL-SPI-206P (_TZE204_8fffc3kb, _TZE284_gt5al3bl) exact driver led_controller_spi_tuya (DP61 colour frame); switch_1gang keeps couples (reviewed exception)",
         "status": "done",
-        "evidence": "test/gledopto-spi.test.js; master 3c6cb2a480, stable 1c1cf1a16a, bastien e27abb3eec",
+        "evidence": "test/gledopto-spi.test.js; master 3c6cb2a480, stable 1c1cf1a16a, bastien e27abb3eec | sacred-keep pins added on master ed57bbae37 (root app.json 9.0.1331 now carries the driver); stable/bastien root app.json still lacks it",
         "updated": "2026-10-04"
       },
       {
@@ -924,8 +924,8 @@
       }
     ],
     "next": [
+      "master: if 37180863734 ends without Test, dispatch draft-to-test branch=master; check HOMEY_PAT validity (wait-draft list 401)",
       "verify master 37180863734 reaches Test (draft-to-test branch=master if draft stuck)",
-      "sacred pins for led_controller_spi_tuya / switch_presence_tuya / panel_switch_cover_tuya / sound_sensor_tuya once root app.json carries them",
       "#44 85 unrouted pairs (file on user PC) + diagnostic reports #2092/#2093/#2134",
       "#45 air_purifier_dimmer trigger id prefix fix (candidate)",
       "#46 bleed only if real collision",
@@ -1131,6 +1131,11 @@
         "at": "2026-10-04T07:55+02:00",
         "branch": "master",
         "note": "37178684262/37179604880/37180219571/37180572285 cancelled (superseded, Athom draft processing slow); 37180863734 (0b5ea16442, contains all changes) in progress; Test page 9.0.1330"
+      },
+      {
+        "at": "2026-10-04T08:20+02:00",
+        "branch": "master",
+        "note": "37180863734 (v9.0.1331, 0b5ea16442): Athom processing_failed build #3442, workflow re-uploading (retry 1/2); wait-draft builds list fails \"The provided token is invalid\" (HOMEY_PAT for builds API); Test page 9.0.1330"
       }
     ],
     "rules_reporting": "Every report includes a French 'Découvertes' section (source link + author, mechanism/symptom, what we did or why not); append to docs/progress/DISCOVERIES.md"
