@@ -1,0 +1,59 @@
+{
+  "manufacturerName": "_TZ3000_yj6k7vfo",
+  "productId": "TS0041",
+  "source": "pc-harvest-r2 (normalized interview facts; origins: Homey forum, GitHub issues, user diagnostics)",
+  "interviewsMerged": 1,
+  "powerSource": null,
+  "firmware": {
+    "swBuildId": "500+TZSKT21AD101",
+    "appVersion": null,
+    "hwVersion": null,
+    "dateCode": null,
+    "stackVersion": null
+  },
+  "endpoints": {
+    "1": {
+      "inputClusters": [
+        0,
+        1,
+        6,
+        57344
+      ],
+      "outputClusters": [
+        10,
+        25
+      ]
+    },
+    "2": {
+      "inputClusters": [
+        1,
+        6
+      ],
+      "outputClusters": []
+    },
+    "3": {
+      "inputClusters": [
+        1,
+        6
+      ],
+      "outputClusters": []
+    },
+    "4": {
+      "inputClusters": [
+        1,
+        6
+      ],
+      "outputClusters": []
+    }
+  },
+  "inputClusters": [
+    0,
+    1,
+    6,
+    57344
+  ],
+  "outputClusters": [
+    10,
+    25
+  ]
+}

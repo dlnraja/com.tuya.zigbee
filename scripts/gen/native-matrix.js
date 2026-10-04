@@ -27,11 +27,20 @@ if (fs.existsSync(capDir)) {
     }
   }
 }
+// PC r2 / PCr2-4: names for observed non-native clusters (facts from interviews; not used for matching).
+const OBSERVED_NAMES = {
+  0x0021: 'Green Power proxy (ZCL standard; not in zigbee-clusters 2.6.0)',
+  0xFC00: 'Philips/Signify manufacturer-specific (Hue buttons: RWL022, RDM001)',
+  0xFC57: 'SONOFF manufacturer-specific (MINI-ZBRBS)',
+  0xFC01: 'manufacturer-specific (seen on Zbeacon TS0505B)',
+  0xFC03: 'manufacturer-specific (seen on Zbeacon TS0505B)',
+  0x1888: 'unknown (seen on Zbeacon TS0001)',
+};
 const touch = (id) => {
   const k = hex(id);
   if (!clusters[k]) {
     const priv = NON_NATIVE_FIXED[id];
-    clusters[k] = { id: Number(id), name: priv || (id >= 0xFC00 ? 'manufacturer-specific' : 'unknown'), native: false, source: priv ? 'tuya' : 'observed', capabilities: [], interviews: 0, drivers: 0 };
+    clusters[k] = { id: Number(id), name: priv || OBSERVED_NAMES[id] || (id >= 0xFC00 ? 'manufacturer-specific' : 'unknown'), native: false, source: priv ? 'tuya' : 'observed', capabilities: [], interviews: 0, drivers: 0 };
   }
   return clusters[k];
 };
