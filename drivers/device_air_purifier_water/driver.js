@@ -1,8 +1,10 @@
 'use strict';
 
-const Homey = require('homey');
+const { Driver } = require('homey');
 
-class WaterTankMonitorDriver extends Homey {
+// Extending the `homey` module object itself threw "Class extends value is not a constructor",
+// so this driver could never start on a Homey.
+class WaterTankMonitorDriver extends Driver {
   getDeviceById(id) {
     try {
       return super.getDeviceById(id);
