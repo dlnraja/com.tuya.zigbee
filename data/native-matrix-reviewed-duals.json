@@ -143,6 +143,28 @@
    "source": "zigbee-herdsman-converters src/devices/tuya.ts TS011F_2_gang_wall",
    "date": "2026-10-04",
    "reviewed_by": "user decision 2026-10-04 (executor-flowport research)"
+  },
+  {
+   "couple": "_TZE204_8fffc3kb|TS0601",
+   "drivers": [
+    "led_controller_spi_tuya",
+    "switch_1gang"
+   ],
+   "reason": "SPI pixel LED controller misfiled in a 1-gang switch driver; exact driver added (DP61 colour frame), old couple kept (never remove).",
+   "source": "zigbee-herdsman-converters src/devices/gledopto.ts GL-SPI-206P",
+   "date": "2026-10-04",
+   "reviewed_by": "user decision 2026-10-04 06:49 (executor-flowport research)"
+  },
+  {
+   "couple": "_TZE284_gt5al3bl|TS0601",
+   "drivers": [
+    "led_controller_spi_tuya",
+    "switch_1gang"
+   ],
+   "reason": "SPI pixel LED controller misfiled in a 1-gang switch driver; exact driver added (DP61 colour frame), old couple kept (never remove).",
+   "source": "zigbee-herdsman-converters src/devices/gledopto.ts GL-SPI-206P",
+   "date": "2026-10-04",
+   "reviewed_by": "user decision 2026-10-04 06:49 (executor-flowport research)"
   }
  ]
 }
