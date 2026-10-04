@@ -938,6 +938,14 @@
         "build": "#275",
         "result": "draft created; promotion to Test not confirmed after 10 polls (no failure detail from Athom API)",
         "at": "2026-10-04 05:33 Paris"
+      },
+      {
+        "branch": "master",
+        "run": 37174477529,
+        "version": "9.0.1327",
+        "builds": "#3433 failed (socket hang up) -> re-upload #3434 on Test; 9.0.1326 also reached Test as #3432 (covers run 37173938808)",
+        "result": "Test channel OK via re-upload loop",
+        "at": "2026-10-04 05:43 Paris"
       }
     ],
     "rules_reporting": "Every report includes a French 'Découvertes' section (source link + author, mechanism/symptom, what we did or why not); append to docs/progress/DISCOVERIES.md"
