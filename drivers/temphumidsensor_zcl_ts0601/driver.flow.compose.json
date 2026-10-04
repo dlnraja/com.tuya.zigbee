@@ -1,5 +1,29 @@
 {
-  "triggers": [],
+  "triggers": [
+    {
+      "id": "temphumidsensor_zcl_ts0601_temperature_changed",
+      "title": {
+        "en": "Temperature changed",
+        "fr": "Température changée"
+      },
+      "tokens": [
+        {
+          "name": "temperature",
+          "type": "number",
+          "title": {
+            "en": "Temperature (°C)",
+            "fr": "Température (°C)"
+          },
+          "example": 22.5
+        }
+      ],
+      "args": [],
+      "titleFormatted": {
+        "en": "Temperature changed to {temperature}°C",
+        "fr": "Température {temperature}°C"
+      }
+    }
+  ],
   "conditions": [],
   "actions": []
 }
