@@ -3,7 +3,7 @@
   "name": {
     "en": "2 Gang Dimmer Module"
   },
-  "class": "socket",
+  "class": "light",
   "platforms": [
     "local"
   ],
@@ -188,7 +188,7 @@
     },
     "devices": {
       "secondGang": {
-        "class": "socket",
+        "class": "light",
         "capabilities": [
           "onoff",
           "dim"
