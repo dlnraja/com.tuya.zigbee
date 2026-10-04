@@ -164,6 +164,11 @@ v9.0.381: chore: alignement version 9.0.381 + changelog [skip ci]
 
 ---
 
+## [Unreleased]
+
+- Dimmers (2-gang dimmer module, dimmer wall switch, wall dimmer 1-gang) now use the Light device type, so the light ring and voice assistants treat them as lights. Paired devices switch once automatically; the device icon may change. Capabilities, IDs and flows are unchanged.
+---
+
 ## [9.0.380] - 2026-07-30
 
 ### Added
