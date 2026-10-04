@@ -89,7 +89,7 @@
   },
   "master_queue": {
     "note": "Single master checklist of ALL user requests since the start. Daily resumption reads this FIRST. Tick (verified) only after verification.",
-    "updated": "2026-10-04T08:20+02:00",
+    "updated": "2026-10-04T08:22+02:00",
     "items": [
       {
         "id": 1,
@@ -363,7 +363,7 @@
         "id": 45,
         "item": "PCr2 Kimi backlog",
         "status": "partial",
-        "evidence": "audited: ULTIMATE_CHECK.js exists; 21 pid-only catch-all drivers have empty manufacturerName (not filled without per-couple sources); air_purifier_dimmer driver.js registers trigger ids with double prefix (air_purifier_dimmer_dimmer_wall_1gang_*) vs compose ids -> harmless log noise, candidate fix; flow-coherence-audit 13 orphan-token lines remain",
+        "evidence": "audited: ULTIMATE_CHECK.js exists; 21 pid-only catch-all drivers have empty manufacturerName (not filled without per-couple sources); air_purifier_dimmer driver.js registers trigger ids with double prefix (air_purifier_dimmer_dimmer_wall_1gang_*) vs compose ids -> harmless log noise, candidate fix; flow-coherence-audit 13 orphan-token lines remain | air_purifier_dimmer trigger ids fixed on all 3 (master c3fa126e7b, stable fc17dd34ed, bastien e10188f133) + test",
         "updated": "2026-10-04"
       },
       {
@@ -927,7 +927,6 @@
       "master: if 37180863734 ends without Test, dispatch draft-to-test branch=master; check HOMEY_PAT validity (wait-draft list 401)",
       "verify master 37180863734 reaches Test (draft-to-test branch=master if draft stuck)",
       "#44 85 unrouted pairs (file on user PC) + diagnostic reports #2092/#2093/#2134",
-      "#45 air_purifier_dimmer trigger id prefix fix (candidate)",
       "#46 bleed only if real collision",
       "#99 triage CLI over source-proposals",
       "spec 010",
@@ -1136,6 +1135,11 @@
         "at": "2026-10-04T08:20+02:00",
         "branch": "master",
         "note": "37180863734 (v9.0.1331, 0b5ea16442): Athom processing_failed build #3442, workflow re-uploading (retry 1/2); wait-draft builds list fails \"The provided token is invalid\" (HOMEY_PAT for builds API); Test page 9.0.1330"
+      },
+      {
+        "at": "2026-10-04T08:22+02:00",
+        "branch": "stable-v5",
+        "note": "publish-stable 37182407962 dispatched on 7e549c0640 (ships backports 6af311d998 + #95 + PCr2; 5.12.366 did not include them)"
       }
     ],
     "rules_reporting": "Every report includes a French 'Découvertes' section (source link + author, mechanism/symptom, what we did or why not); append to docs/progress/DISCOVERIES.md"
