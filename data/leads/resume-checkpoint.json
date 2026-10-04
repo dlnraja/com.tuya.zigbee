@@ -89,7 +89,7 @@
   },
   "master_queue": {
     "note": "Single master checklist of ALL user requests since the start. Daily resumption reads this FIRST. Tick (verified) only after verification.",
-    "updated": "2026-10-04 06:50 Paris",
+    "updated": "2026-10-04 07:20 Paris",
     "items": [
       {
         "id": 1,
@@ -634,8 +634,9 @@
       {
         "id": 91,
         "item": "PCr2-1 remaining: HEIMAN RC-EF-3.0, iHorn LH02121, SONOFF MINI-ZBRBS, Signify RDM001 exact drivers; eWeLight TS0502B needs real interview",
-        "status": "pending",
-        "evidence": ""
+        "status": "in_progress",
+        "evidence": "",
+        "progress_2026_10_04": "SONOFF MINI-ZBRBS -> curtain_module and HEIMAN RC-EF-3.0 -> button_emergency_sos landed on 3 branches (emergency only; arm/disarm actions not mapped yet). Signify RDM001 needs the Philips manufacturer cluster (left for the Hue app); iHorn LH02121 has no source in ZHC -> deferred."
       },
       {
         "id": 92,
@@ -863,8 +864,24 @@
       {
         "id": 123,
         "item": "Pre-existing fp-collision-check NEW COLLISION x20 (curtain_motor vs curtain_motor_shutter, pir_sensor_2 vs sensor_motion_presence) on origin/master — needs review/reviewed-duals or placement",
-        "status": "pending",
+        "status": "done",
+        "updated": "2026-10-04",
+        "evidence": "false alarm: the 20 NEW lines came from running fp-collision-check without --baseline; with .github/fingerprint-collision-baseline.json (as CI runs it) there are 0 new collisions. The couples are ZHC TS130F curtain switches (LoraTap SC500ZB-v4, Zemismart ZN-LC1E, Danor SK-Z802C-US, BSEED EC-GL86ZPCRS31) and Tuya HW500A PIR; both drivers keep them (no removal)."
+      },
+      {
+        "id": 124,
+        "item": "Gledopto GL-SPI-206P (_TZE204_8fffc3kb, _TZE284_gt5al3bl) exact driver led_controller_spi_tuya (DP61 colour frame); switch_1gang keeps couples (reviewed exception)",
+        "status": "done",
+        "evidence": "test/gledopto-spi.test.js; master 3c6cb2a480, stable 1c1cf1a16a, bastien e27abb3eec",
         "updated": "2026-10-04"
+      },
+      {
+        "id": 125,
+        "item": "Safe-math rewrite damage scan + repair (33 files: 22 time-sync offsets, 5 ZCL TRV setpoint/temperature, RGB/dim decodes, eWeLink brightness, radar battery, ColorConverter; bastien wifi_led_strip)",
+        "status": "done",
+        "evidence": "test/safe-math-damage.test.js (repo-wide regression check)",
+        "updated": "2026-10-04",
+        "open": "suspicious, not changed (needs device evidence): plug_smart-family rmsCurrent*1000 feeding meter_power and voltage_scale*0.1 double scaling; generic_tuya DP247 voltage *1000"
       }
     ],
     "next": [
@@ -1039,6 +1056,13 @@
         "version": "5.12.365",
         "result": "run success (draft + promote job done); public Test page still shows 5.12.364 at 06:50 — recheck",
         "at": "2026-10-04 06:44 Paris"
+      },
+      {
+        "branch": "stable-v5",
+        "version": "5.12.365",
+        "build": "#277",
+        "result": "draft only; public Test page still 5.12.364 at 07:00 — next grouped publish",
+        "at": "2026-10-04 07:00 Paris"
       }
     ],
     "rules_reporting": "Every report includes a French 'Découvertes' section (source link + author, mechanism/symptom, what we did or why not); append to docs/progress/DISCOVERIES.md"
