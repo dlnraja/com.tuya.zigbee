@@ -25,10 +25,7 @@ function parseZ2M(text) {
   const src = String(text || '');
   const defs = [];
   // Split on definition starts: every `fingerprint:` begins a definition.
-  const starts = [];
-  const re = /fingerprint\s*:/g;
-  let m;
-  while ((m = re.exec(src))) {starts.push(m.index);}
+  const starts = [...src.matchAll(/fingerprint\s*:/g)].map((x) => x.index);
   for (let i = 0; i < starts.length; i++) {
     const chunk = src.slice(starts[i], i + 1 < starts.length ? starts[i + 1] : src.length);
     const couples = [];
@@ -47,7 +44,7 @@ function parseZ2M(text) {
         dps.push({ dp: Number(d[1]), name: d[2] || null, converter: d[3] || null });
       }
     }
-    const pick = (k) => ((chunk.match(new RegExp(`${k}\\s*:\\s*["']([^"']+)["']`)) || [])[1] || null);
+    const pick = (k) => (chunk.match(new RegExp(`${k}\\s*:\\s*["']([^"']+)["']`)) || [])[1] || null;
     defs.push({ couples, dps, model: pick('model'), vendor: pick('vendor'), description: pick('description') });
   }
   return defs;
