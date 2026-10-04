@@ -75,3 +75,23 @@ Specs live in `specs/NNN-*/{spec,plan,tasks}.md`. This file overrides any spec/p
   in `docs/rules/` and the ledger. Phantom cross-product couples are left alone unless they
   actually collide or a user reports a conflict. Work frugally: a few couples per daily run,
   user-reported and source-backed couples first; cursor in `data/leads/resume-checkpoint.json`.
+- W5. Interviews are the MINIMUM baseline for pairing. Never degrade a driver or remove
+  capabilities because an interview shows less than what is implemented. Only
+  interview-observed clusters may be required for pairing; every extra DP, cluster or
+  capability is optional and complementary and must never block pairing. Enrichment is
+  additive only.
+- W6. Never degrade any driver. Every driver/device follows dynamic, self-adaptive enrichment:
+  capabilities, DPs and clusters are added at runtime when the device actually reports them
+  (additive, optional, never blocking pairing), and nothing that works today is ever removed.
+  This applies to all conflict (W4) and interview (W5) work: moving a couple is allowed only
+  when the old placement has no working couple or the new one is a strict superset in
+  behaviour; existing paired devices keep their driver.
+- W7. Polysemic DPs. When one DP number means different things per mfr, pid, variant or
+  firmware, the app adapts per device: variant profiles keyed by mfr+pid(+firmware), value
+  range/type detection and cross-validation with other DPs. No DP is ever neglected (unknown
+  ones are logged and learned), internal cross-checks are used when ambiguous, and fallbacks
+  are additive — never degrading a working mapping.
+- W8. Reuse our own tooling. The project's parsers, scrapers and scanners (scripts/*, tools/*,
+  .github/scripts/*) are inventoried; unused or broken ones are fixed or retired, and their
+  outputs feed the ledger and SSOT (docs, workflows, automations). Done frugally with
+  checkpoints.

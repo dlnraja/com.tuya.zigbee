@@ -1,6 +1,6 @@
 {
  "version": 1,
- "updated": "2026-10-04T00:52:32.442Z",
+ "updated": "2026-10-04T00:57:29.966Z",
  "checkpoints": {
   "resume": "data/leads/resume-checkpoint.json",
   "deepRead": "data/leads/deep-read-checkpoint.json",
@@ -9501,7 +9501,12 @@
    "kind": "issue",
    "state": "closed",
    "comments": 2,
-   "upstreamUpdatedAt": "2026-09-29T22:56:15Z"
+   "upstreamUpdatedAt": "2026-09-29T22:56:15Z",
+   "mailDate": "2026-09-30",
+   "mailEvents": [
+    "comment",
+    "close"
+   ]
   },
   "johan-issue:1001": {
    "status": "pending",
@@ -9550,7 +9555,12 @@
    "kind": "issue",
    "state": "closed",
    "comments": 2,
-   "upstreamUpdatedAt": "2026-10-01T11:06:27Z"
+   "upstreamUpdatedAt": "2026-10-01T11:06:27Z",
+   "mailDate": "2026-09-28",
+   "mailEvents": [
+    "comment",
+    "close"
+   ]
   },
   "johan-issue:1008": {
    "status": "done",
@@ -9561,14 +9571,24 @@
    "date": "2026-10-04",
    "note": "consolidated into #1113",
    "commit": "88b3584cf6",
-   "updatedAt": "2026-09-30T20:52:56Z"
+   "updatedAt": "2026-09-30T20:52:56Z",
+   "mailDate": "2026-09-30",
+   "mailEvents": [
+    "comment",
+    "close"
+   ]
   },
   "johan-issue:1009": {
    "status": "pending",
    "kind": "issue",
    "state": "closed",
    "comments": 8,
-   "upstreamUpdatedAt": "2026-09-29T19:48:56Z"
+   "upstreamUpdatedAt": "2026-09-29T19:48:56Z",
+   "mailDate": "2026-05-04",
+   "mailEvents": [
+    "comment",
+    "close"
+   ]
   },
   "johan-issue:101": {
    "status": "pending",
@@ -9596,49 +9616,81 @@
    "kind": "issue",
    "state": "closed",
    "comments": 5,
-   "upstreamUpdatedAt": "2026-09-28T16:56:29Z"
+   "upstreamUpdatedAt": "2026-09-28T16:56:29Z",
+   "mailDate": "2026-09-28",
+   "mailEvents": [
+    "comment",
+    "close"
+   ]
   },
   "johan-issue:1013": {
    "status": "pending",
    "kind": "issue",
    "state": "open",
    "comments": 5,
-   "upstreamUpdatedAt": "2026-10-03T07:57:21Z"
+   "upstreamUpdatedAt": "2026-10-03T07:57:21Z",
+   "mailDate": "2026-10-03",
+   "mailEvents": [
+    "comment",
+    "merge"
+   ]
   },
   "johan-issue:1014": {
    "status": "pending",
    "kind": "issue",
    "state": "closed",
    "comments": 1,
-   "upstreamUpdatedAt": "2026-10-02T19:58:08Z"
+   "upstreamUpdatedAt": "2026-10-02T19:58:08Z",
+   "mailDate": "2026-10-02",
+   "mailEvents": [
+    "comment",
+    "close"
+   ]
   },
   "johan-issue:1015": {
    "status": "pending",
    "kind": "issue",
    "state": "open",
    "comments": 3,
-   "upstreamUpdatedAt": "2026-09-28T15:53:51Z"
+   "upstreamUpdatedAt": "2026-09-28T15:53:51Z",
+   "mailDate": "2026-09-28",
+   "mailEvents": [
+    "comment"
+   ]
   },
   "johan-issue:1016": {
    "status": "pending",
    "kind": "issue",
    "state": "open",
    "comments": 1,
-   "upstreamUpdatedAt": "2026-10-02T20:16:52Z"
+   "upstreamUpdatedAt": "2026-10-02T20:16:52Z",
+   "mailDate": "2026-10-02",
+   "mailEvents": [
+    "comment"
+   ]
   },
   "johan-issue:1017": {
    "status": "pending",
    "kind": "pr",
    "state": "closed",
    "comments": 5,
-   "upstreamUpdatedAt": "2026-09-27T23:12:54Z"
+   "upstreamUpdatedAt": "2026-09-27T23:12:54Z",
+   "mailDate": "2026-09-28",
+   "mailEvents": [
+    "comment",
+    "close"
+   ]
   },
   "johan-issue:1018": {
    "status": "pending",
    "kind": "issue",
    "state": "open",
    "comments": 1,
-   "upstreamUpdatedAt": "2026-09-29T19:55:43Z"
+   "upstreamUpdatedAt": "2026-09-29T19:55:43Z",
+   "mailDate": "2026-09-29",
+   "mailEvents": [
+    "comment"
+   ]
   },
   "johan-issue:1019": {
    "status": "pending",
@@ -9659,21 +9711,35 @@
    "kind": "issue",
    "state": "closed",
    "comments": 2,
-   "upstreamUpdatedAt": "2026-09-28T15:52:41Z"
+   "upstreamUpdatedAt": "2026-09-28T15:52:41Z",
+   "mailDate": "2026-09-28",
+   "mailEvents": [
+    "comment",
+    "close"
+   ]
   },
   "johan-issue:1021": {
    "status": "pending",
    "kind": "issue",
    "state": "open",
    "comments": 3,
-   "upstreamUpdatedAt": "2026-09-30T20:53:21Z"
+   "upstreamUpdatedAt": "2026-09-30T20:53:21Z",
+   "mailDate": "2026-09-30",
+   "mailEvents": [
+    "comment"
+   ]
   },
   "johan-issue:1022": {
    "status": "pending",
    "kind": "issue",
    "state": "closed",
    "comments": 2,
-   "upstreamUpdatedAt": "2026-09-30T20:53:03Z"
+   "upstreamUpdatedAt": "2026-09-30T20:53:03Z",
+   "mailDate": "2026-09-30",
+   "mailEvents": [
+    "comment",
+    "close"
+   ]
   },
   "johan-issue:1023": {
    "status": "pending",
@@ -9687,14 +9753,24 @@
    "kind": "issue",
    "state": "closed",
    "comments": 2,
-   "upstreamUpdatedAt": "2026-10-01T11:06:23Z"
+   "upstreamUpdatedAt": "2026-10-01T11:06:23Z",
+   "mailDate": "2026-09-28",
+   "mailEvents": [
+    "comment",
+    "close"
+   ]
   },
   "johan-issue:1025": {
    "status": "pending",
    "kind": "issue",
    "state": "closed",
    "comments": 1,
-   "upstreamUpdatedAt": "2026-09-28T15:52:36Z"
+   "upstreamUpdatedAt": "2026-09-28T15:52:36Z",
+   "mailDate": "2026-09-28",
+   "mailEvents": [
+    "comment",
+    "close"
+   ]
   },
   "johan-issue:1026": {
    "status": "pending",
@@ -9715,7 +9791,12 @@
    "kind": "issue",
    "state": "closed",
    "comments": 1,
-   "upstreamUpdatedAt": "2026-10-01T16:09:52Z"
+   "upstreamUpdatedAt": "2026-10-01T16:09:52Z",
+   "mailDate": "2026-10-01",
+   "mailEvents": [
+    "comment",
+    "close"
+   ]
   },
   "johan-issue:1029": {
    "status": "pending",
@@ -9736,28 +9817,48 @@
    "kind": "issue",
    "state": "closed",
    "comments": 2,
-   "upstreamUpdatedAt": "2026-10-02T20:21:30Z"
+   "upstreamUpdatedAt": "2026-10-02T20:21:30Z",
+   "mailDate": "2026-10-02",
+   "mailEvents": [
+    "comment",
+    "close"
+   ]
   },
   "johan-issue:1031": {
    "status": "pending",
    "kind": "issue",
    "state": "closed",
    "comments": 1,
-   "upstreamUpdatedAt": "2026-10-02T21:57:37Z"
+   "upstreamUpdatedAt": "2026-10-02T21:57:37Z",
+   "mailDate": "2026-10-02",
+   "mailEvents": [
+    "comment",
+    "close"
+   ]
   },
   "johan-issue:1032": {
    "status": "pending",
    "kind": "issue",
    "state": "closed",
    "comments": 1,
-   "upstreamUpdatedAt": "2026-09-28T16:12:08Z"
+   "upstreamUpdatedAt": "2026-09-28T16:12:08Z",
+   "mailDate": "2026-09-28",
+   "mailEvents": [
+    "comment",
+    "close"
+   ]
   },
   "johan-issue:1033": {
    "status": "pending",
    "kind": "issue",
    "state": "closed",
    "comments": 2,
-   "upstreamUpdatedAt": "2026-09-30T20:47:28Z"
+   "upstreamUpdatedAt": "2026-09-30T20:47:28Z",
+   "mailDate": "2026-09-30",
+   "mailEvents": [
+    "comment",
+    "close"
+   ]
   },
   "johan-issue:1034": {
    "status": "pending",
@@ -9771,7 +9872,11 @@
    "kind": "issue",
    "state": "open",
    "comments": 2,
-   "upstreamUpdatedAt": "2026-10-03T07:45:12Z"
+   "upstreamUpdatedAt": "2026-10-03T07:45:12Z",
+   "mailDate": "2026-10-03",
+   "mailEvents": [
+    "comment"
+   ]
   },
   "johan-issue:1036": {
    "status": "pending",
@@ -9785,21 +9890,36 @@
    "kind": "issue",
    "state": "closed",
    "comments": 1,
-   "upstreamUpdatedAt": "2026-10-01T16:09:42Z"
+   "upstreamUpdatedAt": "2026-10-01T16:09:42Z",
+   "mailDate": "2026-10-01",
+   "mailEvents": [
+    "comment",
+    "close"
+   ]
   },
   "johan-issue:1038": {
    "status": "pending",
    "kind": "issue",
    "state": "closed",
    "comments": 2,
-   "upstreamUpdatedAt": "2026-10-01T11:06:14Z"
+   "upstreamUpdatedAt": "2026-10-01T11:06:14Z",
+   "mailDate": "2026-09-30",
+   "mailEvents": [
+    "comment",
+    "close"
+   ]
   },
   "johan-issue:1039": {
    "status": "pending",
    "kind": "issue",
    "state": "closed",
    "comments": 1,
-   "upstreamUpdatedAt": "2026-09-30T22:05:10Z"
+   "upstreamUpdatedAt": "2026-09-30T22:05:10Z",
+   "mailDate": "2026-10-01",
+   "mailEvents": [
+    "comment",
+    "close"
+   ]
   },
   "johan-issue:104": {
    "status": "pending",
@@ -9820,21 +9940,35 @@
    "kind": "issue",
    "state": "open",
    "comments": 3,
-   "upstreamUpdatedAt": "2026-10-03T10:46:22Z"
+   "upstreamUpdatedAt": "2026-10-03T10:46:22Z",
+   "mailDate": "2026-09-29",
+   "mailEvents": [
+    "comment",
+    "merge"
+   ]
   },
   "johan-issue:1042": {
    "status": "pending",
    "kind": "issue",
    "state": "closed",
    "comments": 1,
-   "upstreamUpdatedAt": "2026-09-28T16:12:02Z"
+   "upstreamUpdatedAt": "2026-09-28T16:12:02Z",
+   "mailDate": "2026-09-28",
+   "mailEvents": [
+    "comment",
+    "close"
+   ]
   },
   "johan-issue:1043": {
    "status": "pending",
    "kind": "issue",
    "state": "open",
    "comments": 1,
-   "upstreamUpdatedAt": "2026-09-30T20:47:21Z"
+   "upstreamUpdatedAt": "2026-09-30T20:47:21Z",
+   "mailDate": "2026-09-30",
+   "mailEvents": [
+    "comment"
+   ]
   },
   "johan-issue:1044": {
    "status": "pending",
@@ -9848,35 +9982,60 @@
    "kind": "issue",
    "state": "closed",
    "comments": 0,
-   "upstreamUpdatedAt": "2026-07-12T21:34:39Z"
+   "upstreamUpdatedAt": "2026-07-12T21:34:39Z",
+   "mailDate": "2026-07-01",
+   "mailEvents": [
+    "comment",
+    "close"
+   ]
   },
   "johan-issue:1046": {
    "status": "pending",
    "kind": "issue",
    "state": "closed",
    "comments": 0,
-   "upstreamUpdatedAt": "2026-07-12T21:34:40Z"
+   "upstreamUpdatedAt": "2026-07-12T21:34:40Z",
+   "mailDate": "2026-07-01",
+   "mailEvents": [
+    "comment",
+    "close"
+   ]
   },
   "johan-issue:1047": {
    "status": "pending",
    "kind": "issue",
    "state": "closed",
    "comments": 1,
-   "upstreamUpdatedAt": "2026-09-30T20:50:13Z"
+   "upstreamUpdatedAt": "2026-09-30T20:50:13Z",
+   "mailDate": "2026-09-30",
+   "mailEvents": [
+    "comment",
+    "close"
+   ]
   },
   "johan-issue:1048": {
    "status": "pending",
    "kind": "issue",
    "state": "closed",
    "comments": 0,
-   "upstreamUpdatedAt": "2026-07-12T21:34:42Z"
+   "upstreamUpdatedAt": "2026-07-12T21:34:42Z",
+   "mailDate": "2026-07-01",
+   "mailEvents": [
+    "comment",
+    "close"
+   ]
   },
   "johan-issue:1049": {
    "status": "pending",
    "kind": "issue",
    "state": "closed",
    "comments": 0,
-   "upstreamUpdatedAt": "2026-07-12T21:34:43Z"
+   "upstreamUpdatedAt": "2026-07-12T21:34:43Z",
+   "mailDate": "2026-07-07",
+   "mailEvents": [
+    "comment",
+    "close"
+   ]
   },
   "johan-issue:105": {
    "status": "pending",
@@ -9890,70 +10049,119 @@
    "kind": "issue",
    "state": "closed",
    "comments": 6,
-   "upstreamUpdatedAt": "2026-09-28T00:38:02Z"
+   "upstreamUpdatedAt": "2026-09-28T00:38:02Z",
+   "mailDate": "2026-07-01",
+   "mailEvents": [
+    "comment",
+    "close"
+   ]
   },
   "johan-issue:1051": {
    "status": "pending",
    "kind": "issue",
    "state": "closed",
    "comments": 0,
-   "upstreamUpdatedAt": "2026-07-12T21:34:46Z"
+   "upstreamUpdatedAt": "2026-07-12T21:34:46Z",
+   "mailDate": "2026-07-01",
+   "mailEvents": [
+    "comment",
+    "close"
+   ]
   },
   "johan-issue:1052": {
    "status": "pending",
    "kind": "issue",
    "state": "closed",
    "comments": 0,
-   "upstreamUpdatedAt": "2026-07-12T21:34:47Z"
+   "upstreamUpdatedAt": "2026-07-12T21:34:47Z",
+   "mailDate": "2026-07-07",
+   "mailEvents": [
+    "comment",
+    "close"
+   ]
   },
   "johan-issue:1053": {
    "status": "pending",
    "kind": "issue",
    "state": "closed",
    "comments": 0,
-   "upstreamUpdatedAt": "2026-07-12T21:34:48Z"
+   "upstreamUpdatedAt": "2026-07-12T21:34:48Z",
+   "mailDate": "2026-07-07",
+   "mailEvents": [
+    "comment",
+    "close"
+   ]
   },
   "johan-issue:1054": {
    "status": "pending",
    "kind": "issue",
    "state": "closed",
    "comments": 0,
-   "upstreamUpdatedAt": "2026-07-12T21:34:49Z"
+   "upstreamUpdatedAt": "2026-07-12T21:34:49Z",
+   "mailDate": "2026-07-07",
+   "mailEvents": [
+    "comment",
+    "close"
+   ]
   },
   "johan-issue:1055": {
    "status": "pending",
    "kind": "issue",
    "state": "open",
    "comments": 12,
-   "upstreamUpdatedAt": "2026-09-30T20:50:07Z"
+   "upstreamUpdatedAt": "2026-09-30T20:50:07Z",
+   "mailDate": "2026-09-28",
+   "mailEvents": [
+    "comment"
+   ]
   },
   "johan-issue:1056": {
    "status": "pending",
    "kind": "issue",
    "state": "closed",
    "comments": 0,
-   "upstreamUpdatedAt": "2026-07-12T21:34:51Z"
+   "upstreamUpdatedAt": "2026-07-12T21:34:51Z",
+   "mailDate": "2026-07-07",
+   "mailEvents": [
+    "comment",
+    "close"
+   ]
   },
   "johan-issue:1057": {
    "status": "pending",
    "kind": "issue",
    "state": "closed",
    "comments": 0,
-   "upstreamUpdatedAt": "2026-07-12T21:34:52Z"
+   "upstreamUpdatedAt": "2026-07-12T21:34:52Z",
+   "mailDate": "2026-07-07",
+   "mailEvents": [
+    "comment",
+    "close"
+   ]
   },
   "johan-issue:1058": {
    "status": "pending",
    "kind": "issue",
    "state": "closed",
    "comments": 0,
-   "upstreamUpdatedAt": "2026-07-12T21:34:53Z"
+   "upstreamUpdatedAt": "2026-07-12T21:34:53Z",
+   "mailDate": "2026-07-01",
+   "mailEvents": [
+    "comment",
+    "close"
+   ]
   },
   "johan-issue:1059": {
    "status": "pending",
    "kind": "issue",
    "state": "closed",
    "comments": 1,
-   "upstreamUpdatedAt": "2026-09-29T13:18:26Z"
+   "upstreamUpdatedAt": "2026-09-29T13:18:26Z",
+   "mailDate": "2026-09-29",
+   "mailEvents": [
+    "comment",
+    "close"
+   ]
   },
   "johan-issue:106": {
    "status": "pending",
@@ -9967,63 +10175,107 @@
    "kind": "issue",
    "state": "closed",
    "comments": 4,
-   "upstreamUpdatedAt": "2026-10-01T11:21:03Z"
+   "upstreamUpdatedAt": "2026-10-01T11:21:03Z",
+   "mailDate": "2026-09-30",
+   "mailEvents": [
+    "comment",
+    "close"
+   ]
   },
   "johan-issue:1061": {
    "status": "pending",
    "kind": "issue",
    "state": "closed",
    "comments": 1,
-   "upstreamUpdatedAt": "2026-09-27T23:04:22Z"
+   "upstreamUpdatedAt": "2026-09-27T23:04:22Z",
+   "mailDate": "2026-09-28",
+   "mailEvents": [
+    "comment",
+    "close"
+   ]
   },
   "johan-issue:1062": {
    "status": "pending",
    "kind": "issue",
    "state": "closed",
    "comments": 3,
-   "upstreamUpdatedAt": "2026-10-02T21:57:35Z"
+   "upstreamUpdatedAt": "2026-10-02T21:57:35Z",
+   "mailDate": "2026-10-02",
+   "mailEvents": [
+    "comment",
+    "close"
+   ]
   },
   "johan-issue:1063": {
    "status": "pending",
    "kind": "issue",
    "state": "open",
    "comments": 1,
-   "upstreamUpdatedAt": "2026-09-30T06:18:53Z"
+   "upstreamUpdatedAt": "2026-09-30T06:18:53Z",
+   "mailDate": "2026-09-30",
+   "mailEvents": [
+    "comment"
+   ]
   },
   "johan-issue:1064": {
    "status": "pending",
    "kind": "issue",
    "state": "closed",
    "comments": 1,
-   "upstreamUpdatedAt": "2026-09-30T21:57:47Z"
+   "upstreamUpdatedAt": "2026-09-30T21:57:47Z",
+   "mailDate": "2026-09-30",
+   "mailEvents": [
+    "comment",
+    "close"
+   ]
   },
   "johan-issue:1065": {
    "status": "pending",
    "kind": "pr",
    "state": "closed",
    "comments": 3,
-   "upstreamUpdatedAt": "2026-09-27T22:09:52Z"
+   "upstreamUpdatedAt": "2026-09-27T22:09:52Z",
+   "mailDate": "2026-09-28",
+   "mailEvents": [
+    "comment",
+    "close"
+   ]
   },
   "johan-issue:1066": {
    "status": "pending",
    "kind": "issue",
    "state": "closed",
    "comments": 0,
-   "upstreamUpdatedAt": "2026-07-12T21:35:01Z"
+   "upstreamUpdatedAt": "2026-07-12T21:35:01Z",
+   "mailDate": "2026-06-28",
+   "mailEvents": [
+    "comment",
+    "close"
+   ]
   },
   "johan-issue:1067": {
    "status": "pending",
    "kind": "issue",
    "state": "closed",
    "comments": 3,
-   "upstreamUpdatedAt": "2026-09-30T22:11:24Z"
+   "upstreamUpdatedAt": "2026-09-30T22:11:24Z",
+   "mailDate": "2026-10-01",
+   "mailEvents": [
+    "comment",
+    "close"
+   ]
   },
   "johan-issue:1068": {
    "status": "pending",
    "kind": "issue",
    "state": "closed",
    "comments": 1,
-   "upstreamUpdatedAt": "2026-07-12T21:35:03Z"
+   "upstreamUpdatedAt": "2026-07-12T21:35:03Z",
+   "mailDate": "2026-07-01",
+   "mailEvents": [
+    "comment",
+    "close"
+   ]
   },
   "johan-issue:1069": {
    "status": "pending",
@@ -10051,7 +10303,11 @@
    "kind": "issue",
    "state": "open",
    "comments": 1,
-   "upstreamUpdatedAt": "2026-10-02T20:03:33Z"
+   "upstreamUpdatedAt": "2026-10-02T20:03:33Z",
+   "mailDate": "2026-10-02",
+   "mailEvents": [
+    "comment"
+   ]
   },
   "johan-issue:1072": {
    "status": "pending",
@@ -10107,7 +10363,11 @@
    "kind": "issue",
    "state": "open",
    "comments": 4,
-   "upstreamUpdatedAt": "2026-10-02T11:57:12Z"
+   "upstreamUpdatedAt": "2026-10-02T11:57:12Z",
+   "mailDate": "2026-10-02",
+   "mailEvents": [
+    "comment"
+   ]
   },
   "johan-issue:108": {
    "status": "pending",
@@ -10121,7 +10381,12 @@
    "kind": "issue",
    "state": "closed",
    "comments": 2,
-   "upstreamUpdatedAt": "2026-10-01T07:58:51Z"
+   "upstreamUpdatedAt": "2026-10-01T07:58:51Z",
+   "mailDate": "2026-10-01",
+   "mailEvents": [
+    "comment",
+    "close"
+   ]
   },
   "johan-issue:1081": {
    "status": "pending",
@@ -10135,21 +10400,36 @@
    "kind": "issue",
    "state": "closed",
    "comments": 1,
-   "upstreamUpdatedAt": "2026-09-30T20:53:29Z"
+   "upstreamUpdatedAt": "2026-09-30T20:53:29Z",
+   "mailDate": "2026-09-30",
+   "mailEvents": [
+    "comment",
+    "close"
+   ]
   },
   "johan-issue:1083": {
    "status": "pending",
    "kind": "issue",
    "state": "closed",
    "comments": 1,
-   "upstreamUpdatedAt": "2026-10-01T16:10:06Z"
+   "upstreamUpdatedAt": "2026-10-01T16:10:06Z",
+   "mailDate": "2026-10-01",
+   "mailEvents": [
+    "comment",
+    "close"
+   ]
   },
   "johan-issue:1084": {
    "status": "pending",
    "kind": "issue",
    "state": "closed",
    "comments": 1,
-   "upstreamUpdatedAt": "2026-10-01T16:01:34Z"
+   "upstreamUpdatedAt": "2026-10-01T16:01:34Z",
+   "mailDate": "2026-10-01",
+   "mailEvents": [
+    "comment",
+    "close"
+   ]
   },
   "johan-issue:1085": {
    "status": "pending",
@@ -10170,21 +10450,36 @@
    "kind": "issue",
    "state": "closed",
    "comments": 2,
-   "upstreamUpdatedAt": "2026-09-27T23:04:18Z"
+   "upstreamUpdatedAt": "2026-09-27T23:04:18Z",
+   "mailDate": "2026-09-28",
+   "mailEvents": [
+    "comment",
+    "close"
+   ]
   },
   "johan-issue:1088": {
    "status": "pending",
    "kind": "issue",
    "state": "closed",
    "comments": 2,
-   "upstreamUpdatedAt": "2026-10-01T16:20:32Z"
+   "upstreamUpdatedAt": "2026-10-01T16:20:32Z",
+   "mailDate": "2026-10-01",
+   "mailEvents": [
+    "comment",
+    "close"
+   ]
   },
   "johan-issue:1089": {
    "status": "pending",
    "kind": "issue",
    "state": "closed",
    "comments": 1,
-   "upstreamUpdatedAt": "2026-09-30T20:50:58Z"
+   "upstreamUpdatedAt": "2026-09-30T20:50:58Z",
+   "mailDate": "2026-09-30",
+   "mailEvents": [
+    "comment",
+    "close"
+   ]
   },
   "johan-issue:109": {
    "status": "pending",
@@ -10205,21 +10500,36 @@
    "kind": "issue",
    "state": "closed",
    "comments": 3,
-   "upstreamUpdatedAt": "2026-10-01T16:19:43Z"
+   "upstreamUpdatedAt": "2026-10-01T16:19:43Z",
+   "mailDate": "2026-09-28",
+   "mailEvents": [
+    "comment",
+    "close"
+   ]
   },
   "johan-issue:1092": {
    "status": "pending",
    "kind": "issue",
    "state": "closed",
    "comments": 8,
-   "upstreamUpdatedAt": "2026-09-29T13:15:33Z"
+   "upstreamUpdatedAt": "2026-09-29T13:15:33Z",
+   "mailDate": "2026-09-29",
+   "mailEvents": [
+    "comment",
+    "close"
+   ]
   },
   "johan-issue:1093": {
    "status": "pending",
    "kind": "issue",
    "state": "closed",
    "comments": 1,
-   "upstreamUpdatedAt": "2026-09-30T20:47:43Z"
+   "upstreamUpdatedAt": "2026-09-30T20:47:43Z",
+   "mailDate": "2026-09-30",
+   "mailEvents": [
+    "comment",
+    "close"
+   ]
   },
   "johan-issue:1094": {
    "status": "pending",
@@ -10247,21 +10557,35 @@
    "kind": "issue",
    "state": "closed",
    "comments": 2,
-   "upstreamUpdatedAt": "2026-09-30T20:47:50Z"
+   "upstreamUpdatedAt": "2026-09-30T20:47:50Z",
+   "mailDate": "2026-09-30",
+   "mailEvents": [
+    "comment",
+    "close"
+   ]
   },
   "johan-issue:1098": {
    "status": "pending",
    "kind": "issue",
    "state": "closed",
    "comments": 4,
-   "upstreamUpdatedAt": "2026-10-03T07:46:58Z"
+   "upstreamUpdatedAt": "2026-10-03T07:46:58Z",
+   "mailDate": "2026-10-01",
+   "mailEvents": [
+    "comment",
+    "close"
+   ]
   },
   "johan-issue:1099": {
    "status": "pending",
    "kind": "issue",
    "state": "closed",
    "comments": 1,
-   "upstreamUpdatedAt": "2024-12-25T13:30:17Z"
+   "upstreamUpdatedAt": "2024-12-25T13:30:17Z",
+   "mailDate": "2026-09-28",
+   "mailEvents": [
+    "comment"
+   ]
   },
   "johan-issue:11": {
    "status": "pending",
@@ -10303,49 +10627,82 @@
    "kind": "issue",
    "state": "closed",
    "comments": 2,
-   "upstreamUpdatedAt": "2026-09-30T21:59:07Z"
+   "upstreamUpdatedAt": "2026-09-30T21:59:07Z",
+   "mailDate": "2026-09-30",
+   "mailEvents": [
+    "comment",
+    "close"
+   ]
   },
   "johan-issue:1104": {
    "status": "pending",
    "kind": "issue",
    "state": "open",
    "comments": 2,
-   "upstreamUpdatedAt": "2026-09-30T08:21:41Z"
+   "upstreamUpdatedAt": "2026-09-30T08:21:41Z",
+   "mailDate": "2026-09-30",
+   "mailEvents": [
+    "comment"
+   ]
   },
   "johan-issue:1105": {
    "status": "pending",
    "kind": "issue",
    "state": "closed",
    "comments": 1,
-   "upstreamUpdatedAt": "2026-09-29T08:47:01Z"
+   "upstreamUpdatedAt": "2026-09-29T08:47:01Z",
+   "mailDate": "2026-09-29",
+   "mailEvents": [
+    "comment",
+    "close"
+   ]
   },
   "johan-issue:1106": {
    "status": "pending",
    "kind": "pr",
    "state": "closed",
    "comments": 1,
-   "upstreamUpdatedAt": "2026-09-27T23:13:32Z"
+   "upstreamUpdatedAt": "2026-09-27T23:13:32Z",
+   "mailDate": "2026-09-28",
+   "mailEvents": [
+    "comment",
+    "close"
+   ]
   },
   "johan-issue:1107": {
    "status": "pending",
    "kind": "issue",
    "state": "closed",
    "comments": 1,
-   "upstreamUpdatedAt": "2026-09-28T15:56:10Z"
+   "upstreamUpdatedAt": "2026-09-28T15:56:10Z",
+   "mailDate": "2026-09-28",
+   "mailEvents": [
+    "comment",
+    "close"
+   ]
   },
   "johan-issue:1108": {
    "status": "pending",
    "kind": "issue",
    "state": "open",
    "comments": 2,
-   "upstreamUpdatedAt": "2026-09-30T20:47:08Z"
+   "upstreamUpdatedAt": "2026-09-30T20:47:08Z",
+   "mailDate": "2026-09-30",
+   "mailEvents": [
+    "comment"
+   ]
   },
   "johan-issue:1109": {
    "status": "pending",
    "kind": "issue",
    "state": "closed",
    "comments": 2,
-   "upstreamUpdatedAt": "2026-10-02T20:04:34Z"
+   "upstreamUpdatedAt": "2026-10-02T20:04:34Z",
+   "mailDate": "2026-10-02",
+   "mailEvents": [
+    "comment",
+    "close"
+   ]
   },
   "johan-issue:111": {
    "status": "pending",
@@ -10359,21 +10716,36 @@
    "kind": "issue",
    "state": "closed",
    "comments": 2,
-   "upstreamUpdatedAt": "2026-09-30T20:47:57Z"
+   "upstreamUpdatedAt": "2026-09-30T20:47:57Z",
+   "mailDate": "2026-09-30",
+   "mailEvents": [
+    "comment",
+    "close"
+   ]
   },
   "johan-issue:1111": {
    "status": "pending",
    "kind": "issue",
    "state": "closed",
    "comments": 1,
-   "upstreamUpdatedAt": "2026-09-29T08:42:26Z"
+   "upstreamUpdatedAt": "2026-09-29T08:42:26Z",
+   "mailDate": "2026-09-29",
+   "mailEvents": [
+    "comment",
+    "close"
+   ]
   },
   "johan-issue:1112": {
    "status": "pending",
    "kind": "issue",
    "state": "closed",
    "comments": 2,
-   "upstreamUpdatedAt": "2026-10-02T11:58:35Z"
+   "upstreamUpdatedAt": "2026-10-02T11:58:35Z",
+   "mailDate": "2026-10-01",
+   "mailEvents": [
+    "comment",
+    "close"
+   ]
   },
   "johan-issue:1113": {
    "status": "done",
@@ -10384,28 +10756,46 @@
    "date": "2026-10-04",
    "note": "eWeLink|SNZB-03 -> sensor_ias_zonetype_ewelink (zoneType)",
    "commit": "88b3584cf6",
-   "updatedAt": "2026-10-03T08:05:05Z"
+   "updatedAt": "2026-10-03T08:05:05Z",
+   "mailDate": "2026-10-03",
+   "mailEvents": [
+    "comment"
+   ]
   },
   "johan-issue:1114": {
    "status": "pending",
    "kind": "issue",
    "state": "closed",
    "comments": 2,
-   "upstreamUpdatedAt": "2026-10-03T08:06:28Z"
+   "upstreamUpdatedAt": "2026-10-03T08:06:28Z",
+   "mailDate": "2026-10-01",
+   "mailEvents": [
+    "comment",
+    "close"
+   ]
   },
   "johan-issue:1115": {
    "status": "pending",
    "kind": "issue",
    "state": "closed",
    "comments": 2,
-   "upstreamUpdatedAt": "2026-09-29T07:53:03Z"
+   "upstreamUpdatedAt": "2026-09-29T07:53:03Z",
+   "mailDate": "2026-09-29",
+   "mailEvents": [
+    "comment",
+    "close"
+   ]
   },
   "johan-issue:1116": {
    "status": "pending",
    "kind": "issue",
    "state": "open",
    "comments": 1,
-   "upstreamUpdatedAt": "2026-09-30T20:53:10Z"
+   "upstreamUpdatedAt": "2026-09-30T20:53:10Z",
+   "mailDate": "2026-09-30",
+   "mailEvents": [
+    "comment"
+   ]
   },
   "johan-issue:1117": {
    "status": "pending",
@@ -10419,14 +10809,24 @@
    "kind": "pr",
    "state": "closed",
    "comments": 1,
-   "upstreamUpdatedAt": "2026-09-27T22:09:34Z"
+   "upstreamUpdatedAt": "2026-09-27T22:09:34Z",
+   "mailDate": "2026-09-28",
+   "mailEvents": [
+    "comment",
+    "close"
+   ]
   },
   "johan-issue:1119": {
    "status": "pending",
    "kind": "issue",
    "state": "closed",
    "comments": 3,
-   "upstreamUpdatedAt": "2026-10-01T11:06:42Z"
+   "upstreamUpdatedAt": "2026-10-01T11:06:42Z",
+   "mailDate": "2026-09-28",
+   "mailEvents": [
+    "comment",
+    "close"
+   ]
   },
   "johan-issue:112": {
    "status": "pending",
@@ -10440,42 +10840,70 @@
    "kind": "issue",
    "state": "closed",
    "comments": 2,
-   "upstreamUpdatedAt": "2026-09-28T15:18:57Z"
+   "upstreamUpdatedAt": "2026-09-28T15:18:57Z",
+   "mailDate": "2026-09-28",
+   "mailEvents": [
+    "comment",
+    "close"
+   ]
   },
   "johan-issue:1121": {
    "status": "pending",
    "kind": "pr",
    "state": "closed",
    "comments": 1,
-   "upstreamUpdatedAt": "2026-09-27T23:04:13Z"
+   "upstreamUpdatedAt": "2026-09-27T23:04:13Z",
+   "mailDate": "2026-09-28",
+   "mailEvents": [
+    "comment",
+    "close"
+   ]
   },
   "johan-issue:1122": {
    "status": "pending",
    "kind": "pr",
    "state": "closed",
    "comments": 2,
-   "upstreamUpdatedAt": "2026-09-28T10:00:57Z"
+   "upstreamUpdatedAt": "2026-09-28T10:00:57Z",
+   "mailDate": "2026-09-28",
+   "mailEvents": [
+    "comment",
+    "close"
+   ]
   },
   "johan-issue:1123": {
    "status": "pending",
    "kind": "issue",
    "state": "open",
    "comments": 1,
-   "upstreamUpdatedAt": "2026-09-30T22:10:09Z"
+   "upstreamUpdatedAt": "2026-09-30T22:10:09Z",
+   "mailDate": "2026-10-01",
+   "mailEvents": [
+    "comment"
+   ]
   },
   "johan-issue:1124": {
    "status": "pending",
    "kind": "issue",
    "state": "open",
    "comments": 3,
-   "upstreamUpdatedAt": "2026-10-01T08:05:43Z"
+   "upstreamUpdatedAt": "2026-10-01T08:05:43Z",
+   "mailDate": "2026-10-01",
+   "mailEvents": [
+    "comment"
+   ]
   },
   "johan-issue:1125": {
    "status": "pending",
    "kind": "issue",
    "state": "closed",
    "comments": 2,
-   "upstreamUpdatedAt": "2026-09-27T22:55:57Z"
+   "upstreamUpdatedAt": "2026-09-27T22:55:57Z",
+   "mailDate": "2026-09-28",
+   "mailEvents": [
+    "comment",
+    "close"
+   ]
   },
   "johan-issue:1126": {
    "status": "pending",
@@ -10489,42 +10917,71 @@
    "kind": "issue",
    "state": "closed",
    "comments": 1,
-   "upstreamUpdatedAt": "2026-09-29T19:39:36Z"
+   "upstreamUpdatedAt": "2026-09-29T19:39:36Z",
+   "mailDate": "2026-09-29",
+   "mailEvents": [
+    "comment",
+    "close"
+   ]
   },
   "johan-issue:1128": {
    "status": "pending",
    "kind": "pr",
    "state": "closed",
    "comments": 3,
-   "upstreamUpdatedAt": "2026-09-27T22:58:23Z"
+   "upstreamUpdatedAt": "2026-09-27T22:58:23Z",
+   "mailDate": "2026-09-28",
+   "mailEvents": [
+    "comment",
+    "close"
+   ]
   },
   "johan-issue:1129": {
    "status": "pending",
    "kind": "issue",
    "state": "closed",
    "comments": 2,
-   "upstreamUpdatedAt": "2026-09-28T15:52:25Z"
+   "upstreamUpdatedAt": "2026-09-28T15:52:25Z",
+   "mailDate": "2026-09-28",
+   "mailEvents": [
+    "comment",
+    "close"
+   ]
   },
   "johan-issue:113": {
    "status": "pending",
    "kind": "issue",
    "state": "open",
    "comments": 3,
-   "upstreamUpdatedAt": "2026-10-01T21:17:26Z"
+   "upstreamUpdatedAt": "2026-10-01T21:17:26Z",
+   "mailDate": "2026-10-01",
+   "mailEvents": [
+    "comment"
+   ]
   },
   "johan-issue:1130": {
    "status": "pending",
    "kind": "issue",
    "state": "closed",
    "comments": 2,
-   "upstreamUpdatedAt": "2026-07-12T21:28:20Z"
+   "upstreamUpdatedAt": "2026-07-12T21:28:20Z",
+   "mailDate": "2026-03-09",
+   "mailEvents": [
+    "comment",
+    "close"
+   ]
   },
   "johan-issue:1131": {
    "status": "pending",
    "kind": "issue",
    "state": "closed",
    "comments": 1,
-   "upstreamUpdatedAt": "2026-09-28T16:07:01Z"
+   "upstreamUpdatedAt": "2026-09-28T16:07:01Z",
+   "mailDate": "2026-09-28",
+   "mailEvents": [
+    "comment",
+    "close"
+   ]
   },
   "johan-issue:1132": {
    "status": "pending",
@@ -10538,112 +10995,185 @@
    "kind": "issue",
    "state": "open",
    "comments": 2,
-   "upstreamUpdatedAt": "2026-10-01T08:05:45Z"
+   "upstreamUpdatedAt": "2026-10-01T08:05:45Z",
+   "mailDate": "2026-09-28",
+   "mailEvents": [
+    "comment"
+   ]
   },
   "johan-issue:1134": {
    "status": "pending",
    "kind": "issue",
    "state": "closed",
    "comments": 2,
-   "upstreamUpdatedAt": "2026-09-28T15:21:36Z"
+   "upstreamUpdatedAt": "2026-09-28T15:21:36Z",
+   "mailDate": "2026-09-28",
+   "mailEvents": [
+    "comment",
+    "close"
+   ]
   },
   "johan-issue:1135": {
    "status": "pending",
    "kind": "issue",
    "state": "closed",
    "comments": 3,
-   "upstreamUpdatedAt": "2026-10-01T16:00:19Z"
+   "upstreamUpdatedAt": "2026-10-01T16:00:19Z",
+   "mailDate": "2026-10-01",
+   "mailEvents": [
+    "comment",
+    "close"
+   ]
   },
   "johan-issue:1136": {
    "status": "pending",
    "kind": "issue",
    "state": "open",
    "comments": 1,
-   "upstreamUpdatedAt": "2026-10-01T08:05:54Z"
+   "upstreamUpdatedAt": "2026-10-01T08:05:54Z",
+   "mailDate": "2026-10-01",
+   "mailEvents": [
+    "comment"
+   ]
   },
   "johan-issue:1137": {
    "status": "pending",
    "kind": "pr",
    "state": "closed",
    "comments": 1,
-   "upstreamUpdatedAt": "2026-09-27T22:55:52Z"
+   "upstreamUpdatedAt": "2026-09-27T22:55:52Z",
+   "mailDate": "2026-09-28",
+   "mailEvents": [
+    "comment",
+    "close"
+   ]
   },
   "johan-issue:1138": {
    "status": "pending",
    "kind": "issue",
    "state": "closed",
    "comments": 1,
-   "upstreamUpdatedAt": "2026-09-29T08:00:32Z"
+   "upstreamUpdatedAt": "2026-09-29T08:00:32Z",
+   "mailDate": "2026-09-29",
+   "mailEvents": [
+    "comment",
+    "close"
+   ]
   },
   "johan-issue:1139": {
    "status": "pending",
    "kind": "issue",
    "state": "open",
    "comments": 4,
-   "upstreamUpdatedAt": "2026-10-01T08:05:13Z"
+   "upstreamUpdatedAt": "2026-10-01T08:05:13Z",
+   "mailDate": "2026-09-28",
+   "mailEvents": [
+    "comment",
+    "close"
+   ]
   },
   "johan-issue:114": {
    "status": "pending",
    "kind": "issue",
    "state": "closed",
    "comments": 2,
-   "upstreamUpdatedAt": "2026-07-12T21:37:09Z"
+   "upstreamUpdatedAt": "2026-07-12T21:37:09Z",
+   "mailDate": "2026-02-02",
+   "mailEvents": [
+    "comment"
+   ]
   },
   "johan-issue:1140": {
    "status": "pending",
    "kind": "issue",
    "state": "open",
    "comments": 2,
-   "upstreamUpdatedAt": "2026-10-01T08:05:57Z"
+   "upstreamUpdatedAt": "2026-10-01T08:05:57Z",
+   "mailDate": "2026-10-01",
+   "mailEvents": [
+    "comment"
+   ]
   },
   "johan-issue:1141": {
    "status": "pending",
    "kind": "issue",
    "state": "closed",
    "comments": 2,
-   "upstreamUpdatedAt": "2026-10-02T20:21:27Z"
+   "upstreamUpdatedAt": "2026-10-02T20:21:27Z",
+   "mailDate": "2026-10-01",
+   "mailEvents": [
+    "comment",
+    "close"
+   ]
   },
   "johan-issue:1142": {
    "status": "pending",
    "kind": "issue",
    "state": "open",
    "comments": 4,
-   "upstreamUpdatedAt": "2026-10-01T08:05:59Z"
+   "upstreamUpdatedAt": "2026-10-01T08:05:59Z",
+   "mailDate": "2026-02-25",
+   "mailEvents": [
+    "comment"
+   ]
   },
   "johan-issue:1143": {
    "status": "pending",
    "kind": "issue",
    "state": "closed",
    "comments": 3,
-   "upstreamUpdatedAt": "2026-10-03T07:59:15Z"
+   "upstreamUpdatedAt": "2026-10-03T07:59:15Z",
+   "mailDate": "2026-09-28",
+   "mailEvents": [
+    "comment",
+    "close"
+   ]
   },
   "johan-issue:1144": {
    "status": "pending",
    "kind": "issue",
    "state": "closed",
    "comments": 3,
-   "upstreamUpdatedAt": "2026-10-01T16:20:09Z"
+   "upstreamUpdatedAt": "2026-10-01T16:20:09Z",
+   "mailDate": "2026-09-30",
+   "mailEvents": [
+    "comment",
+    "close"
+   ]
   },
   "johan-issue:1145": {
    "status": "pending",
    "kind": "issue",
    "state": "open",
    "comments": 4,
-   "upstreamUpdatedAt": "2026-10-02T20:21:01Z"
+   "upstreamUpdatedAt": "2026-10-02T20:21:01Z",
+   "mailDate": "2026-10-02",
+   "mailEvents": [
+    "comment"
+   ]
   },
   "johan-issue:1146": {
    "status": "pending",
    "kind": "issue",
    "state": "open",
    "comments": 1,
-   "upstreamUpdatedAt": "2026-09-28T10:09:50Z"
+   "upstreamUpdatedAt": "2026-09-28T10:09:50Z",
+   "mailDate": "2026-09-28",
+   "mailEvents": [
+    "comment"
+   ]
   },
   "johan-issue:1147": {
    "status": "pending",
    "kind": "issue",
    "state": "closed",
    "comments": 1,
-   "upstreamUpdatedAt": "2026-09-30T20:47:35Z"
+   "upstreamUpdatedAt": "2026-09-30T20:47:35Z",
+   "mailDate": "2026-09-30",
+   "mailEvents": [
+    "comment",
+    "close"
+   ]
   },
   "johan-issue:1148": {
    "status": "pending",
@@ -10657,7 +11187,12 @@
    "kind": "issue",
    "state": "closed",
    "comments": 2,
-   "upstreamUpdatedAt": "2026-10-01T16:10:18Z"
+   "upstreamUpdatedAt": "2026-10-01T16:10:18Z",
+   "mailDate": "2026-10-01",
+   "mailEvents": [
+    "comment",
+    "close"
+   ]
   },
   "johan-issue:115": {
    "status": "pending",
@@ -10671,21 +11206,35 @@
    "kind": "issue",
    "state": "open",
    "comments": 5,
-   "upstreamUpdatedAt": "2026-10-02T22:19:54Z"
+   "upstreamUpdatedAt": "2026-10-02T22:19:54Z",
+   "mailDate": "2026-10-03",
+   "mailEvents": [
+    "comment"
+   ]
   },
   "johan-issue:1151": {
    "status": "pending",
    "kind": "issue",
    "state": "closed",
    "comments": 1,
-   "upstreamUpdatedAt": "2026-09-29T07:52:53Z"
+   "upstreamUpdatedAt": "2026-09-29T07:52:53Z",
+   "mailDate": "2026-09-29",
+   "mailEvents": [
+    "comment",
+    "close"
+   ]
   },
   "johan-issue:1152": {
    "status": "pending",
    "kind": "issue",
    "state": "closed",
    "comments": 3,
-   "upstreamUpdatedAt": "2026-10-01T16:00:58Z"
+   "upstreamUpdatedAt": "2026-10-01T16:00:58Z",
+   "mailDate": "2026-10-01",
+   "mailEvents": [
+    "comment",
+    "close"
+   ]
   },
   "johan-issue:1153": {
    "status": "pending",
@@ -10699,14 +11248,24 @@
    "kind": "issue",
    "state": "closed",
    "comments": 3,
-   "upstreamUpdatedAt": "2026-07-12T21:28:19Z"
+   "upstreamUpdatedAt": "2026-07-12T21:28:19Z",
+   "mailDate": "2026-03-09",
+   "mailEvents": [
+    "comment",
+    "close"
+   ]
   },
   "johan-issue:1155": {
    "status": "pending",
    "kind": "issue",
    "state": "closed",
    "comments": 3,
-   "upstreamUpdatedAt": "2026-09-28T22:39:37Z"
+   "upstreamUpdatedAt": "2026-09-28T22:39:37Z",
+   "mailDate": "2026-09-28",
+   "mailEvents": [
+    "comment",
+    "close"
+   ]
   },
   "johan-issue:1156": {
    "status": "pending",
@@ -10720,21 +11279,36 @@
    "kind": "issue",
    "state": "closed",
    "comments": 1,
-   "upstreamUpdatedAt": "2026-09-30T06:13:03Z"
+   "upstreamUpdatedAt": "2026-09-30T06:13:03Z",
+   "mailDate": "2026-09-30",
+   "mailEvents": [
+    "comment",
+    "close"
+   ]
   },
   "johan-issue:1158": {
    "status": "pending",
    "kind": "issue",
    "state": "closed",
    "comments": 1,
-   "upstreamUpdatedAt": "2026-09-28T15:28:18Z"
+   "upstreamUpdatedAt": "2026-09-28T15:28:18Z",
+   "mailDate": "2026-09-28",
+   "mailEvents": [
+    "comment",
+    "close"
+   ]
   },
   "johan-issue:1159": {
    "status": "pending",
    "kind": "issue",
    "state": "closed",
    "comments": 2,
-   "upstreamUpdatedAt": "2026-10-02T11:56:41Z"
+   "upstreamUpdatedAt": "2026-10-02T11:56:41Z",
+   "mailDate": "2026-10-01",
+   "mailEvents": [
+    "comment",
+    "close"
+   ]
   },
   "johan-issue:116": {
    "status": "pending",
@@ -10748,14 +11322,24 @@
    "kind": "issue",
    "state": "closed",
    "comments": 2,
-   "upstreamUpdatedAt": "2026-09-30T20:41:48Z"
+   "upstreamUpdatedAt": "2026-09-30T20:41:48Z",
+   "mailDate": "2026-09-30",
+   "mailEvents": [
+    "comment",
+    "close"
+   ]
   },
   "johan-issue:1161": {
    "status": "pending",
    "kind": "pr",
    "state": "closed",
    "comments": 2,
-   "upstreamUpdatedAt": "2026-09-28T08:35:10Z"
+   "upstreamUpdatedAt": "2026-09-28T08:35:10Z",
+   "mailDate": "2026-09-28",
+   "mailEvents": [
+    "comment",
+    "close"
+   ]
   },
   "johan-issue:1162": {
    "status": "pending",
@@ -10769,49 +11353,80 @@
    "kind": "issue",
    "state": "closed",
    "comments": 1,
-   "upstreamUpdatedAt": "2026-09-30T21:52:50Z"
+   "upstreamUpdatedAt": "2026-09-30T21:52:50Z",
+   "mailDate": "2026-09-30",
+   "mailEvents": [
+    "comment",
+    "close"
+   ]
   },
   "johan-issue:1164": {
    "status": "pending",
    "kind": "issue",
    "state": "open",
    "comments": 1,
-   "upstreamUpdatedAt": "2026-10-01T08:12:04Z"
+   "upstreamUpdatedAt": "2026-10-01T08:12:04Z",
+   "mailDate": "2026-10-01",
+   "mailEvents": [
+    "comment"
+   ]
   },
   "johan-issue:1165": {
    "status": "pending",
    "kind": "issue",
    "state": "open",
    "comments": 1,
-   "upstreamUpdatedAt": "2026-10-01T08:12:06Z"
+   "upstreamUpdatedAt": "2026-10-01T08:12:06Z",
+   "mailDate": "2026-10-01",
+   "mailEvents": [
+    "comment"
+   ]
   },
   "johan-issue:1166": {
    "status": "pending",
    "kind": "pr",
    "state": "closed",
    "comments": 6,
-   "upstreamUpdatedAt": "2026-09-28T10:48:34Z"
+   "upstreamUpdatedAt": "2026-09-28T10:48:34Z",
+   "mailDate": "2026-03-09",
+   "mailEvents": [
+    "comment",
+    "close"
+   ]
   },
   "johan-issue:1167": {
    "status": "pending",
    "kind": "issue",
    "state": "open",
    "comments": 1,
-   "upstreamUpdatedAt": "2026-10-01T08:12:08Z"
+   "upstreamUpdatedAt": "2026-10-01T08:12:08Z",
+   "mailDate": "2026-10-01",
+   "mailEvents": [
+    "comment"
+   ]
   },
   "johan-issue:1168": {
    "status": "pending",
    "kind": "issue",
    "state": "closed",
    "comments": 2,
-   "upstreamUpdatedAt": "2026-09-29T08:00:29Z"
+   "upstreamUpdatedAt": "2026-09-29T08:00:29Z",
+   "mailDate": "2026-09-29",
+   "mailEvents": [
+    "comment",
+    "close"
+   ]
   },
   "johan-issue:1169": {
    "status": "pending",
    "kind": "issue",
    "state": "open",
    "comments": 6,
-   "upstreamUpdatedAt": "2026-09-30T20:50:39Z"
+   "upstreamUpdatedAt": "2026-09-30T20:50:39Z",
+   "mailDate": "2026-09-29",
+   "mailEvents": [
+    "comment"
+   ]
   },
   "johan-issue:117": {
    "status": "pending",
@@ -10825,63 +11440,107 @@
    "kind": "issue",
    "state": "closed",
    "comments": 4,
-   "upstreamUpdatedAt": "2026-09-28T15:21:42Z"
+   "upstreamUpdatedAt": "2026-09-28T15:21:42Z",
+   "mailDate": "2026-09-28",
+   "mailEvents": [
+    "comment",
+    "close"
+   ]
   },
   "johan-issue:1171": {
    "status": "pending",
    "kind": "pr",
    "state": "closed",
    "comments": 4,
-   "upstreamUpdatedAt": "2026-09-27T23:08:12Z"
+   "upstreamUpdatedAt": "2026-09-27T23:08:12Z",
+   "mailDate": "2026-09-28",
+   "mailEvents": [
+    "comment",
+    "close"
+   ]
   },
   "johan-issue:1172": {
    "status": "pending",
    "kind": "issue",
    "state": "closed",
    "comments": 3,
-   "upstreamUpdatedAt": "2026-10-02T19:37:19Z"
+   "upstreamUpdatedAt": "2026-10-02T19:37:19Z",
+   "mailDate": "2026-10-01",
+   "mailEvents": [
+    "comment",
+    "close"
+   ]
   },
   "johan-issue:1173": {
    "status": "pending",
    "kind": "issue",
    "state": "closed",
    "comments": 1,
-   "upstreamUpdatedAt": "2026-09-29T13:18:35Z"
+   "upstreamUpdatedAt": "2026-09-29T13:18:35Z",
+   "mailDate": "2026-09-29",
+   "mailEvents": [
+    "comment",
+    "close"
+   ]
   },
   "johan-issue:1174": {
    "status": "pending",
    "kind": "issue",
    "state": "closed",
    "comments": 1,
-   "upstreamUpdatedAt": "2026-09-28T15:52:20Z"
+   "upstreamUpdatedAt": "2026-09-28T15:52:20Z",
+   "mailDate": "2026-09-28",
+   "mailEvents": [
+    "comment",
+    "close"
+   ]
   },
   "johan-issue:1175": {
    "status": "pending",
    "kind": "issue",
    "state": "closed",
    "comments": 1,
-   "upstreamUpdatedAt": "2026-09-30T20:50:24Z"
+   "upstreamUpdatedAt": "2026-09-30T20:50:24Z",
+   "mailDate": "2026-09-30",
+   "mailEvents": [
+    "comment",
+    "close"
+   ]
   },
   "johan-issue:1176": {
    "status": "pending",
    "kind": "issue",
    "state": "open",
    "comments": 4,
-   "upstreamUpdatedAt": "2026-10-01T08:12:27Z"
+   "upstreamUpdatedAt": "2026-10-01T08:12:27Z",
+   "mailDate": "2026-09-30",
+   "mailEvents": [
+    "comment"
+   ]
   },
   "johan-issue:1177": {
    "status": "pending",
    "kind": "issue",
    "state": "closed",
    "comments": 3,
-   "upstreamUpdatedAt": "2026-09-30T20:48:46Z"
+   "upstreamUpdatedAt": "2026-09-30T20:48:46Z",
+   "mailDate": "2026-02-18",
+   "mailEvents": [
+    "comment",
+    "close"
+   ]
   },
   "johan-issue:1178": {
    "status": "pending",
    "kind": "issue",
    "state": "closed",
    "comments": 2,
-   "upstreamUpdatedAt": "2026-10-02T11:54:47Z"
+   "upstreamUpdatedAt": "2026-10-02T11:54:47Z",
+   "mailDate": "2026-10-01",
+   "mailEvents": [
+    "comment",
+    "close"
+   ]
   },
   "johan-issue:1179": {
    "status": "pending",
@@ -10902,7 +11561,11 @@
    "kind": "issue",
    "state": "closed",
    "comments": 2,
-   "upstreamUpdatedAt": "2026-09-28T10:58:31Z"
+   "upstreamUpdatedAt": "2026-09-28T10:58:31Z",
+   "mailDate": "2026-09-28",
+   "mailEvents": [
+    "comment"
+   ]
   },
   "johan-issue:1181": {
    "status": "pending",
@@ -10916,14 +11579,24 @@
    "kind": "issue",
    "state": "closed",
    "comments": 1,
-   "upstreamUpdatedAt": "2026-09-30T20:48:11Z"
+   "upstreamUpdatedAt": "2026-09-30T20:48:11Z",
+   "mailDate": "2026-09-30",
+   "mailEvents": [
+    "comment",
+    "close"
+   ]
   },
   "johan-issue:1183": {
    "status": "pending",
    "kind": "issue",
    "state": "closed",
    "comments": 3,
-   "upstreamUpdatedAt": "2026-10-02T22:02:24Z"
+   "upstreamUpdatedAt": "2026-10-02T22:02:24Z",
+   "mailDate": "2026-10-01",
+   "mailEvents": [
+    "comment",
+    "close"
+   ]
   },
   "johan-issue:1184": {
    "status": "pending",
@@ -10937,35 +11610,59 @@
    "kind": "issue",
    "state": "closed",
    "comments": 2,
-   "upstreamUpdatedAt": "2026-10-02T20:16:17Z"
+   "upstreamUpdatedAt": "2026-10-02T20:16:17Z",
+   "mailDate": "2026-10-01",
+   "mailEvents": [
+    "comment",
+    "close"
+   ]
   },
   "johan-issue:1186": {
    "status": "pending",
    "kind": "issue",
    "state": "closed",
    "comments": 3,
-   "upstreamUpdatedAt": "2026-09-30T21:51:45Z"
+   "upstreamUpdatedAt": "2026-09-30T21:51:45Z",
+   "mailDate": "2026-09-28",
+   "mailEvents": [
+    "comment",
+    "close"
+   ]
   },
   "johan-issue:1187": {
    "status": "pending",
    "kind": "issue",
    "state": "closed",
    "comments": 1,
-   "upstreamUpdatedAt": "2026-09-30T20:48:57Z"
+   "upstreamUpdatedAt": "2026-09-30T20:48:57Z",
+   "mailDate": "2026-09-30",
+   "mailEvents": [
+    "comment",
+    "close"
+   ]
   },
   "johan-issue:1188": {
    "status": "pending",
    "kind": "pr",
    "state": "closed",
    "comments": 1,
-   "upstreamUpdatedAt": "2026-09-28T10:48:36Z"
+   "upstreamUpdatedAt": "2026-09-28T10:48:36Z",
+   "mailDate": "2026-09-28",
+   "mailEvents": [
+    "comment"
+   ]
   },
   "johan-issue:1189": {
    "status": "pending",
    "kind": "issue",
    "state": "closed",
    "comments": 0,
-   "upstreamUpdatedAt": "2026-07-12T21:36:35Z"
+   "upstreamUpdatedAt": "2026-07-12T21:36:35Z",
+   "mailDate": "2026-02-18",
+   "mailEvents": [
+    "comment",
+    "close"
+   ]
   },
   "johan-issue:119": {
    "status": "pending",
@@ -10979,42 +11676,72 @@
    "kind": "issue",
    "state": "closed",
    "comments": 2,
-   "upstreamUpdatedAt": "2026-09-28T15:14:44Z"
+   "upstreamUpdatedAt": "2026-09-28T15:14:44Z",
+   "mailDate": "2026-09-28",
+   "mailEvents": [
+    "comment",
+    "close"
+   ]
   },
   "johan-issue:1191": {
    "status": "pending",
    "kind": "issue",
    "state": "closed",
    "comments": 1,
-   "upstreamUpdatedAt": "2026-09-28T15:47:34Z"
+   "upstreamUpdatedAt": "2026-09-28T15:47:34Z",
+   "mailDate": "2026-09-28",
+   "mailEvents": [
+    "comment",
+    "close"
+   ]
   },
   "johan-issue:1192": {
    "status": "pending",
    "kind": "issue",
    "state": "closed",
    "comments": 1,
-   "upstreamUpdatedAt": "2026-09-30T20:50:47Z"
+   "upstreamUpdatedAt": "2026-09-30T20:50:47Z",
+   "mailDate": "2026-09-30",
+   "mailEvents": [
+    "comment",
+    "close"
+   ]
   },
   "johan-issue:1193": {
    "status": "pending",
    "kind": "issue",
    "state": "closed",
    "comments": 1,
-   "upstreamUpdatedAt": "2026-07-12T21:28:18Z"
+   "upstreamUpdatedAt": "2026-07-12T21:28:18Z",
+   "mailDate": "2026-03-09",
+   "mailEvents": [
+    "comment",
+    "close"
+   ]
   },
   "johan-issue:1194": {
    "status": "pending",
    "kind": "pr",
    "state": "closed",
    "comments": 2,
-   "upstreamUpdatedAt": "2026-09-28T08:34:57Z"
+   "upstreamUpdatedAt": "2026-09-28T08:34:57Z",
+   "mailDate": "2026-09-28",
+   "mailEvents": [
+    "comment",
+    "close"
+   ]
   },
   "johan-issue:1195": {
    "status": "pending",
    "kind": "pr",
    "state": "closed",
    "comments": 2,
-   "upstreamUpdatedAt": "2026-09-28T08:35:03Z"
+   "upstreamUpdatedAt": "2026-09-28T08:35:03Z",
+   "mailDate": "2026-09-28",
+   "mailEvents": [
+    "comment",
+    "close"
+   ]
   },
   "johan-issue:1196": {
    "status": "pending",
@@ -11028,21 +11755,36 @@
    "kind": "issue",
    "state": "closed",
    "comments": 1,
-   "upstreamUpdatedAt": "2026-09-28T15:56:04Z"
+   "upstreamUpdatedAt": "2026-09-28T15:56:04Z",
+   "mailDate": "2026-09-28",
+   "mailEvents": [
+    "comment",
+    "close"
+   ]
   },
   "johan-issue:1198": {
    "status": "pending",
    "kind": "issue",
    "state": "closed",
    "comments": 1,
-   "upstreamUpdatedAt": "2026-09-29T07:52:48Z"
+   "upstreamUpdatedAt": "2026-09-29T07:52:48Z",
+   "mailDate": "2026-09-29",
+   "mailEvents": [
+    "comment",
+    "close"
+   ]
   },
   "johan-issue:1199": {
    "status": "pending",
    "kind": "issue",
    "state": "closed",
    "comments": 1,
-   "upstreamUpdatedAt": "2026-09-28T15:52:15Z"
+   "upstreamUpdatedAt": "2026-09-28T15:52:15Z",
+   "mailDate": "2026-09-28",
+   "mailEvents": [
+    "comment",
+    "close"
+   ]
   },
   "johan-issue:12": {
    "status": "pending",
@@ -11063,35 +11805,59 @@
    "kind": "issue",
    "state": "closed",
    "comments": 4,
-   "upstreamUpdatedAt": "2026-10-02T21:57:33Z"
+   "upstreamUpdatedAt": "2026-10-02T21:57:33Z",
+   "mailDate": "2026-10-01",
+   "mailEvents": [
+    "comment",
+    "close"
+   ]
   },
   "johan-issue:1201": {
    "status": "pending",
    "kind": "issue",
    "state": "closed",
    "comments": 1,
-   "upstreamUpdatedAt": "2026-09-30T20:48:04Z"
+   "upstreamUpdatedAt": "2026-09-30T20:48:04Z",
+   "mailDate": "2026-09-30",
+   "mailEvents": [
+    "comment",
+    "close"
+   ]
   },
   "johan-issue:1202": {
    "status": "pending",
    "kind": "issue",
    "state": "open",
    "comments": 1,
-   "upstreamUpdatedAt": "2026-10-01T08:12:49Z"
+   "upstreamUpdatedAt": "2026-10-01T08:12:49Z",
+   "mailDate": "2026-10-01",
+   "mailEvents": [
+    "comment"
+   ]
   },
   "johan-issue:1203": {
    "status": "pending",
    "kind": "issue",
    "state": "closed",
    "comments": 2,
-   "upstreamUpdatedAt": "2026-10-01T16:00:02Z"
+   "upstreamUpdatedAt": "2026-10-01T16:00:02Z",
+   "mailDate": "2026-10-01",
+   "mailEvents": [
+    "comment",
+    "close"
+   ]
   },
   "johan-issue:1204": {
    "status": "pending",
    "kind": "pr",
    "state": "closed",
    "comments": 1,
-   "upstreamUpdatedAt": "2026-09-28T10:48:31Z"
+   "upstreamUpdatedAt": "2026-09-28T10:48:31Z",
+   "mailDate": "2026-09-28",
+   "mailEvents": [
+    "comment",
+    "close"
+   ]
   },
   "johan-issue:1205": {
    "status": "pending",
@@ -11105,28 +11871,48 @@
    "kind": "issue",
    "state": "closed",
    "comments": 2,
-   "upstreamUpdatedAt": "2026-09-29T07:43:32Z"
+   "upstreamUpdatedAt": "2026-09-29T07:43:32Z",
+   "mailDate": "2026-09-28",
+   "mailEvents": [
+    "comment",
+    "close"
+   ]
   },
   "johan-issue:1207": {
    "status": "pending",
    "kind": "issue",
    "state": "closed",
    "comments": 1,
-   "upstreamUpdatedAt": "2026-09-30T20:33:03Z"
+   "upstreamUpdatedAt": "2026-09-30T20:33:03Z",
+   "mailDate": "2026-09-30",
+   "mailEvents": [
+    "comment",
+    "close"
+   ]
   },
   "johan-issue:1208": {
    "status": "pending",
    "kind": "issue",
    "state": "closed",
    "comments": 3,
-   "upstreamUpdatedAt": "2026-10-02T19:41:40Z"
+   "upstreamUpdatedAt": "2026-10-02T19:41:40Z",
+   "mailDate": "2026-06-01",
+   "mailEvents": [
+    "comment",
+    "close"
+   ]
   },
   "johan-issue:1209": {
    "status": "pending",
    "kind": "pr",
    "state": "closed",
    "comments": 5,
-   "upstreamUpdatedAt": "2026-09-27T22:09:30Z"
+   "upstreamUpdatedAt": "2026-09-27T22:09:30Z",
+   "mailDate": "2026-02-18",
+   "mailEvents": [
+    "comment",
+    "close"
+   ]
   },
   "johan-issue:121": {
    "status": "pending",
@@ -11140,35 +11926,59 @@
    "kind": "pr",
    "state": "closed",
    "comments": 4,
-   "upstreamUpdatedAt": "2026-09-27T22:16:46Z"
+   "upstreamUpdatedAt": "2026-09-27T22:16:46Z",
+   "mailDate": "2026-09-28",
+   "mailEvents": [
+    "comment",
+    "close"
+   ]
   },
   "johan-issue:1211": {
    "status": "pending",
    "kind": "issue",
    "state": "closed",
    "comments": 1,
-   "upstreamUpdatedAt": "2026-09-29T19:58:24Z"
+   "upstreamUpdatedAt": "2026-09-29T19:58:24Z",
+   "mailDate": "2026-09-29",
+   "mailEvents": [
+    "comment",
+    "close"
+   ]
   },
   "johan-issue:1212": {
    "status": "pending",
    "kind": "issue",
    "state": "open",
    "comments": 1,
-   "upstreamUpdatedAt": "2026-10-01T16:18:20Z"
+   "upstreamUpdatedAt": "2026-10-01T16:18:20Z",
+   "mailDate": "2026-10-01",
+   "mailEvents": [
+    "comment"
+   ]
   },
   "johan-issue:1213": {
    "status": "pending",
    "kind": "issue",
    "state": "closed",
    "comments": 1,
-   "upstreamUpdatedAt": "2026-09-30T20:53:38Z"
+   "upstreamUpdatedAt": "2026-09-30T20:53:38Z",
+   "mailDate": "2026-09-30",
+   "mailEvents": [
+    "comment",
+    "close"
+   ]
   },
   "johan-issue:1214": {
    "status": "pending",
    "kind": "issue",
    "state": "closed",
    "comments": 5,
-   "upstreamUpdatedAt": "2026-10-03T08:53:45Z"
+   "upstreamUpdatedAt": "2026-10-03T08:53:45Z",
+   "mailDate": "2026-02-18",
+   "mailEvents": [
+    "comment",
+    "close"
+   ]
   },
   "johan-issue:1215": {
    "status": "pending",
@@ -11189,56 +11999,92 @@
    "kind": "issue",
    "state": "open",
    "comments": 2,
-   "upstreamUpdatedAt": "2026-10-01T08:13:14Z"
+   "upstreamUpdatedAt": "2026-10-01T08:13:14Z",
+   "mailDate": "2026-09-30",
+   "mailEvents": [
+    "comment"
+   ]
   },
   "johan-issue:1218": {
    "status": "pending",
    "kind": "pr",
    "state": "closed",
    "comments": 2,
-   "upstreamUpdatedAt": "2026-09-28T10:09:34Z"
+   "upstreamUpdatedAt": "2026-09-28T10:09:34Z",
+   "mailDate": "2026-09-28",
+   "mailEvents": [
+    "comment",
+    "close"
+   ]
   },
   "johan-issue:1219": {
    "status": "pending",
    "kind": "pr",
    "state": "closed",
    "comments": 2,
-   "upstreamUpdatedAt": "2026-09-28T10:10:06Z"
+   "upstreamUpdatedAt": "2026-09-28T10:10:06Z",
+   "mailDate": "2026-09-28",
+   "mailEvents": [
+    "comment",
+    "close"
+   ]
   },
   "johan-issue:122": {
    "status": "pending",
    "kind": "issue",
    "state": "closed",
    "comments": 9,
-   "upstreamUpdatedAt": "2026-07-12T21:37:09Z"
+   "upstreamUpdatedAt": "2026-07-12T21:37:09Z",
+   "mailDate": "2026-02-01",
+   "mailEvents": [
+    "comment"
+   ]
   },
   "johan-issue:1220": {
    "status": "pending",
    "kind": "pr",
    "state": "closed",
    "comments": 1,
-   "upstreamUpdatedAt": "2026-09-28T10:13:55Z"
+   "upstreamUpdatedAt": "2026-09-28T10:13:55Z",
+   "mailDate": "2026-09-28",
+   "mailEvents": [
+    "comment",
+    "close"
+   ]
   },
   "johan-issue:1221": {
    "status": "pending",
    "kind": "pr",
    "state": "closed",
    "comments": 2,
-   "upstreamUpdatedAt": "2026-09-28T10:14:20Z"
+   "upstreamUpdatedAt": "2026-09-28T10:14:20Z",
+   "mailDate": "2026-09-28",
+   "mailEvents": [
+    "comment",
+    "close"
+   ]
   },
   "johan-issue:1222": {
    "status": "pending",
    "kind": "issue",
    "state": "open",
    "comments": 1,
-   "upstreamUpdatedAt": "2026-10-01T08:13:16Z"
+   "upstreamUpdatedAt": "2026-10-01T08:13:16Z",
+   "mailDate": "2026-10-01",
+   "mailEvents": [
+    "comment"
+   ]
   },
   "johan-issue:1223": {
    "status": "pending",
    "kind": "issue",
    "state": "open",
    "comments": 2,
-   "upstreamUpdatedAt": "2026-10-02T20:30:13Z"
+   "upstreamUpdatedAt": "2026-10-02T20:30:13Z",
+   "mailDate": "2026-10-01",
+   "mailEvents": [
+    "comment"
+   ]
   },
   "johan-issue:1224": {
    "status": "pending",
@@ -11252,35 +12098,57 @@
    "kind": "issue",
    "state": "open",
    "comments": 2,
-   "upstreamUpdatedAt": "2026-10-01T08:13:21Z"
+   "upstreamUpdatedAt": "2026-10-01T08:13:21Z",
+   "mailDate": "2026-10-01",
+   "mailEvents": [
+    "comment"
+   ]
   },
   "johan-issue:1226": {
    "status": "pending",
    "kind": "issue",
    "state": "open",
    "comments": 3,
-   "upstreamUpdatedAt": "2026-10-02T22:20:02Z"
+   "upstreamUpdatedAt": "2026-10-02T22:20:02Z",
+   "mailDate": "2026-10-03",
+   "mailEvents": [
+    "comment"
+   ]
   },
   "johan-issue:1227": {
    "status": "pending",
    "kind": "issue",
    "state": "closed",
    "comments": 1,
-   "upstreamUpdatedAt": "2026-10-01T08:13:41Z"
+   "upstreamUpdatedAt": "2026-10-01T08:13:41Z",
+   "mailDate": "2026-10-01",
+   "mailEvents": [
+    "comment",
+    "close"
+   ]
   },
   "johan-issue:1228": {
    "status": "pending",
    "kind": "issue",
    "state": "closed",
    "comments": 3,
-   "upstreamUpdatedAt": "2026-09-29T07:52:58Z"
+   "upstreamUpdatedAt": "2026-09-29T07:52:58Z",
+   "mailDate": "2026-09-29",
+   "mailEvents": [
+    "comment",
+    "close"
+   ]
   },
   "johan-issue:1229": {
    "status": "pending",
    "kind": "issue",
    "state": "open",
    "comments": 12,
-   "upstreamUpdatedAt": "2026-09-30T06:18:56Z"
+   "upstreamUpdatedAt": "2026-09-30T06:18:56Z",
+   "mailDate": "2026-02-28",
+   "mailEvents": [
+    "comment"
+   ]
   },
   "johan-issue:123": {
    "status": "pending",
@@ -11294,35 +12162,59 @@
    "kind": "pr",
    "state": "closed",
    "comments": 2,
-   "upstreamUpdatedAt": "2026-09-27T23:12:19Z"
+   "upstreamUpdatedAt": "2026-09-27T23:12:19Z",
+   "mailDate": "2026-09-28",
+   "mailEvents": [
+    "comment",
+    "close"
+   ]
   },
   "johan-issue:1231": {
    "status": "pending",
    "kind": "pr",
    "state": "closed",
    "comments": 2,
-   "upstreamUpdatedAt": "2026-09-28T10:14:37Z"
+   "upstreamUpdatedAt": "2026-09-28T10:14:37Z",
+   "mailDate": "2026-09-28",
+   "mailEvents": [
+    "comment",
+    "close"
+   ]
   },
   "johan-issue:1232": {
    "status": "pending",
    "kind": "issue",
    "state": "closed",
    "comments": 2,
-   "upstreamUpdatedAt": "2026-09-28T15:52:30Z"
+   "upstreamUpdatedAt": "2026-09-28T15:52:30Z",
+   "mailDate": "2026-09-28",
+   "mailEvents": [
+    "comment",
+    "close"
+   ]
   },
   "johan-issue:1233": {
    "status": "pending",
    "kind": "issue",
    "state": "closed",
    "comments": 2,
-   "upstreamUpdatedAt": "2026-09-30T06:13:08Z"
+   "upstreamUpdatedAt": "2026-09-30T06:13:08Z",
+   "mailDate": "2026-09-30",
+   "mailEvents": [
+    "comment",
+    "close"
+   ]
   },
   "johan-issue:1234": {
    "status": "pending",
    "kind": "issue",
    "state": "open",
    "comments": 4,
-   "upstreamUpdatedAt": "2026-10-02T20:30:17Z"
+   "upstreamUpdatedAt": "2026-10-02T20:30:17Z",
+   "mailDate": "2026-10-02",
+   "mailEvents": [
+    "comment"
+   ]
   },
   "johan-issue:1235": {
    "status": "pending",
@@ -11336,28 +12228,48 @@
    "kind": "issue",
    "state": "closed",
    "comments": 1,
-   "upstreamUpdatedAt": "2026-09-30T06:13:14Z"
+   "upstreamUpdatedAt": "2026-09-30T06:13:14Z",
+   "mailDate": "2026-09-30",
+   "mailEvents": [
+    "comment",
+    "close"
+   ]
   },
   "johan-issue:1237": {
    "status": "pending",
    "kind": "pr",
    "state": "closed",
    "comments": 4,
-   "upstreamUpdatedAt": "2026-09-28T08:24:03Z"
+   "upstreamUpdatedAt": "2026-09-28T08:24:03Z",
+   "mailDate": "2026-09-28",
+   "mailEvents": [
+    "comment",
+    "close"
+   ]
   },
   "johan-issue:1238": {
    "status": "pending",
    "kind": "issue",
    "state": "closed",
    "comments": 2,
-   "upstreamUpdatedAt": "2026-10-02T20:31:17Z"
+   "upstreamUpdatedAt": "2026-10-02T20:31:17Z",
+   "mailDate": "2026-10-01",
+   "mailEvents": [
+    "comment",
+    "close"
+   ]
   },
   "johan-issue:1239": {
    "status": "pending",
    "kind": "issue",
    "state": "closed",
    "comments": 2,
-   "upstreamUpdatedAt": "2026-10-01T16:01:08Z"
+   "upstreamUpdatedAt": "2026-10-01T16:01:08Z",
+   "mailDate": "2026-10-01",
+   "mailEvents": [
+    "comment",
+    "close"
+   ]
   },
   "johan-issue:124": {
    "status": "pending",
@@ -11371,7 +12283,12 @@
    "kind": "issue",
    "state": "closed",
    "comments": 2,
-   "upstreamUpdatedAt": "2026-10-02T11:54:39Z"
+   "upstreamUpdatedAt": "2026-10-02T11:54:39Z",
+   "mailDate": "2026-10-01",
+   "mailEvents": [
+    "comment",
+    "close"
+   ]
   },
   "johan-issue:1241": {
    "status": "pending",
@@ -11385,56 +12302,94 @@
    "kind": "issue",
    "state": "closed",
    "comments": 1,
-   "upstreamUpdatedAt": "2026-07-12T21:28:18Z"
+   "upstreamUpdatedAt": "2026-07-12T21:28:18Z",
+   "mailDate": "2026-03-09",
+   "mailEvents": [
+    "comment",
+    "close"
+   ]
   },
   "johan-issue:1243": {
    "status": "pending",
    "kind": "issue",
    "state": "closed",
    "comments": 1,
-   "upstreamUpdatedAt": "2026-07-12T21:28:17Z"
+   "upstreamUpdatedAt": "2026-07-12T21:28:17Z",
+   "mailDate": "2026-03-09",
+   "mailEvents": [
+    "comment",
+    "close"
+   ]
   },
   "johan-issue:1244": {
    "status": "pending",
    "kind": "issue",
    "state": "open",
    "comments": 1,
-   "upstreamUpdatedAt": "2026-09-29T08:49:48Z"
+   "upstreamUpdatedAt": "2026-09-29T08:49:48Z",
+   "mailDate": "2026-09-29",
+   "mailEvents": [
+    "comment"
+   ]
   },
   "johan-issue:1245": {
    "status": "pending",
    "kind": "issue",
    "state": "closed",
    "comments": 5,
-   "upstreamUpdatedAt": "2026-10-02T20:31:00Z"
+   "upstreamUpdatedAt": "2026-10-02T20:31:00Z",
+   "mailDate": "2026-10-01",
+   "mailEvents": [
+    "comment",
+    "close"
+   ]
   },
   "johan-issue:1246": {
    "status": "pending",
    "kind": "issue",
    "state": "closed",
    "comments": 3,
-   "upstreamUpdatedAt": "2026-10-02T22:24:42Z"
+   "upstreamUpdatedAt": "2026-10-02T22:24:42Z",
+   "mailDate": "2026-09-28",
+   "mailEvents": [
+    "comment",
+    "close"
+   ]
   },
   "johan-issue:1247": {
    "status": "pending",
    "kind": "issue",
    "state": "closed",
    "comments": 2,
-   "upstreamUpdatedAt": "2026-10-02T22:20:51Z"
+   "upstreamUpdatedAt": "2026-10-02T22:20:51Z",
+   "mailDate": "2026-10-01",
+   "mailEvents": [
+    "comment",
+    "close"
+   ]
   },
   "johan-issue:1248": {
    "status": "pending",
    "kind": "pr",
    "state": "closed",
    "comments": 1,
-   "upstreamUpdatedAt": "2026-09-28T10:48:38Z"
+   "upstreamUpdatedAt": "2026-09-28T10:48:38Z",
+   "mailDate": "2026-09-28",
+   "mailEvents": [
+    "comment"
+   ]
   },
   "johan-issue:1249": {
    "status": "pending",
    "kind": "issue",
    "state": "closed",
    "comments": 2,
-   "upstreamUpdatedAt": "2026-09-30T22:32:42Z"
+   "upstreamUpdatedAt": "2026-09-30T22:32:42Z",
+   "mailDate": "2026-09-30",
+   "mailEvents": [
+    "comment",
+    "close"
+   ]
   },
   "johan-issue:125": {
    "status": "pending",
@@ -11448,70 +12403,114 @@
    "kind": "issue",
    "state": "closed",
    "comments": 2,
-   "upstreamUpdatedAt": "2026-09-30T22:32:48Z"
+   "upstreamUpdatedAt": "2026-09-30T22:32:48Z",
+   "mailDate": "2026-09-30",
+   "mailEvents": [
+    "comment",
+    "close"
+   ]
   },
   "johan-issue:1251": {
    "status": "pending",
    "kind": "pr",
    "state": "closed",
    "comments": 0,
-   "upstreamUpdatedAt": "2025-07-22T01:49:02Z"
+   "upstreamUpdatedAt": "2025-07-22T01:49:02Z",
+   "mailDate": "2025-07-21",
+   "mailEvents": [
+    "comment"
+   ]
   },
   "johan-issue:1252": {
    "status": "pending",
    "kind": "issue",
    "state": "closed",
    "comments": 1,
-   "upstreamUpdatedAt": "2026-09-29T08:21:35Z"
+   "upstreamUpdatedAt": "2026-09-29T08:21:35Z",
+   "mailDate": "2026-09-29",
+   "mailEvents": [
+    "comment",
+    "close"
+   ]
   },
   "johan-issue:1253": {
    "status": "pending",
    "kind": "pr",
    "state": "closed",
    "comments": 7,
-   "upstreamUpdatedAt": "2026-09-27T22:16:44Z"
+   "upstreamUpdatedAt": "2026-09-27T22:16:44Z",
+   "mailDate": "2026-02-28",
+   "mailEvents": [
+    "comment",
+    "close"
+   ]
   },
   "johan-issue:1254": {
    "status": "pending",
    "kind": "pr",
    "state": "closed",
    "comments": 0,
-   "upstreamUpdatedAt": "2025-07-24T12:22:01Z"
+   "upstreamUpdatedAt": "2025-07-24T12:22:01Z",
+   "mailDate": "2025-07-21",
+   "mailEvents": [
+    "comment"
+   ]
   },
   "johan-issue:1255": {
    "status": "pending",
    "kind": "pr",
    "state": "closed",
    "comments": 0,
-   "upstreamUpdatedAt": "2026-07-12T21:37:30Z"
+   "upstreamUpdatedAt": "2026-07-12T21:37:30Z",
+   "mailDate": "2025-07-21",
+   "mailEvents": [
+    "comment"
+   ]
   },
   "johan-issue:1256": {
    "status": "pending",
    "kind": "issue",
    "state": "closed",
    "comments": 6,
-   "upstreamUpdatedAt": "2026-10-02T11:57:34Z"
+   "upstreamUpdatedAt": "2026-10-02T11:57:34Z",
+   "mailDate": "2026-09-30",
+   "mailEvents": [
+    "comment",
+    "close"
+   ]
   },
   "johan-issue:1257": {
    "status": "pending",
    "kind": "pr",
    "state": "closed",
    "comments": 0,
-   "upstreamUpdatedAt": "2025-07-24T12:22:01Z"
+   "upstreamUpdatedAt": "2025-07-24T12:22:01Z",
+   "mailDate": "2025-07-22",
+   "mailEvents": [
+    "comment"
+   ]
   },
   "johan-issue:1258": {
    "status": "pending",
    "kind": "pr",
    "state": "closed",
    "comments": 0,
-   "upstreamUpdatedAt": "2025-07-24T12:22:01Z"
+   "upstreamUpdatedAt": "2025-07-24T12:22:01Z",
+   "mailDate": "2025-07-22",
+   "mailEvents": [
+    "comment"
+   ]
   },
   "johan-issue:1259": {
    "status": "pending",
    "kind": "pr",
    "state": "closed",
    "comments": 0,
-   "upstreamUpdatedAt": "2025-07-24T12:22:02Z"
+   "upstreamUpdatedAt": "2025-07-24T12:22:02Z",
+   "mailDate": "2025-07-22",
+   "mailEvents": [
+    "comment"
+   ]
   },
   "johan-issue:126": {
    "status": "pending",
@@ -11525,14 +12524,20 @@
    "kind": "pr",
    "state": "closed",
    "comments": 1,
-   "upstreamUpdatedAt": "2026-07-12T21:37:31Z"
+   "upstreamUpdatedAt": "2026-07-12T21:37:31Z",
+   "mailDate": "2025-07-24",
+   "mailEvents": []
   },
   "johan-issue:1261": {
    "status": "pending",
    "kind": "pr",
    "state": "closed",
    "comments": 0,
-   "upstreamUpdatedAt": "2025-07-25T02:21:32Z"
+   "upstreamUpdatedAt": "2025-07-25T02:21:32Z",
+   "mailDate": "2025-07-24",
+   "mailEvents": [
+    "comment"
+   ]
   },
   "johan-issue:1262": {
    "status": "pending",
@@ -11553,14 +12558,24 @@
    "kind": "issue",
    "state": "closed",
    "comments": 1,
-   "upstreamUpdatedAt": "2026-09-30T21:53:06Z"
+   "upstreamUpdatedAt": "2026-09-30T21:53:06Z",
+   "mailDate": "2026-09-30",
+   "mailEvents": [
+    "comment",
+    "close"
+   ]
   },
   "johan-issue:1265": {
    "status": "pending",
    "kind": "issue",
    "state": "closed",
    "comments": 3,
-   "upstreamUpdatedAt": "2026-10-02T20:04:26Z"
+   "upstreamUpdatedAt": "2026-10-02T20:04:26Z",
+   "mailDate": "2026-10-01",
+   "mailEvents": [
+    "comment",
+    "close"
+   ]
   },
   "johan-issue:1266": {
    "status": "pending",
@@ -11574,21 +12589,36 @@
    "kind": "issue",
    "state": "closed",
    "comments": 3,
-   "upstreamUpdatedAt": "2026-10-03T07:59:04Z"
+   "upstreamUpdatedAt": "2026-10-03T07:59:04Z",
+   "mailDate": "2026-10-01",
+   "mailEvents": [
+    "comment",
+    "close"
+   ]
   },
   "johan-issue:1268": {
    "status": "pending",
    "kind": "issue",
    "state": "closed",
    "comments": 2,
-   "upstreamUpdatedAt": "2026-09-28T15:19:02Z"
+   "upstreamUpdatedAt": "2026-09-28T15:19:02Z",
+   "mailDate": "2026-09-28",
+   "mailEvents": [
+    "comment",
+    "close"
+   ]
   },
   "johan-issue:1269": {
    "status": "pending",
    "kind": "issue",
    "state": "closed",
    "comments": 9,
-   "upstreamUpdatedAt": "2026-10-03T08:06:16Z"
+   "upstreamUpdatedAt": "2026-10-03T08:06:16Z",
+   "mailDate": "2026-10-03",
+   "mailEvents": [
+    "comment",
+    "close"
+   ]
   },
   "johan-issue:127": {
    "status": "pending",
@@ -11602,70 +12632,115 @@
    "kind": "issue",
    "state": "open",
    "comments": 4,
-   "upstreamUpdatedAt": "2026-10-01T08:23:38Z"
+   "upstreamUpdatedAt": "2026-10-01T08:23:38Z",
+   "mailDate": "2026-10-01",
+   "mailEvents": [
+    "comment"
+   ]
   },
   "johan-issue:1271": {
    "status": "pending",
    "kind": "issue",
    "state": "closed",
    "comments": 1,
-   "upstreamUpdatedAt": "2026-07-12T21:37:34Z"
+   "upstreamUpdatedAt": "2026-07-12T21:37:34Z",
+   "mailDate": "2025-12-03",
+   "mailEvents": [
+    "comment",
+    "close"
+   ]
   },
   "johan-issue:1272": {
    "status": "pending",
    "kind": "issue",
    "state": "open",
    "comments": 10,
-   "upstreamUpdatedAt": "2026-10-01T16:09:13Z"
+   "upstreamUpdatedAt": "2026-10-01T16:09:13Z",
+   "mailDate": "2026-10-01",
+   "mailEvents": [
+    "comment"
+   ]
   },
   "johan-issue:1273": {
    "status": "pending",
    "kind": "issue",
    "state": "closed",
    "comments": 2,
-   "upstreamUpdatedAt": "2026-10-01T16:10:29Z"
+   "upstreamUpdatedAt": "2026-10-01T16:10:29Z",
+   "mailDate": "2026-10-01",
+   "mailEvents": [
+    "comment",
+    "close"
+   ]
   },
   "johan-issue:1274": {
    "status": "pending",
    "kind": "issue",
    "state": "open",
    "comments": 2,
-   "upstreamUpdatedAt": "2026-10-01T08:34:02Z"
+   "upstreamUpdatedAt": "2026-10-01T08:34:02Z",
+   "mailDate": "2026-10-01",
+   "mailEvents": [
+    "comment"
+   ]
   },
   "johan-issue:1275": {
    "status": "pending",
    "kind": "issue",
    "state": "open",
    "comments": 2,
-   "upstreamUpdatedAt": "2026-09-30T22:06:12Z"
+   "upstreamUpdatedAt": "2026-09-30T22:06:12Z",
+   "mailDate": "2026-10-01",
+   "mailEvents": [
+    "comment"
+   ]
   },
   "johan-issue:1276": {
    "status": "pending",
    "kind": "issue",
    "state": "closed",
    "comments": 2,
-   "upstreamUpdatedAt": "2026-10-01T16:20:46Z"
+   "upstreamUpdatedAt": "2026-10-01T16:20:46Z",
+   "mailDate": "2026-10-01",
+   "mailEvents": [
+    "comment",
+    "close"
+   ]
   },
   "johan-issue:1277": {
    "status": "pending",
    "kind": "issue",
    "state": "closed",
    "comments": 1,
-   "upstreamUpdatedAt": "2026-09-29T08:21:31Z"
+   "upstreamUpdatedAt": "2026-09-29T08:21:31Z",
+   "mailDate": "2026-09-29",
+   "mailEvents": [
+    "comment",
+    "close"
+   ]
   },
   "johan-issue:1278": {
    "status": "pending",
    "kind": "issue",
    "state": "closed",
    "comments": 3,
-   "upstreamUpdatedAt": "2026-10-02T22:24:40Z"
+   "upstreamUpdatedAt": "2026-10-02T22:24:40Z",
+   "mailDate": "2026-10-01",
+   "mailEvents": [
+    "comment",
+    "close"
+   ]
   },
   "johan-issue:1279": {
    "status": "pending",
    "kind": "issue",
    "state": "open",
    "comments": 2,
-   "upstreamUpdatedAt": "2026-10-01T08:34:26Z"
+   "upstreamUpdatedAt": "2026-10-01T08:34:26Z",
+   "mailDate": "2026-10-01",
+   "mailEvents": [
+    "comment"
+   ]
   },
   "johan-issue:128": {
    "status": "pending",
@@ -11679,7 +12754,12 @@
    "kind": "issue",
    "state": "closed",
    "comments": 13,
-   "upstreamUpdatedAt": "2026-10-02T20:31:03Z"
+   "upstreamUpdatedAt": "2026-10-02T20:31:03Z",
+   "mailDate": "2026-10-01",
+   "mailEvents": [
+    "comment",
+    "close"
+   ]
   },
   "johan-issue:1281": {
    "status": "pending",
@@ -11693,14 +12773,23 @@
    "kind": "issue",
    "state": "open",
    "comments": 9,
-   "upstreamUpdatedAt": "2026-10-01T08:34:32Z"
+   "upstreamUpdatedAt": "2026-10-01T08:34:32Z",
+   "mailDate": "2026-10-01",
+   "mailEvents": [
+    "comment"
+   ]
   },
   "johan-issue:1283": {
    "status": "pending",
    "kind": "issue",
    "state": "closed",
    "comments": 9,
-   "upstreamUpdatedAt": "2026-09-29T22:54:44Z"
+   "upstreamUpdatedAt": "2026-09-29T22:54:44Z",
+   "mailDate": "2026-09-30",
+   "mailEvents": [
+    "comment",
+    "close"
+   ]
   },
   "johan-issue:1284": {
    "status": "pending",
@@ -11714,35 +12803,57 @@
    "kind": "issue",
    "state": "open",
    "comments": 1,
-   "upstreamUpdatedAt": "2026-10-01T08:34:38Z"
+   "upstreamUpdatedAt": "2026-10-01T08:34:38Z",
+   "mailDate": "2026-10-01",
+   "mailEvents": [
+    "comment"
+   ]
   },
   "johan-issue:1286": {
    "status": "pending",
    "kind": "issue",
    "state": "open",
    "comments": 11,
-   "upstreamUpdatedAt": "2026-10-01T08:34:57Z"
+   "upstreamUpdatedAt": "2026-10-01T08:34:57Z",
+   "mailDate": "2026-10-01",
+   "mailEvents": [
+    "comment"
+   ]
   },
   "johan-issue:1287": {
    "status": "pending",
    "kind": "issue",
    "state": "open",
    "comments": 1,
-   "upstreamUpdatedAt": "2026-10-01T08:35:00Z"
+   "upstreamUpdatedAt": "2026-10-01T08:35:00Z",
+   "mailDate": "2026-10-01",
+   "mailEvents": [
+    "comment"
+   ]
   },
   "johan-issue:1288": {
    "status": "pending",
    "kind": "issue",
    "state": "open",
    "comments": 20,
-   "upstreamUpdatedAt": "2026-10-03T10:21:30Z"
+   "upstreamUpdatedAt": "2026-10-03T10:21:30Z",
+   "mailDate": "2026-10-03",
+   "mailEvents": [
+    "comment",
+    "merge"
+   ]
   },
   "johan-issue:1289": {
    "status": "pending",
    "kind": "issue",
    "state": "closed",
    "comments": 2,
-   "upstreamUpdatedAt": "2026-09-30T06:18:50Z"
+   "upstreamUpdatedAt": "2026-09-30T06:18:50Z",
+   "mailDate": "2026-09-30",
+   "mailEvents": [
+    "comment",
+    "close"
+   ]
   },
   "johan-issue:129": {
    "status": "pending",
@@ -11756,56 +12867,93 @@
    "kind": "issue",
    "state": "open",
    "comments": 2,
-   "upstreamUpdatedAt": "2026-09-29T07:56:10Z"
+   "upstreamUpdatedAt": "2026-09-29T07:56:10Z",
+   "mailDate": "2026-09-29",
+   "mailEvents": [
+    "comment"
+   ]
   },
   "johan-issue:1291": {
    "status": "pending",
    "kind": "issue",
    "state": "open",
    "comments": 12,
-   "upstreamUpdatedAt": "2026-10-03T08:52:04Z"
+   "upstreamUpdatedAt": "2026-10-03T08:52:04Z",
+   "mailDate": "2026-10-03",
+   "mailEvents": [
+    "comment"
+   ]
   },
   "johan-issue:1292": {
    "status": "pending",
    "kind": "pr",
    "state": "closed",
    "comments": 14,
-   "upstreamUpdatedAt": "2026-09-28T10:19:29Z"
+   "upstreamUpdatedAt": "2026-09-28T10:19:29Z",
+   "mailDate": "2026-09-28",
+   "mailEvents": [
+    "comment",
+    "close"
+   ]
   },
   "johan-issue:1293": {
    "status": "pending",
    "kind": "issue",
    "state": "open",
    "comments": 12,
-   "upstreamUpdatedAt": "2026-10-02T21:56:57Z"
+   "upstreamUpdatedAt": "2026-10-02T21:56:57Z",
+   "mailDate": "2026-10-02",
+   "mailEvents": [
+    "comment"
+   ]
   },
   "johan-issue:1294": {
    "status": "pending",
    "kind": "issue",
    "state": "closed",
    "comments": 4,
-   "upstreamUpdatedAt": "2026-10-02T20:04:40Z"
+   "upstreamUpdatedAt": "2026-10-02T20:04:40Z",
+   "mailDate": "2026-10-01",
+   "mailEvents": [
+    "comment",
+    "close"
+   ]
   },
   "johan-issue:1295": {
    "status": "pending",
    "kind": "issue",
    "state": "closed",
    "comments": 5,
-   "upstreamUpdatedAt": "2026-09-29T11:45:42Z"
+   "upstreamUpdatedAt": "2026-09-29T11:45:42Z",
+   "mailDate": "2026-09-29",
+   "mailEvents": [
+    "comment",
+    "close"
+   ]
   },
   "johan-issue:1296": {
    "status": "pending",
    "kind": "issue",
    "state": "closed",
    "comments": 3,
-   "upstreamUpdatedAt": "2026-09-29T08:21:27Z"
+   "upstreamUpdatedAt": "2026-09-29T08:21:27Z",
+   "mailDate": "2026-09-29",
+   "mailEvents": [
+    "comment",
+    "close"
+   ]
   },
   "johan-issue:1297": {
    "status": "pending",
    "kind": "issue",
    "state": "closed",
    "comments": 4,
-   "upstreamUpdatedAt": "2026-07-12T21:28:58Z"
+   "upstreamUpdatedAt": "2026-07-12T21:28:58Z",
+   "mailDate": "2026-02-22",
+   "mailEvents": [
+    "comment",
+    "close"
+   ]
   },
   "johan-issue:1298": {
    "status": "done",
@@ -11816,14 +12964,24 @@
    "commit": "bca6ae7052",
    "date": "2026-10-03",
    "updatedAt": "2026-10-03T14:47:42Z",
-   "note": "HOBEIAN|ZG-102ZL exact on contact_sensor"
+   "note": "HOBEIAN|ZG-102ZL exact on contact_sensor",
+   "mailDate": "2026-10-03",
+   "mailEvents": [
+    "comment",
+    "merge"
+   ]
   },
   "johan-issue:1299": {
    "status": "pending",
    "kind": "issue",
    "state": "closed",
    "comments": 11,
-   "upstreamUpdatedAt": "2026-09-28T16:06:19Z"
+   "upstreamUpdatedAt": "2026-09-28T16:06:19Z",
+   "mailDate": "2026-09-28",
+   "mailEvents": [
+    "comment",
+    "close"
+   ]
   },
   "johan-issue:13": {
    "status": "pending",
@@ -11844,70 +13002,116 @@
    "kind": "issue",
    "state": "open",
    "comments": 6,
-   "upstreamUpdatedAt": "2026-10-02T20:49:55Z"
+   "upstreamUpdatedAt": "2026-10-02T20:49:55Z",
+   "mailDate": "2026-10-02",
+   "mailEvents": [
+    "comment"
+   ]
   },
   "johan-issue:1301": {
    "status": "pending",
    "kind": "issue",
    "state": "closed",
    "comments": 15,
-   "upstreamUpdatedAt": "2026-10-02T21:57:28Z"
+   "upstreamUpdatedAt": "2026-10-02T21:57:28Z",
+   "mailDate": "2026-10-01",
+   "mailEvents": [
+    "comment",
+    "close"
+   ]
   },
   "johan-issue:1302": {
    "status": "pending",
    "kind": "issue",
    "state": "open",
    "comments": 5,
-   "upstreamUpdatedAt": "2026-10-01T08:45:18Z"
+   "upstreamUpdatedAt": "2026-10-01T08:45:18Z",
+   "mailDate": "2026-10-01",
+   "mailEvents": [
+    "comment"
+   ]
   },
   "johan-issue:1303": {
    "status": "pending",
    "kind": "pr",
    "state": "closed",
    "comments": 4,
-   "upstreamUpdatedAt": "2026-09-28T10:17:56Z"
+   "upstreamUpdatedAt": "2026-09-28T10:17:56Z",
+   "mailDate": "2026-09-28",
+   "mailEvents": [
+    "comment",
+    "close"
+   ]
   },
   "johan-issue:1304": {
    "status": "pending",
    "kind": "issue",
    "state": "closed",
    "comments": 7,
-   "upstreamUpdatedAt": "2026-09-28T22:38:49Z"
+   "upstreamUpdatedAt": "2026-09-28T22:38:49Z",
+   "mailDate": "2026-04-12",
+   "mailEvents": [
+    "comment",
+    "close"
+   ]
   },
   "johan-issue:1305": {
    "status": "pending",
    "kind": "issue",
    "state": "open",
    "comments": 9,
-   "upstreamUpdatedAt": "2026-10-01T08:45:23Z"
+   "upstreamUpdatedAt": "2026-10-01T08:45:23Z",
+   "mailDate": "2026-10-01",
+   "mailEvents": [
+    "comment"
+   ]
   },
   "johan-issue:1306": {
    "status": "pending",
    "kind": "pr",
    "state": "closed",
    "comments": 4,
-   "upstreamUpdatedAt": "2026-09-28T10:49:08Z"
+   "upstreamUpdatedAt": "2026-09-28T10:49:08Z",
+   "mailDate": "2026-02-06",
+   "mailEvents": [
+    "comment",
+    "close"
+   ]
   },
   "johan-issue:1307": {
    "status": "pending",
    "kind": "issue",
    "state": "open",
    "comments": 4,
-   "upstreamUpdatedAt": "2026-10-01T08:45:26Z"
+   "upstreamUpdatedAt": "2026-10-01T08:45:26Z",
+   "mailDate": "2026-10-01",
+   "mailEvents": [
+    "comment"
+   ]
   },
   "johan-issue:1308": {
    "status": "pending",
    "kind": "issue",
    "state": "closed",
    "comments": 4,
-   "upstreamUpdatedAt": "2026-07-12T21:28:16Z"
+   "upstreamUpdatedAt": "2026-07-12T21:28:16Z",
+   "mailDate": "2026-03-09",
+   "mailEvents": [
+    "comment",
+    "close"
+   ]
   },
   "johan-issue:1309": {
    "status": "pending",
    "kind": "issue",
    "state": "closed",
    "comments": 13,
-   "upstreamUpdatedAt": "2026-09-28T15:53:48Z"
+   "upstreamUpdatedAt": "2026-09-28T15:53:48Z",
+   "mailDate": "2026-09-28",
+   "mailEvents": [
+    "comment",
+    "close"
+   ]
   },
   "johan-issue:131": {
    "status": "pending",
@@ -11921,70 +13125,117 @@
    "kind": "issue",
    "state": "open",
    "comments": 14,
-   "upstreamUpdatedAt": "2026-09-30T22:03:35Z"
+   "upstreamUpdatedAt": "2026-09-30T22:03:35Z",
+   "mailDate": "2026-10-01",
+   "mailEvents": [
+    "comment"
+   ]
   },
   "johan-issue:1311": {
    "status": "pending",
    "kind": "issue",
    "state": "closed",
    "comments": 13,
-   "upstreamUpdatedAt": "2026-09-29T22:59:09Z"
+   "upstreamUpdatedAt": "2026-09-29T22:59:09Z",
+   "mailDate": "2026-09-29",
+   "mailEvents": [
+    "comment",
+    "close"
+   ]
   },
   "johan-issue:1312": {
    "status": "pending",
    "kind": "issue",
    "state": "closed",
    "comments": 15,
-   "upstreamUpdatedAt": "2026-09-29T08:42:18Z"
+   "upstreamUpdatedAt": "2026-09-29T08:42:18Z",
+   "mailDate": "2026-09-29",
+   "mailEvents": [
+    "comment",
+    "close"
+   ]
   },
   "johan-issue:1313": {
    "status": "pending",
    "kind": "issue",
    "state": "open",
    "comments": 16,
-   "upstreamUpdatedAt": "2026-10-01T08:45:30Z"
+   "upstreamUpdatedAt": "2026-10-01T08:45:30Z",
+   "mailDate": "2026-10-01",
+   "mailEvents": [
+    "comment"
+   ]
   },
   "johan-issue:1314": {
    "status": "pending",
    "kind": "issue",
    "state": "closed",
    "comments": 9,
-   "upstreamUpdatedAt": "2026-10-02T22:02:26Z"
+   "upstreamUpdatedAt": "2026-10-02T22:02:26Z",
+   "mailDate": "2026-10-01",
+   "mailEvents": [
+    "comment",
+    "close"
+   ]
   },
   "johan-issue:1315": {
    "status": "pending",
    "kind": "issue",
    "state": "closed",
    "comments": 4,
-   "upstreamUpdatedAt": "2026-09-30T21:57:54Z"
+   "upstreamUpdatedAt": "2026-09-30T21:57:54Z",
+   "mailDate": "2026-09-30",
+   "mailEvents": [
+    "comment",
+    "close"
+   ]
   },
   "johan-issue:1316": {
    "status": "pending",
    "kind": "issue",
    "state": "closed",
    "comments": 15,
-   "upstreamUpdatedAt": "2026-09-30T21:53:21Z"
+   "upstreamUpdatedAt": "2026-09-30T21:53:21Z",
+   "mailDate": "2026-09-30",
+   "mailEvents": [
+    "comment",
+    "close"
+   ]
   },
   "johan-issue:1317": {
    "status": "pending",
    "kind": "issue",
    "state": "closed",
    "comments": 17,
-   "upstreamUpdatedAt": "2026-10-02T19:41:36Z"
+   "upstreamUpdatedAt": "2026-10-02T19:41:36Z",
+   "mailDate": "2026-09-30",
+   "mailEvents": [
+    "comment",
+    "close"
+   ]
   },
   "johan-issue:1318": {
    "status": "pending",
    "kind": "issue",
    "state": "closed",
    "comments": 9,
-   "upstreamUpdatedAt": "2026-09-29T07:47:47Z"
+   "upstreamUpdatedAt": "2026-09-29T07:47:47Z",
+   "mailDate": "2026-09-29",
+   "mailEvents": [
+    "comment",
+    "close"
+   ]
   },
   "johan-issue:1319": {
    "status": "pending",
    "kind": "issue",
    "state": "open",
    "comments": 13,
-   "upstreamUpdatedAt": "2026-10-01T08:43:44Z"
+   "upstreamUpdatedAt": "2026-10-01T08:43:44Z",
+   "mailDate": "2026-09-30",
+   "mailEvents": [
+    "comment"
+   ]
   },
   "johan-issue:132": {
    "status": "pending",
@@ -11998,70 +13249,119 @@
    "kind": "issue",
    "state": "closed",
    "comments": 7,
-   "upstreamUpdatedAt": "2026-09-28T16:07:09Z"
+   "upstreamUpdatedAt": "2026-09-28T16:07:09Z",
+   "mailDate": "2025-12-08",
+   "mailEvents": [
+    "comment",
+    "close"
+   ]
   },
   "johan-issue:1321": {
    "status": "pending",
    "kind": "issue",
    "state": "open",
    "comments": 16,
-   "upstreamUpdatedAt": "2026-10-03T07:57:00Z"
+   "upstreamUpdatedAt": "2026-10-03T07:57:00Z",
+   "mailDate": "2026-10-03",
+   "mailEvents": [
+    "comment"
+   ]
   },
   "johan-issue:1322": {
    "status": "pending",
    "kind": "issue",
    "state": "closed",
    "comments": 8,
-   "upstreamUpdatedAt": "2026-09-29T13:18:44Z"
+   "upstreamUpdatedAt": "2026-09-29T13:18:44Z",
+   "mailDate": "2025-12-13",
+   "mailEvents": [
+    "comment",
+    "close"
+   ]
   },
   "johan-issue:1323": {
    "status": "pending",
    "kind": "issue",
    "state": "closed",
    "comments": 3,
-   "upstreamUpdatedAt": "2026-09-28T15:47:29Z"
+   "upstreamUpdatedAt": "2026-09-28T15:47:29Z",
+   "mailDate": "2026-09-28",
+   "mailEvents": [
+    "comment",
+    "close"
+   ]
   },
   "johan-issue:1324": {
    "status": "pending",
    "kind": "issue",
    "state": "closed",
    "comments": 3,
-   "upstreamUpdatedAt": "2026-07-12T21:28:21Z"
+   "upstreamUpdatedAt": "2026-07-12T21:28:21Z",
+   "mailDate": "2026-03-09",
+   "mailEvents": [
+    "comment",
+    "close"
+   ]
   },
   "johan-issue:1325": {
    "status": "pending",
    "kind": "issue",
    "state": "closed",
    "comments": 8,
-   "upstreamUpdatedAt": "2026-10-01T16:20:21Z"
+   "upstreamUpdatedAt": "2026-10-01T16:20:21Z",
+   "mailDate": "2026-10-01",
+   "mailEvents": [
+    "comment",
+    "close"
+   ]
   },
   "johan-issue:1326": {
    "status": "pending",
    "kind": "issue",
    "state": "closed",
    "comments": 14,
-   "upstreamUpdatedAt": "2026-09-29T08:21:40Z"
+   "upstreamUpdatedAt": "2026-09-29T08:21:40Z",
+   "mailDate": "2026-09-29",
+   "mailEvents": [
+    "comment",
+    "close"
+   ]
   },
   "johan-issue:1327": {
    "status": "pending",
    "kind": "issue",
    "state": "closed",
    "comments": 23,
-   "upstreamUpdatedAt": "2026-09-28T10:14:46Z"
+   "upstreamUpdatedAt": "2026-09-28T10:14:46Z",
+   "mailDate": "2026-02-19",
+   "mailEvents": [
+    "comment",
+    "close"
+   ]
   },
   "johan-issue:1328": {
    "status": "pending",
    "kind": "issue",
    "state": "closed",
    "comments": 23,
-   "upstreamUpdatedAt": "2026-10-02T22:20:42Z"
+   "upstreamUpdatedAt": "2026-10-02T22:20:42Z",
+   "mailDate": "2026-02-27",
+   "mailEvents": [
+    "comment",
+    "close"
+   ]
   },
   "johan-issue:1329": {
    "status": "pending",
    "kind": "issue",
    "state": "closed",
    "comments": 12,
-   "upstreamUpdatedAt": "2026-09-30T21:53:55Z"
+   "upstreamUpdatedAt": "2026-09-30T21:53:55Z",
+   "mailDate": "2026-03-02",
+   "mailEvents": [
+    "comment",
+    "close"
+   ]
   },
   "johan-issue:133": {
    "status": "pending",
@@ -12075,35 +13375,59 @@
    "kind": "issue",
    "state": "open",
    "comments": 4,
-   "upstreamUpdatedAt": "2026-10-03T07:45:30Z"
+   "upstreamUpdatedAt": "2026-10-03T07:45:30Z",
+   "mailDate": "2026-10-03",
+   "mailEvents": [
+    "comment"
+   ]
   },
   "johan-issue:1331": {
    "status": "pending",
    "kind": "issue",
    "state": "closed",
    "comments": 15,
-   "upstreamUpdatedAt": "2026-09-30T21:52:44Z"
+   "upstreamUpdatedAt": "2026-09-30T21:52:44Z",
+   "mailDate": "2026-02-19",
+   "mailEvents": [
+    "comment",
+    "close"
+   ]
   },
   "johan-issue:1332": {
    "status": "pending",
    "kind": "pr",
    "state": "closed",
    "comments": 2,
-   "upstreamUpdatedAt": "2026-09-28T10:13:38Z"
+   "upstreamUpdatedAt": "2026-09-28T10:13:38Z",
+   "mailDate": "2026-09-28",
+   "mailEvents": [
+    "comment",
+    "close"
+   ]
   },
   "johan-issue:1333": {
    "status": "pending",
    "kind": "pr",
    "state": "closed",
    "comments": 2,
-   "upstreamUpdatedAt": "2026-09-28T10:01:25Z"
+   "upstreamUpdatedAt": "2026-09-28T10:01:25Z",
+   "mailDate": "2026-09-28",
+   "mailEvents": [
+    "comment",
+    "close"
+   ]
   },
   "johan-issue:1334": {
    "status": "pending",
    "kind": "issue",
    "state": "closed",
    "comments": 12,
-   "upstreamUpdatedAt": "2026-10-02T22:02:20Z"
+   "upstreamUpdatedAt": "2026-10-02T22:02:20Z",
+   "mailDate": "2026-10-01",
+   "mailEvents": [
+    "comment",
+    "close"
+   ]
   },
   "johan-issue:1335": {
    "status": "pending",
@@ -12117,28 +13441,46 @@
    "kind": "issue",
    "state": "open",
    "comments": 5,
-   "upstreamUpdatedAt": "2026-10-01T08:46:29Z"
+   "upstreamUpdatedAt": "2026-10-01T08:46:29Z",
+   "mailDate": "2026-10-01",
+   "mailEvents": [
+    "comment"
+   ]
   },
   "johan-issue:1337": {
    "status": "pending",
    "kind": "issue",
    "state": "closed",
    "comments": 16,
-   "upstreamUpdatedAt": "2026-10-01T11:22:08Z"
+   "upstreamUpdatedAt": "2026-10-01T11:22:08Z",
+   "mailDate": "2026-10-01",
+   "mailEvents": [
+    "comment",
+    "close"
+   ]
   },
   "johan-issue:1338": {
    "status": "pending",
    "kind": "issue",
    "state": "open",
    "comments": 22,
-   "upstreamUpdatedAt": "2026-10-02T06:59:02Z"
+   "upstreamUpdatedAt": "2026-10-02T06:59:02Z",
+   "mailDate": "2026-10-02",
+   "mailEvents": [
+    "comment"
+   ]
   },
   "johan-issue:1339": {
    "status": "pending",
    "kind": "issue",
    "state": "closed",
    "comments": 12,
-   "upstreamUpdatedAt": "2026-10-02T06:59:04Z"
+   "upstreamUpdatedAt": "2026-10-02T06:59:04Z",
+   "mailDate": "2026-10-01",
+   "mailEvents": [
+    "comment",
+    "close"
+   ]
   },
   "johan-issue:134": {
    "status": "pending",
@@ -12152,70 +13494,118 @@
    "kind": "issue",
    "state": "open",
    "comments": 4,
-   "upstreamUpdatedAt": "2026-09-30T22:35:46Z"
+   "upstreamUpdatedAt": "2026-09-30T22:35:46Z",
+   "mailDate": "2026-10-01",
+   "mailEvents": [
+    "comment"
+   ]
   },
   "johan-issue:1341": {
    "status": "pending",
    "kind": "issue",
    "state": "closed",
    "comments": 14,
-   "upstreamUpdatedAt": "2026-09-29T19:48:59Z"
+   "upstreamUpdatedAt": "2026-09-29T19:48:59Z",
+   "mailDate": "2026-09-29",
+   "mailEvents": [
+    "comment",
+    "close"
+   ]
   },
   "johan-issue:1342": {
    "status": "pending",
    "kind": "issue",
    "state": "closed",
    "comments": 5,
-   "upstreamUpdatedAt": "2026-09-28T22:37:14Z"
+   "upstreamUpdatedAt": "2026-09-28T22:37:14Z",
+   "mailDate": "2026-09-28",
+   "mailEvents": [
+    "comment",
+    "close"
+   ]
   },
   "johan-issue:1343": {
    "status": "pending",
    "kind": "issue",
    "state": "closed",
    "comments": 10,
-   "upstreamUpdatedAt": "2026-09-30T22:33:09Z"
+   "upstreamUpdatedAt": "2026-09-30T22:33:09Z",
+   "mailDate": "2026-09-30",
+   "mailEvents": [
+    "comment",
+    "close"
+   ]
   },
   "johan-issue:1344": {
    "status": "pending",
    "kind": "issue",
    "state": "closed",
    "comments": 8,
-   "upstreamUpdatedAt": "2026-09-28T16:03:02Z"
+   "upstreamUpdatedAt": "2026-09-28T16:03:02Z",
+   "mailDate": "2026-09-28",
+   "mailEvents": [
+    "comment",
+    "close"
+   ]
   },
   "johan-issue:1345": {
    "status": "pending",
    "kind": "issue",
    "state": "open",
    "comments": 23,
-   "upstreamUpdatedAt": "2026-10-01T09:05:49Z"
+   "upstreamUpdatedAt": "2026-10-01T09:05:49Z",
+   "mailDate": "2026-02-01",
+   "mailEvents": [
+    "comment"
+   ]
   },
   "johan-issue:1346": {
    "status": "pending",
    "kind": "pr",
    "state": "closed",
    "comments": 12,
-   "upstreamUpdatedAt": "2026-09-27T23:07:16Z"
+   "upstreamUpdatedAt": "2026-09-27T23:07:16Z",
+   "mailDate": "2026-09-28",
+   "mailEvents": [
+    "comment",
+    "close"
+   ]
   },
   "johan-issue:1347": {
    "status": "pending",
    "kind": "issue",
    "state": "closed",
    "comments": 6,
-   "upstreamUpdatedAt": "2026-09-28T15:50:40Z"
+   "upstreamUpdatedAt": "2026-09-28T15:50:40Z",
+   "mailDate": "2026-09-28",
+   "mailEvents": [
+    "comment",
+    "close"
+   ]
   },
   "johan-issue:1348": {
    "status": "pending",
    "kind": "issue",
    "state": "closed",
    "comments": 17,
-   "upstreamUpdatedAt": "2026-10-02T20:50:30Z"
+   "upstreamUpdatedAt": "2026-10-02T20:50:30Z",
+   "mailDate": "2026-10-02",
+   "mailEvents": [
+    "comment",
+    "close"
+   ]
   },
   "johan-issue:1349": {
    "status": "pending",
    "kind": "issue",
    "state": "closed",
    "comments": 1,
-   "upstreamUpdatedAt": "2026-09-30T21:53:14Z"
+   "upstreamUpdatedAt": "2026-09-30T21:53:14Z",
+   "mailDate": "2026-09-30",
+   "mailEvents": [
+    "comment",
+    "close"
+   ]
   },
   "johan-issue:135": {
    "status": "pending",
@@ -12229,14 +13619,24 @@
    "kind": "pr",
    "state": "closed",
    "comments": 6,
-   "upstreamUpdatedAt": "2026-09-27T23:03:12Z"
+   "upstreamUpdatedAt": "2026-09-27T23:03:12Z",
+   "mailDate": "2026-09-28",
+   "mailEvents": [
+    "comment",
+    "close"
+   ]
   },
   "johan-issue:1351": {
    "status": "pending",
    "kind": "issue",
    "state": "closed",
    "comments": 10,
-   "upstreamUpdatedAt": "2026-10-03T07:58:59Z"
+   "upstreamUpdatedAt": "2026-10-03T07:58:59Z",
+   "mailDate": "2026-10-01",
+   "mailEvents": [
+    "comment",
+    "close"
+   ]
   },
   "johan-issue:1352": {
    "status": "pending",
@@ -12257,14 +13657,22 @@
    "kind": "issue",
    "state": "open",
    "comments": 3,
-   "upstreamUpdatedAt": "2026-10-02T22:19:58Z"
+   "upstreamUpdatedAt": "2026-10-02T22:19:58Z",
+   "mailDate": "2026-10-03",
+   "mailEvents": [
+    "comment"
+   ]
   },
   "johan-issue:1355": {
    "status": "pending",
    "kind": "issue",
    "state": "open",
    "comments": 2,
-   "upstreamUpdatedAt": "2026-10-02T22:01:49Z"
+   "upstreamUpdatedAt": "2026-10-02T22:01:49Z",
+   "mailDate": "2026-10-03",
+   "mailEvents": [
+    "comment"
+   ]
   },
   "johan-issue:1356": {
    "status": "pending",
@@ -12292,7 +13700,11 @@
    "kind": "issue",
    "state": "open",
    "comments": 1,
-   "upstreamUpdatedAt": "2026-10-01T09:06:08Z"
+   "upstreamUpdatedAt": "2026-10-01T09:06:08Z",
+   "mailDate": "2026-10-01",
+   "mailEvents": [
+    "comment"
+   ]
   },
   "johan-issue:136": {
    "status": "pending",
@@ -12306,70 +13718,115 @@
    "kind": "issue",
    "state": "open",
    "comments": 7,
-   "upstreamUpdatedAt": "2026-10-01T09:06:13Z"
+   "upstreamUpdatedAt": "2026-10-01T09:06:13Z",
+   "mailDate": "2026-04-17",
+   "mailEvents": [
+    "comment"
+   ]
   },
   "johan-issue:1361": {
    "status": "pending",
    "kind": "issue",
    "state": "open",
    "comments": 1,
-   "upstreamUpdatedAt": "2026-10-01T09:06:48Z"
+   "upstreamUpdatedAt": "2026-10-01T09:06:48Z",
+   "mailDate": "2026-10-01",
+   "mailEvents": [
+    "comment"
+   ]
   },
   "johan-issue:1362": {
    "status": "pending",
    "kind": "issue",
    "state": "open",
    "comments": 11,
-   "upstreamUpdatedAt": "2026-10-02T22:01:47Z"
+   "upstreamUpdatedAt": "2026-10-02T22:01:47Z",
+   "mailDate": "2026-10-03",
+   "mailEvents": [
+    "comment"
+   ]
   },
   "johan-issue:1363": {
    "status": "pending",
    "kind": "issue",
    "state": "closed",
    "comments": 11,
-   "upstreamUpdatedAt": "2026-10-02T20:31:07Z"
+   "upstreamUpdatedAt": "2026-10-02T20:31:07Z",
+   "mailDate": "2026-10-01",
+   "mailEvents": [
+    "comment",
+    "close"
+   ]
   },
   "johan-issue:1364": {
    "status": "pending",
    "kind": "issue",
    "state": "closed",
    "comments": 2,
-   "upstreamUpdatedAt": "2026-09-30T22:32:59Z"
+   "upstreamUpdatedAt": "2026-09-30T22:32:59Z",
+   "mailDate": "2026-09-30",
+   "mailEvents": [
+    "comment",
+    "close"
+   ]
   },
   "johan-issue:1365": {
    "status": "pending",
    "kind": "issue",
    "state": "open",
    "comments": 7,
-   "upstreamUpdatedAt": "2026-10-03T08:04:25Z"
+   "upstreamUpdatedAt": "2026-10-03T08:04:25Z",
+   "mailDate": "2026-10-03",
+   "mailEvents": [
+    "comment"
+   ]
   },
   "johan-issue:1366": {
    "status": "pending",
    "kind": "issue",
    "state": "open",
    "comments": 9,
-   "upstreamUpdatedAt": "2026-10-03T07:45:26Z"
+   "upstreamUpdatedAt": "2026-10-03T07:45:26Z",
+   "mailDate": "2026-10-03",
+   "mailEvents": [
+    "comment"
+   ]
   },
   "johan-issue:1367": {
    "status": "pending",
    "kind": "issue",
    "state": "closed",
    "comments": 2,
-   "upstreamUpdatedAt": "2026-10-01T16:01:16Z"
+   "upstreamUpdatedAt": "2026-10-01T16:01:16Z",
+   "mailDate": "2026-10-01",
+   "mailEvents": [
+    "comment",
+    "close"
+   ]
   },
   "johan-issue:1368": {
    "status": "pending",
    "kind": "issue",
    "state": "closed",
    "comments": 2,
-   "upstreamUpdatedAt": "2026-10-01T16:01:51Z"
+   "upstreamUpdatedAt": "2026-10-01T16:01:51Z",
+   "mailDate": "2026-10-01",
+   "mailEvents": [
+    "comment",
+    "close"
+   ]
   },
   "johan-issue:1369": {
    "status": "pending",
    "kind": "issue",
    "state": "closed",
    "comments": 9,
-   "upstreamUpdatedAt": "2026-09-29T19:39:42Z"
+   "upstreamUpdatedAt": "2026-09-29T19:39:42Z",
+   "mailDate": "2026-09-29",
+   "mailEvents": [
+    "comment",
+    "close"
+   ]
   },
   "johan-issue:137": {
    "status": "pending",
@@ -12383,70 +13840,119 @@
    "kind": "issue",
    "state": "closed",
    "comments": 4,
-   "upstreamUpdatedAt": "2026-10-01T18:40:10Z"
+   "upstreamUpdatedAt": "2026-10-01T18:40:10Z",
+   "mailDate": "2026-10-01",
+   "mailEvents": [
+    "comment",
+    "close"
+   ]
   },
   "johan-issue:1371": {
    "status": "pending",
    "kind": "issue",
    "state": "closed",
    "comments": 1,
-   "upstreamUpdatedAt": "2026-09-28T10:14:30Z"
+   "upstreamUpdatedAt": "2026-09-28T10:14:30Z",
+   "mailDate": "2026-09-28",
+   "mailEvents": [
+    "comment",
+    "close"
+   ]
   },
   "johan-issue:1372": {
    "status": "pending",
    "kind": "pr",
    "state": "closed",
    "comments": 2,
-   "upstreamUpdatedAt": "2026-09-28T16:21:57Z"
+   "upstreamUpdatedAt": "2026-09-28T16:21:57Z",
+   "mailDate": "2026-09-28",
+   "mailEvents": [
+    "comment",
+    "close"
+   ]
   },
   "johan-issue:1373": {
    "status": "pending",
    "kind": "issue",
    "state": "open",
    "comments": 10,
-   "upstreamUpdatedAt": "2026-10-01T09:08:17Z"
+   "upstreamUpdatedAt": "2026-10-01T09:08:17Z",
+   "mailDate": "2026-10-01",
+   "mailEvents": [
+    "comment"
+   ]
   },
   "johan-issue:1374": {
    "status": "pending",
    "kind": "issue",
    "state": "closed",
    "comments": 4,
-   "upstreamUpdatedAt": "2026-07-12T21:27:35Z"
+   "upstreamUpdatedAt": "2026-07-12T21:27:35Z",
+   "mailDate": "2026-06-29",
+   "mailEvents": [
+    "comment",
+    "close"
+   ]
   },
   "johan-issue:1375": {
    "status": "pending",
    "kind": "issue",
    "state": "closed",
    "comments": 11,
-   "upstreamUpdatedAt": "2026-09-30T22:33:26Z"
+   "upstreamUpdatedAt": "2026-09-30T22:33:26Z",
+   "mailDate": "2026-09-30",
+   "mailEvents": [
+    "comment",
+    "close"
+   ]
   },
   "johan-issue:1376": {
    "status": "pending",
    "kind": "issue",
    "state": "closed",
    "comments": 2,
-   "upstreamUpdatedAt": "2026-10-02T11:54:51Z"
+   "upstreamUpdatedAt": "2026-10-02T11:54:51Z",
+   "mailDate": "2026-10-01",
+   "mailEvents": [
+    "comment",
+    "close"
+   ]
   },
   "johan-issue:1377": {
    "status": "pending",
    "kind": "issue",
    "state": "closed",
    "comments": 3,
-   "upstreamUpdatedAt": "2026-09-28T11:59:21Z"
+   "upstreamUpdatedAt": "2026-09-28T11:59:21Z",
+   "mailDate": "2026-09-28",
+   "mailEvents": [
+    "comment",
+    "close"
+   ]
   },
   "johan-issue:1378": {
    "status": "pending",
    "kind": "issue",
    "state": "closed",
    "comments": 4,
-   "upstreamUpdatedAt": "2026-10-01T18:40:08Z"
+   "upstreamUpdatedAt": "2026-10-01T18:40:08Z",
+   "mailDate": "2026-10-01",
+   "mailEvents": [
+    "comment",
+    "close"
+   ]
   },
   "johan-issue:1379": {
    "status": "pending",
    "kind": "issue",
    "state": "closed",
    "comments": 9,
-   "upstreamUpdatedAt": "2026-10-02T22:43:59Z"
+   "upstreamUpdatedAt": "2026-10-02T22:43:59Z",
+   "mailDate": "2026-10-01",
+   "mailEvents": [
+    "comment",
+    "close"
+   ]
   },
   "johan-issue:138": {
    "status": "pending",
@@ -12460,70 +13966,116 @@
    "kind": "issue",
    "state": "closed",
    "comments": 2,
-   "upstreamUpdatedAt": "2026-09-28T19:04:31Z"
+   "upstreamUpdatedAt": "2026-09-28T19:04:31Z",
+   "mailDate": "2026-09-28",
+   "mailEvents": [
+    "comment",
+    "close"
+   ]
   },
   "johan-issue:1381": {
    "status": "pending",
    "kind": "issue",
    "state": "open",
    "comments": 2,
-   "upstreamUpdatedAt": "2026-10-01T09:15:21Z"
+   "upstreamUpdatedAt": "2026-10-01T09:15:21Z",
+   "mailDate": "2026-10-01",
+   "mailEvents": [
+    "comment"
+   ]
   },
   "johan-issue:1382": {
    "status": "pending",
    "kind": "issue",
    "state": "open",
    "comments": 1,
-   "upstreamUpdatedAt": "2026-10-01T09:15:24Z"
+   "upstreamUpdatedAt": "2026-10-01T09:15:24Z",
+   "mailDate": "2026-10-01",
+   "mailEvents": [
+    "comment"
+   ]
   },
   "johan-issue:1383": {
    "status": "pending",
    "kind": "issue",
    "state": "closed",
    "comments": 2,
-   "upstreamUpdatedAt": "2026-10-02T11:54:43Z"
+   "upstreamUpdatedAt": "2026-10-02T11:54:43Z",
+   "mailDate": "2026-10-01",
+   "mailEvents": [
+    "comment",
+    "close"
+   ]
   },
   "johan-issue:1384": {
    "status": "pending",
    "kind": "issue",
    "state": "closed",
    "comments": 5,
-   "upstreamUpdatedAt": "2026-09-30T21:55:12Z"
+   "upstreamUpdatedAt": "2026-09-30T21:55:12Z",
+   "mailDate": "2026-09-30",
+   "mailEvents": [
+    "comment",
+    "close"
+   ]
   },
   "johan-issue:1385": {
    "status": "pending",
    "kind": "issue",
    "state": "open",
    "comments": 4,
-   "upstreamUpdatedAt": "2026-10-02T19:38:37Z"
+   "upstreamUpdatedAt": "2026-10-02T19:38:37Z",
+   "mailDate": "2026-10-02",
+   "mailEvents": [
+    "comment",
+    "close"
+   ]
   },
   "johan-issue:1386": {
    "status": "pending",
    "kind": "issue",
    "state": "open",
    "comments": 1,
-   "upstreamUpdatedAt": "2026-10-01T09:15:32Z"
+   "upstreamUpdatedAt": "2026-10-01T09:15:32Z",
+   "mailDate": "2026-10-01",
+   "mailEvents": [
+    "comment"
+   ]
   },
   "johan-issue:1387": {
    "status": "pending",
    "kind": "issue",
    "state": "closed",
    "comments": 2,
-   "upstreamUpdatedAt": "2026-10-02T20:31:10Z"
+   "upstreamUpdatedAt": "2026-10-02T20:31:10Z",
+   "mailDate": "2026-10-01",
+   "mailEvents": [
+    "comment",
+    "close"
+   ]
   },
   "johan-issue:1388": {
    "status": "pending",
    "kind": "issue",
    "state": "closed",
    "comments": 1,
-   "upstreamUpdatedAt": "2026-09-29T08:00:49Z"
+   "upstreamUpdatedAt": "2026-09-29T08:00:49Z",
+   "mailDate": "2026-09-29",
+   "mailEvents": [
+    "comment",
+    "close"
+   ]
   },
   "johan-issue:1389": {
    "status": "pending",
    "kind": "issue",
    "state": "open",
    "comments": 12,
-   "upstreamUpdatedAt": "2026-10-03T08:04:13Z"
+   "upstreamUpdatedAt": "2026-10-03T08:04:13Z",
+   "mailDate": "2026-10-03",
+   "mailEvents": [
+    "comment"
+   ]
   },
   "johan-issue:139": {
    "status": "pending",
@@ -12537,70 +14089,119 @@
    "kind": "issue",
    "state": "closed",
    "comments": 11,
-   "upstreamUpdatedAt": "2026-10-01T16:21:00Z"
+   "upstreamUpdatedAt": "2026-10-01T16:21:00Z",
+   "mailDate": "2026-10-01",
+   "mailEvents": [
+    "comment",
+    "close"
+   ]
   },
   "johan-issue:1391": {
    "status": "pending",
    "kind": "issue",
    "state": "closed",
    "comments": 1,
-   "upstreamUpdatedAt": "2026-09-28T15:13:40Z"
+   "upstreamUpdatedAt": "2026-09-28T15:13:40Z",
+   "mailDate": "2026-09-28",
+   "mailEvents": [
+    "comment",
+    "close"
+   ]
   },
   "johan-issue:1392": {
    "status": "pending",
    "kind": "issue",
    "state": "closed",
    "comments": 10,
-   "upstreamUpdatedAt": "2026-09-28T19:07:33Z"
+   "upstreamUpdatedAt": "2026-09-28T19:07:33Z",
+   "mailDate": "2026-09-28",
+   "mailEvents": [
+    "comment",
+    "close"
+   ]
   },
   "johan-issue:1393": {
    "status": "pending",
    "kind": "issue",
    "state": "closed",
    "comments": 10,
-   "upstreamUpdatedAt": "2026-09-30T20:35:12Z"
+   "upstreamUpdatedAt": "2026-09-30T20:35:12Z",
+   "mailDate": "2026-09-30",
+   "mailEvents": [
+    "comment",
+    "close"
+   ]
   },
   "johan-issue:1394": {
    "status": "pending",
    "kind": "issue",
    "state": "closed",
    "comments": 11,
-   "upstreamUpdatedAt": "2026-10-02T20:04:29Z"
+   "upstreamUpdatedAt": "2026-10-02T20:04:29Z",
+   "mailDate": "2026-10-01",
+   "mailEvents": [
+    "comment",
+    "close"
+   ]
   },
   "johan-issue:1395": {
    "status": "pending",
    "kind": "issue",
    "state": "closed",
    "comments": 3,
-   "upstreamUpdatedAt": "2026-10-02T19:37:14Z"
+   "upstreamUpdatedAt": "2026-10-02T19:37:14Z",
+   "mailDate": "2026-10-01",
+   "mailEvents": [
+    "comment",
+    "close"
+   ]
   },
   "johan-issue:1396": {
    "status": "pending",
    "kind": "issue",
    "state": "closed",
    "comments": 6,
-   "upstreamUpdatedAt": "2026-10-02T20:31:14Z"
+   "upstreamUpdatedAt": "2026-10-02T20:31:14Z",
+   "mailDate": "2026-10-01",
+   "mailEvents": [
+    "comment",
+    "close"
+   ]
   },
   "johan-issue:1397": {
    "status": "pending",
    "kind": "issue",
    "state": "closed",
    "comments": 3,
-   "upstreamUpdatedAt": "2026-10-02T22:02:22Z"
+   "upstreamUpdatedAt": "2026-10-02T22:02:22Z",
+   "mailDate": "2026-10-01",
+   "mailEvents": [
+    "comment",
+    "close"
+   ]
   },
   "johan-issue:1398": {
    "status": "pending",
    "kind": "issue",
    "state": "closed",
    "comments": 3,
-   "upstreamUpdatedAt": "2026-09-30T22:33:16Z"
+   "upstreamUpdatedAt": "2026-09-30T22:33:16Z",
+   "mailDate": "2026-09-30",
+   "mailEvents": [
+    "comment",
+    "close"
+   ]
   },
   "johan-issue:1399": {
    "status": "pending",
    "kind": "issue",
    "state": "open",
    "comments": 2,
-   "upstreamUpdatedAt": "2026-10-01T09:16:22Z"
+   "upstreamUpdatedAt": "2026-10-01T09:16:22Z",
+   "mailDate": "2026-10-01",
+   "mailEvents": [
+    "comment"
+   ]
   },
   "johan-issue:14": {
    "status": "pending",
@@ -12614,77 +14215,129 @@
    "kind": "issue",
    "state": "open",
    "comments": 3,
-   "upstreamUpdatedAt": "2026-09-28T10:21:35Z"
+   "upstreamUpdatedAt": "2026-09-28T10:21:35Z",
+   "mailDate": "2026-09-28",
+   "mailEvents": [
+    "comment",
+    "close"
+   ]
   },
   "johan-issue:1400": {
    "status": "pending",
    "kind": "issue",
    "state": "closed",
    "comments": 3,
-   "upstreamUpdatedAt": "2026-10-02T22:20:45Z"
+   "upstreamUpdatedAt": "2026-10-02T22:20:45Z",
+   "mailDate": "2026-10-01",
+   "mailEvents": [
+    "comment",
+    "close"
+   ]
   },
   "johan-issue:1401": {
    "status": "pending",
    "kind": "issue",
    "state": "closed",
    "comments": 3,
-   "upstreamUpdatedAt": "2026-10-02T06:59:06Z"
+   "upstreamUpdatedAt": "2026-10-02T06:59:06Z",
+   "mailDate": "2026-10-01",
+   "mailEvents": [
+    "comment",
+    "close"
+   ]
   },
   "johan-issue:1402": {
    "status": "pending",
    "kind": "issue",
    "state": "closed",
    "comments": 12,
-   "upstreamUpdatedAt": "2026-10-02T19:58:06Z"
+   "upstreamUpdatedAt": "2026-10-02T19:58:06Z",
+   "mailDate": "2026-10-01",
+   "mailEvents": [
+    "comment",
+    "close"
+   ]
   },
   "johan-issue:1403": {
    "status": "pending",
    "kind": "issue",
    "state": "open",
    "comments": 11,
-   "upstreamUpdatedAt": "2026-10-01T09:17:29Z"
+   "upstreamUpdatedAt": "2026-10-01T09:17:29Z",
+   "mailDate": "2026-10-01",
+   "mailEvents": [
+    "comment"
+   ]
   },
   "johan-issue:1404": {
    "status": "pending",
    "kind": "issue",
    "state": "open",
    "comments": 16,
-   "upstreamUpdatedAt": "2026-10-02T22:43:04Z"
+   "upstreamUpdatedAt": "2026-10-02T22:43:04Z",
+   "mailDate": "2026-10-03",
+   "mailEvents": [
+    "comment"
+   ]
   },
   "johan-issue:1405": {
    "status": "pending",
    "kind": "issue",
    "state": "closed",
    "comments": 4,
-   "upstreamUpdatedAt": "2026-10-01T11:06:19Z"
+   "upstreamUpdatedAt": "2026-10-01T11:06:19Z",
+   "mailDate": "2026-09-28",
+   "mailEvents": [
+    "comment",
+    "close"
+   ]
   },
   "johan-issue:1406": {
    "status": "pending",
    "kind": "pr",
    "state": "closed",
    "comments": 3,
-   "upstreamUpdatedAt": "2026-09-27T23:00:13Z"
+   "upstreamUpdatedAt": "2026-09-27T23:00:13Z",
+   "mailDate": "2026-09-28",
+   "mailEvents": [
+    "comment",
+    "close"
+   ]
   },
   "johan-issue:1407": {
    "status": "pending",
    "kind": "issue",
    "state": "closed",
    "comments": 7,
-   "upstreamUpdatedAt": "2026-09-28T15:18:40Z"
+   "upstreamUpdatedAt": "2026-09-28T15:18:40Z",
+   "mailDate": "2026-09-28",
+   "mailEvents": [
+    "comment",
+    "close"
+   ]
   },
   "johan-issue:1408": {
    "status": "pending",
    "kind": "issue",
    "state": "closed",
    "comments": 50,
-   "upstreamUpdatedAt": "2026-10-02T20:50:35Z"
+   "upstreamUpdatedAt": "2026-10-02T20:50:35Z",
+   "mailDate": "2026-10-01",
+   "mailEvents": [
+    "comment",
+    "close"
+   ]
   },
   "johan-issue:1409": {
    "status": "pending",
    "kind": "issue",
    "state": "open",
    "comments": 17,
-   "upstreamUpdatedAt": "2026-10-01T09:17:41Z"
+   "upstreamUpdatedAt": "2026-10-01T09:17:41Z",
+   "mailDate": "2026-06-05",
+   "mailEvents": [
+    "comment"
+   ]
   },
   "johan-issue:141": {
    "status": "pending",
@@ -12698,70 +14351,117 @@
    "kind": "issue",
    "state": "closed",
    "comments": 5,
-   "upstreamUpdatedAt": "2026-10-02T22:20:49Z"
+   "upstreamUpdatedAt": "2026-10-02T22:20:49Z",
+   "mailDate": "2026-06-04",
+   "mailEvents": [
+    "comment",
+    "close"
+   ]
   },
   "johan-issue:1411": {
    "status": "pending",
    "kind": "issue",
    "state": "open",
    "comments": 4,
-   "upstreamUpdatedAt": "2026-10-01T10:27:52Z"
+   "upstreamUpdatedAt": "2026-10-01T10:27:52Z",
+   "mailDate": "2026-09-30",
+   "mailEvents": [
+    "comment"
+   ]
   },
   "johan-issue:1412": {
    "status": "pending",
    "kind": "issue",
    "state": "closed",
    "comments": 9,
-   "upstreamUpdatedAt": "2026-09-30T21:56:49Z"
+   "upstreamUpdatedAt": "2026-09-30T21:56:49Z",
+   "mailDate": "2026-09-30",
+   "mailEvents": [
+    "comment",
+    "close"
+   ]
   },
   "johan-issue:1413": {
    "status": "pending",
    "kind": "issue",
    "state": "closed",
    "comments": 11,
-   "upstreamUpdatedAt": "2026-09-30T21:56:55Z"
+   "upstreamUpdatedAt": "2026-09-30T21:56:55Z",
+   "mailDate": "2026-06-21",
+   "mailEvents": [
+    "comment",
+    "close"
+   ]
   },
   "johan-issue:1414": {
    "status": "pending",
    "kind": "issue",
    "state": "closed",
    "comments": 1,
-   "upstreamUpdatedAt": "2026-09-28T15:27:45Z"
+   "upstreamUpdatedAt": "2026-09-28T15:27:45Z",
+   "mailDate": "2026-09-28",
+   "mailEvents": [
+    "comment",
+    "close"
+   ]
   },
   "johan-issue:1415": {
    "status": "pending",
    "kind": "issue",
    "state": "closed",
    "comments": 1,
-   "upstreamUpdatedAt": "2026-10-01T10:25:59Z"
+   "upstreamUpdatedAt": "2026-10-01T10:25:59Z",
+   "mailDate": "2026-10-01",
+   "mailEvents": [
+    "comment",
+    "close"
+   ]
   },
   "johan-issue:1416": {
    "status": "pending",
    "kind": "issue",
    "state": "closed",
    "comments": 11,
-   "upstreamUpdatedAt": "2026-09-30T21:55:29Z"
+   "upstreamUpdatedAt": "2026-09-30T21:55:29Z",
+   "mailDate": "2026-07-03",
+   "mailEvents": [
+    "comment",
+    "close"
+   ]
   },
   "johan-issue:1417": {
    "status": "pending",
    "kind": "issue",
    "state": "closed",
    "comments": 1,
-   "upstreamUpdatedAt": "2026-09-30T21:56:34Z"
+   "upstreamUpdatedAt": "2026-09-30T21:56:34Z",
+   "mailDate": "2026-09-30",
+   "mailEvents": [
+    "comment",
+    "close"
+   ]
   },
   "johan-issue:1418": {
    "status": "pending",
    "kind": "issue",
    "state": "open",
    "comments": 6,
-   "upstreamUpdatedAt": "2026-10-01T10:27:56Z"
+   "upstreamUpdatedAt": "2026-10-01T10:27:56Z",
+   "mailDate": "2026-10-01",
+   "mailEvents": [
+    "comment"
+   ]
   },
   "johan-issue:1419": {
    "status": "pending",
    "kind": "issue",
    "state": "open",
    "comments": 10,
-   "upstreamUpdatedAt": "2026-09-29T08:46:16Z"
+   "upstreamUpdatedAt": "2026-09-29T08:46:16Z",
+   "mailDate": "2026-09-29",
+   "mailEvents": [
+    "comment"
+   ]
   },
   "johan-issue:142": {
    "status": "pending",
@@ -12775,49 +14475,83 @@
    "kind": "issue",
    "state": "closed",
    "comments": 9,
-   "upstreamUpdatedAt": "2026-09-30T21:56:24Z"
+   "upstreamUpdatedAt": "2026-09-30T21:56:24Z",
+   "mailDate": "2026-09-30",
+   "mailEvents": [
+    "comment",
+    "close"
+   ]
   },
   "johan-issue:1421": {
    "status": "pending",
    "kind": "pr",
    "state": "closed",
    "comments": 1,
-   "upstreamUpdatedAt": "2026-09-27T22:09:28Z"
+   "upstreamUpdatedAt": "2026-09-27T22:09:28Z",
+   "mailDate": "2026-09-28",
+   "mailEvents": [
+    "comment",
+    "close"
+   ]
   },
   "johan-issue:1422": {
    "status": "pending",
    "kind": "issue",
    "state": "closed",
    "comments": 6,
-   "upstreamUpdatedAt": "2026-09-28T16:06:14Z"
+   "upstreamUpdatedAt": "2026-09-28T16:06:14Z",
+   "mailDate": "2026-07-02",
+   "mailEvents": [
+    "comment",
+    "close"
+   ]
   },
   "johan-issue:1423": {
    "status": "pending",
    "kind": "issue",
    "state": "closed",
    "comments": 2,
-   "upstreamUpdatedAt": "2026-10-02T19:43:02Z"
+   "upstreamUpdatedAt": "2026-10-02T19:43:02Z",
+   "mailDate": "2026-10-01",
+   "mailEvents": [
+    "comment",
+    "close"
+   ]
   },
   "johan-issue:1424": {
    "status": "pending",
    "kind": "issue",
    "state": "closed",
    "comments": 5,
-   "upstreamUpdatedAt": "2026-10-02T19:41:27Z"
+   "upstreamUpdatedAt": "2026-10-02T19:41:27Z",
+   "mailDate": "2026-10-01",
+   "mailEvents": [
+    "comment",
+    "close"
+   ]
   },
   "johan-issue:1425": {
    "status": "pending",
    "kind": "issue",
    "state": "open",
    "comments": 2,
-   "upstreamUpdatedAt": "2026-10-02T22:20:06Z"
+   "upstreamUpdatedAt": "2026-10-02T22:20:06Z",
+   "mailDate": "2026-10-03",
+   "mailEvents": [
+    "comment"
+   ]
   },
   "johan-issue:1426": {
    "status": "pending",
    "kind": "issue",
    "state": "closed",
    "comments": 4,
-   "upstreamUpdatedAt": "2026-09-30T21:55:18Z"
+   "upstreamUpdatedAt": "2026-09-30T21:55:18Z",
+   "mailDate": "2026-07-15",
+   "mailEvents": [
+    "comment",
+    "close"
+   ]
   },
   "johan-issue:1427": {
    "status": "pending",
@@ -13069,7 +14803,11 @@
    "kind": "issue",
    "state": "closed",
    "comments": 0,
-   "upstreamUpdatedAt": "2026-09-06T08:22:47Z"
+   "upstreamUpdatedAt": "2026-09-06T08:22:47Z",
+   "mailDate": "2026-09-05",
+   "mailEvents": [
+    "close"
+   ]
   },
   "johan-issue:146": {
    "status": "pending",
@@ -13083,7 +14821,12 @@
    "kind": "issue",
    "state": "closed",
    "comments": 1,
-   "upstreamUpdatedAt": "2026-09-11T10:25:57Z"
+   "upstreamUpdatedAt": "2026-09-11T10:25:57Z",
+   "mailDate": "2026-09-06",
+   "mailEvents": [
+    "comment",
+    "close"
+   ]
   },
   "johan-issue:1461": {
    "status": "pending",
@@ -13395,7 +15138,12 @@
    "kind": "issue",
    "state": "closed",
    "comments": 1,
-   "upstreamUpdatedAt": "2026-09-28T15:10:31Z"
+   "upstreamUpdatedAt": "2026-09-28T15:10:31Z",
+   "mailDate": "2026-09-28",
+   "mailEvents": [
+    "comment",
+    "close"
+   ]
   },
   "johan-issue:1500": {
    "status": "pending",
@@ -13927,7 +15675,12 @@
    "kind": "issue",
    "state": "closed",
    "comments": 2,
-   "upstreamUpdatedAt": "2026-10-01T11:06:35Z"
+   "upstreamUpdatedAt": "2026-10-01T11:06:35Z",
+   "mailDate": "2026-09-29",
+   "mailEvents": [
+    "comment",
+    "close"
+   ]
   },
   "johan-issue:211": {
    "status": "pending",
@@ -13948,7 +15701,12 @@
    "kind": "issue",
    "state": "closed",
    "comments": 1,
-   "upstreamUpdatedAt": "2026-09-28T15:52:46Z"
+   "upstreamUpdatedAt": "2026-09-28T15:52:46Z",
+   "mailDate": "2026-09-28",
+   "mailEvents": [
+    "comment",
+    "close"
+   ]
   },
   "johan-issue:214": {
    "status": "pending",
@@ -14004,7 +15762,12 @@
    "kind": "issue",
    "state": "closed",
    "comments": 2,
-   "upstreamUpdatedAt": "2026-09-30T20:25:33Z"
+   "upstreamUpdatedAt": "2026-09-30T20:25:33Z",
+   "mailDate": "2026-09-30",
+   "mailEvents": [
+    "comment",
+    "close"
+   ]
   },
   "johan-issue:221": {
    "status": "pending",
@@ -14032,7 +15795,12 @@
    "kind": "issue",
    "state": "closed",
    "comments": 2,
-   "upstreamUpdatedAt": "2026-09-30T20:25:37Z"
+   "upstreamUpdatedAt": "2026-09-30T20:25:37Z",
+   "mailDate": "2026-09-30",
+   "mailEvents": [
+    "comment",
+    "close"
+   ]
   },
   "johan-issue:225": {
    "status": "pending",
@@ -14067,7 +15835,12 @@
    "kind": "issue",
    "state": "closed",
    "comments": 3,
-   "upstreamUpdatedAt": "2026-09-30T20:22:28Z"
+   "upstreamUpdatedAt": "2026-09-30T20:22:28Z",
+   "mailDate": "2026-09-30",
+   "mailEvents": [
+    "comment",
+    "close"
+   ]
   },
   "johan-issue:23": {
    "status": "pending",
@@ -14312,7 +16085,12 @@
    "kind": "issue",
    "state": "closed",
    "comments": 3,
-   "upstreamUpdatedAt": "2026-09-29T08:22:16Z"
+   "upstreamUpdatedAt": "2026-09-29T08:22:16Z",
+   "mailDate": "2026-09-29",
+   "mailEvents": [
+    "comment",
+    "close"
+   ]
   },
   "johan-issue:262": {
    "status": "pending",
@@ -14368,35 +16146,57 @@
    "kind": "issue",
    "state": "open",
    "comments": 4,
-   "upstreamUpdatedAt": "2026-09-30T08:09:01Z"
+   "upstreamUpdatedAt": "2026-09-30T08:09:01Z",
+   "mailDate": "2026-09-30",
+   "mailEvents": [
+    "comment"
+   ]
   },
   "johan-issue:271": {
    "status": "pending",
    "kind": "issue",
    "state": "open",
    "comments": 1,
-   "upstreamUpdatedAt": "2026-10-01T21:17:30Z"
+   "upstreamUpdatedAt": "2026-10-01T21:17:30Z",
+   "mailDate": "2026-10-01",
+   "mailEvents": [
+    "comment"
+   ]
   },
   "johan-issue:272": {
    "status": "pending",
    "kind": "issue",
    "state": "closed",
    "comments": 1,
-   "upstreamUpdatedAt": "2026-10-01T11:23:26Z"
+   "upstreamUpdatedAt": "2026-10-01T11:23:26Z",
+   "mailDate": "2026-10-01",
+   "mailEvents": [
+    "comment",
+    "close"
+   ]
   },
   "johan-issue:273": {
    "status": "pending",
    "kind": "issue",
    "state": "closed",
    "comments": 3,
-   "upstreamUpdatedAt": "2026-10-01T11:23:32Z"
+   "upstreamUpdatedAt": "2026-10-01T11:23:32Z",
+   "mailDate": "2026-10-01",
+   "mailEvents": [
+    "comment",
+    "close"
+   ]
   },
   "johan-issue:274": {
    "status": "pending",
    "kind": "issue",
    "state": "open",
    "comments": 2,
-   "upstreamUpdatedAt": "2026-09-30T20:40:20Z"
+   "upstreamUpdatedAt": "2026-09-30T20:40:20Z",
+   "mailDate": "2026-09-30",
+   "mailEvents": [
+    "comment"
+   ]
   },
   "johan-issue:275": {
    "status": "pending",
@@ -14417,7 +16217,12 @@
    "kind": "issue",
    "state": "closed",
    "comments": 2,
-   "upstreamUpdatedAt": "2026-09-30T20:22:35Z"
+   "upstreamUpdatedAt": "2026-09-30T20:22:35Z",
+   "mailDate": "2026-09-30",
+   "mailEvents": [
+    "comment",
+    "close"
+   ]
   },
   "johan-issue:278": {
    "status": "pending",
@@ -14459,7 +16264,12 @@
    "kind": "issue",
    "state": "closed",
    "comments": 4,
-   "upstreamUpdatedAt": "2026-09-30T20:23:05Z"
+   "upstreamUpdatedAt": "2026-09-30T20:23:05Z",
+   "mailDate": "2026-09-30",
+   "mailEvents": [
+    "comment",
+    "close"
+   ]
   },
   "johan-issue:283": {
    "status": "pending",
@@ -14473,7 +16283,11 @@
    "kind": "issue",
    "state": "open",
    "comments": 1,
-   "upstreamUpdatedAt": "2026-09-30T22:15:36Z"
+   "upstreamUpdatedAt": "2026-09-30T22:15:36Z",
+   "mailDate": "2026-10-01",
+   "mailEvents": [
+    "comment"
+   ]
   },
   "johan-issue:285": {
    "status": "pending",
@@ -14522,7 +16336,11 @@
    "kind": "issue",
    "state": "open",
    "comments": 3,
-   "upstreamUpdatedAt": "2026-09-30T07:18:28Z"
+   "upstreamUpdatedAt": "2026-09-30T07:18:28Z",
+   "mailDate": "2026-09-30",
+   "mailEvents": [
+    "comment"
+   ]
   },
   "johan-issue:291": {
    "status": "pending",
@@ -14536,7 +16354,11 @@
    "kind": "issue",
    "state": "open",
    "comments": 1,
-   "upstreamUpdatedAt": "2026-09-30T20:32:31Z"
+   "upstreamUpdatedAt": "2026-09-30T20:32:31Z",
+   "mailDate": "2026-09-30",
+   "mailEvents": [
+    "comment"
+   ]
   },
   "johan-issue:293": {
    "status": "pending",
@@ -14739,7 +16561,11 @@
    "kind": "issue",
    "state": "open",
    "comments": 1,
-   "upstreamUpdatedAt": "2026-09-30T22:15:41Z"
+   "upstreamUpdatedAt": "2026-09-30T22:15:41Z",
+   "mailDate": "2026-10-01",
+   "mailEvents": [
+    "comment"
+   ]
   },
   "johan-issue:319": {
    "status": "pending",
@@ -15026,7 +16852,12 @@
    "kind": "issue",
    "state": "closed",
    "comments": 1,
-   "upstreamUpdatedAt": "2026-09-29T12:51:32Z"
+   "upstreamUpdatedAt": "2026-09-29T12:51:32Z",
+   "mailDate": "2026-09-29",
+   "mailEvents": [
+    "comment",
+    "close"
+   ]
   },
   "johan-issue:356": {
    "status": "pending",
@@ -15047,14 +16878,23 @@
    "kind": "issue",
    "state": "open",
    "comments": 1,
-   "upstreamUpdatedAt": "2026-10-02T11:58:16Z"
+   "upstreamUpdatedAt": "2026-10-02T11:58:16Z",
+   "mailDate": "2026-10-02",
+   "mailEvents": [
+    "comment"
+   ]
   },
   "johan-issue:359": {
    "status": "pending",
    "kind": "issue",
    "state": "closed",
    "comments": 2,
-   "upstreamUpdatedAt": "2026-09-29T13:03:14Z"
+   "upstreamUpdatedAt": "2026-09-29T13:03:14Z",
+   "mailDate": "2026-09-29",
+   "mailEvents": [
+    "comment",
+    "close"
+   ]
   },
   "johan-issue:36": {
    "status": "pending",
@@ -15096,7 +16936,12 @@
    "kind": "issue",
    "state": "closed",
    "comments": 1,
-   "upstreamUpdatedAt": "2026-10-01T16:18:53Z"
+   "upstreamUpdatedAt": "2026-10-01T16:18:53Z",
+   "mailDate": "2026-10-01",
+   "mailEvents": [
+    "comment",
+    "close"
+   ]
   },
   "johan-issue:365": {
    "status": "pending",
@@ -15110,7 +16955,12 @@
    "kind": "issue",
    "state": "closed",
    "comments": 2,
-   "upstreamUpdatedAt": "2026-09-28T10:01:32Z"
+   "upstreamUpdatedAt": "2026-09-28T10:01:32Z",
+   "mailDate": "2026-09-28",
+   "mailEvents": [
+    "comment",
+    "close"
+   ]
   },
   "johan-issue:367": {
    "status": "pending",
@@ -15187,7 +17037,12 @@
    "kind": "issue",
    "state": "closed",
    "comments": 1,
-   "upstreamUpdatedAt": "2026-10-03T09:11:58Z"
+   "upstreamUpdatedAt": "2026-10-03T09:11:58Z",
+   "mailDate": "2026-10-03",
+   "mailEvents": [
+    "comment",
+    "close"
+   ]
   },
   "johan-issue:377": {
    "status": "pending",
@@ -15208,7 +17063,12 @@
    "kind": "issue",
    "state": "closed",
    "comments": 2,
-   "upstreamUpdatedAt": "2026-10-01T11:07:48Z"
+   "upstreamUpdatedAt": "2026-10-01T11:07:48Z",
+   "mailDate": "2026-09-28",
+   "mailEvents": [
+    "comment",
+    "close"
+   ]
   },
   "johan-issue:38": {
    "status": "pending",
@@ -15222,14 +17082,24 @@
    "kind": "issue",
    "state": "closed",
    "comments": 2,
-   "upstreamUpdatedAt": "2026-09-29T12:50:44Z"
+   "upstreamUpdatedAt": "2026-09-29T12:50:44Z",
+   "mailDate": "2026-09-29",
+   "mailEvents": [
+    "comment",
+    "close"
+   ]
   },
   "johan-issue:381": {
    "status": "pending",
    "kind": "issue",
    "state": "closed",
    "comments": 1,
-   "upstreamUpdatedAt": "2026-09-29T13:08:25Z"
+   "upstreamUpdatedAt": "2026-09-29T13:08:25Z",
+   "mailDate": "2026-09-29",
+   "mailEvents": [
+    "comment",
+    "close"
+   ]
   },
   "johan-issue:382": {
    "status": "pending",
@@ -15257,7 +17127,11 @@
    "kind": "issue",
    "state": "open",
    "comments": 2,
-   "upstreamUpdatedAt": "2026-10-02T20:03:27Z"
+   "upstreamUpdatedAt": "2026-10-02T20:03:27Z",
+   "mailDate": "2026-10-02",
+   "mailEvents": [
+    "comment"
+   ]
   },
   "johan-issue:386": {
    "status": "pending",
@@ -15299,7 +17173,12 @@
    "kind": "issue",
    "state": "closed",
    "comments": 1,
-   "upstreamUpdatedAt": "2026-10-01T11:31:27Z"
+   "upstreamUpdatedAt": "2026-10-01T11:31:27Z",
+   "mailDate": "2026-10-01",
+   "mailEvents": [
+    "comment",
+    "close"
+   ]
   },
   "johan-issue:391": {
    "status": "pending",
@@ -15313,7 +17192,12 @@
    "kind": "issue",
    "state": "closed",
    "comments": 2,
-   "upstreamUpdatedAt": "2026-09-28T15:13:35Z"
+   "upstreamUpdatedAt": "2026-09-28T15:13:35Z",
+   "mailDate": "2026-09-28",
+   "mailEvents": [
+    "comment",
+    "close"
+   ]
   },
   "johan-issue:393": {
    "status": "pending",
@@ -15327,14 +17211,24 @@
    "kind": "issue",
    "state": "closed",
    "comments": 2,
-   "upstreamUpdatedAt": "2026-09-29T12:50:48Z"
+   "upstreamUpdatedAt": "2026-09-29T12:50:48Z",
+   "mailDate": "2026-09-29",
+   "mailEvents": [
+    "comment",
+    "close"
+   ]
   },
   "johan-issue:395": {
    "status": "pending",
    "kind": "issue",
    "state": "closed",
    "comments": 4,
-   "upstreamUpdatedAt": "2026-09-29T12:50:11Z"
+   "upstreamUpdatedAt": "2026-09-29T12:50:11Z",
+   "mailDate": "2026-09-29",
+   "mailEvents": [
+    "comment",
+    "close"
+   ]
   },
   "johan-issue:396": {
    "status": "pending",
@@ -15383,7 +17277,12 @@
    "kind": "issue",
    "state": "closed",
    "comments": 2,
-   "upstreamUpdatedAt": "2026-10-01T11:06:09Z"
+   "upstreamUpdatedAt": "2026-10-01T11:06:09Z",
+   "mailDate": "2026-10-01",
+   "mailEvents": [
+    "comment",
+    "close"
+   ]
   },
   "johan-issue:401": {
    "status": "pending",
@@ -15404,7 +17303,12 @@
    "kind": "issue",
    "state": "closed",
    "comments": 1,
-   "upstreamUpdatedAt": "2026-10-01T11:29:09Z"
+   "upstreamUpdatedAt": "2026-10-01T11:29:09Z",
+   "mailDate": "2026-10-01",
+   "mailEvents": [
+    "comment",
+    "close"
+   ]
   },
   "johan-issue:404": {
    "status": "pending",
@@ -15425,7 +17329,11 @@
    "kind": "issue",
    "state": "open",
    "comments": 2,
-   "upstreamUpdatedAt": "2026-10-02T22:43:10Z"
+   "upstreamUpdatedAt": "2026-10-02T22:43:10Z",
+   "mailDate": "2026-10-03",
+   "mailEvents": [
+    "comment"
+   ]
   },
   "johan-issue:407": {
    "status": "pending",
@@ -15439,14 +17347,23 @@
    "kind": "issue",
    "state": "open",
    "comments": 2,
-   "upstreamUpdatedAt": "2026-10-01T15:58:51Z"
+   "upstreamUpdatedAt": "2026-10-01T15:58:51Z",
+   "mailDate": "2026-09-30",
+   "mailEvents": [
+    "comment"
+   ]
   },
   "johan-issue:409": {
    "status": "pending",
    "kind": "issue",
    "state": "closed",
    "comments": 1,
-   "upstreamUpdatedAt": "2026-09-29T08:00:41Z"
+   "upstreamUpdatedAt": "2026-09-29T08:00:41Z",
+   "mailDate": "2026-09-29",
+   "mailEvents": [
+    "comment",
+    "close"
+   ]
   },
   "johan-issue:41": {
    "status": "pending",
@@ -15488,7 +17405,12 @@
    "kind": "issue",
    "state": "closed",
    "comments": 4,
-   "upstreamUpdatedAt": "2026-09-30T20:33:35Z"
+   "upstreamUpdatedAt": "2026-09-30T20:33:35Z",
+   "mailDate": "2026-09-30",
+   "mailEvents": [
+    "comment",
+    "close"
+   ]
   },
   "johan-issue:415": {
    "status": "pending",
@@ -15502,7 +17424,12 @@
    "kind": "issue",
    "state": "closed",
    "comments": 2,
-   "upstreamUpdatedAt": "2026-10-01T11:28:51Z"
+   "upstreamUpdatedAt": "2026-10-01T11:28:51Z",
+   "mailDate": "2026-10-01",
+   "mailEvents": [
+    "comment",
+    "close"
+   ]
   },
   "johan-issue:417": {
    "status": "pending",
@@ -15544,7 +17471,11 @@
    "kind": "issue",
    "state": "open",
    "comments": 3,
-   "upstreamUpdatedAt": "2026-10-03T07:45:50Z"
+   "upstreamUpdatedAt": "2026-10-03T07:45:50Z",
+   "mailDate": "2026-10-03",
+   "mailEvents": [
+    "comment"
+   ]
   },
   "johan-issue:422": {
    "status": "pending",
@@ -15558,14 +17489,23 @@
    "kind": "issue",
    "state": "open",
    "comments": 19,
-   "upstreamUpdatedAt": "2026-10-02T12:01:49Z"
+   "upstreamUpdatedAt": "2026-10-02T12:01:49Z",
+   "mailDate": "2026-10-02",
+   "mailEvents": [
+    "comment"
+   ]
   },
   "johan-issue:424": {
    "status": "pending",
    "kind": "issue",
    "state": "closed",
    "comments": 1,
-   "upstreamUpdatedAt": "2026-10-02T12:02:24Z"
+   "upstreamUpdatedAt": "2026-10-02T12:02:24Z",
+   "mailDate": "2026-10-02",
+   "mailEvents": [
+    "comment",
+    "close"
+   ]
   },
   "johan-issue:425": {
    "status": "pending",
@@ -15593,7 +17533,12 @@
    "kind": "issue",
    "state": "closed",
    "comments": 1,
-   "upstreamUpdatedAt": "2026-09-29T08:22:12Z"
+   "upstreamUpdatedAt": "2026-09-29T08:22:12Z",
+   "mailDate": "2026-09-29",
+   "mailEvents": [
+    "comment",
+    "close"
+   ]
   },
   "johan-issue:429": {
    "status": "pending",
@@ -15635,14 +17580,24 @@
    "kind": "issue",
    "state": "closed",
    "comments": 1,
-   "upstreamUpdatedAt": "2026-09-28T19:18:02Z"
+   "upstreamUpdatedAt": "2026-09-28T19:18:02Z",
+   "mailDate": "2026-09-28",
+   "mailEvents": [
+    "comment",
+    "close"
+   ]
   },
   "johan-issue:434": {
    "status": "pending",
    "kind": "issue",
    "state": "closed",
    "comments": 3,
-   "upstreamUpdatedAt": "2026-10-01T11:29:18Z"
+   "upstreamUpdatedAt": "2026-10-01T11:29:18Z",
+   "mailDate": "2026-10-01",
+   "mailEvents": [
+    "comment",
+    "close"
+   ]
   },
   "johan-issue:435": {
    "status": "pending",
@@ -15740,7 +17695,12 @@
    "kind": "issue",
    "state": "closed",
    "comments": 1,
-   "upstreamUpdatedAt": "2026-09-30T20:32:55Z"
+   "upstreamUpdatedAt": "2026-09-30T20:32:55Z",
+   "mailDate": "2026-09-30",
+   "mailEvents": [
+    "comment",
+    "close"
+   ]
   },
   "johan-issue:448": {
    "status": "pending",
@@ -15754,7 +17714,11 @@
    "kind": "issue",
    "state": "closed",
    "comments": 2,
-   "upstreamUpdatedAt": "2024-01-07T20:21:26Z"
+   "upstreamUpdatedAt": "2024-01-07T20:21:26Z",
+   "mailDate": "2026-09-30",
+   "mailEvents": [
+    "comment"
+   ]
   },
   "johan-issue:45": {
    "status": "pending",
@@ -15789,7 +17753,11 @@
    "kind": "issue",
    "state": "open",
    "comments": 1,
-   "upstreamUpdatedAt": "2026-09-29T20:38:56Z"
+   "upstreamUpdatedAt": "2026-09-29T20:38:56Z",
+   "mailDate": "2026-09-29",
+   "mailEvents": [
+    "comment"
+   ]
   },
   "johan-issue:454": {
    "status": "pending",
@@ -15803,28 +17771,47 @@
    "kind": "issue",
    "state": "closed",
    "comments": 1,
-   "upstreamUpdatedAt": "2026-09-30T20:32:42Z"
+   "upstreamUpdatedAt": "2026-09-30T20:32:42Z",
+   "mailDate": "2026-09-30",
+   "mailEvents": [
+    "comment",
+    "close"
+   ]
   },
   "johan-issue:456": {
    "status": "pending",
    "kind": "issue",
    "state": "open",
    "comments": 3,
-   "upstreamUpdatedAt": "2026-10-02T19:40:37Z"
+   "upstreamUpdatedAt": "2026-10-02T19:40:37Z",
+   "mailDate": "2026-10-02",
+   "mailEvents": [
+    "comment",
+    "close"
+   ]
   },
   "johan-issue:457": {
    "status": "pending",
    "kind": "issue",
    "state": "open",
    "comments": 3,
-   "upstreamUpdatedAt": "2026-09-30T06:38:34Z"
+   "upstreamUpdatedAt": "2026-09-30T06:38:34Z",
+   "mailDate": "2026-09-28",
+   "mailEvents": [
+    "comment"
+   ]
   },
   "johan-issue:458": {
    "status": "pending",
    "kind": "issue",
    "state": "closed",
    "comments": 1,
-   "upstreamUpdatedAt": "2026-10-01T11:29:27Z"
+   "upstreamUpdatedAt": "2026-10-01T11:29:27Z",
+   "mailDate": "2026-10-01",
+   "mailEvents": [
+    "comment",
+    "close"
+   ]
   },
   "johan-issue:459": {
    "status": "pending",
@@ -15859,7 +17846,12 @@
    "kind": "issue",
    "state": "closed",
    "comments": 1,
-   "upstreamUpdatedAt": "2026-10-03T08:53:32Z"
+   "upstreamUpdatedAt": "2026-10-03T08:53:32Z",
+   "mailDate": "2026-10-03",
+   "mailEvents": [
+    "comment",
+    "close"
+   ]
   },
   "johan-issue:463": {
    "status": "pending",
@@ -15873,7 +17865,12 @@
    "kind": "issue",
    "state": "closed",
    "comments": 1,
-   "upstreamUpdatedAt": "2026-09-30T20:22:57Z"
+   "upstreamUpdatedAt": "2026-09-30T20:22:57Z",
+   "mailDate": "2026-09-30",
+   "mailEvents": [
+    "comment",
+    "close"
+   ]
   },
   "johan-issue:465": {
    "status": "pending",
@@ -15901,7 +17898,11 @@
    "kind": "issue",
    "state": "open",
    "comments": 1,
-   "upstreamUpdatedAt": "2026-07-12T21:28:57Z"
+   "upstreamUpdatedAt": "2026-07-12T21:28:57Z",
+   "mailDate": "2026-02-22",
+   "mailEvents": [
+    "comment"
+   ]
   },
   "johan-issue:469": {
    "status": "pending",
@@ -15943,7 +17944,12 @@
    "kind": "issue",
    "state": "closed",
    "comments": 2,
-   "upstreamUpdatedAt": "2026-10-03T09:12:04Z"
+   "upstreamUpdatedAt": "2026-10-03T09:12:04Z",
+   "mailDate": "2026-10-03",
+   "mailEvents": [
+    "comment",
+    "close"
+   ]
   },
   "johan-issue:474": {
    "status": "pending",
@@ -15971,14 +17977,24 @@
    "kind": "issue",
    "state": "closed",
    "comments": 1,
-   "upstreamUpdatedAt": "2026-09-30T20:35:23Z"
+   "upstreamUpdatedAt": "2026-09-30T20:35:23Z",
+   "mailDate": "2026-09-30",
+   "mailEvents": [
+    "comment",
+    "close"
+   ]
   },
   "johan-issue:478": {
    "status": "pending",
    "kind": "issue",
    "state": "closed",
    "comments": 1,
-   "upstreamUpdatedAt": "2026-10-01T16:19:06Z"
+   "upstreamUpdatedAt": "2026-10-01T16:19:06Z",
+   "mailDate": "2026-10-01",
+   "mailEvents": [
+    "comment",
+    "close"
+   ]
   },
   "johan-issue:479": {
    "status": "pending",
@@ -16027,7 +18043,12 @@
    "kind": "issue",
    "state": "closed",
    "comments": 1,
-   "upstreamUpdatedAt": "2026-07-12T21:28:15Z"
+   "upstreamUpdatedAt": "2026-07-12T21:28:15Z",
+   "mailDate": "2026-03-09",
+   "mailEvents": [
+    "comment",
+    "close"
+   ]
   },
   "johan-issue:485": {
    "status": "pending",
@@ -16076,7 +18097,11 @@
    "kind": "issue",
    "state": "open",
    "comments": 1,
-   "upstreamUpdatedAt": "2026-09-30T22:15:46Z"
+   "upstreamUpdatedAt": "2026-09-30T22:15:46Z",
+   "mailDate": "2026-10-01",
+   "mailEvents": [
+    "comment"
+   ]
   },
   "johan-issue:491": {
    "status": "pending",
@@ -16090,7 +18115,12 @@
    "kind": "issue",
    "state": "closed",
    "comments": 1,
-   "upstreamUpdatedAt": "2026-10-01T11:29:58Z"
+   "upstreamUpdatedAt": "2026-10-01T11:29:58Z",
+   "mailDate": "2026-10-01",
+   "mailEvents": [
+    "comment",
+    "close"
+   ]
   },
   "johan-issue:493": {
    "status": "pending",
@@ -16104,14 +18134,24 @@
    "kind": "issue",
    "state": "closed",
    "comments": 2,
-   "upstreamUpdatedAt": "2026-10-01T15:59:30Z"
+   "upstreamUpdatedAt": "2026-10-01T15:59:30Z",
+   "mailDate": "2026-10-01",
+   "mailEvents": [
+    "comment",
+    "close"
+   ]
   },
   "johan-issue:495": {
    "status": "pending",
    "kind": "issue",
    "state": "closed",
    "comments": 1,
-   "upstreamUpdatedAt": "2026-10-01T15:59:38Z"
+   "upstreamUpdatedAt": "2026-10-01T15:59:38Z",
+   "mailDate": "2026-10-01",
+   "mailEvents": [
+    "comment",
+    "close"
+   ]
   },
   "johan-issue:496": {
    "status": "pending",
@@ -16258,7 +18298,11 @@
    "kind": "issue",
    "state": "open",
    "comments": 1,
-   "upstreamUpdatedAt": "2026-10-02T20:03:29Z"
+   "upstreamUpdatedAt": "2026-10-02T20:03:29Z",
+   "mailDate": "2026-10-02",
+   "mailEvents": [
+    "comment"
+   ]
   },
   "johan-issue:514": {
    "status": "pending",
@@ -16272,7 +18316,11 @@
    "kind": "issue",
    "state": "open",
    "comments": 2,
-   "upstreamUpdatedAt": "2026-09-30T20:38:29Z"
+   "upstreamUpdatedAt": "2026-09-30T20:38:29Z",
+   "mailDate": "2026-09-30",
+   "mailEvents": [
+    "comment"
+   ]
   },
   "johan-issue:516": {
    "status": "pending",
@@ -16328,7 +18376,11 @@
    "kind": "issue",
    "state": "open",
    "comments": 6,
-   "upstreamUpdatedAt": "2026-10-02T11:53:25Z"
+   "upstreamUpdatedAt": "2026-10-02T11:53:25Z",
+   "mailDate": "2026-10-02",
+   "mailEvents": [
+    "comment"
+   ]
   },
   "johan-issue:523": {
    "status": "pending",
@@ -16349,7 +18401,12 @@
    "kind": "issue",
    "state": "closed",
    "comments": 9,
-   "upstreamUpdatedAt": "2026-09-30T22:05:03Z"
+   "upstreamUpdatedAt": "2026-09-30T22:05:03Z",
+   "mailDate": "2026-10-01",
+   "mailEvents": [
+    "comment",
+    "close"
+   ]
   },
   "johan-issue:526": {
    "status": "pending",
@@ -16405,7 +18462,12 @@
    "kind": "issue",
    "state": "closed",
    "comments": 2,
-   "upstreamUpdatedAt": "2026-10-01T11:29:00Z"
+   "upstreamUpdatedAt": "2026-10-01T11:29:00Z",
+   "mailDate": "2026-10-01",
+   "mailEvents": [
+    "comment",
+    "close"
+   ]
   },
   "johan-issue:533": {
    "status": "pending",
@@ -16433,7 +18495,12 @@
    "kind": "issue",
    "state": "closed",
    "comments": 2,
-   "upstreamUpdatedAt": "2026-10-01T16:19:18Z"
+   "upstreamUpdatedAt": "2026-10-01T16:19:18Z",
+   "mailDate": "2026-10-01",
+   "mailEvents": [
+    "comment",
+    "close"
+   ]
   },
   "johan-issue:537": {
    "status": "pending",
@@ -16454,7 +18521,12 @@
    "kind": "issue",
    "state": "closed",
    "comments": 2,
-   "upstreamUpdatedAt": "2026-09-30T22:14:57Z"
+   "upstreamUpdatedAt": "2026-09-30T22:14:57Z",
+   "mailDate": "2026-10-01",
+   "mailEvents": [
+    "comment",
+    "close"
+   ]
   },
   "johan-issue:54": {
    "status": "pending",
@@ -16482,7 +18554,12 @@
    "kind": "issue",
    "state": "closed",
    "comments": 4,
-   "upstreamUpdatedAt": "2026-09-29T07:53:23Z"
+   "upstreamUpdatedAt": "2026-09-29T07:53:23Z",
+   "mailDate": "2026-09-29",
+   "mailEvents": [
+    "comment",
+    "close"
+   ]
   },
   "johan-issue:543": {
    "status": "pending",
@@ -16524,7 +18601,12 @@
    "kind": "issue",
    "state": "closed",
    "comments": 2,
-   "upstreamUpdatedAt": "2026-09-29T20:39:01Z"
+   "upstreamUpdatedAt": "2026-09-29T20:39:01Z",
+   "mailDate": "2026-09-29",
+   "mailEvents": [
+    "comment",
+    "close"
+   ]
   },
   "johan-issue:549": {
    "status": "pending",
@@ -16545,7 +18627,11 @@
    "kind": "issue",
    "state": "closed",
    "comments": 2,
-   "upstreamUpdatedAt": "2026-09-28T11:07:04Z"
+   "upstreamUpdatedAt": "2026-09-28T11:07:04Z",
+   "mailDate": "2026-09-28",
+   "mailEvents": [
+    "comment"
+   ]
   },
   "johan-issue:551": {
    "status": "pending",
@@ -16573,7 +18659,12 @@
    "kind": "issue",
    "state": "closed",
    "comments": 1,
-   "upstreamUpdatedAt": "2026-09-30T22:15:02Z"
+   "upstreamUpdatedAt": "2026-09-30T22:15:02Z",
+   "mailDate": "2026-10-01",
+   "mailEvents": [
+    "comment",
+    "close"
+   ]
   },
   "johan-issue:555": {
    "status": "pending",
@@ -16587,7 +18678,12 @@
    "kind": "issue",
    "state": "closed",
    "comments": 1,
-   "upstreamUpdatedAt": "2026-09-29T13:08:00Z"
+   "upstreamUpdatedAt": "2026-09-29T13:08:00Z",
+   "mailDate": "2026-09-29",
+   "mailEvents": [
+    "comment",
+    "close"
+   ]
   },
   "johan-issue:557": {
    "status": "pending",
@@ -16636,7 +18732,11 @@
    "kind": "issue",
    "state": "open",
    "comments": 2,
-   "upstreamUpdatedAt": "2026-09-30T22:39:56Z"
+   "upstreamUpdatedAt": "2026-09-30T22:39:56Z",
+   "mailDate": "2026-10-01",
+   "mailEvents": [
+    "comment"
+   ]
   },
   "johan-issue:563": {
    "status": "pending",
@@ -16671,7 +18771,11 @@
    "kind": "issue",
    "state": "open",
    "comments": 1,
-   "upstreamUpdatedAt": "2026-10-02T22:43:16Z"
+   "upstreamUpdatedAt": "2026-10-02T22:43:16Z",
+   "mailDate": "2026-10-03",
+   "mailEvents": [
+    "comment"
+   ]
   },
   "johan-issue:568": {
    "status": "pending",
@@ -16685,7 +18789,12 @@
    "kind": "issue",
    "state": "closed",
    "comments": 1,
-   "upstreamUpdatedAt": "2026-09-29T20:46:03Z"
+   "upstreamUpdatedAt": "2026-09-29T20:46:03Z",
+   "mailDate": "2026-09-29",
+   "mailEvents": [
+    "comment",
+    "close"
+   ]
   },
   "johan-issue:57": {
    "status": "pending",
@@ -16699,7 +18808,12 @@
    "kind": "issue",
    "state": "closed",
    "comments": 1,
-   "upstreamUpdatedAt": "2026-09-30T20:38:35Z"
+   "upstreamUpdatedAt": "2026-09-30T20:38:35Z",
+   "mailDate": "2026-09-30",
+   "mailEvents": [
+    "comment",
+    "close"
+   ]
   },
   "johan-issue:571": {
    "status": "pending",
@@ -16727,7 +18841,12 @@
    "kind": "issue",
    "state": "closed",
    "comments": 1,
-   "upstreamUpdatedAt": "2026-10-03T07:58:54Z"
+   "upstreamUpdatedAt": "2026-10-03T07:58:54Z",
+   "mailDate": "2026-10-03",
+   "mailEvents": [
+    "comment",
+    "close"
+   ]
   },
   "johan-issue:575": {
    "status": "pending",
@@ -16741,14 +18860,23 @@
    "kind": "issue",
    "state": "open",
    "comments": 1,
-   "upstreamUpdatedAt": "2026-09-30T06:28:20Z"
+   "upstreamUpdatedAt": "2026-09-30T06:28:20Z",
+   "mailDate": "2026-09-30",
+   "mailEvents": [
+    "comment"
+   ]
   },
   "johan-issue:577": {
    "status": "pending",
    "kind": "issue",
    "state": "closed",
    "comments": 2,
-   "upstreamUpdatedAt": "2026-09-28T19:13:36Z"
+   "upstreamUpdatedAt": "2026-09-28T19:13:36Z",
+   "mailDate": "2026-09-28",
+   "mailEvents": [
+    "comment",
+    "close"
+   ]
   },
   "johan-issue:578": {
    "status": "pending",
@@ -16762,7 +18890,12 @@
    "kind": "issue",
    "state": "closed",
    "comments": 2,
-   "upstreamUpdatedAt": "2026-10-01T16:00:10Z"
+   "upstreamUpdatedAt": "2026-10-01T16:00:10Z",
+   "mailDate": "2026-10-01",
+   "mailEvents": [
+    "comment",
+    "close"
+   ]
   },
   "johan-issue:58": {
    "status": "pending",
@@ -16776,7 +18909,12 @@
    "kind": "issue",
    "state": "closed",
    "comments": 2,
-   "upstreamUpdatedAt": "2026-10-01T16:00:28Z"
+   "upstreamUpdatedAt": "2026-10-01T16:00:28Z",
+   "mailDate": "2026-10-01",
+   "mailEvents": [
+    "comment",
+    "close"
+   ]
   },
   "johan-issue:581": {
    "status": "pending",
@@ -16790,14 +18928,22 @@
    "kind": "issue",
    "state": "open",
    "comments": 2,
-   "upstreamUpdatedAt": "2026-09-28T15:50:35Z"
+   "upstreamUpdatedAt": "2026-09-28T15:50:35Z",
+   "mailDate": "2026-09-28",
+   "mailEvents": [
+    "comment"
+   ]
   },
   "johan-issue:583": {
    "status": "pending",
    "kind": "issue",
    "state": "open",
    "comments": 5,
-   "upstreamUpdatedAt": "2026-10-02T19:57:44Z"
+   "upstreamUpdatedAt": "2026-10-02T19:57:44Z",
+   "mailDate": "2026-10-02",
+   "mailEvents": [
+    "comment"
+   ]
   },
   "johan-issue:584": {
    "status": "pending",
@@ -16860,7 +19006,11 @@
    "kind": "issue",
    "state": "open",
    "comments": 3,
-   "upstreamUpdatedAt": "2026-10-01T16:08:58Z"
+   "upstreamUpdatedAt": "2026-10-01T16:08:58Z",
+   "mailDate": "2026-02-28",
+   "mailEvents": [
+    "comment"
+   ]
   },
   "johan-issue:592": {
    "status": "pending",
@@ -16902,7 +19052,12 @@
    "kind": "issue",
    "state": "closed",
    "comments": 10,
-   "upstreamUpdatedAt": "2026-09-30T22:09:35Z"
+   "upstreamUpdatedAt": "2026-09-30T22:09:35Z",
+   "mailDate": "2026-10-01",
+   "mailEvents": [
+    "comment",
+    "close"
+   ]
   },
   "johan-issue:598": {
    "status": "pending",
@@ -16944,7 +19099,11 @@
    "kind": "issue",
    "state": "open",
    "comments": 1,
-   "upstreamUpdatedAt": "2026-09-30T21:56:41Z"
+   "upstreamUpdatedAt": "2026-09-30T21:56:41Z",
+   "mailDate": "2026-09-30",
+   "mailEvents": [
+    "comment"
+   ]
   },
   "johan-issue:603": {
    "status": "pending",
@@ -16972,7 +19131,12 @@
    "kind": "issue",
    "state": "closed",
    "comments": 2,
-   "upstreamUpdatedAt": "2026-09-29T12:54:22Z"
+   "upstreamUpdatedAt": "2026-09-29T12:54:22Z",
+   "mailDate": "2026-09-29",
+   "mailEvents": [
+    "comment",
+    "close"
+   ]
   },
   "johan-issue:607": {
    "status": "pending",
@@ -17007,7 +19171,12 @@
    "kind": "issue",
    "state": "closed",
    "comments": 3,
-   "upstreamUpdatedAt": "2026-09-28T19:17:47Z"
+   "upstreamUpdatedAt": "2026-09-28T19:17:47Z",
+   "mailDate": "2026-09-28",
+   "mailEvents": [
+    "comment",
+    "close"
+   ]
   },
   "johan-issue:611": {
    "status": "pending",
@@ -17028,7 +19197,12 @@
    "kind": "issue",
    "state": "closed",
    "comments": 1,
-   "upstreamUpdatedAt": "2026-09-28T19:10:24Z"
+   "upstreamUpdatedAt": "2026-09-28T19:10:24Z",
+   "mailDate": "2026-09-28",
+   "mailEvents": [
+    "comment",
+    "close"
+   ]
   },
   "johan-issue:614": {
    "status": "pending",
@@ -17070,7 +19244,11 @@
    "kind": "issue",
    "state": "open",
    "comments": 1,
-   "upstreamUpdatedAt": "2026-09-28T22:04:02Z"
+   "upstreamUpdatedAt": "2026-09-28T22:04:02Z",
+   "mailDate": "2026-09-28",
+   "mailEvents": [
+    "comment"
+   ]
   },
   "johan-issue:62": {
    "status": "pending",
@@ -17084,7 +19262,12 @@
    "kind": "issue",
    "state": "closed",
    "comments": 1,
-   "upstreamUpdatedAt": "2026-07-12T21:28:14Z"
+   "upstreamUpdatedAt": "2026-07-12T21:28:14Z",
+   "mailDate": "2026-03-09",
+   "mailEvents": [
+    "comment",
+    "close"
+   ]
   },
   "johan-issue:621": {
    "status": "pending",
@@ -17112,7 +19295,11 @@
    "kind": "issue",
    "state": "open",
    "comments": 1,
-   "upstreamUpdatedAt": "2026-09-30T21:51:40Z"
+   "upstreamUpdatedAt": "2026-09-30T21:51:40Z",
+   "mailDate": "2026-09-30",
+   "mailEvents": [
+    "comment"
+   ]
   },
   "johan-issue:625": {
    "status": "pending",
@@ -17126,7 +19313,12 @@
    "kind": "issue",
    "state": "closed",
    "comments": 3,
-   "upstreamUpdatedAt": "2026-10-02T22:43:57Z"
+   "upstreamUpdatedAt": "2026-10-02T22:43:57Z",
+   "mailDate": "2026-10-03",
+   "mailEvents": [
+    "comment",
+    "close"
+   ]
   },
   "johan-issue:627": {
    "status": "pending",
@@ -17196,14 +19388,24 @@
    "kind": "issue",
    "state": "closed",
    "comments": 1,
-   "upstreamUpdatedAt": "2026-10-01T15:59:46Z"
+   "upstreamUpdatedAt": "2026-10-01T15:59:46Z",
+   "mailDate": "2026-10-01",
+   "mailEvents": [
+    "comment",
+    "close"
+   ]
   },
   "johan-issue:636": {
    "status": "pending",
    "kind": "issue",
    "state": "closed",
    "comments": 1,
-   "upstreamUpdatedAt": "2026-09-30T20:38:54Z"
+   "upstreamUpdatedAt": "2026-09-30T20:38:54Z",
+   "mailDate": "2026-09-30",
+   "mailEvents": [
+    "comment",
+    "close"
+   ]
   },
   "johan-issue:637": {
    "status": "pending",
@@ -17224,7 +19426,12 @@
    "kind": "issue",
    "state": "closed",
    "comments": 1,
-   "upstreamUpdatedAt": "2026-09-29T13:10:14Z"
+   "upstreamUpdatedAt": "2026-09-29T13:10:14Z",
+   "mailDate": "2026-09-29",
+   "mailEvents": [
+    "comment",
+    "close"
+   ]
   },
   "johan-issue:64": {
    "status": "pending",
@@ -17259,7 +19466,11 @@
    "kind": "issue",
    "state": "open",
    "comments": 13,
-   "upstreamUpdatedAt": "2026-09-29T13:15:29Z"
+   "upstreamUpdatedAt": "2026-09-29T13:15:29Z",
+   "mailDate": "2026-09-29",
+   "mailEvents": [
+    "comment"
+   ]
   },
   "johan-issue:644": {
    "status": "pending",
@@ -17315,7 +19526,12 @@
    "kind": "issue",
    "state": "closed",
    "comments": 2,
-   "upstreamUpdatedAt": "2026-09-30T21:51:37Z"
+   "upstreamUpdatedAt": "2026-09-30T21:51:37Z",
+   "mailDate": "2026-09-30",
+   "mailEvents": [
+    "comment",
+    "close"
+   ]
   },
   "johan-issue:651": {
    "status": "pending",
@@ -17399,14 +19615,23 @@
    "kind": "issue",
    "state": "open",
    "comments": 5,
-   "upstreamUpdatedAt": "2026-10-03T07:47:55Z"
+   "upstreamUpdatedAt": "2026-10-03T07:47:55Z",
+   "mailDate": "2026-10-03",
+   "mailEvents": [
+    "comment"
+   ]
   },
   "johan-issue:662": {
    "status": "pending",
    "kind": "issue",
    "state": "closed",
    "comments": 2,
-   "upstreamUpdatedAt": "2026-09-30T22:15:10Z"
+   "upstreamUpdatedAt": "2026-09-30T22:15:10Z",
+   "mailDate": "2026-10-01",
+   "mailEvents": [
+    "comment",
+    "close"
+   ]
   },
   "johan-issue:663": {
    "status": "pending",
@@ -17420,7 +19645,12 @@
    "kind": "issue",
    "state": "closed",
    "comments": 3,
-   "upstreamUpdatedAt": "2026-09-29T12:53:50Z"
+   "upstreamUpdatedAt": "2026-09-29T12:53:50Z",
+   "mailDate": "2026-09-29",
+   "mailEvents": [
+    "comment",
+    "close"
+   ]
   },
   "johan-issue:665": {
    "status": "pending",
@@ -17497,14 +19727,24 @@
    "kind": "issue",
    "state": "closed",
    "comments": 2,
-   "upstreamUpdatedAt": "2026-10-02T19:37:23Z"
+   "upstreamUpdatedAt": "2026-10-02T19:37:23Z",
+   "mailDate": "2026-10-02",
+   "mailEvents": [
+    "comment",
+    "close"
+   ]
   },
   "johan-issue:675": {
    "status": "pending",
    "kind": "issue",
    "state": "closed",
    "comments": 1,
-   "upstreamUpdatedAt": "2026-09-29T12:54:28Z"
+   "upstreamUpdatedAt": "2026-09-29T12:54:28Z",
+   "mailDate": "2026-09-29",
+   "mailEvents": [
+    "comment",
+    "close"
+   ]
   },
   "johan-issue:676": {
    "status": "pending",
@@ -17581,7 +19821,12 @@
    "kind": "issue",
    "state": "closed",
    "comments": 0,
-   "upstreamUpdatedAt": "2026-07-12T21:32:10Z"
+   "upstreamUpdatedAt": "2026-07-12T21:32:10Z",
+   "mailDate": "2026-05-18",
+   "mailEvents": [
+    "comment",
+    "close"
+   ]
   },
   "johan-issue:688": {
    "status": "pending",
@@ -17595,7 +19840,12 @@
    "kind": "issue",
    "state": "closed",
    "comments": 1,
-   "upstreamUpdatedAt": "2026-09-30T07:10:27Z"
+   "upstreamUpdatedAt": "2026-09-30T07:10:27Z",
+   "mailDate": "2026-09-30",
+   "mailEvents": [
+    "comment",
+    "close"
+   ]
   },
   "johan-issue:69": {
    "status": "pending",
@@ -17630,21 +19880,36 @@
    "kind": "issue",
    "state": "closed",
    "comments": 2,
-   "upstreamUpdatedAt": "2026-07-12T21:28:13Z"
+   "upstreamUpdatedAt": "2026-07-12T21:28:13Z",
+   "mailDate": "2026-03-09",
+   "mailEvents": [
+    "comment",
+    "close"
+   ]
   },
   "johan-issue:694": {
    "status": "pending",
    "kind": "issue",
    "state": "closed",
    "comments": 5,
-   "upstreamUpdatedAt": "2026-09-29T12:54:17Z"
+   "upstreamUpdatedAt": "2026-09-29T12:54:17Z",
+   "mailDate": "2026-09-29",
+   "mailEvents": [
+    "comment",
+    "close"
+   ]
   },
   "johan-issue:695": {
    "status": "pending",
    "kind": "issue",
    "state": "closed",
    "comments": 1,
-   "upstreamUpdatedAt": "2026-09-29T07:53:09Z"
+   "upstreamUpdatedAt": "2026-09-29T07:53:09Z",
+   "mailDate": "2026-09-29",
+   "mailEvents": [
+    "comment",
+    "close"
+   ]
   },
   "johan-issue:696": {
    "status": "pending",
@@ -17728,7 +19993,11 @@
    "kind": "issue",
    "state": "open",
    "comments": 3,
-   "upstreamUpdatedAt": "2026-09-30T21:57:59Z"
+   "upstreamUpdatedAt": "2026-09-30T21:57:59Z",
+   "mailDate": "2026-09-30",
+   "mailEvents": [
+    "comment"
+   ]
   },
   "johan-issue:706": {
    "status": "pending",
@@ -17742,7 +20011,11 @@
    "kind": "issue",
    "state": "open",
    "comments": 2,
-   "upstreamUpdatedAt": "2026-10-01T11:20:48Z"
+   "upstreamUpdatedAt": "2026-10-01T11:20:48Z",
+   "mailDate": "2026-09-30",
+   "mailEvents": [
+    "comment"
+   ]
   },
   "johan-issue:708": {
    "status": "pending",
@@ -17798,14 +20071,24 @@
    "kind": "issue",
    "state": "closed",
    "comments": 1,
-   "upstreamUpdatedAt": "2026-10-01T11:29:47Z"
+   "upstreamUpdatedAt": "2026-10-01T11:29:47Z",
+   "mailDate": "2026-10-01",
+   "mailEvents": [
+    "comment",
+    "close"
+   ]
   },
   "johan-issue:715": {
    "status": "pending",
    "kind": "issue",
    "state": "closed",
    "comments": 8,
-   "upstreamUpdatedAt": "2026-09-30T20:41:39Z"
+   "upstreamUpdatedAt": "2026-09-30T20:41:39Z",
+   "mailDate": "2026-09-30",
+   "mailEvents": [
+    "comment",
+    "close"
+   ]
   },
   "johan-issue:716": {
    "status": "pending",
@@ -17854,14 +20137,23 @@
    "kind": "issue",
    "state": "closed",
    "comments": 2,
-   "upstreamUpdatedAt": "2026-10-02T12:02:20Z"
+   "upstreamUpdatedAt": "2026-10-02T12:02:20Z",
+   "mailDate": "2026-09-30",
+   "mailEvents": [
+    "comment",
+    "close"
+   ]
   },
   "johan-issue:722": {
    "status": "pending",
    "kind": "issue",
    "state": "open",
    "comments": 1,
-   "upstreamUpdatedAt": "2026-09-30T20:48:51Z"
+   "upstreamUpdatedAt": "2026-09-30T20:48:51Z",
+   "mailDate": "2026-09-30",
+   "mailEvents": [
+    "comment"
+   ]
   },
   "johan-issue:723": {
    "status": "pending",
@@ -17875,7 +20167,12 @@
    "kind": "pr",
    "state": "closed",
    "comments": 17,
-   "upstreamUpdatedAt": "2026-09-27T22:09:36Z"
+   "upstreamUpdatedAt": "2026-09-27T22:09:36Z",
+   "mailDate": "2026-09-28",
+   "mailEvents": [
+    "comment",
+    "close"
+   ]
   },
   "johan-issue:725": {
    "status": "pending",
@@ -18001,7 +20298,12 @@
    "kind": "pr",
    "state": "closed",
    "comments": 8,
-   "upstreamUpdatedAt": "2026-09-27T22:09:38Z"
+   "upstreamUpdatedAt": "2026-09-27T22:09:38Z",
+   "mailDate": "2026-09-28",
+   "mailEvents": [
+    "comment",
+    "close"
+   ]
   },
   "johan-issue:741": {
    "status": "pending",
@@ -18036,7 +20338,11 @@
    "kind": "issue",
    "state": "open",
    "comments": 6,
-   "upstreamUpdatedAt": "2026-09-30T06:28:25Z"
+   "upstreamUpdatedAt": "2026-09-30T06:28:25Z",
+   "mailDate": "2026-09-28",
+   "mailEvents": [
+    "comment"
+   ]
   },
   "johan-issue:746": {
    "status": "pending",
@@ -18239,7 +20545,11 @@
    "kind": "issue",
    "state": "open",
    "comments": 1,
-   "upstreamUpdatedAt": "2026-10-02T20:20:59Z"
+   "upstreamUpdatedAt": "2026-10-02T20:20:59Z",
+   "mailDate": "2026-10-02",
+   "mailEvents": [
+    "comment"
+   ]
   },
   "johan-issue:772": {
    "status": "pending",
@@ -18253,21 +20563,35 @@
    "kind": "issue",
    "state": "closed",
    "comments": 1,
-   "upstreamUpdatedAt": "2026-09-30T22:15:16Z"
+   "upstreamUpdatedAt": "2026-09-30T22:15:16Z",
+   "mailDate": "2026-10-01",
+   "mailEvents": [
+    "comment",
+    "close"
+   ]
   },
   "johan-issue:774": {
    "status": "pending",
    "kind": "pr",
    "state": "closed",
    "comments": 1,
-   "upstreamUpdatedAt": "2026-09-28T10:16:16Z"
+   "upstreamUpdatedAt": "2026-09-28T10:16:16Z",
+   "mailDate": "2026-09-28",
+   "mailEvents": [
+    "comment",
+    "close"
+   ]
   },
   "johan-issue:775": {
    "status": "pending",
    "kind": "issue",
    "state": "open",
    "comments": 2,
-   "upstreamUpdatedAt": "2026-10-02T20:15:55Z"
+   "upstreamUpdatedAt": "2026-10-02T20:15:55Z",
+   "mailDate": "2026-10-02",
+   "mailEvents": [
+    "comment"
+   ]
   },
   "johan-issue:776": {
    "status": "pending",
@@ -18281,7 +20605,12 @@
    "kind": "issue",
    "state": "closed",
    "comments": 1,
-   "upstreamUpdatedAt": "2026-09-30T22:05:13Z"
+   "upstreamUpdatedAt": "2026-09-30T22:05:13Z",
+   "mailDate": "2026-10-01",
+   "mailEvents": [
+    "comment",
+    "close"
+   ]
   },
   "johan-issue:778": {
    "status": "pending",
@@ -18316,7 +20645,12 @@
    "kind": "issue",
    "state": "closed",
    "comments": 1,
-   "upstreamUpdatedAt": "2026-09-28T15:18:49Z"
+   "upstreamUpdatedAt": "2026-09-28T15:18:49Z",
+   "mailDate": "2026-09-28",
+   "mailEvents": [
+    "comment",
+    "close"
+   ]
   },
   "johan-issue:782": {
    "status": "pending",
@@ -18337,7 +20671,12 @@
    "kind": "issue",
    "state": "closed",
    "comments": 2,
-   "upstreamUpdatedAt": "2026-09-29T11:44:06Z"
+   "upstreamUpdatedAt": "2026-09-29T11:44:06Z",
+   "mailDate": "2026-09-29",
+   "mailEvents": [
+    "comment",
+    "close"
+   ]
   },
   "johan-issue:785": {
    "status": "pending",
@@ -18358,7 +20697,12 @@
    "kind": "issue",
    "state": "closed",
    "comments": 1,
-   "upstreamUpdatedAt": "2026-07-12T21:28:13Z"
+   "upstreamUpdatedAt": "2026-07-12T21:28:13Z",
+   "mailDate": "2026-03-09",
+   "mailEvents": [
+    "comment",
+    "close"
+   ]
   },
   "johan-issue:788": {
    "status": "pending",
@@ -18421,14 +20765,23 @@
    "kind": "issue",
    "state": "open",
    "comments": 4,
-   "upstreamUpdatedAt": "2026-10-03T07:45:17Z"
+   "upstreamUpdatedAt": "2026-10-03T07:45:17Z",
+   "mailDate": "2026-10-03",
+   "mailEvents": [
+    "comment"
+   ]
   },
   "johan-issue:796": {
    "status": "pending",
    "kind": "issue",
    "state": "closed",
    "comments": 5,
-   "upstreamUpdatedAt": "2026-09-28T15:53:43Z"
+   "upstreamUpdatedAt": "2026-09-28T15:53:43Z",
+   "mailDate": "2026-09-28",
+   "mailEvents": [
+    "comment",
+    "close"
+   ]
   },
   "johan-issue:797": {
    "status": "done",
@@ -18438,7 +20791,12 @@
    "upstreamUpdatedAt": "2026-10-03T10:21:28Z",
    "commit": "340c553fa3",
    "date": "2026-10-03",
-   "updatedAt": "2026-10-03T10:21:28Z"
+   "updatedAt": "2026-10-03T10:21:28Z",
+   "mailDate": "2026-10-03",
+   "mailEvents": [
+    "comment",
+    "merge"
+   ]
   },
   "johan-issue:798": {
    "status": "pending",
@@ -18473,7 +20831,11 @@
    "kind": "issue",
    "state": "closed",
    "comments": 10,
-   "upstreamUpdatedAt": "2026-09-28T10:16:24Z"
+   "upstreamUpdatedAt": "2026-09-28T10:16:24Z",
+   "mailDate": "2026-09-28",
+   "mailEvents": [
+    "comment"
+   ]
   },
   "johan-issue:801": {
    "status": "pending",
@@ -18494,14 +20856,24 @@
    "kind": "issue",
    "state": "closed",
    "comments": 2,
-   "upstreamUpdatedAt": "2026-09-29T23:05:30Z"
+   "upstreamUpdatedAt": "2026-09-29T23:05:30Z",
+   "mailDate": "2026-09-30",
+   "mailEvents": [
+    "comment",
+    "close"
+   ]
   },
   "johan-issue:804": {
    "status": "pending",
    "kind": "issue",
    "state": "closed",
    "comments": 1,
-   "upstreamUpdatedAt": "2026-09-30T20:39:36Z"
+   "upstreamUpdatedAt": "2026-09-30T20:39:36Z",
+   "mailDate": "2026-09-30",
+   "mailEvents": [
+    "comment",
+    "close"
+   ]
   },
   "johan-issue:805": {
    "status": "pending",
@@ -18557,14 +20929,24 @@
    "kind": "issue",
    "state": "closed",
    "comments": 1,
-   "upstreamUpdatedAt": "2026-09-30T20:42:42Z"
+   "upstreamUpdatedAt": "2026-09-30T20:42:42Z",
+   "mailDate": "2026-09-30",
+   "mailEvents": [
+    "comment",
+    "close"
+   ]
   },
   "johan-issue:812": {
    "status": "pending",
    "kind": "issue",
    "state": "closed",
    "comments": 1,
-   "upstreamUpdatedAt": "2026-09-30T20:42:55Z"
+   "upstreamUpdatedAt": "2026-09-30T20:42:55Z",
+   "mailDate": "2026-09-30",
+   "mailEvents": [
+    "comment",
+    "close"
+   ]
   },
   "johan-issue:813": {
    "status": "pending",
@@ -18578,7 +20960,12 @@
    "kind": "issue",
    "state": "closed",
    "comments": 1,
-   "upstreamUpdatedAt": "2026-07-12T21:28:12Z"
+   "upstreamUpdatedAt": "2026-07-12T21:28:12Z",
+   "mailDate": "2026-03-09",
+   "mailEvents": [
+    "comment",
+    "close"
+   ]
   },
   "johan-issue:815": {
    "status": "pending",
@@ -18592,7 +20979,12 @@
    "kind": "issue",
    "state": "closed",
    "comments": 6,
-   "upstreamUpdatedAt": "2026-09-30T22:11:12Z"
+   "upstreamUpdatedAt": "2026-09-30T22:11:12Z",
+   "mailDate": "2026-10-01",
+   "mailEvents": [
+    "comment",
+    "close"
+   ]
   },
   "johan-issue:817": {
    "status": "pending",
@@ -18683,7 +21075,12 @@
    "kind": "issue",
    "state": "closed",
    "comments": 8,
-   "upstreamUpdatedAt": "2026-09-30T22:09:41Z"
+   "upstreamUpdatedAt": "2026-09-30T22:09:41Z",
+   "mailDate": "2026-10-01",
+   "mailEvents": [
+    "comment",
+    "close"
+   ]
   },
   "johan-issue:829": {
    "status": "pending",
@@ -18704,7 +21101,11 @@
    "kind": "issue",
    "state": "open",
    "comments": 1,
-   "upstreamUpdatedAt": "2026-10-03T08:04:37Z"
+   "upstreamUpdatedAt": "2026-10-03T08:04:37Z",
+   "mailDate": "2026-10-03",
+   "mailEvents": [
+    "comment"
+   ]
   },
   "johan-issue:831": {
    "status": "pending",
@@ -18718,7 +21119,12 @@
    "kind": "issue",
    "state": "closed",
    "comments": 2,
-   "upstreamUpdatedAt": "2026-10-03T07:59:09Z"
+   "upstreamUpdatedAt": "2026-10-03T07:59:09Z",
+   "mailDate": "2026-10-01",
+   "mailEvents": [
+    "comment",
+    "close"
+   ]
   },
   "johan-issue:833": {
    "status": "pending",
@@ -18746,7 +21152,12 @@
    "kind": "issue",
    "state": "closed",
    "comments": 1,
-   "upstreamUpdatedAt": "2026-09-29T20:27:58Z"
+   "upstreamUpdatedAt": "2026-09-29T20:27:58Z",
+   "mailDate": "2026-09-29",
+   "mailEvents": [
+    "comment",
+    "close"
+   ]
   },
   "johan-issue:837": {
    "status": "pending",
@@ -18767,7 +21178,11 @@
    "kind": "issue",
    "state": "open",
    "comments": 2,
-   "upstreamUpdatedAt": "2026-02-20T10:49:50Z"
+   "upstreamUpdatedAt": "2026-02-20T10:49:50Z",
+   "mailDate": "2026-02-20",
+   "mailEvents": [
+    "comment"
+   ]
   },
   "johan-issue:84": {
    "status": "pending",
@@ -18816,14 +21231,24 @@
    "kind": "issue",
    "state": "closed",
    "comments": 1,
-   "upstreamUpdatedAt": "2026-09-29T07:53:19Z"
+   "upstreamUpdatedAt": "2026-09-29T07:53:19Z",
+   "mailDate": "2026-09-29",
+   "mailEvents": [
+    "comment",
+    "close"
+   ]
   },
   "johan-issue:846": {
    "status": "pending",
    "kind": "issue",
    "state": "closed",
    "comments": 1,
-   "upstreamUpdatedAt": "2026-09-30T06:24:40Z"
+   "upstreamUpdatedAt": "2026-09-30T06:24:40Z",
+   "mailDate": "2026-09-30",
+   "mailEvents": [
+    "comment",
+    "close"
+   ]
   },
   "johan-issue:847": {
    "status": "pending",
@@ -18837,7 +21262,11 @@
    "kind": "issue",
    "state": "open",
    "comments": 4,
-   "upstreamUpdatedAt": "2026-10-02T22:24:11Z"
+   "upstreamUpdatedAt": "2026-10-02T22:24:11Z",
+   "mailDate": "2026-10-03",
+   "mailEvents": [
+    "comment"
+   ]
   },
   "johan-issue:849": {
    "status": "pending",
@@ -18879,7 +21308,12 @@
    "kind": "issue",
    "state": "closed",
    "comments": 2,
-   "upstreamUpdatedAt": "2026-09-30T20:39:03Z"
+   "upstreamUpdatedAt": "2026-09-30T20:39:03Z",
+   "mailDate": "2026-09-30",
+   "mailEvents": [
+    "comment",
+    "close"
+   ]
   },
   "johan-issue:854": {
    "status": "pending",
@@ -18893,7 +21327,12 @@
    "kind": "issue",
    "state": "closed",
    "comments": 3,
-   "upstreamUpdatedAt": "2026-10-02T22:31:26Z"
+   "upstreamUpdatedAt": "2026-10-02T22:31:26Z",
+   "mailDate": "2026-10-03",
+   "mailEvents": [
+    "comment",
+    "close"
+   ]
   },
   "johan-issue:856": {
    "status": "pending",
@@ -18977,28 +21416,47 @@
    "kind": "issue",
    "state": "closed",
    "comments": 1,
-   "upstreamUpdatedAt": "2026-09-30T20:39:12Z"
+   "upstreamUpdatedAt": "2026-09-30T20:39:12Z",
+   "mailDate": "2026-09-30",
+   "mailEvents": [
+    "comment",
+    "close"
+   ]
   },
   "johan-issue:867": {
    "status": "pending",
    "kind": "issue",
    "state": "closed",
    "comments": 6,
-   "upstreamUpdatedAt": "2026-10-01T17:52:30Z"
+   "upstreamUpdatedAt": "2026-10-01T17:52:30Z",
+   "mailDate": "2026-02-28",
+   "mailEvents": [
+    "comment",
+    "close"
+   ]
   },
   "johan-issue:868": {
    "status": "pending",
    "kind": "issue",
    "state": "closed",
    "comments": 1,
-   "upstreamUpdatedAt": "2026-10-03T07:59:20Z"
+   "upstreamUpdatedAt": "2026-10-03T07:59:20Z",
+   "mailDate": "2026-10-03",
+   "mailEvents": [
+    "comment",
+    "close"
+   ]
   },
   "johan-issue:869": {
    "status": "pending",
    "kind": "issue",
    "state": "open",
    "comments": 23,
-   "upstreamUpdatedAt": "2026-09-29T19:43:28Z"
+   "upstreamUpdatedAt": "2026-09-29T19:43:28Z",
+   "mailDate": "2026-03-05",
+   "mailEvents": [
+    "comment"
+   ]
   },
   "johan-issue:87": {
    "status": "pending",
@@ -19047,7 +21505,12 @@
    "kind": "issue",
    "state": "closed",
    "comments": 5,
-   "upstreamUpdatedAt": "2026-09-30T22:11:19Z"
+   "upstreamUpdatedAt": "2026-09-30T22:11:19Z",
+   "mailDate": "2026-10-01",
+   "mailEvents": [
+    "comment",
+    "close"
+   ]
   },
   "johan-issue:876": {
    "status": "pending",
@@ -19061,7 +21524,12 @@
    "kind": "issue",
    "state": "closed",
    "comments": 3,
-   "upstreamUpdatedAt": "2026-09-29T07:53:13Z"
+   "upstreamUpdatedAt": "2026-09-29T07:53:13Z",
+   "mailDate": "2026-09-29",
+   "mailEvents": [
+    "comment",
+    "close"
+   ]
   },
   "johan-issue:878": {
    "status": "pending",
@@ -19089,14 +21557,23 @@
    "kind": "issue",
    "state": "open",
    "comments": 4,
-   "upstreamUpdatedAt": "2026-09-30T22:40:02Z"
+   "upstreamUpdatedAt": "2026-09-30T22:40:02Z",
+   "mailDate": "2026-10-01",
+   "mailEvents": [
+    "comment"
+   ]
   },
   "johan-issue:881": {
    "status": "pending",
    "kind": "issue",
    "state": "closed",
    "comments": 1,
-   "upstreamUpdatedAt": "2026-09-29T19:39:29Z"
+   "upstreamUpdatedAt": "2026-09-29T19:39:29Z",
+   "mailDate": "2026-09-29",
+   "mailEvents": [
+    "comment",
+    "close"
+   ]
   },
   "johan-issue:882": {
    "status": "pending",
@@ -19131,7 +21608,11 @@
    "kind": "issue",
    "state": "open",
    "comments": 4,
-   "upstreamUpdatedAt": "2026-09-30T22:09:53Z"
+   "upstreamUpdatedAt": "2026-09-30T22:09:53Z",
+   "mailDate": "2026-10-01",
+   "mailEvents": [
+    "comment"
+   ]
   },
   "johan-issue:887": {
    "status": "pending",
@@ -19180,7 +21661,12 @@
    "kind": "issue",
    "state": "closed",
    "comments": 2,
-   "upstreamUpdatedAt": "2026-09-28T15:48:14Z"
+   "upstreamUpdatedAt": "2026-09-28T15:48:14Z",
+   "mailDate": "2026-09-28",
+   "mailEvents": [
+    "comment",
+    "close"
+   ]
   },
   "johan-issue:893": {
    "status": "pending",
@@ -19208,7 +21694,12 @@
    "kind": "issue",
    "state": "closed",
    "comments": 2,
-   "upstreamUpdatedAt": "2026-09-29T19:50:52Z"
+   "upstreamUpdatedAt": "2026-09-29T19:50:52Z",
+   "mailDate": "2026-09-29",
+   "mailEvents": [
+    "comment",
+    "close"
+   ]
   },
   "johan-issue:897": {
    "status": "pending",
@@ -19250,14 +21741,24 @@
    "kind": "issue",
    "state": "closed",
    "comments": 2,
-   "upstreamUpdatedAt": "2026-10-03T08:53:39Z"
+   "upstreamUpdatedAt": "2026-10-03T08:53:39Z",
+   "mailDate": "2026-10-03",
+   "mailEvents": [
+    "comment",
+    "close"
+   ]
   },
   "johan-issue:901": {
    "status": "pending",
    "kind": "issue",
    "state": "closed",
    "comments": 1,
-   "upstreamUpdatedAt": "2026-09-30T22:03:39Z"
+   "upstreamUpdatedAt": "2026-09-30T22:03:39Z",
+   "mailDate": "2026-10-01",
+   "mailEvents": [
+    "comment",
+    "close"
+   ]
   },
   "johan-issue:902": {
    "status": "pending",
@@ -19285,28 +21786,48 @@
    "kind": "issue",
    "state": "closed",
    "comments": 1,
-   "upstreamUpdatedAt": "2026-09-30T22:05:00Z"
+   "upstreamUpdatedAt": "2026-09-30T22:05:00Z",
+   "mailDate": "2026-10-01",
+   "mailEvents": [
+    "comment",
+    "close"
+   ]
   },
   "johan-issue:906": {
    "status": "pending",
    "kind": "issue",
    "state": "closed",
    "comments": 2,
-   "upstreamUpdatedAt": "2026-09-29T19:48:48Z"
+   "upstreamUpdatedAt": "2026-09-29T19:48:48Z",
+   "mailDate": "2026-09-29",
+   "mailEvents": [
+    "comment",
+    "close"
+   ]
   },
   "johan-issue:907": {
    "status": "pending",
    "kind": "issue",
    "state": "closed",
    "comments": 1,
-   "upstreamUpdatedAt": "2026-09-30T20:39:54Z"
+   "upstreamUpdatedAt": "2026-09-30T20:39:54Z",
+   "mailDate": "2026-09-30",
+   "mailEvents": [
+    "comment",
+    "close"
+   ]
   },
   "johan-issue:908": {
    "status": "pending",
    "kind": "issue",
    "state": "closed",
    "comments": 5,
-   "upstreamUpdatedAt": "2026-09-29T19:48:51Z"
+   "upstreamUpdatedAt": "2026-09-29T19:48:51Z",
+   "mailDate": "2026-09-29",
+   "mailEvents": [
+    "comment",
+    "close"
+   ]
   },
   "johan-issue:909": {
    "status": "pending",
@@ -19327,14 +21848,23 @@
    "kind": "issue",
    "state": "closed",
    "comments": 4,
-   "upstreamUpdatedAt": "2026-09-30T21:51:53Z"
+   "upstreamUpdatedAt": "2026-09-30T21:51:53Z",
+   "mailDate": "2026-09-30",
+   "mailEvents": [
+    "comment",
+    "close"
+   ]
   },
   "johan-issue:911": {
    "status": "pending",
    "kind": "issue",
    "state": "open",
    "comments": 7,
-   "upstreamUpdatedAt": "2026-10-01T09:39:56Z"
+   "upstreamUpdatedAt": "2026-10-01T09:39:56Z",
+   "mailDate": "2026-10-01",
+   "mailEvents": [
+    "comment"
+   ]
   },
   "johan-issue:912": {
    "status": "pending",
@@ -19348,14 +21878,23 @@
    "kind": "issue",
    "state": "open",
    "comments": 1,
-   "upstreamUpdatedAt": "2026-09-29T07:41:49Z"
+   "upstreamUpdatedAt": "2026-09-29T07:41:49Z",
+   "mailDate": "2026-09-29",
+   "mailEvents": [
+    "comment"
+   ]
   },
   "johan-issue:914": {
    "status": "pending",
    "kind": "issue",
    "state": "closed",
    "comments": 1,
-   "upstreamUpdatedAt": "2026-09-28T10:14:11Z"
+   "upstreamUpdatedAt": "2026-09-28T10:14:11Z",
+   "mailDate": "2026-09-28",
+   "mailEvents": [
+    "comment",
+    "close"
+   ]
   },
   "johan-issue:915": {
    "status": "pending",
@@ -19441,7 +21980,12 @@
    "comments": 3,
    "upstreamUpdatedAt": "2026-10-03T08:06:34Z",
    "date": "2026-10-04",
-   "note": "iHorn LH02121: app scope + zoneType proof needed"
+   "note": "iHorn LH02121: app scope + zoneType proof needed",
+   "mailDate": "2026-10-03",
+   "mailEvents": [
+    "comment",
+    "close"
+   ]
   },
   "johan-issue:926": {
    "status": "pending",
@@ -19462,7 +22006,12 @@
    "kind": "issue",
    "state": "closed",
    "comments": 1,
-   "upstreamUpdatedAt": "2026-09-28T10:09:58Z"
+   "upstreamUpdatedAt": "2026-09-28T10:09:58Z",
+   "mailDate": "2026-09-28",
+   "mailEvents": [
+    "comment",
+    "close"
+   ]
   },
   "johan-issue:929": {
    "status": "pending",
@@ -19497,14 +22046,24 @@
    "kind": "issue",
    "state": "closed",
    "comments": 1,
-   "upstreamUpdatedAt": "2026-09-30T20:40:00Z"
+   "upstreamUpdatedAt": "2026-09-30T20:40:00Z",
+   "mailDate": "2026-09-30",
+   "mailEvents": [
+    "comment",
+    "close"
+   ]
   },
   "johan-issue:933": {
    "status": "pending",
    "kind": "issue",
    "state": "closed",
    "comments": 1,
-   "upstreamUpdatedAt": "2026-10-02T20:16:15Z"
+   "upstreamUpdatedAt": "2026-10-02T20:16:15Z",
+   "mailDate": "2026-10-02",
+   "mailEvents": [
+    "comment",
+    "close"
+   ]
   },
   "johan-issue:934": {
    "status": "pending",
@@ -19518,7 +22077,12 @@
    "kind": "issue",
    "state": "closed",
    "comments": 1,
-   "upstreamUpdatedAt": "2026-10-01T16:19:31Z"
+   "upstreamUpdatedAt": "2026-10-01T16:19:31Z",
+   "mailDate": "2026-10-01",
+   "mailEvents": [
+    "comment",
+    "close"
+   ]
   },
   "johan-issue:936": {
    "status": "pending",
@@ -19560,49 +22124,82 @@
    "kind": "issue",
    "state": "closed",
    "comments": 2,
-   "upstreamUpdatedAt": "2026-10-02T11:54:35Z"
+   "upstreamUpdatedAt": "2026-10-02T11:54:35Z",
+   "mailDate": "2026-10-02",
+   "mailEvents": [
+    "comment",
+    "close"
+   ]
   },
   "johan-issue:941": {
    "status": "pending",
    "kind": "issue",
    "state": "open",
    "comments": 1,
-   "upstreamUpdatedAt": "2026-10-02T11:56:13Z"
+   "upstreamUpdatedAt": "2026-10-02T11:56:13Z",
+   "mailDate": "2026-10-02",
+   "mailEvents": [
+    "comment"
+   ]
   },
   "johan-issue:942": {
    "status": "pending",
    "kind": "issue",
    "state": "closed",
    "comments": 2,
-   "upstreamUpdatedAt": "2026-09-30T21:57:40Z"
+   "upstreamUpdatedAt": "2026-09-30T21:57:40Z",
+   "mailDate": "2026-09-30",
+   "mailEvents": [
+    "comment",
+    "close"
+   ]
   },
   "johan-issue:943": {
    "status": "pending",
    "kind": "issue",
    "state": "closed",
    "comments": 1,
-   "upstreamUpdatedAt": "2026-09-30T20:38:42Z"
+   "upstreamUpdatedAt": "2026-09-30T20:38:42Z",
+   "mailDate": "2026-09-30",
+   "mailEvents": [
+    "comment",
+    "close"
+   ]
   },
   "johan-issue:944": {
    "status": "pending",
    "kind": "issue",
    "state": "closed",
    "comments": 2,
-   "upstreamUpdatedAt": "2026-09-29T22:59:57Z"
+   "upstreamUpdatedAt": "2026-09-29T22:59:57Z",
+   "mailDate": "2026-09-28",
+   "mailEvents": [
+    "comment",
+    "close"
+   ]
   },
   "johan-issue:945": {
    "status": "pending",
    "kind": "issue",
    "state": "open",
    "comments": 4,
-   "upstreamUpdatedAt": "2026-09-29T19:53:38Z"
+   "upstreamUpdatedAt": "2026-09-29T19:53:38Z",
+   "mailDate": "2026-09-29",
+   "mailEvents": [
+    "comment"
+   ]
   },
   "johan-issue:946": {
    "status": "pending",
    "kind": "issue",
    "state": "closed",
    "comments": 3,
-   "upstreamUpdatedAt": "2026-10-02T22:43:53Z"
+   "upstreamUpdatedAt": "2026-10-02T22:43:53Z",
+   "mailDate": "2026-09-30",
+   "mailEvents": [
+    "comment",
+    "close"
+   ]
   },
   "johan-issue:947": {
    "status": "pending",
@@ -19623,7 +22220,12 @@
    "kind": "issue",
    "state": "closed",
    "comments": 1,
-   "upstreamUpdatedAt": "2026-09-30T20:39:29Z"
+   "upstreamUpdatedAt": "2026-09-30T20:39:29Z",
+   "mailDate": "2026-09-30",
+   "mailEvents": [
+    "comment",
+    "close"
+   ]
   },
   "johan-issue:95": {
    "status": "pending",
@@ -19637,21 +22239,36 @@
    "kind": "issue",
    "state": "closed",
    "comments": 2,
-   "upstreamUpdatedAt": "2026-09-28T10:14:03Z"
+   "upstreamUpdatedAt": "2026-09-28T10:14:03Z",
+   "mailDate": "2026-09-28",
+   "mailEvents": [
+    "comment",
+    "close"
+   ]
   },
   "johan-issue:951": {
    "status": "pending",
    "kind": "issue",
    "state": "closed",
    "comments": 1,
-   "upstreamUpdatedAt": "2026-09-30T21:51:30Z"
+   "upstreamUpdatedAt": "2026-09-30T21:51:30Z",
+   "mailDate": "2026-09-30",
+   "mailEvents": [
+    "comment",
+    "close"
+   ]
   },
   "johan-issue:952": {
    "status": "pending",
    "kind": "issue",
    "state": "closed",
    "comments": 1,
-   "upstreamUpdatedAt": "2026-09-28T16:12:15Z"
+   "upstreamUpdatedAt": "2026-09-28T16:12:15Z",
+   "mailDate": "2026-09-28",
+   "mailEvents": [
+    "comment",
+    "close"
+   ]
   },
   "johan-issue:953": {
    "status": "pending",
@@ -19665,28 +22282,47 @@
    "kind": "issue",
    "state": "open",
    "comments": 10,
-   "upstreamUpdatedAt": "2026-10-02T20:15:58Z"
+   "upstreamUpdatedAt": "2026-10-02T20:15:58Z",
+   "mailDate": "2026-10-02",
+   "mailEvents": [
+    "comment"
+   ]
   },
   "johan-issue:955": {
    "status": "pending",
    "kind": "issue",
    "state": "closed",
    "comments": 1,
-   "upstreamUpdatedAt": "2026-09-30T21:52:58Z"
+   "upstreamUpdatedAt": "2026-09-30T21:52:58Z",
+   "mailDate": "2026-09-30",
+   "mailEvents": [
+    "comment",
+    "close"
+   ]
   },
   "johan-issue:956": {
    "status": "pending",
    "kind": "issue",
    "state": "closed",
    "comments": 1,
-   "upstreamUpdatedAt": "2026-10-01T15:59:54Z"
+   "upstreamUpdatedAt": "2026-10-01T15:59:54Z",
+   "mailDate": "2026-10-01",
+   "mailEvents": [
+    "comment",
+    "close"
+   ]
   },
   "johan-issue:957": {
    "status": "pending",
    "kind": "issue",
    "state": "closed",
    "comments": 1,
-   "upstreamUpdatedAt": "2026-09-30T20:39:19Z"
+   "upstreamUpdatedAt": "2026-09-30T20:39:19Z",
+   "mailDate": "2026-09-30",
+   "mailEvents": [
+    "comment",
+    "close"
+   ]
   },
   "johan-issue:958": {
    "status": "pending",
@@ -19700,7 +22336,12 @@
    "kind": "issue",
    "state": "closed",
    "comments": 1,
-   "upstreamUpdatedAt": "2026-10-02T20:21:24Z"
+   "upstreamUpdatedAt": "2026-10-02T20:21:24Z",
+   "mailDate": "2026-10-02",
+   "mailEvents": [
+    "comment",
+    "close"
+   ]
   },
   "johan-issue:96": {
    "status": "pending",
@@ -19721,28 +22362,46 @@
    "kind": "issue",
    "state": "closed",
    "comments": 1,
-   "upstreamUpdatedAt": "2026-10-02T22:31:24Z"
+   "upstreamUpdatedAt": "2026-10-02T22:31:24Z",
+   "mailDate": "2026-10-03",
+   "mailEvents": [
+    "comment",
+    "close"
+   ]
   },
   "johan-issue:962": {
    "status": "pending",
    "kind": "issue",
    "state": "open",
    "comments": 10,
-   "upstreamUpdatedAt": "2026-09-30T20:41:42Z"
+   "upstreamUpdatedAt": "2026-09-30T20:41:42Z",
+   "mailDate": "2026-09-30",
+   "mailEvents": [
+    "comment"
+   ]
   },
   "johan-issue:963": {
    "status": "pending",
    "kind": "issue",
    "state": "closed",
    "comments": 10,
-   "upstreamUpdatedAt": "2026-10-02T19:58:09Z"
+   "upstreamUpdatedAt": "2026-10-02T19:58:09Z",
+   "mailDate": "2026-03-01",
+   "mailEvents": [
+    "comment",
+    "close"
+   ]
   },
   "johan-issue:964": {
    "status": "pending",
    "kind": "issue",
    "state": "open",
    "comments": 2,
-   "upstreamUpdatedAt": "2026-10-02T19:42:37Z"
+   "upstreamUpdatedAt": "2026-10-02T19:42:37Z",
+   "mailDate": "2026-10-02",
+   "mailEvents": [
+    "comment"
+   ]
   },
   "johan-issue:965": {
    "status": "pending",
@@ -19756,7 +22415,12 @@
    "kind": "issue",
    "state": "closed",
    "comments": 1,
-   "upstreamUpdatedAt": "2026-09-30T20:43:03Z"
+   "upstreamUpdatedAt": "2026-09-30T20:43:03Z",
+   "mailDate": "2026-09-30",
+   "mailEvents": [
+    "comment",
+    "close"
+   ]
   },
   "johan-issue:967": {
    "status": "pending",
@@ -19770,7 +22434,12 @@
    "kind": "issue",
    "state": "closed",
    "comments": 1,
-   "upstreamUpdatedAt": "2026-09-30T21:51:22Z"
+   "upstreamUpdatedAt": "2026-09-30T21:51:22Z",
+   "mailDate": "2026-09-30",
+   "mailEvents": [
+    "comment",
+    "close"
+   ]
   },
   "johan-issue:969": {
    "status": "pending",
@@ -19833,21 +22502,36 @@
    "kind": "issue",
    "state": "closed",
    "comments": 1,
-   "upstreamUpdatedAt": "2026-09-29T19:43:06Z"
+   "upstreamUpdatedAt": "2026-09-29T19:43:06Z",
+   "mailDate": "2026-09-29",
+   "mailEvents": [
+    "comment",
+    "close"
+   ]
   },
   "johan-issue:977": {
    "status": "pending",
    "kind": "issue",
    "state": "closed",
    "comments": 1,
-   "upstreamUpdatedAt": "2026-10-02T20:04:37Z"
+   "upstreamUpdatedAt": "2026-10-02T20:04:37Z",
+   "mailDate": "2026-10-02",
+   "mailEvents": [
+    "comment",
+    "close"
+   ]
   },
   "johan-issue:978": {
    "status": "pending",
    "kind": "issue",
    "state": "closed",
    "comments": 1,
-   "upstreamUpdatedAt": "2026-09-27T23:12:26Z"
+   "upstreamUpdatedAt": "2026-09-27T23:12:26Z",
+   "mailDate": "2026-09-28",
+   "mailEvents": [
+    "comment",
+    "close"
+   ]
   },
   "johan-issue:979": {
    "status": "pending",
@@ -19868,7 +22552,12 @@
    "kind": "issue",
    "state": "closed",
    "comments": 7,
-   "upstreamUpdatedAt": "2026-09-30T20:43:10Z"
+   "upstreamUpdatedAt": "2026-09-30T20:43:10Z",
+   "mailDate": "2026-09-30",
+   "mailEvents": [
+    "comment",
+    "close"
+   ]
   },
   "johan-issue:981": {
    "status": "pending",
@@ -19882,7 +22571,12 @@
    "kind": "issue",
    "state": "closed",
    "comments": 1,
-   "upstreamUpdatedAt": "2026-07-12T21:28:15Z"
+   "upstreamUpdatedAt": "2026-07-12T21:28:15Z",
+   "mailDate": "2026-03-09",
+   "mailEvents": [
+    "comment",
+    "close"
+   ]
   },
   "johan-issue:983": {
    "status": "pending",
@@ -19903,14 +22597,24 @@
    "kind": "issue",
    "state": "closed",
    "comments": 1,
-   "upstreamUpdatedAt": "2026-09-30T20:22:40Z"
+   "upstreamUpdatedAt": "2026-09-30T20:22:40Z",
+   "mailDate": "2026-09-30",
+   "mailEvents": [
+    "comment",
+    "close"
+   ]
   },
   "johan-issue:986": {
    "status": "pending",
    "kind": "issue",
    "state": "closed",
    "comments": 4,
-   "upstreamUpdatedAt": "2026-09-28T15:13:27Z"
+   "upstreamUpdatedAt": "2026-09-28T15:13:27Z",
+   "mailDate": "2026-05-26",
+   "mailEvents": [
+    "comment",
+    "close"
+   ]
   },
   "johan-issue:987": {
    "status": "pending",
@@ -19945,42 +22649,70 @@
    "kind": "issue",
    "state": "closed",
    "comments": 2,
-   "upstreamUpdatedAt": "2026-10-01T16:00:51Z"
+   "upstreamUpdatedAt": "2026-10-01T16:00:51Z",
+   "mailDate": "2026-10-01",
+   "mailEvents": [
+    "comment",
+    "close"
+   ]
   },
   "johan-issue:991": {
    "status": "pending",
    "kind": "issue",
    "state": "open",
    "comments": 5,
-   "upstreamUpdatedAt": "2026-10-03T07:45:22Z"
+   "upstreamUpdatedAt": "2026-10-03T07:45:22Z",
+   "mailDate": "2026-10-03",
+   "mailEvents": [
+    "comment"
+   ]
   },
   "johan-issue:992": {
    "status": "pending",
    "kind": "issue",
    "state": "closed",
    "comments": 1,
-   "upstreamUpdatedAt": "2026-09-29T19:51:00Z"
+   "upstreamUpdatedAt": "2026-09-29T19:51:00Z",
+   "mailDate": "2026-09-29",
+   "mailEvents": [
+    "comment",
+    "close"
+   ]
   },
   "johan-issue:993": {
    "status": "pending",
    "kind": "issue",
    "state": "closed",
    "comments": 1,
-   "upstreamUpdatedAt": "2026-10-01T16:01:25Z"
+   "upstreamUpdatedAt": "2026-10-01T16:01:25Z",
+   "mailDate": "2026-10-01",
+   "mailEvents": [
+    "comment",
+    "close"
+   ]
   },
   "johan-issue:994": {
    "status": "pending",
    "kind": "issue",
    "state": "open",
    "comments": 1,
-   "upstreamUpdatedAt": "2026-09-30T22:41:12Z"
+   "upstreamUpdatedAt": "2026-09-30T22:41:12Z",
+   "mailDate": "2026-10-01",
+   "mailEvents": [
+    "comment"
+   ]
   },
   "johan-issue:995": {
    "status": "pending",
    "kind": "issue",
    "state": "closed",
    "comments": 1,
-   "upstreamUpdatedAt": "2026-09-28T15:58:35Z"
+   "upstreamUpdatedAt": "2026-09-28T15:58:35Z",
+   "mailDate": "2026-09-28",
+   "mailEvents": [
+    "comment",
+    "close"
+   ]
   },
   "johan-issue:996": {
    "status": "pending",
@@ -19994,7 +22726,12 @@
    "kind": "issue",
    "state": "closed",
    "comments": 1,
-   "upstreamUpdatedAt": "2026-10-02T19:45:59Z"
+   "upstreamUpdatedAt": "2026-10-02T19:45:59Z",
+   "mailDate": "2026-10-02",
+   "mailEvents": [
+    "comment",
+    "close"
+   ]
   },
   "johan-issue:998": {
    "status": "pending",
@@ -20008,7 +22745,12 @@
    "kind": "issue",
    "state": "closed",
    "comments": 4,
-   "upstreamUpdatedAt": "2026-09-30T22:09:46Z"
+   "upstreamUpdatedAt": "2026-09-30T22:09:46Z",
+   "mailDate": "2026-10-01",
+   "mailEvents": [
+    "comment",
+    "close"
+   ]
   },
   "task:audit-copied-text-ledger-journal": {
    "status": "done",
@@ -20019,6 +22761,26 @@
    "status": "done",
    "date": "2026-10-04",
    "commit": "84d81e5e88"
+  },
+  "task:johan-gap-iystcadi": {
+   "status": "done",
+   "date": "2026-10-04",
+   "note": "TS0505B already on light_bulb_rgb_led; TS0505A deferred (no source)"
+  },
+  "task:johan-gap-o9f2zqln": {
+   "status": "done",
+   "date": "2026-10-04",
+   "note": "-> rain_sensor"
+  },
+  "task:johan-gap-p26flek3": {
+   "status": "done",
+   "date": "2026-10-04",
+   "note": "-> switch_1gang"
+  },
+  "task:johan-mail-crosscheck": {
+   "status": "done",
+   "date": "2026-10-04",
+   "note": "580/580 present"
   },
   "task:ledger-wire-auto-enrich-closed-loop": {
    "status": "pending",
@@ -20091,6 +22853,11 @@
   "task:next-08": {
    "status": "pending",
    "note": "open: _TZE200_locansqn epoch 2000 vs 1970 — needs >=2 sources"
+  },
+  "task:polysemic-dp-engine": {
+   "status": "pending",
+   "date": "2026-10-04",
+   "note": "W7: audit DP maps for per-variant meaning; variant profiles mfr+pid+fw, range/type detection, cross-DP validation"
   },
   "task:publish-fix-master-37164856948": {
    "status": "done",
@@ -20224,11 +22991,21 @@
    "date": "2026-10-03",
    "note": "c18cecbe28: per-app publish concurrency groups (athom-publish-master/-stable/-bastien, cancel-in-progress false); safe-sync-stable prunes mfs_db rows whose driver is absent on stable and bumps app.jso"
   },
+  "task:rxq4iti9": {
+   "status": "done",
+   "date": "2026-10-04",
+   "note": "research: Z2M ME167/TRV06 family (EARU TRV06 whitelabel) + ZHA tuya_trv quirk => TRV; current placement device_radiator_valve is correct, lead closed"
+  },
   "task:stable-port-1298-1113": {
    "status": "pending",
    "date": "2026-10-04",
    "commit": "323c38eda0",
    "note": "local exec-stable; push needs approval"
+  },
+  "task:tooling-inventory": {
+   "status": "pending",
+   "date": "2026-10-04",
+   "note": "W8: inventory scripts/tools/.github/scripts, find unused/broken, feed outputs into ledger/SSOT"
   }
  }
 }
