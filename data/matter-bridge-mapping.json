@@ -1,0 +1,96 @@
+{
+  "$comment": "How Homey's Matter Bridge app turns a Homey device (class + capabilities) into Matter device types and clusters. Written in our own words from reading the source; credit: Athom B.V., github.com/athombv/com.athom.matter-bridge (GPL-3.0), lib/MatterBridgeServer.mjs at commit 045787d (2026-09-14). No code copied. Re-verify when the bridge updates.",
+  "source": {
+    "repo": "https://github.com/athombv/com.athom.matter-bridge",
+    "file": "lib/MatterBridgeServer.mjs",
+    "commit": "045787d",
+    "commitDate": "2026-09-14",
+    "appVersion": "0.8.0",
+    "verified": "2026-10-04",
+    "docs": [
+      "https://homey.app/en-us/app/com.athom.matter-bridge/Matter-Bridge/",
+      "https://homey.app/en-us/wiki/what-is-matter-bridge-and-how-does-it-work-with-homey/",
+      "https://apps.developer.homey.app/wireless/matter",
+      "https://homey.app/en-us/news/homey-matter-1-5-certified/",
+      "https://homey.app/en-us/wiki/how-to-start-with-matter-a-beginners-guide-for-homey-users/"
+    ]
+  },
+  "rules": {
+    "classSelector": "virtualClass when the user set one (\"What's plugged in?\"), otherwise the device class",
+    "exactCapabilityIds": "Only exact capability ids are read; sub-capabilities such as onoff.gang2 or dim.valve are never bridged",
+    "oneEndpointPerDevice": "Each Homey device becomes one bridged node; sensors add one Matter endpoint per supported measurement",
+    "controllers": ["Apple Home", "Google Home", "Amazon Alexa", "Samsung SmartThings", "Home Assistant"]
+  },
+  "classes": {
+    "socket": {
+      "matterDeviceType": "OnOffPlugInUnit",
+      "capabilities": {
+        "onoff": { "cluster": "OnOff", "rw": true },
+        "measure_power": { "cluster": "ElectricalPowerMeasurement", "attribute": "activePower", "rw": false }
+      }
+    },
+    "light": {
+      "matterDeviceType": "OnOffLight | DimmableLight | ColorTemperatureLight | ExtendedColorLight",
+      "deviceTypeChoice": "dim -> DimmableLight; light_temperature only -> ColorTemperatureLight; light_hue+light_saturation (with or without light_temperature) -> ExtendedColorLight (hue+sat only keeps DimmableLight type with colour cluster)",
+      "capabilities": {
+        "onoff": { "cluster": "OnOff", "rw": true },
+        "dim": { "cluster": "LevelControl", "scale": "0..1 -> 1..254", "rw": true },
+        "light_hue": { "cluster": "ColorControl", "feature": "HueSaturation", "requires": ["light_saturation"], "rw": true },
+        "light_saturation": { "cluster": "ColorControl", "feature": "HueSaturation", "requires": ["light_hue"], "rw": true },
+        "light_temperature": { "cluster": "ColorControl", "feature": "ColorTemperature", "scale": "0..1 -> mireds", "rw": true },
+        "light_mode": { "cluster": "ColorControl", "attribute": "colorMode", "rw": true }
+      }
+    },
+    "thermostat": {
+      "matterDeviceType": "Thermostat",
+      "capabilities": {
+        "target_temperature": { "cluster": "Thermostat", "attribute": "occupiedHeatingSetpoint (+limits from min/max)", "rw": true },
+        "target_temperature.cool": { "cluster": "Thermostat", "attribute": "occupiedCoolingSetpoint", "rw": true },
+        "measure_temperature": { "cluster": "Thermostat", "attribute": "localTemperature", "rw": false },
+        "thermostat_mode": { "cluster": "Thermostat", "attribute": "systemMode", "values": ["off", "heat", "cool", "auto"], "rw": true },
+        "measure_humidity": { "cluster": "RelativeHumidityMeasurement", "extraEndpoint": "HumiditySensor", "rw": false }
+      },
+      "skipWhen": "thermostat_mode exists but offers none of off/heat/cool/auto (custom mode values) -> device not bridged at all; without thermostat_mode it is bridged as heating-only"
+    },
+    "heatpump": { "sameAs": "thermostat" },
+    "heater": { "sameAs": "thermostat" },
+    "airconditioning": { "sameAs": "thermostat", "matterDeviceType": "RoomAirConditioner" },
+    "lock": {
+      "matterDeviceType": "DoorLock",
+      "capabilities": { "locked": { "cluster": "DoorLock", "attribute": "lockState", "rw": true } }
+    },
+    "windowcoverings": {
+      "matterDeviceType": "WindowCovering",
+      "capabilities": {
+        "windowcoverings_set": { "cluster": "WindowCovering", "feature": "Lift + PositionAwareLift", "note": "position is inverted (Matter 100% = closed)", "rw": true },
+        "windowcoverings_state": { "cluster": "WindowCovering", "feature": "Lift (up/idle/down only)", "usedWhen": "no windowcoverings_set", "rw": true }
+      }
+    },
+    "blinds": { "sameAs": "windowcoverings" },
+    "shutterblinds": { "sameAs": "windowcoverings" },
+    "curtain": { "sameAs": "windowcoverings" },
+    "sensor": {
+      "matterDeviceType": "one endpoint per measurement",
+      "capabilities": {
+        "measure_temperature": { "deviceType": "TemperatureSensor", "cluster": "TemperatureMeasurement" },
+        "measure_humidity": { "deviceType": "HumiditySensor", "cluster": "RelativeHumidityMeasurement" },
+        "measure_co": { "deviceType": "SmokeCoAlarm", "cluster": "CarbonMonoxideConcentrationMeasurement" },
+        "measure_co2": { "deviceType": "AirQualitySensor", "cluster": "CarbonDioxideConcentrationMeasurement" },
+        "measure_pm10": { "deviceType": "AirQualitySensor", "cluster": "Pm10ConcentrationMeasurement" },
+        "measure_pm25": { "deviceType": "AirQualitySensor", "cluster": "Pm25ConcentrationMeasurement" },
+        "measure_luminance": { "deviceType": "LightSensor", "cluster": "IlluminanceMeasurement" },
+        "alarm_motion": { "deviceType": "OccupancySensor", "cluster": "OccupancySensing" },
+        "alarm_occupancy": { "deviceType": "OccupancySensor", "cluster": "OccupancySensing" },
+        "alarm_contact": { "deviceType": "ContactSensor", "cluster": "BooleanState", "note": "inverted: Matter stateValue true = closed" },
+        "alarm_smoke": { "deviceType": "SmokeCoAlarm", "cluster": "SmokeCoAlarm" }
+      }
+    }
+  },
+  "default": {
+    "appliesTo": "every other class (fan, button, remote, other, garagedoor, doorbell, smokealarm, siren, airpurifier, ...)",
+    "matterDeviceType": "OnOffPlugInUnit",
+    "capabilities": { "onoff": { "cluster": "OnOff", "rw": true } },
+    "otherwise": "not bridged"
+  },
+  "neverBridged": ["alarm_water", "alarm_co", "alarm_gas", "alarm_tamper", "alarm_generic", "alarm_battery", "measure_battery", "meter_power", "measure_voltage", "measure_current", "measure_pressure", "measure_noise", "button.*", "garagedoor_closed", "volume_*", "sub-capabilities (x.y)"]
+}

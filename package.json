@@ -652,7 +652,8 @@
     "check:no-auto-post": "node tools/ci/no-auto-post-gate.js",
     "check:malformed-mfr": "node tools/ci/malformed-mfr-gate.js",
     "check:identifiers": "node tools/ci/identifier-audit.js --baseline tools/ci/identifier-audit-baseline.json",
-    "check:runtime-safety": "node tools/ci/runtime-safety-gate.js"
+    "check:runtime-safety": "node tools/ci/runtime-safety-gate.js",
+    "check:ecosystems": "node tools/ci/smart-home-ecosystem-audit.js"
   },
   "keywords": [
     "homey",
