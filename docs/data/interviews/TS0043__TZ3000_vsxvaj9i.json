@@ -1,0 +1,53 @@
+{
+  "manufacturerName": "_TZ3000_vsxvaj9i",
+  "productId": "TS0043",
+  "source": "pc-harvest-r2 (normalized interview facts; origins: Homey forum, GitHub issues, user diagnostics)",
+  "interviewsMerged": 1,
+  "powerSource": null,
+  "firmware": null,
+  "endpoints": {
+    "1": {
+      "inputClusters": [
+        0,
+        1,
+        6,
+        57344
+      ],
+      "outputClusters": [
+        10,
+        25
+      ]
+    },
+    "2": {
+      "inputClusters": [
+        1,
+        6
+      ],
+      "outputClusters": []
+    },
+    "3": {
+      "inputClusters": [
+        1,
+        6
+      ],
+      "outputClusters": []
+    },
+    "4": {
+      "inputClusters": [
+        1,
+        6
+      ],
+      "outputClusters": []
+    }
+  },
+  "inputClusters": [
+    0,
+    1,
+    6,
+    57344
+  ],
+  "outputClusters": [
+    10,
+    25
+  ]
+}
