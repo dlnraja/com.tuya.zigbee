@@ -89,7 +89,7 @@
   },
   "master_queue": {
     "note": "Single master checklist of ALL user requests since the start. Daily resumption reads this FIRST. Tick (verified) only after verification.",
-    "updated": "2026-10-04 06:35 Paris",
+    "updated": "2026-10-04 06:40 Paris",
     "items": [
       {
         "id": 1,
@@ -677,13 +677,15 @@
         "id": 98,
         "item": "r4-16 EXTENDED: study whole athombv org (node-homey-zigbeedriver, node-zigbee-clusters, apps-sdk docs, matter-bridge, brand apps IKEA/Aqara-Xiaomi/Hue/Sonoff/Tuya...) incl. branches, PRs, issues open+closed; extract cluster handling, reporting config, bound clusters, battery, OTA, pairing robustness, flows, energy, memory/perf, regressions; reimplement in our own way, additive, keyed mfr+pid; credit Athom; track each repo/issue/PR in ledger with last-seen cursor (re-process only changes); frugal, multi-day, checkpoints. Report every discovery in French ('Découvertes') + docs/progress/DISCOVERIES.md",
         "status": "in_progress",
-        "evidence": "started: com.athom.matter-bridge @045787d read (see DISCOVERIES.md)"
+        "evidence": "started: com.athom.matter-bridge @045787d read (see DISCOVERIES.md)",
+        "progress_2026_10_04": "first pass: zigbee-clusters upstream 3.8.0 declares onOff.startUpOnOff (enum8 off/on/toggle/previous=255, same as our TuyaOnOffCluster addition), onOffSwitch attrs (#227), Time cluster ids fix (#217), MMIP (#228); we ship 2.6.0. homey-zigbeedriver 2.2.18 (we pin 2.2.17): dim readback no longer overwrites an explicit dim (#188), non-finite duration fix (#189). Open: TSN persistence requests (clusters #226, driver #194, Aqara TRV). Upgrade = separate reviewed change (not done)."
       },
       {
         "id": 99,
         "item": "W10 ingestion: Koenkk/zigbee2mqtt + zigbee-herdsman-converters — commit-diff of converters (Tuya + others) keyed by ledger cursor (only changes), open/closed device-bug/quirk issues since cursor -> mfr+pid couple proposals, DP mappings, quirks in our own words; credit Koen Kanters + contributors | EXTENDED to ALL sources (user 04:17): ZHA+quirks, deCONZ, localtuya/tuya-local, Blakadder, ST Edge (Mariano+), Hubitat, Jeedom Abeille, z2m pages, athombv, Johan+forks, Homey forum + community apps, SDK/docs changelogs, Tuya docs; single registry data/sources/registry.json",
         "status": "in_progress",
-        "evidence": "registry (25 sources, verified repos/paths) + .github/scripts/source-registry.js (cursors data/sources/state.json, compare-diff only, bounded calls, no AI) + test; wired into external-sources-scanner.js and daily free-scrape-crossref.yml (commits cursors [skip ci]); baseline 116 proposals -> data/leads/source-proposals.json; 5 new couples listed in DISCOVERIES.md. Pending: per-source parsers (tuya-local YAML DP maps, ZHA quirk DP tables, z2m converter DP tuples), proposal->couple triage tool, optional capped AI summariser. | homey.app/news added as weekly news-index source (112 slugs baselined); Athom X account skipped (login/paid API, not free)."
+        "evidence": "registry (25 sources, verified repos/paths) + .github/scripts/source-registry.js (cursors data/sources/state.json, compare-diff only, bounded calls, no AI) + test; wired into external-sources-scanner.js and daily free-scrape-crossref.yml (commits cursors [skip ci]); baseline 116 proposals -> data/leads/source-proposals.json; 5 new couples listed in DISCOVERIES.md. Pending: per-source parsers (tuya-local YAML DP maps, ZHA quirk DP tables, z2m converter DP tuples), proposal->couple triage tool, optional capped AI summariser. | homey.app/news added as weekly news-index source (112 slugs baselined); Athom X account skipped (login/paid API, not free).",
+        "progress_2026_10_04": "tools/sources/dp-parsers.js (Z2M/ZHA/tuya-local, long names) + test/source-dp-parsers.test.js on all 3 branches; next: triage CLI over source-proposals"
       },
       {
         "id": 100,
