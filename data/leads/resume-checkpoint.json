@@ -102,7 +102,7 @@
   },
   "master_queue": {
     "note": "Single master checklist of ALL user requests since the start. Daily resumption reads this FIRST. Tick (verified) only after verification.",
-    "updated": "2026-10-04T09:10+02:00",
+    "updated": "2026-10-04T11:00+02:00",
     "items": [
       {
         "id": 1,
@@ -849,8 +849,8 @@
       {
         "id": 118,
         "item": "Dimmer class change (socket/other -> light) for Homey Portal",
-        "status": "awaiting_user_decision",
-        "evidence": "user 2026-10-04: do NOT change yet",
+        "status": "done",
+        "evidence": "user approved 2026-10-04 10:27: dimmer_2_gang_tuya (+secondGang sub-device), dimmer_wall_switch, wall_dimmer_1gang_1way socket -> light; one-shot setClass migration via lib/utils/DeviceClassMigration.js (store flag); caps/ids/flows unchanged; changelog notes icon may change; dimmer_wall_plug left socket (plug, load unknown); generic/universal drivers untouched. master 1aa5fcf361, stable 7645e3feea, bastien 424f7ef3d0 (all [skip ci]); test/dimmer-class-light.test.js",
         "origin": "user 2026-10-04 05:44",
         "updated": "2026-10-04"
       },
@@ -1165,6 +1165,11 @@
         "at": "2026-10-04T08:55+02:00",
         "branch": "master",
         "note": "v9.0.1331: Athom processing_failed (AggregateError) on builds #3442-#3447 (each fails ~30 s after upload); 37180863734 hit 45 min job timeout; draft-to-test 37183254971 found no processable draft; Test stays 9.0.1330 #3441. Manifest diff 1330->1331 = new led_controller_spi_tuya + lowercase mfrs on energy_meter_3phase/panel_switch_cover_tuya; same driver processed fine on stable 5.12.367 -> cause not identified. Fresh dispatch 37183735134 on 263ef49eea."
+      },
+      {
+        "at": "2026-10-04T11:00+02:00",
+        "branch": "master",
+        "note": "fresh dispatch 37183735134 -> v9.0.1332 also processing_failed (#3448-#3450), cancelled; master publishing on hold (other worker investigating AggregateError); Test still 9.0.1330"
       }
     ],
     "rules_reporting": "Every report includes a French 'Découvertes' section (source link + author, mechanism/symptom, what we did or why not); append to docs/progress/DISCOVERIES.md"
