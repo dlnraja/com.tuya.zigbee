@@ -736,8 +736,8 @@
       {
         "id": 107,
         "item": "Port bastien-home e181504939 to master (ManifestDriverFlowIndex + hasArgs, args.device listeners x6, timers on delete, FFC TTL/sweep/pulse-cycle cancel, additive labels) and to stable-v5 (leak/listener/label only); gates + validate publish; publish master batch + stable grouped",
-        "status": "in_progress",
-        "evidence": "master a3106fe114 (validate publish PASS, size 3.83/4.00 MB, 404 label files additive 0 changed leaves); stable 6308fcd645 + b8ecc03a74; master follow-up: trigger/driver titleFormatted without [[device]] (P2775 rule, P2487 IR parity), FFC _deviceIndexAt",
+        "status": "done",
+        "evidence": "master a3106fe114 (validate publish PASS, size 3.83/4.00 MB, 404 label files additive 0 changed leaves); stable 6308fcd645 + b8ecc03a74; master follow-up: trigger/driver titleFormatted without [[device]] (P2775 rule, P2487 IR parity), FFC _deviceIndexAt; master v9.0.1325 build #3426 processing OK (run 37172266108); stable v5.12.362 build #274 processing OK (run 37172286470); bastien b3d7e0ef45",
         "origin": "user 2026-10-04 04:22/04:27"
       },
       {
@@ -784,16 +784,24 @@
       {
         "id": 114,
         "item": "TaHoma ideas for covers: combined position + tilt action, throttling when one flow drives many covers, optional Identify action (additive)",
-        "status": "pending",
-        "origin": "user 2026-10-04 04:48"
+        "status": "done",
+        "origin": "user 2026-10-04 04:48",
+        "evidence": "landed by executor-covers P2801/P2802 on master, stable-v5 (580d79d290) and bastien-home (ebee1b8606)"
+      },
+      {
+        "id": 115,
+        "item": "User 2026-10-04 05:01: every landed discovery must reach master, stable-v5 AND bastien-home ([skip ci], id .bastien unchanged), adapted per tree; respect /workspace/x-scan/locks.md",
+        "status": "in_progress",
+        "evidence": "flow port+labels+leaks: 3/3; titleFormatted [[device]] rule: 3/3; long names, signed DPs, energy scaling, FAQ, R21 gate: 3/3 (stable d502e63d05, bastien b3d7e0ef45); auto-publish re-upload loop: master + stable (bastien has own workflows). Pending on all 3: #108 couples, #109 placements, #110 rest, #113 log-only actions, #101-#106 news",
+        "origin": "user 2026-10-04 05:01"
       }
     ],
     "next": [
-      "#107 verify master + stable publishes after titleFormatted fix",
-      "#113 log-only flow actions",
-      "#114 TaHoma cover ideas",
-      "#110-#112 x-scan quirks/long names/firmware FAQ",
-      "#108-#109 x-scan couples + placements",
+      "#113 log-only flow actions (3 branches)",
+      "#108 36 ZHC couples via exact-pair drivers (3 branches)",
+      "#109 placements via exact-pair drivers",
+      "#110 rest: #12431 dimmer reporting, #13004 time-sync opt-out",
+      "#101-#106 news proposals",
       "Source registry follow-ups (#99): per-source DP parsers + triage; land #100 couples after research",
       "Matter/ecosystem per-driver additive mirrors (#95 follow-ups)",
       "athombv org study (#98) — start with node-zigbee-clusters + node-homey-zigbeedriver issues/PRs",
@@ -889,6 +897,22 @@
         "branch": "stable-v5",
         "run": "37171655022",
         "result": "failure: regression-lessons gate flow-titleformatted-device - fixed b8ecc03a74"
+      },
+      {
+        "date": "2026-10-04",
+        "branch": "master",
+        "run": "37172266108",
+        "version": "9.0.1325",
+        "build": 3426,
+        "result": "processing/ready on first try"
+      },
+      {
+        "date": "2026-10-04",
+        "branch": "stable-v5",
+        "run": "37172286470",
+        "version": "5.12.362",
+        "build": 274,
+        "result": "processing/ready on first try"
       }
     ],
     "rules_reporting": "Every report includes a French 'Découvertes' section (source link + author, mechanism/symptom, what we did or why not); append to docs/progress/DISCOVERIES.md"
