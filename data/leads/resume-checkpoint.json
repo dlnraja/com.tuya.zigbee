@@ -657,7 +657,7 @@
    },
    {
     "id": 95,
-    "item": "Matter Bridge readiness (HomeKit retired from Homey v13.5.1, removed March 2027): verify Matter Bridge docs for supported classes/capabilities; audit drivers for standard class + standard capabilities; mirror a standard capability additively where only custom exists; never degrade",
+    "item": "Matter Bridge readiness (HomeKit retired from Homey v13.5.1, removed March 2027): verify Matter Bridge docs for supported classes/capabilities; audit drivers for standard class + standard capabilities; mirror a standard capability additively where only custom exists; never degrade | no standard capability: mirror to the closest standard one in addition (custom mode -> onoff/alarm_generic, scene -> button) or expose via flows; never remove anything",
     "status": "pending",
     "evidence": "user note docs/user/HOMEKIT_TO_MATTER_BRIDGE.md"
    }

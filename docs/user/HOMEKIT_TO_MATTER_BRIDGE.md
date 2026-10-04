@@ -10,6 +10,6 @@ What this means for this app:
 - We are checking every driver so that it uses a standard Homey device class and standard
   capabilities (on/off, dim, colour temperature, colour, window coverings, measurements, alarms,
   target temperature), which the bridge can map. Where a driver only exposed a custom capability,
-  a standard one is added next to it; nothing is removed.
+  a standard one is added next to it; when no standard capability fits, the closest one is mirrored (for example a mode as on/off or a generic alarm, a scene as a button) or the feature stays available through flows. Nothing is removed.
 
 Status of the audit: see `data/leads/resume-checkpoint.json` (master_queue, "Matter Bridge").
