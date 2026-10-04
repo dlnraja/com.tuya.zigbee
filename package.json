@@ -408,6 +408,8 @@
     "check:p2527": "node tools/ci/p2527-untrusted-content-gate.js",
     "check:p2800": "node tools/ci/p2800-agent-config-hidden-text-gate.js && node --test test/critical/p2800-agent-config-hidden-text.test.js",
     "check:p2799": "node --test test/critical/p2799-cover-flow-actions.test.js",
+    "check:p2802": "node --test test/critical/p2801-p2802-cover-tahoma.test.js",
+    "check:p2803": "node tools/flow/build-dead-flow-autowire.js --check && node --test test/critical/p2803-dead-flow-autowire.test.js",
     "check:p2528": "node --test test/critical/p2528-vichy-dp104-cap-ownership.test.js",
     "check:p2529": "node --test test/critical/p2529-deep-functional-enrich.test.js && node tools/ci/p2529-deep-functional-enrich-gate.js",
     "enrich:functional": "node tools/ci/deep-functional-enrich-pass.js",
