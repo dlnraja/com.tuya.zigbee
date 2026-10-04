@@ -68,20 +68,24 @@
       "id": "switch_1gang_physical_gang1_on",
       "args": [],
       "title": {
-        "en": "Turned on physically - gang 1"
+        "en": "Turned on physically - gang 1",
+        "fr": "Allumé physiquement - voie 1"
       },
       "titleFormatted": {
-        "en": "Turned on physically - gang 1"
+        "en": "Turned on physically - gang 1",
+        "fr": "Allumé physiquement - voie 1"
       }
     },
     {
       "id": "switch_1gang_physical_gang1_off",
       "args": [],
       "title": {
-        "en": "Turned off physically - gang 1"
+        "en": "Turned off physically - gang 1",
+        "fr": "Éteint physiquement - voie 1"
       },
       "titleFormatted": {
-        "en": "Turned off physically - gang 1"
+        "en": "Turned off physically - gang 1",
+        "fr": "Éteint physiquement - voie 1"
       }
     },
     {
@@ -247,7 +251,8 @@
     {
       "id": "switch_1gang_set_backlight",
       "title": {
-        "en": "Set backlight mode"
+        "en": "Set backlight mode",
+        "fr": "Régler le mode du rétroéclairage"
       },
       "args": [
         {
@@ -256,30 +261,44 @@
           "values": [
             {
               "id": "off",
-              "title": "Off"
+              "title": "Off",
+              "label": {
+                "en": "Off",
+                "fr": "Éteint"
+              }
             },
             {
               "id": "normal",
-              "title": "Normal"
+              "title": "Normal",
+              "label": {
+                "en": "Normal"
+              }
             },
             {
               "id": "inverted",
-              "title": "Inverted"
+              "title": "Inverted",
+              "label": {
+                "en": "Inverted",
+                "fr": "Inversé"
+              }
             }
           ],
           "title": {
-            "en": "Backlight mode"
+            "en": "Backlight mode",
+            "fr": "Mode du rétroéclairage"
           }
         }
       ],
       "titleFormatted": {
-        "en": "Set backlight mode [[mode]]"
+        "en": "Set backlight mode [[mode]]",
+        "fr": "Régler le mode du rétroéclairage [[mode]]"
       }
     },
     {
       "id": "switch_1gang_set_backlight_color",
       "title": {
-        "en": "Set backlight color"
+        "en": "Set backlight color",
+        "fr": "Régler la couleur du rétroéclairage"
       },
       "args": [
         {
@@ -288,34 +307,53 @@
           "values": [
             {
               "id": "white",
-              "title": "White"
+              "title": "White",
+              "label": {
+                "en": "White",
+                "fr": "Blanc"
+              }
             },
             {
               "id": "red",
-              "title": "Red"
+              "title": "Red",
+              "label": {
+                "en": "Red",
+                "fr": "Rouge"
+              }
             },
             {
               "id": "blue",
-              "title": "Blue"
+              "title": "Blue",
+              "label": {
+                "en": "Blue",
+                "fr": "Bleu"
+              }
             },
             {
               "id": "green",
-              "title": "Green"
+              "title": "Green",
+              "label": {
+                "en": "Green",
+                "fr": "Vert"
+              }
             }
           ],
           "title": {
-            "en": "Backlight color"
+            "en": "Backlight color",
+            "fr": "Couleur du rétroéclairage"
           }
         }
       ],
       "titleFormatted": {
-        "en": "Set backlight color [[color]]"
+        "en": "Set backlight color [[color]]",
+        "fr": "Régler la couleur du rétroéclairage [[color]]"
       }
     },
     {
       "id": "switch_1gang_set_backlight_brightness",
       "title": {
-        "en": "Set backlight brightness"
+        "en": "Set backlight brightness",
+        "fr": "Régler la luminosité du rétroéclairage"
       },
       "args": [
         {
@@ -326,72 +364,84 @@
           "step": 1,
           "label": "%",
           "title": {
-            "en": "Brightness"
+            "en": "Brightness",
+            "fr": "Luminosité"
           }
         }
       ],
       "titleFormatted": {
-        "en": "Set backlight brightness [[brightness]]"
+        "en": "Set backlight brightness [[brightness]]",
+        "fr": "Régler la luminosité du rétroéclairage [[brightness]]"
       }
     },
     {
       "id": "switch_1gang_set_countdown",
       "title": {
-        "en": "Set countdown timer"
+        "en": "Set countdown timer",
+        "fr": "Régler la minuterie"
       },
       "args": [
         {
           "name": "seconds",
           "type": "number",
           "title": {
-            "en": "Countdown (seconds)"
+            "en": "Countdown (seconds)",
+            "fr": "Minuterie (secondes)"
           }
         }
       ],
       "titleFormatted": {
-        "en": "Set countdown timer [[seconds]]"
+        "en": "Set countdown timer [[seconds]]",
+        "fr": "Régler la minuterie [[seconds]]"
       }
     },
     {
       "id": "switch_1gang_set_child_lock",
       "title": {
-        "en": "Set child lock"
+        "en": "Set child lock",
+        "fr": "Régler le verrouillage enfant"
       },
       "args": [
         {
           "name": "enabled",
           "type": "checkbox",
           "title": {
-            "en": "Enabled"
+            "en": "Enabled",
+            "fr": "Activé"
           }
         }
       ],
       "titleFormatted": {
-        "en": "Set child lock [[enabled]]"
+        "en": "Set child lock [[enabled]]",
+        "fr": "Régler le verrouillage enfant [[enabled]]"
       }
     },
     {
       "id": "switch_1gang_set_scene_mode",
       "title": {
-        "en": "Set scene mode"
+        "en": "Set scene mode",
+        "fr": "Régler le mode scène"
       },
       "args": [
         {
           "name": "mode",
           "type": "number",
           "title": {
-            "en": "Scene mode"
+            "en": "Scene mode",
+            "fr": "Mode scène"
           }
         }
       ],
       "titleFormatted": {
-        "en": "Set scene mode [[mode]]"
+        "en": "Set scene mode [[mode]]",
+        "fr": "Régler le mode scène [[mode]]"
       }
     },
     {
       "id": "switch_1gang_set_power_on_behavior",
       "title": {
-        "en": "Set power-on behavior"
+        "en": "Set power-on behavior",
+        "fr": "Régler le comportement à la mise sous tension"
       },
       "args": [
         {
@@ -400,24 +450,38 @@
           "values": [
             {
               "id": "off",
-              "title": "Off"
+              "title": "Off",
+              "label": {
+                "en": "Off",
+                "fr": "Éteint"
+              }
             },
             {
               "id": "on",
-              "title": "On"
+              "title": "On",
+              "label": {
+                "en": "On",
+                "fr": "Allumé"
+              }
             },
             {
               "id": "previous",
-              "title": "Previous state"
+              "title": "Previous state",
+              "label": {
+                "en": "Previous state",
+                "fr": "État précédent"
+              }
             }
           ],
           "title": {
-            "en": "Behavior"
+            "en": "Behavior",
+            "fr": "Comportement"
           }
         }
       ],
       "titleFormatted": {
-        "en": "Set power-on behavior [[behavior]]"
+        "en": "Set power-on behavior [[behavior]]",
+        "fr": "Régler le comportement à la mise sous tension [[behavior]]"
       }
     }
   ]

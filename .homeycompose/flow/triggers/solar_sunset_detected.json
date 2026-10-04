@@ -1,22 +1,29 @@
 {
   "id": "solar_sunset_detected",
   "title": {
-    "en": "Sunset detected"
+    "en": "Sunset detected",
+    "fr": "Coucher du soleil détecté"
   },
   "hint": {
-    "en": "Triggers when the sun sets below the horizon based on your location"
+    "en": "Triggers when the sun sets below the horizon based on your location",
+    "fr": "Se déclenche au coucher du soleil selon votre position"
   },
   "args": [
     {
       "name": "elevation_threshold",
       "type": "number",
       "title": {
-        "en": "Elevation threshold (degrees)"
+        "en": "Elevation threshold (degrees)",
+        "fr": "Seuil d'élévation (degrés)"
       },
       "min": -6,
       "max": 10,
       "step": 1,
-      "value": 0
+      "value": 0,
+      "placeholder": {
+        "en": "-6–10",
+        "fr": "-6–10"
+      }
     }
   ],
   "tokens": [
@@ -24,21 +31,24 @@
       "name": "elevation",
       "type": "number",
       "title": {
-        "en": "Solar elevation (degrees)"
+        "en": "Solar elevation (degrees)",
+        "fr": "Élévation solaire (degrés)"
       }
     },
     {
       "name": "azimuth",
       "type": "number",
       "title": {
-        "en": "Solar azimuth (degrees)"
+        "en": "Solar azimuth (degrees)",
+        "fr": "Azimut solaire (degrés)"
       }
     },
     {
       "name": "category",
       "type": "string",
       "title": {
-        "en": "Elevation category"
+        "en": "Elevation category",
+        "fr": "Catégorie d'élévation"
       },
       "example": "civil_twilight"
     },
@@ -46,11 +56,13 @@
       "name": "timestamp",
       "type": "string",
       "title": {
-        "en": "Event timestamp"
+        "en": "Event timestamp",
+        "fr": "Horodatage de l'événement"
       }
     }
   ],
   "titleFormatted": {
-    "en": "Sunset detected [[elevation_threshold]]"
+    "en": "Sunset detected [[elevation_threshold]]",
+    "fr": "Coucher du soleil détecté [[elevation_threshold]]"
   }
 }

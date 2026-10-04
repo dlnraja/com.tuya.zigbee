@@ -73,7 +73,15 @@
           "type": "number",
           "min": 0,
           "max": 100,
-          "step": 5
+          "step": 5,
+          "title": {
+            "en": "Level",
+            "fr": "Niveau"
+          },
+          "placeholder": {
+            "en": "0–100",
+            "fr": "0–100"
+          }
         }
       ],
       "titleFormatted": {
@@ -131,7 +139,15 @@
           "type": "number",
           "min": 0,
           "max": 100,
-          "step": 5
+          "step": 5,
+          "title": {
+            "en": "Level",
+            "fr": "Niveau"
+          },
+          "placeholder": {
+            "en": "0–100",
+            "fr": "0–100"
+          }
         }
       ],
       "titleFormatted": {
@@ -179,7 +195,11 @@
           "max": 100,
           "step": 1,
           "label": "%",
-          "labelDecimals": 0
+          "labelDecimals": 0,
+          "title": {
+            "en": "Brightness",
+            "fr": "Luminosité"
+          }
         }
       ],
       "titleFormatted": {

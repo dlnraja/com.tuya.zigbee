@@ -1,10 +1,12 @@
 {
   "id": "schedule_create",
   "title": {
-    "en": "Create schedule"
+    "en": "Create schedule",
+    "fr": "Créer une planification"
   },
   "hint": {
-    "en": "Create a new schedule for a device"
+    "en": "Create a new schedule for a device",
+    "fr": "Créer une nouvelle planification pour un appareil"
   },
   "args": [
     {
@@ -16,14 +18,20 @@
       "name": "schedule_name",
       "type": "text",
       "title": {
-        "en": "Schedule name"
+        "en": "Schedule name",
+        "fr": "Nom de la planification"
+      },
+      "placeholder": {
+        "en": "Schedule name",
+        "fr": "Nom de la planification"
       }
     },
     {
       "name": "capability",
       "type": "text",
       "title": {
-        "en": "Capability to set"
+        "en": "Capability to set",
+        "fr": "Capacité à régler"
       },
       "placeholder": {
         "en": "onoff"
@@ -33,14 +41,20 @@
       "name": "capability_value",
       "type": "text",
       "title": {
-        "en": "Value to set"
+        "en": "Value to set",
+        "fr": "Valeur à régler"
+      },
+      "placeholder": {
+        "en": "Value to set",
+        "fr": "Valeur à régler"
       }
     },
     {
       "name": "cron_expression",
       "type": "text",
       "title": {
-        "en": "Cron expression (min hour dom month dow)"
+        "en": "Cron expression (min hour dom month dow)",
+        "fr": "Expression cron (min heure jour mois jour-sem)"
       },
       "placeholder": {
         "en": "0 7 * * *"
@@ -53,12 +67,17 @@
       "name": "interval_minutes",
       "type": "number",
       "title": {
-        "en": "Interval (minutes, 0 = use cron)"
+        "en": "Interval (minutes, 0 = use cron)",
+        "fr": "Intervalle (minutes, 0 = cron)"
       },
       "min": 0,
       "max": 1440,
       "step": 5,
-      "value": 0
+      "value": 0,
+      "placeholder": {
+        "en": "0–1440",
+        "fr": "0–1440"
+      }
     }
   ],
   "tokens": [
@@ -66,8 +85,13 @@
       "name": "schedule_id",
       "type": "string",
       "title": {
-        "en": "Created schedule ID"
+        "en": "Created schedule ID",
+        "fr": "ID de planification créée"
       }
     }
-  ]
+  ],
+  "titleFormatted": {
+    "en": "Create schedule [[schedule_name]] [[capability]] [[capability_value]] [[cron_expression]] [[interval_minutes]] ([[device]])",
+    "fr": "Créer une planification [[schedule_name]] [[capability]] [[capability_value]] [[cron_expression]] [[interval_minutes]] ([[device]])"
+  }
 }

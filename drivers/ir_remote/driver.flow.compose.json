@@ -45,11 +45,19 @@
               "title": {
                 "en": "Power",
                 "fr": "Alimentation"
+              },
+              "label": {
+                "en": "Power",
+                "fr": "Alimentation"
               }
             },
             {
               "id": "Mute",
               "title": {
+                "en": "Mute",
+                "fr": "Sourdine"
+              },
+              "label": {
                 "en": "Mute",
                 "fr": "Sourdine"
               }
@@ -59,11 +67,19 @@
               "title": {
                 "en": "Volume Up",
                 "fr": "Volume +"
+              },
+              "label": {
+                "en": "Volume Up",
+                "fr": "Volume +"
               }
             },
             {
               "id": "Volume Down",
               "title": {
+                "en": "Volume Down",
+                "fr": "Volume -"
+              },
+              "label": {
                 "en": "Volume Down",
                 "fr": "Volume -"
               }
@@ -73,11 +89,19 @@
               "title": {
                 "en": "Channel Up",
                 "fr": "Chaîne +"
+              },
+              "label": {
+                "en": "Channel Up",
+                "fr": "Chaîne +"
               }
             },
             {
               "id": "Channel Down",
               "title": {
+                "en": "Channel Down",
+                "fr": "Chaîne -"
+              },
+              "label": {
                 "en": "Channel Down",
                 "fr": "Chaîne -"
               }
@@ -87,11 +111,19 @@
               "title": {
                 "en": "Source",
                 "fr": "Source"
+              },
+              "label": {
+                "en": "Source",
+                "fr": "Source"
               }
             },
             {
               "id": "Menu",
               "title": {
+                "en": "Menu",
+                "fr": "Menu"
+              },
+              "label": {
                 "en": "Menu",
                 "fr": "Menu"
               }
@@ -101,9 +133,17 @@
               "title": {
                 "en": "OK",
                 "fr": "OK"
+              },
+              "label": {
+                "en": "OK",
+                "fr": "OK"
               }
             }
-          ]
+          ],
+          "title": {
+            "en": "Key",
+            "fr": "Key"
+          }
         }
       ],
       "titleFormatted": {

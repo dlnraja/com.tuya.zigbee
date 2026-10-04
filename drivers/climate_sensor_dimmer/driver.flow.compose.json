@@ -4,60 +4,70 @@
       "id": "climate_sensor_dimmer_wall_1gang_physical_on",
       "args": [],
       "title": {
-        "en": "Turned on - physical button"
+        "en": "Turned on - physical button",
+        "fr": "Allumé - bouton physique"
       },
       "titleFormatted": {
-        "en": "Turned on - physical button"
+        "en": "Turned on - physical button",
+        "fr": "Allumé - bouton physique"
       }
     },
     {
       "id": "climate_sensor_dimmer_wall_1gang_physical_off",
       "args": [],
       "title": {
-        "en": "Turned off - physical button"
+        "en": "Turned off - physical button",
+        "fr": "Éteint - bouton physique"
       },
       "titleFormatted": {
-        "en": "Turned off - physical button"
+        "en": "Turned off - physical button",
+        "fr": "Éteint - bouton physique"
       }
     },
     {
       "id": "climate_sensor_dimmer_wall_1gang_physical_brightness_up",
       "args": [],
       "title": {
-        "en": "Brightness increased - physical"
+        "en": "Brightness increased - physical",
+        "fr": "Luminosité augmentée - physique"
       },
       "tokens": [
         {
           "name": "brightness",
           "example": 75,
           "title": {
-            "en": "Brightness (%)"
+            "en": "Brightness (%)",
+            "fr": "Luminosité (%)"
           },
           "type": "number"
         }
       ],
       "titleFormatted": {
-        "en": "Brightness increased - physical ({brightness})"
+        "en": "Brightness increased - physical ({brightness})",
+        "fr": "Luminosité augmentée - physique ({brightness})"
       }
     },
     {
       "id": "climate_sensor_dimmer_wall_1gang_physical_brightness_down",
       "args": [],
       "title": {
-        "en": "Brightness decreased - physical"
+        "en": "Brightness decreased - physical",
+        "fr": "Luminosité diminuée - physique"
       },
       "tokens": [
         {
           "name": "brightness",
           "example": 25,
           "title": {
-            "en": "Brightness (%)"
+            "en": "Brightness (%)",
+            "fr": "Luminosité (%)"
           },
           "type": "number"
         }
       ],
       "titleFormatted": {
-        "en": "Brightness decreased - physical ({brightness})"
+        "en": "Brightness decreased - physical ({brightness})",
+        "fr": "Luminosité diminuée - physique ({brightness})"
       }
     },
     {
@@ -359,7 +369,11 @@
           "max": 100,
           "step": 1,
           "label": "%",
-          "labelDecimals": 0
+          "labelDecimals": 0,
+          "title": {
+            "en": "Brightness",
+            "fr": "Luminosité"
+          }
         }
       ],
       "titleFormatted": {

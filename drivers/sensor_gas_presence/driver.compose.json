@@ -755,11 +755,19 @@
                 "title": {
                   "en": "Smoke Test",
                   "fr": "Test Fumée"
+                },
+                "label": {
+                  "en": "Smoke Test",
+                  "fr": "Test Fumée"
                 }
               },
               {
                 "id": "co",
                 "title": {
+                  "en": "CO Test",
+                  "fr": "Test CO"
+                },
+                "label": {
                   "en": "CO Test",
                   "fr": "Test CO"
                 }
@@ -769,11 +777,23 @@
                 "title": {
                   "en": "Full Test",
                   "fr": "Test Complet"
+                },
+                "label": {
+                  "en": "Full Test",
+                  "fr": "Test Complet"
                 }
               }
-            ]
+            ],
+            "title": {
+              "en": "Test Type",
+              "fr": "Test Type"
+            }
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "Run self-test [[test_type]]",
+          "fr": "Lancer auto-test [[test_type]]"
+        }
       }
     ]
   },

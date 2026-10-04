@@ -35,7 +35,8 @@
     {
       "id": "energy_meter_3phase_voltage_changed",
       "title": {
-        "en": "Voltage changed"
+        "en": "Voltage changed",
+        "fr": "Tension modifiée"
       },
       "tokens": [
         {
@@ -49,13 +50,15 @@
       ],
       "args": [],
       "titleFormatted": {
-        "en": "Voltage changed ({voltage})"
+        "en": "Voltage changed ({voltage})",
+        "fr": "Tension modifiée ({voltage})"
       }
     },
     {
       "id": "energy_meter_3phase_current_changed",
       "title": {
-        "en": "Current changed"
+        "en": "Current changed",
+        "fr": "Courant modifié"
       },
       "tokens": [
         {
@@ -69,13 +72,15 @@
       ],
       "args": [],
       "titleFormatted": {
-        "en": "Current changed ({current})"
+        "en": "Current changed ({current})",
+        "fr": "Courant modifié ({current})"
       }
     },
     {
       "id": "energy_meter_3phase_energy_changed",
       "title": {
-        "en": "Energy changed"
+        "en": "Energy changed",
+        "fr": "Énergie modifiée"
       },
       "tokens": [
         {
@@ -89,7 +94,8 @@
       ],
       "args": [],
       "titleFormatted": {
-        "en": "Energy changed ({energy})"
+        "en": "Energy changed ({energy})",
+        "fr": "Énergie modifiée ({energy})"
       }
     }
   ],
@@ -97,7 +103,8 @@
     {
       "id": "energy_meter_3phase_power_above",
       "title": {
-        "en": "Power !{{is|is not}} above"
+        "en": "Power !{{is|is not}} above",
+        "fr": "La puissance !{{est|n'est pas}} au-dessus de"
       },
       "args": [
         {
@@ -105,11 +112,20 @@
           "type": "number",
           "min": 0,
           "max": 30000,
-          "step": 50
+          "step": 50,
+          "title": {
+            "en": "Power",
+            "fr": "Puissance"
+          },
+          "placeholder": {
+            "en": "0–30000",
+            "fr": "0–30000"
+          }
         }
       ],
       "titleFormatted": {
-        "en": "Power !{{is|is not}} above [[power]]"
+        "en": "Power !{{is|is not}} above [[power]]",
+        "fr": "La puissance !{{est|n'est pas}} au-dessus de [[power]]"
       }
     }
   ],
@@ -117,11 +133,13 @@
     {
       "id": "energy_meter_3phase_reset_meter",
       "title": {
-        "en": "Reset energy meter"
+        "en": "Reset energy meter",
+        "fr": "Réinitialiser le compteur d'énergie"
       },
       "args": [],
       "titleFormatted": {
-        "en": "Reset energy meter"
+        "en": "Reset energy meter",
+        "fr": "Réinitialiser le compteur d'énergie"
       }
     }
   ]

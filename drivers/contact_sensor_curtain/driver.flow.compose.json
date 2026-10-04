@@ -105,7 +105,8 @@
           "name": "gang",
           "type": "number",
           "title": {
-            "en": "Gang"
+            "en": "Gang",
+            "fr": "Voie"
           },
           "example": 1
         }
@@ -127,7 +128,8 @@
           "name": "gang",
           "type": "number",
           "title": {
-            "en": "Gang"
+            "en": "Gang",
+            "fr": "Voie"
           },
           "example": 1
         }
@@ -149,7 +151,8 @@
           "name": "gang",
           "type": "number",
           "title": {
-            "en": "Gang"
+            "en": "Gang",
+            "fr": "Voie"
           },
           "example": 1
         }
@@ -306,7 +309,11 @@
           "max": 100,
           "step": 1,
           "label": "%",
-          "labelDecimals": 0
+          "labelDecimals": 0,
+          "title": {
+            "en": "Brightness",
+            "fr": "Luminosité"
+          }
         }
       ],
       "titleFormatted": {
@@ -332,7 +339,11 @@
           "max": 100,
           "step": 1,
           "label": "%",
-          "labelDecimals": 0
+          "labelDecimals": 0,
+          "title": {
+            "en": "Position",
+            "fr": "Position"
+          }
         }
       ],
       "titleFormatted": {

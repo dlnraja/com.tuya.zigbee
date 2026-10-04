@@ -358,7 +358,8 @@
             "name": "signal_type",
             "type": "string",
             "title": {
-              "en": "Signal Type"
+              "en": "Signal Type",
+              "fr": "Type de signal"
             },
             "example": "confort"
           }
@@ -388,11 +389,17 @@
                 "id": "confort",
                 "title": {
                   "en": "Confort"
+                },
+                "label": {
+                  "en": "Confort"
                 }
               },
               {
                 "id": "eco",
                 "title": {
+                  "en": "Éco"
+                },
+                "label": {
                   "en": "Éco"
                 }
               },
@@ -400,17 +407,31 @@
                 "id": "anti_freeze",
                 "title": {
                   "en": "Hors-Gel"
+                },
+                "label": {
+                  "en": "Hors-Gel"
                 }
               },
               {
                 "id": "off",
                 "title": {
                   "en": "Arrêt"
+                },
+                "label": {
+                  "en": "Arrêt"
                 }
               }
-            ]
+            ],
+            "title": {
+              "en": "Mode",
+              "fr": "Mode"
+            }
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "Heating mode !{{is|isn't}} [[mode]]",
+          "fr": "Mode chauffage !{{est|n'est pas}} [[mode]]"
+        }
       }
     ],
     "actions": [
@@ -429,11 +450,17 @@
                 "id": "confort",
                 "title": {
                   "en": "🏠 Confort"
+                },
+                "label": {
+                  "en": "🏠 Confort"
                 }
               },
               {
                 "id": "eco",
                 "title": {
+                  "en": "🌱 Éco"
+                },
+                "label": {
                   "en": "🌱 Éco"
                 }
               },
@@ -441,11 +468,17 @@
                 "id": "confort_minus_1",
                 "title": {
                   "en": "🌡️ Confort -1°C"
+                },
+                "label": {
+                  "en": "🌡️ Confort -1°C"
                 }
               },
               {
                 "id": "confort_minus_2",
                 "title": {
+                  "en": "❄️ Confort -2°C"
+                },
+                "label": {
                   "en": "❄️ Confort -2°C"
                 }
               },
@@ -453,17 +486,31 @@
                 "id": "anti_freeze",
                 "title": {
                   "en": "🧊 Hors-Gel"
+                },
+                "label": {
+                  "en": "🧊 Hors-Gel"
                 }
               },
               {
                 "id": "off",
                 "title": {
                   "en": "⛔ Arrêt"
+                },
+                "label": {
+                  "en": "⛔ Arrêt"
                 }
               }
-            ]
+            ],
+            "title": {
+              "en": "Mode",
+              "fr": "Mode"
+            }
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "Set heating mode to [[mode]]",
+          "fr": "Régler mode chauffage sur [[mode]]"
+        }
       },
       {
         "id": "send_pilot_signal",
@@ -480,11 +527,17 @@
                 "id": "confort",
                 "title": {
                   "en": "Confort (0V)"
+                },
+                "label": {
+                  "en": "Confort (0V)"
                 }
               },
               {
                 "id": "eco",
                 "title": {
+                  "en": "Éco (230V neg)"
+                },
+                "label": {
                   "en": "Éco (230V neg)"
                 }
               },
@@ -492,17 +545,31 @@
                 "id": "anti_freeze",
                 "title": {
                   "en": "Hors-Gel (230V pos)"
+                },
+                "label": {
+                  "en": "Hors-Gel (230V pos)"
                 }
               },
               {
                 "id": "off",
                 "title": {
                   "en": "Arrêt (230V alt)"
+                },
+                "label": {
+                  "en": "Arrêt (230V alt)"
                 }
               }
-            ]
+            ],
+            "title": {
+              "en": "Signal",
+              "fr": "Signal"
+            }
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "Send pilot wire signal [[signal]]",
+          "fr": "Envoyer signal fil pilote [[signal]]"
+        }
       },
       {
         "id": "set_temperature_offset",
@@ -514,7 +581,8 @@
         },
         "hint": {
           "en": "Adjust the temperature reading by adding an offset value",
-          "nl": "Pas de temperatuurmeting aan door een offset toe te voegen"
+          "nl": "Pas de temperatuurmeting aan door een offset toe te voegen",
+          "fr": "Ajuster la température mesurée en ajoutant un décalage"
         },
         "args": [
           {
@@ -523,9 +591,17 @@
             "min": -5,
             "max": 5,
             "step": 0.5,
-            "label": "°C"
+            "label": "°C",
+            "title": {
+              "en": "Offset",
+              "fr": "Décalage"
+            }
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "Set temperature offset [[offset]]",
+          "fr": "Définir offset température [[offset]]"
+        }
       }
     ]
   },

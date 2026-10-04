@@ -4,24 +4,28 @@
       "id": "curtain_module_2_gang_move_open_2gang",
       "title": {
         "en": "Open",
-        "de": "Öffnen"
+        "de": "Öffnen",
+        "fr": "Ouvrir"
       },
       "args": [],
       "titleFormatted": {
         "en": "Open",
-        "de": "Öffnen"
+        "de": "Öffnen",
+        "fr": "Ouvrir"
       }
     },
     {
       "id": "curtain_module_2_gang_move_close_2gang",
       "title": {
         "en": "Close",
-        "de": "Schließen"
+        "de": "Schließen",
+        "fr": "Fermer"
       },
       "args": [],
       "titleFormatted": {
         "en": "Close",
-        "de": "Schließen"
+        "de": "Schließen",
+        "fr": "Fermer"
       }
     }
   ],

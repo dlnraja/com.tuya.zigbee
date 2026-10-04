@@ -24,7 +24,11 @@
         "fr": "Numéro DP"
       },
       "min": 1,
-      "max": 255
+      "max": 255,
+      "placeholder": {
+        "en": "1–255",
+        "fr": "1–255"
+      }
     },
     {
       "name": "value",
@@ -32,7 +36,15 @@
       "title": {
         "en": "Value",
         "fr": "Valeur"
+      },
+      "placeholder": {
+        "en": "Value",
+        "fr": "Valeur"
       }
     }
-  ]
+  ],
+  "titleFormatted": {
+    "en": "Send Tuya DP [[dp]] [[value]] ([[device]])",
+    "fr": "Envoyer DP Tuya [[dp]] [[value]] ([[device]])"
+  }
 }

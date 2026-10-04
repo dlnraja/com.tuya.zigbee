@@ -10,7 +10,8 @@
         "de": "Eingeschaltet"
       },
       "hint": {
-        "en": "Triggers when the socket is turned on"
+        "en": "Triggers when the socket is turned on",
+        "fr": "Se déclenche quand la prise est allumée"
       },
       "args": [],
       "titleFormatted": {
@@ -29,7 +30,8 @@
         "de": "Ausgeschaltet"
       },
       "hint": {
-        "en": "Triggers when the socket is turned off"
+        "en": "Triggers when the socket is turned off",
+        "fr": "Se déclenche quand la prise est éteinte"
       },
       "args": [],
       "titleFormatted": {
@@ -50,7 +52,8 @@
           "name": "power",
           "type": "number",
           "title": {
-            "en": "Power (W)"
+            "en": "Power (W)",
+            "fr": "Puissance (W)"
           },
           "example": 100
         }

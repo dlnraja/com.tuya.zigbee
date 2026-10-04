@@ -47,7 +47,8 @@
           "name": "step_size",
           "type": "number",
           "title": {
-            "en": "Step size"
+            "en": "Step size",
+            "fr": "Pas"
           }
         }
       ],
@@ -68,7 +69,8 @@
           "name": "step_size",
           "type": "number",
           "title": {
-            "en": "Step size"
+            "en": "Step size",
+            "fr": "Pas"
           }
         }
       ],
@@ -101,7 +103,8 @@
           "name": "level",
           "type": "number",
           "title": {
-            "en": "Level (%)"
+            "en": "Level (%)",
+            "fr": "Niveau (%)"
           }
         }
       ],
@@ -122,7 +125,8 @@
           "name": "scene_id",
           "type": "number",
           "title": {
-            "en": "Scene ID"
+            "en": "Scene ID",
+            "fr": "ID de scène"
           }
         }
       ],

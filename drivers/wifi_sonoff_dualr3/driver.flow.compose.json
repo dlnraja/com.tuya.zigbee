@@ -76,7 +76,8 @@
           "name": "power",
           "type": "number",
           "title": {
-            "en": "Power (W)"
+            "en": "Power (W)",
+            "fr": "Puissance (W)"
           },
           "example": 100
         }
@@ -98,7 +99,8 @@
           "name": "voltage",
           "type": "number",
           "title": {
-            "en": "Voltage (V)"
+            "en": "Voltage (V)",
+            "fr": "Tension (V)"
           },
           "example": 230
         }
@@ -120,7 +122,8 @@
           "name": "current",
           "type": "number",
           "title": {
-            "en": "Current (A)"
+            "en": "Current (A)",
+            "fr": "Courant (A)"
           },
           "example": 0.5
         }

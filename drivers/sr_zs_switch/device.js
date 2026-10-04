@@ -260,11 +260,13 @@ class SRZSSwitch extends TuyaSpecificClusterDevice {
             .registerRunListener(async (args) => {
                 const switchId = args.switch;
                 const state = args.state === 'true';
+                // WHY: listener is shared by all devices of this driver (last registration wins) — act on the Flow's device, not the registering one.
+                const dev = (args && args.device) || this;
                 try {
                     if (state) {
-                        await this.zclNode.endpoints[switchId].clusters.onOff.setOn();
+                        await dev.zclNode.endpoints[switchId].clusters.onOff.setOn();
                     } else {
-                        await this.zclNode.endpoints[switchId].clusters.onOff.setOff();
+                        await dev.zclNode.endpoints[switchId].clusters.onOff.setOff();
                     }
                     return true;
                 } catch (error) {
@@ -282,7 +284,7 @@ class SRZSSwitch extends TuyaSpecificClusterDevice {
         this.homey.flow.getConditionCard('switch_is')
             .registerRunListener(async (args, state) => {
                 const switchId = args.switch;
-                return this.getCapabilityValue(`onoff_${switchId}`);
+                return ((args && args.device) || this).getCapabilityValue(`onoff_${switchId}`);
             });
     }
 

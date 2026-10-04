@@ -1,10 +1,12 @@
 {
   "id": "network_router_offline",
   "title": {
-    "en": "Router offline"
+    "en": "Router offline",
+    "fr": "Routeur hors ligne"
   },
   "hint": {
-    "en": "Triggers when a router device goes offline, potentially disrupting mesh connectivity"
+    "en": "Triggers when a router device goes offline, potentially disrupting mesh connectivity",
+    "fr": "Se déclenche quand un routeur se déconnecte, ce qui peut perturber le maillage"
   },
   "args": [],
   "tokens": [
@@ -12,32 +14,37 @@
       "name": "ieee_addr",
       "type": "string",
       "title": {
-        "en": "Router IEEE address"
+        "en": "Router IEEE address",
+        "fr": "Adresse IEEE du routeur"
       }
     },
     {
       "name": "model_id",
       "type": "string",
       "title": {
-        "en": "Model ID"
+        "en": "Model ID",
+        "fr": "ID du modèle"
       }
     },
     {
       "name": "orphaned_devices",
       "type": "number",
       "title": {
-        "en": "Orphaned device count"
+        "en": "Orphaned device count",
+        "fr": "Nombre d'appareils orphelins"
       }
     },
     {
       "name": "coverage_score",
       "type": "number",
       "title": {
-        "en": "Network coverage score"
+        "en": "Network coverage score",
+        "fr": "Score de couverture réseau"
       }
     }
   ],
   "titleFormatted": {
-    "en": "Router offline"
+    "en": "Router offline",
+    "fr": "Routeur hors ligne"
   }
 }

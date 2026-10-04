@@ -38,5 +38,9 @@
         "fr": "Nouvelle version"
       }
     }
-  ]
+  ],
+  "titleFormatted": {
+    "en": "OTA firmware update available ([[device]])",
+    "fr": "Mise à jour firmware OTA disponible ([[device]])"
+  }
 }

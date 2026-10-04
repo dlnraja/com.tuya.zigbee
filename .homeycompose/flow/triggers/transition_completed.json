@@ -1,10 +1,12 @@
 {
   "id": "transition_completed",
   "title": {
-    "en": "Transition completed"
+    "en": "Transition completed",
+    "fr": "Transition terminée"
   },
   "hint": {
-    "en": "Triggers when a smooth device transition finishes"
+    "en": "Triggers when a smooth device transition finishes",
+    "fr": "Se déclenche quand une transition douce se termine"
   },
   "args": [
     {
@@ -18,37 +20,46 @@
       "name": "from_value",
       "type": "number",
       "title": {
-        "en": "From value"
+        "en": "From value",
+        "fr": "Valeur de départ"
       }
     },
     {
       "name": "to_value",
       "type": "number",
       "title": {
-        "en": "To value"
+        "en": "To value",
+        "fr": "Valeur d'arrivée"
       }
     },
     {
       "name": "duration_ms",
       "type": "number",
       "title": {
-        "en": "Duration (ms)"
+        "en": "Duration (ms)",
+        "fr": "Durée (ms)"
       }
     },
     {
       "name": "cancelled",
       "type": "boolean",
       "title": {
-        "en": "Was cancelled"
+        "en": "Was cancelled",
+        "fr": "A été annulée"
       }
     },
     {
       "name": "capability",
       "type": "string",
       "title": {
-        "en": "Capability"
+        "en": "Capability",
+        "fr": "Capacité"
       },
       "example": "dim"
     }
-  ]
+  ],
+  "titleFormatted": {
+    "en": "Transition completed ([[device]])",
+    "fr": "Transition terminée ([[device]])"
+  }
 }

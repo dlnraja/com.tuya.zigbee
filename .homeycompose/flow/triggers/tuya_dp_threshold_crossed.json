@@ -62,7 +62,11 @@
         "fr": "Numéro DP"
       },
       "min": 1,
-      "max": 255
+      "max": 255,
+      "placeholder": {
+        "en": "1–255",
+        "fr": "1–255"
+      }
     },
     {
       "name": "threshold",
@@ -72,5 +76,9 @@
         "fr": "Valeur seuil"
       }
     }
-  ]
+  ],
+  "titleFormatted": {
+    "en": "DP threshold crossed [[dp]] [[threshold]] ([[device]])",
+    "fr": "Seuil DP franchi [[dp]] [[threshold]] ([[device]])"
+  }
 }

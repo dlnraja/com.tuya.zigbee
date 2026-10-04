@@ -1,10 +1,12 @@
 {
   "id": "health_below_threshold",
   "title": {
-    "en": "Device health below [[threshold]]"
+    "en": "Device health below [[threshold]]",
+    "fr": "Santé de l'appareil inférieure à [[threshold]]"
   },
   "hint": {
-    "en": "Checks if the device health score is below a given threshold"
+    "en": "Checks if the device health score is below a given threshold",
+    "fr": "Vérifie si le score de santé de l'appareil est inférieur à un seuil donné"
   },
   "args": [
     {
@@ -16,12 +18,17 @@
       "name": "threshold",
       "type": "number",
       "title": {
-        "en": "Health threshold (0-100)"
+        "en": "Health threshold (0-100)",
+        "fr": "Seuil de santé (0-100)"
       },
       "min": 0,
       "max": 100,
       "step": 5,
-      "value": 50
+      "value": 50,
+      "placeholder": {
+        "en": "0–100",
+        "fr": "0–100"
+      }
     }
   ],
   "tokens": [
@@ -29,15 +36,21 @@
       "name": "health_score",
       "type": "number",
       "title": {
-        "en": "Current health score"
+        "en": "Current health score",
+        "fr": "Score de santé actuel"
       }
     },
     {
       "name": "health_status",
       "type": "string",
       "title": {
-        "en": "Health status"
+        "en": "Health status",
+        "fr": "État de santé"
       }
     }
-  ]
+  ],
+  "titleFormatted": {
+    "en": "Device health below [[threshold]] ([[device]])",
+    "fr": "Santé de l'appareil inférieure à [[threshold]] ([[device]])"
+  }
 }
