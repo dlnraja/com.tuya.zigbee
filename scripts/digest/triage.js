@@ -84,6 +84,7 @@ L.run(async () => {
   // dedupe: never comment twice
   const cs = await L.gh(`/repos/${repo}/issues/${it.number}/comments?per_page=100`);
   if (cs.some((c) => (c.body || '').includes(MARK))) return console.log('already triaged');
+  require('../lib/post-guard').assertPostAllowed(`github:${repo}#${it.number}`);
   if (labels.length) await L.gh(`/repos/${repo}/issues/${it.number}/labels`, { method: 'POST', body: { labels } });
   await L.gh(`/repos/${repo}/issues/${it.number}/comments`, { method: 'POST', body: { body } });
 });
