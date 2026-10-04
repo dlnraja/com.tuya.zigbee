@@ -5435,8 +5435,6 @@
     {
       "id": "p2509-invent-junk-do-not-lock",
       "mfr": [
-        "_TZE2841000000_3MZB0SDZ",
-        "_tze2841000000_3mzb0sdz",
         "_TZE28C100000_RZDKN5RX",
         "_tze28c100000_rzdkn5rx",
         "_TZE200_ABC123",
@@ -5455,7 +5453,7 @@
       ],
       "forbidMode": "couple",
       "doNotLock": true,
-      "notes": "P2509/P2522: OCR invent `_TZE2841000000_*` — NEVER lock as-is. canonicalizeForumMfr strips digit-pad → `_TZE284_3mzb0sdz` (P2514 curtain_motor). NEED real interview if strip unknown."
+      "notes": "P2509/P2522: OCR invent `_TZE2841000000_*` — NEVER lock as-is. canonicalizeForumMfr strips digit-pad → `_TZE284_3mzb0sdz` (P2514 curtain_motor). NEED real interview if strip unknown. | 2026-10-04 user decision: the long form _TZE2841000000_3mzb0sdz is a verified Zemismart ZM16B name (zigbee-herdsman-converters zemismart.ts) and is no longer treated as junk; wrong-padding names stay forbidden."
     },
     {
       "id": "p2514-zm16b-3mzb0sdz-curtain",

@@ -48,7 +48,10 @@ describe('P2509 L99 multi-source treat', () => {
     const cases = reg.cases || reg;
     const invent = cases.find((c) => c.id === 'p2509-invent-junk-do-not-lock');
     assert.ok(invent && invent.doNotLock === true);
-    assert.ok(invent.mfr.some((m) => /3MZB0SDZ/i.test(m)));
+    // 2026-10-04 user decision: the verified long ZM16B name _TZE2841000000_3mzb0sdz left the junk list;
+    // wrong-padding names (5 zeros) stay junk.
+    assert.ok(invent.mfr.some((m) => /_TZE28C100000_RZDKN5RX/i.test(m)));
+    assert.ok(!invent.mfr.some((m) => /^_tze2841000000_3mzb0sdz$/i.test(m)));
     const soil = cases.find((c) => c.id === 'p2509-npj9bug3-soil-zg303z');
     assert.ok(soil);
     assert.strictEqual(soil.canonicalDriver, 'soil_sensor');
