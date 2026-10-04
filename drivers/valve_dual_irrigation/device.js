@@ -116,6 +116,9 @@ class ValveDualIrrigationDevice extends BaseUnifiedDevice {
 
     await this.safeSetCapabilityValue(mapping.capability, value);
     this._fireDualValveFlowTriggers(mapping.capability, value, previousValue);
+    if (mapping.capability === 'onoff.valve_1' || mapping.capability === 'onoff.valve_2') {
+      this._syncBothValvesOnoff();
+    }
     return true;
   }
 
@@ -187,6 +190,21 @@ class ValveDualIrrigationDevice extends BaseUnifiedDevice {
       await this._sendValveDP(2, 'onoff.valve_2', value);
       });
 
+    // #118 (user decision 2026-10-04): optional main "both valves" switch, additive. It drives both
+    // zones and shows on when at least one valve is open; the per-valve switches stay unchanged.
+    if (!this.hasCapability('onoff')) {
+      await this.addCapability('onoff').catch((e) => this.log('[VALVE-2] add main onoff:', e.message));
+    }
+    if (this.hasCapability('onoff')) {
+      this.registerCapabilityListener('onoff', async (value) => {
+        this.log(`[VALVE-2] Setting both valves = ${value}`);
+        await this._sendValveDP(1, 'onoff.valve_1', value);
+        await this._sendValveDP(2, 'onoff.valve_2', value);
+        this._syncBothValvesOnoff();
+      });
+      this._syncBothValvesOnoff();
+    }
+
     // P112: button.1 was declared but never wired (Joep #2102/#2105).
     // Treat as a one-shot "pulse valve 1 on" scene button through L14.
     if (typeof this.hasCapability === 'function' && this.hasCapability('button.1')) {
@@ -202,6 +220,14 @@ class ValveDualIrrigationDevice extends BaseUnifiedDevice {
     }
 
     this.log('[VALVE-2]  Ready (Dual Engine v7.4.4 + P2473 EF00 max fallback)');
+  }
+
+  _syncBothValvesOnoff() {
+    if (!this.hasCapability?.('onoff')) {return;}
+    const anyOpen = this.getCapabilityValue('onoff.valve_1') === true || this.getCapabilityValue('onoff.valve_2') === true;
+    if (this.getCapabilityValue('onoff') !== anyOpen) {
+      Promise.resolve(this.safeSetCapabilityValue?.('onoff', anyOpen)).catch(() => {});
+    }
   }
 
   async _sendValveDP(dp, capability, value) {
