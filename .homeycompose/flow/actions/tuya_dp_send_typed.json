@@ -18,52 +18,82 @@
       "name": "dp",
       "type": "number",
       "title": {
-        "en": "DP Number"
+        "en": "DP Number",
+        "fr": "Numéro DP"
       },
       "min": 1,
-      "max": 255
+      "max": 255,
+      "placeholder": {
+        "en": "1–255",
+        "fr": "1–255"
+      }
     },
     {
       "name": "dp_type",
       "type": "dropdown",
       "title": {
-        "en": "DP Type"
+        "en": "DP Type",
+        "fr": "Type DP"
       },
       "values": [
         {
           "id": "bool",
           "title": {
             "en": "Bool (true/false)"
+          },
+          "label": {
+            "en": "Bool (true/false)",
+            "fr": "Booléen (vrai/faux)"
           }
         },
         {
           "id": "value",
           "title": {
             "en": "Value (integer)"
+          },
+          "label": {
+            "en": "Value (integer)",
+            "fr": "Valeur (entier)"
           }
         },
         {
           "id": "enum",
           "title": {
             "en": "Enum (0-255)"
+          },
+          "label": {
+            "en": "Enum (0-255)",
+            "fr": "Énumération (0-255)"
           }
         },
         {
           "id": "string",
           "title": {
             "en": "String (text)"
+          },
+          "label": {
+            "en": "String (text)",
+            "fr": "Texte"
           }
         },
         {
           "id": "raw",
           "title": {
             "en": "Raw (hex bytes)"
+          },
+          "label": {
+            "en": "Raw (hex bytes)",
+            "fr": "Brut (octets hex)"
           }
         },
         {
           "id": "bitmap",
           "title": {
             "en": "Bitmap (bitmask)"
+          },
+          "label": {
+            "en": "Bitmap (bitmask)",
+            "fr": "Bitmap (masque)"
           }
         }
       ]
@@ -72,8 +102,17 @@
       "name": "value",
       "type": "text",
       "title": {
-        "en": "Value"
+        "en": "Value",
+        "fr": "Valeur"
+      },
+      "placeholder": {
+        "en": "Value",
+        "fr": "Valeur"
       }
     }
-  ]
+  ],
+  "titleFormatted": {
+    "en": "Send typed Tuya DP [[dp]] [[dp_type]] [[value]] ([[device]])",
+    "fr": "Envoyer DP Tuya typé [[dp]] [[dp_type]] [[value]] ([[device]])"
+  }
 }

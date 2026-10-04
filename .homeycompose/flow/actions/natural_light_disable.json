@@ -18,5 +18,9 @@
       },
       "filter": "capabilities=dim|capabilities=light_temperature|capabilities=light_hue"
     }
-  ]
+  ],
+  "titleFormatted": {
+    "en": "Disable Solar Sync ([[device]])",
+    "fr": "Désactiver Synchro solaire ([[device]])"
+  }
 }

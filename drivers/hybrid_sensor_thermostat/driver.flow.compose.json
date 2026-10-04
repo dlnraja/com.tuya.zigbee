@@ -126,11 +126,19 @@
               "title": {
                 "en": "Auto",
                 "fr": "Auto"
+              },
+              "label": {
+                "en": "Auto",
+                "fr": "Auto"
               }
             },
             {
               "id": "heat",
               "title": {
+                "en": "Heat",
+                "fr": "Chauffage"
+              },
+              "label": {
                 "en": "Heat",
                 "fr": "Chauffage"
               }
@@ -140,11 +148,19 @@
               "title": {
                 "en": "Cool",
                 "fr": "Refroidissement"
+              },
+              "label": {
+                "en": "Cool",
+                "fr": "Refroidissement"
               }
             },
             {
               "id": "off",
               "title": {
+                "en": "Off",
+                "fr": "Arrêt"
+              },
+              "label": {
                 "en": "Off",
                 "fr": "Arrêt"
               }
@@ -173,6 +189,10 @@
           "title": {
             "en": "Temperature",
             "fr": "Température"
+          },
+          "placeholder": {
+            "en": "-40–80",
+            "fr": "-40–80"
           }
         }
       ],
@@ -197,6 +217,10 @@
           "title": {
             "en": "Temperature",
             "fr": "Température"
+          },
+          "placeholder": {
+            "en": "-40–80",
+            "fr": "-40–80"
           }
         }
       ],
@@ -227,11 +251,19 @@
               "title": {
                 "en": "Auto",
                 "fr": "Auto"
+              },
+              "label": {
+                "en": "Auto",
+                "fr": "Auto"
               }
             },
             {
               "id": "heat",
               "title": {
+                "en": "Heat",
+                "fr": "Chauffage"
+              },
+              "label": {
                 "en": "Heat",
                 "fr": "Chauffage"
               }
@@ -241,11 +273,19 @@
               "title": {
                 "en": "Cool",
                 "fr": "Refroidissement"
+              },
+              "label": {
+                "en": "Cool",
+                "fr": "Refroidissement"
               }
             },
             {
               "id": "off",
               "title": {
+                "en": "Off",
+                "fr": "Arrêt"
+              },
+              "label": {
                 "en": "Off",
                 "fr": "Arrêt"
               }
@@ -274,6 +314,10 @@
           "title": {
             "en": "Temperature (°C)",
             "fr": "Température (°C)"
+          },
+          "placeholder": {
+            "en": "5–35",
+            "fr": "5–35"
           }
         }
       ],

@@ -50,7 +50,15 @@
         "fr": "Le pourcentage réel de la batterie à la tension mesurée",
         "nl": "Het werkelijke batterijpercentage bij de gemeten spanning",
         "de": "Der tatsächliche Batterieprozentswert bei der gemessenen Spannung"
+      },
+      "placeholder": {
+        "en": "0–100",
+        "fr": "0–100"
       }
     }
-  ]
+  ],
+  "titleFormatted": {
+    "en": "Calibrate battery reading [[reference_voltage]] [[reference_percentage]] ([[device]])",
+    "fr": "Calibrer la lecture de la batterie [[reference_voltage]] [[reference_percentage]] ([[device]])"
+  }
 }

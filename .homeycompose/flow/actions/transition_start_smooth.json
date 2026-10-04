@@ -1,10 +1,12 @@
 {
   "id": "transition_start_smooth",
   "title": {
-    "en": "Start smooth transition"
+    "en": "Start smooth transition",
+    "fr": "Démarrer une transition douce"
   },
   "hint": {
-    "en": "Start a smooth transition on a numeric capability (e.g., dim, color_temperature)"
+    "en": "Start a smooth transition on a numeric capability (e.g., dim, color_temperature)",
+    "fr": "Démarrer une transition douce sur une capacité numérique (ex. dim, color_temperature)"
   },
   "args": [
     {
@@ -16,7 +18,8 @@
       "name": "capability",
       "type": "text",
       "title": {
-        "en": "Capability"
+        "en": "Capability",
+        "fr": "Capacité"
       },
       "placeholder": {
         "en": "dim"
@@ -26,77 +29,117 @@
       "name": "from_value",
       "type": "number",
       "title": {
-        "en": "From value"
+        "en": "From value",
+        "fr": "Valeur de départ"
       }
     },
     {
       "name": "to_value",
       "type": "number",
       "title": {
-        "en": "To value"
+        "en": "To value",
+        "fr": "Valeur d'arrivée"
       }
     },
     {
       "name": "duration_seconds",
       "type": "number",
       "title": {
-        "en": "Duration (seconds)"
+        "en": "Duration (seconds)",
+        "fr": "Durée (secondes)"
       },
       "min": 0.5,
       "max": 3600,
       "step": 0.5,
-      "value": 2
+      "value": 2,
+      "placeholder": {
+        "en": "0.5–3600",
+        "fr": "0.5–3600"
+      }
     },
     {
       "name": "easing",
       "type": "dropdown",
       "title": {
-        "en": "Easing"
+        "en": "Easing",
+        "fr": "Courbe"
       },
       "values": [
         {
           "id": "linear",
           "title": {
             "en": "Linear"
+          },
+          "label": {
+            "en": "Linear",
+            "fr": "Linéaire"
           }
         },
         {
           "id": "easeIn",
           "title": {
             "en": "Ease In"
+          },
+          "label": {
+            "en": "Ease In",
+            "fr": "Accélération"
           }
         },
         {
           "id": "easeOut",
           "title": {
             "en": "Ease Out"
+          },
+          "label": {
+            "en": "Ease Out",
+            "fr": "Décélération"
           }
         },
         {
           "id": "easeInOut",
           "title": {
             "en": "Ease In-Out"
+          },
+          "label": {
+            "en": "Ease In-Out",
+            "fr": "Accélération-décélération"
           }
         },
         {
           "id": "cubicIn",
           "title": {
             "en": "Cubic In"
+          },
+          "label": {
+            "en": "Cubic In",
+            "fr": "Cubique entrée"
           }
         },
         {
           "id": "cubicOut",
           "title": {
             "en": "Cubic Out"
+          },
+          "label": {
+            "en": "Cubic Out",
+            "fr": "Cubique sortie"
           }
         },
         {
           "id": "cubicInOut",
           "title": {
             "en": "Cubic In-Out"
+          },
+          "label": {
+            "en": "Cubic In-Out",
+            "fr": "Cubique entrée-sortie"
           }
         }
       ]
     }
-  ]
+  ],
+  "titleFormatted": {
+    "en": "Start smooth transition [[capability]] [[from_value]] [[to_value]] [[duration_seconds]] [[easing]] ([[device]])",
+    "fr": "Démarrer une transition douce [[capability]] [[from_value]] [[to_value]] [[duration_seconds]] [[easing]] ([[device]])"
+  }
 }

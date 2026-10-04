@@ -3,7 +3,8 @@
     {
       "id": "module_mini_switch_onoff_true",
       "title": {
-        "en": "Turned on"
+        "en": "Turned on",
+        "fr": "Allumé"
       },
       "tokens": [
         {
@@ -14,7 +15,8 @@
       ],
       "args": [],
       "titleFormatted": {
-        "en": "Turned on ({timestamp})"
+        "en": "Turned on ({timestamp})",
+        "fr": "Allumé ({timestamp})"
       }
     },
     {
@@ -179,11 +181,13 @@
     {
       "id": "module_mini_switch_is_on",
       "title": {
-        "en": "Is !{{on|off}}"
+        "en": "Is !{{on|off}}",
+        "fr": "Est !{{allumé|éteint}}"
       },
       "args": [],
       "titleFormatted": {
-        "en": "Is !{{on|off}}"
+        "en": "Is !{{on|off}}",
+        "fr": "Est !{{allumé|éteint}}"
       }
     }
   ],
@@ -191,31 +195,37 @@
     {
       "id": "module_mini_switch_turn_on",
       "title": {
-        "en": "Turn on"
+        "en": "Turn on",
+        "fr": "Allumer"
       },
       "args": [],
       "titleFormatted": {
-        "en": "Turn on"
+        "en": "Turn on",
+        "fr": "Allumer"
       }
     },
     {
       "id": "module_mini_switch_turn_off",
       "title": {
-        "en": "Turn off"
+        "en": "Turn off",
+        "fr": "Éteindre"
       },
       "args": [],
       "titleFormatted": {
-        "en": "Turn off"
+        "en": "Turn off",
+        "fr": "Éteindre"
       }
     },
     {
       "id": "module_mini_switch_toggle",
       "title": {
-        "en": "Toggle"
+        "en": "Toggle",
+        "fr": "Basculer"
       },
       "args": [],
       "titleFormatted": {
-        "en": "Toggle"
+        "en": "Toggle",
+        "fr": "Basculer"
       }
     }
   ]

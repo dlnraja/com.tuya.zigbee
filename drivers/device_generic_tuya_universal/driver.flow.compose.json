@@ -144,6 +144,10 @@
           "title": {
             "en": "Level (%)",
             "fr": "Niveau (%)"
+          },
+          "placeholder": {
+            "en": "0–100",
+            "fr": "0–100"
           }
         }
       ],
@@ -170,6 +174,10 @@
           "title": {
             "en": "DP Number",
             "fr": "Numéro DP"
+          },
+          "placeholder": {
+            "en": "1–255",
+            "fr": "1–255"
           }
         }
       ],

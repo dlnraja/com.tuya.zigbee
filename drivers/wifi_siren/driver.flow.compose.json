@@ -3,21 +3,25 @@
     {
       "id": "wifi_siren_alarm_on",
       "title": {
-        "en": "Alarm activated"
+        "en": "Alarm activated",
+        "fr": "Alarme activée"
       },
       "args": [],
       "titleFormatted": {
-        "en": "Alarm activated"
+        "en": "Alarm activated",
+        "fr": "Alarme activée"
       }
     },
     {
       "id": "wifi_siren_alarm_off",
       "title": {
-        "en": "Alarm deactivated"
+        "en": "Alarm deactivated",
+        "fr": "Alarme désactivée"
       },
       "args": [],
       "titleFormatted": {
-        "en": "Alarm deactivated"
+        "en": "Alarm deactivated",
+        "fr": "Alarme désactivée"
       }
     },
     {
@@ -72,21 +76,25 @@
     {
       "id": "wifi_siren_activate",
       "title": {
-        "en": "Activate siren"
+        "en": "Activate siren",
+        "fr": "Activer la sirène"
       },
       "args": [],
       "titleFormatted": {
-        "en": "Activate siren"
+        "en": "Activate siren",
+        "fr": "Activer la sirène"
       }
     },
     {
       "id": "wifi_siren_deactivate",
       "title": {
-        "en": "Deactivate siren"
+        "en": "Deactivate siren",
+        "fr": "Désactiver la sirène"
       },
       "args": [],
       "titleFormatted": {
-        "en": "Deactivate siren"
+        "en": "Deactivate siren",
+        "fr": "Désactiver la sirène"
       }
     }
   ]
