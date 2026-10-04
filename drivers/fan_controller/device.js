@@ -184,9 +184,30 @@ class FanControllerDevice extends TuyaZigbeeDevice {
       });
     }
 
-    tuyaCluster.on('response', (r) => this._handleDP(r?.dp, r?.value));
-    tuyaCluster.on('reporting', (r) => this._handleDP(r?.dp, r?.value));
-    tuyaCluster.on('datapoint', (dp, value) => this._handleDP(dp, value));
+    // R21: register once per cluster instance and detach on delete/uninit (no stacking on re-init).
+    this._detachFanClusterListeners();
+    const onFrame = (r) => this._handleDP(r?.dp, r?.value);
+    const onDatapoint = (dp, value) => this._handleDP(dp, value);
+    tuyaCluster.on('response', onFrame);
+    tuyaCluster.on('reporting', onFrame);
+    tuyaCluster.on('datapoint', onDatapoint);
+    this._fanClusterListeners = { cluster: tuyaCluster, onFrame, onDatapoint };
+  }
+
+  _detachFanClusterListeners() {
+    const l = this._fanClusterListeners;
+    if (!l) { return; }
+    try {
+      l.cluster.removeListener('response', l.onFrame);
+      l.cluster.removeListener('reporting', l.onFrame);
+      l.cluster.removeListener('datapoint', l.onDatapoint);
+    } catch (_) { /* cluster already gone */ }
+    this._fanClusterListeners = null;
+  }
+
+  async onUninit() {
+    this._detachFanClusterListeners();
+    if (typeof super.onUninit === 'function') { await super.onUninit(); }
   }
 
   /**
@@ -285,6 +306,7 @@ class FanControllerDevice extends TuyaZigbeeDevice {
   }
 
   onDeleted() {
+    this._detachFanClusterListeners();
     super.onDeleted();
     this.log('Device deleted, cleaning up');
   }

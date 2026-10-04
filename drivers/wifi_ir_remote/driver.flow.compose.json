@@ -32,11 +32,7 @@
           "type": "device",
           "filter": "driver_id=wifi_ir_remote"
         }
-      ],
-      "titleFormatted": {
-        "en": "IR learning started ([[device]])",
-        "fr": "Apprentissage IR démarré ([[device]])"
-      }
+      ]
     },
     {
       "id": "wifi_ir_remote_code_learned",
@@ -69,11 +65,7 @@
           "type": "device",
           "filter": "driver_id=wifi_ir_remote"
         }
-      ],
-      "titleFormatted": {
-        "en": "IR code learned ([[device]])",
-        "fr": "Code IR appris ([[device]])"
-      }
+      ]
     },
     {
       "id": "wifi_ir_remote_learn_confirm_needed",
@@ -97,11 +89,7 @@
           "type": "device",
           "filter": "driver_id=wifi_ir_remote"
         }
-      ],
-      "titleFormatted": {
-        "en": "IR learn needs confirm — press again ([[device]])",
-        "fr": "Confirmer l'apprentissage IR — rappuyer ([[device]])"
-      }
+      ]
     }
   ],
   "conditions": [],
@@ -134,11 +122,7 @@
           "min": 5,
           "max": 120
         }
-      ],
-      "titleFormatted": {
-        "en": "Start IR learn [[name]] [[timeout_s]] ([[device]])",
-        "fr": "Démarrer apprentissage IR [[name]] [[timeout_s]] ([[device]])"
-      }
+      ]
     },
     {
       "id": "wifi_ir_remote_send_learned",
@@ -159,11 +143,7 @@
             "en": "power"
           }
         }
-      ],
-      "titleFormatted": {
-        "en": "Send learned IR code [[name]] ([[device]])",
-        "fr": "Envoyer code IR appris [[name]] ([[device]])"
-      }
+      ]
     },
     {
       "id": "wifi_ir_remote_send_raw",
@@ -249,11 +229,7 @@
             "fr": "Format"
           }
         }
-      ],
-      "titleFormatted": {
-        "en": "Send raw / pasted IR code [[code]] [[format]] ([[device]])",
-        "fr": "Envoyer code IR brut / collé [[code]] [[format]] ([[device]])"
-      }
+      ]
     }
   ]
 }
