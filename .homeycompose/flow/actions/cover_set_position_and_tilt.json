@@ -1,0 +1,56 @@
+{
+  "id": "cover_set_position_and_tilt",
+  "title": {
+    "en": "Set cover position and tilt",
+    "fr": "Positionner et orienter le volet",
+    "nl": "Positie en kanteling instellen",
+    "de": "Position und Neigung einstellen"
+  },
+  "hint": {
+    "en": "One step for blinds with tilt (like a TaHoma scene). Uses a single command when the device supports it, otherwise moves to the position, waits until it arrives, then tilts. Commands from many covers are paced to avoid flooding the network.",
+    "fr": "Une seule étape pour les stores orientables (comme une scène TaHoma). Envoie une commande unique si l'appareil le permet, sinon va à la position, attend l'arrivée puis oriente. Les commandes de plusieurs volets sont espacées pour ne pas saturer le réseau."
+  },
+  "args": [
+    {
+      "type": "device",
+      "name": "cover",
+      "filter": "capabilities=windowcoverings_tilt_set",
+      "title": {
+        "en": "Cover",
+        "fr": "Volet"
+      }
+    },
+    {
+      "type": "range",
+      "name": "position",
+      "min": 0,
+      "max": 1,
+      "step": 0.01,
+      "label": "%",
+      "title": {
+        "en": "Position",
+        "fr": "Position"
+      },
+      "labelMultiplier": 100,
+      "labelDecimals": 0
+    },
+    {
+      "type": "range",
+      "name": "tilt",
+      "min": 0,
+      "max": 1,
+      "step": 0.01,
+      "label": "%",
+      "title": {
+        "en": "Tilt",
+        "fr": "Orientation"
+      },
+      "labelMultiplier": 100,
+      "labelDecimals": 0
+    }
+  ],
+  "titleFormatted": {
+    "en": "Move [[cover]] to [[position]] and tilt [[tilt]]",
+    "fr": "Placer [[cover]] à [[position]] et orienter à [[tilt]]"
+  }
+}
