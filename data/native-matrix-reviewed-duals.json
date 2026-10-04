@@ -1,0 +1,148 @@
+{
+ "note": "Reviewed exact-pair exceptions to the shrink-only native-matrix baseline (user decision 2026-10-04). The old driver keeps the couple (never remove). Each entry: couple (mfr|pid), the exact driver set, reason, source, date. Any other new duplicate still fails scripts/gates/native-matrix-gate.js.",
+ "entries": [
+  {
+   "couple": "_TZ3008_reatplte|TS011F",
+   "drivers": [
+    "button_wireless_4",
+    "plug_energy_monitor"
+   ],
+   "reason": "Metering plug misfiled in a wireless-button driver; exact placement added, old couple kept (never remove).",
+   "source": "zigbee-herdsman-converters src/devices/tuya.ts TS011F_plug_1",
+   "date": "2026-10-04",
+   "reviewed_by": "user decision 2026-10-04 (executor-flowport research)"
+  },
+  {
+   "couple": "_TZE200_rgeapp2c|TS0601",
+   "drivers": [
+    "curtain_motor",
+    "panel_switch_cover_tuya"
+   ],
+   "reason": "2 switches + 2 shutters panel; new exact-pair driver panel_switch_cover_tuya, curtain_motor keeps the couple.",
+   "source": "zigbee-herdsman-converters src/devices/tuya.ts _TZE200_rgeapp2c (Semicom)",
+   "date": "2026-10-04",
+   "reviewed_by": "user decision 2026-10-04 (executor-flowport research)"
+  },
+  {
+   "couple": "_TZE204_6fk3gewc|TS0601",
+   "drivers": [
+    "climate_sensor",
+    "wall_switch_1gang_1way"
+   ],
+   "reason": "Weten PCI-E PC power card (DP1 on/off), not a climate sensor.",
+   "source": "zigbee-herdsman-converters src/devices/weten.ts PCI E",
+   "date": "2026-10-04",
+   "reviewed_by": "user decision 2026-10-04 (executor-flowport research)"
+  },
+  {
+   "couple": "_TZE284_6fk3gewc|TS0601",
+   "drivers": [
+    "climate_sensor",
+    "wall_switch_1gang_1way"
+   ],
+   "reason": "Weten PCI-E PC power card (DP1 on/off), not a climate sensor.",
+   "source": "zigbee-herdsman-converters src/devices/weten.ts PCI E",
+   "date": "2026-10-04",
+   "reviewed_by": "user decision 2026-10-04 (executor-flowport research)"
+  },
+  {
+   "couple": "_TZE204_loejka0i|TS0601",
+   "drivers": [
+    "energy_meter_3phase",
+    "valve_irrigation"
+   ],
+   "reason": "Nous D4Z 3P+N energy meter misfiled in valve_irrigation; D4Z DP profile in energy_meter_3phase.",
+   "source": "zigbee-herdsman-converters src/devices/nous.ts D4Z",
+   "date": "2026-10-04",
+   "reviewed_by": "user decision 2026-10-04 (executor-flowport research)"
+  },
+  {
+   "couple": "_TZE284_loejka0i|TS0601",
+   "drivers": [
+    "energy_meter_3phase",
+    "valve_irrigation"
+   ],
+   "reason": "Nous D4Z 3P+N energy meter misfiled in valve_irrigation; D4Z DP profile in energy_meter_3phase.",
+   "source": "zigbee-herdsman-converters src/devices/nous.ts D4Z",
+   "date": "2026-10-04",
+   "reviewed_by": "user decision 2026-10-04 (executor-flowport research)"
+  },
+  {
+   "couple": "_TZE204_mrffaamu|TS0601",
+   "drivers": [
+    "climate_sensor",
+    "smart_breaker"
+   ],
+   "reason": "Tongou TOQCB2-80-2P breaker; smart_breaker TOQCB2-80 profile (DP1 energy, DP16 switch, phase struct).",
+   "source": "zigbee-herdsman-converters src/devices/tuya.ts TOQCB2-80 whiteLabel",
+   "date": "2026-10-04",
+   "reviewed_by": "user decision 2026-10-04 (executor-flowport research)"
+  },
+  {
+   "couple": "_TZE284_mrffaamu|TS0601",
+   "drivers": [
+    "climate_sensor",
+    "smart_breaker"
+   ],
+   "reason": "Tongou TOQCB2-80-2P breaker; smart_breaker TOQCB2-80 profile.",
+   "source": "zigbee-herdsman-converters src/devices/tuya.ts TOQCB2-80 whiteLabel",
+   "date": "2026-10-04",
+   "reviewed_by": "user decision 2026-10-04 (executor-flowport research)"
+  },
+  {
+   "couple": "_TZE284_9xstqowh|TS0601",
+   "drivers": [
+    "climate_sensor",
+    "smart_breaker"
+   ],
+   "reason": "Tongou TOQCB2-80 breaker; smart_breaker TOQCB2-80 profile.",
+   "source": "zigbee-herdsman-converters src/devices/tuya.ts TOQCB2-80",
+   "date": "2026-10-04",
+   "reviewed_by": "user decision 2026-10-04 (executor-flowport research)"
+  },
+  {
+   "couple": "_TZE284_xpq2rzhq|TS0601",
+   "drivers": [
+    "climate_sensor",
+    "presence_sensor_radar"
+   ],
+   "reason": "Moes ZSS-QY-HP presence sensor; siblings _TZE200/_TZE204_xpq2rzhq already in presence_sensor_radar.",
+   "source": "zigbee-herdsman-converters src/devices/tuya.ts TS0601_smart_human_presence_sensor_1",
+   "date": "2026-10-04",
+   "reviewed_by": "user decision 2026-10-04 (executor-flowport research)"
+  },
+  {
+   "couple": "_TZ3000_9ni6xxld|TS011F",
+   "drivers": [
+    "gas_sensor_switch",
+    "plug_energy_monitor"
+   ],
+   "reason": "Metering plug misfiled in gas_sensor_switch; exact placement added, old couple kept.",
+   "source": "zigbee-herdsman-converters src/devices/tuya.ts TS011F_plug_3",
+   "date": "2026-10-04",
+   "reviewed_by": "user decision 2026-10-04 (executor-flowport research)"
+  },
+  {
+   "couple": "_TZ3000_yi0n4xfd|TS011F",
+   "drivers": [
+    "smartPlug_DinRail",
+    "switch_1gang"
+   ],
+   "reason": "DIN rail switch with metering and thresholds; 5 ZHC siblings already in smartPlug_DinRail.",
+   "source": "zigbee-herdsman-converters src/devices/tuya.ts TS011F_with_threshold",
+   "date": "2026-10-04",
+   "reviewed_by": "user decision 2026-10-04 (executor-flowport research)"
+  },
+  {
+   "couple": "_TZ3000_46vasa5h|TS011F",
+   "drivers": [
+    "double_power_point_2",
+    "switch_1gang"
+   ],
+   "reason": "2 gang wall outlet (endpoints l1/l2); double_power_point_2 drives both sockets.",
+   "source": "zigbee-herdsman-converters src/devices/tuya.ts TS011F_2_gang_wall",
+   "date": "2026-10-04",
+   "reviewed_by": "user decision 2026-10-04 (executor-flowport research)"
+  }
+ ]
+}

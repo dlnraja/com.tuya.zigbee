@@ -7,6 +7,7 @@
   },
   "class": "other",
   "capabilities": [
+    "onoff",
     "onoff.valve_1",
     "onoff.valve_2",
     "measure_battery",
@@ -128,6 +129,14 @@
     "measure_battery": {
       "getable": true,
       "preventInsights": false
+    },
+    "onoff": {
+      "title": {
+        "en": "Both valves",
+        "fr": "Les deux vannes",
+        "nl": "Beide kranen",
+        "de": "Beide Ventile"
+      }
     }
   },
   "flow": {

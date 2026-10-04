@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 'use strict';
-// R16: malformed / synthetic manufacturerNames (OCR digit padding such as `_TZE2841000000_xxx`,
-// `_TZE28C1000000_xxx`, placeholders like `_TZE200_xxxxx`) can never match a real device and are
+// R16: malformed / synthetic manufacturerNames (OCR digit padding with the wrong shape,
+// placeholders like `_TZE200_xxxxx`) can never match a real device and are
 // never ADDED. Legacy entries that existing forum-routing tests still lock are listed in
 // tools/ci/malformed-mfr-baseline.json (shrink-only); any other malformed name fails.
 const fs = require('fs');
@@ -13,8 +13,20 @@ const PATTERNS = [
   /^_tze200_abc123$/i,
 ];
 
+// User decision 2026-10-04: the long Tuya format is real (zigbee-herdsman-converters lists it, e.g.
+// _TZE28C1000000_68utemio, _TZE2841000000_6ycgarab). Only the exact shape is accepted: one of the two
+// verified prefixes followed by exactly 8 [a-z0-9]. Wrong zero counts (_TZE28C100000_), other padded
+// prefixes, wrong suffix length and placeholders stay rejected.
+const VERIFIED_LONG = /^_(TZE28C1000000|TZE2841000000)_[a-z0-9]{8}$/i;
+
+function isVerifiedLongTuyaName(m) {
+  return typeof m === 'string' && VERIFIED_LONG.test(m);
+}
+
 function isMalformedMfr(m) {
-  return typeof m === 'string' && PATTERNS.some((re) => re.test(m));
+  if (typeof m !== 'string') {return false;}
+  if (isVerifiedLongTuyaName(m)) {return false;}
+  return PATTERNS.some((re) => re.test(m));
 }
 
 function loadBaseline(root) {
@@ -43,7 +55,7 @@ function scan(root, { ignoreBaseline = false } = {}) {
   return hits;
 }
 
-module.exports = { isMalformedMfr, scan, loadBaseline };
+module.exports = { isMalformedMfr, isVerifiedLongTuyaName, scan, loadBaseline };
 
 if (require.main === module) {
   const hits = scan(path.join(__dirname, '..', '..'));

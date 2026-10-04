@@ -51,9 +51,32 @@ if (process.argv.includes('--write-baseline')) {
 const base = fs.existsSync(BASE) ? JSON.parse(fs.readFileSync(BASE, 'utf8')) : { mandatory: [], dual: [] };
 const bm = new Set(base.mandatory), bd = new Set(base.dual);
 const newM = cur.mandatory.filter((x) => !bm.has(x));
-const newD = cur.dual.filter((x) => !bd.has(x));
-const gone = base.mandatory.length + base.dual.length - (cur.mandatory.length - newM.length) - (cur.dual.length - newD.length);
-console.log(`[native-matrix-gate] mandatory non-native=${cur.mandatory.length} (baseline ${bm.size}), dual couples=${cur.dual.length} (baseline ${bd.size}), resolved since baseline=${gone}`);
+// Reviewed exceptions (user decision 2026-10-04): exact-pair placements where the old driver keeps the
+// couple (never remove). Each entry needs couple, drivers, reason, source and date; it only covers that
+// exact driver set, so spreading the couple to a further driver fails again.
+const ALLOW = path.join(ROOT, 'data', 'native-matrix-reviewed-duals.json');
+const reviewed = new Map();
+const reviewedMfr = new Set();
+if (fs.existsSync(ALLOW)) {
+  for (const e of JSON.parse(fs.readFileSync(ALLOW, 'utf8')).entries || []) {
+    const ok = e && e.couple && Array.isArray(e.drivers) && e.reason && e.source && e.date;
+    if (!ok) { console.error(`[native-matrix-gate] invalid reviewed entry: ${JSON.stringify(e)}`); process.exit(1); }
+    reviewed.set(`${String(e.couple).toLowerCase()}=>${[...e.drivers].sort().join(',')}`, e);
+    // Homey matches manufacturerName and productId independently, so a driver with many productIds
+    // produces extra mfr|pid combinations for the same manufacturer. They are covered only for the same
+    // manufacturer and the exact same driver set as the reviewed couple.
+    reviewedMfr.add(`${String(e.couple).toLowerCase().split('|')[0]}=>${[...e.drivers].sort().join(',')}`);
+  }
+}
+function isReviewed(x) {
+  if (reviewed.has(x)) { return true; }
+  const [k, drv] = x.split('=>');
+  return reviewedMfr.has(`${k.split('|')[0]}=>${drv}`);
+}
+const newD = cur.dual.filter((x) => !bd.has(x) && !isReviewed(x));
+const reviewedHits = cur.dual.filter((x) => !bd.has(x) && isReviewed(x)).length;
+const gone = base.mandatory.length + base.dual.length - (cur.mandatory.length - newM.length) - (cur.dual.length - newD.length - reviewedHits);
+console.log(`[native-matrix-gate] mandatory non-native=${cur.mandatory.length} (baseline ${bm.size}), dual couples=${cur.dual.length} (baseline ${bd.size}), resolved since baseline=${gone}, reviewed exceptions in use=${reviewedHits}`);
 if (newM.length || newD.length) {
   for (const x of newM) console.error(`NEW mandatory non-native cluster: ${x}`);
   for (const x of newD) console.error(`NEW dual couple: ${x}`);

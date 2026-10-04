@@ -36,6 +36,29 @@ class EnergyMeter3PhaseDevice extends UnifiedPlugBase {
       121: _dropPonAlt,
       ...rest
     } = base;
+    // #108: Nous D4Z (_TZE200/_TZE204/_TZE284_loejka0i) numbers its DPs differently from the
+    // ATMS/dikb3dp6 family below (phase A voltage on 102, not 103). Layout from
+    // zigbee-herdsman-converters nous.ts (Koen Kanters and contributors); own mapping.
+    const mfr = String(this.getSetting?.('zb_manufacturer_name') || '').toLowerCase();
+    if (mfr.endsWith('_loejka0i')) {
+      return {
+        ...rest,
+        1: { capability: 'meter_power', divisor: 100 },
+        2: { capability: 'meter_power.exported', divisor: 100 },
+        15: { capability: null, internal: 'power_factor' },
+        101: { capability: null, internal: 'ac_frequency', divisor: 100 },
+        102: { capability: 'measure_voltage', divisor: 10 },
+        103: { capability: 'measure_current', divisor: 1000 },
+        104: { capability: 'measure_power.phase1', divisor: 1 },
+        105: { capability: null, internal: 'voltage_b', divisor: 10 },
+        106: { capability: null, internal: 'current_b', divisor: 1000 },
+        107: { capability: 'measure_power.phase2', divisor: 1 },
+        108: { capability: null, internal: 'voltage_c', divisor: 10 },
+        109: { capability: null, internal: 'current_c', divisor: 1000 },
+        110: { capability: 'measure_power.phase3', divisor: 1 },
+        111: { capability: 'measure_power', divisor: 1 },
+      };
+    }
     return {
       ...rest,
       // Forward active energy (kWh)
