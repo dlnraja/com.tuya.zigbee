@@ -89,7 +89,7 @@
  },
  "master_queue": {
   "note": "Single master checklist of ALL user requests since the start. Daily resumption reads this FIRST. Tick (verified) only after verification.",
-  "updated": "2026-10-04T01:13:32.497Z",
+  "updated": "2026-10-04T01:15:48.898Z",
   "items": [
    {
     "id": 1,
@@ -328,8 +328,8 @@
    {
     "id": 40,
     "item": "PCr2-3 5 couples in two drivers (gjnozsaz, j1v25l17, ntcy3xu1, n9ctkb6j, dcnsggvz)",
-    "status": "pending",
-    "evidence": "user priority 3"
+    "status": "in-progress",
+    "evidence": "master: removed duplicates (rules doc DUAL_COUPLES_PCR2_2026-10-04); stable port pending"
    },
    {
     "id": 41,
