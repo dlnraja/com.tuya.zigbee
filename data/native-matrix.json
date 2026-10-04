@@ -10,7 +10,7 @@
   "https://github.com/athombv/node-homey-zigbeedriver",
   "https://apps.developer.homey.app/wireless/zigbee"
  ],
- "interviewsScanned": 19,
+ "interviewsScanned": 122,
  "clusters": {
   "0x0000": {
    "id": 0,
@@ -18,8 +18,8 @@
    "native": true,
    "source": "zigbee-clusters",
    "capabilities": [],
-   "interviews": 19,
-   "drivers": 369
+   "interviews": 122,
+   "drivers": 381
   },
   "0x0001": {
    "id": 1,
@@ -30,8 +30,8 @@
     "alarm_battery",
     "measure_battery"
    ],
-   "interviews": 10,
-   "drivers": 84
+   "interviews": 45,
+   "drivers": 87
   },
   "0x0002": {
    "id": 2,
@@ -50,8 +50,8 @@
    "native": true,
    "source": "zigbee-clusters",
    "capabilities": [],
-   "interviews": 7,
-   "drivers": 118
+   "interviews": 66,
+   "drivers": 125
   },
   "0x0004": {
    "id": 4,
@@ -59,8 +59,8 @@
    "native": true,
    "source": "zigbee-clusters",
    "capabilities": [],
-   "interviews": 8,
-   "drivers": 152
+   "interviews": 85,
+   "drivers": 161
   },
   "0x0005": {
    "id": 5,
@@ -68,8 +68,8 @@
    "native": true,
    "source": "zigbee-clusters",
    "capabilities": [],
-   "interviews": 8,
-   "drivers": 149
+   "interviews": 81,
+   "drivers": 158
   },
   "0x0006": {
    "id": 6,
@@ -79,8 +79,8 @@
    "capabilities": [
     "onoff"
    ],
-   "interviews": 5,
-   "drivers": 181
+   "interviews": 53,
+   "drivers": 186
   },
   "0x0007": {
    "id": 7,
@@ -88,7 +88,7 @@
    "native": true,
    "source": "zigbee-clusters",
    "capabilities": [],
-   "interviews": 0,
+   "interviews": 1,
    "drivers": 1
   },
   "0x0008": {
@@ -99,8 +99,8 @@
    "capabilities": [
     "dim"
    ],
-   "interviews": 0,
-   "drivers": 51
+   "interviews": 11,
+   "drivers": 55
   },
   "0x0009": {
    "id": 9,
@@ -117,7 +117,7 @@
    "native": true,
    "source": "zigbee-clusters",
    "capabilities": [],
-   "interviews": 8,
+   "interviews": 93,
    "drivers": 2
   },
   "0x000C": {
@@ -213,7 +213,7 @@
    "native": true,
    "source": "zigbee-clusters",
    "capabilities": [],
-   "interviews": 8,
+   "interviews": 102,
    "drivers": 1
   },
   "0x001A": {
@@ -231,8 +231,17 @@
    "native": true,
    "source": "zigbee-clusters",
    "capabilities": [],
-   "interviews": 0,
-   "drivers": 2
+   "interviews": 2,
+   "drivers": 4
+  },
+  "0x0021": {
+   "id": 33,
+   "name": "Green Power proxy (ZCL standard; not in zigbee-clusters 2.6.0)",
+   "native": false,
+   "source": "observed",
+   "capabilities": [],
+   "interviews": 32,
+   "drivers": 0
   },
   "0x0100": {
    "id": 256,
@@ -262,7 +271,7 @@
     "windowcoverings_state",
     "windowcoverings_tilt_set"
    ],
-   "interviews": 0,
+   "interviews": 3,
    "drivers": 9
   },
   "0x0200": {
@@ -303,8 +312,8 @@
     "light_saturation",
     "light_temperature"
    ],
-   "interviews": 0,
-   "drivers": 31
+   "interviews": 4,
+   "drivers": 34
   },
   "0x0301": {
    "id": 769,
@@ -323,7 +332,7 @@
    "capabilities": [
     "measure_luminance"
    ],
-   "interviews": 4,
+   "interviews": 6,
    "drivers": 14
   },
   "0x0401": {
@@ -343,8 +352,8 @@
    "capabilities": [
     "measure_temperature"
    ],
-   "interviews": 3,
-   "drivers": 16
+   "interviews": 10,
+   "drivers": 18
   },
   "0x0403": {
    "id": 1027,
@@ -376,8 +385,8 @@
    "capabilities": [
     "measure_humidity"
    ],
-   "interviews": 3,
-   "drivers": 13
+   "interviews": 10,
+   "drivers": 15
   },
   "0x0406": {
    "id": 1030,
@@ -397,8 +406,8 @@
    "native": true,
    "source": "zigbee-clusters",
    "capabilities": [],
-   "interviews": 6,
-   "drivers": 37
+   "interviews": 25,
+   "drivers": 38
   },
   "0x0501": {
    "id": 1281,
@@ -406,7 +415,7 @@
    "native": true,
    "source": "zigbee-clusters",
    "capabilities": [],
-   "interviews": 1,
+   "interviews": 3,
    "drivers": 5
   },
   "0x0502": {
@@ -415,7 +424,7 @@
    "native": true,
    "source": "zigbee-clusters",
    "capabilities": [],
-   "interviews": 0,
+   "interviews": 1,
    "drivers": 1
   },
   "0x0702": {
@@ -426,7 +435,7 @@
    "capabilities": [
     "meter_power"
    ],
-   "interviews": 2,
+   "interviews": 14,
    "drivers": 19
   },
   "0x0B04": {
@@ -439,7 +448,7 @@
     "measure_power",
     "measure_voltage"
    ],
-   "interviews": 2,
+   "interviews": 14,
    "drivers": 19
   },
   "0x0B05": {
@@ -448,7 +457,7 @@
    "native": true,
    "source": "zigbee-clusters",
    "capabilities": [],
-   "interviews": 0,
+   "interviews": 5,
    "drivers": 0
   },
   "0x1000": {
@@ -457,8 +466,17 @@
    "native": true,
    "source": "zigbee-clusters",
    "capabilities": [],
-   "interviews": 0,
+   "interviews": 13,
    "drivers": 13
+  },
+  "0x1888": {
+   "id": 6280,
+   "name": "unknown (seen on Zbeacon TS0001)",
+   "native": false,
+   "source": "observed",
+   "capabilities": [],
+   "interviews": 1,
+   "drivers": 0
   },
   "0x4000": {
    "id": 16384,
@@ -466,7 +484,7 @@
    "native": false,
    "source": "observed",
    "capabilities": [],
-   "interviews": 0,
+   "interviews": 2,
    "drivers": 1
   },
   "0xE000": {
@@ -475,7 +493,7 @@
    "native": false,
    "source": "tuya",
    "capabilities": [],
-   "interviews": 2,
+   "interviews": 30,
    "drivers": 29
   },
   "0xE001": {
@@ -484,7 +502,7 @@
    "native": false,
    "source": "tuya",
    "capabilities": [],
-   "interviews": 0,
+   "interviews": 27,
    "drivers": 14
   },
   "0xE002": {
@@ -493,7 +511,7 @@
    "native": false,
    "source": "tuya",
    "capabilities": [],
-   "interviews": 0,
+   "interviews": 2,
    "drivers": 3
   },
   "0xE004": {
@@ -502,7 +520,7 @@
    "native": false,
    "source": "observed",
    "capabilities": [],
-   "interviews": 0,
+   "interviews": 1,
    "drivers": 1
   },
   "0xED00": {
@@ -511,7 +529,7 @@
    "native": false,
    "source": "observed",
    "capabilities": [],
-   "interviews": 4,
+   "interviews": 21,
    "drivers": 3
   },
   "0xEE00": {
@@ -529,7 +547,7 @@
    "native": false,
    "source": "tuya",
    "capabilities": [],
-   "interviews": 11,
+   "interviews": 51,
    "drivers": 169
   },
   "0xEF01": {
@@ -541,14 +559,50 @@
    "interviews": 0,
    "drivers": 0
   },
+  "0xFC00": {
+   "id": 64512,
+   "name": "Philips/Signify manufacturer-specific (Hue buttons: RWL022, RDM001)",
+   "native": false,
+   "source": "observed",
+   "capabilities": [],
+   "interviews": 2,
+   "drivers": 0
+  },
+  "0xFC01": {
+   "id": 64513,
+   "name": "manufacturer-specific (seen on Zbeacon TS0505B)",
+   "native": false,
+   "source": "observed",
+   "capabilities": [],
+   "interviews": 1,
+   "drivers": 0
+  },
+  "0xFC03": {
+   "id": 64515,
+   "name": "manufacturer-specific (seen on Zbeacon TS0505B)",
+   "native": false,
+   "source": "observed",
+   "capabilities": [],
+   "interviews": 1,
+   "drivers": 0
+  },
   "0xFC11": {
    "id": 64529,
    "name": "manufacturer-specific",
    "native": false,
    "source": "observed",
    "capabilities": [],
-   "interviews": 0,
+   "interviews": 1,
    "drivers": 1
+  },
+  "0xFC57": {
+   "id": 64599,
+   "name": "SONOFF manufacturer-specific (MINI-ZBRBS)",
+   "native": false,
+   "source": "observed",
+   "capabilities": [],
+   "interviews": 1,
+   "drivers": 0
   }
  }
 }

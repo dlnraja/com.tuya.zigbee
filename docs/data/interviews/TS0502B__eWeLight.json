@@ -1,0 +1,36 @@
+{
+  "manufacturerName": "eWeLight",
+  "productId": "TS0502B",
+  "source": "pc-harvest-r2 (normalized interview facts; origins: Homey forum, GitHub issues, user diagnostics)",
+  "interviewsMerged": 1,
+  "powerSource": null,
+  "firmware": null,
+  "endpoints": {
+    "1": {
+      "inputClusters": [
+        0,
+        3,
+        4,
+        5,
+        6,
+        8,
+        768,
+        2821,
+        4096
+      ],
+      "outputClusters": []
+    }
+  },
+  "inputClusters": [
+    0,
+    3,
+    4,
+    5,
+    6,
+    8,
+    768,
+    2821,
+    4096
+  ],
+  "outputClusters": []
+}
