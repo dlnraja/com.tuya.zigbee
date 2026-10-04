@@ -23,7 +23,9 @@
     "batteries": [
       "AAA",
       "AAA"
-    ]
+    ],
+    "meterPowerImportedCapability": "meter_power",
+    "meterPowerExportedCapability": "meter_power.exported"
   },
   "zigbee": {
     "manufacturerName": [
