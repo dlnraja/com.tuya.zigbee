@@ -2121,5 +2121,8 @@
   "5.12.358": {
     "en": "Fixes: colour/CCT lights load again and keep colour temperature in range; smart plugs read power-on state, indicator and child lock independently; repeated unknown Tuya datapoints no longer flood the log.",
     "fr": "Corrections : les ampoules couleur/CCT se chargent à nouveau et gardent une température de couleur valide ; les prises lisent état au démarrage, voyant et verrouillage séparément ; les datapoints Tuya inconnus répétés n’inondent plus le journal."
+  },
+  "5.12.360": {
+    "en": "Device compatibility and reliability improvements."
   }
 }
