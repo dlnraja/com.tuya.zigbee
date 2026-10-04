@@ -107,7 +107,24 @@ describe('buffer helpers', () => {
     }
   });
 
+  it('convertBufferToNumber: 4-byte value is signed, bitmap/unsigned never wraps', () => {
+    assert.strictEqual(convertBufferToNumber(Buffer.from([0xff, 0xff, 0xff, 0xce])), -50);
+    assert.strictEqual(convertBufferToNumber(Buffer.from([0x80, 0, 0, 0]), { signed: false }), 2147483648);
+    assert.strictEqual(convertBufferToNumber(Buffer.from([0xff, 0xff])), 65535);
+  });
+
   it('DATA_TYPES match the Z2M/Tuya wire format', () => {
     assert.deepStrictEqual(DATA_TYPES, { raw: 0, bool: 1, number: 2, string: 3, enum: 4, bitmap: 5 });
+  });
+});
+
+describe('counterSafeRaw (energy counters never negative)', () => {
+  const { counterSafeRaw } = require('../lib/tuya/TuyaUnsignedValue');
+  it('restores uint32 counters >= 2^31 only for meter_* capabilities', () => {
+    const assert = require('assert');
+    assert.strictEqual(counterSafeRaw('meter_power', -1), 4294967295);
+    assert.strictEqual(counterSafeRaw('meter_power', 1234), 1234);
+    assert.strictEqual(counterSafeRaw('measure_temperature', -5), -5);
+    assert.strictEqual(counterSafeRaw('measure_power', -20), -20);
   });
 });
