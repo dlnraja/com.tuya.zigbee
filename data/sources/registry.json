@@ -272,11 +272,12 @@
     },
     {
       "id": "homey-news",
-      "type": "page",
+      "type": "news-index",
       "url": "https://homey.app/en-us/news/",
       "cadence": "weekly",
       "kind": "news",
-      "credit": "Athom B.V."
+      "credit": "Athom B.V. (homey.app news)",
+      "note": "Athom X/Twitter account not included: X requires login/paid API, not free to scrape."
     },
     {
       "id": "tuya-zigbee-docs",
