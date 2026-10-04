@@ -257,8 +257,8 @@ describe('forum routing regressions', () => {
     assert.match(read('drivers/boiler_switch_energy/device.js'), /this\._initializing = true[\s\S]+this\._initialized = true[\s\S]+finally/);
 
     assertDriverHasProductId('motion_sensor', 'SNZB-03');
-    assert.strictEqual(CompoundFingerprintDB.lookup('eWeLink', 'SNZB-03')?.driver, 'motion_sensor');
-    assert.strictEqual(RuntimeFingerprintDB.getDriverId('eWeLink', 'SNZB-03'), 'motion_sensor');
+    assert.strictEqual(CompoundFingerprintDB.lookup('eWeLink', 'SNZB-03')?.driver, 'sensor_ias_zonetype_ewelink');
+    assert.strictEqual(RuntimeFingerprintDB.getDriverId('eWeLink', 'SNZB-03'), 'sensor_ias_zonetype_ewelink');
   });
 
   it('uses the ZCL illuminance conversion formula consistently', () => {
