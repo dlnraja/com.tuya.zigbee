@@ -89,15 +89,15 @@ class PowerClampMeterDevice extends TuyaZigbeeDevice {
     if (emCluster) {
       this.log('[EM] Electrical Measurement cluster available');
 
-      emCluster.on('attr.activePower', (value) => {
+      this._trackOn(emCluster, 'attr.activePower', (value) => {
         this.safeSetCapabilityValue('measure_power', safeMultiply(value, 10)).catch(this._boundError || ((e) => { try { this.error(e); } catch (_) {} }));
       });
 
-      emCluster.on('attr.rmsVoltage', (value) => {
+      this._trackOn(emCluster, 'attr.rmsVoltage', (value) => {
         this.safeSetCapabilityValue('measure_voltage', safeMultiply(value, 10)).catch(this._boundError || ((e) => { try { this.error(e); } catch (_) {} }));
       });
 
-      emCluster.on('attr.rmsCurrent', (value) => {
+      this._trackOn(emCluster, 'attr.rmsCurrent', (value) => {
         this.safeSetCapabilityValue('measure_current', safeMultiply(safeDivide(value, 1000), this._ctRatio)).catch(this._boundError || ((e) => { try { this.error(e); } catch (_) {} }));
       });
     }
@@ -160,15 +160,15 @@ class PowerClampMeterDevice extends TuyaZigbeeDevice {
       return { dp, value };
     };
 
-    tuyaCluster.on('response', (r) => {
+    this._trackOn(tuyaCluster, 'response', (r) => {
       const { dp, value } = parseValue(r);
       this._handleDP(dp, value);
       });
-    tuyaCluster.on('reporting', (r) => {
+    this._trackOn(tuyaCluster, 'reporting', (r) => {
       const { dp, value } = parseValue(r);
       this._handleDP(dp, value);
       });
-    tuyaCluster.on('datapoint', (dp, value) => this._handleDP(dp, value));
+    this._trackOn(tuyaCluster, 'datapoint', (dp, value) => this._handleDP(dp, value));
   }
 
   /**
@@ -358,6 +358,11 @@ class PowerClampMeterDevice extends TuyaZigbeeDevice {
       break;
 
     case 23: // Energy produced / exported (kWh ÷ 100)
+      // #105: a clamp that reports produced energy gains the export meter (additive); the shared
+      // safe setter then declares it to Homey Energy (lib/energy/ExportEnergyConfig).
+      if (!this.hasCapability('meter_power.exported') && this.hasCapability('meter_power')) {
+        this.addCapability('meter_power.exported').catch(() => {});
+      }
       if (this.hasCapability('meter_power.exported')) {
         this.safeSetCapabilityValue('meter_power.exported', safeDivide(value, 100)).catch(this._boundError || ((e) => { try { this.error(e); } catch (_) {} }));
       }
@@ -443,8 +448,18 @@ class PowerClampMeterDevice extends TuyaZigbeeDevice {
   }
 
 
+  // R21: cluster listeners are tracked and removed on delete (no leak across re-pair).
+  _trackOn(cluster, event, fn) {
+    cluster.on(event, fn);
+    (this._clusterListeners = this._clusterListeners || []).push([cluster, event, fn]);
+  }
+
   async onDeleted() {
     this._destroyed = true;
+    for (const [cluster, event, fn] of this._clusterListeners || []) {
+      try { cluster.removeListener(event, fn); } catch (_) { /* cluster already gone */ }
+    }
+    this._clusterListeners = [];
     await super.onDeleted();
     this.log('Device deleted, cleaning up');
   }
