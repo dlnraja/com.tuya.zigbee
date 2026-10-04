@@ -1261,6 +1261,18 @@
       "pid": "RC-EF-3.0",
       "driverId": "button_emergency_sos",
       "note": "PCr2-1 2026-10-04 ZHC heiman.ts HM1RC-2-E — keep through publish compaction"
+    },
+    {
+      "mfr": "_TZE204_8fffc3kb",
+      "pid": "TS0601",
+      "driverId": "led_controller_spi_tuya",
+      "note": "#124 2026-10-04 Gledopto GL-SPI-206P (ZHC gledopto/tuya) DP61 frame — keep through publish compaction"
+    },
+    {
+      "mfr": "_TZE284_gt5al3bl",
+      "pid": "TS0601",
+      "driverId": "led_controller_spi_tuya",
+      "note": "#124 2026-10-04 Gledopto GL-SPI-206P (ZHC gledopto/tuya) DP61 frame — keep through publish compaction"
     }
   ]
 }
