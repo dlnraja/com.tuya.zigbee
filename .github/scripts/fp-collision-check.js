@@ -126,6 +126,8 @@ function loadBaseline(file) {
 function isCoveredByBaseline(baseline, collision) {
   const id = collisionId(collision);
   if (baseline.has(id)) return true;
+  // Reviewed exact-pair exception (data/native-matrix-reviewed-duals.json): never strip, never fail.
+  if (require('../../tools/ci/lib/reviewed-duals').isReviewedCollision(collision.key, collision.drivers)) return true;
   const currentDrivers = new Set(normalizeDrivers(collision.drivers));
   const suffix = ' -> ';
   for (const entry of baseline) {
