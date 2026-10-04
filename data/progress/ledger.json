@@ -1,6 +1,6 @@
 {
  "version": 1,
- "updated": "2026-10-04T01:13:32.533Z",
+ "updated": "2026-10-04T01:15:48.857Z",
  "checkpoints": {
   "resume": "data/leads/resume-checkpoint.json",
   "deepRead": "data/leads/deep-read-checkpoint.json",
@@ -971,21 +971,30 @@
    ],
    "kind": "tuya"
   },
+  "conflict:_tz3000_gjnozsaz|TS011F": {
+   "status": "done",
+   "date": "2026-10-04",
+   "note": "docs/rules/DUAL_COUPLES_PCR2_2026-10-04.md"
+  },
   "conflict:_tz3000_gjnozsaz|ts011f": {
-   "status": "pending",
+   "status": "done",
    "drivers": [
     "button_wireless_plug",
     "smartplug"
    ],
-   "kind": "tuya"
+   "kind": "tuya",
+   "date": "2026-10-04",
+   "note": "mfr now in one driver: docs/rules/DUAL_COUPLES_PCR2_2026-10-04.md"
   },
   "conflict:_tz3000_gjnozsaz|ts0121": {
-   "status": "pending",
+   "status": "done",
    "drivers": [
     "button_wireless_plug",
     "smartplug"
    ],
-   "kind": "tuya"
+   "kind": "tuya",
+   "date": "2026-10-04",
+   "note": "mfr now in one driver: docs/rules/DUAL_COUPLES_PCR2_2026-10-04.md"
   },
   "conflict:_tz3000_hlijwsai|e11-g13": {
    "status": "pending",
@@ -1227,29 +1236,40 @@
    ],
    "kind": "tuya"
   },
+  "conflict:_tz3000_j1v25l17|TS011F": {
+   "status": "done",
+   "date": "2026-10-04",
+   "note": "docs/rules/DUAL_COUPLES_PCR2_2026-10-04.md"
+  },
   "conflict:_tz3000_j1v25l17|ts011f": {
-   "status": "pending",
+   "status": "done",
    "drivers": [
     "plug_energy_monitor",
     "smartplug"
    ],
-   "kind": "tuya"
+   "kind": "tuya",
+   "date": "2026-10-04",
+   "note": "mfr now in one driver: docs/rules/DUAL_COUPLES_PCR2_2026-10-04.md"
   },
   "conflict:_tz3000_j1v25l17|ts0121": {
-   "status": "pending",
+   "status": "done",
    "drivers": [
     "plug_energy_monitor",
     "smartplug"
    ],
-   "kind": "tuya"
+   "kind": "tuya",
+   "date": "2026-10-04",
+   "note": "mfr now in one driver: docs/rules/DUAL_COUPLES_PCR2_2026-10-04.md"
   },
   "conflict:_tz3000_j1v25l17|tso121": {
-   "status": "pending",
+   "status": "done",
    "drivers": [
     "plug_energy_monitor",
     "smartplug"
    ],
-   "kind": "tuya"
+   "kind": "tuya",
+   "date": "2026-10-04",
+   "note": "mfr now in one driver: docs/rules/DUAL_COUPLES_PCR2_2026-10-04.md"
   },
   "conflict:_tz3000_j2w1dw29|ts0001": {
    "status": "pending",
@@ -3347,117 +3367,150 @@
    ],
    "kind": "tuya"
   },
+  "conflict:_tze200_ntcy3xu1|TS0601": {
+   "status": "done",
+   "date": "2026-10-04",
+   "note": "docs/rules/DUAL_COUPLES_PCR2_2026-10-04.md"
+  },
   "conflict:_tze200_ntcy3xu1|gs361a-h04": {
-   "status": "pending",
+   "status": "done",
    "drivers": [
     "smoke_detector_advanced",
     "smoke_sensor2"
    ],
-   "kind": "tuya"
+   "kind": "tuya",
+   "date": "2026-10-04",
+   "note": "mfr now in one driver: docs/rules/DUAL_COUPLES_PCR2_2026-10-04.md"
   },
   "conflict:_tze200_ntcy3xu1|hs1sa": {
-   "status": "pending",
+   "status": "done",
    "drivers": [
     "smoke_detector_advanced",
     "smoke_sensor2"
    ],
-   "kind": "tuya"
+   "kind": "tuya",
+   "date": "2026-10-04",
+   "note": "mfr now in one driver: docs/rules/DUAL_COUPLES_PCR2_2026-10-04.md"
   },
   "conflict:_tze200_ntcy3xu1|hs3sa": {
-   "status": "pending",
+   "status": "done",
    "drivers": [
     "smoke_detector_advanced",
     "smoke_sensor2"
    ],
-   "kind": "tuya"
+   "kind": "tuya",
+   "date": "2026-10-04",
+   "note": "mfr now in one driver: docs/rules/DUAL_COUPLES_PCR2_2026-10-04.md"
   },
   "conflict:_tze200_ntcy3xu1|jtyj-gd-01lm/bw": {
-   "status": "pending",
+   "status": "done",
    "drivers": [
     "smoke_detector_advanced",
     "smoke_sensor2"
    ],
-   "kind": "tuya"
+   "kind": "tuya",
+   "date": "2026-10-04",
+   "note": "mfr now in one driver: docs/rules/DUAL_COUPLES_PCR2_2026-10-04.md"
   },
   "conflict:_tze200_ntcy3xu1|lumi.sensor_smoke": {
-   "status": "pending",
+   "status": "done",
    "drivers": [
     "smoke_detector_advanced",
     "smoke_sensor2"
    ],
-   "kind": "tuya"
+   "kind": "tuya",
+   "date": "2026-10-04",
+   "note": "mfr now in one driver: docs/rules/DUAL_COUPLES_PCR2_2026-10-04.md"
   },
   "conflict:_tze200_ntcy3xu1|nas-sd02b0": {
-   "status": "pending",
+   "status": "done",
    "drivers": [
     "smoke_detector_advanced",
     "smoke_sensor2"
    ],
-   "kind": "tuya"
+   "kind": "tuya",
+   "date": "2026-10-04",
+   "note": "mfr now in one driver: docs/rules/DUAL_COUPLES_PCR2_2026-10-04.md"
   },
   "conflict:_tze200_ntcy3xu1|pg-s11z": {
-   "status": "pending",
+   "status": "done",
    "drivers": [
     "smoke_detector_advanced",
     "smoke_sensor2"
    ],
-   "kind": "tuya"
+   "kind": "tuya",
+   "date": "2026-10-04",
+   "note": "mfr now in one driver: docs/rules/DUAL_COUPLES_PCR2_2026-10-04.md"
   },
   "conflict:_tze200_ntcy3xu1|sa12izl": {
-   "status": "pending",
+   "status": "done",
    "drivers": [
     "smoke_detector_advanced",
     "smoke_sensor2"
    ],
-   "kind": "tuya"
+   "kind": "tuya",
+   "date": "2026-10-04",
+   "note": "mfr now in one driver: docs/rules/DUAL_COUPLES_PCR2_2026-10-04.md"
   },
   "conflict:_tze200_ntcy3xu1|sd8sc_00.00.03.12tc": {
-   "status": "pending",
+   "status": "done",
    "drivers": [
     "smoke_detector_advanced",
     "smoke_sensor2"
    ],
-   "kind": "tuya"
+   "kind": "tuya",
+   "date": "2026-10-04",
+   "note": "mfr now in one driver: docs/rules/DUAL_COUPLES_PCR2_2026-10-04.md"
   },
   "conflict:_tze200_ntcy3xu1|smszb-120": {
-   "status": "pending",
+   "status": "done",
    "drivers": [
     "smoke_detector_advanced",
     "smoke_sensor2"
    ],
-   "kind": "tuya"
+   "kind": "tuya",
+   "date": "2026-10-04",
+   "note": "mfr now in one driver: docs/rules/DUAL_COUPLES_PCR2_2026-10-04.md"
   },
   "conflict:_tze200_ntcy3xu1|sssqs01lm": {
-   "status": "pending",
+   "status": "done",
    "drivers": [
     "smoke_detector_advanced",
     "smoke_sensor2"
    ],
-   "kind": "tuya"
+   "kind": "tuya",
+   "date": "2026-10-04",
+   "note": "mfr now in one driver: docs/rules/DUAL_COUPLES_PCR2_2026-10-04.md"
   },
   "conflict:_tze200_ntcy3xu1|ts0205": {
-   "status": "pending",
+   "status": "done",
    "drivers": [
     "smoke_detector_advanced",
     "smoke_sensor2"
    ],
-   "kind": "tuya"
+   "kind": "tuya",
+   "date": "2026-10-04",
+   "note": "mfr now in one driver: docs/rules/DUAL_COUPLES_PCR2_2026-10-04.md"
   },
   "conflict:_tze200_ntcy3xu1|ts0601": {
-   "status": "pending",
+   "status": "done",
    "drivers": [
     "smoke_detector_advanced",
     "smoke_sensor2"
    ],
-   "kind": "tuya"
+   "kind": "tuya",
+   "date": "2026-10-04",
+   "note": "mfr now in one driver: docs/rules/DUAL_COUPLES_PCR2_2026-10-04.md"
   },
   "conflict:_tze200_ntcy3xu1|yg400a": {
-   "status": "pending",
+   "status": "done",
    "drivers": [
     "smoke_detector_advanced",
     "smoke_sensor2"
    ],
-   "kind": "tuya"
+   "kind": "tuya",
+   "date": "2026-10-04",
+   "note": "mfr now in one driver: docs/rules/DUAL_COUPLES_PCR2_2026-10-04.md"
   },
   "conflict:_tze200_p3dbf6qs|ts0601": {
    "status": "pending",
@@ -3715,141 +3768,185 @@
    ],
    "kind": "tuya"
   },
+  "conflict:_tze204_dcnsggvz|TS0601": {
+   "status": "done",
+   "date": "2026-10-04",
+   "note": "docs/rules/DUAL_COUPLES_PCR2_2026-10-04.md"
+  },
   "conflict:_tze204_dcnsggvz|ts0001": {
-   "status": "pending",
+   "status": "done",
    "drivers": [
     "dimmer_1_gang_tuya",
     "dimmer_wall_1gang"
    ],
-   "kind": "tuya"
+   "kind": "tuya",
+   "date": "2026-10-04",
+   "note": "mfr now in one driver: docs/rules/DUAL_COUPLES_PCR2_2026-10-04.md"
   },
   "conflict:_tze204_dcnsggvz|ts0002": {
-   "status": "pending",
+   "status": "done",
    "drivers": [
     "dimmer_1_gang_tuya",
     "dimmer_wall_1gang"
    ],
-   "kind": "tuya"
+   "kind": "tuya",
+   "date": "2026-10-04",
+   "note": "mfr now in one driver: docs/rules/DUAL_COUPLES_PCR2_2026-10-04.md"
   },
   "conflict:_tze204_dcnsggvz|ts0003": {
-   "status": "pending",
+   "status": "done",
    "drivers": [
     "dimmer_1_gang_tuya",
     "dimmer_wall_1gang"
    ],
-   "kind": "tuya"
+   "kind": "tuya",
+   "date": "2026-10-04",
+   "note": "mfr now in one driver: docs/rules/DUAL_COUPLES_PCR2_2026-10-04.md"
   },
   "conflict:_tze204_dcnsggvz|ts0012": {
-   "status": "pending",
+   "status": "done",
    "drivers": [
     "dimmer_1_gang_tuya",
     "dimmer_wall_1gang"
    ],
-   "kind": "tuya"
+   "kind": "tuya",
+   "date": "2026-10-04",
+   "note": "mfr now in one driver: docs/rules/DUAL_COUPLES_PCR2_2026-10-04.md"
   },
   "conflict:_tze204_dcnsggvz|ts0013": {
-   "status": "pending",
+   "status": "done",
    "drivers": [
     "dimmer_1_gang_tuya",
     "dimmer_wall_1gang"
    ],
-   "kind": "tuya"
+   "kind": "tuya",
+   "date": "2026-10-04",
+   "note": "mfr now in one driver: docs/rules/DUAL_COUPLES_PCR2_2026-10-04.md"
   },
   "conflict:_tze204_dcnsggvz|ts0052": {
-   "status": "pending",
+   "status": "done",
    "drivers": [
     "dimmer_1_gang_tuya",
     "dimmer_wall_1gang"
    ],
-   "kind": "tuya"
+   "kind": "tuya",
+   "date": "2026-10-04",
+   "note": "mfr now in one driver: docs/rules/DUAL_COUPLES_PCR2_2026-10-04.md"
   },
   "conflict:_tze204_dcnsggvz|ts0505b": {
-   "status": "pending",
+   "status": "done",
    "drivers": [
     "dimmer_1_gang_tuya",
     "dimmer_wall_1gang"
    ],
-   "kind": "tuya"
+   "kind": "tuya",
+   "date": "2026-10-04",
+   "note": "mfr now in one driver: docs/rules/DUAL_COUPLES_PCR2_2026-10-04.md"
   },
   "conflict:_tze204_dcnsggvz|ts0601": {
-   "status": "pending",
+   "status": "done",
    "drivers": [
     "dimmer_1_gang_tuya",
     "dimmer_wall_1gang"
    ],
-   "kind": "tuya"
+   "kind": "tuya",
+   "date": "2026-10-04",
+   "note": "mfr now in one driver: docs/rules/DUAL_COUPLES_PCR2_2026-10-04.md"
   },
   "conflict:_tze204_dcnsggvz|ts0726": {
-   "status": "pending",
+   "status": "done",
    "drivers": [
     "dimmer_1_gang_tuya",
     "dimmer_wall_1gang"
    ],
-   "kind": "tuya"
+   "kind": "tuya",
+   "date": "2026-10-04",
+   "note": "mfr now in one driver: docs/rules/DUAL_COUPLES_PCR2_2026-10-04.md"
   },
   "conflict:_tze204_dcnsggvz|ts110e": {
-   "status": "pending",
+   "status": "done",
    "drivers": [
     "dimmer_1_gang_tuya",
     "dimmer_wall_1gang"
    ],
-   "kind": "tuya"
+   "kind": "tuya",
+   "date": "2026-10-04",
+   "note": "mfr now in one driver: docs/rules/DUAL_COUPLES_PCR2_2026-10-04.md"
   },
   "conflict:_tze204_dcnsggvz|ts110f": {
-   "status": "pending",
+   "status": "done",
    "drivers": [
     "dimmer_1_gang_tuya",
     "dimmer_wall_1gang"
    ],
-   "kind": "tuya"
+   "kind": "tuya",
+   "date": "2026-10-04",
+   "note": "mfr now in one driver: docs/rules/DUAL_COUPLES_PCR2_2026-10-04.md"
+  },
+  "conflict:_tze204_n9ctkb6j|TS0601": {
+   "status": "done",
+   "date": "2026-10-04",
+   "note": "docs/rules/DUAL_COUPLES_PCR2_2026-10-04.md"
   },
   "conflict:_tze204_n9ctkb6j|ts0001": {
-   "status": "pending",
+   "status": "done",
    "drivers": [
     "dimmer_1_gang_tuya",
     "switch_1gang"
    ],
-   "kind": "tuya"
+   "kind": "tuya",
+   "date": "2026-10-04",
+   "note": "mfr now in one driver: docs/rules/DUAL_COUPLES_PCR2_2026-10-04.md"
   },
   "conflict:_tze204_n9ctkb6j|ts0003": {
-   "status": "pending",
+   "status": "done",
    "drivers": [
     "dimmer_1_gang_tuya",
     "switch_1gang"
    ],
-   "kind": "tuya"
+   "kind": "tuya",
+   "date": "2026-10-04",
+   "note": "mfr now in one driver: docs/rules/DUAL_COUPLES_PCR2_2026-10-04.md"
   },
   "conflict:_tze204_n9ctkb6j|ts0012": {
-   "status": "pending",
+   "status": "done",
    "drivers": [
     "dimmer_1_gang_tuya",
     "switch_1gang"
    ],
-   "kind": "tuya"
+   "kind": "tuya",
+   "date": "2026-10-04",
+   "note": "mfr now in one driver: docs/rules/DUAL_COUPLES_PCR2_2026-10-04.md"
   },
   "conflict:_tze204_n9ctkb6j|ts0601": {
-   "status": "pending",
+   "status": "done",
    "drivers": [
     "dimmer_1_gang_tuya",
     "switch_1gang"
    ],
-   "kind": "tuya"
+   "kind": "tuya",
+   "date": "2026-10-04",
+   "note": "mfr now in one driver: docs/rules/DUAL_COUPLES_PCR2_2026-10-04.md"
   },
   "conflict:_tze204_n9ctkb6j|ts0726": {
-   "status": "pending",
+   "status": "done",
    "drivers": [
     "dimmer_1_gang_tuya",
     "switch_1gang"
    ],
-   "kind": "tuya"
+   "kind": "tuya",
+   "date": "2026-10-04",
+   "note": "mfr now in one driver: docs/rules/DUAL_COUPLES_PCR2_2026-10-04.md"
   },
   "conflict:_tze204_n9ctkb6j|ts110e": {
-   "status": "pending",
+   "status": "done",
    "drivers": [
     "dimmer_1_gang_tuya",
     "switch_1gang"
    ],
-   "kind": "tuya"
+   "kind": "tuya",
+   "date": "2026-10-04",
+   "note": "mfr now in one driver: docs/rules/DUAL_COUPLES_PCR2_2026-10-04.md"
   },
   "conflict:_tze204_vrcfo4i0|ts0225": {
    "status": "pending",
@@ -4107,117 +4204,150 @@
    ],
    "kind": "tuya"
   },
+  "conflict:_tze284_ntcy3xu1|TS0601": {
+   "status": "done",
+   "date": "2026-10-04",
+   "note": "docs/rules/DUAL_COUPLES_PCR2_2026-10-04.md"
+  },
   "conflict:_tze284_ntcy3xu1|gs361a-h04": {
-   "status": "pending",
+   "status": "done",
    "drivers": [
     "smoke_detector_advanced",
     "smoke_sensor2"
    ],
-   "kind": "tuya"
+   "kind": "tuya",
+   "date": "2026-10-04",
+   "note": "mfr now in one driver: docs/rules/DUAL_COUPLES_PCR2_2026-10-04.md"
   },
   "conflict:_tze284_ntcy3xu1|hs1sa": {
-   "status": "pending",
+   "status": "done",
    "drivers": [
     "smoke_detector_advanced",
     "smoke_sensor2"
    ],
-   "kind": "tuya"
+   "kind": "tuya",
+   "date": "2026-10-04",
+   "note": "mfr now in one driver: docs/rules/DUAL_COUPLES_PCR2_2026-10-04.md"
   },
   "conflict:_tze284_ntcy3xu1|hs3sa": {
-   "status": "pending",
+   "status": "done",
    "drivers": [
     "smoke_detector_advanced",
     "smoke_sensor2"
    ],
-   "kind": "tuya"
+   "kind": "tuya",
+   "date": "2026-10-04",
+   "note": "mfr now in one driver: docs/rules/DUAL_COUPLES_PCR2_2026-10-04.md"
   },
   "conflict:_tze284_ntcy3xu1|jtyj-gd-01lm/bw": {
-   "status": "pending",
+   "status": "done",
    "drivers": [
     "smoke_detector_advanced",
     "smoke_sensor2"
    ],
-   "kind": "tuya"
+   "kind": "tuya",
+   "date": "2026-10-04",
+   "note": "mfr now in one driver: docs/rules/DUAL_COUPLES_PCR2_2026-10-04.md"
   },
   "conflict:_tze284_ntcy3xu1|lumi.sensor_smoke": {
-   "status": "pending",
+   "status": "done",
    "drivers": [
     "smoke_detector_advanced",
     "smoke_sensor2"
    ],
-   "kind": "tuya"
+   "kind": "tuya",
+   "date": "2026-10-04",
+   "note": "mfr now in one driver: docs/rules/DUAL_COUPLES_PCR2_2026-10-04.md"
   },
   "conflict:_tze284_ntcy3xu1|nas-sd02b0": {
-   "status": "pending",
+   "status": "done",
    "drivers": [
     "smoke_detector_advanced",
     "smoke_sensor2"
    ],
-   "kind": "tuya"
+   "kind": "tuya",
+   "date": "2026-10-04",
+   "note": "mfr now in one driver: docs/rules/DUAL_COUPLES_PCR2_2026-10-04.md"
   },
   "conflict:_tze284_ntcy3xu1|pg-s11z": {
-   "status": "pending",
+   "status": "done",
    "drivers": [
     "smoke_detector_advanced",
     "smoke_sensor2"
    ],
-   "kind": "tuya"
+   "kind": "tuya",
+   "date": "2026-10-04",
+   "note": "mfr now in one driver: docs/rules/DUAL_COUPLES_PCR2_2026-10-04.md"
   },
   "conflict:_tze284_ntcy3xu1|sa12izl": {
-   "status": "pending",
+   "status": "done",
    "drivers": [
     "smoke_detector_advanced",
     "smoke_sensor2"
    ],
-   "kind": "tuya"
+   "kind": "tuya",
+   "date": "2026-10-04",
+   "note": "mfr now in one driver: docs/rules/DUAL_COUPLES_PCR2_2026-10-04.md"
   },
   "conflict:_tze284_ntcy3xu1|sd8sc_00.00.03.12tc": {
-   "status": "pending",
+   "status": "done",
    "drivers": [
     "smoke_detector_advanced",
     "smoke_sensor2"
    ],
-   "kind": "tuya"
+   "kind": "tuya",
+   "date": "2026-10-04",
+   "note": "mfr now in one driver: docs/rules/DUAL_COUPLES_PCR2_2026-10-04.md"
   },
   "conflict:_tze284_ntcy3xu1|smszb-120": {
-   "status": "pending",
+   "status": "done",
    "drivers": [
     "smoke_detector_advanced",
     "smoke_sensor2"
    ],
-   "kind": "tuya"
+   "kind": "tuya",
+   "date": "2026-10-04",
+   "note": "mfr now in one driver: docs/rules/DUAL_COUPLES_PCR2_2026-10-04.md"
   },
   "conflict:_tze284_ntcy3xu1|sssqs01lm": {
-   "status": "pending",
+   "status": "done",
    "drivers": [
     "smoke_detector_advanced",
     "smoke_sensor2"
    ],
-   "kind": "tuya"
+   "kind": "tuya",
+   "date": "2026-10-04",
+   "note": "mfr now in one driver: docs/rules/DUAL_COUPLES_PCR2_2026-10-04.md"
   },
   "conflict:_tze284_ntcy3xu1|ts0205": {
-   "status": "pending",
+   "status": "done",
    "drivers": [
     "smoke_detector_advanced",
     "smoke_sensor2"
    ],
-   "kind": "tuya"
+   "kind": "tuya",
+   "date": "2026-10-04",
+   "note": "mfr now in one driver: docs/rules/DUAL_COUPLES_PCR2_2026-10-04.md"
   },
   "conflict:_tze284_ntcy3xu1|ts0601": {
-   "status": "pending",
+   "status": "done",
    "drivers": [
     "smoke_detector_advanced",
     "smoke_sensor2"
    ],
-   "kind": "tuya"
+   "kind": "tuya",
+   "date": "2026-10-04",
+   "note": "mfr now in one driver: docs/rules/DUAL_COUPLES_PCR2_2026-10-04.md"
   },
   "conflict:_tze284_ntcy3xu1|yg400a": {
-   "status": "pending",
+   "status": "done",
    "drivers": [
     "smoke_detector_advanced",
     "smoke_sensor2"
    ],
-   "kind": "tuya"
+   "kind": "tuya",
+   "date": "2026-10-04",
+   "note": "mfr now in one driver: docs/rules/DUAL_COUPLES_PCR2_2026-10-04.md"
   },
   "conflict:_tze284_ozf4e02o|ts0601": {
    "status": "pending",
