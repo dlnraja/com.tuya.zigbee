@@ -162,7 +162,15 @@
           "type": "number",
           "min": 0,
           "max": 1000,
-          "step": 10
+          "step": 10,
+          "title": {
+            "en": "Level",
+            "fr": "Niveau"
+          },
+          "placeholder": {
+            "en": "0–1000",
+            "fr": "0–1000"
+          }
         }
       ],
       "titleFormatted": {

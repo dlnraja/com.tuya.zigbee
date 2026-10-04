@@ -1,22 +1,29 @@
 {
   "id": "network_weak_signal_detected",
   "title": {
-    "en": "Weak signal detected"
+    "en": "Weak signal detected",
+    "fr": "Signal faible détecté"
   },
   "hint": {
-    "en": "Triggers when a device's signal quality drops below acceptable levels"
+    "en": "Triggers when a device's signal quality drops below acceptable levels",
+    "fr": "Se déclenche quand la qualité du signal d'un appareil passe sous un niveau acceptable"
   },
   "args": [
     {
       "name": "lqi_threshold",
       "type": "number",
       "title": {
-        "en": "LQI threshold"
+        "en": "LQI threshold",
+        "fr": "Seuil LQI"
       },
       "min": 0,
       "max": 255,
       "step": 10,
-      "value": 50
+      "value": 50,
+      "placeholder": {
+        "en": "0–255",
+        "fr": "0–255"
+      }
     }
   ],
   "tokens": [
@@ -24,14 +31,16 @@
       "name": "ieee_addr",
       "type": "string",
       "title": {
-        "en": "IEEE address"
+        "en": "IEEE address",
+        "fr": "Adresse IEEE"
       }
     },
     {
       "name": "model_id",
       "type": "string",
       "title": {
-        "en": "Model ID"
+        "en": "Model ID",
+        "fr": "ID du modèle"
       }
     },
     {
@@ -52,11 +61,13 @@
       "name": "device_type",
       "type": "string",
       "title": {
-        "en": "Device type"
+        "en": "Device type",
+        "fr": "Type d'appareil"
       }
     }
   ],
   "titleFormatted": {
-    "en": "Weak signal detected [[lqi_threshold]]"
+    "en": "Weak signal detected [[lqi_threshold]]",
+    "fr": "Signal faible détecté [[lqi_threshold]]"
   }
 }

@@ -1,46 +1,68 @@
 {
   "id": "tariff_set_rate",
   "title": {
-    "en": "Set tariff rate"
+    "en": "Set tariff rate",
+    "fr": "Régler le tarif"
   },
   "hint": {
-    "en": "Change the active energy tariff at runtime"
+    "en": "Change the active energy tariff at runtime",
+    "fr": "Changer le tarif d'énergie actif en cours d'exécution"
   },
   "args": [
     {
       "name": "preset",
       "type": "dropdown",
       "title": {
-        "en": "Tariff preset"
+        "en": "Tariff preset",
+        "fr": "Préréglage tarifaire"
       },
       "values": [
         {
           "id": "custom",
           "title": {
             "en": "Custom rate"
+          },
+          "label": {
+            "en": "Custom rate",
+            "fr": "Tarif personnalisé"
           }
         },
         {
           "id": "FLAT",
           "title": {
             "en": "Flat Rate"
+          },
+          "label": {
+            "en": "Flat Rate",
+            "fr": "Tarif unique"
           }
         },
         {
           "id": "TOU_DAY_NIGHT",
           "title": {
             "en": "Day/Night"
+          },
+          "label": {
+            "en": "Day/Night",
+            "fr": "Jour/Nuit"
           }
         },
         {
           "id": "TOU_PEAK_SHOULDER_OFFPEAK",
           "title": {
             "en": "Peak/Shoulder/Off-Peak"
+          },
+          "label": {
+            "en": "Peak/Shoulder/Off-Peak",
+            "fr": "Pointe/Intermédiaire/Creuses"
           }
         },
         {
           "id": "UK_ECONOMY_7",
           "title": {
+            "en": "UK Economy 7"
+          },
+          "label": {
             "en": "UK Economy 7"
           }
         }
@@ -50,45 +72,64 @@
       "name": "custom_rate_kwh",
       "type": "number",
       "title": {
-        "en": "Custom rate (per kWh)"
+        "en": "Custom rate (per kWh)",
+        "fr": "Tarif personnalisé (par kWh)"
       },
       "min": 0,
       "max": 5,
       "step": 0.01,
-      "value": 0.25
+      "value": 0.25,
+      "placeholder": {
+        "en": "0–5",
+        "fr": "0–5"
+      }
     },
     {
       "name": "daily_charge",
       "type": "number",
       "title": {
-        "en": "Daily fixed charge"
+        "en": "Daily fixed charge",
+        "fr": "Abonnement journalier"
       },
       "min": 0,
       "max": 10,
       "step": 0.01,
-      "value": 0
+      "value": 0,
+      "placeholder": {
+        "en": "0–10",
+        "fr": "0–10"
+      }
     },
     {
       "name": "tax_rate",
       "type": "number",
       "title": {
-        "en": "Tax rate (e.g. 0.20 for 20%)"
+        "en": "Tax rate (e.g. 0.20 for 20%)",
+        "fr": "Taux de taxe (ex. 0.20 pour 20 %)"
       },
       "min": 0,
       "max": 1,
       "step": 0.01,
-      "value": 0
+      "value": 0,
+      "placeholder": {
+        "en": "0–1",
+        "fr": "0–1"
+      }
     },
     {
       "name": "currency",
       "type": "dropdown",
       "title": {
-        "en": "Currency"
+        "en": "Currency",
+        "fr": "Devise"
       },
       "values": [
         {
           "id": "EUR",
           "title": {
+            "en": "EUR"
+          },
+          "label": {
             "en": "EUR"
           }
         },
@@ -96,11 +137,17 @@
           "id": "GBP",
           "title": {
             "en": "GBP"
+          },
+          "label": {
+            "en": "GBP"
           }
         },
         {
           "id": "USD",
           "title": {
+            "en": "USD"
+          },
+          "label": {
             "en": "USD"
           }
         }
@@ -108,6 +155,7 @@
     }
   ],
   "titleFormatted": {
-    "en": "Set tariff rate [[preset]] [[custom_rate_kwh]] [[daily_charge]] [[tax_rate]] [[currency]]"
+    "en": "Set tariff rate [[preset]] [[custom_rate_kwh]] [[daily_charge]] [[tax_rate]] [[currency]]",
+    "fr": "Régler le tarif [[preset]] [[custom_rate_kwh]] [[daily_charge]] [[tax_rate]] [[currency]]"
   }
 }

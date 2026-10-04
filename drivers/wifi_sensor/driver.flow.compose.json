@@ -3,39 +3,45 @@
     {
       "id": "wifi_sensor_temp_changed",
       "title": {
-        "en": "Temperature changed"
+        "en": "Temperature changed",
+        "fr": "Température modifiée"
       },
       "tokens": [
         {
           "name": "temperature",
           "type": "number",
           "title": {
-            "en": "Temperature"
+            "en": "Temperature",
+            "fr": "Température"
           }
         }
       ],
       "args": [],
       "titleFormatted": {
-        "en": "Temperature changed ({temperature})"
+        "en": "Temperature changed ({temperature})",
+        "fr": "Température modifiée ({temperature})"
       }
     },
     {
       "id": "wifi_sensor_hum_changed",
       "title": {
-        "en": "Humidity changed"
+        "en": "Humidity changed",
+        "fr": "Humidité modifiée"
       },
       "tokens": [
         {
           "name": "humidity",
           "type": "number",
           "title": {
-            "en": "Humidity"
+            "en": "Humidity",
+            "fr": "Humidité"
           }
         }
       ],
       "args": [],
       "titleFormatted": {
-        "en": "Humidity changed ({humidity})"
+        "en": "Humidity changed ({humidity})",
+        "fr": "Humidité modifiée ({humidity})"
       }
     },
     {

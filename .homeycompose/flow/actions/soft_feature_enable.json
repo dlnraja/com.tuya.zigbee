@@ -12,8 +12,19 @@
     {
       "type": "text",
       "name": "feature_id",
-      "title": { "en": "Feature id", "fr": "Id feature" },
-      "value": "path_light_hall"
+      "title": {
+        "en": "Feature id",
+        "fr": "Id feature"
+      },
+      "value": "path_light_hall",
+      "placeholder": {
+        "en": "Feature id",
+        "fr": "Id feature"
+      }
     }
-  ]
+  ],
+  "titleFormatted": {
+    "en": "Enable Soft Feature by id [[feature_id]]",
+    "fr": "Activer Soft Feature par id [[feature_id]]"
+  }
 }

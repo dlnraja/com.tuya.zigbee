@@ -93,14 +93,27 @@
         {
           "name": "brightness",
           "type": "number",
-          "title": { "en": "Brightness %", "fr": "Luminosité %", "nl": "Helderheid %", "de": "Helligkeit %" },
+          "title": {
+            "en": "Brightness %",
+            "fr": "Luminosité %",
+            "nl": "Helderheid %",
+            "de": "Helligkeit %"
+          },
           "example": 50
         },
         {
           "name": "speed",
           "type": "string",
-          "title": { "en": "Rotation speed", "fr": "Vitesse", "nl": "Snelheid", "de": "Geschwindigkeit" },
-          "example": { "en": "slow, normal or fast", "fr": "slow, normal ou fast" }
+          "title": {
+            "en": "Rotation speed",
+            "fr": "Vitesse",
+            "nl": "Snelheid",
+            "de": "Geschwindigkeit"
+          },
+          "example": {
+            "en": "slow, normal or fast",
+            "fr": "slow, normal ou fast"
+          }
         }
       ],
       "args": [],
@@ -124,14 +137,27 @@
         {
           "name": "brightness",
           "type": "number",
-          "title": { "en": "Brightness %", "fr": "Luminosité %", "nl": "Helderheid %", "de": "Helligkeit %" },
+          "title": {
+            "en": "Brightness %",
+            "fr": "Luminosité %",
+            "nl": "Helderheid %",
+            "de": "Helligkeit %"
+          },
           "example": 50
         },
         {
           "name": "speed",
           "type": "string",
-          "title": { "en": "Rotation speed", "fr": "Vitesse", "nl": "Snelheid", "de": "Geschwindigkeit" },
-          "example": { "en": "slow, normal or fast", "fr": "slow, normal ou fast" }
+          "title": {
+            "en": "Rotation speed",
+            "fr": "Vitesse",
+            "nl": "Snelheid",
+            "de": "Geschwindigkeit"
+          },
+          "example": {
+            "en": "slow, normal or fast",
+            "fr": "slow, normal ou fast"
+          }
         }
       ],
       "args": [],
@@ -154,14 +180,23 @@
         {
           "name": "brightness",
           "type": "number",
-          "title": { "en": "Brightness %", "fr": "Luminosité %" },
+          "title": {
+            "en": "Brightness %",
+            "fr": "Luminosité %"
+          },
           "example": 50
         },
         {
           "name": "speed",
           "type": "string",
-          "title": { "en": "Rotation speed", "fr": "Vitesse" },
-          "example": { "en": "slow, normal or fast", "fr": "slow, normal ou fast" }
+          "title": {
+            "en": "Rotation speed",
+            "fr": "Vitesse"
+          },
+          "example": {
+            "en": "slow, normal or fast",
+            "fr": "slow, normal ou fast"
+          }
         }
       ],
       "args": [],
@@ -184,14 +219,23 @@
         {
           "name": "brightness",
           "type": "number",
-          "title": { "en": "Brightness %", "fr": "Luminosité %" },
+          "title": {
+            "en": "Brightness %",
+            "fr": "Luminosité %"
+          },
           "example": 50
         },
         {
           "name": "speed",
           "type": "string",
-          "title": { "en": "Rotation speed", "fr": "Vitesse" },
-          "example": { "en": "slow, normal or fast", "fr": "slow, normal ou fast" }
+          "title": {
+            "en": "Rotation speed",
+            "fr": "Vitesse"
+          },
+          "example": {
+            "en": "slow, normal or fast",
+            "fr": "slow, normal ou fast"
+          }
         }
       ],
       "args": [],
@@ -293,7 +337,16 @@
           "min": 0,
           "max": 100,
           "step": 1,
-          "title": { "en": "Level", "fr": "Niveau", "nl": "Niveau", "de": "Stufe" }
+          "title": {
+            "en": "Level",
+            "fr": "Niveau",
+            "nl": "Niveau",
+            "de": "Stufe"
+          },
+          "placeholder": {
+            "en": "0–100",
+            "fr": "0–100"
+          }
         }
       ],
       "titleFormatted": {
@@ -321,7 +374,11 @@
           "max": 100,
           "step": 1,
           "label": "%",
-          "labelDecimals": 0
+          "labelDecimals": 0,
+          "title": {
+            "en": "Brightness",
+            "fr": "Luminosité"
+          }
         }
       ],
       "titleFormatted": {

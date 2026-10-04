@@ -14,55 +14,88 @@
       "name": "dp",
       "type": "number",
       "title": {
-        "en": "DP Number"
+        "en": "DP Number",
+        "fr": "Numéro DP"
       },
       "min": 1,
-      "max": 255
+      "max": 255,
+      "placeholder": {
+        "en": "1–255",
+        "fr": "1–255"
+      }
     },
     {
       "name": "dp_type",
       "type": "dropdown",
       "title": {
-        "en": "Expected Type"
+        "en": "Expected Type",
+        "fr": "Type attendu"
       },
       "values": [
         {
           "id": "raw",
           "title": {
             "en": "Raw"
+          },
+          "label": {
+            "en": "Raw",
+            "fr": "Brut"
           }
         },
         {
           "id": "bool",
           "title": {
             "en": "Bool"
+          },
+          "label": {
+            "en": "Bool",
+            "fr": "Booléen"
           }
         },
         {
           "id": "value",
           "title": {
             "en": "Value"
+          },
+          "label": {
+            "en": "Value",
+            "fr": "Valeur"
           }
         },
         {
           "id": "string",
           "title": {
             "en": "String"
+          },
+          "label": {
+            "en": "String",
+            "fr": "Texte"
           }
         },
         {
           "id": "enum",
           "title": {
             "en": "Enum"
+          },
+          "label": {
+            "en": "Enum",
+            "fr": "Énumération"
           }
         },
         {
           "id": "bitmap",
           "title": {
             "en": "Bitmap"
+          },
+          "label": {
+            "en": "Bitmap"
           }
         }
       ]
     }
-  ]
+  ],
+  "titleFormatted": {
+    "en": "DP type is... [[dp]] [[dp_type]] ([[device]])",
+    "fr": "Type DP est... [[dp]] [[dp_type]] ([[device]])"
+  }
 }

@@ -12,7 +12,11 @@
     },
     {
       "name": "locked",
-      "type": "checkbox"
+      "type": "checkbox",
+      "title": {
+        "en": "Locked",
+        "fr": "Verrouillé"
+      }
     }
   ],
   "titleFormatted": {

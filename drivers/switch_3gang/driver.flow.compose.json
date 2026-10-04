@@ -201,7 +201,8 @@
     {
       "id": "switch_3gang_gang1_scene",
       "title": {
-        "en": "Gang 1 scene triggered"
+        "en": "Gang 1 scene triggered",
+        "fr": "Scène voie 1 déclenchée"
       },
       "tokens": [
         {
@@ -216,13 +217,15 @@
         }
       ],
       "titleFormatted": {
-        "en": "Gang 1 scene triggered ({action})"
+        "en": "Gang 1 scene triggered ({action})",
+        "fr": "Scène voie 1 déclenchée ({action})"
       }
     },
     {
       "id": "switch_3gang_gang2_scene",
       "title": {
-        "en": "Gang 2 scene triggered"
+        "en": "Gang 2 scene triggered",
+        "fr": "Scène voie 2 déclenchée"
       },
       "tokens": [
         {
@@ -237,13 +240,15 @@
         }
       ],
       "titleFormatted": {
-        "en": "Gang 2 scene triggered ({action})"
+        "en": "Gang 2 scene triggered ({action})",
+        "fr": "Scène voie 2 déclenchée ({action})"
       }
     },
     {
       "id": "switch_3gang_gang3_scene",
       "title": {
-        "en": "Gang 3 scene triggered"
+        "en": "Gang 3 scene triggered",
+        "fr": "Scène voie 3 déclenchée"
       },
       "tokens": [
         {
@@ -258,7 +263,8 @@
         }
       ],
       "titleFormatted": {
-        "en": "Gang 3 scene triggered ({action})"
+        "en": "Gang 3 scene triggered ({action})",
+        "fr": "Scène voie 3 déclenchée ({action})"
       }
     },
     {
@@ -521,11 +527,19 @@
               "title": {
                 "en": "Off",
                 "fr": "Éteint"
+              },
+              "label": {
+                "en": "Off",
+                "fr": "Éteint"
               }
             },
             {
               "id": "normal",
               "title": {
+                "en": "Normal",
+                "fr": "Normal"
+              },
+              "label": {
                 "en": "Normal",
                 "fr": "Normal"
               }
@@ -535,9 +549,17 @@
               "title": {
                 "en": "Inverted",
                 "fr": "Inversé"
+              },
+              "label": {
+                "en": "Inverted",
+                "fr": "Inversé"
               }
             }
-          ]
+          ],
+          "title": {
+            "en": "Mode",
+            "fr": "Mode"
+          }
         }
       ],
       "titleFormatted": {
@@ -561,21 +583,37 @@
               "id": "auto",
               "title": {
                 "en": "Auto (Normal + flows)"
+              },
+              "label": {
+                "en": "Auto (Normal + flows)",
+                "fr": "Auto (normal + flows)"
               }
             },
             {
               "id": "magic",
               "title": {
                 "en": "Magic (Scene only)"
+              },
+              "label": {
+                "en": "Magic (Scene only)",
+                "fr": "Magique (scène uniquement)"
               }
             },
             {
               "id": "both",
               "title": {
                 "en": "Both (Load + scene)"
+              },
+              "label": {
+                "en": "Both (Load + scene)",
+                "fr": "Les deux (charge + scène)"
               }
             }
-          ]
+          ],
+          "title": {
+            "en": "Mode",
+            "fr": "Mode"
+          }
         }
       ],
       "titleFormatted": {
@@ -601,6 +639,11 @@
               "title": {
                 "en": "Always Off",
                 "nl": "Altijd Uit"
+              },
+              "label": {
+                "en": "Always Off",
+                "nl": "Altijd Uit",
+                "fr": "Toujours éteint"
               }
             },
             {
@@ -608,6 +651,11 @@
               "title": {
                 "en": "Always On",
                 "nl": "Altijd Aan"
+              },
+              "label": {
+                "en": "Always On",
+                "nl": "Altijd Aan",
+                "fr": "Toujours allumé"
               }
             },
             {
@@ -615,9 +663,18 @@
               "title": {
                 "en": "Last State",
                 "nl": "Laatste status"
+              },
+              "label": {
+                "en": "Last State",
+                "nl": "Laatste status",
+                "fr": "Dernier état"
               }
             }
-          ]
+          ],
+          "title": {
+            "en": "Mode",
+            "fr": "Mode"
+          }
         }
       ],
       "titleFormatted": {

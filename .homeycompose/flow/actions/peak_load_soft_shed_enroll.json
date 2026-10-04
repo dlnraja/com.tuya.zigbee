@@ -9,29 +9,49 @@
       "type": "device",
       "name": "meter",
       "filter": "capabilities=measure_power",
-      "title": { "en": "Power meter", "fr": "Compteur puissance" }
+      "title": {
+        "en": "Power meter",
+        "fr": "Compteur puissance"
+      }
     },
     {
       "type": "device",
       "name": "light_a",
       "filter": "capabilities=dim",
-      "title": { "en": "Light A", "fr": "Lumière A" }
+      "title": {
+        "en": "Light A",
+        "fr": "Lumière A"
+      }
     },
     {
       "type": "device",
       "name": "light_b",
       "filter": "capabilities=dim",
-      "title": { "en": "Light B (optional)", "fr": "Lumière B (option)" },
+      "title": {
+        "en": "Light B (optional)",
+        "fr": "Lumière B (option)"
+      },
       "optional": true
     },
     {
       "type": "number",
       "name": "threshold_w",
-      "title": { "en": "Threshold (W)", "fr": "Seuil (W)" },
+      "title": {
+        "en": "Threshold (W)",
+        "fr": "Seuil (W)"
+      },
       "min": 200,
       "max": 15000,
       "step": 100,
-      "value": 2500
+      "value": 2500,
+      "placeholder": {
+        "en": "200–15000",
+        "fr": "200–15000"
+      }
     }
-  ]
+  ],
+  "titleFormatted": {
+    "en": "Peak Load Soft Shed — dim on high power [[threshold_w]] ([[meter]], [[light_a]], [[light_b]])",
+    "fr": "Peak Load Soft Shed — assombrir si puissance haute [[threshold_w]] ([[meter]], [[light_a]], [[light_b]])"
+  }
 }

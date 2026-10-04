@@ -253,6 +253,10 @@
           "title": {
             "en": "Lux",
             "fr": "Lux"
+          },
+          "placeholder": {
+            "en": "0–10000",
+            "fr": "0–10000"
           }
         }
       ],
@@ -277,6 +281,10 @@
           "title": {
             "en": "Lux",
             "fr": "Lux"
+          },
+          "placeholder": {
+            "en": "0–10000",
+            "fr": "0–10000"
           }
         }
       ],
@@ -301,6 +309,10 @@
           "title": {
             "en": "Temperature",
             "fr": "Température"
+          },
+          "placeholder": {
+            "en": "-20–50",
+            "fr": "-20–50"
           }
         }
       ],
@@ -343,6 +355,10 @@
           "title": {
             "en": "Sensitivity (0-9)",
             "fr": "Sensibilité (0-9)"
+          },
+          "placeholder": {
+            "en": "0–9",
+            "fr": "0–9"
           }
         }
       ],
@@ -367,6 +383,10 @@
           "title": {
             "en": "Min (m)",
             "fr": "Min (m)"
+          },
+          "placeholder": {
+            "en": "0–9.5",
+            "fr": "0–9.5"
           }
         },
         {
@@ -378,6 +398,10 @@
           "title": {
             "en": "Max (m)",
             "fr": "Max (m)"
+          },
+          "placeholder": {
+            "en": "0–9.5",
+            "fr": "0–9.5"
           }
         }
       ],
@@ -402,6 +426,10 @@
           "title": {
             "en": "Seconds",
             "fr": "Secondes"
+          },
+          "placeholder": {
+            "en": "0–1500",
+            "fr": "0–1500"
           }
         }
       ],
@@ -426,6 +454,10 @@
           "title": {
             "en": "Seconds",
             "fr": "Secondes"
+          },
+          "placeholder": {
+            "en": "0–10",
+            "fr": "0–10"
           }
         }
       ],

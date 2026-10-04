@@ -26,7 +26,11 @@
       "min": 1,
       "max": 3600,
       "step": 1,
-      "value": 30
+      "value": 30,
+      "placeholder": {
+        "en": "1–3600",
+        "fr": "1–3600"
+      }
     },
     {
       "name": "off_seconds",
@@ -38,7 +42,11 @@
       "min": 1,
       "max": 3600,
       "step": 1,
-      "value": 30
+      "value": 30,
+      "placeholder": {
+        "en": "1–3600",
+        "fr": "1–3600"
+      }
     },
     {
       "name": "cycles",
@@ -50,7 +58,15 @@
       "min": 1,
       "max": 100,
       "step": 1,
-      "value": 1
+      "value": 1,
+      "placeholder": {
+        "en": "1–100",
+        "fr": "1–100"
+      }
     }
-  ]
+  ],
+  "titleFormatted": {
+    "en": "Cycle device on/off [[on_seconds]] [[off_seconds]] [[cycles]] ([[device]])",
+    "fr": "Cycler l'appareil on/off [[on_seconds]] [[off_seconds]] [[cycles]] ([[device]])"
+  }
 }

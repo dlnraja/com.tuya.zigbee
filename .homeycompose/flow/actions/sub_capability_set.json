@@ -36,5 +36,9 @@
         "fr": "Marche/Arrêt"
       }
     }
-  ]
+  ],
+  "titleFormatted": {
+    "en": "Set sub-capability [[capability]] [[value]] ([[device]])",
+    "fr": "Définir sous-capacité [[capability]] [[value]] ([[device]])"
+  }
 }

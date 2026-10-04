@@ -3,21 +3,25 @@
     {
       "id": "wifi_door_lock_wifi_lock_locked",
       "title": {
-        "en": "Locked"
+        "en": "Locked",
+        "fr": "Verrouillé"
       },
       "args": [],
       "titleFormatted": {
-        "en": "Locked"
+        "en": "Locked",
+        "fr": "Verrouillé"
       }
     },
     {
       "id": "wifi_door_lock_wifi_lock_unlocked",
       "title": {
-        "en": "Unlocked"
+        "en": "Unlocked",
+        "fr": "Déverrouillé"
       },
       "args": [],
       "titleFormatted": {
-        "en": "Unlocked"
+        "en": "Unlocked",
+        "fr": "Déverrouillé"
       }
     }
   ],
@@ -25,11 +29,13 @@
     {
       "id": "wifi_door_lock_wifi_lock_is_locked",
       "title": {
-        "en": "Is locked"
+        "en": "Is locked",
+        "fr": "Est verrouillé"
       },
       "args": [],
       "titleFormatted": {
-        "en": "Is locked"
+        "en": "Is locked",
+        "fr": "Est verrouillé"
       }
     }
   ],

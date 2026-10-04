@@ -15,7 +15,8 @@
           "title": {
             "en": "Protocol",
             "nl": "Protocol",
-            "de": "Protokoll"
+            "de": "Protokoll",
+            "fr": "Protocole"
           }
         },
         {
@@ -24,7 +25,8 @@
           "title": {
             "en": "Frequency (Hz)",
             "nl": "Frequentie (Hz)",
-            "de": "Frequenz (Hz)"
+            "de": "Frequenz (Hz)",
+            "fr": "Fréquence (Hz)"
           }
         },
         {
@@ -33,7 +35,8 @@
           "title": {
             "en": "Duration (seconds)",
             "nl": "Duur (seconden)",
-            "de": "Dauer (Sekunden)"
+            "de": "Dauer (Sekunden)",
+            "fr": "Durée (secondes)"
           }
         }
       ],
@@ -54,7 +57,8 @@
           "title": {
             "en": "Learning State",
             "nl": "Leer Status",
-            "de": "Lern Status"
+            "de": "Lern Status",
+            "fr": "État d'apprentissage"
           }
         },
         {
@@ -63,7 +67,8 @@
           "title": {
             "en": "State Code",
             "nl": "Status Code",
-            "de": "Status Code"
+            "de": "Status Code",
+            "fr": "Code d'état"
           }
         }
       ],
@@ -84,7 +89,8 @@
           "title": {
             "en": "IR Code",
             "nl": "IR Code",
-            "de": "IR-Code"
+            "de": "IR-Code",
+            "fr": "Code IR"
           }
         }
       ],
@@ -105,7 +111,8 @@
           "title": {
             "en": "Code Name",
             "nl": "Code Naam",
-            "de": "Code Name"
+            "de": "Code Name",
+            "fr": "Nom du code"
           }
         },
         {
@@ -114,7 +121,8 @@
           "title": {
             "en": "Detected Protocol",
             "nl": "Gedetecteerd Protocol",
-            "de": "Erkanntes Protokoll"
+            "de": "Erkanntes Protokoll",
+            "fr": "Protocole détecté"
           }
         },
         {
@@ -123,7 +131,8 @@
           "title": {
             "en": "Carrier Frequency",
             "nl": "Draaggolf Frequentie",
-            "de": "Trägerfrequenz"
+            "de": "Trägerfrequenz",
+            "fr": "Fréquence porteuse"
           }
         },
         {
@@ -132,7 +141,8 @@
           "title": {
             "en": "Code Length",
             "nl": "Code Lengte",
-            "de": "Code Länge"
+            "de": "Code Länge",
+            "fr": "Longueur du code"
           }
         }
       ],
@@ -185,7 +195,8 @@
           "title": {
             "en": "Code Name",
             "nl": "Code Naam",
-            "de": "Code Name"
+            "de": "Code Name",
+            "fr": "Nom du code"
           },
           "placeholder": {
             "en": "power_on",
@@ -193,7 +204,11 @@
             "de": "power_on"
           }
         }
-      ]
+      ],
+      "titleFormatted": {
+        "en": "IR code exists [[code_name]]",
+        "fr": "IR code exists [[code_name]]"
+      }
     },
     {
       "id": "ir_blaster_protocol_detected",
@@ -210,7 +225,12 @@
           "title": {
             "en": "Code Name",
             "nl": "Code Naam",
-            "de": "Code Name"
+            "de": "Code Name",
+            "fr": "Nom du code"
+          },
+          "placeholder": {
+            "en": "Code Name",
+            "fr": "Nom du code"
           }
         },
         {
@@ -219,12 +239,18 @@
           "title": {
             "en": "Expected Protocol",
             "nl": "Verwacht Protocol",
-            "de": "Erwartetes Protokoll"
+            "de": "Erwartetes Protokoll",
+            "fr": "Protocole attendu"
           },
           "values": [
             {
               "id": "NEC",
               "title": {
+                "en": "NEC",
+                "nl": "NEC",
+                "de": "NEC"
+              },
+              "label": {
                 "en": "NEC",
                 "nl": "NEC",
                 "de": "NEC"
@@ -236,11 +262,21 @@
                 "en": "RC5",
                 "nl": "RC5",
                 "de": "RC5"
+              },
+              "label": {
+                "en": "RC5",
+                "nl": "RC5",
+                "de": "RC5"
               }
             },
             {
               "id": "RC6",
               "title": {
+                "en": "RC6",
+                "nl": "RC6",
+                "de": "RC6"
+              },
+              "label": {
                 "en": "RC6",
                 "nl": "RC6",
                 "de": "RC6"
@@ -252,11 +288,21 @@
                 "en": "Sony",
                 "nl": "Sony",
                 "de": "Sony"
+              },
+              "label": {
+                "en": "Sony",
+                "nl": "Sony",
+                "de": "Sony"
               }
             },
             {
               "id": "SAMSUNG",
               "title": {
+                "en": "Samsung",
+                "nl": "Samsung",
+                "de": "Samsung"
+              },
+              "label": {
                 "en": "Samsung",
                 "nl": "Samsung",
                 "de": "Samsung"
@@ -268,11 +314,20 @@
                 "en": "ProntoHex",
                 "nl": "ProntoHex",
                 "de": "ProntoHex"
+              },
+              "label": {
+                "en": "ProntoHex",
+                "nl": "ProntoHex",
+                "de": "ProntoHex"
               }
             }
           ]
         }
-      ]
+      ],
+      "titleFormatted": {
+        "en": "IR protocol detected [[code_name]] [[protocol]]",
+        "fr": "IR protocol detected [[code_name]] [[protocol]]"
+      }
     },
     {
       "id": "ir_blaster_is_on",
@@ -301,7 +356,8 @@
           "title": {
             "en": "Code Name",
             "nl": "Code Naam",
-            "de": "Code Name"
+            "de": "Code Name",
+            "fr": "Nom du code"
           },
           "placeholder": {
             "en": "power_on",
@@ -315,7 +371,8 @@
           "title": {
             "en": "Duration (seconds)",
             "nl": "Duur (seconden)",
-            "de": "Dauer (Sekunden)"
+            "de": "Dauer (Sekunden)",
+            "fr": "Durée (secondes)"
           },
           "min": 5,
           "max": 120,
@@ -332,7 +389,8 @@
           "title": {
             "en": "IR Protocol",
             "nl": "IR Protocol",
-            "de": "IR-Protokoll"
+            "de": "IR-Protokoll",
+            "fr": "Protocole IR"
           },
           "values": [
             {
@@ -341,11 +399,22 @@
                 "en": "Auto-detect",
                 "nl": "Auto-detectie",
                 "de": "Auto-Erkennung"
+              },
+              "label": {
+                "en": "Auto-detect",
+                "nl": "Auto-detectie",
+                "de": "Auto-Erkennung",
+                "fr": "Détection automatique"
               }
             },
             {
               "id": "NEC",
               "title": {
+                "en": "NEC",
+                "nl": "NEC",
+                "de": "NEC"
+              },
+              "label": {
                 "en": "NEC",
                 "nl": "NEC",
                 "de": "NEC"
@@ -357,11 +426,21 @@
                 "en": "RC5",
                 "nl": "RC5",
                 "de": "RC5"
+              },
+              "label": {
+                "en": "RC5",
+                "nl": "RC5",
+                "de": "RC5"
               }
             },
             {
               "id": "RC6",
               "title": {
+                "en": "RC6",
+                "nl": "RC6",
+                "de": "RC6"
+              },
+              "label": {
                 "en": "RC6",
                 "nl": "RC6",
                 "de": "RC6"
@@ -373,6 +452,11 @@
                 "en": "Sony",
                 "nl": "Sony",
                 "de": "Sony"
+              },
+              "label": {
+                "en": "Sony",
+                "nl": "Sony",
+                "de": "Sony"
               }
             },
             {
@@ -381,11 +465,21 @@
                 "en": "Samsung",
                 "nl": "Samsung",
                 "de": "Samsung"
+              },
+              "label": {
+                "en": "Samsung",
+                "nl": "Samsung",
+                "de": "Samsung"
               }
             },
             {
               "id": "PRONTOHEX",
               "title": {
+                "en": "ProntoHex",
+                "nl": "ProntoHex",
+                "de": "ProntoHex"
+              },
+              "label": {
                 "en": "ProntoHex",
                 "nl": "ProntoHex",
                 "de": "ProntoHex"
@@ -399,7 +493,8 @@
           "title": {
             "en": "Carrier Frequency (Hz)",
             "nl": "Draaggolf Frequentie (Hz)",
-            "de": "Trägerfrequenz (Hz)"
+            "de": "Trägerfrequenz (Hz)",
+            "fr": "Fréquence porteuse (Hz)"
           },
           "min": 30000,
           "max": 45000,
@@ -416,7 +511,8 @@
           "title": {
             "en": "Category",
             "nl": "Categorie",
-            "de": "Kategorie"
+            "de": "Kategorie",
+            "fr": "Catégorie"
           },
           "placeholder": {
             "en": "TV Remote",
@@ -424,7 +520,11 @@
             "de": "TV-Fernbedienung"
           }
         }
-      ]
+      ],
+      "titleFormatted": {
+        "en": "Learn IR Code [[code_name]] [[duration_seconds]] [[protocol]] [[frequency]] [[category]]",
+        "fr": "Learn IR Code [[code_name]] [[duration_seconds]] [[protocol]] [[frequency]] [[category]]"
+      }
     },
     {
       "id": "ir_blaster_send_code",
@@ -436,7 +536,8 @@
       },
       "hint": {
         "en": "Send a learned or raw IR code. Use the code name or paste a Base64 encoded IR code.",
-        "nl": "Verstuur een geleerde of raw IR code. Gebruik de codenaam of plak een Base64 gecodeerde IR code."
+        "nl": "Verstuur een geleerde of raw IR code. Gebruik de codenaam of plak een Base64 gecodeerde IR code.",
+        "fr": "Envoyer un code IR appris ou brut. Utilisez le nom du code ou collez un code IR encodé en Base64."
       },
       "args": [
         {
@@ -445,7 +546,8 @@
           "title": {
             "en": "IR Code or Name",
             "nl": "IR Code of Naam",
-            "de": "IR-Code oder Name"
+            "de": "IR-Code oder Name",
+            "fr": "Code IR ou nom"
           },
           "placeholder": {
             "en": "power_on or base64 code",
@@ -459,7 +561,8 @@
           "title": {
             "en": "Force Protocol (optional)",
             "nl": "Forceer Protocol (optioneel)",
-            "de": "Protokoll Erzwingen (optional)"
+            "de": "Protokoll Erzwingen (optional)",
+            "fr": "Forcer le protocole (optionnel)"
           },
           "values": [
             {
@@ -468,11 +571,22 @@
                 "en": "Auto (recommended)",
                 "nl": "Auto (aanbevolen)",
                 "de": "Auto (empfohlen)"
+              },
+              "label": {
+                "en": "Auto (recommended)",
+                "nl": "Auto (aanbevolen)",
+                "de": "Auto (empfohlen)",
+                "fr": "Auto (recommandé)"
               }
             },
             {
               "id": "NEC",
               "title": {
+                "en": "NEC",
+                "nl": "NEC",
+                "de": "NEC"
+              },
+              "label": {
                 "en": "NEC",
                 "nl": "NEC",
                 "de": "NEC"
@@ -484,11 +598,21 @@
                 "en": "RC5",
                 "nl": "RC5",
                 "de": "RC5"
+              },
+              "label": {
+                "en": "RC5",
+                "nl": "RC5",
+                "de": "RC5"
               }
             },
             {
               "id": "RC6",
               "title": {
+                "en": "RC6",
+                "nl": "RC6",
+                "de": "RC6"
+              },
+              "label": {
                 "en": "RC6",
                 "nl": "RC6",
                 "de": "RC6"
@@ -500,6 +624,11 @@
                 "en": "Sony",
                 "nl": "Sony",
                 "de": "Sony"
+              },
+              "label": {
+                "en": "Sony",
+                "nl": "Sony",
+                "de": "Sony"
               }
             },
             {
@@ -508,11 +637,21 @@
                 "en": "Samsung",
                 "nl": "Samsung",
                 "de": "Samsung"
+              },
+              "label": {
+                "en": "Samsung",
+                "nl": "Samsung",
+                "de": "Samsung"
               }
             },
             {
               "id": "PRONTOHEX",
               "title": {
+                "en": "ProntoHex",
+                "nl": "ProntoHex",
+                "de": "ProntoHex"
+              },
+              "label": {
                 "en": "ProntoHex",
                 "nl": "ProntoHex",
                 "de": "ProntoHex"
@@ -526,7 +665,8 @@
           "title": {
             "en": "Frequency Override (Hz)",
             "nl": "Frequentie Override (Hz)",
-            "de": "Frequenz Override (Hz)"
+            "de": "Frequenz Override (Hz)",
+            "fr": "Fréquence forcée (Hz)"
           },
           "min": 30000,
           "max": 45000,
@@ -543,7 +683,8 @@
           "title": {
             "en": "Repeat Count",
             "nl": "Aantal Herhalingen",
-            "de": "Wiederholungsanzahl"
+            "de": "Wiederholungsanzahl",
+            "fr": "Nombre de répétitions"
           },
           "min": 1,
           "max": 10,
@@ -554,7 +695,11 @@
             "de": "1"
           }
         }
-      ]
+      ],
+      "titleFormatted": {
+        "en": "Send IR Code [[ir_code]] [[protocol]] [[frequency]] [[repeat]]",
+        "fr": "Send IR Code [[ir_code]] [[protocol]] [[frequency]] [[repeat]]"
+      }
     },
     {
       "id": "ir_blaster_send_by_category",
@@ -566,7 +711,8 @@
       },
       "hint": {
         "en": "Send a stored IR code from a specific category (e.g., TV Remote, AC).",
-        "nl": "Verstuur een opgeslagen IR code uit een specifieke categorie (bijv. TV Afstandsbediening, Airco)."
+        "nl": "Verstuur een opgeslagen IR code uit een specifieke categorie (bijv. TV Afstandsbediening, Airco).",
+        "fr": "Envoyer un code IR enregistré d'une catégorie (ex. télécommande TV, clim)."
       },
       "args": [
         {
@@ -575,7 +721,8 @@
           "title": {
             "en": "Category",
             "nl": "Categorie",
-            "de": "Kategorie"
+            "de": "Kategorie",
+            "fr": "Catégorie"
           },
           "placeholder": {
             "en": "TV Remote",
@@ -589,7 +736,8 @@
           "title": {
             "en": "Code Name",
             "nl": "Code Naam",
-            "de": "Code Name"
+            "de": "Code Name",
+            "fr": "Nom du code"
           },
           "placeholder": {
             "en": "power_on",
@@ -597,7 +745,11 @@
             "de": "power_on"
           }
         }
-      ]
+      ],
+      "titleFormatted": {
+        "en": "Send IR Code by Category [[category]] [[code_name]]",
+        "fr": "Send IR Code by Category [[category]] [[code_name]]"
+      }
     },
     {
       "id": "ir_blaster_send_ac_command",
@@ -609,7 +761,8 @@
       },
       "hint": {
         "en": "Send AC command with mode, temperature and fan speed (SmartIR compatible)",
-        "nl": "Verstuur airco commando met modus, temperatuur en ventilator snelheid"
+        "nl": "Verstuur airco commando met modus, temperatuur en ventilator snelheid",
+        "fr": "Envoyer une commande de climatisation avec mode, température et vitesse de ventilation (compatible SmartIR)"
       },
       "args": [
         {
@@ -623,17 +776,28 @@
               "id": "cool",
               "title": {
                 "en": "Cool"
+              },
+              "label": {
+                "en": "Cool",
+                "fr": "Froid"
               }
             },
             {
               "id": "heat",
               "title": {
                 "en": "Heat"
+              },
+              "label": {
+                "en": "Heat",
+                "fr": "Chaud"
               }
             },
             {
               "id": "auto",
               "title": {
+                "en": "Auto"
+              },
+              "label": {
                 "en": "Auto"
               }
             },
@@ -641,18 +805,30 @@
               "id": "dry",
               "title": {
                 "en": "Dry"
+              },
+              "label": {
+                "en": "Dry",
+                "fr": "Déshumidification"
               }
             },
             {
               "id": "fan_only",
               "title": {
                 "en": "Fan Only"
+              },
+              "label": {
+                "en": "Fan Only",
+                "fr": "Ventilation seule"
               }
             },
             {
               "id": "off",
               "title": {
                 "en": "Off"
+              },
+              "label": {
+                "en": "Off",
+                "fr": "Éteint"
               }
             }
           ]
@@ -661,22 +837,31 @@
           "name": "temperature",
           "type": "number",
           "title": {
-            "en": "Temperature (°C)"
+            "en": "Temperature (°C)",
+            "fr": "Température (°C)"
           },
           "min": 16,
           "max": 30,
-          "step": 1
+          "step": 1,
+          "placeholder": {
+            "en": "16–30",
+            "fr": "16–30"
+          }
         },
         {
           "name": "fan_speed",
           "type": "dropdown",
           "title": {
-            "en": "Fan Speed"
+            "en": "Fan Speed",
+            "fr": "Vitesse du ventilateur"
           },
           "values": [
             {
               "id": "auto",
               "title": {
+                "en": "Auto"
+              },
+              "label": {
                 "en": "Auto"
               }
             },
@@ -684,23 +869,39 @@
               "id": "low",
               "title": {
                 "en": "Low"
+              },
+              "label": {
+                "en": "Low",
+                "fr": "Bas"
               }
             },
             {
               "id": "medium",
               "title": {
                 "en": "Medium"
+              },
+              "label": {
+                "en": "Medium",
+                "fr": "Moyen"
               }
             },
             {
               "id": "high",
               "title": {
                 "en": "High"
+              },
+              "label": {
+                "en": "High",
+                "fr": "Haut"
               }
             }
           ]
         }
-      ]
+      ],
+      "titleFormatted": {
+        "en": "Send AC Command [[mode]] [[temperature]] [[fan_speed]]",
+        "fr": "Send AC Command [[mode]] [[temperature]] [[fan_speed]]"
+      }
     },
     {
       "id": "ir_blaster_send_by_brand",
@@ -709,14 +910,16 @@
         "fr": "Envoyer Code IR par Marque"
       },
       "hint": {
-        "en": "Send pre-loaded IR code from built-in brand database (Samsung, LG, Sony, Panasonic, Daikin, 30+ brands)"
+        "en": "Send pre-loaded IR code from built-in brand database (Samsung, LG, Sony, Panasonic, Daikin, 30+ brands)",
+        "fr": "Envoyer un code IR préchargé depuis la base de marques intégrée (Samsung, LG, Sony, Panasonic, Daikin, plus de 30 marques)"
       },
       "args": [
         {
           "name": "brand",
           "type": "autocomplete",
           "title": {
-            "en": "Brand"
+            "en": "Brand",
+            "fr": "Marque"
           },
           "placeholder": {
             "en": "Samsung, LG, Sony..."
@@ -726,7 +929,8 @@
           "name": "device_type",
           "type": "autocomplete",
           "title": {
-            "en": "Device Type"
+            "en": "Device Type",
+            "fr": "Type d'appareil"
           },
           "placeholder": {
             "en": "TV, AC, Audio..."
@@ -736,13 +940,18 @@
           "name": "function_name",
           "type": "autocomplete",
           "title": {
-            "en": "Function"
+            "en": "Function",
+            "fr": "Fonction"
           },
           "placeholder": {
             "en": "Power, Volume Up..."
           }
         }
-      ]
+      ],
+      "titleFormatted": {
+        "en": "Send IR Code by Brand [[brand]] [[device_type]] [[function_name]]",
+        "fr": "Envoyer Code IR par Marque [[brand]] [[device_type]] [[function_name]]"
+      }
     },
     {
       "id": "ir_blaster_turn_on",
@@ -783,7 +992,8 @@
         "de": "Gelernten IR-Befehl Senden"
       },
       "hint": {
-        "en": "Send a previously learned IR code by name from the autocomplete list."
+        "en": "Send a previously learned IR code by name from the autocomplete list.",
+        "fr": "Envoyer un code IR appris auparavant, choisi par son nom dans la liste."
       },
       "args": [
         {
@@ -799,7 +1009,11 @@
             "en": "Select a learned code..."
           }
         }
-      ]
+      ],
+      "titleFormatted": {
+        "en": "Send Learned IR Command [[code_name]]",
+        "fr": "Envoyer Commande IR Apprise [[code_name]]"
+      }
     },
     {
       "id": "ir_blaster_delete_code",
@@ -823,7 +1037,11 @@
             "en": "Select code to delete..."
           }
         }
-      ]
+      ],
+      "titleFormatted": {
+        "en": "Delete Stored IR Code [[code_name]]",
+        "fr": "Supprimer Code IR [[code_name]]"
+      }
     },
     {
       "id": "ir_blaster_send_raw",
@@ -834,7 +1052,8 @@
         "de": "Raw IR-Code Senden"
       },
       "hint": {
-        "en": "Send a raw IR code in Pronto Hex or Base64 format directly."
+        "en": "Send a raw IR code in Pronto Hex or Base64 format directly.",
+        "fr": "Envoyer directement un code IR brut au format Pronto Hex ou Base64."
       },
       "args": [
         {
@@ -882,7 +1101,11 @@
             "en": "1"
           }
         }
-      ]
+      ],
+      "titleFormatted": {
+        "en": "Send Raw IR Code [[raw_code]] [[frequency]] [[repeat]]",
+        "fr": "Envoyer Code IR Brut [[raw_code]] [[frequency]] [[repeat]]"
+      }
     },
     {
       "id": "ir_blaster_tv_power",
@@ -992,41 +1215,68 @@
               "id": "Power",
               "title": {
                 "en": "Power"
+              },
+              "label": {
+                "en": "Power",
+                "fr": "Puissance"
               }
             },
             {
               "id": "Volume Up",
               "title": {
                 "en": "Volume Up"
+              },
+              "label": {
+                "en": "Volume Up",
+                "fr": "Volume +"
               }
             },
             {
               "id": "Volume Down",
               "title": {
                 "en": "Volume Down"
+              },
+              "label": {
+                "en": "Volume Down",
+                "fr": "Volume -"
               }
             },
             {
               "id": "Mute",
               "title": {
                 "en": "Mute"
+              },
+              "label": {
+                "en": "Mute",
+                "fr": "Muet"
               }
             },
             {
               "id": "Channel Up",
               "title": {
                 "en": "Channel Up"
+              },
+              "label": {
+                "en": "Channel Up",
+                "fr": "Chaîne +"
               }
             },
             {
               "id": "Channel Down",
               "title": {
                 "en": "Channel Down"
+              },
+              "label": {
+                "en": "Channel Down",
+                "fr": "Chaîne -"
               }
             },
             {
               "id": "Source",
               "title": {
+                "en": "Source"
+              },
+              "label": {
                 "en": "Source"
               }
             },
@@ -1034,53 +1284,92 @@
               "id": "Menu",
               "title": {
                 "en": "Menu"
+              },
+              "label": {
+                "en": "Menu"
               }
             },
             {
               "id": "OK/Enter",
               "title": {
                 "en": "OK/Enter"
+              },
+              "label": {
+                "en": "OK/Enter",
+                "fr": "OK/Entrée"
               }
             },
             {
               "id": "Up",
               "title": {
                 "en": "Up"
+              },
+              "label": {
+                "en": "Up",
+                "fr": "Haut"
               }
             },
             {
               "id": "Down",
               "title": {
                 "en": "Down"
+              },
+              "label": {
+                "en": "Down",
+                "fr": "Bas"
               }
             },
             {
               "id": "Left",
               "title": {
                 "en": "Left"
+              },
+              "label": {
+                "en": "Left",
+                "fr": "Gauche"
               }
             },
             {
               "id": "Right",
               "title": {
                 "en": "Right"
+              },
+              "label": {
+                "en": "Right",
+                "fr": "Droite"
               }
             },
             {
               "id": "Back",
               "title": {
                 "en": "Back"
+              },
+              "label": {
+                "en": "Back",
+                "fr": "Retour"
               }
             },
             {
               "id": "Home",
               "title": {
                 "en": "Home"
+              },
+              "label": {
+                "en": "Home",
+                "fr": "Accueil"
               }
             }
-          ]
+          ],
+          "title": {
+            "en": "Command",
+            "fr": "Commande"
+          }
         }
-      ]
+      ],
+      "titleFormatted": {
+        "en": "Send TV Command [[brand]] [[command]]",
+        "fr": "Envoyer une commande TV [[brand]] [[command]]"
+      }
     }
   ]
 }

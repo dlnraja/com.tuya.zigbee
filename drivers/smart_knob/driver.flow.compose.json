@@ -458,6 +458,10 @@
             "fr": "Niveau",
             "nl": "Niveau",
             "de": "Stufe"
+          },
+          "placeholder": {
+            "en": "0–100",
+            "fr": "0–100"
           }
         }
       ],
@@ -486,7 +490,11 @@
           "max": 100,
           "step": 1,
           "label": "%",
-          "labelDecimals": 0
+          "labelDecimals": 0,
+          "title": {
+            "en": "Brightness",
+            "fr": "Luminosité"
+          }
         }
       ],
       "titleFormatted": {

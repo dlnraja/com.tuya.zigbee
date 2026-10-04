@@ -8,8 +8,19 @@
     {
       "type": "text",
       "name": "zone",
-      "title": { "en": "Zone id", "fr": "Id zone" },
-      "value": "living"
+      "title": {
+        "en": "Zone id",
+        "fr": "Id zone"
+      },
+      "value": "living",
+      "placeholder": {
+        "en": "Zone id",
+        "fr": "Id zone"
+      }
     }
-  ]
+  ],
+  "titleFormatted": {
+    "en": "Lamp Mesh zone is occupied [[zone]]",
+    "fr": "Zone Occupation maillage est occupée [[zone]]"
+  }
 }

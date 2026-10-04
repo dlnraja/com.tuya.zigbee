@@ -1,10 +1,12 @@
 {
   "id": "health_failure_predicted",
   "title": {
-    "en": "Device failure predicted"
+    "en": "Device failure predicted",
+    "fr": "Panne d'appareil prévue"
   },
   "hint": {
-    "en": "Triggers when the health engine predicts a likely device failure based on trend analysis"
+    "en": "Triggers when the health engine predicts a likely device failure based on trend analysis",
+    "fr": "Se déclenche quand le moteur de santé prédit une panne probable d'après l'analyse de tendance"
   },
   "args": [
     {
@@ -18,14 +20,16 @@
       "name": "health_score",
       "type": "number",
       "title": {
-        "en": "Health score (0-100)"
+        "en": "Health score (0-100)",
+        "fr": "Score de santé (0-100)"
       }
     },
     {
       "name": "status",
       "type": "string",
       "title": {
-        "en": "Health status"
+        "en": "Health status",
+        "fr": "État de santé"
       },
       "example": "critical"
     },
@@ -33,7 +37,8 @@
       "name": "failure_type",
       "type": "string",
       "title": {
-        "en": "Likely failure type"
+        "en": "Likely failure type",
+        "fr": "Type de panne probable"
       },
       "example": "signal_degradation"
     },
@@ -41,8 +46,13 @@
       "name": "days_until_failure",
       "type": "number",
       "title": {
-        "en": "Estimated days until failure"
+        "en": "Estimated days until failure",
+        "fr": "Jours estimés avant panne"
       }
     }
-  ]
+  ],
+  "titleFormatted": {
+    "en": "Device failure predicted ([[device]])",
+    "fr": "Panne d'appareil prévue ([[device]])"
+  }
 }

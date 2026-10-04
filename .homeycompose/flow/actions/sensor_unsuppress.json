@@ -16,5 +16,9 @@
       "type": "device",
       "filter": "capabilities=alarm_motion|alarm_human|alarm_presence"
     }
-  ]
+  ],
+  "titleFormatted": {
+    "en": "Lift sensor suppression ([[device]])",
+    "fr": "Lever la suspension du capteur ([[device]])"
+  }
 }

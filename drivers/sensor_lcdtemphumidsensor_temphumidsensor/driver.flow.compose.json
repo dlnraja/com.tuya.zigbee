@@ -53,7 +53,8 @@
     {
       "id": "sensor_lcdtemphumidsensor_temphumidsensor_lc_e110e",
       "title": {
-        "en": "Temperature !{{is|is not}} above"
+        "en": "Temperature !{{is|is not}} above",
+        "fr": "La température !{{est|n'est pas}} au-dessus de"
       },
       "args": [
         {
@@ -61,17 +62,27 @@
           "type": "number",
           "min": -40,
           "max": 80,
-          "step": 0.5
+          "step": 0.5,
+          "title": {
+            "en": "Temperature",
+            "fr": "Température"
+          },
+          "placeholder": {
+            "en": "-40–80",
+            "fr": "-40–80"
+          }
         }
       ],
       "titleFormatted": {
-        "en": "Temperature !{{is|is not}} above [[temperature]]"
+        "en": "Temperature !{{is|is not}} above [[temperature]]",
+        "fr": "La température !{{est|n'est pas}} au-dessus de [[temperature]]"
       }
     },
     {
       "id": "sensor_lcdtemphumidsensor_temphumidsensor_lc_a8df3",
       "title": {
-        "en": "Humidity !{{is|is not}} above"
+        "en": "Humidity !{{is|is not}} above",
+        "fr": "L'humidité !{{est|n'est pas}} au-dessus de"
       },
       "args": [
         {
@@ -79,11 +90,20 @@
           "type": "number",
           "min": 0,
           "max": 100,
-          "step": 1
+          "step": 1,
+          "title": {
+            "en": "Humidity",
+            "fr": "Humidité"
+          },
+          "placeholder": {
+            "en": "0–100",
+            "fr": "0–100"
+          }
         }
       ],
       "titleFormatted": {
-        "en": "Humidity !{{is|is not}} above [[humidity]]"
+        "en": "Humidity !{{is|is not}} above [[humidity]]",
+        "fr": "L'humidité !{{est|n'est pas}} au-dessus de [[humidity]]"
       }
     }
   ],

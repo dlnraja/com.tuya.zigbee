@@ -1,10 +1,12 @@
 {
   "id": "health_battery_replacement_predicted",
   "title": {
-    "en": "Battery replacement predicted"
+    "en": "Battery replacement predicted",
+    "fr": "Remplacement de batterie prévu"
   },
   "hint": {
-    "en": "Triggers when the engine predicts battery needs replacement based on drain rate"
+    "en": "Triggers when the engine predicts battery needs replacement based on drain rate",
+    "fr": "Se déclenche quand le moteur prédit qu'il faut remplacer la batterie d'après sa vitesse de décharge"
   },
   "args": [
     {
@@ -18,31 +20,38 @@
       "name": "current_battery",
       "type": "number",
       "title": {
-        "en": "Current battery %"
+        "en": "Current battery %",
+        "fr": "Batterie actuelle %"
       }
     },
     {
       "name": "drain_rate_per_day",
       "type": "number",
       "title": {
-        "en": "Drain rate (%/day)"
+        "en": "Drain rate (%/day)",
+        "fr": "Taux de décharge (%/jour)"
       }
     },
     {
       "name": "days_remaining",
       "type": "number",
       "title": {
-        "en": "Estimated days remaining"
+        "en": "Estimated days remaining",
+        "fr": "Jours restants estimés"
       }
     },
     {
       "name": "battery_type",
       "type": "string",
       "title": {
-        "en": "Battery type"
+        "en": "Battery type",
+        "fr": "Type de batterie"
       },
       "example": "3V_CR2032"
     }
-  ]
+  ],
+  "titleFormatted": {
+    "en": "Battery replacement predicted ([[device]])",
+    "fr": "Remplacement de batterie prévu ([[device]])"
+  }
 }
-
