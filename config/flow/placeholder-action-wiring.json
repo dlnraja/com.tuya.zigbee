@@ -1,0 +1,224 @@
+{
+  "_comment": "#113: log-only driver action cards mapped to the device own capability listener. Unlisted cards keep their old behaviour. Built from card titles + args; review when cards change.",
+  "cards": {
+    "air_purifier_switch_1gang_set_child_lock": {
+      "op": "bool_cap",
+      "cap": "child_lock",
+      "arg": "locked",
+      "title": "Set child lock"
+    },
+    "climate_sensor_switch_1gang_set_child_lock": {
+      "op": "bool_cap",
+      "cap": "child_lock",
+      "arg": "locked",
+      "title": "Set child lock"
+    },
+    "contact_sensor_curtain_motor_windowcoverings_open": {
+      "op": "cover",
+      "value": "up",
+      "title": "Open"
+    },
+    "contact_sensor_curtain_motor_windowcoverings_close": {
+      "op": "cover",
+      "value": "down",
+      "title": "Close"
+    },
+    "contact_sensor_curtain_motor_stop": {
+      "op": "cover",
+      "value": "idle",
+      "title": "Stop"
+    },
+    "contact_sensor_curtain_motor_set_favorite": {
+      "op": "cover_favorite",
+      "title": "Go to favorite position"
+    },
+    "contact_sensor_curtain_motor_open": {
+      "op": "cover",
+      "value": "up",
+      "title": "Open"
+    },
+    "contact_sensor_curtain_motor_close": {
+      "op": "cover",
+      "value": "down",
+      "title": "Close"
+    },
+    "contact_sensor_switch_1gang_set_child_lock": {
+      "op": "bool_cap",
+      "cap": "child_lock",
+      "arg": "locked",
+      "title": "Set child lock"
+    },
+    "device_air_purifier_thermostat_thermostat_tu_33b12": {
+      "op": "enum_cap",
+      "cap": "thermostat_mode",
+      "arg": "mode",
+      "title": "Set mode"
+    },
+    "device_air_purifier_thermostat_thermostat_tu_deca2": {
+      "op": "step_cap",
+      "cap": "target_temperature",
+      "arg": "degrees",
+      "sign": 1,
+      "range": {
+        "min": 5,
+        "max": 35
+      },
+      "title": "Increase temperature"
+    },
+    "device_air_purifier_thermostat_thermostat_tu_5131d": {
+      "op": "step_cap",
+      "cap": "target_temperature",
+      "arg": "degrees",
+      "sign": -1,
+      "range": {
+        "min": 5,
+        "max": 35
+      },
+      "title": "Decrease temperature"
+    },
+    "device_air_purifier_thermostat_thermostat_tu_4b8c2": {
+      "op": "bool_cap",
+      "cap": "child_lock",
+      "arg": "enabled",
+      "title": "Set child lock"
+    },
+    "device_radiator_valve_thermostat_tuya_dp_set_mode": {
+      "op": "enum_cap",
+      "cap": "thermostat_mode",
+      "arg": "mode",
+      "title": "Set mode"
+    },
+    "device_radiator_valve_thermostat_tuya_dp_inc_8b664": {
+      "op": "step_cap",
+      "cap": "target_temperature",
+      "arg": "degrees",
+      "sign": 1,
+      "range": {
+        "min": 5,
+        "max": 35
+      },
+      "title": "Increase temperature"
+    },
+    "device_radiator_valve_thermostat_tuya_dp_dec_6e5ef": {
+      "op": "step_cap",
+      "cap": "target_temperature",
+      "arg": "degrees",
+      "sign": -1,
+      "range": {
+        "min": 5,
+        "max": 35
+      },
+      "title": "Decrease temperature"
+    },
+    "device_radiator_valve_thermostat_tuya_dp_set_fa7a8": {
+      "op": "bool_cap",
+      "cap": "child_lock",
+      "arg": "enabled",
+      "title": "Set child lock"
+    },
+    "dimmer_dual_channel_dim_up": {
+      "op": "step_cap",
+      "cap": "dim",
+      "step": 0.1,
+      "sign": 1,
+      "title": "Dim up"
+    },
+    "dimmer_dual_channel_dim_down": {
+      "op": "step_cap",
+      "cap": "dim",
+      "step": 0.1,
+      "sign": -1,
+      "title": "Dim down"
+    },
+    "door_controller_garage_door_controller_open": {
+      "op": "bool_cap",
+      "cap": "garagedoor_closed",
+      "value": false,
+      "title": "Open door"
+    },
+    "door_controller_garage_door_controller_close": {
+      "op": "bool_cap",
+      "cap": "garagedoor_closed",
+      "value": true,
+      "title": "Close door"
+    },
+    "door_controller_garage_door_controller_lock": {
+      "op": "bool_cap",
+      "cap": "locked",
+      "value": true,
+      "title": "Lock door"
+    },
+    "door_controller_garage_door_controller_unlock": {
+      "op": "bool_cap",
+      "cap": "locked",
+      "value": false,
+      "title": "Unlock door"
+    },
+    "fingerbot_switch_1gang_set_child_lock": {
+      "op": "bool_cap",
+      "cap": "child_lock",
+      "arg": "locked",
+      "title": "Set child lock"
+    },
+    "generic_tuya_request_dp": {
+      "op": "method",
+      "method": "requestDP",
+      "args": [
+        "dp"
+      ],
+      "title": "Request Data Point"
+    },
+    "motion_sensor_switch_1gang_set_child_lock": {
+      "op": "bool_cap",
+      "cap": "child_lock",
+      "arg": "locked",
+      "title": "Set child lock"
+    },
+    "plug_smart_switch_1gang_set_child_lock": {
+      "op": "bool_cap",
+      "cap": "child_lock",
+      "arg": "locked",
+      "title": "Set child lock"
+    },
+    "remote_button_wireless_fingerbot_button_wire_ecf53": {
+      "op": "bool_cap",
+      "cap": "child_lock",
+      "arg": "locked",
+      "title": "Set child lock"
+    },
+    "thermostat_tuya_dp_set_mode": {
+      "op": "enum_cap",
+      "cap": "thermostat_mode",
+      "arg": "mode",
+      "title": "Set mode"
+    },
+    "thermostat_tuya_dp_increase_temperature": {
+      "op": "step_cap",
+      "cap": "target_temperature",
+      "arg": "degrees",
+      "sign": 1,
+      "range": {
+        "min": 5,
+        "max": 35
+      },
+      "title": "Increase temperature"
+    },
+    "thermostat_tuya_dp_decrease_temperature": {
+      "op": "step_cap",
+      "cap": "target_temperature",
+      "arg": "degrees",
+      "sign": -1,
+      "range": {
+        "min": 5,
+        "max": 35
+      },
+      "title": "Decrease temperature"
+    },
+    "thermostat_tuya_dp_set_child_lock": {
+      "op": "bool_cap",
+      "cap": "child_lock",
+      "arg": "enabled",
+      "title": "Set child lock"
+    }
+  }
+}
