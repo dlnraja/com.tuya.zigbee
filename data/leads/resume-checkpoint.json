@@ -89,7 +89,7 @@
   },
   "master_queue": {
     "note": "Single master checklist of ALL user requests since the start. Daily resumption reads this FIRST. Tick (verified) only after verification.",
-    "updated": "2026-10-04T08:22+02:00",
+    "updated": "2026-10-04T08:35+02:00",
     "items": [
       {
         "id": 1,
@@ -1140,6 +1140,12 @@
         "at": "2026-10-04T08:22+02:00",
         "branch": "stable-v5",
         "note": "publish-stable 37182407962 dispatched on 7e549c0640 (ships backports 6af311d998 + #95 + PCr2; 5.12.366 did not include them)"
+      },
+      {
+        "at": "2026-10-04T08:33+02:00",
+        "branch": "stable-v5",
+        "version": "5.12.367",
+        "note": "publish-stable 37182407962 success (draft) + draft-to-test 37182962152 -> verified on public Test page; includes backports, #95, PCr2 (dimmer flow-id fix fc17dd34ed comes next publish)"
       }
     ],
     "rules_reporting": "Every report includes a French 'Découvertes' section (source link + author, mechanism/symptom, what we did or why not); append to docs/progress/DISCOVERIES.md"
