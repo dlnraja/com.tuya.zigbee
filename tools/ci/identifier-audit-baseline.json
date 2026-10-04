@@ -1,0 +1,41 @@
+{
+ "note": "R20 known entries (shrink-only). The MÜLLER LICHT forms are deliberate encoding hedges (UTF-8 vs Latin-1/cp1252 mojibake as reported by some firmwares/forum diags) and stay.",
+ "malformed": [
+  {
+   "driver": "generic_tuya",
+   "value": "\"MÜLLER LICHT\"",
+   "why": "non-ASCII character"
+  },
+  {
+   "driver": "generic_tuya",
+   "value": "\"mãœller licht\"",
+   "why": "non-ASCII character"
+  },
+  {
+   "driver": "generic_tuya",
+   "value": "\"müller licht\"",
+   "why": "non-ASCII character"
+  },
+  {
+   "driver": "generic_tuya",
+   "value": "\"maœller licht\"",
+   "why": "non-ASCII character"
+  },
+  {
+   "driver": "generic_tuya",
+   "value": "\"MAŒLLER LICHT\"",
+   "why": "non-ASCII character"
+  },
+  {
+   "driver": "generic_tuya",
+   "value": "\"MÃŒLLER LICHT\"",
+   "why": "non-ASCII character"
+  },
+  {
+   "driver": "generic_tuya",
+   "value": "\"Maœller licht\"",
+   "why": "non-ASCII character"
+  }
+ ],
+ "hidden": []
+}
