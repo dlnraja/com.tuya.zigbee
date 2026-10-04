@@ -737,7 +737,7 @@
         "id": 107,
         "item": "Port bastien-home e181504939 to master (ManifestDriverFlowIndex + hasArgs, args.device listeners x6, timers on delete, FFC TTL/sweep/pulse-cycle cancel, additive labels) and to stable-v5 (leak/listener/label only); gates + validate publish; publish master batch + stable grouped",
         "status": "in_progress",
-        "evidence": "master a3106fe114 (validate publish PASS, size 3.83/4.00 MB, 404 label files additive 0 changed leaves)",
+        "evidence": "master a3106fe114 (validate publish PASS, size 3.83/4.00 MB, 404 label files additive 0 changed leaves); stable 6308fcd645 + b8ecc03a74; master follow-up: trigger/driver titleFormatted without [[device]] (P2775 rule, P2487 IR parity), FFC _deviceIndexAt",
         "origin": "user 2026-10-04 04:22/04:27"
       },
       {
@@ -751,7 +751,7 @@
         "id": 109,
         "item": "x-scan (b): 8 suspect placements (_TZ3008_reatplte, _TZ3000_9ni6xxld, _TZE284_xpq2rzhq, _TZE200_rgeapp2c, _TZ3000_yi0n4xfd, _TZ3000_46vasa5h, _TZ3000_excgg5kb, _TZ3000_w0qqde0g): research each, add to correct driver without removing existing",
         "status": "pending",
-        "evidence": "REPORT.md §2.5, repo_check.json",
+        "evidence": "Research done (ZHC tuya.ts): _TZ3008_reatplte/_TZ3000_9ni6xxld/_TZ3000_w0qqde0g = TS011F metering plugs; _TZ3000_yi0n4xfd = TS011F breaker with thresholds; _TZ3000_46vasa5h = TS011F 2-gang wall socket; _TZE284_xpq2rzhq = TS0601 Moes ZSS-QY-HP presence; _TZE200_rgeapp2c = TS0601 2 switches + 2 covers panel; _TZ3000_excgg5kb = ZHC TS0004 (switch_4gang OK). Adding mfrs to the target drivers (plug_energy_monitor, double_power_point_2, presence_sensor_radar) was tried and reverted: the cartesian mfr x pid lists create 60 new dual couples (native-matrix gate 591 > baseline 531). Needs exact-pair drivers (W4) per couple.",
         "origin": "user 2026-10-04 04:22/04:27"
       },
       {
@@ -774,10 +774,24 @@
         "status": "done",
         "evidence": "docs/user/FAQ_ZIGBEE_UPDATES.md en+fr + README link; TRV firmware changelog already states Homey>=13.2; app compatibility kept >=12.2.0 on purpose (raising it would drop 12.x users; Homey ignores firmware files below 13.2)",
         "origin": "user 2026-10-04 04:22/04:27"
+      },
+      {
+        "id": 113,
+        "item": "34 drivers have flow actions that only log and return success (covers fixed in P2799): wire each to the real device command where a capability/command exists; otherwise leave unchanged (never turn a silent success into an error without care)",
+        "status": "pending",
+        "origin": "user 2026-10-04 04:48"
+      },
+      {
+        "id": 114,
+        "item": "TaHoma ideas for covers: combined position + tilt action, throttling when one flow drives many covers, optional Identify action (additive)",
+        "status": "pending",
+        "origin": "user 2026-10-04 04:48"
       }
     ],
     "next": [
-      "#107 bastien port: stable commit + master push/verify + stable grouped publish",
+      "#107 verify master + stable publishes after titleFormatted fix",
+      "#113 log-only flow actions",
+      "#114 TaHoma cover ideas",
       "#110-#112 x-scan quirks/long names/firmware FAQ",
       "#108-#109 x-scan couples + placements",
       "Source registry follow-ups (#99): per-source DP parsers + triage; land #100 couples after research",
@@ -847,6 +861,34 @@
           "37170501036"
         ],
         "status": "Auto-Publish in progress at checkpoint"
+      },
+      {
+        "date": "2026-10-04",
+        "branch": "master",
+        "run": "37170346820",
+        "version": "9.0.1324",
+        "build": 3424,
+        "result": "workflow success but Athom processing_failed (socket hang up); Test stayed 9.0.1322"
+      },
+      {
+        "date": "2026-10-04",
+        "branch": "master",
+        "run": "37170501036",
+        "version": "9.0.1324",
+        "build": 3425,
+        "result": "same processing_failed; re-upload loop added to auto-publish-on-push.yml"
+      },
+      {
+        "date": "2026-10-04",
+        "branch": "master",
+        "run": "37171629062",
+        "result": "failure: P2487 IR parity gate (label port titleFormatted) - fixed in follow-up"
+      },
+      {
+        "date": "2026-10-04",
+        "branch": "stable-v5",
+        "run": "37171655022",
+        "result": "failure: regression-lessons gate flow-titleformatted-device - fixed b8ecc03a74"
       }
     ],
     "rules_reporting": "Every report includes a French 'Découvertes' section (source link + author, mechanism/symptom, what we did or why not); append to docs/progress/DISCOVERIES.md"

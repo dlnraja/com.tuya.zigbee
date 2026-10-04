@@ -15,11 +15,7 @@
             "fr": "Alimentation, Volume +, OK..."
           }
         }
-      ],
-      "titleFormatted": {
-        "en": "Send named IR command [[command]]",
-        "fr": "Envoyer commande IR nommée [[command]]"
-      }
+      ]
     },
     {
       "id": "ir_remote_send_custom",
@@ -137,11 +133,7 @@
             "fr": "Key"
           }
         }
-      ],
-      "titleFormatted": {
-        "en": "Send library key [[key]]",
-        "fr": "Envoyer touche bibliothèque [[key]]"
-      }
+      ]
     },
     {
       "id": "ir_remote_send_learned",
@@ -157,11 +149,7 @@
             "en": "Power On"
           }
         }
-      ],
-      "titleFormatted": {
-        "en": "Send learned IR code [[name]]",
-        "fr": "Envoyer code IR appris [[name]]"
-      }
+      ]
     },
     {
       "id": "ir_remote_send_raw",
@@ -251,11 +239,7 @@
             "fr": "Format"
           }
         }
-      ],
-      "titleFormatted": {
-        "en": "Send pasted IR code [[code]] [[format]]",
-        "fr": "Envoyer code IR collé [[code]] [[format]]"
-      }
+      ]
     },
     {
       "id": "ir_remote_start_learn",
@@ -280,11 +264,7 @@
           "min": 5,
           "max": 120
         }
-      ],
-      "titleFormatted": {
-        "en": "Start IR learn on bound sender [[name]] [[timeout_s]]",
-        "fr": "Apprendre via l'émetteur lié [[name]] [[timeout_s]]"
-      }
+      ]
     }
   ]
 }
