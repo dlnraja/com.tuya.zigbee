@@ -31,6 +31,10 @@
         "fr": "Valeur",
         "nl": "Waarde",
         "de": "Wert"
+      },
+      "placeholder": {
+        "en": "Search...",
+        "fr": "Rechercher..."
       }
     },
     {
@@ -44,6 +48,10 @@
         "fr": "Minimum",
         "nl": "Minimum",
         "de": "Minimum"
+      },
+      "placeholder": {
+        "en": "-100000–1000000",
+        "fr": "-100000–1000000"
       }
     },
     {
@@ -57,6 +65,10 @@
         "fr": "Maximum",
         "nl": "Maximum",
         "de": "Maximum"
+      },
+      "placeholder": {
+        "en": "-100000–1000000",
+        "fr": "-100000–1000000"
       }
     }
   ]

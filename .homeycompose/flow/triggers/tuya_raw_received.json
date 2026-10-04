@@ -15,7 +15,8 @@
       "name": "dp_number",
       "type": "number",
       "title": {
-        "en": "DP Number"
+        "en": "DP Number",
+        "fr": "Numéro DP"
       },
       "example": 1
     },
@@ -23,7 +24,8 @@
       "name": "raw_hex",
       "type": "string",
       "title": {
-        "en": "Raw data (hex)"
+        "en": "Raw data (hex)",
+        "fr": "Données brutes (hex)"
       },
       "example": "0102ff"
     }
@@ -38,10 +40,19 @@
       "name": "dp",
       "type": "number",
       "title": {
-        "en": "DP Number (0=any)"
+        "en": "DP Number (0=any)",
+        "fr": "Numéro DP (0 = tous)"
       },
       "min": 0,
-      "max": 255
+      "max": 255,
+      "placeholder": {
+        "en": "0–255",
+        "fr": "0–255"
+      }
     }
-  ]
+  ],
+  "titleFormatted": {
+    "en": "Tuya raw DP received [[dp]] ([[device]])",
+    "fr": "DP Tuya brut reçu [[dp]] ([[device]])"
+  }
 }

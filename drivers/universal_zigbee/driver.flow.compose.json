@@ -456,7 +456,11 @@
           "min": 0,
           "max": 100,
           "step": 1,
-          "label": "%"
+          "label": "%",
+          "title": {
+            "en": "Brightness",
+            "fr": "Luminosité"
+          }
         }
       ],
       "titleFormatted": {
@@ -479,7 +483,11 @@
           "min": 0,
           "max": 100,
           "step": 1,
-          "label": "%"
+          "label": "%",
+          "title": {
+            "en": "Position",
+            "fr": "Position"
+          }
         }
       ],
       "titleFormatted": {
@@ -506,24 +514,39 @@
               "id": "auto",
               "title": {
                 "en": "auto"
+              },
+              "label": {
+                "en": "auto"
               }
             },
             {
               "id": "heat",
               "title": {
                 "en": "heat"
+              },
+              "label": {
+                "en": "heat",
+                "fr": "chauffage"
               }
             },
             {
               "id": "cool",
               "title": {
                 "en": "cool"
+              },
+              "label": {
+                "en": "cool",
+                "fr": "refroidissement"
               }
             },
             {
               "id": "off",
               "title": {
                 "en": "off"
+              },
+              "label": {
+                "en": "off",
+                "fr": "arrêt"
               }
             }
           ]

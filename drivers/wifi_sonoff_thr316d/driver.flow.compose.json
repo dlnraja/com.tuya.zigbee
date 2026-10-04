@@ -14,7 +14,8 @@
           "name": "temperature",
           "type": "number",
           "title": {
-            "en": "Temperature (°C)"
+            "en": "Temperature (°C)",
+            "fr": "Température (°C)"
           },
           "example": 22.5
         }
@@ -38,7 +39,8 @@
           "name": "humidity",
           "type": "number",
           "title": {
-            "en": "Humidity (%)"
+            "en": "Humidity (%)",
+            "fr": "Humidité (%)"
           },
           "example": 55
         }

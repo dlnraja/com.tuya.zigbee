@@ -7,30 +7,41 @@
     "de": "Es ist goldene Stunde"
   },
   "hint": {
-    "en": "Checks if the sun elevation is between 0 and 18 degrees (golden hour / civil twilight)"
+    "en": "Checks if the sun elevation is between 0 and 18 degrees (golden hour / civil twilight)",
+    "fr": "Vérifie si l'élévation du soleil est entre 0 et 18 degrés (heure dorée / crépuscule civil)"
   },
   "args": [
     {
       "name": "min_elevation",
       "type": "number",
       "title": {
-        "en": "Min elevation (degrees)"
+        "en": "Min elevation (degrees)",
+        "fr": "Élévation min (degrés)"
       },
       "min": 0,
       "max": 18,
       "step": 1,
-      "value": 0
+      "value": 0,
+      "placeholder": {
+        "en": "0–18",
+        "fr": "0–18"
+      }
     },
     {
       "name": "max_elevation",
       "type": "number",
       "title": {
-        "en": "Max elevation (degrees)"
+        "en": "Max elevation (degrees)",
+        "fr": "Élévation max (degrés)"
       },
       "min": 0,
       "max": 30,
       "step": 1,
-      "value": 18
+      "value": 18,
+      "placeholder": {
+        "en": "0–30",
+        "fr": "0–30"
+      }
     }
   ],
   "tokens": [
@@ -38,14 +49,16 @@
       "name": "elevation",
       "type": "number",
       "title": {
-        "en": "Current elevation (degrees)"
+        "en": "Current elevation (degrees)",
+        "fr": "Élévation actuelle (degrés)"
       }
     },
     {
       "name": "category",
       "type": "string",
       "title": {
-        "en": "Elevation category"
+        "en": "Elevation category",
+        "fr": "Catégorie d'élévation"
       }
     }
   ],

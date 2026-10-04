@@ -30,37 +30,45 @@
     {
       "id": "thermostatic_radiator_valve_window_open_status_get",
       "title": {
-        "en": "Window !{{is|is not}} open"
+        "en": "Window !{{is|is not}} open",
+        "fr": "La fenêtre !{{est|n'est pas}} ouverte"
       },
       "args": [],
       "titleFormatted": {
-        "en": "Window !{{is|is not}} open"
+        "en": "Window !{{is|is not}} open",
+        "fr": "La fenêtre !{{est|n'est pas}} ouverte"
       }
     },
     {
       "id": "thermostatic_radiator_valve_boost_active",
       "title": {
-        "en": "Boost mode !{{is|is not}} active"
+        "en": "Boost mode !{{is|is not}} active",
+        "fr": "Le mode boost !{{est|n'est pas}} actif"
       },
       "hint": {
-        "en": "Checks if the thermostat boost mode is currently active"
+        "en": "Checks if the thermostat boost mode is currently active",
+        "fr": "Vérifie si le mode boost du thermostat est actif"
       },
       "args": [],
       "titleFormatted": {
-        "en": "Boost mode !{{is|is not}} active"
+        "en": "Boost mode !{{is|is not}} active",
+        "fr": "Le mode boost !{{est|n'est pas}} actif"
       }
     },
     {
       "id": "thermostatic_radiator_valve_child_lock_active",
       "title": {
-        "en": "Child lock !{{is|is not}} active"
+        "en": "Child lock !{{is|is not}} active",
+        "fr": "Le verrouillage enfant !{{est|n'est pas}} actif"
       },
       "hint": {
-        "en": "Checks if the child lock is currently engaged"
+        "en": "Checks if the child lock is currently engaged",
+        "fr": "Vérifie si le verrouillage enfant est activé"
       },
       "args": [],
       "titleFormatted": {
-        "en": "Child lock !{{is|is not}} active"
+        "en": "Child lock !{{is|is not}} active",
+        "fr": "Le verrouillage enfant !{{est|n'est pas}} actif"
       }
     }
   ],
@@ -68,28 +76,33 @@
     {
       "id": "thermostatic_radiator_valve_window_open_status_set",
       "title": {
-        "en": "Set window open status"
+        "en": "Set window open status",
+        "fr": "Régler l'état fenêtre ouverte"
       },
       "args": [
         {
           "type": "checkbox",
           "name": "window_open_status",
           "title": {
-            "en": "Open"
+            "en": "Open",
+            "fr": "Ouvrir"
           }
         }
       ],
       "titleFormatted": {
-        "en": "Set window open status [[window_open_status]]"
+        "en": "Set window open status [[window_open_status]]",
+        "fr": "Régler l'état fenêtre ouverte [[window_open_status]]"
       }
     },
     {
       "id": "thermostatic_radiator_valve_set_boost",
       "title": {
-        "en": "Set boost mode"
+        "en": "Set boost mode",
+        "fr": "Régler le mode boost"
       },
       "hint": {
-        "en": "Temporarily boost the thermostat to a higher temperature for rapid heating"
+        "en": "Temporarily boost the thermostat to a higher temperature for rapid heating",
+        "fr": "Augmenter temporairement la consigne du thermostat pour chauffer rapidement"
       },
       "args": [
         {
@@ -100,28 +113,43 @@
               "id": "on",
               "title": {
                 "en": "On"
+              },
+              "label": {
+                "en": "On",
+                "fr": "Allumé"
               }
             },
             {
               "id": "off",
               "title": {
                 "en": "Off"
+              },
+              "label": {
+                "en": "Off",
+                "fr": "Éteint"
               }
             }
-          ]
+          ],
+          "title": {
+            "en": "Mode",
+            "fr": "Mode"
+          }
         }
       ],
       "titleFormatted": {
-        "en": "Set boost mode [[mode]]"
+        "en": "Set boost mode [[mode]]",
+        "fr": "Régler le mode boost [[mode]]"
       }
     },
     {
       "id": "thermostatic_radiator_valve_set_frost_protection",
       "title": {
-        "en": "Set frost protection"
+        "en": "Set frost protection",
+        "fr": "Régler la protection antigel"
       },
       "hint": {
-        "en": "Enable or disable frost protection (maintains minimum temperature to prevent pipe freezing)"
+        "en": "Enable or disable frost protection (maintains minimum temperature to prevent pipe freezing)",
+        "fr": "Activer ou désactiver la protection hors-gel (maintient une température minimale contre le gel des tuyaux)"
       },
       "args": [
         {
@@ -132,19 +160,32 @@
               "id": "on",
               "title": {
                 "en": "On"
+              },
+              "label": {
+                "en": "On",
+                "fr": "Allumé"
               }
             },
             {
               "id": "off",
               "title": {
                 "en": "Off"
+              },
+              "label": {
+                "en": "Off",
+                "fr": "Éteint"
               }
             }
-          ]
+          ],
+          "title": {
+            "en": "Mode",
+            "fr": "Mode"
+          }
         }
       ],
       "titleFormatted": {
-        "en": "Set frost protection [[mode]]"
+        "en": "Set frost protection [[mode]]",
+        "fr": "Régler la protection antigel [[mode]]"
       }
     },
     {
@@ -156,7 +197,8 @@
         "de": "Kindersicherung einstellen"
       },
       "hint": {
-        "en": "Enable or disable child lock to prevent manual changes on the device"
+        "en": "Enable or disable child lock to prevent manual changes on the device",
+        "fr": "Activer ou désactiver le verrouillage enfant pour empêcher les réglages manuels"
       },
       "args": [
         {
@@ -167,15 +209,27 @@
               "id": "on",
               "title": {
                 "en": "On (locked)"
+              },
+              "label": {
+                "en": "On (locked)",
+                "fr": "Activé (verrouillé)"
               }
             },
             {
               "id": "off",
               "title": {
                 "en": "Off (unlocked)"
+              },
+              "label": {
+                "en": "Off (unlocked)",
+                "fr": "Désactivé (déverrouillé)"
               }
             }
-          ]
+          ],
+          "title": {
+            "en": "Mode",
+            "fr": "Mode"
+          }
         }
       ],
       "titleFormatted": {
@@ -188,10 +242,12 @@
     {
       "id": "thermostatic_radiator_valve_set_window_detection",
       "title": {
-        "en": "Set window detection"
+        "en": "Set window detection",
+        "fr": "Régler la détection de fenêtre"
       },
       "hint": {
-        "en": "Enable or disable open window detection (lowers temperature when window is detected open)"
+        "en": "Enable or disable open window detection (lowers temperature when window is detected open)",
+        "fr": "Activer ou désactiver la détection de fenêtre ouverte (baisse la température si une fenêtre ouverte est détectée)"
       },
       "args": [
         {
@@ -202,19 +258,32 @@
               "id": "on",
               "title": {
                 "en": "On"
+              },
+              "label": {
+                "en": "On",
+                "fr": "Allumé"
               }
             },
             {
               "id": "off",
               "title": {
                 "en": "Off"
+              },
+              "label": {
+                "en": "Off",
+                "fr": "Éteint"
               }
             }
-          ]
+          ],
+          "title": {
+            "en": "Mode",
+            "fr": "Mode"
+          }
         }
       ],
       "titleFormatted": {
-        "en": "Set window detection [[mode]]"
+        "en": "Set window detection [[mode]]",
+        "fr": "Régler la détection de fenêtre [[mode]]"
       }
     }
   ]

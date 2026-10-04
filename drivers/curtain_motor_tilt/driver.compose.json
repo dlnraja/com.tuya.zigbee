@@ -107,22 +107,26 @@
         "id": "curtain_calibrate",
         "title": {
           "en": "Calibrate curtain motor",
-          "nl": "Kalibreer gordijnmotor"
+          "nl": "Kalibreer gordijnmotor",
+          "fr": "Calibrer le moteur du rideau"
         },
         "hint": {
           "en": "Run full open/close cycle for position calibration",
-          "nl": "Voer volledige open/sluit cyclus uit voor positie kalibratie"
+          "nl": "Voer volledige open/sluit cyclus uit voor positie kalibratie",
+          "fr": "Effectuer un cycle complet ouverture/fermeture pour calibrer la position"
         }
       },
       {
         "id": "curtain_reset_position",
         "title": {
           "en": "Reset position to 0%",
-          "nl": "Reset positie naar 0%"
+          "nl": "Reset positie naar 0%",
+          "fr": "Réinitialiser la position à 0 %"
         },
         "hint": {
           "en": "Reset current position to fully closed",
-          "nl": "Reset huidige positie naar volledig gesloten"
+          "nl": "Reset huidige positie naar volledig gesloten",
+          "fr": "Réinitialiser la position actuelle à complètement fermé"
         }
       },
       {
@@ -134,7 +138,8 @@
         },
         "hint": {
           "en": "Stop curtain movement and hold at current position",
-          "nl": "Stop gordijn beweging en houd huidige positie vast"
+          "nl": "Stop gordijn beweging en houd huidige positie vast",
+          "fr": "Arrêter le rideau et le maintenir à sa position actuelle"
         }
       },
       {
@@ -152,9 +157,17 @@
             "max": 100,
             "step": 1,
             "label": "%",
-            "labelMultiplier": 1
+            "labelMultiplier": 1,
+            "title": {
+              "en": "Position",
+              "fr": "Position"
+            }
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "Open curtain partially [[position]]",
+          "fr": "Ouvrir rideau partiellement [[position]]"
+        }
       }
     ]
   },

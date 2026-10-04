@@ -7,7 +7,8 @@
     "de": "Geplante Aktion ausgeführt"
   },
   "hint": {
-    "en": "Triggers when a scheduled action fires"
+    "en": "Triggers when a scheduled action fires",
+    "fr": "Se déclenche quand une action planifiée s'exécute"
   },
   "args": [],
   "tokens": [
@@ -15,7 +16,8 @@
       "name": "schedule_id",
       "type": "string",
       "title": {
-        "en": "Schedule ID"
+        "en": "Schedule ID",
+        "fr": "ID de planification"
       },
       "example": "sched_1"
     },
@@ -23,7 +25,8 @@
       "name": "schedule_name",
       "type": "string",
       "title": {
-        "en": "Schedule name"
+        "en": "Schedule name",
+        "fr": "Nom de la planification"
       },
       "example": "Morning lights"
     },
@@ -31,18 +34,21 @@
       "name": "success",
       "type": "boolean",
       "title": {
-        "en": "Execution success"
+        "en": "Execution success",
+        "fr": "Exécution réussie"
       }
     },
     {
       "name": "execution_count",
       "type": "number",
       "title": {
-        "en": "Total executions"
+        "en": "Total executions",
+        "fr": "Nombre d'exécutions"
       }
     }
   ],
   "titleFormatted": {
-    "en": "Scheduled action executed"
+    "en": "Scheduled action executed",
+    "fr": "Action planifiée exécutée"
   }
 }

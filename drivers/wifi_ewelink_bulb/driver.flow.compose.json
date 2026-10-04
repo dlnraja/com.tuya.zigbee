@@ -10,7 +10,8 @@
       },
       "args": [],
       "titleFormatted": {
-        "en": "Turned on"
+        "en": "Turned on",
+        "fr": "Allumé"
       }
     },
     {
@@ -23,7 +24,8 @@
       },
       "args": [],
       "titleFormatted": {
-        "en": "Turned off"
+        "en": "Turned off",
+        "fr": "Éteint"
       }
     },
     {
@@ -63,7 +65,8 @@
       },
       "args": [],
       "titleFormatted": {
-        "en": "Is on"
+        "en": "Is on",
+        "fr": "Est allumé"
       }
     }
   ],
@@ -83,7 +86,11 @@
           "min": 0,
           "max": 100,
           "step": 1,
-          "label": "%"
+          "label": "%",
+          "title": {
+            "en": "Dim level",
+            "fr": "Niveau de variation"
+          }
         }
       ],
       "titleFormatted": {
@@ -96,7 +103,8 @@
     {
       "id": "wifi_ewelink_bulb_set_light_temperature",
       "title": {
-        "en": "Set light temperature"
+        "en": "Set light temperature",
+        "fr": "Régler la température de la lumière"
       },
       "args": [
         {
@@ -105,11 +113,16 @@
           "min": 2000,
           "max": 6500,
           "step": 100,
-          "label": "K"
+          "label": "K",
+          "title": {
+            "en": "Light Temperature",
+            "fr": "Light Température"
+          }
         }
       ],
       "titleFormatted": {
-        "en": "Set light temperature [[light_temperature]]"
+        "en": "Set light temperature [[light_temperature]]",
+        "fr": "Régler la température de la lumière [[light_temperature]]"
       }
     }
   ]

@@ -14,6 +14,8 @@ describe('R21 runtime-safety gate', () => {
     assert.deepStrictEqual(checkSource('const t = setInterval(f, 1);\nclearInterval(t);'), []);
     assert.deepStrictEqual(checkSource('const cache = new Map();\nconst MAX = 50;\nif (cache.size >= MAX) cache.delete(cache.keys().next().value);'), []);
     assert.deepStrictEqual(checkSource("this.on('x', f);\nthis.removeListener('x', f);", 'drivers/a/device.js'), []);
+    assert.deepStrictEqual(checkSource('// r21-bounded: seen one per card id\nconst seen = new Set();\nseen.add(1);'), []);
+    assert.deepStrictEqual(checkSource("res.on('data', f);\nreq.on('error', g);", 'lib/tuya/TuyaZigbeeDevice.js'), []);
     assert.deepStrictEqual(checkSource('while (true) {\n  if (x) break;\n}'), []);
   });
   it('treats never-mutated Sets/Maps as constants, still flags mutated ones', () => {

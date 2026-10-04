@@ -22,7 +22,11 @@
       "min": 0,
       "max": 10000,
       "step": 10,
-      "value": 1000
+      "value": 1000,
+      "placeholder": {
+        "en": "0–10000",
+        "fr": "0–10000"
+      }
     }
   ],
   "titleFormatted": {

@@ -30,7 +30,11 @@
       "min": 2,
       "max": 30,
       "step": 1,
-      "value": 5
+      "value": 5,
+      "placeholder": {
+        "en": "2–30",
+        "fr": "2–30"
+      }
     }
   ],
   "titleFormatted": {

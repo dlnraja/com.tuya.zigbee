@@ -118,7 +118,11 @@
           "max": 100,
           "step": 25,
           "label": "%",
-          "labelDecimals": 0
+          "labelDecimals": 0,
+          "title": {
+            "en": "Speed",
+            "fr": "Vitesse"
+          }
         }
       ],
       "titleFormatted": {
@@ -178,7 +182,11 @@
           "max": 100,
           "step": 25,
           "label": "%",
-          "labelDecimals": 0
+          "labelDecimals": 0,
+          "title": {
+            "en": "Speed",
+            "fr": "Vitesse"
+          }
         }
       ],
       "titleFormatted": {
@@ -252,7 +260,11 @@
           "max": 100,
           "step": 1,
           "label": "%",
-          "labelDecimals": 0
+          "labelDecimals": 0,
+          "title": {
+            "en": "Brightness",
+            "fr": "Luminosité"
+          }
         }
       ],
       "titleFormatted": {

@@ -45,7 +45,11 @@
       "min": 200,
       "max": 15000,
       "step": 100,
-      "value": 2500
+      "value": 2500,
+      "placeholder": {
+        "en": "200–15000",
+        "fr": "200–15000"
+      }
     }
   ],
   "titleFormatted": {

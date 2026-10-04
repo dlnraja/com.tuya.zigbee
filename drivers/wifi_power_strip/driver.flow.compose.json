@@ -3,21 +3,25 @@
     {
       "id": "wifi_power_strip_socket1_on",
       "title": {
-        "en": "Socket 1 turned on"
+        "en": "Socket 1 turned on",
+        "fr": "Prise 1 allumée"
       },
       "args": [],
       "titleFormatted": {
-        "en": "Socket 1 turned on"
+        "en": "Socket 1 turned on",
+        "fr": "Prise 1 allumée"
       }
     },
     {
       "id": "wifi_power_strip_socket1_off",
       "title": {
-        "en": "Socket 1 turned off"
+        "en": "Socket 1 turned off",
+        "fr": "Prise 1 éteinte"
       },
       "args": [],
       "titleFormatted": {
-        "en": "Socket 1 turned off"
+        "en": "Socket 1 turned off",
+        "fr": "Prise 1 éteinte"
       }
     },
     {
@@ -50,7 +54,8 @@
     {
       "id": "wifi_power_strip_set_socket",
       "title": {
-        "en": "Set socket on/off"
+        "en": "Set socket on/off",
+        "fr": "Allumer/éteindre la prise"
       },
       "args": [
         {
@@ -61,45 +66,76 @@
               "id": "1",
               "title": {
                 "en": "Socket 1"
+              },
+              "label": {
+                "en": "Socket 1",
+                "fr": "Prise 1"
               }
             },
             {
               "id": "2",
               "title": {
                 "en": "Socket 2"
+              },
+              "label": {
+                "en": "Socket 2",
+                "fr": "Prise 2"
               }
             },
             {
               "id": "3",
               "title": {
                 "en": "Socket 3"
+              },
+              "label": {
+                "en": "Socket 3",
+                "fr": "Prise 3"
               }
             },
             {
               "id": "4",
               "title": {
                 "en": "Socket 4"
+              },
+              "label": {
+                "en": "Socket 4",
+                "fr": "Prise 4"
               }
             },
             {
               "id": "5",
               "title": {
                 "en": "Socket 5"
+              },
+              "label": {
+                "en": "Socket 5",
+                "fr": "Prise 5"
               }
             },
             {
               "id": "6",
               "title": {
                 "en": "Socket 6"
+              },
+              "label": {
+                "en": "Socket 6",
+                "fr": "Prise 6"
               }
             },
             {
               "id": "usb",
               "title": {
                 "en": "USB"
+              },
+              "label": {
+                "en": "USB"
               }
             }
-          ]
+          ],
+          "title": {
+            "en": "Socket",
+            "fr": "Prise"
+          }
         },
         {
           "name": "state",
@@ -109,19 +145,32 @@
               "id": "on",
               "title": {
                 "en": "On"
+              },
+              "label": {
+                "en": "On",
+                "fr": "Allumé"
               }
             },
             {
               "id": "off",
               "title": {
                 "en": "Off"
+              },
+              "label": {
+                "en": "Off",
+                "fr": "Éteint"
               }
             }
-          ]
+          ],
+          "title": {
+            "en": "State",
+            "fr": "État"
+          }
         }
       ],
       "titleFormatted": {
-        "en": "Set socket on/off [[socket]] [[state]]"
+        "en": "Set socket on/off [[socket]] [[state]]",
+        "fr": "Allumer/éteindre la prise [[socket]] [[state]]"
       }
     }
   ],

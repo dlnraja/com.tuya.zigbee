@@ -1014,7 +1014,8 @@
         }
       ],
       "titleFormatted": {
-        "en": "Gang 1 scene triggered ({action})"
+        "en": "Gang 1 scene triggered ({action})",
+        "fr": "Scène voie 1 déclenchée ({action})"
       }
     },
     {
@@ -1039,7 +1040,8 @@
         }
       ],
       "titleFormatted": {
-        "en": "Gang 2 scene triggered ({action})"
+        "en": "Gang 2 scene triggered ({action})",
+        "fr": "Scène voie 2 déclenchée ({action})"
       }
     },
     {
@@ -1064,7 +1066,8 @@
         }
       ],
       "titleFormatted": {
-        "en": "Gang 3 scene triggered ({action})"
+        "en": "Gang 3 scene triggered ({action})",
+        "fr": "Scène voie 3 déclenchée ({action})"
       }
     },
     {
@@ -1089,7 +1092,8 @@
         }
       ],
       "titleFormatted": {
-        "en": "Gang 4 scene triggered ({action})"
+        "en": "Gang 4 scene triggered ({action})",
+        "fr": "Scène voie 4 déclenchée ({action})"
       }
     },
     {
@@ -1114,7 +1118,8 @@
         }
       ],
       "titleFormatted": {
-        "en": "Gang 5 scene triggered ({action})"
+        "en": "Gang 5 scene triggered ({action})",
+        "fr": "Scène voie 5 déclenchée ({action})"
       }
     },
     {
@@ -1139,7 +1144,8 @@
         }
       ],
       "titleFormatted": {
-        "en": "Gang 6 scene triggered ({action})"
+        "en": "Gang 6 scene triggered ({action})",
+        "fr": "Scène voie 6 déclenchée ({action})"
       }
     },
     {
@@ -1164,7 +1170,8 @@
         }
       ],
       "titleFormatted": {
-        "en": "Gang 7 scene triggered ({action})"
+        "en": "Gang 7 scene triggered ({action})",
+        "fr": "Scène voie 7 déclenchée ({action})"
       }
     },
     {
@@ -1189,7 +1196,8 @@
         }
       ],
       "titleFormatted": {
-        "en": "Gang 8 scene triggered ({action})"
+        "en": "Gang 8 scene triggered ({action})",
+        "fr": "Scène voie 8 déclenchée ({action})"
       }
     }
   ],
@@ -1779,6 +1787,12 @@
                 "fr": "Éteint",
                 "nl": "Uit",
                 "de": "Aus"
+              },
+              "label": {
+                "en": "Off",
+                "fr": "Éteint",
+                "nl": "Uit",
+                "de": "Aus"
               }
             },
             {
@@ -1788,11 +1802,23 @@
                 "fr": "Normal",
                 "nl": "Normaal",
                 "de": "Normal"
+              },
+              "label": {
+                "en": "Normal (LED when ON)",
+                "fr": "Normal",
+                "nl": "Normaal",
+                "de": "Normal"
               }
             },
             {
               "id": "inverted",
               "title": {
+                "en": "Inverted (LED when OFF)",
+                "fr": "Inversé",
+                "nl": "Omgekeerd",
+                "de": "Invertiert"
+              },
+              "label": {
                 "en": "Inverted (LED when OFF)",
                 "fr": "Inversé",
                 "nl": "Omgekeerd",
@@ -1822,12 +1848,19 @@
           "type": "dropdown",
           "name": "state",
           "title": {
-            "en": "State"
+            "en": "State",
+            "fr": "État"
           },
           "values": [
             {
               "id": "on",
               "title": {
+                "en": "ON state",
+                "fr": "État ON",
+                "nl": "AAN",
+                "de": "EIN"
+              },
+              "label": {
                 "en": "ON state",
                 "fr": "État ON",
                 "nl": "AAN",
@@ -1841,6 +1874,12 @@
                 "fr": "État OFF",
                 "nl": "UIT",
                 "de": "AUS"
+              },
+              "label": {
+                "en": "OFF state",
+                "fr": "État OFF",
+                "nl": "UIT",
+                "de": "AUS"
               }
             }
           ]
@@ -1849,42 +1888,66 @@
           "type": "dropdown",
           "name": "color",
           "title": {
-            "en": "Color"
+            "en": "Color",
+            "fr": "Couleur"
           },
           "values": [
             {
               "id": "red",
               "title": {
                 "en": "Red"
+              },
+              "label": {
+                "en": "Red",
+                "fr": "Rouge"
               }
             },
             {
               "id": "blue",
               "title": {
                 "en": "Blue"
+              },
+              "label": {
+                "en": "Blue",
+                "fr": "Bleu"
               }
             },
             {
               "id": "green",
               "title": {
                 "en": "Green"
+              },
+              "label": {
+                "en": "Green",
+                "fr": "Vert"
               }
             },
             {
               "id": "white",
               "title": {
                 "en": "White"
+              },
+              "label": {
+                "en": "White",
+                "fr": "Blanc"
               }
             },
             {
               "id": "yellow",
               "title": {
                 "en": "Yellow"
+              },
+              "label": {
+                "en": "Yellow",
+                "fr": "Jaune"
               }
             },
             {
               "id": "cyan",
               "title": {
+                "en": "Cyan"
+              },
+              "label": {
                 "en": "Cyan"
               }
             }
@@ -1914,7 +1977,11 @@
           "max": 100,
           "step": 5,
           "label": "%",
-          "labelDecimals": 0
+          "labelDecimals": 0,
+          "title": {
+            "en": "Brightness",
+            "fr": "Luminosité"
+          }
         }
       ],
       "titleFormatted": {
@@ -1989,21 +2056,37 @@
               "id": "auto",
               "title": {
                 "en": "Auto (Normal + flows)"
+              },
+              "label": {
+                "en": "Auto (Normal + flows)",
+                "fr": "Auto (normal + flows)"
               }
             },
             {
               "id": "magic",
               "title": {
                 "en": "Magic (Scene only)"
+              },
+              "label": {
+                "en": "Magic (Scene only)",
+                "fr": "Magique (scène uniquement)"
               }
             },
             {
               "id": "both",
               "title": {
                 "en": "Both (Load + scene)"
+              },
+              "label": {
+                "en": "Both (Load + scene)",
+                "fr": "Les deux (charge + scène)"
               }
             }
-          ]
+          ],
+          "title": {
+            "en": "Mode",
+            "fr": "Mode"
+          }
         }
       ],
       "titleFormatted": {

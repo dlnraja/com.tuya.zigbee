@@ -7,7 +7,8 @@
     "de": "Effekt starten"
   },
   "hint": {
-    "en": "Choose a light pattern and a speed for it. You can also choose what colors the pattern should have, this is not mandatory."
+    "en": "Choose a light pattern and a speed for it. You can also choose what colors the pattern should have, this is not mandatory.",
+    "fr": "Choisissez un motif lumineux et sa vitesse. Vous pouvez aussi choisir ses couleurs (facultatif)."
   },
   "args": [
     {
@@ -19,66 +20,106 @@
       "type": "dropdown",
       "name": "effect_name",
       "title": {
-        "en": "Effect"
+        "en": "Effect",
+        "fr": "Effet"
       },
       "values": [
         {
           "id": "steady",
           "title": {
             "en": "Steady"
+          },
+          "label": {
+            "en": "Steady",
+            "fr": "Fixe"
           }
         },
         {
           "id": "snow",
           "title": {
             "en": "Snow"
+          },
+          "label": {
+            "en": "Snow",
+            "fr": "Neige"
           }
         },
         {
           "id": "rainbow",
           "title": {
             "en": "Rainbow"
+          },
+          "label": {
+            "en": "Rainbow",
+            "fr": "Arc-en-ciel"
           }
         },
         {
           "id": "snake",
           "title": {
             "en": "Snake"
+          },
+          "label": {
+            "en": "Snake",
+            "fr": "Serpent"
           }
         },
         {
           "id": "twinkle",
           "title": {
             "en": "Twinkle"
+          },
+          "label": {
+            "en": "Twinkle",
+            "fr": "Scintillement"
           }
         },
         {
           "id": "firework",
           "title": {
             "en": "Firework"
+          },
+          "label": {
+            "en": "Firework",
+            "fr": "Feu d'artifice"
           }
         },
         {
           "id": "horizontal_flag",
           "title": {
             "en": "Horizontal Flag"
+          },
+          "label": {
+            "en": "Horizontal Flag",
+            "fr": "Drapeau horizontal"
           }
         },
         {
           "id": "waves",
           "title": {
             "en": "Waves"
+          },
+          "label": {
+            "en": "Waves",
+            "fr": "Vagues"
           }
         },
         {
           "id": "updown",
           "title": {
             "en": "Up and Down"
+          },
+          "label": {
+            "en": "Up and Down",
+            "fr": "Haut et bas"
           }
         },
         {
           "id": "vintage",
           "title": {
+            "en": "Vintage"
+          },
+          "label": {
             "en": "Vintage"
           }
         },
@@ -86,29 +127,48 @@
           "id": "fading",
           "title": {
             "en": "Fading"
+          },
+          "label": {
+            "en": "Fading",
+            "fr": "Fondu"
           }
         },
         {
           "id": "collide",
           "title": {
             "en": "Collide"
+          },
+          "label": {
+            "en": "Collide",
+            "fr": "Collision"
           }
         },
         {
           "id": "strobe",
           "title": {
             "en": "Strobe"
+          },
+          "label": {
+            "en": "Strobe",
+            "fr": "Stroboscope"
           }
         },
         {
           "id": "sparkles",
           "title": {
             "en": "Sparkles"
+          },
+          "label": {
+            "en": "Sparkles",
+            "fr": "Étincelles"
           }
         },
         {
           "id": "carnaval",
           "title": {
+            "en": "Carnaval"
+          },
+          "label": {
             "en": "Carnaval"
           }
         },
@@ -116,6 +176,10 @@
           "id": "glow",
           "title": {
             "en": "Glow"
+          },
+          "label": {
+            "en": "Glow",
+            "fr": "Lueur"
           }
         }
       ]
@@ -132,67 +196,77 @@
       "type": "color",
       "name": "effect_color_0",
       "title": {
-        "en": "color 0"
+        "en": "color 0",
+        "fr": "couleur 0"
       }
     },
     {
       "type": "color",
       "name": "effect_color_1",
       "title": {
-        "en": "color 1"
+        "en": "color 1",
+        "fr": "couleur 1"
       }
     },
     {
       "type": "color",
       "name": "effect_color_2",
       "title": {
-        "en": "color 2"
+        "en": "color 2",
+        "fr": "couleur 2"
       }
     },
     {
       "type": "color",
       "name": "effect_color_3",
       "title": {
-        "en": "color 3"
+        "en": "color 3",
+        "fr": "couleur 3"
       }
     },
     {
       "type": "color",
       "name": "effect_color_4",
       "title": {
-        "en": "color 4"
+        "en": "color 4",
+        "fr": "couleur 4"
       }
     },
     {
       "type": "color",
       "name": "effect_color_5",
       "title": {
-        "en": "color 5"
+        "en": "color 5",
+        "fr": "couleur 5"
       }
     },
     {
       "type": "color",
       "name": "effect_color_6",
       "title": {
-        "en": "color 6"
+        "en": "color 6",
+        "fr": "couleur 6"
       }
     },
     {
       "type": "color",
       "name": "effect_color_7",
       "title": {
-        "en": "color 7"
+        "en": "color 7",
+        "fr": "couleur 7"
       }
     },
     {
       "type": "color",
       "name": "effect_color_8",
       "title": {
-        "en": "color 8"
+        "en": "color 8",
+        "fr": "couleur 8"
       }
     }
   ],
   "titleFormatted": {
-    "en": "Start effect [[effect_name]] [[effect_speed]] [[effect_color_0]] [[effect_color_1]] [[effect_color_2]] [[effect_color_3]] [[effect_color_4]] [[effect_color_5]] [[effect_color_6]] [[effect_color_7]] [[effect_color_8]]"
+    "en": "Start effect [[effect_name]] [[effect_speed]] [[effect_color_0]] [[effect_color_1]] [[effect_color_2]] [[effect_color_3]] [[effect_color_4]] [[effect_color_5]] [[effect_color_6]] [[effect_color_7]] [[effect_color_8]]",
+    "fr": "Démarrer un effet [[effect_name]] [[effect_speed]] [[effect_color_0]] [[effect_color_1]] [[effect_color_2]] [[effect_color_3]] [[effect_color_4]] [[effect_color_5]] [[effect_color_6]] [[effect_color_7]] [[effect_color_8]]"
   }
 }

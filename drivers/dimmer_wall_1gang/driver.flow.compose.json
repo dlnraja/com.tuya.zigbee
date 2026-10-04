@@ -10,7 +10,8 @@
         "de": "Eingeschaltet - physische Taste"
       },
       "titleFormatted": {
-        "en": "Turned on - physical button"
+        "en": "Turned on - physical button",
+        "fr": "Allumé - bouton physique"
       }
     },
     {
@@ -23,7 +24,8 @@
         "de": "Ausgeschaltet - physische Taste"
       },
       "titleFormatted": {
-        "en": "Turned off - physical button"
+        "en": "Turned off - physical button",
+        "fr": "Éteint - bouton physique"
       }
     },
     {
@@ -40,13 +42,15 @@
           "name": "brightness",
           "example": 75,
           "title": {
-            "en": "Brightness (%)"
+            "en": "Brightness (%)",
+            "fr": "Luminosité (%)"
           },
           "type": "number"
         }
       ],
       "titleFormatted": {
-        "en": "Brightness increased - physical ({brightness})"
+        "en": "Brightness increased - physical ({brightness})",
+        "fr": "Luminosité augmentée - physique ({brightness})"
       }
     },
     {
@@ -63,13 +67,15 @@
           "name": "brightness",
           "example": 25,
           "title": {
-            "en": "Brightness (%)"
+            "en": "Brightness (%)",
+            "fr": "Luminosité (%)"
           },
           "type": "number"
         }
       ],
       "titleFormatted": {
-        "en": "Brightness decreased - physical ({brightness})"
+        "en": "Brightness decreased - physical ({brightness})",
+        "fr": "Luminosité diminuée - physique ({brightness})"
       }
     },
     {
@@ -183,7 +189,8 @@
         "de": "Physisch eingeschaltet - Kanal 1"
       },
       "titleFormatted": {
-        "en": "Turned on physically - gang 1"
+        "en": "Turned on physically - gang 1",
+        "fr": "Allumé physiquement - voie 1"
       }
     },
     {
@@ -196,7 +203,8 @@
         "de": "Physisch ausgeschaltet - Kanal 1"
       },
       "titleFormatted": {
-        "en": "Turned off physically - gang 1"
+        "en": "Turned off physically - gang 1",
+        "fr": "Éteint physiquement - voie 1"
       }
     },
     {
@@ -392,7 +400,11 @@
           "max": 100,
           "step": 1,
           "label": "%",
-          "labelDecimals": 0
+          "labelDecimals": 0,
+          "title": {
+            "en": "Brightness",
+            "fr": "Luminosité"
+          }
         }
       ],
       "titleFormatted": {

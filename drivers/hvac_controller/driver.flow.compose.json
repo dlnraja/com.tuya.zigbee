@@ -144,6 +144,10 @@
           "title": {
             "en": "Temperature",
             "fr": "Température"
+          },
+          "placeholder": {
+            "en": "16–30",
+            "fr": "16–30"
           }
         }
       ],
@@ -168,7 +172,11 @@
           "max": 30,
           "step": 0.5,
           "label": "°C",
-          "labelDecimals": 1
+          "labelDecimals": 1,
+          "title": {
+            "en": "Temperature",
+            "fr": "Température"
+          }
         }
       ],
       "titleFormatted": {
@@ -199,11 +207,19 @@
               "title": {
                 "en": "Auto",
                 "fr": "Auto"
+              },
+              "label": {
+                "en": "Auto",
+                "fr": "Auto"
               }
             },
             {
               "id": "cool",
               "title": {
+                "en": "Cool",
+                "fr": "Froid"
+              },
+              "label": {
                 "en": "Cool",
                 "fr": "Froid"
               }
@@ -213,11 +229,19 @@
               "title": {
                 "en": "Heat",
                 "fr": "Chaud"
+              },
+              "label": {
+                "en": "Heat",
+                "fr": "Chaud"
               }
             },
             {
               "id": "off",
               "title": {
+                "en": "Off",
+                "fr": "Arrêt"
+              },
+              "label": {
                 "en": "Off",
                 "fr": "Arrêt"
               }
@@ -245,12 +269,17 @@
           "type": "dropdown",
           "name": "fan_speed",
           "title": {
-            "en": "Fan speed"
+            "en": "Fan speed",
+            "fr": "Vitesse du ventilateur"
           },
           "values": [
             {
               "id": "low",
               "title": {
+                "en": "Low",
+                "fr": "Faible"
+              },
+              "label": {
                 "en": "Low",
                 "fr": "Faible"
               }
@@ -260,6 +289,10 @@
               "title": {
                 "en": "Medium",
                 "fr": "Moyen"
+              },
+              "label": {
+                "en": "Medium",
+                "fr": "Moyen"
               }
             },
             {
@@ -267,11 +300,19 @@
               "title": {
                 "en": "High",
                 "fr": "Élevé"
+              },
+              "label": {
+                "en": "High",
+                "fr": "Élevé"
               }
             },
             {
               "id": "auto",
               "title": {
+                "en": "Auto",
+                "fr": "Auto"
+              },
+              "label": {
                 "en": "Auto",
                 "fr": "Auto"
               }

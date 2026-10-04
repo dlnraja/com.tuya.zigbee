@@ -66,5 +66,9 @@
       },
       "example": 10
     }
-  ]
+  ],
+  "titleFormatted": {
+    "en": "Device may be going offline [[factor]] ([[device]])",
+    "fr": "L'appareil risque d'être hors ligne [[factor]] ([[device]])"
+  }
 }

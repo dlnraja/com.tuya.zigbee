@@ -11,7 +11,8 @@
       "name": "target_distance",
       "type": "number",
       "title": {
-        "en": "Target distance"
+        "en": "Target distance",
+        "fr": "Distance de la cible"
       }
     }
   ],
@@ -24,5 +25,9 @@
       },
       "filter": "driver_id=radar_sensor_2"
     }
-  ]
+  ],
+  "titleFormatted": {
+    "en": "Target distance changed ([[device]])",
+    "fr": "Distance de la cible modifiée ([[device]])"
+  }
 }

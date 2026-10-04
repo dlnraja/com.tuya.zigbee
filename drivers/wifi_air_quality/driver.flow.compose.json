@@ -3,7 +3,8 @@
     {
       "id": "wifi_air_quality_co2_high",
       "title": {
-        "en": "CO2 level is high"
+        "en": "CO2 level is high",
+        "fr": "Le niveau de CO2 est élevé"
       },
       "tokens": [
         {
@@ -16,13 +17,15 @@
       ],
       "args": [],
       "titleFormatted": {
-        "en": "CO2 level is high ({co2})"
+        "en": "CO2 level is high ({co2})",
+        "fr": "Le niveau de CO2 est élevé ({co2})"
       }
     },
     {
       "id": "wifi_air_quality_pm25_high",
       "title": {
-        "en": "PM2.5 level is high"
+        "en": "PM2.5 level is high",
+        "fr": "Le niveau de PM2.5 est élevé"
       },
       "tokens": [
         {
@@ -35,7 +38,8 @@
       ],
       "args": [],
       "titleFormatted": {
-        "en": "PM2.5 level is high ({pm25})"
+        "en": "PM2.5 level is high ({pm25})",
+        "fr": "Le niveau de PM2.5 est élevé ({pm25})"
       }
     },
     {

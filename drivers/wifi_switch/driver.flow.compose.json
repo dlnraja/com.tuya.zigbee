@@ -10,7 +10,8 @@
       },
       "args": [],
       "titleFormatted": {
-        "en": "Turned on"
+        "en": "Turned on",
+        "fr": "Allumé"
       }
     },
     {
@@ -23,7 +24,8 @@
       },
       "args": [],
       "titleFormatted": {
-        "en": "Turned off"
+        "en": "Turned off",
+        "fr": "Éteint"
       }
     }
   ],
@@ -38,7 +40,8 @@
       },
       "args": [],
       "titleFormatted": {
-        "en": "Is on"
+        "en": "Is on",
+        "fr": "Est allumé"
       }
     }
   ],
@@ -46,11 +49,13 @@
     {
       "id": "wifi_switch_toggle",
       "title": {
-        "en": "Toggle on/off"
+        "en": "Toggle on/off",
+        "fr": "Basculer marche/arrêt"
       },
       "args": [],
       "titleFormatted": {
-        "en": "Toggle on/off"
+        "en": "Toggle on/off",
+        "fr": "Basculer marche/arrêt"
       }
     }
   ]

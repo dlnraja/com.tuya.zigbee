@@ -3,21 +3,25 @@
     {
       "id": "wifi_cover_opened",
       "title": {
-        "en": "Opened"
+        "en": "Opened",
+        "fr": "Ouvert"
       },
       "args": [],
       "titleFormatted": {
-        "en": "Opened"
+        "en": "Opened",
+        "fr": "Ouvert"
       }
     },
     {
       "id": "wifi_cover_closed",
       "title": {
-        "en": "Closed"
+        "en": "Closed",
+        "fr": "Fermé"
       },
       "args": [],
       "titleFormatted": {
-        "en": "Closed"
+        "en": "Closed",
+        "fr": "Fermé"
       }
     }
   ],
@@ -33,7 +37,8 @@
       },
       "args": [],
       "titleFormatted": {
-        "en": "Open"
+        "en": "Open",
+        "fr": "Ouvrir"
       }
     },
     {
@@ -46,7 +51,8 @@
       },
       "args": [],
       "titleFormatted": {
-        "en": "Close"
+        "en": "Close",
+        "fr": "Fermer"
       }
     },
     {
@@ -59,7 +65,8 @@
       },
       "args": [],
       "titleFormatted": {
-        "en": "Stop"
+        "en": "Stop",
+        "fr": "Arrêter"
       }
     }
   ]

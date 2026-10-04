@@ -62,5 +62,9 @@
         "de": "Geschätzte Tage bis zum Ausfall"
       }
     }
-  ]
+  ],
+  "titleFormatted": {
+    "en": "Device failure predicted ([[device]])",
+    "fr": "Panne d'appareil prévue ([[device]])"
+  }
 }

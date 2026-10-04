@@ -129,6 +129,10 @@
           "title": {
             "en": "Temperature",
             "fr": "Température"
+          },
+          "placeholder": {
+            "en": "-40–80",
+            "fr": "-40–80"
           }
         }
       ],
@@ -157,6 +161,10 @@
           "title": {
             "en": "Temperature",
             "fr": "Température"
+          },
+          "placeholder": {
+            "en": "-40–80",
+            "fr": "-40–80"
           }
         }
       ],
@@ -185,6 +193,10 @@
           "title": {
             "en": "Humidity (%)",
             "fr": "Humidité (%)"
+          },
+          "placeholder": {
+            "en": "0–100",
+            "fr": "0–100"
           }
         }
       ],
@@ -213,6 +225,10 @@
           "title": {
             "en": "Humidity (%)",
             "fr": "Humidité (%)"
+          },
+          "placeholder": {
+            "en": "0–100",
+            "fr": "0–100"
           }
         }
       ],

@@ -15,7 +15,11 @@
             "fr": "Alimentation, Volume +, OK..."
           }
         }
-      ]
+      ],
+      "titleFormatted": {
+        "en": "Send named IR command [[command]]",
+        "fr": "Envoyer commande IR nommée [[command]]"
+      }
     },
     {
       "id": "ir_remote_send_custom",
@@ -28,18 +32,116 @@
           "name": "key",
           "type": "dropdown",
           "values": [
-            { "id": "Power", "title": { "en": "Power", "fr": "Alimentation" } },
-            { "id": "Mute", "title": { "en": "Mute", "fr": "Sourdine" } },
-            { "id": "Volume Up", "title": { "en": "Volume Up", "fr": "Volume +" } },
-            { "id": "Volume Down", "title": { "en": "Volume Down", "fr": "Volume -" } },
-            { "id": "Channel Up", "title": { "en": "Channel Up", "fr": "Chaîne +" } },
-            { "id": "Channel Down", "title": { "en": "Channel Down", "fr": "Chaîne -" } },
-            { "id": "Source", "title": { "en": "Source", "fr": "Source" } },
-            { "id": "Menu", "title": { "en": "Menu", "fr": "Menu" } },
-            { "id": "OK", "title": { "en": "OK", "fr": "OK" } }
-          ]
+            {
+              "id": "Power",
+              "title": {
+                "en": "Power",
+                "fr": "Alimentation"
+              },
+              "label": {
+                "en": "Power",
+                "fr": "Alimentation"
+              }
+            },
+            {
+              "id": "Mute",
+              "title": {
+                "en": "Mute",
+                "fr": "Sourdine"
+              },
+              "label": {
+                "en": "Mute",
+                "fr": "Sourdine"
+              }
+            },
+            {
+              "id": "Volume Up",
+              "title": {
+                "en": "Volume Up",
+                "fr": "Volume +"
+              },
+              "label": {
+                "en": "Volume Up",
+                "fr": "Volume +"
+              }
+            },
+            {
+              "id": "Volume Down",
+              "title": {
+                "en": "Volume Down",
+                "fr": "Volume -"
+              },
+              "label": {
+                "en": "Volume Down",
+                "fr": "Volume -"
+              }
+            },
+            {
+              "id": "Channel Up",
+              "title": {
+                "en": "Channel Up",
+                "fr": "Chaîne +"
+              },
+              "label": {
+                "en": "Channel Up",
+                "fr": "Chaîne +"
+              }
+            },
+            {
+              "id": "Channel Down",
+              "title": {
+                "en": "Channel Down",
+                "fr": "Chaîne -"
+              },
+              "label": {
+                "en": "Channel Down",
+                "fr": "Chaîne -"
+              }
+            },
+            {
+              "id": "Source",
+              "title": {
+                "en": "Source",
+                "fr": "Source"
+              },
+              "label": {
+                "en": "Source",
+                "fr": "Source"
+              }
+            },
+            {
+              "id": "Menu",
+              "title": {
+                "en": "Menu",
+                "fr": "Menu"
+              },
+              "label": {
+                "en": "Menu",
+                "fr": "Menu"
+              }
+            },
+            {
+              "id": "OK",
+              "title": {
+                "en": "OK",
+                "fr": "OK"
+              },
+              "label": {
+                "en": "OK",
+                "fr": "OK"
+              }
+            }
+          ],
+          "title": {
+            "en": "Key",
+            "fr": "Key"
+          }
         }
-      ]
+      ],
+      "titleFormatted": {
+        "en": "Send library key [[key]]",
+        "fr": "Envoyer touche bibliothèque [[key]]"
+      }
     },
     {
       "id": "ir_remote_send_learned",
@@ -51,9 +153,15 @@
         {
           "name": "name",
           "type": "text",
-          "placeholder": { "en": "Power On" }
+          "placeholder": {
+            "en": "Power On"
+          }
         }
-      ]
+      ],
+      "titleFormatted": {
+        "en": "Send learned IR code [[name]]",
+        "fr": "Envoyer code IR appris [[name]]"
+      }
     },
     {
       "id": "ir_remote_send_raw",
@@ -65,22 +173,89 @@
         {
           "name": "code",
           "type": "text",
-          "placeholder": { "en": "Pronto / HEX / Broadlink / Zosung" }
+          "placeholder": {
+            "en": "Pronto / HEX / Broadlink / Zosung"
+          }
         },
         {
           "type": "dropdown",
           "name": "format",
           "values": [
-            { "id": "auto", "title": { "en": "Auto" } },
-            { "id": "pronto", "title": { "en": "Pronto Hex" } },
-            { "id": "broadlink", "title": { "en": "Broadlink" } },
-            { "id": "hex", "title": { "en": "HEX timings" } },
-            { "id": "globalcache", "title": { "en": "Global Caché" } },
-            { "id": "zosung", "title": { "en": "Zosung" } },
-            { "id": "tuya_opaque", "title": { "en": "Tuya opaque" } }
-          ]
+            {
+              "id": "auto",
+              "title": {
+                "en": "Auto"
+              },
+              "label": {
+                "en": "Auto"
+              }
+            },
+            {
+              "id": "pronto",
+              "title": {
+                "en": "Pronto Hex"
+              },
+              "label": {
+                "en": "Pronto Hex"
+              }
+            },
+            {
+              "id": "broadlink",
+              "title": {
+                "en": "Broadlink"
+              },
+              "label": {
+                "en": "Broadlink"
+              }
+            },
+            {
+              "id": "hex",
+              "title": {
+                "en": "HEX timings"
+              },
+              "label": {
+                "en": "HEX timings",
+                "fr": "Timings HEX"
+              }
+            },
+            {
+              "id": "globalcache",
+              "title": {
+                "en": "Global Caché"
+              },
+              "label": {
+                "en": "Global Caché"
+              }
+            },
+            {
+              "id": "zosung",
+              "title": {
+                "en": "Zosung"
+              },
+              "label": {
+                "en": "Zosung"
+              }
+            },
+            {
+              "id": "tuya_opaque",
+              "title": {
+                "en": "Tuya opaque"
+              },
+              "label": {
+                "en": "Tuya opaque"
+              }
+            }
+          ],
+          "title": {
+            "en": "Format",
+            "fr": "Format"
+          }
         }
-      ]
+      ],
+      "titleFormatted": {
+        "en": "Send pasted IR code [[code]] [[format]]",
+        "fr": "Envoyer code IR collé [[code]] [[format]]"
+      }
     },
     {
       "id": "ir_remote_start_learn",
@@ -92,16 +267,24 @@
         {
           "name": "name",
           "type": "text",
-          "placeholder": { "en": "Power" }
+          "placeholder": {
+            "en": "Power"
+          }
         },
         {
           "name": "timeout_s",
           "type": "number",
-          "placeholder": { "en": "30" },
+          "placeholder": {
+            "en": "30"
+          },
           "min": 5,
           "max": 120
         }
-      ]
+      ],
+      "titleFormatted": {
+        "en": "Start IR learn on bound sender [[name]] [[timeout_s]]",
+        "fr": "Apprendre via l'émetteur lié [[name]] [[timeout_s]]"
+      }
     }
   ]
 }
