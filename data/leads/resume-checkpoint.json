@@ -89,7 +89,7 @@
   },
   "master_queue": {
     "note": "Single master checklist of ALL user requests since the start. Daily resumption reads this FIRST. Tick (verified) only after verification.",
-    "updated": "2026-10-04T08:35+02:00",
+    "updated": "2026-10-04T08:55+02:00",
     "items": [
       {
         "id": 1,
@@ -1146,6 +1146,11 @@
         "branch": "stable-v5",
         "version": "5.12.367",
         "note": "publish-stable 37182407962 success (draft) + draft-to-test 37182962152 -> verified on public Test page; includes backports, #95, PCr2 (dimmer flow-id fix fc17dd34ed comes next publish)"
+      },
+      {
+        "at": "2026-10-04T08:55+02:00",
+        "branch": "master",
+        "note": "v9.0.1331: Athom processing_failed (AggregateError) on builds #3442-#3447 (each fails ~30 s after upload); 37180863734 hit 45 min job timeout; draft-to-test 37183254971 found no processable draft; Test stays 9.0.1330 #3441. Manifest diff 1330->1331 = new led_controller_spi_tuya + lowercase mfrs on energy_meter_3phase/panel_switch_cover_tuya; same driver processed fine on stable 5.12.367 -> cause not identified. Fresh dispatch 37183735134 on 263ef49eea."
       }
     ],
     "rules_reporting": "Every report includes a French 'Découvertes' section (source link + author, mechanism/symptom, what we did or why not); append to docs/progress/DISCOVERIES.md"
