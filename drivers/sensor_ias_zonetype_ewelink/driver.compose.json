@@ -16,7 +16,10 @@
   },
   "zigbee": {
     "manufacturerName": [
-      "eWeLink"
+      "eWeLink",
+      "ewelink",
+      "EWELINK",
+      "EWeLink"
     ],
     "productId": [
       "SNZB-03"
