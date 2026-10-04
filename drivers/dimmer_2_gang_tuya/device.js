@@ -1,3 +1,4 @@
+const { migrateDeviceClass } = require('../../lib/utils/DeviceClassMigration');
 const PhysicalButtonMixin = require('../../lib/mixins/PhysicalButtonMixin');
 const VirtualButtonMixin = require('../../lib/mixins/VirtualButtonMixin');
 'use strict';
@@ -13,6 +14,8 @@ Cluster.addCluster(TuyaSpecificCluster);
 class dimmer_2_gang_tuya extends TuyaSpecificClusterDevice {
 
   async onNodeInit({ zclNode }) {
+    // WHY: class socket -> light (user decision 2026-10-04); one-shot for paired devices
+    migrateDeviceClass(this, 'light', ['socket', 'other']).catch(() => {});
     this.printNode();
 /*     debug(true);
     this.enableDebug(); */
