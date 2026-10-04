@@ -3,27 +3,32 @@
     {
       "id": "usb_dongle_triple_turned_on",
       "title": {
-        "en": "Turned on"
+        "en": "Turned on",
+        "fr": "Allumé"
       },
       "args": [],
       "titleFormatted": {
-        "en": "Turned on"
+        "en": "Turned on",
+        "fr": "Allumé"
       }
     },
     {
       "id": "usb_dongle_triple_turned_off",
       "title": {
-        "en": "Turned off"
+        "en": "Turned off",
+        "fr": "Éteint"
       },
       "args": [],
       "titleFormatted": {
-        "en": "Turned off"
+        "en": "Turned off",
+        "fr": "Éteint"
       }
     },
     {
       "id": "usb_dongle_triple_power_changed",
       "title": {
-        "en": "Power changed"
+        "en": "Power changed",
+        "fr": "Puissance modifiée"
       },
       "tokens": [
         {
@@ -37,7 +42,8 @@
       ],
       "args": [],
       "titleFormatted": {
-        "en": "Power changed ({power})"
+        "en": "Power changed ({power})",
+        "fr": "Puissance modifiée ({power})"
       }
     },
     {
@@ -114,17 +120,20 @@
     {
       "id": "usb_dongle_triple_is_on",
       "title": {
-        "en": "Port 1 !{{is|is not}} on"
+        "en": "Port 1 !{{is|is not}} on",
+        "fr": "Le port 1 !{{est|n'est pas}} allumé"
       },
       "args": [],
       "titleFormatted": {
-        "en": "Port 1 !{{is|is not}} on"
+        "en": "Port 1 !{{is|is not}} on",
+        "fr": "Le port 1 !{{est|n'est pas}} allumé"
       }
     },
     {
       "id": "usb_dongle_triple_power_above",
       "title": {
-        "en": "Power !{{is|is not}} above"
+        "en": "Power !{{is|is not}} above",
+        "fr": "La puissance !{{est|n'est pas}} au-dessus de"
       },
       "args": [
         {
@@ -132,11 +141,20 @@
           "type": "number",
           "min": 0,
           "max": 100,
-          "step": 1
+          "step": 1,
+          "title": {
+            "en": "Power",
+            "fr": "Puissance"
+          },
+          "placeholder": {
+            "en": "0–100",
+            "fr": "0–100"
+          }
         }
       ],
       "titleFormatted": {
-        "en": "Power !{{is|is not}} above [[power]]"
+        "en": "Power !{{is|is not}} above [[power]]",
+        "fr": "La puissance !{{est|n'est pas}} au-dessus de [[power]]"
       }
     }
   ],
@@ -144,21 +162,25 @@
     {
       "id": "usb_dongle_triple_all_on",
       "title": {
-        "en": "Turn on all ports"
+        "en": "Turn on all ports",
+        "fr": "Allumer tous les ports"
       },
       "args": [],
       "titleFormatted": {
-        "en": "Turn on all ports"
+        "en": "Turn on all ports",
+        "fr": "Allumer tous les ports"
       }
     },
     {
       "id": "usb_dongle_triple_all_off",
       "title": {
-        "en": "Turn off all ports"
+        "en": "Turn off all ports",
+        "fr": "Éteindre tous les ports"
       },
       "args": [],
       "titleFormatted": {
-        "en": "Turn off all ports"
+        "en": "Turn off all ports",
+        "fr": "Éteindre tous les ports"
       }
     }
   ]

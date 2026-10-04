@@ -13,14 +13,24 @@
       "type": "device",
       "name": "light",
       "filter": "capabilities=dim",
-      "title": { "en": "Light", "fr": "Lumière" }
+      "title": {
+        "en": "Light",
+        "fr": "Lumière"
+      }
     },
     {
       "type": "device",
       "name": "lux_sensor",
       "filter": "capabilities=measure_luminance",
-      "title": { "en": "Lux sensor (optional)", "fr": "Capteur lux (option)" },
+      "title": {
+        "en": "Lux sensor (optional)",
+        "fr": "Capteur lux (option)"
+      },
       "optional": true
     }
-  ]
+  ],
+  "titleFormatted": {
+    "en": "Enroll Lux Adaptive Dim ([[light]], [[lux_sensor]])",
+    "fr": "Inscrire Lux Adaptive Dim ([[light]], [[lux_sensor]])"
+  }
 }

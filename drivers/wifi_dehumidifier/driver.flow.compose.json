@@ -3,31 +3,37 @@
     {
       "id": "wifi_dehumidifier_water_full",
       "title": {
-        "en": "Water tank is full"
+        "en": "Water tank is full",
+        "fr": "Le réservoir d'eau est plein"
       },
       "args": [],
       "titleFormatted": {
-        "en": "Water tank is full"
+        "en": "Water tank is full",
+        "fr": "Le réservoir d'eau est plein"
       }
     },
     {
       "id": "wifi_dehumidifier_turned_on",
       "title": {
-        "en": "Dehumidifier turned on"
+        "en": "Dehumidifier turned on",
+        "fr": "Déshumidificateur allumé"
       },
       "args": [],
       "titleFormatted": {
-        "en": "Dehumidifier turned on"
+        "en": "Dehumidifier turned on",
+        "fr": "Déshumidificateur allumé"
       }
     },
     {
       "id": "wifi_dehumidifier_turned_off",
       "title": {
-        "en": "Dehumidifier turned off"
+        "en": "Dehumidifier turned off",
+        "fr": "Déshumidificateur éteint"
       },
       "args": [],
       "titleFormatted": {
-        "en": "Dehumidifier turned off"
+        "en": "Dehumidifier turned off",
+        "fr": "Déshumidificateur éteint"
       }
     },
     {

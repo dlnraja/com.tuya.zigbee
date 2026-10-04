@@ -21,7 +21,8 @@
     {
       "id": "blaster_remote_ir_code_received",
       "title": {
-        "en": "ir code received"
+        "en": "ir code received",
+        "fr": "code IR reçu"
       },
       "args": []
     }
@@ -45,7 +46,11 @@
             "en": "Paste the learned IR code here"
           }
         }
-      ]
+      ],
+      "titleFormatted": {
+        "en": "Send an IR code [[ir_code]]",
+        "fr": "Envoyer un code IR [[ir_code]]"
+      }
     },
     {
       "id": "blaster_remote_ir_remote_start_learning",

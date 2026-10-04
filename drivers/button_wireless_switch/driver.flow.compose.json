@@ -185,7 +185,8 @@
     {
       "id": "button_wireless_switch_2gang_gang1_scene",
       "title": {
-        "en": "Gang 1 scene triggered"
+        "en": "Gang 1 scene triggered",
+        "fr": "Scène voie 1 déclenchée"
       },
       "args": [],
       "tokens": [
@@ -201,13 +202,15 @@
         }
       ],
       "titleFormatted": {
-        "en": "Gang 1 scene triggered ({action})"
+        "en": "Gang 1 scene triggered ({action})",
+        "fr": "Scène voie 1 déclenchée ({action})"
       }
     },
     {
       "id": "button_wireless_switch_2gang_gang2_scene",
       "title": {
-        "en": "Gang 2 scene triggered"
+        "en": "Gang 2 scene triggered",
+        "fr": "Scène voie 2 déclenchée"
       },
       "args": [],
       "tokens": [
@@ -223,7 +226,8 @@
         }
       ],
       "titleFormatted": {
-        "en": "Gang 2 scene triggered ({action})"
+        "en": "Gang 2 scene triggered ({action})",
+        "fr": "Scène voie 2 déclenchée ({action})"
       }
     },
     {
@@ -551,6 +555,12 @@
                 "fr": "Éteint",
                 "nl": "Uit",
                 "de": "Aus"
+              },
+              "label": {
+                "en": "Off",
+                "fr": "Éteint",
+                "nl": "Uit",
+                "de": "Aus"
               }
             },
             {
@@ -560,11 +570,23 @@
                 "fr": "Normal (LED quand allumé)",
                 "nl": "Normaal (LED bij AAN)",
                 "de": "Normal (LED bei EIN)"
+              },
+              "label": {
+                "en": "Normal (LED when ON)",
+                "fr": "Normal (LED quand allumé)",
+                "nl": "Normaal (LED bij AAN)",
+                "de": "Normal (LED bei EIN)"
               }
             },
             {
               "id": "inverted",
               "title": {
+                "en": "Inverted (LED when OFF)",
+                "fr": "Inversé (LED quand éteint)",
+                "nl": "Omgekeerd (LED bij UIT)",
+                "de": "Invertiert (LED bei AUS)"
+              },
+              "label": {
                 "en": "Inverted (LED when OFF)",
                 "fr": "Inversé (LED quand éteint)",
                 "nl": "Omgekeerd (LED bij UIT)",
@@ -632,7 +654,8 @@
     {
       "id": "button_wireless_switch_2gang_set_scene_mode",
       "title": {
-        "en": "Set scene mode"
+        "en": "Set scene mode",
+        "fr": "Régler le mode scène"
       },
       "args": [
         {
@@ -643,25 +666,42 @@
               "id": "auto",
               "title": {
                 "en": "Auto (Normal + flows)"
+              },
+              "label": {
+                "en": "Auto (Normal + flows)",
+                "fr": "Auto (normal + flows)"
               }
             },
             {
               "id": "magic",
               "title": {
                 "en": "Magic (Scene only)"
+              },
+              "label": {
+                "en": "Magic (Scene only)",
+                "fr": "Magique (scène uniquement)"
               }
             },
             {
               "id": "both",
               "title": {
                 "en": "Both (Load + scene)"
+              },
+              "label": {
+                "en": "Both (Load + scene)",
+                "fr": "Les deux (charge + scène)"
               }
             }
-          ]
+          ],
+          "title": {
+            "en": "Mode",
+            "fr": "Mode"
+          }
         }
       ],
       "titleFormatted": {
-        "en": "Set scene mode [[mode]]"
+        "en": "Set scene mode [[mode]]",
+        "fr": "Régler le mode scène [[mode]]"
       }
     }
   ]

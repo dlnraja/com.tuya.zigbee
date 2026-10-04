@@ -3,45 +3,64 @@
     {
       "id": "wall_remote_4_gang_2_wall_remote_4_gang_buttons_2",
       "title": {
-        "en": "Button"
+        "en": "Button",
+        "fr": "Bouton"
       },
       "args": [
         {
           "name": "button",
           "type": "dropdown",
           "title": {
-            "en": "Button Pressed"
+            "en": "Button Pressed",
+            "fr": "Bouton appuyé"
           },
           "values": [
             {
               "id": "leftUp",
               "title": {
                 "en": "Upper Left Button Pressed"
+              },
+              "label": {
+                "en": "Upper Left Button Pressed",
+                "fr": "Bouton haut gauche appuyé"
               }
             },
             {
               "id": "rightUp",
               "title": {
                 "en": "Upper Right Button Pressed"
+              },
+              "label": {
+                "en": "Upper Right Button Pressed",
+                "fr": "Bouton haut droit appuyé"
               }
             },
             {
               "id": "leftDown",
               "title": {
                 "en": "Lower Left Button Pressed"
+              },
+              "label": {
+                "en": "Lower Left Button Pressed",
+                "fr": "Bouton bas gauche appuyé"
               }
             },
             {
               "id": "rightDown",
               "title": {
                 "en": "Lower Right Button Pressed"
+              },
+              "label": {
+                "en": "Lower Right Button Pressed",
+                "fr": "Bouton bas droit appuyé"
               }
             }
           ]
         }
       ],
       "titleFormatted": {
-        "en": "Button [[button]]"
+        "en": "Button [[button]]",
+        "fr": "Bouton [[button]]"
       }
     },
     {

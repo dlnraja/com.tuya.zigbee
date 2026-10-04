@@ -13,7 +13,14 @@
       "type": "device",
       "name": "cover",
       "filter": "capabilities=windowcoverings_set|capabilities=windowcoverings_state",
-      "title": { "en": "Cover / shade", "fr": "Volet / store" }
+      "title": {
+        "en": "Cover / shade",
+        "fr": "Volet / store"
+      }
     }
-  ]
+  ],
+  "titleFormatted": {
+    "en": "Shade Daylight Soft — solar open/close ([[cover]])",
+    "fr": "Shade Daylight Soft — ouvrir/fermer au soleil ([[cover]])"
+  }
 }

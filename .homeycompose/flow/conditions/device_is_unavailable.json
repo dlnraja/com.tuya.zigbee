@@ -16,5 +16,9 @@
       "type": "device",
       "filter": "driver_id=*"
     }
-  ]
+  ],
+  "titleFormatted": {
+    "en": "Device !{{is|is not}} unavailable ([[device]])",
+    "fr": "Appareil !{{est|n'est pas}} indisponible ([[device]])"
+  }
 }

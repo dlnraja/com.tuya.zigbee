@@ -13,15 +13,29 @@
       "type": "device",
       "name": "light",
       "filter": "capabilities=onoff",
-      "title": { "en": "Light", "fr": "Lumière" }
+      "title": {
+        "en": "Light",
+        "fr": "Lumière"
+      }
     },
     {
       "type": "number",
       "name": "idle_minutes",
-      "title": { "en": "Idle minutes", "fr": "Minutes d'inactivité" },
+      "title": {
+        "en": "Idle minutes",
+        "fr": "Minutes d'inactivité"
+      },
       "min": 1,
       "max": 240,
-      "value": 30
+      "value": 30,
+      "placeholder": {
+        "en": "1–240",
+        "fr": "1–240"
+      }
     }
-  ]
+  ],
+  "titleFormatted": {
+    "en": "Idle Auto-Off Soft [[idle_minutes]] ([[light]])",
+    "fr": "Idle Auto-Off Soft [[idle_minutes]] ([[light]])"
+  }
 }

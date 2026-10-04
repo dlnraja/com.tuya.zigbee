@@ -1,10 +1,12 @@
 {
   "id": "energy_weekly_summary_ready",
   "title": {
-    "en": "Weekly energy summary ready"
+    "en": "Weekly energy summary ready",
+    "fr": "Résumé énergétique hebdomadaire prêt"
   },
   "hint": {
-    "en": "Triggers when the weekly energy usage summary is calculated"
+    "en": "Triggers when the weekly energy usage summary is calculated",
+    "fr": "Se déclenche quand le bilan de consommation hebdomadaire est calculé"
   },
   "args": [],
   "tokens": [
@@ -12,46 +14,53 @@
       "name": "total_energy_kwh",
       "type": "number",
       "title": {
-        "en": "Total energy (kWh)"
+        "en": "Total energy (kWh)",
+        "fr": "Énergie totale (kWh)"
       }
     },
     {
       "name": "avg_daily_kwh",
       "type": "number",
       "title": {
-        "en": "Average daily energy (kWh)"
+        "en": "Average daily energy (kWh)",
+        "fr": "Énergie journalière moyenne (kWh)"
       }
     },
     {
       "name": "avg_power_w",
       "type": "number",
       "title": {
-        "en": "Average power (W)"
+        "en": "Average power (W)",
+        "fr": "Puissance moyenne (W)"
       }
     },
     {
       "name": "peak_power_w",
       "type": "number",
       "title": {
-        "en": "Peak power (W)"
+        "en": "Peak power (W)",
+        "fr": "Puissance de pointe (W)"
       }
     },
     {
       "name": "device_count",
       "type": "number",
       "title": {
-        "en": "Device count"
+        "en": "Device count",
+        "fr": "Nombre d'appareils"
       }
     },
     {
       "name": "week_start",
       "type": "string",
       "title": {
-        "en": "Week start date"
+        "en": "Week start date",
+        "fr": "Début de semaine"
       }
     }
   ],
   "titleFormatted": {
-    "en": "Weekly energy summary ready"
+    "en": "Weekly energy summary ready",
+    "fr": "Résumé énergétique hebdomadaire prêt"
   }
 }

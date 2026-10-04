@@ -35,11 +35,23 @@
             "fr": "Excellent",
             "nl": "Uitstekend",
             "de": "Ausgezeichnet"
+          },
+          "label": {
+            "en": "Excellent",
+            "fr": "Excellent",
+            "nl": "Uitstekend",
+            "de": "Ausgezeichnet"
           }
         },
         {
           "id": "good",
           "title": {
+            "en": "Good",
+            "fr": "Bon",
+            "nl": "Goed",
+            "de": "Gut"
+          },
+          "label": {
             "en": "Good",
             "fr": "Bon",
             "nl": "Goed",
@@ -53,6 +65,12 @@
             "fr": "Passable",
             "nl": "Redelijk",
             "de": "Befriedigend"
+          },
+          "label": {
+            "en": "Fair",
+            "fr": "Passable",
+            "nl": "Redelijk",
+            "de": "Befriedigend"
           }
         },
         {
@@ -62,11 +80,23 @@
             "fr": "Mauvais",
             "nl": "Slecht",
             "de": "Schlecht"
+          },
+          "label": {
+            "en": "Poor",
+            "fr": "Mauvais",
+            "nl": "Slecht",
+            "de": "Schlecht"
           }
         },
         {
           "id": "replace",
           "title": {
+            "en": "Replace",
+            "fr": "Remplacer",
+            "nl": "Vervangen",
+            "de": "Ersetzen"
+          },
+          "label": {
             "en": "Replace",
             "fr": "Remplacer",
             "nl": "Vervangen",
@@ -117,5 +147,9 @@
         "de": "Geschätzte Resttage"
       }
     }
-  ]
+  ],
+  "titleFormatted": {
+    "en": "Battery health changed [[health_status]] ([[device]])",
+    "fr": "Santé de la batterie modifiée [[health_status]] ([[device]])"
+  }
 }

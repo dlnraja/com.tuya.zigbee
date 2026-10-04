@@ -26,7 +26,11 @@
       "min": 1,
       "max": 3600,
       "step": 1,
-      "value": 1
+      "value": 1,
+      "placeholder": {
+        "en": "1–3600",
+        "fr": "1–3600"
+      }
     },
     {
       "name": "state",
@@ -41,6 +45,10 @@
           "title": {
             "en": "On",
             "fr": "Activé"
+          },
+          "label": {
+            "en": "On",
+            "fr": "Activé"
           }
         },
         {
@@ -48,10 +56,18 @@
           "title": {
             "en": "Off",
             "fr": "Désactivé"
+          },
+          "label": {
+            "en": "Off",
+            "fr": "Désactivé"
           }
         }
       ],
       "value": "on"
     }
-  ]
+  ],
+  "titleFormatted": {
+    "en": "Pulse device inching [[duration_seconds]] [[state]] ([[device]])",
+    "fr": "Impulsion sur l'appareil inching [[duration_seconds]] [[state]] ([[device]])"
+  }
 }

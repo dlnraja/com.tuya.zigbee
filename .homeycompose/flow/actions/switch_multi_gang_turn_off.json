@@ -18,39 +18,71 @@
           "id": "1",
           "title": {
             "en": "Gang 1"
+          },
+          "label": {
+            "en": "Gang 1",
+            "fr": "Voie 1"
           }
         },
         {
           "id": "2",
           "title": {
             "en": "Gang 2"
+          },
+          "label": {
+            "en": "Gang 2",
+            "fr": "Voie 2"
           }
         },
         {
           "id": "3",
           "title": {
             "en": "Gang 3"
+          },
+          "label": {
+            "en": "Gang 3",
+            "fr": "Voie 3"
           }
         },
         {
           "id": "4",
           "title": {
             "en": "Gang 4"
+          },
+          "label": {
+            "en": "Gang 4",
+            "fr": "Voie 4"
           }
         },
         {
           "id": "5",
           "title": {
             "en": "Gang 5"
+          },
+          "label": {
+            "en": "Gang 5",
+            "fr": "Voie 5"
           }
         },
         {
           "id": "6",
           "title": {
             "en": "Gang 6"
+          },
+          "label": {
+            "en": "Gang 6",
+            "fr": "Voie 6"
           }
         }
-      ]
+      ],
+      "title": {
+        "en": "Gang",
+        "fr": "Voie"
+      }
     }
-  ]
+  ],
+  "titleFormatted": {
+    "en": "Turn off Gang.. [[gang]] ([[device]])",
+    "fr": "Eteindre Bouton.. [[gang]] ([[device]])"
+  }
 }

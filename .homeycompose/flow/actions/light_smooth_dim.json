@@ -26,7 +26,11 @@
       "min": 0,
       "max": 100,
       "step": 1,
-      "value": 50
+      "value": 50,
+      "placeholder": {
+        "en": "0–100",
+        "fr": "0–100"
+      }
     },
     {
       "name": "duration_seconds",
@@ -38,7 +42,15 @@
       "min": 0,
       "max": 60,
       "step": 1,
-      "value": 2
+      "value": 2,
+      "placeholder": {
+        "en": "0–60",
+        "fr": "0–60"
+      }
     }
-  ]
+  ],
+  "titleFormatted": {
+    "en": "Smooth dim to level [[target_percent]] [[duration_seconds]] ([[device]])",
+    "fr": "Variation douce vers un niveau [[target_percent]] [[duration_seconds]] ([[device]])"
+  }
 }

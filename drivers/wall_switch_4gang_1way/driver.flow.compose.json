@@ -4,127 +4,148 @@
       "id": "wall_switch_4gang_1way_turned_on",
       "title": {
         "en": "Turned on",
-        "nl": "Aangezet"
+        "nl": "Aangezet",
+        "fr": "Allumé"
       },
       "args": [],
       "titleFormatted": {
         "en": "Turned on",
-        "nl": "Aangezet"
+        "nl": "Aangezet",
+        "fr": "Allumé"
       }
     },
     {
       "id": "wall_switch_4gang_1way_turned_off",
       "title": {
         "en": "Turned off",
-        "nl": "Uitgezet"
+        "nl": "Uitgezet",
+        "fr": "Éteint"
       },
       "args": [],
       "titleFormatted": {
         "en": "Turned off",
-        "nl": "Uitgezet"
+        "nl": "Uitgezet",
+        "fr": "Éteint"
       }
     },
     {
       "id": "wall_switch_4gang_1way_physical_gang1_on",
       "title": {
         "en": "Gang 1 physical ON",
-        "nl": "Gang 1 fysiek AAN"
+        "nl": "Gang 1 fysiek AAN",
+        "fr": "Voie 1 allumée (physique)"
       },
       "args": [],
       "titleFormatted": {
         "en": "Gang 1 physical ON",
-        "nl": "Gang 1 fysiek AAN"
+        "nl": "Gang 1 fysiek AAN",
+        "fr": "Voie 1 allumée (physique)"
       }
     },
     {
       "id": "wall_switch_4gang_1way_physical_gang1_off",
       "title": {
         "en": "Gang 1 physical OFF",
-        "nl": "Gang 1 fysiek UIT"
+        "nl": "Gang 1 fysiek UIT",
+        "fr": "Voie 1 éteinte (physique)"
       },
       "args": [],
       "titleFormatted": {
         "en": "Gang 1 physical OFF",
-        "nl": "Gang 1 fysiek UIT"
+        "nl": "Gang 1 fysiek UIT",
+        "fr": "Voie 1 éteinte (physique)"
       }
     },
     {
       "id": "wall_switch_4gang_1way_physical_gang2_on",
       "title": {
         "en": "Gang 2 physical ON",
-        "nl": "Gang 2 fysiek AAN"
+        "nl": "Gang 2 fysiek AAN",
+        "fr": "Voie 2 allumée (physique)"
       },
       "args": [],
       "titleFormatted": {
         "en": "Gang 2 physical ON",
-        "nl": "Gang 2 fysiek AAN"
+        "nl": "Gang 2 fysiek AAN",
+        "fr": "Voie 2 allumée (physique)"
       }
     },
     {
       "id": "wall_switch_4gang_1way_physical_gang2_off",
       "title": {
         "en": "Gang 2 physical OFF",
-        "nl": "Gang 2 fysiek UIT"
+        "nl": "Gang 2 fysiek UIT",
+        "fr": "Voie 2 éteinte (physique)"
       },
       "args": [],
       "titleFormatted": {
         "en": "Gang 2 physical OFF",
-        "nl": "Gang 2 fysiek UIT"
+        "nl": "Gang 2 fysiek UIT",
+        "fr": "Voie 2 éteinte (physique)"
       }
     },
     {
       "id": "wall_switch_4gang_1way_physical_gang3_on",
       "title": {
         "en": "Gang 3 physical ON",
-        "nl": "Gang 3 fysiek AAN"
+        "nl": "Gang 3 fysiek AAN",
+        "fr": "Voie 3 allumée (physique)"
       },
       "args": [],
       "titleFormatted": {
         "en": "Gang 3 physical ON",
-        "nl": "Gang 3 fysiek AAN"
+        "nl": "Gang 3 fysiek AAN",
+        "fr": "Voie 3 allumée (physique)"
       }
     },
     {
       "id": "wall_switch_4gang_1way_physical_gang3_off",
       "title": {
         "en": "Gang 3 physical OFF",
-        "nl": "Gang 3 fysiek UIT"
+        "nl": "Gang 3 fysiek UIT",
+        "fr": "Voie 3 éteinte (physique)"
       },
       "args": [],
       "titleFormatted": {
         "en": "Gang 3 physical OFF",
-        "nl": "Gang 3 fysiek UIT"
+        "nl": "Gang 3 fysiek UIT",
+        "fr": "Voie 3 éteinte (physique)"
       }
     },
     {
       "id": "wall_switch_4gang_1way_physical_gang4_on",
       "title": {
         "en": "Gang 4 physical ON",
-        "nl": "Gang 4 fysiek AAN"
+        "nl": "Gang 4 fysiek AAN",
+        "fr": "Voie 4 allumée (physique)"
       },
       "args": [],
       "titleFormatted": {
         "en": "Gang 4 physical ON",
-        "nl": "Gang 4 fysiek AAN"
+        "nl": "Gang 4 fysiek AAN",
+        "fr": "Voie 4 allumée (physique)"
       }
     },
     {
       "id": "wall_switch_4gang_1way_physical_gang4_off",
       "title": {
         "en": "Gang 4 physical OFF",
-        "nl": "Gang 4 fysiek UIT"
+        "nl": "Gang 4 fysiek UIT",
+        "fr": "Voie 4 éteinte (physique)"
       },
       "args": [],
       "titleFormatted": {
         "en": "Gang 4 physical OFF",
-        "nl": "Gang 4 fysiek UIT"
+        "nl": "Gang 4 fysiek UIT",
+        "fr": "Voie 4 éteinte (physique)"
       }
     },
     {
       "id": "wall_switch_4gang_1way_gang1_scene",
       "title": {
         "en": "Gang 1 scene triggered",
-        "nl": "Gang 1 scène geactiveerd"
+        "nl": "Gang 1 scène geactiveerd",
+        "fr": "Scène voie 1 déclenchée"
       },
       "args": [],
       "tokens": [
@@ -141,14 +162,16 @@
       ],
       "titleFormatted": {
         "en": "Gang 1 scene triggered ({action})",
-        "nl": "Gang 1 scène geactiveerd ({action})"
+        "nl": "Gang 1 scène geactiveerd ({action})",
+        "fr": "Scène voie 1 déclenchée ({action})"
       }
     },
     {
       "id": "wall_switch_4gang_1way_gang2_scene",
       "title": {
         "en": "Gang 2 scene triggered",
-        "nl": "Gang 2 scène geactiveerd"
+        "nl": "Gang 2 scène geactiveerd",
+        "fr": "Scène voie 2 déclenchée"
       },
       "args": [],
       "tokens": [
@@ -165,14 +188,16 @@
       ],
       "titleFormatted": {
         "en": "Gang 2 scene triggered ({action})",
-        "nl": "Gang 2 scène geactiveerd ({action})"
+        "nl": "Gang 2 scène geactiveerd ({action})",
+        "fr": "Scène voie 2 déclenchée ({action})"
       }
     },
     {
       "id": "wall_switch_4gang_1way_gang3_scene",
       "title": {
         "en": "Gang 3 scene triggered",
-        "nl": "Gang 3 scène geactiveerd"
+        "nl": "Gang 3 scène geactiveerd",
+        "fr": "Scène voie 3 déclenchée"
       },
       "args": [],
       "tokens": [
@@ -189,14 +214,16 @@
       ],
       "titleFormatted": {
         "en": "Gang 3 scene triggered ({action})",
-        "nl": "Gang 3 scène geactiveerd ({action})"
+        "nl": "Gang 3 scène geactiveerd ({action})",
+        "fr": "Scène voie 3 déclenchée ({action})"
       }
     },
     {
       "id": "wall_switch_4gang_1way_gang4_scene",
       "title": {
         "en": "Gang 4 scene triggered",
-        "nl": "Gang 4 scène geactiveerd"
+        "nl": "Gang 4 scène geactiveerd",
+        "fr": "Scène voie 4 déclenchée"
       },
       "args": [],
       "tokens": [
@@ -213,31 +240,36 @@
       ],
       "titleFormatted": {
         "en": "Gang 4 scene triggered ({action})",
-        "nl": "Gang 4 scène geactiveerd ({action})"
+        "nl": "Gang 4 scène geactiveerd ({action})",
+        "fr": "Scène voie 4 déclenchée ({action})"
       }
     },
     {
       "id": "wall_switch_4gang_1way_physical_on",
       "title": {
         "en": "Physical button ON",
-        "nl": "Fysieke knop AAN"
+        "nl": "Fysieke knop AAN",
+        "fr": "Bouton physique allumé"
       },
       "args": [],
       "titleFormatted": {
         "en": "Physical button ON",
-        "nl": "Fysieke knop AAN"
+        "nl": "Fysieke knop AAN",
+        "fr": "Bouton physique allumé"
       }
     },
     {
       "id": "wall_switch_4gang_1way_physical_off",
       "title": {
         "en": "Physical button OFF",
-        "nl": "Fysieke knop UIT"
+        "nl": "Fysieke knop UIT",
+        "fr": "Bouton physique éteint"
       },
       "args": [],
       "titleFormatted": {
         "en": "Physical button OFF",
-        "nl": "Fysieke knop UIT"
+        "nl": "Fysieke knop UIT",
+        "fr": "Bouton physique éteint"
       }
     }
   ],
@@ -246,7 +278,8 @@
       "id": "wall_switch_4gang_1way_set_backlight",
       "title": {
         "en": "Set LED indicator mode",
-        "nl": "Stel LED-indicator modus in"
+        "nl": "Stel LED-indicator modus in",
+        "fr": "Régler le mode du voyant LED"
       },
       "args": [
         {
@@ -258,6 +291,11 @@
               "title": {
                 "en": "Always Off",
                 "nl": "Altijd Uit"
+              },
+              "label": {
+                "en": "Always Off",
+                "nl": "Altijd Uit",
+                "fr": "Toujours éteint"
               }
             },
             {
@@ -265,6 +303,11 @@
               "title": {
                 "en": "On when Switch ON",
                 "nl": "Aan bij AAN"
+              },
+              "label": {
+                "en": "On when Switch ON",
+                "nl": "Aan bij AAN",
+                "fr": "Allumé quand l'interrupteur est allumé"
               }
             },
             {
@@ -272,14 +315,24 @@
               "title": {
                 "en": "On when Switch OFF",
                 "nl": "Aan bij UIT"
+              },
+              "label": {
+                "en": "On when Switch OFF",
+                "nl": "Aan bij UIT",
+                "fr": "Allumé quand l'interrupteur est éteint"
               }
             }
-          ]
+          ],
+          "title": {
+            "en": "Mode",
+            "fr": "Mode"
+          }
         }
       ],
       "titleFormatted": {
         "en": "Set LED indicator mode [[mode]]",
-        "nl": "Stel LED-indicator modus in [[mode]]"
+        "nl": "Stel LED-indicator modus in [[mode]]",
+        "fr": "Régler le mode du voyant LED [[mode]]"
       }
     },
     {
@@ -300,6 +353,11 @@
               "title": {
                 "en": "Always Off",
                 "nl": "Altijd Uit"
+              },
+              "label": {
+                "en": "Always Off",
+                "nl": "Altijd Uit",
+                "fr": "Toujours éteint"
               }
             },
             {
@@ -307,6 +365,11 @@
               "title": {
                 "en": "Always On",
                 "nl": "Altijd Aan"
+              },
+              "label": {
+                "en": "Always On",
+                "nl": "Altijd Aan",
+                "fr": "Toujours allumé"
               }
             },
             {
@@ -314,9 +377,18 @@
               "title": {
                 "en": "Last State",
                 "nl": "Laatste status"
+              },
+              "label": {
+                "en": "Last State",
+                "nl": "Laatste status",
+                "fr": "Dernier état"
               }
             }
-          ]
+          ],
+          "title": {
+            "en": "Mode",
+            "fr": "Mode"
+          }
         }
       ],
       "titleFormatted": {
@@ -344,6 +416,11 @@
               "title": {
                 "en": "Toggle",
                 "nl": "Tuimelschakelaar"
+              },
+              "label": {
+                "en": "Toggle",
+                "nl": "Tuimelschakelaar",
+                "fr": "Basculer"
               }
             },
             {
@@ -351,6 +428,11 @@
               "title": {
                 "en": "State (Rocker)",
                 "nl": "Status (Wipschakelaar)"
+              },
+              "label": {
+                "en": "State (Rocker)",
+                "nl": "Status (Wipschakelaar)",
+                "fr": "État (bascule)"
               }
             },
             {
@@ -358,9 +440,18 @@
               "title": {
                 "en": "Momentary (Push Button)",
                 "nl": "Pulsdrukknop"
+              },
+              "label": {
+                "en": "Momentary (Push Button)",
+                "nl": "Pulsdrukknop",
+                "fr": "Momentané (bouton poussoir)"
               }
             }
-          ]
+          ],
+          "title": {
+            "en": "Mode",
+            "fr": "Mode"
+          }
         }
       ],
       "titleFormatted": {
@@ -374,7 +465,8 @@
       "id": "wall_switch_4gang_1way_set_scene_mode",
       "title": {
         "en": "Set scene mode",
-        "nl": "Stel scènemodus in"
+        "nl": "Stel scènemodus in",
+        "fr": "Régler le mode scène"
       },
       "args": [
         {
@@ -385,230 +477,281 @@
               "id": "auto",
               "title": {
                 "en": "Auto (Normal + flows)"
+              },
+              "label": {
+                "en": "Auto (Normal + flows)",
+                "fr": "Auto (normal + flows)"
               }
             },
             {
               "id": "magic",
               "title": {
                 "en": "Magic (Scene only)"
+              },
+              "label": {
+                "en": "Magic (Scene only)",
+                "fr": "Magique (scène uniquement)"
               }
             },
             {
               "id": "both",
               "title": {
                 "en": "Both (Load + scene)"
+              },
+              "label": {
+                "en": "Both (Load + scene)",
+                "fr": "Les deux (charge + scène)"
               }
             }
-          ]
+          ],
+          "title": {
+            "en": "Mode",
+            "fr": "Mode"
+          }
         }
       ],
       "titleFormatted": {
         "en": "Set scene mode [[mode]]",
-        "nl": "Stel scènemodus in [[mode]]"
+        "nl": "Stel scènemodus in [[mode]]",
+        "fr": "Régler le mode scène [[mode]]"
       }
     },
     {
       "id": "wall_switch_4gang_1way_turn_on",
       "title": {
         "en": "Turn on",
-        "nl": "Aanzetten"
+        "nl": "Aanzetten",
+        "fr": "Allumer"
       },
       "args": [],
       "titleFormatted": {
         "en": "Turn on",
-        "nl": "Aanzetten"
+        "nl": "Aanzetten",
+        "fr": "Allumer"
       }
     },
     {
       "id": "wall_switch_4gang_1way_turn_off",
       "title": {
         "en": "Turn off",
-        "nl": "Uitzetten"
+        "nl": "Uitzetten",
+        "fr": "Éteindre"
       },
       "args": [],
       "titleFormatted": {
         "en": "Turn off",
-        "nl": "Uitzetten"
+        "nl": "Uitzetten",
+        "fr": "Éteindre"
       }
     },
     {
       "id": "wall_switch_4gang_1way_toggle",
       "title": {
         "en": "Toggle",
-        "nl": "Wisselen"
+        "nl": "Wisselen",
+        "fr": "Basculer"
       },
       "args": [],
       "titleFormatted": {
         "en": "Toggle",
-        "nl": "Wisselen"
+        "nl": "Wisselen",
+        "fr": "Basculer"
       }
     },
     {
       "id": "wall_switch_4gang_1way_turn_on_gang1",
       "title": {
         "en": "Turn on gang 1",
-        "nl": "Gang 1 aanzetten"
+        "nl": "Gang 1 aanzetten",
+        "fr": "Allumer la voie 1"
       },
       "args": [],
       "titleFormatted": {
         "en": "Turn on gang 1",
-        "nl": "Gang 1 aanzetten"
+        "nl": "Gang 1 aanzetten",
+        "fr": "Allumer la voie 1"
       }
     },
     {
       "id": "wall_switch_4gang_1way_turn_off_gang1",
       "title": {
         "en": "Turn off gang 1",
-        "nl": "Gang 1 uitzetten"
+        "nl": "Gang 1 uitzetten",
+        "fr": "Éteindre la voie 1"
       },
       "args": [],
       "titleFormatted": {
         "en": "Turn off gang 1",
-        "nl": "Gang 1 uitzetten"
+        "nl": "Gang 1 uitzetten",
+        "fr": "Éteindre la voie 1"
       }
     },
     {
       "id": "wall_switch_4gang_1way_toggle_gang1",
       "title": {
         "en": "Toggle gang 1",
-        "nl": "Gang 1 wisselen"
+        "nl": "Gang 1 wisselen",
+        "fr": "Basculer la voie 1"
       },
       "args": [],
       "titleFormatted": {
         "en": "Toggle gang 1",
-        "nl": "Gang 1 wisselen"
+        "nl": "Gang 1 wisselen",
+        "fr": "Basculer la voie 1"
       }
     },
     {
       "id": "wall_switch_4gang_1way_turn_on_gang2",
       "title": {
         "en": "Turn on gang 2",
-        "nl": "Gang 2 aanzetten"
+        "nl": "Gang 2 aanzetten",
+        "fr": "Allumer la voie 2"
       },
       "args": [],
       "titleFormatted": {
         "en": "Turn on gang 2",
-        "nl": "Gang 2 aanzetten"
+        "nl": "Gang 2 aanzetten",
+        "fr": "Allumer la voie 2"
       }
     },
     {
       "id": "wall_switch_4gang_1way_turn_off_gang2",
       "title": {
         "en": "Turn off gang 2",
-        "nl": "Gang 2 uitzetten"
+        "nl": "Gang 2 uitzetten",
+        "fr": "Éteindre la voie 2"
       },
       "args": [],
       "titleFormatted": {
         "en": "Turn off gang 2",
-        "nl": "Gang 2 uitzetten"
+        "nl": "Gang 2 uitzetten",
+        "fr": "Éteindre la voie 2"
       }
     },
     {
       "id": "wall_switch_4gang_1way_toggle_gang2",
       "title": {
         "en": "Toggle gang 2",
-        "nl": "Gang 2 wisselen"
+        "nl": "Gang 2 wisselen",
+        "fr": "Basculer la voie 2"
       },
       "args": [],
       "titleFormatted": {
         "en": "Toggle gang 2",
-        "nl": "Gang 2 wisselen"
+        "nl": "Gang 2 wisselen",
+        "fr": "Basculer la voie 2"
       }
     },
     {
       "id": "wall_switch_4gang_1way_turn_on_gang3",
       "title": {
         "en": "Turn on gang 3",
-        "nl": "Gang 3 aanzetten"
+        "nl": "Gang 3 aanzetten",
+        "fr": "Allumer la voie 3"
       },
       "args": [],
       "titleFormatted": {
         "en": "Turn on gang 3",
-        "nl": "Gang 3 aanzetten"
+        "nl": "Gang 3 aanzetten",
+        "fr": "Allumer la voie 3"
       }
     },
     {
       "id": "wall_switch_4gang_1way_turn_off_gang3",
       "title": {
         "en": "Turn off gang 3",
-        "nl": "Gang 3 uitzetten"
+        "nl": "Gang 3 uitzetten",
+        "fr": "Éteindre la voie 3"
       },
       "args": [],
       "titleFormatted": {
         "en": "Turn off gang 3",
-        "nl": "Gang 3 uitzetten"
+        "nl": "Gang 3 uitzetten",
+        "fr": "Éteindre la voie 3"
       }
     },
     {
       "id": "wall_switch_4gang_1way_toggle_gang3",
       "title": {
         "en": "Toggle gang 3",
-        "nl": "Gang 3 wisselen"
+        "nl": "Gang 3 wisselen",
+        "fr": "Basculer la voie 3"
       },
       "args": [],
       "titleFormatted": {
         "en": "Toggle gang 3",
-        "nl": "Gang 3 wisselen"
+        "nl": "Gang 3 wisselen",
+        "fr": "Basculer la voie 3"
       }
     },
     {
       "id": "wall_switch_4gang_1way_turn_on_gang4",
       "title": {
         "en": "Turn on gang 4",
-        "nl": "Gang 4 aanzetten"
+        "nl": "Gang 4 aanzetten",
+        "fr": "Allumer la voie 4"
       },
       "args": [],
       "titleFormatted": {
         "en": "Turn on gang 4",
-        "nl": "Gang 4 aanzetten"
+        "nl": "Gang 4 aanzetten",
+        "fr": "Allumer la voie 4"
       }
     },
     {
       "id": "wall_switch_4gang_1way_turn_off_gang4",
       "title": {
         "en": "Turn off gang 4",
-        "nl": "Gang 4 uitzetten"
+        "nl": "Gang 4 uitzetten",
+        "fr": "Éteindre la voie 4"
       },
       "args": [],
       "titleFormatted": {
         "en": "Turn off gang 4",
-        "nl": "Gang 4 uitzetten"
+        "nl": "Gang 4 uitzetten",
+        "fr": "Éteindre la voie 4"
       }
     },
     {
       "id": "wall_switch_4gang_1way_toggle_gang4",
       "title": {
         "en": "Toggle gang 4",
-        "nl": "Gang 4 wisselen"
+        "nl": "Gang 4 wisselen",
+        "fr": "Basculer la voie 4"
       },
       "args": [],
       "titleFormatted": {
         "en": "Toggle gang 4",
-        "nl": "Gang 4 wisselen"
+        "nl": "Gang 4 wisselen",
+        "fr": "Basculer la voie 4"
       }
     },
     {
       "id": "wall_switch_4gang_1way_turn_on_all",
       "title": {
         "en": "Turn on all gangs",
-        "nl": "Alle gangs aanzetten"
+        "nl": "Alle gangs aanzetten",
+        "fr": "Allumer toutes les voies"
       },
       "args": [],
       "titleFormatted": {
         "en": "Turn on all gangs",
-        "nl": "Alle gangs aanzetten"
+        "nl": "Alle gangs aanzetten",
+        "fr": "Allumer toutes les voies"
       }
     },
     {
       "id": "wall_switch_4gang_1way_turn_off_all",
       "title": {
         "en": "Turn off all gangs",
-        "nl": "Alle gangs uitzetten"
+        "nl": "Alle gangs uitzetten",
+        "fr": "Éteindre toutes les voies"
       },
       "args": [],
       "titleFormatted": {
         "en": "Turn off all gangs",
-        "nl": "Alle gangs uitzetten"
+        "nl": "Alle gangs uitzetten",
+        "fr": "Éteindre toutes les voies"
       }
     }
   ],
@@ -617,12 +760,14 @@
       "id": "wall_switch_4gang_1way_is_on",
       "title": {
         "en": "Is !{{on|off}}",
-        "nl": "Is !{{aan|uit}}"
+        "nl": "Is !{{aan|uit}}",
+        "fr": "Est !{{allumé|éteint}}"
       },
       "args": [],
       "titleFormatted": {
         "en": "Is !{{on|off}}",
-        "nl": "Is !{{aan|uit}}"
+        "nl": "Is !{{aan|uit}}",
+        "fr": "Est !{{allumé|éteint}}"
       }
     }
   ]

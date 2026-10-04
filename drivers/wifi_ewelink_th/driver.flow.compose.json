@@ -3,41 +3,47 @@
     {
       "id": "wifi_ewelink_th_temperature_changed",
       "title": {
-        "en": "Temperature changed"
+        "en": "Temperature changed",
+        "fr": "Température modifiée"
       },
       "tokens": [
         {
           "name": "temperature",
           "type": "number",
           "title": {
-            "en": "Temperature (C)"
+            "en": "Temperature (C)",
+            "fr": "Température (°C)"
           },
           "example": 25.5
         }
       ],
       "args": [],
       "titleFormatted": {
-        "en": "Temperature changed ({temperature})"
+        "en": "Temperature changed ({temperature})",
+        "fr": "Température modifiée ({temperature})"
       }
     },
     {
       "id": "wifi_ewelink_th_humidity_changed",
       "title": {
-        "en": "Humidity changed"
+        "en": "Humidity changed",
+        "fr": "Humidité modifiée"
       },
       "tokens": [
         {
           "name": "humidity",
           "type": "number",
           "title": {
-            "en": "Humidity (%)"
+            "en": "Humidity (%)",
+            "fr": "Humidité (%)"
           },
           "example": 60
         }
       ],
       "args": [],
       "titleFormatted": {
-        "en": "Humidity changed ({humidity})"
+        "en": "Humidity changed ({humidity})",
+        "fr": "Humidité modifiée ({humidity})"
       }
     }
   ],

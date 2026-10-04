@@ -26,7 +26,15 @@
       "min": 1,
       "max": 300,
       "step": 1,
-      "value": 10
+      "value": 10,
+      "placeholder": {
+        "en": "1–300",
+        "fr": "1–300"
+      }
     }
-  ]
+  ],
+  "titleFormatted": {
+    "en": "Blink light alert [[duration_seconds]] ([[device]])",
+    "fr": "Faire clignoter la lumière alerte [[duration_seconds]] ([[device]])"
+  }
 }

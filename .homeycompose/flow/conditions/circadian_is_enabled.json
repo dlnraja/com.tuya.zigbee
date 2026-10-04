@@ -16,5 +16,9 @@
       "type": "device",
       "filter": "capabilities=light_color_temp|light_hue|dim"
     }
-  ]
+  ],
+  "titleFormatted": {
+    "en": "Circadian lighting !{{is|is not}} enabled ([[device]])",
+    "fr": "L'éclairage circadien !{{est|n'est pas}} activé ([[device]])"
+  }
 }

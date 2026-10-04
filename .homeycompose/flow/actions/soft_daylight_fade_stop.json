@@ -9,7 +9,14 @@
       "type": "device",
       "name": "light",
       "filter": "capabilities=onoff|capabilities=dim|capabilities=light_temperature|capabilities=light_color_temp",
-      "title": { "en": "Light", "fr": "Lumière" }
+      "title": {
+        "en": "Light",
+        "fr": "Lumière"
+      }
     }
-  ]
+  ],
+  "titleFormatted": {
+    "en": "Stop Soft Daylight Fade ([[light]])",
+    "fr": "Arrêter le fondu lumière du jour ([[light]])"
+  }
 }

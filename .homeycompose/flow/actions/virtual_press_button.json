@@ -25,7 +25,16 @@
       "min": 1,
       "max": 8,
       "step": 1,
-      "value": 1
+      "value": 1,
+      "placeholder": {
+        "en": "1–8",
+        "fr": "1–8"
+      }
     }
-  ]
+  ],
+  "titleFormatted": {
+    "en": "Virtually press button [[gang]] ([[device]])",
+    "fr": "Appuyer virtuellement sur le bouton [[gang]] ([[device]])",
+    "nl": "Virtueel knop [[gang]] indrukken ([[device]])"
+  }
 }

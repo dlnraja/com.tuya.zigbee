@@ -3,81 +3,94 @@
     {
       "id": "wifi_ewelink_pow_turned_on",
       "title": {
-        "en": "Turned on"
+        "en": "Turned on",
+        "fr": "Allumé"
       },
       "args": [],
       "titleFormatted": {
-        "en": "Turned on"
+        "en": "Turned on",
+        "fr": "Allumé"
       }
     },
     {
       "id": "wifi_ewelink_pow_turned_off",
       "title": {
-        "en": "Turned off"
+        "en": "Turned off",
+        "fr": "Éteint"
       },
       "args": [],
       "titleFormatted": {
-        "en": "Turned off"
+        "en": "Turned off",
+        "fr": "Éteint"
       }
     },
     {
       "id": "wifi_ewelink_pow_power_changed",
       "title": {
-        "en": "Power changed"
+        "en": "Power changed",
+        "fr": "Puissance modifiée"
       },
       "tokens": [
         {
           "name": "power",
           "type": "number",
           "title": {
-            "en": "Power (W)"
+            "en": "Power (W)",
+            "fr": "Puissance (W)"
           },
           "example": 100
         }
       ],
       "args": [],
       "titleFormatted": {
-        "en": "Power changed ({power})"
+        "en": "Power changed ({power})",
+        "fr": "Puissance modifiée ({power})"
       }
     },
     {
       "id": "wifi_ewelink_pow_voltage_changed",
       "title": {
-        "en": "Voltage changed"
+        "en": "Voltage changed",
+        "fr": "Tension modifiée"
       },
       "tokens": [
         {
           "name": "voltage",
           "type": "number",
           "title": {
-            "en": "Voltage (V)"
+            "en": "Voltage (V)",
+            "fr": "Tension (V)"
           },
           "example": 230
         }
       ],
       "args": [],
       "titleFormatted": {
-        "en": "Voltage changed ({voltage})"
+        "en": "Voltage changed ({voltage})",
+        "fr": "Tension modifiée ({voltage})"
       }
     },
     {
       "id": "wifi_ewelink_pow_current_changed",
       "title": {
-        "en": "Current changed"
+        "en": "Current changed",
+        "fr": "Courant modifié"
       },
       "tokens": [
         {
           "name": "current",
           "type": "number",
           "title": {
-            "en": "Current (A)"
+            "en": "Current (A)",
+            "fr": "Courant (A)"
           },
           "example": 0.5
         }
       ],
       "args": [],
       "titleFormatted": {
-        "en": "Current changed ({current})"
+        "en": "Current changed ({current})",
+        "fr": "Courant modifié ({current})"
       }
     }
   ],
@@ -85,11 +98,13 @@
     {
       "id": "wifi_ewelink_pow_is_on",
       "title": {
-        "en": "Is on"
+        "en": "Is on",
+        "fr": "Est allumé"
       },
       "args": [],
       "titleFormatted": {
-        "en": "Is on"
+        "en": "Is on",
+        "fr": "Est allumé"
       }
     }
   ],

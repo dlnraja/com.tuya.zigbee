@@ -21,12 +21,22 @@
     {
       "name": "battery_percent",
       "type": "number",
-      "title": { "en": "Battery %", "fr": "Batterie %" }
+      "title": {
+        "en": "Battery %",
+        "fr": "Batterie %"
+      }
     },
     {
       "name": "threshold",
       "type": "number",
-      "title": { "en": "Low threshold", "fr": "Seuil bas" }
+      "title": {
+        "en": "Low threshold",
+        "fr": "Seuil bas"
+      }
     }
-  ]
+  ],
+  "titleFormatted": {
+    "en": "Battery recovered (app alarm cleared) ([[device]])",
+    "fr": "Batterie rétablie (alarme app effacée) ([[device]])"
+  }
 }

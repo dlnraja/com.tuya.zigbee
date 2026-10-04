@@ -1,10 +1,12 @@
 {
   "id": "presence_zone_occupied",
   "title": {
-    "en": "Zone is occupied"
+    "en": "Zone is occupied",
+    "fr": "La zone est occupée"
   },
   "hint": {
-    "en": "Checks if the Virtual Presence Detector considers its zone currently occupied"
+    "en": "Checks if the Virtual Presence Detector considers its zone currently occupied",
+    "fr": "Vérifie si le détecteur de présence virtuel considère sa zone comme occupée"
   },
   "args": [
     {
@@ -18,21 +20,24 @@
       "name": "zone_name",
       "type": "string",
       "title": {
-        "en": "Zone name"
+        "en": "Zone name",
+        "fr": "Nom de la zone"
       }
     },
     {
       "name": "confidence",
       "type": "number",
       "title": {
-        "en": "Confidence (0-100)"
+        "en": "Confidence (0-100)",
+        "fr": "Confiance (0-100)"
       }
     },
     {
       "name": "state",
       "type": "string",
       "title": {
-        "en": "State"
+        "en": "State",
+        "fr": "État"
       },
       "example": "present"
     },
@@ -40,8 +45,13 @@
       "name": "presence_duration_minutes",
       "type": "number",
       "title": {
-        "en": "Presence duration (minutes)"
+        "en": "Presence duration (minutes)",
+        "fr": "Durée de présence (minutes)"
       }
     }
-  ]
+  ],
+  "titleFormatted": {
+    "en": "Zone is occupied ([[device]])",
+    "fr": "La zone est occupée ([[device]])"
+  }
 }

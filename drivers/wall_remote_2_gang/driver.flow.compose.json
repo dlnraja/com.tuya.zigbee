@@ -3,57 +3,84 @@
     {
       "id": "wall_remote_2_gang_buttons",
       "title": {
-        "en": "Button Action"
+        "en": "Button Action",
+        "fr": "Action du bouton"
       },
       "args": [
         {
           "name": "action",
           "type": "dropdown",
           "title": {
-            "en": "Button Action"
+            "en": "Button Action",
+            "fr": "Action du bouton"
           },
           "values": [
             {
               "id": "left-oneClick",
               "title": {
                 "en": "left button was pressed 1 time"
+              },
+              "label": {
+                "en": "left button was pressed 1 time",
+                "fr": "bouton gauche appuyé 1 fois"
               }
             },
             {
               "id": "left-twoClicks",
               "title": {
                 "en": "left button was pressed 2 times"
+              },
+              "label": {
+                "en": "left button was pressed 2 times",
+                "fr": "bouton gauche appuyé 2 fois"
               }
             },
             {
               "id": "left-longPress",
               "title": {
                 "en": "left button was held down"
+              },
+              "label": {
+                "en": "left button was held down",
+                "fr": "bouton gauche maintenu"
               }
             },
             {
               "id": "right-oneClick",
               "title": {
                 "en": "right button was pressed 1 time"
+              },
+              "label": {
+                "en": "right button was pressed 1 time",
+                "fr": "bouton droit appuyé 1 fois"
               }
             },
             {
               "id": "right-twoClicks",
               "title": {
                 "en": "right button was pressed 2 times"
+              },
+              "label": {
+                "en": "right button was pressed 2 times",
+                "fr": "bouton droit appuyé 2 fois"
               }
             },
             {
               "id": "right-longPress",
               "title": {
                 "en": "right button was held down"
+              },
+              "label": {
+                "en": "right button was held down",
+                "fr": "bouton droit maintenu"
               }
             }
           ]
         }
       ],
       "titleFormatted": {
-        "en": "Button Action [[action]]"
+        "en": "Button Action [[action]]",
+        "fr": "Action du bouton [[action]]"
       }
     },
     {

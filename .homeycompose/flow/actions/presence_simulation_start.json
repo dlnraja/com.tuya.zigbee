@@ -26,7 +26,11 @@
       "min": 0,
       "max": 23,
       "step": 1,
-      "value": 18
+      "value": 18,
+      "placeholder": {
+        "en": "0–23",
+        "fr": "0–23"
+      }
     },
     {
       "name": "end_hour",
@@ -38,7 +42,15 @@
       "min": 0,
       "max": 23,
       "step": 1,
-      "value": 23
+      "value": 23,
+      "placeholder": {
+        "en": "0–23",
+        "fr": "0–23"
+      }
     }
-  ]
+  ],
+  "titleFormatted": {
+    "en": "Start presence simulation [[start_hour]] [[end_hour]] ([[device]])",
+    "fr": "Démarrer la simulation de présence [[start_hour]] [[end_hour]] ([[device]])"
+  }
 }
