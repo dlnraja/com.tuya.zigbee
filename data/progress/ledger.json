@@ -1,6 +1,6 @@
 {
  "version": 1,
- "updated": "2026-10-04T01:37:56.857Z",
+ "updated": "2026-10-04T07:55:00+02:00",
  "checkpoints": {
   "resume": "data/leads/resume-checkpoint.json",
   "deepRead": "data/leads/deep-read-checkpoint.json",
@@ -9617,36 +9617,44 @@
    "upstreamUpdatedAt": "2026-03-22T07:21:24Z"
   },
   "forum-post:140352/2075": {
-   "status": "pending",
-   "source": "pc-harvest-r2"
+   "status": "done",
+   "source": "pc-harvest-r2",
+   "result": "already routed to one correct driver"
   },
   "forum-post:140352/2079": {
-   "status": "pending",
-   "source": "pc-harvest-r2"
+   "status": "done",
+   "source": "pc-harvest-r2",
+   "result": "already routed to one correct driver"
   },
   "forum-post:140352/2082": {
-   "status": "pending",
-   "source": "pc-harvest-r2"
+   "status": "done",
+   "source": "pc-harvest-r2",
+   "result": "already routed to one correct driver"
   },
   "forum-post:140352/2092": {
-   "status": "pending",
-   "source": "pc-harvest-r2"
+   "status": "blocked",
+   "source": "pc-harvest-r2",
+   "result": "diagnostic-report complaint; report content not accessible from box"
   },
   "forum-post:140352/2093": {
-   "status": "pending",
-   "source": "pc-harvest-r2"
+   "status": "blocked",
+   "source": "pc-harvest-r2",
+   "result": "diagnostic-report complaint; report content not accessible from box"
   },
   "forum-post:140352/2099": {
-   "status": "pending",
-   "source": "pc-harvest-r2"
+   "status": "done",
+   "source": "pc-harvest-r2",
+   "result": "already routed to one correct driver"
   },
   "forum-post:140352/2120": {
-   "status": "pending",
-   "source": "pc-harvest-r2"
+   "status": "done",
+   "source": "pc-harvest-r2",
+   "result": "already routed to one correct driver"
   },
   "forum-post:140352/2134": {
-   "status": "pending",
-   "source": "pc-harvest-r2"
+   "status": "blocked",
+   "source": "pc-harvest-r2",
+   "result": "diagnostic-report complaint; report content not accessible from box"
   },
   "johan-issue:1": {
    "status": "pending",
@@ -22996,84 +23004,100 @@
    "note": "580/580 present"
   },
   "task:johan-pr-port-1017": {
-   "status": "pending",
+   "status": "done",
    "date": "2026-10-04",
-   "note": "port evaluation"
+   "note": "port evaluation",
+   "result": "closed upstream; mfr already present, nothing to port"
   },
   "task:johan-pr-port-1065": {
-   "status": "pending",
+   "status": "deferred",
    "date": "2026-10-04",
-   "note": "port evaluation"
+   "note": "port evaluation",
+   "result": "behaviour change, deferred (risk for existing users)"
   },
   "task:johan-pr-port-1106": {
-   "status": "pending",
+   "status": "done",
    "date": "2026-10-04",
-   "note": "port evaluation"
+   "note": "port evaluation",
+   "result": "closed upstream; mfr already present, nothing to port"
   },
   "task:johan-pr-port-1121": {
-   "status": "pending",
+   "status": "deferred",
    "date": "2026-10-04",
-   "note": "port evaluation"
+   "note": "port evaluation",
+   "result": "behaviour change, deferred (risk for existing users)"
   },
   "task:johan-pr-port-1171": {
-   "status": "pending",
+   "status": "done",
    "date": "2026-10-04",
-   "note": "port evaluation"
+   "note": "port evaluation",
+   "result": "closed upstream; mfr already present, nothing to port"
   },
   "task:johan-pr-port-1210": {
-   "status": "pending",
+   "status": "deferred",
    "date": "2026-10-04",
-   "note": "port evaluation"
+   "note": "port evaluation",
+   "result": "behaviour change, deferred (risk for existing users)"
   },
   "task:johan-pr-port-1230": {
-   "status": "pending",
+   "status": "done",
    "date": "2026-10-04",
-   "note": "port evaluation"
+   "note": "port evaluation",
+   "result": "_TZE200_iq4ygaai+TS0201 -> temphumidsensor (master+bastien)"
   },
   "task:johan-pr-port-1237": {
-   "status": "pending",
+   "status": "done",
    "date": "2026-10-04",
-   "note": "port evaluation"
+   "note": "port evaluation",
+   "result": "closed upstream; mfr already present, nothing to port"
   },
   "task:johan-pr-port-1346": {
-   "status": "pending",
+   "status": "deferred",
    "date": "2026-10-04",
-   "note": "port evaluation"
+   "note": "port evaluation",
+   "result": "behaviour change, deferred (risk for existing users)"
   },
   "task:johan-pr-port-1350": {
-   "status": "pending",
+   "status": "done",
    "date": "2026-10-04",
-   "note": "port evaluation"
+   "note": "port evaluation",
+   "result": "closed upstream; mfr already present, nothing to port"
   },
   "task:johan-pr-port-1406": {
-   "status": "pending",
+   "status": "deferred",
    "date": "2026-10-04",
-   "note": "port evaluation"
+   "note": "port evaluation",
+   "result": "behaviour change, deferred (risk for existing users)"
   },
   "task:johan-pr-port-1428": {
-   "status": "pending",
+   "status": "done",
    "date": "2026-10-04",
-   "note": "port evaluation"
+   "note": "port evaluation",
+   "result": "closed upstream; mfr already present, nothing to port"
   },
   "task:johan-pr-port-1431": {
-   "status": "pending",
+   "status": "done",
    "date": "2026-10-04",
-   "note": "port evaluation"
+   "note": "port evaluation",
+   "result": "closed upstream; mfr already present, nothing to port"
   },
   "task:johan-pr-port-145": {
-   "status": "pending",
+   "status": "done",
    "date": "2026-10-04",
-   "note": "port evaluation"
+   "note": "port evaluation",
+   "result": "closed upstream; mfr already present, nothing to port"
   },
   "task:johan-pr-port-774": {
-   "status": "pending",
+   "status": "done",
    "date": "2026-10-04",
-   "note": "port evaluation"
+   "note": "port evaluation",
+   "result": "closed upstream; mfr already present, nothing to port"
   },
   "task:kimi-backlog": {
-   "status": "pending",
+   "status": "partial",
    "date": "2026-10-04",
-   "note": "reports/kimi-2026-07-28/master-backlog-fixes.md"
+   "note": "reports/kimi-2026-07-28/master-backlog-fixes.md",
+   "result": "audited; empty-mfr catch-alls not filled without sources; air_purifier_dimmer trigger prefix candidate"
   },
   "task:ledger-wire-auto-enrich-closed-loop": {
    "status": "pending",
@@ -23441,9 +23465,10 @@
    "note": "research with conflict sweep"
   },
   "task:w5-required-clusters-52": {
-   "status": "pending",
+   "status": "done",
    "date": "2026-10-04",
-   "note": "PC r2: 52 drivers whose required clusters exceed interviews -> keep interview clusters required, rest optional (w5_requires_missing.md)"
+   "note": "PC r2: 52 drivers whose required clusters exceed interviews -> keep interview clusters required, rest optional (w5_requires_missing.md)",
+   "result": "audit only: platform already treats extras as optional; nothing removed (W5_INTERVIEW_CLUSTER_AUDIT_2026-10-04.md)"
   },
   "task:zbeacon-th01": {
    "status": "done",
