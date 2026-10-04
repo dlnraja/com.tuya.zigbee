@@ -32,8 +32,17 @@ Applied here (P2799): "Open", "Close", "Stop" and "Go to favorite position" flow
 
 Ideas kept for later (not implemented): combined position+tilt action with sequencing; staggering commands when a flow moves many covers; optional Identify (cluster 0x0003) action for covers.
 
+Applied (P2801/P2802, all three apps):
+- A bounded, per-app queue (`lib/covers/CoverCommandQueue.js`) paces cover commands sent by flows: at most 2 in flight, 200 ms between starts, 40 queued. When the queue is full, the command runs at once instead of failing. A hung command frees its slot after 15 s.
+- "Set cover position and tilt" (`cover_set_position_and_tilt`) works as a single scene step. Neither ZCL Window Covering (0x0102) nor any Tuya DP known here has a combined lift+tilt command. A device can expose one through `setCoverPositionAndTilt(pos, tilt)`. Otherwise the app sends the position, waits until the cover arrives (bounded by its open/close time, at most 120 s), then sends the tilt.
+- "Identify cover" (`cover_identify`) works only when an endpoint really has cluster 0x0003. Other devices get a clear error.
+- There is no slow-speed action. DP8 "motor_speed" in UnifiedCoverBase comes from a generic Z2M note and has another meaning on Moes ZTS covers, so exposing it could reverse or misconfigure motors. "My" is the `favorite_position` setting.
+
+## Flow cards that never fire (P2803)
+The Bastien flow audit found driver triggers that are never fired and conditions without a run listener. Their English titles are clear, but their ids are hashed, so generic emitters miss them. `tools/flow/build-dead-flow-autowire.js` maps a card only when its title is unambiguous, the driver really has the capability, and the id is not already used literally in JS. Triggers then fire on capability change for that driver only. Conditions return false (never throw) without data, and a driver's own listener still wins.
+
 ## Ecosystem status checks
-- Tuya ↔ Home Assistant (2021 announcement): the cloud custom component became the core integration, now QR login through the Smart Life app (sharing SDK); official local control never shipped. HA now uses `home-assistant-libs/tuya-device-handlers` (product_id quirks, MIT), added to the master-branch source registry (`data/sources/registry.json`) as a weekly source.
+- Tuya ↔ Home Assistant (2021 announcement): the cloud custom component became the core integration, now QR login through the Smart Life app (sharing SDK); official local control never shipped. HA now uses `home-assistant-libs/tuya-device-handlers` (product_id quirks, MIT), added to `data/sources/registry.json` as a weekly source.
 - Tuya local control (EverySmartHome, 2021-10-07: "no longer a priority"): still true in 2026. Tuya's newer Smart Life integration README says local control is not supported yet. That is the gap this app's local Zigbee path and the community Wi-Fi local libraries fill; never plan on a vendor promise.
 - Athom official Tuya app (2024 announcement): the Homey store page (read 2026-10-04) shows v1.4.2, last updated two years ago, with a notice that it is broken for new users ("No matching app user information").
 - ubisys joined Works with Home Assistant (2026-04-23): in-wall Zigbee actuators (C4, H1, S1, S1-R, S2). The app already knows ubisys (mfr code 0x10F2) in `ExoticQuirkEngine`.
