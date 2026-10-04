@@ -198,3 +198,5 @@ Sources actually used or consulted for the Wi-Fi local stack (`lib/tuya-local/`)
 - GitHub issue reporters who help improve device compatibility
 - The open-source Zigbee community for protocol documentation and device databases
 - romasku/tuya-zigbee-switch device_db, pvvx (Zbeacon TS0001 notes), lsroka76/Z2S_Library supported-devices list — couple evidence (2026-10-04)
+
+- **Athom B.V. — Matter Bridge app** (github.com/athombv/com.athom.matter-bridge, GPL-3.0): class/capability to Matter device-type mapping summarised in our own words in `data/matter-bridge-mapping.json` (read 2026-10-04, commit 045787d). No code copied.

@@ -2,14 +2,9 @@
 
 From Homey Pro / Self-Hosted Server **v13.5.1**, new users can no longer enable Homey's built-in
 HomeKit experience, and Athom will remove it completely in **March 2027**. Athom recommends the
-**Matter Bridge** app to expose Homey devices to Apple Home, Google Home and others.
+**Matter Bridge** app to expose Homey devices to Apple Home, Google Home, Alexa, SmartThings and
+Home Assistant.
 
-What this means for this app:
-- Devices paired with this app keep working in Homey; nothing changes in pairing or flows.
-- To see them in Apple Home after the change, install Homey's Matter Bridge app and select the devices.
-- We are checking every driver so that it uses a standard Homey device class and standard
-  capabilities (on/off, dim, colour temperature, colour, window coverings, measurements, alarms,
-  target temperature), which the bridge can map. Where a driver only exposed a custom capability,
-  a standard one is added next to it; when no standard capability fits, the closest one is mirrored (for example a mode as on/off or a generic alarm, a scene as a button) or the feature stays available through flows. Nothing is removed.
-
-Status of the audit: see `data/leads/resume-checkpoint.json` (master_queue, "Matter Bridge").
+This note now lives in **[SMART_HOME_ECOSYSTEMS.md](SMART_HOME_ECOSYSTEMS.md)**, which covers
+Apple Home, Google Home / Assistant, Alexa, SmartThings and Home Assistant, what each one can see,
+and what this app does to stay compatible. Nothing is removed from your devices or flows.

@@ -1,712 +1,731 @@
 {
- "updated": "2026-10-04T03:10:00+02:00",
- "queue": "dlnraja maintenance queue 2026-10-03 (items 1-7)",
- "rules": ".specify/memory/constitution.md",
- "worktree_note": "Use a dedicated git worktree per agent (e.g. /workspace/exec-wt); a shared checkout was reset by another worker on 2026-10-03.",
- "done": {
-  "1": "Spec Kit structure: .specify/memory/constitution.md, .specify/templates/*, specs/002..006/{spec,plan,tasks}.md; maintainer clarifications M1-M6 recorded in constitution; specs 007 (lights) and 008 (hygiene) added",
-  "2": "spec 002: scripts/gen/native-matrix.js -> data/native-matrix.json + docs/NATIVE_MATRIX.md; gate limited to Tuya-style couples, 0xE000-E002 non-native; baseline 255/531",
-  "6": "Done on master: fingerprints; #1501 unknown-DP flood guard (lib/utils/UnknownDPLogger.js); #1502 CCT clamp 0..1 + best-effort tuyaRgbMode (lib/TuyaZigBeeLightDevice.js); #1503 read-only independent relay/indicator/child-lock sync + strict writes (lib/helpers/TuyaOnOffSettingsSync.js; smartplug, smartplug_2_socket, wall_socket, smartPlug_DinRail); TH05Z interview identity (ManufacturerNameHelper node.manufacturerName); TH01Z lcdtemphumidsensor_3 answers MCU time requests (GlobalTimeSyncEngine listener); knob native LevelControl bound cluster + 25 ms dual-path guard (SmartKnobRotationMixin). CREDITS updated. Stable: fingerprints done; device fixes (#1501/#1502/#1503/TH01Z) to backport in next grouped stable publish. NOTE: _TZE200_locansqn is in our EPOCH_2000 list while Johan's TH01Z fix uses 1970 epoch — unresolved, needs >=2 sources before changing.",
-  "7": "Root cause: fork PR #558 (mc101z_pwm_dimmer) merged without PR Gate running; driver lacked driver.flow.compose.json -> check:p2518 failed in 'P244x..family gates' (runs 2026-10-02 22:06Z and 2026-10-03 05:07Z). Fleet-enrich eccd3a7812 (07:07Z) generated the file. Prevention: auto-fix workflow now scaffolds missing driver.flow.compose.json before family gates. Same root cause for 2026-10-02 22:03Z failures of Auto-Publish on Push (P2518 via family gates), Syntax Check & SDK3 Validation (P2518 test) and PR Gate on feat/mc101z-support (PR merged despite failing gate).",
-  "8": "Done: .ai/cache + .ai/timeline.json untracked (git rm --cached + .gitignore, restored via actions/cache in ai-monthly-audit.yml); stable version aligned 5.12.357 (454323238f); stable Syntax Check already fixed (3e4c63aef5); master failures of 10-02/10-03 = mc101z P2518; 2 UTF-16 report artifacts removed (js-syntax-audit green). Open: app.json trim plan (4,180,221 B).",
-  "2_partial": "scripts/gates/native-matrix-gate.js + data/native-matrix-baseline.json (252 non-native endpoint clusters, 705 dual couples frozen, shrink-only); npm validate:native-matrix; wired in pr-gate.yml and auto-fix-and-publish.yml",
-  "6_partial": "Master fingerprints added: smartplug(TS011F) _TZ3000_zgtbi4oy/_TZ3000_iiacqpdz/_TZ3000_dvqt7qrw; curtain_module(TS130F) _TZ3000_vsj5o7dm/_TZ3000_os0wy3vh/_TZ3000_26gjlugm; wall_remote_1_gang(TS0041) _TZ3000_fa9mlvja/_TZ3000_vn88ezar (driver.compose + app.json); gate: 0 new dual couples",
-  "8_partial": "stable Syntax Check 09-28 failure (P214 TS0601 escape) already fixed by 3e4c63aef5 (gate passes locally); master p248x/Auto-Publish/Syntax failures of 2026-10-02 22:03Z = same mc101z P2518 cause; Syntax Check + code-quality green on 9f6c920e36",
-  "ci-concurrency": "c18cecbe28: per-app publish concurrency groups (athom-publish-master/-stable/-bastien, cancel-in-progress false); safe-sync-stable prunes mfs_db rows whose driver is absent on stable and bumps app.json/package.json/changelog together. Stable 79bbc354a7 same groups.",
-  "3a": "spec 003 T1-T2: lib/coordinator/DeviceCoordinator.js + data/coordinator-profiles.json + test (not wired)",
-  "4a": "spec 004 T1: lib/layers/LayerInterface.js (CircuitBreaker, wrapLayer w/ homey timers, runLayers, background) + test",
-  "5a": "spec 005 T1: scanner persists links + structured fields only; johan-canonical-index stripped (670 threads needsDeepRead); johan-comments-raw.json removed + gitignored",
-  "7a": "spec 007: 5 CCT fps on light_bulb_tunable_white (_TZ3000_0ausfos0/_9evm3otq/_ajkq2isy TS0502A; _TZ3210_uos3hl9x/_y5ztga9r TS0502B)",
-  "9a": "spec 009 T1: .github/workflows/johan-thread-intel.yml daily 03:40 UTC with stored-text guard",
-  "6b": "stable 5.12.359: lcdtemphumidsensor_3 MCU time listener + ManufacturerNameHelper interview identity (knob not applicable: stable has raw handleFrame path, no mixin)",
-  "3b": "spec 003 T3+T5 (master 4996f89165→3f5cff34b6): lib/coordinator/attach.js; ButtonDevice.triggerButtonPress cross-channel press dedupe (leading edge, same-channel repeats untouched → double/triple kept; virtual never gated); BaseUnifiedDevice.safeSetCapabilityValue seq dedupe (only when options.seq) + sendTuyaCommand collapse (profile collapseCommands, off by default); profiles: enabled only for button/remote (buttonCrossMs 400); setting coordinator_mode on/off override; CREDITS",
-  "3c": "spec 003 T4 stable: lib/coordinator/SimpleButtonGate.js (seq + fixed 400 ms cross-channel window) committed LOCALLY on exec-stable 35b5248d29 — NOT pushed (push to stable-v5 was blocked by auto-review; hold for grouped stable publish with the user's approval)",
-  "4b": "spec 004 T2 (f103de0961): lib/layers/LegacyLayerAdapters.js — native ZCL passthrough unwrapped first, tuya-raw + rxtx-chain wrapped (breaker/timeout); LowLevelBridge.asLayers(), ProtocolRxTxChain.asLayer(); nativeThenFallback sequential/parallel. Adapters only: callers not yet migrated",
-  "5b": "spec 005 T2 (7773230234): 6 harvesters persist links+fields only; MAX_CROSS_COUPLES=16 (6 MB reports were 20k synthetic couples from T26439 #1 device list); dumps distilled → data/forum/forum-leads-ssot.json + docs/rules/FORUM_LEADS_RULES.md; ~54 MB untracked (git rm --cached + .gitignore, history kept); analysis .md kept",
-  "7b": "spec 007 T4 (51836c1520): drivers light_cct_ts0502b (_TZ3210_jtifm80b, CCT-only caps), light_rgbcct_ts0505b (_TZ3210_p9ao60da), light_dimmable_ts0501a (_TZ3000_7dcddnye); device.js re-exports light_bulb_tunable_white/bulb_rgb/bulb_dimmable; 0 new dual couples. T5 partial (existing driver caps unchanged)",
-  "9b": "spec 009 (340c553fa3): Discussions via GraphQL in scripts/scanners/johan-canonical-index.js (JohanBendz has Discussions disabled; works on our repo); deep read #797 (+#1246,#1284,#964,#1291,#1461) → docs/rules/JOHAN_797_STANDARD_ZCL_TEMP_RH.md, data/leads/johan-deep-read-log.json, new exact driver temphumidsensor_zcl_ts0601 (_TZE200_qoy0ekbd TS0601 never matched before)",
-  "appjson-a": "placeholders *_needs_device_assignment verified: runtime only filters them (TuyaNormalizer, DeviceFingerprintDB); kept in source because removal empties manufacturerName (gate) and prepare-publish already prunes them; publish compact 3.70/4.00 MB; publish-size-gate warns > 3.85 MB (::warning in CI)",
-  "branches-a": "dlnraja branches: relevant = master, stable-v5, bastien-home. bastien-home bf6fb47ddd pushed [skip ci]: 4 exact-pair drivers + SimpleButtonGate (app id com.dlnraja.tuya.zigbee.bastien kept, validate publish OK). stable: exec-stable 35b5248d29 + 1d8e55c578 (same drivers) committed locally, push held for grouped publish approval. Skipped (stale, auto/PR leftovers, not merged): ai/monthly-audit-2026-08, ai/monthly-audit-2026-09, auto/driver-maintenance, auto/johan-sdk3-sync, auto/weekly-fingerprint-sync, codex-diag-timeouts, fix/stable-clusterutils-p137, masterwlan, gh-pages (site)",
-  "branches-b": "Johan branches read (manifests): develop-0.4 + feature/0.4-mowe-ias-rain narrow profiles 165 identities, 161 covered; gaps recorded in docs/rules/JOHAN_BRANCHES_2026-10-03.md"
- },
- "next": [
-  "conflict sweep (W4): continue from ledger conflict:* pending, frugally",
-  "stable grouped publish now ALSO includes local exec-stable 323c38eda0 (#1298 + #1113 port) — push needs user approval",
-  "deep-read sweep: follow data/leads/deep-read-checkpoint.json + ledger (johan-issue:* ascending from 1, then dlnraja-issue:*); 925 deferred",
-  "next master publish: push a non-[skip ci] commit to ship #1298/#1113 drivers (batched)",
-  "Johan branch gaps (docs/rules/JOHAN_BRANCHES_2026-10-03.md): _TZ3000_o9f2zqln TS0207 rain, _TZ3210_iystcadi TS0505A, _TZ3000_p26flek3 TS0001 relay (on climate_sensor) — read source interviews, then exact drivers; port to stable/bastien",
-  "stable grouped publish: push exec-stable 35b5248d29 (SimpleButtonGate) + backports #1501/#1502/#1503/TH01Z + device compat (4 new dedicated drivers, qoy0ekbd) — needs explicit approval (auto-review blocked direct push)",
-  "leads: zbeacon|TH01 + Zbeacon|TH01 routed to doorwindowsensor_4 (contact) — needs dw4 split without dual couples; _TZE200_rxq4iti9|TS0601 on device_radiator_valve (EF00 temp/RH, DP map unknown)",
-  "spec 003 T1 inventory of legacy dedupe points (ReceptionManager/TransmissionManager/UniversalThrottleManager) and migrate to coordinator",
-  "spec 004: migrate callers to asLayers()/asLayer()",
-  "spec 009 T4/T6: continue deep reads of needsDeepRead threads",
-  "app.json shrink step 2: lazy-load large per-driver settings/data blobs",
-  "open: _TZE200_locansqn epoch 2000 vs 1970 — needs >=2 sources"
- ],
- "known_preexisting_failures": {
-  "validate:fingerprints": "13 errors (fingerprints.json vs driver.compose, unrelated mfrs)",
-  "mocha test/critical": "27-30 failing on clean origin/master (same with/without these changes)"
- },
- "pushed": {
-  "master": "aa23fab9c5 published OK (Auto-Publish run 37119440540 success). 653870a870 published OK earlier.",
-  "stable-v5": "5.12.358 published to Test (run 37118019558 success); 5.12.359 17ab48012f published to Test (run 37119645069 success)",
-  "2026-10-04": "master bca6ae7052 (#1298), 97a954cfa7+081ae687c8 (ledger/journal W3), 88b3584cf6+9c157a834a (#1113 zoneType driver), all [skip ci] = not yet published; bastien-home 84d81e5e88"
- },
- "notes": {
-  "appjson": "root app.json minified (one line, ~2.3 MB) on master and stable since bot commit 6b2f2d3c9a; edit with JSON.stringify(a) no newline. Compact build 3.69/4.00 MB."
- },
- "conflict_sweep": {
-  "rule": "constitution W4",
-  "ledger_namespace": "conflict:<mfr>|<pid>",
-  "seeded": 702,
-  "tuya_style": 531,
-  "done": [
-   "_tz3000_4uuaja4a|ts130f",
-   "_tz3000_4uuaja4a|ts0726"
-  ],
-  "order": "user-reported first, then Tuya-style couples with external sources, then brand couples; 3-5 per daily run",
-  "howTo": "node scripts/progress/ledger-cli.js next conflict 5"
- },
- "queue_2026_10_04": {
-  "1_audit_copied_text": "done",
-  "2_mail_crosscheck": "done (580/580)",
-  "3_johan_gaps": "done: o9f2zqln->rain_sensor, p26flek3->switch_1gang, iystcadi TS0505B ok / TS0505A deferred",
-  "4_misroutes": "done: rxq4iti9 = TRV (correct); zbeacon/Zbeacon TH01 -> temphumidsensor_zcl_th01 (c5ccf1c00e)",
-  "5_zg102": "done (c5ccf1c00e)",
-  "6_pc_harvest_actions": "pending",
-  "7_ledger_wiring": "pending",
-  "8_spec003_004": "pending",
-  "9_lazy_appjson": "pending",
-  "10_forum_wifi_tests_workflows": "pending",
-  "11_deep_read_sweep": "pending",
-  "W7_polysemic_dp": "pending",
-  "W8_tooling_inventory": "pending",
-  "NEXT": "port master fp fixes 31d83786f9 + c5ccf1c00e to stable (grouped publish) + bastien; then 6 PC-harvest r1 (21 pid-only drivers, DeviceFingerprintDB 153-162 typos, 18 raw setTimeout in TuyaEF00Manager, agent-rules generation, auto-post guard), PC-harvest r2 tasks (ledger task:*), 7 ledger wiring, 8 spec003/004, 9 lazy app.json, 10 forum/wifi/tests/workflows, 11 deep-read sweep, W4 conflict sweep, W7-W11 audits",
-  "stable_port_pending": [
-   "31d83786f9 (o9f2zqln, p26flek3)",
-   "c5ccf1c00e (TH01 driver, ZG-102Z/ZA, 3 mfrs)"
-  ]
- },
- "master_queue": {
-  "note": "Single master checklist of ALL user requests since the start. Daily resumption reads this FIRST. Tick (verified) only after verification.",
-  "updated": "2026-10-04T01:58:19.072Z",
-  "items": [
-   {
-    "id": 1,
-    "item": "W1 dedicated worktrees, rebase before push",
-    "status": "verified",
-    "evidence": "exec-wt/exec-stable/exec-bastien in use"
-   },
-   {
-    "id": 2,
-    "item": "W2 resumable checkpoints, never skip",
-    "status": "verified",
-    "evidence": "resume-checkpoint + ledger"
-   },
-   {
-    "id": 3,
-    "item": "W3 progress ledger + journal, read before / record after",
-    "status": "in-progress",
-    "evidence": "ledger+journal+CLI exist; wired into johan scanner only; other workflows pending (item 7)"
-   },
-   {
-    "id": 4,
-    "item": "W4 conflict research per couple (702 couples)",
-    "status": "in-progress",
-    "evidence": "done: 4uuaja4a, HOBEIAN ZG-102Z/ZA/ZL; rest pending in ledger conflict:*"
-   },
-   {
-    "id": 5,
-    "item": "W5 interview = minimum; only interview clusters required | r4-5: interview baseline + alternative methods for unsupported devices",
-    "status": "pending",
-    "evidence": "52 drivers audit (PC r2 action 1)"
-   },
-   {
-    "id": 6,
-    "item": "W6 never degrade; dynamic additive enrichment",
-    "status": "in-progress",
-    "evidence": "applied to all moves; audit pending"
-   },
-   {
-    "id": 7,
-    "item": "W7 polysemic DPs per couple/firmware",
-    "status": "pending",
-    "evidence": "task:polysemic-dp-engine"
-   },
-   {
-    "id": 8,
-    "item": "W8 reuse own scripts/tools; inventory unused/broken",
-    "status": "pending",
-    "evidence": "task:tooling-inventory"
-   },
-   {
-    "id": 9,
-    "item": "W9 alternative low/high-level paths with circuit breakers | r4-5: non-native fallbacks (rx/tx/raw) for native flows/features in every driver; unsupported devices via alternative methods",
-    "status": "pending",
-    "evidence": "task:alt-paths-circuit-breakers"
-   },
-   {
-    "id": 10,
-    "item": "W10 self-improving free ingestion workflows",
-    "status": "pending",
-    "evidence": "task:self-improving-ingest"
-   },
-   {
-    "id": 11,
-    "item": "W11 proprietary layers local-first + matrix",
-    "status": "pending",
-    "evidence": "task:w11-proprietary-layers-inventory"
-   },
-   {
-    "id": 12,
-    "item": "Couples everywhere (mfr+pid+fw) in research and decisions",
-    "status": "in-progress",
-    "evidence": "standing practice"
-   },
-   {
-    "id": 13,
-    "item": "P1 case-insensitive everywhere",
-    "status": "in-progress",
-    "evidence": "standing"
-   },
-   {
-    "id": 14,
-    "item": "P2 Wi-Fi tuya-local first",
-    "status": "pending",
-    "evidence": ""
-   },
-   {
-    "id": 15,
-    "item": "P3 heuristic divisors (SmartDivisorManager)",
-    "status": "in-progress",
-    "evidence": "exists; audit pending"
-   },
-   {
-    "id": 16,
-    "item": "P4 regular automatic file reorganisation",
-    "status": "pending",
-    "evidence": ""
-   },
-   {
-    "id": 17,
-    "item": "P5 read diag log IDs from forum/GitHub/chat",
-    "status": "in-progress",
-    "evidence": "diag workflows exist"
-   },
-   {
-    "id": 18,
-    "item": "P6 branches: keep master/stable-v5/gh-pages, clean rest with approval",
-    "status": "pending",
-    "evidence": "needs approval"
-   },
-   {
-    "id": 19,
-    "item": "P7 communication FR, tables, action",
-    "status": "in-progress",
-    "evidence": "reporting style"
-   },
-   {
-    "id": 20,
-    "item": "Publish fixes 2026-10-04 (stable fp collision, master P2518)",
-    "status": "verified",
-    "evidence": "1142e94d59 / 72ed541dd6; runs 37165678667 + 37165886836 success"
-   },
-   {
-    "id": 21,
-    "item": "JohanBendz #1298 contact+lux",
-    "status": "verified",
-    "evidence": "bca6ae7052; published 9.0.1322"
-   },
-   {
-    "id": 22,
-    "item": "JohanBendz #1113 ambiguous SNZB-03 zoneType driver",
-    "status": "verified",
-    "evidence": "88b3584cf6 + 72ed541dd6; published 9.0.1322"
-   },
-   {
-    "id": 23,
-    "item": "Ledger/journal creation",
-    "status": "verified",
-    "evidence": "97a954cfa7"
-   },
-   {
-    "id": 24,
-    "item": "Queue1 audit copied text (ledger/journal/index titles)",
-    "status": "verified",
-    "evidence": "8b2395231c"
-   },
-   {
-    "id": 25,
-    "item": "Queue2 johan-mail-index cross-check 580",
-    "status": "verified",
-    "evidence": "all present"
-   },
-   {
-    "id": 26,
-    "item": "Queue3 Johan gaps o9f2zqln/p26flek3/iystcadi",
-    "status": "verified",
-    "evidence": "31d83786f9 (iystcadi TS0505A deferred)"
-   },
-   {
-    "id": 27,
-    "item": "Queue4 zbeacon TH01 + rxq4iti9",
-    "status": "verified",
-    "evidence": "c5ccf1c00e; rxq4iti9=TRV correct"
-   },
-   {
-    "id": 28,
-    "item": "Queue5 ZG-102Z/ZA dual + 3 ZG-102ZL mfrs",
-    "status": "verified",
-    "evidence": "c5ccf1c00e"
-   },
-   {
-    "id": 29,
-    "item": "Grouped stable port of 31d83786f9+c5ccf1c00e",
-    "status": "verified",
-    "evidence": "stable 1d06791f0d run 37166982598 success (5.12.360, promoted Test); bastien 4dad4c4bf3"
-   },
-   {
-    "id": 30,
-    "item": "Queue6 PC harvest r1: pid-only drivers, fp typos, EF00 setTimeout, agent-rules gen, auto-post guard",
-    "status": "verified",
-    "evidence": "master 7f385e04c3 (gates: validate, matrix, fp 0 new, p248x, publish, agent-rules, no-auto-post; critical tests 30 = baseline)"
-   },
-   {
-    "id": 31,
-    "item": "Queue7 ledger wiring forum-poll/fleet-enrich/auto-enrich/fetch-diags/gmail-diagnostics",
-    "status": "pending",
-    "evidence": ""
-   },
-   {
-    "id": 32,
-    "item": "Queue8 spec 003 T1 + spec 004 callers",
-    "status": "pending",
-    "evidence": ""
-   },
-   {
-    "id": 33,
-    "item": "Queue9 lazy-load app.json data (size 3.70/4.00 MB) | r4-6: drivers expose methods/features before full init (lazy, safe)",
-    "status": "pending",
-    "evidence": "merged into spec 010"
-   },
-   {
-    "id": 34,
-    "item": "Queue10 forum leads (AY-303Z DP109, ZG-106Z, ZG253 valve, MTG075, Peter History tab), Wi-Fi leftovers, 31 stable tests, workflow consolidation",
-    "status": "pending",
-    "evidence": ""
-   },
-   {
-    "id": 35,
-    "item": "Queue11 deep-read sweep Johan #1.. then dlnraja",
-    "status": "pending",
-    "evidence": "done: 797,1298,1113,1475,1008; 925 deferred"
-   },
-   {
-    "id": 36,
-    "item": "_TZE200_locansqn epoch 2000 vs 1970 (needs 2 sources)",
-    "status": "pending",
-    "evidence": ""
-   },
-   {
-    "id": 37,
-    "item": "Stable grouped publish approvals",
-    "status": "in-progress",
-    "evidence": "user authorized 2026-10-04"
-   },
-   {
-    "id": 38,
-    "item": "PCr2-1 the 10 missing devices (2uollq9d TS011F, nuenzetq TS0002, Zbeacon TS0505B, eWeLight TS0502B, Zbeacon TS0001, MINI-ZBRBS, RDM001, RC-EF-3.0, LH02121, +)",
-    "status": "in-progress",
-    "evidence": "2uollq9d->plug_energy_monitor, nuenzetq->switch_2gang, Zbeacon TS0001/TS0505B exact drivers (master); docs/rules/PCR2_MISSING_DEVICES_2026-10-04.md"
-   },
-   {
-    "id": 39,
-    "item": "PCr2-2 52 drivers: required clusters -> optional beyond interview",
-    "status": "pending",
-    "evidence": "user priority 2"
-   },
-   {
-    "id": 40,
-    "item": "PCr2-3 5 couples in two drivers (gjnozsaz, j1v25l17, ntcy3xu1, n9ctkb6j, dcnsggvz)",
-    "status": "verified",
-    "evidence": "master 514c4df7ad, stable 78bf4a93af published via run 37168670987, bastien 9918e8c2dd"
-   },
-   {
-    "id": 41,
-    "item": "PCr2-4 Green Power 0x0021 + 0xFC57/0xFC00/01/03/0x1888 facts -> native matrix",
-    "status": "pending",
-    "evidence": "user priority 4"
-   },
-   {
-    "id": 42,
-    "item": "PCr2-5 energy counter unsigned 32-bit",
-    "status": "verified",
-    "evidence": "master fcc5b6f044 published 9.0.1323 (run 37168606588 success); stable af8596d57b run 37168670987 success; bastien c31b02a49c"
-   },
-   {
-    "id": 43,
-    "item": "PCr2 Johan PRs to port (#1406,#1346,#1121,#1017,#1065,#1106,#1237,#1210,#774,#1431,#1428,#1350,#1230,#1171,#145)",
-    "status": "pending",
-    "evidence": "ledger task:johan-pr-port-*"
-   },
-   {
-    "id": 44,
-    "item": "PCr2 forum T140352 items (#2134,#2079,#2082,#2099,#2075,#2120,#2092/#2093) + 85 unrouted pairs",
-    "status": "pending",
-    "evidence": "ledger forum-post:*"
-   },
-   {
-    "id": 45,
-    "item": "PCr2 Kimi backlog",
-    "status": "pending",
-    "evidence": ""
-   },
-   {
-    "id": 46,
-    "item": "PCr2 bleed button_wireless_2 / switch_1gang cartesian (only real collisions)",
-    "status": "pending",
-    "evidence": ""
-   },
-   {
-    "id": 47,
-    "item": "PC harvest round 3",
-    "status": "in-progress",
-    "evidence": "SYNTHESIS.md read 2026-10-04; items r3-* below"
-   },
-   {
-    "id": 48,
-    "item": "Flow cards completion inspired by other apps (credits)",
-    "status": "pending",
-    "evidence": "task:flow-cards-complete"
-   },
-   {
-    "id": 49,
-    "item": "Proprietary layers inventory/implementation",
-    "status": "pending",
-    "evidence": "= W11"
-   },
-   {
-    "id": 50,
-    "item": "Workflows: self-improving + consolidation",
-    "status": "pending",
-    "evidence": "= W10 + queue10"
-   },
-   {
-    "id": 51,
-    "item": "Size: app.json lazy-load",
-    "status": "pending",
-    "evidence": "= queue9"
-   },
-   {
-    "id": 52,
-    "item": "Specs 003/004/005/007/009 remaining tasks",
-    "status": "pending",
-    "evidence": "see specs/*/tasks.md"
-   },
-   {
-    "id": 53,
-    "item": "Next grouped stable publish: 78bf4a93af + port of signed/unsigned DP decoding (7f385e04c3)",
-    "status": "verified",
-    "evidence": "stable af8596d57b (DP fix + 2uollq9d + nuenzetq + dual couples 78bf4a93af) run 37168670987 success"
-   },
-   {
-    "id": 54,
-    "item": "R1-R12 rules from PC r3 merged into constitution",
-    "status": "verified",
-    "evidence": "constitution section Rules (PC harvest round 3); agent rules regenerated"
-   },
-   {
-    "id": 55,
-    "item": "r3: _TZ3000_ptjcjise/TS0001 (#543) verify + add to 1-gang wall switch",
-    "status": "deferred",
-    "evidence": "verified: only TS0002 is evidenced; TS0001 needs a diag (R11). docs/rules/PC_R3_COUPLES_2026-10-04.md"
-   },
-   {
-    "id": 56,
-    "item": "r3: _TZ3000_kfu8zapd + TS0225 bleed in button_wireless_4 (W4)",
-    "status": "verified",
-    "evidence": "no real collision (no bw4 mfr in another TS0225 driver); W4 phantom, untouched. docs/rules/PC_R3_COUPLES_2026-10-04.md"
-   },
-   {
-    "id": 57,
-    "item": "r3: #551 famkxci2/TS0043 check published; #531 ogkdpgy2 verify then close in ledger",
-    "status": "pending",
-    "evidence": ""
-   },
-   {
-    "id": 58,
-    "item": "r3: Bastien battery % smoothing/hysteresis + reporting audit (TS004x, wall remotes), temp/hum precision",
-    "status": "pending",
-    "evidence": ""
-   },
-   {
-    "id": 59,
-    "item": "r3: Bastien TS0042 button->relay latency + labelled flows not working",
-    "status": "pending",
-    "evidence": ""
-   },
-   {
-    "id": 60,
-    "item": "r3: MCU time sync per device/timezone (no single format) + OTA management",
-    "status": "pending",
-    "evidence": ""
-   },
-   {
-    "id": 61,
-    "item": "r3: SOS inverted-signal list + reverse setting on remote_button_emergency_sos (auto-detect)",
-    "status": "pending",
-    "evidence": ""
-   },
-   {
-    "id": 62,
-    "item": "r3: smart knob rotate RX + declared cards wiring; IR blaster max capabilities",
-    "status": "pending",
-    "evidence": ""
-   },
-   {
-    "id": 63,
-    "item": "r3: workflows missing-source tolerance, fetch cache, incremental diff | r4-10: workflows work without AI (deterministic), AI optional (R13)",
-    "status": "pending",
-    "evidence": ""
-   },
-   {
-    "id": 64,
-    "item": "r3: forks re-challenge (Gabriel_Pedrosa_Mach, packet_ninja) via scan-forks-recursive/implement-fork-fps",
-    "status": "pending",
-    "evidence": ""
-   },
-   {
-    "id": 65,
-    "item": "r3: Hue-style smart features (adaptive daylight, ambient) reimplemented | r4-17: presence-following lighting, auto on/off, warm/cold fade",
-    "status": "pending",
-    "evidence": ""
-   },
-   {
-    "id": 66,
-    "item": "r3: forum 140352 digest port to node (PowerShell parse error), highest post #2190",
-    "status": "pending",
-    "evidence": ""
-   },
-   {
-    "id": 67,
-    "item": "r3: issues #536 fan 5-speed, #533, #550, #420 radar clrdrnya (research, no invented pid)",
-    "status": "pending",
-    "evidence": ""
-   },
-   {
-    "id": 68,
-    "item": "r3: TS0041/TS0043 Bastien unknown and TS0032 -> wait next diag with mfr (R11)",
-    "status": "deferred",
-    "evidence": "needs diag"
-   },
-   {
-    "id": 69,
-    "item": "r3: non-Homey todos (Android Automix app, MV3 consent extension) - out of repo scope",
-    "status": "skipped-not-applicable",
-    "evidence": "not this repo"
-   },
-   {
-    "id": 70,
-    "item": "R13-R16 rules from PC r4 merged into constitution",
-    "status": "verified",
-    "evidence": "constitution R13-R16; agent rules regenerated"
-   },
-   {
-    "id": 71,
-    "item": "r4-1 soil_sensor: second temperature (soil/probe vs ambient) as additional capability, only for couples whose DPs prove it",
-    "status": "pending",
-    "evidence": ""
-   },
-   {
-    "id": 72,
-    "item": "r4-2 button mode setting (auto default) extended to button_wireless_2/3/4, button_wireless_smart, button_wireless_usb",
-    "status": "pending",
-    "evidence": ""
-   },
-   {
-    "id": 73,
-    "item": "r4-3 buttons 0-based vs 1-based numbering detected per couple (no global change)",
-    "status": "pending",
-    "evidence": ""
-   },
-   {
-    "id": 74,
-    "item": "r4-4 TS0041 scene mode manual toggle (setting/flow) on top of auto-detection",
-    "status": "pending",
-    "evidence": ""
-   },
-   {
-    "id": 75,
-    "item": "r4-7 quick actions / driver state on widget, generalize where sensible",
-    "status": "pending",
-    "evidence": ""
-   },
-   {
-    "id": 76,
-    "item": "r4-8 watch Homey news fr/en (Zigbee/Tuya) and implement (W10)",
-    "status": "pending",
-    "evidence": ""
-   },
-   {
-    "id": 77,
-    "item": "r4-9 GitHub Pages Wi-Fi section (user/technical/architecture), auto-updated",
-    "status": "pending",
-    "evidence": ""
-   },
-   {
-    "id": 78,
-    "item": "r4-11 coherent driver images per device type; fill missing images",
-    "status": "pending",
-    "evidence": ""
-   },
-   {
-    "id": 79,
-    "item": "r4-12 HOBEIAN regression: bisect against versions that worked (forum) before any change",
-    "status": "pending",
-    "evidence": ""
-   },
-   {
-    "id": 80,
-    "item": "r4-13 old issues #76 TS0044, #170 TS0003 sub-capability cards, #162 fingerbot firmware: check ledger status, process if open",
-    "status": "pending",
-    "evidence": ""
-   },
-   {
-    "id": 81,
-    "item": "r4-14 battery % history: compare calculation methods across versions, keep the most stable",
-    "status": "pending",
-    "evidence": ""
-   },
-   {
-    "id": 82,
-    "item": "r4-15 forum T140352 posts 2187-2228 (HOBEIAN everything not native)",
-    "status": "pending",
-    "evidence": ""
-   },
-   {
-    "id": 83,
-    "item": "r4-16 athombv repos + SDK docs as inspiration for flows/lazy-load",
-    "status": "pending",
-    "evidence": ""
-   },
-   {
-    "id": 84,
-    "item": "r4 device couples bcusnqt8/awepdiwi/fllyghyj",
-    "status": "verified",
-    "evidence": "already placed (curtain_motor, soil_sensor, climate_sensor)"
-   },
-   {
-    "id": 85,
-    "item": "r4 guard: malformed PR #512 mfrs never added (R16); enforce in fingerprint gate",
-    "status": "verified",
-    "evidence": "tools/ci/malformed-mfr-gate.js (shrink-only legacy baseline of 17 test-locked entries) in check:publish + test"
-   },
-   {
-    "id": 86,
-    "item": "Decision A: AI quota guard in ai-helper (paid flag ignored, 429/402/quota -> provider off for the UTC day, persisted) + R2/R13",
-    "status": "verified",
-    "evidence": "fcc5b6f044 ai-helper quota guard + test/ai-quota-guard.test.js; published 9.0.1323"
-   },
-   {
-    "id": 87,
-    "item": "Decision B: GitOps draft-PR-only pipeline (no auto-merge, no posting) - design when needed (R17)",
-    "status": "pending",
-    "evidence": ""
-   },
-   {
-    "id": 88,
-    "item": "Decision C: Johan comment deletion = manual user action (R18)",
-    "status": "verified",
-    "evidence": "not an agent task"
-   },
-   {
-    "id": 89,
-    "item": "Decision D: HOBEIAN blind cross-product rejected (R19)",
-    "status": "verified",
-    "evidence": "rule recorded"
-   },
-   {
-    "id": 90,
-    "item": "R20 identifier normalization: research Homey SDK/zigbee-clusters/homey-zigbeedriver, Z2M, ZHA, deCONZ, SmartThings matching; single normalizer at read/match; keep originals; gate for colliding normalized couples/malformed; never break current matches | clarified: respect each field format (no blanket transform); audit hidden case/char collisions across drivers and mfr reported with different case/padding; tolerant comparison only at match time",
-    "status": "in-progress",
-    "evidence": "research + docs/rules/R20_IDENTIFIER_MATCHING.md; gate check:identifiers (0 hidden case collisions, 7 deliberate encoding hedges); runtime tolerance exists in TuyaNormalizer/fingerprint-matcher; remaining: mojibake (cp1252) repair at compare time"
-   },
-   {
-    "id": 91,
-    "item": "PCr2-1 remaining: HEIMAN RC-EF-3.0, iHorn LH02121, SONOFF MINI-ZBRBS, Signify RDM001 exact drivers; eWeLight TS0502B needs real interview",
-    "status": "pending",
-    "evidence": ""
-   },
-   {
-    "id": 92,
-    "item": "Stable publish version bump (Homey rejected duplicate 5.12.359)",
-    "status": "verified",
-    "evidence": "stable 0eb2d31d91 + fbabec68d8: bump before build, retry on already-published, commit-back re-applied on tip; run 37169372245 uploaded 5.12.360"
-   },
-   {
-    "id": 93,
-    "item": "R21 memory/runtime safety rule + static gate check:runtime-safety (changed files)",
-    "status": "verified",
-    "evidence": "tools/ci/runtime-safety-gate.js + test; constitution R21"
-   },
-   {
-    "id": 94,
-    "item": "R22 modular architecture / sharded data / lazy loading: spec 010 (T1-T8), measure boot+heap | design from Homey SDK v3 docs/guides, homey-zigbeedriver, zigbee-clusters, Athom brand apps, Johan, Aqara, IKEA, Sonoff, Hue, community apps (T0), own implementation + credits (also for flows and memory work)",
-    "status": "pending",
-    "evidence": "specs/010-modular-lazy-data"
-   },
-   {
-    "id": 95,
-    "item": "Matter Bridge readiness (HomeKit retired from Homey v13.5.1, removed March 2027): verify Matter Bridge docs for supported classes/capabilities; audit drivers for standard class + standard capabilities; mirror a standard capability additively where only custom exists; never degrade | no standard capability: mirror to the closest standard one in addition (custom mode -> onoff/alarm_generic, scene -> button) or expose via flows; never remove anything",
-    "status": "pending",
-    "evidence": "user note docs/user/HOMEKIT_TO_MATTER_BRIDGE.md"
-   }
-  ],
-  "next": [
-   "spec 010 T0 research design sources",
-   "Matter Bridge audit (docs first, then class/capability audit script)",
-   "spec 010 T1 baseline perf + golden couple resolution",
-   "PCr2-1 remaining exact drivers (RC-EF-3.0, LH02121, MINI-ZBRBS, RDM001); Zbeacon drivers to stable",
-   "PCr2-2 52 drivers required/optional clusters",
-   "PCr2-4 Green Power + proprietary clusters -> native matrix",
-   "r4-2/r4-4 button mode + TS0041 scene toggle",
-   "flow cards; ledger wiring into workflows",
-   "R20 cp1252 mojibake repair at compare time"
-  ],
-  "user_actions": [
-   "Rotate/revoke the Gmail app password and old GitHub PAT seen in clear text in July opencode/MiniMax prompts (not for agents)"
-  ],
-  "user_decisions_2026_10_04": {
-   "A": "AI subscriptions allowed as optional complementary layer; workflows run without AI; included quota only; hard caps; disable on 429/quota; never overage; keys via secrets; skip when absent",
-   "B": "GitOps only as draft PRs on own repo, no auto-merge, no issue/comment posting; gates decide; batched publishing",
-   "C": "Deleting comments on Johan repo: not done, manual user action",
-   "D": "Blind HOBEIAN cross-product rejected; verified couples only"
+  "updated": "2026-10-04T03:10:00+02:00",
+  "queue": "dlnraja maintenance queue 2026-10-03 (items 1-7)",
+  "rules": ".specify/memory/constitution.md",
+  "worktree_note": "Use a dedicated git worktree per agent (e.g. /workspace/exec-wt); a shared checkout was reset by another worker on 2026-10-03.",
+  "done": {
+    "1": "Spec Kit structure: .specify/memory/constitution.md, .specify/templates/*, specs/002..006/{spec,plan,tasks}.md; maintainer clarifications M1-M6 recorded in constitution; specs 007 (lights) and 008 (hygiene) added",
+    "2": "spec 002: scripts/gen/native-matrix.js -> data/native-matrix.json + docs/NATIVE_MATRIX.md; gate limited to Tuya-style couples, 0xE000-E002 non-native; baseline 255/531",
+    "6": "Done on master: fingerprints; #1501 unknown-DP flood guard (lib/utils/UnknownDPLogger.js); #1502 CCT clamp 0..1 + best-effort tuyaRgbMode (lib/TuyaZigBeeLightDevice.js); #1503 read-only independent relay/indicator/child-lock sync + strict writes (lib/helpers/TuyaOnOffSettingsSync.js; smartplug, smartplug_2_socket, wall_socket, smartPlug_DinRail); TH05Z interview identity (ManufacturerNameHelper node.manufacturerName); TH01Z lcdtemphumidsensor_3 answers MCU time requests (GlobalTimeSyncEngine listener); knob native LevelControl bound cluster + 25 ms dual-path guard (SmartKnobRotationMixin). CREDITS updated. Stable: fingerprints done; device fixes (#1501/#1502/#1503/TH01Z) to backport in next grouped stable publish. NOTE: _TZE200_locansqn is in our EPOCH_2000 list while Johan's TH01Z fix uses 1970 epoch — unresolved, needs >=2 sources before changing.",
+    "7": "Root cause: fork PR #558 (mc101z_pwm_dimmer) merged without PR Gate running; driver lacked driver.flow.compose.json -> check:p2518 failed in 'P244x..family gates' (runs 2026-10-02 22:06Z and 2026-10-03 05:07Z). Fleet-enrich eccd3a7812 (07:07Z) generated the file. Prevention: auto-fix workflow now scaffolds missing driver.flow.compose.json before family gates. Same root cause for 2026-10-02 22:03Z failures of Auto-Publish on Push (P2518 via family gates), Syntax Check & SDK3 Validation (P2518 test) and PR Gate on feat/mc101z-support (PR merged despite failing gate).",
+    "8": "Done: .ai/cache + .ai/timeline.json untracked (git rm --cached + .gitignore, restored via actions/cache in ai-monthly-audit.yml); stable version aligned 5.12.357 (454323238f); stable Syntax Check already fixed (3e4c63aef5); master failures of 10-02/10-03 = mc101z P2518; 2 UTF-16 report artifacts removed (js-syntax-audit green). Open: app.json trim plan (4,180,221 B).",
+    "2_partial": "scripts/gates/native-matrix-gate.js + data/native-matrix-baseline.json (252 non-native endpoint clusters, 705 dual couples frozen, shrink-only); npm validate:native-matrix; wired in pr-gate.yml and auto-fix-and-publish.yml",
+    "6_partial": "Master fingerprints added: smartplug(TS011F) _TZ3000_zgtbi4oy/_TZ3000_iiacqpdz/_TZ3000_dvqt7qrw; curtain_module(TS130F) _TZ3000_vsj5o7dm/_TZ3000_os0wy3vh/_TZ3000_26gjlugm; wall_remote_1_gang(TS0041) _TZ3000_fa9mlvja/_TZ3000_vn88ezar (driver.compose + app.json); gate: 0 new dual couples",
+    "8_partial": "stable Syntax Check 09-28 failure (P214 TS0601 escape) already fixed by 3e4c63aef5 (gate passes locally); master p248x/Auto-Publish/Syntax failures of 2026-10-02 22:03Z = same mc101z P2518 cause; Syntax Check + code-quality green on 9f6c920e36",
+    "ci-concurrency": "c18cecbe28: per-app publish concurrency groups (athom-publish-master/-stable/-bastien, cancel-in-progress false); safe-sync-stable prunes mfs_db rows whose driver is absent on stable and bumps app.json/package.json/changelog together. Stable 79bbc354a7 same groups.",
+    "3a": "spec 003 T1-T2: lib/coordinator/DeviceCoordinator.js + data/coordinator-profiles.json + test (not wired)",
+    "4a": "spec 004 T1: lib/layers/LayerInterface.js (CircuitBreaker, wrapLayer w/ homey timers, runLayers, background) + test",
+    "5a": "spec 005 T1: scanner persists links + structured fields only; johan-canonical-index stripped (670 threads needsDeepRead); johan-comments-raw.json removed + gitignored",
+    "7a": "spec 007: 5 CCT fps on light_bulb_tunable_white (_TZ3000_0ausfos0/_9evm3otq/_ajkq2isy TS0502A; _TZ3210_uos3hl9x/_y5ztga9r TS0502B)",
+    "9a": "spec 009 T1: .github/workflows/johan-thread-intel.yml daily 03:40 UTC with stored-text guard",
+    "6b": "stable 5.12.359: lcdtemphumidsensor_3 MCU time listener + ManufacturerNameHelper interview identity (knob not applicable: stable has raw handleFrame path, no mixin)",
+    "3b": "spec 003 T3+T5 (master 4996f89165→3f5cff34b6): lib/coordinator/attach.js; ButtonDevice.triggerButtonPress cross-channel press dedupe (leading edge, same-channel repeats untouched → double/triple kept; virtual never gated); BaseUnifiedDevice.safeSetCapabilityValue seq dedupe (only when options.seq) + sendTuyaCommand collapse (profile collapseCommands, off by default); profiles: enabled only for button/remote (buttonCrossMs 400); setting coordinator_mode on/off override; CREDITS",
+    "3c": "spec 003 T4 stable: lib/coordinator/SimpleButtonGate.js (seq + fixed 400 ms cross-channel window) committed LOCALLY on exec-stable 35b5248d29 — NOT pushed (push to stable-v5 was blocked by auto-review; hold for grouped stable publish with the user's approval)",
+    "4b": "spec 004 T2 (f103de0961): lib/layers/LegacyLayerAdapters.js — native ZCL passthrough unwrapped first, tuya-raw + rxtx-chain wrapped (breaker/timeout); LowLevelBridge.asLayers(), ProtocolRxTxChain.asLayer(); nativeThenFallback sequential/parallel. Adapters only: callers not yet migrated",
+    "5b": "spec 005 T2 (7773230234): 6 harvesters persist links+fields only; MAX_CROSS_COUPLES=16 (6 MB reports were 20k synthetic couples from T26439 #1 device list); dumps distilled → data/forum/forum-leads-ssot.json + docs/rules/FORUM_LEADS_RULES.md; ~54 MB untracked (git rm --cached + .gitignore, history kept); analysis .md kept",
+    "7b": "spec 007 T4 (51836c1520): drivers light_cct_ts0502b (_TZ3210_jtifm80b, CCT-only caps), light_rgbcct_ts0505b (_TZ3210_p9ao60da), light_dimmable_ts0501a (_TZ3000_7dcddnye); device.js re-exports light_bulb_tunable_white/bulb_rgb/bulb_dimmable; 0 new dual couples. T5 partial (existing driver caps unchanged)",
+    "9b": "spec 009 (340c553fa3): Discussions via GraphQL in scripts/scanners/johan-canonical-index.js (JohanBendz has Discussions disabled; works on our repo); deep read #797 (+#1246,#1284,#964,#1291,#1461) → docs/rules/JOHAN_797_STANDARD_ZCL_TEMP_RH.md, data/leads/johan-deep-read-log.json, new exact driver temphumidsensor_zcl_ts0601 (_TZE200_qoy0ekbd TS0601 never matched before)",
+    "appjson-a": "placeholders *_needs_device_assignment verified: runtime only filters them (TuyaNormalizer, DeviceFingerprintDB); kept in source because removal empties manufacturerName (gate) and prepare-publish already prunes them; publish compact 3.70/4.00 MB; publish-size-gate warns > 3.85 MB (::warning in CI)",
+    "branches-a": "dlnraja branches: relevant = master, stable-v5, bastien-home. bastien-home bf6fb47ddd pushed [skip ci]: 4 exact-pair drivers + SimpleButtonGate (app id com.dlnraja.tuya.zigbee.bastien kept, validate publish OK). stable: exec-stable 35b5248d29 + 1d8e55c578 (same drivers) committed locally, push held for grouped publish approval. Skipped (stale, auto/PR leftovers, not merged): ai/monthly-audit-2026-08, ai/monthly-audit-2026-09, auto/driver-maintenance, auto/johan-sdk3-sync, auto/weekly-fingerprint-sync, codex-diag-timeouts, fix/stable-clusterutils-p137, masterwlan, gh-pages (site)",
+    "branches-b": "Johan branches read (manifests): develop-0.4 + feature/0.4-mowe-ias-rain narrow profiles 165 identities, 161 covered; gaps recorded in docs/rules/JOHAN_BRANCHES_2026-10-03.md"
   },
-  "publishes": [
-   {
-    "date": "2026-10-04T04:55+02:00",
-    "branch": "master",
-    "commit": "fcc5b6f044",
-    "run": 37168606588,
-    "version": "9.0.1323",
-    "result": "success"
-   },
-   {
-    "date": "2026-10-04T04:50+02:00",
-    "branch": "stable-v5",
-    "commit": "af8596d57b",
-    "run": 37168670987,
-    "version": "stable app.json 5.12.359 (Test promotion succeeded)",
-    "result": "success"
-   },
-   {
-    "date": "2026-10-04T03:56+02:00",
-    "branch": "stable-v5",
-    "commit": "0eb2d31d91",
-    "run": 37169372245,
-    "version": "5.12.360",
-    "result": "success (first real upload since 5.12.359; includes 1d06791f0d, 78bf4a93af, af8596d57b)"
-   }
-  ]
- }
+  "next": [
+    "conflict sweep (W4): continue from ledger conflict:* pending, frugally",
+    "stable grouped publish now ALSO includes local exec-stable 323c38eda0 (#1298 + #1113 port) — push needs user approval",
+    "deep-read sweep: follow data/leads/deep-read-checkpoint.json + ledger (johan-issue:* ascending from 1, then dlnraja-issue:*); 925 deferred",
+    "next master publish: push a non-[skip ci] commit to ship #1298/#1113 drivers (batched)",
+    "Johan branch gaps (docs/rules/JOHAN_BRANCHES_2026-10-03.md): _TZ3000_o9f2zqln TS0207 rain, _TZ3210_iystcadi TS0505A, _TZ3000_p26flek3 TS0001 relay (on climate_sensor) — read source interviews, then exact drivers; port to stable/bastien",
+    "stable grouped publish: push exec-stable 35b5248d29 (SimpleButtonGate) + backports #1501/#1502/#1503/TH01Z + device compat (4 new dedicated drivers, qoy0ekbd) — needs explicit approval (auto-review blocked direct push)",
+    "leads: zbeacon|TH01 + Zbeacon|TH01 routed to doorwindowsensor_4 (contact) — needs dw4 split without dual couples; _TZE200_rxq4iti9|TS0601 on device_radiator_valve (EF00 temp/RH, DP map unknown)",
+    "spec 003 T1 inventory of legacy dedupe points (ReceptionManager/TransmissionManager/UniversalThrottleManager) and migrate to coordinator",
+    "spec 004: migrate callers to asLayers()/asLayer()",
+    "spec 009 T4/T6: continue deep reads of needsDeepRead threads",
+    "app.json shrink step 2: lazy-load large per-driver settings/data blobs",
+    "open: _TZE200_locansqn epoch 2000 vs 1970 — needs >=2 sources"
+  ],
+  "known_preexisting_failures": {
+    "validate:fingerprints": "13 errors (fingerprints.json vs driver.compose, unrelated mfrs)",
+    "mocha test/critical": "27-30 failing on clean origin/master (same with/without these changes)"
+  },
+  "pushed": {
+    "master": "aa23fab9c5 published OK (Auto-Publish run 37119440540 success). 653870a870 published OK earlier.",
+    "stable-v5": "5.12.358 published to Test (run 37118019558 success); 5.12.359 17ab48012f published to Test (run 37119645069 success)",
+    "2026-10-04": "master bca6ae7052 (#1298), 97a954cfa7+081ae687c8 (ledger/journal W3), 88b3584cf6+9c157a834a (#1113 zoneType driver), all [skip ci] = not yet published; bastien-home 84d81e5e88"
+  },
+  "notes": {
+    "appjson": "root app.json minified (one line, ~2.3 MB) on master and stable since bot commit 6b2f2d3c9a; edit with JSON.stringify(a) no newline. Compact build 3.69/4.00 MB."
+  },
+  "conflict_sweep": {
+    "rule": "constitution W4",
+    "ledger_namespace": "conflict:<mfr>|<pid>",
+    "seeded": 702,
+    "tuya_style": 531,
+    "done": [
+      "_tz3000_4uuaja4a|ts130f",
+      "_tz3000_4uuaja4a|ts0726"
+    ],
+    "order": "user-reported first, then Tuya-style couples with external sources, then brand couples; 3-5 per daily run",
+    "howTo": "node scripts/progress/ledger-cli.js next conflict 5"
+  },
+  "queue_2026_10_04": {
+    "1_audit_copied_text": "done",
+    "2_mail_crosscheck": "done (580/580)",
+    "3_johan_gaps": "done: o9f2zqln->rain_sensor, p26flek3->switch_1gang, iystcadi TS0505B ok / TS0505A deferred",
+    "4_misroutes": "done: rxq4iti9 = TRV (correct); zbeacon/Zbeacon TH01 -> temphumidsensor_zcl_th01 (c5ccf1c00e)",
+    "5_zg102": "done (c5ccf1c00e)",
+    "6_pc_harvest_actions": "pending",
+    "7_ledger_wiring": "pending",
+    "8_spec003_004": "pending",
+    "9_lazy_appjson": "pending",
+    "10_forum_wifi_tests_workflows": "pending",
+    "11_deep_read_sweep": "pending",
+    "W7_polysemic_dp": "pending",
+    "W8_tooling_inventory": "pending",
+    "NEXT": "port master fp fixes 31d83786f9 + c5ccf1c00e to stable (grouped publish) + bastien; then 6 PC-harvest r1 (21 pid-only drivers, DeviceFingerprintDB 153-162 typos, 18 raw setTimeout in TuyaEF00Manager, agent-rules generation, auto-post guard), PC-harvest r2 tasks (ledger task:*), 7 ledger wiring, 8 spec003/004, 9 lazy app.json, 10 forum/wifi/tests/workflows, 11 deep-read sweep, W4 conflict sweep, W7-W11 audits",
+    "stable_port_pending": [
+      "31d83786f9 (o9f2zqln, p26flek3)",
+      "c5ccf1c00e (TH01 driver, ZG-102Z/ZA, 3 mfrs)"
+    ]
+  },
+  "master_queue": {
+    "note": "Single master checklist of ALL user requests since the start. Daily resumption reads this FIRST. Tick (verified) only after verification.",
+    "updated": "2026-10-04T04:20+02:00",
+    "items": [
+      {
+        "id": 1,
+        "item": "W1 dedicated worktrees, rebase before push",
+        "status": "verified",
+        "evidence": "exec-wt/exec-stable/exec-bastien in use"
+      },
+      {
+        "id": 2,
+        "item": "W2 resumable checkpoints, never skip",
+        "status": "verified",
+        "evidence": "resume-checkpoint + ledger"
+      },
+      {
+        "id": 3,
+        "item": "W3 progress ledger + journal, read before / record after",
+        "status": "in-progress",
+        "evidence": "ledger+journal+CLI exist; wired into johan scanner only; other workflows pending (item 7)"
+      },
+      {
+        "id": 4,
+        "item": "W4 conflict research per couple (702 couples)",
+        "status": "in-progress",
+        "evidence": "done: 4uuaja4a, HOBEIAN ZG-102Z/ZA/ZL; rest pending in ledger conflict:*"
+      },
+      {
+        "id": 5,
+        "item": "W5 interview = minimum; only interview clusters required | r4-5: interview baseline + alternative methods for unsupported devices",
+        "status": "pending",
+        "evidence": "52 drivers audit (PC r2 action 1)"
+      },
+      {
+        "id": 6,
+        "item": "W6 never degrade; dynamic additive enrichment",
+        "status": "in-progress",
+        "evidence": "applied to all moves; audit pending"
+      },
+      {
+        "id": 7,
+        "item": "W7 polysemic DPs per couple/firmware",
+        "status": "pending",
+        "evidence": "task:polysemic-dp-engine"
+      },
+      {
+        "id": 8,
+        "item": "W8 reuse own scripts/tools; inventory unused/broken",
+        "status": "pending",
+        "evidence": "task:tooling-inventory"
+      },
+      {
+        "id": 9,
+        "item": "W9 alternative low/high-level paths with circuit breakers | r4-5: non-native fallbacks (rx/tx/raw) for native flows/features in every driver; unsupported devices via alternative methods",
+        "status": "pending",
+        "evidence": "task:alt-paths-circuit-breakers"
+      },
+      {
+        "id": 10,
+        "item": "W10 self-improving free ingestion workflows",
+        "status": "pending",
+        "evidence": "task:self-improving-ingest"
+      },
+      {
+        "id": 11,
+        "item": "W11 proprietary layers local-first + matrix",
+        "status": "pending",
+        "evidence": "task:w11-proprietary-layers-inventory"
+      },
+      {
+        "id": 12,
+        "item": "Couples everywhere (mfr+pid+fw) in research and decisions",
+        "status": "in-progress",
+        "evidence": "standing practice"
+      },
+      {
+        "id": 13,
+        "item": "P1 case-insensitive everywhere",
+        "status": "in-progress",
+        "evidence": "standing"
+      },
+      {
+        "id": 14,
+        "item": "P2 Wi-Fi tuya-local first",
+        "status": "pending",
+        "evidence": ""
+      },
+      {
+        "id": 15,
+        "item": "P3 heuristic divisors (SmartDivisorManager)",
+        "status": "in-progress",
+        "evidence": "exists; audit pending"
+      },
+      {
+        "id": 16,
+        "item": "P4 regular automatic file reorganisation",
+        "status": "pending",
+        "evidence": ""
+      },
+      {
+        "id": 17,
+        "item": "P5 read diag log IDs from forum/GitHub/chat",
+        "status": "in-progress",
+        "evidence": "diag workflows exist"
+      },
+      {
+        "id": 18,
+        "item": "P6 branches: keep master/stable-v5/gh-pages, clean rest with approval",
+        "status": "pending",
+        "evidence": "needs approval"
+      },
+      {
+        "id": 19,
+        "item": "P7 communication FR, tables, action",
+        "status": "in-progress",
+        "evidence": "reporting style"
+      },
+      {
+        "id": 20,
+        "item": "Publish fixes 2026-10-04 (stable fp collision, master P2518)",
+        "status": "verified",
+        "evidence": "1142e94d59 / 72ed541dd6; runs 37165678667 + 37165886836 success"
+      },
+      {
+        "id": 21,
+        "item": "JohanBendz #1298 contact+lux",
+        "status": "verified",
+        "evidence": "bca6ae7052; published 9.0.1322"
+      },
+      {
+        "id": 22,
+        "item": "JohanBendz #1113 ambiguous SNZB-03 zoneType driver",
+        "status": "verified",
+        "evidence": "88b3584cf6 + 72ed541dd6; published 9.0.1322"
+      },
+      {
+        "id": 23,
+        "item": "Ledger/journal creation",
+        "status": "verified",
+        "evidence": "97a954cfa7"
+      },
+      {
+        "id": 24,
+        "item": "Queue1 audit copied text (ledger/journal/index titles)",
+        "status": "verified",
+        "evidence": "8b2395231c"
+      },
+      {
+        "id": 25,
+        "item": "Queue2 johan-mail-index cross-check 580",
+        "status": "verified",
+        "evidence": "all present"
+      },
+      {
+        "id": 26,
+        "item": "Queue3 Johan gaps o9f2zqln/p26flek3/iystcadi",
+        "status": "verified",
+        "evidence": "31d83786f9 (iystcadi TS0505A deferred)"
+      },
+      {
+        "id": 27,
+        "item": "Queue4 zbeacon TH01 + rxq4iti9",
+        "status": "verified",
+        "evidence": "c5ccf1c00e; rxq4iti9=TRV correct"
+      },
+      {
+        "id": 28,
+        "item": "Queue5 ZG-102Z/ZA dual + 3 ZG-102ZL mfrs",
+        "status": "verified",
+        "evidence": "c5ccf1c00e"
+      },
+      {
+        "id": 29,
+        "item": "Grouped stable port of 31d83786f9+c5ccf1c00e",
+        "status": "verified",
+        "evidence": "stable 1d06791f0d run 37166982598 success (5.12.360, promoted Test); bastien 4dad4c4bf3"
+      },
+      {
+        "id": 30,
+        "item": "Queue6 PC harvest r1: pid-only drivers, fp typos, EF00 setTimeout, agent-rules gen, auto-post guard",
+        "status": "verified",
+        "evidence": "master 7f385e04c3 (gates: validate, matrix, fp 0 new, p248x, publish, agent-rules, no-auto-post; critical tests 30 = baseline)"
+      },
+      {
+        "id": 31,
+        "item": "Queue7 ledger wiring forum-poll/fleet-enrich/auto-enrich/fetch-diags/gmail-diagnostics",
+        "status": "pending",
+        "evidence": ""
+      },
+      {
+        "id": 32,
+        "item": "Queue8 spec 003 T1 + spec 004 callers",
+        "status": "pending",
+        "evidence": ""
+      },
+      {
+        "id": 33,
+        "item": "Queue9 lazy-load app.json data (size 3.70/4.00 MB) | r4-6: drivers expose methods/features before full init (lazy, safe)",
+        "status": "pending",
+        "evidence": "merged into spec 010"
+      },
+      {
+        "id": 34,
+        "item": "Queue10 forum leads (AY-303Z DP109, ZG-106Z, ZG253 valve, MTG075, Peter History tab), Wi-Fi leftovers, 31 stable tests, workflow consolidation",
+        "status": "pending",
+        "evidence": ""
+      },
+      {
+        "id": 35,
+        "item": "Queue11 deep-read sweep Johan #1.. then dlnraja",
+        "status": "pending",
+        "evidence": "done: 797,1298,1113,1475,1008; 925 deferred"
+      },
+      {
+        "id": 36,
+        "item": "_TZE200_locansqn epoch 2000 vs 1970 (needs 2 sources)",
+        "status": "pending",
+        "evidence": ""
+      },
+      {
+        "id": 37,
+        "item": "Stable grouped publish approvals",
+        "status": "in-progress",
+        "evidence": "user authorized 2026-10-04"
+      },
+      {
+        "id": 38,
+        "item": "PCr2-1 the 10 missing devices (2uollq9d TS011F, nuenzetq TS0002, Zbeacon TS0505B, eWeLight TS0502B, Zbeacon TS0001, MINI-ZBRBS, RDM001, RC-EF-3.0, LH02121, +)",
+        "status": "in-progress",
+        "evidence": "2uollq9d->plug_energy_monitor, nuenzetq->switch_2gang, Zbeacon TS0001/TS0505B exact drivers (master); docs/rules/PCR2_MISSING_DEVICES_2026-10-04.md"
+      },
+      {
+        "id": 39,
+        "item": "PCr2-2 52 drivers: required clusters -> optional beyond interview",
+        "status": "pending",
+        "evidence": "user priority 2"
+      },
+      {
+        "id": 40,
+        "item": "PCr2-3 5 couples in two drivers (gjnozsaz, j1v25l17, ntcy3xu1, n9ctkb6j, dcnsggvz)",
+        "status": "verified",
+        "evidence": "master 514c4df7ad, stable 78bf4a93af published via run 37168670987, bastien 9918e8c2dd"
+      },
+      {
+        "id": 41,
+        "item": "PCr2-4 Green Power 0x0021 + 0xFC57/0xFC00/01/03/0x1888 facts -> native matrix",
+        "status": "pending",
+        "evidence": "user priority 4"
+      },
+      {
+        "id": 42,
+        "item": "PCr2-5 energy counter unsigned 32-bit",
+        "status": "verified",
+        "evidence": "master fcc5b6f044 published 9.0.1323 (run 37168606588 success); stable af8596d57b run 37168670987 success; bastien c31b02a49c"
+      },
+      {
+        "id": 43,
+        "item": "PCr2 Johan PRs to port (#1406,#1346,#1121,#1017,#1065,#1106,#1237,#1210,#774,#1431,#1428,#1350,#1230,#1171,#145)",
+        "status": "pending",
+        "evidence": "ledger task:johan-pr-port-*"
+      },
+      {
+        "id": 44,
+        "item": "PCr2 forum T140352 items (#2134,#2079,#2082,#2099,#2075,#2120,#2092/#2093) + 85 unrouted pairs",
+        "status": "pending",
+        "evidence": "ledger forum-post:*"
+      },
+      {
+        "id": 45,
+        "item": "PCr2 Kimi backlog",
+        "status": "pending",
+        "evidence": ""
+      },
+      {
+        "id": 46,
+        "item": "PCr2 bleed button_wireless_2 / switch_1gang cartesian (only real collisions)",
+        "status": "pending",
+        "evidence": ""
+      },
+      {
+        "id": 47,
+        "item": "PC harvest round 3",
+        "status": "in-progress",
+        "evidence": "SYNTHESIS.md read 2026-10-04; items r3-* below"
+      },
+      {
+        "id": 48,
+        "item": "Flow cards completion inspired by other apps (credits)",
+        "status": "pending",
+        "evidence": "task:flow-cards-complete"
+      },
+      {
+        "id": 49,
+        "item": "Proprietary layers inventory/implementation",
+        "status": "pending",
+        "evidence": "= W11"
+      },
+      {
+        "id": 50,
+        "item": "Workflows: self-improving + consolidation",
+        "status": "pending",
+        "evidence": "= W10 + queue10"
+      },
+      {
+        "id": 51,
+        "item": "Size: app.json lazy-load",
+        "status": "pending",
+        "evidence": "= queue9"
+      },
+      {
+        "id": 52,
+        "item": "Specs 003/004/005/007/009 remaining tasks",
+        "status": "pending",
+        "evidence": "see specs/*/tasks.md"
+      },
+      {
+        "id": 53,
+        "item": "Next grouped stable publish: 78bf4a93af + port of signed/unsigned DP decoding (7f385e04c3)",
+        "status": "verified",
+        "evidence": "stable af8596d57b (DP fix + 2uollq9d + nuenzetq + dual couples 78bf4a93af) run 37168670987 success"
+      },
+      {
+        "id": 54,
+        "item": "R1-R12 rules from PC r3 merged into constitution",
+        "status": "verified",
+        "evidence": "constitution section Rules (PC harvest round 3); agent rules regenerated"
+      },
+      {
+        "id": 55,
+        "item": "r3: _TZ3000_ptjcjise/TS0001 (#543) verify + add to 1-gang wall switch",
+        "status": "deferred",
+        "evidence": "verified: only TS0002 is evidenced; TS0001 needs a diag (R11). docs/rules/PC_R3_COUPLES_2026-10-04.md"
+      },
+      {
+        "id": 56,
+        "item": "r3: _TZ3000_kfu8zapd + TS0225 bleed in button_wireless_4 (W4)",
+        "status": "verified",
+        "evidence": "no real collision (no bw4 mfr in another TS0225 driver); W4 phantom, untouched. docs/rules/PC_R3_COUPLES_2026-10-04.md"
+      },
+      {
+        "id": 57,
+        "item": "r3: #551 famkxci2/TS0043 check published; #531 ogkdpgy2 verify then close in ledger",
+        "status": "pending",
+        "evidence": ""
+      },
+      {
+        "id": 58,
+        "item": "r3: Bastien battery % smoothing/hysteresis + reporting audit (TS004x, wall remotes), temp/hum precision",
+        "status": "pending",
+        "evidence": ""
+      },
+      {
+        "id": 59,
+        "item": "r3: Bastien TS0042 button->relay latency + labelled flows not working",
+        "status": "pending",
+        "evidence": ""
+      },
+      {
+        "id": 60,
+        "item": "r3: MCU time sync per device/timezone (no single format) + OTA management",
+        "status": "pending",
+        "evidence": ""
+      },
+      {
+        "id": 61,
+        "item": "r3: SOS inverted-signal list + reverse setting on remote_button_emergency_sos (auto-detect)",
+        "status": "pending",
+        "evidence": ""
+      },
+      {
+        "id": 62,
+        "item": "r3: smart knob rotate RX + declared cards wiring; IR blaster max capabilities",
+        "status": "pending",
+        "evidence": ""
+      },
+      {
+        "id": 63,
+        "item": "r3: workflows missing-source tolerance, fetch cache, incremental diff | r4-10: workflows work without AI (deterministic), AI optional (R13)",
+        "status": "pending",
+        "evidence": ""
+      },
+      {
+        "id": 64,
+        "item": "r3: forks re-challenge (Gabriel_Pedrosa_Mach, packet_ninja) via scan-forks-recursive/implement-fork-fps",
+        "status": "pending",
+        "evidence": ""
+      },
+      {
+        "id": 65,
+        "item": "r3: Hue-style smart features (adaptive daylight, ambient) reimplemented | r4-17: presence-following lighting, auto on/off, warm/cold fade",
+        "status": "pending",
+        "evidence": ""
+      },
+      {
+        "id": 66,
+        "item": "r3: forum 140352 digest port to node (PowerShell parse error), highest post #2190",
+        "status": "pending",
+        "evidence": ""
+      },
+      {
+        "id": 67,
+        "item": "r3: issues #536 fan 5-speed, #533, #550, #420 radar clrdrnya (research, no invented pid)",
+        "status": "pending",
+        "evidence": ""
+      },
+      {
+        "id": 68,
+        "item": "r3: TS0041/TS0043 Bastien unknown and TS0032 -> wait next diag with mfr (R11)",
+        "status": "deferred",
+        "evidence": "needs diag"
+      },
+      {
+        "id": 69,
+        "item": "r3: non-Homey todos (Android Automix app, MV3 consent extension) - out of repo scope",
+        "status": "skipped-not-applicable",
+        "evidence": "not this repo"
+      },
+      {
+        "id": 70,
+        "item": "R13-R16 rules from PC r4 merged into constitution",
+        "status": "verified",
+        "evidence": "constitution R13-R16; agent rules regenerated"
+      },
+      {
+        "id": 71,
+        "item": "r4-1 soil_sensor: second temperature (soil/probe vs ambient) as additional capability, only for couples whose DPs prove it",
+        "status": "pending",
+        "evidence": ""
+      },
+      {
+        "id": 72,
+        "item": "r4-2 button mode setting (auto default) extended to button_wireless_2/3/4, button_wireless_smart, button_wireless_usb",
+        "status": "pending",
+        "evidence": ""
+      },
+      {
+        "id": 73,
+        "item": "r4-3 buttons 0-based vs 1-based numbering detected per couple (no global change)",
+        "status": "pending",
+        "evidence": ""
+      },
+      {
+        "id": 74,
+        "item": "r4-4 TS0041 scene mode manual toggle (setting/flow) on top of auto-detection",
+        "status": "pending",
+        "evidence": ""
+      },
+      {
+        "id": 75,
+        "item": "r4-7 quick actions / driver state on widget, generalize where sensible",
+        "status": "pending",
+        "evidence": ""
+      },
+      {
+        "id": 76,
+        "item": "r4-8 watch Homey news fr/en (Zigbee/Tuya) and implement (W10)",
+        "status": "pending",
+        "evidence": ""
+      },
+      {
+        "id": 77,
+        "item": "r4-9 GitHub Pages Wi-Fi section (user/technical/architecture), auto-updated",
+        "status": "pending",
+        "evidence": ""
+      },
+      {
+        "id": 78,
+        "item": "r4-11 coherent driver images per device type; fill missing images",
+        "status": "pending",
+        "evidence": ""
+      },
+      {
+        "id": 79,
+        "item": "r4-12 HOBEIAN regression: bisect against versions that worked (forum) before any change",
+        "status": "pending",
+        "evidence": ""
+      },
+      {
+        "id": 80,
+        "item": "r4-13 old issues #76 TS0044, #170 TS0003 sub-capability cards, #162 fingerbot firmware: check ledger status, process if open",
+        "status": "pending",
+        "evidence": ""
+      },
+      {
+        "id": 81,
+        "item": "r4-14 battery % history: compare calculation methods across versions, keep the most stable",
+        "status": "pending",
+        "evidence": ""
+      },
+      {
+        "id": 82,
+        "item": "r4-15 forum T140352 posts 2187-2228 (HOBEIAN everything not native)",
+        "status": "pending",
+        "evidence": ""
+      },
+      {
+        "id": 83,
+        "item": "r4-16 athombv repos + SDK docs as inspiration for flows/lazy-load",
+        "status": "pending",
+        "evidence": ""
+      },
+      {
+        "id": 84,
+        "item": "r4 device couples bcusnqt8/awepdiwi/fllyghyj",
+        "status": "verified",
+        "evidence": "already placed (curtain_motor, soil_sensor, climate_sensor)"
+      },
+      {
+        "id": 85,
+        "item": "r4 guard: malformed PR #512 mfrs never added (R16); enforce in fingerprint gate",
+        "status": "verified",
+        "evidence": "tools/ci/malformed-mfr-gate.js (shrink-only legacy baseline of 17 test-locked entries) in check:publish + test"
+      },
+      {
+        "id": 86,
+        "item": "Decision A: AI quota guard in ai-helper (paid flag ignored, 429/402/quota -> provider off for the UTC day, persisted) + R2/R13",
+        "status": "verified",
+        "evidence": "fcc5b6f044 ai-helper quota guard + test/ai-quota-guard.test.js; published 9.0.1323"
+      },
+      {
+        "id": 87,
+        "item": "Decision B: GitOps draft-PR-only pipeline (no auto-merge, no posting) - design when needed (R17)",
+        "status": "pending",
+        "evidence": ""
+      },
+      {
+        "id": 88,
+        "item": "Decision C: Johan comment deletion = manual user action (R18)",
+        "status": "verified",
+        "evidence": "not an agent task"
+      },
+      {
+        "id": 89,
+        "item": "Decision D: HOBEIAN blind cross-product rejected (R19)",
+        "status": "verified",
+        "evidence": "rule recorded"
+      },
+      {
+        "id": 90,
+        "item": "R20 identifier normalization: research Homey SDK/zigbee-clusters/homey-zigbeedriver, Z2M, ZHA, deCONZ, SmartThings matching; single normalizer at read/match; keep originals; gate for colliding normalized couples/malformed; never break current matches | clarified: respect each field format (no blanket transform); audit hidden case/char collisions across drivers and mfr reported with different case/padding; tolerant comparison only at match time",
+        "status": "in-progress",
+        "evidence": "research + docs/rules/R20_IDENTIFIER_MATCHING.md; gate check:identifiers (0 hidden case collisions, 7 deliberate encoding hedges); runtime tolerance exists in TuyaNormalizer/fingerprint-matcher; remaining: mojibake (cp1252) repair at compare time"
+      },
+      {
+        "id": 91,
+        "item": "PCr2-1 remaining: HEIMAN RC-EF-3.0, iHorn LH02121, SONOFF MINI-ZBRBS, Signify RDM001 exact drivers; eWeLight TS0502B needs real interview",
+        "status": "pending",
+        "evidence": ""
+      },
+      {
+        "id": 92,
+        "item": "Stable publish version bump (Homey rejected duplicate 5.12.359)",
+        "status": "verified",
+        "evidence": "stable 0eb2d31d91 + fbabec68d8: bump before build, retry on already-published, commit-back re-applied on tip; run 37169372245 uploaded 5.12.360"
+      },
+      {
+        "id": 93,
+        "item": "R21 memory/runtime safety rule + static gate check:runtime-safety (changed files)",
+        "status": "verified",
+        "evidence": "tools/ci/runtime-safety-gate.js + test; constitution R21"
+      },
+      {
+        "id": 94,
+        "item": "R22 modular architecture / sharded data / lazy loading: spec 010 (T1-T8), measure boot+heap | design from Homey SDK v3 docs/guides, homey-zigbeedriver, zigbee-clusters, Athom brand apps, Johan, Aqara, IKEA, Sonoff, Hue, community apps (T0), own implementation + credits (also for flows and memory work)",
+        "status": "pending",
+        "evidence": "specs/010-modular-lazy-data"
+      },
+      {
+        "id": 95,
+        "item": "Matter Bridge readiness (HomeKit retired from Homey v13.5.1, removed March 2027): verify Matter Bridge docs for supported classes/capabilities; audit drivers for standard class + standard capabilities; mirror a standard capability additively where only custom exists; never degrade | no standard capability: mirror to the closest standard one in addition (custom mode -> onoff/alarm_generic, scene -> button) or expose via flows; never remove anything | EXTENDED (parent 2026-10-04 04:04): cover Google Home/Assistant, Alexa, SmartThings (via Matter Bridge), Home Assistant; user note renamed/extended",
+        "status": "in_progress",
+        "evidence": "audit tool tools/ci/smart-home-ecosystem-audit.js + test (5 passing), npm run check:ecosystems; bridge source athombv/com.athom.matter-bridge@045787d; docs/user/SMART_HOME_ECOSYSTEMS.md (HOMEKIT_TO_MATTER_BRIDGE.md kept as pointer); findings docs/rules/ECOSYSTEM_AUDIT_2026-10-04.md: 443 drivers, 366 bridged, 286 Alexa, 411 Google. Per-driver additive mirrors still pending (sub-cap-only multi-channel, class other sensors, device_din_rail* class doorbell). | data/matter-bridge-mapping.json (source-extracted, credited Athom); smart_scene_panel additive onoff mirror landed; valves deliberately not mirrored (voice safety)."
+      },
+      {
+        "id": 96,
+        "item": "Stable publish false-green: Athom build processing_failed 'socket hang up' (#267-#270, #272 v5.12.360) while run is green; Test stayed v5.12.359 #271. Fix: re-upload same version (bounded 2x) in Publish job",
+        "status": "in_progress",
+        "evidence": "stable 128cd4677e; verifying run 37170003588"
+      },
+      {
+        "id": 97,
+        "item": "device_din_rail / device_din_rail_meter class doorbell + Philips LCT00x pids: W4/R20 couple review",
+        "status": "pending",
+        "evidence": "docs/rules/ECOSYSTEM_AUDIT_2026-10-04.md"
+      },
+      {
+        "id": 98,
+        "item": "r4-16 EXTENDED: study whole athombv org (node-homey-zigbeedriver, node-zigbee-clusters, apps-sdk docs, matter-bridge, brand apps IKEA/Aqara-Xiaomi/Hue/Sonoff/Tuya...) incl. branches, PRs, issues open+closed; extract cluster handling, reporting config, bound clusters, battery, OTA, pairing robustness, flows, energy, memory/perf, regressions; reimplement in our own way, additive, keyed mfr+pid; credit Athom; track each repo/issue/PR in ledger with last-seen cursor (re-process only changes); frugal, multi-day, checkpoints. Report every discovery in French ('Découvertes') + docs/progress/DISCOVERIES.md",
+        "status": "in_progress",
+        "evidence": "started: com.athom.matter-bridge @045787d read (see DISCOVERIES.md)"
+      }
+    ],
+    "next": [
+      "Matter/ecosystem per-driver additive mirrors (#95 follow-ups)",
+      "spec 010 T0 research design sources",
+      "spec 010 T1 baseline perf + golden couple resolution",
+      "PCr2-1 remaining exact drivers (RC-EF-3.0, LH02121, MINI-ZBRBS, RDM001); Zbeacon drivers to stable",
+      "PCr2-2 52 drivers required/optional clusters",
+      "PCr2-4 Green Power + proprietary clusters -> native matrix",
+      "r4-2/r4-4 button mode + TS0041 scene toggle",
+      "flow cards; ledger wiring into workflows",
+      "R20 cp1252 mojibake repair at compare time"
+    ],
+    "user_actions": [
+      "Rotate/revoke the Gmail app password and old GitHub PAT seen in clear text in July opencode/MiniMax prompts (not for agents)"
+    ],
+    "user_decisions_2026_10_04": {
+      "A": "AI subscriptions allowed as optional complementary layer; workflows run without AI; included quota only; hard caps; disable on 429/quota; never overage; keys via secrets; skip when absent",
+      "B": "GitOps only as draft PRs on own repo, no auto-merge, no issue/comment posting; gates decide; batched publishing",
+      "C": "Deleting comments on Johan repo: not done, manual user action",
+      "D": "Blind HOBEIAN cross-product rejected; verified couples only"
+    },
+    "publishes": [
+      {
+        "date": "2026-10-04T04:55+02:00",
+        "branch": "master",
+        "commit": "fcc5b6f044",
+        "run": 37168606588,
+        "version": "9.0.1323",
+        "result": "success"
+      },
+      {
+        "date": "2026-10-04T04:50+02:00",
+        "branch": "stable-v5",
+        "commit": "af8596d57b",
+        "run": 37168670987,
+        "version": "stable app.json 5.12.359 (Test promotion succeeded)",
+        "result": "success"
+      },
+      {
+        "date": "2026-10-04T03:56+02:00",
+        "branch": "stable-v5",
+        "commit": "0eb2d31d91",
+        "run": 37169372245,
+        "version": "5.12.360",
+        "result": "success (first real upload since 5.12.359; includes 1d06791f0d, 78bf4a93af, af8596d57b)"
+      }
+    ],
+    "rules_reporting": "Every report includes a French 'Découvertes' section (source link + author, mechanism/symptom, what we did or why not); append to docs/progress/DISCOVERIES.md"
+  }
 }

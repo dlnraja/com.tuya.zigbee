@@ -21,6 +21,8 @@ function checkSource(src, file = '') {
   const cacheDecl = code.match(/^(?:const|let|var)\s+(\w+)\s*=\s*new\s+(?:Map|Set)\s*\(/gm) || [];
   for (const decl of cacheDecl) {
     const name = decl.match(/^(?:const|let|var)\s+(\w+)/)[1];
+    // A Set/Map that is never mutated (.add/.set) is a constant lookup table, not a cache.
+    if (!new RegExp(`${name}\\.(add|set)\\s*\\(`).test(code)) { continue; }
     const bounded = new RegExp(`${name}\\.(delete|clear)\\s*\\(|${name}\\.size\\s*[<>]=?|MAX|TTL|maxSize|ttl`, 'i').test(code);
     if (!bounded) { issues.push(`module-level ${name} has no cap/TTL/eviction`); }
   }
