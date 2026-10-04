@@ -1,0 +1,11 @@
+<svg width="960" height="960" viewBox="0 0 960 960" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Thermometer -->
+  <path d="M420 700C470 700 510 660 510 610C510 570 490 540 460 526V250C460 233 447 220 430 220C413 220 400 233 400 250V526C370 540 350 570 350 610C350 660 390 700 420 700Z" stroke="black" stroke-width="36" fill="none"/>
+  <circle cx="420" cy="610" r="44" fill="black"/>
+  <line x1="420" y1="520" x2="420" y2="350" stroke="black" stroke-width="20" stroke-linecap="round"/>
+  <!-- Humidity drop -->
+  <path d="M620 320C620 320 550 430 550 500C550 540 570 575 600 590C615 598 632 600 640 600C665 600 690 580 690 540C690 470 620 320 620 320Z" stroke="black" stroke-width="36" fill="none"/>
+  <!-- LCD display lines -->
+  <rect x="630" y="350" width="80" height="12" rx="4" fill="black"/>
+  <rect x="630" y="380" width="50" height="12" rx="4" fill="black"/>
+</svg>

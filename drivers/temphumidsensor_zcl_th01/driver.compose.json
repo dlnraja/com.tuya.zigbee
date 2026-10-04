@@ -1,0 +1,77 @@
+{
+  "id": "temphumidsensor_zcl_th01",
+  "name": {
+    "en": "Temperature & Humidity Sensor (Zbeacon TH01)",
+    "nl": "Temperatuur- en vochtigheidssensor (Zbeacon TH01)",
+    "fr": "Capteur température & humidité (Zbeacon TH01)"
+  },
+  "class": "sensor",
+  "platforms": [
+    "local"
+  ],
+  "connectivity": [
+    "zigbee"
+  ],
+  "capabilities": [
+    "measure_temperature",
+    "measure_humidity",
+    "measure_battery"
+  ],
+  "capabilitiesOptions": {
+    "measure_battery": {
+      "getable": true
+    },
+    "measure_humidity": {
+      "getable": true
+    },
+    "measure_temperature": {
+      "getable": true
+    }
+  },
+  "energy": {
+    "batteries": [
+      "OTHER"
+    ]
+  },
+  "images": {
+    "small": "/drivers/temphumidsensor_zcl_th01/assets/images/small.png",
+    "large": "/drivers/temphumidsensor_zcl_th01/assets/images/large.png"
+  },
+  "zigbee": {
+    "manufacturerName": [
+      "zbeacon",
+      "Zbeacon"
+    ],
+    "productId": [
+      "TH01"
+    ],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0,
+          1,
+          3,
+          32,
+          1026,
+          1029
+        ],
+        "bindings": [
+          1,
+          1026,
+          1029
+        ]
+      }
+    },
+    "learnmode": {
+      "image": "{{driverAssetsPath}}/icon.svg",
+      "instruction": {
+        "en": "Press and hold the reset button for about 5 seconds until the LED blinks rapidly.",
+        "fr": "Maintenez le bouton reset environ 5 secondes jusqu’à ce que la LED clignote rapidement.",
+        "nl": "Houd de resetknop ongeveer 5 seconden ingedrukt tot de LED snel knippert."
+      }
+    }
+  },
+  "metadata": {
+    "source": "JohanBendz/com.tuya.zigbee #797 deep read (two Homey interviews zbeacon/Zbeacon TH01: EP1 in [0,1,3,32,1026,1029]); docs/rules/JOHAN_797_STANDARD_ZCL_TEMP_RH.md"
+  }
+}
