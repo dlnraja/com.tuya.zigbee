@@ -69,7 +69,9 @@
     "large": "/drivers/panel_switch_cover_tuya/assets/images/large.png"
   },
   "zigbee": {
-    "manufacturerName": [],
+    "manufacturerName": [
+      "_TZE200_rgeapp2c"
+    ],
     "productId": [
       "TS0601"
     ],

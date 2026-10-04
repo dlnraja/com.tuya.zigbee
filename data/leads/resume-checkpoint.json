@@ -89,7 +89,7 @@
   },
   "master_queue": {
     "note": "Single master checklist of ALL user requests since the start. Daily resumption reads this FIRST. Tick (verified) only after verification.",
-    "updated": "2026-10-04T02:28:05.688Z",
+    "updated": "2026-10-04 06:35 Paris",
     "items": [
       {
         "id": 1,
@@ -688,8 +688,9 @@
       {
         "id": 100,
         "item": "Research + land new couples from source registry: _TZE204_r6kfl9ta (noise sensor), _TZE284_rzdkn5rx (Zemismart), _TZ3290_qazgdsae (IR blaster TS1201), _TZE284_oa1odmga, _TZ3210_jqg2a5yn (TS0002)",
-        "status": "pending",
-        "evidence": "data/leads/source-proposals.json; DISCOVERIES.md 2026-10-04"
+        "status": "done-partial",
+        "evidence": "4/5 landed 2026-10-04: r6kfl9ta -> new drivers/sound_sensor_tuya (ZHC ZY-N1 DP map); qazgdsae -> ir_blaster; oa1odmga -> light_bulb_rgb_rgbw (Z2M #32498 DPs 1-5); jqg2a5yn -> switch_2gang + startUpOnOff 0x4003 write (Z2M #32627). rzdkn5rx deferred: ZHA PR #5387 open (needs changes), DP map from a non-public converter; ZHC master says _TZE28C1000000_rzdkn5rx is a different device (ZNS-LRL2E immersion switch) so suffix-only matching would be wrong.",
+        "updated": "2026-10-04"
       },
       {
         "id": 101,
@@ -836,26 +837,44 @@
         "evidence": "public Test page shows 5.12.363 (#275); re-run 37175745444 created 5.12.364 draft #276 (promotion not confirmed, Athom flagged processing_failed)",
         "origin": "user 2026-10-04 05:44",
         "updated": "2026-10-04"
+      },
+      {
+        "id": 120,
+        "item": "light_bulb_rgb / light_bulb_rgb_rgbw / light_bulb_rgb_led decode repair (DP3/DP4/DP25 *1000 instead of /1000, HSV parse returned NaN, hue *360/*254, sendHSV hue always 360)",
+        "status": "done",
+        "evidence": "test/p100-source-proposals.test.js",
+        "updated": "2026-10-04"
+      },
+      {
+        "id": 121,
+        "item": "ZCL startUpOnOff (0x4003) undeclared in zigbee-clusters: writes by name in UnifiedLightBase / TuyaMultiGangManager failed silently; declared in lib/clusters/TuyaOnOffCluster.js",
+        "status": "done",
+        "evidence": "test/p100-source-proposals.test.js",
+        "updated": "2026-10-04"
+      },
+      {
+        "id": 122,
+        "item": "Unified CI L99 brand-scrub gate failed on [[hue]] flow arg placeholder; gate now ignores [[arg]] tokens",
+        "status": "done",
+        "updated": "2026-10-04"
+      },
+      {
+        "id": 123,
+        "item": "Pre-existing fp-collision-check NEW COLLISION x20 (curtain_motor vs curtain_motor_shutter, pir_sensor_2 vs sensor_motion_presence) on origin/master — needs review/reviewed-duals or placement",
+        "status": "pending",
+        "updated": "2026-10-04"
       }
     ],
     "next": [
-      "master 9.0.1328 failed 3x on Athom (socket hang up) — next push retries",
-      "stable 5.12.364 draft #276 — check promotion",
-      "#99/#100 source registry parsers + triage",
+      "stable grouped publish after #100 port (Test is 5.12.363; 5.12.364 #276 stuck)",
+      "verify master Auto-Publish for the #100 push",
+      "#123 fp-collision baseline review",
+      "#99 source registry parsers (tools/sources/dp-parsers.js + test)",
       "#98 athombv org study",
       "spec 010",
       "PCr2",
-      "Source registry follow-ups (#99): per-source DP parsers + triage; land #100 couples after research",
-      "Matter/ecosystem per-driver additive mirrors (#95 follow-ups)",
-      "athombv org study (#98) — start with node-zigbee-clusters + node-homey-zigbeedriver issues/PRs",
-      "spec 010 T0 research design sources",
-      "spec 010 T1 baseline perf + golden couple resolution",
-      "PCr2-1 remaining exact drivers (RC-EF-3.0, LH02121, MINI-ZBRBS, RDM001); Zbeacon drivers to stable",
-      "PCr2-2 52 drivers required/optional clusters",
-      "PCr2-4 Green Power + proprietary clusters -> native matrix",
-      "r4-2/r4-4 button mode + TS0041 scene toggle",
-      "flow cards; ledger wiring into workflows",
-      "R20 cp1252 mojibake repair at compare time"
+      "#95 mirrors",
+      "sacred pins for switch_presence_tuya / panel_switch_cover_tuya / sound_sensor_tuya once root app.json has them"
     ],
     "user_actions": [
       "Rotate/revoke the Gmail app password and old GitHub PAT seen in clear text in July opencode/MiniMax prompts (not for agents)"
@@ -980,6 +999,30 @@
         "builds": "#3433 failed (socket hang up) -> re-upload #3434 on Test; 9.0.1326 also reached Test as #3432 (covers run 37173938808)",
         "result": "Test channel OK via re-upload loop",
         "at": "2026-10-04 05:43 Paris"
+      },
+      {
+        "branch": "master",
+        "run": 37175535666,
+        "version": "9.0.1328",
+        "builds": "#3435/#3436/#3437",
+        "result": "Athom processing_failed (socket hang up) x3",
+        "at": "2026-10-04 06:12 Paris"
+      },
+      {
+        "branch": "master",
+        "run": 37176436651,
+        "version": "9.0.1329",
+        "build": "#3438",
+        "result": "on Test (public page shows 9.0.1329); built from the tree where the bot had stripped the reviewed duals from old drivers (exact drivers kept them)",
+        "at": "2026-10-04 06:22 Paris"
+      },
+      {
+        "branch": "stable-v5",
+        "run": 37175745444,
+        "version": "5.12.364",
+        "build": "#276",
+        "result": "draft; Athom processing_failed reported, Test still 5.12.363 (#275, confirmed on public page)",
+        "at": "2026-10-04 06:10 Paris"
       }
     ],
     "rules_reporting": "Every report includes a French 'Découvertes' section (source link + author, mechanism/symptom, what we did or why not); append to docs/progress/DISCOVERIES.md"
