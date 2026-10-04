@@ -59,6 +59,12 @@
             "fr": "Allumer",
             "nl": "Zet aan",
             "de": "Einschalten"
+          },
+          "title": {
+            "en": "Turn on",
+            "fr": "Allumer",
+            "nl": "Zet aan",
+            "de": "Einschalten"
           }
         },
         {
@@ -68,11 +74,23 @@
             "fr": "Éteindre",
             "nl": "Zet uit",
             "de": "Ausschalten"
+          },
+          "title": {
+            "en": "Turn off",
+            "fr": "Éteindre",
+            "nl": "Zet uit",
+            "de": "Ausschalten"
           }
         },
         {
           "id": "toggle",
           "label": {
+            "en": "Toggle",
+            "fr": "Basculer",
+            "nl": "Wissel",
+            "de": "Umschalten"
+          },
+          "title": {
             "en": "Toggle",
             "fr": "Basculer",
             "nl": "Wissel",

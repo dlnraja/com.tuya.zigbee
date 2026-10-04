@@ -24,11 +24,19 @@
           "label": {
             "en": "Light",
             "fr": "Lumière"
+          },
+          "title": {
+            "en": "Light",
+            "fr": "Lumière"
           }
         },
         {
           "id": "presence",
           "label": {
+            "en": "Presence",
+            "fr": "Présence"
+          },
+          "title": {
             "en": "Presence",
             "fr": "Présence"
           }
@@ -38,11 +46,19 @@
           "label": {
             "en": "Energy",
             "fr": "Énergie"
+          },
+          "title": {
+            "en": "Energy",
+            "fr": "Énergie"
           }
         },
         {
           "id": "cover",
           "label": {
+            "en": "Cover",
+            "fr": "Volet"
+          },
+          "title": {
             "en": "Cover",
             "fr": "Volet"
           }
@@ -52,6 +68,10 @@
           "label": {
             "en": "Sensor",
             "fr": "Capteur"
+          },
+          "title": {
+            "en": "Sensor",
+            "fr": "Capteur"
           }
         },
         {
@@ -59,11 +79,19 @@
           "label": {
             "en": "Climate",
             "fr": "Climat"
+          },
+          "title": {
+            "en": "Climate",
+            "fr": "Climat"
           }
         },
         {
           "id": "generic",
           "label": {
+            "en": "Generic",
+            "fr": "Générique"
+          },
+          "title": {
             "en": "Generic",
             "fr": "Générique"
           }

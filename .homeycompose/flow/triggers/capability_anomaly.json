@@ -50,6 +50,12 @@
             "fr": "faible",
             "nl": "laag",
             "de": "niedrig"
+          },
+          "title": {
+            "en": "low",
+            "fr": "faible",
+            "nl": "laag",
+            "de": "niedrig"
           }
         },
         {
@@ -59,11 +65,23 @@
             "fr": "moyenne",
             "nl": "middel",
             "de": "mittel"
+          },
+          "title": {
+            "en": "medium",
+            "fr": "moyenne",
+            "nl": "middel",
+            "de": "mittel"
           }
         },
         {
           "id": "high",
           "label": {
+            "en": "high",
+            "fr": "élevée",
+            "nl": "hoog",
+            "de": "hoch"
+          },
+          "title": {
             "en": "high",
             "fr": "élevée",
             "nl": "hoog",

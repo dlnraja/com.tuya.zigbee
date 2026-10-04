@@ -21,3 +21,8 @@ Each entry: source (link + author), mechanism / symptom, what we did (or why not
 ## 2026-10-04 — Our own R21 gate false positive
 - Mechanism: the runtime-safety gate treated constant lookup Sets (never `.add`ed) as unbounded caches.
 - What we did: Sets/Maps never mutated are now treated as constants; test added.
+
+## 2026-10-04 — ChatGPT / Homey MCP breaks on malformed flow cards (and we had some)
+- Sources: https://homey.app/en-us/news/homey-is-now-available-in-chatgpt/ (Athom, June 2026); support.homey.app article 27950286160540; community.homey.app t/155885 (Astrap, 2026-06-07: `droptoken` string instead of array breaks list_flow_action_cards) and t/145181 post 105 (B4ZZY, 2026-09-05: dropdown value `title: null` breaks list_flow_trigger_cards); apps.developer.homey.app/the-basics/flow/arguments (dropdown values are `{ id, title }`).
+- Mechanism: the MCP server validates the whole flow-card catalogue of the Homey against a strict schema; one bad card from any installed app makes the whole list call fail, so the assistant can no longer build flows for that user. Our app had 38 dropdown values (12 app-level cards: capability_anomaly, capability_trend, capability_crossed_threshold, child_lock_*, gang_*, backlight_set, soft_* ...) written as `{ id, label }` without `title` -> they surface as `title: null`, the exact failure B4ZZY reported.
+- What we did: added `title` (same text as `label`, kept `label`) to those 38 values; new gate `tools/ci/flow-mcp-shape-gate.js` (dropdown titles, droptoken arrays, title.en) wired into `check:flows-publish`, with test. Stable branch scanned: clean.
