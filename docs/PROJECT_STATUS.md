@@ -6,16 +6,16 @@
 
 | Metric | Value |
 |--------|-------|
-| Version | v9.0.1327 |
-| Drivers | 443 |
-| Fingerprints | 18,932 |
+| Version | v9.0.1328 |
+| Drivers | 445 |
+| Fingerprints | 18,972 |
 | Last Updated | 2026-10-04 |
 
 ## Drivers by Category
 
 | Category | Count |
 |----------|-------|
-| socket | 118 |
+| socket | 119 |
 | sensor | 111 |
 | light | 65 |
 | other | 31 |
@@ -23,7 +23,7 @@
 | thermostat | 26 |
 | remote | 18 |
 | fan | 13 |
-| windowcoverings | 11 |
+| windowcoverings | 12 |
 | lock | 5 |
 | heater | 5 |
 | doorbell | 4 |
