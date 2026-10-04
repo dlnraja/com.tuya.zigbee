@@ -110,7 +110,7 @@ class HVACDehumidifierDevice extends UnifiedThermostatBase {
       try {
         const tz = this.homey.clock.getTimezone();
         const tzDate = new Date(now.toLocaleString('en-US', { timeZone: tz }));
-        utcOffset = Math.round((tzDate - safeDivide(now), 3600000));
+        utcOffset = Math.round((tzDate - now) / 3600000);
       } catch (e) { /* use UTC */ }
 
       // Tuya time format: [year-2000, month, day, hour, minute, second, weekday(0=Mon)]
@@ -118,7 +118,7 @@ class HVACDehumidifierDevice extends UnifiedThermostatBase {
         now.getFullYear() - 2000,
         now.getMonth() + 1,
         now.getDate(),
-        now.getHours() + utcOffset,
+        (((now.getHours() + utcOffset) % 24) + 24) % 24,
         now.getMinutes(),
         now.getSeconds(),
         now.getDay() === 0 ? 7 : now.getDay() // Sunday=7 in Tuya format
