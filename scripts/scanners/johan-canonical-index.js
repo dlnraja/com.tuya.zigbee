@@ -66,12 +66,25 @@ function parseComment(body) {
   return out;
 }
 
+function classifyTopic(t, pr) {
+  const x = String(t || '').toLowerCase();
+  if (pr) {return 'pull-request';}
+  if (/device request|new device|add device|support for|request/.test(x)) {return 'device-request';}
+  if (/bug|error|crash|not work|broken|issue|problem|fail/.test(x)) {return 'bug';}
+  if (/feature|enhancement|suggest|improve/.test(x)) {return 'feature';}
+  if (/\?|question|how/.test(x)) {return 'question';}
+  return x ? 'other' : null;
+}
+
 function mergeIndex(prev, items, comments) {
   const idx = prev && prev.issues ? prev : { issues: {} };
   const get = (n) => idx.issues[n] = idx.issues[n] || { n: Number(n), sources: [], identities: [], objectives: [], batches: [], implemented: [] };
   for (const it of items) {
     const e = get(it.n);
-    Object.assign(e, { title: it.t || it.title || e.title, state: it.state, state_reason: it.state_reason || null, closed_at: it.closed_at || null, pr: !!it.pr });
+    // Spec 005/C1: no upstream title text is stored, only a coarse topic class + link.
+    const topic = classifyTopic(it.t || it.title || '', it.pr) || e.topic;
+    delete e.title;
+    Object.assign(e, { topic, url: `https://github.com/${REPO}/${it.kind === 'discussion' ? 'discussions' : 'issues'}/${it.n}`, state: it.state, state_reason: it.state_reason || null, closed_at: it.closed_at || null, pr: !!it.pr });
     if (it.kind === 'discussion') { e.kind = 'discussion'; e.needsDeepRead = true; }
     if (it.body && it.user === AUTHOR) {
       const p = parseComment(it.body);
