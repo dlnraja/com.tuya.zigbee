@@ -54,8 +54,8 @@ class TuyaZigbeeDriver extends ZigBeeDriver {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;
           // Generic action handler
-          this.log('[FLOW] Action contact_sensor_curtain_curtain_motor_windowcoverings_open triggered for', args.device.getName());
-          return true;
+          // #113: real effect through the device's own capability listener when one matches.
+          return require('../../lib/flow/PlaceholderActionWiring').run(this, 'contact_sensor_curtain_motor_windowcoverings_open', args);
         });
       }
     } catch (err) { if (this.developerDebugMode) { this.error(`Action contact_sensor_curtain_curtain_motor_windowcoverings_open: ${err.message}`); }; }
@@ -66,8 +66,8 @@ class TuyaZigbeeDriver extends ZigBeeDriver {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;
           // Generic action handler
-          this.log('[FLOW] Action contact_sensor_curtain_curtain_motor_windowcoverings_close triggered for', args.device.getName());
-          return true;
+          // #113: real effect through the device's own capability listener when one matches.
+          return require('../../lib/flow/PlaceholderActionWiring').run(this, 'contact_sensor_curtain_motor_windowcoverings_close', args);
         });
       }
     } catch (err) { if (this.developerDebugMode) { this.error(`Action contact_sensor_curtain_curtain_motor_windowcoverings_close: ${err.message}`); }; }
@@ -89,8 +89,8 @@ class TuyaZigbeeDriver extends ZigBeeDriver {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;
           // Generic action handler
-          this.log('[FLOW] Action contact_sensor_curtain_curtain_motor_stop triggered for', args.device.getName());
-          return true;
+          // #113: real effect through the device's own capability listener when one matches.
+          return require('../../lib/flow/PlaceholderActionWiring').run(this, 'contact_sensor_curtain_motor_stop', args);
         });
       }
     } catch (err) { if (this.developerDebugMode) { this.error(`Action contact_sensor_curtain_curtain_motor_stop: ${err.message}`); }; }
@@ -101,8 +101,8 @@ class TuyaZigbeeDriver extends ZigBeeDriver {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;
           // Generic action handler
-          this.log('[FLOW] Action contact_sensor_curtain_curtain_motor_set_favorite triggered for', args.device.getName());
-          return true;
+          // #113: real effect through the device's own capability listener when one matches.
+          return require('../../lib/flow/PlaceholderActionWiring').run(this, 'contact_sensor_curtain_motor_set_favorite', args);
         });
       }
     } catch (err) { if (this.developerDebugMode) { this.error(`Action contact_sensor_curtain_curtain_motor_set_favorite: ${err.message}`); }; }
@@ -135,8 +135,8 @@ class TuyaZigbeeDriver extends ZigBeeDriver {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;
           // Generic action handler
-          this.log('[FLOW] Action contact_sensor_curtain_curtain_motor_open triggered for', args.device.getName());
-          return true;
+          // #113: real effect through the device's own capability listener when one matches.
+          return require('../../lib/flow/PlaceholderActionWiring').run(this, 'contact_sensor_curtain_motor_open', args);
         });
       }
     } catch (err) { if (this.developerDebugMode) { this.error(`Action contact_sensor_curtain_curtain_motor_open: ${err.message}`); }; }
@@ -147,8 +147,8 @@ class TuyaZigbeeDriver extends ZigBeeDriver {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;
           // Generic action handler
-          this.log('[FLOW] Action contact_sensor_curtain_curtain_motor_close triggered for', args.device.getName());
-          return true;
+          // #113: real effect through the device's own capability listener when one matches.
+          return require('../../lib/flow/PlaceholderActionWiring').run(this, 'contact_sensor_curtain_motor_close', args);
         });
       }
     } catch (err) { if (this.developerDebugMode) { this.error(`Action contact_sensor_curtain_curtain_motor_close: ${err.message}`); }; }

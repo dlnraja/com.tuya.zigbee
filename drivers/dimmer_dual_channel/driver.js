@@ -88,8 +88,8 @@ async onInit() {
         card.registerRunListener(async (args) => {
           if (!args.device) {return false;}
           // Generic action handler
-          this.log('[FLOW] Action dimmer_dual_channel_dim_up triggered for', args.device.getName());
-          return true;
+          // #113: real effect through the device's own capability listener when one matches.
+          return require('../../lib/flow/PlaceholderActionWiring').run(this, 'dimmer_dual_channel_dim_up', args);
         });
       }
     } catch (err) { if (this.developerDebugMode) { this.error(`Action dimmer_dual_channel_dim_up: ${err.message}`); }; }
@@ -100,8 +100,8 @@ async onInit() {
         card.registerRunListener(async (args) => {
           if (!args.device) {return false;}
           // Generic action handler
-          this.log('[FLOW] Action dimmer_dual_channel_dim_down triggered for', args.device.getName());
-          return true;
+          // #113: real effect through the device's own capability listener when one matches.
+          return require('../../lib/flow/PlaceholderActionWiring').run(this, 'dimmer_dual_channel_dim_down', args);
         });
       }
     } catch (err) { if (this.developerDebugMode) { this.error(`Action dimmer_dual_channel_dim_down: ${err.message}`); }; }
