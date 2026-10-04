@@ -196,7 +196,7 @@ jobs:
     needs: [pre-validation, soak]
     if: needs.soak.outputs.skip != 'true'
     runs-on: ubuntu-latest
-    timeout-minutes: 15
+    timeout-minutes: 40
     # WHY(P2355): Homey build may bump patch in-job; promote must wait that version.
     outputs:
       uploaded_version: ${{ steps.publish.outputs.version || steps.uploaded_version.outputs.version }}
@@ -343,6 +343,33 @@ jobs:
             echo "uploaded=true" >> "$GITHUB_OUTPUT"
           fi
           echo "Draft publish completed (v$V)"
+      - name: Re-upload when Athom processing fails (same version)
+        # WHY: build #272 (v5.12.360) and #267-#270 were Athom-side processing_failed
+        # "socket hang up" while the job stayed green; #271 proved that re-uploading the
+        # SAME version after a failed build is accepted and processes fine. Bounded: 2 retries.
+        if: steps.publish.outputs.uploaded == 'true'
+        env:
+          HOMEY_PAT: ${{ secrets.HOMEY_PAT }}
+          HOMEY_EXPECTED_VERSION: ${{ steps.publish.outputs.version }}
+          HOMEY_DRAFT_SOFT_EXPECT: '1'
+          HOMEY_DRAFT_WAIT_MS: '420000'
+          HOMEY_DRAFT_EARLY_FAIL_MS: '120000'
+        run: |
+          PUBLISH_DIR="${HOMEY_PUBLISH_DIR:-$(node -p "require('path').join(require('os').tmpdir(), 'homey-publish-temp')")}"
+          export APP_ID=$(node -p "require('$PUBLISH_DIR/app.json').id")
+          for retry in 0 1 2; do
+            OUT=$(mktemp)
+            GITHUB_OUTPUT="$OUT" node .github/scripts/wait-athom-draft-ready.js || true
+            if ! grep -q 'processing_failed_degraded=true' "$OUT"; then
+              echo "Athom build for v$HOMEY_EXPECTED_VERSION is processing/ready (retry=$retry)"; exit 0
+            fi
+            [ "$retry" -ge 2 ] && break
+            echo "::warning::Athom processing_failed for v$HOMEY_EXPECTED_VERSION; re-uploading same version (retry $((retry+1))/2)"
+            sleep 30
+            (cd "$PUBLISH_DIR" && HOMEY_HEADLESS=1 HOMEY_PAT="$HOMEY_PAT" "$GITHUB_WORKSPACE/node_modules/.bin/homey" app publish --path "$PUBLISH_DIR") || echo "::warning::re-upload attempt failed"
+          done
+          echo "::error::Athom kept failing to process v$HOMEY_EXPECTED_VERSION after 2 re-uploads; Test stays on the previous build"
+          echo "### Stable Test NOT updated: Athom processing_failed for v$HOMEY_EXPECTED_VERSION" >> "$GITHUB_STEP_SUMMARY"
       - name: Commit stable version back
         if: steps.publish.outputs.uploaded == 'true'
         run: |
