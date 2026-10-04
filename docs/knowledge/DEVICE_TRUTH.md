@@ -20,6 +20,17 @@
 4. Cross-check rules: `AI_CONTEXT_MANDATE.md`, `docs/ARCHITECTURE_AI.md`, `docs/rules/WHY_INTERROGATION.md`, `docs/rules/DUAL_APP_VISION.md`, `docs/rules/FORUM_SILENT_HUMANIZE.md`, `.cursorrules`.
 5. **Publish** means Homey App Store (master Test 9.0.x). **Do not post** means no Homey Community / PM replies.
 
+
+## Enrichment conventions (daily resume)
+
+Standing rules: [`docs/rules/DAILY_RESUME_ENRICHMENT.md`](../rules/DAILY_RESUME_ENRICHMENT.md) + constitution W5–W12 / D1–D5.
+
+- Lock **exact** manufacturerName + productId (never invent; never cross-product brands).
+- One couple on exactly one driver; duals only via reviewed baseline / `dual-couple-legacy.json`.
+- Prefer native Homey capabilities; Tuya DP / 0xE000–0xE001 / mfr clusters are optional failover.
+- Persist protocol notes under `drivers.<id>` in `device-truth.json` when a couple’s DP/cluster map is proven.
+- Credits + source links in our words only (no third-party paste).
+
 Catalog: **431** drivers, **220** locked community cases.
 
 ## Locked couples (canonical, 1 by 1)

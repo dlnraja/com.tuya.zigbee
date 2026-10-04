@@ -42,3 +42,16 @@ Source dumps (removed from git 2026-10-03, history kept): `reports/forum-verify-
 | SOS / water / contact / smart button (Peter, #2183–#2239) | various | battery jitter, contact pulse instead of latch, button flicker on single/double, no battery | button dedupe (spec 003), contact latch, battery rehydrate |
 
 Open without fingerprint: two-way irrigation valve pairing as unknown (#2218) — needs interview.
+
+
+## T140352 #2238–#2258 — daily resume 2026-10-04 (status)
+
+| Post / couple | Driver | Symptom family | Status |
+|---|---|---|---|
+| #2258 AOYAN AY-303Z / HOBEIAN ZG-303Z / COOLO CS-201Z | `soil_sensor` | 0x0405 reports soil moisture; ambient RH on DP109 | already-fixed (`a5ea22d29d` / P2760+P2339) |
+| #2257 ZG-106Z / `_TZ3000_7y90pany` | `illuminance_sensor` | luminance | already-fixed (compose has couple + cluster 1024); pid also listed on `sensor_illuminance_presence` without this mfr → no dual couple |
+| #2253 `_TZE284_ogx8u5z6` ZG253 TRV | `device_radiator_valve` (+ smart twin) | null caps + `datapoint: unexpected property` | already-fixed (P2593/P2598/P2711: Homey datapoint arg shape) |
+| #2246–#2255 VicHY MTG075 / `_TZE204_dtzziy1e` family | `presence_sensor_radar` | curtain class flip, frozen lux/distance, Advanced Flow lag | already-fixed (P2548–P2712 dirty heal); 2026-10-04 DynFlow discovery debounce additive |
+| #2238/#2239 Peter Smartbutton | `button_wireless_1` | battery OK; History/Insights tab missing | compose+boot heal `getable:true` / `preventInsights:false` (P2499/P2512/P2553); existing pair may need one remove+re-add for Homey Insights enrollment |
+
+Forum poll (no AI): fingerprint + `extractForumSignals` → `.github/state/forum/new-leads.json` (links + structured fields only).
