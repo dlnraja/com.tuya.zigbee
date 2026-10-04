@@ -1225,6 +1225,12 @@
       "pid": "TS1201",
       "driverId": "ir_blaster",
       "note": "#100 2026-10-04 ZHA PR #5282 (Zosung TS1201 IR blaster family) — keep through publish compaction"
+    },
+    {
+      "mfr": "HEIMAN",
+      "pid": "RC-EF-3.0",
+      "driverId": "button_emergency_sos",
+      "note": "PCr2-1 2026-10-04 ZHC heiman.ts HM1RC-2-E — keep through publish compaction"
     }
   ]
 }
