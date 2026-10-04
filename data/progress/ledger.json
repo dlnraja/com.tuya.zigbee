@@ -1,6 +1,6 @@
 {
  "version": 1,
- "updated": "2026-10-04T01:03:09.261Z",
+ "updated": "2026-10-04T01:13:32.533Z",
  "checkpoints": {
   "resume": "data/leads/resume-checkpoint.json",
   "deepRead": "data/leads/deep-read-checkpoint.json",
@@ -22819,9 +22819,14 @@
    "note": "only where real collision"
   },
   "task:fix-convertBufferToNumber-u32": {
+   "status": "done",
+   "date": "2026-10-04",
+   "note": "value stays signed int32 (negative temps), bitmap unsigned, no int32 wrap"
+  },
+  "task:flow-cards-complete": {
    "status": "pending",
    "date": "2026-10-04",
-   "note": "TuyaDataPointsZ2M int32 -> unsigned"
+   "note": "research Aqara/IKEA/Hue/Sonoff/Legrand/Johan/Z2M/ZHA/HA/ST/Hubitat flow ideas; per couple+capability, additive, credits"
   },
   "task:forum-85-unrouted-pairs": {
    "status": "pending",
@@ -23048,6 +23053,31 @@
    "date": "2026-10-04",
    "note": "verify then light"
   },
+  "task:pc-r1-agent-rules-gen": {
+   "status": "done",
+   "date": "2026-10-04",
+   "note": "scripts/gen/agent-rules.js injects constitution block into 7 agent files (check:agent-rules)"
+  },
+  "task:pc-r1-auto-post-guard": {
+   "status": "done",
+   "date": "2026-10-04",
+   "note": "scripts/lib/post-guard.js (ALLOW_AUTO_POST) wired into triage.js + auto-respond-intelligent.js; tools/ci/no-auto-post-gate.js"
+  },
+  "task:pc-r1-ef00-raw-settimeout": {
+   "status": "done",
+   "date": "2026-10-04",
+   "note": "17 this.device.homey.setTimeout/clearTimeout -> guarded _setTimeout/_clearTimeout helpers"
+  },
+  "task:pc-r1-fp-db-typos": {
+   "status": "done",
+   "date": "2026-10-04",
+   "note": "reviewed: typo/prefix aliases in DeviceFingerprintDB come from diag reports and are locked by test p2431; canonical mfrs on drivers; kept (no evidence they are fake)"
+  },
+  "task:pc-r1-pid-only-drivers": {
+   "status": "done",
+   "date": "2026-10-04",
+   "note": "21 drivers with empty manufacturerName are exempt templates (match nothing); no conflict, W6 forbids removal"
+  },
   "task:polysemic-dp-engine": {
    "status": "pending",
    "date": "2026-10-04",
@@ -23194,6 +23224,18 @@
    "status": "pending",
    "date": "2026-10-04",
    "note": "W10: audit existing ingest workflows (z2m/zha/deconz/sdk/forum/johan) and wire to ledger changed-only proposals; extend, do not duplicate"
+  },
+  "task:stable-grouped-port": {
+   "status": "done",
+   "date": "2026-10-04",
+   "commit": "1d06791f0d",
+   "note": "run 37166982598 success"
+  },
+  "task:stable-grouped-port-2026-10-04": {
+   "status": "in-progress",
+   "date": "2026-10-04",
+   "commit": "1d06791f0d",
+   "note": "run 37166982598"
   },
   "task:stable-port-1298-1113": {
    "status": "pending",
