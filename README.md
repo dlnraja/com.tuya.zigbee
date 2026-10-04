@@ -143,6 +143,8 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 | Doc | Content |
 |-----|---------|
 | [docs/INDEX.md](docs/INDEX.md) | Full documentation index |
+| [docs/user/FAQ_ZIGBEE_UPDATES.md](docs/user/FAQ_ZIGBEE_UPDATES.md) | Unavailable after Homey 13.5 (EmberZNet 9.1): wake or re-pair; Device Updates (OTA, Homey ≥13.2) |
+| [docs/user/SMART_HOME_ECOSYSTEMS.md](docs/user/SMART_HOME_ECOSYSTEMS.md) | Matter Bridge, Google, Alexa, SmartThings, ChatGPT |
 | [docs/rules/DUAL_APP_VISION.md](docs/rules/DUAL_APP_VISION.md) | master (preview) vs stable-v5 (reliability) |
 | [docs/CONTRIBUTING_DEV.md](docs/CONTRIBUTING_DEV.md) | Developer workflow |
 | [AGENTS.md](AGENTS.md) | Project rules for AI agents |
