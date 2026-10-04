@@ -135,5 +135,20 @@
   "version": "1.0.0",
   "ui": {
     "quickAction": "onoff"
-  }
+  },
+  "settings": [
+    {
+      "id": "tuya_time_sync",
+      "type": "checkbox",
+      "value": true,
+      "label": {
+        "en": "Send time to the device",
+        "fr": "Envoyer l'heure à l'appareil"
+      },
+      "hint": {
+        "en": "Turn off only if the device misbehaves after a time sync (clock jumps, schedule resets).",
+        "fr": "Désactivez seulement si l'appareil se comporte mal après une synchronisation de l'heure (horloge qui saute, programme réinitialisé)."
+      }
+    }
+  ]
 }
