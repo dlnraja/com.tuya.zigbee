@@ -197,3 +197,4 @@ Sources actually used or consulted for the Wi-Fi local stack (`lib/tuya-local/`)
 - Reddit r/homey, r/zigbee, r/homeautomation communities
 - GitHub issue reporters who help improve device compatibility
 - The open-source Zigbee community for protocol documentation and device databases
+- romasku/tuya-zigbee-switch device_db, pvvx (Zbeacon TS0001 notes), lsroka76/Z2S_Library supported-devices list — couple evidence (2026-10-04)

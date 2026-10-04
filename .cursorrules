@@ -412,6 +412,49 @@ Specs live in `specs/NNN-*/{spec,plan,tasks}.md`. This file overrides any spec/p
 - P6. Branches: keep master, stable-v5 and gh-pages; merge or clean the rest only with approval.
 - P7. Communication: French, tables, action over explanation, no needless questions, continuous flow.
 
+## Rules (PC harvest round 3, 2026-10-04)
+Merged without changing W1–W11 / P1–P7; where they overlap, they make an existing rule explicit.
+- R1. Secrets (keys, PATs, tokens) never go online, in code, logs, issues or reports; only in GitHub Secrets.
+- R2. Stay within included plans and AI quotas (flat-rate/token plans); prefer free sources and caches.
+  Only still-active subscriptions within their included quota: hard rate limits, a daily request cap,
+  automatic disable for the day on 429/quota errors, never on-demand tokens, credits or overage billing
+  (user decision 2026-10-04; enforced in `.github/scripts/ai-helper.js`).
+- R3. Each app keeps its own purpose: master (`.tuya.zigbee`, fast enrichment), stable-v5 (`.stable`,
+  device compatibility, grouped publishes), bastien-home (`.bastien`, friend's test app). Port fixes
+  as adapted enrichments, never wholesale copies; couple placement stays the same (W4).
+- R4. Every fix ships with a unit test that locks it (regression guard); mirrored in agent prompts.
+- R5. Non-native DPs/clusters are complements (rx/tx, raw, stream), never mandatory (extends W5/W9).
+- R6. Never invent productIds or manufacturerNames (Green Power included). New compose clusters only
+  from a real interview; Zigbee 4.0 awareness is not evidence.
+- R7. MCU time sync never hardcodes one format (epoch 1970/2000, local/UTC, timezone per device).
+- R8. RF coexistence: Wi-Fi channels 1/6/11 vs Zigbee 15/20/25 in advice and diagnostics.
+- R9. Workflows tolerate missing sources (never block), use a fetch cache and incremental diffs,
+  and stay polite with servers (extends W10).
+- R10. Enrichments are variants/alternatives, never degradations, on every app (explicit form of W6).
+- R11. A couple missing from a log is never invented: ask for the next diagnostic with mfr+pid.
+  A guess is allowed only as a labelled hypothesis, then verified.
+- R12. Product rules for batteries: SOS/alarm buttons get an inverted-signal setting with automatic
+  detection; sleepy devices follow the battery-saving policy (lib/battery/*, PowerClusterPolicy).
+- R13. Workflows run fully without AI: deterministic algorithms first. AI subscriptions are an
+  optional complementary layer (user decision 2026-10-04): keys only in GitHub Secrets, never in
+  code; the AI step is skipped when its secret is absent; quota rules of R2 apply (extends W10/R9).
+- R14. stable-v5 is the hardened, reliable line, inspired by the versions that worked best (forum
+  feedback); master carries advanced features. Never copy one onto the other (clarifies R3).
+- R15. Scraping stays within free tiers (e.g. firecrawl free); prefer free tools and caches (R2).
+- R16. Malformed or synthetic manufacturerNames (e.g. `_TZE2841000000_*`, `_TZE28C1000000_*` from
+  PR #512) are never added and are rejected by the fingerprint gate.
+- R17. GitOps automation only as draft PRs on dlnraja's own repository: no auto-merge, no issue or
+  comment posting; gates decide; publishing stays batched (user decision 2026-10-04).
+- R18. Comments on third-party repositories (e.g. JohanBendz) are never deleted or edited by agents;
+  that stays a manual user action.
+- R19. No blind cross-product of brand names (e.g. HOBEIAN) over mfr/pid lists; only verified couples.
+- R20. Robust identifier normalization (extends P1): manufacturerName, productId, modelId and device
+  strings are compared through one normalizer at read and match time (case, whitespace/NUL padding,
+  trailing \u0000, Latin-1/UTF-8/ASCII, zero-width/invisible and look-alike characters, length-prefixed
+  Zigbee strings, `_`/`-` variants), while prefixes such as `_TZE200`/`_TZE204`/`_TZE284` stay distinct.
+  Originals are kept for display and diagnostics, data is not duplicated, and anything that matches
+  today must still match; a gate flags colliding normalized couples and malformed entries.
+
 ## Agent safety (generated)
 - Never post, comment, reply or send on GitHub, the Homey forum, email or chat on your own: draft and ask the maintainer.
 - Never force-push or rewrite published history; never break the three app IDs.

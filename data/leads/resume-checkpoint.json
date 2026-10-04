@@ -89,7 +89,7 @@
  },
  "master_queue": {
   "note": "Single master checklist of ALL user requests since the start. Daily resumption reads this FIRST. Tick (verified) only after verification.",
-  "updated": "2026-10-04T01:20:15.653Z",
+  "updated": "2026-10-04T01:24:23.344Z",
   "items": [
    {
     "id": 1,
@@ -117,7 +117,7 @@
    },
    {
     "id": 5,
-    "item": "W5 interview = minimum; only interview clusters required",
+    "item": "W5 interview = minimum; only interview clusters required | r4-5: interview baseline + alternative methods for unsupported devices",
     "status": "pending",
     "evidence": "52 drivers audit (PC r2 action 1)"
    },
@@ -141,7 +141,7 @@
    },
    {
     "id": 9,
-    "item": "W9 alternative low/high-level paths with circuit breakers",
+    "item": "W9 alternative low/high-level paths with circuit breakers | r4-5: non-native fallbacks (rx/tx/raw) for native flows/features in every driver; unsupported devices via alternative methods",
     "status": "pending",
     "evidence": "task:alt-paths-circuit-breakers"
    },
@@ -285,7 +285,7 @@
    },
    {
     "id": 33,
-    "item": "Queue9 lazy-load app.json data (size 3.70/4.00 MB)",
+    "item": "Queue9 lazy-load app.json data (size 3.70/4.00 MB) | r4-6: drivers expose methods/features before full init (lazy, safe)",
     "status": "pending",
     "evidence": ""
    },
@@ -316,8 +316,8 @@
    {
     "id": 38,
     "item": "PCr2-1 the 10 missing devices (2uollq9d TS011F, nuenzetq TS0002, Zbeacon TS0505B, eWeLight TS0502B, Zbeacon TS0001, MINI-ZBRBS, RDM001, RC-EF-3.0, LH02121, +)",
-    "status": "pending",
-    "evidence": "user priority 1"
+    "status": "in-progress",
+    "evidence": "2uollq9d->plug_energy_monitor, nuenzetq->switch_2gang, Zbeacon TS0001/TS0505B exact drivers (master); docs/rules/PCR2_MISSING_DEVICES_2026-10-04.md"
    },
    {
     "id": 39,
@@ -370,8 +370,8 @@
    {
     "id": 47,
     "item": "PC harvest round 3",
-    "status": "pending",
-    "evidence": "not yet received/read"
+    "status": "in-progress",
+    "evidence": "SYNTHESIS.md read 2026-10-04; items r3-* below"
    },
    {
     "id": 48,
@@ -408,6 +408,234 @@
     "item": "Next grouped stable publish: 78bf4a93af + port of signed/unsigned DP decoding (7f385e04c3)",
     "status": "pending",
     "evidence": ""
+   },
+   {
+    "id": 54,
+    "item": "R1-R12 rules from PC r3 merged into constitution",
+    "status": "verified",
+    "evidence": "constitution section Rules (PC harvest round 3); agent rules regenerated"
+   },
+   {
+    "id": 55,
+    "item": "r3: _TZ3000_ptjcjise/TS0001 (#543) verify + add to 1-gang wall switch",
+    "status": "deferred",
+    "evidence": "verified: only TS0002 is evidenced; TS0001 needs a diag (R11). docs/rules/PC_R3_COUPLES_2026-10-04.md"
+   },
+   {
+    "id": 56,
+    "item": "r3: _TZ3000_kfu8zapd + TS0225 bleed in button_wireless_4 (W4)",
+    "status": "verified",
+    "evidence": "no real collision (no bw4 mfr in another TS0225 driver); W4 phantom, untouched. docs/rules/PC_R3_COUPLES_2026-10-04.md"
+   },
+   {
+    "id": 57,
+    "item": "r3: #551 famkxci2/TS0043 check published; #531 ogkdpgy2 verify then close in ledger",
+    "status": "pending",
+    "evidence": ""
+   },
+   {
+    "id": 58,
+    "item": "r3: Bastien battery % smoothing/hysteresis + reporting audit (TS004x, wall remotes), temp/hum precision",
+    "status": "pending",
+    "evidence": ""
+   },
+   {
+    "id": 59,
+    "item": "r3: Bastien TS0042 button->relay latency + labelled flows not working",
+    "status": "pending",
+    "evidence": ""
+   },
+   {
+    "id": 60,
+    "item": "r3: MCU time sync per device/timezone (no single format) + OTA management",
+    "status": "pending",
+    "evidence": ""
+   },
+   {
+    "id": 61,
+    "item": "r3: SOS inverted-signal list + reverse setting on remote_button_emergency_sos (auto-detect)",
+    "status": "pending",
+    "evidence": ""
+   },
+   {
+    "id": 62,
+    "item": "r3: smart knob rotate RX + declared cards wiring; IR blaster max capabilities",
+    "status": "pending",
+    "evidence": ""
+   },
+   {
+    "id": 63,
+    "item": "r3: workflows missing-source tolerance, fetch cache, incremental diff | r4-10: workflows work without AI (deterministic), AI optional (R13)",
+    "status": "pending",
+    "evidence": ""
+   },
+   {
+    "id": 64,
+    "item": "r3: forks re-challenge (Gabriel_Pedrosa_Mach, packet_ninja) via scan-forks-recursive/implement-fork-fps",
+    "status": "pending",
+    "evidence": ""
+   },
+   {
+    "id": 65,
+    "item": "r3: Hue-style smart features (adaptive daylight, ambient) reimplemented | r4-17: presence-following lighting, auto on/off, warm/cold fade",
+    "status": "pending",
+    "evidence": ""
+   },
+   {
+    "id": 66,
+    "item": "r3: forum 140352 digest port to node (PowerShell parse error), highest post #2190",
+    "status": "pending",
+    "evidence": ""
+   },
+   {
+    "id": 67,
+    "item": "r3: issues #536 fan 5-speed, #533, #550, #420 radar clrdrnya (research, no invented pid)",
+    "status": "pending",
+    "evidence": ""
+   },
+   {
+    "id": 68,
+    "item": "r3: TS0041/TS0043 Bastien unknown and TS0032 -> wait next diag with mfr (R11)",
+    "status": "deferred",
+    "evidence": "needs diag"
+   },
+   {
+    "id": 69,
+    "item": "r3: non-Homey todos (Android Automix app, MV3 consent extension) - out of repo scope",
+    "status": "skipped-not-applicable",
+    "evidence": "not this repo"
+   },
+   {
+    "id": 70,
+    "item": "R13-R16 rules from PC r4 merged into constitution",
+    "status": "verified",
+    "evidence": "constitution R13-R16; agent rules regenerated"
+   },
+   {
+    "id": 71,
+    "item": "r4-1 soil_sensor: second temperature (soil/probe vs ambient) as additional capability, only for couples whose DPs prove it",
+    "status": "pending",
+    "evidence": ""
+   },
+   {
+    "id": 72,
+    "item": "r4-2 button mode setting (auto default) extended to button_wireless_2/3/4, button_wireless_smart, button_wireless_usb",
+    "status": "pending",
+    "evidence": ""
+   },
+   {
+    "id": 73,
+    "item": "r4-3 buttons 0-based vs 1-based numbering detected per couple (no global change)",
+    "status": "pending",
+    "evidence": ""
+   },
+   {
+    "id": 74,
+    "item": "r4-4 TS0041 scene mode manual toggle (setting/flow) on top of auto-detection",
+    "status": "pending",
+    "evidence": ""
+   },
+   {
+    "id": 75,
+    "item": "r4-7 quick actions / driver state on widget, generalize where sensible",
+    "status": "pending",
+    "evidence": ""
+   },
+   {
+    "id": 76,
+    "item": "r4-8 watch Homey news fr/en (Zigbee/Tuya) and implement (W10)",
+    "status": "pending",
+    "evidence": ""
+   },
+   {
+    "id": 77,
+    "item": "r4-9 GitHub Pages Wi-Fi section (user/technical/architecture), auto-updated",
+    "status": "pending",
+    "evidence": ""
+   },
+   {
+    "id": 78,
+    "item": "r4-11 coherent driver images per device type; fill missing images",
+    "status": "pending",
+    "evidence": ""
+   },
+   {
+    "id": 79,
+    "item": "r4-12 HOBEIAN regression: bisect against versions that worked (forum) before any change",
+    "status": "pending",
+    "evidence": ""
+   },
+   {
+    "id": 80,
+    "item": "r4-13 old issues #76 TS0044, #170 TS0003 sub-capability cards, #162 fingerbot firmware: check ledger status, process if open",
+    "status": "pending",
+    "evidence": ""
+   },
+   {
+    "id": 81,
+    "item": "r4-14 battery % history: compare calculation methods across versions, keep the most stable",
+    "status": "pending",
+    "evidence": ""
+   },
+   {
+    "id": 82,
+    "item": "r4-15 forum T140352 posts 2187-2228 (HOBEIAN everything not native)",
+    "status": "pending",
+    "evidence": ""
+   },
+   {
+    "id": 83,
+    "item": "r4-16 athombv repos + SDK docs as inspiration for flows/lazy-load",
+    "status": "pending",
+    "evidence": ""
+   },
+   {
+    "id": 84,
+    "item": "r4 device couples bcusnqt8/awepdiwi/fllyghyj",
+    "status": "verified",
+    "evidence": "already placed (curtain_motor, soil_sensor, climate_sensor)"
+   },
+   {
+    "id": 85,
+    "item": "r4 guard: malformed PR #512 mfrs never added (R16); enforce in fingerprint gate",
+    "status": "verified",
+    "evidence": "tools/ci/malformed-mfr-gate.js (shrink-only legacy baseline of 17 test-locked entries) in check:publish + test"
+   },
+   {
+    "id": 86,
+    "item": "Decision A: AI quota guard in ai-helper (paid flag ignored, 429/402/quota -> provider off for the UTC day, persisted) + R2/R13",
+    "status": "in-progress",
+    "evidence": "code done locally, commit pending"
+   },
+   {
+    "id": 87,
+    "item": "Decision B: GitOps draft-PR-only pipeline (no auto-merge, no posting) - design when needed (R17)",
+    "status": "pending",
+    "evidence": ""
+   },
+   {
+    "id": 88,
+    "item": "Decision C: Johan comment deletion = manual user action (R18)",
+    "status": "verified",
+    "evidence": "not an agent task"
+   },
+   {
+    "id": 89,
+    "item": "Decision D: HOBEIAN blind cross-product rejected (R19)",
+    "status": "verified",
+    "evidence": "rule recorded"
+   },
+   {
+    "id": 90,
+    "item": "R20 identifier normalization: research Homey SDK/zigbee-clusters/homey-zigbeedriver, Z2M, ZHA, deCONZ, SmartThings matching; single normalizer at read/match; keep originals; gate for colliding normalized couples/malformed; never break current matches",
+    "status": "pending",
+    "evidence": ""
+   },
+   {
+    "id": 91,
+    "item": "PCr2-1 remaining: HEIMAN RC-EF-3.0, iHorn LH02121, SONOFF MINI-ZBRBS, Signify RDM001 exact drivers; eWeLight TS0502B needs real interview",
+    "status": "pending",
+    "evidence": ""
    }
   ],
   "next": [
@@ -417,6 +645,15 @@
    "port DP decoding to stable/bastien + grouped stable publish",
    "flow cards completion",
    "ledger wiring into workflows"
-  ]
+  ],
+  "user_actions": [
+   "Rotate/revoke the Gmail app password and old GitHub PAT seen in clear text in July opencode/MiniMax prompts (not for agents)"
+  ],
+  "user_decisions_2026_10_04": {
+   "A": "AI subscriptions allowed as optional complementary layer; workflows run without AI; included quota only; hard caps; disable on 429/quota; never overage; keys via secrets; skip when absent",
+   "B": "GitOps only as draft PRs on own repo, no auto-merge, no issue/comment posting; gates decide; batched publishing",
+   "C": "Deleting comments on Johan repo: not done, manual user action",
+   "D": "Blind HOBEIAN cross-product rejected; verified couples only"
+  }
  }
 }
