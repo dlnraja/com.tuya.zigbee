@@ -89,7 +89,7 @@
   },
   "master_queue": {
     "note": "Single master checklist of ALL user requests since the start. Daily resumption reads this FIRST. Tick (verified) only after verification.",
-    "updated": "2026-10-04T04:35+02:00",
+    "updated": "2026-10-04T04:45+02:00",
     "items": [
       {
         "id": 1,
@@ -683,13 +683,55 @@
         "id": 99,
         "item": "W10 ingestion: Koenkk/zigbee2mqtt + zigbee-herdsman-converters — commit-diff of converters (Tuya + others) keyed by ledger cursor (only changes), open/closed device-bug/quirk issues since cursor -> mfr+pid couple proposals, DP mappings, quirks in our own words; credit Koen Kanters + contributors | EXTENDED to ALL sources (user 04:17): ZHA+quirks, deCONZ, localtuya/tuya-local, Blakadder, ST Edge (Mariano+), Hubitat, Jeedom Abeille, z2m pages, athombv, Johan+forks, Homey forum + community apps, SDK/docs changelogs, Tuya docs; single registry data/sources/registry.json",
         "status": "in_progress",
-        "evidence": "registry (25 sources, verified repos/paths) + .github/scripts/source-registry.js (cursors data/sources/state.json, compare-diff only, bounded calls, no AI) + test; wired into external-sources-scanner.js and daily free-scrape-crossref.yml (commits cursors [skip ci]); baseline 116 proposals -> data/leads/source-proposals.json; 5 new couples listed in DISCOVERIES.md. Pending: per-source parsers (tuya-local YAML DP maps, ZHA quirk DP tables, z2m converter DP tuples), proposal->couple triage tool, optional capped AI summariser."
+        "evidence": "registry (25 sources, verified repos/paths) + .github/scripts/source-registry.js (cursors data/sources/state.json, compare-diff only, bounded calls, no AI) + test; wired into external-sources-scanner.js and daily free-scrape-crossref.yml (commits cursors [skip ci]); baseline 116 proposals -> data/leads/source-proposals.json; 5 new couples listed in DISCOVERIES.md. Pending: per-source parsers (tuya-local YAML DP maps, ZHA quirk DP tables, z2m converter DP tuples), proposal->couple triage tool, optional capped AI summariser. | homey.app/news added as weekly news-index source (112 slugs baselined); Athom X account skipped (login/paid API, not free)."
       },
       {
         "id": 100,
         "item": "Research + land new couples from source registry: _TZE204_r6kfl9ta (noise sensor), _TZE284_rzdkn5rx (Zemismart), _TZ3290_qazgdsae (IR blaster TS1201), _TZE284_oa1odmga, _TZ3210_jqg2a5yn (TS0002)",
         "status": "pending",
         "evidence": "data/leads/source-proposals.json; DISCOVERIES.md 2026-10-04"
+      },
+      {
+        "id": 101,
+        "item": "News 2026-08-27 Device Updates: Zigbee OTA via apps. We ship firmwareUpdates in 7 drivers; extend from Koenkk/zigbee-OTA index keyed by manufacturerCode+imageType -> mfr+pid, SHA512-verified, additive",
+        "status": "pending",
+        "evidence": "https://homey.app/en-us/news/introducing-device-updates/",
+        "origin": "homey-news first pass 2026-10-04"
+      },
+      {
+        "id": 102,
+        "item": "News 2026-07-30 Quick actions: tile action = toggle/press from capabilities (auto for onoff/button). Audit: main onoff present/first where meaningful, button.* maintenance-only stay out of quick actions, multi-gang main switch",
+        "status": "pending",
+        "evidence": "https://homey.app/en-us/news/quick-actions-in-homey/",
+        "origin": "homey-news first pass 2026-10-04"
+      },
+      {
+        "id": 103,
+        "item": "News 2025-12-10 Homey Pro 2026 = 4 GB RAM, but Pro 2023 (2 GB) + mini supported until June 2031 (news 2025-10-23): keep R21/R22 memory budget sized for 2 GB / mini; spec 010 measures on low-RAM targets",
+        "status": "pending",
+        "evidence": "https://homey.app/en-us/news/introducing-homey-pro-2026/",
+        "origin": "homey-news first pass 2026-10-04"
+      },
+      {
+        "id": 104,
+        "item": "News 2025-12-17 Homey Self-Hosted Server (Linux/RPi/macOS/Windows/Synology): verify our app on SHS (Zigbee via supported radio, platform local), document in README/user docs",
+        "status": "pending",
+        "evidence": "https://homey.app/en-us/news/introducing-homey-self-hosted-server/",
+        "origin": "homey-news first pass 2026-10-04"
+      },
+      {
+        "id": 105,
+        "item": "News 2026-08-20 Homey Energy solar forecast + export pricing: check bidirectional meters expose meter_power.exported correctly in the driver energy object so export is counted",
+        "status": "pending",
+        "evidence": "https://homey.app/en-us/news/homey-energy-solar-forecast-export-pricing/",
+        "origin": "homey-news first pass 2026-10-04"
+      },
+      {
+        "id": 106,
+        "item": "News 2026-09-01 Homey Portal (zone ring: light/volume/temperature): standard dim/target_temperature on correct classes makes our devices controllable; feeds ecosystem audit #95",
+        "status": "pending",
+        "evidence": "https://homey.app/en-us/news/introducing-homey-portal/",
+        "origin": "homey-news first pass 2026-10-04"
       }
     ],
     "next": [

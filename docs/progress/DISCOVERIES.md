@@ -37,3 +37,15 @@ Each entry: source (link + author), mechanism / symptom, what we did (or why not
   - `_TZE284_oa1odmga` / TS0601 — reported without exposes (Koenkk/zigbee2mqtt #32498 by nach9696 closed, #33117 by the-satorugojo open).
   - `_TZ3210_jqg2a5yn` / TS0002 — 2-gang relay report (Koenkk/zigbee2mqtt #32627 by lucasbissaro, closed).
 - What we did: proposals stored in data/leads/source-proposals.json; daily run wired into free-scrape-crossref.yml (existing workflow, no new one) and into external-sources-scanner.js. Landing each couple needs the usual research + exact-pair decision.
+
+## 2026-10-04 — Homey news, last 12 months (first pass over https://homey.app/en-us/news/, Athom B.V.)
+- Device Updates (2026-08-27): Matter, Z-Wave and Zigbee firmware updates from Homey; for Zigbee, availability depends on each app shipping the images. We already ship OTA for 7 drivers; proposal: extend from the Koenkk/zigbee-OTA index keyed by manufacturer code + image type.
+- Quick actions (2026-07-30): every tile gets a toggle/press action chosen from the device's capabilities (automatic for onoff/buttons). Proposal: audit main onoff placement and keep maintenance buttons out.
+- Matter 1.5 certification (2026-07-28) and Matter Bridge (2025-11-12): done in the ecosystem audit.
+- ChatGPT app (2026-06-04) and MCP server (2025-11-04): done (flow-card shape fix + gate).
+- Homey Pro 2026 with 4 GB RAM (2025-12-10), yet Pro 2023 (2 GB) and mini are supported until June 2031 (2025-10-23): memory budget must stay sized for 2 GB devices.
+- Self-Hosted Server (2025-12-17): proposal to verify and document the app there.
+- Solar forecast + export pricing (2026-08-20): check exported-energy capabilities in energy objects.
+- Homey Portal (2026-09-01): zone ring drives light/volume/temperature, so standard capabilities matter.
+- Not relevant to drivers: local users, sortable zones, hidden devices (Insights still logged), Python SDK, cameras, partner brands, pricing.
+- The Aug 2024 app update and the HomeKit retirement are not in this 12-month window / not on the news index (HomeKit came from the release notes).

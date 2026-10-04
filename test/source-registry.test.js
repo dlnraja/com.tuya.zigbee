@@ -25,7 +25,7 @@ describe('source registry (W10 change-driven ingestion)', () => {
     for (const s of reg.sources) {
       assert.ok(s.id && !ids.has(s.id), `unique id ${s.id}`);
       ids.add(s.id);
-      assert.ok(['github', 'github-forks', 'discourse', 'page'].includes(s.type), s.id);
+      assert.ok(['github', 'github-forks', 'discourse', 'page', 'news-index'].includes(s.type), s.id);
       assert.ok(s.credit, `credit for ${s.id}`);
       assert.ok(CADENCE_MS[s.cadence], `cadence for ${s.id}`);
     }

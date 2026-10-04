@@ -168,7 +168,31 @@ async function scanPage(src, st, c) {
   return { out, next: { hash } };
 }
 
-const SCANNERS = { github: scanGithub, 'github-forks': scanForks, discourse: scanDiscourse, page: scanPage };
+const NEWS_RELEVANT_RE = /\b(sdk|firmware|zigbee|matter|thread|z-wave|homekit|alexa|google|smartthings|chatgpt|mcp|ai agent|deprecat|retire|remov|developer|app store|device updates?|ota|flow card|capabilit|energy|self-hosted|homey pro v\d)/i;
+
+async function scanNewsIndex(src, st, c) {
+  const html = await c.text(src.url);
+  const base = new URL(src.url);
+  const slugs = uniq((html.match(/\/news\/[a-z0-9-]{6,}\//g) || []));
+  const seen = new Set(st.seen || []);
+  const baseline = !st.seen;
+  const out = [];
+  for (const sl of slugs) {
+    if (seen.has(sl)) {continue;}
+    seen.add(sl);
+    if (baseline || out.length >= 10) {continue;}
+    const url = `${base.origin}${base.pathname.replace(/\/news\/?$/, '')}${sl}`;
+    const art = await c.text(url).catch(() => '');
+    const date = (art.match(/"datePublished":"([^"]+)"/) || [])[1] || null;
+    const title = ((art.match(/<title>([^<]+)<\/title>/) || [])[1] || sl).replace(/\s+/g, ' ').split(' – ')[0].trim();
+    const body = art.replace(/<script[\s\S]*?<\/script>|<style[\s\S]*?<\/style>/g, ' ').replace(/<[^>]+>/g, ' ');
+    if (!NEWS_RELEVANT_RE.test(`${title} ${body}`)) {continue;}
+    out.push({ source: src.id, kind: 'news', ref: url, summary: `${date ? date.slice(0, 10) : '?'} ${title} (relevant to apps/drivers: review and queue)`, mfrs: [], pids: [], dps: [], bug: false, quirk: false, credit: src.credit, seenAt: new Date().toISOString() });
+  }
+  return { out, next: { seen: [...seen].slice(-2000) } };
+}
+
+const SCANNERS = { 'news-index': scanNewsIndex, github: scanGithub, 'github-forks': scanForks, discourse: scanDiscourse, page: scanPage };
 
 async function run({ dry = false, force = false, only = null, maxCalls = 400, token = process.env.GH_PAT || process.env.GITHUB_TOKEN, fetchImpl } = {}) {
   const reg = readJson(REG_F, { sources: [] });
