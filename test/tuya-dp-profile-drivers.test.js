@@ -31,7 +31,8 @@ describe('TuyaDpProfileCodec', () => {
 describe('exact-pair drivers', () => {
   it('switch_presence_tuya carries the three ZHC presence switches with relays + alarm_motion', () => {
     const j = compose('switch_presence_tuya');
-    assert.deepStrictEqual(j.zigbee.manufacturerName.sort(), ['_TZE28C1000000_jaunkx9g', '_TZE28C1000000_jlbsptkl', '_TZE28C1000000_usmqzgdm']);
+    // CI ensure-case-variants adds lowercase twins; compare the canonical spellings only.
+    assert.deepStrictEqual(j.zigbee.manufacturerName.filter((m) => m.startsWith('_TZE')).sort(), ['_TZE28C1000000_jaunkx9g', '_TZE28C1000000_jlbsptkl', '_TZE28C1000000_usmqzgdm']);
     assert.ok(j.capabilities.includes('alarm_motion'));
     assert.ok(!j.zigbee.endpoints['1'].clusters.includes(61184), 'EF00 must not be mandatory');
     const src = fs.readFileSync(path.join(root, 'drivers', 'switch_presence_tuya', 'device.js'), 'utf8');
@@ -39,7 +40,7 @@ describe('exact-pair drivers', () => {
   });
   it('panel_switch_cover_tuya maps DP101/102 relays and DP1/2, DP4/5 covers', () => {
     const j = compose('panel_switch_cover_tuya');
-    assert.deepStrictEqual(j.zigbee.manufacturerName, ['_TZE200_rgeapp2c']);
+    assert.deepStrictEqual(j.zigbee.manufacturerName.filter((m) => m.startsWith('_TZE')), ['_TZE200_rgeapp2c']);
     const src = fs.readFileSync(path.join(root, 'drivers', 'panel_switch_cover_tuya', 'device.js'), 'utf8');
     for (const re of [/1: \{ cap: 'windowcoverings_state.c1'/, /5: \{ cap: 'windowcoverings_set.c2'/, /102: \{ cap: 'onoff.s2'/]) { assert.ok(re.test(src), re); }
   });
